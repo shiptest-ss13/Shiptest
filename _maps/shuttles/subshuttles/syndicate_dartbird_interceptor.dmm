@@ -10,6 +10,13 @@
 	name = "Grav Couch";
 	dir = 4
 	},
+/obj/item/radio/intercom/wideband{
+	pixel_y = 26
+	},
+/obj/item/radio/intercom{
+	dir = 1;
+	pixel_y = -24
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "g" = (
@@ -20,6 +27,12 @@
 	dir = 4
 	},
 /obj/structure/window/plasma/reinforced,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/structure/window/plasma/reinforced{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/ship/bridge)
 "h" = (
@@ -62,10 +75,6 @@
 	icon_state = "0-10"
 	},
 /turf/open/floor/plating,
-/area/ship/bridge)
-"v" = (
-/obj/structure/sign/syndicate,
-/turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
 "z" = (
 /obj/machinery/porta_turret/syndicate/energy{
@@ -148,6 +157,10 @@
 /obj/structure/window/plasma/reinforced{
 	dir = 1
 	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/structure/window/plasma/reinforced,
 /turf/open/floor/plating,
 /area/ship/bridge)
 "L" = (
@@ -158,14 +171,16 @@
 	icon_state = "0-9"
 	},
 /obj/machinery/porta_turret/syndicate/energy{
-	dir = 4;
-	pixel_x = 8
+	dir = 4
 	},
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
 "N" = (
 /obj/machinery/power/shuttle/engine/electric{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
 	},
 /turf/open/floor/engine/hull,
 /area/ship/bridge)
@@ -192,8 +207,7 @@
 	icon_state = "0-10"
 	},
 /obj/machinery/porta_turret/syndicate/energy{
-	dir = 4;
-	pixel_x = 8
+	dir = 4
 	},
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
@@ -217,14 +231,11 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/turf/open/floor/mineral/plastitanium,
-/area/ship/bridge)
-"Z" = (
 /obj/machinery/turretid{
 	pixel_x = 3;
-	pixel_y = 7
+	pixel_y = 38
 	},
-/turf/closed/wall/mineral/plastitanium,
+/turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 
 (1,1,1) = {"
@@ -284,7 +295,7 @@ a
 (7,1,1) = {"
 a
 a
-Z
+b
 Y
 E
 a
@@ -293,9 +304,9 @@ a
 (8,1,1) = {"
 a
 a
-v
+b
 c
-v
+b
 a
 a
 "}

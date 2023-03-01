@@ -132,7 +132,8 @@
 	dir = 8
 	},
 /obj/effect/landmark/subship{
-	subship_template = /datum/map_template/shuttle/subshuttles/minimalta
+	subship_template = /datum/map_template/shuttle/subshuttles/minimalta;
+	dir = 1
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo/office)
@@ -3372,7 +3373,6 @@
 /obj/item/bedsheet/grey,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/kitchen/knife/shiv,
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plasteel,
 /area/ship/security)
 "Lw" = (
