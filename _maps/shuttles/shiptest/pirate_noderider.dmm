@@ -191,6 +191,9 @@
 /obj/machinery/computer/crew{
 	icon_state = "computer-right"
 	},
+/obj/machinery/turretid{
+	pixel_y = 25
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "cb" = (
@@ -460,6 +463,14 @@
 /obj/machinery/light/small,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
+"gS" = (
+/obj/machinery/porta_turret/centcom_shuttle{
+	dir = 1;
+	pixel_y = -32;
+	density = 0
+	},
+/turf/open/floor/plating/airless,
+/area/ship/bridge)
 "hd" = (
 /obj/machinery/power/shieldwallgen/anchored,
 /obj/structure/cable{
@@ -590,9 +601,9 @@
 	dir = 8
 	},
 /obj/item/tank/jetpack/carbondioxide,
-/obj/item/clothing/suit/space/hardsuit/engine,
 /obj/machinery/suit_storage_unit/inherit/industrial,
 /obj/machinery/light/small,
+/obj/item/clothing/suit/space/hardsuit/security/independent,
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "jk" = (
@@ -886,7 +897,6 @@
 	dir = 8
 	},
 /obj/item/tank/jetpack/carbondioxide,
-/obj/item/clothing/suit/space/hardsuit/engine,
 /obj/structure/railing{
 	layer = 3.3
 	},
@@ -895,6 +905,7 @@
 	dir = 1;
 	pixel_y = -24
 	},
+/obj/item/clothing/suit/space/hardsuit/security/independent,
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "nO" = (
@@ -1103,8 +1114,13 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
+/obj/machinery/porta_turret/centcom_shuttle{
+	dir = 1;
+	pixel_y = -32;
+	density = 0
+	},
 /turf/open/floor/engine/hull,
-/area/ship/external)
+/area/ship/bridge)
 "rK" = (
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 8
@@ -1312,6 +1328,13 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ship/external)
+"we" = (
+/obj/machinery/porta_turret/centcom_shuttle{
+	pixel_y = 32;
+	density = 0
+	},
+/turf/open/floor/plating/airless,
+/area/ship/bridge)
 "wq" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/maintenance/central)
@@ -1407,11 +1430,11 @@
 	dir = 8
 	},
 /obj/item/tank/jetpack/carbondioxide,
-/obj/item/clothing/suit/space/hardsuit/engine,
 /obj/structure/railing{
 	layer = 3.3
 	},
 /obj/machinery/suit_storage_unit/inherit/industrial,
+/obj/item/clothing/suit/space/hardsuit/security/independent,
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "yd" = (
@@ -1516,6 +1539,10 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
+"Aj" = (
+/obj/machinery/porta_turret/centcom_shuttle,
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/bridge)
 "Am" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew)
@@ -1529,6 +1556,16 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
+"Aq" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/porta_turret/centcom_shuttle{
+	pixel_y = 32;
+	density = 0
+	},
+/turf/open/floor/engine/hull,
+/area/ship/bridge)
 "Av" = (
 /obj/structure/cable{
 	icon_state = "6-8"
@@ -2085,6 +2122,8 @@
 /obj/item/storage/backpack/duffelbag/med/surgery,
 /obj/item/storage/toolbox/mechanical,
 /obj/item/storage/toolbox/mechanical,
+/obj/item/healthanalyzer,
+/obj/item/healthanalyzer,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "Mt" = (
@@ -2241,14 +2280,7 @@
 	icon_state = "1-4"
 	},
 /obj/machinery/syndicatebomb{
-	icon = 'icons/obj/machines/nuke_terminal.dmi';
-	icon_state = "nuclearbomb_base";
-	anchored = 1;
-	can_be_unanchored = 1;
-	can_unanchor = 0;
-	name = "low yield fusion bomb";
-	desc = "Every AI needs a failsafe.";
-	base_icon_state = "nuclearbomb_base"
+	name = "low yield fusion bomb"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/maintenance/central)
@@ -2315,7 +2347,6 @@
 	pixel_y = 28;
 	name = "weapons locker"
 	},
-/obj/item/gun/energy/disabler,
 /obj/item/gun/energy/e_gun/smg,
 /obj/item/stock_parts/cell/gun,
 /obj/item/stock_parts/cell/gun,
@@ -2327,8 +2358,9 @@
 /obj/item/stock_parts/cell/gun,
 /obj/item/melee/baton,
 /obj/item/melee/baton,
-/obj/item/gun/energy/e_gun/iot,
-/obj/item/gun/energy/e_gun/iot,
+/obj/item/gun/energy/laser/iot,
+/obj/item/gun/energy/laser/iot,
+/obj/item/gun/energy/e_gun/smg,
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "PK" = (
@@ -2439,6 +2471,12 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
+"Rv" = (
+/obj/machinery/porta_turret/centcom_shuttle{
+	dir = 1
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/bridge)
 "Rz" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -2697,20 +2735,24 @@
 	dir = 8
 	},
 /obj/item/tank/jetpack/carbondioxide,
-/obj/item/clothing/suit/space/hardsuit/engine,
 /obj/structure/railing{
 	layer = 3.3
 	},
 /obj/machinery/suit_storage_unit/inherit/industrial,
 /obj/machinery/light/small,
+/obj/item/clothing/suit/space/hardsuit/security/independent,
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "XO" = (
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
+/obj/machinery/porta_turret/centcom_shuttle{
+	pixel_y = 32;
+	density = 0
+	},
 /turf/open/floor/engine/hull,
-/area/ship/external)
+/area/ship/bridge)
 "Yc" = (
 /obj/machinery/door/window/brigdoor{
 	dir = 4
@@ -2744,6 +2786,17 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
+"Ym" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/porta_turret/centcom_shuttle{
+	dir = 1;
+	pixel_y = -32;
+	density = 0
+	},
+/turf/open/floor/engine/hull,
+/area/ship/bridge)
 "Yp" = (
 /obj/machinery/holopad/emergency/engineering,
 /obj/effect/turf_decal/box,
@@ -2873,7 +2926,7 @@ by
 by
 by
 dS
-qc
+gS
 up
 bC
 by
@@ -2881,7 +2934,7 @@ by
 by
 bC
 up
-qc
+we
 dS
 by
 by
@@ -3191,7 +3244,7 @@ by
 by
 by
 by
-jI
+Ym
 wq
 ym
 MU
@@ -3201,7 +3254,7 @@ vK
 MU
 aa
 wq
-jI
+Aq
 by
 by
 by
@@ -3595,7 +3648,7 @@ by
 by
 by
 dS
-Kc
+Rv
 Kc
 Jp
 EH
@@ -3609,7 +3662,7 @@ is
 MW
 LC
 pm
-pm
+Aj
 dS
 by
 by
