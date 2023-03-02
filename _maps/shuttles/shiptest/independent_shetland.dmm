@@ -1550,7 +1550,6 @@
 /obj/docking_port/stationary{
 	height = 15;
 	width = 12;
-	dheight = 1;
 	dwidth = 3;
 	dir = 2
 	},
@@ -2837,11 +2836,8 @@
 /obj/docking_port/mobile{
 	can_move_docking_ports = 1;
 	dir = 2;
-	dwidth = 30;
-	height = 26;
 	launch_status = 0;
-	port_direction = 8;
-	width = 48
+	port_direction = 8
 	},
 /turf/open/floor/plating/airless,
 /area/ship/external)
@@ -3841,7 +3837,6 @@
 /obj/docking_port/stationary{
 	height = 15;
 	width = 12;
-	dheight = 1;
 	dwidth = 3
 	},
 /turf/open/floor/plating/airless,
