@@ -175,24 +175,6 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ship/external)
-"bY" = (
-/obj/machinery/camera/emp_proof{
-	dir = 4
-	},
-/obj/effect/turf_decal/spline/fancy/opaque/black,
-/obj/machinery/light/small{
-	dir = 1
-	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = -24
-	},
-/obj/machinery/computer/crew{
-	icon_state = "computer-right"
-	},
-/turf/open/floor/plasteel/telecomms_floor,
-/area/ship/bridge)
 "cb" = (
 /obj/structure/catwalk/over,
 /obj/structure/cable{
@@ -474,6 +456,17 @@
 /obj/structure/catwalk/over,
 /turf/open/floor/plating/airless,
 /area/ship/external)
+"hH" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/machinery/porta_turret/centcom_shuttle{
+	dir = 1;
+	pixel_y = -32;
+	density = 0
+	},
+/turf/open/floor/engine/hull,
+/area/ship/bridge)
 "hK" = (
 /obj/structure/cable{
 	icon_state = "1-6"
@@ -579,22 +572,6 @@
 /obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/cargo)
-"ji" = (
-/obj/structure/railing{
-	layer = 3.3
-	},
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/item/tank/jetpack/carbondioxide,
-/obj/item/clothing/suit/space/hardsuit/engine,
-/obj/machinery/suit_storage_unit/inherit/industrial,
-/obj/machinery/light/small,
-/turf/open/floor/plasteel/dark,
-/area/ship/security/armory)
 "jk" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -815,6 +792,16 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
+"lI" = (
+/obj/effect/turf_decal/box/red,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/machinery/syndicatebomb{
+	name = "low yield fusion bomb"
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/maintenance/central)
 "lR" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -831,6 +818,16 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
+"lU" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/porta_turret/centcom_shuttle{
+	pixel_y = 32;
+	density = 0
+	},
+/turf/open/floor/engine/hull,
+/area/ship/bridge)
 "lV" = (
 /obj/structure/window/reinforced/tinted{
 	dir = 8
@@ -867,6 +864,12 @@
 	dir = 1
 	},
 /area/ship/engineering)
+"mS" = (
+/obj/machinery/porta_turret/centcom_shuttle{
+	dir = 1
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/bridge)
 "mT" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -878,25 +881,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
-"nx" = (
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/item/tank/jetpack/carbondioxide,
-/obj/item/clothing/suit/space/hardsuit/engine,
-/obj/structure/railing{
-	layer = 3.3
-	},
-/obj/machinery/suit_storage_unit/inherit/industrial,
-/obj/item/radio/intercom{
-	dir = 1;
-	pixel_y = -24
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/security/armory)
 "nO" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -1043,6 +1027,27 @@
 "qc" = (
 /turf/open/floor/plating/airless,
 /area/ship/external)
+"qh" = (
+/obj/structure/closet/wall/red{
+	pixel_y = 28;
+	name = "weapons locker"
+	},
+/obj/item/gun/energy/e_gun/smg,
+/obj/item/stock_parts/cell/gun,
+/obj/item/stock_parts/cell/gun,
+/obj/item/stock_parts/cell/gun,
+/obj/item/stock_parts/cell/gun,
+/obj/item/stock_parts/cell/gun,
+/obj/item/stock_parts/cell/gun,
+/obj/item/stock_parts/cell/gun,
+/obj/item/stock_parts/cell/gun,
+/obj/item/melee/baton,
+/obj/item/melee/baton,
+/obj/item/gun/energy/laser/iot,
+/obj/item/gun/energy/laser/iot,
+/obj/item/gun/energy/e_gun/smg,
+/turf/open/floor/plasteel/tech,
+/area/ship/security/armory)
 "qj" = (
 /obj/structure/mirror{
 	pixel_x = 32
@@ -1099,12 +1104,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
-"rf" = (
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/turf/open/floor/engine/hull,
-/area/ship/external)
 "rK" = (
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 8
@@ -1154,6 +1153,22 @@
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering)
+"sw" = (
+/obj/structure/sign/poster/contraband/cybersun_borg{
+	pixel_y = 32
+	},
+/obj/structure/closet/wall/white{
+	dir = 4;
+	name = "First Aid";
+	pixel_x = -28
+	},
+/obj/item/storage/backpack/duffelbag/med/surgery,
+/obj/item/storage/toolbox/mechanical,
+/obj/item/storage/toolbox/mechanical,
+/obj/item/healthanalyzer,
+/obj/item/healthanalyzer,
+/turf/open/floor/plasteel/dark,
+/area/ship/crew)
 "sx" = (
 /obj/machinery/power/terminal{
 	dir = 8
@@ -1239,18 +1254,19 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
+"tO" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/machinery/porta_turret/centcom_shuttle{
+	pixel_y = 32;
+	density = 0
+	},
+/turf/open/floor/engine/hull,
+/area/ship/bridge)
 "up" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/engineering)
-"uD" = (
-/obj/machinery/atmospherics/components/unary/passive_vent/layer4{
-	dir = 1
-	},
-/obj/effect/turf_decal/spline/fancy/opaque/black{
-	dir = 1
-	},
-/turf/open/floor/plating/airless,
-/area/ship/external)
 "vr" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -1266,6 +1282,15 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
+"vH" = (
+/obj/machinery/atmospherics/components/unary/passive_vent/layer4{
+	dir = 1
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 1
+	},
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "vK" = (
 /obj/machinery/power/rtg,
 /obj/structure/cable{
@@ -1402,21 +1427,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
-"yc" = (
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/item/tank/jetpack/carbondioxide,
-/obj/item/clothing/suit/space/hardsuit/engine,
-/obj/structure/railing{
-	layer = 3.3
-	},
-/obj/machinery/suit_storage_unit/inherit/industrial,
-/turf/open/floor/plasteel/dark,
-/area/ship/security/armory)
 "yd" = (
 /obj/machinery/ai_slipper,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -1488,6 +1498,37 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
+"zo" = (
+/obj/structure/railing{
+	layer = 3.3
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/item/tank/jetpack/carbondioxide,
+/obj/machinery/suit_storage_unit/inherit/industrial,
+/obj/machinery/light/small,
+/obj/item/clothing/suit/space/hardsuit/security/independent,
+/turf/open/floor/plasteel/dark,
+/area/ship/security/armory)
+"zp" = (
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/item/tank/jetpack/carbondioxide,
+/obj/structure/railing{
+	layer = 3.3
+	},
+/obj/machinery/suit_storage_unit/inherit/industrial,
+/obj/item/clothing/suit/space/hardsuit/security/independent,
+/turf/open/floor/plasteel/dark,
+/area/ship/security/armory)
 "zB" = (
 /obj/machinery/door/airlock/hatch,
 /obj/machinery/door/firedoor/border_only{
@@ -1522,6 +1563,17 @@
 "Am" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew)
+"An" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/porta_turret/centcom_shuttle{
+	dir = 1;
+	pixel_y = -32;
+	density = 0
+	},
+/turf/open/floor/engine/hull,
+/area/ship/bridge)
 "Ao" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/machinery/light/small{
@@ -1856,6 +1908,18 @@
 /obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
+"Hj" = (
+/obj/effect/turf_decal/spline/fancy/opaque/black,
+/obj/merge_conflict_marker{
+	name = "---Merge Conflict Marker---",
+	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
+	},
+/obj/machinery/porta_turret/centcom_shuttle{
+	pixel_y = 32;
+	density = 0
+	},
+/turf/open/floor/plating/airless,
+/area/ship/bridge)
 "Hx" = (
 /obj/machinery/autolathe,
 /obj/machinery/airalarm/directional/east,
@@ -1866,6 +1930,22 @@
 /obj/item/stack/sheet/glass/fifty,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
+"HF" = (
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/item/tank/jetpack/carbondioxide,
+/obj/structure/railing{
+	layer = 3.3
+	},
+/obj/machinery/suit_storage_unit/inherit/industrial,
+/obj/machinery/light/small,
+/obj/item/clothing/suit/space/hardsuit/security/independent,
+/turf/open/floor/plasteel/dark,
+/area/ship/security/armory)
 "Ih" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2076,20 +2156,6 @@
 /obj/structure/curtain/cloth/grey,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
-"Ml" = (
-/obj/structure/sign/poster/contraband/cybersun_borg{
-	pixel_y = 32
-	},
-/obj/structure/closet/wall/white{
-	dir = 4;
-	name = "First Aid";
-	pixel_x = -28
-	},
-/obj/item/storage/backpack/duffelbag/med/surgery,
-/obj/item/storage/toolbox/mechanical,
-/obj/item/storage/toolbox/mechanical,
-/turf/open/floor/plasteel/dark,
-/area/ship/crew)
 "Mt" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -2238,23 +2304,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
-"Oa" = (
-/obj/effect/turf_decal/box/red,
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/obj/machinery/syndicatebomb{
-	icon = 'icons/obj/machines/nuke_terminal.dmi';
-	icon_state = "nuclearbomb_base";
-	anchored = 1;
-	can_be_unanchored = 1;
-	can_unanchor = 0;
-	name = "low yield fusion bomb";
-	desc = "Every AI needs a failsafe.";
-	base_icon_state = "nuclearbomb_base"
-	},
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/maintenance/central)
 "Ok" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2303,6 +2352,25 @@
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
+"ON" = (
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/item/tank/jetpack/carbondioxide,
+/obj/structure/railing{
+	layer = 3.3
+	},
+/obj/machinery/suit_storage_unit/inherit/industrial,
+/obj/item/radio/intercom{
+	dir = 1;
+	pixel_y = -24
+	},
+/obj/item/clothing/suit/space/hardsuit/security/independent,
+/turf/open/floor/plasteel/dark,
+/area/ship/security/armory)
 "Pg" = (
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -2311,27 +2379,6 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/turf/open/floor/plasteel/tech,
-/area/ship/security/armory)
-"PC" = (
-/obj/structure/closet/wall/red{
-	pixel_y = 28;
-	name = "weapons locker"
-	},
-/obj/item/gun/energy/disabler,
-/obj/item/gun/energy/e_gun/smg,
-/obj/item/stock_parts/cell/gun,
-/obj/item/stock_parts/cell/gun,
-/obj/item/stock_parts/cell/gun,
-/obj/item/stock_parts/cell/gun,
-/obj/item/stock_parts/cell/gun,
-/obj/item/stock_parts/cell/gun,
-/obj/item/stock_parts/cell/gun,
-/obj/item/stock_parts/cell/gun,
-/obj/item/melee/baton,
-/obj/item/melee/baton,
-/obj/item/gun/energy/e_gun/iot,
-/obj/item/gun/energy/e_gun/iot,
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "PK" = (
@@ -2587,6 +2634,21 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ship/external)
+"UM" = (
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 1
+	},
+/obj/merge_conflict_marker{
+	name = "---Merge Conflict Marker---",
+	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
+	},
+/obj/machinery/porta_turret/centcom_shuttle{
+	dir = 1;
+	pixel_y = -32;
+	density = 0
+	},
+/turf/open/floor/plating/airless,
+/area/ship/bridge)
 "UY" = (
 /obj/structure/railing/corner{
 	layer = 3.1
@@ -2640,6 +2702,10 @@
 /obj/machinery/light,
 /turf/open/floor/engine/hull,
 /area/ship/external)
+"VC" = (
+/obj/machinery/porta_turret/centcom_shuttle,
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/bridge)
 "VK" = (
 /obj/machinery/power/shieldwallgen/anchored,
 /obj/structure/cable{
@@ -2692,28 +2758,27 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/external)
-"Xe" = (
-/obj/structure/window/reinforced{
+"XZ" = (
+/obj/machinery/camera/emp_proof{
 	dir = 4
 	},
-/obj/structure/window/reinforced{
-	dir = 8
+/obj/effect/turf_decal/spline/fancy/opaque/black,
+/obj/machinery/light/small{
+	dir = 1
 	},
-/obj/item/tank/jetpack/carbondioxide,
-/obj/item/clothing/suit/space/hardsuit/engine,
-/obj/structure/railing{
-	layer = 3.3
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = -24
 	},
-/obj/machinery/suit_storage_unit/inherit/industrial,
-/obj/machinery/light/small,
-/turf/open/floor/plasteel/dark,
-/area/ship/security/armory)
-"XO" = (
-/obj/structure/cable{
-	icon_state = "2-8"
+/obj/machinery/computer/crew{
+	icon_state = "computer-right"
 	},
-/turf/open/floor/engine/hull,
-/area/ship/external)
+/obj/machinery/turretid{
+	pixel_y = 25
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ship/bridge)
 "Yc" = (
 /obj/machinery/door/window/brigdoor{
 	dir = 4
@@ -2876,7 +2941,7 @@ by
 by
 by
 dS
-Uq
+UM
 up
 bC
 by
@@ -2884,7 +2949,7 @@ by
 by
 bC
 up
-qp
+Hj
 dS
 by
 by
@@ -2905,7 +2970,7 @@ by
 by
 by
 vY
-uD
+vH
 up
 Wv
 kn
@@ -3141,7 +3206,7 @@ Kn
 MN
 ty
 ft
-Oa
+lI
 Ro
 ty
 df
@@ -3194,7 +3259,7 @@ by
 by
 by
 by
-jI
+An
 wq
 ym
 MU
@@ -3204,7 +3269,7 @@ vK
 MU
 aa
 wq
-jI
+lU
 by
 by
 by
@@ -3281,7 +3346,7 @@ nO
 EQ
 cb
 pi
-rf
+hH
 wq
 Ye
 OG
@@ -3291,7 +3356,7 @@ OG
 OG
 Ok
 wq
-XO
+tO
 aX
 cb
 EQ
@@ -3434,7 +3499,7 @@ oR
 Ss
 yJ
 pm
-Ml
+sw
 QQ
 Gh
 pm
@@ -3544,7 +3609,7 @@ Kc
 Kc
 tF
 Oz
-ji
+zo
 Kz
 Kz
 kS
@@ -3571,11 +3636,11 @@ by
 dS
 fE
 Kc
-PC
+qh
 yd
-nx
+ON
 oJ
-bY
+XZ
 YX
 aN
 oJ
@@ -3598,11 +3663,11 @@ by
 by
 by
 dS
-Kc
+mS
 Kc
 Jp
 EH
-yc
+zp
 oJ
 Wb
 Lo
@@ -3612,7 +3677,7 @@ is
 MW
 LC
 pm
-pm
+VC
 dS
 by
 by
@@ -3631,7 +3696,7 @@ Uq
 Kc
 iu
 dW
-Xe
+HF
 Kz
 Kz
 rK
