@@ -1,7 +1,7 @@
 /obj/structure/railing
 	name = "railing"
 	desc = "Basic railing meant to protect idiots like you from falling."
-	icon = 'icons/obj/fluff.dmi'
+	icon = 'icons/obj/railing.dmi'
 	icon_state = "railing"
 	flags_1 = ON_BORDER_1
 	pass_flags_self = LETPASSTHROW
@@ -136,3 +136,17 @@
 /obj/structure/railing/corner/wood
 	name = "wooden railing"
 	color = "#A47449"
+
+/obj/structure/railing/modern
+	icon = 'icons/obj/railing_m.dmi'
+	icon_state = "railing_m"
+	layer = ABOVE_MOB_LAYER
+
+/obj/structure/railing/modern/corner
+	icon_state = "railing_m_corner"
+	density = FALSE
+
+/obj/structure/railing/modern/end
+	icon_state = "railing_m_end"
+	density = FALSE
+	climbable = FALSE
