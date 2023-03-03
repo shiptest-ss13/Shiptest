@@ -168,6 +168,9 @@
 	if(railing_color)
 		GetCover()
 
+/obj/structure/railing/modern/end
+	icon_state = "railing_m_end"
+
 /obj/structure/railing/modern/corner
 	icon_state = "railing_m_corner"
 	density = FALSE
