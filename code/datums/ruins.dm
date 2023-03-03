@@ -6,6 +6,7 @@
 	How is there a wooden container filled with 18th century coinage in the middle of a lavawracked hellscape? \
 	It is clearly a mystery."
 
+	var/placement_weight = 1
 	var/cost = 0 //Cost in ruin budget placement system
 	var/allow_duplicates = TRUE
 	var/list/always_spawn_with = null //These ruin types will be spawned along with it (where dependent on the flag) eg list(/datum/map_template/ruin/space/teleporter_space = SPACERUIN_Z)

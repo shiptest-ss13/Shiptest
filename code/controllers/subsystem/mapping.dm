@@ -13,6 +13,7 @@ SUBSYSTEM_DEF(mapping)
  */
 
 	var/list/ruin_types_list = list()
+	var/list/ruin_types_probabilities = list()
 	var/list/ruins_templates = list()
 	var/list/planet_types = list()
 
@@ -110,6 +111,8 @@ SUBSYSTEM_DEF(mapping)
 		planet_types[initial(type.planet)] = new type
 
 	// Still supporting bans by filename
+	// I hate this so much. I want to kill it because I don't think ANYONE uses this
+	// Couldn't you just remove it on a fork or something??? come onnnnnnnnnnnn stop EXISTING already
 	var/list/banned = generateMapList("[global.config.directory]/lavaruinblacklist.txt")
 	banned += generateMapList("[global.config.directory]/spaceruinblacklist.txt")
 	banned += generateMapList("[global.config.directory]/iceruinblacklist.txt")
@@ -130,7 +133,11 @@ SUBSYSTEM_DEF(mapping)
 
 		map_templates[R.name] = R
 		ruins_templates[R.name] = R
-		ruin_types_list[R.ruin_type] += list(R)
+		ruin_types_list[R.ruin_type] += list(R.name = R)
+
+		var/list/ruin_entry = list()
+		ruin_entry[R] = initial(R.placement_weight)
+		ruin_types_probabilities[R.ruin_type] += ruin_entry
 
 /datum/controller/subsystem/mapping/proc/preloadShuttleTemplates()
 	for(var/item in subtypesof(/datum/map_template/shuttle))
