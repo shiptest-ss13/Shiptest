@@ -35,6 +35,12 @@
 	description = "A small pirate outpost formed from the remains of a wrecked shuttle."
 	suffix = "beach_pirate_crash.dmm"
   
+/datum/map_template/ruin/beachplanet/fallenstar
+	name = "Crashed Starwalker"
+	id = "crashed_star"
+	description = "A Crashed Starwalker Class Pirate Ship. It's Crew is Long-Dead."
+	suffix = "beach_crashed_starwalker.dmm"
+
 /datum/map_template/ruin/beachplanet/knight
 	name = "Knight's Rest"
 	id = "knights_rest"

@@ -564,8 +564,6 @@
 /obj/structure/closet/crate,
 /obj/item/rcl,
 /obj/item/stack/sheet/mineral/plasma/twenty,
-/obj/item/circuitboard/mecha/pod,
-/obj/item/pod_parts/core,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "lQ" = (
@@ -1171,8 +1169,8 @@
 /area/ship/hallway/central)
 "yT" = (
 /obj/structure/bed/dogbed{
-	name = "citrus's bed";
-	anchored = 1
+	anchored = 1;
+	name = "citrus's bed"
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 9
@@ -1244,7 +1242,6 @@
 /obj/effect/turf_decal/box/corners{
 	dir = 8
 	},
-/obj/spacepod/prebuilt,
 /turf/open/floor/engine,
 /area/ship/cargo)
 "Ai" = (
@@ -1523,6 +1520,7 @@
 /area/ship/crew/office)
 "Go" = (
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/spawner/lootdrop/maintenance/two,
 /turf/open/floor/engine,
 /area/ship/cargo)
 "Gp" = (
@@ -1948,6 +1946,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/engine,
 /area/ship/cargo)
 "Qg" = (
@@ -2134,8 +2133,8 @@
 /obj/effect/turf_decal/box/corners{
 	dir = 8
 	},
-/obj/spacepod,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/engine,
 /area/ship/cargo)
 "TL" = (
@@ -2254,7 +2253,15 @@
 	},
 /turf/open/floor/engine,
 /area/ship/cargo)
+"Vh" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/spawner/lootdrop/maintenance,
+/turf/open/floor/engine,
+/area/ship/cargo)
 "Vq" = (
+/obj/effect/spawner/lootdrop/maintenance/two,
 /turf/open/floor/engine,
 /area/ship/cargo)
 "Vy" = (
@@ -2301,6 +2308,7 @@
 "VW" = (
 /obj/effect/turf_decal/industrial/stand_clear,
 /obj/effect/turf_decal/industrial/warning,
+/obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/engine,
 /area/ship/cargo)
 "Wf" = (
@@ -2328,23 +2336,14 @@
 "Wv" = (
 /obj/effect/turf_decal/box,
 /obj/structure/table/reinforced,
-/obj/item/spacepod_equipment/weaponry/plasma_cutter{
-	pixel_x = -1;
-	pixel_y = -4
-	},
 /obj/structure/railing{
 	dir = 1
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
-/obj/item/spacepod_equipment/weaponry/plasma_cutter{
-	pixel_x = 7
-	},
-/obj/item/spacepod_equipment/weaponry/laser,
-/obj/item/spacepod_equipment/cargo/large/ore,
-/obj/item/spacepod_equipment/cargo/chair,
+/obj/effect/spawner/lootdrop/maintenance/five,
+/obj/effect/spawner/lootdrop/maintenance/five,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "WE" = (
@@ -2689,7 +2688,7 @@ fw
 "}
 (11,1,1) = {"
 Va
-mC
+Vh
 ff
 Aa
 Wv
