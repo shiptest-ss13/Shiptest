@@ -848,7 +848,7 @@
 	encounter.template = ruin_target
 	encounter.choose_level_type(FALSE)
 	if(!ruin_target)
-		encounter.ruin_list = null
+		encounter.ruin_type = null
 	encounter.preserve_level = TRUE
 	encounter.load_level()
 

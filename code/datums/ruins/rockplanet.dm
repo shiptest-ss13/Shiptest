@@ -4,6 +4,7 @@
 	prefix = "_maps/RandomRuins/RockRuins/"
 	allow_duplicates = FALSE
 	cost = 5
+	ruin_type = RUINTYPE_ROCK
 
 /datum/map_template/ruin/rockplanet/heirophant
 	name = "Ancient Heirophant"
