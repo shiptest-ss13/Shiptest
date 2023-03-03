@@ -171,4 +171,4 @@
 /obj/structure/railing/modern/corner
 	icon_state = "railing_m_corner"
 	density = FALSE
-	climable = FALSE
+	climbable = FALSE
