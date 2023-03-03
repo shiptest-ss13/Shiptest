@@ -912,7 +912,8 @@
 /obj/docking_port/mobile/proc/on_emergency_launch()
 	if(launch_status == UNLAUNCHED) //Pods will not launch from the mine/planet, and other ships won't launch unless we tell them to.
 		launch_status = ENDGAME_LAUNCHED
-		enterTransit()
+		if(!current_ship || !istype(current_ship.docked_to, /datum/overmap/ship/controlled)) //Prevents subships from leaving their mothership
+			enterTransit()
 
 /obj/docking_port/mobile/emergency/on_emergency_launch()
 	return

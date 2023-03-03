@@ -350,6 +350,9 @@ SUBSYSTEM_DEF(shuttle)
 
 	new_shuttle.initiate_docking(transit_dock)
 	new_shuttle.linkup(transit_dock, parent)
+
+	var/area/fill_area = GLOB.areas_by_type[/area/space]
+	loading_zone.fill_in(turf_type = /turf/open/space/transit/south, area_override = fill_area ? fill_area : /area/space)
 	QDEL_NULL(loading_zone)
 
 	//Everything fine
