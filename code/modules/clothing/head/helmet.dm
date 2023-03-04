@@ -283,26 +283,6 @@
 	desc = "Designed to protect against close range attacks. Mainly used by the CM-BARD against hostile xenofauna, it also sees prolific use on some Minutemen member worlds."
 	icon_state = "riot_minutemen"
 
-
-/obj/item/clothing/head/helmet/justice
-	name = "helmet of justice"
-	desc = "WEEEEOOO. WEEEEEOOO. WEEEEOOOO."
-	icon_state = "justice"
-	toggle_message = "You turn off the lights on"
-	alt_toggle_message = "You turn on the lights on"
-	actions_types = list(/datum/action/item_action/toggle_helmet_light)
-	can_toggle = 1
-	toggle_cooldown = 20
-	active_sound = 'sound/items/weeoo1.ogg'
-	dog_fashion = null
-
-/obj/item/clothing/head/helmet/justice/escape
-	name = "alarm helmet"
-	desc = "WEEEEOOO. WEEEEEOOO. STOP THAT MONKEY. WEEEOOOO."
-	icon_state = "justice2"
-	toggle_message = "You turn off the light on"
-	alt_toggle_message = "You turn on the light on"
-
 /obj/item/clothing/head/helmet/swat
 	name = "\improper SWAT helmet"
 	desc = "An extremely robust, space-worthy helmet in a nefarious red and black stripe pattern."

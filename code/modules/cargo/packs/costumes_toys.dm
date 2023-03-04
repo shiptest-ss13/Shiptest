@@ -191,15 +191,6 @@
 	crate_name = "formalwear crate"
 	crate_type = /obj/structure/closet/crate/wooden
 
-// this is technically armor but you aren't buying it for that. it's a joke pack so it goes here
-/datum/supply_pack/costumes_toys/justiceinbound
-	name = "Standard Justice Enforcer Crate"
-	desc = "This is it. The Bee's Knees. The Creme of the Crop. The Pick of the Litter. The best of the best of the best. The Crown Jewel of Nanotrasen. The Alpha and the Omega of security headwear. Guaranteed to strike fear into the hearts of each and every criminal unfortunate enough to hear its screeching wail bore into their soul. Also comes with a security gasmask."
-	cost = 6000 //justice comes at a price. An expensive, noisy price.
-	contains = list(/obj/item/clothing/head/helmet/justice,
-					/obj/item/clothing/mask/gas/sechailer)
-	crate_name = "security clothing crate"
-
 /datum/supply_pack/costumes_toys/collectable_hats
 	name = "Collectable Hats Crate"
 	desc = "Flaunt your status with three unique, highly-collectable hats!"
