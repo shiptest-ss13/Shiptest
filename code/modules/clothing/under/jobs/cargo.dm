@@ -15,7 +15,6 @@
 	item_state = "lb_suit"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
-	fitted = FEMALE_UNIFORM_TOP
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/under/rank/cargo/tech
@@ -35,7 +34,6 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 	can_adjust = FALSE
-	fitted = FEMALE_UNIFORM_TOP
 
 /obj/item/clothing/under/rank/cargo/miner
 	desc = "It's a snappy jumpsuit with a sturdy set of overalls. It is very dirty."
@@ -73,7 +71,6 @@
 	name = "supply chief suit"
 	desc = "A suit with supply colors, worn by those who lead the supply department."
 	icon_state = "supply_chief"
-	fitted = NO_FEMALE_UNIFORM
 	icon = 'icons/obj/clothing/under/cargo.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/under/cargo.dmi'
 
@@ -88,7 +85,6 @@
 	name = "deliveries officer suit"
 	desc = "A suit with cargo colors, with a pair of shorts..."
 	icon_state = "deliveries_officer"
-	fitted = NO_FEMALE_UNIFORM
 	icon = 'icons/obj/clothing/under/cargo.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/under/cargo.dmi'
 
@@ -106,8 +102,6 @@
 	desc = "Shorts and lost mail makes up this jumpsuit."
 	icon_state = "mailroom_technician"
 	body_parts_covered = CHEST|GROIN|ARMS
-	// mutantrace_variation = NO_MUTANTRACE_VARIATION
-	fitted = NO_FEMALE_UNIFORM
 	icon = 'icons/obj/clothing/under/cargo.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/under/cargo.dmi'
 
