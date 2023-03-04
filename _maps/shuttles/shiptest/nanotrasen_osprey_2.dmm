@@ -5,7 +5,7 @@
 	},
 /obj/structure/closet/secure_closet/wall{
 	dir = 4;
-	icon_door = "sec_wall_door";
+	icon_door = "sec_wall";
 	icon_state = "sec_wall";
 	name = "gun locker";
 	pixel_x = -32;
@@ -147,32 +147,27 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/science/ai_chamber)
 "bA" = (
-/obj/structure/disposalpipe/junction{
-	dir = 8
-	},
 /obj/effect/turf_decal/corner/transparent/neutral,
+/obj/structure/disposalpipe/segment{
+	dir = 9
+	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "bF" = (
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "bG" = (
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/structure/disposalpipe/trunk{
-	dir = 8
-	},
-/obj/structure/disposaloutlet{
-	dir = 4
-	},
-/obj/structure/window/reinforced{
-	dir = 1
-	},
 /obj/machinery/light,
+/obj/machinery/conveyor{
+	dir = 4;
+	id = "osprey_packagesort"
+	},
 /turf/open/floor/plating,
 /area/ship/cargo/office)
 "bN" = (
@@ -188,11 +183,13 @@
 /obj/effect/turf_decal/industrial/stand_clear{
 	dir = 4
 	},
+/obj/structure/disposalpipe/segment,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "bT" = (
 /obj/structure/spider/stickyweb,
 /obj/effect/spawner/lootdrop/maintenance,
+/obj/item/toy/figure/cargotech,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "cd" = (
@@ -341,15 +338,20 @@
 /obj/structure/disposalpipe/segment{
 	dir = 2
 	},
-/obj/effect/turf_decal/borderfloor{
-	dir = 1
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/door/poddoor/preopen{
+	id = "osprey_disposals_preopen"
+	},
+/obj/effect/turf_decal/industrial/warning/fulltile,
 /turf/open/floor/plasteel/tech/grid,
+/area/ship/science/ai_chamber)
+"dr" = (
+/obj/machinery/light,
+/turf/open/floor/plasteel/dark,
 /area/ship/science/ai_chamber)
 "dw" = (
 /obj/machinery/cryopod{
@@ -418,7 +420,7 @@
 /area/ship/crew/cryo)
 "eh" = (
 /obj/effect/spawner/structure/window/shuttle,
-/obj/machinery/door/poddoor/shutters/preopen{
+/obj/machinery/door/poddoor/shutters{
 	id = "ospreycargo"
 	},
 /turf/open/floor/plating,
@@ -519,7 +521,7 @@
 "eT" = (
 /obj/structure/disposalpipe/sorting/mail/flip{
 	dir = 4;
-	sortType = 4;
+	sortTypes = list(4, 5);
 	tag = "Engineering"
 	},
 /obj/structure/cable{
@@ -576,7 +578,11 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "fn" = (
-/obj/structure/reagent_dispensers/watertank/high,
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/machinery/disposal/bin,
+/obj/structure/disposalpipe/trunk,
 /turf/open/floor/plating,
 /area/ship/crew/janitor)
 "fF" = (
@@ -686,7 +692,7 @@
 /area/ship/hallway/central)
 "gM" = (
 /obj/effect/spawner/structure/window/shuttle,
-/obj/machinery/door/poddoor/shutters/preopen{
+/obj/machinery/door/poddoor/shutters{
 	id = "ospreywindows"
 	},
 /turf/open/floor/plating,
@@ -713,6 +719,10 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
+"hc" = (
+/obj/effect/landmark/start/cargo_technician,
+/turf/open/floor/plasteel,
+/area/ship/cargo/office)
 "hd" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
@@ -733,10 +743,12 @@
 /turf/closed/wall/mineral/titanium,
 /area/ship/science)
 "hj" = (
-/obj/structure/disposaloutlet{
-	dir = 4
+/obj/machinery/mass_driver{
+	dir = 8;
+	id = "osprey_disposals"
 	},
-/obj/structure/disposalpipe/trunk{
+/obj/item/reagent_containers/food/snacks/deadmouse,
+/obj/structure/window/reinforced{
 	dir = 4
 	},
 /turf/open/floor/plating,
@@ -794,6 +806,10 @@
 	},
 /obj/machinery/door/window/eastright,
 /obj/structure/disposalpipe/trunk,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "hG" = (
@@ -1009,13 +1025,11 @@
 /turf/open/floor/plasteel/freezer,
 /area/ship/crew/toilet)
 "je" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
+/obj/structure/disposalpipe/segment{
+	dir = 8
 	},
-/obj/structure/disposalpipe/sorting/mail{
-	dir = 8;
-	sortType = 1;
-	tag = "Disposals"
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/janitor)
@@ -1063,7 +1077,7 @@
 "jM" = (
 /obj/structure/disposalpipe/sorting/mail/flip{
 	dir = 4;
-	sortType = 20;
+	sortTypes = list(17, 18, 19, 20, 21);
 	tag = "Kitchen"
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
@@ -1132,11 +1146,14 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/janitor)
 "ki" = (
-/obj/machinery/conveyor,
-/obj/structure/disposalpipe/segment{
-	dir = 10
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
 	},
-/turf/open/floor/plating,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/structure/closet/crate/coffin,
+/turf/open/floor/plasteel,
 /area/ship/crew/janitor)
 "ko" = (
 /obj/structure/railing{
@@ -1275,7 +1292,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/machinery/power/smes/magical,
+/obj/machinery/power/smes/engineering,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/engineering)
 "li" = (
@@ -1286,13 +1303,12 @@
 /obj/structure/disposalpipe/segment{
 	dir = 2
 	},
-/obj/machinery/door/poddoor/shutters/preopen{
+/obj/machinery/door/poddoor/shutters{
 	id = "ospreycargo"
 	},
 /turf/open/floor/plating,
 /area/ship/cargo/office)
 "ll" = (
-/obj/effect/turf_decal/industrial/stand_clear,
 /obj/structure/disposalpipe/segment{
 	dir = 2
 	},
@@ -1301,6 +1317,10 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/door/poddoor/preopen{
+	id = "osprey_disposals_preopen"
+	},
+/obj/effect/turf_decal/industrial/warning/fulltile,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/science/ai_chamber)
 "lr" = (
@@ -1365,12 +1385,10 @@
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "lJ" = (
-/obj/structure/disposalpipe/segment{
-	dir = 2
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plasteel,
 /area/ship/cargo/office)
 "lL" = (
@@ -1427,8 +1445,8 @@
 "mq" = (
 /obj/structure/disposalpipe/sorting/mail{
 	dir = 2;
-	sortType = 2;
-	tag = "Cargo Bay"
+	sortTypes = list(2, 3);
+	tag = "QM Office"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
@@ -1548,7 +1566,16 @@
 /obj/structure/disposalpipe/trunk{
 	dir = 8
 	},
-/obj/machinery/airalarm/directional/south,
+/obj/machinery/light,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/machinery/door/window/northleft{
+	req_access_txt = "19"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "nE" = (
@@ -1664,7 +1691,7 @@
 "oE" = (
 /obj/structure/closet/wall{
 	dir = 1;
-	icon_door = null;
+	icon_door = "grey_wall";
 	name = "radio locker";
 	pixel_y = -28
 	},
@@ -1715,7 +1742,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/corner/opaque/blue,
-/obj/machinery/door/poddoor/shutters/preopen{
+/obj/machinery/door/poddoor/shutters{
 	id = "ospreymed"
 	},
 /turf/open/floor/plasteel/white,
@@ -1738,6 +1765,14 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
+"pe" = (
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/machinery/door/poddoor{
+	id = "osprey_disposals";
+	name = "Disposals Blast Door"
+	},
+/turf/open/floor/plating,
+/area/ship/science/ai_chamber)
 "pk" = (
 /obj/structure/railing{
 	dir = 8
@@ -1830,13 +1865,13 @@
 	req_access_txt = "47"
 	},
 /obj/item/table_bell,
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "ospreysci"
-	},
 /obj/structure/disposalpipe/segment,
 /obj/structure/noticeboard{
 	dir = 4;
 	pixel_x = -32
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "ospreysci"
 	},
 /turf/open/floor/plating,
 /area/ship/science)
@@ -1846,16 +1881,6 @@
 	},
 /turf/open/floor/carpet/blue,
 /area/ship/bridge)
-"pX" = (
-/obj/machinery/conveyor{
-	dir = 1;
-	id = "osprey_mailroom"
-	},
-/obj/machinery/door/window/westright{
-	req_access_txt = "31"
-	},
-/turf/open/floor/plating,
-/area/ship/cargo/office)
 "qb" = (
 /obj/structure/closet/secure_closet{
 	icon_state = "science";
@@ -1905,6 +1930,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 8
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
@@ -2046,11 +2074,11 @@
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
 "rS" = (
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/machinery/light,
 /obj/structure/disposalpipe/segment{
 	dir = 8
 	},
-/obj/effect/turf_decal/corner/transparent/neutral,
-/obj/machinery/light,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "rX" = (
@@ -2092,7 +2120,7 @@
 	dir = 8
 	},
 /obj/item/table_bell,
-/obj/machinery/door/poddoor/shutters/preopen{
+/obj/machinery/door/poddoor/shutters{
 	id = "ospreykitchen"
 	},
 /turf/open/floor/plasteel,
@@ -2105,7 +2133,7 @@
 /area/ship/science)
 "su" = (
 /obj/effect/spawner/structure/window/shuttle,
-/obj/machinery/door/poddoor/shutters/preopen{
+/obj/machinery/door/poddoor/shutters{
 	id = "ospreywindows"
 	},
 /turf/open/floor/plating,
@@ -2198,6 +2226,7 @@
 /obj/effect/turf_decal/corner/opaque/bottlegreen{
 	dir = 8
 	},
+/obj/structure/disposalpipe/junction/flip,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "tb" = (
@@ -2324,6 +2353,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
+"uh" = (
+/obj/machinery/power/terminal,
+/turf/open/floor/plasteel/patterned/grid,
+/area/ship/engineering)
 "ui" = (
 /obj/machinery/turretid{
 	pixel_y = 28;
@@ -2344,12 +2377,17 @@
 /area/ship/crew/cryo)
 "ut" = (
 /obj/structure/chair,
-/obj/structure/disposalpipe/segment{
-	dir = 8
-	},
 /obj/effect/landmark/start/janitor,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+/obj/structure/disposalpipe/sorting/mail{
+	dir = 4;
+	sortType = 1;
+	tag = "Disposals"
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/janitor)
@@ -2417,11 +2455,6 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/janitor)
 "uJ" = (
-/obj/structure/disposalpipe/sorting/mail{
-	dir = 4;
-	sortType = 22;
-	tag = "Jantor Closet"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
@@ -2430,6 +2463,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "1-4"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 8
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/janitor)
@@ -2460,6 +2496,13 @@
 /obj/item/reagent_containers/glass/bucket{
 	pixel_x = -3;
 	pixel_y = 8
+	},
+/obj/machinery/light/small,
+/obj/structure/disposalpipe/segment{
+	dir = 9
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ship/crew/janitor)
@@ -2494,12 +2537,13 @@
 /turf/open/floor/plasteel,
 /area/ship/cargo/office)
 "vD" = (
-/obj/machinery/mass_driver{
-	dir = 8;
-	id = "osprey_disposals"
+/obj/structure/window/reinforced{
+	dir = 4
 	},
-/obj/structure/window/reinforced,
-/mob/living/simple_animal/mouse/brown,
+/obj/machinery/conveyor{
+	dir = 1;
+	id = "osprey_garbage"
+	},
 /turf/open/floor/plating,
 /area/ship/crew/janitor)
 "wb" = (
@@ -2515,24 +2559,11 @@
 /turf/open/floor/plating,
 /area/ship/crew/janitor)
 "wc" = (
-/obj/structure/closet/secure_closet{
-	icon_state = "cargo";
-	name = "\proper cargo technician's locker";
-	req_access_txt = "31"
+/obj/machinery/conveyor{
+	dir = 4;
+	id = "osprey_packagesort"
 	},
-/obj/item/clothing/shoes/sneakers/black,
-/obj/item/clothing/under/rank/cargo/tech,
-/obj/item/clothing/under/rank/cargo/tech/skirt,
-/obj/item/clothing/head/safety_helmet,
-/obj/structure/disposalpipe/segment{
-	dir = 8
-	},
-/obj/effect/turf_decal/corner/opaque/brown{
-	dir = 8
-	},
-/obj/effect/turf_decal/corner/opaque/brown,
-/obj/machinery/airalarm/directional/south,
-/turf/open/floor/plasteel,
+/turf/open/floor/plating,
 /area/ship/cargo/office)
 "wd" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
@@ -2597,7 +2628,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/corner/opaque/blue,
-/obj/machinery/door/poddoor/shutters/preopen{
+/obj/machinery/door/poddoor/shutters{
 	id = "ospreymed"
 	},
 /turf/open/floor/plasteel/white,
@@ -2721,13 +2752,15 @@
 /obj/structure/janitorialcart{
 	dir = 8
 	},
-/obj/structure/disposalpipe/segment{
-	dir = 8
-	},
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
 /obj/machinery/power/apc/auto_name/east,
+/obj/structure/disposalpipe/sorting/mail{
+	dir = 8;
+	sortType = 22;
+	tag = "Jantor Closet"
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew/janitor)
 "xq" = (
@@ -2738,7 +2771,7 @@
 /obj/machinery/button/door{
 	dir = 8;
 	id = "ospreywindows";
-	name = "Window Shutters";
+	name = "External Window Shutters";
 	pixel_x = 32;
 	pixel_y = -6
 	},
@@ -2766,14 +2799,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
-"xC" = (
-/obj/machinery/door/poddoor{
-	id = "osprey_disposals";
-	name = "Disposals Blast Door"
-	},
-/obj/effect/turf_decal/industrial/warning/fulltile,
-/turf/open/floor/plating,
-/area/ship/crew/janitor)
 "xF" = (
 /obj/effect/turf_decal/corner/opaque/green{
 	dir = 4
@@ -2781,11 +2806,11 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "xG" = (
+/obj/machinery/light,
 /obj/machinery/conveyor{
 	dir = 8;
-	id = "osprey_cargochute"
+	id = "osprey_cargoload"
 	},
-/obj/machinery/light,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "xJ" = (
@@ -3059,28 +3084,24 @@
 /turf/open/floor/plating,
 /area/ship/bridge)
 "zM" = (
-/obj/structure/closet/secure_closet{
-	icon_state = "qm";
-	name = "\proper quartermaster's locker";
-	req_access_txt = "41"
-	},
-/obj/item/clothing/shoes/sneakers/brown,
-/obj/item/clothing/under/rank/cargo/qm,
-/obj/item/clothing/under/rank/cargo/qm/skirt,
-/obj/item/clothing/head/beret/qm,
-/obj/item/stamp/qm,
-/obj/item/clothing/glasses/sunglasses,
-/obj/item/clothing/gloves/fingerless,
-/obj/item/megaphone/cargo,
-/obj/item/clothing/head/safety_helmet,
-/obj/structure/disposalpipe/junction/flip{
+/obj/structure/disposaloutlet{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/opaque/brown{
+/obj/structure/disposalpipe/trunk{
 	dir = 8
 	},
-/obj/effect/turf_decal/corner/opaque/brown,
-/turf/open/floor/plasteel,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/window/reinforced,
+/obj/machinery/conveyor{
+	dir = 4;
+	id = "osprey_packagesort"
+	},
+/turf/open/floor/plating,
 /area/ship/cargo/office)
 "zN" = (
 /obj/structure/railing,
@@ -3143,7 +3164,7 @@
 /area/ship/hallway/central)
 "An" = (
 /obj/effect/spawner/structure/window/shuttle,
-/obj/machinery/door/poddoor/shutters/preopen{
+/obj/machinery/door/poddoor/shutters{
 	id = "ospreysci"
 	},
 /turf/open/floor/plating,
@@ -3220,6 +3241,7 @@
 /area/ship/medical)
 "Bn" = (
 /obj/machinery/airalarm/directional/west,
+/obj/structure/disposalpipe/segment,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "Bp" = (
@@ -3440,6 +3462,9 @@
 	pixel_x = -5;
 	pixel_y = 24
 	},
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Dj" = (
@@ -3543,10 +3568,10 @@
 /area/ship/medical)
 "Ek" = (
 /obj/effect/turf_decal/industrial/warning{
-	dir = 4
+	dir = 6
 	},
 /obj/machinery/conveyor_switch/oneway{
-	id = "osprey_mailroom"
+	id = "osprey_packagesort"
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo/office)
@@ -3590,7 +3615,7 @@
 /area/ship/hallway/central)
 "EN" = (
 /obj/effect/spawner/structure/window/shuttle,
-/obj/machinery/door/poddoor/shutters/preopen{
+/obj/machinery/door/poddoor/shutters{
 	id = "ospreywindows"
 	},
 /turf/open/floor/plating,
@@ -3704,12 +3729,6 @@
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
 "FF" = (
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/machinery/conveyor_switch/oneway{
-	id = "osprey_conveyor"
-	},
 /obj/machinery/button/massdriver{
 	id = "osprey_disposals";
 	name = "disposals button";
@@ -3717,9 +3736,12 @@
 	pixel_y = 24
 	},
 /obj/machinery/button/door{
-	id = "osprey_disposalS_preopen";
+	id = "osprey_disposals_preopen";
 	pixel_x = -7;
 	pixel_y = 25
+	},
+/obj/machinery/conveyor_switch/oneway{
+	id = "osprey_garbage"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/janitor)
@@ -3776,8 +3798,9 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Gu" = (
-/obj/machinery/conveyor{
-	dir = 1
+/obj/machinery/conveyor/inverted{
+	dir = 10;
+	id = "osprey_packagesort"
 	},
 /turf/open/floor/plating,
 /area/ship/cargo/office)
@@ -3821,11 +3844,17 @@
 /obj/structure/disposalpipe/trunk{
 	dir = 8
 	},
+/obj/machinery/disposal/deliveryChute,
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/structure/plasticflaps,
-/obj/machinery/disposal/deliveryChute,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/machinery/door/window/southright,
 /turf/open/floor/plating,
 /area/ship/cargo/office)
 "GN" = (
@@ -3928,7 +3957,7 @@
 /area/ship/hallway/central)
 "Ht" = (
 /obj/structure/disposalpipe/segment{
-	dir = 2
+	dir = 9
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo/office)
@@ -3999,21 +4028,13 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "Ie" = (
-/obj/structure/table,
-/obj/item/folder/yellow,
-/obj/item/stamp/denied{
-	pixel_x = 4
-	},
-/obj/item/stamp{
-	pixel_x = -5;
-	pixel_y = 9
-	},
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 8
 	},
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 1
 	},
+/obj/machinery/photocopier,
 /turf/open/floor/plasteel,
 /area/ship/cargo/office)
 "Ig" = (
@@ -4037,6 +4058,9 @@
 /obj/effect/turf_decal/corner/transparent/neutral,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/disposalpipe/segment{
+	dir = 9
+	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "Iq" = (
@@ -4103,15 +4127,18 @@
 /obj/structure/disposalpipe/segment{
 	dir = 2
 	},
-/obj/machinery/door/poddoor/shutters/preopen{
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/door/poddoor/shutters{
 	id = "ospreykitchen"
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "IT" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 2
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo/office)
@@ -4146,14 +4173,15 @@
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
 "Jw" = (
-/obj/structure/closet/crate/coffin,
 /obj/structure/disposalpipe/segment{
 	dir = 6
 	},
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
+/obj/machinery/door/window/eastleft,
+/obj/machinery/conveyor{
+	dir = 1;
+	id = "osprey_garbage"
 	},
-/turf/open/floor/plasteel,
+/turf/open/floor/plating,
 /area/ship/crew/janitor)
 "JD" = (
 /obj/structure/bed,
@@ -4181,6 +4209,13 @@
 	pixel_x = 5;
 	pixel_y = -24
 	},
+/obj/machinery/button/door{
+	dir = 1;
+	id = "ospreykitchen";
+	name = "Shutter Control";
+	pixel_x = -5;
+	pixel_y = -25
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "JL" = (
@@ -4195,14 +4230,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
-"JO" = (
-/obj/machinery/door/poddoor{
-	id = "osprey_disposals";
-	name = "Disposals Blast Door"
-	},
-/obj/effect/turf_decal/industrial/warning/fulltile,
-/turf/open/floor/plating,
-/area/ship/science/ai_chamber)
 "JW" = (
 /obj/machinery/vending/cigarette,
 /obj/effect/turf_decal/corner/transparent/neutral{
@@ -4271,9 +4298,16 @@
 /obj/machinery/computer/med_data{
 	dir = 4
 	},
+/obj/machinery/button/door{
+	dir = 1;
+	id = "ospreymed";
+	name = "Shutter Control";
+	pixel_x = 5;
+	pixel_y = -25
+	},
 /obj/machinery/light_switch{
 	dir = 1;
-	pixel_x = 5;
+	pixel_x = -5;
 	pixel_y = -24
 	},
 /turf/open/floor/plasteel/white,
@@ -4304,7 +4338,7 @@
 /obj/effect/turf_decal/corner/opaque/white{
 	dir = 8
 	},
-/obj/machinery/door/poddoor/shutters/preopen{
+/obj/machinery/door/poddoor/shutters{
 	id = "ospreykitchen"
 	},
 /turf/open/floor/plasteel,
@@ -4355,18 +4389,19 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/science/ai_chamber)
 "LX" = (
-/obj/structure/closet/secure_closet{
-	icon_door = "mixed";
-	icon_state = "generic";
-	name = "custodial closet"
+/obj/structure/disposalpipe/trunk{
+	dir = 4
 	},
-/obj/item/storage/backpack,
-/obj/item/clothing/shoes/galoshes,
-/obj/item/clothing/under/rank/civilian/janitor,
-/obj/item/clothing/gloves/color/black,
-/obj/item/clothing/glasses/science,
-/obj/item/storage/belt/janitor,
-/obj/item/clothing/head/soft/purple,
+/obj/structure/disposaloutlet{
+	dir = 1
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/machinery/conveyor{
+	dir = 1;
+	id = "osprey_garbage"
+	},
 /turf/open/floor/plating,
 /area/ship/crew/janitor)
 "Ma" = (
@@ -4386,7 +4421,7 @@
 "My" = (
 /obj/structure/disposalpipe/sorting/mail/flip{
 	dir = 4;
-	sortType = 26;
+	sortTypes = list(16, 26);
 	tag = "Dormitories"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -4456,6 +4491,21 @@
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/dorm)
+"Np" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ship/hallway/central)
 "Nq" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -4483,6 +4533,14 @@
 	},
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 1
+	},
+/obj/structure/table,
+/obj/item/stack/sheet/metal/five{
+	pixel_x = -3
+	},
+/obj/item/stack/sheet/glass/five{
+	pixel_x = 2;
+	pixel_y = 5
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo/office)
@@ -4565,7 +4623,7 @@
 /obj/effect/turf_decal/corner/opaque/purple{
 	dir = 1
 	},
-/obj/structure/disposalpipe/junction,
+/obj/structure/disposalpipe/segment,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "Oq" = (
@@ -4592,10 +4650,18 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Ou" = (
-/obj/machinery/disposal/bin,
-/obj/structure/disposalpipe/trunk{
-	dir = 1
+/obj/structure/closet/secure_closet{
+	icon_door = "mixed";
+	icon_state = "generic";
+	name = "custodial closet"
 	},
+/obj/item/storage/backpack,
+/obj/item/clothing/shoes/galoshes,
+/obj/item/clothing/under/rank/civilian/janitor,
+/obj/item/clothing/gloves/color/black,
+/obj/item/clothing/glasses/science,
+/obj/item/storage/belt/janitor,
+/obj/item/clothing/head/soft/purple,
 /obj/machinery/light_switch{
 	dir = 8;
 	pixel_x = 24;
@@ -4612,16 +4678,19 @@
 /obj/structure/disposalpipe/segment{
 	dir = 5
 	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+/obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/machinery/airalarm/directional/west,
-/turf/open/floor/plasteel,
+/obj/machinery/conveyor{
+	dir = 1;
+	id = "osprey_garbage"
+	},
+/turf/open/floor/plating,
 /area/ship/crew/janitor)
 "OD" = (
 /obj/machinery/conveyor{
 	dir = 8;
-	id = "osprey_cargochute"
+	id = "osprey_cargoload"
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
@@ -4647,12 +4716,15 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/janitor)
 "OW" = (
-/obj/structure/disposalpipe/junction/flip,
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /obj/effect/turf_decal/corner/opaque/green{
 	dir = 1
+	},
+/obj/structure/disposalpipe/sorting/mail/flip{
+	sortTypes = list(7, 8, 15, 29, 30);
+	tag = "Command"
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
@@ -4682,7 +4754,7 @@
 "Pj" = (
 /obj/machinery/disposal/bin,
 /obj/structure/disposalpipe/trunk{
-	dir = 4
+	dir = 2
 	},
 /obj/effect/turf_decal/corner/opaque/purple{
 	dir = 4
@@ -4736,8 +4808,8 @@
 "PQ" = (
 /obj/structure/disposalpipe/sorting/mail/flip{
 	dir = 4;
-	sortType = 14;
-	tag = "Robotics"
+	sortTypes = list(12, 13, 14, 23, 24, 25, 27, 28);
+	tag = "Research"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -4756,7 +4828,7 @@
 "PV" = (
 /obj/structure/disposalpipe/sorting/mail/flip{
 	dir = 4;
-	sortType = 9;
+	sortTypes = list(9, 10, 11);
 	tag = "Medbay"
 	},
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer2,
@@ -4835,6 +4907,7 @@
 /obj/effect/turf_decal/corner/transparent/neutral,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/disposalpipe/segment,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "QK" = (
@@ -4853,6 +4926,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
+/obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plasteel,
 /area/ship/cargo/office)
 "Ro" = (
@@ -4877,6 +4951,7 @@
 	pixel_x = 1;
 	pixel_y = 1
 	},
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "RD" = (
@@ -4923,6 +4998,7 @@
 "Sa" = (
 /obj/structure/table,
 /obj/item/storage/box/lights/mixed,
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel,
 /area/ship/crew/janitor)
 "Sd" = (
@@ -4975,6 +5051,14 @@
 /obj/machinery/airalarm/directional/west,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/cryo)
+"SB" = (
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/machinery/door/poddoor{
+	id = "osprey_disposals";
+	name = "Disposals Blast Door"
+	},
+/turf/open/floor/plating,
+/area/ship/crew/janitor)
 "SC" = (
 /obj/effect/turf_decal/corner/opaque/mauve{
 	dir = 8
@@ -4983,14 +5067,27 @@
 /turf/open/floor/plasteel/white,
 /area/ship/science)
 "SG" = (
-/obj/structure/disposalpipe/segment{
-	dir = 5
+/obj/structure/closet/secure_closet{
+	icon_state = "qm";
+	name = "\proper quartermaster's locker";
+	req_access_txt = "41"
 	},
-/obj/machinery/autolathe,
+/obj/item/clothing/shoes/sneakers/brown,
+/obj/item/clothing/under/rank/cargo/qm,
+/obj/item/clothing/under/rank/cargo/qm/skirt,
+/obj/item/clothing/head/beret/qm,
+/obj/item/stamp/qm,
+/obj/item/clothing/glasses/sunglasses,
+/obj/item/clothing/gloves/fingerless,
+/obj/item/megaphone/cargo,
+/obj/item/clothing/head/safety_helmet,
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 8
 	},
 /obj/effect/turf_decal/corner/opaque/brown,
+/obj/structure/disposalpipe/segment{
+	dir = 5
+	},
 /turf/open/floor/plasteel,
 /area/ship/cargo/office)
 "SK" = (
@@ -5000,6 +5097,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/item/taperecorder,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "SO" = (
@@ -5027,27 +5125,29 @@
 	pixel_x = -32
 	},
 /obj/item/table_bell,
-/obj/machinery/door/poddoor/shutters/preopen{
+/obj/machinery/door/poddoor/shutters{
 	id = "ospreycargo"
 	},
 /turf/open/floor/plating,
 /area/ship/cargo/office)
 "SR" = (
-/obj/structure/disposalpipe/segment{
-	dir = 8
-	},
-/obj/structure/table,
-/obj/item/stack/sheet/metal/five{
-	pixel_x = -3
-	},
-/obj/item/stack/sheet/glass/five{
-	pixel_x = 2;
-	pixel_y = 5
-	},
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 8
 	},
 /obj/effect/turf_decal/corner/opaque/brown,
+/obj/structure/disposalpipe/junction/flip{
+	dir = 4
+	},
+/obj/structure/closet/secure_closet{
+	icon_state = "cargo";
+	name = "\proper cargo technician's locker";
+	req_access_txt = "31"
+	},
+/obj/item/clothing/shoes/sneakers/black,
+/obj/item/clothing/under/rank/cargo/tech,
+/obj/item/clothing/under/rank/cargo/tech/skirt,
+/obj/item/clothing/head/safety_helmet,
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel,
 /area/ship/cargo/office)
 "SU" = (
@@ -5149,11 +5249,11 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "TJ" = (
-/obj/structure/disposalpipe/segment{
-	dir = 8
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/structure/disposalpipe/junction/flip{
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
@@ -5198,7 +5298,7 @@
 /area/ship/science)
 "TW" = (
 /obj/machinery/conveyor_switch/oneway{
-	id = "osprey_cargochute"
+	id = "osprey_cargoload"
 	},
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plasteel/patterned,
@@ -5210,7 +5310,7 @@
 /area/ship/science)
 "Uj" = (
 /obj/effect/spawner/structure/window/shuttle,
-/obj/machinery/door/poddoor/shutters/preopen{
+/obj/machinery/door/poddoor/shutters{
 	id = "ospreywindows"
 	},
 /turf/open/floor/plating,
@@ -5249,7 +5349,6 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
-/obj/effect/landmark/start/cargo_technician,
 /turf/open/floor/plasteel,
 /area/ship/cargo/office)
 "UL" = (
@@ -5287,12 +5386,9 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/cargo)
 "Vq" = (
-/obj/machinery/door/window/westleft{
-	req_access_txt = "31"
-	},
 /obj/machinery/conveyor{
 	dir = 1;
-	id = "osprey_mailroom"
+	id = "osprey_packagesort"
 	},
 /turf/open/floor/plating,
 /area/ship/cargo/office)
@@ -5359,9 +5455,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/science)
 "VL" = (
-/obj/structure/disposalpipe/segment{
-	dir = 10
-	},
 /obj/effect/turf_decal/corner/transparent/neutral,
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
@@ -5371,6 +5464,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/structure/disposalpipe/segment,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "VR" = (
@@ -5380,6 +5474,9 @@
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer2,
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 6
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
@@ -5401,10 +5498,12 @@
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1
 	},
+/obj/structure/disposalpipe/segment,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "Wn" = (
 /obj/structure/table/wood,
+/obj/machinery/light/small,
 /turf/open/floor/carpet/blue,
 /area/ship/bridge)
 "Wq" = (
@@ -5568,10 +5667,6 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "XR" = (
-/obj/machinery/door/poddoor/preopen{
-	id = "osprey_disposals_preopen"
-	},
-/obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/structure/disposalpipe/segment{
 	dir = 2
 	},
@@ -5580,6 +5675,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/effect/turf_decal/industrial/stand_clear,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/science/ai_chamber)
 "XU" = (
@@ -5590,6 +5686,9 @@
 /obj/item/lighter{
 	pixel_x = -6;
 	pixel_y = -3
+	},
+/obj/machinery/light/small{
+	dir = 1
 	},
 /turf/open/floor/carpet/royalblue,
 /area/ship/bridge)
@@ -5606,17 +5705,11 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/central)
 "Yh" = (
-/obj/machinery/door/window/eastleft{
-	dir = 2
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
 	},
-/obj/machinery/conveyor{
-	dir = 10;
-	id = "osprey_conveyor"
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 2
-	},
-/turf/open/floor/plating,
+/obj/structure/reagent_dispensers/watertank/high,
+/turf/open/floor/plasteel,
 /area/ship/crew/janitor)
 "Yk" = (
 /obj/effect/turf_decal/corner/opaque/brown{
@@ -5695,6 +5788,15 @@
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 8
 	},
+/obj/item/folder/yellow,
+/obj/item/stamp/denied{
+	pixel_x = 4
+	},
+/obj/item/stamp{
+	pixel_x = -5;
+	pixel_y = 9
+	},
+/obj/item/pen/red,
 /turf/open/floor/plasteel,
 /area/ship/cargo/office)
 "YH" = (
@@ -5708,7 +5810,7 @@
 /area/ship/crew/canteen)
 "YI" = (
 /obj/effect/spawner/structure/window/shuttle,
-/obj/machinery/door/poddoor/shutters/preopen{
+/obj/machinery/door/poddoor/shutters{
 	id = "ospreywindows"
 	},
 /turf/open/floor/plating,
@@ -5768,12 +5870,12 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/medical)
 "Zs" = (
-/obj/machinery/photocopier,
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 8
 	},
 /obj/effect/turf_decal/corner/opaque/brown,
 /obj/machinery/light,
+/obj/machinery/autolathe,
 /turf/open/floor/plasteel,
 /area/ship/cargo/office)
 "Zu" = (
@@ -6048,8 +6150,8 @@ yP
 VV
 kU
 VV
+pe
 VV
-JO
 ZX
 VV
 HK
@@ -6065,7 +6167,7 @@ yj
 WU
 lz
 lz
-lz
+uh
 lb
 vj
 ip
@@ -6083,7 +6185,7 @@ Tt
 do
 XR
 ll
-XR
+Ma
 RD
 Nq
 MJ
@@ -6112,10 +6214,10 @@ bw
 hd
 ZR
 ZO
-cI
+dr
 VV
+SB
 kQ
-xC
 kQ
 kQ
 kQ
@@ -6381,7 +6483,7 @@ nx
 gT
 zN
 hy
-Pe
+Np
 rS
 gV
 gV
@@ -6414,7 +6516,7 @@ Ry
 gT
 zN
 RW
-Pe
+Np
 qv
 gV
 os
@@ -7337,7 +7439,7 @@ PU
 iQ
 Pl
 Nr
-mW
+tH
 IT
 SR
 Pl
@@ -7403,7 +7505,7 @@ DO
 OD
 eh
 Bq
-mW
+hc
 QW
 wc
 Pl
@@ -7469,7 +7571,7 @@ gw
 OD
 Pl
 GG
-pX
+Vq
 Vq
 Gu
 Pl
