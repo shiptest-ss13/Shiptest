@@ -1866,7 +1866,9 @@
 /turf/open/floor/plating/airless,
 /area/ship/construction)
 "pN" = (
-/obj/machinery/rnd/production/circuit_imprinter/department/engi,
+/obj/machinery/rnd/production/circuit_imprinter/department/engi{
+	layer = 3
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "pT" = (
@@ -1955,7 +1957,9 @@
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "qn" = (
-/obj/machinery/computer/rdconsole,
+/obj/machinery/computer/rdconsole{
+	layer = 3
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "qp" = (
@@ -2412,7 +2416,9 @@
 	dir = 10
 	},
 /obj/effect/turf_decal/techfloor,
-/obj/machinery/autolathe,
+/obj/machinery/autolathe{
+	layer = 2.8
+	},
 /obj/item/stack/sheet/glass/five{
 	pixel_y = 3
 	},
@@ -3841,7 +3847,9 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "Hn" = (
-/obj/machinery/rnd/production/protolathe/department/engineering,
+/obj/machinery/rnd/production/protolathe/department/engineering{
+	layer = 3
+	},
 /obj/machinery/light/small{
 	dir = 4;
 	bulb_power = 0.5
