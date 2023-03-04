@@ -516,6 +516,9 @@
 /obj/effect/turf_decal/corner/opaque/blue{
 	dir = 1
 	},
+/obj/effect/turf_decal/corner/opaque/blue{
+	dir = 4
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "eT" = (
@@ -1035,7 +1038,10 @@
 /area/ship/crew/janitor)
 "jk" = (
 /obj/machinery/medical_kiosk,
-/obj/effect/turf_decal/corner/opaque/blue/full,
+/obj/effect/turf_decal/corner/opaque/blue{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/opaque/blue,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "jo" = (
@@ -2260,14 +2266,14 @@
 /obj/structure/disposalpipe/trunk{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/opaque/brown{
-	dir = 8
-	},
-/obj/effect/turf_decal/corner/opaque/brown{
-	dir = 1
-	},
 /obj/machinery/light{
 	dir = 8
+	},
+/obj/effect/turf_decal/corner/opaque/blue{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/opaque/blue{
+	dir = 1
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -2440,7 +2446,9 @@
 /obj/structure/disposalpipe/segment{
 	dir = 8
 	},
-/obj/effect/turf_decal/corner/opaque/blue/full,
+/obj/effect/turf_decal/trimline/opaque/blue/corner{
+	dir = 4
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "uI" = (
@@ -2518,6 +2526,16 @@
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/engineering)
+"vl" = (
+/obj/structure/disposalpipe/segment{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/blue/end,
+/obj/effect/turf_decal/trimline/opaque/blue/line{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/medical)
 "vp" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8
@@ -2638,6 +2656,9 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/opaque/blue,
+/obj/effect/turf_decal/corner/opaque/blue{
+	dir = 8
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "wx" = (
@@ -2858,6 +2879,18 @@
 	pixel_y = 5
 	},
 /obj/item/storage/firstaid/regular,
+/obj/machinery/button/door{
+	dir = 1;
+	id = "ospreymed";
+	name = "Shutter Control";
+	pixel_x = 5;
+	pixel_y = -25
+	},
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = -5;
+	pixel_y = -24
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "yd" = (
@@ -2925,16 +2958,16 @@
 /turf/open/floor/circuit,
 /area/ship/science/ai_chamber)
 "yQ" = (
-/obj/effect/turf_decal/corner/opaque/blue{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/opaque/white{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/cable{
 	icon_state = "2-8"
+	},
+/obj/effect/turf_decal/corner/opaque/blue{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/opaque/white{
+	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
@@ -3134,7 +3167,19 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/turf_decal/corner/opaque/blue/full,
+/obj/effect/turf_decal/trimline/opaque/blue/end{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/blue/line,
+/turf/open/floor/plasteel/white,
+/area/ship/medical)
+"Ac" = (
+/obj/structure/disposalpipe/segment{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/blue/corner{
+	dir = 1
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "Ag" = (
@@ -3403,6 +3448,9 @@
 /obj/effect/turf_decal/corner/opaque/blue{
 	dir = 4
 	},
+/obj/effect/turf_decal/corner/opaque/blue{
+	dir = 1
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "CL" = (
@@ -3558,10 +3606,10 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/power/apc/auto_name/west,
-/obj/effect/turf_decal/corner/opaque/brown{
+/obj/effect/turf_decal/corner/opaque/blue{
 	dir = 8
 	},
-/obj/effect/turf_decal/corner/opaque/brown{
+/obj/effect/turf_decal/corner/opaque/blue{
 	dir = 1
 	},
 /turf/open/floor/plasteel/white,
@@ -3906,12 +3954,13 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/effect/turf_decal/corner/opaque/blue,
+/obj/effect/turf_decal/corner/opaque/blue{
+	dir = 4
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "Hi" = (
-/obj/effect/turf_decal/corner/opaque/white{
-	dir = 4
-	},
 /obj/structure/disposalpipe/segment{
 	dir = 10
 	},
@@ -3923,6 +3972,9 @@
 	},
 /obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/blue{
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
@@ -4018,6 +4070,7 @@
 /obj/effect/turf_decal/corner/opaque/blue{
 	dir = 8
 	},
+/obj/effect/turf_decal/corner/opaque/blue,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "Ib" = (
@@ -4052,6 +4105,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/effect/turf_decal/corner/opaque/blue,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "Ii" = (
@@ -4275,13 +4329,13 @@
 /obj/item/storage/backpack/medic,
 /obj/item/clothing/shoes/sneakers/blue,
 /obj/item/clothing/under/rank/medical/paramedic,
-/obj/effect/turf_decal/corner/opaque/brown{
+/obj/machinery/airalarm/directional/west,
+/obj/effect/turf_decal/corner/opaque/blue{
 	dir = 8
 	},
-/obj/effect/turf_decal/corner/opaque/brown{
+/obj/effect/turf_decal/corner/opaque/blue{
 	dir = 1
 	},
-/obj/machinery/airalarm/directional/west,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "KL" = (
@@ -4297,18 +4351,6 @@
 "Lc" = (
 /obj/machinery/computer/med_data{
 	dir = 4
-	},
-/obj/machinery/button/door{
-	dir = 1;
-	id = "ospreymed";
-	name = "Shutter Control";
-	pixel_x = 5;
-	pixel_y = -25
-	},
-/obj/machinery/light_switch{
-	dir = 1;
-	pixel_x = -5;
-	pixel_y = -24
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -4709,6 +4751,13 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
+"OS" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor/shutters{
+	id = "ospreymed"
+	},
+/turf/open/floor/plating,
+/area/ship/medical)
 "OV" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8
@@ -4842,6 +4891,9 @@
 /obj/effect/turf_decal/corner/opaque/blue{
 	dir = 1
 	},
+/obj/effect/turf_decal/corner/opaque/blue{
+	dir = 4
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "PW" = (
@@ -4861,8 +4913,8 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/turf_decal/corner/opaque/blue{
-	dir = 4
+/obj/effect/turf_decal/trimline/opaque/blue/corner{
+	dir = 8
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -4895,9 +4947,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/turf_decal/corner/opaque/blue{
-	dir = 1
-	},
+/obj/effect/turf_decal/trimline/opaque/blue/corner,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "QI" = (
@@ -5007,6 +5057,9 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/effect/turf_decal/corner/opaque/blue{
+	dir = 8
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "Se" = (
@@ -5043,6 +5096,9 @@
 	},
 /obj/effect/turf_decal/corner/opaque/blue{
 	dir = 4
+	},
+/obj/effect/turf_decal/corner/opaque/blue{
+	dir = 1
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -5297,10 +5353,10 @@
 /turf/open/floor/plasteel,
 /area/ship/science)
 "TW" = (
+/obj/effect/turf_decal/industrial/warning,
 /obj/machinery/conveyor_switch/oneway{
 	id = "osprey_cargoload"
 	},
-/obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "TZ" = (
@@ -7104,7 +7160,7 @@ NH
 WN
 CQ
 Lc
-Zr
+OS
 QE
 uE
 HU
@@ -7139,7 +7195,7 @@ CQ
 YD
 wq
 zQ
-uE
+vl
 jk
 Zr
 li
@@ -7172,7 +7228,7 @@ CQ
 Hx
 oW
 Qm
-uE
+Ac
 wr
 Uj
 li
