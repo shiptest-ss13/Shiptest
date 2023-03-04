@@ -436,13 +436,13 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 // SO IF YOU ADD MORE, BESURE TO UPDATE IT THERE.
 
 /// Disallow movement
-#define TRAIT_MOBILITY_NOMOVE		"mobility_nomove"
+#define TRAIT_MOBILITY_NOMOVE "mobility_nomove"
 /// Disallow pickup
-#define TRAIT_MOBILITY_NOPICKUP		"mobility_nopickup"
+#define TRAIT_MOBILITY_NOPICKUP "mobility_nopickup"
 /// Disallow item use
-#define TRAIT_MOBILITY_NOUSE		"mobility_nouse"
+#define TRAIT_MOBILITY_NOUSE "mobility_nouse"
 ///Disallow resting/unresting
-#define TRAIT_MOBILITY_NOREST		"mobility_norest"
+#define TRAIT_MOBILITY_NOREST "mobility_norest"
 
 #define TRAIT_FORCED_STANDING "forcedstanding"
 
