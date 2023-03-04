@@ -8,6 +8,7 @@
 	density = TRUE
 	anchored = TRUE
 	climbable = TRUE
+	//stack material which is dropped upon deconstruction adn it's ammount
 	var/buildstack = /obj/item/stack/rods
 	var/buildstackamount = 3
 
