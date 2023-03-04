@@ -586,7 +586,7 @@
 			/obj/item/seeds/random = 1,
 			/obj/item/grown/log/bamboo = 2,
 			/obj/item/reagent_containers/food/snacks/grown/ambrosia/vulgaris = 2,
-			/obj/item/reagent_containers/food/snacks/grown/berries/poison/stealth = 5
+			/obj/item/reagent_containers/food/snacks/grown/berries/poison/stealth = 5,
 			/obj/item/reagent_containers/food/snacks/grown/citrus/lemon = 2,
 			/obj/item/reagent_containers/food/snacks/grown/citrus/lime = 2,
 			/obj/item/reagent_containers/food/snacks/grown/vanillapod = 2,
