@@ -1847,7 +1847,8 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor/ert{
-	id = "ota"
+	id = "ota";
+	req_access_txt = "101"
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/operations)
@@ -2262,7 +2263,9 @@
 /area/outpost/operations)
 "hw" = (
 /obj/structure/table,
-/obj/machinery/door/window/brigdoor/westright,
+/obj/machinery/door/window/brigdoor/westright{
+	req_access_txt = "101"
+	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
@@ -10784,7 +10787,8 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor/ert{
-	id = "ota"
+	id = "ota";
+	req_access_txt = "101"
 	},
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable{
@@ -14251,7 +14255,8 @@
 	pixel_y = 27;
 	pixel_x = 26;
 	name = "main shutters";
-	id = "ota"
+	id = "ota";
+	req_access_txt = "101"
 	},
 /turf/open/floor/plasteel,
 /area/outpost/operations)
