@@ -2597,6 +2597,7 @@
 	name = "Cement"
 	description = "A sophisticated binding agent used to produce concrete."
 	color = "#c4c0bc"
+	addiction_threshold = 25
 	taste_description = "cement"
 	harmful = TRUE
 	var/potency = 2
