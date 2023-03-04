@@ -576,8 +576,7 @@
 
 /obj/effect/spawner/lootdrop/garden
 	name = "lush garden seeder"
-	lootcount = 1
-	lootdoubles = FALSE
+	lootcount = 3
 	var/list/plant = list(
 			/obj/item/reagent_containers/food/snacks/grown/ambrosia/deus = 1,
 			/obj/item/reagent_containers/food/snacks/grown/berries/death/stealth = 2,
@@ -587,7 +586,7 @@
 			/obj/item/seeds/random = 1,
 			/obj/item/grown/log/bamboo = 2,
 			/obj/item/reagent_containers/food/snacks/grown/ambrosia/vulgaris = 2,
-			/obj/item/reagent_containers/food/snacks/grown/berries/poison/stealth = 3,
+			/obj/item/reagent_containers/food/snacks/grown/berries/poison/stealth = 5
 			/obj/item/reagent_containers/food/snacks/grown/citrus/lemon = 2,
 			/obj/item/reagent_containers/food/snacks/grown/citrus/lime = 2,
 			/obj/item/reagent_containers/food/snacks/grown/vanillapod = 2,
@@ -600,26 +599,26 @@
 			/obj/item/reagent_containers/food/snacks/grown/tea = 2,
 			/obj/item/reagent_containers/food/snacks/grown/tobacco = 2,
 			/obj/item/reagent_containers/food/snacks/grown/watermelon = 4,
-			/obj/item/grown/sunflower = 3,
-			/obj/item/reagent_containers/food/snacks/grown/banana = 3,
-			/obj/item/reagent_containers/food/snacks/grown/apple = 3,
-			/obj/item/reagent_containers/food/snacks/grown/berries = 4,
-			/obj/item/reagent_containers/food/snacks/grown/cherries = 3,
-			/obj/item/reagent_containers/food/snacks/grown/citrus/orange = 3,
-			/obj/item/reagent_containers/food/snacks/grown/garlic = 3,
-			/obj/item/reagent_containers/food/snacks/grown/grapes = 3,
-			/obj/item/reagent_containers/food/snacks/grown/grass = 3,
-			/obj/item/reagent_containers/food/snacks/grown/pumpkin = 3,
-			/obj/item/reagent_containers/food/snacks/grown/rainbow_flower = 3,
-			/obj/item/reagent_containers/food/snacks/grown/wheat = 3,
-			/obj/item/reagent_containers/food/snacks/grown/parsnip = 3,
-			/obj/item/reagent_containers/food/snacks/grown/peas = 3,
-			/obj/item/reagent_containers/food/snacks/grown/rice = 3,
-			/obj/item/reagent_containers/food/snacks/grown/soybeans = 3,
-			/obj/item/reagent_containers/food/snacks/grown/tomato = 3,
-			/obj/item/reagent_containers/food/snacks/grown/cabbage = 3,
-			/obj/item/reagent_containers/food/snacks/grown/onion = 3,
-			/obj/item/reagent_containers/food/snacks/grown/carrot = 3)
+			/obj/item/grown/sunflower = 4,
+			/obj/item/reagent_containers/food/snacks/grown/banana = 4,
+			/obj/item/reagent_containers/food/snacks/grown/apple = 4,
+			/obj/item/reagent_containers/food/snacks/grown/berries = 5,
+			/obj/item/reagent_containers/food/snacks/grown/cherries = 4,
+			/obj/item/reagent_containers/food/snacks/grown/citrus/orange = 4,
+			/obj/item/reagent_containers/food/snacks/grown/garlic = 4,
+			/obj/item/reagent_containers/food/snacks/grown/grapes = 4,
+			/obj/item/reagent_containers/food/snacks/grown/grass = 5,
+			/obj/item/reagent_containers/food/snacks/grown/pumpkin = 4,
+			/obj/item/reagent_containers/food/snacks/grown/rainbow_flower = 4,
+			/obj/item/reagent_containers/food/snacks/grown/wheat = 4,
+			/obj/item/reagent_containers/food/snacks/grown/parsnip = 4,
+			/obj/item/reagent_containers/food/snacks/grown/peas = 4,
+			/obj/item/reagent_containers/food/snacks/grown/rice = 4,
+			/obj/item/reagent_containers/food/snacks/grown/soybeans = 4,
+			/obj/item/reagent_containers/food/snacks/grown/tomato = 4,
+			/obj/item/reagent_containers/food/snacks/grown/cabbage = 4,
+			/obj/item/reagent_containers/food/snacks/grown/onion = 4,
+			/obj/item/reagent_containers/food/snacks/grown/carrot = 4)
 
 /obj/effect/spawner/lootdrop/garden/Initialize(mapload)
 	loot = plant
@@ -637,12 +636,12 @@
 			/obj/item/grown/cotton = 2,
 			/obj/item/reagent_containers/food/snacks/grown/mushroom/angel = 2,
 			/obj/item/reagent_containers/food/snacks/grown/chili = 2,
-			/obj/item/reagent_containers/food/snacks/grown/whitebeet = 2,
-			/obj/item/reagent_containers/food/snacks/grown/potato = 3,
-			/obj/item/reagent_containers/food/snacks/grown/potato/sweet = 3,
-			/obj/item/reagent_containers/food/snacks/grown/mushroom/chanterelle = 3,
-			/obj/item/reagent_containers/food/snacks/grown/mushroom/plumphelmet = 3,
-			/obj/item/reagent_containers/food/snacks/grown/corn = 3)
+			/obj/item/reagent_containers/food/snacks/grown/whitebeet = 5,
+			/obj/item/reagent_containers/food/snacks/grown/potato = 4,
+			/obj/item/reagent_containers/food/snacks/grown/potato/sweet = 4,
+			/obj/item/reagent_containers/food/snacks/grown/mushroom/chanterelle = 4,
+			/obj/item/reagent_containers/food/snacks/grown/mushroom/plumphelmet = 4,
+			/obj/item/reagent_containers/food/snacks/grown/corn = 4)
 
 /obj/effect/spawner/lootdrop/garden/cold
 	name = "frigid garden seeder"
@@ -653,14 +652,14 @@
 			/obj/item/seeds/random = 1,
 			/obj/item/reagent_containers/food/snacks/grown/poppy = 2,
 			/obj/item/reagent_containers/food/snacks/grown/tomato/blue = 2,
-			/obj/item/reagent_containers/food/snacks/grown/berries/poison/stealth = 3,
-			/obj/item/reagent_containers/food/snacks/grown/berries = 3,
-			/obj/item/reagent_containers/food/snacks/grown/mushroom/chanterelle = 3,
-			/obj/item/reagent_containers/food/snacks/grown/oat = 3,
-			/obj/item/reagent_containers/food/snacks/grown/grapes/green = 3,
-			/obj/item/reagent_containers/food/snacks/grown/grass = 3,
-			/obj/item/reagent_containers/food/snacks/grown/harebell = 3,
-			/obj/item/seeds/starthistle = 3)
+			/obj/item/reagent_containers/food/snacks/grown/berries/poison/stealth = 2,
+			/obj/item/reagent_containers/food/snacks/grown/berries = 4,
+			/obj/item/reagent_containers/food/snacks/grown/mushroom/chanterelle = 4,
+			/obj/item/reagent_containers/food/snacks/grown/oat = 4,
+			/obj/item/reagent_containers/food/snacks/grown/grapes/green = 4,
+			/obj/item/reagent_containers/food/snacks/grown/grass = 4,
+			/obj/item/reagent_containers/food/snacks/grown/harebell = 5,
+			/obj/item/seeds/starthistle = 5)
 
 /obj/effect/spawner/lootdrop/garden/sick
 	name = "sickly garden seeder"
@@ -674,11 +673,11 @@
 			/obj/item/reagent_containers/food/snacks/grown/cannabis = 2,
 			/obj/item/seeds/random = 2,
 			/obj/item/reagent_containers/food/snacks/grown/mushroom/jupitercup = 2,
-			/obj/item/reagent_containers/food/snacks/grown/cherrybulbs = 2,
-			/obj/item/reagent_containers/food/snacks/grown/mushroom/amanita = 3,
-			/obj/item/reagent_containers/food/snacks/grown/mushroom/libertycap = 3,
-			/obj/item/reagent_containers/food/snacks/grown/mushroom/reishi = 3,
-			/obj/item/reagent_containers/food/snacks/grown/berries/glow = 3)
+			/obj/item/reagent_containers/food/snacks/grown/cherrybulbs = 4,
+			/obj/item/reagent_containers/food/snacks/grown/mushroom/amanita = 4,
+			/obj/item/reagent_containers/food/snacks/grown/mushroom/libertycap = 4,
+			/obj/item/reagent_containers/food/snacks/grown/mushroom/reishi = 4,
+			/obj/item/reagent_containers/food/snacks/grown/berries/glow = 4)
 
 /obj/item/reagent_containers/food/snacks/grown/berries/poison/stealth //careful eating from random jungle bushes
 	seed = /obj/item/seeds/berry/poison
