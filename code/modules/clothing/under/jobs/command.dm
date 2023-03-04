@@ -11,7 +11,6 @@
 	name = "command jumpskirt"
 	icon_state = "cmd_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
-	fitted = FEMALE_UNIFORM_TOP
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/under/rank/command/nt
@@ -23,7 +22,6 @@
 	name = "command jumpskirt"
 	icon_state = "cmd_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
-	fitted = FEMALE_UNIFORM_TOP
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 //Captain
@@ -41,7 +39,6 @@
 	icon_state = "captain_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
-	fitted = FEMALE_UNIFORM_TOP
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/under/rank/command/captain/suit/skirt
@@ -51,7 +48,6 @@
 	item_state = "dg_suit"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
-	fitted = FEMALE_UNIFORM_TOP
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/under/rank/command/captain/parade
@@ -75,7 +71,6 @@
 	icon_state = "hop_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
-	fitted = FEMALE_UNIFORM_TOP
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/under/rank/command/head_of_personnel/nt
@@ -86,7 +81,6 @@
 	desc = "It's a jumpskirt worn by someone who works in the position of \"Head of Personnel\"."
 	icon_state = "hop_nt"
 	body_parts_covered = CHEST|GROIN|ARMS
-	fitted = FEMALE_UNIFORM_TOP
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/under/rank/command/head_of_personnel/suit
@@ -103,7 +97,6 @@
 	item_state = "g_suit"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
-	fitted = FEMALE_UNIFORM_TOP
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/under/rank/command/captain/nt
@@ -116,7 +109,6 @@
 	desc = "It's a blue jumpskirt with some gold markings denoting the rank of \"Captain\"."
 	icon_state = "captain_nt_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
-	fitted = FEMALE_UNIFORM_TOP
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 //Lieutenant
@@ -133,7 +125,6 @@
 	icon_state = "lt_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
-	fitted = FEMALE_UNIFORM_TOP
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/under/rank/command/lieutenant/nt
@@ -147,7 +138,6 @@
 	name = "\improper lieutenant blue jumpskirt"
 	icon_state = "lt_nt_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
-	fitted = FEMALE_UNIFORM_TOP
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/under/rank/command/minutemen
