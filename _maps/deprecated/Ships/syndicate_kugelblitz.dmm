@@ -162,8 +162,9 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "cW" = (
-/obj/item/pod_parts/pod_frame/fore_starboard,
 /obj/effect/turf_decal/box/corners,
+/obj/item/stock_parts/cell/hyper,
+/obj/item/stack/cable_coil/random/five,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/science/robotics)
 "dh" = (
@@ -421,7 +422,6 @@
 /area/ship/engineering/atmospherics)
 "gA" = (
 /obj/effect/turf_decal/industrial/warning,
-/obj/item/spacepod_equipment/cargo/large/ore,
 /obj/machinery/atmospherics/pipe/simple/orange/visible{
 	dir = 10
 	},
@@ -484,7 +484,6 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
-/obj/item/spacepod_equipment/weaponry/plasma_cutter,
 /obj/item/radio/intercom{
 	pixel_y = 22
 	},
@@ -906,10 +905,10 @@
 /turf/open/floor/engine/o2,
 /area/ship/engineering/atmospherics)
 "nn" = (
-/obj/item/pod_parts/pod_frame/aft_starboard,
 /obj/effect/turf_decal/box/corners{
 	dir = 4
 	},
+/obj/item/stack/ore/salvage/scrapmetal/twenty,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/science/robotics)
 "nt" = (
@@ -1390,11 +1389,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/item/spacepod_equipment/cargo/large,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/science/robotics)
 "vI" = (
-/obj/item/pod_parts/pod_frame/aft_port,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
 	},
@@ -1404,10 +1401,11 @@
 /obj/effect/turf_decal/box/corners{
 	dir = 1
 	},
+/obj/item/stack/ore/salvage/scrapgold/five,
+/obj/item/stack/ore/salvage/scrapmetal,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/science/robotics)
 "vJ" = (
-/obj/item/stock_parts/cell/hyper,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/science/robotics)
 "vM" = (
@@ -1575,7 +1573,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/science/robotics)
 "xd" = (
-/obj/item/pod_parts/armor/industrial,
+/obj/item/stack/ore/salvage/scrapmetal,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/science/robotics)
 "xe" = (
@@ -1771,7 +1769,6 @@
 /area/ship/science/robotics)
 "Aj" = (
 /obj/effect/turf_decal/industrial/warning,
-/obj/item/pod_parts/core,
 /obj/machinery/atmospherics/pipe/manifold/orange/visible{
 	dir = 1
 	},
@@ -2535,10 +2532,10 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
-/obj/item/pod_parts/pod_frame/fore_port,
 /obj/effect/turf_decal/box/corners{
 	dir = 8
 	},
+/obj/item/stack/ore/salvage/scraptitanium/five,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/science/robotics)
 "Pz" = (
@@ -2836,7 +2833,6 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
-/obj/item/circuitboard/mecha/pod,
 /obj/machinery/light{
 	dir = 1
 	},
