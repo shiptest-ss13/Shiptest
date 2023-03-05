@@ -1086,7 +1086,7 @@
 	glass_desc = "Mullets and cut-up jorts not included."
 
 //IDK how to make this work, so comment this for better times
-/*datum/reagent/consumable/mississippi_queen/on_mob_life(mob/living/carbon/drinker, delta_time, times_fired) 
+/*datum/reagent/consumable/mississippi_queen/on_mob_life(mob/living/carbon/drinker, delta_time, times_fired)
 	switch(current_cycle)
 		if(10 to 20)
 			drinker.adjust_dizzy(4 SECONDS * REM * delta_time)

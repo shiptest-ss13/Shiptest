@@ -247,7 +247,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 
 //Fish Dishes, commented until fishing implementation (hope this happens)
-/*obj/item/reagent_containers/food/snacks/grilled_moonfish 
+/*obj/item/reagent_containers/food/snacks/grilled_moonfish
 	name = "grilled moonfish"
 	desc = "A slab of grilled moonfish. Traditionally served over scalloped roots with a wine-based sauce."
 	icon = 'icons/obj/food/lizard.dmi'
