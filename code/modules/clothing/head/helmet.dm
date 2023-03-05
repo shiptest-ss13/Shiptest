@@ -298,7 +298,7 @@
 	dog_fashion = null
 
 /obj/item/clothing/head/helmet/justice/process(delta_time)
-	playsound(src, "[active_sound]", 100, FALSE, 4)
+	playsound(src, "[active_sound]", 100, FALSE, 10)
 
 /obj/item/clothing/head/helmet/justice/escape
 	name = "alarm helmet"
