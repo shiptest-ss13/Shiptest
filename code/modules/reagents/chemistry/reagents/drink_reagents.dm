@@ -1096,3 +1096,24 @@
 		if(30 to 200)
 			drinker.adjust_hallucinations(60 SECONDS * REM * delta_time)
 	return ..()*/
+
+//Moth Stuff
+/datum/reagent/consumable/toechtauese_juice
+	name = "Töchtaüse Juice"
+	description = "An unpleasant juice made from töchtaüse berries. Best made into a syrup, unless you enjoy pain."
+	color = "#554862"
+	nutriment_factor = 0
+	taste_description = "fiery itchy pain"
+	glass_icon_state = "toechtauese_syrup"
+	glass_name = "glass of töchtaüse juice"
+	glass_desc = "Raw, unadulterated töchtaüse juice. One swig will fill you with regrets."
+
+/datum/reagent/consumable/toechtauese_syrup
+	name = "Töchtaüse Syrup"
+	description = "A harsh spicy and bitter syrup, made from töchtaüse berries. Useful as an ingredient, both for food and cocktails."
+	color = "#554862"
+	nutriment_factor = 0
+	taste_description = "sugar, spice, and nothing nice"
+	glass_icon_state = "toechtauese_syrup"
+	glass_name = "glass of töchtaüse syrup"
+	glass_desc = "Not for drinking on its own."

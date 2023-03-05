@@ -246,6 +246,23 @@
 	list_reagents = list(/datum/reagent/consumable/quality_oil = 50)
 	fill_icon_thresholds = null
 
+/obj/item/reagent_containers/food/condiment/cornmeal
+	name = "cornmeal box"
+	desc = "A big box of cornmeal. Great for southern style cooking."
+	icon_state = "cornmeal"
+	item_state = "carton"
+	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/kitchen_righthand.dmi'
+	list_reagents = list(/datum/reagent/consumable/cornmeal = 30)
+	fill_icon_thresholds = null
+
+/obj/item/reagent_containers/food/condiment/yoghurt
+	name = "yoghurt carton"
+	desc = "Creamy and smooth."
+	icon_state = "yoghurt"
+	list_reagents = list(/datum/reagent/consumable/yoghurt = 50)
+	fill_icon_thresholds = null
+
 //Food packs. To easily apply deadly toxi... delicious sauces to your food!
 
 /obj/item/reagent_containers/food/condiment/pack

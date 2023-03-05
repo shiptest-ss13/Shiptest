@@ -354,3 +354,37 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/royalcheese
 	subcategory = CAT_MISCFOOD
+
+/datum/crafting_recipe/food/pesto
+	name = "Pesto"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/firm_cheese_slice = 1,
+		/datum/reagent/consumable/sodiumchloride = 5,
+		/obj/item/reagent_containers/food/snacks/grown/herbs = 2,
+		/obj/item/reagent_containers/food/snacks/grown/garlic = 1,
+		/datum/reagent/consumable/quality_oil = 5,
+		/obj/item/reagent_containers/food/snacks/canned/pine_nuts = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/pesto
+	subcategory = CAT_MISCFOOD
+
+/datum/crafting_recipe/food/tomato_sauce
+	name = "Tomato sauce"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/canned/tomatoes = 1,
+		/datum/reagent/consumable/sodiumchloride = 2,
+		/obj/item/reagent_containers/food/snacks/grown/herbs = 1,
+		/datum/reagent/consumable/quality_oil = 5
+	)
+	result = /obj/item/reagent_containers/food/snacks/tomato_sauce
+	subcategory = CAT_MISCFOOD
+
+/datum/crafting_recipe/food/bechamel_sauce
+	name = "Bechamel sauce"
+	reqs = list(
+		/datum/reagent/consumable/milk = 10,
+		/datum/reagent/consumable/flour = 5,
+		/obj/item/reagent_containers/food/snacks/butter = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/bechamel_sauce
+	subcategory = CAT_MISCFOOD

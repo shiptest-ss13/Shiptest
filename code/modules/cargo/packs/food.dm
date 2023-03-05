@@ -245,3 +245,39 @@
 					/obj/item/melee/flyswatter)
 	crate_name = "beekeeping starter crate"
 	crate_type = /obj/structure/closet/crate/hydroponics
+
+/datum/supply_pack/food/mothic_rations
+	name = "Surplus Mothic Ration Pack"
+	desc = "A single surplus ration pack from the Mothic Fleet. Comes with 3 random sustenance bars, and a package of Activin chewing gum."
+	cost = 200
+	contains = list(/obj/item/storage/box/mothic_rations)
+
+/datum/supply_pack/food/ready_donk
+	name = "Ready-Donk Single Meal"
+	desc = "A complete meal package for the terminally lazy. Contains one Ready-Donk meal."
+	cost = 100
+	contains = list(/obj/item/reagent_containers/food/snacks/ready_donk)
+
+/datum/supply_pack/food/randomized/ready_donk
+	name = "Ready-Donk Variety Crate"
+	desc = "Featuring a line up of Donk Co.'s most popular pastry!"
+	cost = 600
+	contains = list(/obj/item/reagent_containers/food/snacks/ready_donk,
+	/obj/item/reagent_containers/food/snacks/ready_donk/mac_n_cheese,
+	/obj/item/reagent_containers/food/snacks/ready_donk/donkhiladas)
+	crate_name = "\improper Ready-Donk crate"
+
+/datum/supply_pack/food/randomized/ready_donk/fill(obj/structure/closet/crate/C)
+	for(var/i in 1 to 3)
+		var/item = pick(contains)
+		new item(C)
+
+/datum/supply_pack/food/mothic_rations
+	name = "Surplus Mothic Rations Triple-Pak"
+	desc = "Crew starving? Chef slacking off? Keep everyone fed on the barest minimum of what can be considered food with surplus ration packs, directly from the Mothic Fleet! Pack includes 3 packs of 3 bars each."
+	cost = 600
+	contains = list(/obj/item/storage/box/mothic_rations,
+					/obj/item/storage/box/mothic_rations,
+					/obj/item/storage/box/mothic_rations,)
+	crate_name = "surplus rations box"
+	crate_type = /obj/structure/closet/cardboard/mothic

@@ -22,6 +22,9 @@
 	contraband = list(
 		/obj/item/reagent_containers/food/snacks/syndicake = 6,
 		/obj/item/reagent_containers/food/snacks/candy/bronx = 1)
+	premium = list(
+		/obj/item/reagent_containers/food/snacks/spacers_sidekick = 3
+	)
 	refill_canister = /obj/item/vending_refill/snack
 	canload_access_list = list(ACCESS_KITCHEN)
 	default_price = 60

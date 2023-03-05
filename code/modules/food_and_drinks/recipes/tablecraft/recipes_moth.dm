@@ -71,7 +71,7 @@
 		/obj/item/reagent_containers/food/snacks/cheese_curds = 1,
 		/obj/item/reagent_containers/food/snacks/soup/vegetarian_chili = 1,
 		/obj/item/reagent_containers/food/snacks/onion_slice = 1,
-		/obj/item/reagent_containers/food/snacks/cheese = 1,
+		/obj/item/reagent_containers/food/snacks/cheesewedge = 1,
 		/obj/item/reagent_containers/food/snacks/fries = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/loaded_curds
@@ -126,7 +126,7 @@
 		/obj/item/reagent_containers/food/snacks/grown/chili = 2,
 		/obj/item/reagent_containers/food/snacks/grown/tomato = 1,
 		/obj/item/reagent_containers/food/snacks/onion_slice = 2,
-		/obj/item/reagent_containers/food/snacks/cheese = 1
+		/obj/item/reagent_containers/food/snacks/cheesewedge = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/fiesta_corn_skillet
 	subcategory = CAT_MOTH
@@ -201,7 +201,7 @@
 /datum/crafting_recipe/food/moth_cheese_soup
 	name = "Ælosterrmæsch (Cheese soup)"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/cheese = 2,
+		/obj/item/reagent_containers/food/snacks/cheesewedge = 2,
 		/obj/item/reagent_containers/food/snacks/butter = 1,
 		/obj/item/reagent_containers/food/snacks/grown/potato/sweet = 1,
 		/datum/reagent/consumable/flour = 5,
@@ -269,7 +269,7 @@
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/salad/ricebowl = 1,
 		/datum/reagent/water = 10,
-		/datum/reagent/consumable/salt = 2
+		/datum/reagent/consumable/sodiumchloride = 2
 	)
 	result = /obj/item/reagent_containers/food/snacks/soup/rice_porridge
 	subcategory = CAT_MOTH
@@ -408,7 +408,7 @@
 		/obj/item/reagent_containers/food/snacks/mothic_pizza_dough = 1,
 		/obj/item/reagent_containers/food/snacks/tomato_sauce = 1,
 		/obj/item/reagent_containers/food/snacks/firm_cheese = 1,
-		/obj/item/reagent_containers/food/snacks/cheese = 1,
+		/obj/item/reagent_containers/food/snacks/cheesewedge = 1,
 		/obj/item/reagent_containers/food/snacks/mozzarella = 1,
 		/obj/item/reagent_containers/food/snacks/herby_cheese = 1,
 		/obj/item/reagent_containers/food/snacks/cheese_curds = 1

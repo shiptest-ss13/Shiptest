@@ -508,7 +508,7 @@
 	tastes = list("bread" = 1, "sweetness" = 1, "stinging" = 1, "slime" = 1)
 	foodtype = BUGS | NUTS | SEAFOOD | GORE
 
-/obj/item/reagent_containers/food/snacks/pizza/flatbread/zmorgast  // Name is based off of the Swedish dish Smörgåstårta
+/*obj/item/reagent_containers/food/snacks/pizza/flatbread/zmorgast  // Name is based off of the Swedish dish Smörgåstårta
 	name = "\improper Zmorgast flatbread"
 	desc = "A Tiziran spin on the original Swedish sandwich cake, the Zmorgast is a common dish at family gatherings."
 	icon_state = "zmorgast_flatbread"
@@ -518,7 +518,7 @@
 		/datum/reagent/consumable/nutriment/vitamin = 6,
 	)
 	tastes = list("bread" = 1, "liver" = 1, "family" = 1)
-	foodtype = VEGETABLES | NUTS | MEAT
+	foodtype = VEGETABLES | NUTS | MEAT*/ //Commented due to cucumbers in craft
 
 /obj/item/reagent_containers/food/snacks/pizza/flatbread/fish
 	name = "\improper BBQ fish flatbread"
@@ -595,7 +595,7 @@
 	tastes = list("bone broth" = 1, "onion" = 1, "potato" = 1)
 	foodtype = MEAT | VEGETABLES | NUTS
 
-/obj/item/reagent_containers/food/snacks/soup/meatball_noodles
+/*obj/item/reagent_containers/food/snacks/soup/meatball_noodles //No growable peanuts. No recipe. No food.
 	name = "meatball noodle soup"
 	desc = "A hearty noodle soup made from meatballs and nizaya in a rich broth. Commonly topped with a handful of chopped nuts."
 	icon = 'icons/obj/food/lizard.dmi'
@@ -607,7 +607,7 @@
 		/datum/reagent/water = 5,
 	)
 	tastes = list("bone broth" = 1, "meat" = 1, "gnocchi" = 1, "peanuts" = 1)
-	foodtype = MEAT | VEGETABLES | NUTS
+	foodtype = MEAT | VEGETABLES | NUTS*/
 
 /obj/item/reagent_containers/food/snacks/soup/black_broth
 	name = "\improper Tiziran black broth"

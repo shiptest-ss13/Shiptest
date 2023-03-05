@@ -28,6 +28,7 @@
 	juice_results = list(/datum/reagent/consumable/corn_starch = 0)
 	tastes = list("corn" = 1)
 	distill_reagent = /datum/reagent/consumable/ethanol/whiskey
+	dried_type = /obj/item/reagent_containers/food/snacks/oven_baked_corn
 
 /obj/item/grown/corncob
 	name = "corn cob"

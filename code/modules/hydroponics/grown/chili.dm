@@ -104,3 +104,28 @@
 	else
 		held_mob = null
 		..()
+
+// Bell Pepper
+/obj/item/seeds/chili/bell_pepper
+	name = "pack of bell pepper seeds"
+	desc = "These seeds grow into bell pepper plants. MILD! MILD! MILD!"
+	icon_state = "seed-bell-pepper"
+	species = "bellpepper"
+	plantname = "Bell Pepper Plants"
+	product = /obj/item/reagent_containers/food/snacks/grown/bell_pepper
+	endurance = 10
+	maturation = 10
+	production = 10
+	yield = 3
+	rarity = 20
+	genes = list(/datum/plant_gene/trait/repeated_harvest)
+	mutatelist = null
+	reagents_add = list(/datum/reagent/consumable/nutriment/vitamin = 0.08, /datum/reagent/consumable/nutriment = 0.04)
+
+/obj/item/reagent_containers/food/snacks/grown/bell_pepper
+	seed = /obj/item/seeds/chili/bell_pepper
+	name = "bell pepper"
+	desc = "A big mild pepper that's good for many things."
+	icon_state = "bell_pepper"
+	foodtype = FRUIT
+	cooked_type = /obj/item/reagent_containers/food/snacks/roasted_bell_pepper

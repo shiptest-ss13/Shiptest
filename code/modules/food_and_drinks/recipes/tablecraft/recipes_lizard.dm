@@ -42,7 +42,7 @@
 	result = /obj/item/reagent_containers/food/snacks/pizza/flatbread/stinging
 	category = CAT_LIZARD
 
-/datum/crafting_recipe/food/zmorgast_flatbread
+/*datum/crafting_recipe/food/zmorgast_flatbread //We have no cucumbers
 	name = "Zmorgast flatbread"
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/root_flatbread = 1,
@@ -51,7 +51,7 @@
 		/obj/item/organ/liver = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/pizza/flatbread/zmorgast
-	category = CAT_LIZARD
+	category = CAT_LIZARD*/
 
 //We don't have fishing and fish meat
 /*datum/crafting_recipe/food/fish_flatbread
@@ -120,7 +120,7 @@
 	result = /obj/item/reagent_containers/food/snacks/soup/atrakor_dumplings
 	category = CAT_LIZARD
 
-/datum/crafting_recipe/food/meatball_noodles
+/*datum/crafting_recipe/food/meatball_noodles //we don't have growable peanuts
 	name = "Meatball noodle soup"
 	reqs = list(
 		/datum/reagent/water = 10,
@@ -132,7 +132,7 @@
 		/obj/item/reagent_containers/food/snacks/grown/peanut = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/soup/meatball_noodles
-	category = CAT_LIZARD
+	category = CAT_LIZARD*/
 
 /datum/crafting_recipe/food/black_broth
 	name = "Tiziran black broth"

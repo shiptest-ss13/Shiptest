@@ -41,6 +41,7 @@
 	icon_state = "breadslice"
 	customfoodfilling = 1
 	foodtype = GRAIN
+	cooked_type = /obj/item/reagent_containers/food/snacks/griddle_toast
 
 /obj/item/reagent_containers/food/snacks/breadslice/moldy
 	name = "moldy bread slice"
