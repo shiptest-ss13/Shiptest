@@ -847,7 +847,6 @@
 	if(!position)
 		if(tgui_alert(usr,"Failed to find unused overmap space! Continue?", "Force planet spawning?", list("Yes","No"), 10) != "Yes")
 			return
-		position = SSovermap.get_unused_overmap_square(force = TRUE)
 	var/datum/overmap/dynamic/encounter = new(position, FALSE)
 	encounter.force_encounter = planet_type
 	encounter.template = ruin_target
