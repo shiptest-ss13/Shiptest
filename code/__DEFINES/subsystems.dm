@@ -257,3 +257,9 @@
 		} \
 		A.flags_1 &= ~OVERLAY_QUEUED_1; \
 	}while(FALSE)
+
+// Vote subsystem counting methods
+/// First past the post. One selection per person, and the selection with the most votes wins.
+#define VOTE_COUNT_METHOD_SINGLE 1
+/// Approval voting. Any number of selections per person, and the selection with the most votes wins.
+#define VOTE_COUNT_METHOD_MULTI 2
