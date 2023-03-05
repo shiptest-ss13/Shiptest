@@ -14,7 +14,7 @@
 	damage_overlay_type = ""
 	var/datum/action/innate/regenerate_limbs/regenerate_limbs
 	var/datum/action/innate/humanoid_customization/humanoid_customization
-	liked_food = MEAT
+	liked_food = MEAT | BUGS
 	disliked_food = NONE
 	toxic_food = NONE
 	coldmod = 6   // = 3x cold damage

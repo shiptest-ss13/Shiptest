@@ -213,7 +213,8 @@
 		/obj/structure/flora/ash/cacti = 1,
 		/obj/structure/flora/ash/tall_shroom = 2,
 		/obj/structure/flora/ash/fern = 2,
-		/obj/structure/flora/ash/puce = 2
+		/obj/structure/flora/ash/puce = 2,
+		/obj/structure/flora/ash/seraka = 2
 	)
 
 /datum/biome/cave/lavaland/rocky
@@ -234,7 +235,8 @@
 		/obj/structure/flora/ash/cap_shroom = 2,
 		/obj/structure/flora/ash/stem_shroom = 2,
 		/obj/structure/flora/ash/cacti = 1,
-		/obj/structure/flora/ash/tall_shroom = 2
+		/obj/structure/flora/ash/tall_shroom = 2,
+		/obj/structure/flora/ash/seraka = 2
 	)
 
 /datum/biome/cave/lavaland/lava

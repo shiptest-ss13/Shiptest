@@ -108,6 +108,7 @@
 		/obj/structure/flora/ash/stem_shroom = 4,
 		/obj/effect/decal/remains/human = 4,
 		/obj/effect/spawner/lootdrop/maintenance = 40,
+		/obj/structure/flora/ash/seraka = 4
 	)
 
 /datum/biome/sand/grass
@@ -135,6 +136,7 @@
 		/obj/structure/flora/tree/dead/barren = 4,
 		/obj/structure/flora/rock = 3,
 		/obj/structure/flora/rock/pile = 3,
+		/obj/structure/flora/ash/seraka = 2
 	)
 
 /datum/biome/sand/icecap
@@ -147,6 +149,7 @@
 		/obj/structure/flora/ash/stem_shroom = 2 ,
 		/obj/structure/flora/rock = 3,
 		/obj/structure/flora/rock/pile = 3,
+		/obj/structure/flora/ash/seraka = 2
 	)
 
 /datum/biome/sand/riverbed

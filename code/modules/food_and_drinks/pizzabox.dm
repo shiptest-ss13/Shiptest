@@ -299,6 +299,51 @@
 	pizza = new /obj/item/reagent_containers/food/snacks/pizza/pineapple(src)
 	boxtag = "Honolulu Chew"
 
+/obj/item/pizzabox/rustic/Initialize()
+	. = ..()
+	pizza = new /obj/item/reagent_containers/food/snacks/pizza/flatbread/italic(src)
+	boxtag = "Tiziran Flatbread"
+
+/obj/item/pizzabox/imperial/Initialize()
+	. = ..()
+	pizza = new /obj/item/reagent_containers/food/snacks/pizza/flatbread/imperial(src)
+	boxtag = "Tiziran Flatbread"
+
+/obj/item/pizzabox/imperial/Initialize()
+	. = ..()
+	pizza = new /obj/item/reagent_containers/food/snacks/pizza/flatbread/imperial(src)
+	boxtag = "Imperial Victory Flatbread"
+
+/obj/item/pizzabox/mothic_margherita/Initialize()
+	. = ..()
+	pizza = new /obj/item/reagent_containers/food/snacks/pizza/mothic_margherita(src)
+	boxtag = "Margherita alla Moffuchi"
+
+/obj/item/pizzabox/mothic_firecracker/Initialize()
+	. = ..()
+	pizza = new /obj/item/reagent_containers/food/snacks/pizza/mothic_firecracker(src)
+	boxtag = "Vesuvian Firecracker"
+
+/obj/item/pizzabox/mothic_five_cheese/Initialize()
+	. = ..()
+	pizza = new /obj/item/reagent_containers/food/snacks/pizza/mothic_five_cheese(src)
+	boxtag = "Cheeseplosion"
+
+/obj/item/pizzabox/mothic_white_pie/Initialize()
+	. = ..()
+	pizza = new /obj/item/reagent_containers/food/snacks/pizza/mothic_white_pie(src)
+	boxtag = "Pane Bianco"
+
+/obj/item/pizzabox/mothic_pesto/Initialize()
+	. = ..()
+	pizza = new /obj/item/reagent_containers/food/snacks/pizza/mothic_pesto(src)
+	boxtag = "Presto Pesto"
+
+/obj/item/pizzabox/mothic_garlic/Initialize()
+	. = ..()
+	pizza = new /obj/item/reagent_containers/food/snacks/pizza/mothic_garlic(src)
+	boxtag = "Garlic Bread alla Moffuchi"
+
 //An anomalous pizza box that, when opened, produces the opener's favorite kind of pizza.
 /obj/item/pizzabox/infinite
 	resistance_flags = FIRE_PROOF | LAVA_PROOF | ACID_PROOF //hard to destroy

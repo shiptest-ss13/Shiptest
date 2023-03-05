@@ -954,3 +954,145 @@
 		M.drowsyness++
 	return ..()
 
+/datum/reagent/consumable/mushroom_tea
+	name = "Mushroom Tea"
+	description = "A savoury glass of tea made from polypore mushroom shavings, originally native to Tizira."
+	color = "#674945" // rgb: 16, 16, 0
+	nutriment_factor = 0
+	taste_description = "mushrooms"
+	glass_icon_state = "mushroom_tea_glass"
+	glass_name = "glass of mushroom tea"
+	glass_desc = "Oddly savoury for a drink."
+
+/datum/reagent/consumable/mushroom_tea/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
+	if(islizard(M))
+		M.adjustOxyLoss(-0.5 * REM * delta_time, 0)
+	..()
+	. = TRUE
+
+//Moth Stuff
+/datum/reagent/consumable/toechtauese_juice
+	name = "Töchtaüse Juice"
+	description = "An unpleasant juice made from töchtaüse berries. Best made into a syrup, unless you enjoy pain."
+	color = "#554862"
+	nutriment_factor = 0
+	taste_description = "fiery itchy pain"
+	glass_icon_state = "toechtauese_syrup"
+	glass_name = "glass of töchtaüse juice"
+	glass_desc = "Raw, unadulterated töchtaüse juice. One swig will fill you with regrets."
+
+/datum/reagent/consumable/toechtauese_syrup
+	name = "Töchtaüse Syrup"
+	description = "A harsh spicy and bitter syrup, made from töchtaüse berries. Useful as an ingredient, both for food and cocktails."
+	color = "#554862"
+	nutriment_factor = 0
+	taste_description = "sugar, spice, and nothing nice"
+	glass_icon_state = "toechtauese_syrup"
+	glass_name = "glass of töchtaüse juice"
+	glass_desc = "Raw, unadulterated töchtaüse juice. One swig will fill you with regrets."
+
+/datum/reagent/consumable/strawberry_banana
+	name = "strawberry banana smoothie"
+	description = "A classic smoothie made from strawberries and bananas."
+	color = "#FF9999"
+	nutriment_factor = 0
+	taste_description = "strawberry and banana"
+	glass_icon_state = "strawberry_banana"
+	glass_name = "strawberry banana smoothie"
+	glass_desc = "A classic drink which countless souls have bonded over..."
+
+/datum/reagent/consumable/berry_blast
+	name = "berry blast smoothie"
+	description = "A classic smoothie made from mixed berries."
+	color = "#A76DC5"
+	nutriment_factor = 0
+	taste_description = "mixed berry"
+	glass_icon_state = "berry_blast"
+	glass_name = "berry blast smoothie"
+	glass_desc = "A classic drink, freshly made with hand picked berries. Or, maybe not."
+
+/datum/reagent/consumable/funky_monkey
+	name = "funky monkey smoothie"
+	description = "A classic smoothie made from chocolate and bananas."
+	color = "#663300"
+	nutriment_factor = 0
+	taste_description = "chocolate and banana"
+	glass_icon_state = "funky_monkey"
+	glass_name = "funky monkey smoothie"
+	glass_desc = "A classic drink made with chocolate and banana. No monkeys were harmed, officially."
+
+/datum/reagent/consumable/green_giant
+	name = "green giant smoothie"
+	description = "A green vegetable smoothie, made without vegetables."
+	color = "#003300"
+	nutriment_factor = 0
+	taste_description = "green, just green"
+	glass_icon_state = "green_giant"
+	glass_name = "green giant smoothie"
+	glass_desc = "A classic drink, if you enjoy juiced wheatgrass and chia seeds."
+
+/datum/reagent/consumable/melon_baller
+	name = "melon baller smoothie"
+	description = "A classic smoothie made from melons."
+	color = "#D22F55"
+	nutriment_factor = 0
+	taste_description = "fresh melon"
+	glass_icon_state = "melon_baller"
+	glass_name = "melon baller smoothie"
+	glass_desc = "A wonderfully fresh melon smoothie. Guaranteed to brighten your day."
+
+/datum/reagent/consumable/vanilla_dream
+	name = "vanilla dream smoothie"
+	description = "A classic smoothie made from vanilla and fresh cream."
+	color = "#FFF3DD"
+	nutriment_factor = 0
+	taste_description = "creamy vanilla"
+	glass_icon_state = "vanilla_dream"
+	glass_name = "vanilla dream smoothie"
+	glass_desc = "A classic drink made with vanilla and fresh cream."
+
+/datum/reagent/consumable/cucumberjuice
+	name = "Cucumber Juice"
+	description = "Ordinary cucumber juice, nothing from the fantasy world."
+	color = "#6cd87a"
+	taste_description = "light cucumber"
+	glass_icon_state = "glass_cucumber"
+	glass_name = "glass of cucumber juice"
+	glass_desc = "A glass of cucumber juice."
+
+/datum/reagent/consumable/cucumberlemonade
+	name = "Cucumber Lemonade"
+	description = "Cucumber juice, sugar and soda, what else is needed for happiness?"
+	color = "#6cd87a"
+	quality = DRINK_GOOD
+	taste_description = "citrus soda with cucumber"
+	glass_icon_state = "cucumber_lemonade"
+	glass_name = "cucumber lemonade"
+	glass_desc = "The smell of cucumber from lemonade, I'm sure I won't get poisoned?."
+
+/datum/reagent/consumable/cucumberlemonade/on_mob_life(mob/living/carbon/doll, delta_time, times_fired)
+	doll.adjust_bodytemperature(-8 * REM * TEMPERATURE_DAMAGE_COEFFICIENT * delta_time, doll.get_body_temp_normal())
+	if(doll.getToxLoss() && prob(10))
+		doll.adjustToxLoss(-0.5, FALSE)
+	return ..()
+
+/datum/reagent/consumable/mississippi_queen
+	name = "Mississippi Queen"
+	description = "If you think you're so hot, how about a victory drink?"
+	color = "#d4422f" // rgb: 212,66,47
+	taste_description = "sludge seeping down your throat"
+	glass_icon_state = "mississippiglass"
+	glass_name = "Mississippi Queen"
+	glass_desc = "Mullets and cut-up jorts not included."
+
+//IDK how to make this work, so comment this for better times
+/*datum/reagent/consumable/mississippi_queen/on_mob_life(mob/living/carbon/drinker, delta_time, times_fired) 
+	switch(current_cycle)
+		if(10 to 20)
+			drinker.adjust_dizzy(4 SECONDS * REM * delta_time)
+		if(20 to 30)
+			if(prob(15))
+				drinker.adjust_confusion(4 SECONDS * REM * delta_time)
+		if(30 to 200)
+			drinker.adjust_hallucinations(60 SECONDS * REM * delta_time)
+	return ..()*/

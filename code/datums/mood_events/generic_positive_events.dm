@@ -238,3 +238,13 @@
 		description = "[beau.name] gave me a kiss, ahh!!"
 	else
 		description = "[beau.name] blew a kiss at me, I must be a real catch!"
+
+/datum/mood_event/et_pieces
+	description = "Mmm... I love peanut butter..."
+	mood_change = 50
+	timeout = 10 MINUTES
+
+/datum/mood_event/memories_of_home
+	description = "<span class='nicegreen'>This taste seems oddly nostalgic...</span>\n"
+	mood_change = 3
+	timeout = 5 MINUTES

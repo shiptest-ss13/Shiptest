@@ -821,6 +821,53 @@
 	taste_mult = 2
 	taste_description = "fizzy sweetness"
 
+/datum/reagent/consumable/korta_flour
+	name = "Korta Flour"
+	description = "A coarsely ground, peppery flour made from korta nut shells."
+	taste_description = "earthy heat"
+	color = "#EEC39A"
+
+/datum/reagent/consumable/korta_milk
+	name = "Korta Milk"
+	description = "A milky liquid made by crushing the centre of a korta nut."
+	taste_description = "sugary milk"
+	color = "#FFFFFF"
+
+/datum/reagent/consumable/korta_nectar
+	name = "Korta Nectar"
+	description = "A sweet, sugary syrup made from crushed sweet korta nuts."
+	color = "#d3a308"
+	nutriment_factor = 5 * REAGENTS_METABOLISM
+	metabolization_rate = 1 * REAGENTS_METABOLISM
+	taste_description = "peppery sweetness"
+
+/datum/reagent/consumable/peanut_butter
+	name = "Peanut Butter"
+	description = "A rich, creamy spread produced by grinding peanuts."
+	taste_description = "peanuts"
+	reagent_state = SOLID
+	color = "#D9A066"
+	nutriment_factor = 15 * REAGENTS_METABOLISM
+
+/datum/reagent/consumable/peanut_butter/on_mob_life(mob/living/carbon/M, delta_time, times_fired) //ET loves peanut butter
+	if(isabductor(M))
+		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "ET_pieces", /datum/mood_event/et_pieces)
+		M.set_drugginess(30 SECONDS * REM * delta_time)
+	..()
+
+/datum/reagent/consumable/vinegar
+	name = "Vinegar"
+	description = "Useful for pickling, or putting on chips."
+	taste_description = "acid"
+	color = "#661F1E"
+
+//A better oil, representing choices like olive oil, argan oil, avocado oil, etc.
+/datum/reagent/consumable/quality_oil
+	name = "Quality Oil"
+	description = "A high quality oil, suitable for dishes where the oil is a key flavour."
+	taste_description = "olive oil"
+	color = "#DBCF5C"
+
 /datum/reagent/consumable/pyre_elementum
 	name = "Pyre Elementum"
 	description = "This is what makes Fireblossoms even hotter."
