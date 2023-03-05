@@ -7,6 +7,7 @@
 
 
 // DEBUG: add these to the dirty groups for automatic dirtying (really, should just modularize again)
+// DEBUG: set ambient noises
 /area/outpost
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 	has_gravity = STANDARD_GRAVITY
@@ -117,9 +118,9 @@
 // DEBUG: make this better. add a dedicated icon_state instead of just "purple"? might need better name as well
 /area/hangar
 	name = "Hangar"
-	icon_state = "purple"
+	icon_state = "hangar"
 
-	area_flags = UNIQUE_AREA | NOTELEPORT // DEBUG: consider making unique? HIDDEN_AREA?
+	area_flags = UNIQUE_AREA | NOTELEPORT // DEBUG: consider making nonunique? HIDDEN_AREA?
 	// DEBUG: does this still cause audio popping?
 	sound_environment = SOUND_AREA_LARGE_ENCLOSED
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED

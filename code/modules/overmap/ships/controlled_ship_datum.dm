@@ -105,6 +105,16 @@
 			if(!shuttle_port) //Loading failed, if the shuttle is supposed to be created, we need to delete ourselves.
 				qdel(src) // Can't return INITIALIZE_HINT_QDEL here since this isn't ACTUAL initialisation. Considering changing the name of the proc.
 				return
+			// DEBUG: create ships in-place to save on load time (no need to then dock it again)
+			// DEBUG: also consider making this behavior NATIVE to New(). unsure
+			if(istype(position, /datum/overmap))
+				// DEBUG: altering the behavior of the base proc is bad
+				docked_to = null // Dock() complains if you're already docked to something when you Dock, even on force
+				// DEBUG: this is also dumb, but in complete_dock() the -= line fails otherwise. ugh
+				x = 1
+				y = 1
+				Dock(position, TRUE)
+
 			calculate_mass()
 			refresh_engines()
 
@@ -115,10 +125,6 @@
 	Rename("[source_template.prefix] [pick_list_replacements(SHIP_NAMES_FILE, pick(source_template.name_categories))]", TRUE)
 #endif
 	SSovermap.controlled_ships += src
-
-	// DEBUG: this is a very bad way of doing this. do something better
-	var/datum/overmap/outpost/spawn_outpost = locate() in SSovermap.overmap_objects
-	Dock(spawn_outpost, TRUE)
 
 /datum/overmap/ship/controlled/Destroy()
 	SSovermap.controlled_ships -= src

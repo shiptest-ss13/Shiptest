@@ -1,8 +1,12 @@
-// DEBUG: update maps to meet code requirements
 // DEBUG: ask maptainers if they'd rather have this or a more verbose version w/ map names included
 
-/datum/map_template/outpost/test
+/datum/map_template/outpost/test_1
 	skin = OUTPOST_SKIN_TEST
+	suffix = "1"
+
+// /datum/map_template/outpost/test_2
+// 	skin = OUTPOST_SKIN_TEST
+// 	suffix = "2"
 
 /datum/map_template/outpost_elevator/test
 	skin = OUTPOST_SKIN_TEST

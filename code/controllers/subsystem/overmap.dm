@@ -191,7 +191,8 @@ SUBSYSTEM_DEF(overmap)
 #ifndef UNIT_TESTS
 	var/datum/map_template/shuttle/selected_template = SSmapping.maplist[pick(SSmapping.maplist)]
 	INIT_ANNOUNCE("Loading [selected_template.name]...")
-	new /datum/overmap/ship/controlled(null, selected_template)
+	// DEBUG: this (and other locate() calls) fall apart if non-physical outposts exist
+	new /datum/overmap/ship/controlled(locate(/datum/overmap/outpost) in SSovermap.overmap_objects, selected_template)
 	if(SSdbcore.Connect())
 		var/datum/DBQuery/query_round_map_name = SSdbcore.NewQuery({"
 			UPDATE [format_table_name("round")] SET map_name = :map_name WHERE id = :round_id

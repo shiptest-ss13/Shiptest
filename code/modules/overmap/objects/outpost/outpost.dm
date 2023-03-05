@@ -1,5 +1,6 @@
 // DEBUG: make this a hackmd document for outpost creation
 // specify skin X in code/__DEFINES/overmap.dm, make it's included in the list
+// multiple outposts to a skin is allowed
 // map datums should be in code/modules/overmap/objects/outpost/map_template/skin_X.dm
 // map files themselves in _maps/outpost/outpost_X.dmm, _maps/outpost/elevators/elevator_X.dmm, _maps/outpost/hangars/hangar_X_YxZ.dmm
 
@@ -13,10 +14,8 @@
 // elevator SHAFTS on outpost+hangar maps MUST have a /obj/machinery/elevator_floor_button, accessible from outside, to be functional -- marked with landmark?
 // elevator SHAFTS on outpost+hangar maps MAY contain one or more /obj/machinery/door on the outside marked with door landmarks, with CORRECT var/shaft
 
-// specify that landmarks mark TURFS, and from their get their contents, not mark objs directly
+// specify that landmarks mark TURFS, and from there get their contents, not mark objs directly
 
-
-// DEBUG: this was changed to /datum/overmap/dynamic/outpost behind my back. make sure that doesn't break anything
 
 // DEBUG: documentation
 /datum/overmap/outpost
@@ -47,14 +46,16 @@
 	. = ..()
 	Rename(gen_outpost_name())
 
-	// DEBUG: need more robust implementation, with multiple outpost maps for one skin
-	skin = pick(GLOB.outpost_skins)
+	// DEBUG: figure out a better solution here. being able to set the template imperatively could be useful for admins
+	var/template_name = pick(SSmapping.outpost_templates)
+	var/datum/map_template/outpost/skin_source = SSmapping.outpost_templates[template_name]
+	skin = initial(skin_source.skin)
 
 	if(has_phys_level)
 		// DEBUG: what if somebody docks during load_main_level() CHECK_TICK?
 		load_main_level()
-	// DEBUG: implement this
-	// else
+	else
+		shaft_datums += new("A", null)
 
 	fill_missions()
 	addtimer(CALLBACK(src, .proc/fill_missions), 10 MINUTES, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
@@ -69,11 +70,13 @@
 
 /datum/overmap/outpost/get_jump_to_turf()
 	if(has_phys_level)
+		// the main level is (hopefully) going to be the first in the mapzone's virtual levels
 		var/datum/virtual_level/vlevel = mapzone.virtual_levels[1]
 		return locate(round((vlevel.low_x + vlevel.high_x) / 2), round((vlevel.low_y + vlevel.high_y) / 2), vlevel.z_value)
 	else
-		// DEBUG: implement
-		return null
+		var/datum/hangar_shaft/rand_shaft = pick(shaft_datums)
+		var/datum/hangar/rand_hangar = pick(rand_shaft.hangars)
+		return rand_hangar.dock.loc
 
 // Shamelessly cribbed from how Elite: Dangerous does station names.
 /datum/overmap/outpost/proc/gen_outpost_name()
@@ -107,12 +110,17 @@
 	mapzone = SSmapping.create_map_zone("[name]")
 
 
-
 /datum/overmap/outpost/proc/load_main_level()
-	var/map_string = "outpost_[skin]"
-	var/datum/map_template/outpost/template = SSmapping.outpost_templates[map_string]
+	var/datum/map_template/outpost/template
+	var/list/candidate_templates = list()
+	for(var/name as anything in SSmapping.outpost_templates)
+		var/datum/map_template/outpost/cand_template = SSmapping.outpost_templates[name]
+		if(cand_template.skin == skin)
+			candidate_templates += cand_template
+	template = pick(candidate_templates)
+
 	if(!template)
-		CRASH("[src] ([src.type]) could not find the outpost map [map_string]!")
+		CRASH("[src] ([src.type]) could not find the outpost map for skin [skin]!")
 
 	log_game("[src] [REF(src)] OUTPOST MAP LEVEL INIT")
 	log_shuttle("[src] [REF(src)] OUTPOST MAP LEVEL INIT")
@@ -138,7 +146,7 @@
 	// outpost map is loaded, now we need to initialize the elevators / hangar shafts
 	// step 1 is finding the template for later
 	var/elevator_string = "elevator_[skin]"
-	var/datum/map_template/outpost_elevator/ele_template = SSmapping.outpost_templates[elevator_string]
+	var/datum/map_template/outpost_elevator/ele_template = SSmapping.elevator_templates[elevator_string]
 	if(!ele_template)
 		CRASH("[src] ([src.type]) could not find the elevator map [elevator_string]!")
 
@@ -264,8 +272,9 @@
 	return
 
 /datum/overmap/outpost/proc/make_hangar(list/size_list, datum/hangar_shaft/shaft)
+	var/hangar_num = length(shaft.hangars)+1
 	var/map_string = "hangar_[skin]_[size_list[1]]x[size_list[2]]"
-	var/datum/map_template/hangar/hangar_template = SSmapping.outpost_templates[map_string]
+	var/datum/map_template/hangar/hangar_template = SSmapping.hangar_templates[map_string]
 	if(!hangar_template)
 		CRASH("[src] ([src.type]) could not find the hangar [map_string]!")
 
@@ -274,10 +283,10 @@
 	log_shuttle("[src] [REF(src)] OUTPOST HANGAR INIT")
 
 	ensure_mapzone()
-	var/encounter_name = "[src.name] Hangar #Whatever" // DEBUG: make this more informative
+	var/hangar_name = "\improper [src.name] Hangar [shaft.name]-[hangar_num]"
 	// DEBUG: "planetary" outposts should use baseturf specification and possibly different ztrait sun type
 	var/datum/virtual_level/vlevel = SSmapping.create_virtual_level(
-		encounter_name,
+		hangar_name,
 		list(
 			// DEBUG: review ZTRAIT_STATION; use here likely to cause problems due to its use as a flag for "safe" area teleportation fallback?
 			// ZTRAIT_STATION = TRUE,
@@ -304,14 +313,16 @@
 
 	var/obj/docking_port/stationary/hangar_dock = new(dock_turf)
 	hangar_dock.dir = NORTH
-	hangar_dock.name = "\improper [src.name] Hangar #Whatever" // DEBUG: make this more informative
+	hangar_dock.name = hangar_name
 	hangar_dock.width = size_list[1] // hangar ports are wider than they are tall -- size list is in descending order, so it checks out
 	hangar_dock.height = size_list[2]
 
-	// DEBUG: maybe use subtyping? i can imagine the datum accumulating other info that only makes sense for physical outposts
-	// DEBUG: make sure that the landmarks are cleaned up regardless of if they're used by having an elevator or not
-	// "physical" outposts are fully connected, and thus require elevators
-	if(has_phys_level)
+	if(!shaft.shaft_elevator)
+		// if there's no elevator in this shaft, then delete the landmarks
+		for(var/obj/effect/landmark/outpost/mark as anything in GLOB.outpost_landmarks)
+			if(vlevel.is_in_bounds(mark))
+				qdel(mark)
+	else
 		var/turf/anchor_turf
 		var/obj/machinery/elevator_call_button/call_button
 		var/list/obj/machinery/door/floor_doors = list()

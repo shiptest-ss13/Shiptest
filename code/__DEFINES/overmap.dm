@@ -75,10 +75,11 @@ GLOBAL_LIST_INIT(all_overmap_world_types, list(
 // Outpost skins. Uniquely identifies an outpost map, elevator map, and set of hangar maps.
 #define OUTPOST_SKIN_TEST "test"
 
+// DEBUG: remove this list
 // An above define must be included in this list for the outpost datum to pick it as a possible skin.
-GLOBAL_LIST_INIT(outpost_skins, list(
-	OUTPOST_SKIN_TEST,
-))
+// GLOBAL_LIST_INIT(outpost_skins, list(
+// 	OUTPOST_SKIN_TEST,
+// ))
 
 // Elevator shaft types for "physical" outpost maps. Controls the use of the elevator shaft to spawn hangars.
 #define ELEVATOR_SHAFT_NORMAL "elevator_shaft_normal"

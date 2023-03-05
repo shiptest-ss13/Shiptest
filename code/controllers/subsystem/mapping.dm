@@ -29,9 +29,12 @@ SUBSYSTEM_DEF(mapping)
 	var/list/shuttle_templates = list()
 	var/list/shelter_templates = list()
 	var/list/holodeck_templates = list()
-	// DEBUG: add this to everything it needs to be added to
+	// Includes templates for "main" outpost maps only.
 	var/list/outpost_templates = list()
-
+	// List of outpost hangar templates.
+	var/list/hangar_templates = list()
+	// List of elevator map templates.
+	var/list/elevator_templates = list()
 
 	var/list/areas_in_z = list()
 
@@ -90,7 +93,9 @@ SUBSYSTEM_DEF(mapping)
 /datum/controller/subsystem/mapping/Recover()
 	flags |= SS_NO_INIT
 	initialized = SSmapping.initialized
+
 	map_templates = SSmapping.map_templates
+
 	ruins_templates = SSmapping.ruins_templates
 	space_ruins_templates = SSmapping.space_ruins_templates
 	lava_ruins_templates = SSmapping.lava_ruins_templates
@@ -100,10 +105,14 @@ SUBSYSTEM_DEF(mapping)
 	sand_ruins_templates = SSmapping.sand_ruins_templates
 	jungle_ruins_templates = SSmapping.jungle_ruins_templates
 	ice_ruins_templates = SSmapping.ice_ruins_templates
+
 	shuttle_templates = SSmapping.shuttle_templates
 	shelter_templates = SSmapping.shelter_templates
 	holodeck_templates = SSmapping.holodeck_templates
+
 	outpost_templates = SSmapping.outpost_templates
+	hangar_templates = SSmapping.hangar_templates
+	elevator_templates = SSmapping.elevator_templates
 
 	z_list = SSmapping.z_list
 
@@ -294,11 +303,13 @@ SUBSYSTEM_DEF(mapping)
 		holodeck_templates[holo_template.template_id] = holo_template
 		map_templates[holo_template.template_id] = holo_template
 
-// DEBUG: this sucks so fucking bad dude lmao
+// DEBUG: unify under one type?
 /datum/controller/subsystem/mapping/proc/preloadOutpostTemplates()
 	for(var/datum/map_template/outpost/outpost_type as anything in subtypesof(/datum/map_template/outpost))
 		if(!initial(outpost_type.skin))
 			CRASH("Tried to preload outpost [outpost_type] with invalid skin!")
+		if(!initial(outpost_type.suffix))
+			CRASH("Tried to preload outpost [outpost_type] with invalid suffix!")
 
 		var/datum/map_template/outpost/outpost_template = new outpost_type()
 		outpost_templates[outpost_template.name] = outpost_template
@@ -315,7 +326,7 @@ SUBSYSTEM_DEF(mapping)
 			CRASH("Tried to preload hangar [hangar_type] with invalid port_height!")
 
 		var/datum/map_template/hangar/hangar_template = new hangar_type()
-		outpost_templates[hangar_template.name] = hangar_template
+		hangar_templates[hangar_template.name] = hangar_template
 		map_templates[hangar_template.name] = hangar_template
 
 	for(var/datum/map_template/outpost_elevator/elevator_type as anything in subtypesof(/datum/map_template/outpost_elevator))
@@ -323,7 +334,7 @@ SUBSYSTEM_DEF(mapping)
 			CRASH("Tried to preload elevator [elevator_type] with invalid skin!")
 
 		var/datum/map_template/outpost_elevator/elevator_template = new elevator_type()
-		outpost_templates[elevator_template.name] = elevator_template
+		elevator_templates[elevator_template.name] = elevator_template
 		map_templates[elevator_template.name] = elevator_template
 
 //////////////////
