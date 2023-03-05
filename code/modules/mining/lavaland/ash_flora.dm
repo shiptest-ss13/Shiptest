@@ -245,6 +245,7 @@
 	pixel_y = rand(-4, 4)
 
 /obj/item/reagent_containers/food/snacks/grown/ash_flora/shavings //So we can't craft bowls from everything.
+	grind_results = list(/datum/reagent/toxin/mushroom_powder = 5)
 
 /obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_leaf
 	name = "mushroom leaf"
