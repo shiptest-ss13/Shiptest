@@ -843,7 +843,12 @@
 					ruin_target = select_from[selected_ruin]
 
 	message_admins("Generating a new Planet, this may take some time!")
-	var/datum/overmap/dynamic/encounter = new(null, FALSE)
+	var/list/position = SSovermap.get_unused_overmap_square()
+	if(!position)
+		if(tgui_alert(usr,"Failed to find unused overmap space! Continue?", "Force planet spawning?", list("Yes","No"), 10) != "Yes")
+			return
+		position = SSovermap.get_unused_overmap_square(force = TRUE)
+	var/datum/overmap/dynamic/encounter = new(position, FALSE)
 	encounter.force_encounter = planet_type
 	encounter.template = ruin_target
 	encounter.choose_level_type(FALSE)
