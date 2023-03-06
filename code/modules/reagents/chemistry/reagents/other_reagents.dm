@@ -1808,7 +1808,6 @@
 	color = "#328242"
 	taste_description = "primordial essence"
 	reagent_state = LIQUID
-	var/ground_type = /turf/open/floor/grass
 
 /datum/reagent/genesis/expose_turf(turf/T, reac_volume)
 	if(istype(T, /turf/open/floor/grass))//prevents spamming effect via. smoke or such
@@ -1816,7 +1815,7 @@
 	if(isplatingturf(T) || istype(T, /turf/open/floor/plasteel))
 		var/turf/open/floor/F = T
 		playsound(T, 'sound/effects/bubbles.ogg', 50)
-		F.PlaceOnTop(ground_type, flags = CHANGETURF_INHERIT_AIR)
+		F.PlaceOnTop(/turf/open/floor/grass, flags = CHANGETURF_INHERIT_AIR)
 		new /obj/effect/spawner/lootdrop/flower(T)
 		if(prob(75))
 			new /obj/effect/spawner/lootdrop/flora(T)
