@@ -208,7 +208,7 @@
 		thrust_used += E.burn_engine(percentage, deltatime)
 
 	thrust_used = thrust_used / (shuttle_port.turf_count * 100)
-	est_thrust = thrust_used //cheeky way of rechecking the thrust, check it every time it's used
+	est_thrust = thrust_used / percentage * 100 //cheeky way of rechecking the thrust, check it every time it's used
 
 	return thrust_used
 
