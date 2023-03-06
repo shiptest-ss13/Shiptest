@@ -744,7 +744,6 @@ GLOBAL_LIST_INIT(ws_survivor_default_loot, list(
 		/obj/item/seeds/cherry/bomb,
 		/obj/item/seeds/berry/glow,
 		/obj/item/seeds/sunflower/moonflower)
-	lootcount = 1
 
 /obj/effect/spawner/lootdrop/flora
 	name = "random flora spawner"
