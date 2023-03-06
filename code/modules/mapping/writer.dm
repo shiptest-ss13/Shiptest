@@ -40,7 +40,7 @@ GLOBAL_LIST_INIT(save_file_chars, list(
 	var/depth = maxz - minz
 
 	//Step 0: Calculate the amount of letters we need (26 ^ n > turf count)
-	var/turfsNeeded = width * height
+	var/turfsNeeded = (width + 1) * (height + 1)
 	var/layers = FLOOR(log(GLOB.save_file_chars.len, turfsNeeded) + 0.999,1)
 
 	//Step 1: Run through the area and generate file data

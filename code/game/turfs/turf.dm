@@ -659,6 +659,10 @@
 
 /turf/proc/on_turf_saved()
 	// This is all we can do. I'm sorry mappers, but there's no way to get any more details.
+	var/first = TRUE
 	for(var/datum/component/decal/decal as anything in GetComponents(/datum/component/decal))
-		. += "[/obj/effect/turf_decal]{\n\ticon = '[decal.pic.icon]';\n\ticon_state = \"[decal.pic.icon_state]\";\n\tdir = [decal.pic.dir];\n\tcolor = \"[decal.pic.color]\"\n}"
+		if(!first)
+			. += ",\n"
+		. += "[/obj/effect/turf_decal]{\n\ticon = '[decal.pic.icon]';\n\ticon_state = \"[decal.pic.icon_state]\";\n\tdir = [decal.pic.dir];\n\tcolor = \"[decal.pic.color]\"\n\t}"
+		first = FALSE
 	return
