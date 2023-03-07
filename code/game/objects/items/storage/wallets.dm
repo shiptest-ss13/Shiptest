@@ -120,5 +120,5 @@
 	icon_state = "random_wallet"
 
 /obj/item/storage/wallet/random/PopulateContents()
-	new /obj/item/spacecash/bundle(src, rand(5,30))
+	new /obj/item/spacecash/bundle/pocketchange(src)
 	icon_state = "wallet"
