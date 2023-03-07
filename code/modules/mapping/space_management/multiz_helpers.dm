@@ -1,17 +1,16 @@
 /proc/get_step_multiz(atom/ref, dir)
-	var/multiz_dir = NONE
-	if(dir & UP)
-		dir &= ~UP
-		multiz_dir = UP
-	else if(dir & DOWN)
-		dir &= ~DOWN
-		multiz_dir = DOWN
-	var/turf/my_turf = get_turf(ref)
-	if(dir)
-		my_turf = get_step(my_turf, dir)
-		if(!my_turf)
-			return
+	// multiz dir is just the up/down dir flags
+	var/multiz_dir = dir & (UP|DOWN)
+	// while the passed dir is normalized to just the cardinals
+	dir &= ~(UP|DOWN)
+	var/turf/my_turf = get_step(ref, dir)
+	if(isnull(my_turf))
+		return
 	switch(multiz_dir)
+		// the old version of this code prioritized UP over DOWN when
+		// both were passed. i don't want to fuck with that, so here it is preserved
+		if(UP|DOWN)
+			return my_turf.above()
 		if(UP)
 			return my_turf.above()
 		if(DOWN)
