@@ -131,6 +131,27 @@
 	usr.put_in_hands(bundle)
 	update_icon()
 
+/obj/item/spacecash/bundle/AltClick(mob/living/user)
+	var/cashamount = input(usr, "How many credits do you want to take? (0 to [value])", "Take Money", 20) as num
+	cashamount = round(clamp(cashamount, 0, value))
+	if(!cashamount)
+		return
+
+	else if(!Adjacent(usr))
+		to_chat(usr, "<span class='warning'>You need to be in arm's reach for that!</span>")
+		return
+
+	value -= cashamount
+	if(!value)
+		usr.dropItemToGround(src)
+		qdel(src)
+
+	var/obj/item/spacecash/bundle/bundle = new (usr.loc)
+	bundle.value = cashamount
+	bundle.update_icon()
+	usr.put_in_hands(bundle)
+	update_icon()
+
 /obj/item/spacecash/bundle/attack_hand(mob/user)
 	if(user.get_inactive_held_item() == src)
 		if(value == 0)//may prevent any edge case duping
