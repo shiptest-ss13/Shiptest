@@ -1,10 +1,10 @@
 	{
 	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
 	"map_name": "Vela-Class Hazardous Extraction Vessel",
-	"prefix": "GOLD",
+	"prefix": "CMGSV",
 	"namelists": ["GENERAL", "MYTHOLOGICAL", "BEASTS"],
 	"map_short_name": "Vela-Class",
-	"map_path": "_maps/shuttles/shiptest/minutemen_vela_hazardous_extraction.dmm",
+	"map_path": "_maps/shuttles/shiptest/minutemen_vela.dmm",
 	"limit": 1,
 	"job_slots": {
 		"Captain": {
@@ -24,15 +24,15 @@
 		},
 		"Operations Coordinator": {
 			"outfit": "/datum/outfit/job/lawyer/opscoord",
-			"slots": 2
+			"slots": 1
 		},
 		"Mech Pilot": {
 			"outfit": "/datum/outfit/job/miner/hazard/mech",
 			"slots": 4
 		},
-		"Mechanic": {
-			"outfit": "/datum/outfit/job/engineer/minutemen",
-			"slots": 1
+		"Mech Technician": {
+			"outfit": "/datum/outfit/job/roboticist/technician/minutemen",
+			"slots": 2
 		},
 		"Engineer": {
 			"outfit": "/datum/outfit/job/engineer/minutemen",
@@ -44,7 +44,7 @@
 		},
 		"Cadet": {
 			"outfit": "/datum/outfit/job/assistant/minutemen",
-			"slots": 5
+			"slots": 3
 		}
 	},
 	"enabled": true
