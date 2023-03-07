@@ -8,6 +8,9 @@
 	density = TRUE
 	anchored = TRUE
 	climbable = TRUE
+	//stack material which is dropped upon deconstruction adn it's ammount
+	var/buildstack = /obj/item/stack/rods
+	var/buildstackamount = 3
 
 
 /obj/structure/railing/Initialize()
@@ -22,7 +25,7 @@
 	icon_state = "railing_corner"
 	density = FALSE
 	climbable = FALSE
-
+	buildstackamount = 1
 /obj/structure/railing/ComponentInitialize(skip)
 	if(skip)
 		return ..()
@@ -56,6 +59,7 @@
 	. = ..()
 	if(!anchored)
 		to_chat(user, "<span class='warning'>You cut apart the railing.</span>")
+		new buildstack(loc, buildstackamount)
 		I.play_tool_sound(src, 100)
 		deconstruct()
 		return TRUE
@@ -65,8 +69,6 @@
 	if(!loc) //quick check if it's qdeleted already.
 		return
 	if(!(flags_1 & NODECONSTRUCT_1))
-		var/obj/item/stack/rods/rod = new /obj/item/stack/rods(drop_location(), 3)
-		transfer_fingerprints_to(rod)
 		qdel(src)
 ///Implements behaviour that makes it possible to unanchor the railing.
 /obj/structure/railing/wrench_act(mob/living/user, obj/item/I)
@@ -132,7 +134,9 @@
 /obj/structure/railing/wood
 	name = "wooden railing"
 	color = "#A47449"
+	buildstack = /obj/item/stack/sheet/mineral/wood
 
 /obj/structure/railing/corner/wood
 	name = "wooden railing"
 	color = "#A47449"
+	buildstack = /obj/item/stack/sheet/mineral/wood

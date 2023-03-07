@@ -315,10 +315,6 @@
 "fv" = (
 /obj/machinery/selling_pad,
 /obj/effect/turf_decal/box,
-/obj/item/radio/intercom{
-	dir = 8;
-	pixel_x = 22
-	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "fy" = (
@@ -1441,7 +1437,7 @@
 /obj/item/clothing/under/rank/civilian/bartender,
 /obj/structure/closet/secure_closet/bar{
 	req_access = null;
-	req_one_access_txt = list(25, 41)
+	req_one_access_txt = list(25,41)
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering)
@@ -1702,6 +1698,11 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 8
 	},
+/obj/item/radio/intercom{
+	dir = 8;
+	pixel_x = 22;
+	pixel_y = 31
+	},
 /turf/open/floor/carpet/red_gold,
 /area/ship/hallway/central)
 "GG" = (
@@ -1937,10 +1938,10 @@
 /obj/item/storage/box/donkpockets/donkpockethonk,
 /obj/item/storage/box/donkpockets/donkpockethonk,
 /obj/item/storage/box/donkpockets/donkpockethonk,
-/obj/item/storage/box/donkpockets/donkpocketgondola,
-/obj/item/storage/box/donkpockets/donkpocketgondola,
-/obj/item/storage/box/donkpockets/donkpocketgondola,
-/obj/item/storage/box/donkpockets/donkpocketgondola,
+/obj/item/storage/box/donkpockets,
+/obj/item/storage/box/donkpockets,
+/obj/item/storage/box/donkpockets,
+/obj/item/storage/box/donkpockets,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
 "La" = (
