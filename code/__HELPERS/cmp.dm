@@ -136,3 +136,7 @@ GLOBAL_VAR_INIT(cmp_field, "name")
 
 /proc/cmp_pdajob_asc(obj/item/pda/A, obj/item/pda/B)
 	return sorttext(B.ownjob, A.ownjob)
+
+/// Orders bodyparts by their body_part value, ascending.
+/proc/cmp_bodypart_by_body_part_asc(obj/item/bodypart/limb_one, obj/item/bodypart/limb_two)
+	return limb_one.body_part - limb_two.body_part

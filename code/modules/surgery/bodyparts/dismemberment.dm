@@ -214,7 +214,7 @@
 		C.update_inv_gloves() //to remove the bloody hands overlay
 
 
-/obj/item/bodypart/r_leg/drop_limb(special)
+/obj/item/bodypart/leg/right/drop_limb(special)
 	if(owner && !special)
 		if(owner.legcuffed)
 			owner.legcuffed.forceMove(owner.drop_location()) //At this point bodypart is still in nullspace
@@ -225,7 +225,7 @@
 			owner.dropItemToGround(owner.shoes, TRUE)
 	..()
 
-/obj/item/bodypart/l_leg/drop_limb(special) //copypasta
+/obj/item/bodypart/leg/left/drop_limb(special) //copypasta
 	if(owner && !special)
 		if(owner.legcuffed)
 			owner.legcuffed.forceMove(owner.drop_location())
@@ -303,6 +303,9 @@
 	for(var/obj/item/organ/O in contents)
 		O.Insert(C)
 
+	// Bodyparts need to be sorted for leg masking to be done properly. It also will allow for some predictable
+	// behavior within said bodyparts list. We sort it here, as it's the only place we make changes to bodyparts.
+	C.bodyparts = sortList(C.bodyparts, GLOBAL_PROC_REF(cmp_bodypart_by_body_part_asc))
 	synchronize_bodytypes(C)
 	if(is_creating)
 		update_limb(is_creating = TRUE)
