@@ -240,7 +240,7 @@
 "hz" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/drinks/drinkingglass{
-	list_reagents = list(/datum/reagent/consumable/ethanol/sugar_rush = 30);
+	list_reagents = list(/datum/reagent/consumable/ethanol/sugar_rush=30);
 	pixel_x = 3;
 	pixel_y = 4
 	},
@@ -570,7 +570,7 @@
 	dir = 4
 	},
 /obj/item/reagent_containers/food/drinks/drinkingglass{
-	list_reagents = list(/datum/reagent/consumable/ethanol/whiskey = 30);
+	list_reagents = list(/datum/reagent/consumable/ethanol/whiskey=30);
 	pixel_x = -2;
 	pixel_y = 4
 	},
@@ -2265,7 +2265,6 @@
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/crew/office)
 "ZK" = (
-/obj/machinery/holopad/emergency/command,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -2278,6 +2277,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 10
 	},
+/obj/machinery/holopad/emergency/detective,
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/crew/law_office)
 "ZO" = (
