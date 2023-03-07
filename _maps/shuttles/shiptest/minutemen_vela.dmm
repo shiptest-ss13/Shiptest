@@ -2602,6 +2602,9 @@
 	pixel_y = 32;
 	desc = "The Intergalactic symbol of Medical institutions. It seems ironic in this context."
 	},
+/obj/machinery/stasis{
+	dir = 1
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/science)
 "oU" = (
@@ -8053,6 +8056,11 @@
 	dir = 10
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet/crate/freezer/surplus_limbs,
+/obj/item/reagent_containers/blood/OMinus,
+/obj/item/reagent_containers/blood/OMinus,
+/obj/item/reagent_containers/blood/OMinus,
+/obj/item/reagent_containers/blood/OMinus,
 /turf/open/floor/plasteel/white,
 /area/ship/science)
 "Qb" = (
