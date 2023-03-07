@@ -233,6 +233,21 @@
 	var/obj/effect/temp_visual/kinetic_blast/K = new /obj/effect/temp_visual/kinetic_blast(target_turf)
 	K.color = color
 
+//Mecha version of the KA projectile
+
+/obj/projectile/kinetic/mech
+	range = 5
+
+/obj/projectile/kinetic/mech/proc/strike_mech_thing(atom/target)
+	return 0 //it should avoid runtiming every time it's shot now
+
+/obj/projectile/kinetic/mech/on_range()
+	strike_mech_thing()
+	..()
+
+/obj/projectile/kinetic/mech/on_hit(atom/target)
+	strike_mech_thing(target)
+	. = ..()
 
 //Modkits
 /obj/item/borg/upgrade/modkit
