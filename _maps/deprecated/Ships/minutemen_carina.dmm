@@ -601,10 +601,6 @@
 	dir = 1
 	},
 /obj/item/screwdriver,
-/obj/item/spacepod_key/sec{
-	pixel_x = -8;
-	pixel_y = 9
-	},
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
@@ -1279,10 +1275,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/door/firedoor/border_only,
-/obj/item/spacepod_equipment/tracker{
-	pixel_x = 12;
-	pixel_y = 5
-	},
 /obj/effect/turf_decal/industrial/traffic,
 /obj/effect/turf_decal/industrial/stand_clear/white{
 	dir = 1
@@ -1301,10 +1293,6 @@
 "pC" = (
 /obj/effect/turf_decal/box/corners{
 	dir = 1
-	},
-/obj/item/circuitboard/mecha/pod{
-	pixel_x = -8;
-	pixel_y = -7
 	},
 /obj/item/wrench/crescent,
 /turf/open/floor/plasteel/patterned/cargo_one,
@@ -1347,8 +1335,6 @@
 	name = "aviation closet";
 	pixel_x = 28
 	},
-/obj/item/spacepod_equipment/lock/keyed/sec,
-/obj/item/spacepod_key/sec,
 /obj/item/clothing/suit/space/pilot,
 /obj/item/clothing/head/helmet/space/pilot/random,
 /turf/open/floor/plasteel/patterned,
@@ -1563,6 +1549,8 @@
 /obj/effect/turf_decal/box/corners{
 	dir = 1
 	},
+/obj/structure/closet/crate,
+/obj/effect/spawner/lootdrop/maintenance/five,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/security)
 "sK" = (
@@ -1763,7 +1751,6 @@
 	pixel_x = 26
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/item/pod_parts/armor/black,
 /obj/machinery/portable_atmospherics/canister/air,
 /turf/open/floor/plasteel/patterned,
 /area/ship/security)
@@ -1898,6 +1885,12 @@
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/engineering)
+"vK" = (
+/obj/effect/turf_decal/box/corners,
+/obj/structure/closet/crate,
+/obj/effect/spawner/lootdrop/maintenance/five,
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ship/security)
 "vL" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -2968,7 +2961,8 @@
 /obj/effect/turf_decal/box/corners{
 	dir = 8
 	},
-/obj/spacepod,
+/obj/structure/closet/crate,
+/obj/effect/spawner/lootdrop/maintenance/five,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/security)
 "Ii" = (
@@ -3053,9 +3047,6 @@
 "Jo" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
-	},
-/obj/item/pod_parts/core{
-	pixel_x = 3
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/security)
@@ -3618,6 +3609,14 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
+"Rx" = (
+/obj/effect/turf_decal/box/corners{
+	dir = 4
+	},
+/obj/structure/closet/crate,
+/obj/effect/spawner/lootdrop/maintenance/five,
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ship/security)
 "RF" = (
 /obj/structure/chair{
 	dir = 4
@@ -4229,10 +4228,6 @@
 "Yl" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/spacepod_equipment/cargo/chair{
-	pixel_x = 6;
-	pixel_y = 12
-	},
 /obj/effect/turf_decal/industrial/traffic,
 /obj/effect/turf_decal/arrows,
 /turf/open/floor/plasteel/patterned,
@@ -4991,8 +4986,8 @@ PX
 (32,1,1) = {"
 PX
 em
-qj
-BM
+Rx
+vK
 wY
 zD
 pm
