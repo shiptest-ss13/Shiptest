@@ -1,4 +1,4 @@
-import { useBackend, useLocalState } from '../backend';
+import { useBackend } from '../backend';
 import {
   Button,
   ByondUi,
@@ -8,7 +8,7 @@ import {
   AnimatedNumber,
   Knob,
   LabeledControls,
-  Tabs,
+  NumberInput,
 } from '../components';
 import { Window } from '../layouts';
 import { Table } from '../components/Table';
@@ -240,7 +240,7 @@ const ShipContent = (_props, context) => {
             <Table.Cell>
               <AnimatedNumber
                 value={estThrust * 500}
-                format={(value) => Math.round(value * 10) / 10}
+                format={(value) => Math.round(value * 100) / 100}
               />
               Gm/s²
             </Table.Cell>
@@ -264,12 +264,6 @@ const ShipControlContent = (_props, context) => {
     estThrust,
   } = data;
   let flyable = !data.docking && !data.docked;
-
-  const [throttleMode, setThrottleMode] = useLocalState(
-    context,
-    'throttleMode',
-    0
-  );
 
   //  DIRECTIONS const idea from Lyra as part of their Haven-Urist project
   const DIRECTIONS = {
@@ -455,51 +449,35 @@ const ShipControlContent = (_props, context) => {
           </Table>
         </LabeledControls.Item>
         <LabeledControls.Item label="Throttle">
-          <Tabs fluid vertical>
-            <Tabs.Tab
-              selected={throttleMode === 0}
-              onClick={() => setThrottleMode(0)}
-            >
-              {Math.round(burnPercentage)}%
-            </Tabs.Tab>
-            <Tabs.Tab
-              selected={throttleMode === 1}
-              onClick={() => setThrottleMode(1)}
-            >
-              {Math.round(burnPercentage * estThrust * 500) / 100} Gm/s²
-            </Tabs.Tab>
-          </Tabs>
-          {throttleMode === 0 && (
-            <Knob
-              value={burnPercentage}
-              minValue={0}
-              step={1}
-              maxValue={100}
-              size={2}
-              unit="%"
-              onDrag={(e, value) =>
-                act('change_burn_percentage', {
-                  percentage: value,
-                })
-              }
-            />
-          )}
-          {throttleMode === 1 && (
-            <Knob
-              value={(burnPercentage / 100) * estThrust * 500}
-              minValue={0.01}
-              step={0.01}
-              // 5 times a second, 60 seconds in a minute (5 * 60 = 300)
-              maxValue={estThrust * 500}
-              size={2}
-              unit="Gm/s²"
-              onDrag={(e, value) =>
-                act('change_burn_percentage', {
-                  percentage: (value / (estThrust * 500)) * 100,
-                })
-              }
-            />
-          )}
+          <Knob
+            value={burnPercentage}
+            minValue={0}
+            step={1}
+            maxValue={100}
+            size={2}
+            unit="%"
+            onDrag={(e, value) =>
+              act('change_burn_percentage', {
+                percentage: value,
+              })
+            }
+          />
+          <NumberInput
+            value={(burnPercentage / 100) * estThrust * 500}
+            minValue={0.01}
+            step={0.01}
+            // 5 times a second, 60 seconds in a minute (5 * 60 = 300)
+            maxValue={estThrust * 500}
+            size={2}
+            unit="Gm/s²"
+            onDrag={(e, value) =>
+              act('change_burn_percentage', {
+                percentage: Math.round((value / (estThrust * 500)) * 100),
+              })
+            }
+            format={(value) => Math.round(value * 100) / 100}
+            animated
+          />
         </LabeledControls.Item>
       </LabeledControls>
     </Section>
