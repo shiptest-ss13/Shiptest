@@ -129,38 +129,20 @@
 //		WIRE_TRANSMIT = 4
 
 /obj/item/paicard/proc/setPersonality(mob/living/silicon/pai/personality)
-	src.pai = personality
-	src.add_overlay("pai-null")
+	pai = personality
+	add_overlay("pai-underlay")
+	add_overlay("pai-null")
 
 	playsound(loc, 'sound/effects/pai_boot.ogg', 50, TRUE, -1)
 	audible_message("\The [src] plays a cheerful startup noise!")
 
-/obj/item/paicard/proc/setEmotion(emotion)
+/obj/item/paicard/proc/set_emotion(emotion)
 	if(pai)
-		src.cut_overlays()
-		switch(emotion)
-			if(1)
-				src.add_overlay("pai-happy")
-			if(2)
-				src.add_overlay("pai-cat")
-			if(3)
-				src.add_overlay("pai-extremely-happy")
-			if(4)
-				src.add_overlay("pai-face")
-			if(5)
-				src.add_overlay("pai-laugh")
-			if(6)
-				src.add_overlay("pai-off")
-			if(7)
-				src.add_overlay("pai-sad")
-			if(8)
-				src.add_overlay("pai-angry")
-			if(9)
-				src.add_overlay("pai-what")
-			if(10)
-				src.add_overlay("pai-null")
-			if(11)
-				src.add_overlay("pai-sunglasses")
+		cut_overlays()
+		if(emotion != "off")
+			add_overlay("pai-underlay")
+			add_overlay("pai-[emotion]")
+
 
 /obj/item/paicard/proc/alertUpdate()
 	audible_message("<span class='info'>[src] flashes a message across its screen, \"Additional personalities available for download.\"</span>", "<span class='notice'>[src] vibrates with an alert.</span>")
