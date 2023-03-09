@@ -154,7 +154,7 @@ const ShipContent = (_props, context) => {
             >
               <AnimatedNumber
                 value={speed}
-                format={(value) => Math.round(value * 10) / 10}
+                format={(value) => value.toFixed(1)}
               />
               Gm/s
             </ProgressBar>
@@ -240,7 +240,7 @@ const ShipContent = (_props, context) => {
             <Table.Cell>
               <AnimatedNumber
                 value={estThrust * 500}
-                format={(value) => Math.round(value * 100) / 100}
+                format={(value) => value.toFixed(2)}
               />
               Gm/s²
             </Table.Cell>
@@ -316,7 +316,7 @@ const ShipControlContent = (_props, context) => {
       }
     >
       <LabeledControls>
-        <LabeledControls.Item label="Direction">
+        <LabeledControls.Item label="Direction" width={'50%'}>
           <Table collapsing>
             <Table.Row height={1}>
               <Table.Cell width={1}>
@@ -451,7 +451,7 @@ const ShipControlContent = (_props, context) => {
         <LabeledControls.Item label="Throttle">
           <Knob
             value={burnPercentage}
-            minValue={0}
+            minValue={1}
             step={1}
             maxValue={100}
             size={2}
@@ -461,6 +461,7 @@ const ShipControlContent = (_props, context) => {
                 percentage: value,
               })
             }
+            animated
           />
           <NumberInput
             value={(burnPercentage / 100) * estThrust * 500}
@@ -468,15 +469,15 @@ const ShipControlContent = (_props, context) => {
             step={0.01}
             // 5 times a second, 60 seconds in a minute (5 * 60 = 300)
             maxValue={estThrust * 500}
-            size={2}
             unit="Gm/s²"
             onDrag={(e, value) =>
               act('change_burn_percentage', {
                 percentage: Math.round((value / (estThrust * 500)) * 100),
               })
             }
-            format={(value) => Math.round(value * 100) / 100}
+            format={(value) => value.toFixed(2)}
             animated
+            fluid
           />
         </LabeledControls.Item>
       </LabeledControls>
