@@ -1,5 +1,5 @@
 /obj/item/gun/energy/laser
-	name = "laser gun"
+	name = "SL L-204 laser gun"
 	desc = "A basic energy-based laser gun that fires concentrated beams of light which pass through glass and thin metal."
 	icon_state = "laser"
 	item_state = "laser"
@@ -7,19 +7,23 @@
 	custom_materials = list(/datum/material/iron=2000)
 	ammo_type = list(/obj/item/ammo_casing/energy/lasergun)
 	ammo_x_offset = 1
-	shaded_charge = 1
+	shaded_charge = TRUE
+
+/obj/item/gun/energy/laser/sharplite
+	name = "SL L-408 laser gun"
+	desc = "Standard issue Nanotrasen energy gun."
 
 /obj/item/gun/energy/laser/practice
 	name = "practice laser gun"
 	desc = "A modified version of the basic laser gun, this one fires less concentrated energy bolts designed for target practice."
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/practice)
-	clumsy_check = 0
+	clumsy_check = TRUE
 	item_flags = NONE
 
 /obj/item/gun/energy/laser/retro
 	name ="retro laser gun"
 	icon_state = "retro"
-	desc = "An older model of the basic lasergun, no longer used by Nanotrasen's private security or military forces. Nevertheless, it is still quite deadly and easy to maintain, making it a favorite amongst pirates and other outlaws."
+	desc = "An older model of the basic lasergun, no longer used or sold by Sharplite. Nevertheless, the sheer popularity of this model makes it still seen to this day."
 	ammo_x_offset = 3
 
 /obj/item/gun/energy/laser/retro/old
