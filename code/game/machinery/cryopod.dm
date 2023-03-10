@@ -29,10 +29,14 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 	/// Whether or not to store items from people going into cryosleep.
 	var/allow_items = TRUE
 
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 17)
+
 /obj/machinery/computer/cryopod/retro
 	desc = "An interface between crew and the cryogenic storage oversight systems. This one appears to  be strugggling to catch up with the more modren cryogenic storage system version."
 	icon_state = "wallconsole_old"
 	icon_screen = "wallconsole_old_cryo"
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 17)
 
 /obj/machinery/computer/cryopod/Initialize()
 	. = ..()
