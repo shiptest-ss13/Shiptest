@@ -561,7 +561,7 @@
 	suit_store = /obj/item/gun/ballistic/automatic/pistol
 	backpack_contents = list(/obj/item/storage/box/survival/syndie=1, /obj/item/gun_voucher/syndicate=1)
 
-/datum/outfit/syndicate_empty/sbc/assault/operative
+/datum/outfit/syndicate_empty/sbc/operative
 	name = "Syndicate Battlecruiser Operative"
 	head = /obj/item/clothing/head/warden
 	uniform = /obj/item/clothing/under/syndicate/combat
@@ -573,13 +573,13 @@
 	short_desc = "You are the captain aboard the Syndicate flagship <i>Starfury</i>."
 	flavour_text = "Your job is to oversee your crew, defend the ship, and destroy Space Station 13. The ship has an armory, multiple ships, beam cannons, and multiple crewmembers to accomplish this goal."
 	important_info = "As the captain, this whole operation falls on your shoulders. You do not need to nuke the station, causing sufficient damage and preventing your ship from being destroyed will be enough."
-	outfit = /datum/outfit/syndicate_empty/sbc/assault/captain
+	outfit = /datum/outfit/syndicate_empty/sbc/captain
 	id_access_list = list(150,151)
 	id_job = "Syndicate Captain"
 	assignedrole = "Battlecruiser Captain"
 	mob_name = "syndicate captain"
 
-/datum/outfit/syndicate_empty/sbc/assault/captain
+/datum/outfit/syndicate_empty/sbc/captain
 	name = "Syndicate Battlecruiser Captain"
 	l_pocket = /obj/item/melee/transforming/energy/sword/saber/red
 	r_pocket = /obj/item/melee/classic_baton/telescopic

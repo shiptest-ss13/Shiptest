@@ -1,16 +1,18 @@
 {
 	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"prefix": "SSV",
+	"namelists": ["GENERAL", "SPACE"],
 	"map_name": "Twinkleshine-class Battle Cruiser",
 	"map_short_name": "Twinkleshine-class",
 	"map_path": "_maps/shuttles/shiptest/syndicate_twinkleshine.dmm",
 	"job_slots": {
 		"Captain": {
-			"outfit": "/datum/outfit/syndicate_empty/sbc/assault/captain",
+			"outfit": "/datum/outfit/syndicate_empty/sbc/captain",
 			"officer": true,
 			"slots": 1
 		},
-		"Operative": {
-			"outfit": "/datum/outfit/syndicate_empty/sbc/assault/operative",
+		"Lieutenant": {
+			"outfit": "/datum/outfit/syndicate_empty/sbc/operative",
 			"officer": true,
 			"slots": 1
 		},
@@ -18,11 +20,11 @@
 			"outfit": "/datum/outfit/syndicate_empty/sbc/med",
 			"slots": 2
 		},
-		"Mechanic": {
+		"Engineer": {
 			"outfit": "/datum/outfit/syndicate_empty/sbc/engi",
 			"slots": 2
 		},
-		"Trooper": {
+		"Operative": {
 			"outfit": "/datum/outfit/syndicate_empty/sbc/assault",
 			"slots": 5
 		},
