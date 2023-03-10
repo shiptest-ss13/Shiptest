@@ -18,15 +18,6 @@
 	if(writing)
 		. += span_notice("Can be reloaded with the <b>multitool</b>.")
 
-/obj/machinery/musicwriter/attackby(obj/item/I, mob/user)
-	if(default_unfasten_wrench(user, I))
-		return
-	if(istype(I, /obj/item/coin))
-		user.dropItemToGround(I)
-		qdel(I)
-		coin++
-		return
-
 /obj/machinery/musicwriter/multitool_act(mob/living/user, obj/item/I)
 	. = ..()
 	if(writing && do_after(user, 5 SECONDS, src))
@@ -44,7 +35,7 @@
 		user.playsound_local(src,'sound/misc/compiler-failure.ogg', 25, 1)
 		return
 	if(writing)
-		say("Writing [user.name] brain... Wait!")
+		say("Writing [user.name]'s brain... Wait!")
 		return
 	if(!coin)
 		say("Insert coin.")
@@ -59,6 +50,12 @@
 		var/N = sanitize(input("Song name") as text|null)
 		if(N)
 			var/sound/S = input("File") as sound|null
+			var/mob/living/carbon/human/H = user
+			var/obj/item/card/id/C = H.get_idcard(TRUE)
+			var/datum/bank_account/account = C.registered_account
+			if(!account.adjust_money(-15))
+				say("You do not possess the funds to use musicwriter.")
+				return
 			if(S)
 				var/datum/track/T = new()
 				var/obj/item/card/data/music/disk = new(src)
@@ -71,7 +68,6 @@
 				disk.forceMove(get_turf(src))
 				disk.uploader_ckey = person.ckey
 				message_admins("[ADMIN_LOOKUPFLW(user)] uploaded <A HREF='?_src_=holder;listensound=\ref[S]'>sound</A> named as [N]. <A HREF='?_src_=holder;wipedata=\ref[disk]'>Wipe</A> data.")
-				coin--
 
 		icon_state = "off"
 		writing = FALSE
