@@ -9,7 +9,7 @@
 	icon = 'icons/obj/machines/musicconsole.dmi'
 	icon_state = "off"
 	var/coin = 0
-	var/mob/user //current user
+	var/mob/person //current user
 	var/writing = 0
 	var/assemblytype = /obj/structure/musicwriter
 
@@ -33,10 +33,10 @@
 		writing = 0
 		to_chat(user,span_warning("Reloading system with the multitool."))
 		icon_state = "off"
-		user = null
+		person = null
 
 /obj/machinery/musicwriter/ui_interact(mob/user)
-	if (!anchored)
+	if(!anchored)
 		to_chat(user,span_warning("Needs to be wrenched!"))
 		return
 	if(!allowed(user))
@@ -52,10 +52,10 @@
 	write(user)
 
 /obj/machinery/musicwriter/proc/write(mob/user)
-	if(!writing && !user && coin)
+	if(!writing && !person && coin)
 		icon_state = "on"
 		writing = TRUE
-		user = user
+		person = user
 		var/N = sanitize(input("Song name") as text|null)
 		if(N)
 			var/sound/S = input("File") as sound|null
@@ -69,13 +69,13 @@
 				disk.track = T
 				disk.name = "music disk ([N])"
 				disk.forceMove(get_turf(src))
-				disk.uploader_ckey = user.ckey
+				disk.uploader_ckey = person.ckey
 				message_admins("[ADMIN_LOOKUPFLW(user)] uploaded <A HREF='?_src_=holder;listensound=\ref[S]'>sound</A> named as [N]. <A HREF='?_src_=holder;wipedata=\ref[disk]'>Wipe</A> data.")
 				coin--
 
 		icon_state = "off"
 		writing = FALSE
-		user = null
+		person = null
 
 /obj/machinery/musicwriter/attackby(obj/item/O, mob/living/user, params)
 	if(default_deconstruction_screwdriver(user, "off", "off", O))
@@ -187,3 +187,11 @@
 
 	qdel(src)
 	return TRUE
+
+/datum/design/musicwriter_board
+	name = "Musicwriter Electronics"
+	id = "musicwriter_board"
+	build_type = AUTOLATHE | PROTOLATHE
+	materials = list(/datum/material/iron = 50, /datum/material/glass = 50)
+	build_path = /obj/item/electronics/musicwriter
+	category = list("initial", "Electronics")
