@@ -2,10 +2,18 @@
 	projectile_type = /obj/projectile/beam/laser
 	select_name = "kill"
 
+/obj/item/ammo_casing/energy/laser/eoehoma
+	projectile_type = /obj/projectile/beam/laser/eoehoma
+	fire_sound = 'sound/weapons/gun/laser/e-fire.ogg'
+
 /obj/item/ammo_casing/energy/lasergun
 	projectile_type = /obj/projectile/beam/laser
 	e_cost = 830
 	select_name = "kill"
+
+/obj/item/ammo_casing/energy/lasergun/eoehoma
+	projectile_type = /obj/projectile/beam/laser/eoehoma
+	fire_sound = 'sound/weapons/gun/laser/e-fire.ogg'
 
 /obj/item/ammo_casing/energy/laser/smg //WS edit: fun
 	projectile_type = /obj/projectile/beam/laser/weak/negative_ap
