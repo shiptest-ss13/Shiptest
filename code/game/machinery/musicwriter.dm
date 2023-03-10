@@ -8,7 +8,6 @@
 	desc = "Can be reloaded with the multitool."
 	icon = 'icons/obj/machines/musicconsole.dmi'
 	icon_state = "off"
-	var/coin = 0
 	var/mob/person //current user
 	var/writing = 0
 	var/assemblytype = /obj/structure/musicwriter
@@ -37,13 +36,10 @@
 	if(writing)
 		say("Writing [user.name]'s brain... Wait!")
 		return
-	if(!coin)
-		say("Insert coin.")
-		return
 	write(user)
 
 /obj/machinery/musicwriter/proc/write(mob/user)
-	if(!writing && !person && coin)
+	if(!writing && !person)
 		icon_state = "on"
 		writing = TRUE
 		person = user
