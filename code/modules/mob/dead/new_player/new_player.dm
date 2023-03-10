@@ -354,100 +354,10 @@
 	if(!can_join_round(FALSE))
 		return
 
-	var/list/shuttle_choices = list("Purchase ship..." = "Purchase") //Dummy for purchase option
+	if(!GLOB.ship_select_tgui)
+		GLOB.ship_select_tgui = new /datum/ship_select(src)
 
-	for(var/datum/overmap/ship/controlled/S as anything in SSovermap.controlled_ships)
-		if(!S.is_join_option())
-			continue
-		shuttle_choices[S.name + " ([S.source_template.short_name ? S.source_template.short_name : "Unknown-class"])"] = S //Try to get the class name
-
-	var/chosen_ship = tgui_input_list(src, "Select ship to spawn on.", "Welcome, [client?.prefs.real_name || "User"].", shuttle_choices)
-	if(!can_join_round(FALSE))
-		return
-
-	var/datum/overmap/ship/controlled/selected_ship = shuttle_choices[chosen_ship]
-	if(!selected_ship)
-		return
-
-	if(selected_ship == "Purchase")
-		var/datum/map_template/shuttle/template = SSmapping.ship_purchase_list[tgui_input_list(src, "Please select ship to purchase!", "Welcome, [client.prefs.real_name].", SSmapping.ship_purchase_list)]
-		if(!template)
-			return LateChoices()
-		if(template.limit)
-			var/count = 0
-			for(var/datum/overmap/ship/controlled/X as anything in SSovermap.controlled_ships)
-				if(X.source_template == template)
-					count++
-					if(template.limit <= count)
-						alert(src, "The ship limit of [template.limit] has been reached this round.")
-						return LateChoices() //Send them back to shuttle selection
-		close_spawn_windows()
-		to_chat(usr, "<span class='danger'>Your [template.name] is being prepared. Please be patient!</span>")
-		var/datum/overmap/ship/controlled/target = new(SSovermap.get_unused_overmap_square(), template)
-		if(!target?.shuttle_port)
-			to_chat(usr, "<span class='danger'>There was an error loading the ship. Please contact admins!</span>")
-			new_player_panel()
-			return
-		SSblackbox.record_feedback("tally", "ship_purchased", 1, template.name) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
-		if(!AttemptLateSpawn(target.job_slots[1], target)) //Try to spawn as the first listed job in the job slots (usually captain)
-			to_chat(usr, "<span class='danger'>Ship spawned, but you were unable to be spawned. You can likely try to spawn in the ship through joining normally, but if not, please contact an admin.</span>")
-			new_player_panel()
-		return
-
-	var/list/job_choices = list()
-	for(var/datum/job/job as anything in selected_ship.job_slots)
-		if(selected_ship.job_slots[job] < 1)
-			continue
-		job_choices["[job.name] ([selected_ship.job_slots[job]] positions)"] = job
-
-	if(!length(job_choices))
-		to_chat(usr, "<span class='danger'>There are no jobs available on this ship!</span>")
-		return LateChoices() //Send them back to shuttle selection
-
-	if(selected_ship.memo)
-		var/memo_accept = tgui_alert(src, "Current ship memo: [selected_ship.memo]", "[selected_ship.name] Memo", list("OK", "Cancel"))
-		if(memo_accept == "Cancel")
-			return LateChoices() //Send them back to shuttle selection
-
-	var/did_application = FALSE
-	if(selected_ship.join_mode == SHIP_JOIN_MODE_APPLY)
-		var/datum/ship_application/current_application = selected_ship.get_application(src)
-		if(isnull(current_application))
-			send_application(selected_ship)
-			return LateChoices()
-		switch(current_application.status)
-			if(SHIP_APPLICATION_ACCEPTED)
-				to_chat(usr, "<span class='notice'>Your ship application was accepted, continuing...</span>")
-			if(SHIP_APPLICATION_PENDING)
-				alert(src, "You already have a pending application for this ship!")
-				return LateChoices()
-			if(SHIP_APPLICATION_DENIED)
-				alert(src, "You can't join this ship, as a previous application was denied!")
-				return LateChoices()
-		did_application = TRUE
-
-	var/datum/job/selected_job = job_choices[tgui_input_list(src, "Select job.", "Welcome, [client.prefs.real_name].", job_choices)]
-	if(!selected_job)
-		return LateChoices() //Send them back to shuttle selection
-
-	if(selected_ship.join_mode == SHIP_JOIN_MODE_CLOSED || (selected_ship.join_mode == SHIP_JOIN_MODE_APPLY && !did_application))
-		to_chat(usr, "<span class='warning'>You cannot join this ship anymore, as its join mode has changed!</span>")
-		return LateChoices()
-
-	// one last check
-	if(!can_join_round(FALSE))
-		return
-
-	AttemptLateSpawn(selected_job, selected_ship)
-
-/mob/dead/new_player/proc/send_application(datum/overmap/ship/controlled/target_ship)
-	var/datum/ship_application/app = new(src, target_ship)
-	var/application_sent = app.get_user_response()
-	if(application_sent)
-		to_chat(usr, "<span class='notice'>Ship application sent. You will be notified if the application is accepted.</span>")
-	else
-		to_chat(usr, "<span class='notice'>Application cancelled, or there was an error sending the application.</span>")
-	return
+	GLOB.ship_select_tgui.ui_interact(src)
 
 /mob/dead/new_player/proc/can_join_round(silent = FALSE)
 	if(!GLOB.enter_allowed)

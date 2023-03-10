@@ -176,3 +176,17 @@
 	accessory = /obj/item/clothing/accessory/armband/cargo
 	head = /obj/item/clothing/head/soft/black
 	r_pocket = /obj/item/radio
+
+/datum/outfit/job/miner/syndicate/gec
+	name = "Shaft Miner (GEC)"
+
+	id = /obj/item/card/id/syndicate_command/crew_id
+	ears = /obj/item/radio/headset
+	uniform = /obj/item/clothing/under/syndicate
+	alt_uniform = null
+	accessory = /obj/item/clothing/accessory/armband/cargo
+	head = /obj/item/clothing/head/soft/black
+	r_pocket = /obj/item/radio
+	head = /obj/item/clothing/head/hardhat/orange
+	suit = /obj/item/clothing/suit/toggle/industrial
+	suit_store = /obj/item/tank/internals/emergency_oxygen/double

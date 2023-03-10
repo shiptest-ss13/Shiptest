@@ -89,6 +89,7 @@ Assistant
 	name = "Volunteer (Minutemen)"
 
 	uniform = /obj/item/clothing/under/rank/security/officer/minutemen
+	backpack = /obj/item/storage/backpack/security/cmm
 
 /datum/outfit/job/assistant/inteq
 	name = "IRMG Recruit (Inteq)"
@@ -148,6 +149,16 @@ Assistant
 
 	uniform = /obj/item/clothing/under/syndicate/gorlex
 	alt_uniform = /obj/item/clothing/under/syndicate
+
+/datum/outfit/job/assistant/syndicate/gec
+	name = "Deckhand (GEC)"
+
+	id = /obj/item/card/id/syndicate_command/crew_id
+	uniform = /obj/item/clothing/under/syndicate
+	suit = /obj/item/clothing/suit/toggle/hazard
+	alt_uniform = null
+	shoes = /obj/item/clothing/shoes/jackboots
+	head = /obj/item/clothing/head/safety_helmet
 
 /datum/outfit/job/assistant/independent/crewmatefancy
 	name = "Crewmate (Independent)"

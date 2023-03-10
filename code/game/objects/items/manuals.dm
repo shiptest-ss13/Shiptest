@@ -454,13 +454,6 @@
 	title = "Chemical Factories Without Narcotics"
 	page_link = "Guide_to_plumbing"
 
-/obj/item/book/manual/wiki/spacepod
-	name = "Guide to Podracing"
-	icon_state = "bookParticleAccelerator"
-	author = "Bananakin"
-	title = "Guide to Podracing"
-	page_link = "Space_Pods"
-
 /obj/item/book/manual/wiki/medical_cloning
 	name = "Cloning techniques of the 26th century"
 	icon_state ="bookCloning"
