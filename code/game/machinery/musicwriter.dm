@@ -100,7 +100,7 @@
 /obj/item/wallframe/musicwriter
 	name = "\improper brain signals recorder frame"
 	desc = "Used to build brain signals recorder."
-	icon = 'lambda/MrSamu99/icons/musicconsole.dmi'
+	icon = 'icons/obj/machines/musicconsole.dmi'
 	icon_state = "off"
 	result_path = /obj/structure/musicwriter
 	pixel_shift = 32
@@ -113,7 +113,7 @@
 /obj/structure/musicwriter
 	name = "\improper unfinished brain signals recorder"
 	desc = "Used to build brain signals recorder. In consruction."
-	icon = 'lambda/MrSamu99/icons/musicconsole.dmi'
+	icon = 'icons/obj/machines/musicconsole.dmi'
 	icon_state = "off"
 	anchored = TRUE
 	var/obj/item/electronics/musicwriter/electronics = null
