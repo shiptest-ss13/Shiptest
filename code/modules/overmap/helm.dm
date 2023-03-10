@@ -377,6 +377,8 @@
 	viewer = TRUE
 	unique_icon = TRUE
 
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/helm/viewscreen, 17)
+
 #undef JUMP_STATE_OFF
 #undef JUMP_STATE_CHARGING
 #undef JUMP_STATE_IONIZING

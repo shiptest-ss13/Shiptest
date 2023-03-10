@@ -250,7 +250,7 @@
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/canteen)
 "cs" = (
-/obj/machinery/holopad/emergency/engineering,
+/obj/machinery/holopad/emergency/buddy,
 /turf/open/floor/wood/mahogany,
 /area/ship/crew/canteen)
 "ct" = (
@@ -1042,7 +1042,7 @@
 /obj/structure/cable/green{
 	icon_state = "4-8"
 	},
-/obj/structure/holosign/barrier/atmos,
+/obj/structure/holosign/barrier/atmos/infinite,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "jl" = (
@@ -1320,7 +1320,7 @@
 /obj/structure/cable/green{
 	icon_state = "1-2"
 	},
-/obj/structure/holosign/barrier/atmos,
+/obj/structure/holosign/barrier/atmos/infinite,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "mr" = (
@@ -1857,10 +1857,10 @@
 /area/ship/engineering/atmospherics)
 "sl" = (
 /obj/machinery/atmospherics/pipe/simple/general/visible/layer2,
-/obj/machinery/holopad/emergency/engineering,
 /obj/effect/turf_decal/industrial/radiation{
 	dir = 8
 	},
+/obj/machinery/holopad/emergency/atmos,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "sn" = (
@@ -2677,7 +2677,7 @@
 "zE" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 4;
-	filter_types = list("o2", "n2")
+	filter_types = list("o2","n2")
 	},
 /turf/open/floor/engine,
 /area/ship/engineering/atmospherics)
@@ -3646,7 +3646,7 @@
 /obj/structure/cable/green{
 	icon_state = "1-2"
 	},
-/obj/structure/holosign/barrier/atmos,
+/obj/structure/holosign/barrier/atmos/infinite,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Ji" = (
@@ -3862,7 +3862,7 @@
 /obj/structure/cable/green{
 	icon_state = "1-2"
 	},
-/obj/structure/holosign/barrier/atmos,
+/obj/structure/holosign/barrier/atmos/infinite,
 /obj/machinery/door/airlock/hatch,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/medical)
@@ -4046,7 +4046,7 @@
 /obj/structure/cable/green{
 	icon_state = "4-8"
 	},
-/obj/structure/holosign/barrier/atmos,
+/obj/structure/holosign/barrier/atmos/infinite,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/dorm)
 "NC" = (
@@ -4378,7 +4378,7 @@
 /obj/structure/cable/green{
 	icon_state = "1-2"
 	},
-/obj/structure/holosign/barrier/atmos,
+/obj/structure/holosign/barrier/atmos/infinite,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "Sb" = (
@@ -4925,7 +4925,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/structure/holosign/barrier/atmos,
+/obj/structure/holosign/barrier/atmos/infinite,
 /turf/open/floor/plating,
 /area/ship/crew/canteen)
 "WE" = (

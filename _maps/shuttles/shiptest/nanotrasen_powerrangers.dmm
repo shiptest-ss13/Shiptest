@@ -1291,7 +1291,7 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "kh" = (
-/obj/machinery/holopad/emergency,
+/obj/machinery/holopad/emergency/science,
 /turf/open/floor/plasteel/dark,
 /area/ship/science)
 "kj" = (
@@ -1528,12 +1528,12 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/storage)
 "ng" = (
-/obj/machinery/holopad/emergency,
 /obj/machinery/light_switch{
 	dir = 4;
 	pixel_x = -27;
 	pixel_y = 8
 	},
+/obj/machinery/holopad/emergency/medical,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "nh" = (
@@ -3968,10 +3968,10 @@
 /obj/structure/cable/cyan{
 	icon_state = "9-10"
 	},
-/obj/machinery/holopad/emergency,
 /obj/effect/turf_decal/trimline/opaque/mauve/filled/line{
 	dir = 8
 	},
+/obj/machinery/holopad/emergency/security,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "Kv" = (
@@ -5345,13 +5345,13 @@
 /obj/structure/window/reinforced/spawner{
 	dir = 8
 	},
-/obj/machinery/holopad/emergency,
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
+/obj/machinery/holopad/emergency/command,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
 "Yy" = (

@@ -116,7 +116,7 @@
 	},
 /obj/machinery/computer/atmos_control/incinerator{
 	dir = 4;
-	sensors = list("nemo_incinerator_sensor" = "Incinerator Chamber")
+	sensors = list("nemo_incinerator_sensor"="Incinerator Chamber")
 	},
 /obj/effect/turf_decal/trimline/opaque/blue/line{
 	dir = 6
@@ -1569,7 +1569,7 @@
 	},
 /obj/machinery/computer/atmos_control/tank/air_tank{
 	dir = 8;
-	sensors = list("nemo_air_sensor" = "Air Mix Tank")
+	sensors = list("nemo_air_sensor"="Air Mix Tank")
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/atmospherics)
@@ -1982,7 +1982,7 @@
 	},
 /obj/machinery/computer/atmos_control/tank/toxin_tank{
 	dir = 8;
-	sensors = list("nemo_tox_sensor" = "Plasma Tank")
+	sensors = list("nemo_tox_sensor"="Plasma Tank")
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -2567,7 +2567,7 @@
 /obj/machinery/atmospherics/pipe/simple/green/visible,
 /obj/machinery/computer/atmos_control/tank/oxygen_tank{
 	dir = 8;
-	sensors = list("nemo_o2_sensor" = "Oxygen Tank")
+	sensors = list("nemo_o2_sensor"="Oxygen Tank")
 	},
 /obj/structure/fireaxecabinet{
 	dir = 8;
@@ -2690,7 +2690,7 @@
 	},
 /obj/machinery/computer/atmos_control/tank/nitrogen_tank{
 	dir = 8;
-	sensors = list("nemo_n2_sensor" = "Nitrogen Tank")
+	sensors = list("nemo_n2_sensor"="Nitrogen Tank")
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/atmospherics)
@@ -3429,6 +3429,7 @@
 /obj/machinery/atmospherics/pipe/simple/cyan/visible{
 	dir = 4
 	},
+/obj/machinery/holopad/emergency/engineering,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "Yt" = (

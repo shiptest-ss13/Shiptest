@@ -1255,6 +1255,10 @@
 /obj/machinery/firealarm/directional/south,
 /turf/open/floor/plasteel,
 /area/ruin/powered/slimelab/checkpoint)
+"nB" = (
+/obj/effect/turf_decal/weather/dirt/corner,
+/turf/open/water,
+/area/ruin/powered/slimelab/slimedome)
 "nC" = (
 /obj/effect/turf_decal/corner/opaque/purple/diagonal,
 /obj/structure/spacevine,
@@ -1727,6 +1731,12 @@
 /obj/structure/spacevine/dense,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/slimelab/lab)
+"tq" = (
+/obj/effect/turf_decal/weather/dirt/corner{
+	dir = 1
+	},
+/turf/open/water,
+/area/ruin/powered/slimelab/slimedome)
 "ts" = (
 /obj/structure/disposaloutlet{
 	dir = 1
@@ -2082,6 +2092,12 @@
 	},
 /turf/open/floor/plating/snowed,
 /area/ruin/unpowered)
+"xp" = (
+/obj/effect/turf_decal/weather/dirt/corner{
+	dir = 4
+	},
+/turf/open/water,
+/area/ruin/powered/slimelab/slimedome)
 "xt" = (
 /obj/structure/spacevine{
 	pixel_y = -32
@@ -3835,6 +3851,15 @@
 /obj/structure/flora/junglebush/large,
 /turf/open/floor/plating/grass/jungle,
 /area/ruin/powered/slimelab/slimedome)
+"Qv" = (
+/obj/effect/turf_decal/weather/dirt/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/dirt/corner{
+	dir = 4
+	},
+/turf/open/water,
+/area/ruin/powered/slimelab/slimedome)
 "Qz" = (
 /obj/machinery/light_switch{
 	pixel_y = 25
@@ -4095,6 +4120,12 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/powered/slimelab)
+"SY" = (
+/obj/effect/turf_decal/weather/dirt/corner{
+	dir = 8
+	},
+/turf/open/water,
+/area/ruin/powered/slimelab/slimedome)
 "Td" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 4
@@ -6264,7 +6295,7 @@ Nb
 Nb
 Pe
 Ve
-Aw
+Qv
 TF
 Hd
 rg
@@ -6315,9 +6346,9 @@ rg
 rg
 Hd
 Ve
+tq
 Aw
-Aw
-Aw
+xp
 TF
 Hd
 rg
@@ -6366,7 +6397,7 @@ GC
 Gu
 Ve
 XI
-Aw
+tq
 Aw
 Aw
 Aw
@@ -6421,7 +6452,7 @@ Aw
 Aw
 Aw
 fJ
-Aw
+nB
 PF
 Hd
 rg
@@ -6469,10 +6500,10 @@ rg
 rg
 Hd
 yq
+SY
 Aw
 Aw
-Aw
-Aw
+nB
 dh
 OV
 rg
