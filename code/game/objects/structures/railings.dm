@@ -1,7 +1,7 @@
 /obj/structure/railing
 	name = "railing"
 	desc = "Basic railing meant to protect idiots like you from falling."
-	icon = 'icons/obj/fluff.dmi'
+	icon = 'icons/obj/railing.dmi'
 	icon_state = "railing"
 	flags_1 = ON_BORDER_1
 	pass_flags_self = LETPASSTHROW
@@ -140,3 +140,42 @@
 	name = "wooden railing"
 	color = "#A47449"
 	buildstack = /obj/item/stack/sheet/mineral/wood
+
+/obj/structure/railing/modern
+	name = "modern railing"
+	desc = "Modern looking railing meant to protect idiots like you from falling."
+	icon = 'icons/obj/railing_m.dmi'
+	icon_state = "railing_m"
+	layer = ABOVE_MOB_LAYER
+	///icon for the color overlay
+	var/image/cover
+	///cover color, by default this one
+	var/railing_color = "#ffffff"
+	color = null
+
+/obj/structure/railing/modern/Initialize()
+	GetCover()
+	return ..()
+
+/obj/structure/railing/modern/proc/GetCover()
+	if(cover)
+		cut_overlay(cover)
+	cover = mutable_appearance('icons/obj/railing_m.dmi', "[icon_state]_color") //allows for the handrail part to be colored while keeping the body gray
+	cover.color = railing_color
+	add_overlay(cover)
+
+/obj/structure/railing/modern/attacked_by(obj/item/I, mob/living/user)
+	. = ..()
+	if(istype(I, /obj/item/toy/crayon))
+		var/obj/item/toy/crayon/C = I
+		railing_color = C.crayon_color
+	if(railing_color)
+		GetCover()
+
+/obj/structure/railing/modern/end
+	icon_state = "railing_m_end"
+
+/obj/structure/railing/modern/corner
+	icon_state = "railing_m_corner"
+	density = FALSE
+	climbable = FALSE
