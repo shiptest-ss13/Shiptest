@@ -1061,6 +1061,10 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
+"jG" = (
+/obj/effect/decal/cleanable/oil/slippery,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/bridge)
 "jH" = (
 /obj/effect/turf_decal/siding/thinplating/dark,
 /turf/open/floor/plasteel/telecomms_floor,
@@ -1292,7 +1296,7 @@
 	dir = 10
 	},
 /obj/item/reagent_containers/food/drinks/bottle/tequila{
-	pixel_x = -5;
+	pixel_x = 2;
 	pixel_y = 13
 	},
 /turf/open/floor/plasteel/tech,
@@ -2618,6 +2622,17 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
+"xz" = (
+/obj/effect/turf_decal/corner/opaque/syndiered{
+	dir = 5
+	},
+/obj/structure/table,
+/obj/item/reagent_containers/food/snacks/burger/red{
+	name = "suspicious red burger";
+	desc = "A suspicious looking burger."
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/hallway/central)
 "xG" = (
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ship/engineering)
@@ -2851,6 +2866,7 @@
 /obj/effect/turf_decal/industrial/stand_clear/red{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/oil/streak,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "zK" = (
@@ -3926,6 +3942,14 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/office)
+"Jr" = (
+/obj/effect/decal/cleanable/plasma,
+/obj/effect/decal/cleanable/vomit/old{
+	pixel_y = -6;
+	pixel_x = -6
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/bridge)
 "Jz" = (
 /obj/machinery/door/airlock/engineering,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -4289,6 +4313,10 @@
 /area/ship/engineering/engine)
 "Mw" = (
 /obj/effect/turf_decal/industrial/caution/red,
+/obj/effect/decal/cleanable/shreds{
+	pixel_y = -9;
+	pixel_x = 9
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "MK" = (
@@ -5471,6 +5499,13 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
+"XG" = (
+/obj/structure/table,
+/obj/item/reagent_containers/food/drinks/coffee{
+	pixel_x = -10
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/hallway/central)
 "XL" = (
 /obj/structure/table,
 /obj/item/reagent_containers/food/drinks/bottle/whiskey{
@@ -7074,7 +7109,7 @@ mp
 mp
 mp
 wi
-zk
+xz
 fU
 st
 oi
@@ -7095,7 +7130,7 @@ mQ
 KJ
 oi
 st
-fU
+XG
 xp
 wi
 mp
@@ -7322,7 +7357,7 @@ mp
 mp
 SL
 Uf
-hw
+Jr
 Fc
 SL
 QE
@@ -7357,7 +7392,7 @@ mp
 mp
 SL
 iK
-hw
+jG
 Fc
 SL
 mp
