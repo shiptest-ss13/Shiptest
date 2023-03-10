@@ -843,7 +843,7 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
 "iJ" = (
-/obj/machinery/newscaster{
+/obj/machinery/newscaster/directional/north{
 	pixel_y = 32
 	},
 /turf/open/floor/carpet/nanoweave,
@@ -982,10 +982,7 @@
 /area/ship/crew/crewtwo)
 "jR" = (
 /obj/machinery/vending/clothing,
-/obj/machinery/computer/cryopod{
-	dir = 4;
-	pixel_x = -17
-	},
+/obj/machinery/computer/cryopod/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/cryo)
 "jS" = (
@@ -1343,7 +1340,7 @@
 /obj/item/bedsheet/dorms,
 /obj/structure/bed,
 /obj/structure/curtain/bounty,
-/obj/machinery/newscaster{
+/obj/machinery/newscaster/directional/north{
 	pixel_y = 32
 	},
 /obj/machinery/light/small/directional/north,
@@ -1558,7 +1555,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/newscaster{
+/obj/machinery/newscaster/directional/north{
 	pixel_y = -32
 	},
 /turf/open/floor/carpet/nanoweave,
@@ -3389,7 +3386,7 @@
 /obj/structure/chair{
 	dir = 8
 	},
-/obj/machinery/newscaster{
+/obj/machinery/newscaster/directional/north{
 	pixel_x = 25
 	},
 /turf/open/floor/plasteel/dark,
@@ -4553,7 +4550,7 @@
 /obj/machinery/atmospherics/pipe/simple/cyan/hidden{
 	dir = 4
 	},
-/obj/machinery/newscaster{
+/obj/machinery/newscaster/directional/north{
 	pixel_x = -25
 	},
 /obj/structure/bedsheetbin,
@@ -5421,7 +5418,7 @@
 	pixel_x = -5;
 	pixel_y = 18
 	},
-/obj/machinery/newscaster{
+/obj/machinery/newscaster/directional/north{
 	pixel_y = 32
 	},
 /turf/open/floor/plasteel/mono/white,

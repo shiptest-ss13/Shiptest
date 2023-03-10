@@ -4487,10 +4487,7 @@
 /obj/structure/chair{
 	dir = 8
 	},
-/obj/machinery/newscaster{
-	dir = 4;
-	pixel_x = 30
-	},
+/obj/machinery/newscaster/directional/west,
 /turf/open/floor/plasteel/grimy,
 /area/centcom/control)
 "aPe" = (
@@ -5114,10 +5111,7 @@
 	dir = 8
 	},
 /obj/machinery/light/directional/east,
-/obj/machinery/newscaster{
-	dir = 4;
-	pixel_x = 30
-	},
+/obj/machinery/newscaster/directional/west,
 /turf/open/floor/plasteel/grimy,
 /area/centcom/control)
 "aSM" = (
@@ -6717,7 +6711,7 @@
 /obj/machinery/computer/security{
 	dir = 1
 	},
-/obj/machinery/newscaster{
+/obj/machinery/newscaster/directional/north{
 	pixel_y = -30
 	},
 /obj/effect/turf_decal/corner/transparent/neutral{
@@ -7204,10 +7198,7 @@
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
-/obj/machinery/newscaster{
-	dir = 1;
-	pixel_y = 30
-	},
+/obj/machinery/newscaster/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/centcom/ferry)
 "duv" = (
@@ -7574,7 +7565,7 @@
 /area/tdome/tdomeobserve)
 "eii" = (
 /obj/machinery/vending/coffee,
-/obj/machinery/newscaster{
+/obj/machinery/newscaster/directional/north{
 	pixel_y = -30
 	},
 /obj/effect/turf_decal/corner/transparent/neutral{
@@ -8837,7 +8828,7 @@
 /obj/effect/turf_decal/corner/opaque/green{
 	dir = 8
 	},
-/obj/machinery/newscaster{
+/obj/machinery/newscaster/directional/north{
 	pixel_y = -30
 	},
 /turf/open/floor/plasteel,
@@ -9698,7 +9689,7 @@
 /turf/open/floor/plasteel,
 /area/syndicate_mothership/control)
 "jcR" = (
-/obj/machinery/newscaster{
+/obj/machinery/newscaster/directional/north{
 	pixel_y = -30
 	},
 /obj/machinery/computer/med_data{
@@ -10618,10 +10609,7 @@
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
-/obj/machinery/newscaster{
-	dir = 8;
-	pixel_x = -30
-	},
+/obj/machinery/newscaster/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/tdome/tdomeobserve)
 "lkr" = (
@@ -10760,10 +10748,7 @@
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
-/obj/machinery/newscaster{
-	dir = 8;
-	pixel_x = -30
-	},
+/obj/machinery/newscaster/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/centcom/ferry)
 "lwW" = (
@@ -11435,10 +11420,7 @@
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
-/obj/machinery/newscaster{
-	dir = 4;
-	pixel_x = 30
-	},
+/obj/machinery/newscaster/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/centcom/ferry)
 "ncR" = (
@@ -11644,7 +11626,7 @@
 /obj/structure/table/wood,
 /obj/item/folder/red,
 /obj/item/lighter,
-/obj/machinery/newscaster{
+/obj/machinery/newscaster/directional/north{
 	pixel_y = -30
 	},
 /obj/effect/turf_decal/corner/transparent/neutral{
@@ -12114,10 +12096,7 @@
 /obj/effect/turf_decal/corner/opaque/green{
 	dir = 4
 	},
-/obj/machinery/newscaster{
-	dir = 1;
-	pixel_y = 30
-	},
+/obj/machinery/newscaster/directional/south,
 /turf/open/floor/plasteel,
 /area/centcom/control)
 "oGj" = (
@@ -12596,7 +12575,7 @@
 /obj/item/book/manual/wiki/barman_recipes,
 /obj/item/reagent_containers/food/drinks/shaker,
 /obj/item/reagent_containers/glass/rag,
-/obj/machinery/newscaster{
+/obj/machinery/newscaster/directional/north{
 	pixel_y = -30
 	},
 /obj/effect/turf_decal/corner/transparent/neutral{
@@ -14058,7 +14037,7 @@
 /area/centcom/holding)
 "sVg" = (
 /obj/machinery/vending/cigarette,
-/obj/machinery/newscaster{
+/obj/machinery/newscaster/directional/north{
 	pixel_y = -30
 	},
 /obj/effect/turf_decal/corner/transparent/neutral{
@@ -14173,10 +14152,7 @@
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
-/obj/machinery/newscaster{
-	dir = 1;
-	pixel_y = 30
-	},
+/obj/machinery/newscaster/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/tdome/tdomeobserve)
 "tgw" = (
@@ -14249,7 +14225,7 @@
 /obj/structure/table/wood,
 /obj/item/folder/red,
 /obj/item/lighter,
-/obj/machinery/newscaster{
+/obj/machinery/newscaster/directional/north{
 	pixel_y = -30
 	},
 /obj/effect/turf_decal/corner/transparent/neutral{
@@ -15560,10 +15536,7 @@
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
-/obj/machinery/newscaster{
-	dir = 1;
-	pixel_y = 30
-	},
+/obj/machinery/newscaster/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/centcom/control)
 "wWB" = (
@@ -15670,10 +15643,7 @@
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
-/obj/machinery/newscaster{
-	dir = 4;
-	pixel_x = 30
-	},
+/obj/machinery/newscaster/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/centcom/evac)
 "xpf" = (

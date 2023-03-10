@@ -801,10 +801,8 @@
 /obj/item/clothing/gloves/color/fyellow{
 	pixel_x = 4
 	},
-/obj/item/radio/intercom/directional/north{
-	pixel_y = -32
-	},
 /obj/effect/turf_decal/corner/opaque/yellow/border,
+/obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "jz" = (
@@ -845,6 +843,9 @@
 	},
 /obj/machinery/camera/autoname{
 	network = list("cricket")
+	},
+/obj/structure/sign/poster/solgov/random{
+	pixel_y = 32
 	},
 /turf/open/floor/carpet/nanoweave/purple,
 /area/ship/hallway/port)
@@ -936,6 +937,7 @@
 /obj/effect/turf_decal/corner_techfloor_grid/full{
 	dir = 8
 	},
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/communications)
 "ln" = (
@@ -2381,11 +2383,11 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 1
 	},
-/obj/structure/sign/poster/official/random{
-	pixel_y = 32
-	},
 /obj/structure/cable{
 	icon_state = "2-8"
+	},
+/obj/structure/sign/poster/solgov/random{
+	pixel_y = 32
 	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/hallway/starboard)
@@ -2446,10 +2448,7 @@
 /turf/open/floor/carpet/nanoweave/purple,
 /area/ship/hallway/port)
 "CK" = (
-/obj/machinery/computer/cryopod{
-	dir = 1;
-	pixel_y = -18
-	},
+/obj/machinery/computer/cryopod/directional/south,
 /obj/machinery/light_switch{
 	dir = 1;
 	pixel_x = 25;
@@ -3246,7 +3245,6 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "Mg" = (
-/obj/structure/sign/poster/solgov/solgov_enlist,
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/hallway/port)
 "Mi" = (
@@ -3531,7 +3529,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "PE" = (
-/obj/structure/sign/poster/official/random{
+/obj/structure/sign/poster/solgov/random{
 	pixel_y = 32
 	},
 /turf/open/floor/carpet/nanoweave/purple,
@@ -3638,7 +3636,6 @@
 /turf/open/floor/plasteel,
 /area/ship/storage)
 "QZ" = (
-/obj/machinery/light/small/directional/west,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},

@@ -159,7 +159,7 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/machinery/computer/cryopod{
+/obj/machinery/computer/cryopod/directional/north{
 	pixel_y = 17
 	},
 /obj/effect/turf_decal/techfloor{
@@ -1136,7 +1136,7 @@
 /area/ship/engineering/engine)
 "la" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/computer/helm/viewscreen{
+/obj/machinery/computer/helm/viewscreen/directional/north{
 	pixel_y = 18
 	},
 /obj/effect/turf_decal/borderfloor{
@@ -2172,7 +2172,7 @@
 "xF" = (
 /obj/structure/filingcabinet/chestdrawer,
 /obj/item/folder/documents,
-/obj/machinery/computer/helm/viewscreen{
+/obj/machinery/computer/helm/viewscreen/directional/north{
 	pixel_y = 18
 	},
 /turf/open/floor/plasteel/telecomms_floor,
@@ -3076,7 +3076,7 @@
 /obj/item/storage/toolbox/mechanical{
 	pixel_y = -5
 	},
-/obj/machinery/computer/helm/viewscreen{
+/obj/machinery/computer/helm/viewscreen/directional/north{
 	pixel_y = 18
 	},
 /turf/open/floor/plasteel/patterned/grid,
@@ -4336,7 +4336,7 @@
 /obj/item/radio,
 /obj/item/radio,
 /obj/item/clothing/suit/jacket/letterman_nanotrasen,
-/obj/machinery/newscaster{
+/obj/machinery/newscaster/directional/north{
 	pixel_y = 32
 	},
 /turf/open/floor/plasteel/grimy,
@@ -4708,10 +4708,7 @@
 /obj/item/storage/toolbox/mechanical{
 	pixel_y = -5
 	},
-/obj/machinery/computer/helm/viewscreen{
-	dir = 1;
-	pixel_y = -18
-	},
+/obj/machinery/computer/helm/viewscreen/directional/south,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo/starboard)
 "Wz" = (

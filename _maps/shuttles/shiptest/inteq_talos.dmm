@@ -113,7 +113,9 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
 "ax" = (
-/obj/machinery/door/airlock/maintenance_hatch,
+/obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4
+	},
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -278,7 +280,9 @@
 /area/ship/bridge)
 "cp" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
-/obj/machinery/door/airlock/maintenance_hatch,
+/obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4
+	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -539,10 +543,7 @@
 	pixel_y = 4
 	},
 /obj/item/pen/fourcolor,
-/obj/machinery/computer/helm/viewscreen{
-	dir = 1;
-	pixel_y = -18
-	},
+/obj/machinery/computer/helm/viewscreen/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "ej" = (
@@ -677,7 +678,9 @@
 /area/ship/security)
 "eV" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
-/obj/machinery/door/airlock/maintenance_hatch,
+/obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4
+	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -780,7 +783,9 @@
 /area/ship/cargo/port)
 "fQ" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/airlock/hatch{
+	dir = 4
+	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/airless,
@@ -859,10 +864,7 @@
 	dir = 1;
 	pixel_y = -25
 	},
-/obj/machinery/newscaster{
-	dir = 4;
-	pixel_x = -32
-	},
+/obj/machinery/newscaster/directional/west,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "gm" = (
@@ -976,10 +978,7 @@
 	},
 /obj/machinery/light/directional/south,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/newscaster{
-	dir = 1;
-	pixel_y = -32
-	},
+/obj/machinery/newscaster/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "gZ" = (
@@ -1354,7 +1353,9 @@
 /area/ship/maintenance/port)
 "jm" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/airlock/hatch{
+	dir = 4
+	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/airless,
 /area/ship/cargo/port)
@@ -1388,7 +1389,9 @@
 /area/ship/crew/canteen)
 "js" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
-/obj/machinery/door/airlock/maintenance_hatch,
+/obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4
+	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -2170,7 +2173,9 @@
 /turf/open/floor/carpet/black,
 /area/ship/crew/dorm)
 "ox" = (
-/obj/machinery/door/airlock/maintenance_hatch,
+/obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4
+	},
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -3036,7 +3041,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/port)
 "tL" = (
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/airlock/hatch{
+	dir = 4
+	},
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -3844,7 +3851,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/computer/cryopod{
+/obj/machinery/computer/cryopod/directional/north{
 	pixel_y = 25
 	},
 /turf/open/floor/plasteel/tech/grid,
@@ -4395,7 +4402,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/door_assembly/door_assembly_mhatch{
 	anchored = 1;
-	can_be_unanchored = 1
+	can_be_unanchored = 1;
+	dir = 4
 	},
 /turf/open/floor/plating/airless,
 /area/ship/cargo/starboard)
@@ -4879,6 +4887,15 @@
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
+"Fs" = (
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/airlock/abandoned,
+/turf/open/floor/plating/airless,
+/area/ship/maintenance/port)
 "Fu" = (
 /obj/machinery/power/terminal,
 /obj/structure/cable/yellow,
@@ -5573,7 +5590,9 @@
 /area/ship/hallway/port)
 "Kx" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/airlock/hatch{
+	dir = 4
+	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -6509,7 +6528,9 @@
 /turf/open/floor/engine/vacuum,
 /area/ship/engineering/engine)
 "Rb" = (
-/obj/machinery/door/airlock/maintenance_hatch,
+/obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4
+	},
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -6660,7 +6681,7 @@
 	dir = 4
 	},
 /obj/item/instrument/harmonica,
-/obj/machinery/newscaster{
+/obj/machinery/newscaster/directional/north{
 	pixel_y = 32
 	},
 /turf/open/floor/plasteel/dark,
@@ -7361,7 +7382,9 @@
 /area/ship/bridge)
 "Xb" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/airlock/hatch{
+	dir = 4
+	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -7431,7 +7454,8 @@
 	},
 /obj/structure/door_assembly/door_assembly_mhatch{
 	anchored = 1;
-	can_be_unanchored = 1
+	can_be_unanchored = 1;
+	dir = 4
 	},
 /turf/open/floor/plating/airless,
 /area/ship/maintenance/port)
@@ -7454,7 +7478,9 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "XW" = (
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/airlock/hatch{
+	dir = 4
+	},
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -7661,7 +7687,9 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/door/airlock/maintenance_hatch,
+/obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4
+	},
 /obj/effect/mapping_helpers/airlock/abandoned,
 /turf/open/floor/plating/airless,
 /area/ship/maintenance/starboard)
@@ -8896,7 +8924,7 @@ Kx
 yp
 yp
 yp
-JI
+Fs
 yp
 yp
 sw

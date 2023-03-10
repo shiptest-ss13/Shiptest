@@ -2552,10 +2552,7 @@
 /turf/open/floor/wood,
 /area/ship/hallway/port)
 "wV" = (
-/obj/machinery/computer/cryopod{
-	dir = 1;
-	pixel_y = -26
-	},
+/obj/machinery/computer/cryopod/directional/south,
 /obj/structure/closet/wall{
 	dir = 8;
 	pixel_x = 30
@@ -3737,7 +3734,7 @@
 /turf/open/floor/wood,
 /area/ship/bridge)
 "Hx" = (
-/obj/machinery/newscaster{
+/obj/machinery/newscaster/directional/north{
 	pixel_y = 30
 	},
 /obj/effect/turf_decal/siding/wood{
@@ -4332,10 +4329,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/siding/wood,
-/obj/machinery/newscaster{
-	dir = 1;
-	pixel_y = -32
-	},
+/obj/machinery/newscaster/directional/south,
 /turf/open/floor/wood,
 /area/ship/crew/library)
 "Mh" = (

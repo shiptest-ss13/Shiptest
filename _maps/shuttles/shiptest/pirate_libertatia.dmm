@@ -620,6 +620,7 @@
 /area/ship/crew)
 "ui" = (
 /obj/machinery/door/airlock/hatch{
+	dir = 4;
 	name = "External Access Hatch"
 	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
@@ -662,6 +663,7 @@
 /area/ship/crew)
 "vo" = (
 /obj/machinery/door/airlock/hatch{
+	dir = 4;
 	name = "External Access Hatch"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -1065,7 +1067,7 @@
 	dir = 4
 	},
 /obj/structure/curtain/bounty,
-/obj/machinery/computer/cryopod{
+/obj/machinery/computer/cryopod/directional/north{
 	pixel_y = -25
 	},
 /turf/open/floor/pod/light,
@@ -1418,6 +1420,7 @@
 /area/ship/hallway/port)
 "Py" = (
 /obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4;
 	name = "Port Engines"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -1452,6 +1455,7 @@
 /area/ship/hallway/port)
 "QO" = (
 /obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4;
 	name = "Port Engines"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -1615,6 +1619,7 @@
 /area/ship/cargo)
 "Ty" = (
 /obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4;
 	name = "Starboard Engines"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -1658,6 +1663,7 @@
 /area/ship/hallway/starboard)
 "Ut" = (
 /obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4;
 	name = "Starboard Engines"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{

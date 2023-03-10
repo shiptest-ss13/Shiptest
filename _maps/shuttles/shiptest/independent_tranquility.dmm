@@ -631,6 +631,7 @@
 /area/ship/hallway/starboard)
 "fD" = (
 /obj/machinery/door/airlock/hatch{
+	dir = 4;
 	name = "Supply Closet"
 	},
 /obj/structure/cable{
@@ -694,10 +695,7 @@
 /obj/machinery/cryopod{
 	dir = 1
 	},
-/obj/machinery/computer/cryopod{
-	dir = 4;
-	pixel_x = -18
-	},
+/obj/machinery/computer/cryopod/directional/west,
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/cryo)
@@ -1238,10 +1236,7 @@
 	dir = 1;
 	name = "communications"
 	},
-/obj/machinery/computer/helm/viewscreen{
-	dir = 8;
-	pixel_x = 16
-	},
+/obj/machinery/computer/helm/viewscreen/directional/east,
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},

@@ -765,7 +765,7 @@
 	},
 /obj/item/storage/backpack/magspear_quiver,
 /obj/item/pneumatic_cannon/speargun,
-/obj/machinery/newscaster{
+/obj/machinery/newscaster/directional/north{
 	pixel_x = 30
 	},
 /turf/open/floor/wood,
@@ -858,10 +858,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/siding/thinplating/dark,
-/obj/machinery/computer/helm/viewscreen{
-	dir = 1;
-	pixel_y = -17
-	},
+/obj/machinery/computer/helm/viewscreen/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "jT" = (
@@ -1476,10 +1473,7 @@
 	dir = 4
 	},
 /obj/item/clothing/suit/hooded/cloak/goliath/polar,
-/obj/machinery/computer/helm/viewscreen{
-	dir = 8;
-	pixel_x = 18
-	},
+/obj/machinery/computer/helm/viewscreen/directional/east,
 /turf/open/floor/wood,
 /area/ship/crew/library)
 "tb" = (
@@ -2382,11 +2376,9 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "JL" = (
-/obj/machinery/computer/cryopod{
-	pixel_y = 17
-	},
 /obj/machinery/cryopod,
 /obj/machinery/airalarm/directional/west,
+/obj/machinery/computer/cryopod/directional/north,
 /turf/open/floor/circuit/green,
 /area/ship/crew/dorm)
 "JS" = (
@@ -2644,7 +2636,7 @@
 /turf/open/floor/plasteel/white,
 /area/ship/crew/dorm)
 "ND" = (
-/obj/machinery/newscaster{
+/obj/machinery/newscaster/directional/north{
 	pixel_x = 30
 	},
 /obj/effect/turf_decal/siding/thinplating/dark{

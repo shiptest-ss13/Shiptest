@@ -73,9 +73,7 @@
 /obj/machinery/cryopod{
 	dir = 4
 	},
-/obj/machinery/computer/cryopod{
-	pixel_y = 32
-	},
+/obj/machinery/computer/cryopod/directional/north,
 /turf/open/floor/plating,
 /area/ship/storage)
 "j" = (
@@ -182,7 +180,9 @@
 /turf/open/floor/plating,
 /area/ship/storage)
 "w" = (
-/obj/machinery/door/airlock/maintenance_hatch,
+/obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/storage)
 "x" = (

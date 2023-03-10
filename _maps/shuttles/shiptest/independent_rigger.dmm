@@ -2219,10 +2219,7 @@
 /area/ship/engineering/communications)
 "Bb" = (
 /obj/structure/table,
-/obj/machinery/newscaster{
-	dir = 4;
-	pixel_x = -32
-	},
+/obj/machinery/newscaster/directional/west,
 /obj/item/storage/box/cups,
 /obj/effect/turf_decal/corner/opaque/yellow/diagonal,
 /turf/open/floor/plasteel/white,
@@ -2427,17 +2424,16 @@
 /obj/machinery/cryopod{
 	dir = 1
 	},
-/obj/machinery/computer/cryopod{
-	dir = 1;
-	pixel_y = -25
-	},
+/obj/machinery/computer/cryopod/directional/south,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 5
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew)
 "Dv" = (
-/obj/machinery/door/airlock/maintenance_hatch,
+/obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4
+	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -2610,10 +2606,7 @@
 /turf/open/floor/carpet/blue,
 /area/ship/engineering/communications)
 "Fo" = (
-/obj/machinery/newscaster{
-	dir = 1;
-	pixel_y = -32
-	},
+/obj/machinery/newscaster/directional/south,
 /obj/machinery/light/directional/south,
 /obj/machinery/vending/coffee,
 /obj/effect/turf_decal/industrial/outline/yellow,
@@ -3522,7 +3515,9 @@
 /turf/open/floor/engine/hull,
 /area/ship/external)
 "Rf" = (
-/obj/machinery/door/airlock/maintenance_hatch,
+/obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4
+	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -4196,7 +4191,9 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "YF" = (
-/obj/machinery/door/airlock/maintenance_hatch,
+/obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4
+	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},

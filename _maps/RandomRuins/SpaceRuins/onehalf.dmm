@@ -160,9 +160,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
 	},
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ruin/space/has_grav/onehalf)
 "aC" = (
@@ -172,9 +170,7 @@
 	},
 /area/ruin/space/has_grav/onehalf)
 "aD" = (
-/obj/machinery/light/small{
-	dir = 8
-	},
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/onehalf)
 "aE" = (
@@ -514,9 +510,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/machinery/light/small/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/onehalf)
@@ -604,7 +598,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/onehalf)
 "bF" = (
@@ -733,9 +727,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/onehalf)
 "cd" = (
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /obj/structure/frame/computer,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/onehalf)
@@ -883,7 +875,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/onehalf)
 "cy" = (
-/obj/machinery/light/small,
+/obj/machinery/light/small/directional/south,
 /obj/effect/rune/blood_boil,
 /turf/open/floor/plasteel/cult,
 /area/ruin/space/has_grav/onehalf)
@@ -988,9 +980,7 @@
 	},
 /area/ruin/space/has_grav/onehalf)
 "cM" = (
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /obj/machinery/vending/sovietsoda,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/onehalf)
@@ -1071,7 +1061,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/onehalf)
 "db" = (
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /obj/structure/table/reinforced,
 /obj/item/storage/firstaid/regular,
 /turf/open/floor/plasteel,
@@ -1139,9 +1129,7 @@
 /turf/open/space/basic,
 /area/template_noop)
 "di" = (
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /obj/structure/chair,
 /turf/open/floor/plasteel/cult/airless,
 /area/ruin/space/has_grav/onehalf)
@@ -1617,7 +1605,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/onehalf)
@@ -1649,9 +1637,7 @@
 /turf/open/floor/wood/airless,
 /area/ruin/space/has_grav/onehalf)
 "zd" = (
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/wood/airless,
 /area/ruin/space/has_grav/onehalf)
 "zh" = (
@@ -1663,9 +1649,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/onehalf)
 "zQ" = (
@@ -2020,9 +2004,7 @@
 /turf/open/floor/wood/airless,
 /area/ruin/space/has_grav/onehalf)
 "OJ" = (
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ruin/space/has_grav/onehalf)
 "OW" = (
@@ -2233,9 +2215,7 @@
 /turf/open/space,
 /area/space/nearstation)
 "XU" = (
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /obj/structure/table,
 /obj/item/storage/firstaid/brute{
 	pixel_x = 3;

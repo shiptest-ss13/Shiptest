@@ -446,10 +446,7 @@
 	pixel_x = 8;
 	pixel_y = -22
 	},
-/obj/machinery/newscaster{
-	dir = 8;
-	pixel_x = 31
-	},
+/obj/machinery/newscaster/directional/east,
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/dorm)
 "eu" = (
@@ -3389,10 +3386,7 @@
 	pixel_y = -32
 	},
 /obj/machinery/light/directional/south,
-/obj/machinery/newscaster{
-	dir = 4;
-	pixel_x = -31
-	},
+/obj/machinery/newscaster/directional/west,
 /obj/machinery/camera/autoname{
 	dir = 5
 	},
@@ -3415,7 +3409,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
-/obj/machinery/computer/cryopod{
+/obj/machinery/computer/cryopod/directional/north{
 	pixel_y = 26
 	},
 /turf/open/floor/plasteel/telecomms_floor,

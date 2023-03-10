@@ -1957,10 +1957,7 @@
 /obj/machinery/cryopod{
 	dir = 1
 	},
-/obj/machinery/computer/cryopod{
-	dir = 1;
-	pixel_y = -25
-	},
+/obj/machinery/computer/cryopod/directional/south,
 /obj/effect/turf_decal/industrial/warning/full,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/firealarm/directional/east,

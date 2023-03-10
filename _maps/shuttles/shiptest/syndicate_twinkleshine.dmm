@@ -4198,7 +4198,7 @@
 	dir = 4
 	},
 /obj/structure/curtain/bounty,
-/obj/machinery/computer/cryopod{
+/obj/machinery/computer/cryopod/directional/north{
 	pixel_y = 17
 	},
 /turf/open/floor/carpet/nanoweave/red,
@@ -5160,10 +5160,6 @@
 "UY" = (
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ship/crew/dorm)
-"UZ" = (
-/obj/effect/turf_decal/industrial/warning,
-/turf/open/floor/pod/dark,
-/area/ship/cargo)
 "Va" = (
 /obj/machinery/atmospherics/components/unary/thermomachine/freezer{
 	dir = 1;
@@ -5659,10 +5655,6 @@
 	},
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/security)
-"Ze" = (
-/obj/machinery/light/floor,
-/turf/open/floor/pod/dark,
-/area/ship/cargo)
 "Zf" = (
 /obj/machinery/light/small/directional/north,
 /obj/machinery/air_sensor/atmos/nitrogen_tank,
@@ -6035,12 +6027,12 @@ Xu
 Xu
 rT
 OF
-Ze
+DE
 OH
 OH
 DE
 OH
-UZ
+zV
 ZF
 Hm
 ZF

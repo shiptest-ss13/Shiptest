@@ -903,10 +903,7 @@
 "BE" = (
 /obj/structure/reagent_dispensers/watertank,
 /obj/effect/turf_decal/industrial/outline/blue,
-/obj/machinery/newscaster{
-	dir = 4;
-	pixel_x = -32
-	},
+/obj/machinery/newscaster/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "BG" = (
@@ -947,7 +944,7 @@
 /obj/machinery/cryopod{
 	dir = 4
 	},
-/obj/machinery/computer/cryopod{
+/obj/machinery/computer/cryopod/directional/north{
 	pixel_y = 26
 	},
 /obj/structure/curtain/bounty{

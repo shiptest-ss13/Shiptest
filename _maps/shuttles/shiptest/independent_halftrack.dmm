@@ -114,10 +114,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 9
 	},
-/obj/machinery/computer/cryopod{
-	dir = 1;
-	pixel_y = -25
-	},
+/obj/machinery/computer/cryopod/directional/south,
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
@@ -162,7 +159,7 @@
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/donkpockets,
 /obj/effect/spawner/lootdrop/donkpockets,
-/obj/machinery/newscaster{
+/obj/machinery/newscaster/directional/north{
 	pixel_y = -30
 	},
 /turf/open/floor/carpet/nanoweave,
@@ -460,6 +457,7 @@
 /area/ship/crew)
 "mw" = (
 /obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4;
 	name = "Port Engines"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -1170,6 +1168,7 @@
 /area/ship/maintenance/starboard)
 "GP" = (
 /obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4;
 	name = "Starboard Engines"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -1658,6 +1657,7 @@
 /area/ship/maintenance/starboard)
 "Rh" = (
 /obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4;
 	name = "Port Engines"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -1990,6 +1990,7 @@
 /area/ship/storage)
 "Xj" = (
 /obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4;
 	name = "Starboard Engines"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{

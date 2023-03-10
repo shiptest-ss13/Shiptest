@@ -523,7 +523,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office)
 "gm" = (
-/obj/machinery/computer/cryopod{
+/obj/machinery/computer/cryopod/directional/north{
 	pixel_y = 25
 	},
 /obj/structure/catwalk/over/plated_catwalk,
@@ -1064,7 +1064,7 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
-/obj/machinery/newscaster{
+/obj/machinery/newscaster/directional/north{
 	pixel_y = 32
 	},
 /turf/open/floor/plasteel/patterned/grid,
@@ -1597,10 +1597,7 @@
 	pixel_y = 10
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/newscaster{
-	dir = 1;
-	pixel_y = -32
-	},
+/obj/machinery/newscaster/directional/south,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "sp" = (
@@ -2584,10 +2581,7 @@
 	},
 /obj/machinery/light/directional/west,
 /obj/item/cigbutt,
-/obj/machinery/newscaster{
-	dir = 4;
-	pixel_x = -32
-	},
+/obj/machinery/newscaster/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office)
 "Dq" = (

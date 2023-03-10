@@ -20,6 +20,7 @@
 	dir = 8
 	},
 /obj/machinery/door/airlock/hatch{
+	dir = 4;
 	name = "Cargo Bay"
 	},
 /turf/open/floor/plasteel/patterned,
@@ -249,10 +250,7 @@
 /obj/structure/chair/greyscale{
 	dir = 4
 	},
-/obj/machinery/newscaster{
-	dir = 4;
-	pixel_x = -32
-	},
+/obj/machinery/newscaster/directional/west,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plastic,
 /area/ship/hallway/central)
@@ -548,6 +546,7 @@
 	},
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/machinery/door/airlock/hatch{
+	dir = 4;
 	name = "Security"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -782,7 +781,7 @@
 	pixel_y = -8
 	},
 /obj/machinery/power/apc/auto_name/east,
-/obj/machinery/computer/helm/viewscreen{
+/obj/machinery/computer/helm/viewscreen/directional/north{
 	pixel_y = 28
 	},
 /obj/structure/cable{
@@ -1264,10 +1263,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
-/obj/machinery/newscaster{
-	dir = 4;
-	pixel_x = -32
-	},
+/obj/machinery/newscaster/directional/west,
 /obj/item/storage/backpack/security/cmm,
 /obj/item/storage/backpack/security/cmm,
 /obj/item/storage/backpack/security/cmm,
@@ -1333,10 +1329,7 @@
 /obj/machinery/cryopod{
 	dir = 8
 	},
-/obj/machinery/computer/cryopod{
-	dir = 8;
-	pixel_x = 21
-	},
+/obj/machinery/computer/cryopod/directional/east,
 /obj/effect/turf_decal/industrial/warning/cee{
 	dir = 8
 	},
@@ -1575,6 +1568,7 @@
 	dir = 9
 	},
 /obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4;
 	name = "Engineering"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -1979,7 +1973,7 @@
 /area/ship/engineering)
 "Jy" = (
 /obj/structure/chair/sofa/left,
-/obj/machinery/newscaster{
+/obj/machinery/newscaster/directional/north{
 	pixel_y = 30
 	},
 /obj/item/toy/plush/lizardplushie{
@@ -2232,10 +2226,7 @@
 	color = "#808080";
 	dir = 1
 	},
-/obj/machinery/computer/helm/viewscreen{
-	dir = 4;
-	pixel_x = -18
-	},
+/obj/machinery/computer/helm/viewscreen/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "Pj" = (
@@ -2700,10 +2691,7 @@
 	dir = 4;
 	name = "tactical swivel chair"
 	},
-/obj/machinery/newscaster{
-	dir = 4;
-	pixel_x = -32
-	},
+/obj/machinery/newscaster/directional/west,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
 	},

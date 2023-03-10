@@ -50,7 +50,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/storage)
 "bQ" = (
-/obj/machinery/newscaster{
+/obj/machinery/newscaster/directional/north{
 	pixel_x = -30;
 	pixel_y = 30
 	},
@@ -1040,7 +1040,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
 	},
-/obj/machinery/newscaster{
+/obj/machinery/newscaster/directional/north{
 	pixel_y = -30
 	},
 /obj/effect/turf_decal/siding/wood,
@@ -1267,7 +1267,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
-/obj/machinery/newscaster{
+/obj/machinery/newscaster/directional/north{
 	pixel_y = -30
 	},
 /turf/open/floor/plasteel,
@@ -2100,10 +2100,7 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
 "OB" = (
-/obj/machinery/computer/helm/viewscreen{
-	dir = 4;
-	pixel_x = -17
-	},
+/obj/machinery/computer/helm/viewscreen/directional/west,
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
@@ -2189,7 +2186,7 @@
 	pixel_x = -5;
 	pixel_y = -4
 	},
-/obj/machinery/newscaster{
+/obj/machinery/newscaster/directional/north{
 	pixel_x = -30
 	},
 /obj/structure/closet/wall/white{
@@ -2284,7 +2281,7 @@
 	pixel_y = 10
 	},
 /obj/item/folder,
-/obj/machinery/computer/cryopod{
+/obj/machinery/computer/cryopod/directional/north{
 	pixel_y = 17
 	},
 /turf/open/floor/wood/walnut,

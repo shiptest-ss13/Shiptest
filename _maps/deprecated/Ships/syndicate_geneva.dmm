@@ -398,6 +398,7 @@
 /area/ship/hallway/central)
 "fB" = (
 /obj/machinery/door/airlock/hatch{
+	dir = 4;
 	name = "Crew Quarters"
 	},
 /obj/structure/cable{
@@ -580,7 +581,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "iH" = (
-/obj/machinery/computer/cryopod{
+/obj/machinery/computer/cryopod/directional/north{
 	pixel_y = 26
 	},
 /turf/open/floor/carpet/nanoweave/red,

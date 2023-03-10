@@ -347,7 +347,9 @@
 /turf/closed/wall,
 /area/ship/maintenance/port)
 "oI" = (
-/obj/machinery/door/airlock/maintenance_hatch,
+/obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4
+	},
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 4
 	},
@@ -420,7 +422,9 @@
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 4
 	},
-/obj/machinery/door/airlock/maintenance_hatch,
+/obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4
+	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -509,7 +513,7 @@
 /obj/machinery/cryopod{
 	dir = 4
 	},
-/obj/machinery/computer/cryopod{
+/obj/machinery/computer/cryopod/directional/north{
 	pixel_y = 18
 	},
 /turf/open/floor/carpet,
@@ -731,7 +735,9 @@
 /turf/open/floor/plating,
 /area/ship/bridge)
 "IA" = (
-/obj/machinery/door/airlock/maintenance_hatch,
+/obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4
+	},
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 8
 	},

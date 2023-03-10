@@ -1554,10 +1554,7 @@
 /turf/open/floor/plating,
 /area/ship/crew)
 "tL" = (
-/obj/machinery/newscaster{
-	dir = 1;
-	pixel_y = -32
-	},
+/obj/machinery/newscaster/directional/south,
 /obj/machinery/light/directional/east,
 /obj/item/radio/headset/solgov/alt,
 /obj/item/pet_carrier,
@@ -2503,7 +2500,7 @@
 /obj/machinery/cryopod{
 	dir = 1
 	},
-/obj/machinery/computer/cryopod{
+/obj/machinery/computer/cryopod/directional/north{
 	pixel_y = -25
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -2721,10 +2718,7 @@
 /obj/structure/chair{
 	dir = 4
 	},
-/obj/machinery/newscaster{
-	dir = 1;
-	pixel_y = -32
-	},
+/obj/machinery/newscaster/directional/south,
 /obj/machinery/light/directional/south,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/nanoweave,
@@ -3013,10 +3007,7 @@
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/security)
 "IT" = (
-/obj/machinery/newscaster{
-	dir = 4;
-	pixel_x = -32
-	},
+/obj/machinery/newscaster/directional/west,
 /obj/structure/frame/computer{
 	anchored = 1;
 	dir = 4

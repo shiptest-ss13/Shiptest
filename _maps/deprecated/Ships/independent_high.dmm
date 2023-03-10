@@ -98,10 +98,7 @@
 	},
 /area/ship/bridge)
 "bp" = (
-/obj/machinery/computer/cryopod{
-	dir = 4;
-	pixel_x = -23
-	},
+/obj/machinery/computer/cryopod/directional/west,
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/crew/dorm)
 "by" = (
@@ -3145,10 +3142,7 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/dorm)
 "UJ" = (
-/obj/machinery/newscaster{
-	dir = 1;
-	pixel_y = -30
-	},
+/obj/machinery/newscaster/directional/south,
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew/office)
 "UM" = (
