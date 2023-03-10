@@ -11,6 +11,7 @@
 	var/datum/track/selection = null
 	/// Volume of the songs played
 	var/volume = 70
+	var/obj/item/card/data/music/disk
 
 /obj/machinery/jukebox/boombox
 	name = "boombox"
@@ -88,6 +89,11 @@
 			name = S.song_name
 		)
 		data["songs"] += list(track_data)
+	if(disk && disk.track)
+		var/list/track_data = list(
+		name = disk.track.song_name
+		)
+		data["songs"] += list(track_data)
 	data["track_selected"] = null
 	data["track_length"] = null
 	data["track_beat"] = null
@@ -131,6 +137,8 @@
 			var/list/available = list()
 			for(var/datum/track/S in SSjukeboxes.songs) //WS Edit Cit #7367
 				available[S.song_name] = S
+			if(disk && disk.track)
+				available[disk.track.song_name] = disk.track
 			var/selected = params["track"]
 			if(QDELETED(src) || !selected || !istype(available[selected], /datum/track))
 				return
