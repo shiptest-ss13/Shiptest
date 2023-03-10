@@ -1383,10 +1383,7 @@
 /turf/open/floor/wood/walnut,
 /area/ship/crew)
 "tL" = (
-/obj/machinery/newscaster{
-	dir = 1;
-	pixel_y = -32
-	},
+/obj/machinery/newscaster/directional/south,
 /obj/machinery/light/directional/east,
 /obj/effect/turf_decal/chapel,
 /turf/open/floor/plasteel/dark,
@@ -2124,10 +2121,7 @@
 /turf/open/floor/wood/yew,
 /area/ship/crew/chapel)
 "Dr" = (
-/obj/machinery/computer/cryopod{
-	dir = 1;
-	pixel_y = -25
-	},
+/obj/machinery/computer/cryopod/directional/south,
 /obj/effect/turf_decal/industrial/loading{
 	dir = 4
 	},
@@ -2282,10 +2276,7 @@
 /turf/open/floor/plasteel/stairs,
 /area/ship/bridge)
 "Fo" = (
-/obj/machinery/newscaster{
-	dir = 1;
-	pixel_y = -32
-	},
+/obj/machinery/newscaster/directional/south,
 /obj/machinery/light/directional/south,
 /obj/structure/table/wood/reinforced,
 /turf/open/floor/wood/maple,
