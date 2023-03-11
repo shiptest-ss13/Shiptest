@@ -5298,6 +5298,12 @@
 	dir = 8
 	},
 /obj/structure/closet/crate/internals,
+/obj/item/clothing/suit/space/orange,
+/obj/item/clothing/suit/space/orange,
+/obj/item/clothing/suit/space/orange,
+/obj/item/clothing/head/helmet/space/orange,
+/obj/item/clothing/head/helmet/space/orange,
+/obj/item/clothing/head/helmet/space/orange,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "IL" = (
@@ -5636,11 +5642,15 @@
 "LK" = (
 /obj/structure/window/reinforced,
 /obj/structure/table,
-/obj/item/storage/toolbox/mechanical,
+/obj/item/storage/toolbox/mechanical{
+	pixel_x = 2;
+	pixel_y = 10
+	},
 /obj/effect/turf_decal/corner/opaque/yellow,
 /obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 8
 	},
+/obj/item/storage/toolbox/mechanical,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/engineering)
 "LN" = (
@@ -6527,10 +6537,13 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/science/ai_chamber)
 "RE" = (
-/obj/structure/closet/secure_closet/engineering_electrical,
 /obj/structure/sign/warning/electricshock{
 	pixel_y = 25
 	},
+/obj/structure/closet/crate/engineering{
+	name = "fuel crate"
+	},
+/obj/item/stack/sheet/mineral/plasma/twenty,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "RI" = (
@@ -7259,7 +7272,6 @@
 	dir = 8
 	},
 /obj/structure/window/reinforced,
-/obj/structure/closet/toolcloset,
 /obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 8
 	},
@@ -7267,6 +7279,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/opaque/yellow,
+/obj/structure/closet/secure_closet/engineering_electrical,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/engineering)
 "WL" = (
