@@ -93,3 +93,35 @@
   - tweak: Gondola pockets have been ERASED from the Luxembourg's kitchen locker.
   spockye:
   - rscadd: Adds a new beach ruin, the beach_treasure_cove
+2023-02-25:
+  Apogee-dev:
+  - balance: Holosigns and barriers now have a limited lifespan. Countdown timer becomes
+      visible at 60 seconds remaining.
+  BarteG44:
+  - rscadd: Adds a few berets to the Li-Tieguai
+  - tweak: Replaces a rubbershot and a 9mm magazine with 2 AP magazines on the Li-Tieguai
+  - tweak: Replaces the Trauma Team Technician's medical belt with the functionally
+      identical medical webbing
+  Bjarl:
+  - rscdel: skeletons have been removed from jungle_demon
+  goober3:
+  - rscadd: The SEV Lugol-class GEC Engineering Project, a large engineering vessel.
+  - rscadd: Airless techfloor tiles
+  meemofcourse:
+  - tweak: Added a deluxe hypospray to the Aegis's Lead Doctor locker, so they can
+      actually use the large vials, and changes its cargo bay's tiny fans with a holofield.
+  - bugfix: The Syndicate jacket inside the Aegis is no longer invisible, its Medihuds
+      and First-Aid Kits are usable, and the wiring was changed so the first SMES
+      recharges.
+  spockye:
+  - bugfix: fixes /obj/item/clothing/under/rank/command/minutemen having an alt-state
+  - bugfix: fixes /obj/item/clothing/under/rank/security/officer/minutemen having
+      an alt-state
+  tmtmtl30:
+  - bugfix: Ruins don't sometimes start in hard vacuum anymore; planet turfs now share
+      atmos correctly.
+  - bugfix: There hopefully shouldn't be any random stray objects sitting in the edges
+      of planets anymore.
+  - bugfix: Planets now (hopefully) have the correct baseturfs (more or less). When
+      you bomb a ruin on a planet, it probably won't break through to space anymore.
+  - refactor: Planet generation has been refactored, improving performance somewhat.
