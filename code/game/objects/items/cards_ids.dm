@@ -561,8 +561,8 @@ update_label()
 	access = list(ACCESS_SYNDICATE, ACCESS_ROBOTICS)
 	uses_overlays = FALSE
 
-/obj/item/card/id/syndicate_command/operative
-	assignment = "Operative"
+/obj/item/card/id/syndicate_command/lieutenant
+	assignment = "Lieutenant"
 	access = list(ACCESS_SYNDICATE, ACCESS_ROBOTICS, ACCESS_ARMORY)
 	uses_overlays = FALSE
 

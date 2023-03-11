@@ -198,10 +198,6 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/corner/opaque/syndiered/full,
-/obj/item/storage/firstaid/tactical{
-	pixel_y = 4;
-	pixel_x = 8
-	},
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "bO" = (
@@ -228,7 +224,9 @@
 	dir = 1
 	},
 /obj/item/clothing/under/syndicate/gec,
-/obj/structure/closet/secure_closet/atmospherics,
+/obj/structure/closet/secure_closet/atmospherics{
+	req_access = list(150)
+	},
 /obj/item/clothing/shoes/magboots/syndie,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
@@ -243,7 +241,7 @@
 	anchored = 1;
 	icon_state = "hos";
 	name = "Captain's Locker";
-	req_access_txt = "151"
+	req_access = list(151)
 	},
 /obj/item/ammo_box/a357,
 /obj/item/ammo_box/a357,
@@ -260,6 +258,7 @@
 /obj/item/clothing/head/HoS/syndicate,
 /obj/item/clothing/suit/armor/vest/capcarapace/syndicate,
 /obj/item/clothing/under/syndicate/aclf,
+/obj/item/areaeditor/shuttle,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "ck" = (
@@ -323,9 +322,6 @@
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "cS" = (
-/obj/machinery/door/poddoor{
-	id = "twinkle_cargo"
-	},
 /obj/docking_port/mobile{
 	can_move_docking_ports = 1;
 	name = "Twink Bay";
@@ -333,7 +329,11 @@
 	preferred_direction = 4;
 	dir = 2
 	},
-/turf/open/floor/plasteel/tech,
+/obj/machinery/door/poddoor{
+	id = "twinkle_cargo";
+	name = "Cargo Shutters"
+	},
+/turf/open/floor/plating,
 /area/ship/cargo)
 "cW" = (
 /obj/structure/catwalk/over,
@@ -578,6 +578,18 @@
 "eP" = (
 /obj/structure/table,
 /obj/effect/turf_decal/corner/opaque/syndiered/full,
+/obj/item/storage/box/medipens{
+	pixel_y = 7;
+	pixel_x = -4
+	},
+/obj/item/storage/firstaid/tactical{
+	pixel_y = 4;
+	pixel_x = 8
+	},
+/obj/item/reagent_containers/glass/bottle/epinephrine{
+	pixel_y = -1;
+	pixel_x = -6
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "eR" = (
@@ -1323,9 +1335,6 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/security)
 "lo" = (
-/obj/machinery/door/poddoor{
-	id = "twinkle_cargo"
-	},
 /obj/machinery/power/shieldwallgen/atmos{
 	anchored = 1;
 	dir = 4;
@@ -1335,7 +1344,11 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
 	},
-/turf/open/floor/plasteel/tech,
+/obj/machinery/door/poddoor{
+	id = "twinkle_cargo";
+	name = "Cargo Shutters"
+	},
+/turf/open/floor/plating,
 /area/ship/cargo)
 "lv" = (
 /obj/effect/spawner/lootdrop/maintenance,
@@ -1887,7 +1900,8 @@
 	pixel_y = 10;
 	dir = 4;
 	id = "twinkle_armory";
-	name = "Armory Access"
+	name = "Armory Access";
+	req_access = list(3, 150)
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/security)
@@ -2227,8 +2241,23 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "sG" = (
-/obj/effect/turf_decal/spline/fancy/opaque/syndiered{
-	dir = 9
+/obj/item/gun/energy/ionrifle,
+/obj/item/gun/ballistic/rocketlauncher/unrestricted{
+	spawnwithmagazine = 0
+	},
+/obj/machinery/door/window{
+	dir = 4;
+	req_access = list(ACCESS_ARMORY)
+	},
+/obj/structure/rack,
+/obj/item/storage/backpack/duffelbag/syndie/x4,
+/obj/item/card/emag,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
+	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
@@ -2533,9 +2562,6 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "vQ" = (
-/obj/machinery/door/poddoor{
-	id = "twinkle_cargo"
-	},
 /obj/machinery/power/shieldwallgen/atmos{
 	anchored = 1;
 	dir = 8;
@@ -2545,7 +2571,11 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
 	},
-/turf/open/floor/plasteel/tech,
+/obj/machinery/door/poddoor{
+	id = "twinkle_cargo";
+	name = "Cargo Shutters"
+	},
+/turf/open/floor/plating,
 /area/ship/cargo)
 "vW" = (
 /obj/structure/bed,
@@ -3058,7 +3088,8 @@
 	dir = 9
 	},
 /obj/machinery/computer/communications{
-	dir = 4
+	dir = 4;
+	req_access = list(151)
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
@@ -3512,7 +3543,8 @@
 /area/ship/engineering/atmospherics)
 "Dp" = (
 /obj/machinery/door/airlock/hatch{
-	name = "Lieutenant's Office"
+	name = "Lieutenant's Office";
+	req_access = list(3, 150)
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security)
@@ -3886,6 +3918,14 @@
 	},
 /obj/structure/table,
 /obj/effect/turf_decal/corner/opaque/syndiered/full,
+/obj/item/roller{
+	pixel_x = -4;
+	pixel_y = 14
+	},
+/obj/item/roller{
+	pixel_x = 7;
+	pixel_y = 7
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "Gv" = (
@@ -3908,6 +3948,16 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
 	},
+/obj/structure/rack,
+/obj/item/clothing/shoes/sneakers/orange,
+/obj/item/clothing/shoes/sneakers/orange,
+/obj/item/clothing/shoes/sneakers/orange,
+/obj/item/clothing/under/rank/prisoner,
+/obj/item/clothing/under/rank/prisoner,
+/obj/item/clothing/under/rank/prisoner,
+/obj/item/clothing/under/rank/prisoner/skirt,
+/obj/item/clothing/under/rank/prisoner/skirt,
+/obj/item/clothing/under/rank/prisoner/skirt,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/security)
 "GE" = (
@@ -4228,27 +4278,6 @@
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line,
 /turf/open/floor/plasteel/white,
 /area/ship/medical/surgery)
-"IA" = (
-/obj/item/gun/energy/ionrifle,
-/obj/item/gun/ballistic/rocketlauncher/unrestricted{
-	spawnwithmagazine = 0
-	},
-/obj/machinery/door/window{
-	dir = 4;
-	req_access_txt = "150"
-	},
-/obj/structure/rack,
-/obj/item/storage/backpack/duffelbag/syndie/x4,
-/obj/item/card/emag,
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/structure/window/reinforced,
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/turf/open/floor/mineral/plastitanium/red,
-/area/ship/security/armory)
 "IC" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -4453,7 +4482,8 @@
 	dir = 9
 	},
 /obj/machinery/modular_computer/console/preset/command{
-	dir = 4
+	dir = 4;
+	req_access = list(151)
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
@@ -4834,8 +4864,7 @@
 	dir = 8
 	},
 /obj/machinery/door/window/brigdoor/southleft{
-	dir = 8;
-	req_access_txt = "1"
+	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security)
@@ -5522,8 +5551,7 @@
 /area/ship/security)
 "SZ" = (
 /obj/machinery/door/window/brigdoor/southleft{
-	dir = 8;
-	req_access_txt = "1"
+	dir = 8
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -5792,9 +5820,10 @@
 /area/ship/bridge)
 "VC" = (
 /obj/machinery/door/poddoor{
-	id = "twinkle_cargo"
+	id = "twinkle_cargo";
+	name = "Cargo Shutters"
 	},
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plating,
 /area/ship/cargo)
 "VG" = (
 /obj/structure/chair/stool/bar{
@@ -6166,8 +6195,9 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "Yl" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
-/turf/open/floor/plasteel,
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium,
+/turf/open/floor/plating,
 /area/ship/crew/canteen)
 "Ym" = (
 /obj/machinery/door/firedoor/border_only{
@@ -7083,12 +7113,12 @@ VY
 pc
 TT
 xv
+sG
 Sg
 wR
 Yq
 NE
 yN
-IA
 xv
 Ig
 xv
@@ -7118,7 +7148,7 @@ vu
 sO
 EU
 xv
-sG
+Eo
 si
 si
 cJ
@@ -7453,7 +7483,7 @@ Fi
 JY
 zD
 zD
-th
+oi
 dO
 IN
 pm
@@ -7466,7 +7496,7 @@ Wj
 pm
 sz
 kT
-cW
+oi
 ZH
 ZH
 ZH

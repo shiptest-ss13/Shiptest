@@ -511,12 +511,11 @@
 /datum/outfit/syndicate_empty/sbc/engi
 	name = "Syndicate Battlecruiser Ship Engineer"
 	glasses = /obj/item/clothing/glasses/meson/night
-	uniform = /obj/item/clothing/under/syndicate/aclfgrunt
+	uniform = /obj/item/clothing/under/syndicate/gorlex
 	r_pocket = /obj/item/analyzer
-	l_pocket = /obj/item/gun/ballistic/automatic/pistol
 	belt = /obj/item/storage/belt/utility/syndicate
 	back = /obj/item/storage/backpack/industrial
-	backpack_contents = list(/obj/item/storage/box/survival/syndie=1, /obj/item/construction/rcd/combat, /obj/item/rcd_ammo/large, /obj/item/stack/sheet/mineral/plastitanium=50)
+	backpack_contents = list(/obj/item/storage/box/survival/syndie=1, /obj/item/construction/rcd/combat, /obj/item/rcd_ammo/large)
 
 /obj/effect/mob_spawn/human/syndicate/battlecruiser/medical
 	name = "Syndicate Battlecruiser Ship Medical Doctor"
@@ -530,14 +529,12 @@
 
 /datum/outfit/syndicate_empty/sbc/med
 	name = "Syndicate Battlecruiser Ship Medical Doctor"
-	uniform = /obj/item/clothing/under/syndicate/intern
-	glasses = /obj/item/clothing/glasses/hud/health/prescription
-	l_pocket = /obj/item/gun/energy/e_gun/mini
-	r_pocket = /obj/item/kitchen/knife/combat/survival
-	belt = /obj/item/defibrillator/compact/combat/loaded
+	gloves = /obj/item/clothing/gloves/color/latex/nitrile/evil
+	uniform = /obj/item/clothing/under/syndicate/medic
+	glasses = /obj/item/clothing/glasses/hud/health
+	belt = /obj/item/pda/medical
 	back = /obj/item/storage/backpack/duffelbag/syndie/med
-	r_hand = /obj/item/gun/medbeam
-	backpack_contents = list(/obj/item/storage/box/survival/syndie=1, /obj/item/storage/firstaid/medical, /obj/item/storage/firstaid/tactical, /obj/item/storage/box/medipens=3)
+	backpack_contents = list(/obj/item/storage/box/survival/syndie=1, /obj/item/storage/firstaid/medical)
 
 /obj/effect/mob_spawn/human/syndicate/battlecruiser/assault
 	name = "Syndicate Battlecruiser Assault Operative"
@@ -549,11 +546,9 @@
 	mob_name = "syndicate assault operative"
 	id_job = "Syndicate Assault Operative"
 
-/datum/outfit/syndicate_empty/sbc/assault
-	name = "Syndicate Battlecruiser Assault Operative"
+/datum/outfit/syndicate_empty/sbc/operative
+	name = "Syndicate Battlecruiser Operative"
 	uniform = /obj/item/clothing/under/syndicate/camo
-	l_pocket = /obj/item/ammo_box/magazine/m10mm
-	r_pocket = /obj/item/kitchen/knife/combat/survival
 	glasses = /obj/item/clothing/glasses/night
 	belt = /obj/item/storage/belt/military
 	back = /obj/item/storage/backpack/duffelbag/syndie
@@ -561,11 +556,11 @@
 	suit_store = /obj/item/gun/ballistic/automatic/pistol
 	backpack_contents = list(/obj/item/storage/box/survival/syndie=1, /obj/item/gun_voucher/syndicate=1)
 
-/datum/outfit/syndicate_empty/sbc/operative
-	name = "Syndicate Battlecruiser Operative"
+/datum/outfit/syndicate_empty/sbc/lieutenant
+	name = "Syndicate Battlecruiser Lieutenant"
 	head = /obj/item/clothing/head/warden
 	uniform = /obj/item/clothing/under/syndicate/combat
-	id = /obj/item/card/id/syndicate_command/operative
+	id = /obj/item/card/id/syndicate_command/lieutenant
 	backpack_contents = list(/obj/item/melee/baton/loaded=1, /obj/item/storage/box/survival/syndie=1)
 
 /obj/effect/mob_spawn/human/syndicate/battlecruiser/captain
@@ -582,8 +577,7 @@
 /datum/outfit/syndicate_empty/sbc/captain
 	name = "Syndicate Battlecruiser Captain"
 	l_pocket = /obj/item/melee/transforming/energy/sword/saber/red
-	r_pocket = /obj/item/melee/classic_baton/telescopic
-	uniform = /obj/item/clothing/under/syndicate/gorlex
+	uniform = /obj/item/clothing/under/syndicate/aclf
 	suit = /obj/item/clothing/suit/armor/vest/capcarapace/syndicate
 	suit_store = /obj/item/gun/ballistic/revolver/mateba
 	head = /obj/item/clothing/head/HoS/syndicate
