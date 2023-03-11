@@ -1901,7 +1901,7 @@
 	dir = 4;
 	id = "twinkle_armory";
 	name = "Armory Access";
-	req_access = list(3, 150)
+	req_access = list(3,150)
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/security)
@@ -2247,7 +2247,7 @@
 	},
 /obj/machinery/door/window{
 	dir = 4;
-	req_access = list(ACCESS_ARMORY)
+	req_access = list(3,150)
 	},
 /obj/structure/rack,
 /obj/item/storage/backpack/duffelbag/syndie/x4,
@@ -3544,7 +3544,7 @@
 "Dp" = (
 /obj/machinery/door/airlock/hatch{
 	name = "Lieutenant's Office";
-	req_access = list(3, 150)
+	req_access = list(3,150)
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security)
@@ -4214,7 +4214,8 @@
 /obj/item/clothing/head/HoS/beret/syndicate,
 /mob/living/carbon/human/species/moth{
 	name = "Wall Moth";
-	real_name = "Wall Moth"
+	real_name = "Wall Moth";
+	unique_name = 1
 	},
 /turf/open/floor/plating,
 /area/ship/security/armory)
@@ -4864,7 +4865,8 @@
 	dir = 8
 	},
 /obj/machinery/door/window/brigdoor/southleft{
-	dir = 8
+	dir = 8;
+	req_access = list(1)
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security)
@@ -5551,7 +5553,8 @@
 /area/ship/security)
 "SZ" = (
 /obj/machinery/door/window/brigdoor/southleft{
-	dir = 8
+	dir = 8;
+	req_access = list(1)
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
