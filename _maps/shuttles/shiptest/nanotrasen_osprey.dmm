@@ -205,6 +205,9 @@
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/science/ai_chamber)
 "bA" = (
@@ -474,11 +477,13 @@
 /area/ship/science/ai_chamber)
 "dr" = (
 /obj/machinery/light,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 8
+	},
+/obj/machinery/turretid{
+	pixel_y = -28;
+	req_access = null;
+	req_access_txt = "16"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/science/ai_chamber)
@@ -3046,10 +3051,9 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "ui" = (
-/obj/machinery/turretid{
-	pixel_y = 28;
-	req_access = null;
-	req_access_txt = "16"
+/obj/machinery/power/apc/auto_name/north,
+/obj/structure/cable{
+	icon_state = "0-8"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/science/ai_chamber)
@@ -3462,6 +3466,11 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/orange/hidden,
 /obj/machinery/atmospherics/pipe/simple/green/hidden/layer1,
+/obj/machinery/turretid{
+	pixel_x = 28;
+	req_access = null;
+	req_access_txt = "16"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/science/ai_chamber)
 "wP" = (
@@ -3545,6 +3554,9 @@
 /obj/machinery/atmospherics/pipe/simple/green/hidden/layer1,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/science/ai_chamber)
@@ -5693,6 +5705,11 @@
 	dir = 10
 	},
 /obj/machinery/atmospherics/pipe/simple/dark/hidden/layer5,
+/obj/machinery/turretid{
+	pixel_x = 28;
+	req_access = null;
+	req_access_txt = "16"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/science/ai_chamber)
 "Mc" = (
@@ -5736,13 +5753,6 @@
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/engineering)
-"Mw" = (
-/obj/machinery/power/apc/auto_name/south,
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/science/ai_chamber)
 "My" = (
 /obj/structure/disposalpipe/sorting/mail/flip{
 	dir = 4;
@@ -6856,9 +6866,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/dark/hidden/layer5,
 /obj/machinery/atmospherics/pipe/simple/orange/hidden,
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
 /obj/machinery/atmospherics/pipe/simple/green/hidden/layer1,
 /turf/open/floor/plasteel/dark,
 /area/ship/science/ai_chamber)
@@ -8104,7 +8111,7 @@ ui
 cI
 cI
 yC
-Mw
+cI
 VV
 hj
 vD
