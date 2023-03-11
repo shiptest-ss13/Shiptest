@@ -2619,6 +2619,9 @@
 /obj/item/clothing/gloves/color/black,
 /obj/item/clothing/head/hardhat/mining,
 /obj/machinery/airalarm/directional/west,
+/obj/structure/sign/poster/contraband/ss13{
+	pixel_y = -32
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "rz" = (
@@ -3198,7 +3201,7 @@
 /area/ship/crew/cryo)
 "uQ" = (
 /obj/machinery/door/airlock/external,
-/obj/machinery/atmospherics/pipe/layer_manifold/visible,
+/obj/machinery/atmospherics/pipe/layer_manifold,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "vi" = (
@@ -4106,10 +4109,6 @@
 /obj/machinery/atmospherics/pipe/simple/green/hidden/layer1,
 /turf/open/floor/plasteel/dark,
 /area/ship/science/ai_chamber)
-"AP" = (
-/obj/machinery/power/apc/auto_name/east,
-/turf/open/floor/plasteel/dark,
-/area/ship/science/ai_chamber)
 "AR" = (
 /obj/structure/disposalpipe/segment{
 	dir = 2
@@ -4179,8 +4178,11 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/engineering/atmospherics)
 "Bn" = (
-/obj/machinery/airalarm/directional/west,
 /obj/structure/disposalpipe/segment,
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = -25
+	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "Bp" = (
@@ -4451,6 +4453,7 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
+/obj/structure/curtain/bounty,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "Di" = (
@@ -6204,10 +6207,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = -25
-	},
+/obj/machinery/airalarm/directional/west,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "Pl" = (
@@ -7225,7 +7225,7 @@
 	launch_status = 0
 	},
 /obj/machinery/door/airlock/external,
-/obj/machinery/atmospherics/pipe/layer_manifold/visible,
+/obj/machinery/atmospherics/pipe/layer_manifold,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "Ws" = (
@@ -8097,7 +8097,7 @@ Ro
 Vx
 VV
 ui
-AP
+cI
 cI
 yC
 Mw
