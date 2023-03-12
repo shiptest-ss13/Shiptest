@@ -254,7 +254,7 @@
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/canteen)
 "cs" = (
-/obj/machinery/holopad/emergency/engineering,
+/obj/machinery/holopad/emergency/buddy,
 /turf/open/floor/wood/mahogany,
 /area/ship/crew/canteen)
 "ct" = (
@@ -1903,10 +1903,10 @@
 /area/ship/engineering/atmospherics)
 "sl" = (
 /obj/machinery/atmospherics/pipe/simple/general/visible/layer2,
-/obj/machinery/holopad/emergency/engineering,
 /obj/effect/turf_decal/industrial/radiation{
 	dir = 8
 	},
+/obj/machinery/holopad/emergency/atmos,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "sn" = (
@@ -2732,7 +2732,7 @@
 "zE" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 4;
-	filter_types = list("o2", "n2")
+	filter_types = list("o2","n2")
 	},
 /turf/open/floor/engine,
 /area/ship/engineering/atmospherics)
