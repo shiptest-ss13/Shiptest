@@ -558,7 +558,7 @@
 
 /datum/outfit/syndicate_empty/sbc/lieutenant
 	name = "Syndicate Battlecruiser Lieutenant"
-	head = /obj/item/clothing/head/warden
+	head = /obj/item/clothing/head/HoS/beret/syndicate
 	uniform = /obj/item/clothing/under/syndicate/combat
 	id = /obj/item/card/id/syndicate_command/lieutenant
 	backpack_contents = list(/obj/item/melee/baton/loaded=1, /obj/item/storage/box/survival/syndie=1)
