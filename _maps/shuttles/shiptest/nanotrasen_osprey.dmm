@@ -26,6 +26,8 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/item/storage/box/handcuffs,
+/obj/item/storage/box/deputy,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "aj" = (
@@ -1252,6 +1254,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/item/storage/box/stockparts/basic,
 /turf/open/floor/plasteel/white,
 /area/ship/science)
 "iO" = (
@@ -1302,6 +1305,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
+/obj/item/caution,
 /turf/open/floor/plasteel,
 /area/ship/crew/janitor)
 "jk" = (
@@ -1348,14 +1352,13 @@
 	dir = 8
 	},
 /obj/structure/table,
-/obj/item/stack/packageWrap,
-/obj/item/destTagger,
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 4
 	},
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 1
 	},
+/obj/item/storage/box/shipping,
 /turf/open/floor/plasteel,
 /area/ship/cargo/office)
 "jM" = (
@@ -1783,6 +1786,8 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/corner/opaque/yellow,
+/obj/item/holosign_creator/atmos,
+/obj/item/storage/box/metalfoam,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/engineering/atmospherics)
 "lV" = (
@@ -1871,8 +1876,13 @@
 /area/ship/cargo/office)
 "my" = (
 /obj/structure/table,
-/obj/item/stack/packageWrap,
-/obj/item/hand_labeler,
+/obj/item/stack/packageWrap{
+	pixel_y = 9
+	},
+/obj/item/hand_labeler{
+	pixel_x = 2;
+	pixel_y = 8
+	},
 /obj/effect/turf_decal/corner/opaque/mauve{
 	dir = 1
 	},
@@ -1882,6 +1892,10 @@
 /obj/item/radio/intercom{
 	dir = 4;
 	pixel_x = -22
+	},
+/obj/item/storage/box/gloves{
+	pixel_x = -3;
+	pixel_y = -8
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/science)
@@ -2573,6 +2587,7 @@
 	dir = 8;
 	pixel_x = 22
 	},
+/obj/item/storage/box/drinkingglasses,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "qX" = (
@@ -5031,6 +5046,7 @@
 /obj/effect/turf_decal/corner/opaque/blue{
 	dir = 4
 	},
+/obj/item/storage/box/masks,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "Hf" = (
@@ -5225,12 +5241,12 @@
 /obj/item/multitool{
 	pixel_y = 8
 	},
-/obj/item/clothing/glasses/welding{
-	pixel_y = -1
-	},
-/obj/item/clothing/gloves/color/latex,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
+	},
+/obj/item/clothing/gloves/color/black,
+/obj/item/clothing/glasses/welding{
+	pixel_y = -1
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/science)
@@ -5761,6 +5777,8 @@
 /obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 8
 	},
+/obj/item/holosign_creator/engineering,
+/obj/item/storage/box/metalfoam,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/engineering)
 "My" = (
@@ -6082,6 +6100,7 @@
 	},
 /obj/machinery/power/apc/auto_name/south,
 /obj/structure/cable,
+/obj/item/holosign_creator/janibarrier,
 /turf/open/floor/plasteel,
 /area/ship/crew/janitor)
 "OA" = (
@@ -6609,8 +6628,14 @@
 /area/ship/engineering)
 "Sa" = (
 /obj/structure/table,
-/obj/item/storage/box/lights/mixed,
+/obj/item/storage/box/lights/mixed{
+	pixel_x = 4;
+	pixel_y = 9
+	},
 /obj/machinery/airalarm/directional/south,
+/obj/item/storage/box/mousetraps{
+	pixel_x = -9
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew/janitor)
 "Sd" = (
@@ -7615,10 +7640,9 @@
 	pixel_y = 9
 	},
 /obj/item/pen/red,
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
+/obj/item/holochip{
+	credits = 4000
+	},
 /turf/open/floor/plasteel,
 /area/ship/cargo/office)
 "YH" = (
