@@ -36,9 +36,22 @@
 	icon_state = "crew_quarters"
 	lighting_brightness_tube = 6
 
+/area/outpost/crew/bar
+	name = "Bar"
+	icon_state = "bar"
+	lighting_colour_tube = "#fff4d6"
+	lighting_colour_bulb = "#ffebc1"
+	sound_environment = SOUND_AREA_WOODFLOOR
+
 /area/outpost/crew/canteen
 	name = "Canteen"
 	icon_state = "cafeteria"
+
+/area/outpost/crew/cryo
+	name = "Cryopod Room"
+	icon_state = "cryo2"
+	lighting_colour_tube = "#e3ffff"
+	lighting_colour_bulb = "#d5ffff"
 
 /area/outpost/crew/dorm
 	name = "Dormitory"
@@ -57,6 +70,28 @@
 	name = "Law Office"
 	icon_state = "law"
 	sound_environment = SOUND_AREA_SMALL_SOFTFLOOR
+
+/area/outpost/crew/library
+	name = "Library"
+	icon_state = "library"
+	sound_environment = SOUND_AREA_LARGE_SOFTFLOOR
+
+/area/outpost/crew/lounge
+	name = "Lounge"
+	icon_state = "lounge"
+
+
+/area/outpost/engineering
+	name = "Engineering"
+	icon_state = "engine"
+	ambientsounds = ENGINEERING
+	lighting_colour_tube = "#ffce93"
+	lighting_colour_bulb = "#ffbc6f"
+	sound_environment = SOUND_AREA_LARGE_ENCLOSED
+
+/area/outpost/engineering/atmospherics
+	name = "Atmospherics"
+	icon_state = "atmos"
 
 
 /area/outpost/hallway
@@ -86,14 +121,65 @@
 	icon_state = "hallC"
 
 
+/area/outpost/maintenance
+	name = "Maintenance"
+	ambientsounds = MAINTENANCE
+	lighting_colour_tube = "#ffe5cb"
+	lighting_colour_bulb = "#ffdbb4"
+	sound_environment = SOUND_AREA_TUNNEL_ENCLOSED
+
+/area/outpost/maintenance/aft
+	name = "Aft Maintenance"
+	icon_state = "amaint"
+
+/area/outpost/maintenance/fore
+	name = "Fore Maintenance"
+	icon_state = "fmaint"
+
+/area/outpost/maintenance/starboard
+	name = "Starboard Maintenance"
+	icon_state = "smaint"
+
+/area/outpost/maintenance/port
+	name = "Port Maintenance"
+	icon_state = "pmaint"
+
+/area/outpost/maintenance/central
+	name = "Central Maintenance"
+	icon_state = "maintcentral"
+
+
+/area/outpost/medical
+	name = "Infirmary"
+	icon_state = "medbay3"
+	ambientsounds = MEDICAL
+	lighting_colour_tube = "#e7f8ff"
+	lighting_colour_bulb = "#d5f2ff"
+	lighting_colour_night = "#d5f2ff"
+	min_ambience_cooldown = 90 SECONDS
+	max_ambience_cooldown = 180 SECONDS
+
+
 /area/outpost/operations
 	name = "Operations"
 	icon_state = "bridge"
 	sound_environment = SOUND_AREA_LARGE_ENCLOSED
-	// medbay values, as it happens
+	// medbay values
 	lighting_colour_tube = "#e7f8ff"
 	lighting_colour_bulb = "#d5f2ff"
 	lighting_colour_night = "#d5f2ff"
+
+
+/area/outpost/security
+	name = "Security"
+	icon_state = "security"
+	ambientsounds = HIGHSEC
+	lighting_colour_tube = "#ffeee2"
+	lighting_colour_bulb = "#ffdfca"
+
+/area/outpost/security/armory
+	name = "Armory"
+	icon_state = "armory"
 
 
 /area/outpost/storage
@@ -106,16 +192,22 @@
 /area/outpost/vacant_rooms
 	name = "Vacant Rooms"
 	icon_state = "vacant_commissary"
-	sound_environment = SOUND_AREA_STANDARD_STATION
 
+/area/outpost/vacant_rooms/office
+	name = "Vacant Office"
+	icon_state = "vacant_office"
 
+// this might be redundant with /area/space/nearstation. unsure; use with caution?
 /area/outpost/external
 	name = "External"
-	dynamic_lighting = DYNAMIC_LIGHTING_IFSTARLIGHT
 	icon_state = "space_near"
+	always_unpowered = TRUE
+	dynamic_lighting = DYNAMIC_LIGHTING_IFSTARLIGHT
+	ambientsounds = SPACE
+	sound_environment = SOUND_AREA_SPACE
 
 
-// DEBUG: make this better. add a dedicated icon_state instead of just "purple"? might need better name as well
+// DEBUG: make this better. might need better name?
 /area/hangar
 	name = "Hangar"
 	icon_state = "hangar"

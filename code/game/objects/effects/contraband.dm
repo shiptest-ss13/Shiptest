@@ -139,7 +139,7 @@
 	if(ruined)
 		return
 	if(user.a_intent != INTENT_HARM)
-		to_chat(user, "<span class='danger'>You arent HARMFUL enough to rip the poster off the wall.</span>") //preventing accidental ripping posters off wall if not on harm intent
+		to_chat(user, "<span class='danger'>You aren't HARMFUL enough to rip the poster off the wall.</span>") //preventing accidental ripping posters off wall if not on harm intent
 		return
 
 	visible_message("<span class='danger'>[user] rips [src] in a single, decisive motion!</span>" )
@@ -833,12 +833,12 @@
 
 /obj/structure/sign/poster/contraband/syndiemoth
 	name = "Syndie Moth - Nuclear Operation"
-	desc = "A Syndicate-commissioned poster that uses Syndie Moth(TM?) to tell the viewer to keep the nuclear authentication disk unsecured. No, we aren't doing that. It's signed by 'AspEv'."
+	desc = "A Syndicate-commissioned poster that uses Syndie Moth(TM?) to tell the viewer to keep the nuclear authentication disk unsecured. It's signed by 'AspEv'."
 	icon_state = "poster_moth_syndie"
 
 /obj/structure/sign/poster/contraband/mothpill
 	name = "Safety Pill - Methamphetamine"
-	desc = "A decommisioned poster that uses Safety Pill(TM?) to promote less-than-legal chemicals. This is one of the reasons we stopped outsourcing these posters. It's partially signed by 'AspEv'."
+	desc = "A decommisioned poster that uses Safety Pill(TM?) to promote less-than-legal chemicals. This is one of the reasons Nanotrasen stopped outsourcing their posters. It's partially signed by 'AspEv'."
 	icon_state = "poster_moth_pill"
 
 //Solgov poster pool. expect a focus on solarian based products and places. Expect these on solgov ships

@@ -247,7 +247,8 @@
 			floor.is_dest = TRUE
 			check_move()
 		return
-	floor.is_dest = TRUE
+	if(floor_list[cur_index] != floor)
+		floor.is_dest = TRUE
 
 /datum/elevator_master/proc/open_doors(datum/floor/d_floor)
 	for(var/obj/machinery/door/fl_door as anything in d_floor.doors)

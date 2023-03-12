@@ -4,9 +4,9 @@
 	skin = OUTPOST_SKIN_TEST
 	suffix = "1"
 
-// /datum/map_template/outpost/test_2
-// 	skin = OUTPOST_SKIN_TEST
-// 	suffix = "2"
+/datum/map_template/outpost/test_2
+	skin = OUTPOST_SKIN_TEST
+	suffix = "2"
 
 /datum/map_template/outpost_elevator/test
 	skin = OUTPOST_SKIN_TEST
