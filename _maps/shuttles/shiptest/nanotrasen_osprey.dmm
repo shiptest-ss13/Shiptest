@@ -3705,7 +3705,9 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
-/obj/machinery/door/poddoor,
+/obj/machinery/door/poddoor{
+	id = "osprey_tank_vent"
+	},
 /turf/open/floor/engine,
 /area/ship/engineering/atmospherics)
 "xT" = (
@@ -5486,7 +5488,9 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
-/obj/machinery/door/poddoor,
+/obj/machinery/door/poddoor{
+	id = "osprey_tank_vent"
+	},
 /turf/open/floor/engine,
 /area/ship/engineering/atmospherics)
 "JO" = (
@@ -6337,6 +6341,10 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/freezer,
 /area/ship/crew/toilet)
+"Qb" = (
+/obj/machinery/light,
+/turf/open/floor/plasteel/patterned/grid,
+/area/ship/engineering/atmospherics)
 "Qm" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8
@@ -6842,7 +6850,9 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
-/obj/machinery/door/poddoor,
+/obj/machinery/door/poddoor{
+	id = "osprey_tank_vent"
+	},
 /turf/open/floor/engine,
 /area/ship/engineering/atmospherics)
 "Tg" = (
@@ -7029,7 +7039,18 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/layer_manifold/visible,
-/obj/machinery/light,
+/obj/machinery/button/door{
+	dir = 1;
+	id = "osprey_tank_vent";
+	pixel_x = -5;
+	pixel_y = -25
+	},
+/obj/machinery/button/shieldwallgen{
+	dir = 1;
+	id = "osprey_atmosfield";
+	pixel_x = 5;
+	pixel_y = -24
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/engineering/atmospherics)
 "Uj" = (
@@ -8127,7 +8148,7 @@ oO
 HK
 HK
 HK
-HK
+Qb
 yj
 "}
 (10,1,1) = {"
