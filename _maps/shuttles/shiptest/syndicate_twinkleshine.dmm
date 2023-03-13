@@ -782,7 +782,7 @@
 "gx" = (
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/machinery/telecomms/receiver/preset_right{
-	freq_listening = list(1347,1359,1213, 1353);
+	freq_listening = list(1347,1359,1213,1353);
 	network = "synd_commnet"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3110,7 +3110,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/machinery/telecomms/server/presets/syndicate{
 	network = "synd_commnet";
-	freq_listening = list(1213,1459, 1353)
+	freq_listening = list(1213,1459,1353)
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/circuit/red,
@@ -5024,7 +5024,7 @@
 /obj/machinery/light,
 /obj/machinery/telecomms/bus/preset_three{
 	network = "synd_commnet";
-	freq_listening = list(1213 1353,1459)
+	freq_listening = list(1213, 1353,1459)
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/circuit/red,
