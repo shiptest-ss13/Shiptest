@@ -491,6 +491,7 @@
 
 /datum/outfit/syndicate_empty/sbc
 	name = "Syndicate Battlecruiser Ship Deck Assistant"
+	uniform = /obj/item/clothing/under/syndicate/aclfgrunt
 	gloves = /obj/item/clothing/gloves/combat
 	l_pocket = /obj/item/gun/ballistic/automatic/pistol
 	r_pocket = /obj/item/kitchen/knife/combat/survival
@@ -530,7 +531,7 @@
 /datum/outfit/syndicate_empty/sbc/med
 	name = "Syndicate Battlecruiser Ship Medical Doctor"
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile/evil
-	uniform = /obj/item/clothing/under/syndicate/medic
+	uniform = /obj/item/clothing/under/rank/medical/doctor/red
 	glasses = /obj/item/clothing/glasses/hud/health
 	belt = /obj/item/pda/medical
 	back = /obj/item/storage/backpack/duffelbag/syndie/med
@@ -553,12 +554,12 @@
 	belt = /obj/item/storage/belt/military
 	back = /obj/item/storage/backpack/duffelbag/syndie
 	suit = /obj/item/clothing/suit/armor/vest
-	suit_store = /obj/item/gun/ballistic/automatic/pistol
 	backpack_contents = list(/obj/item/storage/box/survival/syndie=1, /obj/item/gun_voucher/syndicate=1)
 
 /datum/outfit/syndicate_empty/sbc/lieutenant
 	name = "Syndicate Battlecruiser Lieutenant"
 	head = /obj/item/clothing/head/HoS/beret/syndicate
+	ears = /obj/item/radio/headset/syndicate/alt/leader
 	uniform = /obj/item/clothing/under/syndicate/combat
 	id = /obj/item/card/id/syndicate_command/lieutenant
 	backpack_contents = list(/obj/item/melee/baton/loaded=1, /obj/item/storage/box/survival/syndie=1)
@@ -577,6 +578,7 @@
 /datum/outfit/syndicate_empty/sbc/captain
 	name = "Syndicate Battlecruiser Captain"
 	l_pocket = /obj/item/melee/transforming/energy/sword/saber/red
+	ears = /obj/item/radio/headset/syndicate/alt/captain
 	uniform = /obj/item/clothing/under/syndicate/aclf
 	suit = /obj/item/clothing/suit/armor/vest/capcarapace/syndicate
 	suit_store = /obj/item/gun/ballistic/revolver/mateba

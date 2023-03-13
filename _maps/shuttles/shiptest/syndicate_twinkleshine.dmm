@@ -782,7 +782,7 @@
 "gx" = (
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/machinery/telecomms/receiver/preset_right{
-	freq_listening = list(1347,1359,1213);
+	freq_listening = list(1347,1359,1213, 1353);
 	network = "synd_commnet"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3109,7 +3109,8 @@
 "yI" = (
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/machinery/telecomms/server/presets/syndicate{
-	network = "synd_commnet"
+	network = "synd_commnet";
+	freq_listening = list(1213,1459, 1353)
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/circuit/red,
@@ -5022,7 +5023,8 @@
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/machinery/light,
 /obj/machinery/telecomms/bus/preset_three{
-	network = "synd_commnet"
+	network = "synd_commnet";
+	freq_listening = list(1213 1353,1459)
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/circuit/red,
@@ -5108,7 +5110,7 @@
 	},
 /obj/machinery/door/window/brigdoor/southleft{
 	dir = 8;
-	req_access = list(3, 150)
+	req_access = list(3,150)
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security)
@@ -5315,7 +5317,7 @@
 "OY" = (
 /obj/structure/closet/secure_closet/brig/wall{
 	pixel_y = 32;
-	req_access = list(3, 150)
+	req_access = list(3,150)
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/security)
@@ -5893,7 +5895,7 @@
 "SZ" = (
 /obj/machinery/door/window/brigdoor/southleft{
 	dir = 8;
-	req_access = list(3, 150)
+	req_access = list(3,150)
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
