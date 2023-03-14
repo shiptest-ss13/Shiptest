@@ -61,44 +61,15 @@
 	suffix = "whitesands_surface_chokepoint.dmm"
 
 //////////OUTSIDE SETTLEMENTS/RUINS//////////
-/datum/map_template/ruin/whitesands/survivors
-	name = "Survivor Camp"
-	id = "ws-survivors"
-	description = "A small encampment of nomadic survivors of the First Colony, and their descendants. By all accounts, feral and without allegance to anyone but themselves."
-	suffix = "whitesands_surface_camp_survivors.dmm"
-
-/datum/map_template/ruin/whitesands/survivors/hunters
-	name = "Hunter Camp"
-	id = "ws-survivors-hunter"
-	description = "A small encampment of nomadic hunters of the First Colony, and their descendants. It's worth steering wide of these guys."
-	suffix = "whitesands_surface_camp_hunters.dmm"
-
-/datum/map_template/ruin/whitesands/survivors/gunslingers
-	name = "Mercenary Camp"
-	id = "ws-survivors-gunslingers"
-	description = "A small encampment of nomadic warriors of the First Colony, and their descendants. They might have the only working automatics on the planet."
-	suffix = "whitesands_surface_camp_gunslingers.dmm"
-
-/datum/map_template/ruin/whitesands/survivors/adobe
-	name = "Native Adobe"
-	id = "ws-survivors-adobe"
-	description = "A semi-permanent settlement of survivors of the First Colony, and their descendants. Places like this often stash gear and supplies for their bretheren."
-	suffix = "whitesands_surface_camp_adobe.dmm"
-
-/datum/map_template/ruin/whitesands/survivors/farm
-	name = "Abandoned Farm"
-	id = "ws-farm"
-	description = "A abandoned farm, destroyed from years of shootouts and lack of maintenance."
-	suffix = "whitesands_surface_camp_farm.dmm"
-
 /datum/map_template/ruin/whitesands/survivors/drugstore
 	name = "Abandoned Store"
 	id = "ws-drugstore"
 	description = "A store that once sold a variety of items and equipment."
 	suffix = "whitesands_surface_camp_drugstore.dmm"
 
-/datum/map_template/ruin/whitesands/survivors/saloon
-	name = "Abandoned Saloon"
-	id = "ws-saloon"
-	description = "A western style saloon that has not been touched in years"
-	suffix = "whitesands_surface_camp_saloon.dmm"
+/datum/map_template/ruin/whitesands/survivors/combination //combined extra large ruin of several other whitesands survivor ruins (excludes the drugstore)
+	name = "Wasteland Survivor Village"
+	id = "ws-combination"
+	description = "A small encampment of nomadic survivors of the First Colony, and their descendants. By all accounts, feral and without allegance to anyone but themselves."
+	suffix = "whitesands_surface_camp_combination.dmm"
+	allow_duplicates = FALSE
