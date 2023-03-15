@@ -234,8 +234,8 @@
 		ui.open()
 
 /obj/machinery/lapvend/attackby(obj/item/I, mob/user)
-	if(istype(I, /obj/item/stack/spacecash))
-		var/obj/item/stack/spacecash/c = I
+	if(istype(I, /obj/item/spacecash/bundle))
+		var/obj/item/spacecash/bundle/c = I
 		if(!user.temporarilyRemoveItemFromInventory(c))
 			return
 		credits += c.value

@@ -25,3 +25,48 @@
   retlaw34:
   - rscadd: Add new PAI sprites
   - code_imp: Adds support to easily add new pai faces
+2023-03-08:
+  BarteG44:
+  - rscadd: Added Modern Railings
+  - tweak: moved normal railing sprites from fluff.dmi to railing.dmi
+  - imageadd: added railing_m.dmi which contains the modern railing sprites
+  - rscadd: Added 11 new emergency holopad jobs
+  - tweak: replaced some ship holopads with emergency holopads
+  Bokkiewokkie:
+  - rscadd: Added black hole suns!
+  - bugfix: Potentially fixed an issue with planets swapping type
+  - admin: Added the option for admins to choose the location of new planets
+  goober3:
+  - tweak: The Lugol's gear and jobs have been increased to facilitate engineering
+      projects better. The engine room has been redesigned.
+  - bugfix: There is no longer a wall shutter in the Lugol's engine room.
+  tmtmtl30:
+  - bugfix: hopefully fixed certain incorrect ruin floor turf icons
+2023-03-09:
+  Zevotech:
+  - rscadd: whitesands_surface_camp_combination, a survivor village comprised of smaller
+      revamped whitesands camps all packaged in one ruin. can be found in the map
+      catalogue.
+  - rscdel: whitesands_surface_camp adobe, farm, gunslingers, survivors, hunters and
+      saloon, for being tiny ruins that suck.
+2023-03-15:
+  Bjarl:
+  - bugfix: wall safes work again
+  MarkSuckerberg:
+  - bugfix: Wikibooks should now work.
+  MemedHams:
+  - rscadd: Physical money has been reworked one central item, instead of several
+      smaller denominations. This item has a variable icon based on the amount of
+      money contained within.
+  - tweak: The central galactic bank has declared that material coins no longer have
+      a monetary value. You can no longer print money with a coin press, if you somehow
+      find one.
+  - tweak: Many money drops are now slightly randomized.
+  - tweak: Some interactions that used holocurrency now use hard cash instead.
+  - soundadd: Adds new sound effects for dropping and picking up bills and coins.
+  - imageadd: Adds new physical cash sprites.
+  - code_imp: Cash.dm has been moved up a directory out of the Stacks dir, on account
+      of no longer being a stack subtype
+  MrSamu99:
+  - rscadd: Added ship description display to job select screen
+  - bugfix: Fixes the ship description in ship purchase screen
