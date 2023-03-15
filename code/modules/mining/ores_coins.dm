@@ -378,7 +378,8 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 	var/value
 	var/coinflip
 	item_flags = NO_MAT_REDEMPTION //You know, it's kind of a problem that money is worth more extrinsicly than intrinsically in this universe.
-
+	drop_sound = 'sound/items/handling/coin_drop.ogg'
+	pickup_sound =  'sound/items/handling/coin_pickup.ogg'
 /obj/item/coin/Initialize()
 	. = ..()
 	coinflip = pick(sideslist)
@@ -392,9 +393,6 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 	for(var/i in custom_materials)
 		var/datum/material/M = i
 		value += M.value_per_unit * custom_materials[M]
-
-/obj/item/coin/get_item_credit_value()
-	return value
 
 /obj/item/coin/suicide_act(mob/living/user)
 	user.visible_message("<span class='suicide'>[user] contemplates suicide with \the [src]!</span>")
@@ -414,10 +412,6 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 		user.suicide_log()
 	else
 		user.visible_message("<span class='suicide'>\the [src] lands on [coinflip]! [user] keeps on living!</span>")
-
-/obj/item/coin/examine(mob/user)
-	. = ..()
-	. += "<span class='info'>It's worth [value] credit\s.</span>"
 
 /obj/item/coin/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/stack/cable_coil))

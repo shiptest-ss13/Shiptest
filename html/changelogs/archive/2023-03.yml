@@ -49,3 +49,24 @@
       catalogue.
   - rscdel: whitesands_surface_camp adobe, farm, gunslingers, survivors, hunters and
       saloon, for being tiny ruins that suck.
+2023-03-15:
+  Bjarl:
+  - bugfix: wall safes work again
+  MarkSuckerberg:
+  - bugfix: Wikibooks should now work.
+  MemedHams:
+  - rscadd: Physical money has been reworked one central item, instead of several
+      smaller denominations. This item has a variable icon based on the amount of
+      money contained within.
+  - tweak: The central galactic bank has declared that material coins no longer have
+      a monetary value. You can no longer print money with a coin press, if you somehow
+      find one.
+  - tweak: Many money drops are now slightly randomized.
+  - tweak: Some interactions that used holocurrency now use hard cash instead.
+  - soundadd: Adds new sound effects for dropping and picking up bills and coins.
+  - imageadd: Adds new physical cash sprites.
+  - code_imp: Cash.dm has been moved up a directory out of the Stacks dir, on account
+      of no longer being a stack subtype
+  MrSamu99:
+  - rscadd: Added ship description display to job select screen
+  - bugfix: Fixes the ship description in ship purchase screen
