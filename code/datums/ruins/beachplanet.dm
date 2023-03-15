@@ -34,7 +34,7 @@
 	id = "beach_pirate"
 	description = "A small pirate outpost formed from the remains of a wrecked shuttle."
 	suffix = "beach_pirate_crash.dmm"
-  
+
 /datum/map_template/ruin/beachplanet/fallenstar
 	name = "Crashed Starwalker"
 	id = "crashed_star"
