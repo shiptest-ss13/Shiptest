@@ -1,0 +1,17 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Snowflake Automated Droneship",
+	"map_short_name": "Snowflake-Class",
+	"prefix": "NTSV",
+	"namelists": ["GENERAL", "SPACE", "ENGINEERING"],
+	"map_path": "_maps/shuttles/shiptest/nanotrasen_snowflake.dmm",
+	"limit": 1,
+	"job_slots": {
+		"Caretaker": {
+			"outfit": "/datum/outfit/job/ce/engineeringcoordinator",
+			"officer": true,
+			"slots": 1
+		}
+	},
+	"enabled": true
+}
