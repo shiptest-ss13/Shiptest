@@ -1553,6 +1553,11 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/shuttle/medium_1)
+"sq" = (
+/obj/machinery/suit_storage_unit/inherit/industrial,
+/obj/effect/turf_decal/industrial/outline/yellow,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/powered)
 "sr" = (
 /obj/structure/flora/ausbushes/reedbush{
 	pixel_x = -11;
@@ -1666,7 +1671,7 @@
 	dir = 4;
 	layer = 3.1
 	},
-/mob/living/simple_animal/hostile/frontier/ranged/trooper/ak47,
+/mob/living/simple_animal/hostile/frontier/ranged,
 /turf/open/water/jungle,
 /area/ruin/powered)
 "uh" = (
@@ -2260,6 +2265,7 @@
 	pixel_y = -8;
 	pixel_x = 5
 	},
+/obj/item/melee/transforming/energy/sword/saber/pirate/red,
 /turf/open/floor/wood,
 /area/ruin/powered)
 "Dr" = (
@@ -3522,10 +3528,6 @@
 	dir = 9;
 	color = "#808080"
 	},
-/obj/item/kitchen/knife/combat{
-	pixel_x = 9;
-	pixel_y = -9
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/powered)
@@ -4462,7 +4464,7 @@ EO
 Fz
 FK
 jE
-Kd
+sq
 UQ
 wv
 tL
