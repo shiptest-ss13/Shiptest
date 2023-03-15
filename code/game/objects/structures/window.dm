@@ -692,7 +692,7 @@
 	flags_1 = PREVENT_CLICK_UNDER_1
 	armor = list("melee" = 75, "bullet" = 20, "laser" = 20, "energy" = 0, "bomb" = 50, "bio" = 100, "rad" = 100, "fire" = 80, "acid" = 100)
 	smoothing_groups = list(SMOOTH_GROUP_SHUTTLE_PARTS, SMOOTH_GROUP_WINDOW_FULLTILE_SHUTTLE,SMOOTH_GROUP_AIRLOCK)
-	canSmoothWith = list(SMOOTH_GROUP_WINDOW_FULLTILE_SHUTTLE,SMOOTH_GROUP_AIRLOCK)
+	canSmoothWith = list(SMOOTH_GROUP_WALLS,SMOOTH_GROUP_WINDOW_FULLTILE_SHUTTLE,SMOOTH_GROUP_AIRLOCK)
 	explosion_block = 3
 	glass_type = /obj/item/stack/sheet/titaniumglass
 	glass_amount = 2
@@ -722,7 +722,7 @@
 	armor = list("melee" = 85, "bullet" = 20, "laser" = 20, "energy" = 0, "bomb" = 50, "bio" = 100, "rad" = 100, "fire" = 80, "acid" = 100)
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_SHUTTLE_PARTS, SMOOTH_GROUP_WINDOW_FULLTILE,SMOOTH_GROUP_AIRLOCK)
-	canSmoothWith = list(SMOOTH_GROUP_WINDOW_FULLTILE,SMOOTH_GROUP_AIRLOCK)
+	canSmoothWith = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE, SMOOTH_GROUP_AIRLOCK)
 	explosion_block = 3
 	damage_deflection = 5		//WS Edit - Weakens R-Windows
 	glass_type = /obj/item/stack/sheet/plastitaniumglass
