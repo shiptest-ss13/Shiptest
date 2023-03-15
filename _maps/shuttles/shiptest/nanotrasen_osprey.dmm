@@ -789,6 +789,12 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/item/assembly/flash/handheld{
+	pixel_x = 5
+	},
+/obj/item/assembly/flash/handheld{
+	pixel_x = -5
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/science)
 "fU" = (
@@ -2633,6 +2639,16 @@
 /area/ship/engineering/atmospherics)
 "rd" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/structure/closet/crate/science{
+	name = "cyborg parts crate"
+	},
+/obj/item/bodypart/r_leg/robot,
+/obj/item/bodypart/r_arm/robot,
+/obj/item/bodypart/l_leg/robot,
+/obj/item/bodypart/l_arm/robot,
+/obj/item/bodypart/head/robot,
+/obj/item/bodypart/chest/robot,
+/obj/item/robot_suit,
 /turf/open/floor/plasteel/dark,
 /area/ship/science)
 "rf" = (
@@ -6330,7 +6346,6 @@
 /area/ship/science)
 "PE" = (
 /obj/machinery/recharge_station,
-/obj/item/robot_suit/prebuilt,
 /obj/effect/turf_decal/corner/opaque/mauve{
 	dir = 4
 	},
