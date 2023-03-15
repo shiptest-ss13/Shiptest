@@ -202,7 +202,7 @@
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/donkpockets,
 /obj/effect/spawner/lootdrop/donkpockets,
-/obj/machinery/newscaster{
+/obj/machinery/newscaster/directional/north{
 	pixel_y = -30
 	},
 /turf/open/floor/plasteel/grimy,
@@ -317,7 +317,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
 "hT" = (
-/obj/machinery/power/apc/auto_name/south,
+/obj/machinery/power/apc/auto_name/directional/south,
 /obj/effect/turf_decal/siding/white/end,
 /obj/structure/cable,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
@@ -476,7 +476,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "lb" = (
-/obj/machinery/power/apc/auto_name/east,
+/obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -732,7 +732,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/machinery/power/apc/auto_name/south,
+/obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -812,7 +812,7 @@
 /obj/machinery/light/small/directional/south{
 	pixel_x = 17
 	},
-/obj/machinery/power/apc/auto_name/south,
+/obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -1036,7 +1036,7 @@
 /obj/effect/turf_decal/trimline/opaque/red/filled/warning{
 	dir = 1
 	},
-/obj/machinery/power/apc/auto_name/east,
+/obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -1081,7 +1081,7 @@
 /area/ship/medical)
 "vT" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/power/apc/auto_name/east,
+/obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -1124,7 +1124,7 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/aft)
 "yi" = (
-/obj/machinery/power/apc/auto_name/west,
+/obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -1919,7 +1919,7 @@
 /obj/effect/landmark/start/paramedic,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/power/apc/auto_name/west,
+/obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},

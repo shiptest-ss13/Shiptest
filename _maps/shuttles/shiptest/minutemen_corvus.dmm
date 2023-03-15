@@ -155,7 +155,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
 "bX" = (
-/obj/machinery/power/apc/auto_name/west,
+/obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable{
 	icon_state = "0-1"
 	},
@@ -780,7 +780,7 @@
 	pixel_x = 7;
 	pixel_y = -8
 	},
-/obj/machinery/power/apc/auto_name/east,
+/obj/machinery/power/apc/auto_name/directional/east,
 /obj/machinery/computer/helm/viewscreen/directional/north{
 	pixel_y = 28
 	},
@@ -833,7 +833,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/machinery/power/apc/auto_name/south,
+/obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -1421,7 +1421,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/wrench/old,
-/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -1554,7 +1554,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
 	},
-/obj/machinery/power/apc/auto_name/east,
+/obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -1936,7 +1936,7 @@
 	dir = 6
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/power/apc/auto_name/south,
+/obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable,
 /obj/item/gps{
 	gpstag = null;

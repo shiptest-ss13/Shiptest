@@ -606,9 +606,7 @@
 /turf/closed/wall/rust,
 /area/ruin/space/has_grav/scav_mining/entrance)
 "Sd" = (
-/obj/machinery/power/apc/auto_name/east{
-	pixel_x = 25
-	},
+/obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/scav_mining/core)
@@ -629,9 +627,7 @@
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/scav_mining/entrance)
 "Ti" = (
-/obj/machinery/power/apc/auto_name/east{
-	pixel_x = 25
-	},
+/obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -713,9 +709,7 @@
 /area/ruin/space/has_grav/scav_mining/dorm)
 "YF" = (
 /obj/structure/table,
-/obj/machinery/power/apc/auto_name/west{
-	pixel_x = -25
-	},
+/obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},

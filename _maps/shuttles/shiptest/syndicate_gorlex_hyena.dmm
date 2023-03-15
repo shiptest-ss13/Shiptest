@@ -54,7 +54,7 @@
 /obj/item/clothing/head/helmet/operator,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/radio/intercom/directional/west,
-/obj/machinery/power/apc/auto_name/south,
+/obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -127,7 +127,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
 	},
-/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/apc/auto_name/directional/north,
 /obj/effect/turf_decal/trimline/opaque/red/filled/corner{
 	dir = 1
 	},
@@ -332,7 +332,7 @@
 /turf/open/floor/plasteel,
 /area/ship/crew)
 "gM" = (
-/obj/machinery/power/apc/auto_name/east,
+/obj/machinery/power/apc/auto_name/directional/east,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -839,7 +839,7 @@
 /area/ship/crew/dorm)
 "pv" = (
 /obj/structure/dresser,
-/obj/machinery/power/apc/auto_name/south,
+/obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable,
 /turf/open/floor/carpet/red,
 /area/ship/crew/dorm)
@@ -913,7 +913,7 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/machinery/power/apc/auto_name/south,
+/obj/machinery/power/apc/auto_name/directional/south,
 /obj/machinery/light/directional/south,
 /turf/open/floor/carpet/red_gold,
 /area/ship/bridge)
@@ -972,7 +972,7 @@
 /obj/item/clothing/head/hardhat,
 /obj/item/clothing/head/soft/yellow,
 /obj/structure/cable,
-/obj/machinery/power/apc/auto_name/south,
+/obj/machinery/power/apc/auto_name/directional/south,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
 "rM" = (
@@ -1352,7 +1352,7 @@
 /obj/structure/chair/sofa/corner{
 	dir = 4
 	},
-/obj/machinery/power/apc/auto_name/west,
+/obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -2173,7 +2173,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "KW" = (
-/obj/machinery/power/apc/auto_name/west,
+/obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -2194,7 +2194,7 @@
 /obj/machinery/atmospherics/pipe/simple/orange/hidden/layer4{
 	dir = 9
 	},
-/obj/machinery/power/apc/auto_name/east,
+/obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -2789,7 +2789,7 @@
 /area/ship/maintenance/port)
 "Uh" = (
 /obj/structure/cable,
-/obj/machinery/power/apc/auto_name/south,
+/obj/machinery/power/apc/auto_name/directional/south,
 /obj/effect/turf_decal/trimline/opaque/red/filled/corner,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)

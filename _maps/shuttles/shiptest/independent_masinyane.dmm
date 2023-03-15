@@ -10,7 +10,7 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/obj/machinery/power/apc/auto_name/east,
+/obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -677,7 +677,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Tq" = (
-/obj/machinery/power/apc/auto_name/west,
+/obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1

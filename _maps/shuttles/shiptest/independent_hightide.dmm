@@ -448,7 +448,7 @@
 /obj/item/storage/box/drinkingglasses,
 /obj/item/storage/cans/sixbeer,
 /obj/item/storage/cans/sixbeer,
-/obj/machinery/power/apc/auto_name/east,
+/obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -607,7 +607,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
 "wK" = (
@@ -665,7 +665,7 @@
 /area/ship/maintenance/starboard)
 "xA" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/power/apc/auto_name/west,
+/obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -1014,9 +1014,7 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/machinery/power/apc/auto_name/south{
-	dir = 1
-	},
+/obj/machinery/power/apc/auto_name/directional/south,
 /obj/effect/decal/cleanable/glass,
 /obj/item/trash/cheesie,
 /obj/item/areaeditor/shuttle,
@@ -1186,7 +1184,7 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/machinery/power/apc/auto_name/south,
+/obj/machinery/power/apc/auto_name/directional/south,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 8
 	},
@@ -1309,7 +1307,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/machinery/power/apc/auto_name/west,
+/obj/machinery/power/apc/auto_name/directional/west,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "Yc" = (

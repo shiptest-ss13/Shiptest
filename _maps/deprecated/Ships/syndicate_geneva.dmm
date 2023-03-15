@@ -28,7 +28,7 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/apc/auto_name/directional/north,
 /obj/item/soap/syndie,
 /obj/item/defibrillator,
 /turf/open/floor/plasteel/white,
@@ -189,7 +189,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/grass,
 /area/ship/crew/hydroponics)
 "dy" = (
@@ -197,7 +197,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/apc/auto_name/directional/north,
 /obj/machinery/firealarm/directional/west,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/crew/dorm)
@@ -855,7 +855,7 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/apc/auto_name/directional/north,
 /obj/item/pinpointer/crew,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 8
@@ -968,7 +968,7 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/machinery/power/apc/auto_name/east,
+/obj/machinery/power/apc/auto_name/directional/east,
 /obj/machinery/autolathe,
 /obj/machinery/airalarm/directional/south,
 /turf/open/floor/carpet/nanoweave/red,
@@ -1071,7 +1071,7 @@
 /area/ship/hallway/central)
 "uC" = (
 /obj/item/kirbyplants/random,
-/obj/machinery/power/apc/auto_name/west,
+/obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable,
 /turf/open/floor/wood/yew,
 /area/ship/crew/office)
@@ -1091,7 +1091,7 @@
 	dir = 9
 	},
 /obj/structure/cable,
-/obj/machinery/power/apc/auto_name/east,
+/obj/machinery/power/apc/auto_name/directional/east,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
@@ -1709,7 +1709,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/apc/auto_name/directional/north,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
 	},
@@ -1763,7 +1763,7 @@
 /obj/effect/turf_decal/corner/opaque/bottlegreen{
 	dir = 6
 	},
-/obj/machinery/power/apc/auto_name/east,
+/obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/library)
@@ -1842,7 +1842,7 @@
 	dir = 8
 	},
 /obj/machinery/suit_storage_unit/syndicate,
-/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/apc/auto_name/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
 	icon_state = "0-8"

@@ -319,7 +319,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/dorm)
 "ii" = (
-/obj/machinery/power/apc/auto_name/east,
+/obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
@@ -344,7 +344,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "in" = (
-/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -811,7 +811,7 @@
 /turf/open/floor/plasteel/white,
 /area/ship/crew/office)
 "tk" = (
-/obj/machinery/power/apc/auto_name/west,
+/obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -911,7 +911,7 @@
 "vN" = (
 /obj/structure/table/reinforced,
 /obj/item/binoculars,
-/obj/machinery/power/apc/auto_name/west,
+/obj/machinery/power/apc/auto_name/directional/west,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -938,9 +938,7 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "xf" = (
-/obj/machinery/power/apc/auto_name/south{
-	pixel_y = -25
-	},
+/obj/machinery/power/apc/auto_name/directional/south,
 /obj/effect/turf_decal/industrial/warning/corner,
 /obj/machinery/button/shieldwallgen{
 	name = "Holofield Controls";
@@ -1151,7 +1149,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/industrial/hatch/red,
-/obj/machinery/power/apc/auto_name/east,
+/obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -1679,7 +1677,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "RY" = (
-/obj/machinery/power/apc/auto_name/west,
+/obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable,
 /obj/structure/chair/office{
 	dir = 4

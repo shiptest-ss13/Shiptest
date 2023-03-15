@@ -174,7 +174,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "cu" = (
-/obj/machinery/power/apc/auto_name/south,
+/obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -664,7 +664,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "lb" = (
-/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -696,7 +696,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/atmospherics)
 "ls" = (
-/obj/machinery/power/apc/auto_name/east,
+/obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -812,7 +812,7 @@
 /obj/effect/turf_decal/corner/opaque/purple/border{
 	dir = 5
 	},
-/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -1274,7 +1274,7 @@
 /obj/effect/turf_decal/borderfloor{
 	dir = 4
 	},
-/obj/machinery/power/apc/auto_name/south,
+/obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -1339,7 +1339,7 @@
 /area/ship/engineering/atmospherics)
 "yd" = (
 /obj/structure/cable,
-/obj/machinery/power/apc/auto_name/east,
+/obj/machinery/power/apc/auto_name/directional/east,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
@@ -2362,7 +2362,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/power/apc/auto_name/east,
+/obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable,
 /obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/plating,

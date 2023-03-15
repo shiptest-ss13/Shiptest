@@ -117,7 +117,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/machinery/power/apc/auto_name/west,
+/obj/machinery/power/apc/auto_name/directional/west,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/railing/corner,
 /obj/effect/turf_decal/corner/opaque/brown{
@@ -197,7 +197,7 @@
 /obj/effect/turf_decal/corner/opaque/blue/bordercorner{
 	dir = 8
 	},
-/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -343,7 +343,7 @@
 /area/ship/cargo)
 "bM" = (
 /obj/machinery/rnd/production/circuit_imprinter/department/science,
-/obj/machinery/power/apc/auto_name/west,
+/obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable,
 /obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/plasteel/white,
@@ -905,7 +905,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/machinery/power/apc/auto_name/east,
+/obj/machinery/power/apc/auto_name/directional/east,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
@@ -982,7 +982,7 @@
 	pixel_y = 4
 	},
 /obj/item/storage/firstaid/medical,
-/obj/machinery/power/apc/auto_name/west,
+/obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -1442,7 +1442,7 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/power/apc/auto_name/east,
+/obj/machinery/power/apc/auto_name/directional/east,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/orange/visible,
 /obj/structure/catwalk/over,
@@ -2696,7 +2696,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/opaque/bar,
-/obj/machinery/power/apc/auto_name/west,
+/obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable,
 /turf/open/floor/plasteel,
 /area/ship/crew)
@@ -2714,7 +2714,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/machinery/power/apc/auto_name/west,
+/obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/AIcore,
 /obj/item/circuitboard/aicore,
 /obj/item/stack/sheet/rglass,

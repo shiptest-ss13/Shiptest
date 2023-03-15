@@ -51,7 +51,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/machinery/power/apc/auto_name/south,
+/obj/machinery/power/apc/auto_name/directional/south,
 /turf/open/floor/plasteel,
 /area/ship/bridge)
 "ec" = (
@@ -276,7 +276,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/machinery/power/apc/auto_name/east,
+/obj/machinery/power/apc/auto_name/directional/east,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 1
 	},
@@ -386,7 +386,7 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/obj/machinery/power/apc/auto_name/east,
+/obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -659,7 +659,7 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "FF" = (
-/obj/machinery/power/apc/auto_name/east,
+/obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
@@ -786,7 +786,7 @@
 /area/ship/cargo)
 "JF" = (
 /obj/structure/cable,
-/obj/machinery/power/apc/auto_name/south,
+/obj/machinery/power/apc/auto_name/directional/south,
 /obj/effect/turf_decal/corner/opaque/purple{
 	dir = 10
 	},
@@ -956,7 +956,7 @@
 	dir = 4
 	},
 /obj/structure/cable,
-/obj/machinery/power/apc/auto_name/east,
+/obj/machinery/power/apc/auto_name/directional/east,
 /turf/open/floor/plasteel,
 /area/ship/engineering)
 "TP" = (
@@ -1001,7 +1001,7 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/apc/auto_name/directional/north,
 /obj/effect/turf_decal/corner/opaque/green/border{
 	dir = 1
 	},
@@ -1011,7 +1011,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/apc/auto_name/directional/north,
 /obj/effect/landmark/start/assistant,
 /turf/open/floor/carpet,
 /area/ship/crew/dorm)

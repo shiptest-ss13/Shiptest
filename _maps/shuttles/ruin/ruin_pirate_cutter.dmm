@@ -344,7 +344,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/apc/auto_name/directional/north,
 /obj/machinery/power/terminal{
 	dir = 1
 	},
@@ -469,7 +469,7 @@
 /obj/item/coin/gold,
 /obj/item/coin/gold,
 /obj/effect/turf_decal/corner/opaque/blue,
-/obj/machinery/power/apc/auto_name/east,
+/obj/machinery/power/apc/auto_name/directional/east,
 /obj/machinery/power/terminal{
 	dir = 4
 	},
@@ -552,7 +552,7 @@
 /obj/effect/turf_decal/corner/opaque/red{
 	dir = 8
 	},
-/obj/machinery/power/apc/auto_name/south,
+/obj/machinery/power/apc/auto_name/directional/south,
 /obj/machinery/power/terminal,
 /obj/structure/cable,
 /turf/open/floor/plasteel,
@@ -721,7 +721,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/obj/machinery/power/apc/auto_name/south,
+/obj/machinery/power/apc/auto_name/directional/south,
 /obj/machinery/power/terminal,
 /obj/structure/cable{
 	icon_state = "0-8"
@@ -848,7 +848,7 @@
 "Cb" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/airalarm/directional/east,
-/obj/machinery/power/apc/auto_name/west,
+/obj/machinery/power/apc/auto_name/directional/west,
 /obj/machinery/power/terminal{
 	dir = 8
 	},
