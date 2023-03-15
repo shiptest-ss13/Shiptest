@@ -140,6 +140,22 @@
 /obj/machinery/power/apc/auto_name
 	auto_name = TRUE
 
+/obj/machinery/power/apc/auto_name/north //Pixel offsets get overwritten on New() //TODO: delete in part 2 of pr
+	dir = NORTH
+	pixel_y = 23
+
+/obj/machinery/power/apc/auto_name/south
+	dir = SOUTH
+	pixel_y = -23
+
+/obj/machinery/power/apc/auto_name/east
+	dir = EAST
+	pixel_x = 24
+
+/obj/machinery/power/apc/auto_name/west
+	dir = WEST
+	pixel_x = -25
+
 MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 
 /obj/machinery/power/apc/get_cell()
