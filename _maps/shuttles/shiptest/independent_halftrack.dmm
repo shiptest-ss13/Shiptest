@@ -159,9 +159,7 @@
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/donkpockets,
 /obj/effect/spawner/lootdrop/donkpockets,
-/obj/machinery/newscaster/directional/north{
-	pixel_y = -30
-	},
+/obj/machinery/newscaster/directional/south,
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew)
 "fe" = (
@@ -767,7 +765,6 @@
 /area/ship/hallway/aft)
 "tO" = (
 /obj/machinery/airalarm/directional/south,
-/obj/structure/extinguisher_cabinet/directional/north,
 /obj/structure/closet/secure_closet/security,
 /obj/item/clothing/head/beret/sec/inteq,
 /obj/item/clothing/head/beret/sec/inteq,
@@ -787,6 +784,7 @@
 /obj/item/storage/backpack/messenger/inteq,
 /obj/item/clothing/glasses/hud/security/sunglasses/inteq,
 /obj/item/clothing/glasses/hud/security/sunglasses/inteq,
+/obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew)
 "tT" = (

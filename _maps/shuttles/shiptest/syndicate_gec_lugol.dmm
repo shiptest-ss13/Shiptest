@@ -43,8 +43,8 @@
 	layer = 2.1
 	},
 /turf/open/floor/plating{
-	icon_state = "elevatorshaft";
-	color = "#8D8B8B"
+	color = "#8D8B8B";
+	icon_state = "elevatorshaft"
 	},
 /area/ship/crew/dorm)
 "aE" = (
@@ -83,9 +83,9 @@
 	color = "#4c535b"
 	},
 /obj/machinery/atmospherics/components/binary/pump/on{
+	desc = "A pump that moves gas by pressure. This one pumps gas from the ship's waste loop into the filtering section";
 	dir = 8;
-	name = "Waste to Filtering";
-	desc = "A pump that moves gas by pressure. This one pumps gas from the ship's waste loop into the filtering section"
+	name = "Waste to Filtering"
 	},
 /obj/machinery/atmospherics/pipe/simple/green/visible/layer2{
 	dir = 6
@@ -159,6 +159,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/external/glass{
+	dir = 4;
 	name = "Construction Zone"
 	},
 /obj/structure/cable{
@@ -181,8 +182,8 @@
 "bs" = (
 /obj/structure/table,
 /obj/item/flashlight/lamp{
-	pixel_y = 8;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = 8
 	},
 /obj/effect/turf_decal/trimline/transparent/bar/filled/line{
 	dir = 9
@@ -307,9 +308,11 @@
 /area/ship/bridge)
 "cz" = (
 /obj/structure/table/reinforced,
-/obj/item/radio/intercom/wideband/directional/north,
 /obj/structure/railing{
 	dir = 9
+	},
+/obj/item/radio/intercom/wideband/table{
+	dir = 1
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
@@ -336,19 +339,17 @@
 	dir = 10
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/computer/cryopod/directional/north{
-	pixel_y = 27
-	},
+/obj/machinery/computer/cryopod/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
 "cK" = (
 /obj/machinery/atmospherics/components/trinary/mixer/flipped/layer2{
+	desc = "Very useful for mixing gasses. This one mixes Nitrogen and Oxygen at the proper proportions for breathing air";
 	dir = 8;
 	name = "air mixer";
 	node1_concentration = 0.21;
 	node2_concentration = 0.79;
 	on = 1;
-	desc = "Very useful for mixing gasses. This one mixes Nitrogen and Oxygen at the proper proportions for breathing air";
 	target_pressure = 2500
 	},
 /obj/machinery/atmospherics/pipe/simple/yellow/visible{
@@ -422,8 +423,8 @@
 /area/ship/engineering/atmospherics)
 "dj" = (
 /obj/structure/closet/crate/secure/engineering{
-	name = "Supermatter Crystal Crate";
-	desc = "A dangerous supermatter crate with a lock on it. The GEC insignia has been painted over a faded Nanotrasen logo"
+	desc = "A dangerous supermatter crate with a lock on it. The GEC insignia has been painted over a faded Nanotrasen logo";
+	name = "Supermatter Crystal Crate"
 	},
 /obj/machinery/power/supermatter_crystal/shard,
 /turf/open/floor/plating/airless,
@@ -471,8 +472,8 @@
 	dir = 4
 	},
 /turf/open/floor/plating{
-	icon_state = "elevatorshaft";
-	color = "#8D8B8B"
+	color = "#8D8B8B";
+	icon_state = "elevatorshaft"
 	},
 /area/ship/engineering)
 "eh" = (
@@ -483,13 +484,13 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/components/binary/pump/on{
+	icon_state = "pump_on_map-2";
 	name = "N2 Air Mix Outlet Pump";
-	piping_layer = 2;
-	icon_state = "pump_on_map-2"
+	piping_layer = 2
 	},
 /obj/machinery/atmospherics/components/binary/pump/on{
-	name = "N2 Outlet Pump";
 	icon_state = "pump_map-3";
+	name = "N2 Outlet Pump";
 	on = 0
 	},
 /turf/open/floor/plating,
@@ -497,8 +498,8 @@
 "el" = (
 /obj/machinery/atmospherics/components/binary/pump{
 	dir = 8;
-	name = "Mix Tank to Mix";
 	icon_state = "pump_map-2";
+	name = "Mix Tank to Mix";
 	piping_layer = 2
 	},
 /turf/open/floor/plasteel/tech,
@@ -516,8 +517,8 @@
 /obj/machinery/portable_atmospherics/canister,
 /obj/machinery/light_switch{
 	dir = 1;
-	pixel_y = -27;
-	pixel_x = -5
+	pixel_x = -5;
+	pixel_y = -27
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/atmospherics)
@@ -532,10 +533,10 @@
 /area/ship/bridge)
 "eH" = (
 /obj/machinery/atmospherics/components/binary/pump/on{
-	name = "Air to Distro";
-	target_pressure = 2500;
 	icon_state = "pump_on_map-2";
-	piping_layer = 2
+	name = "Air to Distro";
+	piping_layer = 2;
+	target_pressure = 2500
 	},
 /obj/machinery/atmospherics/pipe/simple/yellow/visible{
 	dir = 5
@@ -569,8 +570,8 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/stairs{
-	icon = 'icons/obj/stairs.dmi';
-	dir = 1
+	dir = 1;
+	icon = 'icons/obj/stairs.dmi'
 	},
 /area/ship/crew/canteen)
 "eO" = (
@@ -613,8 +614,8 @@
 /area/ship/crew/canteen)
 "eW" = (
 /obj/effect/turf_decal/steeldecal/steel_decals_central2{
-	pixel_y = 2;
-	dir = 4
+	dir = 4;
+	pixel_y = 2
 	},
 /obj/effect/turf_decal/steeldecal/steel_decals10{
 	dir = 8
@@ -700,15 +701,16 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/components/binary/pump/layer2{
+	desc = "A pump that moves gas by pressure. This one sucks up gasses from the atmosphere and sends them to be filtered out into the tanks";
 	dir = 4;
-	name = "Atmosphere to Filtering";
-	desc = "A pump that moves gas by pressure. This one sucks up gasses from the atmosphere and sends them to be filtered out into the tanks"
+	name = "Atmosphere to Filtering"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/atmospherics)
 "fM" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
 	id = "ce_office"
 	},
 /turf/open/floor/plating,
@@ -732,8 +734,8 @@
 /obj/item/clothing/gloves/combat,
 /obj/item/clothing/mask/gas,
 /obj/structure/closet/secure_closet/engineering_personal{
-	populate = 0;
-	name = "GEC Engineer's Locker"
+	name = "GEC Engineer's Locker";
+	populate = 0
 	},
 /obj/effect/turf_decal/steeldecal/steel_decals10{
 	dir = 9
@@ -805,8 +807,8 @@
 	dir = 9
 	},
 /turf/open/floor/plating{
-	icon_state = "elevatorshaft";
-	color = "#8D8B8B"
+	color = "#8D8B8B";
+	icon_state = "elevatorshaft"
 	},
 /area/ship/engineering)
 "gN" = (
@@ -938,8 +940,8 @@
 	layer = 2.1
 	},
 /turf/open/floor/plating{
-	icon_state = "elevatorshaft";
-	color = "#8D8B8B"
+	color = "#8D8B8B";
+	icon_state = "elevatorshaft"
 	},
 /area/ship/engineering)
 "hQ" = (
@@ -990,8 +992,8 @@
 	dir = 1
 	},
 /turf/open/floor/plating{
-	icon_state = "elevatorshaft";
-	color = "#8D8B8B"
+	color = "#8D8B8B";
+	icon_state = "elevatorshaft"
 	},
 /area/ship/engineering)
 "iv" = (
@@ -1013,8 +1015,8 @@
 	},
 /obj/machinery/atmospherics/components/binary/pump{
 	dir = 8;
-	name = "Mix Tank Outlet";
 	icon_state = "pump_map-2";
+	name = "Mix Tank Outlet";
 	piping_layer = 2
 	},
 /turf/open/floor/plating,
@@ -1077,8 +1079,8 @@
 	bulb_power = 0.5
 	},
 /turf/open/floor/plating{
-	icon_state = "elevatorshaft";
-	color = "#8D8B8B"
+	color = "#8D8B8B";
+	icon_state = "elevatorshaft"
 	},
 /area/ship/engineering)
 "jg" = (
@@ -1103,8 +1105,8 @@
 /obj/item/clothing/suit/fire/atmos,
 /obj/item/clothing/head/hardhat/atmos,
 /obj/structure/closet/secure_closet/atmospherics{
-	populate = 0;
-	name = "Atmospheric Technician's Locker"
+	name = "Atmospheric Technician's Locker";
+	populate = 0
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/atmospherics)
@@ -1186,8 +1188,8 @@
 	dir = 8
 	},
 /turf/open/floor/plating{
-	icon_state = "elevatorshaft";
-	color = "#8D8B8B"
+	color = "#8D8B8B";
+	icon_state = "elevatorshaft"
 	},
 /area/ship/engineering)
 "jP" = (
@@ -1268,8 +1270,8 @@
 	dir = 5
 	},
 /turf/open/floor/plating{
-	icon_state = "elevatorshaft";
-	color = "#8D8B8B"
+	color = "#8D8B8B";
+	icon_state = "elevatorshaft"
 	},
 /area/ship/engineering)
 "kD" = (
@@ -1300,8 +1302,8 @@
 	layer = 2.1
 	},
 /turf/open/floor/plating{
-	icon_state = "elevatorshaft";
-	color = "#8D8B8B"
+	color = "#8D8B8B";
+	icon_state = "elevatorshaft"
 	},
 /area/ship/crew/dorm)
 "lc" = (
@@ -1316,8 +1318,8 @@
 "lx" = (
 /obj/machinery/atmospherics/components/unary/thermomachine/freezer{
 	dir = 4;
-	piping_layer = 2;
-	name = "Air Mix Cooler"
+	name = "Air Mix Cooler";
+	piping_layer = 2
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/atmospherics)
@@ -1369,8 +1371,8 @@
 	color = "#4c535b"
 	},
 /obj/machinery/atmospherics/components/binary/pump{
-	name = "Plasma to Engines";
 	icon_state = "pump_map-4";
+	name = "Plasma to Engines";
 	piping_layer = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/brown/hidden{
@@ -1437,6 +1439,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "gec_secure"
 	},
 /turf/open/floor/plasteel/tech/grid/airless,
@@ -1445,8 +1448,8 @@
 /obj/effect/decal/fakelattice,
 /obj/effect/decal/cleanable/oil,
 /turf/open/floor/plating{
-	icon_state = "elevatorshaft";
-	color = "#8D8B8B"
+	color = "#8D8B8B";
+	icon_state = "elevatorshaft"
 	},
 /area/ship/engineering)
 "mA" = (
@@ -1506,6 +1509,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "gec_secure"
 	},
 /turf/open/floor/plasteel/tech/grid/airless,
@@ -1526,15 +1530,15 @@
 "nk" = (
 /obj/effect/decal/fakelattice,
 /obj/machinery/light/small/directional/south{
-	name = "blue-violet light";
-	desc = "These lights are conventionally banned from most ships due to the harmful radiation emitted from them. The GEC contractor who designed this ship did not care.";
-	bulb_power = 1;
 	bulb_colour = "#84A9FF";
-	bulb_vacuum_colour = "#FF3232"
+	bulb_power = 1;
+	bulb_vacuum_colour = "#FF3232";
+	desc = "These lights are conventionally banned from most ships due to the harmful radiation emitted from them. The GEC contractor who designed this ship did not care.";
+	name = "blue-violet light"
 	},
 /turf/open/floor/plating{
-	icon_state = "elevatorshaft";
-	color = "#8D8B8B"
+	color = "#8D8B8B";
+	icon_state = "elevatorshaft"
 	},
 /area/ship/crew/dorm)
 "nn" = (
@@ -1550,8 +1554,8 @@
 	dir = 10
 	},
 /turf/open/floor/plating{
-	icon_state = "elevatorshaft";
-	color = "#8D8B8B"
+	color = "#8D8B8B";
+	icon_state = "elevatorshaft"
 	},
 /area/ship/engineering)
 "nz" = (
@@ -1574,8 +1578,8 @@
 	pixel_x = -8
 	},
 /turf/open/floor/plasteel/stairs{
-	icon = 'icons/obj/stairs.dmi';
-	dir = 1
+	dir = 1;
+	icon = 'icons/obj/stairs.dmi'
 	},
 /area/ship/engineering)
 "nJ" = (
@@ -1587,8 +1591,8 @@
 /area/ship/crew/canteen)
 "nK" = (
 /obj/effect/turf_decal/steeldecal/steel_decals_central2{
-	pixel_y = 2;
-	dir = 4
+	dir = 4;
+	pixel_y = 2
 	},
 /obj/structure/table/wood,
 /obj/item/pizzabox/pineapple,
@@ -1610,8 +1614,8 @@
 	pixel_y = 7
 	},
 /turf/open/floor/plating{
-	icon_state = "elevatorshaft";
-	color = "#8D8B8B"
+	color = "#8D8B8B";
+	icon_state = "elevatorshaft"
 	},
 /area/ship/engineering)
 "nT" = (
@@ -1749,8 +1753,8 @@
 	dir = 1
 	},
 /turf/open/floor/plating{
-	icon_state = "elevatorshaft";
-	color = "#8D8B8B"
+	color = "#8D8B8B";
+	icon_state = "elevatorshaft"
 	},
 /area/ship/engineering)
 "pl" = (
@@ -1785,8 +1789,8 @@
 	color = "#4c535b"
 	},
 /turf/open/floor/plating{
-	icon_state = "elevatorshaft";
-	color = "#8D8B8B"
+	color = "#8D8B8B";
+	icon_state = "elevatorshaft"
 	},
 /area/ship/engineering)
 "ps" = (
@@ -1808,8 +1812,8 @@
 	dir = 6
 	},
 /turf/open/floor/plating{
-	icon_state = "elevatorshaft";
-	color = "#8D8B8B"
+	color = "#8D8B8B";
+	icon_state = "elevatorshaft"
 	},
 /area/ship/crew/dorm)
 "pz" = (
@@ -1873,6 +1877,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/external/glass{
+	dir = 4;
 	name = "Construction Zone"
 	},
 /turf/open/floor/plasteel/tech,
@@ -1898,8 +1903,8 @@
 /area/ship/bridge)
 "qe" = (
 /obj/machinery/chem_master/condimaster{
-	name = "BoozeMaster 3000";
-	desc = "Used to mix drinks and other reagents."
+	desc = "Used to mix drinks and other reagents.";
+	name = "BoozeMaster 3000"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/canteen)
@@ -1926,8 +1931,8 @@
 	network = list("GEC")
 	},
 /obj/structure/closet/secure_closet/atmospherics{
-	populate = 0;
-	name = "Atmospheric Technician's Locker"
+	name = "Atmospheric Technician's Locker";
+	populate = 0
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -2007,14 +2012,15 @@
 /obj/machinery/atmospherics/components/unary/shuttle/heater{
 	dir = 4
 	},
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "engine_shutters"
-	},
 /obj/structure/window/reinforced{
 	dir = 8
 	},
 /obj/machinery/door/window{
 	dir = 4
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
+	id = "engine_shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -2068,18 +2074,18 @@
 "rm" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/door{
-	pixel_x = -6;
-	pixel_y = 2;
+	dir = 1;
 	id = "gec_cargo";
 	name = "Cargo Blast Doors";
-	dir = 1
+	pixel_x = -6;
+	pixel_y = 2
 	},
 /obj/machinery/button/shieldwallgen{
-	pixel_x = 7;
-	pixel_y = 3;
+	dir = 1;
 	id = "gec_cargo_shield";
 	name = "Cargo Holoshield";
-	dir = 1
+	pixel_x = 7;
+	pixel_y = 3
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
@@ -2242,6 +2248,7 @@
 	dir = 8
 	},
 /obj/machinery/door/airlock/external/glass{
+	dir = 4;
 	name = "Construction Zone"
 	},
 /turf/open/floor/plasteel/tech,
@@ -2335,8 +2342,8 @@
 	},
 /obj/effect/decal/fakelattice,
 /turf/open/floor/plating{
-	icon_state = "elevatorshaft";
-	color = "#8D8B8B"
+	color = "#8D8B8B";
+	icon_state = "elevatorshaft"
 	},
 /area/ship/crew/canteen)
 "tx" = (
@@ -2433,15 +2440,15 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/components/binary/pump/on{
-	name = "O2 Air Mix Outlet Pump";
 	icon_state = "pump_on_map-2";
+	name = "O2 Air Mix Outlet Pump";
 	piping_layer = 2;
 	target_pressure = 2500
 	},
 /obj/machinery/atmospherics/components/binary/pump/on{
+	icon_state = "pump_map-3";
 	name = "O2 Outlet Pump";
-	on = 0;
-	icon_state = "pump_map-3"
+	on = 0
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -2494,9 +2501,9 @@
 "uF" = (
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /obj/effect/turf_decal/steeldecal/steel_decals_central2{
-	pixel_y = 2;
 	dir = 4;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 2
 	},
 /obj/effect/turf_decal/steeldecal/steel_decals10{
 	dir = 1
@@ -2689,8 +2696,8 @@
 	layer = 2.1
 	},
 /turf/open/floor/plating{
-	icon_state = "elevatorshaft";
-	color = "#8D8B8B"
+	color = "#8D8B8B";
+	icon_state = "elevatorshaft"
 	},
 /area/ship/engineering)
 "wE" = (
@@ -2728,12 +2735,12 @@
 /area/ship/bridge)
 "wY" = (
 /obj/effect/turf_decal/steeldecal/steel_decals_central2{
-	pixel_y = 2;
-	dir = 4
+	dir = 4;
+	pixel_y = 2
 	},
 /obj/item/reagent_containers/glass/rag{
-	pixel_y = 5;
-	pixel_x = -3
+	pixel_x = -3;
+	pixel_y = 5
 	},
 /obj/structure/table/wood,
 /turf/open/floor/plasteel/dark,
@@ -2868,8 +2875,8 @@
 	pixel_x = -7
 	},
 /turf/open/floor/plasteel/stairs{
-	icon = 'icons/obj/stairs.dmi';
-	dir = 1
+	dir = 1;
+	icon = 'icons/obj/stairs.dmi'
 	},
 /area/ship/engineering)
 "xZ" = (
@@ -2892,8 +2899,8 @@
 	dir = 10
 	},
 /turf/open/floor/plating{
-	icon_state = "elevatorshaft";
-	color = "#8D8B8B"
+	color = "#8D8B8B";
+	icon_state = "elevatorshaft"
 	},
 /area/ship/crew/dorm)
 "yp" = (
@@ -2921,8 +2928,8 @@
 	},
 /obj/machinery/light_switch{
 	dir = 1;
-	pixel_y = -27;
-	pixel_x = -5
+	pixel_x = -5;
+	pixel_y = -27
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
@@ -3046,8 +3053,8 @@
 /obj/item/clothing/suit/fire/atmos,
 /obj/item/clothing/head/hardhat/atmos,
 /obj/structure/closet/secure_closet/atmospherics{
-	populate = 0;
-	name = "Atmospheric Technician's Locker"
+	name = "Atmospheric Technician's Locker";
+	populate = 0
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/atmospherics)
@@ -3139,10 +3146,10 @@
 "Bh" = (
 /obj/structure/tank_dispenser,
 /obj/machinery/button/door{
-	pixel_y = 27;
-	pixel_x = 5;
+	id = "atmoswindow";
 	name = "Window Shutters";
-	id = "atmoswindow"
+	pixel_x = 5;
+	pixel_y = 27
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/atmospherics)
@@ -3158,8 +3165,8 @@
 	layer = 2.1
 	},
 /turf/open/floor/plating{
-	icon_state = "elevatorshaft";
-	color = "#8D8B8B"
+	color = "#8D8B8B";
+	icon_state = "elevatorshaft"
 	},
 /area/ship/engineering)
 "Bn" = (
@@ -3176,8 +3183,8 @@
 /obj/structure/railing,
 /obj/structure/cable,
 /turf/open/floor/plating{
-	icon_state = "elevatorshaft";
-	color = "#8D8B8B"
+	color = "#8D8B8B";
+	icon_state = "elevatorshaft"
 	},
 /area/ship/engineering)
 "Bw" = (
@@ -3216,8 +3223,8 @@
 	dir = 6
 	},
 /obj/machinery/meter/atmos{
-	name = "Mix to Mix Tank meter";
-	desc = "It measures Mix to Mix Tank."
+	desc = "It measures Mix to Mix Tank.";
+	name = "Mix to Mix Tank meter"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/atmospherics)
@@ -3309,8 +3316,8 @@
 	dir = 4
 	},
 /turf/open/floor/plating{
-	icon_state = "elevatorshaft";
-	color = "#8D8B8B"
+	color = "#8D8B8B";
+	icon_state = "elevatorshaft"
 	},
 /area/ship/engineering)
 "Cu" = (
@@ -3337,10 +3344,10 @@
 	icon_state = "1-4"
 	},
 /obj/machinery/button/door{
+	dir = 1;
 	id = "gec_secure";
 	name = "Secure Storage";
-	pixel_y = -30;
-	dir = 1
+	pixel_y = -30
 	},
 /turf/open/floor/plasteel/tech/airless,
 /area/ship/construction)
@@ -3526,6 +3533,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/external/glass{
+	dir = 4;
 	name = "Construction Zone"
 	},
 /turf/open/floor/plasteel/tech,
@@ -3545,8 +3553,8 @@
 	dir = 9
 	},
 /turf/open/floor/plating{
-	icon_state = "elevatorshaft";
-	color = "#8D8B8B"
+	color = "#8D8B8B";
+	icon_state = "elevatorshaft"
 	},
 /area/ship/crew/dorm)
 "EE" = (
@@ -3569,15 +3577,15 @@
 	dir = 4
 	},
 /turf/open/floor/plating{
-	icon_state = "elevatorshaft";
-	color = "#8D8B8B"
+	color = "#8D8B8B";
+	icon_state = "elevatorshaft"
 	},
 /area/ship/engineering)
 "EV" = (
 /obj/effect/decal/fakelattice,
 /turf/open/floor/plating{
-	icon_state = "elevatorshaft";
-	color = "#8D8B8B"
+	color = "#8D8B8B";
+	icon_state = "elevatorshaft"
 	},
 /area/ship/crew/canteen)
 "EX" = (
@@ -3610,8 +3618,8 @@
 	dir = 4
 	},
 /obj/item/paper{
-	name = "Warning";
-	info = "Engineers are advised against constructing singularities and teslas aboard the GEC Engineering Project. Field generators are liable to fail when the vessel docks and undocks - the results of such an event being catastrophic, should a singularity or tesla be kept inside.<br> <br>In the event of a singuloose, or a tesloose, crew should fling themselves out of the nearest airlock, in the hopes that their corpse is discovered in the future. <br> <br>Have a safe day, GEC management."
+	info = "Engineers are advised against constructing singularities and teslas aboard the GEC Engineering Project. Field generators are liable to fail when the vessel docks and undocks - the results of such an event being catastrophic, should a singularity or tesla be kept inside.<br> <br>In the event of a singuloose, or a tesloose, crew should fling themselves out of the nearest airlock, in the hopes that their corpse is discovered in the future. <br> <br>Have a safe day, GEC management.";
+	name = "Warning"
 	},
 /turf/open/floor/plating/airless,
 /area/ship/construction)
@@ -3698,10 +3706,10 @@
 /area/ship/cargo)
 "FS" = (
 /obj/machinery/button/door{
-	pixel_x = -27;
+	dir = 4;
 	id = "gec_secure";
 	name = "Secure Storage";
-	dir = 4
+	pixel_x = -27
 	},
 /turf/open/floor/plasteel/tech/airless,
 /area/ship/construction)
@@ -3714,8 +3722,8 @@
 	pixel_x = 8
 	},
 /turf/open/floor/plasteel/stairs{
-	icon = 'icons/obj/stairs.dmi';
-	dir = 2
+	dir = 2;
+	icon = 'icons/obj/stairs.dmi'
 	},
 /area/ship/engineering)
 "Gd" = (
@@ -3865,14 +3873,15 @@
 /turf/open/floor/plating,
 /area/ship/crew/canteen)
 "HX" = (
-/obj/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/grille,
 /obj/machinery/atmospherics/pipe/simple/green/visible/layer2{
 	dir = 4
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
 	id = "atmoswindow"
 	},
+/obj/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "Ie" = (
@@ -3904,6 +3913,7 @@
 /area/ship/engineering/atmospherics)
 "Il" = (
 /obj/machinery/door/airlock/hatch{
+	dir = 4;
 	id_tag = "ce_bolts";
 	name = "Project Overseer's Office"
 	},
@@ -4004,11 +4014,11 @@
 /area/ship/construction)
 "IL" = (
 /obj/machinery/atmospherics/components/binary/pump{
+	desc = "A pump that moves gas by pressure. Make sure your Mix isn't too hot when you open this or you'll clog your filter!";
 	dir = 8;
-	name = "Mix Tank to Filtering";
 	icon_state = "pump_map-2";
-	piping_layer = 2;
-	desc = "A pump that moves gas by pressure. Make sure your Mix isn't too hot when you open this or you'll clog your filter!"
+	name = "Mix Tank to Filtering";
+	piping_layer = 2
 	},
 /obj/machinery/atmospherics/pipe/simple/yellow/visible{
 	dir = 4
@@ -4110,6 +4120,7 @@
 /area/ship/engineering/atmospherics)
 "JC" = (
 /obj/machinery/door/airlock/hatch{
+	dir = 4;
 	name = "Engine Room"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -4164,8 +4175,8 @@
 	layer = 2.1
 	},
 /turf/open/floor/plating{
-	icon_state = "elevatorshaft";
-	color = "#8D8B8B"
+	color = "#8D8B8B";
+	icon_state = "elevatorshaft"
 	},
 /area/ship/engineering)
 "JL" = (
@@ -4205,8 +4216,8 @@
 	color = "#808080"
 	},
 /turf/open/floor/plating{
-	icon_state = "elevatorshaft";
-	color = "#8D8B8B"
+	color = "#8D8B8B";
+	icon_state = "elevatorshaft"
 	},
 /area/ship/engineering)
 "JV" = (
@@ -4258,6 +4269,15 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
+"KM" = (
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
+	id = "bridge_shutters"
+	},
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/grille,
+/turf/open/floor/plating,
+/area/ship/bridge)
 "KQ" = (
 /obj/machinery/atmospherics/pipe/simple/cyan/visible/layer2{
 	dir = 4
@@ -4273,8 +4293,8 @@
 	},
 /obj/structure/extinguisher_cabinet/directional/north,
 /obj/machinery/meter/atmos/layer4{
-	name = "Plasma to Engines";
-	desc = "It measures Plasma to Engines."
+	desc = "It measures Plasma to Engines.";
+	name = "Plasma to Engines"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
@@ -4310,18 +4330,18 @@
 /obj/machinery/button/door{
 	dir = 8;
 	id = "ce_office";
-	pixel_x = 27;
 	name = "Window Shutters";
+	pixel_x = 27;
 	pixel_y = 7
 	},
 /obj/machinery/button/door{
 	dir = 8;
 	id = "ce_bolts";
-	pixel_x = 27;
 	name = "Door Bolts";
+	normaldoorcontrol = 1;
+	pixel_x = 27;
 	pixel_y = -7;
-	specialfunctions = 4;
-	normaldoorcontrol = 1
+	specialfunctions = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
@@ -4362,8 +4382,8 @@
 	layer = 2.1
 	},
 /turf/open/floor/plating{
-	icon_state = "elevatorshaft";
-	color = "#8D8B8B"
+	color = "#8D8B8B";
+	icon_state = "elevatorshaft"
 	},
 /area/ship/crew/dorm)
 "Lo" = (
@@ -4436,8 +4456,8 @@
 	dir = 9
 	},
 /turf/open/floor/plating{
-	icon_state = "elevatorshaft";
-	color = "#8D8B8B"
+	color = "#8D8B8B";
+	icon_state = "elevatorshaft"
 	},
 /area/ship/engineering)
 "Lu" = (
@@ -4478,8 +4498,8 @@
 	dir = 2
 	},
 /turf/open/floor/plating{
-	icon_state = "elevatorshaft";
-	color = "#8D8B8B"
+	color = "#8D8B8B";
+	icon_state = "elevatorshaft"
 	},
 /area/ship/engineering)
 "LE" = (
@@ -4572,8 +4592,8 @@
 	layer = 2.1
 	},
 /turf/open/floor/plating{
-	icon_state = "elevatorshaft";
-	color = "#8D8B8B"
+	color = "#8D8B8B";
+	icon_state = "elevatorshaft"
 	},
 /area/ship/crew/dorm)
 "Mm" = (
@@ -4609,9 +4629,9 @@
 "My" = (
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /obj/effect/turf_decal/steeldecal/steel_decals_central2{
-	pixel_y = 2;
 	dir = 4;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 2
 	},
 /obj/effect/turf_decal/steeldecal/steel_decals10{
 	dir = 8
@@ -4640,8 +4660,8 @@
 /obj/item/binoculars,
 /obj/item/clothing/head/hardhat/white,
 /obj/structure/closet/secure_closet/engineering_chief{
-	populate = 0;
-	name = "Project Overseer's Closet"
+	name = "Project Overseer's Closet";
+	populate = 0
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -4680,8 +4700,8 @@
 	dir = 2
 	},
 /turf/open/floor/plating{
-	icon_state = "elevatorshaft";
-	color = "#8D8B8B"
+	color = "#8D8B8B";
+	icon_state = "elevatorshaft"
 	},
 /area/ship/engineering)
 "MN" = (
@@ -4699,8 +4719,8 @@
 "MV" = (
 /obj/structure/table,
 /obj/item/flashlight/lamp{
-	pixel_y = 8;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = 8
 	},
 /obj/item/stamp/syndicate{
 	pixel_x = 8
@@ -4732,14 +4752,18 @@
 /obj/structure/table,
 /obj/structure/bedsheetbin,
 /obj/machinery/light/small/directional/west{
-	bulb_vacuum_colour = "#FF3232";
-	name = "blue-violet light";
-	desc = "These lights are conventionally banned from most ships due to the harmful radiation emitted from them. The GEC contractor who designed this ship did not care.";
+	bulb_colour = "#84A9FF";
 	bulb_power = 1;
-	bulb_colour = "#84A9FF"
+	bulb_vacuum_colour = "#FF3232";
+	desc = "These lights are conventionally banned from most ships due to the harmful radiation emitted from them. The GEC contractor who designed this ship did not care.";
+	name = "blue-violet light"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/dorm)
+"Nj" = (
+/obj/effect/turf_decal/number/four,
+/turf/open/floor/plating/airless,
+/area/ship/construction)
 "Nl" = (
 /obj/structure/catwalk/over/plated_catwalk/white{
 	color = "#4c535b"
@@ -4832,8 +4856,8 @@
 	network = list("GEC")
 	},
 /turf/open/floor/plating{
-	icon_state = "elevatorshaft";
-	color = "#8D8B8B"
+	color = "#8D8B8B";
+	icon_state = "elevatorshaft"
 	},
 /area/ship/crew/dorm)
 "NY" = (
@@ -4859,16 +4883,16 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/table,
 /obj/item/paper_bin{
-	pixel_y = 3;
-	pixel_x = -3
+	pixel_x = -3;
+	pixel_y = 3
 	},
 /obj/item/stamp/syndicate{
-	pixel_y = 7;
-	pixel_x = 9
+	pixel_x = 9;
+	pixel_y = 7
 	},
 /obj/item/pen/fourcolor{
-	pixel_y = 3;
-	pixel_x = -3
+	pixel_x = -3;
+	pixel_y = 3
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -4902,9 +4926,9 @@
 /obj/docking_port/mobile{
 	can_move_docking_ports = 1;
 	launch_status = 0;
+	name = "Engineering Project";
 	port_direction = 4;
-	preferred_direction = 4;
-	name = "Engineering Project"
+	preferred_direction = 4
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
@@ -4928,10 +4952,10 @@
 /area/ship/engineering/atmospherics)
 "OH" = (
 /obj/structure/railing/corner{
-	dir = 1;
 	color = "#808080";
-	pixel_y = 2;
-	pixel_x = -2
+	dir = 1;
+	pixel_x = -2;
+	pixel_y = 2
 	},
 /obj/structure/railing/corner{
 	dir = 1
@@ -4945,16 +4969,16 @@
 "OP" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/door{
-	pixel_x = -5;
-	pixel_y = 5;
 	id = "gec_cargo";
-	name = "Cargo Blast Doors"
+	name = "Cargo Blast Doors";
+	pixel_x = -5;
+	pixel_y = 5
 	},
 /obj/machinery/button/shieldwallgen{
-	pixel_x = 6;
-	pixel_y = 3;
 	id = "gec_cargo_shield";
-	name = "Cargo Holoshield"
+	name = "Cargo Holoshield";
+	pixel_x = 6;
+	pixel_y = 3
 	},
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel/tech/grid,
@@ -4977,8 +5001,8 @@
 	layer = 2.1
 	},
 /turf/open/floor/plating{
-	icon_state = "elevatorshaft";
-	color = "#8D8B8B"
+	color = "#8D8B8B";
+	icon_state = "elevatorshaft"
 	},
 /area/ship/engineering)
 "Pk" = (
@@ -4987,16 +5011,13 @@
 /area/ship/engineering/atmospherics)
 "Pt" = (
 /turf/open/floor/plasteel/stairs{
-	icon = 'icons/obj/stairs.dmi';
-	dir = 4
+	dir = 4;
+	icon = 'icons/obj/stairs.dmi'
 	},
 /area/ship/engineering/atmospherics)
 "PC" = (
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 4
-	},
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "engine_shutters"
 	},
 /obj/structure/window/reinforced{
 	dir = 8
@@ -5007,10 +5028,19 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
+	id = "engine_shutters"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
+"PI" = (
+/obj/effect/turf_decal/number/zero,
+/turf/open/floor/plating/airless,
+/area/ship/construction)
 "PR" = (
 /obj/machinery/door/airlock/hatch{
+	dir = 4;
 	name = "Canteen"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -5032,6 +5062,7 @@
 /area/ship/crew/canteen)
 "PU" = (
 /obj/machinery/door/airlock/hatch{
+	dir = 4;
 	name = "Crew Quarters"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -5076,6 +5107,10 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
+"Qi" = (
+/obj/effect/turf_decal/number/five,
+/turf/open/floor/plating/airless,
+/area/ship/construction)
 "Qk" = (
 /obj/structure/catwalk/over/plated_catwalk/white{
 	color = "#4c535b"
@@ -5089,8 +5124,8 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/purple/hidden,
 /turf/open/floor/plating{
-	icon_state = "elevatorshaft";
-	color = "#8D8B8B"
+	color = "#8D8B8B";
+	icon_state = "elevatorshaft"
 	},
 /area/ship/engineering)
 "Qm" = (
@@ -5154,8 +5189,8 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/stairs{
-	icon = 'icons/obj/stairs.dmi';
-	dir = 4
+	dir = 4;
+	icon = 'icons/obj/stairs.dmi'
 	},
 /area/ship/crew/dorm)
 "QM" = (
@@ -5195,11 +5230,19 @@
 /area/ship/engineering/atmospherics)
 "Rk" = (
 /obj/item/kirbyplants/random{
-	pixel_y = 5;
-	pixel_x = 2
+	pixel_x = 2;
+	pixel_y = 5
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/central)
+"Rl" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
+	id = "construction_shutters"
+	},
+/turf/open/floor/plating/airless,
+/area/ship/construction)
 "Rn" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -5215,6 +5258,22 @@
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/central)
+"Rv" = (
+/obj/machinery/atmospherics/components/unary/shuttle/heater{
+	dir = 4
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
+	id = "engine_shutters"
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/machinery/door/window{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "Rw" = (
 /obj/machinery/atmospherics/pipe/simple/purple/visible/layer4{
 	dir = 9
@@ -5248,8 +5307,8 @@
 /area/ship/crew/canteen)
 "Sm" = (
 /obj/effect/turf_decal/steeldecal/steel_decals_central2{
-	pixel_y = 2;
-	dir = 4
+	dir = 4;
+	pixel_y = 2
 	},
 /obj/structure/table/wood,
 /obj/item/phone,
@@ -5357,8 +5416,8 @@
 	dir = 9
 	},
 /turf/open/floor/plating{
-	icon_state = "elevatorshaft";
-	color = "#8D8B8B"
+	color = "#8D8B8B";
+	icon_state = "elevatorshaft"
 	},
 /area/ship/engineering)
 "Tp" = (
@@ -5445,8 +5504,8 @@
 /obj/item/bedsheet/syndie,
 /obj/structure/curtain/cloth/grey,
 /obj/effect/turf_decal/steeldecal/steel_decals_central2{
-	pixel_y = 2;
-	dir = 8
+	dir = 8;
+	pixel_y = 2
 	},
 /obj/structure/sign/poster/contraband/gec{
 	pixel_x = -32
@@ -5499,11 +5558,11 @@
 	dir = 9
 	},
 /obj/item/documents{
-	icon_state = "docs_part";
 	desc = "Upon closer inspection, this is just an egg salad recipe.";
+	icon_state = "docs_part";
+	layer = 3;
 	pixel_x = 3;
-	pixel_y = 3;
-	layer = 3
+	pixel_y = 3
 	},
 /obj/item/folder{
 	pixel_y = 2
@@ -5512,8 +5571,8 @@
 	pixel_y = 4
 	},
 /obj/item/stamp/syndicate{
-	pixel_y = 6;
-	pixel_x = 1
+	pixel_x = 1;
+	pixel_y = 6
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
@@ -5564,8 +5623,8 @@
 	},
 /obj/effect/decal/fakelattice,
 /turf/open/floor/plating{
-	icon_state = "elevatorshaft";
-	color = "#8D8B8B"
+	color = "#8D8B8B";
+	icon_state = "elevatorshaft"
 	},
 /area/ship/crew/canteen)
 "UH" = (
@@ -5628,8 +5687,8 @@
 	dir = 10
 	},
 /turf/open/floor/plating{
-	icon_state = "elevatorshaft";
-	color = "#8D8B8B"
+	color = "#8D8B8B";
+	icon_state = "elevatorshaft"
 	},
 /area/ship/engineering)
 "Vf" = (
@@ -5693,11 +5752,11 @@
 	},
 /obj/machinery/light/small/directional/east,
 /obj/machinery/button/door{
+	dir = 8;
+	id = "airmixchamber";
 	name = "Air Mix Drain";
 	pixel_x = 27;
-	pixel_y = -5;
-	dir = 8;
-	id = "airmixchamber"
+	pixel_y = -5
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -5711,8 +5770,8 @@
 "Wd" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/canvas/nineteenXnineteen{
-	name = "Concept Board";
-	desc = "The heart and soul of every good project leader. Plan your engineering projects with this canvas."
+	desc = "The heart and soul of every good project leader. Plan your engineering projects with this canvas.";
+	name = "Concept Board"
 	},
 /obj/structure/easel{
 	anchored = 1
@@ -5835,9 +5894,7 @@
 	network = list("GEC")
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/newscaster/directional/north{
-	pixel_y = 30
-	},
+/obj/machinery/newscaster/directional/north,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "Xs" = (
@@ -5923,8 +5980,8 @@
 /area/ship/hallway/central)
 "Ye" = (
 /obj/effect/turf_decal/steeldecal/steel_decals_central2{
-	pixel_y = 2;
-	dir = 4
+	dir = 4;
+	pixel_y = 2
 	},
 /obj/item/reagent_containers/food/drinks/shaker,
 /obj/structure/table/wood,
@@ -6025,8 +6082,8 @@
 /obj/item/bedsheet/syndie,
 /obj/structure/curtain/cloth/grey,
 /obj/effect/turf_decal/steeldecal/steel_decals_central2{
-	pixel_y = 2;
-	dir = 8
+	dir = 8;
+	pixel_y = 2
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
@@ -6054,8 +6111,8 @@
 	layer = 2.1
 	},
 /turf/open/floor/plating{
-	icon_state = "elevatorshaft";
-	color = "#8D8B8B"
+	color = "#8D8B8B";
+	icon_state = "elevatorshaft"
 	},
 /area/ship/crew/dorm)
 "Zr" = (
@@ -6181,7 +6238,7 @@ sl
 PC
 PC
 sl
-qM
+Rv
 qM
 tx
 tx
@@ -7051,7 +7108,7 @@ Cu
 cZ
 Es
 On
-On
+KM
 On
 "}
 (29,1,1) = {"
@@ -7081,9 +7138,9 @@ iQ
 Up
 wq
 wq
-On
-On
-On
+KM
+KM
+KM
 kD
 kD
 "}
@@ -7633,7 +7690,7 @@ ia
 ia
 ia
 Jj
-wl
+Qi
 wl
 wl
 wl
@@ -7666,7 +7723,7 @@ ia
 ia
 ia
 Jj
-wl
+PI
 wl
 wl
 wl
@@ -7699,7 +7756,7 @@ ia
 ia
 ia
 Jj
-wl
+Nj
 wl
 wl
 wl
@@ -7925,11 +7982,11 @@ kD
 Md
 rg
 rg
-xI
-xI
-xI
-xI
-xI
+Rl
+Rl
+Rl
+Rl
+Rl
 rg
 rg
 Md

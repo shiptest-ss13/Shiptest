@@ -54,7 +54,6 @@
 	dir = 5
 	},
 /obj/effect/decal/cleanable/vomit/old,
-/obj/machinery/firealarm/directional/east,
 /obj/machinery/light_switch{
 	dir = 8;
 	pixel_x = 20
@@ -1067,6 +1066,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/machinery/newscaster/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "kt" = (
@@ -2065,16 +2065,17 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 9
 	},
-/obj/item/radio/intercom/directional/north{
-	pixel_x = -6;
-	pixel_y = 22
+/obj/structure/extinguisher_cabinet/directional/north{
+	pixel_x = 10
 	},
-/obj/structure/extinguisher_cabinet/directional/north,
 /obj/machinery/computer/med_data/laptop{
 	pixel_x = 7;
 	pixel_y = 3
 	},
-/obj/machinery/firealarm/directional/north,
+/obj/machinery/firealarm/directional/north{
+	pixel_x = -2
+	},
+/obj/item/radio/intercom/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/office)
 "tA" = (
@@ -2089,10 +2090,6 @@
 	},
 /obj/item/radio/intercom/directional/west,
 /obj/machinery/firealarm/directional/west,
-/obj/machinery/newscaster/directional/north{
-	pixel_x = -32;
-	pixel_y = 32
-	},
 /obj/structure/frame/computer,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
@@ -2456,12 +2453,10 @@
 	pixel_x = -26;
 	pixel_y = 23
 	},
-/obj/machinery/newscaster/directional/north{
-	pixel_y = 32
-	},
 /obj/structure/plaque/static_plaque/golden/captain{
 	pixel_x = -32
 	},
+/obj/machinery/newscaster/directional/north,
 /turf/open/floor/wood,
 /area/ship/bridge)
 "wm" = (
@@ -3612,9 +3607,7 @@
 	dir = 1
 	},
 /obj/machinery/camera/autoname,
-/obj/machinery/newscaster/directional/north{
-	pixel_y = 32
-	},
+/obj/machinery/newscaster/directional/north,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "Gj" = (
@@ -3632,9 +3625,6 @@
 /obj/item/storage/pill_bottle/happy{
 	pixel_x = -9
 	},
-/obj/machinery/newscaster/directional/north{
-	pixel_y = 32
-	},
 /obj/item/kirbyplants{
 	icon_state = "plant-10";
 	pixel_x = 6
@@ -3647,6 +3637,7 @@
 /obj/item/key,
 /obj/item/lighter,
 /obj/item/storage/wallet/random,
+/obj/machinery/newscaster/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "Gq" = (
@@ -4204,6 +4195,7 @@
 	dir = 6
 	},
 /obj/effect/landmark/start/assistant,
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/plasteel/grimy,
 /area/ship/hallway/central)
 "Ly" = (
@@ -5550,7 +5542,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "YA" = (
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/airlock/hatch{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "YK" = (

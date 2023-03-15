@@ -682,6 +682,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/hatch{
+	dir = 4;
 	name = "External Airlock"
 	},
 /obj/machinery/door/firedoor/border_only{
@@ -744,7 +745,9 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/airlock/hatch{
+	dir = 4
+	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
@@ -803,9 +806,7 @@
 /obj/machinery/cryopod{
 	dir = 1
 	},
-/obj/machinery/computer/cryopod/directional/north{
-	pixel_y = -32
-	},
+/obj/machinery/computer/cryopod/directional/south,
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew)
 "os" = (
@@ -1001,10 +1002,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
-/obj/machinery/newscaster/security_unit{
-	dir = 4;
-	pixel_x = -32
-	},
+/obj/machinery/newscaster/security_unit/directional/west,
 /turf/open/floor/carpet/red_gold,
 /area/ship/bridge)
 "sb" = (
@@ -1819,7 +1817,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/structure/extinguisher_cabinet/directional/north,
+/obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "GY" = (
@@ -2234,9 +2232,7 @@
 /obj/machinery/cell_charger,
 /obj/item/stock_parts/cell/high/plus,
 /obj/item/stock_parts/cell/high/plus,
-/obj/item/radio/intercom/directional/north{
-	pixel_y = 23
-	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "Pn" = (
@@ -2292,6 +2288,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4,
 /obj/machinery/button/ignition/incinerator/atmos{
+	dir = 4;
 	pixel_x = -26;
 	pixel_y = -8
 	},
@@ -2308,6 +2305,7 @@
 	pixel_x = -6
 	},
 /obj/machinery/button/door/incinerator_vent_atmos_aux{
+	dir = 4;
 	pixel_x = -28;
 	pixel_y = 8
 	},

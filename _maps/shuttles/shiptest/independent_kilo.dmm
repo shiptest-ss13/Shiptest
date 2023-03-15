@@ -936,9 +936,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
 	},
-/obj/machinery/newscaster/directional/north{
-	pixel_y = 32
-	},
 /obj/machinery/conveyor_switch/oneway{
 	id = "NTMSLoad";
 	name = "Off Ramp";
@@ -950,6 +947,7 @@
 	name = "On Ramp";
 	pixel_x = 4
 	},
+/obj/machinery/newscaster/directional/north,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "iT" = (
@@ -1606,9 +1604,7 @@
 /obj/machinery/airalarm/directional/east,
 /obj/machinery/cryopod,
 /obj/machinery/light/small/directional/west,
-/obj/machinery/computer/cryopod/retro{
-	pixel_y = 17
-	},
+/obj/machinery/computer/cryopod/retro/directional/north,
 /turf/open/floor/wood,
 /area/ship/crew)
 "EU" = (
@@ -2217,10 +2213,8 @@
 	pixel_y = 18
 	},
 /obj/machinery/airalarm/directional/west,
-/obj/machinery/newscaster/directional/north{
-	pixel_y = 32
-	},
 /obj/machinery/light/small/directional/east,
+/obj/machinery/newscaster/directional/north,
 /turf/open/floor/carpet/blue,
 /area/ship/crew)
 "VQ" = (

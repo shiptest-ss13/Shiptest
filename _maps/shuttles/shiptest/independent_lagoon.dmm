@@ -511,9 +511,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
 	},
-/obj/machinery/newscaster/directional/north{
-	pixel_y = 32
-	},
+/obj/machinery/newscaster/directional/north,
 /turf/open/floor/wood,
 /area/ship/crew/library)
 "df" = (
@@ -747,6 +745,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/newscaster/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "eS" = (
@@ -1508,9 +1507,7 @@
 /area/ship/hallway/central)
 "jM" = (
 /obj/machinery/libraryscanner,
-/obj/machinery/newscaster/directional/north{
-	pixel_x = 30
-	},
+/obj/machinery/newscaster/directional/east,
 /turf/open/floor/carpet/black,
 /area/ship/crew/library)
 "jP" = (
@@ -2747,6 +2744,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
+/obj/machinery/newscaster/directional/east,
 /turf/open/floor/carpet/black,
 /area/ship/crew)
 "sm" = (
@@ -4062,12 +4060,10 @@
 /area/ship/engineering)
 "Bn" = (
 /obj/machinery/suit_storage_unit/captain,
-/obj/machinery/newscaster/directional/north{
-	pixel_y = 32
-	},
 /obj/effect/turf_decal/siding/wood/end{
 	dir = 4
 	},
+/obj/machinery/newscaster/directional/north,
 /turf/open/floor/wood,
 /area/ship/bridge)
 "Bo" = (
@@ -5385,12 +5381,10 @@
 /turf/open/floor/engine/o2,
 /area/ship/engineering)
 "KG" = (
-/obj/machinery/newscaster/directional/north{
-	pixel_x = 30
-	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
+/obj/machinery/newscaster/directional/east,
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
 "KH" = (
@@ -6787,15 +6781,6 @@
 /obj/machinery/door/firedoor,
 /turf/open/floor/carpet,
 /area/ship/crew/chapel)
-"Uq" = (
-/obj/machinery/newscaster/directional/north{
-	pixel_x = 30
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 4
-	},
-/turf/open/floor/wood,
-/area/ship/crew/chapel)
 "Uv" = (
 /obj/structure/railing{
 	dir = 6
@@ -7188,9 +7173,6 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/machinery/newscaster/directional/north{
-	pixel_x = 30
-	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "Xa" = (
@@ -7291,9 +7273,6 @@
 /turf/open/floor/wood,
 /area/ship/crew/chapel)
 "XC" = (
-/obj/machinery/newscaster/directional/north{
-	pixel_x = 30
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/carpet/black,
 /area/ship/crew)
@@ -7460,6 +7439,13 @@
 	},
 /turf/open/floor/plating,
 /area/ship/crew/janitor)
+"Zc" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/machinery/newscaster/directional/east,
+/turf/open/floor/wood,
+/area/ship/crew/chapel)
 "Zi" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
@@ -9408,8 +9394,8 @@ AR
 kL
 VG
 OM
+Zc
 hs
-Uq
 He
 Dg
 kL

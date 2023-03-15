@@ -2102,7 +2102,9 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew/canteen)
 "uE" = (
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/airlock/hatch{
+	dir = 4
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/hallway/aft)
 "uF" = (
@@ -2284,6 +2286,7 @@
 /area/ship/hallway/central)
 "wv" = (
 /obj/machinery/door/airlock/hatch{
+	dir = 4;
 	name = "Dormitory"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -2778,6 +2781,7 @@
 "Bp" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/hatch{
+	dir = 4;
 	name = "Canteen"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -2821,7 +2825,9 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/security/armory)
 "Cz" = (
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/airlock/hatch{
+	dir = 4
+	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/hallway/aft)
 "CA" = (
@@ -4891,6 +4897,7 @@
 "Wt" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/hatch{
+	dir = 4;
 	name = "Infirmary"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{

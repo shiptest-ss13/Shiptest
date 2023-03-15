@@ -96,8 +96,8 @@
 /obj/item/storage/firstaid/regular,
 /obj/structure/closet/wall/white{
 	dir = 1;
-	pixel_y = -32;
-	name = "Medical Supplies"
+	name = "Medical Supplies";
+	pixel_y = -32
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
@@ -196,9 +196,11 @@
 /area/ship/crew)
 "dA" = (
 /obj/machinery/door/airlock/command{
+	dir = 4;
 	name = "Bridge"
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
 	id = "intelfucky"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -268,10 +270,10 @@
 	},
 /obj/machinery/button/door{
 	dir = 1;
-	pixel_y = -23;
-	pixel_x = -7;
 	id = "intelfucky";
-	name = "Privacy Lock"
+	name = "Privacy Lock";
+	pixel_x = -7;
+	pixel_y = -23
 	},
 /obj/effect/turf_decal/industrial/outline/red,
 /turf/open/floor/plasteel/tech/grid,
@@ -291,8 +293,8 @@
 	},
 /obj/structure/cable,
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
-	id = "scholo";
-	dir = 4
+	dir = 4;
+	id = "scholo"
 	},
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
@@ -602,8 +604,8 @@
 /obj/machinery/photocopier/faxmachine/longrange,
 /obj/item/toy/figure/detective{
 	name = "Intel Buddy";
-	pixel_y = 10;
 	pixel_x = 5;
+	pixel_y = 10;
 	toysay = "Let's see what Command thinks of this..."
 	},
 /obj/structure/table/glass,
@@ -632,8 +634,8 @@
 	},
 /obj/structure/cable,
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
-	id = "scholo";
-	dir = 8
+	dir = 8;
+	id = "scholo"
 	},
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
@@ -685,10 +687,11 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/item/clothing/mask/fakemoustache,
 /obj/machinery/door/poddoor/shutters{
+	dir = 4;
 	id = "scengine"
 	},
-/obj/item/clothing/mask/fakemoustache,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "qz" = (
@@ -763,9 +766,9 @@
 /area/ship/engineering)
 "rF" = (
 /obj/machinery/button/door{
+	dir = 8;
 	id = "scengine";
 	name = "Engine Blast Shutters";
-	dir = 8;
 	pixel_x = -8
 	},
 /turf/closed/wall/mineral/plastitanium,
@@ -779,8 +782,8 @@
 	dir = 9
 	},
 /obj/item/stack/sheet/mineral/plasma/twenty{
-	pixel_y = 6;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = 6
 	},
 /obj/item/wrench,
 /turf/open/floor/plating,
@@ -924,16 +927,16 @@
 	pixel_y = 9
 	},
 /obj/machinery/button/door{
-	pixel_y = 9;
-	pixel_x = 5;
+	id = "scbridge";
 	name = "Bridge Blast Shutters";
-	id = "scbridge"
+	pixel_x = 5;
+	pixel_y = 9
 	},
 /obj/machinery/button/shieldwallgen{
+	id = "scholo";
 	name = "Holofield Controls";
-	pixel_y = -3;
 	pixel_x = -9;
-	id = "scholo"
+	pixel_y = -3
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
@@ -941,19 +944,19 @@
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/effect/turf_decal/industrial/warning/corner,
 /obj/machinery/button/shieldwallgen{
-	name = "Holofield Controls";
 	dir = 1;
-	pixel_y = -33;
+	id = "scholo";
+	name = "Holofield Controls";
 	pixel_x = -6;
-	id = "scholo"
+	pixel_y = -33
 	},
 /obj/machinery/button/door{
 	desc = "A remote control switch.";
+	dir = 1;
 	id = "scbay";
 	name = "Cargo Bay Doors";
 	pixel_x = 3;
-	pixel_y = -35;
-	dir = 1
+	pixel_y = -35
 	},
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -1015,6 +1018,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/engineering{
+	dir = 4;
 	name = "Engineering"
 	},
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning{
@@ -1175,6 +1179,7 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/door/poddoor/shutters{
+	dir = 4;
 	id = "scengine"
 	},
 /turf/open/floor/plating,
@@ -1233,6 +1238,14 @@
 /obj/structure/table/wood,
 /turf/open/floor/carpet/red,
 /area/ship/crew)
+"FH" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "scbridge"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
 "FJ" = (
 /obj/structure/chair{
 	dir = 4
@@ -1258,10 +1271,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
-"Gb" = (
-/obj/item/radio/intercom/directional/south,
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
 "GG" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/computer/security{
@@ -1377,8 +1386,8 @@
 /area/ship/bridge)
 "KP" = (
 /obj/structure/closet/wall{
-	pixel_y = 28;
-	name = "emergency rum cabinet"
+	name = "emergency rum cabinet";
+	pixel_y = 28
 	},
 /obj/item/reagent_containers/food/drinks/bottle/rum,
 /obj/effect/turf_decal/corner/opaque/syndiered/bordercorner{
@@ -1458,6 +1467,7 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/door/poddoor/shutters{
+	dir = 4;
 	id = "scengine"
 	},
 /turf/open/floor/plating,
@@ -1552,8 +1562,8 @@
 "Pk" = (
 /obj/machinery/mineral/ore_redemption{
 	dir = 8;
-	output_dir = null;
-	input_dir = 8
+	input_dir = 8;
+	output_dir = null
 	},
 /obj/effect/turf_decal/box,
 /obj/machinery/airalarm/directional/east,
@@ -1611,10 +1621,11 @@
 	},
 /obj/item/pen/fountain,
 /obj/item/folder/syndicate{
+	icon_state = "folder_sred";
 	pixel_x = 8;
-	pixel_y = -2;
-	icon_state = "folder_sred"
+	pixel_y = -2
 	},
+/obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "Ri" = (
@@ -1686,16 +1697,16 @@
 	dir = 1
 	},
 /obj/item/stack/tile/plasteel/dark{
-	pixel_y = -16;
-	pixel_x = -11
+	pixel_x = -11;
+	pixel_y = -16
 	},
 /obj/item/clothing/neck/stethoscope{
-	pixel_y = -15;
-	pixel_x = 9
+	pixel_x = 9;
+	pixel_y = -15
 	},
 /obj/item/crowbar{
-	pixel_y = -11;
-	pixel_x = -8
+	pixel_x = -8;
+	pixel_y = -11
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office)
@@ -1727,8 +1738,8 @@
 /obj/item/clipboard,
 /obj/item/pen,
 /obj/item/clothing/glasses/night{
-	pixel_y = 9;
-	pixel_x = -3
+	pixel_x = -3;
+	pixel_y = 9
 	},
 /obj/item/camera{
 	pixel_x = -1;
@@ -1780,16 +1791,16 @@
 /obj/machinery/light/small/directional/west,
 /obj/machinery/button/door{
 	dir = 4;
-	pixel_y = 9;
+	id = "thefunny";
 	pixel_x = -23;
-	id = "thefunny"
+	pixel_y = 9
 	},
 /obj/machinery/button/door{
 	dir = 4;
-	pixel_y = -6;
-	pixel_x = -23;
 	id = "intelwindow";
-	name = "Window Shutters"
+	name = "Window Shutters";
+	pixel_x = -23;
+	pixel_y = -6
 	},
 /obj/structure/safe/floor{
 	number_of_tumblers = 3
@@ -1850,6 +1861,7 @@
 /area/ship/engineering)
 "Xc" = (
 /obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
 	id = "intelfucky"
 	},
 /turf/open/floor/plasteel/stairs{
@@ -2276,7 +2288,7 @@ vN
 aa
 GG
 QO
-Gb
+bO
 YQ
 YQ
 YQ
@@ -2374,10 +2386,10 @@ YQ
 YQ
 YQ
 YQ
-Rz
-Rz
-Rz
-Rz
+FH
+FH
+FH
+FH
 YQ
 YQ
 YQ

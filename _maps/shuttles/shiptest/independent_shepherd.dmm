@@ -2207,7 +2207,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/light/small/directional/east,
-/obj/machinery/firealarm/directional/east,
 /turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
 "tt" = (
@@ -3734,9 +3733,6 @@
 /turf/open/floor/wood,
 /area/ship/bridge)
 "Hx" = (
-/obj/machinery/newscaster/directional/north{
-	pixel_y = 30
-	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
 	},
@@ -3746,6 +3742,7 @@
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 1
 	},
+/obj/machinery/newscaster/directional/north,
 /turf/open/floor/wood,
 /area/ship/bridge)
 "HE" = (
@@ -4700,6 +4697,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
 "PM" = (

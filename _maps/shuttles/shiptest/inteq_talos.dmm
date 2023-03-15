@@ -397,7 +397,7 @@
 	},
 /obj/machinery/light/directional/south,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/extinguisher_cabinet/directional/north,
+/obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "cL" = (
@@ -5539,7 +5539,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/machinery/firealarm/directional/south,
 /obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/stairs{
 	dir = 8
@@ -6304,6 +6303,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/machinery/firealarm/directional/south,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
 "PI" = (
@@ -6681,9 +6681,7 @@
 	dir = 4
 	},
 /obj/item/instrument/harmonica,
-/obj/machinery/newscaster/directional/north{
-	pixel_y = 32
-	},
+/obj/machinery/newscaster/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/port)
 "SB" = (
@@ -6981,14 +6979,12 @@
 	locked = 0;
 	name = "fridge"
 	},
-/obj/item/radio/intercom/directional/north{
-	pixel_y = 22
-	},
 /obj/item/storage/cans/sixbeer,
 /obj/effect/spawner/lootdrop/donkpockets,
 /obj/effect/spawner/lootdrop/donkpockets,
 /obj/item/reagent_containers/food/snacks/popsicle/creamsicle_orange,
 /obj/item/reagent_containers/food/snacks/popsicle/creamsicle_orange,
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "Ub" = (

@@ -159,12 +159,10 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/machinery/computer/cryopod/directional/north{
-	pixel_y = 17
-	},
 /obj/effect/turf_decal/techfloor{
 	dir = 5
 	},
+/obj/machinery/computer/cryopod/directional/north,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew)
 "bC" = (
@@ -3712,7 +3710,7 @@
 "MW" = (
 /obj/structure/chair/comfy/shuttle,
 /obj/effect/landmark/start/assistant,
-/obj/machinery/computer/security/telescreen/entertainment{
+/obj/machinery/newscaster/directional/north{
 	pixel_y = 32
 	},
 /turf/open/floor/plasteel/grimy,
@@ -4336,9 +4334,6 @@
 /obj/item/radio,
 /obj/item/radio,
 /obj/item/clothing/suit/jacket/letterman_nanotrasen,
-/obj/machinery/newscaster/directional/north{
-	pixel_y = 32
-	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "Tq" = (

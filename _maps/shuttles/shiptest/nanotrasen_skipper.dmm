@@ -185,6 +185,7 @@
 /obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 4
 	},
+/obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "ca" = (
@@ -620,6 +621,7 @@
 /area/ship/engineering/atmospherics)
 "fO" = (
 /obj/structure/dresser,
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/wood,
 /area/ship/crew/dorm)
 "fT" = (
@@ -843,9 +845,7 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
 "iJ" = (
-/obj/machinery/newscaster/directional/north{
-	pixel_y = 32
-	},
+/obj/machinery/newscaster/directional/north,
 /turf/open/floor/carpet/nanoweave,
 /area/ship/hallway/central)
 "iP" = (
@@ -885,10 +885,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
-"iW" = (
-/obj/item/radio/intercom/directional/south,
-/turf/closed/wall,
-/area/ship/crew/dorm)
 "jc" = (
 /obj/machinery/air_sensor/atmos/nitrogen_tank,
 /turf/open/floor/engine/n2,
@@ -1340,9 +1336,6 @@
 /obj/item/bedsheet/dorms,
 /obj/structure/bed,
 /obj/structure/curtain/bounty,
-/obj/machinery/newscaster/directional/north{
-	pixel_y = 32
-	},
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/wood,
 /area/ship/crew/dorm)
@@ -1555,9 +1548,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/newscaster/directional/north{
-	pixel_y = -32
-	},
+/obj/machinery/newscaster/directional/south,
 /turf/open/floor/carpet/nanoweave,
 /area/ship/hallway/central)
 "nX" = (
@@ -3386,9 +3377,7 @@
 /obj/structure/chair{
 	dir = 8
 	},
-/obj/machinery/newscaster/directional/north{
-	pixel_x = 25
-	},
+/obj/machinery/newscaster/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "Ff" = (
@@ -3706,12 +3695,10 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/canteen/kitchen)
 "Hp" = (
-/obj/machinery/newscaster/security_unit{
-	pixel_x = -24
-	},
 /obj/machinery/atmospherics/pipe/simple/cyan/hidden{
 	dir = 4
 	},
+/obj/machinery/newscaster/security_unit/directional/west,
 /turf/open/floor/wood,
 /area/ship/crew/crewtwo)
 "Hu" = (
@@ -3894,9 +3881,7 @@
 	pixel_x = 8
 	},
 /obj/machinery/airalarm/directional/north,
-/obj/machinery/newscaster/security_unit{
-	pixel_x = -24
-	},
+/obj/machinery/newscaster/security_unit/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/crewthree)
 "JE" = (
@@ -4550,10 +4535,8 @@
 /obj/machinery/atmospherics/pipe/simple/cyan/hidden{
 	dir = 4
 	},
-/obj/machinery/newscaster/directional/north{
-	pixel_x = -25
-	},
 /obj/structure/bedsheetbin,
+/obj/machinery/newscaster/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/cryo)
 "Pf" = (
@@ -4902,10 +4885,6 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/engineering/atmospherics)
 "RP" = (
-/obj/structure/railing/corner{
-	dir = 4;
-	pixel_x = -1
-	},
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
@@ -4920,6 +4899,9 @@
 	},
 /obj/machinery/light/directional/south,
 /obj/item/radio/intercom/directional/west,
+/obj/structure/railing/corner{
+	dir = 4
+	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/bridge)
 "RQ" = (
@@ -5051,14 +5033,12 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "SH" = (
-/obj/structure/railing/corner{
-	pixel_x = -1
-	},
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
 /obj/machinery/light/directional/north,
+/obj/structure/railing/corner,
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/bridge)
 "SO" = (
@@ -5418,9 +5398,7 @@
 	pixel_x = -5;
 	pixel_y = 18
 	},
-/obj/machinery/newscaster/directional/north{
-	pixel_y = 32
-	},
+/obj/machinery/newscaster/directional/north,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/canteen/kitchen)
 "VI" = (
@@ -5534,7 +5512,7 @@
 	pixel_x = -25;
 	pixel_y = 25
 	},
-/obj/machinery/firealarm/directional/south,
+/obj/machinery/newscaster/directional/south,
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/crew/dorm)
 "WF" = (
@@ -6781,7 +6759,7 @@ lw
 VD
 BW
 sX
-iW
+jS
 fO
 Ww
 Qp
