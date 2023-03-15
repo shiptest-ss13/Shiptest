@@ -35,6 +35,18 @@
 	description = "A fresh town on a lovely coast, where its inhabitants are is unknown."
 	suffix = "beach_ocean_town.dmm"
 
+/datum/map_template/ruin/beachplanet/fallenstar
+	name = "Crashed Starwalker"
+	id = "crashed_star"
+	description = "A Crashed Starwalker Class Pirate Ship. It's Crew is Long-Dead."
+	suffix = "beach_crashed_starwalker.dmm"
+
+/datum/map_template/ruin/beachplanet/knight
+	name = "Knight's Rest"
+	id = "knights_rest"
+	description = "An small castle holding the grave of a renowned warrior"
+	suffix = "beach_knights_rest.dmm"
+
 /datum/map_template/ruin/beachplanet/treasurecove
 	name = "Treasure Cove"
 	id = "beach_treasure_cove"
