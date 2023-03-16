@@ -1058,9 +1058,7 @@
 	},
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable,
-/obj/item/storage/overmap_ship/electric{
-	pixel_x = -22
-	},
+/obj/item/storage/overmap_ship/electric/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "iG" = (
@@ -1176,11 +1174,11 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/structure/extinguisher_cabinet/directional/north,
 /obj/effect/turf_decal/siding/wood{
 	color = "#792f27";
 	dir = 5
 	},
+/obj/structure/extinguisher_cabinet/directional/east,
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
 "jy" = (
