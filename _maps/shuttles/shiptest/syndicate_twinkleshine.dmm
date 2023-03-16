@@ -457,7 +457,7 @@
 	dir = 1
 	},
 /obj/item/card/id/captains_spare{
-	desc = "A stolen NanoTransen spare captain ID."
+	desc = "A stolen NanoTrasen spare captain ID."
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
@@ -901,10 +901,6 @@
 	icon_state = "2-8"
 	},
 /turf/open/floor/plating,
-/area/ship/engineering/atmospherics)
-"gx" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
 "gz" = (
 /obj/machinery/computer/cryopod{
@@ -3321,6 +3317,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
+"yn" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ship/engineering/atmospherics)
 "yr" = (
 /obj/machinery/atmospherics/components/unary/portables_connector/visible{
 	dir = 8
@@ -7724,7 +7724,7 @@ kS
 dP
 HI
 jf
-gx
+yn
 kS
 kS
 mp
@@ -7757,7 +7757,7 @@ DQ
 qt
 kS
 iV
-gx
+yn
 cJ
 Mn
 kS
@@ -7794,7 +7794,7 @@ kS
 sP
 Oz
 GE
-gx
+yn
 kS
 mp
 mp
@@ -7829,7 +7829,7 @@ kS
 rq
 ZY
 cw
-gx
+yn
 kS
 mp
 mp
@@ -7864,7 +7864,7 @@ mX
 Vy
 Hu
 Pb
-gx
+yn
 kS
 mp
 mp
