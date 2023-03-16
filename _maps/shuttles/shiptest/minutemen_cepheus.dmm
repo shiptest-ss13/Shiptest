@@ -1686,6 +1686,7 @@
 	dir = 1
 	},
 /obj/machinery/door/airlock/hatch{
+	dir = 4;
 	name = "Cargo Bay"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -2121,6 +2122,7 @@
 	name = "Engine Access"
 	},
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "cepheus_engines";
 	name = "Engine Blast Door"
 	},
@@ -2305,6 +2307,7 @@
 	name = "Engine Access"
 	},
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "cepheus_engines";
 	name = "Engine Blast Door"
 	},
@@ -2843,9 +2846,6 @@
 /obj/effect/turf_decal/techfloor/hole{
 	dir = 1
 	},
-/obj/item/radio/intercom/directional/north{
-	pixel_y = 22
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
@@ -2856,6 +2856,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/camera/autoname,
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/electrical)
 "Cb" = (
