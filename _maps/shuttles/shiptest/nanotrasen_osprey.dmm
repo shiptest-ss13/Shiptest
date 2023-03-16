@@ -178,6 +178,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/effect/turf_decal/borderfloor,
+/obj/machinery/door/firedoor,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "bs" = (
@@ -557,6 +558,9 @@
 	},
 /obj/structure/window/plasma/reinforced{
 	dir = 4
+	},
+/obj/machinery/camera/autoname{
+	dir = 1
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/engineering/atmospherics)
@@ -2465,6 +2469,7 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
+/obj/machinery/camera/autoname,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/engineering)
 "pT" = (
@@ -3007,6 +3012,7 @@
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
 	},
+/obj/machinery/door/firedoor,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "tm" = (
@@ -3288,6 +3294,7 @@
 "uQ" = (
 /obj/machinery/door/airlock/external,
 /obj/machinery/atmospherics/pipe/layer_manifold,
+/obj/machinery/door/firedoor,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "vi" = (
@@ -5683,10 +5690,10 @@
 /obj/structure/fireaxecabinet{
 	pixel_y = 32
 	},
-/obj/machinery/camera/autoname,
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
+/obj/machinery/camera/autoname,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/engineering/atmospherics)
 "Ko" = (
@@ -5929,9 +5936,6 @@
 /obj/structure/sign/warning/vacuum/external,
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/hallway/central)
-"Md" = (
-/turf/closed/wall/mineral/titanium,
-/area/ship/crew/toilet)
 "Mo" = (
 /obj/effect/turf_decal/industrial/warning/corner,
 /obj/machinery/power/apc/auto_name/east,
@@ -6822,9 +6826,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
-"RX" = (
-/turf/closed/wall/mineral/titanium,
-/area/ship/crew/janitor)
 "RY" = (
 /obj/machinery/atmospherics/pipe/manifold/orange/visible,
 /turf/open/floor/plasteel/patterned/grid,
@@ -7544,6 +7545,7 @@
 	},
 /obj/machinery/door/airlock/external,
 /obj/machinery/atmospherics/pipe/layer_manifold,
+/obj/machinery/door/firedoor,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "Ws" = (
@@ -8333,7 +8335,7 @@ gX
 oQ
 NW
 rN
-Md
+Ro
 Ro
 Ro
 Ro
@@ -8351,7 +8353,7 @@ kQ
 kQ
 kQ
 kQ
-RX
+kQ
 oO
 HK
 HK
