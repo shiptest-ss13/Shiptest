@@ -133,7 +133,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	///Coins that we accept?
 	var/obj/item/coin/coin
 	///Bills we accept?
-	var/obj/item/stack/spacecash/bill
+	var/obj/item/spacecash/bundle/bill
 	///Does this machine accept mining points?
 	var/mining_point_vendor = FALSE
 	///Default price of items if not overridden
