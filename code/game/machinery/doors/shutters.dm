@@ -3,8 +3,6 @@
 	name = "shutters"
 	desc = "Heavy duty metal shutters that open mechanically."
 	icon = 'icons/obj/doors/shutters.dmi'
-	layer = SHUTTER_LAYER
-	closingLayer = SHUTTER_LAYER
 	damage_deflection = 20
 	open_sound = 'sound/machines/shutters_open.ogg'
 	close_sound = 'sound/machines/shutters_close.ogg'
@@ -29,8 +27,6 @@
 	name = "gate"
 	desc = "A gate made out of hard metal."
 	icon = 'icons/obj/doors/gates.dmi'
-	layer = SHUTTER_LAYER
-	closingLayer = SHUTTER_LAYER
 	damage_deflection = 20
 	open_sound = 'sound/machines/gate.ogg'
 	close_sound = 'sound/machines/gate.ogg'
