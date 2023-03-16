@@ -1850,6 +1850,9 @@
 /area/ship/hallway/central)
 "mj" = (
 /obj/machinery/cryopod,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/cryo)
 "mo" = (
@@ -2346,9 +2349,6 @@
 /turf/open/floor/plating,
 /area/ship/science/ai_chamber)
 "pk" = (
-/obj/structure/railing{
-	dir = 8
-	},
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -2940,9 +2940,6 @@
 /turf/closed/wall/mineral/titanium,
 /area/ship/hallway/central)
 "sI" = (
-/obj/structure/railing{
-	dir = 8
-	},
 /obj/machinery/disposal/bin,
 /obj/structure/disposalpipe/trunk{
 	dir = 1
@@ -7035,6 +7032,9 @@
 /obj/machinery/cryopod{
 	dir = 1
 	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/cryo)
 "SW" = (
@@ -7995,6 +7995,7 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/light,
+/obj/item/pipe_dispenser,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "ZJ" = (
