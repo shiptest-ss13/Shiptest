@@ -271,4 +271,22 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	id = /obj/item/card/id/syndicate_command/crew_id
 	backpack_contents = list(/obj/item/storage/box/survival/syndie=1)
 
+/datum/outfit/job/security/syndicate/sbc
+	name = "Twinkleshine Assault Operative"
+	uniform = /obj/item/clothing/under/syndicate/aclfgrunt
+	gloves = /obj/item/clothing/gloves/combat
+	l_pocket = /obj/item/gun/ballistic/automatic/pistol
+	r_pocket = /obj/item/kitchen/knife/combat/survival
+	belt = /obj/item/storage/belt/military/assault
+	id = /obj/item/card/id/syndicate_command/crew_id
+
+	box = /obj/item/storage/box/survival/syndie
+
+/datum/outfit/job/security/syndicate/sbc/post_equip(mob/living/carbon/human/H)
+	var/obj/item/card/id/I = H.wear_id
+	I.registered_name = H.real_name
+	I.assignment = "Operative"
+	I.access |= list(ACCESS_SYNDICATE)
+	I.update_label()
+
 //Shiptest outfits end

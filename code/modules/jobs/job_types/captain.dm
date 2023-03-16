@@ -112,6 +112,29 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag/sec
 	courierbag = /obj/item/storage/backpack/messenger/sec
 
+/datum/outfit/job/captain/syndicate/sbc
+	name = "Twinkleshine Captain"
+
+	uniform = /obj/item/clothing/under/syndicate/aclf
+	gloves = /obj/item/clothing/gloves/combat
+	shoes = /obj/item/clothing/shoes/combat
+	ears = /obj/item/radio/headset/syndicate/alt/captain
+	l_pocket = /obj/item/melee/transforming/energy/sword/saber/red
+	suit = /obj/item/clothing/suit/armor/vest/capcarapace/syndicate
+	suit_store = /obj/item/gun/ballistic/revolver/mateba
+	r_pocket = /obj/item/kitchen/knife/combat/survival
+	belt = /obj/item/storage/belt/military/assault
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/eyepatch
+	id = /obj/item/card/id/syndicate_command/captain_id
+	implants = list(/obj/item/implant/weapons_auth)
+	box = /obj/item/storage/box/survival/syndie
+
+/datum/outfit/job/captain/syndicate/sbc/post_equip(mob/living/carbon/human/H)
+	var/obj/item/card/id/I = H.wear_id
+	I.registered_name = H.real_name
+	I.access = get_all_accesses()+get_all_syndicate_access()
+	I.update_label()
+
 /datum/outfit/job/captain/syndicate/gorlex
 	name = "Captain (Gorlex Marauders)"
 

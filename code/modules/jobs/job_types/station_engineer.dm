@@ -190,6 +190,30 @@
 	alt_uniform = null
 	glasses = null
 
+/datum/outfit/job/engineer/syndicate/sbc
+	name = "Twinkleshine Engineer"
+
+	uniform = /obj/item/clothing/under/syndicate/gorlex
+	glasses = /obj/item/clothing/glasses/meson/night
+	shoes = /obj/item/clothing/shoes/combat
+	head = null
+	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
+	ears = /obj/item/radio/headset/syndicate/alt
+	back = /obj/item/storage/backpack/industrial
+	belt = /obj/item/storage/belt/utility/syndicate
+	implants = list(/obj/item/implant/weapons_auth)
+	id = /obj/item/card/id/syndicate_command/crew_id
+	backpack_contents = list(/obj/item/construction/rcd/combat, /obj/item/rcd_ammo/large)
+
+	box = /obj/item/storage/box/survival/syndie
+
+/datum/outfit/job/engineer/syndicate/sbc/post_equip(mob/living/carbon/human/H)
+	var/obj/item/card/id/I = H.wear_id
+	I.registered_name = H.real_name
+	I.assignment = "Engineer"
+	I.access |= list(ACCESS_SYNDICATE)
+	I.update_label()
+
 /datum/outfit/job/engineer/independent/ship_engineer
 	name = "Ship Engineer (Independent)"
 

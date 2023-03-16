@@ -160,6 +160,28 @@ Assistant
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/safety_helmet
 
+/datum/outfit/job/assistant/syndicate/sbc
+	name = "Twinkleshine Deck Assistant"
+
+	uniform = /obj/item/clothing/under/syndicate/aclfgrunt
+	shoes = /obj/item/clothing/shoes/combat
+	gloves = /obj/item/clothing/gloves/combat
+	ears = /obj/item/radio/headset/syndicate/alt
+	r_pocket = /obj/item/kitchen/knife/combat/survival
+	back = /obj/item/storage/backpack
+	belt = /obj/item/storage/belt/military/assault
+	implants = list(/obj/item/implant/weapons_auth)
+	id = /obj/item/card/id/syndicate_command/crew_id
+
+	box = /obj/item/storage/box/survival/syndie
+
+/datum/outfit/job/assistant/syndicate/sbc/post_equip(mob/living/carbon/human/H)
+	var/obj/item/card/id/I = H.wear_id
+	I.registered_name = H.real_name
+	I.assignment = "Deck Assistant"
+	I.access |= list(ACCESS_SYNDICATE)
+	I.update_label()
+
 /datum/outfit/job/assistant/independent/crewmatefancy
 	name = "Crewmate (Independent)"
 

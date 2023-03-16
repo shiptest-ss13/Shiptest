@@ -150,6 +150,30 @@
 	id = /obj/item/card/id/syndicate_command/crew_id
 	backpack_contents = list(/obj/item/storage/box/survival/syndie=1, /obj/item/storage/firstaid/medical,)
 
+/datum/outfit/job/doctor/syndicate/sbc
+	name = "Syndicate Battlecruiser Ship Medical Doctor"
+
+	gloves = /obj/item/clothing/gloves/color/latex/nitrile/evil
+	uniform = /obj/item/clothing/under/rank/medical/doctor/red
+	glasses = /obj/item/clothing/glasses/hud/health
+	belt = /obj/item/pda/medical
+	back = /obj/item/storage/backpack/duffelbag/syndie/med
+	shoes = /obj/item/clothing/shoes/combat
+	suit = /obj/item/clothing/suit/longcoat/roboblack
+	suit_store =  null
+	ears = /obj/item/radio/headset/syndicate/alt
+	implants = list(/obj/item/implant/weapons_auth)
+	id = /obj/item/card/id/syndicate_command/crew_id
+
+	box = /obj/item/storage/box/survival/syndie
+
+/datum/outfit/job/doctor/syndicate/sbc/post_equip(mob/living/carbon/human/H)
+	var/obj/item/card/id/I = H.wear_id
+	I.registered_name = H.real_name
+	I.assignment = "Medic"
+	I.access |= list(ACCESS_SYNDICATE)
+	I.update_label()
+
 /datum/outfit/job/doctor/roumain
 	name = "Hunter Doctor (Saint-Roumain Militia)"
 

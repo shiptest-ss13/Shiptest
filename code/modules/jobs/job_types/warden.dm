@@ -122,3 +122,24 @@
 	suit = /obj/item/clothing/suit/armor/vest/security/warden/alt/nt
 	alt_uniform = null
 	alt_suit = null
+
+/datum/outfit/job/warden/syndicate/sbc
+	name = "Twinkleshine Lieutenant"
+	uniform = /obj/item/clothing/under/syndicate/combat
+	head = /obj/item/clothing/head/HoS/beret/syndicate
+	ears = /obj/item/radio/headset/syndicate/alt/leader
+	gloves = /obj/item/clothing/gloves/combat
+	l_pocket = /obj/item/gun/ballistic/automatic/pistol
+	r_pocket = /obj/item/kitchen/knife/combat/survival
+	belt = /obj/item/storage/belt/military/assault
+	shoes = /obj/item/clothing/shoes/combat
+	suit = /obj/item/clothing/suit/armor/vest
+	id = /obj/item/card/id/syndicate_command/lieutenant
+
+	box = /obj/item/storage/box/survival/syndie
+
+/datum/outfit/job/warden/syndicate/sbc/post_equip(mob/living/carbon/human/H)
+	var/obj/item/card/id/I = H.wear_id
+	I.registered_name = H.real_name
+	I.access |= list(ACCESS_SYNDICATE)
+	I.update_label()
