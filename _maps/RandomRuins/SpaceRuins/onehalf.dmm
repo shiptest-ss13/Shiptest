@@ -154,24 +154,11 @@
 	},
 /turf/open/space/basic,
 /area/space/nearstation)
-"aB" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/table/wood,
-/obj/effect/turf_decal/siding/wood{
-	dir = 6
-	},
-/obj/machinery/light/directional/west,
-/turf/open/floor/carpet/nanoweave/beige,
-/area/ruin/space/has_grav/onehalf)
 "aC" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/airless{
 	icon_state = "wood-broken6"
 	},
-/area/ruin/space/has_grav/onehalf)
-"aD" = (
-/obj/machinery/light/small/directional/west,
-/turf/open/floor/plating,
 /area/ruin/space/has_grav/onehalf)
 "aE" = (
 /obj/structure/disposalpipe/trunk,
@@ -506,14 +493,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/onehalf)
-"bs" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/machinery/light/small/directional/north,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/onehalf)
 "bt" = (
 /obj/structure/disposalpipe/junction/yjunction{
 	dir = 1
@@ -592,13 +571,6 @@
 /obj/structure/disposalpipe/junction{
 	dir = 8
 	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/onehalf)
-"bE" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/onehalf)
 "bF" = (
@@ -683,6 +655,14 @@
 "bU" = (
 /turf/closed/wall/r_wall,
 /area/ruin/space/has_grav/onehalf)
+"bV" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/light/directional/south,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/onehalf)
 "bW" = (
 /turf/open/floor/plating/airless{
 	icon_state = "platingdmg1"
@@ -726,11 +706,6 @@
 /obj/structure/closet/emcloset,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/onehalf)
-"cd" = (
-/obj/machinery/light/directional/north,
-/obj/structure/frame/computer,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/onehalf)
 "ce" = (
 /obj/structure/frame/computer,
 /turf/open/floor/plasteel,
@@ -745,17 +720,6 @@
 	pixel_y = 25;
 	start_charge = 0
 	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/onehalf)
-"cg" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/structure/table/reinforced,
-/obj/item/stack/spacecash/c500{
-	pixel_y = 8
-	},
-/obj/item/stack/spacecash/c1000,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/onehalf)
 "ch" = (
@@ -874,11 +838,6 @@
 /obj/item/stack/tile/plasteel,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/onehalf)
-"cy" = (
-/obj/machinery/light/small/directional/south,
-/obj/effect/rune/blood_boil,
-/turf/open/floor/plasteel/cult,
-/area/ruin/space/has_grav/onehalf)
 "cz" = (
 /obj/structure/cable,
 /obj/structure/cable{
@@ -979,11 +938,6 @@
 	icon_state = "platingdmg2"
 	},
 /area/ruin/space/has_grav/onehalf)
-"cM" = (
-/obj/machinery/light/directional/west,
-/obj/machinery/vending/sovietsoda,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/onehalf)
 "cN" = (
 /obj/item/reagent_containers/food/drinks/sillycup,
 /turf/open/space/basic,
@@ -1060,12 +1014,6 @@
 /obj/structure/closet/firecloset/full,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/onehalf)
-"db" = (
-/obj/machinery/light/directional/south,
-/obj/structure/table/reinforced,
-/obj/item/storage/firstaid/regular,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/onehalf)
 "dc" = (
 /obj/structure/grille/broken,
 /obj/structure/cable{
@@ -1128,11 +1076,6 @@
 "dh" = (
 /turf/open/space/basic,
 /area/template_noop)
-"di" = (
-/obj/machinery/light/directional/north,
-/obj/structure/chair,
-/turf/open/floor/plasteel/cult/airless,
-/area/ruin/space/has_grav/onehalf)
 "dj" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -1309,6 +1252,11 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/onehalf)
+"kH" = (
+/obj/machinery/light/directional/north,
+/obj/structure/frame/computer,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/onehalf)
 "lA" = (
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1
@@ -1455,6 +1403,13 @@
 /mob/living/simple_animal/hostile/construct/proteon/hostile,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/onehalf)
+"qC" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/light/directional/south,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/onehalf)
 "rd" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/siding/wood,
@@ -1527,6 +1482,16 @@
 /obj/item/storage/toolbox/syndicate,
 /turf/open/floor/plasteel/cult/airless,
 /area/ruin/space/has_grav/onehalf)
+"tX" = (
+/obj/machinery/light/directional/east,
+/obj/structure/table,
+/obj/item/storage/firstaid/brute{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/obj/item/storage/firstaid/regular,
+/turf/open/floor/plasteel/tech,
+/area/ruin/space/has_grav/onehalf)
 "tY" = (
 /obj/effect/turf_decal/solarpanel,
 /obj/machinery/power/solar,
@@ -1538,6 +1503,11 @@
 	},
 /turf/open/floor/plating/airless,
 /area/space/nearstation)
+"un" = (
+/obj/machinery/light/directional/north,
+/obj/structure/chair,
+/turf/open/floor/plasteel/cult/airless,
+/area/ruin/space/has_grav/onehalf)
 "uZ" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1601,11 +1571,11 @@
 	icon_state = "wood-broken4"
 	},
 /area/ruin/space/has_grav/onehalf)
-"xR" = (
+"xS" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/machinery/light/directional/south,
+/obj/machinery/light/small/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/onehalf)
@@ -1636,21 +1606,10 @@
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/wood/airless,
 /area/ruin/space/has_grav/onehalf)
-"zd" = (
-/obj/machinery/light/directional/north,
-/turf/open/floor/wood/airless,
-/area/ruin/space/has_grav/onehalf)
 "zh" = (
 /obj/structure/disposalpipe/trunk,
 /obj/item/stack/ore/diamond,
 /turf/open/floor/plating/airless,
-/area/ruin/space/has_grav/onehalf)
-"zP" = (
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/obj/machinery/light/directional/east,
-/turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/onehalf)
 "zQ" = (
 /obj/effect/turf_decal/solarpanel,
@@ -1684,6 +1643,13 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/cult/airless,
+/area/ruin/space/has_grav/onehalf)
+"AE" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/machinery/light/directional/east,
+/turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/onehalf)
 "AH" = (
 /obj/structure/disposalpipe/segment{
@@ -1859,6 +1825,11 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/onehalf)
+"Id" = (
+/obj/machinery/light/small/directional/south,
+/obj/effect/rune/blood_boil,
+/turf/open/floor/plasteel/cult,
+/area/ruin/space/has_grav/onehalf)
 "Ix" = (
 /obj/item/stack/cable_coil/cut/red{
 	amount = 2
@@ -1872,6 +1843,11 @@
 	},
 /turf/open/space/basic,
 /area/space/nearstation)
+"Jf" = (
+/obj/machinery/light/directional/west,
+/obj/machinery/vending/sovietsoda,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/onehalf)
 "Jl" = (
 /obj/effect/turf_decal/solarpanel,
 /obj/machinery/power/solar,
@@ -1922,6 +1898,19 @@
 /obj/structure/railing/corner,
 /turf/open/space/basic,
 /area/space/nearstation)
+"KR" = (
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/onehalf)
+"LJ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/wood,
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/obj/machinery/light/directional/west,
+/turf/open/floor/carpet/nanoweave/beige,
+/area/ruin/space/has_grav/onehalf)
 "LL" = (
 /obj/structure/disposalpipe/segment{
 	dir = 6
@@ -2002,10 +1991,6 @@
 /mob/living/simple_animal/hostile/construct/proteon/hostile,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/airless,
-/area/ruin/space/has_grav/onehalf)
-"OJ" = (
-/obj/machinery/light/directional/west,
-/turf/open/floor/carpet/nanoweave/beige,
 /area/ruin/space/has_grav/onehalf)
 "OW" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -2120,6 +2105,17 @@
 	icon_state = "platingdmg3"
 	},
 /area/ruin/space/has_grav/onehalf)
+"UM" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/table/reinforced,
+/obj/item/spacecash/bundle/c500{
+	pixel_y = 8
+	},
+/obj/item/spacecash/bundle/c1000,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/onehalf)
 "Vb" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -2175,6 +2171,10 @@
 /mob/living/simple_animal/hostile/construct/wraith/hostile,
 /turf/open/floor/plasteel/cult,
 /area/ruin/space/has_grav/onehalf)
+"Wh" = (
+/obj/machinery/light/directional/north,
+/turf/open/floor/wood/airless,
+/area/ruin/space/has_grav/onehalf)
 "Wk" = (
 /obj/structure/catwalk,
 /turf/open/space,
@@ -2214,15 +2214,11 @@
 /obj/structure/catwalk,
 /turf/open/space,
 /area/space/nearstation)
-"XU" = (
-/obj/machinery/light/directional/east,
-/obj/structure/table,
-/obj/item/storage/firstaid/brute{
-	pixel_x = 3;
-	pixel_y = 3
-	},
+"YE" = (
+/obj/machinery/light/directional/south,
+/obj/structure/table/reinforced,
 /obj/item/storage/firstaid/regular,
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel,
 /area/ruin/space/has_grav/onehalf)
 "YQ" = (
 /obj/structure/disposalpipe/junction{
@@ -2237,6 +2233,10 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/chair,
 /turf/open/floor/wood/airless,
+/area/ruin/space/has_grav/onehalf)
+"YW" = (
+/obj/machinery/light/directional/west,
+/turf/open/floor/carpet/nanoweave/beige,
 /area/ruin/space/has_grav/onehalf)
 "Zn" = (
 /obj/structure/disposalpipe/segment{
@@ -2573,7 +2573,7 @@ Cw
 eK
 ak
 an
-aB
+LJ
 aM
 bj
 bx
@@ -2644,7 +2644,7 @@ ak
 PL
 pT
 Mc
-zd
+Wh
 aC
 ao
 bj
@@ -2713,7 +2713,7 @@ md
 An
 uZ
 An
-zP
+AE
 vD
 cA
 nD
@@ -2860,7 +2860,7 @@ ak
 ak
 Mc
 Mc
-di
+un
 wY
 aM
 WP
@@ -2965,7 +2965,7 @@ aa
 aW
 ak
 ek
-XU
+tX
 fX
 ak
 ap
@@ -3004,7 +3004,7 @@ ak
 ak
 ak
 Mc
-zd
+Wh
 PD
 hY
 YQ
@@ -3037,7 +3037,7 @@ aa
 aW
 ak
 sQ
-OJ
+YW
 sQ
 ak
 cs
@@ -3085,7 +3085,7 @@ bU
 aa
 wr
 bU
-cy
+Id
 bU
 cE
 aa
@@ -3158,7 +3158,7 @@ ca
 cl
 cw
 cn
-cM
+Jf
 cR
 cY
 bU
@@ -3181,14 +3181,14 @@ aa
 JB
 Wk
 aq
-aD
+KR
 ct
 aX
 lA
 ha
 fR
 AH
-bE
+qC
 bU
 cb
 cm
@@ -3262,7 +3262,7 @@ wK
 bF
 bu
 bU
-cd
+kH
 co
 cn
 cG
@@ -3332,7 +3332,7 @@ wK
 NH
 cn
 bF
-xR
+bV
 bU
 cf
 MC
@@ -3370,13 +3370,13 @@ Zn
 jX
 vT
 bU
-cg
+UM
 cp
 ZX
 Gv
 Ra
 cU
-db
+YE
 bU
 aW
 aa
@@ -3583,7 +3583,7 @@ ak
 lU
 bG
 ak
-bs
+xS
 bH
 ak
 cF

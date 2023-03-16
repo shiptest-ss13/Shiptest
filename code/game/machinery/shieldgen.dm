@@ -650,7 +650,7 @@
 	CanAtmosPass = ATMOS_PASS_NO
 	CanAtmosPassVertical = 1
 	hardshield = FALSE
-	layer = UNDERDOOR
+	layer = ABOVE_BLASTDOOR_LAYER
 	light_color = "#f6e384"
 	light_system = MOVABLE_LIGHT //for instant visual feedback reguardless of lag
 

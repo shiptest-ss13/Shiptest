@@ -251,14 +251,6 @@
 /obj/structure/table,
 /turf/open/floor/concrete,
 /area/whitesands/surface/outdoors)
-"ki" = (
-/obj/structure/table/wood,
-/obj/item/stack/spacecash/c500{
-	pixel_x = 3;
-	pixel_y = 3
-	},
-/turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
 "km" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/structure/window,
@@ -432,6 +424,11 @@
 	icon_state = "wood-broken7"
 	},
 /area/whitesands/surface/outdoors)
+"pB" = (
+/obj/machinery/light/directional/south,
+/obj/structure/chair/stool/bar,
+/turf/open/floor/wood,
+/area/whitesands/surface/outdoors)
 "pC" = (
 /turf/open/acid/whitesands,
 /area/whitesands/surface/outdoors)
@@ -446,6 +443,20 @@
 /turf/open/floor/plating/asteroid/whitesands/dried{
 	light_range = 2
 	},
+/area/whitesands/surface/outdoors)
+"pX" = (
+/obj/structure/chair/stool/bar,
+/obj/machinery/light/directional/south,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood,
+/area/whitesands/surface/outdoors)
+"qc" = (
+/obj/structure/table/wood,
+/obj/item/spacecash/bundle/c500{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/turf/open/floor/wood,
 /area/whitesands/surface/outdoors)
 "ql" = (
 /turf/closed/wall/rust,
@@ -468,19 +479,17 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/whitesands/surface/outdoors)
+"qC" = (
+/obj/machinery/light/directional/south,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood{
+	icon_state = "wood-broken7"
+	},
+/area/whitesands/surface/outdoors)
 "qU" = (
 /turf/open/floor/plating/asteroid/whitesands/grass{
 	light_range = 2
 	},
-/area/whitesands/surface/outdoors)
-"rv" = (
-/obj/structure/table/wood,
-/obj/machinery/light/directional/south,
-/obj/item/clothing/mask/cigarette/cigar/havana{
-	pixel_x = 1;
-	pixel_y = 4
-	},
-/turf/open/floor/wood,
 /area/whitesands/surface/outdoors)
 "rx" = (
 /obj/effect/decal/cleanable/dirt,
@@ -695,11 +704,6 @@
 /obj/item/seeds/wheat,
 /obj/item/seeds/watermelon,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"yV" = (
-/obj/machinery/light/directional/south,
-/obj/structure/chair/stool/bar,
 /turf/open/floor/wood,
 /area/whitesands/surface/outdoors)
 "yZ" = (
@@ -1049,12 +1053,6 @@
 	},
 /turf/open/floor/concrete,
 /area/whitesands/surface/outdoors)
-"Ml" = (
-/obj/structure/chair/stool/bar,
-/obj/machinery/light/directional/south,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
 "MS" = (
 /mob/living/simple_animal/hostile/asteroid/whitesands/survivor,
 /turf/open/floor/plating/asteroid/whitesands{
@@ -1112,6 +1110,15 @@
 /area/whitesands/surface/outdoors)
 "Px" = (
 /obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood,
+/area/whitesands/surface/outdoors)
+"PE" = (
+/obj/structure/table/wood,
+/obj/machinery/light/directional/south,
+/obj/item/clothing/mask/cigarette/cigar/havana{
+	pixel_x = 1;
+	pixel_y = 4
+	},
 /turf/open/floor/wood,
 /area/whitesands/surface/outdoors)
 "PX" = (
@@ -1231,13 +1238,6 @@
 /area/whitesands/surface/outdoors)
 "VF" = (
 /turf/closed/wall/mineral/wood,
-/area/whitesands/surface/outdoors)
-"VM" = (
-/obj/machinery/light/directional/south,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood{
-	icon_state = "wood-broken7"
-	},
 /area/whitesands/surface/outdoors)
 "Wd" = (
 /obj/structure/closet/crate/bin,
@@ -3716,7 +3716,7 @@ Yj
 yt
 oL
 cI
-rv
+PE
 VF
 gy
 xr
@@ -3968,7 +3968,7 @@ zh
 nE
 GG
 ZG
-Ml
+pX
 VF
 Yj
 Yj
@@ -4080,9 +4080,9 @@ Ld
 GC
 iQ
 AW
-ki
+qc
 Px
-VM
+qC
 Hb
 RY
 hL
@@ -4212,7 +4212,7 @@ MX
 xB
 Lj
 UO
-yV
+pB
 VF
 Ld
 Yj

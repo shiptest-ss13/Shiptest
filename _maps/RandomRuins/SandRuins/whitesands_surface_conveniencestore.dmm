@@ -36,12 +36,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/material,
 /area/whitesands/surface/outdoors)
-"dj" = (
-/obj/structure/rack,
-/obj/machinery/light/broken/directional/north,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/material,
-/area/whitesands/surface/outdoors)
 "fd" = (
 /obj/structure/sign/poster/official/bless_this_spess,
 /turf/closed/wall/material,
@@ -60,16 +54,9 @@
 	},
 /turf/open/floor/material,
 /area/whitesands/surface/outdoors)
-"hP" = (
-/obj/structure/table,
-/obj/item/stack/spacecash/c100{
-	pixel_x = 1;
-	pixel_y = 10
-	},
-/obj/item/stack/spacecash/c100{
-	pixel_x = 1
-	},
-/obj/machinery/light/small/directional/north,
+"kN" = (
+/obj/structure/rack,
+/obj/machinery/light/broken/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/material,
 /area/whitesands/surface/outdoors)
@@ -98,15 +85,6 @@
 	pixel_y = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/material,
-/area/whitesands/surface/outdoors)
-"po" = (
-/obj/item/cigbutt{
-	pixel_x = -7;
-	pixel_y = 10
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light/directional/north,
 /turf/open/floor/material,
 /area/whitesands/surface/outdoors)
 "rk" = (
@@ -162,6 +140,19 @@
 /area/template_noop)
 "uM" = (
 /obj/machinery/vending/snack/random,
+/turf/open/floor/material,
+/area/whitesands/surface/outdoors)
+"wd" = (
+/obj/structure/table,
+/obj/machinery/light/small/directional/north,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/spacecash/bundle/c100{
+	pixel_x = 1;
+	pixel_y = 10
+	},
+/obj/item/spacecash/bundle/c100{
+	pixel_x = 1
+	},
 /turf/open/floor/material,
 /area/whitesands/surface/outdoors)
 "wp" = (
@@ -231,6 +222,11 @@
 	},
 /turf/open/floor/material,
 /area/whitesands/surface/outdoors)
+"GO" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/broken/directional/west,
+/turf/open/floor/material,
+/area/whitesands/surface/outdoors)
 "IJ" = (
 /obj/effect/decal/remains/human{
 	pixel_x = 1
@@ -269,21 +265,9 @@
 	},
 /turf/open/floor/material,
 /area/whitesands/surface/outdoors)
-"Nc" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light/broken/directional/west,
-/turf/open/floor/material,
-/area/whitesands/surface/outdoors)
 "Qd" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/vomit/old,
-/turf/open/floor/material,
-/area/whitesands/surface/outdoors)
-"Qq" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/closet/crate/bin,
-/obj/machinery/light/broken/directional/south,
-/obj/item/toy/plush/among,
 /turf/open/floor/material,
 /area/whitesands/surface/outdoors)
 "Tr" = (
@@ -309,6 +293,15 @@
 	pixel_x = -1;
 	pixel_y = 3
 	},
+/turf/open/floor/material,
+/area/whitesands/surface/outdoors)
+"VD" = (
+/obj/item/cigbutt{
+	pixel_x = -7;
+	pixel_y = 10
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/directional/north,
 /turf/open/floor/material,
 /area/whitesands/surface/outdoors)
 "We" = (
@@ -364,6 +357,13 @@
 /turf/open/floor/material,
 /area/whitesands/surface/outdoors)
 "Yf" = (
+/turf/open/floor/material,
+/area/whitesands/surface/outdoors)
+"YE" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet/crate/bin,
+/obj/machinery/light/broken/directional/south,
+/obj/item/toy/plush/among,
 /turf/open/floor/material,
 /area/whitesands/surface/outdoors)
 "Zu" = (
@@ -448,7 +448,7 @@ Wt
 Yf
 Wt
 Yf
-Nc
+GO
 fo
 Wp
 ux
@@ -471,7 +471,7 @@ ux
 (6,1,1) = {"
 ux
 lS
-dj
+kN
 Wt
 xv
 Qd
@@ -524,17 +524,17 @@ Cy
 UZ
 Yf
 We
-Qq
+YE
 lS
 ux
 "}
 (10,1,1) = {"
 ux
 lS
-hP
+wd
 pd
 lS
-po
+VD
 rk
 Tr
 Wt

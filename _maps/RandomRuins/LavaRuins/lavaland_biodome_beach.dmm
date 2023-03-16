@@ -9,10 +9,6 @@
 "aj" = (
 /turf/closed/wall/mineral/sandstone,
 /area/ruin/powered/beach)
-"am" = (
-/obj/machinery/light/directional/north,
-/turf/open/floor/plating/beach/sand,
-/area/ruin/powered/beach)
 "ao" = (
 /obj/machinery/door/airlock/public/glass{
 	name = "Resort Lobby"
@@ -31,22 +27,10 @@
 "as" = (
 /turf/open/floor/plating,
 /area/ruin/powered/beach)
-"at" = (
-/obj/machinery/light/directional/north,
-/mob/living/simple_animal/crab{
-	name = "Eddie"
-	},
-/turf/open/floor/plating/beach/sand,
-/area/ruin/powered/beach)
 "au" = (
 /obj/structure/sign/poster/contraband/space_cola{
 	pixel_y = 32
 	},
-/turf/open/floor/plating/beach/sand,
-/area/ruin/powered/beach)
-"av" = (
-/obj/effect/overlay/coconut,
-/obj/machinery/light/directional/north,
 /turf/open/floor/plating/beach/sand,
 /area/ruin/powered/beach)
 "az" = (
@@ -128,14 +112,19 @@
 /obj/effect/overlay/coconut,
 /turf/open/floor/plating/beach/sand,
 /area/ruin/powered/beach)
-"bb" = (
-/obj/structure/closet/crate/bin,
-/obj/item/tank/internals/emergency_oxygen,
-/obj/item/trash/candy,
-/obj/item/toy/talking/owl,
+"bv" = (
+/obj/machinery/light/directional/east,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
 /obj/effect/turf_decal/sand,
-/obj/machinery/light/directional/west,
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel{
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "sand"
+	},
 /area/ruin/powered/beach)
 "bx" = (
 /obj/structure/flora/rock,
@@ -170,6 +159,10 @@
 	},
 /turf/open/floor/carpet/red,
 /area/ruin/powered/beach)
+"bD" = (
+/obj/machinery/light/directional/south,
+/turf/open/floor/pod/light,
+/area/ruin/powered/beach)
 "bG" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -201,10 +194,6 @@
 "bM" = (
 /turf/open/floor/plasteel/stairs/old,
 /area/ruin/powered/beach)
-"bN" = (
-/obj/structure/extinguisher_cabinet/directional/north,
-/turf/open/floor/plating/beach/sand,
-/area/ruin/powered/beach)
 "bR" = (
 /turf/open/floor/plating/beach/coastline_t,
 /area/ruin/powered/beach)
@@ -221,10 +210,6 @@
 "bW" = (
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors/explored)
-"bY" = (
-/obj/machinery/light/directional/north,
-/turf/open/floor/wood,
-/area/ruin/powered/beach)
 "cd" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -239,10 +224,6 @@
 /turf/open/floor/plating{
 	icon_state = "platingdmg3"
 	},
-/area/ruin/powered/beach)
-"ch" = (
-/obj/machinery/light/directional/east,
-/turf/open/floor/plating/beach/sand,
 /area/ruin/powered/beach)
 "cj" = (
 /obj/structure/sink/kitchen{
@@ -261,11 +242,6 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/floor/plating/beach/water,
 /area/ruin/powered/beach)
-"cR" = (
-/obj/structure/chair/wood,
-/obj/machinery/light/directional/north,
-/turf/open/floor/plating/beach/sand,
-/area/ruin/powered/beach)
 "cV" = (
 /obj/structure/closet/secure_closet/freezer/meat{
 	req_access = null
@@ -283,6 +259,12 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
+/turf/open/floor/wood,
+/area/ruin/powered/beach)
+"du" = (
+/obj/machinery/light/directional/north,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/washing_machine,
 /turf/open/floor/wood,
 /area/ruin/powered/beach)
 "dX" = (
@@ -310,6 +292,13 @@
 	},
 /turf/closed/wall/mineral/sandstone,
 /area/ruin/powered/beach)
+"fm" = (
+/obj/machinery/light/directional/east,
+/obj/machinery/atmospherics/components/unary/vent_pump/on{
+	dir = 4
+	},
+/turf/open/floor/wood,
+/area/ruin/powered/beach)
 "fB" = (
 /turf/open/floor/plasteel/stairs/medium,
 /area/ruin/powered/beach)
@@ -332,23 +321,26 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/powered/beach)
+"gh" = (
+/obj/machinery/light/directional/north,
+/turf/open/floor/wood,
+/area/ruin/powered/beach)
 "gs" = (
 /obj/machinery/door/airlock/external,
 /turf/open/floor/plating,
+/area/ruin/powered/beach)
+"gy" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
+	dir = 8
+	},
+/obj/machinery/light/directional/south,
+/turf/open/floor/wood,
 /area/ruin/powered/beach)
 "gC" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
 /turf/open/floor/pod/light,
-/area/ruin/powered/beach)
-"gF" = (
-/obj/effect/turf_decal/sand,
-/obj/effect/turf_decal/industrial/warning/dust{
-	dir = 8
-	},
-/obj/machinery/light/directional/west,
-/turf/open/floor/sepia,
 /area/ruin/powered/beach)
 "gT" = (
 /obj/machinery/door/airlock/sandstone{
@@ -424,12 +416,13 @@
 /obj/item/storage/fancy/donut_box,
 /turf/open/floor/wood,
 /area/ruin/powered/beach)
-"kb" = (
-/obj/machinery/light/directional/north,
-/obj/structure/sign/poster/contraband/ambrosia_vulgaris{
-	pixel_y = 32
+"jW" = (
+/obj/structure/table,
+/obj/machinery/reagentgrinder,
+/obj/machinery/light/small/directional/west{
+	brightness = 3
 	},
-/turf/open/floor/plasteel/grimy,
+/turf/open/floor/wood,
 /area/ruin/powered/beach)
 "kd" = (
 /obj/structure/table/wood,
@@ -453,15 +446,6 @@
 /obj/structure/fluff/beach_umbrella/cap,
 /turf/open/floor/plating/beach/sand,
 /area/ruin/powered/beach)
-"kn" = (
-/obj/structure/railing/corner{
-	dir = 1
-	},
-/obj/machinery/light/directional/south,
-/turf/open/floor/plating/beach/coastline_b{
-	dir = 10
-	},
-/area/ruin/powered/beach)
 "li" = (
 /obj/machinery/door/airlock/sandstone{
 	name = "Bar Access"
@@ -471,6 +455,13 @@
 "lq" = (
 /obj/effect/turf_decal/sand,
 /turf/open/floor/sepia,
+/area/ruin/powered/beach)
+"lI" = (
+/obj/machinery/light/directional/north,
+/obj/structure/sign/poster/contraband/ambrosia_vulgaris{
+	pixel_y = 32
+	},
+/turf/open/floor/plasteel/grimy,
 /area/ruin/powered/beach)
 "lL" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -494,10 +485,10 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden,
 /turf/open/floor/plating,
 /area/ruin/powered/beach)
-"nw" = (
-/obj/machinery/light/directional/north,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/machinery/washing_machine,
+"nW" = (
+/obj/machinery/light/directional/east,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on,
+/obj/structure/chair/stool/bar,
 /turf/open/floor/wood,
 /area/ruin/powered/beach)
 "og" = (
@@ -537,20 +528,6 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/powered/beach)
-"pS" = (
-/obj/machinery/light/directional/east,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
-/obj/effect/turf_decal/sand,
-/turf/open/floor/plasteel{
-	icon = 'icons/misc/beach.dmi';
-	icon_state = "sand"
-	},
-/area/ruin/powered/beach)
 "qc" = (
 /obj/structure/mirror{
 	pixel_x = -32
@@ -565,6 +542,10 @@
 /area/ruin/powered/beach)
 "qf" = (
 /obj/structure/reagent_dispensers/watertank,
+/turf/open/floor/pod/light,
+/area/ruin/powered/beach)
+"qr" = (
+/obj/machinery/light/directional/east,
 /turf/open/floor/pod/light,
 /area/ruin/powered/beach)
 "qt" = (
@@ -593,11 +574,20 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/closed/wall/mineral/sandstone,
 /area/ruin/powered/beach)
-"qT" = (
+"rL" = (
 /obj/machinery/light/directional/east,
-/obj/machinery/atmospherics/components/unary/vent_pump/on{
-	dir = 4
+/obj/structure/closet/secure_closet{
+	icon_state = "cabinet";
+	name = "bartender's closet";
+	req_access = list(25)
 	},
+/obj/item/clothing/shoes/sandal{
+	desc = "A very fashionable pair of flip-flops.";
+	name = "flip-flops"
+	},
+/obj/item/clothing/neck/beads,
+/obj/item/clothing/glasses/sunglasses/reagent,
+/obj/item/clothing/suit/hawaiian,
 /turf/open/floor/wood,
 /area/ruin/powered/beach)
 "rU" = (
@@ -616,22 +606,6 @@
 	},
 /turf/closed/wall/mineral/wood/nonmetal,
 /area/ruin/powered/beach)
-"sM" = (
-/obj/machinery/light/directional/east,
-/obj/structure/closet/secure_closet{
-	icon_state = "cabinet";
-	name = "bartender's closet";
-	req_access = list(25)
-	},
-/obj/item/clothing/shoes/sandal{
-	desc = "A very fashionable pair of flip-flops.";
-	name = "flip-flops"
-	},
-/obj/item/clothing/neck/beads,
-/obj/item/clothing/glasses/sunglasses/reagent,
-/obj/item/clothing/suit/hawaiian,
-/turf/open/floor/wood,
-/area/ruin/powered/beach)
 "sV" = (
 /obj/machinery/hydroponics/constructable,
 /turf/open/floor/plasteel/grimy,
@@ -643,26 +617,6 @@
 "ta" = (
 /obj/structure/curtain,
 /turf/open/floor/plasteel/white,
-/area/ruin/powered/beach)
-"tf" = (
-/obj/structure/closet/crate/hydroponics,
-/obj/item/reagent_containers/food/snacks/grown/ambrosia/vulgaris,
-/obj/item/reagent_containers/food/snacks/grown/ambrosia/vulgaris,
-/obj/item/reagent_containers/food/snacks/grown/ambrosia/vulgaris,
-/obj/item/reagent_containers/food/snacks/grown/ambrosia/vulgaris,
-/obj/item/reagent_containers/food/snacks/grown/ambrosia/vulgaris,
-/obj/item/reagent_containers/food/snacks/grown/ambrosia/vulgaris,
-/obj/item/reagent_containers/food/snacks/grown/ambrosia/vulgaris,
-/obj/item/reagent_containers/food/snacks/grown/ambrosia/vulgaris,
-/obj/item/reagent_containers/food/snacks/grown/ambrosia/vulgaris,
-/obj/item/reagent_containers/food/snacks/grown/ambrosia/vulgaris,
-/obj/machinery/light/directional/south,
-/obj/item/disk/plantgene,
-/obj/item/disk/plantgene,
-/obj/item/disk/plantgene,
-/obj/item/disk/plantgene,
-/obj/item/disk/plantgene,
-/turf/open/floor/plasteel/grimy,
 /area/ruin/powered/beach)
 "tg" = (
 /obj/structure/closet/crate/freezer{
@@ -708,15 +662,13 @@
 /obj/structure/chair/stool/bar,
 /turf/open/floor/carpet/red,
 /area/ruin/powered/beach)
+"tU" = (
+/obj/structure/chair/wood,
+/obj/machinery/light/directional/north,
+/turf/open/floor/plating/beach/sand,
+/area/ruin/powered/beach)
 "uz" = (
 /turf/open/floor/light/colour_cycle/dancefloor_a,
-/area/ruin/powered/beach)
-"vf" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/structure/table/wood/poker,
-/obj/item/storage/pill_bottle/dice,
-/obj/item/stack/spacecash/c1000,
-/turf/open/floor/wood,
 /area/ruin/powered/beach)
 "vi" = (
 /obj/structure/railing{
@@ -725,6 +677,16 @@
 /turf/open/floor/plating/beach/coastline_b{
 	dir = 9
 	},
+/area/ruin/powered/beach)
+"vn" = (
+/obj/machinery/light/directional/south,
+/turf/open/floor/plating/beach/coastline_b{
+	dir = 1
+	},
+/area/ruin/powered/beach)
+"vI" = (
+/obj/structure/extinguisher_cabinet/directional/north,
+/turf/open/floor/plating/beach/sand,
 /area/ruin/powered/beach)
 "vK" = (
 /obj/effect/turf_decal/sand,
@@ -772,6 +734,11 @@
 /obj/item/canvas/twentythreeXtwentythree,
 /turf/open/floor/plating/beach/sand,
 /area/ruin/powered/beach)
+"xN" = (
+/obj/effect/turf_decal/sand,
+/obj/machinery/light/directional/east,
+/turf/open/floor/plating/beach/sand,
+/area/ruin/powered/beach)
 "xS" = (
 /turf/open/floor/plating/beach/coastline_b{
 	dir = 1
@@ -791,23 +758,20 @@
 	},
 /turf/closed/wall/mineral/sandstone,
 /area/ruin/powered/beach)
-"yk" = (
+"yv" = (
 /obj/machinery/light/small/directional/east,
-/obj/machinery/atmospherics/components/unary/vent_pump/on,
-/turf/open/floor/plating{
-	icon_state = "panelscorched"
+/obj/structure/closet/crate{
+	name = "fuel crate"
 	},
+/obj/item/stack/sheet/mineral/coal/ten,
+/obj/item/stack/sheet/mineral/coal/ten,
+/turf/open/floor/plating,
 /area/ruin/powered/beach)
 "yB" = (
 /mob/living/simple_animal/crab{
 	name = "Jonny"
 	},
 /turf/open/floor/plating/beach/sand,
-/area/ruin/powered/beach)
-"yN" = (
-/obj/machinery/vending/dinnerware,
-/obj/machinery/light/directional/east,
-/turf/open/floor/wood,
 /area/ruin/powered/beach)
 "zm" = (
 /obj/structure/table/wood,
@@ -846,10 +810,18 @@
 /obj/item/cultivator,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/powered/beach)
-"Bl" = (
-/obj/effect/turf_decal/sand,
-/obj/machinery/light/directional/west,
-/turf/open/floor/plating/beach/sand,
+"AZ" = (
+/obj/machinery/light/directional/south,
+/turf/open/floor/wood,
+/area/ruin/powered/beach)
+"Bg" = (
+/obj/machinery/light/directional/east,
+/obj/machinery/chem_dispenser/drinks/fullupgrade{
+	dir = 1
+	},
+/obj/structure/table/wood,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/turf/open/floor/wood,
 /area/ruin/powered/beach)
 "Bn" = (
 /turf/open/floor/carpet/blue,
@@ -868,10 +840,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/closed/wall/mineral/sandstone,
-/area/ruin/powered/beach)
-"BL" = (
-/obj/structure/extinguisher_cabinet/directional/north,
-/turf/open/floor/wood,
 /area/ruin/powered/beach)
 "BN" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden,
@@ -951,6 +919,10 @@
 /obj/structure/flora/rock/jungle,
 /turf/open/floor/plating/beach/sand,
 /area/ruin/powered/beach)
+"DN" = (
+/obj/machinery/light/directional/west,
+/turf/open/floor/wood,
+/area/ruin/powered/beach)
 "Eq" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on,
 /turf/open/floor/wood,
@@ -983,13 +955,10 @@
 /obj/structure/fluff/beach_umbrella/security,
 /turf/open/floor/plating/beach/sand,
 /area/ruin/powered/beach)
-"Fi" = (
-/obj/structure/table,
-/obj/machinery/reagentgrinder,
-/obj/machinery/light/small/directional/west{
-	brightness = 3
-	},
-/turf/open/floor/wood,
+"Fo" = (
+/obj/effect/overlay/coconut,
+/obj/machinery/light/directional/north,
+/turf/open/floor/plating/beach/sand,
 /area/ruin/powered/beach)
 "Fr" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -1040,13 +1009,12 @@
 	icon_state = "platingdmg2"
 	},
 /area/ruin/powered/beach)
-"Hn" = (
-/obj/machinery/light/directional/south,
-/turf/open/floor/pod/light,
-/area/ruin/powered/beach)
-"Hy" = (
-/obj/machinery/light/directional/west,
-/turf/open/floor/plasteel/stairs/left,
+"HS" = (
+/obj/machinery/light/small/directional/east,
+/obj/machinery/atmospherics/components/unary/vent_pump/on,
+/turf/open/floor/plating{
+	icon_state = "panelscorched"
+	},
 /area/ruin/powered/beach)
 "HV" = (
 /turf/open/floor/plating/beach/coastline_b{
@@ -1125,6 +1093,26 @@
 	},
 /turf/open/floor/plating/beach/sand,
 /area/ruin/powered/beach)
+"Jp" = (
+/obj/structure/closet/crate/hydroponics,
+/obj/item/reagent_containers/food/snacks/grown/ambrosia/vulgaris,
+/obj/item/reagent_containers/food/snacks/grown/ambrosia/vulgaris,
+/obj/item/reagent_containers/food/snacks/grown/ambrosia/vulgaris,
+/obj/item/reagent_containers/food/snacks/grown/ambrosia/vulgaris,
+/obj/item/reagent_containers/food/snacks/grown/ambrosia/vulgaris,
+/obj/item/reagent_containers/food/snacks/grown/ambrosia/vulgaris,
+/obj/item/reagent_containers/food/snacks/grown/ambrosia/vulgaris,
+/obj/item/reagent_containers/food/snacks/grown/ambrosia/vulgaris,
+/obj/item/reagent_containers/food/snacks/grown/ambrosia/vulgaris,
+/obj/item/reagent_containers/food/snacks/grown/ambrosia/vulgaris,
+/obj/machinery/light/directional/south,
+/obj/item/disk/plantgene,
+/obj/item/disk/plantgene,
+/obj/item/disk/plantgene,
+/obj/item/disk/plantgene,
+/obj/item/disk/plantgene,
+/turf/open/floor/plasteel/grimy,
+/area/ruin/powered/beach)
 "Jr" = (
 /turf/open/floor/carpet/purple,
 /area/ruin/powered/beach)
@@ -1134,6 +1122,10 @@
 	dir = 4
 	},
 /turf/open/floor/plating,
+/area/ruin/powered/beach)
+"JH" = (
+/obj/machinery/light/directional/east,
+/turf/open/floor/plating/beach/sand,
 /area/ruin/powered/beach)
 "JO" = (
 /turf/open/floor/plating/beach/coastline_b{
@@ -1165,12 +1157,14 @@
 /obj/structure/fluff/beach_umbrella/science,
 /turf/open/floor/plating/beach/sand,
 /area/ruin/powered/beach)
-"Lp" = (
+"Lx" = (
 /obj/structure/extinguisher_cabinet/directional/north,
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
-	dir = 4
-	},
 /turf/open/floor/wood,
+/area/ruin/powered/beach)
+"Ly" = (
+/obj/effect/turf_decal/sand,
+/obj/machinery/light/directional/west,
+/turf/open/floor/plating/beach/sand,
 /area/ruin/powered/beach)
 "Md" = (
 /obj/structure/urinal{
@@ -1189,15 +1183,6 @@
 	dir = 9
 	},
 /turf/closed/wall/mineral/sandstone,
-/area/ruin/powered/beach)
-"MO" = (
-/obj/machinery/light/directional/east,
-/obj/machinery/chem_dispenser/drinks/fullupgrade{
-	dir = 1
-	},
-/obj/structure/table/wood,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/turf/open/floor/wood,
 /area/ruin/powered/beach)
 "MZ" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -1221,6 +1206,10 @@
 /obj/item/storage/firstaid/brute,
 /turf/open/floor/wood,
 /area/ruin/powered/beach)
+"NF" = (
+/obj/machinery/light/directional/east,
+/turf/open/floor/wood,
+/area/ruin/powered/beach)
 "NJ" = (
 /obj/machinery/computer/slot_machine,
 /turf/open/floor/wood,
@@ -1238,21 +1227,19 @@
 	},
 /turf/closed/wall/mineral/wood/nonmetal,
 /area/ruin/powered/beach)
-"OE" = (
-/obj/machinery/light/directional/west,
-/turf/open/floor/wood,
-/area/ruin/powered/beach)
 "OI" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/item/toy/seashell,
 /turf/open/floor/plating/beach/sand,
 /area/ruin/powered/beach)
-"OP" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
-	dir = 8
+"OS" = (
+/obj/structure/railing/corner{
+	dir = 1
 	},
 /obj/machinery/light/directional/south,
-/turf/open/floor/wood,
+/turf/open/floor/plating/beach/coastline_b{
+	dir = 10
+	},
 /area/ruin/powered/beach)
 "Pr" = (
 /obj/machinery/vending/hydronutrients,
@@ -1273,18 +1260,14 @@
 	},
 /turf/open/floor/pod/light,
 /area/ruin/powered/beach)
-"QF" = (
-/obj/machinery/light/directional/south,
-/turf/open/floor/wood,
-/area/ruin/powered/beach)
-"QS" = (
+"QH" = (
+/obj/structure/closet/crate/bin,
+/obj/item/tank/internals/emergency_oxygen,
+/obj/item/trash/candy,
+/obj/item/toy/talking/owl,
 /obj/effect/turf_decal/sand,
-/obj/machinery/light/directional/east,
-/turf/open/floor/plating/beach/sand,
-/area/ruin/powered/beach)
-"Rk" = (
-/obj/machinery/light/directional/east,
-/turf/open/floor/wood,
+/obj/machinery/light/directional/west,
+/turf/open/floor/plasteel,
 /area/ruin/powered/beach)
 "RB" = (
 /obj/structure/closet/cabinet,
@@ -1301,6 +1284,13 @@
 /area/ruin/powered/beach)
 "RE" = (
 /turf/closed/wall/mineral/wood/nonmetal,
+/area/ruin/powered/beach)
+"RP" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/structure/table/wood/poker,
+/obj/item/storage/pill_bottle/dice,
+/obj/item/spacecash/bundle/c1000,
+/turf/open/floor/wood,
 /area/ruin/powered/beach)
 "Sn" = (
 /obj/machinery/door/airlock/maintenance{
@@ -1339,14 +1329,13 @@
 /obj/item/canvas/twentythreeXtwentythree,
 /turf/open/floor/plating/beach/sand,
 /area/ruin/powered/beach)
+"Td" = (
+/obj/machinery/vending/dinnerware,
+/obj/machinery/light/directional/east,
+/turf/open/floor/wood,
+/area/ruin/powered/beach)
 "Ti" = (
 /turf/open/floor/carpet/red,
-/area/ruin/powered/beach)
-"Tu" = (
-/obj/machinery/light/directional/east,
-/turf/open/floor/plating/beach/coastline_b{
-	dir = 8
-	},
 /area/ruin/powered/beach)
 "TC" = (
 /obj/effect/mob_spawn/human/beach/alive{
@@ -1407,17 +1396,19 @@
 	icon_state = "panelscorched"
 	},
 /area/ruin/powered/beach)
-"Vf" = (
-/obj/machinery/light/directional/south,
-/turf/open/floor/plating/beach/coastline_b{
-	dir = 1
-	},
-/area/ruin/powered/beach)
 "Vl" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/structure/table/wood/poker,
 /obj/item/toy/cards/deck,
 /turf/open/floor/wood,
+/area/ruin/powered/beach)
+"Vr" = (
+/obj/effect/turf_decal/sand,
+/obj/effect/turf_decal/industrial/warning/dust{
+	dir = 8
+	},
+/obj/machinery/light/directional/west,
+/turf/open/floor/sepia,
 /area/ruin/powered/beach)
 "Vs" = (
 /obj/structure/toilet,
@@ -1430,14 +1421,9 @@
 	},
 /turf/closed/wall/mineral/sandstone,
 /area/ruin/powered/beach)
-"VL" = (
-/obj/machinery/light/small/directional/east,
-/obj/structure/closet/crate{
-	name = "fuel crate"
-	},
-/obj/item/stack/sheet/mineral/coal/ten,
-/obj/item/stack/sheet/mineral/coal/ten,
-/turf/open/floor/plating,
+"Vx" = (
+/obj/machinery/light/directional/north,
+/turf/open/floor/plating/beach/sand,
 /area/ruin/powered/beach)
 "VN" = (
 /obj/item/toy/seashell,
@@ -1463,6 +1449,12 @@
 "Wf" = (
 /obj/machinery/computer/arcade/battle,
 /turf/open/floor/wood,
+/area/ruin/powered/beach)
+"Wl" = (
+/obj/machinery/light/directional/east,
+/turf/open/floor/plating/beach/coastline_b{
+	dir = 8
+	},
 /area/ruin/powered/beach)
 "Wy" = (
 /obj/structure/closet/cabinet,
@@ -1490,12 +1482,6 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/powered/beach)
-"Xu" = (
-/obj/machinery/light/directional/east,
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on,
-/obj/structure/chair/stool/bar,
-/turf/open/floor/wood,
-/area/ruin/powered/beach)
 "XW" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -1504,6 +1490,24 @@
 	dir = 4
 	},
 /turf/closed/wall/mineral/wood/nonmetal,
+/area/ruin/powered/beach)
+"Ya" = (
+/obj/structure/extinguisher_cabinet/directional/north,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
+	dir = 4
+	},
+/turf/open/floor/wood,
+/area/ruin/powered/beach)
+"Yo" = (
+/obj/machinery/light/directional/north,
+/mob/living/simple_animal/crab{
+	name = "Eddie"
+	},
+/turf/open/floor/plating/beach/sand,
+/area/ruin/powered/beach)
+"YL" = (
+/obj/machinery/light/directional/west,
+/turf/open/floor/plasteel/stairs/left,
 /area/ruin/powered/beach)
 "Zi" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -1544,10 +1548,6 @@
 "ZS" = (
 /turf/closed/mineral/random/volcanic,
 /area/template_noop)
-"ZZ" = (
-/obj/machinery/light/directional/east,
-/turf/open/floor/pod/light,
-/area/ruin/powered/beach)
 
 (1,1,1) = {"
 aa
@@ -1600,14 +1600,14 @@ aa
 Zi
 BE
 Mf
-cR
+tU
 yB
 ap
 aj
 oQ
 Zq
 FF
-Fi
+jW
 aF
 Fr
 yc
@@ -1668,12 +1668,12 @@ ar
 ar
 ar
 aj
-sM
+rL
 aC
 aC
 CK
 IJ
-MO
+Bg
 CU
 Bp
 "}
@@ -1689,7 +1689,7 @@ aj
 aj
 lT
 as
-yk
+HS
 Jv
 as
 gs
@@ -1698,7 +1698,7 @@ ar
 ar
 ar
 ar
-bN
+vI
 aj
 aj
 li
@@ -1732,12 +1732,12 @@ SZ
 ar
 ar
 ar
-Hy
+YL
 TU
 EF
 EF
 EF
-gF
+Vr
 MZ
 Bp
 "}
@@ -1751,11 +1751,11 @@ az
 Vl
 aO
 CU
-bb
+QH
 aN
 aT
 aY
-Bl
+Ly
 aZ
 ar
 ar
@@ -1779,8 +1779,8 @@ aj
 tn
 Ti
 Ti
-Xu
-vf
+nW
+RP
 ct
 BN
 aA
@@ -1877,7 +1877,7 @@ ar
 ar
 ar
 ar
-pS
+bv
 aA
 aA
 aA
@@ -1885,7 +1885,7 @@ aA
 aA
 aA
 aA
-QS
+xN
 ar
 ar
 ER
@@ -1898,7 +1898,7 @@ wW
 wW
 wW
 wW
-kn
+OS
 MZ
 "}
 (12,1,1) = {"
@@ -1943,7 +1943,7 @@ ar
 ar
 XW
 aI
-OE
+DN
 aC
 aC
 aC
@@ -1969,7 +1969,7 @@ MZ
 Bp
 bW
 MZ
-at
+Yo
 ar
 hY
 ar
@@ -2026,7 +2026,7 @@ bU
 bV
 bV
 bU
-Vf
+vn
 MZ
 "}
 (16,1,1) = {"
@@ -2065,22 +2065,22 @@ MZ
 Bp
 bW
 MZ
-av
+Fo
 ar
 ar
 ar
 RE
 aS
-Rk
+NF
 aC
 aC
 pB
 Ds
-yN
+Td
 RE
 ar
 OI
-ch
+JH
 ar
 ar
 bR
@@ -2128,12 +2128,12 @@ MZ
 (19,1,1) = {"
 aa
 MZ
-am
+Vx
 ar
 ar
 ap
 ar
-Bl
+Ly
 aA
 vK
 hv
@@ -2141,7 +2141,7 @@ aA
 aA
 aA
 aA
-Bl
+Ly
 ar
 bB
 bH
@@ -2154,7 +2154,7 @@ bU
 bU
 bU
 bU
-Vf
+vn
 MZ
 "}
 (20,1,1) = {"
@@ -2181,7 +2181,7 @@ ar
 Cv
 bR
 HV
-Tu
+Wl
 Cl
 Cl
 Cl
@@ -2201,7 +2201,7 @@ ar
 ar
 ar
 ar
-ch
+JH
 ar
 ar
 ar
@@ -2280,7 +2280,7 @@ VO
 og
 wY
 wY
-Hn
+bD
 Fr
 yc
 Bp
@@ -2288,7 +2288,7 @@ Bp
 (24,1,1) = {"
 aa
 lL
-nw
+du
 TL
 aC
 aC
@@ -2327,12 +2327,12 @@ aC
 aC
 aj
 EE
-Rk
+NF
 RB
 aj
 tB
 aC
-OP
+gy
 MZ
 ar
 ar
@@ -2355,7 +2355,7 @@ MZ
 aj
 hF
 aj
-bY
+gh
 aC
 aj
 aj
@@ -2372,13 +2372,13 @@ aA
 aA
 ZN
 wY
-ZZ
+qr
 wY
 gC
 oF
 oU
 wY
-tf
+Jp
 MZ
 "}
 (27,1,1) = {"
@@ -2405,7 +2405,7 @@ Sn
 qF
 BE
 yc
-kb
+lI
 gC
 wY
 kg
@@ -2417,11 +2417,11 @@ MZ
 aa
 lL
 Md
-QF
+AZ
 aj
 aj
 aj
-BL
+Lx
 aC
 aC
 aC
@@ -2456,17 +2456,17 @@ Zi
 BE
 yc
 aC
-Rk
+NF
 aC
 aC
 aC
-Lp
-qT
+Ya
+fm
 aC
 aC
 MZ
 et
-VL
+yv
 aj
 Fr
 BE
