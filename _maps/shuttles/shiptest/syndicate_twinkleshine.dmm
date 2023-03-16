@@ -15,6 +15,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/opaque/syndiered/half,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "ae" = (
@@ -81,6 +82,10 @@
 	pixel_x = -3;
 	pixel_y = 3
 	},
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -26
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew/dorm)
 "aD" = (
@@ -121,6 +126,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/holopad/emergency/command,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "bd" = (
@@ -130,6 +136,7 @@
 /obj/effect/turf_decal/syndicateemblem/bottom/right{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "bf" = (
@@ -154,9 +161,10 @@
 	pixel_y = 7;
 	pixel_x = 9
 	},
-/obj/item/reagent_containers/food/snacks/donut/choco{
-	pixel_y = -1;
-	pixel_x = -4
+/obj/item/reagent_containers/food/snacks/donut/berry{
+	pixel_x = -4;
+	color = "#730622";
+	name = "suspicious red donut"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -184,6 +192,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/techfloor,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "bM" = (
@@ -216,14 +225,14 @@
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "bP" = (
-/obj/structure/table/wood,
 /obj/machinery/light,
-/obj/item/folder/syndicate/red{
-	pixel_x = 6;
-	pixel_y = 1
+/obj/structure/table,
+/obj/structure/bedsheetbin,
+/obj/effect/turf_decal/siding/wood/end{
+	dir = 4
 	},
-/turf/open/floor/plasteel/tech,
-/area/ship/crew/office)
+/turf/open/floor/wood/walnut,
+/area/ship/crew/janitor)
 "bQ" = (
 /obj/effect/turf_decal/corner/opaque/orange{
 	dir = 10
@@ -266,6 +275,7 @@
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 5
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "ck" = (
@@ -279,6 +289,19 @@
 /obj/item/trash/syndi_cakes,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
+"cq" = (
+/obj/structure/catwalk/over,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = 26
+	},
+/turf/open/floor/plating,
+/area/ship/hallway/central)
 "cr" = (
 /obj/structure/extinguisher_cabinet{
 	pixel_y = -28
@@ -418,6 +441,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "dl" = (
@@ -459,9 +483,6 @@
 /obj/item/card/id/captains_spare{
 	desc = "A stolen NanoTrasen spare captain ID."
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 10
-	},
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/crew/dorm/dormtwo)
 "do" = (
@@ -492,9 +513,15 @@
 /obj/structure/table/reinforced,
 /obj/machinery/door/window/westright,
 /obj/machinery/door/window/eastright{
-	req_access = list(150,3)
+	req_access = list(3,150)
 	},
 /obj/machinery/recharger,
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security)
 "dC" = (
@@ -510,6 +537,7 @@
 /obj/item/mecha_parts/mecha_equipment/thrusters/ion{
 	pixel_x = -10
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "dE" = (
@@ -539,6 +567,7 @@
 	dir = 4;
 	pixel_x = -32
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "dO" = (
@@ -656,6 +685,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "eF" = (
@@ -967,6 +997,9 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "gX" = (
@@ -974,7 +1007,7 @@
 	name = "Briefing"
 	},
 /turf/open/floor/plasteel/tech,
-/area/ship/crew/office)
+/area/ship/crew/janitor)
 "gZ" = (
 /obj/effect/turf_decal/corner/opaque/syndiered/border{
 	dir = 4
@@ -1046,6 +1079,7 @@
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "hw" = (
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "hE" = (
@@ -1099,14 +1133,17 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "hW" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
 	},
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical/surgery)
 "hY" = (
@@ -1142,6 +1179,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "ig" = (
@@ -1165,6 +1203,7 @@
 /obj/machinery/jukebox/boombox{
 	pixel_x = -10
 	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
 "ii" = (
@@ -1202,9 +1241,6 @@
 /obj/structure/table/wood,
 /obj/item/paper_bin/carbon,
 /obj/item/pen/fountain/captain,
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 4
-	},
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/crew/dorm/dormtwo)
 "iz" = (
@@ -1270,7 +1306,16 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/structure/reagent_dispensers/water_cooler,
+/obj/structure/table,
+/obj/item/toy/plush/lizardplushie{
+	pixel_x = 6;
+	pixel_y = 4;
+	name = "supermatter supervisor lizard plushie";
+	desc = "An adorable stuffed toy that resembles a lizard, tasked with helping the engineers maintain the supermatter."
+	},
+/obj/item/reagent_containers/food/drinks/mug/coco{
+	pixel_x = -6
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
 "iW" = (
@@ -1300,6 +1345,17 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
+"jh" = (
+/obj/effect/turf_decal/corner/opaque/syndiered{
+	dir = 6
+	},
+/obj/machinery/shieldgen{
+	anchored = 1;
+	req_access = list(150)
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/plastitanium,
+/area/ship/bridge)
 "ji" = (
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
@@ -1309,6 +1365,12 @@
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/security/armory)
+"jk" = (
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/crew/janitor)
 "jr" = (
 /obj/machinery/computer/atmos_control/tank/nitrogen_tank{
 	dir = 8
@@ -1339,8 +1401,10 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "jz" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical/surgery)
 "jA" = (
@@ -1421,6 +1485,14 @@
 /obj/machinery/light,
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
+"kf" = (
+/obj/effect/turf_decal/corner/opaque/syndiered{
+	dir = 10
+	},
+/obj/machinery/light,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/tech,
+/area/ship/hallway/central)
 "ks" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -1500,6 +1572,7 @@
 /obj/effect/turf_decal/syndicateemblem/top/left{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "lg" = (
@@ -1716,6 +1789,7 @@
 /obj/effect/turf_decal/syndicateemblem/top/middle{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "mB" = (
@@ -1978,6 +2052,10 @@
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered{
 	dir = 4
 	},
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = 26
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/security)
 "oJ" = (
@@ -2185,8 +2263,16 @@
 /obj/effect/turf_decal/syndicateemblem/bottom/left{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
+"pO" = (
+/obj/effect/turf_decal/corner/opaque/syndiered{
+	dir = 10
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/tech,
+/area/ship/hallway/central)
 "pR" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -2388,15 +2474,22 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
+"ro" = (
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ship/crew/janitor)
 "rq" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 1
 	},
-/obj/item/mop,
-/obj/structure/mopbucket,
-/obj/item/reagent_containers/glass/bucket,
+/obj/machinery/firealarm{
+	pixel_y = 26
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
 "rr" = (
@@ -2445,6 +2538,9 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/industrial/warning,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "sf" = (
@@ -2605,7 +2701,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
 	},
-/obj/structure/reagent_dispensers/watertank,
+/obj/structure/reagent_dispensers/water_cooler,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
 "sW" = (
@@ -2697,6 +2793,9 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
 /turf/open/floor/plating,
 /area/ship/hallway/central)
 "tG" = (
@@ -2723,11 +2822,13 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/corner/opaque/syndiered/full,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "tU" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/drinks/shaker,
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
 "tZ" = (
@@ -2769,8 +2870,26 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/dorm/dormtwo)
+"uK" = (
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled/line{
+	dir = 1
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/medical)
 "uT" = (
 /obj/structure/table,
 /obj/item/reagent_containers/food/drinks/bottle/rum{
@@ -2842,6 +2961,15 @@
 	rad_insulation = 0.1
 	},
 /area/ship/engineering/engine)
+"vy" = (
+/obj/effect/turf_decal/corner/opaque/syndiered{
+	dir = 9
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/hallway/central)
 "vA" = (
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 9
@@ -2974,6 +3102,7 @@
 /obj/structure/table/wood,
 /obj/effect/spawner/lootdrop/donkpockets,
 /obj/effect/spawner/lootdrop/donkpockets,
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
 "wA" = (
@@ -3035,6 +3164,12 @@
 	dir = 8
 	},
 /obj/machinery/door/airlock/public/glass,
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew/dorm)
 "wP" = (
@@ -3126,8 +3261,6 @@
 /area/ship/engineering/engine)
 "xa" = (
 /obj/structure/table/wood,
-/obj/item/documents/syndicate,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/crew/dorm/dormtwo)
 "xe" = (
@@ -3258,7 +3391,8 @@
 /obj/structure/table,
 /obj/item/reagent_containers/food/snacks/burger/red{
 	name = "suspicious red burger";
-	desc = "A suspicious looking burger."
+	desc = "A suspicious looking burger.";
+	color = "#730622"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
@@ -3305,6 +3439,9 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 8
 	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "yg" = (
@@ -3315,6 +3452,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "yn" = (
@@ -3384,9 +3522,17 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
 "yM" = (
-/obj/structure/table/wood,
-/turf/open/floor/plasteel/tech,
-/area/ship/crew/office)
+/obj/structure/reagent_dispensers/watertank,
+/obj/item/mop,
+/obj/item/reagent_containers/glass/bucket,
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 10
+	},
+/turf/open/floor/wood/walnut,
+/area/ship/crew/janitor)
 "yN" = (
 /obj/structure/sign/poster/contraband/syndicate_recruitment{
 	pixel_x = -32
@@ -3503,6 +3649,13 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
+"zy" = (
+/obj/effect/turf_decal/corner/opaque/syndiered{
+	dir = 9
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/plastitanium,
+/area/ship/bridge)
 "zD" = (
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ship/crew/dorm)
@@ -3614,6 +3767,7 @@
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "Ap" = (
@@ -3633,8 +3787,11 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 5
+	dir = 4
 	},
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/crew/dorm/dormtwo)
@@ -3699,6 +3856,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "Bq" = (
@@ -3715,6 +3873,7 @@
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 10
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "BB" = (
@@ -3805,6 +3964,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "BV" = (
@@ -4135,6 +4295,10 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
+"EJ" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/plastitanium,
+/area/ship/bridge)
 "EN" = (
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ship/hallway/central)
@@ -4255,6 +4419,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Fr" = (
@@ -4294,6 +4459,7 @@
 "Fu" = (
 /obj/effect/turf_decal/corner/opaque/syndiered/three_quarters,
 /obj/item/kirbyplants/random,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "FD" = (
@@ -4316,6 +4482,7 @@
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "FV" = (
@@ -4423,9 +4590,6 @@
 /turf/open/floor/plating,
 /area/ship/external)
 "Gs" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 8
-	},
 /obj/structure/table,
 /obj/effect/turf_decal/corner/opaque/syndiered/full,
 /obj/item/roller{
@@ -4448,6 +4612,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Gx" = (
@@ -4561,8 +4726,8 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "GZ" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 5
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/medical/surgery)
@@ -4769,6 +4934,7 @@
 /obj/effect/turf_decal/rechargefloor,
 /obj/mecha/combat/gygax/dark,
 /obj/machinery/light,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "Im" = (
@@ -4782,6 +4948,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "Ir" = (
@@ -4791,6 +4958,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-8"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Iw" = (
@@ -4822,6 +4990,18 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security)
+"ID" = (
+/obj/structure/catwalk/over,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plating,
+/area/ship/hallway/central)
 "IE" = (
 /obj/machinery/atmospherics/pipe/simple/orange/visible,
 /turf/closed/wall/r_wall/syndicate/nodiagonal{
@@ -4886,6 +5066,9 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line,
+/obj/machinery/firealarm{
+	pixel_y = 26
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "Jh" = (
@@ -4956,12 +5139,12 @@
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line{
 	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "JH" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 8
-	},
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
@@ -4996,6 +5179,7 @@
 /obj/structure/sign/poster/official/no_erp{
 	pixel_x = 32
 	},
+/obj/item/storage/box/syndie_kit/sleepytime,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/crew/dorm)
 "Ke" = (
@@ -5109,12 +5293,6 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 10
-	},
 /obj/machinery/button/door{
 	pixel_y = -2;
 	name = "Surgery Shutters";
@@ -5122,6 +5300,10 @@
 	pixel_x = 22;
 	dir = 8
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/dark,
 /area/ship/medical/surgery)
 "KA" = (
@@ -5132,6 +5314,10 @@
 	},
 /obj/machinery/door/airlock/hatch{
 	name = "Cargo Bay"
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
 	},
 /turf/open/floor/pod/dark,
 /area/ship/cargo)
@@ -5172,6 +5358,7 @@
 	pixel_y = -3;
 	pixel_x = 9
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "KF" = (
@@ -5234,6 +5421,10 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/pod/dark,
 /area/ship/cargo)
 "KU" = (
@@ -5253,6 +5444,7 @@
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 10
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Ld" = (
@@ -5607,15 +5799,13 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "On" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 5
-	},
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line{
 	dir = 6
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "Op" = (
@@ -5653,8 +5843,16 @@
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "Ox" = (
-/turf/open/floor/plasteel/tech,
-/area/ship/crew/office)
+/obj/structure/rack,
+/obj/item/storage/bag/trash,
+/obj/item/storage/bag/trash,
+/obj/item/soap/syndie,
+/obj/item/soap/syndie,
+/obj/effect/turf_decal/siding/wood/end{
+	dir = 1
+	},
+/turf/open/floor/wood/walnut,
+/area/ship/crew/janitor)
 "Oz" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -5669,6 +5867,13 @@
 	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
+"OK" = (
+/obj/effect/turf_decal/corner/opaque/syndiered{
+	dir = 6
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/plastitanium,
+/area/ship/bridge)
 "ON" = (
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 9
@@ -5678,6 +5883,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
@@ -5790,6 +5998,7 @@
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "PB" = (
@@ -6000,6 +6209,7 @@
 /obj/effect/turf_decal/corner/opaque/syndiered/half{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "QY" = (
@@ -6068,6 +6278,11 @@
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/security/armory)
+"Ry" = (
+/obj/structure/cable/yellow,
+/obj/machinery/power/apc/auto_name/east,
+/turf/open/floor/plasteel/dark,
+/area/ship/crew/janitor)
 "RA" = (
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 10
@@ -6076,6 +6291,7 @@
 	dir = 1
 	},
 /obj/machinery/light,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "RB" = (
@@ -6220,6 +6436,7 @@
 /obj/item/pizzabox/pineapple{
 	pixel_y = 20
 	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
 "SA" = (
@@ -6241,6 +6458,7 @@
 	pixel_y = 5;
 	pixel_x = -2
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "SI" = (
@@ -6403,6 +6621,16 @@
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/security/armory)
+"TI" = (
+/obj/machinery/holopad/emergency/janitor,
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/wood/walnut,
+/area/ship/crew/janitor)
 "TM" = (
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
@@ -6585,6 +6813,7 @@
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 10
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Vk" = (
@@ -6676,6 +6905,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "VM" = (
@@ -6721,6 +6951,12 @@
 /turf/open/floor/plating,
 /area/ship/hallway/central)
 "Wj" = (
+/obj/item/storage/secure/safe/intel{
+	pixel_x = -32
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
+	},
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/crew/dorm/dormtwo)
 "Wm" = (
@@ -6948,6 +7184,7 @@
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack/breaching{
 	pixel_y = 13
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "XG" = (
@@ -7054,6 +7291,7 @@
 /obj/effect/turf_decal/corner/opaque/syndiered/three_quarters{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "Yp" = (
@@ -7198,6 +7436,7 @@
 /obj/effect/turf_decal/syndicateemblem/bottom/middle{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "Zr" = (
@@ -7249,10 +7488,11 @@
 /obj/structure/chair/comfy/black{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 10
+/obj/machinery/power/apc/auto_name/east,
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
 	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/crew/dorm/dormtwo)
 "ZH" = (
@@ -7994,9 +8234,9 @@ Wj
 Xg
 QF
 Ox
-Ox
+TI
 yM
-RC
+ro
 FD
 PN
 xv
@@ -8028,10 +8268,10 @@ ZE
 Ax
 QI
 QF
-Ox
-yM
+jk
+Ry
 bP
-RC
+ro
 VH
 oi
 xv
@@ -8064,9 +8304,9 @@ uE
 QF
 QF
 gX
-RC
-RC
-RC
+ro
+ro
+ro
 KJ
 oi
 xv
@@ -8098,7 +8338,7 @@ xP
 ON
 xP
 xP
-xP
+vy
 xP
 xP
 oX
@@ -8128,12 +8368,12 @@ Nw
 er
 kd
 gW
-kd
+cq
 kd
 ts
 kd
 kd
-kd
+ID
 kd
 kd
 ea
@@ -8231,7 +8471,7 @@ No
 aA
 zD
 tH
-lw
+pO
 RC
 qN
 im
@@ -8266,7 +8506,7 @@ Nr
 Fi
 zD
 Ld
-lw
+pO
 RC
 pm
 qT
@@ -8520,7 +8760,7 @@ Jf
 HF
 gq
 Gs
-Ap
+uK
 cr
 mQ
 mQ
@@ -8545,7 +8785,7 @@ Ya
 Yj
 RW
 gi
-lw
+pO
 Sc
 KI
 pp
@@ -8580,7 +8820,7 @@ zk
 XL
 RW
 gi
-YT
+kf
 Sc
 hb
 jz
@@ -8615,7 +8855,7 @@ xz
 fU
 KJ
 gi
-lw
+pO
 Sc
 hb
 hW
@@ -8759,7 +8999,7 @@ RA
 SL
 Im
 dL
-kE
+zy
 FS
 pI
 Zk
@@ -8829,14 +9069,14 @@ SL
 SL
 Tl
 vL
-BP
+jh
 Ao
 kV
 mx
 WZ
 tZ
 BP
-vL
+OK
 Fu
 SL
 SL
@@ -8866,7 +9106,7 @@ QE
 QE
 QE
 cj
-YF
+EJ
 tS
 YF
 Sd
