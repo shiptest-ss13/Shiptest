@@ -171,6 +171,7 @@
 /obj/effect/turf_decal/corner/opaque/green{
 	dir = 1
 	},
+/obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "bl" = (
@@ -205,9 +206,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 9
 	},
-/obj/structure/sign/poster/official/work_for_a_future{
-	pixel_y = -32
-	},
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "bF" = (
@@ -1326,6 +1325,9 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/corner/opaque/blue,
+/obj/structure/sign/poster/official/help_others{
+	pixel_y = -32
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "jn" = (
@@ -2572,7 +2574,10 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/corner/transparent/neutral,
-/obj/machinery/airalarm/directional/south,
+/obj/structure/closet/emcloset/wall{
+	dir = 1;
+	pixel_y = -32
+	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "qw" = (
@@ -3099,7 +3104,9 @@
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
-/obj/machinery/airalarm/directional/north,
+/obj/structure/closet/emcloset/wall{
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "tO" = (
@@ -4317,6 +4324,7 @@
 	dir = 4;
 	pixel_x = -25
 	},
+/obj/structure/closet/emcloset/anchored,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "Bp" = (
@@ -6260,6 +6268,9 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_y = -32
 	},
+/obj/structure/sign/poster/official/miners{
+	pixel_x = 32
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "Os" = (
@@ -7035,6 +7046,9 @@
 	},
 /obj/structure/window/reinforced{
 	dir = 4
+	},
+/obj/structure/sign/poster/official/work_for_a_future{
+	pixel_y = -32
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/cryo)
