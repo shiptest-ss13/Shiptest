@@ -148,7 +148,6 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/layer_manifold,
-/obj/structure/fans/tiny,
 /obj/machinery/door/airlock/external{
 	name = "Hangar Airlock"
 	},
@@ -230,8 +229,8 @@
 /area/ship/engineering)
 "gh" = (
 /obj/effect/turf_decal/ntspaceworks_big/four,
-/turf/open/floor/plating/airless,
-/area/ship/external)
+/turf/open/floor/plating,
+/area/ship/construction)
 "gr" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/corner/opaque/yellow/three_quarters{
@@ -269,8 +268,8 @@
 /area/ship/external)
 "gK" = (
 /obj/effect/turf_decal/ntspaceworks_big/six,
-/turf/open/floor/plating/airless,
-/area/ship/external)
+/turf/open/floor/plating,
+/area/ship/construction)
 "he" = (
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
@@ -550,15 +549,15 @@
 /area/ship/engineering)
 "lg" = (
 /obj/effect/turf_decal/number/five,
-/turf/open/floor/plating/airless,
-/area/ship/external)
+/obj/effect/turf_decal/industrial/warning,
+/turf/open/floor/plating,
+/area/ship/construction)
 "lh" = (
-/obj/machinery/door/poddoor/preopen{
+/obj/machinery/door/poddoor{
 	id = "mining_ship_starboard"
 	},
-/obj/effect/turf_decal/industrial/warning,
-/turf/open/floor/plating/airless,
-/area/ship/external)
+/turf/open/floor/plating,
+/area/ship/construction)
 "lp" = (
 /obj/structure/rack,
 /obj/item/storage/toolbox/electrical{
@@ -595,8 +594,8 @@
 /area/ship/engineering)
 "lu" = (
 /obj/effect/turf_decal/ntspaceworks_big/eight,
-/turf/open/floor/plating/airless,
-/area/ship/external)
+/turf/open/floor/plating,
+/area/ship/construction)
 "lv" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -612,8 +611,8 @@
 /area/ship/crew)
 "mc" = (
 /obj/effect/turf_decal/ntspaceworks_big/seven,
-/turf/open/floor/plating/airless,
-/area/ship/external)
+/turf/open/floor/plating,
+/area/ship/construction)
 "ms" = (
 /obj/machinery/door/poddoor/preopen{
 	id = "mining_ship_blast"
@@ -759,8 +758,8 @@
 /area/ship/crew)
 "qp" = (
 /obj/effect/turf_decal/ntspaceworks_big/five,
-/turf/open/floor/plating/airless,
-/area/ship/external)
+/turf/open/floor/plating,
+/area/ship/construction)
 "qv" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1168,10 +1167,13 @@
 /obj/effect/turf_decal/corner/opaque/yellow/border,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
+"yO" = (
+/turf/open/floor/plating,
+/area/ship/construction)
 "yT" = (
 /obj/effect/turf_decal/ntspaceworks_big/three,
-/turf/open/floor/plating/airless,
-/area/ship/external)
+/turf/open/floor/plating,
+/area/ship/construction)
 "za" = (
 /obj/machinery/airalarm/directional/west,
 /obj/effect/turf_decal/corner/opaque/yellow/half{
@@ -1300,8 +1302,9 @@
 /area/ship/engineering)
 "AP" = (
 /obj/effect/turf_decal/number/zero,
-/turf/open/floor/plating/airless,
-/area/ship/external)
+/obj/effect/turf_decal/industrial/warning,
+/turf/open/floor/plating,
+/area/ship/construction)
 "AQ" = (
 /obj/item/kirbyplants/random,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -1402,8 +1405,8 @@
 	name = "Mining Ship: Common Mining Dock";
 	width = 7
 	},
-/turf/open/floor/plating/airless,
-/area/ship/external)
+/turf/open/floor/plating,
+/area/ship/construction)
 "Ex" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
@@ -1454,8 +1457,11 @@
 /area/ship/crew)
 "FC" = (
 /obj/effect/turf_decal/number/one,
-/turf/open/floor/plating/airless,
-/area/ship/external)
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ship/construction)
 "FN" = (
 /obj/item/kirbyplants/random,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -1817,6 +1823,10 @@
 /obj/effect/turf_decal/techfloor,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
+"Nn" = (
+/obj/effect/turf_decal/industrial/warning,
+/turf/open/floor/plating,
+/area/ship/construction)
 "Nw" = (
 /obj/machinery/status_display/shuttle,
 /turf/closed/wall,
@@ -1943,8 +1953,9 @@
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "Rr" = (
-/turf/open/floor/plating/airless,
-/area/ship/external)
+/obj/effect/turf_decal/industrial/warning/corner,
+/turf/open/floor/plating,
+/area/ship/construction)
 "RT" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 4
@@ -2041,12 +2052,12 @@
 /area/ship/bridge)
 "Uu" = (
 /obj/effect/turf_decal/ntspaceworks_big/one,
-/turf/open/floor/plating/airless,
-/area/ship/external)
+/turf/open/floor/plating,
+/area/ship/construction)
 "UD" = (
 /obj/effect/turf_decal/ntspaceworks_big/two,
-/turf/open/floor/plating/airless,
-/area/ship/external)
+/turf/open/floor/plating,
+/area/ship/construction)
 "UY" = (
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/structure/closet/crate,
@@ -2197,7 +2208,7 @@
 /area/ship/crew)
 "Yw" = (
 /turf/closed/wall/r_wall,
-/area/ship/external)
+/area/ship/construction)
 "YJ" = (
 /turf/closed/wall/r_wall,
 /area/ship/cargo)
@@ -2400,10 +2411,10 @@ NY
 yu
 iZ
 bj
-Rr
-Rr
-Rr
-Rr
+yO
+yO
+yO
+yO
 Rr
 Yw
 "}
@@ -2419,11 +2430,11 @@ Sg
 AD
 Hf
 bj
-Rr
-Rr
-Rr
-Rr
-Rr
+yO
+yO
+yO
+yO
+Nn
 lh
 "}
 (11,1,1) = {"
@@ -2438,11 +2449,11 @@ aI
 TP
 yH
 bj
-Rr
-Rr
-Rr
-Rr
-Rr
+yO
+yO
+yO
+yO
+Nn
 lh
 "}
 (12,1,1) = {"
@@ -2457,11 +2468,11 @@ or
 lv
 sD
 Mb
-Rr
-Rr
-Rr
-Rr
-Rr
+yO
+yO
+yO
+yO
+Nn
 lh
 "}
 (13,1,1) = {"
@@ -2477,10 +2488,10 @@ nJ
 sg
 ef
 DX
-Rr
-Rr
-Rr
-Rr
+yO
+yO
+yO
+Nn
 lh
 "}
 (14,1,1) = {"
@@ -2495,11 +2506,11 @@ or
 lv
 sD
 Mb
-Rr
-Rr
+yO
+yO
 Uu
 qp
-Rr
+Nn
 lh
 "}
 (15,1,1) = {"
@@ -2514,8 +2525,8 @@ IZ
 lv
 xz
 bj
-Rr
-Rr
+yO
+yO
 UD
 gK
 lg
@@ -2533,8 +2544,8 @@ Sg
 lv
 eu
 bj
-Rr
-Rr
+yO
+yO
 yT
 mc
 AP
@@ -2552,8 +2563,8 @@ Sg
 lv
 Yf
 bj
-Rr
-Rr
+yO
+yO
 gh
 lu
 FC
