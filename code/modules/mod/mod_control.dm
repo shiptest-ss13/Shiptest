@@ -381,6 +381,11 @@
 	else if(open && attacking_item.GetID())
 		update_access(user, attacking_item.GetID())
 		return TRUE
+	else if(open && istype(attacking_item, /obj/item/stock_parts/cell) && istype(core, /obj/item/mod/core/standard))
+		var/obj/item/mod/core/standard/attacked_core = core
+		if(!attacked_core.cell)
+			attacked_core.install_cell(attacking_item)
+		return TRUE
 	return ..()
 
 /obj/item/mod/control/get_cell()
