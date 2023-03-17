@@ -712,7 +712,15 @@
 /area/ship/engineering/engine)
 "jG" = (
 /obj/structure/flora/ausbushes/ppflowers,
-/obj/structure/flora/tree/chapel/srm,
+/obj/structure/flora/tree/jungle{
+	icon_state = "churchtree";
+	icon = 'icons/obj/flora/chapeltree.dmi';
+	randomize_icon = 0;
+	pixel_x = -16;
+	pixel_y = 0;
+	desc = "A sturdy oak tree imported directly from the homeworld of the Montagne who runs the ship it resides on. It is planted in soil from the same place.";
+	name = "Montagne's Oak"
+	},
 /turf/open/floor/grass{
 	icon_state = "junglegrass"
 	},
