@@ -1206,7 +1206,9 @@
 /obj/effect/turf_decal/stoneborder{
 	dir = 1
 	},
-/turf/open/space/basic,
+/turf/open/floor/plating{
+	icon_state = "greenerdirt"
+	},
 /area/ship/crew/toilet)
 "sD" = (
 /obj/structure/cable/orange{
@@ -1556,7 +1558,9 @@
 /obj/effect/turf_decal/stoneborder{
 	dir = 1
 	},
-/turf/open/space/basic,
+/turf/open/floor/plating{
+	icon_state = "greenerdirt"
+	},
 /area/ship/crew/toilet)
 "yZ" = (
 /obj/effect/spawner/structure/window/reinforced,
