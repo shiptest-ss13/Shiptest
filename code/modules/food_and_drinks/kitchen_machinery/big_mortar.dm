@@ -157,3 +157,11 @@
 #undef LARGE_MORTAR_STAMINA_MINIMUM
 #undef LARGE_MORTAR_STAMINA_USE
 #undef MORTAR_CONTAINER
+
+GLOBAL_LIST_INIT(big_mortar_recipe, list(
+	new/datum/stack_recipe("large wooden mortar", /obj/structure/large_mortar, 10, time = 3 SECONDS, one_per_turf = TRUE, on_floor = TRUE),
+))
+
+/obj/item/stack/sheet/mineral/wood/get_main_recipes()
+	. = ..()
+	. += GLOB.big_mortar_recipe

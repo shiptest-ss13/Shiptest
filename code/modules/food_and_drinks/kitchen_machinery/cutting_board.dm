@@ -142,3 +142,11 @@
 	return ..()
 
 #undef GET_RECIPE
+
+GLOBAL_LIST_INIT(cutting_board_recipe, list(
+	new/datum/stack_recipe("wooden cutting board", /obj/item/cutting_board, 5, time = 2 SECONDS),
+))
+
+/obj/item/stack/sheet/mineral/wood/get_main_recipes()
+	. = ..()
+	. += GLOB.cutting_board_recipe
