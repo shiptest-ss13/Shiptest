@@ -26,7 +26,7 @@
 	modstorage.max_items = max_items
 	SEND_SIGNAL(src, COMSIG_TRY_STORAGE_SET_LOCKSTATE, FALSE)
 
-/obj/item/mod/module/storage/on_uninstall()
+/obj/item/mod/module/storage/on_uninstall(deleting = FALSE)
 	var/datum/component/storage/modstorage = mod.GetComponent(/datum/component/storage)
 	storage.slaves -= modstorage
 	qdel(modstorage)
