@@ -150,9 +150,6 @@
 	///Default Y pixel offset
 	var/base_pixel_y
 
-	/// the datum handler for our contents - see create_storage() for creation method
-	var/datum/storage/atom_storage
-
 /**
  * Called when an atom is created in byond (built in engine proc)
  *
@@ -310,30 +307,6 @@
 		SSicon_smooth.remove_from_queues(src)
 
 	return ..()
-
-/atom/proc/create_storage(
-	max_slots,
-	max_specific_storage,
-	max_total_storage,
-	numerical_stacking = FALSE,
-	allow_quick_gather = FALSE,
-	allow_quick_empty = FALSE,
-	collection_mode = COLLECT_ONE,
-	attack_hand_interact = TRUE,
-	list/canhold,
-	list/canthold,
-	type = /datum/storage,
-)
-
-	if(atom_storage)
-		QDEL_NULL(atom_storage)
-
-	atom_storage = new type(src, max_slots, max_specific_storage, max_total_storage, numerical_stacking, allow_quick_gather, collection_mode, attack_hand_interact)
-
-	if(canhold || canthold)
-		atom_storage.set_holdable(canhold, canthold)
-
-	return atom_storage
 
 /atom/proc/handle_ricochet(obj/projectile/P)
 	var/turf/p_turf = get_turf(P)
