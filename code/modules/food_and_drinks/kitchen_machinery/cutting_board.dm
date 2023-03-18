@@ -36,7 +36,7 @@
 		for(var/machine_type in typesof(recipe.required_machine))
 			LAZYADD(processor_inputs[machine_type], typecache)
 
-/obj/item/cutting_board/update_appearance()
+/obj/item/cutting_board/update_icon()
 	. = ..()
 	cut_overlays()
 	if(!length(contents))
@@ -71,6 +71,7 @@
 
 	for(var/obj/target_item as anything in contents)
 		target_item.forceMove(get_turf(src))
+	update_icon()
 
 /obj/item/cutting_board/wrench_act(mob/living/user, obj/item/I)
 	. = ..()
@@ -101,7 +102,7 @@
 	processed_thing.reagents.copy_to(new_food_item, processed_thing.reagents.total_volume)//, multiplier = 1 / food_multiplier)
 
 	qdel(processed_thing)
-	update_appearance()
+	update_icon()
 
 /obj/item/cutting_board/attackby(obj/item/attacking_item, mob/living/user, params)
 	if(user.a_intent == INTENT_HARM)
@@ -134,7 +135,7 @@
 
 		attacking_item.forceMove(src)
 		balloon_alert(user, "placed [attacking_item] on board")
-		update_appearance()
+		update_icon()
 		return
 
 	//if(IS_EDIBLE(attacking_item)) //We may have failed but the user wants some feedback on why they can't put x food item on the board
