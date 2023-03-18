@@ -17,13 +17,13 @@
 	. = ..()
 	if(!.)
 		return
-	ADD_TRAIT(mod.wearer, TRAIT_REAGENT_SCANNER, MOD_TRAIT)
+	mod.helmet.clothing_flags |= SCAN_REAGENTS
 
 /obj/item/mod/module/reagent_scanner/on_deactivation(display_message = TRUE, deleting = FALSE)
 	. = ..()
 	if(!.)
 		return
-	REMOVE_TRAIT(mod.wearer, TRAIT_REAGENT_SCANNER, MOD_TRAIT)
+	mod.helmet.clothing_flags &= ~SCAN_REAGENTS
 
 /obj/item/mod/module/reagent_scanner/advanced
 	name = "MOD advanced reagent scanner module"
@@ -35,14 +35,14 @@
 	. = ..()
 	if(!.)
 		return
-	ADD_TRAIT(mod.wearer, TRAIT_REAGENT_SCANNER, MOD_TRAIT)
+	mod.helmet.clothing_flags |= SCAN_REAGENTS
 	RegisterSignal(SSdcs, COMSIG_GLOB_EXPLOSION, PROC_REF(sense_explosion))
 
 /obj/item/mod/module/reagent_scanner/advanced/on_deactivation(display_message = TRUE, deleting = FALSE)
 	. = ..()
 	if(!.)
 		return
-	REMOVE_TRAIT(mod.wearer, TRAIT_REAGENT_SCANNER, MOD_TRAIT)
+	mod.helmet.clothing_flags |= SCAN_REAGENTS
 	UnregisterSignal(SSdcs, COMSIG_GLOB_EXPLOSION)
 
 /obj/item/mod/module/reagent_scanner/advanced/proc/sense_explosion(datum/source, turf/epicenter,
