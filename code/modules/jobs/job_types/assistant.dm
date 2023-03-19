@@ -173,6 +173,11 @@ Assistant
 	implants = list(/obj/item/implant/weapons_auth)
 	id = /obj/item/card/id/syndicate_command/crew_id
 
+	backpack = /obj/item/storage/backpack/security
+	satchel = /obj/item/storage/backpack/satchel/sec
+	duffelbag = /obj/item/storage/backpack/duffelbag/syndie
+	courierbag = /obj/item/storage/backpack/messenger/sec
+
 	box = /obj/item/storage/box/survival/syndie
 
 /datum/outfit/job/assistant/syndicate/sbc/post_equip(mob/living/carbon/human/H)

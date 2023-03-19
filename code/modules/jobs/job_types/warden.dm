@@ -135,6 +135,12 @@
 	shoes = /obj/item/clothing/shoes/combat
 	suit = /obj/item/clothing/suit/armor/vest
 	id = /obj/item/card/id/syndicate_command/lieutenant
+	implants = list(/obj/item/implant/weapons_auth)
+
+	backpack = /obj/item/storage/backpack/security
+	satchel = /obj/item/storage/backpack/satchel/sec
+	duffelbag = /obj/item/storage/backpack/duffelbag/syndie
+	courierbag = /obj/item/storage/backpack/messenger/sec
 
 	box = /obj/item/storage/box/survival/syndie
 
