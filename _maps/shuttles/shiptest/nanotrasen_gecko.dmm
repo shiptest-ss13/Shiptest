@@ -148,6 +148,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/industrial/warning/fulltile,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo/port)
 "bA" = (
@@ -221,7 +222,7 @@
 	},
 /obj/machinery/light/small,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/trimline/opaque/grey/filled/warning{
+/obj/effect/turf_decal/trimline/transparent/white/filled/warning{
 	dir = 8
 	},
 /turf/open/floor/plating,
@@ -284,7 +285,7 @@
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/trimline/opaque/grey/filled/warning,
+/obj/effect/turf_decal/trimline/transparent/white/filled/warning,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "cY" = (
@@ -580,7 +581,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
-/obj/effect/turf_decal/trimline/opaque/grey/filled/warning{
+/obj/effect/turf_decal/trimline/transparent/white/filled/warning{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
@@ -751,7 +752,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
-/obj/effect/turf_decal/trimline/opaque/grey/filled/warning{
+/obj/effect/turf_decal/trimline/transparent/white/filled/warning{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -914,6 +915,7 @@
 	id = "gecko_port"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/industrial/warning/fulltile,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo/port)
 "jb" = (
@@ -930,7 +932,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/railing,
-/obj/effect/turf_decal/trimline/opaque/grey/filled/warning{
+/obj/effect/turf_decal/trimline/transparent/white/filled/warning{
 	dir = 4
 	},
 /turf/open/floor/plating,
@@ -987,7 +989,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
-/obj/effect/turf_decal/trimline/opaque/grey/filled/warning{
+/obj/effect/turf_decal/trimline/transparent/white/filled/warning{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -1302,7 +1304,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
-/obj/effect/turf_decal/trimline/opaque/grey/filled/warning{
+/obj/effect/turf_decal/trimline/transparent/white/filled/warning{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -1319,10 +1321,10 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo/starboard)
 "nE" = (
-/obj/effect/turf_decal/trimline/opaque/black/filled/warning{
+/obj/machinery/airalarm/directional/north,
+/obj/effect/turf_decal/trimline/transparent/white/filled/warning{
 	dir = 4
 	},
-/obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel,
 /area/ship/cargo/starboard)
 "nP" = (
@@ -1375,6 +1377,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/effect/turf_decal/industrial/warning/fulltile,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo/port)
 "os" = (
@@ -1584,7 +1587,7 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "rb" = (
-/obj/effect/turf_decal/trimline/opaque/black/filled/warning{
+/obj/effect/turf_decal/trimline/transparent/white/filled/warning{
 	dir = 4
 	},
 /turf/open/floor/plasteel,
@@ -1685,7 +1688,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
-/obj/effect/turf_decal/trimline/opaque/grey/filled/warning{
+/obj/effect/turf_decal/trimline/transparent/white/filled/warning{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -1700,6 +1703,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/industrial/warning/fulltile,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo/starboard)
 "rF" = (
@@ -1731,7 +1735,7 @@
 /area/ship/cargo/starboard)
 "sm" = (
 /obj/effect/spawner/lootdrop/salvage_50,
-/obj/effect/turf_decal/trimline/opaque/black/filled/warning{
+/obj/effect/turf_decal/trimline/transparent/white/filled/warning{
 	dir = 4
 	},
 /turf/open/floor/plasteel,
@@ -1794,7 +1798,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
-/obj/effect/turf_decal/trimline/opaque/grey/filled/warning{
+/obj/effect/turf_decal/trimline/transparent/white/filled/warning{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
@@ -2531,14 +2535,14 @@
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo/port)
 "AY" = (
-/obj/effect/turf_decal/trimline/opaque/black/filled/warning{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
+	},
+/obj/effect/turf_decal/trimline/transparent/white/filled/warning{
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo/starboard)
@@ -2659,6 +2663,7 @@
 	dir = 8;
 	id = "gecko_starboard_field"
 	},
+/obj/effect/turf_decal/industrial/warning/fulltile,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo/starboard)
 "Ce" = (
@@ -2753,7 +2758,7 @@
 	icon_state = "1-8"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/trimline/opaque/grey/filled/warning{
+/obj/effect/turf_decal/trimline/transparent/white/filled/warning{
 	dir = 1
 	},
 /turf/open/floor/plating,
@@ -2768,7 +2773,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/effect/turf_decal/trimline/opaque/grey/filled/warning{
+/obj/effect/turf_decal/trimline/transparent/white/filled/warning{
 	dir = 4
 	},
 /turf/open/floor/plating,
@@ -3271,6 +3276,7 @@
 	dir = 4;
 	id = "gecko_starboard_field"
 	},
+/obj/effect/turf_decal/industrial/warning/fulltile,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo/starboard)
 "HF" = (
@@ -3599,10 +3605,10 @@
 "Lm" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/salvage_50,
-/obj/effect/turf_decal/trimline/opaque/black/filled/warning{
+/obj/machinery/airalarm/directional/south,
+/obj/effect/turf_decal/trimline/transparent/white/filled/warning{
 	dir = 4
 	},
-/obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel,
 /area/ship/cargo/port)
 "Lo" = (
@@ -3649,7 +3655,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
-/obj/effect/turf_decal/trimline/opaque/grey/filled/warning{
+/obj/effect/turf_decal/trimline/transparent/white/filled/warning{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
@@ -3783,7 +3789,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/turf_decal/trimline/opaque/grey/filled/warning,
+/obj/effect/turf_decal/trimline/transparent/white/filled/warning,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "Ms" = (
@@ -3915,6 +3921,7 @@
 	id = "gecko_starboard"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/industrial/warning/fulltile,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo/starboard)
 "OB" = (
@@ -4029,7 +4036,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/effect/turf_decal/trimline/opaque/black/filled/warning{
+/obj/effect/turf_decal/trimline/transparent/white/filled/warning{
 	dir = 4
 	},
 /turf/open/floor/plasteel,
@@ -4404,6 +4411,7 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "gecko_port"
 	},
+/obj/effect/turf_decal/industrial/warning/fulltile,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo/port)
 "To" = (
@@ -4484,6 +4492,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/effect/turf_decal/industrial/warning/fulltile,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo/port)
 "TZ" = (
@@ -4671,7 +4680,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/trimline/opaque/grey/filled/warning{
+/obj/effect/turf_decal/trimline/transparent/white/filled/warning{
 	dir = 1
 	},
 /turf/open/floor/plating,
@@ -4879,7 +4888,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
-/obj/effect/turf_decal/trimline/opaque/grey/filled/warning{
+/obj/effect/turf_decal/trimline/transparent/white/filled/warning{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
