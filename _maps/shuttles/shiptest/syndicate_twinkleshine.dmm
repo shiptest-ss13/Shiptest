@@ -6,6 +6,10 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
+"ab" = (
+/obj/structure/sign/syndicate,
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ship/engineering/atmospherics)
 "ad" = (
 /obj/machinery/light{
 	dir = 1
@@ -377,14 +381,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
-"cV" = (
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer4,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/light/small{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/hallway/central)
 "cW" = (
 /obj/structure/catwalk/over,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -526,12 +522,6 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security)
-"dz" = (
-/obj/machinery/porta_turret/syndicate/energy{
-	dir = 10
-	},
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
-/area/ship/bridge)
 "dC" = (
 /obj/effect/turf_decal/techfloor,
 /obj/effect/turf_decal/corner/opaque/syndiered/half{
@@ -1013,13 +1003,6 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew/office)
-"gQ" = (
-/obj/machinery/porta_turret/syndicate/energy{
-	dir = 5;
-	faction = list("PlayerSyndicate")
-	},
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
-/area/ship/bridge)
 "gU" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber,
 /turf/open/floor/engine,
@@ -1116,6 +1099,12 @@
 /obj/machinery/atmospherics/pipe/simple/orange/visible,
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
+"hu" = (
+/obj/machinery/porta_turret/syndicate/energy{
+	dir = 10
+	},
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ship/bridge)
 "hw" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
@@ -1994,6 +1983,12 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
+"nW" = (
+/obj/machinery/porta_turret/syndicate/energy{
+	dir = 6
+	},
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ship/bridge)
 "oc" = (
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered{
 	dir = 8
@@ -2009,7 +2004,7 @@
 /area/ship/security)
 "of" = (
 /obj/machinery/porta_turret/syndicate/energy{
-	dir = 6
+	dir = 9
 	},
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ship/bridge)
@@ -2566,12 +2561,6 @@
 	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
-"rF" = (
-/obj/machinery/porta_turret/syndicate/energy{
-	dir = 9
-	},
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
-/area/ship/bridge)
 "rP" = (
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ship/cargo)
@@ -3187,16 +3176,6 @@
 	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
-"wG" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer4{
-	dir = 1
-	},
-/obj/machinery/light/small{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/hallway/central)
 "wH" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable/yellow{
@@ -3388,6 +3367,13 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
+"xp" = (
+/obj/machinery/porta_turret/syndicate/energy{
+	dir = 5;
+	faction = list("PlayerSyndicate")
+	},
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ship/bridge)
 "xq" = (
 /obj/machinery/light,
 /obj/item/trash/cheesie,
@@ -4777,6 +4763,16 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
+"GN" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer4{
+	dir = 1
+	},
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/central)
 "GO" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -4851,10 +4847,6 @@
 	icon_state = "0-4"
 	},
 /turf/open/floor/plating,
-/area/ship/engineering/atmospherics)
-"Hn" = (
-/obj/structure/sign/syndicate,
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ship/engineering/atmospherics)
 "Ht" = (
 /obj/machinery/telecomms/receiver/preset_right{
@@ -5805,6 +5797,20 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security)
+"NF" = (
+/obj/machinery/atmospherics/pipe/layer_manifold/visible{
+	dir = 1
+	},
+/obj/structure/closet/emcloset/wall{
+	dir = 4;
+	pixel_x = -32
+	},
+/obj/item/clothing/suit/space/syndicate,
+/obj/item/clothing/suit/space/syndicate,
+/obj/item/clothing/head/helmet/space/syndicate,
+/obj/item/clothing/head/helmet/space/syndicate,
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/central)
 "NI" = (
 /obj/machinery/atmospherics/pipe/simple/green/visible{
 	dir = 10
@@ -6442,6 +6448,14 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/central)
+"Sb" = (
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/light/small{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "Sc" = (
@@ -7572,20 +7586,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
-"Zy" = (
-/obj/machinery/atmospherics/pipe/layer_manifold/visible{
-	dir = 1
-	},
-/obj/structure/closet/emcloset/wall{
-	dir = 4;
-	pixel_x = -32
-	},
-/obj/item/clothing/suit/space/syndicate,
-/obj/item/clothing/suit/space/syndicate,
-/obj/item/clothing/head/helmet/space/syndicate,
-/obj/item/clothing/head/helmet/space/syndicate,
-/turf/open/floor/plasteel/dark,
-/area/ship/hallway/central)
 "Zz" = (
 /obj/machinery/atmospherics/components/binary/volume_pump{
 	dir = 8
@@ -7716,7 +7716,7 @@ mp
 mp
 mp
 mp
-Hn
+ab
 ae
 LX
 kS
@@ -7736,7 +7736,7 @@ kS
 kS
 LX
 ae
-Hn
+ab
 mp
 mp
 mp
@@ -7782,7 +7782,7 @@ mp
 (4,1,1) = {"
 mp
 mp
-rF
+of
 NO
 iJ
 FV
@@ -7810,7 +7810,7 @@ kS
 NO
 iJ
 FV
-dz
+hu
 mp
 mp
 "}
@@ -8235,7 +8235,7 @@ mp
 mp
 "}
 (17,1,1) = {"
-rF
+of
 sb
 sb
 sb
@@ -8267,7 +8267,7 @@ jA
 ZH
 ZH
 ZH
-dz
+hu
 "}
 (18,1,1) = {"
 sb
@@ -8868,7 +8868,7 @@ mp
 mp
 mp
 mp
-gQ
+xp
 rP
 rP
 rP
@@ -8894,7 +8894,7 @@ ZH
 ZH
 ZH
 ZH
-of
+nW
 mp
 mp
 mp
@@ -8906,7 +8906,7 @@ mp
 mp
 IV
 Ya
-cV
+Sb
 RW
 fU
 pO
@@ -8926,8 +8926,8 @@ mQ
 Gy
 XL
 RW
-wG
-Zy
+GN
+NF
 IV
 mp
 mp
