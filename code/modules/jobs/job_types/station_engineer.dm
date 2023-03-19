@@ -202,7 +202,7 @@
 	back = /obj/item/storage/backpack/industrial
 	belt = /obj/item/storage/belt/utility/syndicate
 	implants = list(/obj/item/implant/weapons_auth)
-	id = /obj/item/card/id/syndicate_command/crew_id
+	id = /obj/item/card/id/syndicate_command/crew_id/engi
 	backpack_contents = list(/obj/item/construction/rcd/combat, /obj/item/rcd_ammo/large)
 
 	box = /obj/item/storage/box/survival/syndie

@@ -163,7 +163,7 @@
 	suit_store =  null
 	ears = /obj/item/radio/headset/syndicate/alt
 	implants = list(/obj/item/implant/weapons_auth)
-	id = /obj/item/card/id/syndicate_command/crew_id
+	id = /obj/item/card/id/syndicate_command/crew_id/med
 
 	box = /obj/item/storage/box/survival/syndie
 
