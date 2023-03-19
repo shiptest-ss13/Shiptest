@@ -323,7 +323,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 		set_light(0)
 		return
 
-	if(cell.charge >= 0)
+	if(cell.charge <= 0)
 		icon_update_needed = FALSE
 		set_light(0)
 		return
