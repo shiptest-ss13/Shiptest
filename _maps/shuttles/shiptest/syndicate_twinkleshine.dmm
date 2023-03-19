@@ -688,6 +688,12 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
+"eE" = (
+/obj/machinery/porta_turret/syndicate/energy{
+	dir = 9
+	},
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ship/bridge)
 "eF" = (
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 10
@@ -759,10 +765,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/cryo)
-"fx" = (
-/obj/structure/sign/syndicate,
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
-/area/ship/engineering/atmospherics)
 "fz" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/belt/utility/syndicate,
@@ -1003,27 +1005,6 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew/office)
-"gN" = (
-/obj/machinery/porta_turret/syndicate/energy{
-	dir = 5;
-	faction = list("PlayerSyndicate")
-	},
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
-/area/ship/bridge)
-"gT" = (
-/obj/machinery/atmospherics/pipe/layer_manifold/visible{
-	dir = 1
-	},
-/obj/structure/closet/emcloset/wall{
-	dir = 4;
-	pixel_x = -32
-	},
-/obj/item/clothing/suit/space/syndicate,
-/obj/item/clothing/head/helmet/space/syndicate,
-/obj/item/clothing/head/helmet/space/syndicate,
-/obj/item/clothing/suit/space/syndicate,
-/turf/open/floor/plasteel/dark,
-/area/ship/hallway/central)
 "gU" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber,
 /turf/open/floor/engine,
@@ -1988,12 +1969,6 @@
 /obj/machinery/vending/snack/random,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
-"nK" = (
-/obj/machinery/porta_turret/syndicate/energy{
-	dir = 9
-	},
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
-/area/ship/bridge)
 "nS" = (
 /obj/machinery/iv_drip,
 /obj/structure/sign/poster/official/moth/epi{
@@ -2869,14 +2844,6 @@
 	icon_state = "2-8"
 	},
 /turf/open/floor/plating,
-/area/ship/hallway/central)
-"tF" = (
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer4,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/light/small{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "tG" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/high_volume/siphon/atmos/air_output{
@@ -3881,6 +3848,10 @@
 	},
 /turf/open/floor/engine/n2,
 /area/ship/engineering/atmospherics)
+"AF" = (
+/obj/structure/sign/syndicate,
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ship/engineering/atmospherics)
 "AK" = (
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered{
 	dir = 6
@@ -3923,12 +3894,6 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/mineral/plastitanium,
-/area/ship/bridge)
-"Bo" = (
-/obj/machinery/porta_turret/syndicate/energy{
-	dir = 6
-	},
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ship/bridge)
 "Bq" = (
 /obj/structure/chair/stool/bar{
@@ -4854,6 +4819,12 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
+"Hl" = (
+/obj/machinery/porta_turret/syndicate/energy{
+	dir = 6
+	},
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ship/bridge)
 "Ht" = (
 /obj/machinery/telecomms/receiver/preset_right{
 	freq_listening = list(1347,1359,1213,1353);
@@ -5269,6 +5240,16 @@
 /obj/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
+"JX" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer4{
+	dir = 1
+	},
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/central)
 "JY" = (
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /obj/structure/bed,
@@ -5572,6 +5553,13 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew/office)
+"Ly" = (
+/obj/machinery/porta_turret/syndicate/energy{
+	dir = 5;
+	faction = list("PlayerSyndicate")
+	},
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ship/bridge)
 "LF" = (
 /obj/effect/turf_decal/atmos/air{
 	dir = 8
@@ -6007,6 +5995,20 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
+"OU" = (
+/obj/machinery/atmospherics/pipe/layer_manifold/visible{
+	dir = 1
+	},
+/obj/structure/closet/emcloset/wall{
+	dir = 4;
+	pixel_x = -32
+	},
+/obj/item/clothing/suit/space/syndicate,
+/obj/item/clothing/head/helmet/space/syndicate,
+/obj/item/clothing/head/helmet/space/syndicate,
+/obj/item/clothing/suit/space/syndicate,
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/central)
 "OY" = (
 /obj/structure/closet/secure_closet/brig/wall{
 	pixel_y = 28;
@@ -6261,16 +6263,6 @@
 	},
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/crew/dorm/dormtwo)
-"QJ" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer4{
-	dir = 1
-	},
-/obj/machinery/light/small{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/hallway/central)
 "QR" = (
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /obj/structure/table/wood,
@@ -6322,6 +6314,14 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
+"QZ" = (
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/central)
 "Rc" = (
 /obj/machinery/atmospherics/pipe/simple/cyan/visible,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -6468,7 +6468,8 @@
 	},
 /mob/living/simple_animal/hostile/carp/cayenne{
 	name = "Cayenne II";
-	desc = "A descendant from the legendary Cayenne, a failed Syndicate experiment in weaponized space carp."
+	desc = "A descendant from the legendary Cayenne, a failed Syndicate experiment in weaponized space carp.";
+	faction = "PlayerSyndicate"
 	},
 /obj/item/toy/nuke,
 /turf/open/floor/mineral/plastitanium,
@@ -6723,12 +6724,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
-"TB" = (
-/obj/machinery/porta_turret/syndicate/energy{
-	dir = 10
-	},
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
-/area/ship/bridge)
 "TC" = (
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered{
 	dir = 4
@@ -7632,6 +7627,12 @@
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/central)
+"ZK" = (
+/obj/machinery/porta_turret/syndicate/energy{
+	dir = 10
+	},
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ship/bridge)
 "ZO" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -7717,7 +7718,7 @@ mp
 mp
 mp
 mp
-fx
+AF
 ae
 LX
 kS
@@ -7737,7 +7738,7 @@ kS
 kS
 LX
 ae
-fx
+AF
 mp
 mp
 mp
@@ -7783,7 +7784,7 @@ mp
 (4,1,1) = {"
 mp
 mp
-nK
+eE
 NO
 iJ
 FV
@@ -7811,7 +7812,7 @@ kS
 NO
 iJ
 FV
-TB
+ZK
 mp
 mp
 "}
@@ -8236,7 +8237,7 @@ mp
 mp
 "}
 (17,1,1) = {"
-nK
+eE
 sb
 sb
 sb
@@ -8268,7 +8269,7 @@ jA
 ZH
 ZH
 ZH
-TB
+ZK
 "}
 (18,1,1) = {"
 sb
@@ -8869,7 +8870,7 @@ mp
 mp
 mp
 mp
-gN
+Ly
 rP
 rP
 rP
@@ -8895,7 +8896,7 @@ ZH
 ZH
 ZH
 ZH
-Bo
+Hl
 mp
 mp
 mp
@@ -8906,8 +8907,8 @@ mp
 mp
 mp
 IV
-gT
-tF
+OU
+QZ
 RW
 fU
 pO
@@ -8927,7 +8928,7 @@ mQ
 Gy
 XL
 RW
-QJ
+JX
 Ya
 IV
 mp
