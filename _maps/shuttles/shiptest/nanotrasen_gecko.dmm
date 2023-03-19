@@ -44,7 +44,8 @@
 /area/ship/maintenance/port)
 "aB" = (
 /obj/machinery/computer/rdconsole{
-	dir = 8
+	dir = 8;
+	icon_state = "computer-right"
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
@@ -365,7 +366,7 @@
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
 	},
-/obj/machinery/computer/crew,
+/obj/machinery/modular_computer/console/preset/id,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "dG" = (
@@ -991,6 +992,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
+"jO" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/catwalk/over,
+/obj/structure/marker_beacon,
+/turf/open/floor/plating,
+/area/ship/external)
 "jQ" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos{
 	dir = 4
@@ -1452,7 +1460,8 @@
 /area/ship/crew/toilet)
 "pw" = (
 /obj/machinery/computer/helm{
-	dir = 8
+	dir = 8;
+	icon_state = "computer-middle"
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
@@ -1867,8 +1876,9 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering/communications)
 "tJ" = (
-/obj/machinery/modular_computer/console/preset/id{
-	dir = 8
+/obj/machinery/computer/communications{
+	dir = 8;
+	icon_state = "computer-left"
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
@@ -1992,8 +2002,8 @@
 /turf/closed/wall,
 /area/ship/crew/toilet)
 "vx" = (
-/obj/effect/decal/fakelattice,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/external)
 "vz" = (
@@ -3094,7 +3104,9 @@
 /turf/open/floor/plating,
 /area/ship/hallway/fore)
 "Gi" = (
-/obj/machinery/computer/apc_control,
+/obj/machinery/computer/apc_control{
+	icon_state = "computer-left"
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering/communications)
 "Gp" = (
@@ -3311,7 +3323,9 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "Ii" = (
-/obj/machinery/computer/atmos_alert,
+/obj/machinery/computer/atmos_alert{
+	icon_state = "computer-right"
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering/communications)
 "Ik" = (
@@ -3912,13 +3926,13 @@
 /turf/open/floor/plasteel,
 /area/ship/cargo/port)
 "OP" = (
-/obj/machinery/computer/communications,
 /obj/machinery/light{
 	dir = 1
 	},
 /obj/machinery/status_display/shuttle{
 	pixel_y = 32
 	},
+/obj/machinery/computer/crew,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering/communications)
 "OQ" = (
@@ -4814,9 +4828,9 @@
 /turf/open/floor/engine/hull,
 /area/ship/external)
 "WA" = (
-/obj/effect/decal/fakelattice,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/external)
 "WF" = (
@@ -6518,7 +6532,7 @@ hu
 hu
 hu
 hu
-WA
+jO
 hu
 hu
 hu
