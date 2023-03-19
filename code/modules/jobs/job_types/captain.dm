@@ -136,6 +136,8 @@
 	box = /obj/item/storage/box/survival/syndie
 
 /datum/outfit/job/captain/syndicate/sbc/post_equip(mob/living/carbon/human/H)
+	H.faction |= ROLE_SYNDICATE
+
 	var/obj/item/card/id/I = H.wear_id
 	I.registered_name = H.real_name
 	I.access = get_all_accesses()+get_all_syndicate_access()

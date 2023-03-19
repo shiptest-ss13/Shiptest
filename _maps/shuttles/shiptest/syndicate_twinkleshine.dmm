@@ -269,6 +269,8 @@
 	req_access = list(150,10)
 	},
 /obj/item/clothing/shoes/magboots/syndie,
+/obj/item/clothing/head/helmet/space/syndicate/black/engie,
+/obj/item/clothing/suit/space/syndicate/black/engie,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "bY" = (
@@ -653,6 +655,10 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/rack,
+/obj/item/clothing/head/helmet/space/syndicate,
+/obj/item/clothing/head/helmet/space/syndicate,
+/obj/item/clothing/suit/space/syndicate,
+/obj/item/clothing/suit/space/syndicate,
 /turf/open/floor/pod/dark,
 /area/ship/cargo)
 "er" = (
@@ -1460,6 +1466,12 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
+"jL" = (
+/obj/machinery/porta_turret/syndicate/energy{
+	dir = 10
+	},
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ship/bridge)
 "jM" = (
 /obj/machinery/iv_drip,
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line{
@@ -3423,6 +3435,12 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
+"xV" = (
+/obj/machinery/porta_turret/syndicate/energy{
+	dir = 5
+	},
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ship/bridge)
 "ya" = (
 /obj/machinery/door/airlock/engineering/glass{
 	name = "Laser Room";
@@ -3647,7 +3665,8 @@
 	},
 /obj/machinery/computer/communications{
 	dir = 4;
-	req_access = list(151)
+	req_access = list(151);
+	set_obj_flags = "EMAGGED"
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
@@ -4236,6 +4255,12 @@
 	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
+"DU" = (
+/obj/machinery/porta_turret/syndicate/energy{
+	dir = 6
+	},
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ship/bridge)
 "DW" = (
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 1
@@ -5075,6 +5100,10 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
+"IQ" = (
+/obj/structure/sign/syndicate,
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ship/engineering/atmospherics)
 "IT" = (
 /obj/machinery/atmospherics/pipe/simple/green/visible{
 	dir = 4
@@ -5910,6 +5939,14 @@
 	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
+"OH" = (
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/central)
 "OK" = (
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 6
@@ -6137,6 +6174,16 @@
 /obj/effect/turf_decal/trimline/opaque/syndiered/line,
 /turf/open/floor/plasteel/dark,
 /area/ship/medical/surgery)
+"Qj" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer4{
+	dir = 1
+	},
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/central)
 "Qk" = (
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 5
@@ -6625,6 +6672,11 @@
 	dir = 8
 	},
 /obj/item/kirbyplants/random,
+/obj/machinery/turretid{
+	pixel_y = 32;
+	req_access = null;
+	req_access_txt = "150"
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "Tn" = (
@@ -6991,6 +7043,12 @@
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/central)
+"Wf" = (
+/obj/machinery/porta_turret/syndicate/energy{
+	dir = 9
+	},
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ship/bridge)
 "Wj" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
@@ -7233,6 +7291,20 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
+"XI" = (
+/obj/machinery/atmospherics/pipe/layer_manifold/visible{
+	dir = 1
+	},
+/obj/structure/closet/emcloset/wall{
+	dir = 4;
+	pixel_x = -32
+	},
+/obj/item/clothing/suit/space/syndicate,
+/obj/item/clothing/suit/space/syndicate,
+/obj/item/clothing/head/helmet/space/syndicate,
+/obj/item/clothing/head/helmet/space/syndicate,
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/central)
 "XL" = (
 /obj/structure/catwalk/over,
 /obj/structure/cable/yellow{
@@ -7285,6 +7357,10 @@
 	dir = 4;
 	pixel_x = -32
 	},
+/obj/item/clothing/suit/space/syndicate,
+/obj/item/clothing/head/helmet/space/syndicate,
+/obj/item/clothing/head/helmet/space/syndicate,
+/obj/item/clothing/suit/space/syndicate,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "Yh" = (
@@ -7435,6 +7511,8 @@
 /obj/item/clothing/under/syndicate/gec,
 /obj/machinery/light,
 /obj/item/clothing/shoes/magboots/syndie,
+/obj/item/clothing/head/helmet/space/syndicate/black/engie,
+/obj/item/clothing/suit/space/syndicate/black/engie,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "YT" = (
@@ -7638,7 +7716,7 @@ mp
 mp
 mp
 mp
-kS
+IQ
 ae
 LX
 kS
@@ -7658,7 +7736,7 @@ kS
 kS
 LX
 ae
-kS
+IQ
 mp
 mp
 mp
@@ -7669,7 +7747,7 @@ mp
 (3,1,1) = {"
 mp
 mp
-mp
+kS
 LX
 ae
 LX
@@ -7697,14 +7775,14 @@ kS
 LX
 ae
 LX
-mp
+kS
 mp
 mp
 "}
 (4,1,1) = {"
 mp
 mp
-kS
+Wf
 NO
 iJ
 FV
@@ -7732,7 +7810,7 @@ kS
 NO
 iJ
 FV
-kS
+jL
 mp
 mp
 "}
@@ -7943,8 +8021,8 @@ kS
 fV
 kS
 kS
-Zr
-Zr
+kS
+kS
 "}
 (11,1,1) = {"
 mp
@@ -8157,7 +8235,7 @@ mp
 mp
 "}
 (17,1,1) = {"
-sb
+Wf
 sb
 sb
 sb
@@ -8189,7 +8267,7 @@ jA
 ZH
 ZH
 ZH
-ZH
+jL
 "}
 (18,1,1) = {"
 sb
@@ -8790,7 +8868,7 @@ mp
 mp
 mp
 mp
-rP
+xV
 rP
 rP
 rP
@@ -8816,7 +8894,7 @@ ZH
 ZH
 ZH
 ZH
-ZH
+DU
 mp
 mp
 mp
@@ -8828,7 +8906,7 @@ mp
 mp
 IV
 Ya
-Yj
+OH
 RW
 fU
 pO
@@ -8848,8 +8926,8 @@ mQ
 Gy
 XL
 RW
-lO
-Ya
+Qj
+XI
 IV
 mp
 mp
@@ -8968,7 +9046,7 @@ mp
 mp
 mp
 mp
-mp
+SL
 SL
 Ym
 SL

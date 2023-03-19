@@ -181,6 +181,8 @@ Assistant
 	box = /obj/item/storage/box/survival/syndie
 
 /datum/outfit/job/assistant/syndicate/sbc/post_equip(mob/living/carbon/human/H)
+	H.faction |= ROLE_SYNDICATE
+
 	var/obj/item/card/id/I = H.wear_id
 	I.registered_name = H.real_name
 	I.assignment = "Deck Assistant"

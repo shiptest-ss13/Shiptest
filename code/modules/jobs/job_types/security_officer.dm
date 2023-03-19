@@ -289,6 +289,8 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	box = /obj/item/storage/box/survival/syndie
 
 /datum/outfit/job/security/syndicate/sbc/post_equip(mob/living/carbon/human/H)
+	H.faction |= ROLE_SYNDICATE
+
 	var/obj/item/card/id/I = H.wear_id
 	I.registered_name = H.real_name
 	I.assignment = "Operative"
