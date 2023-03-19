@@ -208,7 +208,7 @@
 	box = /obj/item/storage/box/survival/syndie
 
 /datum/outfit/job/engineer/syndicate/sbc/post_equip(mob/living/carbon/human/H)
-	H.faction |= ROLE_SYNDICATE
+	H.faction |= list("PlayerSyndicate")
 
 	var/obj/item/card/id/I = H.wear_id
 	I.registered_name = H.real_name

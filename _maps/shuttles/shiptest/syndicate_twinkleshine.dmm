@@ -759,6 +759,10 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/cryo)
+"fx" = (
+/obj/structure/sign/syndicate,
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ship/engineering/atmospherics)
 "fz" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/belt/utility/syndicate,
@@ -999,6 +1003,27 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew/office)
+"gN" = (
+/obj/machinery/porta_turret/syndicate/energy{
+	dir = 5;
+	faction = list("PlayerSyndicate")
+	},
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ship/bridge)
+"gT" = (
+/obj/machinery/atmospherics/pipe/layer_manifold/visible{
+	dir = 1
+	},
+/obj/structure/closet/emcloset/wall{
+	dir = 4;
+	pixel_x = -32
+	},
+/obj/item/clothing/suit/space/syndicate,
+/obj/item/clothing/head/helmet/space/syndicate,
+/obj/item/clothing/head/helmet/space/syndicate,
+/obj/item/clothing/suit/space/syndicate,
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/central)
 "gU" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber,
 /turf/open/floor/engine,
@@ -1466,12 +1491,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
-"jL" = (
-/obj/machinery/porta_turret/syndicate/energy{
-	dir = 10
-	},
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
-/area/ship/bridge)
 "jM" = (
 /obj/machinery/iv_drip,
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line{
@@ -1969,6 +1988,12 @@
 /obj/machinery/vending/snack/random,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
+"nK" = (
+/obj/machinery/porta_turret/syndicate/energy{
+	dir = 9
+	},
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ship/bridge)
 "nS" = (
 /obj/machinery/iv_drip,
 /obj/structure/sign/poster/official/moth/epi{
@@ -2845,6 +2870,14 @@
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/central)
+"tF" = (
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/central)
 "tG" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/high_volume/siphon/atmos/air_output{
 	dir = 8
@@ -3435,12 +3468,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
-"xV" = (
-/obj/machinery/porta_turret/syndicate/energy{
-	dir = 5
-	},
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
-/area/ship/bridge)
 "ya" = (
 /obj/machinery/door/airlock/engineering/glass{
 	name = "Laser Room";
@@ -3897,6 +3924,12 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
+"Bo" = (
+/obj/machinery/porta_turret/syndicate/energy{
+	dir = 6
+	},
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ship/bridge)
 "Bq" = (
 /obj/structure/chair/stool/bar{
 	dir = 1
@@ -4255,12 +4288,6 @@
 	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
-"DU" = (
-/obj/machinery/porta_turret/syndicate/energy{
-	dir = 6
-	},
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
-/area/ship/bridge)
 "DW" = (
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 1
@@ -5100,10 +5127,6 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
-"IQ" = (
-/obj/structure/sign/syndicate,
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
-/area/ship/engineering/atmospherics)
 "IT" = (
 /obj/machinery/atmospherics/pipe/simple/green/visible{
 	dir = 4
@@ -5939,14 +5962,6 @@
 	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
-"OH" = (
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer4,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/light/small{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/hallway/central)
 "OK" = (
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 6
@@ -6174,16 +6189,6 @@
 /obj/effect/turf_decal/trimline/opaque/syndiered/line,
 /turf/open/floor/plasteel/dark,
 /area/ship/medical/surgery)
-"Qj" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer4{
-	dir = 1
-	},
-/obj/machinery/light/small{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/hallway/central)
 "Qk" = (
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 5
@@ -6256,6 +6261,16 @@
 	},
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/crew/dorm/dormtwo)
+"QJ" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer4{
+	dir = 1
+	},
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/central)
 "QR" = (
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /obj/structure/table/wood,
@@ -6708,6 +6723,12 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
+"TB" = (
+/obj/machinery/porta_turret/syndicate/energy{
+	dir = 10
+	},
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ship/bridge)
 "TC" = (
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered{
 	dir = 4
@@ -7043,12 +7064,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/central)
-"Wf" = (
-/obj/machinery/porta_turret/syndicate/energy{
-	dir = 9
-	},
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
-/area/ship/bridge)
 "Wj" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
@@ -7291,20 +7306,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
-"XI" = (
-/obj/machinery/atmospherics/pipe/layer_manifold/visible{
-	dir = 1
-	},
-/obj/structure/closet/emcloset/wall{
-	dir = 4;
-	pixel_x = -32
-	},
-/obj/item/clothing/suit/space/syndicate,
-/obj/item/clothing/suit/space/syndicate,
-/obj/item/clothing/head/helmet/space/syndicate,
-/obj/item/clothing/head/helmet/space/syndicate,
-/turf/open/floor/plasteel/dark,
-/area/ship/hallway/central)
 "XL" = (
 /obj/structure/catwalk/over,
 /obj/structure/cable/yellow{
@@ -7358,9 +7359,9 @@
 	pixel_x = -32
 	},
 /obj/item/clothing/suit/space/syndicate,
-/obj/item/clothing/head/helmet/space/syndicate,
-/obj/item/clothing/head/helmet/space/syndicate,
 /obj/item/clothing/suit/space/syndicate,
+/obj/item/clothing/head/helmet/space/syndicate,
+/obj/item/clothing/head/helmet/space/syndicate,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "Yh" = (
@@ -7716,7 +7717,7 @@ mp
 mp
 mp
 mp
-IQ
+fx
 ae
 LX
 kS
@@ -7736,7 +7737,7 @@ kS
 kS
 LX
 ae
-IQ
+fx
 mp
 mp
 mp
@@ -7782,7 +7783,7 @@ mp
 (4,1,1) = {"
 mp
 mp
-Wf
+nK
 NO
 iJ
 FV
@@ -7810,7 +7811,7 @@ kS
 NO
 iJ
 FV
-jL
+TB
 mp
 mp
 "}
@@ -8235,7 +8236,7 @@ mp
 mp
 "}
 (17,1,1) = {"
-Wf
+nK
 sb
 sb
 sb
@@ -8267,7 +8268,7 @@ jA
 ZH
 ZH
 ZH
-jL
+TB
 "}
 (18,1,1) = {"
 sb
@@ -8868,7 +8869,7 @@ mp
 mp
 mp
 mp
-xV
+gN
 rP
 rP
 rP
@@ -8894,7 +8895,7 @@ ZH
 ZH
 ZH
 ZH
-DU
+Bo
 mp
 mp
 mp
@@ -8905,8 +8906,8 @@ mp
 mp
 mp
 IV
-Ya
-OH
+gT
+tF
 RW
 fU
 pO
@@ -8926,8 +8927,8 @@ mQ
 Gy
 XL
 RW
-Qj
-XI
+QJ
+Ya
 IV
 mp
 mp
