@@ -1020,6 +1020,11 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
+"hm" = (
+/obj/machinery/holopad/emergency/atmos,
+/obj/effect/turf_decal/box,
+/turf/open/floor/plasteel/patterned/grid,
+/area/ship/engineering/atmospherics)
 "hr" = (
 /obj/machinery/power/smes/engineering,
 /obj/structure/cable{
@@ -3173,6 +3178,16 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/cryo)
+"un" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/holopad/emergency/medical,
+/obj/effect/turf_decal/box/white{
+	color = "#2CB2E8"
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/medical)
 "uq" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8
@@ -3233,6 +3248,7 @@
 /area/ship/external)
 "uA" = (
 /obj/machinery/holopad/emergency/command,
+/obj/effect/turf_decal/box/white,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "uC" = (
@@ -3923,6 +3939,13 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/cryo)
+"yK" = (
+/obj/structure/disposalpipe/segment{
+	dir = 8
+	},
+/obj/machinery/holopad/emergency/bar,
+/turf/open/floor/wood,
+/area/ship/crew/canteen)
 "yP" = (
 /obj/machinery/telecomms/relay{
 	freq_listening = list(1351);
@@ -5667,6 +5690,8 @@
 /turf/open/floor/engine,
 /area/ship/engineering/atmospherics)
 "JO" = (
+/obj/machinery/holopad/emergency/engineering,
+/obj/effect/turf_decal/box,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "JW" = (
@@ -6786,7 +6811,6 @@
 	dir = 1
 	},
 /obj/machinery/disposal/bin,
-/obj/effect/turf_decal/box,
 /obj/structure/sign/warning/nosmoking/circle{
 	pixel_x = 25
 	},
@@ -7723,7 +7747,6 @@
 "Xz" = (
 /obj/machinery/disposal/bin,
 /obj/structure/disposalpipe/trunk,
-/obj/effect/turf_decal/box,
 /obj/machinery/firealarm{
 	dir = 8;
 	pixel_x = 25
@@ -8362,7 +8385,7 @@ kQ
 kQ
 oO
 HK
-HK
+hm
 HK
 Qb
 yj
@@ -8980,7 +9003,7 @@ Lz
 rP
 xb
 ga
-pK
+yK
 Bp
 cq
 li
@@ -9240,7 +9263,7 @@ Zr
 Zr
 Zr
 aI
-CQ
+un
 YD
 wq
 zQ
