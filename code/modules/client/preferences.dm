@@ -1486,7 +1486,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			if(!species_path)
 				continue
 			var/datum/species/species_datum = species_path
-			species_list += "<font color='[pref_species.id == species_id ? species_list["type"] == "allowed" ? "#AAFFAA" : "#FFAAAA" : species_list["type"] == "blocked" ? "#AAFFAA" : "#FFAAAA"]'>[quirk_type]</font color>"
+			species_list += "<font color='[pref_species.id == species_id ? species_list["type"] == "allowed" ? "#AAFFAA" : "#FFAAAA" : species_list["type"] == "blocked" ? "#AAFFAA" : "#FFAAAA"]'>[initial(species_datum.name)]</font color>"
 			species_list -= species_id
 		species_list -= "type"
 		quirk_restrictions["species"] = "[species_list.Join(", ")]"
