@@ -1476,7 +1476,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	if(initial(quirk_datum.mood_quirk))
 		var/font_color = CONFIG_GET(flag/disable_human_mood) ? "#FFAAAA" : "#AAFFAA"
 		quirk_restrictions["mood"] = "<font color='[font_color]'>Mood[CONFIG_GET(flag/disable_human_mood) ? "(disabled)" : ""]</font color>"
-	if(quirk_type in SSquirks.quirk_species_lock)
+	if(quirk_type in SSquirks.quirk_species_locks)
 		var/list/species_list = list()
 		species_list += SSquirks.quirk_species_locks[quirk_type]
 		for(var/species_id in species_list)
