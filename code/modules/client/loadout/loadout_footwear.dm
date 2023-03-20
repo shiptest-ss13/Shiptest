@@ -41,7 +41,9 @@
 	//Sneakers
 
 /datum/gear/footwear/color
-	subtype_path = /datum/gear/footwear/color
+	display_name = "colored shoes"
+	unifier_path = /datum/gear/footwear/color
+	sort_categories = "Closed Shoes, Colored"
 
 /datum/gear/footwear/color/black
 	display_name = "shoes, black"

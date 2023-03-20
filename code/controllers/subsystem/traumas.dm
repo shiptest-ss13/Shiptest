@@ -12,9 +12,18 @@ SUBSYSTEM_DEF(traumas)
 
 /datum/controller/subsystem/traumas/Initialize()
 	//phobia types is to pull from randomly for brain traumas, e.g. conspiracies is for special assignment only
-	phobia_types = sortList(list("spiders", "space", "security", "clowns", "greytide", "lizards",
-						"skeletons", "snakes", "robots", "doctors", "authority", "the supernatural",
-						"aliens", "strangers", "birds", "falling", "anime"))
+	phobia_types = sortList(list("aliens", "anime", "authority", "birds", "clowns", "doctors",
+	"falling", "greytide", "lizards", "robots", "security", "skeletons", "snakes", "space",
+	"spiders", "strangers", "the supernatural"))
+
+	SSquirks.quirk_customization_options["Phobia"]["limit"] = 5
+	SSquirks.quirk_customization_options["Phobia"]["options"] = list("anime"= list("cost" = 1, "value" = -1),
+	"aliens" = list("cost" = 2, "value" = -4), "authority" = list("cost" = 1, "value" = -2), "birds" = list("cost" = 2, "value" = -4),
+	"clowns"= list("cost" = 1, "value" = -1), "doctors" = list("cost" = 2, "value" = -4), "falling" = list("cost" = 0, "value" = -1),
+	"greytide" = list("cost" = 1, "value" = -2), "lizards" = list("cost" = 2, "value" = -4), "robots" = list("cost" = 2, "value" = -4),
+	"security" = list("cost" = 1, "value" = -2), "skeletons" = list("cost" = 1, "value" = -2), "snakes"= list("cost" = 1, "value" = -1),
+	"space" = list("cost" = 2, "value" = -5), "spiders" = list("cost" = 2, "value" = -3), "strangers" = list("cost" = 0, "value" = 0),
+	"the supernatural" = list("cost" = 2, "value" = -3))
 
 	phobia_regexes = list(
 		"spiders"          = construct_phobia_regex("spiders"),
