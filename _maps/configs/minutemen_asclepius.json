@@ -1,0 +1,41 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Asclepius-Class Hospital Ship",
+	"prefix": "CMSV",
+	"namelists": ["BRITISH_NAVY", "MYTHOLOGICAL"],
+	"map_short_name": "Asclepius-class",
+	"map_path": "_maps/shuttles/shiptest/minutemen_asclepius.dmm",
+	"limit": 1,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/captain/minutemen",
+			"officer": true,
+			"slots": 1
+		},
+		"Mechanic": {
+			"outfit": "/datum/outfit/job/engineer/minutemen",
+			"slots": 1
+		},
+		"Minuteman": {
+			"outfit": "/datum/outfit/job/security/minutemen",
+			"slots": 1
+		},
+		"Cadet": {
+			"outfit": "/datum/outfit/job/assistant/minutemen",
+			"slots": 3
+		},
+		"Field Medic": {
+			"outfit": "/datum/outfit/job/doctor/minutemen",
+			"slots": 3
+		},
+		"Paramedic":{
+		"outfit": "/datum/outfit/job/paramedic/minutemen",
+		"slots": 2
+		},
+		"Chemist":{
+		"outfit": "/datum/outfit/job/chemist/minutemen",
+		"slots": 1
+		}
+	},
+	"enabled": true
+}

@@ -77,8 +77,8 @@ All ShuttleMove procs go here
 /turf/proc/lateShuttleMove(turf/oldT)
 	blocks_air = initial(blocks_air)
 	oldT.blocks_air = initial(oldT.blocks_air)
-	AfterChange(CHANGETURF_RECALC_ADJACENT)
-	oldT.AfterChange(CHANGETURF_RECALC_ADJACENT)
+	AfterChange()
+	oldT.AfterChange()
 
 
 /////////////////////////////////////////////////////////////////////////////////////

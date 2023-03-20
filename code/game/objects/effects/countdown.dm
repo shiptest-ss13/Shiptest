@@ -134,6 +134,24 @@
 		var/time_left = max(0, (A.death_time - world.time) / 10)
 		return round(time_left)
 
+/obj/effect/countdown/holosign
+	name = "holosign countdown"
+
+/obj/effect/countdown/holosign/get_value()
+	var/obj/structure/holosign/HS = attached_to
+	if(!istype(HS))
+		return
+	else
+		var/time_left = max(0, (HS.death_time - world.time) /10)
+		return round(time_left)
+
+/obj/effect/countdown/holosign/Destroy(...)
+	if(attached_to)
+		var/obj/structure/holosign/H = attached_to
+		if(H.countdown)
+			H.countdown = null
+			return ..()
+
 /obj/effect/countdown/hourglass
 	name = "hourglass countdown"
 

@@ -104,7 +104,7 @@
 /datum/map_template/ruin/jungle/roommates
 	name = "Roommates"
 	id = "roommates"
-	description = "And they were roommates."
+	description = "A shack once inhabited by a clown and a mime... and they were roommates."
 	suffix = "jungle_surface_roommates.dmm"
 
 /datum/map_template/ruin/jungle/ninjashrine
@@ -125,3 +125,8 @@
 	description = "a crashed shuttle, and a hidden beautiful lake."
 	suffix = "jungle_paradise.dmm"
 
+/datum/map_template/ruin/jungle/airbase
+	name = "Bombed Airbase"
+	id = "airbase"
+	description = "A bombed out airbase from the ICW, taken back over by nature"
+	suffix = "jungle_bombed_starport.dmm"

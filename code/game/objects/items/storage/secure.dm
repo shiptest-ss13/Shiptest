@@ -149,7 +149,7 @@
 	..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	for(var/i = 0, i < STR.max_items - 2, i++)
-		new /obj/item/stack/spacecash/c1000(src)
+		new /obj/item/spacecash/bundle/mediumrand(src)
 
 
 // -----------------------------
@@ -187,3 +187,19 @@
 
 /obj/item/storage/secure/safe/HoS
 	name = "head of security's safe"
+
+/obj/item/storage/secure/safe/intel
+	name = "Sensitive Data Safe"
+
+/obj/item/storage/secure/safe/intel/PopulateContents()
+		. = ..()
+		new /obj/item/documents/syndicate(src)
+
+/obj/item/storage/secure/safe/intel/stechkin
+	name = "Sensitive Data Safe"
+
+/obj/item/storage/secure/safe/intel/stechkin/PopulateContents()
+		. = ..()
+		new /obj/item/gun/ballistic/automatic/pistol/suppressed(src)
+		new /obj/item/ammo_box/magazine/m10mm(src)
+		new /obj/item/ammo_box/magazine/m10mm(src)

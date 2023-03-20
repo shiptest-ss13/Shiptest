@@ -40,13 +40,8 @@
 	max_ammo = 30
 
 /obj/item/ammo_box/magazine/aks74u/update_icon()
-	..()
-	var/hasammo
-	if(ammo_count())
-		hasammo = 1
-	else
-		hasammo = 0
-	icon_state = "ak47_mag-[hasammo]"
+	. = ..()
+	icon_state = "ak47_mag-[!!ammo_count()]"
 
 /obj/item/ammo_box/magazine/aknt
 	name = "\improper NT AK Magazine (4.6x30mm))"
@@ -56,13 +51,8 @@
 	max_ammo = 30
 
 /obj/item/ammo_box/magazine/aknt/update_icon()
-	..()
-	var/hasammo
-	if(ammo_count())
-		hasammo = 1
-	else
-		hasammo = 0
-	icon_state = "ak47_mag-[hasammo]"
+	. = ..()
+	icon_state = "ak47_mag-[!!ammo_count()]"
 
 /obj/item/ammo_box/magazine/ak47
 	name = "\improper AKM Magazine (7.62x39mm)"
@@ -72,20 +62,30 @@
 	max_ammo = 20
 
 /obj/item/ammo_box/magazine/ak47/update_icon()
-	..()
-	var/hasammo
-	if(ammo_count())
-		hasammo = 1
-	else
-		hasammo = 0
-	icon_state = "ak47_mag-[hasammo]"
+	. = ..()
+	icon_state = "ak47_mag-[!!ammo_count()]"
 
 /obj/item/ammo_box/magazine/ebr
-	name = "\improper M514 EBR Magazine (.308 Winchester FMJ)"
+	name = "\improper M514 EBR Magazine (.308)"
 	icon_state = "ebr_mag"
-	ammo_type = /obj/item/ammo_casing/win308
-	caliber = ".308 Winchester FMJ"
+	ammo_type = /obj/item/ammo_casing/a308
+	caliber = ".308"
 	max_ammo = 10
+
+/obj/item/ammo_box/magazine/ebr/update_icon()
+	. = ..()
+	icon_state = "ebr_mag-[!!ammo_count()]"
+
+/obj/item/ammo_box/magazine/gal
+	name = "\improper CM-GAL Magazine (.308)"
+	icon_state = "ebr_mag"
+	ammo_type = /obj/item/ammo_casing/a308
+	caliber = ".308"
+	max_ammo = 10
+
+/obj/item/ammo_box/magazine/gal/update_icon()
+	. = ..()
+	icon_state = "galmag-[!!ammo_count()]"
 
 /obj/item/ammo_box/magazine/p16
 	name = "\improper P-16 Magazine (5.56mm)"
@@ -95,13 +95,8 @@
 	max_ammo = 30
 
 /obj/item/ammo_box/magazine/p16/update_icon()
-	..()
-	var/hasammo
-	if(ammo_count())
-		hasammo = 1
-	else
-		hasammo = 0
-	icon_state = "p16_mag-[hasammo]"
+	. = ..()
+	icon_state = "p16_mag-[!!ammo_count()]"
 
 /obj/item/ammo_box/magazine/swiss
 	name = "\improper Swiss Cheese Magazine (5.56mm)"
@@ -111,13 +106,8 @@
 	max_ammo = 30
 
 /obj/item/ammo_box/magazine/swiss/update_icon()
-	..()
-	var/hasammo
-	if(ammo_count())
-		hasammo = 1
-	else
-		hasammo = 0
-	icon_state = "swissmag-[hasammo]"
+	. = ..()
+	icon_state = "swissmag-[!!ammo_count()]"
 
 /obj/item/ammo_box/aac_300blk_stripper
 	name = "stripper clip (.300BLK)"

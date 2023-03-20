@@ -53,7 +53,7 @@
 #define OVERMAP_SHIP_DOCKING "docking"
 #define OVERMAP_SHIP_UNDOCKING "undocking"
 
-// Ship join modes. The string values are player-facing, so be careful modifying them.
+// Ship join modes. The string values are player-facing, so be careful modifying them. Be sure to update ShipSelect.js if you add to/change these!
 #define SHIP_JOIN_MODE_CLOSED "Locked"
 #define SHIP_JOIN_MODE_APPLY "Apply"
 #define SHIP_JOIN_MODE_OPEN "Open"
