@@ -383,8 +383,7 @@
 		return TRUE
 	else if(open && istype(attacking_item, /obj/item/stock_parts/cell) && istype(core, /obj/item/mod/core/standard))
 		var/obj/item/mod/core/standard/attacked_core = core
-		if(!attacked_core.cell)
-			attacked_core.install_cell(attacking_item)
+		attacked_core.on_attackby(src, attacking_item, wearer)
 		return TRUE
 	return ..()
 
