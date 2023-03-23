@@ -824,7 +824,6 @@
 
 /obj/item/clothing/suit/space/hardsuit/shielded/worn_overlays(isinhands)
 	. = ..()
-	. = list()
 	if(!isinhands)
 		. += mutable_appearance('icons/effects/effects.dmi', shield_state, MOB_LAYER + 0.01)
 

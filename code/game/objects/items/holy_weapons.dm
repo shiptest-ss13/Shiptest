@@ -296,7 +296,6 @@
 
 /obj/item/nullrod/staff/worn_overlays(isinhands)
 	. = ..()
-	. = list()
 	if(isinhands)
 		. += mutable_appearance('icons/effects/effects.dmi', shield_icon, MOB_LAYER + 0.01)
 

@@ -1204,7 +1204,6 @@
 
 /obj/item/clothing/suit/armor/ascetic/worn_overlays(isinhands)
 	. = ..()
-	. = list()
 	if(!isinhands)
 		. += mutable_appearance('icons/effects/effects.dmi', shield_state, MOB_LAYER - 0.01)
 

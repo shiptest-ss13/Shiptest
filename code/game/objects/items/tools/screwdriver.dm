@@ -58,7 +58,6 @@
 
 /obj/item/screwdriver/worn_overlays(isinhands = FALSE, icon_file)
 	. = ..()
-	. = list()
 	if(isinhands && random_color)
 		var/mutable_appearance/M = mutable_appearance(icon_file, "screwdriver_head")
 		M.appearance_flags = RESET_COLOR

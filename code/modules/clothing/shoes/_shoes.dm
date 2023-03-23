@@ -48,7 +48,6 @@
 
 /obj/item/clothing/shoes/worn_overlays(isinhands = FALSE)
 	. = ..()
-	. = list()
 	if(!isinhands)
 		var/bloody = FALSE
 		if(HAS_BLOOD_DNA(src))
