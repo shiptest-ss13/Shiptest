@@ -320,7 +320,7 @@ GLOBAL_LIST_EMPTY(species_list)
 		return -(BODYTEMP_AUTORECOVERY_DIVISOR / 2) * log(1 - (temp_diff * change_rate))
 
 ///Timed action involving one mob user. Target is optional.
-/proc/do_after(mob/user, delay, needhand = TRUE, atom/target = null, progress = TRUE, datum/callback/extra_checks = null)
+/proc/do_after(mob/user, delay, needhand = TRUE, atom/target = null, progress = TRUE, datum/callback/extra_checks = null, uninterruptible = FALSE)
 	if(!user)
 		return FALSE
 	var/atom/Tloc = null
@@ -356,6 +356,9 @@ GLOBAL_LIST_EMPTY(species_list)
 		stoplag(1)
 		if(!QDELETED(progbar))
 			progbar.update(world.time - starttime)
+
+		if(uninterruptible)
+			continue
 
 		if(drifting && !user.inertia_dir)
 			drifting = FALSE
