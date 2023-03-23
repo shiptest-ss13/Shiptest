@@ -65,7 +65,7 @@
 	switch(action)
 		if("lock")
 			locked = !locked
-			balloon_alert(usr, "[locked ? "заблокирован" : "разблокирован"]!")
+			balloon_alert(usr, "[locked ? "locked" : "unlocked"]!")
 		if("activate")
 			toggle_activate(usr)
 		if("select")
