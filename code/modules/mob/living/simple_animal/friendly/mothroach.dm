@@ -7,7 +7,7 @@
 	held_state = "mothroach"
 	head_icon = "mothroach"
 	worn_slot_flags = ITEM_SLOT_HEAD
-	emote_hear = list("chitters.", "flutters.")
+	emote_hear = list("chitters", "flutters")
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/mothroach = 3, /obj/item/stack/sheet/animalhide/mothroach = 1)
 	mob_biotypes = MOB_ORGANIC|MOB_BUG
 	mob_size = MOB_SIZE_SMALL
