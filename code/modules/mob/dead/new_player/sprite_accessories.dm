@@ -1842,6 +1842,7 @@
 
 /datum/sprite_accessory/horns
 	icon = 'icons/mob/mutant_bodyparts.dmi'
+	color_src = MUTCOLORS_SECONDARY
 
 /datum/sprite_accessory/horns/none
 	name = "None"
@@ -2703,7 +2704,7 @@
 	icon_state = "bun"
 
 /datum/sprite_accessory/kepori_body_feathers
-	color_src = FACEHAIR
+	color_src = MUTCOLORS_SECONDARY
 	icon = 'icons/mob/kepori_parts.dmi'
 
 /datum/sprite_accessory/kepori_body_feathers/none
@@ -2730,7 +2731,7 @@
 	icon_state = "wings"
 
 /datum/sprite_accessory/kepori_tail_feathers
-	color_src = FACEHAIR
+	color_src = MUTCOLORS_SECONDARY
 	icon = 'icons/mob/kepori_parts.dmi'
 
 /datum/sprite_accessory/kepori_tail_feathers/none

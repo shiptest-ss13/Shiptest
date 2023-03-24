@@ -23,6 +23,11 @@
 	var/is_dimorphic = FALSE //Is there a sprite difference between male and female?
 	var/draw_color //Greyscale draw color
 
+	/// The icon state of the limb's overlay, colored with a different color
+	var/overlay_icon_state
+	/// The color of the limb's overlay
+	var/overlay_draw_color
+
 	var/body_zone //BODY_ZONE_CHEST, BODY_ZONE_L_ARM, etc , used for def_zone
 	/// The body zone of this part in english ("chest", "left arm", etc) without the species attached to it
 	var/plaintext_zone
@@ -549,6 +554,10 @@
 		else
 			species_color = null
 
+		//
+		if((MUTCOLORS_SECONDARY in S.species_traits) && uses_mutcolor && overlay_icon_state)
+			overlay_draw_color = H.dna.features["mcolor2"]
+
 		UnregisterSignal(owner, COMSIG_MOVABLE_MOVED)
 		if(NO_BONES in S.species_traits)
 			bone_status = BONE_FLAG_NO_BONES
@@ -656,6 +665,11 @@
 			limb.color = "#[draw_color]"
 			if(aux_zone)
 				aux.color = "#[draw_color]"
+
+		if(overlay_icon_state)
+			var/image/overlay = image(limb.icon, overlay_icon_state, -BODY_ADJ_LAYER, image_dir)
+			overlay.color = overlay_draw_color
+			. += overlay
 
 	//Ok so legs are a bit goofy in regards to layering, and we will need two images instead of one to fix that
 	if((body_zone == BODY_ZONE_R_LEG) || (body_zone == BODY_ZONE_L_LEG))
