@@ -1,6 +1,6 @@
 {
 	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
-	"map_name": "Osprey-class Exploration Ship",
+	"map_name": "Osprey-class Exploration Cruiser",
 	"prefix": "NTSV",
 	"namelists": [
 		"GENERAL",
@@ -33,10 +33,13 @@
 		"Atmospheric Technician": 1,
 		"Quartermaster": 1,
 		"Cargo Technician": 1,
-		"Shaft Miner": 1,
+		"Shaft Miner": {
+			"outfit": "/datum/outfit/job/miner/classic",
+			"slots": 1
+		},
 		"Cook": 1,
 		"Janitor": 1,
-		"Assistant": 5
+		"Assistant": 3
 	},
 	"enabled": true
 }
