@@ -151,7 +151,7 @@ Assistant
 	alt_uniform = /obj/item/clothing/under/syndicate
 
 /datum/outfit/job/assistant/syndicate/gec
-	name = "Deckhand (Galactic Engineers Concordat)"
+	name = "Deckhand (GEC)"
 
 	id = /obj/item/card/id/syndicate_command/crew_id
 	uniform = /obj/item/clothing/under/syndicate
