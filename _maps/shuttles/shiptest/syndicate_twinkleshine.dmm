@@ -195,6 +195,9 @@
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 4
 	},
+/obj/machinery/door/poddoor/shutters{
+	id = "twinkle_engines"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "bH" = (
@@ -303,10 +306,10 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "bY" = (
-/obj/machinery/atmospherics/pipe/layer_manifold/visible,
 /obj/effect/turf_decal/trimline/opaque/syndiered/warning{
 	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/layer_manifold,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
 "cj" = (
@@ -655,6 +658,12 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/button/door{
+	dir = 4;
+	pixel_x = -25;
+	name = "Engine Shutters";
+	id = "twinkle_engines"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "en" = (
@@ -715,6 +724,9 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "eF" = (
@@ -1020,9 +1032,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "gL" = (
-/obj/structure/sign/syndicate{
-	pixel_x = 32
-	},
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 6
 	},
@@ -1147,12 +1156,19 @@
 /area/ship/engineering/engine)
 "hu" = (
 /obj/machinery/porta_turret/syndicate/energy{
-	dir = 10
+	dir = 10;
+	faction = list("PlayerSyndicate")
 	},
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ship/bridge)
 "hw" = (
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "hE" = (
@@ -1185,6 +1201,12 @@
 /obj/machinery/door/airlock/hatch{
 	name = "Mech Launcher #2";
 	req_access = list(150)
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
@@ -1266,8 +1288,8 @@
 /obj/machinery/button/door{
 	pixel_x = 23;
 	dir = 8;
-	id = "twinkle_engineshutters";
-	name = "Engine Shutters"
+	id = "twinkle_sm";
+	name = "Supermatter Shutters"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/engine,
@@ -1298,9 +1320,6 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "ir" = (
-/obj/structure/sign/syndicate{
-	pixel_x = -32
-	},
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 9
 	},
@@ -1362,6 +1381,27 @@
 /obj/machinery/power/apc/auto_name/east,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/cryo)
+"iI" = (
+/obj/machinery/door/window/eastleft{
+	name = "Engine Access"
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced/spawner{
+	dir = 1
+	},
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "twinkle_engines"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/atmospherics)
 "iJ" = (
 /obj/machinery/atmospherics/components/unary/shuttle/heater{
 	dir = 4
@@ -1371,6 +1411,9 @@
 	},
 /obj/structure/window/reinforced{
 	dir = 8
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "twinkle_engines"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -1520,6 +1563,9 @@
 "jG" = (
 /obj/effect/decal/cleanable/oil/slippery,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "jH" = (
@@ -1922,6 +1968,9 @@
 	dir = 8
 	},
 /obj/structure/window/reinforced/spawner,
+/obj/machinery/door/poddoor/shutters{
+	id = "twinkle_engines"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "mX" = (
@@ -2046,7 +2095,8 @@
 /area/ship/medical)
 "nW" = (
 /obj/machinery/porta_turret/syndicate/energy{
-	dir = 6
+	dir = 6;
+	faction = list("PlayerSyndicate")
 	},
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ship/bridge)
@@ -2065,7 +2115,8 @@
 /area/ship/security)
 "of" = (
 /obj/machinery/porta_turret/syndicate/energy{
-	dir = 9
+	dir = 9;
+	faction = list("PlayerSyndicate")
 	},
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ship/bridge)
@@ -2178,9 +2229,6 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/security)
 "oJ" = (
-/obj/structure/sign/syndicate{
-	pixel_x = -32
-	},
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 9
 	},
@@ -2380,6 +2428,12 @@
 /obj/structure/closet/crate,
 /obj/effect/spawner/lootdrop/maintenance/eight,
 /obj/machinery/airalarm/directional/west,
+/obj/item/circuitboard/machine/autolathe,
+/obj/item/stock_parts/manipulator,
+/obj/item/stock_parts/matter_bin,
+/obj/item/stock_parts/matter_bin,
+/obj/item/stock_parts/matter_bin,
+/obj/item/stack/sheet/glass,
 /turf/open/floor/pod/dark,
 /area/ship/cargo)
 "pI" = (
@@ -2428,15 +2482,13 @@
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "ql" = (
-/obj/machinery/atmospherics/pipe/layer_manifold/visible{
-	dir = 1
-	},
 /obj/machinery/advanced_airlock_controller{
 	pixel_x = 32
 	},
 /obj/effect/turf_decal/trimline/opaque/syndiered/warning{
 	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/layer_manifold,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "qo" = (
@@ -2567,9 +2619,6 @@
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "qT" = (
-/obj/structure/sign/syndicate{
-	pixel_x = 32
-	},
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 6
 	},
@@ -2823,7 +2872,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "twinkle_engineshutters"
+	id = "twinkle_sm"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -2997,10 +3046,10 @@
 /turf/open/floor/plating,
 /area/ship/medical)
 "um" = (
-/obj/machinery/atmospherics/pipe/simple/orange/visible{
-	dir = 4
-	},
 /obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/machinery/atmospherics/components/binary/volume_pump{
+	dir = 8
+	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "uE" = (
@@ -3437,7 +3486,7 @@
 /area/ship/engineering/atmospherics)
 "xo" = (
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "twinkle_engineshutters"
+	id = "twinkle_sm"
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -3536,13 +3585,13 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "xW" = (
-/obj/machinery/atmospherics/pipe/layer_manifold/visible,
 /obj/machinery/light/small{
 	dir = 4
 	},
 /obj/effect/turf_decal/trimline/opaque/syndiered/warning{
 	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/layer_manifold,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
 "ya" = (
@@ -3762,13 +3811,11 @@
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "zk" = (
-/obj/machinery/atmospherics/pipe/layer_manifold/visible{
-	dir = 1
-	},
 /obj/machinery/advanced_airlock_controller{
 	pixel_x = 32
 	},
 /obj/effect/turf_decal/trimline/opaque/syndiered/warning,
+/obj/machinery/atmospherics/pipe/layer_manifold,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "zp" = (
@@ -3797,6 +3844,12 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/button/door{
+	dir = 4;
+	pixel_x = -25;
+	name = "Engine Shutters";
+	id = "twinkle_engines"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "zy" = (
@@ -4044,10 +4097,8 @@
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "BE" = (
-/obj/machinery/atmospherics/pipe/layer_manifold/visible{
-	dir = 1
-	},
 /obj/effect/turf_decal/trimline/opaque/syndiered/warning,
+/obj/machinery/atmospherics/pipe/layer_manifold,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
 "BG" = (
@@ -4622,13 +4673,16 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering/communications)
 "Fq" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 10
-	},
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Fr" = (
@@ -4717,6 +4771,9 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
 	},
+/obj/machinery/door/poddoor/shutters{
+	id = "twinkle_engines"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "FW" = (
@@ -4730,6 +4787,9 @@
 	pixel_y = -6
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "Gi" = (
@@ -4827,13 +4887,13 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 10
-	},
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Gx" = (
@@ -5218,13 +5278,14 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "Ir" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 9
-	},
 /obj/structure/cable/yellow{
 	icon_state = "1-8"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Iw" = (
@@ -5372,6 +5433,12 @@
 	pixel_x = -6
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "Jy" = (
@@ -5983,9 +6050,6 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security)
 "NF" = (
-/obj/machinery/atmospherics/pipe/layer_manifold/visible{
-	dir = 1
-	},
 /obj/structure/closet/emcloset/wall{
 	dir = 4;
 	pixel_x = -32
@@ -5995,6 +6059,7 @@
 /obj/item/clothing/head/helmet/space/syndicate,
 /obj/item/clothing/head/helmet/space/syndicate,
 /obj/effect/turf_decal/trimline/opaque/syndiered/warning,
+/obj/machinery/atmospherics/pipe/layer_manifold,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "NI" = (
@@ -6080,12 +6145,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 9
-	},
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "On" = (
@@ -6261,13 +6324,11 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "Pn" = (
-/obj/machinery/atmospherics/pipe/layer_manifold/visible{
-	dir = 1
-	},
 /obj/machinery/light/small{
 	dir = 4
 	},
 /obj/effect/turf_decal/trimline/opaque/syndiered/warning,
+/obj/machinery/atmospherics/pipe/layer_manifold,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
 "Pv" = (
@@ -6296,6 +6357,12 @@
 /obj/machinery/door/airlock/hatch{
 	name = "Mech Launcher #1";
 	req_access = list(150)
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
@@ -6440,6 +6507,9 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
 	},
+/obj/machinery/door/poddoor/shutters{
+	id = "twinkle_engines"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "QE" = (
@@ -6550,6 +6620,9 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable/yellow{
+	icon_state = "1-5"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "Rl" = (
@@ -6723,6 +6796,9 @@
 /obj/machinery/door/airlock/atmos/glass{
 	name = "Atmospherics";
 	req_one_access_txt = "150"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-10"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -7576,9 +7652,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "Ya" = (
-/obj/machinery/atmospherics/pipe/layer_manifold/visible{
-	dir = 1
-	},
 /obj/structure/closet/emcloset/wall{
 	dir = 4;
 	pixel_x = -32
@@ -7590,6 +7663,7 @@
 /obj/effect/turf_decal/trimline/opaque/syndiered/warning{
 	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/layer_manifold,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "Yh" = (
@@ -7794,8 +7868,9 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "Zr" = (
+/obj/structure/sign/syndicate,
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
-/area/template_noop)
+/area/ship/crew/office)
 "Zt" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -7995,7 +8070,7 @@ bq
 QD
 kS
 kS
-NO
+iI
 iJ
 FV
 Vf
@@ -8008,7 +8083,7 @@ iJ
 FV
 kS
 kS
-NO
+iI
 mW
 kS
 LX
@@ -8022,7 +8097,7 @@ mp
 mp
 mp
 of
-NO
+iI
 iJ
 FV
 kS
@@ -8046,7 +8121,7 @@ nq
 sj
 aj
 kS
-NO
+iI
 iJ
 FV
 hu
@@ -8229,8 +8304,8 @@ Pn
 gh
 "}
 (10,1,1) = {"
-Zr
-Zr
+kS
+kS
 xG
 xG
 xG
@@ -8767,13 +8842,13 @@ RU
 Tt
 RC
 RC
+Zr
 RC
 RC
 RC
 RC
 RC
-RC
-RC
+Zr
 RC
 VY
 GH
@@ -8907,13 +8982,13 @@ oi
 Bs
 RC
 RC
-RC
+Zr
 RC
 wV
 CR
 RC
 RC
-RC
+Zr
 RC
 kT
 oi
