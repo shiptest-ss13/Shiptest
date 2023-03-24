@@ -1260,6 +1260,7 @@
 /obj/machinery/atmospherics/pipe/simple/green{
 	dir = 1
 	},
+/obj/machinery/holopad/emergency/atmos,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/atmospherics)
 "xa" = (
@@ -2215,7 +2216,7 @@
 /obj/item/storage/belt/medical,
 /obj/item/reagent_containers/syringe,
 /obj/item/reagent_containers/glass/bottle{
-	list_reagents = list(/datum/reagent/medicine/thializid = 30);
+	list_reagents = list(/datum/reagent/medicine/thializid=30);
 	name = "thializid bottle"
 	},
 /obj/item/reagent_containers/glass/bottle/formaldehyde{

@@ -1,4 +1,27 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"aa" = (
+/obj/machinery/light/small,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/components/unary/tank/nitrogen{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
+"ab" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -25
+	},
+/obj/machinery/airalarm/all_access{
+	dir = 8;
+	pixel_x = 25
+	},
+/obj/machinery/atmospherics/components/unary/tank/oxygen{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "ah" = (
 /obj/effect/turf_decal/box/corners{
 	dir = 1
@@ -424,21 +447,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office)
-"eV" = (
-/obj/machinery/atmospherics/components/unary/tank/nitrogen{
-	dir = 1
-	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/firealarm{
-	dir = 1;
-	pixel_y = -25
-	},
-/obj/machinery/airalarm/all_access{
-	dir = 8;
-	pixel_x = 25
-	},
-/turf/open/floor/plating,
-/area/ship/engineering)
 "eX" = (
 /obj/machinery/vending/coffee,
 /obj/structure/cable{
@@ -1773,10 +1781,10 @@
 /obj/structure/table/reinforced,
 /obj/item/paper_bin,
 /obj/item/pen/fountain,
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
 /obj/item/gps{
 	pixel_x = 12
 	},
@@ -1941,7 +1949,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/holopad,
+/obj/machinery/holopad/emergency/command,
 /turf/open/floor/carpet/orange,
 /area/ship/bridge)
 "tR" = (
@@ -2238,7 +2246,6 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/cryo)
 "wW" = (
-/obj/machinery/holopad,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -2247,6 +2254,7 @@
 	codes_txt = "patrol;next_patrol=hall";
 	location = "office"
 	},
+/obj/machinery/holopad/emergency/security,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office)
 "xd" = (
@@ -3975,14 +3983,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
-"SO" = (
-/obj/machinery/atmospherics/components/unary/tank/oxygen{
-	dir = 1
-	},
-/obj/machinery/light/small,
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/turf/open/floor/plating,
-/area/ship/engineering)
 "Tk" = (
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 4
@@ -4789,7 +4789,7 @@ Zv
 zZ
 sN
 tR
-SO
+aa
 rl
 ps
 ei
@@ -4831,7 +4831,7 @@ ZT
 fQ
 EG
 GL
-eV
+ab
 rl
 us
 PP
