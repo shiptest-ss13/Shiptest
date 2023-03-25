@@ -12,14 +12,14 @@
 	speak_emote = list("cackles")
 	emote_taunt = list("screeches")
 	emote_hear = list("cackles","screeches")
-	stat_attack = HARD_CRIT
+	stat_attack = CONSCIOUS
 	ranged_cooldown_time = 5 SECONDS
 	vision_range = 9
 	retreat_distance = 2
 	speed = 3
 	move_to_delay = 5
-	maxHealth = 250
-	health = 250
+	maxHealth = 150
+	health = 150
 	obj_damage = 15
 	melee_damage_lower = 7.5
 	melee_damage_upper = 7.5
@@ -189,20 +189,20 @@
 	icon_state = "brimdemon_fang"
 	desc = "A fang from a brimdemon's corpse."
 	denied_type = /obj/item/crusher_trophy/brimdemon_fang
-	//var/static/list/comic_phrases = list("BOOM", "BANG", "KABLOW", "KAPOW", "OUCH", "BAM", "KAPOW", "WHAM", "POW", "KABOOM")
+	var/static/list/comic_phrases = list("BOOM", "BANG", "KABLOW", "KAPOW", "OUCH", "BAM", "KAPOW", "WHAM", "POW", "KABOOM")
 	var/static/list/damage_heal_order = list(BRUTE, BURN, OXY)
 
 /obj/item/crusher_trophy/brimdemon_fang/effect_desc()
 	return "mark detonation creates audiosensory effects on the target and slightly heals the wielder"
 
 /obj/item/crusher_trophy/brimdemon_fang/on_mark_detonation(mob/living/target, mob/living/user)
-	//target.balloon_alert_to_viewers("[pick(comic_phrases)]!")
+	target.balloon_alert_to_viewers("[pick(comic_phrases)]!")
 	playsound(target, 'sound/creatures/brimdemon_crush.ogg', 100)
 	user.heal_ordered_damage(bonus_value * 0.4, damage_heal_order)
 
 /obj/effect/decal/cleanable/brimdust
 	name = "brimdust"
-	desc = "Dust from a brimdemon. It is considered valuable for its' botanical and heating abilities."
+	desc = "Dust from a brimdemon. It is considered valuable for botanical and heating purposes."
 	icon_state = "brimdust"
 	icon = 'icons/obj/mining.dmi'
 	layer = 2.55
