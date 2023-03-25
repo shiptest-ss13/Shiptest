@@ -863,7 +863,6 @@
 "kA" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/steeldecal/steel_decals4,
-/obj/machinery/holopad/emergency/command,
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 10
 	},
@@ -873,6 +872,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
 	},
+/obj/machinery/holopad/emergency/engineering,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/electrical)
 "kC" = (
@@ -3120,7 +3120,7 @@
 /obj/effect/decal/cleanable/vomit/old{
 	pixel_y = 13
 	},
-/obj/item/stack/spacecash/c1000{
+/obj/item/spacecash/bundle/c1000{
 	pixel_y = -1;
 	pixel_x = 3
 	},
