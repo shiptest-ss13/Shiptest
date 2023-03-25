@@ -563,7 +563,7 @@ update_label()
 
 /obj/item/card/id/syndicate_command/crew_id/engi // twinkleshine specific IDs
 	assignment = "Engineer"
-	access = list(ACCESS_SYNDICATE, ACCESS_ENGINE)
+	access = list(ACCESS_SYNDICATE, ACCESS_ENGINE, ACCESS_CONSTRUCTION)
 	uses_overlays = FALSE
 
 /obj/item/card/id/syndicate_command/crew_id/med
