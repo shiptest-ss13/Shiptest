@@ -1,9 +1,11 @@
 /mob/living/simple_animal/pet/mothroach
 	name = "mothroach"
 	desc = "This is the adorable by-product of multiple attempts at genetically mixing mothpeople with cockroaches."
+	language_holder = /datum/language_holder/moth
 	icon_state = "mothroach"
 	icon_living = "mothroach"
 	icon_dead = "mothroach_dead"
+	deathsound =  'sound/voice/moth/moth_a.ogg'
 	held_state = "mothroach"
 	head_icon = "mothroach"
 	worn_slot_flags = ITEM_SLOT_HEAD
@@ -54,3 +56,16 @@
 				SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, src, /datum/mood_event/pet_animal, src)
 			if("harm")
 				playsound(loc, 'sound/voice/moth/scream_moth.ogg', 50, TRUE)
+
+/mob/living/simple_animal/pet/mothroach/attackby(obj/item/I, mob/user, params)
+	if(isclothing(I))
+		to_chat(user, "<span class='notice'>You feed [I] to [src].</span>")
+		visible_message("[src] chitters happily!")
+		qdel(I) // this sucks
+	else
+		return ..()
+
+/mob/living/simple_animal/pet/mothroach/check_weakness(obj/item/weapon, mob/living/attacker)
+	if(istype(weapon, /obj/item/melee/flyswatter))
+		return 9 // flyswatters deal 10x damage to mothroaches
+	return 0
