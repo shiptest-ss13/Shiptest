@@ -5,7 +5,7 @@
 	icon_state = "closed"
 	var/id = 1
 	layer = BLASTDOOR_LAYER
-	closingLayer = CLOSED_BLASTDOOR_LAYER
+	closingLayer = ABOVE_WINDOW_LAYER
 	sub_door = TRUE
 	explosion_block = 3
 	heat_proof = TRUE

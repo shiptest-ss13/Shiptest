@@ -130,8 +130,8 @@
 	desc = "A gate made out of hard metal. Opens with a key."
 	icon = 'icons/obj/doors/gates.dmi'
 	icon_state = "closed"
-	layer = SHUTTER_LAYER
-	closingLayer = SHUTTER_LAYER
+	layer = ABOVE_WINDOW_LAYER
+	closingLayer = ABOVE_WINDOW_LAYER
 	var/open_sound = 'sound/machines/gate.ogg'
 	var/close_sound = 'sound/machines/gate.ogg'
 	glass = TRUE
