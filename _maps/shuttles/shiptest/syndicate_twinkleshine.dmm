@@ -4229,11 +4229,9 @@
 /turf/open/floor/plating,
 /area/ship/medical/surgery)
 "CG" = (
-/obj/structure/sign/syndicate{
-	pixel_y = -32
-	},
-/turf/template_noop,
-/area/template_noop)
+/obj/structure/sign/syndicate,
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ship/crew/cryo)
 "CH" = (
 /obj/structure/reflector/box{
 	anchored = 1;
@@ -7267,6 +7265,10 @@
 	},
 /turf/open/floor/engine/o2,
 /area/ship/engineering/atmospherics)
+"Vw" = (
+/obj/structure/sign/syndicate,
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ship/cargo)
 "Vy" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
@@ -8982,8 +8984,8 @@ wh
 mp
 "}
 (29,1,1) = {"
+mp
 CG
-vb
 vb
 vb
 vb
@@ -9157,8 +9159,8 @@ ZH
 mp
 "}
 (34,1,1) = {"
-CG
-rP
+mp
+Vw
 rP
 rP
 YQ
