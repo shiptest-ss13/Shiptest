@@ -57,14 +57,21 @@
 	floor_tile = /obj/item/stack/tile/plasteel/tech
 	color = null
 
+/turf/open/floor/plasteel/tech/airless
+	initial_gas_mix = AIRLESS_ATMOS
+
 /turf/open/floor/plasteel/tech/grid
 	icon_state = "techfloor_grid"
 	base_icon_state = "techfloor_grid"
 	floor_tile = /obj/item/stack/tile/plasteel/tech/grid
+/turf/open/floor/plasteel/tech/grid/airless
+	initial_gas_mix = AIRLESS_ATMOS
 /turf/open/floor/plasteel/tech/techmaint
 	icon_state = "techmaint"
 	base_icon_state = "techmaint"
 	floor_tile = /obj/item/stack/tile/plasteel/tech/techmaint
+/turf/open/floor/plasteel/tech/techmaint/airless
+	initial_gas_mix = AIRLESS_ATMOS
 /turf/open/floor/plasteel/patterned
 	icon_state = "tile_full"
 	base_icon_state = "tile_full"
@@ -183,6 +190,10 @@
 	icon_state = "stairs-old"
 	base_icon_state = "stairs-old"
 
+/turf/open/floor/plasteel/stairs/wood
+	color = "#A47449"
+	barefootstep = "wood"
+	footstep = "wood"
 
 /turf/open/floor/plasteel/rockvault
 	icon_state = "rockvault"
@@ -215,55 +226,3 @@
 
 /turf/open/floor/plasteel/icecropolis
 	baseturfs = /turf/open/indestructible/necropolis/air
-
-/*
-*
-*
-*	Medians
-*		Mostly for show, adds floor transitions so things look alot less boxy
-*
-*/
-/turf/open/floor/plasteel/median
-	icon = 'icons/turf/floors/medians.dmi'
-	icon_state = "floor_fuckywucky"
-	name = "Uh oh tile"
-
-/turf/open/floor/plasteel/median/floortogrime
-	icon_state = "FG-half"
-	name = "floor"
-
-/turf/open/floor/plasteel/median/floortogrime/corner
-	icon_state = "FG-corner"
-
-/turf/open/floor/plasteel/median/floortogrime/fullcorner
-	icon_state = "FG-fullcorner"
-
-/turf/open/floor/plasteel/median/whitetodark
-	icon_state = "WD-half"
-	name = "floor"
-
-/turf/open/floor/plasteel/median/whitetodark/corner
-	icon_state = "WD-corner"
-
-/turf/open/floor/plasteel/median/whitetodark/fullcorner
-	icon_state = "WD-fullcorner"
-
-/turf/open/floor/plasteel/median/darktogrime
-	icon_state = "DG-half"
-	name = "floor"
-
-/turf/open/floor/plasteel/median/darktogrime/corner
-	icon_state = "DG-corner"
-
-/turf/open/floor/plasteel/median/darktogrime/fullcorner
-	icon_state = "DG-fullcorner"
-
-/turf/open/floor/plasteel/median/whitetogrime
-	icon_state = "WG-half"
-	name = "floor"
-
-/turf/open/floor/plasteel/median/whitetogrime/corner
-	icon_state = "WG-corner"
-
-/turf/open/floor/plasteel/median/whitetogrime/fullcorner
-	icon_state = "WG-fullcorner"
