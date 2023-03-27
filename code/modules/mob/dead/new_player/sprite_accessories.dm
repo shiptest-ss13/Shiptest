@@ -1746,7 +1746,7 @@
 /datum/sprite_accessory/tails/lizard/ltiger
 	name = "Light Tiger"
 	icon_state = "ltiger"
-	
+
 /datum/sprite_accessory/tails_animated/lizard/ltiger
 	name = "Light Tiger"
 	icon_state = "ltiger"
