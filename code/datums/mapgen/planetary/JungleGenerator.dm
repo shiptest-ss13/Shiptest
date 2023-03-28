@@ -93,6 +93,7 @@
 		/obj/structure/flora/junglebush/large = 1,
 		/obj/structure/spacevine/dense = 5,
 		/obj/structure/spacevine/dense = 2,
+		/obj/structure/flora/ash/garden = 1,
 	)
 	flora_spawn_chance = 90
 	mob_spawn_chance = 0.3
@@ -111,6 +112,7 @@
 		/obj/structure/flora/junglebush/c = 1,
 		/obj/structure/flora/junglebush/large = 1,
 		/obj/structure/spacevine/dense = 20,
+		/obj/structure/flora/ash/garden = 1,
 	)
 	mob_spawn_chance = 0.6
 	mob_spawn_list = list(/mob/living/simple_animal/hostile/gorilla = 1, /mob/living/carbon/monkey = 3)
@@ -155,12 +157,12 @@
 		/obj/structure/flora/ash/leaf_shroom = 1,
 		/obj/structure/flora/ash/cap_shroom = 1,
 		/obj/structure/flora/ash/stem_shroom = 1,
-		/obj/structure/flora/ash/puce = 1
+		/obj/structure/flora/ash/puce = 1,
 	)
 	mob_spawn_chance = 1
 	mob_spawn_list = list(/mob/living/simple_animal/hostile/asteroid/wolf/random = 1, /mob/living/simple_animal/hostile/retaliate/bat = 1, /mob/living/simple_animal/hostile/retaliate/poison/snake)
-	feature_spawn_chance = 1
-	feature_spawn_list = list(/obj/item/pickaxe/rusted = 1)
+	feature_spawn_chance = 0.5
+	feature_spawn_list = list(/obj/item/pickaxe/rusted = 1, /obj/structure/spawner/ice_moon = 1)
 
 /datum/biome/cave/jungle/dirt
 	open_turf_types = list(/turf/open/floor/plating/dirt/jungle/wasteland = 1)
@@ -172,6 +174,7 @@
 		/obj/structure/flora/rock/pile/largejungle = 1,
 		/obj/structure/flora/grass/jungle = 1,
 		/obj/structure/flora/grass/jungle/b = 1,
+		/obj/structure/flora/ash/garden = 1,
 	)
 
 /datum/biome/cave/lush
@@ -200,6 +203,7 @@
 		/obj/structure/spacevine/dense = 20,
 		/obj/structure/spacevine/dense = 20,
 		/obj/structure/flora/rock/jungle = 1,
+		/obj/structure/flora/ash/garden = 1,
 		/obj/structure/flora/ash/space/voidmelon = 1
 	)
 	mob_spawn_chance = 1

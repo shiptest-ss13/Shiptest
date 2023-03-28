@@ -112,25 +112,24 @@
 
 /obj/item/stack/ore/glass/whitesands
 	name = "white sand pile"
-	icon = 'icons/obj/mining.dmi'
 	icon_state = "whitesands"
 	item_state = "whitesands"
 	singular_name = "white sand pile"
 	grind_results = list(/datum/reagent/consumable/sodiumchloride = 10, /datum/reagent/silicon = 10)
 
 /obj/item/stack/ore/glass/rockplanet
-	name = "iron sand pile"
+	name = "oxidized sand pile"
 	icon_state = "rockplanet_sand"
 	item_state = "rockplanet_sand"
 	singular_name = "iron sand pile"
-	grind_results = list(/datum/reagent/silicon = 10)
+	grind_results = list(/datum/reagent/silicon = 10, /datum/reagent/iron = 10)
 
 /obj/item/stack/ore/glass/wasteplanet
-	name = "rocky dust"
+	name = "oily dust"
 	icon_state = "wasteplanet_sand"
 	item_state = "wasteplanet_sand"
 	singular_name = "rocky dust"
-	grind_results = list(/datum/reagent/silicon = 10)
+	grind_results = list(/datum/reagent/silicon = 10, /datum/reagent/lithium = 2, /datum/reagent/radium = 1, /datum/reagent/chlorine = 1, /datum/reagent/aluminium = 1)//may be unsafe for human consumption
 
 /obj/item/stack/ore/glass/beach
 	name = "beige sand pile"
