@@ -61,6 +61,7 @@
 	if(isclothing(I))
 		to_chat(user, "<span class='notice'>You feed [I] to [src].</span>")
 		visible_message("[src] chitters happily!")
+		qdel(I) // this sucks
 	else
 		return ..()
 
