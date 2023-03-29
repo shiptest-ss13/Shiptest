@@ -52,6 +52,8 @@
 				nutrition_ratio *= 1.25
 			adjust_nutrition(-nutrition_ratio * HUNGER_FACTOR)
 			blood_volume = min(BLOOD_VOLUME_NORMAL, blood_volume + 0.5 * nutrition_ratio)
+		if(blood_volume < BLOOD_VOLUME_NORMAL && HAS_TRAIT(src, TRAIT_NOHUNGER)) //blood regen for non eaters
+			blood_volume = min(BLOOD_VOLUME_NORMAL, blood_volume + 0.5 * 1.25) //assumes best nutrition conditions for non eaters because they don't eat
 
 		//Effects of bloodloss
 		var/word = pick("dizzy","woozy","faint")
@@ -105,7 +107,7 @@
 	if(blood_volume)
 		blood_volume = max(blood_volume - amt, 0)
 		if (prob(sqrt(amt)*BLOOD_DRIP_RATE_MOD))
-			if(isturf(src.loc)) //Blood loss still happens in locker, floor stays clean
+			if(isturf(src.loc) && !isgroundlessturf(src.loc)) //Blood loss still happens in locker, floor stays clean
 				if(amt >= 10)
 					add_splatter_floor(src.loc)
 				else
@@ -281,7 +283,12 @@
 			return
 
 	// Find a blood decal or create a new one.
-	var/obj/effect/decal/cleanable/blood/B = locate() in T
+	var/obj/effect/decal/cleanable/blood/B
+	for (var/obj/effect/decal/cleanable/blood/candidate in T)
+		if (QDELETED(T))
+			continue
+		B = candidate
+		break
 	if(!B)
 		B = new /obj/effect/decal/cleanable/blood/splatter(T, get_static_viruses())
 	B.bloodiness = min((B.bloodiness + BLOOD_AMOUNT_PER_DECAL),MAX_SHOE_BLOODINESS)

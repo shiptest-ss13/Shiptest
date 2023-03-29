@@ -64,7 +64,7 @@
 	icon_state = "alarm"
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 4
-	active_power_usage = 8
+	active_power_usage = 1200
 	power_channel = AREA_USAGE_ENVIRON
 	//req_access = list(ACCESS_ATMOSPHERICS)
 	max_integrity = 250
@@ -72,6 +72,15 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 100, "bomb" = 0, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 30)
 	resistance_flags = FIRE_PROOF
 	clicksound = 'sound/machines/terminal_select.ogg'
+	req_ship_access = TRUE
+
+	//Heating System
+	var/heating_manage = TRUE
+	var/heating_current_mode = "Idle"
+	var/heating_temp_inc = 0.5
+	var/heating_temp_minvalue = 288.15
+	var/heating_temp_maxvalue = 303.15
+	var/heating_temp_setpoint = T20C
 
 	FASTDMM_PROP(\
 		set_instance_vars(\
@@ -80,6 +89,8 @@
 		),\
 		dir_amount = 4\
 	)
+
+	COOLDOWN_DECLARE(decomp_alarm)
 
 	var/danger_level = 0
 	var/mode = AALARM_MODE_SCRUBBING
@@ -99,7 +110,6 @@
 		GAS_O2						= new/datum/tlv(16, 19, 40, 50), // Partial pressure, kpa
 		GAS_N2						= new/datum/tlv(-1, -1, 1000, 1000),
 		GAS_CO2						= new/datum/tlv(-1, -1, 5, 10),
-		GAS_MIASMA					= new/datum/tlv/(-1, -1, 15, 30),
 		GAS_PLASMA					= new/datum/tlv/dangerous,
 		GAS_NITROUS					= new/datum/tlv/dangerous,
 		GAS_BZ						= new/datum/tlv/dangerous,
@@ -119,7 +129,6 @@
 		GAS_O2						= new/datum/tlv/no_checks,
 		GAS_N2						= new/datum/tlv/no_checks,
 		GAS_CO2						= new/datum/tlv/no_checks,
-		GAS_MIASMA					= new/datum/tlv/no_checks,
 		GAS_PLASMA					= new/datum/tlv/no_checks,
 		GAS_NITROUS					= new/datum/tlv/no_checks,
 		GAS_BZ						= new/datum/tlv/no_checks,
@@ -131,6 +140,7 @@
 		GAS_PLUOXIUM				= new/datum/tlv/no_checks,
 		GAS_FREON					= new/datum/tlv/no_checks
 	)
+	heating_manage = FALSE
 
 /obj/machinery/airalarm/kitchen_cold_room // Kitchen cold rooms start off at -80°C or 193.15°K.
 	TLV = list(
@@ -139,7 +149,6 @@
 		GAS_O2						= new/datum/tlv(16, 19, 135, 140), // Partial pressure, kpa
 		GAS_N2						= new/datum/tlv(-1, -1, 1000, 1000),
 		GAS_CO2						= new/datum/tlv(-1, -1, 5, 10),
-		GAS_MIASMA					= new/datum/tlv/(-1, -1, 2, 5),
 		GAS_PLASMA					= new/datum/tlv/dangerous,
 		GAS_NITROUS					= new/datum/tlv/dangerous,
 		GAS_BZ						= new/datum/tlv/dangerous,
@@ -151,6 +160,7 @@
 		GAS_PLUOXIUM				= new/datum/tlv(-1, -1, 1000, 1000), // Unlike oxygen, pluoxium does not fuel plasma/tritium fires
 		GAS_FREON					=  new/datum/tlv/dangerous
 	)
+	heating_manage = FALSE
 
 /obj/machinery/airalarm/unlocked
 	locked = FALSE
@@ -199,9 +209,16 @@
 //all air alarms in area are connected via magic
 /area
 	var/list/air_vent_names = list()
-	var/list/air_scrub_names = list()
+	var/list/air_vent_ids = list()
 	var/list/air_vent_info = list()
+
+	var/list/air_scrub_names = list()
+	var/list/air_scrub_ids = list()
 	var/list/air_scrub_info = list()
+
+	var/list/dp_air_vent_names = list()
+	var/list/dp_air_vent_ids = list()
+	var/list/dp_air_vent_info = list()
 
 /obj/machinery/airalarm/New(loc, ndir, nbuild)
 	..()
@@ -259,7 +276,7 @@
 /obj/machinery/airalarm/ui_data(mob/user)
 	var/data = list(
 		"locked" = locked,
-		"siliconUser" = user.has_unlimited_silicon_privilege,
+		"siliconUser" = user.has_unlimited_silicon_privilege && check_ship_ai_access(user),
 		"emagged" = (obj_flags & EMAGGED ? 1 : 0),
 		"danger_level" = danger_level,
 	)
@@ -267,6 +284,13 @@
 	var/area/A = get_area(src)
 	data["atmos_alarm"] = A.atmosalm
 	data["fire_alarm"] = A.fire
+	data["heating"] = list(
+		"mode" = heating_current_mode,
+		"enabled" = heating_manage,
+		"setPoint" = heating_temp_setpoint,
+		"minValue" = heating_temp_minvalue,
+		"maxValue" = heating_temp_maxvalue
+	)
 
 	var/turf/T = get_turf(src)
 	var/datum/gas_mixture/environment = T.return_air()
@@ -304,7 +328,9 @@
 
 	if(!locked || user.has_unlimited_silicon_privilege)
 		data["vents"] = list()
-		for(var/id_tag in A.air_vent_names)
+		for(var/id_tag in A.air_vent_ids)
+			if (id_tag == null)
+				continue
 			var/long_name = A.air_vent_names[id_tag]
 			var/list/info = A.air_vent_info[id_tag]
 			if(!info || info["frequency"] != frequency || info["has_aac"])
@@ -323,7 +349,9 @@
 					"intdefault"= (info["internal"] == 0)
 				))
 		data["scrubbers"] = list()
-		for(var/id_tag in A.air_scrub_names)
+		for(var/id_tag in A.air_scrub_ids)
+			if (id_tag == null)
+				continue
 			var/long_name = A.air_scrub_names[id_tag]
 			var/list/info = A.air_scrub_info[id_tag]
 			if(!info || info["frequency"] != frequency)
@@ -444,6 +472,15 @@
 			if(A.atmosalert(FALSE, src))
 				post_alert(0)
 			. = TRUE
+		if("heat_mode")
+			investigate_log("has had its heat mode by [key_name(usr)]",INVESTIGATE_ATMOS)
+			airalarm_toggleheat()
+			. = TRUE
+		if("heat_setpoint")
+			heating_temp_setpoint = params["setPoint"]
+			investigate_log("has had its setpoint changed to [heating_temp_setpoint] by [key_name(usr)]",INVESTIGATE_ATMOS)
+			. = TRUE
+
 	update_icon()
 
 
@@ -532,7 +569,6 @@
 					"power" = 1,
 					"set_filters" = list(
 						GAS_CO2,
-						GAS_MIASMA,
 						GAS_PLASMA,
 						GAS_H2O,
 						GAS_HYPERNOB,
@@ -697,7 +733,55 @@
 	if(mode == AALARM_MODE_REPLACEMENT && environment_pressure < ONE_ATMOSPHERE * 0.05)
 		mode = AALARM_MODE_SCRUBBING
 		apply_mode(src)
+	if(heating_manage)
+		airalarm_heat()
 
+/obj/machinery/airalarm/proc/airalarm_toggleheat()
+	if(heating_manage)
+		if(heating_current_mode == "Heat")
+			visible_message("<span class='notice'>The air alarm makes a quiet click as it stops heating the area</span>")
+			heating_current_mode = "Idle"
+			heating_manage = FALSE
+			return
+		else
+			heating_manage = FALSE
+			return
+	else
+		heating_manage = TRUE
+
+/obj/machinery/airalarm/proc/airalarm_heat()
+	var/wanted_mode = ""
+	var/turf/open/location = get_turf(src)
+	var/datum/gas_mixture/environment = location.return_air()
+	if(!isopenturf(get_turf(src)))
+		return
+	if(environment.return_temperature() >= (heating_temp_setpoint) & heating_current_mode == "Idle") // Quick kill the proc if not heating
+		return
+	if(environment.return_temperature() < (heating_temp_setpoint)) //Start heating
+		wanted_mode = "Heat"
+
+	if(environment.return_temperature() > (heating_temp_setpoint + 2)) //Allow for some over run, to stop flip-floping
+		wanted_mode = "Idle"
+
+	if(wanted_mode == "Idle" & heating_current_mode == "Heat")
+		visible_message("<span class='notice'>The air alarm makes a quiet click as it stops heating the area</span>")
+		playsound(src, 'sound/machines/terminal_off.ogg', 40)
+		heating_current_mode = "Idle"
+		use_power = IDLE_POWER_USE
+		return
+
+	if(wanted_mode == "Heat" & heating_current_mode == "Idle")
+		visible_message("<span class='notice'>The air alarm makes a quiet click as it starts heating the area</span>")
+		playsound(src, 'sound/machines/terminal_on.ogg', 40)
+		heating_current_mode = "Heat"
+		use_power = ACTIVE_POWER_USE
+
+	if(heating_current_mode == "Heat")
+		var/temperature = environment.return_temperature()
+		environment.adjust_heat(temperature += heating_temp_inc)
+
+	location.air = environment
+	location.air_update_turf(TRUE)
 
 /obj/machinery/airalarm/proc/post_alert(alert_level)
 	var/datum/radio_frequency/frequency = SSradio.return_frequency(alarm_frequency)
@@ -727,7 +811,7 @@
 	var/new_area_danger_level = 0
 	for(var/obj/machinery/airalarm/AA in A)
 		if (!(AA.machine_stat & (NOPOWER|BROKEN)) && !AA.shorted)
-			new_area_danger_level = clamp(max(new_area_danger_level, AA.danger_level), 0,1)
+			new_area_danger_level = clamp(max(new_area_danger_level, AA.danger_level), 0, 2)
 	if(A.atmosalert(new_area_danger_level,src)) //if area was in normal state or if area was in alert state
 		post_alert(new_area_danger_level)
 
@@ -763,7 +847,7 @@
 				if (W.use_tool(src, user, 20))
 					if (buildstage == 1)
 						to_chat(user, "<span class='notice'>You remove the air alarm electronics.</span>")
-						new /obj/item/electronics/airalarm( src.loc )
+						new /obj/item/electronics/airalarm(src.loc)
 						playsound(src.loc, 'sound/items/deconstruct.ogg', 50, TRUE)
 						buildstage = 0
 						update_icon()
@@ -811,7 +895,7 @@
 			if(W.tool_behaviour == TOOL_WRENCH)
 				to_chat(user, "<span class='notice'>You detach \the [src] from the wall.</span>")
 				W.play_tool_sound(src)
-				new /obj/item/wallframe/airalarm( user.loc )
+				new /obj/item/wallframe/airalarm(user.loc)
 				qdel(src)
 				return
 
@@ -866,6 +950,12 @@
 			I.obj_integrity = I.max_integrity * 0.5
 		new /obj/item/stack/cable_coil(loc, 3)
 	qdel(src)
+
+/obj/machinery/airalarm/proc/handle_decomp_alarm()
+	if(!COOLDOWN_FINISHED(src, decomp_alarm))
+		return
+	playsound(loc, 'goon/sound/machinery/FireAlarm.ogg', 75)
+	COOLDOWN_START(src, decomp_alarm, 1 SECONDS)
 
 #undef AALARM_MODE_SCRUBBING
 #undef AALARM_MODE_VENTING

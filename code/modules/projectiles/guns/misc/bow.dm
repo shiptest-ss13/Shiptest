@@ -5,7 +5,7 @@
 	icon_state = "bow"
 	item_state = "pipebow"
 	load_sound = null
-	fire_sound = 'whitesands/sound/weapons/bowfire.ogg'
+	fire_sound = 'sound/weapons/bowfire.ogg'
 	slot_flags = ITEM_SLOT_BACK
 	mag_type = /obj/item/ammo_box/magazine/internal/bow
 	trigger_guard = TRIGGER_GUARD_ALLOW_ALL
@@ -35,7 +35,7 @@
 	if(chambered)
 		to_chat(user, "<span class='notice'>You [drawn ? "release" : "draw"] [src]'s string.</span>")
 		if(!drawn)
-			playsound(src, 'whitesands/sound/weapons/bowdraw.ogg', 75, 0)
+			playsound(src, 'sound/weapons/bowdraw.ogg', 75, 0)
 		drawn = !drawn
 	update_icon()
 
@@ -85,3 +85,23 @@
 
 /obj/item/storage/bag/quiver/despawning
 	arrow_path = /obj/item/ammo_casing/caseless/arrow/despawning
+
+/obj/item/gun/ballistic/bow/ashen
+	name = "Bone Bow"
+	desc = "Some sort of primitive projectile weapon made of bone and wrapped sinew."
+	icon_state = "ashenbow"
+	item_state = "ashenbow"
+	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
+	force = 8
+
+/obj/item/gun/ballistic/bow/pipe
+	name = "Pipe Bow"
+	desc = "A crude projectile weapon made from silk string, pipe and lots of bending."
+	icon_state = "pipebow"
+	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
+	force = 7
+
+/obj/item/storage/bag/quiver/empty
+	name = "leather quiver"
+	desc = "A quiver made from the hide of some animal. Used to hold arrows."
+	arrow_path = null

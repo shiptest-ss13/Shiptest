@@ -22,8 +22,8 @@
 /mob/living/simple_animal/bot/secbot/ed209/rockplanet
 	name = "\improper Abandoned ED-209 Robot"
 	desc = "A security robot. It looks like they have a loose trigger finger."
-	health = 80
-	maxHealth = 80
+	health = 60
+	maxHealth = 60
 	icon_state = "red209"
 	shoot_sound = 'sound/weapons/laser.ogg'
 	projectile = /obj/projectile/beam/scatter
@@ -66,7 +66,7 @@
 			continue
 		threatlevel = C.assess_threat(judgement_criteria, weaponcheck=CALLBACK(src, .proc/check_for_weapons))
 		//speak(C.real_name + text(": threat: []", threatlevel))
-		if(threatlevel < 4 )
+		if(threatlevel < 4)
 			continue
 		var/dst = get_dist(src, C)
 		if(dst <= 1 || dst > 7)

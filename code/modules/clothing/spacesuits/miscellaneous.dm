@@ -1,19 +1,19 @@
 //miscellaneous spacesuits
 /*
 Contains:
- - Captain's spacesuit
- - Death squad's hardsuit
- - SWAT suit
- - Officer's beret/spacesuit
- - NASA Voidsuit
- - Father Christmas' magical clothes
- - Pirate's spacesuit
- - ERT hardsuit: command, sec, engi, med, janitor
- - EVA spacesuit
- - Freedom's spacesuit (freedom from vacuum's oppression)
- - Carp hardsuit
- - Bounty hunter hardsuit
- - Blackmarket combat medic hardsuit
+- Captain's spacesuit
+- Death squad's hardsuit
+- SWAT suit
+- Officer's beret/spacesuit
+- NASA Voidsuit
+- Father Christmas' magical clothes
+- Pirate's spacesuit
+- ERT hardsuit: command, sec, engi, med, janitor
+- EVA spacesuit
+- Freedom's spacesuit (freedom from vacuum's oppression)
+- Carp hardsuit
+- Bounty hunter hardsuit
+- Blackmarket combat medic hardsuit
 */
 
 	//Death squad armored space suits, not hardsuits!
@@ -70,6 +70,8 @@ Contains:
 /obj/item/clothing/suit/space/officer
 	name = "officer's jacket"
 	desc = "An armored, space-proof jacket used in special operations."
+	icon = 'icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suit.dmi'
 	icon_state = "detective"
 	item_state = "det_suit"
 	blood_overlay_type = "coat"
@@ -122,6 +124,8 @@ Contains:
 /obj/item/clothing/suit/space/santa
 	name = "Santa's suit"
 	desc = "Festive!"
+	icon = 'icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suit.dmi'
 	icon_state = "santa"
 	item_state = "santa"
 	slowdown = 0
@@ -382,19 +386,113 @@ Contains:
 	item_state = "hardsuit0-inq"
 	hardsuit_type = "inq"
 
-/obj/item/clothing/suit/space/hardsuit/ert/paranormal/berserker
-	name = "champion's hardsuit"
+/obj/item/clothing/suit/space/hardsuit/berserker
+	name = "berserker hardsuit"
 	desc = "Voices echo from the hardsuit, driving the user insane."
 	icon_state = "hardsuit-berserker"
 	item_state = "hardsuit-berserker"
-	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ert/paranormal/berserker
+	slowdown = 0
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/berserker
+	armor = list("melee" = 30, "bullet" = 10, "laser" = 10, "energy" = 20, "bomb" = 10, "bio" = 100, "rad" = 10, "fire" = 100, "acid" = 100)
+	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
+	resistance_flags = FIRE_PROOF
+	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/pickaxe, /obj/item/spear, /obj/item/organ/regenerative_core/legion, /obj/item/kitchen/knife, /obj/item/kinetic_crusher, /obj/item/resonator, /obj/item/melee/transforming/cleaving_saw)
 
-/obj/item/clothing/head/helmet/space/hardsuit/ert/paranormal/berserker
-	name = "champion's helmet"
+
+/obj/item/clothing/suit/space/hardsuit/berserker/Initialize()
+	. = ..()
+	AddComponent(/datum/component/anti_magic, TRUE, TRUE, TRUE, ITEM_SLOT_OCLOTHING)
+
+/obj/item/clothing/suit/space/hardsuit/berserker/RemoveHelmet()
+	var/obj/item/clothing/head/helmet/space/hardsuit/berserker/helm = helmet
+	if(helm?.berserk_active)
+		return
+	return ..()
+
+#define MAX_BERSERK_CHARGE 100
+#define PROJECTILE_HIT_MULTIPLIER 1.5
+#define DAMAGE_TO_CHARGE_SCALE 0.25
+#define CHARGE_DRAINED_PER_SECOND 5
+#define BERSERK_MELEE_ARMOR_ADDED 50
+#define BERSERK_ATTACK_SPEED_MODIFIER 0.25
+
+/obj/item/clothing/head/helmet/space/hardsuit/berserker
+	name = "berserker helmet"
 	desc = "Peering into the eyes of the helmet is enough to seal damnation."
 	icon_state = "hardsuit0-berserker"
 	item_state = "hardsuit0-berserker"
 	hardsuit_type = "berserker"
+	armor = list("melee" = 30, "bullet" = 10, "laser" = 10, "energy" = 20, "bomb" = 10, "bio" = 100, "rad" = 10, "fire" = 100, "acid" = 100)
+	actions_types = list(/datum/action/item_action/berserk_mode)
+	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
+	resistance_flags = FIRE_PROOF
+	/// Current charge of berserk, goes from 0 to 100
+	var/berserk_charge = 0
+	/// Status of berserk
+	var/berserk_active = FALSE
+
+/obj/item/clothing/head/helmet/space/hardsuit/berserker/Initialize()
+	. = ..()
+	ADD_TRAIT(src, TRAIT_NODROP, LOCKED_HELMET_TRAIT)
+
+/obj/item/clothing/head/helmet/space/hardsuit/berserker/examine()
+	. = ..()
+	. += "<span class='notice'>Berserk mode is [berserk_charge]% charged.</span>"
+
+/obj/item/clothing/head/helmet/space/hardsuit/berserker/process(delta_time)
+	. = ..()
+	if(berserk_active)
+		berserk_charge = clamp(berserk_charge - CHARGE_DRAINED_PER_SECOND * delta_time, 0, MAX_BERSERK_CHARGE)
+	if(!berserk_charge)
+		if(ishuman(loc))
+			end_berserk(loc)
+
+/obj/item/clothing/head/helmet/space/hardsuit/berserker/dropped(mob/user)
+	. = ..()
+	end_berserk(user)
+
+/obj/item/clothing/head/helmet/space/hardsuit/berserker/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+	if(berserk_active)
+		return
+	var/berserk_value = damage * DAMAGE_TO_CHARGE_SCALE
+	if(attack_type == PROJECTILE_ATTACK)
+		berserk_value *= PROJECTILE_HIT_MULTIPLIER
+	berserk_charge = clamp(round(berserk_charge + berserk_value), 0, MAX_BERSERK_CHARGE)
+	if(berserk_charge >= MAX_BERSERK_CHARGE)
+		to_chat(owner, "<span class='notice'>Berserk mode is fully charged.</span>")
+
+/// Starts berserk, giving the wearer 50 melee armor, doubled attacking speed, NOGUNS trait, adding a color and giving them the berserk movespeed modifier
+/obj/item/clothing/head/helmet/space/hardsuit/berserker/proc/berserk_mode(mob/living/carbon/human/user)
+	to_chat(user, "<span class='warning'>You enter berserk mode.</span>")
+	playsound(user, 'sound/magic/staff_healing.ogg', 50)
+	user.add_movespeed_modifier(/datum/movespeed_modifier/berserk)
+	user.physiology.armor.melee += BERSERK_MELEE_ARMOR_ADDED
+	user.next_move_modifier *= BERSERK_ATTACK_SPEED_MODIFIER
+	user.add_atom_colour(COLOR_BUBBLEGUM_RED, TEMPORARY_COLOUR_PRIORITY)
+	ADD_TRAIT(user, TRAIT_NOGUNS, BERSERK_TRAIT)
+	ADD_TRAIT(src, TRAIT_NODROP, BERSERK_TRAIT)
+	berserk_active = TRUE
+
+/// Ends berserk, reverting the changes from the proc [berserk_mode]
+/obj/item/clothing/head/helmet/space/hardsuit/berserker/proc/end_berserk(mob/living/carbon/human/user)
+	if(!berserk_active)
+		return
+	to_chat(user, "<span class='warning'>You exit berserk mode.</span>")
+	playsound(user, 'sound/magic/summonitems_generic.ogg', 50)
+	user.remove_movespeed_modifier(/datum/movespeed_modifier/berserk)
+	user.physiology.armor.melee -= BERSERK_MELEE_ARMOR_ADDED
+	user.next_move_modifier /= BERSERK_ATTACK_SPEED_MODIFIER
+	user.remove_atom_colour(TEMPORARY_COLOUR_PRIORITY, COLOR_BUBBLEGUM_RED)
+	REMOVE_TRAIT(user, TRAIT_NOGUNS, BERSERK_TRAIT)
+	REMOVE_TRAIT(src, TRAIT_NODROP, BERSERK_TRAIT)
+	berserk_active = FALSE
+
+#undef MAX_BERSERK_CHARGE
+#undef PROJECTILE_HIT_MULTIPLIER
+#undef DAMAGE_TO_CHARGE_SCALE
+#undef CHARGE_DRAINED_PER_SECOND
+#undef BERSERK_MELEE_ARMOR_ADDED
+#undef BERSERK_ATTACK_SPEED_MODIFIER
 
 /obj/item/clothing/head/helmet/space/fragile
 	name = "emergency space helmet"
@@ -452,3 +550,20 @@ Contains:
 	armor = list("melee" = 35, "bullet" = 10, "laser" = 20, "energy" = 30, "bomb" = 5, "bio" = 100, "rad" = 50, "fire" = 65, "acid" = 75)
 	allowed = list(/obj/item/gun, /obj/item/melee/baton, /obj/item/circular_saw, /obj/item/tank/internals, /obj/item/storage/box/pillbottles,\
 	/obj/item/storage/firstaid, /obj/item/stack/medical/gauze, /obj/item/stack/medical/suture, /obj/item/stack/medical/mesh, /obj/item/storage/bag/chemistry)
+
+/obj/item/clothing/head/helmet/space/solgov
+	name = "\improper SolGov Vacuum Helmet"
+	icon_state = "vachelmet_solgov"
+	desc = "This space-proof helmet is meant to be worn with a matching T-MA suit."
+	item_state = "vachelmet_solgov"
+	armor = list("melee" = 40, "bullet" = 20, "laser" = 20,"energy" = 30, "bomb" = 60, "bio" = 100, "rad" = 90, "fire" = 85, "acid" = 75)
+
+/obj/item/clothing/suit/space/solgov
+	name = "\improper SolGov Vacuum Suit"
+	icon_state = "vacsuit_solgov"
+	desc = "Originally designed by independent contractors on Luna for the security team of a major hotel chain, the armored and lightweight Tortoise Microlite Armored Suit now sees widespread use by SolGov's peacekeeper forces."
+	item_state = "vacsuit_solgov"
+	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/melee/transforming/energy, /obj/item/tank/internals)
+	armor = list("melee" = 40, "bullet" = 20, "laser" = 20,"energy" = 30, "bomb" = 60, "bio" = 100, "rad" = 90, "fire" = 85, "acid" = 75)
+	slowdown = 0.5
+	w_class = WEIGHT_CLASS_NORMAL

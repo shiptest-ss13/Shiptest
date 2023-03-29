@@ -191,7 +191,15 @@
 	max_integrity = 1000
 	var/boot_dir = 1
 
-/obj/structure/table/wood/bar/Crossed(atom/movable/AM)
+/obj/structure/table/wood/bar/Initialize()
+	. = ..()
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
+/obj/structure/table/wood/bar/proc/on_entered(datum/source, atom/movable/AM)
+	SIGNAL_HANDLER
 	if(isliving(AM) && !is_barstaff(AM))
 		// No climbing on the bar please
 		var/mob/living/M = AM
@@ -199,8 +207,6 @@
 		M.Paralyze(40)
 		M.throw_at(throwtarget, 5, 1)
 		to_chat(M, "<span class='notice'>No climbing on the bar please.</span>")
-	else
-		. = ..()
 
 /obj/structure/table/wood/bar/proc/is_barstaff(mob/living/user)
 	. = FALSE
@@ -279,10 +285,10 @@
 			break
 		payees[AM] += C.value
 		counted_money += C
-	for(var/obj/item/stack/spacecash/S in AM.GetAllContents())
+	for(var/obj/item/spacecash/bundle/S in AM.GetAllContents())
 		if(payees[AM] >= threshold)
 			break
-		payees[AM] += S.value * S.amount
+		payees[AM] += S.value
 		counted_money += S
 	for(var/obj/item/holochip/H in AM.GetAllContents())
 		if(payees[AM] >= threshold)
@@ -295,9 +301,9 @@
 		payees[AM] += C.value
 		counted_money += C
 
-	else if(payees[AM] < threshold && istype(AM.pulling, /obj/item/stack/spacecash))
-		var/obj/item/stack/spacecash/S = AM.pulling
-		payees[AM] += S.value * S.amount
+	else if(payees[AM] < threshold && istype(AM.pulling, /obj/item/spacecash/bundle))
+		var/obj/item/spacecash/bundle/S = AM.pulling
+		payees[AM] += S.value
 		counted_money += S
 
 	else if(payees[AM] < threshold && istype(AM.pulling, /obj/item/holochip))

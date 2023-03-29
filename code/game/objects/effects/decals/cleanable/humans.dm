@@ -69,7 +69,6 @@
 	if(rename)
 		name = "rotting [initial(name)]"
 		desc += " They smell terrible."
-	AddComponent(/datum/component/rot/gibs)
 
 /obj/effect/decal/cleanable/blood/gibs/replace_decal(obj/effect/decal/cleanable/C)
 	return FALSE //Never fail to place us
@@ -77,7 +76,7 @@
 /obj/effect/decal/cleanable/blood/gibs/ex_act(severity, target)
 	return
 
-/obj/effect/decal/cleanable/blood/gibs/Crossed(atom/movable/L)
+/obj/effect/decal/cleanable/blood/gibs/on_entered(datum/source, atom/movable/L)
 	if(isliving(L) && has_gravity(loc))
 		playsound(loc, 'sound/effects/gib_step.ogg', HAS_TRAIT(L, TRAIT_LIGHT_STEP) ? 20 : 50, TRUE)
 	. = ..()
@@ -181,8 +180,8 @@
 	update_icon()
 	return ..()
 
-/obj/effect/decal/cleanable/blood/footprints/Crossed(atom/movable/O)
-	..()
+/obj/effect/decal/cleanable/blood/footprints/on_entered(datum/source, atom/movable/O)
+	. = ..()
 	if(ishuman(O))
 		var/mob/living/carbon/human/H = O
 		var/obj/item/clothing/shoes/S = H.shoes
@@ -193,8 +192,8 @@
 				entered_dirs |= H.dir
 				update_icon()
 
-/obj/effect/decal/cleanable/blood/footprints/Uncrossed(atom/movable/O)
-	..()
+/obj/effect/decal/cleanable/blood/footprints/on_uncrossed(datum/source, atom/movable/O)
+	. = ..()
 	if(ishuman(O))
 		var/mob/living/carbon/human/H = O
 		var/obj/item/clothing/shoes/S = H.shoes

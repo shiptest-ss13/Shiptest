@@ -3,6 +3,8 @@
  *		Backpack
  *		Backpack Types
  *		Satchel Types
+ *		Messenger Bag Types
+ *		Duffel Types
  */
 
 /*
@@ -16,10 +18,14 @@
 	item_state = "backpack"
 	lefthand_file = 'icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/backpack_righthand.dmi'
+	pickup_sound = "rustle"
+	drop_sound = "rustle"
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK	//ERROOOOO
 	resistance_flags = NONE
 	max_integrity = 300
+	greyscale_icon_state = "backpack"
+	greyscale_colors = list(list(13, 17), list(12, 17), list(12, 21))
 
 /obj/item/storage/backpack/ComponentInitialize()
 	. = ..()
@@ -27,6 +33,7 @@
 	STR.max_combined_w_class = 21
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
 	STR.max_items = 21
+	STR.use_sound = 'sound/items/storage/unzip.ogg'
 
 /*
  * Backpack Types
@@ -135,6 +142,11 @@
 	icon_state = "securitypack"
 	item_state = "securitypack"
 
+/obj/item/storage/backpack/security/cmm
+	name = "cmm backpack"
+	desc = "It's a very blue backpack."
+	icon_state = "cmmpack"
+
 /obj/item/storage/backpack/captain
 	name = "captain's backpack"
 	desc = "It's a special backpack made exclusively for Nanotrasen officers."
@@ -218,12 +230,13 @@
 	desc = "A trendy looking satchel."
 	icon_state = "satchel-norm"
 	item_state = "satchel-norm"
-	species_exception = list(/datum/species/kepori)
+	greyscale_icon_state = "satchel"
+	greyscale_colors = list(list(11, 12), list(17, 18), list(10, 11))
 
 /obj/item/storage/backpack/satchel/leather
 	name = "leather satchel"
 	desc = "It's a very fancy satchel made with fine leather."
-	icon = 'whitesands/icons/obj/storage.dmi'		//WS Edit - Suitcases
+	icon = 'icons/obj/storage.dmi'		//WS Edit - Suitcases
 	icon_state = "satchel"
 	item_state = "satchel"
 
@@ -282,6 +295,11 @@
 	icon_state = "satchel-sec"
 	item_state = "satchel-sec"
 
+/obj/item/storage/backpack/satchel/sec/cmm
+	name = "cmm satchel"
+	desc = "A robust satchel for anti-piracy related needs."
+	icon_state = "satchel-cmm"
+
 /obj/item/storage/backpack/satchel/explorer
 	name = "explorer satchel"
 	desc = "A robust satchel for stashing your loot."
@@ -312,12 +330,32 @@
 	STR.set_holdable(null, list(/obj/item/storage/backpack/satchel/flat)) //muh recursive backpacks)
 
 /obj/item/storage/backpack/satchel/flat/PopulateContents()
-	var/datum/supply_pack/costumes_toys/randomised/contraband/C = new
+	var/static/list/contraband = list(
+		/obj/item/poster/random_contraband,
+		/obj/item/poster/random_contraband,
+		/obj/item/reagent_containers/food/snacks/grown/cannabis,
+		/obj/item/reagent_containers/food/snacks/grown/cannabis/rainbow,
+		/obj/item/reagent_containers/food/snacks/grown/cannabis/white,
+		/obj/item/storage/box/fireworks/dangerous,
+		/obj/item/storage/pill_bottle/zoom,
+		/obj/item/storage/pill_bottle/happy,
+		/obj/item/storage/pill_bottle/lsd,
+		/obj/item/storage/pill_bottle/aranesp,
+		/obj/item/storage/pill_bottle/stimulant,
+		/obj/item/toy/cards/deck/syndicate,
+		/obj/item/reagent_containers/food/drinks/bottle/absinthe,
+		/obj/item/clothing/under/syndicate/tacticool,
+		/obj/item/storage/fancy/cigarettes/cigpack_syndicate,
+		/obj/item/storage/fancy/cigarettes/cigpack_shadyjims,
+		/obj/item/clothing/mask/gas/syndicate,
+		/obj/item/clothing/neck/necklace/dope,
+		/obj/item/vending_refill/donksoft)
 	for(var/i in 1 to 2)
-		var/ctype = pick(C.contains)
+		var/ctype = pick(contraband)
 		new ctype(src)
 
-	qdel(C)
+/obj/item/storage/backpack/satchel/flat/with_drip/PopulateContents()
+	new /obj/item/clothing/under/drip(src)
 
 /obj/item/storage/backpack/satchel/flat/with_tools/PopulateContents()
 	new /obj/item/stack/tile/plasteel(src)
@@ -328,12 +366,91 @@
 /obj/item/storage/backpack/satchel/flat/empty/PopulateContents()
 	return
 
+/*
+* Messenger Bag Types from Baystation
+*/
+
+/obj/item/storage/backpack/messenger
+	name = "messenger bag"
+	desc = "A sturdy backpack worn over one shoulder."
+	icon = 'icons/obj/storage.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
+	icon_state = "courierbag"
+	item_state = "courierbag"
+	greyscale_icon_state = "satchel"
+	greyscale_colors = list(list(15, 16), list(19, 13), list(13, 18))
+
+/obj/item/storage/backpack/messenger/chem
+	name = "chemistry messenger bag"
+	desc = "A sterile backpack worn over one shoulder. This one is in Chemistry colors."
+	icon_state = "courierbagchem"
+	item_state = "courierbagchem"
+
+/obj/item/storage/backpack/messenger/med
+	name = "medical messenger bag"
+	desc = "A sterile backpack worn over one shoulder used in medical departments."
+	icon_state = "courierbagmed"
+	item_state = "courierbagmed"
+
+/obj/item/storage/backpack/messenger/para
+	name = "paramedic messenger bag"
+	desc = "A fancy backpack worn over one shoulder. This one is in Paramedic colors."
+	icon_state = "courierbagpara"
+	item_state = "courierbagpara"
+
+/obj/item/storage/backpack/messenger/viro
+	name = "virology messenger bag"
+	desc = "A sterile backpack worn over one shoulder. This one is in Virology colors."
+	icon_state = "courierbagviro"
+	item_state = "courierbagviro"
+
+/obj/item/storage/backpack/messenger/tox
+	name = "science messenger bag"
+	desc = "A backpack worn over one shoulder. Useful for holding science materials."
+	icon_state = "courierbagtox"
+	item_state = "courierbagtox"
+
+/obj/item/storage/backpack/messenger/com
+	name = "captain's messenger bag"
+	desc = "A special backpack worn over one shoulder. This one is made specifically for officers."
+	icon_state = "courierbagcom"
+	item_state = "courierbagcom"
+
+/obj/item/storage/backpack/messenger/engi
+	name = "engineering messenger bag"
+	desc = "A strong backpack worn over one shoulder. This one is designed for Industrial work."
+	icon_state = "courierbagengi"
+	item_state = "courierbagengi"
+
+/obj/item/storage/backpack/messenger/hyd
+	name = "hydroponics messenger bag"
+	desc = "A backpack worn over one shoulder. This one is designed for plant-related work."
+	icon_state = "courierbaghyd"
+	item_state = "courierbaghyd"
+
+/obj/item/storage/backpack/messenger/sec
+	name = "security messenger bag"
+	desc = "A tactical backpack worn over one shoulder. This one is in Security colors."
+	icon_state = "courierbagsec"
+	item_state = "courierbagsec"
+
+/obj/item/storage/backpack/messenger/inteq
+	name = "inteq messenger bag"
+	desc = "A comfortable leather strapped messenger bag worn over one shoulder. This one denotes the wearer as an IRMG operator"
+	icon_state = "courierbaginteq"
+	item_state = "courierbaginteq"
+
+/*
+* Duffelbag Types
+*/
+
 /obj/item/storage/backpack/duffelbag
 	name = "duffel bag"
 	desc = "A large duffel bag for holding extra things."
 	icon_state = "duffel"
 	item_state = "duffel"
 	slowdown = 1
+	greyscale_colors = list(list(21, 11), list(14, 19), list(15, 16))
 
 /obj/item/storage/backpack/duffelbag/ComponentInitialize()
 	. = ..()
@@ -523,7 +640,7 @@
 /obj/item/storage/backpack/duffelbag/syndie/c20rbundle/PopulateContents()
 	new /obj/item/ammo_box/magazine/smgm45(src)
 	new /obj/item/ammo_box/magazine/smgm45(src)
-	new /obj/item/gun/ballistic/automatic/c20r(src)
+	new /obj/item/gun/ballistic/automatic/smg/c20r(src)
 	new /obj/item/suppressor/specialoffer(src)
 
 /obj/item/storage/backpack/duffelbag/syndie/bulldogbundle
@@ -541,7 +658,7 @@
 /obj/item/storage/backpack/duffelbag/syndie/med/medicalbundle/PopulateContents()
 	new /obj/item/clothing/shoes/magboots/syndie(src)
 	new /obj/item/storage/firstaid/tactical(src)
-	new /obj/item/gun/ballistic/automatic/l6_saw/toy(src)
+	new /obj/item/gun/ballistic/automatic/hmg/l6_saw/toy(src)
 	new /obj/item/ammo_box/foambox/riot(src)
 
 /obj/item/storage/backpack/duffelbag/syndie/med/bioterrorbundle
@@ -551,7 +668,7 @@
 	new /obj/item/reagent_containers/spray/chemsprayer/bioterror(src)
 	new /obj/item/storage/box/syndie_kit/chemical(src)
 	new /obj/item/gun/syringe/syndicate(src)
-	new /obj/item/gun/ballistic/automatic/c20r/toy(src)
+	new /obj/item/gun/ballistic/automatic/smg/c20r/toy(src)
 	new /obj/item/storage/box/syringes(src)
 	new /obj/item/ammo_box/foambox/riot(src)
 	new /obj/item/grenade/chem_grenade/bioterrorfoam(src)

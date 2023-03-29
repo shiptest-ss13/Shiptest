@@ -9,6 +9,13 @@
 		diag_hud.add_to_hud(src)
 	faction += "[REF(src)]"
 	GLOB.mob_living_list += src
+	if(speed)
+		update_living_varspeed()
+
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
 
 /mob/living/prepare_huds()
 	..()
@@ -215,6 +222,7 @@
 		return
 	now_pushing = TRUE
 	var/dir_to_target = get_dir(src, AM)
+	dir_to_target = dir_to_target ? dir_to_target : dir //we will fall back to using the mob's dir if on same tile as obj
 
 	// If there's no dir_to_target then the player is on the same turf as the atom they're trying to push.
 	// This can happen when a player is stood on the same turf as a directional window. All attempts to push
@@ -513,8 +521,7 @@
 
 /// Proc to append behavior related to lying down.
 /mob/living/proc/on_lying_down(new_lying_angle)
-	if(layer == initial(layer)) //to avoid things like hiding larvas.
-		layer = LYING_MOB_LAYER //so mob lying always appear behind standing mobs
+	layer = LYING_MOB_LAYER //so mob lying always appear behind standing mobs
 	ADD_TRAIT(src, TRAIT_UI_BLOCKED, LYING_DOWN_TRAIT)
 	ADD_TRAIT(src, TRAIT_PULL_BLOCKED, LYING_DOWN_TRAIT)
 	density = FALSE // We lose density and stop bumping passable dense things.
@@ -661,8 +668,8 @@
 	SetUnconscious(0)
 
 
-/mob/living/Crossed(atom/movable/AM)
-	. = ..()
+/mob/living/proc/on_entered(datum/source, atom/movable/AM)
+	SIGNAL_HANDLER
 	for(var/i in get_equipped_items())
 		var/obj/item/item = i
 		SEND_SIGNAL(item, COMSIG_ITEM_WEARERCROSSED, AM, src)
@@ -700,6 +707,32 @@
 	jitteriness = 0
 	stop_sound_channel(CHANNEL_HEARTBEAT)
 
+//proc used to heal a mob, but only damage types specified.
+/mob/living/proc/specific_heal(blood_amt = 0, brute_amt = 0, fire_amt = 0, tox_amt = 0, oxy_amt = 0, clone_amt = 0, organ_amt = 0, stam_amt = 0, specific_revive = FALSE, specific_bones = FALSE)
+	if(iscarbon(src))
+		var/mob/living/carbon/C = src
+		if(!(C.dna?.species && (NOBLOOD in C.dna.species.species_traits)))
+			C.blood_volume += (blood_amt)
+
+		for(var/i in C.internal_organs)
+			var/obj/item/organ/O = i
+			if(O.organ_flags & ORGAN_SYNTHETIC)
+				continue
+			O.applyOrganDamage(organ_amt*-1)//1 = 5 organ damage healed
+
+		if(specific_bones)
+			for(var/obj/item/bodypart/B in C.bodyparts)
+				B.fix_bone()
+
+	if(specific_revive)
+		revive()
+
+	adjustBruteLoss(brute_amt*-1)
+	adjustFireLoss(fire_amt*-1)
+	adjustToxLoss(tox_amt*-1)
+	adjustOxyLoss(oxy_amt*-1)
+	adjustCloneLoss(clone_amt*-1)
+	adjustStaminaLoss(stam_amt*-1)
 
 //proc called by revive(), to check if we can actually ressuscitate the mob (we don't want to revive him and have him instantly die again)
 /mob/living/proc/can_be_revived()
@@ -1230,7 +1263,7 @@
 //Mobs on Fire end
 
 // used by secbot and monkeys Crossed
-/mob/living/proc/knockOver(var/mob/living/carbon/C)
+/mob/living/proc/knockOver(mob/living/carbon/C)
 	if(C.key) //save us from monkey hordes
 		C.visible_message("<span class='warning'>[pick( \
 						"[C] dives out of [src]'s way!", \
@@ -1447,13 +1480,13 @@
 		CRASH(ERROR_ERROR_LANDMARK_ERROR)
 
 /**
-  * Changes the inclination angle of a mob, used by humans and others to differentiate between standing up and prone positions.
-  *
-  * In BYOND-angles 0 is NORTH, 90 is EAST, 180 is SOUTH and 270 is WEST.
-  * This usually means that 0 is standing up, 90 and 270 are horizontal positions to right and left respectively, and 180 is upside-down.
-  * Mobs that do now follow these conventions due to unusual sprites should require a special handling or redefinition of this proc, due to the density and layer changes.
-  * The return of this proc is the previous value of the modified lying_angle if a change was successful (might include zero), or null if no change was made.
-  */
+ * Changes the inclination angle of a mob, used by humans and others to differentiate between standing up and prone positions.
+ *
+ * In BYOND-angles 0 is NORTH, 90 is EAST, 180 is SOUTH and 270 is WEST.
+ * This usually means that 0 is standing up, 90 and 270 are horizontal positions to right and left respectively, and 180 is upside-down.
+ * Mobs that do now follow these conventions due to unusual sprites should require a special handling or redefinition of this proc, due to the density and layer changes.
+ * The return of this proc is the previous value of the modified lying_angle if a change was successful (might include zero), or null if no change was made.
+ */
 /mob/living/proc/set_lying_angle(new_lying)
 	if(new_lying == lying_angle)
 		return
@@ -1503,15 +1536,15 @@
 /**
  * get_body_temp_normal Returns the mobs normal body temperature with any modifications applied
  *
- * This applies the result from proc/get_body_temp_normal_change() against the BODYTEMP_NORMAL and returns the result
+ * This applies the result from proc/get_body_temp_normal_change() against the HUMAN_BODYTEMP_NORMAL and returns the result
  *
  * arguments:
  * * apply_change (optional) Default True This applies the changes to body temperature normal
  */
 /mob/living/proc/get_body_temp_normal(apply_change=TRUE)
 	if(!apply_change)
-		return BODYTEMP_NORMAL
-	return BODYTEMP_NORMAL + get_body_temp_normal_change()
+		return HUMAN_BODYTEMP_NORMAL
+	return HUMAN_BODYTEMP_NORMAL + get_body_temp_normal_change()
 
 ///Checks if the user is incapacitated or on cooldown.
 /mob/living/proc/can_look_up()
@@ -1765,7 +1798,7 @@
 	//this won't really work with species with more than 2 legs, but it'll function
 	if(broken_legs > 0)
 		var/broken_slowdown = 0
-		broken_slowdown += (default_num_legs - broken_legs) * 2
+		broken_slowdown += broken_legs
 		add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/bones, multiplicative_slowdown=broken_slowdown) //can't move fast with a broken leg
 	else
 		remove_movespeed_modifier(/datum/movespeed_modifier/bones)
@@ -1867,3 +1900,47 @@
 		AdjustParalyzed(howfuck)
 		AdjustKnockdown(howfuck)
 		Jitter(rand(150,200))
+
+/**
+ * Sets the mob's speed variable and then calls update_living_varspeed().
+ *
+ * Sets the mob's speed variable, which does nothing by itself.
+ * It then calls update_living_varspeed(), which then actually applies the movespeed change.
+ * Arguments:
+ * * var_value - The new value of speed.
+ */
+/mob/living/proc/set_varspeed(var_value)
+	speed = var_value
+	update_living_varspeed()
+
+/**
+ * Applies the mob's speed variable to a movespeed modifier.
+ *
+ * Applies the speed variable to a movespeed variable.  If the speed is 0, removes the movespeed modifier.
+ */
+/mob/living/proc/update_living_varspeed()
+	if(speed == 0)
+		remove_movespeed_modifier(/datum/movespeed_modifier/living_varspeed)
+		return
+	add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/living_varspeed, multiplicative_slowdown = speed)
+
+
+/**
+ * Applies the mob's speed variable to a movespeed modifier.
+ *
+ * Applies the speed variable to a movespeed variable.  If the speed is 0, removes the movespeed modifier.
+ */
+
+/mob/living/carbon/verb/open_close_eyes()
+	set category = "IC"
+	set name = "Open/Close Eyes"
+
+	if(HAS_TRAIT(src, TRAIT_EYESCLOSED))
+		REMOVE_TRAIT(src, TRAIT_EYESCLOSED, "[type]")
+		src.cure_blind("[type]")
+		src.update_body()
+		return
+	ADD_TRAIT(src, TRAIT_EYESCLOSED, "[type]")
+	src.become_blind("[type]")
+	src.update_body()
+	return

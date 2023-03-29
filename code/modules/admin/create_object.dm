@@ -9,7 +9,7 @@
 		var/objectjs = null
 		objectjs = jointext(typesof(/obj), ";")
 		create_object_html = file2text('html/create_object.html')
-		create_object_html = replacetext(create_object_html, "null /* object types */", "\"[objectjs]\"")
+		create_object_html = replacetext(create_object_html, "null; /* object types */", "\"[objectjs]\"")
 
 	user << browse(create_panel_helper(create_object_html), "window=create_object;size=425x475")
 

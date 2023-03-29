@@ -128,8 +128,7 @@
 		user.visible_message("<span class='warning'>\the [user] washes \the [target]'s mouth out with [src.name]!</span>", "<span class='notice'>You wash \the [target]'s mouth out with [src.name]!</span>") //washes mouth out with soap sounds better than 'the soap' here			if(user.zone_selected == "mouth")
 		if(H.lip_style)
 			user?.mind.adjust_experience(/datum/skill/cleaning, CLEAN_SKILL_GENERIC_WASH_XP)
-		H.lip_style = null //removes lipstick
-		H.update_body()
+			H.update_lips(null)
 		decreaseUses(user)
 		return
 	else if(istype(target, /obj/structure/window))
@@ -173,10 +172,15 @@
 	throw_speed = 3
 	throw_range = 7
 	attack_verb = list("HONKED")
+	///sound file given to the squeaky component we make in Initialize() so sub-types can specify their own sound
+	var/sound_file = 'sound/items/bikehorn.ogg'
 
 /obj/item/bikehorn/Initialize()
 	. = ..()
-	AddComponent(/datum/component/squeak, list('sound/items/bikehorn.ogg'=1), 50, falloff_exponent = 20) //die off quick please)
+	var/list/sound_list = list()
+	sound_list[sound_file] = 1
+	//LoadComponent so child types dont stack squeak components
+	LoadComponent(/datum/component/squeak, sound_list, 50)
 
 /obj/item/bikehorn/attack(mob/living/carbon/M, mob/living/carbon/user)
 	if(user != M && ishuman(user))
@@ -195,11 +199,7 @@
 	name = "air horn"
 	desc = "Damn son, where'd you find this?"
 	icon_state = "air_horn"
-
-/obj/item/bikehorn/airhorn/Initialize()
-	. = ..()
-	AddComponent(/datum/component/squeak, list('sound/items/airhorn2.ogg'=1), 50, falloff_exponent = 20) //die off quick please)
-
+	sound_file = 'sound/items/airhorn2.ogg'
 //golden bikehorn
 /obj/item/bikehorn/golden
 	name = "golden bike horn"

@@ -73,14 +73,14 @@
 		if(!isturf(ai.loc))
 			return
 		T = get_turf(T)
-		if(!force_update && (T == get_turf(src)) )
+		if(!force_update && (T == get_turf(src)))
 			return //we are already here!
 		if (T)
 			if(!force_update)
 				var/datum/map_zone/mapzone = T.get_map_zone()
 				if(!mapzone?.is_in_bounds(T))//@azarak Give me a poke on discord if you see this, I'm *assuming* this is what you intended? (Added nullcheck)
 					return
-			forceMove(T)
+			abstract_move(T)
 		else
 			moveToNullspace()
 		if(use_static != USE_STATIC_NONE)
@@ -125,8 +125,15 @@
 		return ai.client
 	return null
 
-/mob/camera/aiEye/Destroy()
+/mob/camera/aiEye/Destroy(force)
 	if(ai)
+		if(ai.eyeobj == src)
+			if(!force)
+				setLoc(get_turf(ai), TRUE)
+				return QDEL_HINT_LETMELIVE
+			// We're being force deleted; clear the ai's reference to us and call view_core to have a new eye instantiated
+			ai.eyeobj = null
+			ai.view_core()
 		ai.all_eyes -= src
 		ai = null
 	for(var/V in visibleCameraChunks)

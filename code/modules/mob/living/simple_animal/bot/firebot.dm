@@ -14,8 +14,8 @@
 	health = 25
 	maxHealth = 25
 
-	radio_key = /obj/item/encryptionkey/headset_eng
-	radio_channel = RADIO_CHANNEL_ENGINEERING
+	radio_key = /obj/item/encryptionkey/headset_com
+	radio_channel = RADIO_CHANNEL_COMMAND
 	bot_type = FIRE_BOT
 	model = "Firebot"
 	bot_core = /obj/machinery/bot_core/firebot
@@ -294,7 +294,7 @@
 	return result
 
 /mob/living/simple_animal/bot/firebot/temperature_expose(datum/gas_mixture/air, temperature, volume)
-	if((temperature > T0C + 200 || temperature < BODYTEMP_COLD_DAMAGE_LIMIT) && foam_cooldown + FOAM_INTERVAL < world.time)
+	if((temperature > T0C + 200 || temperature < HUMAN_BODYTEMP_COLD_DAMAGE_LIMIT) && foam_cooldown + FOAM_INTERVAL < world.time)
 		new /obj/effect/particle_effect/foam/firefighting(loc)
 		foam_cooldown = world.time
 	..()

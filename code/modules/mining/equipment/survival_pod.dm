@@ -82,28 +82,27 @@
 //Pod objects
 
 //Window
-/obj/structure/window/shuttle/survival_pod
+/obj/structure/window/reinforced/fulltile/shuttle/survival_pod
 	name = "pod window"
 	icon = 'icons/obj/smooth_structures/pod_window.dmi'
 	icon_state = "pod_window-0"
 	base_icon_state = "pod_window"
-	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_SHUTTLE_PARTS, SMOOTH_GROUP_SURVIVAL_TIANIUM_POD)
 	canSmoothWith = list(SMOOTH_GROUP_SURVIVAL_TIANIUM_POD)
-
-/obj/structure/window/shuttle/survival_pod/spawner/north
-	dir = NORTH
-
-/obj/structure/window/shuttle/survival_pod/spawner/east
-	dir = EAST
-
-/obj/structure/window/shuttle/survival_pod/spawner/west
-	dir = WEST
 
 /obj/structure/window/reinforced/survival_pod
 	name = "pod window"
 	icon = 'icons/obj/lavaland/survival_pod.dmi'
 	icon_state = "pwindow"
+
+/obj/structure/window/reinforced/survival_pod/spawner/north
+	dir = NORTH
+
+/obj/structure/window/reinforced/survival_pod/spawner/east
+	dir = EAST
+
+/obj/structure/window/reinforced/survival_pod/spawner/west
+	dir = WEST
 
 //Door
 /obj/machinery/door/airlock/survival_pod
@@ -138,7 +137,7 @@
 
 //Sleeper
 /obj/machinery/sleeper/survival_pod
-	icon = 'whitesands/icons/obj/machines/sleeper.dmi'
+	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "lavaland_sleeper"
 
 /obj/machinery/sleeper/survival_pod/update_overlays()
@@ -314,8 +313,8 @@
 						/obj/item/energy_katana,
 						/obj/item/hierophant_club,
 						/obj/item/his_grace,
-						/obj/item/gun/ballistic/minigun,
-						/obj/item/gun/ballistic/automatic/l6_saw,
+						/obj/item/gun/energy/minigun,
+						/obj/item/gun/ballistic/automatic/hmg/l6_saw,
 						/obj/item/gun/magic/staff/chaos,
 						/obj/item/gun/magic/staff/spellblade,
 						/obj/item/gun/magic/wand/death,

@@ -1,581 +1,1148 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "aa" = (
-/turf/open/space/basic,
-/area/space)
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/firealarm{
+	pixel_x = 28
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle)
 "ab" = (
-/turf/closed/wall/r_wall,
-/area/ruin/space/has_grav/storage/materials3)
-"ac" = (
-/obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/maintenance/four,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/materials3)
-"ad" = (
-/turf/closed/wall/r_wall,
-/area/ruin/space/has_grav/storage/materials2)
-"ae" = (
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/materials3)
-"af" = (
-/obj/effect/decal/cleanable/blood/footprints{
-	dir = 4;
-	icon_state = "blood1"
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/materials2)
-"ag" = (
-/obj/effect/decal/cleanable/blood/footprints{
-	dir = 4;
-	icon_state = "blood1"
-	},
-/obj/item/storage/pill_bottle/floorpill/full,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/materials2)
-"ah" = (
-/turf/closed/mineral,
-/area/ruin/space/has_grav)
-"ai" = (
-/turf/closed/wall/r_wall,
-/area/ruin/space/has_grav/storage/materials1)
-"ak" = (
-/obj/effect/decal/cleanable/blood/footprints{
-	dir = 1;
-	icon_state = "blood1"
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/materials2)
-"al" = (
-/obj/effect/decal/cleanable/blood/footprints{
-	dir = 4;
-	icon_state = "blood1"
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/materials2)
-"am" = (
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/materials2)
-"an" = (
-/obj/structure/closet/crate/secure/weapon,
-/obj/item/ammo_box/magazine/co9mm,
-/obj/item/ammo_box/magazine/co9mm,
-/obj/item/ammo_box/magazine/co9mm,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/materials2)
-"ao" = (
-/obj/effect/decal/cleanable/blood/footprints{
-	dir = 4;
-	icon_state = "blood1"
+/obj/effect/turf_decal/trimline/opaque/red/filled/line{
+	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/remains/human,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 5
+	},
+/obj/machinery/airalarm/all_access{
+	dir = 4;
+	pixel_x = -25
+	},
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/materials2)
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"ac" = (
+/obj/structure/bed,
+/obj/structure/curtain/cloth/grey,
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/item/bedsheet/dorms,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
+"ad" = (
+/obj/effect/turf_decal/trimline/opaque/red/filled/line{
+	dir = 4
+	},
+/obj/machinery/power/apc/auto_name/east{
+	start_charge = 0
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/structure/table,
+/obj/item/paper_bin,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"ae" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle)
+"af" = (
+/obj/effect/turf_decal/trimline/opaque/red/filled/line{
+	dir = 1
+	},
+/obj/machinery/light/broken{
+	dir = 1
+	},
+/obj/structure/chair/office{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"ag" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/fluff/paper/stack{
+	dir = 1
+	},
+/obj/item/spacecash/bundle/c200{
+	pixel_x = 7;
+	pixel_y = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 6
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"ah" = (
+/turf/closed/mineral/random/asteroid,
+/area/ruin/space/has_grav)
+"ai" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 1
+	},
+/obj/structure/fluff/hedge,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle)
+"ak" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/railing,
+/obj/effect/turf_decal/trimline/opaque/red/filled/line{
+	dir = 9
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"al" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/trimline/opaque/red/filled/line{
+	dir = 9
+	},
+/obj/item/kirbyplants/random,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"an" = (
+/obj/structure/fluff/paper/stack{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"ao" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/trimline/opaque/red/filled/line{
+	dir = 5
+	},
+/obj/structure/table,
+/obj/item/stamp{
+	pixel_x = 7;
+	pixel_y = 7
+	},
+/obj/item/stamp/denied{
+	pixel_x = 7
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle/secure)
 "ap" = (
 /obj/effect/decal/cleanable/cobweb,
+/obj/structure/table,
+/obj/machinery/microwave,
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/materials1)
+/area/ruin/space/has_grav/powerpuzzle)
 "aq" = (
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/materials1)
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/power/apc/auto_name/west{
+	start_charge = 0
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
 "au" = (
-/obj/machinery/door/airlock/highsecurity,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/effect/turf_decal/industrial/warning,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/machinery/door/airlock,
 /obj/effect/mapping_helpers/airlock/locked,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/materials3)
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
 "av" = (
-/obj/structure/falsewall/reinforced,
-/obj/effect/decal/cleanable/blood/footprints{
-	dir = 1;
-	icon_state = "blood1"
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/materials2)
-"aw" = (
-/obj/structure/closet/syndicate/resources{
-	name = "Resource storage"
-	},
-/obj/effect/decal/cleanable/cobweb,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/materials2)
-"ax" = (
-/obj/structure/closet/syndicate/resources{
-	name = "Resource storage"
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/materials2)
-"ay" = (
-/obj/machinery/doorButtons/access_button,
-/turf/closed/indestructible/reinforced,
-/area/ruin/space/has_grav/storage/materials2)
-"aA" = (
-/obj/effect/decal/cleanable/blood/tracks{
-	dir = 4;
-	icon_state = "tracks"
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/materials1)
-"aB" = (
-/obj/machinery/door/airlock/highsecurity,
-/obj/effect/decal/cleanable/blood/tracks{
-	dir = 4;
-	icon_state = "tracks"
-	},
-/obj/effect/mapping_helpers/airlock/locked,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/materials2)
-"aC" = (
-/obj/effect/decal/cleanable/blood,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/materials2)
-"aD" = (
-/obj/machinery/door/airlock/highsecurity,
-/obj/effect/mapping_helpers/airlock/locked,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/materials2)
-"aE" = (
-/obj/item/bear_armor,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/materials2)
-"aH" = (
-/obj/structure/closet/syndicate/resources{
-	name = "Resource storage"
-	},
-/obj/effect/decal/cleanable/blood,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/materials2)
-"aI" = (
-/obj/effect/spawner/lootdrop/glowstick,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/materials1)
-"aJ" = (
-/obj/effect/decal/cleanable/cobweb,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/materials2)
-"aK" = (
-/obj/structure/falsewall/reinforced,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/materials2)
-"aM" = (
-/turf/closed/indestructible/reinforced,
-/area/ruin/space/has_grav/storage/power1)
-"aR" = (
-/turf/closed/indestructible/reinforced,
-/area/ruin/space/has_grav/storage/power2)
-"aS" = (
-/turf/closed/indestructible/reinforced,
-/area/ruin/space/has_grav/storage/power3)
-"aT" = (
-/obj/structure/closet/crate/secure/loot,
-/obj/effect/decal/cleanable/cobweb,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/power3)
-"aU" = (
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/power3)
-"aV" = (
-/obj/effect/decal/cleanable/cobweb,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/power1)
-"aW" = (
-/obj/item/export_scanner,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"aw" = (
+/obj/machinery/firealarm{
+	pixel_x = -28
+	},
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/central)
-"aX" = (
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/power1)
-"aY" = (
-/turf/closed/wall/r_wall,
-/area/ruin/space/has_grav/storage/central)
-"aZ" = (
-/obj/item/trash/pistachios,
-/obj/item/storage/pill_bottle/floorpill/full,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/central)
-"ba" = (
-/obj/structure/closet/toolcloset,
-/obj/effect/decal/cleanable/cobweb,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/power2)
-"bb" = (
-/obj/item/trash/sosjerky,
-/obj/item/trash/syndi_cakes,
-/obj/effect/mob_spawn/human/corpse/cargo_tech,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/central)
-"bc" = (
-/obj/structure/closet/toolcloset,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/power2)
-"bd" = (
-/obj/effect/decal/cleanable/blood/splatter,
-/obj/effect/mob_spawn/human/corpse/cargo_tech,
-/obj/item/weldingtool/mini,
-/obj/item/storage/pill_bottle/lsd,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/central)
-"be" = (
-/obj/effect/decal/cleanable/cobweb/cobweb2,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/materials1)
-"bf" = (
-/obj/item/storage/pill_bottle,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/materials2)
-"bh" = (
+/area/ruin/space/has_grav/powerpuzzle)
+"ax" = (
+/obj/effect/turf_decal/trimline/opaque/red/filled/warning,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 1
+	},
+/obj/structure/holosign/barrier,
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/materials1)
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"ay" = (
+/obj/structure/fluff/paper/stack{
+	dir = 8
+	},
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/red/filled/line{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"aB" = (
+/obj/effect/turf_decal/industrial/warning,
+/mob/living/simple_animal/hostile/carp/megacarp,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/powerpuzzle)
+"aC" = (
+/obj/effect/turf_decal/trimline/opaque/red/filled/line{
+	dir = 8
+	},
+/obj/structure/table,
+/obj/item/folder/red,
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/item/pen,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"aD" = (
+/obj/effect/turf_decal/trimline/opaque/red/filled/line,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"aE" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2,
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"aH" = (
+/obj/effect/turf_decal/trimline/opaque/red/filled/line,
+/obj/structure/table,
+/obj/item/flashlight/lamp,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"aI" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 9
+	},
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/structure/chair/comfy/black{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
+"aJ" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/machinery/atmospherics/components/unary/outlet_injector/on/layer2{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wideplating/dark{
+	dir = 1
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/powerpuzzle/engineering)
+"aK" = (
+/turf/open/floor/plasteel/showroomfloor{
+	name = "bathroom floor"
+	},
+/area/ruin/space/has_grav/powerpuzzle)
+"aM" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/structure/chair/comfy/brown{
+	dir = 1
+	},
+/turf/open/floor/wood,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"aO" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
+"aR" = (
+/obj/structure/closet/crate{
+	name = "Ration Crate"
+	},
+/obj/item/reagent_containers/food/drinks/waterbottle/empty,
+/obj/item/reagent_containers/food/drinks/waterbottle/empty,
+/obj/item/reagent_containers/food/drinks/waterbottle,
+/obj/item/reagent_containers/food/snacks/rationpack,
+/obj/item/reagent_containers/food/snacks/rationpack,
+/obj/item/reagent_containers/food/snacks/sosjerky,
+/obj/item/reagent_containers/food/snacks/sosjerky,
+/obj/item/stack/medical/gauze/improvised,
+/obj/item/stack/medical/gauze/improvised,
+/obj/item/trash/sosjerky{
+	pixel_x = 7;
+	pixel_y = 6
+	},
+/obj/item/trash/sosjerky{
+	pixel_x = -6;
+	pixel_y = 2
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"aS" = (
+/obj/effect/mob_spawn/human/corpse/cargo_tech,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 6
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle)
+"aT" = (
+/turf/closed/wall/r_wall/rust,
+/area/ruin/space/has_grav/powerpuzzle)
+"aU" = (
+/obj/structure/rack,
+/obj/item/tank/internals/oxygen,
+/obj/item/tank/internals/oxygen{
+	pixel_x = 3
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
+"aV" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/broken{
+	dir = 4
+	},
+/obj/structure/chair/sofa/left{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/transparent/green/filled/warning,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle)
+"aW" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 2
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle)
+"aX" = (
+/obj/effect/turf_decal/trimline/opaque/red/filled/line{
+	dir = 8
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"aY" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/chair/sofa/left{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/structure/sign/poster/contraband/space_up{
+	pixel_x = 32
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
+"aZ" = (
+/obj/effect/turf_decal/trimline/opaque/red/filled/line{
+	dir = 10
+	},
+/obj/structure/chair/office{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"ba" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/trimline/transparent/solgovgold/filled/line{
+	dir = 8
+	},
+/obj/machinery/power/apc/auto_name/west{
+	start_charge = 0
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle/engineering)
+"bb" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating/asteroid,
+/area/ruin/space/has_grav)
+"bc" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 5
+	},
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle/engineering)
+"bd" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/falsewall/reinforced,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powerpuzzle)
+"be" = (
+/obj/structure/chair,
+/obj/effect/turf_decal/sand/plating,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav)
+"bf" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/door/airlock/vault/derelict{
+	id_tag = "vaultdoor"
+	},
+/obj/effect/mapping_helpers/airlock/locked,
+/obj/machinery/door/firedoor,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"bh" = (
+/obj/machinery/firealarm{
+	pixel_x = 28
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 8
+	},
+/obj/structure/sign/warning/securearea{
+	pixel_y = 32
+	},
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle/secure)
 "bi" = (
+/obj/structure/table,
+/obj/item/pen/fountain{
+	pixel_x = -6;
+	pixel_y = 4
+	},
+/obj/item/holosign_creator/security{
+	pixel_x = 12;
+	pixel_y = 4
+	},
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/power2)
+/area/ruin/space/has_grav/powerpuzzle/secure)
 "bj" = (
-/obj/machinery/vending/engivend,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/power2)
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 10
+	},
+/obj/machinery/airalarm/all_access{
+	dir = 8;
+	pixel_x = 25
+	},
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle/engineering)
 "bk" = (
-/turf/closed/indestructible/reinforced,
-/area/ruin/space/has_grav/storage/central2)
+/obj/structure/chair,
+/obj/structure/sign/poster/official/cohiba_robusto_ad{
+	pixel_y = 32
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle)
 "bl" = (
 /turf/closed/wall,
-/area/ruin/space/has_grav/storage/central)
+/area/ruin/space/has_grav/powerpuzzle)
 "bm" = (
-/obj/structure/falsewall/reinforced,
-/obj/effect/decal/cleanable/blood/tracks,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/central)
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/machinery/airalarm/all_access{
+	pixel_y = 25
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
 "bp" = (
+/obj/structure/railing{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/central)
+/area/ruin/space/has_grav/powerpuzzle)
 "bq" = (
 /obj/structure/closet/firecloset/full,
+/obj/machinery/light/dim,
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/central)
+/area/ruin/space/has_grav/powerpuzzle)
 "br" = (
 /obj/structure/closet/crate,
 /obj/effect/spawner/lootdrop/maintenance/two,
 /obj/effect/decal/cleanable/cobweb,
 /obj/effect/spawner/lootdrop/minor/kittyears_or_rabbitears,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/central)
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
 "bs" = (
-/obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/maintenance/two,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/central)
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/effect/spawner/lootdrop/maintenance/six,
+/obj/structure/closet/crate/secure,
+/obj/machinery/light/dim{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
 "bt" = (
-/obj/effect/decal/cleanable/blood/tracks{
-	dir = 10;
-	icon_state = "tracks"
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/structure/railing{
+	dir = 4
 	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/central)
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
 "bx" = (
-/obj/structure/cable{
-	icon_state = "1-4"
+/obj/machinery/door/airlock/vault/derelict{
+	id_tag = "vaultdoor"
 	},
-/turf/closed/indestructible/reinforced,
-/area/ruin/space/has_grav/storage/power2)
+/obj/effect/mapping_helpers/airlock/locked,
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/door/firedoor,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle/secure)
 "by" = (
-/obj/effect/decal/cleanable/cobweb/cobweb2,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/central)
-"bz" = (
-/turf/open/space/basic,
-/area/ruin/space/has_grav/storage/central2)
-"bB" = (
-/obj/vehicle/ridden/bicycle,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/central2)
-"bC" = (
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/central2)
-"bD" = (
-/obj/structure/table/wood/fancy/cyan,
-/obj/item/storage/lockbox/dueling{
-	req_access = null
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 8
+	},
+/obj/effect/mob_spawn/human/sec,
+/obj/effect/decal/cleanable/blood/splatter{
+	pixel_y = 8;
+	pixel_x = -4
+	},
+/obj/effect/decal/cleanable/blood/gibs{
+	pixel_y = 4
+	},
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 4;
+	pixel_y = 5
+	},
+/obj/effect/turf_decal/trimline/opaque/red/filled/warning{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
 	},
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/central2)
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"bz" = (
+/obj/structure/table,
+/obj/item/storage/fancy/cigarettes,
+/obj/item/lighter/greyscale{
+	pixel_x = 7
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle)
+"bB" = (
+/obj/structure/bed,
+/obj/structure/curtain/cloth/grey,
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/item/bedsheet/dorms,
+/obj/machinery/light/small/broken{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
+"bC" = (
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/structure/chair,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"bD" = (
+/obj/effect/decal/cleanable/blood/old,
+/obj/effect/decal/fakelattice,
+/turf/open/floor/plasteel/elevatorshaft,
+/area/ruin/space/has_grav/powerpuzzle/secure)
 "bE" = (
+/obj/item/trash/syndi_cakes,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/decal/cleanable/cobweb,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/power2)
+/turf/open/floor/plating/asteroid,
+/area/ruin/space/has_grav)
 "bG" = (
-/obj/structure/closet/crate/secure/loot,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/power3)
-"bH" = (
-/obj/effect/mapping_helpers/airlock/locked,
-/obj/machinery/door/airlock/vault/derelict,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/central2)
-"bQ" = (
-/obj/effect/decal/cleanable/blood/footprints{
-	dir = 8;
-	icon_state = "blood1"
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/power2)
-"bS" = (
-/obj/structure/table/wood/fancy/royalblue,
-/obj/item/storage/box/hypospray{
-	pixel_y = 4
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/central2)
-"bT" = (
-/obj/effect/decal/cleanable/blood/tracks{
-	dir = 4;
-	icon_state = "tracks"
-	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
+	dir = 8
+	},
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/materials1)
+/area/ruin/space/has_grav/powerpuzzle)
+"bH" = (
+/obj/effect/turf_decal/trimline/opaque/red/filled/line{
+	dir = 4
+	},
+/obj/structure/closet/crate/bin,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"bK" = (
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/structure/railing,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
+"bQ" = (
+/obj/structure/table,
+/obj/item/flashlight/lamp{
+	pixel_y = 6
+	},
+/obj/effect/turf_decal/trimline/transparent/solgovgold/filled/line{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle/engineering)
+"bS" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/structure/chair/comfy/brown,
+/turf/open/floor/wood,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"bT" = (
+/obj/item/kirbyplants/random,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle/engineering)
 "bX" = (
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 5
+	},
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 4;
+	pixel_y = 5
+	},
+/obj/structure/chair/office,
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/materials2)
+/area/ruin/space/has_grav/powerpuzzle/secure)
 "bZ" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/closed/indestructible/reinforced,
-/area/ruin/space/has_grav/storage/materials2)
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 10
+	},
+/obj/machinery/light/dim{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle/engineering)
 "ca" = (
-/obj/effect/mob_spawn/human/corpse/cargo_tech,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/central)
+/obj/machinery/mech_bay_recharge_port{
+	dir = 2
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
 "cc" = (
-/obj/machinery/door/airlock/highsecurity,
-/obj/effect/decal/cleanable/blood/footprints{
-	dir = 8;
-	icon_state = "blood1"
+/obj/machinery/computer/mech_bay_power_console{
+	dir = 8
 	},
-/obj/effect/mapping_helpers/airlock/locked,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/power2)
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
 "cd" = (
-/obj/structure/table/wood/fancy/red,
-/obj/item/gun/ballistic/automatic/pistol/commissar{
-	pixel_y = 2
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/blood/splatter{
+	pixel_y = 8;
+	pixel_x = -4
+	},
+/obj/effect/decal/cleanable/blood/splatter{
+	icon_state = "trails_2";
+	dir = 4
 	},
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/central2)
+/area/ruin/space/has_grav/powerpuzzle/secure)
 "ce" = (
-/obj/item/crowbar/red,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/central)
+/obj/item/kirbyplants{
+	name = "Emergency Oxygen Giver"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powerpuzzle/secure)
 "cg" = (
-/obj/structure/closet/crate/internals,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/central)
+/obj/structure/table/reinforced,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/effect/turf_decal/siding/wideplating/dark{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
 "ch" = (
-/obj/effect/decal/cleanable/oil,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/materials1)
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 1
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/turf_decal/industrial/warning,
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/airlock/security,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powerpuzzle/secure)
 "ci" = (
-/obj/structure/closet/crate/secure/loot,
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/machinery/door/airlock/engineering/glass,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/structure/barricade/wooden,
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/central)
+/area/ruin/space/has_grav/powerpuzzle/engineering)
 "cj" = (
-/obj/structure/table/wood/fancy/orange,
-/obj/item/construction/rcd,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/central2)
+/turf/closed/wall/r_wall,
+/area/ruin/space/has_grav/powerpuzzle)
 "ck" = (
-/obj/structure/table/wood/fancy/green,
-/obj/item/construction/rld,
+/obj/effect/turf_decal/trimline/opaque/red/filled/line,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/central2)
+/area/ruin/space/has_grav/powerpuzzle/secure)
 "cl" = (
-/obj/structure/table/wood/fancy/purple,
-/obj/item/assembly/signaler/anomaly{
-	pixel_y = 7
+/obj/structure/table,
+/obj/machinery/computer/security/telescreen{
+	network = list("vault");
+	pixel_y = 2;
+	name = "\improper Vault Telescreen";
+	desc = "The vault is engulfed in darkness, you can only make out the faint glow of the bolt lights across the room."
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"cm" = (
+/obj/machinery/computer/monitor,
+/obj/effect/turf_decal/trimline/transparent/solgovgold/filled/line{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
 	},
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/central2)
-"cm" = (
-/obj/item/crowbar/red,
-/obj/effect/mob_spawn/human/corpse/cargo_tech,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/power2)
+/area/ruin/space/has_grav/powerpuzzle/engineering)
 "cp" = (
-/obj/structure/closet/crate/medical,
-/obj/item/storage/pill_bottle/lsd,
-/obj/item/storage/pill_bottle/happy,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/power2)
+/obj/effect/decal/cleanable/cobweb,
+/obj/machinery/suit_storage_unit/standard_unit,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
 "cq" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/materials2)
-"cr" = (
-/obj/structure/falsewall/reinforced,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/materials2)
-"cs" = (
-/obj/item/storage/pill_bottle,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/power2)
-"ct" = (
-/obj/structure/closet/cardboard/metal,
-/obj/item/storage/toolbox/mechanical,
-/obj/item/storage/toolbox/mechanical,
-/obj/item/storage/toolbox/emergency,
-/obj/item/storage/toolbox/electrical,
-/obj/item/storage/toolbox/electrical,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/power1)
-"cu" = (
-/obj/structure/closet/crate/solarpanel_small,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/power2)
-"cv" = (
-/obj/structure/falsewall/reinforced,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/power2)
-"cw" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/materials2)
-"cx" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/materials2)
-"cy" = (
-/obj/effect/decal/cleanable/blood/tracks{
-	dir = 8;
-	icon_state = "tracks"
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/machinery/light/small{
+	dir = 4
 	},
-/obj/effect/decal/cleanable/vomit,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/central)
-"cA" = (
+/obj/item/kirbyplants{
+	icon_state = "plant-02"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"cr" = (
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/dim{
+	dir = 1
+	},
+/obj/structure/table,
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/item/trash/plate,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
+"ct" = (
+/obj/item/stack/cable_coil/cut/red,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powerpuzzle/engineering)
+"cu" = (
+/obj/structure/table,
+/obj/structure/sign/poster/contraband/power{
+	pixel_y = -30
+	},
+/obj/effect/turf_decal/trimline/transparent/solgovgold/filled/line,
+/obj/item/multitool{
+	pixel_y = 5
+	},
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/central)
+/area/ruin/space/has_grav/powerpuzzle/engineering)
+"cv" = (
+/obj/structure/flora/rock/pile,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"cw" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"cx" = (
+/obj/machinery/light/small/broken,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"cy" = (
+/obj/effect/decal/cleanable/vomit,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/warning/corner,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 6
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle)
+"cA" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/open/floor/wood,
+/area/ruin/space/has_grav/powerpuzzle/secure)
 "cB" = (
-/obj/structure/closet/crate,
 /obj/effect/spawner/lootdrop/maintenance/two,
 /obj/effect/decal/cleanable/generic,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/central)
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/structure/closet/crate/secure,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
 "cD" = (
 /obj/effect/spawner/lootdrop/glowstick,
 /obj/effect/decal/cleanable/glass,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/central)
+/area/ruin/space/has_grav/powerpuzzle)
 "cE" = (
+/obj/machinery/photocopier,
+/obj/effect/turf_decal/trimline/opaque/red/filled/line{
+	dir = 1
+	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/camera/autoname{
+	dir = 6;
+	network = list("vault")
+	},
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/central)
+/area/ruin/space/has_grav/powerpuzzle/secure)
 "cH" = (
-/obj/item/inducer,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/central)
+/area/ruin/space/has_grav/powerpuzzle)
 "cI" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/vomit,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/central)
+/obj/structure/table/reinforced,
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wideplating/dark{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/item/clipboard{
+	pixel_y = 12
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
 "cJ" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/central)
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4,
+/turf/open/floor/plasteel/stairs{
+	dir = 8
+	},
+/area/ruin/space/has_grav/powerpuzzle/secure)
 "cM" = (
-/obj/effect/decal/cleanable/oil,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/central)
+/obj/effect/decal/cleanable/oil/slippery,
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/structure/railing{
+	dir = 6
+	},
+/obj/structure/table,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
 "cN" = (
-/obj/effect/decal/cleanable/generic,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/central)
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/structure/chair/office,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
 "cO" = (
-/obj/structure/closet/crate/engineering/electrical,
+/obj/structure/closet/crate/engineering/electrical{
+	name = "robotics crate"
+	},
 /obj/effect/decal/cleanable/generic,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/central)
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/effect/decal/cleanable/greenglow,
+/obj/item/stack/ore/salvage/scrapuranium,
+/obj/item/bodypart/l_arm/robot,
+/obj/effect/spawner/lootdrop/maintenance,
+/obj/item/assembly/prox_sensor,
+/obj/item/stack/ore/salvage/scrapuranium{
+	pixel_x = -4;
+	pixel_y = -4
+	},
+/obj/item/mecha_parts/mecha_equipment/drill,
+/obj/item/mecha_parts/mecha_equipment/hydraulic_clamp,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
 "cP" = (
-/obj/effect/decal/cleanable/vomit,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/power2)
+/obj/structure/railing,
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/effect/turf_decal/box,
+/obj/structure/rack,
+/obj/item/circuitboard/machine/cell_charger,
+/obj/item/stock_parts/cell/high,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle/engineering)
 "cQ" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/power2)
-"cR" = (
-/obj/effect/decal/cleanable/oil,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/power3)
-"cS" = (
-/obj/machinery/power/port_gen/pacman/super,
-/obj/structure/cable,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/corner/transparent/solgovgold/diagonal,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/power2)
-"cT" = (
-/obj/effect/decal/cleanable/vomit,
+/area/ruin/space/has_grav/powerpuzzle/engineering)
+"cR" = (
+/obj/structure/fireplace{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/blood/splatter{
+	icon_state = "trails_2";
+	dir = 4
+	},
+/turf/open/floor/wood,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"cS" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/corner/transparent/solgovgold/diagonal,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 6
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/power3)
+/area/ruin/space/has_grav/powerpuzzle/engineering)
 "cU" = (
-/obj/structure/closet/crate,
-/obj/item/bedsheet/ian,
-/obj/item/bedsheet/dorms,
-/obj/item/bedsheet/nanotrasen,
-/obj/item/bedsheet/centcom,
-/obj/item/bedsheet/syndie,
-/obj/item/toy/plush/moth,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/power1)
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 4;
+	id = "cargoshield"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "cargobay"
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/machinery/conveyor{
+	id = "CargoC1"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powerpuzzle)
 "cV" = (
 /obj/effect/decal/cleanable/oil,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/power1)
-"cW" = (
-/obj/effect/decal/cleanable/oil,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/power2)
-"fd" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/structure/cable,
 /obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/central)
-"gD" = (
-/obj/machinery/power/apc/auto_name/north{
-	pixel_y = 24;
-	start_charge = 0
-	},
-/obj/effect/decal/cleanable/ash,
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/materials1)
-"gG" = (
-/obj/machinery/power/apc/auto_name/west{
-	pixel_x = -24;
-	start_charge = 0
-	},
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/power3)
-"gS" = (
-/obj/effect/decal/cleanable/blood/footprints{
-	dir = 1;
-	icon_state = "blood1"
+	icon_state = "1-4"
 	},
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -583,458 +1150,2840 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/central)
-"hH" = (
-/obj/effect/decal/cleanable/blood/footprints{
-	dir = 1;
-	icon_state = "blood1"
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
 	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/power1)
-"ku" = (
-/obj/machinery/door/airlock/highsecurity,
-/obj/effect/mapping_helpers/airlock/locked,
+/obj/machinery/door/poddoor/shutters{
+	id = "cargobay"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powerpuzzle)
+"cW" = (
 /obj/structure/cable{
-	icon_state = "0-4"
+	icon_state = "1-8"
+	},
+/obj/effect/turf_decal/trimline/transparent/solgovgold/filled/warning{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle/engineering)
+"cZ" = (
+/obj/structure/railing{
+	dir = 10
+	},
+/turf/open/floor/plating/airless{
+	light_range = 2
+	},
+/area/ruin/space/has_grav/powerpuzzle)
+"da" = (
+/obj/effect/decal/cleanable/greenglow,
+/obj/effect/decal/fakelattice,
+/turf/open/floor/plasteel/elevatorshaft,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"dm" = (
+/obj/structure/railing{
+	dir = 6
+	},
+/turf/open/floor/plating/airless{
+	light_range = 2
+	},
+/area/ruin/space/has_grav/powerpuzzle)
+"dr" = (
+/obj/structure/table,
+/obj/item/hand_tele{
+	pixel_x = -2;
+	pixel_y = 3
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "vaultshutters1"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"du" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/bed{
+	icon_state = "dirty_mattress"
+	},
+/obj/item/storage/toolbox/mechanical,
+/obj/effect/turf_decal/sand/plating,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav)
+"dW" = (
+/obj/structure/sign/warning/securearea{
+	pixel_y = 30
+	},
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/space/has_grav/powerpuzzle/engineering)
+"ec" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/glass,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
+"eS" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
+"eX" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle/engineering)
+"fd" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 2
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 8
 	},
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/power3)
-"kv" = (
+/area/ruin/space/has_grav/powerpuzzle)
+"fE" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 8
+	},
+/obj/structure/sink{
+	dir = 1
+	},
+/obj/structure/mirror{
+	pixel_y = -32
+	},
+/turf/open/floor/plasteel/showroomfloor{
+	name = "bathroom floor"
+	},
+/area/ruin/space/has_grav/powerpuzzle)
+"fZ" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 1
+	},
+/turf/open/floor/plasteel/stairs,
+/area/ruin/space/has_grav/powerpuzzle/engineering)
+"gp" = (
+/obj/effect/turf_decal/sand/plating,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powerpuzzle/engineering)
+"gD" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/industrial/warning,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle)
+"gG" = (
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 8
+	},
+/obj/structure/sign/warning/vacuum/external{
+	pixel_y = 27
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle/engineering)
+"gH" = (
+/obj/structure/catwalk/over,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/railing{
+	climbable = 0
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"gI" = (
+/obj/structure/railing/corner{
+	dir = 8
+	},
+/obj/machinery/light/floor,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/powerpuzzle)
+"gS" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle)
+"gX" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/sand/plating,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav)
+"ha" = (
+/obj/structure/table,
+/obj/item/radio/intercom{
+	dir = 8;
+	pixel_y = 2;
+	pixel_x = -2
+	},
+/obj/machinery/camera/autoname{
+	dir = 8;
+	network = list("vault")
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"hh" = (
+/obj/effect/turf_decal/trimline/opaque/red/filled/line{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 8
+	},
+/obj/machinery/light/dim{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"hj" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle)
+"hp" = (
+/turf/closed/mineral/random/asteroid{
+	light_range = 2
+	},
+/area/ruin/space/has_grav)
+"hv" = (
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/item/kirbyplants/random,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
+"hB" = (
+/obj/structure/railing{
+	climbable = 0
+	},
+/obj/effect/turf_decal/siding/wideplating/dark,
+/obj/effect/decal/fakelattice,
+/turf/open/floor/plasteel/elevatorshaft,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"hH" = (
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/structure/closet/crate,
+/obj/item/poster/random_retro{
+	pixel_y = 4;
+	pixel_x = 2
+	},
+/obj/effect/spawner/lootdrop/maintenance,
+/obj/machinery/light/broken,
+/obj/item/poster/random_official,
+/obj/item/poster/random_official,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
+"hL" = (
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/structure/railing{
+	dir = 10
+	},
+/obj/item/hand_labeler{
+	pixel_y = 15
+	},
+/obj/structure/table,
+/obj/item/paper_bin,
+/obj/item/flashlight/lamp{
+	pixel_x = 15;
+	pixel_y = 6
+	},
+/obj/item/pen,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
+"ik" = (
+/obj/structure/sign/warning/vacuum/external{
+	pixel_x = -31
+	},
+/turf/open/floor/plasteel/stairs,
+/area/ruin/space/has_grav/powerpuzzle)
+"iw" = (
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powerpuzzle/engineering)
+"iN" = (
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/effect/mob_spawn/human/corpse/cargo_tech,
+/obj/item/crowbar/red,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
+"iV" = (
+/obj/structure/tank_dispenser,
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/machinery/light/small,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle/engineering)
+"jy" = (
+/obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
 /obj/structure/cable{
-	icon_state = "2-4"
+	icon_state = "1-2"
 	},
-/obj/structure/cable{
-	icon_state = "4-8"
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
+"jA" = (
 /turf/closed/indestructible/reinforced,
-/area/ruin/space/has_grav/storage/power2)
-"kA" = (
-/obj/structure/cable{
-	icon_state = "4-8"
+/area/ruin/space/has_grav/powerpuzzle/engineering)
+"jQ" = (
+/obj/machinery/vending/engivend,
+/obj/effect/turf_decal/trimline/transparent/solgovgold/filled/warning{
+	dir = 6
 	},
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/materials1)
+/area/ruin/space/has_grav/powerpuzzle/engineering)
+"jV" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/effect/decal/fakelattice,
+/turf/open/floor/plasteel/elevatorshaft,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"ke" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/structure/railing{
+	climbable = 0
+	},
+/obj/effect/decal/fakelattice,
+/turf/open/floor/plasteel/elevatorshaft,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"ks" = (
+/obj/effect/decal/cleanable/blood,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"ku" = (
+/obj/machinery/mech_bay_recharge_port{
+	dir = 8
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "vaultshutters2"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"kv" = (
+/turf/closed/indestructible/reinforced,
+/area/ruin/space/has_grav/powerpuzzle)
+"kz" = (
+/obj/structure/closet/toolcloset,
+/obj/effect/turf_decal/trimline/transparent/solgovgold/filled/line{
+	dir = 10
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle/engineering)
+"kA" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
+/obj/structure/railing,
+/obj/effect/turf_decal/trimline/opaque/red/filled/corner{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle/secure)
 "kD" = (
-/obj/machinery/door/airlock/highsecurity,
-/obj/effect/decal/cleanable/blood/tracks,
-/obj/effect/decal/cleanable/blood/tracks,
-/obj/effect/mapping_helpers/airlock/locked,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/materials1)
-"lG" = (
-/obj/machinery/power/apc/auto_name/east{
-	pixel_x = 24;
-	start_charge = 0
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 1
 	},
-/obj/effect/decal/cleanable/vomit,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 1
+	},
+/turf/open/floor/plasteel/stairs{
+	dir = 1
+	},
+/area/ruin/space/has_grav/powerpuzzle)
+"kY" = (
+/obj/machinery/camera/autoname,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/space/has_grav/powerpuzzle/engineering)
+"lA" = (
 /obj/structure/cable{
-	icon_state = "0-8"
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
+"lG" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"lZ" = (
+/obj/structure/chair,
+/obj/structure/sign/poster/official/wtf_is_co2{
+	pixel_y = 32
 	},
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/materials2)
+/area/ruin/space/has_grav/powerpuzzle)
+"mf" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/transparent/solgovgold/diagonal,
+/obj/effect/turf_decal/industrial/warning,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle/engineering)
 "mg" = (
 /obj/structure/cable{
-	icon_state = "1-2"
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
+	dir = 8
 	},
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/central)
+/area/ruin/space/has_grav/powerpuzzle)
+"mj" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 5
+	},
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
+"mk" = (
+/obj/structure/table,
+/obj/item/reagent_containers/food/drinks/mug,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle/engineering)
+"mw" = (
+/obj/machinery/camera/autoname{
+	dir = 1
+	},
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/space/has_grav/powerpuzzle/secure)
 "mF" = (
-/obj/machinery/power/apc/auto_name/east{
-	pixel_x = 24;
-	start_charge = 0
+/obj/machinery/door/window{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wideplating/dark{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
+"mI" = (
+/obj/machinery/computer/camera_advanced{
+	dir = 8;
+	networks = list("vault")
+	},
+/obj/machinery/light/broken{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"mV" = (
+/obj/item/toy/plush/moth{
+	name = "Wall Moth"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/powerpuzzle)
+"mX" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 10
+	},
+/obj/machinery/light/broken{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle)
+"nm" = (
+/obj/effect/turf_decal/trimline/opaque/red/filled/line{
+	dir = 10
+	},
+/obj/item/kirbyplants/random,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"nw" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 8
+	},
+/obj/structure/fans/tiny,
+/obj/machinery/door/airlock/external,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powerpuzzle/engineering)
+"nG" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle)
+"nS" = (
+/obj/effect/decal/cleanable/glass,
+/obj/structure/table/reinforced,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/effect/turf_decal/siding/wideplating/dark{
+	dir = 9
+	},
+/obj/item/reagent_containers/food/drinks/mug,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
+"ob" = (
+/obj/structure/railing/corner{
+	dir = 8
+	},
+/obj/structure/filingcabinet,
+/obj/effect/turf_decal/trimline/opaque/red/filled/line{
+	dir = 9
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"oc" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle)
+"oo" = (
+/obj/structure/table/wood,
+/obj/item/storage/fancy/cigarettes/cigars/havana{
+	pixel_y = 6
+	},
+/obj/item/lighter,
+/turf/open/floor/wood,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"oT" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/machinery/door/airlock/external/glass,
+/obj/structure/fans/tiny,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powerpuzzle)
+"pr" = (
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
+"pD" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
 	},
 /obj/structure/cable{
-	icon_state = "0-2"
+	icon_state = "1-8"
 	},
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/central)
-"mI" = (
+/area/ruin/space/has_grav/powerpuzzle/engineering)
+"pO" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle)
+"pX" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 1
+	},
+/turf/open/floor/plasteel/stairs,
+/area/ruin/space/has_grav/powerpuzzle)
+"qi" = (
+/obj/effect/decal/cleanable/vomit,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 6
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle)
+"qm" = (
+/obj/structure/table,
+/obj/item/storage/toolbox/electrical{
+	pixel_y = 5
+	},
+/obj/item/storage/toolbox/mechanical,
+/obj/effect/turf_decal/trimline/transparent/solgovgold/filled/line,
+/obj/machinery/light/dim,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle/engineering)
+"qx" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 8;
+	id = "cargoshield"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "cargobay"
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/machinery/conveyor{
+	dir = 1;
+	id = "CargoC2"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powerpuzzle)
+"qW" = (
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powerpuzzle)
+"qX" = (
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/machinery/conveyor{
+	id = "CargoC1"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powerpuzzle)
+"rb" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/effect/mob_spawn/human/corpse/cargo_tech{
+	outfit = /datum/outfit/job/engineer/nt
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle/engineering)
+"rc" = (
+/obj/structure/chair{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"rf" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 10
+	},
+/obj/effect/turf_decal/trimline/transparent/green/filled/warning{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle)
+"rq" = (
+/obj/structure/railing/corner{
+	dir = 1
+	},
+/obj/effect/spawner/lootdrop/glowstick,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle)
+"rI" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
+"rS" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/structure/railing{
+	climbable = 0
+	},
+/obj/effect/turf_decal/siding/wideplating/dark,
+/obj/effect/decal/fakelattice,
+/turf/open/floor/plasteel/elevatorshaft,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"rV" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/sign/warning/vacuum/external{
+	pixel_y = -27
+	},
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/machinery/conveyor_switch/oneway{
+	id = "CargoC2";
+	name = "Internal";
+	pixel_x = -10;
+	pixel_y = 5
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
+"sb" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"sd" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/structure/chair/office{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
+"sk" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle)
+"su" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle)
+"sW" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle)
+"sZ" = (
+/obj/structure/railing{
+	climbable = 0
+	},
+/obj/effect/turf_decal/siding/wideplating/dark,
+/obj/effect/decal/cleanable/blood/old,
+/obj/effect/decal/fakelattice,
+/turf/open/floor/plasteel/elevatorshaft,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"tc" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/reinforced,
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/effect/turf_decal/siding/wideplating/dark{
+	dir = 8
+	},
+/obj/machinery/door/window{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
+"tq" = (
+/obj/structure/sign/poster/official/moth/hardhats{
+	pixel_x = -30
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 1
+	},
+/obj/structure/railing,
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/item/stack/ore/salvage/scrapuranium/five,
+/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/structure/closet/crate/engineering,
+/obj/effect/turf_decal/box,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle/engineering)
+"tJ" = (
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle)
+"tX" = (
+/obj/effect/turf_decal/industrial/warning,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/structure/fans/tiny,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/effect/mapping_helpers/airlock/locked,
+/obj/machinery/door/airlock/external,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/powerpuzzle/engineering)
+"ud" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/door/airlock,
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/turf/open/floor/plasteel/showroomfloor{
+	name = "bathroom floor"
+	},
+/area/ruin/space/has_grav/powerpuzzle)
+"ui" = (
+/obj/structure/sink{
+	dir = 1
+	},
+/obj/structure/mirror{
+	pixel_y = -32
+	},
+/turf/open/floor/plasteel/showroomfloor{
+	name = "bathroom floor"
+	},
+/area/ruin/space/has_grav/powerpuzzle)
+"up" = (
+/obj/machinery/atmospherics/components/unary/tank/air,
+/obj/machinery/door/window,
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/effect/turf_decal/industrial/warning,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle/engineering)
+"uu" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/structure/reagent_dispensers/water_cooler,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
+"ux" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/machinery/conveyor{
+	dir = 1;
+	id = "CargoC2"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powerpuzzle)
+"uD" = (
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/structure/closet/crate/secure/exo,
+/obj/item/storage/backpack/duffelbag/mining_conscript,
+/obj/item/storage/backpack/duffelbag/mining_conscript,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
+"uN" = (
+/obj/structure/railing,
+/obj/machinery/button/door{
+	pixel_y = 27;
+	pixel_x = -5;
+	name = "Cargo Bay Shutters";
+	id = "cargobay"
+	},
+/obj/machinery/button/shieldwallgen{
+	pixel_y = 27;
+	pixel_x = 7;
+	name = "Cargo Bay Holoshield";
+	id = "cargoshield"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/powerpuzzle)
+"uX" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle)
+"uZ" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/light/built{
+	dir = 1
+	},
+/obj/item/light/tube/broken{
+	pixel_y = 2;
+	pixel_x = 5
+	},
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle/engineering)
+"vy" = (
+/obj/effect/decal/cleanable/generic,
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
+"vE" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 5
+	},
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/effect/turf_decal/industrial/warning,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"vJ" = (
+/obj/effect/turf_decal/industrial/warning,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "cargobay"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 4;
+	id = "cargoshield"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/machinery/conveyor{
+	id = "CargoC1"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powerpuzzle)
+"vQ" = (
+/turf/template_noop,
+/area/template_noop)
+"wa" = (
+/obj/effect/turf_decal/trimline/transparent/green/filled/warning{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle)
+"wf" = (
+/obj/effect/turf_decal/industrial/warning,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/powerpuzzle)
+"wm" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"ws" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
+"wt" = (
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"ww" = (
+/obj/structure/toilet,
+/obj/machinery/shower{
+	dir = 4
+	},
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/open/floor/plasteel/showroomfloor{
+	name = "bathroom floor"
+	},
+/area/ruin/space/has_grav/powerpuzzle)
+"wO" = (
+/obj/effect/turf_decal/industrial/warning,
+/obj/structure/cable,
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/obj/structure/cable{
-	icon_state = "4-8"
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
 	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/power1)
-"ob" = (
-/turf/closed/indestructible/reinforced,
-/area/ruin/space/has_grav/storage/materials3)
-"oo" = (
-/turf/closed/wall,
-/area/ship/hallway/central)
-"oT" = (
-/obj/machinery/door/airlock/external,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/central)
-"rc" = (
-/obj/effect/decal/cleanable/blood/tracks,
-/obj/structure/cable{
-	icon_state = "1-2"
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/poddoor/shutters{
+	id = "cargobay"
 	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/materials1)
-"rf" = (
 /turf/open/floor/plating,
-/area/ship/hallway/central)
-"up" = (
+/area/ruin/space/has_grav/powerpuzzle)
+"wQ" = (
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/structure/table,
+/obj/item/reagent_containers/food/drinks/bottle/whiskey{
+	pixel_y = 7;
+	pixel_x = -6
+	},
+/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
+	pixel_x = 6;
+	pixel_y = 6
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"wZ" = (
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/structure/railing{
+	dir = 6
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
+"xf" = (
+/obj/structure/door_assembly/door_assembly_sec{
+	anchored = 1
+	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/closed/indestructible/reinforced,
-/area/ruin/space/has_grav/storage/power2)
-"uu" = (
-/obj/effect/decal/cleanable/blood/footprints{
-	dir = 8;
-	icon_state = "blood1"
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 8
 	},
-/obj/structure/cable{
-	icon_state = "4-8"
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"xi" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 10
+	},
+/obj/effect/turf_decal/siding/wideplating/dark{
+	dir = 1
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/powerpuzzle/engineering)
+"xk" = (
+/obj/machinery/light/dim{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/transparent/green/filled/warning,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle)
+"xl" = (
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 5
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"xT" = (
+/obj/machinery/light/broken{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 6
+	},
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
+"ye" = (
+/obj/structure/table,
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/item/ammo_casing/c9mm/surplus{
+	pixel_x = -6
+	},
+/obj/item/ammo_casing/c9mm/surplus{
+	pixel_x = 6
+	},
+/obj/item/ammo_casing/c9mm/surplus,
+/obj/item/ammo_casing/c9mm/surplus{
+	pixel_x = 3;
+	pixel_y = 5
+	},
+/obj/item/ammo_casing/c9mm/surplus{
+	pixel_x = -3;
+	pixel_y = 5
+	},
+/obj/item/ammo_casing/c9mm/surplus{
+	pixel_y = 11
 	},
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/power1)
-"uX" = (
-/obj/machinery/door/airlock/highsecurity,
-/obj/effect/decal/cleanable/blood/tracks,
-/obj/effect/mapping_helpers/airlock/locked,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"yo" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/mecha/working/ripley/cargo,
+/turf/open/floor/mech_bay_recharge_floor,
+/area/ruin/space/has_grav/powerpuzzle)
+"yq" = (
+/obj/structure/table,
+/obj/machinery/button/door{
+	name = "Emergency Lockdown";
+	specialfunctions = 4;
+	normaldoorcontrol = 1;
+	id = "vaultdoor";
+	dir = 8;
+	pixel_x = -4;
+	pixel_y = 8
+	},
+/obj/machinery/button/door{
+	name = "Vault Shutters";
+	id = "vaultshutters1";
+	dir = 8;
+	pixel_y = 8;
+	pixel_x = 5
+	},
+/obj/machinery/button/door{
+	name = "Vault Shutters";
+	id = "vaultshutters2";
+	dir = 8;
+	pixel_y = -2;
+	pixel_x = 5
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"yu" = (
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle)
+"yv" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/dim{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 10
+	},
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
+"yW" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel/showroomfloor{
+	name = "bathroom floor"
+	},
+/area/ruin/space/has_grav/powerpuzzle)
+"yX" = (
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/materials1)
-"vE" = (
-/obj/effect/decal/cleanable/blood/tracks{
-	dir = 6;
-	icon_state = "tracks"
+/turf/open/floor/plasteel/stairs,
+/area/ruin/space/has_grav/powerpuzzle)
+"zc" = (
+/obj/effect/mob_spawn/human/corpse/cargo_tech,
+/obj/item/reagent_containers/food/snacks/cakeslice/birthday,
+/obj/effect/decal/cleanable/confetti,
+/obj/machinery/light/small/broken{
+	dir = 4
 	},
+/obj/structure/toilet,
+/obj/machinery/shower{
+	dir = 4
+	},
+/turf/open/floor/plasteel/showroomfloor{
+	name = "bathroom floor"
+	},
+/area/ruin/space/has_grav/powerpuzzle)
+"zI" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/firealarm{
+	pixel_y = -28
+	},
+/turf/open/floor/plasteel/showroomfloor{
+	name = "bathroom floor"
+	},
+/area/ruin/space/has_grav/powerpuzzle)
+"zL" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle)
+"Aa" = (
+/obj/machinery/light/small/broken{
+	dir = 1
+	},
+/obj/effect/turf_decal/sand/plating,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/powerpuzzle/engineering)
+"Af" = (
+/obj/structure/filingcabinet,
+/obj/effect/turf_decal/trimline/opaque/red/filled/line{
+	dir = 5
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"Ag" = (
+/obj/effect/turf_decal/trimline/opaque/red/filled/line{
+	dir = 6
+	},
+/obj/structure/closet/crate/bin,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/clothing/neck/stethoscope,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"Aj" = (
+/obj/structure/table,
+/obj/item/paper_bin,
+/obj/effect/turf_decal/trimline/opaque/red/filled/line{
+	dir = 6
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"Ao" = (
+/obj/effect/decal/cleanable/ash,
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 9
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle)
+"AM" = (
+/obj/structure/table,
+/obj/item/assembly/signaler/anomaly/bluespace,
+/obj/machinery/door/poddoor/shutters{
+	id = "vaultshutters1"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"AO" = (
+/turf/open/floor/plating/asteroid/airless{
+	light_range = 2
+	},
+/area/ruin/space/has_grav/powerpuzzle/engineering)
+"Bp" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/indestructable,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"Bq" = (
+/obj/effect/turf_decal/sand/plating,
+/mob/living/simple_animal/hostile/carp,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/powerpuzzle/engineering)
+"BF" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle)
+"BS" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/effect/turf_decal/industrial/stand_clear{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
+"Cx" = (
+/obj/effect/turf_decal/industrial/warning,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle)
+"CD" = (
+/obj/effect/decal/cleanable/glass,
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/structure/railing{
+	dir = 9
+	},
+/obj/structure/closet/crate/internals,
+/obj/item/tank/internals/emergency_oxygen,
+/obj/item/tank/internals/emergency_oxygen,
+/obj/item/tank/internals/emergency_oxygen,
+/obj/item/tank/internals/emergency_oxygen,
+/obj/item/tank/internals/emergency_oxygen,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
+"CQ" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/transparent/green/filled/warning,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle)
+"CT" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/closed/indestructible/reinforced,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"Dh" = (
+/obj/structure/railing{
+	dir = 5
+	},
+/obj/machinery/power/port_gen/pacman/super,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powerpuzzle/engineering)
+"Ds" = (
+/obj/machinery/light/broken{
+	dir = 8
+	},
+/turf/open/floor/plasteel/showroomfloor{
+	name = "bathroom floor"
+	},
+/area/ruin/space/has_grav/powerpuzzle)
+"Dy" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle)
+"DA" = (
+/obj/item/trash/pistachios,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plating/asteroid,
+/area/ruin/space/has_grav)
+"DS" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle)
+"Ea" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"EK" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle)
+"EO" = (
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"EW" = (
+/obj/structure/closet/emcloset,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle)
+"Ft" = (
+/obj/machinery/suit_storage_unit/independent/engineering,
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle/engineering)
+"FC" = (
+/obj/effect/mob_spawn/human/corpse/cargo_tech,
+/obj/item/storage/pill_bottle/floorpill/full,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/turf/open/floor/plating/asteroid,
+/area/ruin/space/has_grav)
+"FJ" = (
+/turf/open/floor/plasteel/stairs{
+	dir = 1
+	},
+/area/ruin/space/has_grav/powerpuzzle)
+"FM" = (
 /obj/structure/cable{
-	icon_state = "1-4"
+	icon_state = "1-2"
 	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/central)
-"vJ" = (
-/obj/machinery/power/apc/auto_name/west{
-	pixel_x = -24;
-	start_charge = 0
-	},
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/materials3)
-"ws" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/central)
-"ww" = (
-/obj/effect/decal/cleanable/blood/footprints{
-	dir = 1;
-	icon_state = "blood1"
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/power1)
-"xi" = (
-/obj/machinery/power/smes,
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/power2)
-"xl" = (
-/turf/closed/indestructible/reinforced,
-/area/ruin/space/has_grav/storage/central)
-"ye" = (
-/mob/living/simple_animal/hostile/carp/megacarp{
-	desc = "A ferocious, fang bearing creature that resembles a shark. You get the feeling his name would be George."
-	},
-/turf/open/space/basic,
-/area/space)
-"Af" = (
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/turf/closed/indestructible/reinforced,
-/area/ruin/space/has_grav/storage/central2)
-"Ao" = (
-/obj/effect/decal/cleanable/ash,
-/obj/structure/cable{
-	icon_state = "4-8"
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 1
 	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/central)
-"Bq" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
+"FQ" = (
+/obj/item/stack/ore/bluespace_crystal/refined,
+/obj/structure/table,
+/obj/machinery/door/poddoor/shutters{
+	id = "vaultshutters1"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"FW" = (
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/structure/closet/crate/medical,
+/obj/item/reagent_containers/pill/floorpill,
+/obj/item/storage/box/pillbottles,
+/obj/item/storage/pill_bottle/happy{
+	pixel_x = -2;
+	pixel_y = -2
+	},
+/obj/item/storage/pill_bottle/happy{
+	pixel_x = 7;
+	pixel_y = 2
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
+"Gi" = (
+/obj/effect/turf_decal/sand/plating,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/powerpuzzle/engineering)
+"Gv" = (
+/obj/machinery/firealarm{
+	pixel_x = 28
+	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/closed/indestructible/reinforced,
-/area/ruin/space/has_grav/storage/central2)
-"CD" = (
-/obj/effect/decal/cleanable/glass,
+/obj/effect/turf_decal/trimline/transparent/solgovgold/filled/warning{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle/engineering)
+"GD" = (
+/obj/machinery/light/small/broken{
+	dir = 8
+	},
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"GL" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 9
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
+"GM" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 10
+	},
+/obj/structure/sign/poster/ripped{
+	pixel_x = 32
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle)
+"GP" = (
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powerpuzzle)
+"Hl" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/chair/sofa/right{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/structure/sign/poster/contraband/space_cops{
+	pixel_y = 32
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
+"HA" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/structure/table,
+/obj/item/stack/packageWrap{
+	pixel_x = 3
+	},
+/obj/item/stack/packageWrap{
+	pixel_y = 10
+	},
+/obj/item/export_scanner,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
+"HO" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 10
+	},
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/central)
-"CT" = (
-/obj/effect/radiation,
-/obj/effect/decal/cleanable/greenglow,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"HZ" = (
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 9
+	},
+/obj/machinery/light/broken,
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/central)
+/area/ruin/space/has_grav/powerpuzzle)
+"Ii" = (
+/obj/structure/closet/crate/secure/weapon{
+	name = "Ammo Crate"
+	},
+/obj/item/ammo_box/c9mm/surplus,
+/obj/item/ammo_box/c9mm/surplus,
+/obj/item/ammo_box/magazine/co9mm,
+/obj/item/ammo_box/magazine/co9mm,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"Ik" = (
+/turf/closed/wall{
+	light_range = 2
+	},
+/area/ruin/space/has_grav/powerpuzzle)
 "Im" = (
-/obj/machinery/door/airlock/highsecurity,
-/obj/effect/mapping_helpers/airlock/locked,
-/obj/structure/cable{
-	icon_state = "4-8"
+/obj/structure/door_assembly{
+	anchored = 1
 	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/central)
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
 "In" = (
-/obj/machinery/power/apc/auto_name/south{
-	pixel_y = -24;
-	start_charge = 0
-	},
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/central2)
+/turf/closed/indestructible/reinforced,
+/area/ruin/space/has_grav/powerpuzzle/secure)
 "Ir" = (
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
 /obj/machinery/power/terminal{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powerpuzzle/engineering)
+"IB" = (
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"IC" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 1
 	},
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/power2)
-"JO" = (
-/turf/closed/indestructible/reinforced,
-/area/ruin/space/has_grav/storage/materials2)
-"KY" = (
-/obj/structure/cable{
-	icon_state = "1-2"
+/area/ruin/space/has_grav/powerpuzzle/engineering)
+"IW" = (
+/obj/structure/railing,
+/obj/structure/sign/warning/docking{
+	pixel_y = 33
 	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/power1)
-"LV" = (
-/turf/closed/indestructible/reinforced,
-/area/ruin/space/has_grav/storage/materials1)
-"Mg" = (
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/powerpuzzle)
+"Jk" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/plasteel/stairs{
+	dir = 4
+	},
+/area/ruin/space/has_grav/powerpuzzle)
+"Jq" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/structure/cable{
-	icon_state = "2-4"
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 8
 	},
-/obj/structure/cable{
-	icon_state = "2-8"
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 8
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/airlock/engineering,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powerpuzzle/engineering)
+"JO" = (
+/turf/closed/wall/r_wall,
+/area/ruin/space/has_grav/powerpuzzle/engineering)
+"JZ" = (
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/effect/turf_decal/industrial/stand_clear{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
+"Ka" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/space/has_grav/powerpuzzle/engineering)
+"KJ" = (
+/obj/structure/sink{
+	dir = 1
+	},
+/obj/structure/mirror{
+	pixel_y = -32
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 8
+	},
+/turf/open/floor/plasteel/showroomfloor{
+	name = "bathroom floor"
+	},
+/area/ruin/space/has_grav/powerpuzzle)
+"KS" = (
+/turf/open/floor/plasteel/stairs,
+/area/ruin/space/has_grav/powerpuzzle/engineering)
+"KU" = (
+/obj/structure/rack,
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/item/clothing/head/helmet/space/eva{
+	pixel_x = -4
+	},
+/obj/item/clothing/suit/space/eva,
+/obj/item/tank/internals/oxygen,
+/obj/item/clothing/head/helmet/space/eva{
+	pixel_x = 7;
+	pixel_y = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
+"KY" = (
+/obj/effect/decal/fakelattice,
+/turf/open/floor/plasteel/elevatorshaft,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"Lp" = (
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/space/has_grav/powerpuzzle/engineering)
+"LV" = (
+/obj/effect/turf_decal/trimline/opaque/red/filled/line{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/materials1)
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"Mg" = (
+/obj/effect/turf_decal/trimline/opaque/red/filled/line{
+	dir = 1
+	},
+/obj/structure/filingcabinet,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle/secure)
 "Mh" = (
-/obj/machinery/power/apc/auto_name/south{
-	pixel_y = -24;
-	start_charge = 0
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
 	},
 /obj/structure/cable{
-	icon_state = "0-4"
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 1
 	},
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/power1)
+/area/ruin/space/has_grav/powerpuzzle)
 "Mm" = (
-/obj/effect/decal/cleanable/blood/footprints{
-	dir = 8;
-	icon_state = "blood1"
-	},
 /obj/structure/cable{
-	icon_state = "1-8"
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
+"Ms" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 1
+	},
+/obj/structure/table,
+/obj/item/clipboard,
+/obj/item/paper,
+/obj/item/pen{
+	pixel_y = 2
+	},
+/obj/item/stamp/ce{
+	pixel_x = 15;
+	pixel_y = 5;
+	name = "engineering rubber stamp"
+	},
+/obj/effect/turf_decal/trimline/transparent/solgovgold/filled/line{
+	dir = 9
 	},
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/power1)
-"OO" = (
-/obj/machinery/door/airlock/highsecurity,
-/obj/effect/decal/cleanable/blood/footprints{
+/area/ruin/space/has_grav/powerpuzzle/engineering)
+"MB" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/catwalk/over,
+/obj/structure/railing{
+	climbable = 0
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"MJ" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/machinery/conveyor{
 	dir = 1;
-	icon_state = "blood1"
+	id = "CargoC2"
 	},
-/obj/effect/mapping_helpers/airlock/locked,
-/obj/structure/cable{
-	icon_state = "1-4"
+/obj/structure/railing{
+	dir = 8
 	},
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
+"ML" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 8
+	},
+/turf/open/floor/plasteel/showroomfloor{
+	name = "bathroom floor"
+	},
+/area/ruin/space/has_grav/powerpuzzle)
+"MU" = (
+/obj/effect/turf_decal/industrial/warning,
 /obj/structure/cable{
-	icon_state = "0-4"
+	icon_state = "0-8"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 8;
+	id = "cargoshield"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "cargobay"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/machinery/conveyor{
+	dir = 1;
+	id = "CargoC2"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powerpuzzle)
+"MY" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 10
+	},
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"Nv" = (
+/obj/structure/flora/rock/pile,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/space/has_grav/powerpuzzle/engineering)
+"NK" = (
+/obj/structure/railing/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/red/filled/line{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/fluff/paper/stack,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 1
 	},
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/power1)
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"NZ" = (
+/obj/structure/sign/warning/securearea{
+	pixel_y = 32
+	},
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"Ol" = (
+/obj/machinery/suit_storage_unit/standard_unit,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
+"Oz" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 9
+	},
+/obj/structure/chair/sofa/right{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle)
+"OL" = (
+/obj/machinery/door/airlock,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle)
+"OO" = (
+/obj/structure/table,
+/obj/effect/turf_decal/trimline/opaque/red/filled/line{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/paper_bin,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"OQ" = (
+/obj/structure/railing/corner,
+/obj/machinery/light/floor,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/powerpuzzle)
+"OY" = (
+/obj/structure/chair/sofa/right{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
+"Pe" = (
+/obj/structure/bed,
+/obj/structure/curtain/cloth/grey,
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/item/bedsheet/dorms,
+/obj/machinery/light/small/broken,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
+"Pf" = (
+/obj/machinery/button/door{
+	name = "Emergency Lockdown";
+	specialfunctions = 4;
+	normaldoorcontrol = 1;
+	id = "vaultdoor";
+	pixel_x = -27;
+	dir = 4
+	},
+/obj/effect/decal/cleanable/blood/gibs/old,
+/obj/effect/mob_spawn/human/corpse/cargo_tech{
+	outfit = /datum/outfit/job/quartermaster
+	},
+/obj/item/gun/ballistic/automatic/pistol/commander/no_mag{
+	pixel_x = 6;
+	pixel_y = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"Pm" = (
+/obj/structure/table,
+/obj/effect/turf_decal/trimline/opaque/red/filled/line{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/computer/secure_data/laptop{
+	dir = 1;
+	pixel_y = 5
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"PA" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 9
+	},
+/obj/effect/mob_spawn/human/corpse/cargo_tech{
+	outfit = /datum/outfit/job/engineer/nt
+	},
+/obj/item/wirecutters{
+	pixel_y = 15
+	},
+/obj/effect/turf_decal/corner/transparent/solgovgold/diagonal,
+/obj/effect/turf_decal/industrial/warning,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle/engineering)
+"PB" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
+"PD" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/machinery/door/airlock/security,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powerpuzzle/secure)
 "PF" = (
-/obj/effect/decal/cleanable/blood/tracks{
-	dir = 9;
-	icon_state = "tracks"
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 8
+	},
+/obj/structure/chair/comfy/black{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/materials1)
+/area/ruin/space/has_grav/powerpuzzle)
+"PL" = (
+/obj/structure/table,
+/obj/item/reagent_containers/food/drinks/bottle/rum{
+	pixel_x = 6;
+	pixel_y = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle/secure)
 "PU" = (
-/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/clothing/head/beret/qm{
+	pixel_y = 7;
+	pixel_x = -9
+	},
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/blood/splatter{
+	icon_state = "trails_2";
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"PZ" = (
+/obj/structure/sign/poster/contraband/grey_tide{
+	pixel_y = 32
+	},
 /obj/structure/cable{
-	icon_state = "1-2"
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 8
 	},
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/central)
-"RB" = (
-/obj/structure/cable{
-	icon_state = "1-8"
+/area/ruin/space/has_grav/powerpuzzle/engineering)
+"QM" = (
+/obj/machinery/shower{
+	dir = 4
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
+/obj/structure/toilet,
+/obj/machinery/light/small{
+	dir = 4
 	},
-/obj/structure/cable{
-	icon_state = "2-8"
+/obj/effect/decal/cleanable/cobweb,
+/turf/open/floor/plasteel/showroomfloor{
+	name = "bathroom floor"
 	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/central)
-"SY" = (
-/obj/machinery/power/apc/auto_name/east{
-	pixel_x = 24;
-	start_charge = 0
+/area/ruin/space/has_grav/powerpuzzle)
+"QN" = (
+/obj/machinery/power/smes/engineering{
+	charge = 0
 	},
-/obj/structure/cable,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/power2)
-"Vs" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/turf/closed/indestructible/reinforced,
-/area/ruin/space/has_grav/storage/central)
-"VV" = (
-/obj/machinery/door/airlock/external,
 /turf/open/floor/plating,
-/area/ship/hallway/central)
-"VX" = (
+/area/ruin/space/has_grav/powerpuzzle/engineering)
+"QQ" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/effect/decal/remains/human,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
+"QS" = (
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"QV" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 5
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"Ri" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle)
+"Rn" = (
+/obj/structure/mecha_wreckage/phazon,
+/obj/item/mecha_parts/mecha_equipment/thrusters/ion,
+/obj/machinery/door/poddoor/shutters{
+	id = "vaultshutters2"
+	},
+/turf/open/floor/mech_bay_recharge_floor,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"Rw" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 6
+	},
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"Ry" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/stairs,
+/area/ruin/space/has_grav/powerpuzzle/engineering)
+"RB" = (
+/obj/effect/turf_decal/trimline/opaque/red/filled/line{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/fluff/paper/stack{
+	dir = 1
+	},
+/obj/item/spacecash/bundle/c50{
+	pixel_y = 8;
+	pixel_x = -5
+	},
+/obj/machinery/light/broken{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"RI" = (
+/obj/machinery/power/floodlight{
+	anchored = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/effect/turf_decal/sand/plating,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav)
+"RX" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
+"Sd" = (
+/obj/structure/table,
+/obj/item/trash/sosjerky{
+	pixel_y = 5
+	},
+/obj/effect/turf_decal/sand/plating,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav)
+"Sj" = (
+/obj/structure/table,
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
+"Sx" = (
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/structure/railing{
+	dir = 5
+	},
+/obj/structure/closet/crate/critter,
+/mob/living/simple_animal/pet/dog/corgi/exoticcorgi,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
+"SA" = (
+/turf/open/floor/plasteel/stairs,
+/area/ruin/space/has_grav/powerpuzzle)
+"SC" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/machinery/conveyor{
+	id = "CargoC1"
+	},
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
+"SJ" = (
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 6
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"SR" = (
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 9
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle/engineering)
+"SS" = (
+/obj/effect/turf_decal/trimline/opaque/red/filled/line{
+	dir = 4
+	},
+/obj/structure/chair/office{
+	dir = 8
+	},
+/obj/machinery/firealarm{
+	pixel_x = 28
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"SY" = (
+/obj/effect/decal/cleanable/cobweb,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/chair/sofa/left{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
+"TB" = (
+/obj/structure/table/reinforced,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/effect/turf_decal/siding/wideplating/dark{
+	dir = 8
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 4
+	},
+/obj/item/paper_bin,
+/obj/item/pen,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
+"TN" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/effect/decal/fakelattice,
+/turf/open/floor/plasteel/elevatorshaft,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"TO" = (
+/obj/structure/chair,
+/obj/machinery/light/broken{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle)
+"TR" = (
+/obj/structure/sign/poster/contraband/tools{
+	pixel_x = 30
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle/engineering)
+"Uh" = (
+/obj/structure/flora/rock,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/space/has_grav/powerpuzzle/engineering)
+"Ui" = (
+/obj/structure/flora/rock,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"Uu" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/closed/indestructible/reinforced,
-/area/ruin/space/has_grav/storage/central)
-"Zz" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle/engineering)
+"Uy" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/effect/turf_decal/industrial/warning,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"Uz" = (
+/obj/machinery/light/small,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"UV" = (
+/obj/structure/salvageable/computer{
+	dir = 1
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "vaultshutters2"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"UW" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle)
+"Vs" = (
+/obj/structure/falsewall/reinforced,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"Vu" = (
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/item/kirbyplants/random,
+/obj/structure/sign/warning{
+	pixel_x = 30
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
+"VH" = (
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/structure/closet/crate/secure,
+/obj/effect/spawner/lootdrop/maintenance/two,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
+"VV" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/machinery/door/airlock/external/glass,
+/obj/structure/fans/tiny,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/turf/open/floor/plating{
+	light_range = 2
+	},
+/area/ruin/space/has_grav/powerpuzzle)
+"VX" = (
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"Wk" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 6
+	},
+/obj/structure/table,
+/obj/effect/spawner/lootdrop/donkpockets,
+/obj/structure/noticeboard{
+	pixel_y = 32;
+	pixel_x = -15
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle)
+"Wq" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 5
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle)
+"Ww" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/fluff/paper/stack,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"WA" = (
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/turf/closed/indestructible/reinforced,
-/area/ruin/space/has_grav/storage/power2)
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powerpuzzle/engineering)
+"Xc" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/effect/turf_decal/box,
+/obj/item/clothing/gloves/color/yellow,
+/obj/structure/rack,
+/obj/structure/railing{
+	dir = 6
+	},
+/obj/effect/spawner/lootdrop/maintenance/three,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle/engineering)
+"Xj" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle)
+"Xt" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/red/filled/line{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle/secure)
+"XQ" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 1
+	},
+/obj/structure/table,
+/obj/item/lighter{
+	pixel_y = 4;
+	pixel_x = -2
+	},
+/obj/item/storage/fancy/cigarettes/cigpack_robustgold{
+	pixel_x = 7
+	},
+/obj/effect/turf_decal/trimline/transparent/green/filled/warning,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle)
+"Yi" = (
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/structure/railing{
+	dir = 5
+	},
+/obj/structure/closet/crate/secure,
+/obj/effect/spawner/lootdrop/maintenance/four,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
+"Yr" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 1
+	},
+/obj/structure/table,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle)
+"YH" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/button/door{
+	pixel_y = -27;
+	pixel_x = -5;
+	name = "Cargo Bay Shutters";
+	dir = 1;
+	id = "cargobay"
+	},
+/obj/machinery/button/shieldwallgen{
+	dir = 1;
+	pixel_y = -27;
+	pixel_x = 7;
+	name = "Cargo Bay Holoshields";
+	id = "cargoshield"
+	},
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/machinery/conveyor_switch/oneway{
+	id = "CargoC1";
+	name = "External";
+	pixel_x = 10;
+	pixel_y = 5
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
+"YL" = (
+/mob/living/simple_animal/hostile/carp,
+/turf/template_noop,
+/area/template_noop)
+"Zl" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/powerpuzzle)
+"Zz" = (
+/obj/machinery/door/airlock,
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/turf/open/floor/plasteel/showroomfloor{
+	name = "bathroom floor"
+	},
+/area/ruin/space/has_grav/powerpuzzle)
+"ZC" = (
+/turf/open/floor/plasteel/stairs{
+	dir = 4
+	},
+/area/ruin/space/has_grav/powerpuzzle)
+"ZO" = (
+/obj/effect/turf_decal/corner/transparent/grey/diagonal,
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/item/storage/toolbox/electrical,
+/obj/item/storage/toolbox/electrical,
+/obj/item/storage/toolbox/emergency,
+/obj/item/storage/toolbox/mechanical,
+/obj/item/storage/toolbox/mechanical,
+/obj/structure/closet/crate/secure/engineering,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powerpuzzle)
+"ZS" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wideplating/dark{
+	dir = 1
+	},
+/turf/open/floor/plasteel/stairs{
+	dir = 4
+	},
+/area/ruin/space/has_grav/powerpuzzle/engineering)
 
 (1,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-ah
-ah
-oo
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
+hp
+hp
+hp
+hp
+hp
+Ik
 VV
-oo
-ah
-ah
-ah
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+Ik
+hp
+hp
+hp
+hp
+hp
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
 "}
 (2,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-ah
-ah
-ah
-oo
-rf
-oo
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
+hp
+hp
 ah
 ah
 ah
 ah
+bl
+qW
+bl
 ah
-aa
-aa
-ye
-aa
-aa
-aa
-aa
+ah
+ah
+ah
+hp
+hp
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
 "}
 (3,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+vQ
+vQ
+YL
+vQ
+vQ
+vQ
+vQ
+hp
+vQ
+vQ
+vQ
+vQ
+vQ
+hp
+hp
+ah
 ah
 bl
 bl
@@ -1047,67 +3996,77 @@ bl
 bl
 ah
 ah
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+hp
+hp
+hp
+hp
+vQ
+vQ
+vQ
 "}
 (4,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-ah
-ah
-aa
-aa
+vQ
+vQ
+vQ
+vQ
+hp
+hp
+hp
+hp
+hp
+hp
+hp
+hp
+hp
+hp
 ah
 ah
 ah
 bl
+bz
+aw
+ik
+pr
+KU
 bp
-bp
-bp
-bp
-bp
-bp
-bp
+EW
 bl
 ah
 ah
 ah
-aa
-aa
-aa
-aa
-aa
-aa
+ah
+ah
+hp
+hp
+vQ
+vQ
 "}
 (5,1,1) = {"
-aa
-aa
+vQ
+vQ
+hp
+hp
+hp
+hp
 ah
 ah
 ah
 ah
 ah
+hp
+hp
+hp
 ah
-ah
-ah
-ah
-ah
+be
+Sd
 bl
-bp
-bp
-bp
+lZ
+qi
+sk
+BF
 cH
-cJ
-bp
-cg
+rq
+bq
 bl
 ah
 ah
@@ -1115,31 +4074,36 @@ ah
 ah
 ah
 ah
-aa
-aa
-aa
+hp
+hp
+vQ
 "}
 (6,1,1) = {"
-aa
-aa
+vQ
+vQ
+hp
+hp
+ah
+ah
+kv
+kv
+kv
+kv
 ah
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
+RI
+FC
+DA
 bl
-bq
-bp
-cD
+TO
+oc
+nS
 cI
-cJ
+tc
+TB
 cg
-bp
 bl
 ah
 ah
@@ -1148,684 +4112,789 @@ ah
 ah
 ah
 ah
-aa
-aa
+hp
+vQ
 "}
 (7,1,1) = {"
-aa
-aa
-aa
+vQ
+vQ
+hp
 ah
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ah
+kv
+kv
+kv
+Ds
+ui
+kv
+kv
+kv
+kv
+kv
+aT
+aT
+du
 bl
-bq
-bp
+bk
+GM
 mF
 ws
-cJ
-cA
-bp
+sd
+GL
+hv
 bl
-aS
-aS
-aS
-aS
-aS
-aS
 ah
 ah
-aa
+ah
+ah
+ah
+ah
+ah
+hp
+vQ
 "}
 (8,1,1) = {"
-aa
-aa
-aa
+vQ
+vQ
+hp
 ah
-ab
+kv
+QM
+Zz
+aK
+yW
+kv
+bB
 ac
 ac
 ac
-ac
-ac
-ob
-xl
-xl
-xl
-xl
-xl
+Pe
+kv
+bE
+cj
+cj
+cj
+cj
 Im
-xl
-xl
-xl
-xl
-aT
-bG
-bG
-aU
-aU
-aS
+cj
+cj
+cj
+cj
 ah
 ah
-aa
+ah
+ah
+ah
+ah
+ah
+hp
+vQ
 "}
 (9,1,1) = {"
-aa
-aa
+vQ
+vQ
+hp
 ah
-ah
-ab
-ae
-ae
-ae
-ae
-ae
-ab
-aZ
-aY
-br
-bp
-bp
-fd
-bp
-bp
-bp
-xl
-aU
-aU
-cR
-cT
-aU
+kv
+kv
+kv
+aK
+KJ
+kv
+Xj
+pO
 aS
+hj
+uX
+aT
+bb
+cj
+br
+FW
+bK
+fd
+ZO
+pr
+uD
+cj
+cj
+cj
+cj
+cj
 ah
 ah
-aa
+ah
+hp
+vQ
 "}
 (10,1,1) = {"
-aa
+vQ
+vQ
+hp
 ah
-ah
-ah
-ab
+kv
+ww
+Zz
+aK
+ML
+kv
 ac
 ac
-ae
+UW
 ac
 ac
-ab
-bb
-aY
+kv
+gX
+cj
 bs
-bp
-bp
+pr
+bK
 fd
-cN
+vy
 cO
-bp
-xl
+hH
+cj
+cp
 aU
-aU
-aU
-aU
-aU
-aS
+Ol
+cj
 ah
 ah
-aa
+OQ
+dm
+vQ
 "}
 (11,1,1) = {"
-aa
-aa
+vQ
+vQ
+hp
 ah
-ah
-ab
-ab
-ab
-au
-ab
-ab
-ob
+kv
+kv
+kv
+aK
+fE
+kv
+kv
+kv
+OL
+kv
+kv
+kv
 bd
+cj
 bm
-bt
 cB
-cE
+wZ
 aW
-bp
-bp
-bp
-xl
-aS
-aS
-ku
-aS
-aS
-aS
-ah
-aa
-aa
+Yi
+pr
+bt
+cj
+xT
+aO
+YH
+cj
+cj
+cj
+uN
+vQ
+vQ
 "}
 (12,1,1) = {"
-aa
-aa
+vQ
+hp
+hp
 ah
-ah
-ai
+kv
+zc
+Zz
+aK
+zI
+kv
 ap
-vJ
-bh
+aw
+Ri
+xk
 aq
-aq
-LV
-LV
-LV
+kv
+PB
+FJ
 cy
-bp
-bp
-Ao
-bp
-cD
+EK
 Mh
-aM
-aV
-gG
-mI
+Ao
+DS
+cD
+Wq
+SA
+ec
+JZ
+SC
 cU
-aX
-aM
-ah
-ah
-aa
+qX
+vJ
+wf
+vQ
+vQ
 "}
 (13,1,1) = {"
-aa
-aa
+vQ
+hp
 ah
 ah
-ai
-aq
-Mg
+kv
+kv
+kv
+kv
+ud
+kv
+Wk
+tJ
 PF
-rc
-rc
-uX
-rc
+CQ
+jy
+au
+FM
 kD
-vE
+Cx
 CD
-PU
-RB
-PU
-mg
-gS
-OO
-hH
-hH
-ww
+QQ
+pr
+HA
+hL
+su
+yX
+lA
+Mm
+RX
 cV
-aX
-aM
-ah
-ah
-ah
+GP
+wO
+wf
+vQ
+vQ
 "}
 (14,1,1) = {"
-aa
-aa
+vQ
+hp
+hp
 ah
 ah
+kv
+SY
+OY
+rf
 ai
-aq
-kA
-bT
-ch
+Yr
+mg
+Zl
+XQ
 aI
-LV
-aq
-ai
+kv
+pr
+FJ
 gD
-CT
-bp
-ca
+Sx
+VH
+rI
 cN
 cM
-bp
-VX
-aX
-aX
-uu
-aX
-aX
-aM
-ah
-ah
-ah
+Dy
+pX
+mj
+BS
+MJ
+qx
+ux
+MU
+aB
+vQ
+vQ
 "}
 (15,1,1) = {"
+vQ
+vQ
+hp
+ah
+ah
+kv
+cr
+Sj
+wa
+yu
+sW
+zL
+Oz
+aV
+uu
+kv
+kv
+kv
+mX
+nG
+ae
+gS
 aa
-aa
-ah
-ah
-ai
-aq
-lG
-aA
-aq
-aq
-LV
-be
-xl
-cA
-bp
-cB
-bp
-ce
-bp
-ci
-Vs
-KY
-SY
-Mm
-aX
-ct
-aM
-ah
-ah
-aa
+bG
+HZ
+cj
+yv
+eS
+rV
+cj
+cj
+cj
+IW
+vQ
+vQ
 "}
 (16,1,1) = {"
-aa
+vQ
+vQ
+hp
 ah
 ah
+kv
+Hl
+aY
+wa
+In
+In
+xf
+In
+In
+In
+kv
+IB
+kv
+kv
+ZC
+Jk
+ZC
 JO
-JO
-JO
-JO
-aB
-ad
-bZ
-JO
-JO
-xl
-by
-bs
-bp
-cM
-bp
 ci
-bp
-VX
-aR
-aR
+iw
+JO
+ca
+yo
 cc
-aR
-aR
-aR
-ah
-ah
-aa
+cj
+mV
+cj
+gI
+cZ
+vQ
 "}
 (17,1,1) = {"
-aa
+vQ
+vQ
+hp
 ah
-ah
-JO
-af
+In
+In
+In
+In
+In
+CT
 ak
 av
 aC
+aZ
+Bp
+IB
+Ui
+IB
+kv
+hv
+iN
+Vu
 JO
-aJ
-am
-bf
-xl
-xl
-xl
-xl
-bp
-xl
-xl
-xl
-VX
-ba
-bi
-bQ
-bi
-bi
-aR
+PZ
+bT
+JO
+JO
+JO
+JO
+JO
+JO
+JO
 ah
-aa
-aa
+hp
+vQ
 "}
 (18,1,1) = {"
-aa
+vQ
+vQ
+hp
 ah
-ah
-JO
+In
+cl
+Pf
+rc
+In
 al
-am
-JO
-am
-JO
-am
-am
-bf
-bk
-bz
-bz
-bk
-bH
-bk
-bz
-bz
-up
+kA
+cJ
+ye
+aD
+Bp
+IB
+IB
+Uz
+In
+In
+bx
+In
+In
+bZ
+IC
+fZ
 bc
-bi
-bQ
-cQ
-bi
-aR
+tq
+Ms
+ba
+kz
+JO
 ah
-ah
-aa
+hp
+vQ
 "}
 (19,1,1) = {"
-aa
+vQ
+hp
+hp
 ah
-ah
-JO
-af
-ad
-ad
+In
+aR
+PU
+ce
+In
+Mg
+wm
+cw
+QS
 aD
-ad
-cr
-bZ
-cq
-bk
-bk
-bk
-bk
-bC
-bk
-bk
-bk
-up
-bi
+Bp
+IB
+IB
+IB
+In
+rS
+gH
+jV
+In
+mk
+TR
+KS
+rb
 cP
 bQ
-bi
-cu
-aR
+Uu
+qm
+JO
 ah
-aa
-aa
+hp
+vQ
 "}
 (20,1,1) = {"
-aa
+vQ
+hp
 ah
 ah
-JO
+In
+In
+Vs
+In
+In
 af
-ad
-aw
+EO
+HO
 bX
 aH
-aK
-JO
-cw
-bk
-bk
-bk
-bk
-bH
-bk
-bk
-bk
-up
-bi
-cQ
+Bp
+IB
+IB
+mw
+In
+sZ
+gH
+KY
+In
+jA
+jA
+jA
+uZ
+Xc
 cm
-cs
+pD
 cu
-aR
+JO
 ah
-ah
-aa
+hp
+hp
 "}
 (21,1,1) = {"
-aa
+hp
+hp
 ah
 ah
-JO
+In
+cA
+cR
+oo
+In
 ao
 ad
-am
-am
-ax
-ad
-JO
-cx
-bk
-bk
-bB
-bC
-bC
-bC
-cj
-bk
+bH
+by
+Aj
+Bp
+IB
+IB
+Ui
+In
+hB
+gH
+da
+In
+Gi
+jA
 up
 bj
-bi
-cp
+eX
+Gv
 cW
-cu
-aR
+jQ
+JO
 ah
 ah
-aa
+hp
 "}
 (22,1,1) = {"
+hp
 ah
 ah
-ah
+In
+In
+bS
+lG
+aM
+In
+In
+In
+In
+PD
+In
+In
+NZ
+IB
+IB
+In
+hB
+gH
+KY
+In
+Lp
+jA
+jA
+jA
 JO
-af
-ad
-ax
-am
-am
-ad
 JO
-am
-bk
-bk
-bC
-bC
-bC
-bC
-bC
-bk
-kv
-bx
-aR
-aR
-aR
-cv
-aR
+Jq
+JO
+JO
+JO
 ah
-ah
-aa
+hp
 "}
 (23,1,1) = {"
-aa
+hp
 ah
 ah
-JO
-af
-ad
-JO
-bZ
-JO
-ad
-JO
-am
-bk
-bk
+In
+ob
+ay
+aX
+Xt
+NK
+ab
+nm
+In
+sb
+wQ
+Bp
+IB
+cv
+cx
+In
+hB
+gH
 bD
-bC
-bC
-bC
-ck
-bk
-up
-bE
-bi
+In
+Aa
+AO
+Lp
+jA
+QN
 cQ
-cQ
-cQ
-aR
-ah
-ah
-aa
+mf
+Dh
+ct
+JO
+hp
+hp
 "}
 (24,1,1) = {"
-aa
+hp
 ah
 ah
-JO
+In
+OO
+Ww
+cd
+QS
+bi
 ag
-ad
-am
+ax
+ch
 aE
-am
-am
-aK
-am
-bk
-bk
 bC
-bC
-bC
-bC
-bC
-bk
-up
-xi
+Bp
+IB
+IB
+IB
+In
+hB
+gH
+KY
+In
+Lp
+Uh
+gp
+jA
 Ir
 cS
-cQ
-cQ
-aR
-ah
-ah
-aa
+PA
+Ry
+WA
+JO
+hp
+hp
 "}
 (25,1,1) = {"
-aa
+hp
 ah
 ah
-JO
-an
-ad
-am
-am
-cq
-cq
-JO
 In
-bk
-bk
-bS
-bC
-cd
-bC
-cl
-bk
-up
-aR
-aR
-aR
-aR
-aR
-aR
-ah
-ah
-aa
+cE
+Ii
+QV
+ks
+PL
+an
+ck
+In
+bh
+cq
+Bp
+IB
+IB
+IB
+In
+ke
+MB
+TN
+In
+Lp
+Lp
+Lp
+jA
+jA
+nw
+jA
+jA
+JO
+JO
+hp
+hp
 "}
 (26,1,1) = {"
-aa
+hp
 ah
 ah
-JO
-JO
-JO
-ay
-JO
-JO
-JO
-JO
+In
 Af
-Bq
-Bq
-Bq
-Bq
-Bq
-Bq
-Bq
-Bq
-Zz
+RB
+SS
+LV
+Pm
+hh
+Ag
+In
+In
+In
+In
+IB
+IB
+In
+In
+In
+bf
+In
+In
+In
+Lp
+Lp
+aJ
+jA
+gG
+Ft
+jA
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-aa
+hp
+hp
 "}
 (27,1,1) = {"
-aa
+hp
+hp
+ah
+In
+In
+In
+In
+In
+In
+In
+In
+In
 ah
 ah
+cv
+IB
+cx
+In
+dr
+Rw
+MY
+vE
+UV
+In
+Ka
+Lp
+xi
+tX
+SR
+iV
+jA
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-bk
-bk
-bk
-bk
-bk
-bk
-bk
-bk
-aR
-ah
-ah
-aa
-ah
-ah
-ah
-aa
-aa
-aa
+hp
+hp
+hp
 "}
 (28,1,1) = {"
-aa
-aa
+vQ
+hp
 ah
 ah
 ah
@@ -1838,35 +4907,35 @@ ah
 ah
 ah
 ah
+IB
+IB
+IB
+In
+FQ
+Ea
+VX
+Uy
+Rn
+In
+Lp
+Gi
+ZS
+jA
+jA
+jA
+jA
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+hp
+hp
+vQ
 "}
 (29,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+vQ
+hp
+hp
+hp
+hp
+hp
 ah
 ah
 ah
@@ -1875,47 +4944,247 @@ ah
 ah
 ah
 ah
+IB
+Ui
+IB
+In
+AM
+xl
+wt
+SJ
+ku
+In
+kY
+Lp
+Lp
 ah
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ah
+ah
+ah
+ah
+hp
+vQ
+vQ
 "}
 (30,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+vQ
+vQ
+vQ
+vQ
+vQ
+hp
+hp
+hp
+hp
+hp
 ah
 ah
 ah
 ah
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ah
+IB
+IB
+In
+In
+yq
+mI
+ha
+In
+In
+dW
+Nv
+Gi
+ah
+ah
+ah
+hp
+hp
+hp
+vQ
+vQ
+"}
+(31,1,1) = {"
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
+hp
+vQ
+vQ
+hp
+hp
+hp
+hp
+ah
+ah
+ah
+IB
+IB
+In
+In
+In
+In
+In
+Lp
+Lp
+Lp
+Lp
+ah
+ah
+ah
+hp
+hp
+vQ
+vQ
+vQ
+"}
+(32,1,1) = {"
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
+hp
+hp
+ah
+ah
+ah
+IB
+IB
+IB
+GD
+IB
+IB
+Lp
+Lp
+Gi
+Lp
+Lp
+hp
+hp
+hp
+hp
+vQ
+vQ
+vQ
+"}
+(33,1,1) = {"
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
+hp
+hp
+ah
+ah
+ah
+ah
+ah
+ah
+ah
+ah
+ah
+ah
+Lp
+Uh
+Bq
+AO
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
+"}
+(34,1,1) = {"
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
+YL
+vQ
+vQ
+hp
+hp
+hp
+hp
+hp
+hp
+ah
+ah
+ah
+ah
+ah
+AO
+AO
+AO
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
+"}
+(35,1,1) = {"
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
+hp
+hp
+hp
+hp
+hp
+hp
+hp
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
+vQ
 "}

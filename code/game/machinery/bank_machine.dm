@@ -1,7 +1,8 @@
 /obj/machinery/computer/bank_machine
 	name = "bank machine"
 	desc = "A machine used to deposit and withdraw funds."
-	icon = 'goon/icons/obj/goon_terminals.dmi'
+	icon_screen = "vault"
+	icon_keyboard = "security_key"
 	idle_power_usage = 100
 
 	var/siphoning = FALSE
@@ -24,9 +25,9 @@
 
 /obj/machinery/computer/bank_machine/attackby(obj/item/I, mob/user)
 	var/value = 0
-	if(istype(I, /obj/item/stack/spacecash))
-		var/obj/item/stack/spacecash/C = I
-		value = C.value * C.amount
+	if(istype(I, /obj/item/spacecash/bundle))
+		var/obj/item/spacecash/bundle/C = I
+		value = C.value
 	else if(istype(I, /obj/item/holochip))
 		var/obj/item/holochip/H = I
 		value = H.credits
@@ -96,5 +97,5 @@
 
 /obj/machinery/computer/bank_machine/proc/end_syphon()
 	siphoning = FALSE
-	new /obj/item/holochip(drop_location(), syphoning_credits) //get the loot
+	new /obj/item/spacecash/bundle(drop_location(), syphoning_credits) //get the loot
 	syphoning_credits = 0

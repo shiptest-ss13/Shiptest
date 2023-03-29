@@ -1,19 +1,13 @@
 /datum/job/mime
-	title = "Mime"
-	department_head = list("Head of Personnel")
-	faction = "Station"
+	name = "Mime"
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the head of personnel"
 	wiki_page = "Mime" //WS Edit - Wikilinks/Warning
-	selection_color = "#bbe291"
 
 	outfit = /datum/outfit/job/mime
 
 	access = list(ACCESS_THEATRE)
 	minimal_access = list(ACCESS_THEATRE)
-	paycheck = PAYCHECK_MINIMAL
-	paycheck_department = ACCOUNT_SRV
 
 	display_order = JOB_DISPLAY_ORDER_MIME
 
@@ -23,6 +17,7 @@
 
 /datum/outfit/job/mime
 	name = "Mime"
+	job_icon = "mime"
 	jobtype = /datum/job/mime
 
 	belt = /obj/item/pda/mime

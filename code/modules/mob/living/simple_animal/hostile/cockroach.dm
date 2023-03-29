@@ -61,7 +61,7 @@
 		return
 	..()
 
-/mob/living/simple_animal/hostile/cockroach/Crossed(var/atom/movable/AM)
+/mob/living/simple_animal/hostile/cockroach/on_entered(datum/source, atom/movable/AM)
 	. = ..()
 	if(ismob(AM))
 		if(isliving(AM))

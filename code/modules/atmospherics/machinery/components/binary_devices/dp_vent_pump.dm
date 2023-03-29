@@ -7,6 +7,7 @@
 /obj/machinery/atmospherics/components/binary/dp_vent_pump
 	icon = 'icons/obj/atmospherics/components/unary_devices.dmi' //We reuse the normal vent icons!
 	icon_state = "dpvent_map-3"
+	pipe_state = "dp_vent_pump"
 
 	//node2 is output port
 	//node1 is input port
@@ -14,12 +15,15 @@
 	name = "dual-port air vent"
 	desc = "Has a valve and pump attached to it. There are two ports."
 
+	can_unwrench = TRUE
+	construction_type = /obj/item/pipe/directional
+	shift_underlay_only = FALSE
 	hide = TRUE
 
 	interacts_with_air = TRUE
 
-	var/frequency = 0
-	var/id = null
+	var/frequency = FREQ_ATMOS_CONTROL
+	var/id_tag = null
 	var/datum/radio_frequency/radio_connection
 
 	var/pump_direction = 1 //0 = siphoning, 1 = releasing
@@ -36,10 +40,23 @@
 	//INPUT_MIN: Do not pass input_pressure_min
 	//OUTPUT_MAX: Do not pass output_pressure_max
 
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/New()
+	..()
+	if(!id_tag)
+		id_tag = assign_uid_vents()
+
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/Destroy()
 	SSradio.remove_object(src, frequency)
+	var/area/A = get_area(src)
+	if (A)
+		A.dp_air_vent_names -= id_tag
+		A.dp_air_vent_info -= id_tag
+		deallocate_nameid(A.dp_air_vent_ids, id_tag)
 	if(aac)
 		aac.vents -= src
+
+	SSradio.remove_object(src,frequency)
+	radio_connection = null
 	return ..()
 
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/update_icon_nopipes()
@@ -47,12 +64,14 @@
 	if(showpipe)
 		var/image/cap = getpipeimage(icon, "dpvent_cap", dir, piping_layer = piping_layer)
 		add_overlay(cap)
+	else
+		PIPING_LAYER_SHIFT(src, PIPING_LAYER_DEFAULT)
 
 	if(welded)
 		icon_state = "vent_welded"
 		return
 
-	if(!on || !is_operational())
+	if(!on || !is_operational)
 		icon_state = "vent_off"
 	else
 		icon_state = pump_direction ? "vent_out" : "vent_in"
@@ -61,6 +80,10 @@
 	..()
 
 	if(!on)
+		return
+	if(!is_operational)
+		return
+	if(!on || welded)
 		return
 	var/datum/gas_mixture/air1 = airs[1]
 	var/datum/gas_mixture/air2 = airs[2]
@@ -116,7 +139,8 @@
 		return
 
 	var/datum/signal/signal = new(list(
-		"tag" = id,
+		"tag" = id_tag,
+		"frequency" = frequency,
 		"device" = "ADVP",
 		"power" = on,
 		"direction" = pump_direction?("release"):("siphon"),
@@ -126,6 +150,14 @@
 		"external" = external_pressure_bound,
 		"sigtype" = "status"
 	))
+
+	var/area/A = get_area(src)
+	if(!A.dp_air_vent_names[id_tag])
+		var/nameid = allocate_nameid(A.dp_air_vent_ids, id_tag)
+		name = "\improper [A.name] dual-port air vent #[nameid]"
+		A.dp_air_vent_names[id_tag] = name
+	A.dp_air_vent_info[id_tag] = signal.data
+
 	radio_connection.post_signal(src, signal, filter = RADIO_ATMOSIA)
 
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/atmosinit()
@@ -135,7 +167,7 @@
 	broadcast_status()
 
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/receive_signal(datum/signal/signal)
-	if(!signal.data["tag"] || (signal.data["tag"] != id) || (signal.data["sigtype"]!="command"))
+	if(!signal.data["tag"] || (signal.data["tag"] != id_tag) || (signal.data["sigtype"]!="command"))
 		return
 
 	if("power" in signal.data)
@@ -172,6 +204,53 @@
 	if(!("status" in signal.data)) //do not update_icon
 		update_icon()
 
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/welder_act(mob/living/user, obj/item/I)
+	..()
+	if(!I.tool_start_check(user, amount=0))
+		return TRUE
+	to_chat(user, "<span class='notice'>You begin welding the vent...</span>")
+	if(I.use_tool(src, user, 20, volume=50))
+		if(!welded)
+			user.visible_message("<span class='notice'>[user] welds the vent shut.</span>", "<span class='notice'>You weld the vent shut.</span>", "<span class='hear'>You hear welding.</span>")
+			welded = TRUE
+		else
+			user.visible_message("<span class='notice'>[user] unwelded the vent.</span>", "<span class='notice'>You unweld the vent.</span>", "<span class='hear'>You hear welding.</span>")
+			welded = FALSE
+		update_icon()
+		pipe_vision_img = image(src, loc, layer = ABOVE_HUD_LAYER, dir = dir)
+		pipe_vision_img.plane = ABOVE_HUD_PLANE
+		investigate_log("was [welded ? "welded shut" : "unwelded"] by [key_name(user)]", INVESTIGATE_ATMOS)
+		add_fingerprint(user)
+	return TRUE
+
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/can_unwrench(mob/user)
+	. = ..()
+	if(. && on && is_operational)
+		to_chat(user, "<span class='warning'>You cannot unwrench [src], turn it off first!</span>")
+		return FALSE
+
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/examine(mob/user)
+	. = ..()
+	if(welded)
+		. += "It seems welded shut."
+
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/power_change()
+	. = ..()
+	update_icon_nopipes()
+
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/can_crawl_through()
+	return !welded
+
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/attack_alien(mob/user)
+	if(!welded || !(do_after(user, 20, target = src)))
+		return
+	user.visible_message("<span class='warning'>[user] furiously claws at [src]!</span>", "<span class='notice'>You manage to clear away the stuff blocking the vent.</span>", "<span class='hear'>You hear loud scraping noises.</span>")
+	welded = FALSE
+	update_icon()
+	pipe_vision_img = image(src, loc, layer = ABOVE_HUD_LAYER, dir = dir)
+	pipe_vision_img.plane = ABOVE_HUD_PLANE
+	playsound(loc, 'sound/weapons/bladeslice.ogg', 100, TRUE)
+
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume
 	name = "large dual-port air vent"
 
@@ -205,15 +284,15 @@
 	icon_state = "dpvent_map_on-4"
 
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/incinerator_toxmix
-	id = INCINERATOR_TOXMIX_DP_VENTPUMP
+	id_tag = INCINERATOR_TOXMIX_DP_VENTPUMP
 	frequency = FREQ_AIRLOCK_CONTROL
 
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/incinerator_atmos
-	id = INCINERATOR_ATMOS_DP_VENTPUMP
+	id_tag = INCINERATOR_ATMOS_DP_VENTPUMP
 	frequency = FREQ_AIRLOCK_CONTROL
 
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/incinerator_syndicatelava
-	id = INCINERATOR_SYNDICATELAVA_DP_VENTPUMP
+	id_tag = INCINERATOR_SYNDICATELAVA_DP_VENTPUMP
 	frequency = FREQ_AIRLOCK_CONTROL
 
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2

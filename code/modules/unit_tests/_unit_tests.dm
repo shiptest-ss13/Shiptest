@@ -25,6 +25,7 @@
 #include "binary_insert.dm"
 #include "combat.dm"
 #include "component_tests.dm"
+#include "connect_loc.dm"
 #include "emoting.dm"
 #include "keybinding_init.dm"
 #include "machine_disassembly.dm"
@@ -48,7 +49,9 @@
 #include "spawn_humans.dm"
 #include "species_whitelists.dm"
 #include "subsystem_init.dm"
+#include "supply_pack.dm"
 #include "teleporters.dm"
+#include "subsystem_metric_sanity.dm"
 #include "timer_sanity.dm"
 #include "unit_test.dm"
 

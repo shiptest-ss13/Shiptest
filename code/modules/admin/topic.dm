@@ -316,62 +316,62 @@
 		message_admins("<span class='adminnotice'>[key_name_admin(usr)] has used rudimentary transformation on [key_name_admin(M)]. Transforming to [href_list["simplemake"]].; deletemob=[delmob]</span>")
 		switch(href_list["simplemake"])
 			if("observer")
-				M.change_mob_type( /mob/dead/observer , null, null, delmob )
+				M.change_mob_type(/mob/dead/observer , null, null, delmob)
 			if("drone")
-				M.change_mob_type( /mob/living/carbon/alien/humanoid/drone , null, null, delmob )
+				M.change_mob_type(/mob/living/carbon/alien/humanoid/drone , null, null, delmob)
 			if("hunter")
-				M.change_mob_type( /mob/living/carbon/alien/humanoid/hunter , null, null, delmob )
+				M.change_mob_type(/mob/living/carbon/alien/humanoid/hunter , null, null, delmob)
 			if("queen")
-				M.change_mob_type( /mob/living/carbon/alien/humanoid/royal/queen , null, null, delmob )
+				M.change_mob_type(/mob/living/carbon/alien/humanoid/royal/queen , null, null, delmob)
 			if("praetorian")
-				M.change_mob_type( /mob/living/carbon/alien/humanoid/royal/praetorian , null, null, delmob )
+				M.change_mob_type(/mob/living/carbon/alien/humanoid/royal/praetorian , null, null, delmob)
 			if("sentinel")
-				M.change_mob_type( /mob/living/carbon/alien/humanoid/sentinel , null, null, delmob )
+				M.change_mob_type(/mob/living/carbon/alien/humanoid/sentinel , null, null, delmob)
 			if("larva")
-				M.change_mob_type( /mob/living/carbon/alien/larva , null, null, delmob )
+				M.change_mob_type(/mob/living/carbon/alien/larva , null, null, delmob)
 			if("human")
 				var/posttransformoutfit = usr.client.robust_dress_shop()
 				if (!posttransformoutfit)
 					return
-				var/mob/living/carbon/human/newmob = M.change_mob_type( /mob/living/carbon/human , null, null, delmob )
+				var/mob/living/carbon/human/newmob = M.change_mob_type(/mob/living/carbon/human , null, null, delmob)
 				if(posttransformoutfit && istype(newmob))
 					newmob.equipOutfit(posttransformoutfit)
 			if("slime")
-				M.change_mob_type( /mob/living/simple_animal/slime , null, null, delmob )
+				M.change_mob_type(/mob/living/simple_animal/slime , null, null, delmob)
 			if("adultslime")
-				var/mob/living/simple_animal/slime/baby_slime = M.change_mob_type( /mob/living/simple_animal/slime , null, null, delmob )
+				var/mob/living/simple_animal/slime/baby_slime = M.change_mob_type(/mob/living/simple_animal/slime , null, null, delmob)
 				baby_slime.amount_grown = SLIME_EVOLUTION_THRESHOLD
 				baby_slime.Evolve()
 			if("monkey")
-				M.change_mob_type( /mob/living/carbon/monkey , null, null, delmob )
+				M.change_mob_type(/mob/living/carbon/monkey , null, null, delmob)
 			if("robot")
-				M.change_mob_type( /mob/living/silicon/robot , null, null, delmob )
+				M.change_mob_type(/mob/living/silicon/robot , null, null, delmob)
 			if("cat")
-				M.change_mob_type( /mob/living/simple_animal/pet/cat , null, null, delmob )
+				M.change_mob_type(/mob/living/simple_animal/pet/cat , null, null, delmob)
 			if("runtime")
-				M.change_mob_type( /mob/living/simple_animal/pet/cat/Runtime , null, null, delmob )
+				M.change_mob_type(/mob/living/simple_animal/pet/cat/Runtime , null, null, delmob)
 			if("corgi")
-				M.change_mob_type( /mob/living/simple_animal/pet/dog/corgi , null, null, delmob )
+				M.change_mob_type(/mob/living/simple_animal/pet/dog/corgi , null, null, delmob)
 			if("ian")
-				M.change_mob_type( /mob/living/simple_animal/pet/dog/corgi/Ian , null, null, delmob )
+				M.change_mob_type(/mob/living/simple_animal/pet/dog/corgi/Ian , null, null, delmob)
 			if("pug")
-				M.change_mob_type( /mob/living/simple_animal/pet/dog/pug , null, null, delmob )
+				M.change_mob_type(/mob/living/simple_animal/pet/dog/pug , null, null, delmob)
 			if("crab")
-				M.change_mob_type( /mob/living/simple_animal/crab , null, null, delmob )
+				M.change_mob_type(/mob/living/simple_animal/crab , null, null, delmob)
 			if("coffee")
-				M.change_mob_type( /mob/living/simple_animal/crab/Coffee , null, null, delmob )
+				M.change_mob_type(/mob/living/simple_animal/crab/Coffee , null, null, delmob)
 			if("parrot")
-				M.change_mob_type( /mob/living/simple_animal/parrot , null, null, delmob )
+				M.change_mob_type(/mob/living/simple_animal/parrot , null, null, delmob)
 			if("polyparrot")
-				M.change_mob_type( /mob/living/simple_animal/parrot/Poly , null, null, delmob )
+				M.change_mob_type(/mob/living/simple_animal/parrot/Poly , null, null, delmob)
 			if("constructjuggernaut")
-				M.change_mob_type( /mob/living/simple_animal/hostile/construct/juggernaut , null, null, delmob )
+				M.change_mob_type(/mob/living/simple_animal/hostile/construct/juggernaut , null, null, delmob)
 			if("constructartificer")
-				M.change_mob_type( /mob/living/simple_animal/hostile/construct/artificer , null, null, delmob )
+				M.change_mob_type(/mob/living/simple_animal/hostile/construct/artificer , null, null, delmob)
 			if("constructwraith")
-				M.change_mob_type( /mob/living/simple_animal/hostile/construct/wraith , null, null, delmob )
+				M.change_mob_type(/mob/living/simple_animal/hostile/construct/wraith , null, null, delmob)
 			if("shade")
-				M.change_mob_type( /mob/living/simple_animal/shade , null, null, delmob )
+				M.change_mob_type(/mob/living/simple_animal/shade , null, null, delmob)
 
 	else if(href_list["boot2"])
 		if(!check_rights(R_ADMIN))
@@ -1228,7 +1228,7 @@
 		to_chat(src.owner, "Mob type = [M.type]; Gender = [gender_description] Damage = [health_description]", confidential = TRUE)
 		to_chat(src.owner, "Name = <b>[M.name]</b>; Real_name = [M.real_name]; Mind_name = [M.mind?"[M.mind.name]":""]; Key = <b>[M.key]</b>;", confidential = TRUE)
 		to_chat(src.owner, "Location = [location_description];", confidential = TRUE)
-		to_chat(src.owner, "[special_role_description]", confidential = TRUE)
+		to_chat(src.owner, "[special_role_description || "No Special Role"]", confidential = TRUE)
 		to_chat(src.owner, ADMIN_FULLMONTY_NONAME(M), confidential = TRUE)
 
 	else if(href_list["adminspawncookie"])
@@ -1251,8 +1251,6 @@
 		// WS - More fun with cookies - Start
 		else if(islizard(H))
 			cookiealt = /obj/item/reagent_containers/food/snacks/nugget
-		else if(isfelinid(H))
-			cookiealt = /obj/item/reagent_containers/food/snacks/deadmouse
 		else if(issquidperson(H))
 			cookiealt = /obj/item/reagent_containers/food/snacks/fishfingers
 		if(H.recieve_gift(cookiealt))
@@ -1620,7 +1618,7 @@
 		var/list/available_channels = list()
 		for(var/datum/newscaster/feed_channel/F in GLOB.news_network.network_channels)
 			available_channels += F.channel_name
-		src.admincaster_feed_channel.channel_name = adminscrub(input(usr, "Choose receiving Feed Channel.", "Network Channel Handler") in sortList(available_channels) )
+		src.admincaster_feed_channel.channel_name = adminscrub(input(usr, "Choose receiving Feed Channel.", "Network Channel Handler") in sortList(available_channels))
 		src.access_news_network()
 
 	else if(href_list["ac_set_new_message"])
@@ -1936,60 +1934,6 @@
 				dat += "<center><b>0 bans detected for [ckey]</b></center>"
 			else
 				bans = json_decode(response["body"])
-				dat += "<center><b>[bans.len] ban\s detected for [ckey]</b></center>"
-				for(var/list/ban in bans)
-					dat += "<b>Server: </b> [sanitize(ban["sourceName"])]<br>"
-					dat += "<b>RP Level: </b> [sanitize(ban["sourceRoleplayLevel"])]<br>"
-					dat += "<b>Type: </b> [sanitize(ban["type"])]<br>"
-					dat += "<b>Banned By: </b> [sanitize(ban["bannedBy"])]<br>"
-					dat += "<b>Reason: </b> [sanitize(ban["reason"])]<br>"
-					dat += "<b>Datetime: </b> [sanitize(ban["bannedOn"])]<br>"
-					var/expiration = ban["expires"]
-					dat += "<b>Expires: </b> [expiration ? "[sanitize(expiration)]" : "Permanent"]<br>"
-					if(ban["type"] == "job")
-						dat += "<b>Jobs: </b> "
-						var/list/jobs = ban["jobs"]
-						dat += sanitize(jobs.Join(", "))
-						dat += "<br>"
-					dat += "<hr>"
-
-		dat += "<br></body>"
-		var/datum/browser/popup = new(usr, "centcomlookup-[ckey]", "<div align='center'>Central Command Galactic Ban Database</div>", 700, 600)
-		popup.set_content(dat.Join())
-		popup.open(0)
-
-	else if(href_list["centcomlookup"])
-		if(!check_rights(R_ADMIN))
-			return
-
-		if(!CONFIG_GET(string/centcom_ban_db))
-			to_chat(usr, "<span class='warning'>Centcom Galactic Ban DB is disabled!</span>")
-			return
-
-		var/ckey = href_list["centcomlookup"]
-
-		// Make the request
-		var/datum/http_request/request = new()
-		request.prepare(RUSTG_HTTP_METHOD_GET, "[CONFIG_GET(string/centcom_ban_db)]/[ckey]", "", "")
-		request.begin_async()
-		UNTIL(request.is_complete() || !usr)
-		if (!usr)
-			return
-		var/datum/http_response/response = request.into_response()
-
-		var/list/bans
-
-		var/list/dat = list("<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'><body>")
-
-		if(response.errored)
-			dat += "<br>Failed to connect to CentCom."
-		else if(response.status_code != 200)
-			dat += "<br>Failed to connect to CentCom. Status code: [response.status_code]"
-		else
-			if(response.body == "[]")
-				dat += "<center><b>0 bans detected for [ckey]</b></center>"
-			else
-				bans = json_decode(response["body"])
 
 				//Ignore bans from non-whitelisted sources, if a whitelist exists
 				var/list/valid_sources
@@ -2022,15 +1966,6 @@
 		var/datum/browser/popup = new(usr, "centcomlookup-[ckey]", "<div align='center'>Central Command Galactic Ban Database</div>", 700, 600)
 		popup.set_content(dat.Join())
 		popup.open(0)
-
-	else if(href_list["modantagrep"])
-		if(!check_rights(R_ADMIN))
-			return
-
-		var/mob/M = locate(href_list["mob"]) in GLOB.mob_list
-		var/client/C = M.client
-		usr.client.cmd_admin_mod_antag_rep(C, href_list["modantagrep"])
-		show_player_panel(M)
 
 	else if(href_list["slowquery"])
 		if(!check_rights(R_ADMIN))
@@ -2311,42 +2246,6 @@
 		fax_panel(usr)
 		return
 
-	else if(href_list["EvilFax"])
-		if(!check_rights(R_FUN))
-			return
-		var/mob/living/carbon/human/H = locate(href_list["EvilFax"])
-		if(!istype(H))
-			to_chat(usr, "<span class='notice'>This can only be used on instances of type /mob/living/carbon/human.</span>")
-			return
-		var/etypes = list("Borgification","Corgification","Death By Fire","Demotion Notice")
-		var/eviltype = input(src.owner, "Which type of evil fax do you wish to send [H]?","Its good to be baaaad...", "") as null|anything in etypes
-		if(!(eviltype in etypes))
-			return
-		var/customname = input(src.owner, "Pick a title for the evil fax.", "Fax Title") as text|null
-		if(!customname)
-			customname = "paper"
-		var/obj/item/paper/evilfax/P = new /obj/item/paper/evilfax(null)
-		var/obj/machinery/photocopier/faxmachine/fax = locate(href_list["originfax"])
-
-		P.name = "Central Command - [customname]"
-		P.info = "<span class='danger'>You really should've known better.</span>"
-		P.myeffect = eviltype
-		P.mytarget = H
-		if(alert("Do you want the Evil Fax to activate automatically if [H] tries to ignore it?",,"Yes", "No") == "Yes")
-			P.activate_on_timeout = TRUE
-		P.x = rand(-2, 0)
-		P.y = rand(-1, 2)
-		P.update_icon()
-		//we have to physically teleport the fax paper
-		fax.handle_animation()
-		P.forceMove(fax.loc)
-		if(istype(H) && H.stat == CONSCIOUS && (istype(H.ears, /obj/item/radio/headset)))
-			to_chat(H, "<span class='notice'>Your headset pings, notifying you that a reply to your fax has arrived.</span>")
-		to_chat(src.owner, "<span class='notice'>You sent a [eviltype] fax to [H].</span>")
-		log_admin("[key_name(src.owner)] sent [key_name(H)] a [eviltype] fax")
-		message_admins("[key_name_admin(src.owner)] replied to [key_name_admin(H)] with a [eviltype] fax")
-		return
-
 	else if(href_list["FaxReplyTemplate"])
 		if(!check_rights(R_FUN))
 			return
@@ -2416,7 +2315,7 @@
 			return
 		GLOB.interviews.ui_interact(usr)
 
-/datum/admins/proc/handle_sendall(var/obj/machinery/photocopier/faxmachine/F, var/obj/item/paper/P)
+/datum/admins/proc/handle_sendall(obj/machinery/photocopier/faxmachine/F, obj/item/paper/P)
 	if(F.receivefax(P) == FALSE)
 		to_chat(owner, "<span class='warning'>Message transmission to [F.department] failed.</span>")
 

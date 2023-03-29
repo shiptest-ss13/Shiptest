@@ -51,12 +51,14 @@
 #define RESEARCH_FABRICATOR_SCREEN_CATEGORYVIEW 5
 
 ///Department flags for techwebs. Defines which department can print what from each protolathe so Cargo can't print guns, etc.
+#define DEPARTMENTAL_FLAG_BALLISTICS (1<<0)
 #define DEPARTMENTAL_FLAG_SECURITY (1<<0)
 #define DEPARTMENTAL_FLAG_MEDICAL (1<<1)
 #define DEPARTMENTAL_FLAG_CARGO (1<<2)
 #define DEPARTMENTAL_FLAG_SCIENCE (1<<3)
 #define DEPARTMENTAL_FLAG_ENGINEERING (1<<4)
 #define DEPARTMENTAL_FLAG_SERVICE (1<<5)
+#define DEPARTMENTAL_FLAG_BASIC (1<<6)//for making generalized, unassigned protolathes
 
 #define DESIGN_ID_IGNORE "IGNORE_THIS_DESIGN" ///For instances where we don't want a design showing up due to it being for debug/sanity purposes
 
@@ -74,14 +76,23 @@
 	TECHWEB_POINT_TYPE_NANITES = "Nanite Research" \
 	)
 
-///R&D point value for a maxcap bomb. Can be adjusted if need be. Current Value Cap Radius: 100
-#define TECHWEB_BOMB_POINTCAP 50000
+#define BOMB_TARGET_POINTS 50000 //Adjust as needed. Actual hard cap is double this, but will never be reached due to hyperbolic curve.
+#define BOMB_TARGET_SIZE 200 // The shockwave radius required for a bomb to get TECHWEB_BOMB_MIDPOINT points.
+#define BOMB_SUB_TARGET_EXPONENT 2 // The power of the points curve below the target size. Higher = less points for worse bombs, below target.
 
-///Research point values for slime extracts, see: [/modules/research/xenobiology/xenobio_camera][xenobio_camera]
-#define SLIME_RESEARCH_TIER_0 100
-#define SLIME_RESEARCH_TIER_1 500
-#define SLIME_RESEARCH_TIER_2 1000
-#define SLIME_RESEARCH_TIER_3 1500
-#define SLIME_RESEARCH_TIER_4 2000
-#define SLIME_RESEARCH_TIER_5 2500
-#define SLIME_RESEARCH_TIER_RAINBOW 5000
+///Research point values for slime extracts, see the R&D console's attackby code
+#define SLIME_RESEARCH_TIER_0 500
+#define SLIME_RESEARCH_TIER_1 1500
+#define SLIME_RESEARCH_TIER_2 3000
+#define SLIME_RESEARCH_TIER_3 6000
+#define SLIME_RESEARCH_TIER_4 9000
+#define SLIME_RESEARCH_TIER_5 15000
+#define SLIME_RESEARCH_TIER_RAINBOW 20000
+
+///Research point values for plant discoveries
+#define PLANT_RESEARCH_TIER_0 500
+#define PLANT_RESEARCH_TIER_1 1000
+#define PLANT_RESEARCH_TIER_2 2000
+#define PLANT_RESEARCH_TIER_3 4000
+#define PLANT_RESEARCH_TIER_4 8000
+#define PLANT_RESEARCH_TIER_5 16000

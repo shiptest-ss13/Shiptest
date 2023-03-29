@@ -43,6 +43,29 @@
 
 	dog_fashion = null
 
+/obj/item/clothing/head/caphat/cowboy
+	name = "general's hat"
+	desc = "A commanding white stetson adorned with a general's badge. Why this belongs to a captain is anybody's guess."
+	icon_state = "cowboycap"
+
+/obj/item/clothing/head/caphat/nt
+	name = "captain's hat"
+	icon_state = "captain_nt"
+
+/obj/item/clothing/head/caphat/minutemen
+	name = "general's bicorne"
+	desc = "A fancy bicorne used by generals of the Colonial Minutemen."
+	icon_state = "minuteman_general_hat"
+
+/obj/item/clothing/head/caphat/frontier
+	name = "\improper Frontiersmen commander's cap"
+	desc = "An imposing peaked cap, meant for a commander of the Frontiersmen."
+	icon_state = "frontier_cap"
+
+/obj/item/clothing/head/caphat/frontier/admiral
+	name = "\improper Frontiersmen admiral's cap"
+	desc = "An imposing peaked cap meant for only the highest of officers of the Frontiersman pirate fleet."
+	icon_state = "frontier_admiral_cap"
 
 //Head of Personnel
 /obj/item/clothing/head/hopcap
@@ -55,6 +78,17 @@
 /obj/item/clothing/head/hopcap/nt
 	icon_state = "hopcap_nt"
 	dog_fashion = /datum/dog_fashion/head/head_of_personnel
+
+//Cargo
+/obj/item/clothing/head/supply_chief
+	name = "supply chief's cap"
+	desc = "The one thing between you and 40 boxes of orderable pizza is the person wearing this hat."
+	icon_state = "supply_chief_cap"
+
+/obj/item/clothing/head/deliveries_officer
+	name = "deliveries officer's cap"
+	desc = "Whether through fires, the vacuum of space, or hordes of souless husks of grey suited criminals, your crate will always be delivered!"
+	icon_state = "deliveries_officer_cap"
 
 //Chaplain
 /obj/item/clothing/head/nun_hood
@@ -99,49 +133,6 @@
 			else
 				to_chat(user, "<span class='warning'>You just took a candy corn! You should wait a couple minutes, lest you burn through your stash.</span>")
 
-/*WS Edit - Berets
-//Mime
-/obj/item/clothing/head/beret
-	name = "beret"
-	desc = "A beret, a mime's favorite headwear."
-	icon_state = "beret"
-	dog_fashion = /datum/dog_fashion/head/beret
-	dynamic_hair_suffix = "+generic" //WS edit - Berets
-	dynamic_fhair_suffix = "+generic" //WS edit - Berets
-
-/obj/item/clothing/head/beret/vintage
-	name = "vintage beret"
-	desc = "A well-worn beret."
-	icon_state = "vintageberet"
-	dog_fashion = null
-
-/obj/item/clothing/head/beret/archaic
-	name = "archaic beret"
-	desc = "An absolutely ancient beret, allegedly worn by the first mime to ever step foot on a NanoTrasen station."
-	icon_state = "archaicberet"
-	dog_fashion = null
-
-/obj/item/clothing/head/beret/black
-	name = "black beret"
-	desc = "A black beret, perfect for war veterans and dark, brooding, anti-hero mimes."
-	icon_state = "beretblack"
-
-/obj/item/clothing/head/beret/highlander
-	desc = "That was white fabric. <i>Was.</i>"
-	dog_fashion = null //THIS IS FOR SLAUGHTER, NOT PUPPIES
-
-/obj/item/clothing/head/beret/highlander/Initialize()
-	. = ..()
-	ADD_TRAIT(src, TRAIT_NODROP, HIGHLANDER)
-
-/obj/item/clothing/head/beret/durathread
-	name = "durathread beret"
-	desc =  "A beret made from durathread, its resilient fibres provide some protection to the wearer."
-	icon_state = "beretdurathread"
-	armor = list("melee" = 15, "bullet" = 5, "laser" = 15, "energy" = 25, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 5)
-
-WS End*/
-
 //Curator
 /obj/item/clothing/head/fedora/curator
 	name = "treasure hunter's fedora"
@@ -158,16 +149,49 @@ WS End*/
 	strip_delay = 80
 	dynamic_hair_suffix = ""
 
+/obj/item/clothing/head/HoS/cowboy
+	name = "sheriff's hat"
+	desc = "A stalwart white stetson adorned with a sheriff's badge. A symbol of excellence, authority, and old-fashioned style."
+	icon_state = "cowboyhos"
+
+	dog_fashion = /datum/dog_fashion/head/cowboy
+
+/obj/item/clothing/head/cowboy/sec
+	name = "deputy hat"
+	desc = "A robust stetson adorned with a deputy's badge. It has a reinforced lining under the imitation leather."
+	icon_state = "cowboysec"
+	armor = list("melee" = 35, "bullet" = 30, "laser" = 30,"energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
+	strip_delay = 60
+
+/obj/item/clothing/head/cowboy/sec/minutemen
+	name = "colonial minutmen officer's slouch hat"
+	desc = "A commanding slouch hat adorned with a offier's badge, used by the Colonial Minutemen."
+	icon_state = "minuteman_officer_hat"
+
+
+/obj/item/clothing/head/cowboy/sec/roumain
+	name = "hunter's hat"
+	desc = "A fancy hat with a nice feather. The way it covers your eyes makes you feel like a badass."
+	icon_state = "rouma_hat"
+
+/obj/item/clothing/head/cowboy/sec/roumain/shadow
+	name = "shadow's hat"
+	desc = "A rough, simple hat. The way it covers your eyes makes you feel badass, but you just look like a wannabe hunter."
+	icon_state = "rouma_shadow_hat"
+
+/obj/item/clothing/head/cowboy/sec/roumain/med
+	name = "medical hunter's hat"
+	desc = "A very wide-brimmed, round hat treated with oil and wax. Somehow manages to look stylish and creepy at the same time."
+	icon_state = "rouma_med_hat"
+
+/obj/item/clothing/head/HoS/cowboy/montagne
+	name = "montagne's hat"
+	desc = "A very fancy hat with a large feather plume to signal that you are, in fact, a Hunter Montagne. The exotic fur lining is impeccably soft and bafflingly bulletproof."
+	icon_state = "rouma_montagne_hat"
+
 /obj/item/clothing/head/HoS/syndicate
 	name = "syndicate cap"
 	desc = "A black cap fit for a high ranking syndicate officer."
-
-/*WS edit - Better Berets
-/obj/item/clothing/head/HoS/beret
-	name = "head of security beret"
-	desc = "A robust beret for the Head of Security, for looking stylish while not sacrificing protection."
-	icon_state = "hosberetblack"
-WS End */
 
 /obj/item/clothing/head/HoS/beret/syndicate
 	name = "syndicate beret"
@@ -182,6 +206,21 @@ WS End */
 	armor = list("melee" = 40, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 60)
 	strip_delay = 60
 	dog_fashion = /datum/dog_fashion/head/warden
+
+/obj/item/clothing/head/warden/red
+	name = "warden's red hat"
+	desc = "A warden's red hat. Looking at it gives you the feeling of wanting to keep people in cells for as long as possible."
+	icon_state = "wardenhat"
+	armor = list("melee" = 40, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 60)
+	strip_delay = 60
+	dog_fashion = /datum/dog_fashion/head/warden_red
+
+/obj/item/clothing/head/warden/cowboy
+	name = "jailor's hat"
+	desc = "A menacing black stetson adorned with a jailor's badge. It has a heavily reinforced lining under the imitation leather."
+	icon_state = "cowboywarden"
+
+	dog_fashion = /datum/dog_fashion/head/cowboy
 
 /obj/item/clothing/head/warden/drill
 	name = "warden's campaign hat"

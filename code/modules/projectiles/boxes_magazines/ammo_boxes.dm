@@ -31,6 +31,15 @@
 	desc = "Designed to help reload large revolvers. These rounds contain a tiny explosive charge that detonates on impact, creating especially deadly wounds."
 	ammo_type = /obj/item/ammo_casing/a4570/explosive
 
+/obj/item/ammo_box/n762_clip
+	name = "ammo holder (7.62x38mmR)"
+	desc = "Designed to help reload Nagant revolvers."
+	icon_state = "n762"
+	ammo_type = /obj/item/ammo_casing/n762
+	max_ammo = 7
+	multiple_sprites = AMMO_BOX_PER_BULLET
+	item_flags = NO_MAT_REDEMPTION
+
 /obj/item/ammo_box/c38
 	name = "speed loader (.38)"
 	desc = "Designed to quickly reload revolvers."
@@ -91,6 +100,12 @@
 	ammo_type = /obj/item/ammo_casing/c9mm
 	max_ammo = 30
 
+/obj/item/ammo_box/c9mm/surplus
+	name = "ammo box (9mm surplus)"
+	desc = "A box of low-quality 9mm ammo."
+	icon_state = "9mmbox-surplus"
+	ammo_type = /obj/item/ammo_casing/c9mm/surplus
+
 /obj/item/ammo_box/c9mm/rubbershot
 	name = "ammo box (9mm rubbershot)"
 	desc = "A box of 9mm rubbershot ammo, designed to disable targets without causing serious damage."
@@ -125,6 +140,12 @@
 	icon_state = "10mmbox"
 	ammo_type = /obj/item/ammo_casing/c10mm
 	max_ammo = 30
+
+/obj/item/ammo_box/c10mm/surplus
+	name = "ammo box (10mm surplus)"
+	desc = "A box of low-quality 10mm ammo."
+	icon_state = "10mmbox-surplus"
+	ammo_type = /obj/item/ammo_casing/c10mm/surplus
 
 /obj/item/ammo_box/c10mm/rubbershot
 	name = "ammo box (10mm rubbershot)"
@@ -161,6 +182,12 @@
 	ammo_type = /obj/item/ammo_casing/c45
 	max_ammo = 30
 
+/obj/item/ammo_box/c45/surplus
+	name = "ammo box (.45 surplus)"
+	desc = "A box of low-quality .45 ammo."
+	icon_state = "45box-surplus"
+	ammo_type = /obj/item/ammo_casing/c45/surplus
+
 /obj/item/ammo_box/c45/rubbershot
 	name = "ammo box (.45 rubbershot)"
 	desc = "A box of .45 rubbershot ammo, designed to disable targets without causing serious damage."
@@ -195,6 +222,12 @@
 	icon_state = "556mmHITPbox"
 	ammo_type = /obj/item/ammo_casing/caseless/c556mmHITP
 	max_ammo = 30
+
+/obj/item/ammo_box/c556mmHITP/surplus
+	name = "ammo box (5.56mm HITP caseless surplus)"
+	desc = "A box of low-quality 5.56mm HITP caseless ammo."
+	icon_state = "556mmHITPbox-surplus"
+	ammo_type = /obj/item/ammo_casing/caseless/c556mmHITP/surplus
 
 /obj/item/ammo_box/c556mmHITP/rubbershot
 	name = "ammo box (5.56mm HITP caseless rubbershot)"
@@ -236,9 +269,15 @@
 
 /obj/item/ammo_box/n762
 	name = "ammo box (7.62x38mmR)"
-	icon_state = "10mmbox"
+	icon_state = "n762box"
 	ammo_type = /obj/item/ammo_casing/n762
 	max_ammo = 14
+
+/obj/item/ammo_box/a762_39
+	name = "ammo box (7.62x39mm)"
+	icon_state = "a762_39box"
+	ammo_type = /obj/item/ammo_casing/a762_39
+	max_ammo = 60
 
 /obj/item/ammo_box/foambox
 	name = "ammo box (Foam Darts)"
@@ -252,3 +291,12 @@
 	icon_state = "foambox_riot"
 	ammo_type = /obj/item/ammo_casing/caseless/foam_dart/riot
 	custom_materials = list(/datum/material/iron = 50000)
+
+/obj/item/ammo_box/magazine/zip_ammo_9mm
+	name = "budget pistol magazine(9mm)"
+	desc = "A knockoff commander magazine that can only hold 4 rounds."
+	icon_state = "ZipAmmo9mm"
+	ammo_type = /obj/item/ammo_casing/c9mm/surplus
+	caliber = "9mm"
+	max_ammo = 4
+	custom_materials = list(/datum/material/iron = 20000)

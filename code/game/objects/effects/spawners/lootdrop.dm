@@ -118,7 +118,7 @@
 	name = "gambling valuables spawner"
 	loot = list(
 				/obj/item/gun/ballistic/revolver/russian = 5,
-				/obj/item/clothing/head/ushanka = 3,
+				/obj/item/clothing/head/trapper = 3,
 				/obj/item/storage/box/syndie_kit/throwing_weapons,
 				/obj/item/coin/gold,
 				/obj/item/reagent_containers/food/drinks/bottle/vodka/badminka,
@@ -251,6 +251,16 @@
 		/obj/item/organ/tail/cat,
 		/obj/item/organ/tail/lizard)
 	lootcount = 5
+
+/obj/effect/spawner/lootdrop/rnd
+	name = "random RND spawner"
+	loot = list(
+		/obj/item/storage/box/rndmining,
+		/obj/item/storage/box/rndengi,
+		/obj/item/storage/box/rndsec,
+		/obj/item/storage/box/rndciv,
+		/obj/item/storage/box/rndmed)
+	lootcount = 1
 
 /obj/effect/spawner/lootdrop/two_percent_xeno_egg_spawner
 	name = "2% chance xeno egg spawner"
@@ -448,6 +458,28 @@
 				/obj/effect/spawner/bundle/costume/mafia/beige = 5
 				)
 
+/obj/effect/spawner/lootdrop/salvage_machine
+	name = "salvageable machine spawner"
+	loot = list(
+				/obj/structure/salvageable/protolathe,
+				/obj/structure/salvageable/circuit_imprinter,
+				/obj/structure/salvageable/server,
+				/obj/structure/salvageable/machine,
+				/obj/structure/salvageable/autolathe,
+				/obj/structure/salvageable/computer,
+				/obj/structure/salvageable/destructive_analyzer
+				)
+
+/obj/effect/spawner/lootdrop/salvage_50
+	name = "50% salvage spawner"
+	loot = list(
+				/obj/effect/spawner/lootdrop/maintenance = 13,
+				/obj/effect/spawner/lootdrop/salvage_machine = 12,
+				/obj/effect/spawner/lootdrop/whiteship_cere_ripley = 12,
+				/obj/structure/closet/crate/secure/loot = 13,
+				"" = 50
+				)
+
 //finds the probabilities of items spawning from a loot spawner's loot pool
 /obj/item/loot_table_maker
 	icon = 'icons/effects/landmarks_static.dmi'
@@ -489,3 +521,274 @@
 	while(islist(lootspawn))
 		lootspawn = pickweight_float(lootspawn) // WS edit - Fix various startup runtimes
 	return lootspawn
+
+/obj/effect/spawner/lootdrop/stockparts
+	name = "random good stock parts"
+	lootcount = 6
+	loot = list(
+				/obj/item/stock_parts/capacitor/adv,
+				/obj/item/stock_parts/capacitor/quadratic,
+				/obj/item/stock_parts/capacitor/super,
+				/obj/item/stock_parts/cell/hyper,
+				/obj/item/stock_parts/cell/super,
+				/obj/item/stock_parts/cell/bluespace,
+				/obj/item/stock_parts/matter_bin/bluespace,
+				/obj/item/stock_parts/matter_bin/super,
+				/obj/item/stock_parts/matter_bin/adv,
+				/obj/item/stock_parts/micro_laser/ultra,
+				/obj/item/stock_parts/micro_laser/quadultra,
+				/obj/item/stock_parts/micro_laser/high,
+				/obj/item/stock_parts/scanning_module/triphasic,
+				/obj/item/stock_parts/scanning_module/phasic,
+				/obj/item/stock_parts/scanning_module/adv,
+				/obj/item/reagent_containers/glass/beaker/bluespace,
+				/obj/item/reagent_containers/glass/beaker/plastic,
+				/obj/item/reagent_containers/glass/beaker/large,
+				/obj/item/stock_parts/manipulator/nano,
+				/obj/item/stock_parts/manipulator/pico,
+				/obj/item/stock_parts/manipulator/femto
+				)
+
+/obj/effect/spawner/lootdrop/materials
+	name = "random bulk materials"
+	lootcount = 2
+	loot = list(
+				/obj/item/stack/sheet/plastic/fifty,
+				/obj/item/stack/sheet/bluespace_crystal/twenty,
+				/obj/item/stack/sheet/cardboard/fifty,
+				/obj/item/stack/sheet/glass/fifty,
+				/obj/item/stack/sheet/metal/fifty,
+				/obj/item/stack/sheet/plasteel/twenty,
+				/obj/item/stack/sheet/mineral/plasma/fifty,
+				/obj/item/stack/sheet/mineral/silver/fifty,
+				/obj/item/stack/sheet/mineral/titanium/fifty,
+				/obj/item/stack/sheet/mineral/uranium/fifty,
+				/obj/item/stack/sheet/mineral/wood/fifty,
+				/obj/item/stack/sheet/mineral/diamond/twenty,
+				/obj/item/stack/sheet/mineral/gold/fifty,
+				/obj/item/stack/sheet/mineral/adamantine/ten,
+				/obj/item/stack/cable_coil/red,
+				/obj/item/stack/rods/fifty
+				)
+
+/obj/effect/spawner/lootdrop/spacegym
+	name = "spacegym loot spawner"
+	lootdoubles = FALSE
+
+	loot = list(
+			/obj/item/dnainjector/hulkmut = 1,
+			/obj/item/dnainjector/dwarf = 1,
+			/obj/item/dnainjector/gigantism = 1,
+			/obj/item/reagent_containers/food/snacks/meat/cutlet/chicken = 1,
+			/obj/item/clothing/under/shorts/black = 1,
+			/obj/item/clothing/under/shorts/blue = 1,
+			/obj/item/clothing/under/shorts/red = 1,
+			/obj/item/restraints/handcuffs = 1,
+			/obj/item/storage/pill_bottle/stimulant = 1,
+			/obj/item/storage/firstaid/regular = 1,
+			/obj/item/storage/box/handcuffs = 1,
+		)
+
+/obj/effect/spawner/lootdrop/singularitygen
+	name = "Tesla or Singulo spawner"
+	lootdoubles = FALSE
+
+	loot = list(
+		/obj/machinery/the_singularitygen/tesla = 1,
+		/obj/machinery/the_singularitygen = 1,
+	)
+
+
+GLOBAL_LIST_INIT(ws_survivor_default_loot, list(
+	/obj/item/stack/sheet/animalhide/goliath_hide = 0.7,
+	/obj/item/stack/sheet/bone = 0.8,
+	/obj/item/reagent_containers/food/drinks/waterbottle = 0.2,
+	/obj/item/reagent_containers/food/drinks/waterbottle/empty = 0.8,
+	/obj/item/storage/firstaid/ancient/heirloom = 0.2,
+	/obj/item/kitchen/knife/combat/survival = 0.2,
+	/obj/item/reagent_containers/food/snacks/rationpack = 0.2
+))
+
+/obj/effect/spawner/lootdrop/whitesands
+	name = "Whitesands Default loot spawner"
+	lootdoubles = FALSE
+
+/obj/effect/spawner/lootdrop/whitesands/survivor
+	name = "Whitesands Survivior loot spawner"
+	lootdoubles = TRUE
+	fan_out_items = TRUE
+	loot = list()
+
+/obj/effect/spawner/lootdrop/whitesands/survivor/Initialize()
+	loot += GLOB.ws_survivor_default_loot
+	lootcount = pick(list(1, 2, 3))
+	return ..()
+
+/obj/effect/spawner/lootdrop/whitesands/survivor/hunter
+	name = "Whitesands Hunter loot spawner"
+	loot = list(
+		/obj/item/gun/ballistic/rifle/boltaction/polymer = 0.3,
+		/obj/item/ammo_box/aac_300blk_stripper = 0.4
+	)
+/obj/effect/spawner/lootdrop/whitesands/survivor/gunslinger
+	name = "Whitesands Gunslinger loot spawner"
+	loot = list(
+		/obj/item/gun/ballistic/automatic/smg/aks74u = 0.1,
+		/obj/item/ammo_box/magazine/aks74u = 0.4
+	)
+
+/obj/effect/spawner/lootdrop/stockparts
+	name = "random good stock parts"
+	lootcount = 5
+	loot = list(
+				/obj/item/stock_parts/capacitor/adv,
+				/obj/item/stock_parts/capacitor/quadratic,
+				/obj/item/stock_parts/capacitor/super,
+				/obj/item/stock_parts/cell/hyper,
+				/obj/item/stock_parts/cell/super,
+				/obj/item/stock_parts/cell/bluespace,
+				/obj/item/stock_parts/matter_bin/bluespace,
+				/obj/item/stock_parts/matter_bin/super,
+				/obj/item/stock_parts/matter_bin/adv,
+				/obj/item/stock_parts/micro_laser/ultra,
+				/obj/item/stock_parts/micro_laser/quadultra,
+				/obj/item/stock_parts/micro_laser/high,
+				/obj/item/stock_parts/scanning_module/triphasic,
+				/obj/item/stock_parts/scanning_module/phasic,
+				/obj/item/stock_parts/scanning_module/adv,
+				/obj/item/reagent_containers/glass/beaker/bluespace,
+				/obj/item/reagent_containers/glass/beaker/plastic,
+				/obj/item/reagent_containers/glass/beaker/large,
+				/obj/item/stock_parts/manipulator/nano,
+				/obj/item/stock_parts/manipulator/pico,
+				/obj/item/stock_parts/manipulator/femto
+				)
+
+/obj/effect/spawner/lootdrop/materials
+	name = "random materials"
+	lootcount = 3
+	loot = list(
+				/obj/item/stack/sheet/plastic/fifty,
+				/obj/item/stack/sheet/plastic/five,
+				/obj/item/stack/sheet/bluespace_crystal/twenty,
+				/obj/item/stack/sheet/bluespace_crystal/five,
+				/obj/item/stack/sheet/cardboard/fifty,
+				/obj/item/stack/sheet/glass/fifty,
+				/obj/item/stack/sheet/metal/fifty,
+				/obj/item/stack/sheet/metal/twenty,
+				/obj/item/stack/sheet/plasteel/twenty,
+				/obj/item/stack/sheet/mineral/plasma/fifty,
+				/obj/item/stack/sheet/mineral/plasma/twenty,
+				/obj/item/stack/sheet/mineral/silver/fifty,
+				/obj/item/stack/sheet/mineral/titanium/twenty,
+				/obj/item/stack/sheet/mineral/uranium/twenty,
+				/obj/item/stack/sheet/mineral/wood/fifty,
+				/obj/item/stack/sheet/mineral/diamond/twenty,
+				/obj/item/stack/sheet/mineral/gold/fifty,
+				/obj/item/stack/sheet/mineral/adamantine/ten,
+				/obj/item/stack/cable_coil/red,
+				/obj/item/stack/rods/fifty
+				)
+
+/obj/effect/spawner/lootdrop/seeded
+	name = "GO FORTH AND CULTIVATE"
+	icon = 'icons/obj/hydroponics/seeds.dmi'
+	icon_state = "seed"//sneed
+	loot = list(
+		/obj/item/seeds/aloe,
+		/obj/item/seeds/ambrosia,
+		/obj/item/seeds/apple,
+		/obj/item/seeds/cotton,
+		/obj/item/seeds/banana,
+		/obj/item/seeds/berry,
+		/obj/item/seeds/cabbage,
+		/obj/item/seeds/carrot,
+		/obj/item/seeds/cherry,
+		/obj/item/seeds/chanter,
+		/obj/item/seeds/chili,
+		/obj/item/seeds/cocoapod,
+		/obj/item/seeds/coffee,
+		/obj/item/seeds/corn,
+		/obj/item/seeds/eggplant,
+		/obj/item/seeds/garlic,
+		/obj/item/seeds/grape,
+		/obj/item/seeds/grass,
+		/obj/item/seeds/lemon,
+		/obj/item/seeds/lime,
+		/obj/item/seeds/onion,
+		/obj/item/seeds/orange,
+		/obj/item/seeds/peas,
+		/obj/item/seeds/pineapple,
+		/obj/item/seeds/potato,
+		/obj/item/seeds/poppy,
+		/obj/item/seeds/pumpkin,
+		/obj/item/seeds/wheat/rice,
+		/obj/item/seeds/soya,
+		/obj/item/seeds/sugarcane,
+		/obj/item/seeds/sunflower,
+		/obj/item/seeds/tea,
+		/obj/item/seeds/tobacco,
+		/obj/item/seeds/tomato,
+		/obj/item/seeds/tower,
+		/obj/item/seeds/watermelon,
+		/obj/item/seeds/wheat,
+		/obj/item/seeds/whitebeet,
+		/obj/item/seeds/amanita,
+		/obj/item/seeds/glowshroom,
+		/obj/item/seeds/liberty,
+		/obj/item/seeds/nettle,
+		/obj/item/seeds/plump,
+		/obj/item/seeds/reishi,
+		/obj/item/seeds/cannabis,
+		/obj/item/seeds/starthistle,
+		/obj/item/seeds/cherry/bomb,
+		/obj/item/seeds/berry/glow,
+		/obj/item/seeds/sunflower/moonflower)
+
+/obj/effect/spawner/lootdrop/flora
+	name = "random flora spawner"
+	loot = list(
+		/obj/structure/flora/tree/chapel,
+		/obj/structure/flora/tree/pine,
+		/obj/structure/flora/tree/jungle/small,
+		/obj/structure/flora/tree/jungle,
+		/obj/structure/flora/ash/puce,
+		/obj/structure/flora/ash/fireblossom,
+		/obj/structure/flora/ash/fern,
+		/obj/structure/flora/ash/tall_shroom,
+		/obj/structure/flora/ash/stem_shroom,
+		/obj/structure/flora/ash/space/voidmelon,
+		/obj/structure/flora/ash/leaf_shroom,
+		/obj/structure/flora/junglebush/large,
+		/obj/structure/flora/junglebush/b,
+		/obj/structure/flora/junglebush/c,
+		/obj/structure/flora/ausbushes/fernybush,
+		/obj/structure/flora/ausbushes/genericbush,
+		/obj/structure/flora/ausbushes/grassybush,
+		/obj/structure/flora/ausbushes/leafybush,
+		/obj/structure/flora/ausbushes/palebush,
+		/obj/structure/flora/ausbushes/pointybush,
+		/obj/structure/flora/ausbushes/reedbush,
+		/obj/structure/flora/ausbushes/stalkybush,
+		/obj/structure/flora/ausbushes/sunnybush,
+		/obj/structure/flora/bush,
+		/obj/structure/flora/grass/jungle,
+		/obj/structure/flora/junglebush,
+		/obj/structure/flora/junglebush/b,
+		/obj/structure/flora/junglebush/c,
+		/obj/structure/flora/ash,
+		/obj/structure/flora/ash/cacti,
+		/obj/structure/flora/ash/cap_shroom,
+		/obj/structure/flora/ash/chilly,
+		/obj/structure/flora/tree/palm)
+	lootcount = 1
+
+/obj/effect/spawner/lootdrop/flower
+	name = "random flower spawner"
+	loot = list(
+		/obj/structure/flora/ausbushes/brflowers,
+		/obj/structure/flora/ausbushes/ywflowers,
+		/obj/structure/flora/ausbushes/ppflowers,
+		/obj/structure/flora/ausbushes/fullgrass,
+		/obj/structure/flora/ausbushes/sparsegrass)
+	lootcount = 1

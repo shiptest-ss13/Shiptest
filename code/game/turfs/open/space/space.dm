@@ -1,3 +1,6 @@
+#define STARLIGHT_RANGE_NOT_EMITTING 0
+#define STARLIGHT_RANGE_EMITTING 2
+
 /turf/open/space
 	icon = 'icons/turf/space.dmi'
 	icon_state = "0"
@@ -27,10 +30,10 @@
 	return
 
 /**
-  * Space Initialize
-  *
-  * Doesn't call parent, see [/atom/proc/Initialize]
-  */
+ * Space Initialize
+ *
+ * Doesn't call parent, see [/atom/proc/Initialize]
+ */
 /turf/open/space/Initialize(mapload, inherited_virtual_z)
 	SHOULD_CALL_PARENT(FALSE)
 	icon_state = SPACE_ICON_STATE
@@ -49,11 +52,15 @@
 		virtual_z = inherited_virtual_z
 
 	if (length(smoothing_groups))
-		sortTim(smoothing_groups) //In case it's not properly ordered, let's avoid duplicate entries with the same values.
+		// There used to be a sort here to prevent duplicate bitflag signatures
+		// in the bitflag list cache; the cost of always timsorting every group list every time added up.
+		// The sort now only happens if the initial key isn't found. This leads to some duplicate keys.
+		// /tg/ has a better approach; a unit test to see if any atoms have mis-sorted smoothing_groups
+		// or canSmoothWith. This is a better idea than what I do, and should be done instead.
 		SET_BITFLAG_LIST(smoothing_groups)
 	if (length(canSmoothWith))
-		sortTim(canSmoothWith)
-		if(canSmoothWith[length(canSmoothWith)] > MAX_S_TURF) //If the last element is higher than the maximum turf-only value, then it must scan turf contents for smoothing targets.
+		// If the last element is higher than the maximum turf-only value, then it must scan turf contents for smoothing targets.
+		if(canSmoothWith[length(canSmoothWith)] > MAX_S_TURF)
 			smoothing_flags |= SMOOTH_OBJ
 		SET_BITFLAG_LIST(canSmoothWith)
 
@@ -100,15 +107,33 @@
 /turf/open/space/remove_air_ratio(amount)
 	return null
 
-/turf/open/space/proc/update_starlight()
-	if(CONFIG_GET(flag/starlight))
-		for(var/t in RANGE_TURFS(1,src)) //RANGE_TURFS is in code\__HELPERS\game.dm
-			if(isspaceturf(t))
-				//let's NOT update this that much pls
-				continue
-			set_light(2)
+/// Checks if the turf's starlight should change, given a turf within 1 tile (including itself) that has changed since starlight was last valid.
+/turf/open/space/proc/check_starlight(turf/changed_turf)
+	// Non-space turfs cause us to start emitting or update our light.
+	if(!isspaceturf(changed_turf) && CONFIG_GET(flag/starlight))
+		set_light(STARLIGHT_RANGE_EMITTING)
+		return
+	// Either a turf changed TO space and we WERE emitting,
+	// or the turf ITSELF changed to space; in both cases we must recalculate
+	if(light_range != STARLIGHT_RANGE_NOT_EMITTING || changed_turf == src)
+		recalculate_starlight() // check starlight from scratch
+
+/// Recalculates the turf's starlight by checking nearby turfs.
+/// Note that if all nearby turfs are space and no starlight was being emitted, the light is not updated.
+/turf/open/space/proc/recalculate_starlight()
+	if(!(CONFIG_GET(flag/starlight)))
+		return
+
+	for(var/t in RANGE_TURFS(1,src)) // RANGE_TURFS is in code\__HELPERS\game.dm
+		// Adjacent non-space turfs mean we stay emitting.
+		if(!isspaceturf(t))
+			set_light(STARLIGHT_RANGE_EMITTING)
 			return
-		set_light(0)
+
+	// No adjacent non-space turfs; stop emitting starlight if we were before.
+	// set_light(0) doesn't actually change anything if our range is 0, but it has minor overhead
+	if(light_range != STARLIGHT_RANGE_NOT_EMITTING)
+		set_light(STARLIGHT_RANGE_NOT_EMITTING)
 
 /turf/open/space/attack_paw(mob/user)
 	return attack_hand(user)
@@ -131,7 +156,7 @@
 			to_chat(user, "<span class='warning'>There is already a catwalk here!</span>")
 			return
 		if(L)
-			if(R.use(1))
+			if(R.use(2))
 				to_chat(user, "<span class='notice'>You construct a catwalk.</span>")
 				playsound(src, 'sound/weapons/genhit.ogg', 50, TRUE)
 				new/obj/structure/catwalk(src)
@@ -200,3 +225,6 @@
 			PlaceOnTop(/turf/open/floor/plating, flags = CHANGETURF_INHERIT_AIR)
 			return TRUE
 	return FALSE
+
+#undef STARLIGHT_RANGE_NOT_EMITTING
+#undef STARLIGHT_RANGE_EMITTING

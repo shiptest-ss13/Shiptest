@@ -15,6 +15,7 @@
 	growing_icon = 'icons/obj/hydroponics/growing_flowers.dmi'
 	genes = list(/datum/plant_gene/trait/plant_type/weed_hardy)
 	mutatelist = list(/obj/item/seeds/starthistle/corpse_flower, /obj/item/seeds/galaxythistle)
+	research = PLANT_RESEARCH_TIER_0
 
 /obj/item/seeds/starthistle/harvest(mob/user)
 	var/obj/machinery/hydroponics/parent = loc
@@ -39,27 +40,8 @@
 	growing_icon = 'icons/obj/hydroponics/growing_flowers.dmi'
 	genes = list()
 	mutatelist = list()
-
-/obj/item/seeds/starthistle/corpse_flower/pre_attack(obj/machinery/hydroponics/I)
-	if(istype(I, /obj/machinery/hydroponics))
-		if(!I.myseed)
-			START_PROCESSING(SSobj, src)
-	return ..()
-
-/obj/item/seeds/starthistle/corpse_flower/process()
-	var/obj/machinery/hydroponics/parent = loc
-	if(parent.age < maturation) // Start a little before it blooms
-		return
-
-	var/turf/open/T = get_turf(parent)
-	if(abs(ONE_ATMOSPHERE - T.return_air().return_pressure()) > (potency/10 + 10)) // clouds can begin showing at around 50-60 potency in standard atmos
-		return
-
-	var/datum/gas_mixture/stank = new
-	stank.set_moles(GAS_MIASMA, (yield + 6)*7*MIASMA_CORPSE_MOLES) // this process is only being called about 2/7 as much as corpses so this is 12-32 times a corpses
-	stank.set_temperature(T20C) // without this the room would eventually freeze and miasma mining would be easier
-	T.assume_air(stank)
-	T.air_update_turf()
+	research = PLANT_RESEARCH_TIER_2
+	reagents_add = list(/datum/reagent/toxin/formaldehyde = 0.01, /datum/reagent/toxin/zombiepowder = 0.01, /datum/reagent/liquidgibs = 0.2)//restores, someone must have removed them at some point
 
 //Galaxy Thistle
 /obj/item/seeds/galaxythistle
@@ -80,6 +62,7 @@
 	genes = list(/datum/plant_gene/trait/plant_type/weed_hardy, /datum/plant_gene/trait/invasive)
 	mutatelist = list()
 	reagents_add = list(/datum/reagent/consumable/nutriment = 0.05, /datum/reagent/medicine/silibinin = 0.1)
+	research = PLANT_RESEARCH_TIER_3
 
 /obj/item/seeds/galaxythistle/Initialize(mapload,nogenes)
 	. = ..()
@@ -173,6 +156,7 @@
 	rarity = 60 // Obtainable only with xenobio+superluck.
 	growing_icon = 'icons/obj/hydroponics/growing_fruits.dmi'
 	reagents_add = list(/datum/reagent/sulfur = 0.1, /datum/reagent/carbon = 0.1, /datum/reagent/nitrogen = 0.07, /datum/reagent/potassium = 0.05)
+	research = PLANT_RESEARCH_TIER_5
 
 /obj/item/reagent_containers/food/snacks/grown/shell/gatfruit
 	seed = /obj/item/seeds/gatfruit
@@ -197,6 +181,7 @@
 	mutatelist = list()
 	reagents_add = list(/datum/reagent/consumable/nutriment = 0.1, /datum/reagent/consumable/sugar = 0.1, /datum/reagent/gunpowder = 0.7)
 	rarity = 60 //See above
+	research = PLANT_RESEARCH_TIER_5
 
 /obj/item/reagent_containers/food/snacks/grown/cherry_bomb
 	name = "cherry bombs"

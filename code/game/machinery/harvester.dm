@@ -155,7 +155,7 @@
 		return TRUE
 
 /obj/machinery/harvester/default_pry_open(obj/item/I) //wew
-	. = !(state_open || panel_open || (flags_1 & NODECONSTRUCT_1)) && I.tool_behaviour == TOOL_CROWBAR //We removed is_operational() here
+	. = !(state_open || panel_open || (flags_1 & NODECONSTRUCT_1)) && I.tool_behaviour == TOOL_CROWBAR //We removed is_operational here
 	if(.)
 		I.play_tool_sound(src, 50)
 		visible_message("<span class='notice'>[usr] pries open \the [src].</span>", "<span class='notice'>You pry open [src].</span>")
@@ -177,8 +177,10 @@
 		to_chat(user,"<span class='warning'>[src] is active and can't be opened!</span>") //rip
 
 /obj/machinery/harvester/Exited(atom/movable/user)
+	. = ..()
 	if (!state_open && user == occupant)
 		container_resist_act(user)
+	. = ..()
 
 /obj/machinery/harvester/relaymove(mob/living/user, direction)
 	if (!state_open)

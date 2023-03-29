@@ -49,13 +49,13 @@
 			possible_expansions -= borderline
 
 /**
-  * Moves the lift UP or DOWN, this is what users invoke with their hand.
-  * This is a SAFE proc, ensuring every part of the lift moves SANELY.
-  * It also locks controls for the (miniscule) duration of the movement, so the elevator cannot be broken by spamming.
-  * Arguments:
-  * going - UP or DOWN directions, where the lift should go. Keep in mind by this point checks of whether it should go up or down have already been done.
-  * user - Whomever made the lift movement.
-  */
+ * Moves the lift UP or DOWN, this is what users invoke with their hand.
+ * This is a SAFE proc, ensuring every part of the lift moves SANELY.
+ * It also locks controls for the (miniscule) duration of the movement, so the elevator cannot be broken by spamming.
+ * Arguments:
+ * going - UP or DOWN directions, where the lift should go. Keep in mind by this point checks of whether it should go up or down have already been done.
+ * user - Whomever made the lift movement.
+ */
 /datum/lift_master/proc/MoveLift(going, mob/user)
 	set_controls(LOCKED)
 	for(var/p in lift_platforms)
@@ -64,10 +64,10 @@
 	set_controls(UNLOCKED)
 
 /**
-  * Moves the lift, this is what users invoke with their hand.
-  * This is a SAFE proc, ensuring every part of the lift moves SANELY.
-  * It also locks controls for the (miniscule) duration of the movement, so the elevator cannot be broken by spamming.
-  */
+ * Moves the lift, this is what users invoke with their hand.
+ * This is a SAFE proc, ensuring every part of the lift moves SANELY.
+ * It also locks controls for the (miniscule) duration of the movement, so the elevator cannot be broken by spamming.
+ */
 /datum/lift_master/proc/MoveLiftHorizontal(going, z)
 	var/max_x = 1
 	var/max_y = 1
@@ -83,10 +83,10 @@
 		min_y = min(min_y, lift_platform.y)
 
 	//This must be safe way to border tile to tile move of bordered platforms, that excludes platform overlapping.
-	if( going & WEST )
+	if(going & WEST)
 		//Go along the X axis from min to max, from left to right
 		for(var/x in min_x to max_x)
-			if( going & NORTH )
+			if(going & NORTH)
 				//Go along the Y axis from max to min, from up to down
 				for(var/y in max_y to min_y step -1)
 					var/obj/structure/industrial_lift/lift_platform = locate(/obj/structure/industrial_lift, locate(x, y, z))
@@ -99,7 +99,7 @@
 	else
 		//Go along the X axis from max to min, from right to left
 		for(var/x in max_x to min_x step -1)
-			if( going & NORTH )
+			if(going & NORTH)
 				//Go along the Y axis from max to min, from up to down
 				for(var/y in max_y to min_y step -1)
 					var/obj/structure/industrial_lift/lift_platform = locate(/obj/structure/industrial_lift, locate(x, y, z))
@@ -123,8 +123,8 @@
 	return TRUE
 
 /**
-  * Sets all lift parts's controls_locked variable. Used to prevent moving mid movement, or cooldowns.
-  */
+ * Sets all lift parts's controls_locked variable. Used to prevent moving mid movement, or cooldowns.
+ */
 /datum/lift_master/proc/set_controls(state)
 	for(var/l in lift_platforms)
 		var/obj/structure/industrial_lift/lift_platform = l
@@ -159,25 +159,26 @@ GLOBAL_LIST_EMPTY(lifts)
 
 /obj/structure/industrial_lift/Initialize(mapload)
 	. = ..()
-	RegisterSignal(src, COMSIG_MOVABLE_CROSSED, .proc/AddItemOnLift)
-	RegisterSignal(loc, COMSIG_ATOM_CREATED, .proc/AddItemOnLift)//For atoms created on platform
-	RegisterSignal(src, COMSIG_MOVABLE_UNCROSSED, .proc/RemoveItemFromLift)
+
+	var/static/list/connections = list(
+		COMSIG_ATOM_ENTERED = .proc/AddItemOnLift,
+		COMSIG_ATOM_CREATED = .proc/AddItemOnLift,
+		COMSIG_ATOM_EXITED = .proc/RemoveItemFromLift
+	)
+	AddElement(/datum/element/connect_loc, connections)
 
 	if(!lift_master_datum)
 		lift_master_datum = new(src)
 
-/obj/structure/industrial_lift/Move(atom/newloc, direct)
-	UnregisterSignal(loc, COMSIG_ATOM_CREATED)
-	. = ..()
-	RegisterSignal(loc, COMSIG_ATOM_CREATED, .proc/AddItemOnLift)//For atoms created on platform
-
 /obj/structure/industrial_lift/proc/RemoveItemFromLift(datum/source, atom/movable/AM)
+	SIGNAL_HANDLER
 	if(!(AM in lift_load))
 		return
 	LAZYREMOVE(lift_load, AM)
 	UnregisterSignal(AM, COMSIG_PARENT_QDELETING)
 
 /obj/structure/industrial_lift/proc/AddItemOnLift(datum/source, atom/movable/AM)
+	SIGNAL_HANDLER
 	if(AM in lift_load)
 		return
 	LAZYADD(lift_load, AM)

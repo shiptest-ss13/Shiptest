@@ -6,9 +6,6 @@ GLOBAL_LIST_EMPTY(GPS_list)
 	var/tracking = TRUE
 	var/emped = FALSE
 
-	//DO NOT MERGE ME TO MASTER
-	var/__has_screamed = FALSE
-
 /datum/component/gps/Initialize(_gpstag = "COM0")
 	if(!isatom(parent))
 		return COMPONENT_INCOMPATIBLE
@@ -39,10 +36,10 @@ GLOBAL_LIST_EMPTY(GPS_list)
 
 ///Called on COMSIG_ITEM_ATTACK_SELF
 /datum/component/gps/item/proc/interact(datum/source, mob/user)
-	SIGNAL_HANDLER_DOES_SLEEP
+	SIGNAL_HANDLER
 
 	if(user)
-		ui_interact(user)
+		INVOKE_ASYNC(src, .proc/ui_interact, user)
 
 ///Called on COMSIG_PARENT_EXAMINE
 /datum/component/gps/item/proc/on_examine(datum/source, mob/user, list/examine_list)
@@ -101,9 +98,6 @@ GLOBAL_LIST_EMPTY(GPS_list)
 		ui.open()
 	ui.set_autoupdate(updating)
 
-#define SCREAM_OUTSIDE_VIRTZ (1<<0)
-#define SCREAM_NO_PARENT_MAPZONE (1<<1)
-
 /datum/component/gps/item/ui_data(mob/user)
 	var/list/data = list()
 	data["power"] = tracking
@@ -115,6 +109,8 @@ GLOBAL_LIST_EMPTY(GPS_list)
 
 	var/turf/curr = get_turf(parent)
 	var/datum/virtual_level/vlevel = curr.get_virtual_level()
+	if(!vlevel) //You probably shouldn't be here...
+		return data
 	var/datum/map_zone/mapzone = vlevel.parent_map_zone
 	var/list/coords = vlevel.get_relative_coords(curr)
 	data["currentArea"] = "[get_area_name(curr, TRUE)]"
@@ -123,28 +119,17 @@ GLOBAL_LIST_EMPTY(GPS_list)
 	var/list/signals = list()
 	data["signals"] = list()
 
-	for(var/gps in GLOB.GPS_list)
-		var/datum/component/gps/G = gps
+	for(var/datum/component/gps/G as anything in GLOB.GPS_list)
 		if(G.emped || !G.tracking || G == src)
 			continue
 		var/turf/pos = get_turf(G.parent)
-		if(pos.virtual_z() == null)
-			if(!(G.__has_screamed & SCREAM_OUTSIDE_VIRTZ))
-				var/atom/crashparent = G.parent
-				stack_trace("GPS Component [G] with parent atom [crashparent] at [crashparent.x], [crashparent.y], [crashparent.z], Area: [get_area(crashparent)] exists outside of a vlev.")
-				G.__has_screamed |= SCREAM_OUTSIDE_VIRTZ
-			continue
-		if(!pos || !global_mode && pos.virtual_z() != curr.virtual_z())
+		if(!pos || !global_mode && pos.virtual_z != curr.virtual_z)
 			continue
 		var/list/signal = list()
 		var/datum/virtual_level/other_vlevel = pos.get_virtual_level()
-		var/datum/map_zone/other_mapzone = other_vlevel?.parent_map_zone
-		if(isnull(other_mapzone))
-			if(!(G.__has_screamed & SCREAM_NO_PARENT_MAPZONE))
-				var/atom/crashparent = G.parent
-				stack_trace("GPS Component [G] with parent atom [crashparent] at [crashparent.x], [crashparent.y], [crashparent.z], Area: [get_area(crashparent)], with virtual level [other_vlevel ? other_vlevel : "!!NULL!!"], has no parent mapzone.")
-				G.__has_screamed |= SCREAM_NO_PARENT_MAPZONE
+		if(!other_vlevel)
 			continue
+		var/datum/map_zone/other_mapzone = other_vlevel.parent_map_zone
 		var/list/other_coords = other_vlevel.get_relative_coords(pos)
 		signal["entrytag"] = G.gpstag //Name or 'tag' of the GPS
 		signal["coords"] = "[other_coords[1]], [other_coords[2]], [other_mapzone.id], [other_vlevel.relative_id]"

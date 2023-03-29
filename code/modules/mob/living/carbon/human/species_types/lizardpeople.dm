@@ -2,9 +2,8 @@
 	// Reptilian humanoids with scaled skin and tails.
 	name = "\improper Sarathi"
 	id = SPECIES_LIZARD
-	say_mod = "hisses"
 	default_color = "00FF00"
-	species_traits = list(MUTCOLORS,EYECOLOR,LIPS,NO_UNDERWEAR)
+	species_traits = list(MUTCOLORS,EYECOLOR,LIPS,SCLERA,EMOTE_OVERLAY)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_REPTILE
 	mutant_bodyparts = list("tail_lizard", "snout", "spines", "horns", "frills", "body_markings", "legs")
 	mutanttongue = /obj/item/organ/tongue/lizard
@@ -26,6 +25,8 @@
 	wings_icons = list("Dragon")
 	species_language_holder = /datum/language_holder/lizard
 	digitigrade_customization = DIGITIGRADE_OPTIONAL
+	mutanteyes = /obj/item/organ/eyes/lizard
+	sclera_color = "fffec4"
 
 	species_chest = /obj/item/bodypart/chest/lizard
 	species_head = /obj/item/bodypart/head/lizard
@@ -34,25 +35,25 @@
 	species_l_leg = /obj/item/bodypart/l_leg/lizard
 	species_r_leg = /obj/item/bodypart/r_leg/lizard
 	// Lizards are coldblooded and can stand a greater temperature range than humans
-	bodytemp_heat_damage_limit = (BODYTEMP_HEAT_DAMAGE_LIMIT + 20) // This puts lizards 10 above lavaland max heat for ash lizards.
-	bodytemp_cold_damage_limit = (BODYTEMP_COLD_DAMAGE_LIMIT - 10)
+	bodytemp_heat_damage_limit = HUMAN_BODYTEMP_HEAT_DAMAGE_LIMIT + 20 // This puts lizards 10 above lavaland max heat for ash lizards.
+	bodytemp_cold_damage_limit = HUMAN_BODYTEMP_COLD_DAMAGE_LIMIT - 10
 	loreblurb = "The Sarathi are a cold-blooded reptilian species originating from the planet Kalixcis, where they evolved alongside the Elzuosa. Kalixcian culture places no importance on blood-bonds, and those from it tend to consider their family anyone they are sufficiently close to, and choose their own names."
 
 	ass_image = 'icons/ass/asslizard.png'
-	var/datum/action/innate/lizlighter/lizlighter
+	var/datum/action/innate/liz_lighter/internal_lighter
 
 /datum/species/lizard/on_species_loss(mob/living/carbon/C)
-	if(lizlighter)
-		lizlighter.Remove(C)
+	if(internal_lighter)
+		internal_lighter.Remove(C)
 	..()
 
 /datum/species/lizard/on_species_gain(mob/living/carbon/C, datum/species/old_species)
 	..()
 	if(ishuman(C))
-		lizlighter = new
-		lizlighter.Grant(C)
+		internal_lighter = new
+		internal_lighter.Grant(C)
 
-/datum/action/innate/lizlighter
+/datum/action/innate/liz_lighter
 	name = "Ignite"
 	desc = "(Requires you to drink welding fuel beforehand)"
 	check_flags = AB_CHECK_CONSCIOUS
@@ -60,7 +61,7 @@
 	icon_icon = 'icons/effects/fire.dmi'
 	background_icon_state = "bg_alien"
 
-/datum/action/innate/lizlighter/Activate()
+/datum/action/innate/liz_lighter/Activate()
 	var/mob/living/carbon/human/H = owner
 	var/obj/item/lighter/liz/N = new(H)
 	if(H.put_in_hands(N))
@@ -70,7 +71,7 @@
 		qdel(N)
 		to_chat(H, "<span class='warning'>You don't have any free hands.</span>")
 
-/datum/action/innate/lizlighter/IsAvailable()
+/datum/action/innate/liz_lighter/IsAvailable()
 	if(..())
 		var/mob/living/carbon/human/H = owner
 		if(H.reagents && H.reagents.has_reagent(/datum/reagent/fuel,4))
@@ -92,40 +93,8 @@
 
 	return randname
 
-//I wag in death
-/datum/species/lizard/spec_death(gibbed, mob/living/carbon/human/H)
-	if(H)
-		stop_wagging_tail(H)
-
-/datum/species/lizard/spec_stun(mob/living/carbon/human/H,amount)
-	if(H)
-		stop_wagging_tail(H)
-	. = ..()
-
-/datum/species/lizard/can_wag_tail(mob/living/carbon/human/H)
-	return ("tail_lizard" in mutant_bodyparts) || ("waggingtail_lizard" in mutant_bodyparts)
-
-/datum/species/lizard/is_wagging_tail(mob/living/carbon/human/H)
-	return ("waggingtail_lizard" in mutant_bodyparts)
-
-/datum/species/lizard/start_wagging_tail(mob/living/carbon/human/H)
-	if("tail_lizard" in mutant_bodyparts)
-		mutant_bodyparts -= "tail_lizard"
-		mutant_bodyparts -= "spines"
-		mutant_bodyparts |= "waggingtail_lizard"
-		mutant_bodyparts |= "waggingspines"
-	H.update_body()
-
-/datum/species/lizard/stop_wagging_tail(mob/living/carbon/human/H)
-	if("waggingtail_lizard" in mutant_bodyparts)
-		mutant_bodyparts -= "waggingtail_lizard"
-		mutant_bodyparts -= "waggingspines"
-		mutant_bodyparts |= "tail_lizard"
-		mutant_bodyparts |= "spines"
-	H.update_body()
-
 /*
- Lizard subspecies: ASHWALKERS
+Lizard subspecies: ASHWALKERS
 */
 /datum/species/lizard/ashwalker
 	name = "Ash Walker"

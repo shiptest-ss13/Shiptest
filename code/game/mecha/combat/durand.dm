@@ -14,6 +14,15 @@
 	var/obj/durand_shield/shield
 
 
+/obj/mecha/combat/durand/cmm
+	desc = "An aging combat exosuit appropriated from abandoned Nanotrasen facilities, now supplied to the CMM-BARD anti-xenofauna division."
+	name = "\improper Paladin"
+	icon_state = "cmmdurand"
+	wreckage = /obj/structure/mecha_wreckage/durand/cmm
+	armor = list("melee" = 40, "bullet" = 35, "laser" = 15, "energy" = 10, "bomb" = 20, "bio" = 0, "rad" = 50, "fire" = 100, "acid" = 100)
+
+	//TODO: Custom melee backlash shield with no projectile protection
+
 /obj/mecha/combat/durand/Initialize()
 	. = ..()
 	shield = new /obj/durand_shield(loc, src, layer, dir)
@@ -46,7 +55,7 @@
 		shield.forceMove(loc)
 		shield.setDir(dir)
 
-/obj/mecha/combat/durand/forceMove(var/turf/T)
+/obj/mecha/combat/durand/forceMove(turf/T)
 	. = ..()
 	shield.forceMove(T)
 
@@ -75,7 +84,7 @@
 
 /**Checks if defense mode is enabled, and if the attacker is standing in an area covered by the shield.
 Expects a turf. Returns true if the attack should be blocked, false if not.*/
-/obj/mecha/combat/durand/proc/defense_check(var/turf/aloc)
+/obj/mecha/combat/durand/proc/defense_check(turf/aloc)
 	if (!defense_mode || !shield || shield.switching)
 		return FALSE
 	. = FALSE

@@ -243,6 +243,11 @@
 	. = ..()
 	update_icon()
 
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
 /obj/item/restraints/legcuffs/beartrap/update_icon_state()
 	icon_state = "[initial(icon_state)][armed]"
 
@@ -264,7 +269,8 @@
 	update_icon()
 	playsound(src, 'sound/effects/snap.ogg', 50, TRUE)
 
-/obj/item/restraints/legcuffs/beartrap/Crossed(AM as mob|obj)
+/obj/item/restraints/legcuffs/beartrap/proc/on_entered(datum/source, AM as mob|obj)
+	SIGNAL_HANDLER
 	if(armed && isturf(loc))
 		if(isliving(AM))
 			var/mob/living/L = AM
@@ -274,7 +280,7 @@
 				if(!ridden_vehicle.are_legs_exposed) //close the trap without injuring/trapping the rider if their legs are inside the vehicle at all times.
 					close_trap()
 					ridden_vehicle.visible_message("<span class='danger'>[ridden_vehicle] triggers \the [src].</span>")
-					return ..()
+					return
 
 			if(L.movement_type & (FLYING|FLOATING)) //don't close the trap if they're flying/floating over it.
 				snap = FALSE
@@ -299,7 +305,6 @@
 				L.visible_message("<span class='danger'>[L] triggers \the [src].</span>", \
 						"<span class='userdanger'>You trigger \the [src]!</span>")
 				L.apply_damage(trap_damage, BRUTE, def_zone)
-	..()
 
 /obj/item/restraints/legcuffs/beartrap/energy
 	name = "energy snare"
@@ -320,7 +325,7 @@
 		qdel(src)
 
 /obj/item/restraints/legcuffs/beartrap/energy/attack_hand(mob/user)
-	Crossed(user) //honk
+	on_entered(src, user) //honk
 	return ..()
 
 /obj/item/restraints/legcuffs/beartrap/energy/cyborg
@@ -348,11 +353,11 @@
 	ensnare(hit_atom)
 
 /**
-  * Attempts to legcuff someone with the bola
-  *
-  * Arguments:
-  * * C - the carbon that we will try to ensnare
-  */
+ * Attempts to legcuff someone with the bola
+ *
+ * Arguments:
+ * * C - the carbon that we will try to ensnare
+ */
 /obj/item/restraints/legcuffs/bola/proc/ensnare(mob/living/carbon/C)
 	if(!C.legcuffed && C.num_legs >= 2)
 		visible_message("<span class='danger'>\The [src] ensnares [C]!</span>")
@@ -385,9 +390,9 @@
 /obj/item/restraints/legcuffs/bola/energy/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	if(iscarbon(hit_atom))
 		var/obj/item/restraints/legcuffs/beartrap/B = new /obj/item/restraints/legcuffs/beartrap/energy/cyborg(get_turf(hit_atom))
-		B.Crossed(hit_atom)
+		B.on_entered(src, hit_atom)
 		qdel(src)
-	..()
+	. = ..()
 
 /obj/item/restraints/legcuffs/bola/gonbola
 	name = "gonbola"
@@ -408,3 +413,10 @@
 	. = ..()
 	if(effectReference)
 		QDEL_NULL(effectReference)
+
+/obj/item/restraints/legcuffs/bola/watcher //tribal bola for tribal lizards
+	name = "watcher Bola"
+	desc = "A Bola made from the stretchy sinew of fallen watchers."
+	icon = 'icons/obj/items_and_weapons.dmi'
+	icon_state = "bola_watcher"
+	breakouttime = 45

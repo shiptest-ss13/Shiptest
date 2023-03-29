@@ -163,9 +163,9 @@
 	icon_state = "bone_spear0"
 	name = "bone spear"
 	desc = "A haphazardly-constructed yet still deadly weapon. The pinnacle of modern technology."
-	icon = 'whitesands/icons/obj/items_and_weapons.dmi'
-	lefthand_file = 'whitesands/icons/mob/inhands/weapons/polearms_lefthand.dmi'
-	righthand_file = 'whitesands/icons/mob/inhands/weapons/polearms_righthand.dmi'
+	icon = 'icons/obj/items_and_weapons.dmi'
+	lefthand_file = 'icons/mob/inhands/weapons/polearms_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/polearms_righthand.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
 	force = 12
 	throwforce = 22
@@ -190,7 +190,7 @@
 	block_chance = 15//lol,lmao
 	armour_penetration = 30
 	embedding = list("impact_pain_mult" = 5)
-	icon_prefix = "dragon_spear"
+	icon_prefix = "dragonspear"
 	var/list/nemesis_factions = list("mining", "boss")
 	var/faction_bonus_force = 25
 	attack_verb = list("seared", "braided", "impaled", "smote", "gored")
@@ -236,3 +236,65 @@
 		var/mob/living/simple_animal/M = target
 		M.apply_damage(15, BURN)
 	..()
+
+//crystal spear
+/obj/item/spear/crystal
+	icon_state = "crystal_spear0"
+	name = "crystal spear"
+	desc = "While more 'sharp stick' than spear, this thing is extremely dangerous neverless. Crafted out of the mysterous crystals, it can hit for very high damage, although it will break with repeated use."
+	icon = 'icons/obj/items_and_weapons.dmi'
+	lefthand_file = 'icons/mob/inhands/weapons/polearms_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/polearms_righthand.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
+	force = 12
+	throwforce = 40
+	armour_penetration = 20
+	max_integrity = 300 //you can repair this with duct tape
+	var/damage_to_take_on_hit = 25 //every time we hit something, deal how much damage?
+
+/obj/item/spear/crystal/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/two_handed, force_unwielded=12, force_wielded=30, icon_wielded="crystal_spear1") //4 hit crit
+
+/obj/item/spear/crystal/update_icon_state()
+	icon_state = "crystal_spear0"
+
+/obj/item/spear/crystal/examine(mob/user)
+	. = ..()
+	. += "You can throw it for very high damage and stuns fauna, though this will shatter it instantly."
+	var/healthpercent = (obj_integrity/max_integrity) * 100
+	switch(healthpercent)
+		if(50 to 99)
+			. += "It looks slightly damaged."
+		if(25 to 50)
+			. += "It appears heavily damaged."
+		if(0 to 25)
+			. += "<span class='warning'>It's falling apart!</span>"
+
+/obj/item/spear/crystal/attack(mob/living/M, mob/living/user)
+	. = ..()
+	take_damage(damage_to_take_on_hit)
+
+/obj/item/spear/crystal/attack_obj(obj/O, mob/living/user)
+	. = ..()
+	take_damage(damage_to_take_on_hit)
+
+/obj/item/spear/crystal/obj_destruction(damage_flag)
+	visible_message("<span class='danger'>[src] shatters into a million pieces!</span>")
+	playsound(src,"shatter", 70)
+	new /obj/effect/decal/cleanable/glass/strange(get_turf(src))
+	return ..()
+
+/obj/item/spear/crystal/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum) //destroyes when thrown
+	. = ..()
+	if(ishostile(hit_atom))
+		var/mob/living/simple_animal/hostile/hostile_target = hit_atom
+		var/hostile_ai_status = hostile_target.AIStatus
+		hostile_target.AIStatus = AI_OFF
+		addtimer(VARSET_CALLBACK(hostile_target, AIStatus, hostile_ai_status), 5 SECONDS)
+
+	new /obj/effect/temp_visual/goliath_tentacle/crystal/visual_only(get_turf(src))
+	visible_message("<span class='danger'>[src] shatters into a million pieces!</span>")
+	playsound(src,"shatter", 70)
+	new /obj/effect/decal/cleanable/glass/strange(get_turf(src))
+	qdel(src)

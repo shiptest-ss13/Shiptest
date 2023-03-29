@@ -27,7 +27,7 @@
 
 /datum/gear/footwear/workboots
 	display_name = "work boots"
-	path = /obj/item/clothing/shoes/workboots/mining
+	path = /obj/item/clothing/shoes/workboots
 //Sneakers
 
 /datum/gear/footwear/color

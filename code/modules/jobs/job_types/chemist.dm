@@ -1,11 +1,7 @@
 /datum/job/chemist
-	title = "Chemist"
-	department_head = list("Chief Medical Officer")
-	faction = "Station"
+	name = "Chemist"
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the chief medical officer"
-	selection_color = "#ffeef0"
 	exp_type = EXP_TYPE_CREW
 	exp_requirements = 60
 	wiki_page = "Guide_to_Chemistry" //WS Edit - Wikilinks/Warning
@@ -14,13 +10,12 @@
 
 	access = list(ACCESS_MEDICAL, ACCESS_MORGUE, ACCESS_SURGERY, ACCESS_CHEMISTRY, ACCESS_PHARMACY, ACCESS_VIROLOGY, ACCESS_GENETICS, ACCESS_MECH_MEDICAL, ACCESS_MINERAL_STOREROOM, ACCESS_EVA) //WS Edit - Gen/Sci Split
 	minimal_access = list(ACCESS_MEDICAL, ACCESS_MORGUE, ACCESS_CHEMISTRY, ACCESS_MECH_MEDICAL, ACCESS_MINERAL_STOREROOM, ACCESS_PHARMACY)
-	paycheck = PAYCHECK_MEDIUM
-	paycheck_department = ACCOUNT_MED
 
 	display_order = JOB_DISPLAY_ORDER_CHEMIST
 
 /datum/outfit/job/chemist
 	name = "Chemist"
+	job_icon = "chemist"
 	jobtype = /datum/job/chemist
 
 	glasses = /obj/item/clothing/glasses/science
@@ -100,3 +95,27 @@
 	belt = /obj/item/storage/belt/utility/full/engi
 	id = /obj/item/card/id/syndicate_command/crew_id
 	l_pocket =/obj/item/pda/chemist
+
+/datum/outfit/job/chemist/pharma
+	name = "Pharmacist"
+
+	belt = /obj/item/storage/bag/chemistry
+	l_pocket =/obj/item/pda/chemist
+	r_pocket = /obj/item/storage/pill_bottle
+	uniform = /obj/item/clothing/under/suit/senior_chemist
+	alt_uniform = /obj/item/clothing/under/rank/medical/chemist/pharmacologist
+	suit = /obj/item/clothing/suit/longcoat/chemist
+	alt_suit = /obj/item/clothing/suit/toggle/labcoat/chemist/side
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/medical
+	box = /obj/item/storage/box/survival/medical
+	gloves = /obj/item/clothing/gloves/color/latex
+	glasses = /obj/item/clothing/glasses/sunglasses
+
+/datum/outfit/job/chemist/minutemen
+	name = "Chemical Scientist(minutemen)"
+
+	uniform = /obj/item/clothing/under/rank/medical/chemist/pharmacologist
+	alt_uniform = /obj/item/clothing/under/rank/medical/chemist/pharmacologist/skirt
+	suit = /obj/item/clothing/suit/toggle/labcoat/chemist
+	ears = /obj/item/radio/headset/minutemen
+

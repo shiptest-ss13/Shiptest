@@ -2,7 +2,7 @@
 	max_items = 2
 	max_w_class = WEIGHT_CLASS_SMALL
 	max_combined_w_class = 50
-	rustle_sound = FALSE
+	use_sound = null
 
 /datum/component/storage/concrete/pockets/handle_item_insertion(obj/item/I, prevent_warning, mob/user)
 	. = ..()
@@ -22,7 +22,6 @@
 	max_w_class = WEIGHT_CLASS_TINY
 	attack_hand_interact = FALSE
 
-//WS Begin - Exowear Pockets
 /datum/component/storage/concrete/pockets/exo
 	max_items = 2
 	max_w_class = WEIGHT_CLASS_SMALL
@@ -37,27 +36,24 @@
 
 /datum/component/storage/concrete/pockets/exo/large
 	max_items = 3
-//WS End
 
 /datum/component/storage/concrete/pockets/small/fedora/Initialize()
 	. = ..()
 	var/static/list/exception_cache = typecacheof(list(
 		/obj/item/katana, /obj/item/toy/katana, /obj/item/nullrod/claymore/katana,
-		/obj/item/energy_katana, /obj/item/gun/ballistic/automatic/tommygun
+		/obj/item/energy_katana, /obj/item/gun/ballistic/automatic/smg/thompson/drum
 		))
 	exception_hold = exception_cache
 
 /datum/component/storage/concrete/pockets/small/fedora/detective
 	attack_hand_interact = TRUE // so the detectives would discover pockets in their hats
 
-//WS Begin - Any small item in shoes
 /datum/component/storage/concrete/pockets/shoes
 	max_items = 2
 	attack_hand_interact = FALSE
 	max_w_class = WEIGHT_CLASS_SMALL
 	quickdraw = FALSE
 	silent = TRUE
-//WS End
 
 /datum/component/storage/concrete/pockets/shoes/Initialize()
 	. = ..()
@@ -97,3 +93,68 @@
 		/obj/item/reagent_containers/food/drinks/drinkingglass,
 		/obj/item/ammo_box/a762
 	))
+
+/datum/component/storage/concrete/pockets/holster
+	max_items = 3
+	max_w_class = WEIGHT_CLASS_NORMAL
+	var/atom/original_parent
+
+/datum/component/storage/concrete/pockets/holster/Initialize()
+	original_parent = parent
+	. = ..()
+	can_hold = typecacheof(list(
+		/obj/item/gun/ballistic/automatic/pistol,
+		/obj/item/gun/ballistic/revolver,
+		/obj/item/ammo_box))
+
+/datum/component/storage/concrete/pockets/holster/real_location()
+	// if the component is reparented to a jumpsuit, the items still go in the protector
+	return original_parent
+
+/datum/component/storage/concrete/pockets/holster/detective/Initialize()
+	original_parent = parent
+	. = ..()
+	can_hold = typecacheof(list(
+		/obj/item/gun/ballistic/revolver/detective,
+		/obj/item/ammo_box/c38))
+
+/datum/component/storage/concrete/pockets/holster/nukie
+	max_items = 2
+	max_w_class = WEIGHT_CLASS_BULKY
+
+/datum/component/storage/concrete/pockets/holster/lt/Initialize()
+	original_parent = parent
+	. = ..()
+	can_hold = typecacheof(list(
+		/obj/item/gun/energy/e_gun/adv_stopping,
+		/obj/item/gun/energy/e_gun/mini,
+		/obj/item/gun/energy/disabler,
+		/obj/item/stock_parts/cell/gun
+	))
+
+/datum/component/storage/concrete/pockets/holster/nukie/Initialize()
+	original_parent = parent
+	. = ..()
+	can_hold = typecacheof(list(
+		/obj/item/gun/ballistic/automatic,
+		/obj/item/gun/ballistic/revolver,
+		/obj/item/gun/energy/e_gun/mini,
+		/obj/item/gun/energy/disabler,
+		/obj/item/gun/energy/pulse/carbine,
+		/obj/item/gun/energy/dueling,
+		/obj/item/gun/ballistic/shotgun,
+		/obj/item/gun/ballistic/rocketlauncher))
+
+/datum/component/storage/concrete/pockets/holster/chameleon
+	max_items = 1
+
+/datum/component/storage/concrete/pockets/holster/chameleon/Initialize()
+	original_parent = parent
+	. = ..()
+	can_hold = typecacheof(list(
+		/obj/item/gun/ballistic/automatic/pistol,
+		/obj/item/gun/ballistic/revolver,
+		/obj/item/gun/energy/e_gun/mini,
+		/obj/item/gun/energy/disabler,
+		/obj/item/gun/energy/pulse/carbine,
+		/obj/item/gun/energy/dueling))

@@ -92,12 +92,6 @@
 
 #define DEFAULT_CYBORG_NAME "Default Cyborg Name"
 
-
-//Job preferences levels
-#define JP_LOW 1
-#define JP_MEDIUM 2
-#define JP_HIGH 3
-
 //randomised elements
 #define RANDOM_NAME "random_name"
 #define RANDOM_NAME_ANTAG "random_name_antag"
@@ -121,3 +115,13 @@
 #define RANDOM_FACIAL_HAIRSTYLE "random_facial_hairstyle"
 #define RANDOM_SKIN_TONE "random_skin_tone"
 #define RANDOM_EYE_COLOR "random_eye_color"
+#define RANDOM_PROSTHETIC "random_prosthetic"
+#define RANDOM_HAIR_GRADIENT_STYLE "random_grad_style"
+#define RANDOM_HAIR_GRADIENT_COLOR "random_grad_color"
+
+//prosthetics stuff
+#define PROSTHETIC_NORMAL "normal"
+#define PROSTHETIC_AMPUTATED "amputated"
+#define PROSTHETIC_ROBOTIC "prosthetic"
+
+

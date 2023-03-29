@@ -104,7 +104,10 @@
 		cancel()
 
 /datum/component/gunpoint/proc/trigger_reaction()
-	SIGNAL_HANDLER_DOES_SLEEP
+	SIGNAL_HANDLER
+	INVOKE_ASYNC(src, .proc/async_trigger_reaction)
+
+/datum/component/gunpoint/proc/async_trigger_reaction()
 
 	SEND_SIGNAL(target, COMSIG_CLEAR_MOOD_EVENT, "gunpoint")
 	if(point_of_no_return)
@@ -140,7 +143,7 @@
 	qdel(src)
 
 /datum/component/gunpoint/proc/flinch(attacker, damage, damagetype, def_zone)
-	SIGNAL_HANDLER_DOES_SLEEP
+	SIGNAL_HANDLER
 
 	var/mob/living/shooter = parent
 

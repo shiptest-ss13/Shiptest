@@ -18,6 +18,8 @@
 	var/other_delay = 0
 	var/repeating = FALSE
 	var/experience_given = 1
+	///Sound/Sounds to play when this is applied
+	var/apply_sounds
 
 /obj/item/stack/medical/attack(mob/living/M, mob/user)
 	. = ..()
@@ -28,17 +30,20 @@
 	if(!M.can_inject(user, TRUE))
 		return
 	if(M == user)
+		playsound(src, islist(apply_sounds) ? pick(apply_sounds) : apply_sounds, 25)
 		if(!silent)
 			user.visible_message("<span class='notice'>[user] starts to apply \the [src] on [user.p_them()]self...</span>", "<span class='notice'>You begin applying \the [src] on yourself...</span>")
 		if(!do_mob(user, M, self_delay, extra_checks=CALLBACK(M, /mob/living/proc/can_inject, user, TRUE)))
 			return
 	else if(other_delay)
+		playsound(src, islist(apply_sounds) ? pick(apply_sounds) : apply_sounds, 25)
 		if(!silent)
 			user.visible_message("<span class='notice'>[user] starts to apply \the [src] on [M].</span>", "<span class='notice'>You begin applying \the [src] on [M]...</span>")
 		if(!do_mob(user, M, other_delay, extra_checks=CALLBACK(M, /mob/living/proc/can_inject, user, TRUE)))
 			return
 
 	if(heal(M, user))
+		playsound(src, islist(apply_sounds) ? pick(apply_sounds) : apply_sounds, 25)
 		user?.mind.adjust_experience(/datum/skill/healing, experience_given)
 		log_combat(user, M, "healed", src.name)
 		use(1)
@@ -104,6 +109,7 @@
 	icon_state = "brutepack"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
+	apply_sounds = list('sound/effects/rip1.ogg', 'sound/effects/rip2.ogg')
 	var/heal_brute = 40
 	self_delay = 20
 	grind_results = list(/datum/reagent/medicine/styptic_powder = 10)
@@ -137,6 +143,7 @@
 	gender = PLURAL
 	singular_name = "medical gauze"
 	icon_state = "gauze"
+	apply_sounds = list('sound/effects/rip1.ogg', 'sound/effects/rip2.ogg')
 	var/stop_bleeding = 1800
 	self_delay = 20
 	max_amount = 12
@@ -193,6 +200,7 @@
 	icon_state = "ointment"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
+	apply_sounds = 'sound/effects/ointment.ogg'
 	var/heal_burn = 40
 	self_delay = 20
 	grind_results = list(/datum/reagent/medicine/silver_sulfadiazine = 10)
@@ -336,6 +344,7 @@
 	desc = "A healing paste you can apply on wounds."
 
 	icon_state = "aloe_paste"
+	apply_sounds = 'sound/effects/ointment.ogg'
 	self_delay = 20
 	other_delay = 10
 	novariants = TRUE
@@ -373,3 +382,45 @@
 
 	The interesting limb targeting mechanic is retained and i still believe they will be a viable choice, especially when healing others in the field.
 	*/
+
+// SPLINTS
+/obj/item/stack/medical/splint
+	amount = 4
+	name = "splints"
+	desc = "Used to secure limbs following a fracture."
+	gender = PLURAL
+	singular_name = "splint"
+	icon = 'icons/obj/items_and_weapons.dmi'
+	icon_state = "splint"
+	apply_sounds = list('sound/effects/rip1.ogg', 'sound/effects/rip2.ogg')
+	self_delay = 40
+	other_delay = 15
+	splint_fracture = TRUE
+
+/obj/item/stack/medical/splint/heal(mob/living/M, mob/user)
+	. = ..()
+	if(iscarbon(M))
+		return heal_carbon(M, user)
+	to_chat(user, "<span class='warning'>You can't splint [M]'s limb' with the \the [src]!</span>")
+
+/obj/item/stack/medical/splint/ghetto //slightly shittier, but gets the job done
+	name = "makeshift splints"
+	desc = "Used to secure limbs following a fracture. This one is made out of simple materials."
+	amount = 2
+	self_delay = 50
+	other_delay = 20
+	failure_chance = 20
+
+/obj/item/stack/medical/bruise_pack/herb
+	name = "ashen herbal pack"
+	singular_name = "ashen herbal pack"
+	icon_state = "hbrutepack"
+	desc = "Thereputic herbs designed to treat bruises."
+	heal_brute = 15
+
+/obj/item/stack/medical/ointment/herb
+	name = "burn ointment slurry"
+	singular_name = "burn ointment slurry"
+	icon_state = "hointment"
+	desc = "Herb slurry meant to treat burns."
+	heal_burn = 15

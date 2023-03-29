@@ -11,7 +11,7 @@
 #define SPIN_TIME 65 //As always, deciseconds.
 #define REEL_DEACTIVATE_DELAY 7
 #define SEVEN "<font color='red'>7</font>"
-#define HOLOCHIP 1
+#define CASH 1
 #define COIN 2
 
 /obj/machinery/computer/slot_machine
@@ -29,7 +29,7 @@
 	var/working = 0
 	var/balance = 0 //How much money is in the machine, ready to be CONSUMED.
 	var/jackpots = 0
-	var/paymode = HOLOCHIP //toggles between HOLOCHIP/COIN, defined above
+	var/paymode = CASH //toggles between CASH/COIN, defined above
 	var/cointype = /obj/item/coin/iron //default cointype
 	var/list/coinvalues = list()
 	var/list/reels = list(list("", "", "") = 0, list("", "", "") = 0, list("", "", "") = 0, list("", "", "") = 0, list("", "", "") = 0)
@@ -41,13 +41,13 @@
 	jackpots = rand(1, 4) //false hope
 	plays = rand(75, 200)
 
-	toggle_reel_spin(1) //The reels won't spin unless we activate them
+	INVOKE_ASYNC(src, .proc/toggle_reel_spin, TRUE)//The reels won't spin unless we activate them
 
 	var/list/reel = reels[1]
 	for(var/i = 0, i < reel.len, i++) //Populate the reels.
 		randomize_reels()
 
-	toggle_reel_spin(0)
+	INVOKE_ASYNC(src, .proc/toggle_reel_spin, FALSE)
 
 	for(cointype in typesof(/obj/item/coin))
 		var/obj/item/coin/C = cointype
@@ -97,14 +97,14 @@
 				balance += C.value
 				qdel(C)
 		else
-			to_chat(user, "<span class='warning'>This machine is only accepting holochips!</span>")
-	else if(istype(I, /obj/item/holochip))
-		if(paymode == HOLOCHIP)
-			var/obj/item/holochip/H = I
+			to_chat(user, "<span class='warning'>This machine is only accepting cash!</span>")
+	else if(istype(I, /obj/item/spacecash/bundle))
+		if(paymode == CASH)
+			var/obj/item/spacecash/bundle/H = I
 			if(!user.temporarilyRemoveItemFromInventory(H))
 				return
-			to_chat(user, "<span class='notice'>You insert [H.credits] holocredits into [src]'s!</span>")
-			balance += H.credits
+			to_chat(user, "<span class='notice'>You insert [H.value] credits into [src]'s! slot</span>")
+			balance += H.value
 			qdel(H)
 		else
 			to_chat(user, "<span class='warning'>This machine is only accepting coins!</span>")
@@ -112,12 +112,12 @@
 		if(balance > 0)
 			visible_message("<b>[src]</b> says, 'ERROR! Please empty the machine balance before altering paymode'") //Prevents converting coins into holocredits and vice versa
 		else
-			if(paymode == HOLOCHIP)
+			if(paymode == CASH)
 				paymode = COIN
 				visible_message("<b>[src]</b> says, 'This machine now works with COINS!'")
 			else
-				paymode = HOLOCHIP
-				visible_message("<b>[src]</b> says, 'This machine now works with HOLOCHIPS!'")
+				paymode = CASH
+				visible_message("<b>[src]</b> says, 'This machine now works with CASH!'")
 	else
 		return ..()
 
@@ -260,8 +260,8 @@
 		jackpots += 1
 		balance += money - give_payout(JACKPOT)
 		money = 0
-		if(paymode == HOLOCHIP)
-			new /obj/item/holochip(loc,JACKPOT)
+		if(paymode == CASH)
+			new /obj/item/spacecash/bundle(loc,JACKPOT)
 		else
 			for(var/i = 0, i < 5, i++)
 				cointype = pick(subtypesof(/obj/item/coin))
@@ -310,8 +310,8 @@
 	balance += surplus
 
 /obj/machinery/computer/slot_machine/proc/give_payout(amount)
-	if(paymode == HOLOCHIP)
-		cointype = /obj/item/holochip
+	if(paymode == CASH)
+		cointype = /obj/item/spacecash/bundle
 	else
 		cointype = obj_flags & EMAGGED ? /obj/item/coin/iron : /obj/item/coin/silver
 
@@ -326,8 +326,8 @@
 	return amount
 
 /obj/machinery/computer/slot_machine/proc/dispense(amount = 0, cointype = /obj/item/coin/silver, mob/living/target, throwit = 0)
-	if(paymode == HOLOCHIP)
-		var/obj/item/holochip/H = new /obj/item/holochip(loc,amount)
+	if(paymode == CASH)
+		var/obj/item/spacecash/bundle/H = new /obj/item/spacecash/bundle(loc, amount)
 
 		if(throwit && target)
 			H.throw_at(target, 3, 10)
@@ -350,5 +350,5 @@
 #undef BIG_PRIZE
 #undef SMALL_PRIZE
 #undef SPIN_PRICE
-#undef HOLOCHIP
+#undef CASH
 #undef COIN

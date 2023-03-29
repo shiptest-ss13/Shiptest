@@ -118,7 +118,7 @@
 	..()
 
 /obj/item/organ/stomach/ethereal/proc/charge(datum/source, amount, repairs)
-	adjust_charge((amount * ETHEREAL_CHARGE_SCALING_MULTIPLIER) / 70 )      //WS Edit -- Ethereal Charge Scaling
+	adjust_charge((amount * ETHEREAL_CHARGE_SCALING_MULTIPLIER) / 70)      //WS Edit -- Ethereal Charge Scaling
 
 /obj/item/organ/stomach/ethereal/proc/on_electrocute(datum/source, shock_damage, siemens_coeff = 1, flags = NONE)
 	if(flags & SHOCK_ILLUSION)
@@ -167,7 +167,7 @@
 
 /obj/item/organ/stomach/cell
 	name = "micro-cell"
-	icon = 'whitesands/icons/obj/surgery.dmi'
+	icon = 'icons/obj/surgery.dmi'
 	icon_state = "microcell"
 	w_class = WEIGHT_CLASS_NORMAL
 	zone = "chest"
@@ -175,6 +175,7 @@
 	attack_verb = list("assault and battery'd")
 	desc = "A micro-cell, for IPC use only. Do not swallow."
 	status = ORGAN_ROBOTIC
+	organ_flags = ORGAN_SYNTHETIC
 
 /obj/item/organ/stomach/cell/emp_act(severity)
 	switch(severity)

@@ -12,25 +12,28 @@
 /obj/machinery/vending/hydronutrients{
 	all_items_free = 1
 	},
-/obj/effect/turf_decal/trimline/green/filled/line,
+/obj/effect/turf_decal/trimline/opaque/green/filled/line,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/seedvault)
 "ae" = (
 /obj/machinery/smartfridge,
-/obj/effect/turf_decal/trimline/green/filled/line,
+/obj/effect/turf_decal/trimline/opaque/green/filled/line,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/seedvault)
 "af" = (
-/obj/machinery/vending/hydroseeds{
-	all_items_free = 1
-	},
-/obj/effect/turf_decal/trimline/green/filled/line,
+/obj/effect/turf_decal/trimline/opaque/green/filled/line,
+/obj/structure/closet/crate/hydroponics,
+/obj/item/seeds/watermelon,
+/obj/item/seeds/random,
+/obj/item/seeds/random,
+/obj/item/seeds/whitebeet,
+/obj/item/seeds/replicapod,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/seedvault)
 "ag" = (
 /obj/item/storage/toolbox/syndicate,
 /obj/structure/table/wood,
-/obj/effect/turf_decal/trimline/green/filled/line,
+/obj/effect/turf_decal/trimline/opaque/green/filled/line,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/seedvault)
 "ah" = (
@@ -42,7 +45,7 @@
 /obj/item/reagent_containers/glass/beaker/bluespace,
 /obj/item/reagent_containers/glass/beaker/bluespace,
 /obj/structure/table/wood,
-/obj/effect/turf_decal/trimline/green/filled/line,
+/obj/effect/turf_decal/trimline/opaque/green/filled/line,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/seedvault)
 "aj" = (
@@ -52,7 +55,7 @@
 /obj/item/gun/energy/floragun,
 /obj/item/gun/energy/floragun,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
-/obj/effect/turf_decal/trimline/green/filled/line,
+/obj/effect/turf_decal/trimline/opaque/green/filled/line,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/seedvault)
 "ak" = (
@@ -103,7 +106,7 @@
 /obj/item/clothing/under/rank/civilian/hydroponics,
 /obj/item/clothing/under/rank/civilian/hydroponics,
 /obj/effect/decal/cleanable/cobweb,
-/obj/effect/turf_decal/trimline/green/filled/line{
+/obj/effect/turf_decal/trimline/opaque/green/filled/line{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
@@ -126,7 +129,7 @@
 /obj/item/hatchet,
 /obj/item/hatchet,
 /obj/item/hatchet,
-/obj/effect/turf_decal/trimline/green/filled/line{
+/obj/effect/turf_decal/trimline/opaque/green/filled/line{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
@@ -145,24 +148,24 @@
 	pixel_y = 5
 	},
 /obj/structure/table/glass,
-/obj/effect/turf_decal/trimline/green/filled/end,
+/obj/effect/turf_decal/trimline/opaque/green/filled/end,
 /obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/seedvault)
 "ax" = (
 /obj/structure/reagent_dispensers/watertank/high,
-/obj/effect/turf_decal/trimline/green/line{
+/obj/effect/turf_decal/trimline/opaque/green/line{
 	dir = 9
 	},
-/obj/effect/turf_decal/trimline/green/filled/corner,
+/obj/effect/turf_decal/trimline/opaque/green/filled/corner,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/seedvault)
 "ay" = (
 /obj/structure/reagent_dispensers/watertank/high,
-/obj/effect/turf_decal/trimline/green/line{
+/obj/effect/turf_decal/trimline/opaque/green/line{
 	dir = 5
 	},
-/obj/effect/turf_decal/trimline/green/filled/corner{
+/obj/effect/turf_decal/trimline/opaque/green/filled/corner{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -171,7 +174,7 @@
 /obj/structure/closet/crate/hydroponics,
 /obj/item/soap/homemade,
 /obj/item/soap/homemade,
-/obj/effect/turf_decal/trimline/green/filled/line{
+/obj/effect/turf_decal/trimline/opaque/green/filled/line{
 	dir = 6
 	},
 /turf/open/floor/plasteel/dark,
@@ -185,7 +188,6 @@
 /obj/effect/spawner/lootdrop/seed_vault,
 /obj/effect/spawner/lootdrop/seed_vault,
 /obj/item/vending_refill/hydronutrients,
-/obj/item/vending_refill/hydroseeds,
 /turf/open/floor/vault,
 /area/ruin/powered/seedvault)
 "aC" = (
@@ -246,10 +248,10 @@
 /area/ruin/powered/seedvault)
 "aJ" = (
 /obj/structure/reagent_dispensers/watertank/high,
-/obj/effect/turf_decal/trimline/green/line{
+/obj/effect/turf_decal/trimline/opaque/green/line{
 	dir = 10
 	},
-/obj/effect/turf_decal/trimline/green/filled/corner{
+/obj/effect/turf_decal/trimline/opaque/green/filled/corner{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
@@ -286,10 +288,10 @@
 	dir = 4
 	},
 /obj/structure/reagent_dispensers/watertank/high,
-/obj/effect/turf_decal/trimline/green/line{
+/obj/effect/turf_decal/trimline/opaque/green/line{
 	dir = 6
 	},
-/obj/effect/turf_decal/trimline/green/filled/corner{
+/obj/effect/turf_decal/trimline/opaque/green/filled/corner{
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
@@ -311,7 +313,7 @@
 /obj/item/storage/bag/plants,
 /obj/item/storage/bag/plants,
 /obj/item/storage/bag/plants,
-/obj/effect/turf_decal/trimline/green/filled/line{
+/obj/effect/turf_decal/trimline/opaque/green/filled/line{
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
@@ -322,7 +324,7 @@
 /obj/item/reagent_containers/glass/bucket,
 /obj/item/reagent_containers/glass/bucket,
 /obj/item/reagent_containers/glass/bucket,
-/obj/effect/turf_decal/trimline/green/filled/line{
+/obj/effect/turf_decal/trimline/opaque/green/filled/line{
 	dir = 5
 	},
 /turf/open/floor/plasteel/dark,
@@ -332,8 +334,8 @@
 /turf/open/floor/plasteel/freezer,
 /area/ruin/powered/seedvault)
 "aV" = (
-/obj/effect/turf_decal/trimline/green/line,
-/obj/effect/turf_decal/trimline/green/line{
+/obj/effect/turf_decal/trimline/opaque/green/line,
+/obj/effect/turf_decal/trimline/opaque/green/line{
 	dir = 1
 	},
 /obj/structure/table/reinforced,
@@ -379,10 +381,10 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/seedvault)
 "ba" = (
-/obj/effect/turf_decal/trimline/green/line{
+/obj/effect/turf_decal/trimline/opaque/green/line{
 	dir = 4
 	},
-/obj/effect/turf_decal/trimline/green/line{
+/obj/effect/turf_decal/trimline/opaque/green/line{
 	dir = 8
 	},
 /obj/structure/table/reinforced,
@@ -398,38 +400,38 @@
 	},
 /obj/machinery/hydroponics/constructable,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/trimline/green/line{
+/obj/effect/turf_decal/trimline/opaque/green/line{
 	dir = 8
 	},
-/obj/effect/turf_decal/trimline/green/line{
+/obj/effect/turf_decal/trimline/opaque/green/line{
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/powered/seedvault)
 "bd" = (
 /obj/machinery/chem_dispenser/mutagensaltpeter,
-/obj/effect/turf_decal/trimline/green/corner,
-/obj/effect/turf_decal/trimline/green/line{
+/obj/effect/turf_decal/trimline/opaque/green/corner,
+/obj/effect/turf_decal/trimline/opaque/green/line{
 	dir = 9
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/powered/seedvault)
 "be" = (
-/obj/effect/turf_decal/trimline/green/line,
-/obj/effect/turf_decal/trimline/green/line{
+/obj/effect/turf_decal/trimline/opaque/green/line,
+/obj/effect/turf_decal/trimline/opaque/green/line{
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/powered/seedvault)
 "bf" = (
-/obj/machinery/biogenerator,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/trimline/green/corner{
+/obj/effect/turf_decal/trimline/opaque/green/corner{
 	dir = 8
 	},
-/obj/effect/turf_decal/trimline/green/line{
+/obj/effect/turf_decal/trimline/opaque/green/line{
 	dir = 5
 	},
+/obj/machinery/biogenerator/vault,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/powered/seedvault)
 "bg" = (
@@ -439,17 +441,17 @@
 /obj/machinery/hydroponics/constructable,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
-/obj/effect/turf_decal/trimline/green/line{
+/obj/effect/turf_decal/trimline/opaque/green/line{
 	dir = 8
 	},
-/obj/effect/turf_decal/trimline/green/line{
+/obj/effect/turf_decal/trimline/opaque/green/line{
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/powered/seedvault)
 "bh" = (
 /obj/machinery/hydroponics/constructable,
-/obj/effect/turf_decal/trimline/green/line{
+/obj/effect/turf_decal/trimline/opaque/green/line{
 	dir = 6
 	},
 /turf/open/floor/mineral/plastitanium,
@@ -458,10 +460,10 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/effect/turf_decal/trimline/green/line{
+/obj/effect/turf_decal/trimline/opaque/green/line{
 	dir = 4
 	},
-/obj/effect/turf_decal/trimline/green/line{
+/obj/effect/turf_decal/trimline/opaque/green/line{
 	dir = 8
 	},
 /obj/structure/table/reinforced,
@@ -469,7 +471,7 @@
 /area/ruin/powered/seedvault)
 "bj" = (
 /obj/machinery/hydroponics/constructable,
-/obj/effect/turf_decal/trimline/green/line{
+/obj/effect/turf_decal/trimline/opaque/green/line{
 	dir = 10
 	},
 /turf/open/floor/mineral/plastitanium,
@@ -490,10 +492,10 @@
 	},
 /obj/machinery/hydroponics/constructable,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/trimline/green/line{
+/obj/effect/turf_decal/trimline/opaque/green/line{
 	dir = 8
 	},
-/obj/effect/turf_decal/trimline/green/line{
+/obj/effect/turf_decal/trimline/opaque/green/line{
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
@@ -518,20 +520,20 @@
 /area/ruin/powered/seedvault)
 "bo" = (
 /obj/machinery/chem_master/condimaster,
-/obj/effect/turf_decal/trimline/green/corner{
+/obj/effect/turf_decal/trimline/opaque/green/corner{
 	dir = 4
 	},
-/obj/effect/turf_decal/trimline/green/line{
+/obj/effect/turf_decal/trimline/opaque/green/line{
 	dir = 10
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/powered/seedvault)
 "bp" = (
 /obj/machinery/seed_extractor,
-/obj/effect/turf_decal/trimline/green/corner{
+/obj/effect/turf_decal/trimline/opaque/green/corner{
 	dir = 1
 	},
-/obj/effect/turf_decal/trimline/green/line{
+/obj/effect/turf_decal/trimline/opaque/green/line{
 	dir = 6
 	},
 /turf/open/floor/mineral/plastitanium,
@@ -542,10 +544,10 @@
 	},
 /obj/machinery/hydroponics/constructable,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/trimline/green/line{
+/obj/effect/turf_decal/trimline/opaque/green/line{
 	dir = 8
 	},
-/obj/effect/turf_decal/trimline/green/line{
+/obj/effect/turf_decal/trimline/opaque/green/line{
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
@@ -579,10 +581,10 @@
 /obj/machinery/light,
 /obj/machinery/hydroponics/constructable,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/trimline/green/line{
+/obj/effect/turf_decal/trimline/opaque/green/line{
 	dir = 1
 	},
-/obj/effect/turf_decal/trimline/green/line,
+/obj/effect/turf_decal/trimline/opaque/green/line,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/powered/seedvault)
 "bw" = (
@@ -590,10 +592,10 @@
 /obj/machinery/hydroponics/constructable,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/trimline/green/line{
+/obj/effect/turf_decal/trimline/opaque/green/line{
 	dir = 1
 	},
-/obj/effect/turf_decal/trimline/green/line,
+/obj/effect/turf_decal/trimline/opaque/green/line,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/powered/seedvault)
 "bx" = (
@@ -620,14 +622,14 @@
 /area/ruin/powered/seedvault)
 "bB" = (
 /obj/machinery/hydroponics/constructable,
-/obj/effect/turf_decal/trimline/green/line{
+/obj/effect/turf_decal/trimline/opaque/green/line{
 	dir = 5
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/powered/seedvault)
 "bC" = (
 /obj/machinery/hydroponics/constructable,
-/obj/effect/turf_decal/trimline/green/line{
+/obj/effect/turf_decal/trimline/opaque/green/line{
 	dir = 9
 	},
 /turf/open/floor/mineral/plastitanium,
@@ -682,6 +684,13 @@
 "KF" = (
 /obj/machinery/door/airlock/titanium,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/turf/open/floor/vault,
+/area/ruin/powered/seedvault)
+"LG" = (
+/obj/effect/spawner/lootdrop/seed_vault,
+/obj/structure/closet/crate/hydroponics,
+/obj/effect/spawner/lootdrop/seed_vault,
+/obj/effect/spawner/lootdrop/seed_vault,
 /turf/open/floor/vault,
 /area/ruin/powered/seedvault)
 "Ou" = (
@@ -1120,7 +1129,7 @@ aO
 ah
 ac
 aB
-aB
+LG
 aB
 ac
 ac

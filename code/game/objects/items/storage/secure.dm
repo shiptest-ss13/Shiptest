@@ -117,7 +117,7 @@
 // -----------------------------
 /obj/item/storage/secure/briefcase
 	name = "secure briefcase"
-	icon = 'whitesands/icons/obj/storage.dmi' //WS edit - better briefcases
+	icon = 'icons/obj/storage.dmi' //WS edit - better briefcases
 	icon_state = "secure"
 	item_state = "sec-case"
 	lefthand_file = 'icons/mob/inhands/equipment/briefcase_lefthand.dmi'
@@ -139,6 +139,7 @@
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_combined_w_class = 21
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
+	STR.use_sound = 'sound/items/storage/briefcase.ogg'
 
 //Syndie variant of Secure Briefcase. Contains space cash, slightly more robust.
 /obj/item/storage/secure/briefcase/syndie
@@ -148,7 +149,7 @@
 	..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	for(var/i = 0, i < STR.max_items - 2, i++)
-		new /obj/item/stack/spacecash/c1000(src)
+		new /obj/item/spacecash/bundle/mediumrand(src)
 
 
 // -----------------------------
@@ -186,3 +187,19 @@
 
 /obj/item/storage/secure/safe/HoS
 	name = "head of security's safe"
+
+/obj/item/storage/secure/safe/intel
+	name = "Sensitive Data Safe"
+
+/obj/item/storage/secure/safe/intel/PopulateContents()
+		. = ..()
+		new /obj/item/documents/syndicate(src)
+
+/obj/item/storage/secure/safe/intel/stechkin
+	name = "Sensitive Data Safe"
+
+/obj/item/storage/secure/safe/intel/stechkin/PopulateContents()
+		. = ..()
+		new /obj/item/gun/ballistic/automatic/pistol/suppressed(src)
+		new /obj/item/ammo_box/magazine/m10mm(src)
+		new /obj/item/ammo_box/magazine/m10mm(src)

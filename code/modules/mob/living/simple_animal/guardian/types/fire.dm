@@ -30,8 +30,8 @@
 		melee_damage_lower = 40
 		melee_damage_upper = 40
 
-/mob/living/simple_animal/hostile/guardian/fire/Crossed(AM as mob|obj)
-	..()
+/mob/living/simple_animal/hostile/guardian/fire/on_entered(datum/source, AM as mob|obj)
+	. = ..()
 	collision_ignite(AM)
 
 /mob/living/simple_animal/hostile/guardian/fire/Bumped(atom/movable/AM)

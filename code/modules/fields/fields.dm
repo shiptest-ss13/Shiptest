@@ -16,7 +16,7 @@
 	if(!F.check_variables() && !override_checks)
 		QDEL_NULL(F)
 	if(start_field && (F || override_checks))
-		F.Initialize()
+		F.begin_field()
 	return F
 
 /datum/proximity_monitor/advanced
@@ -82,7 +82,7 @@
 	if(requires_processing)
 		START_PROCESSING(SSfields, src)
 
-/datum/proximity_monitor/advanced/proc/Initialize()
+/datum/proximity_monitor/advanced/proc/begin_field()
 	setup_field()
 	post_setup_field()
 
@@ -129,9 +129,6 @@
 /datum/proximity_monitor/advanced/proc/field_turf_canpass(atom/movable/AM, obj/effect/abstract/proximity_checker/advanced/field_turf/F, turf/entering)
 	return TRUE
 
-/datum/proximity_monitor/advanced/proc/field_turf_uncross(atom/movable/AM, obj/effect/abstract/proximity_checker/advanced/field_turf/F)
-	return TRUE
-
 /datum/proximity_monitor/advanced/proc/field_turf_crossed(atom/movable/AM, obj/effect/abstract/proximity_checker/advanced/field_turf/F)
 	return TRUE
 
@@ -139,9 +136,6 @@
 	return TRUE
 
 /datum/proximity_monitor/advanced/proc/field_edge_canpass(atom/movable/AM, obj/effect/abstract/proximity_checker/advanced/field_edge/F, turf/entering)
-	return TRUE
-
-/datum/proximity_monitor/advanced/proc/field_edge_uncross(atom/movable/AM, obj/effect/abstract/proximity_checker/advanced/field_edge/F)
 	return TRUE
 
 /datum/proximity_monitor/advanced/proc/field_edge_crossed(atom/movable/AM, obj/effect/abstract/proximity_checker/advanced/field_edge/F)
@@ -154,7 +148,7 @@
 	var/atom/_host = host
 	var/atom/new_host_loc = _host.loc
 	if(last_host_loc != new_host_loc)
-		recalculate_field()
+		INVOKE_ASYNC(src, .proc/recalculate_field)
 
 /datum/proximity_monitor/advanced/proc/post_setup_field()
 
@@ -319,7 +313,7 @@
 		listeningTo = null
 
 /obj/item/multitool/field_debug/proc/on_mob_move()
-	SIGNAL_HANDLER_DOES_SLEEP
+	SIGNAL_HANDLER
 
 	check_turf(get_turf(src))
 

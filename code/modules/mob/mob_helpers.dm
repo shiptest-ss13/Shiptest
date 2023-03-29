@@ -29,11 +29,11 @@
 	return zone
 
 /**
-  * Return the zone or randomly, another valid zone
-  *
-  * probability controls the chance it chooses the passed in zone, or another random zone
-  * defaults to 80
-  */
+ * Return the zone or randomly, another valid zone
+ *
+ * probability controls the chance it chooses the passed in zone, or another random zone
+ * defaults to 80
+ */
 /proc/ran_zone(zone, probability = 80)
 	if(prob(probability))
 		zone = check_zone(zone)
@@ -50,13 +50,13 @@
 		return 0
 
 /**
-  * Convert random parts of a passed in message to stars
-  *
-  * * phrase - the string to convert
-  * * probability - probability any character gets changed
-  *
-  * This proc is dangerously laggy, avoid it or die
-  */
+ * Convert random parts of a passed in message to stars
+ *
+ * * phrase - the string to convert
+ * * probability - probability any character gets changed
+ *
+ * This proc is dangerously laggy, avoid it or die
+ */
 /proc/stars(phrase, probability = 25)
 	if(probability <= 0)
 		return phrase
@@ -73,8 +73,8 @@
 	return sanitize(.)
 
 /**
-  * Makes you speak like you're drunk
-  */
+ * Makes you speak like you're drunk
+ */
 /proc/slur(phrase)
 	phrase = html_decode(phrase)
 	var/leng = length(phrase)
@@ -106,6 +106,46 @@
 			if(10)
 				newletter += "[newletter]"
 			if(20)
+				newletter += "[newletter][newletter]"
+			else
+				// do nothing
+		. += "[newletter]"
+	return sanitize(.)
+
+/**
+ * Dwarf slurring- around half as intense to represent that dorfs have extreme resistance to inebriating effects
+ */
+/proc/dorfslur(phrase)
+	phrase = html_decode(phrase)
+	var/leng = length(phrase)
+	. = ""
+	var/newletter = ""
+	var/rawchar = ""
+	for(var/i = 1, i <= leng, i += length(rawchar))
+		rawchar = newletter = phrase[i]
+		if(rand(1, 6) == 6)
+			var/lowerletter = lowertext(newletter)
+			if(lowerletter == "o")
+				newletter = "u"
+			else if(lowerletter == "s")
+				newletter = "ch"
+			else if(lowerletter == "a")
+				newletter = "ah"
+			else if(lowerletter == "u")
+				newletter = "oo"
+			else if(lowerletter == "c")
+				newletter = "k"
+		if(rand(1, 30) == 30)
+			if(newletter == " ")
+				newletter = "...huh..."
+			else if(newletter == ".")
+				newletter = " *urp*."
+		switch(rand(1, 50))
+			if(1)
+				newletter += "'"
+			if(25)
+				newletter += "[newletter]"
+			if(50)
 				newletter += "[newletter][newletter]"
 			else
 				// do nothing
@@ -200,10 +240,10 @@
 	return message
 
 /**
-  * Turn text into complete gibberish!
-  *
-  * text is the inputted message, replace_characters will cause original letters to be replaced and chance are the odds that a character gets modified.
-  */
+ * Turn text into complete gibberish!
+ *
+ * text is the inputted message, replace_characters will cause original letters to be replaced and chance are the odds that a character gets modified.
+ */
 /proc/Gibberish(text, replace_characters = FALSE, chance = 50)
 	text = html_decode(text)
 	. = ""
@@ -244,7 +284,7 @@
 		msg = "[msg]"
 	for(var/i in GLOB.mob_list)
 		var/mob/M = i
-		if(M.real_name == msg)
+		if(lowertext(M.real_name) == lowertext(msg))
 			return M
 	return 0
 
@@ -256,10 +296,10 @@
 
 
 /**
-  * change a mob's act-intent.
-  *
-  * Input the intent as a string such as "help" or use "right"/"left
-  */
+ * change a mob's act-intent.
+ *
+ * Input the intent as a string such as "help" or use "right"/"left
+ */
 /mob/verb/a_intent_change(input as text)
 	set name = "a-intent"
 	set hidden = TRUE
@@ -310,11 +350,11 @@
 
 // moved out of admins.dm because things other than admin procs were calling this.
 /**
-  * Is this mob special to the gamemode?
-  *
-  * returns 1 for special characters and 2 for heroes of gamemode
-  *
-  */
+ * Is this mob special to the gamemode?
+ *
+ * returns 1 for special characters and 2 for heroes of gamemode
+ *
+ */
 /proc/is_special_character(mob/M)
 	if(!SSticker.HasRoundStarted())
 		return FALSE
@@ -359,28 +399,28 @@
 	return FALSE
 
 
-/mob/proc/reagent_check(datum/reagent/R) // utilized in the species code
+/mob/proc/handled_by_species(datum/reagent/R) // utilized in the species code
 	return 1
 
 
 /**
-  * Fancy notifications for ghosts
-  *
-  * The kitchen sink of notification procs
-  *
-  * Arguments:
-  * * message
-  * * ghost_sound sound to play
-  * * enter_link Href link to enter the ghost role being notified for
-  * * source The source of the notification
-  * * alert_overlay The alert overlay to show in the alert message
-  * * action What action to take upon the ghost interacting with the notification, defaults to NOTIFY_JUMP
-  * * flashwindow Flash the byond client window
-  * * ignore_key  Ignore keys if they're in the GLOB.poll_ignore list
-  * * header The header of the notifiaction
-  * * notify_suiciders If it should notify suiciders (who do not qualify for many ghost roles)
-  * * notify_volume How loud the sound should be to spook the user
-  */
+ * Fancy notifications for ghosts
+ *
+ * The kitchen sink of notification procs
+ *
+ * Arguments:
+ * * message
+ * * ghost_sound sound to play
+ * * enter_link Href link to enter the ghost role being notified for
+ * * source The source of the notification
+ * * alert_overlay The alert overlay to show in the alert message
+ * * action What action to take upon the ghost interacting with the notification, defaults to NOTIFY_JUMP
+ * * flashwindow Flash the byond client window
+ * * ignore_key  Ignore keys if they're in the GLOB.poll_ignore list
+ * * header The header of the notifiaction
+ * * notify_suiciders If it should notify suiciders (who do not qualify for many ghost roles)
+ * * notify_volume How loud the sound should be to spook the user
+ */
 /proc/notify_ghosts(message, ghost_sound = null, enter_link = null, atom/source = null, mutable_appearance/alert_overlay = null, action = NOTIFY_JUMP, flashwindow = TRUE, ignore_mapload = TRUE, ignore_key, header = null, notify_suiciders = TRUE, notify_volume = 100) //Easy notification of ghosts.
 	if(ignore_mapload && SSatoms.initialized != INITIALIZATION_INNEW_REGULAR)	//don't notify for objects created during a map load
 		return
@@ -414,8 +454,8 @@
 				A.add_overlay(alert_overlay)
 
 /**
-  * Heal a robotic body part on a mob
-  */
+ * Heal a robotic body part on a mob
+ */
 /proc/item_heal_robotic(mob/living/carbon/human/H, mob/user, brute_heal, burn_heal)
 	var/obj/item/bodypart/affecting = H.get_bodypart(check_zone(user.zone_selected))
 	if(affecting && (!IS_ORGANIC_LIMB(affecting)))
@@ -434,7 +474,7 @@
 			to_chat(user, "<span class='warning'>[affecting] is already in good condition!</span>")
 
 ///Is the passed in mob a ghost with admin powers, doesn't check for AI interact like isAdminGhost() used to
-/proc/isAdminObserver(var/mob/user)
+/proc/isAdminObserver(mob/user)
 	if(!user)		//Are they a mob? Auto interface updates call this with a null src
 		return
 	if(!user.client) // Do they have a client?
@@ -446,7 +486,7 @@
 	return TRUE
 
 ///Is the passed in mob an admin ghost WITH AI INTERACT enabled
-/proc/isAdminGhostAI(var/mob/user)
+/proc/isAdminGhostAI(mob/user)
 	if(!isAdminObserver(user))
 		return
 	if(!user.client.AI_Interact) // Do they have it enabled?
@@ -454,10 +494,10 @@
 	return TRUE
 
 /**
-  * Offer control of the passed in mob to dead player
-  *
-  * Automatic logging and uses pollCandidatesForMob, how convenient
-  */
+ * Offer control of the passed in mob to dead player
+ *
+ * Automatic logging and uses pollCandidatesForMob, how convenient
+ */
 /proc/offer_control(mob/M)
 	to_chat(M, "Control of your mob has been offered to dead players.")
 	if(usr)
@@ -556,10 +596,10 @@
 	return FALSE
 
 /**
-  * Examine text for traits shared by multiple types.
-  *
-  * I wish examine was less copypasted. (oranges say, be the change you want to see buddy)
-  */
+ * Examine text for traits shared by multiple types.
+ *
+ * I wish examine was less copypasted. (oranges say, be the change you want to see buddy)
+ */
 /mob/proc/common_trait_examine()
 	if(HAS_TRAIT(src, TRAIT_DISSECTED))
 		var/dissectionmsg = ""
@@ -572,11 +612,11 @@
 		. += "<span class='notice'>This body has been dissected and analyzed[dissectionmsg].</span><br>"
 
 /**
-  * Get the list of keywords for policy config
-  *
-  * This gets the type, mind assigned roles and antag datums as a list, these are later used
-  * to send the user relevant headadmin policy config
-  */
+ * Get the list of keywords for policy config
+ *
+ * This gets the type, mind assigned roles and antag datums as a list, these are later used
+ * to send the user relevant headadmin policy config
+ */
 /mob/proc/get_policy_keywords()
 	. = list()
 	. += "[type]"

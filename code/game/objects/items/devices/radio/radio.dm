@@ -4,9 +4,11 @@
 	icon_state = "walkietalkie"
 	item_state = "walkietalkie"
 	desc = "A basic handheld radio that communicates with local telecommunication networks."
+	pickup_sound =  'sound/items/handling/device_pickup.ogg'
+	drop_sound = 'sound/items/handling/device_drop.ogg'
 	dog_fashion = /datum/dog_fashion/back
 
-	flags_1 = CONDUCT_1 | HEAR_1
+	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT
 	throw_speed = 3
 	throw_range = 7
@@ -36,7 +38,6 @@
 	var/obj/item/encryptionkey/keyslot
 	var/translate_binary = FALSE  // If true, can hear the special binary channel.
 	var/independent = FALSE  // If true, can say/hear on the special CentCom channel.
-	var/syndie = FALSE  // If true, hears all well-known channels automatically, and can say/hear on the Syndicate channel.
 	var/list/channels = list()  // Map from name (see communications.dm) to on/off. First entry is current department (:h)
 	var/list/secure_radio_connections
 
@@ -55,7 +56,6 @@
 /obj/item/radio/proc/recalculateChannels()
 	channels = list()
 	translate_binary = FALSE
-	syndie = FALSE
 	independent = FALSE
 
 	if(keyslot)
@@ -65,19 +65,11 @@
 
 		if(keyslot.translate_binary)
 			translate_binary = TRUE
-		if(keyslot.syndie)
-			syndie = TRUE
 		if(keyslot.independent)
 			independent = TRUE
 
 	for(var/ch_name in channels)
 		secure_radio_connections[ch_name] = add_radio(src, GLOB.radiochannels[ch_name])
-
-/obj/item/radio/proc/make_syndie() // Turns normal radios into Syndicate radios!
-	qdel(keyslot)
-	keyslot = new /obj/item/encryptionkey/syndicate
-	syndie = 1
-	recalculateChannels()
 
 /obj/item/radio/Destroy()
 	remove_radio_all(src) //Just to be sure
@@ -97,6 +89,8 @@
 	for(var/ch_name in channels)
 		secure_radio_connections[ch_name] = add_radio(src, GLOB.radiochannels[ch_name])
 
+	become_hearing_sensitive(ROUNDSTART_TRAIT)
+
 /obj/item/radio/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/empprotection, EMP_PROTECT_WIRES)
@@ -104,14 +98,14 @@
 /obj/item/radio/AltClick(mob/user)
 	if(headset)
 		. = ..()
-	else
+	else if(user.canUseTopic(src, !issilicon(user), TRUE, FALSE))
 		broadcasting = !broadcasting
 		to_chat(user, "<span class='notice'>You toggle broadcasting [broadcasting ? "on" : "off"].</span>")
 
 /obj/item/radio/CtrlShiftClick(mob/user)
 	if(headset)
 		. = ..()
-	else
+	else if(user.canUseTopic(src, !issilicon(user), TRUE, FALSE))
 		listening = !listening
 		to_chat(user, "<span class='notice'>You toggle speaker [listening ? "on" : "off"].</span>")
 
@@ -157,6 +151,8 @@
 	. = ..()
 	if(.)
 		return
+	if(isliving(usr) && in_range(src, usr))
+		playsound(src, "button", 10)
 	switch(action)
 		if("frequency")
 			if(freqlock)
@@ -255,7 +251,7 @@
 	var/datum/signal/subspace/vocal/signal = new(src, freq, speaker, language, message, spans, message_mods)
 
 	// Independent radios, on the CentCom frequency, reach all independent radios
-	if (independent && (freq == FREQ_CENTCOM || freq == FREQ_SOLGOV || freq == FREQ_WIDEBAND || freq == FREQ_CTF_RED || freq == FREQ_CTF_BLUE))		//WS Edit - SolGov Rep
+	if (independent && (freq == FREQ_CENTCOM || freq == FREQ_WIDEBAND || freq == FREQ_CTF_RED || freq == FREQ_CTF_BLUE))		//WS Edit - SolGov Rep
 		signal.data["compression"] = 0
 		signal.transmission_method = TRANSMISSION_SUPERSPACE
 		signal.map_zones = list(0)  // reaches all Z-levels
@@ -314,9 +310,7 @@
 	// deny checks
 	if (!on || !listening || wires.is_cut(WIRE_RX))
 		return FALSE
-	if (freq == FREQ_SYNDICATE && !syndie)
-		return FALSE
-	if (freq == FREQ_CENTCOM || freq == FREQ_SOLGOV)
+	if (freq == FREQ_CENTCOM)
 		return independent  // hard-ignores the z-level check
 	if (!(0 in map_zones))
 		var/turf/position = get_turf(src)
@@ -332,7 +326,7 @@
 	for(var/ch_name in channels)
 		if(channels[ch_name] & FREQ_LISTENING)
 			//the GLOB.radiochannels list is located in communications.dm
-			if(GLOB.radiochannels[ch_name] == text2num(freq) || syndie)
+			if(GLOB.radiochannels[ch_name] == text2num(freq))
 				return TRUE
 	return FALSE
 
@@ -395,7 +389,6 @@
 	. = ..()
 
 /obj/item/radio/borg/syndicate
-	syndie = 1
 	keyslot = new /obj/item/encryptionkey/syndicate
 
 /obj/item/radio/borg/syndicate/Initialize()
@@ -439,3 +432,9 @@
 /obj/item/radio/off	// Station bounced radios, their only difference is spawning with the speakers off, this was made to help the lag.
 	listening = 0			// And it's nice to have a subtype too for future features.
 	dog_fashion = /datum/dog_fashion/back
+
+
+/obj/item/radio/old
+	name = "old radio"
+	icon_state = "radio"
+	desc = "An old handheld radio. You could use it, if you really wanted to."

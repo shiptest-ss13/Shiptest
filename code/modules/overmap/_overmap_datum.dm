@@ -1,13 +1,13 @@
 /**
-  * # Overmap objects
-  *
-  * Everything visible on the overmap: stations, ships, ruins, events, and more.
-  *
-  * This base class should be the parent of all objects present on the overmap.
-  * For the control counterparts, see [/obj/machinery/computer/helm].
-  * For the shuttle counterparts (ONLY USED FOR SHIPS), see [/obj/docking_port/mobile].
-  *
-  */
+ * # Overmap objects
+ *
+ * Everything visible on the overmap: stations, ships, ruins, events, and more.
+ *
+ * This base class should be the parent of all objects present on the overmap.
+ * For the control counterparts, see [/obj/machinery/computer/helm].
+ * For the shuttle counterparts (ONLY USED FOR SHIPS), see [/obj/docking_port/mobile].
+ *
+ */
 /datum/overmap
 	/// The name of this overmap datum, propogated to the token, docking port, and areas.
 	var/name
@@ -73,20 +73,20 @@
 	return ..()
 
 /**
-  * This proc is called directly after New(). It's done after the basic creation and placement of the token and setup has been completed.
-  *
-  * * placement_x/y - the X and Y position of the overmap datum.
-  */
+ * This proc is called directly after New(). It's done after the basic creation and placement of the token and setup has been completed.
+ *
+ * * placement_x/y - the X and Y position of the overmap datum.
+ */
 /datum/overmap/proc/Initialize(position, ...)
 	PROTECTED_PROC(TRUE)
 	return
 
 /**
-  * Called whenever you need to move an overmap datum to another position. Can be overridden to add additional movement functionality, as long as it calls the parent proc.
-  *
-  * * new_x/y - the X and Y position to move the overmap datum to. Must be numbers, will CRASH() otherwise.
-  */
-/datum/overmap/proc/Move(new_x, new_y)
+ * Called whenever you need to move an overmap datum to another position. Can be overridden to add additional movement functionality, as long as it calls the parent proc.
+ *
+ * * new_x/y - the X and Y position to move the overmap datum to. Must be numbers, will CRASH() otherwise.
+ */
+/datum/overmap/proc/overmap_move(new_x, new_y)
 	SHOULD_CALL_PARENT(TRUE)
 	if(docking)
 		return
@@ -104,21 +104,22 @@
 		new_y = SSovermap.size
 	SSovermap.overmap_container[x][y] -= src
 	SSovermap.overmap_container[new_x][new_y] += src
-	SEND_SIGNAL(src, COMSIG_OVERMAP_MOVED, x, y)
+	var/old_x = x
+	var/old_y = y
 	x = new_x
 	y = new_y
-
 	// Updates the token with the new position.
-	token.Move(OVERMAP_TOKEN_TURF(x, y))
+	token.abstract_move(OVERMAP_TOKEN_TURF(x, y))
+	SEND_SIGNAL(src, COMSIG_OVERMAP_MOVED, old_x, old_y)
 	return TRUE
 
 /**
-  * Moves the overmap datum in a specific direction a specific number of spaces (magnitude, default 1).
-  *
-  * * dir - The direction to move the overmap datum in. Takes cardinal and diagonal directions.
-  * * magnitude - The number of spaces to move the overmap datum in the direction.
-  */
-/datum/overmap/proc/Step(dir, magnitude = 1)
+ * Moves the overmap datum in a specific direction a specific number of spaces (magnitude, default 1).
+ *
+ * * dir - The direction to move the overmap datum in. Takes cardinal and diagonal directions.
+ * * magnitude - The number of spaces to move the overmap datum in the direction.
+ */
+/datum/overmap/proc/overmap_step(dir, magnitude = 1)
 	SHOULD_NOT_OVERRIDE(TRUE)
 	var/move_x = x
 	var/move_y = y
@@ -130,13 +131,13 @@
 		move_x += magnitude
 	else if(dir & WEST)
 		move_x -= magnitude
-	return Move(move_x, move_y)
+	return overmap_move(move_x, move_y)
 
 /**
-  * Proc used to rename an overmap datum and everything related to it.
-  *
-  * * new_name - The new name of the overmap datum.
-  */
+ * Proc used to rename an overmap datum and everything related to it.
+ *
+ * * new_name - The new name of the overmap datum.
+ */
 /datum/overmap/proc/Rename(new_name, force)
 	new_name = sanitize_name(new_name) //sets to a falsey value if it's not a valid name
 	if(!new_name || new_name == name)
@@ -146,16 +147,16 @@
 	return TRUE
 
 /**
-  * Returns all other overmap objects on the tile as a list. Will return an empty list if there are no other objects, or the source object is docked.
-  */
+ * Returns all other overmap objects on the tile as a list. Will return an empty list if there are no other objects, or the source object is docked.
+ */
 /datum/overmap/proc/get_nearby_overmap_objects()
 	if(docked_to)
 		return list()
 	return SSovermap.overmap_container[x][y] - src
 
 /**
-  * Returns a turf that can be jumped to by observers, admins, and such.
-  */
+ * Returns a turf that can be jumped to by observers, admins, and such.
+ */
 /datum/overmap/proc/get_jump_to_turf()
 	RETURN_TYPE(/turf)
 	return
@@ -163,11 +164,11 @@
 ///////////////////////////////////////////////////////////// HERE BE DRAGONS - DOCKING CODE /////////////////////////////////////////////////////////////
 
 /**
-  * Docks the overmap datum to another overmap datum, putting it in the other's contents and removing it from the overmap.
-  * Sets X and Y equal to null. Does not check for distance or nulls.
-  *
-  * * dock_target - The overmap datum to dock to. Cannot be null.
-  */
+ * Docks the overmap datum to another overmap datum, putting it in the other's contents and removing it from the overmap.
+ * Sets X and Y equal to null. Does not check for distance or nulls.
+ *
+ * * dock_target - The overmap datum to dock to. Cannot be null.
+ */
 /datum/overmap/proc/Dock(datum/overmap/dock_target, force = FALSE)
 	SHOULD_CALL_PARENT(TRUE)
 	if(!istype(dock_target))
@@ -180,9 +181,9 @@
 	docking = TRUE
 
 	var/datum/docking_ticket/ticket = dock_target.pre_docked(src)
-	if(!ticket)
+	if(!ticket || ticket.docking_error)
 		docking = FALSE
-		return
+		return ticket?.docking_error || "Unknown docking error!"
 	if(!pre_dock(dock_target, ticket))
 		docking = FALSE
 		return
@@ -195,43 +196,43 @@
 		complete_dock(dock_target, ticket)
 
 /**
-  * Called at the very start of a [datum/overmap/proc/Dock] call, on the **TARGET of the docking attempt**. If it returns FALSE, the docking will be aborted.
-  * Called before [datum/overmap/proc/pre_dock] is called on the dock requester.
-  *
-  * * dock_requester - The overmap datum trying to dock with this one. Cannot be null.
-  *
-  * Returns - A docking ticket that will be passed to [datum/overmap/proc/pre_dock] on the dock requester.
-  */
+ * Called at the very start of a [datum/overmap/proc/Dock] call, on the **TARGET of the docking attempt**. If it returns FALSE, the docking will be aborted.
+ * Called before [datum/overmap/proc/pre_dock] is called on the dock requester.
+ *
+ * * dock_requester - The overmap datum trying to dock with this one. Cannot be null.
+ *
+ * Returns - A docking ticket that will be passed to [datum/overmap/proc/pre_dock] on the dock requester.
+ */
 /datum/overmap/proc/pre_docked(datum/overmap/dock_requester)
 	RETURN_TYPE(/datum/docking_ticket)
-	return
+	return new /datum/docking_ticket(_docking_error = "[src] cannot be docked to.")
 
 /**
-  * Called at the very start of a [datum/overmap/proc/Dock] call. If it returns FALSE, the docking will be aborted.
-  * Will only be called after [datum/overmap/proc/pre_docked] has been called and returned TRUE.
-  *
-  * * dock_target - The overmap datum to dock to. Cannot be null.
-  * * ticket - The docking ticket that was returned from the [datum/overmap/proc/pre_docked] call.
-  */
+ * Called at the very start of a [datum/overmap/proc/Dock] call. If it returns FALSE, the docking will be aborted.
+ * Will only be called after [datum/overmap/proc/pre_docked] has been called and returned TRUE.
+ *
+ * * dock_target - The overmap datum to dock to. Cannot be null.
+ * * ticket - The docking ticket that was returned from the [datum/overmap/proc/pre_docked] call.
+ */
 /datum/overmap/proc/pre_dock(datum/overmap/dock_target, datum/docking_ticket/ticket)
 	return FALSE
 
 /**
-  * For defining custom actual docking behaviour. Called after both [datum/overmap/proc/pre_dock] and [datum/overmap/proc/pre_docked] have been called and they both returned TRUE.
-  *
-  * * dock_target - The overmap datum to dock to. Cannot be null.
-  * * ticket - The docking ticket that was returned from the [datum/overmap/proc/pre_docked] call.
-  */
+ * For defining custom actual docking behaviour. Called after both [datum/overmap/proc/pre_dock] and [datum/overmap/proc/pre_docked] have been called and they both returned TRUE.
+ *
+ * * dock_target - The overmap datum to dock to. Cannot be null.
+ * * ticket - The docking ticket that was returned from the [datum/overmap/proc/pre_docked] call.
+ */
 /datum/overmap/proc/start_dock(datum/overmap/dock_target, datum/docking_ticket/ticket)
 	return
 
 /**
-  * Called after [datum/overmap/proc/start_dock], either instantly or after a time depending on the [datum/overmap/var/dock_time] variable.
-  * Return result is ignored.
-  *
-  * * dock_target - The overmap datum that has been docked to. Cannot be null.
-  * * ticket - The docking ticket that was returned from the [datum/overmap/proc/pre_docked] call.
-  */
+ * Called after [datum/overmap/proc/start_dock], either instantly or after a time depending on the [datum/overmap/var/dock_time] variable.
+ * Return result is ignored.
+ *
+ * * dock_target - The overmap datum that has been docked to. Cannot be null.
+ * * ticket - The docking ticket that was returned from the [datum/overmap/proc/pre_docked] call.
+ */
 /datum/overmap/proc/complete_dock(datum/overmap/dock_target, datum/docking_ticket/ticket)
 	SHOULD_CALL_PARENT(TRUE)
 	SSovermap.overmap_container[x][y] -= src
@@ -239,7 +240,7 @@
 	y = null
 	dock_target.contents += src
 	docked_to = dock_target
-	token.Move(dock_target.token)
+	token.abstract_move(dock_target.token)
 
 	dock_target.post_docked(src)
 	docking = FALSE
@@ -247,16 +248,16 @@
 	SEND_SIGNAL(src, COMSIG_OVERMAP_DOCK, dock_target)
 
 /**
-  * Called at the very end of a [datum/overmap/proc/Dock] call, on the **TARGET of the docking attempt**. Return value is ignored.
-  *
-  * * dock_requester - The overmap datum trying to dock with this one. Cannot be null.
-  */
+ * Called at the very end of a [datum/overmap/proc/Dock] call, on the **TARGET of the docking attempt**. Return value is ignored.
+ *
+ * * dock_requester - The overmap datum trying to dock with this one. Cannot be null.
+ */
 /datum/overmap/proc/post_docked(datum/overmap/dock_requester)
 	return
 
 /**
-  * Undocks from the object this datum is docked to currently, and places it back on the overmap at the position of the object that was previously docked to.
-  */
+ * Undocks from the object this datum is docked to currently, and places it back on the overmap at the position of the object that was previously docked to.
+ */
 /datum/overmap/proc/Undock(force = FALSE)
 	SHOULD_CALL_PARENT(TRUE)
 	if(!docked_to)
@@ -272,9 +273,9 @@
 		complete_undock()
 
 /**
-  * Called after [datum/overmap/proc/Undock], either instantly or after a time depending on the [datum/overmap/var/dock_time] variable.
-  * Return result is ignored.
-  */
+ * Called after [datum/overmap/proc/Undock], either instantly or after a time depending on the [datum/overmap/var/dock_time] variable.
+ * Return result is ignored.
+ */
 /datum/overmap/proc/complete_undock()
 	SHOULD_CALL_PARENT(TRUE)
 	SSovermap.overmap_container[docked_to.x][docked_to.y] += src
@@ -284,14 +285,74 @@
 	var/datum/overmap/old_docked_to = docked_to
 	docked_to = null
 	token.Move(OVERMAP_TOKEN_TURF(x, y))
-	old_docked_to.post_undocked(src) //Post undocked is called on the old dock target.
+	INVOKE_ASYNC(old_docked_to, .proc/post_undocked, src)
 	docking = FALSE
 	SEND_SIGNAL(src, COMSIG_OVERMAP_UNDOCK, old_docked_to)
 
 /**
-  * Called at the very end of a [datum/overmap/proc/Unock] call, on the **TARGET of the undocking attempt**. Return result is ignored.
-  *
-  * * dock_requester - The overmap datum trying to undock from this one. Cannot be null.
-  */
+ * Called at the very end of a [datum/overmap/proc/Unock] call (non-blocking/asynchronously), on the **TARGET of the undocking attempt**. Return result is ignored.
+ *
+ * * dock_requester - The overmap datum trying to undock from this one. Cannot be null.
+ */
 /datum/overmap/proc/post_undocked(datum/overmap/ship/controlled/dock_requester)
 	return
+
+/**
+ * Helper proc for docking. Alters the position and orientation of a stationary docking port to ensure that any mobile port small enough can dock within its bounds
+ */
+/datum/overmap/proc/adjust_dock_to_shuttle(obj/docking_port/stationary/dock_to_adjust, obj/docking_port/mobile/shuttle)
+	log_shuttle("[src] [REF(src)] DOCKING: ADJUST [dock_to_adjust] [REF(dock_to_adjust)] TO [shuttle][REF(shuttle)]")
+	// the shuttle's dimensions where "true height" measures distance from the shuttle's fore to its aft
+	var/shuttle_true_height = shuttle.height
+	var/shuttle_true_width = shuttle.width
+	// if the port's location is perpendicular to the shuttle's fore, the "true height" is the port's "width" and vice-versa
+	if(EWCOMPONENT(shuttle.port_direction))
+		shuttle_true_height = shuttle.width
+		shuttle_true_width = shuttle.height
+
+	// the dir the stationary port should be facing (note that it points inwards)
+	var/final_facing_dir = angle2dir(dir2angle(shuttle_true_height > shuttle_true_width ? EAST : NORTH)+dir2angle(shuttle.port_direction)+180)
+
+	var/list/old_corners = dock_to_adjust.return_coords() // coords for "bottom left" / "top right" of dock's covered area, rotated by dock's current dir
+	var/list/new_dock_location // TBD coords of the new location
+	if(final_facing_dir == dock_to_adjust.dir)
+		new_dock_location = list(old_corners[1], old_corners[2]) // don't move the corner
+	else if(final_facing_dir == angle2dir(dir2angle(dock_to_adjust.dir)+180))
+		new_dock_location = list(old_corners[3], old_corners[4]) // flip corner to the opposite
+	else
+		var/combined_dirs = final_facing_dir | dock_to_adjust.dir
+		if(combined_dirs == (NORTH|EAST) || combined_dirs == (SOUTH|WEST))
+			new_dock_location = list(old_corners[1], old_corners[4]) // move the corner vertically
+		else
+			new_dock_location = list(old_corners[3], old_corners[2]) // move the corner horizontally
+		// we need to flip the height and width
+		var/dock_height_store = dock_to_adjust.height
+		dock_to_adjust.height = dock_to_adjust.width
+		dock_to_adjust.width = dock_height_store
+
+	dock_to_adjust.dir = final_facing_dir
+	if(shuttle.height > dock_to_adjust.height || shuttle.width > dock_to_adjust.width)
+		CRASH("Shuttle cannot fit in dock!")
+
+	// offset for the dock within its area
+	var/new_dheight = round((dock_to_adjust.height-shuttle.height)/2) + shuttle.dheight
+	var/new_dwidth = round((dock_to_adjust.width-shuttle.width)/2) + shuttle.dwidth
+
+	// use the relative-to-dir offset above to find the absolute position offset for the dock
+	switch(final_facing_dir)
+		if(NORTH)
+			new_dock_location[1] += new_dwidth
+			new_dock_location[2] += new_dheight
+		if(SOUTH)
+			new_dock_location[1] -= new_dwidth
+			new_dock_location[2] -= new_dheight
+		if(EAST)
+			new_dock_location[1] += new_dheight
+			new_dock_location[2] -= new_dwidth
+		if(WEST)
+			new_dock_location[1] -= new_dheight
+			new_dock_location[2] += new_dwidth
+
+	dock_to_adjust.forceMove(locate(new_dock_location[1], new_dock_location[2], dock_to_adjust.z))
+	dock_to_adjust.dheight = new_dheight
+	dock_to_adjust.dwidth = new_dwidth

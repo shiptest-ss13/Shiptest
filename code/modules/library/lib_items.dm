@@ -225,7 +225,7 @@
 	if(!user.can_read(src))
 		return
 	if(dat)
-		user << browse("<TT><I>Penned by [author].</I></TT> <BR>" + "[dat]", "window=book[window_size != null ? ";size=[window_size]" : ""]")
+		user << browse("<HTML><HEAD><meta http-equiv='X-UA-Compatible' content='IE=Edge'/><meta charset='UTF-8'><title>[title]</title></HEAD><BODY><TT><I>Penned by [author].</I></TT> <BR>[dat]</BODY></HTML>", "window=book[window_size != null ? ";size=[window_size]" : ""]")
 		user.visible_message("<span class='notice'>[user] opens a book titled \"[title]\" and begins reading intently.</span>")
 		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "book_nerd", /datum/mood_event/book_nerd)
 		onclose(user, "book")
@@ -373,6 +373,18 @@
 		to_chat(user, "<font color=red>No associated computer found. Only local scans will function properly.</font>")
 	to_chat(user, "\n")
 
+/obj/structure/bookcase/manuals/medical
+	name = "medical manuals bookcase"
+
+/obj/structure/bookcase/manuals/medical/Initialize()
+	. = ..()
+	new /obj/item/book/manual/wiki/medical_cloning(src)
+	update_icon()
+
+/obj/item/book/suicide_act(mob/living/user)
+	user.visible_message("<span class='suicide'>[user] begins closing the book on life! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	playsound(src, 'sound/items/handling/paper_pickup.ogg', 100, TRUE)
+	return BRUTELOSS;
 
 #undef BOOKCASE_UNANCHORED
 #undef BOOKCASE_ANCHORED

@@ -34,7 +34,10 @@ All ShuttleMove procs go here
 				M.visible_message("<span class='warning'>[shuttle] slams into [M]!</span>")
 				SSblackbox.record_feedback("tally", "shuttle_gib", 1, M.type)
 				log_attack("[key_name(M)] was shuttle gibbed by [shuttle].")
-				M.gib()
+				if(isanimal(M))
+					qdel(M)
+				else
+					M.gib()
 
 
 		else //non-living mobs shouldn't be affected by shuttles, which is why this is an else
@@ -72,8 +75,10 @@ All ShuttleMove procs go here
 	return TRUE
 
 /turf/proc/lateShuttleMove(turf/oldT)
-	AfterChange(CHANGETURF_RECALC_ADJACENT)
-	oldT.AfterChange(CHANGETURF_RECALC_ADJACENT)
+	blocks_air = initial(blocks_air)
+	oldT.blocks_air = initial(oldT.blocks_air)
+	AfterChange()
+	oldT.AfterChange()
 
 
 /////////////////////////////////////////////////////////////////////////////////////
@@ -94,8 +99,7 @@ All ShuttleMove procs go here
 	if(loc != oldT) // This is for multi tile objects
 		return
 
-	loc = newT
-
+	abstract_move(newT)
 
 	return TRUE
 
@@ -265,14 +269,6 @@ All ShuttleMove procs go here
 	if(codes["delivery"])
 		GLOB.deliverybeacons += src
 		GLOB.deliverybeacontags += location
-
-/obj/machinery/mineral/beforeShuttleMove(turf/newT, rotation, move_mode, obj/docking_port/mobile/moving_dock)
-	unregister_input_turf()
-	return ..()
-
-/obj/machinery/mineral/afterShuttleMove(turf/oldT, list/movement_force, shuttle_dir, shuttle_preferred_direction, move_dir, rotation)
-	. = ..()
-	register_input_turf()
 
 /************************************Item move procs************************************/
 

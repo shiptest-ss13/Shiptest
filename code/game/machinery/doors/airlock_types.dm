@@ -20,6 +20,9 @@
 	normal_integrity = 450
 	hatch_colour = "#c82b2b"
 
+/obj/machinery/door/airlock/security/brig //fulltile cell doors because of shuttle shenanigans
+	var/id = null
+
 /obj/machinery/door/airlock/engineering
 	icon = 'icons/obj/doors/airlocks/station/engineering.dmi'
 	assemblytype = /obj/structure/door_assembly/door_assembly_eng
@@ -121,6 +124,12 @@
 	critical_machine = TRUE //stops greytide virus from opening & bolting doors in critical positions, such as the SM chamber.
 
 /obj/machinery/door/airlock/security/glass
+	opacity = FALSE
+	glass = TRUE
+	normal_integrity = 400
+	hatch_colour = "#b81b1b"
+
+/obj/machinery/door/airlock/security/brig/glass //more brig doors
 	opacity = FALSE
 	glass = TRUE
 	normal_integrity = 400
@@ -322,8 +331,8 @@
 /obj/machinery/door/airlock/titanium
 	name = "shuttle airlock"
 	assemblytype = /obj/structure/door_assembly/door_assembly_titanium
-	icon = 'whitesands/icons/obj/doors/airlocks/shuttle/shuttle.dmi'
-	overlays_file = 'whitesands/icons/obj/doors/airlocks/shuttle/overlays.dmi'
+	icon = 'icons/obj/doors/airlocks/shuttle/shuttle.dmi'
+	overlays_file = 'icons/obj/doors/airlocks/shuttle/old_overlays.dmi'
 	normal_integrity = 400
 	has_hatch = FALSE
 
@@ -352,6 +361,7 @@
 	overlays_file = 'icons/obj/doors/airlocks/station2/overlays.dmi'
 	assemblytype = /obj/structure/door_assembly/door_assembly_public
 	hatch_colour = "#eaeaea"
+	req_ship_access = FALSE
 
 /obj/machinery/door/airlock/public/glass
 	opacity = FALSE
@@ -468,8 +478,8 @@
 
 /obj/machinery/door/airlock/shuttle
 	name = "shuttle airlock"
-	icon = 'whitesands/icons/obj/doors/airlocks/shuttle/shuttle.dmi' //WS Edit - Classic Shuttle
-	overlays_file = 'whitesands/icons/obj/doors/airlocks/shuttle/overlays.dmi'
+	icon = 'icons/obj/doors/airlocks/shuttle/shuttle.dmi' //WS Edit - Classic Shuttle //I'm leaving this. Your hubris will be remembered.
+	overlays_file = 'icons/obj/doors/airlocks/shuttle/old_overlays.dmi'
 	assemblytype = /obj/structure/door_assembly/door_assembly_shuttle
 	has_hatch = FALSE
 

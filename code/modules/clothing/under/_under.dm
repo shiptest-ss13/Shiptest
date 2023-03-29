@@ -13,7 +13,6 @@
 	clothamnt = 3
 	greyscale_colors = list(list(15, 17), list(10, 19), list(15, 10))
 	greyscale_icon_state = "under"
-	var/fitted = FEMALE_UNIFORM_FULL // For use in alternate clothing styles for women
 	var/has_sensor = HAS_SENSORS // For the crew computer
 	var/random_sensor = TRUE
 	var/sensor_mode = NO_SENSORS
@@ -23,6 +22,8 @@
 	var/obj/item/clothing/accessory/attached_accessory
 	var/mutable_appearance/accessory_overlay
 	var/freshly_laundered = FALSE
+
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/under/worn_overlays(isinhands = FALSE)
 	. = list()
@@ -57,7 +58,7 @@
 	if(random_sensor)
 		//make the sensor mode favor higher levels, except coords.
 		sensor_mode = pick(SENSOR_OFF, SENSOR_LIVING, SENSOR_LIVING, SENSOR_VITALS, SENSOR_VITALS, SENSOR_VITALS, SENSOR_COORDS, SENSOR_COORDS)
-	if(!(body_parts_covered & LEGS))
+	if(!(body_parts_covered & LEGS) && greyscale_icon_state == "under")
 		greyscale_icon_state = "under_skirt"
 
 /obj/item/clothing/under/emp_act()
@@ -72,7 +73,6 @@
 	..()
 	if(adjusted)
 		adjusted = NORMAL_STYLE
-		fitted = initial(fitted)
 		if(!alt_covers_chest)
 			body_parts_covered |= CHEST
 

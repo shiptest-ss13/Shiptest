@@ -177,13 +177,11 @@
 
 /obj/machinery/capture_the_flag/process()
 	for(var/i in spawned_mobs)
-		if(!i)
-			spawned_mobs -= i
-			continue
 		// Anyone in crit, automatically reap
 		var/mob/living/living_participant = i
 		if(HAS_TRAIT(living_participant, TRAIT_CRITICAL_CONDITION) || living_participant.stat == DEAD)
 			ctf_dust_old(living_participant)
+			spawned_mobs -= living_participant
 		else
 			// The changes that you've been hit with no shield but not
 			// instantly critted are low, but have some healing.
@@ -263,7 +261,7 @@
 		addtimer(CALLBACK(src, .proc/clear_cooldown, body.ckey), respawn_cooldown, TIMER_UNIQUE)
 		body.dust()
 
-/obj/machinery/capture_the_flag/proc/clear_cooldown(var/ckey)
+/obj/machinery/capture_the_flag/proc/clear_cooldown(ckey)
 	recently_dead_ckeys -= ckey
 
 /obj/machinery/capture_the_flag/proc/spawn_team_member(client/new_team_member)
@@ -612,11 +610,15 @@
 	invisibility = 0
 
 /obj/effect/ctf/ammo/Initialize(mapload)
-	..()
+	. = ..()
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
 	QDEL_IN(src, AMMO_DROP_LIFETIME)
 
-/obj/effect/ctf/ammo/Crossed(atom/movable/AM)
-	. = ..()
+/obj/effect/ctf/ammo/proc/on_entered(datum/source, atom/movable/AM)
+	SIGNAL_HANDLER
 	reload(AM)
 
 /obj/effect/ctf/ammo/Bump(atom/A)

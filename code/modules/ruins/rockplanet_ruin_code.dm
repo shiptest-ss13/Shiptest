@@ -93,6 +93,21 @@
 /obj/item/strange_crystal
 	name = "strange crystal"
 	desc = "A crystal that came from a dead creature. Its rapid growth and corruption is kept inert."
-	icon = 'whitesands/icons/obj/lavaland/newlavalandplants.dmi'
+	icon = 'icons/obj/lavaland/ash_flora.dmi'
 	icon_state = "unnamed_crystal"
 	grind_results = list(/datum/reagent/crystal_reagent = 4)
+
+/obj/item/strange_crystal/attackby(obj/item/item, mob/user, params)
+	. = ..()
+	if(!istype(item, /obj/item/kitchen/knife))
+		return
+	playsound(src, 'sound/effects/glassbr1.ogg', 50, TRUE, -1)
+	to_chat(user, "<span class='notice'>You start breaking [src] up into shards...</span>")
+	if(!do_after(user, 1 SECONDS, src))
+		return
+	var/obj/item/result = new /obj/item/garnish/crystal(drop_location())
+	var/give_to_user = user.is_holding(src)
+	qdel(src)
+	if(give_to_user)
+		user.put_in_hands(result)
+	to_chat(user, "<span class='notice'>You finish breaking [src]</span>")

@@ -9,7 +9,7 @@
 
 /obj/item/stack/ore
 	name = "rock"
-	icon = 'icons/obj/mining.dmi'
+	icon = 'icons/obj/ores.dmi'
 	icon_state = "ore"
 	item_state = "ore"
 	full_w_class = WEIGHT_CLASS_BULKY
@@ -96,11 +96,47 @@
 	icon_state = "Glass ore"
 	item_state = "Glass ore"
 	singular_name = "sand pile"
+	grind_results = list(/datum/reagent/silicon = 10)
 	points = 1
 	custom_materials = list(/datum/material/glass=MINERAL_MATERIAL_AMOUNT)
 	refined_type = /obj/item/stack/sheet/glass
 	w_class = WEIGHT_CLASS_TINY
 	mine_experience = 0 //its sand
+
+/obj/item/stack/ore/glass/basalt
+	name = "volcanic ash"
+	icon_state = "volcanic_sand"
+	item_state = "volcanic_sand"
+	singular_name = "volcanic ash pile"
+	grind_results = list(/datum/reagent/toxin/lava_microbe = 1, /datum/reagent/ash = 8.5, /datum/reagent/silicon = 8.5)
+
+/obj/item/stack/ore/glass/whitesands
+	name = "white sand pile"
+	icon_state = "whitesands"
+	item_state = "whitesands"
+	singular_name = "white sand pile"
+	grind_results = list(/datum/reagent/consumable/sodiumchloride = 10, /datum/reagent/silicon = 10)
+
+/obj/item/stack/ore/glass/rockplanet
+	name = "oxidized sand pile"
+	icon_state = "rockplanet_sand"
+	item_state = "rockplanet_sand"
+	singular_name = "iron sand pile"
+	grind_results = list(/datum/reagent/silicon = 10, /datum/reagent/iron = 10)
+
+/obj/item/stack/ore/glass/wasteplanet
+	name = "oily dust"
+	icon_state = "wasteplanet_sand"
+	item_state = "wasteplanet_sand"
+	singular_name = "rocky dust"
+	grind_results = list(/datum/reagent/silicon = 10, /datum/reagent/lithium = 2, /datum/reagent/radium = 1, /datum/reagent/chlorine = 1, /datum/reagent/aluminium = 1)//may be unsafe for human consumption
+
+/obj/item/stack/ore/glass/beach
+	name = "beige sand pile"
+	icon_state = "beach_sand"
+	item_state = "beach_sand"
+	singular_name = "beige sand pile"
+	grind_results = list(/datum/reagent/silicon = 10)
 
 GLOBAL_LIST_INIT(sand_recipes, list(\
 		new /datum/stack_recipe("sandstone", /obj/item/stack/sheet/mineral/sandstone, 1, 1, 50),\
@@ -128,14 +164,6 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 	if (severity == EXPLODE_NONE)
 		return
 	qdel(src)
-
-/obj/item/stack/ore/glass/basalt
-	name = "volcanic ash"
-	icon_state = "volcanic_sand"
-	item_state = "volcanic_sand"
-	singular_name = "volcanic ash pile"
-	grind_results = list(/datum/reagent/toxin/lava_microbe = 5)		//WS Edit - Fuck
-	mine_experience = 0
 
 /obj/item/stack/ore/plasma
 	name = "plasma ore"
@@ -222,7 +250,7 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 /obj/item/gibtonite
 	name = "gibtonite ore"
 	desc = "Extremely explosive if struck with mining equipment, Gibtonite is often used by miners to speed up their work by using it as a mining charge. This material is illegal to possess by unauthorized personnel under space law."
-	icon = 'icons/obj/mining.dmi'
+	icon = 'icons/obj/ores.dmi'
 	icon_state = "Gibtonite ore"
 	item_state = "Gibtonite ore"
 	w_class = WEIGHT_CLASS_BULKY
@@ -349,7 +377,8 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 	var/value
 	var/coinflip
 	item_flags = NO_MAT_REDEMPTION //You know, it's kind of a problem that money is worth more extrinsicly than intrinsically in this universe.
-
+	drop_sound = 'sound/items/handling/coin_drop.ogg'
+	pickup_sound =  'sound/items/handling/coin_pickup.ogg'
 /obj/item/coin/Initialize()
 	. = ..()
 	coinflip = pick(sideslist)
@@ -357,15 +386,12 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 	pixel_x = base_pixel_x + rand(0,16) - 8
 	pixel_y = base_pixel_y + rand(0,8) - 8
 
-/obj/item/coin/set_custom_materials(var/list/materials, multiplier = 1)
+/obj/item/coin/set_custom_materials(list/materials, multiplier = 1)
 	. = ..()
 	value = 0
 	for(var/i in custom_materials)
 		var/datum/material/M = i
 		value += M.value_per_unit * custom_materials[M]
-
-/obj/item/coin/get_item_credit_value()
-	return value
 
 /obj/item/coin/suicide_act(mob/living/user)
 	user.visible_message("<span class='suicide'>[user] contemplates suicide with \the [src]!</span>")
@@ -385,10 +411,6 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 		user.suicide_log()
 	else
 		user.visible_message("<span class='suicide'>\the [src] lands on [coinflip]! [user] keeps on living!</span>")
-
-/obj/item/coin/examine(mob/user)
-	. = ..()
-	. += "<span class='info'>It's worth [value] credit\s.</span>"
 
 /obj/item/coin/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/stack/cable_coil))

@@ -138,6 +138,25 @@
 /obj/machinery/power/solar/proc/occlusion_setup()
 	obscured = TRUE
 
+	var/sun_type = virtual_level_trait(ZTRAIT_SUN_TYPE)
+	if(sun_type == STATIC_OBSCURED)
+		return
+		// go straight to jail
+	if(sun_type == STATIC_EXPOSED)
+		var/turf/loc_turf = loc
+		loc_turf = loc_turf && loc_turf.above()
+		if (!loc_turf)
+			var/count = 0
+			for(var/turf/other_turf in orange(1, src))
+				count += !isgroundlessturf(other_turf)
+			if (count >= 9)
+				return
+		else if(!isopenturf(loc_turf))
+			return
+		obscured = FALSE
+		return
+		// do not continue
+
 	var/distance = OCCLUSION_DISTANCE
 	var/target_x = round(sin(SSsun.azimuth), 0.01)
 	var/target_y = round(cos(SSsun.azimuth), 0.01)
@@ -161,6 +180,11 @@
 	sunfrac = 0
 	if(obscured)
 		return 0
+
+	var/sun_type = virtual_level_trait(ZTRAIT_SUN_TYPE)
+	if (sun_type == STATIC_EXPOSED)
+		sunfrac = 1
+		return 1
 
 	var/sun_azimuth = SSsun.azimuth
 	if(azimuth_current == sun_azimuth) //just a quick optimization for the most frequent case
@@ -411,9 +435,9 @@
 		if(I.use_tool(src, user, 20, volume=50))
 			if (src.machine_stat & BROKEN)
 				to_chat(user, "<span class='notice'>The broken glass falls out.</span>")
-				var/obj/structure/frame/computer/A = new /obj/structure/frame/computer( src.loc )
-				new /obj/item/shard( src.loc )
-				var/obj/item/circuitboard/computer/solar_control/M = new /obj/item/circuitboard/computer/solar_control( A )
+				var/obj/structure/frame/computer/A = new /obj/structure/frame/computer(src.loc)
+				new /obj/item/shard(src.loc)
+				var/obj/item/circuitboard/computer/solar_control/M = new /obj/item/circuitboard/computer/solar_control(A)
 				for (var/obj/C in src)
 					C.forceMove(drop_location())
 				A.circuit = M
@@ -423,8 +447,8 @@
 				qdel(src)
 			else
 				to_chat(user, "<span class='notice'>You disconnect the monitor.</span>")
-				var/obj/structure/frame/computer/A = new /obj/structure/frame/computer( src.loc )
-				var/obj/item/circuitboard/computer/solar_control/M = new /obj/item/circuitboard/computer/solar_control( A )
+				var/obj/structure/frame/computer/A = new /obj/structure/frame/computer(src.loc)
+				var/obj/item/circuitboard/computer/solar_control/M = new /obj/item/circuitboard/computer/solar_control(A)
 				for (var/obj/C in src)
 					C.forceMove(drop_location())
 				A.circuit = M

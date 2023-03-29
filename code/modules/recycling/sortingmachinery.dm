@@ -144,7 +144,7 @@
 		return
 	to_chat(user, "<span class='notice'>You lean on the back of [O] and start pushing to rip the wrapping around it.</span>")
 	if(do_after(user, 50, target = O))
-		if(!user || user.stat != CONSCIOUS || user.loc != O || O.loc != src )
+		if(!user || user.stat != CONSCIOUS || user.loc != O || O.loc != src)
 			return
 		to_chat(user, "<span class='notice'>You successfully removed [O]'s wrapping !</span>")
 		O.forceMove(loc)
@@ -328,6 +328,8 @@
 	item_state = "electronic"
 	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
+	pickup_sound =  'sound/items/handling/device_pickup.ogg'
+	drop_sound = 'sound/items/handling/device_drop.ogg'
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT
 

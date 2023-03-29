@@ -22,6 +22,10 @@
 	display_name = "vape"
 	path = /obj/item/clothing/mask/vape
 
+/datum/gear/ecigar
+	display_name = "e-cigar"
+	path = /obj/item/clothing/mask/vape/cigar
+
 /datum/gear/bandana
 	display_name = "bandana, red"
 	path = /obj/item/clothing/mask/bandana/red
@@ -41,6 +45,7 @@
 /datum/gear/lighter
 	display_name = "cheap lighter"
 	path = /obj/item/lighter/greyscale
+
 /datum/gear/zippo
 	display_name = "zippo"
 	path = /obj/item/lighter
@@ -67,7 +72,11 @@
 
 /datum/gear/tablet
 	display_name = "tablet computer"
-	path = /obj/item/modular_computer/tablet
+	path = /obj/item/modular_computer/tablet/preset/cheap
+
+/datum/gear/laptop
+	display_name = "laptop computer"
+	path = /obj/item/modular_computer/laptop/preset/civilian
 
 /datum/gear/pen
 	display_name = "pen, black"
@@ -92,6 +101,10 @@
 /datum/gear/lizard
 	display_name = "toy, lizard plushie"
 	path = /obj/item/toy/plush/lizardplushie
+
+/datum/gear/snake
+	display_name = "toy, snake plushie"
+	path = /obj/item/toy/plush/snakeplushie
 
 /datum/gear/moth
 	display_name = "toy, moth plushie"
@@ -150,3 +163,8 @@
 /datum/gear/surgical_mask
 	display_name = "surgical mask"
 	path = /obj/item/clothing/mask/surgical
+
+/datum/gear/maidbox
+	display_name = "maid outfit bundle"
+	path = /obj/item/storage/box/maid
+	description = "Contains a four-piece maid outfit inside a single box."

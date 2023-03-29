@@ -10,6 +10,7 @@
 	integrity_failure = 0.5
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 40, "acid" = 20)
 	clicksound = "keyboard"
+	req_ship_access = TRUE
 	var/brightness_on = 1
 	var/icon_keyboard = "generic_key"
 	var/icon_screen = "generic"
@@ -37,21 +38,19 @@
 	. = ..()
 
 	SSvis_overlays.remove_vis_overlay(src, managed_vis_overlays)
+	if(machine_stat & BROKEN)
+		SSvis_overlays.add_vis_overlay(src, icon, "[icon_state]_broken", layer, plane, dir)
+		return
 	if(machine_stat & NOPOWER)
 		. += "[icon_keyboard]_off"
 		return
 	. += icon_keyboard
-
-	// This whole block lets screens ignore lighting and be visible even in the darkest room
-	var/overlay_state = icon_screen
-	if(machine_stat & BROKEN)
-		overlay_state = "[icon_state]_broken"
-	SSvis_overlays.add_vis_overlay(src, icon, overlay_state, layer, plane, dir)
-	SSvis_overlays.add_vis_overlay(src, icon, overlay_state, layer, EMISSIVE_PLANE, dir)
+	SSvis_overlays.add_vis_overlay(src, icon, icon_screen, layer, plane, dir)
+	SSvis_overlays.add_vis_overlay(src, icon, icon_screen, layer, EMISSIVE_PLANE, dir)
 
 /obj/machinery/computer/power_change()
 	. = ..()
-	if(machine_stat & NOPOWER)
+	if(machine_stat & (NOPOWER|BROKEN))
 		set_light(0)
 	else
 		set_light(brightness_on)
@@ -122,5 +121,5 @@
 
 /obj/machinery/computer/AltClick(mob/user)
 	. = ..()
-	if(!user.canUseTopic(src, !issilicon(user)) || !is_operational())
+	if(!user.canUseTopic(src, !issilicon(user)) || !is_operational)
 		return

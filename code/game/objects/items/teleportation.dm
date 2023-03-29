@@ -186,10 +186,12 @@
 		return
 	RegisterSignal(created[1], COMSIG_PARENT_QDELETING, .proc/on_portal_destroy) //Gosh darn it kevinz.
 	RegisterSignal(created[2], COMSIG_PARENT_QDELETING, .proc/on_portal_destroy)
-	try_move_adjacent(created[1], user.dir)
-	active_portal_pairs[created[1]] = created[2]
 	var/obj/effect/portal/c1 = created[1]
 	var/obj/effect/portal/c2 = created[2]
+	var/turf/check_turf = get_turf(get_step(user, user.dir))
+	if(check_turf.CanPass(user, get_dir(check_turf, user)))
+		c1.forceMove(check_turf)
+	active_portal_pairs[created[1]] = created[2]
 	investigate_log("was used by [key_name(user)] at [AREACOORD(user)] to create a portal pair with destinations [AREACOORD(c1)] and [AREACOORD(c2)].", INVESTIGATE_PORTAL)
 	add_fingerprint(user)
 

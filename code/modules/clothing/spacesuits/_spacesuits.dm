@@ -25,6 +25,8 @@
 /obj/item/clothing/suit/space
 	name = "space suit"
 	desc = "A suit that protects against low pressure environments. Has a big 13 on the back."
+	icon = 'icons/obj/clothing/suits/spacesuits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suits/spacesuits.dmi'
 	icon_state = "spaceold"
 	item_state = "s_suit"
 	w_class = WEIGHT_CLASS_BULKY
@@ -43,5 +45,5 @@
 	strip_delay = 80
 	equip_delay_other = 80
 	resistance_flags = NONE
-	greyscale_colors = list(list(10, 20))
+	greyscale_colors = list(list(17, 16), list(9, 17), list(13, 13))
 	greyscale_icon_state = "spacesuit"

@@ -98,55 +98,54 @@
 	head = /obj/item/clothing/head/pirate
 
 
-/obj/effect/mob_spawn/human/corpse/russian
-	name = "Russian"
+/obj/effect/mob_spawn/human/corpse/frontier
+	name = "Frontiersman"
 	outfit = /datum/outfit/russiancorpse
 	hairstyle = "Bald"
 	facial_hairstyle = "Shaved"
 
 /datum/outfit/russiancorpse
-	name = "Russian Corpse"
-	uniform = /obj/item/clothing/under/costume/soviet
+	name = "Frontiersman Corpse"
+	uniform = /obj/item/clothing/under/rank/security/officer/frontier
 	shoes = /obj/item/clothing/shoes/jackboots
-	head = /obj/item/clothing/head/bearpelt
+	head = /obj/item/clothing/head/beret/sec/frontier
 	gloves = /obj/item/clothing/gloves/color/black
-	mask = /obj/item/clothing/mask/gas
 
+/obj/effect/mob_spawn/human/corpse/frontier/ranged
+	outfit = /datum/outfit/russiancorpse
 
+/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper
+	outfit = /datum/outfit/russiancorpse/trooper
 
-/obj/effect/mob_spawn/human/corpse/russian/ranged
-	outfit = /datum/outfit/russiancorpse/ranged
-
-/datum/outfit/russiancorpse/ranged
-	name = "Ranged Russian Corpse"
-	head = /obj/item/clothing/head/ushanka
-
-
-/obj/effect/mob_spawn/human/corpse/russian/ranged/trooper
-	outfit = /datum/outfit/russiancorpse/ranged/trooper
-
-/datum/outfit/russiancorpse/ranged/trooper
-	name = "Ranged Russian Trooper Corpse"
-	uniform = /obj/item/clothing/under/syndicate/camo
-	suit = /obj/item/clothing/suit/armor/bulletproof
+/datum/outfit/russiancorpse/trooper
+	name = "Frontiersman Armored Corpse"
+	suit = /obj/item/clothing/suit/armor/vest/bulletproof/frontier
 	shoes = /obj/item/clothing/shoes/combat
 	gloves = /obj/item/clothing/gloves/tackler/combat
 	ears = /obj/item/radio/headset
-	head = /obj/item/clothing/head/helmet/alt
-	mask = /obj/item/clothing/mask/balaclava
+	head = /obj/item/clothing/head/helmet/bulletproof/x11/frontier
 
 
-/obj/effect/mob_spawn/human/corpse/russian/ranged/officer
-	name = "Russian Officer"
+/obj/effect/mob_spawn/human/corpse/frontier/ranged/officer
+	name = "Frontiersman Officer"
 	outfit = /datum/outfit/russiancorpse/officer
 
 /datum/outfit/russiancorpse/officer
-	name = "Russian Officer Corpse"
-	uniform = /obj/item/clothing/under/costume/russian_officer
-	suit = /obj/item/clothing/suit/security/officer/russian
+	name = "Frontiersman officer Corpse"
+	uniform = /obj/item/clothing/under/rank/security/officer/frontier/officer
+	suit = /obj/item/clothing/suit/armor/frontier
 	shoes = /obj/item/clothing/shoes/combat
 	ears = /obj/item/radio/headset
-	head = /obj/item/clothing/head/ushanka
+	head = /obj/item/clothing/head/caphat/frontier
+
+/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/heavy
+	outfit = /datum/outfit/russiancorpse/trooper/heavy
+
+/datum/outfit/russiancorpse/trooper/heavy
+	name = "Frontiersman Heavy Corpse"
+	suit = /obj/item/clothing/suit/space/hardsuit/security/independent/frontier
+	head = /obj/item/clothing/head/beret/sec/frontier/officer
+	back = /obj/item/minigunpack
 
 
 /obj/effect/mob_spawn/human/corpse/wizard
@@ -221,3 +220,47 @@
 	back = /obj/item/storage/backpack/satchel/med
 	id = /obj/item/card/id
 	glasses = /obj/item/clothing/glasses/hud/health
+
+/obj/effect/mob_spawn/human/corpse/solgov/infantry
+	name = "SolGov Infantryman"
+	id_job = "SolGov Infantryman"
+	outfit = /datum/outfit/solgov/infantrymancorpse
+	id_access_list = list(ACCESS_SOLGOV)
+	hairstyle = "Buzzcut"
+	facial_hairstyle = "Shaved"
+
+/datum/outfit/solgov/infantrymancorpse
+	name = "SGV Infantry Corpse"
+	uniform = /obj/item/clothing/under/solgov
+	suit = /obj/item/clothing/suit/armor/vest/bulletproof/solgov
+	shoes = /obj/item/clothing/shoes/jackboots
+	gloves = /obj/item/clothing/gloves/color/grey
+	ears = /obj/item/radio/headset
+	suit_store = null
+	mask = /obj/item/clothing/mask/gas/sechailer/swat
+	head = /obj/item/clothing/head/helmet/solgov
+	back = /obj/item/storage/backpack
+	id = /obj/item/card/id/solgov
+	backpack_contents = null
+
+/obj/effect/mob_spawn/human/corpse/solgov/officer
+	name = "SolGov Officer"
+	id_job = "SolGov Officer"
+	outfit = /datum/outfit/solgov/officercorpse
+	id_access_list = list(ACCESS_SOLGOV)
+	hairstyle = "Buzzcut"
+	facial_hairstyle = "Shaved"
+
+/datum/outfit/solgov/officercorpse
+	name = "SGV Officer Corpse"
+	uniform = /obj/item/clothing/under/solgov
+	suit = /obj/item/clothing/suit/armor/vest/bulletproof/solgov
+	shoes = /obj/item/clothing/shoes/combat
+	gloves = /obj/item/clothing/gloves/combat
+	ears = /obj/item/radio/headset/solgov/alt
+	suit_store = null
+	mask = /obj/item/clothing/mask/gas/sechailer/swat
+	head = /obj/item/clothing/head/helmet/solgov
+	back = /obj/item/storage/backpack
+	id = /obj/item/card/id/solgov/commander
+	backpack_contents = null

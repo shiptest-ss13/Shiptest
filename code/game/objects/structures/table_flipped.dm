@@ -9,6 +9,14 @@
 	opacity = FALSE
 	var/table_type = /obj/structure/table
 
+/obj/structure/flippedtable/Initialize()
+	. = ..()
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_EXIT = .proc/on_exit,
+	)
+
+	AddElement(/datum/element/connect_loc, loc_connections)
+
 /obj/structure/flippedtable/CanAllowThrough(atom/movable/mover, turf/target)
 	. = ..()
 	var/attempted_dir = get_dir(loc, target)
@@ -23,15 +31,21 @@
 		return FALSE
 	return attempted_dir != dir
 
-/obj/structure/flippedtable/CheckExit(atom/movable/exiter, turf/target)
+/obj/structure/flippedtable/proc/on_exit(datum/source, atom/movable/exiter, direction)
+	SIGNAL_HANDLER
+
+	if(exiter == src)
+		return // Let's not block ourselves.
+
 	if(table_type == /obj/structure/table/glass) //Glass table, jolly ranchers pass
 		if(istype(exiter) && (exiter.pass_flags & PASSGLASS))
-			return TRUE
+			return
 	if(istype(exiter, /obj/projectile))
-		return TRUE
-	if(get_dir(exiter.loc, target) == dir)
-		return FALSE
-	return TRUE
+		return
+	if(direction == dir)
+		exiter.Bump(src)
+		return COMPONENT_ATOM_BLOCK_EXIT
+	return
 
 /obj/structure/flippedtable/CtrlShiftClick(mob/user)
 	. = ..()

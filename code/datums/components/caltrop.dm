@@ -6,15 +6,40 @@
 
 	var/cooldown = 0
 
+	///given to connect_loc to listen for something moving over target
+	var/static/list/crossed_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+
 /datum/component/caltrop/Initialize(_min_damage = 0, _max_damage = 0, _probability = 100, _flags = NONE)
+	. = ..()
+	if(!isatom(parent))
+		return COMPONENT_INCOMPATIBLE
+
 	min_damage = _min_damage
 	max_damage = max(_min_damage, _max_damage)
 	probability = _probability
 	flags = _flags
 
-	RegisterSignal(parent, list(COMSIG_MOVABLE_CROSSED), .proc/Crossed)
+	if(ismovable(parent))
+		AddComponent(/datum/component/connect_loc_behalf, parent, crossed_connections)
+	else
+		RegisterSignal(get_turf(parent), COMSIG_ATOM_ENTERED, .proc/on_entered)
 
-/datum/component/caltrop/proc/Crossed(datum/source, atom/movable/AM)
+// Inherit the new values passed to the component
+/datum/component/caltrop/InheritComponent(datum/component/caltrop/new_comp, original, min_damage, max_damage, probability, flags, soundfile)
+	if(!original)
+		return
+	if(min_damage)
+		src.min_damage = min_damage
+	if(max_damage)
+		src.max_damage = max_damage
+	if(probability)
+		src.probability = probability
+	if(flags)
+		src.flags = flags
+
+/datum/component/caltrop/proc/on_entered(datum/source, atom/movable/AM, atom/old_loc, list/atom/old_locs)
 	SIGNAL_HANDLER
 
 	if(!prob(probability))
@@ -82,3 +107,7 @@
 			log_combat(H.pulledby, H, "pulled", A)
 		else
 			H.log_message("has stepped on [A]", LOG_ATTACK, color="orange")		//WS Edit End
+
+/datum/component/caltrop/UnregisterFromParent()
+	if(ismovable(parent))
+		qdel(GetComponent(/datum/component/connect_loc_behalf))

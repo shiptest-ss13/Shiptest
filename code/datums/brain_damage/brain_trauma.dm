@@ -38,7 +38,8 @@
 
 //Called when given to a mob
 /datum/brain_trauma/proc/on_gain()
-	to_chat(owner, gain_text)
+	if(gain_text)
+		to_chat(owner, gain_text)
 	RegisterSignal(owner, COMSIG_MOB_SAY, .proc/handle_speech)
 	RegisterSignal(owner, COMSIG_MOVABLE_HEAR, .proc/handle_hearing)
 
@@ -48,6 +49,11 @@
 		to_chat(owner, lose_text)
 	UnregisterSignal(owner, COMSIG_MOB_SAY)
 	UnregisterSignal(owner, COMSIG_MOVABLE_HEAR)
+
+//Called when a mob is cloned
+/datum/brain_trauma/proc/on_clone()
+	if(clonable)
+		return new type
 
 //Called when hearing a spoken message
 /datum/brain_trauma/proc/handle_hearing(datum/source, list/hearing_args)

@@ -100,7 +100,6 @@ GLOBAL_LIST_INIT(sandbag_recipes, list ( \
 	singular_name = "diamond"
 	sheettype = "diamond"
 	custom_materials = list(/datum/material/diamond=MINERAL_MATERIAL_AMOUNT)
-	novariants = TRUE
 	grind_results = list(/datum/reagent/carbon = 20)
 	point_value = 25
 	merge_type = /obj/item/stack/sheet/mineral/diamond
@@ -251,6 +250,21 @@ GLOBAL_LIST_INIT(gold_recipes, list ( \
 	. = ..()
 	. += GLOB.gold_recipes
 
+/obj/item/stack/sheet/mineral/gold/attackby(obj/item/item, mob/user, params)
+	. = ..()
+	if(item.tool_behaviour != TOOL_WIRECUTTER)
+		return
+	playsound(src, 'sound/weapons/slice.ogg', 50, TRUE, -1)
+	to_chat(user, "<span class='notice'>You start whittling away some of [src]...</span>")
+	if(!do_after(user, 1 SECONDS, src))
+		return
+	var/obj/item/result = new /obj/item/garnish/gold(drop_location())
+	var/give_to_user = user.is_holding(src)
+	use(1)
+	if(QDELETED(src) && give_to_user)
+		user.put_in_hands(result)
+	to_chat(user, "<span class='notice'>You finish cutting [src]</span>")
+
 /obj/item/stack/sheet/mineral/gold/fifty
 	amount = 50
 
@@ -291,6 +305,21 @@ GLOBAL_LIST_INIT(silver_recipes, list ( \
 	. = ..()
 	. += GLOB.silver_recipes
 
+/obj/item/stack/sheet/mineral/silver/attackby(obj/item/item, mob/user, params)
+	. = ..()
+	if(item.tool_behaviour != TOOL_WIRECUTTER)
+		return
+	playsound(src, 'sound/weapons/slice.ogg', 50, TRUE, -1)
+	to_chat(user, "<span class='notice'>You start whittling away some of [src]...</span>")
+	if(!do_after(user, 1 SECONDS, src))
+		return
+	var/obj/item/result = new /obj/item/garnish/silver(drop_location())
+	var/give_to_user = user.is_holding(src)
+	use(1)
+	if(QDELETED(src) && give_to_user)
+		user.put_in_hands(result)
+	to_chat(user, "<span class='notice'>You finish cutting [src]</span>")
+
 /obj/item/stack/sheet/mineral/silver/fifty
 	amount = 50
 
@@ -310,7 +339,7 @@ GLOBAL_LIST_INIT(silver_recipes, list ( \
 	singular_name = "bananium sheet"
 	sheettype = "bananium"
 	custom_materials = list(/datum/material/bananium=MINERAL_MATERIAL_AMOUNT)
-	novariants = TRUE
+
 	grind_results = list(/datum/reagent/consumable/banana = 20)
 	point_value = 50
 	merge_type = /obj/item/stack/sheet/mineral/bananium
@@ -384,6 +413,15 @@ GLOBAL_LIST_INIT(titanium_recipes, list ( \
 	merge_type = /obj/item/stack/sheet/mineral/plastitanium
 	material_flags = MATERIAL_NO_EFFECTS
 	walltype = /turf/closed/wall/mineral/plastitanium
+
+/obj/item/stack/sheet/mineral/plastitanium/fifty
+	amount = 50
+
+/obj/item/stack/sheet/mineral/plastitanium/twenty
+	amount = 20
+
+/obj/item/stack/sheet/mineral/plastitanium/five
+	amount = 5
 
 GLOBAL_LIST_INIT(plastitanium_recipes, list ( \
 	new/datum/stack_recipe("plastitanium tile", /obj/item/stack/tile/mineral/plastitanium, 1, 4, 20), \
@@ -513,7 +551,7 @@ GLOBAL_LIST_INIT(abductor_recipes, list ( \
 /obj/item/stack/sheet/mineral/coal
 	name = "coal"
 	desc = "Someone's gotten on the naughty list."
-	icon = 'icons/obj/mining.dmi'
+	icon = 'icons/obj/ores.dmi'
 	icon_state = "slag"
 	singular_name = "coal lump"
 	merge_type = /obj/item/stack/sheet/mineral/coal

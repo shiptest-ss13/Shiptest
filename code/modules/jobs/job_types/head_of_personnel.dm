@@ -1,13 +1,8 @@
 /datum/job/head_of_personnel
-	title = "Head of Personnel"
+	name = "Head of Personnel"
 	auto_deadmin_role_flags = DEADMIN_POSITION_HEAD
-	department_head = list("Captain")
-	head_announce = list(RADIO_CHANNEL_SUPPLY, RADIO_CHANNEL_SERVICE)
-	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the captain"
-	selection_color = "#ddddff"
 	minimal_player_age = 10
 	exp_requirements = 180
 	officer = TRUE
@@ -33,18 +28,17 @@
 		ACCESS_MECH_MINING, ACCESS_MECH_ENGINE, ACCESS_MECH_SCIENCE, ACCESS_MECH_SECURITY, ACCESS_MECH_MEDICAL,
 		ACCESS_THEATRE, ACCESS_CHAPEL_OFFICE, ACCESS_LIBRARY, ACCESS_RESEARCH, ACCESS_MINING, ACCESS_VAULT, ACCESS_MINING_STATION,
 		ACCESS_HOP, ACCESS_RC_ANNOUNCE, ACCESS_KEYCARD_AUTH, ACCESS_GATEWAY, ACCESS_MINERAL_STOREROOM)
-	paycheck = PAYCHECK_COMMAND
-	paycheck_department = ACCOUNT_SRV
 
 	display_order = JOB_DISPLAY_ORDER_HEAD_OF_PERSONNEL
 
 /datum/outfit/job/head_of_personnel
 	name = "Head of Personnel"
+	job_icon = "headofpersonnel"
 	jobtype = /datum/job/head_of_personnel
 
 	id = /obj/item/card/id/silver
 	belt = /obj/item/pda/heads/head_of_personnel
-	ears = /obj/item/radio/headset/heads/head_of_personnel
+	ears = /obj/item/radio/headset/headset_com
 	uniform = /obj/item/clothing/under/rank/command/head_of_personnel
 	alt_uniform = /obj/item/clothing/under/rank/command/head_of_personnel/suit //WS Edit - Alt Uniforms
 	alt_suit = /obj/item/clothing/suit/ianshirt
@@ -68,6 +62,7 @@
 
 /datum/outfit/job/head_of_personnel/nt
 	name = "First Officer (Nanotrasen)"
+	ears = /obj/item/radio/headset/nanotrasen
 	uniform = /obj/item/clothing/under/rank/command/head_of_personnel/nt
 	alt_uniform = null
 	alt_suit = null
@@ -76,6 +71,7 @@
 
 /datum/outfit/job/head_of_personnel/solgov
 	name = "Executive Officer (SolGov)"
+	ears = /obj/item/radio/headset/solgov
 	uniform = /obj/item/clothing/under/rank/command/lieutenant
 	head = /obj/item/clothing/head/solgov
 	shoes = /obj/item/clothing/shoes/laceup
@@ -86,6 +82,7 @@
 
 /datum/outfit/job/head_of_personnel/pirate
 	name = "First Mate (Pirate)"
+	ears = /obj/item/radio/headset/pirate
 	uniform = /obj/item/clothing/under/costume/russian_officer
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/pirate
@@ -100,3 +97,42 @@
 	shoes = /obj/item/clothing/shoes/cowboy/black
 	accessory = /obj/item/clothing/accessory/waistcoat
 	head = /obj/item/clothing/head/HoS/cowboy
+
+/datum/outfit/job/head_of_personnel/minutemen
+	name = "Bridge Officer (Colonial Minutemen)"
+
+	ears = /obj/item/radio/headset/minutemen/alt
+	uniform = /obj/item/clothing/under/rank/command/minutemen
+	alt_uniform = null
+	suit = /obj/item/clothing/suit/toggle/lawyer/minutemen
+	alt_suit = null
+
+	shoes = /obj/item/clothing/shoes/combat
+	head = /obj/item/clothing/head/cowboy/sec/minutemen
+	backpack = /obj/item/storage/backpack
+	backpack_contents = list(/obj/item/storage/box/ids=1,\
+		/obj/item/melee/classic_baton/telescopic=1, /obj/item/modular_computer/tablet/preset/advanced = 1)
+
+/datum/outfit/job/head_of_personnel/syndicate
+	name = "Bridge Officer (Syndicate)"
+
+	ears = /obj/item/radio/headset/syndicate/alt
+	uniform = /obj/item/clothing/under/syndicate/aclfgrunt
+	shoes = /obj/item/clothing/shoes/jackboots
+	head = /obj/item/clothing/head/HoS/beret/syndicate
+	gloves = /obj/item/clothing/gloves/color/white
+	id = /obj/item/card/id/syndicate_command/crew_id
+	r_pocket = /obj/item/kitchen/knife/combat/survival
+	glasses = /obj/item/clothing/glasses/hud/health
+
+/datum/outfit/job/head_of_personnel/syndicate/intel
+	name = "Intelligence Officer (Syndicate)"
+
+	ears = /obj/item/radio/headset/syndicate/alt
+	uniform = /obj/item/clothing/under/suit/charcoal
+	shoes = /obj/item/clothing/shoes/jackboots
+	head = /obj/item/clothing/head/HoS/syndicate
+	gloves = /obj/item/clothing/gloves/combat
+	id = /obj/item/card/id/syndicate_command/crew_id
+	r_pocket = /obj/item/kitchen/knife/combat/survival
+	glasses = /obj/item/clothing/glasses/sunglasses

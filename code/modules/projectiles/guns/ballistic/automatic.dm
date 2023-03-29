@@ -2,6 +2,8 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	var/select = 1
 	can_suppress = TRUE
+	burst_size = 3
+	fire_delay = 2
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 	semi_auto = TRUE
 	fire_sound = 'sound/weapons/gun/smg/shot.ogg'
@@ -9,23 +11,8 @@
 	vary_fire_sound = FALSE
 	rack_sound = 'sound/weapons/gun/smg/smgrack.ogg'
 	suppressed_sound = 'sound/weapons/gun/smg/shot_suppressed.ogg'
-	automatic = 1
 	weapon_weight = WEAPON_MEDIUM
 	pickup_sound =  'sound/items/handling/rifle_pickup.ogg'
-
-/obj/item/gun/ballistic/automatic/proto
-	name = "\improper Nanotrasen Saber SMG"
-	desc = "A prototype full auto 9mm submachine gun, designated 'SABR'. Has a threaded barrel for suppressors and a folding stock."
-	icon_state = "saber"
-	mag_type = /obj/item/ammo_box/magazine/smgm9mm
-	pin = null
-	fire_rate = 5
-	bolt_type = BOLT_TYPE_LOCKING
-	mag_display = TRUE
-	weapon_weight = WEAPON_LIGHT
-
-/obj/item/gun/ballistic/automatic/proto/unrestricted
-	pin = /obj/item/firing_pin
 
 /obj/item/gun/ballistic/automatic/update_overlays()
 	. = ..()
@@ -57,251 +44,6 @@
 	for(var/X in actions)
 		var/datum/action/A = X
 		A.UpdateButtonIcon()
-
-/obj/item/gun/ballistic/automatic/c20r
-	name = "\improper C-20r SMG"
-	desc = "A bullpup two-round burst .45 SMG, designated 'C-20r'. Has a 'Scarborough Arms - Per falcis, per pravitas' buttstamp."
-	icon_state = "c20r"
-	item_state = "c20r"
-	mag_type = /obj/item/ammo_box/magazine/smgm45
-	fire_delay = 2
-	burst_size = 2
-	pin = /obj/item/firing_pin/implant/pindicate
-	can_bayonet = TRUE
-	knife_x_offset = 26
-	knife_y_offset = 12
-	mag_display = TRUE
-	mag_display_ammo = TRUE
-	empty_indicator = TRUE
-
-/obj/item/gun/ballistic/automatic/c20r/unrestricted
-	pin = /obj/item/firing_pin
-
-/obj/item/gun/ballistic/automatic/c20r/Initialize()
-	. = ..()
-	update_icon()
-
-/obj/item/gun/ballistic/automatic/wt550
-	name = "WT-550 Automatic Rifle"
-	desc = "An outdated personal defence weapon. Uses 4.6x30mm rounds and is designated the WT-550 Automatic Rifle."
-	icon_state = "wt550"
-	item_state = "arg"
-	mag_type = /obj/item/ammo_box/magazine/wt550m9
-	can_suppress = FALSE
-	actions_types = list()
-	can_bayonet = TRUE
-	knife_x_offset = 25
-	knife_y_offset = 12
-	mag_display = TRUE
-	mag_display_ammo = TRUE
-	empty_indicator = TRUE
-	fire_rate = 4 //zedaedit: autorifle but awesome
-
-/obj/item/gun/ballistic/automatic/mini_uzi
-	name = "\improper Type U3 Uzi"
-	desc = "A lightweight submachine gun, for when you really want someone dead. Uses 9mm rounds."
-	icon_state = "uzi"
-	mag_type = /obj/item/ammo_box/magazine/uzim9mm
-	bolt_type = BOLT_TYPE_OPEN
-	mag_display = TRUE
-	fire_rate = 4
-	rack_sound = 'sound/weapons/gun/pistol/slide_lock.ogg'
-
-/obj/item/gun/ballistic/automatic/m90
-	name = "\improper M-90gl Carbine"
-	desc = "A three-round burst 5.56 toploading carbine, designated 'M-90gl'. Has an attached underbarrel grenade launcher which can be toggled on and off."
-	icon_state = "m90"
-	item_state = "m90"
-	mag_type = /obj/item/ammo_box/magazine/m556
-	can_suppress = FALSE
-	var/obj/item/gun/ballistic/revolver/grenadelauncher/underbarrel
-	burst_size = 3
-	fire_delay = 2
-	pin = /obj/item/firing_pin/implant/pindicate
-	mag_display = TRUE
-	empty_indicator = TRUE
-	fire_sound = 'sound/weapons/gun/smg/shot.ogg'
-
-/obj/item/gun/ballistic/automatic/m90/Initialize()
-	. = ..()
-	underbarrel = new /obj/item/gun/ballistic/revolver/grenadelauncher(src)
-	update_icon()
-
-/obj/item/gun/ballistic/automatic/m90/unrestricted
-	pin = /obj/item/firing_pin
-
-/obj/item/gun/ballistic/automatic/m90/unrestricted/Initialize()
-	. = ..()
-	underbarrel = new /obj/item/gun/ballistic/revolver/grenadelauncher/unrestricted(src)
-	update_icon()
-
-/obj/item/gun/ballistic/automatic/m90/afterattack(atom/target, mob/living/user, flag, params)
-	if(select == 2)
-		underbarrel.afterattack(target, user, flag, params)
-	else
-		return ..()
-
-/obj/item/gun/ballistic/automatic/m90/attackby(obj/item/A, mob/user, params)
-	if(istype(A, /obj/item/ammo_casing))
-		if(istype(A, underbarrel.magazine.ammo_type))
-			underbarrel.attack_self()
-			underbarrel.attackby(A, user, params)
-	else
-		..()
-
-/obj/item/gun/ballistic/automatic/m90/update_overlays()
-	. = ..()
-	switch(select)
-		if(0)
-			. += "[initial(icon_state)]_semi"
-		if(1)
-			. += "[initial(icon_state)]_burst"
-		if(2)
-			. += "[initial(icon_state)]_gren"
-
-/obj/item/gun/ballistic/automatic/m90/burst_select()
-	var/mob/living/carbon/human/user = usr
-	switch(select)
-		if(0)
-			select = 1
-			burst_size = initial(burst_size)
-			fire_delay = initial(fire_delay)
-			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
-		if(1)
-			select = 2
-			to_chat(user, "<span class='notice'>You switch to grenades.</span>")
-		if(2)
-			select = 0
-			burst_size = 1
-			fire_delay = 0
-			to_chat(user, "<span class='notice'>You switch to semi-auto.</span>")
-	playsound(user, 'sound/weapons/empty.ogg', 100, TRUE)
-	update_icon()
-	return
-
-/obj/item/gun/ballistic/automatic/tommygun
-	name = "\improper Thompson SMG"
-	desc = "Based on the classic 'Chicago Typewriter'."
-	icon_state = "tommygun"
-	item_state = "shotgun"
-	w_class = WEIGHT_CLASS_HUGE
-	slot_flags = 0
-	mag_type = /obj/item/ammo_box/magazine/tommygunm45
-	fire_rate = 5
-	can_suppress = FALSE
-	bolt_type = BOLT_TYPE_OPEN
-
-/obj/item/gun/ballistic/automatic/ar
-	name = "\improper NT-ARG 'Boarder'"
-	desc = "A robust assault rifle used by Nanotrasen fighting forces."
-	fire_sound = 'sound/weapons/gun/rifle/shot.ogg'
-	icon_state = "arg"
-	item_state = "arg"
-	slot_flags = 0
-	mag_type = /obj/item/ammo_box/magazine/m556
-	can_suppress = FALSE
-	fire_rate = 5
-
-
-// L6 SAW //
-/obj/item/gun/ballistic/automatic/l666
-	name = "\improper L666 FUCKYOUINATOR"
-	desc = "A heavily modified L6 Saw, this thing is the last thing you will ever see if you are not the wielder. Chambered in special L666 .50 caliber rounds."
-	icon_state = "l6"
-	item_state = "l6closedmag"
-	w_class = WEIGHT_CLASS_HUGE
-	slot_flags = 0
-	mag_type = /obj/item/ammo_box/magazine/l666ammo
-	weapon_weight = WEAPON_HEAVY
-	can_suppress = TRUE
-	fire_rate = 100
-	spread = 7
-	recoil = 0.75
-	pin = /obj/item/firing_pin
-	bolt_type = BOLT_TYPE_OPEN
-	mag_display = TRUE
-	mag_display_ammo = TRUE
-	tac_reloads = TRUE
-	fire_sound = 'sound/weapons/gun/l6/shot.ogg'
-	rack_sound = 'sound/weapons/gun/l6/l6_rack.ogg'
-	suppressed_sound = 'sound/weapons/gun/general/heavy_shot_suppressed.ogg'
-
-
-/obj/item/gun/ballistic/automatic/l666/BWOINK
-	name = "\improper L666 BWOINKINATOR"
-	desc = "The true gods are dead. All that is left is the bwoink. Repent."
-	fire_sound = 'sound/effects/adminhelp.ogg'
-
-/obj/item/gun/ballistic/automatic/l6_saw
-	name = "\improper L6 SAW"
-	desc = "A heavily modified 7.12x82mm light machine gun, designated 'L6 SAW'. Has 'Aussec Armoury - 2531' engraved on the receiver below the designation."
-	icon_state = "l6"
-	item_state = "l6closedmag"
-	w_class = WEIGHT_CLASS_HUGE
-	slot_flags = 0
-	mag_type = /obj/item/ammo_box/magazine/mm712x82
-	weapon_weight = WEAPON_HEAVY
-	var/cover_open = FALSE
-	can_suppress = FALSE
-	fire_rate = 6
-	spread = 7
-	pin = /obj/item/firing_pin/implant/pindicate
-	bolt_type = BOLT_TYPE_OPEN
-	mag_display = TRUE
-	mag_display_ammo = TRUE
-	tac_reloads = FALSE
-	fire_sound = 'sound/weapons/gun/l6/shot.ogg'
-	rack_sound = 'sound/weapons/gun/l6/l6_rack.ogg'
-	suppressed_sound = 'sound/weapons/gun/general/heavy_shot_suppressed.ogg'
-
-/obj/item/gun/ballistic/automatic/l6_saw/unrestricted
-	pin = /obj/item/firing_pin
-
-
-/obj/item/gun/ballistic/automatic/l6_saw/examine(mob/user)
-	. = ..()
-	. += "<b>alt + click</b> to [cover_open ? "close" : "open"] the dust cover."
-	if(cover_open && magazine)
-		. += "<span class='notice'>It seems like you could use an <b>empty hand</b> to remove the magazine.</span>"
-
-
-/obj/item/gun/ballistic/automatic/l6_saw/AltClick(mob/user)
-	cover_open = !cover_open
-	to_chat(user, "<span class='notice'>You [cover_open ? "open" : "close"] [src]'s cover.</span>")
-	playsound(user, 'sound/weapons/gun/l6/l6_door.ogg', 60, TRUE)
-	update_icon()
-
-
-/obj/item/gun/ballistic/automatic/l6_saw/update_overlays()
-	. = ..()
-	. += "l6_door_[cover_open ? "open" : "closed"]"
-
-
-/obj/item/gun/ballistic/automatic/l6_saw/afterattack(atom/target as mob|obj|turf, mob/living/user as mob|obj, flag, params)
-	if(cover_open)
-		to_chat(user, "<span class='warning'>[src]'s cover is open! Close it before firing!</span>")
-		return
-	else
-		. = ..()
-		update_icon()
-
-//ATTACK HAND IGNORING PARENT RETURN VALUE
-/obj/item/gun/ballistic/automatic/l6_saw/attack_hand(mob/user)
-	if (loc != user)
-		..()
-		return
-	if (!cover_open)
-		to_chat(user, "<span class='warning'>[src]'s cover is closed! Open it before trying to remove the magazine!</span>")
-		return
-	..()
-
-/obj/item/gun/ballistic/automatic/l6_saw/attackby(obj/item/A, mob/user, params)
-	if(!cover_open && istype(A, mag_type))
-		to_chat(user, "<span class='warning'>[src]'s dust cover prevents a magazine from being fit.</span>")
-		return
-	..()
-
-
 
 // SNIPER //
 
@@ -345,14 +87,14 @@
 	item_state = "moistnugget"
 	weapon_weight = WEAPON_HEAVY
 	mag_type = /obj/item/ammo_box/magazine/m10mm/rifle
+	fire_delay = 30
+	burst_size = 1
 	can_unsuppress = TRUE
 	can_suppress = TRUE
 	w_class = WEIGHT_CLASS_HUGE
 	slot_flags = ITEM_SLOT_BACK
 	actions_types = list()
 	mag_display = TRUE
-	automatic = 0
-	fire_rate = 1.5
 
 // Laser rifle (rechargeable magazine) //
 
@@ -362,8 +104,53 @@
 	icon_state = "oldrifle"
 	item_state = "arg"
 	mag_type = /obj/item/ammo_box/magazine/recharge
+	fire_delay = 2
 	can_suppress = FALSE
+	burst_size = 0
 	actions_types = list()
 	fire_sound = 'sound/weapons/laser.ogg'
 	casing_ejector = FALSE
-	fire_rate = 2
+
+/obj/item/gun/ballistic/automatic/ebr
+	name = "\improper M514 EBR"
+	desc = "A cheap, reliable rifle often found in the hands of low-ranking Syndicate personnel. It's known for rather high stopping power and mild armor-piercing capabilities. Chambered in .308."
+	icon = 'icons/obj/guns/48x32guns.dmi'
+	lefthand_file = 'icons/mob/inhands/weapons/64x_guns_left.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/64x_guns_right.dmi'
+	fire_sound = 'sound/weapons/gun/rifle/shot.ogg'
+	icon_state = "ebr"
+	item_state = "ebr"
+	mag_display = TRUE
+	weapon_weight = WEAPON_MEDIUM
+	w_class = WEIGHT_CLASS_BULKY
+	mag_type = /obj/item/ammo_box/magazine/ebr
+	fire_sound = 'sound/weapons/gun/rifle/shot_alt2.ogg'
+	burst_size = 0
+	actions_types = list()
+
+/obj/item/gun/ballistic/automatic/gal
+	name = "\improper CM-GAL-S"
+	desc = "The standard issue DMR of the CMM. Dates back to the Xenofauna War, this particular model is in a carbine configuration and as such shorter than the standard model. Chambered in .308."
+	icon = 'icons/obj/guns/48x32guns.dmi'
+	fire_sound = 'sound/weapons/gun/rifle/shot.ogg'
+	icon_state = "gal"
+	item_state = "gal"
+	mag_display = TRUE
+	weapon_weight = WEAPON_MEDIUM
+	w_class = WEIGHT_CLASS_BULKY
+	mag_type = /obj/item/ammo_box/magazine/gal
+	fire_sound = 'sound/weapons/gun/rifle/gal.ogg'
+	burst_size = 0
+	actions_types = list()
+
+/obj/item/gun/ballistic/automatic/zip_pistol
+	name = "makeshift pistol"
+	desc = "A makeshift pistol. It's a miracle it even works."
+	icon_state = "ZipPistol"
+	item_state = "ZipPistol"
+	mag_type = /obj/item/ammo_box/magazine/zip_ammo_9mm
+	can_suppress = FALSE
+	actions_types = list()
+	can_bayonet = FALSE
+	mag_display = TRUE
+	weapon_weight = WEAPON_LIGHT

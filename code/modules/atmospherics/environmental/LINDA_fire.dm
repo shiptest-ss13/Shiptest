@@ -48,6 +48,9 @@
 	var/bypassing = FALSE
 	var/visual_update_tick = 0
 
+#define IGNITE_TURF_CHANCE 30
+#define IGNITE_TURF_LOW_POWER 8
+#define IGNITE_TURF_HIGH_POWER 22
 
 /obj/effect/hotspot/Initialize(mapload, starting_volume, starting_temperature)
 	. = ..()
@@ -60,6 +63,19 @@
 	setDir(pick(GLOB.cardinals))
 	air_update_turf()
 
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
+	if(prob(IGNITE_TURF_CHANCE))
+		var/turf/my_turf = loc
+		my_turf.IgniteTurf(rand(IGNITE_TURF_LOW_POWER,IGNITE_TURF_HIGH_POWER))
+
+#undef IGNITE_TURF_CHANCE
+#undef IGNITE_TURF_LOW_POWER
+#undef IGNITE_TURF_HIGH_POWER
+
 /obj/effect/hotspot/proc/perform_exposure()
 	var/turf/open/location = loc
 	if(!istype(location) || !(location.air))
@@ -67,15 +83,18 @@
 
 	location.active_hotspot = src
 
-	bypassing = volume > CELL_VOLUME*0.95 || location.air.return_temperature() > FUSION_TEMPERATURE_THRESHOLD
+	bypassing = volume > CELL_VOLUME*0.95 || location.air.return_temperature() >= FUSION_TEMPERATURE_THRESHOLD
 
 	if(bypassing)
+		if(temperature > location.air.return_temperature())
+			location.air.set_temperature(temperature) //now actually starts fires like intended
 		volume = location.air.reaction_results["fire"]*FIRE_GROWTH_RATE
 		temperature = location.air.return_temperature()
 	else
 		var/datum/gas_mixture/affected = location.air.remove_ratio(volume/location.air.return_volume())
 		if(affected) //in case volume is 0
-			affected.set_temperature(temperature)
+			if(temperature > affected.return_temperature())
+				affected.set_temperature(temperature) //don't set the temperature lower than what it was
 			affected.react(src)
 			temperature = affected.return_temperature()
 			volume = affected.reaction_results["fire"]*FIRE_GROWTH_RATE
@@ -214,8 +233,8 @@
 				T.to_be_destroyed = FALSE
 				T.max_fire_temperature_sustained = 0
 
-/obj/effect/hotspot/Crossed(atom/movable/AM, oldLoc)
-	..()
+/obj/effect/hotspot/proc/on_entered(datum/source, atom/movable/AM, oldLoc)
+	SIGNAL_HANDLER
 	if(isliving(AM))
 		var/mob/living/L = AM
 		L.fire_act(temperature, volume)

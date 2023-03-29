@@ -19,44 +19,47 @@
 	var/integrity = 3
 	var/volume = 70
 
+	supports_variations = VOX_VARIATION
+
 /obj/item/tank/ui_action_click(mob/user)
 	toggle_internals(user)
 
 /obj/item/tank/proc/toggle_internals(mob/user)
-	var/mob/living/carbon/H = user //WS Port - Citadel Internals
-	if(!istype(H))
+	var/mob/living/carbon/breather = user
+	if(!istype(breather))
 		return
 
-	if(H.internal == src)
-		to_chat(H, "<span class='notice'>You close [src] valve.</span>")
-		H.internal = null
-		H.update_internals_hud_icon(0)
+	if(breather.internal == src)
+		to_chat(breather, "<span class='notice'>You close [src] valve.</span>")
+		breather.internal = null
+		breather.update_internals_hud_icon(0)
 	else
-		if(!H.getorganslot(ORGAN_SLOT_BREATHING_TUBE))
-			//WS Port Begin - Citadel Internals
-			var/obj/item/clothing/check
+		if(!breather.getorganslot(ORGAN_SLOT_BREATHING_TUBE))
+			var/obj/item/clothing/clothes_check = breather.wear_mask
 			var/internals = FALSE
 
-			for(check in GET_INTERNAL_SLOTS(H))
-				if(istype(check, /obj/item/clothing/mask))
-					var/obj/item/clothing/mask/M = check
-					if(M.mask_adjusted)
-						M.adjustmask(H)
-				if(check.clothing_flags & ALLOWINTERNALS)
+			if(istype(clothes_check, /obj/item/clothing/mask))
+				var/obj/item/clothing/mask/M = clothes_check
+				if(M.mask_adjusted)
+					M.adjustmask(breather)
+				if(clothes_check.clothing_flags & ALLOWINTERNALS)
+					internals = TRUE
+			clothes_check = breather.head
+			if(istype(clothes_check, /obj/item/clothing/head))
+				if(clothes_check.clothing_flags & ALLOWINTERNALS) //i know this is hacky but unfortunately mask items can exist in your head slot. god hates us
 					internals = TRUE
 
 			if(!internals)
-				to_chat(H, "<span class='warning'>You are not wearing an internals mask!</span>")
+				to_chat(breather, "<span class='warning'>You are not wearing an internals mask!</span>")
 				return
-			//WS Port End - Citadel Internals
 
-		if(H.internal)
-			to_chat(H, "<span class='notice'>You switch your internals to [src].</span>")
+		if(breather.internal)
+			to_chat(breather, "<span class='notice'>You switch your internals to [src].</span>")
 		else
-			to_chat(H, "<span class='notice'>You open [src] valve.</span>")
-		H.internal = src
-		H.update_internals_hud_icon(1)
-	H.update_action_buttons_icon()
+			to_chat(breather, "<span class='notice'>You open [src] valve.</span>")
+		breather.internal = src
+		breather.update_internals_hud_icon(1)
+	breather.update_action_buttons_icon()
 
 
 /obj/item/tank/Initialize()

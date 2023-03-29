@@ -10,10 +10,11 @@
 #define TEXT_WEST "[WEST]"
 
 /// Inverse direction, taking into account UP|DOWN if necessary.
-#define REVERSE_DIR(dir) ( ((dir & 85) << 1) | ((dir & 170) >> 1) )
+#define REVERSE_DIR(dir) (((dir & 85) << 1) | ((dir & 170) >> 1))
 
 //Human Overlays Indexes/////////
-#define MUTATIONS_LAYER 29 //mutations. Tk headglows, cold resistance glow, etc
+#define MUTATIONS_LAYER 30 //mutations. Tk headglows, cold resistance glow, etc
+#define HANDS_UNDER_BODY_LAYER 29 //Held items that render underneath the user due to perspective
 #define BODY_BEHIND_LAYER 28 //certain mutantrace features (tail when looking south) that must appear behind the body parts
 #define BODYPARTS_LAYER 27 //Initially "AUGMENTS", this was repurposed to be a catch-all bodyparts flag
 #define BODY_ADJ_LAYER 26 //certain mutantrace features (snout, body markings) that must appear above the body parts
@@ -42,7 +43,7 @@
 #define BODY_FRONT_LAYER 3
 #define HALO_LAYER 2 //blood cult ascended halo, because there's currently no better solution for adding/removing
 #define FIRE_LAYER 1 //If you're on fire
-#define TOTAL_LAYERS 29 //KEEP THIS UP-TO-DATE OR SHIT WILL BREAK ;_;
+#define TOTAL_LAYERS 30 //KEEP THIS UP-TO-DATE OR SHIT WILL BREAK ;_;
 
 //Human Overlay Index Shortcuts for alternate_worn_layer, layers
 //Because I *KNOW* somebody will think layer+1 means "above"
@@ -63,12 +64,6 @@
 
 //some arbitrary defines to be used by self-pruning global lists. (see master_controller)
 #define PROCESS_KILL 26	//Used to trigger removal from a processing list
-
-// Cargo-related stuff.
-#define MANIFEST_ERROR_CHANCE 5
-#define MANIFEST_ERROR_NAME 1
-#define MANIFEST_ERROR_CONTENTS 2
-#define MANIFEST_ERROR_ITEM 4
 
 #define TRANSITIONEDGE 7 //Distance from edge to move to another z-level
 
@@ -178,7 +173,7 @@ GLOBAL_LIST_EMPTY(bloody_footprints_cache)
 
 
 //subtypesof(), typesof() without the parent path
-#define subtypesof(typepath) ( typesof(typepath) - typepath )
+#define subtypesof(typepath) (typesof(typepath) - typepath)
 
 //Gets the turf this atom inhabits
 #define get_turf(A) (get_step(A, 0))
@@ -301,6 +296,9 @@ GLOBAL_LIST_INIT(pda_styles, sortList(list(MONO, VT, ORBITRON, SHARE)))
 
 #define INCREMENT_TALLY(L, stat) if(L[stat]){L[stat]++}else{L[stat] = 1}
 
+/// Removes characters incompatible with file names.
+#define SANITIZE_FILENAME(text) (GLOB.filename_forbidden_chars.Replace(text, ""))
+
 //TODO Move to a pref
 #define STATION_GOAL_BUDGET 1
 
@@ -380,7 +378,7 @@ GLOBAL_LIST_INIT(pda_styles, sortList(list(MONO, VT, ORBITRON, SHARE)))
 #define DUMMY_HUMAN_SLOT_MANIFEST "dummy_manifest_generation"
 
 #define PR_ANNOUNCEMENTS_PER_ROUND 5 //The number of unique PR announcements allowed per round
- //This makes sure that a single person can only spam 3 reopens and 3 closes before being ignored
+//This makes sure that a single person can only spam 3 reopens and 3 closes before being ignored
 
 #define MAX_PROC_DEPTH 195 // 200 proc calls deep and shit breaks, this is a bit lower to give some safety room
 
@@ -509,3 +507,8 @@ GLOBAL_LIST_INIT(pda_styles, sortList(list(MONO, VT, ORBITRON, SHARE)))
 
 /// Possible value of [/atom/movable/buckle_lying]. If set to a different (positive-or-zero) value than this, the buckling thing will force a lying angle on the buckled.
 #define NO_BUCKLE_LYING -1
+
+#define STATION_HOLODECK (1<<0)
+#define CUSTOM_HOLODECK_ONE (1<<1)
+#define CUSTOM_HOLODECK_TWO (1<<2)
+#define HOLODECK_DEBUG (1<<3)//you should never see this

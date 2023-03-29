@@ -49,3 +49,39 @@
 	caliber = "38"
 	max_ammo = 7
 	multiload = FALSE
+
+/obj/item/ammo_box/magazine/internal/shot/winchester/lethal
+	ammo_type = /obj/item/ammo_casing/c38/hunting
+
+/obj/item/ammo_box/magazine/internal/shot/contender
+	name = "contender internal magazine"
+	ammo_type = /obj/item/ammo_casing/a4570
+	caliber = "4570"
+	max_ammo = 1
+	multiload = FALSE
+
+/obj/item/ammo_box/magazine/internal/shot/com/compact/compact
+	name = "compact compact combat shotgun internal magazine"
+	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
+	max_ammo = 3
+
+/obj/item/ammo_box/magazine/internal/shot/com/compact/compact/compact
+	name = "compact compact compact combat shotgun internal magazine"
+	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
+	max_ammo = 2
+
+/obj/item/ammo_box/magazine/internal/shot/sex
+	name = "six-barrel shotgun internal magazine"
+	max_ammo = 6
+	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
+
+/obj/item/ammo_box/magazine/internal/shot/hundred
+	name = "hundred-barrel shotgun internal magazine"
+	max_ammo = 100
+	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
+
+/obj/item/ammo_box/magazine/internal/shot/twobore
+	name = "two-bore shotgun internal magazine"
+	max_ammo = 2
+	caliber = "twobore"
+	ammo_type = /obj/item/ammo_casing/shotgun/buckshot/twobore

@@ -33,14 +33,14 @@
 	add_fingerprint(user)
 
 	use_power(50)
-	on = !( on )
+	on = !(on)
 	update_icon()
 
 /obj/machinery/igniter/process()	//ugh why is this even in process()?
-	if (src.on && !(machine_stat & NOPOWER) )
+	if (src.on && !(machine_stat & NOPOWER))
 		var/turf/location = src.loc
 		if (isturf(location))
-			location.hotspot_expose(1000,500,1)
+			location.hotspot_expose(1000,2500,1)
 	return 1
 
 /obj/machinery/igniter/Initialize()

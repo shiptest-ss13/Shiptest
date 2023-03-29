@@ -101,42 +101,6 @@
 #define REACTING 1
 #define STOP_REACTIONS 2
 
-// Pressure limits.
-/// This determins at what pressure the ultra-high pressure red icon is displayed. (This one is set as a constant)
-#define HAZARD_HIGH_PRESSURE 550
-/// This determins when the orange pressure icon is displayed (it is 0.7 * HAZARD_HIGH_PRESSURE)
-#define WARNING_HIGH_PRESSURE 325
-/// This is when the gray low pressure icon is displayed. (it is 2.5 * HAZARD_LOW_PRESSURE)
-#define WARNING_LOW_PRESSURE 50
-/// This is when the black ultra-low pressure icon is displayed. (This one is set as a constant)
-#define HAZARD_LOW_PRESSURE 20
-
-/// This is used in handle_temperature_damage() for humans, and in reagents that affect body temperature. Temperature damage is multiplied by this amount.
-#define TEMPERATURE_DAMAGE_COEFFICIENT 1.5
-
-/// The natural temperature for a body
-#define BODYTEMP_NORMAL 310.15
-/// This is the divisor which handles how much of the temperature difference between the current body temperature and 310.15K (optimal temperature) humans auto-regenerate each tick. The higher the number, the slower the recovery. This is applied each tick, so long as the mob is alive.
-#define BODYTEMP_AUTORECOVERY_DIVISOR 11
-/// Minimum amount of kelvin moved toward 310K per tick. So long as abs(310.15 - bodytemp) is more than 50.
-#define BODYTEMP_AUTORECOVERY_MINIMUM 12
-///Similar to the BODYTEMP_AUTORECOVERY_DIVISOR, but this is the divisor which is applied at the stage that follows autorecovery. This is the divisor which comes into play when the human's loc temperature is lower than their body temperature. Make it lower to lose bodytemp faster.
-#define BODYTEMP_COLD_DIVISOR 15
-/// Similar to the BODYTEMP_AUTORECOVERY_DIVISOR, but this is the divisor which is applied at the stage that follows autorecovery. This is the divisor which comes into play when the human's loc temperature is higher than their body temperature. Make it lower to gain bodytemp faster.
-#define BODYTEMP_HEAT_DIVISOR 15
-/// The maximum number of degrees that your body can cool in 1 tick, due to the environment, when in a cold area.
-#define BODYTEMP_COOLING_MAX -100
-/// The maximum number of degrees that your body can heat up in 1 tick, due to the environment, when in a hot area.
-#define BODYTEMP_HEATING_MAX 30
-/// The body temperature limit the human body can take before it starts taking damage from heat.
-/// This also affects how fast the body normalises it's temperature when hot.
-/// 340k is about 66c, and rather high for a human.
-#define BODYTEMP_HEAT_DAMAGE_LIMIT (BODYTEMP_NORMAL + 30)
-/// The body temperature limit the human body can take before it starts taking damage from cold.
-/// This also affects how fast the body normalises it's temperature when cold.
-/// 270k is about -3c, that is below freezing and would hurt over time.
-#define BODYTEMP_COLD_DAMAGE_LIMIT (BODYTEMP_NORMAL - 40)
-
 /// what min_cold_protection_temperature is set to for space-helmet quality headwear. MUST NOT BE 0.
 #define SPACE_HELM_MIN_TEMP_PROTECT 2.0
 /// Thermal insulation works both ways /Malkevin
@@ -221,8 +185,8 @@
 /// just check density
 #define ATMOS_PASS_DENSITY -2
 
-#define CANATMOSPASS(A, O) ( A.CanAtmosPass == ATMOS_PASS_PROC ? A.CanAtmosPass(O) : ( A.CanAtmosPass == ATMOS_PASS_DENSITY ? !A.density : A.CanAtmosPass ) )
-#define CANVERTICALATMOSPASS(A, O) ( A.CanAtmosPassVertical == ATMOS_PASS_PROC ? A.CanAtmosPass(O, TRUE) : ( A.CanAtmosPassVertical == ATMOS_PASS_DENSITY ? !A.density : A.CanAtmosPassVertical ) )
+#define CANATMOSPASS(A, O) (A.CanAtmosPass == ATMOS_PASS_PROC ? A.CanAtmosPass(O) : (A.CanAtmosPass == ATMOS_PASS_DENSITY ? !A.density : A.CanAtmosPass))
+#define CANVERTICALATMOSPASS(A, O) (A.CanAtmosPassVertical == ATMOS_PASS_PROC ? A.CanAtmosPass(O, TRUE) : (A.CanAtmosPassVertical == ATMOS_PASS_DENSITY ? !A.density : A.CanAtmosPassVertical))
 
 //OPEN TURF ATMOS
 /// the default air mix that open turfs spawn
@@ -238,7 +202,8 @@
 #define KITCHEN_COLDROOM_ATMOS "o2=33;n2=124;TEMP=193.15"
 /// used in the holodeck burn test program
 #define BURNMIX_ATMOS "o2=2500;plasma=5000;TEMP=370"
-
+/// used in rockplanet
+#define ROCKPLANET_DEFAULT_ATMOS "co2=95;n2=3;TEMP=210.15"
 //ATMOSPHERICS DEPARTMENT GAS TANK TURFS
 #define ATMOS_TANK_N2O "n2o=6000;TEMP=293.15"
 #define ATMOS_TANK_CO2 "co2=50000;TEMP=293.15"
@@ -246,6 +211,7 @@
 #define ATMOS_TANK_O2 "o2=100000;TEMP=293.15"
 #define ATMOS_TANK_N2 "n2=100000;TEMP=293.15"
 #define ATMOS_TANK_AIRMIX "o2=2644;n2=10580;TEMP=293.15"
+#define ATMOS_TANK_FUEL "o2=33000;plasma=66000;TEMP=293.15"
 
 //LAVALAND
 /// what pressure you have to be under to increase the effect of equipment meant for lavaland
@@ -360,7 +326,6 @@
 #define GAS_BZ "bz"
 #define GAS_STIMULUM "stim"
 #define GAS_PLUOXIUM "pluox"
-#define GAS_MIASMA "miasma"
 #define GAS_FREON "freon"
 
 #define GAS_FLAG_DANGEROUS (1<<0)
@@ -386,13 +351,6 @@
 #define PIPING_LAYER_DOUBLE_SHIFT(T, PipingLayer) \
 	T.pixel_x = (PipingLayer - PIPING_LAYER_DEFAULT) * PIPING_LAYER_P_X; \
 	T.pixel_y = (PipingLayer - PIPING_LAYER_DEFAULT) * PIPING_LAYER_P_Y;
-
-#ifdef TESTING
-GLOBAL_LIST_INIT(atmos_adjacent_savings, list(0,0))
-#define CALCULATE_ADJACENT_TURFS(T) if (SSadjacent_air.queue[T]) { GLOB.atmos_adjacent_savings[1] += 1 } else { GLOB.atmos_adjacent_savings[2] += 1; SSadjacent_air.queue[T] = 1 }
-#else
-#define CALCULATE_ADJACENT_TURFS(T) SSadjacent_air.queue[T] = 1
-#endif
 
 GLOBAL_VAR(atmos_extools_initialized) // this must be an uninitialized (null) one or init_monstermos will be called twice because reasons
 #define ATMOS_EXTOOLS_CHECK if(!GLOB.atmos_extools_initialized){ \
@@ -420,5 +378,3 @@ GLOBAL_LIST_INIT(pipe_paint_colors, sortList(list(
 	"yellow" = rgb(255,198,0)
 )))
 
-#define MIASMA_CORPSE_MOLES 0.02
-#define MIASMA_GIBS_MOLES 0.005

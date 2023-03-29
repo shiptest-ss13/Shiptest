@@ -5,7 +5,7 @@ Ask ninjanomnom if they're around
 */
 
 #define RAD_BACKGROUND_RADIATION 9 // How much radiation is harmless to a mob, this is also when radiation waves stop spreading
- // WARNING: Lowering this value significantly increases SSradiation load
+// WARNING: Lowering this value significantly increases SSradiation load
 
 // apply_effect((amount*RAD_MOB_COEFFICIENT)/max(1, (radiation**2)*RAD_OVERDOSE_REDUCTION), IRRADIATE, blocked)
 #define RAD_MOB_COEFFICIENT 0.20 // Radiation applied is multiplied by this
@@ -14,7 +14,7 @@ Ask ninjanomnom if they're around
 #define RAD_LOSS_PER_TICK 0.5
 #define RAD_TOX_COEFFICIENT 0.08 // Toxin damage per tick coefficient
 #define RAD_OVERDOSE_REDUCTION 0.000001 // Coefficient to the reduction in applied rads once the thing, usualy mob, has too much radiation
- // WARNING: This number is highly sensitive to change, graph is first for best results
+// WARNING: This number is highly sensitive to change, graph is first for best results
 #define RAD_BURN_THRESHOLD 1000 // Applied radiation must be over this to burn
 //Holy shit test after you tweak anything it's said like 6 times in here
 //You probably want to plot any tweaks you make so you can see the curves visually
@@ -35,13 +35,20 @@ Ask ninjanomnom if they're around
 #define RAD_MOB_KNOCKDOWN_PROB 1 // Chance of knockdown per tick when over threshold
 #define RAD_MOB_KNOCKDOWN_AMOUNT 3 // Amount of knockdown when it occurs
 
-#define RAD_NO_INSULATION 1.0 // For things that shouldn't become irradiated for whatever reason
-#define RAD_VERY_LIGHT_INSULATION 0.9 // What girders have
+// For things that shouldn't become irradiated for whatever reason
+#define RAD_NO_INSULATION 1.0
+// What girders have
+#define RAD_VERY_LIGHT_INSULATION 0.9
+// Holofirelocks
 #define RAD_LIGHT_INSULATION 0.8
-#define RAD_MEDIUM_INSULATION 0.7 // What common walls have
-#define RAD_HEAVY_INSULATION 0.6 // What reinforced walls have
-#define RAD_EXTREME_INSULATION 0.5 // What rad collectors have
-#define RAD_FULL_INSULATION 0 // Unused
+// What common walls have
+#define RAD_MEDIUM_INSULATION 0.7
+// What reinforced walls have
+#define RAD_HEAVY_INSULATION 0.6
+// What rad collectors have
+#define RAD_EXTREME_INSULATION 0.5
+// Unused
+#define RAD_FULL_INSULATION 0
 
 // WARNING: The defines below could have disastrous consequences if tweaked incorrectly. See: The great SM purge of Oct.6.2017
 // contamination_strength = (strength-RAD_MINIMUM_CONTAMINATION) * RAD_CONTAMINATION_STR_COEFFICIENT

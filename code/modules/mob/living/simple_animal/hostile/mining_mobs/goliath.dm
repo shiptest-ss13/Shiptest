@@ -23,7 +23,6 @@
 	armor = list("melee" = 30, "bullet" = 15, "laser" = 10, "energy" = 10, "bomb" = 10, "bio" = 10, "rad" = 10, "fire" = 10, "acid" = 10)
 	harm_intent_damage = 0
 	obj_damage = 100
-	environment_smash = ENVIRONMENT_SMASH_MINERALS
 	melee_damage_lower = 12
 	melee_damage_upper = 20
 	attack_verb_continuous = "pulverizes"
@@ -32,15 +31,15 @@
 	throw_message = "does nothing to the rocky hide of the"
 	vision_range = 5
 	aggro_vision_range = 9
-	move_force = MOVE_FORCE_VERY_STRONG
 	move_resist = MOVE_FORCE_VERY_STRONG
-	pull_force = MOVE_FORCE_VERY_STRONG
 	gender = MALE //lavaland elite goliath says that it s female and i s stronger because of sexual dimorphism, so normal goliaths should be male
 	var/can_charge = TRUE
 	var/pre_attack = 0
 	var/pre_attack_icon = "Goliath_preattack"
 	var/tentacle_type = /obj/effect/temp_visual/goliath_tentacle
-	loot = list(/obj/item/stack/sheet/animalhide/goliath_hide)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/goliath = 2, /obj/item/stack/sheet/bone = 2, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/ore/silver = 10)
+	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/goliath_hide = 2)
+	loot = list()
 	food_type = list(/obj/item/reagent_containers/food/snacks/meat, /obj/item/reagent_containers/food/snacks/grown/ash_flora/cactus_fruit, /obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_leaf)		// Omnivorous
 	tame_chance = 0
 	bonus_tame_chance = 10
@@ -62,15 +61,11 @@
 
 /mob/living/simple_animal/hostile/asteroid/goliath/revive(full_heal = FALSE, admin_revive = FALSE)//who the fuck anchors mobs
 	if(..())
-		move_force = MOVE_FORCE_VERY_STRONG
 		move_resist = MOVE_FORCE_VERY_STRONG
-		pull_force = MOVE_FORCE_VERY_STRONG
-		. = 1
+		return TRUE
 
 /mob/living/simple_animal/hostile/asteroid/goliath/death(gibbed)
-	move_force = MOVE_FORCE_DEFAULT
 	move_resist = MOVE_RESIST_DEFAULT
-	pull_force = PULL_FORCE_DEFAULT
 	..()
 
 /mob/living/simple_animal/hostile/asteroid/goliath/gib()
@@ -152,7 +147,7 @@
 	pre_attack_icon = "goliath2"
 	crusher_loot = /obj/item/crusher_trophy/goliath_tentacle
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/goliath = 2, /obj/item/stack/sheet/bone = 2, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/ore/silver = 10)
-	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/goliath_hide = 4)
+	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/goliath_hide = 2)
 	loot = list()
 	stat_attack = UNCONSCIOUS
 	robust_searching = 1
@@ -368,6 +363,9 @@
 /obj/effect/temp_visual/goliath_tentacle/crystal/get_directions()
 	return GLOB.cardinals.Copy() + GLOB.diagonals.Copy()
 
+/obj/effect/temp_visual/goliath_tentacle/crystal/visual_only/on_hit(mob/living/L)
+	return
+
 /mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/crystal
 	name = "crystal goliath"
 	desc = "Once a goliath, it is now an abomination composed of undead flesh and crystals that sprout throughout it's decomposing body."
@@ -383,19 +381,33 @@
 	tentacle_recheck_cooldown = 50
 	speed = 2
 	can_charge = FALSE
+	var/spiral_attack_inprogress = FALSE
 
 /mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/crystal/OpenFire()
 	. = ..()
-	visible_message("<span class='warning'>[src] expels it's matter, releasing a spray of crystalline shards!</span>")
-	INVOKE_ASYNC(src,.proc/spray_of_crystals)
-	shoot_projectile(Get_Angle(src,target) + 10)
-	shoot_projectile(Get_Angle(src,target))
-	shoot_projectile(Get_Angle(src,target) - 10)
+	shake_animation(20)
+	visible_message("<span class='warning'>[src] convulses violently!! Get back!!</span>")
+	playsound(loc, 'sound/effects/magic.ogg', 100, TRUE)
+	addtimer(CALLBACK(src, .proc/open_fire_2), 1 SECONDS)
+
+/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/crystal/proc/open_fire_2()
+	if(prob(20) && !(spiral_attack_inprogress))
+		visible_message("<span class='warning'>[src] sprays crystalline shards in a circle!</span>")
+		playsound(loc, 'sound/magic/charge.ogg', 100, TRUE)
+		INVOKE_ASYNC(src,.proc/spray_of_crystals)
+	else
+		visible_message("<span class='warning'>[src] expels it's matter, releasing a spray of crystalline shards!</span>")
+		playsound(loc, 'sound/effects/bamf.ogg', 100, TRUE)
+		shoot_projectile(Get_Angle(src,target) + 10)
+		shoot_projectile(Get_Angle(src,target))
+		shoot_projectile(Get_Angle(src,target) - 10)
 
 /mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/crystal/proc/spray_of_crystals()
+	spiral_attack_inprogress = TRUE
 	for(var/i in 0 to 9)
 		shoot_projectile(i*(180/NUM_E))
 		sleep(3)
+	spiral_attack_inprogress = FALSE
 
 /mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/crystal/proc/shoot_projectile(angle)
 	var/obj/projectile/P = new /obj/projectile/goliath(get_turf(src))
@@ -419,3 +431,19 @@
 	if(istype(target,/mob/living/simple_animal/hostile/asteroid))
 		return FALSE
 	return ..()
+
+/mob/living/simple_animal/hostile/asteroid/goliath/beast/rockplanet
+	name = "gruboid"
+	desc = "A massive beast that uses long tentacles to ensnare its prey, threatening them is not advised under any conditions."
+	icon_state = "gruboid2"
+	icon_living = "gruboid2"
+	icon_aggro = "gruboid"
+	pre_attack_icon = "gruboid"
+	icon_dead = "gruboid_dead"
+	icon_gib = "syndicate_gib"
+	tentacle_type = /obj/effect/temp_visual/goliath_tentacle/rockplanet
+
+/obj/effect/temp_visual/goliath_tentacle/rockplanet
+	icon_state = "Gruboid_tentacle_wiggle"
+	wiggle = "Gruboid_tentacle_spawn"
+	retract = "Gruboid_tentacle_retract"

@@ -45,11 +45,18 @@ GLOBAL_LIST_EMPTY(squid_face_list)
 GLOBAL_LIST_EMPTY(ipc_screens_list)
 GLOBAL_LIST_EMPTY(ipc_antennas_list)
 GLOBAL_LIST_EMPTY(ipc_chassis_list)
+GLOBAL_LIST_INIT(ipc_brain_list, list("Posibrain", "Man-Machine Interface"))
 GLOBAL_LIST_EMPTY(spider_legs_list)
 GLOBAL_LIST_EMPTY(spider_spinneret_list)
 GLOBAL_LIST_EMPTY(spider_mandibles_list)
 GLOBAL_LIST_EMPTY(kepori_feathers_list)
 GLOBAL_LIST_EMPTY(kepori_body_feathers_list)
+GLOBAL_LIST_EMPTY(kepori_tail_feathers_list)
+GLOBAL_LIST_EMPTY(vox_head_quills_list)
+GLOBAL_LIST_EMPTY(vox_neck_quills_list)
+GLOBAL_LIST_EMPTY(elzu_horns_list)
+GLOBAL_LIST_EMPTY(tails_list_elzu)
+GLOBAL_LIST_EMPTY(animated_tails_list_elzu)
 
 GLOBAL_LIST_INIT(color_list_ethereal, list(
 	"Red" = "ff4d4d",

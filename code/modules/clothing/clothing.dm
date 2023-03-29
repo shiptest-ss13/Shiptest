@@ -31,11 +31,6 @@
 	var/list/user_vars_to_edit //VARNAME = VARVALUE eg: "name" = "butts"
 	var/list/user_vars_remembered //Auto built by the above + dropped() + equipped()
 
-	/// Needs to follow this syntax: either a list() with the x and y coordinates of the pixel you want to get the colour from, or a hexcolour. Colour one replaces red, two replaces blue, and three replaces green in the icon state.
-	var/list/greyscale_colors[3]
-	/// Needs to be a RGB-greyscale format icon state in all species' clothing icon files.
-	var/greyscale_icon_state
-
 	var/pocket_storage_component_path
 
 	//These allow head/mask items to dynamically alter the user's hair
@@ -88,23 +83,27 @@
 	else
 		return ..()
 
-/obj/item/clothing/attackby(obj/item/W, mob/user, params)
-	if(W.get_sharpness() && cuttable)
-		if (alert(user, "Are you sure you want to cut the [src] into strips?", "Cut clothing:", "Yes", "No") != "Yes")
+/obj/item/clothing/attackby(obj/item/tool, mob/user, params)
+	if(tool.get_sharpness() && cuttable)
+		if(tgui_alert(user, "Are you sure you want to cut \the [src] into strips?", "Cut clothing:", list("Yes", "No")) != "Yes")
+			return
+		if(QDELETED(src))
 			return
 		playsound(src.loc, 'sound/items/poster_ripped.ogg', 100, TRUE)
-		to_chat(user, "<span class='notice'>You cut the [src] into strips with [W].</span>")
-		var/obj/item/stack/sheet/cotton/cloth/C = new (get_turf(src), clothamnt)
-		user.put_in_hands(C)
+		to_chat(user, "<span class='notice'>You cut the [src] into strips with [tool].</span>")
+		var/obj/item/stack/sheet/cotton/cloth/cloth = new (get_turf(src), clothamnt)
+		user.put_in_hands(cloth)
 		qdel(src)
 
-	if(damaged_clothes && istype(W, /obj/item/stack/sheet/cotton/cloth))
-		var/obj/item/stack/sheet/cotton/cloth/C = W
-		C.use(1)
+	if(damaged_clothes && istype(tool, /obj/item/stack/sheet/cotton/cloth))
+		var/obj/item/stack/sheet/cotton/cloth/cloth = tool
+		if(!cloth.use(1))
+			to_chat(user, "<span class='notice'>You fail to fix the damage on [src].</span>")
+			return TRUE
 		update_clothes_damaged_state(FALSE)
 		obj_integrity = max_integrity
-		to_chat(user, "<span class='notice'>You fix the damage on [src] with [C].</span>")
-		return 1
+		to_chat(user, "<span class='notice'>You fix the damage on [src] with [cloth].</span>")
+		return TRUE
 	return ..()
 
 /obj/item/clothing/Destroy()
@@ -211,13 +210,13 @@
 		to_chat(usr, "[readout.Join()]")
 
 /**
-  * Rounds armor_value to nearest 10, divides it by 10 and then expresses it in roman numerals up to 10
-  *
-  * Rounds armor_value to nearest 10, divides it by 10
-  * and then expresses it in roman numerals up to 10
-  * Arguments:
-  * * armor_value - Number we're converting
-  */
+ * Rounds armor_value to nearest 10, divides it by 10 and then expresses it in roman numerals up to 10
+ *
+ * Rounds armor_value to nearest 10, divides it by 10
+ * and then expresses it in roman numerals up to 10
+ * Arguments:
+ * * armor_value - Number we're converting
+ */
 /obj/item/clothing/proc/armor_to_protection_class(armor_value)
 	armor_value = round(armor_value,10) / 10
 	switch (armor_value)
@@ -288,14 +287,37 @@
 	female_clothing_icon 			= fcopy_rsc(female_clothing_icon)
 	GLOB.female_clothing_icons[index] = female_clothing_icon
 
-/obj/item/clothing/proc/generate_species_clothing(file2use, state2use, species)
-	var/icon/human_clothing_icon = icon(file2use, state2use)
-
-	if(!greyscale_colors || !greyscale_icon_state)
-		GLOB.species_clothing_icons[species]["[file2use]-[state2use]"] = human_clothing_icon
+/obj/item/proc/generate_species_clothing(file2use, state2use, layer, datum/species/mob_species)
+	if(!icon_exists(file2use, state2use))
 		return
 
-	var/icon/species_icon = icon(species, greyscale_icon_state)
+	var/icon/human_clothing_icon = icon(file2use, state2use)
+
+	if("[layer]" in mob_species.offset_clothing)
+		// This code taken from Baystation 12
+		var/icon/final_I = icon('icons/blanks/32x32.dmi', "nothing")
+		var/list/shifts = mob_species.offset_clothing["[layer]"]
+
+		// Apply all pixel shifts for each direction.
+		for(var/shift_facing in shifts)
+			var/list/facing_list = shifts[shift_facing]
+			var/use_dir = text2num(shift_facing)
+			var/icon/equip = icon(file2use, icon_state = state2use, dir = use_dir)
+			var/icon/canvas = icon('icons/blanks/32x32.dmi', "nothing")
+			canvas.Blend(equip, ICON_OVERLAY, facing_list["x"]+1, facing_list["y"]+1)
+			final_I.Insert(canvas, dir = use_dir)
+		final_I = fcopy_rsc(final_I)
+		GLOB.species_clothing_icons[mob_species.id]["[file2use]-[state2use]"] = final_I
+		return TRUE
+
+	if(!greyscale_colors || !greyscale_icon_state)
+		GLOB.species_clothing_icons[mob_species.id]["[file2use]-[state2use]"] = human_clothing_icon
+		return
+
+	if(!icon_exists(mob_species.species_clothing_path, greyscale_icon_state))
+		return
+
+	var/icon/species_icon = icon(mob_species.species_clothing_path, greyscale_icon_state)
 	var/list/final_list = list()
 	for(var/i in 1 to 3)
 		if(length(greyscale_colors) < i)
@@ -309,7 +331,9 @@
 
 	species_icon.MapColors(final_list[1], final_list[2], final_list[3])
 	species_icon = fcopy_rsc(species_icon)
-	GLOB.species_clothing_icons[species]["[file2use]-[state2use]"] = species_icon
+	GLOB.species_clothing_icons[mob_species.id]["[file2use]-[state2use]"] = species_icon
+
+	return TRUE
 
 /obj/item/clothing/under/verb/toggle()
 	set name = "Adjust Suit Sensors"
@@ -397,12 +421,9 @@
 		return
 	adjusted = !adjusted
 	if(adjusted)
-		if(fitted != FEMALE_UNIFORM_TOP)
-			fitted = NO_FEMALE_UNIFORM
 		if(!alt_covers_chest) // for the special snowflake suits that expose the chest when adjusted
 			body_parts_covered &= ~CHEST
 	else
-		fitted = initial(fitted)
 		if(!alt_covers_chest)
 			body_parts_covered |= CHEST
 	return adjusted

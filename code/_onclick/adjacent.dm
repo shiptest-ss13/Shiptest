@@ -31,6 +31,14 @@
 	if(T0 == src) //same turf
 		return TRUE
 
+	if(istype(neighbor, /atom/movable)) //fml
+		var/atom/movable/AM = neighbor
+		if((AM.bound_width != world.icon_size || AM.bound_height != world.icon_size) && (islist(AM.locs) && AM.locs.len > 1))
+			for(var/turf/T2 in AM.locs)
+				if(Adjacent(T2, target, mover))
+					return TRUE
+			return FALSE
+
 	if(get_dist(src, T0) > 1 || z != T0.z) //too far
 		return FALSE
 
@@ -66,12 +74,16 @@
 	* Must be on a turf
 */
 /atom/movable/Adjacent(atom/neighbor)
+	var/turf/T = loc
 	if(neighbor == loc)
 		return TRUE
-	var/turf/T = loc
-	if(!istype(T))
+	if(!isturf(loc))
 		return FALSE
-	if(T.Adjacent(neighbor,target = neighbor, mover = src))
+	if((islist(locs) && locs.len > 1) && (bound_width != world.icon_size || bound_height != world.icon_size))
+		for(var/turf/L in locs) //this is to handle multi tile objects
+			if(L.Adjacent(neighbor, src, src))
+				return TRUE
+	else if(T.Adjacent(neighbor,target = neighbor, mover = src))
 		return TRUE
 	return FALSE
 
@@ -97,9 +109,9 @@
 		if(O == target_atom || O == mover || (O.pass_flags_self & LETPASSTHROW)) //check if there's a dense object present on the turf
 			continue // LETPASSTHROW is used for anything you can click through (or the firedoor special case, see above)
 
-		if( O.flags_1&ON_BORDER_1) // windows are on border, check them first
-			if( O.dir & target_dir || O.dir & (O.dir-1) ) // full tile windows are just diagonals mechanically
+		if(O.flags_1&ON_BORDER_1) // windows are on border, check them first
+			if(O.dir & target_dir || O.dir & (O.dir-1)) // full tile windows are just diagonals mechanically
 				return 0								  //O.dir&(O.dir-1) is false for any cardinal direction, but true for diagonal ones
-		else if( !border_only ) // dense, not on border, cannot pass over
+		else if(!border_only) // dense, not on border, cannot pass over
 			return 0
 	return 1

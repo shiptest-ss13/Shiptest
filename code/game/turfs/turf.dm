@@ -64,11 +64,15 @@
 	///Lazylist of movable atoms providing opacity sources.
 	var/list/atom/movable/opacity_sources
 
-	/// ID of the virtual level we're in
+	// ID of the virtual level we're in
 	var/virtual_z = 0
-	/// Translation of the virtual z to a virtual level
-	var/static/list/virtual_z_translation
 
+	/// If TRUE, radiation waves will qdelete if they step forwards into this turf, and stop propagating sideways if they encounter it.
+	/// Used to stop radiation from travelling across virtual z-levels such as transit zones and planetary encounters.
+	var/rad_fullblocker = FALSE
+
+	///the holodeck can load onto this turf if TRUE
+	var/holodeck_compatible = FALSE
 
 /turf/vv_edit_var(var_name, new_value)
 	var/static/list/banned_edits = list("x", "y", "z")
@@ -77,10 +81,10 @@
 	. = ..()
 
 /**
-  * Turf Initialize
-  *
-  * Doesn't call parent, see [/atom/proc/Initialize]
-  */
+ * Turf Initialize
+ *
+ * Doesn't call parent, see [/atom/proc/Initialize]
+ */
 /turf/Initialize(mapload, inherited_virtual_z)
 	SHOULD_CALL_PARENT(FALSE)
 	if(flags_1 & INITIALIZED_1)
@@ -94,15 +98,16 @@
 
 	levelupdate()
 
-	if(!virtual_z_translation)
-		virtual_z_translation = SSmapping.virtual_z_translation
-
 	if (length(smoothing_groups))
-		sortTim(smoothing_groups) //In case it's not properly ordered, let's avoid duplicate entries with the same values.
+		// There used to be a sort here to prevent duplicate bitflag signatures
+		// in the bitflag list cache; the cost of always timsorting every group list every time added up.
+		// The sort now only happens if the initial key isn't found. This leads to some duplicate keys.
+		// /tg/ has a better approach; a unit test to see if any atoms have mis-sorted smoothing_groups
+		// or canSmoothWith. This is a better idea than what I do, and should be done instead.
 		SET_BITFLAG_LIST(smoothing_groups)
 	if (length(canSmoothWith))
-		sortTim(canSmoothWith)
-		if(canSmoothWith[length(canSmoothWith)] > MAX_S_TURF) //If the last element is higher than the maximum turf-only value, then it must scan turf contents for smoothing targets.
+		// If the last element is higher than the maximum turf-only value, then it must scan turf contents for smoothing targets.
+		if(canSmoothWith[length(canSmoothWith)] > MAX_S_TURF)
 			smoothing_flags |= SMOOTH_OBJ
 		SET_BITFLAG_LIST(canSmoothWith)
 	if (smoothing_flags & (SMOOTH_CORNERS|SMOOTH_BITMASK))
@@ -110,15 +115,15 @@
 
 	visibilityChanged()
 
-	for(var/atom/movable/AM as anything in src)
-		Entered(AM)
+	for(var/atom/movable/content as anything in src)
+		Entered(content, null)
 
 	var/area/A = loc
 	if(!IS_DYNAMIC_LIGHTING(src) && IS_DYNAMIC_LIGHTING(A))
 		add_overlay(/obj/effect/fullbright)
 
 	if(requires_activation)
-		CALCULATE_ADJACENT_TURFS(src)
+		ImmediateCalculateAdjacentTurfs()
 
 	if (light_power && light_range)
 		update_light()
@@ -160,7 +165,7 @@
 /turf/proc/set_temperature()
 
 /turf/proc/Initalize_Atmos(times_fired)
-	CALCULATE_ADJACENT_TURFS(src)
+	ImmediateCalculateAdjacentTurfs()
 
 /turf/Destroy(force)
 	. = QDEL_HINT_IWILLGC
@@ -187,6 +192,13 @@
 	..()
 
 	vis_contents.Cut()
+
+/// WARNING WARNING
+/// Turfs DO NOT lose their signals when they get replaced, REMEMBER THIS
+/// It's possible because turfs are fucked, and if you have one in a list and it's replaced with another one, the list ref points to the new turf
+/// We do it because moving signals over was needlessly expensive, and bloated a very commonly used bit of code
+/turf/clear_signal_refs()
+	return
 
 /turf/attack_hand(mob/user)
 	. = ..()
@@ -360,24 +372,8 @@
 		return (mover.movement_type & PHASING) || (mover.pass_flags & pass_flags_self) // If they can phase through us, let them in. If not, don't.
 	return TRUE
 
-/turf/Exit(atom/movable/mover, atom/newloc)
-	. = ..()
-	if(!. || QDELETED(mover))
-		return FALSE
-	for(var/atom/movable/thing as anything in contents)
-		if(thing == mover)
-			continue
-		if(!thing.Uncross(mover, newloc))
-			if(thing.flags_1 & ON_BORDER_1)
-				mover.Bump(thing)
-			if(!(mover.movement_type & PHASING))
-				return FALSE
-		if(QDELETED(mover))
-			return FALSE		//We were deleted.
-
-
 /turf/open/Entered(atom/movable/AM)
-	..()
+	. =..()
 	//melting
 	if(isobj(AM) && air && air.return_temperature() > T0C)
 		var/obj/O = AM
@@ -408,7 +404,7 @@
 	if(created_baseturf_lists[current_target])
 		var/list/premade_baseturfs = created_baseturf_lists[current_target]
 		if(length(premade_baseturfs))
-			baseturfs = baseturfs_string_list(premade_baseturfs, src)
+			baseturfs = baseturfs_string_list(premade_baseturfs.Copy(), src)
 		else
 			baseturfs = baseturfs_string_list(premade_baseturfs, src)
 		return baseturfs
@@ -475,7 +471,7 @@
 //////////////////////////////
 
 //Distance associates with all directions movement
-/turf/proc/Distance(var/turf/T)
+/turf/proc/Distance(turf/T)
 	return get_dist(src,T)
 
 //  This Distance proc assumes that only cardinal movement is
@@ -547,7 +543,7 @@
 	underlay_appearance.dir = adjacency_dir
 	return TRUE
 
-/turf/proc/add_blueprints(var/atom/movable/AM)
+/turf/proc/add_blueprints(atom/movable/AM)
 	var/image/I = new
 	I.appearance = AM.appearance
 	I.appearance_flags = RESET_COLOR|RESET_ALPHA|RESET_TRANSFORM
@@ -646,8 +642,8 @@
 		. |= R.expose_turf(src, reagents[R])
 
 /**
-  * Called when this turf is being washed. Washing a turf will also wash any mopable floor decals
-  */
+ * Called when this turf is being washed. Washing a turf will also wash any mopable floor decals
+ */
 /turf/wash(clean_types)
 	. = ..()
 
@@ -657,3 +653,16 @@
 		if(!ismopable(content))
 			continue
 		content.wash(clean_types)
+
+/turf/proc/IgniteTurf(power, fire_color = "red")
+	return
+
+/turf/proc/on_turf_saved()
+	// This is all we can do. I'm sorry mappers, but there's no way to get any more details.
+	var/first = TRUE
+	for(var/datum/component/decal/decal as anything in GetComponents(/datum/component/decal))
+		if(!first)
+			. += ",\n"
+		. += "[/obj/effect/turf_decal]{\n\ticon = '[decal.pic.icon]';\n\ticon_state = \"[decal.pic.icon_state]\";\n\tdir = [decal.pic.dir];\n\tcolor = \"[decal.pic.color]\"\n\t}"
+		first = FALSE
+	return

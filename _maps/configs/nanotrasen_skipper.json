@@ -1,0 +1,44 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Skipper-class Heavy Cruiser",
+	"map_short_name": "Skipper-class",
+	"prefix": "NTSV",
+	"namelists": [
+		"GENERAL",
+		"SPACE",
+		"BRITISH_NAVY",
+		"MYTHOLOGICAL",
+		"WEAPONS",
+		"MERCANTILE"
+	],
+	"map_path": "_maps/shuttles/shiptest/nanotrasen_skipper.dmm",
+	"roundstart": true,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/captain/nt",
+			"officer": true,
+			"slots": 1
+		},
+		"First Officer": {
+			"outfit": "/datum/outfit/job/head_of_personnel/nt",
+			"officer": true,
+			"slots": 1
+		},
+		"Internal Affairs Agent": {
+			"outfit": "/datum/outfit/job/lawyer/corporaterepresentative",
+			"slots" : 1
+		},
+		"Medical Doctor": 1,
+		"Engineer": {
+			"outfit": "/datum/outfit/job/engineer/nt",
+			"slots": 3
+		},
+		"Shaft Miner": 2,
+		"Security Officer": {
+			"outfit": "/datum/outfit/job/security/nanotrasen",
+			"slots": 1
+		},
+		"Assistant": 3
+	},
+	"enabled": true
+}

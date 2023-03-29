@@ -1,5 +1,7 @@
 /mob/living/carbon/human/say_mod(input, list/message_mods = list())
-	verb_say = dna.species.say_mod
+	var/obj/item/organ/tongue/T = src.getorganslot(ORGAN_SLOT_TONGUE)
+	if(T)
+		verb_say = T.say_mod
 	if(slurring)
 		return "slurs"
 	else
@@ -24,7 +26,7 @@
 			return real_name
 	if(mind)
 		var/datum/antagonist/changeling/changeling = mind.has_antag_datum(/datum/antagonist/changeling)
-		if(changeling && changeling.mimicing )
+		if(changeling && changeling.mimicing)
 			return changeling.mimicing
 	if(GetSpecialVoice())
 		return GetSpecialVoice()

@@ -10,6 +10,7 @@
 /turf/open/floor/wood
 	desc = "Stylish dark wood."
 	icon_state = "wood"
+	icon = 'icons/turf/wood.dmi'
 	floor_tile = /obj/item/stack/tile/wood
 	broken_states = list("wood-broken", "wood-broken2", "wood-broken3", "wood-broken4", "wood-broken5", "wood-broken6", "wood-broken7")
 	footstep = FOOTSTEP_WOOD
@@ -17,9 +18,7 @@
 	clawfootstep = FOOTSTEP_WOOD_CLAW
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	tiled_dirt = FALSE
-
-/turf/open/floor/wood/icecropolis
-	baseturfs = /turf/open/indestructible/necropolis/air
+	color = WOOD_COLOR_GENERIC
 
 /turf/open/floor/wood/mahogany
 	color = WOOD_COLOR_RICH
@@ -36,8 +35,14 @@
 /turf/open/floor/wood/bamboo
 	color = WOOD_COLOR_PALE2
 
+/turf/open/floor/wood/birch
+	color = WOOD_COLOR_PALE3
+
 /turf/open/floor/wood/yew
 	color = WOOD_COLOR_YELLOW
+
+/turf/open/floor/wood/icecropolis
+	baseturfs = /turf/open/indestructible/necropolis/air
 
 /turf/open/floor/wood/examine(mob/user)
 	. = ..()
@@ -131,6 +136,10 @@
 
 /turf/open/floor/grass/fairy/spawniconchange()
 	icon_state = "fairygrass[rand(0,3)]"
+
+/turf/open/floor/grass/fairy/beach
+	baseturfs = /turf/open/floor/plating/beach/sand
+	planetary_atmos = TRUE
 
 /turf/open/floor/grass/snow
 	gender = PLURAL
@@ -346,7 +355,52 @@
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_CARPET_DONK)
 	canSmoothWith = list(SMOOTH_GROUP_CARPET_DONK)
 
-//*****Airless versions of all of the above.*****
+/turf/open/floor/carpet/nanoweave
+	name = "nanoweave carpet"
+	desc = "A padded piece of plasteel plating, used to make space-based installations a feel little less soulless."
+	icon = 'icons/turf/floors/nanoweave_dark.dmi'
+	icon_state = "icon-255" //no i am not renaming like 40 tile states 5 times over
+	base_icon_state = "icon" //god hates you - Zeta
+	floor_tile = /obj/item/stack/tile/carpet/nanoweave
+	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_CARPET_NWDARK)
+	canSmoothWith = list(SMOOTH_GROUP_CARPET_NWDARK)
+
+/turf/open/floor/carpet/nanoweave/red
+	name = "nanoweave carpet (red)"
+	icon = 'icons/turf/floors/nanoweave_red.dmi' //the good part of being a lazy dickwad is that i dont need to redefine icon_state and base_icon_state 5 times over
+	floor_tile = /obj/item/stack/tile/carpet/nanoweave/red
+	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_CARPET_NWRED)
+	canSmoothWith = list(SMOOTH_GROUP_CARPET_NWRED)
+
+/turf/open/floor/carpet/nanoweave/beige //this one is good for varediting to cool colors
+	name = "nanoweave carpet (beige)"
+	icon = 'icons/turf/floors/nanoweave_beige.dmi'
+	floor_tile = /obj/item/stack/tile/carpet/nanoweave/beige
+	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_CARPET_NWBEIGE)
+	canSmoothWith = list(SMOOTH_GROUP_CARPET_NWBEIGE)
+
+/turf/open/floor/carpet/nanoweave/blue
+	name = "nanoweave carpet (blue)"
+	icon = 'icons/turf/floors/nanoweave_blue.dmi'
+	floor_tile = /obj/item/stack/tile/carpet/nanoweave/blue
+	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_CARPET_NWBLUE)
+	canSmoothWith = list(SMOOTH_GROUP_CARPET_NWBLUE)
+
+/turf/open/floor/carpet/nanoweave/purple
+	name = "nanoweave carpet (purple)"
+	icon = 'icons/turf/floors/nanoweave_purple.dmi'
+	floor_tile = /obj/item/stack/tile/carpet/nanoweave/purple
+	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_CARPET_NWPURPLE)
+	canSmoothWith = list(SMOOTH_GROUP_CARPET_NWPURPLE)
+
+/turf/open/floor/carpet/nanoweave/orange
+	name = "nanoweave carpet (orange)"
+	icon = 'icons/turf/floors/nanoweave_orange.dmi'
+	floor_tile = /obj/item/stack/tile/carpet/nanoweave/orange
+	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_CARPET_NWORANGE)
+	canSmoothWith = list(SMOOTH_GROUP_CARPET_NWORANGE)
+
+//*****Airless versions of most of the above.*****
 /turf/open/floor/carpet/airless
 	initial_gas_mix = AIRLESS_ATMOS
 

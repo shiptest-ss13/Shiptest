@@ -32,7 +32,7 @@
 	TEST_ASSERT_EQUAL(docker.shuttle_port.virtual_z(), dockee.mapzone.id, "Ship did not move shuttle port to dockee's mapzone (Ship [docker.shuttle_port.virtual_z()] vs Mapzone [dockee.mapzone.id])")
 
 	// UNDOCKING
-	dockee.Move(3, 3) //So we can make sure it actually goes to the right position after undocking instead of 1, 1
+	dockee.overmap_move(3, 3) //So we can make sure it actually goes to the right position after undocking instead of 1, 1
 
 	docker.Undock()
 

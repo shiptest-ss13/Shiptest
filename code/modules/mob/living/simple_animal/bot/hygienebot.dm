@@ -8,8 +8,7 @@
 	anchored = FALSE
 	health = 100
 	maxHealth = 100
-	radio_key = /obj/item/encryptionkey/headset_service
-	radio_channel = RADIO_CHANNEL_SERVICE //Service
+	radio_key = /obj/item/encryptionkey
 	bot_type = HYGIENE_BOT
 	model = "Cleanbot"
 	bot_core_type = /obj/machinery/bot_core/hygienebot
@@ -51,7 +50,7 @@
 	if(washing)
 		do_wash(AM)
 
-/mob/living/simple_animal/bot/hygienebot/Crossed(atom/movable/AM)
+/mob/living/simple_animal/bot/hygienebot/on_entered(datum/source, atom/movable/AM)
 	. = ..()
 	if(washing)
 		do_wash(AM)
@@ -86,12 +85,6 @@
 	oldtarget_name = null
 	walk_to(src,0)
 	last_found = world.time
-
-
-/mob/living/simple_animal/bot/hygienebot/Crossed(atom/movable/AM)
-	. = ..()
-	if(washing)
-		do_wash(AM)
 
 /mob/living/simple_animal/bot/hygienebot/Moved()
 	. = ..()

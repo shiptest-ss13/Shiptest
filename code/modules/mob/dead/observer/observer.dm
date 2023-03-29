@@ -123,7 +123,7 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 		else
 			T = SSmapping.get_station_center()
 
-	forceMove(T)
+	abstract_move(T)
 
 	if(!name)							//To prevent nameless ghosts
 		name = random_unique_name(gender)
@@ -214,7 +214,7 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 		updatedir = 1
 	else
 		updatedir = 0	//stop updating the dir in case we want to show accessories with dirs on a ghost sprite without dirs
-		setDir(2 		)//reset the dir to its default so the sprites all properly align up
+		setDir(2)//reset the dir to its default so the sprites all properly align up
 
 	if(ghost_accs == GHOST_ACCS_FULL && (icon_state in GLOB.ghost_forms_with_accessories_list)) //check if this form supports accessories and if the client wants to show them
 		var/datum/sprite_accessory/S
@@ -293,7 +293,8 @@ Works together with spawning an observer, noted above.
 			SStgui.on_transfer(src, ghost) // Transfer NanoUIs.
 			ghost.can_reenter_corpse = can_reenter_corpse
 			ghost.key = key
-			ghost.client.init_verbs()
+			ghost.client?.init_verbs()
+			// this should probably come before the key change? unsure
 			if(!can_reenter_corpse)	// Disassociates observer mind from the body mind
 				ghost.mind = null
 				key = null
@@ -331,25 +332,26 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 /mob/dead/observer/Move(NewLoc, direct, glide_size_override = 32)
 	if(updatedir)
 		setDir(direct)//only update dir if we actually need it, so overlays won't spin on base sprites that don't have directions of their own
-	var/oldloc = loc
-
 	if(glide_size_override)
 		set_glide_size(glide_size_override)
 	if(NewLoc)
-		forceMove(NewLoc)
+		abstract_move(NewLoc)
 		update_parallax_contents()
 	else
-		forceMove(get_turf(src))  //Get out of closets and such as a ghost
+		var/turf/destination = get_turf(src)
 		if((direct & NORTH) && y < world.maxy)
-			y++
+			destination = get_step(destination, NORTH)
 		else if((direct & SOUTH) && y > 1)
-			y--
+			destination = get_step(destination, SOUTH)
 		if((direct & EAST) && x < world.maxx)
-			x++
+			destination = get_step(destination, EAST)
 		else if((direct & WEST) && x > 1)
-			x--
+			destination = get_step(destination, WEST)
+		abstract_move(destination)//Get out of closets and such as a ghost
 
-	Moved(oldloc, direct)
+/mob/dead/observer/forceMove(atom/destination)
+	abstract_move(destination) // move like the wind
+	return TRUE
 
 /mob/dead/observer/verb/reenter_corpse()
 	set category = "Ghost"
@@ -433,7 +435,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	if(!thearea)
 		return
 
-	usr.forceMove(pick(get_area_turfs(thearea)))
+	usr.abstract_move(pick(get_area_turfs(thearea)))
 	update_parallax_contents()
 
 /mob/dead/observer/verb/follow()
@@ -504,7 +506,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 			var/turf/T = get_turf(M) //Turf of the destination mob
 
 			if(T && isturf(T))	//Make sure the turf exists, then move the source to that destination.
-				A.forceMove(T)
+				A.abstract_move(T)
 				A.update_parallax_contents()
 			else
 				to_chat(A, "<span class='danger'>This mob is not located in the game world.</span>")
@@ -679,7 +681,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 /mob/dead/observer/MouseDrop(atom/over)
 	if(!usr || !over)
 		return
-	if (isobserver(usr) && usr.client.holder && (isliving(over) || iscameramob(over)) )
+	if (isobserver(usr) && usr.client.holder && (isliving(over) || iscameramob(over)))
 		if (usr.client.holder.cmd_ghost_drag(src,over))
 			return
 
@@ -699,7 +701,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 			var/tz = text2num(href_list["z"])
 			var/turf/target = locate(tx, ty, tz)
 			if(istype(target))
-				forceMove(target)
+				abstract_move(target)
 				return
 		if(href_list["reenter"])
 			reenter_corpse()
@@ -878,7 +880,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 
 /mob/dead/observer/CtrlShiftClick(mob/user)
 	if(isobserver(user) && check_rights(R_SPAWN))
-		change_mob_type( /mob/living/carbon/human , null, null, TRUE) //always delmob, ghosts shouldn't be left lingering
+		change_mob_type(/mob/living/carbon/human , null, null, TRUE) //always delmob, ghosts shouldn't be left lingering
 
 /mob/dead/observer/examine(mob/user)
 	. = ..()
@@ -931,7 +933,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 
 	var/list/t_ray_images = list()
 	var/static/list/stored_t_ray_images = list()
-	for(var/obj/O in orange(client.view, src) )
+	for(var/obj/O in orange(client.view, src))
 
 		if(HAS_TRAIT(O, TRAIT_T_RAY_VISIBLE))
 			var/image/I = new(loc = get_turf(O))

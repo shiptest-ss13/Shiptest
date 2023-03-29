@@ -34,7 +34,7 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	name = "silver"
 	id = "silver"
 	desc = "Silver"
-	color = list(255/255, 284/255, 302/255,0, 0,0,0,0, 0,0,0,0, 0,0,0,1, 0,0,0,0)
+	color = "#ffffff"
 	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/mineral/silver
 	ore_type = /obj/item/stack/ore/silver
@@ -46,7 +46,7 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	name = "gold"
 	id = "gold"
 	desc = "Gold"
-	color = list(340/255, 240/255, 50/255,0, 0,0,0,0, 0,0,0,0, 0,0,0,1, 0,0,0,0) //gold is shiny, but not as bright as bananium
+	color = "#fff032" //gold is shiny, but not as bright as bananium
 	strength_modifier = 1.2
 	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/mineral/gold
@@ -60,7 +60,7 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	name = "diamond"
 	id = "diamond"
 	desc = "Highly pressurized carbon"
-	color = list(48/255, 272/255, 301/255,0, 0,0,0,0, 0,0,0,0, 0,0,0,1, 0,0,0,0)
+	color = "#30ffff"
 	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/mineral/diamond
 	ore_type = /obj/item/stack/ore/diamond
@@ -74,7 +74,7 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	name = "uranium"
 	id = "uranium"
 	desc = "Uranium"
-	color = rgb(48, 237, 26)
+	color = "#30ed1a"
 	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/mineral/uranium
 	ore_type = /obj/item/stack/ore/uranium
@@ -95,7 +95,7 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	name = "plasma"
 	id = "plasma"
 	desc = "Isn't plasma a state of matter? Oh whatever."
-	color = list(298/255, 46/255, 352/255,0, 0,0,0,0, 0,0,0,0, 0,0,0,1, 0,0,0,0)
+	color = "#ff2eff"
 	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/mineral/plasma
 	ore_type = /obj/item/stack/ore/plasma
@@ -119,7 +119,7 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	name = "bluespace crystal"
 	id = "bluespace_crystal"
 	desc = "Crystals with bluespace properties"
-	color = list(119/255, 217/255, 396/255,0, 0,0,0,0, 0,0,0,0, 0,0,0,1, 0,0,0,0)
+	color = "#4086e2"
 	alpha = 200
 	categories = list(MAT_CATEGORY_ORE = TRUE)
 	beauty_modifier = 0.5
@@ -132,7 +132,7 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	name = "bananium"
 	id = "bananium"
 	desc = "Material with hilarious properties"
-	color = list(460/255, 464/255, 0, 0, 0,0,0,0, 0,0,0,0, 0,0,0,1, 0,0,0,0) //obnoxiously bright yellow
+	color = "#ffff00" //obnoxiously bright yellow
 	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/mineral/bananium
 	ore_type = /obj/item/stack/ore/bananium
@@ -142,7 +142,7 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 
 /datum/material/bananium/on_applied(atom/source, amount, material_flags)
 	. = ..()
-	source.AddComponent(/datum/component/squeak, list('sound/items/bikehorn.ogg'=1), 50, falloff_exponent = 20)
+	source.LoadComponent(/datum/component/squeak, list('sound/items/bikehorn.ogg'=1), 50, falloff_exponent = 20)
 	source.AddComponent(/datum/component/slippery, min(amount / 10, 80))
 
 

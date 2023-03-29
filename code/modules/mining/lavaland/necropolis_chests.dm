@@ -13,7 +13,7 @@
 	desc = "It's watching you suspiciously."
 
 /obj/structure/closet/crate/necropolis/tendril/PopulateContents()
-	var/loot = rand(1,31)
+	var/loot = rand(1,29)
 	switch(loot)
 		if(1)
 			new /obj/item/shared_storage/red(src)
@@ -42,7 +42,7 @@
 		if(11)
 			new /obj/item/ship_in_a_bottle(src)
 		if(12)
-			new /obj/item/clothing/suit/space/hardsuit/ert/paranormal/berserker(src)
+			new /obj/item/clothing/suit/space/hardsuit/berserker(src)
 		if(13)
 			new /obj/item/borg/upgrade/modkit/lifesteal(src)
 			new /obj/item/bedsheet/cult(src)
@@ -71,25 +71,98 @@
 		if(22)
 			new /obj/item/voodoo(src)
 		if(23)
-			new /obj/item/grenade/clusterbuster/inferno(src)
-		if(24)
-			new /obj/item/reagent_containers/food/drinks/bottle/holywater/hell(src)
-			new /obj/item/clothing/suit/space/hardsuit/ert/paranormal/inquisitor(src)
-		if(25)
 			new /obj/item/book/granter/spell/summonitem(src)
-		if(26)
+		if(24)
 			new /obj/item/clothing/gloves/gauntlets(src)
-		if(27)
+		if(25)
 			new /obj/item/clothing/under/drip(src)
 			new /obj/item/clothing/shoes/drip(src)
-		if(28)
+		if(26)
 			new /obj/item/freeze_cube(src)
-		if(29)
+		if(27)
 			new /obj/item/gun/energy/spur(src)
-		if(30)
-			new /obj/item/clothing/suit/ascetic(src)
-		if(31)
+		if(28)
+			new /obj/item/clothing/suit/armor/ascetic(src)
+		if(29)
 			new /obj/item/kitchen/knife/envy(src)
+
+/obj/structure/closet/crate/necropolis/tendril/greater
+	desc = "It's watching you wearily. It seems terribly bloated."
+
+/obj/structure/closet/crate/necropolis/tendril/greater/PopulateContents()
+	for(var/i in 1 to 3)
+		var/loot = rand(1,29)
+		switch(loot)
+			if(1)
+				new /obj/item/shared_storage/red(src)
+			if(2)
+				new /obj/item/clothing/suit/space/hardsuit/cult(src)
+			if(3)
+				new /obj/item/necromantic_stone/lava(src)
+			if(4)
+				new /obj/item/katana/cursed(src)
+			if(5)
+				new /obj/item/clothing/glasses/godeye(src)
+			if(6)
+				new /obj/item/reagent_containers/glass/bottle/potion/flight(src)
+			if(7)
+				new /obj/item/pickaxe/diamond(src)
+				new /obj/item/pinpointer/deepcore/advanced(src)
+			if(8)
+				if(prob(50))
+					new /obj/item/disk/design_disk/modkit_disc/resonator_blast(src)
+				else
+					new /obj/item/disk/design_disk/modkit_disc/rapid_repeater(src)
+			if(9)
+				new /obj/item/rod_of_asclepius(src)
+			if(10)
+				new /obj/item/organ/heart/cursed/wizard(src)
+			if(11)
+				new /obj/item/ship_in_a_bottle(src)
+			if(12)
+				new /obj/item/clothing/suit/space/hardsuit/berserker(src)
+			if(13)
+				new /obj/item/borg/upgrade/modkit/lifesteal(src)
+				new /obj/item/bedsheet/cult(src)
+			if(14)
+				new /obj/item/nullrod/scythe/talking/necro(src)
+			if(15)
+				new /obj/item/book_of_babel(src)
+			if(16)
+				if(prob(75))
+					new /obj/item/guardiancreator/miner(src)
+				else
+					new /obj/item/guardiancreator/miner/choose (src)
+			if(17)
+				if(prob(50))
+					new /obj/item/disk/design_disk/modkit_disc/mob_and_turf_aoe(src)
+				else
+					new /obj/item/disk/design_disk/modkit_disc/bounty(src)
+			if(18)
+				new /obj/item/warp_cube/red(src)
+			if(19)
+				new /obj/item/wisp_lantern(src)
+			if(20)
+				new /obj/item/immortality_talisman(src)
+			if(21)
+				new /obj/item/gun/magic/hook(src)
+			if(22)
+				new /obj/item/voodoo(src)
+			if(23)
+				new /obj/item/book/granter/spell/summonitem(src)
+			if(24)
+				new /obj/item/clothing/gloves/gauntlets(src)
+			if(25)
+				new /obj/item/clothing/under/drip(src)
+				new /obj/item/clothing/shoes/drip(src)
+			if(26)
+				new /obj/item/freeze_cube(src)
+			if(27)
+				new /obj/item/gun/energy/spur(src)
+			if(28)
+				new /obj/item/clothing/suit/armor/ascetic(src)
+			if(29)
+				new /obj/item/kitchen/knife/envy(src)
 
 //KA modkit design discs
 /obj/item/disk/design_disk/modkit_disc
@@ -199,7 +272,7 @@
 	. = ..()
 	if(slot == ITEM_SLOT_FEET)
 		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "dripjordan", /datum/mood_event/dripjordan)
-		SEND_SIGNAL(user, COMSIG_CLEAR_MOOD_EVENT, "nojordans", /datum/mood_event/dripjordan)
+		SEND_SIGNAL(user, COMSIG_CLEAR_MOOD_EVENT, "nojordans")
 
 /obj/item/clothing/shoes/drip/dropped(mob/user)
 	. = ..()
@@ -818,6 +891,7 @@
 	damtype = BURN
 	var/cooldown_time = 5 SECONDS
 	COOLDOWN_DECLARE(freeze_cooldown)
+	throw_speed = 1
 
 /obj/item/freeze_cube/examine(mob/user)
 	. = ..()
@@ -892,7 +966,7 @@
 
 /obj/item/clothing/gloves/gauntlets/proc/rocksmash(mob/living/carbon/human/H, atom/A, proximity)
 	SIGNAL_HANDLER
-	if(!istype(A, /turf/closed/mineral))
+	if(!(istype(A, /turf/closed/mineral) || istype(A, /turf/closed/wall/concrete)))
 		return
 	A.attackby(src, H)
 	return COMPONENT_NO_ATTACK_OBJ
@@ -900,7 +974,7 @@
 //A version of the Cave Story refrence that a deranged scientist got their hands on. Better? Not really. Different? Definitely.
 /obj/item/gun/energy/spur
 	name = "Slowpoke"
-	desc = "The work of a truly genius gunsmith, altered and \"improved\" by a truly deranged Nanotransen scientist, using components from a kinetic accelerator and beam rifle. Draw, partner!"
+	desc = "The work of a truly genius gunsmith, altered and \"improved\" by a truly deranged Nanotrasen scientist, using components from a kinetic accelerator and beam rifle. Draw, partner!"
 	icon = 'icons/obj/guns/energy.dmi'
 	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
@@ -1062,13 +1136,10 @@
 	..()
 
 //ascetic's robe, provides quickly-recovering layers of total damage immunity, causes massive damage vulnerability when shield is down. Increases speed slightly.
-/obj/item/clothing/suit/ascetic
+/obj/item/clothing/suit/armor/ascetic
 	name = "dunewalker's garb"
 	desc = "Sand-bitten robes of roughspun cloth, fit for the hardy life of a travelling hermit. There's a strange aura about them- like a fragile desert haze."
-	icon = 'icons/obj/clothing/suits.dmi'
-	icon_state = "britte_master"//suffering
-	mob_overlay_icon = 'icons/mob/clothing/suit.dmi'
-	mob_overlay_state = "brittle_master"
+	icon_state = "brittle_master"//suffering
 	equip_delay_other = 80
 	strip_delay = 100//to prevent hotswapping in battle
 	equip_delay_other = 10
@@ -1091,11 +1162,11 @@
 	var/shield_state = "shimmerair"
 	var/shield_on = "shimmerair"
 
-/obj/item/clothing/suit/ascetic/examine(mob/user)
+/obj/item/clothing/suit/armor/ascetic/examine(mob/user)
 	. = ..()
 	. += "<span class='notice'>The ascetic's magic woven into this robe increases the owner's speed and deflects harm from their person- however, once it's mirages have melted away, it causes significantly more damage to be taken. The magic can withstand three attacks before it must recover, but it begins regenerating quickly.</span>"
 
-/obj/item/clothing/suit/ascetic/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+/obj/item/clothing/suit/armor/ascetic/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	recharge_cooldown = world.time + recharge_delay
 	if(current_charges > 0)
 		var/datum/effect_system/spark_spread/s = new
@@ -1115,11 +1186,11 @@
 		return 1
 	return 0
 
-/obj/item/clothing/suit/ascetic/Destroy()
+/obj/item/clothing/suit/armor/ascetic/Destroy()
 	STOP_PROCESSING(SSobj, src)
 	return ..()
 
-/obj/item/clothing/suit/ascetic/process()
+/obj/item/clothing/suit/armor/ascetic/process()
 	if(world.time > recharge_cooldown && current_charges < max_charges)
 		current_charges = clamp((current_charges + recharge_rate), 0, max_charges)
 		playsound(loc, 'sound/effects/magic.ogg', 40, TRUE)
@@ -1131,7 +1202,7 @@
 			var/mob/living/carbon/human/C = loc
 			C.update_inv_wear_suit()
 
-/obj/item/clothing/suit/ascetic/worn_overlays(isinhands)
+/obj/item/clothing/suit/armor/ascetic/worn_overlays(isinhands)
 	. = list()
 	if(!isinhands)
 		. += mutable_appearance('icons/effects/effects.dmi', shield_state, MOB_LAYER - 0.01)

@@ -1,9 +1,9 @@
 /**
-  * # Overmap ships
-  *
-  * Basically, any overmap object that is capable of moving by itself.
-  *
-  */
+ * # Overmap ships
+ *
+ * Basically, any overmap object that is capable of moving by itself.
+ *
+ */
 /datum/overmap/ship
 	name = "overmap vessel"
 	char_rep = ">"
@@ -31,15 +31,15 @@
 		adjust_speed(old_dock.speed[1], old_dock.speed[2])
 
 /**
-  * Change the speed in any direction.
-  * * n_x - Speed in the X direction to change
-  * * n_y - Speed in the Y direction to change
-  */
+ * Change the speed in any direction.
+ * * n_x - Speed in the X direction to change
+ * * n_y - Speed in the Y direction to change
+ */
 /datum/overmap/ship/proc/adjust_speed(n_x, n_y)
 	var/offset = 1
 	if(movement_callback_id)
 		var/previous_time = 1 / MAGNITUDE(speed[1], speed[2])
-		offset = timeleft(movement_callback_id) / previous_time
+		offset = clamp(timeleft(movement_callback_id) / previous_time, 0, 1)
 		deltimer(movement_callback_id)
 		movement_callback_id = null //just in case
 
@@ -56,15 +56,15 @@
 	movement_callback_id = addtimer(CALLBACK(src, .proc/tick_move), timer, TIMER_STOPPABLE)
 
 /**
-  * Called by [/datum/overmap/ship/proc/adjust_speed], this continually moves the ship according to its speed
-  */
+ * Called by [/datum/overmap/ship/proc/adjust_speed], this continually moves the ship according to its speed
+ */
 /datum/overmap/ship/proc/tick_move()
 	if(is_still() || QDELING(src) || docked_to)
 		decelerate(max_speed)
 		deltimer(movement_callback_id)
 		movement_callback_id = null
 		return
-	Move(x + SIGN(speed[1]), y + SIGN(speed[2]))
+	overmap_move(x + SIGN(speed[1]), y + SIGN(speed[2]))
 	update_visuals()
 
 	if(movement_callback_id)
@@ -80,25 +80,25 @@
 	token.update_screen()
 
 /**
-  * Returns whether or not the ship is moving in any direction.
-  */
+ * Returns whether or not the ship is moving in any direction.
+ */
 /datum/overmap/ship/proc/is_still()
 	return !speed[1] && !speed[2]
 
 /**
-  * Returns the total speed in all directions.
-  *
-  * The equation for acceleration is as follows:
-  * 60 SECONDS / (1 / ([ship's speed] / ([ship's mass] * 100)))
-  */
+ * Returns the total speed in all directions.
+ *
+ * The equation for acceleration is as follows:
+ * 60 SECONDS / (1 / ([ship's speed] / ([ship's mass] * 100)))
+ */
 /datum/overmap/ship/proc/get_speed()
 	if(is_still())
 		return 0
 	return 60 SECONDS * MAGNITUDE(speed[1], speed[2]) //It's per minute, which is 60 seconds
 
 /**
-  * Returns the direction the ship is moving in terms of dirs
-  */
+ * Returns the direction the ship is moving in terms of dirs
+ */
 /datum/overmap/ship/proc/get_heading()
 	var/direction = 0
 	if(speed[1])
@@ -114,8 +114,8 @@
 	return direction
 
 /**
-  * Returns the estimated time in deciseconds to the next tile at current speed, or approx. time until reaching the destination when on autopilot
-  */
+ * Returns the estimated time in deciseconds to the next tile at current speed, or approx. time until reaching the destination when on autopilot
+ */
 /datum/overmap/ship/proc/get_eta()
 	. += timeleft(movement_callback_id)
 	if(!.)
@@ -124,10 +124,10 @@
 	return "[add_leading(num2text((. / 60) % 60), 2, "0")]:[add_leading(num2text(. % 60), 2, "0")]"
 
 /**
-  * Change the speed in a specified dir.
-  * * direction - dir to accelerate in (NORTH, SOUTH, SOUTHEAST, etc.)
-  * * acceleration - How much to accelerate by
-  */
+ * Change the speed in a specified dir.
+ * * direction - dir to accelerate in (NORTH, SOUTH, SOUTHEAST, etc.)
+ * * acceleration - How much to accelerate by
+ */
 /datum/overmap/ship/proc/accelerate(direction, acceleration)
 	var/heading = get_heading()
 	if(!(direction in GLOB.cardinals))
@@ -147,9 +147,9 @@
 		adjust_speed(0, -acceleration)
 
 /**
-  * Reduce the speed or stop in all directions.
-  * * acceleration - How much to decelerate by
-  */
+ * Reduce the speed or stop in all directions.
+ * * acceleration - How much to decelerate by
+ */
 /datum/overmap/ship/proc/decelerate(acceleration)
 	if(speed[1] && speed[2]) //another check to make sure that deceleration isn't 2x as fast when moving diagonally
 		adjust_speed(-SIGN(speed[1]) * min(acceleration * 0.5, abs(speed[1])), -SIGN(speed[2]) * min(acceleration * 0.5, abs(speed[2])))
@@ -171,8 +171,8 @@
 		accelerate(n_dir, acceleration_speed * (percentage / 100))
 
 /**
-  * Updates the visuals of the ship based on heading and whether or not it's moving.
-  */
+ * Updates the visuals of the ship based on heading and whether or not it's moving.
+ */
 /datum/overmap/ship/proc/update_visuals()
 	var/direction = get_heading()
 	if(direction & EAST)

@@ -2,21 +2,14 @@
 Assistant
 */
 /datum/job/assistant
-	title = "Assistant"
-	faction = "Station"
+	name = "Assistant"
 	total_positions = 5
 	spawn_positions = 5
-	department_head = list("Head of Personnel")
-	supervisors = "absolutely everyone"
-	selection_color = "#dddddd"
 	access = list()			//See /datum/job/assistant/get_access()
 	minimal_access = list()	//See /datum/job/assistant/get_access()
 	outfit = /datum/outfit/job/assistant
-	antag_rep = 7
-	paycheck = PAYCHECK_ASSISTANT // Get a job. Job reassignment changes your paycheck now. Get over it.
-	paycheck_department = ACCOUNT_CIV
 	display_order = JOB_DISPLAY_ORDER_ASSISTANT
-	wiki_page = "Assistant" //WS Edit - Wikilinks/Warning
+	wiki_page = "Assistant"
 
 /datum/job/assistant/get_access()
 	if(CONFIG_GET(flag/assistants_have_maint_access) || !CONFIG_GET(flag/jobs_have_minimal_access)) //Config has assistant maint access set
@@ -27,8 +20,10 @@ Assistant
 
 /datum/outfit/job/assistant
 	name = "Assistant"
+	job_icon = "assistant"
 	jobtype = /datum/job/assistant
 	r_pocket = /obj/item/radio
+	belt = /obj/item/pda
 
 /datum/outfit/job/assistant/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -90,6 +85,17 @@ Assistant
 	uniform = /obj/item/clothing/under/syndicate/camo
 	head = /obj/item/clothing/head/beret/solgov/terragov/plain
 
+/datum/outfit/job/assistant/minutemen
+	name = "Volunteer (Minutemen)"
+
+	uniform = /obj/item/clothing/under/rank/security/officer/minutemen
+	backpack = /obj/item/storage/backpack/security/cmm
+
+/datum/outfit/job/assistant/inteq
+	name = "IRMG Recruit (Inteq)"
+
+	uniform = /obj/item/clothing/under/syndicate/inteq
+
 /datum/outfit/job/assistant/intern
 	name = "Assistant (Intern)"
 	uniform = /obj/item/clothing/under/suit/black
@@ -134,7 +140,6 @@ Assistant
 	name = "Junior Agent (Assistant)"
 
 	id = /obj/item/card/id/syndicate_command/crew_id
-	ears = /obj/item/radio/headset/syndicate
 	uniform = /obj/item/clothing/under/syndicate
 	alt_uniform = null
 	shoes = /obj/item/clothing/shoes/jackboots
@@ -145,6 +150,23 @@ Assistant
 	uniform = /obj/item/clothing/under/syndicate/gorlex
 	alt_uniform = /obj/item/clothing/under/syndicate
 
+/datum/outfit/job/assistant/syndicate/gec
+	name = "Deckhand (GEC)"
+
+	id = /obj/item/card/id/syndicate_command/crew_id
+	uniform = /obj/item/clothing/under/syndicate
+	suit = /obj/item/clothing/suit/toggle/hazard
+	alt_uniform = null
+	shoes = /obj/item/clothing/shoes/jackboots
+	head = /obj/item/clothing/head/safety_helmet
+
+/datum/outfit/job/assistant/independent/crewmatefancy
+	name = "Crewmate (Independent)"
+
+	uniform = /obj/item/clothing/under/misc/assistantformal
+	shoes = /obj/item/clothing/shoes/laceup
+	gloves = /obj/item/clothing/gloves/color/white
+
 /datum/outfit/job/assistant/ex_prisoner
 	name = "Assistant (Ex-Prisoner)"
 
@@ -152,3 +174,54 @@ Assistant
 	uniform = /obj/item/clothing/under/rank/prisoner
 	shoes = /obj/item/clothing/shoes/sneakers/orange
 	accessory = /obj/item/clothing/accessory/armband/deputy
+
+/datum/outfit/job/assistant/waiter
+	name = "Assistant (Waiter)"
+
+	uniform = /obj/item/clothing/under/suit/waiter
+	shoes = /obj/item/clothing/shoes/laceup
+	ears = /obj/item/radio/headset/headset_srv
+	gloves = /obj/item/clothing/gloves/color/white
+
+/datum/outfit/job/assistant/artist
+	name = "Assistant (Artist)"
+
+	uniform = /obj/item/clothing/under/suit/burgundy
+	suit = /obj/item/clothing/suit/toggle/suspenders
+	head = /obj/item/clothing/head/beret/black
+	shoes = /obj/item/clothing/shoes/laceup
+	gloves = /obj/item/clothing/gloves/color/white
+	accessory = /obj/item/clothing/neck/scarf/darkblue
+
+/datum/outfit/job/assistant/waiter/syndicate
+	name = "Assistant (Syndicate Waiter)"
+	uniform = /obj/item/clothing/under/suit/waiter/syndicate
+
+/datum/outfit/job/assistant/roumain
+	name = "Shadow (Saint-Roumain Militia)"
+
+	uniform = /obj/item/clothing/under/suit/roumain
+	alt_uniform = null
+	shoes = /obj/item/clothing/shoes/workboots/mining
+	suit = /obj/item/clothing/suit/armor/roumain/shadow
+
+	head = /obj/item/clothing/head/cowboy/sec/roumain/shadow
+
+/datum/outfit/job/assistant/syndicate/cyberagent
+	name = "Junior Agent (Cybersun)"
+
+	uniform = /obj/item/clothing/under/syndicate
+	shoes = /obj/item/clothing/shoes/jackboots
+	r_pocket = /obj/item/radio
+	head = /obj/item/clothing/head/soft/black
+/datum/outfit/job/assistant/pharma
+	name = "Pharmacology Student"
+
+	uniform = /obj/item/clothing/under/rank/medical/chemist/junior_chemist
+	shoes = /obj/item/clothing/shoes/sneakers/white
+	accessory = /obj/item/clothing/neck/scarf/orange
+	l_pocket = /obj/item/pda/medical
+	r_pocket = /obj/item/reagent_containers/pill/floorpill
+	belt = /obj/item/reagent_scanner
+	backpack_contents = list(/obj/item/book/manual/wiki/chemistry=1)
+

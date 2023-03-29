@@ -1,6 +1,10 @@
 /proc/random_blood_type()
 	return pick(4;"O-", 36;"O+", 3;"A-", 28;"A+", 1;"B-", 20;"B+", 1;"AB-", 5;"AB+")
 
+/proc/random_prosthetic()
+	. = list(BODY_ZONE_L_ARM = PROSTHETIC_NORMAL, BODY_ZONE_R_ARM = PROSTHETIC_NORMAL, BODY_ZONE_L_LEG = PROSTHETIC_NORMAL, BODY_ZONE_R_LEG = PROSTHETIC_NORMAL)
+	.[pick(.)] = PROSTHETIC_ROBOTIC
+
 /proc/random_eye_color()
 	switch(pick(20;"brown",20;"hazel",20;"grey",15;"blue",15;"green",1;"amber",1;"albino"))
 		if("brown")
@@ -93,8 +97,53 @@
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/spider_mandibles, GLOB.spider_mandibles_list)
 	if(!GLOB.kepori_feathers_list.len)
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/kepori_feathers, GLOB.kepori_feathers_list)
+	if(!GLOB.kepori_tail_feathers_list.len)
+		init_sprite_accessory_subtypes(/datum/sprite_accessory/kepori_feathers, GLOB.kepori_tail_feathers_list)
+	if(!GLOB.vox_head_quills_list.len)
+		init_sprite_accessory_subtypes(/datum/sprite_accessory/vox_head_quills, GLOB.vox_head_quills_list)
+	if(!GLOB.vox_neck_quills_list.len)
+		init_sprite_accessory_subtypes(/datum/sprite_accessory/vox_neck_quills, GLOB.vox_neck_quills_list)
+	if(!GLOB.elzu_horns_list.len)
+		init_sprite_accessory_subtypes(/datum/sprite_accessory/elzu_horns, GLOB.elzu_horns_list)
+	if(!GLOB.tails_list_elzu.len)
+		init_sprite_accessory_subtypes(/datum/sprite_accessory/tails/elzu, GLOB.tails_list_elzu)
 	//For now we will always return none for tail_human and ears.
-	return(list("mcolor" = pick("FFFFFF","7F7F7F", "7FFF7F", "7F7FFF", "FF7F7F", "7FFFFF", "FF7FFF", "FFFF7F"),"ethcolor" = GLOB.color_list_ethereal[pick(GLOB.color_list_ethereal)], "tail_lizard" = pick(GLOB.tails_list_lizard), "tail_human" = "None", "wings" = "None", "snout" = pick(GLOB.snouts_list), "horns" = pick(GLOB.horns_list), "ears" = "None", "frills" = pick(GLOB.frills_list), "spines" = pick(GLOB.spines_list), "body_markings" = pick(GLOB.body_markings_list), "legs" = "Normal Legs", "caps" = pick(GLOB.caps_list), "moth_wings" = pick(GLOB.moth_wings_list), "moth_fluff" = pick(GLOB.moth_fluff_list), "moth_markings" = pick(GLOB.moth_markings_list), "squid_face" = pick(GLOB.squid_face_list), "ipc_screen" = pick(GLOB.ipc_screens_list), "ipc_antenna" = pick(GLOB.ipc_antennas_list),"ipc_chassis" = pick(GLOB.ipc_chassis_list), "spider_legs" = pick(GLOB.spider_legs_list), "spider_spinneret" = pick(GLOB.spider_spinneret_list), "spider_mandibles" = pick(GLOB.spider_mandibles_list), "kepori_feathers" = pick(GLOB.kepori_feathers_list), "kepori_body_feathers" = pick(GLOB.kepori_body_feathers_list), "body_size" = pick(GLOB.body_sizes), "flavor_text" = ""))
+	//if you don't keep this alphabetised I'm going to personally steal your shins and sell them online
+	return list(
+		"body_markings" = pick(GLOB.body_markings_list),
+		"body_size" = pick(GLOB.body_sizes),
+		"caps" = pick(GLOB.caps_list),
+		"ears" = "None",
+		"elzu_horns" = pick(GLOB.elzu_horns_list),
+		"ethcolor" = GLOB.color_list_ethereal[pick(GLOB.color_list_ethereal)],
+		"flavor_text" = "",
+		"frills" = pick(GLOB.frills_list),
+		"horns" = pick(GLOB.horns_list),
+		"ipc_antenna" = pick(GLOB.ipc_antennas_list),
+		"ipc_brain" = pick(GLOB.ipc_brain_list),
+		"ipc_chassis" = pick(GLOB.ipc_chassis_list),
+		"ipc_screen" = pick(GLOB.ipc_screens_list),
+		"kepori_body_feathers" = pick(GLOB.kepori_body_feathers_list),
+		"kepori_feathers" = pick(GLOB.kepori_feathers_list),
+		"kepori_tail_feathers" = pick(GLOB.kepori_tail_feathers_list),
+		"legs" = "Normal Legs",
+		"mcolor" = pick("FFFFFF","7F7F7F", "7FFF7F", "7F7FFF", "FF7F7F", "7FFFFF", "FF7FFF", "FFFF7F"),
+		"moth_fluff" = pick(GLOB.moth_fluff_list),
+		"moth_markings" = pick(GLOB.moth_markings_list),
+		"moth_wings" = pick(GLOB.moth_wings_list),
+		"snout" = pick(GLOB.snouts_list),
+		"spider_legs" = pick(GLOB.spider_legs_list),
+		"spider_mandibles" = pick(GLOB.spider_mandibles_list),
+		"spider_spinneret" = pick(GLOB.spider_spinneret_list),
+		"spines" = pick(GLOB.spines_list),
+		"squid_face" = pick(GLOB.squid_face_list),
+		"tail_human" = "None",
+		"tail_lizard" = pick(GLOB.tails_list_lizard),
+		"tail_elzu" = pick(GLOB.tails_list_elzu),
+		"vox_head_quills" = pick(GLOB.vox_head_quills_list),
+		"vox_neck_quills" = pick(GLOB.vox_neck_quills_list),
+		"wings" = "None",
+	)
 
 /proc/random_hairstyle(gender)
 	switch(gender)
@@ -134,13 +183,6 @@
 /proc/random_unique_plasmaman_name(attempts_to_find_unique_name=10)
 	for(var/i in 1 to attempts_to_find_unique_name)
 		. = capitalize(plasmaman_name())
-
-		if(!findname(.))
-			break
-
-/proc/random_unique_ethereal_name(attempts_to_find_unique_name=10)
-	for(var/i in 1 to attempts_to_find_unique_name)
-		. = capitalize(ethereal_name())
 
 		if(!findname(.))
 			break
@@ -265,7 +307,7 @@ GLOBAL_LIST_EMPTY(species_list)
 	return ..()
 
 ///Timed action involving one mob user. Target is optional.
-/proc/do_after(mob/user, var/delay, needhand = TRUE, atom/target = null, progress = TRUE, datum/callback/extra_checks = null)
+/proc/do_after(mob/user, delay, needhand = TRUE, atom/target = null, progress = TRUE, datum/callback/extra_checks = null)
 	if(!user)
 		return FALSE
 	var/atom/Tloc = null
@@ -594,7 +636,7 @@ GLOBAL_LIST_EMPTY(species_list)
 	return .
 
 //Find an active ai with the least borgs. VERBOSE PROCNAME HUH!
-/proc/select_active_ai_with_fewest_borgs(var/z)
+/proc/select_active_ai_with_fewest_borgs(z)
 	var/mob/living/silicon/ai/selected
 	var/list/active = active_ais(FALSE, z)
 	for(var/mob/living/silicon/ai/A in active)
@@ -612,7 +654,7 @@ GLOBAL_LIST_EMPTY(species_list)
 			. = pick(borgs)
 	return .
 
-/proc/select_active_ai(mob/user, var/z = null)
+/proc/select_active_ai(mob/user, z = null)
 	var/list/ais = active_ais(FALSE, z)
 	if(ais.len)
 		if(user)

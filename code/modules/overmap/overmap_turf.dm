@@ -1,8 +1,8 @@
 /** # Overmap turfs
-  * Overmap turfs, has no non-aesthetic functionality.
-  */
+ * Overmap turfs, has no non-aesthetic functionality.
+ */
 /turf/open/overmap
-	icon = 'whitesands/icons/turf/overmap.dmi'
+	icon = 'icons/turf/overmap.dmi'
 	icon_state = "overmap"
 	initial_gas_mix = AIRLESS_ATMOS
 
@@ -26,14 +26,14 @@
 		numbers += list("[round(overmap_x/10)]","[round(overmap_x%10)]")
 
 	for(var/i = 1 to length(numbers))
-		var/image/I = image('whitesands/icons/effects/numbers.dmi', numbers[i])
+		var/image/I = image('icons/misc/numbers.dmi', numbers[i])
 		I.pixel_x = 5*i + (world.icon_size - length(numbers)*5)/2 - 5
 		I.pixel_y = world.icon_size/2 - 3
 		overlays += I
 
 /** # Overmap area
-  * Area that all overmap objects will spawn in at roundstart.
-  */
+ * Area that all overmap objects will spawn in at roundstart.
+ */
 /area/overmap
 	name = "Overmap"
 	icon_state = "yellow"

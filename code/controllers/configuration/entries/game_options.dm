@@ -109,26 +109,6 @@
 
 /datum/config_entry/flag/protect_assistant_from_antagonist	//If assistants can be traitor/cult/other
 
-/datum/config_entry/flag/enforce_human_authority	//If non-human species are barred from joining as a head of staff
-
-
-/datum/config_entry/flag/use_antag_rep // see game_options.txt for details
-
-/datum/config_entry/number/antag_rep_maximum
-	config_entry_value = 200
-	integer = FALSE
-	min_val = 0
-
-/datum/config_entry/number/default_antag_tickets
-	config_entry_value = 100
-	integer = FALSE
-	min_val = 0
-
-/datum/config_entry/number/max_tickets_per_roll
-	config_entry_value = 100
-	integer = FALSE
-	min_val = 0
-
 /datum/config_entry/number/midround_antag_time_check	// How late (in minutes you want the midround antag system to stay on, setting this to 0 will disable the system)
 	config_entry_value = 60
 	integer = FALSE
@@ -154,8 +134,6 @@
 /datum/config_entry/keyed_list/roundstart_no_hard_check // Species contained in this list will not cause existing characters with no-longer-roundstart species set to be resetted to the human race.
 	key_mode = KEY_MODE_TEXT
 	value_mode = VALUE_MODE_FLAG
-
-/datum/config_entry/flag/join_with_mutant_humans	//players can pick mutant bodyparts for humans before joining the game
 
 /datum/config_entry/number/max_loadout_items	//maximum number of items that can be in a player's loadout
 	config_entry_value = 10
@@ -207,9 +185,6 @@
 	config_entry_value = list(			//DEFAULTS
 	/mob/living/simple_animal = 1,
 	/mob/living/silicon/pai = 1,
-	/mob/living/carbon/alien/humanoid/hunter = -1,
-	/mob/living/carbon/alien/humanoid/royal/praetorian = 1,
-	/mob/living/carbon/alien/humanoid/royal/queen = 3
 	)
 
 /datum/config_entry/keyed_list/multiplicative_movespeed/ValidateAndSet()
@@ -390,10 +365,6 @@
 
 /datum/config_entry/flag/shift_time_realtime
 
-/datum/config_entry/keyed_list/antag_rep
-	key_mode = KEY_MODE_TEXT
-	value_mode = VALUE_MODE_NUM
-
 /datum/config_entry/number/monkeycap
 	config_entry_value = 64
 	min_val = 0
@@ -417,3 +388,46 @@
 
 /datum/config_entry/number/max_shuttle_size
 	config_entry_value = 300
+
+/datum/config_entry/keyed_list/no_traitor_head
+	key_mode = KEY_MODE_TEXT
+	value_mode = VALUE_MODE_FLAG
+
+/datum/config_entry/number/traitor_malf_ai_min_pop
+	config_entry_value = 10
+	min_val = 1
+	max_val = 20
+
+/datum/config_entry/number/max_malf_apc_hack_obj
+	min_val = 10
+	max_val = 20
+
+/datum/config_entry/number/hard_deletes_overrun_threshold
+	integer = FALSE
+	min_val = 0
+	default = 0.5
+
+/datum/config_entry/number/hard_deletes_overrun_limit
+	default = 0
+	min_val = 0
+
+/datum/config_entry/number/max_overmap_event_clusters
+	config_entry_value = 10
+
+/datum/config_entry/number/max_overmap_events
+	config_entry_value = 150
+
+/datum/config_entry/number/max_overmap_dynamic_events
+	config_entry_value = 10
+
+/datum/config_entry/string/overmap_generator_type
+	config_entry_value = "solar_system"
+
+/datum/config_entry/number/overmap_size
+	config_entry_value = 30
+	min_val = 1
+
+/datum/config_entry/number/overmap_encounter_size
+	max_val = 255
+	config_entry_value = 127
+	min_val = 127

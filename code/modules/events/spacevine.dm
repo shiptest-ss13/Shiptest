@@ -288,6 +288,10 @@
 /obj/structure/spacevine/Initialize()
 	. = ..()
 	add_atom_colour("#ffffff", FIXED_COLOUR_PRIORITY)
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
 
 /obj/structure/spacevine/examine(mob/user)
 	. = ..()
@@ -300,6 +304,11 @@
 		text += " normal"
 	text += " vine."
 	. += text
+
+
+/obj/structure/spacevine/fire_act(exposed_temperature, exposed_volume)
+	. = ..()
+	qdel(src)
 
 /obj/structure/spacevine/Destroy()
 	for(var/datum/spacevine_mutation/SM in mutations)
@@ -348,8 +357,8 @@
 		if(BURN)
 			playsound(src.loc, 'sound/items/welder.ogg', 100, TRUE)
 
-/obj/structure/spacevine/Crossed(atom/movable/AM)
-	. = ..()
+/obj/structure/spacevine/proc/on_entered(datum/source, atom/movable/AM)
+	SIGNAL_HANDLER
 	if(!isliving(AM))
 		return
 	for(var/datum/spacevine_mutation/SM in mutations)
@@ -452,7 +461,7 @@
 
 	var/length = 0
 
-	length = min( spread_cap , max( 1 , vines.len / spread_multiplier ) )
+	length = min(spread_cap , max(1 , vines.len / spread_multiplier))
 	var/i = 0
 	var/list/obj/structure/spacevine/queue_end = list()
 
@@ -548,3 +557,8 @@
 	name = "dense space vines"
 	opacity = TRUE
 	icon_state = "Hvy1"
+
+/obj/structure/spacevine/weak
+	name = "weak space vines"
+	desc = "An extremely expansionistic species of vine. This one appears to be more fragile than most."
+	max_integrity = 25

@@ -160,7 +160,7 @@
 /area/ruin/space/has_grav/transport18mid)
 "eY" = (
 /obj/item/wallframe/airalarm{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -347,10 +347,8 @@
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/has_grav/transport18mid)
 "jV" = (
-/obj/machinery/power/shuttle/engine/liquid{
-	dir = 4;
-	fuel_reagents = list(/datum/reagent/consumable/ethanol/beer = 50);
-	name = "modified thruster"
+/obj/machinery/power/shuttle/engine/liquid/beer{
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ruin/space/transport18aft)
@@ -438,7 +436,7 @@
 /obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/wallframe/airalarm{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/machinery/button/door{
 	id = "transp19";
@@ -657,10 +655,8 @@
 	},
 /area/ruin/space/transport18aft)
 "pE" = (
-/obj/machinery/power/shuttle/engine/liquid{
-	dir = 4;
-	fuel_reagents = list(/datum/reagent/consumable/ethanol/beer = 50);
-	name = "modified thruster"
+/obj/machinery/power/shuttle/engine/liquid/beer{
+	dir = 4
 	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/transport18aft)
@@ -1572,7 +1568,7 @@
 	broken = 1;
 	desc = "Oh no, seven years of bad luck!";
 	icon_state = "mirror_broke";
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/structure/sink{
 	pixel_y = 20

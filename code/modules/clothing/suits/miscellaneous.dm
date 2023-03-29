@@ -85,7 +85,7 @@
 	icon_state = "judge"
 	item_state = "judge"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-	allowed = list(/obj/item/storage/fancy/cigarettes, /obj/item/stack/spacecash)
+	allowed = list(/obj/item/storage/fancy/cigarettes, /obj/item/spacecash/bundle)
 	flags_inv = HIDEJUMPSUIT
 
 
@@ -105,6 +105,8 @@
 
 /obj/item/clothing/suit/syndicatefake
 	name = "black and red space suit replica"
+	icon = 'icons/obj/clothing/suits/spacesuits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suits/spacesuits.dmi'
 	icon_state = "syndicate-black-red"
 	item_state = "syndicate-black-red"
 	desc = "A plastic replica of the Syndicate space suit. You'll look just like a real murderous Syndicate agent in this! This is a toy, it is not made for use in space!"
@@ -351,6 +353,8 @@
 /obj/item/clothing/suit/straight_jacket
 	name = "straight jacket"
 	desc = "A suit that completely restrains the wearer. Manufactured by Antyphun Corp." //Straight jacket is antifun
+	icon = 'icons/obj/clothing/suits/utility.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suits/utility.dmi'
 	icon_state = "straight_jacket"
 	item_state = "straight_jacket"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS|HANDS
@@ -369,7 +373,7 @@
 
 /obj/item/clothing/suit/nerdshirt
 	name = "gamer shirt"
-	desc = "A baggy shirt with vintage game character Phanic the Weasel. Why would anyone wear this?"
+	desc = "A baggy shirt with vintage game character Super Weasel Kid. Why would anyone wear this?"
 	icon_state = "nerdshirt"
 	item_state = "nerdshirt"
 
@@ -410,6 +414,20 @@
 	icon_state = "leathercoat"
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
 	cold_protection = CHEST|GROIN|ARMS|LEGS
+
+/obj/item/clothing/suit/jacket/leather/duster
+	name = "leather duster"
+	desc = "A long, utilitarian leather coat. Ideal for protecting its wearer from rain, sun, and dust."
+	icon_state = "duster"
+	item_state = "duster"
+	heat_protection = CHEST|GROIN|ARMS|LEGS
+	cold_protection = CHEST|GROIN|ARMS|LEGS
+
+/obj/item/clothing/suit/jacket/leather/duster/command
+	name = "officer's duster"
+	desc = "A long, supple leather coat. Ideal for protecting its wearer from rain, sun, dust, and paperwork."
+	icon_state = "duster_command"
+	item_state = "duster_command"
 
 /obj/item/clothing/suit/jacket/puffer
 	name = "puffer jacket"
@@ -483,7 +501,7 @@
 	item_state = "xenos_helm"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS|HANDS
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
-	allowed = list(/obj/item/clothing/mask/facehugger/toy)
+	allowed = list(/mob/living/simple_animal/hostile/facehugger/toy)
 
 /obj/item/clothing/suit/nemes
 	name = "pharoah tunic"
@@ -600,6 +618,15 @@
 	icon_state = "winterhood_medical"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 50, "rad" = 0, "fire" = 0, "acid" = 45)
 
+/obj/item/clothing/suit/hooded/wintercoat/medical/paramedic
+	name = "paramedic winter coat"
+	icon_state = "coatparamedic"
+	item_state = "coatparamedic"
+	hoodtype = /obj/item/clothing/head/hooded/winterhood/medical/paramedic
+
+/obj/item/clothing/head/hooded/winterhood/medical/paramedic
+	icon_state = "winterhood_paramedic"
+
 /obj/item/clothing/suit/hooded/wintercoat/science
 	name = "science winter coat"
 	icon_state = "coatscience"
@@ -672,6 +699,25 @@
 
 /obj/item/clothing/head/hooded/winterhood/security/inteq
 	icon_state = "winterhood_inteq"
+
+/obj/item/clothing/suit/hooded/coat/inteq
+	name = "inteq hooded coat"
+	desc = "A hooded coat with a fur trim around the hood, comfy! It has a small 'IRMG' embroidered onto the shoulder."
+	icon_state = "hoodieinteq"
+	item_state = "hoodieinteq"
+	armor = list("melee" = 25, "bullet" = 15, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 45)
+	hoodtype = /obj/item/clothing/head/hooded/coat/inteq
+
+/obj/item/clothing/head/hooded/coat/inteq
+	name = "inteq hood"
+	desc = "A comfortable looking brown hood."
+	icon_state = "hoodinteq"
+	item_state = "hoodinteq"
+	armor = list("melee" = 25, "bullet" = 15, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 45)
+
+/obj/item/clothing/suit/hooded/coat/inteq/Initialize()
+	. = ..()
+	allowed = GLOB.security_wintercoat_allowed
 
 /obj/item/clothing/head/hooded/ablative
 	name = "ablative hood"
@@ -805,3 +851,12 @@
 	icon_state = "DutchJacket"
 	item_state = "DutchJacket"
 	body_parts_covered = ARMS
+
+/obj/item/clothing/suit/aclf
+	name = "\improper 2nd Battlegroup jacket"
+	desc = "An armored jacket worn by the Gorlex Marauders 2nd Battlegroup."
+	body_parts_covered = CHEST|GROIN|ARMS|HANDS
+	icon_state = "aclfjacket"
+	item_state = "aclfjacket"
+	blood_overlay_type = "coat"
+	armor = list("melee" = 35, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)

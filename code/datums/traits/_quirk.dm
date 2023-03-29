@@ -1,3 +1,5 @@
+#define TRAIT_SPECIES_WHITELIST(ids...) list("type" = "allowed", ids)
+#define TRAIT_SPECIES_BLACKLIST(ids...) list("type" = "blocked", ids)
 //every quirk in this folder should be coded around being applied on spawn
 //these are NOT "mob quirks" like GOTTAGOFAST, but exist as a medium to apply them and other different effects
 /datum/quirk
@@ -9,7 +11,8 @@
 	var/lose_text
 	var/medical_record_text //This text will appear on medical records for the trait. Not yet implemented
 	var/mood_quirk = FALSE //if true, this quirk affects mood and is unavailable if moodlets are disabled
-	var/mob_trait //if applicable, apply and remove this mob trait
+	var/list/mob_traits //if applicable, apply and remove these mob traits
+	var/list/species_lock = list() //List of id-based locks for species, use either TRAIT_SPECIES_WHITELIST or TRAIT_SPECIES_BLACKLIST inputting the species ids to said macros. Example: species_lock = TRAIT_SPECIES_WHITELIST(SPECIES_IPC, SPECIES_MOTH)
 	var/mob/living/quirk_holder
 
 /datum/quirk/New(mob/living/quirk_mob, spawn_effects)
@@ -19,10 +22,11 @@
 		return
 	quirk_holder = quirk_mob
 	SSquirks.quirk_objects += src
-	to_chat(quirk_holder, gain_text)
+	if(gain_text)
+		to_chat(quirk_holder, gain_text)
 	quirk_holder.roundstart_quirks += src
-	if(mob_trait)
-		ADD_TRAIT(quirk_holder, mob_trait, ROUNDSTART_TRAIT)
+	for(var/T in mob_traits)
+		ADD_TRAIT(quirk_holder, T, ROUNDSTART_TRAIT)
 	START_PROCESSING(SSquirks, src)
 	add()
 	if(spawn_effects)
@@ -34,12 +38,12 @@
 
 
 /**
-  * On client connection set quirk preferences.
-  *
-  * Run post_add to set the client preferences for the quirk.
-  * Clear the attached signal for login.
-  * Used when the quirk has been gained and no client is attached to the mob.
-  */
+ * On client connection set quirk preferences.
+ *
+ * Run post_add to set the client preferences for the quirk.
+ * Clear the attached signal for login.
+ * Used when the quirk has been gained and no client is attached to the mob.
+ */
 /datum/quirk/proc/on_quirk_holder_first_login(mob/living/source)
 		SIGNAL_HANDLER
 
@@ -50,10 +54,11 @@
 	STOP_PROCESSING(SSquirks, src)
 	remove()
 	if(quirk_holder)
-		to_chat(quirk_holder, lose_text)
+		if(lose_text)
+			to_chat(quirk_holder, lose_text)
 		quirk_holder.roundstart_quirks -= src
-		if(mob_trait)
-			REMOVE_TRAIT(quirk_holder, mob_trait, ROUNDSTART_TRAIT)
+		for(var/trait in mob_traits)
+			REMOVE_TRAIT(quirk_holder, trait, ROUNDSTART_TRAIT)
 		quirk_holder = null
 	SSquirks.quirk_objects -= src
 	return ..()
@@ -61,9 +66,9 @@
 /datum/quirk/proc/transfer_mob(mob/living/to_mob)
 	quirk_holder.roundstart_quirks -= src
 	to_mob.roundstart_quirks += src
-	if(mob_trait)
-		REMOVE_TRAIT(quirk_holder, mob_trait, ROUNDSTART_TRAIT)
-		ADD_TRAIT(to_mob, mob_trait, ROUNDSTART_TRAIT)
+	for(var/trait in mob_traits)
+		REMOVE_TRAIT(quirk_holder, trait, ROUNDSTART_TRAIT)
+		ADD_TRAIT(to_mob, trait, ROUNDSTART_TRAIT)
 	quirk_holder = to_mob
 	on_transfer()
 
@@ -109,6 +114,9 @@
 	for(var/V in roundstart_quirks)
 		var/datum/quirk/T = V
 		T.transfer_mob(to_mob)
+
+/datum/quirk/proc/clone_data() //return additional data that should be remembered by cloning
+/datum/quirk/proc/on_clone(data) //create the quirk from clone data
 
 /*
 

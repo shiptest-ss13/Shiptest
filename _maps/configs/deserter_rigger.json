@@ -1,9 +1,8 @@
 {
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
 	"map_name": "Rigoureux(D)-class Auxiliary Cutter",
 	"map_short_name": "Rigoureux(D)-class",
-	"map_path": "_maps/shuttles/shiptest/rigger_c.dmm",
-	"map_id": "rigger_c",
-	"roundstart": true,
+	"map_path": "_maps/shuttles/shiptest/independent_rigger_c.dmm",
 	"job_slots": {
 		"Captain": {
 			"outfit": "/datum/outfit/job/captain/solgov/rebel",
@@ -42,5 +41,5 @@
 			"slots": 4
 		}
 	},
-	"cost": 750
+	"enabled": true
 }

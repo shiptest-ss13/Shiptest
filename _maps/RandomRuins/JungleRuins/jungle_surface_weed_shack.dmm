@@ -52,6 +52,12 @@
 	},
 /turf/closed/wall/mineral/wood/nonmetal,
 /area/ruin/unpowered)
+"eT" = (
+/obj/effect/turf_decal/weather/dirt/corner{
+	dir = 8
+	},
+/turf/template_noop,
+/area/template_noop)
 "eZ" = (
 /obj/machinery/hydroponics/constructable,
 /obj/item/seeds/cannabis/ultimate,
@@ -59,6 +65,12 @@
 	currentcolor = "#FFFFFF"
 	},
 /area/ruin/unpowered)
+"fx" = (
+/obj/effect/turf_decal/weather/dirt/corner{
+	dir = 1
+	},
+/turf/template_noop,
+/area/template_noop)
 "fP" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -79,6 +91,16 @@
 	},
 /turf/template_noop,
 /area/template_noop)
+"hg" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/weather/dirt/corner,
+/obj/effect/turf_decal/weather/dirt/corner{
+	dir = 8
+	},
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/unpowered)
 "il" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -149,13 +171,27 @@
 /obj/item/trash/boritos,
 /turf/open/floor/wood,
 /area/ruin/unpowered)
-"ns" = (
+"mQ" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood,
-/area/template_noop)
+/obj/effect/turf_decal/weather/dirt/corner{
+	dir = 4
+	},
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/unpowered)
+"nA" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/weather/dirt/corner{
+	dir = 1
+	},
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/unpowered)
 "nI" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -195,31 +231,10 @@
 /obj/structure/bed/pod{
 	pixel_y = 10
 	},
-/obj/effect/immovablerod{
-	pixel_x = -15
-	},
-/obj/effect/immovablerod{
-	pixel_x = 15
-	},
 /obj/item/seeds/cannabis/rainbow,
 /obj/item/clothing/head/beanie/rasta,
 /turf/open/floor/wood,
 /area/ruin/unpowered)
-"sF" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 5
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 10
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 9
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 6
-	},
-/turf/open/floor/plating/grass/jungle,
-/area/template_noop)
 "sW" = (
 /obj/item/cigbutt/roach,
 /turf/open/floor/wood{
@@ -237,8 +252,8 @@
 /turf/open/floor/wood,
 /area/ruin/unpowered)
 "wn" = (
-/turf/open/floor/plating/dirt/jungle,
-/area/template_noop)
+/turf/open/floor/plating/dirt/jungle/lit,
+/area/ruin/unpowered)
 "xh" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 9
@@ -247,8 +262,10 @@
 	dir = 10
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood,
-/area/template_noop)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/unpowered)
 "zz" = (
 /obj/item/trash/boritos,
 /obj/item/seeds/cannabis/death,
@@ -272,8 +289,10 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood,
-/area/template_noop)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/unpowered)
 "Cw" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -305,8 +324,10 @@
 	dir = 6
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood,
-/area/template_noop)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/unpowered)
 "EM" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -336,15 +357,6 @@
 /obj/item/rollingpaper,
 /turf/open/floor/wood,
 /area/ruin/unpowered)
-"Gk" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood{
-	icon_state = "wood-broken5"
-	},
-/area/template_noop)
 "Hl" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -376,15 +388,28 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/unpowered)
+"IF" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/weather/dirt/corner,
+/turf/open/floor/wood{
+	icon_state = "wood-broken5";
+	light_range = 2
+	},
+/area/ruin/unpowered)
 "Jb" = (
 /obj/effect/turf_decal/weather/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood,
-/area/template_noop)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/unpowered)
 "JY" = (
 /mob/living/simple_animal/hostile/cockroach/glockroach,
-/turf/open/floor/plating/dirt/jungle,
-/area/template_noop)
+/turf/open/floor/plating/dirt/jungle/lit,
+/area/ruin/unpowered)
 "Kg" = (
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -453,10 +478,6 @@
 	icon_state = "wood-broken2"
 	},
 /area/ruin/unpowered)
-"Qr" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood,
-/area/template_noop)
 "Qs" = (
 /mob/living/simple_animal/hostile/cockroach,
 /obj/effect/decal/cleanable/dirt,
@@ -544,8 +565,10 @@
 	dir = 5
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood,
-/area/template_noop)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/unpowered)
 "VY" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/snacks/grown/cannabis,
@@ -559,12 +582,6 @@
 /obj/item/cigbutt/roach,
 /turf/open/floor/wood,
 /area/ruin/unpowered)
-"Wr" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
-	},
-/turf/open/floor/plating/grass/jungle,
-/area/template_noop)
 "Xd" = (
 /obj/machinery/hydroponics/constructable,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -591,9 +608,10 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood{
-	icon_state = "wood-broken"
+	icon_state = "wood-broken";
+	light_range = 2
 	},
-/area/template_noop)
+/area/ruin/unpowered)
 "Yj" = (
 /turf/closed/wall/mineral/wood/nonmetal,
 /area/ruin/unpowered)
@@ -611,8 +629,10 @@
 	dir = 6
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood,
-/area/template_noop)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/unpowered)
 "ZK" = (
 /turf/template_noop,
 /area/template_noop)
@@ -730,7 +750,7 @@ Yj
 Yj
 Yj
 dG
-ZK
+eT
 ZK
 ZK
 ZK
@@ -750,8 +770,8 @@ VY
 Yj
 wn
 NE
-ZK
-ZK
+dG
+eT
 ZK
 "}
 (8,1,1) = {"
@@ -767,11 +787,11 @@ aY
 DM
 kM
 Yj
-sF
+wn
 wn
 wn
 NE
-ZK
+eT
 "}
 (9,1,1) = {"
 Yj
@@ -790,7 +810,7 @@ wn
 xh
 JY
 wn
-NE
+gS
 "}
 (10,1,1) = {"
 Yj
@@ -806,10 +826,10 @@ Up
 ZS
 Yj
 wn
-ns
-Gk
+mQ
+IF
 Ey
-wn
+gS
 "}
 (11,1,1) = {"
 Yj
@@ -825,10 +845,10 @@ HG
 Mj
 qI
 Cs
-Qr
+nA
 Jb
 wn
-wn
+gS
 "}
 (12,1,1) = {"
 Yj
@@ -844,10 +864,10 @@ ZS
 nJ
 qI
 XW
-Qr
+hg
 ZJ
 wn
-XT
+gS
 "}
 (13,1,1) = {"
 ZK
@@ -885,7 +905,7 @@ wn
 wn
 wn
 XT
-ZK
+fx
 "}
 (15,1,1) = {"
 ZK
@@ -900,10 +920,10 @@ Yj
 Yj
 Yj
 Yj
-Wr
 li
 li
-ZK
+li
+fx
 ZK
 "}
 (16,1,1) = {"

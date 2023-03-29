@@ -37,7 +37,7 @@
 
 /datum/chemical_reaction/plasmasolidification/on_reaction(datum/reagents/holder, created_volume)
 	var/location = get_turf(holder.my_atom)
-	for(var/i = 1, i <= created_volume, i++)
+	for(var/i in 1 to created_volume)
 		new /obj/item/stack/sheet/mineral/plasma(location)
 
 /datum/chemical_reaction/goldsolidification
@@ -409,6 +409,10 @@
 	results = list(/datum/reagent/carpet/royal/blue = 2)
 	required_reagents = list(/datum/reagent/carpet/blue = 1, /datum/reagent/royal_bee_jelly = 1)
 
+/datum/chemical_reaction/genesis
+	results = list(/datum/reagent/genesis = 10)
+	required_reagents = list(/datum/reagent/diethylamine = 10, /datum/reagent/medicine/strange_reagent = 1, /datum/reagent/teslium = 1)
+	mix_message = "The diethylamine sparks and is infused with the essence of vibrant life, turning a brillian green!"
 
 /datum/chemical_reaction/oil
 	results = list(/datum/reagent/fuel/oil = 3)
@@ -481,11 +485,11 @@
 	..()
 //scream powder
 /datum/chemical_reaction/scream
-	required_reagents = list(/datum/reagent/medicine/strange_reagent = 1, /datum/reagent/consumable/cream = 5, /datum/reagent/consumable/ethanol/lizardwine = 5	)
+	required_reagents = list(/datum/reagent/medicine/strange_reagent = 1, /datum/reagent/consumable/cream = 5, /datum/reagent/consumable/ethanol/lizardwine = 5)
 	required_temp = 374
 
 /datum/chemical_reaction/scream/on_reaction(datum/reagents/holder, created_volume)
-	playsound(holder.my_atom, pick(list( 'sound/voice/human/malescream_1.ogg', 'sound/voice/human/malescream_2.ogg', 'sound/voice/human/malescream_3.ogg', 'sound/voice/human/malescream_4.ogg', 'sound/voice/human/malescream_5.ogg', 'sound/voice/human/malescream_6.ogg', 'sound/voice/human/femalescream_1.ogg', 'sound/voice/human/femalescream_2.ogg', 'sound/voice/human/femalescream_3.ogg', 'sound/voice/human/femalescream_4.ogg', 'sound/voice/human/femalescream_5.ogg', 'sound/voice/human/wilhelm_scream.ogg')), created_volume*5,TRUE)
+	playsound(holder.my_atom, pick(list('sound/voice/human/malescream_1.ogg', 'sound/voice/human/malescream_2.ogg', 'sound/voice/human/malescream_3.ogg', 'sound/voice/human/malescream_4.ogg', 'sound/voice/human/malescream_5.ogg', 'sound/voice/human/malescream_6.ogg', 'sound/voice/human/femalescream_1.ogg', 'sound/voice/human/femalescream_2.ogg', 'sound/voice/human/femalescream_3.ogg', 'sound/voice/human/femalescream_4.ogg', 'sound/voice/human/femalescream_5.ogg', 'sound/voice/human/wilhelm_scream.ogg')), created_volume*5,TRUE)
 
 /datum/chemical_reaction/hair_dye
 	results = list(/datum/reagent/hair_dye = 5)
@@ -590,7 +594,7 @@
 
 /datum/chemical_reaction/pentaerythritol
 	results = list(/datum/reagent/pentaerythritol = 2)
-	required_reagents = list(/datum/reagent/acetaldehyde = 1, /datum/reagent/toxin/formaldehyde = 3, /datum/reagent/water = 1 )
+	required_reagents = list(/datum/reagent/acetaldehyde = 1, /datum/reagent/toxin/formaldehyde = 3, /datum/reagent/water = 1)
 
 /datum/chemical_reaction/acetaldehyde
 	results = list(/datum/reagent/acetaldehyde = 3)
@@ -606,71 +610,59 @@
 	results = list(/datum/reagent/consumable/gravy = 3)
 	required_reagents = list(/datum/reagent/consumable/milk = 1, /datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/flour = 1)
 
+/datum/chemical_reaction/cement
+	results = list(/datum/reagent/cement = 6)
+	required_reagents = list(/datum/reagent/carbon = 2, /datum/reagent/hydrogen = 2, /datum/reagent/oxygen = 2, /datum/reagent/water = 1)
+	required_temp = 400
+	mix_message = "The mixture boils off a grey vapor..."//The water boils off, leaving the cement
 
-/datum/chemical_reaction/mutationtoxin/stable
-	results = list(/datum/reagent/mutationtoxin = 1)
-	required_reagents  = list(/datum/reagent/mutationtoxin/unstable = 1, /datum/reagent/blood = 10)
+/datum/chemical_reaction/hexement
+	results = list(/datum/reagent/cement/hexement = 1)
+	required_reagents = list(/datum/reagent/cement = 6, /datum/reagent/phenol = 1)
+	required_temp = 400
+	mix_message = "The mixture rapidly condenses and darkens in color..."
 
-/datum/chemical_reaction/mutationtoxin/lizard
-	results = list(/datum/reagent/mutationtoxin/lizard = 1)
-	required_reagents  = list(/datum/reagent/mutationtoxin/unstable = 1, /datum/reagent/liquidgibs = 10)
+/datum/chemical_reaction/cellulose_carbonization/ash		// Sub for cellulose
+	required_reagents = list(/datum/reagent/ash_fibers)
 
-/datum/chemical_reaction/mutationtoxin/felinid
-	results = list(/datum/reagent/mutationtoxin/felinid = 1)
-	required_reagents  = list(/datum/reagent/mutationtoxin/unstable = 1, /datum/reagent/toxin/fentanyl = 10, /datum/reagent/impedrezene = 10)
+/datum/chemical_reaction/fervor
+	results = list(/datum/reagent/consumable/fervor = 10)
+	required_reagents = list(/datum/reagent/consumable/vitfro = 5, /datum/reagent/consumable/tinlux = 5, /datum/reagent/consumable/pyre_elementum = 1)
 
-/datum/chemical_reaction/mutationtoxin/fly
-	results = list(/datum/reagent/mutationtoxin/fly = 1)
-	required_reagents  = list(/datum/reagent/mutationtoxin/unstable = 1, /datum/reagent/toxin/mutagen = 10)
+/datum/chemical_reaction/herbal_brute
+	required_reagents = list(/datum/reagent/ash_fibers = 12, /datum/reagent/consumable/vitfro = 10, /datum/reagent/consumable/ethanol = 6, /datum/reagent/stabilizing_agent = 8)
+	mob_react = FALSE
 
-/datum/chemical_reaction/mutationtoxin/moth
-	results = list(/datum/reagent/mutationtoxin/moth = 1)
-	required_reagents  = list(/datum/reagent/mutationtoxin/unstable = 1, /datum/reagent/toxin/lipolicide = 10) //I know it's the opposite of what moths like, but I am out of ideas for this.
+/datum/chemical_reaction/herbal_brute/on_reaction(datum/reagents/holder, created_volume)
+	var/location = get_turf(holder.my_atom)
+	for(var/i in 1 to created_volume)
+		new /obj/item/stack/medical/bruise_pack/herb(location)
 
-/datum/chemical_reaction/mutationtoxin/pod
-	results = list(/datum/reagent/mutationtoxin/pod = 1)
-	required_reagents  = list(/datum/reagent/mutationtoxin/unstable = 1, /datum/reagent/plantnutriment/eznutriment = 10)
+/datum/chemical_reaction/herbal_burn
+	required_reagents = list(/datum/reagent/calcium = 10, /datum/reagent/consumable/pyre_elementum = 10, /datum/reagent/silver = 10, /datum/reagent/carbon = 8)
+	mob_react = FALSE
 
-/datum/chemical_reaction/mutationtoxin/golem
-	results = list(/datum/reagent/mutationtoxin/golem = 1)
-	required_reagents  = list(/datum/reagent/mutationtoxin/unstable = 1, /datum/reagent/liquidadamantine = 20)
+/datum/chemical_reaction/herbal_burn/on_reaction(datum/reagents/holder, created_volume)
+	var/location = get_turf(holder.my_atom)
+	for(var/i in 1 to created_volume)
+		new /obj/item/stack/medical/ointment/herb(location)
 
-/datum/chemical_reaction/mutationtoxin/abductor
-	results = list(/datum/reagent/mutationtoxin/abductor = 1)
-	required_reagents  = list(/datum/reagent/mutationtoxin/unstable = 1, /datum/reagent/medicine/morphine = 10, /datum/reagent/toxin/mutetoxin = 10)
+/datum/chemical_reaction/titaniumsolidification
+	required_reagents = list(/datum/reagent/consumable/frostoil = 5, /datum/reagent/titanium = 20, /datum/reagent/iron = 1)
+	mob_react = FALSE
 
-/datum/chemical_reaction/mutationtoxin/kepi
-	results = list(/datum/reagent/mutationtoxin/kepi = 1)
-	required_reagents  = list(/datum/reagent/mutationtoxin/unstable = 1, /datum/reagent/carbondioxide = 25)
+/datum/chemical_reaction/titaniumsolidification/on_reaction(datum/reagents/holder, created_volume)
+	var/location = get_turf(holder.my_atom)
+	for(var/i = 1, i <= created_volume, i++)
+		new /obj/item/stack/sheet/mineral/titanium(location)
 
-/datum/chemical_reaction/mutationtoxin/squid
-	results = list(/datum/reagent/mutationtoxin/squid = 1)
-	required_reagents  = list(/datum/reagent/mutationtoxin/unstable = 1, /datum/reagent/consumable/sodiumchloride = 10, /datum/reagent/water = 20)
+/datum/chemical_reaction/asphalt_heat
+	results = list(/datum/reagent/carbon = 0.4, /datum/reagent/acetone = 0.2, /datum/reagent/consumable/ethanol = 0.2, /datum/reagent/consumable/ethanol = 0.2)
+	required_reagents = list(/datum/reagent/asphalt = 1)
+	required_temp = 418
+	mix_message = "The mixture separates."
 
-//////////////Mutatuion toxins made out of advanced toxin/////////////
-
-/datum/chemical_reaction/mutationtoxin/skeleton
-	results = list(/datum/reagent/mutationtoxin/skeleton = 1)
-	required_reagents  = list(/datum/reagent/aslimetoxin = 1, /datum/reagent/consumable/milk = 30, /datum/reagent/toxin/acid/fluacid = 30) //Because acid melts flesh off.
-
-///datum/chemical_reaction/mutationtoxin/zombie //No zombies untill holopara issue is fixed.
-//	name = /datum/reagent/mutationtoxin/zombie
-//	id = /datum/reagent/mutationtoxin/zombie
-//	results = list(/datum/reagent/mutationtoxin/zombie = 1)
-//	required_reagents  = list(/datum/reagent/aslimetoxin = 1, /datum/reagent/toxin = 1, /datum/reagent/toxin/bad_food = 1) //Because rotting
-
-/datum/chemical_reaction/mutationtoxin/goofzombie //go on. try it with holopara
-	results = list(/datum/reagent/mutationtoxin/goofzombie = 1)
-	required_reagents  = list(/datum/reagent/aslimetoxin = 1, /datum/reagent/drug/krokodil = 10, /datum/reagent/toxin/bad_food = 10) //Because rotting
-
-/datum/chemical_reaction/mutationtoxin/ash
-	results = list(/datum/reagent/mutationtoxin/ash = 1)
-	required_reagents  = list(/datum/reagent/aslimetoxin = 1, /datum/reagent/mutationtoxin/lizard = 1, /datum/reagent/ash = 10, /datum/reagent/consumable/entpoly = 5)
-
-/datum/chemical_reaction/mutationtoxin/shadow
-	results = list(/datum/reagent/mutationtoxin/shadow = 1)
-	required_reagents  = list(/datum/reagent/aslimetoxin = 1, /datum/reagent/liquid_dark_matter = 30, /datum/reagent/water/holywater = 10) //You need a tiny bit of thinking how to mix it
-
-/datum/chemical_reaction/mutationtoxin/plasma
-	results = list(/datum/reagent/mutationtoxin/plasma = 1)
-	required_reagents  = list(/datum/reagent/aslimetoxin = 1, /datum/reagent/toxin/plasma = 60, /datum/reagent/uranium = 20)
+/datum/chemical_reaction/pavement
+	results = list(/datum/reagent/cement/roadmix = 2)
+	required_reagents = list(/datum/reagent/cement = 1, /datum/reagent/asphalt = 1)
+	mix_message = "The mixture mixing suddenly reminds you of cramped urban worlds."

@@ -7,7 +7,10 @@
 	if(issilicon(M))
 		if(ispAI(M))
 			return FALSE
-		return TRUE	//AI can do whatever it wants
+		// return TRUE	//AI can do whatever it wants
+		if (check_ship_ai_access(M))
+			// No, AI can't do whatever it wants anymore :)
+			return TRUE
 	if(isAdminGhostAI(M))
 		//Access can't stop the abuse
 		return TRUE
@@ -63,9 +66,20 @@
 		for(var/b in text2access(req_one_access_txt))
 			req_one_access += b
 
+// Call this before using req_ship_access directly
+/obj/proc/gen_ship_access(datum/overmap/ship/controlled/ship)
+	if (!req_ship_access)
+		return TRUE
+
+	if (!(ship?.unique_ship_access))
+		return TRUE
+
 // Check if an item has access to this object
-/obj/proc/check_access(obj/item/I)
-	return check_access_list(I ? I.GetAccess() : null)
+/obj/proc/check_access(obj/item/item)
+	if (!check_ship_access(item))
+		return FALSE
+
+	return check_access_list(item ? item.GetAccess() : null)
 
 /obj/proc/check_access_list(list/access_list)
 	gen_access()
@@ -92,6 +106,29 @@
 
 /obj/proc/check_access_ntnet(datum/netdata/data)
 	return check_access_list(data.passkey)
+
+// Checks the referenced item (if it has an ID) for ship access and returns true if authorized,
+// or if the ship/object being access is not checking for unique ship access at this time
+/obj/proc/check_ship_access(obj/item/item)
+	var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship(src)
+	if (gen_ship_access(ship))
+		return TRUE
+
+	var/obj/item/card/id/id = item?.GetID()
+	if (id?.has_ship_access(ship))
+		return TRUE
+
+	return FALSE
+
+/obj/proc/check_ship_ai_access(mob/living/silicon/robot)
+	var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship(src)
+	if (gen_ship_access(ship))
+		return TRUE
+
+	if (robot.has_ship_access(ship))
+		return TRUE
+
+	return FALSE
 
 /proc/get_centcom_access(job)
 	switch(job)
@@ -168,7 +205,7 @@
 		if(0)
 			return get_all_accesses()
 		if(1) //station general
-			return list(ACCESS_KITCHEN,ACCESS_BAR, ACCESS_HYDROPONICS, ACCESS_JANITOR, ACCESS_CHAPEL_OFFICE, ACCESS_CREMATORIUM, ACCESS_LIBRARY, ACCESS_THEATRE, ACCESS_LAWYER)
+			return list(ACCESS_KITCHEN,ACCESS_BAR, ACCESS_HYDROPONICS, ACCESS_JANITOR, ACCESS_CHAPEL_OFFICE, ACCESS_CREMATORIUM, ACCESS_LIBRARY, ACCESS_THEATRE, ACCESS_LAWYER, ACCESS_LP_VAULT, ACCESS_LP_AI, ACCESS_LP_OPERATING_ROOM, ACCESS_LP_FACILITIES)
 		if(2) //security
 			return list(ACCESS_SEC_DOORS, ACCESS_WEAPONS, ACCESS_SECURITY, ACCESS_BRIG, ACCESS_ARMORY, ACCESS_FORENSICS_LOCKERS, ACCESS_COURT, ACCESS_MECH_SECURITY, ACCESS_HOS)
 		if(3) //medbay
@@ -180,7 +217,7 @@
 		if(6) //supply
 			return list(ACCESS_MAILSORTING, ACCESS_MINING, ACCESS_MINING_STATION, ACCESS_MECH_MINING, ACCESS_MINERAL_STOREROOM, ACCESS_CARGO, ACCESS_QM, ACCESS_VAULT)
 		if(7) //command
-			return list(ACCESS_HEADS, ACCESS_RC_ANNOUNCE, ACCESS_KEYCARD_AUTH, ACCESS_CHANGE_IDS, ACCESS_AI_UPLOAD, ACCESS_TELEPORTER, ACCESS_EVA, ACCESS_GATEWAY, ACCESS_ALL_PERSONAL_LOCKERS, ACCESS_HOP, ACCESS_CAPTAIN, ACCESS_VAULT, ACCESS_SOLGOV)
+			return list(ACCESS_HEADS, ACCESS_RC_ANNOUNCE, ACCESS_KEYCARD_AUTH, ACCESS_CHANGE_IDS, ACCESS_AI_UPLOAD, ACCESS_TELEPORTER, ACCESS_EVA, ACCESS_GATEWAY, ACCESS_ALL_PERSONAL_LOCKERS, ACCESS_HOP, ACCESS_CAPTAIN, ACCESS_VAULT, ACCESS_SOLGOV, ACCESS_LP_LIEUTENANT, ACCESS_LP_COMMISSIONER, ACCESS_LP_BRIDGE, ACCESS_LP_SECURITY, ACCESS_LP_MEDIC, ACCESS_LP_ENGINEER)
 
 /proc/get_region_accesses_name(code)
 	switch(code)
@@ -335,6 +372,26 @@
 			return "Science Mech Access"
 		if(ACCESS_MECH_ENGINE)
 			return "Engineering Mech Access"
+		if(ACCESS_LP_LIEUTENANT)
+			return "Away Team Lieutenant"
+		if(ACCESS_LP_COMMISSIONER)
+			return "Away Team Commissioner"
+		if(ACCESS_LP_VAULT)
+			return "Away Team Vault"
+		if(ACCESS_LP_AI)
+			return "Away Team AI Sat"
+		if(ACCESS_LP_OPERATING_ROOM)
+			return "Away Team Operating Room"
+		if(ACCESS_LP_BRIDGE)
+			return "Away Team Bridge"
+		if(ACCESS_LP_FACILITIES)
+			return "Away Team Facilities"
+		if(ACCESS_LP_SECURITY)
+			return "Away Team Security Specialist"
+		if(ACCESS_LP_MEDIC)
+			return "Away Team Medical Specialist"
+		if(ACCESS_LP_ENGINEER)
+			return "Away Team Engineering Specialist"
 
 //WS Begin
 		if(ACCESS_CLONING)
@@ -375,17 +432,3 @@
 
 /proc/get_all_centcom_jobs()
 	return list("Central Command","VIP Guest","Custodian","Thunderdome Overseer","CentCom Official","Medical Officer","Research Officer","Special Ops Officer","Admiral","CentCom Commander","CentCom Bartender","Private Security Force")
-
-/obj/item/proc/GetJobName() //Used in secHUD icon generation
-	var/obj/item/card/id/I = GetID()
-	if(!I)
-		return
-	var/jobName = I.assignment
-	if(jobName in get_all_job_icons()) //Check if the job has a hud icon
-		return jobName
-	if(jobName in get_all_centcom_jobs()) //Return with the NT logo if it is a CentCom job
-		return "CentCom"
-	for(var/datum/job/J in SSjob.occupations)
-		if((jobName in J.alt_titles) || (jobName == J.senior_title) && (J.title in get_all_job_icons()))
-			return J.title
-	return "Unknown" //Return unknown if none of the above apply

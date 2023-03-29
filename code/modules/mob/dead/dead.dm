@@ -20,6 +20,7 @@ INITIALIZE_IMMEDIATE(/mob/dead)
 	if(length(CONFIG_GET(keyed_list/cross_server)))
 		add_verb(src, /mob/dead/proc/server_hop)
 	set_focus(src)
+	become_hearing_sensitive(ROUNDSTART_TRAIT)
 	return INITIALIZE_HINT_NORMAL
 
 /mob/dead/canUseStorage()
@@ -34,14 +35,12 @@ INITIALIZE_IMMEDIATE(/mob/dead)
 /mob/dead/ConveyorMove()	//lol
 	return
 
-/mob/dead/forceMove(atom/destination)
+/mob/dead/abstract_move(atom/destination)
 	var/turf/old_turf = get_turf(src)
 	var/turf/new_turf = get_turf(destination)
 	if (old_turf?.z != new_turf?.z)
 		onTransitZ(old_turf?.z, new_turf?.z)
-	var/oldloc = loc
-	loc = destination
-	Moved(oldloc, NONE, TRUE)
+	return ..()
 
 /mob/dead/get_status_tab_items()
 	. = ..()

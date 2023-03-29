@@ -6,6 +6,7 @@
 	inherent_traits = list(TRAIT_RESISTHEAT,TRAIT_NOBREATH,TRAIT_RESISTCOLD,TRAIT_RESISTHIGHPRESSURE,TRAIT_RESISTLOWPRESSURE,TRAIT_NOFIRE,TRAIT_CHUNKYFINGERS,TRAIT_RADIMMUNE,TRAIT_GENELESS,TRAIT_PIERCEIMMUNE,TRAIT_NODISMEMBER)
 	inherent_biotypes = MOB_HUMANOID|MOB_MINERAL
 	mutant_organs = list(/obj/item/organ/adamantine_resonator)
+	mutanttongue = /obj/item/organ/tongue/golem_base
 	speedmod = 2
 	armor = 55
 	siemens_coeff = 0
@@ -323,7 +324,8 @@
 	if(chem.type == /datum/reagent/toxin/plantbgone)
 		H.adjustToxLoss(3)
 		H.reagents.remove_reagent(chem.type, REAGENTS_METABOLISM)
-		return 1
+		return TRUE
+	return ..()
 
 //Radioactive
 /datum/species/golem/uranium
@@ -513,7 +515,6 @@
 	name = "Bananium Golem"
 	id = "bananium golem"
 	fixed_mut_color = "ff0"
-	say_mod = "honks"
 	punchdamagelow = 0
 	punchdamagehigh = 1
 	punchstunthreshold = 2 //Harmless and can't stun
@@ -523,6 +524,7 @@
 	attack_sound = 'sound/items/airhorn2.ogg'
 	prefix = "Bananium"
 	special_names = null
+	mutanttongue = /obj/item/organ/tongue/golem_honk
 
 	species_chest = /obj/item/bodypart/chest/golem/bananium
 	species_head = /obj/item/bodypart/head/golem/bananium
@@ -650,7 +652,7 @@
 		C.RemoveSpell(dominate)
 
 /datum/species/golem/runic/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H)
-	if(istype(chem, /datum/reagent/water/holywater))
+	if(chem.type == /datum/reagent/water/holywater)
 		H.adjustFireLoss(4)
 		H.reagents.remove_reagent(chem.type, REAGENTS_METABOLISM)
 
@@ -658,6 +660,7 @@
 		H.adjustBruteLoss(-4)
 		H.adjustFireLoss(-4)
 		H.reagents.remove_reagent(chem.type, REAGENTS_METABOLISM)
+	return ..()
 
 /datum/species/golem/cloth
 	name = "Cloth Golem"
@@ -803,7 +806,7 @@
 	special_names = list("Bell")
 	fixed_mut_color = "cd7f32"
 	info_text = "As a <span class='danger'>Bronze Golem</span>, you are very resistant to loud noises, and make loud noises if something hard hits you, however this ability does hurt your hearing."
-	special_step_sounds = list('sound/machines/clockcult/integration_cog_install.ogg', 'sound/magic/clockwork/fellowship_armory.ogg' )
+	special_step_sounds = list('sound/machines/clockcult/integration_cog_install.ogg', 'sound/magic/clockwork/fellowship_armory.ogg')
 	mutantears = /obj/item/organ/ears/bronze
 	var/last_gong_time = 0
 	var/gong_cooldown = 150
@@ -915,7 +918,7 @@
 			to_chat(H, "<span class='notice'>You create a new cardboard golem shell.</span>")
 			create_brother(H.loc)
 
-/datum/species/golem/cardboard/proc/create_brother(var/location)
+/datum/species/golem/cardboard/proc/create_brother(location)
 	new /obj/effect/mob_spawn/human/golem/servant(location, /datum/species/golem/cardboard, owner)
 	last_creation = world.time
 
@@ -953,7 +956,6 @@
 /datum/species/golem/bone
 	name = "Bone Golem"
 	id = "bone golem"
-	say_mod = "rattles"
 	prefix = "Bone"
 	special_names = list("Head", "Broth", "Fracture", "Rattler", "Appetit")
 	liked_food = GROSS | MEAT | RAW
@@ -987,7 +989,6 @@
 	..()
 
 /datum/species/golem/bone/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H)
-	. = ..()
 	if(chem.type == /datum/reagent/consumable/milk)
 		if(chem.volume > 10)
 			H.reagents.remove_reagent(chem.type, chem.volume - 10)
@@ -1020,6 +1021,8 @@
 					H.emote("sigh")
 		H.reagents.remove_reagent(chem.type, chem.metabolization_rate)
 		return TRUE
+
+	return ..()
 
 /datum/action/innate/bonechill
 	name = "Bone Chill"
@@ -1173,7 +1176,7 @@
 
 /datum/species/golem/soviet/on_species_gain(mob/living/carbon/C, datum/species/old_species)
 	. = ..()
-	C.equip_to_slot_or_del(new /obj/item/clothing/head/ushanka (), ITEM_SLOT_HEAD)
+	C.equip_to_slot_or_del(new /obj/item/clothing/head/trapper (), ITEM_SLOT_HEAD)
 	C.revive(full_heal = TRUE, admin_revive = FALSE)
 
 	SEND_SOUND(C, sound('sound/misc/Russian_Anthem_chorus.ogg'))

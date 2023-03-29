@@ -44,6 +44,30 @@
 			}; \
 		} \
 	} while (0)
+#define REMOVE_TRAIT_NOT_FROM(target, trait, sources) \
+	do { \
+		var/list/_traits_list = target.status_traits; \
+		var/list/_sources_list; \
+		if (sources && !islist(sources)) { \
+			_sources_list = list(sources); \
+		} else { \
+			_sources_list = sources\
+		}; \
+		if (_traits_list && _traits_list[trait]) { \
+			for (var/_trait_source in _traits_list[trait]) { \
+				if (!(_trait_source in _sources_list)) { \
+					_traits_list[trait] -= _trait_source \
+				} \
+			};\
+			if (!length(_traits_list[trait])) { \
+				_traits_list -= trait; \
+				SEND_SIGNAL(target, SIGNAL_REMOVETRAIT(trait), trait); \
+			}; \
+			if (!length(_traits_list)) { \
+				target.status_traits = null \
+			}; \
+		} \
+	} while (0)
 #define REMOVE_TRAITS_NOT_IN(target, sources) \
 	do { \
 		var/list/_L = target.status_traits; \
@@ -60,6 +84,28 @@
 				target.status_traits = null \
 			}; \
 		} \
+	} while (0)
+#define REMOVE_TRAITS_IN(target, sources) \
+	do { \
+		var/list/_L = target.status_traits; \
+		var/list/_S = sources; \
+		if (sources && !islist(sources)) { \
+			_S = list(sources); \
+		} else { \
+			_S = sources\
+		}; \
+		if (_L) { \
+			for (var/_T in _L) { \
+				_L[_T] -= _S;\
+				if (!length(_L[_T])) { \
+					_L -= _T; \
+					SEND_SIGNAL(target, SIGNAL_REMOVETRAIT(_T)); \
+					}; \
+				};\
+			if (!length(_L)) { \
+				target.status_traits = null\
+			};\
+		}\
 	} while (0)
 #define HAS_TRAIT(target, trait) (target.status_traits ? (target.status_traits[trait] ? TRUE : FALSE) : FALSE)
 #define HAS_TRAIT_FROM(target, trait, source) (target.status_traits ? (target.status_traits[trait] ? (source in target.status_traits[trait]) : FALSE) : FALSE)
@@ -207,10 +253,21 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_ANTENNAE "antennae"
 /// The holder of this trait can be picked up and held by another mob that does NOT have this trait.
 #define TRAIT_HOLDABLE "holdable"
-
+/// This person is blushing
+#define TRAIT_BLUSHING "blushing"
+/// The person has their eyes closed. Visual only
+#define TRAIT_EYESCLOSED "eyesclosed"
+/// The person is snoring. Visual only
+#define TRAIT_SNORE "snoring"
+/// the holder of this trait will be scooped instead of fireman carried
+#define TRAIT_SCOOPABLE "scoopable"
+//your smooches actually deal damage to their target
+#define TRAIT_KISS_OF_DEATH "kiss_of_death"
 //non-mob traits
 /// Used for limb-based paralysis, where replacing the limb will fix it.
 #define TRAIT_PARALYSIS "paralysis"
+
+#define TRAIT_HEARING_SENSITIVE "hearing_sensitive"
 
 #define TRAIT_KEEP_TOGETHER "keep-together"
 
@@ -246,6 +303,10 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_SNOB "snob"
 #define TRAIT_BALD "bald"
 #define TRAIT_BADTOUCH "bad_touch"
+#define TRAIT_ANXIOUS "anxious"
+
+/// Trait granted by lipstick
+#define LIPSTICK_TRAIT "lipstick_trait"
 
 // common trait sources
 #define TRAIT_GENERIC "generic"
@@ -350,3 +411,5 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define PAI_FOLDED "pai-folded"
 /// Trait applied to brain mobs when they lack external aid for locomotion, such as being inside a mech.
 #define BRAIN_UNAIDED "brain-unaided"
+/// Trait granted by [/obj/item/clothing/head/helmet/space/hardsuit/berserker]
+#define BERSERK_TRAIT "berserk_trait"

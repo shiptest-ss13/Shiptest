@@ -55,6 +55,11 @@
 	rounds = 300
 	ammo_type = "lmg"
 
+/obj/item/mecha_ammo/lmg/tank
+	name = "HMG ammo"
+	desc = "A box of linked ammunition, designed for the mounted machine guns."
+	rounds = 100
+
 /obj/item/mecha_ammo/missiles_br
 	name = "breaching missiles"
 	desc = "A box of large missiles, ready for loading into a BRM-6 exosuit missile rack."
@@ -75,6 +80,25 @@
 	load_audio = 'sound/weapons/gun/general/mag_bullet_insert.ogg'
 	ammo_type = "missiles_he"
 
+/obj/item/mecha_ammo/tank_shell
+	name = "anti-armor missile"
+	desc = "A large missle, intended to be loaded into a Type 207."
+	icon = 'icons/obj/ammo_bullets.dmi'
+	icon_state = "srm-8"
+	rounds = 1
+	throw_range = 0
+	round_term = "missile"
+	direct_load = TRUE
+	load_audio = 'sound/weapons/gun/general/load_shell.ogg'
+	ammo_type = "missiles_he"
+
+/obj/item/mecha_ammo/tank_shell/update_name() // i hate the fact that i think this is the only way to do this, what the fuck
+	if(!rounds)
+		qdel(src)
+
+/obj/item/mecha_ammo/tank_shell/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/two_handed, require_twohands=TRUE)
 
 /obj/item/mecha_ammo/flashbang
 	name = "launchable flashbangs"

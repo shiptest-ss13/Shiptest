@@ -5,7 +5,7 @@
 
 	icon             = LIGHTING_ICON
 	icon_state       = "transparent"
-	color            = null //we manually set color in init instead
+	color            = null // we used to set color in initialize; now we wait until update.
 	plane            = LIGHTING_PLANE
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	layer            = LIGHTING_LAYER
@@ -18,9 +18,9 @@
 /atom/movable/lighting_object/Initialize(mapload)
 	. = ..()
 	verbs.Cut()
-	//We avoid setting this in the base as if we do then the parent atom handling will add_atom_color it and that
-	//is totally unsuitable for this object, as we are always changing it's colour manually
-	color = LIGHTING_BASE_MATRIX
+	// There used to be code here to set the color to LIGHTING_BASE_MATRIX, but it was redundant
+	// and it ended up increasing init times slightly. It didn't matter one bit, since our starting
+	// icon_state is "transparent", which is pure white even with null color.
 
 	myturf = loc
 	if (myturf.lighting_object)
@@ -28,13 +28,10 @@
 	myturf.lighting_object = src
 	myturf.luminosity = 0
 
-	for(var/turf/open/space/S in RANGE_TURFS(1, src)) //RANGE_TURFS is in code\__HELPERS\game.dm
-		S.update_starlight()
-
 	needs_update = TRUE
 	SSlighting.objects_queue += src
 
-/atom/movable/lighting_object/Destroy(var/force)
+/atom/movable/lighting_object/Destroy(force)
 	if (force)
 		SSlighting.objects_queue -= src
 		if (loc != myturf)

@@ -4,6 +4,8 @@
 #define ROTATION_COUNTERCLOCKWISE (1<<3)
 #define ROTATION_CLOCKWISE (1<<4)
 #define ROTATION_FLIP (1<<5)
+#define ROTATION_COUNTERCLOCKWISE_HALF (1<<6)
+#define ROTATION_CLOCKWISE_HALF (1<<7)
 
 /datum/component/simple_rotation
 	var/datum/callback/can_user_rotate //Checks if user can rotate
@@ -41,8 +43,12 @@
 		default_rotation_direction = ROTATION_FLIP
 	if(src.rotation_flags & ROTATION_COUNTERCLOCKWISE)
 		default_rotation_direction = ROTATION_COUNTERCLOCKWISE
+	if(src.rotation_flags & ROTATION_COUNTERCLOCKWISE_HALF)
+		default_rotation_direction = ROTATION_COUNTERCLOCKWISE_HALF
 	if(src.rotation_flags & ROTATION_CLOCKWISE)
 		default_rotation_direction = ROTATION_CLOCKWISE
+	if(src.rotation_flags & ROTATION_CLOCKWISE_HALF)
+		default_rotation_direction = ROTATION_CLOCKWISE_HALF
 
 /datum/component/simple_rotation/proc/add_signals()
 	if(rotation_flags & ROTATION_ALTCLICK)
@@ -58,15 +64,21 @@
 			AM.verbs += /atom/movable/proc/simple_rotate_flip
 		if(src.rotation_flags & ROTATION_CLOCKWISE)
 			AM.verbs += /atom/movable/proc/simple_rotate_clockwise
+		if(src.rotation_flags & ROTATION_CLOCKWISE_HALF)
+			AM.verbs += /atom/movable/proc/simple_rotate_clockwise_half
 		if(src.rotation_flags & ROTATION_COUNTERCLOCKWISE)
 			AM.verbs += /atom/movable/proc/simple_rotate_counterclockwise
+		if(src.rotation_flags & ROTATION_COUNTERCLOCKWISE_HALF)
+			AM.verbs += /atom/movable/proc/simple_rotate_counterclockwise_half
 
 /datum/component/simple_rotation/proc/remove_verbs()
 	if(parent)
 		var/atom/movable/AM = parent
 		AM.verbs -= /atom/movable/proc/simple_rotate_flip
 		AM.verbs -= /atom/movable/proc/simple_rotate_clockwise
+		AM.verbs -= /atom/movable/proc/simple_rotate_clockwise_half
 		AM.verbs -= /atom/movable/proc/simple_rotate_counterclockwise
+		AM.verbs -= /atom/movable/proc/simple_rotate_counterclockwise_half
 
 /datum/component/simple_rotation/proc/remove_signals()
 	UnregisterSignal(parent, list(COMSIG_CLICK_ALT, COMSIG_PARENT_EXAMINE, COMSIG_PARENT_ATTACKBY))
@@ -94,7 +106,7 @@
 	//Signals + verbs removed via UnRegister
 	. = ..()
 
-/datum/component/simple_rotation/RemoveComponent()
+/datum/component/simple_rotation/ClearFromParent()
 	remove_verbs()
 	. = ..()
 
@@ -125,8 +137,12 @@
 	switch(rotation_type)
 		if(ROTATION_CLOCKWISE)
 			rot_degree = -90
+		if(ROTATION_CLOCKWISE_HALF)
+			rot_degree = -45
 		if(ROTATION_COUNTERCLOCKWISE)
 			rot_degree = 90
+		if(ROTATION_COUNTERCLOCKWISE_HALF)
+			rot_degree = 45
 		if(ROTATION_FLIP)
 			rot_degree = 180
 	AM.setDir(turn(AM.dir,rot_degree))
@@ -152,6 +168,14 @@
 	if(rotcomp)
 		rotcomp.HandRot(null,usr,ROTATION_CLOCKWISE)
 
+/atom/movable/proc/simple_rotate_clockwise_half()
+	set name = "Rotate Half-Clockwise"
+	set category = "Object"
+	set src in oview(1)
+	var/datum/component/simple_rotation/rotcomp = GetComponent(/datum/component/simple_rotation)
+	if(rotcomp)
+		rotcomp.HandRot(null,usr,ROTATION_CLOCKWISE_HALF)
+
 /atom/movable/proc/simple_rotate_counterclockwise()
 	set name = "Rotate Counter-Clockwise"
 	set category = "Object"
@@ -159,6 +183,14 @@
 	var/datum/component/simple_rotation/rotcomp = GetComponent(/datum/component/simple_rotation)
 	if(rotcomp)
 		rotcomp.HandRot(null,usr,ROTATION_COUNTERCLOCKWISE)
+
+/atom/movable/proc/simple_rotate_counterclockwise_half()
+	set name = "Rotate Half-Counter-Clockwise"
+	set category = "Object"
+	set src in oview(1)
+	var/datum/component/simple_rotation/rotcomp = GetComponent(/datum/component/simple_rotation)
+	if(rotcomp)
+		rotcomp.HandRot(null,usr,ROTATION_COUNTERCLOCKWISE_HALF)
 
 /atom/movable/proc/simple_rotate_flip()
 	set name = "Flip"

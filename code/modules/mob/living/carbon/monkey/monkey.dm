@@ -8,11 +8,12 @@
 	gender = NEUTER
 	pass_flags = PASSTABLE
 	ventcrawler = VENTCRAWLER_NUDE
-	mob_biotypes = list(MOB_ORGANIC, MOB_HUMANOID)
+	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/monkey = 5, /obj/item/stack/sheet/animalhide/monkey = 1)
 	type_of_meat = /obj/item/reagent_containers/food/snacks/meat/slab/monkey
 	gib_type = /obj/effect/decal/cleanable/blood/gibs
 	unique_name = TRUE
+	can_be_shoved_into = TRUE
 	blocks_emissive = EMISSIVE_BLOCK_UNIQUE
 	bodyparts = list(
 		/obj/item/bodypart/chest/monkey,
@@ -23,6 +24,8 @@
 		/obj/item/bodypart/l_leg/monkey,
 		)
 	hud_type = /datum/hud/monkey
+	melee_damage_lower = 1
+	melee_damage_upper = 3
 
 /mob/living/carbon/monkey/Initialize(mapload, cubespawned=FALSE, mob/spawner)
 	add_verb(src, /mob/living/proc/mob_sleep)
@@ -42,7 +45,7 @@
 		var/cap = CONFIG_GET(number/monkeycap)
 		if (LAZYLEN(SSmobs.cubemonkeys) > cap)
 			if (spawner)
-				to_chat(spawner, "<span class='warning'>Bluespace harmonics prevent the spawning of more than [cap] monkeys on the station at one time!</span>")
+				to_chat(spawner, "<span class='warning'>Bluespace harmonics prevent the spawning of more than [cap] monkeys in this sector at one time!</span>")
 			return INITIALIZE_HINT_QDEL
 		SSmobs.cubemonkeys += src
 
@@ -123,7 +126,7 @@
 		return FALSE
 	return TRUE
 
-/mob/living/carbon/monkey/reagent_check(datum/reagent/R) //can metabolize all reagents
+/mob/living/carbon/monkey/handled_by_species(datum/reagent/R) //can metabolize all reagents
 	return FALSE
 
 /mob/living/carbon/monkey/canBeHandcuffed()
@@ -138,7 +141,7 @@
 	var/threatcount = 0
 
 	//Securitrons can't identify monkeys
-	if( !(judgment_criteria & JUDGE_IGNOREMONKEYS) && (judgment_criteria & JUDGE_IDCHECK) )
+	if(!(judgment_criteria & JUDGE_IGNOREMONKEYS) && (judgment_criteria & JUDGE_IDCHECK))
 		threatcount += 4
 
 	//Lasertag bullshit
@@ -154,7 +157,7 @@
 		return threatcount
 
 	//Check for weapons
-	if( (judgment_criteria & JUDGE_WEAPONCHECK) && weaponcheck )
+	if((judgment_criteria & JUDGE_WEAPONCHECK) && weaponcheck)
 		for(var/obj/item/I in held_items) //if they're holding a gun
 			if(weaponcheck.Invoke(I))
 				threatcount += 4

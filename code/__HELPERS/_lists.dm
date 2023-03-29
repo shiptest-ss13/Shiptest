@@ -11,7 +11,8 @@
 
 #define LAZYINITLIST(L) if (!L) L = list()
 #define UNSETEMPTY(L) if (L && !length(L)) L = null
-#define LAZYCOPY(L) (L ? L.Copy() : list() )
+#define ASSOC_UNSETEMPTY(L, K) if (!length(L[K])) L -= K;
+#define LAZYCOPY(L) (L ? L.Copy() : list())
 #define LAZYREMOVE(L, I) if(L) { L -= I; if(!length(L)) { L = null; } }
 #define LAZYADD(L, I) if(!L) { L = list(); } L += I;
 #define LAZYOR(L, I) if(!L) { L = list(); } L |= I;
@@ -21,12 +22,19 @@
 #define LAZYISIN(L, V) (L ? (V in L) : FALSE)
 #define LAZYLEN(L) length(L)
 #define LAZYCLEARLIST(L) if(L) L.Cut()
-#define SANITIZE_LIST(L) ( islist(L) ? L : list() )
+#define SANITIZE_LIST(L) (islist(L) ? L : list())
 #define reverseList(L) reverseRange(L.Copy())
 #define LAZYADDASSOC(L, K, V) if(!L) { L = list(); } L[K] += list(V);
+#define LAZYADDASSOCLIST(L, K, V) if(!L) { L = list(); } L[K] += list(V);
 #define LAZYREMOVEASSOC(L, K, V) if(L) { if(L[K]) { L[K] -= V; if(!length(L[K])) L -= K; } if(!length(L)) L = null; }
 #define LAZYACCESSASSOC(L, I, K) L ? L[I] ? L[I][K] ? L[I][K] : null : null : null
 #define QDEL_LAZYLIST(L) for(var/I in L) qdel(I); L = null;
+
+/// Performs an insertion on the given lazy list with the given key and value. If the value already exists, a new one will not be made.
+#define LAZYORASSOCLIST(lazy_list, key, value) \
+	LAZYINITLIST(lazy_list); \
+	LAZYINITLIST(lazy_list[key]); \
+	lazy_list[key] |= value;
 
 /// Passed into BINARY_INSERT to compare keys
 #define COMPARE_KEY __BIN_LIST[__BIN_MID]
@@ -347,13 +355,13 @@
 	return sortTim(L.Copy(), order >= 0 ? /proc/cmp_name_asc : /proc/cmp_name_dsc)
 
 //Mergesort: any value in a list, preserves key=value structure
-/proc/sortAssoc(var/list/L)
+/proc/sortAssoc(list/L)
 	if(L.len < 2)
 		return L
 	var/middle = L.len / 2 + 1 // Copy is first,second-1
 	return mergeAssoc(sortAssoc(L.Copy(0,middle)), sortAssoc(L.Copy(middle))) //second parameter null = to end of list
 
-/proc/mergeAssoc(var/list/L, var/list/R)
+/proc/mergeAssoc(list/L, list/R)
 	var/Li=1
 	var/Ri=1
 	var/list/result = new()
@@ -368,7 +376,7 @@
 	return (result + R.Copy(Ri, 0))
 
 //Converts a bitfield to a list of numbers (or words if a wordlist is provided)
-/proc/bitfield2list(bitfield = 0, list/wordlist)
+/proc/bitfield_to_list(bitfield = 0, list/wordlist)
 	var/list/r = list()
 	if(islist(wordlist))
 		var/max = min(wordlist.len,16)
@@ -619,7 +627,8 @@
 	for(var/item in l)
 		if(!first_entry)
 			. += ", "
-		if(l[item])
+		//Lists of raw numbers are handled extremely poorly in BYOND, so we need to do this
+		if(!isnum(item) && l[item])
 			. += sanitize_simple("[item] = [l[item]]", list("{"="", "}"="", "\""="", ";"="", ","=""))
 		else
 			. += sanitize_simple("[item]", list("{"="", "}"="", "\""="", ";"="", ","=""))

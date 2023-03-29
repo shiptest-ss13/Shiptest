@@ -17,7 +17,6 @@
 	maxHealth = 100
 	health = 100
 	obj_damage = 15
-	environment_smash = ENVIRONMENT_SMASH_MINERALS
 	melee_damage_lower = 7
 	melee_damage_upper = 7
 	rapid_melee = 2 // every second attack
@@ -112,13 +111,6 @@
 		new /obj/item/crusher_trophy/wolf_ear(loc)
 		visible_message("<span class='warning'>You notice a damaged ear that might be salvagable.</span>")
 	..()
-
-/mob/living/simple_animal/hostile/asteroid/wolf/Life()
-	. = ..()
-	if(!. || target)
-		return
-	adjustHealth(-maxHealth*0.025)
-	retreat_message_said = FALSE
 
 /obj/item/crusher_trophy/wolf_ear
 	name = "wolf ear"

@@ -1,4 +1,4 @@
-#define MC_TICK_CHECK ( ( TICK_USAGE > Master.current_ticklimit || src.state != SS_RUNNING ) ? pause() : 0 )
+#define MC_TICK_CHECK ((TICK_USAGE > Master.current_ticklimit || src.state != SS_RUNNING) ? pause() : 0)
 
 #define MC_TICK_REMAINING_MS ((Master.current_ticklimit - TICK_USAGE) * world.tick_lag)
 
@@ -23,6 +23,13 @@
 
 #define START_PROCESSING(Processor, Datum) if (!(Datum.datum_flags & DF_ISPROCESSING)) {Datum.datum_flags |= DF_ISPROCESSING;Processor.processing += Datum}
 #define STOP_PROCESSING(Processor, Datum) Datum.datum_flags &= ~DF_ISPROCESSING;Processor.processing -= Datum
+
+/// Returns true if the MC is initialized and running.
+/// Optional argument init_stage controls what stage the mc must have initializted to count as initialized. Defaults to INITSTAGE_MAX if not specified.
+#define MC_RUNNING(INIT_STAGE...) (Master && Master.processing > 0 && Master.current_runlevel && Master.init_stage_completed == (max(min(INITSTAGE_MAX, ##INIT_STAGE), 1)))
+
+#define MC_LOOP_RTN_NEWSTAGES 1
+#define MC_LOOP_RTN_GRACEFUL_EXIT 2
 
 //! SubSystem flags (Please design any new flags so that the default is off, to make adding flags to subsystems easier)
 
@@ -64,16 +71,31 @@
 #define SS_SLEEPING 4	/// fire() slept.
 #define SS_PAUSING 5 /// in the middle of pausing
 
+// Subsystem init stages
+#define INITSTAGE_EARLY 1 //! Early init stuff that doesn't need to wait for mapload
+#define INITSTAGE_MAIN 2 //! Main init stage
+#define INITSTAGE_MAX 2 //! Highest initstage.
+
 #define SUBSYSTEM_DEF(X) GLOBAL_REAL(SS##X, /datum/controller/subsystem/##X); \
 /datum/controller/subsystem/##X/New(){ \
 	NEW_SS_GLOBAL(SS##X); \
 	PreInit(); \
+	ss_id=#X;\
 } \
 /datum/controller/subsystem/##X
 
-#define PROCESSING_SUBSYSTEM_DEF(X) GLOBAL_REAL(SS##X, /datum/controller/subsystem/processing/##X); \
-/datum/controller/subsystem/processing/##X/New(){ \
-	NEW_SS_GLOBAL(SS##X); \
-	PreInit(); \
-} \
+#define TIMER_SUBSYSTEM_DEF(X) GLOBAL_REAL(SS##X, /datum/controller/subsystem/timer/##X);\
+/datum/controller/subsystem/timer/##X/New(){\
+	NEW_SS_GLOBAL(SS##X);\
+	PreInit();\
+	ss_id="timer_[#X]";\
+}\
+/datum/controller/subsystem/timer/##X
+
+#define PROCESSING_SUBSYSTEM_DEF(X) GLOBAL_REAL(SS##X, /datum/controller/subsystem/processing/##X);\
+/datum/controller/subsystem/processing/##X/New(){\
+	NEW_SS_GLOBAL(SS##X);\
+	PreInit();\
+	ss_id="processing_[#X]";\
+}\
 /datum/controller/subsystem/processing/##X

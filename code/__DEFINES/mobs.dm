@@ -80,7 +80,6 @@
 #define SPECIES_CORPORATE "corporate"
 #define SPECIES_DULLAHAN "dullahan"
 #define SPECIES_ETHEREAL "ethereal"
-#define SPECIES_FELINID "felinid"
 #define SPECIES_FLYPERSON "fly"
 #define SPECIES_HUMAN "human"
 #define SPECIES_IPC "ipc"
@@ -91,20 +90,23 @@
 #define SPECIES_LIZARD "lizard"
 #define SPECIES_ASHWALKER "ashwalker"
 #define SPECIES_KOBOLD "kobold"
+#define SPECIES_GOLEM "golem"
 #define SPECIES_MONKEY "monkey"
 #define SPECIES_MOTH "moth"
 #define SPECIES_MUSH "mush"
 #define SPECIES_PLASMAMAN "plasmaman"
-#define SPECIES_POD "pod_person"
+#define SPECIES_POD "pod"
 #define SPECIES_SHADOW "shadow"
 #define SPECIES_SKELETON "skeleton"
 #define SPECIES_SNAIL "snail"
 #define SPECIES_RACHNID "rachnid"
 #define SPECIES_KEPORI "kepori"
+#define SPECIES_DWARF "dwarf"
 #define SPECIES_VAMPIRE "vampire"
 #define SPECIES_VOX "vox"
 #define SPECIES_ZOMBIE "zombie"
 #define SPECIES_GOOFZOMBIE "krokodil_zombie"
+#define SPECIES_XENOMORPH "xenomorph"
 
 #define DIGITIGRADE_NEVER 0
 #define DIGITIGRADE_OPTIONAL 1
@@ -118,17 +120,15 @@
 #define ORGANIC 1
 #define SYNTHETIC 2
 
-//Species bitflags for sprite sheets. If this somehow ever gets above 23 Bee has larger problems.
+//Species bitflags for sprite sheets. If this somehow ever gets above 23 we have larger problems.
 #define FLAG_HUMAN (1<<0)
 #define FLAG_IPC (1<<1)
 #define FLAG_ETHEREAL (1<<2)
 #define FLAG_PLASMAMAN (1<<3)
 #define FLAG_MOTH (1<<4)
 #define FLAG_LIZARD (1<<5)
-#define FLAG_FELINID (1<<6)
-#define FLAG_OOZELING (1<<7)
-#define FLAG_FLY (1<<8)
-#define FLAG_MONKEY (1<<9)
+#define FLAG_FLY (1<<6)
+#define FLAG_MONKEY (1<<7)
 
 //Bodytype defines for how things can be worn.
 #define BODYTYPE_ORGANIC (1<<0)
@@ -137,6 +137,7 @@
 #define BODYTYPE_BOXHEAD (1<<3) //TV Head
 #define BODYTYPE_DIGITIGRADE (1<<4) //Cancer
 #define BODYTYPE_KEPORI (1<<5) //Just Kepori
+#define BODYTYPE_VOX (1<<6) //Big Vox
 
 // Health/damage defines
 #define MAX_LIVING_HEALTH 100
@@ -251,10 +252,10 @@
 //Charge levels for Ethereals
 //WS Begin -- Ethereal Charge Scaling
 #define ETHEREAL_CHARGE_SCALING_MULTIPLIER 20
-#define ETHEREAL_CHARGE_NONE ( 0 * ETHEREAL_CHARGE_SCALING_MULTIPLIER)
-#define ETHEREAL_CHARGE_LOWPOWER ( 20 * ETHEREAL_CHARGE_SCALING_MULTIPLIER)
-#define ETHEREAL_CHARGE_NORMAL ( 50 * ETHEREAL_CHARGE_SCALING_MULTIPLIER)
-#define ETHEREAL_CHARGE_ALMOSTFULL ( 75 * ETHEREAL_CHARGE_SCALING_MULTIPLIER)
+#define ETHEREAL_CHARGE_NONE (0 * ETHEREAL_CHARGE_SCALING_MULTIPLIER)
+#define ETHEREAL_CHARGE_LOWPOWER (20 * ETHEREAL_CHARGE_SCALING_MULTIPLIER)
+#define ETHEREAL_CHARGE_NORMAL (50 * ETHEREAL_CHARGE_SCALING_MULTIPLIER)
+#define ETHEREAL_CHARGE_ALMOSTFULL (75 * ETHEREAL_CHARGE_SCALING_MULTIPLIER)
 #define ETHEREAL_CHARGE_FULL (100 * ETHEREAL_CHARGE_SCALING_MULTIPLIER)
 #define ETHEREAL_CHARGE_OVERLOAD (125 * ETHEREAL_CHARGE_SCALING_MULTIPLIER)
 #define ETHEREAL_CHARGE_DANGEROUS (150 * ETHEREAL_CHARGE_SCALING_MULTIPLIER)
@@ -339,24 +340,6 @@
 #define MEGAFAUNA_DEFAULT_RECOVERY_TIME 5
 
 #define SHADOW_SPECIES_LIGHT_THRESHOLD 0.2
-
-// Offsets defines
-
-#define OFFSET_UNIFORM "uniform"
-#define OFFSET_ID "id"
-#define OFFSET_GLOVES "gloves"
-#define OFFSET_GLASSES "glasses"
-#define OFFSET_EARS "ears"
-#define OFFSET_SHOES "shoes"
-#define OFFSET_S_STORE "s_store"
-#define OFFSET_FACEMASK "mask"
-#define OFFSET_HEAD "head"
-#define OFFSET_FACE "face"
-#define OFFSET_BELT "belt"
-#define OFFSET_BACK "back"
-#define OFFSET_SUIT "suit"
-#define OFFSET_NECK "neck"
-#define OFFSET_ACCESSORY "accessory"
 
 //MINOR TWEAKS/MISC
 #define AGE_MIN 17 //youngest a character can be
@@ -443,9 +426,11 @@
 ///How much a mob's sprite should be moved when they're lying down
 #define PIXEL_Y_OFFSET_LYING -6
 
-///Define for spawning megafauna instead of a mob for cave gen
-#define SPAWN_MEGAFAUNA "bluh bluh huge boss"
-
 /// Breathing types. Lungs can access either by these or by a string, which will be considered a gas ID.
 #define BREATH_OXY /datum/breathing_class/oxygen
 #define BREATH_PLASMA /datum/breathing_class/plasma
+
+/// Throw modes, defines whether or not to turn off throw mode after
+#define THROW_MODE_DISABLED 0
+#define THROW_MODE_TOGGLE 1
+#define THROW_MODE_HOLD 2

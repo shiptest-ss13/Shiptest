@@ -2,10 +2,13 @@ name: Checks
 on:
   push:
     branches:
-    - master
+      - master
   pull_request:
     branches:
-    - master
+      - master
+  merge_group:
+    branches:
+      - master
 jobs:
   run_linters:
     name: Run Linters
@@ -14,50 +17,53 @@ jobs:
       - uses: actions/checkout@v2
         with:
           ref: master
-      - name: Python setup
-        uses: actions/setup-python@v1
-        with:
-          python-version: "3.9"
       - uses: actions/checkout@v2
-      - name: Setup cache
-        id: cache-spacemandmm
-        uses: actions/cache@v2
+      - name: Restore SpacemanDMM cache
+        uses: actions/cache@v3
         with:
-          path: ~/dreamchecker
-          key: ${{ runner.os }}-spacemandmm-cache-${{ hashFiles('dependencies.sh') }}
-      - name: Install SpacemanDMM
-        if: steps.cache-spacemandmm.outputs.cache-hit != 'true'
-        run: bash tools/ci/install_spaceman_dmm.sh dreamchecker
+          path: ~/SpacemanDMM
+          key: ${{ runner.os }}-spacemandmm-${{ secrets.CACHE_PURGE_KEY }}
+      - name: Restore Yarn cache
+        uses: actions/cache@v3
+        with:
+          path: tgui/.yarn/cache
+          key: ${{ runner.os }}-yarn-${{ secrets.CACHE_PURGE_KEY }}-${{ hashFiles('tgui/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ secrets.CACHE_PURGE_KEY }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
       - name: Install Tools
         run: |
-          pip install setuptools
+          pip3 install setuptools
           bash tools/ci/install_node.sh
+          bash tools/ci/install_byond.sh
           bash tools/ci/install_spaceman_dmm.sh dreamchecker
-          bash tools/ci/install_auxmos.sh
           tools/bootstrap/python -c ''
-      - name: Check line endings
-        uses: AODocs/check-eol@v1.1
       - name: Run Linters
         run: |
+          tools/build/build --ci lint tgui-test
           bash tools/ci/check_filedirs.sh shiptest.dme
           bash tools/ci/check_changelogs.sh
-          find . -name "*.php" -print0 | xargs -0 -n1 php -l
-          find . -name "*.json" -not -path "*/node_modules/*" -print0 | xargs -0 tools/bootstrap/python ./tools/json_verifier.py
-          tgui/bin/tgui --lint
+          bash tools/ci/check_misc.sh
           bash tools/ci/check_grep.sh
-          tools/bootstrap/python -m ci.check_regex --log-changes-only
           tools/bootstrap/python -m dmi.test
           tools/bootstrap/python -m mapmerge2.dmm_test
           ~/dreamchecker > ${GITHUB_WORKSPACE}/output-annotations.txt 2>&1
+      - name: Annotate Lints
+        uses: yogstation13/DreamAnnotate@v2
+        if: always()
+        with:
+          outputFile: output-annotations.txt
+      - uses: actions/setup-python@v1
+        with:
+          python-version: "3.9"
+      - name: Run Check Regex
+        run: |
+          tools/bootstrap/python -m ci.check_regex --log-changes-only
       - name: Annotate Regex Matches
         if: always()
         run: |
           cat check_regex_output.txt
-      - name: Annotate Lints
-        uses: yogstation13/DreamAnnotate@v1
-        if: always()
-        with:
-          outputFile: output-annotations.txt
 
   compile_all_maps:
     name: Compile Maps
@@ -79,14 +85,15 @@ jobs:
         run: bash tools/ci/install_byond.sh
       - name: Compile All Maps
         run: |
+          bash tools/ci/install_byond.sh
           source $HOME/BYOND/byond/bin/byondsetup
-          tools/bootstrap/python tools/ci/template_dm_generator.py
-          tgui/bin/tgui --build
-          bash tools/ci/dm.sh -DCIBUILDING -DCITESTING -DALL_MAPS shiptest.dme
+          tools/build/build --ci dm -DCIBUILDING -DCITESTING -DALL_MAPS -DFULL_INIT
 
   run_all_tests:
     name: Integration Tests
     runs-on: ubuntu-20.04
+    strategy:
+      fail-fast: false
     services:
       mysql:
         image: mysql:latest
@@ -122,11 +129,14 @@ jobs:
       - name: Install auxmos
         run: |
           bash tools/ci/install_auxmos.sh
-      - name: Compile and run tests
+      - name: Compile Tests
+        run: |
+          bash tools/ci/install_byond.sh
+          source $HOME/BYOND/byond/bin/byondsetup
+          tools/build/build --ci dm -DCIBUILDING -DANSICOLORS
+      - name: Run Tests
         run: |
           source $HOME/BYOND/byond/bin/byondsetup
-          tgui/bin/tgui --build
-          bash tools/ci/dm.sh -DCIBUILDING shiptest.dme
           bash tools/ci/run_server.sh
 
   test_windows:
@@ -135,8 +145,19 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Restore Yarn cache
+        uses: actions/cache@v3
+        with:
+          path: tgui/.yarn/cache
+          key: ${{ runner.os }}-yarn-${{ secrets.CACHE_PURGE_KEY }}-${{ hashFiles('tgui/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ secrets.CACHE_PURGE_KEY }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
       - name: Compile
         run: pwsh tools/ci/build.ps1
+        env:
+          DM_EXE: "C:\\byond\\bin\\dm.exe"
       - name: Create artifact
         run: |
           md deploy

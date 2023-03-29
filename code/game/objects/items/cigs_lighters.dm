@@ -133,7 +133,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	var/chem_volume = 30
 	var/smoke_all = FALSE /// Should we smoke all of the chems in the cig before it runs out. Splits each puff to take a portion of the overall chems so by the end you'll always have consumed all of the chems inside.
 	var/list/list_reagents = list(/datum/reagent/drug/nicotine = 15)
-	var/lung_harm = 1 //How bad it is for you
+	var/lung_harm = 0.1 //How bad it is for you
 
 /obj/item/clothing/mask/cigarette/suicide_act(mob/user)
 	user.visible_message("<span class='suicide'>[user] is huffing [src] as quickly as [user.p_they()] can! It looks like [user.p_theyre()] trying to give [user.p_them()]self cancer.</span>")
@@ -769,7 +769,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 /obj/item/lighter/clockwork //WS edit: Clockwork Zippo, by Tergius. PR #395
 	name = "bronze zippo"
 	desc = "A zippo plated with brass. I mean bronze. Has a neat red flame!"
-	icon = 'whitesands/icons/obj/cigarettes.dmi'
+	icon = 'icons/obj/cigarettes.dmi'
 	icon_state = "clockworklighter"
 	heat = 2000 //??????????????????
 	light_color = LIGHT_COLOR_BLOOD_MAGIC
@@ -804,6 +804,13 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	if(get_temperature())
 		. = "<span class='rose'>[user] spits fire at [A], igniting it.</span>"
 		playsound(src, 'sound/magic/fireball.ogg', 10, TRUE)
+
+/obj/item/lighter/enigma
+	name = "/improper Enigma Shipworks Lighter"
+	desc = "A lighter from a now defunct company. Feels nice to hold."
+	icon_state = "enigmaburner"
+	heat = 1500
+	overlay_state = "enigma2"
 
 ///////////
 //ROLLING//
@@ -1044,3 +1051,13 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 /obj/item/clothing/mask/vape/examine(mob/user) //BeginWS edit - Lightable e-cigarettes
 	. = ..()
 	to_chat(user, "<span class='notice>It is currently [on ? "on" : "off"].</span>") //EndWS edit - Lightable e-cigarettes
+
+/obj/item/clothing/mask/vape/cigar
+	name = "\improper E-Cigar"
+	desc = "The latest recreational device developed by a small tech startup, Shadow Tech, the E-Cigar has all the uses of a normal E-Cigarette, with the classiness of short fat cigar. Must be lit via interfacing with a PDA."
+	icon_state = "ecigar_vapeoff"
+	item_state = "ecigar_vapeoff"
+	vapecolor = "ecigar"
+	overlayname = "ecigar"
+	chem_volume = 150
+	custom_premium_price = 300

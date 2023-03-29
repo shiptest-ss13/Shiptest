@@ -162,7 +162,7 @@
 				return
 			coil.use(1)
 			obj_integrity = max_integrity
-			machine_stat &= ~BROKEN
+			set_machine_stat(machine_stat & ~BROKEN)
 			to_chat(user, "<span class='notice'>You repair \the [src].</span>")
 			update_icon()
 
@@ -439,12 +439,14 @@
 		visible_message("<span class= 'notice'>The [src.name] hums as it powers down.</span>", \
 			"If this message is ever seen, something is wrong.", \
 			"<span class= 'notice'>You hear heavy droning fade out.</span>")
+		playsound(src, 'sound/machines/synth_no.ogg', 50, TRUE, frequency = 6120)
 		active = FALSE
 		log_game("[src] was deactivated by wire pulse at [AREACOORD(src)]")
 	else
 		visible_message("<span class= 'notice'>The [src.name] beeps as it powers up.</span>", \
 			"If this message is ever seen, something is wrong.", \
 			"<span class= 'notice'>You hear heavy droning.</span>")
+		playsound(src, 'sound/machines/synth_yes.ogg', 50, TRUE, frequency = 6120)
 		active = ACTIVE_SETUPFIELDS
 		log_game("[src] was activated by wire pulse at [AREACOORD(src)]")
 
@@ -489,6 +491,17 @@
 	shield_range = 8
 
 /obj/machinery/power/shieldwallgen/atmos/roundstart
+	anchored = TRUE
+	active = ACTIVE_SETUPFIELDS
+
+/obj/machinery/power/shieldwallgen/atmos/strong //these are for ruins and large hangars, try to not use them on ships
+	name = "high power holofield generator"
+	desc = "A holofield generator designed for use in starbase bays."
+	circuit = /obj/item/circuitboard/machine/shieldwallgen/atmos/strong
+	shield_range = 20
+	active_power_usage = 1000
+
+/obj/machinery/power/shieldwallgen/atmos/strong/roundstart
 	anchored = TRUE
 	active = ACTIVE_SETUPFIELDS
 
@@ -589,6 +602,15 @@
 
 		drain_power(50)
 
+//Atmos shields suck more power
+/obj/machinery/shieldwall/atmos/process()
+	if(needs_power)
+		if(!gen_primary || !gen_primary.active || !gen_secondary || !gen_secondary.active)
+			qdel(src)
+			return
+
+		drain_power(500)
+
 /obj/machinery/shieldwall/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
 	switch(damage_type)
 		if(BURN)
@@ -623,11 +645,14 @@
 	name = "holofield wall"
 	desc = "An energy shield capable of blocking gas movement."
 	icon = 'icons/effects/effects.dmi'
-	icon_state = "holo_fan"
+	icon_state = "holofan_new"
 	density = FALSE
 	CanAtmosPass = ATMOS_PASS_NO
 	CanAtmosPassVertical = 1
 	hardshield = FALSE
+	layer = UNDERDOOR
+	light_color = "#f6e384"
+	light_system = MOVABLE_LIGHT //for instant visual feedback reguardless of lag
 
 /obj/machinery/shieldwall/atmos/Initialize()
 	. = ..()

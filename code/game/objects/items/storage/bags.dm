@@ -101,7 +101,7 @@
 	name = "mining satchel"
 	desc = "This little bugger can be used to store and transport ores."
 	//WS Begin - Better bag sprites
-	icon = 'whitesands/icons/obj/bags.dmi'
+	icon = 'icons/obj/bags.dmi'
 	icon_state = "minebag"
 	//WS end
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_POCKETS
@@ -173,7 +173,7 @@
 	name = "mining satchel of holding"
 	desc = "A revolution in convenience, this satchel allows for huge amounts of ore storage. It's been outfitted with anti-malfunction safety measures."
 	//WS Begin - Better bag sprites
-	icon = 'whitesands/icons/obj/bags.dmi'
+	icon = 'icons/obj/bags.dmi'
 	icon_state = "minebagbs"
 	//WS end
 
@@ -191,7 +191,7 @@
 /obj/item/storage/bag/plants
 	name = "plant bag"
 	//WS Begin - Better bag sprites
-	icon = 'whitesands/icons/obj/bags.dmi'
+	icon = 'icons/obj/bags.dmi'
 	icon_state = "plantbag"
 	//WS end
 	resistance_flags = FLAMMABLE
@@ -292,6 +292,30 @@
 		/obj/item/spellbook
 		))
 
+//Medicine bag
+
+/obj/item/storage/bag/medical
+	name = "medicine bag"
+	icon = 'icons/obj/bags.dmi'
+	icon_state = "medbag"
+	desc = "A bag for storing syringes, sutures, ointments, and pills."
+	w_class = WEIGHT_CLASS_NORMAL
+	resistance_flags = FLAMMABLE
+
+/obj/item/storage/bag/medical/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_combined_w_class = 200
+	STR.max_items = 15
+	STR.insert_preposition = "in"
+	STR.set_holdable(list(
+		/obj/item/reagent_containers/pill,
+		/obj/item/reagent_containers/medigel,
+		/obj/item/reagent_containers/syringe,
+		/obj/item/stack/medical,
+		/obj/item/reagent_containers/chem_pack //IV bags of blood and such. I don't know why you're carrying them around, but you never know!
+		))
+
 /*
  * Trays - Agouri
  */
@@ -366,7 +390,7 @@
 /obj/item/storage/bag/chemistry
 	name = "chemistry bag"
 	//WS Begin - Better bag sprites
-	icon = 'whitesands/icons/obj/bags.dmi'
+	icon = 'icons/obj/bags.dmi'
 	icon_state = "chembag"
 	//WS end
 	desc = "A bag for storing pills, patches, and bottles."
@@ -396,7 +420,7 @@
 /obj/item/storage/bag/bio
 	name = "bio bag"
 	//WS Begin - Better bag sprites
-	icon = 'whitesands/icons/obj/bags.dmi'
+	icon = 'icons/obj/bags.dmi'
 	icon_state = "virobag"
 	//WS end
 	desc = "A bag for the safe transportation and disposal of biowaste and other biological materials."
@@ -429,7 +453,7 @@
 /obj/item/storage/bag/construction
 	name = "construction bag"
 	//WS Begin - Better bag sprites
-	icon = 'whitesands/icons/obj/bags.dmi'
+	icon = 'icons/obj/bags.dmi'
 	icon_state = "engbag"
 	//WS end
 	desc = "A bag for storing small construction components."
@@ -450,5 +474,61 @@
 		/obj/item/stack/cable_coil,
 		/obj/item/circuitboard,
 		/obj/item/electronics,
-		/obj/item/wallframe/camera
+		/obj/item/wallframe/camera,
+		/obj/item/stack/rods,
+		/obj/item/light,
+		/obj/item/pipe,
+		/obj/item/stack/sheet/glass
 		))
+
+/obj/item/storage/bag/construction/holding
+	name = "construction bag of holding"
+	icon = 'icons/obj/bags.dmi'
+	icon_state = "engibs"
+	desc = "A bag for storing construction equipment. With the help of bluespace, you'll be building more airlocks and cameras then ever before."
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_POCKETS
+
+/obj/item/storage/bag/construction/holding/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/storage = GetComponent(/datum/component/storage)
+	storage.max_combined_w_class = INFINITY
+	storage.max_items = 150
+
+/obj/item/storage/bag/plants/holding
+	name = "harvest carrier of holding"
+	icon = 'icons/obj/bags.dmi'
+	icon_state = "plantbs"
+	desc = "A bag for storing agricultural goods, augmented with bluespace technology. A glorious melon-carrying chariot, worthy of a true botanist."
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_POCKETS
+
+/obj/item/storage/bag/plants/holding/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/storage = GetComponent(/datum/component/storage)
+	storage.max_combined_w_class = INFINITY
+	storage.max_items = 200
+
+/obj/item/storage/bag/chemistry/holding
+	name = "chemistry satchel of holding"
+	icon = 'icons/obj/bags.dmi'
+	icon_state = "chembs"
+	desc = "A bag for storing varied chemical goods, optimized with bluespace technology to allow the resident chemist to carry their entire lab around with them."
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_POCKETS
+
+/obj/item/storage/bag/chemistry/holding/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/storage = GetComponent(/datum/component/storage)
+	storage.max_combined_w_class = INFINITY
+	storage.max_items = 75
+
+/obj/item/storage/bag/bio/holding
+	name = "biohazard container of holding"
+	icon = 'icons/obj/bags.dmi'
+	icon_state = "biobagbs"
+	desc = "A bag designed to safely contain biologically-hazardous objects. This bag has been outfitted with a bluespace storage well, and can carry considerably more then it's actual size."
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_POCKETS
+
+/obj/item/storage/bag/bio/holding/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/storage = GetComponent(/datum/component/storage)
+	storage.max_combined_w_class = INFINITY
+	storage.max_items = 150

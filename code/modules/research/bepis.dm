@@ -47,10 +47,10 @@
 		return
 	if(default_deconstruction_crowbar(O))
 		return
-	if(!is_operational())
+	if(!is_operational)
 		to_chat(user, "<span class='notice'>[src] can't accept money when it's not functioning.</span>")
 		return
-	if(istype(O, /obj/item/holochip) || istype(O, /obj/item/stack/spacecash))
+	if(istype(O, /obj/item/holochip) || istype(O, /obj/item/spacecash/bundle))
 		var/deposit_value = O.get_item_credit_value()
 		banked_cash += deposit_value
 		qdel(O)
@@ -116,7 +116,7 @@
 		say("Cannot withdraw more than stored funds. Aborting.")
 	else
 		banked_cash -= withdraw_value
-		new /obj/item/holochip(src.loc, withdraw_value)
+		new /obj/item/spacecash/bundle(src.loc, withdraw_value)
 		say("Withdrawing [withdraw_value] credits from the chamber.")
 	update_icon_state()
 	return
@@ -168,16 +168,16 @@
 	if(panel_open == TRUE)
 		icon_state = "chamber_open"
 		return
-	if((use_power == ACTIVE_POWER_USE) && (banked_cash > 0) && (is_operational()))
+	if((use_power == ACTIVE_POWER_USE) && (banked_cash > 0) && (is_operational))
 		icon_state = "chamber_active_loaded"
 		return
-	if (((use_power == IDLE_POWER_USE) && (banked_cash > 0)) || (banked_cash > 0) && (!is_operational()))
+	if (((use_power == IDLE_POWER_USE) && (banked_cash > 0)) || (banked_cash > 0) && (!is_operational))
 		icon_state = "chamber_loaded"
 		return
-	if(use_power == ACTIVE_POWER_USE && is_operational())
+	if(use_power == ACTIVE_POWER_USE && is_operational)
 		icon_state = "chamber_active"
 		return
-	if(((use_power == IDLE_POWER_USE) && (banked_cash == 0)) || (!is_operational()))
+	if(((use_power == IDLE_POWER_USE) && (banked_cash == 0)) || (!is_operational))
 		icon_state = "chamber"
 		return
 

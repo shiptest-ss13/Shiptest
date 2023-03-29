@@ -7,43 +7,40 @@
 /obj/item/disk/data,
 /obj/item/disk/data,
 /turf/open/floor/plasteel,
-/area/ship/bridge)
+/area/ruin/powered)
 "aP" = (
 /obj/item/kirbyplants/fullysynthetic,
 /turf/open/floor/plasteel,
-/area/ship/crew/canteen)
-"bI" = (
-/turf/closed/wall/r_wall,
-/area/ship/crew/hydroponics)
-"ce" = (
+/area/ruin/powered)
+"cI" = (
+/obj/effect/mob_spawn/human/corpse/assistant,
+/obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plasteel,
-/area/ship/bridge)
+/area/ruin/powered)
 "dJ" = (
 /obj/structure/closet/crate/radiation,
+/obj/item/stack/sheet/mineral/uranium/twenty,
 /turf/open/floor/plasteel,
-/area/ship/engineering)
-"dR" = (
-/turf/closed/wall/r_wall,
-/area/ship/engineering)
+/area/ruin/powered)
 "ez" = (
 /obj/structure/bed,
 /obj/item/bedsheet/medical,
 /turf/open/floor/plasteel,
-/area/ship/crew/dorm)
+/area/ruin/powered)
 "eQ" = (
 /obj/machinery/washing_machine,
 /turf/open/floor/plasteel,
-/area/ship/crew/dorm)
+/area/ruin/powered)
 "fM" = (
 /obj/structure/chair/greyscale{
 	dir = 8
 	},
 /turf/open/floor/plasteel,
-/area/ship/bridge)
+/area/ruin/powered)
 "fR" = (
-/obj/effect/gibspawner/xeno,
+/obj/effect/decal/cleanable/xenoblood/xgibs/larva,
 /turf/open/floor/plasteel,
-/area/ship/crew/canteen)
+/area/ruin/powered)
 "gb" = (
 /obj/structure/table,
 /obj/item/plant_analyzer,
@@ -51,60 +48,68 @@
 	icon_state = "0-2"
 	},
 /turf/open/floor/plasteel,
-/area/ship/hallway)
+/area/ruin/powered)
+"ge" = (
+/obj/structure/spacevine/dense,
+/obj/machinery/smartfridge/drying_rack,
+/turf/open/floor/plasteel,
+/area/ruin/powered)
 "hl" = (
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/door/airlock,
+/obj/machinery/door/airlock/command,
 /turf/open/floor/plasteel,
-/area/ship/bridge)
-"hm" = (
+/area/ruin/powered)
+"hL" = (
+/obj/item/reagent_containers/food/drinks/bottle/hooch,
 /turf/open/floor/plasteel,
-/area/ship/crew/hydroponics)
+/area/ruin/powered)
 "ii" = (
 /obj/structure/closet/secure_closet/hydroponics,
 /turf/open/floor/plasteel,
-/area/ship/hallway)
+/area/ruin/powered)
 "ik" = (
 /obj/effect/decal/cleanable/blood/gibs/up,
 /turf/open/floor/plasteel,
-/area/ship/bridge)
-"iv" = (
-/obj/structure/closet/crate/bin,
-/turf/open/floor/plasteel,
-/area/ship/bridge)
+/area/ruin/powered)
 "iG" = (
 /obj/machinery/vending/cigarette,
 /turf/open/floor/plasteel,
-/area/ship/crew/canteen)
-"jb" = (
-/obj/effect/gibspawner/xeno,
-/turf/open/floor/plasteel,
-/area/ship/crew/dorm)
+/area/ruin/powered)
 "jc" = (
 /obj/machinery/seed_extractor,
 /turf/open/floor/plasteel,
-/area/ship/crew/hydroponics)
+/area/ruin/powered)
 "jf" = (
 /obj/structure/closet/crate/large,
+/obj/item/circuitboard/machine/biogenerator,
+/obj/item/reagent_containers/spray/pestspray,
+/obj/item/reagent_containers/spray/pestspray,
+/obj/item/reagent_containers/spray/weedspray,
+/obj/item/reagent_containers/spray/weedspray,
 /turf/open/floor/plasteel,
-/area/ship/bridge)
+/area/ruin/powered)
 "ji" = (
-/obj/machinery/vending/hydroseeds,
+/obj/item/seeds/tomato/killer,
+/obj/item/seeds/kudzu,
+/obj/item/seeds/cannabis,
+/obj/item/seeds/random,
+/obj/structure/closet/crate/secure/hydroponics,
 /turf/open/floor/plasteel,
-/area/ship/crew/hydroponics)
+/area/ruin/powered)
 "js" = (
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/blood/tracks,
+/obj/structure/spacevine,
 /turf/open/floor/plasteel,
-/area/ship/bridge)
+/area/ruin/powered)
 "jK" = (
-/obj/machinery/door/unpowered/shuttle,
+/obj/machinery/door/airlock/external,
 /turf/open/floor/plasteel,
-/area/ship/hallway)
+/area/ruin/powered)
 "ke" = (
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -113,102 +118,90 @@
 	icon_state = "1-8"
 	},
 /turf/open/floor/plasteel,
-/area/ship/crew/canteen)
+/area/ruin/powered)
 "kj" = (
 /obj/machinery/vending/sovietsoda,
 /turf/open/floor/plasteel,
-/area/ship/crew/canteen)
-"kG" = (
-/turf/closed/wall/r_wall,
-/area/ship/hallway)
+/area/ruin/powered)
 "lb" = (
 /obj/machinery/power/smes,
 /turf/open/floor/plasteel,
-/area/ship/engineering)
+/area/ruin/powered)
 "lK" = (
 /obj/machinery/hydroponics/constructable,
+/obj/structure/spacevine,
+/obj/item/reagent_containers/food/snacks/grown/cherries,
+/obj/item/reagent_containers/food/snacks/grown/cherries,
 /turf/open/floor/plasteel,
-/area/ship/crew/hydroponics)
-"lO" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plasteel,
-/area/ship/engineering)
+/area/ruin/powered)
 "mg" = (
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/door/airlock/public/glass,
+/obj/machinery/door/airlock/glass,
 /turf/open/floor/plasteel,
-/area/ship/crew/canteen)
-"mL" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plasteel,
-/area/ship/hallway)
+/area/ruin/powered)
 "mN" = (
-/obj/effect/gibspawner/xeno,
+/obj/structure/spacevine/dense,
+/obj/item/reagent_containers/food/snacks/grown/carrot,
 /turf/open/floor/plasteel,
-/area/ship/crew/hydroponics)
+/area/ruin/powered)
 "nl" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/xenoblood/xgibs,
 /turf/open/floor/plasteel,
-/area/ship/crew/canteen)
-"nF" = (
-/obj/structure/girder/reinforced,
-/turf/open/floor/plating,
-/area/ship/hallway)
+/area/ruin/powered)
 "nJ" = (
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/open/floor/grass,
-/area/ruin/jungle)
-"nQ" = (
-/obj/machinery/power/apc,
-/turf/closed/wall/r_wall,
-/area/ship/engineering)
+/obj/structure/spacevine,
+/turf/open/floor/plating/grass/jungle/lit,
+/area/ruin/powered)
 "nS" = (
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/plasteel,
-/area/ship/bridge)
+/area/ruin/powered)
 "oc" = (
 /obj/machinery/door/airlock/glass,
 /turf/open/floor/plasteel,
-/area/ship/crew/hydroponics)
+/area/ruin/powered)
 "om" = (
 /obj/effect/decal/cleanable/blood,
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 10
 	},
-/obj/effect/mob_spawn/human/corpse/pirate,
+/obj/effect/mob_spawn/human/corpse/cargo_tech,
+/obj/item/clothing/mask/cigarette/rollie/trippy{
+	pixel_x = 7;
+	pixel_y = 15
+	},
 /turf/open/floor/plasteel,
-/area/ship/bridge)
+/area/ruin/powered)
 "oR" = (
 /obj/structure/table,
 /obj/item/storage/fancy/cigarettes/cigpack_robust,
-/obj/item/paper/fluff/ruins/forgottenship/powerissues,
 /turf/open/floor/plasteel,
-/area/ship/crew/dorm)
+/area/ruin/powered)
 "pt" = (
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/structure/glowshroom/single,
 /turf/open/floor/plasteel,
-/area/ship/bridge)
-"pM" = (
-/turf/closed/wall/r_wall,
-/area/ship/crew/canteen)
+/area/ruin/powered)
+"pO" = (
+/obj/machinery/hydroponics/constructable,
+/obj/item/reagent_containers/food/snacks/grown/ambrosia,
+/turf/open/floor/plasteel,
+/area/ruin/powered)
 "qM" = (
 /obj/structure/sign/poster/contraband/ambrosia_vulgaris,
-/turf/closed/wall/r_wall,
-/area/ship/crew/hydroponics)
+/turf/closed/wall,
+/area/ruin/powered)
 "ru" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -216,29 +209,31 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/structure/spacevine,
 /turf/open/floor/plasteel,
-/area/ship/crew/hydroponics)
-"sU" = (
-/obj/structure/cable{
-	icon_state = "4-8"
+/area/ruin/powered)
+"sv" = (
+/obj/machinery/hydroponics/constructable,
+/obj/item/reagent_containers/food/snacks/grown/garlic{
+	pixel_y = -3
 	},
 /turf/open/floor/plasteel,
-/area/ship/bridge)
-"tb" = (
-/obj/structure/grille/broken,
-/turf/open/floor/plating,
-/area/ship/bridge)
+/area/ruin/powered)
 "uC" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/effect/decal/cleanable/blood/footprints{
+	dir = 4;
+	pixel_y = 11
+	},
 /turf/open/floor/plasteel,
-/area/ship/crew/dorm)
+/area/ruin/powered)
 "uK" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/grass/jungle,
-/turf/open/floor/grass,
-/area/ruin/jungle)
+/turf/open/floor/plating/grass/jungle/lit,
+/area/ruin/powered)
 "uM" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -247,58 +242,71 @@
 	icon_state = "1-8"
 	},
 /turf/open/floor/plasteel,
-/area/ship/bridge)
-"vo" = (
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/turf/open/floor/plasteel,
-/area/ship/engineering)
+/area/ruin/powered)
 "wl" = (
 /obj/structure/table,
+/obj/item/screwdriver/power{
+	pixel_y = 6
+	},
 /obj/item/storage/belt/utility,
 /turf/open/floor/plasteel,
-/area/ship/engineering)
+/area/ruin/powered)
+"wD" = (
+/obj/structure/sign/poster/contraband/kudzu{
+	pixel_x = 3
+	},
+/turf/closed/wall,
+/area/ruin/powered)
 "wP" = (
 /obj/structure/closet/crate/medical,
+/obj/item/stack/medical/ointment/herb,
+/obj/item/stack/medical/suture/medicated,
+/obj/item/stack/medical/suture/medicated,
+/obj/item/stack/medical/ointment/herb,
+/obj/item/gun/syringe,
+/obj/item/reagent_containers/syringe/piercing,
+/obj/item/reagent_containers/syringe/piercing,
+/obj/item/reagent_containers/syringe/piercing,
 /turf/open/floor/plasteel,
-/area/ship/bridge)
+/area/ruin/powered)
 "wU" = (
 /obj/structure/flora/ausbushes/grassybush,
-/turf/open/floor/grass,
-/area/ruin/jungle)
-"xa" = (
+/turf/open/floor/plating/grass/jungle/lit,
+/area/ruin/powered)
+"yr" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/spacevine,
 /turf/open/floor/plasteel,
-/area/ship/crew/canteen)
+/area/ruin/powered)
 "yt" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/door/airlock/public/glass,
+/obj/machinery/door/airlock,
 /turf/open/floor/plasteel,
-/area/ship/crew/dorm)
+/area/ruin/powered)
 "yR" = (
 /obj/machinery/hydroponics/constructable,
 /obj/effect/decal/cleanable/xenoblood,
+/obj/item/reagent_containers/food/snacks/grown/berries,
 /turf/open/floor/plasteel,
-/area/ship/crew/hydroponics)
+/area/ruin/powered)
 "yS" = (
 /obj/structure/table,
-/obj/item/storage/toolbox/mechanical,
-/obj/item/storage/toolbox/electrical,
-/turf/open/floor/plasteel,
-/area/ship/hallway)
-"zm" = (
-/obj/structure/cable{
-	icon_state = "4-8"
+/obj/item/storage/toolbox/mechanical{
+	pixel_y = 6
 	},
-/obj/effect/mob_spawn/human/corpse/pirate,
+/obj/item/storage/toolbox/electrical,
+/obj/item/storage/fancy/rollingpapers,
 /turf/open/floor/plasteel,
-/area/ship/crew/canteen)
-"zz" = (
-/obj/effect/spawner/structure/window/hollow/reinforced,
-/turf/open/floor/plasteel,
-/area/ship/crew/hydroponics)
+/area/ruin/powered)
+"zm" = (
+/obj/structure/flora/grass/jungle,
+/obj/structure/spacevine,
+/turf/open/floor/plating/grass/jungle/lit,
+/area/ruin/powered)
 "Aq" = (
 /obj/structure/table,
 /obj/item/paper_bin,
@@ -306,73 +314,64 @@
 /obj/item/folder,
 /obj/item/stamp,
 /turf/open/floor/plasteel,
-/area/ship/bridge)
+/area/ruin/powered)
 "AD" = (
 /obj/structure/bed,
 /obj/item/bedsheet/black,
 /turf/open/floor/plasteel,
-/area/ship/crew/dorm)
-"AJ" = (
-/obj/effect/decal/cleanable/blood,
-/turf/open/floor/plasteel,
-/area/ship/bridge)
+/area/ruin/powered)
 "Cj" = (
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
 /turf/open/floor/plasteel,
-/area/ship/hallway)
-"CO" = (
-/obj/machinery/power/apc,
-/turf/closed/wall/r_wall,
-/area/ship/crew/hydroponics)
-"Dr" = (
-/obj/item/xenos_claw,
-/turf/open/floor/plasteel,
-/area/ship/crew/hydroponics)
+/area/ruin/powered)
 "DL" = (
 /obj/machinery/power/port_gen/pacman,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
 /turf/open/floor/plasteel,
-/area/ship/engineering)
+/area/ruin/powered)
 "DS" = (
 /obj/structure/closet/crate/bin,
 /turf/open/floor/plasteel,
-/area/ship/crew/canteen)
+/area/ruin/powered)
 "EJ" = (
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/effect/gibspawner/xeno,
+/obj/effect/decal/cleanable/blood/footprints{
+	dir = 4;
+	pixel_y = 7
+	},
+/mob/living/simple_animal/hostile/killertomato,
 /turf/open/floor/plasteel,
-/area/ship/crew/dorm)
+/area/ruin/powered)
 "FF" = (
 /obj/effect/decal/cleanable/xenoblood,
 /turf/open/floor/plasteel,
-/area/ship/crew/canteen)
+/area/ruin/powered)
 "FG" = (
-/obj/machinery/door/airlock/public,
+/obj/machinery/door/airlock,
 /turf/open/floor/plasteel,
-/area/ship/crew/dorm)
-"FN" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/area/ruin/powered)
+"FR" = (
+/obj/structure/glowshroom/single,
 /turf/open/floor/plasteel,
-/area/ship/crew/hydroponics)
+/area/ruin/powered)
 "FZ" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/structure/spacevine/dense,
 /turf/open/floor/plasteel,
-/area/ship/crew/hydroponics)
+/area/ruin/powered)
 "Gq" = (
 /obj/structure/table,
 /obj/item/book/manual/hydroponics_pod_people,
 /turf/open/floor/plasteel,
-/area/ship/hallway)
+/area/ruin/powered)
 "Gx" = (
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -380,116 +379,137 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 8
 	},
+/mob/living/simple_animal/hostile/killertomato,
 /turf/open/floor/plasteel,
-/area/ship/bridge)
-"GY" = (
-/obj/structure/girder/reinforced,
-/turf/open/floor/plating,
-/area/ship/engineering)
+/area/ruin/powered)
+"GW" = (
+/obj/effect/decal/cleanable/blood/footprints{
+	dir = 4;
+	pixel_y = 11
+	},
+/turf/open/floor/plasteel,
+/area/ruin/powered)
 "Hm" = (
 /obj/structure/chair/greyscale{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/blood/gibs/old,
 /turf/open/floor/plasteel,
-/area/ship/crew/canteen)
-"Hu" = (
-/turf/open/floor/plasteel,
-/area/ship/hallway)
+/area/ruin/powered)
 "HQ" = (
-/obj/effect/mob_spawn/human/corpse/cargo_tech,
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/floor/plating/grass/jungle/lit,
+/area/ruin/powered)
+"Ia" = (
+/obj/machinery/hydroponics/constructable,
+/obj/structure/spacevine,
+/obj/item/reagent_containers/food/snacks/grown/ambrosia,
 /turf/open/floor/plasteel,
-/area/ship/engineering)
+/area/ruin/powered)
 "Ie" = (
 /obj/structure/table,
 /obj/machinery/plantgenes,
 /turf/open/floor/plasteel,
-/area/ship/crew/hydroponics)
+/area/ruin/powered)
 "Ig" = (
 /obj/structure/table,
 /obj/item/clothing/glasses/meson,
 /turf/open/floor/plasteel,
-/area/ship/engineering)
+/area/ruin/powered)
 "IG" = (
 /obj/structure/closet/crate/large,
+/obj/item/inducer,
+/obj/item/circuitboard/machine/smes,
+/obj/item/stock_parts/cell/potato,
+/obj/item/stock_parts/cell/potato,
+/obj/item/stock_parts/cell/potato,
 /turf/open/floor/plasteel,
-/area/ship/engineering)
-"IT" = (
-/obj/machinery/power/apc,
-/turf/closed/wall/r_wall,
-/area/ship/crew/canteen)
-"Ji" = (
-/obj/effect/spawner/structure/window/hollow/reinforced,
-/turf/open/floor/plasteel,
-/area/ship/crew/dorm)
+/area/ruin/powered)
 "JU" = (
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
 /turf/open/floor/plasteel,
-/area/ship/hallway)
+/area/ruin/powered)
 "Ke" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/effect/gibspawner/xeno,
-/turf/open/floor/plasteel,
-/area/ship/hallway)
+/obj/structure/sign/departments/botany,
+/turf/closed/wall,
+/area/ruin/powered)
 "Kn" = (
 /obj/structure/sign/departments/botany,
 /turf/closed/wall/r_wall,
-/area/ship/crew/hydroponics)
+/area/ruin/powered)
 "Kt" = (
 /obj/structure/chair/greyscale{
 	dir = 4
 	},
 /turf/open/floor/plasteel,
-/area/ship/crew/canteen)
-"KE" = (
-/obj/structure/girder/reinforced,
-/turf/open/floor/plating,
-/area/ship/bridge)
+/area/ruin/powered)
+"LW" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/item/reagent_containers/food/snacks/grown/berries,
+/obj/structure/glowshroom/single,
+/turf/open/floor/plasteel,
+/area/ruin/powered)
 "Nk" = (
 /obj/structure/table,
-/obj/item/storage/box/donkpockets/donkpocketberry,
-/obj/item/storage/box/donkpockets/donkpockethonk,
+/obj/item/reagent_containers/food/snacks/salad/jungle{
+	pixel_y = 7
+	},
 /turf/open/floor/plasteel,
-/area/ship/crew/canteen)
+/area/ruin/powered)
 "Nn" = (
+/obj/item/spear,
 /turf/open/floor/plasteel,
-/area/ship/crew/dorm)
+/area/ruin/powered)
 "Np" = (
 /obj/structure/girder/reinforced,
 /turf/open/floor/plating,
-/area/ship/crew/canteen)
+/area/ruin/powered)
+"OT" = (
+/obj/machinery/door/airlock,
+/obj/effect/decal/cleanable/blood/footprints,
+/turf/open/floor/plasteel,
+/area/ruin/powered)
 "OX" = (
 /turf/open/floor/plasteel,
-/area/ship/engineering)
+/area/ruin/powered)
 "Pm" = (
 /obj/structure/sign/departments/engineering,
 /turf/closed/wall/r_wall,
-/area/ship/engineering)
+/area/ruin/powered)
 "Pp" = (
 /obj/structure/grille/broken,
+/obj/structure/spacevine,
 /turf/open/floor/plating,
-/area/ship/crew/hydroponics)
+/area/ruin/powered)
 "Pq" = (
 /obj/effect/decal/cleanable/xenoblood,
+/obj/structure/spacevine/dense,
 /turf/open/floor/plasteel,
-/area/ship/bridge)
+/area/ruin/powered)
+"Qa" = (
+/obj/structure/spacevine/dense,
+/turf/open/floor/plasteel,
+/area/ruin/powered)
 "Qc" = (
 /obj/effect/spawner/structure/window/hollow/reinforced,
 /turf/open/floor/plasteel,
-/area/ship/bridge)
+/area/ruin/powered)
 "Qg" = (
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
+/obj/structure/spacevine,
+/obj/item/reagent_containers/food/snacks/grown/banana,
 /turf/open/floor/plasteel,
-/area/ship/crew/hydroponics)
+/area/ruin/powered)
 "Qu" = (
-/obj/machinery/door/airlock,
+/obj/structure/door_assembly/door_assembly_com,
 /turf/open/floor/plasteel,
-/area/ship/bridge)
+/area/ruin/powered)
 "QJ" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -498,22 +518,22 @@
 	locked = 1
 	},
 /turf/open/floor/plasteel,
-/area/ship/engineering)
+/area/ruin/powered)
 "Rj" = (
 /obj/structure/closet/crate{
 	icon_state = "crateopen"
 	},
 /obj/item/stack/sheet/mineral/plasma/twenty,
 /turf/open/floor/plasteel,
-/area/ship/engineering)
+/area/ruin/powered)
 "Se" = (
 /obj/structure/closet/secure_closet/personal,
 /turf/open/floor/plasteel,
-/area/ship/crew/dorm)
+/area/ruin/powered)
 "Sh" = (
 /obj/structure/flora/grass/jungle,
-/turf/open/floor/grass,
-/area/ruin/jungle)
+/turf/open/floor/plating/grass/jungle/lit,
+/area/ruin/powered)
 "Ss" = (
 /obj/machinery/power/terminal{
 	dir = 1
@@ -524,202 +544,215 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/effect/gibspawner/xeno,
 /turf/open/floor/plasteel,
-/area/ship/engineering)
+/area/ruin/powered)
 "SB" = (
 /obj/machinery/vending/hydronutrients,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
 /turf/open/floor/plasteel,
-/area/ship/crew/hydroponics)
+/area/ruin/powered)
 "SQ" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/closed/wall/r_wall,
-/area/ship/bridge)
+/obj/structure/sign/poster/contraband/kudzu{
+	pixel_x = 2
+	},
+/turf/closed/wall,
+/area/ruin/powered)
+"TO" = (
+/obj/structure/salvageable/seed,
+/turf/open/floor/plasteel,
+/area/ruin/powered)
+"TV" = (
+/obj/structure/spacevine,
+/turf/open/floor/plasteel,
+/area/ruin/powered)
 "Uo" = (
 /obj/structure/table,
-/obj/machinery/microwave,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/item/reagent_containers/food/snacks/salad/fruit{
+	pixel_y = 8
+	},
 /turf/open/floor/plasteel,
-/area/ship/crew/canteen)
+/area/ruin/powered)
 "Vn" = (
 /obj/structure/table,
+/obj/item/clipboard,
 /turf/open/floor/plasteel,
-/area/ship/bridge)
-"Vu" = (
-/obj/machinery/power/apc,
-/turf/closed/wall/r_wall,
-/area/ship/crew/dorm)
+/area/ruin/powered)
 "VH" = (
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel,
-/area/ship/crew/canteen)
+/area/ruin/powered)
 "Wo" = (
 /obj/structure/sign/poster/contraband/donut_corp,
-/turf/closed/wall/r_wall,
-/area/ship/engineering)
-"Ws" = (
-/obj/machinery/power/apc,
-/turf/closed/wall/r_wall,
-/area/ship/hallway)
+/turf/closed/wall,
+/area/ruin/powered)
 "WE" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel,
-/area/ship/crew/canteen)
-"Xq" = (
-/obj/machinery/power/apc,
-/turf/closed/wall/r_wall,
-/area/ship/bridge)
-"XO" = (
-/turf/closed/wall/r_wall,
-/area/ship/bridge)
-"Yc" = (
-/obj/effect/mob_spawn/human/corpse/charredskeleton,
+/area/ruin/powered)
+"Xg" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/spacevine,
+/obj/item/reagent_containers/food/snacks/grown/banana,
+/mob/living/simple_animal/hostile/venus_human_trap,
 /turf/open/floor/plasteel,
-/area/ship/crew/hydroponics)
+/area/ruin/powered)
+"Yc" = (
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/plasteel,
+/area/ruin/powered)
 "YN" = (
 /obj/structure/table,
-/obj/item/toy/cards/deck/tarot,
+/obj/item/toy/cards/deck/tarot{
+	pixel_x = -8
+	},
+/obj/item/reagent_containers/food/snacks/salad/herbsalad{
+	pixel_x = 8;
+	pixel_y = 12
+	},
 /turf/open/floor/plasteel,
-/area/ship/crew/canteen)
+/area/ruin/powered)
 "Zq" = (
-/obj/machinery/suit_storage_unit/ert/engineer,
+/obj/machinery/suit_storage_unit/standard_unit,
 /turf/open/floor/plasteel,
-/area/ship/hallway)
+/area/ruin/powered)
 "ZO" = (
 /obj/structure/bed,
 /obj/item/bedsheet/green,
 /turf/open/floor/plasteel,
-/area/ship/crew/dorm)
+/area/ruin/powered)
 "ZU" = (
-/turf/closed/wall/r_wall,
-/area/ship/crew/dorm)
+/turf/closed/wall,
+/area/ruin/powered)
 
 (1,1,1) = {"
-kG
-kG
+ZU
+Ke
 jK
 jK
-kG
-XO
+Ke
+ZU
 Qc
-XO
+ZU
 Qc
 Qc
 wU
 Sh
 "}
 (2,1,1) = {"
-nF
+Np
 Zq
-Hu
-Hu
+OX
+OX
 Zq
-XO
+ZU
 aM
 Vn
 Aq
 Qc
-tb
+Pp
 nJ
 "}
 (3,1,1) = {"
-kG
-kG
+ZU
+ZU
 jK
 jK
-kG
-XO
-ce
+wD
+ZU
+OX
 fM
-ce
+TV
 Pq
-tb
-tb
+Pp
+Pp
 "}
 (4,1,1) = {"
-kG
+ZU
 yS
 JU
-Ke
-mL
+VH
+VH
 hl
 js
 nS
 om
-ce
-ce
+TV
+TV
 Qc
 "}
 (5,1,1) = {"
-Ws
+ZU
 gb
 Cj
-Hu
-ii
-Xq
+Yc
+TO
+ZU
 pt
 uM
 Gx
-ce
+Qa
 jf
-XO
+ZU
 "}
 (6,1,1) = {"
-kG
+ZU
 Gq
-Hu
-Hu
+FR
+OX
 ii
-KE
-iv
+Np
+DS
 ik
-sU
-AJ
+WE
+Yc
 wP
 Qc
 "}
 (7,1,1) = {"
-bI
-bI
+ZU
+ZU
 Kn
 oc
-bI
-KE
-XO
-XO
+ZU
+Np
+ZU
+ZU
 SQ
 Qu
-XO
-XO
+ZU
+ZU
 "}
 (8,1,1) = {"
-bI
+ZU
 qM
 ji
-hm
-hm
-lK
-pM
+OX
+FR
+pO
+ZU
 iG
 WE
 fR
 Kt
-pM
+ZU
 "}
 (9,1,1) = {"
 Sh
-CO
+ZU
 SB
 Qg
 Yc
@@ -727,89 +760,89 @@ yR
 Np
 kj
 nl
-xa
+OX
 YN
-pM
+ZU
 "}
 (10,1,1) = {"
 nJ
-zz
+Qc
 lK
 ru
-FN
-FN
+Xg
+VH
 mg
 VH
 ke
-xa
+OX
 Hm
-pM
+ZU
 "}
 (11,1,1) = {"
 nJ
 Pp
-lK
+Ia
 FZ
-Dr
-lK
-IT
+TV
+sv
+ZU
 Uo
 ke
 FF
 aP
-pM
+ZU
 "}
 (12,1,1) = {"
-Sh
-zz
-lK
-FZ
-mN
-lK
-pM
-Nk
 zm
+Qc
+ge
+LW
+mN
+Ia
+ZU
+Nk
+WE
 DS
-pM
-pM
+ZU
+ZU
 "}
 (13,1,1) = {"
 Sh
-bI
+ZU
 jc
-FZ
+yr
 Ie
-bI
+ZU
 ZU
 ZU
 yt
 ZU
 ZU
-nJ
+HQ
 "}
 (14,1,1) = {"
 wU
-dR
+ZU
 Pm
 QJ
-dR
-dR
+ZU
+ZU
 AD
 FG
 uC
 Se
-Ji
+Qc
 Sh
 "}
 (15,1,1) = {"
-nJ
-dR
-wl
-lO
-IG
-dR
+HQ
 ZU
-Vu
+wl
+WE
+IG
+ZU
+ZU
+ZU
 EJ
 Se
 ZU
@@ -817,25 +850,25 @@ uK
 "}
 (16,1,1) = {"
 Sh
-GY
+Np
 Ig
-lO
+WE
 dJ
-dR
+ZU
 ZO
-FG
-Nn
+OT
+GW
 eQ
-Ji
+Qc
 Sh
 "}
 (17,1,1) = {"
 Sh
-GY
+Np
 Rj
-lO
+WE
 OX
-dR
+ZU
 ZU
 ZU
 FG
@@ -845,42 +878,42 @@ wU
 "}
 (18,1,1) = {"
 Sh
-dR
+ZU
 lb
 Ss
-HQ
+OX
 Wo
 ez
 Nn
-Nn
-Ji
+cI
+Qc
 Sh
-nJ
+HQ
 "}
 (19,1,1) = {"
-nJ
-nQ
+HQ
+ZU
 DL
-vo
+Cj
 OX
-dR
+ZU
 oR
-jb
-Nn
-Ji
-nJ
+OX
+hL
+Qc
+HQ
 Sh
 "}
 (20,1,1) = {"
 Sh
-dR
-dR
-dR
-dR
-dR
 ZU
-Ji
-Ji
+ZU
+ZU
+ZU
+ZU
+ZU
+Qc
+Qc
 ZU
 Sh
 Sh

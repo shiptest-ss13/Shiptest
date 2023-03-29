@@ -146,7 +146,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "hh" = (
-/obj/machinery/holopad,
+/obj/machinery/holopad/emergency/science,
 /turf/open/floor/mineral/titanium/purple,
 /area/ship/crew)
 "iy" = (
@@ -181,9 +181,9 @@
 	},
 /obj/structure/table/reinforced,
 /obj/item/radio,
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
 /turf/open/floor/mineral/titanium/yellow,
 /area/ship/bridge)
 "ka" = (
@@ -808,7 +808,7 @@
 "Rw" = (
 /obj/machinery/firealarm{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /turf/open/floor/mineral/titanium,
 /area/ship/crew)

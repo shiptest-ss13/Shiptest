@@ -118,3 +118,14 @@
 		severe_cooldown = world.time + 10 SECONDS
 	if(prob(emp_vulnerability/severity))	//Chance of permanent effects
 		organ_flags = ORGAN_SYNTHETIC_EMP //Starts organ faliure - gonna need replacing soon.
+
+/obj/item/organ/liver/cybernetic/upgraded/ipc
+	icon = 'icons/obj/surgery.dmi'
+	name = "substance processor"
+	icon_state = "substance_processor"
+	attack_verb = list("processed")
+	desc = "A machine component, installed in the chest. This grants the Machine the ability to process chemicals that enter its systems."
+	alcohol_tolerance = 0
+	toxTolerance = -1
+	toxLethality = 0
+	status = ORGAN_ROBOTIC

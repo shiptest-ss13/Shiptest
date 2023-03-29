@@ -145,6 +145,9 @@
 				to_chat(src, "<span class='notice'>Receiving control information from APC.</span>")
 				sleep(2)
 				apc_override = 1
+				//Force-set APC to "on"
+				theAPC.equipment = 2
+				theAPC.update()
 				theAPC.ui_interact(src)
 				apc_override = 0
 				setAiRestorePowerRoutine(POWER_RESTORATION_APC_FOUND)

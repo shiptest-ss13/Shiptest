@@ -1,23 +1,18 @@
 /datum/job/bartender
-	title = "Bartender"
-	department_head = list("Head of Personnel")
-	faction = "Station"
+	name = "Bartender"
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the head of personnel"
-	selection_color = "#bbe291"
 	wiki_page = "Drinks" //WS Edit - Wikilinks/Warning
 
 	outfit = /datum/outfit/job/bartender
 
 	access = list(ACCESS_HYDROPONICS, ACCESS_BAR, ACCESS_KITCHEN, ACCESS_MORGUE, ACCESS_WEAPONS, ACCESS_MINERAL_STOREROOM, ACCESS_THEATRE)
 	minimal_access = list(ACCESS_BAR, ACCESS_MINERAL_STOREROOM, ACCESS_THEATRE)
-	paycheck = PAYCHECK_EASY
-	paycheck_department = ACCOUNT_SRV
 	display_order = JOB_DISPLAY_ORDER_BARTENDER
 
 /datum/outfit/job/bartender
 	name = "Bartender"
+	job_icon = "bartender"
 	jobtype = /datum/job/bartender
 
 	glasses = /obj/item/clothing/glasses/sunglasses/reagent
@@ -30,6 +25,10 @@
 	backpack_contents = list(/obj/item/storage/box/beanbag=1)
 	shoes = /obj/item/clothing/shoes/laceup
 
+/datum/outfit/job/bartender/syndicate
+	id = /obj/item/card/id/syndicate_command/crew_id
+	head = /obj/item/clothing/head/HoS/beret/syndicate
+
 /datum/outfit/job/bartender/post_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()
 
@@ -37,3 +36,16 @@
 	if(H.age < AGE_MINOR)
 		W.registered_age = AGE_MINOR
 		to_chat(H, "<span class='notice'>You're not technically old enough to access or serve alcohol, but your ID has been discreetly modified to display your age as [AGE_MINOR]. Try to keep that a secret!</span>")
+
+/datum/outfit/job/bartender/pharma
+	name = "Mixologist"
+
+	backpack_contents = list(/obj/item/storage/box/syringes=1, /obj/item/storage/box/drinkingglasses = 1)
+	ears = /obj/item/radio/headset/headset_med
+	suit = /obj/item/clothing/suit/toggle/labcoat
+	alt_suit = /obj/item/clothing/suit/armor/vest
+	l_pocket = /obj/item/pda/bar
+	r_pocket = /obj/item/reagent_containers/food/drinks/shaker
+	belt = /obj/item/storage/belt
+	gloves = /obj/item/clothing/gloves/color/latex/nitrile
+	uniform = /obj/item/clothing/under/suit/black

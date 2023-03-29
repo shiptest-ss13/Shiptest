@@ -42,6 +42,7 @@
 	if (A)
 		A.air_scrub_names -= id_tag
 		A.air_scrub_info -= id_tag
+		deallocate_nameid(A.air_scrub_ids, id_tag)
 
 	SSradio.remove_object(src,frequency)
 	radio_connection = null
@@ -49,7 +50,7 @@
 	return ..()
 
 /obj/machinery/atmospherics/components/unary/vent_scrubber/auto_use_power()
-	if(!on || welded || !is_operational() || !powered(power_channel))
+	if(!on || welded || !is_operational || !powered(power_channel))
 		return FALSE
 
 	var/amount = idle_power_usage
@@ -76,7 +77,7 @@
 		icon_state = "scrub_welded"
 		return
 
-	if(!nodes[1] || !on || !is_operational())
+	if(!nodes[1] || !on || !is_operational)
 		icon_state = "scrub_off"
 		return
 
@@ -115,7 +116,8 @@
 
 	var/area/A = get_area(src)
 	if(!A.air_scrub_names[id_tag])
-		name = "\improper [A.name] air scrubber #[A.air_scrub_names.len + 1]"
+		var/nameid = allocate_nameid(A.air_scrub_ids, id_tag)
+		name = "\improper [A.name] air scrubber #[nameid]"
 		A.air_scrub_names[id_tag] = name
 
 	A.air_scrub_info[id_tag] = signal.data
@@ -134,7 +136,8 @@
 
 /obj/machinery/atmospherics/components/unary/vent_scrubber/process_atmos()
 	..()
-	if(welded || !is_operational())
+
+	if(welded || !on || !is_operational)
 		return FALSE
 	if(!nodes[1])
 		return FALSE
@@ -144,7 +147,7 @@
 			scrub(tile)
 	return TRUE
 
-/obj/machinery/atmospherics/components/unary/vent_scrubber/proc/scrub(var/turf/tile)
+/obj/machinery/atmospherics/components/unary/vent_scrubber/proc/scrub(turf/tile)
 	if(!istype(tile))
 		return FALSE
 	var/datum/gas_mixture/environment = tile.return_air()
@@ -181,7 +184,7 @@
 		adjacent_turfs = T.GetAtmosAdjacentTurfs(alldir = 1)
 
 /obj/machinery/atmospherics/components/unary/vent_scrubber/receive_signal(datum/signal/signal)
-	if(!is_operational() || !signal.data["tag"] || (signal.data["tag"] != id_tag) || (signal.data["sigtype"]!="command"))
+	if(!is_operational || !signal.data["tag"] || (signal.data["tag"] != id_tag) || (signal.data["sigtype"]!="command"))
 		return 0
 
 	var/atom/signal_sender = signal.data["user"]
@@ -249,7 +252,7 @@
 
 /obj/machinery/atmospherics/components/unary/vent_scrubber/can_unwrench(mob/user)
 	. = ..()
-	if(. && on && is_operational())
+	if(. && on && is_operational)
 		to_chat(user, "<span class='warning'>You cannot unwrench [src], turn it off first!</span>")
 		return FALSE
 

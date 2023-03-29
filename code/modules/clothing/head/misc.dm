@@ -265,7 +265,7 @@
 
 /obj/item/clothing/head/flatcap
 	name = "flat cap"
-	desc = "A working man's cap."
+	desc = "A working man's hat."
 	icon_state = "flat_cap"
 	item_state = "detective"
 
@@ -472,42 +472,6 @@
 	icon_state = "goatpelt"
 	item_state = "goatpelt"
 
-/obj/item/clothing/head/goatpelt/king
-	name = "king goat pelt hat"
-	desc = "Fuzzy, Warm and Robust!"
-	icon_state = "goatpelt"
-	item_state = "goatpelt"
-	color = "#ffd700"
-	body_parts_covered = HEAD
-	armor = list("melee" = 60, "bullet" = 55, "laser" = 55, "energy" = 45, "bomb" = 100, "bio" = 20, "rad" = 20, "fire" = 100, "acid" = 100)
-	dog_fashion = null
-	resistance_flags = FIRE_PROOF
-
-/obj/item/clothing/head/goatpelt/king/equipped(mob/living/carbon/human/user, slot)
-	..()
-	if (slot == ITEM_SLOT_HEAD)
-		user.faction |= "goat"
-
-/obj/item/clothing/head/goatpelt/king/dropped(mob/living/carbon/human/user)
-	..()
-	if (user.head == src)
-		user.faction -= "goat"
-
-/obj/item/clothing/head/goatpope
-	name = "goat pope hat"
-	desc = "And on the seventh day King Goat said there will be cabbage!"
-	mob_overlay_icon = 'icons/mob/large-worn-icons/64x64/head.dmi'
-	icon_state = "goatpope"
-	item_state = "goatpope"
-	worn_x_dimension = 64
-	worn_y_dimension = 64
-	resistance_flags = FLAMMABLE
-
-/obj/item/clothing/head/goatpope/equipped(mob/living/carbon/human/user, slot)
-	..()
-	if (slot == ITEM_SLOT_HEAD)
-		user.faction |= "goat"
-
 /obj/item/clothing/head/jackbros
 	name = "frosty hat"
 	desc = "Hee-ho!"
@@ -523,4 +487,34 @@
 	armor = list("melee" = 25, "bullet" = 15, "laser" = 25, "energy" = 35, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	strip_delay = 60
 
+/obj/item/clothing/head/maidheadband/syndicate
+	name = "tactical maid headband"
+	desc = "Tacticute."
+	icon_state = "syndieheadband"
+	item_state = "syndieheadband"
 
+/obj/item/clothing/head/maidheadband/inteq
+	name = "inteq maid headband"
+	desc = "Tacticute."
+	icon_state = "inteqheadband"
+	item_state = "inteqheadband"
+
+/obj/item/clothing/head/maidheadband
+	name = "maid headband"
+	desc = "Just like from one of those chinese cartoons!"
+	icon_state = "maid_headband"
+
+/obj/item/clothing/head/cowboy
+	name = "cowboy hat"
+	desc = "A classic stetson hat, made from real imitation leather! Wearing it gives you a strong urge to yeehaw."
+	icon_state = "cowboy"
+	dynamic_fhair_suffix = "+generic"
+	dynamic_fhair_suffix = "+generic"
+
+	dog_fashion = /datum/dog_fashion/head/cowboy
+
+/obj/item/clothing/head/franks_hat
+	name = "Frank's hat"
+	desc = "You feel ashamed about what you had to do to get this hat"
+	icon_state = "cowboy"
+	item_state = "cowboy"

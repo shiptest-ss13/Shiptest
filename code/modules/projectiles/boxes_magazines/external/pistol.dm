@@ -34,7 +34,6 @@
 /obj/item/ammo_box/magazine/m45
 	name = "pistol magazine (.45)"
 	desc = "A single stack M1911 reproduction magazine, faithfully designed to chamber .45."
-	icon = 'whitesands/icons/obj/ammo.dmi'
 	icon_state = "45-8"
 	ammo_type = /obj/item/ammo_casing/c45
 	caliber = ".45"
@@ -70,8 +69,7 @@
 /obj/item/ammo_box/magazine/co9mm //WS edit begin - commander
 	name = "pistol magazine (9mm)"
 	desc = "A single stack M1911 reproduction magazine, modified to chamber 9mm."
-	icon = 'whitesands/icons/obj/ammo.dmi'
-	icon_state = "co9mm-8"
+	icon_state = "co9mm-10"
 	ammo_type = /obj/item/ammo_casing/c9mm
 	caliber = "9mm"
 	max_ammo = 10
@@ -98,10 +96,10 @@
 
 /obj/item/ammo_box/magazine/co9mm/update_icon()
 	..()
-	if (ammo_count() >= 8)
-		icon_state = "co9mm-8"
+	if (ammo_count() == 1)
+		icon_state = "co9mm-1"
 	else
-		icon_state = "co9mm-[ammo_count()]" //WS edit end - commander
+		icon_state = "co9mm-[round(ammo_count(),2)]"
 
 /obj/item/ammo_box/magazine/pistolm9mm
 	name = "large pistol magazine (9mm)"
@@ -127,7 +125,6 @@
 /obj/item/ammo_box/magazine/disposable
 	name = "part of a disposable gun"
 	desc = "You ripped out part of the gun, somehow, rendering it unusuable. I hope you're happy."
-	icon = 'whitesands/icons/obj/ammo.dmi'
 	icon_state = "45-8"
 	ammo_type = /obj/item/ammo_casing/c38
 	caliber = ".38"

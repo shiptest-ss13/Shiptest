@@ -8,8 +8,7 @@
 	anchored = FALSE
 	health = 25
 	maxHealth = 25
-	radio_key = /obj/item/encryptionkey/headset_service
-	radio_channel = RADIO_CHANNEL_SERVICE //Service
+	radio_key = /obj/item/encryptionkey
 	bot_type = CLEAN_BOT
 	model = "Cleanbot"
 	bot_core_type = /obj/machinery/bot_core/cleanbot
@@ -143,7 +142,7 @@
 	text_dehack = "[name]'s software has been reset!"
 	text_dehack_fail = "[name] does not seem to respond to your repair code!"
 
-/mob/living/simple_animal/bot/cleanbot/Crossed(atom/movable/AM)
+/mob/living/simple_animal/bot/cleanbot/on_entered(datum/source, atom/movable/AM)
 	. = ..()
 
 	zone_selected = pick(BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
@@ -156,7 +155,7 @@
 			stolen_valor += C.job
 		update_titles()
 
-		weapon.attack(C, src)
+		INVOKE_ASYNC(weapon, /obj/item/proc/attack, C, src)
 		C.Knockdown(20)
 
 /mob/living/simple_animal/bot/cleanbot/attackby(obj/item/W, mob/user, params)

@@ -1,7 +1,6 @@
 /datum/species/plasmaman
 	name = "\improper Plasmaman"
 	id = SPECIES_PLASMAMAN
-	say_mod = "rattles"
 	sexes = 0
 	meat = /obj/item/stack/sheet/mineral/plasma
 	species_traits = list(NOBLOOD,NOTRANSSTING)
@@ -18,7 +17,7 @@
 	damage_overlay_type = ""//let's not show bloody wounds or burns over bones.
 	var/internal_fire = FALSE //If the bones themselves are burning clothes won't help you much
 	disliked_food = FRUIT
-	liked_food = VEGETABLES
+	liked_food = VEGETABLES | DAIRY
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC
 	outfit_important_for_life = /datum/outfit/plasmaman
 	species_language_holder = /datum/language_holder/skeleton
@@ -32,13 +31,13 @@
 	species_r_leg = /obj/item/bodypart/r_leg/plasmaman
 
 	// Body temperature for Plasmen is much lower human as they can handle colder environments
-	bodytemp_normal = (BODYTEMP_NORMAL - 40)
+	bodytemp_normal = (HUMAN_BODYTEMP_NORMAL - 40)
 	// The minimum amount they stabilize per tick is reduced making hot areas harder to deal with
 	bodytemp_autorecovery_min = 2
 	// They are hurt at hot temps faster as it is harder to hold their form
-	bodytemp_heat_damage_limit = (BODYTEMP_HEAT_DAMAGE_LIMIT - 20) // about 40C
+	bodytemp_heat_damage_limit = (HUMAN_BODYTEMP_HEAT_DAMAGE_LIMIT - 20) // about 40C
 	// This effects how fast body temp stabilizes, also if cold resit is lost on the mob
-	bodytemp_cold_damage_limit = (BODYTEMP_COLD_DAMAGE_LIMIT - 50) // about -50c
+	bodytemp_cold_damage_limit = (HUMAN_BODYTEMP_COLD_DAMAGE_LIMIT - 50) // about -50c
 	ass_image = 'icons/ass/assplasma.png'
 
 /datum/species/plasmaman/spec_life(mob/living/carbon/human/H)
@@ -74,7 +73,7 @@
 	. = ..()
 
 /datum/species/plasmaman/before_equip_job(datum/job/J, mob/living/carbon/human/H, visualsOnly = FALSE)
-	var/current_job = J.title
+	var/current_job = J.name
 	var/datum/outfit/plasmaman/O = new /datum/outfit/plasmaman
 	switch(current_job)
 		if("Chaplain")
@@ -203,7 +202,6 @@
 	return randname
 
 /datum/species/plasmaman/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H)
-	. = ..()
 	if(chem.type == /datum/reagent/consumable/milk)
 		if(chem.volume > 10)
 			H.reagents.remove_reagent(chem.type, chem.volume - 10)
@@ -236,3 +234,4 @@
 					H.emote("sigh")
 		H.reagents.remove_reagent(chem.type, chem.metabolization_rate)
 		return TRUE
+	return ..()

@@ -35,10 +35,18 @@
 	var/timerid
 	var/falloff_distance
 
+	/// Common cache of the mid sounds lists
+	var/static/mid_sounds_cache = list()
+
 /datum/looping_sound/New(list/_output_atoms=list(), start_immediately=FALSE, _direct=FALSE)
 	if(!mid_sounds)
 		WARNING("A looping sound datum was created without sounds to play.")
 		return
+	/// Common cache handling
+	if(islist(mid_sounds))
+		if(!mid_sounds_cache[type])
+			mid_sounds_cache[type] = mid_sounds
+		mid_sounds = mid_sounds_cache[type]
 
 	output_atoms = _output_atoms
 	direct = _direct

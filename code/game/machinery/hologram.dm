@@ -33,7 +33,6 @@ Possible to do for anyone motivated enough:
 	icon_state = "holopad0"
 	layer = LOW_OBJ_LAYER
 	plane = FLOOR_PLANE
-	flags_1 = HEAR_1
 	req_access = list(ACCESS_KEYCARD_AUTH) //Used to allow for forced connecting to other (not secure) holopads. Anyone can make a call, though.
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 5
@@ -79,6 +78,10 @@ Possible to do for anyone motivated enough:
 	/// If we are currently calling another holopad
 	var/calling = FALSE
 
+/obj/machinery/holopad/Initialize()
+	. = ..()
+	become_hearing_sensitive(ROUNDSTART_TRAIT)
+
 /obj/machinery/holopad/secure
 	name = "secure holopad"
 	desc = "It's a floor-mounted device for projecting holographic images. This one will refuse to auto-connect incoming calls."
@@ -109,7 +112,7 @@ Possible to do for anyone motivated enough:
 /obj/machinery/holopad/tutorial/attack_hand(mob/user)
 	if(!istype(user))
 		return
-	if(user.incapacitated() || !is_operational())
+	if(user.incapacitated() || !is_operational)
 		return
 	if(replay_mode)
 		replay_stop()
@@ -200,7 +203,7 @@ Possible to do for anyone motivated enough:
 	return ..()
 
 /obj/machinery/holopad/ui_status(mob/user)
-	if(!is_operational())
+	if(!is_operational)
 		return UI_CLOSE
 	if(outgoing_call && !calling)
 		return UI_CLOSE
@@ -258,10 +261,11 @@ Possible to do for anyone motivated enough:
 				return
 			if(usr.loc == loc)
 				var/list/callnames = list()
-				for(var/I in holopads)
-					var/area/A = get_area(I)
-					if(A)
-						LAZYADD(callnames[A], I)
+				for(var/obj/machinery/holopad/pad as anything in holopads)
+					if (pad.is_operational)
+						var/area/area = get_area(pad)
+						if(area)
+							LAZYADD(callnames[area], pad)
 				callnames -= get_area(src)
 				var/result = tgui_input_list(usr, "Choose an area to call", "Holocall", sortNames(callnames))
 				if(QDELETED(usr) || !result || outgoing_call)
@@ -318,15 +322,15 @@ Possible to do for anyone motivated enough:
 				new_turf = get_turf(src)
 			else
 				new_turf = get_step(src, GLOB.cardinals[offset])
-			replay_holo.forceMove(new_turf)
+			replay_holo.abstract_move(new_turf)
 			return TRUE
 		if("hang_up")
 			if(outgoing_call)
 				outgoing_call.Disconnect(src)
 
 /**
-  * hangup_all_calls: Disconnects all current holocalls from the holopad
-  */
+ * hangup_all_calls: Disconnects all current holocalls from the holopad
+ */
 /obj/machinery/holopad/proc/hangup_all_calls()
 	for(var/I in holo_calls)
 		var/datum/holocall/HC = I
@@ -356,7 +360,7 @@ Possible to do for anyone motivated enough:
 			if(!istype(AI))
 				AI = null
 
-			if(!is_operational() || !validate_user(master))
+			if(!is_operational || !validate_user(master))
 				clear_holo(master)
 
 	if(outgoing_call)
@@ -383,7 +387,7 @@ Possible to do for anyone motivated enough:
 	if(!istype(AI))
 		AI = null
 
-	if(is_operational() && (!AI || AI.eyeobj.loc == loc))//If the projector has power and client eye is on it
+	if(is_operational && (!AI || AI.eyeobj.loc == loc))//If the projector has power and client eye is on it
 		if (AI && istype(AI.current, /obj/machinery/holopad))
 			to_chat(user, "<span class='danger'>ERROR:</span> \black Image feed in progress.")
 			return
@@ -505,9 +509,9 @@ For the other part of the code, check silicon say.dm. Particularly robot talk.*/
 	return TRUE
 
 /**Can we display holos on the turf T
-  *Area check instead of line of sight check because this is a called a lot if AI wants to move around.
-  * *Areacheck for things that need to get into other areas, such as emergency holograms
-  */
+ *Area check instead of line of sight check because this is a called a lot if AI wants to move around.
+ * *Areacheck for things that need to get into other areas, such as emergency holograms
+ */
 /obj/machinery/holopad/proc/validate_location(turf/T, check_los = FALSE, areacheck = TRUE)
 	if(T.virtual_z() == virtual_z() && get_dist(T, src) <= holo_range && (T.loc == get_area(src) || !areacheck) && anchored)
 		return TRUE

@@ -13,9 +13,9 @@
 	internal_magazine = TRUE
 	bolt_type = BOLT_TYPE_NO_BOLT
 	tac_reloads = FALSE
-	fire_rate = 1.5 //slower than normal guns due to the damage factor
 	var/spin_delay = 10
 	var/recent_spin = 0
+	fire_delay = 7
 
 /obj/item/gun/ballistic/revolver/chamber_round(spin_cylinder = TRUE)
 	if(spin_cylinder)
@@ -78,19 +78,18 @@
 	desc = "A classic, if not outdated, law enforcement firearm. Uses .38-special rounds."
 	fire_sound = 'sound/weapons/gun/revolver/shot.ogg'
 	icon_state = "detective"
-	fire_rate = 2
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev38
 	obj_flags = UNIQUE_RENAME
 	unique_reskin = list("Default" = "detective",
-						"Fitz Special" = "detective_fitz",
-						"Police Positive Special" = "detective_police",
-						"Blued Steel" = "detective_blued",
-						"Stainless Steel" = "detective_stainless",
-						"Gold Trim" = "detective_gold",
-						"Leopard Spots" = "detective_leopard",
-						"The Peacemaker" = "detective_peacemaker",
-						"Black Panther" = "detective_panther"
-						)
+		"Fitz Special" = "detective_fitz",
+		"Police Positive Special" = "detective_police",
+		"Blued Steel" = "detective_blued",
+		"Stainless Steel" = "detective_stainless",
+		"Gold Trim" = "detective_gold",
+		"Leopard Spots" = "detective_leopard",
+		"The Peacemaker" = "detective_peacemaker",
+		"Black Panther" = "detective_panther"
+		)
 
 /obj/item/gun/ballistic/revolver/detective/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
 	if(magazine.caliber != initial(magazine.caliber))
@@ -117,7 +116,6 @@
 				to_chat(user, "<span class='warning'>You can't modify it!</span>")
 				return TRUE
 			magazine.caliber = "357"
-			fire_rate = 1 //worse than a nromal .357
 			fire_sound = 'sound/weapons/gun/revolver/shot.ogg'
 			desc = "The barrel and chamber assembly seems to have been modified."
 			to_chat(user, "<span class='notice'>You reinforce the barrel of [src]. Now it will fire .357 rounds.</span>")
@@ -132,7 +130,6 @@
 				to_chat(user, "<span class='warning'>You can't modify it!</span>")
 				return
 			magazine.caliber = "38"
-			fire_rate = null
 			fire_sound = 'sound/weapons/gun/revolver/shot.ogg'
 			desc = initial(desc)
 			to_chat(user, "<span class='notice'>You remove the modifications on [src]. Now it will fire .38 rounds.</span>")
@@ -150,7 +147,6 @@
 	icon_state = "goldrevolver"
 	fire_sound = 'sound/weapons/resonator_blast.ogg'
 	recoil = 8
-	fire_rate = 2 //keeping with the description's reference, this fires slightly faster than the normal gun
 	pin = /obj/item/firing_pin
 
 /obj/item/gun/ballistic/revolver/nagant
@@ -270,3 +266,15 @@
 		user.emote("scream")
 		user.drop_all_held_items()
 		user.Paralyze(80)
+
+/obj/item/gun/ballistic/revolver/srm
+	name = "SRM Standard Issue .357 Revolver"
+	desc = "A sturdy, powerful, and reliable revolver. Try not to find yourself on the other end."
+
+/obj/item/gun/ballistic/revolver/pepperbox
+	name = "\improper pepperbox pistol"
+	desc = "An archaic precursor to revolver-type firearms, this gun was rendered completely obsolete millennia ago. How did it even end up here? While fast to fire, it is extremely inaccurate. Uses .357 ammo."
+	icon_state = "pepperbox"
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/pepperbox
+	spread = 20
+	fire_delay = 4

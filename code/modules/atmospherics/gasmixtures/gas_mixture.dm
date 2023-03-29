@@ -1,4 +1,4 @@
- /*
+/*
 What are the archived variables for?
 	Calculations are done using the archived variables with the results merged into the regular variables.
 	This prevents race conditions that arise based on the order of tile processing.
@@ -150,6 +150,7 @@ we use a hook instead
 /datum/gas_mixture/proc/set_temperature(new_temp)
 /datum/gas_mixture/proc/set_volume(new_volume)
 /datum/gas_mixture/proc/get_moles(gas_type)
+/datum/gas_mixture/proc/get_by_flag(flag)
 /datum/gas_mixture/proc/set_moles(gas_type, moles)
 /datum/gas_mixture/proc/scrub_into(datum/gas_mixture/target, ratio, list/gases)
 
@@ -168,7 +169,10 @@ we use a hook instead
 /datum/gas_mixture/proc/mark_immutable()
 /datum/gas_mixture/proc/mark_vacuum()
 /datum/gas_mixture/proc/get_gases()
+/datum/gas_mixture/proc/add(amt)
+/datum/gas_mixture/proc/subtract(amt)
 /datum/gas_mixture/proc/multiply(factor)
+/datum/gas_mixture/proc/divide(factor)
 //WS Edit Start - Immutable Gax Mix Temperature Gradients
 /datum/gas_mixture/proc/create_temperature_gradient(a, b, c)
 /datum/gas_mixture/proc/tick_temperature_gradient(step)
@@ -178,6 +182,10 @@ we use a hook instead
 
 /datum/gas_mixture/proc/adjust_moles(gas_type, amt = 0)
 	set_moles(gas_type, clamp(get_moles(gas_type) + amt,0,INFINITY))
+
+/datum/gas_mixture/proc/adjust_moles_temp(gas_type, amt, temperature)
+
+/datum/gas_mixture/proc/adjust_multi()
 
 /datum/gas_mixture/proc/return_volume() //liters
 
@@ -195,6 +203,10 @@ we use a hook instead
 /datum/gas_mixture/proc/remove(amount)
 	//Proportionally removes amount of gas from the gas_mixture
 	//Returns: gas_mixture with the gases removed
+
+/datum/gas_mixture/proc/remove_by_flag(flag, amount)
+	//Removes amount of gas from the gas mixture by flag
+	//Returns: gas_mixture with gases that match the flag removed
 
 /datum/gas_mixture/proc/transfer_to(datum/gas_mixture/target, amount)
 
@@ -255,6 +267,14 @@ we use a hook instead
 	//Makes every gas in the given list have the same pressure, temperature and gas proportions.
 	//Returns: null
 
+/datum/gas_mixture/proc/__remove_by_flag()
+
+/datum/gas_mixture/remove_by_flag(flag, amount)
+	var/datum/gas_mixture/removed = new type
+	__remove_by_flag(removed, flag, amount)
+
+	return removed
+
 /datum/gas_mixture/proc/__remove()
 /datum/gas_mixture/remove(amount)
 	var/datum/gas_mixture/removed = new type
@@ -280,18 +300,14 @@ we use a hook instead
 	parse_gas_string(model.initial_gas_mix)
 	return 1
 
+// Newer versions of auxmos (2.0+) have a function, __auxtools_parse_gas_string,
+// that circumvents the slowdown caused by params2list(). Once auxmos is updated,
+// this proc should be changed to a simple wrapper.
+// SSair should be updated accordingly to return a string instead of a gas mix as before.
 /datum/gas_mixture/parse_gas_string(gas_string)
-	gas_string = SSair.preprocess_gas_string(gas_string)
-	var/list/gas = params2list(gas_string)
-	if(gas["TEMP"])
-		var/temp = text2num(gas["TEMP"])
-		gas -= "TEMP"
-		if(!isnum(temp) || temp < 2.7)
-			temp = 2.7
-		set_temperature(temp)
-	clear()
-	for(var/id in gas)
-		set_moles(id, text2num(gas[id]))
+	// params2list() is surprisingly expensive, so we have SSair cache it.
+	var/datum/gas_mixture/string_mixture = SSair.get_gas_string_mix(gas_string)
+	copy_from(string_mixture)
 	return 1
 
 /datum/gas_mixture/proc/set_analyzer_results(instability)

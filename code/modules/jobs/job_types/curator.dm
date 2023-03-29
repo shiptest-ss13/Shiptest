@@ -1,24 +1,19 @@
 /datum/job/curator
-	title = "Curator"
-	department_head = list("Head of Personnel")
-	faction = "Station"
+	name = "Curator"
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the head of personnel"
 	wiki_page = "Curator" //WS Edit - Wikilinks/Warning
-	selection_color = "#bbe291"
 
 	outfit = /datum/outfit/job/curator
 
 	access = list(ACCESS_LIBRARY, ACCESS_CONSTRUCTION, ACCESS_MINING_STATION)
 	minimal_access = list(ACCESS_LIBRARY, ACCESS_CONSTRUCTION, ACCESS_MINING_STATION)
-	paycheck = PAYCHECK_EASY
-	paycheck_department = ACCOUNT_SRV
 
 	display_order = JOB_DISPLAY_ORDER_CURATOR
 
 /datum/outfit/job/curator
 	name = "Curator"
+	job_icon = "curator"
 	jobtype = /datum/job/curator
 
 	shoes = /obj/item/clothing/shoes/laceup
@@ -26,7 +21,7 @@
 	ears = /obj/item/radio/headset/headset_srv
 	uniform = /obj/item/clothing/under/rank/civilian/curator
 	alt_uniform = /obj/item/clothing/under/suit/tan
-	alt_suit = /obj/item/clothing/suit/curator
+	alt_suit = /obj/item/clothing/suit/armor/curator
 	l_hand = /obj/item/storage/bag/books
 	r_pocket = /obj/item/key/displaycase
 	l_pocket = /obj/item/laser_pointer
@@ -54,4 +49,27 @@
 	backpack_contents = list(
 		/obj/item/choice_beacon/hero = 1,
 		/obj/item/tape = 1
+	)
+
+/datum/outfit/job/curator/librarian
+	name = "Curator (Librarian)"
+	uniform = /obj/item/clothing/under/suit/tan
+	neck = /obj/item/clothing/neck/tie/brown
+	backpack_contents = list(
+		/obj/item/choice_beacon/hero = 1,
+		/obj/item/tape = 1,
+		/obj/item/paper_bin/bundlenatural = 1,
+		/obj/item/pen/fountain = 1
+	)
+/datum/outfit/job/curator/dungeonmaster
+	name = "Dungeon Master"
+	uniform = /obj/item/clothing/under/misc/pj/red
+	suit = /obj/item/clothing/suit/nerdshirt
+	backpack_contents = list(
+		/obj/item/choice_beacon/hero = 1,
+		/obj/item/tape = 1,
+		/obj/item/storage/pill_bottle/dice = 1,
+		/obj/item/toy/cards/deck/cas = 1,
+		/obj/item/toy/cards/deck/cas/black = 1,
+		/obj/item/hourglass = 1
 	)

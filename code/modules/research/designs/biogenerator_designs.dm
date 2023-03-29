@@ -90,6 +90,22 @@
 	make_reagents = list(/datum/reagent/plantnutriment/robustharvestnutriment = 25)
 	category = list("initial","Botany Chemicals")
 
+/datum/design/end_gro
+	name = "25u Enduro Grow"
+	id = "end_gro"
+	build_type = BIOGENERATOR
+	materials = list(/datum/material/biomass= 25)
+	make_reagents = list(/datum/reagent/plantnutriment/endurogrow = 25)
+	category = list("initial","Botany Chemicals")
+
+/datum/design/liq_earth
+	name = "25u Liquid Earthquake"
+	id = "liq_earth"
+	build_type = BIOGENERATOR
+	materials = list(/datum/material/biomass= 25)
+	make_reagents = list(/datum/reagent/plantnutriment/liquidearthquake = 25)
+	category = list("initial","Botany Chemicals")
+
 /datum/design/weed_killer
 	name = "25u Weed Killer"
 	id = "weed_killer"
@@ -154,6 +170,14 @@
 	build_path = /obj/item/storage/belt/janitor
 	category = list("initial","Organic Materials")
 
+/datum/design/plantbelt
+	name = "Botanical Belt"
+	id = "plantbelt"
+	build_type = BIOGENERATOR
+	materials = list(/datum/material/biomass= 300)
+	build_path = /obj/item/storage/belt/plant
+	category = list("initial","Organic Materials")
+
 /datum/design/s_holster
 	name = "Shoulder Holster"
 	id = "s_holster"
@@ -169,3 +193,27 @@
 	materials = list(/datum/material/biomass= 300)
 	build_path = /obj/item/clothing/head/rice_hat
 	category = list("initial","Organic Materials")
+
+/datum/design/rngplant
+	name = "SYNTHESIS"
+	id = "rngplant"
+	build_type = BIOGENERATOR
+	materials = list(/datum/material/biomass= 2000)
+	build_path = /obj/effect/spawner/lootdrop/seeded
+	category = list("initial","LIFESEED_2.0")
+
+/datum/design/genesis
+	name = "GENESIS"
+	id = "genesis"
+	build_type = BIOGENERATOR
+	materials = list(/datum/material/biomass= 2500)
+	make_reagents = list(/datum/reagent/genesis = 25)
+	category = list("initial","LIFESEED_2.0")
+
+/datum/design/strangeseed
+	name = "{DATA_CORRUPT}"
+	id = "strangeseed"
+	build_type = BIOGENERATOR
+	materials = list(/datum/material/biomass= 5000)
+	build_path = /obj/item/seeds/random
+	category = list("initial","LIFESEED_2.0")

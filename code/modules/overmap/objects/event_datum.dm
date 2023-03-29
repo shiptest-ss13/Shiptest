@@ -21,16 +21,16 @@
 	SSovermap.events -= src
 
 /**
-  * The main proc for calling other procs. Called by SSovermap.
-  */
+ * The main proc for calling other procs. Called by SSovermap.
+ */
 /datum/overmap/event/proc/apply_effect()
 	for(var/datum/overmap/ship/controlled/S in get_nearby_overmap_objects())
 		if(prob(chance_to_affect))
 			affect_ship(S)
 
 /**
-  * The proc called on all ships that are currently being affected.
-  */
+ * The proc called on all ships that are currently being affected.
+ */
 /datum/overmap/event/proc/affect_ship(datum/overmap/ship/controlled/S)
 	return
 
@@ -42,36 +42,42 @@
 	chance_to_affect = 15
 	spread_chance = 50
 	chain_rate = 4
-	var/max_damage = 15
-	var/min_damage = 5
+	var/list/meteor_types = list(
+		/obj/effect/meteor/dust=3,
+		/obj/effect/meteor/medium=8,
+		/obj/effect/meteor/big=3,
+		/obj/effect/meteor/flaming=1,
+		/obj/effect/meteor/irradiated=3
+	)
 
 /datum/overmap/event/meteor/Initialize(position, ...)
 	. = ..()
 	token.icon_state = "meteor[rand(1, 4)]"
 
 /datum/overmap/event/meteor/affect_ship(datum/overmap/ship/controlled/S)
-	var/area/source_area = pick(S.shuttle_port.shuttle_areas)
-	source_area?.set_fire_alarm_effect()
-	var/source_object = pick(source_area.contents)
-	dyn_explosion(source_object, rand(min_damage, max_damage) / 2)
-	for(var/MN in GLOB.player_list)
-		var/mob/M = MN
-		if(S.shuttle_port.is_in_shuttle_bounds(M))
-			M.playsound_local(S.shuttle_port, 'sound/effects/explosionfar.ogg', rand(min_damage / 10, max_damage / 10))
-			shake_camera(M, 10, rand(min_damage / 10, max_damage / 10))
+	spawn_meteor(meteor_types, S.shuttle_port.get_virtual_level(), 0)
 
 /datum/overmap/event/meteor/minor
 	name = "asteroid storm (minor)"
 	chain_rate = 3
-	max_damage = 10
-	min_damage = 3
+	meteor_types = list(
+		/obj/effect/meteor/medium=4,
+		/obj/effect/meteor/big=8,
+		/obj/effect/meteor/flaming=3,
+		/obj/effect/meteor/irradiated=3
+	)
 
 /datum/overmap/event/meteor/major
 	name = "asteroid storm (major)"
 	spread_chance = 25
 	chain_rate = 6
-	max_damage = 25
-	min_damage = 10
+	meteor_types = list(
+		/obj/effect/meteor/medium=5,
+		/obj/effect/meteor/big=75,
+		/obj/effect/meteor/flaming=10,
+		/obj/effect/meteor/irradiated=10,
+		/obj/effect/meteor/tunguska = 1
+	)
 
 ///ION STORM - Causes EMP pulses on the shuttle, wreaking havoc on the shields
 /datum/overmap/event/emp
@@ -90,8 +96,7 @@
 	source_area.set_fire_alarm_effect()
 	var/source_object = pick(source_area.contents)
 	empulse(get_turf(source_object), round(rand(strength / 2, strength)), rand(strength, strength * 2))
-	for(var/MN in GLOB.player_list)
-		var/mob/M = MN
+	for(var/mob/M as anything in GLOB.player_list)
 		if(S.shuttle_port.is_in_shuttle_bounds(M))
 			M.playsound_local(S.shuttle_port, 'sound/weapons/ionrifle.ogg', strength)
 			shake_camera(M, 10, strength)
@@ -121,14 +126,12 @@
 	token.icon_state = "electrical[rand(1, 4)]"
 
 /datum/overmap/event/electric/affect_ship(datum/overmap/ship/controlled/S)
-	var/area/source_area = pick(S.shuttle_port.shuttle_areas)
-	source_area.set_fire_alarm_effect()
-	var/source_object = pick(source_area.contents)
-	tesla_zap(source_object, rand(min_damage, max_damage) / 2)
-	for(var/MN in GLOB.player_list)
-		var/mob/M = MN
+	var/datum/virtual_level/ship_vlevel = S.shuttle_port.get_virtual_level()
+	var/turf/source = ship_vlevel.get_side_turf(pick(GLOB.cardinals))
+	tesla_zap(source, 10, TESLA_DEFAULT_POWER, ZAP_TESLA_FLAGS)
+	for(var/mob/M as anything in GLOB.player_list)
 		if(S.shuttle_port.is_in_shuttle_bounds(M))
-			M.playsound_local(S.shuttle_port, 'sound/magic/lightningshock.ogg', rand(min_damage / 10, max_damage / 10))
+			M.playsound_local(source, 'sound/magic/lightningshock.ogg', rand(min_damage / 10, max_damage / 10))
 			shake_camera(M, 10, rand(min_damage / 10, max_damage / 10))
 
 /datum/overmap/event/electric/minor
@@ -179,7 +182,7 @@
 		qdel(src)
 	if(--stability <= 0)
 		var/list/results = SSovermap.get_unused_overmap_square()
-		S.Move(results["x"], results["y"])
+		S.overmap_move(results["x"], results["y"])
 		QDEL_NULL(other_wormhole)
 		for(var/MN in GLOB.player_list)
 			var/mob/M = MN
@@ -190,8 +193,8 @@
 		return qdel(src)
 	other_wormhole.stability = stability
 
-	S.Move(other_wormhole.x, other_wormhole.y)
-	S.Step(S.get_heading())
+	S.overmap_move(other_wormhole.x, other_wormhole.y)
+	S.overmap_step(S.get_heading())
 
 GLOBAL_LIST_INIT(overmap_event_pick_list, list(
 	/datum/overmap/event/wormhole = 10,

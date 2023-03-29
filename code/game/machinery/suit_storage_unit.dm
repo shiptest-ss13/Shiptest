@@ -51,6 +51,17 @@
 	icon_state = "industrial"
 	base_icon_state = "industrial"
 
+/obj/machinery/suit_storage_unit/industrial/atmos_firesuit
+	suit_type = /obj/item/clothing/suit/fire/atmos
+	helmet_type = /obj/item/clothing/head/hardhat/atmos
+	mask_type = /obj/item/clothing/mask/gas/atmos
+	storage_type = /obj/item/watertank/atmos
+
+/obj/machinery/suit_storage_unit/inherit/industrial //i know its dirty but, eh you fix it, i am mapping rn
+	name = "industrial suit storage unit"
+	icon_state = "industrial"
+	base_icon_state = "industrial"
+
 /obj/machinery/suit_storage_unit/standard_unit
 	suit_type = /obj/item/clothing/suit/space/eva
 	helmet_type = /obj/item/clothing/head/helmet/space/eva
@@ -222,7 +233,7 @@
 
 /obj/machinery/suit_storage_unit/power_change()
 	. = ..()
-	if(!is_operational() && state_open)
+	if(!is_operational && state_open)
 		open_machine()
 		dump_contents()
 	update_icon()
@@ -355,7 +366,7 @@
 	if(!state_open)
 		to_chat(user, "<span class='warning'>The unit's doors are shut!</span>")
 		return
-	if(!is_operational())
+	if(!is_operational)
 		to_chat(user, "<span class='warning'>The unit is not operational!</span>")
 		return
 	if(occupant || helmet || suit || storage)
@@ -378,12 +389,12 @@
 		add_fingerprint(user)
 
 /**
-  * UV decontamination sequence.
-  * Duration is determined by the uv_cycles var.
-  * Effects determined by the uv_super var.
-  * * If FALSE, all atoms (and their contents) contained are cleared of radiation. If a mob is inside, they are burned every cycle.
-  * * If TRUE, all items contained are destroyed, and burn damage applied to the mob is increased. All wires will be cut at the end.
-  * All atoms still inside at the end of all cycles are ejected from the unit.
+ * UV decontamination sequence.
+ * Duration is determined by the uv_cycles var.
+ * Effects determined by the uv_super var.
+ * * If FALSE, all atoms (and their contents) contained are cleared of radiation. If a mob is inside, they are burned every cycle.
+ * * If TRUE, all items contained are destroyed, and burn damage applied to the mob is increased. All wires will be cut at the end.
+ * All atoms still inside at the end of all cycles are ejected from the unit.
 */
 /obj/machinery/suit_storage_unit/proc/cook()
 	var/mob/living/mob_occupant = occupant
@@ -474,7 +485,7 @@
 		"<span class='notice'>You start kicking against the doors... (this will take about [DisplayTimeText(breakout_time)].)</span>", \
 		"<span class='hear'>You hear a thump from [src].</span>")
 	if(do_after(user,(breakout_time), target = src))
-		if(!user || user.stat != CONSCIOUS || user.loc != src )
+		if(!user || user.stat != CONSCIOUS || user.loc != src)
 			return
 		user.visible_message("<span class='warning'>[user] successfully broke out of [src]!</span>", \
 			"<span class='notice'>You successfully break out of [src]!</span>")
@@ -497,7 +508,7 @@
 		open_machine()
 
 /obj/machinery/suit_storage_unit/attackby(obj/item/I, mob/user, params)
-	if(state_open && is_operational())
+	if(state_open && is_operational)
 		if(istype(I, /obj/item/clothing/suit))
 			if(suit)
 				to_chat(user, "<span class='warning'>The unit already contains a suit!.</span>")
@@ -556,7 +567,7 @@
 
 
 /obj/machinery/suit_storage_unit/default_pry_open(obj/item/I)//needs to check if the storage is locked.
-	. = !(state_open || panel_open || is_operational() || locked || (flags_1 & NODECONSTRUCT_1)) && I.tool_behaviour == TOOL_CROWBAR
+	. = !(state_open || panel_open || is_operational || locked || (flags_1 & NODECONSTRUCT_1)) && I.tool_behaviour == TOOL_CROWBAR
 	if(.)
 		I.play_tool_sound(src, 50)
 		visible_message("<span class='notice'>[usr] pries open \the [src].</span>", "<span class='notice'>You pry open \the [src].</span>")

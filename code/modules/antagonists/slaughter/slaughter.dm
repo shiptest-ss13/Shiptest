@@ -50,7 +50,7 @@
 	deathmessage = "screams in anger as it collapses into a puddle of viscera!"
 
 /mob/living/simple_animal/slaughter/Initialize()
-	..()
+	. = ..()
 	ADD_TRAIT(src, TRAIT_BLOODCRAWL_EAT, "innate")
 	var/obj/effect/proc_holder/spell/bloodcrawl/bloodspell = new
 	AddSpell(bloodspell)
@@ -186,7 +186,7 @@
 			playsound(T, feast_sound, 50, TRUE, -1)
 			to_chat(M, "<span class='clown'>You leave [src]'s warm embrace,	and feel ready to take on the world.</span>")
 
-/mob/living/simple_animal/slaughter/laughter/bloodcrawl_swallow(var/mob/living/victim)
+/mob/living/simple_animal/slaughter/laughter/bloodcrawl_swallow(mob/living/victim)
 	if(consumed_mobs)
 		// Keep their corpse so rescue is possible
 		consumed_mobs += victim

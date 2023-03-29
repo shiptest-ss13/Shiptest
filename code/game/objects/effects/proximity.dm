@@ -36,7 +36,7 @@
 	return ..()
 
 /datum/proximity_monitor/proc/HandleMove()
-	SIGNAL_HANDLER_DOES_SLEEP
+	SIGNAL_HANDLER
 
 	var/atom/_host = host
 	var/atom/new_host_loc = _host.loc
@@ -107,13 +107,21 @@
 	else
 		stack_trace("proximity_checker created without host")
 		return INITIALIZE_HINT_QDEL
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+		COMSIG_ATOM_EXITED =.proc/on_uncrossed
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
+/obj/effect/abstract/proximity_checker/proc/on_uncrossed(datum/source, atom/movable/gone, direction)
+	SIGNAL_HANDLER
+	return
 
 /obj/effect/abstract/proximity_checker/Destroy()
 	monitor = null
 	return ..()
 
-/obj/effect/abstract/proximity_checker/Crossed(atom/movable/AM)
-	set waitfor = FALSE
-	. = ..()
-	if(monitor && monitor.hasprox_receiver)
-		monitor.hasprox_receiver.HasProximity(AM)
+/obj/effect/abstract/proximity_checker/proc/on_entered(datum/source, atom/movable/AM)
+	SIGNAL_HANDLER
+
+	monitor?.hasprox_receiver?.HasProximity(AM)

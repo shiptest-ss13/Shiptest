@@ -16,6 +16,7 @@
 	icon_dead = "towercap-dead"
 	genes = list(/datum/plant_gene/trait/plant_type/fungal_metabolism)
 	mutatelist = list(/obj/item/seeds/tower/steel)
+	research = PLANT_RESEARCH_TIER_0
 
 /obj/item/seeds/tower/steel
 	name = "pack of steel-cap mycelium"
@@ -26,6 +27,7 @@
 	product = /obj/item/grown/log/steel
 	mutatelist = list()
 	rarity = 20
+	research = PLANT_RESEARCH_TIER_3
 
 
 
@@ -55,7 +57,7 @@
 		var/seed_modifier = 0
 		if(seed)
 			seed_modifier = round(seed.potency / 25)
-		var/obj/item/stack/plank = new plank_type(user.loc, 1 + seed_modifier)
+		var/obj/item/stack/plank = new plank_type(user.loc, 1 + seed_modifier, FALSE)
 		var/old_plank_amount = plank.amount
 		for(var/obj/item/stack/ST in user.loc)
 			if(ST != plank && istype(ST, plank_type) && ST.amount < ST.max_amount)
@@ -115,6 +117,7 @@
 	growing_icon = 'icons/obj/hydroponics/growing.dmi'
 	icon_dead = "bamboo-dead"
 	genes = list(/datum/plant_gene/trait/repeated_harvest)
+	research = PLANT_RESEARCH_TIER_2
 
 /obj/item/grown/log/bamboo
 	seed = /obj/item/seeds/bamboo
@@ -158,6 +161,20 @@
 	var/grill = FALSE
 	var/fire_stack_strength = 5
 
+/obj/structure/bonfire/CanPass(atom/movable/mover, turf/target)
+	if(istype(mover) && (mover.pass_flags & PASSTABLE))
+		return TRUE
+	if(mover.throwing)
+		return TRUE
+	return ..()
+
+/obj/structure/bonfire/Initialize()
+	. = ..()
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
 /obj/structure/bonfire/dense
 	density = TRUE
 
@@ -191,13 +208,13 @@
 		if(user.a_intent != INTENT_HARM && !(W.item_flags & ABSTRACT))
 			if(user.temporarilyRemoveItemFromInventory(W))
 				W.forceMove(get_turf(src))
-				var/list/click_params = params2list(params)
+				var/list/modifiers = params2list(params)
 				//Center the icon where the user clicked.
-				if(!click_params || !click_params["icon-x"] || !click_params["icon-y"])
+				if(!LAZYACCESS(modifiers, ICON_X) || !LAZYACCESS(modifiers, ICON_Y))
 					return
 				//Clamp it so that the icon never moves more than 16 pixels in either direction (thus leaving the table turf)
-				W.pixel_x = W.base_pixel_x + clamp(text2num(click_params["icon-x"]) - 16, -(world.icon_size/2), world.icon_size/2)
-				W.pixel_y = W.base_pixel_y + clamp(text2num(click_params["icon-y"]) - 16, -(world.icon_size/2), world.icon_size/2)
+				W.pixel_x = W.base_pixel_x + clamp(text2num(LAZYACCESS(modifiers, ICON_X)) - 16, -(world.icon_size/2), world.icon_size/2)
+				W.pixel_y = W.base_pixel_y + clamp(text2num(LAZYACCESS(modifiers, ICON_Y)) - 16, -(world.icon_size/2), world.icon_size/2)
 		else
 			return ..()
 
@@ -238,8 +255,8 @@
 /obj/structure/bonfire/fire_act(exposed_temperature, exposed_volume)
 	StartBurning()
 
-/obj/structure/bonfire/Crossed(atom/movable/AM)
-	. = ..()
+/obj/structure/bonfire/proc/on_entered(datum/source, atom/movable/AM)
+	SIGNAL_HANDLER
 	if(burning & !grill)
 		Burn()
 

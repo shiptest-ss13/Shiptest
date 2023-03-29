@@ -51,6 +51,10 @@
 			if (M.id == id)
 				targets += M
 
+		for(var/obj/machinery/door/airlock/security/brig/D in urange(20, src))
+			if (D.id == id)
+				targets += D
+
 		for(var/obj/machinery/flasher/F in urange(20, src))
 			if(F.id == id)
 				targets += F
@@ -90,6 +94,11 @@
 			continue
 		INVOKE_ASYNC(door, /obj/machinery/door/window/brigdoor.proc/close)
 
+	for(var/obj/machinery/door/airlock/security/brig/airlock in targets)
+		if(airlock.density)
+			continue
+		INVOKE_ASYNC(airlock, /obj/machinery/door/airlock/security/brig.proc/close)
+
 	for(var/obj/structure/closet/secure_closet/brig/C in targets)
 		if(C.broken)
 			continue
@@ -106,8 +115,8 @@
 		return 0
 
 	if(!forced)
-		Radio.set_frequency(FREQ_SECURITY)
-		Radio.talk_into(src, "Timer has expired. Releasing prisoner.", FREQ_SECURITY)
+		Radio.set_frequency(FREQ_COMMAND)
+		Radio.talk_into(src, "Timer has expired. Releasing prisoner.", FREQ_COMMAND)
 
 	timing = FALSE
 	activation_time = null
@@ -118,6 +127,11 @@
 		if(!door.density)
 			continue
 		INVOKE_ASYNC(door, /obj/machinery/door/window/brigdoor.proc/open)
+
+	for(var/obj/machinery/door/airlock/security/brig/airlock in targets)
+		if(!airlock.density)
+			continue
+		INVOKE_ASYNC(airlock, /obj/machinery/door/airlock/security/brig.proc/open)
 
 	for(var/obj/structure/closet/secure_closet/brig/C in targets)
 		if(C.broken)

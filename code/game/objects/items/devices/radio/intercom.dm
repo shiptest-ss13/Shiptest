@@ -16,7 +16,7 @@
 /obj/item/radio/intercom/Initialize(mapload, ndir, building)
 	. = ..()
 	if(building)
-		setDir(ndir)
+		setDir(turn(ndir,180))
 	var/area/current_area = get_area(src)
 	if(!current_area)
 		return
@@ -60,6 +60,10 @@
 /obj/item/radio/intercom/attack_ai(mob/user)
 	interact(user)
 
+/obj/item/radio/intercom/attack_paw(mob/user)
+	return attack_hand(user)
+
+
 /obj/item/radio/intercom/attack_hand(mob/user)
 	. = ..()
 	if(.)
@@ -67,7 +71,12 @@
 	interact(user)
 
 /obj/item/radio/intercom/ui_state(mob/user)
-	return GLOB.default_state
+	if(issilicon(user)) // for silicons give default_state
+		return GLOB.default_state
+
+	return GLOB.physical_state // for other non-dexterous mobs give physical_state
+
+
 
 /obj/item/radio/intercom/can_receive(freq, map_zones)
 	if(!on)
@@ -81,9 +90,6 @@
 			return FALSE
 	if(!listening)
 		return FALSE
-	if(freq == FREQ_SYNDICATE)
-		if(!(syndie))
-			return FALSE//Prevents broadcast of messages over devices lacking the encryption
 
 	return TRUE
 
@@ -132,6 +138,40 @@
 	desc = "A ready-to-go intercom. Just slap it on a wall and screw it in!"
 	icon_state = "intercom"
 	result_path = /obj/item/radio/intercom/unscrewed
-	pixel_shift = 29
+	pixel_shift = 24
 	inverse = TRUE
 	custom_materials = list(/datum/material/iron = 75, /datum/material/glass = 25)
+
+//wideband radio
+/obj/item/radio/intercom/wideband
+	name = "wideband relay"
+	desc = "A low-gain reciever capable of sending and recieving wideband subspace messages."
+	icon_state = "intercom-wideband"
+	canhear_range = 3
+	keyslot = new /obj/item/encryptionkey/wideband
+	independent = TRUE
+	frequency = FREQ_WIDEBAND
+	freqlock = TRUE
+	freerange = TRUE
+	wallframe = /obj/item/wallframe/intercom/wideband
+
+/obj/item/radio/intercom/wideband/Initialize(mapload, ndir, building)
+	. = ..()
+	set_frequency(FREQ_WIDEBAND)
+	freqlock = TRUE
+
+/obj/item/radio/intercom/wideband/unscrewed
+	unscrewed = TRUE
+
+/obj/item/radio/intercom/wideband/recalculateChannels()
+	. = ..()
+	independent = TRUE
+
+/obj/item/wallframe/intercom/wideband
+	name = "wideband relay frame"
+	desc = "A detached wideband relay. Attach to a wall and screw it in to use."
+	icon_state = "intercom-wideband"
+	result_path = /obj/item/radio/intercom/wideband/unscrewed
+
+/obj/item/wallframe/intercom/wideband/table
+	icon_state = "intercom-wideband-table"

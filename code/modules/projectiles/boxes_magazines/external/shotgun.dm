@@ -1,5 +1,5 @@
 /obj/item/ammo_box/magazine/m12g
-	name = "shotgun magazine (12g buckshot slugs)"
+	name = "shotgun drum magazine (12g buckshot)"
 	desc = "A drum magazine."
 	icon_state = "m12gb"
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
@@ -11,26 +11,42 @@
 	icon_state = "[initial(icon_state)]-[CEILING(ammo_count(FALSE)/8, 1)*8]"
 
 /obj/item/ammo_box/magazine/m12g/stun
-	name = "shotgun magazine (12g taser slugs)"
-	icon_state = "m12gs"
+	name = "shotgun drum magazine (12g taser slugs)"
 	ammo_type = /obj/item/ammo_casing/shotgun/stunslug
 
 /obj/item/ammo_box/magazine/m12g/slug
-	name = "shotgun magazine (12g slugs)"
-	icon_state = "m12gb"    //this may need an unique sprite
+	name = "shotgun drum magazine (12g slugs)"
 	ammo_type = /obj/item/ammo_casing/shotgun
 
 /obj/item/ammo_box/magazine/m12g/dragon
-	name = "shotgun magazine (12g dragon's breath)"
-	icon_state = "m12gf"
+	name = "shotgun drum magazine (12g dragon's breath)"
 	ammo_type = /obj/item/ammo_casing/shotgun/dragonsbreath
 
 /obj/item/ammo_box/magazine/m12g/bioterror
-	name = "shotgun magazine (12g bioterror)"
-	icon_state = "m12gt"
+	name = "shotgun drum magazine (12g bioterror)"
 	ammo_type = /obj/item/ammo_casing/shotgun/dart/bioterror
 
 /obj/item/ammo_box/magazine/m12g/meteor
-	name = "shotgun magazine (12g meteor slugs)"
-	icon_state = "m12gbc"
+	name = "shotgun drum magazine (12g meteor slugs)"
 	ammo_type = /obj/item/ammo_casing/shotgun/meteorslug
+
+/obj/item/ammo_box/magazine/m12g/small
+	name = "shotgun box magazine (12g buckshot)"
+	desc = "A single-stack box magazine for a shotgun."
+	icon_state = "m12gsmall"
+	max_ammo = 6
+
+/obj/item/ammo_box/magazine/m12g/small/update_icon()
+	..()
+	icon_state = "[initial(icon_state)]-[CEILING(ammo_count(FALSE)/6, 1)*6]"
+
+/obj/item/ammo_box/magazine/cm15_mag
+	name = "CM-15 magazine (12g buckshot)"
+	icon_state = "cm15_mag"
+	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
+	caliber = "shotgun"
+	max_ammo = 8
+
+/obj/item/ammo_box/magazine/cm15_mag/update_icon()
+	. = ..()
+	icon_state = "cm15_mag-[!!ammo_count()]"

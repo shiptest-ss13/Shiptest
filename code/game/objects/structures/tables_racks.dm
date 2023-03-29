@@ -157,6 +157,7 @@
 	SEND_SIGNAL(pushed_mob, COMSIG_ADD_MOOD_EVENT, "table", /datum/mood_event/table_headsmash)
 
 /obj/structure/table/attackby(obj/item/I, mob/user, params)
+	var/list/modifiers = params2list(params)
 	if(!(flags_1 & NODECONSTRUCT_1) && user.a_intent != INTENT_HELP)
 		if(I.tool_behaviour == TOOL_SCREWDRIVER && deconstruction_ready)
 			to_chat(user, "<span class='notice'>You start disassembling [src]...</span>")
@@ -212,13 +213,12 @@
 
 	if(user.a_intent != INTENT_HARM && !(I.item_flags & ABSTRACT))
 		if(user.transferItemToLoc(I, drop_location(), silent = FALSE))
-			var/list/click_params = params2list(params)
 			//Center the icon where the user clicked.
-			if(!click_params || !click_params["icon-x"] || !click_params["icon-y"])
+			if(!LAZYACCESS(modifiers, ICON_X) || !LAZYACCESS(modifiers, ICON_Y))
 				return
 			//Clamp it so that the icon never moves more than 16 pixels in either direction (thus leaving the table turf)
-			I.pixel_x = clamp(text2num(click_params["icon-x"]) - 16, -(world.icon_size/2), world.icon_size/2)
-			I.pixel_y = clamp(text2num(click_params["icon-y"]) - 16, -(world.icon_size/2), world.icon_size/2)
+			I.pixel_x = clamp(text2num(LAZYACCESS(modifiers, ICON_X)) - 16, -(world.icon_size/2), world.icon_size/2)
+			I.pixel_y = clamp(text2num(LAZYACCESS(modifiers, ICON_Y)) - 16, -(world.icon_size/2), world.icon_size/2)
 			AfterPutItemOnTable(I, user)
 			return TRUE
 	else
@@ -329,12 +329,17 @@
 	debris += new frame
 	debris += new /obj/item/shard
 
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
 /obj/structure/table/glass/Destroy()
 	QDEL_LIST(debris)
 	. = ..()
 
-/obj/structure/table/glass/Crossed(atom/movable/AM)
-	. = ..()
+/obj/structure/table/glass/proc/on_entered(datum/source, atom/movable/AM)
+	SIGNAL_HANDLER
 	if(flags_1 & NODECONSTRUCT_1)
 		return
 	if(!isliving(AM))
@@ -570,7 +575,7 @@
 	canSmoothWith = null
 	can_buckle = 1
 	buckle_lying = NO_BUCKLE_LYING
-	buckle_requires_restraints = TRUE
+	buckle_requires_restraints = FALSE
 	can_flip = FALSE
 	var/mob/living/carbon/human/patient = null
 	var/obj/machinery/computer/operating/computer = null
@@ -637,7 +642,7 @@
 
 /obj/structure/rack/MouseDrop_T(obj/O, mob/user)
 	. = ..()
-	if ((!( istype(O, /obj/item) ) || user.get_active_held_item() != O))
+	if ((!(istype(O, /obj/item)) || user.get_active_held_item() != O))
 		return
 	if(!user.dropItemToGround(O))
 		return
@@ -724,3 +729,41 @@
 		R.add_fingerprint(user)
 		qdel(src)
 	building = FALSE
+
+/obj/structure/table/wood/reinforced //a reinforced version of the regular wooden table, primarily for use in solgov outposts or ships
+	name = "reinforced wooden table"
+	desc = "A reinforced version of the four-legged wooden table. Likely as easy to burn as a normal one."
+	icon = 'icons/obj/smooth_structures/reinforced_wood_table.dmi'
+	icon_state = "reinforced_wood_table-0"
+	base_icon_state = "reinforced_wood_table"
+	deconstruction_ready = 0
+	buildstack = /obj/item/stack/sheet/plasteel
+	resistance_flags = FLAMMABLE
+	max_integrity = 200
+	integrity_failure = 0.25
+	armor = list("melee" = 10, "bullet" = 30, "laser" = 30, "energy" = 100, "bomb" = 20, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 70) //trolld
+	can_flip = FALSE //same as reinforced and theres no sprites for it
+
+/obj/structure/table/wood/reinforced/deconstruction_hints(mob/user)
+	if(deconstruction_ready)
+		return "<span class='notice'>The top cover has been <i>pried</i> loose and the main frame's <b>bolts</b> are exposed.</span>"
+	else
+		return "<span class='notice'>The top cover is firmly stuck on, but could be <i>pried</i> off with considerable effort.</span>"
+
+/obj/structure/table/wood/reinforced/attackby(obj/item/W, mob/user, params)
+	if(W.tool_behaviour == TOOL_CROWBAR && user.a_intent != INTENT_HELP)
+		if(!W.tool_start_check(user, amount=0))
+			return
+
+		if(deconstruction_ready)
+			to_chat(user, "<span class='notice'>You begin levering the top cover back in place...</span>")
+			if (W.use_tool(src, user, 50, volume=50))
+				to_chat(user, "<span class='notice'>You pry the top cover back into place.</span>")
+				deconstruction_ready = 0
+		else
+			to_chat(user, "<span class='notice'>You start prying off the top cover...</span>")
+			if (W.use_tool(src, user, 50, volume=50))
+				to_chat(user, "<span class='notice'>You pry off the top cover.</span>")
+				deconstruction_ready = 1
+	else
+		. = ..()

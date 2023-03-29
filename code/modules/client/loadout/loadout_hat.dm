@@ -80,6 +80,10 @@
 	display_name = "top hat"
 	path = /obj/item/clothing/head/that
 
+/datum/gear/hat/maidheadband
+	display_name = "maid headband"
+	path = /obj/item/clothing/head/maidheadband
+
 /datum/gear/hat/fedora
 	display_name = "fedora"
 	path = /obj/item/clothing/head/fedora
@@ -111,12 +115,13 @@
 /datum/gear/hat/horse
 	display_name = "horse mask"
 	path = /obj/item/clothing/mask/horsehead
+	slot = ITEM_SLOT_MASK
 
 /datum/gear/hat/piratehat
 	display_name = "pirate hat"
 	description = "Yarr. Comes with one free pirate speak manual."
 	path = /obj/item/clothing/head/pirate
 
-/datum/gear/hat/ushanka
-	display_name = "space ushanka"
-	path = /obj/item/clothing/head/ushanka
+/datum/gear/hat/trapper
+	display_name = "trapper hat"
+	path = /obj/item/clothing/head/trapper

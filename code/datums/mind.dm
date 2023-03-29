@@ -91,6 +91,7 @@
 	var/list/crew_objectives
 
 /datum/mind/New(_key)
+	SSticker.minds += src
 	key = _key
 	soulOwner = src
 	martial_art = default_martial_art
@@ -281,7 +282,7 @@
 	var/datum/team/antag_team = A.get_team()
 	if(antag_team)
 		antag_team.add_member(src)
-	A.on_gain()
+	INVOKE_ASYNC(A, /datum/antagonist.proc/on_gain)
 	log_game("[key_name(src)] has gained antag datum [A.name]([A.type])")
 	return A
 
@@ -824,10 +825,9 @@
 /mob/proc/mind_initialize()
 	if(mind)
 		mind.key = key
-
 	else
 		mind = new /datum/mind(key)
-		SSticker.minds += mind
+
 	if(!mind.name)
 		mind.name = real_name
 	mind.current = src

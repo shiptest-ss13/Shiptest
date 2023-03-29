@@ -1,7 +1,7 @@
 
 /obj/effect/gibspawner
 	icon_state = "gibspawner"// For the map editor
-	var/sparks = 0 //whether sparks spread
+	var/sparks = FALSE //whether sparks spread
 	var/virusProb = 20 //the chance for viruses to spread on the gibs
 	var/gib_mob_type  //generate a fake mob to transfer DNA from if we weren't passed a mob.
 	var/sound_to_play = 'sound/effects/blobattack.ogg'
@@ -141,7 +141,7 @@
 
 
 /obj/effect/gibspawner/robot
-	sparks = 1
+	sparks = TRUE
 	gibtypes = list(/obj/effect/decal/cleanable/robot_debris/up, /obj/effect/decal/cleanable/robot_debris/down, /obj/effect/decal/cleanable/robot_debris, /obj/effect/decal/cleanable/robot_debris, /obj/effect/decal/cleanable/robot_debris, /obj/effect/decal/cleanable/robot_debris/limb)
 	gibamounts = list(1, 1, 1, 1, 1, 1)
 	gib_mob_type = /mob/living/silicon
@@ -151,3 +151,16 @@
 		gibdirections = list(list(NORTH, NORTHEAST, NORTHWEST),list(SOUTH, SOUTHEAST, SOUTHWEST),list(WEST, NORTHWEST, SOUTHWEST),list(EAST, NORTHEAST, SOUTHEAST), GLOB.alldirs, GLOB.alldirs)
 	gibamounts[6] = pick(0, 1, 2)
 	return ..()
+
+/obj/effect/gibspawner/robot/bodypartless
+	gibtypes = list(/obj/effect/decal/cleanable/robot_debris/up, /obj/effect/decal/cleanable/robot_debris/down, /obj/effect/decal/cleanable/robot_debris, /obj/effect/decal/cleanable/robot_debris, /obj/effect/decal/cleanable/robot_debris)
+	gibamounts = list(1, 1, 1, 1, 1)
+
+/obj/effect/gibspawner/robot/bodypartless/Initialize()
+	if(!gibdirections.len)
+		gibdirections = list(list(NORTH, NORTHEAST, NORTHWEST),list(SOUTH, SOUTHEAST, SOUTHWEST),list(WEST, NORTHWEST, SOUTHWEST),list(EAST, NORTHEAST, SOUTHEAST), GLOB.alldirs)
+	return ..()
+
+/obj/effect/gibspawner/generic/crystal
+	gibtypes = list(/obj/effect/decal/cleanable/glass/strange, /obj/effect/decal/cleanable/blood/gibs, /obj/effect/decal/cleanable/blood/gibs, /obj/effect/decal/cleanable/blood/gibs/core)
+	gibamounts = list(5, 2, 2, 1)

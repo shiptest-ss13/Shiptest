@@ -1,36 +1,3 @@
-/datum/export/large/crate
-	cost = 500
-	k_elasticity = 0
-	unit_name = "crate"
-	export_types = list(/obj/structure/closet/crate)
-	exclude_types = list(/obj/structure/closet/crate/large, /obj/structure/closet/crate/wooden)
-
-/datum/export/large/crate/total_printout(datum/export_report/ex, notes = TRUE) // That's why a goddamn metal crate costs that much.
-	. = ..()
-	if(. && notes)
-		. += " Thanks for participating in Nanotrasen Crates Recycling Program."
-
-/datum/export/large/crate/wooden
-	cost = 100
-	unit_name = "large wooden crate"
-	export_types = list(/obj/structure/closet/crate/large)
-	exclude_types = list()
-
-/datum/export/large/crate/wooden/ore
-	unit_name = "ore box"
-	export_types = list(/obj/structure/ore_box)
-
-/datum/export/large/crate/wood
-	cost = 240
-	unit_name = "wooden crate"
-	export_types = list(/obj/structure/closet/crate/wooden)
-	exclude_types = list()
-
-/datum/export/large/crate/coffin
-	cost = 250//50 wooden crates cost 2000 points, and you can make 10 coffins in seconds with those planks. Each coffin selling for 250 means you can make a net gain of 500 points for wasting your time making coffins.
-	unit_name = "coffin"
-	export_types = list(/obj/structure/closet/crate/coffin)
-
 /datum/export/large/reagent_dispenser
 	cost = 100 // +0-400 depending on amount of reagents left
 	var/contents_cost = 400
@@ -121,7 +88,6 @@
 	cost = 25
 	unit_name = "security barrier"
 	export_types = list(/obj/item/grenade/barrier, /obj/structure/barricade/security)
-/*WS Begin - Cargo Rebalance?
 
 /datum/export/large/gas_canister
 	cost = 10 //Base cost of canister. You get more for nice gases inside.
@@ -131,13 +97,9 @@
 	var/obj/machinery/portable_atmospherics/canister/C = O
 	var/worth = 10
 
-	worth += C.air_contents.get_moles(GAS_BZ)*4
+	worth += C.air_contents.get_moles(GAS_BZ)*2
 	worth += C.air_contents.get_moles(GAS_STIMULUM)*100
 	worth += C.air_contents.get_moles(GAS_HYPERNOB)*1000
-	worth += C.air_contents.get_moles(GAS_MIASMA)*10
-	worth += C.air_contents.get_moles(GAS_TRITIUM)*5
+	worth += C.air_contents.get_moles(GAS_TRITIUM)*4
 	worth += C.air_contents.get_moles(GAS_PLUOXIUM)*5
-	worth += C.air_contents.get_moles(GAS_FREON)*5
 	return worth
-
-WS end */

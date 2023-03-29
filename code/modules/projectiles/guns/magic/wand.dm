@@ -1,3 +1,6 @@
+//For use in prob() to determine if an empty wand will shoot once then break.
+#define WAND_WREST_CHANCE (1/121)
+
 /obj/item/gun/magic/wand
 	name = "wand"
 	desc = "You shouldn't have this."
@@ -5,7 +8,6 @@
 	icon_state = "nothingwand"
 	item_state = "wand"
 	w_class = WEIGHT_CLASS_SMALL
-	weapon_weight = WEAPON_LIGHT
 	can_charge = FALSE
 	max_charges = 100 //100, 50, 50, 34 (max charge distribution by 25%ths)
 	var/variable_charges = TRUE
@@ -31,9 +33,11 @@
 	..()
 
 /obj/item/gun/magic/wand/afterattack(atom/target, mob/living/user)
+	var/wrested = FALSE
 	if(!charges)
-		shoot_with_empty_chamber(user)
-		return
+		wrested = shoot_with_empty_chamber(user)
+		if(!wrested)
+			return
 	if(target == user)
 		if(no_den_usage)
 			var/area/A = get_area(user)
@@ -45,8 +49,19 @@
 		zap_self(user)
 	else
 		. = ..()
+	if(wrested)
+		to_chat(user,"<span class='danger'>[src] overloads and disintegrates.</span>")
+		qdel(src)
+		return
 	update_icon()
 
+/obj/item/gun/magic/wand/shoot_with_empty_chamber(mob/living/user)
+	if(prob(100*WAND_WREST_CHANCE))
+		to_chat(user,"<span class='danger'>You manage to activate [src] one last time.</span>")
+		charges++
+		recharge_newshot()
+		return TRUE
+	return ..()
 
 /obj/item/gun/magic/wand/proc/zap_self(mob/living/user)
 	user.visible_message("<span class='danger'>[user] zaps [user.p_them()]self with [src].</span>")
@@ -239,3 +254,4 @@
 	ammo_type = /obj/item/ammo_casing/magic/nothing
 
 
+#undef WAND_WREST_CHANCE

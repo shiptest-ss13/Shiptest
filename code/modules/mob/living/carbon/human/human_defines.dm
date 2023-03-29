@@ -12,6 +12,7 @@
 	buckle_lying = FALSE
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	blocks_emissive = EMISSIVE_BLOCK_UNIQUE
+	can_be_shoved_into = TRUE
 	//Hair colour and style
 	var/hair_color = "000"
 	var/hairstyle = "Bald"
@@ -27,6 +28,7 @@
 
 	//Eye colour
 	var/eye_color = "000"
+	var/sclera_color = "ebeae8"
 
 	var/skin_tone = "caucasian1"	//Skin tone
 

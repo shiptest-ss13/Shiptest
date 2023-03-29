@@ -73,6 +73,10 @@
 						freak_out(H)
 						return
 
+/datum/brain_trauma/mild/phobia/on_clone()
+	if(clonable)
+		return new type(phobia_type)
+
 /datum/brain_trauma/mild/phobia/handle_hearing(datum/source, list/hearing_args)
 	if(!owner.can_hear() || world.time < next_scare) //words can't trigger you if you can't hear them *taps head*
 		return

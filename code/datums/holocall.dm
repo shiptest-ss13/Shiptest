@@ -51,7 +51,7 @@
 
 	for(var/I in callees)
 		var/obj/machinery/holopad/H = I
-		if(!QDELETED(H) && H.is_operational())
+		if(!QDELETED(H) && H.is_operational)
 			dialed_holopads += H
 			H.say("Incoming call.")
 			LAZYADD(H.holo_calls, src)
@@ -177,13 +177,13 @@
 /datum/holocall/proc/Check()
 	for(var/I in dialed_holopads)
 		var/obj/machinery/holopad/H = I
-		if(!H.is_operational())
+		if(!H.is_operational)
 			ConnectionFailure(H)
 
 	if(QDELETED(src))
 		return FALSE
 
-	. = !QDELETED(user) && !user.incapacitated() && !QDELETED(calling_holopad) && calling_holopad.is_operational() && user.loc == calling_holopad.loc
+	. = !QDELETED(user) && !user.incapacitated() && !QDELETED(calling_holopad) && calling_holopad.is_operational && user.loc == calling_holopad.loc
 
 	if(.)
 		if(!connected_holopad)
@@ -227,6 +227,7 @@
 	desc = "Stores recorder holocalls."
 	random_color = FALSE
 	color = "#A7A3A6"
+	blueshift_pallete = FALSE
 	illustration = "holo"
 	obj_flags = UNIQUE_RENAME
 	custom_materials = list(/datum/material/iron = 100, /datum/material/glass = 100)
@@ -238,7 +239,7 @@
 /obj/item/disk/holodisk/Initialize(mapload)
 	. = ..()
 	if(preset_record_text)
-		build_record()
+		INVOKE_ASYNC(src, .proc/build_record)
 
 /obj/item/disk/holodisk/Destroy()
 	QDEL_NULL(record)
@@ -379,6 +380,9 @@
 /datum/preset_holoimage/clown
 	outfit_type = /datum/outfit/job/clown
 
+/datum/preset_holoimage/miner
+	outfit_type = /datum/outfit/job/miner
+
 /obj/item/disk/holodisk/donutstation/whiteship
 	name = "Blackbox Print-out #DS024"
 	desc = "A holodisk containing the last viable recording of DS024's blackbox."
@@ -465,3 +469,303 @@
 	NAME Blackbox Automated Message
 	SAY Connection lost. Dumping audio logs to disk.
 	DELAY 50"}
+
+/obj/item/disk/holodisk/rube/disk1
+	name = "Gustus Amort on how to be a successful Engineer 1: Overview"
+	desc = "A guide by Gustus Amort on running the Rube Goldberg Class Vessel. This seems to be disk 1."
+	preset_image_type = /datum/preset_holoimage/engineer/ce
+	preset_record_text = {"
+	NAME Gustus Amort
+	SAY Hello and welcome to your new-ish Rube Goldberg-class space faring vessel!
+	DELAY 30
+	NAME Mary Polish
+	PRESET /datum/preset_holoimage/engineer/atmos
+	SAY Oh are you going to tell them about how to set up the atmos on this?
+	DELAY 2
+	NAME Gustus Amort
+	PRESET /datum/preset_holoimage/engineer/ce
+	SAY Yes, we'll get to that. I'm doing the intro.
+	SOUND explosion
+	SOUND sparks
+	DELAY 30
+	SAY God Dammit! Who the hell was watching the burn mix?!
+	SOUND spark
+	DELAY 30
+	NAME Mary Polish
+	PRESET /datum/preset_holoimage/engineer/atmos
+	SAY That was Jamie, they were testing out that Supermatter we had in the back.
+	DELAY 30
+	NAME Gustus Amort
+	PRESET /datum/preset_holoimage/engineer/ce
+	SAY GOD DAMMIT I SAID TO WAIT. Tell him to turn it the fuck off.
+	DELAY 30
+	NAME Mary Polish
+	PRESET /datum/preset_holoimage/engineer/atmos
+	SAY On it Sir.
+	DELAY 30
+	NAME Gustus Amort
+	PRESET /datum/preset_holoimage/engineer/ce
+	SAY Alright. I have to go cleanup. Disk 2 is general operation.
+	DELAY 30
+	SAY Disk 3 is Atmos Setup
+	DELAY 30
+	SAY Disk 4 is Burnmix Setup
+	DELAY 30
+	SAY Disk 5 is TEG Setup
+	DELAY 30
+	SAY And Disk 6 is everything else.
+
+	"}
+
+/obj/item/disk/holodisk/rube/disk2
+	name = "Gustus Amort on how to be a successful Engineer 2: General Operations"
+	desc = "A guide by Gustus Amort on general operations of the Rube Goldberg Class Vessel. This seems to be disk 2."
+	preset_image_type = /datum/preset_holoimage/engineer/ce
+	preset_record_text = {"
+	NAME Gustus Amort
+	SAY Alright welcome to disk 2-
+	SOUND explosion
+	DELAY 15
+	SAY Anyway, general operations. You'll need to run a tight shift to keep this puppy floating.
+	DELAY 30
+	SAY This ship is equipped with a lot of equipment, almost anything you could want or need as an Engineer.
+	SOUND spark
+	DELAY 30
+	SAY Sadly the budget did not allow for a good handful of this equipment to be installed properly.
+	DELAY 30
+	SAY To start you'll want to set up your atmospherics system. Air and burn mix primarily. You'll learn that on Disk 3 and 4.
+	DELAY 30
+	SAY After you-
+	SOUND spark
+	DELAY 30
+	SAY You'll want to make sure your power is good. You'll need to set up the TEG in the back. Disk 5 for that.
+	DELAY 30
+	SAY Once that's all out of the way, you'll ned to make sure this puppy can move around right?
+	DELAY 30
+	SAY That's simple turning on the thrusters. Eh- You'll learn that in disk 6.
+	DELAY 30
+	SAY Finally, once the ship is operational, that's where we get the fun. You'll find a good number of circuits in storage.
+	DELAY 30
+	SAY Your miners will need you to build their equipment, their vendor and Ore redemption. You do want them to be able to work right?
+	DELAY 30
+	SAY This will be continued in-
+	SOUND explosion
+	DELAY 30
+	SAY Ok... Yeah Disk 3.
+	DELAY 30
+
+	"}
+
+/obj/item/disk/holodisk/rube/disk3
+	name = "Gustus Amort on how to be a successful Engineer 3: Atmos"
+	desc = "A guide by Gustus Amort on setting up Atmos in the Rube Goldberg Class Vessel. This seems to be disk 3."
+	preset_image_type = /datum/preset_holoimage/engineer/ce
+	preset_record_text = {"
+	NAME Gustus Amort
+	SAY Alright, now that you know what you have to do, here's how to get started!
+	SOUND spark
+	DELAY 10
+	SAY I'll be handing this one off to our Atmos Tech, Ms. Polish.
+	DELAY 30
+	NAME Mary Polish
+	PRESET /datum/preset_holoimage/engineer/atmos
+	SAY Hello! This is Mary! So your Chief Engineer just told you to set up atmos huh?
+	DELAY 30
+	SAY Well I'm sure you're well acquainted with the ins and out sof fluid dynamics. But just in case!
+	DELAY 30
+	SAY To start you'll want to get your gas supplies ready. It's the same procoess for all of them.
+	DELAY 30
+	SAY You'll need to put on your hardsuit and get an oxygen tank, so suit up!
+	DELAY 30
+	SAY Then you'll go into each chamber and do the following:
+	DELAY 30
+	SAY 1: Wrench the portable canister into the connector.
+	DELAY 30
+	SAY 2: Turn on the pump, and max the pressure.
+	DELAY 30
+	SAY 3: Open the portable canister, no need to touch the pressure control.
+	DELAY 30
+	SAY Once that's all done your chambers should be ready to go! That is, all but the mix chamber.
+	DELAY 30
+	SAY For the ship air, simply turn on the pump labeled Air Mix to Air Supply. Don't mess with the pressure.
+	DELAY 30
+	SAY For everything else, you can adjust the pumps coming from each chamber to move it out.
+	DELAY 30
+	SAY See you on disk-
+	SOUND explosion
+	DELAY 30
+	SAY 4- IT WASN'T MY FAULT.
+	"}
+
+/obj/item/disk/holodisk/rube/disk4
+	name = "Gustus Amort on how to be a successful Engineer 4: Plasma and Burn Mix"
+	desc = "A guide by Gustus Amort on plasma and burn mixes. This seems to be disk 4."
+	preset_image_type = /datum/preset_holoimage/engineer/ce
+	preset_record_text = {"
+	NAME Gustus Amort
+	SAY Thank you Mary, go clean up that mess with Jamie and I'll take it from here.
+	DELAY 30
+	SAY Now that you've set up oxygen and made your gases accessible to the mixer, it's time to get to work.
+	DELAY 30
+	SAY You'll need to pump your plasma out of the chamber at max volume, set the pump accordingly. Same for O2.
+	DELAY 30
+	SAY Before you start the burn mix, you'll want to supply your thrusters. Simply turn on the pump labeled Plasma to Thrusters.
+	DELAY 30
+	SAY You may wish to alter the output pressure here, but I find 1 or 200 kpa is just fine.
+	DELAY 30
+	SAY You'll want to set up your thrusters properly later. To do so you'll want to go to the north thruster room.
+	DELAY 30
+	SAY You'll notice there are pumps in leading to the plasma thrusters. Simply turn them on and adjust pressure to max.
+	DELAY 30
+	SAY Thrusters can wait for later however, time for the burn mix.
+	DELAY 30
+	SAY The O2 and Plasma pipes lead to a gas mixer preset to a 30 70 mix.
+	DELAY 30
+	SAY A proper burn mix can range from 60 percent plasma to 80 percent plasma, with the rest as oxygen.
+	DELAY 30
+	SAY If you want a different setup than a simple burnmix, you'll need to redo the piping in atmos.
+	DELAY 30
+	SAY Once you set your mixer to on it'll go to the mix chamber. Turn the pump labeled Gas Mix to Gas Chamber to max pressure and on.
+	DELAY 30
+	SAY Then you'll want to turn the mix tank scrubber to siphoning mode on extended range via the air alarm. You'll need an ID for this.
+	DELAY 30
+	SAY The mix chamber scrubber is typically Scrubber 1 on the console in atmos. But double check before adjusting. It should be the only one off by default.
+	DELAY 30
+	SAY Once your mix chamber is full of the burn mix, set the pump labeled Mix Chamber to Engine to 2000 KPA and on. Then you're done!
+	DELAY 30
+	SAY But that's standard stuff re-
+	SOUND explosion
+	SOUND explosion
+	DELAY 30
+	SAY Is it ove-
+	SOUND explosion
+	DELAY 30
+	SAY Of course. Disk 5 is next.
+
+	"}
+
+/obj/item/disk/holodisk/rube/disk5
+	name = "Gustus Amort on how to be a successful Engineer 5: TEG"
+	desc = "A guide by Gustus Amort on operation the Rube Goldberg TEG. This seems to be disk 5."
+	preset_image_type = /datum/preset_holoimage/engineer/ce
+	preset_record_text = {"
+	NAME Gustus Amort
+	SAY Alright we're finally handing it off to- JAMIE WHAT THE FUCK DID YOU DO?
+	SOUND explosion
+	SOUND spark
+	DELAY 30
+	SAY God dammit Jamie, alright just fucking turn the pipe off and vent it. Start from square one come on.
+	DELAY 30
+	SAY We've done this a hundred times now. Why do you always turn your shit on early?
+	DELAY 30
+	NAME Jamie Coldwell
+	PRESET /datum/preset_holoimage/engineer
+	SAY Well Chief, you see, I was trying to see if I could set it up with some plasma from the tanks in the shed, and the SM-
+	DELAY 30
+	NAME Gustus Amort
+	PRESET /datum/preset_holoimage/engineer/ce
+	SAY GOOD LORD YOU TRIED TO WHAT? No no no no no no no no. Just. Let me set it up. We'll fuck with the SM when we get planetside.
+	DELAY 30
+	SAY Alright so if you happen to have a not too bright engineer working your TEG-
+	NAME Jamie Coldwell
+	PRESET /datum/preset_holoimage/engineer
+	DELAY 30
+	SAY Hey!
+	NAME Gustus Amort
+	PRESET /datum/preset_holoimage/engineer/ce
+	DELAY 30
+	SAY Shut up Jamie. Anyway, you'll want to vent your chamber. That button is next to the service door behind the TEG.
+	DELAY 30
+	SAY Check the gas monitoring computer see when the chamber hits 0 KPA. Then shut the emergency hatch.
+	DELAY 30
+	SAY You'll need to make sure your TEG circulators are correctly set. Incoming is the cold loop, outgoing is the hot loop.
+	DELAY 30
+	SAY To change them you'll want to open the hatches with a scredriver and hit them with a multitool.
+	DELAY 30
+	SAY When you're all done, screw them back up and wrench the centerpiece, the thermoelectric generator.
+	DELAY 30
+	SAY Next you'll want to set the pump pressures. Do this before you turn them on.
+	DELAY 30
+	SAY Turn the pump labeled Engine Mix to Engine to 1000 KPA.
+	DELAY 30
+	SAY Turn the next pump after that to 610 KPA. It'll be placed directly in front of the cold loop going into the chamber.
+	DELAY 30
+	SAY Turn the next pump leading into the hot loop ciruclator to 710 KPA. And the TEG Waste Disposals Pump to max KPA.
+	DELAY 30
+	SAY Now you need to flood the chamber. Turn on Engine Mix to Engine, and the connected to the cold loop.
+	DELAY 30
+	SAY once the chamber filled up to a few thousand KPA, which you can check on the computer, you'll need to ignite it.
+	DELAY 30
+	SAY The igniters don't work very well, their button is behind the tables but in case that doesn't work...
+	DELAY 30
+	SAY Turn a welder on, there are a few on the table, and throw it in the disposals unit. Make sure to flush!
+	DELAY 30
+	SAY finally you have a burn mix roaring and ready! Turn on the remaining two pumps and you should be good to go!
+	DELAY 30
+	SAY Congratulations, you've set up the TEG! See! That wasn't so hard Jamie! Make sure to set your SMES's!
+	DELAY 30
+
+	"}
+
+
+/obj/item/disk/holodisk/rube/disk6
+	name = "Gustus Amort on how to be a successful Engineer 6: What now?"
+	desc = "A guide by Gustus Amort on what to do next! This seems to be disk 6."
+	preset_image_type = /datum/preset_holoimage/engineer/ce
+	preset_record_text = {"
+	NAME Gustus Amort
+	SAY Now that you've got your ship working like a well oiled pile of congregated circuits, you're probably wondering what to do next!
+	DELAY 30
+	SAY Lucky for you, there's a whole storage unit of things to do! You'll have materials waiting at your disposal.
+	DELAY 30
+	SAY Primarily speaking, you'll be set to land on a planet of your choice and set up shop.
+	DELAY 30
+	SAY You have a wire running out through storage and up to the dock doors.
+	DELAY 30
+	SAY My recommendation is to use this wire to run power out to your new colony, beachhouse, or factory whatever.
+	DELAY 30
+	SAY Other than that, you'll need to upgrade your machines, communicate with other ships for research components, and keep your bloodthirsty miner happy.
+	DELAY 30
+	SAY Good Luck! This is Gustus Amort signi- IS THAT A FUCKING BUBBLEGUM?
+	SOUND explosion
+
+	"}
+
+
+
+
+/obj/item/disk/holodisk/rube/disk7
+	name = "Larry Triangles guide on how to be the last man standing."
+	desc = "Gustus Amort didn't mention a disk 7? Maybe someone else made this one?"
+	preset_image_type = /datum/preset_holoimage/miner
+	preset_record_text = {"
+	NAME Larry Triangles
+	SAY Hey guys it is absolutely wonderful to hit you up today. Today we'll be going over how to not die in the horrid wastes of space.
+	DELAY 30
+	SAY Sadly, you got strande do this shithole ship with barely any supplies. How terrible for you!
+	DELAY 30
+	SAY No weapons, no KA, no nothing. Not even a drill! Just your wits and your basic tools.
+	DELAY 30
+	SAY Lucky for you, there are a few things around the ship that'll help you.
+	DELAY 30
+	SAY First is medicine. If you can't find your way to medbay, then you're a dead motherfucker anyway.
+	DELAY 30
+	SAY There's a wall nanomed in there, as well as some blood bags. Best to be prepared!
+	DELAY 30
+	SAY Next is a melee weapon. And you got the best one available, the Fire Axe! It's just up at the end of atmos.
+	DELAY 30
+	SAY Now finally the piece of resistance. Your boss has a very special item in their locker. A gun.
+	DELAY 30
+	SAY But not just any gun! A fucking lever action action 38 cal hunting rifle! They also have ammo and a design disk.
+	DELAY 30
+	SAY Now you'll either need to kiss ass or break in. I prefer breaking in while the boss is distracted.
+	DELAY 30
+	SAY Engineers aren't the only ones with the tools to break open lockers you know.
+	DELAY 30
+	SAY Your boss left you emitters, plasma, tools, portable generators, and a spare power source to bust that shit open!
+	DELAY 30
+	SAY Once you got all that it's time to bitch and moan until they build you your ore redemption machine and supply vendor!
+	DELAY 30
+	SAY Now excuse me, I'm gonna go punk my captain with a bubblegum I found outside.
+
+	"}

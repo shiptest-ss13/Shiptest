@@ -71,7 +71,6 @@
 
 #define BELOW_MOB_LAYER 3.7
 #define LYING_MOB_LAYER 3.8
-#define SPACEPOD_LAYER 3.9 //WS - Spess pods
 //#define MOB_LAYER 4 //For easy recordkeeping; this is a byond define
 #define ABOVE_MOB_LAYER 4.1
 #define WALL_OBJ_LAYER 4.25
@@ -132,6 +131,9 @@
 #define CAMERA_STATIC_RENDER_TARGET "CAMERA_STATIC_PLANE"
 
 #define RUNECHAT_PLANE 20
+
+/// Plane for balloon text (text that fades up)
+#define BALLOON_CHAT_PLANE 21
 
 //HUD layer defines
 

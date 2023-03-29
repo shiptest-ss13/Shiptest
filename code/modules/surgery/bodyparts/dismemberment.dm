@@ -65,15 +65,14 @@
 	var/turf/T = get_turf(C)
 	C.add_splatter_floor(T)
 	playsound(get_turf(C), 'sound/misc/splort.ogg', 80, TRUE)
-	for(var/X in C.internal_organs)
-		var/obj/item/organ/O = X
+	for(var/obj/item/organ/O as anything in C.internal_organs)
 		var/org_zone = check_zone(O.zone)
 		if(org_zone != BODY_ZONE_CHEST)
 			continue
 		O.Remove(C)
 		O.forceMove(T)
 		organ_spilled = 1
-		. += X
+		. += O
 	if(cavity_item)
 		cavity_item.forceMove(T)
 		. += cavity_item
@@ -91,7 +90,7 @@
 		return
 	var/atom/Tsec = owner.drop_location()
 	var/mob/living/carbon/C = owner
-	update_limb(1)
+	update_limb(TRUE)
 	C.remove_bodypart(src)
 
 	if(held_index)
@@ -103,14 +102,13 @@
 
 	owner = null
 
-	for(var/X in C.surgeries) //if we had an ongoing surgery on that limb, we stop it.
-		var/datum/surgery/S = X
+	for(var/datum/surgery/S as anything in C.surgeries) //if we had an ongoing surgery on that limb, we stop it.
 		if(S.operated_bodypart == src)
 			C.surgeries -= S
 			qdel(S)
 			break
 
-	for(var/obj/item/I in embedded_objects)
+	for(var/obj/item/I as anything in embedded_objects)
 		embedded_objects -= I
 		I.forceMove(src)
 	if(!C.has_embedded_objects())
@@ -119,13 +117,11 @@
 
 	if(!special)
 		if(C.dna)
-			for(var/X in C.dna.mutations) //some mutations require having specific limbs to be kept.
-				var/datum/mutation/human/MT = X
+			for(var/datum/mutation/human/MT as anything in C.dna.mutations) //some mutations require having specific limbs to be kept.
 				if(MT.limb_req && MT.limb_req == body_zone)
 					C.dna.force_lose(MT)
 
-		for(var/X in C.internal_organs) //internal organs inside the dismembered limb are dropped.
-			var/obj/item/organ/O = X
+		for(var/obj/item/organ/O as anything in C.internal_organs) //internal organs inside the dismembered limb are dropped.
 			var/org_zone = check_zone(O.zone)
 			if(org_zone != body_zone)
 				continue
@@ -265,19 +261,16 @@
 		return
 	var/obj/item/bodypart/O = C.get_bodypart(body_zone)
 	if(O)
-		O.drop_limb(1)
-	return attach_limb(C, special, is_creating)
+		O.drop_limb(TRUE)
+	. = attach_limb(C, special, is_creating)
+	if(!.) //If it failed to replace, just ignore.
+		O.attach_limb(C, TRUE)
 
 /obj/item/bodypart/head/replace_limb(mob/living/carbon/C, special, is_creating = FALSE)
-	if(!istype(C))
+	if(!special)
 		return
-	var/obj/item/bodypart/head/O = C.get_bodypart(body_zone)
-	if(O)
-		if(!special)
-			return
-		else
-			O.drop_limb(1)
-	return attach_limb(C, special, is_creating)
+
+	return ..()
 
 /obj/item/bodypart/proc/attach_limb(mob/living/carbon/C, special, is_creating = FALSE)
 	var/obj/item/bodypart/chest/mob_chest = C.get_bodypart(BODY_ZONE_CHEST)
@@ -356,8 +349,7 @@
 		H.hairstyle = hairstyle
 		H.facial_hair_color = facial_hair_color
 		H.facial_hairstyle = facial_hairstyle
-		H.lip_style = lip_style
-		H.lip_color = lip_color
+		H.update_lips(lip_style, lip_color, stored_lipstick_trait)
 	if(real_name)
 		C.real_name = real_name
 	real_name = ""

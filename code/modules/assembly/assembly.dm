@@ -28,6 +28,16 @@
 	var/datum/wires/connected = null
 	var/next_activate = 0 //When we're next allowed to activate - for spam control
 
+/obj/item/assembly/Initialize()
+	. = ..()
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
+/obj/item/assembly/proc/on_entered(datum/source, atom/movable/AM)
+	SIGNAL_HANDLER
+
 /obj/item/assembly/get_part_rating()
 	return 1
 

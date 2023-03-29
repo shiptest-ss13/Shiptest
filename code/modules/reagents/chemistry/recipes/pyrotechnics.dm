@@ -44,7 +44,7 @@
 
 /datum/chemical_reaction/reagent_explosion/rdx
 	results = list(/datum/reagent/rdx= 2)
-	required_reagents = list(/datum/reagent/phenol = 2, /datum/reagent/toxin/acid/nitracid = 1, /datum/reagent/acetone_oxide = 1 )
+	required_reagents = list(/datum/reagent/phenol = 2, /datum/reagent/toxin/acid/nitracid = 1, /datum/reagent/acetone_oxide = 1)
 	required_temp = 404
 	strengthdiv = 6 //rdx deserves better than being just about equal to nitrous
 
@@ -87,7 +87,7 @@
 
 /datum/chemical_reaction/reagent_explosion/tatp
 	results = list(/datum/reagent/tatp= 1)
-	required_reagents = list(/datum/reagent/acetone_oxide = 1, /datum/reagent/toxin/acid/nitracid = 1, /datum/reagent/pentaerythritol = 1 )
+	required_reagents = list(/datum/reagent/acetone_oxide = 1, /datum/reagent/toxin/acid/nitracid = 1, /datum/reagent/pentaerythritol = 1)
 	required_temp = 450
 	strengthdiv = 3
 
@@ -112,7 +112,7 @@
 	SSticker.OnRoundstart(CALLBACK(src,.proc/UpdateInfo))
 
 /datum/chemical_reaction/reagent_explosion/tatp_explosion/on_reaction(datum/reagents/holder, created_volume)
-	var/strengthdiv_adjust = created_volume / ( 2100 / initial(strengthdiv))
+	var/strengthdiv_adjust = created_volume / (2100 / initial(strengthdiv))
 	strengthdiv = max(initial(strengthdiv) - strengthdiv_adjust + 1.5 ,1.5) //Slightly better than nitroglycerin
 	. = ..()
 	return
@@ -162,19 +162,17 @@
 			C.adjust_fire_stacks(5)
 			C.IgniteMob()
 
-/*WS Edit - No Cobby
 /datum/chemical_reaction/gunpowder
 	results = list(/datum/reagent/gunpowder = 3)
-	required_reagents = list(/datum/reagent/saltpetre = 1, /datum/reagent/medicine/C2/multiver = 1, /datum/reagent/sulfur = 1)
+	required_reagents = list(/datum/reagent/saltpetre = 1, /datum/reagent/medicine/charcoal = 1, /datum/reagent/sulfur = 1)
 
 /datum/chemical_reaction/reagent_explosion/gunpowder_explosion
 	required_reagents = list(/datum/reagent/gunpowder = 1)
 	required_temp = 474
 	strengthdiv = 6
 	modifier = 1
-	mix_message = "<span class='boldannounce'>Sparks start flying around the blackpowder!</span>"
+	mix_message = "<span class='boldannounce'>Sparks start flying around the gunpowder!</span>"
 
-WS End*/
 
 /datum/chemical_reaction/reagent_explosion/gunpowder_explosion/on_reaction(datum/reagents/holder, created_volume)
 	addtimer(CALLBACK(src, .proc/explode, holder, created_volume), rand(5,10) SECONDS)
@@ -292,7 +290,7 @@ WS End*/
 
 /datum/chemical_reaction/flash_powder
 	results = list(/datum/reagent/flash_powder = 3)
-	required_reagents = list(/datum/reagent/aluminium = 1, /datum/reagent/potassium = 1, /datum/reagent/sulfur = 1 )
+	required_reagents = list(/datum/reagent/aluminium = 1, /datum/reagent/potassium = 1, /datum/reagent/sulfur = 1)
 
 /datum/chemical_reaction/flash_powder/on_reaction(datum/reagents/holder, created_volume)
 	if(holder.has_reagent(/datum/reagent/stabilizing_agent))
@@ -403,7 +401,7 @@ WS End*/
 
 /datum/chemical_reaction/napalm
 	results = list(/datum/reagent/napalm = 3)
-	required_reagents = list(/datum/reagent/fuel/oil = 1, /datum/reagent/fuel = 1, /datum/reagent/consumable/ethanol = 1 )
+	required_reagents = list(/datum/reagent/fuel/oil = 1, /datum/reagent/fuel = 1, /datum/reagent/consumable/ethanol = 1)
 
 /datum/chemical_reaction/cryostylane
 	results = list(/datum/reagent/cryostylane = 3)

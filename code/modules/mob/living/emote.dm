@@ -4,10 +4,36 @@
 	mob_type_allowed_typecache = /mob/living
 	mob_type_blacklist_typecache = list(/mob/living/simple_animal/slime, /mob/living/brain)
 
+
+/// The time it takes for the blush visual to be removed
+#define BLUSH_DURATION 5.2 SECONDS
+
 /datum/emote/living/blush
 	key = "blush"
 	key_third_person = "blushes"
 	message = "blushes."
+	/// Timer for the blush visual to wear off
+	var/blush_timer = TIMER_ID_NULL
+
+/datum/emote/living/blush/run_emote(mob/user, params, type_override, intentional)
+	. = ..()
+	if(. && isliving(user))
+		var/mob/living/living_user = user
+		ADD_TRAIT(living_user, TRAIT_BLUSHING, "[type]")
+		living_user.update_body()
+
+		// Use a timer to remove the blush effect after the BLUSH_DURATION has passed
+		var/list/key_emotes = GLOB.emote_list["blush"]
+		for(var/datum/emote/living/blush/living_emote in key_emotes)
+			// The existing timer restarts if it's already running
+			blush_timer = addtimer(CALLBACK(living_emote, .proc/end_blush, living_user), BLUSH_DURATION, TIMER_UNIQUE | TIMER_OVERRIDE)
+
+/datum/emote/living/blush/proc/end_blush(mob/living/living_user)
+	if(!QDELETED(living_user))
+		REMOVE_TRAIT(living_user, TRAIT_BLUSHING, "[type]")
+		living_user.update_body()
+
+#undef BLUSH_DURATION
 
 /datum/emote/living/bow
 	key = "bow"
@@ -197,9 +223,23 @@
 /datum/emote/living/kiss
 	key = "kiss"
 	key_third_person = "kisses"
-	message = "blows a kiss."
-	message_param = "blows a kiss to %t."
-	emote_type = EMOTE_AUDIBLE
+	emote_type = EMOTE_VISIBLE
+
+/datum/emote/living/kiss/run_emote(mob/living/user, params, type_override, intentional)
+	. = ..()
+	if(!.)
+		return
+	var/kiss_type = /obj/item/kisser
+
+	if(HAS_TRAIT(user, TRAIT_KISS_OF_DEATH))
+		kiss_type = /obj/item/kisser/death
+
+	var/obj/item/kiss_blower = new kiss_type(user)
+	if(user.put_in_hands(kiss_blower))
+		to_chat(user, span_notice("You ready your kiss-blowing hand."))
+	else
+		qdel(kiss_blower)
+		to_chat(user, span_warning("You're incapable of blowing a kiss in your current state."))
 
 /datum/emote/living/laugh
 	key = "laugh"
@@ -326,6 +366,8 @@
 	message = "sniffs."
 	emote_type = EMOTE_AUDIBLE
 
+#define SNORE_DURATION 5.2 SECONDS
+
 /datum/emote/living/snore
 	key = "snore"
 	key_third_person = "snores"
@@ -333,6 +375,28 @@
 	message_mime = "sleeps soundly."
 	emote_type = EMOTE_AUDIBLE
 	stat_allowed = UNCONSCIOUS
+	/// Timer for the blink to wear off
+	var/snore_timer = TIMER_ID_NULL
+
+/datum/emote/living/snore/run_emote(mob/user, params, type_override, intentional)
+	. = ..()
+	if(. && isliving(user))
+		var/mob/living/living_user = user
+		ADD_TRAIT(living_user, TRAIT_SNORE, "[type]")
+		living_user.update_body()
+
+		// Use a timer to remove the closed eyes after the SNORE_DURATION has passed
+		var/list/key_emotes = GLOB.emote_list["snore"]
+		for(var/datum/emote/living/snore/living_emote in key_emotes)
+			// The existing timer restarts if it's already running
+			snore_timer = addtimer(CALLBACK(living_emote, .proc/end_snore, living_user), SNORE_DURATION, TIMER_UNIQUE | TIMER_OVERRIDE)
+
+/datum/emote/living/snore/proc/end_snore(mob/living/living_user)
+	if(!QDELETED(living_user))
+		REMOVE_TRAIT(living_user, TRAIT_SNORE, "[type]")
+		living_user.update_body()
+
+#undef SNORE_DURATION
 
 /datum/emote/living/stare
 	key = "stare"
@@ -505,3 +569,9 @@
 	key = "exhale"
 	key_third_person = "exhales"
 	message = "breathes out."
+
+/datum/emote/living/clack
+	key = "clack"
+	key_third_person = "clacks"
+	message = "clacks their beak."
+	emote_type = EMOTE_VISIBLE

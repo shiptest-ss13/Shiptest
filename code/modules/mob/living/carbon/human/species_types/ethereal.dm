@@ -12,20 +12,25 @@
 	siemens_coeff = 0.5 //They thrive on energy
 	brutemod = 1.25 //They're weak to punches
 	attack_type = BURN //burn bish
+	exotic_blood = /datum/reagent/consumable/liquidelectricity
 	damage_overlay_type = "" //We are too cool for regular damage overlays
-	species_traits = list(DYNCOLORS, AGENDER, HAIR, FACEHAIR)
+	species_traits = list(DYNCOLORS, EYECOLOR, HAIR, FACEHAIR)
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN | SLIME_EXTRACT
 	species_language_holder = /datum/language_holder/ethereal
 	inherent_traits = list(TRAIT_NOHUNGER)
 	sexes = FALSE //no fetish content allowed
 	toxic_food = NONE
 	// Body temperature for ethereals is much higher then humans as they like hotter environments
-	bodytemp_normal = (BODYTEMP_NORMAL + 50)
+	bodytemp_normal = (HUMAN_BODYTEMP_NORMAL + 50)
 	bodytemp_heat_damage_limit = FIRE_MINIMUM_TEMPERATURE_TO_SPREAD // about 150C
 	// Cold temperatures hurt faster as it is harder to move with out the heat energy
 	bodytemp_cold_damage_limit = (T20C - 10) // about 10c
 	hair_color = "fixedmutcolor"
 	hair_alpha = 140
+	mutant_bodyparts = list("elzu_horns", "tail_elzu")
+	default_features = list("elzu_horns" = "None", "tail_elzu" = "None", "body_size" = "Normal")
+	species_eye_path = 'icons/mob/ethereal_parts.dmi'
+	mutant_organs = list(/obj/item/organ/tail/elzu)
 
 	species_chest = /obj/item/bodypart/chest/ethereal
 	species_head = /obj/item/bodypart/head/ethereal
@@ -72,9 +77,12 @@
 
 /datum/species/ethereal/random_name(gender,unique,lastname)
 	if(unique)
-		return random_unique_ethereal_name()
+		return random_unique_lizard_name(gender)
 
-	var/randname = ethereal_name()
+	var/randname = lizard_name(gender)
+
+	if(lastname)
+		randname += " [lastname]"
 
 	return randname
 
@@ -92,7 +100,13 @@
 	else
 		ethereal_light.set_light_on(FALSE)
 		fixed_mut_color = rgb(128,128,128)
+
+	for(var/obj/item/bodypart/parts_to_update as anything in H.bodyparts)
+		parts_to_update.species_color = fixed_mut_color
+		parts_to_update.update_limb()
+
 	H.update_body()
+	H.update_hair()
 
 /datum/species/ethereal/proc/health_adjusted_color(mob/living/carbon/human/H, default_color)
 	var/health_percent = max(H.health, 0) / 100
@@ -118,8 +132,8 @@
 
 	var/health_percent = max(H.health, 0) / 100
 
-	var/light_range = 1 + (2 * health_percent)
-	var/light_power = 1 + (1 * health_percent)
+	var/light_range = 1 + (1 * health_percent)
+	var/light_power = 1 + round(0.5 * health_percent)
 
 	ethereal_light.set_light_range_power_color(light_range, light_power, current_color)
 
@@ -238,11 +252,15 @@
 			H.visible_message("<span class='danger'>[H]'s EM frequency is scrambled to a random color.</span>")
 		else
 			// select new color
-			var/new_etherealcolor = input(user, "Choose your Elzuosa color", "Character Preference") as null|anything in GLOB.color_list_ethereal
+			var/new_etherealcolor = input(user, "Choose your elzuosa color:", "Character Preference",default_color) as color|null
 			if(new_etherealcolor)
-				default_color = "#" + GLOB.color_list_ethereal[new_etherealcolor]
-				current_color = health_adjusted_color(H, default_color)
-				spec_updatehealth(H)
-				H.visible_message("<span class='notice'>[H] modulates \his EM frequency to [new_etherealcolor].</span>")
+				var/temp_hsv = RGBtoHSV(new_etherealcolor)
+				if(ReadHSV(temp_hsv)[3] >= ReadHSV("#505050")[3]) // elzu colors should be bright ok??
+					default_color = "#" + sanitize_hexcolor(new_etherealcolor, 6)
+					current_color = health_adjusted_color(H, default_color)
+					spec_updatehealth(H)
+					H.visible_message("<span class='notice'>[H] modulates \his EM frequency to [new_etherealcolor].</span>")
+				else
+					to_chat(user, "<span class='danger'>Invalid color. Your color is not bright enough.</span>")
 	else
 		. = ..()

@@ -112,14 +112,14 @@
 	if(istype(loc, /obj/machinery/atmospherics/components/unary/cryo_cell))
 		return
 
+	dna.species.handle_body_temperature(src)
 	dna.species.handle_environment(environment, src)
 	dna.species.handle_environment_pressure(environment, src)
-	dna.species.handle_body_temperature(src)
 
 /**
  * get_body_temperature Returns the body temperature with any modifications applied
  *
- * This applies the result from proc/get_body_temp_normal_change() against the bodytemp_normal
+ * This applies the result from proc/get_body_temp_normal_change() against the HUMAN_BODYTEMP_NORMAL
  * for the species and returns the result
  *
  * arguments:
@@ -322,6 +322,22 @@
 		Unconscious(80)
 	// Tissues die without blood circulation
 	adjustBruteLoss(2)
+
+/mob/living/carbon/human/proc/handle_fractures()
+	//this whole thing is hacky and WILL NOT work right with multiple hands
+	//you've been warned
+	var/obj/item/bodypart/L = get_bodypart("l_arm")
+	var/obj/item/bodypart/R = get_bodypart("r_arm")
+
+	if(istype(L) && L.bone_status == BONE_FLAG_BROKEN && held_items[1] && prob(30))
+		emote("scream")
+		visible_message("<span class='warning'>[src] screams and lets go of [held_items[1]] in pain.</span>", "<span class='userdanger'>A horrible pain in your [parse_zone(L)] makes it impossible to hold [held_items[1]]!</span>")
+		dropItemToGround(held_items[1])
+
+	if(istype(R) && R.bone_status == BONE_FLAG_BROKEN && held_items[2] && prob(30))
+		emote("scream")
+		visible_message("<span class='warning'>[src] screams and lets go of [held_items[2]] in pain.</span>", "<span class='userdanger'>A horrible pain in your [parse_zone(R)] makes it impossible to hold [held_items[2]]!</span>")
+		dropItemToGround(held_items[2])
 
 #undef THERMAL_PROTECTION_HEAD
 #undef THERMAL_PROTECTION_CHEST

@@ -48,7 +48,7 @@
 		log.parameters["message"] = Gibberish(signal.data["message"], replace_characters)
 
 	// Give the log a name and store it
-	var/identifier = num2text( rand(-1000,1000) + world.time )
+	var/identifier = num2text(rand(-1000,1000) + world.time)
 	log.name = "data packet ([md5(identifier)])"
 	log_entries.Add(log)
 
@@ -73,30 +73,40 @@
 	name = id
 
 
-/obj/machinery/telecomms/server/presets/science
-	id = "Science Server"
-	freq_listening = list(FREQ_SCIENCE)
-	autolinkers = list("science")
+/obj/machinery/telecomms/server/presets/nanotrasen
+	id = "Nanotrasen Server"
+	freq_listening = list(FREQ_NANOTRASEN, FREQ_COMMON)
+	autolinkers = list("nanotrasen", "broadcasterA")
 
-/obj/machinery/telecomms/server/presets/medical
-	id = "Medical Server"
-	freq_listening = list(FREQ_MEDICAL)
-	autolinkers = list("medical")
+/obj/machinery/telecomms/server/presets/solgov
+	id = "SolGov Server"
+	freq_listening = list(FREQ_SOLGOV, FREQ_COMMON)
+	autolinkers = list("solgov", "broadcasterA")
 
-/obj/machinery/telecomms/server/presets/supply
-	id = "Supply Server"
-	freq_listening = list(FREQ_SUPPLY)
-	autolinkers = list("supply")
+/obj/machinery/telecomms/server/presets/syndicate
+	id = "Syndicate Server"
+	freq_listening = list(FREQ_SYNDICATE, FREQ_COMMON)
+	autolinkers = list("syndicate", "broadcasterB")
 
-/obj/machinery/telecomms/server/presets/service
-	id = "Service Server"
-	freq_listening = list(FREQ_SERVICE)
-	autolinkers = list("service")
+/obj/machinery/telecomms/server/presets/minutemen
+	id = "CMM Server"
+	freq_listening = list(FREQ_MINUTEMEN, FREQ_COMMON)
+	autolinkers = list("minutemen", "broadcasterA")
+
+/obj/machinery/telecomms/server/presets/inteq
+	id = "IRMG Server"
+	freq_listening = list(FREQ_INTEQ, FREQ_COMMON)
+	autolinkers = list("inteq", "broadcasterB")
+
+/obj/machinery/telecomms/server/presets/pirate
+	id = "Pirate Server"
+	freq_listening = list(FREQ_PIRATE, FREQ_COMMON)
+	autolinkers = list("pirate", "broadcasterB")
 
 /obj/machinery/telecomms/server/presets/common
 	id = "Common Server"
 	freq_listening = list()
-	autolinkers = list("common")
+	autolinkers = list("common", "broadcasterA")
 
 //Common and other radio frequencies for people to freely use
 /obj/machinery/telecomms/server/presets/common/Initialize()
@@ -106,18 +116,8 @@
 
 /obj/machinery/telecomms/server/presets/command
 	id = "Command Server"
-	freq_listening = list(FREQ_COMMAND)
+	freq_listening = list(FREQ_COMMAND, FREQ_COMMON)
 	autolinkers = list("command")
-
-/obj/machinery/telecomms/server/presets/engineering
-	id = "Engineering Server"
-	freq_listening = list(FREQ_ENGINEERING)
-	autolinkers = list("engineering")
-
-/obj/machinery/telecomms/server/presets/security
-	id = "Security Server"
-	freq_listening = list(FREQ_SECURITY)
-	autolinkers = list("security")
 
 /obj/machinery/telecomms/server/presets/common/birdstation/Initialize()
 	. = ..()

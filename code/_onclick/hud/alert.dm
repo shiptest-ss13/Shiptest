@@ -6,13 +6,13 @@
 /mob/proc/throw_alert(category, type, severity, obj/new_master, override = FALSE)
 
 /* Proc to create or update an alert. Returns the alert if the alert is new or updated, 0 if it was thrown already
- category is a text string. Each mob may only have one alert per category; the previous one will be replaced
- path is a type path of the actual alert type to throw
- severity is an optional number that will be placed at the end of the icon_state for this alert
- For example, high pressure's icon_state is "highpressure" and can be serverity 1 or 2 to get "highpressure1" or "highpressure2"
- new_master is optional and sets the alert's icon state to "template" in the ui_style icons with the master as an overlay.
- Clicks are forwarded to master
- Override makes it so the alert is not replaced until cleared by a clear_alert with clear_override, and it's used for hallucinations.
+category is a text string. Each mob may only have one alert per category; the previous one will be replaced
+path is a type path of the actual alert type to throw
+severity is an optional number that will be placed at the end of the icon_state for this alert
+For example, high pressure's icon_state is "highpressure" and can be serverity 1 or 2 to get "highpressure1" or "highpressure2"
+new_master is optional and sets the alert's icon state to "template" in the ui_style icons with the master as an overlay.
+Clicks are forwarded to master
+Override makes it so the alert is not replaced until cleared by a clear_alert with clear_override, and it's used for hallucinations.
  */
 
 	if(!category || QDELETED(src))
@@ -291,57 +291,97 @@ or shoot a gun to move around via Newton's 3rd Law of Motion."
 
 /atom/movable/screen/alert/give // information set when the give alert is made
 	icon_state = "default"
-	var/mob/living/carbon/giver
+	var/mob/living/carbon/offerer
 	var/obj/item/receiving
 
 /**
-  * Handles assigning most of the variables for the alert that pops up when an item is offered
-  *
-  * Handles setting the name, description and icon of the alert and tracking the person giving
-  * and the item being offered, also registers a signal that removes the alert from anyone who moves away from the giver
-  * Arguments:
-  * * taker - The person receiving the alert
-  * * giver - The person giving the alert and item
-  * * receiving - The item being given by the giver
-  */
-/atom/movable/screen/alert/give/proc/setup(mob/living/carbon/taker, mob/living/carbon/giver, obj/item/receiving)
-	name = "[giver] is offering [receiving]"
-	desc = "[giver] is offering [receiving]. Click this alert to take it."
+ * Handles assigning most of the variables for the alert that pops up when an item is offered
+ *
+ * Handles setting the name, description and icon of the alert and tracking the person giving
+ * and the item being offered, also registers a signal that removes the alert from anyone who moves away from the offerer
+ * Arguments:
+ * * taker - The person receiving the alert
+ * * offerer - The person giving the alert and item
+ * * receiving - The item being given by the offerer
+ */
+/atom/movable/screen/alert/give/proc/setup(mob/living/carbon/taker, mob/living/carbon/offerer, obj/item/receiving)
+	name = "[offerer] is offering [receiving]"
+	desc = "[offerer] is offering [receiving]. Click this alert to take it."
 	icon_state = "template"
 	cut_overlays()
 	add_overlay(receiving)
 	src.receiving = receiving
-	src.giver = giver
-	RegisterSignal(taker, COMSIG_MOVABLE_MOVED, .proc/removeAlert)
+	src.offerer = offerer
+	RegisterSignal(taker, COMSIG_MOVABLE_MOVED, .proc/check_in_range, override = TRUE) //Override to prevent runtimes when people offer a item multiple times
 
 /atom/movable/screen/alert/give/proc/removeAlert()
-	to_chat(owner, "<span class='warning'>You moved out of range of [giver]!</span>")
-	owner.clear_alert("[giver]")
+	to_chat(owner, "<span class='warning'>You moved out of range of [offerer]!</span>")
+	owner.clear_alert("[offerer]")
 
 /atom/movable/screen/alert/give/Click(location, control, params)
 	. = ..()
 	var/mob/living/carbon/C = owner
-	C.take(giver, receiving)
+	C.take(offerer, receiving)
 
-/atom/movable/screen/alert/highfive
-	icon_state = "default"
-	var/mob/living/carbon/giver
-	var/obj/item/slapper/slapper_item
+/// An overrideable proc used simply to hand over the item when claimed, this is a proc so that high-fives can override them since nothing is actually transferred
+/atom/movable/screen/alert/give/proc/handle_transfer()
+	var/mob/living/carbon/taker = owner
+	taker.take(offerer, receiving)
 
-/atom/movable/screen/alert/highfive/proc/setup(mob/living/carbon/taker, mob/living/carbon/giver, obj/item/slapper/slap)
-	name = "[giver] is offering a high-five"
-	desc = "[giver] wants a high-five! Click this alert to take it."
-	icon_state = "template"
-	cut_overlays()
-	add_overlay(slap)
-	src.slapper_item = slap
-	src.giver = giver
+/// Simply checks if the other person is still in range
+/atom/movable/screen/alert/give/proc/check_in_range(atom/taker)
+	SIGNAL_HANDLER
 
-/atom/movable/screen/alert/highfive/Click(location, control, params)
+	if(!offerer.CanReach(taker))
+		to_chat(owner, span_warning("You moved out of range of [offerer]!"))
+		owner.clear_alert("[offerer]")
+
+/atom/movable/screen/alert/give/highfive/setup(mob/living/carbon/taker, mob/living/carbon/offerer, obj/item/receiving)
 	. = ..()
-	var/datum/status_effect/high_fiving/high_five_effect = giver.has_status_effect(STATUS_EFFECT_HIGHFIVE)
-	if(high_five_effect)
-		high_five_effect.we_did_it(owner)
+	name = "[offerer] is offering a high-five!"
+	desc = "[offerer] is offering a high-five! Click this alert to slap it."
+	RegisterSignal(offerer, COMSIG_PARENT_EXAMINE_MORE, .proc/check_fake_out)
+
+/atom/movable/screen/alert/give/highfive/handle_transfer()
+	var/mob/living/carbon/taker = owner
+	if(receiving && (receiving in offerer.held_items))
+		receiving.on_offer_taken(offerer, taker)
+		return
+	too_slow_p1()
+
+/// If the person who offered the high five no longer has it when we try to accept it, we get pranked hard
+/atom/movable/screen/alert/give/highfive/proc/too_slow_p1()
+	var/mob/living/carbon/rube = owner
+	if(!rube || !offerer)
+		qdel(src)
+		return
+
+	offerer.visible_message(span_notice("[rube] rushes in to high-five [offerer], but-"), span_nicegreen("[rube] falls for your trick just as planned, lunging for a high-five that no longer exists! Classic!"), ignored_mobs=rube)
+	to_chat(rube, span_nicegreen("You go in for [offerer]'s high-five, but-"))
+	addtimer(CALLBACK(src, .proc/too_slow_p2, offerer, rube), 0.5 SECONDS)
+
+/// Part two of the ultimate prank
+/atom/movable/screen/alert/give/highfive/proc/too_slow_p2()
+	var/mob/living/carbon/rube = owner
+	if(!rube || !offerer)
+		qdel(src)
+		return
+
+	offerer.visible_message(span_danger("[offerer] pulls away from [rube]'s slap at the last second, dodging the high-five entirely!"), span_nicegreen("[rube] fails to make contact with your hand, making an utter fool of [rube.p_them()]self!"), span_hear("You hear a disappointing sound of flesh not hitting flesh!"), ignored_mobs=rube)
+	var/all_caps_for_emphasis = uppertext("NO! [offerer] PULLS [offerer.p_their()] HAND AWAY FROM YOURS! YOU'RE TOO SLOW!")
+	to_chat(rube, span_userdanger("[all_caps_for_emphasis]"))
+	playsound(offerer, 'sound/weapons/thudswoosh.ogg', 100, TRUE, 1)
+	rube.Knockdown(1 SECONDS)
+	SEND_SIGNAL(offerer, COMSIG_ADD_MOOD_EVENT, "high_five", /datum/mood_event/down_low)
+	SEND_SIGNAL(rube, COMSIG_ADD_MOOD_EVENT, "high_five", /datum/mood_event/too_slow)
+	qdel(src)
+
+/// If someone examine_more's the offerer while they're trying to pull a too-slow, it'll tip them off to the offerer's trickster ways
+/atom/movable/screen/alert/give/highfive/proc/check_fake_out(datum/source, mob/user, list/examine_list)
+	SIGNAL_HANDLER
+
+	if(!receiving)
+		examine_list += "[span_warning("[offerer]'s arm appears tensed up, as if [offerer.p_they()] plan on pulling it back suddenly...")]\n"
 
 /// Gives the player the option to succumb while in critical condition
 /atom/movable/screen/alert/succumb
@@ -633,9 +673,21 @@ so as to remain in compliance with the most up-to-date laws."
 		if(NOTIFY_JUMP)
 			var/turf/T = get_turf(target)
 			if(T && isturf(T))
-				G.forceMove(T)
+				G.abstract_move(T)
 		if(NOTIFY_ORBIT)
 			G.ManualFollow(target)
+
+
+//DWARF
+/atom/movable/screen/alert/dorflow
+	name = "Low Alchohol"
+	desc = "Your body's alchohol reserves are running low. Find some booze, or make some yourself by distilling plants in a barrel!"
+	icon_state = "dorf"
+
+/atom/movable/screen/alert/overdorf
+	name = "Metabolic Surge"
+	desc = "Excess alchohol has put your cellular metabolism into overdrive! You now have natural regeneration, but everything seems to be getting hotter..."
+	icon_state = "overdorf"
 
 //OBJECT-BASED
 
@@ -724,8 +776,8 @@ so as to remain in compliance with the most up-to-date laws."
 /atom/movable/screen/alert/Click(location, control, params)
 	if(!usr || !usr.client)
 		return
-	var/paramslist = params2list(params)
-	if(paramslist["shift"]) // screen objects don't do the normal Click() stuff so we'll cheat
+	var/list/modifiers = params2list(params)
+	if(LAZYACCESS(modifiers, SHIFT_CLICK)) // screen objects don't do the normal Click() stuff so we'll cheat
 		to_chat(usr, "<span class='boldnotice'>[name]</span> - <span class='info'>[desc]</span>")
 		return
 	if(usr != owner)

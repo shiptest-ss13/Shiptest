@@ -3,6 +3,7 @@
 /obj/machinery/portable_atmospherics/canister
 	name = "canister"
 	desc = "A canister for the storage of gas."
+	icon = 'icons/obj/nutanks.dmi'
 	icon_state = "yellow"
 	density = TRUE
 	base_icon_state = "yellow" //Used to make dealing with breaking the canister less hellish.
@@ -51,7 +52,6 @@
 		"stimulum" = /obj/machinery/portable_atmospherics/canister/stimulum,
 		"pluoxium" = /obj/machinery/portable_atmospherics/canister/pluoxium,
 		"caution" = /obj/machinery/portable_atmospherics/canister,
-		"miasma" = /obj/machinery/portable_atmospherics/canister/miasma,
 		"freon" = /obj/machinery/portable_atmospherics/canister/freon
 	)
 
@@ -140,13 +140,6 @@
 	gas_type = GAS_H2O
 	filled = 1
 
-/obj/machinery/portable_atmospherics/canister/miasma
-	name = "miasma canister"
-	desc = "Miasma. Makes you wish your nose were blocked."
-	icon_state = "miasma"
-	gas_type = GAS_MIASMA
-	filled = 1
-
 /obj/machinery/portable_atmospherics/canister/freon
 	name = "freon canister"
 	desc = "Freon. Can absorb heat"
@@ -233,17 +226,14 @@
 		. += "can-open"
 	if(connected_port)
 		. += "can-connector"
-	/*WS Edit - Use our overlays
-	var/pressure = air_contents.return_pressure()
-	if(pressure >= 40 * ONE_ATMOSPHERE)
-		. += "can-o3"
-	else if(pressure >= 10 * ONE_ATMOSPHERE)
-		. += "can-o2"
-	else if(pressure >= 5 * ONE_ATMOSPHERE)
-		. += "can-o1"
-	else if(pressure >= 10)
-		. += "can-o0"
-	WS End */
+	if(machine_stat & BROKEN)
+		return
+	var/pressure = air_contents?.return_pressure()
+	var/pressure_display = round(pressure / 500)
+	if(pressure_display > 10)
+		pressure_display = 10
+	if(pressure > 100)
+		. += "can-o" + num2text(pressure_display)
 
 
 /obj/machinery/portable_atmospherics/canister/temperature_expose(datum/gas_mixture/air, exposed_temperature, exposed_volume)

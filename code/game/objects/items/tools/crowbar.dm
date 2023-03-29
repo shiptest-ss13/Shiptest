@@ -1,10 +1,10 @@
 /obj/item/crowbar
 	name = "pocket crowbar"
 	desc = "A small crowbar. This handy tool is useful for lots of things, such as prying floor tiles or opening unpowered doors."
-	icon = 'whitesands/icons/obj/tools.dmi' //WS Edit - Better Tool Sprites
+	icon = 'icons/obj/tools.dmi'
 	icon_state = "crowbar"
-	lefthand_file = 'whitesands/icons/mob/inhands/equipment/tools_lefthand.dmi' //WS edit: i finally do those god forsaken inhands
-	righthand_file = 'whitesands/icons/mob/inhands/equipment/tools_righthand.dmi'
+	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
 	usesound = 'sound/items/crowbar.ogg'
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT
@@ -110,3 +110,15 @@
 	usesound = 'sound/items/jaws_pry.ogg'
 	force = 10
 	toolspeed = 0.5
+
+/obj/item/crowbar/syndie
+	name = "suspicious-looking crowbar"
+	desc = "It has special counterweights that adjust to the amount of pressure put on it by using a complex array of springs and screws."
+	icon_state = "crowbar_syndie"
+	toolspeed = 0.5
+	force = 8
+
+/obj/item/crowbar/old
+	desc = "A small crowbar. This handy tool is useful for lots of things, such as prying floor tiles or opening unpowered doors. This one seems to be covered in dust."
+	icon = 'icons/obj/tools.dmi'
+	icon_state = "oldcrowbar"

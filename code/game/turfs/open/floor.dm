@@ -20,7 +20,8 @@
 	intact = TRUE
 	tiled_dirt = TRUE
 
-	var/icon_plating = "plating"
+	// initiailized as null to stop turfs that update_icon() before Initialize() (in late ruin loading) from getting "stuck" as plating
+	var/icon_plating = null
 	var/broken = FALSE
 	var/burnt = FALSE
 	var/floor_tile = null //tile that this floor drops
@@ -60,7 +61,7 @@
 		if(1)
 			ScrapeAway(2, flags = CHANGETURF_INHERIT_AIR)
 		if(2)
-			switch(pick(1,2;75,3))
+			switch(rand(1, 3))
 				if(1)
 					if(!length(baseturfs) || !ispath(baseturfs[baseturfs.len-1], /turf/open/floor))
 						ScrapeAway(flags = CHANGETURF_INHERIT_AIR)
@@ -128,17 +129,6 @@
 ///For when the floor is placed under heavy load. Calls break_tile(), but exists to be overridden by floor types that should resist crushing force.
 /turf/open/floor/proc/crush()
 	break_tile()
-
-/turf/open/floor/ChangeTurf(path, new_baseturf, flags)
-	if(!isfloorturf(src))
-		return ..() //fucking turfs switch the fucking src of the fucking running procs
-	if(!ispath(path, /turf/open/floor))
-		return ..()
-	var/old_dir = dir
-	var/turf/open/floor/W = ..()
-	W.setDir(old_dir)
-	W.update_icon()
-	return W
 
 /turf/open/floor/attackby(obj/item/C, mob/user, params)
 	if(!C || !user)
@@ -290,7 +280,7 @@
 	name = "floor"
 	icon_state = "materialfloor"
 	material_flags = MATERIAL_ADD_PREFIX | MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS
-	icon = 'whitesands/icons/turf/floors/tiles.dmi'
+	icon = 'icons/turf/floors/tiles.dmi'
 	icon_state = "tiled"
 
 /turf/open/floor/material/spawn_tile()

@@ -1,11 +1,7 @@
 /datum/job/engineer
-	title = "Station Engineer"
-	department_head = list("Chief Engineer")
-	faction = "Station"
+	name = "Station Engineer"
 	total_positions = 5
 	spawn_positions = 5
-	supervisors = "the chief engineer"
-	selection_color = "#fff5cc"
 	exp_requirements = 60
 	exp_type = EXP_TYPE_CREW
 	wiki_page = "Station_Engineer" //WS Edit - Wikilinks/Warning
@@ -16,13 +12,12 @@
 									ACCESS_EXTERNAL_AIRLOCKS, ACCESS_CONSTRUCTION, ACCESS_ATMOSPHERICS, ACCESS_TCOMSAT, ACCESS_MINERAL_STOREROOM, ACCESS_EVA)
 	minimal_access = list(ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_TECH_STORAGE, ACCESS_MAINT_TUNNELS, ACCESS_MECH_ENGINE,
 									ACCESS_EXTERNAL_AIRLOCKS, ACCESS_CONSTRUCTION, ACCESS_TCOMSAT, ACCESS_MINERAL_STOREROOM)
-	paycheck = PAYCHECK_MEDIUM
-	paycheck_department = ACCOUNT_ENG
 
 	display_order = JOB_DISPLAY_ORDER_STATION_ENGINEER
 
 /datum/outfit/job/engineer
-	name = "Station Engineer"
+	name = "Mechanic"
+	job_icon = "stationengineer"
 	jobtype = /datum/job/engineer
 
 	belt = /obj/item/storage/belt/utility/full/engi
@@ -32,7 +27,7 @@
 	alt_uniform = /obj/item/clothing/under/rank/engineering/engineer/hazard //WS Edit - Alt Uniforms
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/engineering //WS Edit - Alt Uniforms
 	shoes = /obj/item/clothing/shoes/workboots
-	head = /obj/item/clothing/head/hardhat
+	head = /obj/item/clothing/head/hardhat/dblue
 	r_pocket = /obj/item/t_scanner
 
 	backpack = /obj/item/storage/backpack/industrial
@@ -45,18 +40,23 @@
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1)
 
 /datum/outfit/job/engineer/gloved
-	name = "Station Engineer (Gloves)"
+	name = "Mechanic (Gloves)"
 	gloves = /obj/item/clothing/gloves/color/yellow
 
 /datum/outfit/job/engineer/gloved/rig
-	name = "Station Engineer (Hardsuit)"
+	name = "Mechanic (Space suit)"
 	mask = /obj/item/clothing/mask/breath
-	suit = /obj/item/clothing/suit/space/hardsuit/engine
+	suit = /obj/item/clothing/suit/space/engineer
+	head = /obj/item/clothing/head/helmet/space/light/engineer
 	suit_store = /obj/item/tank/internals/oxygen
 	head = null
 	internals_slot = ITEM_SLOT_SUITSTORE
 
-//WS Edit Start - Alt-Job Titles
+/datum/outfit/job/engineer/nt
+	name = "Engineer (Nanotrasen)"
+	uniform = /obj/item/clothing/under/rank/engineering/engineer/nt
+	head = /obj/item/clothing/head/hardhat
+
 /datum/outfit/job/engineer/electrician
 	name = "Station Engineer (Electrician)"
 
@@ -112,6 +112,21 @@
 //WS Edit End - Alt-Job Titles
 
 //Shiptest Outfits
+
+/datum/outfit/job/engineer/minutemen
+	name = "Mechanic (Colonial Minutemen)"
+
+	uniform = /obj/item/clothing/under/rank/security/officer/minutemen
+	accessory = /obj/item/clothing/accessory/armband/engine
+	head = /obj/item/clothing/head/hardhat/dblue
+	suit =  /obj/item/clothing/suit/hazardvest
+
+/datum/outfit/job/engineer/inteq
+	name = "IRMG Artificer (Inteq)"
+
+	uniform = /obj/item/clothing/under/syndicate/inteq/artificer
+	head = /obj/item/clothing/head/soft/inteq
+	shoes = /obj/item/clothing/shoes/combat
 
 /datum/outfit/job/engineer/solgov
 	name = "Ship Engineer (SolGov)"
@@ -174,3 +189,29 @@
 	shoes = /obj/item/clothing/shoes/workboots
 	alt_uniform = null
 	glasses = null
+
+/datum/outfit/job/engineer/independent/ship_engineer
+	name = "Ship Engineer (Independent)"
+
+	belt = /obj/item/storage/belt/utility/full/engi
+	uniform = /obj/item/clothing/under/rank/security/officer/military/eng
+	suit = /obj/item/clothing/suit/toggle/hazard
+	shoes = /obj/item/clothing/shoes/workboots
+
+	head = null
+	backpack = /obj/item/storage/backpack
+	satchel = /obj/item/storage/backpack/satchel/
+	duffelbag = /obj/item/storage/backpack/duffelbag
+	courierbag = /obj/item/storage/backpack/messenger
+	l_pocket = /obj/item/radio
+	r_pocket = /obj/item/analyzer
+	glasses = /obj/item/clothing/glasses/welding
+
+/datum/outfit/job/engineer/syndicate/cybersun
+	name = "Engineer (Cybersun)"
+
+	uniform = /obj/item/clothing/under/syndicate/cybersun
+	shoes = /obj/item/clothing/shoes/workboots
+	r_pocket = /obj/item/radio
+	head = /obj/item/clothing/head/beanie/black
+	accessory = /obj/item/clothing/accessory/armband/engine

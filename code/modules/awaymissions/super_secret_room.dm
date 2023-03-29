@@ -128,16 +128,23 @@
 	. = ..()
 	var/newcolor = color2hex(pick(10;"green", 5;"blue", 3;"red", 1;"purple"))
 	add_atom_colour(newcolor, FIXED_COLOUR_PRIORITY)
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
 
-/obj/item/rupee/Crossed(atom/movable/AM)
+/obj/item/rupee/proc/on_entered(datum/source, atom/movable/AM)
+	SIGNAL_HANDLER
 	if(!ismob(AM))
 		return
 	var/mob/M = AM
+	INVOKE_ASYNC(src, .proc/do_hand_stuff, M)
+
+/obj/item/rupee/proc/do_hand_stuff(mob/M)
 	if(M.put_in_hands(src))
 		if(src != M.get_active_held_item())
 			M.swap_hand()
 		equip_to_best_slot(M)
-	..()
 
 /obj/item/rupee/equipped(mob/user, slot)
 	playsound(get_turf(loc), 'sound/misc/server-ready.ogg', 50, TRUE, -1)

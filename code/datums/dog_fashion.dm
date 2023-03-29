@@ -98,16 +98,21 @@
 	..()
 	name = "[pick("Ol'","Scurvy","Black","Rum","Gammy","Bloody","Gangrene","Death","Long-John")] [pick("kibble","leg","beard","tooth","poop-deck","Threepwood","Le Chuck","corsair","Silver","Crusoe")]"
 
-/datum/dog_fashion/head/ushanka
+/datum/dog_fashion/head/trapper
 	name = "Communist-title Realname"
 	desc = "A follower of Karl Barx."
 	emote_see = list("contemplates the failings of the capitalist economic model.", "ponders the pros and cons of vanguardism.")
 
-/datum/dog_fashion/head/ushanka/New(mob/M)
+/datum/dog_fashion/head/trapper/New(mob/M)
 	..()
 	name = "[pick("Comrade","Commissar","Glorious Leader")] [M.real_name]"
 
 /datum/dog_fashion/head/warden
+	name = "Officer REAL_NAME"
+	emote_see = list("drools.","looks for donuts.")
+	desc = "Stop right there criminal scum!"
+
+/datum/dog_fashion/head/warden_red
 	name = "Officer REAL_NAME"
 	emote_see = list("drools.","looks for donuts.")
 	desc = "Stop right there criminal scum!"

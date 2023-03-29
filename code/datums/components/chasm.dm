@@ -24,11 +24,11 @@
 		))
 
 /datum/component/chasm/Initialize(turf/target)
-	RegisterSignal(parent, list(COMSIG_MOVABLE_CROSSED, COMSIG_ATOM_ENTERED), .proc/Entered)
+	RegisterSignal(parent, COMSIG_ATOM_ENTERED, .proc/Entered)
 	target_turf = target
 	START_PROCESSING(SSobj, src) // process on create, in case stuff is still there
 
-/datum/component/chasm/proc/Entered(datum/source, atom/movable/AM)
+/datum/component/chasm/proc/Entered(datum/source, atom/movable/AM, atom/old_loc, list/atom/old_locs)
 	SIGNAL_HANDLER
 
 	START_PROCESSING(SSobj, src)
@@ -40,7 +40,7 @@
 
 /datum/component/chasm/proc/is_safe()
 	//if anything matching this typecache is found in the chasm, we don't drop things
-	var/static/list/chasm_safeties_typecache = typecacheof(list(/obj/structure/lattice, /obj/structure/stone_tile, /obj/structure/catwalk ))
+	var/static/list/chasm_safeties_typecache = typecacheof(list(/obj/structure/lattice, /obj/structure/stone_tile, /obj/structure/catwalk))
 
 	var/atom/parent = src.parent
 	var/list/found_safeties = typecache_filter_list(parent.contents, chasm_safeties_typecache)

@@ -11,6 +11,8 @@
 	max_integrity = 300
 	equip_sound = 'sound/items/equip/toolbelt_equip.ogg'
 	var/content_overlays = FALSE //If this is true, the belt will gain overlays based on what it's holding
+	greyscale_icon_state = "belt"
+	greyscale_colors = list(list(16, 12), list(15, 11), list(13, 12))
 
 /obj/item/storage/belt/suicide_act(mob/living/carbon/user)
 	user.visible_message("<span class='suicide'>[user] begins belting [user.p_them()]self with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
@@ -114,6 +116,15 @@
 	new /obj/item/wirecutters(src)
 	new /obj/item/t_scanner(src)
 	new /obj/item/extinguisher/mini(src)
+
+/obj/item/storage/belt/utility/atmostech/hologram/PopulateContents()
+	new /obj/item/screwdriver(src)
+	new /obj/item/wrench(src)
+	new /obj/item/weldingtool(src)
+	new /obj/item/crowbar(src)
+	new /obj/item/wirecutters(src)
+	new /obj/item/t_scanner(src)
+	new /obj/item/pipe_dispenser(src)
 
 /obj/item/storage/belt/utility/syndicate/PopulateContents()
 	new /obj/item/screwdriver/nuke(src)
@@ -405,7 +416,7 @@
 
 /obj/item/storage/belt/military
 	name = "chest rig"
-	desc = "A set of tactical webbing worn by Syndicate boarding parties."
+	desc = "A set of tactical webbing worn by military cosplayers and actual militaries alike."
 	icon_state = "militarywebbing"
 	item_state = "militarywebbing"
 	resistance_flags = FIRE_PROOF
@@ -414,6 +425,10 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/storage/belt/military/minutemen/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/ammo_box/magazine/p16(src)
 
 /obj/item/storage/belt/military/snack
 	name = "tactical snack rig"
@@ -490,18 +505,14 @@
 	icon_state = "assaultbelt"
 	item_state = "security"
 
+/obj/item/storage/belt/military/assault/minutemen/PopulateContents()
+	for(var/i in 1 to 6)
+		new /obj/item/ammo_box/magazine/p16(src)
+
 /obj/item/storage/belt/military/assault/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 6
-
-/obj/item/storage/belt/military/assault/full/PopulateContents()
-	new /obj/item/ammo_box/magazine/wt550m9/wtap(src)
-	new /obj/item/ammo_box/magazine/wt550m9/wtap(src)
-	new /obj/item/ammo_box/magazine/wt550m9(src)
-	new /obj/item/ammo_box/magazine/wt550m9(src)
-	new /obj/item/ammo_box/magazine/wt550m9(src)
-	new /obj/item/ammo_box/magazine/wt550m9(src)
 
 /obj/item/storage/belt/grenade
 	name = "grenadier belt"
@@ -603,6 +614,39 @@
 	new /obj/item/holosign_creator(src)
 	new /obj/item/melee/flyswatter(src)
 
+/obj/item/storage/belt/plant
+	name = "botanical belt"
+	desc = "A belt used to hold most hydroponics supplies. Suprisingly, not green."
+	icon_state = "plantbelt"
+	item_state = "plantbelt"
+	content_overlays = TRUE
+
+/obj/item/storage/belt/plant/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 6
+	STR.max_w_class = WEIGHT_CLASS_NORMAL
+	STR.can_hold = typecacheof(list(
+		/obj/item/reagent_containers/spray/plantbgone,
+		/obj/item/plant_analyzer,
+		/obj/item/seeds,
+		/obj/item/reagent_containers/glass/bottle,
+		/obj/item/reagent_containers/glass/beaker,
+		/obj/item/cultivator,
+		/obj/item/reagent_containers/spray/pestspray,
+		/obj/item/hatchet,
+		/obj/item/shovel/spade,
+		/obj/item/gun/energy/floragun
+	))
+
+/obj/item/storage/belt/plant/full/PopulateContents()
+	new /obj/item/plant_analyzer(src)
+	new /obj/item/cultivator(src)
+	new /obj/item/hatchet(src)
+	new /obj/item/shovel/spade(src)
+	new /obj/item/reagent_containers/spray/pestspray(src)
+	new /obj/item/reagent_containers/spray/plantbgone(src)
+
 /obj/item/storage/belt/bandolier
 	name = "bandolier"
 	desc = "A bandolier for holding shotgun ammunition."
@@ -700,7 +744,7 @@
 	AddElement(/datum/element/update_icon_updates_onmob)
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 1
-	STR.rustle_sound = FALSE
+	STR.use_sound = null
 	STR.max_w_class = WEIGHT_CLASS_BULKY
 	STR.set_holdable(list(
 		/obj/item/melee/sabre

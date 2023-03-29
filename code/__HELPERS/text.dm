@@ -112,12 +112,10 @@
 
 #define NO_CHARS_DETECTED 0
 #define SPACES_DETECTED 1
-#define SYMBOLS_DETECTED 2
-#define NUMBERS_DETECTED 3
-#define LETTERS_DETECTED 4
+#define CHARS_DETECTED 2
 
 //Filters out undesirable characters from names
-/proc/reject_bad_name(t_in, allow_numbers = FALSE, max_length = MAX_NAME_LEN, ascii_only = TRUE)
+/proc/reject_bad_name(t_in, max_length = MAX_NAME_LEN, ascii_only = TRUE)
 	if(!t_in)
 		return //Rejects the input if it is null
 
@@ -133,36 +131,6 @@
 		char = t_in[i]
 
 		switch(text2ascii(char))
-			// A  .. Z
-			if(65 to 90)			//Uppercase Letters
-				number_of_alphanumeric++
-				last_char_group = LETTERS_DETECTED
-
-			// a  .. z
-			if(97 to 122)			//Lowercase Letters
-				if(last_char_group == NO_CHARS_DETECTED || last_char_group == SPACES_DETECTED || last_char_group == SYMBOLS_DETECTED) //start of a word
-					char = uppertext(char)
-				number_of_alphanumeric++
-				last_char_group = LETTERS_DETECTED
-
-			// 0  .. 9
-			if(48 to 57)			//Numbers
-				if(last_char_group == NO_CHARS_DETECTED || !allow_numbers) //suppress at start of string
-					continue
-				number_of_alphanumeric++
-				last_char_group = NUMBERS_DETECTED
-
-			// '  -  .
-			if(39,45,46)			//Common name punctuation
-				if(last_char_group == NO_CHARS_DETECTED)
-					continue
-				last_char_group = SYMBOLS_DETECTED
-
-			// ~   |   @  :  #  $  %  &  *  +
-			if(126,124,64,58,35,36,37,38,42,43)			//Other symbols that we'll allow (mainly for AI)
-				if(last_char_group == NO_CHARS_DETECTED || !allow_numbers) //suppress at start of string
-					continue
-				last_char_group = SYMBOLS_DETECTED
 
 			//Space
 			if(32)
@@ -170,10 +138,30 @@
 					continue
 				last_char_group = SPACES_DETECTED
 
-			if(127 to INFINITY)
+			//A .. Z
+			if(65 to 90)
+				number_of_alphanumeric++
+				last_char_group = CHARS_DETECTED
+
+			//a .. z
+			if(97 to 122)
+				number_of_alphanumeric++
+				last_char_group = CHARS_DETECTED
+
+			//0 .. 9
+			if(48 to 57)
+				number_of_alphanumeric++
+				last_char_group = CHARS_DETECTED
+
+			// ' - . ~ | @ : # $ % & * +
+			if(39, 45, 46, 126, 124, 64, 58, 35, 36, 37, 38, 42, 43)
+				number_of_alphanumeric++
+				last_char_group = CHARS_DETECTED
+
+			if(127 to INFINITY) //this pulls non-ascii text from the name for now, since filtering that is much more of a headache
 				if(ascii_only)
 					continue
-				last_char_group = SYMBOLS_DETECTED //for now, we'll treat all non-ascii characters like symbols even though most are letters
+				last_char_group = CHARS_DETECTED //for now, we'll treat all non-ascii characters like symbols even though most are letters
 
 			else
 				continue
@@ -184,21 +172,16 @@
 			break
 
 	if(number_of_alphanumeric < 2)
-		return		//protects against tiny names like "A" and also names like "' ' ' ' ' ' ' '"
+		return		//protects against tiny names like "A"
 
 	if(last_char_group == SPACES_DETECTED)
-		t_out = copytext_char(t_out, 1, -1) //removes the last character (in this case a space)
-
-	for(var/bad_name in list("space","floor","wall","r-wall","monkey","unknown","inactive ai"))	//prevents these common metagamey names
-		if(cmptext(t_out,bad_name))
-			return	//(not case sensitive)
+		t_out = copytext_char(t_out, 1, -1) //pulls trailing spaces from the name
 
 	return t_out
 
 #undef NO_CHARS_DETECTED
 #undef SPACES_DETECTED
-#undef NUMBERS_DETECTED
-#undef LETTERS_DETECTED
+#undef CHARS_DETECTED
 
 
 
@@ -254,16 +237,16 @@
 	return ""
 
 /**
-  * Truncate a string to the given length
-  *
-  * Will only truncate if the string is larger than the length and *ignores unicode concerns*
-  *
-  * This exists soley because trim does other stuff too.
-  *
-  * Arguments:
-  * * text - String
-  * * max_length - integer length to truncate at
-  */
+ * Truncate a string to the given length
+ *
+ * Will only truncate if the string is larger than the length and *ignores unicode concerns*
+ *
+ * This exists soley because trim does other stuff too.
+ *
+ * Arguments:
+ * * text - String
+ * * max_length - integer length to truncate at
+ */
 /proc/truncate(text, max_length)
 	if(length(text) > max_length)
 		return copytext(text, 1, max_length)
@@ -838,7 +821,7 @@ GLOBAL_LIST_INIT(binary, list("0","1"))
 	catch
 		return
 
-/proc/num2loadingbar(percent as num, var/numSquares = 20, var/reverse = FALSE)
+/proc/num2loadingbar(percent as num, numSquares = 20, reverse = FALSE)
 	var/loadstring = ""
 	for (var/i in 1 to numSquares)
 		var/limit = reverse ? numSquares - percent*numSquares : percent*numSquares
@@ -859,3 +842,9 @@ GLOBAL_LIST_INIT(binary, list("0","1"))
 			continue
 		out += prob(replaceprob)? pick(replacementchars) : char
 	return out.Join("")
+
+//Very shitty proc that allows you to get the (mostly) pure text out of a book. There's probably something that can get this more cleanly or more efficiently, btu I don't care.
+/proc/strip_booktext(text, limit=MAX_MESSAGE_LEN)
+	var/start = findtext(text, ">")
+	var/end = findtext(text, "<", 2)
+	return strip_html(copytext_char(text, start, min(start + limit, end)))

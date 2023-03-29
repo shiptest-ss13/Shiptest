@@ -51,10 +51,10 @@ GLOBAL_VAR(test_log)
 	run_loc_top_right = vlevel.get_unreserved_top_right_turf()
 
 /datum/unit_test/Destroy()
+	QDEL_LIST(allocated)
 	//clear the test area
 	for(var/atom/movable/AM in block(run_loc_bottom_left, run_loc_top_right))
 		qdel(AM)
-	QDEL_LIST(allocated)
 	return ..()
 
 /datum/unit_test/proc/Run()

@@ -32,17 +32,13 @@
 	name = "cracked earth"
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "wasteland"
-	environment_type = "wasteland"
+	base_icon_state = "wasteland"
 	baseturfs = /turf/open/floor/plating/asteroid/basalt/wasteland
 	digResult = /obj/item/stack/ore/glass/basalt
 	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
 	slowdown = 0.5
 	floor_variance = 30
-
-/turf/open/floor/plating/asteroid/basalt/wasteland/Initialize(mapload, inherited_virtual_z)
-	.=..()
-	if(prob(floor_variance))
-		icon_state = "[environment_type][rand(0,6)]"
+	max_icon_states = 6
 
 /turf/closed/mineral/strong/wasteland
 	name = "ancient dry rock"
@@ -109,7 +105,6 @@
 /obj/structure/closet/crate/grave
 	name = "burial mound"
 	desc = "An marked patch of soil, showing signs of a burial long ago. You wouldn't disturb a grave... right?"
-	icon = 'goon/icons/obj/crates.dmi'
 	icon_state = "grave"
 	dense_when_open = TRUE
 	material_drop = /obj/item/stack/ore/glass/basalt
@@ -198,7 +193,6 @@
 /obj/structure/closet/crate/grave/lead_researcher
 	name = "ominous burial mound"
 	desc = "Even in a place filled to the brim with graves, this one shows a level of preperation and planning that fills you with dread."
-	icon = 'goon/icons/obj/crates.dmi'
 	icon_state = "grave_lead"
 	lead_tomb = TRUE
 	first_open = TRUE

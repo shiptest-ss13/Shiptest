@@ -26,7 +26,7 @@
 
 /mob/living/simple_animal/hostile/zombie/Initialize(mapload)
 	. = ..()
-	setup_visuals()
+	INVOKE_ASYNC(src, .proc/setup_visuals)
 
 /mob/living/simple_animal/hostile/zombie/proc/setup_visuals()
 	var/datum/preferences/dummy_prefs = new
@@ -57,3 +57,14 @@
 	. = ..()
 	corpse.forceMove(drop_location())
 	corpse.create()
+
+/mob/living/simple_animal/hostile/zombie/leatherman
+	name = "Leatherman"
+	desc = "Fuck you!"
+	icon = 'icons/mob/simple_human.dmi'
+	icon_state = "zombie_leather"
+	icon_living = "zombie_leather"
+	maxHealth = 60
+	health = 60
+	melee_damage_lower = 11
+	melee_damage_upper = 11

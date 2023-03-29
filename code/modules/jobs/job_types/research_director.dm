@@ -1,13 +1,8 @@
 /datum/job/rd
-	title = "Research Director"
+	name = "Research Director"
 	auto_deadmin_role_flags = DEADMIN_POSITION_HEAD
-	department_head = list("Captain")
-	head_announce = list("Science")
-	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the captain"
-	selection_color = "#ffddff"
 	minimal_player_age = 7
 	exp_type_department = EXP_TYPE_SCIENCE
 	exp_requirements = 180
@@ -29,13 +24,12 @@
 		ACCESS_RESEARCH, ACCESS_ROBOTICS, ACCESS_XENOBIOLOGY, ACCESS_AI_UPLOAD,
 		ACCESS_RC_ANNOUNCE, ACCESS_KEYCARD_AUTH, ACCESS_GATEWAY, ACCESS_MINERAL_STOREROOM,
 		ACCESS_TECH_STORAGE, ACCESS_MINISAT, ACCESS_MAINT_TUNNELS, ACCESS_NETWORK) //WS edit - Gen/Sci Split
-	paycheck = PAYCHECK_COMMAND
-	paycheck_department = ACCOUNT_SCI
 
 	display_order = JOB_DISPLAY_ORDER_RESEARCH_DIRECTOR
 
 /datum/outfit/job/rd
 	name = "Research Director"
+	job_icon = "researchdirector"
 	jobtype = /datum/job/rd
 
 	id = /obj/item/card/id/silver

@@ -12,8 +12,7 @@
 	item_state = "mime"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
-	fitted = FEMALE_UNIFORM_TOP
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/under/rank/civilian/mime/sexy
 	name = "sexy mime outfit"
@@ -21,7 +20,6 @@
 	icon_state = "sexymime"
 	item_state = "sexymime"
 	body_parts_covered = CHEST|GROIN|LEGS
-	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = FALSE
 
 /obj/item/clothing/under/rank/civilian/clown
@@ -35,7 +33,6 @@
 	desc = "<i>'BLUE HONK!'</i>"
 	icon_state = "blueclown"
 	item_state = "blueclown"
-	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = FALSE
 
 /obj/item/clothing/under/rank/civilian/clown/green
@@ -43,7 +40,6 @@
 	desc = "<i>'GREEN HONK!'</i>"
 	icon_state = "greenclown"
 	item_state = "greenclown"
-	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = FALSE
 
 /obj/item/clothing/under/rank/civilian/clown/yellow
@@ -51,7 +47,6 @@
 	desc = "<i>'YELLOW HONK!'</i>"
 	icon_state = "yellowclown"
 	item_state = "yellowclown"
-	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = FALSE
 
 /obj/item/clothing/under/rank/civilian/clown/purple
@@ -59,7 +54,6 @@
 	desc = "<i>'PURPLE HONK!'</i>"
 	icon_state = "purpleclown"
 	item_state = "purpleclown"
-	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = FALSE
 
 /obj/item/clothing/under/rank/civilian/clown/orange
@@ -67,7 +61,6 @@
 	desc = "<i>'ORANGE HONK!'</i>"
 	icon_state = "orangeclown"
 	item_state = "orangeclown"
-	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = FALSE
 
 /obj/item/clothing/under/rank/civilian/clown/rainbow
@@ -75,7 +68,6 @@
 	desc = "<i>'R A I N B O W HONK!'</i>"
 	icon_state = "rainbowclown"
 	item_state = "rainbowclown"
-	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = FALSE
 
 /obj/item/clothing/under/rank/civilian/clown/jester

@@ -607,7 +607,7 @@
 	The last thing you remember is the station's Artificial Program telling you that you would only be asleep for eight hours. As you open \
 	your eyes, everything seems rusted and broken, a dark feeling swells in your gut as you climb out of your pod."
 	important_info = "Work as a team with your fellow survivors and do not abandon them."
-	uniform = /obj/item/clothing/under/rank/security/old //WS edit - Command/Sec resprite
+	uniform = /obj/item/clothing/under/rank/security/officer/nt
 	shoes = /obj/item/clothing/shoes/jackboots
 	id = /obj/item/card/id/away/old/sec
 	r_pocket = /obj/item/restraints/handcuffs
@@ -746,7 +746,7 @@
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper_s"
 	short_desc = "You are a syndicate operative, awoken deep in hostile space."
-	flavour_text = "Your ship is part of the infamous \"sleeper\" doctrine of syndicate strike forces, who flung unpowered vessels with cryo-frozen crew deep into Nanotransen territory, tasked to cause havoc and carry out covert reconnisance. The chill in your bones informs you that you've been asleep far longer than intended. Your vessel appears to be in a sorry state, and a tinny alarm pierces through your fugue to report unknown contacts aboard the vessel. It's going to be one of those days."
+	flavour_text = "Your ship is part of the infamous \"sleeper\" doctrine of syndicate strike forces, who flung unpowered vessels with cryo-frozen crew deep into Nanotrasen territory, tasked to cause havoc and carry out covert reconnisance. The chill in your bones informs you that you've been asleep far longer than intended. Your vessel appears to be in a sorry state, and a tinny alarm pierces through your fugue to report unknown contacts aboard the vessel. It's going to be one of those days."
 	important_info = "Obey orders given by your captain. Prevent yourself and any syndicate assets from falling into enemy hands."
 	outfit = /datum/outfit/syndicatespace/syndicrew
 	assignedrole = "Cybersun Crewmember"
@@ -770,7 +770,7 @@
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper_s"
 	short_desc = "You are the captain of a long-slumbering syndicate vessel, stuck deep in enemy territory."
-	flavour_text = "Your ship is part of the infamous \"sleeper\" doctrine of syndicate strike forces, who flung unpowered vessels with cryo-frozen crew deep into Nanotransen territory, tasked to cause havoc and carry out covert reconnisance. The chill in your bones informs you that you've been asleep far longer than intended. Your vessel appears to be in a sorry state, and a tinny alarm pierces through your fugue to report unknown contacts aboard the vessel. It's going to be one of those days."
+	flavour_text = "Your ship is part of the infamous \"sleeper\" doctrine of syndicate strike forces, who flung unpowered vessels with cryo-frozen crew deep into Nanotrasen territory, tasked to cause havoc and carry out covert reconnisance. The chill in your bones informs you that you've been asleep far longer than intended. Your vessel appears to be in a sorry state, and a tinny alarm pierces through your fugue to report unknown contacts aboard the vessel. It's going to be one of those days."
 	important_info = "Protect the ship and secret documents in your backpack with your own life. Secure the syndicate assets present at your covert landing site. Prevent them, your crew, and yourself from falling into corporate hands."
 	outfit = /datum/outfit/syndicatespace/syndicaptain
 	assignedrole = "Cybersun Captain"
@@ -810,7 +810,7 @@
 	glasses = /obj/item/clothing/glasses/night
 	mask = /obj/item/clothing/mask/gas/syndicate
 	head = /obj/item/clothing/head/HoS/beret/syndicate
-	ears = /obj/item/radio/headset/syndicate/alt/leader
+	ears = /obj/item/radio/headset/syndicate/alt/captain
 	shoes = /obj/item/clothing/shoes/combat
 	gloves = /obj/item/clothing/gloves/combat
 	back = /obj/item/storage/backpack
@@ -899,7 +899,7 @@
 	mob_species = /datum/species/ipc
 
 /obj/effect/mob_spawn/human/lostassistant/Initialize(mapload)
-	..()
+	. = ..()
 	var/area/A = get_area(src)
 	if(A)
 		notify_ghosts("Someone has defeated a ash drake! A prisoner has been freed in \the [A.name]!", source = src, action=NOTIFY_ATTACK, flashwindow = FALSE)
@@ -927,3 +927,34 @@
 	flavour_text = "You are being sent in to stop a treat. Your objective is- wait where the hell are you? You still have your gear but... you have no idea where you are?"
 	assignedrole = "Lost SolGov Commander"
 	outfit = /datum/outfit/solgov/commander
+
+//Slime Lab
+
+/obj/effect/mob_spawn/human/slime_rancher
+	name = "slime receptical"
+	desc = "A fairly rare machine that seems to be used for storing and molding jelly. You can see the vague shape of a humanoid in it."
+	icon = 'icons/obj/lavaland/spawners.dmi'
+	icon_state = "terrarium"
+	density = TRUE
+	roundstart = FALSE
+	death = FALSE
+	mob_species = /datum/species/jelly
+	short_desc = "You are a slime researcher, driving innovation in the field of xenobiology. ."
+	flavour_text = "You and your fellows have been stationed here for more time than you've cared to track, especially since the computers have done it for you. . \
+	Keep the lab in good operating condition, breed slimes, and trade to get what you aren't able to produce yourselves. "
+	important_info = "Do not abandon the base. The place is too damn expensive to just run off from."
+	uniform = /obj/item/clothing/under/rank/rnd/scientist/xenobiologist/skirt
+	shoes = /obj/item/clothing/shoes/sneakers/white
+	id = /obj/item/card/id/away/slime
+	assignedrole = "Slime Research Staff"
+
+/obj/effect/mob_spawn/human/slime_rancher/special(mob/living/new_spawn)
+	var/slime_name = pick("Maroon", "Funky", "Squishy", "Bubblegum", "Gummy", "Pinkie Pie", "Rainbow Dash", "Beatrix LeBeau", "Chartreuse", "Chocolate", "Goobert", "Blorbo", "Creeper", "Leaper", "Pyro", "Monk", "Slim", "Malice", "Moldova", "Sloshy", "Slick", "Emil", "Poison", "Grey", "The Specimen", "Clotty")
+	new_spawn.fully_replace_character_name(null,slime_name)
+	if(ishuman(new_spawn))
+		var/mob/living/carbon/human/H = new_spawn
+		H.update_body()
+
+/obj/effect/mob_spawn/human/slime_rancher/Destroy()
+	new/obj/structure/fluff/empty_terrarium(get_turf(src))
+	return ..()

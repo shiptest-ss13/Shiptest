@@ -1,11 +1,12 @@
 /obj/item/clothing/under/pants
 	gender = PLURAL
 	body_parts_covered = GROIN|LEGS
-	fitted = NO_FEMALE_UNIFORM
 	can_adjust = FALSE
 	custom_price = 60
 	icon = 'icons/obj/clothing/under/shorts_pants.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/under/shorts_pants.dmi'
+	greyscale_colors = list(list(14, 10), list(16, 10), list(16, 9))
+	greyscale_icon_state = "pants"
 
 /obj/item/clothing/under/pants/classicjeans
 	name = "classic jeans"

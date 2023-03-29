@@ -9,7 +9,6 @@
 
 #define SCANGATE_HUMAN "human"
 #define SCANGATE_LIZARD "lizard"
-#define SCANGATE_FELINID "felinid"
 #define SCANGATE_FLY "fly"
 #define SCANGATE_PLASMAMAN "plasma"
 #define SCANGATE_MOTH "moth"
@@ -45,6 +44,10 @@
 /obj/machinery/scanner_gate/Initialize()
 	. = ..()
 	set_scanline("passive")
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
 
 /obj/machinery/scanner_gate/examine(mob/user)
 	. = ..()
@@ -53,9 +56,10 @@
 	else
 		. += "<span class='notice'>The control panel is unlocked. Swipe an ID to lock it.</span>"
 
-/obj/machinery/scanner_gate/Crossed(atom/movable/AM)
-	. = ..()
-	auto_scan(AM)
+/obj/machinery/scanner_gate/proc/on_entered(datum/source, atom/movable/AM)
+	SIGNAL_HANDLER
+
+	INVOKE_ASYNC(src, .proc/auto_scan, AM)
 
 /obj/machinery/scanner_gate/proc/auto_scan(atom/movable/AM)
 	if(!(machine_stat & (BROKEN|NOPOWER)) && isliving(AM))
@@ -131,8 +135,6 @@
 						scan_species = /datum/species/lizard
 					if(SCANGATE_FLY)
 						scan_species = /datum/species/fly
-					if(SCANGATE_FELINID)
-						scan_species = /datum/species/human/felinid
 					if(SCANGATE_PLASMAMAN)
 						scan_species = /datum/species/plasmaman
 					if(SCANGATE_MOTH)
@@ -265,7 +267,6 @@
 
 #undef SCANGATE_HUMAN
 #undef SCANGATE_LIZARD
-#undef SCANGATE_FELINID
 #undef SCANGATE_FLY
 #undef SCANGATE_PLASMAMAN
 #undef SCANGATE_MOTH

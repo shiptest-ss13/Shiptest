@@ -727,3 +727,40 @@
 		to_chat(owner, fake_msg)
 
 	msg_stage++
+
+/datum/status_effect/metab_frozen
+	id = "metab_frozen"
+	duration = 5 SECONDS
+	status_type = STATUS_EFFECT_REFRESH
+	alert_type = null
+
+/datum/status_effect/metab_frozen/on_apply()
+	. = ..()
+	ADD_TRAIT(owner, TRAIT_NOMETABOLISM, "[STATUS_EFFECT_TRAIT]_[id]")
+
+/datum/status_effect/metab_frozen/on_remove()
+	. = ..()
+	REMOVE_TRAIT(owner, TRAIT_NOMETABOLISM, "[STATUS_EFFECT_TRAIT]_[id]")
+
+/datum/status_effect/stagger
+	id = "stagger"
+	status_type = STATUS_EFFECT_REFRESH
+	duration = 30 SECONDS
+	tick_interval = 1 SECONDS
+	alert_type = null
+
+/datum/status_effect/stagger/on_apply()
+	owner.next_move_modifier *= 1.5
+	if(ishostile(owner))
+		var/mob/living/simple_animal/hostile/simple_owner = owner
+		simple_owner.ranged_cooldown_time *= 2.5
+	return TRUE
+
+/datum/status_effect/stagger/on_remove()
+	. = ..()
+	if(QDELETED(owner))
+		return
+	owner.next_move_modifier /= 1.5
+	if(ishostile(owner))
+		var/mob/living/simple_animal/hostile/simple_owner = owner
+		simple_owner.ranged_cooldown_time /= 2.5

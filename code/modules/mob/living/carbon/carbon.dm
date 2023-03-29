@@ -83,20 +83,22 @@
 /mob/living/carbon/proc/toggle_throw_mode()
 	if(stat)
 		return
-	if(in_throw_mode)
-		throw_mode_off()
+	if(throw_mode)
+		throw_mode_off(THROW_MODE_TOGGLE)
 	else
-		throw_mode_on()
+		throw_mode_on(THROW_MODE_TOGGLE)
 
 
-/mob/living/carbon/proc/throw_mode_off()
-	in_throw_mode = 0
+/mob/living/carbon/proc/throw_mode_off(method)
+	if(throw_mode > method) //A toggle doesnt affect a hold
+		return
+	throw_mode = THROW_MODE_DISABLED
 	if(client && hud_used)
 		hud_used.throw_icon.icon_state = "act_throw_off"
 
 
-/mob/living/carbon/proc/throw_mode_on()
-	in_throw_mode = 1
+/mob/living/carbon/proc/throw_mode_on(mode = THROW_MODE_TOGGLE)
+	throw_mode = mode
 	if(client && hud_used)
 		hud_used.throw_icon.icon_state = "act_throw_on"
 
@@ -106,7 +108,7 @@
 
 /mob/living/carbon/throw_item(atom/target)
 	. = ..()
-	throw_mode_off()
+	throw_mode_off(THROW_MODE_TOGGLE)
 	if(!target || !isturf(loc))
 		return
 	if(istype(target, /atom/movable/screen))
@@ -516,7 +518,7 @@
 	set_health(round(maxHealth - getOxyLoss() - getToxLoss() - getCloneLoss() - total_burn - total_brute, DAMAGE_PRECISION))
 	staminaloss = round(total_stamina, DAMAGE_PRECISION)
 	update_stat()
-	if(((maxHealth - total_burn) < HEALTH_THRESHOLD_DEAD*2) && stat == DEAD )
+	if(((maxHealth - total_burn) < HEALTH_THRESHOLD_DEAD*2) && stat == DEAD)
 		become_husk("burn")
 
 	med_hud_set_health()
@@ -875,7 +877,7 @@
 		I.extinguish() //extinguishes our clothes
 	..()
 
-/mob/living/carbon/fakefire(var/fire_icon = "Generic_mob_burning")
+/mob/living/carbon/fakefire(fire_icon = "Generic_mob_burning")
 	var/mutable_appearance/new_fire_overlay = mutable_appearance('icons/mob/OnFire.dmi', fire_icon, -FIRE_LAYER)
 	new_fire_overlay.appearance_flags = RESET_COLOR
 	overlays_standing[FIRE_LAYER] = new_fire_overlay
@@ -966,43 +968,56 @@
 	if(href_list[VV_HK_MODIFY_BODYPART])
 		if(!check_rights(R_SPAWN))
 			return
-		var/edit_action = input(usr, "What would you like to do?","Modify Body Part") as null|anything in list("add","remove", "augment")
+		var/edit_action = input(usr, "What would you like to do?","Modify Body Part") as null|anything in list("replace","remove")
 		if(!edit_action)
 			return
 		var/list/limb_list = list()
-		if(edit_action == "remove" || edit_action == "augment")
+		if(edit_action == "remove")
 			for(var/obj/item/bodypart/B in bodyparts)
 				limb_list += B.body_zone
-			if(edit_action == "remove")
 				limb_list -= BODY_ZONE_CHEST
 		else
-			limb_list = list(BODY_ZONE_HEAD, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
-			for(var/obj/item/bodypart/B in bodyparts)
-				limb_list -= B.body_zone
-		var/result = input(usr, "Please choose which body part to [edit_action]","[capitalize(edit_action)] Body Part") as null|anything in sortList(limb_list)
+			limb_list = list(BODY_ZONE_HEAD, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG, BODY_ZONE_CHEST)
+		var/result = input(usr, "Please choose which bodypart to [edit_action]","[capitalize(edit_action)] Bodypart") as null|anything in sortList(limb_list)
 		if(result)
 			var/obj/item/bodypart/BP = get_bodypart(result)
-			switch(edit_action)
-				if("remove")
-					if(BP)
-						BP.drop_limb()
+			if(edit_action == "remove")
+				if(BP)
+					BP.drop_limb(TRUE)
+					admin_ticket_log("[key_name_admin(usr)] has removed [src]'s [parse_zone(BP.body_zone)]")
+				else
+					to_chat(usr, "<span class='boldwarning'>[src] doesn't have such bodypart.</span>")
+					admin_ticket_log("[key_name_admin(usr)] has attempted to modify the bodyparts of [src]")
+			else
+				var/list/limbtypes = list()
+				switch(result)
+					if(BODY_ZONE_CHEST)
+						limbtypes = typesof(/obj/item/bodypart/chest)
+					if(BODY_ZONE_R_ARM)
+						limbtypes = typesof(/obj/item/bodypart/r_arm)
+					if(BODY_ZONE_L_ARM)
+						limbtypes = typesof(/obj/item/bodypart/l_arm)
+					if(BODY_ZONE_HEAD)
+						limbtypes = typesof(/obj/item/bodypart/head)
+					if(BODY_ZONE_L_LEG)
+						limbtypes = typesof(/obj/item/bodypart/l_leg)
+					if(BODY_ZONE_R_LEG)
+						limbtypes = typesof(/obj/item/bodypart/r_leg)
+
+				if((edit_action == "add") && BP)
+					to_chat(usr, "<span class='boldwarning'>[src] already has such bodypart.</span>")
+				else
+					var/limb2add = input(usr, "Select a bodypart type to add", "Add/Replace Bodypart") as null|anything in sortList(limbtypes)
+					var/obj/item/bodypart/new_bp = new limb2add()
+
+					if(new_bp.replace_limb(src, TRUE, TRUE))
+						admin_ticket_log("key_name_admin(usr)] has replaced [src]'s [BP.type] with [new_bp.type]")
+						qdel(BP)
 					else
-						to_chat(usr, "<span class='boldwarning'>[src] doesn't have such bodypart.</span>")
-				if("add")
-					if(BP)
-						to_chat(usr, "<span class='boldwarning'>[src] already has such bodypart.</span>")
-					else
-						if(!regenerate_limb(result))
-							to_chat(usr, "<span class='boldwarning'>[src] cannot have such bodypart.</span>")
-				if("augment")
-					if(ishuman(src))
-						if(BP)
-							BP.change_bodypart_status(BODYTYPE_ROBOTIC, TRUE, TRUE)
-						else
-							to_chat(usr, "<span class='boldwarning'>[src] doesn't have such bodypart.</span>")
-					else
-						to_chat(usr, "<span class='boldwarning'>Only humans can be augmented.</span>")
-		admin_ticket_log("[key_name_admin(usr)] has modified the bodyparts of [src]")
+						to_chat(usr, "Failed to replace bodypart! They might be incompatible.")
+						admin_ticket_log("[key_name_admin(usr)] has attempted to modify the bodyparts of [src]")
+
+
 	if(href_list[VV_HK_MAKE_AI])
 		if(!check_rights(R_SPAWN))
 			return

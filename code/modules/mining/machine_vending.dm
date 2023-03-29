@@ -44,7 +44,7 @@
 		/obj/item/pickaxe/silver = 3,
 		/obj/item/storage/backpack/duffelbag/mining_conscript = 3,
 		/obj/item/tank/jetpack/suit = 3,
-		/obj/item/stack/spacecash/c1000 = 5,
+		/obj/item/spacecash/bundle/c1000 = 5,
 		/obj/item/clothing/suit/space/hardsuit/mining/independent = 3,
 		/obj/item/resonator/upgraded = 1,
 		/obj/item/clothing/shoes/bhop = 3,
@@ -67,7 +67,7 @@
 		/obj/item/reagent_containers/food/drinks/bottle/absinthe/premium = 3,
 		/obj/item/laser_pointer = 1,
 		/obj/item/pickaxe/diamond = 1,
-		/obj/item/clothing/mask/facehugger/toy = 1,
+		/mob/living/simple_animal/hostile/facehugger/toy = 1,
 		/obj/item/clothing/glasses/meson/gar = 2,
 		/obj/item/survivalcapsule/luxuryelite = 1,
 	)
@@ -172,7 +172,7 @@
 		/obj/item/pickaxe/silver = 3,
 		/obj/item/storage/backpack/duffelbag/mining_conscript = 3,
 		/obj/item/tank/jetpack/suit = 3,
-		/obj/item/stack/spacecash/c1000 = 5,
+		/obj/item/spacecash/bundle/c1000 = 5,
 		/obj/item/clothing/suit/space/hardsuit/mining/independent = 3,
 		/obj/item/resonator/upgraded = 1,
 		/obj/item/clothing/shoes/bhop = 3,
@@ -263,7 +263,6 @@
 	new /obj/item/pinpointer/deepcore(src)
 	new /obj/item/storage/bag/ore(src)
 	new /obj/item/clothing/suit/hooded/explorer(src)
-	new /obj/item/encryptionkey/headset_mining(src)
 	new /obj/item/clothing/mask/gas/explorer(src)
 	new /obj/item/card/mining_access_card(src)
 	new /obj/item/gun/energy/kinetic_accelerator(src)

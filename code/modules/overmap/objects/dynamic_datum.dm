@@ -1,9 +1,9 @@
 /**
-  * # Dynamic Overmap Encounters
-  *
-  * These overmap objects can be docked with and will create a dynamically generated area of many different types depending on the planet variable.
-  * When undocked with, it checks if there's anyone left on the planet, and if not, will move to another random location and wait to create a new encounter.
-  */
+ * # Dynamic Overmap Encounters
+ *
+ * These overmap objects can be docked with and will create a dynamically generated area of many different types depending on the planet variable.
+ * When undocked with, it checks if there's anyone left on the planet, and if not, will move to another random location and wait to create a new encounter.
+ */
 /datum/overmap/dynamic
 	name = "weak energy signature"
 	char_rep = "?"
@@ -23,10 +23,31 @@
 	var/static/list/probabilities
 	///The planet that will be forced to load
 	var/force_encounter
+	///List of ruins to potentially generate
+	var/list/ruin_list
+	/// list of ruins and their target turf, indexed by name
+	var/list/ruin_turfs
 
-/datum/overmap/dynamic/Initialize(position, ...)
+	/// The mapgenerator itself. SHOULD NOT BE NULL if the datum ever creates an encounter
+	var/datum/map_generator/mapgen = /datum/map_generator/single_turf/space
+	/// The turf used as the backup baseturf for any reservations created by this datum. Should not be null.
+	var/turf/default_baseturf = /turf/open/space
+
+	///The weather the virtual z will have. If null, the planet will have no weather.
+	var/datum/weather_controller/weather_controller_type
+
+	///The Y bounds of the virtual z level
+	var/vlevel_height = QUADRANT_MAP_SIZE
+	///The X bounds of the virtual z level
+	var/vlevel_width = QUADRANT_MAP_SIZE
+
+/datum/overmap/dynamic/Initialize(position, load_now=TRUE, ...)
 	. = ..()
-	choose_level_type()
+
+	vlevel_height = CONFIG_GET(number/overmap_encounter_size)
+	vlevel_width = CONFIG_GET(number/overmap_encounter_size)
+	if(load_now)
+		choose_level_type(load_now)
 
 /datum/overmap/dynamic/Destroy()
 	for(var/obj/docking_port/stationary/dock as anything in reserve_docks)
@@ -35,6 +56,7 @@
 	if(mapzone)
 		mapzone.clear_reservation()
 		QDEL_NULL(mapzone)
+	ruin_turfs = null
 	return ..()
 
 /datum/overmap/dynamic/get_jump_to_turf()
@@ -43,7 +65,7 @@
 
 /datum/overmap/dynamic/pre_docked(datum/overmap/ship/controlled/dock_requester)
 	if(!load_level())
-		return FALSE
+		return new /datum/docking_ticket(_docking_error = "[src] cannot be docked to.")
 	else
 		var/dock_to_use = null
 		for(var/obj/docking_port/stationary/dock as anything in reserve_docks)
@@ -52,7 +74,7 @@
 				break
 
 		if(!dock_to_use)
-			return FALSE
+			return new /datum/docking_ticket(_docking_error = "[src] does not have any free docks. Aborting docking.")
 		adjust_dock_to_shuttle(dock_to_use, dock_requester.shuttle_port)
 		return new /datum/docking_ticket(dock_to_use, src, dock_requester)
 
@@ -71,8 +93,7 @@
 
 	log_shuttle("[src] [REF(src)] UNLOAD")
 	var/list/results = SSovermap.get_unused_overmap_square()
-	Move(results["x"], results["y"])
-	choose_level_type()
+	overmap_move(results["x"], results["y"])
 
 	for(var/obj/docking_port/stationary/dock as anything in reserve_docks)
 		reserve_docks -= dock
@@ -82,10 +103,12 @@
 		mapzone.clear_reservation()
 		QDEL_NULL(mapzone)
 
+	choose_level_type()
+
 /**
-  * Chooses a type of level for the dynamic level to use.
-  */
-/datum/overmap/dynamic/proc/choose_level_type()
+ * Chooses a type of level for the dynamic level to use.
+ */
+/datum/overmap/dynamic/proc/choose_level_type(load_now = TRUE) //TODO: This is a awful way of hanlding random planets. If maybe it picked from a list of datums that then would be applied on the dynamic datum, it would be a LOT better.
 	var/chosen
 	if(!probabilities)
 		probabilities = list(DYNAMIC_WORLD_LAVA = min(length(SSmapping.lava_ruins_templates), 20),
@@ -93,8 +116,10 @@
 		DYNAMIC_WORLD_JUNGLE = min(length(SSmapping.jungle_ruins_templates), 20),
 		DYNAMIC_WORLD_SAND = min(length(SSmapping.sand_ruins_templates), 20),
 		DYNAMIC_WORLD_SPACERUIN = min(length(SSmapping.space_ruins_templates), 20),
+		DYNAMIC_WORLD_WASTEPLANET = min(length(SSmapping.waste_ruins_templates), 20),
 		DYNAMIC_WORLD_ROCKPLANET = min(length(SSmapping.rock_ruins_templates), 20),
-		//DYNAMIC_WORLD_REEBE = 1, //very rare because of major lack of skil //TODO, make removing no teleport not break things, then it can be reenabled
+		DYNAMIC_WORLD_BEACHPLANET = min(length(SSmapping.beach_ruins_templates), 20),
+		//DYNAMIC_WORLD_REEBE = 0, //unspawnable because of major lack of skill. //you fucking probablitiy zero does not equal one you dumbass
 		DYNAMIC_WORLD_ASTEROID = 30)
 
 	if(force_encounter)
@@ -103,59 +128,158 @@
 		chosen = pickweight(probabilities)
 	switch(chosen)
 		if(DYNAMIC_WORLD_LAVA)
-			Rename("strange lava planet")
+			Rename("lava planet")
 			token.desc = "A very weak energy signal originating from a planet with lots of seismic and volcanic activity."
 			planet = DYNAMIC_WORLD_LAVA
 			token.icon_state = "globe"
 			token.color = COLOR_ORANGE
 			planet_name = gen_planet_name()
+
+			ruin_list = SSmapping.lava_ruins_templates
+			mapgen = /datum/map_generator/planet_generator/lava
+			default_baseturf = /turf/open/floor/plating/asteroid/basalt/lava_land_surface
+
+			weather_controller_type = /datum/weather_controller/lavaland
+
 		if(DYNAMIC_WORLD_ICE)
-			Rename("strange ice planet")
+			Rename("frozen planet")
 			token.desc = "A very weak energy signal originating from a planet with traces of water and extremely low temperatures."
 			planet = DYNAMIC_WORLD_ICE
 			token.icon_state = "globe"
 			token.color = COLOR_BLUE_LIGHT
 			planet_name = gen_planet_name()
+
+			ruin_list = SSmapping.ice_ruins_templates
+			mapgen = /datum/map_generator/planet_generator/snow
+			default_baseturf = /turf/open/floor/plating/asteroid/snow/icemoon
+
+			weather_controller_type = /datum/weather_controller/snow_planet
+
 		if(DYNAMIC_WORLD_JUNGLE)
-			Rename("strange jungle planet")
+			Rename("jungle planet")
 			token.desc = "A very weak energy signal originating from a planet teeming with life."
 			planet = DYNAMIC_WORLD_JUNGLE
 			token.icon_state = "globe"
 			token.color = COLOR_LIME
 			planet_name = gen_planet_name()
+
+			ruin_list = SSmapping.jungle_ruins_templates
+			mapgen = /datum/map_generator/planet_generator/jungle
+			default_baseturf = /turf/open/floor/plating/dirt/jungle
+
+			weather_controller_type = /datum/weather_controller/lush
+
 		if(DYNAMIC_WORLD_SAND)
-			Rename("strange sand planet")
+			Rename("sand planet")
 			token.desc = "A very weak energy signal originating from a planet with many traces of silica."
 			planet = DYNAMIC_WORLD_SAND
 			token.icon_state = "globe"
 			token.color = COLOR_GRAY
 			planet_name = gen_planet_name()
+
+			ruin_list = SSmapping.sand_ruins_templates
+			mapgen = /datum/map_generator/planet_generator/sand
+			default_baseturf = /turf/open/floor/plating/asteroid/whitesands
+
+			weather_controller_type = /datum/weather_controller/desert
+
+		if(DYNAMIC_WORLD_WASTEPLANET)
+			Rename("waste disposal planet")
+			token.desc = "A very weak energy signal originating from a planet marked as waste disposal."
+			planet = DYNAMIC_WORLD_WASTEPLANET
+			token.icon_state = "globe"
+			token.color = "#a9883e"
+			planet_name = gen_planet_name()
+
+			ruin_list = SSmapping.waste_ruins_templates
+			mapgen = /datum/map_generator/single_biome/wasteplanet
+			default_baseturf = /turf/open/floor/plating/asteroid/wasteplanet
+
+			weather_controller_type = /datum/weather_controller/chlorine //let's go??
+
 		if(DYNAMIC_WORLD_ROCKPLANET)
-			Rename("strange rock planet")
-			token.desc = "A very weak energy signal originating from a abandoned industrial planet."
+			Rename("rock planet")
+			token.desc = "A very weak energy signal originating from a iron rich and rocky planet."
 			planet = DYNAMIC_WORLD_ROCKPLANET
 			token.icon_state = "globe"
-			token.color = COLOR_BROWN
+			token.color = "#bd1313"
 			planet_name = gen_planet_name()
+
+			ruin_list = SSmapping.rock_ruins_templates
+			mapgen = /datum/map_generator/planet_generator/rock
+			default_baseturf = /turf/open/floor/plating/asteroid
+
+			weather_controller_type = /datum/weather_controller/rockplanet
+
+		if(DYNAMIC_WORLD_BEACHPLANET)
+			Rename("beach planet")
+			token.desc = "A very weak energy signal originating from a warm, oxygen rich planet."
+			planet = DYNAMIC_WORLD_BEACHPLANET
+			token.icon_state = "globe"
+			token.color = "#c6b597"
+			planet_name = gen_planet_name()
+
+			ruin_list = SSmapping.beach_ruins_templates
+			mapgen = /datum/map_generator/planet_generator/beach
+			default_baseturf = /turf/open/floor/plating/asteroid/sand/lit
+
+			weather_controller_type = /datum/weather_controller/lush
+
 		if(DYNAMIC_WORLD_REEBE)
 			Rename("???")
 			token.desc = "Some sort of strange portal. Theres no identification of what this is."
 			planet = DYNAMIC_WORLD_REEBE
 			token.icon_state = "wormhole"
 			token.color = COLOR_YELLOW
+			planet_name = "Reebe"
+
+			ruin_list = SSmapping.yellow_ruins_templates
+			mapgen = /datum/map_generator/single_biome/reebe
+			default_baseturf = /turf/open/chasm/reebe_void
+
+			weather_controller_type = null
+
 		if(DYNAMIC_WORLD_ASTEROID)
 			Rename("large asteroid")
 			token.desc = "A large asteroid with significant traces of minerals."
 			planet = DYNAMIC_WORLD_ASTEROID
 			token.icon_state = "asteroid"
 			token.color = COLOR_GRAY
+
+			ruin_list = null // asteroid ruins when
+			mapgen = /datum/map_generator/single_biome/asteroid
+			// Space, because asteroid maps also include space turfs and the prospect of space turfs
+			// existing without space as their baseturf scares me.
+			default_baseturf = /turf/open/space
+
+			weather_controller_type = null
+
 		if(DYNAMIC_WORLD_SPACERUIN)
 			Rename("weak energy signal")
 			token.desc = "A very weak energy signal emenating from space."
 			planet = DYNAMIC_WORLD_SPACERUIN
 			token.icon_state = "strange_event"
 			token.color = null
-	token.desc += !preserve_level && "It may not still be here if you leave it."
+
+			ruin_list = SSmapping.space_ruins_templates
+			mapgen = /datum/map_generator/single_turf/space
+			default_baseturf = /turf/open/space
+
+			weather_controller_type = null
+
+	if(vlevel_height >= 255 && vlevel_width >= 255) //little easter egg
+		planet_name = "LV-[pick(rand(11111,99999))]"
+		token.icon_state = "sector"
+		Rename(planet_name)
+
+// - SERVER ISSUE: LOADING ALL PLANETS AT ROUND START KILLS PERFORMANCE BEYOND WHAT IS REASONABLE. OPTIMIZE SSMOBS IF YOU WANT THIS BACK
+// #ifdef FULL_INIT //Initialising planets roundstart isn't NECESSARY, but is very nice in production. Takes a long time to load, though.
+// 	if(load_now)
+// 		load_level() //Load the level whenever it's randomised
+// #endif
+
+	if(!preserve_level)
+		token.desc += " It may not still be here if you leave it."
 
 /datum/overmap/dynamic/proc/gen_planet_name()
 	. = ""
@@ -171,97 +295,70 @@
 			. += "[pick(GLOB.planet_prefixes)] [pick(GLOB.planet_names)]"
 
 /**
-  * Load a level for a ship that's visiting the level.
-  * * visiting shuttle - The docking port of the shuttle visiting the level.
-  */
+ * Load a level for a ship that's visiting the level.
+ * * visiting shuttle - The docking port of the shuttle visiting the level.
+ */
 /datum/overmap/dynamic/proc/load_level()
 	if(mapzone)
 		return TRUE
-	if(!COOLDOWN_FINISHED(SSovermap, encounter_cooldown))
-		return FALSE
 	log_shuttle("[src] [REF(src)] LEVEL_INIT")
-	var/list/dynamic_encounter_values = SSovermap.spawn_dynamic_encounter(planet, TRUE, ruin_type = template)
+	// use the ruin type in template if it exists, or pick from ruin list if IT exists; otherwise null
+	var/ruin_type = template || (ruin_list ? ruin_list[pick(ruin_list)] : null)
+	var/list/dynamic_encounter_values = SSovermap.spawn_dynamic_encounter(src, ruin_type)
 	if(!length(dynamic_encounter_values))
 		return FALSE
 	mapzone = dynamic_encounter_values[1]
 	reserve_docks = dynamic_encounter_values[2]
+	ruin_turfs = dynamic_encounter_values[3]
 	return TRUE
 
-/**
- * Alters the position and orientation of a stationary docking port to ensure that any mobile port small enough can dock within its bounds
- */
-/datum/overmap/dynamic/proc/adjust_dock_to_shuttle(obj/docking_port/stationary/dock_to_adjust, obj/docking_port/mobile/shuttle)
-	log_shuttle("[src] [REF(src)] DOCKING: ADJUST [dock_to_adjust] [REF(dock_to_adjust)] TO [shuttle][REF(shuttle)]")
-	// the shuttle's dimensions where "true height" measures distance from the shuttle's fore to its aft
-	var/shuttle_true_height = shuttle.height
-	var/shuttle_true_width = shuttle.width
-	// if the port's location is perpendicular to the shuttle's fore, the "true height" is the port's "width" and vice-versa
-	if(EWCOMPONENT(shuttle.port_direction))
-		shuttle_true_height = shuttle.width
-		shuttle_true_width = shuttle.height
+/datum/overmap/dynamic/empty
+	name = "Empty Space"
 
-	// the dir the stationary port should be facing (note that it points inwards)
-	var/final_facing_dir = angle2dir(dir2angle(shuttle_true_height > shuttle_true_width ? EAST : NORTH)+dir2angle(shuttle.port_direction)+180)
+/datum/overmap/dynamic/empty/choose_level_type()
+	return
 
-	var/list/old_corners = dock_to_adjust.return_coords() // coords for "bottom left" / "top right" of dock's covered area, rotated by dock's current dir
-	var/list/new_dock_location // TBD coords of the new location
-	if(final_facing_dir == dock_to_adjust.dir)
-		new_dock_location = list(old_corners[1], old_corners[2]) // don't move the corner
-	else if(final_facing_dir == angle2dir(dir2angle(dock_to_adjust.dir)+180))
-		new_dock_location = list(old_corners[3], old_corners[4]) // flip corner to the opposite
-	else
-		var/combined_dirs = final_facing_dir | dock_to_adjust.dir
-		if(combined_dirs == (NORTH|EAST) || combined_dirs == (SOUTH|WEST))
-			new_dock_location = list(old_corners[1], old_corners[4]) // move the corner vertically
-		else
-			new_dock_location = list(old_corners[3], old_corners[2]) // move the corner horizontally
-		// we need to flip the height and width
-		var/dock_height_store = dock_to_adjust.height
-		dock_to_adjust.height = dock_to_adjust.width
-		dock_to_adjust.width = dock_height_store
+/datum/overmap/dynamic/empty/post_undocked(datum/overmap/ship/controlled/dock_requester)
+	if(length(mapzone?.get_mind_mobs()))
+		return //Dont fuck over stranded people? tbh this shouldn't be called on this condition, instead of bandaiding it inside
+	log_shuttle("[src] [REF(src)] UNLOAD")
+	qdel(src)
 
-	dock_to_adjust.dir = final_facing_dir
-	if(shuttle.height > dock_to_adjust.height || shuttle.width > dock_to_adjust.width)
-		CRASH("Shuttle cannot fit in dock!")
 
-	// offset for the dock within its area
-	var/new_dheight = round((dock_to_adjust.height-shuttle.height)/2) + shuttle.dheight
-	var/new_dwidth = round((dock_to_adjust.width-shuttle.width)/2) + shuttle.dwidth
-
-	// use the relative-to-dir offset above to find the absolute position offset for the dock
-	switch(final_facing_dir)
-		if(NORTH)
-			new_dock_location[1] += new_dwidth
-			new_dock_location[2] += new_dheight
-		if(SOUTH)
-			new_dock_location[1] -= new_dwidth
-			new_dock_location[2] -= new_dheight
-		if(EAST)
-			new_dock_location[1] += new_dheight
-			new_dock_location[2] -= new_dwidth
-		if(WEST)
-			new_dock_location[1] -= new_dheight
-			new_dock_location[2] += new_dwidth
-
-	dock_to_adjust.forceMove(locate(new_dock_location[1], new_dock_location[2], dock_to_adjust.z))
-	dock_to_adjust.dheight = new_dheight
-	dock_to_adjust.dwidth = new_dwidth
+/*
+	OVERMAP ENCOUNTER AREAS
+*/
 
 /area/overmap_encounter
 	name = "\improper Overmap Encounter"
 	icon_state = "away"
-	area_flags = HIDDEN_AREA | UNIQUE_AREA | CAVES_ALLOWED | FLORA_ALLOWED | MOB_SPAWN_ALLOWED | NOTELEPORT
+	// DO NOT PUT UNIQUE_AREA IN THESE FLAGS FOR ANY SUBTYPE. IT CAUSES WEATHER PROBLEMS
+	// THE ONLY REASON IT DIDN'T BEFORE IS BECAUSE THE CODE DIDN'T RESPECT THE FLAG
+	area_flags = HIDDEN_AREA | CAVES_ALLOWED | FLORA_ALLOWED | MOB_SPAWN_ALLOWED | NOTELEPORT
 	flags_1 = CAN_BE_DIRTY_1
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 	sound_environment = SOUND_ENVIRONMENT_STONEROOM
 	ambientsounds = RUINS
 	outdoors = TRUE
+	allow_weather = TRUE
+
+/area/overmap_encounter/New(...)
+	if(area_flags & UNIQUE_AREA)
+		CRASH("Area [src.name] ([src.type], REF: [REF(src)]) created with flag UNIQUE_AREA! Don't do this! Weather will break!")
+	. = ..()
 
 /area/overmap_encounter/planetoid
 	name = "\improper Unknown Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_MOUNTAINS
 	has_gravity = STANDARD_GRAVITY
 	always_unpowered = TRUE
+
+// Used for caves on multi-biome planetoids.
+/area/overmap_encounter/planetoid/cave
+	name = "\improper Planetoid Cavern"
+	sound_environment = SOUND_ENVIRONMENT_CAVE
+	ambientsounds = SPOOKY
+	allow_weather = FALSE
 
 /area/overmap_encounter/planetoid/lava
 	name = "\improper Volcanic Planetoid"
@@ -284,33 +381,28 @@
 
 /area/overmap_encounter/planetoid/rockplanet
 	name = "\improper Rocky Planetoid"
-	sound_environment = SOUND_ENVIRONMENT_HANGAR
-	ambientsounds = MAINTENANCE
+	sound_environment = SOUND_ENVIRONMENT_QUARRY
+	ambientsounds = AWAY_MISSION
 
 /area/overmap_encounter/planetoid/rockplanet/explored//for use in ruins
-	area_flags = UNIQUE_AREA
-	area_flags = VALID_TERRITORY | UNIQUE_AREA
+	area_flags = VALID_TERRITORY
+
+/area/overmap_encounter/planetoid/beachplanet
+	name = "\improper Beach Planetoid"
+	sound_environment = SOUND_ENVIRONMENT_FOREST
+	ambientsounds = BEACH
+
+/area/overmap_encounter/planetoid/wasteplanet
+	name = "\improper Waste Planetoid"
+	sound_environment = SOUND_ENVIRONMENT_HANGAR
+	ambientsounds = MAINTENANCE
 
 /area/overmap_encounter/planetoid/reebe
 	name = "\improper Yellow Space"
 	sound_environment = SOUND_ENVIRONMENT_MOUNTAINS
+	area_flags = HIDDEN_AREA | CAVES_ALLOWED | FLORA_ALLOWED | MOB_SPAWN_ALLOWED //allows jaunters to work
 	ambientsounds = REEBE
 
-/area/overmap_encounter/planetoid/reebe/Entered(atom/movable/AM)
-	. = ..()
-	if(ismob(AM))
-		var/mob/M = AM
-		if(M.client)
-			addtimer(CALLBACK(M.client, /client/proc/play_reebe_ambience), 900)
 
-/datum/overmap/dynamic/empty
-	name = "Empty Space"
 
-/datum/overmap/dynamic/empty/choose_level_type()
-	return
 
-/datum/overmap/dynamic/empty/post_undocked(datum/overmap/ship/controlled/dock_requester)
-	if(length(mapzone?.get_mind_mobs()))
-		return //Dont fuck over stranded people? tbh this shouldn't be called on this condition, instead of bandaiding it inside
-	log_shuttle("[src] [REF(src)] UNLOAD")
-	qdel(src)

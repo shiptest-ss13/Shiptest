@@ -161,11 +161,11 @@
 		detach(user)
 
 /**
-  * activate: Activates biomass processing and converts all inserted grown products into biomass
-  *
-  * Arguments:
-  * * user The mob starting the biomass processing
-  */
+ * activate: Activates biomass processing and converts all inserted grown products into biomass
+ *
+ * Arguments:
+ * * user The mob starting the biomass processing
+ */
 /obj/machinery/biogenerator/proc/activate(mob/user)
 	if(user.stat != CONSCIOUS)
 		return
@@ -338,3 +338,14 @@
 		if("select")
 			selected_cat = params["category"]
 			return TRUE
+
+//vault biogenerator, very robust and capable of synthesizing a number of plants.
+/obj/machinery/biogenerator/vault
+	name = "biocultivator"
+	color = "#72f55b"
+	desc = "A mysterious device, capable of converting organic material into biomass, which can then be used to synthesize a variety of useful patterns."
+	efficiency = 4
+	productivity = 4
+	max_items = 80
+	show_categories = list("Food", "Botany Chemicals", "Organic Materials", "LIFESEED_2.0")
+	circuit = null

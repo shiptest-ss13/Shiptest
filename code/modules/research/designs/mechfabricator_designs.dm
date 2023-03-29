@@ -62,6 +62,87 @@
 	construction_time = 200
 	category = list("Cyborg")
 
+//Prosthetics
+/datum/design/prosthetic_l_arm
+	name = "Surplus Prosthetic Left Arm"
+	id = "prosthetic_l_arm"
+	build_type = PROTOLATHE | MECHFAB
+	build_path = /obj/item/bodypart/l_arm/robot/surplus
+	materials = list(/datum/material/iron=3000)
+	construction_time = 5 SECONDS
+	category = list("Misc", "Medical Designs")
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+
+/datum/design/prosthetic_r_arm
+	name = "Surplus Prosthetic Right Arm"
+	id = "prosthetic_r_arm"
+	build_type = PROTOLATHE | MECHFAB
+	build_path = /obj/item/bodypart/r_arm/robot/surplus
+	materials = list(/datum/material/iron=3000)
+	construction_time = 5 SECONDS
+	category = list("Misc", "Medical Designs")
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+
+/datum/design/prosthetic_l_leg
+	name = "Surplus Prosthetic Left Leg"
+	id = "prosthetic_l_leg"
+	build_type = PROTOLATHE | MECHFAB
+	build_path = /obj/item/bodypart/l_leg/robot/surplus
+	materials = list(/datum/material/iron=3000)
+	construction_time = 5 SECONDS
+	category = list("Misc", "Medical Designs")
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+
+/datum/design/prosthetic_r_leg
+	name = "Surplus Prosthetic Right Leg"
+	id = "prosthetic_r_leg"
+	build_type = PROTOLATHE | MECHFAB
+	build_path = /obj/item/bodypart/r_leg/robot/surplus
+	materials = list(/datum/material/iron=3000)
+	construction_time = 5 SECONDS
+	category = list("Misc", "Medical Designs")
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+
+/datum/design/prosthetic_l_arm/kepori
+	name = "Surplus Prosthetic Kepori Left Arm"
+	id = "kprosthetic_l_arm"
+	build_path = /obj/item/bodypart/l_arm/robot/surplus/kepori
+
+/datum/design/prosthetic_r_arm/kepori
+	name = "Surplus Prosthetic Kepori Right Arm"
+	id = "kprosthetic_r_arm"
+	build_path = /obj/item/bodypart/r_arm/robot/surplus/kepori
+
+/datum/design/prosthetic_l_leg/kepori
+	name = "Surplus Prosthetic Kepori Left Leg"
+	id = "kprosthetic_l_leg"
+	build_path = /obj/item/bodypart/l_leg/robot/surplus/kepori
+
+/datum/design/prosthetic_r_leg/kepori
+	name = "Surplus Prosthetic Kepori Right Leg"
+	id = "kprosthetic_r_leg"
+	build_path = /obj/item/bodypart/r_leg/robot/surplus/kepori
+
+/datum/design/prosthetic_l_arm/vox
+	name = "Surplus Prosthetic Vox Left Arm"
+	id = "vprosthetic_l_arm"
+	build_path = /obj/item/bodypart/l_arm/robot/surplus/vox
+
+/datum/design/prosthetic_r_arm/vox
+	name = "Surplus Prosthetic Vox Right Arm"
+	id = "vprosthetic_r_arm"
+	build_path = /obj/item/bodypart/r_arm/robot/surplus/vox
+
+/datum/design/prosthetic_l_leg/vox
+	name = "Surplus Prosthetic Vox Left Leg"
+	id = "vprosthetic_l_leg"
+	build_path = /obj/item/bodypart/l_leg/robot/surplus/vox
+
+/datum/design/prosthetic_r_leg/vox
+	name = "Surplus Prosthetic Vox Right Leg"
+	id = "vprosthetic_r_leg"
+	build_path = /obj/item/bodypart/r_leg/robot/surplus/vox
+
 //Ripley
 /datum/design/ripley_chassis
 	name = "Exosuit Chassis (APLU \"Ripley\")"
@@ -476,11 +557,29 @@
 	category = list("Phazon")
 
 //Exosuit Equipment
+/datum/design/cmm_ripley_upgrade
+	name = "Ripley MK-I to MK-IV conversion kit"
+	id = "cmm_ripley_upgrade"
+	build_type = AUTOLATHE
+	build_path = /obj/item/mecha_parts/mecha_equipment/conversion_kit/ripley/cmm
+	materials = list(/datum/material/iron=10000,/datum/material/plasma=10000)
+	construction_time = 100
+	category = list("Exosuit Equipment")
+
+/datum/design/cmm_durand_upgrade
+	name = "Durand to Paladin conversion kit"
+	id = "cmm_durand_upgrade"
+	build_type = AUTOLATHE
+	build_path = /obj/item/mecha_parts/mecha_equipment/conversion_kit/paladin
+	materials = list(/datum/material/iron=10000,/datum/material/plasma=10000)
+	construction_time = 100
+	category = list("Exosuit Equipment")
+
 /datum/design/ripleyupgrade
 	name = "Ripley MK-1 to MK-II conversion kit"
 	id = "ripleyupgrade"
 	build_type = MECHFAB
-	build_path = /obj/item/mecha_parts/mecha_equipment/ripleyupgrade
+	build_path = /obj/item/mecha_parts/mecha_equipment/conversion_kit/ripley
 	materials = list(/datum/material/iron=10000,/datum/material/plasma=10000)
 	construction_time = 100
 	category = list("Exosuit Equipment")
@@ -863,3 +962,13 @@
 	materials = list(/datum/material/iron = 2000, /datum/material/glass = 1000)
 	construction_time = 100
 	category = list("IPC Components")
+
+/datum/design/maint_drone
+	name = "Maintenance Drone"
+	desc = "\"Repairs the ship without bothering you!\" is what the marketing says."
+	id = "maint_drone"
+	build_type = MECHFAB
+	materials = list(/datum/material/iron = 800, /datum/material/glass = 350)
+	construction_time = 150
+	build_path = /obj/effect/mob_spawn/drone
+	category = list("Misc")

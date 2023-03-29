@@ -4,24 +4,25 @@
 /area/template_noop)
 "c" = (
 /obj/structure/flora/tree/jungle,
-/turf/open/floor/plating/dirt/jungle,
+/turf/open/floor/plating/dirt/jungle/lit,
 /area/ruin/unpowered)
 "e" = (
 /obj/structure/spider/stickyweb,
 /obj/item/reagent_containers/food/snacks/spidereggs,
-/turf/open/floor/plating/dirt/jungle,
+/turf/open/floor/plating/dirt/jungle/lit,
 /area/ruin/unpowered)
 "f" = (
 /obj/structure/spider/stickyweb,
-/turf/open/floor/plating/dirt/jungle,
+/turf/open/floor/plating/dirt/jungle/lit,
 /area/ruin/unpowered)
 "g" = (
-/mob/living/simple_animal/hostile/poison/giant_spider/tarantula,
-/turf/open/floor/plating/dirt/jungle,
+/obj/structure/spider/stickyweb,
+/obj/machinery/door/airlock/research,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/ruin/unpowered)
 "i" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating/dirt/jungle,
+/turf/open/floor/plating/dirt/jungle/lit,
 /area/ruin/unpowered)
 "j" = (
 /obj/effect/decal/cleanable/glass,
@@ -38,36 +39,37 @@
 /area/ruin/unpowered)
 "l" = (
 /obj/structure/spider/spiderling,
-/turf/open/floor/plating/dirt/jungle/dark,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/ruin/unpowered)
 "m" = (
 /mob/living/simple_animal/hostile/poison/giant_spider/nurse,
-/turf/open/floor/plating/dirt/jungle,
+/turf/open/floor/plating/dirt/jungle/lit,
 /area/ruin/unpowered)
 "o" = (
 /obj/structure/spider/stickyweb,
-/turf/open/floor/plating/dirt/jungle/dark,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/ruin/unpowered)
 "q" = (
 /obj/effect/decal/cleanable/glass,
 /obj/structure/barricade/wooden,
 /obj/structure/grille/broken,
-/turf/open/floor/plating/dirt/jungle,
+/turf/open/floor/plating/dirt/jungle/lit,
 /area/ruin/unpowered)
 "r" = (
-/turf/open/floor/plating/dirt/jungle,
+/turf/open/floor/plating/dirt/jungle/lit,
 /area/ruin/unpowered)
 "s" = (
+/obj/item/paper/guides/jobs/medical/cloning,
 /turf/open/floor/plating,
 /area/ruin/unpowered)
 "t" = (
 /obj/structure/spider/spiderling,
-/turf/open/floor/plating/dirt/jungle,
+/turf/open/floor/plating/dirt/jungle/lit,
 /area/ruin/unpowered)
 "u" = (
 /obj/structure/spider/stickyweb,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating/dirt/jungle,
+/turf/open/floor/plating/dirt/jungle/lit,
 /area/ruin/unpowered)
 "v" = (
 /obj/structure/spider/spiderling,
@@ -75,7 +77,9 @@
 /obj/item/pda/geneticist,
 /obj/effect/decal/cleanable/blood,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating/dirt/jungle,
+/obj/item/circuitboard/machine/dnascanner,
+/obj/item/circuitboard/computer/cloning,
+/turf/open/floor/plating/dirt/jungle/lit,
 /area/ruin/unpowered)
 "w" = (
 /obj/machinery/clonepod,
@@ -83,18 +87,20 @@
 /area/ruin/unpowered)
 "x" = (
 /obj/effect/decal/cleanable/insectguts,
+/obj/machinery/door/airlock/research,
 /turf/open/floor/plating,
 /area/ruin/unpowered)
 "y" = (
-/turf/open/floor/plating/dirt/jungle/dark,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/ruin/unpowered)
 "A" = (
 /obj/structure/closet/wardrobe/genetics_white,
+/obj/item/storage/firstaid/toxin,
 /turf/open/floor/plating,
 /area/ruin/unpowered)
 "C" = (
 /obj/item/storage/belt/security/webbing,
-/turf/open/floor/plating/dirt/jungle/dark,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/ruin/unpowered)
 "D" = (
 /obj/effect/decal/cleanable/ash/large,
@@ -103,11 +109,16 @@
 "G" = (
 /obj/structure/spider/spiderling,
 /obj/structure/spider/cocoon,
+/obj/item/research_notes/loot/medium,
 /turf/open/floor/plating,
 /area/ruin/unpowered)
 "I" = (
 /obj/structure/spider/stickyweb,
 /obj/item/organ/heart/gland/spiderman,
+/obj/structure/closet/crate/freezer,
+/obj/item/reagent_containers/food/snacks/spiderlollipop,
+/obj/item/reagent_containers/food/snacks/spiderlollipop,
+/obj/item/reagent_containers/food/snacks/spiderlollipop,
 /turf/open/floor/plating,
 /area/ruin/unpowered)
 "K" = (
@@ -118,22 +129,22 @@
 /obj/structure/barricade/wooden,
 /obj/structure/grille/broken,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating/dirt/jungle,
+/turf/open/floor/plating/dirt/jungle/lit,
 /area/ruin/unpowered)
 "M" = (
 /obj/structure/spider/spiderling,
 /obj/effect/decal/cleanable/insectguts,
-/turf/open/floor/plating/dirt/jungle,
+/turf/open/floor/plating/dirt/jungle/lit,
 /area/ruin/unpowered)
 "N" = (
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /mob/living/simple_animal/hostile/poison/giant_spider/nurse,
-/turf/open/floor/plating/dirt/jungle/dark,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/ruin/unpowered)
 "O" = (
 /obj/item/melee/flyswatter,
 /obj/item/reagent_containers/spray/pestspray,
-/turf/open/floor/plating/dirt/jungle,
+/turf/open/floor/plating/dirt/jungle/lit,
 /area/ruin/unpowered)
 "P" = (
 /obj/effect/decal/cleanable/glass,
@@ -155,17 +166,17 @@
 "U" = (
 /obj/structure/spider/stickyweb,
 /obj/effect/decal/cleanable/insectguts,
-/turf/open/floor/plating/dirt/jungle/dark,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/ruin/unpowered)
 "V" = (
 /obj/effect/decal/cleanable/insectguts,
-/turf/open/floor/plating/dirt/jungle,
+/turf/open/floor/plating/dirt/jungle/lit,
 /area/ruin/unpowered)
 "W" = (
 /obj/item/flamethrower,
 /obj/item/tank/internals/plasma/full,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating/dirt/jungle/dark,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/ruin/unpowered)
 "X" = (
 /obj/effect/decal/cleanable/cobweb,
@@ -215,7 +226,7 @@ U
 l
 W
 w
-o
+g
 o
 f
 t
@@ -239,7 +250,7 @@ D
 G
 j
 i
-g
+r
 a
 "}
 (7,1,1) = {"

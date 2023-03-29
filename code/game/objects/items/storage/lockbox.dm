@@ -3,7 +3,7 @@
 	desc = "A locked box."
 	icon_state = "lockbox+l"
 	item_state = "syringe_kit"
-	icon = 'whitesands/icons/obj/storage.dmi' //WS edit - better briefcases
+	icon = 'icons/obj/storage.dmi' //WS edit - better briefcases
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	w_class = WEIGHT_CLASS_BULKY
@@ -21,6 +21,7 @@
 	STR.max_combined_w_class = 14
 	STR.max_items = 4
 	STR.locked = TRUE
+	STR.use_sound = 'sound/items/storage/briefcase.ogg'
 
 /obj/item/storage/lockbox/attackby(obj/item/W, mob/user, params)
 	var/locked = SEND_SIGNAL(src, COMSIG_IS_STORAGE_LOCKED)

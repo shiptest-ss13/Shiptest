@@ -5,6 +5,16 @@
 "b" = (
 /turf/open/floor/wood,
 /area/ruin/unpowered)
+"c" = (
+/obj/structure/closet/crate/coffin,
+/obj/item/clothing/head/hooded/cloakhood/bone,
+/turf/open/floor/plating/grass/jungle/lit,
+/area/ruin/unpowered)
+"d" = (
+/obj/structure/closet/crate/coffin,
+/obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/skeleton,
+/turf/open/floor/plating/grass/jungle/lit,
+/area/ruin/unpowered)
 "e" = (
 /obj/structure/table/wood,
 /obj/item/stack/sheet/mineral/wood,
@@ -20,11 +30,15 @@
 /obj/structure/mineral_door/wood,
 /obj/item/grown/bananapeel,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/dirt/jungle/dark,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/ruin/unpowered)
 "h" = (
-/turf/open/floor/plating/grass/jungle,
-/area/mine/unexplored)
+/turf/open/floor/plating/grass/jungle/lit,
+/area/ruin/unpowered)
+"i" = (
+/obj/structure/closet/crate/coffin,
+/turf/open/floor/plating/grass/jungle/lit,
+/area/ruin/unpowered)
 "j" = (
 /obj/structure/table/wood,
 /obj/item/storage/toolbox/mechanical{
@@ -40,6 +54,11 @@
 "l" = (
 /turf/closed/wall/mineral/wood,
 /area/ruin/unpowered)
+"m" = (
+/obj/structure/closet/crate/coffin,
+/obj/effect/mob_spawn/human/corpse/charredskeleton,
+/turf/open/floor/plating/grass/jungle/lit,
+/area/ruin/unpowered)
 "n" = (
 /obj/structure/table/wood,
 /obj/item/flashlight/lamp/bananalamp,
@@ -47,23 +66,24 @@
 /area/ruin/unpowered)
 "q" = (
 /obj/structure/closet/crate/coffin,
-/turf/open/floor/plating/dirt/jungle/dark,
-/area/mine/unexplored)
+/obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/skeleton,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
+/area/ruin/unpowered)
 "r" = (
 /obj/structure/flora/junglebush/c,
-/turf/open/floor/plating/grass/jungle,
-/area/mine/unexplored)
+/turf/open/floor/plating/grass/jungle/lit,
+/area/ruin/unpowered)
 "s" = (
 /obj/structure/sink/puddle,
-/turf/open/floor/plating/grass/jungle,
-/area/mine/unexplored)
+/turf/open/floor/plating/grass/jungle/lit,
+/area/ruin/unpowered)
 "u" = (
 /obj/structure/closet/crate/coffin,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
 /area/ruin/unpowered)
 "v" = (
-/turf/open/floor/plating/dirt/jungle/dark,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/ruin/unpowered)
 "w" = (
 /obj/structure/closet/crate/coffin,
@@ -78,8 +98,8 @@
 /area/ruin/unpowered)
 "y" = (
 /obj/structure/flora/junglebush/b,
-/turf/open/floor/plating/grass/jungle,
-/area/mine/unexplored)
+/turf/open/floor/plating/grass/jungle/lit,
+/area/ruin/unpowered)
 "z" = (
 /obj/structure/closet/cabinet,
 /obj/item/clothing/head/pirate{
@@ -97,17 +117,34 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
 /area/ruin/unpowered)
+"B" = (
+/obj/structure/closet/crate/coffin,
+/obj/item/stack/sheet/bone,
+/obj/item/stack/sheet/bone,
+/obj/item/stack/sheet/bone,
+/turf/open/floor/plating/grass/jungle/lit,
+/area/ruin/unpowered)
+"C" = (
+/obj/structure/closet/crate/coffin,
+/obj/item/stack/sheet/bone,
+/turf/open/floor/plating/grass/jungle/lit,
+/area/ruin/unpowered)
 "E" = (
-/turf/open/floor/plating/dirt/jungle/dark,
-/area/mine/unexplored)
+/obj/structure/closet/crate/coffin,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/reagent_containers/food/snacks/sugarcookie/spookycoffin,
+/obj/item/reagent_containers/food/snacks/sugarcookie/spookycoffin,
+/obj/item/reagent_containers/food/snacks/sugarcookie/spookycoffin,
+/turf/open/floor/wood,
+/area/ruin/unpowered)
 "F" = (
 /obj/item/reagent_containers/food/snacks/grown/banana,
-/turf/open/floor/plating/dirt/jungle/dark,
-/area/mine/unexplored)
+/turf/open/floor/plating/dirt/jungle/dark/lit,
+/area/ruin/unpowered)
 "G" = (
 /obj/machinery/hydroponics/soil,
-/turf/open/floor/plating/dirt/jungle/dark,
-/area/mine/unexplored)
+/turf/open/floor/plating/dirt/jungle/dark/lit,
+/area/ruin/unpowered)
 "H" = (
 /obj/structure/closet/crate/coffin,
 /obj/effect/decal/cleanable/dirt,
@@ -117,6 +154,7 @@
 /obj/item/reagent_containers/food/drinks/beer{
 	pixel_x = -6
 	},
+/obj/item/reagent_containers/food/snacks/sugarcookie/spookycoffin,
 /turf/open/floor/wood,
 /area/ruin/unpowered)
 "I" = (
@@ -147,16 +185,34 @@
 "K" = (
 /obj/structure/closet/crate/coffin,
 /obj/item/reagent_containers/food/snacks/monkeycube,
-/turf/open/floor/plating/dirt/jungle/dark,
-/area/mine/unexplored)
+/turf/open/floor/plating/dirt/jungle/dark/lit,
+/area/ruin/unpowered)
 "L" = (
 /obj/structure/mineral_door/wood,
 /turf/open/floor/wood,
 /area/ruin/unpowered)
 "M" = (
 /obj/structure/closet/crate/coffin,
-/turf/open/floor/plating/grass/jungle,
-/area/mine/unexplored)
+/obj/item/stack/sheet/bone,
+/obj/item/stack/sheet/bone,
+/turf/open/floor/plating/grass/jungle/lit,
+/area/ruin/unpowered)
+"N" = (
+/obj/structure/closet/crate/coffin,
+/obj/item/melee/baseball_bat/bone,
+/turf/open/floor/plating/grass/jungle/lit,
+/area/ruin/unpowered)
+"P" = (
+/obj/structure/closet/crate/coffin,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/clothing/suit/hooded/cloak/bone,
+/turf/open/floor/wood,
+/area/ruin/unpowered)
+"Q" = (
+/obj/structure/closet/crate/coffin,
+/obj/effect/decal/remains/human,
+/turf/open/floor/plating/grass/jungle/lit,
+/area/ruin/unpowered)
 "R" = (
 /obj/structure/bed/dogbed{
 	name = "Palmo's bed"
@@ -178,12 +234,14 @@
 /area/ruin/unpowered)
 "T" = (
 /obj/structure/flora/grass/jungle,
-/turf/open/floor/plating/grass/jungle,
-/area/mine/unexplored)
+/turf/open/floor/plating/grass/jungle/lit,
+/area/ruin/unpowered)
 "U" = (
 /obj/structure/bed,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/mob_spawn/human/corpse/pirate,
+/obj/effect/mob_spawn/human/corpse/pirate{
+	desc = "It looks like they died of a heart attack in their sleep."
+	},
 /turf/open/floor/wood,
 /area/ruin/unpowered)
 "V" = (
@@ -192,6 +250,11 @@
 	name = "Palmo"
 	},
 /turf/open/floor/wood,
+/area/ruin/unpowered)
+"W" = (
+/obj/structure/closet/crate/coffin,
+/obj/item/reagent_containers/food/snacks/sugarcookie/spookyskull,
+/turf/open/floor/plating/grass/jungle/lit,
 /area/ruin/unpowered)
 "Y" = (
 /obj/structure/closet/crate/coffin,
@@ -203,29 +266,29 @@
 /area/ruin/unpowered)
 "Z" = (
 /obj/structure/flora/junglebush,
-/turf/open/floor/plating/grass/jungle,
-/area/mine/unexplored)
+/turf/open/floor/plating/grass/jungle/lit,
+/area/ruin/unpowered)
 
 (1,1,1) = {"
 a
 a
-E
-E
-E
-E
-E
+v
+v
+v
+v
+v
 y
 a
 a
-M
+d
 h
 h
-M
+i
 a
 "}
 (2,1,1) = {"
 a
-E
+v
 v
 l
 l
@@ -237,12 +300,12 @@ h
 h
 h
 Z
-M
+Q
 a
 "}
 (3,1,1) = {"
 a
-E
+v
 l
 l
 U
@@ -251,7 +314,7 @@ l
 l
 M
 h
-M
+i
 h
 h
 h
@@ -259,19 +322,19 @@ a
 "}
 (4,1,1) = {"
 a
-E
+v
 l
 z
 b
 b
 R
 l
-M
+C
 h
-M
+N
 h
 h
-M
+i
 h
 "}
 (5,1,1) = {"
@@ -281,15 +344,15 @@ l
 H
 b
 A
-u
+P
 l
-M
+c
 h
 h
 a
 a
 h
-M
+i
 "}
 (6,1,1) = {"
 a
@@ -311,14 +374,14 @@ a
 (7,1,1) = {"
 a
 l
-u
+E
 x
 b
 A
 b
 w
 l
-M
+W
 a
 a
 a
@@ -369,10 +432,10 @@ b
 b
 Y
 l
-M
+m
 T
 h
-E
+v
 G
 h
 "}
@@ -388,9 +451,9 @@ l
 l
 h
 G
-E
+v
 G
-E
+v
 T
 "}
 (12,1,1) = {"
@@ -403,7 +466,7 @@ u
 l
 l
 a
-M
+B
 G
 F
 G
@@ -420,10 +483,10 @@ l
 l
 a
 a
-M
-M
+i
+C
 G
-E
+v
 h
 r
 "}
