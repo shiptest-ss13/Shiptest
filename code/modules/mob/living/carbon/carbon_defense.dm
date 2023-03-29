@@ -412,7 +412,7 @@
 		if(istype(M.dna.species, /datum/species/moth)) //WS edit - moth dust from hugging
 			mothdust += 5;
 		if(istype(dna.species, /datum/species/moth))
-			M.mothdust += 5; // End WS edit
+			M.dust(); // End WS edit
 
 		if(HAS_TRAIT(src, TRAIT_BADTOUCH))
 			to_chat(M, "<span class='warning'>[src] looks visibly upset as you pat [p_them()] on the head.</span>")
@@ -425,7 +425,7 @@
 		if(istype(M.dna.species, /datum/species/moth)) //WS edit - moth dust from hugging
 			mothdust += 15;
 		if(istype(dna.species, /datum/species/moth))
-			M.mothdust += 15; // End WS edit
+			M.dust(); // End WS edit
 
 		// Warm them up with hugs
 		share_bodytemperature(M)
