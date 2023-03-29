@@ -69,7 +69,7 @@
 
 /datum/emote/living/carbon/mothchitter/get_sound(mob/living/user)
 	var/mob/living/carbon/human/H = user
-	if(ismoth(H) || (istype(user, /mob/living/simple_animal/pet/mothroach)))
+	if(ismoth(H) | (istype(H, /mob/living/simple_animal/pet/mothroach)))
 		return 'sound/voice/moth/mothchitter.ogg'
 
 /datum/emote/living/chuckle
@@ -268,17 +268,17 @@
 		return !C.silent
 
 /datum/emote/living/laugh/get_sound(mob/living/user)
-    if(!ishuman(user))
-        return
-    var/mob/living/carbon/human/H = user
-    var/human_laugh = ishumanbasic(H)
-    if(human_laugh && (!H.mind || !H.mind.miming))
-        if(user.gender == FEMALE)
-            return 'sound/voice/human/womanlaugh.ogg'
-        else
-            return pick('sound/voice/human/manlaugh1.ogg', 'sound/voice/human/manlaugh2.ogg')
-    if(ismoth(H))
-        return 'sound/voice/moth/mothlaugh.ogg'
+	if(!ishuman(user))
+		return
+	var/mob/living/carbon/human/H = user
+	var/human_laugh = ishumanbasic(H)
+	if(human_laugh && (!H.mind || !H.mind.miming))
+		if(user.gender == FEMALE)
+			return 'sound/voice/human/womanlaugh.ogg'
+		else
+			return pick('sound/voice/human/manlaugh1.ogg', 'sound/voice/human/manlaugh2.ogg')
+	if(ismoth(H))
+		return 'sound/voice/moth/mothlaugh.ogg'
 
 /datum/emote/living/look
 	key = "look"
@@ -301,7 +301,7 @@
 
 /datum/emote/living/carbon/mothsqueak/get_sound(mob/living/user)
 	var/mob/living/carbon/human/H = user
-	if(ismoth(H) || (istype(user, /mob/living/simple_animal/pet/mothroach)))
+	if(ismoth(H) | (istype(H, /mob/living/simple_animal/pet/mothroach)))
 		return 'sound/voice/moth/mothsqueak.ogg'
 
 /datum/emote/living/point

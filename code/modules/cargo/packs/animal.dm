@@ -153,12 +153,12 @@
 	name = "Mothroach Crate"
 	desc = "Contains three mothroaches, for all your mothroach needs."
 	cost = 1000
-	contains = list(/mob/living/simple_animal/pet/mothroach,
-					/mob/living/simple_animal/pet/mothroach,
-					/mob/living/simple_animal/pet/mothroach)
+	contains = list(/mob/living/simple_animal/pet/mothroach)
 	crate_name = "mot containment box"
 
 /datum/supply_pack/animal/mothroach/generate()
 	. = ..()
+	for(var/i in 1 to 2)
+		new /mob/living/simple_animal/pet/mothroach(.)
 	if(prob(1))
 		new/mob/living/carbon/human/species/moth(.) // mixup at the moth factory
