@@ -534,11 +534,11 @@
 	name = "Bridge Lockdown";
 	pixel_y = -5
 	},
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "lJ" = (
@@ -1005,10 +1005,10 @@
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "wm" = (
-/obj/machinery/holopad,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/holopad/emergency/kitchen,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/bridge)
 "wn" = (
@@ -1118,7 +1118,7 @@
 	dir = 1
 	},
 /mob/living/simple_animal/chicken{
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0);
+	atmos_requirements = list("min_oxy"=0,"max_oxy"=0,"min_tox"=0,"max_tox"=0,"min_co2"=0,"max_co2"=0,"min_n2"=0,"max_n2"=0);
 	desc = "A regular chicken, nothing weird about this one .";
 	name = "Cluckens"
 	},
@@ -1532,7 +1532,11 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/box,
-/obj/machinery/vending/hydroseeds,
+/obj/structure/closet/crate/hydroponics,
+/obj/item/seeds/wheat,
+/obj/item/seeds/tomato,
+/obj/item/seeds/random,
+/obj/item/seeds/banana,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/hydroponics)
 "Ex" = (
@@ -1733,7 +1737,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/holopad,
+/obj/machinery/holopad/emergency/botany,
 /turf/open/floor/plasteel,
 /area/ship/crew/hydroponics)
 "In" = (
