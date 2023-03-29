@@ -1276,6 +1276,10 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/computer/cryopod{
+	dir = 1;
+	pixel_y = -24
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew)
 "qp" = (
@@ -2148,10 +2152,6 @@
 /area/ship/maintenance/central)
 "FH" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/machinery/computer/cryopod{
-	dir = 4;
-	pixel_x = -24
-	},
 /obj/structure/curtain/cloth/grey,
 /obj/structure/bed,
 /obj/item/bedsheet/blue,
