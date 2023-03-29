@@ -385,9 +385,6 @@
 /turf/open/floor/plating/airless,
 /area/ship/external)
 "em" = (
-/obj/machinery/power/grounding_rod{
-	anchored = 1
-	},
 /turf/open/floor/plating/airless,
 /area/ship/bridge)
 "eF" = (
@@ -648,7 +645,13 @@
 	name = "Bathroom";
 	id_tag = "nodedoor"
 	},
-/turf/open/space/basic,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech,
 /area/ship/crew)
 "iu" = (
 /obj/structure/table,
@@ -820,6 +823,9 @@
 	dir = 1;
 	pixel_y = -28
 	},
+/obj/effect/turf_decal/spline/fancy/opaque/black/corner{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "kd" = (
@@ -892,6 +898,9 @@
 "lf" = (
 /obj/machinery/light/small{
 	dir = 4
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
@@ -1267,7 +1276,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/crew)
 "qp" = (
 /obj/effect/turf_decal/spline/fancy/opaque/black,
@@ -1476,7 +1485,9 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
-/obj/structure/closet/secure_closet/engineering_welding,
+/obj/structure/closet/secure_closet/engineering_welding{
+	req_access = null
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "tO" = (
@@ -1649,7 +1660,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/hatch,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/tech,
 /area/ship/crew)
 "xW" = (
 /obj/structure/cable{
@@ -1929,6 +1940,9 @@
 /obj/item/radio/intercom{
 	pixel_y = 24
 	},
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "Ck" = (
@@ -1939,6 +1953,12 @@
 /obj/effect/turf_decal/box/red,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external)
+"Cv" = (
+/obj/machinery/power/grounding_rod{
+	anchored = 1
+	},
+/turf/open/floor/plating/airless,
+/area/ship/crew)
 "Cy" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -2107,6 +2127,12 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ship/external)
+"Fo" = (
+/obj/machinery/power/grounding_rod{
+	anchored = 1
+	},
+/turf/open/floor/plating/airless,
+/area/ship/security/armory)
 "FE" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -2128,7 +2154,8 @@
 	},
 /obj/structure/curtain/cloth/grey,
 /obj/structure/bed,
-/turf/open/floor/plasteel/dark,
+/obj/item/bedsheet/blue,
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/crew)
 "FO" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -2442,6 +2469,9 @@
 	dir = 8
 	},
 /obj/machinery/light/small,
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "Lo" = (
@@ -2512,7 +2542,8 @@
 /obj/structure/curtain/cloth/grey,
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/bed,
-/turf/open/floor/plasteel/dark,
+/obj/item/bedsheet/blue,
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/crew)
 "LY" = (
 /obj/structure/cable{
@@ -2691,6 +2722,9 @@
 	},
 /obj/machinery/light/small{
 	dir = 4
+	},
+/obj/machinery/power/grounding_rod{
+	anchored = 1
 	},
 /turf/open/floor/plating/airless,
 /area/ship/bridge)
@@ -3028,7 +3062,9 @@
 /obj/structure/railing/corner{
 	layer = 3.1
 	},
-/obj/structure/closet/secure_closet/engineering_electrical,
+/obj/structure/closet/secure_closet/engineering_electrical{
+	req_access = null
+	},
 /obj/effect/turf_decal/spline/fancy/opaque/black/corner,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -4167,13 +4203,13 @@ qc
 MO
 Kc
 by
-Kc
+Fo
 by
 oJ
 em
 oJ
 by
-pm
+Cv
 by
 pm
 MO
