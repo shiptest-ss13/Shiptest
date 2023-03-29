@@ -21,7 +21,7 @@
 /obj/item/mod/paint/examine(mob/user)
 	. = ..()
 	. += span_notice("<b>Left-click</b> a MODsuit to change skin.")
-	. += span_notice("<b>Right-click</b> a MODsuit to recolor.")
+	//. += span_notice("<b>Right-click</b> a MODsuit to recolor.")
 
 /obj/item/mod/paint/pre_attack(atom/attacked_atom, mob/living/user, params)
 	if(!istype(attacked_atom, /obj/item/mod/control))
