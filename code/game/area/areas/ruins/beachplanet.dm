@@ -45,6 +45,19 @@
 	name = "Syndicate Shuttle"
 	icon_state = "green"
 
+//Pirate Scrap Village
+
+/area/ruin/beach/piratecrash
+	name = "Fishing Hut"
+	icon_state = "hallC"
+
+/area/ruin/beach/piratecrash/shuttle
+	name = "Crashed Shuttle"
+	icon_state = "red"
+
+/area/ruin/beach/piratecrash/storage
+	name = "Scrap Hut"
+
 //beach_crashed_starwalker
 
 /area/ruin/beach/starwalker

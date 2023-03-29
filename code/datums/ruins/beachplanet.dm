@@ -35,6 +35,12 @@
 	description = "A fresh town on a lovely coast, where its inhabitants are is unknown."
 	suffix = "beach_ocean_town.dmm"
 
+/datum/map_template/ruin/beachplanet/scrapvillage
+	name = "Pirate Village"
+	id = "beach_pirate"
+	description = "A small pirate outpost formed from the remains of a wrecked shuttle."
+	suffix = "beach_pirate_crash.dmm"
+
 /datum/map_template/ruin/beachplanet/fallenstar
 	name = "Crashed Starwalker"
 	id = "crashed_star"
@@ -58,4 +64,3 @@
 	id = "beach_crashed_engineer"
 	description = "An abandoned camp built by a crashed engineer"
 	suffix = "beach_crashed_engineer.dmm"
-  
