@@ -50,6 +50,7 @@
 	if(active)
 		force = force_on
 		throwforce = throwforce_on
+		swing_type = SWINGABLE_SWING
 		hitsound = hitsound_on
 		throw_speed = 4
 		if(attack_verb_on.len)
@@ -61,6 +62,7 @@
 	else
 		force = initial(force)
 		throwforce = initial(throwforce)
+		swing_type = null
 		hitsound = initial(hitsound)
 		throw_speed = initial(throw_speed)
 		if(attack_verb_off.len)

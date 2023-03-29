@@ -129,7 +129,7 @@
 	icon = 'icons/obj/items_cyborg.dmi'
 	attack_verb = list("uppercut", "sucker-punched", "hammered", "pummeled", "jabbed")
 
-/obj/item/pickaxe/drill/jackhammer/brigador/melee_attack_chain(mob/user, atom/target, params)
+/obj/item/pickaxe/drill/jackhammer/brigador/melee_attack_chain(mob/user, atom/target, params, modifier = 1)
 	..()
 	user.changeNext_move(CLICK_CD_MELEE * 0.7)
 

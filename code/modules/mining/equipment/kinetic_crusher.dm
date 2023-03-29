@@ -742,7 +742,7 @@
 	AddComponent(/datum/component/butchering, 60, 110)
 	AddComponent(/datum/component/two_handed, force_unwielded=0, force_wielded=45)//big choppa!
 
-/obj/item/kinetic_crusher/old/melee_attack_chain(mob/user, atom/target, params)
+/obj/item/kinetic_crusher/old/melee_attack_chain(mob/user, atom/target, params, modifier = 1)
 	..()
 	user.changeNext_move(CLICK_CD_MELEE * 2.0)//...slow swinga.
 

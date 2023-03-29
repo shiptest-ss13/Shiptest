@@ -1,5 +1,6 @@
 /obj/item/melee
 	item_flags = NEEDS_PERMIT
+	swing_type = SWINGABLE_SWING
 
 /obj/item/melee/proc/check_martial_counter(mob/living/carbon/human/target, mob/living/carbon/human/user)
 	if(target.check_block())
@@ -20,6 +21,7 @@
 	slot_flags = ITEM_SLOT_BELT
 	force = 10
 	throwforce = 7
+	swing_type = SWINGABLE_FLAIL
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("flogged", "whipped", "lashed", "disciplined")
 	hitsound = 'sound/weapons/chainhit.ogg'
@@ -328,6 +330,7 @@
 	force = 0
 	on = FALSE
 	on_sound = 'sound/weapons/batonextend.ogg'
+	swing_type = FALSE
 
 	on_icon_state = "telebaton_1"
 	off_icon_state = "telebaton_0"
@@ -365,6 +368,7 @@
 		w_class = weight_class_on
 		force = force_on
 		attack_verb = list("smacked", "struck", "cracked", "beaten")
+		swing_type = SWINGABLE_SWING
 	else
 		to_chat(user, desc["local_off"])
 		icon_state = off_icon_state
@@ -373,6 +377,7 @@
 		w_class = WEIGHT_CLASS_SMALL
 		force = force_off
 		attack_verb = list("hit", "poked")
+		swing_type = FALSE
 
 	playsound(src.loc, on_sound, 50, TRUE)
 	add_fingerprint(user)
@@ -519,6 +524,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("flogged", "whipped", "lashed", "disciplined")
 	hitsound = 'sound/weapons/whip.ogg'
+	swing_type = SWINGABLE_FLAIL
 
 /obj/item/melee/curator_whip/afterattack(target, mob/user, proximity_flag)
 	. = ..()

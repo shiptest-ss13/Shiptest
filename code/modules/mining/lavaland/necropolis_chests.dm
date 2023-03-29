@@ -544,7 +544,7 @@
 	block_chance = 25//A pittance, but might be worth something in a scuffle
 	hitsound = 'sound/weapons/chainhit.ogg'
 
-/obj/item/gun/magic/hook/melee_attack_chain(mob/user, atom/target, params)
+/obj/item/gun/magic/hook/melee_attack_chain(mob/user, atom/target, params, modifier = 1)
 	..()
 	user.changeNext_move(CLICK_CD_MELEE * 0.5)//quick to swing. 15 force can be quite something with this attack frequency.
 
@@ -1271,7 +1271,7 @@
 		to_chat(user, "<span class='warning'>You accidentally cut yourself with [src], like a doofus!</span>")
 		user.take_bodypart_damage(10)
 
-/obj/item/melee/transforming/cleaving_saw/melee_attack_chain(mob/user, atom/target, params)
+/obj/item/melee/transforming/cleaving_saw/melee_attack_chain(mob/user, atom/target, params, modifier = 1)
 	..()
 	if(!active)
 		user.changeNext_move(CLICK_CD_MELEE * 0.5) //when closed, it attacks very rapidly

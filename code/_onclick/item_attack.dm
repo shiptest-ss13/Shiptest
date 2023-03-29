@@ -7,12 +7,12 @@
  * * [/atom/proc/attackby] on the target. If it returns TRUE, the chain will be stopped.
  * * [/obj/item/proc/afterattack]. The return value does not matter.
  */
-/obj/item/proc/melee_attack_chain(mob/user, atom/target, params)
+/obj/item/proc/melee_attack_chain(mob/user, atom/target, params, modifier = 1)
 	if(tool_behaviour && target.tool_act(user, src, tool_behaviour))
 		return
 	if(pre_attack(target, user, params))
 		return
-	if(target.attackby(src,user, params))
+	if(target.attackby(src,user, params, modifier))
 		return
 	if(QDELETED(src) || QDELETED(target))
 		attack_qdeleted(target, user, TRUE, params)
@@ -47,18 +47,19 @@
  * * obj/item/W - The item hitting this atom
  * * mob/user - The wielder of this item
  * * params - click params such as alt/shift etc
+ * * modifier - multiply damage done by this amount
  *
  * See: [/obj/item/proc/melee_attack_chain]
  */
-/atom/proc/attackby(obj/item/W, mob/user, params)
+/atom/proc/attackby(obj/item/W, mob/user, params, modifier = 1)
 	if(SEND_SIGNAL(src, COMSIG_PARENT_ATTACKBY, W, user, params) & COMPONENT_NO_AFTERATTACK)
 		return TRUE
 	return FALSE
 
-/obj/attackby(obj/item/I, mob/living/user, params)
+/obj/attackby(obj/item/I, mob/living/user, params, modifier = 1)
 	return ..() || ((obj_flags & CAN_BE_HIT) && I.attack_obj(src, user))
 
-/mob/living/attackby(obj/item/I, mob/living/user, params)
+/mob/living/attackby(obj/item/I, mob/living/user, params, modifier = 1)
 	if(..())
 		return TRUE
 	if(user.a_intent == INTENT_HELP || user.a_intent == INTENT_DISARM)
@@ -73,7 +74,7 @@
 		if(attempt_initiate_surgery(I, src, user))
 			return TRUE
 	user.changeNext_move(CLICK_CD_MELEE)
-	return I.attack(src, user)
+	return I.attack(src, user, modifier)
 
 /mob/living/attack_hand(mob/living/user)
 	if(..())
@@ -93,7 +94,7 @@
  * * mob/living/M - The mob being hit by this item
  * * mob/living/user - The mob hitting with this item
  */
-/obj/item/proc/attack(mob/living/M, mob/living/user)
+/obj/item/proc/attack(mob/living/M, mob/living/user, modifier = 1)
 	if(SEND_SIGNAL(src, COMSIG_ITEM_ATTACK, M, user) & COMPONENT_ITEM_NO_ATTACK)
 		return
 	SEND_SIGNAL(user, COMSIG_MOB_ITEM_ATTACK, M, user)
@@ -121,7 +122,7 @@
 		user.client.give_award(/datum/award/achievement/misc/selfouch, user)
 
 	user.do_attack_animation(M)
-	M.attacked_by(src, user)
+	M.attacked_by(src, user, modifier)
 
 	log_combat(user, M, "attacked", src.name, "(INTENT: [uppertext(user.a_intent)]) (DAMTYPE: [uppertext(damtype)])")
 	add_fingerprint(user)
@@ -149,11 +150,11 @@
 		log_combat(user, src, "attacked", I)
 	take_damage(I.force, I.damtype, "melee", 1)
 
-/mob/living/attacked_by(obj/item/I, mob/living/user)
+/mob/living/attacked_by(obj/item/I, mob/living/user, modifier = 1)
 	var/armor_value = run_armor_check(attack_flag = "melee", armour_penetration = I.armour_penetration)		//WS Edit - Simplemobs can have armor
 	send_item_attack_message(I, user)
 	if(I.force)
-		apply_damage(I.force, I.damtype, break_modifier = I.force, blocked = armor_value) //Bone break modifier = item force
+		apply_damage(I.force * modifier, I.damtype, break_modifier = I.force * modifier, blocked = armor_value) //Bone break modifier = item force
 		if(I.damtype == BRUTE)
 			if(prob(33))
 				I.add_mob_blood(src)
@@ -214,3 +215,78 @@
 		"<span class='userdanger'>[attack_message_local]</span>", null, COMBAT_MESSAGE_RANGE)
 	return 1
 
+/**
+  * Does a swing depending on the object's swing_type var.
+  * user - The mob swinging the object
+  */
+/obj/item/proc/swing_attack(mob/living/user, atom/thing_to_not_hit)
+	if(!COOLDOWN_FINISHED(user, swing_cooldown))
+		return
+
+	var/list/affected_turfs = list()
+	var/effect_type = /obj/effect/temp_visual/dir_setting/item_swing
+	var/swing_speed = 0.7 //seconds?
+	var/show_sweetspot = TRUE
+	switch(swing_type)
+		if(SWINGABLE_STAB)
+			effect_type = /obj/effect/temp_visual/dir_setting/item_swing/stab
+			swing_speed = 1
+			affected_turfs[get_step(src, user.dir)] = 1 //the tile in front of the user
+
+		if(SWINGABLE_SWING)
+			effect_type = null
+			show_sweetspot = FALSE
+			var/turf/cleave_effect_loc = get_step(get_turf(src), SOUTHWEST)
+			new /obj/effect/temp_visual/dir_setting/item_swing/big_swipe(cleave_effect_loc, user.dir)
+
+			for(var/ranged_turf in RANGE_TURFS(1, user))
+				if(get_dir(user, ranged_turf) & user.dir) //the three tiles in front of the user
+					affected_turfs[ranged_turf] = 0.75
+			if(user.dir & NORTHWEST) //makes it so you always swing the same way around
+				reverseRange(affected_turfs)
+
+		if(SWINGABLE_FLAIL)
+			for(var/ranged_turf in RANGE_TURFS(1, user))
+				var/turf_dir = get_dir(user, ranged_turf)
+				if(!(turf_dir & REVERSE_DIR(user.dir)) && ranged_turf != get_turf(user)) //all tiles around user that aren't the back three or the user's tile
+					if(turf_dir & user.dir)
+						affected_turfs[ranged_turf] = 0.5
+					else
+						affected_turfs[ranged_turf] = 0.25
+			if(user.dir & NORTHWEST) //makes it so you always swing the same way around
+				reverseRange(affected_turfs)
+
+		if(SWINGABLE_THRUST)
+			effect_type = /obj/effect/temp_visual/dir_setting/item_swing/stab
+			swing_speed = 0.5
+			var/turf/front_turf = get_step(user, user.dir) //the tile in front of the user and the one in front of that
+			if(isopenturf(front_turf))
+				affected_turfs[front_turf] = 0.5
+				affected_turfs[get_step(front_turf, user.dir)] = 1
+
+	COOLDOWN_START(user, swing_cooldown, SWING_COOLDOWN_TIME)
+	var/swing_num = 0
+	for(var/turf in affected_turfs)
+		var/turf/T = turf
+		T.swing_attack_act(user, src, effect_type, affected_turfs[turf], show_sweetspot, thing_to_not_hit, swing_speed * swing_num++)
+		playsound(src, swing_sfx, 25, TRUE, -1)
+
+/turf/proc/swing_attack_act(mob/living/user, obj/item/I, effect_type, damage_modifier = 1, show_sweetspot = TRUE, atom/thing_to_not_hit)
+//	if(user.CanReach(user, I, FALSE, 2)) //it doesnt work if this isnt commented out and im not sure if im too intrested in figuring out why it doesnt
+//		return // funny hitting through windows time
+	if(effect_type) // if we have an effect type show it, if not just ignore it
+		var/obj/effect/slash_effect = new effect_type(src)
+
+		if(!show_sweetspot) //turns the effect red IF it does 1x damage or more, if sweetspot is turned off it all shows as white
+			return
+
+		if(damage_modifier == 1) // if its actually the sweet spot
+			slash_effect.color = "red"
+
+	for(var/mob/M in contents)
+		if(M == user)
+			continue
+		if(M == thing_to_not_hit) // to prevent hitting  a person twice if clicked on
+			continue
+		I.melee_attack_chain(user, M, modifier = damage_modifier)
+		return TRUE

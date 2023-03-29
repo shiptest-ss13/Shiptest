@@ -186,6 +186,12 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 	var/canMouseDown = FALSE
 
+	///If the item can be swung to attack stuff
+	var/swing_type
+
+	/// What sound do we use when swinging?
+	var/swing_sfx = 'sound/weapons/punchmiss.ogg'
+
 /obj/item/Initialize()
 
 	if(attack_verb)

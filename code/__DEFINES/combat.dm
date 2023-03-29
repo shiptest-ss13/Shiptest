@@ -255,3 +255,10 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 	#define COMPONENT_AUTOFIRE_ONMOUSEDOWN_BYPASS (1<<0)
 #define COMSIG_AUTOFIRE_SHOT "autofire_shot"
 	#define COMPONENT_AUTOFIRE_SHOT_SUCCESS (1<<0)
+
+#define SWINGABLE_STAB			"stab"
+#define SWINGABLE_SWING			"swing"
+#define SWINGABLE_FLAIL			"flail"
+#define SWINGABLE_THRUST		"thrust"
+
+#define SWING_COOLDOWN_TIME		1 SECONDS

@@ -67,7 +67,7 @@
 	..()
 
 
-/mob/living/carbon/attacked_by(obj/item/I, mob/living/user)
+/mob/living/carbon/attacked_by(obj/item/I, mob/living/user, modifier = 1)
 	var/obj/item/bodypart/affecting
 	if(user == src)
 		affecting = get_bodypart(check_zone(user.zone_selected)) //we're self-mutilating! yay!
@@ -81,7 +81,7 @@
 	SEND_SIGNAL(I, COMSIG_ITEM_ATTACK_ZONE, src, user, affecting)
 	send_item_attack_message(I, user, parse_zone(affecting.body_zone))
 	if(I.force)
-		apply_damage(I.force, I.damtype, affecting)
+		apply_damage(I.force * modifier, I.damtype, affecting)
 		if(I.damtype == BRUTE && (IS_ORGANIC_LIMB(affecting)))
 			if(prob(33))
 				I.add_mob_blood(src)

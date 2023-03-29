@@ -10,6 +10,7 @@
 	throwforce = 12
 	throw_speed = 2
 	throw_range = 7
+	swing_type = SWINGABLE_SWING
 	w_class = WEIGHT_CLASS_BULKY
 	custom_materials = list(/datum/material/iron = 500)
 	attack_verb = list("robusted")

@@ -524,3 +524,19 @@
 
 /obj/effect/constructing_effect/proc/end()
 	qdel(src)
+
+/obj/effect/temp_visual/dir_setting/space_wind/Initialize(mapload, set_dir, set_alpha = 255)
+	. = ..()
+	alpha = set_alpha
+
+/obj/effect/temp_visual/dir_setting/item_swing
+	icon_state = "swing"
+	duration = 2.5
+
+/obj/effect/temp_visual/dir_setting/item_swing/stab
+	icon_state = "stab"
+
+/obj/effect/temp_visual/dir_setting/item_swing/big_swipe
+	icon = 'icons/effects/96x96.dmi'
+	icon_state = "big_slash"
+	duration = 0.3 SECONDS

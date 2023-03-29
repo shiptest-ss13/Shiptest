@@ -169,6 +169,8 @@
 
 	var/is_busy = FALSE //WS Edit - Curbstomping - Used for random actions that take time. ex: curbstomping. We need to make sure we can only do one of these at a time.
 
+	var/swing_cooldown //Time when user can swing again
+
 	/// List of changes to body temperature, used by desease symtoms like fever
 	var/list/body_temp_changes = list()
 
