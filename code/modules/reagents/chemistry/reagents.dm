@@ -74,6 +74,7 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 	var/process_flags = ORGANIC
 	///How good of an accelerant is this reagent
 	var/accelerant_quality = 0
+	addiction_threshold = 25
 
 /datum/reagent/New()
 	. = ..()
