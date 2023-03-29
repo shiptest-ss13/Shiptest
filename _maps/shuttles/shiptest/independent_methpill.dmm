@@ -1,0 +1,32 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/obj/machinery/cryopod{
+	dir = 4;
+	density = 0;
+	alpha = 0
+	},
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	dir = 8;
+	launch_status = 0
+	},
+/obj/effect/mine/explosive{
+	pixel_y = 8
+	},
+/obj/effect/mine/explosive{
+	pixel_x = 8
+	},
+/obj/effect/mine/explosive{
+	pixel_y = -8
+	},
+/obj/effect/mine/explosive{
+	pixel_x = -8
+	},
+/turf/open/floor/fakespace{
+	light_range = 2
+	},
+/area/ship/storage)
+
+(1,1,1) = {"
+a
+"}
