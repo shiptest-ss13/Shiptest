@@ -61,7 +61,6 @@
 	var/center = FALSE	//Should we center the sprite?
 	var/limbs_id // The limbs id supplied for full-body replacing features.
 	var/image_alpha = 255 // The alpha for the accessory to use.
-	var/metacoin_locked = FALSE // ZETA EDIT if it needs to be bought with metacoins to have it
 
 //////////////////////
 // Hair Definitions //

@@ -567,4 +567,6 @@
 
 //Zeta edit here
 /datum/config_entry/string/metacurrency_name
-	config_entry_value = "MetaCoin"
+	config_entry_value = "ZetaCoin"
+
+/datum/config_entry/flag/grant_metacurrency
