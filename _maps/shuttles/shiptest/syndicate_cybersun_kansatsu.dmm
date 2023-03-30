@@ -102,7 +102,7 @@
 /obj/item/storage/firstaid/regular,
 /obj/structure/closet/wall/white{
 	dir = 1;
-	pixel_y = -32;
+	pixel_y = -28;
 	name = "Medical Supplies"
 	},
 /turf/open/floor/plasteel/dark,
@@ -170,7 +170,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/on/layer2{
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2{
 	dir = 8
 	},
 /turf/open/floor/plating,
@@ -344,6 +344,7 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_y = -32
 	},
+/obj/machinery/light/small,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "im" = (
@@ -379,13 +380,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning{
-	dir = 8
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
-/turf/open/floor/plasteel/white,
+/turf/open/floor/plating,
 /area/ship/engineering)
 "iN" = (
 /obj/effect/turf_decal/industrial/stand_clear{
@@ -407,7 +402,6 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/light/small,
 /obj/effect/turf_decal/spline/fancy/transparent/grey,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
@@ -474,10 +468,11 @@
 /obj/item/stack/sheet/mineral/wood{
 	amount = 3
 	},
-/obj/item/stack/sheet/metal/ten,
-/obj/item/stack/sheet/metal/ten,
 /obj/item/stack/sheet/glass/five,
 /obj/item/stack/sheet/glass/five,
+/obj/item/stack/sheet/metal/twenty{
+	pixel_x = 4
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "kL" = (
@@ -561,8 +556,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "nu" = (
-/obj/structure/sign/departments/engineering,
-/turf/closed/wall/mineral/plastitanium,
+/turf/open/floor/plating,
 /area/ship/engineering)
 "nA" = (
 /obj/item/paper_bin,
@@ -572,6 +566,7 @@
 	},
 /obj/item/storage/box/rxglasses/spyglasskit,
 /obj/item/kitchen/knife/letter_opener,
+/obj/item/paper/crumpled,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office)
 "nF" = (
@@ -792,9 +787,9 @@
 	id = "scengine";
 	name = "Engine Blast Shutters";
 	dir = 8;
-	pixel_x = -8
+	pixel_x = 24
 	},
-/turf/closed/wall/mineral/plastitanium,
+/turf/open/floor/plating,
 /area/ship/engineering)
 "rR" = (
 /obj/structure/table,
@@ -820,6 +815,9 @@
 	},
 /obj/structure/sign/poster/contraband/smoke{
 	pixel_x = 32
+	},
+/obj/machinery/light/small{
+	dir = 1
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -1064,6 +1062,9 @@
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
@@ -1594,7 +1595,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/on/layer2{
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2{
 	dir = 8
 	},
 /turf/open/floor/plating,
@@ -1642,7 +1643,6 @@
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "Ql" = (
-/obj/effect/turf_decal/atmos/air,
 /obj/machinery/atmospherics/components/binary/pump/on/layer2{
 	dir = 8
 	},
@@ -1894,9 +1894,6 @@
 /obj/item/reagent_containers/pill/cyanide,
 /obj/item/reagent_containers/pill/cyanide,
 /obj/item/reagent_containers/pill/cyanide,
-/obj/item/paper/crumpled{
-	info = "Hand this stuff out to the field agents. They'll have a blast."
-	},
 /obj/item/clothing/mask/chameleon,
 /obj/item/card/id/syndicate/anyone,
 /obj/item/card/id/syndicate/anyone,
@@ -2012,12 +2009,6 @@
 "Zv" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
-	},
-/obj/machinery/light/small{
-	dir = 1
-	},
-/obj/effect/turf_decal/spline/fancy/transparent/grey{
-	dir = 1
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
