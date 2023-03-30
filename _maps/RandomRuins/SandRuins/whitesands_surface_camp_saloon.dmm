@@ -442,6 +442,7 @@
 "lI" = (
 /obj/structure/table/wood/poker,
 /obj/effect/spawner/lootdrop/gambling,
+/obj/item/spacecash/bundle/loadsamoney,
 /turf/open/floor/carpet,
 /area/ruin/whitesands/saloon)
 "lV" = (
@@ -624,10 +625,6 @@
 /area/ruin/whitesands/saloon)
 "rY" = (
 /obj/structure/table/wood,
-/obj/item/stack/spacecash/c500{
-	pixel_x = 3;
-	pixel_y = 3
-	},
 /obj/item/clothing/head/collectable/tophat{
 	pixel_y = 7
 	},
@@ -766,12 +763,6 @@
 /turf/open/floor/wood{
 	icon_state = "wood-broken7"
 	},
-/area/ruin/whitesands/saloon)
-"vP" = (
-/obj/structure/table/wood/poker,
-/obj/effect/spawner/lootdrop/gambling,
-/obj/item/stack/spacecash/c500,
-/turf/open/floor/carpet,
 /area/ruin/whitesands/saloon)
 "xr" = (
 /obj/effect/turf_decal/siding/wood{
@@ -1120,7 +1111,6 @@
 "HA" = (
 /obj/structure/table/wood/poker,
 /obj/item/reagent_containers/food/drinks/bottle/rum,
-/obj/item/stack/spacecash/c1000,
 /turf/open/floor/carpet,
 /area/ruin/whitesands/saloon)
 "HI" = (
@@ -1241,6 +1231,11 @@
 /obj/structure/table/wood/poker,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet,
+/area/ruin/whitesands/saloon)
+"JF" = (
+/obj/structure/table/wood,
+/obj/item/spacecash/bundle/mediumrand,
+/turf/open/floor/wood,
 /area/ruin/whitesands/saloon)
 "Ku" = (
 /obj/structure/chair/sofa/corner{
@@ -1411,12 +1406,6 @@
 "Qs" = (
 /turf/template_noop,
 /area/template_noop)
-"Qy" = (
-/obj/structure/table/wood/poker,
-/obj/item/toy/cards/deck,
-/obj/item/stack/spacecash/c500,
-/turf/open/floor/carpet,
-/area/ruin/whitesands/saloon)
 "QB" = (
 /obj/structure/chair/sofa/left{
 	dir = 1
@@ -1696,7 +1685,6 @@
 	pixel_y = 6;
 	pixel_x = 3
 	},
-/obj/item/stack/spacecash/c1000,
 /turf/open/floor/carpet,
 /area/ruin/whitesands/saloon)
 "ZG" = (
@@ -1849,8 +1837,8 @@ Eq
 Eq
 yZ
 kX
-vP
-Qy
+lI
+Ov
 HA
 xr
 GG
@@ -2133,7 +2121,7 @@ mx
 Eq
 Eq
 Es
-Yo
+JF
 Lj
 eV
 aZ
@@ -2326,7 +2314,7 @@ Eq
 Eq
 Dd
 Lj
-Yo
+JF
 aZ
 iQ
 tp
