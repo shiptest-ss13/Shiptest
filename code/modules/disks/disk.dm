@@ -66,4 +66,4 @@
 		return
 
 	if(user.canUseTopic(src, BE_CLOSE))
-		name = "[src][(inputvalue ? " - '[inputvalue]'" : null)]"
+		name = "[initial(src.name)][(inputvalue ? " - '[inputvalue]'" : null)]"
