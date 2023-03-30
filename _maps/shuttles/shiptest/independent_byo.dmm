@@ -40,6 +40,18 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ship/construction)
+"dB" = (
+/obj/structure/closet/crate{
+	name = "Communications Equipment Crate"
+	},
+/obj/item/wallframe/intercom/wideband,
+/obj/item/circuitboard/machine/holopad,
+/obj/item/circuitboard/computer/cargo/express,
+/obj/item/spacecash/bundle/loadsamoney,
+/obj/item/spacecash/bundle/loadsamoney,
+/obj/item/spacecash/bundle/loadsamoney,
+/turf/open/floor/plating/airless,
+/area/ship/construction)
 "ev" = (
 /obj/structure/plasticflaps,
 /turf/open/floor/plating/airless,
@@ -88,6 +100,22 @@
 	},
 /obj/structure/railing{
 	dir = 4
+	},
+/turf/open/floor/plating/airless,
+/area/ship/construction)
+"iq" = (
+/obj/docking_port/mobile{
+	callTime = 250;
+	can_move_docking_ports = 1;
+	dir = 2;
+	launch_status = 0;
+	port_direction = 8;
+	preferred_direction = 4
+	},
+/obj/docking_port/stationary{
+	height = 15;
+	width = 7;
+	dheight = -1
 	},
 /turf/open/floor/plating/airless,
 /area/ship/construction)
@@ -146,22 +174,6 @@
 "nv" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
-	},
-/turf/open/floor/plating/airless,
-/area/ship/construction)
-"nx" = (
-/obj/docking_port/mobile{
-	callTime = 250;
-	can_move_docking_ports = 1;
-	dir = 2;
-	launch_status = 0;
-	port_direction = 8;
-	preferred_direction = 4
-	},
-/obj/docking_port/stationary{
-	height = 15;
-	width = 7;
-	dheight = -1
 	},
 /turf/open/floor/plating/airless,
 /area/ship/construction)
@@ -344,18 +356,6 @@
 /area/ship/construction)
 "Fj" = (
 /turf/closed/wall,
-/area/ship/construction)
-"FI" = (
-/obj/structure/closet/crate{
-	name = "Communications Equipment Crate"
-	},
-/obj/item/wallframe/intercom/wideband,
-/obj/item/circuitboard/machine/holopad,
-/obj/item/circuitboard/computer/cargo/express,
-/obj/item/stack/spacecash/c500{
-	amount = 25
-	},
-/turf/open/floor/plating/airless,
 /area/ship/construction)
 "Gb" = (
 /obj/structure/railing{
@@ -838,7 +838,7 @@ ND
 zu
 "}
 (14,1,1) = {"
-nx
+iq
 dz
 MA
 ev
@@ -893,7 +893,7 @@ SA
 ke
 aO
 eQ
-FI
+dB
 ck
 mJ
 nq

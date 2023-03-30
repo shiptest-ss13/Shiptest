@@ -1602,6 +1602,24 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
+"tw" = (
+/obj/structure/table/reinforced,
+/obj/item/taperecorder,
+/obj/item/paper,
+/obj/item/pen/fountain,
+/obj/effect/turf_decal/trimline/opaque/red/filled/line{
+	dir = 10
+	},
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
 "tC" = (
 /obj/effect/turf_decal/trimline/opaque/red/filled/line{
 	dir = 4
@@ -3010,17 +3028,6 @@
 	initial_gas_mix = "TEMP=2.7"
 	},
 /area/ship/construction)
-"Kd" = (
-/obj/machinery/door/window/survival_pod{
-	dir = 1
-	},
-/obj/docking_port/stationary{
-	height = 15;
-	width = 7;
-	dheight = -1
-	},
-/turf/open/floor/plasteel/tech/techmaint,
-/area/ship/construction)
 "Kq" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -3111,6 +3118,20 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
+"LV" = (
+/obj/machinery/door/window/survival_pod,
+/obj/docking_port/mobile{
+	port_direction = 8;
+	preferred_direction = 8
+	},
+/obj/docking_port/stationary{
+	height = 15;
+	width = 7;
+	dir = 2;
+	dheight = -1
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/hallway/central)
 "Md" = (
 /obj/structure/chair/wood{
 	dir = 1
@@ -3239,24 +3260,6 @@
 	initial_gas_mix = "TEMP=2.7"
 	},
 /area/ship/construction)
-"NQ" = (
-/obj/structure/table/reinforced,
-/obj/item/taperecorder,
-/obj/item/paper,
-/obj/item/pen/fountain,
-/obj/effect/turf_decal/trimline/opaque/red/filled/line{
-	dir = 10
-	},
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
-	dir = 4
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/bridge)
 "NU" = (
 /obj/machinery/computer/secure_data,
 /obj/effect/turf_decal/trimline/opaque/red/filled/line{
@@ -4044,20 +4047,6 @@
 "YN" = (
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/science/robotics)
-"YO" = (
-/obj/machinery/door/window/survival_pod,
-/obj/docking_port/mobile{
-	port_direction = 8;
-	preferred_direction = 8
-	},
-/obj/docking_port/stationary{
-	height = 15;
-	width = 7;
-	dir = 2;
-	dheight = -1
-	},
-/turf/open/floor/plasteel/tech/techmaint,
-/area/ship/hallway/central)
 "YX" = (
 /obj/machinery/power/terminal{
 	dir = 4
@@ -4073,6 +4062,17 @@
 /turf/open/floor/plasteel/mono/white{
 	initial_gas_mix = "TEMP=2.7"
 	},
+/area/ship/construction)
+"Zl" = (
+/obj/machinery/door/window/survival_pod{
+	dir = 1
+	},
+/obj/docking_port/stationary{
+	height = 15;
+	width = 7;
+	dheight = -1
+	},
+/turf/open/floor/plasteel/tech/techmaint,
 /area/ship/construction)
 "Zn" = (
 /obj/effect/turf_decal/trimline/opaque/red/warning{
@@ -4419,7 +4419,7 @@ rG
 cs
 El
 Rm
-NQ
+tw
 rG
 fs
 iL
@@ -5008,7 +5008,7 @@ Ub
 "}
 (25,1,1) = {"
 wv
-Kd
+Zl
 Cv
 Cv
 Cv
@@ -5042,7 +5042,7 @@ MY
 MY
 MY
 MY
-YO
+LV
 "}
 (26,1,1) = {"
 wv

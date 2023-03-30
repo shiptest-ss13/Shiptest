@@ -493,13 +493,6 @@
 /obj/machinery/airalarm/directional/east,
 /turf/open/floor/carpet,
 /area/ship/crew/dorm)
-"es" = (
-/obj/machinery/vending/hydroseeds,
-/obj/machinery/light/dim{
-	dir = 1
-	},
-/turf/open/floor/grass,
-/area/ship/crew/hydroponics)
 "eu" = (
 /obj/effect/turf_decal/corner/transparent/bar,
 /obj/effect/turf_decal/corner/transparent/bar{
@@ -539,6 +532,18 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/cryo)
+"eG" = (
+/obj/machinery/light/dim{
+	dir = 1
+	},
+/obj/structure/closet/crate/hydroponics,
+/obj/effect/spawner/lootdrop/seeded,
+/obj/effect/spawner/lootdrop/seeded,
+/obj/effect/spawner/lootdrop/seeded,
+/obj/effect/spawner/lootdrop/seeded,
+/obj/item/seeds/random,
+/turf/open/floor/grass,
+/area/ship/crew/hydroponics)
 "eJ" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2118,22 +2123,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/crew/dorm/dormfive)
-"qT" = (
-/obj/machinery/holopad/emergency/command,
-/obj/effect/turf_decal/techfloor{
-	dir = 6
-	},
-/obj/effect/turf_decal/spline/fancy/opaque/blue{
-	dir = 6
-	},
-/obj/machinery/airalarm/directional/south,
-/obj/machinery/firealarm{
-	dir = 8;
-	pixel_x = 26;
-	pixel_y = 6
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/bridge)
 "rd" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2545,16 +2534,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/medical/surgery)
-"tW" = (
-/obj/docking_port/stationary{
-	height = 15;
-	width = 12;
-	dheight = 1;
-	dwidth = 3;
-	dir = 4
-	},
-/turf/open/floor/engine/hull,
-/area/ship/external)
 "tY" = (
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/hallway/port)
@@ -3181,6 +3160,16 @@
 /obj/item/clothing/suit/hooded/wintercoat/engineering/atmos,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/engine)
+"yk" = (
+/obj/docking_port/stationary{
+	height = 15;
+	width = 12;
+	dheight = 1;
+	dwidth = 3;
+	dir = 4
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external)
 "yl" = (
 /obj/machinery/light{
 	dir = 4
@@ -3539,6 +3528,21 @@
 	},
 /turf/open/floor/wood,
 /area/ship/crew/hydroponics)
+"AU" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 6
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/blue{
+	dir = 6
+	},
+/obj/machinery/airalarm/directional/south,
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = 26;
+	pixel_y = 6
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
 "AZ" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
@@ -3614,34 +3618,6 @@
 /obj/machinery/airalarm/directional/west,
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/hallway/starboard)
-"BV" = (
-/obj/structure/table,
-/obj/structure/window/reinforced/spawner{
-	dir = 8
-	},
-/obj/machinery/door/window/eastleft{
-	dir = 1
-	},
-/obj/item/storage/box/gloves{
-	pixel_x = -3;
-	pixel_y = 6
-	},
-/obj/item/storage/box/masks,
-/obj/item/storage/belt/medical,
-/obj/item/reagent_containers/glass/bottle/formaldehyde{
-	pixel_x = 5;
-	pixel_y = 8
-	},
-/obj/item/reagent_containers/glass/bottle{
-	list_reagents = list(/datum/reagent/medicine/thializid=30);
-	name = "thializid bottle"
-	},
-/obj/item/reagent_containers/syringe,
-/obj/effect/turf_decal/borderfloorwhite{
-	dir = 10
-	},
-/turf/open/floor/plasteel/white,
-/area/ship/medical/surgery)
 "Ca" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -4652,6 +4628,24 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/cryo)
+"JL" = (
+/obj/structure/table,
+/obj/item/reagent_containers/food/drinks/mug{
+	list_reagents = list(/datum/reagent/consumable/coffee=30);
+	pixel_x = -5;
+	pixel_y = 8
+	},
+/obj/item/reagent_containers/food/drinks/mug/tea{
+	pixel_x = 4;
+	pixel_y = 5
+	},
+/obj/item/reagent_containers/food/drinks/mug{
+	list_reagents = list(/datum/reagent/consumable/coffee=30);
+	pixel_x = -2;
+	pixel_y = 1
+	},
+/turf/open/floor/plasteel,
+/area/ship/crew/cryo)
 "JX" = (
 /obj/machinery/power/terminal,
 /obj/structure/cable{
@@ -5228,24 +5222,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
-"Of" = (
-/obj/structure/table,
-/obj/item/reagent_containers/food/drinks/mug{
-	list_reagents = list(/datum/reagent/consumable/coffee=30);
-	pixel_x = -5;
-	pixel_y = 8
-	},
-/obj/item/reagent_containers/food/drinks/mug/tea{
-	pixel_x = 4;
-	pixel_y = 5
-	},
-/obj/item/reagent_containers/food/drinks/mug{
-	list_reagents = list(/datum/reagent/consumable/coffee=30);
-	pixel_x = -2;
-	pixel_y = 1
-	},
-/turf/open/floor/plasteel,
-/area/ship/crew/cryo)
 "OA" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 1
@@ -6491,6 +6467,34 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
+"XR" = (
+/obj/structure/table,
+/obj/structure/window/reinforced/spawner{
+	dir = 8
+	},
+/obj/machinery/door/window/eastleft{
+	dir = 1
+	},
+/obj/item/storage/box/gloves{
+	pixel_x = -3;
+	pixel_y = 6
+	},
+/obj/item/storage/box/masks,
+/obj/item/storage/belt/medical,
+/obj/item/reagent_containers/glass/bottle/formaldehyde{
+	pixel_x = 5;
+	pixel_y = 8
+	},
+/obj/item/reagent_containers/glass/bottle{
+	list_reagents = list(/datum/reagent/medicine/thializid=30);
+	name = "thializid bottle"
+	},
+/obj/item/reagent_containers/syringe,
+/obj/effect/turf_decal/borderfloorwhite{
+	dir = 10
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/medical/surgery)
 "XS" = (
 /obj/machinery/holopad/emergency/command{
 	pixel_x = -16
@@ -6987,7 +6991,7 @@ XF
 bX
 Lp
 lW
-es
+eG
 sr
 xK
 AQ
@@ -7215,7 +7219,7 @@ Gs
 (12,1,1) = {"
 fS
 fg
-tW
+yk
 WL
 qa
 qa
@@ -7485,7 +7489,7 @@ kR
 nR
 Bm
 jI
-qT
+AU
 mA
 Ea
 Fq
@@ -7875,7 +7879,7 @@ Lb
 Lb
 vM
 ZT
-BV
+XR
 tC
 qa
 qa
@@ -8039,7 +8043,7 @@ ID
 Rz
 Cv
 tz
-Of
+JL
 mC
 lS
 fR

@@ -421,34 +421,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
-"ja" = (
-/obj/structure/table/reinforced,
-/obj/item/paper_bin,
-/obj/item/folder/yellow,
-/obj/item/folder/yellow,
-/obj/item/pen,
-/obj/item/radio/intercom/wideband{
-	pixel_y = 28
-	},
-/obj/machinery/power/apc/auto_name/west,
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/obj/machinery/requests_console{
-	announcementConsole = 1;
-	department = "Cockpit";
-	pixel_x = -30;
-	pixel_y = 30
-	},
-/obj/machinery/camera/autoname,
-/obj/effect/turf_decal/corner/opaque/blue/half{
-	dir = 1
-	},
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
-/turf/open/floor/plasteel/dark,
-/area/ship/bridge)
 "jh" = (
 /obj/structure/cable{
 	icon_state = "0-8"
@@ -556,32 +528,6 @@
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plating/airless,
 /area/ship/external)
-"lp" = (
-/obj/structure/rack,
-/obj/item/storage/toolbox/electrical{
-	pixel_x = 1;
-	pixel_y = 6
-	},
-/obj/item/storage/toolbox/mechanical{
-	pixel_x = -2;
-	pixel_y = -1
-	},
-/obj/item/clothing/head/welding{
-	pixel_x = -2;
-	pixel_y = 1
-	},
-/obj/machinery/power/apc/auto_name/east,
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/obj/structure/cable,
-/obj/item/clothing/gloves/color/yellow,
-/obj/item/clothing/gloves/color/yellow,
-/obj/item/reagent_containers/glass/beaker{
-	list_reagents = list(/datum/reagent/fuel=50)
-	},
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/engineering)
 "ls" = (
 /obj/structure/cable,
 /obj/machinery/power/terminal{
@@ -603,6 +549,16 @@
 /obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/crew)
+"lI" = (
+/obj/docking_port/stationary{
+	height = 15;
+	width = 9;
+	dheight = 1;
+	dwidth = 4;
+	dir = 2
+	},
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "ms" = (
 /obj/machinery/door/poddoor/preopen{
 	id = "mining_ship_blast"
@@ -1337,6 +1293,34 @@
 /obj/machinery/door/airlock/external,
 /turf/open/floor/plating,
 /area/ship/engineering)
+"De" = (
+/obj/structure/table/reinforced,
+/obj/item/paper_bin,
+/obj/item/folder/yellow,
+/obj/item/folder/yellow,
+/obj/item/pen,
+/obj/item/radio/intercom/wideband{
+	pixel_y = 28
+	},
+/obj/machinery/power/apc/auto_name/west,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/requests_console{
+	announcementConsole = 1;
+	department = "Cockpit";
+	pixel_x = -30;
+	pixel_y = 30
+	},
+/obj/machinery/camera/autoname,
+/obj/effect/turf_decal/corner/opaque/blue/half{
+	dir = 1
+	},
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
 "DC" = (
 /obj/machinery/door/airlock/external,
 /obj/structure/fans/tiny,
@@ -1365,16 +1349,6 @@
 	dir = 1
 	},
 /area/ship/crew)
-"DX" = (
-/obj/docking_port/stationary{
-	height = 15;
-	width = 9;
-	dheight = 1;
-	dwidth = 4;
-	dir = 2
-	},
-/turf/open/floor/plating/airless,
-/area/ship/external)
 "Ex" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
@@ -1503,6 +1477,32 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
+"Hx" = (
+/obj/structure/rack,
+/obj/item/storage/toolbox/electrical{
+	pixel_x = 1;
+	pixel_y = 6
+	},
+/obj/item/storage/toolbox/mechanical{
+	pixel_x = -2;
+	pixel_y = -1
+	},
+/obj/item/clothing/head/welding{
+	pixel_x = -2;
+	pixel_y = 1
+	},
+/obj/machinery/power/apc/auto_name/east,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/cable,
+/obj/item/clothing/gloves/color/yellow,
+/obj/item/clothing/gloves/color/yellow,
+/obj/item/reagent_containers/glass/beaker{
+	list_reagents = list(/datum/reagent/fuel=50)
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/engineering)
 "HI" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -2273,7 +2273,7 @@ kQ
 jO
 QI
 qO
-lp
+Hx
 Xn
 hj
 ir
@@ -2392,7 +2392,7 @@ wW
 nJ
 sg
 ef
-DX
+lI
 Rr
 Rr
 Rr
@@ -2615,7 +2615,7 @@ NM
 WZ
 Po
 rE
-ja
+De
 ft
 iz
 Mn

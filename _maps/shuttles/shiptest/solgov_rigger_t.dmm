@@ -1938,10 +1938,6 @@
 	},
 /obj/structure/table,
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/item/circuitboard/mecha/pod{
-	pixel_x = -8;
-	pixel_y = -7
-	},
 /obj/item/stack/cable_coil/blue,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
@@ -2569,10 +2565,10 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
 "Fo" = (
@@ -3642,7 +3638,6 @@
 	pixel_x = 10
 	},
 /obj/structure/railing,
-/obj/item/spacepod_key/sec,
 /obj/machinery/recharger{
 	pixel_x = -4
 	},

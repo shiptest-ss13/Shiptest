@@ -727,6 +727,29 @@
 	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/hallway/central)
+"he" = (
+/obj/structure/filingcabinet/security{
+	pixel_x = -10
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 10
+	},
+/obj/item/kirbyplants{
+	icon_state = "plant-03";
+	pixel_x = 6
+	},
+/obj/item/reagent_containers/food/snacks/chocolatebar{
+	pixel_x = -5
+	},
+/obj/structure/sign/poster/official/ian{
+	pixel_x = -32
+	},
+/obj/item/dice,
+/obj/item/storage/pill_bottle/neurine,
+/obj/item/storage/pill_bottle/dice,
+/obj/item/spacecash/bundle/c100,
+/turf/open/floor/wood,
+/area/ship/bridge)
 "hh" = (
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 8
@@ -754,29 +777,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew)
-"hG" = (
-/obj/structure/filingcabinet/security{
-	pixel_x = -10
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 10
-	},
-/obj/item/kirbyplants{
-	icon_state = "plant-03";
-	pixel_x = 6
-	},
-/obj/item/reagent_containers/food/snacks/chocolatebar{
-	pixel_x = -5
-	},
-/obj/structure/sign/poster/official/ian{
-	pixel_x = -32
-	},
-/obj/item/dice,
-/obj/item/storage/pill_bottle/neurine,
-/obj/item/storage/pill_bottle/dice,
-/obj/item/stack/spacecash/c100,
-/turf/open/floor/wood,
-/area/ship/bridge)
 "hJ" = (
 /obj/effect/turf_decal/trimline/opaque/bottlegreen/line{
 	dir = 8
@@ -1691,18 +1691,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
-"pW" = (
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
-/obj/machinery/door/poddoor{
-	id = "asclepius_extcargo";
-	name = "Cargo Bay Blast Door"
-	},
-/turf/open/floor/plasteel{
-	icon_state = "steel_monofloor"
-	},
-/area/ship/cargo)
 "ql" = (
 /obj/effect/turf_decal/industrial/warning{
 	color = "#808080"
@@ -1828,22 +1816,6 @@
 /obj/structure/sign/number/six,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/cargo)
-"rd" = (
-/obj/docking_port/mobile{
-	can_move_docking_ports = 1;
-	launch_status = 0;
-	port_direction = 4;
-	preferred_direction = 4
-	},
-/obj/docking_port/stationary{
-	height = 15;
-	width = 12;
-	dheight = 1;
-	dwidth = 3;
-	dir = 2
-	},
-/turf/open/floor/plasteel/patterned/dirty,
-/area/ship/external)
 "rj" = (
 /mob/living/simple_animal/pet/penguin/baby{
 	name = "Corporal Duke";
@@ -2692,6 +2664,18 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
+"xh" = (
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/poddoor{
+	id = "asclepius_extcargo";
+	name = "Cargo Bay Blast Door"
+	},
+/turf/open/floor/plasteel{
+	icon_state = "steel_monofloor"
+	},
+/area/ship/cargo)
 "xj" = (
 /obj/structure/table/reinforced,
 /obj/item/trash/raisins{
@@ -3864,34 +3848,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
-"HA" = (
-/obj/item/flashlight/lamp{
-	pixel_x = -4;
-	pixel_y = 7
-	},
-/obj/item/spacepod_key{
-	pixel_x = -8;
-	pixel_y = -10
-	},
-/obj/item/storage/fancy/cigarettes/derringer{
-	pixel_x = 9;
-	pixel_y = 2
-	},
-/obj/item/lighter/greyscale{
-	pixel_x = 4
-	},
-/obj/structure/table/reinforced{
-	color = "#c1b6a5"
-	},
-/obj/effect/turf_decal/techfloor{
-	dir = 4
-	},
-/obj/effect/turf_decal/techfloor{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/dark,
-/area/ship/bridge)
 "HC" = (
 /obj/effect/turf_decal/corner/opaque/blue{
 	dir = 5
@@ -4710,6 +4666,22 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
+"Ox" = (
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	launch_status = 0;
+	port_direction = 4;
+	preferred_direction = 4
+	},
+/obj/docking_port/stationary{
+	height = 15;
+	width = 12;
+	dheight = 1;
+	dwidth = 3;
+	dir = 2
+	},
+/turf/open/floor/plasteel/patterned/dirty,
+/area/ship/external)
 "OC" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
@@ -5243,6 +5215,30 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
+"Vg" = (
+/obj/item/flashlight/lamp{
+	pixel_x = -4;
+	pixel_y = 7
+	},
+/obj/item/storage/fancy/cigarettes/derringer{
+	pixel_x = 9;
+	pixel_y = 2
+	},
+/obj/item/lighter/greyscale{
+	pixel_x = 4
+	},
+/obj/structure/table/reinforced{
+	color = "#c1b6a5"
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
 "Vh" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 1
@@ -6181,7 +6177,7 @@ Wd
 aJ
 wi
 hN
-hG
+he
 NX
 aJ
 bG
@@ -6359,7 +6355,7 @@ ga
 ga
 rj
 Ef
-HA
+Vg
 Um
 nH
 Cr
@@ -6702,8 +6698,8 @@ om
 nI
 ps
 nU
-pW
-rd
+xh
+Ox
 "}
 (32,1,1) = {"
 Wd

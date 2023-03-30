@@ -770,17 +770,6 @@
 	dir = 4
 	},
 /area/ship/hallway)
-"sH" = (
-/obj/structure/catwalk,
-/obj/docking_port/stationary{
-	height = 15;
-	width = 12;
-	dheight = 1;
-	dwidth = 3;
-	dir = 2
-	},
-/turf/open/floor/plating,
-/area/ship/external)
 "sM" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 1
@@ -2093,27 +2082,6 @@
 "No" = (
 /turf/closed/wall,
 /area/ship/cargo)
-"Nt" = (
-/obj/effect/turf_decal/corner/transparent/neutral{
-	dir = 8
-	},
-/obj/effect/turf_decal/corner/transparent/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/corner/transparent/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/transparent/neutral,
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/structure/table/reinforced,
-/obj/machinery/recharger,
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
-/turf/open/floor/plasteel/dark,
-/area/ship/bridge)
 "Nx" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/effect/turf_decal/industrial/warning{
@@ -2135,6 +2103,17 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/science)
+"NR" = (
+/obj/structure/catwalk,
+/obj/docking_port/stationary{
+	height = 15;
+	width = 12;
+	dheight = 1;
+	dwidth = 3;
+	dir = 2
+	},
+/turf/open/floor/plating,
+/area/ship/external)
 "Oa" = (
 /obj/effect/turf_decal/corner/opaque/purple,
 /turf/open/floor/plasteel,
@@ -2515,6 +2494,27 @@
 "Xi" = (
 /turf/open/floor/plasteel/white,
 /area/ship/science)
+"Xn" = (
+/obj/effect/turf_decal/corner/transparent/neutral{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/transparent/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/transparent/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/table/reinforced,
+/obj/machinery/recharger,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
 "Xw" = (
 /obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 4
@@ -2777,7 +2777,7 @@ OY
 OY
 vN
 Dm
-sH
+NR
 "}
 (7,1,1) = {"
 HV
@@ -3126,7 +3126,7 @@ Bf
 yP
 Px
 AI
-Nt
+Xn
 xE
 Wp
 Vd

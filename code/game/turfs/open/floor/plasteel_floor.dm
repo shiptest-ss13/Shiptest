@@ -190,6 +190,10 @@
 	icon_state = "stairs-old"
 	base_icon_state = "stairs-old"
 
+/turf/open/floor/plasteel/stairs/wood
+	color = "#A47449"
+	barefootstep = "wood"
+	footstep = "wood"
 
 /turf/open/floor/plasteel/rockvault
 	icon_state = "rockvault"

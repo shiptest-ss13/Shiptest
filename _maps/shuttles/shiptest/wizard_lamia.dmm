@@ -735,20 +735,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
-"cd" = (
-/obj/machinery/door/airlock{
-	icon = 'icons/obj/doors/airlocks/station/uranium.dmi';
-	name = "External Airlock"
-	},
-/obj/structure/fans/tiny,
-/obj/docking_port/stationary{
-	dir = 8;
-	width = 7;
-	height = 15;
-	dheight = -1
-	},
-/turf/open/floor/bronze,
-/area/ship/cargo)
 "ce" = (
 /obj/machinery/door/airlock{
 	icon = 'icons/obj/doors/airlocks/station/uranium.dmi';
@@ -1449,6 +1435,32 @@
 	},
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
+"uC" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/structure/table/wood/fancy/royalblue,
+/obj/item/book/granter/spell/charge{
+	pixel_y = 4
+	},
+/obj/item/gun/energy/e_gun/mini{
+	desc = "The small and submissive wand of wizards-in-training, firing bursts of raw magical energy to disable or kill foes. Comes with built-in nightlight!";
+	gunlight_state = "nothingwand";
+	icon = 'icons/obj/guns/magic.dmi';
+	icon_state = "nothingwand";
+	name = "acolyte's training wand of duality";
+	pixel_x = -2;
+	pixel_y = 2
+	},
+/obj/machinery/power/apc/auto_name/west,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
+/turf/open/floor/carpet/stellar,
+/area/ship/bridge)
 "vk" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/yellow{
@@ -1565,6 +1577,20 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 4
+	},
+/turf/open/floor/bronze,
+/area/ship/cargo)
+"AQ" = (
+/obj/machinery/door/airlock{
+	icon = 'icons/obj/doors/airlocks/station/uranium.dmi';
+	name = "External Airlock"
+	},
+/obj/structure/fans/tiny,
+/obj/docking_port/stationary{
+	dir = 8;
+	width = 7;
+	height = 15;
+	dheight = -1
 	},
 /turf/open/floor/bronze,
 /area/ship/cargo)
@@ -2137,32 +2163,6 @@
 /obj/structure/spider/stickyweb,
 /turf/open/floor/engine/cult,
 /area/ship/science)
-"OC" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/structure/table/wood/fancy/royalblue,
-/obj/item/book/granter/spell/charge{
-	pixel_y = 4
-	},
-/obj/item/gun/energy/e_gun/mini{
-	desc = "The small and submissive wand of wizards-in-training, firing bursts of raw magical energy to disable or kill foes. Comes with built-in nightlight!";
-	gunlight_state = "nothingwand";
-	icon = 'icons/obj/guns/magic.dmi';
-	icon_state = "nothingwand";
-	name = "acolyte's training wand of duality";
-	pixel_x = -2;
-	pixel_y = 2
-	},
-/obj/machinery/power/apc/auto_name/west,
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
-/turf/open/floor/carpet/stellar,
-/area/ship/bridge)
 "OQ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/libraryscanner,
@@ -2698,7 +2698,7 @@ wj
 wj
 jQ
 oD
-cd
+AQ
 jQ
 jQ
 No
@@ -2806,7 +2806,7 @@ No
 (8,1,1) = {"
 Tt
 Tt
-OC
+uC
 Mn
 Tt
 ay

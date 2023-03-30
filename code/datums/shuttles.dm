@@ -237,9 +237,9 @@
 		if("toggleTemplateEnabled")
 			enabled = !enabled
 			if(enabled)
-				SSmapping.ship_purchase_list += src
+				SSmapping.ship_purchase_list[name] = src
 			else
-				SSmapping.ship_purchase_list -= src
+				SSmapping.ship_purchase_list.Remove(name)
 			update_static_data(usr, ui)
 			return TRUE
 

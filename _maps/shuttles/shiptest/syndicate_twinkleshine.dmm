@@ -1777,26 +1777,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
-"qz" = (
-/obj/docking_port/mobile{
-	can_move_docking_ports = 1;
-	dir = 4;
-	name = "SBD starfurys revenge";
-	port_direction = 8
-	},
-/obj/structure/railing,
-/obj/structure/railing{
-	dir = 1
-	},
-/obj/docking_port/stationary{
-	height = 15;
-	width = 12;
-	dheight = 1;
-	dwidth = 4;
-	dir = 8
-	},
-/turf/open/floor/plating/airless,
-/area/ship/external)
 "qD" = (
 /obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
@@ -2200,6 +2180,26 @@
 /obj/effect/turf_decal/corner/opaque/red,
 /turf/open/floor/plasteel/white,
 /area/ship/medical/surgery)
+"tN" = (
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	dir = 4;
+	name = "SBD starfurys revenge";
+	port_direction = 8
+	},
+/obj/structure/railing,
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/docking_port/stationary{
+	height = 15;
+	width = 12;
+	dheight = 1;
+	dwidth = 4;
+	dir = 8
+	},
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "tO" = (
 /obj/machinery/atmospherics/pipe/simple/cyan/visible{
 	dir = 4
@@ -2924,11 +2924,6 @@
 	rad_insulation = 0.1
 	},
 /area/ship/engineering/engine)
-"zV" = (
-/obj/effect/turf_decal/industrial/warning,
-/obj/item/spacepod_equipment/weaponry/laser,
-/turf/open/floor/pod/dark,
-/area/ship/cargo)
 "zY" = (
 /obj/structure/bed/roller,
 /obj/machinery/iv_drip,
@@ -2956,6 +2951,21 @@
 /obj/effect/turf_decal/corner/opaque/red/diagonal,
 /turf/open/floor/plasteel/white,
 /area/ship/medical/surgery)
+"Aj" = (
+/obj/machinery/door/poddoor{
+	id = "sbccargo";
+	name = "Cargo Bay Blast Door"
+	},
+/obj/structure/fans/tiny,
+/obj/docking_port/stationary{
+	height = 15;
+	width = 12;
+	dheight = 1;
+	dwidth = 4;
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ship/cargo)
 "Aq" = (
 /obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
@@ -3239,11 +3249,6 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ship/engineering/atmospherics)
-"DE" = (
-/obj/machinery/light/floor,
-/obj/spacepod/prebuilt/jousting/red,
-/turf/open/floor/pod/dark,
-/area/ship/cargo)
 "DF" = (
 /obj/structure/window/reinforced{
 	dir = 4
@@ -4925,21 +4930,6 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/engine,
 /area/ship/engineering)
-"RV" = (
-/obj/machinery/door/poddoor{
-	id = "sbccargo";
-	name = "Cargo Bay Blast Door"
-	},
-/obj/structure/fans/tiny,
-/obj/docking_port/stationary{
-	height = 15;
-	width = 12;
-	dheight = 1;
-	dwidth = 4;
-	dir = 8
-	},
-/turf/open/floor/plating,
-/area/ship/cargo)
 "RW" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -5925,7 +5915,7 @@ av
 av
 Xu
 Xu
-qz
+tN
 Xu
 Xu
 Xu
@@ -6064,7 +6054,7 @@ rT
 uY
 uY
 uY
-RV
+Aj
 uY
 Hf
 Hf
@@ -6173,7 +6163,7 @@ OF
 Ze
 OH
 OH
-DE
+Ze
 OH
 UZ
 ZF
@@ -6283,7 +6273,7 @@ WD
 xn
 OH
 OH
-zV
+UZ
 eq
 MS
 Pq

@@ -43,6 +43,13 @@
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
+"bl" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/holopad/emergency/command,
+/turf/open/floor/plasteel/tech,
+/area/ship/cargo)
 "bK" = (
 /obj/effect/turf_decal/corner/opaque/pink/border{
 	dir = 9
@@ -156,6 +163,20 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/engineering)
+"fh" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/structure/table,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/item/spacecash/bundle/c1,
+/turf/open/floor/plasteel/tech,
+/area/ship/cargo)
 "fm" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -164,6 +185,17 @@
 "fp" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/cargo)
+"fq" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/docking_port/stationary{
+	height = 15;
+	width = 12;
+	dwidth = 3;
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/external)
 "fS" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/cargo)
@@ -214,6 +246,28 @@
 /obj/structure/cable,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/engineering)
+"hl" = (
+/obj/machinery/light_switch{
+	pixel_x = 13;
+	pixel_y = 33
+	},
+/obj/item/borg/sight/hud/sec,
+/obj/item/storage/backpack/duffelbag,
+/obj/machinery/airalarm/directional/west,
+/obj/item/spacecash/bundle/c500,
+/obj/item/stock_parts/cell/gun/mini{
+	chargerate = 10;
+	desc = "A rechargeable electrochemical power cell. this one looks awefully bloated";
+	maxcharge = 6250;
+	name = "bloated miniature weapon power cell";
+	w_class = 3
+	},
+/obj/item/cane,
+/obj/structure/closet/wall/blue{
+	pixel_y = 32
+	},
+/turf/open/floor/carpet/nanoweave/blue,
+/area/ship/bridge)
 "hv" = (
 /obj/structure/chair/office/light{
 	dir = 4
@@ -279,20 +333,6 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/engineering)
-"ju" = (
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/structure/table,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/item/stack/spacecash/c1,
-/turf/open/floor/plasteel/tech,
-/area/ship/cargo)
 "jA" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -433,13 +473,6 @@
 "nw" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/bridge)
-"nN" = (
-/obj/machinery/holopad/emergency,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/cargo)
 "nS" = (
 /obj/machinery/atmospherics/components/binary/valve/layer2{
 	dir = 4
@@ -634,20 +667,6 @@
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/blood/old,
-/turf/open/floor/plasteel/tech,
-/area/ship/cargo)
-"tq" = (
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
-	dir = 8
-	},
-/obj/structure/table,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/item/stack/spacecash/c1,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "tr" = (
@@ -1167,34 +1186,26 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/engineering)
+"LN" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/table,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/item/spacecash/bundle/c1,
+/turf/open/floor/plasteel/tech,
+/area/ship/cargo)
 "Mv" = (
 /obj/structure/window/reinforced,
 /obj/machinery/computer/helm{
 	dir = 8
 	},
 /obj/machinery/door/firedoor/border_only,
-/turf/open/floor/carpet/nanoweave/blue,
-/area/ship/bridge)
-"MG" = (
-/obj/machinery/light_switch{
-	pixel_x = 13;
-	pixel_y = 33
-	},
-/obj/item/borg/sight/hud/sec,
-/obj/item/storage/backpack/duffelbag,
-/obj/machinery/airalarm/directional/west,
-/obj/item/stack/spacecash/c500,
-/obj/item/stock_parts/cell/gun/mini{
-	chargerate = 10;
-	desc = "A rechargeable electrochemical power cell. this one looks awefully bloated";
-	maxcharge = 6250;
-	name = "bloated miniature weapon power cell";
-	w_class = 3
-	},
-/obj/item/cane,
-/obj/structure/closet/wall/blue{
-	pixel_y = 32
-	},
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
 "MH" = (
@@ -1472,17 +1483,6 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
-"YJ" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/docking_port/stationary{
-	height = 15;
-	width = 12;
-	dwidth = 3;
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/ship/external)
 "YY" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1675,13 +1675,13 @@ oY
 "}
 (9,1,1) = {"
 VS
-MG
+hl
 KK
 ko
 fm
 is
-tq
-ju
+fh
+LN
 Uy
 mV
 ER
@@ -1709,7 +1709,7 @@ Fc
 uv
 iP
 xG
-nN
+bl
 Fq
 Ez
 GM
@@ -1829,7 +1829,7 @@ Rc
 Rc
 Ar
 Qk
-YJ
+fq
 AV
 Qk
 gi
