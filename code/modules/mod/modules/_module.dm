@@ -265,7 +265,7 @@
 		qdel(src)
 
 /// Generates an icon to be used for the suit's worn overlays
-/obj/item/mod/module/proc/generate_worn_overlay(mutable_appearance/standing)
+/obj/item/mod/module/proc/generate_worn_overlay(mod_layer)
 	. = list()
 	if(!mod.active)
 		return
@@ -278,7 +278,7 @@
 		used_overlay = overlay_state_inactive
 	else
 		return
-	var/mutable_appearance/module_icon = mutable_appearance(overlay_icon_file, used_overlay, layer = standing.layer + 0.1)
+	var/mutable_appearance/module_icon = mutable_appearance(overlay_icon_file, used_overlay, layer = mod_layer + 0.1)
 	if(!use_mod_colors)
 		module_icon.appearance_flags |= RESET_COLOR
 	. += module_icon
