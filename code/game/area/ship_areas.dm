@@ -130,7 +130,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 
 /area/ship/crew/cryo
 	name = "Cryopod Room"
-	icon_state = "cryopod"
+	icon_state = "cryo"
 	lighting_colour_tube = "#e3ffff"
 	lighting_colour_bulb = "#d5ffff"
 
