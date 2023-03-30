@@ -77,6 +77,7 @@
 //Defines for Species IDs
 #define SPECIES_ABDUCTOR "abductor"
 #define SPECIES_ANDROID "android"
+#define SPECIES_APID "apid"
 #define SPECIES_CORPORATE "corporate"
 #define SPECIES_DULLAHAN "dullahan"
 #define SPECIES_ETHEREAL "ethereal"
@@ -129,6 +130,7 @@
 #define FLAG_LIZARD (1<<5)
 #define FLAG_FLY (1<<6)
 #define FLAG_MONKEY (1<<7)
+#define FLAG_APID (1<<8)
 
 //Bodytype defines for how things can be worn.
 #define BODYTYPE_ORGANIC (1<<0)
