@@ -68,6 +68,7 @@
 	///Time that next job slot change can occur
 	COOLDOWN_DECLARE(job_slot_adjustment_cooldown)
 
+	var/datum/bank_account/ship/zetacash = 0
 
 
 
@@ -81,6 +82,7 @@
 	message_admins("[key_name_admin(usr)] renamed vessel '[oldname]' to '[new_name]'")
 	shuttle_port?.name = new_name
 	ship_account.account_holder = new_name
+	zetacash.account_holder = new_name
 	if(shipkey)
 		shipkey.name = "ship key ([new_name])"
 	for(var/area/shuttle_area as anything in shuttle_port?.shuttle_areas)
@@ -109,6 +111,8 @@
 			refresh_engines()
 
 	ship_account = new(name, 2000)
+	zetacash = new(name,0)
+
 #ifdef UNIT_TESTS
 	Rename("[source_template]")
 #else
@@ -122,6 +126,8 @@
 		shuttle_port.intoTheSunset()
 	if(!QDELETED(ship_account))
 		QDEL_NULL(ship_account)
+	if(!QDELETED(zetacash))
+		QDEL_NULL(zetacash)
 	for(var/a_key in applications)
 		// it handles removal itself
 		qdel(applications[a_key])

@@ -29,6 +29,8 @@
 	var/use_beacon = FALSE
 	/// The account to charge purchases to, defaults to the cargo budget
 	var/datum/bank_account/charge_account
+	/// Earned ZetaCoins
+	var/datum/bank_account/zetacoins
 
 /obj/machinery/computer/cargo/express/Initialize()
 	. = ..()
@@ -47,6 +49,7 @@
 	if(!port)
 		return
 	charge_account = port.current_ship.ship_account
+	zetacoins = port.current_ship.zetacash
 	landingzone = locate(/area/ship/cargo) in port.shuttle_areas
 
 /obj/machinery/computer/cargo/express/Destroy()
@@ -56,12 +59,21 @@
 
 /obj/machinery/computer/cargo/express/attackby(obj/item/W, mob/living/user, params)
 	var/value = 0
+	var/zvalue = 0
+	if(istype(W, /obj/item/metacoin))
+		var/obj/item/metacoin/P = W
+		zvalue = P.mc_contains
 	if(istype(W, /obj/item/spacecash/bundle))
 		var/obj/item/spacecash/bundle/C = W
 		value = C.value
 	else if(istype(W, /obj/item/holochip))
 		var/obj/item/holochip/H = W
 		value = H.credits
+	if(zvalue)
+		zetacoins.adjust_money(zvalue)
+		to_chat(user, "<span class='notice'>You deposit [W]. The Vessel Budget is now [zetacoins.account_balance] ZetaCoins.</span>")
+		qdel(W)
+		return TRUE
 	if(value && charge_account)
 		charge_account.adjust_money(value)
 		to_chat(user, "<span class='notice'>You deposit [W]. The Vessel Budget is now [charge_account.account_balance] cr.</span>")
@@ -116,6 +128,7 @@
 	data["maxMissions"] = ship ? ship.max_missions : 0
 	data["outpostDocked"] = outpost_docked
 	data["points"] = charge_account ? charge_account.account_balance : 0
+	data["zetapoints"] = zetacoins ? zetacoins.account_balance : 0
 	data["siliconUser"] = user.has_unlimited_silicon_privilege && check_ship_ai_access(user)
 	data["beaconzone"] = beacon ? get_area(beacon) : ""//where is the beacon located? outputs in the tgui
 	data["usingBeacon"] = use_beacon //is the mode set to deliver to the beacon or the cargobay?
@@ -172,6 +185,22 @@
 					user.put_in_hands(cash_chip)
 				playsound(src, 'sound/machines/twobeep_high.ogg', 50, TRUE)
 				src.visible_message("<span class='notice'>[src] dispenses a holochip.</span>")
+			return TRUE
+
+		if("withdrawZeta")
+			var/val = text2num(params["value"])
+			// no giving yourself money
+			if(!zetacoins || !val || val <= 0 || val>zetacoins.account_balance)
+				return
+			else
+				zetacoins.adjust_money(-val)
+				var/obj/item/metacoin/P = new /obj/item/metacoin
+				P.mc_contains=val
+				if(ishuman(usr))
+					var/mob/living/carbon/human/user = usr
+					user.put_in_hands(P)
+				playsound(src, 'sound/machines/twobeep_high.ogg', 50, TRUE)
+				src.visible_message("<span class='notice'>[src] dispenses a ZetaCoin.</span>")
 			return TRUE
 
 		if("LZCargo")

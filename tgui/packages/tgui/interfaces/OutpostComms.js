@@ -24,6 +24,12 @@ export const OutpostComms = (props, context) => {
             <Stack textAlign="center">
               <Stack.Item>
                 <Tabs>
+                  <Tabs.Tab
+                    selected={tab === 'zetacash'}
+                    onClick={() => setTab('zetacash')}
+                  >
+                    Zeta Balance
+                  </Tabs.Tab>
                   {!!data.outpostDocked && (
                     <Tabs.Tab
                       selected={tab === 'cargo'}
@@ -65,6 +71,7 @@ export const OutpostComms = (props, context) => {
             </Stack>
           }
         />
+        {tab === 'zetacash' && <ZetaCoinsBalance />}
         {tab === 'cargo' && <CargoExpressContent />}
         {tab === 'shipMissions' && !!data.onShip && <ShipMissionsContent />}
         {tab === 'outpostMissions' && !!data.outpostDocked && (
@@ -72,6 +79,32 @@ export const OutpostComms = (props, context) => {
         )}
       </Window.Content>
     </Window>
+  );
+};
+
+const ZetaCoinsBalance = (props, context) => {
+  const { act, data } = useBackend(context);
+  return (
+    <Section
+      fitted
+      title={Math.round(data.zetapoints) + ' Zeta-Coins'}
+      buttons={
+        <Stack textAlign="center">
+          <Stack.Item>
+            <Button.Input
+              content="Withdraw Zeta-Coins"
+              currentValue={100}
+              defaultValue={100}
+              onCommit={(e, value) =>
+                act('withdrawZeta', {
+                  value: value,
+                })
+              }
+            />
+          </Stack.Item>
+        </Stack>
+      }
+    />
   );
 };
 
@@ -141,29 +174,29 @@ const MissionsList = (props, context) => {
   const missions = props.missions;
   const { act } = useBackend(context);
   return missions.map((mission) => (
-    <Section
-      key={mission.ref}
-      title={mission.name}
-      level={2}
-      buttons={
-        <>
-          <Box inline mx={1}>
-            {mission.value + ' cr ' + mission.progressStr}
-          </Box>
-          <ProgressBar
-            ranges={{
-              good: [0.75, 1],
-              average: [0.25, 0.75],
-              bad: [0, 0.25],
-            }}
-            value={mission.remaining / mission.duration}
-          >
-            {mission.timeStr}
-          </ProgressBar>
-        </>
-      }
-    >
+    <Section key={mission.ref} title={mission.name} level={2}>
       {mission.desc}
+      <>
+        <Box inline mx={1}>
+          {mission.zvalue +
+            ' Zeta-Сoins | ' +
+            mission.value +
+            ' cr ' +
+            mission.progressStr}
+        </Box>
+
+        <ProgressBar
+          ranges={{
+            good: [0.75, 1],
+            average: [0.25, 0.75],
+            bad: [0, 0.25],
+          }}
+          value={mission.remaining / mission.duration}
+        >
+          {mission.timeStr}
+        </ProgressBar>
+      </>
+
       {!!showButton && (
         <Button
           onClick={() =>

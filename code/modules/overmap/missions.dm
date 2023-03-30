@@ -2,6 +2,7 @@
 	var/name = "Mission"
 	var/desc = "Do something for me."
 	var/value = 1000 /// The mission's payout.
+	var/zvalue = 100 /// ZetaCoins payout
 	var/duration = 30 MINUTES /// The amount of time in which to complete the mission.
 	var/weight = 0 /// The relative probability of this mission being selected. 0-weight missions are never selected.
 
@@ -62,6 +63,7 @@
 
 /datum/mission/proc/turn_in()
 	servant.ship_account.adjust_money(value)
+	servant.zetacash.adjust_money(zvalue)
 	qdel(src)
 
 /datum/mission/proc/give_up()
@@ -84,6 +86,7 @@
 		"name" = src.name,
 		"desc" = src.desc,
 		"value" = src.value,
+		"zvalue" = src.zvalue,
 		"duration" = src.duration,
 		"remaining" = time_remaining,
 		"timeStr" = time2text(time_remaining, "mm:ss"),
