@@ -1,7 +1,7 @@
 /obj/item/bodypart/head/apid
 	static_icon = 'icons/mob/species/apid/bodyparts.dmi'
 	limb_id = SPECIES_APID
-	is_dimorphic = FALSE
+	is_dimorphic = TRUE
 	should_draw_greyscale = FALSE
 
 /obj/item/bodypart/chest/apid

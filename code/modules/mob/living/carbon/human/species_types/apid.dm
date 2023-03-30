@@ -14,6 +14,8 @@
 	attack_sound = 'sound/weapons/slash.ogg'
 	miss_sound = 'sound/weapons/slashmiss.ogg'
 //	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/apid
+	liked_food = FRUIT | VEGETABLES
+	disliked_food = MEAT
 	mutanteyes = /obj/item/organ/eyes/apid
 	mutantlungs = /obj/item/organ/lungs/apid
 //	mutantwings = /obj/item/organ/bee_wings
