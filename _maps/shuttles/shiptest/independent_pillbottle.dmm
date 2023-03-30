@@ -1524,12 +1524,9 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/fore)
 "zy" = (
-/obj/docking_port/stationary{
-	dir = 4;
-	roundstart_template = /datum/map_template/shuttle/subshuttles/pill;
-	load_template_on_initialize = 0;
-	height = 3;
-	width = 1
+/obj/effect/landmark/subship{
+	dir = 1;
+	subship_template = /datum/map_template/shuttle/subshuttles/pill
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/fore)

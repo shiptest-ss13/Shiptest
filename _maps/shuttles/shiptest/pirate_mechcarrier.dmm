@@ -252,10 +252,6 @@
 	pixel_y = 6;
 	dir = 8
 	},
-/obj/item/spacepod_key{
-	pixel_x = -7;
-	pixel_y = -9
-	},
 /obj/machinery/light/small{
 	dir = 4
 	},
@@ -3502,16 +3498,6 @@
 	port_direction = 8;
 	preferred_direction = 4;
 	can_move_docking_ports = 1
-	},
-/obj/docking_port/stationary{
-	dir = 2;
-	height = 15;
-	width = 7
-	},
-/obj/docking_port/stationary{
-	height = 15;
-	width = 7;
-	dheight = -1
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)

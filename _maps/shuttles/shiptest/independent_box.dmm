@@ -391,17 +391,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
-"hi" = (
-/obj/docking_port/mobile{
-	callTime = 250;
-	dir = 2;
-	launch_status = 0;
-	name = "Hospital Ship";
-	port_direction = 8;
-	preferred_direction = 4
-	},
-/turf/open/floor/plating/airless,
-/area/ship/external)
 "hp" = (
 /obj/structure/closet/crate/freezer/surplus_limbs,
 /obj/item/reagent_containers/glass/beaker/synthflesh,
@@ -1440,11 +1429,6 @@
 /obj/item/clothing/glasses/hud/health/sunglasses,
 /obj/structure/window/reinforced/spawner/north,
 /obj/structure/window/reinforced/spawner/east,
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
 /obj/effect/turf_decal/spline/fancy/opaque/black,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
@@ -2407,6 +2391,17 @@
 	},
 /turf/open/floor/wood,
 /area/ship/crew)
+"Op" = (
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	dir = 4;
+	launch_status = 0;
+	name = "hospital ship";
+	port_direction = 2;
+	width = 19
+	},
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/engineering)
 "Os" = (
 /obj/item/bedsheet/dorms,
 /obj/structure/curtain/bounty,
@@ -2966,7 +2961,7 @@ aa
 vk
 at
 aa
-at
+Op
 vk
 aa
 aa
@@ -3396,7 +3391,7 @@ ER
 Rx
 "}
 (23,1,1) = {"
-hi
+da
 Gn
 aj
 fY

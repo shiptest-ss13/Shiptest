@@ -322,6 +322,10 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
+"eC" = (
+/obj/structure/catwalk,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/external)
 "eD" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -1396,12 +1400,6 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/bridge)
 "qm" = (
-/obj/docking_port/stationary{
-	height = 15;
-	width = 12;
-	dheight = 1;
-	dwidth = 3
-	},
 /obj/docking_port/mobile{
 	dir = 2;
 	launch_status = 0;
@@ -4154,10 +4152,6 @@
 /obj/item/newspaper,
 /obj/item/megaphone/command,
 /obj/item/radio/headset/solgov/alt,
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
 "Wj" = (
@@ -4352,7 +4346,7 @@
 	dwidth = 3;
 	dir = 2
 	},
-/turf/template_noop,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/external)
 "Yg" = (
 /obj/structure/cable{
@@ -5113,7 +5107,7 @@ Dc
 Bl
 VJ
 OI
-oe
+zR
 "}
 (23,1,1) = {"
 zR
@@ -5140,7 +5134,7 @@ iI
 Mu
 LW
 AU
-oe
+eC
 "}
 (24,1,1) = {"
 zR
@@ -5194,7 +5188,7 @@ Et
 cp
 tR
 AU
-oe
+eC
 "}
 (26,1,1) = {"
 zR

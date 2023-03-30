@@ -108,7 +108,6 @@
 /obj/structure/safe/floor{
 	number_of_tumblers = 5
 	},
-/obj/item/stack/spacecash/c20,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "gy" = (
@@ -177,7 +176,6 @@
 /obj/item/trash/tray,
 /mob/living/simple_animal/hostile/retaliate/goose/vomit,
 /obj/structure/bed/dogbed,
-/obj/item/stack/spacecash/c100,
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
 "mB" = (
@@ -532,19 +530,15 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "IX" = (
-/obj/docking_port/stationary{
-	height = 15;
-	width = 12;
-	dwidth = 3;
-	dir = 8
-	},
+/obj/structure/fans/tiny,
+/obj/machinery/door/airlock/maintenance_hatch,
 /obj/docking_port/mobile{
 	dir = 4;
 	launch_status = 0;
 	port_direction = 8
 	},
 /turf/open/floor/plating,
-/area/space)
+/area/ship/maintenance/aft)
 "JG" = (
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating,
@@ -593,10 +587,15 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "LA" = (
-/obj/structure/fans/tiny,
-/obj/machinery/door/airlock/maintenance_hatch,
+/obj/docking_port/stationary{
+	height = 15;
+	width = 12;
+	dheight = 1;
+	dwidth = 3;
+	dir = 8
+	},
 /turf/open/floor/plating,
-/area/ship/maintenance/aft)
+/area/ship/external)
 "LK" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -890,27 +889,8 @@ sd
 sd
 sd
 sd
-sd
-IX
-sd
-sd
-sd
-sd
-sd
-sd
-sd
-"}
-(2,1,1) = {"
-sd
-sd
-sd
-sd
-sd
-sd
-sd
-sd
 pH
-LA
+IX
 pU
 pH
 sd
@@ -919,7 +899,7 @@ sd
 sd
 sd
 "}
-(3,1,1) = {"
+(2,1,1) = {"
 sd
 sd
 sd
@@ -938,7 +918,7 @@ zr
 zr
 sd
 "}
-(4,1,1) = {"
+(3,1,1) = {"
 sd
 sd
 sd
@@ -957,7 +937,7 @@ lJ
 zm
 sd
 "}
-(5,1,1) = {"
+(4,1,1) = {"
 ng
 Tp
 Oy
@@ -976,7 +956,7 @@ Om
 HQ
 sd
 "}
-(6,1,1) = {"
+(5,1,1) = {"
 ng
 tr
 pZ
@@ -995,7 +975,7 @@ Xz
 iW
 gy
 "}
-(7,1,1) = {"
+(6,1,1) = {"
 ng
 Vl
 rA
@@ -1014,7 +994,7 @@ xd
 zr
 Po
 "}
-(8,1,1) = {"
+(7,1,1) = {"
 ng
 tr
 RK
@@ -1033,7 +1013,7 @@ Zo
 Bs
 zm
 "}
-(9,1,1) = {"
+(8,1,1) = {"
 ng
 Oy
 Oy
@@ -1052,7 +1032,7 @@ mw
 Bs
 zm
 "}
-(10,1,1) = {"
+(9,1,1) = {"
 sd
 sd
 sd
@@ -1071,7 +1051,7 @@ Po
 Po
 zr
 "}
-(11,1,1) = {"
+(10,1,1) = {"
 sd
 sd
 sd
@@ -1090,7 +1070,7 @@ ln
 sd
 sd
 "}
-(12,1,1) = {"
+(11,1,1) = {"
 sd
 sd
 sd
@@ -1109,7 +1089,7 @@ ln
 sd
 sd
 "}
-(13,1,1) = {"
+(12,1,1) = {"
 sd
 sd
 sd
@@ -1128,15 +1108,15 @@ GE
 sd
 sd
 "}
-(14,1,1) = {"
+(13,1,1) = {"
 sd
 sd
 sd
 sd
-sd
-sd
-sd
-sd
+gS
+LA
+gS
+gS
 GE
 ln
 DD

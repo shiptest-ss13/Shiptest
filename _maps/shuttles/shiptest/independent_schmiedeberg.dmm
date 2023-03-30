@@ -102,22 +102,18 @@
 /area/ship/bridge)
 "ba" = (
 /obj/effect/turf_decal/arrows/white,
-/turf/open/floor/plasteel/tech,
-/area/ship/cargo)
-"bc" = (
-/obj/docking_port/mobile{
-	callTime = 250;
-	dir = 2;
-	launch_status = 0;
-	name = "Pharmacology Ship";
-	port_direction = 8;
-	preferred_direction = 4
-	},
 /obj/docking_port/stationary{
 	height = 15;
 	width = 12;
 	dheight = 1;
 	dwidth = 3
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/cargo)
+"bc" = (
+/obj/docking_port/stationary{
+	height = 15;
+	width = 7
 	},
 /turf/open/floor/engine/hull,
 /area/ship/external)
@@ -1095,6 +1091,24 @@
 	},
 /turf/open/floor/mineral/titanium/white,
 /area/ship/medical)
+"qS" = (
+/obj/machinery/door/airlock/external/glass,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 1
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "pharmairlock"
+	},
+/obj/docking_port/mobile{
+	callTime = 250;
+	dir = 2;
+	launch_status = 0;
+	name = "Pharmacology Ship";
+	port_direction = 8;
+	preferred_direction = 4
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/engineering)
 "qU" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/maintenance/two,
@@ -1821,6 +1835,13 @@
 	},
 /turf/open/floor/plating,
 /area/ship/medical)
+"DZ" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/engineering)
 "EA" = (
 /obj/machinery/vending/cola,
 /obj/effect/turf_decal/corner/opaque/blue/three_quarters{
@@ -2281,16 +2302,6 @@
 /obj/effect/turf_decal/steeldecal/steel_decals6,
 /turf/open/floor/engine/hull,
 /area/ship/crew/hydroponics)
-"KW" = (
-/obj/machinery/door/airlock/external/glass,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 1
-	},
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "pharmairlock"
-	},
-/turf/open/floor/plasteel/tech/techmaint,
-/area/ship/engineering)
 "Ln" = (
 /obj/effect/turf_decal/siding/thinplating/light{
 	dir = 4
@@ -3567,9 +3578,9 @@ xD
 lZ
 Wv
 Wv
+Wv
 Rg
 Wv
-xJ
 "}
 (3,1,1) = {"
 xJ
@@ -3587,9 +3598,9 @@ mx
 ZA
 Ym
 WP
+DZ
 tK
-KW
-xJ
+qS
 "}
 (4,1,1) = {"
 xJ
@@ -3607,9 +3618,9 @@ Ay
 bH
 Wv
 Wv
+Wv
 AJ
 Wv
-xJ
 "}
 (5,1,1) = {"
 xJ

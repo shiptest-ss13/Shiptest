@@ -97,21 +97,17 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
 "fW" = (
-/obj/docking_port/stationary{
-	height = 15;
-	width = 12;
-	dheight = 1;
-	dwidth = 3;
-	dir = 2
+/obj/structure/fans/tiny,
+/obj/machinery/door/poddoor{
+	id = "baydoors";
+	name = "Cargo Bay Blast Door"
 	},
 /obj/docking_port/mobile{
 	launch_status = 0;
 	port_direction = 2
 	},
-/turf/open/floor/plating{
-	icon_state = "platingdmg2"
-	},
-/area/ship/external)
+/turf/open/floor/plating,
+/area/ship/cargo)
 "gh" = (
 /turf/closed/wall/r_wall,
 /area/ship/cargo)
@@ -745,7 +741,6 @@
 	pixel_x = -6;
 	pixel_y = 7
 	},
-/obj/item/stack/spacecash/c50,
 /turf/open/floor/plating,
 /area/ship/bridge)
 "yp" = (
@@ -1088,12 +1083,18 @@
 /turf/open/floor/pod/light,
 /area/ship/engineering)
 "Fs" = (
-/obj/effect/spawner/lootdrop/maintenance/seven,
-/obj/structure/closet/crate,
-/obj/item/storage/toolbox/electrical,
-/obj/item/stack/spacecash/c100,
+/obj/structure/window/reinforced/tinted{
+	dir = 1
+	},
+/obj/structure/curtain/cloth/fancy,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/glass,
+/obj/structure/toilet/secret{
+	dir = 8;
+	secret_type = /obj/item/circuitboard/machine/autolathe
+	},
 /turf/open/floor/plating,
-/area/ship/maintenance/fore)
+/area/ship/crew)
 "Fz" = (
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 4
@@ -1305,20 +1306,11 @@
 	},
 /area/ship/maintenance/fore)
 "LO" = (
-/obj/structure/window/reinforced/tinted{
-	dir = 1
-	},
-/obj/structure/curtain/cloth/fancy,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/glass,
-/obj/structure/toilet/secret{
-	dir = 8;
-	secret_type = /obj/item/circuitboard/machine/autolathe
-	},
-/obj/item/stack/spacecash/c100,
-/obj/item/stack/spacecash/c100,
+/obj/effect/spawner/lootdrop/maintenance/seven,
+/obj/structure/closet/crate,
+/obj/item/storage/toolbox/electrical,
 /turf/open/floor/plating,
-/area/ship/crew)
+/area/ship/maintenance/fore)
 "Ma" = (
 /obj/structure/tank_dispenser,
 /turf/open/floor/plating,
@@ -1852,7 +1844,6 @@ BZ
 BZ
 BZ
 BZ
-BZ
 "}
 (2,1,1) = {"
 BZ
@@ -1864,7 +1855,6 @@ El
 yp
 El
 BH
-BZ
 BZ
 BZ
 BZ
@@ -1900,7 +1890,6 @@ PR
 BZ
 BZ
 BZ
-BZ
 "}
 (4,1,1) = {"
 BZ
@@ -1921,7 +1910,6 @@ mK
 xB
 Xi
 PR
-BZ
 BZ
 BZ
 BZ
@@ -1948,7 +1936,6 @@ lQ
 dm
 dm
 dm
-BZ
 "}
 (6,1,1) = {"
 BZ
@@ -1959,7 +1946,7 @@ Qd
 DM
 RX
 BH
-Fs
+LO
 Yb
 ts
 Bl
@@ -1972,7 +1959,6 @@ sB
 wt
 bt
 xr
-BZ
 "}
 (7,1,1) = {"
 BZ
@@ -1996,7 +1982,6 @@ dm
 Fk
 sh
 vk
-BZ
 "}
 (8,1,1) = {"
 QM
@@ -2020,7 +2005,6 @@ dm
 dm
 dm
 dm
-BZ
 "}
 (9,1,1) = {"
 AO
@@ -2044,7 +2028,6 @@ tr
 jI
 ER
 hP
-BZ
 "}
 (10,1,1) = {"
 AO
@@ -2067,7 +2050,6 @@ XF
 GI
 qc
 GG
-hP
 fW
 "}
 (11,1,1) = {"
@@ -2092,7 +2074,6 @@ gh
 bL
 rD
 hP
-BZ
 "}
 (12,1,1) = {"
 Fi
@@ -2103,7 +2084,7 @@ Pu
 pC
 te
 aN
-LO
+Fs
 kv
 Rj
 tw
@@ -2116,7 +2097,6 @@ sv
 sv
 YB
 YB
-BZ
 "}
 (13,1,1) = {"
 BZ
@@ -2140,7 +2120,6 @@ dm
 Vs
 QU
 vk
-BZ
 "}
 (14,1,1) = {"
 BZ
@@ -2164,7 +2143,6 @@ sK
 RU
 QE
 xr
-BZ
 "}
 (15,1,1) = {"
 BZ
@@ -2188,7 +2166,6 @@ lQ
 dm
 dm
 dm
-BZ
 "}
 (16,1,1) = {"
 BZ
@@ -2209,7 +2186,6 @@ No
 Pt
 mo
 PR
-BZ
 BZ
 BZ
 BZ
@@ -2236,7 +2212,6 @@ PR
 BZ
 BZ
 BZ
-BZ
 "}
 (18,1,1) = {"
 BZ
@@ -2252,7 +2227,6 @@ BH
 BH
 BH
 BH
-BZ
 BZ
 BZ
 BZ

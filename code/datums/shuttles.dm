@@ -391,4 +391,10 @@
 	file_name = "syndicate_fighter_shiv"
 	name = "Shiv Fighter"
 
+/datum/map_template/shuttle/subshuttles/nanotrasen_ertshuttle
+	file_name = "nanotrasen_ertshuttle"
+	name = "Stork-Class Dropship"
+	prefix = "NTSV"
+	name_categories = list("WEAPONS")
+
 //your subshuttle here

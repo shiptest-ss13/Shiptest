@@ -911,6 +911,13 @@
 "kf" = (
 /obj/machinery/door/airlock/external/glass,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
+/obj/docking_port/mobile{
+	dir = 2;
+	launch_status = 0;
+	name = "Fauna Research Ship";
+	port_direction = 8;
+	preferred_direction = 4
+	},
 /turf/open/floor/pod,
 /area/ship/hallway/central)
 "kh" = (
@@ -1037,22 +1044,8 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/science)
 "lK" = (
-/obj/docking_port/stationary{
-	height = 15;
-	width = 12;
-	dheight = 1;
-	dwidth = 3
-	},
-/obj/docking_port/mobile{
-	callTime = 250;
-	dir = 2;
-	launch_status = 0;
-	name = "Fauna Research Ship";
-	port_direction = 8;
-	preferred_direction = 4
-	},
-/turf/open/floor/engine,
-/area/ship/external)
+/turf/open/floor/plasteel/dark,
+/area/template_noop)
 "lM" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1632,6 +1625,16 @@
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
+"uV" = (
+/obj/docking_port/stationary{
+	height = 15;
+	width = 12;
+	dheight = 1;
+	dwidth = 3;
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/template_noop)
 "vc" = (
 /obj/effect/turf_decal/siding/purple/corner{
 	dir = 1
@@ -3645,7 +3648,6 @@ tb
 tb
 tb
 tb
-tb
 kJ
 kJ
 bx
@@ -3659,7 +3661,6 @@ tb
 tb
 "}
 (2,1,1) = {"
-tb
 tb
 kq
 ym
@@ -3681,7 +3682,6 @@ Ly
 "}
 (3,1,1) = {"
 tb
-tb
 lu
 gp
 gp
@@ -3701,7 +3701,6 @@ QN
 uI
 "}
 (4,1,1) = {"
-tb
 tb
 lu
 bj
@@ -3723,7 +3722,6 @@ uI
 "}
 (5,1,1) = {"
 tb
-tb
 lu
 aC
 Nn
@@ -3744,7 +3742,6 @@ uI
 "}
 (6,1,1) = {"
 tb
-tb
 lu
 GX
 Al
@@ -3764,7 +3761,6 @@ Gu
 uI
 "}
 (7,1,1) = {"
-tb
 tb
 kq
 lu
@@ -3788,7 +3784,6 @@ Ly
 tb
 tb
 tb
-tb
 kq
 lu
 UB
@@ -3806,7 +3801,6 @@ tb
 tb
 "}
 (9,1,1) = {"
-tb
 tb
 tb
 tb
@@ -3832,7 +3826,6 @@ tb
 tb
 tb
 tb
-tb
 UB
 gl
 ih
@@ -3848,7 +3841,6 @@ tb
 tb
 "}
 (11,1,1) = {"
-tb
 tb
 tb
 tb
@@ -3874,7 +3866,6 @@ tb
 tb
 tb
 tb
-tb
 UB
 nv
 AN
@@ -3890,7 +3881,6 @@ tb
 tb
 "}
 (13,1,1) = {"
-tb
 tb
 tb
 tb
@@ -3915,7 +3905,6 @@ tb
 tb
 tb
 tb
-tb
 UB
 Lt
 Ma
@@ -3932,7 +3921,6 @@ tb
 tb
 "}
 (15,1,1) = {"
-tb
 tb
 tb
 tb
@@ -3956,7 +3944,6 @@ tb
 tb
 tb
 tb
-tb
 kJ
 UB
 UB
@@ -3974,7 +3961,6 @@ tb
 tb
 "}
 (17,1,1) = {"
-tb
 tb
 tb
 tb
@@ -3998,7 +3984,6 @@ tb
 tb
 tb
 tb
-tb
 cc
 di
 Ol
@@ -4016,7 +4001,6 @@ tb
 tb
 "}
 (19,1,1) = {"
-tb
 tb
 tb
 tb
@@ -4040,7 +4024,6 @@ tb
 tb
 tb
 tb
-tb
 cc
 gL
 gk
@@ -4058,7 +4041,6 @@ tb
 tb
 "}
 (21,1,1) = {"
-tb
 hF
 UK
 UK
@@ -4079,7 +4061,6 @@ tb
 tb
 "}
 (22,1,1) = {"
-lK
 kf
 SS
 Eq
@@ -4100,7 +4081,6 @@ tb
 tb
 "}
 (23,1,1) = {"
-tb
 UK
 UK
 UK
@@ -4121,7 +4101,6 @@ tb
 tb
 "}
 (24,1,1) = {"
-tb
 UK
 Pd
 Pd
@@ -4142,7 +4121,6 @@ tb
 tb
 "}
 (25,1,1) = {"
-tb
 ak
 GK
 dV
@@ -4163,7 +4141,6 @@ tb
 tb
 "}
 (26,1,1) = {"
-tb
 UK
 ij
 qp
@@ -4184,7 +4161,6 @@ tb
 tb
 "}
 (27,1,1) = {"
-tb
 hF
 ap
 fA
@@ -4206,9 +4182,8 @@ tb
 "}
 (28,1,1) = {"
 tb
-tb
-tb
-tb
+uV
+lK
 tb
 zE
 AE
@@ -4226,7 +4201,6 @@ tb
 tb
 "}
 (29,1,1) = {"
-tb
 tb
 tb
 tb
@@ -4251,7 +4225,6 @@ tb
 tb
 tb
 tb
-tb
 Yk
 wh
 TE
@@ -4268,7 +4241,6 @@ tb
 tb
 "}
 (31,1,1) = {"
-tb
 tb
 tb
 tb
@@ -4293,7 +4265,6 @@ tb
 tb
 tb
 tb
-tb
 zE
 JS
 ai
@@ -4314,7 +4285,6 @@ tb
 tb
 tb
 tb
-tb
 Yk
 YO
 jj
@@ -4331,7 +4301,6 @@ tb
 tb
 "}
 (34,1,1) = {"
-tb
 tb
 tb
 tb
@@ -4357,7 +4326,6 @@ tb
 tb
 tb
 tb
-tb
 lG
 MT
 SU
@@ -4373,7 +4341,6 @@ tb
 tb
 "}
 (36,1,1) = {"
-tb
 tb
 tb
 tb
@@ -4399,7 +4366,6 @@ tb
 tb
 tb
 tb
-tb
 lG
 iJ
 xs
@@ -4415,7 +4381,6 @@ tb
 tb
 "}
 (38,1,1) = {"
-tb
 tb
 tb
 tb
@@ -4442,7 +4407,6 @@ tb
 tb
 tb
 tb
-tb
 lG
 PL
 ch
@@ -4457,7 +4421,6 @@ tb
 tb
 "}
 (40,1,1) = {"
-tb
 tb
 tb
 tb
@@ -4484,7 +4447,6 @@ tb
 tb
 tb
 tb
-tb
 lG
 Xn
 JF
@@ -4499,7 +4461,6 @@ tb
 tb
 "}
 (42,1,1) = {"
-tb
 tb
 tb
 tb
@@ -4526,7 +4487,6 @@ tb
 tb
 tb
 tb
-tb
 dY
 WU
 eR
@@ -4541,7 +4501,6 @@ tb
 tb
 "}
 (44,1,1) = {"
-tb
 tb
 tb
 tb
@@ -4568,7 +4527,6 @@ tb
 tb
 tb
 tb
-tb
 LE
 dY
 Fk
@@ -4583,7 +4541,6 @@ tb
 tb
 "}
 (46,1,1) = {"
-tb
 tb
 tb
 tb

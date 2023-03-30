@@ -304,24 +304,6 @@
 /obj/machinery/photocopier/faxmachine/longrange,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
-"hG" = (
-/obj/machinery/door/poddoor/shutters{
-	id = "traumalobby";
-	name = "Lobby"
-	},
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/obj/machinery/door/firedoor/border_only,
-/obj/effect/turf_decal/industrial/warning,
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
-/turf/open/floor/engine,
-/area/ship/hallway/aft)
 "hH" = (
 /obj/machinery/computer/helm,
 /turf/open/floor/plasteel/dark,
@@ -1760,9 +1742,6 @@
 	},
 /turf/open/floor/vault,
 /area/ship/storage)
-"Mq" = (
-/turf/open/space/basic,
-/area/space)
 "MN" = (
 /obj/machinery/power/port_gen/pacman,
 /obj/structure/cable/yellow{
@@ -2044,19 +2023,27 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/aft)
 "Rj" = (
+/obj/machinery/door/poddoor/shutters{
+	id = "traumalobby";
+	name = "Lobby"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/effect/turf_decal/industrial/warning,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
 /obj/docking_port/mobile{
 	launch_status = 0;
 	port_direction = 2
 	},
-/obj/docking_port/stationary{
-	height = 15;
-	width = 12;
-	dheight = 1;
-	dwidth = 3;
-	dir = 2
-	},
-/turf/open/floor/plating/airless,
-/area/ship/external)
+/turf/open/floor/engine,
+/area/ship/hallway/aft)
 "Rs" = (
 /obj/effect/turf_decal/trimline/opaque/red/filled/warning{
 	dir = 8
@@ -2682,7 +2669,6 @@ ZC
 fp
 UG
 UG
-Mq
 "}
 (2,1,1) = {"
 UG
@@ -2712,7 +2698,6 @@ Kh
 Ny
 Jn
 UG
-Mq
 "}
 (3,1,1) = {"
 UG
@@ -2742,7 +2727,6 @@ Gm
 KD
 dR
 Jn
-Mq
 "}
 (4,1,1) = {"
 UG
@@ -2772,7 +2756,6 @@ ZC
 ZC
 ZC
 fp
-Mq
 "}
 (5,1,1) = {"
 UG
@@ -2802,7 +2785,6 @@ ZC
 UG
 UG
 UG
-Mq
 "}
 (6,1,1) = {"
 UG
@@ -2832,7 +2814,6 @@ ZC
 fp
 UG
 UG
-Mq
 "}
 (7,1,1) = {"
 vu
@@ -2862,7 +2843,6 @@ gL
 gL
 gL
 AJ
-Mq
 "}
 (8,1,1) = {"
 vu
@@ -2892,7 +2872,6 @@ YI
 Ja
 Qp
 KW
-Mq
 "}
 (9,1,1) = {"
 vu
@@ -2922,7 +2901,6 @@ xa
 eS
 cn
 ao
-Bn
 "}
 (10,1,1) = {"
 vu
@@ -2951,7 +2929,6 @@ go
 Bl
 Bl
 rh
-hG
 Rj
 "}
 (11,1,1) = {"
@@ -2982,7 +2959,6 @@ IG
 eS
 cn
 QM
-Bn
 "}
 (12,1,1) = {"
 vu
@@ -3012,7 +2988,6 @@ tT
 uW
 ZO
 KW
-Mq
 "}
 (13,1,1) = {"
 vu
@@ -3042,7 +3017,6 @@ gL
 gL
 gL
 AJ
-Mq
 "}
 (14,1,1) = {"
 UG
@@ -3072,7 +3046,6 @@ UO
 Ti
 UG
 UG
-Mq
 "}
 (15,1,1) = {"
 UG
@@ -3102,7 +3075,6 @@ UO
 UG
 UG
 UG
-Mq
 "}
 (16,1,1) = {"
 UG
@@ -3132,7 +3104,6 @@ UO
 UO
 UO
 Ti
-Mq
 "}
 (17,1,1) = {"
 UG
@@ -3162,7 +3133,6 @@ ir
 Hq
 VM
 Dj
-Mq
 "}
 (18,1,1) = {"
 UG
@@ -3192,7 +3162,6 @@ QY
 Ob
 Dj
 UG
-Mq
 "}
 (19,1,1) = {"
 UG
@@ -3222,5 +3191,4 @@ UO
 Ti
 UG
 UG
-Mq
 "}

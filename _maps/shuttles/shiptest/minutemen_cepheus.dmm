@@ -253,22 +253,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/electrical)
-"cG" = (
-/obj/docking_port/mobile{
-	dir = 4;
-	launch_status = 0;
-	port_direction = 2;
-	preferred_direction = 4
-	},
-/obj/docking_port/stationary{
-	height = 15;
-	width = 12;
-	dheight = 1;
-	dwidth = 3;
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/external)
 "cH" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -2659,9 +2643,6 @@
 	},
 /turf/open/floor/wood/birch,
 /area/ship/crew/dorm)
-"zE" = (
-/turf/open/floor/plasteel/dark,
-/area/ship/external)
 "zJ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
@@ -3139,10 +3120,6 @@
 /obj/effect/decal/cleanable/vomit/old{
 	pixel_y = 13
 	},
-/obj/item/stack/spacecash/c1000{
-	pixel_y = -1;
-	pixel_x = 3
-	},
 /obj/item/reagent_containers/food/drinks/britcup{
 	pixel_x = -6;
 	pixel_y = 9
@@ -3303,6 +3280,14 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/electrical)
+"Hy" = (
+/obj/docking_port/stationary{
+	height = 15;
+	width = 12;
+	dwidth = 3
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/science/robotics)
 "HI" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/techfloor/orange{
@@ -4909,9 +4894,9 @@ zQ
 zQ
 zQ
 zQ
-zE
-cG
-zE
+zQ
+zQ
+zQ
 zQ
 zQ
 zQ
@@ -5401,7 +5386,7 @@ zQ
 (21,1,1) = {"
 zQ
 zQ
-zQ
+Hy
 wC
 tQ
 yL
@@ -5601,7 +5586,7 @@ zQ
 (29,1,1) = {"
 zQ
 zQ
-zQ
+Hy
 DA
 og
 wH

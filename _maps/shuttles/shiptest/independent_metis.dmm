@@ -3461,19 +3461,15 @@
 /turf/open/floor/mineral/titanium/tiled/purple,
 /area/ship/science/ai_chamber)
 "SF" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/airlock/external,
+/obj/structure/fans/tiny,
 /obj/docking_port/mobile{
 	launch_status = 0;
 	port_direction = 2
 	},
-/obj/docking_port/stationary{
-	height = 15;
-	width = 12;
-	dheight = 1;
-	dwidth = 3;
-	dir = 2
-	},
-/turf/open/floor/plating/airless,
-/area/ship/external)
+/turf/open/floor/plating,
+/area/ship/hallway/aft)
 "SN" = (
 /mob/living/simple_animal/pet/cat/original{
 	mob_size = 1.1
@@ -3687,12 +3683,6 @@
 	baseturfs = /turf/open/floor/mineral/titanium/tiled/white
 	},
 /area/ship/science/ai_chamber)
-"Vs" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/airlock/external,
-/obj/structure/fans/tiny,
-/turf/open/floor/plating,
-/area/ship/hallway/aft)
 "Vw" = (
 /turf/closed/wall/mineral/titanium,
 /area/ship/hallway/fore)
@@ -4207,7 +4197,6 @@ XO
 XO
 vo
 vo
-vo
 "}
 (2,1,1) = {"
 vo
@@ -4234,7 +4223,6 @@ My
 Cr
 WS
 XO
-vo
 vo
 vo
 "}
@@ -4265,7 +4253,6 @@ HA
 XO
 vo
 vo
-vo
 "}
 (4,1,1) = {"
 vo
@@ -4292,7 +4279,6 @@ Ww
 Ai
 Ti
 XO
-vo
 vo
 vo
 "}
@@ -4323,7 +4309,6 @@ vZ
 Gu
 sH
 vo
-vo
 "}
 (6,1,1) = {"
 vo
@@ -4352,7 +4337,6 @@ Iq
 FX
 JB
 sH
-vo
 "}
 (7,1,1) = {"
 vo
@@ -4381,7 +4365,6 @@ jk
 Sg
 Sg
 sH
-vo
 "}
 (8,1,1) = {"
 vo
@@ -4410,7 +4393,6 @@ HV
 gj
 YP
 sH
-vo
 "}
 (9,1,1) = {"
 vo
@@ -4439,7 +4421,6 @@ QS
 ra
 ra
 sH
-vo
 "}
 (10,1,1) = {"
 vo
@@ -4468,7 +4449,6 @@ mT
 uP
 ij
 sH
-vo
 "}
 (11,1,1) = {"
 vo
@@ -4497,7 +4477,6 @@ gH
 bB
 bB
 sH
-vo
 "}
 (12,1,1) = {"
 vo
@@ -4526,7 +4505,6 @@ Bf
 fb
 hb
 vh
-vo
 "}
 (13,1,1) = {"
 vo
@@ -4554,7 +4532,6 @@ ms
 Iw
 WF
 yG
-vo
 vo
 "}
 (14,1,1) = {"
@@ -4584,7 +4561,6 @@ xB
 rb
 WQ
 vh
-vo
 "}
 (15,1,1) = {"
 um
@@ -4612,7 +4588,6 @@ jd
 Pt
 WF
 Vj
-vo
 vo
 "}
 (16,1,1) = {"
@@ -4642,7 +4617,6 @@ xg
 Fr
 hb
 vh
-vo
 "}
 (17,1,1) = {"
 um
@@ -4670,7 +4644,6 @@ iG
 bB
 bB
 iG
-vo
 vo
 "}
 (18,1,1) = {"
@@ -4700,7 +4673,6 @@ kb
 jI
 ic
 vo
-vo
 "}
 (19,1,1) = {"
 sr
@@ -4728,7 +4700,6 @@ DC
 eM
 eM
 ic
-vo
 vo
 "}
 (20,1,1) = {"
@@ -4758,7 +4729,6 @@ om
 CP
 Wz
 ic
-vo
 "}
 (21,1,1) = {"
 vo
@@ -4786,7 +4756,6 @@ yc
 TZ
 eM
 aB
-Vs
 SF
 "}
 (22,1,1) = {"
@@ -4816,7 +4785,6 @@ hu
 tw
 cv
 ic
-vo
 "}
 (23,1,1) = {"
 vo
@@ -4845,7 +4813,6 @@ ic
 ic
 ic
 vo
-vo
 "}
 (24,1,1) = {"
 vo
@@ -4870,7 +4837,6 @@ EM
 Kj
 VJ
 dL
-vo
 vo
 vo
 vo
@@ -4903,7 +4869,6 @@ vo
 vo
 vo
 vo
-vo
 "}
 (26,1,1) = {"
 vo
@@ -4928,7 +4893,6 @@ es
 Yk
 Sv
 EM
-vo
 vo
 vo
 vo
@@ -4961,7 +4925,6 @@ vo
 vo
 vo
 vo
-vo
 "}
 (28,1,1) = {"
 vo
@@ -4986,7 +4949,6 @@ nI
 jS
 Gx
 EM
-vo
 vo
 vo
 vo
@@ -5019,7 +4981,6 @@ vo
 vo
 vo
 vo
-vo
 "}
 (30,1,1) = {"
 vo
@@ -5044,7 +5005,6 @@ Oo
 yH
 wu
 EM
-vo
 vo
 vo
 vo
@@ -5077,7 +5037,6 @@ vo
 vo
 vo
 vo
-vo
 "}
 (32,1,1) = {"
 vo
@@ -5101,7 +5060,6 @@ AI
 yh
 sy
 Nl
-vo
 vo
 vo
 vo
@@ -5135,7 +5093,6 @@ vo
 vo
 vo
 vo
-vo
 "}
 (34,1,1) = {"
 vo
@@ -5159,7 +5116,6 @@ rp
 Gh
 jc
 Nl
-vo
 vo
 vo
 vo
@@ -5193,7 +5149,6 @@ vo
 vo
 vo
 vo
-vo
 "}
 (36,1,1) = {"
 vo
@@ -5217,7 +5172,6 @@ Nl
 Nl
 Nl
 Nl
-vo
 vo
 vo
 vo

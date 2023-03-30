@@ -3160,16 +3160,6 @@
 /obj/item/clothing/suit/hooded/wintercoat/engineering/atmos,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/engine)
-"yk" = (
-/obj/docking_port/stationary{
-	height = 15;
-	width = 12;
-	dheight = 1;
-	dwidth = 3;
-	dir = 4
-	},
-/turf/open/floor/engine/hull,
-/area/ship/external)
 "yl" = (
 /obj/machinery/light{
 	dir = 4
@@ -5628,6 +5618,14 @@
 	},
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/engineering/engine)
+"Rk" = (
+/obj/docking_port/stationary{
+	height = 15;
+	width = 12;
+	dwidth = 3
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external)
 "Rm" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -7219,7 +7217,7 @@ Gs
 (12,1,1) = {"
 fS
 fg
-yk
+fg
 WL
 qa
 qa
@@ -7601,7 +7599,7 @@ qa
 qa
 qa
 qa
-fg
+Rk
 zK
 Ps
 Gb

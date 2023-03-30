@@ -334,15 +334,37 @@
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "gi" = (
-/obj/docking_port/stationary{
-	height = 15;
-	width = 12;
-	dheight = 1;
-	dwidth = 3;
+/obj/structure/table/reinforced,
+/obj/machinery/requests_console{
+	announcementConsole = 1;
+	department = "Cockpit";
+	pixel_y = 30
+	},
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
-/turf/open/floor/plating/airless,
-/area/ship/external)
+/obj/effect/turf_decal/corner/transparent/neutral{
+	dir = 1
+	},
+/obj/machinery/button/door{
+	id = "windowlockdown";
+	name = "Window Lockdown";
+	pixel_x = -5;
+	pixel_y = 5
+	},
+/obj/machinery/button/door{
+	id = "cargoblastdoors";
+	name = "Blast Door Control";
+	pixel_x = 5;
+	pixel_y = 5
+	},
+/obj/machinery/button/door{
+	id = "bridgelockdown";
+	name = "Bridge Lockdown";
+	pixel_y = -5
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
 "gv" = (
 /obj/structure/table/wood/poker,
 /obj/item/toy/cards/deck/kotahi,
@@ -416,8 +438,6 @@
 /obj/docking_port/mobile{
 	can_move_docking_ports = 1;
 	dir = 4;
-	dwidth = 5;
-	height = 29;
 	launch_status = 0;
 	name = "diner ship";
 	port_direction = 2;
@@ -520,43 +540,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
-"lG" = (
-/obj/structure/table/reinforced,
-/obj/machinery/requests_console{
-	announcementConsole = 1;
-	department = "Cockpit";
-	pixel_y = 30
-	},
-/obj/effect/turf_decal/corner/transparent/neutral{
-	dir = 8
-	},
-/obj/effect/turf_decal/corner/transparent/neutral{
-	dir = 1
-	},
-/obj/machinery/button/door{
-	id = "windowlockdown";
-	name = "Window Lockdown";
-	pixel_x = -5;
-	pixel_y = 5
-	},
-/obj/machinery/button/door{
-	id = "cargoblastdoors";
-	name = "Blast Door Control";
-	pixel_x = 5;
-	pixel_y = 5
-	},
-/obj/machinery/button/door{
-	id = "bridgelockdown";
-	name = "Bridge Lockdown";
-	pixel_y = -5
-	},
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
-/turf/open/floor/plasteel/dark,
-/area/ship/bridge)
 "lJ" = (
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew/canteen)
@@ -2688,27 +2671,6 @@
 (1,1,1) = {"
 vZ
 vZ
-vZ
-vZ
-gi
-yi
-vZ
-vZ
-vZ
-vZ
-vZ
-vZ
-vZ
-vZ
-vZ
-vZ
-vZ
-vZ
-vZ
-"}
-(2,1,1) = {"
-vZ
-vZ
 cC
 cC
 wp
@@ -2727,7 +2689,7 @@ vZ
 vZ
 vZ
 "}
-(3,1,1) = {"
+(2,1,1) = {"
 vZ
 vZ
 cC
@@ -2748,7 +2710,7 @@ yi
 yi
 vZ
 "}
-(4,1,1) = {"
+(3,1,1) = {"
 vZ
 vZ
 cC
@@ -2769,7 +2731,7 @@ tM
 dH
 yi
 "}
-(5,1,1) = {"
+(4,1,1) = {"
 vZ
 vZ
 cC
@@ -2790,7 +2752,7 @@ ly
 dH
 yi
 "}
-(6,1,1) = {"
+(5,1,1) = {"
 vZ
 vZ
 xr
@@ -2811,7 +2773,7 @@ Ax
 dH
 vZ
 "}
-(7,1,1) = {"
+(6,1,1) = {"
 vZ
 xr
 xr
@@ -2832,7 +2794,7 @@ IJ
 dH
 vZ
 "}
-(8,1,1) = {"
+(7,1,1) = {"
 vZ
 xr
 GO
@@ -2853,7 +2815,7 @@ qa
 dH
 vZ
 "}
-(9,1,1) = {"
+(8,1,1) = {"
 vZ
 cC
 Aw
@@ -2874,7 +2836,7 @@ qg
 dH
 vZ
 "}
-(10,1,1) = {"
+(9,1,1) = {"
 vZ
 cC
 cY
@@ -2895,7 +2857,7 @@ DG
 dH
 vZ
 "}
-(11,1,1) = {"
+(10,1,1) = {"
 vZ
 cC
 GO
@@ -2916,7 +2878,7 @@ Zz
 JR
 vZ
 "}
-(12,1,1) = {"
+(11,1,1) = {"
 vZ
 xr
 lJ
@@ -2937,7 +2899,7 @@ Rq
 JR
 vZ
 "}
-(13,1,1) = {"
+(12,1,1) = {"
 vZ
 xr
 lJ
@@ -2958,7 +2920,7 @@ tq
 eS
 vZ
 "}
-(14,1,1) = {"
+(13,1,1) = {"
 vZ
 xr
 lJ
@@ -2979,7 +2941,7 @@ tq
 eS
 vZ
 "}
-(15,1,1) = {"
+(14,1,1) = {"
 vZ
 xr
 lJ
@@ -3000,7 +2962,7 @@ tq
 eS
 vZ
 "}
-(16,1,1) = {"
+(15,1,1) = {"
 vZ
 xr
 lJ
@@ -3021,7 +2983,7 @@ uR
 JR
 vZ
 "}
-(17,1,1) = {"
+(16,1,1) = {"
 vZ
 xr
 lJ
@@ -3042,7 +3004,7 @@ Nc
 Au
 vZ
 "}
-(18,1,1) = {"
+(17,1,1) = {"
 vZ
 cC
 dl
@@ -3063,7 +3025,7 @@ vj
 Au
 vZ
 "}
-(19,1,1) = {"
+(18,1,1) = {"
 vZ
 Ag
 CJ
@@ -3084,7 +3046,7 @@ sg
 Au
 vZ
 "}
-(20,1,1) = {"
+(19,1,1) = {"
 vZ
 Ag
 SB
@@ -3105,7 +3067,7 @@ Jg
 TD
 vZ
 "}
-(21,1,1) = {"
+(20,1,1) = {"
 yi
 Ag
 AW
@@ -3126,7 +3088,7 @@ tK
 TD
 vZ
 "}
-(22,1,1) = {"
+(21,1,1) = {"
 yi
 yk
 dW
@@ -3147,7 +3109,7 @@ EH
 DZ
 vZ
 "}
-(23,1,1) = {"
+(22,1,1) = {"
 yi
 yk
 Ba
@@ -3168,7 +3130,7 @@ EH
 DZ
 vZ
 "}
-(24,1,1) = {"
+(23,1,1) = {"
 nc
 yk
 dW
@@ -3189,7 +3151,7 @@ Ar
 TD
 vZ
 "}
-(25,1,1) = {"
+(24,1,1) = {"
 yi
 yk
 Uv
@@ -3210,7 +3172,7 @@ EH
 DZ
 vZ
 "}
-(26,1,1) = {"
+(25,1,1) = {"
 yi
 Ag
 nA
@@ -3231,7 +3193,7 @@ yF
 DZ
 vZ
 "}
-(27,1,1) = {"
+(26,1,1) = {"
 vZ
 Ag
 rj
@@ -3252,7 +3214,7 @@ Eo
 TD
 vZ
 "}
-(28,1,1) = {"
+(27,1,1) = {"
 vZ
 Ag
 sD
@@ -3260,7 +3222,7 @@ Ag
 vZ
 of
 of
-lG
+gi
 NB
 ph
 ph
@@ -3273,7 +3235,7 @@ DZ
 TD
 vZ
 "}
-(29,1,1) = {"
+(28,1,1) = {"
 vZ
 vZ
 vZ
@@ -3294,7 +3256,7 @@ vZ
 vZ
 vZ
 "}
-(30,1,1) = {"
+(29,1,1) = {"
 vZ
 vZ
 vZ

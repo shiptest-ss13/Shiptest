@@ -252,13 +252,6 @@
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 1
 	},
-/obj/docking_port/stationary{
-	height = 15;
-	width = 7;
-	dheight = 1;
-	dwidth = 3;
-	dir = 2
-	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
 "dJ" = (
@@ -2343,6 +2336,15 @@
 /obj/machinery/door/window/eastleft,
 /turf/open/floor/plating,
 /area/ship/engineering)
+"QU" = (
+/obj/docking_port/stationary{
+	height = 15;
+	width = 7;
+	dwidth = 3;
+	dir = 2
+	},
+/turf/open/floor/plasteel/patterned/grid,
+/area/ship/hallway/central)
 "Rj" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /turf/open/floor/plastic,
@@ -3146,7 +3148,7 @@ Gf
 rL
 Hw
 dr
-bA
+QU
 bA
 "}
 (23,1,1) = {"

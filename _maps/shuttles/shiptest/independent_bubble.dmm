@@ -597,19 +597,13 @@
 /turf/open/floor/plasteel,
 /area/ship/engineering)
 "AR" = (
+/obj/machinery/door/airlock/external,
 /obj/docking_port/mobile{
 	launch_status = 0;
 	port_direction = 4
 	},
-/obj/docking_port/stationary{
-	height = 15;
-	width = 12;
-	dheight = 1;
-	dwidth = 3;
-	dir = 2
-	},
 /turf/open/floor/plating,
-/area/ship/external)
+/area/ship/engineering)
 "BJ" = (
 /obj/structure/sign/departments/cargo{
 	pixel_y = 32
@@ -1088,13 +1082,6 @@
 	pixel_y = -25
 	},
 /obj/item/areaeditor/shuttle,
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
 /turf/open/floor/wood,
 /area/ship/crew/dorm)
 "VQ" = (
@@ -1224,7 +1211,6 @@ VB
 VB
 VB
 VB
-VB
 "}
 (2,1,1) = {"
 VB
@@ -1239,7 +1225,6 @@ hs
 GD
 Ob
 wH
-VB
 VB
 VB
 VB
@@ -1264,7 +1249,6 @@ VB
 VB
 VB
 VB
-VB
 "}
 (4,1,1) = {"
 VB
@@ -1281,7 +1265,6 @@ MW
 VA
 Ob
 Ob
-VB
 VB
 VB
 VB
@@ -1304,7 +1287,6 @@ Ob
 VB
 VB
 VB
-VB
 "}
 (6,1,1) = {"
 VB
@@ -1322,7 +1304,6 @@ nH
 nH
 nH
 nH
-VB
 VB
 VB
 "}
@@ -1344,7 +1325,6 @@ KG
 nH
 VB
 VB
-VB
 "}
 (8,1,1) = {"
 VB
@@ -1362,7 +1342,6 @@ Cc
 ZM
 JF
 nH
-VB
 VB
 VB
 "}
@@ -1384,7 +1363,6 @@ fs
 vR
 DL
 VB
-VB
 "}
 (10,1,1) = {"
 VB
@@ -1403,7 +1381,6 @@ KQ
 kW
 nH
 NX
-VB
 VB
 "}
 (11,1,1) = {"
@@ -1424,7 +1401,6 @@ IL
 Vt
 Rk
 MJ
-VB
 "}
 (12,1,1) = {"
 ns
@@ -1443,7 +1419,6 @@ cH
 Ls
 ZQ
 cG
-ZQ
 AR
 "}
 (13,1,1) = {"
@@ -1464,7 +1439,6 @@ UC
 Vt
 mY
 MJ
-VB
 "}
 (14,1,1) = {"
 VB
@@ -1484,7 +1458,6 @@ MJ
 MJ
 VB
 VB
-VB
 "}
 (15,1,1) = {"
 VB
@@ -1501,7 +1474,6 @@ CP
 bb
 Ul
 zy
-VB
 VB
 VB
 VB
@@ -1524,7 +1496,6 @@ zy
 VB
 VB
 VB
-VB
 "}
 (17,1,1) = {"
 VB
@@ -1544,7 +1515,6 @@ VB
 VB
 VB
 VB
-VB
 "}
 (18,1,1) = {"
 VB
@@ -1558,7 +1528,6 @@ hh
 hh
 hh
 CP
-VB
 VB
 VB
 VB

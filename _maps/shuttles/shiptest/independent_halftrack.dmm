@@ -46,7 +46,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/security/range)
 "by" = (
-/turf/open/floor/plating/airless,
+/turf/open/space/basic,
 /area/ship/external)
 "bX" = (
 /obj/machinery/door/poddoor/preopen{
@@ -908,6 +908,17 @@
 /obj/effect/turf_decal/industrial/hatch/red,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/aft)
+"vi" = (
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 1
+	},
+/obj/structure/cable,
+/obj/docking_port/mobile{
+	launch_status = 0;
+	port_direction = 2
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/port)
 "vj" = (
 /obj/machinery/power/apc/auto_name/east,
 /obj/structure/cable{
@@ -1087,10 +1098,6 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/fore)
 "BN" = (
-/obj/docking_port/mobile{
-	launch_status = 0;
-	port_direction = 2
-	},
 /obj/structure/fans/tiny,
 /obj/machinery/door/poddoor/shutters{
 	id = "traumalobby";
@@ -1098,9 +1105,10 @@
 	},
 /obj/docking_port/stationary{
 	height = 15;
-	width = 7;
-	dir = 2;
-	dheight = -1
+	width = 12;
+	dheight = 1;
+	dwidth = 3;
+	dir = 2
 	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/hallway/aft)
@@ -1521,16 +1529,6 @@
 /obj/structure/sign/poster/contraband/stechkin,
 /turf/closed/wall/r_wall,
 /area/ship/hallway/aft)
-"MC" = (
-/obj/docking_port/stationary{
-	height = 15;
-	width = 12;
-	dheight = 1;
-	dwidth = 3;
-	dir = 2
-	},
-/turf/open/floor/plating/airless,
-/area/ship/external)
 "MN" = (
 /obj/machinery/power/port_gen/pacman,
 /obj/structure/cable/yellow{
@@ -2288,7 +2286,7 @@ CX
 Gm
 KD
 dR
-Jn
+vi
 UG
 "}
 (4,1,1) = {"
@@ -2499,7 +2497,7 @@ ur
 ur
 ur
 BN
-MC
+by
 "}
 (11,1,1) = {"
 bX

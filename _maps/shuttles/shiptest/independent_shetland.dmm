@@ -2832,15 +2832,6 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/toilet)
-"Bt" = (
-/obj/docking_port/mobile{
-	can_move_docking_ports = 1;
-	dir = 2;
-	launch_status = 0;
-	port_direction = 8
-	},
-/turf/open/floor/plating/airless,
-/area/ship/external)
 "Bx" = (
 /obj/machinery/door/poddoor{
 	id = "ejected";
@@ -4455,6 +4446,15 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
+"RW" = (
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	dir = 2;
+	launch_status = 0;
+	port_direction = 8
+	},
+/turf/closed/wall/r_wall,
+/area/ship/crew/dorm)
 "RY" = (
 /obj/structure/catwalk/over,
 /turf/open/floor/plating,
@@ -4657,11 +4657,6 @@
 	dir = 1
 	},
 /obj/item/paper_bin,
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "TX" = (
@@ -5858,7 +5853,7 @@ GV
 pq
 "}
 (19,1,1) = {"
-Bt
+Ny
 as
 co
 dK
@@ -6385,7 +6380,7 @@ FI
 LO
 "}
 (36,1,1) = {"
-LO
+RW
 uy
 uy
 SU

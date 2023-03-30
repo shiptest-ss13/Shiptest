@@ -1651,6 +1651,17 @@
 /obj/structure/catwalk,
 /obj/structure/window/reinforced/spawner/north,
 /obj/structure/grille,
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	dir = 2;
+	dwidth = 12;
+	height = 17;
+	launch_status = 0;
+	name = "chapel ship";
+	port_direction = 8;
+	preferred_direction = 4;
+	width = 28
+	},
 /turf/open/floor/plating/airless,
 /area/ship/engineering/atmospherics)
 "oy" = (
@@ -5434,17 +5445,6 @@
 	width = 12;
 	dheight = 1;
 	dwidth = 3
-	},
-/obj/docking_port/mobile{
-	can_move_docking_ports = 1;
-	dir = 2;
-	dwidth = 12;
-	height = 17;
-	launch_status = 0;
-	name = "chapel ship";
-	port_direction = 8;
-	preferred_direction = 4;
-	width = 28
 	},
 /turf/open/floor/plating,
 /area/ship/external)

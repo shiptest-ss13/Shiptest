@@ -6146,6 +6146,18 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
+"ZG" = (
+/obj/docking_port/stationary{
+	height = 15;
+	width = 7;
+	dheight = 1;
+	dwidth = 3
+	},
+/obj/machinery/door/airlock/external/glass{
+	name = "External Hull Access"
+	},
+/turf/open/floor/plasteel/tech/airless,
+/area/ship/construction)
 "ZJ" = (
 /obj/effect/turf_decal/corner/transparent/solgovgold{
 	dir = 5
@@ -7431,7 +7443,7 @@ kD
 kD
 kD
 kD
-rg
+ZG
 Ls
 ia
 Jj
@@ -7662,7 +7674,7 @@ kD
 kD
 kD
 kD
-rg
+ZG
 Ls
 ia
 Jj
