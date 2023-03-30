@@ -583,3 +583,11 @@ ELASTICSEARCH_METRICS_ENDPOINT http://10.0.0.40:9201/ss13-metrics-stream/_doc
 
 ## ElasticSearch API key. This is formatted into the headers. Look at the ElasticSearch doc for how to make this
 ELASTICSEARCH_METRICS_APIKEY thisIsSomethingThatsBased64Encoded==
+
+## Name your perpetual currency here
+## This is used within the metashop and earned by playing the game.
+METACURRENCY_NAME ZetaCoin
+
+## Grant metacurrency
+## Comment this out if you don't want players to earn metacurrency
+GRANT_METACURRENCY
