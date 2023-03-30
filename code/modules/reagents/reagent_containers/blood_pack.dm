@@ -1,10 +1,10 @@
 /obj/item/reagent_containers/glass/blood
 	name = "blood pack"
-	desc = "Contains blood used for transfusion. Must be attached to an IV drip."
+	desc = "Contains blood used for transfusion. Must be attached to an IV drip. It looks like it could be <b>sliced</b> open with something sharp."
 	icon = 'icons/obj/bloodpack.dmi'
 	icon_state = "bloodpack"
 	volume = 200
-	possible_transfer_amounts = list(5,10,15,20,25,30,50,100,200)
+	possible_transfer_amounts = list(5, 10, 15, 20, 25, 30, 50, 100, 200)
 	fill_icon_thresholds = list(10, 20, 30, 40, 50, 60, 70, 80, 90, 100)
 	var/blood_type = null
 	var/unique_blood = null

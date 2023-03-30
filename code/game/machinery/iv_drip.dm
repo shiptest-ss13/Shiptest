@@ -101,7 +101,7 @@
 		if(istype(W, /obj/item/reagent_containers/glass/blood))
 			var/obj/item/reagent_containers/glass/blood/bag = W
 			if (bag.sliced)
-				to_chat(user, "<span class='warning'>The bag is sliced, it's gonna spill everywere !</span>")
+				to_chat(user, "<span class='warning'>The bag is sliced, it would spill everywhere!</span>")
 				return
 		if(beaker)
 			to_chat(user, "<span class='warning'>There is already a reagent container loaded!</span>")
