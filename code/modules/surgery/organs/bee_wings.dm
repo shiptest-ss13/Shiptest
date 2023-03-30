@@ -3,9 +3,9 @@
 	name = "pair of bee wings"
 	desc = "A pair of bee wings. They seem tiny and undergrown"
 	icon_state = "beewings"
-	flight_level = WINGS_COSMETIC
+//	flight_level = WINGS_COSMETIC
 	actions_types = list(/datum/action/item_action/organ_action/use/bee_dash)
-	wing_type = "Bee"
+//	wing_type = "Bee"
 	var/jumpdist = 3
 
 /obj/item/organ/wings/bee/Remove(mob/living/carbon/human/H, special)
@@ -22,7 +22,7 @@
 	var/obj/item/organ/wings/bee/wings = locate(/obj/item/organ/wings/bee) in L.internal_organs
 	var/jumpdistance = wings.jumpdist
 
-	if(L.stat != CONSCIOUS || L.buckling || L.restrained()) // Has to be conscious and unbuckled
+/*	if(L.stat != CONSCIOUS || L.buckling || L.restrained()) // Has to be conscious and unbuckled
 		return
 	if(recharging_time > world.time)
 		to_chat(L, "<span class='warning'>The wings aren't ready to dash yet!</span>")
@@ -30,14 +30,14 @@
 	var/datum/gas_mixture/environment = L.loc.return_air()
 	if(environment && !(environment.return_pressure() > 30))
 		to_chat(L, "<span class='warning'>The atmosphere is too thin for you to dash!</span>")
-		return
+		return*/
 
 	var/turf/target = get_edge_target_turf(L, L.dir) //represents the user's direction
 	var/hoppingtable = FALSE // Triggers the trip
 	var/jumpdistancemoved = jumpdistance // temp jumpdistance
 	var/turf/checkjump = get_turf(L)
 
-	for(var/i in 1 to jumpdistance) //This is how hiero club find the tiles in front of it, tell me/fix it if there's a better way
+/*	for(var/i in 1 to jumpdistance) //This is how hiero club find the tiles in front of it, tell me/fix it if there's a better way
 		var/turf/T = get_step(checkjump, L.dir)
 		if(T.density || !T.ClickCross(invertDir(L.dir), border_only = 1))
 			break
@@ -57,13 +57,13 @@
 		L.visible_message("<span class='warning'>[usr] dashes forward into the air!</span>")
 		recharging_time = world.time + recharging_rate
 	else
-		to_chat(L, "<span class='warning'>Something prevents you from dashing forward!</span>")
+		to_chat(L, "<span class='warning'>Something prevents you from dashing forward!</span>")*/
 
-/datum/action/item_action/organ_action/use/bee_dash/proc/crash_into_table(turf/tableturf)
+/*/datum/action/item_action/organ_action/use/bee_dash/proc/crash_into_table(turf/tableturf)
 	if(owner.loc == tableturf)
 		var/mob/living/carbon/L = owner
 		L.take_bodypart_damage(10,check_armor = TRUE)
 		L.Paralyze(40)
 		L.visible_message("<span class='danger'>[L] crashes into a table, falling over!</span>",\
 			"<span class='userdanger'>You violently crash into a table!</span>")
-		playsound(src,'sound/weapons/punch1.ogg',50,1)
+		playsound(src,'sound/weapons/punch1.ogg',50,1)*/
