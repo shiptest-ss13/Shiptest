@@ -117,6 +117,15 @@
 	new /obj/item/t_scanner(src)
 	new /obj/item/extinguisher/mini(src)
 
+/obj/item/storage/belt/utility/atmostech/hologram/PopulateContents()
+	new /obj/item/screwdriver(src)
+	new /obj/item/wrench(src)
+	new /obj/item/weldingtool(src)
+	new /obj/item/crowbar(src)
+	new /obj/item/wirecutters(src)
+	new /obj/item/t_scanner(src)
+	new /obj/item/pipe_dispenser(src)
+
 /obj/item/storage/belt/utility/syndicate/PopulateContents()
 	new /obj/item/screwdriver/nuke(src)
 	new /obj/item/wrench/combat(src)
@@ -629,6 +638,14 @@
 		/obj/item/shovel/spade,
 		/obj/item/gun/energy/floragun
 	))
+
+/obj/item/storage/belt/plant/full/PopulateContents()
+	new /obj/item/plant_analyzer(src)
+	new /obj/item/cultivator(src)
+	new /obj/item/hatchet(src)
+	new /obj/item/shovel/spade(src)
+	new /obj/item/reagent_containers/spray/pestspray(src)
+	new /obj/item/reagent_containers/spray/plantbgone(src)
 
 /obj/item/storage/belt/bandolier
 	name = "bandolier"
