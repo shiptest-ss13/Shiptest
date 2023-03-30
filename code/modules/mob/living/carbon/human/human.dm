@@ -1304,6 +1304,9 @@
 /mob/living/carbon/human/species/android
 	race = /datum/species/android
 
+/mob/living/carbon/human/species/apid
+	race = /datum/species/apid
+
 /mob/living/carbon/human/species/dullahan
 	race = /datum/species/dullahan
 

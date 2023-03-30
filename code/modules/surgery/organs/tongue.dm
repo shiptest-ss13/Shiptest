@@ -459,3 +459,27 @@
 /obj/item/organ/tongue/vox/Initialize(mapload)
 	. = ..()
 	languages_possible = languages_possible_vox
+
+
+/obj/item/organ/tongue/bee
+	name = "proboscis"
+	desc = "A freakish looking meat tube that apparently can take in liquids, this one smells slightly like flowers."
+	icon_state = "tonguefly"
+	say_mod = "buzzes"
+	taste_sensitivity = 5
+	var/static/list/languages_possible_bee = typecacheof(list(
+		/datum/language/common,
+		/datum/language/draconic,
+		/datum/language/codespeak,
+		/datum/language/monkey,
+		/datum/language/narsie,
+		/datum/language/beachbum,
+		/datum/language/aphasia,
+		/datum/language/piratespeak,
+		/datum/language/moffic,
+		/datum/language/sylvan,
+		/datum/language/shadowtongue,
+		/datum/language/terrum,
+		/datum/language/buzzwords,
+		/datum/language/apidite
+	))

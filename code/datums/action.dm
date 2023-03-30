@@ -471,6 +471,12 @@
 	name = "Toggle [target.name]"
 	button.name = name
 
+/datum/action/item_action/bhop/apid
+	name = "Apid Dash"
+	desc = "Uses your wings to dash forward 6 tiles."
+	icon_icon = 'icons/mob/neck.dmi'
+	button_icon_state = "apid_wings"
+
 /datum/action/item_action/organ_action/use/New(Target)
 	..()
 	name = "Use [target.name]"

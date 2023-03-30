@@ -417,3 +417,13 @@
 	flash_protect = FLASH_PROTECTION_SENSITIVE	//Obligatory flash sensitivity for balance
 	lighting_alpha = LIGHTING_PLANE_ALPHA_NV_TRAIT - 5	//This acts as *slightly* more powerful nightvision compared to the nightvision trait, if someone chooses NV as a trait it will be overwritten by this (highest wins).
 	//This reason these eyes do not inherit from /night_vision/ is because the fullbright the night_vision subtype provides is too overpowered for a roundstart selectable race.
+
+/obj/item/organ/eyes/moth
+	name = "moth eyes"
+	desc = "These eyes seem to have increased sensitivity to bright light, with no improvement to low light vision."
+	flash_protect = -1
+
+/obj/item/organ/eyes/apid
+	name = "apid eyes"
+	desc = "Designed for navigating dark hives, these eyes have improvement to low light vision."
+	see_in_dark = 8

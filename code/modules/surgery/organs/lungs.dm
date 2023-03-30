@@ -377,6 +377,14 @@
 		var/plasma_pp = PP(breath, GAS_PLASMA)
 		owner.blood_volume += (0.2 * plasma_pp) // 10/s when breathing literally nothing but plasma, which will suffocate you.
 
+
+/obj/item/organ/lungs/apid
+	name = "apid lungs"
+	desc = "Lungs from an apid, or beeperson. Thanks to the many spiracles an apid has, these lungs are capable of gathering more oxygen from low-pressure environments."
+	icon_state = "lungs"
+	safe_breath_min = 8
+
+
 /obj/item/organ/lungs/cybernetic
 	name = "basic cybernetic lungs"
 	desc = "A basic cybernetic version of the lungs found in traditional humanoid entities."
