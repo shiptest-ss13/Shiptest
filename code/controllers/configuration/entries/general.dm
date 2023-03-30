@@ -564,3 +564,7 @@
 /datum/config_entry/string/elasticsearch_metrics_endpoint
 
 /datum/config_entry/string/elasticsearch_metrics_apikey
+
+//Zeta edit here
+/datum/config_entry/string/metacurrency_name
+	config_entry_value = "MetaCoin"

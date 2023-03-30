@@ -186,6 +186,8 @@
 	for(var/client/C in GLOB.clients)
 		C.playtitlemusic(40)
 
+		C.process_endround_metacoin()//Zeta edit
+
 		if(speed_round)
 			C.give_award(/datum/award/achievement/misc/speed_round, C.mob)
 

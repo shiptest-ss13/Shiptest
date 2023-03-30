@@ -61,6 +61,10 @@
 		body += "<br><br><b>Show related accounts by:</b> "
 		body += " <a href='?_src_=holder;[HrefToken()];showrelatedacc=cid;client=[REF(M.client)]'>CID</a>"
 		body += "<a href='?_src_=holder;[HrefToken()];showrelatedacc=ip;client=[REF(M.client)]'>IP</a> "
+		//ZETA edit START
+		var/metabalance = M.client.get_metabalance()
+		body += "<br><b>[CONFIG_GET(string/metacurrency_name)]s</b>: [metabalance] "
+		//ZETA edit END
 		var/full_version = "Unknown"
 		if(M.client.byond_version)
 			full_version = "[M.client.byond_version].[M.client.byond_build ? M.client.byond_build : "xxx"]"
