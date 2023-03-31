@@ -1953,13 +1953,16 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/aft)
 "eN" = (
@@ -2446,11 +2449,16 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/door/firedoor,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
 /obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
@@ -2479,12 +2487,17 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/machinery/door/firedoor,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/aft)
@@ -2710,7 +2723,7 @@
 "gn" = (
 /obj/item/circuitboard/machine/ltsrbt,
 /turf/open/floor/plating,
-/area/ship/storage)
+/area/ship/hallway/starboard)
 "go" = (
 /obj/structure/cable{
 	icon_state = "2-5"
@@ -2916,7 +2929,7 @@
 "gI" = (
 /obj/structure/falsewall,
 /turf/open/floor/plating,
-/area/ship/storage)
+/area/ship/hallway/starboard)
 "gJ" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -3613,7 +3626,7 @@
 /obj/effect/decal/remains/human,
 /obj/item/clothing/head/papersack/smiley,
 /turf/open/floor/plating,
-/area/ship/storage)
+/area/ship/hallway/starboard)
 "iz" = (
 /obj/machinery/airalarm/directional/north,
 /obj/structure/table,
@@ -3754,7 +3767,10 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/starboard)
 "iS" = (
-/obj/item/storage/toolbox/mechanical,
+/obj/item/storage/toolbox/mechanical{
+	pixel_y = -8;
+	pixel_x = 6
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/starboard)
 "iT" = (
@@ -3838,7 +3854,8 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/turf/open/floor/plasteel/tech,
+/obj/effect/turf_decal/industrial/outline/yellow,
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/starboard)
 "jd" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -4173,6 +4190,7 @@
 	dir = 4;
 	pixel_x = -26
 	},
+/obj/structure/rack,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/starboard)
 "lo" = (
@@ -4344,9 +4362,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/external)
-"nS" = (
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/template_noop)
 "nU" = (
 /obj/structure/closet/secure_closet/engineering_electrical,
 /turf/open/floor/plasteel/patterned/grid,
@@ -4614,19 +4629,6 @@
 /obj/structure/flora/grass/jungle,
 /turf/open/floor/grass,
 /area/ship/hallway/fore)
-"ro" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/door/firedoor,
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
-/obj/effect/turf_decal/industrial/warning,
-/turf/open/floor/plasteel/tech,
-/area/ship/hallway/aft)
 "rv" = (
 /obj/structure/window/reinforced,
 /obj/structure/window/reinforced{
@@ -4914,6 +4916,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
 	},
+/obj/structure/rack,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/starboard)
 "uh" = (
@@ -5456,11 +5459,16 @@
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/dorm)
 "CH" = (
-/obj/machinery/door/firedoor,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
 /obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
@@ -5558,6 +5566,9 @@
 	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/grey/corner{
+	dir = 8
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/fore)
@@ -6517,11 +6528,14 @@
 /turf/open/floor/plasteel,
 /area/ship/storage)
 "Pw" = (
-/obj/machinery/door/firedoor,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
 /obj/effect/turf_decal/industrial/warning,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/aft)
 "PO" = (
@@ -6849,11 +6863,14 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/hallway/aft)
 "Tk" = (
-/obj/machinery/door/firedoor,
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/aft)
 "Tm" = (
@@ -7287,13 +7304,16 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
 /obj/effect/turf_decal/industrial/warning,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/aft)
 "WS" = (
@@ -7347,12 +7367,17 @@
 /turf/open/floor/plasteel,
 /area/ship/storage)
 "XC" = (
-/obj/machinery/door/firedoor,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/aft)
@@ -7803,7 +7828,7 @@ aY
 ys
 kA
 bj
-ro
+WO
 cL
 QF
 kA
@@ -8286,8 +8311,8 @@ Gm
 hM
 Wi
 ig
-ij
-nS
+il
+il
 EY
 EY
 EY
@@ -8322,8 +8347,8 @@ fZ
 fZ
 fZ
 fZ
-gc
-cB
+OX
+il
 EY
 EY
 EY
@@ -8357,10 +8382,10 @@ gY
 RV
 aH
 cN
-ik
+OX
 iy
-cB
-nS
+il
+il
 EY
 EY
 EY
@@ -8395,9 +8420,9 @@ ap
 hW
 gI
 gn
-ik
-nS
-nS
+OX
+il
+il
 EY
 EY
 EY
@@ -8433,8 +8458,8 @@ OX
 OX
 OX
 UL
-nS
-nS
+il
+il
 EY
 EY
 EY
