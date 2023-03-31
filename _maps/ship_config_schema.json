@@ -109,6 +109,14 @@
 			"maximum": 100,
 			"default": 2
 		},
+		"cost": {
+			"title": "Ship Cost",
+			"type": "integer",
+			"description": "The amount of ZetaCoins needs for buying ship.",
+			"minimum": 0,
+			"maximum": 99999,
+			"default": 0
+		},
 		"enabled": {
 			"title": "Selectable",
 			"type": "boolean",
