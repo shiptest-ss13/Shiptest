@@ -130,7 +130,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 
 /area/ship/crew/cryo
 	name = "Cryopod Room"
-	icon_state = "cryopod"
+	icon_state = "cryo2"
 	lighting_colour_tube = "#e3ffff"
 	lighting_colour_bulb = "#d5ffff"
 
@@ -403,5 +403,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /// External Areas ///
 /area/ship/external
 	name = "External"
-	dynamic_lighting = DYNAMIC_LIGHTING_IFSTARLIGHT
 	icon_state = "space_near"
+	dynamic_lighting = DYNAMIC_LIGHTING_IFSTARLIGHT
+	ambientsounds = SPACE
+	sound_environment = SOUND_AREA_SPACE

@@ -131,7 +131,7 @@ DEFINE_BITFIELD(smoothing_flags, list(
 
 #define SMOOTH_GROUP_CLEANABLE_DIRT S_OBJ(67) ///obj/effect/decal/cleanable/dirt
 
-#define SMOOTH_GROUP_INDUSTRIAL_LIFT S_OBJ(70) ///obj/structure/industrial_lift
+#define SMOOTH_GROUP_ELEVATOR S_OBJ(70) ///obj/structure/elevator_platform
 
 // WS Begin: Custom WS Smoothing Groups
 #define MAX_S_OBJ_NON_WS SMOOTH_GROUP_CLEANABLE_DIRT //Always match this value with the one above it.

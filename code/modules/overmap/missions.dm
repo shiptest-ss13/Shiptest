@@ -13,7 +13,7 @@
 	var/dur_mod_range = 0.1
 
 	/// The outpost that issued this mission. Passed in New().
-	var/datum/overmap/dynamic/outpost/source_outpost
+	var/datum/overmap/outpost/source_outpost
 	/// The ship that accepted this mission. Passed in accept().
 	var/datum/overmap/ship/controlled/servant
 

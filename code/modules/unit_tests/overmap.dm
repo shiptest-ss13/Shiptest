@@ -1,3 +1,5 @@
+// DEBUG: integrate outposts into these
+
 /datum/unit_test/overmap_move/Run()
 	var/datum/overmap/ship/S = new(list("x" = 1, "y" = 1))
 

@@ -105,6 +105,16 @@
 			if(!shuttle_port) //Loading failed, if the shuttle is supposed to be created, we need to delete ourselves.
 				qdel(src) // Can't return INITIALIZE_HINT_QDEL here since this isn't ACTUAL initialisation. Considering changing the name of the proc.
 				return
+			// DEBUG: create ships in-place to save on load time (no need to then dock it again)
+			// DEBUG: also consider making this behavior NATIVE to New(). unsure
+			if(istype(position, /datum/overmap))
+				// DEBUG: altering the behavior of the base proc is bad
+				docked_to = null // Dock() complains if you're already docked to something when you Dock, even on force
+				// DEBUG: this is also dumb, but in complete_dock() the -= line fails otherwise. ugh
+				x = 1
+				y = 1
+				Dock(position, TRUE)
+
 			calculate_mass()
 			refresh_engines()
 
@@ -148,6 +158,7 @@
 	shuttle_port.play_engine_sound(shuttle_port, shuttle_port.landing_sound)
 	shuttle_port.play_engine_sound(ticket.target_port, shuttle_port.landing_sound)
 
+// DEBUG: inability to defer / cancel at last second means guaranteed SGTs if two people try to dock at the same time
 /datum/overmap/ship/controlled/complete_dock(datum/overmap/dock_target, datum/docking_ticket/ticket)
 	shuttle_port.initiate_docking(ticket.target_port)
 	. = ..()

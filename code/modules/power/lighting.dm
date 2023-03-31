@@ -328,6 +328,8 @@
 
 /obj/machinery/light/LateInitialize()
 	. = ..()
+	// DEBUG: oh fuck OFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF WHY DO YOU FUCKING DO IT LIKE THIS YOU IDIOTS FUCK
+	// THE AREA VARS AREN'T EVEN FUCKING RESPECTED
 	switch(fitting)
 		if("tube")
 			brightness = 8
