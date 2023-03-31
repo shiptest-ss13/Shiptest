@@ -97,6 +97,15 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag/engineering
 	courierbag = /obj/item/storage/backpack/messenger/engi
 
+/datum/outfit/job/roboticist/technician/pirate
+	name = "Tinkerer"
+
+	uniform = /obj/item/clothing/under/costume/pirate
+	suit = /obj/item/clothing/suit/longcoat/roboblack
+	mask = /obj/item/clothing/mask/infiltrator
+	glasses = /obj/item/clothing/glasses/hud/diagnostic
+	shoes = /obj/item/clothing/shoes/workboots
+
 /datum/outfit/job/roboticist/technician/minutemen
 	name = "Mech Technician (Minutemen)"
 
@@ -104,4 +113,3 @@
 	shoes = /obj/item/clothing/shoes/combat
 	ears = /obj/item/radio/headset/minutemen
 	suit = /obj/item/clothing/suit/toggle/labcoat/science
-

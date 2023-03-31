@@ -1,0 +1,39 @@
+	{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Malta-class Freighter",
+	"prefix": "ISV",
+	"namelists": ["BEASTS", "PIRATES", "MERCANTILE"],
+	"map_short_name": "Malta-class",
+	"map_path": "_maps/shuttles/shiptest/pirate_mechcarrier.dmm",
+	"limit": 1,
+	"job_slots": {
+		"Captain":{
+			"outfit": "/datum/outfit/job/captain/pirate",
+			"officer": true,
+			"slots": 1
+		},
+		"Marauder":{
+			"outfit": "/datum/outfit/job/cargo_tech/pilot/pirate",
+			"officer": true,
+			"slots": 1
+		},
+		"Warcasket Pilot":{
+			"outfit": "/datum/outfit/job/cargo_tech/pilot/piratemech",
+			"officer": true,
+			"slots": 1
+		},
+		"Tinkerer":{
+			"outfit": "/datum/outfit/job/roboticist/technician/pirate",
+			"slots": 1
+		},
+		"Motorman":{
+			"outfit": "/datum/outfit/job/engineer/pirate",
+			"slots": 1
+		},
+		"Buccaneer": {
+			"outfit": "/datum/outfit/job/security/pirate",
+			"slots": 2
+		}
+	},
+	"enabled": false
+	}

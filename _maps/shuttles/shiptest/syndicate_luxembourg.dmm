@@ -225,6 +225,9 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
+"dR" = (
+/turf/open/space/basic,
+/area/template_noop)
 "eF" = (
 /obj/structure/sink{
 	dir = 8;
@@ -297,12 +300,12 @@
 /obj/item/clothing/suit/hazardvest/donk/qm,
 /obj/item/melee/classic_baton/telescopic,
 /obj/item/radio/headset/syndicate/alt/leader,
-/obj/item/spacecash/bundle/c1000,
-/obj/item/spacecash/bundle/c1000,
-/obj/item/spacecash/bundle/c1000,
-/obj/item/spacecash/bundle/c1000,
-/obj/item/spacecash/bundle/c1000,
-/obj/item/spacecash/bundle/c1000,
+/obj/item/stack/spacecash/c1000,
+/obj/item/stack/spacecash/c1000,
+/obj/item/stack/spacecash/c1000,
+/obj/item/stack/spacecash/c1000,
+/obj/item/stack/spacecash/c1000,
+/obj/item/stack/spacecash/c1000,
 /obj/structure/closet/secure_closet/wall{
 	dir = 4;
 	icon_state = "solgov_wall";
@@ -312,11 +315,6 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering)
-"fv" = (
-/obj/machinery/selling_pad,
-/obj/effect/turf_decal/box,
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/hallway/central)
 "fy" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -409,6 +407,18 @@
 "hs" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/cargo)
+"hS" = (
+/obj/structure/window/plasma/reinforced,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 8
+	},
+/obj/item/radio/intercom{
+	dir = 8;
+	pixel_x = 22;
+	pixel_y = 31
+	},
+/turf/open/floor/carpet/red_gold,
+/area/ship/hallway/central)
 "hX" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/corner/opaque/brown/border{
@@ -734,7 +744,9 @@
 /obj/item/vending_refill/engivend,
 /obj/item/vending_refill/engivend,
 /obj/item/vending_refill/hydronutrients,
+/obj/item/vending_refill/hydroseeds,
 /obj/item/vending_refill/hydronutrients,
+/obj/item/vending_refill/hydroseeds,
 /obj/item/vending_refill/boozeomat,
 /obj/item/vending_refill/boozeomat,
 /obj/item/vending_refill/medical,
@@ -1185,6 +1197,20 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
+"wi" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/item/clothing/head/HoS/beret/syndicate,
+/obj/item/radio/headset/syndicate/alt,
+/obj/item/gun/ballistic/shotgun/doublebarrel,
+/obj/item/clothing/under/rank/civilian/bartender,
+/obj/structure/closet/secure_closet/bar{
+	req_access = null;
+	req_one_access_txt = list(25,41)
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/engineering)
 "wP" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -1320,7 +1346,6 @@
 	codes_txt = "patrol;next_patrol=lux_kitchen";
 	location = "lux_shopfloor"
 	},
-/obj/machinery/holopad/emergency/cargo,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "zc" = (
@@ -1412,6 +1437,9 @@
 "Bw" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/cargo)
+"BM" = (
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/external)
 "BX" = (
 /obj/machinery/airalarm/directional/west,
 /obj/machinery/cryopod{
@@ -1426,20 +1454,6 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
-"Ca" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/item/clothing/head/HoS/beret/syndicate,
-/obj/item/radio/headset/syndicate/alt,
-/obj/item/gun/ballistic/shotgun/doublebarrel,
-/obj/item/clothing/under/rank/civilian/bartender,
-/obj/structure/closet/secure_closet/bar{
-	req_access = null;
-	req_one_access_txt = list(25,41)
-	},
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/engineering)
 "CC" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono/dark,
@@ -1651,6 +1665,31 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering)
+"Fe" = (
+/obj/effect/turf_decal/siding/red,
+/obj/structure/closet/secure_closet/freezer/wall{
+	dir = 1;
+	name = "refrigerator";
+	pixel_y = -32
+	},
+/obj/item/storage/box/donkpockets/donkpocketteriyaki,
+/obj/item/storage/box/donkpockets/donkpocketteriyaki,
+/obj/item/storage/box/donkpockets/donkpocketteriyaki,
+/obj/item/storage/box/donkpockets/donkpocketteriyaki,
+/obj/item/storage/box/donkpockets/donkpocketspicy,
+/obj/item/storage/box/donkpockets/donkpocketspicy,
+/obj/item/storage/box/donkpockets/donkpocketspicy,
+/obj/item/storage/box/donkpockets/donkpocketspicy,
+/obj/item/storage/box/donkpockets/donkpockethonk,
+/obj/item/storage/box/donkpockets/donkpockethonk,
+/obj/item/storage/box/donkpockets/donkpockethonk,
+/obj/item/storage/box/donkpockets/donkpockethonk,
+/obj/item/storage/box/donkpockets,
+/obj/item/storage/box/donkpockets,
+/obj/item/storage/box/donkpockets,
+/obj/item/storage/box/donkpockets,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/crew/canteen)
 "Fq" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1692,18 +1731,6 @@
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
 /area/ship/engineering)
-"Gv" = (
-/obj/structure/window/plasma/reinforced,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
-	dir = 8
-	},
-/obj/item/radio/intercom{
-	dir = 8;
-	pixel_x = 22;
-	pixel_y = 31
-	},
-/turf/open/floor/carpet/red_gold,
-/area/ship/hallway/central)
 "GG" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1726,6 +1753,16 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
+"Hd" = (
+/obj/docking_port/stationary{
+	height = 15;
+	width = 12;
+	dheight = 1;
+	dwidth = 3;
+	dir = 8
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/external)
 "Hk" = (
 /obj/machinery/light,
 /obj/structure/rack,
@@ -1918,31 +1955,6 @@
 /obj/item/construction/rcd/combat,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/storage)
-"KZ" = (
-/obj/effect/turf_decal/siding/red,
-/obj/structure/closet/secure_closet/freezer/wall{
-	dir = 1;
-	name = "refrigerator";
-	pixel_y = -32
-	},
-/obj/item/storage/box/donkpockets/donkpocketteriyaki,
-/obj/item/storage/box/donkpockets/donkpocketteriyaki,
-/obj/item/storage/box/donkpockets/donkpocketteriyaki,
-/obj/item/storage/box/donkpockets/donkpocketteriyaki,
-/obj/item/storage/box/donkpockets/donkpocketspicy,
-/obj/item/storage/box/donkpockets/donkpocketspicy,
-/obj/item/storage/box/donkpockets/donkpocketspicy,
-/obj/item/storage/box/donkpockets/donkpocketspicy,
-/obj/item/storage/box/donkpockets/donkpockethonk,
-/obj/item/storage/box/donkpockets/donkpockethonk,
-/obj/item/storage/box/donkpockets/donkpockethonk,
-/obj/item/storage/box/donkpockets/donkpockethonk,
-/obj/item/storage/box/donkpockets,
-/obj/item/storage/box/donkpockets,
-/obj/item/storage/box/donkpockets,
-/obj/item/storage/box/donkpockets,
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/crew/canteen)
 "La" = (
 /obj/effect/turf_decal/corner/opaque/blue{
 	dir = 4
@@ -2140,6 +2152,11 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/storage)
+"PK" = (
+/obj/machinery/selling_pad,
+/obj/effect/turf_decal/box,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/hallway/central)
 "PO" = (
 /obj/structure/sign/poster/contraband/syndicate_recruitment{
 	pixel_x = 4;
@@ -2692,6 +2709,35 @@
 /area/ship/storage)
 
 (1,1,1) = {"
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+BM
+BM
+Hd
+BM
+BM
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+"}
+(2,1,1) = {"
 Nr
 Nr
 Nr
@@ -2720,7 +2766,7 @@ Nr
 Nr
 Nr
 "}
-(2,1,1) = {"
+(3,1,1) = {"
 Nr
 Nr
 Nr
@@ -2749,7 +2795,7 @@ Nr
 Nr
 Nr
 "}
-(3,1,1) = {"
+(4,1,1) = {"
 Nr
 Nr
 Nr
@@ -2778,7 +2824,7 @@ Nr
 Nr
 Nr
 "}
-(4,1,1) = {"
+(5,1,1) = {"
 Nr
 Nr
 Bw
@@ -2807,7 +2853,7 @@ Nr
 Nr
 Nr
 "}
-(5,1,1) = {"
+(6,1,1) = {"
 Nr
 Nr
 RH
@@ -2836,7 +2882,7 @@ pt
 Nr
 Nr
 "}
-(6,1,1) = {"
+(7,1,1) = {"
 Nr
 Nr
 hs
@@ -2865,7 +2911,7 @@ vp
 pt
 Nr
 "}
-(7,1,1) = {"
+(8,1,1) = {"
 Nr
 Nr
 Nr
@@ -2894,7 +2940,7 @@ XS
 iR
 hd
 "}
-(8,1,1) = {"
+(9,1,1) = {"
 Nr
 tU
 tU
@@ -2923,7 +2969,7 @@ vz
 sh
 Nr
 "}
-(9,1,1) = {"
+(10,1,1) = {"
 tU
 tU
 Ej
@@ -2952,7 +2998,7 @@ vp
 vp
 vp
 "}
-(10,1,1) = {"
+(11,1,1) = {"
 Ij
 Ga
 dA
@@ -2981,12 +3027,12 @@ AE
 Mj
 qP
 "}
-(11,1,1) = {"
+(12,1,1) = {"
 tU
 tU
 IB
-fv
-Gv
+PK
+hS
 xa
 dp
 dH
@@ -2998,7 +3044,7 @@ Jr
 PO
 vp
 AF
-Ca
+wi
 cB
 Ip
 ul
@@ -3010,7 +3056,7 @@ na
 UO
 Er
 "}
-(12,1,1) = {"
+(13,1,1) = {"
 Nr
 tU
 tU
@@ -3039,7 +3085,7 @@ vz
 sh
 Nr
 "}
-(13,1,1) = {"
+(14,1,1) = {"
 Nr
 Nr
 Nr
@@ -3068,7 +3114,7 @@ vz
 sh
 UE
 "}
-(14,1,1) = {"
+(15,1,1) = {"
 Nr
 Nr
 YI
@@ -3097,7 +3143,7 @@ vp
 pt
 Nr
 "}
-(15,1,1) = {"
+(16,1,1) = {"
 Nr
 Nr
 ow
@@ -3126,7 +3172,7 @@ pt
 Nr
 Nr
 "}
-(16,1,1) = {"
+(17,1,1) = {"
 Nr
 Nr
 Bt
@@ -3155,7 +3201,7 @@ Nr
 Nr
 Nr
 "}
-(17,1,1) = {"
+(18,1,1) = {"
 Nr
 Nr
 Nr
@@ -3165,7 +3211,7 @@ uB
 kE
 sF
 UI
-KZ
+Fe
 YI
 Rp
 DW
@@ -3184,7 +3230,7 @@ Nr
 Nr
 Nr
 "}
-(18,1,1) = {"
+(19,1,1) = {"
 Nr
 Nr
 Nr
@@ -3213,7 +3259,7 @@ Nr
 Nr
 Nr
 "}
-(19,1,1) = {"
+(20,1,1) = {"
 Nr
 Nr
 Nr

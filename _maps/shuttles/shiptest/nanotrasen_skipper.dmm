@@ -700,7 +700,6 @@
 /obj/machinery/computer/cargo/express{
 	dir = 8
 	},
-/obj/item/spacecash/bundle/loadsamoney,
 /obj/machinery/button/door{
 	id = "noiwillnotgiveyouaa";
 	name = "Requests Desk Shutters Control";
@@ -2855,6 +2854,16 @@
 	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/bridge)
+"zv" = (
+/obj/machinery/door/airlock/external,
+/obj/docking_port/mobile{
+	dir = 2;
+	launch_status = 0;
+	port_direction = 8;
+	preferred_direction = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/central)
 "zw" = (
 /obj/machinery/iv_drip,
 /obj/structure/bed,
@@ -2971,15 +2980,8 @@
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/medical)
 "AJ" = (
-/obj/machinery/door/airlock/external,
-/obj/docking_port/mobile{
-	dir = 2;
-	launch_status = 0;
-	port_direction = 8;
-	preferred_direction = 4
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/hallway/central)
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/cargo)
 "AM" = (
 /obj/effect/turf_decal/atmos/oxygen,
 /turf/open/floor/engine/o2,
@@ -4310,6 +4312,16 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
+"MN" = (
+/obj/docking_port/stationary{
+	height = 15;
+	width = 12;
+	dheight = 1;
+	dwidth = 3;
+	dir = 2
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/cargo)
 "MP" = (
 /obj/machinery/atmospherics/components/binary/pump{
 	dir = 8
@@ -5983,6 +5995,7 @@ fW
 fW
 fW
 fW
+fW
 "}
 (2,1,1) = {"
 fW
@@ -6008,6 +6021,7 @@ gh
 gh
 vD
 vD
+fW
 fW
 fW
 fW
@@ -6045,6 +6059,7 @@ fW
 fW
 fW
 fW
+fW
 "}
 (4,1,1) = {"
 fW
@@ -6073,6 +6088,7 @@ lK
 gh
 gh
 gh
+fW
 fW
 fW
 fW
@@ -6107,6 +6123,7 @@ gh
 gh
 fW
 fW
+fW
 "}
 (6,1,1) = {"
 fW
@@ -6137,6 +6154,7 @@ qK
 BO
 gh
 gh
+fW
 fW
 "}
 (7,1,1) = {"
@@ -6169,6 +6187,7 @@ tG
 wC
 gh
 fW
+fW
 "}
 (8,1,1) = {"
 kz
@@ -6199,6 +6218,7 @@ Fu
 Fu
 Fu
 tx
+fW
 fW
 "}
 (9,1,1) = {"
@@ -6231,6 +6251,7 @@ Ma
 Ns
 tx
 tx
+fW
 "}
 (10,1,1) = {"
 kz
@@ -6262,6 +6283,7 @@ sh
 Kv
 pr
 Dw
+AJ
 "}
 (11,1,1) = {"
 kz
@@ -6293,6 +6315,7 @@ WO
 ug
 jv
 rb
+AJ
 "}
 (12,1,1) = {"
 kz
@@ -6324,6 +6347,7 @@ PI
 Pq
 JE
 Ym
+MN
 "}
 (13,1,1) = {"
 kz
@@ -6355,6 +6379,7 @@ ZI
 JQ
 JE
 Ym
+AJ
 "}
 (14,1,1) = {"
 kz
@@ -6386,6 +6411,7 @@ Uu
 NC
 jv
 Ym
+AJ
 "}
 (15,1,1) = {"
 kz
@@ -6417,6 +6443,7 @@ UC
 FW
 PL
 jX
+AJ
 "}
 (16,1,1) = {"
 kz
@@ -6448,6 +6475,7 @@ QJ
 Ur
 tx
 tx
+fW
 "}
 (17,1,1) = {"
 hr
@@ -6479,9 +6507,10 @@ cQ
 pq
 Xp
 fW
+fW
 "}
 (18,1,1) = {"
-AJ
+zv
 Wv
 WR
 KL
@@ -6509,6 +6538,7 @@ JA
 wG
 TE
 Xp
+fW
 fW
 "}
 (19,1,1) = {"
@@ -6541,6 +6571,7 @@ oC
 OJ
 Xp
 fW
+fW
 "}
 (20,1,1) = {"
 fW
@@ -6571,6 +6602,7 @@ nB
 wA
 GX
 Xp
+fW
 fW
 "}
 (21,1,1) = {"
@@ -6603,6 +6635,7 @@ kt
 XA
 Xp
 fW
+fW
 "}
 (22,1,1) = {"
 fW
@@ -6634,6 +6667,7 @@ AT
 ls
 Xp
 fW
+fW
 "}
 (23,1,1) = {"
 fW
@@ -6663,6 +6697,7 @@ dd
 ez
 jh
 hJ
+fW
 fW
 fW
 "}
@@ -6696,6 +6731,7 @@ dy
 hJ
 fW
 fW
+fW
 "}
 (25,1,1) = {"
 fW
@@ -6725,6 +6761,7 @@ dy
 CH
 hM
 ls
+fW
 fW
 fW
 "}
@@ -6758,6 +6795,7 @@ ls
 ls
 fW
 fW
+fW
 "}
 (27,1,1) = {"
 fW
@@ -6786,6 +6824,7 @@ QM
 ix
 Za
 ls
+fW
 fW
 fW
 fW
@@ -6820,6 +6859,7 @@ ls
 fW
 fW
 fW
+fW
 "}
 (29,1,1) = {"
 fW
@@ -6848,6 +6888,7 @@ Rk
 ix
 zw
 ls
+fW
 fW
 fW
 fW
@@ -6882,6 +6923,7 @@ ls
 fW
 fW
 fW
+fW
 "}
 (31,1,1) = {"
 fW
@@ -6909,6 +6951,7 @@ nq
 HO
 Fk
 ls
+fW
 fW
 fW
 fW
@@ -6944,6 +6987,7 @@ fW
 fW
 fW
 fW
+fW
 "}
 (33,1,1) = {"
 fW
@@ -6970,6 +7014,7 @@ Dp
 IB
 LA
 nq
+fW
 fW
 fW
 fW
@@ -7006,6 +7051,7 @@ fW
 fW
 fW
 fW
+fW
 "}
 (35,1,1) = {"
 fW
@@ -7031,6 +7077,7 @@ mM
 sH
 nq
 nq
+fW
 fW
 fW
 fW
@@ -7068,6 +7115,7 @@ fW
 fW
 fW
 fW
+fW
 "}
 (37,1,1) = {"
 fW
@@ -7091,6 +7139,7 @@ nq
 nq
 nq
 nq
+fW
 fW
 fW
 fW

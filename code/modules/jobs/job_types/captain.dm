@@ -62,6 +62,13 @@
 	shoes = /obj/item/clothing/shoes/laceup
 	head = /obj/item/clothing/head/caphat/nt
 
+/datum/outfit/job/captain/nt/heron
+	name = "Captain (Nanotrasen)"
+
+	uniform = /obj/item/clothing/under/rank/centcom/officer
+	head = /obj/item/clothing/head/centhat
+	suit = /obj/item/clothing/suit/armor/vest/bulletproof
+
 /datum/outfit/job/captain/solgov
 	name = "Captain (SolGov)"
 

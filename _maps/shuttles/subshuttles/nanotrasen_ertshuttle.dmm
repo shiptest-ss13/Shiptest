@@ -1,0 +1,637 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 10
+	},
+/obj/machinery/power/smes/engineering,
+/obj/structure/cable{
+	icon_state = "0-10"
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 10
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/bridge)
+"b" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/bridge)
+"c" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/bridge)
+"d" = (
+/obj/structure/table/reinforced{
+	color = "#c1b6a5"
+	},
+/obj/item/gps{
+	pixel_x = -6;
+	pixel_y = 3
+	},
+/obj/machinery/button/door{
+	id = "heron_subshuttle_bridge";
+	name = "Bridge Shutters";
+	pixel_x = 6;
+	pixel_y = 7;
+	dir = 1
+	},
+/obj/machinery/button/door{
+	id = "heron_subshuttle_engines";
+	name = "Engine Shutters";
+	pixel_x = 6;
+	pixel_y = -1;
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/bridge)
+"e" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating/dark,
+/turf/open/floor/plasteel/patterned/grid{
+	icon_state = "tiled"
+	},
+/area/ship/bridge)
+"f" = (
+/obj/machinery/power/shuttle/engine/fueled/plasma{
+	dir = 4
+	},
+/obj/machinery/door/poddoor{
+	id = "heron_subshuttle_engines";
+	name = "Thruster Blast Door"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"i" = (
+/obj/machinery/button/shieldwallgen{
+	id = "heron_subshuttle2";
+	pixel_x = -21;
+	pixel_y = -8;
+	dir = 4
+	},
+/obj/machinery/button/door{
+	id = "heron_subshuttle22";
+	name = "Access Shutters";
+	pixel_x = -23;
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/glass{
+	pixel_x = 8;
+	pixel_y = 20
+	},
+/obj/structure/cable{
+	icon_state = "1-6"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/patterned/monofloor,
+/area/ship/bridge)
+"j" = (
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/orange/hidden,
+/obj/machinery/power/shieldwallgen/atmos{
+	anchored = 1;
+	dir = 4;
+	id = "heron_subshuttle1";
+	locked = 1
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "heron_subshuttle11";
+	name = "Blast Shutters";
+	air_tight = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plasteel/patterned/ridged,
+/area/ship/bridge)
+"l" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/patterned/monofloor{
+	dir = 1
+	},
+/area/ship/bridge)
+"m" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 4;
+	name = "tactical chair"
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/obj/effect/turf_decal/steeldecal/steel_decals10,
+/obj/effect/turf_decal/techfloor/corner{
+	dir = 1;
+	pixel_y = -16
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ship/bridge)
+"n" = (
+/obj/item/gps/computer{
+	pixel_y = -23
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/bridge)
+"o" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/plasteel/patterned/grid{
+	icon_state = "tiled"
+	},
+/area/ship/bridge)
+"p" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/plasma,
+/turf/open/floor/plasteel/patterned/monofloor{
+	dir = 1
+	},
+/area/ship/bridge)
+"r" = (
+/turf/template_noop,
+/area/template_noop)
+"s" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/patterned/grid{
+	icon_state = "tiled"
+	},
+/area/ship/bridge)
+"u" = (
+/obj/structure/window/reinforced/survival_pod/spawner/west,
+/obj/machinery/atmospherics/components/unary/tank/toxins{
+	dir = 4;
+	piping_layer = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-5"
+	},
+/obj/effect/turf_decal/steeldecal/steel_decals3,
+/obj/effect/turf_decal/steeldecal/steel_decals3{
+	dir = 6
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"w" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 4;
+	name = "tactical chair"
+	},
+/obj/structure/railing{
+	dir = 8;
+	layer = 4.1
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel,
+/area/ship/bridge)
+"y" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light,
+/turf/open/floor/plasteel/patterned/grid{
+	icon_state = "tiled"
+	},
+/area/ship/bridge)
+"z" = (
+/obj/machinery/atmospherics/pipe/layer_manifold,
+/obj/machinery/power/apc/auto_name/west,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/patterned/monofloor,
+/area/ship/bridge)
+"A" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 4;
+	name = "tactical chair"
+	},
+/obj/effect/turf_decal/techfloor,
+/obj/effect/turf_decal/steeldecal/steel_decals10,
+/obj/effect/turf_decal/techfloor/corner{
+	dir = 8;
+	pixel_y = 16
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ship/bridge)
+"B" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/patterned/monofloor{
+	dir = 1
+	},
+/area/ship/bridge)
+"C" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/patterned/monofloor,
+/area/ship/bridge)
+"D" = (
+/obj/machinery/atmospherics/pipe/simple/orange/hidden,
+/obj/machinery/button/door{
+	id = "heron_subshuttle11";
+	name = "Access Shutters";
+	pixel_x = -23;
+	dir = 4
+	},
+/obj/machinery/button/shieldwallgen{
+	id = "heron_subshuttle1";
+	pixel_x = -21;
+	pixel_y = 8;
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "2-5"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/patterned/monofloor{
+	dir = 1
+	},
+/area/ship/bridge)
+"E" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 8;
+	name = "tactical chair"
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ship/bridge)
+"F" = (
+/obj/structure/window/reinforced/survival_pod/spawner/west,
+/obj/machinery/atmospherics/components/unary/shuttle/heater{
+	dir = 4
+	},
+/obj/effect/turf_decal/techfloor/orange{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"G" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 4;
+	name = "tactical chair"
+	},
+/obj/structure/railing{
+	dir = 8;
+	layer = 4.1
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ship/bridge)
+"H" = (
+/obj/effect/turf_decal/steeldecal/steel_decals6,
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ship/bridge)
+"J" = (
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 8
+	},
+/obj/machinery/power/shieldwallgen/atmos{
+	anchored = 1;
+	dir = 4;
+	id = "heron_subshuttle2";
+	locked = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-1"
+	},
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	launch_status = 0;
+	port_direction = 4;
+	preferred_direction = 4
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "heron_subshuttle22";
+	name = "Blast Shutters";
+	air_tight = 1
+	},
+/turf/open/floor/plasteel/patterned/ridged,
+/area/ship/bridge)
+"K" = (
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1{
+	dir = 8
+	},
+/obj/machinery/atmospherics/components/binary/pump{
+	dir = 8;
+	name = "engine fuel pump"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/steeldecal/steel_decals10{
+	dir = 4
+	},
+/obj/effect/turf_decal/steeldecal/steel_decals10,
+/obj/machinery/door/airlock/grunge,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/bridge)
+"M" = (
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 4
+	},
+/obj/machinery/power/shieldwallgen/atmos{
+	anchored = 1;
+	dir = 8;
+	id = "heron_subshuttle2";
+	locked = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-9"
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "heron_subshuttle22";
+	name = "Blast Shutters";
+	air_tight = 1
+	},
+/turf/open/floor/plasteel/patterned/ridged,
+/area/ship/bridge)
+"N" = (
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 9
+	},
+/obj/structure/cable/yellow,
+/obj/machinery/power/port_gen/pacman,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 9
+	},
+/obj/machinery/light,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/bridge)
+"O" = (
+/obj/structure/window/reinforced/survival_pod/spawner/west,
+/obj/machinery/atmospherics/components/unary/shuttle/heater{
+	dir = 4
+	},
+/obj/effect/turf_decal/techfloor/orange,
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"P" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/patterned/grid{
+	icon_state = "tiled"
+	},
+/area/ship/bridge)
+"Q" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/patterned/grid{
+	icon_state = "tiled"
+	},
+/area/ship/bridge)
+"R" = (
+/obj/machinery/computer/security{
+	dir = 8
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 6
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ship/bridge)
+"S" = (
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold/orange/hidden{
+	dir = 8
+	},
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/bridge)
+"T" = (
+/obj/machinery/computer/helm{
+	dir = 8
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ship/bridge)
+"U" = (
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 4
+	},
+/obj/machinery/power/shieldwallgen/atmos{
+	anchored = 1;
+	dir = 8;
+	id = "heron_subshuttle1";
+	locked = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-10"
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "heron_subshuttle11";
+	name = "Blast Shutters";
+	air_tight = 1
+	},
+/turf/open/floor/plasteel/patterned/ridged,
+/area/ship/bridge)
+"V" = (
+/turf/open/floor/plasteel/stairs{
+	icon = 'icons/obj/stairs.dmi';
+	dir = 8
+	},
+/area/ship/bridge)
+"W" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor{
+	id = "heron_subshuttle_bridge"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"X" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 8;
+	name = "tactical chair"
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/vending/wallmed{
+	pixel_y = -28
+	},
+/turf/open/floor/plasteel,
+/area/ship/bridge)
+"Y" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 9
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/patterned/grid{
+	icon_state = "tiled"
+	},
+/area/ship/bridge)
+"Z" = (
+/obj/machinery/computer/crew/syndie{
+	dir = 8
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 5
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ship/bridge)
+
+(1,1,1) = {"
+r
+b
+f
+b
+f
+b
+r
+"}
+(2,1,1) = {"
+r
+b
+F
+u
+O
+b
+r
+"}
+(3,1,1) = {"
+b
+b
+a
+S
+N
+b
+b
+"}
+(4,1,1) = {"
+b
+b
+b
+K
+b
+b
+b
+"}
+(5,1,1) = {"
+j
+D
+z
+Y
+B
+i
+J
+"}
+(6,1,1) = {"
+U
+p
+C
+P
+l
+C
+M
+"}
+(7,1,1) = {"
+b
+G
+w
+s
+G
+G
+b
+"}
+(8,1,1) = {"
+b
+o
+Q
+P
+Q
+y
+b
+"}
+(9,1,1) = {"
+b
+E
+E
+e
+E
+X
+b
+"}
+(10,1,1) = {"
+b
+b
+b
+V
+b
+b
+b
+"}
+(11,1,1) = {"
+W
+n
+m
+H
+A
+d
+W
+"}
+(12,1,1) = {"
+c
+b
+Z
+T
+R
+b
+c
+"}
+(13,1,1) = {"
+r
+c
+W
+W
+W
+c
+r
+"}

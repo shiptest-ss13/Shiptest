@@ -65,6 +65,32 @@
 	gloves = /obj/item/clothing/gloves/fingerless
 	glasses = /obj/item/clothing/glasses/sunglasses/big
 
+/datum/outfit/job/cargo_tech/pilot/pirate
+	name = "Marauder"
+
+	uniform = /obj/item/clothing/under/pants/camo
+	suit = /obj/item/clothing/suit/jacket/leather/duster/command
+	shoes = /obj/item/clothing/shoes/workboots
+	gloves = /obj/item/clothing/gloves/fingerless
+	mask = /obj/item/clothing/mask/bandana/skull
+
+/datum/outfit/job/cargo_tech/pilot/piratemech
+	name = "Warcasket Pilot"
+
+	uniform = /obj/item/clothing/under/utility
+	suit = /obj/item/clothing/suit/jacket/miljacket
+	mask = /obj/item/clothing/mask/gas/sechailer
+	shoes = /obj/item/clothing/shoes/jackboots
+
+/datum/outfit/job/cargo_tech/pilot/heron
+	name = "pilot"
+
+	uniform = /obj/item/clothing/under/rank/security/officer/military
+	suit = /obj/item/clothing/suit/jacket/leather/duster
+	glasses = /obj/item/clothing/glasses/hud/spacecop
+	accessory = /obj/item/clothing/accessory/holster
+
+
 /datum/outfit/job/cargo_tech/donk
 	name = "Customer Associate (Donk! Co.)"
 	id = /obj/item/card/id/syndicate_command/crew_id

@@ -1,27 +1,4 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"aa" = (
-/obj/machinery/light/small,
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/atmospherics/components/unary/tank/nitrogen{
-	dir = 1
-	},
-/turf/open/floor/plating,
-/area/ship/engineering)
-"ab" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/firealarm{
-	dir = 1;
-	pixel_y = -25
-	},
-/obj/machinery/airalarm/all_access{
-	dir = 8;
-	pixel_x = 25
-	},
-/obj/machinery/atmospherics/components/unary/tank/oxygen{
-	dir = 1
-	},
-/turf/open/floor/plating,
-/area/ship/engineering)
 "ah" = (
 /obj/effect/turf_decal/box/corners{
 	dir = 1
@@ -447,6 +424,21 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office)
+"eV" = (
+/obj/machinery/atmospherics/components/unary/tank/nitrogen{
+	dir = 1
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -25
+	},
+/obj/machinery/airalarm/all_access{
+	dir = 8;
+	pixel_x = 25
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "eX" = (
 /obj/machinery/vending/coffee,
 /obj/structure/cable{
@@ -1501,15 +1493,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
-"pX" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
-/obj/machinery/door/poddoor{
-	id = "colossus_starboard"
-	},
-/turf/open/floor/engine/hull,
-/area/ship/cargo)
 "qq" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/cable{
@@ -1781,10 +1764,6 @@
 /obj/structure/table/reinforced,
 /obj/item/paper_bin,
 /obj/item/pen/fountain,
-/obj/item/spacecash/bundle/c1000,
-/obj/item/spacecash/bundle/c1000,
-/obj/item/spacecash/bundle/c1000,
-/obj/item/spacecash/bundle/c1000,
 /obj/item/gps{
 	pixel_x = 12
 	},
@@ -1949,7 +1928,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/holopad/emergency/command,
+/obj/machinery/holopad,
 /turf/open/floor/carpet/orange,
 /area/ship/bridge)
 "tR" = (
@@ -2246,6 +2225,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/cryo)
 "wW" = (
+/obj/machinery/holopad,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -2254,9 +2234,18 @@
 	codes_txt = "patrol;next_patrol=hall";
 	location = "office"
 	},
-/obj/machinery/holopad/emergency/security,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office)
+"xb" = (
+/obj/docking_port/stationary{
+	height = 15;
+	width = 7;
+	dheight = 1;
+	dwidth = 3;
+	dir = 2
+	},
+/turf/open/floor/engine/hull,
+/area/ship/cargo)
 "xd" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -3165,6 +3154,15 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
+"HQ" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/machinery/door/poddoor{
+	id = "colossus_starboard"
+	},
+/turf/open/floor/engine/hull,
+/area/ship/cargo)
 "It" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
@@ -3983,6 +3981,14 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
+"SO" = (
+/obj/machinery/atmospherics/components/unary/tank/oxygen{
+	dir = 1
+	},
+/obj/machinery/light/small,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
+/area/ship/engineering)
 "Tk" = (
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 4
@@ -4345,28 +4351,6 @@
 /obj/effect/turf_decal/steeldecal/steel_decals_central7,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/fore)
-"Xa" = (
-/obj/structure/rack,
-/obj/item/ammo_box/magazine/m12g/small{
-	pixel_x = 5;
-	pixel_y = 5
-	},
-/obj/item/ammo_box/magazine/m12g/small{
-	pixel_x = -5;
-	pixel_y = 5
-	},
-/obj/item/gun/ballistic/shotgun/bulldog/inteq{
-	mag_type = /obj/item/ammo_box/magazine/m12g/small;
-	pixel_y = -2
-	},
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 8
-	},
-/obj/structure/sign/poster/contraband/twelve_gauge{
-	pixel_y = -32
-	},
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/security/armory)
 "Xn" = (
 /obj/machinery/rnd/production/protolathe/department/security,
 /obj/structure/extinguisher_cabinet{
@@ -4584,6 +4568,28 @@
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
+"Za" = (
+/obj/structure/rack,
+/obj/item/ammo_box/magazine/m12g/small{
+	pixel_x = 5;
+	pixel_y = 5
+	},
+/obj/item/ammo_box/magazine/m12g/small{
+	pixel_x = -5;
+	pixel_y = 5
+	},
+/obj/item/gun/ballistic/shotgun/bulldog/inteq{
+	mag_type = /obj/item/ammo_box/magazine/m12g/small;
+	pixel_y = -2
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
+/obj/structure/sign/poster/contraband/twelve_gauge{
+	pixel_y = -32
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/security/armory)
 "Zc" = (
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 4
@@ -4598,6 +4604,15 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/patterned,
+/area/ship/cargo)
+"Zs" = (
+/obj/docking_port/stationary{
+	height = 15;
+	width = 7;
+	dheight = 1;
+	dwidth = 3
+	},
+/turf/open/floor/engine/hull,
 /area/ship/cargo)
 "Zu" = (
 /obj/structure/cable{
@@ -4789,7 +4804,7 @@ Zv
 zZ
 sN
 tR
-aa
+SO
 rl
 ps
 ei
@@ -4831,7 +4846,7 @@ ZT
 fQ
 EG
 GL
-ab
+eV
 rl
 us
 PP
@@ -4948,7 +4963,7 @@ XJ
 XJ
 XJ
 XJ
-XJ
+Zs
 vZ
 Cu
 qR
@@ -4959,8 +4974,8 @@ du
 Zc
 MU
 Ks
-pX
-XJ
+HQ
+xb
 XJ
 XJ
 XJ
@@ -5067,7 +5082,7 @@ jy
 bl
 hf
 al
-Xa
+Za
 Dq
 "}
 (19,1,1) = {"

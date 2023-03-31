@@ -789,3 +789,7 @@
 		to_chat(owner, "<span class='warning'>You overload the lanternbang!</span>")
 		L.activate()
 		return
+
+/datum/action/item_action/activate_remote_view
+	name = "Activate Remote View"
+	desc = "Activates the Remote View of your spy sunglasses."

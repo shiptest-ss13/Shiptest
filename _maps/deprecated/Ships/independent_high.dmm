@@ -638,6 +638,33 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ship/engineering)
+"hM" = (
+/obj/structure/table/wood,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
+/obj/item/flashlight/lamp/green{
+	pixel_x = 6;
+	pixel_y = 13
+	},
+/obj/item/pen/fountain{
+	pixel_x = -5;
+	pixel_y = 7
+	},
+/obj/item/paper/natural{
+	pixel_x = -6;
+	pixel_y = -3
+	},
+/obj/item/stamp/captain{
+	pixel_x = 5;
+	pixel_y = -3
+	},
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
+/turf/open/floor/wood/mahogany,
+/area/ship/crew/chapel/office)
 "hU" = (
 /obj/structure/chair/sofa/corner{
 	dir = 4
@@ -1383,33 +1410,6 @@
 	},
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
-"sX" = (
-/obj/structure/table/wood,
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 8
-	},
-/obj/item/flashlight/lamp/green{
-	pixel_x = 6;
-	pixel_y = 13
-	},
-/obj/item/pen/fountain{
-	pixel_x = -5;
-	pixel_y = 7
-	},
-/obj/item/paper/natural{
-	pixel_x = -6;
-	pixel_y = -3
-	},
-/obj/item/stamp/captain{
-	pixel_x = 5;
-	pixel_y = -3
-	},
-/obj/item/spacecash/bundle/c1000,
-/obj/item/spacecash/bundle/c1000,
-/obj/item/spacecash/bundle/c1000,
-/obj/item/spacecash/bundle/c1000,
-/turf/open/floor/wood/mahogany,
-/area/ship/crew/chapel/office)
 "tc" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2440,18 +2440,6 @@
 	},
 /turf/open/floor/wood/maple,
 /area/ship/crew)
-"Js" = (
-/obj/machinery/door/airlock/external,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 8
-	},
-/obj/docking_port/mobile{
-	dir = 8;
-	launch_status = 0;
-	port_direction = 4
-	},
-/turf/open/floor/plating,
-/area/ship/hallway/starboard)
 "JE" = (
 /turf/closed/wall/r_wall,
 /area/ship/cargo)
@@ -3147,6 +3135,24 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ship/engineering)
+"TC" = (
+/obj/machinery/door/airlock/external,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 8
+	},
+/obj/docking_port/mobile{
+	dir = 8;
+	launch_status = 0;
+	port_direction = 4
+	},
+/obj/docking_port/stationary{
+	height = 15;
+	width = 7;
+	dir = 4;
+	dheight = -1
+	},
+/turf/open/floor/plating,
+/area/ship/hallway/starboard)
 "TH" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible{
 	dir = 10
@@ -3820,7 +3826,7 @@ mB
 lX
 qZ
 CF
-sX
+hM
 MK
 Kl
 pJ
@@ -4621,7 +4627,7 @@ Aq
 Aq
 Qs
 IS
-Js
+TC
 Qs
 Aq
 Aq

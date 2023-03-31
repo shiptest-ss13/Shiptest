@@ -380,7 +380,7 @@
 /area/ship/maintenance/central)
 "nK" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/holopad/emergency/buddy,
+/obj/machinery/holopad/emergency/command,
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "nT" = (
@@ -406,13 +406,13 @@
 /area/ship/maintenance/starboard)
 "oY" = (
 /obj/machinery/door/airlock/maintenance_hatch,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 8
+	},
 /obj/docking_port/mobile{
 	dir = 8;
 	launch_status = 0;
 	port_direction = 4
-	},
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
@@ -941,10 +941,6 @@
 /obj/structure/catwalk,
 /turf/open/floor/plating,
 /area/ship/external)
-"Lr" = (
-/obj/item/spacecash/bundle/c1,
-/turf/open/floor/plating,
-/area/ship/maintenance/port)
 "LD" = (
 /obj/machinery/airalarm/directional/west,
 /obj/effect/decal/cleanable/glass,
@@ -1241,8 +1237,14 @@
 /turf/open/floor/plating,
 /area/ship/external)
 "VC" = (
-/obj/structure/lattice,
-/turf/template_noop,
+/obj/docking_port/stationary{
+	height = 15;
+	width = 12;
+	dheight = 1;
+	dwidth = 3
+	},
+/obj/structure/catwalk,
+/turf/open/floor/plating,
 /area/ship/external)
 "VK" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1417,7 +1419,7 @@ cQ
 aN
 Wt
 Vx
-Lr
+Vx
 Vx
 tq
 NI
@@ -1568,7 +1570,7 @@ Rd
 Rd
 Rd
 cQ
-VC
+cg
 cT
 cQ
 bQ
@@ -1596,10 +1598,10 @@ cg
 (9,1,1) = {"
 cg
 cg
-VC
-VC
-VC
-VC
+cg
+cg
+cg
+cg
 Ln
 Ln
 Ln
@@ -1628,9 +1630,9 @@ cg
 cg
 cg
 cg
-VC
+cg
 cr
-VC
+Ln
 Ln
 JO
 HN
@@ -1656,13 +1658,13 @@ nT
 cg
 "}
 (11,1,1) = {"
-cg
-cg
-cg
 VC
-VC
-VC
-VC
+Ln
+Ln
+Ln
+Ln
+Ln
+Ln
 xq
 xq
 xq
@@ -1690,8 +1692,8 @@ nT
 cg
 cg
 cg
-VC
-VC
+cg
+cg
 Il
 Il
 Il
@@ -1721,8 +1723,8 @@ VA
 cg
 cg
 cg
-VC
-VC
+cg
+cg
 Il
 Ry
 LD

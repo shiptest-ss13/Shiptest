@@ -322,6 +322,10 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
+"eC" = (
+/obj/structure/catwalk,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/external)
 "eD" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -1395,6 +1399,14 @@
 "qd" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/bridge)
+"qm" = (
+/obj/docking_port/mobile{
+	dir = 2;
+	launch_status = 0;
+	port_direction = 8
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/external)
 "qr" = (
 /turf/closed/wall/mineral/titanium,
 /area/ship/bridge)
@@ -1539,17 +1551,6 @@
 /obj/item/soap,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/dorm)
-"sh" = (
-/obj/machinery/door/airlock/external,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper,
-/obj/docking_port/mobile{
-	dir = 2;
-	launch_status = 0;
-	port_direction = 8
-	},
-/obj/machinery/door/firedoor/heavy,
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/hallway/aft)
 "sv" = (
 /obj/structure/lattice,
 /obj/structure/catwalk,
@@ -1925,6 +1926,10 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/aft)
+"xD" = (
+/obj/structure/sign/poster/solgov/solgov_enlist,
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/hallway/port)
 "xM" = (
 /obj/item/radio/intercom{
 	pixel_x = 32
@@ -2522,6 +2527,12 @@
 	},
 /turf/open/floor/eighties,
 /area/ship/crew/dorm)
+"CN" = (
+/obj/machinery/door/airlock/external,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper,
+/obj/machinery/door/firedoor/heavy,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/hallway/aft)
 "CO" = (
 /obj/machinery/cryopod,
 /turf/open/floor/eighties,
@@ -3352,10 +3363,6 @@
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
-"Mg" = (
-/obj/structure/sign/poster/solgov/solgov_enlist,
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/hallway/port)
 "Mi" = (
 /obj/machinery/light,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
@@ -3775,7 +3782,7 @@
 /turf/template_noop,
 /area/ship/external)
 "RA" = (
-/obj/machinery/holopad/emergency/command,
+/obj/machinery/holopad,
 /turf/open/floor/wood,
 /area/ship/crew/solgov)
 "RC" = (
@@ -4145,10 +4152,6 @@
 /obj/item/newspaper,
 /obj/item/megaphone/command,
 /obj/item/radio/headset/solgov/alt,
-/obj/item/spacecash/bundle/c1000,
-/obj/item/spacecash/bundle/c1000,
-/obj/item/spacecash/bundle/c1000,
-/obj/item/spacecash/bundle/c1000,
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
 "Wj" = (
@@ -4334,6 +4337,17 @@
 /obj/effect/turf_decal/corner/opaque/red/diagonal,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
+"Yf" = (
+/obj/structure/catwalk,
+/obj/docking_port/stationary{
+	height = 15;
+	width = 12;
+	dheight = 1;
+	dwidth = 3;
+	dir = 2
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/external)
 "Yg" = (
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -4503,6 +4517,7 @@
 
 (1,1,1) = {"
 zR
+zR
 aw
 aw
 dn
@@ -4528,6 +4543,7 @@ zR
 zR
 "}
 (2,1,1) = {"
+zR
 ZV
 lM
 Gu
@@ -4554,6 +4570,7 @@ ZV
 zR
 "}
 (3,1,1) = {"
+zR
 ZV
 aE
 aE
@@ -4580,6 +4597,7 @@ ZV
 zR
 "}
 (4,1,1) = {"
+zR
 ZV
 aG
 bt
@@ -4606,6 +4624,7 @@ ZV
 zR
 "}
 (5,1,1) = {"
+zR
 ZV
 aI
 cu
@@ -4632,6 +4651,7 @@ ZV
 zR
 "}
 (6,1,1) = {"
+zR
 ZV
 aR
 NR
@@ -4658,6 +4678,7 @@ ZV
 zR
 "}
 (7,1,1) = {"
+zR
 ZV
 yC
 mM
@@ -4684,6 +4705,7 @@ ZV
 zR
 "}
 (8,1,1) = {"
+zR
 Pd
 yC
 mM
@@ -4710,6 +4732,7 @@ zR
 zR
 "}
 (9,1,1) = {"
+zR
 Dd
 yC
 OY
@@ -4736,6 +4759,7 @@ zR
 zR
 "}
 (10,1,1) = {"
+zR
 QG
 QG
 HN
@@ -4762,7 +4786,8 @@ Ob
 zR
 "}
 (11,1,1) = {"
-sh
+qm
+CN
 iW
 YV
 Jr
@@ -4788,6 +4813,7 @@ Nn
 zR
 "}
 (12,1,1) = {"
+zR
 Mz
 NH
 gS
@@ -4814,6 +4840,7 @@ Ob
 zR
 "}
 (13,1,1) = {"
+zR
 RH
 RH
 RH
@@ -4840,6 +4867,7 @@ Od
 zR
 "}
 (14,1,1) = {"
+zR
 RH
 LN
 CR
@@ -4866,6 +4894,7 @@ Od
 zR
 "}
 (15,1,1) = {"
+zR
 nO
 ot
 BF
@@ -4892,6 +4921,7 @@ Od
 zR
 "}
 (16,1,1) = {"
+zR
 nO
 gX
 ZL
@@ -4918,6 +4948,7 @@ Od
 zR
 "}
 (17,1,1) = {"
+zR
 nO
 Mq
 ZL
@@ -4944,6 +4975,7 @@ eq
 zR
 "}
 (18,1,1) = {"
+zR
 nO
 HB
 ZL
@@ -4970,6 +5002,7 @@ eq
 zR
 "}
 (19,1,1) = {"
+zR
 RH
 TR
 VE
@@ -4996,6 +5029,7 @@ QD
 zR
 "}
 (20,1,1) = {"
+zR
 Un
 Un
 RH
@@ -5022,6 +5056,7 @@ QD
 zR
 "}
 (21,1,1) = {"
+zR
 YU
 Wt
 ZB
@@ -5048,6 +5083,7 @@ QD
 zR
 "}
 (22,1,1) = {"
+zR
 YU
 zN
 Qi
@@ -5071,9 +5107,10 @@ Dc
 Bl
 VJ
 OI
-oe
+zR
 "}
 (23,1,1) = {"
+zR
 YU
 OT
 oL
@@ -5097,9 +5134,10 @@ iI
 Mu
 LW
 AU
-oe
+eC
 "}
 (24,1,1) = {"
+zR
 YU
 XM
 hz
@@ -5123,9 +5161,10 @@ fu
 bQ
 us
 AU
-oe
+Yf
 "}
 (25,1,1) = {"
+zR
 YU
 TD
 vi
@@ -5149,15 +5188,16 @@ Et
 cp
 tR
 AU
-oe
+eC
 "}
 (26,1,1) = {"
+zR
 YU
 YU
 YU
 YU
 wd
-Mg
+xD
 jR
 OL
 qd
@@ -5178,6 +5218,7 @@ Px
 JF
 "}
 (27,1,1) = {"
+zR
 zR
 WN
 bn
@@ -5205,6 +5246,7 @@ oe
 "}
 (28,1,1) = {"
 zR
+zR
 WN
 uZ
 RA
@@ -5230,6 +5272,7 @@ oe
 zR
 "}
 (29,1,1) = {"
+zR
 zR
 WN
 tm
@@ -5257,6 +5300,7 @@ zR
 "}
 (30,1,1) = {"
 zR
+zR
 WN
 SC
 JU
@@ -5282,6 +5326,7 @@ oe
 zR
 "}
 (31,1,1) = {"
+zR
 zR
 Dd
 WN
@@ -5309,6 +5354,7 @@ zR
 "}
 (32,1,1) = {"
 zR
+zR
 Dd
 WN
 HX
@@ -5335,6 +5381,7 @@ zR
 "}
 (33,1,1) = {"
 zR
+zR
 Dd
 WN
 by
@@ -5360,6 +5407,7 @@ zR
 zR
 "}
 (34,1,1) = {"
+zR
 zR
 Dd
 oe

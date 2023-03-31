@@ -912,7 +912,6 @@
 /obj/machinery/door/airlock/external/glass,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /obj/docking_port/mobile{
-	callTime = 250;
 	dir = 2;
 	launch_status = 0;
 	name = "Fauna Research Ship";
@@ -1044,6 +1043,9 @@
 "lG" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/science)
+"lK" = (
+/turf/open/floor/plasteel/dark,
+/area/template_noop)
 "lM" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1623,6 +1625,16 @@
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
+"uV" = (
+/obj/docking_port/stationary{
+	height = 15;
+	width = 12;
+	dheight = 1;
+	dwidth = 3;
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/template_noop)
 "vc" = (
 /obj/effect/turf_decal/siding/purple/corner{
 	dir = 1
@@ -3507,7 +3519,6 @@
 /obj/machinery/atmospherics/pipe/simple/cyan/visible{
 	dir = 4
 	},
-/obj/machinery/holopad/emergency/engineering,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "Yt" = (
@@ -4171,8 +4182,8 @@ tb
 "}
 (28,1,1) = {"
 tb
-tb
-tb
+uV
+lK
 tb
 zE
 AE

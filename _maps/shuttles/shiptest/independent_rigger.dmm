@@ -356,49 +356,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
-"fg" = (
-/obj/structure/sink{
-	dir = 8;
-	pixel_x = 12
-	},
-/obj/effect/turf_decal/borderfloor{
-	dir = 5
-	},
-/obj/effect/turf_decal/corner/opaque/white{
-	dir = 8
-	},
-/obj/item/storage/box/bodybags{
-	pixel_x = -7;
-	pixel_y = 4
-	},
-/obj/item/storage/box/syringes{
-	pixel_x = -6
-	},
-/obj/item/reagent_containers/glass/bottle/formaldehyde{
-	pixel_x = 8;
-	pixel_y = 8
-	},
-/obj/item/reagent_containers/glass/bottle{
-	list_reagents = list(/datum/reagent/medicine/thializid = 30);
-	name = "thializid bottle";
-	pixel_x = 5
-	},
-/obj/item/reagent_containers/syringe{
-	pixel_x = 7
-	},
-/obj/structure/closet/secure_closet/wall{
-	dir = 8;
-	icon_door = "med_wall";
-	locked = 0;
-	name = "mortuary locker";
-	pixel_x = 28;
-	req_access_txt = "1"
-	},
-/obj/effect/turf_decal/corner/opaque/green{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/medical)
 "fh" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -835,9 +792,6 @@
 "kC" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering)
-"kK" = (
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/construction)
 "kL" = (
 /obj/item/kirbyplants/random,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -896,40 +850,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
-"lF" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 10
-	},
-/obj/effect/turf_decal/corner/opaque/blue/bordercorner{
-	dir = 8
-	},
-/obj/item/storage/backpack/captain,
-/obj/item/clothing/shoes/cowboy/white,
-/obj/item/clothing/under/rank/command/captain,
-/obj/item/clothing/suit/armor/vest/capcarapace/duster,
-/obj/item/clothing/glasses/sunglasses,
-/obj/item/clothing/head/caphat/cowboy,
-/obj/item/gun/ballistic/automatic/pistol/m1911,
-/obj/structure/closet/secure_closet/wall{
-	dir = 8;
-	icon_state = "solgov_wall";
-	name = "captain's closet";
-	pixel_x = 28;
-	req_access_txt = "20"
-	},
-/obj/item/spacecash/bundle/c1000,
-/obj/item/spacecash/bundle/c1000,
-/obj/item/spacecash/bundle/c1000,
-/obj/item/spacecash/bundle/c1000,
-/obj/item/spacecash/bundle/c1000,
-/obj/item/spacecash/bundle/c1000,
-/obj/item/ammo_box/magazine/m45,
-/obj/item/ammo_box/magazine/m45,
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/bridge)
 "lH" = (
 /obj/machinery/door/airlock/maintenance{
 	name = "Starboard Thrusters"
@@ -2335,6 +2255,40 @@
 "Ce" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/crew)
+"Ci" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
+	},
+/obj/effect/turf_decal/corner/opaque/blue/bordercorner{
+	dir = 8
+	},
+/obj/item/storage/backpack/captain,
+/obj/item/clothing/shoes/cowboy/white,
+/obj/item/clothing/under/rank/command/captain,
+/obj/item/clothing/suit/armor/vest/capcarapace/duster,
+/obj/item/clothing/glasses/sunglasses,
+/obj/item/clothing/head/caphat/cowboy,
+/obj/item/gun/ballistic/automatic/pistol/m1911,
+/obj/structure/closet/secure_closet/wall{
+	dir = 8;
+	icon_state = "solgov_wall";
+	name = "captain's closet";
+	pixel_x = 28;
+	req_access_txt = "20"
+	},
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/ammo_box/magazine/m45,
+/obj/item/ammo_box/magazine/m45,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/bridge)
 "Cn" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -3131,6 +3085,15 @@
 /obj/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
 /area/ship/construction)
+"KV" = (
+/obj/docking_port/stationary{
+	height = 15;
+	width = 12;
+	dheight = 1;
+	dwidth = 3
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external)
 "KY" = (
 /obj/structure/chair/office/light,
 /obj/effect/landmark/start/medical_doctor,
@@ -3660,6 +3623,49 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/port)
+"Ri" = (
+/obj/structure/sink{
+	dir = 8;
+	pixel_x = 12
+	},
+/obj/effect/turf_decal/borderfloor{
+	dir = 5
+	},
+/obj/effect/turf_decal/corner/opaque/white{
+	dir = 8
+	},
+/obj/item/storage/box/bodybags{
+	pixel_x = -7;
+	pixel_y = 4
+	},
+/obj/item/storage/box/syringes{
+	pixel_x = -6
+	},
+/obj/item/reagent_containers/glass/bottle/formaldehyde{
+	pixel_x = 8;
+	pixel_y = 8
+	},
+/obj/item/reagent_containers/glass/bottle{
+	list_reagents = list(/datum/reagent/medicine/thializid=30);
+	name = "thializid bottle";
+	pixel_x = 5
+	},
+/obj/item/reagent_containers/syringe{
+	pixel_x = 7
+	},
+/obj/structure/closet/secure_closet/wall{
+	dir = 8;
+	icon_door = "med_wall";
+	locked = 0;
+	name = "mortuary locker";
+	pixel_x = 28;
+	req_access_txt = "1"
+	},
+/obj/effect/turf_decal/corner/opaque/green{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/medical)
 "Rn" = (
 /obj/structure/cable{
 	icon_state = "0-4"
@@ -4004,9 +4010,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
-"UY" = (
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/crew)
 "Va" = (
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/grille,
@@ -4547,16 +4550,16 @@ Ly
 Ly
 Ly
 Ly
-UY
-UY
-UY
+Ce
+Ce
+Ce
 bC
-UY
+Ce
 aN
 Hm
-UY
+Ce
 Hm
-UY
+Ce
 bC
 Pw
 bl
@@ -4580,18 +4583,18 @@ Ly
 Ly
 Ly
 Ly
-UY
+Ce
 bC
 FO
 cc
-UY
+Ce
 Hn
 AH
 AH
 te
 gc
 pY
-UY
+Ce
 iG
 db
 pv
@@ -4613,7 +4616,7 @@ Of
 Ly
 Ly
 Ly
-UY
+Ce
 bC
 MF
 Ao
@@ -4625,7 +4628,7 @@ rl
 tE
 RW
 Dr
-UY
+Ce
 CO
 Cc
 PF
@@ -4647,12 +4650,12 @@ Cw
 Ly
 Ly
 Ly
-UY
+Ce
 bC
 SE
 hG
 TS
-UY
+Ce
 Hg
 pP
 zV
@@ -4680,18 +4683,18 @@ Of
 (5,1,1) = {"
 Ly
 Ly
-UY
+Ce
 bC
 bC
-UY
+Ce
 av
-UY
+Ce
 bC
-UY
+Ce
 Hm
 Ul
-UY
-UY
+Ce
+Ce
 eT
 bC
 Pw
@@ -4713,10 +4716,10 @@ Ly
 "}
 (6,1,1) = {"
 Ce
-UY
+Ce
 bC
 bC
-UY
+Ce
 Ly
 Ly
 Ly
@@ -4928,7 +4931,7 @@ Ly
 Rz
 JE
 Vs
-lF
+Ci
 mw
 zt
 lY
@@ -5130,7 +5133,7 @@ Ly
 Ly
 Ly
 Ly
-Ly
+vm
 sT
 qQ
 Tk
@@ -5164,7 +5167,7 @@ Ly
 Ly
 Ly
 Ly
-Ly
+vm
 sT
 hy
 SY
@@ -5198,7 +5201,7 @@ Ly
 Ly
 Ly
 Ly
-Ly
+KV
 sT
 yW
 pO
@@ -5232,7 +5235,7 @@ Ly
 Ly
 Ly
 Ly
-Ly
+vm
 sT
 yW
 Hy
@@ -5266,7 +5269,7 @@ Ly
 Ly
 Ly
 Ly
-Ly
+vm
 sT
 hy
 QT
@@ -5300,7 +5303,7 @@ Ly
 Ly
 Ly
 Ly
-Ly
+vm
 sT
 yW
 Ji
@@ -5427,10 +5430,10 @@ Ly
 "}
 (27,1,1) = {"
 aT
-kK
+aT
 OR
 OR
-kK
+aT
 Ly
 Ly
 Ly
@@ -5443,7 +5446,7 @@ Ly
 NU
 As
 ZI
-fg
+Ri
 id
 iR
 Pa
@@ -5462,18 +5465,18 @@ Ly
 (28,1,1) = {"
 Ly
 Ly
-kK
+aT
 OR
 OR
-kK
+aT
 KI
-kK
+aT
 OR
-kK
+aT
 KI
 VW
-kK
-kK
+aT
+aT
 Qj
 OR
 ZE
@@ -5497,12 +5500,12 @@ Ly
 Ly
 Ly
 Ly
-kK
+aT
 OR
 Ug
 oX
 zF
-kK
+aT
 Fs
 rN
 Dm
@@ -5531,7 +5534,7 @@ sS
 Ly
 Ly
 Ly
-kK
+aT
 OR
 iH
 kj
@@ -5543,7 +5546,7 @@ Lo
 yJ
 Ug
 Qv
-kK
+aT
 DL
 Ad
 GM
@@ -5566,18 +5569,18 @@ Ly
 Ly
 Ly
 Ly
-kK
+aT
 OR
 Ug
 bc
-kK
+aT
 rJ
 sM
 Ug
 oM
 iU
 VF
-kK
+aT
 Hl
 Ad
 RO
@@ -5601,16 +5604,16 @@ Ly
 Ly
 Ly
 Ly
-kK
-kK
-kK
+aT
+aT
+aT
 OR
-kK
+aT
 VW
 KI
-kK
+aT
 KI
-kK
+aT
 OR
 ZE
 ij

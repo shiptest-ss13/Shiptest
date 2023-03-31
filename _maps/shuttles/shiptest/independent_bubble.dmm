@@ -311,6 +311,18 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
+"ns" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/docking_port/stationary{
+	height = 15;
+	width = 12;
+	dheight = 1;
+	dwidth = 3
+	},
+/turf/open/floor/plating,
+/area/ship/external)
 "ny" = (
 /obj/structure/window/reinforced/spawner/east,
 /obj/structure/frame/machine,
@@ -1045,7 +1057,7 @@
 /area/ship/maintenance/aft)
 "VB" = (
 /turf/template_noop,
-/area/space)
+/area/template_noop)
 "VI" = (
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 1
@@ -1070,13 +1082,6 @@
 	pixel_y = -25
 	},
 /obj/item/areaeditor/shuttle,
-/obj/item/spacecash/bundle/c1000,
-/obj/item/spacecash/bundle/c1000,
-/obj/item/spacecash/bundle/c1000,
-/obj/item/spacecash/bundle/c1000,
-/obj/item/spacecash/bundle/c1000,
-/obj/item/spacecash/bundle/c1000,
-/obj/item/spacecash/bundle/c1000,
 /turf/open/floor/wood,
 /area/ship/crew/dorm)
 "VQ" = (
@@ -1398,7 +1403,7 @@ Rk
 MJ
 "}
 (12,1,1) = {"
-gl
+ns
 Gl
 ec
 nS

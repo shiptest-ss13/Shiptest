@@ -40,6 +40,18 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ship/construction)
+"dB" = (
+/obj/structure/closet/crate{
+	name = "Communications Equipment Crate"
+	},
+/obj/item/wallframe/intercom/wideband,
+/obj/item/circuitboard/machine/holopad,
+/obj/item/circuitboard/computer/cargo/express,
+/obj/item/spacecash/bundle/loadsamoney,
+/obj/item/spacecash/bundle/loadsamoney,
+/obj/item/spacecash/bundle/loadsamoney,
+/turf/open/floor/plating/airless,
+/area/ship/construction)
 "ev" = (
 /obj/structure/plasticflaps,
 /turf/open/floor/plating/airless,
@@ -88,6 +100,17 @@
 	},
 /obj/structure/railing{
 	dir = 4
+	},
+/turf/open/floor/plating/airless,
+/area/ship/construction)
+"iq" = (
+/obj/docking_port/mobile{
+	callTime = 250;
+	can_move_docking_ports = 1;
+	dir = 2;
+	launch_status = 0;
+	port_direction = 8;
+	preferred_direction = 4
 	},
 /turf/open/floor/plating/airless,
 /area/ship/construction)
@@ -146,17 +169,6 @@
 "nv" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
-	},
-/turf/open/floor/plating/airless,
-/area/ship/construction)
-"nx" = (
-/obj/docking_port/mobile{
-	callTime = 250;
-	can_move_docking_ports = 1;
-	dir = 2;
-	launch_status = 0;
-	port_direction = 8;
-	preferred_direction = 4
 	},
 /turf/open/floor/plating/airless,
 /area/ship/construction)
@@ -340,18 +352,6 @@
 "Fj" = (
 /turf/closed/wall,
 /area/ship/construction)
-"FI" = (
-/obj/structure/closet/crate{
-	name = "Communications Equipment Crate"
-	},
-/obj/item/wallframe/intercom/wideband,
-/obj/item/circuitboard/machine/holopad,
-/obj/item/circuitboard/computer/cargo/express,
-/obj/item/spacecash/bundle/loadsamoney,
-/obj/item/spacecash/bundle/loadsamoney,
-/obj/item/spacecash/bundle/loadsamoney,
-/turf/open/floor/plating/airless,
-/area/ship/construction)
 "Gb" = (
 /obj/structure/railing{
 	dir = 1
@@ -519,10 +519,6 @@
 	},
 /obj/item/stack/sheet/glass/fifty,
 /obj/item/stack/sheet/plastic/twenty,
-/turf/open/floor/plating/airless,
-/area/ship/construction)
-"Qz" = (
-/obj/structure/girder,
 /turf/open/floor/plating/airless,
 /area/ship/construction)
 "SA" = (
@@ -820,7 +816,7 @@ ND
 SA
 "}
 (13,1,1) = {"
-Qz
+MA
 vK
 vo
 Fj
@@ -837,7 +833,7 @@ ND
 zu
 "}
 (14,1,1) = {"
-nx
+iq
 dz
 MA
 ev
@@ -854,7 +850,7 @@ zu
 zu
 "}
 (15,1,1) = {"
-Qz
+MA
 Gb
 kh
 Fj
@@ -892,7 +888,7 @@ SA
 ke
 aO
 eQ
-FI
+dB
 ck
 mJ
 nq

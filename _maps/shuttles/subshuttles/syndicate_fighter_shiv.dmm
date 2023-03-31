@@ -1,10 +1,11 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "aA" = (
 /obj/structure/chair/comfy/shuttle{
+	name = "Grav Couch";
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/syndicate/ranged/smg/pilot{
-	environment_smash = 0
+/obj/structure/cable{
+	icon_state = "2-8"
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/security)
@@ -44,10 +45,11 @@
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/security)
 "na" = (
-/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+/obj/machinery/atmospherics/components/unary/shuttle/heater{
 	dir = 4
 	},
-/turf/closed/wall/mineral/plastitanium,
+/obj/effect/turf_decal/industrial/warning,
+/turf/open/floor/engine/hull/reinforced,
 /area/ship/security)
 "qx" = (
 /obj/effect/decal/cleanable/dirt,
@@ -68,6 +70,15 @@
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/security)
+"sA" = (
+/obj/machinery/atmospherics/components/unary/shuttle/heater{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/security)
 "tH" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 9
@@ -82,12 +93,6 @@
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/security)
-"us" = (
-/obj/machinery/power/shuttle/engine/fueled/plasma{
-	dir = 4
-	},
-/turf/open/floor/plating/airless,
-/area/ship/security)
 "uW" = (
 /obj/machinery/button/door{
 	id = "caravansyndicate1_bolt";
@@ -95,12 +100,13 @@
 	normaldoorcontrol = 1;
 	pixel_x = -25;
 	req_access_txt = "150";
-	specialfunctions = 4
+	specialfunctions = 4;
+	dir = 4;
+	pixel_y = -7
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/frame/computer{
-	anchored = 1;
-	
+	anchored = 1
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/security)
@@ -121,8 +127,10 @@
 	dir = 1
 	},
 /obj/item/radio/intercom/wideband{
-	pixel_y = -29
+	pixel_y = -26;
+	dir = 1
 	},
+/obj/structure/cable,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/security)
 "wV" = (
@@ -143,7 +151,11 @@
 	name = "Syndicate Fighter";
 	port_direction = 2;
 	preferred_direction = 4;
-	width = 9
+	width = 9;
+	can_move_docking_ports = 0
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plating,
 /area/ship/security)
@@ -156,6 +168,13 @@
 	},
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/security)
+"Cw" = (
+/obj/machinery/power/shuttle/engine/fueled/plasma{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning,
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/security)
 "Fs" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 10
@@ -166,10 +185,13 @@
 /turf/template_noop,
 /area/template_noop)
 "YP" = (
-/obj/machinery/atmospherics/components/unary/shuttle/heater{
+/obj/machinery/power/shuttle/engine/fueled/plasma{
 	dir = 4
 	},
-/turf/closed/wall/mineral/plastitanium,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/turf/open/floor/engine/hull/reinforced,
 /area/ship/security)
 "YX" = (
 /turf/closed/wall/mineral/plastitanium,
@@ -177,13 +199,13 @@
 
 (1,1,1) = {"
 Jv
-us
+Jv
 YX
 YX
 wV
 YX
 YX
-us
+Jv
 Jv
 "}
 (2,1,1) = {"
@@ -194,12 +216,12 @@ uW
 aA
 vK
 YX
-YP
+Cw
 Jv
 "}
 (3,1,1) = {"
 YX
-na
+sA
 YX
 tU
 qx

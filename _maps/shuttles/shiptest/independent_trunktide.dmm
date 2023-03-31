@@ -98,13 +98,13 @@
 /area/ship/maintenance/central)
 "fW" = (
 /obj/structure/fans/tiny,
-/obj/docking_port/mobile{
-	launch_status = 0;
-	port_direction = 2
-	},
 /obj/machinery/door/poddoor{
 	id = "baydoors";
 	name = "Cargo Bay Blast Door"
+	},
+/obj/docking_port/mobile{
+	launch_status = 0;
+	port_direction = 2
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
@@ -741,7 +741,6 @@
 	pixel_x = -6;
 	pixel_y = 7
 	},
-/obj/item/spacecash/bundle/c50,
 /turf/open/floor/plating,
 /area/ship/bridge)
 "yp" = (
@@ -974,13 +973,13 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
+/obj/machinery/holopad/emergency/command,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
 	},
-/obj/machinery/holopad/emergency/buddy,
 /turf/open/floor/plating,
 /area/ship/bridge)
 "DM" = (
@@ -1084,12 +1083,18 @@
 /turf/open/floor/pod/light,
 /area/ship/engineering)
 "Fs" = (
-/obj/effect/spawner/lootdrop/maintenance/seven,
-/obj/structure/closet/crate,
-/obj/item/storage/toolbox/electrical,
-/obj/item/spacecash/bundle/c100,
+/obj/structure/window/reinforced/tinted{
+	dir = 1
+	},
+/obj/structure/curtain/cloth/fancy,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/glass,
+/obj/structure/toilet/secret{
+	dir = 8;
+	secret_type = /obj/item/circuitboard/machine/autolathe
+	},
 /turf/open/floor/plating,
-/area/ship/maintenance/fore)
+/area/ship/crew)
 "Fz" = (
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 4
@@ -1301,20 +1306,11 @@
 	},
 /area/ship/maintenance/fore)
 "LO" = (
-/obj/structure/window/reinforced/tinted{
-	dir = 1
-	},
-/obj/structure/curtain/cloth/fancy,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/glass,
-/obj/structure/toilet/secret{
-	dir = 8;
-	secret_type = /obj/item/circuitboard/machine/autolathe
-	},
-/obj/item/spacecash/bundle/c100,
-/obj/item/spacecash/bundle/c100,
+/obj/effect/spawner/lootdrop/maintenance/seven,
+/obj/structure/closet/crate,
+/obj/item/storage/toolbox/electrical,
 /turf/open/floor/plating,
-/area/ship/crew)
+/area/ship/maintenance/fore)
 "Ma" = (
 /obj/structure/tank_dispenser,
 /turf/open/floor/plating,
@@ -1950,7 +1946,7 @@ Qd
 DM
 RX
 BH
-Fs
+LO
 Yb
 ts
 Bl
@@ -2088,7 +2084,7 @@ Pu
 pC
 te
 aN
-LO
+Fs
 kv
 Rj
 tw

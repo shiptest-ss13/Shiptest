@@ -863,6 +863,7 @@
 "kA" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/steeldecal/steel_decals4,
+/obj/machinery/holopad/emergency/command,
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 10
 	},
@@ -872,7 +873,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
 	},
-/obj/machinery/holopad/emergency/engineering,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/electrical)
 "kC" = (
@@ -3120,10 +3120,6 @@
 /obj/effect/decal/cleanable/vomit/old{
 	pixel_y = 13
 	},
-/obj/item/spacecash/bundle/c1000{
-	pixel_y = -1;
-	pixel_x = 3
-	},
 /obj/item/reagent_containers/food/drinks/britcup{
 	pixel_x = -6;
 	pixel_y = 9
@@ -3284,6 +3280,14 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/electrical)
+"Hy" = (
+/obj/docking_port/stationary{
+	height = 15;
+	width = 12;
+	dwidth = 3
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/science/robotics)
 "HI" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/techfloor/orange{
@@ -4889,6 +4893,31 @@ zQ
 zQ
 zQ
 zQ
+zQ
+zQ
+zQ
+zQ
+zQ
+zQ
+zQ
+zQ
+zQ
+zQ
+zQ
+zQ
+zQ
+zQ
+"}
+(2,1,1) = {"
+zQ
+zQ
+zQ
+zQ
+zQ
+zQ
+zQ
+zQ
+zQ
 El
 ol
 ML
@@ -4904,7 +4933,7 @@ zQ
 zQ
 zQ
 "}
-(2,1,1) = {"
+(3,1,1) = {"
 zQ
 zQ
 zQ
@@ -4929,7 +4958,7 @@ zQ
 zQ
 zQ
 "}
-(3,1,1) = {"
+(4,1,1) = {"
 zQ
 zQ
 zQ
@@ -4954,7 +4983,7 @@ zQ
 zQ
 zQ
 "}
-(4,1,1) = {"
+(5,1,1) = {"
 zQ
 zQ
 zQ
@@ -4979,7 +5008,7 @@ zQ
 zQ
 zQ
 "}
-(5,1,1) = {"
+(6,1,1) = {"
 zQ
 zQ
 uX
@@ -5004,7 +5033,7 @@ Ob
 zQ
 zQ
 "}
-(6,1,1) = {"
+(7,1,1) = {"
 ag
 Xv
 uX
@@ -5029,7 +5058,7 @@ Ob
 mf
 WU
 "}
-(7,1,1) = {"
+(8,1,1) = {"
 uX
 Mb
 uX
@@ -5054,7 +5083,7 @@ Ob
 dK
 Ob
 "}
-(8,1,1) = {"
+(9,1,1) = {"
 Mo
 CY
 sm
@@ -5079,7 +5108,7 @@ Up
 FJ
 Ob
 "}
-(9,1,1) = {"
+(10,1,1) = {"
 uX
 aE
 FS
@@ -5104,7 +5133,7 @@ bh
 ng
 Ob
 "}
-(10,1,1) = {"
+(11,1,1) = {"
 qK
 uX
 hc
@@ -5129,7 +5158,7 @@ wZ
 Ob
 iz
 "}
-(11,1,1) = {"
+(12,1,1) = {"
 zQ
 zn
 WB
@@ -5154,7 +5183,7 @@ Ob
 iz
 zQ
 "}
-(12,1,1) = {"
+(13,1,1) = {"
 zQ
 zQ
 WB
@@ -5179,7 +5208,7 @@ Qf
 zQ
 zQ
 "}
-(13,1,1) = {"
+(14,1,1) = {"
 zQ
 zQ
 WB
@@ -5204,7 +5233,7 @@ Qf
 zQ
 zQ
 "}
-(14,1,1) = {"
+(15,1,1) = {"
 zQ
 zQ
 zn
@@ -5229,7 +5258,7 @@ XA
 zQ
 zQ
 "}
-(15,1,1) = {"
+(16,1,1) = {"
 zQ
 zQ
 zQ
@@ -5254,7 +5283,7 @@ zQ
 zQ
 zQ
 "}
-(16,1,1) = {"
+(17,1,1) = {"
 zQ
 zQ
 zQ
@@ -5279,7 +5308,7 @@ zQ
 zQ
 zQ
 "}
-(17,1,1) = {"
+(18,1,1) = {"
 zQ
 zQ
 zQ
@@ -5304,7 +5333,7 @@ zQ
 zQ
 zQ
 "}
-(18,1,1) = {"
+(19,1,1) = {"
 zQ
 zQ
 zQ
@@ -5329,7 +5358,7 @@ zQ
 zQ
 zQ
 "}
-(19,1,1) = {"
+(20,1,1) = {"
 zQ
 zQ
 zQ
@@ -5354,10 +5383,10 @@ zQ
 zQ
 zQ
 "}
-(20,1,1) = {"
+(21,1,1) = {"
 zQ
 zQ
-zQ
+Hy
 wC
 tQ
 yL
@@ -5379,7 +5408,7 @@ zQ
 zQ
 zQ
 "}
-(21,1,1) = {"
+(22,1,1) = {"
 zQ
 zQ
 zQ
@@ -5404,7 +5433,7 @@ zQ
 zQ
 zQ
 "}
-(22,1,1) = {"
+(23,1,1) = {"
 zQ
 zQ
 Qr
@@ -5429,7 +5458,7 @@ TU
 zQ
 zQ
 "}
-(23,1,1) = {"
+(24,1,1) = {"
 zQ
 zQ
 Qr
@@ -5454,7 +5483,7 @@ TU
 zQ
 zQ
 "}
-(24,1,1) = {"
+(25,1,1) = {"
 zQ
 zQ
 Qr
@@ -5479,7 +5508,7 @@ BR
 zQ
 zQ
 "}
-(25,1,1) = {"
+(26,1,1) = {"
 zQ
 zQ
 Qr
@@ -5504,7 +5533,7 @@ BR
 zQ
 zQ
 "}
-(26,1,1) = {"
+(27,1,1) = {"
 zQ
 zQ
 TL
@@ -5529,7 +5558,7 @@ OP
 zQ
 zQ
 "}
-(27,1,1) = {"
+(28,1,1) = {"
 zQ
 zQ
 zQ
@@ -5554,10 +5583,10 @@ zQ
 zQ
 zQ
 "}
-(28,1,1) = {"
+(29,1,1) = {"
 zQ
 zQ
-zQ
+Hy
 DA
 og
 wH
@@ -5579,7 +5608,7 @@ zQ
 zQ
 zQ
 "}
-(29,1,1) = {"
+(30,1,1) = {"
 zQ
 zQ
 zQ
@@ -5604,7 +5633,7 @@ zQ
 zQ
 zQ
 "}
-(30,1,1) = {"
+(31,1,1) = {"
 zQ
 zQ
 zQ
@@ -5629,7 +5658,7 @@ zQ
 zQ
 zQ
 "}
-(31,1,1) = {"
+(32,1,1) = {"
 zQ
 zQ
 zQ

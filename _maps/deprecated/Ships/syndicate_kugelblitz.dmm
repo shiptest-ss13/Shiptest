@@ -143,6 +143,16 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
+"cB" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/mineral/plastitanium,
+/area/ship/science/robotics)
 "cK" = (
 /obj/machinery/atmospherics/pipe/simple/orange,
 /obj/structure/cable/yellow{
@@ -161,12 +171,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
-"cW" = (
-/obj/effect/turf_decal/box/corners,
-/obj/item/stock_parts/cell/hyper,
-/obj/item/stack/cable_coil/random/five,
-/turf/open/floor/mineral/plastitanium/red,
-/area/ship/science/robotics)
 "dh" = (
 /obj/machinery/power/rad_collector/anchored,
 /obj/structure/cable/yellow{
@@ -343,6 +347,13 @@
 	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
+"ff" = (
+/obj/effect/turf_decal/box/corners{
+	dir = 4
+	},
+/obj/item/stack/ore/salvage/scrapmetal/twenty,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ship/science/robotics)
 "fg" = (
 /obj/machinery/atmospherics/pipe/simple/orange{
 	dir = 8
@@ -420,13 +431,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
-"gA" = (
-/obj/effect/turf_decal/industrial/warning,
-/obj/machinery/atmospherics/pipe/simple/orange/visible{
-	dir = 10
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/ship/science/robotics)
 "gS" = (
 /obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 1
@@ -480,15 +484,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
-"hA" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
-/obj/item/radio/intercom{
-	pixel_y = 22
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/ship/science/robotics)
 "hN" = (
 /obj/item/radio/intercom{
 	pixel_y = 32
@@ -573,6 +568,16 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/engineering)
+"jl" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1
+	},
+/obj/effect/turf_decal/box/corners{
+	dir = 8
+	},
+/obj/item/stack/ore/salvage/scraptitanium/five,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ship/science/robotics)
 "jq" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -765,6 +770,15 @@
 /obj/item/mecha_parts/part/ripley_left_leg,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew)
+"kX" = (
+/obj/docking_port/stationary{
+	dir = 8;
+	width = 7;
+	height = 15;
+	dheight = -1
+	},
+/turf/open/floor/mineral/plastitanium/red/airless,
+/area/ship/external)
 "kY" = (
 /obj/effect/turf_decal/corner/opaque/yellow,
 /obj/effect/turf_decal/corner/opaque/yellow{
@@ -904,13 +918,6 @@
 	},
 /turf/open/floor/engine/o2,
 /area/ship/engineering/atmospherics)
-"nn" = (
-/obj/effect/turf_decal/box/corners{
-	dir = 4
-	},
-/obj/item/stack/ore/salvage/scrapmetal/twenty,
-/turf/open/floor/mineral/plastitanium/red,
-/area/ship/science/robotics)
 "nt" = (
 /obj/structure/closet/firecloset/wall,
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
@@ -1153,6 +1160,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
+"rn" = (
+/obj/docking_port/stationary{
+	height = 15;
+	width = 7;
+	dir = 4;
+	dheight = -1
+	},
+/turf/open/floor/mineral/plastitanium/red/airless,
+/area/ship/external)
 "rv" = (
 /obj/machinery/atmospherics/pipe/simple/cyan/visible,
 /obj/effect/turf_decal/industrial/warning/corner{
@@ -1277,15 +1293,6 @@
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
-"sY" = (
-/obj/structure/table,
-/obj/item/radio/intercom/wideband,
-/obj/item/circuitboard/mecha/ripley/peripherals,
-/obj/item/spacecash/bundle/c1000,
-/obj/item/spacecash/bundle/c1000,
-/obj/item/spacecash/bundle/c1000,
-/turf/open/floor/mineral/plastitanium,
-/area/ship/crew)
 "tp" = (
 /obj/structure/window/plasma/reinforced/spawner/north,
 /obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/oxygen_output{
@@ -1378,35 +1385,6 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
-/area/ship/science/robotics)
-"vH" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/turf/open/floor/mineral/plastitanium/red,
-/area/ship/science/robotics)
-"vI" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 10
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 9
-	},
-/obj/effect/turf_decal/box/corners{
-	dir = 1
-	},
-/obj/item/stack/ore/salvage/scrapgold/five,
-/obj/item/stack/ore/salvage/scrapmetal,
-/turf/open/floor/mineral/plastitanium/red,
-/area/ship/science/robotics)
-"vJ" = (
-/turf/open/floor/mineral/plastitanium/red,
 /area/ship/science/robotics)
 "vM" = (
 /obj/structure/fans/tiny,
@@ -1572,10 +1550,6 @@
 /obj/item/mecha_parts/part/ripley_torso,
 /turf/open/floor/plasteel/dark,
 /area/ship/science/robotics)
-"xd" = (
-/obj/item/stack/ore/salvage/scrapmetal,
-/turf/open/floor/mineral/plastitanium/red,
-/area/ship/science/robotics)
 "xe" = (
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/mineral/plastitanium/airless,
@@ -1714,6 +1688,12 @@
 /obj/item/holosign_creator/engineering,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
+"yP" = (
+/obj/effect/turf_decal/box/corners,
+/obj/item/stock_parts/cell/hyper,
+/obj/item/stack/cable_coil/random/five,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ship/science/robotics)
 "yY" = (
 /obj/structure/bed,
 /obj/item/bedsheet/random,
@@ -1767,13 +1747,6 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/science/robotics)
-"Aj" = (
-/obj/effect/turf_decal/industrial/warning,
-/obj/machinery/atmospherics/pipe/manifold/orange/visible{
-	dir = 1
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/ship/science/robotics)
 "An" = (
 /obj/machinery/door/airlock/engineering/glass,
 /obj/machinery/door/firedoor/border_only{
@@ -1787,6 +1760,13 @@
 "Ao" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/portable_atmospherics/canister/air,
+/turf/open/floor/mineral/plastitanium,
+/area/ship/science/robotics)
+"AL" = (
+/obj/effect/turf_decal/industrial/warning,
+/obj/machinery/atmospherics/pipe/simple/orange/visible{
+	dir = 10
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/science/robotics)
 "AX" = (
@@ -1851,6 +1831,20 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
+"BF" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/obj/effect/turf_decal/box/corners{
+	dir = 1
+	},
+/obj/item/stack/ore/salvage/scrapgold/five,
+/obj/item/stack/ore/salvage/scrapmetal,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ship/science/robotics)
 "BJ" = (
 /obj/machinery/atmospherics/components/binary/pump{
 	dir = 1
@@ -1889,6 +1883,18 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/medical)
+"CK" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ship/science/robotics)
 "CP" = (
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 8
@@ -2071,6 +2077,15 @@
 /obj/machinery/atmospherics/components/binary/pump,
 /obj/effect/turf_decal/corner/opaque/purple/three_quarters,
 /turf/open/floor/plasteel/dark,
+/area/ship/science/robotics)
+"Ha" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/item/radio/intercom{
+	pixel_y = 22
+	},
+/turf/open/floor/mineral/plastitanium,
 /area/ship/science/robotics)
 "Hn" = (
 /obj/effect/decal/cleanable/oil,
@@ -2307,6 +2322,15 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
+"Km" = (
+/obj/structure/table,
+/obj/item/radio/intercom/wideband,
+/obj/item/circuitboard/mecha/ripley/peripherals,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
+/turf/open/floor/mineral/plastitanium,
+/area/ship/crew)
 "KD" = (
 /obj/machinery/power/shuttle/engine/fueled/plasma{
 	dir = 1
@@ -2518,6 +2542,13 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
+"Oq" = (
+/obj/effect/turf_decal/industrial/warning,
+/obj/machinery/atmospherics/pipe/manifold/orange/visible{
+	dir = 1
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ship/science/robotics)
 "Pi" = (
 /obj/effect/turf_decal/techfloor/orange/corner{
 	dir = 1
@@ -2528,16 +2559,6 @@
 /obj/item/storage/toolbox/emergency/shuttle/fueled,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
-"Pj" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 1
-	},
-/obj/effect/turf_decal/box/corners{
-	dir = 8
-	},
-/obj/item/stack/ore/salvage/scraptitanium/five,
-/turf/open/floor/mineral/plastitanium/red,
-/area/ship/science/robotics)
 "Pz" = (
 /obj/machinery/atmospherics/components/unary/thermomachine/freezer/on{
 	dir = 4;
@@ -2690,6 +2711,9 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
+"SQ" = (
+/turf/open/floor/mineral/plastitanium/red,
+/area/ship/science/robotics)
 "SS" = (
 /obj/structure/window/plasma/reinforced/spawner/north,
 /obj/machinery/air_sensor/atmos/oxygen_tank,
@@ -2829,15 +2853,9 @@
 /obj/machinery/status_display/shuttle,
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ship/engineering/atmospherics)
-"Vp" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/mineral/plastitanium,
+"Vv" = (
+/obj/item/stack/ore/salvage/scrapmetal,
+/turf/open/floor/mineral/plastitanium/red,
 /area/ship/science/robotics)
 "VH" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
@@ -2957,7 +2975,7 @@ Zf
 Zf
 Zt
 qg
-qk
+kX
 xe
 Zf
 Zf
@@ -3131,7 +3149,7 @@ Zf
 Zf
 Zf
 Xn
-sY
+Km
 vg
 ix
 ZW
@@ -3476,7 +3494,7 @@ aX
 nf
 WF
 qc
-vH
+CK
 lI
 Ae
 Gj
@@ -3502,9 +3520,9 @@ UA
 MA
 WF
 VP
-vI
-Pj
-Aj
+BF
+jl
+Oq
 Gp
 Je
 KD
@@ -3527,10 +3545,10 @@ MV
 HU
 Mm
 WF
-hA
-nn
-cW
-gA
+Ha
+ff
+yP
+AL
 GL
 Je
 KD
@@ -3553,9 +3571,9 @@ kc
 Tp
 Wk
 WF
-Vp
-vJ
-xd
+cB
+SQ
+Vv
 Ao
 pS
 pS
@@ -3633,7 +3651,7 @@ Zf
 Zf
 Rt
 qk
-qk
+rn
 Bd
 Zf
 Zf

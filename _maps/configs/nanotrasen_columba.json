@@ -1,0 +1,19 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Columba-class Mining Carrier",
+	"map_short_name": "Columba-class",
+	"map_path": "_maps/shuttles/shiptest/nanotrasen_columba.dmm",
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/captain/nt",
+			"officer": true,
+			"slots": 1
+		},
+		"Shaft Miner": 3,
+		"Engineer": {
+			"outfit": "/datum/outfit/job/engineer/nt",
+			"slots": 1
+		}
+	},
+	"enabled": true
+}

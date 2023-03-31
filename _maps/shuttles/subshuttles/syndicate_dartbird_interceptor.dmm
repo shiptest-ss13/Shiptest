@@ -10,7 +10,30 @@
 	name = "Grav Couch";
 	dir = 4
 	},
+/obj/item/radio/intercom/wideband{
+	pixel_y = 26
+	},
+/obj/item/radio/intercom{
+	dir = 1;
+	pixel_y = -24
+	},
 /turf/open/floor/mineral/plastitanium,
+/area/ship/bridge)
+"g" = (
+/obj/structure/window/plasma/reinforced{
+	dir = 8
+	},
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 4
+	},
+/obj/structure/window/plasma/reinforced,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/structure/window/plasma/reinforced{
+	dir = 1
+	},
+/turf/open/floor/plating,
 /area/ship/bridge)
 "h" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
@@ -20,49 +43,71 @@
 /turf/open/floor/plating,
 /area/ship/bridge)
 "i" = (
-/obj/machinery/atmospherics/pipe/simple/orange/visible{
-	dir = 9
+/obj/machinery/power/terminal{
+	dir = 8
 	},
-/turf/open/floor/plating,
-/area/ship/bridge)
-"n" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
-/obj/machinery/atmospherics/pipe/simple/orange/visible{
-	dir = 1
+/obj/structure/cable{
+	icon_state = "1-9"
+	},
+/obj/structure/cable{
+	icon_state = "0-9"
+	},
+/obj/structure/cable{
+	icon_state = "1-5"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
 "s" = (
-/obj/machinery/atmospherics/pipe/manifold/orange{
-	dir = 4
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
 "u" = (
-/obj/machinery/atmospherics/components/unary/tank/toxins{
-	dir = 4
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/power/apc/auto_name/north,
+/obj/structure/cable{
+	icon_state = "0-10"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
-"v" = (
-/obj/structure/sign/syndicate,
+"z" = (
+/obj/machinery/porta_turret/syndicate/energy{
+	dir = 4;
+	pixel_x = 8
+	},
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
 "B" = (
 /obj/structure/sign/syndicate,
 /obj/docking_port/mobile{
+	callTime = 50;
 	dir = 4;
-	port_direction = 4;
-	preferred_direction = 2
+	dwidth = 4;
+	height = 5;
+	ignitionTime = 25;
+	name = "Syndicate Fighter";
+	port_direction = 2;
+	preferred_direction = 4;
+	width = 9;
+	can_move_docking_ports = 0
 	},
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
 "D" = (
-/obj/machinery/atmospherics/pipe/manifold/orange{
+/obj/machinery/power/terminal{
 	dir = 8
 	},
-/obj/machinery/light{
-	dir = 8
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -70,6 +115,9 @@
 /obj/machinery/door/airlock/external,
 /obj/machinery/door/poddoor/preopen{
 	id = "jbs04EM"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -87,48 +135,54 @@
 	id = "jbs04EM"
 	},
 /obj/machinery/suit_storage_unit/inherit,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"G" = (
+/obj/machinery/power/smes/engineering,
+/obj/structure/cable{
+	icon_state = "0-6"
+	},
 /turf/open/floor/plating,
 /area/ship/bridge)
 "I" = (
-/obj/machinery/atmospherics/components/unary/shuttle/heater{
-	dir = 4
-	},
 /obj/structure/window/plasma/reinforced{
 	dir = 8
 	},
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 4
+	},
+/obj/structure/window/plasma/reinforced{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/structure/window/plasma/reinforced,
 /turf/open/floor/plating,
 /area/ship/bridge)
 "L" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/bridge)
 "M" = (
-/obj/structure{
-	desc = "A devastating strike weapon of times past. The mountings seem broken now.";
-	dir = 4;
-	icon = 'icons/mecha/mecha_equipment.dmi';
-	icon_state = "mecha_missilerack_six";
-	name = "ancient missile rack";
-	pixel_x = 7;
-	pixel_y = 11
+/obj/structure/cable{
+	icon_state = "0-9"
+	},
+/obj/machinery/porta_turret/syndicate/energy{
+	dir = 4
 	},
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
 "N" = (
-/obj/machinery/power/shuttle/engine/fueled/plasma{
+/obj/machinery/power/shuttle/engine/electric{
 	dir = 4
 	},
-/turf/open/floor/engine/hull,
-/area/ship/bridge)
-"O" = (
-/obj/structure{
-	desc = "A formerly deadly laser cannon, now stuck rusting on a fightercraft.";
-	dir = 4;
-	icon = 'icons/obj/turrets.dmi';
-	icon_state = "syndie_off";
-	name = "defunct laser cannon";
-	pixel_x = 8
+/obj/structure/cable{
+	icon_state = "0-4"
 	},
-/turf/closed/wall/mineral/plastitanium,
+/turf/open/floor/engine/hull,
 /area/ship/bridge)
 "Q" = (
 /obj/machinery/atmospherics/pipe/simple/orange/visible{
@@ -149,14 +203,11 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "W" = (
-/obj/structure{
-	desc = "A devastating strike weapon of times past. The mountings seem broken now.";
-	dir = 4;
-	icon = 'icons/mecha/mecha_equipment.dmi';
-	icon_state = "mecha_missilerack_six";
-	name = "ancient missile rack";
-	pixel_x = 7;
-	pixel_y = -5
+/obj/structure/cable{
+	icon_state = "0-10"
+	},
+/obj/machinery/porta_turret/syndicate/energy{
+	dir = 4
 	},
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
@@ -169,13 +220,20 @@
 "Y" = (
 /obj/structure/extinguisher_cabinet{
 	pixel_y = 33;
-	pixel_x = -8
+	pixel_x = -13
 	},
 /obj/machinery/button/door{
 	pixel_y = 26;
 	pixel_x = 5;
 	id = "jbs04EM";
 	name = "Emergency Lockdown"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/machinery/turretid{
+	pixel_x = 3;
+	pixel_y = 38
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
@@ -199,17 +257,17 @@ a
 a
 "}
 (3,1,1) = {"
-O
+z
 L
-I
-b
+g
+G
 I
 L
-O
+z
 "}
 (4,1,1) = {"
 a
-n
+L
 s
 D
 i
@@ -246,9 +304,9 @@ a
 (8,1,1) = {"
 a
 a
-v
+b
 c
-v
+b
 a
 a
 "}
