@@ -126,6 +126,10 @@ SUBSYSTEM_DEF(overmap)
 		spawn_ruin_levels()
 
 	spawn_outpost()
+	spawn_outpost()//Zeta edit
+	spawn_outpost()//Zeta edit
+	spawn_outpost()//Zeta edit
+	spawn_outpost()//Zeta edit
 	spawn_initial_ships()
 
 /**
