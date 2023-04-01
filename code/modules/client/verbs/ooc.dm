@@ -55,6 +55,23 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 
 	mob.log_talk(raw_msg, LOG_OOC)
 
+	//Zeta edit start
+
+	var/datum/DBQuery/query_get_prefix = SSdbcore.NewQuery(
+		"SELECT rprefix FROM [format_table_name("player")] WHERE ckey = :ckey",
+		list("ckey" = ckey)
+	)
+	var/rprefix = ""
+	if(query_get_prefix.warn_execute())
+		if(query_get_prefix.NextRow())
+			rprefix = query_get_prefix.item[1]
+	qdel(query_get_prefix)
+	if(rprefix=="Player")
+		rprefix=""
+	else
+		rprefix="〔[rprefix]〕"
+	//Zeta edit end
+
 	var/keyname = key
 	if(prefs.unlock_content)
 		if(prefs.toggles & MEMBER_PUBLIC)
@@ -69,23 +86,23 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 			if(holder)
 				if(!holder.fakekey || C.holder)
 					if(check_rights_for(src, R_ADMIN))
-						to_chat(C, "<span class='adminooc'>[CONFIG_GET(flag/allow_admin_ooccolor) && prefs.ooccolor ? "<font color=[prefs.ooccolor]>" :"" ]<span class='prefix'>OOC:</span> <EM>[keyname][holder.fakekey ? "/([holder.fakekey])" : ""]:</EM> <span class='message linkify'>[msg]</span></span></font>")
+						to_chat(C, "<span class='adminooc'>[CONFIG_GET(flag/allow_admin_ooccolor) && prefs.ooccolor ? "<font color=[prefs.ooccolor]>" :"" ]<span class='prefix'>OOC:</span> <EM>[rprefix][keyname][holder.fakekey ? "/([holder.fakekey])" : ""]:</EM> <span class='message linkify'>[msg]</span></span></font>")
 					else
-						to_chat(C, "<span class='adminobserverooc'><span class='prefix'>OOC:</span> <EM>[keyname][holder.fakekey ? "/([holder.fakekey])" : ""]:</EM> <span class='message linkify'>[msg]</span></span>")
+						to_chat(C, "<span class='adminobserverooc'><span class='prefix'>OOC:</span> <EM>[rprefix][keyname][holder.fakekey ? "/([holder.fakekey])" : ""]:</EM> <span class='message linkify'>[msg]</span></span>")
 				else
 					if(GLOB.OOC_COLOR)
-						to_chat(C, "<font color='[GLOB.OOC_COLOR]'><b><span class='prefix'>OOC:</span> <EM>[holder.fakekey ? holder.fakekey : key]:</EM> <span class='message linkify'>[msg]</span></b></font>")
+						to_chat(C, "<font color='[GLOB.OOC_COLOR]'><b><span class='prefix'>OOC:</span> <EM>[rprefix][holder.fakekey ? holder.fakekey : key]:</EM> <span class='message linkify'>[msg]</span></b></font>")
 					else
-						to_chat(C, "<span class='ooc'><span class='prefix'>OOC:</span> <EM>[holder.fakekey ? holder.fakekey : key]:</EM> <span class='message linkify'>[msg]</span></span>")
+						to_chat(C, "<span class='ooc'><span class='prefix'>OOC:</span> <EM>[rprefix][holder.fakekey ? holder.fakekey : key]:</EM> <span class='message linkify'>[msg]</span></span>")
 
 			else if(!(key in C.prefs.ignoring))
 				if(GLOB.OOC_COLOR)
 					if(check_mentor())
-						to_chat(C, "<font color='["#00b40f"]'><b><span class='prefix'>OOC:</span> <EM>[keyname]:</EM> <span class='message linkify'>[msg]</span></b></font>")
+						to_chat(C, "<font color='["#00b40f"]'><b><span class='prefix'>OOC:</span> <EM>[rprefix][keyname]:</EM> <span class='message linkify'>[msg]</span></b></font>")
 					else
-						to_chat(C, "<font color='[GLOB.OOC_COLOR]'><b><span class='prefix'>OOC:</span> <EM>[keyname]:</EM> <span class='message linkify'>[msg]</span></b></font>")
+						to_chat(C, "<font color='[GLOB.OOC_COLOR]'><b><span class='prefix'>OOC:</span> <EM>[rprefix][keyname]:</EM> <span class='message linkify'>[msg]</span></b></font>")
 				else
-					to_chat(C, "<span class='ooc'><span class='prefix'>OOC:</span> <EM>[keyname]:</EM> <span class='message linkify'>[msg]</span></span>")
+					to_chat(C, "<span class='ooc'><span class='prefix'>OOC:</span> <EM>[rprefix][keyname]:</EM> <span class='message linkify'>[msg]</span></span>")
 
 /proc/toggle_ooc(toggle = null)
 	if(toggle != null) //if we're specifically en/disabling ooc
