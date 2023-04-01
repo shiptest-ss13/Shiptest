@@ -1,11 +1,12 @@
 {
-	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"$schema": "https://raw.githubusercontent.com/ZetaSingularity/Shiptest/master/_maps/ship_config_schema.json",
 	"map_name": "Talos-Class Command Clipper",
 	"prefix": "IRMV",
 	"namelists": ["MYTHOLOGICAL", "BEASTS", "NATURAL_AGGRESSIVE"],
 	"map_short_name": "Talos-class",
 	"map_path": "_maps/shuttles/shiptest/inteq_talos.dmm",
 	"limit": 1,
+	"cost": 0,
 	"job_slots": {
 		"Vanguard": {
 			"outfit": "/datum/outfit/job/captain/inteq",

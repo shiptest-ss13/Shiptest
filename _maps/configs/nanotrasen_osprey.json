@@ -1,5 +1,5 @@
 {
-	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"$schema": "https://raw.githubusercontent.com/ZetaSingularity/Shiptest/master/_maps/ship_config_schema.json",
 	"map_name": "Osprey-class Exploration Cruiser",
 	"prefix": "NTSV",
 	"namelists": [
@@ -12,6 +12,7 @@
 	"map_short_name": "Osprey-class",
 	"map_path": "_maps/shuttles/shiptest/nanotrasen_osprey.dmm",
 	"limit": 1,
+	"cost": 0,
 	"job_slots": {
 		"Captain": {
 			"outfit": "/datum/outfit/job/captain/nt",
