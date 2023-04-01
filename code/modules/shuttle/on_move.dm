@@ -399,12 +399,6 @@ All ShuttleMove procs go here
 	if(moving_dock == src)
 		. |= MOVE_CONTENTS
 
-/obj/docking_port/stationary/beforeShuttleMove(turf/newT, rotation, move_mode, obj/docking_port/mobile/moving_dock)
-	. = ..()
-	if(!moving_dock.can_move_docking_ports || docked == moving_dock)
-		return
-	setDir(angle2dir(rotation+dir2angle(dir))) //manually shuttle rotate it
-
 /obj/docking_port/mobile/onShuttleMove(turf/newT, turf/oldT, list/movement_force, move_dir, obj/docking_port/stationary/old_dock, obj/docking_port/mobile/moving_dock, list/obj/docking_port/mobile/towed_shuttles)
 	if(!towed_shuttles[src] && !moving_dock.can_move_docking_ports)
 		return FALSE
