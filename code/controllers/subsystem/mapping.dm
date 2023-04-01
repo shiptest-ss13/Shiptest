@@ -246,6 +246,8 @@ SUBSYSTEM_DEF(mapping)
 			ship_purchase_list[S.name] = S
 		if(isnum(data["limit"]))
 			S.limit = data["limit"]
+		if(isnum(data["cost"]))//Zeta edit
+			S.cost = data["cost"]//Zeta edit
 		shuttle_templates[S.file_name] = S
 		if(isnum(data["roundstart"]) && data["roundstart"])
 			maplist[S.name] = S

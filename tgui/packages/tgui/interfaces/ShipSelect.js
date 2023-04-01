@@ -167,7 +167,7 @@ export const ShipSelect = (props, context) => {
                 key={template.name}
                 buttons={
                   <Button
-                    content="Buy"
+                    content={'Buy: ' + template.cost + ' Zeta-Coins'}
                     onClick={() => {
                       act('buy', {
                         name: template.name,

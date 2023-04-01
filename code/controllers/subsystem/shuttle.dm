@@ -417,6 +417,7 @@ SUBSYSTEM_DEF(shuttle)
 		L["category"] = S.category
 		L["description"] = S.description
 		L["admin_notes"] = S.admin_notes
+		L["cost"] = S.cost
 
 		templates[S.category]["templates"] += list(L)
 

@@ -70,6 +70,32 @@
 				to_chat(spawnee, "<span class='danger'>This ship is not currently available for purchase!</span>")
 				spawnee.new_player_panel()
 				return
+			//Zeta edit start
+
+			var/datum/DBQuery/query_get_metacoins = SSdbcore.NewQuery(
+				"SELECT metacoins FROM [format_table_name("player")] WHERE ckey = :ckey",
+				list("ckey" = spawnee.ckey)
+			)
+			var/mc_count = 0
+			if(query_get_metacoins.warn_execute())
+				if(query_get_metacoins.NextRow())
+					mc_count = text2num(query_get_metacoins.item[1])
+			qdel(query_get_metacoins)
+
+			if(mc_count < template.cost)
+				to_chat(spawnee, "<span class='danger'>You haven't enough Zeta-coins!</span>")
+				spawnee.new_player_panel()
+				return
+
+			var/datum/DBQuery/query_inc_metacoins = SSdbcore.NewQuery(
+				"UPDATE [format_table_name("player")] SET metacoins = metacoins - :mc_count WHERE ckey = :ckey",
+				list("mc_count" = template.cost, "ckey" = spawnee.ckey)
+			)
+			query_inc_metacoins.warn_execute()
+			qdel(query_inc_metacoins)
+
+			to_chat(spawnee, "<span class='nicegreen bold'>You bought [template.name] for [template.cost]!</span>")
+			//Zeta edit end
 			to_chat(spawnee, "<span class='danger'>Your [template.name] is being prepared. Please be patient!</span>")
 			var/datum/overmap/ship/controlled/target = new(SSovermap.get_unused_overmap_square(), template)
 			if(!target?.shuttle_port)
@@ -119,6 +145,7 @@
 		var/list/ship_data = list(
 			"name" = T.name,
 			"desc" = T.description,
-			"crewCount" = length(T.job_slots)
+			"crewCount" = length(T.job_slots),
+			"cost" = T.cost//Zeta edit
 		)
 		.["templates"] += list(ship_data)

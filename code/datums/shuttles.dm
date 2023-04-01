@@ -11,6 +11,8 @@
 	var/port_x_offset
 	var/port_y_offset
 
+	var/cost = 0//Zeta edit
+
 	var/limit = 2
 	var/enabled
 	var/short_name
