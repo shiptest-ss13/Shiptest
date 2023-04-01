@@ -81,7 +81,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/facial_hair_color = "000"		//Facial hair color
 	var/skin_tone = "caucasian1"		//Skin color
 	var/eye_color = "000"				//Eye color
-	var/datum/species/pref_species = new /datum/species/human()	//Mutant race
+	var/datum/species/pref_species = new /datum/species/lizard()	//Mutant race
 	var/species_looking_at = "human" //used as a helper to keep track of in the species select thingy
 	var/list/features = list(
 							"mcolor" = "FFF",
@@ -2364,8 +2364,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/datum/species/chosen_species
 	chosen_species = pref_species.type
 	if(roundstart_checks && !(pref_species.id in GLOB.roundstart_races) && !(pref_species.id in (CONFIG_GET(keyed_list/roundstart_no_hard_check))))
-		chosen_species = /datum/species/human
-		pref_species = new /datum/species/human
+		chosen_species = /datum/species/lizard
+		pref_species = new /datum/species/lizard
 		save_character()
 
 	//prosthetics work for vox and kepori and update just fine for everyone

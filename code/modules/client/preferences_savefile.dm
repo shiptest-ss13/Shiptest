@@ -91,7 +91,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		var/species_id
 		READ_FILE(S["species"], species_id)
 		if(species_id == "felinid")
-			pref_species = new /datum/species/human
+			pref_species = new /datum/species/lizard
 			features["tail_human"] = "Cat"
 			features["ears"] = "Cat"
 

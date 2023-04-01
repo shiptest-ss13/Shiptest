@@ -509,7 +509,7 @@
 	color = "#5EFF3B" //RGB: 94, 255, 59
 	metabolization_rate = 0.2 //metabolizes to prevent micro-dosage
 	taste_description = "slime"
-	var/race = /datum/species/human
+	var/race = /datum/species/lizard
 	var/list/mutationtexts = list( "You don't feel very well." = MUT_MSG_IMMEDIATE,
 									"Your skin feels a bit abnormal." = MUT_MSG_IMMEDIATE,
 									"Your limbs begin to take on a different shape." = MUT_MSG_EXTENDED,
@@ -566,7 +566,7 @@
 	description = "A mostly safe mutation toxin."
 	color = "#13BC5E" // rgb: 19, 188, 94
 	race = list(/datum/species/jelly/slime,
-						/datum/species/human,
+						/datum/species/lizard,
 						/datum/species/lizard,
 						/datum/species/fly,
 						/datum/species/moth,
@@ -697,7 +697,7 @@
 	name = "Zombie Mutation Toxin"
 	description = "An undead toxin... kinda..."
 	color = "#5EFF3B" //RGB: 94, 255, 59
-	race = /datum/species/human/krokodil_addict //Not the infectious kind. The days of xenobio zombie outbreaks are long past.
+	race = /datum/species/lizard/krokodil_addict //Not the infectious kind. The days of xenobio zombie outbreaks are long past.
 	process_flags = ORGANIC | SYNTHETIC
 
 /datum/reagent/mutationtoxin/ash

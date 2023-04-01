@@ -217,7 +217,7 @@ GLOBAL_LIST_INIT(devil_suffix, list(" the Red", " the Soulless", " the Master", 
 	to_chat(owner.current, "<span class='warning'>Your powers weaken, have more contracts be signed to regain power.</span>")
 	if(ishuman(owner.current))
 		var/mob/living/carbon/human/H = owner.current
-		H.set_species(/datum/species/human, 1)
+		H.set_species(/datum/species/lizard, 1)
 		H.regenerate_icons()
 	give_appropriate_spells()
 	if(istype(owner.current.loc, /obj/effect/dummy/phased_mob/slaughter/))

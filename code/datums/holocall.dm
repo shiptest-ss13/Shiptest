@@ -306,7 +306,7 @@
 /datum/preset_holoimage
 	var/nonhuman_mobtype //Fill this if you just want something nonhuman
 	var/outfit_type
-	var/species_type = /datum/species/human
+	var/species_type = /datum/species/lizard
 
 /datum/preset_holoimage/proc/build_image()
 	if(nonhuman_mobtype)

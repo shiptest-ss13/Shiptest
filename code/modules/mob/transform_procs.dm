@@ -331,7 +331,7 @@
 	if(O.dna.species && !istype(O.dna.species, /datum/species/monkey))
 		O.set_species(O.dna.species)
 	else
-		O.set_species(/datum/species/human)
+		O.set_species(/datum/species/lizard)
 
 	O.a_intent = INTENT_HELP
 	if (tr_flags & TR_DEFAULTMSG)

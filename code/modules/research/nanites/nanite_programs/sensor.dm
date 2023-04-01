@@ -269,7 +269,7 @@
 	trigger_cooldown = 5
 
 	var/list/static/allowed_species = list(
-		"Human" = /datum/species/human,
+		"Human" = /datum/species/lizard,
 		"Sarathi" = /datum/species/lizard,
 		"Moth" = /datum/species/moth,
 		"Elzuose" = /datum/species/ethereal,

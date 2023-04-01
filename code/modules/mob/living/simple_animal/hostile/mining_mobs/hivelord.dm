@@ -348,7 +348,7 @@
 	var/type = pickweight(list("Miner" = 51, "Waldo" = 3, "Ashwalker" = 7, "Soldier" = 3, "Oldminer" = 7, "Kobold" = 5, "Golem" = 10,"Clown" = 10, pick(list("Shadow", "YeOlde","Operative", "Cultist")) = 4))
 	switch(type)
 		if("Miner")
-			mob_species = pickweight(list(/datum/species/human = 70, /datum/species/lizard = 26, /datum/species/fly = 2, /datum/species/plasmaman = 2))
+			mob_species = pickweight(list(/datum/species/lizard = 70, /datum/species/lizard = 26, /datum/species/fly = 2, /datum/species/plasmaman = 2))
 			if(mob_species == /datum/species/plasmaman)
 				uniform = /obj/item/clothing/under/plasmaman
 				head = /obj/item/clothing/head/helmet/space/plasmaman
@@ -437,7 +437,7 @@
 			if(prob(30))
 				l_pocket = /obj/item/kitchen/knife/combat/bone
 		if("Soldier")
-			mob_species = /datum/species/human
+			mob_species = /datum/species/lizard
 			if(prob(90))
 				uniform = /obj/item/clothing/under/solgov
 				suit = /obj/item/clothing/suit/armor/vest/bulletproof/solgov

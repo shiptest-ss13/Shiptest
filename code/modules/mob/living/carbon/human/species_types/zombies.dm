@@ -92,10 +92,10 @@
 		infection.Insert(C)
 
 // Your skin falls off
-/datum/species/human/krokodil_addict
-	name = "\improper Human"
+/datum/species/lizard/krokodil_addict
+	name = "\improper Lizard"
 	id = SPECIES_GOOFZOMBIE
-	examine_limb_id = SPECIES_HUMAN
+	examine_limb_id = SPECIES_LIZARD
 	sexes = 0
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/zombie
 	mutanttongue = /obj/item/organ/tongue/zombie
@@ -108,7 +108,7 @@
 	species_l_leg = /obj/item/bodypart/l_leg/zombie
 	species_r_leg = /obj/item/bodypart/r_leg/zombie
 
-/datum/species/human/krokodil_addict/replace_body(mob/living/carbon/C, datum/species/new_species)
+/datum/species/lizard/krokodil_addict/replace_body(mob/living/carbon/C, datum/species/new_species)
 	..()
 	var/skintone
 	if(ishuman(C))

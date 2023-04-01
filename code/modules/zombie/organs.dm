@@ -5,7 +5,7 @@
 	slot = ORGAN_SLOT_ZOMBIE
 	icon_state = "blacktumor"
 	var/causes_damage = TRUE
-	var/datum/species/old_species = /datum/species/human
+	var/datum/species/old_species = /datum/species/lizard
 	var/living_transformation_time = 30
 	var/converts_living = FALSE
 

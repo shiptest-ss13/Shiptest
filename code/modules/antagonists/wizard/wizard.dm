@@ -121,7 +121,7 @@
 	if(strip)
 		H.delete_equipment()
 	//Wizards are human by default. Use the mirror if you want something else.
-	H.set_species(/datum/species/human)
+	H.set_species(/datum/species/lizard)
 	if(H.age < wiz_age)
 		H.age = wiz_age
 	H.equipOutfit(outfit_type)

@@ -375,7 +375,7 @@
 				ERTOperative.key = chosen_candidate.key
 
 				if(ertemplate.enforce_human || !(ERTOperative.dna.species.changesource_flags & ERT_SPAWN)) // Don't want any exploding plasmemes
-					ERTOperative.set_species(/datum/species/human)
+					ERTOperative.set_species(/datum/species/lizard)
 
 				//Give antag datum
 				var/datum/antagonist/ert/ert_antag

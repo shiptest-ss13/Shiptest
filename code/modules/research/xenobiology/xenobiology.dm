@@ -396,7 +396,7 @@
 			to_chat(user, "<span class='warning'>You feel yourself reverting to human form...</span>")
 			if(do_after(user, 120, target = user))
 				to_chat(user, "<span class='warning'>You feel human again!</span>")
-				user.set_species(/datum/species/human)
+				user.set_species(/datum/species/lizard)
 				return
 			to_chat(user, "<span class='notice'>You stop the transformation.</span>")
 

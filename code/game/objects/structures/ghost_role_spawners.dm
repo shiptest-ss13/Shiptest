@@ -268,7 +268,7 @@
 	roundstart = FALSE
 	death = FALSE
 	random = TRUE
-	mob_species = /datum/species/human
+	mob_species = /datum/species/lizard
 	short_desc = "You've been stranded in this godless prison of a planet for longer than you can remember."
 	flavour_text = "Each day you barely scrape by, and between the terrible conditions of your makeshift shelter, \
 	the hostile creatures, and the ash drakes swooping down from the cloudless skies, all you can wish for is the feel of soft grass between your toes and \
@@ -601,7 +601,7 @@
 	roundstart = FALSE
 	death = FALSE
 	random = TRUE
-	mob_species = /datum/species/human
+	mob_species = /datum/species/lizard
 	short_desc = "You are a security officer working for Nanotrasen, stationed onboard a state of the art research station."
 	flavour_text = "You vaguely recall rushing into a cryogenics pod due to an oncoming radiation storm. \
 	The last thing you remember is the station's Artificial Program telling you that you would only be asleep for eight hours. As you open \
@@ -627,7 +627,7 @@
 	roundstart = FALSE
 	death = FALSE
 	random = TRUE
-	mob_species = /datum/species/human
+	mob_species = /datum/species/lizard
 	short_desc = "You are an engineer working for Nanotrasen, stationed onboard a state of the art research station."
 	flavour_text = "You vaguely recall rushing into a cryogenics pod due to an oncoming radiation storm. The last thing \
 	you remember is the station's Artificial Program telling you that you would only be asleep for eight hours. As you open \
@@ -653,7 +653,7 @@
 	roundstart = FALSE
 	death = FALSE
 	random = TRUE
-	mob_species = /datum/species/human
+	mob_species = /datum/species/lizard
 	short_desc = "You are a scientist working for Nanotrasen, stationed onboard a state of the art research station."
 	flavour_text = "You vaguely recall rushing into a cryogenics pod due to an oncoming radiation storm. \
 	The last thing you remember is the station's Artificial Program telling you that you would only be asleep for eight hours. As you open \
@@ -678,7 +678,7 @@
 	roundstart = FALSE
 	death = FALSE
 	random = TRUE
-	mob_species = /datum/species/human
+	mob_species = /datum/species/lizard
 	short_desc = "You are a officer of Nanotrasen, onboard your state of the art research station."
 	flavour_text = "You vaguely recall rushing into a cryogenics pod due to an oncoming radiation storm. \
 	The last thing you remember is the station's Artificial Program telling you that you would only be asleep for eight hours. As you open \

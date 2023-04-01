@@ -129,7 +129,7 @@
 		if(SCANGATE_SPECIES)
 			if(ishuman(M))
 				var/mob/living/carbon/human/H = M
-				var/datum/species/scan_species = /datum/species/human
+				var/datum/species/scan_species = /datum/species/lizard
 				switch(detect_species)
 					if(SCANGATE_LIZARD)
 						scan_species = /datum/species/lizard
