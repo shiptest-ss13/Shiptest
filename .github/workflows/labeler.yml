@@ -14,12 +14,12 @@ jobs:
         uses: eps1lon/actions-label-merge-conflict@releases/2.x
         with:
           dirtyLabel: "Merge Conflict"
-          repoToken: "${{ secrets.GITHUB_TOKEN }}"
+          repoToken: "${{ secrets.ZETATOKEN }}"
           commentOnDirty: "This pull request has conflicts, please resolve those before we can evaluate the pull request."
       - name: Apply labels based on changed files
         if: github.event_name != 'push'
         uses: actions/labeler@main
         with:
-          repo-token: "${{ secrets.GITHUB_TOKEN }}"
+          repo-token: "${{ secrets.ZETATOKEN }}"
           sync-labels: true
           configuration-path: .github/labeler.yml
