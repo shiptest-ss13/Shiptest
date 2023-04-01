@@ -77,7 +77,7 @@
 	qdel(src)
 
 /client/verb/withdrawmetacoin(curr as num)
-	set name = "Withdraw Zeta-coins"
+	set name = "Zeta-coins Withdraw"
 	set desc = "Withdraw Zeta-coins into coin in your hand."
 	set category = "OOC"
 
@@ -110,3 +110,12 @@
 	/*else
 		to_chat(src, "<span class='warning'>You should have any empty hand for withdrawing.</span>")
 		return*/
+
+/client/verb/checkmetacoin()
+	set name = "Zeta-coins Balance"
+	set desc = "Check Zeta-coins balance."
+	set category = "OOC"
+
+	var/zbal = get_metabalance()//M.client.get_metabalance()
+
+	to_chat(src, "<span class='nicegreen bold'>You have [zbal] Zeta-coins!</span>")
