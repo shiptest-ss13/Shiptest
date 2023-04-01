@@ -8,7 +8,7 @@
 	announce_span = "notice"
 	announce_text = "Just have fun and enjoy the game!"
 
-	title_icon = "shiptest"
+	title_icon = "zetaspaces"//Zeta edit
 
 /datum/game_mode/extended/pre_setup()
 	return 1
