@@ -1,0 +1,19 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Ancon-class NanoTrasen Command Ship",
+	"prefix": "NTSV",
+	"map_short_name": "Ancon-class",
+	"map_path": "_maps/shuttles/shiptest/nanotrasen_ancon.dmm",
+	"namelists": ["GENERAL", "SPACE"],
+	"job_slots": {
+		"Head Intern": {
+			"outfit": "/datum/outfit/centcom/centcom_intern/leader",
+			"officer": true,
+			"slots": 1
+		},
+		"Intern": {
+			"outfit": "/datum/outfit/centcom/centcom_intern",
+			"slots": 4
+		}
+	}
+}
