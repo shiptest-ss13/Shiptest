@@ -254,19 +254,24 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/engineering)
 "aG" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 9
-	},
-/obj/structure/table/wood,
-/obj/structure/bedsheetbin,
-/obj/machinery/light{
+/obj/effect/turf_decal/corner/opaque/orange/border{
 	dir = 8
 	},
-/turf/open/floor/wood,
-/area/ship/crew/dorm)
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/engineering)
 "aH" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 5
+/obj/effect/turf_decal/siding/wood/end{
+	dir = 1
 	},
 /turf/open/floor/wood,
 /area/ship/crew/dorm)
@@ -349,7 +354,7 @@
 "aQ" = (
 /obj/structure/sink{
 	dir = 8;
-	pixel_x = 10
+	pixel_x = 13
 	},
 /obj/structure/mirror{
 	pixel_x = 27
@@ -436,57 +441,22 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "aY" = (
-/obj/item/radio/headset/headset_cent,
-/obj/item/radio/headset/headset_cent,
-/obj/item/radio/headset/headset_cent,
-/obj/item/clothing/under/rank/centcom/intern,
-/obj/item/clothing/under/rank/centcom/intern,
-/obj/item/clothing/under/rank/centcom/intern,
+/obj/machinery/light{
+	dir = 8
+	},
 /obj/effect/turf_decal/siding/wood{
-	dir = 10
+	dir = 9
 	},
-/obj/structure/closet/wall/blue{
-	dir = 4;
-	pixel_x = -28;
-	name = "clothing closet"
-	},
-/obj/item/clothing/head/soft/mime{
-	color = "#009300";
-	name = "CentCom cap";
-	desc = "It's a baseball hat in a tasteless green colour."
-	},
-/obj/item/clothing/head/soft/mime{
-	color = "#009300";
-	name = "CentCom cap";
-	desc = "It's a baseball hat in a tasteless green colour."
-	},
-/obj/item/clothing/head/soft/mime{
-	color = "#009300";
-	name = "CentCom cap";
-	desc = "It's a baseball hat in a tasteless green colour."
-	},
-/obj/item/clothing/under/rank/command/head_of_personnel/suit/skirt,
-/obj/item/clothing/under/rank/command/head_of_personnel/suit/skirt,
-/obj/item/clothing/under/rank/command/head_of_personnel/suit/skirt,
-/obj/item/storage/backpack/satchel,
-/obj/item/storage/backpack/satchel,
-/obj/item/storage/backpack/satchel,
-/obj/item/storage/backpack,
-/obj/item/storage/backpack,
-/obj/item/storage/backpack,
-/obj/item/storage/backpack/messenger,
-/obj/item/storage/backpack/messenger,
-/obj/item/storage/backpack/messenger,
 /turf/open/floor/wood,
 /area/ship/crew/dorm)
 "aZ" = (
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 8
-	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 1
+	},
 /turf/open/floor/wood,
 /area/ship/crew/dorm)
 "ba" = (
@@ -626,6 +596,9 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "bm" = (
@@ -666,9 +639,6 @@
 /turf/open/floor/carpet/green,
 /area/ship/crew/dorm)
 "bq" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 8
-	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
@@ -851,6 +821,12 @@
 /obj/machinery/power/terminal{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "bG" = (
@@ -878,9 +854,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "bJ" = (
-/obj/effect/turf_decal/siding/wood/end{
-	dir = 8
-	},
 /obj/structure/closet/wall/blue{
 	dir = 4;
 	pixel_x = -28;
@@ -908,12 +881,12 @@
 /obj/item/encryptionkey/headset_cent{
 	channels = list("CentCom"=1,"Wideband"=0,"NanoTrasen"=1)
 	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 10
+	},
 /turf/open/floor/wood,
 /area/ship/crew/dorm)
 "bK" = (
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 1
-	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
 	},
@@ -1091,10 +1064,19 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "cc" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "cd" = (
@@ -1108,6 +1090,9 @@
 	},
 /obj/machinery/light{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
@@ -1750,6 +1735,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "cT" = (
@@ -1761,6 +1749,9 @@
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
@@ -1897,7 +1888,6 @@
 /obj/effect/turf_decal/corner/opaque/orange/border{
 	dir = 5
 	},
-/obj/machinery/autolathe,
 /obj/structure/reagent_dispensers/watertank,
 /obj/item/mop{
 	pixel_x = -3;
@@ -2102,6 +2092,7 @@
 	dir = 8
 	},
 /obj/machinery/light,
+/obj/structure/cable,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "dE" = (
@@ -2647,6 +2638,9 @@
 /obj/effect/turf_decal/spline/fancy/opaque/neutral{
 	dir = 8
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/ship/security/armory)
 "eB" = (
@@ -2852,6 +2846,67 @@
 /obj/structure/sign/nanotrasen,
 /turf/closed/wall/mineral/titanium,
 /area/ship/security/armory)
+"jm" = (
+/obj/effect/turf_decal/corner/opaque/orange/border{
+	dir = 8
+	},
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/engineering)
+"lr" = (
+/turf/open/space/basic,
+/area/template_noop)
+"mz" = (
+/obj/item/radio/headset/headset_cent,
+/obj/item/radio/headset/headset_cent,
+/obj/item/radio/headset/headset_cent,
+/obj/item/clothing/under/rank/centcom/intern,
+/obj/item/clothing/under/rank/centcom/intern,
+/obj/item/clothing/under/rank/centcom/intern,
+/obj/structure/closet/wall/blue{
+	dir = 4;
+	pixel_x = -28;
+	name = "clothing closet"
+	},
+/obj/item/clothing/head/soft/mime{
+	color = "#009300";
+	name = "CentCom cap";
+	desc = "It's a baseball hat in a tasteless green colour."
+	},
+/obj/item/clothing/head/soft/mime{
+	color = "#009300";
+	name = "CentCom cap";
+	desc = "It's a baseball hat in a tasteless green colour."
+	},
+/obj/item/clothing/head/soft/mime{
+	color = "#009300";
+	name = "CentCom cap";
+	desc = "It's a baseball hat in a tasteless green colour."
+	},
+/obj/item/clothing/under/rank/command/head_of_personnel/suit/skirt,
+/obj/item/clothing/under/rank/command/head_of_personnel/suit/skirt,
+/obj/item/clothing/under/rank/command/head_of_personnel/suit/skirt,
+/obj/item/storage/backpack/satchel,
+/obj/item/storage/backpack/satchel,
+/obj/item/storage/backpack/satchel,
+/obj/item/storage/backpack,
+/obj/item/storage/backpack,
+/obj/item/storage/backpack,
+/obj/item/storage/backpack/messenger,
+/obj/item/storage/backpack/messenger,
+/obj/item/storage/backpack/messenger,
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/ship/crew/dorm)
 "oF" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -2938,10 +2993,10 @@ aa
 aV
 bl
 bF
-cb
+aG
 cu
 cb
-cb
+jm
 dD
 aV
 aa
@@ -2989,7 +3044,7 @@ aa
 "}
 (6,1,1) = {"
 aa
-aa
+lr
 aa
 aF
 aU
@@ -3029,9 +3084,9 @@ aa
 aa
 aa
 as
-aG
-aY
 bp
+aY
+mz
 bJ
 ai
 cz
