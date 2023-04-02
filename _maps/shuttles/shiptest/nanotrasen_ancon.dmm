@@ -31,7 +31,7 @@
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "ancon_external";
-	name = "external shutters"
+	name = "External Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/crew)
@@ -119,7 +119,7 @@
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "ancon_external";
-	name = "external shutters"
+	name = "External Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/dorm)
@@ -421,7 +421,7 @@
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "ancon_external";
-	name = "external shutters"
+	name = "External Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -431,7 +431,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "ancon_external";
-	name = "external shutters"
+	name = "External Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -1010,7 +1010,7 @@
 	dir = 8
 	},
 /obj/machinery/door/airlock/command/glass{
-	name = "bridge airlock"
+	name = "Bridge"
 	},
 /turf/open/floor/plasteel,
 /area/ship/bridge)
@@ -1060,7 +1060,7 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/machinery/door/poddoor/preopen{
-	name = "bridge blast door";
+	name = "Bridge Blast Door";
 	id = "ancon_bridge"
 	},
 /turf/open/floor/plating,
@@ -1115,7 +1115,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/door/airlock/public/glass{
-	name = "dormitories airlock"
+	name = "Dormitories"
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1320,7 +1320,7 @@
 /area/ship/engineering)
 "cx" = (
 /obj/machinery/door/airlock/engineering/glass{
-	name = "engineering airlock"
+	name = "Engineering"
 	},
 /obj/effect/turf_decal/corner/opaque/orange/half{
 	dir = 8
@@ -1656,7 +1656,7 @@
 	dir = 8
 	},
 /obj/machinery/door/airlock/command/glass{
-	name = "bridge airlock"
+	name = "Bridge"
 	},
 /turf/open/floor/plasteel,
 /area/ship/bridge)
@@ -1787,7 +1787,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/door/airlock/command/glass{
-	name = "office airlock"
+	name = "Head Intern's Office"
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2184,7 +2184,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/door/airlock/titanium{
-	name = "armory airlock";
+	name = "Armory";
 	req_access = list(101)
 	},
 /turf/open/floor/plasteel,
@@ -2205,7 +2205,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/airlock/titanium{
-	name = "armory airlock";
+	name = "Armory";
 	req_access = list(101)
 	},
 /turf/open/floor/plasteel,
@@ -2430,7 +2430,8 @@
 /area/ship/security/armory)
 "ee" = (
 /obj/machinery/door/airlock/command{
-	req_access = list(101)
+	req_access = list(101);
+	name = "Head Intern's Quarters"
 	},
 /obj/effect/turf_decal/corner/opaque/green/half,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -2609,7 +2610,7 @@
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "ancon_external";
-	name = "external shutters"
+	name = "External Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/office)
