@@ -1,7 +1,7 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "aa" = (
-/turf/open/space/basic,
-/area/space)
+/turf/template_noop,
+/area/template_noop)
 "ab" = (
 /obj/structure/sign/nanotrasen,
 /turf/closed/wall/mineral/titanium/nodiagonal,
@@ -1851,7 +1851,6 @@
 /obj/effect/turf_decal/spline/plain/opaque/ntblue{
 	dir = 1
 	},
-/obj/effect/turf_decal/spline/plain/opaque/ntblue,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
@@ -1864,7 +1863,6 @@
 /obj/effect/turf_decal/spline/plain/opaque/ntblue{
 	dir = 5
 	},
-/obj/effect/turf_decal/spline/plain/opaque/ntblue,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
@@ -2053,9 +2051,6 @@
 /obj/effect/turf_decal/spline/plain/opaque/ntblue{
 	dir = 8
 	},
-/obj/effect/turf_decal/spline/plain/opaque/ntblue{
-	dir = 4
-	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
@@ -2065,6 +2060,10 @@
 /obj/structure/table/wood/reinforced,
 /obj/item/paper_bin,
 /obj/item/pen/fountain,
+/obj/effect/turf_decal/spline/plain/opaque/ntblue{
+	dir = 9
+	},
+/obj/effect/turf_decal/spline/plain/opaque/ntblue,
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/office)
 "dJ" = (
@@ -2078,6 +2077,9 @@
 	},
 /obj/item/documents/nanotrasen{
 	desc = "These are just pictures of moths!"
+	},
+/obj/effect/turf_decal/spline/plain/opaque/ntblue{
+	dir = 5
 	},
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/office)
@@ -2173,9 +2175,6 @@
 	color = "#596479";
 	dir = 1
 	},
-/obj/effect/turf_decal/spline/plain/opaque/ntblue{
-	dir = 5
-	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/office)
 "dT" = (
@@ -2183,6 +2182,12 @@
 /obj/item/modular_computer/laptop/preset/civilian,
 /obj/structure/sign/poster/contraband/ntos{
 	pixel_x = 32
+	},
+/obj/effect/turf_decal/spline/plain/opaque/ntblue{
+	dir = 10
+	},
+/obj/effect/turf_decal/spline/plain/opaque/ntblue{
+	dir = 4
 	},
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/office)
@@ -2369,9 +2374,6 @@
 /obj/effect/turf_decal/spline/plain/opaque/ntblue{
 	dir = 6
 	},
-/obj/effect/turf_decal/spline/plain/opaque/ntblue{
-	dir = 1
-	},
 /obj/machinery/suit_storage_unit/standard_unit,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/office)
@@ -2396,8 +2398,8 @@
 /turf/open/floor/plasteel/white,
 /area/ship/security/armory)
 "em" = (
-/obj/effect/turf_decal/spline/fancy/opaque/neutral{
-	dir = 4
+/obj/effect/turf_decal/corner/opaque/blue{
+	dir = 6
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/security/armory)
@@ -2406,6 +2408,9 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/trimline/opaque/blue/warning{
+	dir = 8
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel,
@@ -2429,11 +2434,14 @@
 /obj/effect/turf_decal/trimline/opaque/blue/warning{
 	dir = 4
 	},
+/obj/effect/turf_decal/spline/fancy/opaque/neutral{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/ship/security/armory)
 "er" = (
-/obj/effect/turf_decal/spline/fancy/opaque/neutral{
-	dir = 8
+/obj/effect/turf_decal/corner/opaque/blue{
+	dir = 9
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/security/armory)
@@ -2516,13 +2524,16 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
-/obj/effect/turf_decal/spline/fancy/opaque/neutral{
-	dir = 4
+/obj/effect/turf_decal/corner/opaque/blue{
+	dir = 6
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/security/armory)
 "eA" = (
 /obj/effect/turf_decal/trimline/opaque/blue/warning{
+	dir = 8
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel,
@@ -2558,14 +2569,17 @@
 /obj/effect/turf_decal/trimline/opaque/blue/warning{
 	dir = 4
 	},
+/obj/effect/turf_decal/spline/fancy/opaque/neutral{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/ship/security/armory)
 "eE" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
-/obj/effect/turf_decal/spline/fancy/opaque/neutral{
-	dir = 8
+/obj/effect/turf_decal/corner/opaque/blue{
+	dir = 9
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/security/armory)
@@ -2660,7 +2674,7 @@
 	},
 /obj/machinery/telecomms/bus/preset_two{
 	network = "ancon_cent";
-	freq_listening = list(1351,1459,1337)
+	freq_listening = list(1351,1353,1459,1337)
 	},
 /obj/structure/window/reinforced{
 	color = "#283674"
@@ -2697,7 +2711,7 @@
 	},
 /obj/machinery/telecomms/server/presets/nanotrasen{
 	network = "ancon_cent";
-	freq_listening = list(1351,1459,1337)
+	freq_listening = list(1351,1353,1459,1337)
 	},
 /obj/structure/window/reinforced{
 	color = "#283674"
