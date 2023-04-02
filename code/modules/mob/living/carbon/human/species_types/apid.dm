@@ -5,26 +5,27 @@
 	bodyflag = FLAG_APID
 	default_color = "FFE800"
 	species_traits = list(LIPS,NOEYESPRITES,MUTCOLORS)
-//	inherent_traits = list(TRAIT_BEEFRIEND)
+	inherent_traits = list(TRAIT_BEEFRIEND)
 	inherent_biotypes = list(MOB_ORGANIC,MOB_HUMANOID,MOB_BUG)
-	mutant_bodyparts = list("apid_stripes","apid_antenna","apid_headstripes")
-	default_features = list("apid_stripes" = "thick","apid_headstripes" = "thick", "apid_antenna" = "curled")
+//	mutant_bodyparts = list("apid_stripes","apid_antenna","apid_headstripes")
+//	default_features = list("apid_stripes" = "thick","apid_headstripes" = "thick", "apid_antenna" = "curled")
+	inherent_biotypes = list(MOB_ORGANIC,MOB_HUMANOID,MOB_BUG)
 	hair_color = "fixedmutcolor"
 	attack_verb = "slash"
 	attack_sound = 'sound/weapons/slash.ogg'
 	miss_sound = 'sound/weapons/slashmiss.ogg'
-//	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/apid
+	meat = /datum/material/meat
 	liked_food = FRUIT | VEGETABLES
 	disliked_food = MEAT
 	mutanteyes = /obj/item/organ/eyes/apid
 	mutantlungs = /obj/item/organ/lungs/apid
-//	mutantwings = /obj/item/organ/bee_wings
+	mutant_organs = list(/obj/item/organ/wings/bee)
 	mutanttongue = /obj/item/organ/tongue/bee
 	burnmod = 1.5
 //	toxmod = 1.5
 	staminamod = 1.25
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
-//	species_language_holder = /datum/language_holder/apid
+	species_language_holder = /datum/language_holder/apid
 //	inert_mutation = WAXSALIVA
 	has_innate_wings = TRUE
 	var/cold_cycle = 0

@@ -369,6 +369,7 @@
 /obj/item/organ/tongue/slime/Initialize(mapload)
 	. = ..()
 	languages_possible = languages_possible_slime
+
 /obj/item/organ/tongue/moth
 	name = "proboscis"
 	desc = "A fleshy tube that curls up when not in use. While vaguely reminiscent of the proboscis of their genetic ancestors, \
@@ -387,7 +388,8 @@
 		/datum/language/sylvan,
 		/datum/language/shadowtongue,
 		/datum/language/terrum,
-		/datum/language/buzzwords
+		/datum/language/buzzwords,
+		/datum/language/apidite
 	))
 
 /obj/item/organ/tongue/moth/Initialize(mapload)
@@ -429,7 +431,8 @@
 		/datum/language/sylvan,
 		/datum/language/shadowtongue,
 		/datum/language/terrum,
-		/datum/language/teceti_unified
+		/datum/language/teceti_unified,
+		/datum/language/apidite
 	))
 
 /obj/item/organ/tongue/kepori/Initialize(mapload)
@@ -483,3 +486,7 @@
 		/datum/language/buzzwords,
 		/datum/language/apidite
 	))
+
+/obj/item/organ/tongue/bee/Initialize(mapload)
+	. = ..()
+	languages_possible = languages_possible_bee

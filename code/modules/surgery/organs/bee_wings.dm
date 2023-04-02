@@ -23,24 +23,24 @@
 	var/jumpdistance = wings.jumpdist
 
 /*	if(L.stat != CONSCIOUS || L.buckling || L.restrained()) // Has to be conscious and unbuckled
-		return
+		return*/
 	if(recharging_time > world.time)
 		to_chat(L, "<span class='warning'>The wings aren't ready to dash yet!</span>")
 		return
 	var/datum/gas_mixture/environment = L.loc.return_air()
 	if(environment && !(environment.return_pressure() > 30))
 		to_chat(L, "<span class='warning'>The atmosphere is too thin for you to dash!</span>")
-		return*/
+		return
 
 	var/turf/target = get_edge_target_turf(L, L.dir) //represents the user's direction
 	var/hoppingtable = FALSE // Triggers the trip
 	var/jumpdistancemoved = jumpdistance // temp jumpdistance
 	var/turf/checkjump = get_turf(L)
 
-/*	for(var/i in 1 to jumpdistance) //This is how hiero club find the tiles in front of it, tell me/fix it if there's a better way
+	for(var/i in 1 to jumpdistance) //This is how hiero club find the tiles in front of it, tell me/fix it if there's a better way
 		var/turf/T = get_step(checkjump, L.dir)
-		if(T.density || !T.ClickCross(invertDir(L.dir), border_only = 1))
-			break
+//		if(T.density || !T.ClickCross(invertDir(L.dir), border_only = 1))
+//			break
 		if(locate(/obj/structure/table) in T) // If there's a table, trip
 			hoppingtable = TRUE
 			jumpdistancemoved = i
@@ -50,14 +50,14 @@
 		checkjump = get_step(checkjump, L.dir)
 
 	var/datum/callback/crashcallback
-	if(hoppingtable)
-		crashcallback = CALLBACK(src, PROC_REF(crash_into_table), get_step(checkjump, L.dir))
+/*	if(hoppingtable) //there's a challenge with the proc here
+		crashcallback = CALLBACK(src, PROC_REF(crash_into_table), get_step(checkjump, L.dir))*/
 	if(L.throw_at(target, jumpdistancemoved, jumpspeed, spin = FALSE, diagonals_first = TRUE, callback = crashcallback, force = MOVE_FORCE_WEAK))
 		playsound(L, 'sound/creatures/bee.ogg', 50, 1, 1)
 		L.visible_message("<span class='warning'>[usr] dashes forward into the air!</span>")
 		recharging_time = world.time + recharging_rate
 	else
-		to_chat(L, "<span class='warning'>Something prevents you from dashing forward!</span>")*/
+		to_chat(L, "<span class='warning'>Something prevents you from dashing forward!</span>")
 
 /*/datum/action/item_action/organ_action/use/bee_dash/proc/crash_into_table(turf/tableturf)
 	if(owner.loc == tableturf)

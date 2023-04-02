@@ -238,6 +238,14 @@ Key procs
 	spoken_languages = list(/datum/language/xenocommon = list(LANGUAGE_ATOM))
 	blocked_languages = list(/datum/language/common = list(LANGUAGE_ATOM))
 
+/datum/language_holder/apid
+	understood_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
+								/datum/language/apidite = list(LANGUAGE_ATOM),
+								/datum/language/buzzwords = list(LANGUAGE_ATOM)) //WS Edit - Insectoid Language
+	spoken_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
+							/datum/language/apidite = list(LANGUAGE_ATOM),
+							/datum/language/buzzwords = list(LANGUAGE_ATOM)) //WS Edit - Insectoid Language
+
 /datum/language_holder/construct
 	understood_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
 								/datum/language/narsie = list(LANGUAGE_ATOM))
