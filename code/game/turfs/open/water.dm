@@ -18,6 +18,11 @@
 	var/datum/reagent/reagent_to_extract = /datum/reagent/water
 	var/extracted_reagent_visible_name = "water"
 
+/turf/open/water/Initialize(mapload)
+	. = ..()
+	AddElement(/datum/element/lazy_fishing_spot, FISHING_SPOT_PRESET_BEACH)
+
+/*
 /turf/open/water/attackby(obj/item/tool, mob/user, params)
 	if(!reagent_to_extract)
 		return ..()
@@ -30,6 +35,7 @@
 	container.reagents.add_reagent(reagent_to_extract, rand(5, 10))
 	user.visible_message("<span class='notice'>[user] scoops [extracted_reagent_visible_name] from the [src] with \the [container].</span>", "<span class='notice'>You scoop out [extracted_reagent_visible_name] from the [src] using \the [container].</span>")
 	return TRUE
+*/
 
 /turf/open/water/can_have_cabling()
 	return FALSE

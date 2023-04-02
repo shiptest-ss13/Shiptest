@@ -1166,3 +1166,11 @@
 	materials = list(/datum/material/plastic = 5000)
 	build_path = /obj/item/storage/bag/trash
 	category = list("initial","Tools","Tool Designs","Misc")
+
+/datum/design/fishing_rod_basic
+	name = "Fishing Rod"
+	id = "fishing rod"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 200, /datum/material/glass = 200)
+	build_path = /obj/item/fishing_rod
+	category = list("initial","Misc","Equipment")

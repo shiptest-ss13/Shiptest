@@ -12,7 +12,7 @@
 	var/load_audio = 'sound/weapons/gun/general/mag_bullet_insert.ogg'
 	var/ammo_type
 
-/obj/item/mecha_ammo/proc/update_name()
+/obj/item/mecha_ammo/proc/update_ammo_name()
 	if(!rounds)
 		name = "empty ammo box"
 		desc = "An exosuit ammuniton box that has since been emptied. Please recycle."
@@ -92,7 +92,7 @@
 	load_audio = 'sound/weapons/gun/general/load_shell.ogg'
 	ammo_type = "missiles_he"
 
-/obj/item/mecha_ammo/tank_shell/update_name() // i hate the fact that i think this is the only way to do this, what the fuck
+/obj/item/mecha_ammo/tank_shell/update_ammo_name() // i hate the fact that i think this is the only way to do this, what the fuck
 	if(!rounds)
 		qdel(src)
 

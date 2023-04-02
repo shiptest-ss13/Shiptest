@@ -15,21 +15,49 @@
 	tastes = list("fish" = 4, "batter" = 1, "hot peppers" = 1)
 	foodtype = MEAT
 
-/obj/item/reagent_containers/food/snacks/carpmeat
-	name = "carp fillet"
-	desc = "A fillet of spess carp meat."
+/obj/item/reagent_containers/food/snacks/fishmeat
+	name = "fish fillet"
+	desc = "A fillet of fish meat."
 	icon_state = "fishfillet"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/toxin/carpotoxin = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 2)
 	bitesize = 6
 	filling_color = "#FA8072"
 	tastes = list("fish" = 1)
 	foodtype = MEAT
 
-/obj/item/reagent_containers/food/snacks/carpmeat/Initialize()
+/obj/item/reagent_containers/food/snacks/fishmeat/Initialize()
 	. = ..()
 	eatverb = pick("bite","chew","gnaw","swallow","chomp")
 
-/obj/item/reagent_containers/food/snacks/carpmeat/imitation
+/obj/item/reagent_containers/food/snacks/fishmeat/moonfish
+	name = "moonfish fillet"
+	desc = "A fillet of moonfish."
+	icon_state = "moonfish_fillet"
+
+/obj/item/reagent_containers/food/snacks/fishmeat/gunner_jellyfish
+	name = "filleted gunner jellyfish"
+	desc = "A gunner jellyfish with the stingers removed. Mildly hallucinogenic."
+	icon_state = "jellyfish_fillet"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/toxin/mindbreaker = 2)
+
+/obj/item/reagent_containers/food/snacks/fishmeat/armorfish
+	name = "cleaned armorfish"
+	desc = "An armorfish with its guts and shell removed, ready for use in cooking."
+	icon_state = "armorfish_fillet"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
+
+/obj/item/reagent_containers/food/snacks/fishmeat/donkfish
+	name = "donkfillet"
+	desc = "The dreaded donkfish fillet. No sane spaceman would eat this, and it does not get better when cooked."
+	icon_state = "donkfillet"
+	list_reagents = list(/datum/reagent/yuck = 3)
+
+/obj/item/reagent_containers/food/snacks/fishmeat/carp
+	name = "carp fillet"
+	desc = "A fillet of spess carp meat."
+	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/toxin/carpotoxin = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
+
+/obj/item/reagent_containers/food/snacks/fishmeat/carp/imitation
 	name = "imitation carp fillet"
 	desc = "Almost just like the real thing, kinda."
 

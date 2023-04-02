@@ -78,7 +78,7 @@
 					/obj/item/reagent_containers/food/snacks/meat/rawbacon,
 					/obj/item/reagent_containers/food/snacks/meat/slab/penguin,
 					/obj/item/reagent_containers/food/snacks/spiderleg,
-					/obj/item/reagent_containers/food/snacks/carpmeat,
+					/obj/item/reagent_containers/food/snacks/fishmeat/carp,
 					/obj/item/reagent_containers/food/snacks/meat/slab/human)
 	crate_name = "meat crate"
 	crate_type = /obj/structure/closet/crate/freezer
