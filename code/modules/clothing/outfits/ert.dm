@@ -334,6 +334,14 @@
 	id = /obj/item/card/id/centcom
 	backpack_contents = list(/obj/item/storage/box/survival = 1)
 
+/datum/outfit/centcom/centcom_intern/empty
+	name = "CentCom Intern (Empty)"
+
+	belt = null
+	r_hand = null
+	l_pocket = null
+	r_pocket = null
+
 /datum/outfit/centcom/centcom_intern/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	if(visualsOnly)
 		return
@@ -352,6 +360,13 @@
 	suit_store = /obj/item/gun/ballistic/rifle/boltaction
 	r_hand = /obj/item/megaphone
 	head = /obj/item/clothing/head/intern
+
+/datum/outfit/centcom/centcom_intern/leader/empty
+	name = "CentCom Head Intern (Empty)"
+
+	belt = null
+	suit_store = null
+	r_hand = null
 
 /datum/outfit/centcom/ert/janitor/party
 	name = "ERP Cleaning Service"
