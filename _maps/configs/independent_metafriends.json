@@ -1,0 +1,52 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Metaship-class Corvette",
+	"prefix": "ISV",
+	"namelists": ["NATURAL", "MYTHOLOGICAL"],
+	"map_short_name": "Metaship-class",
+	"map_path": "_maps/shuttles/shiptest/independent_metafriends.dmm",
+	"job_slots": {
+		"Lead": {
+			"outfit": "/datum/outfit/job/captain/corporate",
+			"officer": true,
+			"slots": 1
+		},
+		"Atmospheric Maintainer": {
+			"outfit": "/datum/outfit/job/atmos",
+			"slots": 1
+		},
+		"Maintenance Operator": {
+			"outfit": "/datum/outfit/job/engineer",
+			"slots": 1
+		},
+		"Analytics Surveyor": {
+			"outfit": "/datum/outfit/job/scientist/seniorscientist",
+			"slots": 2
+		},
+		"Wellness Physician": {
+			"outfit": "/datum/outfit/job/doctor",
+			"slots": 2
+		},
+		"Planetary Scout": {
+			"outfit": "/datum/outfit/job/miner",
+			"slots": 2
+		},
+		"Sanitation Caretaker": {
+			"outfit": "/datum/outfit/job/janitor",
+			"slots": 1
+		},
+		"Expendable": {
+			"outfit": "/datum/outfit/job/assistant",
+			"slots": 4
+		},
+		"Grillmaster": {
+			"outfit": "/datum/outfit/job/cook/grillmaster",
+			"slots": 1
+		},
+		"Enforcer": {
+			"outfit": "/datum/outfit/job/security/corporate",
+			"slots": 1
+		}
+	},
+	"enabled": true
+}
