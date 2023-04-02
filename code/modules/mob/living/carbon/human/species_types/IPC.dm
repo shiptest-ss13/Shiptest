@@ -39,8 +39,8 @@
 	species_head = /obj/item/bodypart/head/ipc
 	species_l_arm = /obj/item/bodypart/l_arm/ipc
 	species_r_arm = /obj/item/bodypart/r_arm/ipc
-	species_l_leg = /obj/item/bodypart/l_leg/ipc
-	species_r_leg = /obj/item/bodypart/r_leg/ipc
+	species_l_leg = /obj/item/bodypart/leg/left/ipc
+	species_r_leg = /obj/item/bodypart/leg/right/ipc
 
 	/// The last screen used when the IPC died.
 	var/saved_screen

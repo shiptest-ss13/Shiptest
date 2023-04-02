@@ -20,8 +20,8 @@
 		/obj/item/bodypart/head/monkey,
 		/obj/item/bodypart/l_arm/monkey,
 		/obj/item/bodypart/r_arm/monkey,
-		/obj/item/bodypart/r_leg/monkey,
-		/obj/item/bodypart/l_leg/monkey,
+		/obj/item/bodypart/leg/right/monkey,
+		/obj/item/bodypart/leg/left/monkey,
 		)
 	hud_type = /datum/hud/monkey
 	melee_damage_lower = 1
