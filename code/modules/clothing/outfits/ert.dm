@@ -335,7 +335,7 @@
 	backpack_contents = list(/obj/item/storage/box/survival = 1)
 
 /datum/outfit/centcom/centcom_intern/empty
-	name = "CentCom Intern (Empty)"
+	name = "CentCom Intern"
 
 	belt = null
 	r_hand = null
@@ -362,11 +362,13 @@
 	head = /obj/item/clothing/head/intern
 
 /datum/outfit/centcom/centcom_intern/leader/empty
-	name = "CentCom Head Intern (Empty)"
+	name = "CentCom Head Intern"
 
 	belt = null
 	suit_store = null
 	r_hand = null
+	l_pocket = null
+	r_pocket = null
 
 /datum/outfit/centcom/ert/janitor/party
 	name = "ERP Cleaning Service"
