@@ -494,10 +494,15 @@
 /turf/open/floor/carpet,
 /area/ship/crew/dorm)
 "es" = (
-/obj/machinery/vending/hydroseeds,
 /obj/machinery/light/dim{
 	dir = 1
 	},
+/obj/structure/closet/crate/hydroponics,
+/obj/effect/spawner/lootdrop/seeded,
+/obj/effect/spawner/lootdrop/seeded,
+/obj/effect/spawner/lootdrop/seeded,
+/obj/effect/spawner/lootdrop/seeded,
+/obj/item/seeds/random,
 /turf/open/floor/grass,
 /area/ship/crew/hydroponics)
 "eu" = (
