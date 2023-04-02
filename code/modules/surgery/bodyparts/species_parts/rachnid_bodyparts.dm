@@ -20,12 +20,12 @@
 	limb_id = SPECIES_RACHNID
 	should_draw_greyscale = FALSE
 
-/obj/item/bodypart/l_leg/rachnid
+/obj/item/bodypart/leg/left/rachnid
 	icon = 'icons/mob/species/rachnid/bodyparts.dmi'
 	limb_id = SPECIES_RACHNID
 	should_draw_greyscale = FALSE
 
-/obj/item/bodypart/r_leg/rachnid
+/obj/item/bodypart/leg/right/rachnid
 	icon = 'icons/mob/species/rachnid/bodyparts.dmi'
 	limb_id = SPECIES_RACHNID
 	should_draw_greyscale = FALSE

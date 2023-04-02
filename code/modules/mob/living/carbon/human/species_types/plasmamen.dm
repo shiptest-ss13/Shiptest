@@ -27,8 +27,8 @@
 	species_head = /obj/item/bodypart/head/plasmaman
 	species_l_arm = /obj/item/bodypart/l_arm/plasmaman
 	species_r_arm = /obj/item/bodypart/r_arm/plasmaman
-	species_l_leg = /obj/item/bodypart/l_leg/plasmaman
-	species_r_leg = /obj/item/bodypart/r_leg/plasmaman
+	species_l_leg = /obj/item/bodypart/leg/left/plasmaman
+	species_r_leg = /obj/item/bodypart/leg/right/plasmaman
 
 	// Body temperature for Plasmen is much lower human as they can handle colder environments
 	bodytemp_normal = (HUMAN_BODYTEMP_NORMAL - 40)
