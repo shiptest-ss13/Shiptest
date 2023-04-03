@@ -361,7 +361,8 @@ All ShuttleMove procs go here
 
 /obj/structure/cable/afterShuttleMove(turf/oldT, list/movement_force, shuttle_dir, shuttle_preferred_direction, move_dir, rotation)
 	. = ..()
-	qdel(powernet)
+	if(powernet)
+		powernet.remove_cable(src)
 
 /obj/structure/cable/lateShuttleMove(turf/oldT, list/movement_force, shuttle_dir, shuttle_preferred_direction, move_dir, rotation)
 	. = ..()
