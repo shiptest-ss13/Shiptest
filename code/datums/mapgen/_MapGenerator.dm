@@ -42,7 +42,7 @@
 
 	for(var/turf/gen_turf as anything in turfs)
 		populate_turf(gen_turf)
-		// CHECK_TICK
+		CHECK_TICK
 
 	message = "MAPGEN: MAPGEN REF [REF(src)] ([type]) HAS FINISHED TURF POPULATION IN [(REALTIMEOFDAY - start_time)/10]s"
 	log_shuttle(message)
