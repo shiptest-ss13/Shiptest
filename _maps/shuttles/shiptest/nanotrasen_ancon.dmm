@@ -998,14 +998,16 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_x = -30
 	},
+/obj/effect/turf_decal/corner/opaque/green/bordercorner,
+/obj/effect/turf_decal/siding/white/corner,
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "bW" = (
-/obj/effect/turf_decal/siding/white{
-	dir = 4
-	},
 /obj/effect/turf_decal/corner/opaque/green/border{
-	dir = 4
+	dir = 6
+	},
+/obj/effect/turf_decal/siding/white{
+	dir = 6
 	},
 /turf/open/floor/plasteel,
 /area/ship/bridge)
@@ -1235,15 +1237,12 @@
 /obj/effect/turf_decal/trimline/opaque/green/warning{
 	dir = 8
 	},
-/turf/open/floor/plasteel,
-/area/ship/bridge)
-"cr" = (
 /obj/effect/turf_decal/siding/white{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/opaque/green/border{
-	dir = 4
-	},
+/turf/open/floor/plasteel,
+/area/ship/bridge)
+"cr" = (
 /turf/open/floor/plasteel/stairs/left{
 	dir = 8
 	},
@@ -1659,15 +1658,12 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/turf/open/floor/plasteel/white,
-/area/ship/bridge)
-"cO" = (
 /obj/effect/turf_decal/siding/white{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/opaque/green/border{
-	dir = 4
-	},
+/turf/open/floor/plasteel/white,
+/area/ship/bridge)
+"cO" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
 	},
@@ -1845,15 +1841,12 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/cable,
-/turf/open/floor/plasteel,
-/area/ship/bridge)
-"dg" = (
 /obj/effect/turf_decal/siding/white{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/opaque/green/border{
-	dir = 4
-	},
+/turf/open/floor/plasteel,
+/area/ship/bridge)
+"dg" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/cable{
@@ -2035,19 +2028,25 @@
 /obj/structure/sign/poster/official/work_for_a_future{
 	pixel_x = -32
 	},
+/obj/effect/turf_decal/corner/opaque/green/bordercorner{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/white/corner{
+	dir = 4
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "dz" = (
-/obj/effect/turf_decal/siding/white{
-	dir = 4
-	},
-/obj/effect/turf_decal/corner/opaque/green/border{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/corner/opaque/green/border{
+	dir = 5
+	},
+/obj/effect/turf_decal/siding/white{
+	dir = 5
 	},
 /turf/open/floor/plasteel,
 /area/ship/bridge)
