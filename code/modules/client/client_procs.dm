@@ -109,6 +109,11 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		asset_cache_preload_data(href_list["asset_cache_preload_data"])
 		return
 
+	// Zeta edit : Prefix Change
+	if(href_list["change_prefix"])
+		change_prefix(href_list["change_prefix"],null)
+		return
+
 	// Admin PM
 	if(href_list["priv_msg"])
 		cmd_admin_pm(href_list["priv_msg"],null)
