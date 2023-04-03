@@ -148,15 +148,3 @@
 	. = ..()
 	for(var/i in 1 to 49)
 		new /mob/living/simple_animal/crab(.)
-
-/datum/supply_pack/animal/mothroach
-	name = "Mothroach Crate"
-	desc = "Contains three mothroaches, for all your mothroach needs."
-	cost = 1000
-	contains = list(/mob/living/simple_animal/pet/mothroach)
-	crate_name = "mot containment box"
-
-/datum/supply_pack/animal/mothroach/generate()
-	. = ..()
-	for(var/i in 1 to 2)
-		new /mob/living/simple_animal/pet/mothroach(.)
