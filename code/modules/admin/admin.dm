@@ -63,7 +63,9 @@
 		body += "<a href='?_src_=holder;[HrefToken()];showrelatedacc=ip;client=[REF(M.client)]'>IP</a> "
 		//ZETA edit START
 		var/metabalance = M.client.get_metabalance()
-		body += "<br><b>[CONFIG_GET(string/metacurrency_name)]s</b>: [metabalance] "
+		body += "<br><b>[CONFIG_GET(string/metacurrency_name)]s</b>: [metabalance]"
+		var/prefix = M.client.get_prefix()
+		body += "<br><b>Prefix</b>: <a href='?change_prefix=[M.ckey]'>[prefix]</a>"
 		//ZETA edit END
 		var/full_version = "Unknown"
 		if(M.client.byond_version)
