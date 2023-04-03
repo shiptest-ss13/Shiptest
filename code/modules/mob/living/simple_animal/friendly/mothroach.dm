@@ -7,7 +7,7 @@
 	icon_dead = "mothroach_dead"
 	deathsound =  'sound/voice/moth/moth_a.ogg'
 	held_state = "mothroach"
-	head_icon = "mothroach"
+	head_icon = 'icons/mob/pets_held.dmi'
 	worn_slot_flags = ITEM_SLOT_HEAD
 	emote_hear = list("chitters", "flutters")
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/mothroach = 3, /obj/item/stack/sheet/animalhide/mothroach = 1)
