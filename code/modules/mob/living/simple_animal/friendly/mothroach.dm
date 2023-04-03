@@ -1,7 +1,7 @@
 /mob/living/simple_animal/pet/mothroach
 	name = "mothroach"
 	desc = "This is the adorable by-product of multiple attempts at genetically mixing mothpeople with cockroaches."
-	language_holder = /datum/language_holder/moth
+	initial_language_holder = /datum/language_holder/moth
 	icon_state = "mothroach"
 	icon_living = "mothroach"
 	icon_dead = "mothroach_dead"
