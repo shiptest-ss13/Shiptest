@@ -506,6 +506,15 @@
 	},
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/ship/science/xenobiology)
+"hD" = (
+/obj/structure/grille/broken,
+/obj/effect/decal/cleanable/glass,
+/obj/item/shard,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/holosign/barrier/infinite,
+/obj/machinery/door/firedoor/window,
+/turf/open/floor/plating,
+/area/ship/science/robotics)
 "hH" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/jukebox/disco{
@@ -527,6 +536,17 @@
 /obj/effect/spawner/lootdrop/xenospawner,
 /turf/open/floor/mineral/titanium/tiled,
 /area/ship/crew/canteen)
+"hR" = (
+/obj/structure/holosign/barrier/medical/infinite,
+/obj/machinery/light/floor,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/turf/open/floor/mineral/titanium/tiled/purple,
+/area/ship/science/xenobiology)
 "hX" = (
 /obj/item/circuitboard/machine/protolathe/department/science,
 /obj/item/kirbyplants/random,
@@ -648,6 +668,11 @@
 	},
 /turf/open/floor/mineral/titanium/tiled/purple,
 /area/ship/science/xenobiology)
+"jC" = (
+/obj/effect/decal/cleanable/oil,
+/obj/item/bodypart/leg/left/robot,
+/turf/open/floor/mineral/titanium/tiled,
+/area/ship/science/robotics)
 "jH" = (
 /obj/effect/decal/cleanable/oil,
 /turf/open/floor/mineral/titanium/tiled/white,
@@ -1248,15 +1273,6 @@
 	},
 /turf/open/floor/mineral/titanium/tiled,
 /area/ship/crew/toilet)
-"sk" = (
-/obj/effect/decal/cleanable/robot_debris/gib,
-/obj/item/bodypart/r_leg/robot,
-/obj/machinery/power/apc/auto_name/north,
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/turf/open/floor/mineral/titanium/tiled,
-/area/ship/science/robotics)
 "sn" = (
 /obj/machinery/ore_silo,
 /turf/open/floor/plating,
@@ -1321,11 +1337,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/mineral/titanium/tiled,
 /area/ship/crew/canteen)
-"sV" = (
-/obj/effect/decal/cleanable/oil,
-/obj/item/bodypart/l_leg/robot,
-/turf/open/floor/mineral/titanium/tiled,
-/area/ship/science/robotics)
 "to" = (
 /obj/structure/cable{
 	icon_state = "2-9"
@@ -1727,6 +1738,16 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/ship/bridge)
+"zg" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/airlock/external,
+/obj/structure/fans/tiny,
+/obj/docking_port/mobile{
+	launch_status = 0;
+	port_direction = 2
+	},
+/turf/open/floor/plating,
+/area/ship/hallway/aft)
 "zr" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/mineral/titanium/tiled/white,
@@ -1774,6 +1795,13 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/carpet/purple,
 /area/ship/crew/office)
+"zY" = (
+/obj/structure/holosign/barrier/infinite,
+/obj/structure/cable{
+	icon_state = "4-10"
+	},
+/turf/open/floor/mineral/titanium/tiled/white,
+/area/ship/hallway/fore)
 "Ab" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -1901,6 +1929,15 @@
 	},
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/ship/science)
+"Bx" = (
+/obj/effect/decal/cleanable/robot_debris/gib,
+/obj/item/bodypart/leg/right/robot,
+/obj/machinery/power/apc/auto_name/north,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/mineral/titanium/tiled,
+/area/ship/science/robotics)
 "By" = (
 /obj/item/clothing/mask/facehugger_item/lamarr,
 /obj/effect/decal/cleanable/dirt,
@@ -2007,13 +2044,6 @@
 /obj/effect/decal/cleanable/xenoblood,
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/ship/science)
-"CO" = (
-/obj/structure/holosign/barrier/infinite,
-/obj/structure/cable{
-	icon_state = "4-10"
-	},
-/turf/open/floor/mineral/titanium/tiled/white,
-/area/ship/hallway/fore)
 "CP" = (
 /obj/effect/decal/cleanable/xenoblood,
 /turf/open/floor/plating,
@@ -2671,6 +2701,16 @@
 	},
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/ship/hallway/aft)
+"Jg" = (
+/obj/structure/holosign/barrier/infinite,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/door/firedoor,
+/turf/open/floor/mineral/titanium/tiled/white,
+/area/ship/hallway/fore)
 "Jh" = (
 /obj/structure/cable{
 	icon_state = "2-5"
@@ -2829,23 +2869,16 @@
 /obj/structure/curtain/cloth/grey,
 /turf/open/floor/mineral/titanium/tiled,
 /area/ship/crew/dorm)
+"KO" = (
+/obj/structure/holosign/barrier/infinite,
+/turf/open/floor/mineral/titanium/tiled/white,
+/area/ship/hallway/aft)
 "KS" = (
 /obj/machinery/light/broken{
 	dir = 4
 	},
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/ship/hallway/fore)
-"Lc" = (
-/obj/structure/holosign/barrier/medical/infinite,
-/obj/machinery/light/floor,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 8
-	},
-/turf/open/floor/mineral/titanium/tiled/purple,
-/area/ship/science/xenobiology)
 "Le" = (
 /obj/structure/grille/broken,
 /obj/effect/decal/cleanable/glass,
@@ -2965,15 +2998,6 @@
 	},
 /turf/open/floor/mineral/titanium/tiled/purple,
 /area/ship/bridge)
-"Na" = (
-/obj/structure/grille/broken,
-/obj/effect/decal/cleanable/glass,
-/obj/item/shard,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/holosign/barrier/infinite,
-/obj/machinery/door/firedoor/window,
-/turf/open/floor/plating,
-/area/ship/science/robotics)
 "Nb" = (
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/mineral/titanium/tiled/white,
@@ -3059,10 +3083,6 @@
 /obj/structure/curtain/cloth/grey,
 /turf/open/floor/mineral/titanium/tiled,
 /area/ship/crew/dorm)
-"NX" = (
-/obj/structure/holosign/barrier/infinite,
-/turf/open/floor/mineral/titanium/tiled/white,
-/area/ship/hallway/aft)
 "NY" = (
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/ship/hallway/aft)
@@ -3165,16 +3185,6 @@
 	},
 /turf/open/floor/mineral/titanium/tiled/purple,
 /area/ship/science/ai_chamber)
-"Pq" = (
-/obj/structure/holosign/barrier/infinite,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/door/firedoor,
-/turf/open/floor/mineral/titanium/tiled/white,
-/area/ship/hallway/fore)
 "Pt" = (
 /obj/effect/decal/cleanable/oil,
 /obj/item/wrench/crescent,
@@ -3460,16 +3470,6 @@
 	},
 /turf/open/floor/mineral/titanium/tiled/purple,
 /area/ship/science/ai_chamber)
-"SF" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/airlock/external,
-/obj/structure/fans/tiny,
-/obj/docking_port/mobile{
-	launch_status = 0;
-	port_direction = 2
-	},
-/turf/open/floor/plating,
-/area/ship/hallway/aft)
 "SN" = (
 /mob/living/simple_animal/pet/cat/original{
 	mob_size = 1.1
@@ -4402,7 +4402,7 @@ hP
 Rx
 Hz
 Xx
-Lc
+hR
 kS
 jy
 Mc
@@ -4464,7 +4464,7 @@ Jq
 oJ
 CZ
 Xt
-NX
+KO
 QM
 Iz
 TE
@@ -4488,7 +4488,7 @@ YK
 zr
 to
 DK
-Pq
+Jg
 KB
 Qo
 sO
@@ -4513,7 +4513,7 @@ EN
 kC
 Vw
 rT
-CO
+zY
 Gj
 cC
 cC
@@ -4583,7 +4583,7 @@ VQ
 eE
 md
 RQ
-NX
+KO
 jd
 Pt
 WF
@@ -4756,7 +4756,7 @@ yc
 TZ
 eM
 aB
-SF
+zg
 "}
 (22,1,1) = {"
 vo
@@ -4830,7 +4830,7 @@ Dd
 Dd
 dL
 Le
-Na
+hD
 tt
 EM
 EM
@@ -4885,7 +4885,7 @@ XF
 CK
 sG
 BC
-sk
+Bx
 ut
 NP
 Xn
@@ -4943,7 +4943,7 @@ HC
 em
 DF
 DF
-sV
+jC
 Rj
 nI
 jS

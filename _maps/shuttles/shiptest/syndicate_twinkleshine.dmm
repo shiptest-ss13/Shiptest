@@ -1777,6 +1777,19 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
+"qz" = (
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	dir = 4;
+	name = "SBD starfurys revenge";
+	port_direction = 8
+	},
+/obj/structure/railing,
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "qD" = (
 /obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
@@ -2180,19 +2193,6 @@
 /obj/effect/turf_decal/corner/opaque/red,
 /turf/open/floor/plasteel/white,
 /area/ship/medical/surgery)
-"tN" = (
-/obj/docking_port/mobile{
-	can_move_docking_ports = 1;
-	dir = 4;
-	name = "SBD starfurys revenge";
-	port_direction = 8
-	},
-/obj/structure/railing,
-/obj/structure/railing{
-	dir = 1
-	},
-/turf/open/floor/plating/airless,
-/area/ship/external)
 "tO" = (
 /obj/machinery/atmospherics/pipe/simple/cyan/visible{
 	dir = 4
@@ -2215,30 +2215,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
-"tT" = (
-/obj/structure/closet/secure_closet{
-	icon_state = "med_secure";
-	name = "robotics";
-	req_access_txt = list(150)
-	},
-/obj/item/bodypart/chest/robot,
-/obj/item/bodypart/head/robot,
-/obj/item/bodypart/l_arm/robot,
-/obj/item/bodypart/l_leg/robot,
-/obj/item/bodypart/r_arm/robot,
-/obj/item/bodypart/r_leg/robot,
-/obj/item/organ/ears/robot,
-/obj/item/organ/eyes/robotic/flashlight,
-/obj/item/organ/tongue/robot,
-/obj/item/organ/ears/cybernetic,
-/obj/item/organ/ears/cat,
-/obj/item/organ/heart/cybernetic/tier2,
-/obj/item/organ/liver/cybernetic/tier2,
-/obj/item/organ/lungs/cybernetic/tier2,
-/obj/item/organ/tail/cat,
-/obj/effect/turf_decal/corner/opaque/red/diagonal,
-/turf/open/floor/plasteel/white,
-/area/ship/medical/surgery)
 "tU" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/atmospherics/pipe/simple/orange/visible,
@@ -2917,6 +2893,10 @@
 	rad_insulation = 0.1
 	},
 /area/ship/engineering/engine)
+"zV" = (
+/obj/effect/turf_decal/industrial/warning,
+/turf/open/floor/pod/dark,
+/area/ship/cargo)
 "zY" = (
 /obj/structure/bed/roller,
 /obj/machinery/iv_drip,
@@ -2944,21 +2924,6 @@
 /obj/effect/turf_decal/corner/opaque/red/diagonal,
 /turf/open/floor/plasteel/white,
 /area/ship/medical/surgery)
-"Aj" = (
-/obj/machinery/door/poddoor{
-	id = "sbccargo";
-	name = "Cargo Bay Blast Door"
-	},
-/obj/structure/fans/tiny,
-/obj/docking_port/stationary{
-	height = 15;
-	width = 12;
-	dheight = 1;
-	dwidth = 4;
-	dir = 8
-	},
-/turf/open/floor/plating,
-/area/ship/cargo)
 "Aq" = (
 /obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
@@ -3242,6 +3207,10 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ship/engineering/atmospherics)
+"DE" = (
+/obj/machinery/light/floor,
+/turf/open/floor/pod/dark,
+/area/ship/cargo)
 "DF" = (
 /obj/structure/window/reinforced{
 	dir = 4
@@ -4005,6 +3974,30 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
+"Kz" = (
+/obj/structure/closet/secure_closet{
+	icon_state = "med_secure";
+	name = "robotics";
+	req_access_txt = list(150)
+	},
+/obj/item/bodypart/chest/robot,
+/obj/item/bodypart/head/robot,
+/obj/item/bodypart/l_arm/robot,
+/obj/item/bodypart/leg/left/robot,
+/obj/item/bodypart/r_arm/robot,
+/obj/item/bodypart/leg/right/robot,
+/obj/item/organ/ears/robot,
+/obj/item/organ/eyes/robotic/flashlight,
+/obj/item/organ/tongue/robot,
+/obj/item/organ/ears/cybernetic,
+/obj/item/organ/ears/cat,
+/obj/item/organ/heart/cybernetic/tier2,
+/obj/item/organ/liver/cybernetic/tier2,
+/obj/item/organ/lungs/cybernetic/tier2,
+/obj/item/organ/tail/cat,
+/obj/effect/turf_decal/corner/opaque/red/diagonal,
+/turf/open/floor/plasteel/white,
+/area/ship/medical/surgery)
 "KA" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
@@ -4271,6 +4264,21 @@
 /obj/structure/curtain/bounty,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/crew/dorm)
+"MT" = (
+/obj/machinery/door/poddoor{
+	id = "sbccargo";
+	name = "Cargo Bay Blast Door"
+	},
+/obj/structure/fans/tiny,
+/obj/docking_port/stationary{
+	height = 15;
+	width = 12;
+	dheight = 1;
+	dwidth = 4;
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ship/cargo)
 "Nc" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -5262,10 +5270,6 @@
 "UY" = (
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ship/crew/dorm)
-"UZ" = (
-/obj/effect/turf_decal/industrial/warning,
-/turf/open/floor/pod/dark,
-/area/ship/cargo)
 "Va" = (
 /obj/machinery/atmospherics/components/unary/thermomachine/freezer{
 	dir = 1;
@@ -5770,10 +5774,6 @@
 	},
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/security)
-"Ze" = (
-/obj/machinery/light/floor,
-/turf/open/floor/pod/dark,
-/area/ship/cargo)
 "Zf" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -5908,7 +5908,7 @@ av
 av
 Xu
 Xu
-tN
+qz
 Xu
 Xu
 Xu
@@ -6047,7 +6047,7 @@ rT
 uY
 uY
 uY
-Aj
+MT
 uY
 Hf
 Hf
@@ -6153,12 +6153,12 @@ Xu
 Xu
 rT
 OF
-Ze
+DE
 OH
 OH
-Ze
+DE
 OH
-UZ
+zV
 ZF
 Hm
 ZF
@@ -6266,7 +6266,7 @@ WD
 xn
 OH
 OH
-UZ
+zV
 eq
 MS
 Pq
@@ -6637,7 +6637,7 @@ NJ
 rf
 mV
 Zv
-tT
+Kz
 Af
 Cg
 co

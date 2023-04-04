@@ -30,8 +30,8 @@
 	species_head = /obj/item/bodypart/head/jelly
 	species_l_arm = /obj/item/bodypart/l_arm/jelly
 	species_r_arm = /obj/item/bodypart/r_arm/jelly
-	species_l_leg = /obj/item/bodypart/l_leg/jelly
-	species_r_leg = /obj/item/bodypart/r_leg/jelly
+	species_l_leg = /obj/item/bodypart/leg/left/jelly
+	species_r_leg = /obj/item/bodypart/leg/right/jelly
 
 /datum/species/jelly/on_species_loss(mob/living/carbon/C)
 	if(regenerate_limbs)
@@ -231,8 +231,8 @@
 	species_head = /obj/item/bodypart/head/slime
 	species_l_arm = /obj/item/bodypart/l_arm/slime
 	species_r_arm = /obj/item/bodypart/r_arm/slime
-	species_l_leg = /obj/item/bodypart/l_leg/slime
-	species_r_leg = /obj/item/bodypart/r_leg/slime
+	species_l_leg = /obj/item/bodypart/leg/left/slime
+	species_r_leg = /obj/item/bodypart/leg/right/slime
 
 /datum/species/jelly/slime/on_species_loss(mob/living/carbon/C)
 	if(slime_split)
