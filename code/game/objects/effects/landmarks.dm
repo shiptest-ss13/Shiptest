@@ -435,6 +435,8 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 
 /obj/effect/landmark/subship
 	name = "subship dock"
+	icon_state = "subship_dock"
+	dir = NORTH
 	var/datum/map_template/shuttle/subship_template
 	var/obj/docking_port/stationary/dock
 
