@@ -179,6 +179,46 @@
 	objective_type = /mob/living/simple_animal/bot/firebot/rockplanet
 
 /*
+		Acquire: Fishing
+*/
+
+/datum/mission/acquire/fish_alive
+	name = "Fish needed for my aquarium"
+	weight = 20
+	value = 750
+	val_mod_range = 0.2
+	container_type = /obj/item/storage/fish_case/mission
+
+/datum/mission/acquire/fish_alive/New(...)
+	objective_type = pick(/obj/item/fish/clownfish,
+						/obj/item/fish/pufferfish,
+						/obj/item/fish/cardinal,
+						/obj/item/fish/greenchromis)
+	desc = "My aquarium is sorely lacking in [initial(objective_type.name)], can you please bring one to me? \
+			Make sure it's alive too, no one likes looking at dead fish."
+	. = ..()
+
+/datum/mission/acquire/fish_cook
+	name = "I need a fish for my meal"
+	duration = 20 MINUTES
+	objective_type = /obj/item/fish
+	container_type = /obj/item/storage/fish_case/mission/big
+
+/datum/mission/acquire/fish_cook/New(...)
+	num_wanted = rand(1,3)
+	desc = "I, a chef, am in need of [num_wanted] fish for my latest dish. Any fish will do, alive or not."
+	value = (250*num_wanted)
+	. = ..()
+
+/datum/mission/acquire/fish/alive/atom_effective_count(atom/movable/target)
+	. = ..()
+	if(!.)
+		return
+	var/mob/creature = target
+	if(creature.stat == DEAD)
+		return 0
+
+/*
 		Acquiry mission containers
 */
 
@@ -216,3 +256,16 @@
 	STR.max_combined_w_class = WEIGHT_CLASS_NORMAL
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
 	STR.max_items = 1
+
+/obj/item/storage/fish_case/mission
+	name = "live fish delivery case"
+	desc = "A specialized container for delivering live fish. Comes with a built in sensor to prevent the distribution of deceased fish."
+
+/obj/item/storage/fish_case/mission/big
+	name = "fish delivery case"
+	desc = "A specialized container for the delivering of fish. Guarantees they stay fresh during delivery!."
+
+/obj/item/storage/fish_case/mission/big/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 3

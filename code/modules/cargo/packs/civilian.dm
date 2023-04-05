@@ -258,3 +258,33 @@
 	cost = 35000
 	contains = list(/obj/machinery/jukebox)
 	crate_name = "Jukebox"
+
+/datum/supply_pack/civilian/fishingkit
+	name = "Fishing Starter Kit"
+	desc = "The bare necessities to get out there and catch some fish, all in one convenient box!"
+	cost = 500
+	contains = list(/obj/item/storage/toolbox/fishing,
+					/obj/item/storage/fish_case,
+					// /obj/item/book/fish_catalog, (commented out pending getting the damn thing to work)
+					/obj/item/reagent_containers/food/drinks/beer,
+					/obj/item/reagent_containers/food/drinks/beer)
+	crate_name = "fishing starter crate"
+	crate_type = /obj/structure/closet/crate/wooden
+
+/datum/supply_pack/civilian/fishinghooks
+	name = "Fishing Hook Variety Pack"
+	desc = "A variety of fishing hooks to allow for more specialized fishing."
+	cost = 1000
+	contains = list(/obj/item/storage/box/fishing_hooks)
+	crate_name = "fishing hook crate"
+	crate_type = /obj/structure/closet/crate/wooden
+
+/datum/supply_pack/civilian/fishinglines
+	name = "Fishing Line Pack"
+	desc = "Contains the necessary fishing lines for catching more exotic fish."
+	cost = 1000
+	contains = list(/obj/item/storage/box/fishing_lines,
+					/obj/item/storage/box/fishing_lines) //Comes with two boxes on account of these being more necessary than the hooks
+	crate_name = "fishing line crate"
+	crate_type = /obj/structure/closet/crate/wooden
+
