@@ -9,7 +9,6 @@
 "ac" = (
 /obj/machinery/door/airlock/external,
 /obj/effect/turf_decal/industrial/hatch/yellow,
-/obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/docking_port/mobile{
 	name = "Intership";
 	preferred_direction = 4;
@@ -19,7 +18,6 @@
 /area/ship/storage)
 "ad" = (
 /obj/machinery/door/airlock/external,
-/obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plasteel/dark,
 /area/ship/storage)
@@ -484,7 +482,6 @@
 "bb" = (
 /obj/machinery/door/airlock/external,
 /obj/effect/turf_decal/industrial/hatch/yellow,
-/obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 8
 	},
@@ -503,7 +500,6 @@
 "bc" = (
 /obj/machinery/door/airlock/external,
 /obj/effect/turf_decal/industrial/hatch/yellow,
-/obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
@@ -519,7 +515,9 @@
 "bd" = (
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /obj/machinery/microwave,
-/obj/structure/railing,
+/obj/structure/railing{
+	layer = 3.1
+	},
 /obj/structure/table/wood,
 /obj/effect/turf_decal/spline/fancy/opaque/neutral{
 	dir = 10
@@ -541,7 +539,9 @@
 	pixel_x = -1;
 	pixel_y = 1
 	},
-/obj/structure/railing,
+/obj/structure/railing{
+	layer = 3.1
+	},
 /obj/effect/turf_decal/spline/fancy/opaque/neutral{
 	dir = 6
 	},
@@ -993,19 +993,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew)
-"bU" = (
-/obj/effect/turf_decal/corner/opaque/green/mono,
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
-/obj/machinery/door/airlock/command/glass{
-	name = "Bridge"
-	},
-/turf/open/floor/plasteel,
-/area/ship/bridge)
 "bV" = (
 /obj/effect/turf_decal/trimline/opaque/green/line{
 	dir = 8
@@ -1237,6 +1224,7 @@
 /obj/structure/chair/office{
 	dir = 8
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/wood,
 /area/ship/crew)
 "co" = (
@@ -1261,11 +1249,11 @@
 /area/ship/crew)
 "cq" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/effect/turf_decal/trimline/opaque/green/warning{
-	dir = 8
-	},
 /obj/effect/turf_decal/siding/white{
 	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/green/line{
+	dir = 8
 	},
 /turf/open/floor/plasteel,
 /area/ship/bridge)
@@ -1352,6 +1340,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
@@ -1619,15 +1610,13 @@
 /obj/structure/chair/office{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /turf/open/floor/wood,
 /area/ship/crew)
 "cK" = (
@@ -2157,7 +2146,10 @@
 /obj/effect/turf_decal/corner/opaque/orange/border{
 	dir = 4
 	},
-/obj/machinery/atmospherics/components/unary/tank/air,
+/obj/machinery/atmospherics/components/unary/tank/air{
+	piping_layer = 2;
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "dH" = (
@@ -2195,7 +2187,8 @@
 	dir = 5
 	},
 /obj/item/radio/intercom{
-	pixel_x = 28
+	pixel_x = 28;
+	dir = 8
 	},
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/office)
@@ -2324,7 +2317,6 @@
 /obj/item/clothing/head/helmet/space/syndicate/green,
 /obj/structure/window/reinforced{
 	dir = 8;
-	pixel_y = 2;
 	color = "#283674"
 	},
 /obj/structure/window/reinforced{
@@ -2528,7 +2520,6 @@
 	},
 /obj/structure/window/reinforced{
 	dir = 8;
-	pixel_y = 2;
 	color = "#283674"
 	},
 /obj/structure/closet/secure_closet/captains{
@@ -2667,7 +2658,6 @@
 /obj/item/clothing/head/helmet/space/syndicate/green,
 /obj/structure/window/reinforced{
 	dir = 8;
-	pixel_y = 2;
 	color = "#283674"
 	},
 /obj/structure/window/reinforced{
@@ -2815,7 +2805,6 @@
 	},
 /obj/structure/window/reinforced{
 	dir = 8;
-	pixel_y = 2;
 	color = "#283674"
 	},
 /obj/structure/window/reinforced{
@@ -3015,7 +3004,7 @@
 /obj/effect/turf_decal/siding/thinplating/light{
 	dir = 4
 	},
-/obj/effect/turf_decal/trimline/opaque/green/warning{
+/obj/effect/turf_decal/trimline/opaque/green/line{
 	dir = 4
 	},
 /turf/open/floor/plasteel,
@@ -3428,7 +3417,7 @@ aq
 aq
 aq
 aq
-bU
+aq
 cM
 aq
 aq
