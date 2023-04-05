@@ -534,11 +534,11 @@
 	name = "Bridge Lockdown";
 	pixel_y = -5
 	},
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "lJ" = (
@@ -1532,7 +1532,11 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/box,
-/obj/machinery/vending/hydroseeds,
+/obj/structure/closet/crate/hydroponics,
+/obj/item/seeds/wheat,
+/obj/item/seeds/tomato,
+/obj/item/seeds/random,
+/obj/item/seeds/banana,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/hydroponics)
 "Ex" = (

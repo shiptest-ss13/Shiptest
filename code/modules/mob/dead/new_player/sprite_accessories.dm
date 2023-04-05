@@ -1743,6 +1743,10 @@
 	name = "Dark Tiger"
 	icon_state = "dtiger"
 
+/datum/sprite_accessory/tails/lizard/ltiger
+	name = "Light Tiger"
+	icon_state = "ltiger"
+
 /datum/sprite_accessory/tails_animated/lizard/ltiger
 	name = "Light Tiger"
 	icon_state = "ltiger"
@@ -1754,6 +1758,14 @@
 /datum/sprite_accessory/tails_animated/lizard/spikes
 	name = "Spikes"
 	icon_state = "spikes"
+
+/datum/sprite_accessory/tails/lizard/large
+	name = "Large"
+	icon_state = "large"
+
+/datum/sprite_accessory/tails_animated/lizard/large
+	name = "Large"
+	icon_state = "large"
 
 /datum/sprite_accessory/tails/human/none
 	name = "None"

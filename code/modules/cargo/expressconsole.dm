@@ -56,9 +56,9 @@
 
 /obj/machinery/computer/cargo/express/attackby(obj/item/W, mob/living/user, params)
 	var/value = 0
-	if(istype(W, /obj/item/stack/spacecash))
-		var/obj/item/stack/spacecash/C = W
-		value = C.value * C.amount
+	if(istype(W, /obj/item/spacecash/bundle))
+		var/obj/item/spacecash/bundle/C = W
+		value = C.value
 	else if(istype(W, /obj/item/holochip))
 		var/obj/item/holochip/H = W
 		value = H.credits
