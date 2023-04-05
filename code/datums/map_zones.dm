@@ -83,6 +83,7 @@
 #define MAPPING_MARGIN 5
 
 /datum/virtual_level
+	/// An admin-facing name used to identify the virtual level. May be duplicate, or changed after instancing.
 	var/name = "Sub Map Zone"
 	var/relative_id
 	var/id

@@ -183,8 +183,22 @@ SUBSYSTEM_DEF(overmap)
  * Creates a single outpost somewhere near the center of the system.
  */
 /datum/controller/subsystem/overmap/proc/spawn_outpost()
-	var/list/S = get_unused_overmap_square_in_radius(rand(3, round(size/5)))
-	new /datum/overmap/outpost(S)
+	var/list/location = get_unused_overmap_square_in_radius(rand(3, round(size/5)))
+
+	var/datum/map_template/outpost/found_template = null
+	if(fexists(OUTPOST_OVERRIDE_FILEPATH))
+		var/list/override_list = safe_json_decode(file2text(OUTPOST_OVERRIDE_FILEPATH))
+		if(!override_list)
+			stack_trace("SSovermap found an outpost override file at [OUTPOST_OVERRIDE_FILEPATH], but was unable to parse it!")
+		else
+			var/template_name = override_list["outpost_name"]
+			found_template = SSmapping.outpost_templates[template_name]
+			if(!istype(found_template))
+				stack_trace("SSovermap found an outpost override file at [OUTPOST_OVERRIDE_FILEPATH], but was unable to find the template for [template_name]!")
+				found_template = null
+		fdel(OUTPOST_OVERRIDE_FILEPATH) // don't want it to affect 2 rounds in a row.
+
+	new /datum/overmap/outpost(location, found_template)
 	return
 
 /datum/controller/subsystem/overmap/proc/spawn_initial_ships()

@@ -457,23 +457,28 @@ SUBSYSTEM_DEF(shuttle)
 					user,
 					"Select a location for the new ship.",
 					"Ship Location",
-					list("Random Overmap Square", "Outpost", /*"Specific Overmap Square"*/) // DEBUG: implement
+					list("Random Overmap Square", "Outpost -- Normal", /*"Outpost -- Admin Hangar", "Specific Overmap Square"*/) // DEBUG: implement
 				)
 				var/ship_loc
+				var/datum/overmap/ship/controlled/new_ship
+
 				switch(choice)
 					if(null)
 						return
 					if("Random Overmap Square")
 						ship_loc = null // null location causes overmap to just get a random square
-					if("Outpost")
+					if("Outpost -- Normal")
 						// DEBUG: allow to spawn in a specific hangar
 						// DEBUG: locate() here also potentially causes problems with nonphysical outposts (obviously). allow selection of outpost?
 						ship_loc = locate(/datum/overmap/outpost) in SSovermap.overmap_objects
 					// DEBUG: implement
+					// if("Outpost -- Admin Hangar")
+					// DEBUG: implement
 					// if("Specific Overmap Square")
 
 				// If successful, returns the mobile docking port
-				var/datum/overmap/ship/controlled/new_ship = new(ship_loc, S)
+				if(!new_ship)
+					new_ship = new(ship_loc, S)
 				if(new_ship?.shuttle_port)
 					user.forceMove(new_ship.get_jump_to_turf())
 					message_admins("[key_name_admin(user)] loaded [new_ship] ([S]) with the shuttle manipulator.")

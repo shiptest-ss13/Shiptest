@@ -53,10 +53,10 @@
 	var/floor_num = my_floor.master.floor_list.Find(my_floor)
 	var/list/opts = list()
 
-	if(floor_num > 1)
+	if(floor_num < length(my_floor.master.floor_list))
 		var/up_arrow = my_floor.calls & UP ? "green_arrow" : "red_arrow"
 		opts["Up"] = image(icon = 'icons/misc/arrows.dmi', icon_state = up_arrow, dir = NORTH)
-	if(floor_num < length(my_floor.master.floor_list))
+	if(floor_num > 1)
 		var/down_arrow = my_floor.calls & DOWN ? "green_arrow" : "red_arrow"
 		opts["Down"] = image(icon = 'icons/misc/arrows.dmi', icon_state = down_arrow, dir = SOUTH)
 

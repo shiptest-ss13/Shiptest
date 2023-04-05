@@ -7,6 +7,10 @@
 	var/new_name = "outpost_[skin]_[suffix]"
 	. = ..(path = "_maps/outpost/[new_name].dmm", rename = new_name)
 
+/datum/map_template/outpost/proc/get_json_string()
+	return json_encode(list(
+		outpost_name = name
+	))
 
 /datum/map_template/outpost_elevator
 	var/skin

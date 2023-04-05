@@ -71,11 +71,14 @@ GLOBAL_LIST_INIT(all_overmap_world_types, list(
 ///Used to get the turf on the "physical" overmap representation.
 #define OVERMAP_TOKEN_TURF(x_pos, y_pos) locate(SSovermap.overmap_vlevel.low_x + SSovermap.overmap_vlevel.reserved_margin + x_pos - 1, SSovermap.overmap_vlevel.low_y + SSovermap.overmap_vlevel.reserved_margin + y_pos - 1, SSovermap.overmap_vlevel.z_value)
 
+// DEBUG: this is maybe fine? see GLOB.log_directory
+#define OUTPOST_OVERRIDE_FILEPATH "data/outpost_override.json"
+
 // DEBUG: should probably use datums instead of defines
 // Outpost skins. Uniquely identifies an outpost map, elevator map, and set of hangar maps.
 #define OUTPOST_SKIN_TEST "test"
 
-// DEBUG: remove this list
+// DEBUG: remove this list?
 // An above define must be included in this list for the outpost datum to pick it as a possible skin.
 // GLOBAL_LIST_INIT(outpost_skins, list(
 // 	OUTPOST_SKIN_TEST,
