@@ -395,7 +395,7 @@
 /area/ship/bridge)
 "aS" = (
 /obj/effect/mob_spawn/human/corpse/assistant{
-	outfit = /datum/outfit/centcom/centcom_intern;
+	outfit = /datum/outfit/centcom/centcom_intern/empty;
 	name = "CentCom Intern";
 	mob_species = /datum/species/moth
 	},
@@ -796,18 +796,18 @@
 /turf/open/floor/plasteel,
 /area/ship/bridge)
 "bC" = (
-/obj/effect/turf_decal/siding/white/corner,
 /obj/effect/turf_decal/corner/opaque/green/bordercorner,
+/obj/effect/turf_decal/siding/white/corner,
 /obj/effect/turf_decal/trimline/opaque/green/line{
 	dir = 1
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "bD" = (
-/obj/effect/turf_decal/siding/white,
 /obj/effect/turf_decal/trimline/opaque/green/corner{
 	dir = 1
 	},
+/obj/effect/turf_decal/siding/white,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -2249,10 +2249,10 @@
 /turf/open/floor/plasteel,
 /area/ship/bridge)
 "dP" = (
-/obj/effect/turf_decal/siding/white/corner{
+/obj/effect/turf_decal/corner/opaque/green/bordercorner{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/opaque/green/bordercorner{
+/obj/effect/turf_decal/siding/white/corner{
 	dir = 4
 	},
 /obj/effect/turf_decal/trimline/opaque/green/line,
@@ -2264,11 +2264,11 @@
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "dQ" = (
-/obj/effect/turf_decal/siding/white{
-	dir = 1
-	},
 /obj/effect/turf_decal/trimline/opaque/green/corner{
 	dir = 8
+	},
+/obj/effect/turf_decal/siding/white{
+	dir = 1
 	},
 /obj/machinery/light,
 /obj/effect/turf_decal/corner/opaque/green/border{
