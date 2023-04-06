@@ -3,10 +3,10 @@
 	name = "goliath"
 	desc = "A massive beast that uses long tentacles to ensnare its prey, threatening them is not advised under any conditions."
 	icon = 'icons/mob/lavaland/lavaland_monsters_wide.dmi'
-	icon_state = "goliath"
-	icon_living = "goliath"
-	icon_aggro = "goliath_alert"
-	icon_dead = "goliath_dead"
+	icon_state = "ancient_goliath"
+	icon_living = "ancient_goliath"
+	icon_aggro = "ancient_goliath_alert"
+	icon_dead = "ancient_goliath_dead"
 	icon_gib = "syndicate_gib"
 	pixel_x = -12
 	base_pixel_x = -12
@@ -244,7 +244,7 @@
 	desc = "Goliaths are biologically immortal, and rare specimens have survived for centuries. This one is clearly ancient, and its tentacles constantly churn the earth around it."
 	icon_state = "ancient_goliath"
 	icon_living = "ancient_goliath"
-	icon_aggro = "ancient_goliath_aler"
+	icon_aggro = "ancient_goliath_alert"
 	icon_dead = "ancient_goliath_dead"
 	maxHealth = 350
 	health = 350
