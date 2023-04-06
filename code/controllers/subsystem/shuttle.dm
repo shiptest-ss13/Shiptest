@@ -133,7 +133,17 @@ SUBSYSTEM_DEF(shuttle)
 
 	var/transit_name = "Transit Map Zone"
 	var/datum/map_zone/mapzone = SSmapping.create_map_zone(transit_name)
-	var/datum/virtual_level/vlevel = SSmapping.create_virtual_level(transit_name, list(ZTRAIT_RESERVED = TRUE), mapzone, transit_width, transit_height, ALLOCATION_FREE)
+	var/datum/virtual_level/vlevel = SSmapping.create_virtual_level(
+		transit_name,
+		list(
+			ZTRAIT_RESERVED = TRUE,
+			ZTRAIT_SUN_TYPE = STATIC_EXPOSED
+		),
+		mapzone,
+		transit_width,
+		transit_height,
+		ALLOCATION_FREE
+	)
 
 	vlevel.reserve_margin(TRANSIT_SIZE_BORDER)
 

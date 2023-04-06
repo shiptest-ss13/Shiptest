@@ -91,7 +91,11 @@
 /turf/open/floor/plasteel,
 /area/ruin/powered)
 "ji" = (
-/obj/machinery/vending/hydroseeds,
+/obj/item/seeds/tomato/killer,
+/obj/item/seeds/kudzu,
+/obj/item/seeds/cannabis,
+/obj/item/seeds/random,
+/obj/structure/closet/crate/secure/hydroponics,
 /turf/open/floor/plasteel,
 /area/ruin/powered)
 "js" = (
@@ -152,7 +156,7 @@
 "nJ" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/spacevine,
-/turf/open/floor/plating/grass/jungle,
+/turf/open/floor/plating/grass/jungle/lit,
 /area/ruin/powered)
 "nS" = (
 /obj/structure/cable{
@@ -228,7 +232,7 @@
 "uK" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/grass/jungle,
-/turf/open/floor/plating/grass/jungle,
+/turf/open/floor/plating/grass/jungle/lit,
 /area/ruin/powered)
 "uM" = (
 /obj/structure/cable{
@@ -267,7 +271,7 @@
 /area/ruin/powered)
 "wU" = (
 /obj/structure/flora/ausbushes/grassybush,
-/turf/open/floor/plating/grass/jungle,
+/turf/open/floor/plating/grass/jungle/lit,
 /area/ruin/powered)
 "yr" = (
 /obj/structure/cable{
@@ -301,7 +305,7 @@
 "zm" = (
 /obj/structure/flora/grass/jungle,
 /obj/structure/spacevine,
-/turf/open/floor/plating/grass/jungle,
+/turf/open/floor/plating/grass/jungle/lit,
 /area/ruin/powered)
 "Aq" = (
 /obj/structure/table,
@@ -394,7 +398,7 @@
 /area/ruin/powered)
 "HQ" = (
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/open/floor/plating/grass/jungle,
+/turf/open/floor/plating/grass/jungle/lit,
 /area/ruin/powered)
 "Ia" = (
 /obj/machinery/hydroponics/constructable,
@@ -528,7 +532,7 @@
 /area/ruin/powered)
 "Sh" = (
 /obj/structure/flora/grass/jungle,
-/turf/open/floor/plating/grass/jungle,
+/turf/open/floor/plating/grass/jungle/lit,
 /area/ruin/powered)
 "Ss" = (
 /obj/machinery/power/terminal{
@@ -557,6 +561,10 @@
 	pixel_x = 2
 	},
 /turf/closed/wall,
+/area/ruin/powered)
+"TO" = (
+/obj/structure/salvageable/seed,
+/turf/open/floor/plasteel,
 /area/ruin/powered)
 "TV" = (
 /obj/structure/spacevine,
@@ -691,7 +699,7 @@ ZU
 gb
 Cj
 Yc
-ii
+TO
 ZU
 pt
 uM

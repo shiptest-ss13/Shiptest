@@ -1,6 +1,8 @@
 /datum/atmosphere
-	var/gas_string
 	var/id
+	/// The atmosphere's gasmix. No longer a gas string, because params2list sucks.
+	/// When auxmos is updated, change this back to a string and use __auxtools_parse_gas_string.
+	var/datum/gas_mixture/gasmix
 
 	var/list/base_gases // A list of gases to always have
 	var/list/normal_gases // A list of allowed gases:base_amount
@@ -14,15 +16,14 @@
 	var/maximum_temp
 
 /datum/atmosphere/New()
-	generate_gas_string()
+	generate_gas()
 
-/datum/atmosphere/proc/generate_gas_string()
+/datum/atmosphere/proc/generate_gas()
 	var/target_pressure = rand(minimum_pressure, maximum_pressure)
 	var/pressure_scalar = target_pressure / maximum_pressure
 
 	// First let's set up the gasmix and base gases for this template
-	// We make the string from a gasmix in this proc because gases need to calculate their pressure
-	var/datum/gas_mixture/gasmix = new
+	gasmix = new(CELL_VOLUME)
 	gasmix.set_temperature(rand(minimum_temp, maximum_temp))
 	for(var/i in base_gases)
 		gasmix.set_moles(i, base_gases[i])
@@ -50,10 +51,4 @@
 	while(gasmix.return_pressure() > target_pressure)
 		gasmix.set_moles(gastype, gasmix.get_moles(gastype) - (gasmix.get_moles(gastype) * 0.1))
 	gasmix.set_moles(gastype, FLOOR(gasmix.get_moles(gastype), 0.1))
-
-	// Now finally lets make that string
-	var/list/gas_string_builder = list()
-	for(var/i in gasmix.get_gases())
-		gas_string_builder += "[GLOB.gas_data.ids[i]]=[gasmix.get_moles(i)]"
-	gas_string_builder += "TEMP=[gasmix.return_temperature()]"
-	gas_string = gas_string_builder.Join(";")
+	gasmix.mark_immutable()

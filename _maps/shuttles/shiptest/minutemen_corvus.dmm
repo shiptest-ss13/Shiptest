@@ -148,6 +148,9 @@
 	pixel_x = 5
 	},
 /obj/machinery/rnd/production/techfab/department/security,
+/obj/structure/sign/poster/minutemen/enlist{
+	pixel_x = 32
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
 "bX" = (
@@ -355,11 +358,8 @@
 	pixel_y = 5
 	},
 /obj/item/gun/ballistic/automatic/pistol/m1911,
-/obj/item/gun/ballistic/automatic/smg/vector{
-	pixel_y = -4;
-	mag_type = /obj/item/ammo_box/magazine/smgm9mm
-	},
 /obj/item/flamethrower/full/tank,
+/obj/item/gun/ballistic/automatic/smg/cm5,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "eF" = (
@@ -424,7 +424,7 @@
 /obj/item/reagent_containers/food/drinks/britcup{
 	pixel_x = -6
 	},
-/obj/item/stack/spacecash/c1000{
+/obj/item/spacecash/bundle/c1000{
 	pixel_y = -4;
 	pixel_x = 3
 	},
@@ -462,10 +462,14 @@
 /obj/effect/turf_decal/corner/opaque/red/border{
 	dir = 6
 	},
-/obj/item/melee/baton{
-	pixel_x = 5
+/obj/structure/window/reinforced{
+	dir = 4
 	},
-/obj/item/melee/baton,
+/obj/item/melee/baton/loaded,
+/obj/item/melee/baton/loaded{
+	pixel_x = 3;
+	pixel_y = -2
+	},
 /obj/item/gun/energy/disabler{
 	pixel_y = 2
 	},
@@ -476,9 +480,6 @@
 /obj/item/reagent_containers/spray/pepper{
 	pixel_x = 8;
 	pixel_y = -4
-	},
-/obj/structure/window/reinforced{
-	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
@@ -934,6 +935,9 @@
 	pixel_x = -25
 	},
 /obj/machinery/computer/cargo/express,
+/obj/structure/sign/poster/minutemen/lanchester{
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "oQ" = (
@@ -1186,7 +1190,6 @@
 /turf/open/floor/carpet/nanoweave,
 /area/ship/hallway/central)
 "tp" = (
-/obj/machinery/holopad/emergency/command,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable/yellow{
@@ -1195,6 +1198,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/holopad/emergency/engineering,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "tt" = (
@@ -1272,11 +1276,6 @@
 /obj/item/clothing/under/rank/security/officer/minutemen,
 /obj/item/clothing/under/rank/security/officer/minutemen,
 /obj/item/clothing/under/rank/security/officer/minutemen,
-/obj/item/storage/backpack,
-/obj/item/storage/backpack,
-/obj/item/storage/backpack,
-/obj/item/storage/backpack,
-/obj/item/storage/backpack,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
@@ -1293,6 +1292,12 @@
 	dir = 4;
 	pixel_x = -32
 	},
+/obj/item/storage/backpack/security/cmm,
+/obj/item/storage/backpack/security/cmm,
+/obj/item/storage/backpack/security/cmm,
+/obj/item/storage/backpack/security/cmm,
+/obj/item/storage/backpack/security/cmm,
+/obj/item/storage/backpack/security/cmm,
 /turf/open/floor/holofloor/wood,
 /area/ship/crew)
 "wu" = (
@@ -1825,9 +1830,6 @@
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
 "Fz" = (
-/obj/item/storage/backpack,
-/obj/item/storage/backpack,
-/obj/item/storage/backpack,
 /obj/structure/closet/secure_closet/wall{
 	dir = 1;
 	icon_door = "red_wall";
@@ -2210,6 +2212,9 @@
 /obj/item/bedsheet/blue,
 /obj/structure/curtain/bounty,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/sign/poster/minutemen/bard{
+	pixel_y = 32
+	},
 /turf/open/floor/carpet/royalblue,
 /area/ship/bridge)
 "On" = (
@@ -2249,8 +2254,8 @@
 	layer = 3.1
 	},
 /obj/item/tank/jetpack/carbondioxide,
-/obj/item/clothing/suit/space/hardsuit/security/independent,
 /obj/machinery/suit_storage_unit/inherit/industrial,
+/obj/item/clothing/suit/space/hardsuit/security/independent/minutemen,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/central)
 "Pf" = (
@@ -2486,6 +2491,9 @@
 	dir = 4
 	},
 /obj/machinery/light,
+/obj/structure/sign/poster/minutemen/gold{
+	pixel_y = -32
+	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/hallway/central)
 "UP" = (

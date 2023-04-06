@@ -238,9 +238,9 @@
 		if("toggleTemplateEnabled")
 			enabled = !enabled
 			if(enabled)
-				SSmapping.ship_purchase_list += src
+				SSmapping.ship_purchase_list[name] = src
 			else
-				SSmapping.ship_purchase_list -= src
+				SSmapping.ship_purchase_list.Remove(name)
 			update_static_data(usr, ui)
 			return TRUE
 
@@ -338,9 +338,18 @@
 	file_name = "ruin_solgov_exploration_pod"
 	name = "SolGov Exploration Pod"
 
+/datum/map_template/shuttle/ruin/syndicate_interceptor
+	file_name = "ruin_syndicate_interceptor"
+	name = "Syndicate Interceptor"
+	prefix = "SSV"
+	name_categories = list("WEAPONS")
+	short_name = "Dartbird"
+
+
 //Subshuttles
 
 /datum/map_template/shuttle/subshuttles
 	category = "subshuttles"
 
 //your subshuttle here
+
