@@ -438,7 +438,8 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	icon_state = "subship_dock"
 	dir = NORTH
 	var/datum/map_template/shuttle/subship_template
-	var/obj/docking_port/stationary/dock
+	var/offset_x = 0
+	var/offset_y = 0
 
 /obj/effect/landmark/subship/New(loc)
 	..(loc)
@@ -458,7 +459,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 		if(WEST)
 			dock_x = template.height - template.port_y_offset
 			dock_y = template.port_x_offset - 1
-	dock = new(locate(x + dock_x, y + dock_y, z))
+	var/obj/docking_port/stationary/dock = new(locate(x + offset_x + dock_x, y + offset_y + dock_y, z))
 	dock.roundstart_template = subship_template
 	dock.load_template_on_initialize = FALSE
 	dock.dir = angle2dir_cardinal(dir2angle(template.port_dir)+dir2angle(dir))
@@ -488,5 +489,4 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 /obj/effect/landmark/subship/Destroy()
 	// Subship landmarks are in the bounding box of the subship, meaning that the landmark can be landed on which destroys it.
 	// I'm not sure landmarks destroyed on landing is intended behavior or not, so we're not destroying the dock on deletion just in case it is.
-	dock = null
 	. = ..()
