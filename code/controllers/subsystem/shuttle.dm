@@ -329,8 +329,6 @@ SUBSYSTEM_DEF(shuttle)
 		WARNING(msg)
 		return
 
-	if(!new_shuttle.can_move_docking_ports && length(stationary_ports))
-		log_world("Map warning: Shuttle Template [template.mappath] has [length(stationary_ports)] stationary docking port(s) and does not have var/can_move_docking_ports set to TRUE. Will not move these ports.")
 	new_shuttle.docking_points = stationary_ports
 	new_shuttle.current_ship = parent //for any ships that spawn on top of us
 
