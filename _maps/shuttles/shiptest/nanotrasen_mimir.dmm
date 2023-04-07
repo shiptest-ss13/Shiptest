@@ -315,6 +315,10 @@
 "bU" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
+/obj/machinery/door/poddoor/shutters{
+	name = "electrical window shutter";
+	id = "elec_shut_win"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "cj" = (
@@ -723,7 +727,6 @@
 /area/ship/crew/dorm/dormthree)
 "eF" = (
 /obj/structure/table/wood/poker,
-/obj/item/stack/spacecash/c50,
 /obj/item/storage/fancy/cigarettes/cigpack_cannabis,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm/dormfive)
@@ -1013,39 +1016,40 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "gp" = (
+/obj/item/clothing/head/helmet/space/eva{
+	pixel_x = -34;
+	pixel_y = 6
+	},
 /obj/structure/closet/wall/blue{
 	dir = 4;
 	pixel_x = -30;
 	name = "Space Suits";
 	desc = "Contains supplies for space walking."
 	},
-/obj/item/clothing/suit/space/eva,
-/obj/item/clothing/suit/space/eva{
-	pixel_x = 6
-	},
-/obj/item/clothing/suit/space/eva{
-	pixel_y = 4
-	},
 /obj/item/clothing/head/helmet/space/eva{
-	pixel_x = -10;
-	pixel_y = 6
-	},
-/obj/item/clothing/head/helmet/space/eva{
-	pixel_x = -10;
+	pixel_x = -34;
 	pixel_y = -6
 	},
-/obj/item/tank/internals/emergency_oxygen/double,
+/obj/item/clothing/suit/space/eva{
+	pixel_x = -24
+	},
+/obj/item/clothing/suit/space/eva{
+	pixel_x = -20
+	},
+/obj/item/clothing/mask/breath{
+	pixel_x = -20;
+	pixel_y = -7
+	},
+/obj/item/clothing/mask/breath{
+	pixel_x = -25;
+	pixel_y = -7
+	},
 /obj/item/tank/internals/emergency_oxygen/double{
-	pixel_x = 4;
+	pixel_x = -28;
 	pixel_y = -3
 	},
-/obj/item/clothing/mask/breath{
-	pixel_x = 3;
-	pixel_y = -7
-	},
-/obj/item/clothing/mask/breath{
-	pixel_x = 10;
-	pixel_y = -7
+/obj/item/tank/internals/emergency_oxygen/double{
+	pixel_x = -24
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/dorm/dormthree)
@@ -1272,8 +1276,7 @@
 /turf/closed/wall,
 /area/ship/storage/eva)
 "hB" = (
-/obj/item/stack/spacecash/c100,
-/obj/item/stack/spacecash/c100,
+/obj/item/storage/bag/money,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm/dormfive)
 "hC" = (
@@ -1448,6 +1451,10 @@
 "iu" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
+/obj/machinery/door/poddoor/shutters{
+	name = "starboard window shutter";
+	id = "starb_shut_win"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "iv" = (
@@ -1818,7 +1825,6 @@
 /turf/open/floor/plasteel,
 /area/ship/security/prison)
 "kE" = (
-/obj/structure/table/rolling,
 /obj/item/storage/backpack/duffelbag/med/surgery,
 /obj/item/storage/belt/medical/paramedic{
 	pixel_y = 4
@@ -1828,6 +1834,7 @@
 	pixel_x = 3
 	},
 /obj/effect/turf_decal/corner/opaque/blue/diagonal,
+/obj/structure/table/greyscale,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "kJ" = (
@@ -1948,6 +1955,13 @@
 	},
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 10
+	},
+/obj/machinery/button/door{
+	dir = 4;
+	pixel_y = 1;
+	pixel_x = -27;
+	id = "starb_shut_win";
+	name = "window shutters"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/maintenance/starboard)
@@ -2501,11 +2515,11 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
 	},
-/obj/machinery/atmospherics/components/binary/pump/layer4{
-	name = "waste exhaust"
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/industrial/warning/full,
+/obj/machinery/atmospherics/components/binary/pump/on/layer4{
+	name = "Waste Exhaust"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "pA" = (
@@ -3374,10 +3388,6 @@
 /turf/open/floor/plating,
 /area/ship/bridge)
 "vq" = (
-/obj/item/stack/spacecash/c10,
-/obj/item/stack/spacecash/c50,
-/obj/item/stack/spacecash/c50,
-/obj/item/stack/spacecash/c50,
 /obj/machinery/power/apc/auto_name/south,
 /obj/structure/cable{
 	icon_state = "0-9"
@@ -6071,9 +6081,6 @@
 /area/ship/hallway/central)
 "Lr" = (
 /obj/structure/table/wood/poker,
-/obj/item/stack/spacecash/c10,
-/obj/item/stack/spacecash/c10,
-/obj/item/stack/spacecash/c10,
 /obj/structure/cable{
 	icon_state = "6-9"
 	},
@@ -7346,11 +7353,11 @@
 /turf/open/floor/plastic,
 /area/ship/crew/canteen/kitchen)
 "TN" = (
-/obj/machinery/atmospherics/components/binary/pump/layer2{
-	dir = 1
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/industrial/warning/full,
+/obj/machinery/atmospherics/components/binary/pump/on/layer2{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "TO" = (
@@ -7445,6 +7452,12 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/techfloor/orange/corner{
 	dir = 8
+	},
+/obj/machinery/button/door{
+	dir = 8;
+	id = "elec_shut_win";
+	name = "window shutters";
+	pixel_x = 27
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/electrical)
