@@ -1,9 +1,9 @@
 // This file has quirks with variable values, their value varies based on which options the user has taken.
-// Value for each option will default to the quirk's base value if none is specified.
+// Value for each option will default to the quirk's base value if none is specified. This is currently unimplemented. Quirks with variable POSITIVE values is also unimplemented.
 
 /datum/quirk/phobia
 	name = "Phobia"
-	value = -1
+	value = 0
 	desc = "You are irrationally afraid of something."
 	medical_record_text = "Patient has an irrational fear of something."
 	additional_values = "Phobia"
@@ -11,7 +11,7 @@
 
 /datum/quirk/phobia/post_add()
 	var/mob/living/carbon/human/H = quirk_holder
-	for(var/phobia_type in H?.client?.prefs.quirk_preferences["Phobia"]["Phobia"]["options"])
+	for(var/phobia_type in H?.client?.prefs.quirk_preferences["Phobia"])
 		H.gain_trauma(new /datum/brain_trauma/mild/phobia(phobia_type), TRAUMA_RESILIENCE_ABSOLUTE)
 
 /datum/quirk/phobia/remove()

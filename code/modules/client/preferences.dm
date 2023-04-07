@@ -129,7 +129,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/prefered_security_department = SEC_DEPT_RANDOM
 
 	///Quirk list
-	var/list/all_quirks = list("Phobia" = list("spiders"), "Addiction" = list())
+	var/list/all_quirks = list()
 
 	///Preferences specialized for each quirk that needs them, such as selected addictions or phobias.
 	var/list/quirk_preferences = list()
@@ -963,9 +963,23 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							if(!quirk_handled)
 								dat += "<a style='white-space:normal;' [has_quirk ? "class='linkOn' " : ""]href='?_src_=prefs;preference=quirk;task=update;quirk=[quirk_index]'>[quirk_index]</a>"
 							dat += "</center>"
-
-//									dat += "<td><a href='?_src_=prefs;preference=quirk;task=customize_quirk;quirk=[quirk_name];value=[additional_value];type=edit;options=[jointext(quirk_datum.additional_value_options[additional_value], ", ")]'>Edit</a></td></tr>"
-//									dat += "</table><br>"
+							if(quirk_index in SSquirks.quirk_customizations)
+								for(var/quirk_preference_index in SSquirks.quirk_customizations[quirk_index])
+									var/list/possible_options = SSquirks.quirk_customization_options[quirk_preference_index]["options"] - quirk_preferences[quirk_preference_index]
+									for(var/option in possible_options)
+										possible_options -= option
+										possible_options += option
+									if(SSquirks.quirk_customization_options[quirk_preference_index]["limit"] > 1)
+										var/option_balance = get_quirk_option_balance(quirk_preference_index)
+										possible_options += "remove"
+										dat += "[quirk_preference_index]:"
+										for(var/quirk_option in quirk_preferences[quirk_preference_index])
+											dat += "<a href='?_src_=prefs;preference=quirk;task=customize_quirk;quirk=[quirk_index];value_address=[quirk_option];value=[quirk_preference_index];type=edit;options=[possible_options.Join(", ")]'>[quirk_option] </a>"
+										if(option_balance <= SSquirks.quirk_customization_options[quirk_preference_index]["limit"])
+											possible_options -= "remove"
+											dat += "<a href='?_src_=prefs;preference=quirk;task=customize_quirk;quirk=[quirk_index];value=[quirk_preference_index];type=add;options=[possible_options.Join(", ")]'>Add [quirk_preference_index]</a>"
+									else
+										dat += "<a href='?_src_=prefs;preference=quirk;task=customize_quirk;quirk=[quirk_index];value=[quirk_preference_index];type=edit;options=[possible_options.Join(", ")]'>[quirk_preferences[quirk_preference_index]]</a>"
 							dat += "</td><td style='vertical-align:middle;'><center>"
 							dat += "<font size=2>"
 							dat += "<font color='[font_color]'>[quirk_cost]</font_color>"
@@ -1392,11 +1406,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			if(!handled_conflicts["mood"])
 				handle_quirk_conflict("mood", null, user)
 				handled_conflicts["mood"] = TRUE
-		if(((SSquirks.quirk_species_locks[quirk_index]["type"] == "allowed") && !(pref_species.id in SSquirks.quirk_species_locks[quirk_index])) || (SSquirks.quirk_species_locks[quirk_index]["type"] == "blocked" && (pref_species.id in SSquirks.quirk_species_locks[quirk_index])))
-			quirk_conflicts[quirk_index] = TRUE
-			if(!handled_conflicts["species"])
-				handle_quirk_conflict("species", pref_species, user)
-				handled_conflicts["species"] = TRUE
+		if(quirk_index in SSquirks.quirk_species_locks)
+			if(((SSquirks.quirk_species_locks[quirk_index]["type"] == "allowed") && !(pref_species.id in SSquirks.quirk_species_locks[quirk_index])) || (SSquirks.quirk_species_locks[quirk_index]["type"] == "blocked" && (pref_species.id in SSquirks.quirk_species_locks[quirk_index])))
+				quirk_conflicts[quirk_index] = TRUE
+				if(!handled_conflicts["species"])
+					handle_quirk_conflict("species", pref_species, user)
+					handled_conflicts["species"] = TRUE
 		for(var/blacklist in SSquirks.quirk_blacklist)
 			for(var/quirk_blacklisted in all_quirks)
 				if((quirk_blacklisted in blacklist) && !quirk_conflicts[quirk_index] && (quirk_index in blacklist) && !(quirk_index == quirk_blacklisted))
@@ -1416,7 +1431,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 /datum/preferences/proc/handle_quirk_conflict(change_type, additional_argument, mob/user)
 	var/list/all_quirks_new = list()
 	all_quirks_new += all_quirks
-	var/balance
+	var/balance = GetQuirkBalance()
 	var/datum/species/target_species
 	if(change_type == "species")
 		if(additional_argument)
@@ -1425,12 +1440,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			return
 	for(var/quirk_owned in all_quirks)
 		var/datum/quirk/quirk_owned_datum = SSquirks.quirks[quirk_owned]
-		balance -= SSquirks.quirk_points[quirk_owned]
+		if((change_type == "species") && (quirk_owned in SSquirks.quirk_species_locks))
+			if(((SSquirks.quirk_species_locks[quirk_owned]["type"] == "allowed") && !(target_species.id in SSquirks.quirk_species_locks[quirk_owned])) || ((SSquirks.quirk_species_locks[quirk_owned]["type"] == "blocked") && (target_species.id in SSquirks.quirk_species_locks[quirk_owned])))
+				all_quirks_new -= quirk_owned
+				balance += SSquirks.quirk_points[quirk_owned]
 		switch(change_type)
-			if("species")
-				if(((SSquirks.quirk_species_locks[quirk_owned]["type"] == "allowed") && !(target_species.id in SSquirks.quirk_species_locks[quirk_owned])) || ((SSquirks.quirk_species_locks[quirk_owned]["type"] == "blocked") && (target_species.id in SSquirks.quirk_species_locks[quirk_owned])))
-					all_quirks_new -= quirk_owned
-					balance += SSquirks.quirk_points[quirk_owned]
 			if("mood")
 				if(initial(quirk_owned_datum.mood_quirk))
 					all_quirks_new -= quirk_owned
@@ -1508,13 +1522,27 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	for(var/V in all_quirks)
 		var/datum/quirk/T = SSquirks.quirks[V]
 		bal -= initial(T.value)
-	return bal
+		if(V in SSquirks.quirk_customizations)
+			for(var/quirk_preference_index in SSquirks.quirk_customizations[V])
+				for(var/quirk_option in quirk_preferences[quirk_preference_index])
+					bal -= (SSquirks.quirk_customization_options[quirk_preference_index][quirk_option]["value"] / 2)
+	return round(bal)
 
 /datum/preferences/proc/GetPositiveQuirkCount()
 	. = 0
 	for(var/q in all_quirks)
 		if(SSquirks.quirk_points[q] > 0)
 			.++
+
+/datum/preferences/proc/get_quirk_option_balance(quirk_preference_index)
+	. = 0
+	var/option_limit = SSquirks.quirk_customization_options[quirk_preference_index]["limit"]
+	for(var/quirk_option in quirk_preferences[quirk_preference_index])
+		. += SSquirks.quirk_customization_options[quirk_preference_index]["options"][quirk_option]["cost"]
+		if(. > option_limit)
+			quirk_preferences[quirk_preferences] -= quirk_option
+			. -= SSquirks.quirk_customization_options[quirk_preference_index]["options"][quirk_option]["cost"]
+			return
 
 /datum/preferences/Topic(href, href_list, hsrc)			//yeah, gotta do this I guess..
 	. = ..()
@@ -1584,16 +1612,30 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				var/value = href_list["value"]
 				var/list/options = splittext(href_list["options"], ", ")
 				var/value_address
-				if(href_list[value_address])
+				if(href_list["value_address"] != "")
 					value_address = href_list["value_address"]
 				var/type = href_list["type"]
-				if(!SSquirks.quirks[quirk] || !value || (type != "edit" && !value_address))
+				if(!SSquirks.quirks[quirk] || !value)
 					return
-				if(type == "edit")
-					if(!value_address)
-						var/status = input(user, "You are modifying your [value] selection, what should it be changed to?", "Character Preference", quirk_preferences[quirk][value]) as null|anything in options
+				switch(type)
+					if("edit")
+						if(!value_address)
+							var/status = input(user, "You are modifying your [value] selection, what should it be changed to?", "Character Preference", quirk_preferences[value]) as null|anything in options
+							if(status)
+								quirk_preferences[value] = status
+						else
+							var/status = input(user, "You are swapping [value_address] for another option, what should it be changed to?", "Character Preference") as null|anything in options
+							if(status)
+								quirk_preferences[value] -= value_address
+								if(status != "remove")
+									quirk_preferences[value] += status
+					if("add")
+						var/status = input(user, "You are adding to your [value] selection, what should be added?", "Character Preference") as null|anything in options
 						if(status)
-							quirk_preferences[quirk][value] = status
+							if(islist(quirk_preferences[value]))
+								quirk_preferences[value] += status
+							else
+								quirk_preferences[value] = list(status)
 			if("update")
 				var/quirk = href_list["quirk"]
 				if(!SSquirks.quirks[quirk])
