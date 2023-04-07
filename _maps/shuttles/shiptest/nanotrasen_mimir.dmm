@@ -316,7 +316,7 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
 /obj/machinery/door/poddoor/shutters{
-	name = "electrical window shutter";
+	name = "Electrical Window Shutter";
 	id = "elec_shut_win"
 	},
 /turf/open/floor/plating,
@@ -1092,6 +1092,15 @@
 /obj/effect/turf_decal/siding/red,
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
+"gI" = (
+/obj/structure/grille,
+/obj/machinery/door/poddoor/shutters{
+	name = "Electrical Window Shutter";
+	id = "elec_shut_win"
+	},
+/obj/structure/window/reinforced/fulltile,
+/turf/open/floor/plating,
+/area/ship/engineering/electrical)
 "gJ" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
@@ -1452,7 +1461,7 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
 /obj/machinery/door/poddoor/shutters{
-	name = "starboard window shutter";
+	name = "Starboard Window Shutter";
 	id = "starb_shut_win"
 	},
 /turf/open/floor/plating,
@@ -8324,6 +8333,15 @@
 	},
 /turf/open/floor/plating,
 /area/ship/crew/canteen)
+"ZQ" = (
+/obj/structure/grille,
+/obj/machinery/door/poddoor/shutters{
+	name = "Starboard Window Shutter";
+	id = "starb_shut_win"
+	},
+/obj/structure/window/reinforced/fulltile,
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
 "ZS" = (
 /obj/item/stack/tile/light{
 	amount = 50
@@ -8935,7 +8953,7 @@ YN
 FF
 eo
 hH
-iu
+ZQ
 jY
 jY
 "}
@@ -9465,7 +9483,7 @@ jY
 jY
 jY
 jY
-bU
+gI
 Ws
 si
 YB
