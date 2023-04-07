@@ -278,3 +278,36 @@
 	shape_types = list(
 		/turf/open/floor/concrete/pavement,
 	)
+
+
+/turf/open/floor/concrete/lit
+	light_power = 0.8
+	light_range = 2
+
+/turf/open/floor/concrete/slab_1/lit
+	light_power = 0.8
+	light_range = 2
+
+/turf/open/floor/concrete/slab_2/lit
+	light_power = 0.8
+	light_range = 2
+
+/turf/open/floor/concrete/slab_3/lit
+	light_power = 0.8
+	light_range = 2
+
+/turf/open/floor/concrete/slab_4/lit
+	light_power = 0.8
+	light_range = 2
+
+/turf/open/floor/concrete/tiles/lit
+	light_power = 0.8
+	light_range = 2
+
+/turf/open/floor/concrete/pavement/lit
+	light_power = 0.8
+	light_range = 2
+
+/turf/open/floor/concrete/reinforced/lit
+	light_power = 0.8
+	light_range = 2

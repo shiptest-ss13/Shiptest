@@ -64,3 +64,9 @@
 	id = "beach_crashed_engineer"
 	description = "An abandoned camp built by a crashed engineer"
 	suffix = "beach_crashed_engineer.dmm"
+
+/datum/map_template/ruin/beachplanet/xenolab
+	name = "Minutemen Research Compound"
+	id = "beach_xenolab"
+	description = "An abandoned Colonial Minutemen Facility dedicated to researching Xenofauna."
+	suffix = "beach_xenolab.dmm"

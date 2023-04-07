@@ -69,3 +69,14 @@
 /area/ruin/beach/treasure_cove
 	name = "Pirate Cavern"
 	icon_state = "purple"
+
+
+//beach_xenolab
+
+/area/ruin/beach/xenolab
+	name = "Minutemen Research Compound"
+	icon_state = "purple"
+
+/area/ruin/powered/beach/xenolab
+	name = "Minutemen Research Compound"
+	icon_state = "red"
