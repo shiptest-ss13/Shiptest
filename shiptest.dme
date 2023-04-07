@@ -14,6 +14,7 @@
 
 // BEGIN_INCLUDE
 #include "_maps\_basemap.dm"
+#include "code\__byond_version_compat.dm"
 #include "code\_compile_options.dm"
 #include "code\world.dm"
 #include "code\__DEFINES\_click.dm"
@@ -1066,6 +1067,7 @@
 #include "code\game\objects\items\candle.dm"
 #include "code\game\objects\items\cardboard_cutouts.dm"
 #include "code\game\objects\items\cards_ids.dm"
+#include "code\game\objects\items\cash.dm"
 #include "code\game\objects\items\chainsaw.dm"
 #include "code\game\objects\items\charter.dm"
 #include "code\game\objects\items\chromosome.dm"
@@ -1228,7 +1230,6 @@
 #include "code\game\objects\items\robot\robot_parts.dm"
 #include "code\game\objects\items\robot\robot_upgrades.dm"
 #include "code\game\objects\items\stacks\bscrystal.dm"
-#include "code\game\objects\items\stacks\cash.dm"
 #include "code\game\objects\items\stacks\license_plates.dm"
 #include "code\game\objects\items\stacks\medical.dm"
 #include "code\game\objects\items\stacks\rods.dm"
@@ -2658,6 +2659,7 @@
 #include "code\modules\mob\living\simple_animal\hostile\megafauna\swarmer.dm"
 #include "code\modules\mob\living\simple_animal\hostile\megafauna\wendigo.dm"
 #include "code\modules\mob\living\simple_animal\hostile\mining_mobs\basilisk.dm"
+#include "code\modules\mob\living\simple_animal\hostile\mining_mobs\brimdemon.dm"
 #include "code\modules\mob\living\simple_animal\hostile\mining_mobs\curse_blob.dm"
 #include "code\modules\mob\living\simple_animal\hostile\mining_mobs\goldgrub.dm"
 #include "code\modules\mob\living\simple_animal\hostile\mining_mobs\goliath.dm"
