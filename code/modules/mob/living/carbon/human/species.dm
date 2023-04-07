@@ -216,8 +216,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/obj/item/bodypart/species_head = /obj/item/bodypart/head
 	var/obj/item/bodypart/species_l_arm = /obj/item/bodypart/l_arm
 	var/obj/item/bodypart/species_r_arm = /obj/item/bodypart/r_arm
-	var/obj/item/bodypart/species_r_leg = /obj/item/bodypart/r_leg
-	var/obj/item/bodypart/species_l_leg = /obj/item/bodypart/l_leg
+	var/obj/item/bodypart/species_r_leg = /obj/item/bodypart/leg/right
+	var/obj/item/bodypart/species_l_leg = /obj/item/bodypart/leg/left
 
 	///For custom overrides for species ass images
 	var/icon/ass_image
@@ -359,8 +359,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	//Note for future: Potentionally add a new C.dna.species() to build a template species for more accurate limb replacement
 
 	if((new_species.digitigrade_customization == DIGITIGRADE_OPTIONAL && C.dna.features["legs"] == "Digitigrade Legs") || new_species.digitigrade_customization == DIGITIGRADE_FORCED)
-		new_species.species_r_leg = /obj/item/bodypart/r_leg/digitigrade
-		new_species.species_l_leg = /obj/item/bodypart/l_leg/digitigrade
+		new_species.species_r_leg = /obj/item/bodypart/leg/right/digitigrade
+		new_species.species_l_leg = /obj/item/bodypart/leg/left/digitigrade
 
 	for(var/obj/item/bodypart/old_part as anything in C.bodyparts)
 		if(old_part.change_exempt_flags & BP_BLOCK_CHANGE_SPECIES)
@@ -396,14 +396,14 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				new_part.update_limb(is_creating = TRUE)
 				qdel(old_part)
 			if(BODY_ZONE_L_LEG)
-				var/obj/item/bodypart/l_leg/new_part = new new_species.species_l_leg()
+				var/obj/item/bodypart/leg/left/new_part = new new_species.species_l_leg()
 				new_part.brute_dam = old_part.brute_dam
 				new_part.burn_dam = old_part.burn_dam
 				new_part.replace_limb(C, TRUE)
 				new_part.update_limb(is_creating = TRUE)
 				qdel(old_part)
 			if(BODY_ZONE_R_LEG)
-				var/obj/item/bodypart/r_leg/new_part = new new_species.species_r_leg()
+				var/obj/item/bodypart/leg/right/new_part = new new_species.species_r_leg()
 				new_part.brute_dam = old_part.brute_dam
 				new_part.burn_dam = old_part.burn_dam
 				new_part.replace_limb(C, TRUE)
@@ -815,16 +815,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		return
 
 	var/obj/item/bodypart/head/HD = H.get_bodypart(BODY_ZONE_HEAD)
-
-	if("tail_lizard" in mutant_bodyparts)
-		if(H.wear_suit && (H.wear_suit.flags_inv & HIDEJUMPSUIT))
-			bodyparts_to_add -= "tail_lizard"
-
-	if("waggingtail_lizard" in mutant_bodyparts)
-		if(H.wear_suit && (H.wear_suit.flags_inv & HIDEJUMPSUIT))
-			bodyparts_to_add -= "waggingtail_lizard"
-		else if ("tail_lizard" in mutant_bodyparts)
-			bodyparts_to_add -= "waggingtail_lizard"
 
 	if("tail_human" in mutant_bodyparts)
 		if(H.wear_suit && (H.wear_suit.flags_inv & HIDEJUMPSUIT))

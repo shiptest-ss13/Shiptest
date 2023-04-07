@@ -233,7 +233,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		dat += "<div class='notice'>Please create an account to save your preferences</div>"
 
 	dat += "</center>"
-
 	dat += "<HR>"
 
 	switch(current_tab)
@@ -2369,6 +2368,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		pref_species = new /datum/species/human
 		save_character()
 
+	//prosthetics work for vox and kepori and update just fine for everyone
+	character.dna.features = features.Copy()
+	character.set_species(chosen_species, icon_update = FALSE, pref_load = TRUE)
+
 	for(var/pros_limbs in prosthetic_limbs)
 		var/obj/item/bodypart/old_part = character.get_bodypart(pros_limbs)
 		if(old_part)
@@ -2398,8 +2401,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if(old_part)
 					qdel(old_part)
 
-	character.dna.features = features.Copy()
-	character.set_species(chosen_species, icon_update = FALSE, pref_load = TRUE)
+	if(pref_species.id == "ipc") // If triggered, vox and kepori arms do not spawn in but ipcs sprites break without it as the code for setting the right prosthetics for them is in set_species().
+		character.set_species(chosen_species, icon_update = FALSE, pref_load = TRUE)
 	//Because of how set_species replaces all bodyparts with new ones, hair needs to be set AFTER species.
 	character.dna.real_name = character.real_name
 	character.hair_color = hair_color
@@ -2417,7 +2420,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		character.update_body()
 		character.update_hair()
 		character.update_body_parts(TRUE)
-
 	character.dna.update_body_size()
 
 /datum/preferences/proc/get_default_name(name_id)

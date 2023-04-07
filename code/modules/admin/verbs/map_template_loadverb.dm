@@ -66,9 +66,9 @@
 	SSmapping.map_templates[map] = M
 	if(template_type == "Shuttle")
 		var/datum/map_template/shuttle/shuttle_template = M
-		shuttle_template.file_name = map
+		shuttle_template.file_name = "[map]"
 		shuttle_template.category = "uploaded"
-		SSmapping.shuttle_templates[map] = shuttle_template
+		SSmapping.shuttle_templates["[map]"] = shuttle_template
 		shuttle_template.ui_interact(usr)
 	message_admins("<span class='adminnotice'>[key_name_admin(src)] has uploaded a map template '[map]' ([M.width]x[M.height])[report_link].</span>")
 	to_chat(src, "<span class='notice'>Map template '[map]' ready to place ([M.width]x[M.height])</span>", confidential = TRUE)

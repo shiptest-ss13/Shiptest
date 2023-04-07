@@ -371,10 +371,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
-"hQ" = (
-/obj/structure/chair/stool,
-/turf/open/floor/carpet/black,
-/area/ship/crew/canteen)
 "ie" = (
 /obj/machinery/advanced_airlock_controller{
 	locked = 0;
@@ -568,10 +564,10 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/holopad,
 /obj/structure/chair/wood{
 	dir = 4
 	},
+/obj/machinery/holopad/emergency/buddy,
 /turf/open/floor/carpet/red,
 /area/ship/crew/canteen)
 "ly" = (
@@ -1592,7 +1588,7 @@
 	},
 /area/ship/crew/canteen/kitchen)
 "Ia" = (
-/obj/machinery/holopad/emergency/command,
+/obj/machinery/holopad/emergency/kitchen,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "In" = (
@@ -2293,7 +2289,11 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew)
 "Vm" = (
-/obj/machinery/vending/hydroseeds,
+/obj/item/seeds/random,
+/obj/item/seeds/wheat,
+/obj/item/seeds/tomato,
+/obj/structure/closet/crate/hydroponics,
+/obj/item/seeds/liberty,
 /turf/open/floor/plasteel/freezer{
 	color = "#8D8B8B"
 	},
@@ -2897,7 +2897,7 @@ Kh
 dl
 IW
 ZT
-hQ
+zD
 wF
 xO
 xO
