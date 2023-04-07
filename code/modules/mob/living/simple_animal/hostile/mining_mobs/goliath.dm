@@ -439,15 +439,18 @@
 /mob/living/simple_animal/hostile/asteroid/goliath/beast/rockplanet
 	name = "gruboid"
 	desc = "A massive beast that uses long tentacles to ensnare its prey, threatening them is not advised under any conditions."
+	icon = 'icons/mob/lavaland/lavaland_monsters.dmi'
 	icon_state = "gruboid2"
 	icon_living = "gruboid2"
 	icon_aggro = "gruboid"
-	pre_attack_icon = "gruboid"
 	icon_dead = "gruboid_dead"
+	pixel_x = 0
+	base_pixel_x = 0
+	pre_attack_icon = "gruboid"
 	icon_gib = "syndicate_gib"
 	tentacle_type = /obj/effect/temp_visual/goliath_tentacle/rockplanet
 
 /obj/effect/temp_visual/goliath_tentacle/rockplanet
-	icon_state = "Gruboid_tentacle_wiggle"
-	wiggle = "Gruboid_tentacle_spawn"
-	retract = "Gruboid_tentacle_retract"
+	icon_state = "gruboid_tentacle_wiggle"
+	wiggle = "gruboid_tentacle_spawn"
+	retract = "gruboid_tentacle_retract"
