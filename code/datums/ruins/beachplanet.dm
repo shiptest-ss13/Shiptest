@@ -4,6 +4,7 @@
 	prefix = "_maps/RandomRuins/BeachRuins/"
 	allow_duplicates = FALSE
 	cost = 5
+	ruin_type = RUINTYPE_BEACH
 
 /datum/map_template/ruin/beachplanet/fishinghut
 	name = "Fishing Hut"
