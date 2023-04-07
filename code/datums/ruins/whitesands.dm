@@ -78,10 +78,16 @@
 	suffix = "whitesands_surface_camp_drugstore.dmm"
 	allow_duplicates = FALSE
 
+/datum/map_template/ruin/whitesands/survivors/saloon
+	name = "Hermit Saloon"
+	id = "ws-saloon"
+	description = "A western style saloon, most popular spot for the hermits to gather planetside"
+
 /datum/map_template/ruin/whitesands/survivors/combination //combined extra large ruin of several other whitesands survivor ruins (excludes the drugstore)
 	name = "Wasteland Survivor Village"
 	id = "ws-combination"
 	description = "A small encampment of nomadic survivors of the First Colony, and their descendants. By all accounts, feral and without allegance to anyone but themselves."
+
 	cost = 1
 	placement_weight = 0.5
 	suffix = "whitesands_surface_camp_combination.dmm"
