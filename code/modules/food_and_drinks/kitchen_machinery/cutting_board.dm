@@ -121,7 +121,7 @@
 		//playsound(src, 'sound/effects/butcher.ogg', 50, TRUE)
 		balloon_alert(user, "cutting...")
 		if(!do_after(user, 3 SECONDS, target = src))
-			balloon_alert_to_viewers("stopped cutting")
+			balloon_alert(user, "stopped cutting")
 			return
 
 		process_food(item_process_recipe, contents[1])
