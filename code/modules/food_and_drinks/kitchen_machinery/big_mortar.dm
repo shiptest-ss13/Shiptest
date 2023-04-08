@@ -100,7 +100,7 @@
 		if(!length(contents) || !in_range(src, user) || !user.is_holding(attacking_item) && !picked_option)
 			return
 
-		balloon_alert_to_viewers("grinding...")
+		balloon_alert(user, "grinding...")
 		if(!do_after(user, 5 SECONDS, target = src))
 			balloon_alert_to_viewers("stopped grinding")
 			return
