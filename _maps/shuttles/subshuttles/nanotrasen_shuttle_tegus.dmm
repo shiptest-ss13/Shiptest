@@ -1,0 +1,745 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"bj" = (
+/obj/effect/turf_decal/trimline/opaque/solgovgold/warning,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4,
+/turf/open/floor/plasteel/airless,
+/area/ship/shuttle)
+"bt" = (
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/button/shieldwallgen{
+	dir = 4;
+	pixel_x = -27;
+	pixel_y = 5;
+	id = "tegus_shield_port";
+	name = "Port Holofield"
+	},
+/obj/machinery/button/door{
+	dir = 4;
+	pixel_x = -27;
+	pixel_y = -5;
+	id = "tegus_shuttle_port";
+	name = "Port Blast Door"
+	},
+/turf/open/floor/plasteel/patterned/ridged,
+/area/ship/shuttle)
+"cu" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel/airless,
+/area/ship/shuttle)
+"cR" = (
+/obj/structure/chair/comfy/shuttle,
+/turf/open/floor/plasteel/patterned/monofloor{
+	dir = 8
+	},
+/area/ship/shuttle)
+"dm" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 1
+	},
+/turf/open/floor/plasteel/airless,
+/area/ship/shuttle)
+"dK" = (
+/obj/machinery/power/smes/engineering,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plating,
+/area/ship/shuttle)
+"dU" = (
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/patterned/ridged,
+/area/ship/shuttle)
+"fx" = (
+/turf/open/floor/plasteel,
+/area/ship/shuttle)
+"fO" = (
+/obj/structure/sign/nanotrasen,
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/shuttle)
+"fV" = (
+/obj/effect/turf_decal/trimline/opaque/solgovgold/line{
+	dir = 1
+	},
+/obj/machinery/light,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 9
+	},
+/turf/open/floor/plasteel/airless,
+/area/ship/shuttle)
+"ge" = (
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 4
+	},
+/obj/machinery/door/poddoor/preopen{
+	id = "tegus_shuttle_port"
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 8;
+	id = "tegus_shield_port"
+	},
+/turf/open/floor/plasteel/patterned/ridged,
+/area/ship/shuttle)
+"gz" = (
+/obj/effect/turf_decal/trimline/opaque/solgovgold/warning{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 8
+	},
+/turf/open/floor/plasteel/airless,
+/area/ship/shuttle)
+"jW" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
+/turf/open/floor/plasteel,
+/area/ship/shuttle)
+"kH" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
+	dir = 8
+	},
+/turf/open/floor/plasteel/airless,
+/area/ship/shuttle)
+"lV" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/obj/structure/window/reinforced/spawner,
+/turf/open/floor/plasteel/patterned/monofloor{
+	dir = 4
+	},
+/area/ship/shuttle)
+"nB" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 9
+	},
+/turf/open/floor/plasteel,
+/area/ship/shuttle)
+"nL" = (
+/obj/effect/turf_decal/trimline/opaque/solgovgold/line{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/machinery/light,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 5
+	},
+/turf/open/floor/plasteel/airless,
+/area/ship/shuttle)
+"oi" = (
+/obj/machinery/atmospherics/components/unary/tank/air{
+	dir = 1;
+	piping_layer = 4
+	},
+/turf/open/floor/plasteel/patterned/ridged,
+/area/ship/shuttle)
+"oI" = (
+/obj/machinery/computer/crew{
+	dir = 8
+	},
+/turf/open/floor/plasteel/patterned/monofloor,
+/area/ship/shuttle)
+"pm" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/shuttle)
+"qx" = (
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 4
+	},
+/obj/machinery/door/poddoor/preopen{
+	id = "tegus_shuttle_starboard"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 8;
+	id = "tegus_shield_starboard"
+	},
+/obj/structure/cable,
+/turf/open/floor/plasteel/patterned/ridged,
+/area/ship/shuttle)
+"qz" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/obj/structure/window/reinforced/spawner,
+/turf/open/floor/plasteel/patterned/monofloor{
+	dir = 8
+	},
+/area/ship/shuttle)
+"rp" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "tegus_shuttle_window"
+	},
+/turf/open/floor/plating,
+/area/ship/shuttle)
+"rx" = (
+/turf/template_noop,
+/area/template_noop)
+"rR" = (
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plating,
+/area/ship/shuttle)
+"sa" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 5
+	},
+/turf/open/floor/plating,
+/area/ship/shuttle)
+"sq" = (
+/obj/machinery/door/poddoor/preopen{
+	id = "tegus_shuttle_starboard"
+	},
+/turf/open/floor/plasteel/patterned/ridged,
+/area/ship/shuttle)
+"tB" = (
+/obj/machinery/holopad/emergency/command,
+/obj/effect/turf_decal/box,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ship/shuttle)
+"uJ" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/turf/open/floor/plasteel/airless,
+/area/ship/shuttle)
+"wV" = (
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 8
+	},
+/obj/machinery/door/poddoor/preopen{
+	id = "tegus_shuttle_port"
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 4;
+	id = "tegus_shield_port"
+	},
+/turf/open/floor/plasteel/patterned/ridged,
+/area/ship/shuttle)
+"xB" = (
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ship/shuttle)
+"yr" = (
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 8
+	},
+/obj/machinery/door/poddoor/preopen{
+	id = "tegus_shuttle_starboard"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 4;
+	id = "tegus_shield_starboard"
+	},
+/obj/structure/cable,
+/turf/open/floor/plasteel/patterned/ridged,
+/area/ship/shuttle)
+"yP" = (
+/obj/machinery/computer/helm{
+	dir = 8
+	},
+/turf/open/floor/plasteel/patterned/monofloor{
+	dir = 1
+	},
+/area/ship/shuttle)
+"zG" = (
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/button/shieldwallgen{
+	dir = 4;
+	pixel_x = -27;
+	pixel_y = -5;
+	id = "tegus_shield_starboard";
+	name = "Starboard Holofield"
+	},
+/obj/machinery/button/door{
+	dir = 4;
+	pixel_x = -27;
+	pixel_y = 5;
+	id = "tegus_shuttle_starboard";
+	name = "Starboard Blast Door"
+	},
+/turf/open/floor/plasteel/patterned/ridged,
+/area/ship/shuttle)
+"Au" = (
+/obj/effect/turf_decal/industrial/warning,
+/obj/machinery/telecomms/relay/preset/mining{
+	network = "ntsv_commnet"
+	},
+/obj/machinery/airalarm/directional/east,
+/turf/open/floor/plasteel/patterned/ridged,
+/area/ship/shuttle)
+"AQ" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 4
+	},
+/obj/structure/window/reinforced/spawner/west,
+/obj/machinery/door/window/eastleft,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "tegus_shuttle_engine"
+	},
+/turf/open/floor/plating,
+/area/ship/shuttle)
+"AW" = (
+/obj/effect/turf_decal/trimline/opaque/solgovgold/line,
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 10
+	},
+/turf/open/floor/plasteel/airless,
+/area/ship/shuttle)
+"Bg" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/machinery/power/port_gen/pacman,
+/obj/structure/cable/yellow,
+/obj/structure/cable{
+	icon_state = "5-8"
+	},
+/obj/machinery/light/small,
+/turf/open/floor/plasteel/patterned/ridged,
+/area/ship/shuttle)
+"BM" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/structure/cable,
+/obj/structure/cable{
+	icon_state = "1-10"
+	},
+/obj/machinery/power/apc/auto_name/east,
+/obj/machinery/atmospherics/components/binary/pump/on/layer4{
+	name = "Air to Distro";
+	target_pressure = 1000;
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ship/shuttle)
+"Cu" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ship/shuttle)
+"CM" = (
+/turf/closed/wall/mineral/titanium,
+/area/ship/shuttle)
+"Em" = (
+/obj/effect/turf_decal/trimline/opaque/solgovgold/warning{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 8
+	},
+/turf/open/floor/plasteel/airless,
+/area/ship/shuttle)
+"Iq" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 4
+	},
+/obj/structure/window/reinforced/spawner/west,
+/obj/machinery/door/window/eastright,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "tegus_shuttle_engine"
+	},
+/turf/open/floor/plating,
+/area/ship/shuttle)
+"IR" = (
+/obj/effect/turf_decal/trimline/opaque/solgovgold/warning{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
+	dir = 1
+	},
+/turf/open/floor/plasteel/airless,
+/area/ship/shuttle)
+"Ks" = (
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plating,
+/area/ship/shuttle)
+"LC" = (
+/obj/effect/turf_decal/trimline/opaque/solgovgold/warning,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 8
+	},
+/turf/open/floor/plasteel/airless,
+/area/ship/shuttle)
+"LN" = (
+/obj/machinery/door/airlock/shuttle,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ship/shuttle)
+"LU" = (
+/obj/structure/chair/comfy/shuttle,
+/turf/open/floor/plasteel/patterned/monofloor,
+/area/ship/shuttle)
+"Mp" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 9
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plasteel,
+/area/ship/shuttle)
+"MD" = (
+/obj/effect/turf_decal/trimline/opaque/solgovgold/line,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 6
+	},
+/turf/open/floor/plasteel/airless,
+/area/ship/shuttle)
+"MK" = (
+/obj/structure/table/reinforced,
+/obj/machinery/button/door{
+	dir = 1;
+	id = "tegus_shuttle_window";
+	name = "Window Shutters";
+	pixel_x = 6
+	},
+/obj/machinery/button/door{
+	dir = 1;
+	id = "tegus_shuttle_engine";
+	name = "Engine Shutters";
+	pixel_x = -6
+	},
+/turf/open/floor/plasteel,
+/area/ship/shuttle)
+"NJ" = (
+/obj/machinery/door/airlock/shuttle,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ship/shuttle)
+"Og" = (
+/obj/structure/chair/comfy/shuttle,
+/turf/open/floor/plasteel/patterned/monofloor{
+	dir = 4
+	},
+/area/ship/shuttle)
+"Ol" = (
+/obj/docking_port/mobile{
+	dir = 2
+	},
+/obj/machinery/door/poddoor/preopen{
+	id = "tegus_shuttle_port"
+	},
+/turf/open/floor/plasteel/patterned/ridged,
+/area/ship/shuttle)
+"Rf" = (
+/obj/item/radio/intercom/wideband,
+/obj/structure/table/reinforced,
+/turf/open/floor/plasteel,
+/area/ship/shuttle)
+"Rs" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/turf/open/floor/plasteel/airless,
+/area/ship/shuttle)
+"Sp" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/obj/structure/window/reinforced/spawner,
+/turf/open/floor/plasteel/patterned/monofloor{
+	dir = 1
+	},
+/area/ship/shuttle)
+"SG" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 10
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
+/turf/open/floor/plasteel,
+/area/ship/shuttle)
+"To" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ship/shuttle)
+"Tz" = (
+/obj/effect/turf_decal/trimline/opaque/solgovgold/warning,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 8
+	},
+/turf/open/floor/plasteel/airless,
+/area/ship/shuttle)
+"Wx" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 4;
+	name = "Helm"
+	},
+/turf/open/floor/plasteel,
+/area/ship/shuttle)
+
+(1,1,1) = {"
+rx
+rx
+rR
+rx
+rx
+rR
+rx
+rx
+"}
+(2,1,1) = {"
+rx
+pm
+AQ
+pm
+pm
+Iq
+pm
+rx
+"}
+(3,1,1) = {"
+rx
+pm
+xB
+dK
+Ks
+xB
+pm
+rx
+"}
+(4,1,1) = {"
+rx
+pm
+SG
+sa
+Mp
+Bg
+pm
+rx
+"}
+(5,1,1) = {"
+rx
+pm
+Au
+To
+BM
+oi
+pm
+rx
+"}
+(6,1,1) = {"
+rx
+fO
+pm
+NJ
+pm
+pm
+fO
+rx
+"}
+(7,1,1) = {"
+pm
+pm
+MD
+cu
+uJ
+nL
+pm
+pm
+"}
+(8,1,1) = {"
+wV
+bt
+LC
+qz
+cR
+gz
+zG
+yr
+"}
+(9,1,1) = {"
+Ol
+jW
+bj
+Sp
+LU
+IR
+dm
+sq
+"}
+(10,1,1) = {"
+ge
+dU
+Tz
+lV
+Og
+Em
+dU
+qx
+"}
+(11,1,1) = {"
+pm
+pm
+AW
+kH
+Rs
+fV
+pm
+pm
+"}
+(12,1,1) = {"
+rx
+fO
+pm
+LN
+pm
+pm
+fO
+rx
+"}
+(13,1,1) = {"
+rx
+pm
+jW
+nB
+tB
+fx
+pm
+rx
+"}
+(14,1,1) = {"
+rx
+rp
+Rf
+Wx
+Cu
+MK
+rp
+rx
+"}
+(15,1,1) = {"
+rx
+CM
+pm
+yP
+oI
+pm
+CM
+rx
+"}
+(16,1,1) = {"
+rx
+rx
+CM
+rp
+rp
+CM
+rx
+rx
+"}
