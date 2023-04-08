@@ -72,7 +72,6 @@
 	else if(islizard(H))
 		return pick('sound/voice/lizard/lizard_scream_1.ogg', 'sound/voice/lizard/lizard_scream_2.ogg', 'sound/voice/lizard/lizard_scream_3.ogg', 'sound/voice/lizard/lizard_scream_4.ogg')
 
-
 /datum/emote/living/carbon/human/hiss
 	key = "hiss"
 	key_third_person = "hisses"
@@ -100,8 +99,6 @@
 	var/mob/living/carbon/human/H = user
 	if (islizard(H))
 		return 'sound/voice/lizard/weh.ogg'
-
-	
 
 /datum/emote/living/carbon/human/pale
 	key = "pale"
