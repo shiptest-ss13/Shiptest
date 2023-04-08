@@ -279,6 +279,7 @@
 		/turf/open/floor/concrete/pavement,
 	)
 
+//lit variant
 
 /turf/open/floor/concrete/lit
 	light_power = 0.8
@@ -311,3 +312,29 @@
 /turf/open/floor/concrete/reinforced/lit
 	light_power = 0.8
 	light_range = 2
+
+//beach variant
+
+/turf/open/floor/concrete/lit/beach
+	light_color = LIGHT_COLOR_TUNGSTEN
+
+/turf/open/floor/concrete/slab_1/lit/beach
+	light_color = LIGHT_COLOR_TUNGSTEN
+
+/turf/open/floor/concrete/slab_2/lit/beach
+	light_color = LIGHT_COLOR_TUNGSTEN
+
+/turf/open/floor/concrete/slab_3/lit/beach
+	light_color = LIGHT_COLOR_TUNGSTEN
+
+/turf/open/floor/concrete/slab_4/lit/beach
+	light_color = LIGHT_COLOR_TUNGSTEN
+
+/turf/open/floor/concrete/tiles/lit/beach
+	light_color = LIGHT_COLOR_TUNGSTEN
+
+/turf/open/floor/concrete/pavement/lit/beach
+	light_color = LIGHT_COLOR_TUNGSTEN
+
+/turf/open/floor/concrete/reinforced/lit/beach
+	light_color = LIGHT_COLOR_TUNGSTEN
