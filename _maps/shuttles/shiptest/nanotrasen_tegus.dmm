@@ -249,7 +249,9 @@
 /turf/open/floor/plating,
 /area/ship/hallway/central)
 "eW" = (
-/obj/machinery/telecomms/bus/preset_six,
+/obj/machinery/telecomms/bus/preset_six{
+	network = "ntsv_commnet"
+	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/engineering/communications)
 "eZ" = (
@@ -456,7 +458,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "iV" = (
-/obj/machinery/telecomms/hub/preset,
+/obj/machinery/telecomms/hub/preset{
+	network = "ntsv_commnet"
+	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/engineering/communications)
 "iY" = (
@@ -525,7 +529,7 @@
 "jQ" = (
 /obj/machinery/computer/telecomms/server{
 	dir = 4;
-	network = "irmg_commnet"
+	network = "ntsv_commnet"
 	},
 /obj/machinery/light{
 	dir = 8
@@ -1018,7 +1022,7 @@
 /area/ship/cargo)
 "tU" = (
 /obj/machinery/telecomms/processor/preset_four{
-	network = "irmg_commnet"
+	network = "ntsv_commnet"
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/engineering/communications)
@@ -1242,7 +1246,7 @@
 /area/ship/maintenance/starboard)
 "wE" = (
 /obj/docking_port/stationary{
-	roundstart_template = /datum/map_template/shuttle/subshuttles/nanotrasen_tegus;
+	roundstart_template = /datum/map_template/shuttle/subshuttles/nanotrasen_shuttletegus;
 	height = 8;
 	width = 16;
 	dwidth = 9;
@@ -2164,7 +2168,7 @@
 "NT" = (
 /obj/machinery/telecomms/receiver/preset_right{
 	freq_listening = list(1347,1359);
-	network = "irmg_commnet"
+	network = "ntsv_commnet"
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/engineering/communications)
@@ -2340,7 +2344,9 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "Rv" = (
-/obj/machinery/telecomms/broadcaster/preset_left,
+/obj/machinery/telecomms/broadcaster/preset_left{
+	network = "ntsv_commnet"
+	},
 /obj/machinery/light{
 	dir = 8
 	},
@@ -2683,7 +2689,9 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "XV" = (
-/obj/machinery/telecomms/relay/preset,
+/obj/machinery/telecomms/relay/preset{
+	network = "nstv_commnet"
+	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/engineering/communications)
 "Yk" = (

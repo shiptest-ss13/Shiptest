@@ -142,7 +142,9 @@
 /area/ship/shuttle)
 "y" = (
 /obj/effect/turf_decal/industrial/warning,
-/obj/machinery/telecomms/relay/preset/mining,
+/obj/machinery/telecomms/relay/preset/mining{
+	network = "ntsv_commnet"
+	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/shuttle)
 "A" = (
