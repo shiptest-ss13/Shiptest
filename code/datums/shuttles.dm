@@ -351,5 +351,9 @@
 /datum/map_template/shuttle/subshuttles
 	category = "subshuttles"
 
-//your subshuttle here
+/datum/map_template/shuttle/subshuttles/nanotrasen_tegus
+	file_name = "nanotrasen_shuttletegus"
+	name = "Tegus Transport Shuttle"
+	prefix = "NTSV"
 
+//your subshuttle here

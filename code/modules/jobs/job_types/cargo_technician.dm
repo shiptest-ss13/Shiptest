@@ -65,6 +65,17 @@
 	gloves = /obj/item/clothing/gloves/fingerless
 	glasses = /obj/item/clothing/glasses/sunglasses/big
 
+/datum/outfit/job/cargo_tech/pilot/nanotrasen
+	name = "Pilot (Nanotrasen)"
+
+	uniform = /obj/item/clothing/under/rank/cargo/tech
+	accessory = /obj/item/clothing/accessory/armband/cargo
+	suit = /obj/item/clothing/suit/jacket
+	shoes = /obj/item/clothing/shoes/jackboots
+	gloves = /obj/item/clothing/gloves/fingerless
+	glasses = /obj/item/clothing/glasses/sunglasses/big
+
+
 /datum/outfit/job/cargo_tech/donk
 	name = "Customer Associate (Donk! Co.)"
 	id = /obj/item/card/id/syndicate_command/crew_id
