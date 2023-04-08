@@ -57,7 +57,7 @@
 		return
 
 	set_anchored(!anchored)
-	balloon_alert_to_viewers(anchored ? "secured" : "unsecured")
+	balloon_alert(user, anchored ? "secured" : "unsecured")
 	return //SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
 /obj/structure/large_mortar/attackby(obj/item/attacking_item, mob/living/carbon/human/user)
