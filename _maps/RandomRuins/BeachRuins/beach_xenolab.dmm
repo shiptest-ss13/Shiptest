@@ -134,9 +134,9 @@
 /area/ruin/beach/xenolab)
 "bI" = (
 /obj/structure/alien/weeds,
-/obj/structure/bed/nest,
-/obj/item/gun/energy/beam_rifle,
 /obj/effect/mob_spawn/human/corpse/damaged,
+/obj/structure/bed/nest,
+/obj/item/chainsaw,
 /turf/open/floor/plasteel/white,
 /area/ruin/beach/xenolab)
 "bJ" = (
@@ -537,8 +537,8 @@
 /area/ruin/beach/xenolab)
 "iw" = (
 /obj/structure/alien/weeds/node,
-/obj/structure/bed/nest,
 /obj/effect/mob_spawn/human/corpse/damaged,
+/obj/structure/bed/nest,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/beach/xenolab)
 "iy" = (
@@ -686,9 +686,8 @@
 /turf/open/floor/plating,
 /area/ruin/beach/xenolab)
 "jJ" = (
-/obj/structure/bed/nest,
 /obj/structure/alien/weeds,
-/obj/item/chainsaw,
+/obj/structure/bed/nest,
 /turf/open/floor/concrete,
 /area/ruin/beach/xenolab)
 "jK" = (
@@ -739,12 +738,6 @@
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plating,
-/area/ruin/beach/xenolab)
-"kk" = (
-/obj/structure/bed/nest,
-/obj/structure/alien/weeds,
-/obj/effect/mob_spawn/human/corpse/damaged,
-/turf/open/floor/plasteel/tech/grid,
 /area/ruin/beach/xenolab)
 "kl" = (
 /obj/structure/alien/weeds,
@@ -1266,8 +1259,8 @@
 /area/ruin/beach/xenolab)
 "rG" = (
 /obj/structure/alien/weeds,
-/obj/structure/bed/nest,
 /obj/effect/mob_spawn/human/corpse/damaged,
+/obj/structure/bed/nest,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/beach/xenolab)
 "rI" = (
@@ -1596,8 +1589,8 @@
 /area/ruin/powered/beach/xenolab)
 "uT" = (
 /obj/item/circuitboard/machine/protolathe,
-/obj/structure/bed/nest,
 /obj/structure/alien/weeds,
+/obj/structure/bed/nest,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/beach/xenolab)
 "uW" = (
@@ -1723,11 +1716,11 @@
 /turf/open/floor/plating/grass/beach/lit,
 /area/ruin/beach/xenolab)
 "ws" = (
-/obj/structure/bed/nest,
 /obj/structure/alien/weeds,
 /obj/effect/decal/cleanable/blood/gibs/body,
 /obj/item/clothing/head/cowboy/sec/minutemen,
 /obj/item/clothing/under/rank/command/minutemen,
+/obj/structure/bed/nest,
 /turf/open/floor/plasteel/tech,
 /area/ruin/beach/xenolab)
 "wx" = (
@@ -1888,8 +1881,8 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
 	},
-/obj/structure/bed/nest,
 /obj/item/flamethrower,
+/obj/structure/bed/nest,
 /turf/open/floor/plasteel/tech,
 /area/ruin/beach/xenolab)
 "yI" = (
@@ -1969,8 +1962,8 @@
 /area/ruin/beach/xenolab)
 "zm" = (
 /obj/structure/alien/weeds,
-/obj/structure/bed/nest,
 /obj/item/gun/ballistic/automatic/assualt/p16/minutemen,
+/obj/structure/bed/nest,
 /turf/open/floor/concrete,
 /area/ruin/beach/xenolab)
 "zn" = (
@@ -2077,7 +2070,6 @@
 	pixel_y = -29
 	},
 /obj/structure/alien/weeds,
-/obj/structure/bed/nest,
 /obj/item/clothing/head/caphat/minutemen,
 /obj/item/radio/headset/minutemen/captain,
 /obj/item/clothing/under/rank/command/minutemen,
@@ -2086,6 +2078,7 @@
 	name = "Armory Key";
 	puzzle_id = "armory_id_room"
 	},
+/obj/structure/bed/nest,
 /turf/open/floor/plasteel/white,
 /area/ruin/beach/xenolab)
 "AM" = (
@@ -4883,7 +4876,7 @@ Em
 Nd
 YR
 dl
-kk
+rG
 er
 ea
 ws
