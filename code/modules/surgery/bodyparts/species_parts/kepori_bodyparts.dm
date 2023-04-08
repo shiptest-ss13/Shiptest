@@ -25,13 +25,13 @@
 	limb_id = SPECIES_KEPORI
 	bodytype = BODYTYPE_KEPORI | BODYTYPE_ORGANIC
 
-/obj/item/bodypart/l_leg/kepori
+/obj/item/bodypart/leg/left/kepori
 	icon = 'icons/mob/species/kepori/bodyparts.dmi'
 	uses_mutcolor = TRUE
 	limb_id = SPECIES_KEPORI
 	bodytype = BODYTYPE_KEPORI | BODYTYPE_ORGANIC
 
-/obj/item/bodypart/r_leg/kepori
+/obj/item/bodypart/leg/right/kepori
 	icon = 'icons/mob/species/kepori/bodyparts.dmi'
 	uses_mutcolor = TRUE
 	limb_id = SPECIES_KEPORI

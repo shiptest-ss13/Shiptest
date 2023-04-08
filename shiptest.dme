@@ -14,6 +14,7 @@
 
 // BEGIN_INCLUDE
 #include "_maps\_basemap.dm"
+#include "code\__byond_version_compat.dm"
 #include "code\_compile_options.dm"
 #include "code\world.dm"
 #include "code\__DEFINES\_click.dm"
@@ -2284,7 +2285,6 @@
 #include "code\modules\mapping\mapping_helpers.dm"
 #include "code\modules\mapping\preloader.dm"
 #include "code\modules\mapping\reader.dm"
-#include "code\modules\mapping\ruins.dm"
 #include "code\modules\mapping\verify.dm"
 #include "code\modules\mapping\writer.dm"
 #include "code\modules\mapping\space_management\multiz_helpers.dm"
@@ -2660,6 +2660,7 @@
 #include "code\modules\mob\living\simple_animal\hostile\megafauna\swarmer.dm"
 #include "code\modules\mob\living\simple_animal\hostile\megafauna\wendigo.dm"
 #include "code\modules\mob\living\simple_animal\hostile\mining_mobs\basilisk.dm"
+#include "code\modules\mob\living\simple_animal\hostile\mining_mobs\brimdemon.dm"
 #include "code\modules\mob\living\simple_animal\hostile\mining_mobs\curse_blob.dm"
 #include "code\modules\mob\living\simple_animal\hostile\mining_mobs\goldgrub.dm"
 #include "code\modules\mob\living\simple_animal\hostile\mining_mobs\goliath.dm"
@@ -2790,6 +2791,7 @@
 #include "code\modules\overmap\objects\event_datum.dm"
 #include "code\modules\overmap\objects\outpost.dm"
 #include "code\modules\overmap\objects\star.dm"
+#include "code\modules\overmap\planets\planet_types.dm"
 #include "code\modules\overmap\ships\controlled_ship_datum.dm"
 #include "code\modules\overmap\ships\owner_action.dm"
 #include "code\modules\overmap\ships\ship_application.dm"

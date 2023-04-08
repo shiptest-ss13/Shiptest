@@ -70,3 +70,71 @@
   MrSamu99:
   - rscadd: Added ship description display to job select screen
   - bugfix: Fixes the ship description in ship purchase screen
+2023-03-24:
+  goober3:
+  - rscadd: The Pirate Village, a new beach ruin.
+2023-03-25:
+  Apogee-dev:
+  - tweak: Fully remapped the Osprey
+2023-03-27:
+  MarkSuckerberg:
+  - admin: The map exporter now saves even more details than it previously did (decals,
+      APCs,
+  - admin: Uploading ship maps in-round now actually works.
+  - admin: View variables looks and works a little bit better.
+2023-03-28:
+  ? ''
+  : - rscadd: Ruined megaseed servitors can now be found on the frontier, carrying
+        a bounty of seeds for intrepid adventurers.
+    - balance: the time it takes for plants to reach a lethal age has been increased
+        massively.
+    - balance: Plant production time increased a bit to compensate.
+    - balance: megaseed servitors have been removed from ships and ruins. Ships that
+        carried one now have a crate with some starting seeds.
+    - balance: removes gatfruit from the seed vault pool.
+    - balance: reduces the chance of getting gatfruit from a plant-themed demonic
+        portal significantly.
+    - balance: corpse flowers once again have formaldehyde and liquid gibs.
+    - rscadd: Adds Genesis Serum, a reagent that transforms tiles into natural grass
+        on splash, then causes some natural flora objects to grow. Turn your ship
+        green!
+  Apogee-dev:
+  - bugfix: fixed sprites for connected computer consoles
+  MemedHams, Fikou:
+  - rscadd: Brimdemons have appeared! These simplemobs fire a beam of energy in a
+      cardinal direction when disturbed.
+  - rscadd: Adds Gardens, harvestable patches of foliage that drop a plant randomly
+      selected from a themed pool.
+  - rscadd: Driftwood and seashells now wash up on the shores of beach worlds.
+  - rscadd: The rocks found on rockworlds have now turned the same red hue as the
+      ground and walls.
+  - rscadd: Small colonies of Glowshroom can now be found in the caves of wasteland
+      worlds.
+  - rscadd: Adds a Lobstrosity crusher trophy.
+  - tweak: Gruboids now spawn from nests in the caves of Rockworlds.
+  - tweak: The sand found on rockworlds and wasteland planets now contains additional
+      reagents.
+  - tweak: different planets now have more diverse ore pools. Some may now have significantly
+      more of certain ores, or lack one or two ores alltogether
+  - tweak: Rock names and examine descriptions are now more soulful.
+  - tweak: Some trees and moss found on lava worlds now lend more insight into their
+      molten planet.
+  - tweak: Saguaro Cacti are now Maguaro Cacti, a cold climate suspecies.
+  - balance: planetary ore pools are now more varied.
+  - balance: Self-sustaining mode on hydroponics trays now draws less power.
+  - bugfix: Chilly Peppers that grow on ice worlds now have an actual texture.
+  - bugfix: fixes the missing "white sand" texture
+  - bugfix: lit planetary tiles no longer go dark when dug out.
+  - soundadd: Brimdemon noises.
+  - code_imp: adds the get_line helper.
+  tmtmtl30:
+  - bugfix: It turns out that landing on a planet would freeze the game for a quarter-second
+      near the end of its generation. ...Not anymore?
+2023-03-30:
+  spockye:
+  - bugfix: fixed /obj/effect/turf_decal/industrial/loading
+2023-03-31:
+  thgvr:
+  - rscadd: New Digitigrade lizard sprites.
+  - rscadd: Various syndicate and mining clothing resprites.
+  - rscadd: Sarathi can now have an incredibly large tail.
