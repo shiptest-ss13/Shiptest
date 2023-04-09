@@ -32,9 +32,6 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "bl" = (
@@ -2383,6 +2380,9 @@
 /obj/item/gun/energy/laser,
 /obj/item/storage/box/rxglasses/minerspykit,
 /obj/item/megaphone/command,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Lq" = (
@@ -3151,7 +3151,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/power/apc/auto_name/north,
 /obj/structure/cable{
-	icon_state = "1-2"
+	icon_state = "0-2"
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/maintenance/starboard)
