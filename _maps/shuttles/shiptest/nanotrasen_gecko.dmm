@@ -44,7 +44,8 @@
 /area/ship/maintenance/port)
 "aB" = (
 /obj/machinery/computer/rdconsole{
-	dir = 8
+	dir = 8;
+	icon_state = "computer-right"
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
@@ -66,12 +67,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
-"aP" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/manifold4w/brown/hidden,
-/obj/effect/spawner/lootdrop/salvage_50,
-/turf/open/floor/plasteel/patterned/cargo_one,
-/area/ship/cargo/starboard)
 "aS" = (
 /turf/closed/wall,
 /area/ship/engineering/communications)
@@ -153,6 +148,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/industrial/warning/fulltile,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo/port)
 "bA" = (
@@ -172,6 +168,9 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/central)
 "bH" = (
@@ -213,8 +212,8 @@
 /obj/effect/turf_decal/box/corners{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/brown/hidden,
 /obj/effect/spawner/lootdrop/salvage_50,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo/starboard)
 "ce" = (
@@ -223,7 +222,7 @@
 	},
 /obj/machinery/light/small,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/trimline/opaque/grey/filled/warning{
+/obj/effect/turf_decal/trimline/transparent/white/filled/warning{
 	dir = 8
 	},
 /turf/open/floor/plating,
@@ -286,7 +285,7 @@
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/trimline/opaque/grey/filled/warning,
+/obj/effect/turf_decal/trimline/transparent/white/filled/warning,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "cY" = (
@@ -320,11 +319,6 @@
 /area/ship/hallway/central)
 "dj" = (
 /obj/effect/turf_decal/industrial/warning,
-/obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/oxygen_output{
-	dir = 1;
-	name = "port salvage bay output inlet";
-	on = 0
-	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo/port)
 "dk" = (
@@ -373,6 +367,7 @@
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
 	},
+/obj/machinery/modular_computer/console/preset/id,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "dG" = (
@@ -386,8 +381,8 @@
 /obj/effect/turf_decal/box/corners{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/manifold4w/brown/hidden,
 /obj/effect/spawner/lootdrop/salvage_50,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo/port)
 "dK" = (
@@ -544,6 +539,9 @@
 	},
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/aft)
 "fG" = (
@@ -551,6 +549,9 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/arrows,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo/port)
 "fK" = (
@@ -580,7 +581,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
-/obj/effect/turf_decal/trimline/opaque/black/filled/warning{
+/obj/effect/turf_decal/trimline/transparent/white/filled/warning{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
@@ -604,24 +605,12 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "gs" = (
-/obj/structure/closet/secure_closet{
-	icon_state = "cap";
-	name = "\proper captain's locker";
-	req_access_txt = "20"
-	},
-/obj/item/stock_parts/cell/gun,
-/obj/item/gun/energy/laser,
-/obj/item/clothing/under/rank/command/captain/nt,
-/obj/item/clothing/head/caphat/nt,
-/obj/item/clothing/shoes/laceup,
-/obj/item/clothing/suit/toggle/lieutenant{
-	desc = "Threadbare and uncharacteristically casual for Nanotrasen. Probably rebadged surplus from some colonial militia.";
-	name = "tattered captain's jacket"
-	},
-/obj/item/clothing/glasses/sunglasses,
 /obj/effect/turf_decal/borderfloor,
 /obj/machinery/status_display/shuttle{
 	pixel_y = -32
+	},
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -663,10 +652,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
-/obj/machinery/computer/atmos_control/tank/oxygen_tank{
-	dir = 4;
-	name = "Port Salvage Bay Control";
-	sensors = list("o2_sensor" = "Port Salvage Bay")
+/obj/structure/table/reinforced,
+/obj/item/storage/toolbox/mechanical{
+	pixel_y = -5
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo/port)
@@ -711,9 +699,14 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
-/obj/effect/turf_decal/industrial/hatch/yellow,
-/obj/machinery/door/firedoor,
+/obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech/techmaint,
@@ -735,8 +728,11 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/effect/turf_decal/industrial/hatch/yellow,
-/obj/machinery/door/firedoor,
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "hy" = (
@@ -756,7 +752,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
-/obj/effect/turf_decal/trimline/opaque/black/filled/warning{
+/obj/effect/turf_decal/trimline/transparent/white/filled/warning{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -778,8 +774,11 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/effect/turf_decal/industrial/hatch/yellow,
-/obj/machinery/door/firedoor,
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "hT" = (
@@ -806,7 +805,7 @@
 "hU" = (
 /obj/structure/sign/warning/fire,
 /turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/engineering/incinerator)
+/area/ship/engineering/engine)
 "hX" = (
 /obj/machinery/atmospherics/components/trinary/mixer{
 	dir = 8;
@@ -841,12 +840,9 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/machinery/power/apc/auto_name/west,
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
+/obj/machinery/airalarm/directional/west,
 /turf/open/floor/plating,
-/area/ship/engineering/incinerator)
+/area/ship/engineering/engine)
 "ix" = (
 /obj/structure/disposalpipe/trunk{
 	dir = 4
@@ -856,7 +852,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/engine/airless,
-/area/ship/engineering/incinerator)
+/area/ship/engineering/engine)
 "iA" = (
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 4
@@ -907,8 +903,11 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/effect/turf_decal/industrial/hatch/yellow,
-/obj/machinery/door/firedoor,
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/maintenance/fore)
 "ja" = (
@@ -916,6 +915,7 @@
 	id = "gecko_port"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/industrial/warning/fulltile,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo/port)
 "jb" = (
@@ -932,7 +932,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/railing,
-/obj/effect/turf_decal/trimline/opaque/grey/filled/warning{
+/obj/effect/turf_decal/trimline/transparent/white/filled/warning{
 	dir = 4
 	},
 /turf/open/floor/plating,
@@ -989,11 +989,18 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
-/obj/effect/turf_decal/trimline/opaque/black/filled/warning{
+/obj/effect/turf_decal/trimline/transparent/white/filled/warning{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
+"jO" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/catwalk/over,
+/obj/structure/marker_beacon,
+/turf/open/floor/plating,
+/area/ship/external)
 "jQ" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos{
 	dir = 4
@@ -1028,9 +1035,6 @@
 	dir = 1
 	},
 /obj/machinery/door/firedoor/heavy,
-/obj/machinery/door/poddoor/preopen{
-	id = "gecko_port_int"
-	},
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo/port)
@@ -1087,9 +1091,9 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/components/unary/outlet_injector/atmos/oxygen_input{
-	name = "port salvage bay input injector";
-	on = 0
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/structure/cable{
+	icon_state = "1-4"
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo/port)
@@ -1106,9 +1110,6 @@
 /area/ship/engineering/engine)
 "kP" = (
 /obj/effect/turf_decal/box/corners,
-/obj/machinery/atmospherics/pipe/manifold/brown/hidden{
-	dir = 4
-	},
 /obj/effect/spawner/lootdrop/salvage_50,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo/starboard)
@@ -1202,13 +1203,18 @@
 /turf/open/floor/plating,
 /area/ship/bridge)
 "mi" = (
-/obj/machinery/computer/crew,
 /obj/machinery/light_switch{
 	dir = 4;
 	pixel_x = -25;
 	pixel_y = -5
 	},
-/turf/open/floor/plasteel/telecomms_floor,
+/obj/structure/bed,
+/obj/structure/curtain/bounty,
+/obj/item/bedsheet/captain,
+/obj/effect/turf_decal/borderfloor{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "mw" = (
 /obj/machinery/light{
@@ -1228,9 +1234,11 @@
 	},
 /obj/effect/turf_decal/arrows,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/components/unary/outlet_injector/atmos/oxygen_input{
-	name = "port salvage bay input injector";
-	on = 0
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo/port)
@@ -1283,9 +1291,6 @@
 /area/ship/engineering/atmospherics)
 "no" = (
 /obj/effect/turf_decal/box/corners,
-/obj/machinery/atmospherics/pipe/manifold/brown/hidden{
-	dir = 4
-	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo/port)
 "nr" = (
@@ -1299,7 +1304,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
-/obj/effect/turf_decal/trimline/opaque/black/filled/warning{
+/obj/effect/turf_decal/trimline/transparent/white/filled/warning{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -1310,19 +1315,15 @@
 /obj/effect/turf_decal/arrows{
 	dir = 1
 	},
-/obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/nitrogen_output{
-	dir = 1;
-	name = "starboard salvage bay output inlet";
-	on = 0
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo/starboard)
 "nE" = (
-/obj/effect/turf_decal/trimline/opaque/grey/filled/warning{
+/obj/machinery/airalarm/directional/north,
+/obj/effect/turf_decal/trimline/transparent/white/filled/warning{
 	dir = 4
-	},
-/obj/machinery/airalarm/all_access{
-	pixel_y = 24
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo/starboard)
@@ -1337,12 +1338,12 @@
 /obj/effect/turf_decal/box/corners{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/brown/hidden{
-	dir = 4
-	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/brown/hidden,
 /obj/effect/spawner/lootdrop/salvage_50,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo/port)
 "oj" = (
@@ -1364,6 +1365,21 @@
 /obj/machinery/rnd/production/circuit_imprinter,
 /turf/open/floor/plasteel/patterned,
 /area/ship/storage)
+"or" = (
+/obj/machinery/door/poddoor/shutters{
+	id = "gecko_port"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 8;
+	id = "gecko_port_field"
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/cargo/port)
 "os" = (
 /obj/machinery/atmospherics/pipe/simple/green/visible{
 	dir = 4
@@ -1430,6 +1446,9 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/aft)
 "pe" = (
@@ -1444,7 +1463,8 @@
 /area/ship/crew/toilet)
 "pw" = (
 /obj/machinery/computer/helm{
-	dir = 8
+	dir = 8;
+	icon_state = "computer-middle"
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
@@ -1527,10 +1547,8 @@
 /turf/open/floor/plating,
 /area/ship/hallway/fore)
 "ql" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/oxygen_output{
-	dir = 1;
-	name = "port salvage bay output inlet";
-	on = 0
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo/port)
@@ -1555,11 +1573,6 @@
 "qD" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/salvage_50,
-/obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/oxygen_output{
-	dir = 1;
-	name = "port salvage bay output inlet";
-	on = 0
-	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo/port)
 "qO" = (
@@ -1574,17 +1587,16 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "rb" = (
-/obj/machinery/atmospherics/pipe/layer_manifold{
-	dir = 4
-	},
-/obj/effect/turf_decal/trimline/opaque/grey/filled/warning{
+/obj/effect/turf_decal/trimline/transparent/white/filled/warning{
 	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo/port)
 "rc" = (
-/obj/machinery/atmospherics/pipe/manifold4w/brown/hidden,
 /obj/effect/spawner/lootdrop/salvage_50,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo/starboard)
 "rd" = (
@@ -1676,7 +1688,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
-/obj/effect/turf_decal/trimline/opaque/black/filled/warning{
+/obj/effect/turf_decal/trimline/transparent/white/filled/warning{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -1691,6 +1703,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/industrial/warning/fulltile,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo/starboard)
 "rF" = (
@@ -1711,22 +1724,20 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/industrial/warning,
-/obj/machinery/atmospherics/components/unary/outlet_injector/atmos/nitrogen_input{
-	dir = 1;
-	name = "starboard salvage bay injector";
-	on = 0
-	},
 /obj/effect/spawner/lootdrop/salvage_50,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo/starboard)
 "sm" = (
-/obj/machinery/atmospherics/pipe/layer_manifold{
-	dir = 4
-	},
-/obj/effect/turf_decal/trimline/opaque/grey/filled/warning{
-	dir = 4
-	},
 /obj/effect/spawner/lootdrop/salvage_50,
+/obj/effect/turf_decal/trimline/transparent/white/filled/warning{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/ship/cargo/starboard)
 "so" = (
@@ -1787,15 +1798,12 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
-/obj/effect/turf_decal/trimline/opaque/black/filled/warning{
+/obj/effect/turf_decal/trimline/transparent/white/filled/warning{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "sV" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 5
-	},
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/item/radio/intercom{
 	dir = 1;
@@ -1811,15 +1819,11 @@
 /obj/machinery/firealarm{
 	pixel_y = 24
 	},
-/obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/nitrogen_output{
-	name = "starboard salvage bay output inlet";
-	on = 0
-	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo/starboard)
 "ta" = (
 /obj/effect/turf_decal/box/corners,
-/obj/machinery/atmospherics/pipe/simple/brown/hidden,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo/starboard)
 "td" = (
@@ -1839,10 +1843,7 @@
 "tt" = (
 /obj/machinery/autolathe,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/airalarm/all_access{
-	dir = 1;
-	pixel_y = -24
-	},
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/patterned,
 /area/ship/storage)
 "tv" = (
@@ -1850,11 +1851,16 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer1{
 	dir = 4
 	},
-/obj/machinery/door/firedoor,
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/maintenance/fore)
 "tB" = (
@@ -1874,8 +1880,9 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering/communications)
 "tJ" = (
-/obj/machinery/modular_computer/console/preset/id{
-	dir = 8
+/obj/machinery/computer/communications{
+	dir = 8;
+	icon_state = "computer-left"
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
@@ -1886,11 +1893,8 @@
 /obj/structure/chair/comfy/shuttle{
 	dir = 1
 	},
-/obj/machinery/airalarm/all_access{
-	dir = 1;
-	pixel_y = -24
-	},
 /obj/effect/turf_decal/borderfloor,
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "ud" = (
@@ -2002,8 +2006,8 @@
 /turf/closed/wall,
 /area/ship/crew/toilet)
 "vx" = (
-/obj/effect/decal/fakelattice,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/external)
 "vz" = (
@@ -2065,11 +2069,14 @@
 	id_tag = "port_cargo_interior";
 	name = "Port Cargo Bay"
 	},
-/obj/machinery/door/firedoor/heavy,
-/obj/machinery/door/poddoor/preopen{
-	id = "gecko_port_int"
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
-/obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo/port)
 "wv" = (
@@ -2086,7 +2093,6 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/ore_box,
-/obj/machinery/atmospherics/pipe/simple/brown/hidden,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo/port)
 "wy" = (
@@ -2106,9 +2112,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/purple/hidden/layer1,
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "wB" = (
@@ -2133,12 +2136,15 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/central)
 "wM" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/brown/hidden,
 /obj/effect/spawner/lootdrop/salvage_50,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo/starboard)
@@ -2154,7 +2160,6 @@
 /obj/structure/table/reinforced,
 /obj/item/paper_bin,
 /obj/item/pen/fountain/captain,
-/obj/item/stamp/captain,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "wY" = (
@@ -2195,8 +2200,13 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/manifold4w/brown/hidden,
 /obj/effect/spawner/lootdrop/salvage_50,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo/starboard)
 "xD" = (
@@ -2204,16 +2214,16 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 10
+	dir = 8
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo/starboard)
 "xF" = (
-/obj/structure/filingcabinet/chestdrawer,
 /obj/item/folder/documents,
 /obj/machinery/computer/helm/viewscreen{
 	pixel_y = 32
 	},
+/obj/structure/filingcabinet/double/grey,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering/communications)
 "xJ" = (
@@ -2323,13 +2333,10 @@
 /obj/structure/chair/comfy/shuttle{
 	dir = 1
 	},
-/obj/machinery/airalarm/all_access{
-	dir = 1;
-	pixel_y = -24
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering/communications)
 "yS" = (
@@ -2343,7 +2350,10 @@
 /area/ship/maintenance/starboard)
 "yW" = (
 /obj/effect/spawner/lootdrop/salvage_50,
-/obj/machinery/atmospherics/pipe/simple/brown/hidden{
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
 /turf/open/floor/plasteel/patterned,
@@ -2380,9 +2390,12 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/effect/turf_decal/industrial/hatch/yellow,
-/obj/machinery/door/firedoor,
+/obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
 /turf/open/floor/plasteel/tech/techmaint,
@@ -2390,6 +2403,7 @@
 "zu" = (
 /obj/machinery/light,
 /obj/effect/turf_decal/borderfloor,
+/obj/structure/filingcabinet/chestdrawer,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "zw" = (
@@ -2405,15 +2419,11 @@
 	filter_types = list("n2","co2","bz","water_vapor","miasma","freon","pluox","tritium","n20","no2","nob");
 	id_tag = "incinerator_out"
 	},
-/obj/machinery/airalarm/engine{
-	pixel_y = 24
-	},
 /turf/open/floor/engine/airless,
-/area/ship/engineering/incinerator)
+/area/ship/engineering/engine)
 "zy" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/salvage_50,
-/obj/machinery/atmospherics/pipe/manifold4w/brown/hidden,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo/port)
 "zC" = (
@@ -2460,11 +2470,10 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/components/unary/outlet_injector/atmos/oxygen_input{
-	name = "port salvage bay input injector";
-	on = 0
-	},
 /obj/effect/spawner/lootdrop/salvage_50,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo/port)
 "zZ" = (
@@ -2481,16 +2490,17 @@
 /obj/machinery/door/airlock/atmos{
 	name = "Atmospherics"
 	},
-/obj/effect/turf_decal/industrial/hatch/yellow,
-/obj/machinery/door/firedoor,
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/atmospherics)
 "An" = (
 /obj/effect/turf_decal/industrial/warning,
-/obj/machinery/atmospherics/components/unary/outlet_injector/atmos/oxygen_input{
-	dir = 1;
-	name = "port salvage bay input injector";
-	on = 0
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo/port)
@@ -2522,14 +2532,16 @@
 /area/ship/maintenance/fore)
 "AU" = (
 /obj/effect/spawner/lootdrop/salvage_50,
-/obj/machinery/atmospherics/pipe/simple/brown/hidden,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo/port)
 "AY" = (
-/obj/machinery/atmospherics/pipe/layer_manifold{
-	dir = 4
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
 	},
-/obj/effect/turf_decal/trimline/opaque/grey/filled/warning{
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/transparent/white/filled/warning{
 	dir = 4
 	},
 /turf/open/floor/plasteel,
@@ -2542,13 +2554,10 @@
 /area/ship/crew)
 "Bz" = (
 /obj/effect/spawner/lootdrop/salvage_50,
-/obj/machinery/airalarm/all_access{
-	dir = 8;
-	pixel_x = 24
-	},
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
 	},
+/obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel,
 /area/ship/hallway/aft)
 "BB" = (
@@ -2564,12 +2573,10 @@
 "BC" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/airalarm/all_access{
-	pixel_y = 24
-	},
 /obj/machinery/atmospherics/pipe/simple/supplymain/visible/layer2{
 	dir = 10
 	},
+/obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
 "BF" = (
@@ -2591,11 +2598,27 @@
 /area/ship/bridge)
 "BH" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/brown/hidden{
-	dir = 4
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo/starboard)
+"BL" = (
+/obj/machinery/door/airlock/mining{
+	frequency = 1331;
+	id_tag = "port_cargo_interior";
+	name = "Port Cargo Bay"
+	},
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/cargo/port)
 "BP" = (
 /obj/effect/turf_decal/industrial/loading{
 	dir = 1
@@ -2618,13 +2641,31 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/maintenance/fore)
 "BW" = (
-/obj/machinery/atmospherics/pipe/simple/brown/hidden{
+/obj/effect/spawner/lootdrop/salvage_50,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/brown/hidden,
-/obj/effect/spawner/lootdrop/salvage_50,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo/port)
+"Cd" = (
+/obj/machinery/door/poddoor/shutters{
+	id = "gecko_starboard"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable,
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 8;
+	id = "gecko_starboard_field"
+	},
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/cargo/starboard)
 "Ce" = (
 /obj/effect/turf_decal/industrial/fire{
 	dir = 8
@@ -2692,10 +2733,11 @@
 /obj/effect/turf_decal/arrows{
 	dir = 1
 	},
-/obj/machinery/atmospherics/components/unary/outlet_injector/atmos/nitrogen_input{
-	dir = 1;
-	name = "starboard salvage bay injector";
-	on = 0
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo/starboard)
@@ -2716,7 +2758,7 @@
 	icon_state = "1-8"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/trimline/opaque/grey/filled/warning{
+/obj/effect/turf_decal/trimline/transparent/white/filled/warning{
 	dir = 1
 	},
 /turf/open/floor/plating,
@@ -2731,7 +2773,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/effect/turf_decal/trimline/opaque/grey/filled/warning{
+/obj/effect/turf_decal/trimline/transparent/white/filled/warning{
 	dir = 4
 	},
 /turf/open/floor/plating,
@@ -2755,9 +2797,8 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/oxygen_output{
-	name = "port salvage bay output inlet";
-	on = 0
+/obj/structure/cable{
+	icon_state = "1-8"
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo/port)
@@ -2779,18 +2820,24 @@
 	dir = 4
 	},
 /obj/structure/catwalk/over/plated_catwalk,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
 /turf/open/floor/plating,
 /area/ship/hallway/aft)
 "DR" = (
 /obj/effect/turf_decal/box/corners{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/brown/hidden{
-	dir = 4
-	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/brown/hidden,
 /obj/effect/spawner/lootdrop/salvage_50,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo/starboard)
 "Ea" = (
@@ -2836,11 +2883,11 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/maintenance/fore)
 "Ez" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 9
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo/port)
@@ -2900,11 +2947,28 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "EZ" = (
-/obj/machinery/computer/atmos_alert,
+/obj/structure/closet/secure_closet{
+	icon_state = "cap";
+	name = "\proper captain's locker";
+	req_access_txt = "20"
+	},
+/obj/item/stock_parts/cell/gun,
+/obj/item/gun/energy/laser,
+/obj/item/clothing/under/rank/command/captain/nt,
+/obj/item/clothing/head/caphat/nt,
+/obj/item/clothing/shoes/laceup,
+/obj/item/clothing/suit/toggle/lieutenant{
+	desc = "Threadbare and uncharacteristically casual for Nanotrasen. Probably rebadged surplus from some colonial militia.";
+	name = "tattered captain's jacket"
+	},
+/obj/item/clothing/glasses/sunglasses,
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/open/floor/plasteel/telecomms_floor,
+/obj/effect/turf_decal/borderfloor{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Fq" = (
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
@@ -2926,13 +2990,10 @@
 "Fx" = (
 /obj/effect/decal/fakelattice,
 /turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/engineering/incinerator)
+/area/ship/engineering/engine)
 "Fy" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/components/unary/outlet_injector/atmos/nitrogen_input{
-	name = "starboard salvage bay injector";
-	on = 0
-	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo/starboard)
 "FE" = (
@@ -2947,9 +3008,6 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/manifold/brown/hidden{
-	dir = 4
-	},
 /obj/effect/spawner/lootdrop/salvage_50,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo/port)
@@ -2969,14 +3027,19 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer1{
 	dir = 4
 	},
-/obj/machinery/door/firedoor,
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/engine)
 "FQ" = (
@@ -2994,11 +3057,6 @@
 	dir = 1;
 	pixel_y = -24
 	},
-/obj/machinery/atmospherics/components/unary/outlet_injector/atmos/oxygen_input{
-	dir = 1;
-	name = "port salvage bay input injector";
-	on = 0
-	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo/port)
 "FT" = (
@@ -3011,6 +3069,7 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
 	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
 "FZ" = (
@@ -3050,28 +3109,8 @@
 /turf/open/floor/plating,
 /area/ship/hallway/fore)
 "Gi" = (
-/obj/machinery/button/door{
-	id = "gecko_starboard_int";
-	name = "Internal Blast Door Control";
-	pixel_x = 6;
-	pixel_y = 24;
-	sync_doors = 0
-	},
-/obj/machinery/button/door{
-	id = "gecko_starboard";
-	name = "External Shutter Control";
-	pixel_x = -6;
-	pixel_y = 24;
-	sync_doors = 0
-	},
-/obj/item/paper/fluff{
-	desc = "For a manual, this sure looks like a single sheet of paper.";
-	info = "Congratulations on your new Nanotrasen Spaceworks Scrap-O-Matic Salvage System(tm)! For smooth and risk-free operation*, simply follow these steps. Step 1: Close internal blast doors. Step 2: Disable air injectors and enable siphoning using the easy-to-use** included atmospherics console. Step 3: When atmospheric pressure equalizes with the exterior, open external shutters. *Safety not guaranteed. **See Appendix C.13.IV for operations manual. Nanotrasen Spaceworks or its parent companies may not be held liable for decompression, dislocation, discombobulation, or disintegration resulting from improper or proper use of the Scrap-O-Matic Salvage System(tm).";
-	name = "Scrap-O-Matic Salvage System(tm) Operations Manual"
-	},
-/obj/machinery/computer/atmos_control/tank/nitrogen_tank{
-	name = "Starboard Salvage Bay Control";
-	sensors = list("n2_sensor" = "Starboard Salvage Bay")
+/obj/machinery/computer/apc_control{
+	icon_state = "computer-left"
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering/communications)
@@ -3103,24 +3142,14 @@
 	pixel_y = 8;
 	sync_doors = 0
 	},
-/obj/machinery/button/door{
-	dir = 4;
-	id = "gecko_port_int";
-	name = "Internal Blast Door Control";
-	pixel_x = -6;
-	pixel_y = -4;
-	sync_doors = 0
-	},
-/obj/item/paper/fluff{
-	desc = "For a manual, this sure looks like a single sheet of paper.";
-	info = "Congratulations on your new Nanotrasen Spaceworks Scrap-O-Matic Salvage System(tm)! For smooth and risk-free operation*, simply follow these steps. Step 1: Close internal blast doors. Step 2: Disable air injectors and enable siphoning using the easy-to-use** included atmospherics console. Step 3: When atmospheric pressure equalizes with the exterior, open external shutters. *Safety not guaranteed. **See Appendix C.13.IV for operations manual. Nanotrasen Spaceworks or its parent companies may not be held liable for decompression, dislocation, discombobulation, or disintegration resulting from improper or proper use of the Scrap-O-Matic Salvage System(tm).";
-	name = "Scrap-O-Matic Salvage System(tm) Operations Manual"
-	},
-/obj/item/storage/toolbox/mechanical{
-	pixel_y = -5
-	},
 /obj/machinery/computer/helm/viewscreen{
 	pixel_y = 32
+	},
+/obj/machinery/button/shieldwallgen{
+	dir = 4;
+	id = "gecko_port_field";
+	pixel_x = -4;
+	pixel_y = -2
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo/port)
@@ -3157,6 +3186,20 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
+"GS" = (
+/obj/machinery/door/airlock/mining{
+	name = "Starboard Cargo Bay"
+	},
+/obj/machinery/door/poddoor/preopen{
+	id = "gecko_starboard_int"
+	},
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/cargo/starboard)
 "GT" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -3222,6 +3265,20 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
+"Ht" = (
+/obj/machinery/door/poddoor/shutters{
+	id = "gecko_starboard"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable,
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 4;
+	id = "gecko_starboard_field"
+	},
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/cargo/starboard)
 "HF" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -3251,7 +3308,12 @@
 /obj/effect/turf_decal/box/corners{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/manifold4w/brown/hidden,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo/port)
 "Ia" = (
@@ -3266,27 +3328,9 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
-"Ic" = (
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/engineering/incinerator)
 "Ii" = (
-/obj/machinery/button/door{
-	id = "gecko_port";
-	name = "External Shutter Control";
-	pixel_x = -6;
-	pixel_y = 24;
-	sync_doors = 0
-	},
-/obj/machinery/button/door{
-	id = "gecko_port_int";
-	name = "Internal Blast Door Control";
-	pixel_x = 6;
-	pixel_y = 24;
-	sync_doors = 0
-	},
-/obj/machinery/computer/atmos_control/tank/oxygen_tank{
-	name = "Port Salvage Bay Control";
-	sensors = list("o2_sensor" = "Port Salvage Bay")
+/obj/machinery/computer/atmos_alert{
+	icon_state = "computer-right"
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering/communications)
@@ -3312,12 +3356,10 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/industrial/warning,
-/obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/nitrogen_output{
-	dir = 1;
-	name = "starboard salvage bay output inlet";
-	on = 0
-	},
 /obj/effect/spawner/lootdrop/salvage_50,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo/starboard)
 "Is" = (
@@ -3424,7 +3466,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/engine/airless,
-/area/ship/engineering/incinerator)
+/area/ship/engineering/engine)
 "Jc" = (
 /turf/closed/wall,
 /area/ship/maintenance/fore)
@@ -3433,9 +3475,6 @@
 	dir = 10
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Jk" = (
@@ -3462,7 +3501,7 @@
 	dir = 1
 	},
 /obj/effect/spawner/lootdrop/salvage_50,
-/obj/machinery/atmospherics/pipe/simple/brown/hidden,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo/port)
 "JD" = (
@@ -3495,9 +3534,6 @@
 /obj/structure/sign/number/one,
 /turf/closed/wall,
 /area/ship/cargo/port)
-"Kj" = (
-/turf/closed/wall/mineral/titanium,
-/area/ship/engineering/incinerator)
 "KA" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 1
@@ -3531,9 +3567,6 @@
 /turf/closed/wall,
 /area/ship/hallway/fore)
 "KJ" = (
-/obj/machinery/air_sensor/atmos/nitrogen_tank{
-	name = "starboard salvage bay gas sensor"
-	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo/starboard)
 "KS" = (
@@ -3570,14 +3603,11 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
 "Lm" = (
-/obj/effect/turf_decal/trimline/opaque/grey/filled/warning{
-	dir = 4
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/salvage_50,
-/obj/machinery/airalarm/all_access{
-	dir = 1;
-	pixel_y = -24
+/obj/machinery/airalarm/directional/south,
+/obj/effect/turf_decal/trimline/transparent/white/filled/warning{
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo/port)
@@ -3625,7 +3655,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
-/obj/effect/turf_decal/trimline/opaque/black/filled/warning{
+/obj/effect/turf_decal/trimline/transparent/white/filled/warning{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
@@ -3670,7 +3700,7 @@
 /obj/machinery/door/airlock/external/glass{
 	name = "External Hull Access"
 	},
-/obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/central)
@@ -3692,6 +3722,9 @@
 	dir = 1
 	},
 /obj/effect/spawner/lootdrop/salvage_50,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo/starboard)
 "LY" = (
@@ -3756,24 +3789,20 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/turf_decal/trimline/opaque/grey/filled/warning,
+/obj/effect/turf_decal/trimline/transparent/white/filled/warning,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "Ms" = (
 /obj/effect/turf_decal/box/corners{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/manifold4w/brown/hidden,
 /obj/effect/spawner/lootdrop/salvage_50,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo/starboard)
 "Mu" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
-	},
-/obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/nitrogen_output{
-	name = "starboard salvage bay output inlet";
-	on = 0
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo/starboard)
@@ -3829,9 +3858,6 @@
 /area/ship/engineering/engine)
 "Og" = (
 /obj/effect/spawner/lootdrop/salvage_50,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 6
-	},
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/item/radio/intercom{
 	pixel_y = 24
@@ -3895,19 +3921,9 @@
 	id = "gecko_starboard"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/industrial/warning/fulltile,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo/starboard)
-"OA" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
-/obj/effect/turf_decal/arrows,
-/obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/oxygen_output{
-	name = "port salvage bay output inlet";
-	on = 0
-	},
-/turf/open/floor/plasteel/patterned,
-/area/ship/cargo/port)
 "OB" = (
 /obj/structure/sign/warning/nosmoking,
 /turf/closed/wall,
@@ -3917,13 +3933,13 @@
 /turf/open/floor/plasteel,
 /area/ship/cargo/port)
 "OP" = (
-/obj/machinery/computer/communications,
 /obj/machinery/light{
 	dir = 1
 	},
 /obj/machinery/status_display/shuttle{
 	pixel_y = 32
 	},
+/obj/machinery/computer/crew,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering/communications)
 "OQ" = (
@@ -4004,21 +4020,25 @@
 "PH" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/nitrogen_output{
-	dir = 1;
-	name = "starboard salvage bay output inlet";
-	on = 0
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo/starboard)
 "PL" = (
-/obj/machinery/atmospherics/pipe/layer_manifold{
-	dir = 4
-	},
-/obj/effect/turf_decal/trimline/opaque/grey/filled/warning{
-	dir = 4
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/transparent/white/filled/warning{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/ship/cargo/port)
 "PV" = (
@@ -4042,11 +4062,17 @@
 /obj/machinery/door/airlock/mining{
 	name = "Starboard Cargo Bay"
 	},
-/obj/machinery/door/firedoor/heavy,
 /obj/machinery/door/poddoor/preopen{
 	id = "gecko_starboard_int"
 	},
-/obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo/starboard)
 "Qd" = (
@@ -4054,9 +4080,9 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/oxygen_output{
-	name = "port salvage bay output inlet";
-	on = 0
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo/port)
@@ -4093,9 +4119,8 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/components/unary/outlet_injector/atmos/nitrogen_input{
-	name = "starboard salvage bay injector";
-	on = 0
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo/starboard)
@@ -4164,10 +4189,8 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
 "Rl" = (
-/obj/machinery/atmospherics/components/unary/outlet_injector/atmos/oxygen_input{
-	dir = 1;
-	name = "port salvage bay input injector";
-	on = 0
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 1
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo/port)
@@ -4176,13 +4199,24 @@
 	name = "Crew Quarters"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/effect/turf_decal/industrial/hatch/yellow,
-/obj/machinery/door/firedoor,
+/obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew)
+"RN" = (
+/obj/machinery/atmospherics/components/unary/portables_connector/layer2{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/portable_atmospherics/canister/air,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/hallway/central)
 "RS" = (
 /obj/machinery/atmospherics/components/unary/tank/air{
 	dir = 1;
@@ -4204,13 +4238,6 @@
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
-"Si" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plating,
-/area/ship/engineering/engine)
 "Sj" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
@@ -4352,9 +4379,8 @@
 	},
 /obj/effect/spawner/structure/window/plasma/reinforced,
 /turf/open/floor/engine,
-/area/ship/engineering/incinerator)
+/area/ship/engineering/engine)
 "Tj" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/effect/turf_decal/siding/white{
 	dir = 4
 	},
@@ -4365,6 +4391,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/industrial/warning,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
 "Tl" = (
@@ -4384,6 +4411,7 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "gecko_port"
 	},
+/obj/effect/turf_decal/industrial/warning/fulltile,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo/port)
 "To" = (
@@ -4421,15 +4449,22 @@
 /area/ship/bridge)
 "Tv" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/manifold4w/brown/hidden,
 /obj/effect/spawner/lootdrop/salvage_50,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo/port)
 "Tz" = (
-/obj/machinery/atmospherics/pipe/simple/brown/hidden{
-	dir = 4
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/brown/hidden,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo/starboard)
 "TD" = (
@@ -4439,13 +4474,29 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 8
 	},
+/obj/machinery/atmospherics/components/binary/pump/on/layer2{
+	dir = 1;
+	target_pressure = 4500
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
+"TL" = (
+/obj/machinery/door/poddoor/shutters{
+	id = "gecko_port"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 4;
+	id = "gecko_port_field"
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/cargo/port)
 "TZ" = (
 /obj/effect/turf_decal/box/corners{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/manifold/brown/hidden{
 	dir = 4
 	},
 /obj/effect/spawner/lootdrop/salvage_50,
@@ -4459,36 +4510,49 @@
 	name = "Communications"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/effect/turf_decal/industrial/hatch/yellow,
-/obj/machinery/door/firedoor,
+/obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/communications)
 "Uj" = (
-/obj/machinery/computer/monitor,
 /obj/structure/sign/poster/official/nanotrasen_logo{
 	pixel_y = 32
 	},
-/turf/open/floor/plasteel/telecomms_floor,
+/obj/effect/turf_decal/borderfloor{
+	dir = 1
+	},
+/obj/structure/table/reinforced,
+/obj/item/folder/blue,
+/obj/item/stamp/captain,
+/turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Uo" = (
 /obj/machinery/door/airlock{
 	name = "Restrooms"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/effect/turf_decal/industrial/hatch/yellow,
-/obj/machinery/door/firedoor,
+/obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/toilet)
 "Uq" = (
 /obj/effect/turf_decal/box/corners,
-/obj/machinery/atmospherics/pipe/simple/brown/hidden{
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/brown/hidden,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo/port)
 "Uw" = (
@@ -4527,10 +4591,6 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/hallway/central)
 "UD" = (
-/obj/machinery/atmospherics/components/unary/outlet_injector/atmos/nitrogen_input{
-	name = "starboard salvage bay injector";
-	on = 0
-	},
 /obj/effect/spawner/lootdrop/salvage_50,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo/starboard)
@@ -4603,7 +4663,7 @@
 	name = "Combustion Chamber Vent"
 	},
 /turf/open/floor/engine,
-/area/ship/engineering/incinerator)
+/area/ship/engineering/engine)
 "Vz" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
@@ -4620,7 +4680,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/trimline/opaque/grey/filled/warning{
+/obj/effect/turf_decal/trimline/transparent/white/filled/warning{
 	dir = 1
 	},
 /turf/open/floor/plating,
@@ -4641,16 +4701,15 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering/communications)
 "VM" = (
-/obj/machinery/computer/atmos_control/tank/nitrogen_tank{
-	dir = 4;
-	name = "Starboard Salvage Bay Control";
-	sensors = list("n2_sensor" = "Starboard Salvage Bay")
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
+	},
+/obj/structure/table/reinforced,
+/obj/item/storage/toolbox/mechanical{
+	pixel_y = -5
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo/starboard)
@@ -4755,26 +4814,16 @@
 	pixel_y = 8;
 	sync_doors = 0
 	},
-/obj/machinery/button/door{
-	dir = 4;
-	id = "gecko_starboard_int";
-	name = "Internal Blast Door Control";
-	pixel_x = -6;
-	pixel_y = -4;
-	sync_doors = 0
-	},
-/obj/item/paper/fluff{
-	desc = "For a manual, this sure looks like a single sheet of paper.";
-	info = "Congratulations on your new Nanotrasen Spaceworks Scrap-O-Matic Salvage System(tm)! For smooth and risk-free operation*, simply follow these steps. Step 1: Close internal blast doors. Step 2: Disable air injectors and enable siphoning using the easy-to-use** included atmospherics console. Step 3: When atmospheric pressure equalizes with the exterior, open external shutters. *Safety not guaranteed. **See Appendix C.13.IV for operations manual. Nanotrasen Spaceworks or its parent companies may not be held liable for decompression, dislocation, discombobulation, or disintegration resulting from improper or proper use of the Scrap-O-Matic Salvage System(tm).";
-	name = "Scrap-O-Matic Salvage System(tm) Operations Manual"
-	},
 /obj/effect/decal/cleanable/dirt,
-/obj/item/storage/toolbox/mechanical{
-	pixel_y = -5
-	},
 /obj/machinery/computer/helm/viewscreen{
 	dir = 1;
 	pixel_y = -32
+	},
+/obj/machinery/button/shieldwallgen{
+	dir = 4;
+	id = "gecko_starboard_field";
+	pixel_x = -4;
+	pixel_y = -2
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo/starboard)
@@ -4788,9 +4837,9 @@
 /turf/open/floor/engine/hull,
 /area/ship/external)
 "WA" = (
-/obj/effect/decal/fakelattice,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/external)
 "WF" = (
@@ -4826,14 +4875,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/crew/toilet)
-"WK" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/nitrogen_output{
-	name = "starboard salvage bay output inlet";
-	on = 0
-	},
-/obj/effect/spawner/lootdrop/salvage_50,
-/turf/open/floor/plasteel/patterned,
-/area/ship/cargo/starboard)
 "WN" = (
 /obj/machinery/atmospherics/components/binary/circulator,
 /obj/structure/disposalpipe/segment,
@@ -4847,7 +4888,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
-/obj/effect/turf_decal/trimline/opaque/black/filled/warning{
+/obj/effect/turf_decal/trimline/transparent/white/filled/warning{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
@@ -4910,11 +4951,13 @@
 /obj/effect/turf_decal/box/corners{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/brown/hidden{
-	dir = 4
-	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/brown/hidden,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo/starboard)
 "Xs" = (
@@ -4931,7 +4974,7 @@
 	},
 /obj/effect/spawner/structure/window/plasma/reinforced,
 /turf/open/floor/engine,
-/area/ship/engineering/incinerator)
+/area/ship/engineering/engine)
 "Xv" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/pipe/simple/cyan/hidden{
@@ -4942,10 +4985,8 @@
 "XB" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/components/unary/outlet_injector/atmos/nitrogen_input{
-	dir = 1;
-	name = "starboard salvage bay injector";
-	on = 0
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo/starboard)
@@ -4959,9 +5000,6 @@
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "XL" = (
-/obj/machinery/air_sensor/atmos/oxygen_tank{
-	name = "port salvage bay gas sensor"
-	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo/port)
@@ -5070,12 +5108,10 @@
 "YK" = (
 /obj/structure/table/reinforced,
 /obj/machinery/microwave,
-/obj/machinery/airalarm/all_access{
-	pixel_y = 24
-	},
 /obj/structure/sign/poster/retro/random{
 	pixel_x = 32
 	},
+/obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "YQ" = (
@@ -5134,9 +5170,7 @@
 "ZA" = (
 /obj/structure/table,
 /obj/item/soap/nanotrasen,
-/obj/machinery/airalarm/all_access{
-	pixel_y = 24
-	},
+/obj/machinery/airalarm/directional/north,
 /turf/open/floor/plastic,
 /area/ship/crew/toilet)
 "ZC" = (
@@ -5147,12 +5181,6 @@
 /obj/effect/turf_decal/borderfloor,
 /turf/open/floor/plasteel,
 /area/ship/hallway/fore)
-"ZF" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plating,
-/area/ship/engineering/engine)
 "ZK" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -5179,14 +5207,11 @@
 /area/ship/hallway/fore)
 "ZN" = (
 /obj/machinery/rnd/server,
-/obj/machinery/airalarm/all_access{
-	dir = 1;
-	pixel_y = -24
-	},
 /obj/machinery/firealarm{
 	dir = 4;
 	pixel_x = -24
 	},
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "ZS" = (
@@ -5248,11 +5273,11 @@ hu
 Ug
 jQ
 Tq
-Kj
+oj
 hU
 Vu
 hU
-Kj
+oj
 Tc
 NN
 Ug
@@ -5277,11 +5302,11 @@ Ug
 Ug
 Ea
 Ug
-Ic
+Ug
 zw
 ix
 Jb
-Ic
+Ug
 Ug
 iA
 Ug
@@ -5397,7 +5422,7 @@ on
 cy
 UP
 hX
-Si
+Cj
 SQ
 QD
 kL
@@ -5426,7 +5451,7 @@ on
 wY
 xN
 FZ
-ZF
+on
 on
 Fq
 on
@@ -5649,7 +5674,7 @@ hu
 hu
 hu
 cq
-ja
+TL
 kA
 dI
 od
@@ -5663,7 +5688,7 @@ Fy
 DR
 Ms
 rP
-rE
+Ht
 Gp
 hu
 hu
@@ -5795,17 +5820,17 @@ hu
 hu
 IQ
 bq
-OA
+fG
 AU
 zy
 dj
-vY
+BL
 Ct
 VU
 Tl
-Qb
+GS
 Mu
-aP
+wM
 wM
 nC
 Ot
@@ -5823,7 +5848,7 @@ hu
 hu
 hu
 Wz
-ja
+or
 DG
 wx
 no
@@ -5833,11 +5858,11 @@ Bz
 IK
 Ik
 yX
-WK
+UD
 TZ
 ta
 Io
-Ot
+Cd
 KE
 hu
 hu
@@ -5939,7 +5964,7 @@ hu
 hu
 qO
 Ts
-vo
+RN
 hI
 jM
 nr
@@ -6516,7 +6541,7 @@ hu
 hu
 hu
 hu
-WA
+jO
 hu
 hu
 hu

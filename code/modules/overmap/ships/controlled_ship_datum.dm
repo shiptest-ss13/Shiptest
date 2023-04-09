@@ -151,9 +151,6 @@
 /datum/overmap/ship/controlled/complete_dock(datum/overmap/dock_target, datum/docking_ticket/ticket)
 	shuttle_port.initiate_docking(ticket.target_port)
 	. = ..()
-	if(istype(dock_target, /datum/overmap/ship/controlled)) //hardcoded and bad
-		var/datum/overmap/ship/controlled/S = dock_target
-		S.shuttle_port.shuttle_areas |= shuttle_port.shuttle_areas
 	log_shuttle("[src] [REF(src)] COMPLETE DOCK: FINISHED DOCKING TO [dock_target] AT [ticket.target_port]")
 
 /datum/overmap/ship/controlled/Undock(force = FALSE)
@@ -183,11 +180,6 @@
 		if(dock_requester.shuttle_port.check_dock(docking_port))
 			return new /datum/docking_ticket(docking_port, src, dock_requester)
 	return ..()
-
-/datum/overmap/ship/controlled/post_undocked(datum/overmap/dock_requester)
-	if(istype(dock_requester, /datum/overmap/ship/controlled))
-		var/datum/overmap/ship/controlled/docker_port = dock_requester
-		shuttle_port.shuttle_areas += docker_port.shuttle_port.shuttle_areas
 
 /**
  * Docks to an empty dynamic encounter. Used for intership interaction, structural modifications, and such
@@ -413,7 +405,7 @@
 
 /obj/item/key/ship
 	name = "ship key"
-	desc = "A key for locking and unlocking the helm of a ship, comes with a ball chain so it can be worn around the neck."
+	desc = "A key for locking and unlocking the helm of a ship, comes with a ball chain so it can be worn around the neck. Comes with a cute little shuttle-shaped keychain."
 	icon_state = "keyship"
 	var/datum/overmap/ship/controlled/master_ship
 	var/static/list/key_colors = list(

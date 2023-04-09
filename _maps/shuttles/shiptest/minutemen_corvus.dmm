@@ -462,10 +462,14 @@
 /obj/effect/turf_decal/corner/opaque/red/border{
 	dir = 6
 	},
-/obj/item/melee/baton{
-	pixel_x = 5
+/obj/structure/window/reinforced{
+	dir = 4
 	},
-/obj/item/melee/baton,
+/obj/item/melee/baton/loaded,
+/obj/item/melee/baton/loaded{
+	pixel_x = 3;
+	pixel_y = -2
+	},
 /obj/item/gun/energy/disabler{
 	pixel_y = 2
 	},
@@ -476,9 +480,6 @@
 /obj/item/reagent_containers/spray/pepper{
 	pixel_x = 8;
 	pixel_y = -4
-	},
-/obj/structure/window/reinforced{
-	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
