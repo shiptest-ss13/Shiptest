@@ -207,6 +207,9 @@
 
 	var/last_dock_time
 
+	//The ship that has this port as a docking_point, ships docked to this port will be towed by the owner_ship
+	var/obj/docking_port/mobile/owner_ship
+
 	var/datum/map_template/shuttle/roundstart_template
 	var/json_key
 	//Setting this to false will prevent the roundstart_template from being loaded on Initiallize(). You should set this to false if this loads a subship on a ship map template
