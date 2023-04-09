@@ -833,6 +833,7 @@
 
 		switch(ruin_force)
 			if("Random")
+				//Can't use pickweight as it might be from "everything"
 				ruin_target = select_from[pick(select_from)]
 			else
 				var/selected_ruin = tgui_input_list(usr, "Which ruin?", "Spawn Ruin", select_from, 60 SECONDS)
@@ -851,7 +852,7 @@
 	else
 		position = SSovermap.get_unused_overmap_square()
 
-	message_admins("Generating a new Planet, this may take some time!")
+	message_admins("Generating a new Planet with ruin: [ruin_target], this may take some time!")
 	if(!position && tgui_alert(usr, "Failed to spawn in an empty overmap space! Continue?", "Spawn Planet/Ruin", list("Yes","No"), 10 SECONDS) != "Yes")
 		return
 	var/datum/overmap/dynamic/encounter = new(position, FALSE)
@@ -859,7 +860,7 @@
 	encounter.template = ruin_target
 	encounter.choose_level_type(FALSE)
 	if(!ruin_target)
-		encounter.ruin_list = null
+		encounter.ruin_type = null
 	encounter.preserve_level = TRUE
 	encounter.load_level()
 
