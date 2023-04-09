@@ -71,6 +71,20 @@
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/shuttle)
 "fx" = (
+/obj/structure/closet/secure_closet/wall{
+	name = "pilot's locker";
+	req_access_txt = "31";
+	icon_state = "solgov_wall";
+	dir = 4;
+	pixel_x = -30
+	},
+/obj/item/binoculars,
+/obj/item/storage/firstaid,
+/obj/item/storage/box/bodybags,
+/obj/item/pinpointer,
+/obj/item/storage/toolbox/emergency,
+/obj/item/roller,
+/obj/item/gps/mining/internal,
 /turf/open/floor/plasteel,
 /area/ship/shuttle)
 "fO" = (
@@ -448,7 +462,9 @@
 /turf/open/floor/plasteel/airless,
 /area/ship/shuttle)
 "LN" = (
-/obj/machinery/door/airlock/shuttle,
+/obj/machinery/door/airlock/shuttle{
+	name = "Cockpit"
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 8
 	},
@@ -497,7 +513,9 @@
 /turf/open/floor/plasteel,
 /area/ship/shuttle)
 "NJ" = (
-/obj/machinery/door/airlock/shuttle,
+/obj/machinery/door/airlock/shuttle{
+	name = "Engine Room"
+	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -514,7 +532,9 @@
 /area/ship/shuttle)
 "Ol" = (
 /obj/docking_port/mobile{
-	dir = 2
+	dir = 2;
+	port_direction = 8;
+	preferred_direction = 4
 	},
 /obj/machinery/door/poddoor/preopen{
 	id = "tegus_shuttle_port"
