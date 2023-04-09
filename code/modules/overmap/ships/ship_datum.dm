@@ -19,16 +19,32 @@
 	///ONLY USED FOR NON-SIMULATED SHIPS. The amount per burn that this ship accelerates
 	var/acceleration_speed = 0.02
 
+/datum/overmap/ship/Initialize(position, ...)
+	. = ..()
+	if(docked_to)
+		RegisterSignal(docked_to, COMSIG_OVERMAP_MOVED, .proc/on_docked_to_moved)
+
 /datum/overmap/ship/Destroy()
 	. = ..()
 	if(movement_callback_id)
 		deltimer(movement_callback_id)
+
+/datum/overmap/ship/complete_dock(datum/overmap/dock_target, datum/docking_ticket/ticket)
+	. = ..()
+	RegisterSignal(dock_target, COMSIG_OVERMAP_MOVED, .proc/on_docked_to_moved)
+
+/datum/overmap/ship/complete_undock()
+	UnregisterSignal(docked_to, COMSIG_OVERMAP_MOVED)
+	. = ..()
 
 /datum/overmap/ship/Undock(force = FALSE)
 	. = ..()
 	if(istype(/datum/overmap/ship, docked_to))
 		var/datum/overmap/ship/old_dock = docked_to
 		adjust_speed(old_dock.speed[1], old_dock.speed[2])
+
+/datum/overmap/ship/proc/on_docked_to_moved()
+	token.update_screen()
 
 /**
  * Change the speed in any direction.

@@ -690,6 +690,56 @@ GLOBAL_LIST_INIT(ws_survivor_default_loot, list(
 				/obj/item/stack/rods/fifty
 				)
 
+/obj/effect/spawner/lootdrop/donut
+	name = "random donut" //donut :)
+	lootcount = 1
+	loot = list(
+				/obj/item/reagent_containers/food/snacks/donut/apple = 1,
+				/obj/item/reagent_containers/food/snacks/donut/berry = 1,
+				/obj/item/reagent_containers/food/snacks/donut/caramel = 1,
+				/obj/item/reagent_containers/food/snacks/donut/choco = 1,
+				/obj/item/reagent_containers/food/snacks/donut/laugh = 1,
+				/obj/item/reagent_containers/food/snacks/donut/matcha = 1,
+				/obj/item/reagent_containers/food/snacks/donut/meat = 1,
+				/obj/item/reagent_containers/food/snacks/donut/plain = 1,
+				/obj/item/reagent_containers/food/snacks/donut/trumpet = 1,
+				/obj/item/reagent_containers/food/snacks/donut/blumpkin = 1,
+				/obj/item/reagent_containers/food/snacks/donut/bungo = 1,
+				/obj/item/reagent_containers/food/snacks/donut/chaos = 1,
+	)
+
+/obj/effect/spawner/lootdrop/donut/jelly
+	name = "random jelly donut"
+	lootcount = 1
+	loot = list(
+				/obj/item/reagent_containers/food/snacks/donut/jelly/berry = 1,
+				/obj/item/reagent_containers/food/snacks/donut/jelly/apple = 1,
+				/obj/item/reagent_containers/food/snacks/donut/jelly/blumpkin = 1,
+				/obj/item/reagent_containers/food/snacks/donut/jelly/bungo = 1,
+				/obj/item/reagent_containers/food/snacks/donut/jelly/caramel = 1,
+				/obj/item/reagent_containers/food/snacks/donut/jelly/choco = 1,
+				/obj/item/reagent_containers/food/snacks/donut/jelly/laugh = 1,
+				/obj/item/reagent_containers/food/snacks/donut/jelly/matcha = 1,
+				/obj/item/reagent_containers/food/snacks/donut/jelly/plain = 1,
+				/obj/item/reagent_containers/food/snacks/donut/jelly/trumpet = 1,
+	)
+
+/obj/effect/spawner/lootdrop/donut/slimejelly
+	name = "random slimejelly donut"
+	lootcount = 1
+	loot = list(
+				/obj/item/reagent_containers/food/snacks/donut/jelly/slimejelly/apple = 1,
+				/obj/item/reagent_containers/food/snacks/donut/jelly/slimejelly/berry = 1,
+				/obj/item/reagent_containers/food/snacks/donut/jelly/slimejelly/blumpkin = 1,
+				/obj/item/reagent_containers/food/snacks/donut/jelly/slimejelly/bungo = 1,
+				/obj/item/reagent_containers/food/snacks/donut/jelly/slimejelly/caramel = 1,
+				/obj/item/reagent_containers/food/snacks/donut/jelly/slimejelly/choco = 1,
+				/obj/item/reagent_containers/food/snacks/donut/jelly/slimejelly/laugh = 1,
+				/obj/item/reagent_containers/food/snacks/donut/jelly/slimejelly/matcha = 1,
+				/obj/item/reagent_containers/food/snacks/donut/jelly/slimejelly/plain = 1,
+				/obj/item/reagent_containers/food/snacks/donut/jelly/slimejelly/trumpet = 1,
+	)
+
 /obj/effect/spawner/lootdrop/seeded
 	name = "GO FORTH AND CULTIVATE"
 	icon = 'icons/obj/hydroponics/seeds.dmi'
