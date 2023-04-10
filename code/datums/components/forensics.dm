@@ -26,9 +26,11 @@
 /datum/component/forensics/RegisterWithParent()
 	check_blood()
 	RegisterSignal(parent, COMSIG_COMPONENT_CLEAN_ACT, .proc/clean_act)
+	RegisterSignal(parent, COMSIG_IS_BLOODY, .proc/is_bloody)
 
 /datum/component/forensics/UnregisterFromParent()
 	UnregisterSignal(parent, list(COMSIG_COMPONENT_CLEAN_ACT))
+	UnregisterSignal(parent, list(COMSIG_COMPONENT_CLEAN_ACT, COMSIG_IS_BLOODY))
 
 /datum/component/forensics/PostTransfer()
 	if(!isatom(parent))
@@ -43,9 +45,13 @@
 
 /datum/component/forensics/proc/wipe_blood_DNA()
 	blood_DNA = null
-	if(isitem(parent))
-		qdel(parent.GetComponent(/datum/component/decal/blood))
 	return TRUE
+
+/datum/component/forensics/proc/is_bloody(datum/source, clean_types)
+	if(!isitem(parent))
+		return FALSE
+
+	return length(blood_DNA) > 0
 
 /datum/component/forensics/proc/wipe_fibers()
 	fibers = null
@@ -186,4 +192,4 @@
 		return
 	if(!length(blood_DNA))
 		return
-	parent.LoadComponent(/datum/component/decal/blood)
+	parent.AddElement(/datum/element/decal/blood, _color = get_blood_dna_color(blood_DNA))

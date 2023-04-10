@@ -164,3 +164,6 @@
 #define LIGHT_COLOR_TUNGSTEN "#FAE1AF"
 /// Barely visible cyan-ish hue, as the doctor prescribed. rgb(240, 250, 250)
 #define LIGHT_COLOR_HALOGEN "#F0FAFA"
+
+/// Color used for default blood
+#define COLOR_BLOOD "#CC0000"

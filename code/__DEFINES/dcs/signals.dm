@@ -27,6 +27,18 @@
 /// from SSsun when the sun changes position : (azimuth)
 #define COMSIG_SUN_MOVED "sun_moved"
 
+///Port from bee, probably necessary
+/// Signifies that this proc is used to handle signals.
+/// Every proc you pass to RegisterSignal must have this.
+/// Mostly unused in Bee since it is a recent tg PR:
+/// https://github.com/tgstation/tgstation/pull/52761
+/// it doesn't matter *that* much so I don't care now *shrug
+#define SIGNAL_HANDLER SHOULD_NOT_SLEEP(TRUE)
+
+/// Signifies that this proc is used to handle signals, but also sleeps.
+/// Do not use this for new work.
+#define SIGNAL_HANDLER_DOES_SLEEP
+
 //////////////////////////////////////////////////////////////////
 
 // /datum signals
@@ -443,6 +455,9 @@
 #define COMSIG_CARBON_EQUIP_HAT "carbon_equip_hat"
 ///from /mob/living/carbon/doUnEquip(obj/item/I, force, newloc, no_move, invdrop, silent)
 #define COMSIG_CARBON_UNEQUIP_HAT "carbon_unequip_hat"
+///from /mob/living/carbon/doUnEquip(obj/item/I, force, newloc, no_move, invdrop, silent)
+#define COMSIG_CARBON_UNEQUIP_SHOECOVER "carbon_unequip_shoecover"
+#define COMSIG_CARBON_EQUIP_SHOECOVER "carbon_equip_shoecover"
 ///defined twice, in carbon and human's topics, fired when interacting with a valid embedded_object to pull it out (mob/living/carbon/target, /obj/item, /obj/item/bodypart/L)
 #define COMSIG_CARBON_EMBED_RIP "item_embed_start_rip"
 ///called when removing a given item from a mob, from mob/living/carbon/remove_embedded_object(mob/living/carbon/target, /obj/item)
@@ -600,6 +615,9 @@
 ///Called on an object to "clean it", such as removing blood decals/overlays, etc. The clean types bitfield is sent with it. Return TRUE if any cleaning was necessary and thus performed.
 #define COMSIG_COMPONENT_CLEAN_ACT "clean_act"
 
+///from base of datum/component/forensics/wipe_blood_dna(): ()
+#define COMSIG_WIPE_BLOOD_DNA "wipe_blood_dna"
+
 //Creamed
 #define COMSIG_COMPONENT_CLEAN_FACE_ACT "clean_face_act" //called when you wash your face at a sink: (num/strength)
 
@@ -608,6 +626,15 @@
 
 //Gibs
 #define COMSIG_GIBS_STREAK "gibs_streak" // from base of /obj/effect/decal/cleanable/blood/gibs/streak(): (list/directions, list/diseases)
+
+/// Called on mobs when they step in blood. (blood_amount, blood_state, list/blood_DNA)
+#define COMSIG_STEP_ON_BLOOD "step_on_blood"
+
+// Called on mobs when they step in blood. (blood_amount, blood_state, list/blood_DNA)
+#define COMSIG_STEP_ON_BLOOD "step_on_blood"
+
+/// Call on items to test if they're bloody or not
+#define COMSIG_IS_BLOODY "is_bloody"
 
 //Mood
 #define COMSIG_ADD_MOOD_EVENT "add_mood" //Called when you send a mood event from anywhere in the code.

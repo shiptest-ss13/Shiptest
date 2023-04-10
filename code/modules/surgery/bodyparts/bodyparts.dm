@@ -63,6 +63,10 @@
 	var/should_draw_greyscale = TRUE //Limbs need this information as a back-up incase they are generated outside of a carbon (limbgrower)
 	var/species_color = ""
 	var/mutation_color = ""
+	/// The colour of damage done to this bodypart
+	var/damage_color = ""
+	/// Should we even use a color?
+	var/use_damage_color = FALSE
 	var/no_update = 0
 
 	var/animal_origin = null //for nonhuman bodypart (e.g. monkey)
@@ -518,6 +522,11 @@
 	else
 		draw_color = null
 
+	if(C?.dna.blood_type?.color)
+		damage_color = C.dna.blood_type.color
+	else
+		damage_color = COLOR_BLOOD
+
 	if(no_update)
 		return
 
@@ -536,6 +545,7 @@
 		else
 			skin_tone = ""
 
+		use_damage_color = S.use_damage_color
 		if(((MUTCOLORS in S.species_traits) || (DYNCOLORS in S.species_traits)) && uses_mutcolor) //Ethereal code. Motherfuckers.
 			if(S.fixed_mut_color)
 				species_color = S.fixed_mut_color

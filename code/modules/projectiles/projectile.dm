@@ -236,7 +236,11 @@
 			if(starting)
 				splatter_dir = get_dir(starting, target_loca)
 			if(isalien(L))
-				new /obj/effect/temp_visual/dir_setting/bloodsplatter/xenosplatter(target_loca, splatter_dir)
+				var/splatter_color = null
+				if(iscarbon(L))
+					var/mob/living/carbon/carbon_target = L
+					splatter_color = carbon_target.dna.blood_type.color
+				new /obj/effect/temp_visual/dir_setting/bloodsplatter(target_loca, splatter_dir, splatter_color)
 			var/obj/item/bodypart/B = L.get_bodypart(def_zone)
 			// WS edit - Fix various startup runtimes
 			if(B && !IS_ORGANIC_LIMB(B)) // So if you hit a robotic, it sparks instead of bloodspatters

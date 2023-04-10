@@ -21,8 +21,10 @@
 	if(!isinhands)
 		if(damaged_clothes)
 			. += mutable_appearance('icons/effects/item_damage.dmi', "damaged[blood_overlay_type]")
-		if(HAS_BLOOD_DNA(src))
-			. += mutable_appearance('icons/effects/blood.dmi', "[blood_overlay_type]blood")
+		if(SEND_SIGNAL(src, COMSIG_IS_BLOODY))
+			var/mutable_appearance/bloody_uniform = mutable_appearance('icons/effects/blood.dmi', "uniformblood")
+			bloody_uniform.color = get_blood_dna_color(return_blood_DNA())
+			. += bloody_uniform
 		var/mob/living/carbon/human/M = loc
 		if(ishuman(M) && M.w_uniform)
 			var/obj/item/clothing/under/U = M.w_uniform

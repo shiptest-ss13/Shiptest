@@ -52,6 +52,7 @@
 	create_dna(src)
 	dna.initialize_dna(random_blood_type())
 	AddComponent(/datum/component/footstep, FOOTSTEP_MOB_BAREFOOT, 1, -6)
+	AddComponent(/datum/component/bloodysoles/feet)
 
 /mob/living/carbon/monkey/Destroy()
 	SSmobs.cubemonkeys -= src

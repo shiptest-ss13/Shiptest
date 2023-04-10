@@ -158,6 +158,9 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	/// The maximum rate at which a species can cool down per tick
 	var/bodytemp_heating_rate_max = HUMAN_BODYTEMP_HEATING_MAX
 
+	///Does our species have colors for its' damage overlays?
+	var/use_damage_color = TRUE
+
 	///Species-only traits. Can be found in [code/_DEFINES/DNA.dm]
 	var/list/species_traits = list()
 	///Generic traits tied to having the species.
@@ -445,7 +448,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	regenerate_organs(C,old_species)
 
 	if(exotic_bloodtype && C.dna.blood_type != exotic_bloodtype)
-		C.dna.blood_type = exotic_bloodtype
+		C.dna.blood_type = get_blood_type(exotic_bloodtype)
 
 	if(old_species.mutanthands)
 		for(var/obj/item/I in C.held_items)
