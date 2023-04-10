@@ -405,7 +405,7 @@
 
 /obj/item/key/ship
 	name = "ship key"
-	desc = "A key for locking and unlocking the helm of a ship, comes with a ball chain so it can be worn around the neck."
+	desc = "A key for locking and unlocking the helm of a ship, comes with a ball chain so it can be worn around the neck. Comes with a cute little shuttle-shaped keychain."
 	icon_state = "keyship"
 	var/datum/overmap/ship/controlled/master_ship
 	var/static/list/key_colors = list(

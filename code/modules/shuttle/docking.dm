@@ -62,7 +62,8 @@
 	// Moving to the new location will trample the ripples there at the exact
 	// same time any mobs there are trampled, to avoid any discrepancy where
 	// the ripples go away before it is safe.
-	takeoff(old_turfs, new_turfs, moved_atoms, rotation, movement_direction, old_dock, underlying_old_area, all_towed_shuttles)
+
+	takeoff(old_turfs, new_turfs, moved_atoms, rotation, movement_direction, old_dock, new_dock, underlying_old_area, all_towed_shuttles)
 
 	CHECK_TICK
 
@@ -143,9 +144,18 @@
 		CHECK_TICK
 		throw_exception(e3)
 
-/obj/docking_port/mobile/proc/takeoff(list/old_turfs, list/new_turfs, list/moved_atoms, rotation, movement_direction, old_dock, area/underlying_old_area, list/all_towed_shuttles)
+/obj/docking_port/mobile/proc/takeoff(list/old_turfs, list/new_turfs, list/moved_atoms, rotation, movement_direction, obj/docking_port/stationary/old_dock, obj/docking_port/stationary/new_dock, area/underlying_old_area, list/all_towed_shuttles)
 	var/list/exceptions_list = list()
-	var/list/parent_shuttles = list() //Keep track of what shuttles we're landing on in case we're relanding on a shuttle we were on.
+	//Keep track of what shuttles we're landing on in case we're relanding on a shuttle we were on.
+	var/list/parent_shuttles = list()
+	if(old_dock && old_dock.owner_ship)
+		old_dock.owner_ship.towed_shuttles -= src
+	if(new_dock.owner_ship)
+		new_dock.owner_ship.towed_shuttles |= src
+		parent_shuttles += new_dock.owner_ship
+	//Matrix multiply to get from current coords to new coords
+	//Calculate this before this mobile port moves
+	var/matrix/displacement_matrix = matrix(-src.x, -src.y, MATRIX_TRANSLATE) * matrix(rotation, MATRIX_ROTATE) *matrix(new_dock.x, new_dock.y, MATRIX_TRANSLATE)
 	for(var/i in 1 to old_turfs.len)
 		try
 			var/turf/oldT = old_turfs[i]
@@ -225,6 +235,17 @@
 				shuttle_area.onShuttleMove(oldT, newT, new_area)										//areas
 		catch(var/exception/e3)
 			exceptions_list += e3
+
+	for(var/obj/docking_port/stationary/docking_point in docking_points)
+		try
+			if(!(docking_point in moved_atoms))
+				var/matrix/new_loc_matrix = matrix(docking_point.x, docking_point.y, MATRIX_TRANSLATE) * displacement_matrix
+				var/oldT = get_turf(docking_point)
+				var/newT = locate(new_loc_matrix.c, new_loc_matrix.f, new_dock.z) //This assumes non-multi-z shuttles
+				docking_point.onShuttleMove(newT, oldT, movement_force, movement_direction, old_dock, src, all_towed_shuttles)
+				moved_atoms[docking_point] = oldT
+		catch(var/exception/e3AndAHalf)
+			exceptions_list |= e3AndAHalf
 
 	for(var/exception/e4 in exceptions_list)
 		CHECK_TICK
