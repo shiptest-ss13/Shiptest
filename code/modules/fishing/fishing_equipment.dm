@@ -5,6 +5,7 @@
 	desc = "simple fishing line"
 	icon = 'icons/obj/fishing.dmi'
 	icon_state = "reel_blue"
+	w_class = WEIGHT_CLASS_TINY
 	var/fishing_line_traits = NONE
 	/// Color of the fishing line
 	var/line_color = "#808080"

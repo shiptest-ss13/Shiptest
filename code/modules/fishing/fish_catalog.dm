@@ -3,9 +3,10 @@
 	name = "Fish Encyclopedia"
 	desc = "Indexes all fish known to mankind (and related species)."
 	icon_state = "fishbook"
-	starting_content = "Lot of fish stuff" //book wrappers could use cleaning so this is not necessary
+	//starting_content = "Lot of fish stuff" //book wrappers could use cleaning so this is not necessary
 
-/obj/item/book/fish_catalog/on_read(mob/user)
+/obj/item/book/fish_catalog/attack_self(mob/user)
+	. = ..()
 	ui_interact(user)
 
 /obj/item/book/fish_catalog/ui_interact(mob/user, datum/tgui/ui)

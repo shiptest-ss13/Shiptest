@@ -1,17 +1,45 @@
 /datum/fish_source/ocean
 	fish_table = list(
 		FISHING_DUD = 15,
-		/obj/item/coin/gold = 5,
+		/obj/item/spacecash = 5,
 		/obj/item/fish/clownfish = 15,
 		/obj/item/fish/pufferfish = 15,
 		/obj/item/fish/cardinal = 15,
 		/obj/item/fish/greenchromis = 15,
-		/obj/item/fish/lanternfish = 5
+		/obj/item/fish/needlefish = 15,
+		/obj/item/fish/armorfish = 15,
+		/obj/item/fish/trout = 10,
+		/obj/item/fish/salmon = 10,
+		/obj/item/fish/dwarf_moonfish = 10,
+		/obj/item/fish/gunner_jellyfish = 10,
+		/obj/item/fish/lanternfish = 5,
+		/obj/item/fish/firefish = 5,
+		/obj/item/fish/emulsijack = 1
 	)
 	fishing_difficulty = FISHING_DEFAULT_DIFFICULTY + 5
 
 /datum/fish_source/ocean/beach
 	catalog_description = "Beach shore water"
+
+/datum/fish_source/jungle
+	fish_table = list(
+		FISHING_DUD = 15,
+		/obj/item/spacecash = 5,
+		/obj/item/fish/perch = 20,
+		/obj/item/fish/goldfish = 15,
+		/obj/item/fish/angelfish = 15,
+		/obj/item/fish/guppy = 15,
+		/obj/item/fish/plasmatetra = 15,
+		/obj/item/fish/trout = 10,
+		/obj/item/fish/catfish = 10,
+		/obj/item/fish/bass = 10,
+		/obj/item/fish/donkfish = 5,
+		/obj/item/fish/emulsijack = 1
+	)
+	fishing_difficulty = FISHING_DEFAULT_DIFFICULTY + 5
+
+/datum/fish_source/jungle
+	catalog_description = "Jungle lake water"
 
 /datum/fish_source/portal
 	fish_table = list(

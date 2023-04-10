@@ -184,7 +184,7 @@
 
 /datum/mission/acquire/fish_alive
 	name = "Fish needed for my aquarium"
-	weight = 20
+	weight = 8
 	value = 750
 	val_mod_range = 0.2
 	container_type = /obj/item/storage/fish_case/mission
@@ -200,7 +200,9 @@
 
 /datum/mission/acquire/fish_cook
 	name = "I need a fish for my meal"
+	weight = 8
 	duration = 20 MINUTES
+	val_mod_range = 0.2
 	objective_type = /obj/item/fish
 	container_type = /obj/item/storage/fish_case/mission/big
 
@@ -257,11 +259,13 @@
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
 	STR.max_items = 1
 
-/obj/item/storage/fish_case/mission
+/obj/item/storage/fish_case/missionlive
 	name = "live fish delivery case"
 	desc = "A specialized container for delivering live fish. Comes with a built in sensor to prevent the distribution of deceased fish."
 
-/obj/item/storage/fish_case/mission/big
+/obj/item/storage/fish_case/mission/
+
+/obj/item/storage/fish_case/missionbig
 	name = "fish delivery case"
 	desc = "A specialized container for the delivering of fish. Guarantees they stay fresh during delivery!."
 

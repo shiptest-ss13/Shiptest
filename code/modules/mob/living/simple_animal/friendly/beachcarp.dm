@@ -41,25 +41,25 @@
 	regenerate_icons()
 
 /mob/living/simple_animal/beachcarp/bass
-	name = "bass"
+	name = "space bass"
 	desc = "A largemouthed green bass."
 	icon_state = "bass-swim"
 	icon_dead = "bass-dead"
 
 /mob/living/simple_animal/beachcarp/trout
-	name = "trout"
+	name = "space trout"
 	desc = "A wild steelhead trout."
 	icon_state = "trout-swim"
 	icon_dead = "trout-dead"
 
 /mob/living/simple_animal/beachcarp/salmon
-	name = "salmon"
+	name = "space salmon"
 	desc = "A large blue salmon."
 	icon_state = "salmon-swim"
 	icon_dead = "salmon-dead"
 
 /mob/living/simple_animal/beachcarp/perch
-	name = "perch"
+	name = "space perch"
 	desc = "A small yellow perch."
 	icon_state = "perch-swim"
 	icon_dead = "perch-dead"

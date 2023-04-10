@@ -34,6 +34,7 @@
 #define FISHING_LINE_BOUNCY (1 << 2)
 
 #define FISHING_SPOT_PRESET_BEACH "beach"
+#define FISHING_SPOT_PRESET_JUNGLE "jungle"
 #define FISHING_SPOT_PRESET_LAVALAND_LAVA "lavaland lava"
 
 #define FISHING_MINIGAME_RULE_HEAVY_FISH "heavy"

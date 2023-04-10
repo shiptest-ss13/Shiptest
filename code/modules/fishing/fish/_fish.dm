@@ -136,6 +136,7 @@
 	// All spacemen have magic eyes of fish weight perception until fish scale (get it?) is implemented.
 	. += span_notice("It's [size] cm long.")
 	. += span_notice("It weighs [weight] g.")
+	. += span_notice("It appears to be [status].")
 
 /obj/item/fish/proc/randomize_weight_and_size(modifier = 0)
 	var/size_deviation = 0.2 * average_size
@@ -268,7 +269,7 @@
 		health_change_per_second -= 0.5 //Starving
 	else
 		health_change_per_second += 0.5 //Slowly healing
-	adjust_health(health + health_change_per_second * delta_time)
+	adjust_health(health + health_change_per_second)
 
 /obj/item/fish/proc/adjust_health(amt)
 	health = clamp(amt, 0, initial(health))

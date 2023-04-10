@@ -8,6 +8,9 @@ GLOBAL_LIST_INIT(preset_fish_sources,init_fishing_configurations())
 	var/datum/fish_source/ocean/beach/beach_preset = new
 	.[FISHING_SPOT_PRESET_BEACH] = beach_preset
 
+	var/datum/fish_source/jungle/jungle_preset = new
+	.[FISHING_SPOT_PRESET_JUNGLE] = jungle_preset
+
 	var/datum/fish_source/lavaland/lava_preset = new
 	.[FISHING_SPOT_PRESET_LAVALAND_LAVA] = lava_preset
 

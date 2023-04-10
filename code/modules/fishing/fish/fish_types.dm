@@ -60,6 +60,56 @@
 		)
 	)
 
+/obj/item/fish/bass
+	name = "largemouth bass"
+	desc = "A large, carnivorous freshwater fish known for thriving in most environments and being popular amongst sport fishers."
+	icon_state = "bass"
+	dedicated_in_aquarium_icon_state = "fish_greyscale"
+	aquarium_vc_color = "#3e8012"
+	average_size = 40
+	average_weight = 5000
+	stable_population = 3
+	fishing_traits = list(/datum/fishing_trait/carnivore)
+
+	fishing_difficulty_modifier = 5
+
+/obj/item/fish/trout
+	name = "steelhead trout"
+	desc = "A species of coastal trout closely related to salmon and with a deep history of being used as a source of food."
+	icon_state = "trout"
+	dedicated_in_aquarium_icon_state = "fish_greyscale"
+	aquarium_vc_color = "#9e9e87"
+	required_fluid_type = AQUARIUM_FLUID_ANADROMOUS
+	average_size = 60
+	average_weight = 12000
+	stable_population = 3
+	fishing_traits = (/datum/fishing_trait/heavy)
+
+/obj/item/fish/salmon
+	name = "pink salmon"
+	desc = "The most famous of all anadromous fish! Known for migrating up rivers once they reach adulthood to lay their eggs then return to the sea."
+	icon_state = "salmon"
+	dedicated_in_aquarium_icon_state = "fish_greyscale"
+	aquarium_vc_color = "#76c747"
+	required_fluid_type = AQUARIUM_FLUID_ANADROMOUS
+	average_size = 60
+	average_weight = 3700
+	stable_population = 3
+	fishing_traits = (/datum/fishing_trait/carnivore)
+
+/obj/item/fish/perch
+	name = "perch"
+	desc = "A relatively small, yet common, species of predatory fish."
+	icon_state = "perch"
+	dedicated_in_aquarium_icon_state = "fish_greyscale"
+	aquarium_vc_color = "#0a4603"
+	average_size = 20
+	average_weight = 900
+	stable_population = 6
+	fishing_traits = (/datum/fishing_trait/carnivore)
+	favorite_bait = list(/obj/item/reagent_containers/food/snacks/bait/worm)
+
+
 // Saltwater fish below
 
 /obj/item/fish/clownfish
