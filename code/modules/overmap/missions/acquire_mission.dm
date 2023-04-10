@@ -184,7 +184,7 @@
 
 /datum/mission/acquire/fish_alive
 	name = "Fish needed for my aquarium"
-	weight = 8
+	weight = 800
 	value = 750
 	val_mod_range = 0.2
 	container_type = /obj/item/storage/fish_case/live
@@ -207,6 +207,13 @@
 			Make sure it's alive too, no one likes looking at dead fish."
 	. = ..()
 
+/datum/mission/acquire/fish_alive/atom_effective_count(atom/movable/target)
+	. = ..()
+	if(!.)
+		return
+	if(target.status == FISH_DEAD)
+		return 0
+
 /datum/mission/acquire/fish_alive/rare
 	name = "Rare fish needed for my aquarium!"
 	weight = 4
@@ -223,6 +230,7 @@
 /datum/mission/acquire/fish_alive/sabatoge
 	weight = 1
 	value = 3000
+	duration = 45 MINUTES
 	objective_type = /obj/item/fish/emulsijack
 
 /datum/mission/acquire/fish_alive/sabatoge/New(...)
@@ -296,7 +304,10 @@
 /obj/item/storage/fish_case/live
 	name = "live fish delivery case"
 	desc = "A specialized container for delivering live fish. Comes with a built in sensor to prevent the distribution of deceased fish."
-	component_type = /datum/component/storage/concrete/fish_case/live
+
+/obj/item/storage/fish_case/live/ComponentInitialize()
+	. = ..()
+
 
 /obj/item/storage/fish_case/big
 	name = "fish delivery case"
