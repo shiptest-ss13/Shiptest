@@ -187,16 +187,50 @@
 	weight = 8
 	value = 750
 	val_mod_range = 0.2
-	container_type = /obj/item/storage/fish_case/mission
+	container_type = /obj/item/storage/fish_case/live
 
 /datum/mission/acquire/fish_alive/New(...)
 	objective_type = pick(/obj/item/fish/clownfish,
 						/obj/item/fish/pufferfish,
 						/obj/item/fish/cardinal,
-						/obj/item/fish/greenchromis)
+						/obj/item/fish/greenchromis,
+						/obj/item/fish/trout,
+						/obj/item/fish/salmon,
+						/obj/item/fish/dwarf_moonfish,
+						/obj/item/fish/gunner_jellyfish,
+						/obj/item/fish/plasmatetra,
+						/obj/item/fish/catfish,
+						/obj/item/fish/bass,
+						/obj/item/fish/armorfish,
+						/obj/item/fish/needlefish)
 	desc = "My aquarium is sorely lacking in [initial(objective_type.name)], can you please bring one to me? \
 			Make sure it's alive too, no one likes looking at dead fish."
 	. = ..()
+
+/datum/mission/acquire/fish_alive/rare
+	name = "Rare fish needed for my aquarium!"
+	weight = 4
+	value = 1500
+	val_mod_range = 0.3
+
+/datum/mission/acquire/fish_alive/rare/New(...)
+	objective_type = pick(/obj/item/fish/lanternfish,
+						/obj/item/fish/firefish,
+						/obj/item/fish/donkfish)
+	desc = "I seek to make my beloved aquarium truly spectacular, and to do this I need only the finest fish! \
+			Bring me a [initial(objective_type.name)] and I will reward you handsomely."
+
+/datum/mission/acquire/fish_alive/sabatoge
+	weight = 1
+	value = 3000
+	objective_type = /obj/item/fish/emulsijack
+
+/datum/mission/acquire/fish_alive/sabatoge/New(...)
+	var/enemy = pick("Rutherford","Baldwin","Anderson","Percival")
+	name = "That bastard [initial(enemy)] has had it good for too long!"
+	desc = "My arch-nemesis [initial(enemy)] thinks his aquarium is so much better than mine, I'll show him! \
+			Bring me an emulsijack, and make sure it's alive!"
+
 
 /datum/mission/acquire/fish_cook
 	name = "I need a fish for my meal"
@@ -204,7 +238,7 @@
 	duration = 20 MINUTES
 	val_mod_range = 0.2
 	objective_type = /obj/item/fish
-	container_type = /obj/item/storage/fish_case/mission/big
+	container_type = /obj/item/storage/fish_case/big
 
 /datum/mission/acquire/fish_cook/New(...)
 	num_wanted = rand(1,3)
@@ -259,17 +293,16 @@
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
 	STR.max_items = 1
 
-/obj/item/storage/fish_case/missionlive
+/obj/item/storage/fish_case/live
 	name = "live fish delivery case"
 	desc = "A specialized container for delivering live fish. Comes with a built in sensor to prevent the distribution of deceased fish."
+	component_type = /datum/component/storage/concrete/fish_case/live
 
-/obj/item/storage/fish_case/mission/
-
-/obj/item/storage/fish_case/missionbig
+/obj/item/storage/fish_case/big
 	name = "fish delivery case"
 	desc = "A specialized container for the delivering of fish. Guarantees they stay fresh during delivery!."
 
-/obj/item/storage/fish_case/mission/big/ComponentInitialize()
+/obj/item/storage/fish_case/big/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 3

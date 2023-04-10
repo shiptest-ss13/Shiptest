@@ -83,7 +83,7 @@
 	average_size = 60
 	average_weight = 12000
 	stable_population = 3
-	fishing_traits = (/datum/fishing_trait/heavy)
+	fishing_traits = list(/datum/fishing_trait/heavy)
 
 /obj/item/fish/salmon
 	name = "pink salmon"
@@ -95,7 +95,7 @@
 	average_size = 60
 	average_weight = 3700
 	stable_population = 3
-	fishing_traits = (/datum/fishing_trait/carnivore)
+	fishing_traits = list(/datum/fishing_trait/carnivore)
 
 /obj/item/fish/perch
 	name = "perch"
@@ -106,8 +106,7 @@
 	average_size = 20
 	average_weight = 900
 	stable_population = 6
-	fishing_traits = (/datum/fishing_trait/carnivore)
-	favorite_bait = list(/obj/item/reagent_containers/food/snacks/bait/worm)
+	fishing_traits = list(/datum/fishing_trait/carnivore)
 
 
 // Saltwater fish below
