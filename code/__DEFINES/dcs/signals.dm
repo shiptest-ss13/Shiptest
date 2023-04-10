@@ -27,17 +27,7 @@
 /// from SSsun when the sun changes position : (azimuth)
 #define COMSIG_SUN_MOVED "sun_moved"
 
-///Port from bee, probably necessary
-/// Signifies that this proc is used to handle signals.
-/// Every proc you pass to RegisterSignal must have this.
-/// Mostly unused in Bee since it is a recent tg PR:
-/// https://github.com/tgstation/tgstation/pull/52761
-/// it doesn't matter *that* much so I don't care now *shrug
-#define SIGNAL_HANDLER SHOULD_NOT_SLEEP(TRUE)
 
-/// Signifies that this proc is used to handle signals, but also sleeps.
-/// Do not use this for new work.
-#define SIGNAL_HANDLER_DOES_SLEEP
 
 //////////////////////////////////////////////////////////////////
 
@@ -628,9 +618,6 @@
 #define COMSIG_GIBS_STREAK "gibs_streak" // from base of /obj/effect/decal/cleanable/blood/gibs/streak(): (list/directions, list/diseases)
 
 /// Called on mobs when they step in blood. (blood_amount, blood_state, list/blood_DNA)
-#define COMSIG_STEP_ON_BLOOD "step_on_blood"
-
-// Called on mobs when they step in blood. (blood_amount, blood_state, list/blood_DNA)
 #define COMSIG_STEP_ON_BLOOD "step_on_blood"
 
 /// Call on items to test if they're bloody or not

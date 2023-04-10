@@ -87,7 +87,7 @@
 //Add "bloodiness" of this blood's type, to the human's shoes
 //This is on /cleanable because fuck this ancient mess
 /obj/effect/decal/cleanable/proc/on_entered(datum/source, atom/movable/AM)
-	..()
+	SIGNAL_HANDLER
 	if(iscarbon(AM) && blood_state && bloodiness > 40)
 		SEND_SIGNAL(AM, COMSIG_STEP_ON_BLOOD, src)
 		update_icon()
