@@ -51,7 +51,7 @@
 	var/obj/item/parent_item = parent
 	parent_item.update_slot_icon()
 
-Run to equally share the blood between us and a decal
+//Run to equally share the blood between us and a decal
 /datum/component/bloodysoles/proc/share_blood(obj/effect/decal/cleanable/pool)
 	last_blood_state = pool.blood_state
 
