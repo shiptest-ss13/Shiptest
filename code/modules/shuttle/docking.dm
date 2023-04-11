@@ -1,3 +1,10 @@
+// Q: Why are there so many C-like for loops in this file? Aren't those bad practice?
+// A: There's a bug in the BYOND compiler that causes runtiming procs in try blocks within for loops,
+//    of the form for(var/i in 1 to N) or similar, to cause the loop to break prematurely if the runtiming proc's
+//    return value is being used (such as to store a value or in an if() statement).
+//    Thus, all loops of that form in this file have been replaced with their C-like equivalent for consistency,
+//    even if the loop can't trigger the bug (such as if it lacks a proc call or try block).
+
 /// This is the main proc. It instantly moves our mobile port to stationary port `new_dock`.
 /obj/docking_port/mobile/proc/initiate_docking(obj/docking_port/stationary/new_dock, movement_direction, force=FALSE)
 	// Crashing this ship with NO SURVIVORS
@@ -99,7 +106,8 @@
 
 /obj/docking_port/mobile/proc/preflight_check(list/old_turfs, list/new_turfs, list/areas_to_move, rotation)
 	var/list/exceptions_list = list()
-	for(var/i in 1 to old_turfs.len)
+	// C-like for loop; see top of file for explanation
+	for(var/i = 1, i <= old_turfs.len, i++)
 		try
 			CHECK_TICK
 			var/turf/oldT = old_turfs[i]
@@ -118,7 +126,8 @@
 			move_mode = old_area.beforeShuttleMove(all_shuttle_areas)											//areas											//areas
 
 			var/list/old_contents = oldT.contents
-			for(var/k in 1 to old_contents.len)
+			// C-like for loop; see top of file for explanation
+			for(var/k = 1, k <= old_contents.len, k++)
 				try
 					CHECK_TICK
 					var/atom/movable/moving_atom = old_contents[k]
@@ -129,7 +138,6 @@
 					exceptions_list += e1
 
 			move_mode = oldT.fromShuttleMove(newT, move_mode)												//turfs
-
 			move_mode = newT.toShuttleMove(oldT, move_mode, src)											//turfs
 
 			if(move_mode & MOVE_AREA)
@@ -156,7 +164,8 @@
 	//Matrix multiply to get from current coords to new coords
 	//Calculate this before this mobile port moves
 	var/matrix/displacement_matrix = matrix(-src.x, -src.y, MATRIX_TRANSLATE) * matrix(rotation, MATRIX_ROTATE) *matrix(new_dock.x, new_dock.y, MATRIX_TRANSLATE)
-	for(var/i in 1 to old_turfs.len)
+	// C-like for loop; see top of file for explanation
+	for(var/i = 1, i <= old_turfs.len, i++)
 		try
 			var/turf/oldT = old_turfs[i]
 			var/turf/newT = new_turfs[i]
@@ -174,7 +183,8 @@
 		catch(var/exception/e1)
 			exceptions_list += e1
 
-	for(var/i in 1 to old_turfs.len)
+	// C-like for loop; see top of file for explanation
+	for(var/i = 1, i <= old_turfs.len, i++)
 		try
 			var/turf/oldT = old_turfs[i]
 			var/turf/newT = new_turfs[i]
@@ -187,7 +197,8 @@
 				var/shuttle_layers = -1*A.get_missing_shuttles(oldT)
 
 				//Count the shuttles on this turf as the number of skipovers we'll go down for the baseturf copy.
-				for(var/index in 1 to all_towed_shuttles.len)
+				// C-like for loop; see top of file for explanation
+				for(var/index = 1, index <= all_towed_shuttles.len, index++)
 					M = all_towed_shuttles[index]
 					if(!M.underlying_turf_area[oldT]) //This shuttle isn't on this turf
 						continue
@@ -200,7 +211,8 @@
 		catch(var/exception/e2)
 			exceptions_list += e2
 
-	for(var/i in 1 to old_turfs.len)
+	// C-like for loop; see top of file for explanation
+	for(var/i = 1, i <= old_turfs.len, i++)
 		try
 			var/turf/oldT = old_turfs[i]
 			var/turf/newT = new_turfs[i]
@@ -212,7 +224,8 @@
 
 				//Find the new area, and update the underlying_turf_area of all towed shuttles
 				var/obj/docking_port/mobile/M
-				for(var/index in 0 to all_towed_shuttles.len-1)
+				// C-like for loop; see top of file for explanation
+				for(var/index = 0, index < all_towed_shuttles.len, index++) // note the different start value and end condition
 					M = all_towed_shuttles[all_towed_shuttles.len-index]
 					if(!M.underlying_turf_area[oldT]) //the shuttle isn't on this turf
 						continue
@@ -265,7 +278,9 @@
 	var/new_parallax_dir = FALSE
 	if(istype(new_dock, /obj/docking_port/stationary/transit))
 		new_parallax_dir = preferred_direction
-	for(var/i in 1 to areas_to_move.len)
+
+	// C-like for loop; see top of file for explanation
+	for(var/i = 1, i <= areas_to_move.len, i++)
 		try
 			CHECK_TICK
 			var/area/internal_area = areas_to_move[i]
@@ -273,7 +288,8 @@
 		catch(var/exception/e1)
 			exceptions_list += e1
 
-	for(var/i in 1 to old_turfs.len)
+	// C-like for loop; see top of file for explanation
+	for(var/i = 1, i <= old_turfs.len, i++)
 		try
 			CHECK_TICK
 			if(!(old_turfs[old_turfs[i]] & MOVE_TURF))
@@ -284,7 +300,8 @@
 		catch(var/exception/e2)
 			exceptions_list += e2
 
-	for(var/i in 1 to moved_atoms.len)
+	// C-like for loop; see top of file for explanation
+	for(var/i = 1, i <= moved_atoms.len, i++)
 		try
 			CHECK_TICK
 			var/atom/movable/moved_object = moved_atoms[i]
@@ -304,7 +321,8 @@
 		catch(var/exception/e4)
 			exceptions_list += e4
 
-	for(var/i in 1 to areas_to_move.len)
+	// C-like for loop; see top of file for explanation
+	for(var/i = 1, i <= areas_to_move.len, i++)
 		try
 			CHECK_TICK
 			var/area/internal_area = areas_to_move[i]
@@ -312,7 +330,8 @@
 		catch(var/exception/e5)
 			exceptions_list += e5
 
-	for(var/i in 1 to old_turfs.len)
+	// C-like for loop; see top of file for explanation
+	for(var/i = 1, i <= old_turfs.len, i++)
 		try
 			CHECK_TICK
 			if(!(old_turfs[old_turfs[i]] & MOVE_CONTENTS | MOVE_TURF))
@@ -323,7 +342,8 @@
 		catch(var/exception/e6)
 			exceptions_list += e6
 
-	for(var/i in 1 to moved_atoms.len)
+	// C-like for loop; see top of file for explanation
+	for(var/i = 1, i <= moved_atoms.len, i++)
 		try
 			CHECK_TICK
 			var/atom/movable/moved_object = moved_atoms[i]
@@ -340,7 +360,9 @@
 
 /obj/docking_port/mobile/proc/reset_air()
 	var/list/turfs = return_ordered_turfs(x, y, z, dir)
-	for(var/i in 1 to length(turfs))
+
+	// C-like for loop; see top of file for explanation
+	for(var/i = 1, i <= length(turfs), i++)
 		var/turf/open/T = turfs[i]
 		if(istype(T))
 			T.air.copy_from_turf(T)
