@@ -237,7 +237,7 @@
 			// a dock + undock cycle might flip the dock's height + width due to dock adjustment,
 			// so we need to check both orderings to make sure they match
 			if( \
-				!(dock in landing_in_progress_docks) && !dock.get_docked() && \
+				!(dock in landing_in_progress_docks) && !dock.docked && \
 				( \
 					(dock.width == size[1] && dock.height == size[2]) || \
 					(dock.height == size[1] && dock.width == size[2]) \
@@ -264,7 +264,7 @@
 // DEBUG: send an announcement or radio message saying "you've docked to hangar SHAFT-NUM" for immersion + so that people can look back in their chatlog if they forget
 /datum/overmap/outpost/post_docked(datum/overmap/ship/controlled/dock_requester)
 	// removes the stationary dock from the list, so that we don't have to worry about it causing merge SGTs
-	landing_in_progress_docks -= dock_requester.shuttle_port.get_docked()
+	landing_in_progress_docks -= dock_requester.shuttle_port.docked
 
 	for(var/mob/M as anything in GLOB.player_list)
 		if(dock_requester.shuttle_port.is_in_shuttle_bounds(M))
