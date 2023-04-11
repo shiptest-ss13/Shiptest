@@ -161,14 +161,12 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 4
 	},
-/obj/structure/sign/poster/official/safety_internals{
-	pixel_x = -32
-	},
 /obj/structure/rack,
 /obj/item/pickaxe/emergency,
 /obj/item/pickaxe/emergency,
 /obj/item/storage/bag/ore,
 /obj/item/storage/bag/ore,
+/obj/machinery/airalarm/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "au" = (
@@ -350,6 +348,9 @@
 	dir = 4
 	},
 /obj/structure/tank_dispenser,
+/obj/structure/sign/poster/official/safety_internals{
+	pixel_x = -32
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "aK" = (
@@ -527,6 +528,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
 	},
+/obj/machinery/airalarm/directional/west,
 /turf/open/floor/wood,
 /area/ship/crew/dorm)
 "aZ" = (
@@ -1331,6 +1333,7 @@
 /obj/effect/turf_decal/trimline/opaque/green/line{
 	dir = 8
 	},
+/obj/machinery/airalarm/directional/west,
 /turf/open/floor/plasteel,
 /area/ship/bridge)
 "cr" = (
@@ -2056,6 +2059,7 @@
 	icon_state = "plant-21";
 	pixel_y = 10
 	},
+/obj/machinery/airalarm/directional/west,
 /turf/open/floor/plasteel/white,
 /area/ship/crew)
 "dp" = (
@@ -2231,6 +2235,7 @@
 	},
 /obj/machinery/light,
 /obj/structure/cable,
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "dE" = (
@@ -2263,6 +2268,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
+/obj/machinery/airalarm/directional/west,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/office)
 "dI" = (
@@ -2946,6 +2952,7 @@
 	},
 /obj/item/wrench/medical,
 /obj/item/crowbar,
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/security/armory)
 "eM" = (
