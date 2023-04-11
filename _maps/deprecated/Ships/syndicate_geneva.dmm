@@ -148,11 +148,11 @@
 	pixel_x = -25
 	},
 /obj/item/areaeditor/shuttle,
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c200,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c200,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/bridge)
 "cB" = (
@@ -263,10 +263,15 @@
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/crew/dorm)
 "dW" = (
-/obj/machinery/vending/hydroseeds,
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/item/seeds/corn,
+/obj/item/seeds/grass,
+/obj/item/seeds/random,
+/obj/item/seeds/random,
+/obj/item/seeds/angel,
+/obj/structure/closet/crate/hydroponics,
 /turf/open/floor/grass,
 /area/ship/crew/hydroponics)
 "dZ" = (

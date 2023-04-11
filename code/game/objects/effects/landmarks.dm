@@ -432,3 +432,61 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	name = "portal exit"
 	icon_state = "portal_exit"
 	var/id
+
+/obj/effect/landmark/subship
+	name = "subship dock"
+	icon_state = "subship_dock"
+	dir = NORTH
+	var/datum/map_template/shuttle/subship_template
+	var/offset_x = 0
+	var/offset_y = 0
+
+/obj/effect/landmark/subship/New(loc)
+	..(loc)
+	var/datum/map_template/shuttle/template = SSmapping.shuttle_templates[initial(subship_template.file_name)]
+	var/dock_x
+	var/dock_y
+	switch(dir) // This could definitely be optimized with matrix magic, but this will have to do for now.
+		if(NORTH)
+			dock_x = template.port_x_offset - 1
+			dock_y = template.port_y_offset - 1
+		if(EAST)
+			dock_x = template.port_y_offset - 1
+			dock_y = template.width - template.port_x_offset
+		if(SOUTH)
+			dock_x = template.width - template.port_x_offset
+			dock_y = template.height - template.port_y_offset
+		if(WEST)
+			dock_x = template.height - template.port_y_offset
+			dock_y = template.port_x_offset - 1
+	var/obj/docking_port/stationary/dock = new(locate(x + offset_x + dock_x, y + offset_y + dock_y, z))
+	dock.roundstart_template = subship_template
+	dock.load_template_on_initialize = FALSE
+	dock.dir = angle2dir_cardinal(dir2angle(template.port_dir)+dir2angle(dir))
+	switch(template.port_dir) // Setting the dock's bounding box vars
+		if(NORTH)
+			dock.width = template.width
+			dock.height = template.height
+			dock.dwidth = template.port_x_offset - 1
+			dock.dheight = template.port_y_offset - 1
+		if(EAST)
+			dock.width = template.height
+			dock.height = template.width
+			dock.dwidth = template.height - template.port_y_offset
+			dock.dheight = template.port_x_offset - 1
+		if(SOUTH)
+			dock.width = template.width
+			dock.height = template.height
+			dock.dwidth = template.width - template.port_x_offset
+			dock.dheight = template.height - template.port_y_offset
+		if(WEST)
+			dock.width = template.height
+			dock.height = template.width
+			dock.dwidth = template.port_y_offset - 1
+			dock.dheight = template.width - template.port_x_offset
+
+
+/obj/effect/landmark/subship/Destroy()
+	// Subship landmarks are in the bounding box of the subship, meaning that the landmark can be landed on which destroys it.
+	// I'm not sure landmarks destroyed on landing is intended behavior or not, so we're not destroying the dock on deletion just in case it is.
+	. = ..()

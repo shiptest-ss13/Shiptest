@@ -158,7 +158,31 @@
 
 	.["calibrating"] = calibrating
 	.["otherInfo"] = list()
-	for (var/datum/overmap/object as anything in current_ship.get_nearby_overmap_objects())
+	var/list/objects = current_ship.get_nearby_overmap_objects()
+	var/dequeue_pointer = 0
+	while (dequeue_pointer++ < objects.len)
+		var/datum/overmap/ship/controlled/object = objects[dequeue_pointer]
+		if(!istype(object, /datum/overmap)) //Not an overmap object, ignore this
+			continue
+
+		var/available_dock = FALSE
+
+		//Even if its full or incompatible with us, it should still show up.
+		if(object in SSovermap.overmap_container[current_ship.x][current_ship.y])
+			available_dock = TRUE
+
+		//Detect any ships in this location we can dock to
+		if(istype(object))
+			for(var/obj/docking_port/stationary/docking_port in object.shuttle_port.docking_points)
+				if(current_ship.shuttle_port.check_dock(docking_port, silent = TRUE))
+					available_dock = TRUE
+					break
+
+		objects |= object.contents
+
+		if(!available_dock)
+			continue
+
 		var/list/other_data = list(
 			name = object.name,
 			ref = REF(object)
@@ -260,7 +284,7 @@
 				if(SSshuttle.jump_mode > BS_JUMP_CALLED)
 					to_chat(usr, "<span class='warning'>Cannot dock due to bluespace jump preperations!</span>")
 					return
-				var/datum/overmap/to_act = locate(params["ship_to_act"]) in current_ship.get_nearby_overmap_objects()
+				var/datum/overmap/to_act = locate(params["ship_to_act"]) in current_ship.get_nearby_overmap_objects(include_docked = TRUE)
 				say(current_ship.Dock(to_act))
 				return
 			if("toggle_engine")
