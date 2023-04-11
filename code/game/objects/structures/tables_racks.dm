@@ -278,6 +278,8 @@
 	icon = 'icons/obj/smooth_structures/table_chem.dmi'
 	icon_state = "table_chem-0"
 	base_icon_state = "table_chem"
+	smoothing_groups = list(SMOOTH_GROUP_CHEM_TABLES)
+	canSmoothWith = list(SMOOTH_GROUP_CHEM_TABLES)
 	buildstack = /obj/item/stack/sheet/mineral/plastitanium
 	can_flip = FALSE
 
