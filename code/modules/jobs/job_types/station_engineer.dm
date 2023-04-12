@@ -198,7 +198,7 @@
 	shoes = /obj/item/clothing/shoes/combat
 	head = null
 	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
-	ears = /obj/item/radio/headset/syndicate/alt
+	ears = /obj/item/radio/headset/syndicate
 	back = /obj/item/storage/backpack/industrial
 	belt = /obj/item/storage/belt/utility/syndicate
 	implants = list(/obj/item/implant/weapons_auth)
