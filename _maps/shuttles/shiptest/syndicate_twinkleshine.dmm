@@ -2025,7 +2025,7 @@
 	},
 /obj/machinery/mass_driver{
 	dir = 4;
-	id = "twinkle_rightmassdriver"
+	id = "twinkle_leftmassdriver"
 	},
 /turf/open/floor/plasteel/elevatorshaft,
 /area/ship/bridge)
@@ -3603,6 +3603,13 @@
 	},
 /turf/open/floor/plasteel/elevatorshaft,
 /area/ship/bridge)
+"xJ" = (
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled/line{
+	dir = 1
+	},
+/obj/machinery/computer/operating,
+/turf/open/floor/plasteel/white,
+/area/ship/medical/surgery)
 "xP" = (
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 9
@@ -3878,13 +3885,13 @@
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ship/crew/dorm)
 "zG" = (
-/obj/machinery/computer/operating,
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line{
 	dir = 1
 	},
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/structure/table/optable,
 /turf/open/floor/plasteel/white,
 /area/ship/medical/surgery)
 "zH" = (
@@ -5209,7 +5216,7 @@
 	},
 /obj/machinery/mass_driver{
 	dir = 4;
-	id = "twinkle_leftmassdriver"
+	id = "twinkle_rightmassdriver"
 	},
 /obj/item/trash/can/food/peaches/maint,
 /turf/open/floor/plasteel/elevatorshaft,
@@ -7234,6 +7241,12 @@
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line,
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
+"UI" = (
+/obj/machinery/door/poddoor{
+	id = "twinkle_leftmassdriver"
+	},
+/turf/open/floor/plasteel/elevatorshaft,
+/area/ship/bridge)
 "UK" = (
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
@@ -8095,7 +8108,7 @@ mp
 mp
 mp
 mp
-ab
+of
 ae
 LX
 kS
@@ -8115,7 +8128,7 @@ kS
 kS
 LX
 ae
-ab
+hu
 mp
 mp
 mp
@@ -8126,7 +8139,7 @@ mp
 (3,1,1) = {"
 mp
 mp
-kS
+ab
 LX
 ae
 LX
@@ -8154,14 +8167,14 @@ kS
 LX
 ae
 LX
-kS
+ab
 mp
 mp
 "}
 (4,1,1) = {"
 mp
 mp
-of
+kS
 NO
 iJ
 wM
@@ -8189,7 +8202,7 @@ kS
 NO
 iJ
 wM
-hu
+kS
 mp
 mp
 "}
@@ -9395,7 +9408,7 @@ EN
 HY
 lw
 Sc
-KI
+xJ
 Iw
 Sc
 Sc
@@ -9777,7 +9790,7 @@ mp
 mp
 mp
 SL
-xH
+UI
 SL
 mp
 mp
