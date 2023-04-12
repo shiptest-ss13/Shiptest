@@ -7,15 +7,19 @@
 	var/description
 	/// The overlay applied by this decal to the target.
 	var/mutable_appearance/pic
+	var/rotated
 
-/datum/element/decal/Attach(atom/target, _icon, _icon_state, _dir, _cleanable=FALSE, _color, _layer=TURF_LAYER, _description, _alpha=255)
+/datum/element/decal/Attach(atom/target, _icon, _icon_state, _dir, _cleanable=FALSE, _color, _layer=TURF_LAYER, _description, _alpha=255, _rotated=FALSE)
 	. = ..()
-	if(!isatom(target) || !generate_appearance(_icon, _icon_state, _dir, _layer, _color, _alpha, target))
+	if(!isatom(target) || (pic ? FALSE : !generate_appearance(_icon, _icon_state, _dir, _layer, _color, _alpha, target)))
 		return ELEMENT_INCOMPATIBLE
 	description = _description
 	cleanable = _cleanable
+	rotated = _rotated
 
 	RegisterSignal(target,COMSIG_ATOM_UPDATE_OVERLAYS,.proc/apply_overlay, TRUE)
+	if(isturf(target))
+		RegisterSignal(target,COMSIG_TURF_AFTER_SHUTTLE_MOVE,.proc/shuttlemove_react, TRUE)
 	if(target.flags_1 & INITIALIZED_1)
 		target.update_icon() //could use some queuing here now maybe.
 	else
@@ -48,7 +52,7 @@
 	return TRUE
 
 /datum/element/decal/Detach(atom/source, force)
-	UnregisterSignal(source, list(COMSIG_ATOM_DIR_CHANGE, COMSIG_COMPONENT_CLEAN_ACT, COMSIG_PARENT_EXAMINE, COMSIG_ATOM_UPDATE_OVERLAYS))
+	UnregisterSignal(source, list(COMSIG_ATOM_DIR_CHANGE, COMSIG_COMPONENT_CLEAN_ACT, COMSIG_PARENT_EXAMINE, COMSIG_ATOM_UPDATE_OVERLAYS, COMSIG_TURF_AFTER_SHUTTLE_MOVE))
 	source.update_icon()
 	if(isitem(source))
 		INVOKE_ASYNC(source, /obj/item/.proc/update_slot_icon)
@@ -67,6 +71,10 @@
 
 	overlay_list += pic
 
+/datum/element/decal/proc/shuttlemove_react(datum/source, turf/newT)
+	SIGNAL_HANDLER
+	Detach(source)
+	newT.AddElement(/datum/element/decal, pic.icon, pic.icon_state, pic.dir, cleanable, pic.color, pic.layer, description, pic.alpha, rotated)
 
 /datum/element/decal/proc/rotate_react(datum/source, old_dir, new_dir)
 	SIGNAL_HANDLER
@@ -74,7 +82,7 @@
 	if(old_dir == new_dir)
 		return
 	Detach(source)
-	source.AddElement(/datum/element/decal, pic.icon, pic.icon_state, new_dir, cleanable, pic.color, pic.layer, description, pic.alpha)
+	source.AddElement(/datum/element/decal, pic.icon, pic.icon_state, angle2dir(dir2angle(pic.dir)+dir2angle(new_dir)-dir2angle(old_dir)), cleanable, pic.color, pic.layer, description, pic.alpha, !rotated)
 
 /datum/element/decal/proc/clean_react(datum/source, clean_types)
 	SIGNAL_HANDLER

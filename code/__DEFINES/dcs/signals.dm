@@ -232,6 +232,8 @@
 #define COMSIG_TURF_MULTIZ_DEL "turf_multiz_del"
 ///from base of turf/multiz_turf_new: (turf/source, direction)
 #define COMSIG_TURF_MULTIZ_NEW "turf_multiz_new"
+//! from base of turf/proc/afterShuttleMove: (turf/new_turf)
+#define COMSIG_TURF_AFTER_SHUTTLE_MOVE "turf_after_shuttle_move"
 
 // /atom/movable signals
 
@@ -619,9 +621,6 @@
 
 /// Called on mobs when they step in blood. (blood_amount, blood_state, list/blood_DNA)
 #define COMSIG_STEP_ON_BLOOD "step_on_blood"
-
-/// Call on items to test if they're bloody or not
-#define COMSIG_IS_BLOODY "is_bloody"
 
 //Mood
 #define COMSIG_ADD_MOOD_EVENT "add_mood" //Called when you send a mood event from anywhere in the code.

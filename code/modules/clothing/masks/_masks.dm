@@ -35,7 +35,7 @@
 		if(body_parts_covered & HEAD)
 			if(damaged_clothes)
 				. += mutable_appearance('icons/effects/item_damage.dmi', "damagedmask")
-			if(SEND_SIGNAL(src, COMSIG_IS_BLOODY))
+			if(HAS_BLOOD_DNA(src))
 				var/mutable_appearance/bloody_mask = mutable_appearance('icons/effects/blood.dmi', "maskblood")
 				bloody_mask.color = get_blood_dna_color(return_blood_DNA())
 				. += bloody_mask

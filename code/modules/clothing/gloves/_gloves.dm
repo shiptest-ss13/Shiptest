@@ -30,7 +30,7 @@
 	if(!isinhands)
 		if(damaged_clothes)
 			. += mutable_appearance('icons/effects/item_damage.dmi', "damagedgloves")
-		if(SEND_SIGNAL(src, COMSIG_IS_BLOODY))
+		if(HAS_BLOOD_DNA(src))
 			var/mutable_appearance/bloody_hands = mutable_appearance('icons/effects/blood.dmi', "bloodyhands")
 			bloody_hands.color = get_blood_dna_color(return_blood_DNA())
 			. += bloody_hands
