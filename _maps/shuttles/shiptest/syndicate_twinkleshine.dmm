@@ -1460,6 +1460,13 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
+"iZ" = (
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled/line{
+	dir = 1
+	},
+/obj/machinery/computer/operating,
+/turf/open/floor/plasteel/white,
+/area/ship/medical/surgery)
 "jf" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
@@ -2713,6 +2720,12 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew/office)
+"rW" = (
+/obj/machinery/door/poddoor{
+	id = "twinkle_leftmassdriver"
+	},
+/turf/open/floor/plasteel/elevatorshaft,
+/area/ship/bridge)
 "sb" = (
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ship/crew/canteen)
@@ -3603,13 +3616,6 @@
 	},
 /turf/open/floor/plasteel/elevatorshaft,
 /area/ship/bridge)
-"xJ" = (
-/obj/effect/turf_decal/trimline/opaque/syndiered/filled/line{
-	dir = 1
-	},
-/obj/machinery/computer/operating,
-/turf/open/floor/plasteel/white,
-/area/ship/medical/surgery)
 "xP" = (
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 9
@@ -6920,7 +6926,7 @@
 /obj/item/trash/cheesie,
 /mob/living/carbon/human/species/moth{
 	name = "Secret Box Moth";
-	real_name = "Wall Moth";
+	real_name = "Box Moth";
 	gender = "female";
 	faction = list("neutral","PlayerSyndicate")
 	},
@@ -7241,12 +7247,6 @@
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line,
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
-"UI" = (
-/obj/machinery/door/poddoor{
-	id = "twinkle_leftmassdriver"
-	},
-/turf/open/floor/plasteel/elevatorshaft,
-/area/ship/bridge)
 "UK" = (
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
@@ -9408,7 +9408,7 @@ EN
 HY
 lw
 Sc
-xJ
+iZ
 Iw
 Sc
 Sc
@@ -9790,7 +9790,7 @@ mp
 mp
 mp
 SL
-UI
+rW
 SL
 mp
 mp
