@@ -48,6 +48,9 @@
 /obj/item/organ/ears/cat,
 /obj/structure/closet/crate/freezer,
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line,
+/obj/machinery/door/poddoor/shutters{
+	id = "twinkle_engines"
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical/surgery)
 "aj" = (
@@ -194,6 +197,9 @@
 	},
 /obj/machinery/atmospherics/components/unary/shuttle/heater{
 	dir = 4
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "twinkle_engines"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -1396,6 +1402,9 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
+/obj/machinery/door/poddoor/shutters{
+	id = "twinkle_engines"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "iK" = (
@@ -1961,6 +1970,9 @@
 	dir = 8
 	},
 /obj/structure/window/reinforced/spawner,
+/obj/machinery/door/poddoor/shutters{
+	id = "twinkle_engines"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "mX" = (
@@ -2298,24 +2310,9 @@
 /obj/item/modular_computer/tablet/preset/advanced{
 	pixel_x = -10
 	},
-/obj/item/bodypart/chest/robot,
-/obj/item/bodypart/head/robot,
-/obj/item/bodypart/l_arm/robot,
-/obj/item/bodypart/leg/left/robot,
-/obj/item/bodypart/r_arm/robot,
-/obj/item/bodypart/leg/right/robot,
-/obj/item/organ/ears/robot,
-/obj/item/organ/eyes/robotic/flashlight,
-/obj/item/organ/tongue/robot,
-/obj/item/organ/ears/cybernetic,
-/obj/item/organ/ears/cat,
-/obj/item/organ/heart/cybernetic/tier2,
-/obj/item/organ/liver/cybernetic/tier2,
-/obj/item/organ/lungs/cybernetic/tier2,
-/obj/item/organ/tail/cat,
 /obj/effect/turf_decal/corner/opaque/red/diagonal,
 /turf/open/floor/plasteel/white,
-/area/ship/medical/surgery)
+/area/ship/engineering/atmospherics)
 "pj" = (
 /obj/machinery/door/window/southright,
 /obj/effect/turf_decal/corner/opaque/white/diagonal,
@@ -2812,6 +2809,9 @@
 	dir = 5
 	},
 /obj/effect/turf_decal/trimline/opaque/syndiered/corner,
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "sz" = (
@@ -3235,6 +3235,7 @@
 /obj/structure/sign/poster/official/moth/epi{
 	pixel_x = -32
 	},
+/obj/machinery/light,
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "wa" = (
@@ -3364,11 +3365,24 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "wM" = (
+/obj/machinery/door/window/eastleft{
+	name = "Engine Access"
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced/spawner,
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
 /obj/machinery/door/poddoor/shutters{
 	id = "twinkle_engines"
 	},
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
-/area/ship/engineering/communications)
+/turf/open/floor/plating,
+/area/ship/engineering/atmospherics)
 "wP" = (
 /obj/effect/turf_decal/corner/opaque/orange/three_quarters{
 	dir = 8
@@ -4781,6 +4795,12 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
 	},
+/obj/machinery/door/poddoor/shutters{
+	id = "twinkle_engines"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "twinkle_engines"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "FW" = (
@@ -6119,6 +6139,9 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
 	},
+/obj/machinery/door/poddoor/shutters{
+	id = "twinkle_engines"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "NS" = (
@@ -6517,6 +6540,9 @@
 	},
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 4
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "twinkle_engines"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -8077,7 +8103,7 @@ kS
 LX
 ae
 LX
-wM
+Vf
 MU
 qF
 Cp
@@ -8111,7 +8137,7 @@ kS
 kS
 NO
 iJ
-FV
+wM
 Vf
 Ht
 Yq
@@ -8138,7 +8164,7 @@ mp
 of
 NO
 iJ
-FV
+wM
 kS
 PE
 sj
@@ -8162,7 +8188,7 @@ aj
 kS
 NO
 iJ
-FV
+wM
 hu
 mp
 mp
