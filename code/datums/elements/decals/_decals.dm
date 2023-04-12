@@ -7,6 +7,13 @@
 	var/description
 	/// The overlay applied by this decal to the target.
 	var/mutable_appearance/pic
+	/*
+	A short lecture on decal element collision on rotation
+	If a given decal's rotated version is identical to one of existing (at a same target), pre-rotation decals,
+	then the rotated decal won't stay after when the colliding pre-rotation decal gets rotated,
+	resulting in some decal elements colliding into nonexistence. This internal tick-tock prevents
+	such collision by forcing a non-collision.
+	 */
 	var/rotated
 
 /datum/element/decal/Attach(atom/target, _icon, _icon_state, _dir, _cleanable=FALSE, _color, _layer=TURF_LAYER, _description, _alpha=255, _rotated=FALSE)
