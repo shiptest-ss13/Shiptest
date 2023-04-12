@@ -4820,8 +4820,7 @@
 /obj/item/storage/fancy/cigarettes/cigpack_robustgold,
 /obj/item/storage/fancy/cigarettes/cigpack_robustgold,
 /obj/item/stack/sheet/mineral/gold/twenty,
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
+/obj/item/spacecash/bundle/loadsamoney,
 /turf/open/floor/pod,
 /area/ruin/space/has_grav/singularitylab/cargo)
 "rL" = (
@@ -5507,14 +5506,13 @@
 	icon_state = "pulse";
 	desc = "An advanced laser cannon, a laser etched inscription in the handle states 'NT-LS-1013'. The casing is made of a lightweight alloy."
 	},
-/obj/structure/closet/secure_closet{
-	req_access_txt = "3";
-	icon_state = "armory"
-	},
 /obj/item/gun/energy/laser/iot,
 /obj/item/gun/energy/laser/iot{
 	dry_fire_sound = 'sound/items/ding.ogg';
 	dry_fire_text = "ding"
+	},
+/obj/structure/safe{
+	name = "Prototype Storage"
 	},
 /turf/open/floor/engine,
 /area/ruin/space/has_grav/singularitylab/lab)
@@ -7932,6 +7930,7 @@
 	pixel_y = 32
 	},
 /obj/item/stack/telecrystal,
+/obj/effect/turf_decal/box,
 /turf/open/floor/engine,
 /area/ruin/space/has_grav/singularitylab/lab)
 "Dz" = (
@@ -13290,6 +13289,7 @@
 /obj/structure/filingcabinet,
 /obj/item/pen/fountain,
 /obj/item/documents/nanotrasen,
+/obj/item/door_remote/captain,
 /turf/open/floor/carpet/nanoweave/purple,
 /area/ruin/space/has_grav/singularitylab/lab)
 "Xg" = (
@@ -13722,10 +13722,6 @@
 	dry_fire_sound = 'sound/items/ding.ogg';
 	dry_fire_text = "ding"
 	},
-/obj/structure/closet/secure_closet{
-	req_access_txt = "3";
-	icon_state = "armory"
-	},
 /obj/item/gun/energy/e_gun/smg{
 	pixel_y = 6;
 	pixel_x = 5;
@@ -13735,6 +13731,9 @@
 	},
 /obj/item/gun/energy/laser,
 /obj/item/gun/energy/laser,
+/obj/structure/safe{
+	name = "Prototype Storage"
+	},
 /turf/open/floor/engine,
 /area/ruin/space/has_grav/singularitylab/lab)
 "YW" = (
@@ -17254,7 +17253,7 @@ QB
 QB
 Ke
 Qo
-se
+tq
 tq
 tq
 "}
@@ -17331,7 +17330,7 @@ QB
 QB
 Ke
 Qo
-se
+tq
 tq
 tq
 "}
@@ -17640,7 +17639,7 @@ QB
 QB
 QB
 Ke
-se
+tq
 tq
 "}
 (48,1,1) = {"
@@ -17717,7 +17716,7 @@ QB
 QB
 QB
 Ke
-se
+tq
 tq
 "}
 (49,1,1) = {"
@@ -18103,7 +18102,7 @@ QB
 QB
 QB
 Ke
-se
+tq
 "}
 (54,1,1) = {"
 tq
@@ -18873,7 +18872,7 @@ QB
 QB
 QB
 Ke
-se
+tq
 "}
 (64,1,1) = {"
 tq
@@ -18950,7 +18949,7 @@ QB
 QB
 QB
 Ke
-se
+tq
 "}
 (65,1,1) = {"
 tq
@@ -19257,7 +19256,7 @@ QB
 QB
 QB
 Ke
-se
+tq
 tq
 "}
 (69,1,1) = {"
