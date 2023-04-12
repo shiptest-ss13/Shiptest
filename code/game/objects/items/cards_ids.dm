@@ -199,7 +199,7 @@
 	if(istype(W, /obj/item/holochip))
 		insert_money(W, user)
 		return
-	else if(istype(W, /obj/item/stack/spacecash))
+	else if(istype(W, /obj/item/spacecash/bundle))
 		insert_money(W, user, TRUE)
 		return
 	else if(istype(W, /obj/item/coin))

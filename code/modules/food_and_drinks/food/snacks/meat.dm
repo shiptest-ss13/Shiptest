@@ -177,6 +177,11 @@
 	desc = "A slab of mouse meat. Best not eat it raw."
 	foodtype = RAW | MEAT | GROSS
 
+/obj/item/reagent_containers/food/snacks/meat/slab/mothroach
+	name = "mothroach meat"
+	desc = "A light slab of meat."
+	foodtype = RAW | MEAT | GROSS
+
 /obj/item/reagent_containers/food/snacks/meat/slab/corgi
 	name = "corgi meat"
 	desc = "Tastes like... well you know..."

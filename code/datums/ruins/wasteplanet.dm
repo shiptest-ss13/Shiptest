@@ -4,6 +4,7 @@
 	prefix = "_maps/RandomRuins/WasteRuins/"
 	allow_duplicates = FALSE
 	cost = 5
+	ruin_type = RUINTYPE_WASTE
 
 /datum/map_template/ruin/wasteplanet/fortress
 	name = "Fortress of Solitide"
@@ -60,3 +61,9 @@
 	id = "tarpit"
 	description = "A facility once constructed over a asphalt deposit."
 	suffix = "wasteplanet_tarpit.dmm"
+
+/datum/map_template/ruin/wasteplanet/abandoned_mechbay
+	name = "Abandoned Mech Bay"
+	description = "A military base formerly used for staging 4 mechs and crew. God knows what's in it now."
+	id = "abandoned_mechbay"
+	suffix = "wasteplanet_abandoned_mechbay.dmm"

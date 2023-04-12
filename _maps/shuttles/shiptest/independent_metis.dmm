@@ -511,7 +511,7 @@
 /obj/effect/decal/cleanable/glass,
 /obj/item/shard,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/holosign/barrier,
+/obj/structure/holosign/barrier/infinite,
 /obj/machinery/door/firedoor/window,
 /turf/open/floor/plating,
 /area/ship/science/robotics)
@@ -537,7 +537,7 @@
 /turf/open/floor/mineral/titanium/tiled,
 /area/ship/crew/canteen)
 "hR" = (
-/obj/structure/holosign/barrier/medical,
+/obj/structure/holosign/barrier/medical/infinite,
 /obj/machinery/light/floor,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
@@ -1270,7 +1270,7 @@
 /area/ship/crew/toilet)
 "sk" = (
 /obj/effect/decal/cleanable/robot_debris/gib,
-/obj/item/bodypart/r_leg/robot,
+/obj/item/bodypart/leg/right/robot,
 /obj/machinery/power/apc/auto_name/north,
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -1343,7 +1343,7 @@
 /area/ship/crew/canteen)
 "sV" = (
 /obj/effect/decal/cleanable/oil,
-/obj/item/bodypart/l_leg/robot,
+/obj/item/bodypart/leg/left/robot,
 /turf/open/floor/mineral/titanium/tiled,
 /area/ship/science/robotics)
 "to" = (
@@ -1805,7 +1805,7 @@
 /turf/open/floor/carpet/purple,
 /area/ship/crew/office)
 "zY" = (
-/obj/structure/holosign/barrier,
+/obj/structure/holosign/barrier/infinite,
 /obj/structure/cable{
 	icon_state = "4-10"
 	},
@@ -2702,7 +2702,7 @@
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/ship/hallway/aft)
 "Jg" = (
-/obj/structure/holosign/barrier,
+/obj/structure/holosign/barrier/infinite,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -2870,7 +2870,7 @@
 /turf/open/floor/mineral/titanium/tiled,
 /area/ship/crew/dorm)
 "KO" = (
-/obj/structure/holosign/barrier,
+/obj/structure/holosign/barrier/infinite,
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/ship/hallway/aft)
 "KS" = (

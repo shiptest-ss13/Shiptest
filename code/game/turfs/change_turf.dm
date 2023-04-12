@@ -14,9 +14,7 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 		qdel(thing, force=TRUE)
 
 	if(turf_type)
-		var/turf/newT = ChangeTurf(turf_type, baseturf_type, flags)
-		newT.ImmediateCalculateAdjacentTurfs()
-
+		ChangeTurf(turf_type, baseturf_type, flags)
 
 /turf/proc/copyTurf(turf/T, copy_air, flags)
 	if(T.type != type)
@@ -143,16 +141,20 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 		recalculate_directional_opacity()
 
 		if (dynamic_lighting != old_dynamic_lighting)
-			if (IS_DYNAMIC_LIGHTING(src))
+			if (IS_DYNAMIC_LIGHTING(W))
 				lighting_build_overlay()
 			else
 				lighting_clear_overlay()
 
-		for(var/turf/open/space/S in RANGE_TURFS(1, src)) //RANGE_TURFS is in code\__HELPERS\game.dm
-			S.update_starlight()
+		// Starlight recalculation is deferred if CHANGETURF_DEFER_BATCH is set.
+		if(!(flags & CHANGETURF_DEFER_BATCH))
+			for(var/turf/open/space/S in RANGE_TURFS(1, W)) //RANGE_TURFS is in code\__HELPERS\game.dm
+				S.check_starlight(W)
 
-	QUEUE_SMOOTH_NEIGHBORS(src)
-	QUEUE_SMOOTH(src)
+	// Smoothing is deferred if CHANGETURF_DEFER_BATCH is set.
+	if(!(flags & CHANGETURF_DEFER_BATCH))
+		QUEUE_SMOOTH_NEIGHBORS(W)
+		QUEUE_SMOOTH(W)
 
 	return W
 
@@ -179,18 +181,12 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 		if(turf_fire)
 			qdel(turf_fire)
 		if(ispath(path,/turf/closed))
-			flags |= CHANGETURF_RECALC_ADJACENT
 			update_air_ref(-1)
 			. = ..()
 		else
 			. = ..()
 			if(!istype(air,/datum/gas_mixture))
 				Initalize_Atmos(0)
-
-/turf/closed/ChangeTurf(path, list/new_baseturfs, flags)
-	if(ispath(path,/turf/open))
-		flags |= CHANGETURF_RECALC_ADJACENT
-	return ..()
 
 // Take off the top layer turf and replace it with the next baseturf down
 /turf/proc/ScrapeAway(amount=1, flags)
@@ -244,7 +240,7 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 	var/area/turf_area = loc
 	if(new_baseturfs && !length(new_baseturfs))
 		new_baseturfs = list(new_baseturfs)
-	flags = turf_area.PlaceOnTopReact(new_baseturfs, fake_turf_type, flags) // A hook so areas can modify the incoming args
+	flags = turf_area.PlaceOnTopReact(src, new_baseturfs, fake_turf_type, flags) // A hook so areas can modify the incoming args
 
 	var/turf/newT
 	if(flags & CHANGETURF_SKIP) // We haven't been initialized

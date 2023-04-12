@@ -17,28 +17,18 @@
 	icon_state = "away"
 	always_unpowered = FALSE
 
-// Ruins of "onehalf" ship
+// Onehalf Ruin
 
-/area/ruin/space/has_grav/onehalf/hallway
-	name = "Hallway"
-	icon_state = "hallC"
+/area/ruin/space/has_grav/onehalf
+	name = "Station Fragment"
+	icon_state = "away"
 
-/area/ruin/space/has_grav/onehalf/drone_bay
-	name = "Mining Drone Bay"
-	icon_state = "engine"
-
-/area/ruin/space/has_grav/onehalf/dorms_med
-	name = "Crew Quarters"
-	icon_state = "Sleep"
-
-/area/ruin/space/has_grav/onehalf/bridge
-	name = "Bridge"
-	icon_state = "bridge"
-
-
+//Dinner For Two
 
 /area/ruin/space/has_grav/powered/dinner_for_two
 	name = "Dinner for Two"
+
+//Aesthetic
 
 /area/ruin/space/has_grav/powered/aesthetic
 	name = "Aesthetic"
@@ -376,39 +366,29 @@
 	name = "Mac Space Restaurant"
 	icon_state = "yellow"
 
-//POWER PUZLE
+//NUCLEAR DUMP -- this ruin uses an area from power puzzle, for whatever reason. added new areas, for now.
 
-/area/ruin/space/has_grav/storage/central
-	name = "storage central"
+/area/ruin/space/has_grav/nucleardump
+	name = "Hallway"
 	icon_state = "hallC"
 
-/area/ruin/space/has_grav/storage/central2
-	name = "storage Vault"
+/area/ruin/space/has_grav/nucleardump/supermatter
+	name = "Supermatter Chamber"
 	icon_state = "red"
 
-/area/ruin/space/has_grav/storage/materials1
-	name = "storage materials fore room"
-	icon_state = "storage_wing"
+//POWER PUZZLE
 
-/area/ruin/space/has_grav/storage/materials2
-	name = "storage Materials secure room"
-	icon_state = "storage"
+/area/ruin/space/has_grav/powerpuzzle
+	name = "Central Storage"
+	icon_state = "hallC"
 
-/area/ruin/space/has_grav/storage/materials3
-	name = "storage materials miscellaneous"
+/area/ruin/space/has_grav/powerpuzzle/secure
+	name = "Security Wing"
+	icon_state = "red"
+
+/area/ruin/space/has_grav/powerpuzzle/engineering
+	name = "Engineering Wing"
 	icon_state = "yellow"
-
-/area/ruin/space/has_grav/storage/power1
-	name = "storage Enginering central"
-	icon_state = "yellow"
-
-/area/ruin/space/has_grav/storage/power2
-	name = "storage Enginering "
-	icon_state = "engi_storage"
-
-/area/ruin/space/has_grav/storage/power3
-	name = "storage Crates"
-	icon_state = "green"
 
 //Space Gym
 

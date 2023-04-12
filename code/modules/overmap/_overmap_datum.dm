@@ -148,11 +148,20 @@
 
 /**
  * Returns all other overmap objects on the tile as a list. Will return an empty list if there are no other objects, or the source object is docked.
+ * Setting include_docked to TRUE will include any overmap objects docked to objects at the tile.
  */
-/datum/overmap/proc/get_nearby_overmap_objects()
+/datum/overmap/proc/get_nearby_overmap_objects(include_docked = FALSE)
 	if(docked_to)
 		return list()
-	return SSovermap.overmap_container[x][y] - src
+	. = SSovermap.overmap_container[x][y] - src
+	if(!include_docked)
+		return
+	var/dequeue_pointer = 0
+	while(dequeue_pointer++ < length(.))
+		var/datum/overmap/object = .[dequeue_pointer]
+		if(!istype(object))
+			continue
+		. |= object.contents
 
 /**
  * Returns a turf that can be jumped to by observers, admins, and such.
@@ -278,9 +287,12 @@
  */
 /datum/overmap/proc/complete_undock()
 	SHOULD_CALL_PARENT(TRUE)
-	SSovermap.overmap_container[docked_to.x][docked_to.y] += src
-	x = docked_to.x
-	y = docked_to.y
+	var/datum/overmap/container = docked_to
+	while(container && !container.x || !container.y)
+		container = container.docked_to
+	SSovermap.overmap_container[container.x][container.y] += src
+	x = container.x
+	y = container.y
 	docked_to.contents -= src
 	var/datum/overmap/old_docked_to = docked_to
 	docked_to = null
