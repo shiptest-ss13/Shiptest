@@ -636,7 +636,7 @@
 	. += ")"
 
 #define LAZY_LISTS_OR(left_list, right_list)\
-	( length(left_list)\
+	(length(left_list)\
 		? length(right_list)\
 			? (left_list | right_list)\
 			: left_list.Copy()\
