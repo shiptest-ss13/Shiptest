@@ -756,7 +756,7 @@
 	return blood_dna
 
 /mob/living/carbon/alien/get_blood_dna_list()
-	return list("UNKNOWN DNA" = "X*")
+	return list("UNKNOWN DNA" = get_blood_type("X"))
 
 /mob/living/silicon/get_blood_dna_list()
 	return list("MOTOR OIL" = "SAE 5W-30") //just a little flavor text.
