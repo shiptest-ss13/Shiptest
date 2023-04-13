@@ -84,7 +84,9 @@
 /obj/item/pinpointer,
 /obj/item/storage/toolbox/emergency,
 /obj/item/roller,
-/obj/item/gps/mining/internal,
+/obj/item/gps{
+	gpstag = "TEGUS1"
+	},
 /turf/open/floor/plasteel,
 /area/ship/shuttle)
 "fO" = (
