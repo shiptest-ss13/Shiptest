@@ -184,10 +184,10 @@
 
 /datum/mission/acquire/fish_alive
 	name = "Fish needed for my aquarium"
-	weight = 800
+	weight = 8
 	value = 750
 	val_mod_range = 0.2
-	container_type = /obj/item/storage/fish_case/live
+	container_type = /obj/item/storage/fish_case
 
 /datum/mission/acquire/fish_alive/New(...)
 	objective_type = pick(/obj/item/fish/clownfish,
@@ -207,13 +207,6 @@
 			Make sure it's alive too, no one likes looking at dead fish."
 	. = ..()
 
-/datum/mission/acquire/fish_alive/atom_effective_count(atom/movable/target)
-	. = ..()
-	if(!.)
-		return
-	if(target.status == FISH_DEAD)
-		return 0
-
 /datum/mission/acquire/fish_alive/rare
 	name = "Rare fish needed for my aquarium!"
 	weight = 4
@@ -228,17 +221,15 @@
 			Bring me a [initial(objective_type.name)] and I will reward you handsomely."
 
 /datum/mission/acquire/fish_alive/sabatoge
+	name = "That bastard has had it good for too long!"
 	weight = 1
 	value = 3000
 	duration = 45 MINUTES
-	objective_type = /obj/item/fish/emulsijack
 
 /datum/mission/acquire/fish_alive/sabatoge/New(...)
-	var/enemy = pick("Rutherford","Baldwin","Anderson","Percival")
-	name = "That bastard [initial(enemy)] has had it good for too long!"
-	desc = "My arch-nemesis [initial(enemy)] thinks his aquarium is so much better than mine, I'll show him! \
+	desc = "My arch-nemesis [pick("Rutherford","Baldwin","Anderson","Percival")] thinks his aquarium is so much better than mine, I'll show him! \
 			Bring me an emulsijack, and make sure it's alive!"
-
+	objective_type = pick(/obj/item/fish/emulsijack)
 
 /datum/mission/acquire/fish_cook
 	name = "I need a fish for my meal"
@@ -300,14 +291,6 @@
 	STR.max_combined_w_class = WEIGHT_CLASS_NORMAL
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
 	STR.max_items = 1
-
-/obj/item/storage/fish_case/live
-	name = "live fish delivery case"
-	desc = "A specialized container for delivering live fish. Comes with a built in sensor to prevent the distribution of deceased fish."
-
-/obj/item/storage/fish_case/live/ComponentInitialize()
-	. = ..()
-
 
 /obj/item/storage/fish_case/big
 	name = "fish delivery case"
