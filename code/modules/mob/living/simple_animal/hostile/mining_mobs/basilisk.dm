@@ -161,7 +161,7 @@
 /mob/living/simple_animal/hostile/asteroid/basilisk/whitesands/bullet_act(obj/projectile/P)
 	shell_damage(BULLET_SHELL_DAMAGE)
 	if(has_shell)
-		playsound(get_turf(P), pick('sound/weapons/bulletflyby.ogg', 'sound/weapons/bulletflyby2.ogg', 'sound/weapons/bulletflyby3.ogg'), 75, TRUE)
+		playsound(src, pick('sound/weapons/bulletflyby.ogg', 'sound/weapons/bulletflyby2.ogg', 'sound/weapons/bulletflyby3.ogg'), 85, TRUE)
 		visible_message("<span class='notice'>The [P] is absorbed by the [src]'s shell, dealing minimal damage!</span>") //make it less confusing when bullets do no damage
 	return ..()
 
