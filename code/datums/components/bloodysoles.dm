@@ -224,9 +224,6 @@ Like its parent but can be applied to carbon mobs instead of clothing items
 	if(!bloody_feet)
 		bloody_feet = mutable_appearance('icons/effects/blood.dmi', "shoeblood", SHOES_LAYER)
 
-	if(HAS_BLOOD_DNA(parent_atom))
-		bloody_feet.color = get_blood_dna_color(parent_atom.return_blood_DNA())
-
 	RegisterSignal(parent, COMSIG_COMPONENT_CLEAN_ACT, .proc/on_clean)
 	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, .proc/on_moved)
 	RegisterSignal(parent, COMSIG_STEP_ON_BLOOD, .proc/on_step_blood)
@@ -234,12 +231,15 @@ Like its parent but can be applied to carbon mobs instead of clothing items
 	RegisterSignal(parent, COMSIG_CARBON_EQUIP_SHOECOVER, .proc/equip_shoecover)
 
 /datum/component/bloodysoles/feet/update_icon()
-	if(ishuman(wielder))
-		// Monkeys get no bloody feet :(
+	. = list()
+	if(ishuman(wielder))// Monkeys get no bloody feet :(
 		if(bloody_shoes[BLOOD_STATE_HUMAN] > 0 && !is_obscured())
 			wielder.remove_overlay(SHOES_LAYER)
 			wielder.overlays_standing[SHOES_LAYER] = bloody_feet
-			wielder.apply_overlay(SHOES_LAYER)
+			wielder.apply_overlay(SHOES_LAYER)	
+		if(HAS_BLOOD_DNA(wielder))
+			bloody_feet.color = bloody_feet.color = get_blood_dna_color(wielder.return_blood_DNA())
+			. += bloody_feet
 		else
 			wielder.update_inv_shoes()
 
