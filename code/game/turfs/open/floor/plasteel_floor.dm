@@ -26,16 +26,19 @@
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 
 /turf/open/floor/plasteel/dark
-	color = COLOR_TILE_GRAY
+	color = null
+	icon_state = "tiled_dark"
+	base_icon_state = "tiled_dark"
 	floor_tile = /obj/item/stack/tile/plasteel/dark
 /turf/open/floor/plasteel/dark/airless
 	initial_gas_mix = AIRLESS_ATMOS
-
 /turf/open/floor/plasteel/dark/telecomms
 	initial_gas_mix = TCOMMS_ATMOS
 
 /turf/open/floor/plasteel/white
-	color = COLOR_WHITE
+	color = null
+	icon_state = "tiled_light"
+	base_icon_state = "tiled_light"
 	floor_tile = /obj/item/stack/tile/plasteel/white
 /turf/open/floor/plasteel/white/airless
 	initial_gas_mix = AIRLESS_ATMOS
