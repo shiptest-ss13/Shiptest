@@ -239,7 +239,7 @@ Like its parent but can be applied to carbon mobs instead of clothing items
 		if(bloody_shoes[BLOOD_STATE_HUMAN] > 0 && !is_obscured())
 			wielder.remove_overlay(SHOES_LAYER)
 			wielder.overlays_standing[SHOES_LAYER] = bloody_feet
-			wielder.apply_overlay(SHOES_LAYER)	
+			wielder.apply_overlay(SHOES_LAYER)
 		else
 			wielder.update_inv_shoes()
 
