@@ -741,7 +741,7 @@
 	pixel_x = -6;
 	pixel_y = 7
 	},
-/obj/item/stack/spacecash/c50,
+/obj/item/spacecash/bundle/c50,
 /turf/open/floor/plating,
 /area/ship/bridge)
 "yp" = (
@@ -974,13 +974,13 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/obj/machinery/holopad/emergency/command,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
 	},
+/obj/machinery/holopad/emergency/buddy,
 /turf/open/floor/plating,
 /area/ship/bridge)
 "DM" = (
@@ -1087,7 +1087,7 @@
 /obj/effect/spawner/lootdrop/maintenance/seven,
 /obj/structure/closet/crate,
 /obj/item/storage/toolbox/electrical,
-/obj/item/stack/spacecash/c100,
+/obj/item/spacecash/bundle/c100,
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "Fz" = (
@@ -1311,8 +1311,8 @@
 	dir = 8;
 	secret_type = /obj/item/circuitboard/machine/autolathe
 	},
-/obj/item/stack/spacecash/c100,
-/obj/item/stack/spacecash/c100,
+/obj/item/spacecash/bundle/c100,
+/obj/item/spacecash/bundle/c100,
 /turf/open/floor/plating,
 /area/ship/crew)
 "Ma" = (

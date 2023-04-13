@@ -1801,6 +1801,37 @@
 	taste_description = "blueyalty" //also intentional
 	carpet_type = /turf/open/floor/carpet/royalblue
 
+//the ultimate fertilizer
+/datum/reagent/genesis
+	name = "Genesis Serum"
+	description = "A mysterious substance capable of spontaneously gestating plant life when given a surface to adhere to."
+	color = "#328242"
+	taste_description = "primordial essence"
+	reagent_state = LIQUID
+
+/datum/reagent/genesis/expose_turf(turf/T, reac_volume)
+	if(istype(T, /turf/open/floor/grass))//prevents spamming effect via. smoke or such
+		return
+	if(isplatingturf(T) || istype(T, /turf/open/floor/plasteel))
+		var/turf/open/floor/F = T
+		playsound(T, 'sound/effects/bubbles.ogg', 50)
+		F.PlaceOnTop(/turf/open/floor/grass, flags = CHANGETURF_INHERIT_AIR)
+		new /obj/effect/spawner/lootdrop/flower(T)
+		if(prob(75))
+			new /obj/effect/spawner/lootdrop/flora(T)
+	..()
+
+/datum/reagent/genesis/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
+	. = ..()
+	if(chems.has_reagent(type, 1))
+		mytray.adjustHealth(round(chems.get_reagent_amount(type) * 1))
+		if(myseed)
+			myseed.adjust_potency(round(chems.get_reagent_amount(type)))
+			myseed.adjust_yield(round(chems.get_reagent_amount(type) * 0.5))
+			myseed.adjust_endurance(round(chems.get_reagent_amount(type) * 0.5))
+			myseed.adjust_production(round(chems.get_reagent_amount(type) * 0.5))
+			myseed.adjust_lifespan(round(chems.get_reagent_amount(type) * 0.5))
+
 /datum/reagent/bromine
 	name = "Bromine"
 	description = "A brownish liquid that's highly reactive. Useful for stopping free radicals, but not intended for human consumption."

@@ -102,7 +102,11 @@
 		/obj/structure/spawner/lavaland = 3,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/random = 30,
 		/obj/structure/spawner/lavaland/legion = 3,
-		/mob/living/simple_animal/hostile/asteroid/goldgrub = 10
+		/mob/living/simple_animal/hostile/asteroid/goldgrub = 10,
+		/mob/living/simple_animal/hostile/asteroid/brimdemon = 20,
+		/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/crystal = 1,
+		/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/forgotten = 1,
+		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/crystal = 1
 	)
 
 /datum/biome/lavaland/forest
