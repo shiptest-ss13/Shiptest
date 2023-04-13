@@ -522,15 +522,10 @@
 	else
 		draw_color = null
 
-	if(C?.dna.blood_type?.color)
-		damage_color = C.dna.blood_type.color
-	else
-		damage_color = COLOR_BLOOD
-
 	if(no_update)
 		return
 
-	if(!is_creating)
+	if(!is_creating || !owner)
 		return
 
 	if(!animal_origin && ishuman(C))
