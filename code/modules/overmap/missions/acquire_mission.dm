@@ -184,7 +184,7 @@
 
 /datum/mission/acquire/aquarium
 	name = "Fish needed for my aquarium"
-	weight = 12
+	weight = 14
 	value = 750
 	duration = 60 MINUTES
 	val_mod_range = 0.2
@@ -210,7 +210,7 @@
 
 /datum/mission/acquire/aquarium/rare
 	name = "Rare fish needed for my aquarium!"
-	weight = 6
+	weight = 8
 	value = 1500
 	val_mod_range = 0.3
 
@@ -235,8 +235,8 @@
 	objective_type = pick(/obj/item/fish/emulsijack)
 
 /datum/mission/acquire/fish_cook
-	name = "I need a fish for my meal"
-	weight = 12
+	name = "Fish needed for my meal"
+	weight = 8
 	duration = 40 MINUTES
 	val_mod_range = 0.2
 	objective_type = /obj/item/fish
@@ -244,7 +244,7 @@
 
 /datum/mission/acquire/fish_cook/New(...)
 	num_wanted = rand(1,3)
-	desc = "I, a chef, am in need of [num_wanted] fish for my latest dish. Any fish will do, alive or not."
+	desc = "I am a chef in need of [num_wanted] fish for my latest dish. Any fish will do, just make sure they're not filleted!"
 	value = (250*num_wanted)
 	. = ..()
 
