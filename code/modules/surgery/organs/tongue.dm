@@ -62,9 +62,9 @@
 /obj/item/organ/tongue/lizard
 	name = "forked tongue"
 	desc = "A thin and long muscle typically found in reptilian races, apparently moonlights as a nose."
-	icon_state = "tonguelizard"
+	icon_state = "liztongue"
 	say_mod = "hisses"
-	taste_sensitivity = 10 // combined nose + tongue, extra sensitive
+	taste_sensitivity = LIZARD_TASTE_SENSITIVITY
 	modifies_speech = TRUE
 
 /obj/item/organ/tongue/lizard/handle_speech(datum/source, list/speech_args)

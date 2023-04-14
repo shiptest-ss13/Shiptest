@@ -16,15 +16,17 @@
 	low_threshold_cleared = "<span class='info'>The last bouts of pain in your stomach have died out.</span>"
 
 	var/disgust_metabolism = 1
+	var/metabolism_efficiency = 0.1 // the lowest we should go is 0.05
 
-/obj/item/organ/stomach/on_life()
+/obj/item/organ/stomach/on_life(delta_time, times_fired)
+	. = ..()
 	var/mob/living/carbon/human/H = owner
 	var/datum/reagent/Nutri
 
 	..()
 	if(istype(H))
 		if(!(organ_flags & ORGAN_FAILING))
-			H.dna.species.handle_digestion(H)
+			handle_hunger(H, delta_time, times_fired)
 		handle_disgust(H)
 
 	if(damage < low_threshold)
@@ -41,6 +43,93 @@
 		if(prob((damage/10) * Nutri.volume * Nutri.volume))
 			H.vomit(damage)
 			to_chat(H, "<span class='warning'>Your stomach reels in pain as you're incapable of holding down all that food!</span>")
+
+/obj/item/organ/stomach/proc/handle_hunger(mob/living/carbon/human/human)
+	if(HAS_TRAIT(human, TRAIT_NOHUNGER))
+		return //hunger is for BABIES
+
+	//The fucking TRAIT_FAT mutation is the dumbest shit ever. It makes the code so difficult to work with
+	if(HAS_TRAIT_FROM(human, TRAIT_FAT, OBESITY))//I share your pain, past coder.
+		if(human.overeatduration < (200 SECONDS))
+			to_chat(human, span_notice("You feel fit again!"))
+			REMOVE_TRAIT(human, TRAIT_FAT, OBESITY)
+			human.remove_movespeed_modifier(/datum/movespeed_modifier/obesity)
+			human.update_inv_w_uniform()
+			human.update_inv_wear_suit()
+	else
+		if(human.overeatduration >= (200 SECONDS))
+			to_chat(human, span_danger("You suddenly feel blubbery!"))
+			ADD_TRAIT(human, TRAIT_FAT, OBESITY)
+			human.add_movespeed_modifier(/datum/movespeed_modifier/obesity)
+			human.update_inv_w_uniform()
+			human.update_inv_wear_suit()
+
+	// nutrition decrease and satiety
+	if (human.nutrition > 0 && human.stat != DEAD)
+		// THEY HUNGER
+		var/hunger_rate = HUNGER_FACTOR
+		var/datum/component/mood/mood = human.GetComponent(/datum/component/mood)
+		if(mood && mood.sanity > SANITY_DISTURBED)
+			hunger_rate *= max(1 - 0.002 * mood.sanity, 0.5) //0.85 to 0.75
+		// Whether we cap off our satiety or move it towards 0
+		if(human.satiety > MAX_SATIETY)
+			human.satiety = MAX_SATIETY
+		else if(human.satiety > 0)
+			human.satiety--
+		else if(human.satiety < -MAX_SATIETY)
+			human.satiety = -MAX_SATIETY
+		else if(human.satiety < 0)
+			human.satiety++
+			if(prob(round(-human.satiety/77)))
+				human.Jitter(5)
+			hunger_rate = 3 * HUNGER_FACTOR
+		hunger_rate *= human.physiology.hunger_mod
+		human.adjust_nutrition(-hunger_rate)
+
+	if(human.nutrition > NUTRITION_LEVEL_FULL)
+		if(human.overeatduration < 20 MINUTES) //capped so people don't take forever to unfat
+			human.overeatduration = min(human.overeatduration + (1 SECONDS), 20 MINUTES)
+	else
+		if(human.overeatduration > 0)
+			human.overeatduration = max(human.overeatduration - (2 SECONDS), 0) //doubled the unfat rate
+
+	//metabolism change
+	if(human.nutrition > NUTRITION_LEVEL_FAT)
+		human.metabolism_efficiency = 1
+	else if(human.nutrition > NUTRITION_LEVEL_FED && human.satiety > 80)
+		if(human.metabolism_efficiency != 1.25)
+			to_chat(human, span_notice("You feel vigorous."))
+			human.metabolism_efficiency = 1.25
+	else if(human.nutrition < NUTRITION_LEVEL_STARVING + 50)
+		if(human.metabolism_efficiency != 0.8)
+			to_chat(human, span_notice("You feel sluggish."))
+		human.metabolism_efficiency = 0.8
+	else
+		if(human.metabolism_efficiency == 1.25)
+			to_chat(human, span_notice("You no longer feel vigorous."))
+		human.metabolism_efficiency = 1
+
+	//Hunger slowdown for if mood isn't enabled
+	if(CONFIG_GET(flag/disable_human_mood))
+		handle_hunger_slowdown(human)
+
+	switch(human.nutrition)
+		if(NUTRITION_LEVEL_FULL to INFINITY)
+			human.throw_alert("nutrition", /atom/movable/screen/alert/fat)
+		if(NUTRITION_LEVEL_HUNGRY to NUTRITION_LEVEL_FULL)
+			human.clear_alert("nutrition")
+		if(NUTRITION_LEVEL_STARVING to NUTRITION_LEVEL_HUNGRY)
+			human.throw_alert("nutrition", /atom/movable/screen/alert/hungry)
+		if(0 to NUTRITION_LEVEL_STARVING)
+			human.throw_alert("nutrition", /atom/movable/screen/alert/starving)
+
+///for when mood is disabled and hunger should handle slowdowns
+/obj/item/organ/stomach/proc/handle_hunger_slowdown(mob/living/carbon/human/human)
+	var/hungry = (500 - human.nutrition) / 5 //So overeat would be 100 and default level would be 80
+	if(hungry >= 70)
+		human.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/hunger, multiplicative_slowdown = (hungry / 50))
+	else
+		human.remove_movespeed_modifier(/datum/movespeed_modifier/hunger)
 
 /obj/item/organ/stomach/get_availability(datum/species/S)
 	return !(NOSTOMACH in S.species_traits)
@@ -86,6 +175,17 @@
 		H.clear_alert("disgust")
 		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "disgust")
 	..()
+
+/obj/item/organ/stomach/lizard
+	name = "sarathi stomach"
+	icon_state = "lizstomach"
+	desc = "It's blue PH"
+	metabolism_efficiency = 0.07
+
+/obj/item/organ/stomach/lizard/handle_hunger(mob/living/carbon/human/human, delta_time, times_fired)
+	. = ..()
+	if(human.nutrition > NUTRITION_LEVEL_WELL_FED && human.nutrition < NUTRITION_LEVEL_FULL)
+		human.adjustBruteLoss(-0.5 * delta_time)
 
 /obj/item/organ/stomach/fly
 	name = "insectoid stomach"

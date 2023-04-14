@@ -297,3 +297,22 @@
 	description = "<span class='warning'>I was forced to eat cement...</span>\n"
 	mood_change = -6
 	timeout = 4 MINUTES
+
+/datum/mood_event/tail_lost
+	description = "<span class='boldwarning'>My tail!! Why?!</span>\n"
+	mood_change = -8
+	timeout = 10 MINUTES
+
+/datum/mood_event/tail_balance_lost
+	description = "<span class='warning'>I feel off-balance without my tail.</span>\n"
+	mood_change = -2
+
+/datum/mood_event/tail_regained_right
+	description = "<span class='warning'>My tail is back, but that was traumatic...</span>\n"
+	mood_change = -2
+	timeout = 5 MINUTES
+
+/datum/mood_event/tail_regained_wrong
+	description = "<span class='boldwarning'>Is this some kind of sick joke?! This is NOT the right tail.</span>\n"
+	mood_change = -4 // -8 for tail still missing + -4 bonus for being frakenstein's monster //you suck. -4
+	timeout = 5 MINUTES

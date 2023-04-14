@@ -8,10 +8,13 @@
 	slot = ORGAN_SLOT_TAIL
 	var/tail_type = "None"
 
-/obj/item/organ/tail/Remove(mob/living/carbon/human/H,  special = 0)
-	..()
-	if(H && H.dna && H.dna.species)
-		H.dna.species.stop_wagging_tail(H)
+/obj/item/organ/tail/Insert(mob/living/carbon/human/tail_owner, special = FALSE, drop_if_replaced = TRUE)
+	. = ..()
+	tail_owner?.dna?.species?.on_tail_regain(tail_owner, src, special)
+
+/obj/item/organ/tail/Remove(mob/living/carbon/human/tail_owner, special = FALSE)
+	. = ..()
+	tail_owner?.dna?.species?.on_tail_lost(tail_owner, src, special)
 
 /obj/item/organ/tail/cat
 	name = "cat tail"
@@ -24,7 +27,7 @@
 	tail_type = "Slimecat"
 	alpha = 150
 
-/obj/item/organ/tail/cat/Insert(mob/living/carbon/human/H, special = 0, drop_if_replaced = TRUE)
+/obj/item/organ/tail/cat/Insert(mob/living/carbon/human/H, special = FALSE, drop_if_replaced = TRUE)
 	..()
 	if(istype(H))
 		if(!("tail_human" in H.dna.species.mutant_bodyparts))
@@ -51,7 +54,7 @@
 	. = ..()
 	color = "#"+ random_color()
 
-/obj/item/organ/tail/lizard/Insert(mob/living/carbon/human/H, special = 0, drop_if_replaced = TRUE)
+/obj/item/organ/tail/lizard/Insert(mob/living/carbon/human/H, special = FALSE, drop_if_replaced = TRUE)
 	..()
 	if(istype(H))
 		// Checks here are necessary so it wouldn't overwrite the tail of a lizard it spawned in
@@ -70,7 +73,7 @@
 				H.dna.species.mutant_bodyparts["spines"] = H.dna.features["spines"]
 		H.update_body()
 
-/obj/item/organ/tail/lizard/Remove(mob/living/carbon/human/H,  special = 0)
+/obj/item/organ/tail/lizard/Remove(mob/living/carbon/human/H, special = FALSE)
 	..()
 	if(istype(H))
 		H.dna.species.mutant_bodyparts -= "tail_lizard"
@@ -90,7 +93,7 @@
 	color = "#d3e8e9"
 	tail_type = "Long"
 
-/obj/item/organ/tail/elzu/Insert(mob/living/carbon/human/H, special = 0, drop_if_replaced = TRUE)
+/obj/item/organ/tail/elzu/Insert(mob/living/carbon/human/H, special = FALSE, drop_if_replaced = TRUE)
 	..()
 	if(istype(H))
 		// Checks here are necessary so it wouldn't overwrite the tail of an elzu it spawned in
@@ -101,7 +104,7 @@
 			else
 				H.dna.species.mutant_bodyparts["tail_elzu"] = H.dna.features["tail_elzu"]
 
-/obj/item/organ/tail/elzu/Remove(mob/living/carbon/human/H,  special = 0)
+/obj/item/organ/tail/elzu/Remove(mob/living/carbon/human/H, special = FALSE)
 	..()
 	if(istype(H))
 		H.dna.species.mutant_bodyparts -= "tail_elzu"

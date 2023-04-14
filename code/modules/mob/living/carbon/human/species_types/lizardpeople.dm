@@ -6,8 +6,15 @@
 	species_traits = list(MUTCOLORS,EYECOLOR,LIPS,SCLERA,EMOTE_OVERLAY)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_REPTILE
 	mutant_bodyparts = list("tail_lizard", "snout", "spines", "horns", "frills", "body_markings", "legs")
+	mutantbrain = /obj/item/organ/brain/lizard
+	mutanteyes = /obj/item/organ/eyes/lizard
+	mutantears = /obj/item/organ/ears/lizard
 	mutanttongue = /obj/item/organ/tongue/lizard
-	mutant_organs = list(/obj/item/organ/tail/lizard)
+	mutantlungs = /obj/item/organ/lungs/lizard
+	mutantheart = /obj/item/organ/heart/lizard
+	mutantstomach = /obj/item/organ/stomach/lizard
+	mutantliver = /obj/item/organ/liver/lizard
+	mutant_organs = list(/obj/item/organ/tail/lizard, /obj/item/organ/lizard_second_heart)
 	coldmod = 1.5
 	heatmod = 0.67
 	default_features = list("mcolor" = "0F0", "tail_lizard" = "Smooth", "snout" = "Round", "horns" = "None", "frills" = "None", "spines" = "None", "body_markings" = "None", "legs" = "Normal Legs", "body_size" = "Normal")
@@ -42,16 +49,23 @@
 	ass_image = 'icons/ass/asslizard.png'
 	var/datum/action/innate/liz_lighter/internal_lighter
 
-/datum/species/lizard/on_species_loss(mob/living/carbon/C)
-	if(internal_lighter)
-		internal_lighter.Remove(C)
-	..()
-
 /datum/species/lizard/on_species_gain(mob/living/carbon/C, datum/species/old_species)
 	..()
+	C.mob_surgery_speed_mod -= 0.15
+	RegisterSignal(C, COMSIG_CARBON_GAIN_ORGAN, .proc/on_gained_organ)
+	RegisterSignal(C, COMSIG_CARBON_LOSE_ORGAN, .proc/on_removed_organ)
 	if(ishuman(C))
 		internal_lighter = new
 		internal_lighter.Grant(C)
+
+/datum/species/lizard/on_species_loss(mob/living/carbon/C)
+	C.mob_surgery_speed_mod += 0.15
+	UnregisterSignal(C, COMSIG_CARBON_GAIN_ORGAN)
+	UnregisterSignal(C, COMSIG_CARBON_LOSE_ORGAN)
+	C.remove_client_colour(/datum/client_colour/monochrome/lizard)
+	if(internal_lighter)
+		internal_lighter.Remove(C)
+	return ..()
 
 /datum/action/innate/liz_lighter
 	name = "Ignite"
@@ -92,6 +106,46 @@
 		randname += " [lastname]"
 
 	return randname
+
+/datum/species/lizard/on_tail_lost(mob/living/carbon/human/tail_owner, obj/item/organ/tail/lost_tail, on_species_init)
+	. = ..()
+	if(!.)
+		return
+	if(lost_tail.type in mutant_organs)
+		RegisterSignal(tail_owner, COMSIG_MOVABLE_MOVED, .proc/on_move)
+
+/datum/species/lizard/on_tail_regain(mob/living/carbon/human/tail_owner, obj/item/organ/tail/found_tail, on_species_init)
+	. = ..()
+	if(!.)
+		return
+	if(found_tail.type in mutant_organs)
+		UnregisterSignal(tail_owner, COMSIG_MOVABLE_MOVED)
+
+/datum/species/lizard/clear_tail_moodlets(mob/living/carbon/human/former_tail_owner)
+	. = ..()
+	UnregisterSignal(former_tail_owner, COMSIG_MOVABLE_MOVED)
+
+/datum/species/lizard/proc/on_gained_organ(mob/living/receiver, obj/item/organ/tongue/organ)
+	SIGNAL_HANDLER
+
+	if(!istype(organ) || !(organ.taste_sensitivity <= LIZARD_TASTE_SENSITIVITY || organ.organ_flags))
+		return
+	receiver.remove_client_colour(/datum/client_colour/monochrome/lizard)
+
+/datum/species/lizard/proc/on_removed_organ(mob/living/unceiver, obj/item/organ/tongue/organ)
+	SIGNAL_HANDLER
+
+	if(!istype(organ) || organ.taste_sensitivity > LIZARD_TASTE_SENSITIVITY)
+		return
+	unceiver.add_client_colour(/datum/client_colour/monochrome/lizard)
+
+/datum/species/lizard/proc/on_move(mob/living/mover, atom/old_loc, movement_dir, forced, list/old_locs)
+	SIGNAL_HANDLER
+
+	if(!movement_dir || !prob(1))
+		return
+	mover.Knockdown(1 SECONDS)
+	to_chat(mover, span_warning("You trip from your imbalance!"))
 
 /*
 Lizard subspecies: ASHWALKERS

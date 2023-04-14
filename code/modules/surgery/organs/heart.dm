@@ -244,3 +244,28 @@
 		owner.heal_overall_damage(15, 15, 0, BODYTYPE_ORGANIC)
 		if(owner.reagents.get_reagent_amount(/datum/reagent/medicine/ephedrine) < 20)
 			owner.reagents.add_reagent(/datum/reagent/medicine/ephedrine, 10)
+
+/obj/item/organ/heart/lizard //Cosmetic difference, probably a better way to do this.
+	name = "sarathi heart"
+	desc = "It's blue."
+	icon_base = "lizheart1"
+	icon_state = "lizheart1"
+
+/obj/item/organ/lizard_second_heart
+	name = "sarathi secondary heart"
+	desc = "It's also blue."
+	icon_state = "lizheart2"
+	zone = BODY_ZONE_CHEST
+	slot = ORGAN_SLOT_HEART_AID
+	healing_factor = 1.5 * STANDARD_ORGAN_HEALING
+	decay_factor = 1.5 * STANDARD_ORGAN_DECAY
+	attack_verb = list("beat", "thumped")
+	/// How much blood we regenerate
+	var/regen_modifier = 0.5
+
+/obj/item/organ/lizard_second_heart/on_life(delta_time, times_fired) // this is awful without wounds auuughhh
+	..()
+	if(!owner.needs_heart() || owner.blood_volume >= BLOOD_VOLUME_NORMAL)
+		return
+	if(owner.blood_volume < BLOOD_VOLUME_NORMAL)
+		owner.blood_volume = min(owner.blood_volume + (0.5 * regen_modifier * delta_time), BLOOD_VOLUME_NORMAL)

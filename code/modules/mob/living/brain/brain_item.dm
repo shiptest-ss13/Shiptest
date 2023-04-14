@@ -234,6 +234,11 @@
 	desc = "We barely understand the brains of terrestial animals. Who knows what we may find in the brain of such an advanced species?"
 	icon_state = "brain-x"
 
+/obj/item/organ/brain/lizard
+	name = "sarathi brain"
+	desc = "It's blue PH"
+	icon_state = "lizbrain"
+
 /obj/item/organ/brain/mmi_holder //MMI brain for IPC
 	zone = BODY_ZONE_CHEST
 	status = ORGAN_ROBOTIC

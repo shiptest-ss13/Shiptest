@@ -408,6 +408,11 @@
 	eye_icon_state = "snail_eyes"
 	icon_state = "snail_eyeballs"
 
+/obj/item/organ/eyes/lizard
+	name = "sarathi eyes"
+	desc = "It's blue PH"
+	icon_state = "lizeyes"
+
 /obj/item/organ/eyes/compound
 	name = "compound eyes"
 	desc = "These eyes seem to have increased sensitivity to bright light, with some improvement to low light vision. It's like these eyes are looking everywhere at once!"

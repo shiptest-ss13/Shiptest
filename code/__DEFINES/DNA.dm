@@ -170,6 +170,9 @@
 /// designed to fail organs when left to decay for ~15 minutes
 #define STANDARD_ORGAN_DECAY 0.00222
 
+//Used for lizard tongue color vision
+#define LIZARD_TASTE_SENSITIVITY 10
+
 //used for the can_chromosome var on mutations
 #define CHROMOSOME_NEVER 0
 #define CHROMOSOME_NONE 1
