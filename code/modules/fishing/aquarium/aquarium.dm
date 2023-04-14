@@ -149,8 +149,6 @@
 			try_to_put_mob_in(user)
 	else if(panel_open)
 		. = ..() //call base ui_interact
-	/*else
-		admire(user)*/
 
 /// Tries to put mob pulled by the user in the aquarium after a delay
 /obj/structure/aquarium/proc/try_to_put_mob_in(mob/user)
@@ -169,28 +167,6 @@
 			user.visible_message(span_danger("[user] stuffs [living_pulled] into [src]!"))
 			living_pulled.forceMove(src)
 			update_appearance()
-
-///Apply mood bonus depending on aquarium status
-/*
-/obj/structure/aquarium/proc/admire(mob/user)
-	to_chat(user,span_notice("You take a moment to watch [src]."))
-	if(do_after(user, 5 SECONDS, target = src))
-		var/alive_fish = 0
-		var/dead_fish = 0
-		for(var/obj/item/fish/fish in tracked_fish)
-			if(fish.status == FISH_ALIVE)
-				alive_fish++
-			else
-				dead_fish++
-		//Check if there are live fish - good mood
-		//All fish dead - bad mood.
-		//No fish - nothing.
-		if(alive_fish > 0)
-			SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "aquarium", /datum/mood_event/aquarium_positive)
-		else if(dead_fish > 0)
-			SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "aquarium", /datum/mood_event/aquarium_negative)
-		// Could maybe scale power of this mood with number/types of fish
-		*/
 
 /obj/structure/aquarium/ui_data(mob/user)
 	. = ..()
