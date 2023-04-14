@@ -184,7 +184,7 @@
 
 /datum/mission/acquire/aquarium
 	name = "Fish needed for my aquarium"
-	weight = 8
+	weight = 12
 	value = 750
 	duration = 60 MINUTES
 	val_mod_range = 0.2
@@ -210,7 +210,7 @@
 
 /datum/mission/acquire/aquarium/rare
 	name = "Rare fish needed for my aquarium!"
-	weight = 800
+	weight = 6
 	value = 1500
 	val_mod_range = 0.3
 
@@ -236,7 +236,7 @@
 
 /datum/mission/acquire/fish_cook
 	name = "I need a fish for my meal"
-	weight = 8
+	weight = 12
 	duration = 40 MINUTES
 	val_mod_range = 0.2
 	objective_type = /obj/item/fish
