@@ -853,3 +853,10 @@ GLOBAL_LIST_INIT(binary, list("0","1"))
 /proc/sanitize_css_class_name(name)
 	var/static/regex/regex = new(@"[^a-zA-Z0-9]","g")
 	return replacetext(name, regex, "")
+
+/proc/shuffletext(string)
+	. = ""
+	while(length(string))
+		var/pos = rand(1, length(string))
+		. += copytext(string, pos, pos+1)
+		string = splicetext(string, pos, pos+1, null)
