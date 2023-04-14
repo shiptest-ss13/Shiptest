@@ -3,7 +3,7 @@
 	desc = "It's weird and gooey. Perhaps it's the chef's cooking?"
 	icon = 'icons/effects/blood.dmi'
 	icon_state = "floor1"
-	color = "#C80000"
+	color = COLOR_BLOOD
 	random_icon_states = list("floor1", "floor2", "floor3", "floor4", "floor5", "floor6", "floor7")
 	blood_state = BLOOD_STATE_HUMAN
 	bloodiness = BLOOD_AMOUNT_PER_DECAL
@@ -121,10 +121,12 @@
 	var/list/diseases = list()
 	SEND_SIGNAL(src, COMSIG_GIBS_STREAK, directions, diseases)
 	var/direction = pick(directions)
-	for(var/i in 0 to pick(0, 200; 1, 150; 2, 50))
+	for(var/i in 0 to pick(0, 1, 2))
 		sleep(2)
 		if(i > 0)
-			new /obj/effect/decal/cleanable/blood/splatter(loc, diseases)
+			var/obj/effect/decal/cleanable/blood/splatter/splat = new /obj/effect/decal/cleanable/blood/splatter(loc, diseases)
+			if(HAS_BLOOD_DNA(src))
+				splat.add_blood_DNA(src.return_blood_DNA())
 		if(!step_to(src, get_step(src, direction), 0))
 			break
 
