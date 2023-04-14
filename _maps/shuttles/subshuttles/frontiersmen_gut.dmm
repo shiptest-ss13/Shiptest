@@ -95,6 +95,17 @@
 	},
 /turf/open/floor/engine/hull/interior,
 /area/ship/storage)
+"fx" = (
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 1
+	},
+/obj/machinery/door/poddoor{
+	id = "gut_engines";
+	name = "thruster blast door"
+	},
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/ship/storage)
 "gH" = (
 /obj/effect/turf_decal/techfloor,
 /obj/effect/turf_decal/spline/fancy/opaque/black,
@@ -345,7 +356,6 @@
 	pixel_x = -4
 	},
 /obj/item/grenade/frag,
-/obj/item/grenade/frag,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -484,17 +494,6 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/patterned/dirty,
 /area/ship/storage)
-"Mk" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 1
-	},
-/obj/structure/cable,
-/obj/machinery/door/poddoor{
-	id = "gut_engines";
-	name = "thruster blast door"
-	},
-/turf/open/floor/plating,
-/area/ship/storage)
 "MF" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/frontier/ranged/mosin/neutered,
@@ -624,11 +623,11 @@
 /obj/machinery/power/shuttle/engine/electric{
 	dir = 1
 	},
+/obj/structure/cable,
 /obj/machinery/door/poddoor{
 	id = "gut_engines";
 	name = "thruster blast door"
 	},
-/obj/structure/cable,
 /turf/open/floor/plating,
 /area/ship/storage)
 "Yn" = (
@@ -700,7 +699,7 @@ Dr
 Dz
 li
 ju
-XD
+fx
 "}
 (4,1,1) = {"
 Xf
@@ -717,7 +716,7 @@ bY
 sP
 qI
 JX
-Mk
+XD
 "}
 (5,1,1) = {"
 Xf
@@ -734,7 +733,7 @@ qE
 Bl
 Uc
 QL
-Mk
+XD
 "}
 (6,1,1) = {"
 Ds

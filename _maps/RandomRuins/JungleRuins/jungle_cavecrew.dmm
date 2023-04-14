@@ -41,10 +41,6 @@
 	dir = 2;
 	color = "#808080"
 	},
-/obj/item/grenade/frag{
-	pixel_x = -8;
-	pixel_y = 7
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/jungle/cavecrew/security)
@@ -483,13 +479,6 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light,
-/obj/item/storage/toolbox/ammo{
-	pixel_y = 2
-	},
-/obj/item/storage/toolbox/ammo{
-	pixel_y = -6;
-	pixel_x = -5
-	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/jungle/cavecrew/security)
 "gm" = (
@@ -1189,9 +1178,6 @@
 /obj/item/gun/ballistic/shotgun/automatic/combat{
 	pixel_y = 5
 	},
-/obj/item/gun/ballistic/revolver/mateba{
-	pixel_y = -7
-	},
 /obj/item/gun/ballistic/revolver/nagant{
 	pixel_y = -1
 	},
@@ -1505,9 +1491,6 @@
 /obj/item/ammo_box/magazine/aks74u,
 /obj/item/ammo_box/n762,
 /obj/item/ammo_box/n762_clip,
-/obj/item/ammo_box/a357{
-	pixel_y = -4
-	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/jungle/cavecrew/security)
 "vr" = (
@@ -2269,6 +2252,13 @@
 	},
 /turf/open/water/jungle,
 /area/ruin/jungle/cavecrew)
+"Gy" = (
+/obj/effect/landmark/subship{
+	subship_template = /datum/map_template/shuttle/subshuttles/frontiersmen_gut;
+	dir = 4
+	},
+/turf/open/water/jungle,
+/area/ruin/jungle/cavecrew)
 "GN" = (
 /obj/machinery/porta_turret/syndicate/pod{
 	dir = 9;
@@ -2692,13 +2682,6 @@
 	icon_state = "panelscorched"
 	},
 /area/ruin/jungle/cavecrew/cargo)
-"Mr" = (
-/obj/effect/landmark/subship{
-	subship_template = /datum/map_template/shuttle/subshuttles/frontiersmen_gut;
-	dir = 4
-	},
-/turf/open/water/jungle,
-/area/ruin/jungle/cavecrew)
 "Ms" = (
 /obj/structure/railing{
 	dir = 2;
@@ -2857,15 +2840,20 @@
 /area/ruin/jungle/cavecrew/dormitories)
 "OU" = (
 /obj/structure/table/reinforced,
-/obj/machinery/recharger{
+/obj/item/clothing/head/beret/sec/frontier{
+	pixel_y = 10;
+	pixel_x = -4
+	},
+/obj/item/storage/toolbox/ammo{
+	pixel_y = 2
+	},
+/obj/item/storage/toolbox/ammo{
+	pixel_y = -6;
 	pixel_x = -5
 	},
-/obj/machinery/recharger{
-	pixel_x = 6
-	},
-/obj/item/clothing/head/beret/sec/frontier{
-	pixel_y = 5;
-	pixel_x = -4
+/obj/item/grenade/frag{
+	pixel_x = 8;
+	pixel_y = -6
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/jungle/cavecrew/security)
@@ -5088,7 +5076,7 @@ Ty
 Ty
 Ty
 Ty
-Mr
+Gy
 Ty
 Ty
 Ty
