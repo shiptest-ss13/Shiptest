@@ -71,23 +71,20 @@
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/shuttle)
 "fx" = (
-/obj/structure/closet/secure_closet/wall{
-	name = "pilot's locker";
-	req_access_txt = "31";
-	icon_state = "solgov_wall";
-	dir = 4;
-	pixel_x = -30
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
-/obj/item/binoculars,
-/obj/item/storage/firstaid,
-/obj/item/storage/box/bodybags,
-/obj/item/pinpointer,
-/obj/item/storage/toolbox/emergency,
-/obj/item/roller,
-/obj/item/gps{
-	gpstag = "TEGUS1"
+/obj/structure/cable{
+	icon_state = "1-4"
 	},
-/turf/open/floor/plasteel,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 6
+	},
+/turf/open/floor/plating,
 /area/ship/shuttle)
 "fO" = (
 /obj/structure/sign/nanotrasen,
@@ -231,17 +228,24 @@
 /turf/open/floor/plating,
 /area/ship/shuttle)
 "sa" = (
-/obj/structure/catwalk/over/plated_catwalk,
-/obj/structure/cable{
-	icon_state = "4-8"
+/obj/structure/closet/secure_closet/wall{
+	name = "pilot's locker";
+	req_access_txt = "31";
+	icon_state = "solgov_wall";
+	dir = 4;
+	pixel_x = -30
 	},
-/obj/structure/cable{
-	icon_state = "1-8"
+/obj/item/binoculars,
+/obj/item/storage/firstaid,
+/obj/item/storage/box/bodybags,
+/obj/item/pinpointer,
+/obj/item/storage/toolbox/emergency,
+/obj/item/extinguisher/mini,
+/obj/item/roller,
+/obj/item/gps{
+	gpstag = "TEGUS1"
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 5
-	},
-/turf/open/floor/plating,
+/turf/open/floor/plasteel,
 /area/ship/shuttle)
 "sq" = (
 /obj/machinery/door/poddoor/preopen{
@@ -281,13 +285,19 @@
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/shuttle)
 "xB" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 10
+	},
+/obj/machinery/light/small{
+	dir = 1
+	},
 /obj/structure/cable{
-	icon_state = "0-4"
+	icon_state = "0-2"
 	},
 /obj/machinery/power/terminal{
 	dir = 8
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plasteel,
 /area/ship/shuttle)
 "yr" = (
 /obj/effect/turf_decal/industrial/traffic{
@@ -346,7 +356,6 @@
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 4
 	},
-/obj/structure/window/reinforced/spawner/west,
 /obj/machinery/door/window/eastleft,
 /obj/structure/cable{
 	icon_state = "0-8"
@@ -354,6 +363,8 @@
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "tegus_shuttle_engine"
 	},
+/obj/structure/window/reinforced/spawner,
+/obj/structure/window/reinforced/spawner/west,
 /turf/open/floor/plating,
 /area/ship/shuttle)
 "AW" = (
@@ -366,33 +377,12 @@
 	},
 /turf/open/floor/plasteel/airless,
 /area/ship/shuttle)
-"Bg" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 8
+"BM" = (
+/obj/machinery/power/terminal{
+	dir = 1
 	},
 /obj/machinery/power/port_gen/pacman,
-/obj/structure/cable/yellow,
-/obj/structure/cable{
-	icon_state = "5-8"
-	},
-/obj/machinery/light/small,
-/turf/open/floor/plasteel/patterned/ridged,
-/area/ship/shuttle)
-"BM" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
-/obj/structure/cable,
-/obj/structure/cable{
-	icon_state = "1-10"
-	},
-/obj/machinery/power/apc/auto_name/east,
-/obj/machinery/atmospherics/components/binary/pump/on/layer4{
-	name = "Air to Distro";
-	target_pressure = 1000;
-	dir = 1
-	},
-/turf/open/floor/plasteel,
+/turf/open/floor/plating,
 /area/ship/shuttle)
 "Cu" = (
 /obj/structure/chair/comfy/shuttle{
@@ -416,11 +406,15 @@
 /turf/open/floor/plasteel/airless,
 /area/ship/shuttle)
 "Iq" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/machinery/door/window/eastright,
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 4
 	},
+/obj/structure/window/reinforced/spawner/north,
 /obj/structure/window/reinforced/spawner/west,
-/obj/machinery/door/window/eastright,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -442,13 +436,16 @@
 /turf/open/floor/plasteel/airless,
 /area/ship/shuttle)
 "Ks" = (
-/obj/machinery/power/terminal{
+/obj/effect/turf_decal/industrial/warning{
+	dir = 9
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 1
 	},
-/obj/structure/cable/yellow{
-	icon_state = "0-4"
-	},
-/turf/open/floor/plating,
+/turf/open/floor/plasteel,
 /area/ship/shuttle)
 "LC" = (
 /obj/effect/turf_decal/trimline/opaque/solgovgold/warning,
@@ -478,10 +475,14 @@
 /area/ship/shuttle)
 "Mp" = (
 /obj/effect/turf_decal/industrial/warning{
-	dir = 9
+	dir = 1
 	},
-/obj/structure/cable/yellow{
-	icon_state = "2-8"
+/obj/structure/cable,
+/obj/machinery/power/apc/auto_name/east,
+/obj/machinery/atmospherics/components/binary/pump/on/layer4{
+	name = "Air to Distro";
+	target_pressure = 1000;
+	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/ship/shuttle)
@@ -563,16 +564,14 @@
 /area/ship/shuttle)
 "SG" = (
 /obj/effect/turf_decal/industrial/warning{
-	dir = 10
+	dir = 8
 	},
-/obj/structure/cable{
-	icon_state = "2-8"
+/obj/machinery/light/small,
+/obj/structure/cable,
+/obj/machinery/power/terminal{
+	dir = 8
 	},
-/obj/machinery/light/small{
-	dir = 1
-	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/patterned/ridged,
 /area/ship/shuttle)
 "To" = (
 /obj/structure/catwalk/over/plated_catwalk,
@@ -609,8 +608,8 @@
 rx
 rx
 rR
-rx
-rx
+pm
+pm
 rR
 rx
 rx
@@ -619,8 +618,8 @@ rx
 rx
 pm
 AQ
-pm
-pm
+dK
+BM
 Iq
 pm
 rx
@@ -629,33 +628,23 @@ rx
 rx
 pm
 xB
-dK
+fx
 Ks
-xB
+SG
 pm
 rx
 "}
 (4,1,1) = {"
 rx
 pm
-SG
-sa
-Mp
-Bg
-pm
-rx
-"}
-(5,1,1) = {"
-rx
-pm
 Au
 To
-BM
+Mp
 oi
 pm
 rx
 "}
-(6,1,1) = {"
+(5,1,1) = {"
 rx
 fO
 pm
@@ -665,7 +654,7 @@ pm
 fO
 rx
 "}
-(7,1,1) = {"
+(6,1,1) = {"
 pm
 pm
 MD
@@ -675,7 +664,7 @@ nL
 pm
 pm
 "}
-(8,1,1) = {"
+(7,1,1) = {"
 wV
 bt
 LC
@@ -685,7 +674,7 @@ gz
 zG
 yr
 "}
-(9,1,1) = {"
+(8,1,1) = {"
 Ol
 jW
 bj
@@ -695,7 +684,7 @@ IR
 dm
 sq
 "}
-(10,1,1) = {"
+(9,1,1) = {"
 ge
 dU
 Tz
@@ -705,7 +694,7 @@ Em
 dU
 qx
 "}
-(11,1,1) = {"
+(10,1,1) = {"
 pm
 pm
 AW
@@ -715,7 +704,7 @@ fV
 pm
 pm
 "}
-(12,1,1) = {"
+(11,1,1) = {"
 rx
 fO
 pm
@@ -725,17 +714,17 @@ pm
 fO
 rx
 "}
-(13,1,1) = {"
+(12,1,1) = {"
 rx
 pm
 jW
 nB
 tB
-fx
+sa
 pm
 rx
 "}
-(14,1,1) = {"
+(13,1,1) = {"
 rx
 rp
 Rf
@@ -745,7 +734,7 @@ MK
 rp
 rx
 "}
-(15,1,1) = {"
+(14,1,1) = {"
 rx
 CM
 pm
@@ -755,7 +744,7 @@ pm
 CM
 rx
 "}
-(16,1,1) = {"
+(15,1,1) = {"
 rx
 rx
 CM
