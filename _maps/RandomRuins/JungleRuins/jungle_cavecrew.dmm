@@ -133,12 +133,6 @@
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
-"aW" = (
-/obj/structure/cable/yellow{
-	icon_state = "6-8"
-	},
-/turf/open/floor/plasteel/tech,
-/area/ruin/jungle/cavecrew)
 "aY" = (
 /obj/structure/falsewall/plastitanium,
 /obj/effect/decal/cleanable/dirt,
@@ -170,12 +164,6 @@
 /obj/structure/grille,
 /turf/open/floor/plating,
 /area/ruin/powered)
-"bD" = (
-/turf/open/floor/plasteel/stairs{
-	icon = 'icons/obj/stairs.dmi';
-	dir = 1
-	},
-/area/ruin/jungle/cavecrew)
 "bG" = (
 /obj/structure/spacevine,
 /turf/open/water/jungle/lit,
@@ -210,16 +198,6 @@
 /obj/structure/statue/sandstone/assistant,
 /turf/open/floor/pod/light,
 /area/ruin/jungle/cavecrew/hallway)
-"bW" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/open/floor/plasteel/patterned/dirty,
-/area/ruin/jungle/cavecrew)
 "ck" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/siding/thinplating/dark,
@@ -235,21 +213,20 @@
 /obj/machinery/door/airlock/hatch,
 /turf/open/floor/plasteel/patterned/dirty,
 /area/ruin/jungle/cavecrew/dormitories)
-"cI" = (
-/turf/closed/wall/mineral/plastitanium,
-/area/ruin/jungle/cavecrew)
 "cK" = (
 /obj/item/stack/rods/ten{
 	pixel_x = -3
 	},
+/obj/item/stack/ore/salvage/scraptitanium/five{
+	pixel_x = 11;
+	pixel_y = -10
+	},
+/obj/item/stack/ore/salvage/scrapsilver/five{
+	pixel_y = 8;
+	pixel_x = 8
+	},
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/powered)
-"cU" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 4
-	},
-/turf/open/floor/plasteel/telecomms_floor,
-/area/ruin/jungle/cavecrew)
 "cV" = (
 /obj/structure/flora/ausbushes/reedbush{
 	pixel_x = -11;
@@ -337,6 +314,10 @@
 	pixel_x = 5;
 	pixel_y = 3
 	},
+/obj/item/reagent_containers/food/drinks/bottle/moonshine{
+	pixel_x = -2;
+	pixel_y = 3
+	},
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
 	},
@@ -350,13 +331,6 @@
 "dT" = (
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/cavecrew/cargo)
-"dZ" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 5
-	},
-/obj/machinery/computer/crew,
-/turf/open/floor/plasteel/telecomms_floor,
-/area/ruin/jungle/cavecrew)
 "ed" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/plating/rust,
@@ -418,29 +392,21 @@
 /obj/item/chair/plastic{
 	pixel_y = 6
 	},
+/obj/item/storage/pill_bottle/dice{
+	pixel_x = 7
+	},
+/obj/item/storage/wallet/random{
+	pixel_y = -6
+	},
 /obj/item/stack/telecrystal/five,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/jungle/cavecrew/cargo)
-"eZ" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/tech,
-/area/ruin/jungle/cavecrew)
 "fg" = (
 /obj/structure/flora/rock/jungle{
 	pixel_x = 3;
 	pixel_y = 7
 	},
 /turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/cavecrew)
-"fh" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/patterned/dirty,
 /area/ruin/jungle/cavecrew)
 "fv" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -517,6 +483,13 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light,
+/obj/item/storage/toolbox/ammo{
+	pixel_y = 2
+	},
+/obj/item/storage/toolbox/ammo{
+	pixel_y = -6;
+	pixel_x = -5
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/jungle/cavecrew/security)
 "gm" = (
@@ -526,20 +499,6 @@
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/cavecrew/hallway)
-"gn" = (
-/obj/machinery/door/window/brigdoor/southright{
-	dir = 4
-	},
-/obj/effect/turf_decal/techfloor{
-	dir = 6
-	},
-/obj/effect/turf_decal/spline/fancy/opaque/black,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/tech,
-/area/ruin/jungle/cavecrew)
-"gu" = (
-/turf/open/floor/engine/hull/reinforced/interior,
-/area/ruin/jungle/cavecrew)
 "gv" = (
 /obj/structure/flora/rock/pile/largejungle{
 	pixel_y = -31;
@@ -579,11 +538,12 @@
 /turf/open/floor/plasteel,
 /area/ruin/jungle/cavecrew/hallway)
 "hf" = (
-/obj/structure/railing{
-	layer = 3.1
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/structure/railing{
+	dir = 2;
+	layer = 4.1
 	},
 /turf/open/floor/plasteel/stairs{
 	icon = 'icons/obj/stairs.dmi';
@@ -596,11 +556,6 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/jungle/cavecrew/dormitories)
-"hp" = (
-/turf/open/floor/plasteel/stairs{
-	dir = 1
-	},
-/area/ruin/jungle/cavecrew)
 "ht" = (
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/tree/jungle/small,
@@ -646,7 +601,7 @@
 	dir = 4;
 	name = "tactical swivel chair"
 	},
-/mob/living/simple_animal/hostile/frontier/ranged/officer,
+/mob/living/simple_animal/hostile/frontier/ranged/officer/neutured,
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/cavecrew/bridge)
 "iE" = (
@@ -710,28 +665,6 @@
 	icon_state = "platingdmg3"
 	},
 /area/ruin/powered)
-"jk" = (
-/obj/structure/window/reinforced/spawner/east,
-/obj/effect/turf_decal/techfloor{
-	dir = 5
-	},
-/obj/structure/closet/crate/secure/weapon,
-/obj/item/grenade/chem_grenade/metalfoam{
-	pixel_x = 2
-	},
-/obj/item/grenade/chem_grenade/metalfoam{
-	pixel_x = 6
-	},
-/obj/item/grenade/empgrenade{
-	pixel_x = -4
-	},
-/obj/item/grenade/frag,
-/obj/item/grenade/frag,
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/plasteel/tech,
-/area/ruin/jungle/cavecrew)
 "jm" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -767,24 +700,12 @@
 /obj/structure/flora/junglebush/large{
 	pixel_y = -4
 	},
+/obj/item/flashlight/lantern{
+	pixel_x = 14;
+	pixel_y = -3
+	},
 /turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/ruin/unpowered)
-"jT" = (
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 5
-	},
-/obj/effect/decal/cleanable/plastic,
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/obj/machinery/power/terminal,
-/obj/machinery/door/firedoor/border_only,
-/obj/effect/turf_decal/industrial/warning,
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
-/turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/jungle/cavecrew)
 "jZ" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -911,13 +832,6 @@
 	},
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/cavecrew)
-"lq" = (
-/obj/machinery/porta_turret/syndicate/pod{
-	dir = 5;
-	faction = list("frontiersman")
-	},
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
-/area/ruin/jungle/cavecrew)
 "lt" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 6
@@ -932,13 +846,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/jungle/cavecrew/engineering)
-"lx" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 9
-	},
-/obj/machinery/computer/helm,
-/turf/open/floor/plasteel/telecomms_floor,
-/area/ruin/jungle/cavecrew)
 "lz" = (
 /turf/open/floor/plating/dirt/jungle/dark,
 /area/ruin/jungle/cavecrew/cargo)
@@ -1033,12 +940,22 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
 	},
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/jungle/cavecrew/engineering)
 "mj" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/crate/secure/loot,
+/obj/item/storage/pill_bottle/iron{
+	pixel_x = -6
+	},
+/obj/item/storage/pill_bottle/lsd{
+	pixel_y = -3;
+	pixel_x = -2
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/jungle/cavecrew/cargo)
 "mt" = (
@@ -1156,10 +1073,6 @@
 	},
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/cavecrew/cargo)
-"oc" = (
-/obj/effect/decal/cleanable/glass,
-/turf/open/floor/engine/hull/reinforced/interior,
-/area/ruin/jungle/cavecrew)
 "oq" = (
 /turf/closed/mineral/random/jungle,
 /area/ruin/jungle/cavecrew/cargo)
@@ -1206,8 +1119,8 @@
 /turf/open/floor/plating/dirt/jungle/dark,
 /area/ruin/powered)
 "oU" = (
-/obj/machinery/computer/bounty,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/frame/computer,
 /turf/open/floor/plasteel/patterned,
 /area/ruin/jungle/cavecrew/cargo)
 "oW" = (
@@ -1241,11 +1154,6 @@
 	icon_state = "panelscorched"
 	},
 /area/ruin/jungle/cavecrew/cargo)
-"pw" = (
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/frontier/ranged/mosin,
-/turf/open/floor/plasteel/tech,
-/area/ruin/jungle/cavecrew)
 "px" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable{
@@ -1278,14 +1186,14 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 10
 	},
-/obj/item/gun/ballistic/revolver/nagant{
-	pixel_y = -3
+/obj/item/gun/ballistic/shotgun/automatic/combat{
+	pixel_y = 5
+	},
+/obj/item/gun/ballistic/revolver/mateba{
+	pixel_y = -7
 	},
 /obj/item/gun/ballistic/revolver/nagant{
-	pixel_y = 1
-	},
-/obj/item/gun/ballistic/shotgun/automatic/dual_tube{
-	pixel_y = 6
+	pixel_y = -1
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/jungle/cavecrew/security)
@@ -1296,21 +1204,6 @@
 /obj/structure/spacevine,
 /turf/open/water/jungle,
 /area/ruin/unpowered)
-"rh" = (
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 8
-	},
-/obj/effect/turf_decal/industrial/warning,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 1
-	},
-/obj/structure/window/plasma/reinforced/spawner,
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/jungle/cavecrew)
 "rn" = (
 /obj/structure/flora/grass/jungle/b{
 	pixel_x = 13;
@@ -1356,7 +1249,7 @@
 /area/ruin/jungle/cavecrew/hallway)
 "rN" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/frontier/ranged/trooper,
+/mob/living/simple_animal/hostile/frontier/ranged/trooper/neutered,
 /turf/open/floor/plating/dirt/old,
 /area/ruin/powered)
 "rQ" = (
@@ -1366,25 +1259,12 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/powered)
-"rR" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 4
-	},
-/turf/open/floor/plasteel/patterned/dirty,
-/area/ruin/jungle/cavecrew)
 "rT" = (
 /obj/structure/railing/corner{
 	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ruin/powered)
-"rY" = (
-/obj/structure/window/reinforced/spawner/east,
-/obj/effect/turf_decal/techfloor{
-	dir = 4
-	},
-/turf/open/floor/plasteel/tech,
-/area/ruin/jungle/cavecrew)
 "sj" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 9
@@ -1506,15 +1386,6 @@
 /obj/structure/flora/grass/jungle,
 /turf/open/floor/plating/dirt/jungle/lit,
 /area/ruin/unpowered)
-"tV" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 1
-	},
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/plasteel/tech,
-/area/ruin/jungle/cavecrew)
 "tW" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 5
@@ -1597,23 +1468,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned,
 /area/ruin/jungle/cavecrew/cargo)
-"uP" = (
-/obj/structure/chair/comfy/shuttle{
-	dir = 8;
-	name = "tactical chair"
-	},
-/obj/effect/turf_decal/techfloor{
-	dir = 4
-	},
-/obj/effect/turf_decal/industrial/warning{
-	dir = 8;
-	color = "#808080"
-	},
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/open/floor/plasteel/tech,
-/area/ruin/jungle/cavecrew)
 "uX" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/railing/corner{
@@ -1629,17 +1483,6 @@
 	icon_state = "platingdmg3"
 	},
 /area/ruin/powered)
-"vj" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 1
-	},
-/obj/machinery/door/poddoor{
-	id = "osprey_thruster_starboard";
-	name = "thruster blast door"
-	},
-/obj/structure/cable,
-/turf/open/floor/plating,
-/area/ruin/jungle/cavecrew)
 "vo" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/closet/secure_closet{
@@ -1656,42 +1499,21 @@
 	pixel_y = -5
 	},
 /obj/item/ammo_box/n762_clip,
-/obj/item/ammo_box/n762_clip,
-/obj/item/ammo_box/n762_clip,
-/obj/item/ammo_box/n762_clip,
 /obj/item/ammo_box/n762,
 /obj/item/ammo_box/magazine/aks74u,
 /obj/item/ammo_box/magazine/aks74u,
 /obj/item/ammo_box/magazine/aks74u,
 /obj/item/ammo_box/n762,
+/obj/item/ammo_box/n762_clip,
+/obj/item/ammo_box/a357{
+	pixel_y = -4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/jungle/cavecrew/security)
 "vr" = (
 /obj/machinery/computer/cargo/express,
 /turf/open/floor/plasteel/patterned,
 /area/ruin/jungle/cavecrew/cargo)
-"vz" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
-/turf/open/floor/plating,
-/area/ruin/jungle/cavecrew)
-"vG" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 4
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
-/obj/machinery/door/firedoor/border_only,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/button/massdriver{
-	id = "starfurybc_massleft";
-	name = "left cannon button";
-	pixel_x = 21;
-	pixel_y = 8;
-	dir = 8
-	},
-/turf/open/floor/plasteel/patterned/dirty,
-/area/ruin/jungle/cavecrew)
 "vH" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
@@ -1730,25 +1552,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/jungle/cavecrew/bridge)
-"vU" = (
-/obj/machinery/power/terminal,
-/obj/structure/cable/yellow{
-	icon_state = "0-4"
-	},
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/open/floor/plasteel/tech,
-/area/ruin/jungle/cavecrew)
-"wd" = (
-/obj/effect/turf_decal/techfloor,
-/obj/structure/closet/crate,
-/obj/item/clothing/suit/space/nasavoid/old,
-/obj/item/clothing/head/helmet/space/nasavoid/old,
-/obj/item/tank/internals/emergency_oxygen/engi,
-/obj/item/clothing/mask/gas,
-/turf/open/floor/plasteel/tech,
-/area/ruin/jungle/cavecrew)
 "we" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
@@ -1791,13 +1594,6 @@
 "wN" = (
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/jungle/cavecrew/security)
-"wP" = (
-/obj/machinery/porta_turret/syndicate/pod{
-	dir = 6;
-	faction = list("frontiersman")
-	},
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
-/area/ruin/jungle/cavecrew)
 "wZ" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 1
@@ -1892,38 +1688,6 @@
 	},
 /turf/open/water/jungle,
 /area/ruin/jungle/cavecrew)
-"yg" = (
-/obj/structure/railing/corner{
-	dir = 8
-	},
-/mob/living/simple_animal/hostile/frontier/ranged/trooper/ak47/neutured,
-/turf/open/floor/plasteel/stairs{
-	dir = 1
-	},
-/area/ruin/jungle/cavecrew)
-"yi" = (
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/cable/yellow{
-	icon_state = "4-9"
-	},
-/obj/structure/cable{
-	icon_state = "5-10"
-	},
-/obj/machinery/power/terminal,
-/obj/machinery/door/firedoor/border_only,
-/obj/effect/turf_decal/industrial/warning,
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/obj/item/stack/cable_coil/red{
-	pixel_x = 8;
-	pixel_y = 5
-	},
-/turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/jungle/cavecrew)
 "yj" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
@@ -1942,14 +1706,6 @@
 /obj/machinery/door/airlock/hatch,
 /turf/open/floor/plasteel/patterned/dirty,
 /area/ruin/jungle/cavecrew/dormitories)
-"yt" = (
-/obj/effect/turf_decal/industrial/hatch/yellow,
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
-/obj/machinery/door/firedoor/border_only,
-/turf/open/floor/plasteel/patterned/dirty,
-/area/ruin/jungle/cavecrew)
 "yx" = (
 /obj/structure/grille/broken,
 /turf/open/floor/plating/dirt/old,
@@ -2001,12 +1757,6 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/powered)
-"zf" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 1
-	},
-/turf/open/floor/plasteel/tech,
-/area/ruin/jungle/cavecrew)
 "zj" = (
 /obj/machinery/power/apc/auto_name/west,
 /obj/structure/cable{
@@ -2046,30 +1796,6 @@
 /obj/machinery/light/small,
 /turf/open/floor/plating/catwalk_floor,
 /area/ruin/jungle/cavecrew/hallway)
-"zR" = (
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 4
-	},
-/obj/effect/turf_decal/industrial/warning,
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 1
-	},
-/obj/structure/window/plasma/reinforced/spawner,
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/jungle/cavecrew)
-"zU" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 8
-	},
-/obj/structure/chair/comfy/shuttle{
-	dir = 1;
-	name = "tactical chair"
-	},
-/turf/open/floor/plasteel/telecomms_floor,
-/area/ruin/jungle/cavecrew)
 "zV" = (
 /obj/structure/table/wood/reinforced,
 /obj/effect/turf_decal/siding/wood{
@@ -2176,13 +1902,6 @@
 /obj/structure/curtain/cloth/grey,
 /turf/open/floor/carpet/red_gold,
 /area/ruin/jungle/cavecrew/dormitories)
-"Bo" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
-	icon_state = "2-10"
-	},
-/turf/open/floor/plasteel/tech,
-/area/ruin/jungle/cavecrew)
 "Bp" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-10"
@@ -2240,25 +1959,12 @@
 /turf/open/floor/plating,
 /area/ruin/jungle/cavecrew/dormitories)
 "Cc" = (
-/obj/machinery/porta_turret/syndicate/pod{
-	dir = 10;
-	faction = list("frontiersman")
+/obj/item/stack/ore/salvage/scrapmetal/ten{
+	pixel_x = 2;
+	pixel_y = -4
 	},
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
-/area/ruin/jungle/cavecrew)
-"Cn" = (
-/obj/structure/railing{
-	dir = 8;
-	layer = 4.1
-	},
-/obj/effect/turf_decal/spline/fancy/opaque/black{
-	dir = 8
-	},
-/obj/structure/cable{
-	icon_state = "2-5"
-	},
-/turf/open/floor/plasteel/tech,
-/area/ruin/jungle/cavecrew)
+/turf/open/floor/plating/dirt/old,
+/area/ruin/jungle/cavecrew/cargo)
 "Cq" = (
 /turf/open/floor/plating/dirt/jungle/dark,
 /area/ruin/powered)
@@ -2301,7 +2007,7 @@
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/frontier/ranged,
+/mob/living/simple_animal/hostile/frontier/ranged/neutered,
 /turf/open/floor/plasteel,
 /area/ruin/jungle/cavecrew/hallway)
 "CN" = (
@@ -2455,14 +2161,6 @@
 /obj/structure/flora/grass/jungle/b,
 /turf/open/floor/plating/dirt/jungle/lit,
 /area/ruin/unpowered)
-"Et" = (
-/obj/machinery/door/poddoor/shutters{
-	id = "pcarrier_cargo";
-	name = "blast shutters"
-	},
-/obj/structure/fans/tiny,
-/turf/open/floor/engine/hull/interior,
-/area/ruin/jungle/cavecrew)
 "EG" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable{
@@ -2493,13 +2191,6 @@
 	},
 /turf/closed/mineral/random/jungle,
 /area/ruin/jungle/cavecrew/rock)
-"Fj" = (
-/obj/machinery/porta_turret/syndicate/pod{
-	dir = 9;
-	faction = list("frontiersman")
-	},
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
-/area/ruin/jungle/cavecrew)
 "Fs" = (
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/cavecrew)
@@ -2578,14 +2269,6 @@
 	},
 /turf/open/water/jungle,
 /area/ruin/jungle/cavecrew)
-"Gy" = (
-/obj/effect/turf_decal/techfloor,
-/obj/effect/turf_decal/industrial/loading{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/tech,
-/area/ruin/jungle/cavecrew)
 "GN" = (
 /obj/machinery/porta_turret/syndicate/pod{
 	dir = 9;
@@ -2611,14 +2294,6 @@
 /obj/structure/flora/rock/pile/largejungle,
 /turf/open/floor/plating/dirt/jungle/lit,
 /area/ruin/unpowered)
-"HC" = (
-/obj/machinery/power/port_gen/pacman/super,
-/obj/effect/turf_decal/industrial/hatch/yellow,
-/obj/structure/cable/yellow{
-	icon_state = "0-8"
-	},
-/turf/open/floor/plasteel/tech/grid,
-/area/ruin/jungle/cavecrew)
 "HD" = (
 /obj/item/chair/greyscale{
 	dir = 8;
@@ -2651,30 +2326,6 @@
 	},
 /turf/open/floor/plating/dirt/jungle/lit,
 /area/ruin/unpowered)
-"Ia" = (
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 9
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/wrapping,
-/obj/structure/cable{
-	icon_state = "6-8"
-	},
-/obj/machinery/power/terminal,
-/obj/machinery/door/firedoor/border_only,
-/obj/effect/turf_decal/industrial/warning,
-/obj/item/storage/toolbox/syndicate{
-	pixel_y = 5;
-	pixel_x = 11
-	},
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/jungle/cavecrew)
 "Ie" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 10
@@ -2738,7 +2389,7 @@
 	dir = 4;
 	layer = 3.1
 	},
-/mob/living/simple_animal/hostile/frontier/ranged,
+/mob/living/simple_animal/hostile/frontier/ranged/neutered,
 /turf/open/water/jungle,
 /area/ruin/jungle/cavecrew/cargo)
 "II" = (
@@ -2771,13 +2422,6 @@
 	},
 /turf/open/water/jungle/lit,
 /area/ruin/unpowered)
-"IU" = (
-/obj/machinery/mass_driver{
-	dir = 1;
-	id = "frontiersmencovelauncher"
-	},
-/turf/open/floor/engine/hull/reinforced/interior,
-/area/ruin/jungle/cavecrew)
 "IZ" = (
 /obj/item/reagent_containers/syringe/contraband/fentanyl{
 	pixel_x = -3;
@@ -2886,22 +2530,15 @@
 	pixel_y = 3
 	},
 /obj/item/storage/fancy/cigarettes/cigpack_xeno,
+/obj/item/storage/backpack/duffelbag{
+	pixel_y = -5
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/jungle/cavecrew/cargo)
 "JQ" = (
 /obj/structure/barricade/sandbags,
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/powered)
-"Kd" = (
-/obj/structure/railing{
-	dir = 8;
-	layer = 4.1
-	},
-/obj/effect/turf_decal/spline/fancy/opaque/black{
-	dir = 8
-	},
-/turf/open/floor/plasteel/tech,
-/area/ruin/jungle/cavecrew)
 "Kh" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/door/airlock/hatch,
@@ -2961,18 +2598,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/jungle/cavecrew/bridge)
-"La" = (
-/obj/effect/turf_decal/industrial/outline/yellow,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/crate/secure/gear,
-/obj/item/gun/ballistic/automatic/smg/aks74u{
-	pixel_y = -6
-	},
-/obj/item/gun/ballistic/automatic/zip_pistol,
-/obj/item/gun/ballistic/automatic/zip_pistol,
-/obj/item/gun/ballistic/automatic/zip_pistol,
-/turf/open/floor/plasteel/patterned/dirty,
-/area/ruin/jungle/cavecrew)
 "Lb" = (
 /obj/structure/bed,
 /obj/structure/curtain/cloth/grey,
@@ -3037,10 +2662,6 @@
 /obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/jungle/cavecrew/cargo)
-"LZ" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/tech,
-/area/ruin/jungle/cavecrew)
 "Ma" = (
 /turf/open/floor/plating/dirt/jungle/lit,
 /area/ruin/unpowered)
@@ -3072,16 +2693,16 @@
 	},
 /area/ruin/jungle/cavecrew/cargo)
 "Mr" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 8
+/obj/effect/landmark/subship{
+	subship_template = /datum/map_template/shuttle/subshuttles/frontiersmen_gut;
+	dir = 4
 	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/patterned/dirty,
+/turf/open/water/jungle,
 /area/ruin/jungle/cavecrew)
 "Ms" = (
 /obj/structure/railing{
-	layer = 3.1
+	dir = 2;
+	layer = 4.1
 	},
 /turf/open/floor/plasteel/stairs{
 	icon = 'icons/obj/stairs.dmi';
@@ -3104,10 +2725,10 @@
 /area/ruin/unpowered)
 "MT" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/frontier/ranged/trooper/rifle,
 /obj/structure/cable{
 	icon_state = "2-5"
 	},
+/mob/living/simple_animal/hostile/frontier/ranged/trooper/rifle/neutered,
 /turf/open/floor/plasteel,
 /area/ruin/jungle/cavecrew/hallway)
 "MW" = (
@@ -3124,6 +2745,7 @@
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/crate/secure/loot,
+/obj/item/wallframe/bounty_board,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/jungle/cavecrew/cargo)
 "Nf" = (
@@ -3199,13 +2821,6 @@
 "NR" = (
 /turf/open/floor/plating/dirt/jungle/dark,
 /area/ruin/unpowered)
-"NS" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
-	icon_state = "4-10"
-	},
-/turf/open/floor/plasteel/tech,
-/area/ruin/jungle/cavecrew)
 "NW" = (
 /obj/structure/destructible/tribal_torch/lit{
 	pixel_x = 16;
@@ -3226,17 +2841,6 @@
 /obj/machinery/light,
 /turf/open/floor/plasteel,
 /area/ruin/jungle/cavecrew/hallway)
-"Oh" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 8
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
-/obj/machinery/door/firedoor/border_only,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/patterned/dirty,
-/area/ruin/jungle/cavecrew)
 "Oi" = (
 /obj/machinery/door/airlock/highsecurity,
 /obj/structure/cable{
@@ -3244,13 +2848,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/jungle/cavecrew/security)
-"Ox" = (
-/obj/structure/fans/tiny,
-/obj/machinery/door/poddoor{
-	id = "starfurybc_massleft"
-	},
-/turf/open/floor/engine/hull/reinforced/interior,
-/area/ruin/jungle/cavecrew)
 "OJ" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 4
@@ -3272,14 +2869,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/jungle/cavecrew/security)
-"Pe" = (
-/obj/effect/turf_decal/industrial/outline/yellow,
-/obj/effect/decal/cleanable/dirt,
-/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack,
-/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/carbine,
-/obj/structure/closet/crate/secure/weapon,
-/turf/open/floor/plasteel/patterned/dirty,
-/area/ruin/jungle/cavecrew)
 "Pg" = (
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/machinery/light,
@@ -3298,19 +2887,6 @@
 "Pz" = (
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/jungle/cavecrew/engineering)
-"PA" = (
-/obj/machinery/power/smes{
-	charge = 5e+006
-	},
-/obj/effect/turf_decal/industrial/outline/yellow,
-/obj/effect/turf_decal/industrial/radiation{
-	dir = 5
-	},
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/turf/open/floor/plasteel/tech/grid,
-/area/ruin/jungle/cavecrew)
 "PB" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
@@ -3440,21 +3016,6 @@
 "Ri" = (
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/jungle/cavecrew/dormitories)
-"RG" = (
-/obj/effect/turf_decal/industrial/warning,
-/obj/effect/decal/cleanable/oil{
-	pixel_x = 8;
-	pixel_y = 12
-	},
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 1
-	},
-/obj/structure/window/plasma/reinforced/spawner,
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/jungle/cavecrew)
 "RL" = (
 /obj/structure/flora/grass/jungle,
 /turf/open/floor/plating/dirt/jungle/lit,
@@ -3492,30 +3053,6 @@
 	icon_state = "platingdmg1"
 	},
 /area/ruin/powered)
-"Se" = (
-/obj/structure/chair/comfy/shuttle{
-	dir = 8;
-	name = "tactical chair"
-	},
-/obj/effect/turf_decal/techfloor{
-	dir = 4
-	},
-/obj/effect/turf_decal/industrial/warning{
-	dir = 8;
-	color = "#808080"
-	},
-/obj/effect/decal/cleanable/vomit/old{
-	pixel_y = 6
-	},
-/obj/machinery/power/apc/auto_name/north,
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/open/floor/plasteel/tech,
-/area/ruin/jungle/cavecrew)
 "Sj" = (
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
@@ -3564,6 +3101,13 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/jungle/cavecrew/hallway)
+"Tc" = (
+/obj/item/stack/ore/salvage/scrapmetal/five{
+	pixel_x = -5;
+	pixel_y = -12
+	},
+/turf/open/floor/plating/dirt/old,
+/area/ruin/jungle/cavecrew/cargo)
 "Th" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 9
@@ -3589,29 +3133,8 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/jungle/cavecrew/cargo)
-"Tu" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
-	icon_state = "1-10"
-	},
-/obj/structure/cable{
-	icon_state = "2-10"
-	},
-/turf/open/floor/plasteel/tech,
-/area/ruin/jungle/cavecrew)
 "Ty" = (
 /turf/open/water/jungle,
-/area/ruin/jungle/cavecrew)
-"TB" = (
-/obj/structure/railing{
-	dir = 8;
-	layer = 4.1
-	},
-/obj/effect/turf_decal/spline/fancy/opaque/black{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/tech,
 /area/ruin/jungle/cavecrew)
 "TD" = (
 /obj/structure/flora/ausbushes/stalkybush{
@@ -3627,20 +3150,6 @@
 	pixel_y = 1
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/cavecrew)
-"TG" = (
-/obj/structure/chair/comfy/shuttle{
-	dir = 8;
-	name = "tactical chair"
-	},
-/obj/effect/turf_decal/techfloor{
-	dir = 4
-	},
-/obj/effect/turf_decal/industrial/warning{
-	dir = 8;
-	color = "#808080"
-	},
-/turf/open/floor/plasteel/tech,
 /area/ruin/jungle/cavecrew)
 "TJ" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3708,23 +3217,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/jungle/cavecrew/engineering)
-"Uu" = (
-/obj/structure/chair/comfy/shuttle{
-	dir = 8;
-	name = "tactical chair"
-	},
-/obj/effect/turf_decal/techfloor{
-	dir = 4
-	},
-/obj/effect/turf_decal/industrial/warning{
-	dir = 8;
-	color = "#808080"
-	},
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/turf/open/floor/plasteel/tech,
-/area/ruin/jungle/cavecrew)
 "Uy" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
@@ -3802,12 +3294,6 @@
 /obj/structure/flora/rock/pile/largejungle,
 /turf/open/floor/plating/dirt/jungle/lit,
 /area/ruin/unpowered)
-"Vs" = (
-/obj/effect/turf_decal/techfloor,
-/obj/effect/turf_decal/spline/fancy/opaque/black,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/tech,
-/area/ruin/jungle/cavecrew)
 "Vu" = (
 /obj/effect/turf_decal/techfloor/hole{
 	dir = 4;
@@ -3992,16 +3478,6 @@
 	icon_state = "wood-broken3"
 	},
 /area/ruin/jungle/cavecrew/hallway)
-"Yl" = (
-/obj/structure/railing/corner{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
-	icon_state = "1-5"
-	},
-/turf/open/floor/plasteel/tech,
-/area/ruin/jungle/cavecrew)
 "Yq" = (
 /obj/structure/table/wood,
 /obj/item/toy/cards/deck/syndicate{
@@ -4016,7 +3492,6 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/obj/machinery/power/apc/auto_name/north,
 /turf/open/floor/plating{
 	icon_state = "platingdmg1"
 	},
@@ -4111,9 +3586,6 @@
 /obj/effect/mob_spawn/human/corpse/pirate,
 /turf/open/water/jungle/lit,
 /area/ruin/unpowered)
-"Zz" = (
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
-/area/ruin/jungle/cavecrew)
 "ZG" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 5
@@ -5278,7 +4750,7 @@ JB
 aI
 JB
 JB
-JB
+Cc
 cK
 oR
 Sj
@@ -5343,7 +4815,7 @@ yJ
 HI
 rr
 HI
-JB
+Tc
 dA
 Ix
 JQ
@@ -5602,21 +5074,21 @@ nq
 Ty
 Ty
 Ty
-Fj
-Et
-Et
-Et
-Cc
 Ty
 Ty
-cI
-vz
-vz
-vz
-Zz
-Zz
-cI
 Ty
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
+Mr
 Ty
 Ty
 Ty
@@ -5667,21 +5139,21 @@ Ty
 Ty
 Ty
 Ty
-Zz
-tV
-LZ
-wd
-Zz
-Zz
-Zz
-Zz
-lx
-zU
-bD
-vU
-PA
-Zz
-Zz
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
 Ty
 Ty
 Ty
@@ -5732,21 +5204,21 @@ Ty
 Jg
 Ty
 Ty
-Zz
-eZ
-LZ
-Gy
-yt
-La
-Pe
-Zz
-dZ
-cU
-bD
-aW
-Ia
-rh
-vj
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
 Ty
 Ty
 Ty
@@ -5797,21 +5269,21 @@ Ty
 Ty
 Ty
 Ty
-Zz
-zf
-pw
-Vs
-Oh
-Mr
-fh
-yg
-TB
-Kd
-Cn
-Yl
-yi
-RG
-vj
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
 Ty
 Ty
 Ty
@@ -5862,21 +5334,21 @@ Ty
 Ty
 Ty
 Ty
-Zz
-jk
-rY
-gn
-vG
-bW
-rR
-hp
-LZ
-NS
-Bo
-Tu
-jT
-zR
-vj
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
 Ty
 Ty
 Ty
@@ -5927,21 +5399,21 @@ Ty
 Ty
 Ty
 Ty
-Ox
-oc
-gu
-IU
-Zz
-Zz
-Zz
-Zz
-Se
-Uu
-TG
-uP
-HC
-Zz
-Zz
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
 Ty
 Ty
 Ty
@@ -5992,20 +5464,20 @@ Ty
 Ty
 Ty
 Ty
-lq
-Zz
-Zz
-Zz
-wP
 Ty
 Ty
-cI
-Zz
-Zz
-Zz
-Zz
-Zz
-cI
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
+Ty
 Ty
 Ty
 Ty

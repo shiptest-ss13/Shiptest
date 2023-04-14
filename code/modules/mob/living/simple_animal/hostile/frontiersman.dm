@@ -41,6 +41,8 @@
 	projectilesound = 'sound/weapons/gun/revolver/shot.ogg'
 	casingtype = /obj/item/ammo_casing/n762
 
+/mob/living/simple_animal/hostile/frontier/ranged/neutered
+	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged)
 
 /mob/living/simple_animal/hostile/frontier/ranged/mosin
 	icon_state = "frontiersmanrangedrifle"
@@ -49,6 +51,9 @@
 				/obj/item/gun/ballistic/rifle/boltaction)
 	casingtype = /obj/item/ammo_casing/a762
 	projectilesound = 'sound/weapons/gun/rifle/mosin.ogg'
+
+/mob/living/simple_animal/hostile/frontier/ranged/mosin/neutered
+	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged)
 
 /mob/living/simple_animal/hostile/frontier/ranged/trooper
 	icon_state = "frontiersmanrangedelite"
@@ -59,6 +64,9 @@
 	casingtype = /obj/item/ammo_casing/shotgun/buckshot
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper,
 				/obj/item/gun/ballistic/shotgun/lethal)
+
+/mob/living/simple_animal/hostile/frontier/ranged/trooper/neutered
+	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper)
 
 /mob/living/simple_animal/hostile/frontier/ranged/trooper/ak47
 	icon_state = "frontiersmanrangedak47"
@@ -82,6 +90,9 @@
 	casingtype = /obj/item/ammo_casing/a762
 	projectilesound = 'sound/weapons/gun/rifle/mosin.ogg'
 
+/mob/living/simple_animal/hostile/frontier/ranged/trooper/rifle/neutered
+	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper)
+
 /mob/living/simple_animal/hostile/frontier/ranged/trooper/heavy
 	icon_state = "frontiersmanrangedminigun"
 	icon_living = "frontiersmanrangedminigun"
@@ -95,15 +106,6 @@
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/heavy)
 
 /mob/living/simple_animal/hostile/frontier/ranged/trooper/heavy/neutered
-	icon_state = "frontiersmanrangedminigun"
-	icon_living = "frontiersmanrangedminigun"
-	projectilesound = 'sound/weapons/laser4.ogg'
-	maxHealth = 260
-	health = 260
-	rapid = 6
-	rapid_fire_delay = 1.5
-	casingtype = null
-	projectiletype = /obj/projectile/beam/weak/penetrator
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/heavy/gunless)
 
 /mob/living/simple_animal/hostile/frontier/ranged/officer
@@ -116,6 +118,9 @@
 	casingtype = /obj/item/ammo_casing/c9mm
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/officer,
 				/obj/item/gun/ballistic/automatic/pistol/APS)
+
+/mob/living/simple_animal/hostile/frontier/ranged/officer/neutured
+	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/officer)
 
 /mob/living/simple_animal/hostile/frontier/ranged/officer/Aggro()
 	..()

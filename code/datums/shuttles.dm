@@ -351,5 +351,9 @@
 /datum/map_template/shuttle/subshuttles
 	category = "subshuttles"
 
-//your subshuttle here
+/datum/map_template/shuttle/subshuttles/frontiersmen_gut
+	file_name = "frontiersmen_gut"
+	name = "Gut Combat Freighter"
+	prefix = "ISV"
 
+//your subshuttle here
