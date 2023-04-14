@@ -66,7 +66,7 @@
 	icon_state = "lizliver"
 	desc = "It's blue PH"
 	toxTolerance = 2
-	toxLethality = = 0.01
+	toxLethality = 0.01
 	alcohol_tolerance = 0.012
 
 /obj/item/organ/liver/fly

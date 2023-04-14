@@ -184,8 +184,11 @@
 
 /obj/item/organ/stomach/lizard/handle_hunger(mob/living/carbon/human/human, delta_time, times_fired)
 	. = ..()
-	if(human.nutrition > NUTRITION_LEVEL_WELL_FED && human.nutrition < NUTRITION_LEVEL_FULL)
-		human.adjustBruteLoss(-0.5 * delta_time)
+	if(human.nutrition > NUTRITION_LEVEL_WELL_FED)
+		if (human.getBruteLoss())
+			human.adjustBruteLoss(-0.5 * delta_time)
+			human.nutrition -= 0.8
+		
 
 /obj/item/organ/stomach/fly
 	name = "insectoid stomach"
