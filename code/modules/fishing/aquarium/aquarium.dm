@@ -244,7 +244,7 @@
 		ui = new(user, src, "Aquarium", name)
 		ui.open()
 
-/obj/structure/aquarium/deconstruct(disassembled = TRUE)
+/obj/structure/aquarium/obj_break(damage_flag)
 	. = ..()
 	if(!broken)
 		aquarium_smash()
@@ -263,7 +263,7 @@
 	if(fluid_type != AQUARIUM_FLUID_AIR)
 		var/datum/reagents/reagent_splash = new()
 		reagent_splash.add_reagent(/datum/reagent/water, 30)
-		chem_splash(droploc, null, 3, list(reagent_splash))
+		chem_splash(droploc, 3, list(reagent_splash))
 	update_appearance()
 
 #undef AQUARIUM_LAYER_STEP

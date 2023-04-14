@@ -109,7 +109,7 @@
 		with_data = TRUE,
 		with_static_data = TRUE))
 	if(mouse_hooked)
-		window.set_mouse_macro
+		window.set_mouse_macro()
 	SStgui.on_open(src)
 
 	return TRUE

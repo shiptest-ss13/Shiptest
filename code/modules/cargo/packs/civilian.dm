@@ -264,12 +264,19 @@
 	desc = "The bare necessities to get out there and catch some fish, all in one convenient box!"
 	cost = 500
 	contains = list(/obj/item/storage/toolbox/fishing,
-					/obj/item/storage/fish_case,
-					// /obj/item/book/fish_catalog, (commented out pending getting the damn thing to work)
+					/obj/item/book/fish_catalog,
 					/obj/item/reagent_containers/food/drinks/beer,
 					/obj/item/reagent_containers/food/drinks/beer)
 	crate_name = "fishing starter crate"
 	crate_type = /obj/structure/closet/crate/wooden
+
+/datum/supply_pack/civilian/fishstasis
+	name = "Fish Stasis Kit Supply Crate"
+	desc = "Contains two stasis cases meant to keep fish alive during transportation."
+	cost = 1000
+	contains = list(/obj/item/storage/fish_case,
+					/obj/item/storage/fish_case)
+	crate_name = "stasis case crate"
 
 /datum/supply_pack/civilian/fishinghooks
 	name = "Fishing Hook Variety Pack"
@@ -288,3 +295,10 @@
 	crate_name = "fishing line crate"
 	crate_type = /obj/structure/closet/crate/wooden
 
+/datum/supply_pack/civilian/aquarium
+	name = "Aquarium Construction Kit"
+	desc = "Why seek rare fish if not to show them off? This all-in-one aquarium kit's all you'll ever need to keep a stable population of fish onboard your ship! (Building materials not included, Aquatech Ltd. is a limited liability company and not responsible for any fish related mishaps)"
+	cost = 2000
+	contains = list(/obj/item/aquarium_kit,
+					/obj/item/storage/box/aquarium_props,
+					/obj/item/fish_feed)
