@@ -650,6 +650,15 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
+"em" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/structure/cable,
+/obj/machinery/door/poddoor/shutters{
+	id = "mimir_mining_shut";
+	name = "Mining Bay Shutters"
+	},
+/turf/open/floor/plating,
+/area/ship/storage/eva)
 "eo" = (
 /obj/structure/railing/corner{
 	dir = 8
@@ -2689,6 +2698,9 @@
 /area/ship/crew/hydroponics)
 "qj" = (
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer4,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/storage/eva)
 "ql" = (
@@ -3313,6 +3325,20 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/maintenance/starboard)
+"ut" = (
+/obj/machinery/door/airlock/external,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "mimir_mining_airlock_shut";
+	name = "Mining Airlock Shutters"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/storage/eva)
 "uw" = (
 /turf/closed/wall/r_wall,
 /area/ship/maintenance/port)
@@ -3340,6 +3366,13 @@
 /area/ship/crew/dorm)
 "uK" = (
 /obj/effect/spawner/structure/window/reinforced,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "mimir_mining_shut";
+	name = "Mining Bay Shutters"
+	},
 /turf/open/floor/plating,
 /area/ship/storage/eva)
 "uO" = (
@@ -3597,6 +3630,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/machinery/camera/autoname,
 /turf/open/floor/plasteel,
 /area/ship/security/prison)
 "wT" = (
@@ -3893,6 +3927,16 @@
 /obj/effect/turf_decal/techfloor/orange/corner,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engine)
+"yC" = (
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/grille,
+/obj/structure/cable,
+/obj/machinery/door/poddoor/shutters{
+	id = "mimir_mining_airlock_shut";
+	name = "Mining Airlock Shutters"
+	},
+/turf/open/floor/plating,
+/area/ship/storage/eva)
 "yI" = (
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
@@ -4882,6 +4926,9 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/storage/eva)
 "EK" = (
@@ -4905,6 +4952,13 @@
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/atmospherics/pipe/layer_manifold/visible{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "mimir_mining_airlock_shut";
+	name = "Mining Airlock Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/storage/eva)
@@ -5108,6 +5162,16 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "mimir_mining_shut";
+	name = "Mining Bay Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/storage/eva)
@@ -5654,9 +5718,6 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/maintenance/starboard)
 "IM" = (
-/obj/machinery/camera/autoname{
-	dir = 5
-	},
 /obj/effect/turf_decal/borderfloor{
 	dir = 4
 	},
@@ -5665,6 +5726,22 @@
 	},
 /obj/structure/window/reinforced/spawner{
 	dir = 4
+	},
+/obj/machinery/button/door{
+	dir = 4;
+	pixel_y = 7;
+	pixel_x = -23;
+	id = "mimir_mining_shut";
+	name = "Mining Bay Shutters";
+	req_one_access = list(1,63)
+	},
+/obj/machinery/button/door{
+	dir = 4;
+	pixel_y = -5;
+	pixel_x = -23;
+	id = "mimir_mining_airlock_shut";
+	name = "Mining Airlock Shutters";
+	req_one_access = list(1,63)
 	},
 /turf/open/floor/plasteel,
 /area/ship/security/prison)
@@ -5948,6 +6025,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/storage/eva)
 "Kw" = (
@@ -6120,6 +6200,9 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Lu" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/storage/eva)
 "Lv" = (
@@ -6308,6 +6391,19 @@
 /area/ship/crew/hydroponics)
 "MG" = (
 /obj/machinery/door/airlock/external,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "mimir_mining_airlock_shut";
+	name = "Mining Airlock Shutters"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/storage/eva)
 "MK" = (
@@ -7125,6 +7221,11 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/structure/cable,
+/obj/machinery/door/poddoor/shutters{
+	id = "mimir_mining_airlock_shut";
+	name = "Mining Airlock Shutters"
+	},
 /turf/open/floor/plating,
 /area/ship/storage/eva)
 "RQ" = (
@@ -7772,6 +7873,9 @@
 "Wg" = (
 /obj/structure/closet/crate/bin,
 /obj/effect/turf_decal/siding/yellow,
+/obj/machinery/camera/autoname{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
 /area/ship/security/prison)
 "Wi" = (
@@ -7795,6 +7899,13 @@
 "Wo" = (
 /obj/structure/window/reinforced/fulltile,
 /obj/structure/grille,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "mimir_mining_airlock_shut";
+	name = "Mining Airlock Shutters"
+	},
 /turf/open/floor/plating,
 /area/ship/storage/eva)
 "Wp" = (
@@ -8533,8 +8644,8 @@ jY
 jY
 tE
 Wo
-MG
-Wo
+ut
+yC
 ys
 Ms
 Ls
@@ -8774,7 +8885,7 @@ hz
 hz
 uK
 FH
-uK
+em
 qy
 Cx
 GV
