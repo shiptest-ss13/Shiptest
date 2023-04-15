@@ -76,6 +76,9 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/orange/visible{
+	dir = 4
+	},
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway)
 "bf" = (
@@ -146,6 +149,9 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
+/obj/machinery/atmospherics/pipe/simple/orange/visible{
+	dir = 9
+	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "cA" = (
@@ -197,7 +203,7 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway)
 "di" = (
-/obj/machinery/atmospherics/pipe/manifold/orange/hidden{
+/obj/machinery/atmospherics/pipe/simple/orange/visible{
 	dir = 4
 	},
 /turf/open/floor/plasteel,
@@ -310,7 +316,6 @@
 "fx" = (
 /obj/machinery/suit_storage_unit/mining/eva,
 /obj/effect/turf_decal/industrial/hatch/yellow,
-/obj/machinery/atmospherics/pipe/simple/orange/hidden,
 /obj/item/radio/intercom{
 	pixel_x = -22;
 	dir = 4
@@ -352,6 +357,7 @@
 	icon_state = "1-4"
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/manifold/orange/hidden,
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway)
 "gw" = (
@@ -437,6 +443,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
+/obj/machinery/atmospherics/pipe/simple/orange/visible{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "jI" = (
@@ -475,9 +484,16 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "kk" = (
-/obj/machinery/atmospherics/pipe/simple/orange/hidden,
-/turf/closed/wall,
-/area/ship/engineering)
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/orange/visible{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ship/hallway)
 "km" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/turf_decal/industrial/warning/corner{
@@ -737,6 +753,9 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/simple/orange/visible{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
 /area/ship/engineering)
 "pW" = (
@@ -816,6 +835,9 @@
 /obj/item/pipe_dispenser,
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/orange/visible{
+	dir = 4
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/engineering)
@@ -899,6 +921,9 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/orange/visible{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
 /area/ship/engineering)
 "tr" = (
@@ -945,6 +970,9 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/orange/visible{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "tS" = (
@@ -1073,6 +1101,9 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/atmospherics/pipe/simple/orange/visible{
+	dir = 4
+	},
 /turf/open/floor/plasteel/mono,
 /area/ship/engineering)
 "vN" = (
@@ -1176,6 +1207,9 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
+/obj/machinery/door/poddoor{
+	id = "mining_galaxy_engine_shutters"
+	},
 /turf/open/floor/plating,
 /area/ship/hallway)
 "wM" = (
@@ -1198,13 +1232,6 @@
 /obj/structure/cable/yellow,
 /turf/open/floor/plasteel/mono,
 /area/ship/engineering)
-"xo" = (
-/obj/machinery/atmospherics/pipe/simple/orange/hidden,
-/obj/effect/turf_decal/corner/opaque/yellow{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
-/area/ship/hallway)
 "xE" = (
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
@@ -1483,8 +1510,16 @@
 	dir = 1
 	},
 /obj/item/radio/intercom{
-	pixel_x = -26;
-	dir = 4
+	pixel_x = -22;
+	dir = 4;
+	pixel_y = 6
+	},
+/obj/machinery/button/door{
+	id = "mining_galaxy_engine_shutters";
+	name = "Thruster Blast Doors";
+	pixel_y = -9;
+	dir = 4;
+	pixel_x = -22
 	},
 /turf/open/floor/plasteel,
 /area/ship/engineering)
@@ -1511,6 +1546,9 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/orange/visible{
+	dir = 4
+	},
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway)
 "AI" = (
@@ -1535,6 +1573,9 @@
 	},
 /obj/structure/window/reinforced,
 /obj/machinery/door/window/eastright,
+/obj/machinery/door/poddoor{
+	id = "mining_galaxy_engine_shutters"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Bf" = (
@@ -1600,6 +1641,9 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/atmospherics/pipe/simple/orange/visible{
+	dir = 8
+	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "Cy" = (
@@ -1641,9 +1685,13 @@
 /turf/open/floor/plating/airless,
 /area/ship/engineering)
 "Dm" = (
-/obj/structure/fans/tiny,
 /obj/machinery/door/poddoor{
 	id = "mining_galaxy_port"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 4;
+	locked = 1;
+	id = "mining_galaxy_cargo_holofan"
 	},
 /turf/open/floor/plasteel/patterned/monofloor,
 /area/ship/cargo)
@@ -1652,7 +1700,6 @@
 	dir = 10
 	},
 /obj/machinery/portable_atmospherics/pump,
-/obj/machinery/atmospherics/pipe/simple/orange/visible,
 /obj/machinery/light{
 	dir = 8
 	},
@@ -1717,13 +1764,17 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/simple/orange/visible{
+	dir = 10
+	},
 /turf/open/floor/plasteel,
 /area/ship/hallway)
 "EB" = (
-/obj/machinery/atmospherics/pipe/simple/orange/hidden,
-/obj/effect/turf_decal/corner/opaque/brown,
-/turf/open/floor/plasteel,
-/area/ship/hallway)
+/obj/machinery/door/poddoor{
+	id = "mining_galaxy_port"
+	},
+/turf/open/floor/plasteel/patterned/monofloor,
+/area/ship/cargo)
 "EH" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -1774,8 +1825,15 @@
 /turf/open/floor/circuit,
 /area/ship/science)
 "Fx" = (
-/obj/machinery/atmospherics/pipe/simple/orange/hidden,
-/turf/closed/wall,
+/obj/machinery/door/poddoor{
+	id = "mining_galaxy_port"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 8;
+	locked = 1;
+	id = "mining_galaxy_cargo_holofan"
+	},
+/turf/open/floor/plasteel/patterned/monofloor,
 /area/ship/cargo)
 "FK" = (
 /obj/structure/closet/secure_closet/medical2,
@@ -1800,6 +1858,9 @@
 /obj/item/stack/sheet/metal/fifty,
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/orange/visible{
+	dir = 8
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
@@ -2094,6 +2155,11 @@
 	},
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/machinery/airalarm/directional/east,
+/obj/machinery/button/shieldwallgen{
+	id = "mining_galaxy_cargo_holofan";
+	pixel_x = 8;
+	pixel_y = 25
+	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "LX" = (
@@ -2247,6 +2313,9 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/machinery/door/poddoor{
+	id = "mining_galaxy_engine_shutters"
+	},
 /turf/open/floor/plating,
 /area/ship/cargo)
 "Pa" = (
@@ -2321,6 +2390,9 @@
 	dir = 4;
 	name = "Engine Access"
 	},
+/obj/machinery/door/poddoor{
+	id = "mining_galaxy_engine_shutters"
+	},
 /turf/open/floor/plating,
 /area/ship/cargo)
 "Qn" = (
@@ -2356,6 +2428,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "0-8"
+	},
+/obj/machinery/door/poddoor{
+	id = "mining_galaxy_engine_shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -2455,10 +2530,12 @@
 /area/ship/medical)
 "Te" = (
 /obj/effect/turf_decal/industrial/warning,
-/obj/machinery/atmospherics/pipe/simple/orange/hidden,
 /obj/machinery/power/apc/auto_name/west,
 /obj/structure/cable{
 	icon_state = "0-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/orange/visible{
+	dir = 6
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
@@ -2520,6 +2597,9 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/atmospherics/pipe/simple/orange/visible{
+	dir = 10
+	},
 /turf/open/floor/plasteel/mono,
 /area/ship/engineering)
 "UW" = (
@@ -2529,6 +2609,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "2-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/orange/visible{
+	dir = 8
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
@@ -2626,9 +2709,11 @@
 	dir = 8
 	},
 /obj/machinery/portable_atmospherics/scrubber,
-/obj/machinery/atmospherics/pipe/simple/orange/visible,
 /obj/structure/cable{
 	icon_state = "1-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/orange/visible{
+	dir = 5
 	},
 /turf/open/floor/plasteel,
 /area/ship/engineering)
@@ -2797,11 +2882,11 @@ Nn
 HW
 XA
 Dn
-kk
-xo
+rb
+ls
 di
-EB
-Fx
+Pq
+No
 fx
 Te
 mL
@@ -2828,7 +2913,7 @@ UW
 th
 RN
 vN
-Dm
+EB
 Kz
 "}
 (5,1,1) = {"
@@ -2849,7 +2934,7 @@ Co
 OY
 OY
 vN
-Dm
+EB
 Kz
 "}
 (6,1,1) = {"
@@ -2861,7 +2946,7 @@ xb
 UJ
 pK
 tp
-LS
+kk
 gf
 Pq
 RB
@@ -2870,7 +2955,7 @@ Gf
 OY
 OY
 vN
-Dm
+EB
 Kz
 "}
 (7,1,1) = {"
@@ -2884,14 +2969,14 @@ km
 rb
 ls
 Et
-LS
+kk
 tO
 jC
 ci
 OY
 OY
 vN
-Dm
+EB
 Kz
 "}
 (8,1,1) = {"
@@ -2912,7 +2997,7 @@ ZS
 OY
 OY
 vN
-Dm
+EB
 Kz
 "}
 (9,1,1) = {"
@@ -2933,7 +3018,7 @@ xH
 wm
 OY
 Wg
-Dm
+Fx
 Kz
 "}
 (10,1,1) = {"
