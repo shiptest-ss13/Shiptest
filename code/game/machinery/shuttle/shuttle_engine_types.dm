@@ -21,14 +21,14 @@
 	///A weakref of the connected engine heater with fuel.
 	var/datum/weakref/attached_heater
 
-/obj/machinery/power/shuttle/engine/fueled/burn_engine(percentage = 100)
+/obj/machinery/power/shuttle/engine/fueled/burn_engine(percentage = 100, deltatime)
 	..()
 	var/obj/machinery/atmospherics/components/unary/shuttle/heater/resolved_heater = attached_heater?.resolve()
 	if(!resolved_heater)
 		return
 	if(heat_creation)
 		heat_engine()
-	var/to_use = fuel_use * (percentage / 100)
+	var/to_use = fuel_use * (percentage / 100) * deltatime
 	return resolved_heater.consume_fuel(to_use, fuel_type) / to_use * thrust //This proc returns how much was actually burned, so let's use that and multiply it by the thrust to get all the thrust we CAN give.
 
 /obj/machinery/power/shuttle/engine/fueled/return_fuel()
@@ -147,7 +147,7 @@
 	. = ..()
 	connect_to_network()
 
-/obj/machinery/power/shuttle/engine/electric/burn_engine(percentage = 100)
+/obj/machinery/power/shuttle/engine/electric/burn_engine(percentage = 100, deltatime)
 	. = ..()
 	var/true_percentage = min(newavail() / power_per_burn, percentage / 100)
 	add_delayedload(power_per_burn * true_percentage)
