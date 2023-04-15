@@ -18,7 +18,7 @@
 
 /obj/structure/large_mortar/Initialize(mapload)
 	. = ..()
-	create_reagents(200, DRAINABLE | TRANSPARENT)
+	create_reagents(200, DRAWABLE | DRAINABLE | TRANSPARENT)
 
 	//AddElement(/datum/element/falling_hazard, damage = 20, wound_bonus = 5, hardhat_safety = TRUE, crushes = FALSE)
 
@@ -67,16 +67,16 @@
 		if(attacking_item.is_refillable())
 			var/obj/structure/target = src // Taken from reagent_containters/glass afterattack proc
 			if(!target.reagents.total_volume)
-				to_chat(user, "<span class='warning'>[target] is empty and can't be drained!</span>")
-				return
+				to_chat(user, "<span class='warning'>[target] is empty.</span>")
+				return COMPONENT_NO_AFTERATTACK
 
 			if(reagents.holder_full())
 				to_chat(user, "<span class='warning'>[attacking_item] is full.</span>")
-				return
+				return COMPONENT_NO_AFTERATTACK
 
 			var/trans = target.reagents.trans_to(attacking_item, target.reagents.total_volume, transfered_by = user)
 			to_chat(user, "<span class='notice'>You fill [attacking_item] with [trans] unit\s of the contents of [target].</span>")
-			return
+			return COMPONENT_NO_AFTERATTACK
 
 	if(istype(attacking_item, /obj/item/pestle))
 		if(!anchored)
