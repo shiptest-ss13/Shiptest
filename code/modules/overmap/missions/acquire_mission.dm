@@ -297,7 +297,7 @@
 
 /obj/item/storage/fish_case/mission
 	name = "fish delivery case"
-	desc = "A stasis case that keeps fish alive during transportation, or at least stops them from becomming more dead."
+	desc = "A stasis case that keeps fish alive during transportation, or at least stops them from becoming more dead."
 
 /obj/item/storage/fish_case/mission/big
 	name = "large fish delivery case"
