@@ -24,7 +24,7 @@ GLOBAL_LIST_EMPTY(custom_shuttle_machines)		//Machines that require updating (He
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 50)
 	resistance_flags = FIRE_PROOF
 	var/ready = TRUE
-	var/area/recorded_shuttle_area
+	var/area/ship/recorded_shuttle_area
 	var/list/loggedTurfs = list()
 	var/area/loggedOldArea
 
@@ -144,6 +144,7 @@ GLOBAL_LIST_EMPTY(custom_shuttle_machines)		//Machines that require updating (He
 	port.port_direction = 2
 	port.preferred_direction = 4
 	port.area_type = recorded_shuttle_area
+	recorded_shuttle_area.mobile_port = port
 
 	var/portDirection = getNonShuttleDirection(get_turf(port))
 	var/invertedDir = REVERSE_DIR(portDirection)
