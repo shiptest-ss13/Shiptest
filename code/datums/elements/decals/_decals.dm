@@ -56,6 +56,7 @@
 	pic = new(temp_image)
 	pic.color = _color
 	pic.alpha = _alpha
+	pic.appearance_flags |= RESET_COLOR
 	return TRUE
 
 /datum/element/decal/Detach(atom/source, force)
