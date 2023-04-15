@@ -529,6 +529,9 @@
 /turf/open/floor/carpet/nanoweave,
 /area/ship/cargo)
 "qg" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/engineering)
 "qi" = (
@@ -609,6 +612,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable{
 	icon_state = "1-4"
+	},
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -30
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
@@ -775,9 +782,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "vL" = (
-/obj/machinery/firealarm{
-	dir = 1
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 9
 	},
@@ -1115,7 +1119,10 @@
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/effect/decal/cleanable/blood/old,
-/obj/machinery/light/small,
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -30
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/engineering)
 "IE" = (
@@ -1301,12 +1308,6 @@
 "SC" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech,
-/area/ship/cargo)
-"Tk" = (
-/obj/machinery/firealarm{
-	dir = 1
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/cargo)
 "TD" = (
 /obj/machinery/computer/operating{
@@ -1767,7 +1768,7 @@ cs
 FO
 iw
 rh
-Tk
+fS
 oY
 Rc
 Rc
