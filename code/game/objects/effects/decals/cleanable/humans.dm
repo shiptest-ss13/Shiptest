@@ -125,7 +125,7 @@
 		sleep(2)
 		if(i > 0)
 			var/obj/effect/decal/cleanable/blood/splatter/splat = new /obj/effect/decal/cleanable/blood/splatter(loc, diseases)
-			if(HAS_BLOOD_DNA(src))
+			if(!QDELETED(splat) && HAS_BLOOD_DNA(src))
 				splat.add_blood_DNA(src.return_blood_DNA())
 		if(!step_to(src, get_step(src, direction), 0))
 			break
