@@ -144,7 +144,6 @@ GLOBAL_LIST_EMPTY(custom_shuttle_machines)		//Machines that require updating (He
 	port.port_direction = 2
 	port.preferred_direction = 4
 	port.area_type = recorded_shuttle_area
-	recorded_shuttle_area.mobile_port = port
 
 	var/portDirection = getNonShuttleDirection(get_turf(port))
 	var/invertedDir = REVERSE_DIR(portDirection)
