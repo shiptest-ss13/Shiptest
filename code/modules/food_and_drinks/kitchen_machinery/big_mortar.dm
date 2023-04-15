@@ -57,7 +57,7 @@
 		return
 
 	set_anchored(!anchored)
-	balloon_alert_to_viewers(anchored ? "secured" : "unsecured")
+	balloon_alert(user, anchored ? "secured" : "unsecured")
 	return //SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
 /obj/structure/large_mortar/attackby(obj/item/attacking_item, mob/living/carbon/human/user)
@@ -100,9 +100,9 @@
 		if(!length(contents) || !in_range(src, user) || !user.is_holding(attacking_item) && !picked_option)
 			return
 
-		balloon_alert_to_viewers("grinding...")
+		balloon_alert(user, "grinding...")
 		if(!do_after(user, 5 SECONDS, target = src))
-			balloon_alert_to_viewers("stopped grinding")
+			balloon_alert(user, "stopped grinding")
 			return
 
 		user.adjustStaminaLoss(LARGE_MORTAR_STAMINA_USE) //This is a bit more tiring than a normal sized mortar and pestle

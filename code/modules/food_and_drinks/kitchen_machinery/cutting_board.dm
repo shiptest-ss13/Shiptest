@@ -82,7 +82,7 @@
 		return
 
 	set_anchored(!anchored)
-	balloon_alert_to_viewers(anchored ? "secured" : "unsecured")
+	balloon_alert(user, anchored ? "secured" : "unsecured")
 	return //SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
 ///Takes the given obj (processed thing) and gets its results from the recipe list, spawning the results and deleting the original obj
@@ -121,7 +121,7 @@
 		playsound(src, 'sound/weapons/slice.ogg', 50, TRUE)
 		balloon_alert_to_viewers("cutting...")
 		if(!do_after(user, 3 SECONDS, target = src))
-			balloon_alert_to_viewers("stopped cutting")
+			balloon_alert(user, "stopped cutting")
 			return
 
 		process_food(item_process_recipe, contents[1])
