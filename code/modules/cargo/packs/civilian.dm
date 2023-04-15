@@ -272,11 +272,32 @@
 
 /datum/supply_pack/civilian/fishstasis
 	name = "Fish Stasis Kit Supply Crate"
-	desc = "Contains two stasis cases meant to keep fish alive during transportation."
+	desc = "Contains four stasis cases meant to keep fish alive during transportation."
 	cost = 1000
 	contains = list(/obj/item/storage/fish_case,
+					/obj/item/storage/fish_case,
+					/obj/item/storage/fish_case,
 					/obj/item/storage/fish_case)
 	crate_name = "stasis case crate"
+
+/datum/supply_pack/civilian/premiumworms
+	name = "High Quality Worm Pack"
+	desc = "A selection of the system's finest worms, guaranteed to lure in only the largest of fish."
+	cost = 1000
+	contains = list(/obj/item/bait_can/worm/premium,
+					/obj/item/bait_can/worm/premium,
+					/obj/item/bait_can/worm/premium,
+					/obj/item/bait_can/worm/premium)
+	crate_name = "premium worm crate"
+
+/datum/supply_pack/civilian/masterworkpole
+	name = "Custom Made Masterwork Fishing Rod"
+	desc = "Fishing rod forged after grueling hours of labor by a master rodsmith, truly a work of fishing art. Required to catch size 2 fish."
+	cost = 5000
+	contains = list(/obj/item/fishing_rod/master)
+	crate_name = "masterwork fishing rod case"
+	crate_type = /obj/structure/closet/crate/wooden
+
 
 /datum/supply_pack/civilian/fishinghooks
 	name = "Fishing Hook Variety Pack"
@@ -302,3 +323,4 @@
 	contains = list(/obj/item/aquarium_kit,
 					/obj/item/storage/box/aquarium_props,
 					/obj/item/fish_feed)
+	crate_name = "aquarium kit crate"
