@@ -230,7 +230,7 @@ Maintenance panel is [open ? "opened" : "closed"]"}
 	for(var/X in list(ITEM_SLOT_HEAD, ITEM_SLOT_MASK, ITEM_SLOT_ICLOTHING, ITEM_SLOT_OCLOTHING, ITEM_SLOT_FEET))
 
 		var/obj/item/I = L.get_item_by_slot(X)
-		if(I && SEND_SIGNAL(I, HAS_BLOOD_DNA(src)))
+		if(I && HAS_BLOOD_DNA(I))
 			return FALSE
 	return TRUE
 
@@ -240,7 +240,6 @@ Maintenance panel is [open ? "opened" : "closed"]"}
 		return //lol pranked no cleaning besides that
 	else
 		A.wash(CLEAN_WASH)
-
 
 
 /obj/machinery/bot_core/hygienebot

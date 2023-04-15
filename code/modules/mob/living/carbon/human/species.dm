@@ -47,8 +47,9 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	///The gradient color used to color the gradient.
 	var/grad_color
 	///The color used for the "white" of the eye, if the eye has one.
-	var/sclera_color = "e8e8e8"
-
+	var/sclera_color = "#e8e8e8"
+	/// The color used for blush overlay
+	var/blush_color = COLOR_BLUSH_PINK
 	///Does the species use skintones or not? As of now only used by humans.
 	var/use_skintones = FALSE
 	///If your race bleeds something other than bog standard blood, change this to reagent id. For example, ethereals bleed liquid electricity.
@@ -758,9 +759,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			// blush
 			if (HAS_TRAIT(H, TRAIT_BLUSHING)) // Caused by either the *blush emote or the "drunk" mood event
 				var/mutable_appearance/blush_overlay = mutable_appearance('icons/mob/human_face.dmi', "blush", -BODY_ADJ_LAYER) //should appear behind the eyes
-				blush_overlay.color = COLOR_BLUSH_PINK
-				if(islizard(H))
-					blush_overlay.color = COLOR_BLUSH_TEAL
+				if(H.dna && H.dna.species && H.dna.species.blush_color)
+					blush_overlay.color = H.dna.species.blush_color
 				standing += blush_overlay
 
 			// snore
