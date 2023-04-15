@@ -28,6 +28,7 @@
 	species_gibs = "robotic"
 	attack_sound = 'sound/items/trayhit1.ogg'
 	deathsound = "sound/voice/borg_deathsound.ogg"
+	wings_icons = list("Robotic")
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	species_language_holder = /datum/language_holder/ipc
 	loreblurb = "Integrated Positronic Chassis or \"IPC\" for short, are synthetic lifeforms composed of an Artificial \
@@ -39,8 +40,8 @@
 	species_head = /obj/item/bodypart/head/ipc
 	species_l_arm = /obj/item/bodypart/l_arm/ipc
 	species_r_arm = /obj/item/bodypart/r_arm/ipc
-	species_l_leg = /obj/item/bodypart/l_leg/ipc
-	species_r_leg = /obj/item/bodypart/r_leg/ipc
+	species_l_leg = /obj/item/bodypart/leg/left/ipc
+	species_r_leg = /obj/item/bodypart/leg/right/ipc
 
 	/// The last screen used when the IPC died.
 	var/saved_screen

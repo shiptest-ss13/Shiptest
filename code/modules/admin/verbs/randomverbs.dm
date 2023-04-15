@@ -833,22 +833,34 @@
 
 		switch(ruin_force)
 			if("Random")
+				//Can't use pickweight as it might be from "everything"
 				ruin_target = select_from[pick(select_from)]
 			else
 				var/selected_ruin = tgui_input_list(usr, "Which ruin?", "Spawn Ruin", select_from, 60 SECONDS)
 				if(!selected_ruin)
-					if(tgui_alert(usr, "Did you mean to not have a ruin?", "Spawn Planet/Ruin", list("Yes", "No"), 10) != "Yes")
+					if(tgui_alert(usr, "Did you mean to not have a ruin?", "Spawn Planet/Ruin", list("Yes", "No"), 10 SECONDS) != "Yes")
 						return
 				else
 					ruin_target = select_from[selected_ruin]
 
-	message_admins("Generating a new Planet, this may take some time!")
-	var/datum/overmap/dynamic/encounter = new(null, FALSE)
+	var/list/position
+	if(tgui_alert(usr, "Where do you want to spawn your Planet/Ruin?", "Spawn Planet/Ruin", list("Pick a location", "Random")) == "Pick a location")
+		position["x"] = input(usr, "Choose your X coordinate", "Pick a location", rand(1,SSovermap.size)) as num
+		position["y"] = input(usr, "Choose your Y coordinate", "Pick a location", rand(1,SSovermap.size)) as num
+		if(locate(/datum/overmap) in SSovermap.overmap_container[position["x"]][position["y"]] && tgui_alert(usr, "There is already an overmap object in that location! Continue anyway?","Pick a location", list("Yes","No"), 10 SECONDS) != "Yes")
+			return
+	else
+		position = SSovermap.get_unused_overmap_square()
+
+	message_admins("Generating a new Planet with ruin: [ruin_target], this may take some time!")
+	if(!position && tgui_alert(usr, "Failed to spawn in an empty overmap space! Continue?", "Spawn Planet/Ruin", list("Yes","No"), 10 SECONDS) != "Yes")
+		return
+	var/datum/overmap/dynamic/encounter = new(position, FALSE)
 	encounter.force_encounter = planet_type
 	encounter.template = ruin_target
 	encounter.choose_level_type(FALSE)
 	if(!ruin_target)
-		encounter.ruin_list = null
+		encounter.ruin_type = null
 	encounter.preserve_level = TRUE
 	encounter.load_level()
 

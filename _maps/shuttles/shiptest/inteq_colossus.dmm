@@ -1781,10 +1781,10 @@
 /obj/structure/table/reinforced,
 /obj/item/paper_bin,
 /obj/item/pen/fountain,
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
 /obj/item/gps{
 	pixel_x = 12
 	},
@@ -1949,7 +1949,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/holopad,
+/obj/machinery/holopad/emergency/command,
 /turf/open/floor/carpet/orange,
 /area/ship/bridge)
 "tR" = (
@@ -2246,7 +2246,6 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/cryo)
 "wW" = (
-/obj/machinery/holopad,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -2255,6 +2254,7 @@
 	codes_txt = "patrol;next_patrol=hall";
 	location = "office"
 	},
+/obj/machinery/holopad/emergency/security,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office)
 "xd" = (

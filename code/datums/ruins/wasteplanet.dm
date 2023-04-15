@@ -4,6 +4,7 @@
 	prefix = "_maps/RandomRuins/WasteRuins/"
 	allow_duplicates = FALSE
 	cost = 5
+	ruin_type = RUINTYPE_WASTE
 
 /datum/map_template/ruin/wasteplanet/fortress
 	name = "Fortress of Solitide"
