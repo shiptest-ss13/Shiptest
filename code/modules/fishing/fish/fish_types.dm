@@ -60,6 +60,8 @@
 		)
 	)
 
+	fishing_difficulty_modifier = 5
+
 /obj/item/fish/bass
 	name = "largemouth bass"
 	desc = "A large, carnivorous freshwater fish known for thriving in most environments and being popular amongst sport fishers."
@@ -69,7 +71,7 @@
 	average_size = 40
 	average_weight = 5000
 	stable_population = 3
-	fishing_traits = list(/datum/fishing_trait/carnivore)
+	fishing_traits = list(/datum/fishing_trait/shiny_lover)
 
 	fishing_difficulty_modifier = 5
 
@@ -83,7 +85,6 @@
 	average_size = 60
 	average_weight = 12000
 	stable_population = 3
-	fishing_traits = list(/datum/fishing_trait/heavy)
 
 /obj/item/fish/salmon
 	name = "pink salmon"
@@ -122,7 +123,6 @@
 	average_size = 30
 	average_weight = 500
 	stable_population = 4
-
 	fishing_traits = list(/datum/fishing_trait/picky_eater)
 
 /obj/item/fish/cardinal
@@ -162,6 +162,8 @@
 	disliked_bait = list(/obj/item/reagent_containers/food/snacks/bait/worm, /obj/item/reagent_containers/food/snacks/bait/doughball)
 	fish_ai_type = FISH_AI_ZIPPY
 
+	fishing_difficulty_modifier = 10
+
 /obj/item/fish/pufferfish
 	name = "pufferfish"
 	desc = "One Pufferfish contains enough toxins in its liver to kill 30 people."
@@ -172,8 +174,6 @@
 	average_size = 60
 	average_weight = 1000
 	stable_population = 3
-
-	fishing_traits = list(/datum/fishing_trait/heavy)
 
 /obj/item/fish/lanternfish
 	name = "lanternfish"
@@ -188,8 +188,9 @@
 	average_size = 100
 	average_weight = 1500
 	stable_population = 3
-
 	fishing_traits = list(/datum/fishing_trait/nocturnal)
+
+	fishing_difficulty_modifier = 10
 
 //Exotic/Alien Fish (Formerly Tiziran Fish)
 /obj/item/fish/dwarf_moonfish
@@ -202,6 +203,8 @@
 	average_size = 100
 	average_weight = 2000
 
+	fishing_difficulty_modifier = 5
+
 /obj/item/fish/gunner_jellyfish
 	name = "gunner jellyfish"
 	desc = "So called due to their resemblance to an artillery shell, the gunner jellyfish is native to Kalixcis, where it is enjoyed as a delicacy. Produces a mild hallucinogen that is destroyed by cooking."
@@ -209,6 +212,9 @@
 	required_fluid_type = AQUARIUM_FLUID_SALTWATER
 	stable_population = 4
 	fillet_type = /obj/item/reagent_containers/food/snacks/fishmeat/gunner_jellyfish
+	fishing_traits = list(/datum/fishing_trait/wary)
+
+	fishing_difficulty_modifier = 5
 
 /obj/item/fish/needlefish
 	name = "needlefish"
@@ -245,6 +251,8 @@
 	required_fluid_type = AQUARIUM_FLUID_FRESHWATER
 	stable_population = 4
 	fillet_type = /obj/item/reagent_containers/food/snacks/fishmeat/donkfish
+
+	fishing_difficulty_modifier = 10
 
 /obj/item/fish/emulsijack
 	name = "toxic emulsijack"
