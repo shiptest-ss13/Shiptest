@@ -4,6 +4,7 @@
 	prefix = "_maps/RandomRuins/BeachRuins/"
 	allow_duplicates = FALSE
 	cost = 5
+	ruin_type = RUINTYPE_BEACH
 
 /datum/map_template/ruin/beachplanet/fishinghut
 	name = "Fishing Hut"
@@ -28,6 +29,12 @@
 	id = "beach_colony"
 	description = "A abandoned colony. It seems that this colony was abandoned, for a reason or another"
 	suffix = "beach_colony.dmm"
+
+/datum/map_template/ruin/beachplanet/town
+	name = "Beachside Town"
+	id = "beach_town"
+	description = "A fresh town on a lovely coast, where its inhabitants are is unknown."
+	suffix = "beach_ocean_town.dmm"
 
 /datum/map_template/ruin/beachplanet/scrapvillage
 	name = "Pirate Village"
@@ -58,4 +65,3 @@
 	id = "beach_crashed_engineer"
 	description = "An abandoned camp built by a crashed engineer"
 	suffix = "beach_crashed_engineer.dmm"
-

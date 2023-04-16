@@ -530,6 +530,36 @@
 	icon_state = "dk_yellow"
 	color = "#26773a88"
 
+//Singularity Lab
+
+/area/ruin/space/has_grav/singularitylab
+	name = "Asteroid Halls"
+	icon_state = "hallC"
+
+/area/ruin/space/has_grav/singularitylab/reactor
+	name = "Singularity Reactor"
+	icon_state = "engine"
+
+/area/ruin/space/has_grav/singularitylab/engineering
+	name = "Asteroid Engineering"
+	icon_state = "blue"
+
+/area/ruin/space/has_grav/singularitylab/lab
+	name = "High Energy Applications Research Facility"
+	icon_state = "green"
+
+/area/ruin/space/has_grav/singularitylab/cargo
+	name = "Asteroid Cargo"
+	icon_state = "storage"
+
+/area/ruin/space/has_grav/singularitylab/hangar
+	name = "Asteroid Hangar"
+	icon_state = "yellow"
+
+/area/ruin/space/has_grav/singularitylab/civvie
+	name = "Asteroid Housing"
+	icon_state = "Sleep"
+
 //Corporate Mining Ruin
 
 /area/ruin/space/has_grav/corporatemine/crewquarters

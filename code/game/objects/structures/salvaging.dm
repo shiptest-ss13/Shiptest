@@ -539,8 +539,8 @@
 	loot = list(
 			/obj/item/bodypart/l_arm/robot/surplus = 1,
 			/obj/item/bodypart/r_arm/robot/surplus = 1,
-			/obj/item/bodypart/l_leg/robot/surplus = 1,
-			/obj/item/bodypart/r_leg/robot/surplus = 1,
+			/obj/item/bodypart/leg/left/robot/surplus = 1,
+			/obj/item/bodypart/leg/right/robot/surplus = 1,
 		)
 /obj/effect/spawner/lootdrop/random_gun_protolathe_lootdrop
 	loot = list(
