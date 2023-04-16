@@ -47,8 +47,8 @@
 	species_head = /obj/item/bodypart/head/kepori
 	species_l_arm = /obj/item/bodypart/l_arm/kepori
 	species_r_arm = /obj/item/bodypart/r_arm/kepori
-	species_l_leg = /obj/item/bodypart/l_leg/kepori
-	species_r_leg = /obj/item/bodypart/r_leg/kepori
+	species_l_leg = /obj/item/bodypart/leg/left/kepori
+	species_r_leg = /obj/item/bodypart/leg/right/kepori
 
 /datum/species/kepori/New()
 	. = ..()
