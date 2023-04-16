@@ -92,7 +92,7 @@
 
 /obj/item/reagent_containers/food/drinks/drinkingglass/breakawayflask
 	name = "breakaway flask"
-	desc = "A special flask designed to shatter violently on contact"
+	desc = "A special flask designed to stabilize trick wines and shatter violently on contact"
 	icon_state = "breakawayflask"
 	gulp_size = 25
 	amount_per_transfer_from_this = 25

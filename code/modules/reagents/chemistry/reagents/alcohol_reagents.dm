@@ -2481,7 +2481,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	quality = DRINK_VERYGOOD
 	taste_description = "devotional energy and a hint of high-potency hallucinogens"
 	glass_icon_state = "ashwine"
-	glass_name = "Roumain Ashwine"
+	glass_name = "Ashwine"
 	glass_desc = "Traditional sacrament for Saint-Roumain Militia"
 	breakaway_flask_icon_state = "baflaskashwine"
 
@@ -2498,7 +2498,19 @@ All effects don't start immediately, but rather get worse over time; the rate is
 		M.Dizzy(2 * reac_volume)
 		M.set_drugginess(3 * reac_volume)
 		M.emote(pick("twitch","giggle"))
-
+/*
+/datum/reagent/consumable/ethanol/inert_ash_wine
+	name = "Inert Ashwine"
+	description = "Traditional sacrament for Saint-Roumain Militia"
+	color = rgb(41, 61, 37)
+	boozepwr = 80
+	quality = DRINK_VERYGOOD
+	taste_description = "devotional energy and a hint of high-potency hallucinogens"
+	glass_icon_state = "ashwine"
+	glass_name = "Ashwine"
+	glass_desc = "Traditional sacrament for Saint-Roumain Militia"
+	breakaway_flask_icon_state = "baflaskashwine"
+*/
 /datum/reagent/consumable/ethanol/ice_wine
 	name = "Icewine"
 	description = "A chilling drink..."
@@ -2506,7 +2518,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	boozepwr = 70
 	taste_description = "cold"
 	//glass_icon_state = "icewine"
-	glass_name = "Roumain Icewine"
+	glass_name = "Icewine"
 	glass_desc = "A chilling drink"
 	//breakaway_flask_icon_state = "baflask_icewine"
 
