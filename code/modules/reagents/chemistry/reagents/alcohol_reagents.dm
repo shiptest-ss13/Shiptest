@@ -2472,3 +2472,53 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	M.clockcultslurring = min(M.clockcultslurring + 3, 3)
 	M.stuttering = min(M.stuttering + 3, 3)
 	..()
+
+/datum/reagent/consumable/ethanol/ash_wine
+	name = "Ashwine"
+	description = "Traditional sacrament for Saint-Roumain Militia"
+	color = rgb(41, 61, 37)
+	boozepwr = 80
+	quality = DRINK_VERYGOOD
+	taste_description = "devotional energy and a hint of high-potency hallucinogens"
+	glass_icon_state = "ashwine"
+	glass_name = "Roumain Ashwine"
+	glass_desc = "Traditional sacrament for Saint-Roumain Militia"
+	breakaway_flask_icon_state = "baflaskashwine"
+
+/datum/reagent/consumable/ethanol/ash_wine/on_mob_life(mob/living/M)
+	var/high_message = pick("you feel far more devoted to the cause", "you feel like you should go on a hunt")
+	if(prob(30))
+		to_chat(M, "<span class='notice'>[high_message]</span>")
+	M.set_drugginess(2)
+	..()
+
+/datum/reagent/consumable/ethanol/ash_wine/expose_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
+	if(method == TOUCH)
+		M.Jitter(3 * reac_volume)
+		M.Dizzy(2 * reac_volume)
+		M.set_drugginess(3 * reac_volume)
+		M.emote(pick("twitch","giggle"))
+
+/datum/reagent/consumable/ethanol/ice_wine
+	name = "Icewine"
+	description = "A chilling drink..."
+	color = rgb(33, 239, 235)
+	boozepwr = 70
+	taste_description = "cold"
+	//glass_icon_state = "icewine"
+	glass_name = "Roumain Icewine"
+	glass_desc = "A chilling drink"
+	//breakaway_flask_icon_state = "baflask_icewine"
+
+/datum/reagent/consumable/ethanol/ice_wine/on_mob_life(mob/living/M)
+	M.adjust_bodytemperature(-10 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal())
+	M.adjustFireLoss(-1)
+	..()
+	. = 1
+
+/datum/reagent/consumable/ethanol/ice_wine/expose_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
+	if(method == TOUCH)
+		M.adjust_bodytemperature((-20*reac_volume) * TEMPERATURE_DAMAGE_COEFFICIENT)
+		M.Paralyze(1*reac_volume)
+		walk(M, 0) //stops them mid pathing even if they're stunimmunee
+		M.apply_status_effect(/datum/status_effect/ice_block_talisman, (0.1 * reac_volume) SECONDS)

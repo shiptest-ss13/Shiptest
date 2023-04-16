@@ -88,6 +88,49 @@
 	if(ishumanbasic(user))
 		. += "You feel like this might be in poor taste."
 
+//Breakaway Flasks!
+
+/obj/item/reagent_containers/food/drinks/drinkingglass/breakawayflask
+	name = "breakaway flask"
+	desc = "A special flask designed to shatter violently on contact"
+	icon_state = "breakawayflask"
+	gulp_size = 25
+	amount_per_transfer_from_this = 25
+	volume = 50
+	throwforce = 30
+	custom_materials = list(/datum/material/glass=500, /datum/material/plasma=100)
+	max_integrity = 20
+	spillable = TRUE
+	resistance_flags = ACID_PROOF
+	obj_flags = UNIQUE_RENAME
+	drop_sound = 'sound/items/handling/drinkglass_drop.ogg'
+	pickup_sound =  'sound/items/handling/drinkglass_pickup.ogg'
+	custom_price = 25
+
+/obj/item/reagent_containers/food/drinks/drinkingglass/breakawayflask/on_reagent_change(changetype)
+	cut_overlays()
+
+	gulp_size = max(round(reagents.total_volume / 25), 25)
+	var/datum/reagent/largest_reagent = reagents.get_master_reagent()
+	if (reagents.reagent_list.len > 0)
+		if(!renamedByPlayer)
+			name = largest_reagent.glass_name
+			desc = largest_reagent.glass_desc
+		if(largest_reagent.breakaway_flask_icon_state)
+			icon_state = largest_reagent.breakaway_flask_icon_state
+		else
+			var/mutable_appearance/baflask_overlay = mutable_appearance(icon, "baflaskoverlay")
+			icon_state = "baflaskclear"
+			baflask_overlay.color = mix_color_from_reagents(reagents.reagent_list)
+			add_overlay(baflask_overlay)
+
+	else
+		icon_state = "breakawayflask"
+		name = initial(src.name)
+		desc = initial(src.desc)
+		return
+
+
 /obj/item/reagent_containers/food/drinks/drinkingglass/filled/Initialize()
 	. = ..()
 	on_reagent_change(ADD_REAGENT)

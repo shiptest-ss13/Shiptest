@@ -637,3 +637,11 @@
 	required_reagents = list(/datum/reagent/consumable/ethanol/cognac = 1, /datum/reagent/fuel = 1, /datum/reagent/consumable/ethanol/screwdrivercocktail = 1)
 	mix_message = "You hear faint sounds of gears turning as it mixes."
 	mix_sound = 'sound/effects/clockcult_gateway_closing.ogg'
+
+/datum/chemical_reaction/ash_wine
+	results = list(/datum/reagent/consumable/ethanol/ash_wine = 5)
+	required_reagents = list(/datum/reagent/consumable/ethanol/absinthe = 3, /datum/reagent/ash = 1, /datum/reagent/drug/mushroomhallucinogen = 1)
+
+/datum/chemical_reaction/ice_wine
+	results = list(/datum/reagent/consumable/ethanol/ice_wine = 5)
+	required_reagents = list(/datum/reagent/consumable/ethanol/sake = 3, /datum/reagent/polar_bear_fur = 2)
