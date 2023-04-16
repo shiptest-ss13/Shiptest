@@ -799,3 +799,14 @@
 	mineralSpawnChanceList = list(/obj/item/stack/ore/uranium = 30, /obj/item/stack/ore/diamond = 0.5, /obj/item/stack/ore/gold = 5,
 		/obj/item/stack/ore/silver = 7, /obj/item/stack/ore/plasma = 35, /obj/item/stack/ore/iron = 35, /obj/item/stack/ore/titanium = 10)
 	mineralChance = 30
+
+/turf/closed/mineral/snowmountain/cavern/shipside
+	name = "ice cavern rock"
+	icon = 'icons/turf/mining.dmi'
+	smooth_icon = 'icons/turf/walls/icerock_wall.dmi'
+	icon_state = "icerock"
+	base_icon_state = "icerock_wall"
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
+	baseturfs = /turf/open/floor/plating
+	environment_type = "snow_cavern"
+	turf_type = /turf/open/floor/plating
