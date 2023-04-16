@@ -35,24 +35,17 @@
 /turf/open/floor/plating/airless,
 /area/ship/engineering/atmospherics)
 "ag" = (
-/obj/item/bodypart/l_arm/robot,
-/obj/item/bodypart/leg/left/robot,
-/obj/item/bodypart/r_arm/robot,
-/obj/item/bodypart/leg/right/robot,
-/obj/item/bodypart/chest/robot,
-/obj/item/organ/ears/cybernetic,
-/obj/item/organ/heart/cybernetic/tier2,
-/obj/item/organ/lungs/cybernetic/tier2,
-/obj/item/organ/liver/cybernetic/tier2,
-/obj/item/organ/tail/cat,
-/obj/item/organ/ears/cat,
-/obj/structure/closet/crate/freezer,
-/obj/effect/turf_decal/trimline/opaque/syndiered/filled/line,
-/obj/machinery/door/poddoor/shutters{
-	id = "twinkle_engines"
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
 	},
-/turf/open/floor/plasteel/white,
-/area/ship/medical/surgery)
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/hallway/central)
 "aj" = (
 /obj/machinery/atmospherics/pipe/manifold/purple/visible,
 /turf/open/floor/plating,
@@ -345,9 +338,6 @@
 /obj/item/kirbyplants{
 	icon_state = "plant-21";
 	pixel_x = 8
-	},
-/obj/machinery/light{
-	dir = 4
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
@@ -794,6 +784,9 @@
 "fn" = (
 /obj/machinery/cryopod{
 	dir = 8
+	},
+/obj/machinery/light{
+	dir = 1
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/cryo)
@@ -1535,7 +1528,7 @@
 /obj/item/reagent_containers/glass/beaker,
 /obj/structure/closet/wall/orange{
 	name = "Chemical Closet";
-	pixel_y = 30
+	pixel_y = 28
 	},
 /obj/structure/sign/warning/chemdiamond{
 	pixel_x = 30
@@ -2177,10 +2170,13 @@
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable/yellow{
-	icon_state = "1-8"
-	},
-/obj/structure/cable/yellow{
 	icon_state = "2-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 1
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/central)
@@ -2318,7 +2314,7 @@
 	pixel_x = -10
 	},
 /obj/effect/turf_decal/corner/opaque/red/diagonal,
-/turf/open/floor/plasteel/white,
+/turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
 "pj" = (
 /obj/machinery/door/window/southright,
@@ -2687,6 +2683,7 @@
 /obj/machinery/firealarm{
 	pixel_y = 26
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
 "rr" = (
@@ -3034,6 +3031,17 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
+"tY" = (
+/obj/effect/turf_decal/corner/opaque/syndiered{
+	dir = 5
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/turf/open/floor/plasteel/tech,
+/area/ship/hallway/central)
 "tZ" = (
 /obj/effect/turf_decal/corner/opaque/syndiered,
 /turf/open/floor/mineral/plastitanium,
@@ -3758,9 +3766,6 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security)
 "yO" = (
-/obj/machinery/light{
-	dir = 8
-	},
 /obj/structure/closet/wall{
 	dir = 4;
 	pixel_x = -28;
@@ -4379,7 +4384,7 @@
 /obj/structure/closet/wall/white/med{
 	name = "medical locker";
 	dir = 8;
-	pixel_x = 29
+	pixel_x = 28
 	},
 /obj/item/clothing/gloves/color/latex/nitrile/evil,
 /obj/item/clothing/gloves/color/latex/nitrile/evil,
@@ -5069,6 +5074,18 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/trimline/opaque/syndiered/line,
+/obj/structure/closet/crate/freezer,
+/obj/item/bodypart/chest/robot,
+/obj/item/bodypart/leg/right/robot,
+/obj/item/bodypart/r_arm/robot,
+/obj/item/bodypart/leg/left/robot,
+/obj/item/bodypart/l_arm/robot,
+/obj/item/organ/ears/cat,
+/obj/item/organ/tail/cat,
+/obj/item/organ/liver/cybernetic/tier2,
+/obj/item/organ/lungs/cybernetic/tier2,
+/obj/item/organ/heart/cybernetic/tier2,
+/obj/item/organ/ears/cybernetic,
 /turf/open/floor/plasteel/dark,
 /area/ship/medical/surgery)
 "Hd" = (
@@ -5085,12 +5102,12 @@
 /obj/structure/toilet{
 	dir = 4
 	},
-/obj/machinery/light/small{
-	dir = 4
-	},
 /obj/structure/sink{
 	dir = 8;
 	pixel_x = 12
+	},
+/obj/machinery/light/small{
+	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
@@ -5298,9 +5315,9 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/rechargefloor,
-/obj/mecha/combat/gygax/dark,
 /obj/machinery/light,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/mecha_wreckage/gygax/dark,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "Im" = (
@@ -7715,6 +7732,18 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
+"XR" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/turf/open/floor/plating,
+/area/ship/hallway/central)
 "XU" = (
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 5
@@ -8780,16 +8809,16 @@ DW
 YT
 gW
 cq
-kd
+ag
 Ax
 kd
 dO
 jk
-kd
+ag
 cq
 ea
-KJ
-oi
+tY
+XR
 xv
 Si
 Rv
@@ -9444,7 +9473,7 @@ Ym
 SL
 SL
 Pv
-ag
+pp
 Sc
 Nm
 Kk
