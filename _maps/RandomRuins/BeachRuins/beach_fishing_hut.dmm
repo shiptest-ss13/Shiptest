@@ -63,6 +63,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/walnut,
 /area/ruin/beach)
+"dB" = (
+/mob/living/simple_animal/hostile/carp{
+	bruteloss = 100
+	},
+/turf/open/water/beach,
+/area/ruin/beach)
 "dW" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
@@ -187,12 +193,6 @@
 /turf/open/floor/plating/asteroid/sand,
 /area/ruin/beach)
 "hK" = (
-/turf/open/water/beach,
-/area/ruin/beach)
-"hO" = (
-/mob/living/simple_animal/hostile/carp{
-	bruteloss = 100
-	},
 /turf/open/water/beach,
 /area/ruin/beach)
 "hW" = (
@@ -347,15 +347,6 @@
 	},
 /obj/machinery/door/airlock/wood,
 /turf/open/floor/wood/ebony,
-/area/ruin/beach)
-"pt" = (
-/mob/living/simple_animal/hostile/carp/megacarp{
-	dir = 8;
-	name = "Mother Carp";
-	loot = list("/obj/item/clothing/suit/space/hardsuit/carp");
-	faction = list("hostile","carp")
-	},
-/turf/open/floor/plating/asteroid/sand,
 /area/ruin/beach)
 "pC" = (
 /obj/effect/turf_decal/weather/sand/corner{
@@ -763,10 +754,6 @@
 	},
 /turf/open/water/beach/deep,
 /area/ruin/beach)
-"DF" = (
-/obj/structure/spacevine/dense,
-/turf/open/water/beach/deep,
-/area/ruin/beach)
 "DM" = (
 /turf/open/water/beach/deep,
 /area/ruin/beach)
@@ -951,6 +938,15 @@
 /obj/structure/flora/rock/jungle,
 /turf/open/water/beach,
 /area/ruin/beach)
+"JL" = (
+/mob/living/simple_animal/hostile/carp/megacarp{
+	dir = 8;
+	name = "Mother Carp";
+	loot = list("/obj/item/clothing/suit/space/hardsuit/carp");
+	faction = list("hostile","carp")
+	},
+/turf/open/floor/plating/asteroid/sand,
+/area/ruin/beach)
 "Kq" = (
 /mob/living/simple_animal/hostile/carp{
 	bruteloss = 100
@@ -1038,10 +1034,6 @@
 /area/ruin/beach)
 "Os" = (
 /obj/structure/table/wood/reinforced,
-/obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/squid{
-	pixel_y = 6;
-	pixel_x = -3
-	},
 /obj/effect/turf_decal/corner/opaque/pink/diagonal,
 /obj/item/kitchen/knife{
 	pixel_y = 12;
@@ -1049,6 +1041,10 @@
 	},
 /obj/machinery/light{
 	dir = 4
+	},
+/obj/item/reagent_containers/food/snacks/fishfingers{
+	pixel_y = 5;
+	pixel_x = -4
 	},
 /turf/open/floor/plastic,
 /area/ruin/beach)
@@ -1059,6 +1055,10 @@
 /turf/open/water/beach/deep,
 /area/ruin/beach)
 "OO" = (
+/obj/structure/spacevine/dense,
+/turf/open/water/beach/deep,
+/area/ruin/beach)
+"Pe" = (
 /obj/structure/spawner/carp,
 /turf/open/floor/plating/asteroid/sand,
 /area/ruin/beach)
@@ -1852,7 +1852,7 @@ FG
 hK
 hK
 hK
-hO
+dB
 DM
 DM
 DM
@@ -1938,7 +1938,7 @@ DM
 DM
 DM
 sV
-DF
+OO
 DM
 DM
 uC
@@ -1980,7 +1980,7 @@ DM
 DM
 DM
 DM
-DF
+OO
 sV
 DM
 DM
@@ -2023,7 +2023,7 @@ Kq
 DM
 DM
 sV
-DF
+OO
 sV
 DM
 DM
@@ -2231,7 +2231,7 @@ DM
 QO
 QO
 QO
-OO
+Pe
 pI
 tX
 Ta
@@ -2274,7 +2274,7 @@ QO
 QO
 QO
 pJ
-pt
+JL
 pJ
 QO
 pJ
