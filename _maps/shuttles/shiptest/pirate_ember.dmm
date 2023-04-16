@@ -497,7 +497,8 @@
 	dir = 8
 	},
 /obj/machinery/door/airlock/engineering{
-	name = "Engineering"
+	name = "Engineering";
+	req_access_txt = "10"
 	},
 /turf/open/floor/plasteel,
 /area/ship/engineering/electrical)
@@ -2905,7 +2906,9 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "oy" = (
-/obj/machinery/door/airlock/engineering/glass,
+/obj/machinery/door/airlock/engineering/glass{
+	req_access_txt = "10"
+	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -8382,7 +8385,8 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/airlock/atmos{
-	name = "Engine Room"
+	name = "Engine Room";
+	req_access_txt = "10"
 	},
 /obj/machinery/atmospherics/pipe/simple/cyan/hidden{
 	dir = 1
