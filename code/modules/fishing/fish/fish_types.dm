@@ -234,7 +234,6 @@
 	required_fluid_type = AQUARIUM_FLUID_SALTWATER
 	stable_population = 10
 	fillet_type = /obj/item/reagent_containers/food/snacks/fishmeat/armorfish
-	fish_ai_type = FISH_AI_SLOW
 
 /obj/item/storage/box/fish_debug
 	name = "box full of fish"
