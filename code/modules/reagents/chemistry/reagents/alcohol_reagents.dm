@@ -2480,7 +2480,6 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	boozepwr = 80
 	quality = DRINK_VERYGOOD
 	taste_description = "devotional energy and a hint of high-potency hallucinogens"
-	glass_icon_state = "ashwine"
 	glass_name = "Ashwine"
 	glass_desc = "A traditional sacrament for members of the Saint-Roumain Militia. Known to grant visions, and is used both for ritual and entertainment purposes aboard Saint-Roumain vessels."
 	breakaway_flask_icon_state = "baflaskashwine"
@@ -2515,10 +2514,9 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	color = "#21EFEB"
 	boozepwr = 70
 	taste_description = "a cold night on the hunt"
-	//glass_icon_state = "icewine"
 	glass_name = "Icewine"
 	glass_desc = "A specialized brew utilized by members of the Saint-Roumain Militia, designed to assist in temperature regulation while working in hot environments. Known to give one the cold shoulder when thrown."
-	//breakaway_flask_icon_state = "baflaskicewine"
+	breakaway_flask_icon_state = "baflaskicewine"
 
 /datum/reagent/consumable/ethanol/ice_wine/on_mob_life(mob/living/M)
 	M.adjust_bodytemperature(-10 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal())
@@ -2542,7 +2540,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	taste_description = "the adrenaline of the chase"
 	glass_name = "Shock Wine"
 	glass_desc = "A stimulating brew utilized by members of the Saint-Roumain Militia, created to allow trackers to keep up with highly mobile prey. Known to have a shocking effect when thrown"
-	//breakaway_flask_icon_state = "baflaskshockwine"
+	breakaway_flask_icon_state = "baflaskshockwine"
 
 /datum/reagent/consumable/ethanol/shock_wine/on_mob_metabolize(mob/living/M)
 	..()
