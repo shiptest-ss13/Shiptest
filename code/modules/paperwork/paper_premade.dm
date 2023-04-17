@@ -19,7 +19,11 @@
 	<br>Mushroom Hallucinogen(Grind Mushroom caps)
 	<br><br>Icewine Parts 3:2
 	<br>sake(Ferment rice),
-	<br>polar bear fur(Grind polar bear hide)"}
+	<br>polar bear fur(Grind polar bear hide)
+	<br><br>Shockwine Parts 3:1:1
+	<br>kalhua
+	<br>calcium
+	<br>lemon juice"}
 
 /obj/item/paper/fluff/jobs/prisoner/letter
 	name = "letter from home"

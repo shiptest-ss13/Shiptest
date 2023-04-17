@@ -130,6 +130,10 @@
 		desc = initial(src.desc)
 		return
 
+/obj/item/reagent_containers/food/drinks/drinkingglass/breakawayflask/vintage
+	name = "Vintange Saint-Roumain Ashwine"
+	desc = "Supposedly one of the first bottles of ashwine made"
+	list_reagents = list(/datum/reagent/consumable/ethanol/ash_wine = 40, /datum/reagent/uranium = 10)
 
 /obj/item/reagent_containers/food/drinks/drinkingglass/filled/Initialize()
 	. = ..()
