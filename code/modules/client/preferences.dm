@@ -1325,13 +1325,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	popup.open(FALSE)
 	QDEL_NULL(S)
 
-/datum/preferences/proc/set_loadout_advanced(mob/user, datum/gear/gear_datum)
-	var/list/dat = list()
+/datum/preferences/proc/get_loadout_balance()
+	. = 0
+	for(var/loadout_equipped_entry in equipped_gear)
+		for(var/i = 0, i < equipped_gear_preferences[loadout_equipped_entry]["amount"], i++)
+		var/datum/gear/entry_datum = GLOB.gear_datums[loadout_equipped_entry]
+		. += initial(entry_datum.cost)
 
-	var/datum/browser/popup = new(user, "mob_loadout", "<div align='center'>[initial(gear_datum.display_name)]</div>", 900, 600)
-	popup.set_window_options("can_close=0")
-	popup.set_content(dat.Join())
-	popup.open(FALSE)
 
 /datum/preferences/proc/handle_loadout_display(list/LC)
 	var/list/dat = list()
@@ -1689,7 +1689,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		else if(href_list["change_tags"])
 			switch(href_list["change_tags"])
 				if("All")
-					gear_tags = GLOB.loadout_categories
+					gear_tags |= GLOB.loadout_categories
 				if("Disable")
 					gear_tags = list()
 				if("Invert")

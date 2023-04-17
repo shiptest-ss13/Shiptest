@@ -68,6 +68,10 @@ GLOBAL_LIST_EMPTY(gear_datums)
 	var/cost = 5
 	///Maximum amount of an item that can be taken
 	var/limit = 1
+	///Handles quirk freebies, will be changed at a later time
+	var/quirk_freebie
+	///How many freebies can we get? Leave zero for infinite
+	var/quirk_freebie_amount
 
 /datum/gear/New()
 	..()
