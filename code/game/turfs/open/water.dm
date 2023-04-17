@@ -33,6 +33,13 @@
 	return TRUE
 */
 
+/turf/open/water/attackby(obj/item/fish, mob/user, params)
+	. = ..()
+	if(istype(fish, /obj/item/fish))
+		to_chat(user, "<span class='notice'>You toss the [fish.name] into the water.</span>")
+		playsound(fish, "sound/effects/bigsplash.ogg", 90)
+		qdel(fish)
+
 /turf/open/water/can_have_cabling()
 	return FALSE
 

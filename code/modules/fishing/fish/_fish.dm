@@ -113,7 +113,7 @@
 	size = average_size
 	weight = average_weight
 
-/obj/item/fish/attackby(obj/item/I, mob/living/user, params)
+/obj/item/fish/attackby(obj/item/tool, mob/living/user, params)
 	. = ..()
 	if ( \
 			!isturf(src.loc) || \
@@ -123,7 +123,7 @@
 		)
 		to_chat(user, "<span class='warning'>You cannot slice [src] here! You need a table or at least a tray.</span>")
 		return FALSE
-	if(I.get_sharpness())
+	if(tool.get_sharpness())
 		playsound(loc, 'sound/weapons/slice.ogg', 50, TRUE, -1)
 		user.visible_message("<span class='notice'>[user] starts filleting \the [src].</span>", "<span class='notice'>You start filleting \the [src]...</span>", "<span class='hear'>You hear the sound of a sharp object slicing meat.</span>")
 		if(do_after(user, 30, target = src))
