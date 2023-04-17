@@ -2487,13 +2487,29 @@ All effects don't start immediately, but rather get worse over time; the rate is
 
 /datum/reagent/consumable/ethanol/ash_wine/on_mob_life(mob/living/M)
 	var/high_message = pick("you feel far more devoted to the cause", "you feel like you should go on a hunt")
+	var/high_message = pick("divine light purifys you", "you are purged of foul spirts")
+	//needs to get updated anytime someone adds a srm job
+	var/static/list/increased_toxin_loss = list("Hunter Montagne", "Hunter Doctor", "Hunter", "Shadow")
 	if(prob(30))
+		M.set_drugginess(2)
 		to_chat(M, "<span class='notice'>[high_message]</span>")
-	M.set_drugginess(2)
+
+	if(M.mind && (M.mind.assigned_role in increased_toxin_loss))
+		M.adjustToxLoss(-2)
+		if(prob(30))
+			to_chat(M, "<span class='notice'>[cleanse_message]</span>")
+
 	..()
+	. = 1
 
 /datum/reagent/consumable/ethanol/ash_wine/expose_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
 	if(method == TOUCH)
+		if(!iscarbon(M))
+			if(M.ranged) //briefly delay ranged attacks (watcher wing code)
+			if(M.ranged_cooldown >= world.time)
+				M.ranged_cooldown += (reac_volume * 0.1)
+			else
+				M.ranged_cooldown = (reac_volume * 0.1) + world.time
 		M.Jitter(3 * reac_volume)
 		M.Dizzy(2 * reac_volume)
 		M.set_drugginess(3 * reac_volume)
@@ -2518,10 +2534,14 @@ All effects don't start immediately, but rather get worse over time; the rate is
 
 /datum/reagent/consumable/ethanol/ice_wine/expose_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
 	if(method == TOUCH)
+		if(!iscarbon(M))
+			reac_volume = reac_volume * 2
 		M.adjust_bodytemperature((-20*reac_volume) * TEMPERATURE_DAMAGE_COEFFICIENT)
 		M.Paralyze(1*reac_volume)
 		walk(M, 0) //stops them mid pathing even if they're stunimmunee
 		M.apply_status_effect(/datum/status_effect/ice_block_talisman, (0.1 * reac_volume) SECONDS)
+
+
 
 /datum/reagent/consumable/ethanol/shock_wine
 	name = "Shock Wine"
@@ -2541,4 +2561,9 @@ All effects don't start immediately, but rather get worse over time; the rate is
 
 /datum/reagent/consumable/ethanol/shock_wine/expose_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
 	if(method == TOUCH)
-		M.electrocute_act(1*reac_volume, src, siemens_coeff = 1, flags = SHOCK_NOSTUN|SHOCK_TESLA)
+		//simple mobs are so tanky and i want this to be useful on them
+		if(!iscarbon(M))
+			reac_volume = reac_volume * 2
+		M.electrocute_act(0.5 * reac_volume, src, siemens_coeff = 1, flags = SHOCK_NOSTUN|SHOCK_TESLA)
+		do_sparks(5, FALSE, M)
+		playsound(M, 'sound/machines/defib_zap.ogg', 100, TRUE)

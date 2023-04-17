@@ -642,8 +642,15 @@
 	results = list(/datum/reagent/consumable/ethanol/ash_wine = 5)
 	required_reagents = list(/datum/reagent/consumable/ethanol/absinthe = 3, /datum/reagent/ash = 1, /datum/reagent/drug/mushroomhallucinogen = 1)
 	required_container = /obj/item/reagent_containers/food/drinks/drinkingglass/breakawayflask
+	mix_sound ='sound/ambience/ambiholy.ogg'
 
 /datum/chemical_reaction/ice_wine
 	results = list(/datum/reagent/consumable/ethanol/ice_wine = 5)
 	required_reagents = list(/datum/reagent/consumable/ethanol/sake = 3, /datum/reagent/polar_bear_fur = 2)
 	required_container = /obj/item/reagent_containers/food/drinks/drinkingglass/breakawayflask
+	mix_sound ='sound/ambience/ambinice.ogg'
+
+/datum/chemical_reaction/shock_wine
+	results = list(/datum/reagent/consumable/ethanol/shock_wine = 5)
+	required_reagents = list(/datum/reagent/consumable/ethanol/kahlua= 3, /datum/reagent/fuel = 1, /datum/reagent/consumable/lemonjuice = 1)
+	mix_sound ='sound/machines/defib_zap.ogg'
