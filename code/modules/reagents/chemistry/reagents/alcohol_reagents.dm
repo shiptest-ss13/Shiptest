@@ -2475,14 +2475,14 @@ All effects don't start immediately, but rather get worse over time; the rate is
 
 /datum/reagent/consumable/ethanol/ash_wine
 	name = "Ashwine"
-	description = "Traditional sacrament for Saint-Roumain Militia"
-	color = rgb(41, 61, 37)
+	description = "A traditional sacrament for members of the Saint-Roumain Militia. Known to grant visions, and is used both for ritual and entertainment purposes aboard Saint-Roumain vessels."
+	color = "#293D25"
 	boozepwr = 80
 	quality = DRINK_VERYGOOD
 	taste_description = "devotional energy and a hint of high-potency hallucinogens"
 	glass_icon_state = "ashwine"
 	glass_name = "Ashwine"
-	glass_desc = "Traditional sacrament for Saint-Roumain Militia"
+	glass_desc = "A traditional sacrament for members of the Saint-Roumain Militia. Known to grant visions, and is used both for ritual and entertainment purposes aboard Saint-Roumain vessels."
 	breakaway_flask_icon_state = "baflaskashwine"
 
 /datum/reagent/consumable/ethanol/ash_wine/on_mob_life(mob/living/M)
@@ -2498,29 +2498,17 @@ All effects don't start immediately, but rather get worse over time; the rate is
 		M.Dizzy(2 * reac_volume)
 		M.set_drugginess(3 * reac_volume)
 		M.emote(pick("twitch","giggle"))
-/*
-/datum/reagent/consumable/ethanol/inert_ash_wine
-	name = "Inert Ashwine"
-	description = "Traditional sacrament for Saint-Roumain Militia"
-	color = rgb(41, 61, 37)
-	boozepwr = 80
-	quality = DRINK_VERYGOOD
-	taste_description = "devotional energy and a hint of high-potency hallucinogens"
-	glass_icon_state = "ashwine"
-	glass_name = "Ashwine"
-	glass_desc = "Traditional sacrament for Saint-Roumain Militia"
-	breakaway_flask_icon_state = "baflaskashwine"
-*/
+
 /datum/reagent/consumable/ethanol/ice_wine
 	name = "Icewine"
-	description = "A chilling drink..."
-	color = rgb(33, 239, 235)
+	description = "A specialized brew utilized by members of the Saint-Roumain Militia, designed to assist in temperature regulation while working in hot environments. Known to give one the cold shoulder when thrown."
+	color = "#21EFEB"
 	boozepwr = 70
-	taste_description = "cold"
+	taste_description = "a cold night on the hunt"
 	//glass_icon_state = "icewine"
 	glass_name = "Icewine"
-	glass_desc = "A chilling drink"
-	//breakaway_flask_icon_state = "baflask_icewine"
+	glass_desc = "A specialized brew utilized by members of the Saint-Roumain Militia, designed to assist in temperature regulation while working in hot environments. Known to give one the cold shoulder when thrown."
+	breakaway_flask_icon_state = "baflaskicewine"
 
 /datum/reagent/consumable/ethanol/ice_wine/on_mob_life(mob/living/M)
 	M.adjust_bodytemperature(-10 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal())
@@ -2534,3 +2522,55 @@ All effects don't start immediately, but rather get worse over time; the rate is
 		M.Paralyze(1*reac_volume)
 		walk(M, 0) //stops them mid pathing even if they're stunimmunee
 		M.apply_status_effect(/datum/status_effect/ice_block_talisman, (0.1 * reac_volume) SECONDS)
+
+/datum/reagent/consumable/ethanol/shock_wine
+	name = "Shock Wine"
+	description = "A stimulating brew utilized by members of the Saint-Roumain Militia, created to allow trackers to keep up with highly mobile prey. Known to have a shocking effect when thrown"
+	color = "#00008b"
+	taste_description = "the adrenaline of the chase"
+	glass_name = "Shock Wine"
+	glass_desc = "A stimulating brew utilized by members of the Saint-Roumain Militia, created to allow trackers to keep up with highly mobile prey. Known to have a shocking effect when thrown"
+
+/datum/reagent/consumable/ethanol/shock_wine/on_mob_metabolize(mob/living/L)
+	..()
+	L.add_movespeed_modifier(/datum/movespeed_modifier/reagent/shock_wine)
+
+/datum/reagent/consumable/ethanol/shock_wine/on_mob_end_metabolize(mob/living/L)
+	L.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/shock_wine)
+	..()
+
+/datum/reagent/consumable/ethanol/shock_wine/expose_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
+	if(method == TOUCH)
+		M.electrocute_act(1*reac_volume, src, siemens_coeff = 1, flags = SHOCK_NOSTUN|SHOCK_TESLA)
+
+/datum/reagent/consumable/ethanol/grav_wine
+	name = "Grav Wine"
+	description = "An uplifting brew utilized by members of the Saint-Roumain Militia, engineered to give Hunters the ability to operate in low-gravity environments without a jetpack. Known to pull attention when thrown."
+	color = "#39254D"
+	taste_description = "the pull of the wild"
+	glass_name = "Grav Wine"
+	glass_desc = "An uplifting brew utilized by members of the Saint-Roumain Militia, engineered to give Hunters the ability to operate in low-gravity environments without a jetpack. Known to pull attention when thrown."
+
+/datum/reagent/consumable/ethanol/grav_wine/on_mob_metabolize(mob/living/L)
+	RegisterSignal(L, COMSIG_MOVABLE_MOVED, .proc/move_react)
+	RegisterSignal(L, COMSIG_MOVABLE_PRE_MOVE, .proc/pre_move_react)
+
+/datum/reagent/consumable/ethanol/grav_wine/on_mob_end_metabolize(mob/living/L)
+	UnregisterSignal(L, COMSIG_MOVABLE_MOVED)
+	UnregisterSignal(L, COMSIG_MOVABLE_PRE_MOVE)
+
+//datum/reagent/consumable/ethanol/grav_wine/expose_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
+	//if(method == TOUCH)
+
+/datum/reagent/consumable/ethanol/anchor_wine
+	name = "Anchor Wine"
+	description = "A steadfast brew utilized by members of the Saint-Roumain Militia, used to help maintain balance when fighting creatures prone to pouncing or tackling. Known to put down roots when thrown."
+	color = "#808080"
+	taste_description = "a stalwart defense"
+	glass_name = "Anchor Wine"
+	glass_desc = "A steadfast brew utilized by members of the Saint-Roumain Militia, used to help maintain balance when fighting creatures prone to pouncing or tackling. Known to put down roots when thrown."
+
+//datum/reagent/consumable/ethanol/anchor_wine/on_mob_life(mob/living/M)
+
+//datum/reagent/consumable/ethanol/anchor_wine/expose_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
+	//if(method == TOUCH)
