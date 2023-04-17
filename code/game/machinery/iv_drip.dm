@@ -12,7 +12,7 @@
 	var/mode = IV_INJECTING
 	var/dripfeed = FALSE
 	var/obj/item/reagent_containers/beaker
-	var/static/list/drip_containers = typecacheof(list(/obj/item/reagent_containers/blood,
+	var/static/list/drip_containers = typecacheof(list(/obj/item/reagent_containers/glass/blood,
 									/obj/item/reagent_containers/food,
 									/obj/item/reagent_containers/glass,
 									/obj/item/reagent_containers/chem_pack))
@@ -98,6 +98,11 @@
 
 /obj/machinery/iv_drip/attackby(obj/item/W, mob/user, params)
 	if(is_type_in_typecache(W, drip_containers))
+		if(istype(W, /obj/item/reagent_containers/glass/blood))
+			var/obj/item/reagent_containers/glass/blood/bag = W
+			if (bag.sliced)
+				to_chat(user, "<span class='warning'>The bag is sliced, it would spill everywhere!</span>")
+				return
 		if(beaker)
 			to_chat(user, "<span class='warning'>There is already a reagent container loaded!</span>")
 			return
@@ -135,7 +140,7 @@
 				var/transfer_amount = 5
 				if (dripfeed)
 					transfer_amount = 1
-				if(istype(beaker, /obj/item/reagent_containers/blood))
+				if(istype(beaker, /obj/item/reagent_containers/glass/blood))
 					// speed up transfer on blood packs
 					transfer_amount *= 2
 				beaker.reagents.trans_to(attached, transfer_amount, method = INJECT, show_message = FALSE) //make reagents reacts, but don't spam messages

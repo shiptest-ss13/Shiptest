@@ -438,7 +438,7 @@
 		/obj/item/reagent_containers/dropper,
 		/obj/item/reagent_containers/glass/beaker,
 		/obj/item/reagent_containers/glass/bottle,
-		/obj/item/reagent_containers/blood,
+		/obj/item/reagent_containers/glass/blood,
 		/obj/item/reagent_containers/hypospray/medipen,
 		/obj/item/reagent_containers/food/snacks/deadmouse,
 		/obj/item/reagent_containers/food/snacks/monkeycube,
