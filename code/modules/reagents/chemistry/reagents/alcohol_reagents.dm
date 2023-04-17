@@ -2542,35 +2542,3 @@ All effects don't start immediately, but rather get worse over time; the rate is
 /datum/reagent/consumable/ethanol/shock_wine/expose_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
 	if(method == TOUCH)
 		M.electrocute_act(1*reac_volume, src, siemens_coeff = 1, flags = SHOCK_NOSTUN|SHOCK_TESLA)
-
-/datum/reagent/consumable/ethanol/grav_wine
-	name = "Grav Wine"
-	description = "An uplifting brew utilized by members of the Saint-Roumain Militia, engineered to give Hunters the ability to operate in low-gravity environments without a jetpack. Known to pull attention when thrown."
-	color = "#39254D"
-	taste_description = "the pull of the wild"
-	glass_name = "Grav Wine"
-	glass_desc = "An uplifting brew utilized by members of the Saint-Roumain Militia, engineered to give Hunters the ability to operate in low-gravity environments without a jetpack. Known to pull attention when thrown."
-
-/datum/reagent/consumable/ethanol/grav_wine/on_mob_metabolize(mob/living/L)
-	RegisterSignal(L, COMSIG_MOVABLE_MOVED, .proc/move_react)
-	RegisterSignal(L, COMSIG_MOVABLE_PRE_MOVE, .proc/pre_move_react)
-
-/datum/reagent/consumable/ethanol/grav_wine/on_mob_end_metabolize(mob/living/L)
-	UnregisterSignal(L, COMSIG_MOVABLE_MOVED)
-	UnregisterSignal(L, COMSIG_MOVABLE_PRE_MOVE)
-
-//datum/reagent/consumable/ethanol/grav_wine/expose_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
-	//if(method == TOUCH)
-
-/datum/reagent/consumable/ethanol/anchor_wine
-	name = "Anchor Wine"
-	description = "A steadfast brew utilized by members of the Saint-Roumain Militia, used to help maintain balance when fighting creatures prone to pouncing or tackling. Known to put down roots when thrown."
-	color = "#808080"
-	taste_description = "a stalwart defense"
-	glass_name = "Anchor Wine"
-	glass_desc = "A steadfast brew utilized by members of the Saint-Roumain Militia, used to help maintain balance when fighting creatures prone to pouncing or tackling. Known to put down roots when thrown."
-
-//datum/reagent/consumable/ethanol/anchor_wine/on_mob_life(mob/living/M)
-
-//datum/reagent/consumable/ethanol/anchor_wine/expose_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
-	//if(method == TOUCH)
