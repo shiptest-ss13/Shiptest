@@ -50,6 +50,7 @@
 	dir = 1;
 	pixel_y = 2
 	},
+/obj/machinery/door/window/westright,
 /turf/open/floor/mineral/titanium/white,
 /area/ship/medical)
 "bL" = (
@@ -534,7 +535,6 @@
 	dir = 4
 	},
 /obj/machinery/door/firedoor/border_only,
-/obj/machinery/door/window/eastright,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "qq" = (
@@ -628,10 +628,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
-/obj/machinery/light_switch{
-	dir = 8;
-	pixel_x = 25
-	},
+/obj/machinery/airalarm/directional/east,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/engineering)
 "rU" = (
@@ -757,13 +754,11 @@
 "vv" = (
 /obj/effect/turf_decal/industrial/outline/orange,
 /obj/item/lightreplacer,
-/obj/machinery/light/small{
-	dir = 8
-	},
 /obj/item/storage/box/lights/bulbs,
 /obj/structure/closet/crate{
 	anchored = 1
 	},
+/obj/machinery/airalarm/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "vL" = (
@@ -912,7 +907,10 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/airalarm/directional/east,
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 25
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/engineering)
 "DU" = (
@@ -1443,7 +1441,10 @@
 /obj/item/stack/sheet/metal/fifty,
 /obj/item/gun/energy/e_gun/old,
 /obj/item/gun/energy/e_gun/old,
-/obj/machinery/airalarm/directional/west,
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -28
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Yn" = (
@@ -1533,9 +1534,8 @@
 /obj/structure/closet/crate{
 	anchored = 1
 	},
-/obj/machinery/light_switch{
-	dir = 4;
-	pixel_x = -28
+/obj/machinery/light/small{
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
