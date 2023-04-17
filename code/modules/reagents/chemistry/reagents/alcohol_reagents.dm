@@ -2487,29 +2487,23 @@ All effects don't start immediately, but rather get worse over time; the rate is
 
 /datum/reagent/consumable/ethanol/ash_wine/on_mob_life(mob/living/M)
 	var/high_message = pick("you feel far more devoted to the cause", "you feel like you should go on a hunt")
-	var/high_message = pick("divine light purifys you", "you are purged of foul spirts")
+	var/cleanse_message = pick("divine light purifys you", "you are purged of foul spirts")
 	//needs to get updated anytime someone adds a srm job
 	var/static/list/increased_toxin_loss = list("Hunter Montagne", "Hunter Doctor", "Hunter", "Shadow")
-	if(prob(30))
-		M.set_drugginess(2)
+	if(prob(10))
+		M.set_drugginess(10)
 		to_chat(M, "<span class='notice'>[high_message]</span>")
-
 	if(M.mind && (M.mind.assigned_role in increased_toxin_loss))
 		M.adjustToxLoss(-2)
-		if(prob(30))
+		if(prob(10))
 			to_chat(M, "<span class='notice'>[cleanse_message]</span>")
-
 	..()
 	. = 1
 
 /datum/reagent/consumable/ethanol/ash_wine/expose_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
 	if(method == TOUCH)
 		if(!iscarbon(M))
-			if(M.ranged) //briefly delay ranged attacks (watcher wing code)
-			if(M.ranged_cooldown >= world.time)
-				M.ranged_cooldown += (reac_volume * 0.1)
-			else
-				M.ranged_cooldown = (reac_volume * 0.1) + world.time
+			reac_volume = reac_volume * 2
 		M.Jitter(3 * reac_volume)
 		M.Dizzy(2 * reac_volume)
 		M.set_drugginess(3 * reac_volume)
@@ -2524,7 +2518,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	//glass_icon_state = "icewine"
 	glass_name = "Icewine"
 	glass_desc = "A specialized brew utilized by members of the Saint-Roumain Militia, designed to assist in temperature regulation while working in hot environments. Known to give one the cold shoulder when thrown."
-	breakaway_flask_icon_state = "baflaskicewine"
+	//breakaway_flask_icon_state = "baflaskicewine"
 
 /datum/reagent/consumable/ethanol/ice_wine/on_mob_life(mob/living/M)
 	M.adjust_bodytemperature(-10 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal())
@@ -2541,8 +2535,6 @@ All effects don't start immediately, but rather get worse over time; the rate is
 		walk(M, 0) //stops them mid pathing even if they're stunimmunee
 		M.apply_status_effect(/datum/status_effect/ice_block_talisman, (0.1 * reac_volume) SECONDS)
 
-
-
 /datum/reagent/consumable/ethanol/shock_wine
 	name = "Shock Wine"
 	description = "A stimulating brew utilized by members of the Saint-Roumain Militia, created to allow trackers to keep up with highly mobile prey. Known to have a shocking effect when thrown"
@@ -2550,20 +2542,21 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	taste_description = "the adrenaline of the chase"
 	glass_name = "Shock Wine"
 	glass_desc = "A stimulating brew utilized by members of the Saint-Roumain Militia, created to allow trackers to keep up with highly mobile prey. Known to have a shocking effect when thrown"
+	//breakaway_flask_icon_state = "baflaskshockwine"
 
-/datum/reagent/consumable/ethanol/shock_wine/on_mob_metabolize(mob/living/L)
+/datum/reagent/consumable/ethanol/shock_wine/on_mob_metabolize(mob/living/M)
 	..()
-	L.add_movespeed_modifier(/datum/movespeed_modifier/reagent/shock_wine)
+	M.add_movespeed_modifier(/datum/movespeed_modifier/reagent/shock_wine)
 
-/datum/reagent/consumable/ethanol/shock_wine/on_mob_end_metabolize(mob/living/L)
-	L.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/shock_wine)
+/datum/reagent/consumable/ethanol/shock_wine/on_mob_end_metabolize(mob/living/M)
+	M.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/shock_wine)
 	..()
 
 /datum/reagent/consumable/ethanol/shock_wine/expose_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
 	if(method == TOUCH)
 		//simple mobs are so tanky and i want this to be useful on them
 		if(!iscarbon(M))
-			reac_volume = reac_volume * 2
-		M.electrocute_act(0.5 * reac_volume, src, siemens_coeff = 1, flags = SHOCK_NOSTUN|SHOCK_TESLA)
+			reac_volume = reac_volume * 4
+		M.electrocute_act(0.25 * reac_volume, src, siemens_coeff = 1, flags = SHOCK_NOSTUN|SHOCK_TESLA)
 		do_sparks(5, FALSE, M)
 		playsound(M, 'sound/machines/defib_zap.ogg', 100, TRUE)
