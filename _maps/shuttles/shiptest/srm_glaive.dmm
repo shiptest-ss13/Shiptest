@@ -222,6 +222,14 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage)
+"cz" = (
+/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/item/paper/fluff/trickwines_4_brewers,
+/turf/open/floor/grass{
+	icon_state = "junglegrass"
+	},
+/area/ship/roumain)
 "cJ" = (
 /obj/structure/cable/orange{
 	icon_state = "1-4"
@@ -1666,6 +1674,13 @@
 /obj/effect/turf_decal/corner/opaque/blue/diagonal,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
+"At" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/reagent_containers/food/drinks/drinkingglass/breakawayflask/vintage,
+/turf/open/floor/plating{
+	icon_state = "greenerdirt"
+	},
+/area/ship/roumain)
 "AL" = (
 /obj/structure/cable/orange{
 	icon_state = "2-4"
@@ -1757,13 +1772,13 @@
 /obj/structure/railing{
 	dir = 1
 	},
+/obj/item/reagent_containers/food/drinks/drinkingglass/breakawayflask/vintage,
 /turf/open/floor/plating{
 	icon_state = "greenerdirt"
 	},
 /area/ship/roumain)
 "BB" = (
 /obj/structure/table/wood,
-/obj/item/book/manual/wiki/surgery,
 /obj/item/reagent_containers/food/drinks/bottle/whiskey{
 	pixel_x = 7;
 	pixel_y = 6
@@ -1772,6 +1787,12 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/corner/opaque/blue/diagonal,
+/obj/item/reagent_containers/food/drinks/bottle/absinthe,
+/obj/item/reagent_containers/food/drinks/bottle/absinthe{
+	pixel_y = 8;
+	pixel_x = -6
+	},
+/obj/item/book/manual/wiki/surgery,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "BK" = (
@@ -1883,6 +1904,11 @@
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/fermenting_barrel,
+/obj/item/reagent_containers/food/drinks/drinkingglass/breakawayflask,
+/obj/item/reagent_containers/food/drinks/drinkingglass/breakawayflask,
+/obj/item/reagent_containers/food/drinks/drinkingglass/breakawayflask,
+/obj/item/reagent_containers/food/drinks/drinkingglass/breakawayflask,
+/obj/item/reagent_containers/food/drinks/drinkingglass/breakawayflask,
 /turf/open/floor/grass{
 	icon_state = "junglegrass"
 	},
@@ -2605,6 +2631,12 @@
 /obj/item/seeds/lavaland/porcini,
 /obj/item/seeds/lavaland/cactus,
 /obj/item/cultivator/rake,
+/obj/item/stack/ore/glass/basalt{
+	amount = 25;
+	pixel_y = -2;
+	pixel_x = -9
+	},
+/obj/item/seeds/sunflower/moonflower,
 /turf/open/floor/grass{
 	icon_state = "junglegrass"
 	},
@@ -3942,7 +3974,7 @@ AN
 ZV
 ko
 Lk
-aM
+cz
 YP
 qJ
 Dz
@@ -4134,7 +4166,7 @@ iP
 VI
 RJ
 lA
-RJ
+At
 nj
 NL
 AZ

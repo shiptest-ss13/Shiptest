@@ -9,6 +9,22 @@
 /obj/item/paper/fluff/shuttles/daniel
 	info = "i love daniel<br>daniel is my best friend<br><br>you are tearing me apart elise"
 
+/obj/item/paper/fluff/trickwines_4_brewers
+	name = "trickwine_4_brewers";
+	info = {"trickwine 4 brewers
+	<br>Contain inside of flasks to stabilzing.
+	<br>Ashwine Parts 3:1:1
+	<br>Absinthe(Ferment moonflowers),
+	<br>Ash(Harvest from rocks),
+	<br>Mushroom Hallucinogen(Grind Mushroom caps)
+	<br><br>Icewine Parts 3:2
+	<br>sake(Ferment rice),
+	<br>polar bear fur(Grind polar bear hide)
+	<br><br>Shockwine Parts 3:1:1
+	<br>kalhua
+	<br>calcium
+	<br>lemon juice"}
+
 /obj/item/paper/fluff/jobs/prisoner/letter
 	name = "letter from home"
 	info = {"Dearest sweetheart,
