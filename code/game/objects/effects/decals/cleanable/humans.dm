@@ -43,7 +43,7 @@
 		desc = drydesc
 		bloodiness = 0
 		var/temp_color = ReadHSV(RGBtoHSV(color || COLOR_WHITE))
-		color = HSVtoRGB(hsv(temp_color[1], temp_color[2], max(temp_color[3] - 100, 0)))
+		color = HSVtoRGB(hsv(temp_color[1], temp_color[2], max(temp_color[3] - 100,min(temp_color[3],10))))
 		STOP_PROCESSING(SSobj, src)
 
 /obj/effect/decal/cleanable/blood/replace_decal(obj/effect/decal/cleanable/blood/C)

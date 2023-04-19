@@ -789,8 +789,6 @@
 		return
 	var/blood_exists = locate(/obj/effect/decal/cleanable/blood/trail_holder) in start
 
-	for(var/obj/effect/decal/cleanable/blood/trail_holder/C in start) //checks for blood splatter already on the floor
-		blood_exists = TRUE
 	if(isturf(start))
 		var/trail_type = getTrail()
 		if(trail_type)
