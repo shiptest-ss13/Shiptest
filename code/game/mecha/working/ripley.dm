@@ -148,11 +148,11 @@
 			D.attach(src)
 	else //Add a ranged option if no drill
 		if(prob(15)) // plas cutters for lucky fuckers
-			var/obj/item/mecha_parts/mecha_equipment/weapon/energy/plasma/P = new
-			P.attach(src)
+			var/obj/item/mecha_parts/mecha_equipment/weapon/energy/plasma/plasmacutter = new
+			plasmacutter.attach(src)
 		else
-			var/obj/item/mecha_parts/mecha_equipment/weapon/energy/mecha_kineticgun/P = new
-			P.attach(src)
+			var/obj/item/mecha_parts/mecha_equipment/weapon/energy/mecha_kineticgun/kinetic = new
+			kinetic.attach(src)
 
 	//Add ore box to cargo
 	cargo.Add(new /obj/structure/ore_box(src))
