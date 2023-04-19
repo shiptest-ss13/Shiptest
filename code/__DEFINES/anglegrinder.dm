@@ -1,4 +1,5 @@
 // Config, comments shits out to disable features
+// Temporaty developement utility
 
 #define ANGLEGRINDER_OUTPOST_PRICE 1000
 // #define ANGLEGRINDER_BROKEN_MACHINE_SALVAGE_TIME 2.5 SECONDS

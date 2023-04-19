@@ -1,28 +1,4 @@
 /*
- * YES it's tweaked chainsaw code, do something about it.
-*/
-
-/*
- * ############## Places where TOOL_DECONSTRUCT is used ############
- *
- * code/game/atoms.dm (for the definition of deconstruct_act(mob/living/user, /obj/item/I)
- *
- * code/game/objects/structures/salvaging.dm (waste planet salvagable machines)
- *
- * code/game/turfs/closed/walls.dm
- * code/game/objects/structures/girders.dm
- * code/game/objects/structures/grille.dm
- * code/game/objects/structures/catwalk.dm
- * code/game/objects/structures/lattice.dm
- * code/game/objects/structures/crates_lockers/closets.dm
- * code/game/objects/structures/tables_racks.dm (both normal and reinforced)
- * code/game/objects/structures/tables_frames.dm
- * code/game/objects/structures/window.dm (reinf window)
- * code/game/objects/structures/bed_chairs/bed.dm
- * code/game/objects/structures/bed_chairs/chair.dm
-*/
-
-/*
  * Configure features by editing __DEFINES/anglegrinder.dm
 */
 
