@@ -78,6 +78,11 @@
 				qdel(src)
 				return
 	return ..()
+#ifdef ANGLEGRINDER_WOODEN_BARICADE
+/obj/structure/barricade/wooden/deconstruct_act(mob/living/user, obj/item/I)
+	if(I.use_tool(src, user, ANGLEGRINDER_WOODEN_BARICADE/I.toolspeed, volume=0))
+		deconstruct()
+#endif
 
 
 /obj/structure/barricade/wooden/crude
