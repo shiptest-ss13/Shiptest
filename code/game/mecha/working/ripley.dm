@@ -151,7 +151,7 @@
 			var/obj/item/mecha_parts/mecha_equipment/weapon/energy/plasma/P = new
 			P.attach(src)
 		else
-			var/obj/item/mecha_parts/mecha_equipment/weapon/energy/mecha_kineticgun = new
+			var/obj/item/mecha_parts/mecha_equipment/weapon/energy/mecha_kineticgun/P = new
 			P.attach(src)
 
 	//Add ore box to cargo
