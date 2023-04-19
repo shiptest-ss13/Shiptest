@@ -7,12 +7,14 @@
 	var/datum/elevator_master/shaft_elevator
 	var/list/datum/hangar/hangars = list()
 
-/datum/hangar_shaft/New(_name, _shaft_type)
+/datum/hangar_shaft/New(_name, _shaft_type, _elevator)
 	// DEBUG: do something with the name
 	if(_name)
 		name = _name
 	if(_shaft_type)
 		shaft_type = _shaft_type
+	if(_elevator)
+		shaft_elevator = _elevator
 	else
 		// DEBUG: implement hangar shafts that start without an anchor
 
