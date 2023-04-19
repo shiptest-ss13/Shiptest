@@ -71,6 +71,10 @@ GLOBAL_LIST_INIT(all_overmap_world_types, list(
 ///Used to get the turf on the "physical" overmap representation.
 #define OVERMAP_TOKEN_TURF(x_pos, y_pos) locate(SSovermap.overmap_vlevel.low_x + SSovermap.overmap_vlevel.reserved_margin + x_pos - 1, SSovermap.overmap_vlevel.low_y + SSovermap.overmap_vlevel.reserved_margin + y_pos - 1, SSovermap.overmap_vlevel.z_value)
 
+// Burn direction defines
+#define BURN_NONE 0
+#define BURN_STOP -1
+
 // DEBUG: this is maybe fine? see GLOB.log_directory
 #define OUTPOST_OVERRIDE_FILEPATH "data/outpost_override.json"
 
