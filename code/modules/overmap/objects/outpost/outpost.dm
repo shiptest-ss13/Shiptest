@@ -117,16 +117,8 @@
 
 
 /datum/overmap/outpost/proc/load_main_level()
-	var/datum/map_template/outpost/template
-	var/list/candidate_templates = list()
-	for(var/name as anything in SSmapping.outpost_templates)
-		var/datum/map_template/outpost/cand_template = SSmapping.outpost_templates[name]
-		if(cand_template.skin == skin)
-			candidate_templates += cand_template
-	template = pick(candidate_templates)
-
 	if(!template)
-		CRASH("[src] ([src.type]) could not find the outpost map for skin [skin]!")
+		CRASH("[src] ([src.type]) tried to load without a template!")
 
 	log_game("[src] [REF(src)] OUTPOST MAP LEVEL INIT")
 	log_shuttle("[src] [REF(src)] OUTPOST MAP LEVEL INIT")
