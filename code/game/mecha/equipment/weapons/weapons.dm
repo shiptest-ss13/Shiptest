@@ -163,10 +163,10 @@
 	harmful = TRUE
 
 //attachable to all mechas, like the plasma cutter
-/obj/item/mecha_parts/mecha_equipment/weapon/energy/mecha_kineticgun/can_attach(obj/mecha/working/M)
+/obj/item/mecha_parts/mecha_equipment/weapon/energy/mecha_kineticgun/can_attach(obj/mecha/working/Mech)
 	if(..()) //combat mech
 		return TRUE
-	else if(M.equipment.len < M.max_equip && istype(M))
+	else if(Mech.equipment.len < Mech.max_equip && istype(Mech))
 		return TRUE
 	return FALSE
 
