@@ -2416,7 +2416,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		character.update_hair()
 		character.update_body_parts(TRUE)
 	if((pref_species.id != SPECIES_DWARF) && (height_filter != "Normal"))
-	character.set_mob_height(GLOB.height_filters[height_filter])
+		character.set_mob_height(GLOB.height_filters[height_filter])
 
 /datum/preferences/proc/get_default_name(name_id)
 	switch(name_id)
