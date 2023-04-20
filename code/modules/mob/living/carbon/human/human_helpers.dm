@@ -194,6 +194,7 @@
 		CRASH("Don't set height to dwarf height directly, use dwarf trait")
 
 	mob_height = new_height
+	src?.dna.current_height_filter = new_height
 	regenerate_icons()
 	return TRUE
 
