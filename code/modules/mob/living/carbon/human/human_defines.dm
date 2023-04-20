@@ -72,3 +72,6 @@
 
 	/// How many "units of blood" we have on our hands
 	var/blood_in_hands = 0
+
+	/// Height of the mob
+	VAR_PROTECTED/mob_height = HUMAN_HEIGHT_MEDIUM
