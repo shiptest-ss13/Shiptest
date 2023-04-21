@@ -4352,18 +4352,21 @@
 	pixel_y = 5
 	},
 /obj/item/ammo_box/magazine/m12g/small{
-	pixel_x = -5;
 	pixel_y = 5
 	},
-/obj/item/gun/ballistic/shotgun/bulldog/inteq{
-	mag_type = /obj/item/ammo_box/magazine/m12g/small;
-	pixel_y = -2
+/obj/item/ammo_box/magazine/m12g/small{
+	pixel_x = -5;
+	pixel_y = 5
 	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
 	},
 /obj/structure/sign/poster/contraband/twelve_gauge{
 	pixel_y = -32
+	},
+/obj/item/gun/ballistic/shotgun/bulldog/inteq{
+	pixel_y = -2;
+	spawnwithmagazine = 0
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)

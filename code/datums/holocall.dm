@@ -229,7 +229,6 @@
 	color = "#A7A3A6"
 	blueshift_pallete = FALSE
 	illustration = "holo"
-	obj_flags = UNIQUE_RENAME
 	custom_materials = list(/datum/material/iron = 100, /datum/material/glass = 100)
 	var/datum/holorecord/record
 	//Preset variables
