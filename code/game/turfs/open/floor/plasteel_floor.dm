@@ -218,6 +218,8 @@
 	base_icon_state = "bluespace"
 
 /turf/open/floor/plasteel/sepia
+	icon_state = "tiled_light"
+	base_icon_state = "tiled_light"
 	color = "#938170"
 
 /turf/open/floor/plasteel/icecropolis
