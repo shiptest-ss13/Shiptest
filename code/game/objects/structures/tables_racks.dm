@@ -272,6 +272,17 @@
 	material_flags = MATERIAL_ADD_PREFIX | MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS
 	buildstack = null //No buildstack, so generate from mat datums
 
+/obj/structure/table/chem
+	name = "chemistry counter"
+	desc = "A square piece of metal designed to be resistant to any chemical spill."
+	icon = 'icons/obj/smooth_structures/table_chem.dmi'
+	icon_state = "table_chem-0"
+	base_icon_state = "table_chem"
+	smoothing_groups = list(SMOOTH_GROUP_CHEM_TABLES)
+	canSmoothWith = list(SMOOTH_GROUP_CHEM_TABLES)
+	buildstack = /obj/item/stack/sheet/mineral/plastitanium
+	can_flip = FALSE
+
 ///Table on wheels
 /obj/structure/table/rolling
 	name = "Rolling table"

@@ -212,67 +212,59 @@ SUBSYSTEM_DEF(overmap)
 		new /datum/overmap/dynamic()
 
 /**
- * Reserves a square dynamic encounter area, and spawns a ruin in it if one is supplied.
+ * Reserves a square dynamic encounter area, generates it, and spawns a ruin in it if one is supplied.
  * * on_planet - If the encounter should be on a generated planet. Required, as it will be otherwise inaccessible.
- * * target - The ruin to spawn, if any
- * * ruin_type - The ruin to spawn. Don't pass this argument if you want it to randomly select based on planet type.
+ * * ruin_type - The type of ruin to spawn, or null if none should be placed.
  */
-/datum/controller/subsystem/overmap/proc/spawn_dynamic_encounter(datum/overmap/dynamic/dynamic_datum, ruin = TRUE, ignore_cooldown = FALSE, datum/map_template/ruin/ruin_type)
+/datum/controller/subsystem/overmap/proc/spawn_dynamic_encounter(datum/overmap/dynamic/dynamic_datum, ruin_type)
 	log_shuttle("SSOVERMAP: SPAWNING DYNAMIC ENCOUNTER STARTED")
-	var/list/ruin_list = dynamic_datum.ruin_list
-	var/datum/map_generator/mapgen
-	var/area/target_area = dynamic_datum.target_area
-	var/turf/surface = dynamic_datum.surface
-	var/datum/weather_controller/weather_controller_type = dynamic_datum.weather_controller_type
-	///A planet template that contains a list of biomes to use
-	var/datum/planet/planet_template = dynamic_datum.planet_template
-
 	if(!dynamic_datum)
 		CRASH("spawn_dynamic_encounter called without any datum to spawn!")
+	if(!dynamic_datum.default_baseturf)
+		CRASH("spawn_dynamic_encounter called with overmap datum [REF(dynamic_datum)], which lacks a default_baseturf!")
 
-	if(ruin && ruin_list && !ruin_type)
-		ruin_type = ruin_list[pick(ruin_list)]
-		if(ispath(ruin_type))
-			ruin_type = new ruin_type
+	var/datum/map_generator/mapgen = new dynamic_datum.mapgen
+	var/datum/map_template/ruin/used_ruin = ispath(ruin_type) ? (new ruin_type) : ruin_type
 
-	var/height = dynamic_datum.vlevel_height
-	var/width = dynamic_datum.vlevel_width
-
-	var/encounter_name = "Dynamic Overmap Encounter"
-	if(dynamic_datum.planet_name)
-		encounter_name = dynamic_datum.planet_name
+	// name is random but PROBABLY unique
+	var/encounter_name = dynamic_datum.planet_name || "Dynamic Overmap Encounter #[rand(1111,9999)]-[rand(1111,9999)]"
 	var/datum/map_zone/mapzone = SSmapping.create_map_zone(encounter_name)
-	var/datum/virtual_level/vlevel = SSmapping.create_virtual_level(encounter_name, list(ZTRAIT_MINING = TRUE), mapzone, width, height, ALLOCATION_QUADRANT, QUADRANT_MAP_SIZE)
+	var/datum/virtual_level/vlevel = SSmapping.create_virtual_level(
+		encounter_name,
+		list(ZTRAIT_MINING = TRUE, ZTRAIT_BASETURF = dynamic_datum.default_baseturf),
+		mapzone,
+		dynamic_datum.vlevel_width,
+		dynamic_datum.vlevel_height,
+		ALLOCATION_QUADRANT,
+		QUADRANT_MAP_SIZE
+	)
 
 	vlevel.reserve_margin(QUADRANT_SIZE_BORDER)
 
-	if(dynamic_datum.mapgen) /// If we have a map generator, don't ChangeTurf's in fill_in. Just to ChangeTurf them once again.
-		mapgen = new dynamic_datum.mapgen
-		surface = null
-	vlevel.fill_in(surface, target_area)
+	// the generataed turfs start unpopulated (i.e. no flora / fauna / etc.). we add that AFTER placing the ruin, relying on the ruin's areas to determine what gets populated
+	log_shuttle("SSOVERMAP: START_DYN_E: RUNNING MAPGEN REF [REF(mapgen)] FOR VLEV [vlevel.id] OF TYPE [mapgen.type]")
+	mapgen.generate_turfs(vlevel.get_unreserved_block())
 
 	var/list/ruin_turfs = list()
-	if(ruin_type)
-		var/turf/ruin_turf = locate(rand(
-			vlevel.low_x+6 + vlevel.reserved_margin,
-			vlevel.high_x-ruin_type.width-6 - vlevel.reserved_margin),
-			vlevel.high_y-ruin_type.height-6 - vlevel.reserved_margin,
+	if(used_ruin)
+		var/turf/ruin_turf = locate(
+			rand(
+				vlevel.low_x+6 + vlevel.reserved_margin,
+				vlevel.high_x-used_ruin.width-6 - vlevel.reserved_margin
+			),
+			vlevel.high_y-used_ruin.height-6 - vlevel.reserved_margin,
 			vlevel.z_value
-			)
-		ruin_type.load(ruin_turf)
-		ruin_turfs[ruin_type.name] = ruin_turf
+		)
+		used_ruin.load(ruin_turf)
+		ruin_turfs[used_ruin.name] = ruin_turf
 
-	if(mapgen) //If what is going on is what I think it is, this is going to need to return some sort of promise to await.
-		log_shuttle("SSOVERMAP: START_DYN_E: RUNNING MAPGEN REF [REF(mapgen)] FOR VLEV [vlevel.id] OF TYPE [mapgen.type]")
-		if (istype(mapgen, /datum/map_generator/planet_generator) && !isnull(planet_template))
-			planet_template = new planet_template
-			mapgen.generate_terrain(vlevel.get_unreserved_block(), planet_template)
-		else
-			mapgen.generate_terrain(vlevel.get_unreserved_block())
-		log_shuttle("SSOVERMAP: START_DYN_E: MAPGEN REF [REF(mapgen)] RETURNED FOR VLEV [vlevel.id] OF TYPE [mapgen.type]. IT MAY NOT BE FINISHED YET.")
+	// fill in the turfs, AFTER generating the ruin. this prevents them from generating within the ruin
+	// and ALSO prevents the ruin from being spaced when it spawns in
+	// WITHOUT needing to fill the reservation with a bunch of dummy turfs
+	mapgen.populate_turfs(vlevel.get_unreserved_block())
 
-	if(weather_controller_type)
-		new weather_controller_type(mapzone)
+	if(dynamic_datum.weather_controller_type)
+		new dynamic_datum.weather_controller_type(mapzone)
 
 	// locates the first dock in the bottom left, accounting for padding and the border
 	var/turf/primary_docking_turf = locate(
@@ -307,19 +299,19 @@ SUBSYSTEM_DEF(overmap)
 	secondary_dock.dwidth = 0
 	docking_ports += secondary_dock
 
-	if(!ruin_type)
+	if(!used_ruin)
 		// no ruin, so we can make more docks upward
 		var/turf/tertiary_docking_turf = locate(
 			primary_docking_turf.x,
 			primary_docking_turf.y+RESERVE_DOCK_MAX_SIZE_SHORT+RESERVE_DOCK_DEFAULT_PADDING,
 			primary_docking_turf.z
-			)
+		)
 		// rinse and repeat
 		var/turf/quaternary_docking_turf = locate(
 			secondary_docking_turf.x,
 			secondary_docking_turf.y+RESERVE_DOCK_MAX_SIZE_SHORT+RESERVE_DOCK_DEFAULT_PADDING,
 			secondary_docking_turf.z
-			)
+		)
 
 		var/obj/docking_port/stationary/tertiary_dock = new(tertiary_docking_turf)
 		tertiary_dock.dir = NORTH
@@ -382,6 +374,12 @@ SUBSYSTEM_DEF(overmap)
  * * source - The object you want to get the corresponding parent overmap object for.
  */
 /datum/controller/subsystem/overmap/proc/get_overmap_object_by_location(atom/source)
+	var/turf/T = get_turf(source)
+	var/area/ship/A = get_area(source)
+	while(istype(A) && A.mobile_port)
+		if(A.mobile_port.current_ship)
+			return A.mobile_port.current_ship
+		A = A.mobile_port.underlying_turf_area[T]
 	for(var/O in overmap_objects)
 		if(istype(O, /datum/overmap/dynamic))
 			var/datum/overmap/dynamic/D = O

@@ -82,7 +82,9 @@
 	icon_state = "2-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "as" = (
@@ -288,12 +290,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
-"cm" = (
-/obj/machinery/atmospherics/pipe/layer_manifold{
-	dir = 4
-	},
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/engineering/engine)
 "cp" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/airlock/maintenance_hatch,
@@ -587,6 +583,9 @@
 	},
 /obj/machinery/atmospherics/pipe/layer_manifold{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -1096,10 +1095,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/airless,
 /area/ship/maintenance/starboard)
-"hp" = (
-/obj/structure/catwalk,
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/engineering/communications)
 "hz" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/table/wood,
@@ -1533,10 +1528,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/airless,
 /area/ship/cargo/starboard)
-"jD" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/cargo/starboard)
 "jH" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -1943,7 +1934,7 @@
 	},
 /obj/machinery/door/airlock/command{
 	name = "Bridge";
-	req_one_access = list(19, 3)
+	req_one_access = list(19,3)
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
@@ -4075,6 +4066,9 @@
 /obj/machinery/door/poddoor{
 	id = "talos_thrusters_starboard"
 	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "zg" = (
@@ -4567,11 +4561,6 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ship/cargo/starboard)
-"BZ" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/maintenance/starboard)
 "Co" = (
 /obj/machinery/airalarm/all_access{
 	dir = 8;
@@ -7326,7 +7315,7 @@
 /obj/machinery/turretid{
 	pixel_y = 32;
 	req_access = null;
-	req_one_access = list(19, 3)
+	req_one_access = list(19,3)
 	},
 /turf/open/floor/carpet/orange,
 /area/ship/bridge)
@@ -7497,7 +7486,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/sign/warning/fire{
 	pixel_x = -36;
 	pixel_y = -4
@@ -7505,6 +7493,9 @@
 /obj/structure/sign/warning{
 	pixel_x = -40;
 	pixel_y = 9
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -8096,7 +8087,7 @@ Lu
 ou
 id
 pU
-cm
+ie
 sw
 sw
 MV
@@ -8305,7 +8296,7 @@ tO
 LV
 OX
 ao
-hp
+vp
 "}
 (11,1,1) = {"
 sw
@@ -9182,7 +9173,7 @@ uI
 Xb
 uI
 TO
-BZ
+uI
 uc
 rw
 ts
@@ -9524,7 +9515,7 @@ ks
 fK
 IB
 YZ
-jD
+fK
 sw
 sw
 sw
