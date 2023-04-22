@@ -283,11 +283,11 @@
 //your subshuttle here
 
 /datum/map_template/shuttle/subshuttles/kunai
-	file_name = "kunai_dropship"
+	file_name = "independent_kunai"
 	name = "Kunai Dropship"
 	prefix = "SV"
 
 /datum/map_template/shuttle/subshuttles/sugarcube
-	file_name = "sugarcube"
+	file_name = "independent_sugarcube"
 	name = "Sugarcube Transport"
 	prefix = "ISV"
