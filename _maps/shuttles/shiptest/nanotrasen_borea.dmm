@@ -192,7 +192,9 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/engineering)
 "aJ" = (
-/obj/machinery/door/airlock/external,
+/obj/machinery/door/airlock/external{
+	req_access = "13"
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
@@ -3927,7 +3929,7 @@
 /area/ship/external)
 "nW" = (
 /obj/machinery/door/airlock/external{
-	req_access = "15"
+	req_access = "13"
 	},
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /turf/open/floor/plasteel/tech,
@@ -6153,6 +6155,9 @@
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
+	},
+/obj/machinery/door/airlock/atmos{
+	req_access = "11"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
