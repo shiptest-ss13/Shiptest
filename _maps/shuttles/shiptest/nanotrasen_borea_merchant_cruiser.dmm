@@ -1975,6 +1975,12 @@
 /obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
+"fD" = (
+/obj/structure/disposalpipe/segment{
+	dir = 6
+	},
+/turf/open/floor/carpet,
+/area/ship/crew/canteen)
 "fE" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -3624,9 +3630,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/storage)
-"kg" = (
-/turf/open/floor/plating/rust,
-/area/template_noop)
 "kq" = (
 /obj/effect/turf_decal/corner/opaque/black/diagonal,
 /obj/effect/turf_decal/siding/yellow{
@@ -4019,10 +4022,10 @@
 /area/ship/hallway/fore)
 "pn" = (
 /obj/machinery/disposal/bin,
-/obj/structure/disposalpipe/trunk{
-	dir = 8
-	},
 /obj/effect/turf_decal/box,
+/obj/structure/disposalpipe/trunk{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "pp" = (
@@ -4117,8 +4120,8 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /obj/effect/turf_decal/corner/opaque/black/diagonal,
 /obj/effect/turf_decal/siding/green,
-/obj/structure/disposalpipe/segment{
-	dir = 5
+/obj/structure/disposalpipe/junction/flip{
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/ship/storage)
@@ -4310,6 +4313,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/canteen)
@@ -4832,6 +4838,9 @@
 	},
 /obj/effect/turf_decal/corner/opaque/black/diagonal,
 /obj/effect/turf_decal/siding/green,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/ship/storage)
 "yq" = (
@@ -5444,6 +5453,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/starboard)
 "Fm" = (
+/obj/structure/disposalpipe/segment,
 /turf/open/floor/carpet,
 /area/ship/crew/canteen)
 "Fp" = (
@@ -5515,6 +5525,13 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/fore)
+"Gf" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment,
+/turf/open/floor/carpet,
+/area/ship/crew/canteen)
 "Gj" = (
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 5
@@ -6013,6 +6030,16 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/closet/crate,
+/obj/item/circuitboard/machine/holopad,
+/obj/item/circuitboard/machine/holopad,
+/obj/item/circuitboard/machine/holopad,
+/obj/item/circuitboard/machine/holopad,
+/obj/item/circuitboard/machine/holopad,
+/obj/item/circuitboard/machine/holopad,
+/obj/item/circuitboard/machine/holopad,
+/obj/item/circuitboard/machine/holopad,
+/obj/item/circuitboard/machine/holopad,
+/obj/item/circuitboard/machine/holopad,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "Lw" = (
@@ -6909,6 +6936,9 @@
 	},
 /obj/effect/turf_decal/corner/opaque/black/diagonal,
 /obj/effect/turf_decal/siding/green/corner,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/ship/storage)
 "Uj" = (
@@ -7299,6 +7329,9 @@
 	icon_state = "4-8"
 	},
 /obj/effect/turf_decal/corner/opaque/black/diagonal,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/ship/storage)
 "Ys" = (
@@ -7795,7 +7828,7 @@ jk
 jk
 "}
 (11,1,1) = {"
-kg
+ae
 ac
 ac
 az
@@ -8166,9 +8199,9 @@ EY
 sk
 sk
 xU
+fD
 Fm
-Fm
-xU
+Gf
 pn
 co
 Fd
