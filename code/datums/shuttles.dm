@@ -354,7 +354,7 @@
 
 
 /datum/map_template/shuttle/subshuttles/zetes_delivery_pod
-	file_name = "zetes_delivery_pod"
+	file_name = "nanotrasen_zetes"
 	name = "Zetes Delivery Pod"
 	prefix = "NTSV"
 
