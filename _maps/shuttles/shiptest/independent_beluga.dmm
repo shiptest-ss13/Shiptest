@@ -353,6 +353,16 @@
 /obj/structure/grille,
 /turf/open/floor/plating,
 /area/ship/engineering)
+"dE" = (
+/obj/machinery/atmospherics/components/unary/shuttle/heater{
+	dir = 4
+	},
+/obj/structure/window/plasma/reinforced/spawner/west,
+/obj/machinery/door/window/eastright{
+	name = "Engine Access"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "dF" = (
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/structure/cable{
@@ -404,36 +414,6 @@
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/crew)
 "ej" = (
-/obj/structure/safe/floor{
-	pixel_x = 8;
-	pixel_y = 14
-	},
-/obj/item/spacecash/bundle/c1000{
-	pixel_x = 3;
-	pixel_y = 10
-	},
-/obj/item/spacecash/bundle/c1000{
-	pixel_x = -2;
-	pixel_y = 6
-	},
-/obj/item/spacecash/bundle/c20,
-/obj/item/spacecash/bundle/c100{
-	pixel_x = 8;
-	pixel_y = 3
-	},
-/obj/item/spacecash/bundle/c50{
-	pixel_x = -8;
-	pixel_y = -3
-	},
-/obj/item/spacecash/bundle/c500{
-	pixel_y = -5;
-	pixel_x = 5
-	},
-/obj/item/spacecash/bundle/c5,
-/obj/item/clothing/accessory/medal/gold/heroism{
-	pixel_x = -6;
-	pixel_y = 5
-	},
 /obj/item/radio/intercom/wideband{
 	dir = 4;
 	pixel_x = -25
@@ -864,7 +844,7 @@
 	dir = 4
 	},
 /obj/structure/window/plasma/reinforced/spawner/west,
-/obj/machinery/door/window/eastright{
+/obj/machinery/door/window/eastleft{
 	name = "Engine Access"
 	},
 /turf/open/floor/plating,
@@ -1640,16 +1620,6 @@
 	},
 /turf/open/floor/engine/hull/interior,
 /area/ship/cargo)
-"pB" = (
-/obj/machinery/atmospherics/components/unary/shuttle/heater{
-	dir = 4
-	},
-/obj/structure/window/plasma/reinforced/spawner/west,
-/obj/machinery/door/window/eastleft{
-	name = "Engine Access"
-	},
-/turf/open/floor/plating,
-/area/ship/engineering)
 "pF" = (
 /turf/closed/wall/mineral/titanium,
 /area/ship/engineering)
@@ -2092,6 +2062,10 @@
 	},
 /obj/effect/decal/cleanable/robot_debris{
 	pixel_x = -12
+	},
+/obj/item/radio/intercom{
+	dir = 8;
+	pixel_x = 20
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
@@ -2571,6 +2545,39 @@
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 8
+	},
+/obj/structure/safe/floor{
+	pixel_x = 8;
+	pixel_y = 14
+	},
+/obj/item/spacecash/bundle/c1000{
+	pixel_x = -2;
+	pixel_y = 6
+	},
+/obj/item/spacecash/bundle/c1000{
+	pixel_x = 3;
+	pixel_y = 10
+	},
+/obj/item/spacecash/bundle/c100{
+	pixel_x = 8;
+	pixel_y = 3
+	},
+/obj/item/spacecash/bundle/c1000{
+	pixel_x = 3;
+	pixel_y = 10
+	},
+/obj/item/spacecash/bundle/c500{
+	pixel_y = -5;
+	pixel_x = 5
+	},
+/obj/item/spacecash/bundle/c50{
+	pixel_x = -8;
+	pixel_y = -3
+	},
+/obj/item/spacecash/bundle/c5,
+/obj/item/clothing/accessory/medal/gold/heroism{
+	pixel_x = -6;
+	pixel_y = 5
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -3461,6 +3468,20 @@
 	},
 /turf/open/floor/carpet/nanoweave/purple,
 /area/ship/crew)
+"GV" = (
+/obj/machinery/door/airlock/external,
+/obj/machinery/atmospherics/pipe/layer_manifold{
+	dir = 1
+	},
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	dir = 2;
+	launch_status = 0;
+	port_direction = 8;
+	preferred_direction = 4
+	},
+/turf/open/floor/plasteel/patterned/grid,
+/area/ship/crew/cryo)
 "GY" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -4052,6 +4073,10 @@
 /obj/effect/turf_decal/corner/opaque/white/diagonal,
 /obj/effect/turf_decal/siding/white{
 	dir = 6
+	},
+/obj/structure/sink{
+	dir = 8;
+	pixel_x = 14
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
@@ -4806,20 +4831,6 @@
 	},
 /turf/open/floor/carpet/nanoweave/purple,
 /area/ship/crew)
-"Ui" = (
-/obj/machinery/door/airlock/external,
-/obj/machinery/atmospherics/pipe/layer_manifold{
-	dir = 1
-	},
-/obj/docking_port/mobile{
-	can_move_docking_ports = 1;
-	dir = 2;
-	launch_status = 0;
-	port_direction = 8;
-	preferred_direction = 4
-	},
-/turf/open/floor/plasteel/patterned/grid,
-/area/ship/crew/cryo)
 "UO" = (
 /obj/effect/turf_decal/industrial/traffic/corner,
 /obj/machinery/computer/cargo/express{
@@ -5058,9 +5069,6 @@
 /area/ship/engineering)
 "Yr" = (
 /obj/machinery/suit_storage_unit/inherit/industrial,
-/obj/item/radio/intercom{
-	pixel_y = 20
-	},
 /obj/machinery/light{
 	dir = 4
 	},
@@ -5360,7 +5368,7 @@ Sv
 Sv
 Sv
 DE
-pB
+hY
 DE
 DE
 RJ
@@ -5370,7 +5378,7 @@ IX
 Bi
 DE
 DE
-hY
+dE
 DE
 Sv
 Sv
@@ -5556,7 +5564,7 @@ RM
 pA
 "}
 (17,1,1) = {"
-Ui
+GV
 Jr
 KJ
 pq
