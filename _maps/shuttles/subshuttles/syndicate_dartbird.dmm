@@ -20,6 +20,9 @@
 	dir = 4
 	},
 /obj/structure/window/plasma/reinforced,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
 /turf/open/floor/plating,
 /area/ship/bridge)
 "h" = (
@@ -147,6 +150,9 @@
 /obj/structure/window/plasma/reinforced{
 	dir = 1
 	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
 /turf/open/floor/plating,
 /area/ship/bridge)
 "L" = (
@@ -165,6 +171,9 @@
 "N" = (
 /obj/machinery/power/shuttle/engine/electric{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
 	},
 /turf/open/floor/engine/hull,
 /area/ship/bridge)

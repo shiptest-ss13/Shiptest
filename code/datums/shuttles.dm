@@ -275,12 +275,13 @@
 //your subshuttle here
 
 /datum/map_template/shuttle/subshuttles/syndicate_interceptor
-	file_name = "syndicate_dartbird_interceptor"
+	file_name = "syndicate_interceptor"
 	name = "Dartbird Interceptor"
 	prefix = "SSV"
 	name_categories = list("WEAPONS")
 	short_name = "Dartbird"
 
 /datum/map_template/shuttle/subshuttles/syndicate_fighter_shiv
-	file_name = "syndicate_fighter_shiv"
+	file_name = "syndicate_shiv"
 	name = "Shiv Fighter"
+	prefix = "SSV"
