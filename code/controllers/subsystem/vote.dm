@@ -84,7 +84,7 @@ SUBSYSTEM_DEF(vote)
 						factor = 1.2
 					else
 						factor = 1.4
-				choices["Initiate Crew Transfer"] += round(non_voters.len * factor)
+				choices["Initiate Bluespace Jump"] += round(non_voters.len * factor)
 
 	//get all options with that many votes and return them in a list
 	. = list()
@@ -139,7 +139,7 @@ SUBSYSTEM_DEF(vote)
 					else
 						GLOB.master_mode = .
 			if("transfer")
-				if(. == "Initiate Crew Transfer")
+				if(. == "Initiate Bluespace Jump")
 					SSshuttle.request_jump()
 
 	if(restart)
@@ -197,7 +197,7 @@ SUBSYSTEM_DEF(vote)
 			if("transfer")
 				if(SSshuttle.jump_mode != BS_JUMP_IDLE)
 					return FALSE
-				choices.Add("Initiate Crew Transfer","Continue Playing")
+				choices.Add("Initiate Bluespace Jump","Continue Playing")
 			if("custom")
 				question = stripped_input(usr,"What is the vote for?")
 				if(!question)
