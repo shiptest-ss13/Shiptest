@@ -354,16 +354,18 @@
 	file_name = "independent_pill"
 	name = "Pill-Class Torture Device"
 	prefix = "Pill"
+	name_categories = list("PILLS")
 
 /datum/map_template/shuttle/subshuttles/pillb
 	file_name = "independent_blackpill"
 	name = "Blackpill-Class Manned Torpedo"
 	prefix = "Pill"
+	name_categories = list("PILLS")
 
 /datum/map_template/shuttle/subshuttles/pills
 	file_name = "independent_superpill"
 	name = "Superpill-Class Experimental Engineering Platform"
 	prefix = "Pill"
-
+	name_categories = list("PILLS")
 //your subshuttle here
 
