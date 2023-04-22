@@ -351,17 +351,17 @@
 	category = "subshuttles"
 
 /datum/map_template/shuttle/subshuttles/pill
-	file_name = "independant_pill"
+	file_name = "independent_pill"
 	name = "Pill-Class Torture Device"
 	prefix = "Pill"
 
 /datum/map_template/shuttle/subshuttles/pillb
-	file_name = "pill_black"
+	file_name = "independent_blackpill"
 	name = "Blackpill-Class Manned Torpedo"
 	prefix = "Pill"
 
 /datum/map_template/shuttle/subshuttles/pills
-	file_name = "pill_super"
+	file_name = "independent_superpill"
 	name = "Superpill-Class Experimental Engineering Platform"
 	prefix = "Pill"
 
