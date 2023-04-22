@@ -1176,6 +1176,9 @@
 /obj/effect/turf_decal/spline/fancy/opaque/white{
 	dir = 1
 	},
+/obj/structure/disposalpipe/segment{
+	dir = 6
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen/kitchen)
 "dB" = (
@@ -1453,6 +1456,9 @@
 /obj/machinery/door/airlock{
 	name = "Staff Area"
 	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/canteen/kitchen)
 "ea" = (
@@ -1649,6 +1655,9 @@
 	dir = 6
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen/kitchen)
 "et" = (
@@ -1679,6 +1688,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
@@ -2579,6 +2591,9 @@
 	name = "Staff Area"
 	},
 /obj/structure/disposalpipe/segment,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/hydroponics)
 "gG" = (
@@ -2790,6 +2805,9 @@
 "hj" = (
 /obj/effect/turf_decal/box,
 /obj/machinery/disposal/bin,
+/obj/structure/disposalpipe/trunk{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "hk" = (
@@ -4380,6 +4398,9 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/open/floor/carpet,
 /area/ship/crew/canteen)
 "qZ" = (
@@ -4660,6 +4681,7 @@
 "tQ" = (
 /obj/machinery/disposal/bin,
 /obj/effect/turf_decal/box,
+/obj/structure/disposalpipe/trunk,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "tT" = (
@@ -5744,8 +5766,10 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/fore)
 "Gf" = (
-/obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 1
+	},
+/obj/structure/disposalpipe/junction/flip{
 	dir = 1
 	},
 /turf/open/floor/carpet,
@@ -5775,6 +5799,9 @@
 "GA" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 10
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
@@ -5929,6 +5956,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
 	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen/kitchen)
 "HX" = (
@@ -5991,6 +6021,9 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "In" = (
@@ -6021,6 +6054,18 @@
 /obj/effect/turf_decal/corner/opaque/orange/border,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
+"IS" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 6
+	},
+/turf/open/floor/carpet,
+/area/ship/crew/canteen)
 "IT" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/effect/turf_decal/corner/opaque/black/diagonal,
@@ -6704,6 +6749,9 @@
 	icon_state = "1-8"
 	},
 /obj/machinery/airalarm/directional/south,
+/obj/structure/disposalpipe/segment{
+	dir = 9
+	},
 /turf/open/floor/carpet,
 /area/ship/crew/canteen)
 "PU" = (
@@ -7282,6 +7330,9 @@
 /obj/structure/sign/poster/official/random{
 	pixel_y = -32
 	},
+/obj/structure/disposalpipe/segment{
+	dir = 5
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "UK" = (
@@ -7612,6 +7663,9 @@
 	},
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen/kitchen)
 "Yq" = (
@@ -7638,6 +7692,7 @@
 /area/ship/storage)
 "Ys" = (
 /obj/machinery/vending/dinnerware,
+/obj/machinery/power/apc/auto_name/north,
 /turf/open/floor/plasteel/freezer,
 /area/ship/crew/canteen/kitchen)
 "Yu" = (
@@ -8122,7 +8177,7 @@ gc
 gc
 gc
 ij
-ig
+oT
 EY
 jk
 jk
@@ -8470,7 +8525,7 @@ sk
 ci
 vm
 Ue
-Ue
+IS
 PP
 co
 fm
@@ -8679,7 +8734,7 @@ EY
 EY
 EY
 aO
-pW
+aO
 aE
 Vv
 ce
