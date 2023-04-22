@@ -90,8 +90,8 @@ GLOBAL_LIST_INIT(astroloot, list(
 	icon_state = "puddle"
 	icon = 'icons/obj/watercloset.dmi'
 	max_integrity = 150
-	max_mobs = 15
-	spawn_time = 600
+	max_mobs = 5
+	spawn_time = 1200
 	mob_types = list(/mob/living/simple_animal/hostile/carp)
 	spawn_text = "climbs out of"
 	faction = list("carp")
