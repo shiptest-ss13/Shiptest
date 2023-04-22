@@ -7,7 +7,7 @@
 	"map_path": "_maps/shuttles/shiptest/nanotrasen_borea_merchant_cruiser.dmm",
 	"map_id": "nanotrasen_borea_merchant_cruiser",
 	"roundstart": true,
-	"limit": 2,
+	"limit": 1,
 	"job_slots": {
 		"Captain": {
 			"outfit": "/datum/outfit/job/captain/nt",
@@ -30,15 +30,11 @@
 		},
 		"Security Officer": {
 			"outfit": "/datum/outfit/job/security/nanotrasen",
-			"slots": 3
+			"slots": 2
 		},
 		"Cargo Tech": {
 			"outfit": "/datum/outfit/job/cargo_tech/stockboy",
-			"slots": 3
-		},
-		"Delivery Pilot": {
-			"outfit": "/datum/outfit/job/cargo_tech/deliveriesofficer",
-			"slots":1
+			"slots": 4
 		},
 		"Chef": {
 			"outfit": "/datum/outfit/job/cook/grillmaster",
