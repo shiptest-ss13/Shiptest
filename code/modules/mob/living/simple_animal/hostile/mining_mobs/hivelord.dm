@@ -345,7 +345,7 @@
 	H.transform = H.transform.Scale(0.8, 1)//somehow dwarf squashing is borked when not roundstart. I hate WS code
 
 /obj/effect/mob_spawn/human/corpse/damaged/legioninfested/Initialize()
-	var/type = pickweight(list("Miner" = 41, "Waldo" = 3, "Ashwalker" = 7, "Soldier" = 3, "Oldminer" = 7, "Kobold" = 5, "Golem" = 10,"Clown" = 10 "SRM" = 10, pick(list("Shadow", "YeOlde","Operative", "Cultist")) = 4))
+	var/type = pickweight(list("Miner" = 41, "Waldo" = 3, "Ashwalker" = 7, "Soldier" = 3, "Oldminer" = 7, "Kobold" = 5, "Golem" = 10,"Clown" = 10, "SRM" = 10, pick(list("Shadow", "YeOlde","Operative", "Cultist")) = 4))
 	switch(type)
 		if("Miner")
 			mob_species = pickweight(list(/datum/species/human = 70, /datum/species/lizard = 26, /datum/species/fly = 2, /datum/species/plasmaman = 2))
