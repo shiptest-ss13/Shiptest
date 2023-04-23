@@ -646,12 +646,12 @@
 
 /datum/chemical_reaction/ice_wine
 	results = list(/datum/reagent/consumable/ethanol/ice_wine = 5)
-	required_reagents = list(/datum/reagent/consumable/ethanol/sake = 3, /datum/reagent/polar_bear_fur = 2)
+	required_reagents = list(/datum/reagent/consumable/ethanol/sake = 3, /datum/reagent/polar_bear_fur = 1, /datum/reagent/consumable/frostoil = 1)
 	required_container = /obj/item/reagent_containers/food/drinks/drinkingglass/breakawayflask
 	mix_sound ='sound/effects/glassbr3.ogg'
 
 /datum/chemical_reaction/shock_wine
 	results = list(/datum/reagent/consumable/ethanol/shock_wine = 5)
-	required_reagents = list(/datum/reagent/consumable/ethanol/kahlua= 3, /datum/reagent/calcium = 1, /datum/reagent/consumable/lemonjuice = 1)
+	required_reagents = list(/datum/reagent/consumable/ethanol/vodka= 3, /datum/reagent/calcium = 1, /datum/reagent/consumable/lemonjuice = 1)
 	required_container = /obj/item/reagent_containers/food/drinks/drinkingglass/breakawayflask
 	mix_sound ='sound/machines/defib_zap.ogg'

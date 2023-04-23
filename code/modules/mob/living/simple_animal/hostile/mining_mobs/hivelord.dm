@@ -345,7 +345,7 @@
 	H.transform = H.transform.Scale(0.8, 1)//somehow dwarf squashing is borked when not roundstart. I hate WS code
 
 /obj/effect/mob_spawn/human/corpse/damaged/legioninfested/Initialize()
-	var/type = pickweight(list("Miner" = 51, "Waldo" = 3, "Ashwalker" = 7, "Soldier" = 3, "Oldminer" = 7, "Kobold" = 5, "Golem" = 10,"Clown" = 10, pick(list("Shadow", "YeOlde","Operative", "Cultist")) = 4))
+	var/type = pickweight(list("Miner" = 41, "Waldo" = 3, "Ashwalker" = 7, "Soldier" = 3, "Oldminer" = 7, "Kobold" = 5, "Golem" = 10,"Clown" = 10 "SRM" = 10, pick(list("Shadow", "YeOlde","Operative", "Cultist")) = 4))
 	switch(type)
 		if("Miner")
 			mob_species = pickweight(list(/datum/species/human = 70, /datum/species/lizard = 26, /datum/species/fly = 2, /datum/species/plasmaman = 2))
@@ -583,6 +583,24 @@
 			glasses =  /obj/item/clothing/glasses/hud/health/night/cultblind
 			back = /obj/item/storage/backpack/cultpack
 			backpack_contents = list(/obj/item/reagent_containers/glass/beaker/unholywater = 1, /obj/item/cult_shift = 1, /obj/item/flashlight/flare/culttorch = 1, /obj/item/stack/sheet/runed_metal = 15)
+		if("SRM")
+			uniform = /obj/item/clothing/under/suit/roumain
+			suit = /obj/item/clothing/suit/armor/roumain/shadow
+			if(prob(25))
+				suit_store = /obj/item/gun/ballistic/rifle/boltaction/roumain
+			head = /obj/item/clothing/head/cowboy/sec/roumain/shadow
+			shoes = /obj/item/clothing/shoes/workboots/mining
+			r_pocket = /obj/item/paper/fluff/trickwines_4_brewers
+			belt = pick(list(/obj/item/kitchen/knife/hunting = 1, /obj/item/gun/ballistic/derringer = 1))
+			back = /obj/item/storage/backpack/cultpack
+			if(prob(75))
+				backpack_contents += pick(list(/obj/item/ammo_box/c38_box/hunting = 1, /obj/item/reagent_containers/food/drinks/drinkingglass/breakawayflask/vintageash = 1, /obj/item/reagent_containers/food/drinks/drinkingglass/breakawayflask/vintageice = 1, /obj/item/reagent_containers/food/drinks/drinkingglass/breakawayflask/vintageshock = 1))
+			if(prob(75))
+				backpack_contents += pick(list(/obj/item/ammo_box/c38_box/hunting = 1, /obj/item/reagent_containers/food/drinks/drinkingglass/breakawayflask/vintageash = 1, /obj/item/reagent_containers/food/drinks/drinkingglass/breakawayflask/vintageice = 1, /obj/item/reagent_containers/food/drinks/drinkingglass/breakawayflask/vintageshock = 1))
+			if(prob(75))
+				backpack_contents += pick(list(/obj/item/ammo_box/c38_box/hunting = 1, /obj/item/reagent_containers/food/drinks/drinkingglass/breakawayflask/vintageash = 1, /obj/item/reagent_containers/food/drinks/drinkingglass/breakawayflask/vintageice = 1, /obj/item/reagent_containers/food/drinks/drinkingglass/breakawayflask/vintageshock = 1))
+			if(prob(75))
+				backpack_contents += pick(list(/obj/item/ammo_box/c38_box/hunting = 1, /obj/item/reagent_containers/food/drinks/drinkingglass/breakawayflask/vintageash = 1, /obj/item/reagent_containers/food/drinks/drinkingglass/breakawayflask/vintageice = 1, /obj/item/reagent_containers/food/drinks/drinkingglass/breakawayflask/vintageshock = 1))
 	. = ..()
 
 // Snow Legion
