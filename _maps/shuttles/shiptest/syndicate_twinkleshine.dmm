@@ -427,7 +427,7 @@
 	icon_state = "4-8"
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered{
-	dir = 4
+	dir = 5
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/security)
@@ -3278,12 +3278,10 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "wg" = (
-/obj/effect/turf_decal/spline/fancy/opaque/syndiered/corner{
-	dir = 8
-	},
 /obj/structure/cable/yellow{
 	icon_state = "2-9"
 	},
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/security/armory)
 "wh" = (
@@ -3596,6 +3594,9 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "xx" = (
@@ -4359,9 +4360,6 @@
 	},
 /turf/open/floor/pod/dark,
 /area/ship/cargo)
-"CW" = (
-/turf/open/floor/mineral/plastitanium/red,
-/area/ship/security)
 "Da" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
@@ -4631,6 +4629,9 @@
 "ET" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered{
+	dir = 2
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/security)
@@ -5317,7 +5318,7 @@
 /obj/effect/turf_decal/rechargefloor,
 /obj/machinery/light,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/mecha_wreckage/gygax/dark,
+/obj/mecha/combat/gygax/dark,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "Im" = (
@@ -5615,10 +5616,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
 	},
-/obj/effect/turf_decal/spline/fancy/opaque/syndiered/corner{
-	dir = 1
-	},
-/obj/effect/turf_decal/spline/fancy/opaque/syndiered/corner{
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered{
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium/red,
@@ -6114,9 +6112,6 @@
 "NE" = (
 /obj/structure/sign/poster/contraband/bulldog{
 	pixel_y = 32
-	},
-/obj/effect/turf_decal/spline/fancy/opaque/black{
-	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security)
@@ -7089,7 +7084,7 @@
 /area/ship/engineering/engine)
 "TC" = (
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered{
-	dir = 4
+	dir = 6
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/security/armory)
@@ -9070,7 +9065,7 @@ HH
 Pa
 ZH
 HG
-CW
+IB
 hY
 wh
 mp
