@@ -33,8 +33,8 @@
 	species_head = /obj/item/bodypart/head/vox
 	species_l_arm = /obj/item/bodypart/l_arm/vox
 	species_r_arm = /obj/item/bodypart/r_arm/vox
-	species_l_leg = /obj/item/bodypart/l_leg/vox
-	species_r_leg = /obj/item/bodypart/r_leg/vox
+	species_l_leg = /obj/item/bodypart/leg/left/vox
+	species_r_leg = /obj/item/bodypart/leg/right/vox
 
 	var/datum/action/innate/tail_hold/tail_action
 

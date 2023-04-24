@@ -21,10 +21,13 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/seedvault)
 "af" = (
-/obj/machinery/vending/hydroseeds{
-	all_items_free = 1
-	},
 /obj/effect/turf_decal/trimline/opaque/green/filled/line,
+/obj/structure/closet/crate/hydroponics,
+/obj/item/seeds/watermelon,
+/obj/item/seeds/random,
+/obj/item/seeds/random,
+/obj/item/seeds/whitebeet,
+/obj/item/seeds/replicapod,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/seedvault)
 "ag" = (
@@ -185,7 +188,6 @@
 /obj/effect/spawner/lootdrop/seed_vault,
 /obj/effect/spawner/lootdrop/seed_vault,
 /obj/item/vending_refill/hydronutrients,
-/obj/item/vending_refill/hydroseeds,
 /turf/open/floor/vault,
 /area/ruin/powered/seedvault)
 "aC" = (
@@ -422,7 +424,6 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/powered/seedvault)
 "bf" = (
-/obj/machinery/biogenerator,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/trimline/opaque/green/corner{
 	dir = 8
@@ -430,6 +431,7 @@
 /obj/effect/turf_decal/trimline/opaque/green/line{
 	dir = 5
 	},
+/obj/machinery/biogenerator/vault,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/powered/seedvault)
 "bg" = (
@@ -682,6 +684,13 @@
 "KF" = (
 /obj/machinery/door/airlock/titanium,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/turf/open/floor/vault,
+/area/ruin/powered/seedvault)
+"LG" = (
+/obj/effect/spawner/lootdrop/seed_vault,
+/obj/structure/closet/crate/hydroponics,
+/obj/effect/spawner/lootdrop/seed_vault,
+/obj/effect/spawner/lootdrop/seed_vault,
 /turf/open/floor/vault,
 /area/ruin/powered/seedvault)
 "Ou" = (
@@ -1120,7 +1129,7 @@ aO
 ah
 ac
 aB
-aB
+LG
 aB
 ac
 ac

@@ -1464,13 +1464,13 @@
 	pixel_x = 14
 	},
 /obj/machinery/power/apc/auto_name/north,
-/obj/item/stack/spacecash/c1000{
+/obj/item/spacecash/bundle/c1000{
 	pixel_x = 7
 	},
-/obj/item/stack/spacecash/c1000{
+/obj/item/spacecash/bundle/c1000{
 	pixel_x = 7
 	},
-/obj/item/stack/spacecash/c1000{
+/obj/item/spacecash/bundle/c1000{
 	pixel_x = 7
 	},
 /turf/open/floor/plasteel/dark,
@@ -2713,9 +2713,6 @@
 /obj/structure/sign/poster/contraband/random{
 	pixel_x = 32
 	},
-/obj/machinery/vending/hydroseeds{
-	use_power = 0
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/corner/opaque/green{
@@ -2724,6 +2721,11 @@
 /obj/effect/turf_decal/corner/opaque/green{
 	dir = 8
 	},
+/obj/structure/closet/crate/hydroponics,
+/obj/effect/spawner/lootdrop/seeded,
+/obj/effect/spawner/lootdrop/seeded,
+/obj/effect/spawner/lootdrop/seeded,
+/obj/item/seeds/random,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "dH" = (

@@ -406,9 +406,9 @@
 /turf/open/floor/wood,
 /area/ship/crew)
 "ch" = (
-/obj/item/stack/spacecash/c200,
+/obj/item/spacecash/bundle/c200,
 /obj/item/clothing/suit/hawaiian,
-/obj/item/stack/spacecash/c1000,
+/obj/item/spacecash/bundle/c1000,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/closet/wall{
 	dir = 4;
@@ -601,11 +601,11 @@
 /area/ship/hallway/port)
 "dG" = (
 /obj/structure/closet/secure_closet/personal/cabinet,
-/obj/item/stack/spacecash/c100,
-/obj/item/stack/spacecash/c100,
+/obj/item/spacecash/bundle/c100,
+/obj/item/spacecash/bundle/c100,
 /obj/item/clothing/suit/jacket/letterman,
 /obj/item/clothing/suit/ianshirt,
-/obj/item/stack/spacecash/c200,
+/obj/item/spacecash/bundle/c200,
 /obj/item/clothing/under/suit/blacktwopiece,
 /obj/machinery/light/small{
 	dir = 4
@@ -1846,7 +1846,7 @@
 /obj/item/clothing/under/dress/blacktango,
 /obj/item/clothing/glasses/sunglasses,
 /obj/item/clothing/gloves/color/evening,
-/obj/item/stack/spacecash/c100,
+/obj/item/spacecash/bundle/c100,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -1876,10 +1876,16 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "lV" = (
-/obj/machinery/vending/hydroseeds,
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
 	},
+/obj/structure/closet/crate/hydroponics,
+/obj/item/seeds/apple,
+/obj/item/seeds/pineapple,
+/obj/item/seeds/tomato,
+/obj/item/seeds/wheat,
+/obj/item/seeds/watermelon,
+/obj/item/seeds/carrot,
 /turf/open/floor/wood,
 /area/ship/crew/hydroponics)
 "mh" = (
@@ -3002,7 +3008,7 @@
 /area/ship/crew/canteen/kitchen)
 "tx" = (
 /obj/structure/table/wood/poker,
-/obj/item/stack/spacecash/c100,
+/obj/item/spacecash/bundle/c100,
 /turf/open/floor/light/colour_cycle/dancefloor_a,
 /area/ship/crew/office)
 "tA" = (
@@ -6563,7 +6569,7 @@
 /obj/item/clothing/suit/toggle/lawyer/black,
 /obj/item/clothing/neck/tie/blue,
 /obj/item/pen/fountain,
-/obj/item/stack/spacecash/c100,
+/obj/item/spacecash/bundle/c100,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -7480,7 +7486,7 @@
 /obj/item/clothing/under/suit/black/female,
 /obj/item/clothing/neck/tie/red,
 /obj/item/toy/cards/deck/syndicate,
-/obj/item/stack/spacecash/c100,
+/obj/item/spacecash/bundle/c100,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -7691,7 +7697,7 @@
 /area/ship/engineering)
 "Zt" = (
 /obj/structure/table/wood/poker,
-/obj/item/stack/spacecash/c200,
+/obj/item/spacecash/bundle/c200,
 /turf/open/floor/light/colour_cycle/dancefloor_a,
 /area/ship/crew/office)
 "Zu" = (
