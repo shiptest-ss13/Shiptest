@@ -132,8 +132,7 @@
 	description = "A bombed out airbase from the ICW, taken back over by nature"
 	suffix = "jungle_bombed_starport.dmm"
 
-
-/datum/map_template/ruin/jungle/airbase
+/datum/map_template/ruin/jungle/cavecrew
 	name = "Frontiersmen Cave"
 	id = "cavecrew"
 	description = "A frontiersmen base, hidden within a cave. They don't seem friendly"
