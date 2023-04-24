@@ -122,6 +122,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						)
 	var/list/randomise = list(RANDOM_UNDERWEAR = TRUE, RANDOM_UNDERWEAR_COLOR = TRUE, RANDOM_UNDERSHIRT = TRUE, RANDOM_SOCKS = TRUE, RANDOM_BACKPACK = TRUE, RANDOM_JUMPSUIT_STYLE = TRUE, RANDOM_EXOWEAR_STYLE = TRUE, RANDOM_HAIRSTYLE = TRUE, RANDOM_HAIR_COLOR = TRUE, RANDOM_FACIAL_HAIRSTYLE = TRUE, RANDOM_FACIAL_HAIR_COLOR = TRUE, RANDOM_SKIN_TONE = TRUE, RANDOM_EYE_COLOR = TRUE)
 	var/list/friendlyGenders = list("Male" = "male", "Female" = "female", "Other" = "plural")
+	var/synthetic = FALSE
 	var/list/prosthetic_limbs = list(BODY_ZONE_L_ARM = PROSTHETIC_NORMAL, BODY_ZONE_R_ARM = PROSTHETIC_NORMAL, BODY_ZONE_L_LEG = PROSTHETIC_NORMAL, BODY_ZONE_R_LEG = PROSTHETIC_NORMAL)
 	var/phobia = "spiders"
 	var/list/alt_titles_preferences = list()
@@ -376,10 +377,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_SOCKS]'>[(randomise[RANDOM_SOCKS]) ? "Lock" : "Unlock"]</A><BR></td>"
 
 
-			var/use_skintones = pref_species.use_skintones
-			if(use_skintones)
+			dat += APPEARANCE_CATEGORY_COLUMN
 
-				dat += APPEARANCE_CATEGORY_COLUMN
+			if(pref_species.use_skintones)
 
 				dat += "<h3>Skin Tone</h3>"
 
@@ -387,26 +387,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_SKIN_TONE]'>[(randomise[RANDOM_SKIN_TONE]) ? "Lock" : "Unlock"]</A>"
 				dat += "<br>"
 
-			var/mutant_colors
-			if((MUTCOLORS in pref_species.species_traits) || (MUTCOLORS_PARTSONLY in pref_species.species_traits))
+			// Everyone gets mutant colors now.
+			dat += "<h3>Mutant Colors</h3>"
 
-				if(!use_skintones)
-					dat += APPEARANCE_CATEGORY_COLUMN
-
-				dat += "<h3>Mutant Colors</h3>"
-
-				dat += "<span style='border: 1px solid #161616; background-color: #[features["mcolor"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=mutant_color;task=input'>Change</a><BR>"
-
-				mutant_colors = TRUE
-
-				// If you have secondary mutant colors, you should have primary mutant colors too.
-				if((MUTCOLORS_SECONDARY in pref_species.species_traits))
-					dat += "<span style='border: 1px solid #161616; background-color: #[features["mcolor2"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=mutant_color2;task=input'>Change</a><BR>"
+			dat += "<span style='border: 1px solid #161616; background-color: #[features["mcolor"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=mutant_color;task=input'>Change</a><BR>"
+			dat += "<span style='border: 1px solid #161616; background-color: #[features["mcolor2"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=mutant_color_2;task=input'>Change</a><BR>"
 
 			if(istype(pref_species, /datum/species/ethereal)) //not the best thing to do tbf but I dont know whats better.
-
-				if(!use_skintones)
-					dat += APPEARANCE_CATEGORY_COLUMN
 
 				dat += "<h3>Ethereal Color</h3>"
 
@@ -415,16 +402,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 			if((EYECOLOR in pref_species.species_traits) && !(NOEYESPRITES in pref_species.species_traits))
 
-				if(!use_skintones && !mutant_colors)
-					dat += APPEARANCE_CATEGORY_COLUMN
-
 				dat += "<h3>Eye Color</h3>"
 				dat += "<span style='border: 1px solid #161616; background-color: #[eye_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=eyes;task=input'>Change</a>"
 				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_EYE_COLOR]'>[(randomise[RANDOM_EYE_COLOR]) ? "Lock" : "Unlock"]</A>"
 
 				dat += "<br></td>"
-			else if(use_skintones || mutant_colors)
-				dat += "</td>"
+
+			dat += "</td>"
 
 			if(HAIR in pref_species.species_traits)
 
@@ -852,14 +836,17 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "</tr></table>"
 
 			dat += "<h3>Prosthetic Limbs</h3>"
-			dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_PROSTHETIC]'>Random Prosthetic: [(randomise[RANDOM_PROSTHETIC]) ? "Yes" : "No"]</A><br>"
+			dat += "<a href='?_src_=prefs;preference=synthetic'>Synthetic: [synthetic ? "Yes" : "No"]</a><br>"
 
-			dat += "<table>"
-			for(var/index in prosthetic_limbs)
-				var/bodypart_name = parse_zone(index)
-				dat += "<tr><td><b>[bodypart_name]:</b></td>"
-				dat += "<td><a href='?_src_=prefs;preference=limbs;customize_limb=[index]'>[prosthetic_limbs[index]]</a></td></tr>"
-			dat += "</table><br>"
+			if(!synthetic)
+				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_PROSTHETIC]'>Random Prosthetic: [(randomise[RANDOM_PROSTHETIC]) ? "Yes" : "No"]</a><br>"
+
+				dat += "<table>"
+				for(var/index in prosthetic_limbs)
+					var/bodypart_name = parse_zone(index)
+					dat += "<tr><td><b>[bodypart_name]:</b></td>"
+					dat += "<td><a href='?_src_=prefs;preference=limbs;customize_limb=[index]'>[prosthetic_limbs[index]]</a></td></tr>"
+				dat += "</table><br>"
 
 		if(2) //Loadout
 			if(path)
@@ -2059,6 +2046,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						facial_hairstyle = random_facial_hairstyle(gender)
 						hairstyle = random_hairstyle(gender)
 
+				if("synthetic")
+					synthetic = !synthetic
+
 				if("limbs")
 					if(href_list["customize_limb"])
 						var/limb = href_list["customize_limb"]
@@ -2400,36 +2390,28 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	//prosthetics work for vox and kepori and update just fine for everyone
 	character.dna.features = features.Copy()
-	character.set_species(chosen_species, icon_update = FALSE, pref_load = TRUE)
+	character.set_species(chosen_species, icon_update = FALSE, pref_load = TRUE, robotic = synthetic)
 
-	for(var/pros_limbs in prosthetic_limbs)
-		var/obj/item/bodypart/old_part = character.get_bodypart(pros_limbs)
-		if(old_part)
-			icon_updates = TRUE
-		switch(prosthetic_limbs[pros_limbs])
-			if(PROSTHETIC_NORMAL)
-				if(old_part)
-					old_part.drop_limb(TRUE)
-					qdel(old_part)
-				character.regenerate_limb(pros_limbs)
-			if(PROSTHETIC_AMPUTATED)
-				if(old_part)
-					old_part.drop_limb(TRUE)
-					qdel(old_part)
-			if(PROSTHETIC_ROBOTIC)
-				var/obj/item/bodypart/prosthetic
-				var/typepath
-				if(character.dna.species.unique_prosthesis) // Checks for if the species has a unique limb type, otherwise defaults to human
-					typepath = text2path("/obj/item/bodypart/[pros_limbs]/robot/surplus/[character.dna.species.id]")
-				else
-					typepath = text2path("/obj/item/bodypart/[pros_limbs]/robot/surplus")
-				if(!ispath(typepath))
-					to_chat(character, "<span class='warning'>Problem initializing [pros_limbs] prosthetic for species [character.dna.species], it will be a normal limb. Make a bug report on github!</span>")
-					continue
-				prosthetic = new typepath(character)
-				prosthetic.replace_limb(character, special = TRUE)
-				if(old_part)
-					qdel(old_part)
+	if(!synthetic)
+		for(var/pros_limb in prosthetic_limbs)
+			var/obj/item/bodypart/old_part = character.get_bodypart(pros_limb)
+			if(old_part)
+				icon_updates = TRUE
+			switch(prosthetic_limbs[pros_limb])
+				if(PROSTHETIC_NORMAL)
+					if(old_part)
+						old_part.drop_limb(TRUE)
+						qdel(old_part)
+					character.regenerate_limb(pros_limb)
+				if(PROSTHETIC_AMPUTATED)
+					if(old_part)
+						old_part.drop_limb(TRUE)
+						qdel(old_part)
+				if(PROSTHETIC_ROBOTIC)
+					if(old_part)
+						old_part.drop_limb(TRUE)
+						qdel(old_part)
+					character.regenerate_limb(pros_limb, robotic = TRUE)
 
 	if(pref_species.id == "ipc") // If triggered, vox and kepori arms do not spawn in but ipcs sprites break without it as the code for setting the right prosthetics for them is in set_species().
 		character.set_species(chosen_species, icon_update = FALSE, pref_load = TRUE)

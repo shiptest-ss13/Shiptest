@@ -212,9 +212,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/changesource_flags = NONE
 	var/loreblurb = "Description not provided. Yell at a coder. Also, please look into cooking fajitas. That stuff is amazing."
 
-	// Does this species have unique robotic limbs? (currently used in: kepori and vox)
-	var/unique_prosthesis = FALSE
-
 	//K-Limbs. If a species doesn't have their own limb types. Do not override this, use the K-Limbs overrides at the top of the species datum.
 	var/obj/item/bodypart/species_chest = /obj/item/bodypart/chest
 	var/obj/item/bodypart/species_head = /obj/item/bodypart/head
@@ -222,6 +219,23 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/obj/item/bodypart/species_r_arm = /obj/item/bodypart/r_arm
 	var/obj/item/bodypart/species_r_leg = /obj/item/bodypart/leg/right
 	var/obj/item/bodypart/species_l_leg = /obj/item/bodypart/leg/left
+
+	var/obj/item/bodypart/species_robotic_chest = /obj/item/bodypart/chest/robot
+	var/obj/item/bodypart/species_robotic_head = /obj/item/bodypart/head/robot
+	var/obj/item/bodypart/species_robotic_l_arm = /obj/item/bodypart/l_arm/robot/surplus
+	var/obj/item/bodypart/species_robotic_r_arm = /obj/item/bodypart/r_arm/robot/surplus
+	var/obj/item/bodypart/species_robotic_l_leg = /obj/item/bodypart/leg/left/robot/surplus
+	var/obj/item/bodypart/species_robotic_r_leg = /obj/item/bodypart/leg/right/robot/surplus
+
+	var/obj/item/organ/brain/robotic_brain = /obj/item/organ/brain/mmi_holder
+	var/obj/item/organ/heart/robotic_heart = /obj/item/organ/heart/cybernetic
+	var/obj/item/organ/lungs/robotic_lungs = /obj/item/organ/lungs/cybernetic
+	var/obj/item/organ/eyes/robotic_eyes = /obj/item/organ/eyes/robotic
+	var/obj/item/organ/ears/robotic_ears = /obj/item/organ/ears/cybernetic
+	var/obj/item/organ/tongue/robotic_tongue = /obj/item/organ/tongue/robot
+	var/obj/item/organ/liver/robotic_liver = /obj/item/organ/liver/cybernetic
+	var/obj/item/organ/stomach/robotic_stomach = /obj/item/organ/stomach/cybernetic
+	var/obj/item/organ/appendix/robotic_appendix = null
 
 	///For custom overrides for species ass images
 	var/icon/ass_image
@@ -308,10 +322,18 @@ GLOBAL_LIST_EMPTY(roundstart_races)
  * * replace_current - boolean, forces all old organs to get deleted whether or not they pass the species' ability to keep that organ
  * * excluded_zones - list, add zone defines to block organs inside of the zones from getting handled. see headless mutation for an example
  */
-/datum/species/proc/regenerate_organs(mob/living/carbon/C,datum/species/old_species,replace_current=TRUE,list/excluded_zones)
+/datum/species/proc/regenerate_organs(mob/living/carbon/C, datum/species/old_species,replace_current=TRUE, list/excluded_zones, robotic = FALSE)
 	//what should be put in if there is no mutantorgan (brains handled seperately)
-	var/list/slot_mutantorgans = list(ORGAN_SLOT_BRAIN = mutantbrain, ORGAN_SLOT_HEART = mutantheart, ORGAN_SLOT_LUNGS = mutantlungs, ORGAN_SLOT_APPENDIX = mutantappendix, \
-	ORGAN_SLOT_EYES = mutanteyes, ORGAN_SLOT_EARS = mutantears, ORGAN_SLOT_TONGUE = mutanttongue, ORGAN_SLOT_LIVER = mutantliver, ORGAN_SLOT_STOMACH = mutantstomach)
+	var/list/slot_mutantorgans = list( \
+		ORGAN_SLOT_BRAIN = robotic ? robotic_brain : mutantbrain, \
+		ORGAN_SLOT_HEART = robotic ? robotic_heart : mutantheart, \
+		ORGAN_SLOT_LUNGS = robotic ? robotic_lungs : mutantlungs, \
+		ORGAN_SLOT_APPENDIX = robotic ? robotic_appendix : mutantappendix, \
+		ORGAN_SLOT_EYES = robotic ? robotic_eyes : mutanteyes, \
+		ORGAN_SLOT_EARS = robotic ? robotic_ears : mutantears, \
+		ORGAN_SLOT_TONGUE = robotic ? robotic_tongue : mutanttongue, \
+		ORGAN_SLOT_LIVER = robotic ? robotic_liver : mutantliver, \
+		ORGAN_SLOT_STOMACH = robotic ? robotic_stomach : mutantstomach)
 
 	for(var/slot in list(ORGAN_SLOT_BRAIN, ORGAN_SLOT_HEART, ORGAN_SLOT_LUNGS, ORGAN_SLOT_APPENDIX, \
 	ORGAN_SLOT_EYES, ORGAN_SLOT_EARS, ORGAN_SLOT_TONGUE, ORGAN_SLOT_LIVER, ORGAN_SLOT_STOMACH))
@@ -358,7 +380,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			QDEL_NULL(old)
 		I.Insert(C)
 
-/datum/species/proc/replace_body(mob/living/carbon/C, datum/species/new_species)
+/datum/species/proc/replace_body(mob/living/carbon/C, datum/species/new_species, robotic = FALSE)
 	new_species ||= C.dna.species //If no new species is provided, assume its src.
 	//Note for future: Potentionally add a new C.dna.species() to build a template species for more accurate limb replacement
 
@@ -370,49 +392,12 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		if(old_part.change_exempt_flags & BP_BLOCK_CHANGE_SPECIES)
 			continue
 
-		switch(old_part.body_zone)
-			if(BODY_ZONE_HEAD)
-				var/obj/item/bodypart/head/new_part = new new_species.species_head()
-				new_part.brute_dam = old_part.brute_dam
-				new_part.burn_dam = old_part.burn_dam
-				new_part.replace_limb(C, TRUE)
-				new_part.update_limb(is_creating = TRUE)
-				qdel(old_part)
-			if(BODY_ZONE_CHEST)
-				var/obj/item/bodypart/chest/new_part = new new_species.species_chest()
-				new_part.brute_dam = old_part.brute_dam
-				new_part.burn_dam = old_part.burn_dam
-				new_part.replace_limb(C, TRUE)
-				new_part.update_limb(is_creating = TRUE)
-				qdel(old_part)
-			if(BODY_ZONE_L_ARM)
-				var/obj/item/bodypart/l_arm/new_part = new new_species.species_l_arm()
-				new_part.brute_dam = old_part.brute_dam
-				new_part.burn_dam = old_part.burn_dam
-				new_part.replace_limb(C, TRUE)
-				new_part.update_limb(is_creating = TRUE)
-				qdel(old_part)
-			if(BODY_ZONE_R_ARM)
-				var/obj/item/bodypart/r_arm/new_part = new new_species.species_r_arm()
-				new_part.brute_dam = old_part.brute_dam
-				new_part.burn_dam = old_part.burn_dam
-				new_part.replace_limb(C, TRUE)
-				new_part.update_limb(is_creating = TRUE)
-				qdel(old_part)
-			if(BODY_ZONE_L_LEG)
-				var/obj/item/bodypart/leg/left/new_part = new new_species.species_l_leg()
-				new_part.brute_dam = old_part.brute_dam
-				new_part.burn_dam = old_part.burn_dam
-				new_part.replace_limb(C, TRUE)
-				new_part.update_limb(is_creating = TRUE)
-				qdel(old_part)
-			if(BODY_ZONE_R_LEG)
-				var/obj/item/bodypart/leg/right/new_part = new new_species.species_r_leg()
-				new_part.brute_dam = old_part.brute_dam
-				new_part.burn_dam = old_part.burn_dam
-				new_part.replace_limb(C, TRUE)
-				new_part.update_limb(is_creating = TRUE)
-				qdel(old_part)
+		var/obj/item/bodypart/new_part = C.new_body_part(old_part.body_zone, robotic, FALSE, new_species)
+		new_part.brute_dam = old_part.brute_dam
+		new_part.burn_dam = old_part.burn_dam
+		new_part.replace_limb(C, TRUE)
+		new_part.update_limb(is_creating = TRUE)
+		qdel(old_part)
 
 /**
  * Proc called when a carbon becomes this species.
@@ -424,7 +409,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
  * * old_species - The species that the carbon used to be before becoming this race, used for regenerating organs.
  * * pref_load - Preferences to be loaded from character setup, loads in preferred mutant things like bodyparts, digilegs, skin color, etc.
  */
-/datum/species/proc/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load)
+/datum/species/proc/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load, robotic = FALSE)
 	// Drop the items the new species can't wear
 	if((AGENDER in species_traits))
 		C.gender = PLURAL
@@ -442,11 +427,11 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	if(C.hud_used)
 		C.hud_used.update_locked_slots()
 
-	replace_body(C)
+	replace_body(C, robotic = robotic)
 
 	C.mob_biotypes = inherent_biotypes
 
-	regenerate_organs(C,old_species)
+	regenerate_organs(C, old_species, robotic = robotic)
 
 	if(exotic_bloodtype && C.dna.blood_type != exotic_bloodtype)
 		C.dna.blood_type = get_blood_type(exotic_bloodtype)
@@ -941,7 +926,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				if("waggingspines")
 					S = GLOB.animated_spines_list[H.dna.features["spines"]]
 				if("snout")
-					S = GLOB.snouts_list[H.dna.features["snout"]]
+					S = (HD.bodytype & BODYTYPE_ROBOTIC) ? GLOB.snouts_list["Synthetic"] : GLOB.snouts_list[H.dna.features["snout"]]
 				if("frills")
 					S = GLOB.frills_list[H.dna.features["frills"]]
 				if("horns")
@@ -1026,7 +1011,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 								accessory_overlay.color = "#[H.dna.features["mcolor"]]"
 						if(MUTCOLORS_SECONDARY)
 							accessory_overlay.color = "#[H.dna.features["mcolor2"]]"
-						
+
 						if(HAIR)
 							if(hair_color == "mutcolor")
 								accessory_overlay.color = "#[H.dna.features["mcolor"]]"

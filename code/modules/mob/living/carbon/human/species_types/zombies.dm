@@ -108,7 +108,7 @@
 	species_l_leg = /obj/item/bodypart/leg/left/zombie
 	species_r_leg = /obj/item/bodypart/leg/right/zombie
 
-/datum/species/human/krokodil_addict/replace_body(mob/living/carbon/C, datum/species/new_species)
+/datum/species/human/krokodil_addict/replace_body(mob/living/carbon/C, datum/species/new_species, robotic = FALSE)
 	..()
 	var/skintone
 	if(ishuman(C))

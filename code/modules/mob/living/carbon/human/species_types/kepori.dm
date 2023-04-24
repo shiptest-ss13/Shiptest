@@ -41,14 +41,19 @@
 	/// See: [/datum/component/tackler/var/skill_mod]
 	var/skill_mod = 2
 
-	unique_prosthesis = TRUE
-
 	species_chest = /obj/item/bodypart/chest/kepori
 	species_head = /obj/item/bodypart/head/kepori
 	species_l_arm = /obj/item/bodypart/l_arm/kepori
 	species_r_arm = /obj/item/bodypart/r_arm/kepori
 	species_l_leg = /obj/item/bodypart/leg/left/kepori
 	species_r_leg = /obj/item/bodypart/leg/right/kepori
+
+	species_robotic_chest = /obj/item/bodypart/chest/robot/kepori
+	species_robotic_head = /obj/item/bodypart/head/robot/kepori
+	species_robotic_l_arm = /obj/item/bodypart/l_arm/robot/surplus/kepori
+	species_robotic_r_arm = /obj/item/bodypart/r_arm/robot/surplus/kepori
+	species_robotic_l_leg = /obj/item/bodypart/leg/left/robot/surplus/kepori
+	species_robotic_r_leg = /obj/item/bodypart/leg/right/robot/surplus/kepori
 
 /datum/species/kepori/New()
 	. = ..()

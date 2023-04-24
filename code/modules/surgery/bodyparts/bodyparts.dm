@@ -26,7 +26,7 @@
 	/// The icon state of the limb's overlay, colored with a different color
 	var/overlay_icon_state
 	/// The color of the limb's overlay
-	var/overlay_draw_color
+	var/species_secondary_color
 
 	var/body_zone //BODY_ZONE_CHEST, BODY_ZONE_L_ARM, etc , used for def_zone
 	/// The body zone of this part in english ("chest", "left arm", etc) without the species attached to it
@@ -554,9 +554,8 @@
 		else
 			species_color = null
 
-		//
-		if((MUTCOLORS_SECONDARY in S.species_traits) && uses_mutcolor && overlay_icon_state)
-			overlay_draw_color = H.dna.features["mcolor2"]
+		if(overlay_icon_state)
+			species_secondary_color = H.dna.features["mcolor2"]
 
 		UnregisterSignal(owner, COMSIG_MOVABLE_MOVED)
 		if(NO_BONES in S.species_traits)
@@ -661,6 +660,12 @@
 		if(should_draw_greyscale) //Should the limb be colored outside of a forced color?
 			draw_color ||= (species_color) || (skin_tone && skintone2hex(skin_tone))
 
+		if(overlay_icon_state)
+			var/mutable_appearance/overlay = mutable_appearance(limb.icon, overlay_icon_state, -BODY_ADJ_LAYER, image_dir)
+			overlay.appearance_flags = RESET_COLOR
+			overlay.color = species_secondary_color
+			. += overlay
+
 		if(draw_color)
 			limb.color = "#[draw_color]"
 			if(aux_zone)
@@ -668,7 +673,7 @@
 
 		if(overlay_icon_state)
 			var/image/overlay = image(limb.icon, overlay_icon_state, -BODY_ADJ_LAYER, image_dir)
-			overlay.color = overlay_draw_color
+			overlay.color = species_secondary_color
 			. += overlay
 
 	//Ok so legs are a bit goofy in regards to layering, and we will need two images instead of one to fix that

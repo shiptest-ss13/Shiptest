@@ -1840,6 +1840,11 @@
 	name = "Round + Light"
 	icon_state = "roundlight"
 
+/datum/sprite_accessory/snouts/synth
+	name = "Synthetic"
+	icon_state = "synth"
+	color_src = MUTCOLORS_SECONDARY
+
 /datum/sprite_accessory/horns
 	icon = 'icons/mob/mutant_bodyparts.dmi'
 	color_src = MUTCOLORS_SECONDARY
