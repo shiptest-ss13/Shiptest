@@ -545,6 +545,9 @@
 /obj/machinery/atmospherics/pipe/layer_manifold{
 	dir = 1
 	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/crew/cryo)
 "fq" = (
@@ -1612,6 +1615,9 @@
 /obj/machinery/door/airlock/external,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/crew/cryo)
 "pA" = (
@@ -3490,6 +3496,9 @@
 	port_direction = 8;
 	preferred_direction = 4
 	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/crew/cryo)
 "GY" = (
@@ -3720,6 +3729,9 @@
 /area/ship/crew/dorm)
 "Iy" = (
 /obj/machinery/door/airlock/external,
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/crew/cryo)
 "IB" = (
@@ -5263,6 +5275,7 @@ Sv
 Sv
 Sv
 Sv
+Sv
 DE
 XY
 DE
@@ -5275,6 +5288,7 @@ Sv
 Sv
 "}
 (2,1,1) = {"
+Sv
 Sv
 Sv
 Sv
@@ -5300,6 +5314,7 @@ Sv
 Sv
 Sv
 Sv
+Sv
 pF
 DE
 vm
@@ -5315,6 +5330,7 @@ Sv
 Sv
 "}
 (4,1,1) = {"
+Sv
 Sv
 Sv
 Sv
@@ -5340,6 +5356,7 @@ Sv
 Sv
 Sv
 Sv
+Sv
 DE
 DY
 dF
@@ -5355,6 +5372,7 @@ Sv
 Sv
 "}
 (6,1,1) = {"
+Sv
 Sv
 Sv
 Sv
@@ -5378,6 +5396,7 @@ Sv
 Sv
 Sv
 Sv
+Sv
 DE
 hY
 DE
@@ -5395,6 +5414,7 @@ Sv
 Sv
 "}
 (8,1,1) = {"
+Sv
 Sv
 Sv
 Sv
@@ -5417,6 +5437,7 @@ Sv
 (9,1,1) = {"
 Sv
 Sv
+Sv
 Xw
 ul
 ul
@@ -5435,6 +5456,7 @@ pF
 Sv
 "}
 (10,1,1) = {"
+Sv
 Sv
 Xw
 ul
@@ -5456,6 +5478,7 @@ yy
 "}
 (11,1,1) = {"
 Sv
+Sv
 ul
 zz
 Dt
@@ -5475,6 +5498,7 @@ fr
 AF
 "}
 (12,1,1) = {"
+Sv
 Sv
 ul
 cb
@@ -5496,6 +5520,7 @@ AF
 "}
 (13,1,1) = {"
 Sv
+Sv
 ul
 zz
 Ji
@@ -5515,6 +5540,7 @@ IT
 AF
 "}
 (14,1,1) = {"
+Sv
 ul
 ul
 ul
@@ -5535,6 +5561,7 @@ qg
 AF
 "}
 (15,1,1) = {"
+Sv
 ul
 Qj
 IP
@@ -5555,6 +5582,7 @@ UO
 AF
 "}
 (16,1,1) = {"
+Sv
 fg
 bo
 Di
@@ -5575,6 +5603,7 @@ RM
 pA
 "}
 (17,1,1) = {"
+Sv
 GV
 Jr
 KJ
@@ -5595,6 +5624,7 @@ EX
 IC
 "}
 (18,1,1) = {"
+Sv
 ul
 Tl
 lx
@@ -5615,6 +5645,7 @@ cR
 AF
 "}
 (19,1,1) = {"
+Sv
 ul
 NB
 NB
@@ -5636,6 +5667,7 @@ bF
 "}
 (20,1,1) = {"
 Sv
+Sv
 NB
 Nv
 FW
@@ -5655,6 +5687,7 @@ Ko
 qR
 "}
 (21,1,1) = {"
+Sv
 Sv
 NB
 Nv
@@ -5676,6 +5709,7 @@ bF
 "}
 (22,1,1) = {"
 Sv
+Sv
 aF
 MG
 Zy
@@ -5695,6 +5729,7 @@ bF
 bF
 "}
 (23,1,1) = {"
+Sv
 Sv
 aF
 Iw
@@ -5716,6 +5751,7 @@ bF
 "}
 (24,1,1) = {"
 Sv
+Sv
 aF
 EM
 Re
@@ -5735,6 +5771,7 @@ Hq
 PW
 "}
 (25,1,1) = {"
+Sv
 Sv
 bD
 bD
@@ -5756,6 +5793,7 @@ bF
 "}
 (26,1,1) = {"
 Sv
+Sv
 bD
 pn
 MR
@@ -5776,6 +5814,7 @@ bG
 "}
 (27,1,1) = {"
 Sv
+Sv
 bD
 HO
 uL
@@ -5795,6 +5834,7 @@ mQ
 bG
 "}
 (28,1,1) = {"
+Sv
 Sv
 ES
 bD
@@ -5817,6 +5857,7 @@ Am
 (29,1,1) = {"
 Sv
 Sv
+Sv
 bD
 nx
 VJ
@@ -5835,6 +5876,7 @@ bG
 Sv
 "}
 (30,1,1) = {"
+Sv
 Sv
 Sv
 AS
@@ -5857,6 +5899,7 @@ Sv
 (31,1,1) = {"
 Sv
 Sv
+Sv
 AS
 Vu
 Im
@@ -5875,6 +5918,7 @@ bG
 Sv
 "}
 (32,1,1) = {"
+Sv
 Sv
 Sv
 bD
@@ -5897,6 +5941,7 @@ Sv
 (33,1,1) = {"
 Sv
 Sv
+Sv
 bD
 PL
 Ku
@@ -5915,6 +5960,7 @@ qr
 Sv
 "}
 (34,1,1) = {"
+Sv
 Sv
 Sv
 bD
@@ -5937,6 +5983,7 @@ Sv
 (35,1,1) = {"
 Sv
 Sv
+Sv
 FH
 yU
 yn
@@ -5955,6 +6002,7 @@ qr
 Sv
 "}
 (36,1,1) = {"
+Sv
 Sv
 Sv
 FH
@@ -5977,6 +6025,7 @@ Sv
 (37,1,1) = {"
 Sv
 Sv
+Sv
 Hs
 Hs
 Hs
@@ -5995,6 +6044,7 @@ Am
 Sv
 "}
 (38,1,1) = {"
+Sv
 Sv
 Sv
 Dr
@@ -6017,6 +6067,7 @@ Sv
 (39,1,1) = {"
 Sv
 Sv
+Sv
 Dr
 PI
 HP
@@ -6035,6 +6086,7 @@ Sv
 Sv
 "}
 (40,1,1) = {"
+Sv
 Sv
 Sv
 gf
@@ -6058,6 +6110,7 @@ Sv
 Sv
 Sv
 Sv
+Sv
 Hs
 eB
 xn
@@ -6075,6 +6128,7 @@ Sv
 Sv
 "}
 (42,1,1) = {"
+Sv
 Sv
 Sv
 Sv
@@ -6098,6 +6152,7 @@ Sv
 Sv
 Sv
 Sv
+Sv
 Hs
 ms
 iU
@@ -6115,6 +6170,7 @@ Sv
 Sv
 "}
 (44,1,1) = {"
+Sv
 Sv
 Sv
 Sv
@@ -6138,6 +6194,7 @@ Sv
 Sv
 Sv
 Sv
+Sv
 Dr
 mC
 xF
@@ -6155,6 +6212,7 @@ Sv
 Sv
 "}
 (46,1,1) = {"
+Sv
 Sv
 Sv
 Sv
@@ -6178,6 +6236,7 @@ Sv
 Sv
 Sv
 Sv
+Sv
 Dr
 Dr
 lj
@@ -6195,6 +6254,7 @@ Sv
 Sv
 "}
 (48,1,1) = {"
+Sv
 Sv
 Sv
 Sv
