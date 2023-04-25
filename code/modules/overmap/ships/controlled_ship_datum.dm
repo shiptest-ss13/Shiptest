@@ -40,7 +40,7 @@
 	/// List of currently-accepted missions.
 	var/list/datum/mission/missions
 	/// The maximum number of currently active missions that a ship may take on.
-	var/max_missions = 3
+	var/max_missions = 2
 	/// Manifest list of people on the ship
 	var/list/manifest = list()
 

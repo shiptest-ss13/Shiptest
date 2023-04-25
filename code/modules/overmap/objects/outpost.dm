@@ -7,7 +7,7 @@
 
 	/// List of missions that can be accepted at this outpost.
 	var/list/datum/mission/missions
-	var/max_missions = 20
+	var/max_missions = 15
 
 /datum/overmap/dynamic/outpost/Initialize(...)
 	. = ..()
