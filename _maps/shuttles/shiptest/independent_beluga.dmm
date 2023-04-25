@@ -250,6 +250,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
 	},
+/obj/effect/turf_decal/steeldecal/steel_decals4,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "cR" = (
@@ -756,6 +757,9 @@
 "hH" = (
 /obj/structure/bed,
 /obj/item/bedsheet/grey,
+/obj/effect/turf_decal/steeldecal/steel_decals7{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "hI" = (
@@ -1233,6 +1237,9 @@
 	},
 /obj/structure/bed,
 /obj/item/bedsheet/grey,
+/obj/effect/turf_decal/steeldecal/steel_decals7{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "lO" = (
@@ -1581,6 +1588,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/effect/turf_decal/trimline/opaque/yellow/line{
 	dir = 1
+	},
+/obj/effect/turf_decal/steeldecal/steel_decals9{
+	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
@@ -5118,6 +5128,7 @@
 /obj/effect/turf_decal/trimline/opaque/yellow/line{
 	dir = 1
 	},
+/obj/effect/turf_decal/steeldecal/steel_decals9,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "Zu" = (
