@@ -175,9 +175,14 @@
 	name = "Syndicate Laboratory 4071"
 	description = "A Syndicate laboratory run by syndicate scientists."
 
+/datum/map_template/ruin/space/singularitylab
+	id = "singularitylab"
+	suffix = "singularity_lab.dmm"
+	name = "Singularity Lab"
+	description = "An overgrown facility, home to an unstarted singularity and many plants"
+
 /datum/map_template/ruin/space/spacemall
 	id = "spacemall"
 	suffix = "spacemall.dmm"
 	name = "Space Mall"
 	description = "An old shopping centre, owned by a former member of Nanotrasen's board of directors.."
-
