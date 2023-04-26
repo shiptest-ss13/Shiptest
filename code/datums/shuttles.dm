@@ -10,6 +10,7 @@
 
 	var/port_x_offset
 	var/port_y_offset
+	var/port_dir
 
 	var/limit = 2
 	var/enabled
@@ -44,9 +45,23 @@
 /datum/map_template/shuttle/proc/discover_port_offset()
 	var/key
 	var/list/models = cached_map.grid_models
+	var/start_pos
+	var/model_text = models[key]
 	for(key in models)
-		if(findtext(models[key], "[/obj/docking_port/mobile]")) // Yay compile time checks
+		model_text = models[key]
+		start_pos = findtext(model_text, "[/obj/docking_port/mobile]")
+		if(start_pos) // Yay compile time checks
 			break // This works by assuming there will ever only be one mobile dock in a template at most
+
+	// Finding the dir of the mobile port
+	var/dpos = cached_map.find_next_delimiter_position(model_text, start_pos, ",","{","}")
+	var/cache_text = cached_map.trim_text(copytext(model_text, start_pos, dpos))
+	var/variables_start = findtext(cache_text, "{")
+	port_dir = NORTH // Incase something went wrong with variables from the cache
+	if(variables_start)
+		cache_text = copytext(cache_text, variables_start + length(cache_text[variables_start]), -length(copytext_char(cache_text, -1)))
+		var/list/fields = cached_map.readlist(cache_text, ";")
+		port_dir = fields["dir"] ? fields["dir"] : NORTH
 
 	for(var/datum/grid_set/gset as anything in cached_map.gridSets)
 		var/ycrd = gset.ycrd
@@ -61,21 +76,28 @@
 			--ycrd
 
 /datum/map_template/shuttle/load(turf/T, centered, register=TRUE)
-	. = ..()
+	if(centered)
+		T = locate(T.x - round(width/2) , T.y - round(height/2) , T.z)
+		centered = FALSE
+	//This assumes a non-multi-z shuttle. If you are making a multi-z shuttle, good luck with that, and you'll need to change the z bounds for this block.
+	var/list/turfs = block(locate(max(T.x, 1), max(T.y, 1),  T.z),
+							locate(min(T.x+width, world.maxx), min(T.y+height, world.maxy), T.z))
+	for(var/turf/turf in turfs)
+		turfs[turf] = turf.loc
+	keep_cached_map = TRUE //We need to access some stuff here below for shuttle skipovers
+	. = ..(T, centered, init_atmos = TRUE)
+	keep_cached_map = initial(keep_cached_map)
 	if(!.)
+		cached_map = keep_cached_map ? cached_map : null
 		return
-	var/list/turfs = block(locate(.[MAP_MINX], .[MAP_MINY], .[MAP_MINZ]),
-							locate(.[MAP_MAXX], .[MAP_MAXY], .[MAP_MAXZ]))
+	var/obj/docking_port/mobile/my_port
 	for(var/turf/place as anything in turfs)
-		if(istype(place, /turf/open/space)) // This assumes all shuttles are loaded in a single spot then moved to their real destination.
+		if(place.loc == turfs[place] || !istype(place.loc, /area/ship)) //If not part of the shuttle, ignore it
+			turfs -= place
 			continue
-		if(length(place.baseturfs) < 2) // Some snowflake shuttle shit
-			continue
-		var/list/sanity = place.baseturfs.Copy()
-		sanity.Insert(3, /turf/baseturf_skipover/shuttle) //The first two are the "real" baseturfs, place above these but below plating.
-		place.baseturfs = baseturfs_string_list(sanity, place)
 
 		for(var/obj/docking_port/mobile/port in place)
+			my_port = port
 			if(register)
 				port.register()
 			if(isnull(port_x_offset))
@@ -102,7 +124,52 @@
 					port.dwidth = port_y_offset - 1
 					port.dheight = width - port_x_offset
 
-			port.load(src)
+	for(var/turf/shuttle_turf in turfs)
+		//Set up underlying_turf_area and update relevent towed_shuttles
+		var/area/ship/turf_loc = turfs[shuttle_turf]
+		my_port.underlying_turf_area[shuttle_turf] = turf_loc
+		if(istype(turf_loc) && turf_loc.mobile_port)
+			turf_loc.mobile_port.towed_shuttles |= my_port
+
+		//Getting the amount of baseturfs added
+		var/z_offset = shuttle_turf.z - T.z
+		var/y_offset = shuttle_turf.y - T.y
+		var/x_offset = shuttle_turf.x - T.x
+		//retrieving our cache
+		var/line
+		var/list/cache
+		for(var/datum/grid_set/gset as() in cached_map.gridSets)
+			if(gset.zcrd - 1 != z_offset) //Not our Z-level
+				continue
+			if((gset.ycrd - 1 < y_offset) || (gset.ycrd - length(gset.gridLines) > y_offset)) //Our y coord isn't in the bounds
+				continue
+			line = gset.gridLines[length(gset.gridLines) - y_offset] //Y goes from top to bottom
+			if((gset.xcrd - 1 < x_offset) || (gset.xcrd + (length(line)/cached_map.key_len) - 2 > x_offset)) ///Our x coord isn't in the bounds
+				continue
+			cache = cached_map.modelCache[copytext(line, 1+((x_offset-gset.xcrd+1)*cached_map.key_len), 1+((x_offset-gset.xcrd+2)*cached_map.key_len))]
+			break
+		if(!cache) //Our turf isn't in the cached map, something went very wrong
+			continue
+
+		//How many baseturfs were added to this turf by the mapload
+		var/baseturf_length
+		var/turf/P //Typecasted for the initial call
+		for(P as() in cache[1])
+			if(ispath(P, /turf))
+				var/list/added_baseturfs = GLOB.created_baseturf_lists[initial(P.baseturfs)] //We can assume that our turf type will be included here because it was just generated in the mapload.
+				if(!islist(added_baseturfs))
+					added_baseturfs = list(added_baseturfs)
+				baseturf_length = length(added_baseturfs - GLOB.blacklisted_automated_baseturfs)
+				break
+		if(ispath(P, /turf/template_noop)) //No turf was added, don't add a skipover
+			continue
+
+		var/list/sanity = islist(shuttle_turf.baseturfs) ? shuttle_turf.baseturfs.Copy() : list(shuttle_turf.baseturfs)
+		sanity.Insert(shuttle_turf.baseturfs.len + 1 - baseturf_length, /turf/baseturf_skipover/shuttle) //The first two are the "real" baseturfs, place above these but below plating.
+		shuttle_turf.baseturfs = baseturfs_string_list(sanity, shuttle_turf)
+
+	my_port.load(src)
+	cached_map = keep_cached_map ? cached_map : null
 
 /datum/map_template/shuttle/ui_state(mob/user)
 	return GLOB.admin_debug_state
@@ -171,9 +238,9 @@
 		if("toggleTemplateEnabled")
 			enabled = !enabled
 			if(enabled)
-				SSmapping.ship_purchase_list += src
+				SSmapping.ship_purchase_list[name] = src
 			else
-				SSmapping.ship_purchase_list -= src
+				SSmapping.ship_purchase_list.Remove(name)
 			update_static_data(usr, ui)
 			return TRUE
 

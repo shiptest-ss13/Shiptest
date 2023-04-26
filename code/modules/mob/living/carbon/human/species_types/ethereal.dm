@@ -36,8 +36,8 @@
 	species_head = /obj/item/bodypart/head/ethereal
 	species_l_arm = /obj/item/bodypart/l_arm/ethereal
 	species_r_arm = /obj/item/bodypart/r_arm/ethereal
-	species_l_leg = /obj/item/bodypart/l_leg/ethereal
-	species_r_leg = /obj/item/bodypart/r_leg/ethereal
+	species_l_leg = /obj/item/bodypart/leg/left/ethereal
+	species_r_leg = /obj/item/bodypart/leg/right/ethereal
 
 	var/current_color
 	var/EMPeffect = FALSE

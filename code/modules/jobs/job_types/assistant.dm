@@ -150,6 +150,16 @@ Assistant
 	uniform = /obj/item/clothing/under/syndicate/gorlex
 	alt_uniform = /obj/item/clothing/under/syndicate
 
+/datum/outfit/job/assistant/syndicate/gec
+	name = "Deckhand (GEC)"
+
+	id = /obj/item/card/id/syndicate_command/crew_id
+	uniform = /obj/item/clothing/under/syndicate
+	suit = /obj/item/clothing/suit/toggle/hazard
+	alt_uniform = null
+	shoes = /obj/item/clothing/shoes/jackboots
+	head = /obj/item/clothing/head/safety_helmet
+
 /datum/outfit/job/assistant/independent/crewmatefancy
 	name = "Crewmate (Independent)"
 
@@ -204,6 +214,7 @@ Assistant
 	shoes = /obj/item/clothing/shoes/jackboots
 	r_pocket = /obj/item/radio
 	head = /obj/item/clothing/head/soft/black
+
 /datum/outfit/job/assistant/pharma
 	name = "Pharmacology Student"
 
@@ -215,3 +226,12 @@ Assistant
 	belt = /obj/item/reagent_scanner
 	backpack_contents = list(/obj/item/book/manual/wiki/chemistry=1)
 
+/datum/outfit/job/assistant/aipirate
+	name = "Nodesman"
+
+	uniform = /obj/item/clothing/under/utility
+	head = /obj/item/clothing/head/soft/black
+	shoes = /obj/item/clothing/shoes/combat
+	l_pocket = /obj/item/kitchen/knife/combat/survival
+	gloves = /obj/item/clothing/gloves/combat
+	implants = list(/obj/item/implant/radio)

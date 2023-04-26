@@ -2,12 +2,14 @@
 /mob/living/simple_animal/hostile/asteroid/goliath
 	name = "goliath"
 	desc = "A massive beast that uses long tentacles to ensnare its prey, threatening them is not advised under any conditions."
-	icon = 'icons/mob/lavaland/lavaland_monsters.dmi'
-	icon_state = "Goliath"
-	icon_living = "Goliath"
-	icon_aggro = "Goliath_alert"
-	icon_dead = "Goliath_dead"
+	icon = 'icons/mob/lavaland/lavaland_monsters_wide.dmi'
+	icon_state = "ancient_goliath"
+	icon_living = "ancient_goliath"
+	icon_aggro = "ancient_goliath_alert"
+	icon_dead = "ancient_goliath_dead"
 	icon_gib = "syndicate_gib"
+	pixel_x = -12
+	base_pixel_x = -12
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	mouse_opacity = MOUSE_OPACITY_ICON
 	move_to_delay = 40
@@ -35,7 +37,7 @@
 	gender = MALE //lavaland elite goliath says that it s female and i s stronger because of sexual dimorphism, so normal goliaths should be male
 	var/can_charge = TRUE
 	var/pre_attack = 0
-	var/pre_attack_icon = "Goliath_preattack"
+	var/pre_attack_icon = "ancient_goliath_preattack"
 	var/tentacle_type = /obj/effect/temp_visual/goliath_tentacle
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/goliath = 2, /obj/item/stack/sheet/bone = 2, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/ore/silver = 10)
 	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/goliath_hide = 2)
@@ -138,13 +140,13 @@
 /mob/living/simple_animal/hostile/asteroid/goliath/beast
 	name = "goliath"
 	desc = "A hulking, armor-plated beast with long tendrils arching from its back."
-	icon = 'icons/mob/lavaland/lavaland_monsters.dmi'
+	icon = 'icons/mob/lavaland/lavaland_monsters_wide.dmi'
 	icon_state = "goliath"
 	icon_living = "goliath"
 	icon_aggro = "goliath"
 	icon_dead = "goliath_dead"
 	throw_message = "does nothing to the tough hide of the"
-	pre_attack_icon = "goliath2"
+	pre_attack_icon = "goliath_preattack"
 	crusher_loot = /obj/item/crusher_trophy/goliath_tentacle
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/goliath = 2, /obj/item/stack/sheet/bone = 2, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/ore/silver = 10)
 	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/goliath_hide = 2)
@@ -240,15 +242,15 @@
 /mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient
 	name = "ancient goliath"
 	desc = "Goliaths are biologically immortal, and rare specimens have survived for centuries. This one is clearly ancient, and its tentacles constantly churn the earth around it."
-	icon_state = "Goliath"
-	icon_living = "Goliath"
-	icon_aggro = "Goliath_alert"
-	icon_dead = "Goliath_dead"
+	icon_state = "ancient_goliath"
+	icon_living = "ancient_goliath"
+	icon_aggro = "ancient_goliath_alert"
+	icon_dead = "ancient_goliath_dead"
 	maxHealth = 350
 	health = 350
 	speed = 4
 	crusher_loot = /obj/item/crusher_trophy/elder_tentacle
-	pre_attack_icon = "Goliath_preattack"
+	pre_attack_icon = "ancient_goliath_preattack"
 	throw_message = "does nothing to the rocky hide of the"
 	guaranteed_butcher_results = list()
 	crusher_drop_mod = 75
@@ -374,6 +376,8 @@
 	icon_living = "crystal_goliath"
 	icon_aggro = "crystal_goliath"
 	icon_dead = "crystal_goliath_dead"
+	pixel_x = 0
+	base_pixel_x = 0
 	throw_message = "does nothing to the tough hide of the"
 	pre_attack_icon = "crystal_goliath2"
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/goliath = 2, /obj/item/stack/sheet/bone = 2, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/ore/silver = 10, /obj/item/strange_crystal = 2)
@@ -435,15 +439,18 @@
 /mob/living/simple_animal/hostile/asteroid/goliath/beast/rockplanet
 	name = "gruboid"
 	desc = "A massive beast that uses long tentacles to ensnare its prey, threatening them is not advised under any conditions."
+	icon = 'icons/mob/lavaland/lavaland_monsters.dmi'
 	icon_state = "gruboid2"
 	icon_living = "gruboid2"
 	icon_aggro = "gruboid"
-	pre_attack_icon = "gruboid"
 	icon_dead = "gruboid_dead"
+	pixel_x = 0
+	base_pixel_x = 0
+	pre_attack_icon = "gruboid"
 	icon_gib = "syndicate_gib"
 	tentacle_type = /obj/effect/temp_visual/goliath_tentacle/rockplanet
 
 /obj/effect/temp_visual/goliath_tentacle/rockplanet
-	icon_state = "Gruboid_tentacle_wiggle"
-	wiggle = "Gruboid_tentacle_spawn"
-	retract = "Gruboid_tentacle_retract"
+	icon_state = "gruboid_tentacle_wiggle"
+	wiggle = "gruboid_tentacle_spawn"
+	retract = "gruboid_tentacle_retract"

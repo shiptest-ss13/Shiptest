@@ -183,7 +183,12 @@
 #undef PATH_POWERCOIL
 #undef PATH_RPCOIL
 
-
+/obj/item/circuitboard/machine/tesla_ground
+	name = "Tesla Ground (Machine Board)"
+	icon_state = "engineering"
+	build_path = /obj/machinery/power/tesla_coil/tesla_ground
+	req_components = list(/obj/item/stock_parts/capacitor = 1)
+	needs_anchored = TRUE
 
 /obj/item/circuitboard/machine/cell_charger
 	name = "Cell Charger (Machine Board)"
