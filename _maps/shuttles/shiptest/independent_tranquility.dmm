@@ -494,10 +494,15 @@
 /turf/open/floor/carpet,
 /area/ship/crew/dorm)
 "es" = (
-/obj/machinery/vending/hydroseeds,
 /obj/machinery/light/dim{
 	dir = 1
 	},
+/obj/structure/closet/crate/hydroponics,
+/obj/effect/spawner/lootdrop/seeded,
+/obj/effect/spawner/lootdrop/seeded,
+/obj/effect/spawner/lootdrop/seeded,
+/obj/effect/spawner/lootdrop/seeded,
+/obj/item/seeds/random,
 /turf/open/floor/grass,
 /area/ship/crew/hydroponics)
 "eu" = (
@@ -2119,7 +2124,6 @@
 /turf/open/floor/plating,
 /area/ship/crew/dorm/dormfive)
 "qT" = (
-/obj/machinery/holopad/emergency/command,
 /obj/effect/turf_decal/techfloor{
 	dir = 6
 	},
@@ -3623,7 +3627,7 @@
 	pixel_y = 8
 	},
 /obj/item/reagent_containers/glass/bottle{
-	list_reagents = list(/datum/reagent/medicine/thializid = 30);
+	list_reagents = list(/datum/reagent/medicine/thializid=30);
 	name = "thializid bottle"
 	},
 /obj/item/reagent_containers/syringe,
@@ -5221,7 +5225,7 @@
 "Of" = (
 /obj/structure/table,
 /obj/item/reagent_containers/food/drinks/mug{
-	list_reagents = list(/datum/reagent/consumable/coffee = 30);
+	list_reagents = list(/datum/reagent/consumable/coffee=30);
 	pixel_x = -5;
 	pixel_y = 8
 	},
@@ -5230,7 +5234,7 @@
 	pixel_y = 5
 	},
 /obj/item/reagent_containers/food/drinks/mug{
-	list_reagents = list(/datum/reagent/consumable/coffee = 30);
+	list_reagents = list(/datum/reagent/consumable/coffee=30);
 	pixel_x = -2;
 	pixel_y = 1
 	},

@@ -1,3 +1,5 @@
+GLOBAL_LIST_EMPTY(created_baseturf_lists)
+
 /turf
 	icon = 'icons/turf/floors.dmi'
 	flags_1 = CAN_BE_DIRTY_1
@@ -67,6 +69,10 @@
 	// ID of the virtual level we're in
 	var/virtual_z = 0
 
+	/// If TRUE, radiation waves will qdelete if they step forwards into this turf, and stop propagating sideways if they encounter it.
+	/// Used to stop radiation from travelling across virtual z-levels such as transit zones and planetary encounters.
+	var/rad_fullblocker = FALSE
+
 	///the holodeck can load onto this turf if TRUE
 	var/holodeck_compatible = FALSE
 
@@ -95,11 +101,15 @@
 	levelupdate()
 
 	if (length(smoothing_groups))
-		sortTim(smoothing_groups) //In case it's not properly ordered, let's avoid duplicate entries with the same values.
+		// There used to be a sort here to prevent duplicate bitflag signatures
+		// in the bitflag list cache; the cost of always timsorting every group list every time added up.
+		// The sort now only happens if the initial key isn't found. This leads to some duplicate keys.
+		// /tg/ has a better approach; a unit test to see if any atoms have mis-sorted smoothing_groups
+		// or canSmoothWith. This is a better idea than what I do, and should be done instead.
 		SET_BITFLAG_LIST(smoothing_groups)
 	if (length(canSmoothWith))
-		sortTim(canSmoothWith)
-		if(canSmoothWith[length(canSmoothWith)] > MAX_S_TURF) //If the last element is higher than the maximum turf-only value, then it must scan turf contents for smoothing targets.
+		// If the last element is higher than the maximum turf-only value, then it must scan turf contents for smoothing targets.
+		if(canSmoothWith[length(canSmoothWith)] > MAX_S_TURF)
 			smoothing_flags |= SMOOTH_OBJ
 		SET_BITFLAG_LIST(canSmoothWith)
 	if (smoothing_flags & (SMOOTH_CORNERS|SMOOTH_BITMASK))
@@ -376,7 +386,6 @@
 
 // A proc in case it needs to be recreated or badmins want to change the baseturfs
 /turf/proc/assemble_baseturfs(turf/fake_baseturf_type)
-	var/static/list/created_baseturf_lists = list()
 	var/turf/current_target
 	if(fake_baseturf_type)
 		if(length(fake_baseturf_type)) // We were given a list, just apply it and move on
@@ -393,8 +402,8 @@
 			current_target = baseturfs
 
 	// If we've made the output before we don't need to regenerate it
-	if(created_baseturf_lists[current_target])
-		var/list/premade_baseturfs = created_baseturf_lists[current_target]
+	if(GLOB.created_baseturf_lists[current_target])
+		var/list/premade_baseturfs = GLOB.created_baseturf_lists[current_target]
 		if(length(premade_baseturfs))
 			baseturfs = baseturfs_string_list(premade_baseturfs.Copy(), src)
 		else
@@ -405,7 +414,7 @@
 	//Most things only have 1 baseturf so this loop won't run in most cases
 	if(current_target == next_target)
 		baseturfs = current_target
-		created_baseturf_lists[current_target] = current_target
+		GLOB.created_baseturf_lists[current_target] = current_target
 		return current_target
 	var/list/new_baseturfs = list(current_target)
 	for(var/i=0;current_target != next_target;i++)
@@ -420,7 +429,7 @@
 		next_target = initial(current_target.baseturfs)
 
 	baseturfs = baseturfs_string_list(new_baseturfs, src)
-	created_baseturf_lists[new_baseturfs[new_baseturfs.len]] = new_baseturfs.Copy()
+	GLOB.created_baseturf_lists[new_baseturfs[new_baseturfs.len]] = new_baseturfs.Copy()
 	return new_baseturfs
 
 /turf/proc/levelupdate()
@@ -647,4 +656,14 @@
 		content.wash(clean_types)
 
 /turf/proc/IgniteTurf(power, fire_color = "red")
+	return
+
+/turf/proc/on_turf_saved()
+	// This is all we can do. I'm sorry mappers, but there's no way to get any more details.
+	var/first = TRUE
+	for(var/datum/component/decal/decal as anything in GetComponents(/datum/component/decal))
+		if(!first)
+			. += ",\n"
+		. += "[/obj/effect/turf_decal]{\n\ticon = '[decal.pic.icon]';\n\ticon_state = \"[decal.pic.icon_state]\";\n\tdir = [decal.pic.dir];\n\tcolor = \"[decal.pic.color]\"\n\t}"
+		first = FALSE
 	return

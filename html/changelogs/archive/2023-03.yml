@@ -1,0 +1,140 @@
+2023-03-01:
+  MemedHams:
+  - rscdel: Spacepods
+  - rscdel: The unused Speedway Z-level
+  - tweak: maps with spacepods have been slightly tweaked to 1984 them out of existence
+  spockye:
+  - rscadd: Adds a new Beach ruin, the beach_crashed_starwalker
+2023-03-04:
+  thgvr:
+  - rscdel: Ripped out female sprite stuff
+  - tweak: Suits not longer hide lizard tails.
+2023-03-05:
+  Fikou:
+  - bugfix: the komodo loads
+2023-03-06:
+  BarteG44:
+  - bugfix: fixed railings not dropping materials
+  - bugfix: fixed the justice helmet crashing the game upon use
+  Davchik:
+  - bugfix: swapped two gas tanks (oxygen and nitrogen) on map inteq_colssus.dmm
+  MemedHams:
+  - bugfix: The rigger-c json is now correctly pathed to a .dmm file
+  nightmarish-warlord:
+  - bugfix: fixed Kepori and Vox prosthetics when spawning
+  retlaw34:
+  - rscadd: Add new PAI sprites
+  - code_imp: Adds support to easily add new pai faces
+2023-03-08:
+  BarteG44:
+  - rscadd: Added Modern Railings
+  - tweak: moved normal railing sprites from fluff.dmi to railing.dmi
+  - imageadd: added railing_m.dmi which contains the modern railing sprites
+  - rscadd: Added 11 new emergency holopad jobs
+  - tweak: replaced some ship holopads with emergency holopads
+  Bokkiewokkie:
+  - rscadd: Added black hole suns!
+  - bugfix: Potentially fixed an issue with planets swapping type
+  - admin: Added the option for admins to choose the location of new planets
+  goober3:
+  - tweak: The Lugol's gear and jobs have been increased to facilitate engineering
+      projects better. The engine room has been redesigned.
+  - bugfix: There is no longer a wall shutter in the Lugol's engine room.
+  tmtmtl30:
+  - bugfix: hopefully fixed certain incorrect ruin floor turf icons
+2023-03-09:
+  Zevotech:
+  - rscadd: whitesands_surface_camp_combination, a survivor village comprised of smaller
+      revamped whitesands camps all packaged in one ruin. can be found in the map
+      catalogue.
+  - rscdel: whitesands_surface_camp adobe, farm, gunslingers, survivors, hunters and
+      saloon, for being tiny ruins that suck.
+2023-03-15:
+  Bjarl:
+  - bugfix: wall safes work again
+  MarkSuckerberg:
+  - bugfix: Wikibooks should now work.
+  MemedHams:
+  - rscadd: Physical money has been reworked one central item, instead of several
+      smaller denominations. This item has a variable icon based on the amount of
+      money contained within.
+  - tweak: The central galactic bank has declared that material coins no longer have
+      a monetary value. You can no longer print money with a coin press, if you somehow
+      find one.
+  - tweak: Many money drops are now slightly randomized.
+  - tweak: Some interactions that used holocurrency now use hard cash instead.
+  - soundadd: Adds new sound effects for dropping and picking up bills and coins.
+  - imageadd: Adds new physical cash sprites.
+  - code_imp: Cash.dm has been moved up a directory out of the Stacks dir, on account
+      of no longer being a stack subtype
+  MrSamu99:
+  - rscadd: Added ship description display to job select screen
+  - bugfix: Fixes the ship description in ship purchase screen
+2023-03-24:
+  goober3:
+  - rscadd: The Pirate Village, a new beach ruin.
+2023-03-25:
+  Apogee-dev:
+  - tweak: Fully remapped the Osprey
+2023-03-27:
+  MarkSuckerberg:
+  - admin: The map exporter now saves even more details than it previously did (decals,
+      APCs,
+  - admin: Uploading ship maps in-round now actually works.
+  - admin: View variables looks and works a little bit better.
+2023-03-28:
+  ? ''
+  : - rscadd: Ruined megaseed servitors can now be found on the frontier, carrying
+        a bounty of seeds for intrepid adventurers.
+    - balance: the time it takes for plants to reach a lethal age has been increased
+        massively.
+    - balance: Plant production time increased a bit to compensate.
+    - balance: megaseed servitors have been removed from ships and ruins. Ships that
+        carried one now have a crate with some starting seeds.
+    - balance: removes gatfruit from the seed vault pool.
+    - balance: reduces the chance of getting gatfruit from a plant-themed demonic
+        portal significantly.
+    - balance: corpse flowers once again have formaldehyde and liquid gibs.
+    - rscadd: Adds Genesis Serum, a reagent that transforms tiles into natural grass
+        on splash, then causes some natural flora objects to grow. Turn your ship
+        green!
+  Apogee-dev:
+  - bugfix: fixed sprites for connected computer consoles
+  MemedHams, Fikou:
+  - rscadd: Brimdemons have appeared! These simplemobs fire a beam of energy in a
+      cardinal direction when disturbed.
+  - rscadd: Adds Gardens, harvestable patches of foliage that drop a plant randomly
+      selected from a themed pool.
+  - rscadd: Driftwood and seashells now wash up on the shores of beach worlds.
+  - rscadd: The rocks found on rockworlds have now turned the same red hue as the
+      ground and walls.
+  - rscadd: Small colonies of Glowshroom can now be found in the caves of wasteland
+      worlds.
+  - rscadd: Adds a Lobstrosity crusher trophy.
+  - tweak: Gruboids now spawn from nests in the caves of Rockworlds.
+  - tweak: The sand found on rockworlds and wasteland planets now contains additional
+      reagents.
+  - tweak: different planets now have more diverse ore pools. Some may now have significantly
+      more of certain ores, or lack one or two ores alltogether
+  - tweak: Rock names and examine descriptions are now more soulful.
+  - tweak: Some trees and moss found on lava worlds now lend more insight into their
+      molten planet.
+  - tweak: Saguaro Cacti are now Maguaro Cacti, a cold climate suspecies.
+  - balance: planetary ore pools are now more varied.
+  - balance: Self-sustaining mode on hydroponics trays now draws less power.
+  - bugfix: Chilly Peppers that grow on ice worlds now have an actual texture.
+  - bugfix: fixes the missing "white sand" texture
+  - bugfix: lit planetary tiles no longer go dark when dug out.
+  - soundadd: Brimdemon noises.
+  - code_imp: adds the get_line helper.
+  tmtmtl30:
+  - bugfix: It turns out that landing on a planet would freeze the game for a quarter-second
+      near the end of its generation. ...Not anymore?
+2023-03-30:
+  spockye:
+  - bugfix: fixed /obj/effect/turf_decal/industrial/loading
+2023-03-31:
+  thgvr:
+  - rscadd: New Digitigrade lizard sprites.
+  - rscadd: Various syndicate and mining clothing resprites.
+  - rscadd: Sarathi can now have an incredibly large tail.

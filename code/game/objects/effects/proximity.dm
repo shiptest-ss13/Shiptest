@@ -82,11 +82,13 @@
 
 	//reuse what we can
 	for(var/I in 1 to old_checkers_len)
-		if(I <= old_checkers_used)
-			var/obj/effect/abstract/proximity_checker/pc = checkers_local[I]
-			pc.forceMove(turfs[I])
+		var/obj/effect/abstract/proximity_checker/pc = checkers_local[I]
+		if(I > old_checkers_used)
+			qdel(pc)	//delete the leftovers
+		else if(QDELETED(pc))
+			checkers_local[I] = new /obj/effect/abstract/proximity_checker(turfs[I], src)
 		else
-			qdel(checkers_local[I])	//delete the leftovers
+			pc.forceMove(turfs[I])
 
 	if(old_checkers_len < turfs_len)
 		//create what we lack

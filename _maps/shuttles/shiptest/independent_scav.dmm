@@ -290,7 +290,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/item/stack/spacecash/c1,
+/obj/item/spacecash/bundle/c1,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "jA" = (
@@ -434,10 +434,10 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/bridge)
 "nN" = (
-/obj/machinery/holopad/emergency,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/holopad/emergency/command,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "nS" = (
@@ -647,7 +647,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/item/stack/spacecash/c1,
+/obj/item/spacecash/bundle/c1,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "tr" = (
@@ -1183,7 +1183,7 @@
 /obj/item/borg/sight/hud/sec,
 /obj/item/storage/backpack/duffelbag,
 /obj/machinery/airalarm/directional/west,
-/obj/item/stack/spacecash/c500,
+/obj/item/spacecash/bundle/c500,
 /obj/item/stock_parts/cell/gun/mini{
 	chargerate = 10;
 	desc = "A rechargeable electrochemical power cell. this one looks awefully bloated";

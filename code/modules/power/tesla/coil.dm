@@ -3,6 +3,7 @@
 	desc = "For the union!"
 	icon = 'icons/obj/tesla_engine/tesla_coil.dmi'
 	icon_state = "coil0"
+	base_icon_state = "coil"
 	anchored = FALSE
 	density = TRUE
 
@@ -18,6 +19,7 @@
 	var/input_power_multiplier = 1
 	var/zap_cooldown = 100
 	var/last_zap = 0
+	var/can_generate_research = TRUE
 
 	var/datum/techweb/linked_techweb
 
@@ -53,9 +55,9 @@
 	. = ..()
 	if(. == SUCCESSFUL_UNFASTEN)
 		if(panel_open)
-			icon_state = "coil_open[anchored]"
+			icon_state = "[base_icon_state][anchored]"
 		else
-			icon_state = "coil[anchored]"
+			icon_state = "[base_icon_state][anchored]"
 		if(anchored)
 			connect_to_network()
 		else
@@ -63,7 +65,7 @@
 //		update_cable_icons_on_turf(get_turf(src)) - WS Edit - Smartwire Revert
 
 /obj/machinery/power/tesla_coil/attackby(obj/item/W, mob/user, params)
-	if(default_deconstruction_screwdriver(user, "coil_open[anchored]", "coil[anchored]", W))
+	if(default_deconstruction_screwdriver(user, "[base_icon_state][anchored]", "[base_icon_state][anchored]", W))
 		return
 
 	if(default_unfasten_wrench(user, W))
@@ -76,7 +78,7 @@
 		wires.interact(user)
 		return
 
-	if(istype(W, /obj/item/multitool))
+	if(istype(W, /obj/item/multitool) && can_generate_research)
 		var/obj/item/multitool/multi = W
 		if(istype(multi.buffer, /obj/machinery/rnd/server))
 			var/obj/machinery/rnd/server/serv = multi.buffer
@@ -97,7 +99,7 @@
 		var/datum/bank_account/D = SSeconomy.get_dep_account(ACCOUNT_ENG)
 		if(D)
 			D.adjust_money(min(power_produced, 1))
-		if(istype(linked_techweb) && (zap_flags & ZAP_GIVES_RESEARCH))
+		if(istype(linked_techweb) && (zap_flags & ZAP_GIVES_RESEARCH) && can_generate_research)
 			linked_techweb.add_point_type(TECHWEB_POINT_TYPE_DEFAULT, min(power_produced, 3)) // x4 coils = 12 points a shock for RND, if they even bothered to link the server.
 		addtimer(CALLBACK(src, .proc/reset_shocked), 10)
 		zap_buckle_check(power)
@@ -123,6 +125,7 @@
 	name = "Tesla Corona Analyzer"
 	desc = "A modified Tesla Coil used to study the effects of Edison's Bane for research. Gives research from the discharges produced by supermatter crystals, tesla engines, and electrical storms."
 	icon_state = "rpcoil0"
+	base_icon_state = "rpcoil"
 	circuit = /obj/item/circuitboard/machine/tesla_coil/research
 	power_loss = 20 // something something, high voltage + resistance
 
@@ -200,3 +203,22 @@
 		return 0
 	else
 		. = ..()
+
+/obj/machinery/power/tesla_coil/tesla_ground //it's a no density tesla coil that you can't make into a research machine.
+	name = "tesla ground"
+	desc = "A tesla grounding arrangement woven into the hull plating."
+	icon = 'icons/obj/singularity.dmi'
+	base_icon_state = "beaconsynd"
+	icon_state = "beaconsynd0" //to do: beg spriter for a real sprite
+
+	anchored = TRUE
+	density = FALSE
+	can_be_unanchored = FALSE //foxes HATE booleans
+
+	can_buckle = TRUE
+	buckle_lying = TRUE
+	buckle_requires_restraints = FALSE
+
+	can_generate_research = FALSE //cannot set these to make research
+
+	circuit = /obj/item/circuitboard/machine/tesla_ground

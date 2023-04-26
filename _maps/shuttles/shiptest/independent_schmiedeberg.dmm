@@ -540,11 +540,11 @@
 	dir = 8
 	},
 /obj/machinery/button/door{
+	dir = 4;
 	id = "pharmbridge";
 	name = "Bridge Lockdown";
 	pixel_x = -25;
-	pixel_y = -7;
-	dir = 4
+	pixel_y = -7
 	},
 /turf/open/floor/carpet/blue,
 /area/ship/bridge)
@@ -653,10 +653,17 @@
 /turf/open/floor/wood/walnut,
 /area/ship/crew/hydroponics)
 "hu" = (
-/obj/machinery/vending/hydroseeds,
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
+/obj/structure/closet/crate/hydroponics,
+/obj/item/seeds/ambrosia,
+/obj/item/seeds/glowshroom,
+/obj/item/seeds/random,
+/obj/item/seeds/cabbage,
+/obj/item/seeds/aloe,
+/obj/item/seeds/coffee,
+/obj/item/seeds/corn,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/hydroponics)
 "il" = (
@@ -712,29 +719,29 @@
 /area/ship/crew/hydroponics)
 "iL" = (
 /obj/machinery/button/door{
+	dir = 4;
 	id = "pharmboothlock";
 	name = "Lockdown: Booth";
 	pixel_x = -24;
-	pixel_y = 11;
-	dir = 4
+	pixel_y = 11
 	},
 /obj/structure/chair/comfy/beige{
 	dir = 4
 	},
 /obj/machinery/button/door{
+	dir = 4;
 	id = "pharmdoorlock";
 	name = "Anti-Tresspassing Bolts";
 	normaldoorcontrol = 1;
 	pixel_x = -24;
-	specialfunctions = 4;
-	dir = 4
+	specialfunctions = 4
 	},
 /obj/machinery/button/door{
+	dir = 4;
 	id = "pharmlobby";
 	name = "Lockdown: Lobby";
 	pixel_x = -24;
-	pixel_y = -11;
-	dir = 4
+	pixel_y = -11
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet/black,
@@ -1172,14 +1179,14 @@
 	},
 /obj/structure/catwalk/over,
 /obj/machinery/firealarm{
-	pixel_y = 28;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = 28
 	},
 /obj/machinery/button/door{
-	pixel_y = 26;
-	pixel_x = -10;
 	id = "schmeidengine";
-	name = "Engine Shutters"
+	name = "Engine Shutters";
+	pixel_x = -10;
+	pixel_y = 26
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -1306,7 +1313,6 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "sU" = (
-/obj/machinery/vending/hydronutrients,
 /obj/machinery/vending/hydronutrients,
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -2375,7 +2381,7 @@
 /obj/item/assembly/flash/handheld,
 /obj/item/door_remote/chief_medical_officer,
 /obj/item/pet_carrier,
-/obj/item/wallframe/defib_mount,
+/obj/item/areaeditor/shuttle,
 /obj/item/clothing/shoes/sneakers/orange,
 /obj/item/reagent_containers/glass/bottle/vial/large,
 /obj/item/reagent_containers/glass/bottle/vial/large,
@@ -2725,6 +2731,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
 	},
+/obj/item/seeds/random,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "Pi" = (
@@ -2844,6 +2851,7 @@
 	dir = 4
 	},
 /obj/item/paper/crumpled,
+/obj/item/seeds/cannabis,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
 "QH" = (
@@ -2881,7 +2889,9 @@
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 4
 	},
-/obj/machinery/plumbing/pill_press,
+/obj/machinery/plumbing/pill_press{
+	dir = 1
+	},
 /obj/machinery/firealarm{
 	dir = 4;
 	pixel_x = -28
@@ -3495,7 +3505,6 @@
 "ZS" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
-/obj/effect/turf_decal/siding/thinplating/dark,
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1

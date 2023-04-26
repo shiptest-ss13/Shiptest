@@ -206,14 +206,14 @@
 /mob/living/simple_animal/hostile/asteroid/basilisk/watcher
 	name = "watcher"
 	desc = "A levitating, eye-like creature held aloft by winglike formations of sinew. A sharp spine of crystal protrudes from its body."
-	icon = 'icons/mob/lavaland/watcher.dmi'
+	icon = 'icons/mob/lavaland/lavaland_monsters_wide.dmi'
 	icon_state = "watcher"
 	icon_living = "watcher"
 	icon_aggro = "watcher"
 	icon_dead = "watcher_dead"
 	health_doll_icon = "watcher"
-	pixel_x = -10
-	base_pixel_x = -10
+	pixel_x = -12
+	base_pixel_x = -12
 	throw_message = "bounces harmlessly off of"
 	melee_damage_lower = 5
 	melee_damage_upper = 12
@@ -342,6 +342,7 @@
 /mob/living/simple_animal/hostile/asteroid/basilisk/watcher/forgotten
 	name = "forgotten watcher"
 	desc = "This watcher has a cancerous crystal growth on it, forever scarring it and deforming it into this twisted form."
+	icon = 'icons/mob/lavaland/watcher.dmi'
 	icon_state = "forgotten"
 	icon_living = "forgotten"
 	icon_aggro = "forgotten"
