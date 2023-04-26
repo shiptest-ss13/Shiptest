@@ -38,7 +38,6 @@
 /obj/machinery/atmospherics/pipe/simple/general/visible/layer1{
 	dir = 9
 	},
-/obj/docking_port,
 /obj/structure/catwalk,
 /turf/open/floor/plating/rust,
 /area/ship/storage)
@@ -124,18 +123,8 @@
 /obj/structure/window/reinforced/tinted{
 	dir = 1
 	},
-/obj/machinery/cryopod{
-	dir = 4
-	},
-/obj/machinery/computer/cryopod{
-	pixel_y = 9
-	},
 /obj/structure/cable{
 	icon_state = "0-4"
-	},
-/obj/item/radio/intercom/wideband{
-	dir = 4;
-	pixel_x = -5
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
@@ -153,11 +142,6 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/machinery/syndicatebomb/self_destruct{
-	minimum_timer = 180;
-	name = "Alternative Bluespace Jump Device";
-	timer_set = 180
-	},
 /obj/machinery/atmospherics/pipe/simple/general/visible{
 	dir = 5
 	},
@@ -165,18 +149,18 @@
 /obj/machinery/atmospherics/pipe/simple/general/visible/layer4,
 /obj/machinery/atmospherics/pipe/simple/general/visible,
 /obj/structure/catwalk,
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	dir = 4;
+	launch_status = 0;
+	port_direction = 2;
+	preferred_direction = 4
+	},
 /turf/open/floor/plating/rust,
 /area/ship/storage)
 "A" = (
 /obj/item/clothing/mask/gas,
-/obj/item/clothing/mask/gas,
-/obj/item/clothing/mask/gas,
 /obj/structure/bed,
-/obj/machinery/computer/helm{
-	density = 0;
-	dir = 8;
-	pixel_x = 5
-	},
 /obj/machinery/light/floor,
 /obj/structure/fans/tiny,
 /obj/machinery/door/window{
@@ -186,40 +170,6 @@
 	dir = 4;
 	piping_layer = 5
 	},
-/obj/docking_port/mobile{
-	can_move_docking_ports = 1;
-	dir = 8;
-	launch_status = 0
-	},
-/obj/item/storage/toolbox/mechanical/old,
-/obj/item/circuitboard/machine/autolathe,
-/obj/item/tank/internals/emergency_oxygen,
-/obj/item/tank/internals/emergency_oxygen,
-/obj/item/tank/internals/emergency_oxygen,
-/obj/item/tank/internals/emergency_oxygen,
-/obj/item/tank/internals/emergency_oxygen,
-/obj/item/tank/internals/emergency_oxygen,
-/obj/item/clothing/suit/space/orange,
-/obj/item/clothing/suit/space/orange,
-/obj/item/clothing/suit/space/orange,
-/obj/item/clothing/head/helmet/space/orange,
-/obj/item/clothing/head/helmet/space/orange,
-/obj/item/clothing/head/helmet/space/orange,
-/obj/item/mining_scanner,
-/obj/item/mining_scanner,
-/obj/item/mining_scanner,
-/obj/item/pickaxe/improvised,
-/obj/item/pickaxe/improvised,
-/obj/item/pickaxe/improvised,
-/mob/living/carbon/human/species/moth{
-	name = "Life-size Moth Plushie";
-	real_name = "Life-Size Moth Plushie"
-	},
-/obj/item/bedsheet/black,
-/obj/item/reagent_containers/glass/beaker/large,
-/obj/item/reagent_containers/glass/beaker/large,
-/obj/item/reagent_containers/glass/beaker/large,
-/obj/item/areaeditor/shuttle,
 /obj/structure/window/reinforced/tinted{
 	dir = 4
 	},
@@ -231,26 +181,15 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/item/tank/internals/plasma/full,
-/obj/item/tank/internals/plasma/full,
 /obj/machinery/door/window,
 /obj/machinery/atmospherics/pipe/simple/general/visible/layer1,
-/obj/item/clothing/suit/space/orange,
-/obj/item/gun/energy/e_gun/mini{
-	name = "engine ignition device"
-	},
-/obj/item/analyzer,
-/obj/item/multitool,
 /obj/machinery/holopad,
-/obj/item/radio,
-/obj/item/radio,
-/obj/item/radio,
-/obj/item/storage/cans/sixbeer,
-/obj/item/reagent_containers/food/snacks/jellysandwich,
-/obj/item/storage/firstaid/regular,
-/obj/item/toy/plush/among,
-/obj/item/gps/mining,
-/obj/item/kirbyplants/dead,
+/obj/item/storage/toolbox/mechanical/old,
+/obj/item/clothing/suit/space/orange,
+/obj/item/pickaxe/improvised,
+/obj/item/tank/internals/emergency_oxygen,
+/obj/item/clothing/head/helmet/space/orange,
+/obj/item/tank/internals/plasma/full,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
 "R" = (
