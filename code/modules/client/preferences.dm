@@ -149,7 +149,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/clientfps = 60 //WS Edit - Client FPS Tweak
 
 	var/parallax
-	
 	///Do we show screentips, if so, how big?
 	var/screentip_pref = TRUE
 	///Color of screentips at top of screen
