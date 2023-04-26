@@ -413,6 +413,7 @@ GLOBAL_LIST_INIT(titanium_recipes, list ( \
 	merge_type = /obj/item/stack/sheet/mineral/plastitanium
 	material_flags = MATERIAL_NO_EFFECTS
 	walltype = /turf/closed/wall/mineral/plastitanium
+	tableVariant = /obj/structure/table/chem
 
 /obj/item/stack/sheet/mineral/plastitanium/fifty
 	amount = 50
@@ -425,6 +426,7 @@ GLOBAL_LIST_INIT(titanium_recipes, list ( \
 
 GLOBAL_LIST_INIT(plastitanium_recipes, list ( \
 	new/datum/stack_recipe("plastitanium tile", /obj/item/stack/tile/mineral/plastitanium, 1, 4, 20), \
+	new/datum/stack_recipe("chemistry sink", /obj/structure/sink/chem, 1 , one_per_turf = TRUE, on_floor = TRUE, applies_mats = TRUE), \
 	))
 
 /obj/item/stack/sheet/mineral/plastitanium/get_main_recipes()
