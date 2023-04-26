@@ -344,6 +344,9 @@
 	department = "Internal Affairs"
 	},
 /obj/machinery/airalarm/directional/north,
+/obj/machinery/camera/autoname{
+	dir = 6
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "dC" = (
@@ -734,6 +737,9 @@
 "hr" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/camera/autoname{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "hz" = (
@@ -799,6 +805,9 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
+	},
+/obj/machinery/camera/autoname{
+	dir = 1
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
@@ -1364,6 +1373,9 @@
 /area/ship/crew/library)
 "mI" = (
 /obj/machinery/airalarm/directional/west,
+/obj/machinery/camera/autoname{
+	dir = 4
+	},
 /turf/open/floor/carpet/nanoweave/orange,
 /area/ship/security)
 "mQ" = (
@@ -1825,6 +1837,9 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-1"
 	},
+/obj/machinery/camera/autoname{
+	dir = 1
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/hallway/central)
 "qR" = (
@@ -1900,6 +1915,10 @@
 /obj/item/reagent_containers/food/snacks/cheesewedge{
 	pixel_x = 3
 	},
+/obj/machinery/computer/security/telescreen{
+	dir = 4;
+	pixel_x = -24
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/bridge)
 "rc" = (
@@ -1941,6 +1960,9 @@
 /obj/effect/turf_decal/siding/wood,
 /obj/structure/fluff/hedge,
 /obj/machinery/airalarm/directional/west,
+/obj/machinery/camera/autoname{
+	dir = 4
+	},
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/canteen)
 "rJ" = (
@@ -3264,6 +3286,9 @@
 	icon_state = "plant-22";
 	pixel_x = 9
 	},
+/obj/machinery/camera/autoname{
+	dir = 8
+	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew)
 "EB" = (
@@ -3452,6 +3477,19 @@
 "FH" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/hallway/central)
+"FT" = (
+/obj/machinery/cryopod,
+/obj/effect/turf_decal/steeldecal/steel_decals10{
+	dir = 6
+	},
+/obj/effect/turf_decal/steeldecal/steel_decals10{
+	dir = 5
+	},
+/obj/machinery/camera/autoname{
+	dir = 8
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ship/crew/cryo)
 "FU" = (
 /obj/machinery/holopad/emergency/command,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -3694,6 +3732,9 @@
 /obj/structure/tank_dispenser,
 /obj/machinery/light{
 	dir = 4
+	},
+/obj/machinery/camera/autoname{
+	dir = 1
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
@@ -4089,6 +4130,9 @@
 /obj/machinery/power/apc/auto_name/west,
 /obj/structure/cable/yellow{
 	icon_state = "0-1"
+	},
+/obj/machinery/camera/autoname{
+	dir = 1
 	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/hallway/central)
@@ -4770,6 +4814,9 @@
 /obj/structure/fluff/hedge,
 /obj/machinery/advanced_airlock_controller{
 	pixel_x = 24
+	},
+/obj/machinery/camera/autoname{
+	dir = 8
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/cryo)
@@ -5531,7 +5578,7 @@ AF
 Sv
 Sv
 ul
-zz
+FT
 Ji
 Xn
 yZ
