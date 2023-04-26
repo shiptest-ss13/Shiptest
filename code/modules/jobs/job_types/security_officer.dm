@@ -301,4 +301,16 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	I.access |= list(ACCESS_SYNDICATE)
 	I.update_label()
 
+/datum/outfit/job/security/aipirate
+	name = "Nodesman (Security)"
+
+	uniform = /obj/item/clothing/under/utility
+	head = /obj/item/clothing/head/soft/black
+	shoes = /obj/item/clothing/shoes/combat
+	l_pocket = /obj/item/kitchen/knife/combat
+
+	backpack_contents = list(/obj/item/melee/baton/loaded=1)
+
+	implants = list(/obj/item/implant/radio)
+
 //Shiptest outfits end
