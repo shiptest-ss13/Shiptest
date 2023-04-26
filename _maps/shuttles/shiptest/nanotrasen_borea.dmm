@@ -5957,7 +5957,7 @@
 	dir = 6
 	},
 /obj/structure/cable{
-	icon_state = "0-2"
+	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen/kitchen)
@@ -7693,6 +7693,9 @@
 "Ys" = (
 /obj/machinery/vending/dinnerware,
 /obj/machinery/power/apc/auto_name/north,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plasteel/freezer,
 /area/ship/crew/canteen/kitchen)
 "Yu" = (
