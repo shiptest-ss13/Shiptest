@@ -204,3 +204,18 @@
 	suit = null
 	gloves = null
 	suit_store = null
+
+/datum/outfit/job/captain/aipirate
+	name = "Nodesman (Command)"
+
+	uniform = /obj/item/clothing/under/utility
+	alt_uniform = null
+	gloves = /obj/item/clothing/gloves/combat
+	suit = /obj/item/clothing/suit/armor/vest/marine/medium
+	alt_suit = null
+	dcoat = null
+	head = /obj/item/clothing/head/soft/black
+	shoes = /obj/item/clothing/shoes/combat
+	l_pocket = /obj/item/kitchen/knife/combat
+	implants = list(/obj/item/implant/radio)
+	accessory = null
