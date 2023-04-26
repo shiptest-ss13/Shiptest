@@ -127,6 +127,19 @@
 /obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
+"aL" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	name = "Twink Bay";
+	port_direction = 8;
+	preferred_direction = 4;
+	dir = 2
+	},
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "aX" = (
 /obj/effect/turf_decal/corner/opaque/syndiered/full,
 /obj/effect/turf_decal/syndicateemblem/middle/middle{
@@ -2070,6 +2083,12 @@
 	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
+"nx" = (
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "nC" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/cyan/visible,
@@ -2602,6 +2621,14 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security)
+"qM" = (
+/obj/docking_port/stationary{
+	height = 15;
+	width = 15;
+	name = "upper left twink dock"
+	},
+/turf/template_noop,
+/area/template_noop)
 "qN" = (
 /obj/machinery/photocopier,
 /obj/machinery/light{
@@ -2915,6 +2942,15 @@
 /obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
+"sT" = (
+/obj/docking_port/stationary{
+	height = 15;
+	width = 15;
+	name = "lower left twink dock";
+	dir = 2
+	},
+/turf/template_noop,
+/area/template_noop)
 "sW" = (
 /obj/machinery/atmospherics/components/unary/portables_connector/visible{
 	dir = 8
@@ -3641,6 +3677,15 @@
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
+"xZ" = (
+/obj/docking_port/stationary{
+	height = 15;
+	width = 15;
+	name = "lower right twink dock";
+	dir = 2
+	},
+/turf/template_noop,
+/area/template_noop)
 "ya" = (
 /obj/machinery/door/airlock/engineering/glass{
 	name = "Laser Room";
@@ -3997,6 +4042,18 @@
 /obj/machinery/air_sensor/atmos/toxin_tank,
 /turf/open/floor/engine/plasma,
 /area/ship/engineering/atmospherics)
+"Am" = (
+/obj/machinery/door/poddoor{
+	id = "twinkle_cargo";
+	name = "Cargo Shutters"
+	},
+/obj/docking_port/stationary{
+	height = 15;
+	width = 15;
+	name = "main twink dock"
+	},
+/turf/open/floor/plating,
+/area/ship/cargo)
 "Ao" = (
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 4
@@ -5586,6 +5643,14 @@
 /obj/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
+"JT" = (
+/obj/docking_port/stationary{
+	height = 15;
+	width = 15;
+	name = "upper right twink dock"
+	},
+/turf/template_noop,
+/area/template_noop)
 "JY" = (
 /obj/structure/bed,
 /obj/structure/sign/poster/official/no_erp{
@@ -8070,18 +8135,11 @@
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "ZV" = (
-/obj/machinery/door/airlock/external{
-	req_access = list(150)
+/obj/structure/railing{
+	dir = 8
 	},
-/obj/docking_port/mobile{
-	can_move_docking_ports = 1;
-	name = "Twink Bay";
-	port_direction = 8;
-	preferred_direction = 4;
-	dir = 2
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/engineering/atmospherics)
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "ZY" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
@@ -8105,11 +8163,15 @@ mp
 mp
 mp
 mp
+mp
+mp
 Vf
 Vf
 Vf
 Vf
 Vf
+mp
+mp
 mp
 mp
 mp
@@ -8126,6 +8188,8 @@ mp
 mp
 "}
 (2,1,1) = {"
+mp
+mp
 mp
 mp
 mp
@@ -8159,8 +8223,12 @@ mp
 mp
 mp
 mp
+mp
+mp
 "}
 (3,1,1) = {"
+mp
+mp
 mp
 mp
 ab
@@ -8194,8 +8262,12 @@ LX
 ab
 mp
 mp
+mp
+mp
 "}
 (4,1,1) = {"
+mp
+mp
 mp
 mp
 kS
@@ -8229,8 +8301,12 @@ wM
 kS
 mp
 mp
+mp
+mp
 "}
 (5,1,1) = {"
+mp
+mp
 mp
 mp
 kS
@@ -8264,8 +8340,12 @@ TR
 kS
 mp
 mp
+mp
+mp
 "}
 (6,1,1) = {"
+mp
+mp
 mp
 mp
 kS
@@ -8299,8 +8379,12 @@ GC
 kS
 mp
 mp
+mp
+mp
 "}
 (7,1,1) = {"
+mp
+mp
 kS
 kS
 kS
@@ -8334,8 +8418,12 @@ kS
 kS
 kS
 kS
+mp
+mp
 "}
 (8,1,1) = {"
+mp
+aL
 gh
 bY
 lj
@@ -8369,9 +8457,13 @@ qz
 ni
 BE
 gh
+ZV
+mp
 "}
 (9,1,1) = {"
-ZV
+qM
+nx
+gh
 xW
 SA
 ZQ
@@ -8404,8 +8496,12 @@ qz
 aa
 Pn
 gh
+nx
+sT
 "}
 (10,1,1) = {"
+mp
+mp
 kS
 kS
 xG
@@ -8439,8 +8535,12 @@ kS
 kS
 kS
 kS
+mp
+mp
 "}
 (11,1,1) = {"
+mp
+mp
 mp
 pF
 Rl
@@ -8474,8 +8574,12 @@ Ot
 kS
 mp
 mp
+mp
+mp
 "}
 (12,1,1) = {"
+mp
+mp
 mp
 mp
 xG
@@ -8509,8 +8613,12 @@ kS
 kS
 mp
 mp
+mp
+mp
 "}
 (13,1,1) = {"
+mp
+mp
 mp
 mp
 mp
@@ -8544,8 +8652,12 @@ kS
 mp
 mp
 mp
+mp
+mp
 "}
 (14,1,1) = {"
+mp
+mp
 mp
 mp
 mp
@@ -8579,8 +8691,12 @@ kS
 mp
 mp
 mp
+mp
+mp
 "}
 (15,1,1) = {"
+mp
+mp
 mp
 mp
 mp
@@ -8614,8 +8730,12 @@ kS
 mp
 mp
 mp
+mp
+mp
 "}
 (16,1,1) = {"
+mp
+mp
 mp
 mp
 mp
@@ -8649,8 +8769,12 @@ kS
 mp
 mp
 mp
+mp
+mp
 "}
 (17,1,1) = {"
+mp
+mp
 of
 sb
 sb
@@ -8684,8 +8808,12 @@ ZH
 ZH
 ZH
 hu
+mp
+mp
 "}
 (18,1,1) = {"
+mp
+mp
 sb
 RB
 Sl
@@ -8719,8 +8847,12 @@ yN
 nr
 ZH
 ZH
+mp
+mp
 "}
 (19,1,1) = {"
+mp
+mp
 sb
 sb
 Ux
@@ -8754,8 +8886,12 @@ da
 vn
 ZH
 ZH
+mp
+mp
 "}
 (20,1,1) = {"
+mp
+mp
 mp
 sb
 Sj
@@ -8789,8 +8925,12 @@ IB
 fX
 ZH
 mp
+mp
+mp
 "}
 (21,1,1) = {"
+mp
+mp
 mp
 ML
 lY
@@ -8824,8 +8964,12 @@ AK
 kH
 ZH
 mp
+mp
+mp
 "}
 (22,1,1) = {"
+mp
+mp
 mp
 ML
 sf
@@ -8859,8 +9003,12 @@ MK
 vE
 ZH
 mp
+mp
+mp
 "}
 (23,1,1) = {"
+mp
+mp
 mp
 sb
 dH
@@ -8894,8 +9042,12 @@ da
 Xf
 ZH
 mp
+mp
+mp
 "}
 (24,1,1) = {"
+mp
+mp
 mp
 zD
 zD
@@ -8929,8 +9081,12 @@ ET
 kc
 ZH
 mp
+mp
+mp
 "}
 (25,1,1) = {"
+mp
+mp
 mp
 zD
 yP
@@ -8964,8 +9120,12 @@ AK
 wC
 ZH
 mp
+mp
+mp
 "}
 (26,1,1) = {"
+mp
+mp
 mp
 vb
 vb
@@ -8999,8 +9159,12 @@ sc
 fX
 ZH
 mp
+mp
+mp
 "}
 (27,1,1) = {"
+mp
+mp
 mp
 vb
 gz
@@ -9034,8 +9198,12 @@ da
 Eh
 wh
 mp
+mp
+mp
 "}
 (28,1,1) = {"
+mp
+mp
 mp
 vb
 fn
@@ -9069,8 +9237,12 @@ IB
 hY
 wh
 mp
+mp
+mp
 "}
 (29,1,1) = {"
+mp
+mp
 mp
 CG
 vb
@@ -9104,8 +9276,12 @@ AK
 fK
 TM
 mp
+mp
+mp
 "}
 (30,1,1) = {"
+mp
+mp
 mp
 lo
 CV
@@ -9139,10 +9315,14 @@ ia
 ia
 ZH
 mp
+mp
+mp
 "}
 (31,1,1) = {"
 mp
-VC
+mp
+mp
+Am
 AW
 ZC
 Um
@@ -9174,8 +9354,12 @@ CQ
 SZ
 ZH
 mp
+mp
+mp
 "}
 (32,1,1) = {"
+mp
+mp
 mp
 VC
 AW
@@ -9209,8 +9393,12 @@ Qx
 tp
 ZH
 mp
+mp
+mp
 "}
 (33,1,1) = {"
+mp
+mp
 mp
 vQ
 dg
@@ -9244,8 +9432,12 @@ BL
 qL
 ZH
 mp
+mp
+mp
 "}
 (34,1,1) = {"
+mp
+mp
 mp
 Vw
 rP
@@ -9279,8 +9471,12 @@ ZH
 ZH
 ZH
 mp
+mp
+mp
 "}
 (35,1,1) = {"
+mp
+mp
 mp
 mp
 mp
@@ -9314,12 +9510,16 @@ nW
 mp
 mp
 mp
+mp
+mp
 "}
 (36,1,1) = {"
 mp
 mp
 mp
-mp
+JT
+ZV
+ZV
 IV
 Ya
 Sb
@@ -9345,7 +9545,9 @@ RW
 GN
 NF
 IV
-mp
+ZV
+ZV
+xZ
 mp
 mp
 mp
@@ -9355,6 +9557,8 @@ mp
 mp
 mp
 mp
+nx
+nx
 IV
 ql
 Yj
@@ -9380,12 +9584,16 @@ RW
 lO
 zk
 IV
+nx
+nx
 mp
 mp
 mp
 mp
 "}
 (38,1,1) = {"
+mp
+mp
 mp
 mp
 mp
@@ -9419,8 +9627,12 @@ mp
 mp
 mp
 mp
+mp
+mp
 "}
 (39,1,1) = {"
+mp
+mp
 mp
 mp
 mp
@@ -9454,8 +9666,12 @@ mp
 mp
 mp
 mp
+mp
+mp
 "}
 (40,1,1) = {"
+mp
+mp
 mp
 mp
 mp
@@ -9489,8 +9705,12 @@ mp
 mp
 mp
 mp
+mp
+mp
 "}
 (41,1,1) = {"
+mp
+mp
 mp
 mp
 mp
@@ -9524,8 +9744,12 @@ mp
 mp
 mp
 mp
+mp
+mp
 "}
 (42,1,1) = {"
+mp
+mp
 mp
 mp
 mp
@@ -9559,8 +9783,12 @@ mp
 mp
 mp
 mp
+mp
+mp
 "}
 (43,1,1) = {"
+mp
+mp
 mp
 mp
 mp
@@ -9594,8 +9822,12 @@ mp
 mp
 mp
 mp
+mp
+mp
 "}
 (44,1,1) = {"
+mp
+mp
 mp
 mp
 mp
@@ -9629,8 +9861,12 @@ mp
 mp
 mp
 mp
+mp
+mp
 "}
 (45,1,1) = {"
+mp
+mp
 mp
 mp
 mp
@@ -9664,8 +9900,12 @@ mp
 mp
 mp
 mp
+mp
+mp
 "}
 (46,1,1) = {"
+mp
+mp
 mp
 mp
 mp
@@ -9699,8 +9939,12 @@ mp
 mp
 mp
 mp
+mp
+mp
 "}
 (47,1,1) = {"
+mp
+mp
 mp
 mp
 mp
@@ -9734,8 +9978,12 @@ mp
 mp
 mp
 mp
+mp
+mp
 "}
 (48,1,1) = {"
+mp
+mp
 mp
 mp
 mp
@@ -9769,8 +10017,12 @@ mp
 mp
 mp
 mp
+mp
+mp
 "}
 (49,1,1) = {"
+mp
+mp
 mp
 mp
 mp
@@ -9804,8 +10056,12 @@ mp
 mp
 mp
 mp
+mp
+mp
 "}
 (50,1,1) = {"
+mp
+mp
 mp
 mp
 mp
@@ -9839,8 +10095,12 @@ mp
 mp
 mp
 mp
+mp
+mp
 "}
 (51,1,1) = {"
+mp
+mp
 mp
 mp
 mp
@@ -9874,8 +10134,12 @@ mp
 mp
 mp
 mp
+mp
+mp
 "}
 (52,1,1) = {"
+mp
+mp
 mp
 mp
 mp
@@ -9902,6 +10166,8 @@ mp
 QW
 Gq
 QW
+mp
+mp
 mp
 mp
 mp
