@@ -10,28 +10,10 @@
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/cargo)
 "ay" = (
-/obj/effect/turf_decal/siding/thinplating{
-	dir = 4
-	},
-/obj/machinery/plumbing/pill_press,
 /obj/machinery/firealarm/directional/west,
 /obj/machinery/airalarm/directional/north,
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 4
-	},
-/obj/machinery/plumbing/pill_press{
-	dir = 1
-	},
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = -28
-	},
-/obj/machinery/airalarm/all_access{
-	pixel_y = 25
 	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/medical)
@@ -1022,23 +1004,11 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "nz" = (
-/obj/machinery/vending/hydronutrients,
-/obj/machinery/vending/hydronutrients,
-/obj/effect/turf_decal/siding/wood{
-	dir = 4
-	},
 /obj/machinery/light/small/directional/west,
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
-/obj/machinery/vending/hydronutrients,
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
-/obj/machinery/light/small{
-	dir = 8
-	},
+/obj/machinery/vending/hydronutrients,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/hydroponics)
 "nK" = (
@@ -1279,25 +1249,12 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "rC" = (
-/obj/structure/closet/crate/secure/loot,
-/obj/item/plunger/reinforced,
-/obj/effect/turf_decal/box/white,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small/directional/south,
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 8
-	},
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
 /obj/structure/closet/crate/secure/loot,
 /obj/item/plunger/reinforced,
 /obj/effect/turf_decal/box/white,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
 	},
@@ -1843,41 +1800,20 @@
 /turf/open/floor/wood/walnut,
 /area/ship/cargo)
 "As" = (
-/obj/machinery/power/terminal{
-	dir = 8
-	},
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/obj/structure/catwalk/over,
 /obj/machinery/firealarm/directional/north,
-/obj/machinery/button/door{
-	id = "schmeidengine";
-	name = "Engine Shutters";
-	pixel_x = -10;
-	pixel_y = 26
-	},
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
 /obj/machinery/power/terminal{
 	dir = 8
 	},
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/structure/catwalk/over,
-/obj/machinery/firealarm{
-	pixel_x = 5;
-	pixel_y = 28
-	},
 /obj/machinery/button/door{
 	id = "schmeidengine";
 	name = "Engine Shutters";
 	pixel_x = -10;
 	pixel_y = 26
 	},
+/obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "At" = (
@@ -2026,26 +1962,7 @@
 /turf/open/floor/wood/walnut,
 /area/ship/crew/hydroponics)
 "CK" = (
-/obj/effect/turf_decal/siding/thinplating{
-	dir = 9
-	},
-/obj/structure/table/reinforced,
-/obj/item/gps{
-	gpstag = "PHARM1"
-	},
-/obj/machinery/photocopier/faxmachine/longrange,
 /obj/machinery/light/directional/west,
-/obj/machinery/button/door{
-	dir = 4;
-	id = "pharmbridge";
-	name = "Bridge Lockdown";
-	pixel_x = -17;
-	pixel_y = -7
-	},
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 9
 	},
@@ -2054,9 +1971,6 @@
 	gpstag = "PHARM1"
 	},
 /obj/machinery/photocopier/faxmachine/longrange,
-/obj/machinery/light{
-	dir = 8
-	},
 /obj/machinery/button/door{
 	dir = 4;
 	id = "pharmbridge";

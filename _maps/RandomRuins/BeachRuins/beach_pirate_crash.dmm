@@ -141,7 +141,7 @@
 /turf/open/floor/plating/grass/beach/lit,
 /area/ruin/unpowered)
 "dt" = (
-/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-6"
 	},
@@ -271,12 +271,12 @@
 /area/ruin/unpowered)
 "gU" = (
 /obj/structure/flora/ausbushes/stalkybush{
-	pixel_y = 10;
-	pixel_x = 7
+	pixel_x = 7;
+	pixel_y = 10
 	},
 /obj/structure/flora/ausbushes/stalkybush{
-	pixel_y = 6;
-	pixel_x = -15
+	pixel_x = -15;
+	pixel_y = 6
 	},
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/effect/turf_decal/weather/sand{
@@ -368,8 +368,8 @@
 	pixel_y = 2
 	},
 /obj/structure/flora/ausbushes/stalkybush{
-	pixel_y = 10;
-	pixel_x = 3
+	pixel_x = 3;
+	pixel_y = 10
 	},
 /turf/open/water/beach,
 /area/ruin/unpowered)
@@ -384,8 +384,8 @@
 /area/ruin/unpowered)
 "jE" = (
 /mob/living/simple_animal/hostile/pirate/ranged{
-	faction = list("pirate","mining");
-	environment_smash = 0
+	environment_smash = 0;
+	faction = list("pirate","mining")
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/unpowered)
@@ -509,8 +509,8 @@
 	dir = 1
 	},
 /obj/structure/flora/ausbushes/stalkybush{
-	pixel_y = 10;
-	pixel_x = 3
+	pixel_x = 3;
+	pixel_y = 10
 	},
 /turf/open/water/beach,
 /area/ruin/unpowered)
@@ -519,8 +519,8 @@
 	icon_state = "1-4"
 	},
 /mob/living/simple_animal/hostile/pirate/melee{
-	faction = list("pirate","mining");
-	environment_smash = 0
+	environment_smash = 0;
+	faction = list("pirate","mining")
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -601,8 +601,8 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/stairs{
-	dir = 1;
 	color = "#A47449";
+	dir = 1;
 	footstep = "wood"
 	},
 /area/ruin/beach/piratecrash)
@@ -833,15 +833,15 @@
 /area/ruin/unpowered)
 "xN" = (
 /obj/structure/flora/ausbushes/stalkybush{
-	pixel_y = 23;
-	pixel_x = -3
+	pixel_x = -3;
+	pixel_y = 23
 	},
 /obj/structure/flora/ausbushes/stalkybush{
 	pixel_y = 6
 	},
 /obj/structure/flora/ausbushes/stalkybush{
-	pixel_y = 15;
-	pixel_x = 10
+	pixel_x = 10;
+	pixel_y = 15
 	},
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/water/beach{
@@ -1098,7 +1098,7 @@
 /turf/open/floor/plating/asteroid/sand/lit,
 /area/ruin/unpowered)
 "GP" = (
-/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -1133,8 +1133,8 @@
 	dir = 6
 	},
 /obj/structure/flora/tree/palm{
-	pixel_y = 13;
-	pixel_x = -5
+	pixel_x = -5;
+	pixel_y = 13
 	},
 /turf/open/floor/plating/asteroid/sand/lit,
 /area/ruin/unpowered)
@@ -1204,8 +1204,8 @@
 	pixel_y = 19
 	},
 /obj/item/hemostat{
-	pixel_y = 15;
-	pixel_x = 9
+	pixel_x = 9;
+	pixel_y = 15
 	},
 /obj/item/cautery{
 	pixel_y = 15
@@ -1247,8 +1247,8 @@
 /area/ruin/unpowered)
 "MH" = (
 /turf/open/floor/plasteel/stairs{
-	dir = 4;
 	color = "#A47449";
+	dir = 4;
 	footstep = "wood"
 	},
 /area/ruin/beach/piratecrash)
@@ -1300,7 +1300,7 @@
 /turf/open/floor/plating,
 /area/ruin/beach/piratecrash)
 "Nu" = (
-/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -1364,12 +1364,12 @@
 	dir = 4
 	},
 /obj/machinery/porta_turret/syndicate/pod{
-	name = "laser turret";
-	dir = 8;
 	desc = "A turret built with substandard parts and run down further with age. Still capable of delivering lethal lasers to the odd space carp, but not much else.";
+	dir = 8;
 	faction = list("Syndicate","pirate");
 	lethal_projectile = /obj/projectile/beam/weak/penetrator;
-	lethal_projectile_sound = 'sound/weapons/plasma_cutter.ogg'
+	lethal_projectile_sound = 'sound/weapons/plasma_cutter.ogg';
+	name = "laser turret"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1403,12 +1403,12 @@
 /area/ruin/beach/piratecrash)
 "Qj" = (
 /obj/structure/flora/ausbushes/stalkybush{
-	pixel_y = 17;
-	pixel_x = -5
+	pixel_x = -5;
+	pixel_y = 17
 	},
 /obj/structure/flora/ausbushes/stalkybush{
-	pixel_y = 6;
-	pixel_x = 10
+	pixel_x = 10;
+	pixel_y = 6
 	},
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/water/beach{
@@ -1486,8 +1486,8 @@
 /area/ruin/unpowered)
 "Vc" = (
 /mob/living/simple_animal/hostile/pirate/melee{
-	faction = list("pirate","mining");
-	environment_smash = 0
+	environment_smash = 0;
+	faction = list("pirate","mining")
 	},
 /turf/open/floor/plating/asteroid/sand/lit,
 /area/ruin/unpowered)
