@@ -254,6 +254,19 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
+"cM" = (
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "amoguswindows"
+	},
+/obj{
+	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete.";
+	name = "---Merge Conflict Marker---",
+	},
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/grille,
+/turf/open/floor/plating,
+/area/ship/hallway/fore)
 "cP" = (
 /obj/structure/extinguisher_cabinet/directional/north,
 /turf/open/floor/plasteel/patterned,
@@ -313,6 +326,13 @@
 /obj/machinery/holopad/emergency/command,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
+"ec" = (
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "amoguswindows"
+	},
+/turf/template_noop,
+/area/template_noop)
 "ee" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/airlock/public/glass{
@@ -328,6 +348,15 @@
 /obj/machinery/ore_silo,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
+"eh" = (
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/grille,
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "amoguswindows"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
 "ei" = (
 /obj/machinery/power/port_gen/pacman/super,
 /obj/structure/cable/yellow,
@@ -405,6 +434,15 @@
 	dir = 1
 	},
 /area/ship/cargo)
+"eZ" = (
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "amoguswindows"
+	},
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/grille,
+/turf/open/floor/plating,
+/area/ship/hallway/fore)
 "fa" = (
 /obj/machinery/vending/snack/random,
 /obj/effect/turf_decal/corner/opaque/red/diagonal,
@@ -1970,6 +2008,15 @@
 /obj/effect/turf_decal/corner/opaque/neutral/half,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
+"to" = (
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "amoguswindows"
+	},
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/grille,
+/turf/open/floor/plating,
+/area/ship/bridge)
 "tD" = (
 /obj/machinery/atmospherics/components/binary/pump{
 	dir = 8;
@@ -3693,20 +3740,12 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "LL" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile,
 /obj/machinery/door/poddoor{
 	dir = 4;
 	id = "amoguswindows"
 	},
-/obj/effect/spawner/structure/window/reinforced,
-/obj{
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete.";
-	name = "---Merge Conflict Marker---",
-	},
-/obj/machinery/door/poddoor{
-	id = "amoguswindows"
-	},
-/obj/structure/window/reinforced/fulltile,
-/obj/structure/grille,
 /turf/open/floor/plating,
 /area/ship/bridge)
 "LO" = (
@@ -6476,8 +6515,8 @@ LO
 (42,1,1) = {"
 LO
 LO
-xM
 AC
+eZ
 Gd
 by
 NB
@@ -6497,7 +6536,7 @@ NB
 My
 Gd
 Gd
-xM
+eZ
 AC
 LO
 LO
@@ -6506,7 +6545,7 @@ LO
 LO
 LO
 LO
-xM
+eZ
 zO
 zO
 NB
@@ -6526,7 +6565,7 @@ en
 KZ
 zO
 zO
-xM
+cM
 LO
 LO
 LO
@@ -6658,14 +6697,14 @@ LO
 LO
 LO
 LO
-LL
+to
 TY
 TH
 QY
 FR
 TY
-LL
-LO
+eh
+ec
 LO
 LO
 LO
