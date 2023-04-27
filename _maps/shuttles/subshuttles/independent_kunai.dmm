@@ -87,9 +87,7 @@
 "aj" = (
 /obj/structure/closet/crate/eva,
 /obj/effect/turf_decal/box,
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /obj/item/storage/toolbox/mechanical,
 /obj/item/storage/toolbox/electrical,
 /turf/open/floor/engine/hull/interior,
@@ -186,16 +184,8 @@
 /area/ship/storage)
 "gi" = (
 /obj/structure/table,
-/obj/item/radio/intercom{
-	dir = 8;
-	pixel_y = 2;
-	pixel_x = -9
-	},
-/obj/item/radio/intercom{
-	dir = 8;
-	pixel_y = 2;
-	pixel_x = 4
-	},
+/obj/item/radio/intercom/directional/east,
+/obj/item/radio/intercom/directional/east,
 /obj/machinery/light/floor,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -302,9 +292,7 @@
 	},
 /obj/machinery/power/smes/engineering,
 /obj/effect/turf_decal/box,
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/engine/hull/interior,
 /area/ship/storage)
 "nP" = (
@@ -323,11 +311,7 @@
 "qn" = (
 /obj/machinery/power/terminal,
 /obj/structure/cable,
-/obj/item/radio/intercom/wideband{
-	dir = 4;
-	pixel_y = 4;
-	pixel_x = -26
-	},
+/obj/item/radio/intercom/wideband/directional/west,
 /obj/effect/turf_decal/corner_techfloor_grid,
 /obj/effect/turf_decal/corner_techfloor_grid{
 	dir = 9
@@ -375,7 +359,7 @@
 /obj/structure/chair/comfy/shuttle{
 	dir = 1
 	},
-/obj/machinery/light/small,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/engine/hull/interior,
 /area/ship/storage)
 "DP" = (
@@ -477,9 +461,7 @@
 /area/ship/storage)
 "SE" = (
 /obj/structure/chair/comfy/shuttle,
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/engine/hull/interior,
 /area/ship/storage)
 "Wx" = (
