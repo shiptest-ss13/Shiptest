@@ -13,11 +13,6 @@
 /obj/structure/sign/poster/ripped,
 /turf/closed/wall/rust,
 /area/icemoon/underground/explored)
-"bR" = (
-/obj/machinery/light/small/broken/directional/east,
-/obj/structure/fluff/fokoff_sign,
-/turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/underground/explored)
 "bY" = (
 /obj/structure/flora/stump,
 /turf/open/floor/plating/asteroid/snow/icemoon,
@@ -47,6 +42,12 @@
 /obj/effect/decal/cleanable/blood/bubblegum,
 /obj/item/bedsheet/random,
 /turf/open/floor/wood,
+/area/ruin/powered)
+"fQ" = (
+/obj/structure/showcase/machinery/tv,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/broken/directional/north,
+/turf/open/floor/holofloor/wood,
 /area/ruin/powered)
 "gG" = (
 /obj/structure/table/wood,
@@ -84,10 +85,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
 /area/ruin/powered)
-"jP" = (
-/obj/machinery/light/small/directional/east,
-/turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/underground/explored)
 "kl" = (
 /obj/structure/sign/poster/official/nanotrasen_logo,
 /turf/closed/wall,
@@ -122,6 +119,10 @@
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 8
 	},
+/turf/open/floor/plating/asteroid/snow/icemoon,
+/area/icemoon/underground/explored)
+"lr" = (
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/icemoon/underground/explored)
 "mi" = (
@@ -266,6 +267,26 @@
 /obj/structure/fence/door,
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/icemoon/underground/explored)
+"wo" = (
+/obj/structure/closet/crate/trashcart,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/blood,
+/obj/item/bodypart/head,
+/obj/item/bodypart/l_arm{
+	pixel_x = -9;
+	pixel_y = -9
+	},
+/obj/item/bodypart/leg/left,
+/obj/item/bodypart/r_arm,
+/obj/item/bodypart/leg/right{
+	pixel_x = 8;
+	pixel_y = 4
+	},
+/obj/item/bodypart/chest,
+/obj/item/organ/heart,
+/obj/item/multitool,
+/turf/open/floor/plasteel/freezer,
+/area/ruin/powered)
 "wQ" = (
 /turf/closed/wall,
 /area/ruin/powered)
@@ -297,12 +318,6 @@
 "zT" = (
 /turf/open/floor/plating/snowed/smoothed/icemoon,
 /area/icemoon/underground/explored)
-"AG" = (
-/obj/structure/showcase/machinery/tv,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/broken/directional/north,
-/turf/open/floor/holofloor/wood,
-/area/ruin/powered)
 "AM" = (
 /obj/effect/decal/cleanable/blood/gibs/down,
 /obj/item/pickaxe,
@@ -433,6 +448,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet,
 /area/ruin/powered)
+"Jf" = (
+/obj/machinery/light/small/broken/directional/east,
+/obj/structure/fluff/fokoff_sign,
+/turf/open/floor/plating/asteroid/snow/icemoon,
+/area/icemoon/underground/explored)
 "Kd" = (
 /obj/structure/flora/grass/green,
 /turf/open/floor/plating/asteroid/snow/icemoon,
@@ -475,26 +495,6 @@
 	name = "Village Elder"
 	},
 /turf/open/floor/engine/cult,
-/area/ruin/powered)
-"Qh" = (
-/obj/structure/closet/crate/trashcart,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood,
-/obj/item/bodypart/head,
-/obj/item/bodypart/l_arm{
-	pixel_x = -9;
-	pixel_y = -9
-	},
-/obj/item/bodypart/l_leg,
-/obj/item/bodypart/r_arm,
-/obj/item/bodypart/r_leg{
-	pixel_x = 8;
-	pixel_y = 4
-	},
-/obj/item/bodypart/chest,
-/obj/item/organ/heart,
-/obj/item/multitool,
-/turf/open/floor/plasteel/freezer,
 /area/ruin/powered)
 "Qt" = (
 /obj/effect/decal/cleanable/blood/footprints{
@@ -617,11 +617,11 @@ tN
 pc
 Og
 Og
-bR
+Jf
 Og
 Og
 Og
-jP
+lr
 Og
 Og
 Og
@@ -780,7 +780,7 @@ Vn
 QR
 DI
 SN
-Qh
+wo
 wQ
 Ei
 Ei
@@ -833,7 +833,7 @@ Vn
 tF
 iz
 Vn
-AG
+fQ
 aM
 yb
 Vn

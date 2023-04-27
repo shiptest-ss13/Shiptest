@@ -39,21 +39,6 @@
 /obj/effect/turf_decal/siding/wood/corner,
 /turf/open/floor/wood,
 /area/ship/crew/library)
-"aK" = (
-/obj/structure/chair/sofa{
-	dir = 4;
-	icon_state = "sofaend_right"
-	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521";
-	dir = 10
-	},
-/obj/item/toy/plush/goatplushie{
-	pixel_x = 2;
-	pixel_y = 3
-	},
-/turf/open/floor/carpet/black,
-/area/ship/crew/dorm/dormtwo)
 "aM" = (
 /obj/machinery/power/shuttle/engine/electric{
 	dir = 4
@@ -64,16 +49,6 @@
 /obj/structure/window/reinforced/spawner/east,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
-"aP" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 4
-	},
-/obj/machinery/power/apc/auto_name/directional/east,
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/turf/open/floor/wood,
-/area/ship/hallway/fore)
 "aS" = (
 /obj/structure/catwalk,
 /obj/structure/window/reinforced/spawner/north,
@@ -82,14 +57,6 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ship/engineering/atmospherics)
-"aW" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521";
-	dir = 1
-	},
-/obj/machinery/light/directional/north,
-/turf/open/floor/wood/ebony,
-/area/ship/crew/chapel)
 "bb" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#332521";
@@ -100,6 +67,31 @@
 	},
 /turf/open/floor/carpet/red_gold,
 /area/ship/bridge)
+"bc" = (
+/obj/structure/table/wood,
+/obj/effect/spawner/lootdrop/three_course_meal,
+/obj/effect/turf_decal/corner_techfloor_grid/diagonal,
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/pod/dark,
+/area/ship/crew/dorm)
+"bd" = (
+/obj/structure/table/wood,
+/obj/item/taperecorder{
+	pixel_x = -5
+	},
+/obj/item/camera{
+	pixel_x = 6;
+	pixel_y = 7
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/obj/item/storage/fancy/candle_box{
+	pixel_x = 8;
+	pixel_y = 2
+	},
+/turf/open/floor/wood,
+/area/ship/crew/library)
 "bi" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#332521";
@@ -134,20 +126,21 @@
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "by" = (
-/obj/effect/turf_decal/borderfloorblack,
-/obj/machinery/power/apc/auto_name/directional/north,
-/obj/structure/cable{
-	icon_state = "0-8"
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
 	},
-/turf/open/floor/plasteel/dark,
-/area/ship/crew/dorm)
-"bJ" = (
-/obj/structure/cable/yellow{
-	icon_state = "1-4"
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/cyan/visible{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /obj/machinery/light/directional/south,
 /turf/open/floor/plating,
-/area/ship/engineering/electrical)
+/area/ship/engineering/atmospherics)
 "bM" = (
 /obj/machinery/atmospherics/components/unary/thermomachine/heater/on{
 	dir = 4
@@ -173,6 +166,15 @@
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
+"bY" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/chair/wood{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood,
+/obj/machinery/newscaster/directional/south,
+/turf/open/floor/wood,
+/area/ship/crew/library)
 "cd" = (
 /obj/structure/chair/pew/right,
 /obj/effect/turf_decal/siding/wood{
@@ -218,19 +220,6 @@
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
-"cx" = (
-/obj/structure/table/wood,
-/obj/item/areaeditor/shuttle,
-/obj/item/nullrod,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 1
-	},
-/obj/machinery/firealarm/directional/east,
-/obj/item/spacecash/bundle/c1000,
-/obj/item/spacecash/bundle/c1000,
-/obj/item/spacecash/bundle/c1000,
-/turf/open/floor/carpet/nanoweave/blue,
-/area/ship/crew/chapel/office)
 "cE" = (
 /turf/closed/wall/r_wall,
 /area/ship/hallway/port)
@@ -308,11 +297,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/dirt/jungle/dark/actuallydark,
 /area/ship/crew/canteen)
-"df" = (
-/obj/effect/turf_decal/siding/wood,
-/obj/machinery/light/small/directional/south,
-/turf/open/floor/carpet/black,
-/area/ship/crew/dorm)
 "dg" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 1
@@ -320,6 +304,15 @@
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
+"dn" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
+	id = "chapel_window";
+	name = "Window Shutters"
+	},
+/turf/open/floor/plating,
+/area/ship/crew/dorm/dormtwo)
 "du" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/open/floor/plating/grass/jungle/actuallydark,
@@ -344,12 +337,6 @@
 	dir = 10
 	},
 /turf/open/floor/plating/airless,
-/area/ship/engineering/atmospherics)
-"dS" = (
-/obj/effect/turf_decal/ihejirika_small/right{
-	dir = 4
-	},
-/turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "dX" = (
 /obj/structure/bookcase/random/religion,
@@ -418,6 +405,13 @@
 /obj/item/flashlight/lantern,
 /turf/open/floor/plating/grass/jungle/actuallydark,
 /area/ship/crew/hydroponics)
+"ev" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/machinery/light/directional/east,
+/turf/open/floor/wood,
+/area/ship/hallway/starboard)
 "eC" = (
 /obj/machinery/power/smes/engineering,
 /obj/structure/cable,
@@ -455,6 +449,24 @@
 "eM" = (
 /turf/closed/wall,
 /area/ship/crew/dorm/dormtwo)
+"eO" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 5
+	},
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 8
+	},
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/wood,
+/area/ship/crew/dorm)
+"eP" = (
+/obj/machinery/door/airlock{
+	dir = 4;
+	name = "Restroom"
+	},
+/obj/effect/turf_decal/corner/opaque/bottlegreen/diagonal,
+/turf/open/floor/plasteel/white,
+/area/ship/crew/toilet)
 "eT" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#332521";
@@ -533,49 +545,14 @@
 /turf/open/floor/plating/dirt/jungle/dark/actuallydark,
 /area/ship/crew/hydroponics)
 "fv" = (
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
+/obj/structure/table/reinforced,
 /obj/effect/turf_decal/siding/wood{
 	color = "#332521";
-	dir = 1
+	dir = 5
 	},
-/obj/effect/turf_decal/siding/wood/corner{
-	color = "#332521";
-	dir = 8
-	},
-/obj/effect/turf_decal/siding/wood/corner{
-	color = "#332521"
-	},
-/obj/effect/turf_decal/siding/wood/corner{
-	color = "#332521";
-	dir = 4
-	},
-/obj/effect/turf_decal/siding/wood/corner{
-	color = "#332521";
-	dir = 1
-	},
-/obj/machinery/door/airlock/grunge{
-	dir = 4;
-	name = "Discussion Chamber"
-	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521"
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
+/obj/item/radio/intercom/wideband/directional/east,
 /turf/open/floor/wood/ebony,
-/area/ship/crew/dorm/dormtwo)
+/area/ship/bridge)
 "fx" = (
 /obj/structure/window/reinforced/spawner/north,
 /obj/machinery/cryopod{
@@ -633,6 +610,14 @@
 	},
 /turf/open/floor/wood,
 /area/ship/hallway/starboard)
+"fF" = (
+/obj/effect/turf_decal/borderfloorblack,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/machinery/firealarm/directional/west,
+/turf/open/floor/plasteel/dark,
+/area/ship/crew/dorm)
 "fJ" = (
 /obj/structure/flora/ausbushes/reedbush,
 /turf/open/water/jungle/actuallydark,
@@ -677,20 +662,6 @@
 /obj/structure/railing/corner/wood,
 /turf/open/water/jungle/actuallydark,
 /area/ship/crew/hydroponics)
-"gx" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521";
-	dir = 1
-	},
-/obj/structure/table/wood,
-/obj/item/reagent_containers/glass/mortar,
-/obj/item/pestle,
-/obj/machinery/light/small/directional/north,
-/obj/item/reagent_containers/food/condiment/enzyme,
-/obj/item/reagent_containers/syringe,
-/obj/item/reagent_containers/syringe,
-/turf/open/floor/wood/ebony,
-/area/ship/crew/canteen)
 "gL" = (
 /obj/structure/table/wood,
 /obj/item/flashlight/lamp/green{
@@ -704,6 +675,21 @@
 	},
 /turf/open/floor/wood,
 /area/ship/crew/library)
+"gM" = (
+/obj/effect/turf_decal/siding/wood,
+/obj/machinery/light/directional/south,
+/turf/open/floor/wood,
+/area/ship/hallway/starboard)
+"gN" = (
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/apc/auto_name/directional/east,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/wood,
+/area/ship/crew/canteen)
 "gX" = (
 /obj/machinery/door/window/westleft,
 /obj/effect/turf_decal/siding/wood{
@@ -819,6 +805,17 @@
 /obj/machinery/airalarm/directional/east,
 /turf/open/floor/wood,
 /area/ship/hallway/fore)
+"hB" = (
+/obj/machinery/mass_driver{
+	dir = 8;
+	id = "chapel_massdriver"
+	},
+/obj/machinery/door/window/brigdoor/eastright,
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/medical/morgue)
 "hF" = (
 /obj/structure/flora/junglebush/large,
 /turf/open/floor/plating/grass/jungle/actuallydark,
@@ -846,21 +843,15 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/floor/plating/grass/jungle/actuallydark,
 /area/ship/crew/hydroponics)
-"hX" = (
-/obj/structure/sink/kitchen{
-	dispensedreagent = /datum/reagent/water/holywater;
-	name = "Holy sink";
-	pixel_y = 20
+"ib" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
+	id = "chapel_window";
+	name = "Window Shutters"
 	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521";
-	dir = 1
-	},
-/obj/effect/turf_decal/siding/wood/corner{
-	color = "#332521"
-	},
-/turf/open/floor/wood/ebony,
-/area/ship/crew/chapel)
+/turf/open/floor/plating,
+/area/ship/bridge)
 "if" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -878,36 +869,18 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
-"il" = (
+"ij" = (
 /obj/effect/turf_decal/siding/wood{
-	color = "#332521";
-	dir = 10
-	},
-/obj/machinery/light/small/directional/west,
-/turf/open/floor/wood/ebony,
-/area/ship/hallway/starboard)
-"ip" = (
-/obj/structure/table/reinforced,
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521";
 	dir = 6
 	},
-/obj/item/radio/intercom/directional/east,
-/obj/machinery/button/door{
-	dir = 8;
-	id = "chapel_window";
-	name = "Window Shutter Control";
-	pixel_x = -4;
-	pixel_y = -4
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 8
 	},
-/obj/machinery/button/door{
-	dir = 8;
-	id = "chapel_recdoor";
-	name = "Blast Door Control";
-	pixel_x = -4;
-	pixel_y = 8
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 1
 	},
-/turf/open/floor/wood/ebony,
+/obj/machinery/firealarm/directional/south,
+/turf/open/floor/wood,
 /area/ship/bridge)
 "iv" = (
 /obj/effect/turf_decal/siding/wood,
@@ -1005,6 +978,19 @@
 	},
 /turf/open/floor/wood,
 /area/ship/crew/chapel)
+"jh" = (
+/obj/structure/rack,
+/obj/item/pickaxe,
+/obj/item/storage/bag/ore,
+/obj/item/mining_scanner,
+/obj/item/flashlight/lantern,
+/obj/item/pickaxe/rusted,
+/obj/item/clothing/head/hardhat/mining,
+/obj/item/gps,
+/obj/machinery/light/directional/east,
+/obj/item/stack/marker_beacon/ten,
+/turf/open/floor/wood,
+/area/ship/crew/canteen)
 "ji" = (
 /obj/structure/window/reinforced/spawner/west,
 /obj/item/flashlight/lantern,
@@ -1042,29 +1028,6 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/grass/jungle/actuallydark,
 /area/ship/crew/hydroponics)
-"jo" = (
-/obj/structure/table/wood,
-/obj/item/storage/bag/plants,
-/obj/item/hatchet/wooden,
-/obj/item/shovel/spade,
-/obj/item/reagent_containers/spray/weedspray,
-/obj/item/cultivator,
-/obj/item/reagent_containers/glass/bucket/wooden,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/closet/wall{
-	dir = 4;
-	name = "supply closet";
-	pixel_x = -30
-	},
-/obj/item/reagent_containers/food/drinks/bottle/holywater,
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521";
-	dir = 8
-	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/item/reagent_containers/glass/bucket/wooden,
-/turf/open/floor/wood/ebony,
-/area/ship/crew/canteen)
 "jA" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#332521";
@@ -1083,16 +1046,6 @@
 /obj/effect/turf_decal/siding/wood{
 	color = "#332521";
 	dir = 10
-	},
-/turf/open/floor/wood/ebony,
-/area/ship/crew/chapel)
-"jN" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521"
-	},
-/obj/machinery/power/apc/auto_name/directional/south,
-/obj/structure/cable{
-	icon_state = "0-4"
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/chapel)
@@ -1127,60 +1080,6 @@
 /obj/effect/turf_decal/siding/wood/corner,
 /turf/open/floor/wood,
 /area/ship/hallway/starboard)
-"ku" = (
-/obj/structure/closet/wall{
-	dir = 1;
-	name = "glass storage";
-	pixel_y = -30
-	},
-/obj/item/reagent_containers/food/drinks/modglass/large,
-/obj/item/reagent_containers/food/drinks/modglass/large,
-/obj/item/reagent_containers/food/drinks/modglass/large,
-/obj/item/reagent_containers/food/drinks/modglass/large,
-/obj/item/reagent_containers/food/drinks/modglass/large,
-/obj/item/reagent_containers/food/drinks/modglass/large,
-/obj/item/reagent_containers/food/drinks/modglass/large,
-/obj/item/reagent_containers/food/drinks/modglass/large,
-/obj/item/reagent_containers/food/drinks/modglass/large,
-/obj/item/reagent_containers/food/drinks/modglass/large,
-/obj/item/reagent_containers/food/drinks/modglass/large,
-/obj/item/reagent_containers/food/drinks/modglass/large,
-/obj/item/reagent_containers/food/drinks/modglass/large,
-/obj/item/reagent_containers/food/drinks/modglass/large,
-/obj/item/reagent_containers/food/drinks/modglass/large,
-/obj/item/reagent_containers/food/drinks/modglass/large,
-/obj/item/reagent_containers/food/drinks/modglass/large,
-/obj/item/reagent_containers/food/drinks/modglass/large,
-/obj/item/reagent_containers/food/drinks/modglass/large,
-/obj/item/reagent_containers/food/drinks/bottle,
-/obj/item/reagent_containers/food/drinks/bottle,
-/obj/item/reagent_containers/food/drinks/bottle,
-/obj/item/reagent_containers/food/drinks/bottle,
-/obj/item/reagent_containers/food/drinks/bottle,
-/obj/item/reagent_containers/food/drinks/bottle,
-/obj/item/reagent_containers/food/drinks/bottle,
-/obj/item/reagent_containers/food/drinks/bottle,
-/obj/item/reagent_containers/food/drinks/bottle,
-/obj/effect/turf_decal/siding/wood/corner{
-	color = "#332521";
-	dir = 1
-	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521"
-	},
-/obj/effect/turf_decal/siding/wood/corner{
-	color = "#332521";
-	dir = 8
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
-/turf/open/floor/wood/ebony,
-/area/ship/crew/canteen)
 "kw" = (
 /obj/structure/closet/secure_closet/personal/cabinet,
 /obj/item/gun/ballistic/shotgun/doublebarrel,
@@ -1195,15 +1094,6 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/grass/jungle/actuallydark,
 /area/ship/crew/hydroponics)
-"kB" = (
-/obj/effect/spawner/structure/window/reinforced,
-/obj/machinery/door/poddoor/shutters/preopen{
-	dir = 4;
-	id = "chapel_window";
-	name = "Window Shutters"
-	},
-/turf/open/floor/plating,
-/area/ship/crew/dorm/dormtwo)
 "kC" = (
 /turf/closed/wall/r_wall,
 /area/ship/crew/dorm/dormtwo)
@@ -1215,6 +1105,19 @@
 /obj/structure/flora/ausbushes/sunnybush,
 /turf/open/floor/plating/grass/jungle/actuallydark,
 /area/ship/crew/hydroponics)
+"kN" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/obj/machinery/light/directional/south,
+/turf/open/floor/plating,
+/area/ship/engineering/electrical)
+"kS" = (
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/electrical)
 "kX" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -1263,6 +1166,21 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
+"lh" = (
+/obj/structure/chair/sofa{
+	dir = 4;
+	icon_state = "sofaend_right"
+	},
+/obj/effect/turf_decal/siding/wood{
+	color = "#332521";
+	dir = 10
+	},
+/obj/item/toy/plush/goatplushie{
+	pixel_x = 2;
+	pixel_y = 3
+	},
+/turf/open/floor/carpet/black,
+/area/ship/crew/dorm/dormtwo)
 "lk" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/brflowers,
@@ -1296,24 +1214,6 @@
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/dorm/dormtwo)
-"lu" = (
-/obj/structure/table/wood,
-/obj/item/taperecorder{
-	pixel_x = -5
-	},
-/obj/item/camera{
-	pixel_x = 6;
-	pixel_y = 7
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 8
-	},
-/obj/item/storage/fancy/candle_box{
-	pixel_x = 8;
-	pixel_y = 2
-	},
-/turf/open/floor/wood,
-/area/ship/crew/library)
 "lx" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -1330,13 +1230,6 @@
 	},
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/plating/dirt/jungle/dark/actuallydark,
-/area/ship/crew/hydroponics)
-"lJ" = (
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/obj/machinery/power/apc/auto_name/directional/north,
-/turf/open/floor/wood,
 /area/ship/crew/hydroponics)
 "lM" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -1400,14 +1293,6 @@
 	dir = 4
 	},
 /area/ship/hallway/port)
-"mg" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521";
-	dir = 9
-	},
-/obj/machinery/light/directional/north,
-/turf/open/floor/wood/ebony,
-/area/ship/crew/chapel)
 "mp" = (
 /obj/machinery/power/terminal{
 	dir = 8
@@ -1426,40 +1311,31 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
+"ms" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
+	id = "chapel_window";
+	name = "Window Shutters"
+	},
+/turf/open/floor/plating,
+/area/ship/crew/chapel)
 "mw" = (
 /obj/machinery/autolathe,
 /obj/machinery/door/window/northright,
 /turf/open/floor/plasteel,
 /area/ship/engineering/electrical)
-"mz" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521";
-	dir = 10
-	},
-/obj/machinery/light/directional/west,
-/turf/open/floor/carpet/red,
-/area/ship/crew/library)
-"mA" = (
-/obj/machinery/power/shieldwallgen/atmos/roundstart{
-	dir = 8;
-	id = "shepherd_shields";
-	locked = 1
-	},
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
-/obj/machinery/door/firedoor/border_only,
-/obj/machinery/door/poddoor/shutters{
-	id = "chapel_recdoor"
-	},
-/turf/open/floor/plating,
-/area/ship/crew/canteen)
 "mB" = (
 /turf/closed/wall,
 /area/ship/crew/dorm)
+"mE" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#332521";
+	dir = 9
+	},
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/wood/ebony,
+/area/ship/hallway/port)
 "mH" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters/preopen{
@@ -1469,6 +1345,16 @@
 /obj/machinery/atmospherics/pipe/simple/orange/visible,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
+"mI" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/wood,
+/area/ship/hallway/port)
 "mR" = (
 /obj/effect/turf_decal/siding{
 	dir = 8
@@ -1506,23 +1392,30 @@
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/chapel)
-"nA" = (
-/obj/structure/chair/sofa{
-	dir = 2;
-	icon_state = "sofacorner"
+"nh" = (
+/obj/item/paper/natural{
+	icon_state = "paper_words";
+	info = "<h1>Trappist Recipe</h1><br>By Pater Noster<hr><br><b>Servings:</b> 2 <b>Prep Time:</b> 10 mins <b>Cook Time:</b> 1-2 hrs <b>Difficulty:</b> Easy<br>Trappist beer is a rich and pleasant beer traditionally brewed by monks.<br><h2>  Ingredients </h2><br>Ale: <br>Ale! The core of any good drink. Easily obtainable by fermenting oats in a barrel for a while. This will be the basis of our brew, giving it it's fruity taste and color! <br>Holy water:<br>This is what a makes a trappist a trappist and not a trapisst, the religion! Real easy to get if you are reading this where you are supposed to be reading this! If the chaplain can't bothered it's also easily harvestable from holymelons as long as you bother to separate it. <br>Sugar: <br>Sugar is what's gonna make it all come together sweetening the brew and mixing well with the ale from earlier. It's easy to obtain from grinding sugarcanes. Feel free to add liberally.<br><h2>  Preparation </h2><br>1. Mix the ale and holy water together.<br>2. Add some sugar to the mix as you keep stirring it for 1 minute. <br>3. At this point you're free to just use it as is! But feel free to experiment by adding new flavours and really making it your own! <br><h2>  Closing statement</h2><br> And that's it! Hopefully this guide has been somewhat helpful. A final tip I have is to drink it with bread and cheese, really finishes of the package.";
+	name = "paper - Trappist Recipe";
+	pixel_x = 2;
+	pixel_y = 4
 	},
+/turf/open/floor/wood/ebony,
+/area/ship/crew/canteen)
+"ni" = (
+/obj/item/reagent_containers/food/snacks/grown/wheat,
+/obj/structure/table/wood/fancy,
 /obj/effect/turf_decal/siding/wood{
 	color = "#332521";
 	dir = 5
 	},
-/obj/item/toy/plush/hornet/gay,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable{
-	icon_state = "0-2"
+	icon_state = "1-2"
 	},
-/turf/open/floor/carpet/black,
-/area/ship/crew/dorm/dormtwo)
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/machinery/firealarm/directional/east,
+/turf/open/floor/wood/ebony,
+/area/ship/crew/canteen)
 "nI" = (
 /obj/structure/flora/ausbushes/sunnybush,
 /obj/structure/railing/corner/wood,
@@ -1607,35 +1500,6 @@
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/chapel/office)
-"op" = (
-/obj/effect/spawner/structure/window/reinforced,
-/obj/machinery/door/poddoor/shutters/preopen{
-	dir = 4;
-	id = "chapel_window";
-	name = "Window Shutters"
-	},
-/turf/open/floor/plating,
-/area/ship/crew/chapel)
-"ot" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521"
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light/small/directional/south,
-/turf/open/floor/wood/ebony,
-/area/ship/crew/canteen)
-"ov" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521";
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/light/small/directional/east,
-/turf/open/floor/wood/ebony,
-/area/ship/crew/canteen)
 "ow" = (
 /obj/structure/railing/corner/wood{
 	dir = 2
@@ -1670,6 +1534,16 @@
 	},
 /turf/open/floor/wood,
 /area/ship/hallway/fore)
+"oz" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
+	id = "chapel_window";
+	name = "Window Shutters"
+	},
+/obj/structure/curtain/cloth/fancy,
+/turf/open/floor/plating,
+/area/ship/crew/library)
 "oK" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -1682,16 +1556,6 @@
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/ship/crew/hydroponics)
-"oO" = (
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/obj/machinery/power/apc/auto_name/directional/east,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/wood,
-/area/ship/crew/canteen)
 "oP" = (
 /obj/structure/railing/wood,
 /obj/effect/turf_decal/siding/wood{
@@ -1712,22 +1576,6 @@
 	},
 /turf/open/floor/carpet/black,
 /area/ship/crew/dorm)
-"oT" = (
-/obj/structure/table/wood/fancy,
-/obj/item/reagent_containers/food/drinks/modglass/large{
-	list_reagents = list(/datum/reagent/consumable/ethanol/trappist=50);
-	name = "Trappist";
-	pixel_x = 9;
-	pixel_y = 9
-	},
-/obj/item/reagent_containers/food/drinks/modglass/large{
-	list_reagents = list(/datum/reagent/consumable/ethanol/trappist=50);
-	name = "Trappist";
-	pixel_x = -8;
-	pixel_y = 18
-	},
-/turf/open/floor/plating/grass/jungle/actuallydark,
-/area/ship/crew/hydroponics)
 "pc" = (
 /obj/machinery/atmospherics/pipe/manifold/general/visible,
 /obj/machinery/meter/atmos/distro_loop,
@@ -1738,20 +1586,26 @@
 	dir = 1
 	},
 /area/ship/crew/hydroponics)
-"pv" = (
-/obj/machinery/button/shieldwallgen{
-	id = "shepherd_shields";
-	pixel_x = 3;
-	pixel_y = -12
+"pt" = (
+/obj/structure/chair/sofa/left{
+	dir = 8
 	},
-/obj/machinery/button/door{
-	dir = 8;
-	id = "chapel_recdoor";
-	name = "Blast Door Control";
-	pixel_x = -8
+/obj/effect/turf_decal/siding/wood{
+	color = "#332521";
+	dir = 6
 	},
-/turf/closed/wall/r_wall,
-/area/ship/crew/canteen)
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/item/toy/plush/lizardplushie{
+	pixel_x = -2;
+	pixel_y = 7
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/airalarm/directional/east,
+/turf/open/floor/carpet/black,
+/area/ship/crew/dorm/dormtwo)
 "pw" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	color = "#332521";
@@ -1866,17 +1720,21 @@
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/hydroponics)
-"qc" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 1
+"qb" = (
+/obj/machinery/light/directional/east,
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
-/obj/effect/turf_decal/siding/wood,
-/obj/machinery/light_switch{
-	pixel_x = -4;
-	pixel_y = 26
-	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/closet/crate/hydroponics,
+/obj/item/seeds/grape,
+/obj/item/seeds/watermelon,
+/obj/item/seeds/apple,
+/obj/item/seeds/random,
+/obj/item/seeds/wheat,
 /turf/open/floor/wood,
-/area/ship/crew/dorm)
+/area/ship/hallway/fore)
 "qr" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#332521";
@@ -1888,27 +1746,16 @@
 /turf/open/floor/wood/ebony,
 /area/ship/bridge)
 "qu" = (
-/obj/structure/table/wood/fancy,
-/obj/item/candle/infinite{
-	pixel_x = 9;
-	pixel_y = 9
+/obj/effect/turf_decal/siding/wood{
+	color = "#332521";
+	dir = 9
 	},
-/obj/item/reagent_containers/food/snacks/cheesewedge{
-	pixel_x = 1;
-	pixel_y = 12
+/obj/machinery/power/apc/auto_name/directional/west,
+/obj/structure/cable{
+	icon_state = "0-2"
 	},
-/obj/item/reagent_containers/food/snacks/cheesewedge{
-	pixel_x = 5;
-	pixel_y = 3
-	},
-/obj/item/reagent_containers/food/drinks/modglass/large{
-	list_reagents = list(/datum/reagent/consumable/ethanol/trappist=50);
-	name = "Trappist";
-	pixel_x = -7;
-	pixel_y = 11
-	},
-/turf/open/floor/plating/grass/jungle/actuallydark,
-/area/ship/crew/canteen)
+/turf/open/floor/wood/ebony,
+/area/ship/bridge)
 "qx" = (
 /turf/open/floor/plasteel/stairs/right{
 	dir = 1
@@ -1924,13 +1771,19 @@
 /turf/open/floor/carpet/red,
 /area/ship/crew/library)
 "qD" = (
-/obj/machinery/door/airlock{
-	dir = 4;
-	name = "Restroom"
+/obj/effect/turf_decal/siding/wood{
+	color = "#332521";
+	dir = 1
 	},
-/obj/effect/turf_decal/corner/opaque/bottlegreen/diagonal,
-/turf/open/floor/plasteel/white,
-/area/ship/crew/toilet)
+/obj/structure/table/wood,
+/obj/item/reagent_containers/glass/mortar,
+/obj/item/pestle,
+/obj/machinery/light/small/directional/north,
+/obj/item/reagent_containers/food/condiment/enzyme,
+/obj/item/reagent_containers/syringe,
+/obj/item/reagent_containers/syringe,
+/turf/open/floor/wood/ebony,
+/area/ship/crew/canteen)
 "qE" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	color = "#332521";
@@ -1982,16 +1835,6 @@
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/chapel/office)
-"qO" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/light/directional/south,
-/obj/effect/turf_decal/ihejirika_small/left{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/ship/engineering/atmospherics)
 "qU" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
@@ -2009,13 +1852,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/wood,
 /area/ship/hallway/fore)
-"qW" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 9
-	},
-/obj/machinery/light/directional/north,
-/turf/open/floor/plating/dirt/jungle/dark/actuallydark,
-/area/ship/crew/hydroponics)
 "qX" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/ebony,
@@ -2033,9 +1869,41 @@
 /obj/item/candle/infinite,
 /turf/open/floor/wood,
 /area/ship/crew/chapel)
+"rg" = (
+/obj/machinery/computer/pod{
+	dir = 2;
+	id = "chapel_massdriver"
+	},
+/obj/machinery/firealarm/directional/north,
+/turf/open/floor/wood,
+/area/ship/medical/morgue)
+"rh" = (
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/effect/turf_decal/borderfloorblack/corner{
+	dir = 8
+	},
+/obj/machinery/door/airlock{
+	dir = 4;
+	name = "Dormitories"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/crew/dorm)
 "rl" = (
 /turf/open/floor/plating/dirt/jungle/dark/actuallydark,
 /area/ship/crew/canteen)
+"rq" = (
+/obj/effect/turf_decal/borderfloorblack,
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/crew/dorm)
 "rw" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#332521";
@@ -2048,6 +1916,13 @@
 /obj/structure/table/wood,
 /obj/item/flashlight/lantern,
 /turf/open/floor/plating/grass/jungle/actuallydark,
+/area/ship/crew/hydroponics)
+"rF" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 9
+	},
+/obj/machinery/light/directional/north,
+/turf/open/floor/plating/dirt/jungle/dark/actuallydark,
 /area/ship/crew/hydroponics)
 "rH" = (
 /obj/effect/decal/cleanable/dirt,
@@ -2073,16 +1948,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
-"rQ" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521"
-	},
-/obj/machinery/light/directional/south,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/wood/ebony,
-/area/ship/crew/chapel)
 "rR" = (
 /obj/structure/railing/wood{
 	dir = 8
@@ -2148,6 +2013,13 @@
 	},
 /turf/open/floor/carpet/red_gold,
 /area/ship/crew/chapel)
+"sw" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
+/obj/machinery/firealarm/directional/east,
+/turf/open/floor/plating,
+/area/ship/engineering/electrical)
 "sz" = (
 /turf/open/floor/plating/dirt/jungle/dark/actuallydark,
 /area/ship/crew/hydroponics)
@@ -2167,6 +2039,24 @@
 /obj/machinery/hydroponics/soil,
 /turf/open/floor/plating/grass/jungle/actuallydark,
 /area/ship/crew/hydroponics)
+"sV" = (
+/obj/effect/turf_decal/siding/wood,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/light/directional/south,
+/turf/open/floor/wood,
+/area/ship/hallway/port)
 "sY" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#332521"
@@ -2201,18 +2091,6 @@
 /obj/structure/window/reinforced/spawner/west,
 /obj/effect/turf_decal/corner/opaque/lightgrey/mono,
 /turf/open/floor/engine/air,
-/area/ship/engineering/atmospherics)
-"tj" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/obj/machinery/door/poddoor{
-	id = "shepherd_left_thrusters"
-	},
-/turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "tm" = (
 /obj/structure/railing/wood,
@@ -2289,6 +2167,21 @@
 "tU" = (
 /turf/closed/wall/r_wall,
 /area/ship/crew/chapel/office)
+"tV" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#332521";
+	dir = 1
+	},
+/obj/machinery/light/directional/north,
+/turf/open/floor/wood/ebony,
+/area/ship/crew/chapel)
+"ue" = (
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/apc/auto_name/directional/north,
+/turf/open/floor/wood,
+/area/ship/medical/morgue)
 "ug" = (
 /turf/closed/wall,
 /area/ship/hallway/port)
@@ -2334,22 +2227,6 @@
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/hallway/starboard)
-"uE" = (
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
-/obj/effect/turf_decal/borderfloorblack/corner{
-	dir = 8
-	},
-/obj/machinery/door/airlock{
-	dir = 4;
-	name = "Dormitories"
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/crew/dorm)
 "uL" = (
 /obj/structure/chair/wood{
 	dir = 4
@@ -2363,39 +2240,6 @@
 /obj/machinery/power/port_gen/pacman,
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
-"uT" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/cyan/visible{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/light/directional/south,
-/turf/open/floor/plating,
-/area/ship/engineering/atmospherics)
-"uU" = (
-/obj/structure/table/wood,
-/obj/machinery/computer/bookmanagement{
-	pixel_y = 4
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 9
-	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 8
-	},
-/obj/machinery/light_switch{
-	pixel_x = 5;
-	pixel_y = 28
-	},
-/turf/open/floor/wood,
-/area/ship/crew/library)
 "uY" = (
 /turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
@@ -2528,6 +2372,25 @@
 /obj/item/kirbyplants/random,
 /turf/open/floor/wood,
 /area/ship/hallway/starboard)
+"wt" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/light/directional/south,
+/obj/effect/turf_decal/ihejirika_small/left{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/atmospherics)
+"wv" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/obj/structure/cable,
+/obj/machinery/power/apc/auto_name/directional/south,
+/turf/open/floor/wood,
+/area/ship/crew/library)
 "wz" = (
 /obj/machinery/vending/snack/random,
 /obj/effect/turf_decal/siding/wood,
@@ -2596,16 +2459,6 @@
 /obj/effect/turf_decal/siding/wood/corner,
 /turf/open/floor/wood,
 /area/ship/bridge)
-"xe" = (
-/obj/machinery/vending/hydroseeds,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/light/directional/east,
-/turf/open/floor/wood,
-/area/ship/hallway/fore)
 "xg" = (
 /obj/machinery/door/window/northleft,
 /obj/structure/closet/wall{
@@ -2663,13 +2516,24 @@
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/chapel)
-"xz" = (
-/obj/structure/railing,
-/obj/machinery/light/directional/north,
-/turf/open/floor/plasteel/stairs{
-	dir = 8
+"xD" = (
+/obj/effect/turf_decal/ihejirika_small{
+	dir = 4
 	},
-/area/ship/bridge)
+/turf/open/floor/plating,
+/area/ship/engineering/atmospherics)
+"xE" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#332521";
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/wood/ebony,
+/area/ship/crew/canteen)
 "xF" = (
 /turf/closed/wall,
 /area/ship/hallway/starboard)
@@ -2700,6 +2564,20 @@
 	},
 /turf/open/floor/wood,
 /area/ship/medical/morgue)
+"ya" = (
+/obj/machinery/computer/cryopod/directional/south,
+/obj/structure/closet/wall{
+	dir = 8;
+	pixel_x = 30
+	},
+/obj/effect/turf_decal/corner_techfloor_grid/diagonal,
+/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern,
+/turf/open/floor/pod/dark,
+/area/ship/crew/dorm)
 "yg" = (
 /obj/structure/table/wood/fancy,
 /obj/effect/spawner/lootdrop/three_course_meal,
@@ -2717,47 +2595,14 @@
 	},
 /turf/open/floor/carpet/red_gold,
 /area/ship/crew/chapel)
-"yo" = (
-/obj/structure/closet/wall{
-	dir = 1;
-	name = "glass storage";
-	pixel_y = -30
-	},
-/obj/item/reagent_containers/food/drinks/drinkingglass,
-/obj/item/reagent_containers/food/drinks/drinkingglass,
-/obj/item/reagent_containers/food/drinks/drinkingglass,
-/obj/item/reagent_containers/food/drinks/drinkingglass,
-/obj/item/reagent_containers/food/drinks/drinkingglass,
-/obj/item/reagent_containers/food/drinks/drinkingglass,
-/obj/item/reagent_containers/food/drinks/drinkingglass,
-/obj/item/reagent_containers/food/drinks/drinkingglass,
-/obj/item/reagent_containers/food/drinks/drinkingglass,
-/obj/item/reagent_containers/food/drinks/modglass/small,
-/obj/item/reagent_containers/food/drinks/modglass/small,
-/obj/item/reagent_containers/food/drinks/modglass/small,
-/obj/item/reagent_containers/food/drinks/modglass/small,
-/obj/item/reagent_containers/food/drinks/modglass/small,
-/obj/item/reagent_containers/food/drinks/modglass,
-/obj/item/reagent_containers/food/drinks/modglass,
-/obj/item/reagent_containers/food/drinks/modglass,
-/obj/item/reagent_containers/food/drinks/modglass,
-/obj/item/reagent_containers/food/drinks/modglass,
-/obj/effect/turf_decal/siding/wood/corner{
-	color = "#332521";
-	dir = 4
-	},
+"yl" = (
 /obj/effect/turf_decal/siding/wood{
-	color = "#332521"
+	color = "#332521";
+	dir = 10
 	},
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 8
-	},
+/obj/machinery/light/directional/south,
 /turf/open/floor/wood/ebony,
-/area/ship/crew/canteen)
+/area/ship/crew/chapel)
 "yp" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -2783,6 +2628,27 @@
 /obj/structure/flora/ausbushes/grassybush,
 /turf/open/floor/plating/grass/jungle/actuallydark,
 /area/ship/crew/hydroponics)
+"yN" = (
+/obj/machinery/button/door{
+	dir = 1;
+	id = "chapel_window";
+	name = "Window Shutter Control";
+	pixel_x = -6;
+	pixel_y = -2
+	},
+/obj/machinery/light/directional/south,
+/obj/structure/table/wood,
+/obj/item/lighter,
+/obj/item/storage/fancy/candle_box{
+	pixel_x = 8;
+	pixel_y = 2
+	},
+/obj/item/storage/fancy/candle_box{
+	pixel_x = 8;
+	pixel_y = 2
+	},
+/turf/open/floor/carpet/nanoweave/blue,
+/area/ship/crew/chapel/office)
 "yO" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
@@ -2814,28 +2680,23 @@
 /obj/effect/turf_decal/corner/opaque/lightgrey/mono,
 /turf/open/floor/engine/air,
 /area/ship/engineering/atmospherics)
-"zb" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 6
+"zl" = (
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 4
 	},
-/obj/machinery/light/small/directional/east,
-/turf/open/floor/wood,
-/area/ship/hallway/starboard)
-"zh" = (
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/electrical)
+"zq" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#332521";
-	dir = 9
-	},
-/obj/machinery/light/small/directional/west,
-/turf/open/floor/wood/ebony,
-/area/ship/hallway/port)
-"zk" = (
-/obj/machinery/atmospherics/pipe/simple/general/visible{
 	dir = 10
 	},
-/obj/machinery/firealarm/directional/north,
-/turf/open/floor/plating,
-/area/ship/engineering/atmospherics)
+/obj/machinery/light/directional/west,
+/turf/open/floor/carpet/red,
+/area/ship/crew/library)
 "zt" = (
 /obj/structure/table/wood,
 /obj/item/storage/firstaid/regular,
@@ -2863,28 +2724,6 @@
 	icon_state = "1-4"
 	},
 /turf/open/floor/wood,
-/area/ship/crew/canteen)
-"zw" = (
-/obj/effect/turf_decal/siding/wood/corner{
-	color = "#332521";
-	dir = 1
-	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521"
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 9
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 9
-	},
-/obj/machinery/light_switch{
-	dir = 1;
-	pixel_x = -6;
-	pixel_y = -25
-	},
-/turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
 "zx" = (
 /obj/effect/turf_decal/siding/wood{
@@ -2952,26 +2791,31 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
-"Ab" = (
-/obj/structure/chair/sofa/left{
-	dir = 8
-	},
+"zR" = (
+/obj/structure/table/reinforced,
 /obj/effect/turf_decal/siding/wood{
 	color = "#332521";
 	dir = 6
 	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
-/obj/item/toy/plush/lizardplushie{
-	pixel_x = -2;
-	pixel_y = 7
+/obj/item/radio/intercom/directional/east{
+	pixel_x = 19
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/structure/cable{
-	icon_state = "1-2"
+/obj/machinery/button/door{
+	dir = 8;
+	id = "chapel_window";
+	name = "Window Shutter Control";
+	pixel_x = -4;
+	pixel_y = -4
 	},
-/obj/machinery/airalarm/directional/east,
-/turf/open/floor/carpet/black,
-/area/ship/crew/dorm/dormtwo)
+/obj/machinery/button/door{
+	dir = 8;
+	id = "chapel_recdoor";
+	name = "Blast Door Control";
+	pixel_x = -4;
+	pixel_y = 8
+	},
+/turf/open/floor/wood/ebony,
+/area/ship/bridge)
 "Aj" = (
 /obj/effect/turf_decal/spline/fancy/wood,
 /turf/open/floor/wood/ebony,
@@ -2990,28 +2834,25 @@
 	},
 /turf/open/floor/carpet/red_gold,
 /area/ship/bridge)
-"Ax" = (
-/obj/structure/toilet{
-	dir = 8
+"AE" = (
+/obj/machinery/button/shieldwallgen{
+	id = "shepherd_shields";
+	pixel_x = 3;
+	pixel_y = -12
 	},
-/obj/effect/turf_decal/corner/opaque/bottlegreen/diagonal,
-/obj/machinery/firealarm/directional/north,
-/turf/open/floor/plasteel/white,
-/area/ship/crew/toilet)
-"AC" = (
-/obj/effect/turf_decal/siding/wood,
-/obj/machinery/light/directional/south,
-/turf/open/floor/wood,
-/area/ship/hallway/starboard)
-"AK" = (
-/obj/effect/spawner/structure/window/reinforced,
-/obj/machinery/door/poddoor/shutters/preopen{
-	dir = 4;
-	id = "chapel_window";
-	name = "Window Shutters"
+/obj/machinery/button/door{
+	dir = 8;
+	id = "chapel_recdoor";
+	name = "Blast Door Control";
+	pixel_x = -8
 	},
-/turf/open/floor/plating,
-/area/ship/bridge)
+/turf/closed/wall/r_wall,
+/area/ship/crew/canteen)
+"AP" = (
+/obj/machinery/airalarm/directional/east,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/turf/open/floor/carpet/nanoweave/blue,
+/area/ship/crew/chapel/office)
 "AS" = (
 /obj/structure/railing/wood{
 	dir = 8
@@ -3032,6 +2873,15 @@
 /obj/item/flashlight/lantern,
 /turf/open/floor/plating/dirt/jungle/dark/actuallydark,
 /area/ship/crew/hydroponics)
+"Bc" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
+	id = "chapel_window";
+	name = "Window Shutters"
+	},
+/turf/open/floor/plating,
+/area/ship/crew/chapel/office)
 "Bd" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
@@ -3055,18 +2905,46 @@
 	},
 /turf/open/floor/wood,
 /area/ship/medical/morgue)
-"Bp" = (
-/obj/structure/rack,
-/obj/item/pickaxe,
-/obj/item/storage/bag/ore,
-/obj/item/mining_scanner,
-/obj/item/flashlight/lantern,
-/obj/item/pickaxe/rusted,
-/obj/item/clothing/head/hardhat/mining,
-/obj/item/gps,
-/obj/machinery/light/directional/east,
-/obj/item/stack/marker_beacon/ten,
-/turf/open/floor/wood,
+"Bu" = (
+/obj/structure/closet/wall{
+	dir = 1;
+	name = "glass storage";
+	pixel_y = -30
+	},
+/obj/item/reagent_containers/food/drinks/drinkingglass,
+/obj/item/reagent_containers/food/drinks/drinkingglass,
+/obj/item/reagent_containers/food/drinks/drinkingglass,
+/obj/item/reagent_containers/food/drinks/drinkingglass,
+/obj/item/reagent_containers/food/drinks/drinkingglass,
+/obj/item/reagent_containers/food/drinks/drinkingglass,
+/obj/item/reagent_containers/food/drinks/drinkingglass,
+/obj/item/reagent_containers/food/drinks/drinkingglass,
+/obj/item/reagent_containers/food/drinks/drinkingglass,
+/obj/item/reagent_containers/food/drinks/modglass/small,
+/obj/item/reagent_containers/food/drinks/modglass/small,
+/obj/item/reagent_containers/food/drinks/modglass/small,
+/obj/item/reagent_containers/food/drinks/modglass/small,
+/obj/item/reagent_containers/food/drinks/modglass/small,
+/obj/item/reagent_containers/food/drinks/modglass,
+/obj/item/reagent_containers/food/drinks/modglass,
+/obj/item/reagent_containers/food/drinks/modglass,
+/obj/item/reagent_containers/food/drinks/modglass,
+/obj/item/reagent_containers/food/drinks/modglass,
+/obj/effect/turf_decal/siding/wood/corner{
+	color = "#332521";
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wood{
+	color = "#332521"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
 "By" = (
 /obj/effect/turf_decal/siding/wood/corner{
@@ -3141,19 +3019,27 @@
 	},
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/crew/chapel/office)
-"CI" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 5
-	},
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 8
-	},
-/obj/effect/turf_decal/siding/wood/corner{
+"Cx" = (
+/obj/machinery/door/window/northright,
+/obj/structure/curtain/cloth,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable,
+/obj/machinery/power/apc/auto_name/directional/east,
+/turf/open/floor/carpet/nanoweave/blue,
+/area/ship/crew/chapel/office)
+"CH" = (
+/obj/structure/table/wood,
+/obj/item/areaeditor/shuttle,
+/obj/item/nullrod,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
-/obj/machinery/newscaster/directional/north,
-/turf/open/floor/wood,
-/area/ship/bridge)
+/obj/machinery/firealarm/directional/east,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
+/turf/open/floor/carpet/nanoweave/blue,
+/area/ship/crew/chapel/office)
 "CM" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -3318,6 +3204,23 @@
 "Dy" = (
 /turf/closed/wall/r_wall,
 /area/ship/crew/dorm)
+"DA" = (
+/obj/structure/chair/sofa{
+	dir = 2;
+	icon_state = "sofacorner"
+	},
+/obj/effect/turf_decal/siding/wood{
+	color = "#332521";
+	dir = 5
+	},
+/obj/item/toy/plush/hornet/gay,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/machinery/power/apc/auto_name/directional/east,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/carpet/black,
+/area/ship/crew/dorm/dormtwo)
 "DC" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters/preopen{
@@ -3335,7 +3238,31 @@
 /obj/item/flashlight/lantern,
 /turf/open/floor/plating/grass/jungle/actuallydark,
 /area/ship/crew/hydroponics)
-"DG" = (
+"DI" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/turf/open/floor/wood,
+/area/ship/medical/morgue)
+"DL" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/wood/corner,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/turf/open/floor/wood,
+/area/ship/crew/dorm)
+"DN" = (
+/obj/effect/turf_decal/ihejirika_small/right{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/atmospherics)
+"DR" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
@@ -3379,37 +3306,6 @@
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/chapel/office)
-"DI" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 1
-	},
-/turf/open/floor/wood,
-/area/ship/medical/morgue)
-"DL" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 1
-	},
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 8
-	},
-/obj/effect/turf_decal/siding/wood/corner,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/turf/open/floor/wood,
-/area/ship/crew/dorm)
-"DP" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 6
-	},
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 8
-	},
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 1
-	},
-/obj/machinery/firealarm/directional/south,
-/turf/open/floor/wood,
-/area/ship/bridge)
 "DW" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
@@ -3434,6 +3330,14 @@
 /obj/machinery/computer/cargo/express,
 /turf/open/floor/wood/ebony,
 /area/ship/bridge)
+"Ec" = (
+/obj/structure/toilet{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/opaque/bottlegreen/diagonal,
+/obj/machinery/firealarm/directional/north,
+/turf/open/floor/plasteel/white,
+/area/ship/crew/toilet)
 "Ei" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
@@ -3469,21 +3373,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
-"Ep" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521";
-	dir = 5
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/light/directional/east,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/wood/ebony,
-/area/ship/crew/dorm/dormtwo)
 "Et" = (
 /turf/closed/wall,
 /area/ship/crew/chapel/office)
@@ -3512,23 +3401,31 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/dirt/jungle/dark/actuallydark,
 /area/ship/crew/hydroponics)
-"EF" = (
-/obj/item/poster/random_official,
-/obj/item/paper_bin/bundlenatural,
-/obj/item/storage/toolbox/artistic,
-/obj/item/lighter,
-/obj/item/toner,
-/obj/item/table_bell/brass,
-/obj/structure/closet/wall{
-	dir = 1;
-	name = "supply closet";
-	pixel_y = -30
+"EG" = (
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 8;
+	id = "shepherd_shields";
+	locked = 1
 	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 6
+/obj/structure/cable{
+	icon_state = "0-2"
 	},
-/turf/open/floor/wood,
-/area/ship/crew/library)
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/poddoor/shutters{
+	id = "chapel_recdoor"
+	},
+/turf/open/floor/plating,
+/area/ship/crew/canteen)
+"ES" = (
+/obj/machinery/atmospherics/pipe/simple/general/visible{
+	dir = 10
+	},
+/obj/machinery/firealarm/directional/north,
+/turf/open/floor/plating,
+/area/ship/engineering/atmospherics)
 "EU" = (
 /turf/open/floor/wood,
 /area/ship/crew/hydroponics)
@@ -3553,16 +3450,18 @@
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/plating/dirt/jungle/dark/actuallydark,
 /area/ship/crew/hydroponics)
-"Fp" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 1
+"Fh" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 4
 	},
-/obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
-	icon_state = "0-2"
+	icon_state = "0-8"
 	},
-/turf/open/floor/wood,
-/area/ship/hallway/port)
+/obj/machinery/door/poddoor{
+	id = "shepherd_left_thrusters"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/atmospherics)
 "Fq" = (
 /obj/structure/railing/corner/wood{
 	dir = 1
@@ -3640,6 +3539,40 @@
 /obj/machinery/airalarm/directional/north,
 /turf/open/floor/wood,
 /area/ship/crew/dorm)
+"Gc" = (
+/obj/structure/table/wood,
+/obj/machinery/computer/bookmanagement{
+	pixel_y = 4
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 9
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 8
+	},
+/obj/machinery/light_switch{
+	pixel_x = 5;
+	pixel_y = 28
+	},
+/turf/open/floor/wood,
+/area/ship/crew/library)
+"Gd" = (
+/obj/item/poster/random_official,
+/obj/item/paper_bin/bundlenatural,
+/obj/item/storage/toolbox/artistic,
+/obj/item/lighter,
+/obj/item/toner,
+/obj/item/table_bell/brass,
+/obj/structure/closet/wall{
+	dir = 1;
+	name = "supply closet";
+	pixel_y = -30
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/turf/open/floor/wood,
+/area/ship/crew/library)
 "Ge" = (
 /obj/structure/railing/corner/wood,
 /obj/effect/turf_decal/siding/wood{
@@ -3668,6 +3601,24 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
+"Go" = (
+/obj/structure/sink/kitchen{
+	dir = 1;
+	dispensedreagent = /datum/reagent/water/holywater;
+	name = "Holy sink"
+	},
+/obj/effect/turf_decal/siding/wood/corner{
+	color = "#332521";
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wood{
+	color = "#332521"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/wood/ebony,
+/area/ship/crew/chapel)
 "Gp" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
@@ -3688,6 +3639,28 @@
 /area/ship/hallway/starboard)
 "Gr" = (
 /turf/closed/wall,
+/area/ship/bridge)
+"Gv" = (
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/door/airlock/wood{
+	dir = 4;
+	name = "Bridge"
+	},
+/turf/open/floor/wood,
 /area/ship/bridge)
 "Gx" = (
 /obj/structure/destructible/tribal_torch,
@@ -3721,12 +3694,13 @@
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "GE" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 8
+/obj/effect/turf_decal/siding/wood{
+	color = "#332521";
+	dir = 10
 	},
-/obj/machinery/firealarm/directional/east,
-/turf/open/floor/plating,
-/area/ship/engineering/electrical)
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/wood/ebony,
+/area/ship/hallway/starboard)
 "GF" = (
 /obj/machinery/vending/hydronutrients,
 /obj/structure/cable{
@@ -3742,40 +3716,6 @@
 	},
 /turf/open/floor/plating/dirt/jungle/dark/actuallydark,
 /area/ship/crew/hydroponics)
-"GS" = (
-/obj/effect/turf_decal/ihejirika_small{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/ship/engineering/atmospherics)
-"GU" = (
-/obj/effect/turf_decal/corner/opaque/bottlegreen/diagonal,
-/obj/machinery/power/apc/auto_name/directional/west,
-/obj/structure/cable,
-/turf/open/floor/plasteel/white,
-/area/ship/crew/toilet)
-"GX" = (
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/door/airlock/wood{
-	dir = 4;
-	name = "Bridge"
-	},
-/turf/open/floor/wood,
-/area/ship/bridge)
 "Hc" = (
 /obj/structure/catwalk,
 /obj/structure/window/reinforced/spawner/north,
@@ -3784,6 +3724,16 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ship/engineering/atmospherics)
+"Hj" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/machinery/power/apc/auto_name/directional/east,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/wood,
+/area/ship/hallway/fore)
 "Hk" = (
 /turf/closed/wall,
 /area/ship/engineering/electrical)
@@ -3799,13 +3749,6 @@
 	},
 /turf/open/floor/wood,
 /area/ship/bridge)
-"Hs" = (
-/obj/machinery/door/poddoor{
-	dir = 4;
-	id = "chapel_massdriver"
-	},
-/turf/open/floor/plating,
-/area/ship/medical/morgue)
 "HF" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
@@ -3886,6 +3829,13 @@
 /obj/machinery/atmospherics/pipe/simple/cyan/visible,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
+"Ih" = (
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "chapel_massdriver"
+	},
+/turf/open/floor/plating,
+/area/ship/medical/morgue)
 "Ip" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
@@ -3893,14 +3843,16 @@
 /obj/machinery/space_heater,
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
-"Iy" = (
-/obj/effect/turf_decal/borderfloorblack,
-/obj/structure/cable{
-	icon_state = "1-4"
+"Ir" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#332521"
 	},
-/obj/machinery/firealarm/directional/west,
-/turf/open/floor/plasteel/dark,
-/area/ship/crew/dorm)
+/obj/machinery/power/apc/auto_name/directional/south,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/wood/ebony,
+/area/ship/crew/chapel)
 "IF" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -3914,16 +3866,12 @@
 /turf/open/floor/wood,
 /area/ship/hallway/port)
 "IP" = (
-/obj/machinery/mass_driver{
-	dir = 8;
-	id = "chapel_massdriver"
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
 	},
-/obj/machinery/door/window/brigdoor/eastright,
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/ship/medical/morgue)
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/wood,
+/area/ship/hallway/starboard)
 "IQ" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/photocopier,
@@ -3964,6 +3912,16 @@
 	dir = 8
 	},
 /area/ship/crew/canteen)
+"IX" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#332521"
+	},
+/obj/machinery/light/directional/south,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/wood/ebony,
+/area/ship/crew/chapel)
 "Jg" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/railing/wood,
@@ -4040,13 +3998,6 @@
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/bridge)
-"Kd" = (
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/obj/machinery/power/apc/auto_name/directional/north,
-/turf/open/floor/wood,
-/area/ship/medical/morgue)
 "Ke" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
@@ -4083,39 +4034,6 @@
 /obj/item/stack/sheet/mineral/plasma/twenty,
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
-"KA" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/light/directional/north,
-/turf/open/floor/wood,
-/area/ship/hallway/starboard)
-"KB" = (
-/obj/effect/turf_decal/siding/wood,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 8
-	},
-/obj/machinery/light/directional/south,
-/turf/open/floor/wood,
-/area/ship/hallway/port)
 "KC" = (
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 4
@@ -4187,28 +4105,10 @@
 	},
 /turf/open/floor/wood,
 /area/ship/hallway/fore)
-"KY" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/turf/open/floor/plating,
-/area/ship/engineering/electrical)
 "KZ" = (
 /obj/structure/flora/junglebush/b,
 /turf/open/floor/plating/grass/jungle/actuallydark,
 /area/ship/crew/hydroponics)
-"Le" = (
-/obj/effect/spawner/structure/window/reinforced,
-/obj/machinery/door/poddoor/shutters/preopen{
-	dir = 4;
-	id = "chapel_window";
-	name = "Window Shutters"
-	},
-/turf/open/floor/plating,
-/area/ship/crew/chapel/office)
 "Lf" = (
 /obj/effect/turf_decal/siding/wood/corner,
 /obj/effect/turf_decal/siding/wood/corner{
@@ -4250,26 +4150,13 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
-"Lp" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 5
-	},
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 8
-	},
-/obj/machinery/light/small/directional/east,
-/turf/open/floor/wood,
-/area/ship/crew/dorm)
-"Lx" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/power/apc/auto_name/directional/north,
+"Lv" = (
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/turf/open/floor/plating,
-/area/ship/engineering/electrical)
+/obj/machinery/power/apc/auto_name/directional/north,
+/turf/open/floor/wood,
+/area/ship/crew/hydroponics)
 "LD" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#332521";
@@ -4323,15 +4210,17 @@
 	},
 /turf/open/floor/carpet/red_gold,
 /area/ship/hallway/starboard)
-"LN" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/libraryscanner,
-/obj/effect/turf_decal/siding/wood{
-	dir = 9
+"LO" = (
+/obj/structure/sink/greyscale{
+	pixel_y = 20
 	},
-/obj/machinery/light/directional/north,
-/turf/open/floor/wood,
-/area/ship/crew/library)
+/obj/structure/mirror{
+	pixel_y = 28
+	},
+/obj/effect/turf_decal/corner/opaque/bottlegreen/diagonal,
+/obj/machinery/light/small/directional/south,
+/turf/open/floor/plasteel/white,
+/area/ship/crew/toilet)
 "LP" = (
 /obj/machinery/power/terminal{
 	dir = 8
@@ -4363,17 +4252,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
 /area/ship/crew/library)
-"Mt" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521";
-	dir = 9
-	},
-/obj/machinery/power/apc/auto_name/directional/west,
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/turf/open/floor/wood/ebony,
-/area/ship/bridge)
 "MC" = (
 /obj/structure/railing/corner/wood{
 	dir = 4
@@ -4447,13 +4325,6 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/grass/jungle/actuallydark,
 /area/ship/crew/hydroponics)
-"Nz" = (
-/obj/structure/table/wood,
-/obj/effect/spawner/lootdrop/three_course_meal,
-/obj/effect/turf_decal/corner_techfloor_grid/diagonal,
-/obj/machinery/light/small/directional/west,
-/turf/open/floor/pod/dark,
-/area/ship/crew/dorm)
 "ND" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -4461,23 +4332,6 @@
 /obj/effect/turf_decal/siding/wood,
 /obj/effect/turf_decal/siding/wood/corner,
 /turf/open/floor/wood,
-/area/ship/crew/canteen)
-"NJ" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 4
-	},
-/obj/machinery/light/directional/east,
-/turf/open/floor/wood,
-/area/ship/hallway/starboard)
-"NL" = (
-/obj/item/paper/natural{
-	icon_state = "paper_words";
-	info = "<h1>Trappist Recipe</h1><br>By Pater Noster<hr><br><b>Servings:</b> 2 <b>Prep Time:</b> 10 mins <b>Cook Time:</b> 1-2 hrs <b>Difficulty:</b> Easy<br>Trappist beer is a rich and pleasant beer traditionally brewed by monks.<br><h2>  Ingredients </h2><br>Ale: <br>Ale! The core of any good drink. Easily obtainable by fermenting oats in a barrel for a while. This will be the basis of our brew, giving it it's fruity taste and color! <br>Holy water:<br>This is what a makes a trappist a trappist and not a trapisst, the religion! Real easy to get if you are reading this where you are supposed to be reading this! If the chaplain can't bothered it's also easily harvestable from holymelons as long as you bother to separate it. <br>Sugar: <br>Sugar is what's gonna make it all come together sweetening the brew and mixing well with the ale from earlier. It's easy to obtain from grinding sugarcanes. Feel free to add liberally.<br><h2>  Preparation </h2><br>1. Mix the ale and holy water together.<br>2. Add some sugar to the mix as you keep stirring it for 1 minute. <br>3. At this point you're free to just use it as is! But feel free to experiment by adding new flavours and really making it your own! <br><h2>  Closing statement</h2><br> And that's it! Hopefully this guide has been somewhat helpful. A final tip I have is to drink it with bread and cheese, really finishes of the package.";
-	name = "paper - Trappist Recipe";
-	pixel_x = 2;
-	pixel_y = 4
-	},
-/turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
 "NM" = (
 /obj/effect/turf_decal/siding/wood{
@@ -4494,12 +4348,22 @@
 "NO" = (
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
-"NR" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 4
+"NQ" = (
+/obj/structure/table/wood/fancy,
+/obj/item/reagent_containers/food/drinks/modglass/large{
+	list_reagents = list(/datum/reagent/consumable/ethanol/trappist=50);
+	name = "Trappist";
+	pixel_x = 9;
+	pixel_y = 9
 	},
-/turf/open/floor/plating,
-/area/ship/engineering/electrical)
+/obj/item/reagent_containers/food/drinks/modglass/large{
+	list_reagents = list(/datum/reagent/consumable/ethanol/trappist=50);
+	name = "Trappist";
+	pixel_x = -8;
+	pixel_y = 18
+	},
+/turf/open/floor/plating/grass/jungle/actuallydark,
+/area/ship/crew/hydroponics)
 "NV" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#332521";
@@ -4523,44 +4387,12 @@
 	},
 /turf/open/floor/grass/fairy,
 /area/ship/crew/hydroponics)
-"NZ" = (
-/obj/effect/turf_decal/siding/wood,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+"Oe" = (
+/obj/machinery/light/directional/south,
+/turf/open/floor/plasteel/stairs{
 	dir = 8
 	},
-/obj/machinery/light/directional/south,
-/turf/open/floor/wood,
-/area/ship/hallway/port)
-"OB" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/siding/wood{
-	dir = 6
-	},
-/obj/structure/cable,
-/obj/machinery/power/apc/auto_name/directional/south,
-/turf/open/floor/wood,
-/area/ship/crew/library)
-"OG" = (
-/obj/structure/sink/greyscale{
-	pixel_y = 20
-	},
-/obj/structure/mirror{
-	pixel_y = 28
-	},
-/obj/effect/turf_decal/corner/opaque/bottlegreen/diagonal,
-/obj/machinery/light/small/directional/south,
-/turf/open/floor/plasteel/white,
-/area/ship/crew/toilet)
+/area/ship/bridge)
 "OM" = (
 /turf/closed/wall,
 /area/ship/crew/toilet)
@@ -4575,24 +4407,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/carpet/red_gold,
 /area/ship/hallway/starboard)
-"OT" = (
-/obj/structure/sink/kitchen{
-	dir = 1;
-	dispensedreagent = /datum/reagent/water/holywater;
-	name = "Holy sink"
-	},
-/obj/effect/turf_decal/siding/wood/corner{
-	color = "#332521";
-	dir = 4
-	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521"
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/wood/ebony,
-/area/ship/crew/chapel)
 "OW" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/ywflowers,
@@ -4626,6 +4440,17 @@
 /obj/structure/flora/ausbushes/brflowers,
 /turf/open/floor/plating/grass/jungle/actuallydark,
 /area/ship/crew/hydroponics)
+"Pt" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood,
+/obj/machinery/light_switch{
+	pixel_x = -4;
+	pixel_y = 26
+	},
+/turf/open/floor/wood,
+/area/ship/crew/dorm)
 "Pu" = (
 /obj/structure/window/reinforced/spawner/west,
 /turf/open/floor/plating/grass/jungle/actuallydark,
@@ -4661,6 +4486,12 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
+"PH" = (
+/obj/effect/turf_decal/corner/opaque/bottlegreen/diagonal,
+/obj/machinery/power/apc/auto_name/directional/west,
+/obj/structure/cable,
+/turf/open/floor/plasteel/white,
+/area/ship/crew/toilet)
 "PJ" = (
 /obj/machinery/power/terminal{
 	dir = 8
@@ -4737,13 +4568,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
-"Qc" = (
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/obj/machinery/power/apc/auto_name/directional/north,
-/turf/open/floor/plating,
-/area/ship/engineering/atmospherics)
 "Qh" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -4815,6 +4639,11 @@
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/hallway/port)
+"QA" = (
+/obj/effect/turf_decal/siding/wood,
+/obj/machinery/light/small/directional/south,
+/turf/open/floor/carpet/black,
+/area/ship/crew/dorm)
 "QB" = (
 /obj/structure/table/wood/fancy,
 /obj/effect/turf_decal/siding/wood{
@@ -4872,15 +4701,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
-"QL" = (
-/obj/structure/table/reinforced,
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521";
-	dir = 5
-	},
-/obj/item/radio/intercom/wideband/directional/east,
-/turf/open/floor/wood/ebony,
-/area/ship/bridge)
 "QM" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
@@ -4938,6 +4758,17 @@
 	},
 /turf/open/floor/wood,
 /area/ship/hallway/starboard)
+"Rl" = (
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 5
+	},
+/obj/machinery/light/directional/east,
+/turf/open/floor/wood,
+/area/ship/hallway/fore)
 "Rm" = (
 /obj/structure/railing{
 	dir = 4
@@ -4948,6 +4779,59 @@
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/bridge)
+"Rq" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/libraryscanner,
+/obj/effect/turf_decal/siding/wood{
+	dir = 9
+	},
+/obj/machinery/light/directional/north,
+/turf/open/floor/wood,
+/area/ship/crew/library)
+"Rw" = (
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/wood{
+	color = "#332521";
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood/corner{
+	color = "#332521";
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/wood/corner{
+	color = "#332521"
+	},
+/obj/effect/turf_decal/siding/wood/corner{
+	color = "#332521";
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wood/corner{
+	color = "#332521";
+	dir = 1
+	},
+/obj/machinery/door/airlock/grunge{
+	dir = 4;
+	name = "Discussion Chamber"
+	},
+/obj/effect/turf_decal/siding/wood{
+	color = "#332521"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/wood/ebony,
+/area/ship/crew/dorm/dormtwo)
 "RB" = (
 /obj/effect/turf_decal/siding/wood/end,
 /turf/open/floor/wood,
@@ -4996,12 +4880,6 @@
 	},
 /turf/open/floor/wood,
 /area/ship/hallway/starboard)
-"RM" = (
-/obj/machinery/light/directional/south,
-/turf/open/floor/plasteel/stairs{
-	dir = 8
-	},
-/area/ship/bridge)
 "RQ" = (
 /obj/effect/turf_decal/siding{
 	dir = 8
@@ -5043,22 +4921,6 @@
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/chapel)
-"Sk" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/firealarm/directional/north,
-/turf/open/floor/wood,
-/area/ship/hallway/starboard)
 "Sl" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 4
@@ -5153,6 +5015,26 @@
 	},
 /turf/open/floor/wood,
 /area/ship/crew/library)
+"Tf" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 5
+	},
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 1
+	},
+/obj/machinery/newscaster/directional/north,
+/turf/open/floor/wood,
+/area/ship/bridge)
+"Ti" = (
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/apc/auto_name/directional/north,
+/turf/open/floor/plating,
+/area/ship/engineering/atmospherics)
 "Tj" = (
 /obj/effect/turf_decal/weather/dirt,
 /turf/open/floor/plating/dirt/jungle/dark/actuallydark,
@@ -5181,6 +5063,50 @@
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer2,
 /turf/open/floor/wood,
 /area/ship/hallway/port)
+"TE" = (
+/obj/structure/table/wood/fancy,
+/obj/item/candle/infinite{
+	pixel_x = 9;
+	pixel_y = 9
+	},
+/obj/item/reagent_containers/food/snacks/cheesewedge{
+	pixel_x = 1;
+	pixel_y = 12
+	},
+/obj/item/reagent_containers/food/snacks/cheesewedge{
+	pixel_x = 5;
+	pixel_y = 3
+	},
+/obj/item/reagent_containers/food/drinks/modglass/large{
+	list_reagents = list(/datum/reagent/consumable/ethanol/trappist=50);
+	name = "Trappist";
+	pixel_x = -7;
+	pixel_y = 11
+	},
+/turf/open/floor/plating/grass/jungle/actuallydark,
+/area/ship/crew/canteen)
+"TQ" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	color = "#332521";
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood{
+	color = "#332521"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = -6;
+	pixel_y = -25
+	},
+/turf/open/floor/wood/ebony,
+/area/ship/crew/canteen)
 "TU" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
@@ -5302,6 +5228,21 @@
 /obj/structure/curtain/cloth/fancy,
 /turf/open/floor/carpet/black,
 /area/ship/crew/dorm)
+"US" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#332521";
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/light/directional/east,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/wood/ebony,
+/area/ship/crew/dorm/dormtwo)
 "UV" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 8
@@ -5326,14 +5267,6 @@
 	},
 /turf/open/floor/plating/grass/jungle/actuallydark,
 /area/ship/crew/hydroponics)
-"Vg" = (
-/obj/machinery/computer/pod{
-	dir = 2;
-	id = "chapel_massdriver"
-	},
-/obj/machinery/firealarm/directional/north,
-/turf/open/floor/wood,
-/area/ship/medical/morgue)
 "Vh" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/railing/corner/wood{
@@ -5382,22 +5315,6 @@
 	},
 /turf/open/floor/wood,
 /area/ship/crew/library)
-"Vq" = (
-/obj/machinery/door/window/northright,
-/obj/structure/curtain/cloth,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/structure/cable,
-/obj/machinery/power/apc/auto_name/directional/east,
-/turf/open/floor/carpet/nanoweave/blue,
-/area/ship/crew/chapel/office)
-"Vt" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521";
-	dir = 10
-	},
-/obj/machinery/light/directional/south,
-/turf/open/floor/wood/ebony,
-/area/ship/crew/chapel)
 "Vu" = (
 /obj/structure/chair/pew/left,
 /obj/effect/turf_decal/siding/wood{
@@ -5405,6 +5322,23 @@
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/chapel)
+"Vy" = (
+/obj/effect/turf_decal/siding/wood,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/light/directional/south,
+/turf/open/floor/wood,
+/area/ship/hallway/port)
 "VG" = (
 /turf/closed/wall/r_wall,
 /area/ship/crew/toilet)
@@ -5498,52 +5432,79 @@
 /obj/item/reagent_containers/food/snacks/honeybar,
 /turf/open/floor/wood,
 /area/ship/crew/chapel)
+"Wx" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#332521";
+	dir = 9
+	},
+/obj/machinery/light/directional/north,
+/turf/open/floor/wood/ebony,
+/area/ship/crew/chapel)
 "WB" = (
 /obj/machinery/atmospherics/pipe/layer_manifold/visible{
 	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
-"WC" = (
-/obj/machinery/computer/cryopod/directional/south,
-/obj/structure/closet/wall{
-	dir = 8;
-	pixel_x = 30
+"WF" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
 	},
-/obj/effect/turf_decal/corner_techfloor_grid/diagonal,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/turf/open/floor/pod/dark,
-/area/ship/crew/dorm)
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/firealarm/directional/north,
+/turf/open/floor/wood,
+/area/ship/hallway/starboard)
 "WJ" = (
 /turf/open/floor/plasteel/stairs/medium{
 	dir = 4
 	},
 /area/ship/crew/hydroponics)
-"WP" = (
+"WR" = (
 /obj/structure/table/wood,
-/obj/machinery/button/door{
-	dir = 1;
-	id = "chapel_window";
-	name = "Window Shutter Control";
-	pixel_x = -6;
-	pixel_y = -2
+/obj/item/storage/bag/plants,
+/obj/item/hatchet/wooden,
+/obj/item/shovel/spade,
+/obj/item/reagent_containers/spray/weedspray,
+/obj/item/cultivator,
+/obj/item/reagent_containers/glass/bucket/wooden,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet/wall{
+	dir = 4;
+	name = "supply closet";
+	pixel_x = -30
 	},
-/obj/item/lighter,
-/obj/item/storage/fancy/candle_box{
-	pixel_x = 8;
-	pixel_y = 2
+/obj/item/reagent_containers/food/drinks/bottle/holywater,
+/obj/effect/turf_decal/siding/wood{
+	color = "#332521";
+	dir = 8
 	},
-/obj/item/storage/fancy/candle_box{
-	pixel_x = 8;
-	pixel_y = 2
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/item/reagent_containers/glass/bucket/wooden,
+/turf/open/floor/wood/ebony,
+/area/ship/crew/canteen)
+"WS" = (
+/obj/structure/sink/kitchen{
+	dispensedreagent = /datum/reagent/water/holywater;
+	name = "Holy sink";
+	pixel_y = 20
 	},
-/obj/machinery/light/directional/south,
-/turf/open/floor/carpet/nanoweave/blue,
-/area/ship/crew/chapel/office)
+/obj/effect/turf_decal/siding/wood{
+	color = "#332521";
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood/corner{
+	color = "#332521"
+	},
+/turf/open/floor/wood/ebony,
+/area/ship/crew/chapel)
 "Xd" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/effect/turf_decal/siding/wood/corner,
@@ -5561,16 +5522,6 @@
 	},
 /turf/open/floor/wood,
 /area/ship/hallway/fore)
-"Xf" = (
-/obj/effect/spawner/structure/window/reinforced,
-/obj/machinery/door/poddoor/shutters/preopen{
-	dir = 4;
-	id = "chapel_window";
-	name = "Window Shutters"
-	},
-/obj/structure/curtain/cloth/fancy,
-/turf/open/floor/plating,
-/area/ship/crew/library)
 "Xg" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -5608,23 +5559,66 @@
 	},
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
-"Xn" = (
-/obj/machinery/door/firedoor/border_only,
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 5
-	},
-/obj/machinery/light/directional/east,
-/turf/open/floor/wood,
-/area/ship/hallway/fore)
 "Xp" = (
 /obj/machinery/atmospherics/components/trinary/filter/atmos/o2{
 	dir = 1
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
+"Xu" = (
+/obj/structure/closet/wall{
+	dir = 1;
+	name = "glass storage";
+	pixel_y = -30
+	},
+/obj/item/reagent_containers/food/drinks/modglass/large,
+/obj/item/reagent_containers/food/drinks/modglass/large,
+/obj/item/reagent_containers/food/drinks/modglass/large,
+/obj/item/reagent_containers/food/drinks/modglass/large,
+/obj/item/reagent_containers/food/drinks/modglass/large,
+/obj/item/reagent_containers/food/drinks/modglass/large,
+/obj/item/reagent_containers/food/drinks/modglass/large,
+/obj/item/reagent_containers/food/drinks/modglass/large,
+/obj/item/reagent_containers/food/drinks/modglass/large,
+/obj/item/reagent_containers/food/drinks/modglass/large,
+/obj/item/reagent_containers/food/drinks/modglass/large,
+/obj/item/reagent_containers/food/drinks/modglass/large,
+/obj/item/reagent_containers/food/drinks/modglass/large,
+/obj/item/reagent_containers/food/drinks/modglass/large,
+/obj/item/reagent_containers/food/drinks/modglass/large,
+/obj/item/reagent_containers/food/drinks/modglass/large,
+/obj/item/reagent_containers/food/drinks/modglass/large,
+/obj/item/reagent_containers/food/drinks/modglass/large,
+/obj/item/reagent_containers/food/drinks/modglass/large,
+/obj/item/reagent_containers/food/drinks/bottle,
+/obj/item/reagent_containers/food/drinks/bottle,
+/obj/item/reagent_containers/food/drinks/bottle,
+/obj/item/reagent_containers/food/drinks/bottle,
+/obj/item/reagent_containers/food/drinks/bottle,
+/obj/item/reagent_containers/food/drinks/bottle,
+/obj/item/reagent_containers/food/drinks/bottle,
+/obj/item/reagent_containers/food/drinks/bottle,
+/obj/item/reagent_containers/food/drinks/bottle,
+/obj/effect/turf_decal/siding/wood/corner{
+	color = "#332521";
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood{
+	color = "#332521"
+	},
+/obj/effect/turf_decal/siding/wood/corner{
+	color = "#332521";
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/turf/open/floor/wood/ebony,
+/area/ship/crew/canteen)
 "Xw" = (
 /obj/structure/flora/ausbushes,
 /turf/open/floor/plating/grass/jungle/actuallydark,
@@ -5650,6 +5644,14 @@
 	},
 /turf/open/floor/wood,
 /area/ship/hallway/starboard)
+"XE" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#332521"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/small/directional/south,
+/turf/open/floor/wood/ebony,
+/area/ship/crew/canteen)
 "XG" = (
 /obj/machinery/atmospherics/pipe/simple/cyan/visible{
 	dir = 4
@@ -5682,20 +5684,6 @@
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/hydroponics)
-"XW" = (
-/obj/item/reagent_containers/food/snacks/grown/wheat,
-/obj/structure/table/wood/fancy,
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521";
-	dir = 5
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
-/obj/machinery/firealarm/directional/east,
-/turf/open/floor/wood/ebony,
-/area/ship/crew/canteen)
 "XY" = (
 /obj/machinery/light/floor,
 /obj/effect/turf_decal/siding/wood{
@@ -5704,6 +5692,22 @@
 	},
 /turf/open/floor/grass/fairy,
 /area/ship/crew/hydroponics)
+"Yc" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/light/directional/north,
+/turf/open/floor/wood,
+/area/ship/hallway/starboard)
 "Yg" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/siding/wood{
@@ -5721,15 +5725,6 @@
 	},
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/crew/chapel/office)
-"Yq" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/chair/wood{
-	dir = 1
-	},
-/obj/effect/turf_decal/siding/wood,
-/obj/machinery/newscaster/directional/south,
-/turf/open/floor/wood,
-/area/ship/crew/library)
 "Yu" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
@@ -5813,6 +5808,13 @@
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/bridge)
+"Zh" = (
+/obj/structure/railing,
+/obj/machinery/light/directional/north,
+/turf/open/floor/plasteel/stairs{
+	dir = 8
+	},
+/area/ship/bridge)
 "Zq" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters/preopen{
@@ -5874,11 +5876,16 @@
 /obj/structure/railing/wood,
 /turf/open/floor/plating/grass/jungle/actuallydark,
 /area/ship/crew/hydroponics)
-"ZZ" = (
-/obj/machinery/airalarm/directional/east,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/turf/open/floor/carpet/nanoweave/blue,
-/area/ship/crew/chapel/office)
+"ZW" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/electrical)
 
 (1,1,1) = {"
 xj
@@ -5898,11 +5905,11 @@ xj
 xj
 xj
 xj
-op
-op
-op
-op
-op
+ms
+ms
+ms
+ms
+ms
 xj
 xj
 xj
@@ -5937,13 +5944,13 @@ xj
 xj
 xj
 xj
-op
+ms
 bt
 fN
 Wv
 sc
 bt
-op
+ms
 xj
 xj
 xj
@@ -6093,21 +6100,21 @@ xj
 xj
 xj
 xj
-Le
-Le
+Bc
+Bc
 tU
 uj
-mg
+Wx
 jL
 SL
 so
 cX
 xv
-Vt
+yl
 uj
 kC
-kB
-kB
+dn
+dn
 xj
 xj
 xj
@@ -6131,8 +6138,8 @@ xj
 xj
 xj
 xj
-Le
-Le
+Bc
+Bc
 YA
 kw
 kE
@@ -6146,10 +6153,10 @@ Kn
 sY
 hv
 PD
-aK
+lh
 Zs
-kB
-kB
+dn
+dn
 xj
 xj
 xj
@@ -6175,7 +6182,7 @@ YA
 oo
 Ym
 Cj
-WP
+yN
 hv
 yq
 Wt
@@ -6183,7 +6190,7 @@ rI
 yh
 cW
 ux
-jN
+Ir
 hv
 Wg
 yg
@@ -6213,21 +6220,21 @@ xj
 YA
 qL
 qE
-Vq
-ZZ
-cx
+Cx
+AP
+CH
 hv
-aW
+tV
 cd
 Kv
 Wm
 Zx
 hb
-rQ
+IX
 hv
-nA
-Ab
-Ep
+DA
+pt
+US
 YU
 ln
 Zs
@@ -6251,32 +6258,32 @@ Uf
 xj
 tU
 tU
-DG
+DR
 Et
 Et
 Et
 Et
 hv
-hX
+WS
 xI
 wc
 ei
 Ej
 wQ
-OT
+Go
 hv
 eM
 eM
 eM
 eM
-fv
+Rw
 kC
 kC
 xj
 YK
-NR
-NR
-KY
+kS
+kS
+zl
 YK
 xj
 "}
@@ -6284,9 +6291,9 @@ xj
 xj
 xj
 Uf
-tj
-tj
-tj
+Fh
+Fh
+Fh
 Uf
 xj
 cE
@@ -6296,7 +6303,7 @@ Ux
 Ux
 Ux
 rX
-zh
+mE
 pw
 ha
 td
@@ -6304,7 +6311,7 @@ Ei
 LL
 Pq
 uD
-il
+GE
 Pv
 nQ
 JG
@@ -6364,14 +6371,14 @@ YK
 tC
 DC
 tQ
-dS
-GS
-qO
+DN
+xD
+wt
 Uf
 xj
 cE
-Fp
-KB
+mI
+Vy
 ug
 ug
 nY
@@ -6389,7 +6396,7 @@ Mh
 Mh
 xF
 xF
-KA
+Yc
 FL
 kc
 xj
@@ -6397,7 +6404,7 @@ YK
 if
 eC
 bx
-bJ
+kN
 YK
 "}
 (14,1,1) = {"
@@ -6408,7 +6415,7 @@ Xp
 br
 QH
 Uf
-Hs
+Ih
 cE
 qU
 CR
@@ -6429,7 +6436,7 @@ wh
 wh
 em
 xF
-Sk
+WF
 FL
 kc
 xj
@@ -6448,7 +6455,7 @@ XG
 Nm
 qI
 Uf
-IP
+hB
 cE
 nT
 mf
@@ -6474,7 +6481,7 @@ FL
 kc
 kc
 YK
-Lx
+ZW
 uS
 uS
 zP
@@ -6528,10 +6535,10 @@ VN
 iH
 lM
 dM
-Kd
+ue
 xP
 Qh
-NZ
+sV
 ug
 ji
 HM
@@ -6552,9 +6559,9 @@ xF
 RL
 CU
 kp
-zb
+IP
 mw
-GE
+sw
 Ip
 fS
 Ky
@@ -6568,7 +6575,7 @@ Rf
 Ig
 Qb
 dM
-Vg
+rg
 DI
 MK
 Eu
@@ -6606,7 +6613,7 @@ Uf
 Uf
 bM
 WB
-uT
+by
 dM
 dM
 Uu
@@ -6633,9 +6640,9 @@ wo
 Sl
 Lf
 eK
-Iy
+fF
 fx
-Nz
+bc
 SE
 Dy
 Dy
@@ -6644,7 +6651,7 @@ Dy
 xj
 xj
 Uf
-zk
+ES
 pc
 md
 GD
@@ -6673,10 +6680,10 @@ hM
 Fq
 FL
 mB
-by
+rq
 xg
 pW
-WC
+ya
 Dy
 xj
 "}
@@ -6684,7 +6691,7 @@ xj
 xj
 xj
 Uf
-Qc
+Ti
 jS
 QI
 ii
@@ -6711,9 +6718,9 @@ rH
 sz
 pj
 Rg
-AC
+gM
 mB
-uE
+rh
 mB
 mB
 mB
@@ -6795,7 +6802,7 @@ iW
 fz
 DL
 wY
-df
+QA
 Dy
 Dy
 xj
@@ -6809,9 +6816,9 @@ Qv
 Qv
 Qv
 dM
-lJ
+Lv
 Va
-oT
+NQ
 DF
 Nr
 Tj
@@ -6833,7 +6840,7 @@ oL
 Xg
 zL
 mB
-qc
+Pt
 nW
 xc
 Dy
@@ -6849,7 +6856,7 @@ Uf
 dM
 dM
 dM
-qW
+rF
 wR
 CZ
 CZ
@@ -6871,7 +6878,7 @@ Wn
 wh
 oL
 pG
-AC
+gM
 mB
 Gy
 mB
@@ -6913,7 +6920,7 @@ oL
 pG
 FL
 mB
-Lp
+eO
 ai
 Dy
 xj
@@ -6993,7 +7000,7 @@ JH
 YS
 Qj
 RH
-GU
+PH
 lT
 VG
 xj
@@ -7033,7 +7040,7 @@ PU
 Rd
 FL
 OM
-qD
+eP
 VG
 VG
 xj
@@ -7052,7 +7059,7 @@ Mb
 db
 MO
 Lg
-qu
+TE
 TV
 UA
 Wn
@@ -7073,7 +7080,7 @@ QW
 Rd
 wz
 OM
-OG
+LO
 VG
 xj
 xj
@@ -7110,10 +7117,10 @@ Df
 oy
 hy
 Gq
-NJ
+ev
 uA
 OM
-Ax
+Ec
 VG
 xj
 xj
@@ -7136,7 +7143,7 @@ rl
 zJ
 KW
 GF
-xe
+qb
 pB
 Ia
 rb
@@ -7144,8 +7151,8 @@ ZQ
 wW
 If
 qx
-Xn
-aP
+Rl
+Hj
 Dp
 Xd
 pE
@@ -7177,20 +7184,20 @@ cw
 IW
 pO
 Gr
-AK
-AK
+ib
+ib
 Gr
-GX
+Gv
 Gr
-AK
-AK
+ib
+ib
 Gr
 pE
 dX
 LD
 qC
 qC
-mz
+zq
 Vi
 zH
 cf
@@ -7214,9 +7221,9 @@ Yu
 dg
 QB
 cK
-ku
+Xu
 pO
-Mt
+qu
 sk
 cY
 bb
@@ -7232,7 +7239,7 @@ sa
 sa
 UD
 HR
-Yq
+bY
 cf
 xj
 xj
@@ -7250,13 +7257,13 @@ CY
 HF
 Xm
 xG
-oO
+gN
 ND
-XW
-ov
-yo
+ni
+xE
+Bu
 pO
-xz
+Zh
 Rm
 LH
 PM
@@ -7264,7 +7271,7 @@ fl
 vi
 jl
 Zd
-RM
+Oe
 pE
 dX
 hg
@@ -7287,7 +7294,7 @@ xj
 xj
 xj
 YB
-mA
+EG
 yp
 NO
 pO
@@ -7296,7 +7303,7 @@ pO
 pO
 iG
 pO
-CI
+Tf
 RQ
 Hp
 RQ
@@ -7304,7 +7311,7 @@ mR
 RQ
 xd
 RQ
-DP
+ij
 pE
 dX
 vv
@@ -7312,7 +7319,7 @@ HN
 HN
 jA
 Tb
-OB
+wv
 cf
 xj
 xj
@@ -7328,27 +7335,27 @@ xj
 xj
 Sr
 ZG
-pv
-Bp
+AE
+jh
 pO
 ed
-jo
+WR
 VR
-zw
+TQ
 ZG
-AK
-AK
+ib
+ib
 DY
 mU
 Qi
 Kc
 qr
-AK
-AK
+ib
+ib
 cf
 pE
-uU
-lu
+Gc
+bd
 Kw
 aI
 IQ
@@ -7371,22 +7378,22 @@ xj
 ZG
 ZG
 pO
-gx
-NL
+qD
+nh
 uY
-ot
+XE
 ZG
 xj
 Lj
-AK
-QL
+ib
+fv
 wn
-ip
-AK
+zR
+ib
 Lj
 xj
 cf
-LN
+Rq
 cn
 tn
 Mo
@@ -7418,18 +7425,18 @@ QE
 ZG
 xj
 xj
-AK
-AK
-AK
-AK
-AK
+ib
+ib
+ib
+ib
+ib
 xj
 xj
 cf
 Vo
 Yg
 Yg
-EF
+Gd
 cf
 cf
 xj
@@ -7466,10 +7473,10 @@ xj
 xj
 xj
 cf
-Xf
-Xf
-Xf
-Xf
+oz
+oz
+oz
+oz
 cf
 xj
 xj

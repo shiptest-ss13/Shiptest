@@ -371,13 +371,15 @@ TURF_DECAL_COLOR_HELPER(transparent/inteqbrown, "#4b2a18", 140)
 	name = "loading area"
 	icon_state = "loadingarea"
 	alpha = 229
-	detail_overlay = "loadingarea_stripes"
+	detail_overlay = "loadingarea"
 
 /obj/effect/turf_decal/industrial/loading/red
 	detail_color = COLOR_RED_GRAY
+	detail_overlay = "loadingarea_stripes"
 
 /obj/effect/turf_decal/industrial/loading/white
 	detail_color = COLOR_WHITE
+	detail_overlay = "loadingarea_stripes"
 
 /obj/effect/turf_decal/industrial/caution
 	icon_state = "caution"
