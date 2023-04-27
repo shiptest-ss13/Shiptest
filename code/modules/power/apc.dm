@@ -1532,6 +1532,28 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 			L.update(FALSE)
 		CHECK_TICK
 
+/obj/machinery/power/apc/get_save_vars()
+	var/list/defaults = ..()
+	if(auto_name)
+		defaults -= "name"
+		defaults -= "pixel_x"
+		defaults -= "pixel_y"
+	cell_type = cell.type
+	start_charge = cell.charge / cell.maxcharge * 100
+	return defaults + list(
+		"auto_name",
+		"cell_type",
+		"start_charge",
+		"lighting",
+		"equipment",
+		"environ",
+		"chargemode",
+		"locked",
+		"coverlocked",
+		"operating",
+		"nightshift_lights",
+	)
+
 #undef UPSTATE_CELL_IN
 #undef UPSTATE_OPENED1
 #undef UPSTATE_OPENED2

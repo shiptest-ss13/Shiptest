@@ -220,7 +220,7 @@
 		ready = PLAYER_NOT_READY
 		return FALSE
 
-	var/this_is_like_playing_right = alert(src,"Are you sure you wish to observe? You will not be able to play this round!","Player Setup","Yes","No")
+	var/this_is_like_playing_right = alert(src,"Are you sure you wish to observe? You will [CONFIG_GET(flag/norespawn) ? "not " : "" ]be able to respawn later.","Player Setup","Yes","No")
 
 	if(QDELETED(src) || !src.client || this_is_like_playing_right != "Yes")
 		ready = PLAYER_NOT_READY

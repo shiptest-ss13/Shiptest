@@ -32,8 +32,8 @@
 	species_head = /obj/item/bodypart/head/lizard
 	species_l_arm = /obj/item/bodypart/l_arm/lizard
 	species_r_arm = /obj/item/bodypart/r_arm/lizard
-	species_l_leg = /obj/item/bodypart/l_leg/lizard
-	species_r_leg = /obj/item/bodypart/r_leg/lizard
+	species_l_leg = /obj/item/bodypart/leg/left/lizard
+	species_r_leg = /obj/item/bodypart/leg/right/lizard
 	// Lizards are coldblooded and can stand a greater temperature range than humans
 	bodytemp_heat_damage_limit = HUMAN_BODYTEMP_HEAT_DAMAGE_LIMIT + 20 // This puts lizards 10 above lavaland max heat for ash lizards.
 	bodytemp_cold_damage_limit = HUMAN_BODYTEMP_COLD_DAMAGE_LIMIT - 10

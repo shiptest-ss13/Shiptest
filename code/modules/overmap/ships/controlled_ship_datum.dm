@@ -12,14 +12,12 @@
 	token_type = /obj/overmap/rendered
 	dock_time = 10 SECONDS
 
-	///Vessel estimated thrust
+	///Vessel estimated thrust per full burn
 	var/est_thrust
 	///Average fuel fullness percentage
 	var/avg_fuel_amnt = 100
 	///Cooldown until the ship can be renamed again
 	COOLDOWN_DECLARE(rename_cooldown)
-	///Vessel approximate mass
-	var/mass
 
 	///The docking port of the linked shuttle. To add a port after creating a controlled ship datum, use [/datum/overmap/ship/controlled/proc/connect_new_shuttle_port].
 	VAR_FINAL/obj/docking_port/mobile/shuttle_port
@@ -105,7 +103,6 @@
 			if(!shuttle_port) //Loading failed, if the shuttle is supposed to be created, we need to delete ourselves.
 				qdel(src) // Can't return INITIALIZE_HINT_QDEL here since this isn't ACTUAL initialisation. Considering changing the name of the proc.
 				return
-			calculate_mass()
 			refresh_engines()
 
 	ship_account = new(name, 2000)
@@ -142,7 +139,6 @@
 /datum/overmap/ship/controlled/start_dock(datum/overmap/to_dock, datum/docking_ticket/ticket)
 	log_shuttle("[src] [REF(src)] DOCKING: STARTED REQUEST FOR [to_dock] AT [ticket.target_port]")
 	refresh_engines()
-	shuttle_port.movement_force = list("KNOCKDOWN" = FLOOR(est_thrust / 50, 1), "THROW" = FLOOR(est_thrust / 500, 1))
 	priority_announce("Beginning docking procedures. Completion in [dock_time/10] seconds.", "Docking Announcement", sender_override = name, zlevel = shuttle_port.virtual_z())
 	shuttle_port.create_ripples(ticket.target_port, dock_time)
 	shuttle_port.play_engine_sound(shuttle_port, shuttle_port.landing_sound)
@@ -151,9 +147,6 @@
 /datum/overmap/ship/controlled/complete_dock(datum/overmap/dock_target, datum/docking_ticket/ticket)
 	shuttle_port.initiate_docking(ticket.target_port)
 	. = ..()
-	if(istype(dock_target, /datum/overmap/ship/controlled)) //hardcoded and bad
-		var/datum/overmap/ship/controlled/S = dock_target
-		S.shuttle_port.shuttle_areas |= shuttle_port.shuttle_areas
 	log_shuttle("[src] [REF(src)] COMPLETE DOCK: FINISHED DOCKING TO [dock_target] AT [ticket.target_port]")
 
 /datum/overmap/ship/controlled/Undock(force = FALSE)
@@ -184,11 +177,6 @@
 			return new /datum/docking_ticket(docking_port, src, dock_requester)
 	return ..()
 
-/datum/overmap/ship/controlled/post_undocked(datum/overmap/dock_requester)
-	if(istype(dock_requester, /datum/overmap/ship/controlled))
-		var/datum/overmap/ship/controlled/docker_port = dock_requester
-		shuttle_port.shuttle_areas += docker_port.shuttle_port.shuttle_areas
-
 /**
  * Docks to an empty dynamic encounter. Used for intership interaction, structural modifications, and such
  */
@@ -199,25 +187,22 @@
 	if(E) //Don't make this an else
 		Dock(E)
 
-/datum/overmap/ship/controlled/burn_engines(n_dir = null, percentage = 100)
+/datum/overmap/ship/controlled/burn_engines(percentage = 100, deltatime)
 	if(docked_to || docking)
 		CRASH("[src] burned engines while docking or docked!")
 
 	var/thrust_used = 0 //The amount of thrust that the engines will provide with one burn
 	refresh_engines()
-	if(!mass)
-		calculate_mass()
 	calculate_avg_fuel()
 	for(var/obj/machinery/power/shuttle/engine/E as anything in shuttle_port.engine_list)
 		if(!E.enabled)
 			continue
-		thrust_used += E.burn_engine(percentage)
-	est_thrust = thrust_used //cheeky way of rechecking the thrust, check it every time it's used
-	thrust_used = thrust_used / max(mass * 100, 1) //do not know why this minimum check is here, but I clearly ran into an issue here before
-	if(n_dir)
-		accelerate(n_dir, thrust_used)
-	else
-		decelerate(thrust_used)
+		thrust_used += E.burn_engine(percentage, deltatime)
+
+	thrust_used = thrust_used / (shuttle_port.turf_count * 100)
+	est_thrust = thrust_used / percentage * 100 //cheeky way of rechecking the thrust, check it every time it's used
+
+	return thrust_used
 
 /**
  * Just double checks all the engines on the shuttle
@@ -228,17 +213,7 @@
 		E.update_engine()
 		if(E.enabled)
 			calculated_thrust += E.thrust
-	est_thrust = calculated_thrust
-
-/**
- * Calculates the mass based on the amount of turfs in the shuttle's areas
- */
-/datum/overmap/ship/controlled/proc/calculate_mass()
-	. = 0
-	var/list/areas = shuttle_port.shuttle_areas
-	for(var/shuttle_area in areas)
-		. += length(get_area_turfs(shuttle_area))
-	mass = .
+	est_thrust = calculated_thrust / (shuttle_port.turf_count * 100)
 
 /**
  * Calculates the average fuel fullness of all engines.
@@ -258,7 +233,9 @@
 
 /datum/overmap/ship/controlled/tick_move()
 	if(avg_fuel_amnt < 1)
-		decelerate(max_speed / 100)
+		//Slow down a little when there's no fuel
+		adjust_speed(clamp(-speed_x, max_speed * -0.001, max_speed * 0.001), clamp(-speed_y, max_speed * -0.001, max_speed * 0.001))
+
 	return ..()
 
 /**
@@ -271,7 +248,6 @@
 	if(shuttle_port)
 		CRASH("Attempted to connect a new port to a ship that already has a port!")
 	shuttle_port = new_port
-	calculate_mass()
 	refresh_engines()
 	shuttle_port.name = name
 	for(var/area/shuttle_area as anything in shuttle_port.shuttle_areas)
@@ -413,7 +389,7 @@
 
 /obj/item/key/ship
 	name = "ship key"
-	desc = "A key for locking and unlocking the helm of a ship, comes with a ball chain so it can be worn around the neck."
+	desc = "A key for locking and unlocking the helm of a ship, comes with a ball chain so it can be worn around the neck. Comes with a cute little shuttle-shaped keychain."
 	icon_state = "keyship"
 	var/datum/overmap/ship/controlled/master_ship
 	var/static/list/key_colors = list(
