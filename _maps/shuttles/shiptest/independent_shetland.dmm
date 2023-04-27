@@ -254,19 +254,6 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
-"cM" = (
-/obj/machinery/door/poddoor{
-	dir = 4;
-	id = "amoguswindows"
-	},
-/obj{
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete.";
-	name = "---Merge Conflict Marker---",
-	},
-/obj/structure/window/reinforced/fulltile,
-/obj/structure/grille,
-/turf/open/floor/plating,
-/area/ship/hallway/fore)
 "cP" = (
 /obj/structure/extinguisher_cabinet/directional/north,
 /turf/open/floor/plasteel/patterned,
@@ -326,13 +313,6 @@
 /obj/machinery/holopad/emergency/command,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
-"ec" = (
-/obj/machinery/door/poddoor{
-	dir = 4;
-	id = "amoguswindows"
-	},
-/turf/template_noop,
-/area/template_noop)
 "ee" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/airlock/public/glass{
@@ -2407,23 +2387,6 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/toilet)
-"xM" = (
-/obj/machinery/door/poddoor{
-	dir = 4;
-	id = "amoguswindows"
-	},
-/obj/effect/spawner/structure/window/reinforced,
-/obj{
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete.";
-	name = "---Merge Conflict Marker---",
-	},
-/obj/machinery/door/poddoor{
-	id = "amoguswindows"
-	},
-/obj/structure/window/reinforced/fulltile,
-/obj/structure/grille,
-/turf/open/floor/plating,
-/area/ship/hallway/fore)
 "xQ" = (
 /turf/closed/wall/r_wall,
 /area/ship/bridge)
@@ -6508,7 +6471,7 @@ JR
 ev
 Gd
 Gd
-xM
+AC
 AC
 LO
 "}
@@ -6565,7 +6528,7 @@ en
 KZ
 zO
 zO
-cM
+eZ
 LO
 LO
 LO
@@ -6704,7 +6667,7 @@ QY
 FR
 TY
 eh
-ec
+LO
 LO
 LO
 LO
