@@ -207,15 +207,24 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
+"fp" = (
+/obj/machinery/door/poddoor/preopen{
+	id = "mining_ship_blast";
+	dir = 4
+	},
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating/airless,
+/area/ship/bridge)
 "fy" = (
 /obj/structure/catwalk,
 /turf/template_noop,
 /area/ship/external)
 "fV" = (
-/obj/machinery/door/poddoor/preopen{
-	id = "mining_ship_blast"
-	},
 /obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/preopen{
+	id = "mining_ship_blast";
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ship/medical)
 "fY" = (
@@ -1069,6 +1078,22 @@
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer2,
 /turf/open/floor/plating,
 /area/ship/crew)
+"xo" = (
+/obj/machinery/door/poddoor/preopen{
+	id = "mining_ship_blast";
+	dir = 8
+	},
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating/airless,
+/area/ship/bridge)
+"xr" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/preopen{
+	id = "mining_ship_blast";
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ship/crew)
 "yu" = (
 /obj/machinery/mineral/ore_redemption{
 	dir = 4
@@ -1338,6 +1363,14 @@
 /obj/effect/turf_decal/solarpanel,
 /turf/open/floor/plating/airless,
 /area/ship/external)
+"Gr" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/preopen{
+	id = "mining_ship_blast";
+	dir = 8
+	},
+/turf/open/floor/plating/airless,
+/area/ship/bridge)
 "Gx" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -1406,10 +1439,11 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/obj/machinery/door/poddoor/preopen{
-	id = "mining_ship_blast"
-	},
 /obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/preopen{
+	id = "mining_ship_blast";
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ship/crew)
 "Ip" = (
@@ -1810,7 +1844,7 @@
 /obj/item/clothing/gloves/color/yellow,
 /obj/item/clothing/gloves/color/yellow,
 /obj/item/reagent_containers/glass/beaker{
-	list_reagents = list(/datum/reagent/fuel = 50)
+	list_reagents = list(/datum/reagent/fuel=50)
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
@@ -2013,10 +2047,10 @@
 "UU" = (
 /obj/docking_port/stationary{
 	dir = 2;
-	dwidth = 3;
+	dwidth = 4;
 	height = 5;
 	name = "Mining Ship: Common Mining Dock";
-	width = 7
+	width = 9
 	},
 /turf/open/floor/plating,
 /area/ship/construction)
@@ -2033,10 +2067,11 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/obj/machinery/door/poddoor/preopen{
-	id = "mining_ship_blast"
-	},
 /obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/preopen{
+	id = "mining_ship_blast";
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ship/medical)
 "Vv" = (
@@ -2693,7 +2728,7 @@ zc
 wv
 rE
 Ia
-Mb
+xr
 LZ
 FS
 OJ
@@ -2742,13 +2777,13 @@ OJ
 OJ
 OJ
 OJ
-ms
+fp
 ms
 Se
 OL
 sM
 ms
-ms
+Gr
 OJ
 OJ
 OJ
@@ -2762,11 +2797,11 @@ OJ
 OJ
 OJ
 OJ
-ms
-ms
-ms
-ms
-ms
+xo
+Gr
+Gr
+Gr
+Gr
 OJ
 OJ
 OJ

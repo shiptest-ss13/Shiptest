@@ -102,7 +102,7 @@
 /obj/structure/closet/wall/white{
 	dir = 8;
 	name = "First Aid";
-	pixel_x = 31
+	pixel_x = 28
 	},
 /obj/machinery/light/small/directional/south,
 /obj/machinery/newscaster/directional/west,
@@ -391,6 +391,14 @@
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
+"ja" = (
+/obj/machinery/door/poddoor{
+	id = "windowlockdown";
+	dir = 4
+	},
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating,
+/area/ship/crew/canteen)
 "jj" = (
 /turf/open/floor/carpet/red_gold,
 /area/ship/crew/canteen)
@@ -445,6 +453,7 @@
 /obj/machinery/computer/cryopod/directional/north{
 	pixel_y = 17
 	},
+/obj/item/radio/intercom/directional/west,
 /turf/open/floor/wood/walnut,
 /area/ship/crew)
 "kr" = (
@@ -681,6 +690,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel/freezer,
 /area/ship/storage)
 "op" = (
@@ -762,6 +772,14 @@
 /obj/effect/turf_decal/box,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
+"qu" = (
+/obj/machinery/door/poddoor{
+	id = "windowlockdown";
+	dir = 4
+	},
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating,
+/area/ship/crew/hydroponics)
 "qO" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
@@ -804,6 +822,7 @@
 /obj/machinery/chem_dispenser/drinks{
 	dir = 8
 	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "rt" = (
@@ -904,7 +923,8 @@
 /area/ship/crew/canteen)
 "sD" = (
 /obj/machinery/door/poddoor{
-	id = "windowlockdown"
+	id = "windowlockdown";
+	dir = 4
 	},
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -1287,6 +1307,14 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/storage)
+"zy" = (
+/obj/machinery/door/poddoor{
+	id = "bridgelockdown";
+	dir = 8
+	},
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating,
+/area/ship/bridge)
 "zP" = (
 /obj/machinery/icecream_vat,
 /turf/open/floor/plasteel/freezer,
@@ -1815,7 +1843,6 @@
 /obj/machinery/chem_dispenser/drinks/beer{
 	dir = 8
 	},
-/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "GG" = (
@@ -2327,7 +2354,6 @@
 "SO" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/structure/closet/secure_closet/freezer/meat/open,
-/obj/machinery/light/small/directional/east,
 /obj/effect/turf_decal/box,
 /obj/item/reagent_containers/food/snacks/meat/slab/monkey,
 /obj/item/reagent_containers/food/snacks/meat/slab/monkey,
@@ -2652,6 +2678,14 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
+"YZ" = (
+/obj/machinery/door/poddoor{
+	id = "bridgelockdown";
+	dir = 4
+	},
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating,
+/area/ship/bridge)
 "Zd" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -2825,7 +2859,7 @@ gL
 "}
 (6,1,1) = {"
 vZ
-xr
+ja
 xr
 Fp
 xX
@@ -3281,7 +3315,7 @@ of
 of
 TD
 TD
-DZ
+qu
 TD
 vZ
 "}
@@ -3292,13 +3326,13 @@ vZ
 vZ
 vZ
 vZ
-Cu
+zy
 Cu
 ep
 AA
 OJ
 Cu
-Cu
+YZ
 vZ
 vZ
 vZ

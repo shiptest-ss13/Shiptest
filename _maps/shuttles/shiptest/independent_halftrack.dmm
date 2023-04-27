@@ -7,6 +7,7 @@
 	icon_state = "0-2"
 	},
 /obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "aT" = (
@@ -308,6 +309,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "iW" = (
@@ -484,11 +486,12 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "mP" = (
+/obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/preopen{
 	id = "traumawindows";
-	name = "Window Blast Door"
+	name = "Window Blast Door";
+	dir = 4
 	},
-/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/ship/security)
 "mQ" = (
@@ -507,7 +510,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "nl" = (
-/obj/machinery/light/small/directional/west,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -567,13 +569,15 @@
 	name = "Lobby Door Control";
 	normaldoorcontrol = 1;
 	pixel_x = -13;
-	pixel_y = 7
+	pixel_y = 7;
+	dir = 1
 	},
 /obj/machinery/button/door{
 	id = "traumalobby";
 	name = "Lobby Shutter Control";
 	pixel_x = -13;
-	pixel_y = -1
+	pixel_y = -1;
+	dir = 1
 	},
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/turf_decal/industrial/hatch/red,
@@ -669,9 +673,6 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/fore)
 "rM" = (
-/obj/machinery/light/small/directional/south{
-	pixel_x = 16
-	},
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable{
 	icon_state = "0-8"
@@ -788,7 +789,6 @@
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew)
 "tT" = (
-/obj/machinery/light/directional/east,
 /obj/structure/chair{
 	dir = 8
 	},
@@ -846,6 +846,7 @@
 	dir = 8
 	},
 /obj/structure/extinguisher_cabinet/directional/north,
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/hallway/aft)
 "ve" = (
@@ -894,6 +895,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "vG" = (
@@ -1109,6 +1111,19 @@
 /obj/machinery/photocopier,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/aft)
+"EW" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
 "Fx" = (
 /obj/structure/sign/poster/contraband/c20r,
 /turf/closed/wall/r_wall,
@@ -1219,6 +1234,7 @@
 /obj/structure/bed,
 /obj/structure/curtain/bounty,
 /obj/item/bedsheet/captain,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "HF" = (
@@ -1243,7 +1259,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/security/range)
 "IE" = (
-/obj/machinery/light/small/directional/east,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1283,7 +1298,8 @@
 "JA" = (
 /obj/machinery/door/poddoor/preopen{
 	id = "traumawindows";
-	name = "Window Blast Door"
+	name = "Window Blast Door";
+	dir = 4
 	},
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -1537,7 +1553,8 @@
 "Po" = (
 /obj/machinery/door/poddoor/preopen{
 	id = "traumawindows";
-	name = "Window Blast Door"
+	name = "Window Blast Door";
+	dir = 4
 	},
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -1616,6 +1633,7 @@
 /area/ship/storage)
 "Qp" = (
 /obj/machinery/vending/snack/random,
+/obj/machinery/light/directional/west,
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/hallway/aft)
 "Qq" = (
@@ -1728,6 +1746,7 @@
 /obj/structure/bed,
 /obj/structure/curtain/bounty,
 /obj/item/bedsheet/hos,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "SP" = (
@@ -2009,10 +2028,7 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/aft)
 "Xs" = (
-/obj/machinery/light/small/directional/south,
-/obj/item/radio/intercom/directional/south{
-	pixel_x = 12
-	},
+/obj/item/radio/intercom/directional/south,
 /turf/open/floor/carpet/nanoweave,
 /area/ship/bridge)
 "XW" = (
@@ -2052,12 +2068,14 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "YI" = (
-/obj/machinery/light/directional/west,
-/obj/structure/chair{
+/obj/machinery/door/poddoor/preopen{
+	id = "traumawindows";
+	name = "Window Blast Door";
 	dir = 4
 	},
-/turf/open/floor/carpet/nanoweave/beige,
-/area/ship/hallway/aft)
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating,
+/area/ship/bridge)
 "YK" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -2085,7 +2103,7 @@
 /area/ship/security)
 "ZO" = (
 /obj/machinery/vending/cola/random,
-/obj/machinery/firealarm/directional/east,
+/obj/machinery/light/directional/east,
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/hallway/aft)
 
@@ -2265,7 +2283,7 @@ UG
 "}
 (7,1,1) = {"
 bX
-bX
+YI
 uk
 UJ
 nu
@@ -2316,7 +2334,7 @@ HP
 ve
 tE
 go
-YI
+Ja
 Ja
 Qp
 gL
@@ -2439,7 +2457,7 @@ gL
 "}
 (13,1,1) = {"
 bX
-bX
+YI
 zR
 Nq
 nu
@@ -2518,7 +2536,7 @@ UG
 UG
 UO
 UO
-Lt
+EW
 UO
 UG
 UG
