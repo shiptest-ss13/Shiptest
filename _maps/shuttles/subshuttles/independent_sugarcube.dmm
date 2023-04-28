@@ -16,10 +16,9 @@
 /obj/effect/decal/cleanable/oil/slippery,
 /obj/docking_port/mobile{
 	can_move_docking_ports = 1;
-	dir = 2;
 	launch_status = 0;
-	port_direction = 8;
-	preferred_direction = 4
+	preferred_direction = 4;
+	dir = 2
 	},
 /turf/open/floor/plating,
 /area/ship/storage)
@@ -302,6 +301,18 @@
 "L" = (
 /turf/closed/wall,
 /area/ship/engineering)
+"Y" = (
+/obj/structure/grille,
+/obj/structure/window/fulltile,
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	dir = 2;
+	launch_status = 0;
+	port_direction = 8;
+	preferred_direction = 4
+	},
+/turf/open/floor/plating,
+/area/ship/storage)
 "Z" = (
 /turf/closed/wall/rust,
 /area/ship/engineering)
@@ -397,7 +408,7 @@ c
 (12,1,1) = {"
 c
 c
-c
+Y
 c
 c
 c
