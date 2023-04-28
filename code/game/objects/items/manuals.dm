@@ -260,7 +260,7 @@
 			Ok so you just joined the srm and you want to make some brews! Im to tired of explaining all of this so im jotting it all down for you clowns.<br>
 			Trickwines almost all share the same effect. When you drink them it provides a benifical effect and when you toss them at someone it provides some sort of bad effect.
 			<h2> Breakaway flasks</h2>
-			Honestly i love these things, im not a scientist so i cant exactly explain this but somehow when you fuse plasma into glass it makes it ultra sharp and makes it really good for cracking over fauna heads.<br>
+			Honestly i love these things, im note a scientist so i cant exactly explain this but somehow when you fuse plasma into glass it makes it ultra sharp and makes it really good for cracking over fauna heads.<br>
 			The simplest way i have found of making them is crafting them with a chunk of glass, plasma, and a welder.<br>
 			I should not trickwines dont seem to form without flasks. I think its something about the plasma reacting with it though<br>
 
