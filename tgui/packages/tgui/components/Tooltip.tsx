@@ -27,6 +27,9 @@ const NULL_RECT: DOMRect = {
   right: 0,
   bottom: 0,
   left: 0,
+  x: 0,
+  y: 0,
+  toJSON: () => null,
 };
 
 export class Tooltip extends Component<TooltipProps, TooltipState> {
