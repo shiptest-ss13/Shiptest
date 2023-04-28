@@ -165,6 +165,9 @@
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/bridge)
+"cv" = (
+/turf/open/floor/plating/airless,
+/area/template_noop)
 "cM" = (
 /obj/structure/closet/secure_closet/freezer{
 	anchored = 1;
@@ -468,7 +471,7 @@
 /obj/effect/turf_decal/trimline/opaque/yellow/line{
 	dir = 10
 	},
-/turf/closed/wall/mineral/plastitanium,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/hallway/fore)
 "fN" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
@@ -2941,6 +2944,14 @@
 /obj/item/tank/internals/oxygen,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/port)
+"Hd" = (
+/obj/docking_port/stationary{
+	dwidth = 7;
+	width = 15;
+	height = 15
+	},
+/turf/template_noop,
+/area/template_noop)
 "He" = (
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 8
@@ -3731,14 +3742,14 @@
 /turf/open/floor/engine/hull,
 /area/ship/engineering)
 "Rm" = (
-/obj/docking_port/mobile{
-	dir = 2;
-	launch_status = 0;
-	port_direction = 8;
-	preferred_direction = 4
+/obj/docking_port/stationary{
+	dwidth = 3;
+	width = 7;
+	height = 15;
+	dir = 2
 	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/crew/office)
+/turf/template_noop,
+/area/template_noop)
 "Rq" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -4120,7 +4131,7 @@
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 9
 	},
-/turf/closed/wall/mineral/plastitanium,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/hallway/fore)
 "Vd" = (
 /obj/machinery/power/apc/auto_name/directional/north,
@@ -4545,6 +4556,7 @@
 
 (1,1,1) = {"
 XJ
+XJ
 bo
 hQ
 oO
@@ -4565,6 +4577,7 @@ rl
 XJ
 "}
 (2,1,1) = {"
+XJ
 XJ
 bo
 sF
@@ -4587,6 +4600,7 @@ XJ
 "}
 (3,1,1) = {"
 XJ
+XJ
 bo
 iG
 pv
@@ -4607,6 +4621,7 @@ rl
 XJ
 "}
 (4,1,1) = {"
+XJ
 XJ
 bo
 Zb
@@ -4629,6 +4644,7 @@ XJ
 "}
 (5,1,1) = {"
 XJ
+XJ
 bo
 QC
 pF
@@ -4649,6 +4665,7 @@ rl
 XJ
 "}
 (6,1,1) = {"
+XJ
 XJ
 bo
 jn
@@ -4671,6 +4688,7 @@ XJ
 "}
 (7,1,1) = {"
 XJ
+XJ
 bo
 jo
 Fw
@@ -4692,6 +4710,7 @@ XJ
 "}
 (8,1,1) = {"
 XJ
+XJ
 Nb
 bo
 bo
@@ -4712,6 +4731,7 @@ wr
 XJ
 "}
 (9,1,1) = {"
+XJ
 XJ
 XJ
 XJ
@@ -4737,6 +4757,7 @@ XJ
 XJ
 XJ
 XJ
+XJ
 vH
 ZJ
 Lm
@@ -4754,6 +4775,7 @@ XJ
 XJ
 "}
 (11,1,1) = {"
+XJ
 XJ
 XJ
 XJ
@@ -4779,6 +4801,7 @@ XJ
 XJ
 XJ
 XJ
+XJ
 vZ
 Wu
 BQ
@@ -4800,6 +4823,7 @@ XJ
 XJ
 XJ
 XJ
+XJ
 vZ
 Cu
 qR
@@ -4811,12 +4835,13 @@ Zc
 MU
 Ks
 pX
-XJ
+Rm
 XJ
 XJ
 XJ
 "}
 (14,1,1) = {"
+XJ
 XJ
 XJ
 XJ
@@ -4842,6 +4867,7 @@ XJ
 XJ
 XJ
 XJ
+XJ
 vH
 PY
 Mx
@@ -4863,6 +4889,7 @@ XJ
 XJ
 XJ
 XJ
+XJ
 vH
 dU
 Ss
@@ -4880,6 +4907,7 @@ XJ
 XJ
 "}
 (17,1,1) = {"
+XJ
 bd
 ZB
 ZB
@@ -4901,6 +4929,7 @@ Dq
 cj
 "}
 (18,1,1) = {"
+XJ
 ZB
 cM
 Mk
@@ -4922,6 +4951,7 @@ Dj
 Dq
 "}
 (19,1,1) = {"
+XJ
 lU
 dS
 jw
@@ -4943,6 +4973,7 @@ nE
 Dq
 "}
 (20,1,1) = {"
+XJ
 Gl
 ej
 jw
@@ -4964,6 +4995,7 @@ nQ
 Yv
 "}
 (21,1,1) = {"
+XJ
 Wn
 eK
 jw
@@ -4985,6 +5017,7 @@ Ci
 pa
 "}
 (22,1,1) = {"
+XJ
 Ow
 eT
 jw
@@ -5006,6 +5039,7 @@ Dq
 PV
 "}
 (23,1,1) = {"
+XJ
 Oo
 eX
 jX
@@ -5027,6 +5061,7 @@ eH
 JH
 "}
 (24,1,1) = {"
+XJ
 ZB
 fj
 jw
@@ -5048,6 +5083,7 @@ Vr
 RN
 "}
 (25,1,1) = {"
+XJ
 vv
 gg
 lA
@@ -5069,7 +5105,8 @@ Xu
 RN
 "}
 (26,1,1) = {"
-Rm
+XJ
+ZB
 LU
 iw
 hU
@@ -5090,6 +5127,7 @@ wS
 kI
 "}
 (27,1,1) = {"
+XJ
 Nb
 hD
 hD
@@ -5111,7 +5149,8 @@ kI
 wr
 "}
 (28,1,1) = {"
-XJ
+Hd
+cv
 hO
 nm
 aZ
@@ -5132,6 +5171,7 @@ zF
 XJ
 "}
 (29,1,1) = {"
+XJ
 XJ
 hD
 hD
@@ -5154,6 +5194,7 @@ XJ
 "}
 (30,1,1) = {"
 XJ
+XJ
 tX
 KG
 hD
@@ -5174,6 +5215,7 @@ zF
 XJ
 "}
 (31,1,1) = {"
+XJ
 XJ
 HD
 ny
@@ -5196,6 +5238,7 @@ XJ
 "}
 (32,1,1) = {"
 XJ
+XJ
 tX
 VR
 tI
@@ -5216,6 +5259,7 @@ zF
 XJ
 "}
 (33,1,1) = {"
+XJ
 XJ
 HD
 sI
@@ -5238,6 +5282,7 @@ XJ
 "}
 (34,1,1) = {"
 XJ
+XJ
 tX
 oe
 uy
@@ -5258,6 +5303,7 @@ zF
 XJ
 "}
 (35,1,1) = {"
+XJ
 XJ
 Lj
 SC

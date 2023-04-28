@@ -122,6 +122,10 @@
 /obj/machinery/door/window/eastright{
 	name = "Engine Access"
 	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "talos_thrusters_starboard"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "aM" = (
@@ -573,6 +577,10 @@
 	},
 /obj/structure/cable{
 	icon_state = "0-8"
+	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "talos_thrusters_starboard"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -1202,6 +1210,10 @@
 /obj/machinery/door/window/eastleft{
 	name = "Engine Access"
 	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "talos_thrusters_port"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "ik" = (
@@ -1305,6 +1317,10 @@
 /obj/machinery/door/window/eastleft{
 	name = "Engine Access"
 	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "talos_thrusters_starboard"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "iN" = (
@@ -1357,18 +1373,14 @@
 /turf/open/floor/carpet/orange,
 /area/ship/bridge)
 "jd" = (
-/obj/machinery/power/shuttle/engine/electric{
+/obj/docking_port/stationary{
+	dwidth = 3;
+	width = 7;
+	height = 15;
 	dir = 4
 	},
-/obj/machinery/door/poddoor{
-	dir = 4;
-	id = "talos_thrusters_starboard"
-	},
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/turf/open/floor/plating,
-/area/ship/engineering/engine)
+/turf/template_noop,
+/area/template_noop)
 "jf" = (
 /obj/machinery/light/directional/north,
 /obj/structure/closet/secure_closet/engineering_welding{
@@ -3092,10 +3104,6 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/machinery/door/poddoor{
-	dir = 4;
-	id = "talos_thrusters_port"
-	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "ta" = (
@@ -3377,6 +3385,10 @@
 	name = "Engine Access"
 	},
 /obj/structure/barricade/wooden/crude,
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "talos_thrusters_port"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "uE" = (
@@ -3451,7 +3463,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "vE" = (
-/turf/closed/wall/mineral/plastitanium,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/external/dark)
 "vF" = (
 /obj/item/toy/plush/slimeplushie,
@@ -3975,6 +3987,10 @@
 	name = "Engine Access"
 	},
 /obj/structure/barricade/wooden/crude,
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "talos_thrusters_starboard"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "yr" = (
@@ -4435,6 +4451,10 @@
 	},
 /obj/machinery/door/window/eastright{
 	name = "Engine Access"
+	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "talos_thrusters_port"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -6552,10 +6572,6 @@
 /obj/machinery/power/shuttle/engine/electric{
 	dir = 4
 	},
-/obj/machinery/door/poddoor{
-	dir = 4;
-	id = "talos_thrusters_port"
-	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "RC" = (
@@ -6671,6 +6687,10 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "talos_thrusters_port"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Su" = (
@@ -6739,10 +6759,6 @@
 "SL" = (
 /obj/machinery/power/shuttle/engine/fueled/plasma{
 	dir = 4
-	},
-/obj/machinery/door/poddoor{
-	dir = 4;
-	id = "talos_thrusters_port"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -7371,10 +7387,6 @@
 /obj/machinery/power/shuttle/engine/fueled/plasma{
 	dir = 4
 	},
-/obj/machinery/door/poddoor{
-	dir = 4;
-	id = "talos_thrusters_starboard"
-	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Xn" = (
@@ -7683,10 +7695,6 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/machinery/door/poddoor{
-	dir = 4;
-	id = "talos_thrusters_starboard"
-	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "ZU" = (
@@ -7735,7 +7743,7 @@ pU
 Xl
 ZJ
 ZJ
-jd
+ZJ
 pU
 ie
 sw
@@ -7840,7 +7848,7 @@ Lu
 ou
 FK
 pU
-ie
+pU
 sw
 sw
 MV
@@ -9505,6 +9513,40 @@ fK
 dv
 Wg
 sy
+sw
+sw
+sw
+sw
+sw
+sw
+sw
+"}
+(54,1,1) = {"
+sw
+sw
+sw
+sw
+sw
+sw
+sw
+sw
+sw
+jd
+sw
+sw
+sw
+sw
+sw
+sw
+sw
+sw
+sw
+sw
+sw
+sw
+jd
+sw
+sw
 sw
 sw
 sw

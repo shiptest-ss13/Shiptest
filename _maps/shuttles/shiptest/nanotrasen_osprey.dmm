@@ -361,12 +361,7 @@
 /obj/item/clothing/under/rank/rnd/scientist,
 /obj/item/clothing/suit/toggle/labcoat/science,
 /obj/item/clothing/glasses/science,
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/structure/sign/poster/official/focus{
-	pixel_y = 32
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/white,
 /area/ship/science)
 "cD" = (
@@ -1096,6 +1091,17 @@
 	dir = 4
 	},
 /area/ship/hallway/central)
+"hQ" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/docking_port/mobile{
+	dir = 8;
+	launch_status = 0;
+	preferred_direction = 2
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external)
 "hU" = (
 /obj/machinery/atmospherics/components/unary/shuttle/heater{
 	dir = 4
@@ -2013,10 +2019,6 @@
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/dorm)
-"nt" = (
-/obj/structure/sign/departments/science,
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/science)
 "nx" = (
 /obj/machinery/disposal/bin,
 /obj/structure/disposalpipe/trunk{
@@ -2427,10 +2429,6 @@
 	},
 /obj/item/table_bell,
 /obj/structure/disposalpipe/segment,
-/obj/structure/noticeboard{
-	dir = 4;
-	pixel_x = -32
-	},
 /obj/machinery/door/poddoor/shutters{
 	id = "ospreysci"
 	},
@@ -7423,17 +7421,14 @@
 /turf/open/floor/carpet/blue,
 /area/ship/bridge)
 "Wq" = (
-/obj/docking_port/mobile{
-	dir = 2;
-	launch_status = 0;
-	port_direction = 8;
-	preferred_direction = 4
+/obj/docking_port/stationary{
+	dwidth = 7;
+	width = 15;
+	height = 15;
+	dir = 2
 	},
-/obj/machinery/door/airlock/external,
-/obj/machinery/atmospherics/pipe/layer_manifold,
-/obj/machinery/door/firedoor,
-/turf/open/floor/plasteel/tech,
-/area/ship/hallway/central)
+/turf/template_noop,
+/area/template_noop)
 "Ws" = (
 /obj/structure/chair/comfy/brown{
 	dir = 4
@@ -7562,6 +7557,14 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
+"Xo" = (
+/obj/docking_port/stationary{
+	dwidth = 7;
+	width = 15;
+	height = 15
+	},
+/turf/template_noop,
+/area/template_noop)
 "Xp" = (
 /obj/machinery/door/airlock/command{
 	name = "Captain's Quarters";
@@ -7934,6 +7937,7 @@
 /area/ship/crew/cryo)
 
 (1,1,1) = {"
+li
 WU
 pD
 pD
@@ -7965,8 +7969,10 @@ wT
 Hk
 Hk
 yj
+li
 "}
 (2,1,1) = {"
+li
 WU
 Tn
 VA
@@ -7998,8 +8004,10 @@ hU
 wo
 wQ
 yj
+li
 "}
 (3,1,1) = {"
+li
 WU
 eE
 eE
@@ -8031,8 +8039,10 @@ cJ
 kG
 kG
 yj
+li
 "}
 (4,1,1) = {"
+li
 WU
 pP
 ap
@@ -8064,8 +8074,10 @@ ra
 Ri
 dS
 yj
+li
 "}
 (5,1,1) = {"
+li
 WU
 NT
 Yc
@@ -8097,8 +8109,10 @@ Jl
 kD
 SX
 Tb
+li
 "}
 (6,1,1) = {"
+li
 WU
 qc
 PS
@@ -8130,8 +8144,10 @@ Gp
 Ko
 tF
 JN
+li
 "}
 (7,1,1) = {"
+li
 WU
 qa
 gX
@@ -8163,8 +8179,10 @@ xp
 cT
 Of
 xP
+li
 "}
 (8,1,1) = {"
+li
 WU
 RE
 JO
@@ -8196,8 +8214,10 @@ sw
 cp
 Uc
 yj
+li
 "}
 (9,1,1) = {"
+li
 WU
 Hf
 gX
@@ -8229,8 +8249,10 @@ hm
 HK
 Qb
 yj
+li
 "}
 (10,1,1) = {"
+li
 WU
 Mu
 Ix
@@ -8262,8 +8284,10 @@ Mo
 eX
 fU
 yj
+li
 "}
 (11,1,1) = {"
+li
 WU
 Qv
 lz
@@ -8295,8 +8319,10 @@ yj
 pJ
 gC
 yj
+li
 "}
 (12,1,1) = {"
+li
 WU
 Zo
 LF
@@ -8328,8 +8354,10 @@ yj
 oo
 oo
 yj
+li
 "}
 (13,1,1) = {"
+li
 WU
 bH
 Xz
@@ -8361,8 +8389,10 @@ yj
 ik
 lA
 yj
+li
 "}
 (14,1,1) = {"
+li
 WU
 WU
 WU
@@ -8394,8 +8424,10 @@ yj
 yj
 yj
 yj
+li
 "}
 (15,1,1) = {"
+li
 nK
 GU
 XX
@@ -8427,9 +8459,11 @@ jC
 gJ
 Zj
 FI
+li
 "}
 (16,1,1) = {"
-Wq
+Xo
+uQ
 mB
 Tq
 rJ
@@ -8460,8 +8494,10 @@ hg
 oN
 ou
 uQ
+Wq
 "}
 (17,1,1) = {"
+li
 BH
 IW
 IW
@@ -8493,8 +8529,10 @@ gV
 gV
 gV
 ZZ
+li
 "}
 (18,1,1) = {"
+li
 IW
 iO
 KD
@@ -8526,8 +8564,10 @@ yI
 Su
 dw
 gV
+li
 "}
 (19,1,1) = {"
+li
 IW
 fc
 pv
@@ -8559,8 +8599,10 @@ UZ
 uk
 SU
 gV
+li
 "}
 (20,1,1) = {"
+li
 IW
 rz
 SO
@@ -8592,8 +8634,10 @@ yl
 gB
 sI
 gV
+li
 "}
 (21,1,1) = {"
+li
 IW
 Oh
 hv
@@ -8625,8 +8669,10 @@ FL
 FL
 EO
 gV
+li
 "}
 (22,1,1) = {"
+li
 Rq
 IW
 FZ
@@ -8658,8 +8704,10 @@ Fr
 Wb
 gV
 PP
+li
 "}
 (23,1,1) = {"
+li
 li
 Rq
 YI
@@ -8691,8 +8739,10 @@ EN
 EN
 PP
 li
+li
 "}
 (24,1,1) = {"
+li
 li
 li
 li
@@ -8724,8 +8774,10 @@ li
 li
 li
 li
+li
 "}
 (25,1,1) = {"
+li
 li
 li
 li
@@ -8757,8 +8809,10 @@ li
 li
 li
 li
+li
 "}
 (26,1,1) = {"
+li
 li
 li
 li
@@ -8790,8 +8844,10 @@ li
 li
 li
 li
+li
 "}
 (27,1,1) = {"
+li
 li
 li
 li
@@ -8823,8 +8879,10 @@ li
 li
 li
 li
+li
 "}
 (28,1,1) = {"
+li
 li
 li
 li
@@ -8856,8 +8914,10 @@ li
 li
 li
 li
+li
 "}
 (29,1,1) = {"
+li
 li
 li
 li
@@ -8889,8 +8949,10 @@ li
 li
 li
 li
+li
 "}
 (30,1,1) = {"
+li
 li
 li
 li
@@ -8922,8 +8984,10 @@ li
 li
 li
 li
+li
 "}
 (31,1,1) = {"
+li
 li
 li
 li
@@ -8955,8 +9019,10 @@ li
 li
 li
 li
+li
 "}
 (32,1,1) = {"
+li
 li
 li
 li
@@ -8988,8 +9054,10 @@ li
 li
 li
 li
+li
 "}
 (33,1,1) = {"
+li
 li
 li
 li
@@ -9021,8 +9089,10 @@ li
 li
 li
 li
+li
 "}
 (34,1,1) = {"
+li
 li
 li
 li
@@ -9054,8 +9124,10 @@ li
 li
 li
 li
+li
 "}
 (35,1,1) = {"
+li
 li
 li
 li
@@ -9087,8 +9159,10 @@ li
 li
 li
 li
+li
 "}
 (36,1,1) = {"
+li
 li
 li
 li
@@ -9120,8 +9194,10 @@ li
 li
 li
 li
+li
 "}
 (37,1,1) = {"
+li
 li
 li
 li
@@ -9153,8 +9229,10 @@ li
 li
 li
 li
+li
 "}
 (38,1,1) = {"
+li
 li
 li
 li
@@ -9186,8 +9264,10 @@ li
 li
 li
 li
+li
 "}
 (39,1,1) = {"
+li
 li
 li
 li
@@ -9219,8 +9299,10 @@ li
 li
 li
 li
+li
 "}
 (40,1,1) = {"
+li
 li
 li
 li
@@ -9252,8 +9334,10 @@ li
 li
 li
 li
+li
 "}
 (41,1,1) = {"
+li
 li
 li
 li
@@ -9285,8 +9369,10 @@ li
 li
 li
 li
+li
 "}
 (42,1,1) = {"
+li
 li
 li
 li
@@ -9318,8 +9404,10 @@ li
 li
 li
 li
+li
 "}
 (43,1,1) = {"
+li
 li
 li
 li
@@ -9351,8 +9439,10 @@ li
 li
 li
 li
+li
 "}
 (44,1,1) = {"
+li
 li
 li
 li
@@ -9384,8 +9474,10 @@ li
 li
 li
 li
+li
 "}
 (45,1,1) = {"
+li
 li
 li
 li
@@ -9397,7 +9489,7 @@ fF
 TG
 ss
 oB
-nt
+IL
 ko
 DV
 wW
@@ -9417,8 +9509,10 @@ li
 li
 li
 li
+li
 "}
 (46,1,1) = {"
+li
 li
 li
 li
@@ -9450,8 +9544,10 @@ li
 li
 li
 li
+li
 "}
 (47,1,1) = {"
+li
 li
 li
 li
@@ -9483,8 +9579,10 @@ li
 li
 li
 li
+li
 "}
 (48,1,1) = {"
+li
 li
 li
 li
@@ -9516,8 +9614,10 @@ li
 li
 li
 li
+li
 "}
 (49,1,1) = {"
+li
 li
 li
 li
@@ -9549,8 +9649,10 @@ li
 li
 li
 li
+li
 "}
 (50,1,1) = {"
+li
 li
 li
 li
@@ -9582,8 +9684,10 @@ li
 li
 li
 li
+li
 "}
 (51,1,1) = {"
+li
 li
 li
 li
@@ -9615,8 +9719,10 @@ li
 li
 li
 li
+li
 "}
 (52,1,1) = {"
+li
 li
 li
 li
@@ -9648,8 +9754,10 @@ li
 li
 li
 li
+li
 "}
 (53,1,1) = {"
+li
 li
 li
 li
@@ -9681,8 +9789,10 @@ li
 li
 li
 li
+li
 "}
 (54,1,1) = {"
+li
 li
 li
 li
@@ -9714,8 +9824,10 @@ li
 li
 li
 li
+li
 "}
 (55,1,1) = {"
+li
 li
 li
 li
@@ -9731,12 +9843,13 @@ Cv
 Dq
 fJ
 fJ
-fJ
+hQ
 fJ
 fJ
 qM
 Cv
 iw
+li
 li
 li
 li
@@ -9760,15 +9873,17 @@ li
 li
 li
 li
-Cv
-li
-li
-li
-li
-li
-li
 li
 Cv
+li
+li
+li
+li
+li
+li
+li
+Cv
+li
 li
 li
 li

@@ -30,6 +30,22 @@
 /obj/structure/sign/minutemen,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering/atmospherics)
+"aj" = (
+/obj/machinery/door/airlock/external{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/layer_manifold/visible{
+	dir = 4
+	},
+/obj/docking_port/mobile{
+	dir = 4;
+	launch_status = 0;
+	port_direction = 2;
+	preferred_direction = 4;
+	dheight = 5
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/engineering/atmospherics)
 "ak" = (
 /obj/machinery/atmospherics/components/unary/tank/toxins{
 	dir = 1
@@ -805,14 +821,18 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
 "hE" = (
-/obj/machinery/door/airlock/external{
-	dir = 4
+/obj/effect/turf_decal/siding/white{
+	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/layer_manifold/visible{
-	dir = 4
+/obj/item/kirbyplants{
+	icon_state = "plant-03"
 	},
-/turf/open/floor/plasteel/tech,
-/area/ship/engineering/atmospherics)
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 8
+	},
+/obj/item/radio/intercom/directional/north,
+/turf/open/floor/plasteel,
+/area/ship/hallway/central)
 "hQ" = (
 /obj/effect/turf_decal/corner/transparent/beige/full,
 /obj/effect/turf_decal/corner/transparent/beige/diagonal,
@@ -1407,25 +1427,14 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/science/robotics)
 "ow" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 4
+/obj/docking_port/stationary{
+	dwidth = 7;
+	width = 15;
+	height = 15;
+	dir = 8
 	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/obj/docking_port/mobile{
-	dir = 4;
-	launch_status = 0;
-	port_direction = 2;
-	preferred_direction = 4
-	},
-/obj/machinery/door/poddoor/shutters{
-	dir = 4;
-	id = "cepheus_cargo";
-	name = "Cargo Shutter"
-	},
-/turf/open/floor/plasteel/patterned/ridged,
-/area/ship/cargo)
+/turf/template_noop,
+/area/template_noop)
 "oP" = (
 /obj/machinery/door/window/eastright{
 	dir = 1;
@@ -1903,20 +1912,19 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
 "rQ" = (
-/obj/effect/turf_decal/siding/white{
-	dir = 1
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
 	},
-/obj/item/radio/intercom/directional/north{
-	pixel_y = 22
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
 	},
-/obj/item/kirbyplants{
-	icon_state = "plant-03"
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "cepheus_cargo";
+	name = "Cargo Shutter"
 	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 8
-	},
-/turf/open/floor/plasteel,
-/area/ship/hallway/central)
+/turf/open/floor/plasteel/patterned/ridged,
+/area/ship/cargo)
 "rZ" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -4763,9 +4771,34 @@ zQ
 zQ
 zQ
 zQ
+zQ
+zQ
+ow
+zQ
+zQ
+zQ
+zQ
+zQ
+zQ
+zQ
+zQ
+zQ
+zQ
+zQ
+"}
+(2,1,1) = {"
+zQ
+zQ
+zQ
+zQ
+zQ
+zQ
+zQ
+zQ
+zQ
 El
 xx
-ow
+rQ
 pn
 El
 zQ
@@ -4778,7 +4811,7 @@ zQ
 zQ
 zQ
 "}
-(2,1,1) = {"
+(3,1,1) = {"
 zQ
 zQ
 zQ
@@ -4803,7 +4836,7 @@ zQ
 zQ
 zQ
 "}
-(3,1,1) = {"
+(4,1,1) = {"
 zQ
 zQ
 zQ
@@ -4828,7 +4861,7 @@ zQ
 zQ
 zQ
 "}
-(4,1,1) = {"
+(5,1,1) = {"
 zQ
 zQ
 zQ
@@ -4853,11 +4886,11 @@ zQ
 zQ
 zQ
 "}
-(5,1,1) = {"
+(6,1,1) = {"
 zQ
 zQ
 uX
-hE
+aj
 uX
 uX
 Nx
@@ -4878,7 +4911,7 @@ Ob
 zQ
 zQ
 "}
-(6,1,1) = {"
+(7,1,1) = {"
 ag
 Xv
 uX
@@ -4903,7 +4936,7 @@ Ob
 mf
 WU
 "}
-(7,1,1) = {"
+(8,1,1) = {"
 uX
 Mb
 uX
@@ -4928,7 +4961,7 @@ Ob
 dK
 Ob
 "}
-(8,1,1) = {"
+(9,1,1) = {"
 Mo
 CY
 sm
@@ -4953,7 +4986,7 @@ Up
 FJ
 Ob
 "}
-(9,1,1) = {"
+(10,1,1) = {"
 uX
 aE
 FS
@@ -4978,7 +5011,7 @@ bh
 ng
 Ob
 "}
-(10,1,1) = {"
+(11,1,1) = {"
 qK
 uX
 NT
@@ -5003,7 +5036,7 @@ qh
 Ob
 iz
 "}
-(11,1,1) = {"
+(12,1,1) = {"
 zQ
 zn
 WB
@@ -5028,7 +5061,7 @@ Ob
 iz
 zQ
 "}
-(12,1,1) = {"
+(13,1,1) = {"
 zQ
 zQ
 WB
@@ -5053,7 +5086,7 @@ Qf
 zQ
 zQ
 "}
-(13,1,1) = {"
+(14,1,1) = {"
 zQ
 zQ
 WB
@@ -5078,7 +5111,7 @@ Qf
 zQ
 zQ
 "}
-(14,1,1) = {"
+(15,1,1) = {"
 zQ
 zQ
 zn
@@ -5103,7 +5136,7 @@ XA
 zQ
 zQ
 "}
-(15,1,1) = {"
+(16,1,1) = {"
 zQ
 zQ
 zQ
@@ -5114,7 +5147,7 @@ Uo
 Fx
 nN
 WB
-rQ
+hE
 yM
 gT
 LY
@@ -5128,7 +5161,7 @@ zQ
 zQ
 zQ
 "}
-(16,1,1) = {"
+(17,1,1) = {"
 zQ
 zQ
 zQ
@@ -5153,7 +5186,7 @@ zQ
 zQ
 zQ
 "}
-(17,1,1) = {"
+(18,1,1) = {"
 zQ
 zQ
 zQ
@@ -5178,7 +5211,7 @@ zQ
 zQ
 zQ
 "}
-(18,1,1) = {"
+(19,1,1) = {"
 zQ
 zQ
 zQ
@@ -5203,7 +5236,7 @@ zQ
 zQ
 zQ
 "}
-(19,1,1) = {"
+(20,1,1) = {"
 zQ
 zQ
 zQ
@@ -5228,7 +5261,7 @@ zQ
 zQ
 zQ
 "}
-(20,1,1) = {"
+(21,1,1) = {"
 zQ
 zQ
 zQ
@@ -5253,7 +5286,7 @@ zQ
 zQ
 zQ
 "}
-(21,1,1) = {"
+(22,1,1) = {"
 zQ
 zQ
 zQ
@@ -5278,7 +5311,7 @@ zQ
 zQ
 zQ
 "}
-(22,1,1) = {"
+(23,1,1) = {"
 zQ
 zQ
 Qr
@@ -5303,7 +5336,7 @@ TU
 zQ
 zQ
 "}
-(23,1,1) = {"
+(24,1,1) = {"
 zQ
 zQ
 Qr
@@ -5328,7 +5361,7 @@ TU
 zQ
 zQ
 "}
-(24,1,1) = {"
+(25,1,1) = {"
 zQ
 zQ
 Qr
@@ -5353,7 +5386,7 @@ BR
 zQ
 zQ
 "}
-(25,1,1) = {"
+(26,1,1) = {"
 zQ
 zQ
 Qr
@@ -5378,7 +5411,7 @@ BR
 zQ
 zQ
 "}
-(26,1,1) = {"
+(27,1,1) = {"
 zQ
 zQ
 TL
@@ -5403,7 +5436,7 @@ OP
 zQ
 zQ
 "}
-(27,1,1) = {"
+(28,1,1) = {"
 zQ
 zQ
 zQ
@@ -5428,7 +5461,7 @@ zQ
 zQ
 zQ
 "}
-(28,1,1) = {"
+(29,1,1) = {"
 zQ
 zQ
 zQ
@@ -5453,7 +5486,7 @@ zQ
 zQ
 zQ
 "}
-(29,1,1) = {"
+(30,1,1) = {"
 zQ
 zQ
 zQ
@@ -5478,7 +5511,7 @@ zQ
 zQ
 zQ
 "}
-(30,1,1) = {"
+(31,1,1) = {"
 zQ
 zQ
 zQ
@@ -5503,7 +5536,7 @@ zQ
 zQ
 zQ
 "}
-(31,1,1) = {"
+(32,1,1) = {"
 zQ
 zQ
 zQ

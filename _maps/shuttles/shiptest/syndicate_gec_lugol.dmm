@@ -593,8 +593,8 @@
 	dir = 8
 	},
 /obj/item/storage/secure/safe/intel{
-	dir = 4;
-	pixel_x = -22
+	dir = 8;
+	pixel_x = -32
 	},
 /turf/open/floor/carpet/red,
 /area/ship/bridge)
@@ -996,6 +996,15 @@
 	icon_state = "elevatorshaft"
 	},
 /area/ship/engineering)
+"iu" = (
+/obj/docking_port/stationary{
+	dwidth = 3;
+	width = 7;
+	height = 15;
+	dir = 2
+	},
+/turf/template_noop,
+/area/template_noop)
 "iv" = (
 /obj/structure/particle_accelerator/particle_emitter/right,
 /obj/machinery/light/small/directional/west,
@@ -6655,7 +6664,7 @@ Nn
 YB
 Sn
 rD
-kD
+iu
 kD
 "}
 (15,1,1) = {"
@@ -7149,7 +7158,7 @@ wq
 wq
 KM
 KM
-KM
+On
 kD
 kD
 "}

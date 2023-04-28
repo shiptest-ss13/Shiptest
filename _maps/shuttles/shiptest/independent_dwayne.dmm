@@ -208,17 +208,21 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "fp" = (
+/obj/docking_port/stationary{
+	dwidth = 7;
+	width = 15;
+	height = 15
+	},
+/turf/template_noop,
+/area/template_noop)
+"fy" = (
 /obj/machinery/door/poddoor/preopen{
 	id = "mining_ship_blast";
 	dir = 4
 	},
 /obj/effect/spawner/structure/window/reinforced,
-/turf/open/floor/plating/airless,
-/area/ship/bridge)
-"fy" = (
-/obj/structure/catwalk,
-/turf/template_noop,
-/area/ship/external)
+/turf/open/floor/plating,
+/area/ship/engineering)
 "fV" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/preopen{
@@ -559,7 +563,6 @@
 	},
 /obj/machinery/airalarm/directional/west,
 /obj/effect/turf_decal/corner/opaque/blue/half,
-/obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "mC" = (
@@ -1079,13 +1082,8 @@
 /turf/open/floor/plating,
 /area/ship/crew)
 "xo" = (
-/obj/machinery/door/poddoor/preopen{
-	id = "mining_ship_blast";
-	dir = 8
-	},
-/obj/effect/spawner/structure/window/reinforced,
-/turf/open/floor/plating/airless,
-/area/ship/bridge)
+/turf/closed/wall,
+/area/ship/external)
 "xr" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/preopen{
@@ -1287,7 +1285,6 @@
 /obj/effect/turf_decal/corner/opaque/blue/half{
 	dir = 1
 	},
-/obj/item/radio/intercom/wideband/directional/north,
 /obj/item/spacecash/bundle/c1000,
 /obj/item/spacecash/bundle/c1000,
 /obj/item/spacecash/bundle/c1000,
@@ -1392,6 +1389,7 @@
 	pixel_y = 1
 	},
 /obj/effect/turf_decal/corner/opaque/blue/half,
+/obj/item/radio/intercom/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "He" = (
@@ -1549,6 +1547,7 @@
 	dir = 1
 	},
 /obj/item/clothing/head/caphat/cowboy,
+/obj/item/radio/intercom/wideband/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Ka" = (
@@ -1705,7 +1704,7 @@
 	dir = 9
 	},
 /obj/machinery/light_switch{
-	pixel_x = 25;
+	pixel_x = 21;
 	pixel_y = 25
 	},
 /turf/open/floor/plasteel/grimy,
@@ -2283,13 +2282,14 @@ OJ
 OJ
 OJ
 OJ
-fy
+OJ
+OJ
 mF
 mF
 UP
 mF
 mF
-fy
+OJ
 OJ
 OJ
 OJ
@@ -2302,13 +2302,14 @@ OJ
 OJ
 OJ
 OJ
-fy
+OJ
+OJ
 CP
 St
 HI
 aS
 CP
-fy
+OJ
 OJ
 OJ
 OJ
@@ -2317,11 +2318,12 @@ OJ
 "}
 (3,1,1) = {"
 OJ
-Zp
+OJ
+xo
 gF
 aD
 Cn
-fy
+OJ
 LH
 iq
 ZL
@@ -2336,17 +2338,18 @@ OJ
 "}
 (4,1,1) = {"
 OJ
+OJ
 tq
 hK
 bb
 tq
-LH
+fy
 tq
 tq
 Qp
 tq
 tq
-LH
+fy
 tq
 uP
 CO
@@ -2354,6 +2357,7 @@ tq
 OJ
 "}
 (5,1,1) = {"
+OJ
 OJ
 tq
 CD
@@ -2374,6 +2378,7 @@ OJ
 "}
 (6,1,1) = {"
 OJ
+OJ
 Op
 YE
 bP
@@ -2393,6 +2398,7 @@ OJ
 "}
 (7,1,1) = {"
 OJ
+OJ
 tq
 kQ
 hZ
@@ -2411,6 +2417,7 @@ tq
 OJ
 "}
 (8,1,1) = {"
+OJ
 YJ
 YJ
 YJ
@@ -2430,6 +2437,7 @@ tq
 tq
 "}
 (9,1,1) = {"
+OJ
 YJ
 qz
 aR
@@ -2449,6 +2457,7 @@ LN
 YN
 "}
 (10,1,1) = {"
+OJ
 pl
 MT
 eH
@@ -2468,6 +2477,7 @@ Xk
 Ip
 "}
 (11,1,1) = {"
+OJ
 in
 MT
 FP
@@ -2487,6 +2497,7 @@ Xk
 Ip
 "}
 (12,1,1) = {"
+OJ
 in
 Fn
 vA
@@ -2506,6 +2517,7 @@ Xk
 Ip
 "}
 (13,1,1) = {"
+fp
 in
 MT
 FP
@@ -2525,6 +2537,7 @@ Xk
 Ip
 "}
 (14,1,1) = {"
+OJ
 in
 Fn
 FP
@@ -2544,6 +2557,7 @@ Xk
 Ip
 "}
 (15,1,1) = {"
+OJ
 in
 Ph
 FP
@@ -2563,6 +2577,7 @@ Nf
 Ip
 "}
 (16,1,1) = {"
+OJ
 bl
 Fn
 ww
@@ -2582,6 +2597,7 @@ bf
 Ip
 "}
 (17,1,1) = {"
+OJ
 YJ
 zK
 FP
@@ -2601,6 +2617,7 @@ OW
 YN
 "}
 (18,1,1) = {"
+OJ
 YJ
 YJ
 ei
@@ -2621,6 +2638,7 @@ LZ
 "}
 (19,1,1) = {"
 OJ
+OJ
 sP
 ei
 Jy
@@ -2639,6 +2657,7 @@ sP
 OJ
 "}
 (20,1,1) = {"
+OJ
 OJ
 FS
 ei
@@ -2659,6 +2678,7 @@ OJ
 "}
 (21,1,1) = {"
 OJ
+OJ
 FS
 ei
 Ub
@@ -2677,6 +2697,7 @@ FS
 OJ
 "}
 (22,1,1) = {"
+OJ
 OJ
 FS
 ei
@@ -2697,6 +2718,7 @@ OJ
 "}
 (23,1,1) = {"
 OJ
+OJ
 FS
 ei
 IT
@@ -2715,6 +2737,7 @@ FS
 OJ
 "}
 (24,1,1) = {"
+OJ
 OJ
 FS
 ei
@@ -2735,17 +2758,18 @@ OJ
 "}
 (25,1,1) = {"
 OJ
+OJ
 bW
 NM
 WZ
 Po
-rE
+ms
 DG
 Zv
 qg
 Mn
 mA
-rE
+ms
 kO
 hy
 NM
@@ -2753,6 +2777,7 @@ nY
 OJ
 "}
 (26,1,1) = {"
+OJ
 OJ
 OJ
 OJ
@@ -2777,13 +2802,14 @@ OJ
 OJ
 OJ
 OJ
-fp
-ms
+OJ
+rE
+rE
 Se
 OL
 sM
-ms
-Gr
+rE
+rE
 OJ
 OJ
 OJ
@@ -2797,11 +2823,12 @@ OJ
 OJ
 OJ
 OJ
-xo
+OJ
+rE
 Gr
 Gr
 Gr
-Gr
+rE
 OJ
 OJ
 OJ

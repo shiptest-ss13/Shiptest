@@ -130,17 +130,13 @@
 /turf/open/floor/plating,
 /area/ship/crew)
 "fW" = (
-/obj/structure/fans/tiny,
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile,
 /obj/docking_port/mobile{
-	launch_status = 0;
-	port_direction = 2
-	},
-/obj/machinery/door/poddoor{
-	id = "baydoors";
-	name = "Cargo Bay Blast Door"
+	launch_status = 0
 	},
 /turf/open/floor/plating,
-/area/ship/cargo)
+/area/ship/bridge)
 "gh" = (
 /turf/closed/wall/r_wall,
 /area/ship/cargo)
@@ -857,8 +853,7 @@
 /turf/open/floor/pod/light,
 /area/ship/engineering)
 "xJ" = (
-/obj/structure/sign/mining/survival,
-/turf/closed/wall/mineral/titanium/survival,
+/turf/closed/wall/mineral/titanium/survival/nodiagonal,
 /area/ship/maintenance/central)
 "xP" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -1363,6 +1358,15 @@
 /obj/structure/barricade/wooden/crude,
 /turf/open/floor/plating,
 /area/ship/crew)
+"MW" = (
+/obj/docking_port/stationary{
+	dwidth = 7;
+	width = 15;
+	height = 15;
+	dir = 2
+	},
+/turf/template_noop,
+/area/template_noop)
 "No" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1822,6 +1826,7 @@ BZ
 BZ
 BZ
 BZ
+BZ
 "}
 (2,1,1) = {"
 BZ
@@ -1833,6 +1838,7 @@ El
 yp
 El
 BH
+BZ
 BZ
 BZ
 BZ
@@ -1864,7 +1870,8 @@ PR
 PR
 PR
 PR
-PR
+xJ
+BZ
 BZ
 BZ
 BZ
@@ -1891,6 +1898,7 @@ PR
 BZ
 BZ
 BZ
+BZ
 "}
 (5,1,1) = {"
 BZ
@@ -1905,15 +1913,16 @@ El
 BH
 ts
 eF
-PR
+xJ
 pG
 YO
-PR
+xJ
 JS
 lQ
 dm
 dm
-dm
+lQ
+BZ
 "}
 (6,1,1) = {"
 BZ
@@ -1937,6 +1946,7 @@ sB
 wt
 bt
 xr
+BZ
 "}
 (7,1,1) = {"
 BZ
@@ -1951,15 +1961,16 @@ qt
 qt
 PR
 Iu
-xJ
 PR
 PR
-xJ
+PR
+PR
 Og
 dm
 xx
 sh
 vk
+BZ
 "}
 (8,1,1) = {"
 QM
@@ -1982,7 +1993,8 @@ Cw
 dm
 dm
 dm
-dm
+lQ
+BZ
 "}
 (9,1,1) = {"
 AO
@@ -1995,20 +2007,21 @@ rV
 pC
 rV
 rB
-PR
+xJ
 xP
-PR
+xJ
 PE
 Cy
-PR
+xJ
 AR
 tr
 mZ
 ER
 hP
+BZ
 "}
 (10,1,1) = {"
-AO
+fW
 aX
 DE
 yD
@@ -2028,7 +2041,8 @@ XF
 GI
 qc
 GG
-fW
+hP
+MW
 "}
 (11,1,1) = {"
 AO
@@ -2052,6 +2066,7 @@ gh
 Yr
 rD
 hP
+BZ
 "}
 (12,1,1) = {"
 Fi
@@ -2075,6 +2090,7 @@ sv
 sv
 YB
 YB
+BZ
 "}
 (13,1,1) = {"
 BZ
@@ -2089,15 +2105,16 @@ Rj
 fg
 ts
 QW
-xJ
 PR
 PR
-xJ
+PR
+PR
 eH
 dm
 Wj
 QU
 vk
+BZ
 "}
 (14,1,1) = {"
 BZ
@@ -2121,6 +2138,7 @@ sK
 RU
 QE
 xr
+BZ
 "}
 (15,1,1) = {"
 BZ
@@ -2144,6 +2162,7 @@ lQ
 dm
 dm
 dm
+BZ
 "}
 (16,1,1) = {"
 BZ
@@ -2156,7 +2175,7 @@ eP
 ls
 ts
 Rj
-PR
+xJ
 XV
 hV
 kj
@@ -2164,6 +2183,7 @@ No
 GU
 mo
 PR
+BZ
 BZ
 BZ
 BZ
@@ -2181,12 +2201,13 @@ JP
 IR
 hq
 ZK
+xJ
 PR
 PR
 PR
 PR
-PR
-PR
+xJ
+BZ
 BZ
 BZ
 BZ
@@ -2205,6 +2226,7 @@ BH
 BH
 BH
 BH
+BZ
 BZ
 BZ
 BZ

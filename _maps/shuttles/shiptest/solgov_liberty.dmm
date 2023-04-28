@@ -623,7 +623,8 @@
 /area/ship/crew)
 "ui" = (
 /obj/machinery/door/airlock/hatch{
-	name = "External Access Hatch"
+	name = "External Access Hatch";
+	dir = 4
 	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 4
@@ -663,7 +664,8 @@
 /area/ship/crew)
 "vo" = (
 /obj/machinery/door/airlock/hatch{
-	name = "External Access Hatch"
+	name = "External Access Hatch";
+	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -1125,6 +1127,15 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/cargo)
+"Ib" = (
+/obj/docking_port/stationary{
+	dwidth = 4;
+	width = 9;
+	height = 15;
+	dir = 8
+	},
+/turf/template_noop,
+/area/template_noop)
 "Id" = (
 /obj/structure/bed,
 /obj/effect/turf_decal/corner/opaque/red/diagonal,
@@ -1937,7 +1948,7 @@ XJ
 XJ
 XJ
 XJ
-XJ
+Ib
 XJ
 XJ
 XJ

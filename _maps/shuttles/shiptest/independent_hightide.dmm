@@ -787,6 +787,9 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
+"Cm" = (
+/turf/open/floor/plating,
+/area/template_noop)
 "CO" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1015,6 +1018,15 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
+"ND" = (
+/obj/docking_port/stationary{
+	dwidth = 7;
+	width = 15;
+	height = 15;
+	dir = 8
+	},
+/turf/template_noop,
+/area/template_noop)
 "NI" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
@@ -1354,7 +1366,38 @@ cg
 cg
 cg
 cg
+ND
 cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+"}
+(2,1,1) = {"
+cg
+cg
+cg
+cg
+cg
+cg
+Cm
 fh
 fO
 fO
@@ -1378,7 +1421,7 @@ cg
 cg
 cg
 "}
-(2,1,1) = {"
+(3,1,1) = {"
 cg
 cg
 cg
@@ -1409,7 +1452,7 @@ cg
 cg
 cg
 "}
-(3,1,1) = {"
+(4,1,1) = {"
 cg
 cg
 cg
@@ -1440,7 +1483,7 @@ cg
 cg
 cg
 "}
-(4,1,1) = {"
+(5,1,1) = {"
 LY
 Rd
 Rd
@@ -1471,7 +1514,7 @@ KU
 nT
 nT
 "}
-(5,1,1) = {"
+(6,1,1) = {"
 Rd
 pX
 ob
@@ -1502,7 +1545,7 @@ rl
 uE
 VA
 "}
-(6,1,1) = {"
+(7,1,1) = {"
 Rd
 pZ
 SA
@@ -1533,7 +1576,7 @@ VK
 xf
 VA
 "}
-(7,1,1) = {"
+(8,1,1) = {"
 Rd
 nK
 LV
@@ -1564,7 +1607,7 @@ nB
 KU
 KU
 "}
-(8,1,1) = {"
+(9,1,1) = {"
 LY
 Rd
 Rd
@@ -1595,7 +1638,7 @@ Wr
 KU
 cg
 "}
-(9,1,1) = {"
+(10,1,1) = {"
 cg
 cg
 VC
@@ -1626,7 +1669,7 @@ OG
 KU
 cg
 "}
-(10,1,1) = {"
+(11,1,1) = {"
 cg
 cg
 cg
@@ -1657,7 +1700,7 @@ nB
 nT
 cg
 "}
-(11,1,1) = {"
+(12,1,1) = {"
 cg
 cg
 cg
@@ -1688,7 +1731,7 @@ PS
 nT
 nT
 "}
-(12,1,1) = {"
+(13,1,1) = {"
 cg
 cg
 cg
@@ -1719,7 +1762,7 @@ PC
 uE
 VA
 "}
-(13,1,1) = {"
+(14,1,1) = {"
 cg
 cg
 cg
@@ -1750,7 +1793,7 @@ Zi
 Mj
 VA
 "}
-(14,1,1) = {"
+(15,1,1) = {"
 cg
 cg
 xq
@@ -1781,7 +1824,7 @@ KU
 KU
 nT
 "}
-(15,1,1) = {"
+(16,1,1) = {"
 cg
 cg
 TV
@@ -1812,7 +1855,7 @@ cg
 cg
 cg
 "}
-(16,1,1) = {"
+(17,1,1) = {"
 cg
 cg
 TV
@@ -1843,7 +1886,7 @@ cg
 cg
 cg
 "}
-(17,1,1) = {"
+(18,1,1) = {"
 cg
 cg
 Il
@@ -1874,7 +1917,7 @@ cg
 cg
 cg
 "}
-(18,1,1) = {"
+(19,1,1) = {"
 cg
 cg
 cg

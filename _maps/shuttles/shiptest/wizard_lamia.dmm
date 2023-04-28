@@ -2207,6 +2207,15 @@
 	},
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
+"SD" = (
+/obj/docking_port/stationary{
+	dwidth = 5;
+	width = 11;
+	height = 15;
+	dir = 8
+	},
+/turf/template_noop,
+/area/space)
 "Tb" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
@@ -2592,7 +2601,7 @@ No
 No
 No
 No
-No
+SD
 No
 No
 No

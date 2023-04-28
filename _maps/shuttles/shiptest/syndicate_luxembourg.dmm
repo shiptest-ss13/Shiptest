@@ -28,12 +28,38 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
 "bi" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
-/obj/machinery/door/poddoor/shutters{
-	id = "externalshutters";
+/obj/machinery/button/door{
+	id = "syndiefuck";
+	name = "Loading Shutters Control";
+	pixel_x = -25;
+	pixel_y = -7;
 	dir = 4
 	},
-/turf/open/floor/plating,
+/obj/machinery/button/door{
+	id = "warehouse";
+	name = "Warehouse Control";
+	pixel_x = -25;
+	pixel_y = 5;
+	dir = 4
+	},
+/obj/machinery/button/door{
+	id = "cargodoors";
+	name = "Cargo Bay Shutter Control";
+	pixel_x = -35;
+	pixel_y = 5;
+	dir = 4
+	},
+/obj/machinery/button/door{
+	id = "externalshutters";
+	name = "External Shutters Control";
+	pixel_x = -35;
+	pixel_y = -7;
+	dir = 4
+	},
+/obj/machinery/computer/cargo/express{
+	dir = 4
+	},
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "bp" = (
 /obj/effect/turf_decal/siding/blue/corner{
@@ -202,11 +228,16 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "eD" = (
+/obj/item/storage/belt/utility,
+/obj/item/storage/belt/utility,
 /obj/structure/table,
-/obj/item/radio/intercom/wideband/directional/north,
-/obj/item/areaeditor/shuttle,
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/hallway/central)
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 10
+	},
+/obj/item/storage/toolbox/syndicate,
+/obj/item/storage/toolbox/syndicate,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/engineering)
 "eF" = (
 /obj/structure/sink{
 	dir = 8;
@@ -487,17 +518,12 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "jH" = (
-/obj/machinery/light/directional/south,
-/obj/item/storage/belt/utility,
-/obj/item/storage/belt/utility,
 /obj/structure/table,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 10
+/obj/item/radio/intercom/wideband/table{
+	dir = 4
 	},
-/obj/item/storage/toolbox/syndicate,
-/obj/item/storage/toolbox/syndicate,
-/turf/open/floor/plasteel/tech/techmaint,
-/area/ship/engineering)
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/hallway/central)
 "jK" = (
 /obj/machinery/air_sensor/atmos/air_tank,
 /turf/open/floor/engine/air,
@@ -618,7 +644,6 @@
 /obj/machinery/atmospherics/pipe/manifold/orange/visible{
 	dir = 1
 	},
-/obj/effect/decal/cleanable/dirt,
 /obj/structure/catwalk/over/plated_catwalk/white,
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -923,18 +948,19 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
 "sV" = (
-/obj/structure/cable{
-	icon_state = "4-8"
+/mob/living/simple_animal/bot/mulebot{
+	bot_name = "\proper Christine";
+	desc = "A Multiple Utility Load Effector bot. This one seems oddly menacing...";
+	id = "Christine";
+	name = "\proper Christine"
 	},
-/obj/machinery/atmospherics/pipe/manifold/orange/visible{
-	dir = 1
+/obj/effect/turf_decal/corner/opaque/brown/bordercee,
+/obj/machinery/navbeacon/wayfinding{
+	codes_txt = null;
+	location = "mulestation"
 	},
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/obj/structure/catwalk/over/plated_catwalk/white,
-/turf/open/floor/plating,
-/area/ship/engineering)
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/cargo)
 "tc" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -995,12 +1021,11 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "tU" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
-/obj/machinery/door/poddoor/shutters{
-	id = "externalshutters"
+/obj/machinery/camera{
+	dir = 10
 	},
 /turf/open/floor/plating,
-/area/ship/hallway/central)
+/area/template_noop)
 "tV" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -1113,23 +1138,11 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering)
 "vw" = (
-/obj/machinery/power/apc/auto_name/directional/north,
-/obj/structure/cable{
-	icon_state = "0-2"
+/obj/machinery/camera{
+	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 8
-	},
-/obj/structure/closet/secure_closet/engineering_electrical,
-/obj/item/stack/circuit_stack/full,
-/obj/item/stack/circuit_stack/full,
-/obj/item/stack/circuit_stack/full,
-/obj/item/stack/circuit_stack/full,
-/turf/open/floor/plasteel/tech/techmaint,
-/area/ship/engineering)
+/turf/open/floor/plating,
+/area/template_noop)
 "vz" = (
 /obj/machinery/atmospherics/components/unary/shuttle/heater{
 	dir = 1
@@ -1161,6 +1174,12 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
+"wN" = (
+/obj/structure/table,
+/obj/machinery/chem_dispenser/drinks,
+/obj/machinery/light/directional/north,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/crew/canteen)
 "wP" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -1228,7 +1247,7 @@
 /area/ship/crew/dorm)
 "yd" = (
 /obj/structure/table,
-/obj/machinery/chem_dispenser/drinks,
+/obj/machinery/chem_dispenser/drinks/beer,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
 "yf" = (
@@ -1241,11 +1260,19 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "yh" = (
-/obj/machinery/light/directional/north,
-/obj/structure/table,
-/obj/machinery/chem_dispenser/drinks/beer,
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 24;
+	pixel_y = 5
+	},
+/obj/effect/turf_decal/corner/opaque/brown/border{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/opaque/brown/bordercorner{
+	dir = 1
+	},
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/crew/canteen)
+/area/ship/cargo)
 "ym" = (
 /obj/effect/turf_decal/siding/blue{
 	dir = 8
@@ -1383,6 +1410,7 @@
 /obj/machinery/computer/atmos_control/tank/toxin_tank{
 	dir = 8
 	},
+/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "CV" = (
@@ -1398,27 +1426,18 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
 "CW" = (
-/obj/structure/closet/secure{
-	icon_state = "eng_secure";
-	name = "GEC Engineer's locker"
-	},
-/obj/item/clothing/gloves/color/yellow,
-/obj/item/pipe_dispenser,
-/obj/item/clothing/glasses/meson/engine,
-/obj/item/clothing/suit/toggle/hazard,
-/obj/item/clothing/head/beret/eng/hazard,
-/obj/item/clothing/head/beret/eng,
-/obj/item/holosign_creator/engineering,
-/obj/machinery/light/directional/north,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 8
 	},
-/obj/item/clothing/under/syndicate/gec,
-/obj/item/clothing/under/syndicate/gec,
-/obj/item/stack/tape/industrial/pro,
+/obj/structure/closet/secure_closet/engineering_electrical,
+/obj/item/stack/circuit_stack/full,
+/obj/item/stack/circuit_stack/full,
+/obj/item/stack/circuit_stack/full,
+/obj/item/stack/circuit_stack/full,
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "Da" = (
@@ -1598,6 +1617,15 @@
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
 /area/ship/engineering)
+"GD" = (
+/obj/docking_port/stationary{
+	dwidth = 7;
+	width = 15;
+	height = 15;
+	dir = 8
+	},
+/turf/template_noop,
+/area/template_noop)
 "GG" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2531,35 +2559,19 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "Yd" = (
-/obj/machinery/button/door{
-	id = "syndiefuck";
-	name = "Loading Shutters Control";
-	pixel_x = -25;
-	pixel_y = -5
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
-/obj/machinery/button/door{
-	id = "warehouse";
-	name = "Warehouse Control";
-	pixel_x = -25;
-	pixel_y = 5
+/obj/machinery/atmospherics/pipe/manifold/orange/visible{
+	dir = 1
 	},
-/obj/machinery/button/door{
-	id = "cargodoors";
-	name = "Cargo Bay Shutter Control";
-	pixel_x = -38;
-	pixel_y = 5
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/catwalk/over/plated_catwalk/white,
+/obj/structure/cable{
+	icon_state = "1-8"
 	},
-/obj/machinery/button/door{
-	id = "externalshutters";
-	name = "External Shutters Control";
-	pixel_x = -38;
-	pixel_y = -5
-	},
-/obj/machinery/computer/cargo/express{
-	dir = 4
-	},
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/hallway/central)
+/turf/open/floor/plating,
+/area/ship/engineering)
 "Yq" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
 	dir = 8
@@ -2648,26 +2660,32 @@
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/storage)
 "YZ" = (
-/obj/effect/turf_decal/corner/opaque/brown/border{
-	dir = 5
+/obj/structure/closet/secure{
+	icon_state = "eng_secure";
+	name = "GEC Engineer's locker"
 	},
-/obj/machinery/light_switch{
-	dir = 8;
-	pixel_x = 24;
-	pixel_y = 5
+/obj/item/clothing/gloves/color/yellow,
+/obj/item/pipe_dispenser,
+/obj/item/clothing/glasses/meson/engine,
+/obj/item/clothing/suit/toggle/hazard,
+/obj/item/clothing/head/beret/eng/hazard,
+/obj/item/clothing/head/beret/eng,
+/obj/item/holosign_creator/engineering,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
 	},
-/mob/living/simple_animal/bot/mulebot{
-	bot_name = "\proper Christine";
-	desc = "A Multiple Utility Load Effector bot. This one seems oddly menacing...";
-	id = "Christine";
-	name = "\proper Christine"
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 8
 	},
-/obj/machinery/navbeacon/wayfinding{
-	codes_txt = null;
-	location = "mulestation"
+/obj/item/clothing/under/syndicate/gec,
+/obj/item/clothing/under/syndicate/gec,
+/obj/item/stack/tape/industrial/pro,
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable{
+	icon_state = "0-2"
 	},
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/cargo)
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/engineering)
 "Zm" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2683,6 +2701,35 @@
 /area/ship/engineering)
 
 (1,1,1) = {"
+Nr
+Nr
+Nr
+Nr
+Nr
+Nr
+Nr
+Nr
+Nr
+GD
+Nr
+Nr
+Nr
+Nr
+Nr
+Nr
+Nr
+Nr
+Nr
+Nr
+Nr
+Nr
+Nr
+Nr
+Nr
+Nr
+Nr
+"}
+(2,1,1) = {"
 Nr
 Nr
 Nr
@@ -2711,7 +2758,7 @@ Nr
 Nr
 Nr
 "}
-(2,1,1) = {"
+(3,1,1) = {"
 Nr
 Nr
 Nr
@@ -2740,7 +2787,7 @@ Nr
 Nr
 Nr
 "}
-(3,1,1) = {"
+(4,1,1) = {"
 Nr
 Nr
 Nr
@@ -2769,10 +2816,10 @@ Nr
 Nr
 Nr
 "}
-(4,1,1) = {"
+(5,1,1) = {"
 Nr
 Nr
-Bw
+hs
 hs
 bB
 TY
@@ -2798,12 +2845,12 @@ Nr
 Nr
 Nr
 "}
-(5,1,1) = {"
+(6,1,1) = {"
 Nr
 Nr
 RH
-RH
-YZ
+sV
+yh
 BZ
 Vn
 Ee
@@ -2827,7 +2874,7 @@ pt
 Nr
 Nr
 "}
-(6,1,1) = {"
+(7,1,1) = {"
 Nr
 Nr
 hs
@@ -2856,7 +2903,7 @@ vp
 pt
 Nr
 "}
-(7,1,1) = {"
+(8,1,1) = {"
 Nr
 Nr
 Nr
@@ -2885,9 +2932,9 @@ XS
 iR
 hd
 "}
-(8,1,1) = {"
-Nr
+(9,1,1) = {"
 tU
+WE
 kZ
 WE
 QG
@@ -2914,11 +2961,11 @@ vz
 sh
 Nr
 "}
-(9,1,1) = {"
-tU
-bi
+(10,1,1) = {"
+WE
+WE
 Ej
-Yd
+bi
 QQ
 xa
 dp
@@ -2943,7 +2990,7 @@ vp
 vp
 vp
 "}
-(10,1,1) = {"
+(11,1,1) = {"
 Ij
 Ga
 dA
@@ -2972,10 +3019,10 @@ AE
 Mj
 qP
 "}
-(11,1,1) = {"
-tU
-bi
-eD
+(12,1,1) = {"
+WE
+WE
+jH
 fv
 YE
 xa
@@ -2996,14 +3043,14 @@ ul
 pR
 lb
 Gr
-jH
+eD
 na
 UO
 Er
 "}
-(12,1,1) = {"
-Nr
-tU
+(13,1,1) = {"
+vw
+WE
 kZ
 WE
 QT
@@ -3023,14 +3070,14 @@ EO
 EO
 EO
 vp
-vw
-sV
+CW
+lW
 lt
 vz
 sh
 Nr
 "}
-(13,1,1) = {"
+(14,1,1) = {"
 Nr
 Nr
 Nr
@@ -3052,14 +3099,14 @@ EO
 Kg
 Uw
 vp
-CW
-lW
+YZ
+Yd
 lt
 vz
 sh
 UE
 "}
-(14,1,1) = {"
+(15,1,1) = {"
 Nr
 Nr
 YI
@@ -3088,12 +3135,12 @@ vp
 pt
 Nr
 "}
-(15,1,1) = {"
+(16,1,1) = {"
 Nr
 Nr
 ow
-ow
-yh
+YI
+yd
 UI
 UI
 Fq
@@ -3117,12 +3164,12 @@ pt
 Nr
 Nr
 "}
-(16,1,1) = {"
+(17,1,1) = {"
 Nr
 Nr
 Bt
 YI
-yd
+wN
 UI
 rG
 Mg
@@ -3146,7 +3193,7 @@ Nr
 Nr
 Nr
 "}
-(17,1,1) = {"
+(18,1,1) = {"
 Nr
 Nr
 Nr
@@ -3175,7 +3222,7 @@ Nr
 Nr
 Nr
 "}
-(18,1,1) = {"
+(19,1,1) = {"
 Nr
 Nr
 Nr
@@ -3204,7 +3251,7 @@ Nr
 Nr
 Nr
 "}
-(19,1,1) = {"
+(20,1,1) = {"
 Nr
 Nr
 Nr

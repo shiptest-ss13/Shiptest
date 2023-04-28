@@ -1706,15 +1706,14 @@
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/ship/bridge)
 "zg" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/airlock/external,
-/obj/structure/fans/tiny,
-/obj/docking_port/mobile{
-	launch_status = 0;
-	port_direction = 2
+/obj/docking_port/stationary{
+	dwidth = 7;
+	width = 15;
+	height = 15;
+	dir = 2
 	},
-/turf/open/floor/plating,
-/area/ship/hallway/aft)
+/turf/template_noop,
+/area/template_noop)
 "zr" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/mineral/titanium/tiled/white,
@@ -1836,23 +1835,13 @@
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/ship/science/xenobiology)
 "Ai" = (
-/obj/machinery/atmospherics/pipe/manifold/general/hidden{
-	dir = 1
+/obj/docking_port/mobile{
+	launch_status = 0;
+	port_direction = 2;
+	dheight = 1
 	},
-/obj/machinery/disposal/deliveryChute{
-	dir = 8
-	},
-/obj/structure/disposalpipe/trunk{
-	dir = 8
-	},
-/obj/structure/window/reinforced/spawner,
-/obj/machinery/door/poddoor/shutters{
-	id = "slimekill"
-	},
-/turf/open/floor/circuit/telecomms{
-	name = "coldroom"
-	},
-/area/ship/science/xenobiology)
+/turf/closed/wall/mineral/titanium,
+/area/ship/engineering/electrical)
 "Al" = (
 /obj/effect/decal/cleanable/blood/gibs/core,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
@@ -1867,6 +1856,9 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/ship/hallway/fore)
+"Av" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/crew/dorm)
 "AG" = (
 /obj/effect/decal/cleanable/blood/gibs/up,
 /obj/machinery/camera/autoname{
@@ -3470,6 +3462,21 @@
 	},
 /turf/open/floor/mineral/titanium/tiled,
 /area/ship/crew/dorm)
+"SR" = (
+/obj/machinery/atmospherics/pipe/manifold/general/hidden{
+	dir = 1
+	},
+/obj/machinery/disposal/deliveryChute{
+	dir = 8
+	},
+/obj/structure/disposalpipe/trunk{
+	dir = 8
+	},
+/obj/structure/window/reinforced/spawner,
+/turf/open/floor/circuit/telecomms{
+	name = "coldroom"
+	},
+/area/ship/science/xenobiology)
 "SZ" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 1
@@ -4045,10 +4052,11 @@
 /turf/open/floor/mineral/titanium/tiled/purple,
 /area/ship/science/xenobiology)
 "YK" = (
-/turf/closed/wall/mineral/titanium{
-	baseturfs = /turf/open/floor/mineral/titanium/tiled/white
-	},
-/area/ship/hallway/fore)
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/airlock/external,
+/obj/structure/fans/tiny,
+/turf/open/floor/plating,
+/area/ship/hallway/aft)
 "YP" = (
 /obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer2{
 	dir = 9
@@ -4160,6 +4168,7 @@ XO
 XO
 vo
 vo
+vo
 "}
 (2,1,1) = {"
 vo
@@ -4186,6 +4195,7 @@ My
 Cr
 WS
 XO
+vo
 vo
 vo
 "}
@@ -4216,6 +4226,7 @@ HA
 XO
 vo
 vo
+vo
 "}
 (4,1,1) = {"
 vo
@@ -4239,9 +4250,10 @@ iu
 nJ
 is
 Ww
-Ai
+SR
 Ti
 XO
+vo
 vo
 vo
 "}
@@ -4272,6 +4284,7 @@ Yj
 Gu
 sH
 vo
+vo
 "}
 (6,1,1) = {"
 vo
@@ -4300,6 +4313,7 @@ Iq
 FX
 JB
 sH
+vo
 "}
 (7,1,1) = {"
 vo
@@ -4328,6 +4342,7 @@ jk
 Sg
 Sg
 sH
+vo
 "}
 (8,1,1) = {"
 vo
@@ -4355,7 +4370,8 @@ Ox
 HV
 gj
 YP
-sH
+Ai
+vo
 "}
 (9,1,1) = {"
 vo
@@ -4384,6 +4400,7 @@ QS
 ra
 ra
 sH
+vo
 "}
 (10,1,1) = {"
 vo
@@ -4412,6 +4429,7 @@ mT
 uP
 ij
 sH
+vo
 "}
 (11,1,1) = {"
 vo
@@ -4440,6 +4458,7 @@ hi
 bB
 bB
 JB
+vo
 "}
 (12,1,1) = {"
 vo
@@ -4447,7 +4466,7 @@ ih
 dR
 Bx
 BD
-YK
+fU
 zr
 to
 DK
@@ -4468,6 +4487,7 @@ Wk
 fb
 hb
 vh
+vo
 "}
 (13,1,1) = {"
 vo
@@ -4478,7 +4498,7 @@ Vw
 rT
 zY
 Gj
-cC
+Av
 cC
 cC
 cC
@@ -4488,7 +4508,7 @@ vb
 vb
 vb
 vb
-DC
+Wz
 hI
 Dr
 ms
@@ -4496,6 +4516,7 @@ Iw
 WF
 lo
 iG
+vo
 "}
 (14,1,1) = {"
 XG
@@ -4524,6 +4545,7 @@ Pk
 rb
 WQ
 vh
+vo
 "}
 (15,1,1) = {"
 um
@@ -4552,6 +4574,7 @@ Pt
 WF
 Oe
 iG
+vo
 "}
 (16,1,1) = {"
 um
@@ -4580,6 +4603,7 @@ xg
 Fr
 hb
 vh
+vo
 "}
 (17,1,1) = {"
 um
@@ -4608,6 +4632,7 @@ bB
 bB
 iG
 iG
+vo
 "}
 (18,1,1) = {"
 um
@@ -4635,6 +4660,7 @@ DC
 kb
 jI
 ic
+vo
 vo
 "}
 (19,1,1) = {"
@@ -4664,6 +4690,7 @@ KH
 Mo
 ic
 vo
+vo
 "}
 (20,1,1) = {"
 XG
@@ -4692,6 +4719,7 @@ Wf
 Qb
 Wz
 ic
+vo
 "}
 (21,1,1) = {"
 vo
@@ -4702,7 +4730,7 @@ fU
 tG
 Wl
 qW
-cC
+Av
 cC
 cC
 cC
@@ -4712,13 +4740,14 @@ vb
 vb
 vb
 Vo
-DC
+Wz
 Gw
 De
 yc
 rj
 ht
 aB
+YK
 zg
 "}
 (22,1,1) = {"
@@ -4727,7 +4756,7 @@ Ft
 eV
 fy
 fU
-YK
+fU
 Qu
 xY
 ee
@@ -4748,6 +4777,7 @@ hu
 tw
 cv
 ic
+vo
 "}
 (23,1,1) = {"
 vo
@@ -4776,6 +4806,7 @@ ic
 ic
 ic
 vo
+vo
 "}
 (24,1,1) = {"
 vo
@@ -4800,6 +4831,7 @@ EM
 cl
 VJ
 dL
+vo
 vo
 vo
 vo
@@ -4832,6 +4864,7 @@ vo
 vo
 vo
 vo
+vo
 "}
 (26,1,1) = {"
 vo
@@ -4856,6 +4889,7 @@ es
 Yk
 Sv
 EM
+vo
 vo
 vo
 vo
@@ -4888,6 +4922,7 @@ vo
 vo
 vo
 vo
+vo
 "}
 (28,1,1) = {"
 vo
@@ -4912,6 +4947,7 @@ nI
 jS
 Gx
 EM
+vo
 vo
 vo
 vo
@@ -4944,6 +4980,7 @@ vo
 vo
 vo
 vo
+vo
 "}
 (30,1,1) = {"
 vo
@@ -4967,7 +5004,8 @@ UZ
 Oo
 bJ
 wu
-EM
+dL
+vo
 vo
 vo
 vo
@@ -5000,6 +5038,7 @@ vo
 vo
 vo
 vo
+vo
 "}
 (32,1,1) = {"
 vo
@@ -5023,6 +5062,7 @@ AI
 yh
 sy
 Nl
+vo
 vo
 vo
 vo
@@ -5056,6 +5096,7 @@ vo
 vo
 vo
 vo
+vo
 "}
 (34,1,1) = {"
 vo
@@ -5079,6 +5120,7 @@ Ur
 Gh
 jc
 Nl
+vo
 vo
 vo
 vo
@@ -5112,6 +5154,7 @@ vo
 vo
 vo
 vo
+vo
 "}
 (36,1,1) = {"
 vo
@@ -5135,6 +5178,7 @@ Nl
 Nl
 Nl
 Nl
+vo
 vo
 vo
 vo

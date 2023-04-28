@@ -1694,9 +1694,11 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
-/obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
-	dir = 1
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/canteen)
@@ -2233,6 +2235,14 @@
 	},
 /turf/open/floor/carpet/blue,
 /area/ship/bridge)
+"Iz" = (
+/obj/docking_port/stationary{
+	dwidth = 7;
+	width = 15;
+	height = 15
+	},
+/turf/template_noop,
+/area/template_noop)
 "IE" = (
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -2871,7 +2881,8 @@
 /area/ship/crew/canteen)
 "Sy" = (
 /obj/machinery/door/airlock{
-	id_tag = "pharmdoorlock"
+	id_tag = "pharmdoorlock";
+	dir = 4
 	},
 /obj/effect/turf_decal/siding/white,
 /obj/effect/turf_decal/siding/white{
@@ -3452,6 +3463,7 @@
 xJ
 xJ
 xJ
+xJ
 Fz
 su
 YV
@@ -3468,6 +3480,7 @@ xJ
 xJ
 "}
 (2,1,1) = {"
+xJ
 xJ
 xJ
 Fz
@@ -3489,6 +3502,7 @@ xJ
 (3,1,1) = {"
 xJ
 xJ
+xJ
 OO
 Df
 OO
@@ -3506,6 +3520,7 @@ KW
 xJ
 "}
 (4,1,1) = {"
+xJ
 xJ
 Fz
 OO
@@ -3526,6 +3541,7 @@ xJ
 "}
 (5,1,1) = {"
 xJ
+xJ
 gT
 Zf
 Cb
@@ -3544,6 +3560,7 @@ tR
 xJ
 "}
 (6,1,1) = {"
+xJ
 rU
 Vd
 zW
@@ -3563,6 +3580,7 @@ Wv
 fz
 "}
 (7,1,1) = {"
+xJ
 LC
 Yp
 Ln
@@ -3582,6 +3600,7 @@ YU
 YU
 "}
 (8,1,1) = {"
+xJ
 Yc
 fu
 MR
@@ -3601,6 +3620,7 @@ EV
 YU
 "}
 (9,1,1) = {"
+Iz
 ZU
 wG
 Hx
@@ -3620,6 +3640,7 @@ KO
 oK
 "}
 (10,1,1) = {"
+xJ
 Pj
 Mf
 fP
@@ -3639,6 +3660,7 @@ Hy
 oK
 "}
 (11,1,1) = {"
+xJ
 pl
 ly
 hp
@@ -3658,6 +3680,7 @@ ng
 YU
 "}
 (12,1,1) = {"
+xJ
 Vd
 Vd
 Vd
@@ -3677,6 +3700,7 @@ YU
 YU
 "}
 (13,1,1) = {"
+xJ
 FA
 Vd
 yB
@@ -3696,6 +3720,7 @@ YU
 Vn
 "}
 (14,1,1) = {"
+xJ
 qB
 Wy
 hw
@@ -3715,6 +3740,7 @@ oK
 Yn
 "}
 (15,1,1) = {"
+xJ
 NC
 Vd
 Vd
@@ -3735,6 +3761,7 @@ pd
 "}
 (16,1,1) = {"
 xJ
+xJ
 KU
 XR
 XR
@@ -3753,6 +3780,7 @@ Ga
 xJ
 "}
 (17,1,1) = {"
+xJ
 xJ
 kp
 XR
@@ -3774,6 +3802,7 @@ xJ
 (18,1,1) = {"
 xJ
 xJ
+xJ
 Yx
 ca
 VM
@@ -3791,6 +3820,7 @@ xJ
 xJ
 "}
 (19,1,1) = {"
+xJ
 xJ
 xJ
 Yx
@@ -3812,6 +3842,7 @@ xJ
 (20,1,1) = {"
 xJ
 xJ
+xJ
 XR
 At
 Yr
@@ -3829,6 +3860,7 @@ xJ
 xJ
 "}
 (21,1,1) = {"
+xJ
 xJ
 xJ
 pB
@@ -3851,6 +3883,7 @@ xJ
 xJ
 xJ
 xJ
+xJ
 XR
 Or
 oa
@@ -3867,6 +3900,7 @@ xJ
 xJ
 "}
 (23,1,1) = {"
+xJ
 xJ
 xJ
 xJ
@@ -3889,6 +3923,7 @@ xJ
 xJ
 xJ
 xJ
+xJ
 Yw
 hg
 nl
@@ -3908,6 +3943,7 @@ xJ
 xJ
 xJ
 xJ
+xJ
 XR
 Qs
 My
@@ -3924,6 +3960,7 @@ xJ
 xJ
 "}
 (26,1,1) = {"
+xJ
 xJ
 xJ
 xJ
@@ -3947,6 +3984,7 @@ xJ
 xJ
 xJ
 xJ
+xJ
 LJ
 bl
 xn
@@ -3962,6 +4000,7 @@ xJ
 xJ
 "}
 (28,1,1) = {"
+xJ
 xJ
 xJ
 xJ
@@ -3985,6 +4024,7 @@ xJ
 xJ
 xJ
 xJ
+xJ
 LJ
 FB
 LJ
@@ -4000,6 +4040,7 @@ xJ
 xJ
 "}
 (30,1,1) = {"
+xJ
 xJ
 xJ
 xJ
@@ -4024,6 +4065,7 @@ xJ
 xJ
 xJ
 xJ
+xJ
 bq
 Um
 AR
@@ -4043,6 +4085,7 @@ xJ
 xJ
 xJ
 xJ
+xJ
 bq
 Ra
 xp
@@ -4057,6 +4100,7 @@ xJ
 xJ
 "}
 (33,1,1) = {"
+xJ
 xJ
 xJ
 xJ
@@ -4082,6 +4126,7 @@ xJ
 xJ
 xJ
 xJ
+xJ
 IT
 Xc
 Vf
@@ -4101,6 +4146,7 @@ xJ
 xJ
 xJ
 xJ
+xJ
 IT
 bq
 nw
@@ -4114,6 +4160,7 @@ xJ
 xJ
 "}
 (36,1,1) = {"
+xJ
 xJ
 xJ
 xJ

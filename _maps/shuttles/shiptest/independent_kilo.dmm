@@ -948,9 +948,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
 	},
-/obj/machinery/newscaster{
-	pixel_y = 32
-	},
 /obj/machinery/conveyor_switch/oneway{
 	id = "NTMSLoad";
 	name = "Off Ramp";
@@ -962,6 +959,7 @@
 	name = "On Ramp";
 	pixel_x = 4
 	},
+/obj/machinery/newscaster/directional/north,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "iT" = (
@@ -1190,14 +1188,6 @@
 	id = "kilocargo";
 	name = "NTMS-037 Bay Blast Door"
 	},
-/obj/docking_port/mobile{
-	callTime = 250;
-	dir = 2;
-	launch_status = 0;
-	name = "Mining Shuttle";
-	port_direction = 8;
-	preferred_direction = 4
-	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/cargo)
 "rO" = (
@@ -1249,16 +1239,13 @@
 /area/ship/crew)
 "sW" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/machinery/airalarm/all_access{
-	dir = 8;
-	pixel_x = 24
-	},
 /obj/machinery/computer/cargo/express{
 	dir = 8
 	},
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/machinery/airalarm/directional/east,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "vv" = (
@@ -1272,6 +1259,14 @@
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
+"vU" = (
+/obj/docking_port/stationary{
+	dwidth = 7;
+	width = 15;
+	height = 15
+	},
+/turf/template_noop,
+/area/template_noop)
 "wc" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/door/airlock/shuttle{
@@ -1611,12 +1606,10 @@
 /obj/structure/sign/poster/contraband/random{
 	pixel_x = 32
 	},
-/obj/machinery/light/small{
-	dir = 4
-	},
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/structure/chair/sofa/corner,
 /obj/machinery/firealarm/directional/north,
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/wood{
 	icon_state = "wood-broken"
 	},
@@ -1632,7 +1625,8 @@
 "EU" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/door/airlock/command{
-	name = "Ship Control"
+	name = "Ship Control";
+	dir = 4
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -1994,6 +1988,12 @@
 /obj/machinery/door/airlock/external{
 	name = "Mining Airlock";
 	dir = 8
+	},
+/obj/docking_port/mobile{
+	dir = 8;
+	launch_status = 0;
+	name = "Mining Shuttle";
+	preferred_direction = 2
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/cargo)
@@ -2383,6 +2383,7 @@
 (1,1,1) = {"
 aa
 aa
+aa
 AQ
 ak
 bn
@@ -2396,6 +2397,7 @@ aa
 aa
 "}
 (2,1,1) = {"
+aa
 aa
 aa
 kA
@@ -2413,6 +2415,7 @@ aa
 (3,1,1) = {"
 aa
 aa
+aa
 Jf
 av
 bQ
@@ -2426,6 +2429,7 @@ aa
 aa
 "}
 (4,1,1) = {"
+aa
 aa
 aa
 Jf
@@ -2443,6 +2447,7 @@ aa
 (5,1,1) = {"
 aa
 aa
+aa
 Jf
 Jf
 gs
@@ -2456,6 +2461,7 @@ aa
 aa
 "}
 (6,1,1) = {"
+aa
 aa
 aa
 Jf
@@ -2473,6 +2479,7 @@ aa
 (7,1,1) = {"
 aa
 aa
+aa
 Ua
 aS
 ca
@@ -2486,6 +2493,7 @@ aa
 aa
 "}
 (8,1,1) = {"
+aa
 aa
 aa
 Ua
@@ -2503,6 +2511,7 @@ aa
 (9,1,1) = {"
 aa
 aa
+aa
 Jf
 jU
 bU
@@ -2516,6 +2525,7 @@ Ti
 aa
 "}
 (10,1,1) = {"
+aa
 aa
 aa
 Jf
@@ -2532,6 +2542,7 @@ aa
 "}
 (11,1,1) = {"
 aa
+aa
 dF
 cP
 KM
@@ -2546,6 +2557,7 @@ Ti
 aa
 "}
 (12,1,1) = {"
+aa
 ac
 ac
 ac
@@ -2561,6 +2573,7 @@ mz
 aa
 "}
 (13,1,1) = {"
+aa
 qv
 VQ
 nO
@@ -2576,6 +2589,7 @@ bA
 Vq
 "}
 (14,1,1) = {"
+vU
 rq
 iT
 de
@@ -2591,6 +2605,7 @@ Sx
 yF
 "}
 (15,1,1) = {"
+aa
 Nq
 NU
 am
@@ -2606,6 +2621,7 @@ zc
 bA
 "}
 (16,1,1) = {"
+aa
 ac
 ac
 ac
@@ -2622,6 +2638,7 @@ yF
 "}
 (17,1,1) = {"
 aa
+aa
 ac
 Ih
 ac
@@ -2636,6 +2653,7 @@ bA
 bA
 "}
 (18,1,1) = {"
+aa
 aa
 La
 hR
@@ -2652,6 +2670,7 @@ vv
 "}
 (19,1,1) = {"
 aa
+aa
 La
 Mj
 ay
@@ -2667,6 +2686,7 @@ bF
 "}
 (20,1,1) = {"
 aa
+aa
 ac
 jx
 pV
@@ -2678,9 +2698,10 @@ nd
 bH
 Xd
 Uv
-vv
+bF
 "}
 (21,1,1) = {"
+aa
 aa
 ac
 hN
@@ -2697,6 +2718,7 @@ Bu
 "}
 (22,1,1) = {"
 aa
+aa
 ac
 ac
 AB
@@ -2712,6 +2734,7 @@ aa
 "}
 (23,1,1) = {"
 aa
+aa
 ac
 bm
 KB
@@ -2720,12 +2743,13 @@ cJ
 bF
 bP
 bF
-bP
+bF
 Bu
 aa
 aa
 "}
 (24,1,1) = {"
+aa
 aa
 PW
 ac

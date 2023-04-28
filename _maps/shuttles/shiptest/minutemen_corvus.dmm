@@ -1054,6 +1054,14 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
+"ud" = (
+/obj/machinery/door/poddoor{
+	id = "minutecop_bridge";
+	dir = 8
+	},
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/turf/open/floor/plating,
+/area/ship/bridge)
 "ug" = (
 /obj/structure/chair/greyscale{
 	dir = 4
@@ -1951,6 +1959,15 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
+"KZ" = (
+/obj/docking_port/stationary{
+	dwidth = 4;
+	width = 9;
+	height = 15;
+	dir = 2
+	},
+/turf/template_noop,
+/area/template_noop)
 "LE" = (
 /obj/structure/table/reinforced,
 /obj/machinery/computer/secure_data/laptop{
@@ -3080,7 +3097,7 @@ Gf
 rL
 Hw
 UP
-bA
+KZ
 bA
 "}
 (23,1,1) = {"
@@ -3143,7 +3160,7 @@ Nr
 YM
 GF
 zu
-zu
+kG
 bA
 bA
 "}
@@ -3172,7 +3189,7 @@ bA
 Gu
 jQ
 jQ
-zu
+ud
 bA
 bA
 bA

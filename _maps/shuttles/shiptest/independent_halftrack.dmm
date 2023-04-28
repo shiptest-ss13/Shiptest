@@ -987,11 +987,43 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/security/range)
 "zR" = (
-/obj/structure/table/reinforced,
-/obj/machinery/recharger,
-/obj/machinery/firealarm/directional/east,
-/turf/open/floor/carpet/nanoweave,
-/area/ship/bridge)
+/obj/item/gun/ballistic/automatic/smg/vector{
+	spawnwithmagazine = 0
+	},
+/obj/item/ammo_box/magazine/smgm9mm/rubbershot,
+/obj/item/ammo_box/magazine/smgm9mm/rubbershot,
+/obj/item/ammo_box/magazine/co9mm{
+	ammo_type = /obj/item/ammo_casing/c9mm/rubbershot;
+	name = "Commander magazine (Rubbershot 9mm)"
+	},
+/obj/item/gun/ballistic/automatic/pistol/commander/no_mag,
+/obj/item/gun/ballistic/automatic/pistol/commander/no_mag,
+/obj/item/ammo_box/magazine/co9mm{
+	ammo_type = /obj/item/ammo_casing/c9mm/rubbershot;
+	name = "Commander magazine (Rubbershot 9mm)"
+	},
+/obj/item/ammo_box/magazine/co9mm{
+	ammo_type = /obj/item/ammo_casing/c9mm/rubbershot;
+	name = "Commander magazine (Rubbershot 9mm)"
+	},
+/obj/item/ammo_box/magazine/co9mm{
+	ammo_type = /obj/item/ammo_casing/c9mm/ap;
+	name = "Commander magazine (AP 9mm)"
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/structure/closet/secure_closet/wall{
+	dir = 4;
+	icon_state = "sec_wall";
+	name = "firearms locker";
+	pixel_x = -28;
+	req_access_txt = "5"
+	},
+/obj/item/ammo_box/magazine/co9mm{
+	ammo_type = /obj/item/ammo_casing/c9mm/rubbershot;
+	name = "Commander magazine (Rubbershot 9mm)"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/crew)
 "zS" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -1034,17 +1066,14 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/fore)
 "BN" = (
-/obj/docking_port/mobile{
-	launch_status = 0;
-	port_direction = 2
+/obj/docking_port/stationary{
+	dwidth = 7;
+	width = 15;
+	height = 15;
+	dir = 2
 	},
-/obj/structure/fans/tiny,
-/obj/machinery/door/poddoor/shutters{
-	id = "traumalobby";
-	name = "Lobby"
-	},
-/turf/open/floor/carpet/nanoweave/beige,
-/area/ship/hallway/aft)
+/turf/template_noop,
+/area/template_noop)
 "CX" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
@@ -1860,46 +1889,17 @@
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew)
 "UX" = (
-/obj/item/gun/ballistic/automatic/smg/vector{
-	spawnwithmagazine = 0
+/obj/machinery/door/poddoor/preopen{
+	id = "traumawindows";
+	name = "Window Blast Door"
 	},
-/obj/item/ammo_box/magazine/smgm9mm/rubbershot,
-/obj/item/ammo_box/magazine/smgm9mm/rubbershot,
-/obj/item/ammo_box/magazine/co9mm{
-	ammo_type = /obj/item/ammo_casing/c9mm/rubbershot;
-	name = "Commander magazine (Rubbershot 9mm)"
+/obj/effect/spawner/structure/window/reinforced,
+/obj/docking_port/mobile{
+	launch_status = 0;
+	dir = 2
 	},
-/obj/item/gun/ballistic/automatic/pistol/commander/no_mag,
-/obj/item/gun/ballistic/automatic/pistol/commander/no_mag,
-/obj/item/ammo_box/magazine/co9mm{
-	ammo_type = /obj/item/ammo_casing/c9mm/rubbershot;
-	name = "Commander magazine (Rubbershot 9mm)"
-	},
-/obj/item/ammo_box/magazine/co9mm{
-	ammo_type = /obj/item/ammo_casing/c9mm/rubbershot;
-	name = "Commander magazine (Rubbershot 9mm)"
-	},
-/obj/item/ammo_box/magazine/co9mm{
-	ammo_type = /obj/item/ammo_casing/c9mm/ap;
-	name = "Commander magazine (AP 9mm)"
-	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/structure/sign/poster/contraband/c20r{
-	pixel_y = 32
-	},
-/obj/structure/closet/secure_closet/wall{
-	dir = 4;
-	icon_state = "sec_wall";
-	name = "firearms locker";
-	pixel_x = -28;
-	req_access_txt = "5"
-	},
-/obj/item/ammo_box/magazine/co9mm{
-	ammo_type = /obj/item/ammo_casing/c9mm/rubbershot;
-	name = "Commander magazine (Rubbershot 9mm)"
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/crew)
+/turf/open/floor/plating,
+/area/ship/bridge)
 "Vq" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -2068,13 +2068,13 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "YI" = (
-/obj/machinery/door/poddoor/preopen{
-	id = "traumawindows";
-	name = "Window Blast Door";
-	dir = 4
+/obj/structure/table/reinforced,
+/obj/machinery/recharger,
+/obj/machinery/firealarm/directional/east,
+/obj/structure/sign/poster/contraband/c20r{
+	pixel_y = 32
 	},
-/obj/effect/spawner/structure/window/reinforced,
-/turf/open/floor/plating,
+/turf/open/floor/carpet/nanoweave,
 /area/ship/bridge)
 "YK" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -2135,6 +2135,7 @@ fp
 fp
 UG
 UG
+UG
 "}
 (2,1,1) = {"
 UG
@@ -2163,6 +2164,7 @@ fe
 Kh
 Ny
 Jn
+UG
 UG
 "}
 (3,1,1) = {"
@@ -2193,6 +2195,7 @@ Gm
 KD
 dR
 Jn
+UG
 "}
 (4,1,1) = {"
 UG
@@ -2222,6 +2225,7 @@ fp
 fp
 fp
 fp
+UG
 "}
 (5,1,1) = {"
 UG
@@ -2248,6 +2252,7 @@ fp
 fp
 vr
 fp
+UG
 UG
 UG
 UG
@@ -2280,10 +2285,11 @@ fp
 fp
 UG
 UG
+UG
 "}
 (7,1,1) = {"
-bX
-YI
+nu
+nu
 uk
 UJ
 nu
@@ -2309,6 +2315,7 @@ Fx
 pa
 gL
 gL
+UG
 "}
 (8,1,1) = {"
 bX
@@ -2338,6 +2345,7 @@ Ja
 Ja
 Qp
 gL
+UG
 "}
 (9,1,1) = {"
 bX
@@ -2367,9 +2375,10 @@ xa
 ur
 ur
 gO
+UG
 "}
 (10,1,1) = {"
-bX
+UX
 hF
 pK
 eJ
@@ -2395,6 +2404,7 @@ go
 ur
 ur
 ur
+gO
 BN
 "}
 (11,1,1) = {"
@@ -2425,6 +2435,7 @@ IG
 ur
 ur
 gO
+UG
 "}
 (12,1,1) = {"
 bX
@@ -2454,14 +2465,15 @@ tT
 uW
 ZO
 gL
+UG
 "}
 (13,1,1) = {"
-bX
+nu
+nu
 YI
-zR
 Nq
 nu
-UX
+zR
 kC
 Ki
 QU
@@ -2483,6 +2495,7 @@ Mm
 gL
 gL
 gL
+UG
 "}
 (14,1,1) = {"
 UG
@@ -2512,6 +2525,7 @@ UO
 UO
 UG
 UG
+UG
 "}
 (15,1,1) = {"
 UG
@@ -2538,6 +2552,7 @@ UO
 UO
 EW
 UO
+UG
 UG
 UG
 UG
@@ -2570,6 +2585,7 @@ UO
 UO
 UO
 UO
+UG
 "}
 (17,1,1) = {"
 UG
@@ -2599,6 +2615,7 @@ ir
 Hq
 VM
 Dj
+UG
 "}
 (18,1,1) = {"
 UG
@@ -2628,6 +2645,7 @@ QY
 Ob
 Dj
 UG
+UG
 "}
 (19,1,1) = {"
 UG
@@ -2655,6 +2673,7 @@ UO
 UO
 UO
 UO
+UG
 UG
 UG
 "}

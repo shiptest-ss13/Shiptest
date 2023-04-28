@@ -3025,6 +3025,15 @@
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/port)
+"Fs" = (
+/obj/docking_port/stationary{
+	dwidth = 7;
+	width = 15;
+	height = 15;
+	dir = 2
+	},
+/turf/template_noop,
+/area/template_noop)
 "Ft" = (
 /obj/effect/turf_decal/corner/opaque/neutral/three_quarters{
 	dir = 1
@@ -5331,6 +5340,7 @@ LO
 LO
 LO
 LO
+LO
 "}
 (2,1,1) = {"
 LO
@@ -5352,6 +5362,7 @@ TN
 fF
 Qb
 Qb
+LO
 LO
 LO
 LO
@@ -5389,6 +5400,7 @@ LO
 LO
 LO
 LO
+LO
 "}
 (4,1,1) = {"
 LO
@@ -5415,6 +5427,7 @@ dl
 dl
 dl
 dl
+LO
 LO
 LO
 LO
@@ -5447,6 +5460,7 @@ ID
 dl
 dl
 LO
+LO
 "}
 (6,1,1) = {"
 LO
@@ -5476,6 +5490,7 @@ zN
 dl
 dl
 LO
+LO
 "}
 (7,1,1) = {"
 LO
@@ -5502,6 +5517,7 @@ SN
 MN
 MN
 zN
+LO
 LO
 LO
 LO
@@ -5534,6 +5550,7 @@ zN
 LO
 LO
 LO
+LO
 "}
 (9,1,1) = {"
 LO
@@ -5560,6 +5577,7 @@ Cs
 Ye
 Uk
 zN
+LO
 LO
 LO
 LO
@@ -5592,6 +5610,7 @@ zN
 LO
 LO
 LO
+LO
 "}
 (11,1,1) = {"
 LO
@@ -5618,6 +5637,7 @@ RD
 hA
 yk
 zN
+LO
 LO
 LO
 LO
@@ -5650,6 +5670,7 @@ zN
 LO
 LO
 LO
+LO
 "}
 (13,1,1) = {"
 LO
@@ -5678,6 +5699,7 @@ jh
 zN
 dl
 dl
+LO
 LO
 "}
 (14,1,1) = {"
@@ -5708,6 +5730,7 @@ zN
 dl
 dl
 LO
+LO
 "}
 (15,1,1) = {"
 LO
@@ -5736,6 +5759,7 @@ cc
 zN
 dl
 dl
+LO
 LO
 "}
 (16,1,1) = {"
@@ -5766,6 +5790,7 @@ zN
 cc
 cc
 cc
+LO
 "}
 (17,1,1) = {"
 TI
@@ -5795,6 +5820,7 @@ OU
 lB
 fM
 GV
+LO
 "}
 (18,1,1) = {"
 as
@@ -5824,6 +5850,7 @@ qe
 VB
 hk
 GV
+Fs
 "}
 (19,1,1) = {"
 Ny
@@ -5853,6 +5880,7 @@ zN
 cc
 cc
 cc
+LO
 "}
 (20,1,1) = {"
 TI
@@ -5881,6 +5909,7 @@ Kh
 zN
 dl
 dl
+LO
 LO
 "}
 (21,1,1) = {"
@@ -5911,6 +5940,7 @@ Ve
 kV
 dl
 LO
+LO
 "}
 (22,1,1) = {"
 LO
@@ -5939,6 +5969,7 @@ Ej
 zN
 dl
 dl
+LO
 LO
 "}
 (23,1,1) = {"
@@ -5969,6 +6000,7 @@ nO
 dl
 dl
 LO
+LO
 "}
 (24,1,1) = {"
 LO
@@ -5997,6 +6029,7 @@ Yh
 nO
 dl
 dl
+LO
 LO
 "}
 (25,1,1) = {"
@@ -6027,6 +6060,7 @@ nO
 nO
 dl
 LO
+LO
 "}
 (26,1,1) = {"
 LO
@@ -6054,6 +6088,7 @@ hr
 um
 qb
 oS
+LO
 LO
 LO
 "}
@@ -6085,6 +6120,7 @@ oV
 kt
 LO
 LO
+LO
 "}
 (28,1,1) = {"
 LO
@@ -6112,6 +6148,7 @@ sj
 uB
 oV
 kt
+LO
 LO
 LO
 "}
@@ -6143,6 +6180,7 @@ gF
 Fd
 LO
 LO
+LO
 "}
 (30,1,1) = {"
 LO
@@ -6170,6 +6208,7 @@ uP
 vB
 eV
 Bx
+LO
 LO
 LO
 "}
@@ -6201,6 +6240,7 @@ OM
 FI
 FI
 FI
+LO
 "}
 (32,1,1) = {"
 uy
@@ -6230,6 +6270,7 @@ OM
 qy
 kS
 FI
+LO
 "}
 (33,1,1) = {"
 qP
@@ -6259,6 +6300,7 @@ GP
 bL
 bL
 Fv
+LO
 "}
 (34,1,1) = {"
 qP
@@ -6288,6 +6330,7 @@ xL
 OI
 zt
 Fv
+LO
 "}
 (35,1,1) = {"
 uy
@@ -6317,6 +6360,7 @@ aG
 bL
 ls
 FI
+LO
 "}
 (36,1,1) = {"
 uy
@@ -6346,6 +6390,7 @@ OM
 VC
 FI
 FI
+LO
 "}
 (37,1,1) = {"
 LO
@@ -6374,6 +6419,7 @@ OM
 OM
 OM
 FI
+LO
 LO
 "}
 (38,1,1) = {"
@@ -6404,6 +6450,7 @@ Gd
 vo
 zO
 LO
+LO
 "}
 (39,1,1) = {"
 LO
@@ -6432,6 +6479,7 @@ Gd
 Gd
 Gd
 zO
+LO
 LO
 "}
 (40,1,1) = {"
@@ -6462,6 +6510,7 @@ Gs
 Gd
 zO
 LO
+LO
 "}
 (41,1,1) = {"
 LO
@@ -6491,6 +6540,7 @@ Gd
 Ka
 AC
 LO
+LO
 "}
 (42,1,1) = {"
 LO
@@ -6518,6 +6568,7 @@ Gd
 Gd
 WT
 XZ
+LO
 LO
 LO
 "}
@@ -6549,6 +6600,7 @@ XZ
 LO
 LO
 LO
+LO
 "}
 (44,1,1) = {"
 LO
@@ -6573,6 +6625,7 @@ zO
 zO
 zO
 zO
+LO
 LO
 LO
 LO
@@ -6607,6 +6660,7 @@ LO
 LO
 LO
 LO
+LO
 "}
 (46,1,1) = {"
 LO
@@ -6636,6 +6690,7 @@ LO
 LO
 LO
 LO
+LO
 "}
 (47,1,1) = {"
 LO
@@ -6658,6 +6713,7 @@ TY
 LL
 dl
 dl
+LO
 LO
 LO
 LO
@@ -6694,6 +6750,7 @@ LO
 LO
 LO
 LO
+LO
 "}
 (49,1,1) = {"
 LO
@@ -6712,6 +6769,7 @@ LL
 LL
 LL
 LL
+LO
 LO
 LO
 LO

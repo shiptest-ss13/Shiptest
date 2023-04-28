@@ -518,7 +518,6 @@
 /area/ship/cargo)
 "jb" = (
 /obj/structure/table/reinforced,
-/obj/item/radio/intercom/wideband/directional/north,
 /obj/machinery/button/door{
 	id = "modwindows";
 	name = "Full Lockdown";
@@ -530,6 +529,9 @@
 	name = "Bridge Lockdown";
 	pixel_x = 2;
 	pixel_y = 34
+	},
+/obj/item/radio/intercom/wideband/table{
+	dir = 1
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/bridge)
@@ -1035,13 +1037,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
-"sZ" = (
-/obj/structure/girder,
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/turf/open/floor/plating,
-/area/ship/external)
 "tk" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -2445,6 +2440,14 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
+"Sb" = (
+/obj/docking_port/stationary{
+	dwidth = 3;
+	width = 7;
+	height = 15
+	},
+/turf/template_noop,
+/area/template_noop)
 "Sh" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -2571,7 +2574,7 @@
 /obj/structure/closet/secure_closet/wall{
 	dir = 4;
 	name = "kitchen freezer";
-	pixel_x = -32
+	pixel_x = -28
 	},
 /obj/item/storage/fancy/egg_box,
 /obj/item/storage/fancy/egg_box,
@@ -3185,7 +3188,7 @@ bZ
 "}
 (14,1,1) = {"
 bZ
-bZ
+Sb
 Zs
 OO
 eI
@@ -3330,7 +3333,7 @@ NB
 WK
 WK
 WK
-sZ
+NB
 WK
 WK
 tk
@@ -3412,7 +3415,7 @@ fm
 ol
 re
 kA
-kA
+qB
 QF
 kA
 kA

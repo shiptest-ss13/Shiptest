@@ -2230,6 +2230,10 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable/cyan{
+	icon_state = "0-4"
+	},
 /turf/open/floor/circuit/green/anim,
 /area/ship/science/ai_chamber)
 "vS" = (
@@ -3198,7 +3202,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
 	},
-/obj/structure/showcase/cyborg,
 /turf/open/floor/engine/hull,
 /area/ship/external)
 "Ek" = (
@@ -5251,6 +5254,15 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
+"XG" = (
+/obj/docking_port/stationary{
+	dwidth = 7;
+	width = 15;
+	height = 15;
+	dir = 4
+	},
+/turf/template_noop,
+/area/template_noop)
 "XH" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber,
 /turf/open/floor/engine,
@@ -5605,9 +5617,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
 	},
-/obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/showcase/cyborg,
 /obj/structure/cable/cyan{
-	icon_state = "0-2"
+	icon_state = "2-8"
 	},
 /turf/open/floor/circuit/green/anim,
 /area/ship/science/ai_chamber)
@@ -6430,7 +6442,7 @@ Xb
 mQ
 Ur
 Ur
-zW
+wq
 wq
 Lk
 Lk
@@ -6598,7 +6610,7 @@ VA
 mQ
 Ur
 Ur
-zW
+wq
 lp
 Lk
 Lk
@@ -7358,7 +7370,7 @@ zW
 zW
 zW
 zW
-zW
+XG
 zW
 zW
 zW

@@ -40,6 +40,9 @@
 /obj/item/stamp/captain,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
+"an" = (
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "aq" = (
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable,
@@ -426,9 +429,6 @@
 "ef" = (
 /obj/machinery/light/directional/south,
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/machinery/status_display/shuttle{
-	pixel_y = -32
-	},
 /turf/open/floor/plasteel,
 /area/ship/cargo/starboard)
 "ej" = (
@@ -1185,6 +1185,14 @@
 /obj/machinery/cell_charger,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
+"lY" = (
+/obj/docking_port/stationary{
+	dwidth = 7;
+	width = 15;
+	height = 15
+	},
+/turf/template_noop,
+/area/template_noop)
 "lZ" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -1784,11 +1792,11 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "rU" = (
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/airlock/external/glass{
 	name = "External Hull Access"
 	},
-/obj/effect/turf_decal/industrial/warning/fulltile,
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/central)
 "sg" = (
@@ -2388,7 +2396,9 @@
 	},
 /area/ship/storage)
 "yw" = (
-/obj/machinery/door/airlock/maintenance_hatch,
+/obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4
+	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -2514,6 +2524,15 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
+"zQ" = (
+/obj/docking_port/stationary{
+	dwidth = 3;
+	width = 7;
+	height = 15;
+	dir = 2
+	},
+/turf/template_noop,
+/area/template_noop)
 "zS" = (
 /obj/machinery/door/poddoor/shutters{
 	id = "gecko_port"
@@ -4928,9 +4947,6 @@
 /area/ship/maintenance/fore)
 "XR" = (
 /obj/machinery/light/directional/north,
-/obj/machinery/status_display/shuttle{
-	pixel_y = 32
-	},
 /obj/machinery/computer/crew,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering/communications)
@@ -5149,6 +5165,9 @@
 "ZB" = (
 /obj/machinery/computer/apc_control{
 	icon_state = "computer-left"
+	},
+/obj/machinery/status_display/shuttle{
+	pixel_y = 32
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering/communications)
@@ -5729,7 +5748,7 @@ vL
 Ow
 NC
 vS
-hu
+zQ
 hu
 hu
 hu
@@ -5856,7 +5875,7 @@ hu
 hu
 hu
 hu
-hu
+Ts
 UB
 vo
 Mf
@@ -5884,8 +5903,8 @@ hu
 hu
 hu
 hu
-hu
-hu
+lY
+an
 rU
 oy
 Jj

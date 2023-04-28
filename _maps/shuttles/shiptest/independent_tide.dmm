@@ -242,13 +242,15 @@
 /obj/machinery/button/door{
 	id = "tidedoors";
 	name = "Blast Door Control";
-	pixel_y = -25
+	pixel_y = -20;
+	dir = 1
 	},
 /obj/machinery/suit_storage_unit/independent/engineering,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "ng" = (
-/obj/effect/spawner/structure/window/hollow,
+/obj/structure/window/fulltile,
+/obj/structure/grille,
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "nq" = (
@@ -289,7 +291,8 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "pB" = (
-/obj/effect/spawner/structure/window/hollow,
+/obj/structure/window/fulltile,
+/obj/structure/grille,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "pH" = (
@@ -818,7 +821,8 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
 "Xj" = (
-/obj/effect/spawner/structure/window/hollow,
+/obj/structure/window/fulltile,
+/obj/structure/grille,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "Xz" = (

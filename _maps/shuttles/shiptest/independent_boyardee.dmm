@@ -1308,13 +1308,26 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/storage)
 "zy" = (
-/obj/machinery/door/poddoor{
-	id = "bridgelockdown";
+/obj/machinery/door/airlock/hatch{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/obj/effect/spawner/structure/window/reinforced,
-/turf/open/floor/plating,
-/area/ship/bridge)
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/maintenance)
 "zP" = (
 /obj/machinery/icecream_vat,
 /turf/open/floor/plasteel/freezer,
@@ -2381,24 +2394,18 @@
 /turf/open/floor/plating,
 /area/ship/maintenance)
 "Tl" = (
-/obj/machinery/door/airlock/hatch,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	dir = 2;
+	dwidth = 5;
+	height = 29;
+	launch_status = 0;
+	name = "diner ship";
+	width = 19;
+	preferred_direction = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 8
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/maintenance)
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "TB" = (
 /obj/machinery/light/directional/west,
 /obj/effect/turf_decal/siding/wood{
@@ -2736,29 +2743,43 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/bridge)
 "ZW" = (
-/obj/machinery/door/airlock/external{
-	dir = 4
+/obj/docking_port/stationary{
+	dwidth = 7;
+	width = 15;
+	height = 15;
+	dir = 8
 	},
-/obj/docking_port/mobile{
-	can_move_docking_ports = 1;
-	dir = 4;
-	dwidth = 5;
-	height = 29;
-	launch_status = 0;
-	name = "diner ship";
-	port_direction = 2;
-	width = 19
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/crew/canteen)
+/turf/template_noop,
+/area/template_noop)
 
 (1,1,1) = {"
+vZ
+vZ
+vZ
+vZ
+vZ
+ZW
+vZ
+vZ
+vZ
+vZ
+vZ
+vZ
+vZ
+vZ
+vZ
+vZ
+vZ
+vZ
+vZ
+"}
+(2,1,1) = {"
 vZ
 vZ
 cC
 cC
 Lg
-ZW
+Lg
 cC
 cC
 cC
@@ -2773,7 +2794,7 @@ vZ
 vZ
 vZ
 "}
-(2,1,1) = {"
+(3,1,1) = {"
 vZ
 vZ
 cC
@@ -2794,7 +2815,7 @@ hl
 IC
 hA
 "}
-(3,1,1) = {"
+(4,1,1) = {"
 vZ
 vZ
 cC
@@ -2815,7 +2836,7 @@ YC
 dH
 Of
 "}
-(4,1,1) = {"
+(5,1,1) = {"
 vZ
 vZ
 cC
@@ -2836,7 +2857,7 @@ ly
 dH
 BC
 "}
-(5,1,1) = {"
+(6,1,1) = {"
 vZ
 vZ
 xr
@@ -2857,7 +2878,7 @@ Ds
 dH
 gL
 "}
-(6,1,1) = {"
+(7,1,1) = {"
 vZ
 ja
 xr
@@ -2878,7 +2899,7 @@ VB
 dH
 vZ
 "}
-(7,1,1) = {"
+(8,1,1) = {"
 vZ
 xr
 GO
@@ -2899,7 +2920,7 @@ xw
 dH
 vZ
 "}
-(8,1,1) = {"
+(9,1,1) = {"
 vZ
 cC
 Ck
@@ -2920,7 +2941,7 @@ qg
 dH
 vZ
 "}
-(9,1,1) = {"
+(10,1,1) = {"
 vZ
 cC
 Qm
@@ -2935,13 +2956,13 @@ dV
 dV
 dV
 kr
-Tl
+zy
 dV
 DG
 dH
 vZ
 "}
-(10,1,1) = {"
+(11,1,1) = {"
 vZ
 cC
 fl
@@ -2962,7 +2983,7 @@ lY
 JR
 vZ
 "}
-(11,1,1) = {"
+(12,1,1) = {"
 vZ
 xr
 PY
@@ -2983,7 +3004,7 @@ Pi
 JR
 vZ
 "}
-(12,1,1) = {"
+(13,1,1) = {"
 vZ
 xr
 Zd
@@ -3004,7 +3025,7 @@ hL
 eS
 vZ
 "}
-(13,1,1) = {"
+(14,1,1) = {"
 vZ
 xr
 Eb
@@ -3025,7 +3046,7 @@ hL
 eS
 vZ
 "}
-(14,1,1) = {"
+(15,1,1) = {"
 vZ
 xr
 PY
@@ -3046,7 +3067,7 @@ hL
 eS
 vZ
 "}
-(15,1,1) = {"
+(16,1,1) = {"
 vZ
 xr
 Zd
@@ -3067,7 +3088,7 @@ uR
 JR
 vZ
 "}
-(16,1,1) = {"
+(17,1,1) = {"
 vZ
 xr
 Eb
@@ -3088,7 +3109,7 @@ JT
 Au
 vZ
 "}
-(17,1,1) = {"
+(18,1,1) = {"
 vZ
 cC
 wG
@@ -3109,7 +3130,7 @@ NQ
 Au
 vZ
 "}
-(18,1,1) = {"
+(19,1,1) = {"
 vZ
 Ag
 kZ
@@ -3130,7 +3151,7 @@ sg
 Au
 vZ
 "}
-(19,1,1) = {"
+(20,1,1) = {"
 vZ
 Ag
 DI
@@ -3151,7 +3172,7 @@ IQ
 TD
 vZ
 "}
-(20,1,1) = {"
+(21,1,1) = {"
 yi
 Ag
 ua
@@ -3172,7 +3193,7 @@ wY
 TD
 vZ
 "}
-(21,1,1) = {"
+(22,1,1) = {"
 as
 cp
 nc
@@ -3193,7 +3214,7 @@ EH
 DZ
 vZ
 "}
-(22,1,1) = {"
+(23,1,1) = {"
 yi
 yk
 Ba
@@ -3214,8 +3235,8 @@ EH
 DZ
 vZ
 "}
-(23,1,1) = {"
-yi
+(24,1,1) = {"
+Tl
 yk
 dW
 QW
@@ -3235,7 +3256,7 @@ Zn
 TD
 vZ
 "}
-(24,1,1) = {"
+(25,1,1) = {"
 yi
 yk
 Uv
@@ -3256,7 +3277,7 @@ EH
 DZ
 vZ
 "}
-(25,1,1) = {"
+(26,1,1) = {"
 yi
 Ag
 nA
@@ -3277,7 +3298,7 @@ yF
 DZ
 vZ
 "}
-(26,1,1) = {"
+(27,1,1) = {"
 vZ
 Ag
 rj
@@ -3298,7 +3319,7 @@ Vr
 TD
 vZ
 "}
-(27,1,1) = {"
+(28,1,1) = {"
 vZ
 Ag
 sD
@@ -3319,27 +3340,6 @@ qu
 TD
 vZ
 "}
-(28,1,1) = {"
-vZ
-vZ
-vZ
-vZ
-vZ
-vZ
-zy
-Cu
-ep
-AA
-OJ
-Cu
-YZ
-vZ
-vZ
-vZ
-vZ
-vZ
-vZ
-"}
 (29,1,1) = {"
 vZ
 vZ
@@ -3347,12 +3347,33 @@ vZ
 vZ
 vZ
 vZ
+Cu
+YZ
+ep
+AA
+OJ
+YZ
+Cu
 vZ
+vZ
+vZ
+vZ
+vZ
+vZ
+"}
+(30,1,1) = {"
+vZ
+vZ
+vZ
+vZ
+vZ
+vZ
+vZ
+Cu
 ku
 ku
 ku
-ku
-ku
+Cu
 vZ
 vZ
 vZ

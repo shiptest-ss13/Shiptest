@@ -753,6 +753,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/machinery/power/apc/auto_name/directional/west,
 /turf/open/floor/carpet/black,
 /area/ship/crew/office)
 "eX" = (
@@ -771,6 +772,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/machinery/power/apc/auto_name/directional/east,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "fd" = (
@@ -961,6 +963,7 @@
 /obj/structure/chair/office{
 	dir = 4
 	},
+/obj/machinery/power/apc/auto_name/directional/south,
 /turf/open/floor/wood,
 /area/ship/bridge)
 "go" = (
@@ -1343,6 +1346,7 @@
 "iK" = (
 /obj/structure/cable,
 /obj/effect/turf_decal/corner/opaque/white/border,
+/obj/machinery/power/apc/auto_name/directional/south,
 /turf/open/floor/plasteel,
 /area/ship/hallway/starboard)
 "iN" = (
@@ -1476,6 +1480,7 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/computer/arcade,
+/obj/machinery/power/apc/auto_name/directional/east,
 /turf/open/floor/light/colour_cycle/dancefloor_b,
 /area/ship/storage)
 "jw" = (
@@ -1486,6 +1491,7 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/machinery/power/apc/auto_name/directional/east,
 /turf/open/floor/carpet/black,
 /area/ship/crew/library)
 "jC" = (
@@ -1593,8 +1599,8 @@
 /turf/open/floor/grass,
 /area/ship/hallway/aft)
 "km" = (
-/obj/machinery/light/small,
 /obj/effect/turf_decal/siding/wood,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
 "ko" = (
@@ -1604,6 +1610,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
+/obj/machinery/power/apc/auto_name/directional/east,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen/kitchen)
 "kq" = (
@@ -1647,6 +1654,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
+/obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/toilet)
 "kA" = (
@@ -1706,6 +1714,7 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/photocopier,
+/obj/machinery/power/apc/auto_name/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/port)
 "lx" = (
@@ -1880,6 +1889,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
+/obj/machinery/power/apc/auto_name/directional/east,
 /turf/open/floor/wood,
 /area/ship/crew/hydroponics)
 "mz" = (
@@ -2079,6 +2089,7 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /obj/effect/turf_decal/corner/opaque/white/border,
+/obj/machinery/power/apc/auto_name/directional/south,
 /turf/open/floor/plasteel,
 /area/ship/crew)
 "nU" = (
@@ -3314,6 +3325,14 @@
 	},
 /turf/open/floor/wood,
 /area/ship/crew/hydroponics)
+"wi" = (
+/obj/docking_port/stationary{
+	dwidth = 7;
+	width = 15;
+	height = 15
+	},
+/turf/template_noop,
+/area/template_noop)
 "wj" = (
 /obj/machinery/bookbinder,
 /turf/open/floor/carpet/black,
@@ -3463,6 +3482,7 @@
 /obj/effect/turf_decal/corner/opaque/lightgrey/border{
 	dir = 4
 	},
+/obj/machinery/power/apc/auto_name/directional/east,
 /turf/open/floor/pod/dark,
 /area/ship/hallway/fore)
 "xo" = (
@@ -3631,12 +3651,10 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/light/small{
-	dir = 1
-	},
 /obj/effect/turf_decal/corner/opaque/white/border{
 	dir = 1
 	},
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel,
 /area/ship/hallway/fore)
 "yq" = (
@@ -4044,10 +4062,10 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/machinery/light/dim,
 /obj/structure/chair/stool/bar{
 	dir = 4
 	},
+/obj/machinery/light/directional/south,
 /turf/open/floor/carpet/black,
 /area/ship/crew/office)
 "Bl" = (
@@ -5000,16 +5018,13 @@
 /turf/open/floor/wood,
 /area/ship/bridge)
 "HA" = (
-/obj/machinery/computer/helm/viewscreen{
-	dir = 8;
-	pixel_x = 28
-	},
 /obj/structure/table/reinforced,
 /obj/machinery/recharger,
 /obj/item/paper{
 	info = "Reminder that passengers are NOT permitted to carry weapons on board.";
 	pixel_x = 4
 	},
+/obj/machinery/computer/helm/viewscreen/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "HE" = (
@@ -5163,6 +5178,16 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/aft)
+"IJ" = (
+/obj/structure/chair{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/obj/machinery/light/directional/west,
+/turf/open/floor/wood,
+/area/ship/crew/canteen)
 "IX" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8
@@ -5307,7 +5332,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
-/obj/machinery/light/directional/west,
+/obj/machinery/power/apc/auto_name/directional/west,
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
 "JD" = (
@@ -6888,7 +6913,7 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen/kitchen)
 "UP" = (
-/obj/machinery/light/small,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/grass,
 /area/ship/hallway/aft)
 "US" = (
@@ -7022,6 +7047,7 @@
 	dir = 5
 	},
 /obj/item/radio/intercom/directional/north,
+/obj/machinery/power/apc/auto_name/directional/east,
 /turf/open/floor/wood,
 /area/ship/crew/chapel)
 "VR" = (
@@ -7091,6 +7117,7 @@
 	pixel_x = 1;
 	pixel_y = -8
 	},
+/obj/machinery/power/apc/auto_name/directional/east,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "Wf" = (
@@ -7215,6 +7242,7 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "Xa" = (
@@ -7393,6 +7421,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/grass,
 /area/ship/hallway/central)
 "Yl" = (
@@ -7515,6 +7544,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
+/obj/machinery/power/apc/auto_name/directional/east,
 /turf/open/floor/wood,
 /area/ship/crew/dorm)
 "Zx" = (
@@ -7621,6 +7651,7 @@ ZK
 ZK
 ZK
 ZK
+ZK
 xZ
 sv
 xZ
@@ -7653,6 +7684,7 @@ ZK
 ZK
 "}
 (2,1,1) = {"
+ZK
 vs
 Ki
 Ki
@@ -7693,6 +7725,7 @@ tb
 wI
 "}
 (3,1,1) = {"
+ZK
 Ki
 IG
 RJ
@@ -7733,6 +7766,7 @@ tp
 tb
 "}
 (4,1,1) = {"
+ZK
 Ki
 LQ
 GV
@@ -7773,6 +7807,7 @@ aK
 iV
 "}
 (5,1,1) = {"
+ZK
 Ki
 Sq
 ih
@@ -7813,6 +7848,7 @@ Jj
 tb
 "}
 (6,1,1) = {"
+ZK
 Ki
 Ki
 Ki
@@ -7853,6 +7889,7 @@ tb
 tb
 "}
 (7,1,1) = {"
+ZK
 ae
 Fn
 wa
@@ -7893,6 +7930,7 @@ mT
 sH
 "}
 (8,1,1) = {"
+wi
 at
 Fn
 au
@@ -7933,6 +7971,7 @@ NA
 sH
 "}
 (9,1,1) = {"
+ZK
 ae
 Fn
 aN
@@ -7973,6 +8012,7 @@ WB
 sH
 "}
 (10,1,1) = {"
+ZK
 bD
 bD
 bD
@@ -8013,6 +8053,7 @@ ZY
 sH
 "}
 (11,1,1) = {"
+ZK
 Fq
 bD
 Gn
@@ -8054,6 +8095,7 @@ Uq
 "}
 (12,1,1) = {"
 ZK
+ZK
 Fq
 bD
 lo
@@ -8093,6 +8135,7 @@ Uq
 ZK
 "}
 (13,1,1) = {"
+ZK
 ZK
 ZK
 tS
@@ -8136,6 +8179,7 @@ ZK
 ZK
 ZK
 ZK
+ZK
 Qt
 Fl
 eF
@@ -8173,6 +8217,7 @@ ZK
 ZK
 "}
 (15,1,1) = {"
+ZK
 ZK
 ZK
 ZK
@@ -8216,6 +8261,7 @@ ZK
 ZK
 ZK
 ZK
+ZK
 Qt
 ss
 XW
@@ -8253,6 +8299,7 @@ ZK
 ZK
 "}
 (17,1,1) = {"
+ZK
 ZK
 ZK
 ZK
@@ -8297,6 +8344,7 @@ ZK
 ZK
 ZK
 ZK
+ZK
 Oe
 xh
 UG
@@ -8308,7 +8356,7 @@ gI
 JC
 Rm
 Qc
-Rm
+IJ
 DD
 vg
 bj
@@ -8333,6 +8381,7 @@ ZK
 ZK
 "}
 (19,1,1) = {"
+ZK
 ZK
 ZK
 ZK
@@ -8377,6 +8426,7 @@ ZK
 ZK
 ZK
 ZK
+ZK
 Oe
 xh
 gq
@@ -8413,6 +8463,7 @@ ZK
 ZK
 "}
 (21,1,1) = {"
+ZK
 ZK
 ZK
 ZK
@@ -8457,6 +8508,7 @@ ZK
 ZK
 ZK
 ZK
+ZK
 Oe
 fK
 Qs
@@ -8493,6 +8545,7 @@ ZK
 ZK
 "}
 (23,1,1) = {"
+ZK
 ZK
 ZK
 ZK
@@ -8537,6 +8590,7 @@ ZK
 ZK
 ZK
 ZK
+ZK
 Ci
 qM
 Sa
@@ -8577,6 +8631,7 @@ ZK
 ZK
 ZK
 ZK
+ZK
 Ci
 go
 UO
@@ -8613,6 +8668,7 @@ ZK
 ZK
 "}
 (26,1,1) = {"
+ZK
 ZK
 ZK
 ZK
@@ -8658,6 +8714,7 @@ ZK
 ZK
 ZK
 ZK
+ZK
 pl
 Vg
 DB
@@ -8693,6 +8750,7 @@ ZK
 ZK
 "}
 (28,1,1) = {"
+ZK
 ZK
 ZK
 ZK
@@ -8738,6 +8796,7 @@ ZK
 ZK
 ZK
 ZK
+ZK
 Ci
 yj
 Uf
@@ -8778,6 +8837,7 @@ ZK
 ZK
 ZK
 ZK
+ZK
 Ci
 pF
 ko
@@ -8813,6 +8873,7 @@ ZK
 ZK
 "}
 (31,1,1) = {"
+ZK
 ZK
 ZK
 ZK
@@ -8859,6 +8920,7 @@ ZK
 ZK
 ZK
 ZK
+ZK
 Ij
 kq
 SK
@@ -8899,6 +8961,7 @@ ZK
 ZK
 ZK
 ZK
+ZK
 Ij
 lV
 Jx
@@ -8933,6 +8996,7 @@ ZK
 ZK
 "}
 (34,1,1) = {"
+ZK
 ZK
 ZK
 ZK
@@ -8980,6 +9044,7 @@ ZK
 ZK
 ZK
 ZK
+ZK
 cS
 Mf
 mx
@@ -9013,6 +9078,7 @@ ZK
 ZK
 "}
 (36,1,1) = {"
+ZK
 ZK
 ZK
 ZK
@@ -9060,6 +9126,7 @@ ZK
 ZK
 ZK
 ZK
+ZK
 AR
 uq
 FQ
@@ -9093,6 +9160,7 @@ ZK
 ZK
 "}
 (38,1,1) = {"
+ZK
 ZK
 ZK
 ZK
@@ -9140,6 +9208,7 @@ ZK
 ZK
 ZK
 ZK
+ZK
 AR
 uq
 wj
@@ -9173,6 +9242,7 @@ ZK
 ZK
 "}
 (40,1,1) = {"
+ZK
 ZK
 ZK
 ZK
@@ -9220,6 +9290,7 @@ ZK
 ZK
 ZK
 ZK
+ZK
 AR
 TA
 TA
@@ -9253,6 +9324,7 @@ ZK
 ZK
 "}
 (42,1,1) = {"
+ZK
 ZK
 ZK
 ZK
@@ -9301,6 +9373,7 @@ ZK
 ZK
 ZK
 ZK
+ZK
 AR
 kL
 kL
@@ -9333,6 +9406,7 @@ ZK
 ZK
 "}
 (44,1,1) = {"
+ZK
 ZK
 ZK
 ZK
@@ -9382,6 +9456,7 @@ ZK
 ZK
 ZK
 ZK
+ZK
 AR
 Bt
 GE
@@ -9413,6 +9488,7 @@ ZK
 ZK
 "}
 (46,1,1) = {"
+ZK
 ZK
 ZK
 ZK
@@ -9462,6 +9538,7 @@ ZK
 ZK
 ZK
 ZK
+ZK
 AR
 kL
 kL
@@ -9493,6 +9570,7 @@ ZK
 ZK
 "}
 (48,1,1) = {"
+ZK
 ZK
 ZK
 ZK
@@ -9543,6 +9621,7 @@ ZK
 ZK
 ZK
 ZK
+ZK
 AR
 mt
 Pq
@@ -9573,6 +9652,7 @@ ZK
 ZK
 "}
 (50,1,1) = {"
+ZK
 ZK
 ZK
 ZK
@@ -9623,6 +9703,7 @@ ZK
 ZK
 ZK
 ZK
+ZK
 AR
 mt
 mt
@@ -9653,6 +9734,7 @@ ZK
 ZK
 "}
 (52,1,1) = {"
+ZK
 ZK
 ZK
 ZK
@@ -9704,6 +9786,7 @@ ZK
 ZK
 ZK
 ZK
+ZK
 QA
 jh
 en
@@ -9733,6 +9816,7 @@ ZK
 ZK
 "}
 (54,1,1) = {"
+ZK
 ZK
 ZK
 ZK
@@ -9786,6 +9870,7 @@ ZK
 ZK
 ZK
 ZK
+ZK
 QA
 NT
 jh
@@ -9813,6 +9898,7 @@ ZK
 ZK
 "}
 (56,1,1) = {"
+ZK
 ZK
 ZK
 ZK

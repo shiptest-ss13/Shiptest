@@ -635,10 +635,8 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
-/obj/machinery/status_display/shuttle{
-	pixel_y = 32
-	},
 /obj/machinery/medical_kiosk,
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/patterned/dirty,
 /area/ship/cargo)
 "gC" = (
@@ -1137,10 +1135,6 @@
 /obj/item/pen{
 	pixel_x = -6;
 	pixel_y = 3
-	},
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "asclepius_reception_lockdown";
-	name = "Lockdown Shutters"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
@@ -1982,7 +1976,9 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/medical/surgery)
 "st" = (
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/airlock/hatch{
+	dir = 4
+	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -2161,10 +2157,6 @@
 	},
 /obj/item/paper/fluff/awaymissions/moonoutpost19/research/evacuation{
 	pixel_x = -15
-	},
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "asclepius_reception_lockdown";
-	name = "Lockdown Shutters"
 	},
 /obj/item/reagent_containers/food/snacks/donut/jelly/blumpkin{
 	pixel_x = -14;
@@ -3165,7 +3157,6 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/light/directional/west,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "asclepius_reception_lockdown";
 	name = "Lockdown Shutters"
@@ -3642,9 +3633,6 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/structure/noticeboard{
-	pixel_y = 30
-	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "FB" = (
@@ -3855,12 +3843,6 @@
 	dir = 4;
 	pixel_x = -21;
 	pixel_y = 8
-	},
-/obj/machinery/button/door{
-	dir = 4;
-	id = "asclepius_reception_lockdown";
-	name = "Reception Lockdown";
-	pixel_x = -22
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
@@ -4387,7 +4369,9 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light/small/directional/north,
+/obj/machinery/light/small/directional/north{
+	pixel_y = 24
+	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 1
 	},
@@ -5155,6 +5139,15 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/medical/surgery)
+"RK" = (
+/obj/docking_port/stationary{
+	dwidth = 7;
+	width = 15;
+	height = 15;
+	dir = 2
+	},
+/turf/template_noop,
+/area/template_noop)
 "RN" = (
 /obj/effect/turf_decal/techfloor/orange,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -5401,10 +5394,6 @@
 /obj/item/reagent_containers/food/drinks/coffee{
 	pixel_x = -9;
 	pixel_y = 6
-	},
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "asclepius_reception_lockdown";
-	name = "Lockdown Shutters"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
@@ -6161,7 +6150,7 @@ gJ
 kN
 oB
 Ed
-Wd
+RK
 Wd
 Wd
 Wd

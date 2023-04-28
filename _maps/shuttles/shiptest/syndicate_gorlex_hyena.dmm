@@ -2026,7 +2026,7 @@
 /obj/item/clothing/mask/breath,
 /obj/machinery/suit_storage_unit/inherit/industrial{
 	req_access = null;
-	req_one_access = list(48, 56)
+	req_one_access = list(48,56)
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
@@ -2147,6 +2147,15 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
+"KM" = (
+/obj/docking_port/stationary{
+	dwidth = 3;
+	width = 7;
+	height = 15;
+	dir = 4
+	},
+/turf/template_noop,
+/area/template_noop)
 "KQ" = (
 /obj/structure/cable{
 	icon_state = "0-4"
@@ -2927,7 +2936,7 @@
 /obj/item/clothing/mask/breath,
 /obj/machinery/suit_storage_unit/inherit/industrial{
 	req_access = null;
-	req_one_access = list(48, 56)
+	req_one_access = list(48,56)
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
@@ -3738,7 +3747,7 @@ nn
 nn
 nn
 nn
-nn
+KM
 nn
 nn
 nn

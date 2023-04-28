@@ -421,8 +421,24 @@
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "ed" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/shutters,
-/obj/machinery/atmospherics/pipe/simple/green/visible,
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 4
+	},
+/obj/structure/window/reinforced/spawner/west,
+/obj/machinery/door/window/eastleft,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/door/poddoor{
+	id = "windowlockdown";
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "em" = (
@@ -850,7 +866,9 @@
 /turf/open/floor/plasteel/freezer,
 /area/ship/crew/canteen/kitchen)
 "gx" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/shutters,
+/obj/machinery/door/firedoor/window,
+/obj/structure/window/plasma/reinforced/fulltile,
+/obj/structure/grille,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "gB" = (
@@ -2332,12 +2350,16 @@
 	dir = 4
 	},
 /obj/structure/window/reinforced/spawner/west,
-/obj/machinery/door/window/eastleft,
+/obj/machinery/door/window/eastright,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 4
+	},
 /obj/machinery/door/poddoor{
-	id = "windowlockdown"
+	id = "windowlockdown";
+	dir = 4
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -2782,8 +2804,10 @@
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/bridge)
 "wt" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/shutters,
-/obj/machinery/atmospherics/pipe/simple/orange/visible,
+/obj/machinery/atmospherics/pipe/simple/cyan/visible,
+/obj/machinery/door/firedoor/window,
+/obj/structure/window/plasma/reinforced/fulltile,
+/obj/structure/grille,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "ww" = (
@@ -2930,8 +2954,12 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "yj" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/shutters,
-/obj/machinery/atmospherics/pipe/simple/cyan/visible,
+/obj/machinery/atmospherics/pipe/simple/green/visible{
+	dir = 6
+	},
+/obj/machinery/door/firedoor/window,
+/obj/structure/window/plasma/reinforced/fulltile,
+/obj/structure/grille,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "ys" = (
@@ -3311,10 +3339,10 @@
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/crew/office)
 "Cu" = (
-/obj/machinery/atmospherics/pipe/manifold/orange/visible{
-	dir = 4
-	},
-/obj/effect/spawner/structure/window/plasma/reinforced/shutters,
+/obj/machinery/atmospherics/pipe/simple/orange/visible,
+/obj/machinery/door/firedoor/window,
+/obj/structure/window/plasma/reinforced/fulltile,
+/obj/structure/grille,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "CA" = (
@@ -3385,26 +3413,10 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Dd" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
-/obj/structure/window/reinforced/spawner/west,
-/obj/machinery/door/window/eastright,
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 4
-	},
-/obj/machinery/door/poddoor{
-	id = "windowlockdown"
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
+/obj/machinery/atmospherics/pipe/simple/green/visible,
+/obj/machinery/door/firedoor/window,
+/obj/structure/window/plasma/reinforced/fulltile,
+/obj/structure/grille,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "Dp" = (
@@ -3496,10 +3508,14 @@
 /turf/open/floor/wood,
 /area/ship/bridge)
 "Eu" = (
-/obj/machinery/atmospherics/pipe/simple/cyan/visible,
-/obj/effect/spawner/structure/window/plasma/reinforced/shutters,
-/turf/open/floor/plating,
-/area/ship/engineering/atmospherics)
+/obj/docking_port/stationary{
+	dwidth = 7;
+	width = 15;
+	height = 15;
+	dir = 2
+	},
+/turf/template_noop,
+/area/template_noop)
 "Ev" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
@@ -3756,10 +3772,12 @@
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "GA" = (
-/obj/machinery/atmospherics/pipe/simple/orange/visible{
-	dir = 6
+/obj/machinery/atmospherics/pipe/manifold/orange/visible{
+	dir = 4
 	},
-/obj/effect/spawner/structure/window/plasma/reinforced/shutters,
+/obj/machinery/door/firedoor/window,
+/obj/structure/window/plasma/reinforced/fulltile,
+/obj/structure/grille,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "GF" = (
@@ -5145,10 +5163,12 @@
 /turf/open/floor/plasteel,
 /area/ship/cargo/office)
 "TN" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/shutters,
-/obj/machinery/atmospherics/pipe/simple/green/visible{
+/obj/machinery/atmospherics/pipe/simple/orange/visible{
 	dir = 6
 	},
+/obj/machinery/door/firedoor/window,
+/obj/structure/window/plasma/reinforced/fulltile,
+/obj/structure/grille,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "TO" = (
@@ -5879,6 +5899,7 @@ fW
 fW
 fW
 fW
+fW
 "}
 (2,1,1) = {"
 fW
@@ -5910,6 +5931,7 @@ fW
 fW
 fW
 fW
+fW
 "}
 (3,1,1) = {"
 fW
@@ -5918,8 +5940,8 @@ fW
 fW
 fW
 kz
+ed
 tf
-Dd
 kz
 ZC
 WU
@@ -5936,6 +5958,7 @@ gh
 Ak
 EE
 gh
+fW
 fW
 fW
 fW
@@ -5972,6 +5995,7 @@ gh
 fW
 fW
 fW
+fW
 "}
 (5,1,1) = {"
 fW
@@ -5979,7 +6003,7 @@ fW
 kz
 kz
 Np
-yj
+wt
 Jk
 nj
 Hm
@@ -6003,6 +6027,7 @@ gh
 gh
 fW
 fW
+fW
 "}
 (6,1,1) = {"
 fW
@@ -6010,7 +6035,7 @@ kz
 kz
 At
 RK
-Eu
+wt
 dS
 Ra
 tF
@@ -6034,13 +6059,14 @@ bI
 gh
 gh
 fW
+fW
 "}
 (7,1,1) = {"
 kz
 kz
 gx
 gx
-TN
+yj
 TF
 gN
 pW
@@ -6065,12 +6091,13 @@ Xs
 wC
 gh
 fW
+fW
 "}
 (8,1,1) = {"
 kz
 Vz
 kr
-wt
+Cu
 Px
 jM
 TS
@@ -6096,12 +6123,13 @@ Fu
 Fu
 tx
 fW
+fW
 "}
 (9,1,1) = {"
 kz
 Pf
 pZ
-ed
+Dd
 Ri
 Yv
 TG
@@ -6127,12 +6155,13 @@ qy
 tz
 tx
 tx
+fW
 "}
 (10,1,1) = {"
 kz
 gx
 gx
-GA
+TN
 kB
 Ni
 fu
@@ -6158,12 +6187,13 @@ sh
 Kv
 pr
 uG
+fW
 "}
 (11,1,1) = {"
 kz
 AM
 GF
-Cu
+GA
 WP
 MQ
 Gx
@@ -6189,12 +6219,13 @@ WO
 ug
 jv
 rb
+fW
 "}
 (12,1,1) = {"
 kz
 JY
 Lm
-ed
+Dd
 UD
 dB
 rK
@@ -6220,12 +6251,13 @@ PI
 Pq
 JE
 Ym
+fW
 "}
 (13,1,1) = {"
 kz
 gx
 gx
-GA
+TN
 VQ
 ES
 Bw
@@ -6251,12 +6283,13 @@ ZI
 JQ
 JE
 Ym
+Eu
 "}
 (14,1,1) = {"
 kz
 Ek
 rM
-Cu
+GA
 WP
 jP
 pT
@@ -6282,12 +6315,13 @@ Uu
 NC
 jv
 Ym
+fW
 "}
 (15,1,1) = {"
 kz
 jc
 as
-ed
+Dd
 dp
 OT
 Vp
@@ -6313,6 +6347,7 @@ UC
 FW
 fs
 jX
+fW
 "}
 (16,1,1) = {"
 kz
@@ -6344,6 +6379,7 @@ QJ
 uQ
 tx
 tx
+fW
 "}
 (17,1,1) = {"
 hr
@@ -6374,6 +6410,7 @@ Nm
 cQ
 pq
 Xp
+fW
 fW
 "}
 (18,1,1) = {"
@@ -6406,6 +6443,7 @@ wG
 Uh
 Xp
 fW
+fW
 "}
 (19,1,1) = {"
 xE
@@ -6436,6 +6474,7 @@ Zw
 nv
 Mk
 Xp
+fW
 fW
 "}
 (20,1,1) = {"
@@ -6468,6 +6507,7 @@ wA
 ba
 Xp
 fW
+fW
 "}
 (21,1,1) = {"
 fW
@@ -6498,6 +6538,7 @@ TI
 AB
 XA
 Xp
+fW
 fW
 "}
 (22,1,1) = {"
@@ -6530,6 +6571,7 @@ AT
 ls
 Xp
 fW
+fW
 "}
 (23,1,1) = {"
 fW
@@ -6559,6 +6601,7 @@ js
 pf
 YT
 hJ
+fW
 fW
 fW
 "}
@@ -6592,6 +6635,7 @@ dy
 hJ
 fW
 fW
+fW
 "}
 (25,1,1) = {"
 fW
@@ -6621,6 +6665,7 @@ dy
 CH
 em
 ls
+fW
 fW
 fW
 "}
@@ -6654,6 +6699,7 @@ ls
 ls
 fW
 fW
+fW
 "}
 (27,1,1) = {"
 fW
@@ -6682,6 +6728,7 @@ QM
 ix
 Za
 ls
+fW
 fW
 fW
 fW
@@ -6716,6 +6763,7 @@ ls
 fW
 fW
 fW
+fW
 "}
 (29,1,1) = {"
 fW
@@ -6744,6 +6792,7 @@ Pk
 ix
 Wa
 ls
+fW
 fW
 fW
 fW
@@ -6778,6 +6827,7 @@ ls
 fW
 fW
 fW
+fW
 "}
 (31,1,1) = {"
 fW
@@ -6805,6 +6855,7 @@ nq
 HO
 tr
 ls
+fW
 fW
 fW
 fW
@@ -6840,6 +6891,7 @@ fW
 fW
 fW
 fW
+fW
 "}
 (33,1,1) = {"
 fW
@@ -6866,6 +6918,7 @@ Dp
 IB
 LA
 nq
+fW
 fW
 fW
 fW
@@ -6902,6 +6955,7 @@ fW
 fW
 fW
 fW
+fW
 "}
 (35,1,1) = {"
 fW
@@ -6927,6 +6981,7 @@ mM
 fG
 nq
 nq
+fW
 fW
 fW
 fW
@@ -6964,6 +7019,7 @@ fW
 fW
 fW
 fW
+fW
 "}
 (37,1,1) = {"
 fW
@@ -6987,6 +7043,7 @@ nq
 nq
 nq
 nq
+fW
 fW
 fW
 fW

@@ -21,14 +21,14 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/storage)
 "bl" = (
-/obj/machinery/door/poddoor/preopen{
-	id = "traumabridge";
-	name = "Window Blast Door";
-	dir = 4
+/obj/docking_port/stationary{
+	dwidth = 7;
+	width = 15;
+	height = 15;
+	dir = 2
 	},
-/obj/effect/spawner/structure/window/shuttle,
-/turf/open/floor/plating,
-/area/ship/bridge)
+/turf/template_noop,
+/area/template_noop)
 "bu" = (
 /obj/machinery/door/airlock/medical{
 	dir = 4;
@@ -1677,6 +1677,15 @@
 	},
 /turf/open/floor/vault,
 /area/ship/storage)
+"Ml" = (
+/obj/docking_port/stationary{
+	dwidth = 7;
+	width = 15;
+	height = 15;
+	dir = 8
+	},
+/turf/template_noop,
+/area/template_noop)
 "MK" = (
 /obj/effect/turf_decal/industrial/outline/red,
 /obj/structure/rack,
@@ -2540,7 +2549,7 @@ UG
 UG
 UG
 UG
-UG
+Ml
 UG
 UG
 UG
@@ -2556,6 +2565,7 @@ mP
 ZC
 ZC
 fp
+UG
 UG
 UG
 "}
@@ -2587,6 +2597,7 @@ Kh
 Ny
 Jn
 UG
+UG
 "}
 (3,1,1) = {"
 UG
@@ -2616,6 +2627,7 @@ Gm
 KD
 dR
 Jn
+UG
 "}
 (4,1,1) = {"
 UG
@@ -2645,6 +2657,7 @@ ZC
 ZC
 ZC
 fp
+UG
 "}
 (5,1,1) = {"
 UG
@@ -2667,10 +2680,11 @@ UG
 UG
 UG
 UG
-fp
+ZC
 ZC
 vr
 ZC
+UG
 UG
 UG
 UG
@@ -2703,10 +2717,11 @@ ZC
 fp
 UG
 UG
+UG
 "}
 (7,1,1) = {"
-bl
-bl
+Nn
+Nn
 uk
 UJ
 Nn
@@ -2732,6 +2747,7 @@ gL
 gL
 gL
 AJ
+UG
 "}
 (8,1,1) = {"
 bX
@@ -2761,6 +2777,7 @@ YI
 Ja
 Qp
 KW
+UG
 "}
 (9,1,1) = {"
 bX
@@ -2790,6 +2807,7 @@ xa
 eS
 cn
 gO
+UG
 "}
 (10,1,1) = {"
 bX
@@ -2819,6 +2837,7 @@ Bl
 Bl
 rh
 BN
+bl
 "}
 (11,1,1) = {"
 bX
@@ -2848,6 +2867,7 @@ IG
 eS
 cn
 TO
+UG
 "}
 (12,1,1) = {"
 bX
@@ -2877,10 +2897,11 @@ tT
 uW
 ZO
 KW
+UG
 "}
 (13,1,1) = {"
-bl
-bl
+Nn
+Nn
 zR
 Nq
 Nn
@@ -2906,6 +2927,7 @@ gL
 gL
 gL
 AJ
+UG
 "}
 (14,1,1) = {"
 UG
@@ -2935,6 +2957,7 @@ UO
 Ti
 UG
 UG
+UG
 "}
 (15,1,1) = {"
 UG
@@ -2961,6 +2984,7 @@ Ti
 UO
 OB
 UO
+UG
 UG
 UG
 UG
@@ -2993,6 +3017,7 @@ UO
 UO
 UO
 Ti
+UG
 "}
 (17,1,1) = {"
 UG
@@ -3022,6 +3047,7 @@ ir
 Hq
 VM
 Dj
+UG
 "}
 (18,1,1) = {"
 UG
@@ -3051,6 +3077,7 @@ QY
 Ob
 Dj
 UG
+UG
 "}
 (19,1,1) = {"
 UG
@@ -3078,6 +3105,7 @@ HU
 UO
 UO
 Ti
+UG
 UG
 UG
 "}

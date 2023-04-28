@@ -46,14 +46,9 @@
 	dir = 1
 	},
 /obj/structure/railing,
-/obj/item/radio/intercom/directional/east{
-	pixel_y = 7
-	},
 /obj/effect/landmark/start/captain,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/radio/intercom/wideband/directional/east{
-	pixel_y = -13
-	},
+/obj/item/radio/intercom/wideband/directional/east,
 /turf/open/floor/pod/light,
 /area/ship/bridge)
 "br" = (
@@ -447,6 +442,15 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security)
+"qh" = (
+/obj/docking_port/stationary{
+	dwidth = 4;
+	width = 9;
+	height = 15;
+	dir = 8
+	},
+/turf/template_noop,
+/area/template_noop)
 "qP" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
@@ -698,6 +702,16 @@
 	},
 /turf/open/floor/plating,
 /area/ship/crew)
+"vN" = (
+/obj/structure/grille,
+/obj/machinery/door/poddoor/shutters{
+	id = "pirateshutters";
+	name = "Blast Shutters";
+	dir = 4
+	},
+/obj/structure/window/plasma/reinforced/plastitanium,
+/turf/open/floor/plating,
+/area/ship/bridge)
 "vW" = (
 /obj/structure/table,
 /obj/machinery/microwave{
@@ -1990,7 +2004,7 @@ XJ
 XJ
 XJ
 XJ
-XJ
+qh
 XJ
 XJ
 XJ
@@ -2087,7 +2101,7 @@ FF
 Fx
 "}
 (8,1,1) = {"
-XB
+vN
 ad
 Bb
 ad
@@ -2168,7 +2182,7 @@ rc
 TP
 "}
 (11,1,1) = {"
-XB
+vN
 ad
 Bb
 ad

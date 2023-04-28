@@ -801,17 +801,14 @@
 /turf/open/floor/plasteel,
 /area/ship/crew)
 "bf" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/sign/poster/contraband/random{
-	pixel_x = 32
+/obj/docking_port/stationary{
+	dwidth = 7;
+	width = 15;
+	height = 15;
+	dir = 2
 	},
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/cryopod{
-	dir = 8
-	},
-/obj/machinery/computer/cryopod/retro/directional/north,
-/turf/open/floor/plasteel,
-/area/ship/crew)
+/turf/template_noop,
+/area/template_noop)
 "bg" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1248,11 +1245,9 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "bP" = (
-/obj/machinery/light/small/built{
-	dir = 4
-	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/vending/coffee,
+/obj/machinery/vending/cigarette,
+/obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/sign/poster/contraband/random{
 	pixel_x = 32
@@ -1267,7 +1262,7 @@
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
-/obj/machinery/computer/helm/viewscreen/directional/north,
+/obj/machinery/light/small/built/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "bQ" = (
@@ -1408,38 +1403,26 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "cd" = (
-/obj/structure/table,
-/obj/machinery/light/small/built{
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/vending/coffee,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/sign/poster/contraband/random{
+	pixel_x = 32
+	},
+/obj/effect/turf_decal/corner/transparent/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/item/paper_bin{
-	pixel_x = -4
-	},
-/obj/item/pen{
-	pixel_x = -4
-	},
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/obj/item/camera{
-	pixel_x = 12;
-	pixel_y = 6
-	},
-/obj/item/storage/photo_album{
-	pixel_x = 14
-	},
-/obj/item/spacecash/bundle/c1000{
-	pixel_x = 7
-	},
-/obj/item/spacecash/bundle/c1000{
-	pixel_x = 7
-	},
-/obj/item/spacecash/bundle/c1000{
-	pixel_x = 7
-	},
+/obj/machinery/computer/helm/viewscreen/directional/north,
+/obj/machinery/light/small/built/directional/east,
 /turf/open/floor/plasteel/dark,
-/area/ship/bridge)
+/area/ship/crew/canteen)
 "ce" = (
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1882,24 +1865,33 @@
 /area/ship/crew/canteen)
 "cD" = (
 /obj/structure/table,
-/obj/machinery/light/small/built{
-	dir = 8
-	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/gps{
-	gpstag = "NTREC1";
-	pixel_x = -9;
-	pixel_y = 7
+/obj/item/paper_bin{
+	pixel_x = -4
 	},
-/obj/item/radio/off{
-	pixel_x = 6;
-	pixel_y = 7
+/obj/item/pen{
+	pixel_x = -4
 	},
-/obj/item/megaphone{
-	pixel_x = -2;
-	pixel_y = -4
+/obj/structure/cable{
+	icon_state = "0-2"
 	},
-/obj/item/radio/intercom/wideband/directional/south,
+/obj/item/camera{
+	pixel_x = 12;
+	pixel_y = 6
+	},
+/obj/item/storage/photo_album{
+	pixel_x = 14
+	},
+/obj/item/spacecash/bundle/c1000{
+	pixel_x = 7
+	},
+/obj/item/spacecash/bundle/c1000{
+	pixel_x = 7
+	},
+/obj/item/spacecash/bundle/c1000{
+	pixel_x = 7
+	},
+/obj/machinery/light/small/built/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "cE" = (
@@ -1993,10 +1985,8 @@
 	pixel_x = -2;
 	pixel_y = 1
 	},
-/obj/machinery/computer/helm/viewscreen{
-	pixel_y = -30
-	},
 /obj/machinery/light/small/built/directional/east,
+/obj/machinery/computer/helm/viewscreen/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "cJ" = (
@@ -2078,28 +2068,25 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "cO" = (
-/obj/machinery/light/small/built{
-	dir = 4
-	},
+/obj/structure/table,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/vending/cigarette,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/sign/poster/contraband/random{
-	pixel_x = 32
+/obj/item/gps{
+	gpstag = "NTREC1";
+	pixel_x = -9;
+	pixel_y = 7
 	},
-/obj/effect/turf_decal/corner/transparent/neutral{
-	dir = 1
+/obj/item/radio/off{
+	pixel_x = 6;
+	pixel_y = 7
 	},
-/obj/effect/turf_decal/corner/transparent/neutral,
-/obj/effect/turf_decal/corner/transparent/neutral{
-	dir = 4
+/obj/item/megaphone{
+	pixel_x = -2;
+	pixel_y = -4
 	},
-/obj/effect/turf_decal/corner/transparent/neutral{
-	dir = 8
-	},
+/obj/item/radio/intercom/wideband/directional/south,
+/obj/machinery/light/small/built/directional/west,
 /turf/open/floor/plasteel/dark,
-/area/ship/crew/canteen)
+/area/ship/bridge)
 "cP" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3193,6 +3180,14 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ship/engineering)
+"qx" = (
+/obj/docking_port/stationary{
+	dwidth = 3;
+	width = 7;
+	height = 15
+	},
+/turf/template_noop,
+/area/template_noop)
 "qX" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable{
@@ -3416,6 +3411,20 @@
 /obj/machinery/door/firedoor/window,
 /turf/open/floor/plating,
 /area/ship/engineering)
+"Rw" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/sign/poster/contraband/random{
+	pixel_x = 32
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/cryopod{
+	dir = 8
+	},
+/obj/machinery/computer/cryopod/retro/directional/north{
+	pixel_y = 25
+	},
+/turf/open/floor/plasteel,
+/area/ship/crew)
 "Un" = (
 /obj/machinery/power/shuttle/engine/electric{
 	dir = 4
@@ -3441,6 +3450,7 @@
 
 (1,1,1) = {"
 aa
+aa
 ab
 ax
 aL
@@ -3457,8 +3467,10 @@ aL
 Un
 ab
 aa
+aa
 "}
 (2,1,1) = {"
+aa
 ab
 ac
 ay
@@ -3476,8 +3488,10 @@ tN
 fb
 ac
 ab
+aa
 "}
 (3,1,1) = {"
+aa
 ac
 ak
 az
@@ -3495,8 +3509,10 @@ dp
 dH
 dW
 ac
+aa
 "}
 (4,1,1) = {"
+aa
 ac
 al
 aA
@@ -3514,8 +3530,10 @@ el
 dI
 dX
 ac
+aa
 "}
 (5,1,1) = {"
+aa
 do
 ac
 aB
@@ -3533,8 +3551,10 @@ JR
 dJ
 ac
 do
+aa
 "}
 (6,1,1) = {"
+aa
 aa
 am
 aC
@@ -3552,8 +3572,10 @@ fX
 dK
 am
 aa
+aa
 "}
 (7,1,1) = {"
+aa
 aa
 YW
 YW
@@ -3571,8 +3593,10 @@ dt
 YW
 YW
 aa
+aa
 "}
 (8,1,1) = {"
+aa
 ad
 YW
 aD
@@ -3590,8 +3614,10 @@ qX
 dL
 YW
 ad
+aa
 "}
 (9,1,1) = {"
+aa
 ae
 ao
 aE
@@ -3609,8 +3635,10 @@ du
 bA
 dY
 eh
+aa
 "}
 (10,1,1) = {"
+aa
 ae
 ve
 zC
@@ -3628,8 +3656,10 @@ qX
 em
 bA
 ei
+aa
 "}
 (11,1,1) = {"
+qx
 af
 aq
 mb
@@ -3647,8 +3677,10 @@ dv
 tZ
 ap
 ei
+bf
 "}
 (12,1,1) = {"
+aa
 ae
 ar
 Xs
@@ -3666,8 +3698,10 @@ yh
 ap
 dZ
 eh
+aa
 "}
 (13,1,1) = {"
+aa
 af
 as
 hq
@@ -3685,8 +3719,10 @@ qX
 dM
 ea
 ei
+aa
 "}
 (14,1,1) = {"
+aa
 ad
 YW
 aG
@@ -3704,8 +3740,10 @@ yh
 dN
 YW
 ad
+aa
 "}
 (15,1,1) = {"
+aa
 aa
 YW
 YW
@@ -3723,8 +3761,10 @@ dw
 YW
 YW
 aa
+aa
 "}
 (16,1,1) = {"
+aa
 aa
 aj
 aH
@@ -3742,8 +3782,10 @@ dx
 dO
 eb
 aa
+aa
 "}
 (17,1,1) = {"
+aa
 do
 ai
 ai
@@ -3761,27 +3803,31 @@ dy
 bD
 bD
 do
+aa
 "}
 (18,1,1) = {"
+aa
 nK
 at
 aI
 aY
 bs
 bD
-bP
+cd
 cc
 cq
 cC
-cO
+bP
 bD
 di
 dz
 Nu
 ec
 ej
+aa
 "}
 (19,1,1) = {"
+aa
 ai
 ai
 ai
@@ -3799,8 +3845,10 @@ dA
 bD
 bD
 bD
+aa
 "}
 (20,1,1) = {"
+aa
 ai
 au
 ai
@@ -3808,9 +3856,9 @@ ba
 ai
 bF
 bQ
-cd
-cs
 cD
+cs
+cO
 bQ
 cU
 pQ
@@ -3818,8 +3866,10 @@ Bw
 uA
 ed
 bD
+aa
 "}
 (21,1,1) = {"
+aa
 aj
 av
 aJ
@@ -3837,8 +3887,10 @@ qn
 yo
 ee
 eb
+aa
 "}
 (22,1,1) = {"
+aa
 ai
 ai
 ai
@@ -3856,8 +3908,10 @@ dD
 dS
 bD
 bD
+aa
 "}
 (23,1,1) = {"
+aa
 aj
 aw
 aK
@@ -3875,8 +3929,10 @@ dE
 dT
 ef
 eb
+aa
 "}
 (24,1,1) = {"
+aa
 ai
 bV
 ai
@@ -3894,12 +3950,14 @@ dF
 dU
 eg
 bD
+aa
 "}
 (25,1,1) = {"
+aa
 ag
 ai
 ai
-bf
+Rw
 ai
 ag
 aa
@@ -3913,9 +3971,11 @@ dG
 dV
 bD
 cW
+aa
 "}
 (26,1,1) = {"
 aa
+aa
 do
 ai
 ai
@@ -3931,5 +3991,6 @@ do
 bD
 bD
 do
+aa
 aa
 "}

@@ -737,6 +737,15 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/central)
+"re" = (
+/obj/docking_port/stationary{
+	dwidth = 3;
+	width = 7;
+	height = 15;
+	dir = 2
+	},
+/turf/template_noop,
+/area/template_noop)
 "rh" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2139,7 +2148,7 @@ dq
 Ld
 iN
 Cr
-YQ
+re
 YQ
 "}
 (12,1,1) = {"
