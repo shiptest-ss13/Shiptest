@@ -8,7 +8,7 @@
 
 /obj/item/paper/fluff/shuttles/daniel
 	info = "i love daniel<br>daniel is my best friend<br><br>you are tearing me apart elise"
-	
+
 /obj/item/paper/fluff/jobs/prisoner/letter
 	name = "letter from home"
 	info = {"Dearest sweetheart,
