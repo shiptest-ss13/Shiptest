@@ -43,8 +43,8 @@
 	var/playing = FALSE
 	var/locked = FALSE
 	var/drop_dir = SOUTH
-	var/static/list/coin_values = list(/obj/item/coin/diamond = 100, /obj/item/coin/gold = 25, /obj/item/coin/silver = 10, /obj/item/coin/iron = 1) //Make sure this is ordered from left to right.
-	var/list/coins_to_dispense = list()
+	var/static/list/cash_values = list(/obj/item/spacecash/bundle/c100 = 100, /obj/item/spacecash/bundle/c50 = 50, /obj/item/spacecash/bundle/c10 = 10, /obj/item/spacecash/bundle/c1 = 1) //Make sure this is ordered from left to right.
+	var/list/bundles_to_dispense = list()
 	var/datum/looping_sound/jackpot/jackpot_loop
 	var/on = TRUE
 	var/last_spin = 13
@@ -221,8 +221,9 @@
 
 	dispense_prize(potential_payout)
 
-///Fills a list of coins that should be dropped.
+///Fills a list of bundles that should be dropped.
 /obj/machinery/roulette/proc/dispense_prize(payout)
+
 
 	if(payout >= ROULETTE_JACKPOT_AMOUNT)
 		jackpot_loop.start()
@@ -231,42 +232,42 @@
 
 	my_card.registered_account.adjust_money(-payout)
 
-	for(var/coin_type in coin_values) //Loop through all coins from most valuable to least valuable. Try to give as much of that coin (the iterable) as possible until you can't anymore, then move to the next.
-		var/value = coin_values[coin_type] //Change this to use initial value once we change to mat datum coins.
-		var/coin_count = round(remaining_payout / value)
+	for(var/cash_type in cash_values) //Loop through all bundles from most valuable to least valuable. Try to give as much of that bundle as possible until you can't anymore, then move to the next.
+		var/value = cash_values[cash_type] //Change this to use initial value once we change to the right bundle
+		var/cash_count = round(remaining_payout / value)
 
-		if(!coin_count) //Cant make coins of this type, as we can't reach it's value.
+		if(!cash_count) //Cant make bundles of this type, as we can't reach it's value.
 			continue
 
-		remaining_payout -= value * coin_count
-		coins_to_dispense[coin_type] += coin_count
+		remaining_payout -= value * cash_count
+		bundles_to_dispense[cash_type] += cash_count
 
-	drop_coin() //Start recursively dropping coins
+	drop_cash() //Start recursively dropping bundles
 
-///Recursive function that runs until it runs out of coins to drop.
-/obj/machinery/roulette/proc/drop_coin()
-	var/coin_to_drop
+///Recursive function that runs until it runs out of bundles to drop.
+/obj/machinery/roulette/proc/drop_cash()
+	var/bundle_to_drop
 
-	for(var/i in coins_to_dispense) //Find which coin to drop
-		if(coins_to_dispense[i] <= 0) //Less than 1? go to next potential coin.
+	for(var/i in bundles_to_dispense) //Find which bundle to drop
+		if(bundles_to_dispense[i] <= 0) //Less than 1? go to next potential bundle.
 			continue
-		coin_to_drop = i
+		bundle_to_drop = i
 		break
 
-	if(!coin_to_drop) //No more coins, stop recursion.
+	if(!bundle_to_drop) //No more bundles, stop recursion.
 		jackpot_loop.stop()
 		return FALSE
 
-	coins_to_dispense[coin_to_drop] -= 1
+	bundles_to_dispense[bundle_to_drop] -= 1
 
 	var/turf/drop_loc = get_step(loc, drop_dir)
-	var/obj/item/cash = new coin_to_drop(drop_loc)
+	var/obj/item/cash = new bundle_to_drop(drop_loc)
 	playsound(cash, pick(list('sound/machines/coindrop.ogg', 'sound/machines/coindrop2.ogg')), 40, TRUE)
 
-	addtimer(CALLBACK(src, .proc/drop_coin), 3) //Recursion time
+	addtimer(CALLBACK(src, .proc/drop_cash), 3) //Recursion time
 
 
-///Fills a list of coins that should be dropped.
+///Fills a list of bundles that should be dropped.
 /obj/machinery/roulette/proc/prize_theft(percentage)
 	if(locked)
 		return
