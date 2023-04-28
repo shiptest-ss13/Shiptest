@@ -770,6 +770,15 @@
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/starboard)
+"ig" = (
+/obj/docking_port/mobile{
+	dir = 2;
+	launch_status = 0;
+	port_direction = 8;
+	preferred_direction = 4
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/maintenance/port)
 "im" = (
 /obj/structure/dresser,
 /obj/machinery/light/directional/south,
@@ -4557,7 +4566,7 @@
 (1,1,1) = {"
 XJ
 XJ
-bo
+ig
 hQ
 oO
 hQ
