@@ -31,6 +31,7 @@ const ElevatorButtonsContent = (props, context) => {
     }
     rows[Math.floor(i / 3)][i % 3] = floors[i+1];
   }
+  rows.reverse(); // we want the array to start at the highest, with lowest at the bottom
 
   return (
     <Table>

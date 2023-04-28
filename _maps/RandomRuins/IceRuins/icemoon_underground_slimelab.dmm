@@ -397,12 +397,12 @@
 /obj/structure/table,
 /obj/effect/turf_decal/corner/opaque/purple/diagonal,
 /obj/item/clothing/glasses/science/prescription{
-	pixel_y = 9;
-	pixel_x = -6
+	pixel_x = -6;
+	pixel_y = 9
 	},
 /obj/item/storage/box/syringes{
-	pixel_y = 6;
-	pixel_x = 9
+	pixel_x = 9;
+	pixel_y = 6
 	},
 /obj/item/reagent_containers/dropper{
 	pixel_x = -4
@@ -499,21 +499,21 @@
 /obj/structure/window/reinforced,
 /obj/machinery/button/door{
 	dir = 1;
-	name = "Entrance Lockdown";
 	id = "iusent";
+	name = "Entrance Lockdown";
 	pixel_x = -5;
 	pixel_y = -4
 	},
 /obj/machinery/button/door{
 	dir = 1;
-	name = "Shutter Control";
 	id = "iusoffice";
+	name = "Shutter Control";
 	pixel_x = -5;
 	pixel_y = 6
 	},
 /obj/item/stamp{
-	pixel_y = 5;
-	pixel_x = 6
+	pixel_x = 6;
+	pixel_y = 5
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/powered/slimelab/checkpoint)
@@ -728,8 +728,8 @@
 /obj/item/storage/firstaid/fire,
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24;
-	pixel_x = -7
+	pixel_x = -7;
+	pixel_y = -24
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/powered/slimelab/lava)
@@ -797,8 +797,8 @@
 	},
 /obj/machinery/firealarm{
 	dir = 8;
-	pixel_y = 8;
-	pixel_x = 24
+	pixel_x = 24;
+	pixel_y = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/slimelab)
@@ -1114,11 +1114,11 @@
 "mb" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/machinery/button/door{
-	name = "Emergency Lava Shutters";
-	pixel_y = 24;
-	pixel_x = -5;
 	desc = "In the event of lava doing things it should not be doing. Press this button and run.";
-	id = "iuslava"
+	id = "iuslava";
+	name = "Emergency Lava Shutters";
+	pixel_x = -5;
+	pixel_y = 24
 	},
 /obj/machinery/power/terminal{
 	dir = 4
@@ -1216,9 +1216,10 @@
 /turf/open/floor/plasteel,
 /area/ruin/powered/slimelab/checkpoint)
 "mM" = (
-/obj/machinery/vending/hydroseeds,
 /obj/effect/turf_decal/industrial/outline/grey,
 /obj/effect/turf_decal/corner/opaque/green/mono,
+/obj/machinery/light/small,
+/obj/machinery/biogenerator/vault,
 /turf/open/floor/plasteel,
 /area/ruin/powered/slimelab/slimedome)
 "mO" = (
@@ -1478,8 +1479,8 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/sign/departments/engineering{
-	pixel_y = 1;
-	pixel_x = -32
+	pixel_x = -32;
+	pixel_y = 1
 	},
 /turf/open/floor/plasteel,
 /area/ruin/powered/slimelab)
@@ -1610,8 +1611,8 @@
 "ro" = (
 /obj/machinery/button/door{
 	dir = 1;
-	name = "Shutter Control";
 	id = "iuskill";
+	name = "Shutter Control";
 	pixel_x = 8;
 	pixel_y = -24
 	},
@@ -1689,8 +1690,8 @@
 	},
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24;
-	pixel_x = -6
+	pixel_x = -6;
+	pixel_y = -24
 	},
 /turf/open/floor/plasteel,
 /area/ruin/powered/slimelab)
@@ -2206,16 +2207,16 @@
 	},
 /obj/machinery/button/door{
 	dir = 8;
+	id = "iusmine";
 	name = "Mining Exit";
-	pixel_y = 6;
 	pixel_x = 24;
-	id = "iusmine"
+	pixel_y = 6
 	},
 /obj/machinery/button/shieldwallgen{
-	id = "iusmine";
 	dir = 8;
-	pixel_y = -5;
-	pixel_x = 25
+	id = "iusmine";
+	pixel_x = 25;
+	pixel_y = -5
 	},
 /turf/open/floor/plasteel,
 /area/ruin/powered/slimelab)
@@ -2592,9 +2593,9 @@
 /area/ruin/powered/slimelab/lab)
 "AO" = (
 /obj/item/kirbyplants{
+	desc = "Oh hello Reginald. Didn't see you there.";
 	icon_state = "plant-14";
-	name = "Reginald";
-	desc = "Oh hello Reginald. Didn't see you there."
+	name = "Reginald"
 	},
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/powered/slimelab/slimedome)
@@ -2911,8 +2912,8 @@
 	dir = 4
 	},
 /obj/machinery/firealarm{
-	pixel_y = 26;
-	pixel_x = 4
+	pixel_x = 4;
+	pixel_y = 26
 	},
 /turf/open/floor/plasteel,
 /area/ruin/powered/slimelab)
@@ -3082,11 +3083,9 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ruin/powered/slimelab/cafe)
 "GW" = (
-/obj/machinery/biogenerator,
-/obj/effect/turf_decal/industrial/outline/grey,
-/obj/effect/turf_decal/corner/opaque/green/mono,
-/obj/machinery/light/small,
-/turf/open/floor/plasteel,
+/obj/machinery/hydroponics/soil,
+/obj/item/seeds/watermelon,
+/turf/open/floor/plating/dirt/jungle,
 /area/ruin/powered/slimelab/slimedome)
 "Hd" = (
 /turf/open/floor/plating/dirt/jungle,
@@ -3097,8 +3096,8 @@
 	},
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -25;
-	pixel_x = -7
+	pixel_x = -7;
+	pixel_y = -25
 	},
 /turf/open/floor/wood,
 /area/ruin/powered/slimelab/cafe)
@@ -3353,8 +3352,8 @@
 	dir = 8
 	},
 /obj/machinery/firealarm{
-	pixel_y = 26;
-	pixel_x = 7
+	pixel_x = 7;
+	pixel_y = 26
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/powered/slimelab/checkpoint)
@@ -4212,16 +4211,16 @@
 	},
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -25;
-	pixel_x = -7
+	pixel_x = -7;
+	pixel_y = -25
 	},
 /turf/open/floor/plasteel,
 /area/ruin/powered/slimelab)
 "Sl" = (
 /obj/structure/closet/secure_closet/personal,
 /obj/machinery/firealarm{
-	pixel_y = 26;
-	pixel_x = -6
+	pixel_x = -6;
+	pixel_y = 26
 	},
 /turf/open/floor/carpet/blue,
 /area/ruin/powered/slimelab)
@@ -4292,11 +4291,11 @@
 /area/ruin/powered/slimelab/cafe)
 "Tf" = (
 /mob/living/simple_animal/hostile/asteroid/polarbear{
-	health = 1;
+	desc = "This poor bear looks far scrunklier than is healthy for a bear.";
 	healable = 0;
+	health = 1;
 	maxHealth = 1;
-	name = "scrunkly polar bear";
-	desc = "This poor bear looks far scrunklier than is healthy for a bear."
+	name = "scrunkly polar bear"
 	},
 /turf/open/floor/plating/dirt,
 /area/ruin/unpowered)
@@ -7180,7 +7179,7 @@ uh
 uh
 nx
 Zx
-Zx
+GW
 Gu
 rg
 Df
@@ -7242,7 +7241,7 @@ rg
 rg
 rg
 BI
-GW
+BI
 nx
 Fm
 TW

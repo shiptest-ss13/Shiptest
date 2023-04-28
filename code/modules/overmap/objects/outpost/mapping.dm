@@ -24,9 +24,14 @@ GLOBAL_LIST_EMPTY(outpost_landmarks)
 	/// Specifies the unique elevator shaft this landmark is associated with, for linking floor elevator machines to the correct shaft.
 	/// This is only used in the "main" outpost map, and is not required nor respected for hangar maps, as only one shaft is allowed.
 	/// Should be a string.
-	// DEBUG: is string restriction sensible? use or remove shaft_type
+	// DEBUG: is string restriction sensible?
 	var/shaft
 	var/shaft_type = ELEVATOR_SHAFT_NORMAL
+
+// DEBUG: add this, implement
+/obj/effect/landmark/outpost/elevator/admin_only
+	name = "outpost admin-controlled elevator landmark"
+	shaft_type = ELEVATOR_SHAFT_ADMIN
 
 /obj/effect/landmark/outpost/elevator_machine
 	name = "outpost elevator machine landmark"

@@ -26,11 +26,14 @@
 	// DEBUG: test radio message networking.
 	/// The mapzone used by the outpost level and hangars. Using a single mapzone means networked radio messages.
 	var/datum/map_zone/mapzone
-	// The "skin" used for the outpost's maps.
-	var/skin
 
 	/// Controls whether the outpost has a central + persistent area connected by elevators in hangars that crews can meet up in.
 	var/has_phys_level = TRUE
+	// The "skin" used for the outpost's hangars and elevator.
+	var/skin
+	// The map template used for the outpost. May be null if has_phys_level is false.
+	var/datum/map_template/outpost/template
+
 	// DEBUG: make sure this is supported correctly for has_phys_level = FALSE outposts
 	var/list/datum/hangar_shaft/shaft_datums = list()
 
@@ -42,16 +45,19 @@
 	var/list/datum/mission/missions
 	var/max_missions = 15
 
-/datum/overmap/outpost/Initialize(...)
+// DEBUG: document source_template arg
+/datum/overmap/outpost/Initialize(position, datum/map_template/outpost/source_template, ...)
 	. = ..()
 	Rename(gen_outpost_name())
 
-	// DEBUG: figure out a better solution here. being able to set the template imperatively could be useful for admins
-	var/template_name = pick(SSmapping.outpost_templates)
-	var/datum/map_template/outpost/skin_source = SSmapping.outpost_templates[template_name]
-	skin = initial(skin_source.skin)
+	if(!source_template)
+		var/template_name = pick(SSmapping.outpost_templates)
+		source_template = SSmapping.outpost_templates[template_name]
 
+	// DEBUG: doesn't support non-physical outposts using skins without full-blown templates
+	skin = source_template.skin
 	if(has_phys_level)
+		template = source_template
 		// DEBUG: what if somebody docks during load_main_level() CHECK_TICK?
 		load_main_level()
 	else
@@ -111,16 +117,8 @@
 
 
 /datum/overmap/outpost/proc/load_main_level()
-	var/datum/map_template/outpost/template
-	var/list/candidate_templates = list()
-	for(var/name as anything in SSmapping.outpost_templates)
-		var/datum/map_template/outpost/cand_template = SSmapping.outpost_templates[name]
-		if(cand_template.skin == skin)
-			candidate_templates += cand_template
-	template = pick(candidate_templates)
-
 	if(!template)
-		CRASH("[src] ([src.type]) could not find the outpost map for skin [skin]!")
+		CRASH("[src] ([src.type]) tried to load without a template!")
 
 	log_game("[src] [REF(src)] OUTPOST MAP LEVEL INIT")
 	log_shuttle("[src] [REF(src)] OUTPOST MAP LEVEL INIT")
@@ -150,16 +148,16 @@
 	if(!ele_template)
 		CRASH("[src] ([src.type]) could not find the elevator map [elevator_string]!")
 
-	// list of lists of turfs used to initialize the hangar shafts.
+	// assoc list of lists of landmarks in a shaft, starting with the main landmark.
 	var/list/list/shaft_lists = list()
 	for(var/obj/effect/landmark/outpost/elevator/ele_mark in GLOB.outpost_landmarks)
 		if(!vlevel.is_in_bounds(ele_mark))
 			continue
 		if(!istext(ele_mark.shaft)) // DEBUG: unnecessary check unless we use this name somewhere
 			stack_trace("Invalid shaft var [ele_mark.shaft] on [ele_mark] found when loading [template]!")
+			qdel(ele_mark)
 		else
-			shaft_lists[ele_mark.shaft] = list(get_turf(ele_mark))
-			qdel(ele_mark) // don't need it anymore.
+			shaft_lists[ele_mark.shaft] = list(ele_mark)
 
 	if(!shaft_lists.len)
 		stack_trace("No elevator shafts found while loading [template]! The map will be inaccessible!")
@@ -168,31 +166,36 @@
 	for(var/obj/effect/landmark/outpost/elevator_machine/mach_mark in GLOB.outpost_landmarks)
 		if(!vlevel.is_in_bounds(mach_mark))
 			continue
-		shaft_lists[mach_mark.shaft] += get_turf(mach_mark)
-		qdel(mach_mark) // we DON'T NEED IT
+		if(!(mach_mark.shaft in shaft_lists))
+			stack_trace("Invalid shaft var [mach_mark.shaft] on [mach_mark] found when loading [template]!")
+			qdel(mach_mark)
+		else
+			shaft_lists[mach_mark.shaft] += mach_mark
 
 	for(var/shaft_name in shaft_lists)
-		var/list/shaft_li = shaft_lists[shaft_name]
+		var/list/obj/shaft_li = shaft_lists[shaft_name]
+		var/obj/effect/landmark/outpost/elevator/anchor_landmark = shaft_li[1]
+		var/obj/structure/elevator_platform/plat
 
 		// load the template
-		ele_template.load(shaft_li[1])
+		ele_template.load(anchor_landmark.loc)
+		plat = locate() in anchor_landmark.loc
+		// create the shaft datum
+		shaft_datums += new /datum/hangar_shaft(shaft_name, anchor_landmark.shaft_type, plat.master_datum)
+
 		// find the call button and floor doors if they exist
 		var/obj/machinery/elevator_call_button/call_button
 		var/list/obj/machinery/door/floor_doors = list()
-		// look at the machine turfs, which are the turfs in the list after the first (anchor) turf
-		for(var/turf/mach_turf as anything in (shaft_li - shaft_li[1]))
+		// look at the machine marks again
+		for(var/obj/effect/landmark/outpost/elevator_machine/mach_mark as anything in (shaft_li - anchor_landmark))
 			if(!call_button)
-				call_button = locate() in mach_turf
-			var/obj/machinery/door/floor_door = locate() in mach_turf
+				call_button = locate() in mach_mark.loc
+			var/obj/machinery/door/floor_door = locate() in mach_mark.loc
 			if(floor_door)
 				floor_doors += floor_door
 
-		var/obj/structure/elevator_platform/plat = locate(/obj/structure/elevator_platform) in shaft_li[1]
-		var/datum/elevator_master/ele_master = plat.master_datum
-		ele_master.add_floor(shaft_li[1], call_button, floor_doors)
-
-		// and now we finally create the hangar shaft itself
-		shaft_datums += new /datum/hangar_shaft(shaft_name, ele_master)
+		plat.master_datum.add_floor(anchor_landmark.loc, call_button, floor_doors)
+		QDEL_LIST(shaft_li) // don't need them anymore
 
 /datum/overmap/outpost/pre_docked(datum/overmap/ship/controlled/dock_requester)
 	var/datum/hangar/hangar_to_use = null
@@ -201,64 +204,59 @@
 	if(!dock_size)
 		return FALSE
 
+	hangar_to_use = ensure_hangar(dock_size, ELEVATOR_SHAFT_NORMAL)
+
+	if(!hangar_to_use)
+		stack_trace(
+			"Outpost [src] (type [src.type], skin [skin]) unable to create a hangar for ship " +\
+			"[dock_requester] (template [dock_requester.source_template], size [dock_size[1]]x[dock_size[2]])!"
+		)
+		return FALSE
+
+	landing_in_progress_docks += hangar_to_use.dock
+	adjust_dock_to_shuttle(hangar_to_use.dock, dock_requester.shuttle_port)
+	return new /datum/docking_ticket(hangar_to_use.dock, src, dock_requester)
+
+/datum/overmap/outpost/proc/ensure_hangar(list/size, shaft_type)
+	. = null
 	// DEBUG: devolve this behavior? data structure datums in byond are kinda dumb
 	for(var/datum/hangar_shaft/h_shaft as anything in shaft_datums)
+		if(h_shaft.shaft_type != shaft_type)
+			continue
 		for(var/datum/hangar/h_datum as anything in h_shaft.hangars)
 			var/obj/docking_port/stationary/dock = h_datum.dock
 			// i'm so fucking sorry
 			// a dock + undock cycle might flip the dock's height + width due to dock adjustment,
 			// so we need to check both orderings to make sure they match
 			if( \
-				!(dock in landing_in_progress_docks) && !dock.get_docked() && \
+				!(dock in landing_in_progress_docks) && !dock.docked && \
 				( \
-					(dock.width == dock_size[1] && dock.height == dock_size[2]) || \
-					(dock.height == dock_size[1] && dock.width == dock_size[2]) \
+					(dock.width == size[1] && dock.height == size[2]) || \
+					(dock.height == size[1] && dock.width == size[2]) \
 				) \
 			)
-				hangar_to_use = h_datum
+				. = h_datum
 				break
-		if(hangar_to_use)
+		if(.)
 			break
 
 	// we didn't find a valid hangar, so we have to make one
-	if(!hangar_to_use)
-		// just pick a random shaft to add on to
-		var/datum/hangar_shaft/h_shaft = pick(shaft_datums)
+	if(!.)
+		var/datum/hangar_shaft/chosen_shaft
+		// pick a random shaft to add on to. shuffle() returns a copy so we're not modifying the list
+		for(var/datum/hangar_shaft/shaft as anything in shuffle(shaft_datums))
+			if(shaft.shaft_type == shaft_type)
+				chosen_shaft = shaft
+				break
+
 		// DEBUG: what if somebody docks during make_hangar() CHECK_TICK?
-		var/datum/hangar/new_hangar = make_hangar(dock_size, h_shaft)
-		hangar_to_use = new_hangar
-
-	// at this point there should definitely be a hangar. hopefully
-
-	landing_in_progress_docks += hangar_to_use.dock
-	adjust_dock_to_shuttle(hangar_to_use.dock, dock_requester.shuttle_port)
-	return new /datum/docking_ticket(hangar_to_use.dock, src, dock_requester)
-
-	// DEBUG: remove old code
-	// // look for a preexisting hangar
-	// for(var/obj/docking_port/stationary/dock as anything in reserve_docks)
-	// 	if(dock.width == dock_size[1] && dock.height == dock_size[2] && !dock.get_docked())
-	// 		dock_to_use = dock
-	// 		break
-
-	// // no fitting dock, so generate one
-	// if(!dock_to_use)
-	// 	dock_to_use = make_hangar(dock_requester.shuttle_port)
-	// 	// DEBUG: is this check necessary? hangar making should only fail because too large. better for it to fucking scream than hide an error.
-	// 	// DEBUG: BUT it might be nice to report back to the player that something is wrong
-	// 	if(!dock_to_use)
-	// 		return FALSE
-	// 	// DEBUG: roll += in to make_hangar? consider SGT CAUSING CODE. if somebody docks before this ship has finished docking they will also dock with it.
-	// 	// DEBUG: also make sure there is an announcement of WHAT hangar + shaft people are docking to, to make finding their way back easier
-	// 	reserve_docks += dock_to_use
-
-	// adjust_dock_to_shuttle(dock_to_use, dock_requester.shuttle_port)
-	// return new /datum/docking_ticket(dock_to_use, src, dock_requester)
+		var/datum/hangar/new_hangar = make_hangar(size, chosen_shaft)
+		. = new_hangar
 
 // DEBUG: send an announcement or radio message saying "you've docked to hangar SHAFT-NUM" for immersion + so that people can look back in their chatlog if they forget
 /datum/overmap/outpost/post_docked(datum/overmap/ship/controlled/dock_requester)
 	// removes the stationary dock from the list, so that we don't have to worry about it causing merge SGTs
-	landing_in_progress_docks -= dock_requester.shuttle_port.get_docked()
+	landing_in_progress_docks -= dock_requester.shuttle_port.docked
 
 	for(var/mob/M as anything in GLOB.player_list)
 		if(dock_requester.shuttle_port.is_in_shuttle_bounds(M))
@@ -272,7 +270,6 @@
 	return
 
 /datum/overmap/outpost/proc/make_hangar(list/size_list, datum/hangar_shaft/shaft)
-	var/hangar_num = length(shaft.hangars)+1
 	var/map_string = "hangar_[skin]_[size_list[1]]x[size_list[2]]"
 	var/datum/map_template/hangar/hangar_template = SSmapping.hangar_templates[map_string]
 	if(!hangar_template)
@@ -283,10 +280,9 @@
 	log_shuttle("[src] [REF(src)] OUTPOST HANGAR INIT")
 
 	ensure_mapzone()
-	var/hangar_name = "\improper [src.name] Hangar [shaft.name]-[hangar_num]"
 	// DEBUG: "planetary" outposts should use baseturf specification and possibly different ztrait sun type
 	var/datum/virtual_level/vlevel = SSmapping.create_virtual_level(
-		hangar_name,
+		"[src.name] Loading Hangar", // we actually need to change this later; we can't number the hangar if we CHECK_TICK before we add the hangar to the list
 		list(
 			// DEBUG: review ZTRAIT_STATION; use here likely to cause problems due to its use as a flag for "safe" area teleportation fallback?
 			// ZTRAIT_STATION = TRUE,
@@ -313,7 +309,6 @@
 
 	var/obj/docking_port/stationary/hangar_dock = new(dock_turf)
 	hangar_dock.dir = NORTH
-	hangar_dock.name = hangar_name
 	hangar_dock.width = size_list[1] // hangar ports are wider than they are tall -- size list is in descending order, so it checks out
 	hangar_dock.height = size_list[2]
 
@@ -352,6 +347,12 @@
 		shaft.shaft_elevator.add_floor(anchor_turf, call_button, floor_doors)
 	var/datum/hangar/new_hangar = new /datum/hangar(hangar_dock)
 	shaft.hangars += new_hangar
+
+	// we do these AFTER adding to the list, so that multiple hangars added simultaneously don't assume the same number
+	var/hangar_num = length(shaft.hangars)
+	var/hangar_name = "[src.name] Hangar [shaft.name]-[hangar_num]"
+	hangar_dock.name = hangar_name
+	vlevel.name = hangar_name
 
 	return new_hangar
 

@@ -1,0 +1,82 @@
+2023-04-02:
+  spockye:
+  - bugfix: fixed Cryo Area sprite
+2023-04-03:
+  MrSamu99:
+  - refactor: legs now have the same path as the TG legs
+  - refactor: refactored leg render code
+2023-04-04:
+  thgvr:
+  - bugfix: Light lizard snouts won't mess up glasses
+2023-04-05:
+  Apogee-dev:
+  - tweak: Gecko-class Salvage Runner now has holofields and an improved airlock
+  spockye:
+  - tweak: Switched out the Stun batons on the corvus, with the loaded subtype
+  - rscadd: Added a new Rock ruin, rockplanet_budgetcuts
+2023-04-07:
+  The-Moon-Itself:
+  - rscadd: Subships are now possible
+  - code_imp: Lots of large changes to ship code
+2023-04-08:
+  Bjarl:
+  - bugfix: the Shetland can be spawned again
+  - bugfix: windows on the shetland should avoid causing random space wind.
+  - bugfix: The glaive no longer has planetary atmos
+  - bugfix: the glaive's tree is re-subtyped.
+  - rscadd: An oddly empty town has been spotted on beach planets in the area. Check
+      it out spacers.
+  - rscadd: Random donut spawners, never eat the same donut two days in a row!
+  - rscadd: Camp_Saloon has been expanded, expect frontier luxuries if you find it!
+2023-04-10:
+  MemedHams:
+  - tweak: adds mapping icons to spacecash.
+  - tweak: makes it clear that the debug cash object should never appear.
+  - bugfix: the credit50 sprite should now appear as intended.
+  The-Moon-Itself:
+  - tweak: Stationary ports and docked subships loaded by a ship mapload will follow
+      that ship even if it is in space.
+  antropod:
+  - bugfix: Plumbing machines do not stop working when ship is moving
+  meemofcourse:
+  - rscadd: Mothroaches are now a thing
+  - rscadd: Moth laughter, chittering and squeaking
+  thgvr:
+  - soundadd: Adds *hiss and *weh for Sarathi.
+  - imageadd: Resprited ship keys
+  - balance: Giant spiders should not be horrendously strong anymore
+2023-04-11:
+  thgvr:
+  - imageadd: New fauna sprites by Sheets
+2023-04-12:
+  SapphicOverload:
+  - rscadd: adds robot wings for IPCs
+  - tweak: flight potion can be processed by IPCs
+  tmtmtl30:
+  - bugfix: Some SGTs should hopefully be less likely / impactful.
+2023-04-13:
+  Bjarl:
+  - rscadd: An abandoned Nanotrasen Asteroid Facility has been spotted in the area.
+      Salvage teams are advised to steer clear, or at least bring a knife.
+  - rscadd: kudzu zombie subtype.
+  - bugfix: vent iconstates.
+  FeenieRU:
+  - bugfix: transfer vote now has option "Initiate Bluespace Jump" instead of "Initiate
+      Crew Transfer"
+2023-04-16:
+  Apogee-dev:
+  - bugfix: mastiff shotgun on Colossus now accepts bulldog drum magazines
+  MarkSuckerberg:
+  - rscadd: A new system for ship flight, where you only point a direction and set
+      the throttle to change your speed, reducing the need for spam-clicking.
+  - bugfix: There's now a maximum and minimum speed, 600spm and 0.01spm, respectively.
+      The limits have been broken all this time.
+  spockye:
+  - bugfix: fixed the drum45's sprite
+  - bugfix: fixed wooden flooring on the corvus
+  - bugfix: Re-Adds the CMM floor decal
+  - bugfix: fixed wooden flooring on the asclepius
+  - bugfix: fixed the CMM coat spritepath
+2023-04-17:
+  Bjarl:
+  - rscdel: Goodbye Wright, Prague, Midway, Goon, and Tartarus!

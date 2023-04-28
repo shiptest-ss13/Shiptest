@@ -144,6 +144,7 @@ GLOBAL_PROTECT(admin_verbs_server)
 	/client/proc/cmd_admin_delete,		/*delete an instance/object/mob/etc*/
 	/client/proc/cmd_debug_del_all,
 	/client/proc/toggle_random_events,
+	/client/proc/set_next_outpost,
 	/client/proc/panicbunker,
 	/client/proc/toggle_interviews,
 	/client/proc/toggle_hub,

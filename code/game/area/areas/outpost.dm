@@ -213,7 +213,6 @@
 	icon_state = "hangar"
 
 	area_flags = UNIQUE_AREA | NOTELEPORT // DEBUG: consider making nonunique? HIDDEN_AREA?
-	// DEBUG: does this still cause audio popping?
 	sound_environment = SOUND_AREA_LARGE_ENCLOSED
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 	has_gravity = STANDARD_GRAVITY

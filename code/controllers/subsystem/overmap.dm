@@ -183,8 +183,22 @@ SUBSYSTEM_DEF(overmap)
  * Creates a single outpost somewhere near the center of the system.
  */
 /datum/controller/subsystem/overmap/proc/spawn_outpost()
-	var/list/S = get_unused_overmap_square_in_radius(rand(3, round(size/5)))
-	new /datum/overmap/outpost(S)
+	var/list/location = get_unused_overmap_square_in_radius(rand(3, round(size/5)))
+
+	var/datum/map_template/outpost/found_template = null
+	if(fexists(OUTPOST_OVERRIDE_FILEPATH))
+		var/list/override_list = safe_json_decode(file2text(OUTPOST_OVERRIDE_FILEPATH))
+		if(!override_list)
+			stack_trace("SSovermap found an outpost override file at [OUTPOST_OVERRIDE_FILEPATH], but was unable to parse it!")
+		else
+			var/template_name = override_list["outpost_name"]
+			found_template = SSmapping.outpost_templates[template_name]
+			if(!istype(found_template))
+				stack_trace("SSovermap found an outpost override file at [OUTPOST_OVERRIDE_FILEPATH], but was unable to find the template for [template_name]!")
+				found_template = null
+		fdel(OUTPOST_OVERRIDE_FILEPATH) // don't want it to affect 2 rounds in a row.
+
+	new /datum/overmap/outpost(location, found_template)
 	return
 
 /datum/controller/subsystem/overmap/proc/spawn_initial_ships()
@@ -375,6 +389,12 @@ SUBSYSTEM_DEF(overmap)
  * * source - The object you want to get the corresponding parent overmap object for.
  */
 /datum/controller/subsystem/overmap/proc/get_overmap_object_by_location(atom/source)
+	var/turf/T = get_turf(source)
+	var/area/ship/A = get_area(source)
+	while(istype(A) && A.mobile_port)
+		if(A.mobile_port.current_ship)
+			return A.mobile_port.current_ship
+		A = A.mobile_port.underlying_turf_area[T]
 	for(var/O in overmap_objects)
 		if(istype(O, /datum/overmap/dynamic))
 			var/datum/overmap/dynamic/D = O
