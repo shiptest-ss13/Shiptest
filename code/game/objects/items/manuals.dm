@@ -239,6 +239,42 @@
 			</body>
 			</html>"}
 
+/obj/item/book/manual/trickwines_4_brewers
+	name = "Trickwines for brewers"
+	icon_state = "book2"
+	author = "Baxter Baxter"
+	title = "Trickwines for brewers"
+	dat = {"<html>
+			<head>
+			<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+			<style>
+			h1 {font-size: 18px; margin: 15px 0px 5px;}
+			h2 {font-size: 15px; margin: 15px 0px 5px;}
+			li {margin: 2px 0px 2px 15px;}
+			ul {list-style: none; margin: 5px; padding: 0px;}
+			ol {margin: 5px; padding: 0px 15px;}
+			</style>
+			</head>
+			<body>
+			<h3>Trickwines for idiots</h3>
+			Ok so you just joined the srm and you want to make some brews! Im to tired of explaining all of this so im jotting it all down for you clowns.<br>
+			Trickwines almost all share the same effect. When you drink them it provides a benifical effect and when you toss them at someone it provides some sort of bad effect.
+			<h2> Breakaway flasks</h2>
+			Honestly i love these things, im not a scientist so i cant exactly explain this but somehow when you fuse plasma into glass it makes it ultra sharp and makes it really good for cracking over fauna heads.<br>
+			The simplest way i have found of making them is crafting them with a chunk of glass, plasma, and a welder.<br>
+			I should not trickwines dont seem to form without flasks. I think its something about the plasma reacting with it though<br>
+
+			<h2> Ashwine </h2>
+			Its kind of our trademark and its one of the simplist one to make. The montages love using this stuff in cerimonies as well so it should get you some good boy points<br>
+			Its made with 3:1:1 absinthe, mushroom hallucinogen, ash<br>
+
+
+			Baxter Baxter, Seinor Brewer<br>
+			Now please stop asking how the uranium got into those flasks
+
+			</body>
+			</html>"}
+
 // Wiki books that are linked to the configured wiki link.
 
 // A book that links to the wiki

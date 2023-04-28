@@ -8,31 +8,7 @@
 
 /obj/item/paper/fluff/shuttles/daniel
 	info = "i love daniel<br>daniel is my best friend<br><br>you are tearing me apart elise"
-
-/obj/item/paper/fluff/trickwines_4_brewers
-	name = "trickwine 4 brewers";
-	info = {"trickwine 4 brewers
-	<br>### Breakaway Flasks
-	<br>The primary container for trickwines as all wines currently only can be made inside of one.
-	<br>Normal bottles do not splash targets when thrown, so breakaway flasks allow you hit the target with bonus damage from the glass shattering violently on the target.
-	<br>They can be created with 5 glass and 1 plasma sheet which is more expensive then most containers
-
-	<br><br>### Ashwine
-	<br>The primary trick wine produced by the SRM, as it is used in its religious practices.
-	<br>On drink: A mild hallucinegenic effect which boosts mood
-	<br>On throw: A potent hallucigenic which causes screen shake, on a simplemob it should stun/paralyze
-	<br>Crafting: 3:1:1 absinthe, mushroom hallucinogen, ash
-
-	<br><br>### Icewine
-	<br>On drink: a mild downer which gives a small burn heal and cools you down
-	<br>On throw: severely lowers body tempature similar to cryo blasts or ice landmines which should slow and freeze the target
-	<br>Crafting 3:1:1 saké, polar bear fur(grind polar bear hide for 20u), frost oil(grind chilled peppers)
-
-	<br><br>### Shockwine
-	<br>On drink: a upper which provides a small speed boost to run speed
-	<br>On throw: a electrion effect the tesla arc which possbily arcs to other mobs (including you)
-	<br>Crafting: vodka(10 potato juice 5 enyzme), calcium(grind bones), lemon juice"}
-
+	
 /obj/item/paper/fluff/jobs/prisoner/letter
 	name = "letter from home"
 	info = {"Dearest sweetheart,

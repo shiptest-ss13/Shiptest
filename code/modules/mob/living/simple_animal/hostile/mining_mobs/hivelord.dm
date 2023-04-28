@@ -585,12 +585,16 @@
 			backpack_contents = list(/obj/item/reagent_containers/glass/beaker/unholywater = 1, /obj/item/cult_shift = 1, /obj/item/flashlight/flare/culttorch = 1, /obj/item/stack/sheet/runed_metal = 15)
 		if("SRM")
 			uniform = /obj/item/clothing/under/suit/roumain
-			suit = /obj/item/clothing/suit/armor/roumain/shadow
-			if(prob(25))
-				suit_store = /obj/item/gun/ballistic/rifle/boltaction/roumain
-			head = /obj/item/clothing/head/cowboy/sec/roumain/shadow
 			shoes = /obj/item/clothing/shoes/workboots/mining
-			r_pocket = /obj/item/paper/fluff/trickwines_4_brewers
+			if(prob(50))
+				suit = /obj/item/clothing/suit/armor/roumain/shadow
+				head = /obj/item/clothing/head/cowboy/sec/roumain/shadow
+			else
+				suit = /obj/item/clothing/suit/armor/roumain
+				head = /obj/item/clothing/head/cowboy/sec/roumain
+			if(prob(25))
+				suit_store = /obj/item/gun/ballistic/shotgun/winchester/lethal
+			r_pocket = /obj/item/book/manual/trickwines_4_brewers
 			belt = pick(list(/obj/item/kitchen/knife/hunting = 1, /obj/item/gun/ballistic/derringer = 1))
 			back = /obj/item/storage/backpack/cultpack
 			backpack_contents = list()
