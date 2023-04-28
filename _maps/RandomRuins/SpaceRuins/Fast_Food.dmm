@@ -396,7 +396,9 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/powered/macspace)
 "aO" = (
-/obj/machinery/door/airlock/freezer,
+/obj/machinery/door/airlock/freezer{
+	dir = 4
+	},
 /obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},

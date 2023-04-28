@@ -203,7 +203,8 @@
 "df" = (
 /obj/machinery/door/airlock/atmos{
 	name = "Atmospherics";
-	req_access_txt = "200"
+	req_access_txt = "200";
+	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -321,7 +322,8 @@
 /area/ruin/powered/slimelab/lab)
 "eg" = (
 /obj/machinery/door/airlock{
-	name = "Janitor's Closet"
+	name = "Janitor's Closet";
+	dir = 4
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -690,9 +692,12 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "iusoffice"
+	id = "iusoffice";
+	dir = 4
 	},
-/obj/machinery/door/airlock/public/glass,
+/obj/machinery/door/airlock/public/glass{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/slimelab/checkpoint)
 "ja" = (
@@ -1774,7 +1779,8 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock{
-	name = "Restroom"
+	name = "Restroom";
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/slimelab)
@@ -2418,7 +2424,8 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/public/glass{
-	name = "Biodome"
+	name = "Biodome";
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/slimelab/slimedome)
@@ -2503,6 +2510,9 @@
 "AN" = (
 /obj/machinery/holopad/emergency/command,
 /obj/machinery/light/directional/west,
+/obj/item/radio/intercom/directional/south{
+	pixel_y = -37
+	},
 /turf/open/floor/plasteel/white,
 /area/ruin/powered/slimelab/checkpoint)
 "Ba" = (
@@ -2525,7 +2535,8 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/public/glass{
-	name = "Biodome"
+	name = "Biodome";
+	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -2735,9 +2746,12 @@
 /turf/open/floor/plating/dirt/jungle/dark,
 /area/ruin/powered/slimelab/slimedome)
 "Dg" = (
-/obj/machinery/door/airlock/external/glass,
+/obj/machinery/door/airlock/external/glass{
+	dir = 8
+	},
 /obj/machinery/door/poddoor/preopen{
-	id = "iusent"
+	id = "iusent";
+	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -2790,7 +2804,8 @@
 /obj/structure/barricade/wooden/crude,
 /obj/machinery/door/airlock/research{
 	name = "Xenobiological Lab";
-	req_access_txt = "55"
+	req_access_txt = "55";
+	dir = 4
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -2835,7 +2850,8 @@
 /area/ruin/powered/slimelab/cafe)
 "EB" = (
 /obj/machinery/door/poddoor/preopen{
-	id = "iuslava"
+	id = "iuslava";
+	dir = 4
 	},
 /obj/structure/window/plasma/reinforced/fulltile,
 /obj/structure/grille,
@@ -3159,7 +3175,8 @@
 	},
 /obj/machinery/door/airlock/research{
 	name = "Xenobiological Lab";
-	req_access_txt = "55"
+	req_access_txt = "55";
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/slimelab/lab)
@@ -3181,9 +3198,12 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "iusoffice"
+	id = "iusoffice";
+	dir = 4
 	},
-/obj/machinery/door/airlock/public/glass,
+/obj/machinery/door/airlock/public/glass{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/slimelab/checkpoint)
 "Jp" = (
@@ -3480,8 +3500,6 @@
 "Md" = (
 /obj/structure/table/glass,
 /obj/structure/window/reinforced,
-/obj/item/radio/intercom/directional/south,
-/obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/white,
 /area/ruin/powered/slimelab/checkpoint)
 "Mg" = (
@@ -3523,6 +3541,16 @@
 	},
 /turf/open/lava/smooth,
 /area/ruin/powered/slimelab/lava)
+"MM" = (
+/obj/machinery/door/airlock/external/glass{
+	dir = 8
+	},
+/obj/machinery/door/poddoor/preopen{
+	id = "iusent";
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ruin/powered/slimelab/checkpoint)
 "MZ" = (
 /obj/structure/table,
 /obj/effect/turf_decal/corner/opaque/purple/diagonal,
@@ -4017,7 +4045,8 @@
 "RP" = (
 /obj/machinery/door/airlock/engineering{
 	name = "Engineering";
-	req_access_txt = "200"
+	req_access_txt = "200";
+	dir = 4
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
@@ -4073,9 +4102,12 @@
 /turf/open/floor/plating,
 /area/ruin/powered/slimelab/checkpoint)
 "Sj" = (
-/obj/machinery/door/airlock/external/glass,
+/obj/machinery/door/airlock/external/glass{
+	dir = 4
+	},
 /obj/machinery/door/poddoor/preopen{
-	id = "iusent"
+	id = "iusent";
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ruin/powered/slimelab/checkpoint)
@@ -4369,7 +4401,7 @@
 /obj/structure/table/glass,
 /obj/machinery/door/window/brigdoor,
 /obj/machinery/door/firedoor/border_only,
-/obj/item/radio/intercom/wideband/directional/south,
+/obj/item/radio/intercom/wideband/table,
 /turf/open/floor/plasteel/white,
 /area/ruin/powered/slimelab/checkpoint)
 "VV" = (
@@ -4688,7 +4720,8 @@
 "ZM" = (
 /obj/machinery/door/airlock/engineering{
 	name = "Lava Pit";
-	req_access_txt = "200"
+	req_access_txt = "200";
+	dir = 4
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -4700,7 +4733,8 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/poddoor/preopen{
-	id = "iuslava"
+	id = "iuslava";
+	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -5526,7 +5560,7 @@ Em
 Em
 Em
 Em
-Sj
+MM
 Em
 Dg
 Em

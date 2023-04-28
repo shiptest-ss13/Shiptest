@@ -226,7 +226,9 @@
 /obj/structure/cable{
 	icon_state = "4-9"
 	},
-/obj/machinery/door/airlock/external/glass,
+/obj/machinery/door/airlock/external/glass{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ruin/beach/piratecrash/shuttle)
 "gn" = (
@@ -332,7 +334,9 @@
 /turf/open/floor/plating/rust,
 /area/ruin/beach/piratecrash/shuttle)
 "ih" = (
-/obj/machinery/door/airlock/external/glass,
+/obj/machinery/door/airlock/external/glass{
+	dir = 4
+	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -429,9 +433,11 @@
 /turf/open/floor/plating/asteroid/sand/lit,
 /area/ruin/unpowered)
 "lb" = (
-/obj/structure/mineral_door/wood,
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/wood{
+	dir = 4
 	},
 /turf/open/floor/wood,
 /area/ruin/beach/piratecrash)
@@ -1116,7 +1122,7 @@
 /turf/open/water/beach,
 /area/ruin/unpowered)
 "Hq" = (
-/obj/structure/mineral_door/wood,
+/obj/machinery/door/airlock/wood,
 /turf/open/floor/wood,
 /area/ruin/beach/piratecrash)
 "Hu" = (
@@ -1371,7 +1377,9 @@
 /obj/structure/cable{
 	icon_state = "5-8"
 	},
-/obj/machinery/door/airlock/external/glass,
+/obj/machinery/door/airlock/external/glass{
+	dir = 4
+	},
 /obj/structure/cable{
 	icon_state = "4-10"
 	},

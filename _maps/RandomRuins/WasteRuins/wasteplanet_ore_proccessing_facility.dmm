@@ -168,6 +168,13 @@
 	smoothing_groups = null
 	},
 /area/ruin/powered)
+"lC" = (
+/obj/machinery/door/airlock/mining{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/airlock/locked,
+/turf/open/floor/plating/rust,
+/area/ruin/powered)
 "lW" = (
 /obj/structure/flora/rock/pile,
 /turf/open/floor/plating/asteroid/wasteplanet,
@@ -486,9 +493,6 @@
 /obj/machinery/door/airlock/mining,
 /obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/plating/rust,
-/area/ruin/powered)
-"GO" = (
-/turf/closed/indestructible/fakedoor,
 /area/ruin/powered)
 "Hr" = (
 /obj/machinery/conveyor/auto{
@@ -942,7 +946,7 @@ rx
 rx
 rx
 rx
-Gv
+lC
 rx
 rx
 rx
@@ -1105,7 +1109,7 @@ rx
 rx
 rx
 rx
-Gv
+lC
 rx
 rx
 qk
@@ -1443,7 +1447,7 @@ bE
 bE
 bE
 bE
-GO
+bE
 bE
 MX
 bE

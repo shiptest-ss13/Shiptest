@@ -464,7 +464,9 @@
 /obj/machinery/door/firedoor/border_only/closed{
 	dir = 8
 	},
-/obj/machinery/door/airlock/public/glass,
+/obj/machinery/door/airlock/public/glass{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/onehalf)
 "bo" = (
@@ -484,7 +486,9 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/machinery/door/airlock/maintenance_hatch,
+/obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4
+	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
@@ -564,7 +568,9 @@
 /obj/machinery/door/firedoor/border_only/closed{
 	dir = 8
 	},
-/obj/machinery/door/airlock/public/glass,
+/obj/machinery/door/airlock/public/glass{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/onehalf)
 "bD" = (
@@ -683,11 +689,12 @@
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/onehalf)
 "bZ" = (
+/obj/structure/grille,
 /obj/machinery/door/poddoor/preopen{
 	id = "bridge_onehalf";
-	name = "Bridge Blast Door"
+	name = "Bridge Blast Door";
+	dir = 4
 	},
-/obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/onehalf)
@@ -743,12 +750,13 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/machinery/door/poddoor/preopen{
-	id = "bridge_onehalf";
-	name = "Bridge Blast Door"
-	},
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
+/obj/machinery/door/poddoor/preopen{
+	id = "bridge_onehalf";
+	name = "Bridge Blast Door";
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/onehalf)
 "cl" = (
@@ -797,12 +805,13 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/machinery/door/poddoor/preopen{
-	id = "bridge_onehalf";
-	name = "Bridge Blast Door"
-	},
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
+/obj/machinery/door/poddoor/preopen{
+	id = "bridge_onehalf";
+	name = "Bridge Blast Door";
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/onehalf)
 "cr" = (
@@ -843,12 +852,13 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/machinery/door/poddoor/preopen{
-	id = "bridge_onehalf";
-	name = "Bridge Blast Door"
-	},
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
+/obj/machinery/door/poddoor/preopen{
+	id = "bridge_onehalf";
+	name = "Bridge Blast Door";
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/onehalf)
 "cA" = (
@@ -873,7 +883,8 @@
 "cC" = (
 /obj/machinery/door/poddoor/preopen{
 	id = "bridge_onehalf";
-	name = "Bridge Blast Door"
+	name = "Bridge Blast Door";
+	dir = 4
 	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 8
@@ -885,7 +896,8 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/command/glass{
-	name = "Bridge"
+	name = "Bridge";
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/onehalf)
@@ -974,12 +986,13 @@
 	icon_state = "0-4"
 	},
 /obj/structure/cable,
-/obj/machinery/door/poddoor/preopen{
-	id = "bridge_onehalf";
-	name = "Bridge Blast Door"
-	},
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
+/obj/machinery/door/poddoor/preopen{
+	id = "bridge_onehalf";
+	name = "Bridge Blast Door";
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/onehalf)
 "cW" = (
@@ -1662,6 +1675,16 @@
 	icon_state = "1-8"
 	},
 /turf/open/floor/plasteel,
+/area/ruin/space/has_grav/onehalf)
+"BA" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile,
+/obj/machinery/door/poddoor/preopen{
+	id = "bridge_onehalf";
+	name = "Bridge Blast Door";
+	dir = 4
+	},
+/turf/open/floor/plating,
 /area/ruin/space/has_grav/onehalf)
 "BD" = (
 /obj/item/stack/sheet/runed_metal,
@@ -3118,12 +3141,12 @@ Mc
 Gf
 JF
 bU
-bZ
+BA
 ck
 bU
 cC
 bU
-bZ
+BA
 bZ
 bU
 aW

@@ -66,11 +66,11 @@
 /area/ruin/powered)
 "pI" = (
 /mob/living/simple_animal/hostile/cat_butcherer{
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0);
+	atmos_requirements = list("min_oxy"=0,"max_oxy"=0,"min_tox"=0,"max_tox"=0,"min_co2"=0,"max_co2"=0,"min_n2"=0,"max_n2"=0);
 	desc = "A profession carp butcher, gone mad due to carptoxin exposure. There seems to be something in their pocket...";
-	faction = list("hostile", "beach");
+	faction = list("hostile","beach");
 	health = 300;
-	loot = list(/obj/effect/mob_spawn/human/corpse/cat_butcher, /obj/item/guardiancreator/carp);
+	loot = list(/obj/effect/mob_spawn/human/corpse/cat_butcher,/obj/item/guardiancreator/carp);
 	maxHealth = 300;
 	maxbodytemp = 10000;
 	melee_damage_lower = 20;
@@ -97,7 +97,7 @@
 "tX" = (
 /obj/machinery/porta_turret/syndicate/energy{
 	active_power_usage = 0;
-	faction = list("turret", "beach");
+	faction = list("turret","beach");
 	idle_power_usage = 0;
 	reqpower = 0
 	},
@@ -155,7 +155,9 @@
 /turf/open/floor/wood,
 /area/ruin/powered)
 "Eq" = (
-/obj/machinery/door/airlock/wood/glass,
+/obj/machinery/door/airlock/wood/glass{
+	dir = 4
+	},
 /turf/open/floor/wood,
 /area/ruin/powered)
 "FG" = (

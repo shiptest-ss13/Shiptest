@@ -443,7 +443,8 @@
 /area/ruin/space/has_grav/astraeus/dorms_med)
 "ms" = (
 /obj/structure/door_assembly/door_assembly_com{
-	anchored = 1
+	anchored = 1;
+	dir = 8
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -808,7 +809,8 @@
 /area/ruin/space/has_grav/astraeus/munitions)
 "wF" = (
 /obj/machinery/door/airlock/command{
-	name = "Bridge"
+	name = "Bridge";
+	dir = 8
 	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 8
@@ -963,7 +965,8 @@
 /area/ruin/space/has_grav/astraeus/disposals)
 "AE" = (
 /obj/machinery/door/airlock/command{
-	name = "Bridge"
+	name = "Bridge";
+	dir = 8
 	},
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/astraeus/bridge)
@@ -1308,7 +1311,8 @@
 /area/ruin/space/has_grav/astraeus/munitions)
 "Jx" = (
 /obj/machinery/door/airlock/command{
-	name = "Bridge"
+	name = "Bridge";
+	dir = 4
 	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 4
@@ -1819,7 +1823,8 @@
 /area/ruin/unpowered)
 "Xm" = (
 /obj/structure/door_assembly/door_assembly_com{
-	anchored = 1
+	anchored = 1;
+	dir = 4
 	},
 /obj/structure/cable{
 	icon_state = "4-8"

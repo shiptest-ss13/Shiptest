@@ -147,7 +147,8 @@
 /area/ruin/space/has_grav/corporatemine/hall)
 "eV" = (
 /obj/machinery/door/airlock/alarmlock{
-	name = "Cargo"
+	name = "Cargo";
+	dir = 4
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -159,7 +160,8 @@
 /area/ruin/space/has_grav/corporatemine/hall)
 "fa" = (
 /obj/machinery/door/airlock/command{
-	name = "Bridge"
+	name = "Bridge";
+	dir = 4
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -677,7 +679,8 @@
 /area/ruin/space/has_grav/corporatemine/hall)
 "qu" = (
 /obj/machinery/door/airlock/wood/glass{
-	name = "Corporate's Office"
+	name = "Corporate's Office";
+	dir = 4
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -1341,7 +1344,8 @@
 /area/ruin/space/has_grav/corporatemine/hall)
 "Dz" = (
 /obj/machinery/door/airlock/engineering{
-	name = "Solar Control"
+	name = "Solar Control";
+	dir = 4
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1473,7 +1477,8 @@
 /area/ruin/space)
 "Gc" = (
 /obj/machinery/door/airlock/grunge{
-	name = "Bathroom"
+	name = "Bathroom";
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/corporatemine/crewquarters)
@@ -1498,7 +1503,8 @@
 "GV" = (
 /obj/effect/decal/cleanable/oil/slippery,
 /obj/machinery/door/airlock/alarmlock{
-	name = "Cargo"
+	name = "Cargo";
+	dir = 8
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4

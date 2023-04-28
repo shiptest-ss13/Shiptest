@@ -11,7 +11,8 @@
 /area/ruin/powered/beach)
 "ao" = (
 /obj/machinery/door/airlock/public/glass{
-	name = "Resort Lobby"
+	name = "Resort Lobby";
+	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
@@ -43,7 +44,9 @@
 /turf/open/floor/plating/beach/sand,
 /area/ruin/powered/beach)
 "aB" = (
-/obj/structure/mineral_door/wood,
+/obj/machinery/door/airlock/wood{
+	dir = 4
+	},
 /turf/open/floor/wood,
 /area/ruin/powered/beach)
 "aC" = (
@@ -317,7 +320,8 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/machinery/door/airlock/public/glass{
-	name = "Resort Casino"
+	name = "Resort Casino";
+	dir = 4
 	},
 /turf/open/floor/wood,
 /area/ruin/powered/beach)
@@ -344,7 +348,8 @@
 /area/ruin/powered/beach)
 "gT" = (
 /obj/machinery/door/airlock/sandstone{
-	name = "Surfer Shack 2"
+	name = "Surfer Shack 2";
+	dir = 4
 	},
 /turf/open/floor/wood,
 /area/ruin/powered/beach)
@@ -383,7 +388,8 @@
 /area/ruin/powered/beach)
 "hF" = (
 /obj/machinery/door/airlock/sandstone{
-	name = "Resort Bathroom"
+	name = "Resort Bathroom";
+	dir = 8
 	},
 /turf/open/floor/wood,
 /area/ruin/powered/beach)
@@ -448,7 +454,8 @@
 /area/ruin/powered/beach)
 "li" = (
 /obj/machinery/door/airlock/sandstone{
-	name = "Bar Access"
+	name = "Bar Access";
+	dir = 8
 	},
 /turf/open/floor/wood,
 /area/ruin/powered/beach)
@@ -835,6 +842,12 @@
 	name = "Chicken Joe"
 	},
 /turf/open/floor/plating/beach/coastline_t,
+/area/ruin/powered/beach)
+"BC" = (
+/obj/machinery/door/airlock/external{
+	dir = 4
+	},
+/turf/open/floor/plating,
 /area/ruin/powered/beach)
 "BE" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
@@ -1294,7 +1307,8 @@
 /area/ruin/powered/beach)
 "Sn" = (
 /obj/machinery/door/airlock/maintenance{
-	name = "Supply Room"
+	name = "Supply Room";
+	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
@@ -1307,8 +1321,8 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 8
 	},
-/obj/structure/mineral_door/wood{
-	name = "Croupier's Booth"
+/obj/machinery/door/airlock/wood{
+	dir = 4
 	},
 /turf/open/floor/wood,
 /area/ruin/powered/beach)
@@ -1590,8 +1604,8 @@ aa
 aa
 aa
 aj
-gs
-gs
+BC
+BC
 aj
 aj
 aa

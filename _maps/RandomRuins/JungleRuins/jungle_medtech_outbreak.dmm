@@ -391,7 +391,8 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/public{
-	name = "Administrative office"
+	name = "Administrative office";
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway)
@@ -444,7 +445,8 @@
 	name = "High Security Chem-lab #1"
 	},
 /obj/machinery/door/poddoor{
-	id = "lablock1"
+	id = "lablock1";
+	dir = 4
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/science)
@@ -665,10 +667,12 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/virology{
-	name = "High Security Chem-lab #2"
+	name = "High Security Chem-lab #2";
+	dir = 4
 	},
 /obj/machinery/door/poddoor/preopen{
-	id = "lablock2"
+	id = "lablock2";
+	dir = 8
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -894,6 +898,14 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/hallway)
+"oi" = (
+/obj/machinery/door/poddoor/shutters{
+	id = "chemdoors";
+	name = "MedTech Chemical Manufacturing Facility Shutters";
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ship/science/storage)
 "om" = (
 /obj/item/shard{
 	icon_state = "tiny"
@@ -1265,7 +1277,8 @@
 "uS" = (
 /obj/machinery/door/poddoor/shutters{
 	id = "chemdoors";
-	name = "MedTech Chemical Manufacturing Facility Shutters"
+	name = "MedTech Chemical Manufacturing Facility Shutters";
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/science/storage)
@@ -1588,7 +1601,8 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/research{
-	name = "Administrative office"
+	name = "Administrative office";
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/science)
@@ -1795,7 +1809,8 @@
 /area/ship/crew/office)
 "CV" = (
 /obj/machinery/door/airlock/research{
-	name = "Chemical Factory"
+	name = "Chemical Factory";
+	dir = 4
 	},
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 8
@@ -1889,7 +1904,8 @@
 /area/ruin/jungle)
 "Ei" = (
 /obj/machinery/door/airlock/research{
-	name = "Chemical Factory"
+	name = "Chemical Factory";
+	dir = 4
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/science/storage)
@@ -2008,7 +2024,8 @@
 "GY" = (
 /obj/effect/decal/cleanable/blood/splatter,
 /obj/machinery/door/airlock/public/glass{
-	name = "Patio"
+	name = "Patio";
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office)
@@ -2295,7 +2312,8 @@
 /area/ship/science/storage)
 "KE" = (
 /obj/machinery/door/airlock/public{
-	name = "Administrative office"
+	name = "Administrative office";
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway)
@@ -3103,10 +3121,12 @@
 	dir = 6
 	},
 /obj/machinery/door/airlock/virology{
-	name = "High Security Chem-lab #2"
+	name = "High Security Chem-lab #2";
+	dir = 4
 	},
 /obj/machinery/door/poddoor/preopen{
-	id = "lablock2"
+	id = "lablock2";
+	dir = 4
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -3128,7 +3148,8 @@
 	dir = 9
 	},
 /obj/machinery/door/poddoor{
-	id = "lablock1"
+	id = "lablock1";
+	dir = 4
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/science)
@@ -3179,7 +3200,8 @@
 /area/ruin/jungle)
 "Wo" = (
 /obj/machinery/door/airlock/research{
-	name = "Administrative office"
+	name = "Administrative office";
+	dir = 4
 	},
 /obj/effect/turf_decal/corner/opaque/mauve{
 	dir = 5
@@ -3277,7 +3299,8 @@
 /area/ship/medical)
 "XO" = (
 /obj/machinery/door/airlock/public{
-	name = "MedTech Chemical Manufacturing Facility"
+	name = "MedTech Chemical Manufacturing Facility";
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway)
@@ -3585,7 +3608,7 @@ tY
 tY
 tY
 tY
-uS
+oi
 uS
 uS
 tY

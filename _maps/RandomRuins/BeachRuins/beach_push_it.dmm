@@ -61,7 +61,7 @@
 /turf/open/floor/plasteel/vaporwave,
 /area/ruin/powered)
 "kf" = (
-/obj/structure/mineral_door/wood,
+/obj/machinery/door/airlock/wood,
 /turf/open/floor/carpet/royalblue,
 /area/ruin/powered)
 "kR" = (
@@ -85,6 +85,12 @@
 "nS" = (
 /obj/structure/chair/sofa/right{
 	dir = 8
+	},
+/turf/open/floor/carpet/royalblue,
+/area/ruin/powered)
+"op" = (
+/obj/machinery/door/airlock/wood{
+	dir = 4
 	},
 /turf/open/floor/carpet/royalblue,
 /area/ruin/powered)
@@ -222,7 +228,7 @@
 /turf/open/floor/plastic,
 /area/ruin/powered)
 "FB" = (
-/obj/structure/mineral_door/wood,
+/obj/machinery/door/airlock/wood,
 /turf/open/floor/carpet/blue,
 /area/ruin/powered)
 "GK" = (
@@ -336,7 +342,9 @@
 /turf/open/floor/plastic,
 /area/ruin/powered)
 "TO" = (
-/obj/structure/mineral_door/wood,
+/obj/machinery/door/airlock/wood{
+	dir = 4
+	},
 /turf/open/floor/carpet/cyan,
 /area/ruin/powered)
 "TP" = (
@@ -379,6 +387,10 @@
 "YD" = (
 /obj/item/surgicaldrill,
 /turf/open/floor/light,
+/area/ruin/powered)
+"YP" = (
+/obj/machinery/door/airlock/wood,
+/turf/open/floor/carpet/cyan,
 /area/ruin/powered)
 "YV" = (
 /obj/machinery/hydroponics,
@@ -544,7 +556,7 @@ Vb
 RS
 RS
 RS
-kf
+op
 RS
 RS
 RS
@@ -733,7 +745,7 @@ Fn
 RS
 "}
 (15,1,1) = {"
-TO
+YP
 Px
 mf
 sn
@@ -928,7 +940,7 @@ RS
 RS
 RS
 RS
-kf
+op
 RS
 RS
 RS

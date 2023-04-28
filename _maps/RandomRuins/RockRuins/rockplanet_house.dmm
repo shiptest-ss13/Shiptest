@@ -3,7 +3,9 @@
 /turf/closed/wall/rust,
 /area/ruin/unpowered)
 "g" = (
-/obj/machinery/door/airlock/wood,
+/obj/machinery/door/airlock/wood{
+	dir = 4
+	},
 /obj/structure/barricade/wooden,
 /turf/open/floor/wood,
 /area/ruin/unpowered)

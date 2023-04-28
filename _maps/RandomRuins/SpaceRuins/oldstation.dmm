@@ -1395,7 +1395,8 @@
 	name = "Beta Station Access"
 	},
 /obj/machinery/door/poddoor{
-	id = "ancient"
+	id = "ancient";
+	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/firedoor/border_only{
@@ -1942,7 +1943,9 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/betacorridor)
 "eU" = (
-/obj/machinery/door/airlock/command,
+/obj/machinery/door/airlock/command{
+	dir = 4
+	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -1971,7 +1974,8 @@
 	name = "Beta Station Access"
 	},
 /obj/machinery/door/poddoor{
-	id = "ancient"
+	id = "ancient";
+	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -2100,10 +2104,12 @@
 "fl" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/airlock/command{
-	name = "Delta Station Access"
+	name = "Delta Station Access";
+	dir = 4
 	},
 /obj/machinery/door/poddoor{
-	id = "ancient"
+	id = "ancient";
+	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/firedoor/border_only{
@@ -2127,7 +2133,8 @@
 /obj/structure/barricade/wooden,
 /obj/machinery/door/airlock/command{
 	name = "Charlie Station Access";
-	req_access_txt = "200"
+	req_access_txt = "200";
+	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/firedoor/border_only{
@@ -2265,7 +2272,9 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/engi)
 "fG" = (
-/obj/machinery/door/airlock/science,
+/obj/machinery/door/airlock/science{
+	dir = 4
+	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/firedoor/border_only{
@@ -2375,7 +2384,9 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/ancientstation)
 "fS" = (
-/obj/machinery/door/airlock/maintenance_hatch,
+/obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4
+	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -2470,7 +2481,9 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/deltacorridor)
 "gd" = (
-/obj/machinery/door/airlock/science,
+/obj/machinery/door/airlock/science{
+	dir = 4
+	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -2582,7 +2595,9 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/deltacorridor)
 "go" = (
-/obj/machinery/door/airlock/science,
+/obj/machinery/door/airlock/science{
+	dir = 4
+	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -2684,7 +2699,6 @@
 /area/ruin/space/has_grav/ancientstation/betacorridor)
 "gy" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/airlock/command,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -2701,6 +2715,9 @@
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
+	},
+/obj/machinery/door/airlock/command{
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/betacorridor)
@@ -3075,7 +3092,8 @@
 "ho" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/airlock/public/glass{
-	name = "Hydroponics"
+	name = "Hydroponics";
+	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/firedoor/border_only{
@@ -4201,10 +4219,8 @@
 /area/ruin/space/has_grav/ancientstation)
 "jp" = (
 /obj/machinery/door/airlock/engineering{
-	name = "Engineering"
-	},
-/obj/machinery/door/poddoor{
-	id = "ancient"
+	name = "Engineering";
+	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/firedoor/border_only{
@@ -4212,6 +4228,10 @@
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
+	},
+/obj/machinery/door/poddoor{
+	id = "ancient";
+	dir = 8
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/engi)
@@ -4234,15 +4254,18 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/engi)
 "jr" = (
-/obj/machinery/door/airlock/security,
-/obj/machinery/door/poddoor{
-	id = "ancient"
+/obj/machinery/door/airlock/security{
+	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
 /obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/poddoor{
+	id = "ancient";
 	dir = 8
 	},
 /turf/open/floor/plasteel,
@@ -4421,10 +4444,11 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/ancientstation)
 "jN" = (
-/obj/machinery/door/poddoor{
-	id = "proto"
-	},
 /obj/machinery/door/window/eastleft,
+/obj/machinery/door/poddoor{
+	id = "proto";
+	dir = 4
+	},
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/ancientstation/proto)
 "jO" = (
@@ -4469,7 +4493,8 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/external{
-	name = "Engineering External Access"
+	name = "Engineering External Access";
+	dir = 8
 	},
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -4533,7 +4558,8 @@
 	dir = 8
 	},
 /obj/machinery/door/airlock/external{
-	name = "Engineering External Access"
+	name = "Engineering External Access";
+	dir = 4
 	},
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -4557,7 +4583,8 @@
 /area/ruin/space/has_grav/ancientstation/proto)
 "ke" = (
 /obj/machinery/door/poddoor{
-	id = "proto"
+	id = "proto";
+	dir = 4
 	},
 /obj/machinery/door/window/westright,
 /turf/open/floor/plasteel/white,
@@ -4710,7 +4737,8 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor{
-	id = "proto"
+	id = "proto";
+	dir = 4
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/ancientstation/proto)
@@ -4737,7 +4765,8 @@
 	dir = 8
 	},
 /obj/machinery/door/poddoor{
-	id = "proto"
+	id = "proto";
+	dir = 4
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/ancientstation/proto)
@@ -4837,14 +4866,15 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/obj/machinery/door/poddoor{
-	id = "ancient"
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/machinery/door/poddoor{
+	id = "ancient";
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/ancientstation/engi)
@@ -4953,7 +4983,9 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/ancientstation/proto)
 "kV" = (
-/obj/machinery/door/airlock/maintenance_hatch,
+/obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4
+	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -4990,7 +5022,9 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/atmo)
 "kY" = (
-/obj/machinery/door/airlock/maintenance_hatch,
+/obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4
+	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -5104,9 +5138,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/obj/machinery/door/poddoor{
-	id = "ancient"
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
@@ -5115,6 +5146,10 @@
 	},
 /obj/structure/cable{
 	icon_state = "0-8"
+	},
+/obj/machinery/door/poddoor{
+	id = "ancient";
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/ancientstation/sec)
@@ -5336,17 +5371,19 @@
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/ancientstation/betastorage)
 "lO" = (
-/obj/machinery/door/poddoor{
-	id = "proto"
-	},
 /obj/machinery/door/window/eastright,
+/obj/machinery/door/poddoor{
+	id = "proto";
+	dir = 4
+	},
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/ancientstation/proto)
 "lP" = (
-/obj/machinery/door/poddoor{
-	id = "proto"
-	},
 /obj/machinery/door/window/westleft,
+/obj/machinery/door/poddoor{
+	id = "proto";
+	dir = 4
+	},
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/ancientstation/proto)
 "lQ" = (
@@ -5436,7 +5473,9 @@
 /area/ruin/space/has_grav/ancientstation/deltacorridor)
 "lY" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/airlock/maintenance_hatch,
+/obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4
+	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -5522,7 +5561,8 @@
 /area/ruin/space/has_grav/ancientstation/deltacorridor)
 "mi" = (
 /obj/machinery/door/airlock/maintenance_hatch{
-	name = "Engineering Storage"
+	name = "Engineering Storage";
+	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/firedoor/border_only{
@@ -5646,7 +5686,8 @@
 /area/ruin/space/has_grav/ancientstation/medbay)
 "mw" = (
 /obj/machinery/door/airlock/medical/glass{
-	name = "Medical Bay"
+	name = "Medical Bay";
+	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
@@ -6343,7 +6384,8 @@
 "nR" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/airlock/public/glass{
-	name = "Dining Area"
+	name = "Dining Area";
+	dir = 4
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -6647,13 +6689,6 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/ancientstation/atmo)
-"ow" = (
-/obj/machinery/light/small/directional/east,
-/obj/machinery/light_switch{
-	pixel_x = 26
-	},
-/turf/open/floor/plating/airless,
-/area/ruin/space/has_grav/ancientstation/betastorage)
 "ox" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
@@ -6665,7 +6700,8 @@
 "oy" = (
 /obj/machinery/door/airlock/medical/glass{
 	name = "Chemical Storage";
-	req_access_txt = "200"
+	req_access_txt = "200";
+	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -6772,7 +6808,8 @@
 /area/ruin/space/has_grav/ancientstation/deltacorridor)
 "oL" = (
 /obj/machinery/door/airlock/atmos/glass{
-	name = "Station Atmospherics"
+	name = "Station Atmospherics";
+	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/firedoor/border_only{
@@ -6885,6 +6922,9 @@
 /area/ruin/space/has_grav/ancientstation/betastorage)
 "oW" = (
 /obj/structure/closet/firecloset,
+/obj/machinery/light_switch{
+	pixel_x = 26
+	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/ancientstation/betastorage)
 "oX" = (
@@ -6949,10 +6989,12 @@
 "pc" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/airlock/command{
-	name = "Delta Station Access"
+	name = "Delta Station Access";
+	dir = 4
 	},
 /obj/machinery/door/poddoor{
-	id = "ancient"
+	id = "ancient";
+	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -7256,7 +7298,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/airlock/command{
 	name = "Charlie Station Access";
-	req_access_txt = "200"
+	req_access_txt = "200";
+	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -7284,7 +7327,9 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/deltacorridor)
 "pH" = (
-/obj/machinery/door/airlock/science,
+/obj/machinery/door/airlock/science{
+	dir = 4
+	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -7372,7 +7417,9 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/kitchen)
 "pN" = (
-/obj/machinery/door/airlock/science,
+/obj/machinery/door/airlock/science{
+	dir = 4
+	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -7394,7 +7441,9 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/deltacorridor)
 "pO" = (
-/obj/machinery/door/airlock/maintenance_hatch,
+/obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4
+	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -7426,9 +7475,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/obj/machinery/door/airlock/atmos/glass{
-	name = "Station Atmospherics"
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -7436,6 +7482,10 @@
 	dir = 8
 	},
 /obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/airlock/atmos/glass{
+	name = "Station Atmospherics";
 	dir = 4
 	},
 /turf/open/floor/plasteel,
@@ -7479,7 +7529,8 @@
 /area/ruin/space/has_grav/ancientstation/atmo)
 "pU" = (
 /obj/machinery/door/airlock/engineering{
-	name = "Backup Generator Room"
+	name = "Backup Generator Room";
+	dir = 4
 	},
 /obj/structure/cable{
 	icon_state = "0-4"
@@ -7513,7 +7564,9 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/deltacorridor)
 "pX" = (
-/obj/machinery/door/airlock/science,
+/obj/machinery/door/airlock/science{
+	dir = 4
+	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/firedoor/border_only{
@@ -7889,7 +7942,9 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/airlock/maintenance_hatch,
+/obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4
+	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -7958,6 +8013,20 @@
 /obj/machinery/firealarm/directional/west,
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/ancientstation/proto)
+"rs" = (
+/obj/machinery/door/airlock/science{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation/deltacorridor)
 "sy" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -8117,6 +8186,21 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/atmo)
+"Ah" = (
+/obj/machinery/door/airlock/science{
+	pixel_y = 0;
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation/deltacorridor)
 "AF" = (
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plating,
@@ -8783,8 +8867,8 @@ gK
 aa
 aa
 cD
-br
-br
+lh
+lh
 cD
 oC
 kQ
@@ -8833,8 +8917,8 @@ aa
 cD
 cD
 lh
-fU
-br
+lh
+lh
 nk
 nl
 nt
@@ -8865,7 +8949,7 @@ aa
 aa
 aa
 cD
-br
+fU
 dX
 ec
 ez
@@ -8931,8 +9015,8 @@ gK
 dF
 gK
 gK
-dw
-dw
+lh
+lh
 nk
 oL
 pQ
@@ -9111,7 +9195,7 @@ aa
 cD
 az
 fU
-cD
+fU
 ec
 eU
 gy
@@ -9158,9 +9242,9 @@ aa
 aa
 aa
 aa
-dw
-dw
-dw
+lh
+lh
+lh
 ec
 eT
 gN
@@ -9269,7 +9353,7 @@ mm
 mT
 mf
 nD
-ow
+mm
 oW
 jQ
 dF
@@ -11907,7 +11991,7 @@ ac
 gK
 gK
 bE
-fG
+Ah
 gd
 eY
 eY
@@ -12446,7 +12530,7 @@ ag
 ac
 gK
 bE
-fG
+rs
 go
 dy
 eY

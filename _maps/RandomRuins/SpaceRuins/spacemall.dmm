@@ -1250,7 +1250,8 @@
 /area/ruin/space/has_grav/spacemall/maint)
 "eF" = (
 /obj/machinery/door/airlock{
-	name = "Dorm 6"
+	name = "Dorm 6";
+	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
@@ -1495,7 +1496,8 @@
 /area/ruin/space/has_grav/spacemall/shop2)
 "fs" = (
 /obj/machinery/door/airlock/glass{
-	name = "Kitchen"
+	name = "Kitchen";
+	dir = 4
 	},
 /obj/effect/turf_decal/corner/transparent/black/diagonal,
 /obj/structure/cable{
@@ -1668,7 +1670,8 @@
 /area/ruin/space/has_grav/spacemall)
 "gp" = (
 /obj/machinery/door/airlock/public/glass{
-	name = "Liquor Store"
+	name = "Liquor Store";
+	dir = 4
 	},
 /turf/open/floor/wood/walnut,
 /area/ruin/space/has_grav/spacemall/shop)
@@ -2020,7 +2023,9 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/dorms)
 "hH" = (
-/obj/machinery/door/airlock/maintenance,
+/obj/machinery/door/airlock/maintenance{
+	dir = 4
+	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -2248,7 +2253,8 @@
 	pixel_x = -4
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "shutters_kitchen"
+	id = "shutters_kitchen";
+	dir = 4
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -2309,7 +2315,9 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shop)
 "iS" = (
-/obj/machinery/door/airlock/maintenance_hatch,
+/obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4
+	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -3366,7 +3374,6 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 1
 	},
-/obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shop)
 "mT" = (
@@ -3820,7 +3827,8 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "shutters_kitchen"
+	id = "shutters_kitchen";
+	dir = 4
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/spacemall/dorms)
@@ -3894,7 +3902,8 @@
 "oK" = (
 /obj/machinery/door/airlock/maintenance_hatch{
 	locked = 1;
-	name = "Clothing Store"
+	name = "Clothing Store";
+	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
@@ -5255,7 +5264,8 @@
 /area/ruin/space/has_grav/spacemall)
 "tr" = (
 /obj/machinery/door/airlock{
-	name = "Dorm 8"
+	name = "Dorm 8";
+	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
@@ -5836,7 +5846,8 @@
 /obj/machinery/door/airlock{
 	locked = 1;
 	id_tag = "staffdoors";
-	name = "Staff Area"
+	name = "Staff Area";
+	dir = 4
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -6472,7 +6483,8 @@
 /area/ruin/space/has_grav/spacemall/shop)
 "yb" = (
 /obj/machinery/door/airlock{
-	name = "Dorm 7"
+	name = "Dorm 7";
+	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
@@ -6628,7 +6640,8 @@
 /area/ruin/space/has_grav/spacemall/shop2)
 "yL" = (
 /obj/machinery/door/airlock{
-	name = "Dorm 9"
+	name = "Dorm 9";
+	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
@@ -6648,7 +6661,8 @@
 "yP" = (
 /obj/machinery/door/airlock/public/glass{
 	name = "Clothing Store";
-	locked = 1
+	locked = 1;
+	dir = 4
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -6660,7 +6674,8 @@
 	dir = 8
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "clothing_shutter"
+	id = "clothing_shutter";
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shop)
@@ -6704,7 +6719,8 @@
 /area/ruin/space/has_grav/spacemall)
 "yU" = (
 /obj/machinery/door/airlock{
-	name = "Dorm 2"
+	name = "Dorm 2";
+	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
@@ -7030,6 +7046,14 @@
 /obj/effect/turf_decal/siding/thinplating/dark,
 /turf/open/floor/eighties,
 /area/ruin/space/has_grav/spacemall/shop2)
+"Ac" = (
+/obj/effect/turf_decal/corner/opaque/bottlegreen/diagonal,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/firealarm/directional/south,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/spacemall/shop)
 "Ad" = (
 /obj/structure/grille,
 /obj/structure/window/fulltile,
@@ -7225,7 +7249,8 @@
 /area/ruin/space/has_grav/spacemall/maint)
 "AY" = (
 /obj/machinery/door/airlock{
-	name = "Dorm 10"
+	name = "Dorm 10";
+	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
@@ -8186,7 +8211,9 @@
 /area/ruin/space/has_grav/spacemall/dorms)
 "Er" = (
 /obj/effect/turf_decal/corner/opaque/grey/diagonal,
-/obj/machinery/door/airlock,
+/obj/machinery/door/airlock{
+	dir = 8
+	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
@@ -8291,7 +8318,8 @@
 	dir = 4
 	},
 /obj/structure/door_assembly{
-	anchored = 1
+	anchored = 1;
+	dir = 4
 	},
 /obj/structure/spider/stickyweb{
 	icon_state = "stickyweb2"
@@ -8437,6 +8465,15 @@
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
+"Fe" = (
+/obj/structure/grille,
+/obj/structure/window/fulltile,
+/obj/machinery/door/poddoor/shutters{
+	id = "clothing_shutter";
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/spacemall/shop)
 "Fj" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -9198,7 +9235,9 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/spacemall)
 "Ij" = (
-/obj/machinery/door/airlock,
+/obj/machinery/door/airlock{
+	dir = 4
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
 	},
@@ -9833,7 +9872,8 @@
 /obj/machinery/door/airlock/security/glass{
 	locked = 1;
 	id_tag = "staffdoors";
-	name = "Security Office"
+	name = "Security Office";
+	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
@@ -9857,7 +9897,8 @@
 /area/ruin/space/has_grav/spacemall/dorms)
 "Ld" = (
 /obj/machinery/door/airlock{
-	name = "Dorm 1"
+	name = "Dorm 1";
+	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
@@ -10116,7 +10157,8 @@
 	dir = 8
 	},
 /obj/structure/door_assembly/door_assembly_eng{
-	anchored = 1
+	anchored = 1;
+	dir = 4
 	},
 /obj/item/stack/cable_coil/cut,
 /turf/open/floor/plasteel/dark,
@@ -10274,7 +10316,9 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/spacemall)
 "My" = (
-/obj/machinery/door/airlock/maintenance_hatch,
+/obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4
+	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -10997,7 +11041,9 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/shop)
 "Pc" = (
-/obj/machinery/door/airlock/maintenance_hatch,
+/obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
 	},
@@ -11169,6 +11215,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 10
 	},
+/obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/spacemall/shop)
 "PB" = (
@@ -11565,7 +11612,8 @@
 /obj/machinery/door/airlock{
 	locked = 1;
 	id_tag = "staffdoors";
-	name = "Kitchen"
+	name = "Kitchen";
+	dir = 8
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -12055,7 +12103,8 @@
 /area/ruin/space/has_grav/spacemall/shop)
 "Tg" = (
 /obj/machinery/door/airlock{
-	name = "Dorm 5"
+	name = "Dorm 5";
+	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
@@ -12766,7 +12815,9 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
-/obj/machinery/door/airlock/external/glass,
+/obj/machinery/door/airlock/external/glass{
+	dir = 8
+	},
 /obj/structure/fans/tiny,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall)
@@ -13743,7 +13794,9 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
 "ZJ" = (
-/obj/machinery/door/airlock/external/glass,
+/obj/machinery/door/airlock/external/glass{
+	dir = 4
+	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
@@ -15553,9 +15606,9 @@ pe
 pe
 pe
 pe
-Ad
+Fe
 yP
-Ad
+Fe
 pe
 pe
 Ek
@@ -16406,7 +16459,7 @@ xY
 Sm
 lm
 LY
-hQ
+Ac
 pe
 nk
 tE

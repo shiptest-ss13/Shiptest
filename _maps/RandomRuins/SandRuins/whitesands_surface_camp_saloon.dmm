@@ -27,7 +27,9 @@
 /turf/open/floor/wood,
 /area/ruin/whitesands/saloon)
 "aO" = (
-/obj/structure/mineral_door/wood,
+/obj/machinery/door/airlock/wood/glass{
+	dir = 4
+	},
 /turf/open/floor/wood,
 /area/ruin/whitesands/saloon)
 "aZ" = (
@@ -163,8 +165,10 @@
 /turf/open/floor/plating/asteroid/whitesands/lit,
 /area/ruin/whitesands/saloon)
 "fo" = (
-/obj/structure/mineral_door/wood,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/door/airlock/wood/glass{
 	dir = 4
 	},
 /turf/open/floor/wood,
@@ -367,6 +371,13 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 1
+	},
+/turf/open/floor/wood,
+/area/ruin/whitesands/saloon)
+"jJ" = (
+/obj/effect/mapping_helpers/airlock/locked,
+/obj/machinery/door/airlock/wood/glass{
+	dir = 4
 	},
 /turf/open/floor/wood,
 /area/ruin/whitesands/saloon)
@@ -908,6 +919,14 @@
 /obj/item/storage/toolbox/mechanical,
 /turf/open/floor/wood,
 /area/ruin/whitesands/saloon)
+"BS" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/door/airlock/wood/glass,
+/turf/open/floor/wood,
+/area/ruin/whitesands/saloon)
 "Ce" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -947,10 +966,12 @@
 /turf/open/floor/plating/asteroid/whitesands/lit,
 /area/ruin/whitesands/saloon)
 "Dx" = (
-/obj/structure/mineral_door/wood,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 1
+	},
+/obj/machinery/door/airlock/wood/glass{
+	name = "Saloon Entry"
 	},
 /turf/open/floor/wood,
 /area/ruin/whitesands/saloon)
@@ -1307,6 +1328,12 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/whitesands/saloon)
+"Nj" = (
+/obj/machinery/door/airlock/wood/glass{
+	name = "Saloon Entry"
+	},
+/turf/open/floor/wood,
+/area/ruin/whitesands/saloon)
 "Nn" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -1641,9 +1668,11 @@
 /turf/open/floor/wood,
 /area/ruin/whitesands/saloon)
 "YJ" = (
-/obj/structure/mineral_door/wood,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
+	},
+/obj/machinery/door/airlock/wood/glass{
+	dir = 4
 	},
 /turf/open/floor/wood,
 /area/ruin/whitesands/saloon)
@@ -2159,7 +2188,7 @@ Yj
 xs
 Px
 mx
-aO
+Nj
 eV
 LA
 gd
@@ -2223,7 +2252,7 @@ rE
 ga
 se
 MX
-aO
+Nj
 HW
 hX
 sU
@@ -2277,7 +2306,7 @@ mx
 Yo
 Eq
 Eq
-KO
+jJ
 Eq
 Eq
 Dd
@@ -2375,7 +2404,7 @@ sd
 Ce
 Jb
 kD
-Dx
+BS
 jx
 jx
 HX

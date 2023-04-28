@@ -337,7 +337,9 @@
 /turf/open/floor/plasteel/grimy,
 /area/ruin/unpowered)
 "YS" = (
-/obj/machinery/door/airlock/mining,
+/obj/machinery/door/airlock/mining{
+	dir = 8
+	},
 /turf/open/floor/plasteel/rockvault,
 /area/ruin/unpowered)
 "YW" = (

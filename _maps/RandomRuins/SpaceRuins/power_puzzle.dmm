@@ -586,7 +586,9 @@
 /area/ruin/space/has_grav/powerpuzzle/secure)
 "ci" = (
 /obj/effect/turf_decal/corner/transparent/grey/diagonal,
-/obj/machinery/door/airlock/engineering/glass,
+/obj/machinery/door/airlock/engineering/glass{
+	dir = 4
+	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -1448,7 +1450,9 @@
 	dir = 8
 	},
 /obj/structure/fans/tiny,
-/obj/machinery/door/airlock/external,
+/obj/machinery/door/airlock/external{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powerpuzzle/engineering)
 "nG" = (
@@ -1523,7 +1527,9 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
-/obj/machinery/door/airlock/external/glass,
+/obj/machinery/door/airlock/external/glass{
+	dir = 4
+	},
 /obj/structure/fans/tiny,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -1898,7 +1904,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 8
 	},
-/obj/machinery/door/airlock,
+/obj/machinery/door/airlock{
+	dir = 4
+	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
@@ -2108,7 +2116,8 @@
 /area/ruin/space/has_grav/powerpuzzle)
 "xf" = (
 /obj/structure/door_assembly/door_assembly_sec{
-	anchored = 1
+	anchored = 1;
+	dir = 4
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2709,7 +2718,8 @@
 /area/ruin/space/has_grav/powerpuzzle)
 "Im" = (
 /obj/structure/door_assembly{
-	anchored = 1
+	anchored = 1;
+	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 8
@@ -2791,7 +2801,9 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
-/obj/machinery/door/airlock/engineering,
+/obj/machinery/door/airlock/engineering{
+	dir = 4
+	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
@@ -2817,6 +2829,10 @@
 "JO" = (
 /turf/closed/wall/r_wall,
 /area/ruin/space/has_grav/powerpuzzle/engineering)
+"JU" = (
+/obj/structure/catwalk,
+/turf/open/space/basic,
+/area/ruin/space/has_grav/powerpuzzle)
 "JZ" = (
 /obj/effect/turf_decal/corner/transparent/grey/diagonal,
 /obj/effect/turf_decal/industrial/stand_clear{
@@ -2824,6 +2840,15 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powerpuzzle)
+"KA" = (
+/obj/docking_port/stationary{
+	dir = 2;
+	height = 15;
+	width = 15;
+	dwidth = 8
+	},
+/turf/template_noop,
+/area/template_noop)
 "KJ" = (
 /obj/structure/sink{
 	dir = 1
@@ -2964,7 +2989,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 8
 	},
-/obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel/showroomfloor{
 	name = "bathroom floor"
 	},
@@ -3076,7 +3100,9 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/powerpuzzle)
 "OL" = (
-/obj/machinery/door/airlock,
+/obj/machinery/door/airlock{
+	dir = 4
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
 	},
@@ -3106,6 +3132,12 @@
 /obj/item/paper_bin,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/powerpuzzle/secure)
+"OP" = (
+/obj/machinery/firealarm/directional/east,
+/turf/open/floor/plasteel/showroomfloor{
+	name = "bathroom floor"
+	},
+/area/ruin/space/has_grav/powerpuzzle)
 "OQ" = (
 /obj/structure/railing/corner,
 /obj/machinery/light/floor,
@@ -3199,7 +3231,9 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
-/obj/machinery/door/airlock/security,
+/obj/machinery/door/airlock/security{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powerpuzzle/secure)
 "PF" = (
@@ -3540,7 +3574,9 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
-/obj/machinery/door/airlock/external/glass,
+/obj/machinery/door/airlock/external/glass{
+	dir = 4
+	},
 /obj/structure/fans/tiny,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
@@ -4211,7 +4247,7 @@ cj
 cj
 cj
 uN
-vQ
+JU
 vQ
 "}
 (12,1,1) = {"
@@ -4222,7 +4258,7 @@ ah
 kv
 sc
 Zz
-aK
+OP
 MO
 kv
 ap
@@ -4248,7 +4284,7 @@ cU
 qX
 vJ
 wf
-vQ
+JU
 vQ
 "}
 (13,1,1) = {"
@@ -4285,8 +4321,8 @@ cV
 GP
 wO
 wf
-vQ
-vQ
+JU
+KA
 "}
 (14,1,1) = {"
 vQ
@@ -4322,7 +4358,7 @@ qx
 EQ
 MU
 aB
-vQ
+JU
 vQ
 "}
 (15,1,1) = {"
@@ -4359,7 +4395,7 @@ cj
 cj
 cj
 IW
-vQ
+JU
 vQ
 "}
 (16,1,1) = {"

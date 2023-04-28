@@ -180,7 +180,9 @@
 /turf/open/floor/wood,
 /area/ruin/powered)
 "pV" = (
-/obj/machinery/door/airlock/maintenance_hatch,
+/obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ruin/powered)
 "rC" = (
@@ -508,6 +510,12 @@
 /area/icemoon/underground/explored)
 "QR" = (
 /turf/closed/wall/rust,
+/area/ruin/powered)
+"Rc" = (
+/obj/machinery/door/airlock/wood{
+	dir = 8
+	},
+/turf/open/floor/wood,
 /area/ruin/powered)
 "Rv" = (
 /obj/structure/flora/grass/both,
@@ -894,7 +902,7 @@ yS
 zT
 Vn
 Vn
-SZ
+Rc
 Vn
 Vn
 Og

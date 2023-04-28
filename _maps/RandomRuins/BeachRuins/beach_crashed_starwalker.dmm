@@ -242,6 +242,14 @@
 	},
 /turf/open/floor/plating/asteroid/sand/lit,
 /area/ruin/unpowered)
+"dt" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/shutters{
+	id = "pcarrier_windows";
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/beach/starwalker)
 "dC" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
@@ -386,7 +394,8 @@
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
 	id = "pcarrier_windows";
-	name = "Blast Shutters"
+	name = "Blast Shutters";
+	dir = 4
 	},
 /obj/structure/curtain/bounty,
 /turf/open/floor/plating,
@@ -737,7 +746,9 @@
 	},
 /area/ruin/beach/starwalker)
 "kS" = (
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/airlock/hatch{
+	dir = 4
+	},
 /obj/structure/sign/departments/restroom{
 	pixel_y = 32
 	},
@@ -1134,15 +1145,12 @@
 /area/ruin/unpowered)
 "rR" = (
 /obj/structure/table/reinforced,
-/obj/machinery/airalarm/directional{
-	dir = 1;
-	pixel_y = -24
-	},
 /obj/effect/turf_decal/borderfloorblack,
 /obj/structure/extinguisher_cabinet/directional/north,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ruin/beach/starwalker)
 "rT" = (
@@ -1213,6 +1221,12 @@
 	},
 /obj/machinery/atmospherics/pipe/layer_manifold{
 	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ruin/beach/starwalker)
+"sI" = (
+/obj/machinery/door/airlock/external/glass{
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ruin/beach/starwalker)
@@ -1661,7 +1675,9 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/beach/starwalker)
 "zN" = (
-/obj/machinery/door/airlock/maintenance,
+/obj/machinery/door/airlock/maintenance{
+	dir = 4
+	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
@@ -1864,7 +1880,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/beach/starwalker)
 "CI" = (
-/obj/machinery/door/airlock/external/glass,
+/obj/machinery/door/airlock/external/glass{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ruin/beach/starwalker)
 "Db" = (
@@ -2053,7 +2071,8 @@
 /obj/structure/curtain/bounty,
 /obj/machinery/door/poddoor/shutters{
 	id = "pcarrier_windows";
-	name = "Blast Shutters"
+	name = "Blast Shutters";
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ruin/beach/starwalker)
@@ -2760,6 +2779,14 @@
 /obj/structure/spacevine/dense,
 /turf/open/floor/pod,
 /area/ruin/beach/starwalker)
+"Qv" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/shutters{
+	id = "pcarrier_windows";
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ruin/beach/starwalker)
 "Qx" = (
 /obj/effect/turf_decal/weather/sand,
 /turf/open/water/beach,
@@ -3168,7 +3195,9 @@
 /turf/open/floor/plating,
 /area/ruin/unpowered)
 "Wl" = (
-/obj/machinery/door/airlock/grunge,
+/obj/machinery/door/airlock/grunge{
+	dir = 4
+	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
@@ -4022,7 +4051,7 @@ tG
 iC
 FZ
 FZ
-dC
+dt
 FZ
 iC
 tG
@@ -4369,13 +4398,13 @@ Bm
 FZ
 FZ
 FZ
-dC
+dt
 Qx
 uU
 FZ
 FZ
 FZ
-CI
+sI
 FZ
 FZ
 iC
@@ -4659,9 +4688,9 @@ qS
 FZ
 FZ
 FZ
-dC
+dt
 XN
-dC
+dt
 Pv
 Pk
 id
@@ -4946,7 +4975,7 @@ ou
 Nk
 FZ
 FZ
-dC
+Qv
 FZ
 oz
 yJ

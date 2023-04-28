@@ -307,7 +307,9 @@
 /turf/open/floor/plating,
 /area/awaymission/BMPship/Fore)
 "bq" = (
-/obj/machinery/door/airlock/external,
+/obj/machinery/door/airlock/external{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/awaymission/BMPship/Fore)
 "bs" = (
@@ -980,22 +982,28 @@
 /area/awaymission/BMPship/Aft)
 "dq" = (
 /obj/item/multitool,
+/obj/machinery/power/terminal{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
 /turf/open/floor/engine,
 /area/awaymission/BMPship/Aft)
 "dr" = (
-/obj/structure/shuttle/engine/heater{
-	dir = 4
-	},
-/obj/structure/window/reinforced{
+/obj/machinery/power/smes/shuttle{
 	dir = 8
 	},
 /turf/open/floor/engine/airless,
 /area/awaymission/BMPship/Aft)
 "ds" = (
-/obj/structure/shuttle/engine/propulsion{
-	dir = 4
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 8
 	},
-/turf/template_noop,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/turf/open/floor/engine/airless,
 /area/awaymission/BMPship/Aft)
 "dt" = (
 /obj/structure/table,
@@ -1518,11 +1526,19 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel,
 /area/awaymission/BMPship/Aft)
 "eS" = (
 /obj/effect/decal/cleanable/cobweb,
-/obj/machinery/power/port_gen/pacman/super,
+/obj/machinery/power/terminal{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
 /turf/open/floor/engine,
 /area/awaymission/BMPship/Aft)
 "eT" = (
@@ -1664,6 +1680,10 @@
 /obj/item/stack/sheet/mineral/uranium{
 	amount = 50
 	},
+/obj/machinery/power/terminal{
+	dir = 4
+	},
+/obj/structure/cable,
 /turf/open/floor/engine,
 /area/awaymission/BMPship/Aft)
 "ft" = (
@@ -1756,12 +1776,18 @@
 /area/awaymission/BMPship/Aft)
 "fG" = (
 /obj/effect/decal/cleanable/oil,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating,
 /area/awaymission/BMPship/Aft)
 "fH" = (
 /obj/structure/reagent_dispensers/fueltank,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
 	},
 /turf/open/floor/plasteel,
 /area/awaymission/BMPship/Aft)
@@ -2230,11 +2256,30 @@
 	},
 /turf/open/floor/plasteel,
 /area/awaymission/BMPship/Midship)
+"pJ" = (
+/obj/machinery/power/port_gen/pacman/super,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plasteel,
+/area/awaymission/BMPship/Aft)
 "qv" = (
 /obj/machinery/light/directional/south,
 /obj/effect/decal/cleanable/blood/gibs/old,
 /turf/open/floor/plating/airless,
 /area/awaymission/BMPship/Midship)
+"qU" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/plasteel,
+/area/awaymission/BMPship/Aft)
 "qY" = (
 /obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 1
@@ -2300,6 +2345,15 @@
 	},
 /turf/open/floor/plasteel,
 /area/awaymission/BMPship/Aft)
+"AL" = (
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/machinery/power/smes/shuttle{
+	dir = 8
+	},
+/turf/open/floor/engine/airless,
+/area/awaymission/BMPship/Aft)
 "AX" = (
 /obj/machinery/light/small/directional/north,
 /obj/effect/turf_decal/corner/transparent/bar,
@@ -2320,6 +2374,18 @@
 	},
 /turf/open/floor/plasteel,
 /area/awaymission/BMPship/Midship)
+"Ca" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/plasteel,
+/area/awaymission/BMPship/Aft)
 "CP" = (
 /obj/machinery/light/small/directional/south,
 /obj/effect/turf_decal/industrial/warning{
@@ -2330,6 +2396,28 @@
 "Dq" = (
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel/white,
+/area/awaymission/BMPship/Aft)
+"DX" = (
+/obj/machinery/power/terminal{
+	dir = 4
+	},
+/obj/structure/cable,
+/turf/open/floor/engine,
+/area/awaymission/BMPship/Aft)
+"ED" = (
+/obj/machinery/power/terminal{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/engine,
 /area/awaymission/BMPship/Aft)
 "EJ" = (
 /obj/machinery/light/small/directional/east,
@@ -2351,6 +2439,13 @@
 	},
 /turf/open/floor/plasteel,
 /area/awaymission/BMPship/Midship)
+"Go" = (
+/obj/machinery/door/airlock/titanium,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/awaymission/BMPship/Aft)
 "Hy" = (
 /obj/machinery/door/poddoor/shutters{
 	id = "packerMine"
@@ -2390,6 +2485,9 @@
 /obj/machinery/light/small/directional/east,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel,
 /area/awaymission/BMPship/Aft)
@@ -2510,6 +2608,21 @@
 	},
 /turf/open/floor/plasteel,
 /area/awaymission/BMPship/Midship)
+"ZB" = (
+/obj/machinery/power/terminal{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/engine,
+/area/awaymission/BMPship/Aft)
 
 (1,1,1) = {"
 aa
@@ -5240,7 +5353,7 @@ fR
 eQ
 al
 fq
-cE
+pJ
 ht
 ht
 ht
@@ -5335,12 +5448,12 @@ aa
 ac
 cX
 HP
-eu
+Ca
 ec
 eu
 eu
 eR
-cX
+qU
 Lr
 fH
 ht
@@ -5386,12 +5499,12 @@ aa
 ac
 ht
 ht
-ak
+Go
 ht
 ht
 ac
 ht
-ak
+Go
 ht
 ht
 ht
@@ -5437,12 +5550,12 @@ aa
 ae
 ht
 dq
-ah
-ah
+ED
+DX
 ht
 ht
 eS
-ah
+ZB
 fs
 ht
 ae
@@ -5487,9 +5600,9 @@ aa
 aa
 aa
 ht
-dr
-dr
-dr
+AL
+AL
+AL
 ht
 ht
 dr
@@ -5537,16 +5650,16 @@ aa
 aa
 aa
 aa
-ae
+ht
 ds
 ds
 ds
-ae
-ae
+ht
+ht
 ds
 ds
 ds
-ae
+ht
 aa
 aa
 aa

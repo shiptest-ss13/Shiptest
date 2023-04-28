@@ -2,25 +2,22 @@
 "a" = (
 /turf/template_noop,
 /area/template_noop)
-"b" = (
-/turf/open/floor/plating/rust,
-/area/ruin)
 "c" = (
 /obj/structure/sign/warning/radiation,
 /turf/closed/wall/r_wall,
 /area/ruin)
 "e" = (
 /obj/structure/reagent_dispensers/fueltank,
-/turf/open/floor/plating/rust,
+/turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/ruin)
 "i" = (
 /obj/effect/gibspawner,
-/turf/open/floor/plating/rust,
+/turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/ruin)
 "j" = (
 /obj/item/grenade/syndieminibomb,
 /obj/item/ammo_box/magazine/aknt,
-/turf/open/floor/plating/rust,
+/turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/ruin)
 "k" = (
 /obj/structure/radioactive/stack,
@@ -32,7 +29,7 @@
 	pixel_x = -15;
 	pixel_y = -9
 	},
-/turf/open/floor/plating/rust,
+/turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/ruin)
 "m" = (
 /obj/effect/radiation,
@@ -40,9 +37,7 @@
 /area/ruin)
 "n" = (
 /obj/item/ammo_box/magazine/aknt,
-/turf/open/floor/plating/rust{
-	initial_gas_mix = "plasma=70000;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/ruin)
 "o" = (
 /obj/structure/fence/door,
@@ -51,16 +46,16 @@
 "p" = (
 /obj/item/stack/sheet/mineral/uranium/five,
 /obj/effect/mine/shrapnel,
-/turf/open/floor/plating/rust,
+/turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/ruin)
 "q" = (
 /obj/structure/table/reinforced,
 /obj/item/gun/ballistic/automatic/assualt/ak47/nt,
-/turf/open/floor/plating/rust,
+/turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/ruin)
 "r" = (
 /obj/item/stack/sheet/mineral/uranium/five,
-/turf/open/floor/plating/rust,
+/turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/ruin)
 "s" = (
 /obj/structure/fence/corner{
@@ -71,26 +66,22 @@
 "t" = (
 /obj/item/stack/sheet/mineral/uranium/five,
 /obj/structure/radioactive/stack,
-/turf/open/floor/plating/rust,
-/area/ruin)
-"u" = (
-/obj/effect/radiation,
-/turf/open/floor/plating/rust,
+/turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/ruin)
 "v" = (
 /obj/machinery/door/airlock/vault,
 /obj/effect/mapping_helpers/airlock/locked,
-/turf/open/floor/plating/rust,
+/turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/ruin/powered)
 "x" = (
 /obj/item/stack/sheet/mineral/uranium/five,
 /obj/structure/radioactive,
-/turf/open/floor/plating/rust,
+/turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/ruin)
 "y" = (
 /obj/structure/table/reinforced,
 /obj/item/gun/energy/e_gun/nuclear,
-/turf/open/floor/plating/rust,
+/turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/ruin)
 "z" = (
 /obj/structure/sign/warning/radiation,
@@ -99,7 +90,7 @@
 "A" = (
 /obj/item/grenade/frag,
 /obj/structure/reagent_dispensers/fueltank,
-/turf/open/floor/plating/rust,
+/turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/ruin)
 "B" = (
 /turf/closed/wall/r_wall/rust,
@@ -107,7 +98,7 @@
 "C" = (
 /obj/item/ammo_box/magazine/aknt,
 /obj/structure/reagent_dispensers/fueltank,
-/turf/open/floor/plating/rust,
+/turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/ruin)
 "D" = (
 /obj/structure/fence,
@@ -119,19 +110,15 @@
 "G" = (
 /obj/item/stack/sheet/mineral/uranium/five,
 /obj/effect/gibspawner,
-/turf/open/floor/plating/rust,
+/turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/ruin)
 "H" = (
 /obj/item/grenade/stingbang,
-/turf/open/floor/plating/rust,
+/turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/ruin)
 "I" = (
 /obj/item/flashlight/lantern,
-/turf/open/floor/plating/rust,
-/area/ruin)
-"J" = (
-/obj/structure/radioactive,
-/turf/open/floor/plating/rust,
+/turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/ruin)
 "K" = (
 /obj/effect/mine/shrapnel,
@@ -151,7 +138,7 @@
 "P" = (
 /obj/effect/gibspawner,
 /obj/structure/radioactive/waste,
-/turf/open/floor/plating/rust,
+/turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/ruin)
 "Q" = (
 /obj/structure/fence/corner,
@@ -182,14 +169,6 @@
 	dir = 8
 	},
 /turf/open/floor/plating/asteroid/rockplanet/lit,
-/area/ruin)
-"Y" = (
-/obj/item/ammo_box/magazine/aknt,
-/turf/open/floor/plating/rust,
-/area/ruin)
-"Z" = (
-/obj/effect/mine/shrapnel,
-/turf/open/floor/plating/rust,
 /area/ruin)
 
 (1,1,1) = {"
@@ -234,7 +213,7 @@ a
 B
 B
 x
-J
+U
 e
 i
 t
@@ -252,11 +231,11 @@ a
 (4,1,1) = {"
 B
 B
-J
+U
 G
-b
+M
 j
-b
+M
 F
 B
 S
@@ -292,8 +271,8 @@ F
 B
 q
 A
-u
-b
+m
+M
 I
 B
 O
@@ -310,10 +289,10 @@ O
 B
 B
 l
-Y
+n
 i
 C
-Z
+K
 v
 M
 M
@@ -331,7 +310,7 @@ F
 r
 p
 H
-b
+M
 i
 B
 O
@@ -348,10 +327,10 @@ O
 F
 F
 P
-b
+M
 e
 r
-J
+U
 B
 F
 M

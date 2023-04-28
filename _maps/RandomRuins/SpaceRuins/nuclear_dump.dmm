@@ -164,6 +164,12 @@
 /obj/effect/turf_decal/industrial/fire,
 /turf/open/floor/plasteel/dark/airless,
 /area/space/nearstation)
+"pf" = (
+/obj/machinery/door/airlock/grunge{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/nucleardump)
 "pJ" = (
 /obj/effect/spawner/lootdrop/maintenance/two,
 /turf/open/floor/mineral/plastitanium/red,
@@ -219,7 +225,9 @@
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/nucleardump)
 "uo" = (
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/airlock/hatch{
+	dir = 4
+	},
 /obj/machinery/atmospherics/pipe/simple/general/visible{
 	dir = 4
 	},
@@ -522,7 +530,9 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/nucleardump)
 "VK" = (
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/airlock/hatch{
+	dir = 4
+	},
 /obj/machinery/atmospherics/pipe/simple/general/visible{
 	dir = 4
 	},
@@ -968,7 +978,7 @@ fi
 Vb
 fi
 fi
-Zh
+pf
 fi
 fi
 fi

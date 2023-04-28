@@ -166,7 +166,9 @@
 /turf/open/floor/plating,
 /area/ruin/space/derelict)
 "Au" = (
-/obj/machinery/door/airlock/engineering,
+/obj/machinery/door/airlock/engineering{
+	dir = 8
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/derelict)
 "AP" = (

@@ -227,6 +227,13 @@
 /obj/structure/spacevine/weak,
 /turf/open/floor/plasteel/mono,
 /area/ruin/beach/complex)
+"ee" = (
+/obj/machinery/door/airlock/grunge{
+	dir = 4
+	},
+/obj/structure/spacevine/weak,
+/turf/open/floor/concrete/slab_4,
+/area/ruin/beach/complex)
 "en" = (
 /obj/effect/turf_decal/trimline/opaque/white/filled/warning{
 	dir = 8
@@ -406,6 +413,13 @@
 "hx" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beach/complex)
+"hE" = (
+/obj/machinery/door/airlock/grunge{
+	dir = 8
+	},
+/obj/structure/spacevine/weak,
+/turf/open/floor/concrete/slab_4,
 /area/ruin/beach/complex)
 "hO" = (
 /obj/machinery/light/small/directional/south,
@@ -842,6 +856,12 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/beach/complex/shuttle)
+"om" = (
+/obj/machinery/door/airlock/grunge{
+	dir = 4
+	},
+/turf/open/floor/concrete/slab_4,
+/area/ruin/beach/complex)
 "on" = (
 /obj/effect/turf_decal/trimline/opaque/white/filled/warning{
 	dir = 8
@@ -1183,7 +1203,9 @@
 /turf/open/floor/plasteel/mono,
 /area/ruin/beach/complex/shuttle)
 "tG" = (
-/obj/machinery/door/airlock/grunge,
+/obj/machinery/door/airlock/grunge{
+	dir = 4
+	},
 /obj/structure/cable{
 	icon_state = "6-8"
 	},
@@ -1289,7 +1311,9 @@
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/complex/wall)
 "vi" = (
-/obj/machinery/door/airlock/grunge,
+/obj/machinery/door/airlock/grunge{
+	dir = 4
+	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/complex/wall)
 "vy" = (
@@ -2367,7 +2391,9 @@
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/complex/wall)
 "Lt" = (
-/obj/machinery/door/airlock/grunge,
+/obj/machinery/door/airlock/grunge{
+	dir = 4
+	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -2394,7 +2420,9 @@
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/complex/wall)
 "LN" = (
-/obj/machinery/door/airlock/grunge,
+/obj/machinery/door/airlock/grunge{
+	dir = 4
+	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -3004,7 +3032,9 @@
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/complex/wall)
 "Wm" = (
-/obj/machinery/door/airlock/grunge,
+/obj/machinery/door/airlock/grunge{
+	dir = 4
+	},
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 8
 	},
@@ -6297,7 +6327,7 @@ Ae
 AA
 AA
 IO
-dm
+ee
 IO
 AA
 AA
@@ -6446,7 +6476,7 @@ Vm
 mL
 AA
 AA
-dm
+hE
 UB
 AA
 AA
@@ -7230,7 +7260,7 @@ AA
 AA
 AA
 AA
-xw
+om
 UB
 AA
 wo

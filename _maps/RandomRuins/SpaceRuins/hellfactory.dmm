@@ -550,7 +550,9 @@
 /turf/closed/wall,
 /area/ruin/space/has_grav/hellfactory)
 "ca" = (
-/obj/machinery/door/airlock,
+/obj/machinery/door/airlock{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/hellfactory)
 "cc" = (

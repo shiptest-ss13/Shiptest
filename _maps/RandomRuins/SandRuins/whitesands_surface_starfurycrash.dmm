@@ -414,7 +414,9 @@
 /turf/open/floor/plasteel/dark,
 /area/whitesands/surface/outdoors)
 "yD" = (
-/obj/machinery/door/airlock/engineering,
+/obj/machinery/door/airlock/engineering{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/whitesands/surface/outdoors)
 "zt" = (
@@ -909,6 +911,12 @@
 	initial_gas_mix = "ws_atmos"
 	},
 /area/whitesands/surface/outdoors)
+"Zl" = (
+/obj/machinery/door/airlock/hatch{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/whitesands/surface/outdoors)
 "Zy" = (
 /obj/structure/frame/machine,
 /obj/item/stack/cable_coil/cut/blue,
@@ -1257,8 +1265,8 @@ jI
 fM
 fM
 fM
-yj
-yj
+Zl
+Zl
 fM
 fM
 fM

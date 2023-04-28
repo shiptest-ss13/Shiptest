@@ -34,6 +34,24 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/jungle/syndifort)
+"bt" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/shutters/preopen{
+	name = "Window Shutters";
+	id = "jsynwin";
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ruin/jungle/syndifort)
+"bC" = (
+/obj/machinery/door/poddoor/shutters/preopen{
+	name = "Window Shutters";
+	id = "jsynwin";
+	dir = 4
+	},
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating,
+/area/ruin/jungle/syndifort/jerry)
 "bP" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/table,
@@ -451,6 +469,14 @@
 	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/jungle/syndifort)
+"oq" = (
+/obj/machinery/door/poddoor/shutters/preopen{
+	name = "Base Gates";
+	id = "jsyngate";
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/jungle/syndifort/jerry)
 "pr" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -519,7 +545,8 @@
 "rk" = (
 /obj/machinery/door/poddoor/shutters/preopen{
 	name = "Gear Room Shutters";
-	id = "jsyngear"
+	id = "jsyngear";
+	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
@@ -592,7 +619,8 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/door/poddoor/shutters/preopen{
 	name = "Base Gates";
-	id = "jsyngate"
+	id = "jsyngate";
+	dir = 4
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -693,14 +721,16 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/door/poddoor/shutters/preopen{
 	name = "Base Gates";
-	id = "jsyngate"
+	id = "jsyngate";
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ruin/jungle/syndifort/jerry)
 "wu" = (
 /obj/machinery/door/poddoor/shutters/preopen{
 	name = "Command Room Shutters";
-	id = "jsynbridge"
+	id = "jsynbridge";
+	dir = 8
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -753,7 +783,8 @@
 "xC" = (
 /obj/machinery/door/poddoor/shutters/preopen{
 	name = "Command Room Shutters";
-	id = "jsynbridge"
+	id = "jsynbridge";
+	dir = 4
 	},
 /turf/open/floor/plasteel/stairs{
 	dir = 4
@@ -798,6 +829,15 @@
 	pixel_y = -3
 	},
 /turf/open/floor/mineral/plastitanium/red,
+/area/ruin/jungle/syndifort)
+"yL" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/shutters/preopen{
+	name = "Window Shutters";
+	id = "jsynwin";
+	dir = 4
+	},
+/turf/open/floor/plating,
 /area/ruin/jungle/syndifort)
 "yM" = (
 /obj/structure/spacevine,
@@ -844,6 +884,15 @@
 /obj/item/grenade/frag,
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/syndifort)
+"Ao" = (
+/obj/machinery/door/poddoor/shutters/preopen{
+	name = "Window Shutters";
+	id = "jsynwin";
+	dir = 8
+	},
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating,
+/area/ruin/jungle/syndifort/jerry)
 "At" = (
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/junglebush/c,
@@ -964,7 +1013,8 @@
 "ET" = (
 /obj/machinery/door/poddoor/shutters/preopen{
 	name = "Gear Room Shutters";
-	id = "jsyngear"
+	id = "jsyngear";
+	dir = 4
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1804,8 +1854,8 @@ At
 eX
 eX
 zM
-ER
-ER
+bC
+Ao
 zM
 zM
 eX
@@ -1971,7 +2021,7 @@ wu
 nH
 nH
 tZ
-Uc
+oq
 vt
 vt
 eX
@@ -2414,8 +2464,8 @@ Uu
 fZ
 eX
 fe
-NM
-NM
+yL
+bt
 fe
 Aa
 mO

@@ -172,7 +172,9 @@
 /obj/effect/turf_decal/spline/fancy/opaque/grey{
 	dir = 1
 	},
-/obj/machinery/door/airlock/research,
+/obj/machinery/door/airlock/research{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "ed" = (
@@ -1040,7 +1042,9 @@
 /turf/open/floor/vault,
 /area/ruin/powered/hydroponicslab)
 "si" = (
-/obj/machinery/door/airlock/maintenance,
+/obj/machinery/door/airlock/maintenance{
+	dir = 8
+	},
 /turf/open/floor/wood/walnut,
 /area/ruin/powered/hydroponicslab)
 "ss" = (
@@ -1185,7 +1189,9 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/grey,
-/obj/machinery/door/airlock,
+/obj/machinery/door/airlock{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "vc" = (
@@ -1244,7 +1250,9 @@
 /turf/open/floor/carpet,
 /area/ruin/powered/hydroponicslab)
 "xE" = (
-/obj/machinery/door/airlock,
+/obj/machinery/door/airlock{
+	dir = 4
+	},
 /turf/open/floor/wood/walnut,
 /area/ruin/powered/hydroponicslab)
 "xJ" = (
@@ -1641,7 +1649,9 @@
 /area/ruin/powered/hydroponicslab)
 "Ik" = (
 /obj/effect/mapping_helpers/airlock/locked,
-/obj/machinery/door/airlock/security,
+/obj/machinery/door/airlock/security{
+	dir = 4
+	},
 /turf/open/floor/wood/walnut,
 /area/ruin/powered/hydroponicslab)
 "IQ" = (

@@ -92,7 +92,6 @@
 	name = "External Shutters"
 	},
 /obj/structure/frame/machine,
-/obj/structure/spacevine,
 /turf/open/floor/plating/airless,
 /area/ruin/jungle/interceptor/crashsite)
 "aZ" = (
@@ -259,6 +258,10 @@
 /obj/machinery/power/smes/shuttle{
 	dir = 1
 	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "External Shutters"
+	},
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/crashsite)
 "bV" = (
@@ -270,10 +273,6 @@
 /area/ruin/jungle/interceptor/bridge)
 "ca" = (
 /obj/structure/cable,
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "condorwindows";
-	name = "External Shutters"
-	},
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/interceptor/porthall)
 "cb" = (
@@ -316,7 +315,9 @@
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/porthall)
 "co" = (
-/obj/machinery/door/airlock/maintenance,
+/obj/machinery/door/airlock/maintenance{
+	dir = 4
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
@@ -382,6 +383,10 @@
 	},
 /obj/machinery/power/smes/shuttle{
 	dir = 1
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "External Shutters"
 	},
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/starhall)
@@ -640,12 +645,15 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
-/obj/machinery/door/airlock/command/glass,
+/obj/machinery/door/airlock/command/glass{
+	dir = 8
+	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "bridgeshutters"
+	id = "bridgeshutters";
+	dir = 4
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -811,6 +819,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/jungle/interceptor/starlauncherone)
+"gm" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "External Shutters";
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ruin/jungle/interceptor/starhall)
 "gq" = (
 /obj/machinery/door/window/northleft,
 /obj/effect/turf_decal/industrial/warning{
@@ -867,6 +884,10 @@
 /obj/item/shard,
 /obj/machinery/power/smes/shuttle{
 	dir = 1
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "External Shutters"
 	},
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/porthall)
@@ -956,11 +977,12 @@
 /area/ruin/jungle/interceptor/crashsite)
 "hC" = (
 /obj/effect/spawner/structure/window/shuttle,
+/obj/structure/spacevine,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "condorwindows";
-	name = "External Shutters"
+	name = "External Shutters";
+	dir = 4
 	},
-/obj/structure/spacevine,
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/starlauncherone)
 "hD" = (
@@ -1142,6 +1164,10 @@
 /obj/machinery/power/smes/shuttle{
 	dir = 1
 	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "External Shutters"
+	},
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/starhall)
 "iC" = (
@@ -1177,10 +1203,6 @@
 	dir = 1
 	},
 /obj/structure/cable,
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "condorwindows";
-	name = "External Shutters"
-	},
 /turf/open/floor/plating/airless,
 /area/ruin/jungle/interceptor/crashsite)
 "jf" = (
@@ -1596,7 +1618,8 @@
 /area/ruin/jungle/interceptor/crashsite)
 "nA" = (
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "bridgeshutters"
+	id = "bridgeshutters";
+	dir = 4
 	},
 /obj/structure/lattice{
 	icon_state = "lattice-127"
@@ -1624,7 +1647,8 @@
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "condorwindows";
-	name = "External Shutters"
+	name = "External Shutters";
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/starlauncherone)
@@ -1751,6 +1775,18 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/starlaunchertwo)
+"oY" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/structure/cable/orange{
+	icon_state = "0-4"
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "External Shutters";
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/jungle/interceptor/security)
 "oZ" = (
 /obj/effect/turf_decal/corner/opaque/purple/three_quarters{
 	icon_state = "borderfloorcorner_white";
@@ -1882,7 +1918,9 @@
 /turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/ruin/jungle/interceptor/crashsite)
 "qa" = (
-/obj/machinery/door/airlock/public/glass,
+/obj/machinery/door/airlock/public/glass{
+	dir = 4
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
@@ -2141,10 +2179,6 @@
 	dir = 1
 	},
 /obj/structure/cable,
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "condorwindows";
-	name = "External Shutters"
-	},
 /turf/open/floor/plating/airless,
 /area/ruin/jungle/interceptor/starhall)
 "sf" = (
@@ -2526,6 +2560,14 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/crashsite)
+"vF" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "bridgeshutters";
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ruin/jungle/interceptor/bridge)
 "vG" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ruin/jungle/interceptor/security)
@@ -2533,7 +2575,8 @@
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "condorwindows";
-	name = "External Shutters"
+	name = "External Shutters";
+	dir = 8
 	},
 /obj/structure/spacevine,
 /turf/open/floor/plating,
@@ -2559,7 +2602,8 @@
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "condorwindows";
-	name = "External Shutters"
+	name = "External Shutters";
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/starlaunchertwo)
@@ -2587,7 +2631,8 @@
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "condorwindows";
-	name = "External Shutters"
+	name = "External Shutters";
+	dir = 4
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/interceptor/forehall)
@@ -2696,6 +2741,14 @@
 "wS" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ruin/jungle/interceptor/forehall)
+"wT" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "bridgeshutters";
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/jungle/interceptor/bridge)
 "wU" = (
 /obj/structure/spacevine,
 /turf/closed/wall/mineral/titanium,
@@ -2889,7 +2942,8 @@
 "yw" = (
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "condorwindows";
-	name = "External Shutters"
+	name = "External Shutters";
+	dir = 8
 	},
 /obj/item/shard,
 /obj/structure/grille,
@@ -2946,6 +3000,10 @@
 /obj/item/shard,
 /obj/machinery/power/smes/shuttle{
 	dir = 1
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "External Shutters"
 	},
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/crashsite)
@@ -3357,6 +3415,16 @@
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/interceptor/starhall)
+"CN" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "External Shutters";
+	dir = 4
+	},
+/obj/structure/spacevine,
+/turf/open/floor/plating,
+/area/ruin/jungle/interceptor/crewquarters)
 "CO" = (
 /obj/structure/flora/ausbushes/fernybush,
 /obj/structure/flora/ausbushes/grassybush,
@@ -3425,7 +3493,8 @@
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "condorwindows";
-	name = "External Shutters"
+	name = "External Shutters";
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/security)
@@ -3479,7 +3548,9 @@
 /obj/structure/cable/orange{
 	icon_state = "4-8"
 	},
-/obj/machinery/door/airlock/security,
+/obj/machinery/door/airlock/security{
+	dir = 4
+	},
 /obj/effect/turf_decal/corner/opaque/red/full,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -3846,7 +3917,8 @@
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "condorwindows";
-	name = "External Shutters"
+	name = "External Shutters";
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/afthall)
@@ -3904,7 +3976,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
-/obj/machinery/door/airlock/command/glass,
+/obj/machinery/door/airlock/command/glass{
+	dir = 4
+	},
 /obj/structure/cable/green{
 	icon_state = "4-8"
 	},
@@ -3912,7 +3986,8 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "bridgeshutters"
+	id = "bridgeshutters";
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/jungle/interceptor/bridge)
@@ -3920,7 +3995,9 @@
 /obj/structure/cable/green{
 	icon_state = "4-8"
 	},
-/obj/machinery/door/airlock/maintenance,
+/obj/machinery/door/airlock/maintenance{
+	dir = 4
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
@@ -3942,7 +4019,9 @@
 /turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/ruin/jungle/interceptor/afthall)
 "Iw" = (
-/obj/machinery/door/airlock/public,
+/obj/machinery/door/airlock/public{
+	dir = 8
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
@@ -4155,6 +4234,10 @@
 /obj/item/stack/cable_coil/cut/orange,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "External Shutters"
+	},
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/interceptor/porthall)
 "Kr" = (
@@ -4236,6 +4319,7 @@
 /obj/structure/cable/green{
 	icon_state = "0-8"
 	},
+/obj/item/radio/intercom/directional/east,
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/interceptor/starlauncherone)
 "Ld" = (
@@ -4257,12 +4341,13 @@
 /area/ruin/jungle/interceptor/starhall)
 "Lf" = (
 /obj/effect/spawner/structure/window/shuttle,
+/obj/structure/spacevine,
+/obj/structure/spacevine,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "condorwindows";
-	name = "External Shutters"
+	name = "External Shutters";
+	dir = 4
 	},
-/obj/structure/spacevine,
-/obj/structure/spacevine,
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/interceptor/starlauncherone)
 "Lh" = (
@@ -4685,7 +4770,6 @@
 /area/ruin/jungle/interceptor/forehall)
 "Oy" = (
 /obj/structure/table,
-/obj/item/radio/intercom/directional/south,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
@@ -5184,7 +5268,9 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ruin/jungle/interceptor/afthall)
 "SG" = (
-/obj/machinery/door/airlock/public/glass,
+/obj/machinery/door/airlock/public/glass{
+	dir = 4
+	},
 /obj/structure/cable/orange{
 	icon_state = "4-8"
 	},
@@ -5232,6 +5318,15 @@
 /obj/effect/decal/cleanable/plastic,
 /turf/open/floor/wood,
 /area/ruin/jungle/interceptor/crewquarters)
+"SP" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "External Shutters";
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/jungle/interceptor/starhall)
 "ST" = (
 /obj/machinery/power/terminal,
 /obj/structure/cable/orange{
@@ -5528,10 +5623,6 @@
 /area/ruin/jungle/interceptor/starhall)
 "UZ" = (
 /obj/structure/cable,
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "condorwindows";
-	name = "External Shutters"
-	},
 /obj/structure/frame/machine,
 /obj/item/stack/cable_coil/cut/orange,
 /obj/item/stack/ore/salvage/scrapmetal,
@@ -5588,7 +5679,8 @@
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "condorwindows";
-	name = "External Shutters"
+	name = "External Shutters";
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/crashsite)
@@ -5684,6 +5776,15 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/leafybush,
 /turf/open/floor/plating/grass/jungle/lit,
+/area/ruin/jungle/interceptor/crashsite)
+"Wc" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "External Shutters";
+	dir = 4
+	},
+/turf/open/floor/plating,
 /area/ruin/jungle/interceptor/crashsite)
 "We" = (
 /obj/structure/cable/orange{
@@ -5939,7 +6040,9 @@
 /area/ruin/jungle/interceptor/crashsite)
 "Ya" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/door/airlock/maintenance,
+/obj/machinery/door/airlock/maintenance{
+	dir = 4
+	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -6078,7 +6181,7 @@
 	dir = 1;
 	pixel_y = 2
 	},
-/obj/item/radio/intercom/directional/south,
+/obj/item/radio/intercom/directional/east,
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/interceptor/crashsite)
 "YN" = (
@@ -6479,7 +6582,7 @@ Hv
 bA
 OQ
 Vr
-Vr
+Wc
 FE
 FE
 OQ
@@ -6896,7 +6999,7 @@ Be
 JZ
 Hv
 FE
-Vr
+Wc
 rs
 tD
 bI
@@ -7055,7 +7158,7 @@ bA
 FE
 FE
 OQ
-Vr
+Wc
 SW
 qJ
 OQ
@@ -7369,7 +7472,7 @@ au
 YY
 YY
 GZ
-Dr
+oY
 Dr
 vG
 Ah
@@ -7487,7 +7590,7 @@ hH
 Ok
 xP
 KU
-Rd
+wT
 Ms
 zd
 fi
@@ -7805,9 +7908,9 @@ Wo
 BU
 Yi
 Mb
-Rd
+vF
 nA
-Rd
+wT
 Ik
 Km
 Km
@@ -7955,7 +8058,7 @@ iO
 vl
 vl
 Wt
-aB
+CN
 RK
 RK
 Wt
@@ -8435,7 +8538,7 @@ Gc
 Gc
 Ni
 hC
-hC
+nF
 nF
 Ni
 Gc
@@ -8665,7 +8768,7 @@ DM
 XE
 DM
 DM
-pC
+SP
 wO
 XE
 cL
@@ -8818,9 +8921,9 @@ Tw
 uv
 Uu
 wO
-pC
-pC
-pC
+gm
+gm
+gm
 XE
 DM
 DM

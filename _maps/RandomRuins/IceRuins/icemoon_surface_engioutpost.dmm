@@ -399,7 +399,8 @@
 /area/icemoon/surface/outdoors)
 "bi" = (
 /obj/machinery/door/airlock/engineering{
-	name = "The Singularity Engine"
+	name = "The Singularity Engine";
+	dir = 8
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -437,10 +438,6 @@
 /turf/open/floor/plasteel/icemoon,
 /area/icemoon/surface/outdoors)
 "bl" = (
-/obj/machinery/door/airlock/engineering{
-	name = "Engine Entry";
-	req_access_txt = "204"
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -449,6 +446,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
+	},
+/obj/machinery/door/airlock/engineering{
+	name = "The Singularity Engine";
+	dir = 8
 	},
 /turf/open/floor/plasteel/dark{
 	initial_gas_mix = "ICEMOON_ATMOS"
@@ -683,7 +684,8 @@
 /area/icemoon/surface/outdoors)
 "bI" = (
 /obj/machinery/door/airlock/atmos{
-	name = "Atmospherics"
+	name = "Atmospherics";
+	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -1502,7 +1504,8 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/atmos{
-	name = "Atmospherics"
+	name = "Atmospherics";
+	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4

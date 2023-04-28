@@ -357,7 +357,9 @@
 /turf/open/floor/plasteel,
 /area/whitesands/surface/outdoors)
 "iT" = (
-/obj/machinery/door/airlock/atmos/glass,
+/obj/machinery/door/airlock/atmos/glass{
+	dir = 4
+	},
 /obj/effect/turf_decal/corner/transparent/neutral,
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
@@ -469,7 +471,9 @@
 /turf/open/floor/plasteel/white,
 /area/whitesands/surface/outdoors)
 "mh" = (
-/obj/structure/door_assembly/door_assembly_research,
+/obj/structure/door_assembly/door_assembly_research{
+	dir = 4
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/plating{
 	icon_state = "platingdmg3"
@@ -874,7 +878,9 @@
 /turf/open/floor/plasteel/white,
 /area/whitesands/surface/outdoors)
 "yc" = (
-/obj/structure/door_assembly/door_assembly_research,
+/obj/structure/door_assembly/door_assembly_research{
+	dir = 4
+	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/plating{
 	icon_state = "platingdmg1"

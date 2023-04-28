@@ -253,6 +253,11 @@
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/golem_ship)
+"fy" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/extinguisher_cabinet/directional/north,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered/golem_ship)
 "fK" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -373,12 +378,6 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
-/area/ruin/powered/golem_ship)
-"hO" = (
-/obj/machinery/light/small/directional/south,
-/obj/structure/extinguisher_cabinet/directional/north,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark,
 /area/ruin/powered/golem_ship)
 "hS" = (
 /obj/structure/mirror{
@@ -628,7 +627,6 @@
 /turf/open/floor/wood,
 /area/ruin/powered/golem_ship)
 "lN" = (
-/obj/structure/extinguisher_cabinet/directional/west,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/dark,
@@ -716,7 +714,9 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
-/obj/machinery/door/airlock/external,
+/obj/machinery/door/airlock/external{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/golem_ship)
 "nt" = (
@@ -1163,7 +1163,8 @@
 	dir = 8
 	},
 /obj/machinery/door/airlock/command{
-	name = "Bridge"
+	name = "Bridge";
+	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/golem_ship)
@@ -1265,7 +1266,8 @@
 	dir = 8
 	},
 /obj/machinery/door/airlock/command{
-	name = "Bridge"
+	name = "Bridge";
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/golem_ship)
@@ -1317,14 +1319,24 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
-/obj/machinery/door/airlock/external,
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
 	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 4
 	},
+/obj/machinery/door/airlock/external{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
+/area/ruin/powered/golem_ship)
+"Cg" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor{
+	id = "golemwindows";
+	dir = 4
+	},
+/turf/open/floor/plating,
 /area/ruin/powered/golem_ship)
 "CO" = (
 /obj/effect/turf_decal/corner/transparent/neutral,
@@ -1363,7 +1375,9 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
-/obj/machinery/door/airlock/external,
+/obj/machinery/door/airlock/external{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/golem_ship)
 "DY" = (
@@ -1554,6 +1568,7 @@
 "HW" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/tracks,
+/obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/golem_ship)
 "HZ" = (
@@ -1695,7 +1710,9 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
-/obj/machinery/door/airlock/external,
+/obj/machinery/door/airlock/external{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/golem_ship)
 "Ma" = (
@@ -2165,6 +2182,11 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/powered/golem_ship)
+"UW" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/extinguisher_cabinet/directional/west,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered/golem_ship)
 "VY" = (
 /obj/structure/table/reinforced,
 /obj/machinery/light/small/directional/north,
@@ -2189,16 +2211,6 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
-"Xc" = (
-/obj/effect/spawner/structure/window/shuttle,
-/obj/machinery/door/poddoor{
-	id = "golemwindows"
-	},
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 8
-	},
-/turf/open/floor/plating,
 /area/ruin/powered/golem_ship)
 "Xr" = (
 /obj/structure/closet/crate,
@@ -2255,7 +2267,9 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
-/obj/machinery/door/airlock/external,
+/obj/machinery/door/airlock/external{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/golem_ship)
 "YQ" = (
@@ -2301,12 +2315,14 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
-/obj/machinery/door/airlock/external,
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
 	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 8
+	},
+/obj/machinery/door/airlock/external{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/golem_ship)
@@ -2331,12 +2347,12 @@ HZ
 HZ
 HZ
 HZ
-Xc
-Ma
-Ma
-Ma
-Ma
-Ma
+Ye
+Cg
+Cg
+Cg
+Cg
+Ye
 HZ
 HZ
 HZ
@@ -2661,7 +2677,7 @@ Ye
 se
 aB
 zX
-gT
+UW
 ny
 "}
 (18,1,1) = {"
@@ -2893,8 +2909,8 @@ tI
 nt
 nt
 Ye
-gT
-hO
+fy
+ea
 Ye
 nt
 nt
