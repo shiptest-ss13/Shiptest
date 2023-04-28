@@ -21,9 +21,14 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/storage)
 "bl" = (
-/obj/machinery/smartfridge/organ,
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/storage)
+/obj/machinery/door/poddoor/preopen{
+	id = "traumabridge";
+	name = "Window Blast Door";
+	dir = 4
+	},
+/obj/effect/spawner/structure/window/shuttle,
+/turf/open/floor/plating,
+/area/ship/bridge)
 "bu" = (
 /obj/machinery/door/airlock/medical{
 	dir = 4;
@@ -571,21 +576,20 @@
 /obj/item/stack/marker_beacon/thirty,
 /obj/item/stack/marker_beacon/thirty,
 /obj/item/stack/marker_beacon/thirty,
-/obj/effect/turf_decal/siding/thinplating/dark/corner,
 /obj/structure/rack,
+/obj/item/pickaxe/emergency{
+	desc = "For extracting yourself from rough landings, and getting to the even rougher ones";
+	name = "Medical Retrieval Tool"
+	},
+/obj/item/pickaxe/emergency{
+	desc = "For extracting yourself from rough landings, and getting to the even rougher ones";
+	name = "Medical Retrieval Tool"
+	},
+/obj/item/pickaxe/emergency{
+	desc = "For extracting yourself from rough landings, and getting to the even rougher ones";
+	name = "Medical Retrieval Tool"
+	},
 /obj/effect/turf_decal/industrial/outline/red,
-/obj/item/pickaxe/emergency{
-	desc = "For extracting yourself from rough landings, and getting to the even rougher ones";
-	name = "Medical Retrieval Tool"
-	},
-/obj/item/pickaxe/emergency{
-	desc = "For extracting yourself from rough landings, and getting to the even rougher ones";
-	name = "Medical Retrieval Tool"
-	},
-/obj/item/pickaxe/emergency{
-	desc = "For extracting yourself from rough landings, and getting to the even rougher ones";
-	name = "Medical Retrieval Tool"
-	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage)
 "mO" = (
@@ -1069,7 +1073,6 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "vG" = (
-/obj/machinery/light/directional/north,
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
@@ -1086,10 +1089,6 @@
 /obj/item/storage/toolbox/electrical,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
-"wC" = (
-/obj/machinery/smartfridge/bloodbank/preloaded,
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/storage)
 "wD" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 1;
@@ -1203,9 +1202,11 @@
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/fore)
 "AG" = (
-/turf/open/floor/plasteel/stairs/left{
-	dir = 8
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/structure/railing{
+	dir = 6
 	},
+/turf/open/floor/plasteel/showroomfloor,
 /area/ship/storage)
 "AJ" = (
 /turf/closed/wall/mineral/titanium,
@@ -1389,6 +1390,7 @@
 /obj/item/lighter{
 	pixel_x = -8
 	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "Gm" = (
@@ -1644,9 +1646,7 @@
 /obj/effect/turf_decal/arrows/red{
 	dir = 8
 	},
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 4
-	},
+/obj/effect/turf_decal/siding/thinplating/dark/corner,
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/storage)
 "Lt" = (
@@ -1678,8 +1678,16 @@
 /turf/open/floor/vault,
 /area/ship/storage)
 "MK" = (
-/obj/machinery/smartfridge/organ,
-/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/effect/turf_decal/industrial/outline/red,
+/obj/structure/rack,
+/obj/item/pickaxe/emergency{
+	desc = "For extracting yourself from rough landings, and getting to the even rougher ones";
+	name = "Medical Retrieval Tool"
+	},
+/obj/item/pickaxe/emergency{
+	desc = "For extracting yourself from rough landings, and getting to the even rougher ones";
+	name = "Medical Retrieval Tool"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage)
 "MN" = (
@@ -1704,7 +1712,6 @@
 /area/ship/maintenance/port)
 "MW" = (
 /obj/structure/table,
-/obj/machinery/light/small/directional/south,
 /obj/item/radio/intercom/directional/south,
 /obj/machinery/cell_charger,
 /turf/open/floor/plasteel/grimy,
@@ -1977,6 +1984,10 @@
 /obj/item/reagent_containers/blood/lizard,
 /obj/item/reagent_containers/blood/squid,
 /obj/item/reagent_containers/blood/universal,
+/obj/machinery/smartfridge/bloodbank/preloaded{
+	density = 0;
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
 "RW" = (
@@ -2025,6 +2036,10 @@
 "Sy" = (
 /obj/machinery/stasis,
 /obj/effect/turf_decal/industrial/outline/red,
+/obj/machinery/smartfridge/organ{
+	pixel_y = 32;
+	density = 0
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
 "SH" = (
@@ -2052,11 +2067,14 @@
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew/toilet)
 "SR" = (
-/obj/effect/turf_decal/siding/white/end{
-	dir = 1
-	},
 /obj/machinery/airalarm/directional/north,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/effect/turf_decal/siding/white{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/white{
+	dir = 4
+	},
 /turf/open/floor/vault,
 /area/ship/storage)
 "Ti" = (
@@ -2436,6 +2454,7 @@
 /obj/machinery/microwave{
 	pixel_y = 5
 	},
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "Yn" = (
@@ -2686,8 +2705,8 @@ UG
 UG
 "}
 (7,1,1) = {"
-bX
-bX
+bl
+bl
 uk
 UJ
 Nn
@@ -2726,7 +2745,7 @@ zo
 Ko
 QE
 SH
-bl
+OK
 Sy
 uo
 hQ
@@ -2755,7 +2774,7 @@ zo
 OK
 bu
 OK
-wC
+OK
 RB
 Go
 kP
@@ -2860,8 +2879,8 @@ ZO
 KW
 "}
 (13,1,1) = {"
-bX
-bX
+bl
+bl
 zR
 Nq
 Nn
@@ -2958,7 +2977,7 @@ XW
 np
 tq
 Yk
-Hl
+Ev
 Qq
 UG
 UG

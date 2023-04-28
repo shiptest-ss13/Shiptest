@@ -276,6 +276,7 @@
 	pixel_y = -23
 	},
 /obj/effect/turf_decal/industrial/outline/red,
+/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "gj" = (
@@ -413,7 +414,8 @@
 	dir = 6
 	},
 /obj/item/storage/secure/safe/intel/stechkin{
-	pixel_x = -22
+	pixel_x = -30;
+	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office)
@@ -1205,7 +1207,6 @@
 	reach = 2
 	},
 /obj/effect/turf_decal/trimline/opaque/bar,
-/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "EX" = (
@@ -1425,7 +1426,6 @@
 	pixel_y = 28
 	},
 /obj/effect/turf_decal/trimline/opaque/bar,
-/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "MH" = (
@@ -1946,6 +1946,7 @@
 	},
 /obj/effect/turf_decal/industrial/outline/red,
 /obj/machinery/firealarm/directional/north,
+/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "ZQ" = (
@@ -2386,10 +2387,10 @@ YQ
 YQ
 YQ
 YQ
+Rz
 FH
 FH
-FH
-FH
+Rz
 YQ
 YQ
 YQ

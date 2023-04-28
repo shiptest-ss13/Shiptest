@@ -1944,7 +1944,8 @@
 	},
 /obj/structure/window/reinforced/spawner/west,
 /obj/machinery/door/poddoor{
-	id = "shepherd_right_thrusters"
+	id = "shepherd_right_thrusters";
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
@@ -2761,6 +2762,15 @@
 /obj/effect/turf_decal/weather/dirt,
 /turf/open/floor/plating/dirt/jungle/dark/actuallydark,
 /area/ship/crew/canteen)
+"zK" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "chapel_window";
+	name = "Window Shutters";
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/crew/chapel)
 "zL" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -3458,7 +3468,8 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/door/poddoor{
-	id = "shepherd_left_thrusters"
+	id = "shepherd_left_thrusters";
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -3480,6 +3491,15 @@
 	},
 /turf/open/floor/wood,
 /area/ship/hallway/starboard)
+"Ft" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "chapel_window";
+	name = "Window Shutters";
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/crew/dorm/dormtwo)
 "Fu" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/siding/wood{
@@ -4420,6 +4440,15 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/wood,
 /area/ship/hallway/fore)
+"Pc" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "chapel_window";
+	name = "Window Shutters";
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/crew/chapel/office)
 "Pi" = (
 /obj/machinery/suit_storage_unit/inherit,
 /obj/item/tank/internals/oxygen/red,
@@ -5817,11 +5846,12 @@
 /area/ship/bridge)
 "Zq" = (
 /obj/effect/spawner/structure/window/reinforced,
+/obj/structure/curtain/cloth/fancy,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "chapel_window";
-	name = "Window Shutters"
+	name = "Window Shutters";
+	dir = 4
 	},
-/obj/structure/curtain/cloth/fancy,
 /turf/open/floor/plating,
 /area/ship/crew/canteen)
 "Zs" = (
@@ -5840,6 +5870,16 @@
 /area/ship/crew/chapel)
 "ZG" = (
 /turf/closed/wall/r_wall,
+/area/ship/crew/canteen)
+"ZH" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "chapel_window";
+	name = "Window Shutters";
+	dir = 4
+	},
+/obj/structure/curtain/cloth/fancy,
+/turf/open/floor/plating,
 /area/ship/crew/canteen)
 "ZQ" = (
 /obj/structure/cable{
@@ -5983,7 +6023,7 @@ xj
 xj
 xj
 xj
-bt
+zK
 bt
 lZ
 MQ
@@ -5991,7 +6031,7 @@ Sd
 EX
 jf
 bt
-bt
+zK
 xj
 xj
 xj
@@ -6177,7 +6217,7 @@ xj
 xj
 xj
 xj
-YA
+Pc
 YA
 oo
 Ym
@@ -6197,7 +6237,7 @@ yg
 UE
 bi
 Zs
-Zs
+Ft
 xj
 xj
 xj
@@ -7460,7 +7500,7 @@ xj
 ZG
 Zq
 Zq
-Zq
+ZH
 Zq
 ZG
 xj

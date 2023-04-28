@@ -185,6 +185,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/reagent_containers/food/snacks/icecreamsandwich,
+/obj/machinery/newscaster/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office)
 "cO" = (
@@ -247,7 +248,8 @@
 	},
 /obj/machinery/door/poddoor{
 	id = "colossus_windows";
-	name = "Window Shield"
+	name = "Window Shield";
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/crew)
@@ -270,6 +272,7 @@
 /obj/effect/turf_decal/siding/thinplating/corner{
 	dir = 1
 	},
+/obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/fore)
 "dS" = (
@@ -301,10 +304,6 @@
 /obj/item/clothing/ears/earmuffs,
 /obj/machinery/status_display/shuttle{
 	pixel_x = 32
-	},
-/obj/structure/sign/warning/incident{
-	desc = "A sign marking time passed since the last cargo bay decompression. It's a new record!";
-	pixel_y = 32
 	},
 /obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/patterned/cargo_one,
@@ -1038,6 +1037,7 @@
 /obj/item/cigbutt,
 /obj/item/trash/can,
 /obj/item/trash/chips,
+/obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/fore)
 "mq" = (
@@ -1151,6 +1151,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
 	},
+/obj/machinery/firealarm/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "nQ" = (
@@ -1277,7 +1278,6 @@
 	dir = 1
 	},
 /obj/machinery/light/directional/north,
-/obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/fore)
 "pP" = (
@@ -3334,7 +3334,6 @@
 	},
 /obj/machinery/light/directional/west,
 /obj/item/cigbutt,
-/obj/machinery/newscaster/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office)
 "Mx" = (
@@ -3936,6 +3935,9 @@
 /obj/structure/extinguisher_cabinet/directional/north,
 /obj/effect/decal/cleanable/oil/streak,
 /obj/effect/landmark/start/assistant,
+/obj/structure/sign/warning/incident{
+	pixel_x = 32
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "Su" = (
@@ -4475,7 +4477,7 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/closet/firecloset/wall{
 	dir = 4;
-	pixel_x = -32
+	pixel_x = -28
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)

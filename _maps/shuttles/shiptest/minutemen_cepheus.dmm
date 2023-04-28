@@ -448,7 +448,8 @@
 /obj/structure/window/plasma/reinforced/spawner/east,
 /obj/machinery/door/poddoor{
 	id = "cepheus_engines";
-	name = "Engine Blast Door"
+	name = "Engine Blast Door";
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
@@ -1718,10 +1719,7 @@
 /obj/structure/sign/poster/contraband/shamblers_juice{
 	pixel_x = 32
 	},
-/obj/machinery/light/directional/north,
-/obj/item/radio/intercom/directional/north{
-	pixel_y = 22
-	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/science/robotics)
 "qB" = (
@@ -3616,7 +3614,8 @@
 /obj/structure/window/plasma/reinforced/spawner/east,
 /obj/machinery/door/poddoor{
 	id = "cepheus_engines";
-	name = "Engine Blast Door"
+	name = "Engine Blast Door";
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -3821,7 +3820,9 @@
 	pixel_x = -8;
 	pixel_y = 22
 	},
-/obj/machinery/firealarm/directional/north,
+/obj/machinery/firealarm/directional/north{
+	pixel_x = 3
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
 "Ob" = (
@@ -4103,10 +4104,10 @@
 	layer = 4.1
 	},
 /obj/effect/decal/cleanable/cobweb,
-/obj/structure/sign/poster/official/safety_eye_protection{
-	pixel_y = 32
-	},
 /obj/structure/extinguisher_cabinet/directional/north,
+/obj/structure/sign/poster/official/safety_eye_protection{
+	pixel_x = -32
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/science/robotics)
 "QS" = (
@@ -4417,7 +4418,8 @@
 /obj/effect/decal/cleanable/wrapping,
 /obj/machinery/light_switch{
 	dir = 8;
-	pixel_x = 22
+	pixel_x = 22;
+	pixel_y = -10
 	},
 /obj/machinery/firealarm/directional/east,
 /turf/open/floor/plasteel/tech,

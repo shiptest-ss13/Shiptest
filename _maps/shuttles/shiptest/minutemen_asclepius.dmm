@@ -331,7 +331,9 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/siding/white,
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/airlock/hatch{
+	dir = 4
+	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
@@ -586,7 +588,6 @@
 /obj/machinery/light/directional/west{
 	light_color = "#e8eaff"
 	},
-/obj/machinery/airalarm/directional/west,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "gm" = (
@@ -776,9 +777,6 @@
 	},
 /obj/effect/turf_decal/techfloor{
 	dir = 9
-	},
-/obj/structure/extinguisher_cabinet/directional/north{
-	pixel_x = 10
 	},
 /obj/machinery/computer/med_data/laptop{
 	pixel_x = 7;
@@ -1040,12 +1038,12 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 8
 	},
-/obj/structure/extinguisher_cabinet/directional/north,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "lm" = (
@@ -1190,7 +1188,8 @@
 /obj/structure/window/plasma/reinforced/spawner/east,
 /obj/machinery/door/poddoor{
 	id = "asclepius_engineering_shutters";
-	name = "Engineering Blast Doors"
+	name = "Engineering Blast Doors";
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -1731,6 +1730,19 @@
 	},
 /turf/open/floor/carpet/red,
 /area/ship/security)
+"qN" = (
+/obj/machinery/atmospherics/components/unary/shuttle/heater{
+	dir = 4
+	},
+/obj/structure/window/plasma/reinforced/spawner/west,
+/obj/structure/window/plasma/reinforced/spawner/east,
+/obj/machinery/door/poddoor{
+	id = "asclepius_engineering_shutters";
+	name = "Engineering Blast Doors";
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "qR" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/effect/turf_decal/industrial/warning{
@@ -1845,6 +1857,15 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
+"rF" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "asclepius_window_shutters";
+	name = "Blast Shutters";
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/medical/surgery)
 "rJ" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering)
@@ -1868,6 +1889,15 @@
 	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/hallway/central)
+"rU" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "asclepius_bridge_shutters";
+	name = "Blast Shutters";
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
 "rV" = (
 /obj/effect/turf_decal/siding/white,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2635,7 +2665,7 @@
 /obj/machinery/light_switch{
 	dir = 4;
 	pixel_x = -21;
-	pixel_y = 9
+	pixel_y = 12
 	},
 /obj/item/radio/intercom/wideband/directional/west,
 /turf/open/floor/plasteel/stairs{
@@ -2766,10 +2796,6 @@
 	dir = 5
 	},
 /obj/effect/decal/cleanable/vomit/old,
-/obj/machinery/light_switch{
-	dir = 8;
-	pixel_x = 20
-	},
 /obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/grimy,
 /area/ship/hallway/central)
@@ -3069,6 +3095,7 @@
 	dir = 5
 	},
 /obj/machinery/vending/cola,
+/obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "AY" = (
@@ -3118,6 +3145,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
+	},
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 20
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
@@ -3593,6 +3624,15 @@
 	},
 /turf/open/floor/plasteel/stairs,
 /area/ship/security)
+"Fo" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "asclepius_window_shutters";
+	name = "Blast Shutters";
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/medical)
 "Ft" = (
 /obj/machinery/light/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3836,7 +3876,9 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "GV" = (
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/airlock/hatch{
+	dir = 4
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
@@ -3901,7 +3943,8 @@
 	},
 /obj/machinery/door/poddoor{
 	id = "asclepius_engineering_shutters";
-	name = "Engineering Blast Doors"
+	name = "Engineering Blast Doors";
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -4691,7 +4734,8 @@
 	},
 /obj/machinery/door/poddoor{
 	id = "asclepius_engineering_shutters";
-	name = "Engineering Blast Doors"
+	name = "Engineering Blast Doors";
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -5982,7 +6026,7 @@ cG
 kp
 Kj
 rJ
-lZ
+qN
 rJ
 IQ
 Wd
@@ -6168,7 +6212,7 @@ Wd
 Wd
 "}
 (14,1,1) = {"
-ga
+rU
 ga
 uD
 Mn
@@ -6213,7 +6257,7 @@ Wd
 "}
 (16,1,1) = {"
 Wd
-ga
+rU
 ga
 Ga
 Ef
@@ -6258,7 +6302,7 @@ Wd
 (18,1,1) = {"
 Wd
 Wd
-ga
+rU
 ga
 aJ
 aJ
@@ -6843,7 +6887,7 @@ TS
 WH
 jG
 jG
-ZA
+rF
 sN
 Wd
 Wd
@@ -6882,7 +6926,7 @@ iH
 iH
 iH
 iH
-EA
+Fo
 WH
 QT
 Wd

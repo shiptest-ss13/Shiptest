@@ -740,6 +740,10 @@
 /obj/machinery/atmospherics/components/unary/shuttle/heater{
 	dir = 1
 	},
+/obj/machinery/door/poddoor/shutters{
+	id = "port_shutters";
+	name = "Port Engine Shutters"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "jy" = (
@@ -929,10 +933,6 @@
 	dir = 1
 	},
 /obj/structure/cable/pink,
-/obj/machinery/door/poddoor/shutters{
-	id = "starboard_shutters";
-	name = "Starboard Engine Shutters"
-	},
 /turf/open/floor/engine/hull,
 /area/ship/engineering/engine)
 "mF" = (
@@ -1304,6 +1304,10 @@
 /obj/structure/cable/pink{
 	icon_state = "0-2"
 	},
+/obj/machinery/door/poddoor/shutters{
+	id = "port_shutters";
+	name = "Port Engine Shutters"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "sE" = (
@@ -1343,6 +1347,10 @@
 	},
 /obj/structure/cable/pink{
 	icon_state = "0-2"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "starboard_shutters";
+	name = "Starboard Engine Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -1435,10 +1443,6 @@
 	},
 /obj/machinery/power/shuttle/engine/fueled/plasma{
 	dir = 1
-	},
-/obj/machinery/door/poddoor/shutters{
-	id = "starboard_shutters";
-	name = "Starboard Engine Shutters"
 	},
 /turf/open/floor/engine/hull,
 /area/ship/engineering/engine)
@@ -1764,6 +1768,10 @@
 	},
 /obj/structure/cable/pink{
 	icon_state = "0-2"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "port_shutters";
+	name = "Port Engine Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -2233,7 +2241,8 @@
 	},
 /obj/machinery/door/poddoor/shutters{
 	id = "body_shutters";
-	name = "Body Shutters"
+	name = "Body Shutters";
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/roumain)
@@ -2513,10 +2522,6 @@
 /obj/machinery/power/shuttle/engine/fueled/plasma{
 	dir = 1
 	},
-/obj/machinery/door/poddoor/shutters{
-	id = "port_shutters";
-	name = "Engine Shutters"
-	},
 /turf/open/floor/engine/hull,
 /area/ship/engineering)
 "Mi" = (
@@ -2570,7 +2575,8 @@
 	},
 /obj/machinery/door/poddoor/shutters{
 	id = "body_shutters";
-	name = "Body Shutters"
+	name = "Body Shutters";
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/roumain)
@@ -2727,6 +2733,15 @@
 /obj/machinery/portable_atmospherics/scrubber,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
+"NZ" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/shutters{
+	id = "body_shutters";
+	name = "Body Shutters";
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/roumain)
 "Od" = (
 /turf/closed/wall,
 /area/ship/roumain)
@@ -2882,6 +2897,10 @@
 /obj/structure/cable/pink{
 	icon_state = "0-2"
 	},
+/obj/machinery/door/poddoor/shutters{
+	id = "starboard_shutters";
+	name = "Starboard Engine Shutters"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "QJ" = (
@@ -2983,6 +3002,10 @@
 /obj/machinery/atmospherics/components/unary/shuttle/heater{
 	dir = 1
 	},
+/obj/machinery/door/poddoor/shutters{
+	id = "starboard_shutters";
+	name = "Starboard Engine Shutters"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "SK" = (
@@ -3002,10 +3025,6 @@
 	dir = 1
 	},
 /obj/structure/cable/pink,
-/obj/machinery/door/poddoor/shutters{
-	id = "port_shutters";
-	name = "Engine Shutters"
-	},
 /turf/open/floor/engine/hull,
 /area/ship/engineering)
 "Ta" = (
@@ -4022,7 +4041,7 @@ FA
 Cx
 nE
 Vr
-nE
+NZ
 Up
 MK
 dL
@@ -4250,7 +4269,7 @@ FA
 Cx
 nE
 Vr
-nE
+NZ
 cl
 MK
 zE

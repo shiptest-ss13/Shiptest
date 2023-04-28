@@ -244,6 +244,7 @@
 	pixel_x = 15;
 	pixel_y = 26
 	},
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security)
 "mJ" = (
@@ -328,6 +329,7 @@
 	pixel_x = -15;
 	pixel_y = 26
 	},
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security)
 "nQ" = (
@@ -377,7 +379,6 @@
 /obj/effect/turf_decal/industrial/warning/cee{
 	dir = 1
 	},
-/obj/machinery/light/small/directional/west,
 /obj/item/clothing/suit/space/hardsuit/solgov,
 /obj/item/clothing/mask/gas/sechailer/swat/spacepol,
 /obj/item/tank/jetpack/oxygen,
@@ -412,7 +413,6 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 5
 	},
-/obj/machinery/light/small/directional/east,
 /obj/item/clothing/under/solgov/elite,
 /obj/item/clothing/under/solgov/elite,
 /obj/item/clothing/accessory/armband,
@@ -1362,6 +1362,16 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
+"NB" = (
+/obj/structure/grille,
+/obj/machinery/door/poddoor/shutters{
+	id = "pirateshutters";
+	name = "Blast Shutters";
+	dir = 4
+	},
+/obj/structure/window/reinforced/fulltile/shuttle,
+/turf/open/floor/plating,
+/area/ship/bridge)
 "NN" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/cargo)
@@ -2024,7 +2034,7 @@ NN
 Fx
 "}
 (8,1,1) = {"
-XB
+NB
 IO
 Bb
 IO

@@ -158,6 +158,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
+/obj/machinery/airalarm/directional/west,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "bD" = (
@@ -693,7 +694,7 @@
 	dir = 4;
 	icon_state = "sec_wall";
 	name = "firearms locker";
-	pixel_x = -32;
+	pixel_x = -28;
 	req_one_access_txt = "57, 41"
 	},
 /obj/item/gun/energy/e_gun/mini{
@@ -1190,7 +1191,7 @@
 /obj/structure/closet/secure_closet/wall{
 	dir = 4;
 	name = "medicine cabinet";
-	pixel_x = -32
+	pixel_x = -28
 	},
 /obj/item/storage/firstaid/regular,
 /obj/item/stack/medical/gauze,
@@ -3149,7 +3150,6 @@
 	pixel_y = -20
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/obj/machinery/airalarm/directional/east,
 /obj/machinery/button/door/incinerator_vent_atmos_aux{
 	pixel_x = -28;
 	pixel_y = 8

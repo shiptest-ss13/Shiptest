@@ -35,7 +35,8 @@
 	},
 /obj/machinery/door/poddoor/shutters{
 	id = "Interpolship";
-	name = "Bay Shutters"
+	name = "Bay Shutters";
+	dir = 4
 	},
 /turf/open/floor/plasteel/rockvault,
 /area/ship/storage)
@@ -150,7 +151,8 @@
 /obj/structure/cable,
 /obj/machinery/door/poddoor/shutters{
 	id = "Interpolship";
-	name = "Bay Shutters"
+	name = "Bay Shutters";
+	dir = 4
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	id = "polshield";
@@ -166,6 +168,16 @@
 /obj/structure/chair/comfy/shuttle,
 /turf/open/floor/engine/hull/interior,
 /area/ship/storage)
+"cF" = (
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/grille,
+/obj/machinery/door/poddoor{
+	id = "polwindow";
+	name = "Blast Shield";
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
 "fa" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -184,9 +196,17 @@
 /area/ship/storage)
 "gi" = (
 /obj/structure/table,
-/obj/item/radio/intercom/directional/east,
-/obj/item/radio/intercom/directional/east,
 /obj/machinery/light/floor,
+/obj/item/radio/intercom/directional{
+	pixel_y = 2;
+	dir = 4;
+	pixel_x = 16
+	},
+/obj/item/radio/intercom/directional{
+	pixel_y = 2;
+	dir = 4;
+	pixel_x = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "gs" = (
@@ -335,7 +355,8 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/command{
-	name = "Bridge"
+	name = "Bridge";
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -345,7 +366,8 @@
 	},
 /obj/machinery/door/poddoor/shutters{
 	id = "Interpolship";
-	name = "Bay Shutters"
+	name = "Bay Shutters";
+	dir = 4
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	id = "polshield"
@@ -594,9 +616,9 @@ Pq
 (12,1,1) = {"
 Pq
 Wx
-DP
-DP
-DP
+cF
+cF
+cF
 Wx
 Pq
 "}

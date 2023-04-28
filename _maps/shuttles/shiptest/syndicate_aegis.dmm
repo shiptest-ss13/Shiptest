@@ -441,6 +441,7 @@
 	dir = 9
 	},
 /obj/effect/turf_decal/trimline/opaque/bottlegreen/filled/line,
+/obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/hydroponics)
 "dI" = (
@@ -578,7 +579,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/science)
 "eQ" = (
-/obj/structure/extinguisher_cabinet/directional/north,
 /obj/effect/turf_decal/trimline/opaque/bottlegreen/filled/line,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/directional/south,
@@ -1081,6 +1081,7 @@
 /obj/effect/turf_decal/trimline/opaque/purple/filled/line,
 /obj/structure/spider/stickyweb,
 /obj/machinery/light/small/directional/east,
+/obj/machinery/firealarm/directional/south,
 /turf/open/floor/plating,
 /area/ship/science)
 "ij" = (
@@ -1141,6 +1142,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/industrial/hatch/blue,
+/obj/machinery/firealarm/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "iJ" = (
@@ -2315,6 +2317,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
 	},
+/obj/structure/extinguisher_cabinet/directional/north,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "vG" = (
@@ -2466,6 +2469,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/firealarm/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
 "xf" = (
@@ -2738,6 +2742,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/techfloor/hole/right,
 /obj/effect/turf_decal/techfloor/hole,
+/obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
 "Aq" = (
@@ -3995,7 +4000,6 @@
 	dir = 4
 	},
 /obj/machinery/light/directional/east,
-/obj/machinery/firealarm/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "Mv" = (
@@ -4521,6 +4525,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "To" = (
@@ -4681,9 +4686,7 @@
 	pixel_x = -8;
 	pixel_y = 9
 	},
-/obj/item/radio/intercom/directional/north{
-	pixel_x = 29
-	},
+/obj/item/radio/intercom/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "Um" = (

@@ -33,12 +33,6 @@
 /turf/open/floor/mineral/titanium,
 /area/ship/bridge)
 "aq" = (
-/obj/structure/window/reinforced/spawner{
-	dir = 8
-	},
-/obj/structure/window/reinforced/spawner{
-	dir = 1
-	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/bridge)
 "at" = (
@@ -599,9 +593,6 @@
 "fA" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/structure/sign/warning/deathsposal{
-	pixel_x = -28
-	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "fB" = (
@@ -1038,7 +1029,9 @@
 /turf/open/floor/plating/airless,
 /area/ship/hallway)
 "jk" = (
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/airlock/hatch{
+	dir = 4
+	},
 /obj/structure/cable/green{
 	icon_state = "4-8"
 	},
@@ -1137,9 +1130,6 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/dorm)
 "kf" = (
-/obj/structure/window/reinforced/spawner{
-	dir = 4
-	},
 /obj/effect/decal/cleanable/oil,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/medical)
@@ -2001,13 +1991,6 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/dorm)
-"ts" = (
-/obj/machinery/light/directional/west,
-/obj/structure/window/reinforced/spawner{
-	dir = 1
-	},
-/turf/open/floor/plasteel/tech/techmaint,
-/area/ship/crew/dorm)
 "tt" = (
 /turf/closed/wall/mineral/wood,
 /area/ship/crew/canteen)
@@ -2682,12 +2665,6 @@
 /turf/closed/wall/mineral/titanium/survival,
 /area/ship/engineering/engine)
 "zK" = (
-/obj/structure/window/reinforced/spawner{
-	dir = 1
-	},
-/obj/structure/window/reinforced/spawner{
-	dir = 8
-	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/canteen)
 "zL" = (
@@ -3099,12 +3076,6 @@
 	},
 /turf/open/floor/engine/airless,
 /area/ship/engineering/atmospherics)
-"Ee" = (
-/obj/structure/window/reinforced/spawner{
-	dir = 1
-	},
-/turf/open/floor/plasteel/tech/techmaint,
-/area/ship/crew/dorm)
 "Eg" = (
 /obj/machinery/air_sensor/atmos/toxin_tank,
 /turf/open/floor/engine/airless,
@@ -3549,12 +3520,6 @@
 	dir = 4
 	},
 /obj/machinery/portable_atmospherics/scrubber,
-/turf/open/floor/plating,
-/area/ship/engineering/atmospherics)
-"Ij" = (
-/obj/structure/window/reinforced/spawner{
-	dir = 1
-	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "Im" = (
@@ -4021,9 +3986,6 @@
 /obj/structure/window/reinforced/spawner{
 	dir = 4
 	},
-/obj/structure/window/reinforced/spawner{
-	dir = 8
-	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/engine)
 "Nw" = (
@@ -4033,7 +3995,9 @@
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/canteen)
 "NB" = (
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/airlock/hatch{
+	dir = 4
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
@@ -4177,9 +4141,6 @@
 	dir = 4
 	},
 /obj/structure/window/reinforced/spawner,
-/obj/structure/window/reinforced/spawner{
-	dir = 8
-	},
 /obj/structure/disposalpipe/trunk,
 /obj/machinery/disposal/deliveryChute{
 	dir = 1
@@ -4231,7 +4192,8 @@
 	dir = 8;
 	id = "Burn Chamber Blast";
 	name = "Burn Chamber Vent Control";
-	pixel_x = 26
+	pixel_x = 26;
+	pixel_y = 5
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -4252,12 +4214,14 @@
 /turf/closed/wall/mineral/wood,
 /area/ship/crew/canteen)
 "Qp" = (
-/obj/structure/window/reinforced/spawner,
-/obj/structure/window/reinforced/spawner{
-	dir = 1
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
+/obj/structure/sign/warning/deathsposal{
+	pixel_y = 30
 	},
 /turf/open/floor/plating,
-/area/ship/engineering/atmospherics)
+/area/ship/engineering/engine)
 "Qw" = (
 /obj/structure/cable/green{
 	icon_state = "1-2"
@@ -4279,9 +4243,6 @@
 	},
 /obj/structure/window/reinforced/spawner{
 	dir = 1
-	},
-/obj/structure/window/reinforced/spawner{
-	dir = 8
 	},
 /obj/structure/disposalpipe/trunk{
 	dir = 1
@@ -4660,7 +4621,9 @@
 /turf/open/floor/mineral/titanium,
 /area/ship/bridge)
 "Um" = (
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/airlock/hatch{
+	dir = 4
+	},
 /obj/structure/fans/tiny,
 /turf/open/floor/engine,
 /area/ship/engineering/atmospherics)
@@ -4918,7 +4881,9 @@
 /turf/open/floor/engine/airless,
 /area/ship/engineering/atmospherics)
 "WA" = (
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/airlock/hatch{
+	dir = 4
+	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
@@ -4957,12 +4922,6 @@
 	},
 /obj/structure/cable/green{
 	icon_state = "2-8"
-	},
-/obj/structure/window/reinforced/spawner{
-	dir = 4
-	},
-/obj/structure/window/reinforced/spawner{
-	dir = 1
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/bridge)
@@ -6061,7 +6020,7 @@ jj
 ix
 bZ
 QQ
-ts
+Td
 OD
 QQ
 ke
@@ -6119,7 +6078,7 @@ hR
 eZ
 vj
 QQ
-Ee
+OD
 xa
 QQ
 aN
@@ -6136,7 +6095,7 @@ eZ
 eZ
 eZ
 VA
-cF
+Qp
 pp
 hV
 fk
@@ -6467,7 +6426,7 @@ hR
 eZ
 Hi
 Xn
-Qp
+CB
 bT
 Hu
 kN
@@ -6690,7 +6649,7 @@ Zg
 Zg
 Zg
 bT
-Ij
+CB
 yj
 FQ
 KT

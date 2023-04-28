@@ -27,6 +27,14 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
+"bi" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/shutters{
+	id = "externalshutters";
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/hallway/central)
 "bp" = (
 /obj/effect/turf_decal/siding/blue/corner{
 	dir = 8
@@ -338,7 +346,6 @@
 	dir = 6
 	},
 /obj/structure/closet/secure_closet/engineering_welding,
-/obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "gC" = (
@@ -466,9 +473,6 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/layer_manifold,
-/obj/machinery/door/poddoor/shutters{
-	id = "externalshutters"
-	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "jr" = (
@@ -659,6 +663,7 @@
 /obj/machinery/computer/atmos_control/tank/air_tank{
 	dir = 4
 	},
+/obj/machinery/airalarm/directional/west,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "na" = (
@@ -887,9 +892,6 @@
 "sh" = (
 /obj/machinery/power/shuttle/engine/fueled/plasma{
 	dir = 1
-	},
-/obj/machinery/door/poddoor/shutters{
-	id = "externalshutters"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -1133,6 +1135,9 @@
 	dir = 1
 	},
 /obj/structure/window/reinforced/spawner,
+/obj/machinery/door/poddoor/shutters{
+	id = "externalshutters"
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "vT" = (
@@ -1953,8 +1958,8 @@
 	},
 /obj/machinery/light_switch{
 	dir = 1;
-	pixel_x = 6;
-	pixel_y = -24
+	pixel_x = 10;
+	pixel_y = -21
 	},
 /obj/machinery/firealarm/directional/south,
 /obj/effect/turf_decal/trimline/opaque/blue/filled/warning,
@@ -2520,6 +2525,9 @@
 	},
 /obj/structure/window/reinforced/spawner,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/machinery/door/poddoor/shutters{
+	id = "externalshutters"
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "Yd" = (
@@ -2908,7 +2916,7 @@ Nr
 "}
 (9,1,1) = {"
 tU
-tU
+bi
 Ej
 Yd
 QQ
@@ -2966,7 +2974,7 @@ qP
 "}
 (11,1,1) = {"
 tU
-tU
+bi
 eD
 fv
 YE

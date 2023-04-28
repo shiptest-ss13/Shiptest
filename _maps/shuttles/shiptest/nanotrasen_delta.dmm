@@ -33,6 +33,7 @@
 /obj/item/clothing/suit/caution,
 /obj/structure/mopbucket,
 /obj/item/mop,
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel,
 /area/ship/hallway/port)
 "am" = (
@@ -45,10 +46,6 @@
 "ap" = (
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/advanced_airlock_controller{
-	pixel_x = -32;
-	pixel_y = 11
-	},
 /obj/structure/closet/emcloset/wall{
 	dir = 4;
 	pixel_x = -32;
@@ -476,6 +473,7 @@
 /area/ship/engineering)
 "cm" = (
 /obj/machinery/vending/snack/random,
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "co" = (
@@ -1055,10 +1053,6 @@
 /obj/machinery/power/shuttle/engine/fueled/plasma{
 	dir = 4
 	},
-/obj/machinery/door/poddoor{
-	dir = 4;
-	id = "whiteship_windows"
-	},
 /turf/open/floor/plating/airless,
 /area/ship/engineering)
 "ev" = (
@@ -1097,7 +1091,6 @@
 /obj/effect/turf_decal/corner/opaque/blue{
 	dir = 4
 	},
-/obj/machinery/light/small/directional/south,
 /obj/structure/closet/secure_closet{
 	icon_state = "cap";
 	name = "captain's locker";
@@ -1115,6 +1108,7 @@
 /obj/item/stock_parts/cell/gun,
 /obj/item/gun/energy/laser,
 /obj/item/megaphone/command,
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "fy" = (
@@ -1224,7 +1218,6 @@
 	dir = 1
 	},
 /obj/structure/catwalk/over/plated_catwalk,
-/obj/machinery/light/small/directional/east,
 /obj/machinery/firealarm/directional/east,
 /turf/open/floor/plating,
 /area/ship/hallway/central)
@@ -1754,6 +1747,10 @@
 /obj/machinery/atmospherics/components/unary/shuttle/heater{
 	dir = 4
 	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "whiteship_windows"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "vm" = (
@@ -2027,10 +2024,6 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/machinery/door/poddoor{
-	dir = 4;
-	id = "whiteship_windows"
-	},
 /turf/open/floor/plating/airless,
 /area/ship/engineering)
 "BA" = (
@@ -2041,11 +2034,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/catwalk/over/plated_catwalk,
-/obj/machinery/light/small/directional/east,
 /turf/open/floor/plating,
 /area/ship/hallway/central)
 "BE" = (
-/obj/machinery/light/small/directional/west,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -2234,8 +2225,8 @@
 /obj/effect/turf_decal/corner/opaque/blue{
 	dir = 4
 	},
-/obj/machinery/light/small/directional/north,
 /obj/machinery/modular_computer/console/preset/command,
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "IM" = (
@@ -2251,6 +2242,10 @@
 	},
 /obj/structure/cable{
 	icon_state = "0-8"
+	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "whiteship_windows"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -2498,6 +2493,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "whiteship_windows"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "QH" = (
@@ -2555,9 +2554,13 @@
 /area/ship/crew)
 "SW" = (
 /obj/structure/sign/warning/vacuum/external{
-	pixel_x = 32
+	pixel_x = 32;
+	pixel_y = -8
 	},
 /obj/machinery/light/small/directional/east,
+/obj/machinery/advanced_airlock_controller{
+	pixel_y = -20
+	},
 /turf/open/floor/plating,
 /area/ship/hallway/port)
 "SY" = (
@@ -2606,10 +2609,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/science/robotics)
 "TO" = (
-/obj/machinery/door/poddoor{
-	dir = 4;
-	id = "whiteship_windows"
-	},
 /obj/machinery/power/shuttle/engine/electric{
 	dir = 4
 	},
@@ -2705,10 +2704,7 @@
 /obj/item/radio/headset,
 /obj/item/radio/headset,
 /obj/item/radio/headset,
-/obj/machinery/computer/cryopod/retro{
-	dir = 1;
-	pixel_y = -17
-	},
+/obj/machinery/computer/cryopod/retro/directional/south,
 /turf/open/floor/plasteel,
 /area/ship/crew)
 "Xy" = (
@@ -2736,6 +2732,10 @@
 	},
 /obj/machinery/atmospherics/components/unary/shuttle/heater{
 	dir = 4
+	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "whiteship_windows"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -2798,6 +2798,7 @@
 /area/ship/hallway/port)
 "Zl" = (
 /obj/machinery/vending/boozeomat/all_access,
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "Zn" = (
@@ -2994,11 +2995,11 @@ ae
 NF
 ae
 bB
-Dq
+bB
 Lv
 dI
 SE
-Dq
+bB
 bB
 SN
 sF

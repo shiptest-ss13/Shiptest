@@ -5695,6 +5695,15 @@
 /obj/machinery/atmospherics/pipe/manifold/yellow/visible,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
+"Vh" = (
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "bridge_shutters";
+	dir = 4
+	},
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/grille,
+/turf/open/floor/plating,
+/area/ship/bridge)
 "Vj" = (
 /obj/effect/turf_decal/corner/transparent/solgovgold{
 	dir = 6
@@ -7109,7 +7118,7 @@ cZ
 Es
 On
 KM
-On
+Vh
 "}
 (29,1,1) = {"
 kD

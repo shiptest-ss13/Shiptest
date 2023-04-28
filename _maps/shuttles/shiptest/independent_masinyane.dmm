@@ -36,7 +36,6 @@
 	dir = 4
 	},
 /obj/machinery/computer/cryopod/directional/west,
-/obj/machinery/light/directional/west,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "dJ" = (
@@ -134,6 +133,7 @@
 /obj/machinery/computer/helm{
 	dir = 8
 	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "ju" = (
@@ -369,9 +369,6 @@
 /obj/effect/turf_decal/trimline/opaque/white/filled/warning{
 	dir = 10
 	},
-/obj/item/storage/secure/safe{
-	pixel_x = 33
-	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Cu" = (
@@ -442,10 +439,10 @@
 	id = "masinyane_windowshield";
 	name = "shutters";
 	pixel_x = 25;
-	pixel_y = 30
+	pixel_y = 21
 	},
 /obj/item/radio/intercom/directional/north{
-	pixel_y = 36
+	pixel_y = 44
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
@@ -460,7 +457,8 @@
 	dir = 8
 	},
 /obj/machinery/door/airlock/hatch{
-	name = "Thruster Maintenance"
+	name = "Thruster Maintenance";
+	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -573,6 +571,10 @@
 	},
 /obj/machinery/power/terminal{
 	dir = 1
+	},
+/obj/item/storage/secure/safe{
+	pixel_x = 33;
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)

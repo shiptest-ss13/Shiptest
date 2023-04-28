@@ -187,7 +187,9 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "w" = (
-/obj/machinery/door/airlock/maintenance_hatch,
+/obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4
+	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},

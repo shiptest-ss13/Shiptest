@@ -1070,6 +1070,15 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/hallway/central)
+"jE" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/shutters{
+	id = "warshipbridge";
+	name = "Blast Shutters";
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
 "jF" = (
 /obj/structure/railing/corner{
 	dir = 4
@@ -2620,6 +2629,15 @@
 "Aj" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/crew/canteen)
+"Al" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/shutters{
+	id = "warshipbridge";
+	name = "Blast Shutters";
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
 "Ap" = (
 /obj/effect/turf_decal/techfloor,
 /obj/machinery/power/apc/auto_name/directional/south,
@@ -3847,7 +3865,8 @@
 "Lt" = (
 /obj/machinery/door/airlock/hatch{
 	name = "Captain's Office";
-	req_access_txt = "20"
+	req_access_txt = "20";
+	dir = 4
 	},
 /obj/machinery/door/firedoor,
 /turf/open/floor/plasteel/dark,
@@ -5502,7 +5521,7 @@ CM
 (5,1,1) = {"
 CM
 CM
-ME
+jE
 tC
 tC
 tC
@@ -5854,7 +5873,7 @@ CM
 (13,1,1) = {"
 CM
 CM
-ME
+Al
 tC
 tC
 tC

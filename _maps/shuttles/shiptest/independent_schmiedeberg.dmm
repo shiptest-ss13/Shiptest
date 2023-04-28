@@ -978,6 +978,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
+/obj/machinery/light/directional/south,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
 "nl" = (
@@ -1195,7 +1196,8 @@
 "qV" = (
 /obj/machinery/light/small/directional/north,
 /obj/structure/sign/departments/chemistry{
-	pixel_y = 32
+	pixel_y = 29;
+	pixel_x = -27
 	},
 /obj/effect/decal/cleanable/oil,
 /obj/structure/cable{
@@ -1207,7 +1209,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
 	},
-/obj/structure/extinguisher_cabinet/directional/north,
+/obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/mineral/titanium/white,
 /area/ship/crew/canteen)
 "rj" = (
@@ -1537,7 +1539,8 @@
 /obj/machinery/button/door{
 	id = "pharmwindows";
 	name = "window shutters";
-	pixel_y = -23
+	pixel_y = -23;
+	dir = 1
 	},
 /turf/open/floor/carpet/blue,
 /area/ship/bridge)
@@ -1580,7 +1583,6 @@
 	dir = 8
 	},
 /obj/machinery/light/directional/south,
-/obj/machinery/firealarm/directional/south,
 /turf/open/floor/carpet/blue,
 /area/ship/crew)
 "xg" = (
@@ -1782,14 +1784,12 @@
 	dir = 4;
 	id = "pharmboothlock"
 	},
-/obj/item/radio/intercom/directional/north{
-	pixel_y = 23
-	},
 /obj/machinery/button/shieldwallgen{
 	id = "holopharm";
 	pixel_x = 6;
 	pixel_y = 36
 	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "Ab" = (
@@ -2169,7 +2169,7 @@
 /obj/item/pickaxe/mini,
 /obj/structure/closet/wall/white{
 	name = "E.V.A";
-	pixel_y = 32
+	pixel_y = 28
 	},
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable{
@@ -2203,7 +2203,6 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
-/obj/machinery/light/directional/south,
 /obj/structure/curtain/cloth{
 	pixel_y = -32
 	},
@@ -2817,7 +2816,8 @@
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "pharmairlock"
+	id = "pharmairlock";
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -2929,6 +2929,7 @@
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 1
 	},
+/obj/machinery/firealarm/directional/west,
 /turf/open/floor/carpet/blue,
 /area/ship/crew)
 "Ug" = (

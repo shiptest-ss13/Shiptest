@@ -212,7 +212,6 @@
 	pixel_x = 7;
 	pixel_y = 7
 	},
-/obj/item/radio/intercom/directional/south,
 /obj/machinery/light_switch{
 	dir = 1;
 	pixel_x = -4;
@@ -222,6 +221,10 @@
 	dir = 8
 	},
 /obj/machinery/door/firedoor/border_only,
+/obj/item/radio/intercom{
+	pixel_y = -15;
+	pixel_x = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
 "bV" = (
@@ -1268,9 +1271,6 @@
 /area/ship/science/ai_chamber)
 "jL" = (
 /obj/machinery/power/shuttle/engine/electric,
-/obj/machinery/door/poddoor{
-	id = "thrusterblasts"
-	},
 /obj/structure/cable/cyan{
 	icon_state = "0-2"
 	},
@@ -1490,16 +1490,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
-"mz" = (
-/obj/machinery/door/poddoor{
-	id = "thrusterblasts"
-	},
-/obj/machinery/power/shuttle/engine/electric,
-/obj/structure/cable/cyan{
-	icon_state = "0-2"
-	},
-/turf/open/floor/plating,
-/area/ship/maintenance/port)
 "mQ" = (
 /turf/closed/wall/r_wall,
 /area/ship/engineering/atmospherics)
@@ -1554,6 +1544,9 @@
 	},
 /obj/machinery/power/smes/shuttle/precharged,
 /obj/structure/cable/cyan,
+/obj/machinery/door/poddoor{
+	id = "thrusterblasts"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "of" = (
@@ -1865,9 +1858,6 @@
 /area/ship/science)
 "rz" = (
 /obj/machinery/power/shuttle/engine/electric,
-/obj/machinery/door/poddoor{
-	id = "thrusterblasts"
-	},
 /obj/structure/cable/cyan{
 	icon_state = "0-2"
 	},
@@ -3465,9 +3455,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/storage)
 "GL" = (
-/obj/machinery/door/poddoor{
-	id = "thrusterblasts"
-	},
 /obj/machinery/power/shuttle/engine/fueled/plasma,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -3496,16 +3483,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
-"GQ" = (
-/obj/machinery/door/poddoor{
-	id = "thrusterblasts"
-	},
-/obj/machinery/power/shuttle/engine/electric,
-/obj/structure/cable/cyan{
-	icon_state = "0-2"
-	},
-/turf/open/floor/plating,
-/area/ship/maintenance/starboard)
 "GT" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
@@ -3771,9 +3748,6 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "IV" = (
-/obj/machinery/door/poddoor{
-	id = "thrusterblasts"
-	},
 /obj/machinery/power/shuttle/engine/fueled/plasma,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -4414,11 +4388,11 @@
 /obj/structure/window/reinforced/spawner{
 	dir = 4
 	},
-/obj/item/radio/intercom/wideband/directional/south,
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
+/obj/item/radio/intercom/wideband/table,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
 "Ph" = (
@@ -4448,6 +4422,9 @@
 	dir = 1
 	},
 /obj/structure/cable/cyan,
+/obj/machinery/door/poddoor{
+	id = "thrusterblasts"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "Po" = (
@@ -4540,6 +4517,9 @@
 /obj/machinery/atmospherics/components/unary/shuttle/heater,
 /obj/structure/window/reinforced/spawner{
 	dir = 1
+	},
+/obj/machinery/door/poddoor{
+	id = "thrusterblasts"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -4640,12 +4620,18 @@
 	},
 /obj/machinery/power/smes/shuttle/precharged,
 /obj/structure/cable/cyan,
+/obj/machinery/door/poddoor{
+	id = "thrusterblasts"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "RO" = (
 /obj/machinery/atmospherics/components/unary/shuttle/heater,
 /obj/structure/window/reinforced/spawner{
 	dir = 1
+	},
+/obj/machinery/door/poddoor{
+	id = "thrusterblasts"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -5153,6 +5139,9 @@
 	dir = 1
 	},
 /obj/structure/cable/cyan,
+/obj/machinery/door/poddoor{
+	id = "thrusterblasts"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "WR" = (
@@ -5932,7 +5921,7 @@ zW
 zW
 zW
 zW
-GQ
+jL
 RF
 oQ
 Om
@@ -7108,7 +7097,7 @@ zW
 zW
 zW
 zW
-mz
+rz
 nv
 cR
 Do

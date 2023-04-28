@@ -435,6 +435,7 @@
 /obj/effect/spawner/lootdrop/salvage_50,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/borderfloor,
+/obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/plasteel,
 /area/ship/hallway/aft)
 "ek" = (
@@ -592,7 +593,7 @@
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
 	},
-/obj/structure/extinguisher_cabinet/directional/north,
+/obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/plasteel,
 /area/ship/hallway/aft)
 "fv" = (
@@ -1031,6 +1032,12 @@
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo/port)
+"kq" = (
+/obj/structure/sign/warning/vacuum{
+	pixel_y = 3
+	},
+/turf/closed/wall,
+/area/ship/cargo/port)
 "kr" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -1252,6 +1259,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/borderfloor,
+/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel,
 /area/ship/hallway/aft)
 "mS" = (
@@ -1345,7 +1353,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
 "ov" = (
-/obj/machinery/light/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
 /mob/living/simple_animal/hostile/mining_drone{
 	desc = "A minebot with the name \"Molly\" painted on the side in careful cursive writing. She may be cute, but she still constantly gets in the way.";
@@ -1887,7 +1894,7 @@
 /obj/structure/railing,
 /obj/machinery/computer/atmos_control/incinerator{
 	dir = 4;
-	sensors = list("gecko_burn_sensor" = "Combustion Chamber")
+	sensors = list("gecko_burn_sensor"="Combustion Chamber")
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/engine)
@@ -2000,7 +2007,9 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo/port)
 "uv" = (
-/obj/structure/sign/warning/vacuum,
+/obj/structure/sign/warning/vacuum{
+	pixel_y = 5
+	},
 /turf/closed/wall,
 /area/ship/cargo/starboard)
 "uz" = (
@@ -2224,7 +2233,6 @@
 /area/ship/cargo/port)
 "wR" = (
 /obj/machinery/light/directional/north,
-/obj/machinery/firealarm/directional/north,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo/starboard)
@@ -2871,7 +2879,6 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "Du" = (
-/obj/machinery/light/directional/south,
 /obj/machinery/firealarm/directional/south,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned,
@@ -3382,6 +3389,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
+/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo/port)
 "Iv" = (
@@ -5171,9 +5179,10 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew)
 "ZY" = (
-/obj/structure/sign/warning/vacuum,
-/turf/closed/wall,
-/area/ship/cargo/port)
+/obj/effect/spawner/lootdrop/salvage_50,
+/obj/machinery/firealarm/directional/north,
+/turf/open/floor/plasteel/patterned,
+/area/ship/cargo/starboard)
 
 (1,1,1) = {"
 hu
@@ -5680,12 +5689,12 @@ BV
 Vw
 Wj
 Du
-VE
+kq
 Sj
 bb
 ov
 uv
-iJ
+ZY
 oW
 lE
 eE
@@ -5738,7 +5747,7 @@ Eh
 TF
 mX
 Iu
-ZY
+VE
 HK
 bb
 mN
@@ -6170,7 +6179,7 @@ dl
 bh
 nP
 Jc
-cG
+ZB
 EM
 Pf
 fS
@@ -6199,7 +6208,7 @@ dl
 dl
 Px
 Jc
-ZB
+cG
 jx
 zn
 fS
@@ -6460,9 +6469,9 @@ hu
 hu
 gS
 rh
-Gu
-CI
 ph
+CI
+Gu
 rh
 CL
 gr

@@ -635,16 +635,6 @@
 /obj/structure/table/reinforced,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
-"eA" = (
-/obj/effect/turf_decal/trimline/opaque/yellow/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/siding/thinplating{
-	dir = 1
-	},
-/obj/machinery/firealarm/directional/north,
-/turf/open/floor/plasteel/patterned/grid,
-/area/ship/hallway/central)
 "eC" = (
 /obj/structure/table,
 /obj/item/mecha_parts/mecha_equipment/rcd,
@@ -712,7 +702,6 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/machinery/light/small/directional/north,
-/obj/machinery/firealarm/directional/north,
 /obj/machinery/airalarm/directional/west,
 /obj/structure/closet/firecloset/full{
 	anchored = 1;
@@ -5359,7 +5348,7 @@
 	id = "talos_armory";
 	name = "Door Control";
 	normaldoorcontrol = 1;
-	pixel_x = -25;
+	pixel_x = -29;
 	pixel_y = -6;
 	req_access_txt = "3"
 	},
@@ -5368,7 +5357,7 @@
 	id = "talos_armory";
 	name = "Door Bolt Control";
 	normaldoorcontrol = 1;
-	pixel_x = -25;
+	pixel_x = -29;
 	pixel_y = 6;
 	req_access_txt = "3";
 	specialfunctions = 4
@@ -6291,9 +6280,7 @@
 /obj/machinery/shower{
 	dir = 8
 	},
-/obj/structure/sign/poster/official/moth/hardhats{
-	pixel_y = 32
-	},
+/obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "PL" = (
@@ -6958,6 +6945,9 @@
 	dir = 4;
 	pixel_x = -12
 	},
+/obj/machinery/computer/security/telescreen/entertainment{
+	pixel_x = -32
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "Uh" = (
@@ -7215,7 +7205,6 @@
 	},
 /obj/machinery/light/directional/south,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "VS" = (
@@ -7226,6 +7215,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
 "VX" = (
@@ -7655,9 +7645,7 @@
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 8
 	},
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_y = -32
-	},
+/obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "Zu" = (
@@ -8628,7 +8616,7 @@ Ya
 OD
 Nj
 hT
-eA
+iN
 Rg
 Hq
 Ve

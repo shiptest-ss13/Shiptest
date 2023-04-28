@@ -189,6 +189,10 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "mining_window_shutter"
+	},
 /turf/open/floor/plating,
 /area/ship/cargo)
 "en" = (
@@ -342,10 +346,10 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/obj/machinery/firealarm/directional/south,
 /obj/machinery/atmospherics/pipe/simple/orange/visible{
 	dir = 4
 	},
+/obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel,
 /area/ship/engineering)
 "hg" = (
@@ -776,6 +780,10 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "mining_window_shutter"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "nT" = (
@@ -900,6 +908,10 @@
 /obj/machinery/atmospherics/components/unary/shuttle/heater{
 	dir = 4
 	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "mining_window_shutter"
+	},
 /turf/open/floor/plating,
 /area/ship/hallway)
 "ql" = (
@@ -989,11 +1001,11 @@
 	},
 /area/ship/hallway)
 "sz" = (
-/obj/machinery/firealarm/directional/east,
 /obj/effect/turf_decal/corner/opaque/black{
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/opaque/black,
+/obj/machinery/firealarm/directional/west,
 /turf/open/floor/plasteel/white,
 /area/ship/security)
 "sM" = (
@@ -1316,6 +1328,10 @@
 	},
 /obj/structure/window/reinforced{
 	dir = 8
+	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "mining_window_shutter"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -2046,7 +2062,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
-/obj/machinery/firealarm/directional/west,
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/circuit,
 /area/ship/science)
 "JR" = (
@@ -2456,6 +2472,7 @@
 /obj/structure/bed,
 /obj/structure/curtain/cloth/grey,
 /obj/item/bedsheet/dorms,
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/carpet,
 /area/ship/crew)
 "VE" = (
@@ -2587,6 +2604,10 @@
 	},
 /obj/structure/cable{
 	icon_state = "0-8"
+	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "mining_window_shutter"
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
@@ -3171,27 +3192,6 @@ Kg
 Kg
 Kg
 Kg
-Kz
-Kz
-Kz
-Kz
-Kz
-"}
-(28,1,1) = {"
-Kz
-Kz
-Kz
-Kz
-Kz
-Kz
-Kz
-Kz
-Kz
-Kz
-Kz
-Kz
-Kz
-Kz
 Kz
 Kz
 Kz

@@ -25,7 +25,8 @@
 /area/ship/cargo)
 "aQ" = (
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "scav_shutters"
+	id = "scav_shutters";
+	dir = 4
 	},
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/mineral/plastitanium,
@@ -371,7 +372,7 @@
 /area/ship/medical)
 "ob" = (
 /obj/structure/closet/emcloset/wall{
-	pixel_y = 32
+	pixel_y = 28
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/item/tank/internals/plasmaman/full,
@@ -686,7 +687,7 @@
 "wE" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters/preopen{
-	dir = 4;
+	dir = 1;
 	id = "scav_shutters"
 	},
 /turf/open/floor/mineral/plastitanium,
@@ -739,7 +740,7 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	dir = 4;
+	dir = 1;
 	id = "scav_shutters"
 	},
 /turf/open/floor/plating/airless,
@@ -797,14 +798,6 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/engineering)
-"zH" = (
-/obj/machinery/door/poddoor/shutters/preopen{
-	dir = 4;
-	id = "scav_shutters"
-	},
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
-/turf/open/floor/mineral/plastitanium,
-/area/ship/bridge)
 "zR" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1153,7 +1146,7 @@
 	dir = 1;
 	pixel_y = 2
 	},
-/obj/machinery/firealarm/directional/south,
+/obj/machinery/firealarm/directional/east,
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/mineral/titanium/white,
 /area/ship/medical)
@@ -1241,7 +1234,6 @@
 /obj/machinery/door/window,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/door/poddoor/shutters/preopen{
-	dir = 4;
 	id = "scav_shutters"
 	},
 /turf/open/floor/plating/airless,
@@ -1263,7 +1255,7 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
-/obj/machinery/firealarm/directional/south,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Sd" = (
@@ -1365,9 +1357,8 @@
 	},
 /obj/structure/closet/firecloset/wall{
 	dir = 1;
-	pixel_y = -32
+	pixel_y = -28
 	},
-/obj/machinery/light/small/directional/south,
 /obj/effect/turf_decal/number/three{
 	dir = 8
 	},
@@ -1746,7 +1737,7 @@ Jt
 oY
 "}
 (13,1,1) = {"
-zH
+aQ
 wE
 Mv
 QG
