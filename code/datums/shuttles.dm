@@ -348,7 +348,7 @@
 
 /datum/map_template/shuttle/subshuttles/nanotrasen_tegus
 	file_name = "nanotrasen_shuttle_tegus"
-	name = "Tegus Transport Shuttle"
+	name = "Anole Transport Shuttle"
 	prefix = "NTSV"
 
 /datum/map_template/shuttle/subshuttles/pill
