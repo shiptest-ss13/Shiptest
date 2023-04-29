@@ -98,11 +98,9 @@
 
 //security team gets called in after 10 minutes of prep to find the refugees
 /datum/round_event/ghost_role/fugitives/proc/spawn_hunters()
-	var/backstory = pick("space cop", "russian", "bounty hunter")
+	var/backstory = pick( "russian", "bounty hunter")
 	var/datum/map_template/shuttle/ship
-	if(backstory == "space cop")
-		ship = new /datum/map_template/shuttle/hunter/space_cop
-	else if (backstory == "russian")
+	if (backstory == "russian")
 		ship = new /datum/map_template/shuttle/hunter/russian
 	else
 		ship = new /datum/map_template/shuttle/hunter/bounty
