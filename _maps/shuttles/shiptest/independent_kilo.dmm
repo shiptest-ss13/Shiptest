@@ -480,7 +480,6 @@
 "cr" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/industrial/hatch/yellow,
-/obj/machinery/light,
 /obj/machinery/power/port_gen/pacman{
 	anchored = 1
 	},
@@ -488,10 +487,7 @@
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/yellow,
-/obj/machinery/light_switch{
-	pixel_y = -23;
-	dir = 1
-	},
+/obj/machinery/light/directional/south,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "cw" = (
@@ -1242,9 +1238,6 @@
 /obj/machinery/computer/cargo/express{
 	dir = 8
 	},
-/obj/machinery/light{
-	dir = 4
-	},
 /obj/machinery/airalarm/directional/east,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
@@ -1948,6 +1941,7 @@
 /obj/machinery/computer/helm{
 	dir = 8
 	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "PS" = (
@@ -1990,10 +1984,11 @@
 	dir = 8
 	},
 /obj/docking_port/mobile{
-	dir = 8;
+	dir = 4;
 	launch_status = 0;
 	name = "Mining Shuttle";
-	preferred_direction = 2
+	preferred_direction = 4;
+	port_direction = 2
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/cargo)
@@ -2086,6 +2081,10 @@
 	dir = 2
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 1
+	},
+/obj/machinery/light_switch{
+	pixel_y = -23;
 	dir = 1
 	},
 /turf/open/floor/plating,

@@ -52,15 +52,6 @@
 /obj/structure/spacevine,
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ruin/jungle/interceptor/starhall)
-"aB" = (
-/obj/effect/spawner/structure/window/shuttle,
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "condorwindows";
-	name = "External Shutters"
-	},
-/obj/structure/spacevine,
-/turf/open/floor/plating,
-/area/ruin/jungle/interceptor/crewquarters)
 "aG" = (
 /obj/structure/lattice,
 /turf/open/floor/plating/dirt/jungle/dark,
@@ -243,7 +234,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/item/shard,
-/obj/machinery/light/small/broken/directional/east,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/jungle/interceptor/security)
 "bS" = (
@@ -782,7 +772,7 @@
 /obj/machinery/firealarm/directional/south,
 /obj/machinery/light_switch{
 	dir = 1;
-	pixel_x = -7;
+	pixel_x = -10;
 	pixel_y = -23
 	},
 /turf/open/floor/plasteel/mono/dark,
@@ -2539,7 +2529,9 @@
 /turf/open/floor/wood,
 /area/ruin/jungle/interceptor/starhall)
 "vx" = (
-/obj/machinery/door/airlock/security/glass,
+/obj/machinery/door/airlock/security/glass{
+	dir = 4
+	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
@@ -3231,7 +3223,6 @@
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/plastic,
-/obj/machinery/light/small/broken/directional/west,
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/crewquarters)
 "Bh" = (
@@ -4304,6 +4295,7 @@
 	pixel_x = -25;
 	pixel_y = -16
 	},
+/obj/machinery/light/small/broken/directional/west,
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/crewquarters)
 "KW" = (
@@ -4507,13 +4499,6 @@
 /obj/item/clothing/under/rank/prisoner,
 /obj/item/clothing/shoes/sneakers/orange,
 /obj/item/clothing/shoes/sneakers/orange,
-/obj/machinery/button/massdriver{
-	id = "starlauncherone";
-	name = "starboard launcher one button";
-	pixel_x = 4;
-	dir = 1;
-	pixel_y = 10
-	},
 /obj/structure/bed,
 /obj/item/bedsheet/orange,
 /obj/effect/turf_decal/corner/opaque/orange/bordercee,
@@ -4525,6 +4510,7 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/effect/decal/cleanable/glass,
+/obj/machinery/light/small/broken/directional/east,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/jungle/interceptor/security)
 "MF" = (
@@ -6242,7 +6228,9 @@
 /obj/structure/cable/green{
 	icon_state = "4-8"
 	},
-/obj/machinery/door/airlock/security/glass,
+/obj/machinery/door/airlock/security/glass{
+	dir = 4
+	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
@@ -7947,7 +7935,7 @@ Zx
 Zx
 ao
 ql
-aB
+CN
 RK
 Hn
 gx
