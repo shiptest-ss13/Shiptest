@@ -2224,9 +2224,6 @@
 /area/ship/crew/canteen/kitchen)
 "Vx" = (
 /obj/effect/turf_decal/industrial/warning,
-/obj/machinery/light/small{
-	dir = 1
-	},
 /obj/effect/decal/cleanable/greenglow,
 /obj/structure/toilet{
 	dir = 4;
@@ -2240,10 +2237,9 @@
 	pixel_x = -11;
 	pixel_y = 18
 	},
-/obj/machinery/newscaster{
-	pixel_y = 32
-	},
 /obj/machinery/firealarm/directional/west,
+/obj/machinery/newscaster/directional/north,
+/obj/machinery/light/small/broken/directional/east,
 /turf/open/floor/carpet/blue,
 /area/ship/crew)
 "VQ" = (
