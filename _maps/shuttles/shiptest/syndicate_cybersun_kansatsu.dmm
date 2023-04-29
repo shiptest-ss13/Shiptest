@@ -673,6 +673,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
+/obj/structure/sign/poster/official/here_for_your_safety{
+	pixel_x = 28
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/office)
 "qv" = (
@@ -719,10 +722,6 @@
 /obj/machinery/light/small/directional/north,
 /obj/effect/turf_decal/corner/opaque/syndiered/border{
 	dir = 4
-	},
-/obj/structure/sign/poster/official/here_for_your_safety{
-	pixel_x = -3;
-	pixel_y = 31
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -1119,12 +1118,6 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
-"Av" = (
-/obj/item/radio/intercom/directional/north{
-	pixel_y = -9
-	},
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/crew/dorm)
 "AM" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning,
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning{
@@ -1168,6 +1161,7 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/dorm)
 "CR" = (
@@ -1302,6 +1296,7 @@
 /obj/item/bedsheet/blue,
 /obj/structure/bed/pod,
 /obj/structure/curtain,
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/dorm)
 "Hz" = (
@@ -1612,7 +1607,6 @@
 	dir = 6
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/light/small/directional/west,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -2206,7 +2200,7 @@ YQ
 YQ
 YQ
 YQ
-Av
+qA
 CP
 Hd
 qA
