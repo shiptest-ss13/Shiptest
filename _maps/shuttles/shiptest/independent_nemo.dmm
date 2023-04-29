@@ -3127,10 +3127,11 @@
 	},
 /obj/docking_port/mobile{
 	callTime = 250;
-	dir = 8;
+	dir = 4;
 	launch_status = 0;
 	name = "Fauna Research Ship";
-	preferred_direction = 2
+	preferred_direction = 4;
+	port_direction = 2
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
