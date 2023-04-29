@@ -2396,13 +2396,9 @@
 "Tl" = (
 /obj/docking_port/mobile{
 	can_move_docking_ports = 1;
-	dir = 2;
-	dwidth = 5;
-	height = 29;
-	launch_status = 0;
 	name = "diner ship";
-	width = 19;
-	preferred_direction = 8
+	preferred_direction = 4;
+	port_direction = 4
 	},
 /turf/open/floor/plating/airless,
 /area/ship/external)
