@@ -827,9 +827,7 @@
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/structure/extinguisher_cabinet{
-	pixel_x = -32
-	},
+/obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "gg" = (
@@ -1096,9 +1094,10 @@
 	dir = 8
 	},
 /obj/docking_port/mobile{
-	dir = 8;
+	dir = 4;
 	launch_status = 0;
-	preferred_direction = 2
+	preferred_direction = 4;
+	port_direction = 2
 	},
 /turf/open/floor/engine/hull,
 /area/ship/external)
@@ -1608,7 +1607,9 @@
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/structure/railing,
+/obj/structure/railing{
+	layer = 2.91
+	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "la" = (
@@ -1799,7 +1800,7 @@
 "lY" = (
 /obj/structure/table/reinforced,
 /obj/machinery/microwave{
-	pixel_y = 7
+	pixel_y = 5
 	},
 /obj/effect/turf_decal/corner/opaque/white{
 	dir = 4
@@ -3430,6 +3431,10 @@
 /obj/effect/turf_decal/corner/opaque/ntblue{
 	dir = 1
 	},
+/obj/machinery/light_switch{
+	pixel_x = -5;
+	pixel_y = 24
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "wo" = (
@@ -3871,7 +3876,9 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
-/obj/structure/railing,
+/obj/structure/railing{
+	layer = 2.91
+	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "yI" = (
@@ -4567,19 +4574,13 @@
 /area/ship/crew/canteen)
 "Di" = (
 /obj/structure/filingcabinet/double,
-/obj/machinery/light_switch{
-	pixel_x = -5;
-	pixel_y = 24
-	},
-/obj/machinery/light{
-	dir = 1
-	},
 /obj/effect/turf_decal/corner/opaque/ntblue{
 	dir = 4
 	},
 /obj/effect/turf_decal/corner/opaque/ntblue{
 	dir = 1
 	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Dj" = (
@@ -5054,12 +5055,10 @@
 /obj/effect/turf_decal/corner/opaque/white{
 	dir = 8
 	},
-/obj/machinery/light{
-	dir = 8
-	},
 /obj/structure/sign/poster/official/cleanliness{
 	pixel_y = 32
 	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "GG" = (
