@@ -2625,7 +2625,8 @@
 /obj/docking_port/stationary{
 	height = 15;
 	width = 15;
-	name = "upper left twink dock"
+	name = "upper left twink dock";
+	dwidth = 2
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -2947,7 +2948,8 @@
 	height = 15;
 	width = 15;
 	name = "lower left twink dock";
-	dir = 2
+	dir = 2;
+	dwidth = 2
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -3682,7 +3684,8 @@
 	height = 15;
 	width = 15;
 	name = "lower right twink dock";
-	dir = 2
+	dir = 2;
+	dwidth = 2
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -4042,18 +4045,6 @@
 /obj/machinery/air_sensor/atmos/toxin_tank,
 /turf/open/floor/engine/plasma,
 /area/ship/engineering/atmospherics)
-"Am" = (
-/obj/machinery/door/poddoor{
-	id = "twinkle_cargo";
-	name = "Cargo Shutters"
-	},
-/obj/docking_port/stationary{
-	height = 15;
-	width = 15;
-	name = "main twink dock"
-	},
-/turf/open/floor/plating,
-/area/ship/cargo)
 "Ao" = (
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 4
@@ -5647,7 +5638,8 @@
 /obj/docking_port/stationary{
 	height = 15;
 	width = 15;
-	name = "upper right twink dock"
+	name = "main twink dock";
+	dwidth = 4
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -9322,7 +9314,7 @@ mp
 mp
 mp
 mp
-Am
+VC
 AW
 ZC
 Um
@@ -9360,7 +9352,7 @@ mp
 (32,1,1) = {"
 mp
 mp
-mp
+JT
 VC
 AW
 UK
@@ -9517,7 +9509,7 @@ mp
 mp
 mp
 mp
-JT
+mp
 ZV
 ZV
 IV
@@ -9547,7 +9539,7 @@ NF
 IV
 ZV
 ZV
-xZ
+mp
 mp
 mp
 mp
@@ -9586,7 +9578,7 @@ zk
 IV
 nx
 nx
-mp
+xZ
 mp
 mp
 mp
