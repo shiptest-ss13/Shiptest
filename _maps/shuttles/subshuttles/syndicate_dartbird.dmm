@@ -77,21 +77,6 @@
 	},
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
-"B" = (
-/obj/structure/sign/syndicate,
-/obj/docking_port/mobile{
-	callTime = 50;
-	dir = 4;
-	dwidth = 4;
-	height = 5;
-	ignitionTime = 25;
-	name = "Syndicate Fighter";
-	port_direction = 2;
-	preferred_direction = 4;
-	width = 9
-	},
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
 "D" = (
 /obj/machinery/power/terminal{
 	dir = 8
@@ -112,6 +97,17 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/docking_port/mobile{
+	callTime = 50;
+	dwidth = 4;
+	height = 5;
+	ignitionTime = 25;
+	name = "Syndicate Fighter";
+	preferred_direction = 4;
+	width = 9;
+	port_direction = 4;
+	dheight = 2
+	},
 /turf/open/floor/plating,
 /area/ship/bridge)
 "F" = (
@@ -131,12 +127,16 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/light/small,
 /turf/open/floor/plating,
 /area/ship/bridge)
 "G" = (
 /obj/machinery/power/smes/engineering,
 /obj/structure/cable{
 	icon_state = "0-6"
+	},
+/obj/machinery/light/small{
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -236,7 +236,7 @@
 a
 a
 a
-B
+v
 a
 a
 a
