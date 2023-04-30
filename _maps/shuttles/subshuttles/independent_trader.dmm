@@ -14,7 +14,12 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plating,
+/obj/effect/turf_decal/trimline/opaque/solgovgold/warning{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/solgovgold/warning,
+/obj/effect/turf_decal/road/line/opaque/black,
+/turf/open/floor/plasteel/tech,
 /area/space)
 "d" = (
 /obj/machinery/power/smes/shuttle/precharged{
@@ -23,6 +28,10 @@
 /obj/structure/window/reinforced/spawner/west,
 /obj/structure/cable{
 	icon_state = "0-8"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "pjbe";
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/space)
@@ -40,12 +49,15 @@
 /turf/open/floor/pod,
 /area/space)
 "j" = (
-/obj/machinery/door/airlock/freezer{
-	name = "shuttle airlock"
-	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/machinery/door/airlock/freezer{
+	name = "shuttle airlock";
+	id_tag = "pdjdr"
+	},
+/obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/pod/light,
 /area/space)
 "m" = (
@@ -60,7 +72,9 @@
 /area/space)
 "s" = (
 /obj/structure/closet/crate,
-/obj/item/gun/ballistic/revolver/detective,
+/obj/item/gun/ballistic/rifle/boltaction,
+/obj/item/gun/ballistic/rifle/boltaction,
+/obj/machinery/light/small/broken/directional/south,
 /turf/open/floor/pod/light,
 /area/space)
 "u" = (
@@ -73,18 +87,22 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
 /turf/open/floor/pod/light,
 /area/space)
 "v" = (
 /obj/machinery/power/smes,
 /obj/structure/cable,
+/obj/machinery/light/small/broken/directional/south,
 /turf/open/floor/pod,
 /area/space)
 "w" = (
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/chair/comfy/shuttle{
-	dir = 1
+/obj/machinery/modular_computer/console/preset/command{
+	dir = 8
 	},
 /turf/open/floor/pod,
 /area/space)
@@ -92,11 +110,19 @@
 /turf/open/floor/carpet,
 /area/space)
 "F" = (
-/obj/machinery/modular_computer/console/preset/civilian,
-/turf/open/floor/pod/light,
+/obj/machinery/computer/helm/retro,
+/obj/machinery/light/small/broken/directional/north,
+/turf/open/space/basic,
 /area/space)
 "G" = (
 /turf/closed/wall/mineral/titanium,
+/area/space)
+"H" = (
+/obj/machinery/smartfridge{
+	density = 0;
+	pixel_y = -32
+	},
+/turf/open/floor/pod,
 /area/space)
 "J" = (
 /obj/machinery/power/shuttle/engine/electric{
@@ -111,10 +137,6 @@
 /obj/structure/table/wood,
 /turf/open/floor/pod/light,
 /area/space)
-"N" = (
-/obj/machinery/computer/helm/retro,
-/turf/open/floor/pod/light,
-/area/space)
 "O" = (
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
@@ -127,16 +149,31 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "pjt"
 	},
-/turf/open/floor/plating,
+/obj/effect/turf_decal/trimline/opaque/solgovgold/warning{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/solgovgold/warning,
+/obj/effect/turf_decal/road/line/opaque/black,
+/turf/open/floor/plasteel/tech,
 /area/space)
 "R" = (
 /turf/open/floor/pod,
 /area/space)
 "S" = (
 /obj/docking_port/mobile{
-	dir = 2
+	dir = 2;
+	preferred_direction = 8;
+	port_direction = 4
 	},
-/turf/open/floor/plating,
+/obj/effect/turf_decal/trimline/opaque/solgovgold/warning{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/solgovgold/warning,
+/obj/effect/turf_decal/road/line/opaque/black,
+/obj/machinery/door/poddoor/shutters{
+	id = "pjt"
+	},
+/turf/open/floor/plasteel/tech,
 /area/space)
 "T" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -153,6 +190,15 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/obj/machinery/button/door{
+	pixel_y = 24;
+	pixel_x = 6;
+	specialfunctions = 3;
+	id = "pdjdr"
+	},
 /turf/open/floor/pod/light,
 /area/space)
 "Y" = (
@@ -160,8 +206,8 @@
 /turf/open/floor/pod,
 /area/space)
 "Z" = (
-/turf/open/space/basic,
-/area/space)
+/turf/template_noop,
+/area/template_noop)
 
 (1,1,1) = {"
 G
@@ -181,7 +227,7 @@ G
 "}
 (3,1,1) = {"
 a
-G
+a
 V
 u
 v
@@ -200,7 +246,7 @@ S
 L
 E
 E
-E
+H
 a
 "}
 (6,1,1) = {"
@@ -208,7 +254,7 @@ P
 b
 E
 E
-E
+R
 a
 "}
 (7,1,1) = {"
@@ -216,7 +262,7 @@ a
 a
 R
 R
-a
+R
 a
 "}
 (8,1,1) = {"
@@ -229,15 +275,15 @@ a
 "}
 (9,1,1) = {"
 G
-N
+a
 w
 R
 s
 a
 "}
 (10,1,1) = {"
-a
-a
+Z
+G
 O
 O
 a
