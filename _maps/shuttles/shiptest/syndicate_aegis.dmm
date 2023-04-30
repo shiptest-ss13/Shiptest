@@ -578,22 +578,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/dorm)
-"ew" = (
-/obj/machinery/door/poddoor{
-	dir = 4;
-	id = "cargo_ageis";
-	name = "Cargo Bay"
-	},
-/obj/effect/turf_decal/industrial/warning{
-	dir = 8
-	},
-/obj/docking_port/mobile{
-	can_move_docking_ports = 1;
-	launch_status = 0;
-	port_direction = 2
-	},
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/cargo)
 "ey" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
@@ -1213,15 +1197,6 @@
 	},
 /turf/open/floor/carpet/red,
 /area/ship/crew/canteen)
-"iU" = (
-/obj/docking_port/stationary{
-	dwidth = 3;
-	width = 7;
-	height = 15;
-	dir = 4
-	},
-/turf/template_noop,
-/area/template_noop)
 "jf" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-8"
@@ -3422,6 +3397,13 @@
 /obj/machinery/atmospherics/pipe/layer_manifold{
 	dir = 4
 	},
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	launch_status = 0;
+	port_direction = 4;
+	dir = 8;
+	dheight = 2
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "Gv" = (
@@ -5449,7 +5431,7 @@ kU
 kU
 VG
 ls
-ew
+Cc
 Cc
 gt
 aP
@@ -6480,7 +6462,7 @@ wk
 wk
 wk
 wk
-iU
+wk
 wk
 wk
 wk

@@ -1829,6 +1829,14 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
+"FJ" = (
+/obj/docking_port/stationary{
+	dwidth = 10;
+	width = 30;
+	height = 15
+	},
+/turf/template_noop,
+/area/template_noop)
 "FQ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1843,17 +1851,6 @@
 	name = "External Airlock"
 	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
-/obj/docking_port/mobile{
-	can_move_docking_ports = 1;
-	dir = 2;
-	dwidth = 12;
-	height = 18;
-	launch_status = 0;
-	name = "mining ship";
-	port_direction = 8;
-	preferred_direction = 4;
-	width = 28
-	},
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
@@ -2148,14 +2145,23 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "KM" = (
-/obj/docking_port/stationary{
-	dwidth = 3;
-	width = 7;
-	height = 15;
-	dir = 4
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "wreckercargobay";
+	name = "Cargo Bay Exterior Blast Door"
 	},
-/turf/template_noop,
-/area/template_noop)
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	dir = 8;
+	height = 18;
+	launch_status = 0;
+	name = "mining ship";
+	preferred_direction = 4;
+	dheight = 4
+	},
+/turf/open/floor/plating,
+/area/ship/cargo)
 "KQ" = (
 /obj/structure/cable{
 	icon_state = "0-4"
@@ -3257,6 +3263,7 @@
 
 (1,1,1) = {"
 nn
+nn
 Ua
 Xz
 Ua
@@ -3276,6 +3283,7 @@ MF
 nn
 "}
 (2,1,1) = {"
+nn
 JO
 ir
 PL
@@ -3296,6 +3304,7 @@ iQ
 iG
 "}
 (3,1,1) = {"
+nn
 iT
 OL
 xm
@@ -3316,6 +3325,7 @@ KQ
 sE
 "}
 (4,1,1) = {"
+nn
 iT
 KJ
 EL
@@ -3336,6 +3346,7 @@ Or
 sE
 "}
 (5,1,1) = {"
+nn
 iT
 zQ
 pz
@@ -3356,6 +3367,7 @@ rR
 sE
 "}
 (6,1,1) = {"
+nn
 iT
 zA
 XP
@@ -3376,6 +3388,7 @@ dF
 sE
 "}
 (7,1,1) = {"
+nn
 iT
 fi
 rM
@@ -3396,6 +3409,7 @@ sE
 sE
 "}
 (8,1,1) = {"
+nn
 JL
 iT
 yD
@@ -3416,6 +3430,7 @@ sE
 CW
 "}
 (9,1,1) = {"
+nn
 Zb
 JL
 iT
@@ -3436,6 +3451,7 @@ CW
 Zb
 "}
 (10,1,1) = {"
+nn
 Zb
 nn
 cs
@@ -3456,6 +3472,7 @@ nn
 Zb
 "}
 (11,1,1) = {"
+nn
 Zb
 nn
 YI
@@ -3476,6 +3493,7 @@ nn
 Zb
 "}
 (12,1,1) = {"
+nn
 Zb
 nn
 cs
@@ -3496,6 +3514,7 @@ nn
 Zb
 "}
 (13,1,1) = {"
+nn
 Zb
 Zb
 cs
@@ -3516,6 +3535,7 @@ Zb
 Zb
 "}
 (14,1,1) = {"
+nn
 Zb
 nn
 cs
@@ -3536,6 +3556,7 @@ nn
 Zb
 "}
 (15,1,1) = {"
+nn
 Rn
 cs
 cs
@@ -3556,6 +3577,7 @@ nn
 Zb
 "}
 (16,1,1) = {"
+nn
 cs
 IK
 SF
@@ -3576,6 +3598,7 @@ oO
 Zb
 "}
 (17,1,1) = {"
+nn
 YI
 lt
 sG
@@ -3596,6 +3619,7 @@ mL
 oO
 "}
 (18,1,1) = {"
+FJ
 Gm
 aN
 Wd
@@ -3616,6 +3640,7 @@ Pd
 mL
 "}
 (19,1,1) = {"
+nn
 cs
 fA
 Ru
@@ -3636,6 +3661,7 @@ DF
 mL
 "}
 (20,1,1) = {"
+nn
 xZ
 Ap
 Ap
@@ -3656,6 +3682,7 @@ Kb
 aI
 "}
 (21,1,1) = {"
+nn
 hy
 hs
 tw
@@ -3676,6 +3703,7 @@ Ky
 XZ
 "}
 (22,1,1) = {"
+nn
 En
 no
 KA
@@ -3696,6 +3724,7 @@ RE
 qs
 "}
 (23,1,1) = {"
+nn
 xZ
 yM
 mf
@@ -3716,6 +3745,7 @@ VD
 aI
 "}
 (24,1,1) = {"
+nn
 Ap
 AK
 XA
@@ -3728,7 +3758,7 @@ NF
 NF
 so
 JS
-JS
+KM
 sx
 NN
 mL
@@ -3736,6 +3766,7 @@ mL
 mL
 "}
 (25,1,1) = {"
+nn
 oz
 Wv
 kM
@@ -3747,7 +3778,7 @@ nn
 nn
 nn
 nn
-KM
+nn
 nn
 nn
 nn
@@ -3756,6 +3787,7 @@ mL
 mL
 "}
 (26,1,1) = {"
+nn
 oz
 cf
 Ma
@@ -3776,6 +3808,7 @@ mL
 mL
 "}
 (27,1,1) = {"
+nn
 Kj
 Ap
 Jv
@@ -3796,6 +3829,7 @@ mL
 mL
 "}
 (28,1,1) = {"
+nn
 nn
 fV
 Jf

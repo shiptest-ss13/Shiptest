@@ -804,6 +804,14 @@
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
+"nS" = (
+/obj/docking_port/stationary{
+	width = 27;
+	height = 15;
+	dwidth = 8
+	},
+/turf/template_noop,
+/area/template_noop)
 "ol" = (
 /obj/machinery/cryopod{
 	dir = 1
@@ -940,6 +948,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
+	},
+/obj/machinery/advanced_airlock_controller{
+	pixel_y = 25
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
@@ -2397,6 +2408,11 @@
 /obj/structure/sign/poster/contraband/atmosia_independence,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering/atmospherics)
+"RF" = (
+/obj/structure/girder,
+/obj/structure/girder,
+/turf/open/floor/plating,
+/area/ship/external)
 "RH" = (
 /obj/machinery/atmospherics/pipe/simple/violet/visible{
 	dir = 4
@@ -2440,14 +2456,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
-"Sb" = (
-/obj/docking_port/stationary{
-	dwidth = 3;
-	width = 7;
-	height = 15
-	},
-/turf/template_noop,
-/area/template_noop)
 "Sh" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -3148,7 +3156,7 @@ bZ
 "}
 (12,1,1) = {"
 bZ
-bZ
+NB
 bI
 Ba
 Ba
@@ -3187,8 +3195,8 @@ FV
 bZ
 "}
 (14,1,1) = {"
+nS
 bZ
-Sb
 Zs
 OO
 eI
@@ -3228,7 +3236,7 @@ bZ
 "}
 (16,1,1) = {"
 bZ
-bZ
+NB
 Ba
 cp
 yI
@@ -3308,7 +3316,7 @@ bZ
 "}
 (20,1,1) = {"
 bZ
-bZ
+NB
 bI
 Ba
 Ba
@@ -3329,7 +3337,7 @@ bZ
 (21,1,1) = {"
 bZ
 bZ
-NB
+RF
 WK
 WK
 WK

@@ -1707,9 +1707,9 @@
 /area/ship/bridge)
 "zg" = (
 /obj/docking_port/stationary{
-	dwidth = 7;
-	width = 15;
+	width = 30;
 	height = 15;
+	dwidth = 15;
 	dir = 2
 	},
 /turf/template_noop,
@@ -1834,14 +1834,6 @@
 /obj/item/kirbyplants/random,
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/ship/science/xenobiology)
-"Ai" = (
-/obj/docking_port/mobile{
-	launch_status = 0;
-	port_direction = 2;
-	dheight = 1
-	},
-/turf/closed/wall/mineral/titanium,
-/area/ship/engineering/electrical)
 "Al" = (
 /obj/effect/decal/cleanable/blood/gibs/core,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
@@ -3053,6 +3045,14 @@
 	baseturfs = /turf/open/floor/mineral/titanium/tiled/white
 	},
 /area/ship/storage)
+"Ow" = (
+/obj/docking_port/mobile{
+	launch_status = 0;
+	port_direction = 2;
+	dheight = 1
+	},
+/turf/closed/wall/mineral/titanium,
+/area/ship/science/xenobiology)
 "Ox" = (
 /obj/structure/cable{
 	icon_state = "1-10"
@@ -4165,7 +4165,7 @@ XO
 XO
 XO
 XO
-XO
+Ow
 vo
 vo
 vo
@@ -4370,7 +4370,7 @@ Ox
 HV
 gj
 YP
-Ai
+sH
 vo
 "}
 (9,1,1) = {"

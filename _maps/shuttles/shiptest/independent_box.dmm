@@ -690,16 +690,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
-"cH" = (
-/obj/docking_port/mobile{
-	callTime = 250;
-	launch_status = 0;
-	name = "Hospital Ship";
-	port_direction = 8;
-	preferred_direction = 4
-	},
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/engineering)
 "cJ" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 4
@@ -1250,9 +1240,10 @@
 /area/ship/medical)
 "iV" = (
 /obj/docking_port/mobile{
-	dir = 4;
+	dir = 8;
 	launch_status = 0;
-	name = "Hospital Ship"
+	name = "Hospital Ship";
+	preferred_direction = 4
 	},
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/engineering)
@@ -1303,7 +1294,6 @@
 /area/ship/medical)
 "kQ" = (
 /obj/docking_port/stationary{
-	dwidth = 7;
 	width = 15;
 	height = 15
 	},
@@ -3028,7 +3018,7 @@ hc
 at
 wh
 CR
-cH
+at
 aa
 aa
 aa

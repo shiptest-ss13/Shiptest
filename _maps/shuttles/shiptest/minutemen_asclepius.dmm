@@ -1542,12 +1542,6 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "pW" = (
-/obj/docking_port/mobile{
-	can_move_docking_ports = 1;
-	launch_status = 0;
-	port_direction = 4;
-	preferred_direction = 4
-	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
@@ -3387,6 +3381,12 @@
 /area/ship/cargo)
 "Ed" = (
 /obj/machinery/door/airlock/external,
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	launch_status = 0;
+	port_direction = 4;
+	preferred_direction = 4
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/central)
 "Ef" = (
@@ -6150,7 +6150,7 @@ gJ
 kN
 oB
 Ed
-RK
+Wd
 Wd
 Wd
 Wd
@@ -6594,7 +6594,7 @@ nI
 ps
 nU
 pW
-Wd
+RK
 "}
 (32,1,1) = {"
 Wd
