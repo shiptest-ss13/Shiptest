@@ -11,7 +11,7 @@
 "am" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/tree/jungle,
-/turf/open/floor/plating/grass/jungle,
+/turf/open/floor/plating/grass/jungle/lit,
 /area/ruin/jungle)
 "ap" = (
 /obj/structure/cable{
@@ -25,7 +25,7 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 8
 	},
-/turf/open/floor/plating/dirt/jungle/wasteland,
+/turf/open/floor/plating/dirt/jungle/wasteland/lit,
 /area/ruin/jungle)
 "aF" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -75,7 +75,7 @@
 "ch" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/grass/jungle,
-/turf/open/floor/plating/grass/jungle,
+/turf/open/floor/plating/grass/jungle/lit,
 /area/ruin/jungle)
 "cn" = (
 /obj/effect/turf_decal/corner/opaque/mauve,
@@ -88,7 +88,7 @@
 /area/ship/crew/office)
 "db" = (
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/open/floor/plating/grass/jungle,
+/turf/open/floor/plating/grass/jungle/lit,
 /area/ruin/jungle)
 "dh" = (
 /obj/effect/turf_decal/corner/opaque/mauve{
@@ -382,7 +382,7 @@
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/ausbushes/grassybush,
 /obj/structure/flora/ausbushes/grassybush,
-/turf/open/floor/plating/grass/jungle,
+/turf/open/floor/plating/grass/jungle/lit,
 /area/ruin/jungle)
 "hF" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -472,7 +472,7 @@
 /turf/open/floor/plasteel/white,
 /area/ship/science)
 "iM" = (
-/obj/structure/lattice,
+/obj/effect/decal/fakelattice,
 /turf/open/floor/plating,
 /area/ship/medical)
 "iR" = (
@@ -490,11 +490,11 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 8
 	},
-/turf/open/floor/plating/dirt/jungle/wasteland,
+/turf/open/floor/plating/dirt/jungle/wasteland/lit,
 /area/ruin/jungle)
 "iY" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating/grass/jungle,
+/turf/open/floor/plating/grass/jungle/lit,
 /area/ruin/jungle)
 "jc" = (
 /obj/structure/filingcabinet/chestdrawer,
@@ -847,7 +847,7 @@
 	pixel_x = 4;
 	pixel_y = -5
 	},
-/turf/open/floor/plating/dirt/jungle/wasteland,
+/turf/open/floor/plating/dirt/jungle/wasteland/lit,
 /area/ruin/jungle)
 "nl" = (
 /obj/machinery/power/smes,
@@ -882,7 +882,7 @@
 	pixel_y = 4
 	},
 /obj/item/ammo_box/magazine/m45/ap,
-/turf/open/floor/plating/dirt/jungle/wasteland,
+/turf/open/floor/plating/dirt/jungle/wasteland/lit,
 /area/ruin/jungle)
 "om" = (
 /obj/item/shard{
@@ -924,7 +924,7 @@
 	pixel_x = 15;
 	pixel_y = 1
 	},
-/turf/open/floor/plating/dirt/jungle/wasteland,
+/turf/open/floor/plating/dirt/jungle/wasteland/lit,
 /area/ruin/jungle)
 "oD" = (
 /obj/effect/turf_decal/siding/wideplating/dark,
@@ -1087,7 +1087,7 @@
 /area/ship/science/storage)
 "qO" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/dirt,
+/turf/open/floor/plating/dirt/jungle/lit,
 /area/ruin/jungle)
 "qQ" = (
 /obj/item/shard{
@@ -1109,7 +1109,7 @@
 "re" = (
 /obj/structure/flora/ausbushes/grassybush,
 /obj/structure/flora/ausbushes/grassybush,
-/turf/open/floor/plating/grass/jungle,
+/turf/open/floor/plating/grass/jungle/lit,
 /area/ruin/jungle)
 "rf" = (
 /obj/effect/turf_decal/corner/opaque/orange/full,
@@ -1152,7 +1152,7 @@
 /obj/structure/flippedtable{
 	dir = 8
 	},
-/turf/open/floor/plating/dirt/jungle/wasteland,
+/turf/open/floor/plating/dirt/jungle/wasteland/lit,
 /area/ruin/jungle)
 "rY" = (
 /obj/machinery/light/broken{
@@ -1181,7 +1181,7 @@
 "sQ" = (
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/open/floor/plating/grass/jungle,
+/turf/open/floor/plating/grass/jungle/lit,
 /area/ruin/jungle)
 "sZ" = (
 /obj/effect/turf_decal/corner/opaque/green{
@@ -1198,12 +1198,12 @@
 /turf/open/floor/plasteel/white,
 /area/ship/science/storage)
 "te" = (
-/turf/open/floor/plating/grass/jungle,
+/turf/open/floor/plating/grass/jungle/lit,
 /area/ruin/jungle)
 "tp" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/tree/jungle/small,
-/turf/open/floor/plating/grass/jungle,
+/turf/open/floor/plating/grass/jungle/lit,
 /area/ruin/jungle)
 "tz" = (
 /obj/effect/turf_decal/industrial/warning/dust,
@@ -1229,7 +1229,7 @@
 /area/ship/science/storage)
 "ub" = (
 /obj/structure/closet/crate/grave,
-/turf/open/floor/plating/dirt/jungle/wasteland,
+/turf/open/floor/plating/dirt/jungle/wasteland/lit,
 /area/ruin/jungle)
 "uc" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1240,7 +1240,7 @@
 /area/ship/science/storage)
 "ue" = (
 /obj/structure/flora/grass/jungle,
-/turf/open/floor/plating/grass/jungle,
+/turf/open/floor/plating/grass/jungle/lit,
 /area/ruin/jungle)
 "ul" = (
 /obj/effect/turf_decal/corner/opaque/green{
@@ -1254,7 +1254,7 @@
 "us" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating/dirt,
+/turf/open/floor/plating/dirt/jungle/lit,
 /area/ruin/jungle)
 "uC" = (
 /obj/structure/table/wood/reinforced,
@@ -1280,7 +1280,7 @@
 "uH" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating/dirt/jungle/wasteland,
+/turf/open/floor/plating/dirt/jungle/wasteland/lit,
 /area/ruin/jungle)
 "uM" = (
 /obj/structure/table/glass,
@@ -1333,7 +1333,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/box/corners,
 /obj/machinery/light/floor,
-/turf/open/floor/plating/dirt/jungle/wasteland,
+/turf/open/floor/plating/dirt/jungle/wasteland/lit,
 /area/ruin/jungle)
 "vU" = (
 /obj/item/circuitboard/machine/rdserver,
@@ -1572,19 +1572,19 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 8
 	},
-/turf/open/floor/plating/dirt/jungle/wasteland,
+/turf/open/floor/plating/dirt/jungle/wasteland/lit,
 /area/ruin/jungle)
 "zq" = (
 /obj/effect/turf_decal/box/corners{
 	dir = 8
 	},
 /obj/machinery/light/floor,
-/turf/open/floor/plating/dirt/jungle/wasteland,
+/turf/open/floor/plating/dirt/jungle/wasteland/lit,
 /area/ruin/jungle)
 "zr" = (
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/ausbushes/grassybush,
-/turf/open/floor/plating/grass/jungle,
+/turf/open/floor/plating/grass/jungle/lit,
 /area/ruin/jungle)
 "zz" = (
 /obj/effect/turf_decal/corner/opaque/mauve{
@@ -1610,13 +1610,13 @@
 /area/ship/science/storage)
 "Aa" = (
 /obj/structure/flora/ausbushes/grassybush,
-/turf/open/floor/plating/grass/jungle,
+/turf/open/floor/plating/grass/jungle/lit,
 /area/ruin/jungle)
 "An" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/tree/jungle,
-/turf/open/floor/plating/grass/jungle,
+/turf/open/floor/plating/grass/jungle/lit,
 /area/ruin/jungle)
 "Av" = (
 /obj/effect/turf_decal/corner/opaque/mauve{
@@ -1711,8 +1711,8 @@
 /turf/open/floor/plasteel/white,
 /area/ship/science)
 "Bp" = (
-/obj/structure/lattice,
 /obj/effect/decal/cleanable/blood/bubblegum,
+/obj/effect/decal/fakelattice,
 /turf/open/floor/plating,
 /area/ship/medical)
 "BI" = (
@@ -1910,7 +1910,7 @@
 /area/ship/science/storage)
 "DZ" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/dirt/jungle/wasteland,
+/turf/open/floor/plating/dirt/jungle/wasteland/lit,
 /area/ruin/jungle)
 "Ei" = (
 /obj/machinery/door/airlock/research{
@@ -1950,7 +1950,7 @@
 "EE" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/shovel,
-/turf/open/floor/plating/dirt/jungle/wasteland,
+/turf/open/floor/plating/dirt/jungle/wasteland/lit,
 /area/ruin/jungle)
 "EI" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1958,7 +1958,7 @@
 	dir = 6
 	},
 /obj/effect/decal/cleanable/blood/bubblegum,
-/turf/open/floor/plating/dirt/jungle/wasteland,
+/turf/open/floor/plating/dirt/jungle/wasteland/lit,
 /area/ruin/jungle)
 "Fi" = (
 /turf/open/floor/plating/catwalk_floor,
@@ -1983,7 +1983,7 @@
 	dir = 1
 	},
 /obj/machinery/light/floor,
-/turf/open/floor/plating/dirt/jungle/wasteland,
+/turf/open/floor/plating/dirt/jungle/wasteland/lit,
 /area/ruin/jungle)
 "FN" = (
 /obj/effect/turf_decal/siding/wideplating/dark{
@@ -2053,7 +2053,7 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/grass/jungle,
-/turf/open/floor/plating/grass/jungle,
+/turf/open/floor/plating/grass/jungle/lit,
 /area/ruin/jungle)
 "Hm" = (
 /obj/structure/rack,
@@ -2076,7 +2076,7 @@
 "HB" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/grassybush,
-/turf/open/floor/plating/grass/jungle,
+/turf/open/floor/plating/grass/jungle/lit,
 /area/ruin/jungle)
 "HJ" = (
 /obj/effect/turf_decal/corner/opaque/green{
@@ -2096,7 +2096,7 @@
 /obj/structure/flora/ausbushes/grassybush,
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/tree/jungle/small,
-/turf/open/floor/plating/grass/jungle,
+/turf/open/floor/plating/grass/jungle/lit,
 /area/ruin/jungle)
 "HW" = (
 /obj/effect/turf_decal/corner/opaque/blue{
@@ -2162,7 +2162,7 @@
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/ausbushes/grassybush,
-/turf/open/floor/plating/grass/jungle,
+/turf/open/floor/plating/grass/jungle/lit,
 /area/ruin/jungle)
 "IR" = (
 /obj/effect/turf_decal/corner/opaque/green{
@@ -2192,7 +2192,7 @@
 /turf/open/floor/plasteel/white,
 /area/ship/science)
 "IY" = (
-/turf/open/floor/plating/dirt/jungle/wasteland,
+/turf/open/floor/plating/dirt/jungle/wasteland/lit,
 /area/ruin/jungle)
 "Jw" = (
 /obj/effect/decal/cleanable/blood/bubblegum,
@@ -2326,7 +2326,7 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 8
 	},
-/turf/open/floor/plating/dirt/jungle/wasteland,
+/turf/open/floor/plating/dirt/jungle/wasteland/lit,
 /area/ruin/jungle)
 "KV" = (
 /obj/effect/turf_decal/trimline/opaque/blue/filled/warning{
@@ -2579,7 +2579,7 @@
 /area/ship/science/storage)
 "Oq" = (
 /obj/structure/flora/tree/jungle/small,
-/turf/open/floor/plating/grass/jungle,
+/turf/open/floor/plating/grass/jungle/lit,
 /area/ruin/jungle)
 "Oy" = (
 /turf/open/floor/plating/dirt/jungle,
@@ -2739,7 +2739,7 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/ausbushes/grassybush,
-/turf/open/floor/plating/grass/jungle,
+/turf/open/floor/plating/grass/jungle/lit,
 /area/ruin/jungle)
 "QF" = (
 /obj/structure/extinguisher_cabinet{
@@ -2898,7 +2898,7 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 6
 	},
-/turf/open/floor/plating/dirt/jungle/wasteland,
+/turf/open/floor/plating/dirt/jungle/wasteland/lit,
 /area/ruin/jungle)
 "Sr" = (
 /obj/item/ammo_casing,
@@ -3048,7 +3048,7 @@
 "Ua" = (
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/grass/jungle,
-/turf/open/floor/plating/grass/jungle,
+/turf/open/floor/plating/grass/jungle/lit,
 /area/ruin/jungle)
 "Uc" = (
 /obj/effect/turf_decal/corner/opaque/green{
@@ -3083,7 +3083,7 @@
 "Uo" = (
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/tree/jungle,
-/turf/open/floor/plating/grass/jungle,
+/turf/open/floor/plating/grass/jungle/lit,
 /area/ruin/jungle)
 "Ur" = (
 /obj/effect/decal/cleanable/blood/bubblegum,
@@ -3108,7 +3108,7 @@
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/tree/jungle/small,
-/turf/open/floor/plating/grass/jungle,
+/turf/open/floor/plating/grass/jungle/lit,
 /area/ruin/jungle)
 "Vn" = (
 /obj/effect/turf_decal/corner/opaque/mauve{
@@ -3274,7 +3274,7 @@
 /area/ship/science/storage)
 "Xl" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating/dirt/jungle/wasteland,
+/turf/open/floor/plating/dirt/jungle/wasteland/lit,
 /area/ruin/jungle)
 "Xq" = (
 /obj/effect/turf_decal/corner/opaque/mauve{
@@ -3386,7 +3386,7 @@
 /obj/item/gun/ballistic/automatic/pistol/m1911/no_mag{
 	pixel_y = -13
 	},
-/turf/open/floor/plating/dirt/jungle/wasteland,
+/turf/open/floor/plating/dirt/jungle/wasteland/lit,
 /area/ruin/jungle)
 "YJ" = (
 /obj/effect/turf_decal/corner/opaque/mauve{

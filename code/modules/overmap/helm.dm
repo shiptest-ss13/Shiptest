@@ -196,9 +196,11 @@
 	.["heading"] = dir2text(current_ship.get_heading()) || "None"
 	.["speed"] = current_ship.get_speed()
 	.["eta"] = current_ship.get_eta()
-	.["est_thrust"] = current_ship.est_thrust
+	.["estThrust"] = current_ship.est_thrust
 	.["engineInfo"] = list()
-	.["ai_controls"] = allow_ai_control
+	.["aiControls"] = allow_ai_control
+	.["burnDirection"] = current_ship.burn_direction
+	.["burnPercentage"] = current_ship.burn_percentage
 	for(var/obj/machinery/power/shuttle/engine/E as anything in current_ship.shuttle_port.engine_list)
 		var/list/engine_data
 		if(!E.thruster_active)
@@ -226,11 +228,11 @@
 	.["shipInfo"] = list(
 		name = current_ship.name,
 		class = current_ship.source_template?.name,
-		mass = current_ship.mass,
+		mass = current_ship.shuttle_port.turf_count,
 		sensor_range = 4
 	)
 	.["canFly"] = TRUE
-	.["ai_user"] = issilicon(user)
+	.["aiUser"] = issilicon(user)
 
 /obj/machinery/computer/helm/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
 	. = ..()
@@ -292,11 +294,22 @@
 				E.enabled = !E.enabled
 				current_ship.refresh_engines()
 				return
+			if("change_burn_percentage")
+				var/new_percentage = clamp(text2num(params["percentage"]), 1, 100)
+				current_ship.burn_percentage = new_percentage
+				return
 			if("change_heading")
-				current_ship.burn_engines(text2num(params["dir"]))
+				var/new_direction = text2num(params["dir"])
+				if(new_direction == current_ship.burn_direction)
+					current_ship.change_heading(BURN_NONE)
+					return
+				current_ship.change_heading(new_direction)
 				return
 			if("stop")
-				current_ship.burn_engines()
+				if(current_ship.burn_direction == BURN_NONE)
+					current_ship.change_heading(BURN_STOP)
+					return
+				current_ship.change_heading(BURN_NONE)
 				return
 			if("bluespace_jump")
 				if(calibrating)
