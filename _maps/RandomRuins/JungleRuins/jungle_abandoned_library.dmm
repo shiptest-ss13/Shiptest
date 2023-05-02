@@ -92,6 +92,9 @@
 /area/ruin/jungle)
 "bK" = (
 /obj/effect/decal/cleanable/glass,
+/obj/structure/spacevine{
+	name = "vines"
+	},
 /turf/open/floor/plating/grass/jungle,
 /area/ruin/jungle)
 "bN" = (
@@ -104,11 +107,17 @@
 	pixel_y = 11
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/spacevine{
+	name = "vines"
+	},
 /turf/open/floor/carpet/red,
 /area/ruin/jungle)
 "bR" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/broken,
+/obj/structure/spacevine{
+	name = "vines"
+	},
 /turf/open/floor/wood,
 /area/ruin/jungle)
 "ca" = (
@@ -126,7 +135,16 @@
 /obj/structure/chair/comfy/brown{
 	dir = 8
 	},
+/obj/structure/spacevine{
+	name = "vines"
+	},
 /turf/open/floor/carpet/red,
+/area/ruin/jungle)
+"cl" = (
+/obj/structure/spacevine{
+	name = "vines"
+	},
+/turf/open/floor/wood,
 /area/ruin/jungle)
 "cn" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -201,6 +219,9 @@
 /area/ruin/jungle)
 "do" = (
 /obj/structure/barricade/wooden,
+/obj/structure/spacevine/dense{
+	name = "dense vines"
+	},
 /turf/open/floor/plating/grass/jungle,
 /area/ruin/jungle)
 "dq" = (
@@ -243,6 +264,13 @@
 	icon_state = "wood-broken6"
 	},
 /area/ruin/jungle)
+"eN" = (
+/obj/effect/turf_decal/siding/wood,
+/obj/structure/spacevine{
+	name = "vines"
+	},
+/turf/open/floor/plasteel/grimy,
+/area/ruin/jungle)
 "fe" = (
 /turf/open/floor/wood{
 	icon_state = "wood-broken"
@@ -274,6 +302,9 @@
 	pixel_y = 5
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/spacevine{
+	name = "vines"
+	},
 /turf/open/floor/wood,
 /area/ruin/jungle)
 "fj" = (
@@ -296,6 +327,9 @@
 	pixel_y = 7
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/spacevine{
+	name = "vines"
+	},
 /turf/open/floor/carpet/red,
 /area/ruin/jungle)
 "fm" = (
@@ -330,6 +364,9 @@
 	pixel_x = -8;
 	pixel_y = -19
 	},
+/obj/structure/spacevine{
+	name = "vines"
+	},
 /turf/open/floor/plating/grass/jungle,
 /area/ruin/jungle)
 "fR" = (
@@ -341,6 +378,9 @@
 /area/ruin/jungle)
 "gk" = (
 /obj/structure/grille/broken,
+/obj/structure/spacevine/dense{
+	name = "dense vines"
+	},
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle)
 "gt" = (
@@ -367,6 +407,9 @@
 	pixel_x = -32
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/spacevine{
+	name = "vines"
+	},
 /turf/open/floor/wood,
 /area/ruin/jungle)
 "gW" = (
@@ -395,11 +438,17 @@
 	pixel_x = 32
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/spacevine{
+	name = "vines"
+	},
 /turf/open/floor/carpet/red,
 /area/ruin/jungle)
 "hj" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
+	},
+/obj/structure/spacevine{
+	name = "vines"
 	},
 /turf/open/floor/carpet/red,
 /area/ruin/jungle)
@@ -419,6 +468,16 @@
 	},
 /obj/item/candle{
 	pixel_x = -4
+	},
+/turf/open/floor/wood,
+/area/ruin/jungle)
+"hW" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/spacevine{
+	name = "vines"
 	},
 /turf/open/floor/wood,
 /area/ruin/jungle)
@@ -464,6 +523,9 @@
 	pixel_y = 2
 	},
 /obj/structure/closet/crate/bin,
+/obj/structure/spacevine{
+	name = "vines"
+	},
 /turf/open/floor/wood,
 /area/ruin/jungle)
 "jk" = (
@@ -473,6 +535,9 @@
 /obj/effect/decal/cleanable/glass{
 	pixel_x = 5;
 	dir = 4
+	},
+/obj/structure/spacevine{
+	name = "vines"
 	},
 /turf/open/floor/wood,
 /area/ruin/jungle)
@@ -485,6 +550,9 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/spacevine{
+	name = "vines"
+	},
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle)
 "ke" = (
@@ -502,6 +570,15 @@
 /obj/machinery/light/broken,
 /turf/open/floor/wood,
 /area/ruin/jungle)
+"kx" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/structure/spacevine{
+	name = "vines"
+	},
+/turf/open/floor/wood,
+/area/ruin/jungle)
 "ky" = (
 /obj/structure/door_assembly/door_assembly_wood,
 /obj/structure/barricade/wooden/crude,
@@ -510,6 +587,9 @@
 "kz" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
+	},
+/obj/structure/spacevine{
+	name = "vines"
 	},
 /turf/open/floor/carpet/red,
 /area/ruin/jungle)
@@ -548,6 +628,9 @@
 /obj/structure/table/wood/fancy,
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
+	},
+/obj/structure/spacevine{
+	name = "vines"
 	},
 /turf/open/floor/carpet/red,
 /area/ruin/jungle)
@@ -677,6 +760,9 @@
 	pixel_x = 1;
 	pixel_y = -2
 	},
+/obj/structure/spacevine{
+	name = "vines"
+	},
 /turf/open/floor/plating/grass/jungle,
 /area/ruin/jungle)
 "mo" = (
@@ -739,6 +825,9 @@
 	},
 /obj/structure/railing/wood,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/spacevine{
+	name = "vines"
+	},
 /turf/open/floor/wood,
 /area/ruin/jungle)
 "mV" = (
@@ -766,6 +855,9 @@
 	pixel_y = 32
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/spacevine{
+	name = "vines"
+	},
 /turf/open/floor/wood,
 /area/ruin/jungle)
 "ng" = (
@@ -788,11 +880,28 @@
 /obj/structure/chair/pew{
 	dir = 1
 	},
+/obj/structure/spacevine{
+	name = "vines"
+	},
 /turf/open/floor/plating/dirt/jungle,
+/area/ruin/jungle)
+"nu" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/spacevine/dense{
+	name = "dense vines"
+	},
+/turf/open/floor/wood,
 /area/ruin/jungle)
 "nw" = (
 /obj/structure/flora/junglebush/b,
 /turf/open/floor/plating/grass/jungle,
+/area/ruin/jungle)
+"nJ" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/spacevine{
+	name = "vines"
+	},
+/turf/open/floor/wood/walnut,
 /area/ruin/jungle)
 "oc" = (
 /turf/open/floor/carpet/red,
@@ -957,6 +1066,9 @@
 	dir = 9
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/spacevine{
+	name = "vines"
+	},
 /turf/open/floor/carpet/red,
 /area/ruin/jungle)
 "rE" = (
@@ -1000,6 +1112,14 @@
 	pixel_y = 3
 	},
 /turf/open/floor/plating/grass/jungle,
+/area/ruin/jungle)
+"sd" = (
+/obj/structure/spacevine{
+	name = "vines"
+	},
+/turf/open/floor/wood{
+	icon_state = "wood-broken6"
+	},
 /area/ruin/jungle)
 "sg" = (
 /obj/effect/turf_decal/chapel{
@@ -1115,6 +1235,9 @@
 	dir = 6
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/spacevine{
+	name = "vines"
+	},
 /turf/open/floor/carpet/red,
 /area/ruin/jungle)
 "uR" = (
@@ -1127,6 +1250,9 @@
 /area/ruin/jungle)
 "uU" = (
 /obj/structure/grille,
+/obj/structure/spacevine/dense{
+	name = "dense vines"
+	},
 /turf/open/floor/wood,
 /area/ruin/jungle)
 "vb" = (
@@ -1147,6 +1273,9 @@
 	},
 /obj/structure/chair/comfy/brown{
 	dir = 4
+	},
+/obj/structure/spacevine{
+	name = "vines"
 	},
 /turf/open/floor/carpet/red,
 /area/ruin/jungle)
@@ -1270,6 +1399,15 @@
 	icon_state = "wood-broken6"
 	},
 /area/ruin/jungle)
+"wD" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/structure/spacevine{
+	name = "vines"
+	},
+/turf/open/floor/wood,
+/area/ruin/jungle)
 "wQ" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -1304,6 +1442,12 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/spacevine{
+	name = "vines"
+	},
+/obj/structure/spacevine{
+	name = "vines"
+	},
 /turf/open/floor/carpet/red,
 /area/ruin/jungle)
 "yh" = (
@@ -1326,6 +1470,9 @@
 /turf/open/floor/wood,
 /area/ruin/jungle)
 "yG" = (
+/obj/structure/spacevine{
+	name = "vines"
+	},
 /turf/open/floor/plasteel/grimy,
 /area/ruin/jungle)
 "yJ" = (
@@ -1334,6 +1481,9 @@
 	},
 /obj/effect/decal/cleanable/blood{
 	icon_state = "bloodyhands_left"
+	},
+/obj/structure/spacevine{
+	name = "vines"
 	},
 /turf/open/floor/wood,
 /area/ruin/jungle)
@@ -1357,6 +1507,9 @@
 /obj/effect/turf_decal/chapel,
 /obj/item/chair/stool{
 	dir = 1
+	},
+/obj/structure/spacevine{
+	name = "vines"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/jungle)
@@ -1386,6 +1539,9 @@
 	pixel_y = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/spacevine{
+	name = "vines"
+	},
 /turf/open/floor/carpet/red,
 /area/ruin/jungle)
 "Aj" = (
@@ -1465,6 +1621,9 @@
 /obj/machinery/light/broken{
 	dir = 4
 	},
+/obj/structure/spacevine{
+	name = "vines"
+	},
 /turf/open/floor/wood{
 	icon_state = "wood-broken7"
 	},
@@ -1494,6 +1653,9 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/spacevine{
+	name = "vines"
+	},
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle)
 "Bx" = (
@@ -1590,6 +1752,9 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/spacevine{
+	name = "vines"
+	},
 /turf/open/floor/carpet/red,
 /area/ruin/jungle)
 "Dr" = (
@@ -1597,6 +1762,12 @@
 	dir = 8
 	},
 /turf/open/floor/wood,
+/area/ruin/jungle)
+"DK" = (
+/obj/structure/spacevine{
+	name = "vines"
+	},
+/turf/open/floor/plating/grass/jungle,
 /area/ruin/jungle)
 "DL" = (
 /obj/item/flashlight/flare/torch{
@@ -1608,6 +1779,16 @@
 	pixel_y = -2
 	},
 /turf/open/floor/plating/dirt/jungle,
+/area/ruin/jungle)
+"DM" = (
+/obj/structure/flora/grass/jungle{
+	pixel_x = 6;
+	pixel_y = -15
+	},
+/obj/structure/spacevine{
+	name = "vines"
+	},
+/turf/open/floor/plating/grass/jungle,
 /area/ruin/jungle)
 "Ef" = (
 /obj/effect/turf_decal/siding/wood{
@@ -1634,6 +1815,16 @@
 	icon_state = "wood-broken3"
 	},
 /area/ruin/jungle)
+"EL" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/spacevine{
+	name = "vines"
+	},
+/turf/open/floor/wood,
+/area/ruin/jungle)
 "EO" = (
 /obj/effect/mob_spawn/human/corpse/assistant{
 	name = "Curator";
@@ -1646,6 +1837,14 @@
 	icon_state = "floor3"
 	},
 /turf/open/floor/carpet/red,
+/area/ruin/jungle)
+"ES" = (
+/obj/item/kirbyplants/random,
+/obj/effect/turf_decal/siding/wood,
+/obj/structure/spacevine{
+	name = "vines"
+	},
+/turf/open/floor/plasteel/grimy,
 /area/ruin/jungle)
 "EW" = (
 /obj/effect/turf_decal/siding/wood{
@@ -1673,7 +1872,17 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle)
+"Fm" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/spacevine{
+	name = "vines"
+	},
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin/jungle)
 "Fv" = (
+/obj/structure/spacevine{
+	name = "vines"
+	},
 /turf/open/floor/wood/walnut{
 	icon_state = "wood-broken"
 	},
@@ -1714,6 +1923,9 @@
 	},
 /obj/machinery/light/broken{
 	dir = 4
+	},
+/obj/structure/spacevine{
+	name = "vines"
 	},
 /turf/open/floor/wood{
 	icon_state = "wood-broken6"
@@ -1814,6 +2026,9 @@
 /obj/item/toy/cards/deck/cas/black{
 	pixel_y = 3;
 	pixel_x = 3
+	},
+/obj/structure/spacevine{
+	name = "vines"
 	},
 /turf/open/floor/carpet/red,
 /area/ruin/jungle)
@@ -1931,6 +2146,9 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/spacevine{
+	name = "vines"
+	},
 /turf/open/floor/wood,
 /area/ruin/jungle)
 "Jw" = (
@@ -2042,6 +2260,9 @@
 /area/ruin/jungle)
 "KL" = (
 /obj/structure/barricade/wooden,
+/obj/structure/spacevine/dense{
+	name = "dense vines"
+	},
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle)
 "KR" = (
@@ -2122,9 +2343,15 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/spacevine{
+	name = "vines"
+	},
 /turf/open/floor/wood,
 /area/ruin/jungle)
 "Mb" = (
+/obj/structure/spacevine{
+	name = "vines"
+	},
 /turf/open/floor/plasteel/stairs/right{
 	color = "#A47449"
 	},
@@ -2181,6 +2408,21 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
 	},
+/obj/structure/spacevine{
+	name = "vines"
+	},
+/turf/open/floor/carpet/red,
+/area/ruin/jungle)
+"Mp" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 5
+	},
+/obj/structure/chair/comfy/brown{
+	dir = 8
+	},
+/obj/structure/spacevine{
+	name = "vines"
+	},
 /turf/open/floor/carpet/red,
 /area/ruin/jungle)
 "Mx" = (
@@ -2230,6 +2472,9 @@
 	},
 /obj/structure/railing/wood,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/spacevine{
+	name = "vines"
+	},
 /turf/open/floor/wood,
 /area/ruin/jungle)
 "MT" = (
@@ -2277,6 +2522,9 @@
 	pixel_x = 6
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/spacevine{
+	name = "vines"
+	},
 /turf/open/floor/carpet/red,
 /area/ruin/jungle)
 "Nf" = (
@@ -2294,6 +2542,9 @@
 /obj/item/storage/box/hero/ghostbuster,
 /obj/item/storage/box/hero/scottish,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/spacevine{
+	name = "vines"
+	},
 /turf/open/floor/wood,
 /area/ruin/jungle)
 "Nw" = (
@@ -2363,6 +2614,9 @@
 /obj/machinery/light/broken{
 	dir = 1
 	},
+/obj/structure/spacevine{
+	name = "vines"
+	},
 /turf/open/floor/plasteel/grimy,
 /area/ruin/jungle)
 "NY" = (
@@ -2383,7 +2637,9 @@
 /turf/open/floor/wood,
 /area/ruin/jungle)
 "Oj" = (
-/obj/effect/decal/fakelattice,
+/obj/structure/spacevine{
+	name = "vines"
+	},
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle)
 "Ou" = (
@@ -2408,7 +2664,19 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/spacevine{
+	name = "vines"
+	},
 /turf/open/floor/plating/dirt/jungle,
+/area/ruin/jungle)
+"OY" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/obj/structure/spacevine{
+	name = "vines"
+	},
+/turf/open/floor/wood,
 /area/ruin/jungle)
 "Pf" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2418,6 +2686,13 @@
 /area/ruin/jungle)
 "Ps" = (
 /obj/structure/fluff/hedge,
+/turf/open/floor/wood,
+/area/ruin/jungle)
+"Pt" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/spacevine{
+	name = "vines"
+	},
 /turf/open/floor/wood,
 /area/ruin/jungle)
 "Pu" = (
@@ -2445,6 +2720,9 @@
 /obj/effect/decal/cleanable/glass{
 	dir = 8
 	},
+/obj/structure/spacevine{
+	name = "vines"
+	},
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle)
 "Py" = (
@@ -2471,6 +2749,9 @@
 /obj/structure/table/wood/fancy,
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
+	},
+/obj/structure/spacevine{
+	name = "vines"
 	},
 /turf/open/floor/carpet/red,
 /area/ruin/jungle)
@@ -2531,6 +2812,9 @@
 /area/ruin/jungle)
 "Rh" = (
 /obj/item/rack_parts,
+/obj/structure/spacevine{
+	name = "vines"
+	},
 /turf/open/floor/plating/grass/jungle,
 /area/ruin/jungle)
 "Rs" = (
@@ -2621,6 +2905,9 @@
 /area/ruin/jungle)
 "Sv" = (
 /obj/structure/barricade/wooden,
+/obj/structure/spacevine/dense{
+	name = "dense vines"
+	},
 /turf/open/floor/wood,
 /area/ruin/jungle)
 "Sy" = (
@@ -2652,6 +2939,9 @@
 	max_integrity = 10;
 	pixel_x = -9;
 	pixel_y = -6
+	},
+/obj/structure/spacevine{
+	name = "vines"
 	},
 /turf/open/floor/wood,
 /area/ruin/jungle)
@@ -2696,10 +2986,16 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
 	},
+/obj/structure/spacevine{
+	name = "vines"
+	},
 /turf/open/floor/wood,
 /area/ruin/jungle)
 "TW" = (
 /obj/machinery/light/broken,
+/obj/structure/spacevine{
+	name = "vines"
+	},
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle)
 "TX" = (
@@ -2742,6 +3038,9 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
 	},
+/obj/structure/spacevine{
+	name = "vines"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle)
 "UH" = (
@@ -2764,6 +3063,13 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/broken{
 	dir = 1
+	},
+/turf/open/floor/wood,
+/area/ruin/jungle)
+"Vt" = (
+/obj/effect/turf_decal/siding/wood,
+/obj/structure/spacevine{
+	name = "vines"
 	},
 /turf/open/floor/wood,
 /area/ruin/jungle)
@@ -2801,6 +3107,9 @@
 	},
 /obj/structure/railing/wood,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/spacevine{
+	name = "vines"
+	},
 /turf/open/floor/wood,
 /area/ruin/jungle)
 "Wl" = (
@@ -2849,6 +3158,9 @@
 /area/ruin/jungle)
 "Wt" = (
 /obj/structure/altar_of_gods,
+/obj/structure/spacevine{
+	name = "vines"
+	},
 /turf/open/floor/plasteel/grimy,
 /area/ruin/jungle)
 "WD" = (
@@ -2877,6 +3189,9 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
 	},
+/obj/structure/spacevine{
+	name = "vines"
+	},
 /turf/open/floor/carpet/red,
 /area/ruin/jungle)
 "Xm" = (
@@ -2894,6 +3209,9 @@
 	},
 /obj/item/ammo_box/magazine/m10mm,
 /obj/item/ammo_box/magazine/m10mm,
+/obj/structure/spacevine{
+	name = "vines"
+	},
 /turf/open/floor/plasteel/grimy,
 /area/ruin/jungle)
 "XL" = (
@@ -2971,6 +3289,9 @@
 	name = "reading glasses"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/spacevine{
+	name = "vines"
+	},
 /turf/open/floor/carpet/red,
 /area/ruin/jungle)
 "YO" = (
@@ -2994,6 +3315,15 @@
 	},
 /turf/open/floor/carpet/red,
 /area/ruin/jungle)
+"YT" = (
+/obj/effect/turf_decal/chapel{
+	dir = 4
+	},
+/obj/structure/spacevine{
+	name = "vines"
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/jungle)
 "YU" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
@@ -3001,10 +3331,19 @@
 /obj/structure/chair/comfy/brown{
 	dir = 8
 	},
+/obj/structure/spacevine{
+	name = "vines"
+	},
+/obj/structure/spacevine{
+	name = "vines"
+	},
 /turf/open/floor/carpet/red,
 /area/ruin/jungle)
 "YZ" = (
 /obj/machinery/vending/wardrobe/curator_wardrobe,
+/obj/structure/spacevine{
+	name = "vines"
+	},
 /turf/open/floor/wood,
 /area/ruin/jungle)
 "Za" = (
@@ -3217,8 +3556,8 @@ pk
 pk
 Vu
 Vu
-Fi
-mz
+Fm
+Oj
 mz
 mz
 Kx
@@ -3243,7 +3582,7 @@ bN
 Ad
 Tb
 gQ
-xf
+cl
 PJ
 Mn
 Vu
@@ -3253,8 +3592,8 @@ pF
 qg
 dJ
 bC
-Fi
-Fi
+Fm
+Fm
 Vu
 Vu
 mz
@@ -3280,8 +3619,8 @@ YU
 xp
 xf
 UH
-UH
-YU
+Pt
+Mp
 cf
 vA
 XQ
@@ -3290,8 +3629,8 @@ mF
 st
 st
 Xk
-Fi
-UH
+Fm
+Pt
 VW
 Vu
 mz
@@ -3309,12 +3648,12 @@ Vu
 Pu
 wp
 Vu
-xf
-wx
-UH
-UH
-UH
-UH
+cl
+sd
+Pt
+Pt
+Pt
+Pt
 UH
 UH
 UH
@@ -3326,9 +3665,9 @@ Rs
 Lh
 xf
 Pf
-xf
-UH
-UH
+cl
+Pt
+Pt
 VW
 Vu
 mz
@@ -3347,7 +3686,7 @@ fm
 UH
 Vu
 na
-UH
+Pt
 xf
 VW
 iN
@@ -3364,8 +3703,8 @@ VW
 iQ
 eo
 UH
-UH
-xf
+Pt
+cl
 VW
 Vu
 mz
@@ -3381,7 +3720,7 @@ WL
 WL
 VW
 Fx
-UH
+Pt
 Vu
 Vf
 Ax
@@ -3401,11 +3740,11 @@ wQ
 Ik
 bF
 oq
-LA
-UH
+hW
+Pt
 VW
 Vu
-cO
+DK
 cO
 JY
 cO
@@ -3438,12 +3777,12 @@ vs
 vs
 Ut
 vs
-vs
-Ef
-UH
+nJ
+EL
+Pt
 do
 fL
-cO
+DK
 Me
 cO
 "}
@@ -3454,8 +3793,8 @@ WL
 WL
 WL
 WL
-wx
-UH
+sd
+Pt
 Vu
 bi
 Wm
@@ -3468,15 +3807,15 @@ vs
 SN
 vs
 vT
-Fi
-Fi
-Fi
-Fi
+Fm
+Fm
+Fm
+Fm
 lb
 vs
 vs
 Ut
-TX
+wD
 bR
 Vu
 Vu
@@ -3504,17 +3843,17 @@ KA
 KA
 EW
 AU
-Dr
+OY
 WL
 WL
 WL
-Fi
-Dr
+Fm
+OY
 Dr
 KA
 KA
 ME
-UH
+Pt
 Sf
 bo
 pk
@@ -3546,7 +3885,7 @@ WL
 WL
 WL
 WL
-Fi
+Fm
 jG
 fe
 UH
@@ -3578,12 +3917,12 @@ BT
 LA
 Bk
 tk
-dq
-Fi
+Vt
+Fm
 WL
 WL
 jI
-Fi
+Fm
 oq
 yh
 ZN
@@ -3616,10 +3955,10 @@ lM
 lM
 SB
 Bx
-Fi
-Fi
-Fi
-Fi
+Fm
+Fm
+Fm
+Fm
 xi
 xi
 xi
@@ -3665,7 +4004,7 @@ UH
 Sv
 LZ
 mS
-cO
+DK
 vz
 cO
 "}
@@ -3677,7 +4016,7 @@ WL
 WL
 WL
 WL
-UH
+nu
 Mh
 vZ
 vs
@@ -3714,7 +4053,7 @@ WL
 WL
 WL
 WL
-UH
+nu
 MV
 vZ
 vs
@@ -3777,7 +4116,7 @@ Vu
 Vu
 Js
 Mb
-mz
+Oj
 mz
 "}
 (20,1,1) = {"
@@ -3814,7 +4153,7 @@ Vu
 iU
 Wh
 mk
-Kx
+DM
 mz
 "}
 (21,1,1) = {"
@@ -3824,7 +4163,7 @@ WL
 WL
 WL
 WL
-xf
+cl
 Us
 Vu
 kG
@@ -3871,12 +4210,12 @@ Ef
 UH
 tb
 Py
-Dr
-Dr
+OY
+OY
 jI
-Fi
+Fm
 WL
-vs
+nJ
 li
 vL
 wp
@@ -3884,7 +4223,7 @@ Dr
 TA
 ME
 UH
-mz
+Oj
 Rh
 lg
 jk
@@ -3913,7 +4252,7 @@ WL
 WL
 WL
 Fv
-vs
+nJ
 vs
 Ef
 xf
@@ -3921,10 +4260,10 @@ jG
 rT
 kU
 xf
-dq
+Vt
 qB
 bK
-cO
+DK
 Bl
 nw
 "}
@@ -3945,11 +4284,11 @@ Ut
 li
 LA
 oq
-oq
+kx
 Br
 TC
 WL
-Fi
+Fm
 vs
 Ut
 li
@@ -3958,7 +4297,7 @@ LA
 Fi
 LA
 wx
-mz
+Oj
 Pw
 bK
 mX
@@ -3983,16 +4322,16 @@ Ut
 Ut
 vs
 Fc
-vs
-Fi
-Fi
+nJ
+Fm
+Fm
 vs
 vs
 Ut
 Ut
-Fi
-Fi
-Fi
+Fm
+Fm
+Fm
 Ut
 BR
 TW
@@ -4027,12 +4366,12 @@ pY
 Jw
 Ut
 Fi
-Fi
+Fm
 WL
-Fi
-Fi
-TX
-dq
+Fm
+Fm
+wD
+Vt
 Vu
 mz
 mz
@@ -4046,7 +4385,7 @@ NY
 WL
 Vu
 yG
-zD
+eN
 lA
 wa
 Vd
@@ -4063,7 +4402,7 @@ Dr
 Jn
 ay
 IM
-Dr
+OY
 WL
 WL
 WL
@@ -4083,7 +4422,7 @@ NY
 WL
 Sv
 Xv
-zD
+eN
 YP
 Gc
 Gr
@@ -4100,11 +4439,11 @@ oN
 VW
 Ru
 Ru
-Fi
+Fm
 WL
 WL
 WL
-Fi
+Fm
 Fi
 HH
 Vu
@@ -4137,12 +4476,12 @@ Qd
 UH
 ca
 Fi
-Fi
-Fi
+Fm
+Fm
 WL
 WL
 WL
-Fi
+Fm
 HH
 Vu
 mz
@@ -4157,8 +4496,8 @@ WL
 WL
 WL
 Vu
-zD
-ng
+eN
+YT
 zE
 ns
 SV
@@ -4178,7 +4517,7 @@ rl
 vw
 WL
 WL
-Fi
+Fm
 Bb
 mW
 Vu
@@ -4194,9 +4533,9 @@ WL
 WL
 WL
 WL
-km
-mz
-mz
+ES
+Oj
+Oj
 Uw
 Gh
 TH
@@ -4205,7 +4544,7 @@ Yv
 fl
 rE
 Sg
-mz
+Oj
 HI
 kF
 Vu
