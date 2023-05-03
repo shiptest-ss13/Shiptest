@@ -216,9 +216,8 @@
 	addtimer(CALLBACK(src, .proc/post_revival, H), 6 SECONDS)
 
 /datum/species/ipc/proc/post_revival(mob/living/carbon/human/H)
-	if(H.stat < DEAD)
+	if(H.stat == DEAD)
 		return
-	H.say("Unit [H.real_name] is fully functional. Have a nice day.")
 	H.dna.features["ipc_screen"] = saved_screen
 	H.update_body()
 
