@@ -562,7 +562,7 @@
 				to_chat(user, examine_block("Plant Age: <span class='notice'>[age]</span>"))
 				var/list/text_string = myseed.get_analyzer_text()
 				if(text_string)
-					to_chat(user, examine_block( text_string))
+					to_chat(user, examine_block(text_string))
 			if(myseed.reagents_add && P_analyzer.scan_mode == PLANT_SCANMODE_CHEMICALS)
 				to_chat(user, examine_block("<B>Plant Reagents</B>"))
 				for(var/datum/plant_gene/reagent/Gene in myseed.genes)
