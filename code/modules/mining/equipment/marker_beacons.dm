@@ -17,7 +17,7 @@ GLOBAL_LIST_INIT(marker_beacon_colors, sortList(list(
 /obj/item/stack/marker_beacon
 	name = "marker beacon"
 	singular_name = "marker beacon"
-	desc = "Prism-brand path illumination devices. Used by miners to mark paths and warn of danger."
+	desc = "You should not see this!" //unless you're coding or mapping
 	icon = 'icons/obj/lighting.dmi'
 	icon_state = "marker"
 	merge_type = /obj/item/stack/marker_beacon
@@ -25,12 +25,7 @@ GLOBAL_LIST_INIT(marker_beacon_colors, sortList(list(
 	novariants = TRUE
 	custom_price = 200
 	var/picked_color = "random"
-
-/obj/item/stack/marker_beacon/ten //miners start with 10 of these
-	amount = 10
-
-/obj/item/stack/marker_beacon/thirty //and they're bought in stacks of 1, 10, or 30
-	amount = 30
+	var/structure_type = /obj/structure/marker_beacon
 
 /obj/item/stack/marker_beacon/Initialize(mapload)
 	. = ..()
@@ -54,8 +49,8 @@ GLOBAL_LIST_INIT(marker_beacon_colors, sortList(list(
 	if(use(1))
 		to_chat(user, "<span class='notice'>You activate and anchor [amount ? "a":"the"] [singular_name] in place.</span>")
 		playsound(user, 'sound/machines/click.ogg', 50, TRUE)
-		var/obj/structure/marker_beacon/M = new(user.loc, picked_color)
-		transfer_fingerprints_to(M)
+		var/obj/structure/marker_beacon/marker = new structure_type(get_turf(user),picked_color)
+		transfer_fingerprints_to(marker)
 
 /obj/item/stack/marker_beacon/AltClick(mob/living/user)
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE))
@@ -80,6 +75,7 @@ GLOBAL_LIST_INIT(marker_beacon_colors, sortList(list(
 	light_power = 3
 	var/remove_speed = 15
 	var/picked_color
+	var/stack_type = /obj/item/stack/marker_beacon
 
 /obj/structure/marker_beacon/Initialize(mapload, set_color)
 	. = ..()
@@ -89,9 +85,9 @@ GLOBAL_LIST_INIT(marker_beacon_colors, sortList(list(
 
 /obj/structure/marker_beacon/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1))
-		var/obj/item/stack/marker_beacon/M = new(loc)
-		M.picked_color = picked_color
-		M.update_icon()
+		var/obj/item/stack/marker_beacon/marker = new(loc)
+		marker.picked_color = picked_color
+		marker.update_icon()
 	qdel(src)
 
 /obj/structure/marker_beacon/examine(mob/user)
@@ -110,22 +106,26 @@ GLOBAL_LIST_INIT(marker_beacon_colors, sortList(list(
 		return
 	to_chat(user, "<span class='notice'>You start picking [src] up...</span>")
 	if(do_after(user, remove_speed, target = src))
-		var/obj/item/stack/marker_beacon/M = new(loc)
-		M.picked_color = picked_color
-		M.update_icon()
-		transfer_fingerprints_to(M)
-		if(user.put_in_hands(M, TRUE)) //delete the beacon if it fails
+		var/obj/item/stack/marker_beacon/marker = new stack_type(loc)
+		marker.picked_color = picked_color
+		marker.update_icon()
+		transfer_fingerprints_to(marker)
+		if(user.put_in_hands(marker, TRUE)) //delete the beacon if it fails
 			playsound(src, 'sound/items/deconstruct.ogg', 50, TRUE)
 			qdel(src) //otherwise delete us
 
 /obj/structure/marker_beacon/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/stack/marker_beacon))
-		var/obj/item/stack/marker_beacon/M = I
-		to_chat(user, "<span class='notice'>You start picking [src] up...</span>")
-		if(do_after(user, remove_speed, target = src) && M.amount + 1 <= M.max_amount)
-			M.add(1)
-			playsound(src, 'sound/items/deconstruct.ogg', 50, TRUE)
-			qdel(src)
+		if(istype(I, stack_type))
+			var/obj/item/stack/marker_beacon/marker = I
+			to_chat(user, "<span class='notice'>You start picking [src] up...</span>")
+			if(do_after(user, remove_speed, target = src) && marker.amount + 1 <= marker.max_amount)
+				marker.add(1)
+				playsound(src, 'sound/items/deconstruct.ogg', 50, TRUE)
+				qdel(src)
+				return
+		else
+			to_chat(user, "<span class = 'notice'>[src] is a different type of beacon.")
 			return
 	if(istype(I, /obj/item/light_eater))
 		var/obj/effect/decal/cleanable/ash/A = new /obj/effect/decal/cleanable/ash(drop_location())
@@ -146,3 +146,50 @@ GLOBAL_LIST_INIT(marker_beacon_colors, sortList(list(
 	if(input_color)
 		picked_color = input_color
 		update_icon()
+
+//default beacons
+
+/obj/item/stack/marker_beacon/default
+	name = "marker beacon"
+	desc = "Prism-brand path illumination devices. Used by miners to mark paths and warn of danger."
+	novariants = TRUE
+	custom_price = 200
+	structure_type = /obj/structure/marker_beacon/default
+	merge_type = /obj/item/stack/marker_beacon/default
+
+/obj/item/stack/marker_beacon/default/ten //miners start with 10 of these
+	amount = 10
+
+/obj/item/stack/marker_beacon/default/thirty //and they're bought in stacks of 1, 10, or 30
+	amount = 30
+
+/obj/structure/marker_beacon/default
+	name = "marker beacon"
+	desc = "A Prism-brand path illumination device. It is anchored in place and glowing steadily."
+	stack_type = /obj/item/stack/marker_beacon/default
+
+
+//acid proof beacons, since we have acid rain on some worlds
+
+/obj/item/stack/marker_beacon/acidproof
+	name = "Acid-Proof Marker Beacon"
+	desc = "Prism-brand path illumination devices. Used by miners to mark paths and warn of danger. This one has a reinforced casing"
+	resistance_flags = 100
+	merge_type = /obj/item/stack/marker_beacon/acidproof
+	custom_price = 400 //more expensive than normal ones
+	structure_type = /obj/structure/marker_beacon/acidproof
+
+
+/obj/item/stack/marker_beacon/acidproof/ten
+	amount = 10
+
+/obj/item/stack/marker_beacon/acidproof/thirty
+	amount = 30
+
+//and the structure
+
+/obj/structure/marker_beacon/acidproof
+	name = "acid proof marker beacon"
+	desc = "Prism-brand path illumination device. It is anchored in place and glowing steadily. This one has a reinforced casing"
+	resistance_flags = 100
+	stack_type = /obj/item/stack/marker_beacon/acidproof

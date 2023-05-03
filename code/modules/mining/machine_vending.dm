@@ -19,7 +19,7 @@
 	all_items_free = FALSE
 	// Mining products are handled differently, because I am too lazy to convert this list stolen from the old vendor.
 	products = list( //if you add something to this, please, for the love of god, sort it by price/type. use tabs and not spaces.
-		/obj/item/stack/marker_beacon/thirty = 6,
+		/obj/item/stack/marker_beacon/default/thirty = 6,
 		/obj/item/reagent_containers/food/drinks/bottle/whiskey = 3,
 		/obj/item/storage/box/gum/bubblegum = 5,
 		/obj/item/clothing/mask/cigarette/cigar/havana = 3,
@@ -110,7 +110,7 @@
 			if("Extraction and Rescue Kit")
 				new /obj/item/extraction_pack(drop_location)
 				new /obj/item/fulton_core(drop_location)
-				new /obj/item/stack/marker_beacon/thirty(drop_location)
+				new /obj/item/stack/marker_beacon/default/thirty(drop_location)
 			if("Crusher Kit")
 				new /obj/item/extinguisher/mini(drop_location)
 				new /obj/item/kinetic_crusher(drop_location)
@@ -146,7 +146,7 @@
 	circuit = /obj/item/circuitboard/machine/vending/mining_equipment
 	refill_canister = /obj/item/vending_refill/mining_equipment_golem
 	products = list( //if you add something to this, please, for the love of god, sort it by price/type. use tabs and not spaces.
-		/obj/item/stack/marker_beacon/thirty = 6,
+		/obj/item/stack/marker_beacon/default/thirty = 6,
 		/obj/item/reagent_containers/food/drinks/bottle/whiskey = 3,
 		/obj/item/storage/box/gum/bubblegum = 5,
 		/obj/item/clothing/mask/cigarette/cigar/havana = 3,

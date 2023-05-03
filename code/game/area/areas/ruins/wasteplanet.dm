@@ -29,3 +29,17 @@
 /area/ruin/wasteplanet/abandoned_mechbay/engineering
 	name = "Abandoned Mechbay Engineering"
 	icon_state = "engine"
+
+//Wasteplanet_Tradepost
+
+/area/ruin/wasteplanet/tradepost/barracks
+	name = "Abandoned Barracks"
+	icon_state = "red"
+
+/area/ruin/wasteplanet/tradepost/center
+	name = "Abandoned Dome"
+	icon_state = "bridge"
+
+/area/ruin/wasteplanet/tradepost/warehouse
+	name = "Abandoned Warehouse"
+	icon_state = "dk_yellow"
