@@ -264,3 +264,23 @@
 	back = /obj/item/storage/backpack
 	id = /obj/item/card/id/solgov/commander
 	backpack_contents = null
+
+
+//some inteq corpses for the boys in brown
+
+/obj/effect/mob_spawn/human/corpse/inteq/enforcer
+	id_job = "Enforcer"
+	outfit = /datum/outfit/inteq/enforcer
+
+/datum/outfit/inteq/enforcer
+
+	name = "IRMG Enforcer Corpse"
+	head = /obj/item/clothing/head/helmet/inteq
+	suit = /obj/item/clothing/suit/armor/vest/alt
+	belt = /obj/item/storage/belt/security/webbing/inteq
+	mask = /obj/item/clothing/mask/gas/sechailer/inteq
+	uniform = /obj/item/clothing/under/syndicate/inteq
+	shoes = /obj/item/clothing/shoes/combat
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
+	gloves = /obj/item/clothing/gloves/combat
+	backpack_contents = list(/obj/item/melee/baton/loaded=1, /obj/item/ammo_box/magazine/co9mm=1, /obj/item/pda/security)

@@ -363,14 +363,20 @@
 	name = "Superpill-Class Experimental Engineering Platform"
 	prefix = "Pill"
 	name_categories = list("PILLS")
-//your subshuttle here
 
 /datum/map_template/shuttle/subshuttles/kunai
 	file_name = "independent_kunai"
-	name = "Kunai Dropship"
+	name = "Kunai-Class Dropship"
 	prefix = "SV"
 
 /datum/map_template/shuttle/subshuttles/sugarcube
 	file_name = "independent_sugarcube"
-	name = "Sugarcube Transport"
+	name = "Sugarcube-Class Transport"
 	prefix = "ISV"
+
+/datum/map_template/shuttle/subshuttles/trader
+	file_name = "independent_trader"
+	name = "Patrician-Class Trade Shuttle"
+	prefix = "ISV"
+
+//your subshuttle here
