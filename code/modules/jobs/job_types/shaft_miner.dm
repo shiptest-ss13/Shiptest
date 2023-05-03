@@ -30,7 +30,7 @@
 		/obj/item/flashlight/seclite=1,\
 		/obj/item/kitchen/knife/combat/survival=1,\
 		/obj/item/mining_voucher=1,\
-		/obj/item/stack/marker_beacon/ten=1)
+		/obj/item/stack/marker_beacon/default/ten=1)
 
 	backpack = /obj/item/storage/backpack/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
@@ -70,7 +70,7 @@
 		/obj/item/mining_voucher=1,
 		/obj/item/pinpointer/deepcore=1,
 		/obj/item/gun/energy/kinetic_accelerator=1,\
-		/obj/item/stack/marker_beacon/ten=1)
+		/obj/item/stack/marker_beacon/default/ten=1)
 
 /datum/outfit/job/miner/equipped/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -146,7 +146,7 @@
 		/obj/item/reagent_containers/hypospray/medipen/survival,
 		/obj/item/reagent_containers/hypospray/medipen/survival,\
 		/obj/item/gun/energy/kinetic_accelerator/old=1,\
-		/obj/item/stack/marker_beacon/ten=1)
+		/obj/item/stack/marker_beacon/default/ten=1)
 
 /datum/outfit/job/miner/righand
 	name = "Righand"
@@ -163,7 +163,7 @@
 		/obj/item/flashlight/seclite=1,
 		/obj/item/kitchen/knife/combat/survival=1,
 		/obj/item/mining_voucher=1,
-		/obj/item/stack/marker_beacon/ten=1,
+		/obj/item/stack/marker_beacon/default/ten=1,
 		/obj/item/borg/upgrade/modkit/aoe=1
 	)
 

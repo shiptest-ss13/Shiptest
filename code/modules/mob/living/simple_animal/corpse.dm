@@ -284,3 +284,24 @@
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
 	gloves = /obj/item/clothing/gloves/combat
 	backpack_contents = list(/obj/item/melee/baton/loaded=1, /obj/item/ammo_box/magazine/co9mm=1, /obj/item/pda/security)
+
+/obj/effect/mob_spawn/human/corpse/inteq/vanguard
+	id_job = "Vanguard"
+	outfit = /datum/outfit/inteq/vanguard
+
+/datum/outfit/inteq/vanguard
+
+	name = "IRMG Vanguard Corpse"
+	ears = /obj/item/radio/headset/inteq/alt/captain
+	uniform = /obj/item/clothing/under/syndicate/inteq
+	head = /obj/item/clothing/head/beret/sec/hos/inteq
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
+	mask = /obj/item/clothing/mask/gas/sechailer/inteq
+	belt = /obj/item/storage/belt/security/webbing/inteq
+	suit = /obj/item/clothing/suit/armor/hos/inteq
+	shoes = /obj/item/clothing/shoes/combat
+	gloves = /obj/item/clothing/gloves/combat
+	r_pocket = /obj/item/assembly/flash/handheld
+	l_pocket = /obj/item/restraints/handcuffs
+
+	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/ammo_box/magazine/co9mm=1, /obj/item/pda/captain)

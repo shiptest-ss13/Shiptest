@@ -1,12 +1,19 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "ag" = (
 /obj/structure/barricade/sandbags,
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "drip2"
+	},
 /turf/open/floor/pod,
-/area/space)
+/area/ruin/wasteplanet/tradepost/center)
+"as" = (
+/obj/structure/table,
+/turf/open/floor/pod,
+/area/ruin/wasteplanet/tradepost/center)
 "aB" = (
 /obj/effect/turf_decal/industrial/caution,
 /turf/open/floor/pod,
-/area/space)
+/area/ruin/wasteplanet/tradepost/warehouse)
 "bj" = (
 /obj/item/stack/sheet/mineral/sandbags{
 	amount = 3
@@ -15,36 +22,42 @@
 	dir = 1
 	},
 /turf/open/floor/pod,
-/area/space)
+/area/ruin/wasteplanet/tradepost/center)
 "bM" = (
 /obj/item/stack/sheet/mineral/sandbags,
 /obj/structure/door_assembly/door_assembly_com,
 /turf/open/floor/pod,
-/area/space)
+/area/ruin/wasteplanet/tradepost/center)
 "bY" = (
 /obj/structure/girder/displaced,
 /turf/open/floor/plating/asteroid/wasteplanet,
-/area/space)
+/area/overmap_encounter/planetoid/wasteplanet)
 "ch" = (
 /obj/effect/turf_decal/industrial/warning/full,
 /obj/structure/closet/crate,
 /obj/item/stack/sheet/mineral/plasma/five,
 /obj/item/stack/sheet/mineral/plasma/five,
 /obj/item/stack/sheet/mineral/plasma/five,
+/obj/machinery/button/door{
+	dir = 4;
+	pixel_x = -24;
+	pixel_y = -8;
+	id = "wtpw1"
+	},
 /turf/open/floor/pod/dark,
-/area/space)
+/area/ruin/wasteplanet/tradepost/warehouse)
 "cC" = (
 /turf/closed/wall/yesdiag,
-/area/space)
+/area/ruin/wasteplanet/tradepost/warehouse)
 "cJ" = (
 /turf/open/floor/concrete/pavement,
-/area/space)
+/area/overmap_encounter/planetoid/wasteplanet)
 "cL" = (
 /obj/item/stack/sheet/mineral/sandbags{
 	amount = 3
 	},
 /turf/open/floor/plating/asteroid/wasteplanet,
-/area/space)
+/area/overmap_encounter/planetoid/wasteplanet)
 "cW" = (
 /obj/structure/barricade/sandbags,
 /obj/effect/turf_decal/industrial/warning,
@@ -52,14 +65,14 @@
 	dir = 1
 	},
 /turf/open/floor/plating/wasteplanet,
-/area/space)
+/area/overmap_encounter/planetoid/wasteplanet)
 "dB" = (
 /obj/effect/turf_decal/industrial/traffic,
 /obj/effect/turf_decal/industrial/stand_clear{
 	dir = 1
 	},
 /turf/open/floor/concrete/pavement,
-/area/space)
+/area/overmap_encounter/planetoid/wasteplanet)
 "dD" = (
 /obj/structure/flippedtable,
 /obj/effect/decal/remains/human,
@@ -69,23 +82,45 @@
 	},
 /obj/item/gun/ballistic/automatic/pistol/commander,
 /turf/open/floor/pod,
-/area/space)
+/area/ruin/wasteplanet/tradepost/center)
 "dN" = (
 /obj/structure/door_assembly/door_assembly_sec,
 /turf/open/floor/pod,
-/area/space)
+/area/ruin/wasteplanet/tradepost/barracks)
 "em" = (
 /turf/open/floor/plating/asteroid/wasteplanet,
-/area/space)
+/area/overmap_encounter/planetoid/wasteplanet)
 "en" = (
 /turf/closed/wall/rust,
-/area/space)
+/area/overmap_encounter/planetoid/wasteplanet)
+"et" = (
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "drip2"
+	},
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "drip5"
+	},
+/turf/open/floor/concrete/pavement,
+/area/overmap_encounter/planetoid/wasteplanet)
+"ez" = (
+/turf/closed/wall/rust,
+/area/ruin/wasteplanet/tradepost/center)
 "eF" = (
 /obj/effect/decal/cleanable/oil/streak{
 	icon_state = "streak4"
 	},
 /turf/open/floor/concrete/pavement,
-/area/space)
+/area/overmap_encounter/planetoid/wasteplanet)
+"eH" = (
+/obj/structure/bed/pod,
+/obj/item/bedsheet/hos{
+	name = "security bedsheet"
+	},
+/turf/open/floor/pod,
+/area/ruin/wasteplanet/tradepost/barracks)
 "fe" = (
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 8
@@ -94,7 +129,20 @@
 	dir = 4
 	},
 /turf/open/floor/pod,
-/area/space)
+/area/ruin/wasteplanet/tradepost/warehouse)
+"fr" = (
+/obj/structure/barricade/sandbags,
+/turf/open/floor/pod,
+/area/ruin/wasteplanet/tradepost/center)
+"fU" = (
+/turf/closed/wall/rust/yesdiag,
+/area/ruin/wasteplanet/tradepost/center)
+"fY" = (
+/turf/open/floor/pod/light,
+/area/ruin/wasteplanet/tradepost/center)
+"gh" = (
+/turf/closed/wall/rust/yesdiag,
+/area/ruin/wasteplanet/tradepost/warehouse)
 "gl" = (
 /obj/docking_port/stationary{
 	dir = 4;
@@ -104,31 +152,32 @@
 	roundstart_template = /datum/map_template/shuttle/subshuttles/trader
 	},
 /turf/open/floor/plating/rust/wasteplanet,
-/area/space)
+/area/overmap_encounter/planetoid/wasteplanet)
 "gy" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/rust/wasteplanet,
-/area/space)
+/area/overmap_encounter/planetoid/wasteplanet)
 "gA" = (
 /obj/effect/decal/cleanable/molten_object/large,
+/obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/concrete/pavement,
-/area/space)
+/area/overmap_encounter/planetoid/wasteplanet)
 "hn" = (
 /obj/effect/turf_decal/industrial/warning/full,
 /obj/structure/extinguisher_cabinet/directional/north,
 /turf/open/floor/pod/dark,
-/area/space)
+/area/ruin/wasteplanet/tradepost/warehouse)
 "ht" = (
 /obj/structure/extinguisher_cabinet/directional/south,
 /obj/structure/barricade/sandbags,
 /turf/open/floor/pod,
-/area/space)
+/area/ruin/wasteplanet/tradepost/center)
 "hJ" = (
 /obj/structure/chair{
 	dir = 8
 	},
 /turf/open/floor/pod,
-/area/space)
+/area/ruin/wasteplanet/tradepost/barracks)
 "hU" = (
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 4
@@ -137,43 +186,81 @@
 	dir = 8
 	},
 /turf/open/floor/pod,
-/area/space)
-"im" = (
-/mob/living/simple_animal/hostile/abandoned_minebot,
-/turf/open/floor/concrete/pavement,
-/area/space)
+/area/ruin/wasteplanet/tradepost/warehouse)
 "iy" = (
 /obj/machinery/computer/mech_bay_power_console/retro{
 	dir = 8
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/space)
+/area/ruin/wasteplanet/tradepost/warehouse)
+"iI" = (
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "drip3"
+	},
+/turf/open/floor/concrete/pavement,
+/area/overmap_encounter/planetoid/wasteplanet)
+"iX" = (
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "drip2"
+	},
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "drip1"
+	},
+/turf/open/floor/concrete/pavement,
+/area/overmap_encounter/planetoid/wasteplanet)
 "jb" = (
 /obj/structure/sign/poster/contraband/c20r{
 	pixel_y = 28
 	},
 /turf/open/floor/pod,
-/area/space)
+/area/ruin/wasteplanet/tradepost/barracks)
+"jn" = (
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "floor3-old"
+	},
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "floor2-old"
+	},
+/turf/open/floor/concrete/pavement,
+/area/overmap_encounter/planetoid/wasteplanet)
 "jD" = (
 /obj/structure/barricade/sandbags,
 /obj/effect/turf_decal/industrial/warning/cee{
 	dir = 4
 	},
 /turf/open/floor/plating/wasteplanet,
-/area/space)
+/area/overmap_encounter/planetoid/wasteplanet)
 "kf" = (
 /obj/effect/turf_decal/spline/fancy/opaque/black,
 /turf/open/floor/pod,
-/area/space)
+/area/ruin/wasteplanet/tradepost/warehouse)
+"kr" = (
+/mob/living/simple_animal/hostile/hivebot/rapid/rockplanet,
+/turf/open/floor/pod,
+/area/ruin/wasteplanet/tradepost/center)
 "kU" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/wasteplanet,
-/area/space)
+/area/overmap_encounter/planetoid/wasteplanet)
+"lx" = (
+/turf/open/floor/pod/light,
+/area/ruin/wasteplanet/tradepost/barracks)
+"lB" = (
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "drip4"
+	},
+/turf/open/floor/concrete/pavement,
+/area/overmap_encounter/planetoid/wasteplanet)
 "lQ" = (
 /obj/effect/turf_decal/industrial/warning/full,
 /obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/pod/dark,
-/area/space)
+/area/ruin/wasteplanet/tradepost/warehouse)
+"lY" = (
+/obj/effect/turf_decal/industrial/warning/full,
+/obj/machinery/light/small/broken/directional/north,
+/turf/open/floor/pod/dark,
+/area/ruin/wasteplanet/tradepost/warehouse)
 "mr" = (
 /obj/effect/turf_decal/industrial/caution{
 	dir = 1
@@ -182,23 +269,39 @@
 	pixel_x = -28
 	},
 /turf/open/floor/pod,
-/area/space)
+/area/ruin/wasteplanet/tradepost/barracks)
 "mK" = (
 /obj/item/bot_assembly/medbot,
 /turf/open/floor/pod/light,
-/area/space)
+/area/ruin/wasteplanet/tradepost/barracks)
 "nO" = (
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/pod/light,
-/area/space)
+/area/ruin/wasteplanet/tradepost/barracks)
+"oz" = (
+/obj/effect/mob_spawn/human/corpse/inteq/vanguard,
+/turf/open/floor/pod,
+/area/ruin/wasteplanet/tradepost/center)
+"oC" = (
+/mob/living/simple_animal/hostile/hivebot/strong/rockplanet,
+/turf/open/floor/concrete/pavement,
+/area/overmap_encounter/planetoid/wasteplanet)
 "pc" = (
 /obj/item/stack/sheet/mineral/sandbags{
 	amount = 2
 	},
 /turf/open/floor/concrete/pavement,
-/area/space)
+/area/overmap_encounter/planetoid/wasteplanet)
 "pl" = (
 /turf/closed/wall,
-/area/space)
+/area/ruin/wasteplanet/tradepost/warehouse)
+"pm" = (
+/obj/machinery/door/poddoor/shutters{
+	dir = 8;
+	id = "wtpw2"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/wasteplanet/tradepost/warehouse)
 "pA" = (
 /obj/effect/decal/cleanable/molten_object{
 	pixel_x = -10;
@@ -208,8 +311,11 @@
 	pixel_x = 1;
 	pixel_y = 9
 	},
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "drip4"
+	},
 /turf/open/floor/concrete/pavement,
-/area/space)
+/area/overmap_encounter/planetoid/wasteplanet)
 "pQ" = (
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 8
@@ -218,28 +324,35 @@
 	dir = 4
 	},
 /turf/open/floor/pod,
-/area/space)
+/area/ruin/wasteplanet/tradepost/warehouse)
 "qk" = (
 /obj/machinery/door/airlock/command/glass{
 	name = "Holopad Access"
 	},
 /turf/open/floor/plasteel/tech,
-/area/space)
+/area/ruin/wasteplanet/tradepost/center)
+"qw" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/turf_decal/industrial/warning,
+/turf/open/floor/plasteel/tech,
+/area/ruin/wasteplanet/tradepost/center)
 "ro" = (
 /obj/structure/extinguisher_cabinet/directional/east,
 /turf/open/floor/pod,
-/area/space)
+/area/ruin/wasteplanet/tradepost/center)
 "ru" = (
 /obj/structure/flippedtable,
 /turf/open/floor/pod,
-/area/space)
+/area/ruin/wasteplanet/tradepost/center)
 "rB" = (
 /obj/machinery/door/airlock{
 	dir = 4;
 	name = "Showers"
 	},
 /turf/open/floor/plasteel/tech,
-/area/space)
+/area/ruin/wasteplanet/tradepost/center)
 "sf" = (
 /obj/effect/decal/cleanable/molten_object{
 	pixel_x = -10;
@@ -250,7 +363,7 @@
 	pixel_y = -4
 	},
 /turf/open/floor/concrete/pavement,
-/area/space)
+/area/overmap_encounter/planetoid/wasteplanet)
 "sy" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -259,12 +372,18 @@
 	dir = 4
 	},
 /turf/open/floor/plating/wasteplanet,
-/area/space)
+/area/overmap_encounter/planetoid/wasteplanet)
 "sT" = (
 /obj/effect/turf_decal/industrial/warning/full,
 /obj/structure/ore_box,
+/obj/machinery/button/door{
+	dir = 8;
+	pixel_y = -8;
+	pixel_x = 24;
+	id = "wtpw2"
+	},
 /turf/open/floor/pod/dark,
-/area/space)
+/area/ruin/wasteplanet/tradepost/warehouse)
 "tl" = (
 /obj/docking_port/stationary{
 	dir = 2;
@@ -274,49 +393,53 @@
 	roundstart_template = /datum/map_template/shuttle/subshuttles/trader
 	},
 /turf/open/floor/plating/wasteplanet,
-/area/space)
+/area/overmap_encounter/planetoid/wasteplanet)
 "tn" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 9
 	},
 /obj/effect/turf_decal/industrial/warning/corner,
 /turf/open/floor/plating/wasteplanet,
-/area/space)
+/area/overmap_encounter/planetoid/wasteplanet)
 "tp" = (
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 4
 	},
 /turf/open/floor/pod,
-/area/space)
+/area/ruin/wasteplanet/tradepost/warehouse)
 "ts" = (
 /obj/machinery/holopad/secure,
 /obj/effect/turf_decal/box,
 /turf/open/floor/pod,
-/area/space)
+/area/ruin/wasteplanet/tradepost/center)
 "tz" = (
 /obj/structure/window/reinforced/fulltile,
 /obj/structure/grille,
 /turf/open/floor/pod,
-/area/space)
+/area/ruin/wasteplanet/tradepost/center)
 "tL" = (
 /obj/structure/extinguisher_cabinet/directional/west,
 /obj/item/bot_assembly/ed209,
 /obj/effect/decal/cleanable/robot_debris,
 /turf/open/floor/pod,
-/area/space)
+/area/ruin/wasteplanet/tradepost/center)
 "tU" = (
 /obj/mecha/working/ripley/cargo,
 /obj/effect/turf_decal/rechargefloor,
 /obj/structure/sign/warning/nosmoking{
 	pixel_x = 28
 	},
+/obj/machinery/light/small/broken/directional/south,
 /turf/open/floor/plasteel/tech/grid,
-/area/space)
+/area/ruin/wasteplanet/tradepost/warehouse)
 "uf" = (
 /obj/effect/turf_decal/industrial/warning/full,
 /obj/structure/closet/crate,
+/obj/item/stack/marker_beacon/acidproof/thirty,
+/obj/item/stack/marker_beacon/acidproof/thirty,
+/obj/machinery/light/small/broken/directional/south,
 /turf/open/floor/pod/dark,
-/area/space)
+/area/ruin/wasteplanet/tradepost/warehouse)
 "ug" = (
 /obj/structure/barricade/sandbags,
 /obj/effect/turf_decal/industrial/warning{
@@ -324,21 +447,21 @@
 	},
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plating/wasteplanet,
-/area/space)
-"uL" = (
-/mob/living/simple_animal/bot/secbot/ed209/rockplanet,
-/turf/open/floor/plating/asteroid/wasteplanet,
-/area/space)
+/area/overmap_encounter/planetoid/wasteplanet)
+"vQ" = (
+/obj/effect/decal/cleanable/molten_object/large,
+/turf/open/floor/concrete/pavement,
+/area/overmap_encounter/planetoid/wasteplanet)
 "wA" = (
 /obj/effect/decal/cleanable/oil/streak{
 	icon_state = "streak5"
 	},
 /turf/open/floor/concrete/pavement,
-/area/space)
+/area/overmap_encounter/planetoid/wasteplanet)
 "wB" = (
 /obj/structure/table,
 /turf/open/floor/pod,
-/area/space)
+/area/ruin/wasteplanet/tradepost/barracks)
 "wG" = (
 /obj/machinery/door/airlock/medical{
 	name = "Medbay"
@@ -348,104 +471,147 @@
 	},
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plasteel/tech,
-/area/space)
+/area/ruin/wasteplanet/tradepost/barracks)
 "wM" = (
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 8
 	},
 /turf/open/floor/pod/light,
-/area/space)
+/area/ruin/wasteplanet/tradepost/center)
+"xx" = (
+/mob/living/simple_animal/hostile/hivebot/rapid/rockplanet,
+/turf/open/floor/pod,
+/area/ruin/wasteplanet/tradepost/barracks)
+"xF" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "drip5"
+	},
+/turf/open/floor/concrete/pavement,
+/area/overmap_encounter/planetoid/wasteplanet)
 "xQ" = (
 /obj/item/stack/sheet/mineral/sandbags{
 	pixel_y = 7
 	},
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "drip2"
+	},
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "drip3"
+	},
 /turf/open/floor/pod,
-/area/space)
+/area/ruin/wasteplanet/tradepost/center)
 "ya" = (
 /obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/pod/light,
-/area/space)
+/area/ruin/wasteplanet/tradepost/barracks)
 "ym" = (
 /turf/closed/mineral/random/asteroid/wasteplanet,
 /area/space)
 "ze" = (
 /obj/machinery/mech_bay_recharge_port,
 /turf/open/floor/plasteel/tech/grid,
-/area/space)
+/area/ruin/wasteplanet/tradepost/warehouse)
 "zo" = (
 /obj/effect/turf_decal/industrial/traffic,
 /obj/effect/turf_decal/industrial/caution{
 	dir = 1
 	},
 /turf/open/floor/concrete/pavement,
-/area/space)
+/area/overmap_encounter/planetoid/wasteplanet)
 "zq" = (
 /obj/effect/turf_decal/industrial/warning/full,
 /obj/structure/closet/crate,
 /obj/structure/sign/warning/gasmask{
 	pixel_y = 30
 	},
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/pod/dark,
-/area/space)
+/area/ruin/wasteplanet/tradepost/warehouse)
+"zD" = (
+/turf/closed/wall/rust,
+/area/ruin/wasteplanet/tradepost/warehouse)
 "zT" = (
 /obj/effect/turf_decal/industrial/caution{
 	dir = 1
 	},
 /turf/open/floor/pod/light,
-/area/space)
+/area/ruin/wasteplanet/tradepost/barracks)
 "zY" = (
 /obj/item/stack/sheet/mineral/sandbags,
 /turf/open/floor/plating/asteroid/wasteplanet,
-/area/space)
+/area/overmap_encounter/planetoid/wasteplanet)
 "Ba" = (
 /turf/open/floor/plating/rust/wasteplanet,
-/area/space)
+/area/overmap_encounter/planetoid/wasteplanet)
 "BK" = (
 /obj/machinery/shower{
 	dir = 1
 	},
 /obj/structure/curtain,
 /turf/open/floor/pod/light,
-/area/space)
+/area/ruin/wasteplanet/tradepost/center)
+"BN" = (
+/mob/living/simple_animal/hostile/hivebot/strong/rockplanet,
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/overmap_encounter/planetoid/wasteplanet)
+"Cj" = (
+/obj/item/gun/ballistic/automatic/pistol/commander/inteq,
+/turf/open/floor/pod,
+/area/ruin/wasteplanet/tradepost/center)
 "CA" = (
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 4
 	},
 /turf/open/floor/concrete/pavement,
-/area/space)
+/area/overmap_encounter/planetoid/wasteplanet)
 "CC" = (
+/obj/machinery/door/poddoor/shutters{
+	dir = 8;
+	id = "wtpw1"
+	},
 /turf/open/floor/plasteel/tech,
-/area/space)
+/area/ruin/wasteplanet/tradepost/warehouse)
 "Dl" = (
 /obj/machinery/door/airlock{
 	dir = 4;
 	name = "Trader's Quarters"
 	},
 /turf/open/floor/plasteel/tech,
-/area/space)
+/area/ruin/wasteplanet/tradepost/center)
 "DE" = (
-/mob/living/simple_animal/bot/secbot/ed209,
+/mob/living/simple_animal/hostile/hivebot/strong/rockplanet,
 /turf/open/floor/pod,
-/area/space)
+/area/ruin/wasteplanet/tradepost/center)
+"DQ" = (
+/obj/structure/girder/displaced,
+/turf/open/floor/plating/wasteplanet,
+/area/overmap_encounter/planetoid/wasteplanet)
 "Eg" = (
-/obj/structure/marker_beacon,
+/obj/structure/marker_beacon/acidproof,
 /turf/open/floor/plating/rust/wasteplanet,
-/area/space)
+/area/overmap_encounter/planetoid/wasteplanet)
 "Ex" = (
 /obj/item/gun/ballistic/automatic/smg/inteq,
 /obj/effect/mob_spawn/human/corpse/inteq/enforcer,
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "floor2-old"
+	},
+/obj/item/gun/ballistic/automatic/pistol/commander/inteq/no_mag,
 /turf/open/floor/pod,
-/area/space)
+/area/ruin/wasteplanet/tradepost/center)
 "Fb" = (
 /obj/machinery/door/airlock/command/glass{
 	dir = 4;
 	name = "Holopad Access"
 	},
 /turf/open/floor/pod,
-/area/space)
+/area/ruin/wasteplanet/tradepost/center)
 "Fc" = (
 /turf/open/floor/plating/wasteplanet,
-/area/space)
+/area/overmap_encounter/planetoid/wasteplanet)
 "Fx" = (
 /obj/structure/extinguisher_cabinet/directional/west,
 /obj/effect/turf_decal/industrial/caution{
@@ -454,32 +620,68 @@
 /obj/structure/sign/warning/gasmask{
 	pixel_x = -28
 	},
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "drip1"
+	},
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "drip2"
+	},
 /turf/open/floor/pod,
-/area/space)
+/area/ruin/wasteplanet/tradepost/center)
+"FV" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 4
+	},
+/turf/open/floor/concrete/pavement,
+/area/overmap_encounter/planetoid/wasteplanet)
 "Gf" = (
 /obj/effect/turf_decal/spline/fancy/opaque/black,
 /turf/open/floor/pod/light,
-/area/space)
+/area/ruin/wasteplanet/tradepost/center)
 "Hb" = (
 /obj/effect/decal/cleanable/oil/streak{
 	icon_state = "streak2"
 	},
 /turf/open/floor/concrete/pavement,
-/area/space)
+/area/overmap_encounter/planetoid/wasteplanet)
+"Ho" = (
+/obj/structure/table,
+/obj/machinery/light/small/broken/directional/east,
+/turf/open/floor/pod,
+/area/ruin/wasteplanet/tradepost/barracks)
+"HH" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "drip3"
+	},
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "drip2"
+	},
+/turf/open/floor/concrete/pavement,
+/area/overmap_encounter/planetoid/wasteplanet)
 "Ig" = (
 /obj/structure/rack,
 /turf/open/floor/pod/light,
-/area/space)
+/area/ruin/wasteplanet/tradepost/center)
+"In" = (
+/turf/open/floor/pod,
+/area/ruin/wasteplanet/tradepost/warehouse)
 "IF" = (
 /obj/structure/door_assembly/door_assembly_com,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plasteel/tech,
-/area/space)
+/area/ruin/wasteplanet/tradepost/center)
 "IN" = (
 /obj/item/chair{
 	pixel_y = -4
 	},
 /turf/open/floor/pod,
-/area/space)
+/area/ruin/wasteplanet/tradepost/center)
 "Jb" = (
 /obj/machinery/door/airlock/mining{
 	name = "Warehouse"
@@ -489,32 +691,56 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/tech,
-/area/space)
+/area/ruin/wasteplanet/tradepost/warehouse)
 "Jh" = (
 /obj/structure/barricade/sandbags,
 /obj/effect/turf_decal/industrial/warning/cee,
 /turf/open/floor/plating/wasteplanet,
-/area/space)
-"Kc" = (
-/obj/effect/mob_spawn/human/corpse/inteq/enforcer,
+/area/overmap_encounter/planetoid/wasteplanet)
+"Ji" = (
+/obj/machinery/light/small/broken/directional/south,
 /turf/open/floor/pod,
-/area/space)
+/area/ruin/wasteplanet/tradepost/barracks)
+"Jn" = (
+/obj/effect/mob_spawn/human/corpse/inteq/enforcer,
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "floor2-old"
+	},
+/turf/open/floor/concrete/pavement,
+/area/overmap_encounter/planetoid/wasteplanet)
+"Ko" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 9
+	},
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "drip3"
+	},
+/turf/open/floor/concrete/pavement,
+/area/overmap_encounter/planetoid/wasteplanet)
+"Kr" = (
+/turf/open/floor/pod,
+/area/ruin/wasteplanet/tradepost/center)
+"KZ" = (
+/obj/machinery/button/door{
+	dir = 8;
+	pixel_y = 8;
+	pixel_x = 24;
+	id = "wtpw2"
+	},
+/turf/open/floor/pod,
+/area/ruin/wasteplanet/tradepost/warehouse)
 "Lm" = (
 /obj/structure/chair{
 	dir = 1
 	},
 /turf/open/floor/pod,
-/area/space)
-"Ln" = (
-/obj/structure/girder/displaced,
-/turf/open/floor/plating/rust/wasteplanet,
-/area/space)
+/area/ruin/wasteplanet/tradepost/center)
 "LO" = (
 /obj/effect/decal/cleanable/oil,
 /turf/open/floor/concrete/pavement,
-/area/space)
+/area/overmap_encounter/planetoid/wasteplanet)
 "Ma" = (
-/turf/open/space/basic,
+/turf/template_noop,
 /area/template_noop)
 "Ni" = (
 /obj/item/ammo_casing/spent{
@@ -538,57 +764,126 @@
 	pixel_y = -4
 	},
 /turf/open/floor/pod,
-/area/space)
+/area/ruin/wasteplanet/tradepost/center)
 "Nl" = (
 /turf/closed/wall/rust/yesdiag,
-/area/space)
+/area/overmap_encounter/planetoid/wasteplanet)
 "Np" = (
+/obj/machinery/button/door{
+	dir = 4;
+	pixel_x = -24;
+	pixel_y = 8;
+	id = "wtpw1"
+	},
 /turf/open/floor/pod,
-/area/space)
+/area/ruin/wasteplanet/tradepost/warehouse)
+"Nq" = (
+/mob/living/simple_animal/hostile/hivebot/range/rockplanet,
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/overmap_encounter/planetoid/wasteplanet)
+"Nu" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 6
+	},
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "drip3"
+	},
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "drip2"
+	},
+/turf/open/floor/concrete/pavement,
+/area/overmap_encounter/planetoid/wasteplanet)
+"Ny" = (
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "floor7-old"
+	},
+/turf/open/floor/concrete/pavement,
+/area/overmap_encounter/planetoid/wasteplanet)
 "NC" = (
 /obj/effect/decal/cleanable/molten_object{
 	pixel_x = 1;
 	pixel_y = -12
 	},
 /turf/open/floor/plating/asteroid/wasteplanet,
-/area/space)
+/area/overmap_encounter/planetoid/wasteplanet)
 "ND" = (
 /obj/item/stack/sheet/mineral/sandbags{
 	amount = 2
 	},
 /turf/open/floor/pod,
-/area/space)
+/area/ruin/wasteplanet/tradepost/center)
 "OV" = (
 /obj/item/stack/sheet/mineral/sandbags,
 /turf/open/floor/concrete/pavement,
-/area/space)
+/area/overmap_encounter/planetoid/wasteplanet)
 "PV" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plasteel/tech,
-/area/space)
+/area/ruin/wasteplanet/tradepost/barracks)
+"Qn" = (
+/mob/living/simple_animal/hostile/hivebot/strong/rockplanet,
+/turf/open/floor/plating/rust/wasteplanet,
+/area/overmap_encounter/planetoid/wasteplanet)
 "Ri" = (
 /obj/structure/filingcabinet/double,
 /turf/open/floor/pod,
-/area/space)
+/area/ruin/wasteplanet/tradepost/center)
+"Rt" = (
+/turf/closed/wall/rust,
+/area/ruin/wasteplanet/tradepost/barracks)
+"Ru" = (
+/turf/closed/mineral/random/asteroid/wasteplanet,
+/area/overmap_encounter/planetoid/wasteplanet)
+"Ry" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "drip2"
+	},
+/turf/open/floor/concrete/pavement,
+/area/overmap_encounter/planetoid/wasteplanet)
 "RV" = (
 /obj/structure/bed/pod,
 /obj/item/bedsheet/hos{
 	name = "security bedsheet"
 	},
+/obj/machinery/light/small/broken/directional/north,
 /turf/open/floor/pod,
-/area/space)
+/area/ruin/wasteplanet/tradepost/barracks)
+"Se" = (
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "floor6-old"
+	},
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "floor5-old"
+	},
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "floor2-old"
+	},
+/turf/open/floor/concrete/pavement,
+/area/overmap_encounter/planetoid/wasteplanet)
 "SE" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/wasteplanet,
-/area/space)
+/area/overmap_encounter/planetoid/wasteplanet)
 "SF" = (
 /obj/item/gun/ballistic/automatic/smg/inteq,
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "floor4-old"
+	},
 /turf/open/floor/pod,
-/area/space)
+/area/ruin/wasteplanet/tradepost/center)
+"Tt" = (
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "drip1"
+	},
+/turf/open/floor/concrete/pavement,
+/area/overmap_encounter/planetoid/wasteplanet)
 "TB" = (
 /obj/structure/barricade/sandbags,
 /obj/effect/turf_decal/industrial/warning{
@@ -598,38 +893,47 @@
 	dir = 4
 	},
 /turf/open/floor/plating/wasteplanet,
-/area/space)
+/area/overmap_encounter/planetoid/wasteplanet)
 "Uo" = (
 /obj/structure/girder/displaced,
-/turf/open/floor/plating/wasteplanet,
-/area/space)
+/turf/open/floor/plating/rust/wasteplanet,
+/area/overmap_encounter/planetoid/wasteplanet)
 "Uu" = (
 /obj/effect/turf_decal/industrial/warning/full,
 /obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/pod/dark,
-/area/space)
+/area/ruin/wasteplanet/tradepost/warehouse)
 "Vi" = (
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 4
 	},
 /turf/open/floor/pod/light,
-/area/space)
+/area/ruin/wasteplanet/tradepost/center)
 "Vl" = (
 /obj/structure/extinguisher_cabinet/directional/west,
 /obj/structure/rack,
 /turf/open/floor/pod/light,
-/area/space)
+/area/ruin/wasteplanet/tradepost/center)
 "VU" = (
-/obj/structure/marker_beacon,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/marker_beacon/acidproof,
 /turf/open/floor/plating/rust/wasteplanet,
-/area/space)
+/area/overmap_encounter/planetoid/wasteplanet)
+"Wg" = (
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "drip2"
+	},
+/turf/open/floor/concrete/pavement,
+/area/overmap_encounter/planetoid/wasteplanet)
+"Wy" = (
+/turf/closed/wall,
+/area/ruin/wasteplanet/tradepost/center)
 "WE" = (
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 8
 	},
 /turf/open/floor/concrete/pavement,
-/area/space)
+/area/overmap_encounter/planetoid/wasteplanet)
 "WK" = (
 /obj/effect/decal/cleanable/molten_object{
 	pixel_x = 4;
@@ -639,18 +943,25 @@
 	pixel_x = 1;
 	pixel_y = -12
 	},
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "drip1"
+	},
 /turf/open/floor/concrete/pavement,
-/area/space)
+/area/overmap_encounter/planetoid/wasteplanet)
 "Xc" = (
 /obj/effect/turf_decal/industrial/warning/full,
 /turf/open/floor/pod/dark,
-/area/space)
+/area/ruin/wasteplanet/tradepost/warehouse)
 "Xo" = (
 /obj/machinery/door/airlock{
 	name = "Bathroom"
 	},
+/obj/effect/turf_decal/industrial/warning,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech,
-/area/space)
+/area/ruin/wasteplanet/tradepost/barracks)
 "Xw" = (
 /obj/structure/barricade/sandbags,
 /obj/effect/turf_decal/industrial/warning{
@@ -660,20 +971,38 @@
 	dir = 4
 	},
 /turf/open/floor/plating/wasteplanet,
-/area/space)
+/area/overmap_encounter/planetoid/wasteplanet)
 "Ya" = (
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 1
 	},
 /turf/open/floor/pod/light,
-/area/space)
+/area/ruin/wasteplanet/tradepost/center)
+"Yd" = (
+/mob/living/simple_animal/hostile/hivebot/rapid/rockplanet,
+/turf/open/floor/concrete/pavement,
+/area/overmap_encounter/planetoid/wasteplanet)
+"Yw" = (
+/turf/open/floor/pod,
+/area/ruin/wasteplanet/tradepost/barracks)
 "Zb" = (
 /obj/structure/extinguisher_cabinet/directional/south,
 /obj/structure/chair{
 	dir = 4
 	},
 /turf/open/floor/pod,
-/area/space)
+/area/ruin/wasteplanet/tradepost/barracks)
+"Zc" = (
+/obj/effect/turf_decal/industrial/warning/full,
+/obj/structure/closet/crate,
+/obj/item/stack/marker_beacon/acidproof/thirty,
+/obj/item/stack/marker_beacon/acidproof/thirty,
+/turf/open/floor/pod/dark,
+/area/ruin/wasteplanet/tradepost/warehouse)
+"Zj" = (
+/mob/living/simple_animal/hostile/hivebot/range/rockplanet,
+/turf/open/floor/concrete/pavement,
+/area/overmap_encounter/planetoid/wasteplanet)
 "Zw" = (
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 4
@@ -682,7 +1011,12 @@
 	dir = 8
 	},
 /turf/open/floor/pod,
-/area/space)
+/area/ruin/wasteplanet/tradepost/warehouse)
+"ZO" = (
+/obj/machinery/power/apc/auto_name/directional/east,
+/obj/machinery/door/window/westleft,
+/turf/open/floor/pod,
+/area/ruin/wasteplanet/tradepost/center)
 
 (1,1,1) = {"
 Ma
@@ -892,10 +1226,10 @@ Ma
 Ma
 Ma
 Ma
-ym
-ym
-ym
-ym
+Ru
+Ru
+Ru
+Ru
 Ma
 Ma
 Ma
@@ -906,7 +1240,7 @@ Ma
 Ma
 em
 em
-uL
+em
 cJ
 Ba
 em
@@ -939,12 +1273,12 @@ Ma
 Ma
 Ma
 Ma
-ym
-ym
-ym
-ym
-ym
-ym
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
 Ma
 Ma
 Ma
@@ -986,14 +1320,14 @@ Ma
 Ma
 Ma
 Ma
-ym
-ym
-ym
-ym
-ym
-ym
-ym
-ym
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
 Ma
 Ma
 Ma
@@ -1002,7 +1336,7 @@ Ma
 em
 em
 em
-Ba
+Qn
 cJ
 Fc
 em
@@ -1032,17 +1366,17 @@ Ma
 Ma
 Ma
 Ma
-ym
-ym
-ym
-ym
-ym
-ym
-ym
-ym
-ym
-ym
-ym
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
 Ma
 Ma
 Ma
@@ -1052,7 +1386,7 @@ em
 Ba
 cJ
 Ba
-uL
+em
 em
 em
 Ma
@@ -1079,18 +1413,18 @@ Ma
 Ma
 Ma
 Ma
-ym
-ym
-ym
-ym
-ym
+Ru
+Ru
+Ru
+Ru
+Ru
 en
 en
 en
-ym
-ym
-ym
-ym
+Ru
+Ru
+Ru
+Ru
 Ma
 Ma
 em
@@ -1125,10 +1459,10 @@ Ma
 Ma
 Ma
 Ma
-ym
-ym
-ym
-ym
+Ru
+Ru
+Ru
+Ru
 en
 en
 en
@@ -1137,16 +1471,16 @@ em
 Nl
 en
 en
-ym
-ym
+Ru
+Ru
 em
 em
 Ba
-em
+BN
 em
 em
 cJ
-im
+cJ
 cJ
 em
 Fc
@@ -1172,11 +1506,11 @@ Ma
 Ma
 Ma
 Ma
-ym
-ym
-ym
-ym
-ym
+Ru
+Ru
+Ru
+Ru
+Ru
 en
 em
 em
@@ -1198,13 +1532,13 @@ cJ
 cJ
 zY
 em
-ym
-ym
-ym
-ym
-ym
-ym
-ym
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
 Ma
 Ma
 Ma
@@ -1220,11 +1554,11 @@ Ma
 Ma
 Ma
 Ma
-ym
-ym
-ym
-ym
-ym
+Ru
+Ru
+Ru
+Ru
+Ru
 en
 Ba
 em
@@ -1235,25 +1569,25 @@ em
 em
 em
 NC
-gA
 cJ
+Se
 cW
 em
 em
 cJ
 OV
 cJ
-cJ
+oC
 em
-ym
-ym
-ym
-ym
-ym
-ym
-ym
-ym
-ym
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
 Ma
 Ma
 Ma
@@ -1267,24 +1601,24 @@ Ma
 Ma
 Ma
 Ma
-ym
-ym
-ym
-ym
-ym
-ym
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
 en
-en
-en
-en
-en
-en
+Rt
+Rt
+Rt
+Rt
+Rt
 em
 Ba
 em
 em
 sf
-cJ
+FV
 jD
 em
 cJ
@@ -1296,13 +1630,13 @@ em
 en
 en
 en
-ym
-ym
-ym
-ym
-ym
-ym
-ym
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
 Ma
 Ma
 Ma
@@ -1315,24 +1649,24 @@ Ma
 Ma
 Ma
 Ma
-ym
-ym
-ym
-ym
-ym
-en
-en
-en
-en
+Ru
+Ru
+Ru
+Ru
+Ru
+Rt
+Rt
+Rt
+Rt
 nO
 mK
-en
+Rt
 em
 em
 em
 Ba
-em
-cJ
+Nq
+Ry
 cJ
 cJ
 cJ
@@ -1346,12 +1680,12 @@ em
 Nl
 en
 en
-ym
-ym
-ym
-ym
-ym
-ym
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
 Ma
 Ma
 Ma
@@ -1363,43 +1697,43 @@ Ma
 Ma
 Ma
 Ma
-ym
-ym
-ym
-ym
-en
-en
+Ru
+Ru
+Ru
+Ru
+Rt
+Rt
 wB
 wB
-en
-nO
+Rt
+lx
 ya
-en
+Rt
 cJ
 em
 em
 em
 em
-cJ
+HH
 cJ
 cJ
 cJ
 cJ
 em
 ug
-cJ
-cJ
+Tt
+iI
 em
 em
 em
 em
 en
-ym
-ym
-ym
-ym
-ym
-ym
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
 Ma
 Ma
 Ma
@@ -1410,16 +1744,16 @@ Ma
 Ma
 Ma
 Ma
-ym
-ym
-ym
-ym
-ym
-en
+Ru
+Ru
+Ru
+Ru
+Ru
+Rt
 RV
-Np
+Yw
 hJ
-en
+Rt
 nO
 zT
 wG
@@ -1428,7 +1762,7 @@ cJ
 Fc
 Fc
 em
-cJ
+FV
 cJ
 cJ
 cJ
@@ -1442,13 +1776,13 @@ em
 Ba
 em
 en
-ym
-ym
-ym
-ym
-ym
-ym
-ym
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
 Ma
 Ma
 "}
@@ -1458,32 +1792,32 @@ Ma
 Ma
 Ma
 Ma
-ym
-ym
-ym
-ym
-ym
-en
-Np
-Np
-Np
-en
-en
-en
-en
+Ru
+Ru
+Ru
+Ru
+Ru
+Rt
+Yw
+Yw
+Yw
+Rt
+Rt
+Rt
+Rt
 cJ
 cJ
 em
 Fc
-cJ
-cJ
+Ko
+Nu
 cJ
 cJ
 em
 em
 em
 em
-cJ
+Wg
 pA
 Ba
 Ba
@@ -1493,11 +1827,11 @@ Nl
 en
 en
 en
-ym
-ym
-ym
-ym
-ym
+Ru
+Ru
+Ru
+Ru
+Ru
 Ma
 "}
 (18,1,1) = {"
@@ -1505,47 +1839,47 @@ Ma
 Ma
 Ma
 Ma
-ym
-ym
-ym
-ym
-ym
+Ru
+Ru
+Ru
+Ru
+Ru
 en
-en
-RV
-Np
-Np
+Rt
+eH
+xx
+Yw
 Xo
-Np
+Ji
+Rt
+em
+cJ
+Yd
+em
+cJ
+Ry
+vQ
+cJ
+cJ
+cJ
+cJ
+cJ
+cJ
+cJ
+cJ
+em
+em
+em
+em
+em
+em
+em
 en
-em
-cJ
-cJ
-em
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-em
-em
-em
-em
-em
-em
-em
-en
-ym
-ym
-ym
-ym
-ym
+Ru
+Ru
+Ru
+Ru
+Ru
 Ma
 "}
 (19,1,1) = {"
@@ -1553,27 +1887,27 @@ Ma
 Ma
 Ma
 Ma
-ym
-ym
-ym
-ym
+Ru
+Ru
+Ru
+Ru
 en
 Nl
-en
-Np
-Np
-Np
-en
-en
-en
+Rt
+Yw
+Yw
+Yw
+Rt
+Rt
+Rt
 cJ
 cJ
 cJ
 cJ
+iI
+Jn
 cJ
-cJ
-cJ
-cJ
+Zj
 cJ
 cJ
 cJ
@@ -1590,28 +1924,28 @@ Ba
 em
 Nl
 en
-ym
-ym
-ym
-ym
+Ru
+Ru
+Ru
+Ru
 Ma
 "}
 (20,1,1) = {"
 Ma
 Ma
 Ma
-ym
-ym
-ym
-ym
-ym
+Ru
+Ru
+Ru
+Ru
+Ru
 en
 em
-en
+Rt
 RV
-Np
+Yw
 dN
-Np
+Yw
 mr
 PV
 cJ
@@ -1625,7 +1959,7 @@ cJ
 em
 em
 em
-em
+Nq
 em
 em
 em
@@ -1639,42 +1973,42 @@ em
 em
 Nl
 en
-ym
-ym
-ym
-ym
+Ru
+Ru
+Ru
+Ru
 "}
 (21,1,1) = {"
 Ma
 Ma
 Ma
-ym
-ym
-ym
-ym
+Ru
+Ru
+Ru
+Ru
 en
+Nl
 em
-em
-en
+Rt
 jb
-Np
-Np
-Np
+Yw
+Yw
+xx
 Zb
-en
+Rt
 cJ
 cJ
 cJ
 cJ
 cJ
-cJ
+iI
 cJ
 em
-em
-bY
 Ba
-em
-em
+DQ
+Ba
+Ba
+Fc
 Uo
 em
 Ba
@@ -1688,41 +2022,41 @@ em
 em
 Nl
 en
-ym
-ym
-ym
+Ru
+Ru
+Ru
 "}
 (22,1,1) = {"
 Ma
 Ma
 Ma
-ym
-ym
-ym
+Ru
+Ru
+Ru
 en
 Nl
 em
 em
-en
-RV
-Np
-Np
+Rt
+eH
+Yw
+Yw
+Ho
 wB
-wB
-en
+Rt
 em
 em
 cJ
+Zj
+iI
 cJ
-cJ
-cJ
 em
 em
+Ba
+Ba
 em
 em
-em
-em
-Fc
+Ba
 em
 em
 em
@@ -1737,40 +2071,40 @@ em
 em
 Nl
 en
-ym
-ym
+Ru
+Ru
 "}
 (23,1,1) = {"
 Ma
 Ma
-ym
-ym
-ym
-ym
+Ru
+Ru
+Ru
+Ru
 en
 em
 em
 Ba
-en
-en
-en
-en
-en
-en
-en
+Rt
+Rt
+Rt
+Rt
+Rt
+Rt
+Rt
 em
 em
 cJ
+iI
+Wg
 cJ
-cJ
-cJ
-em
-em
 em
 em
 Ba
 em
-Fc
+Ba
+em
+Ba
 em
 em
 VU
@@ -1785,15 +2119,15 @@ em
 em
 em
 en
-ym
-ym
+Ru
+Ru
 "}
 (24,1,1) = {"
 Ma
 Ma
-ym
-ym
-ym
+Ru
+Ru
+Ru
 en
 Nl
 em
@@ -1814,11 +2148,11 @@ cJ
 em
 em
 Ba
+Ba
 em
 em
 em
-em
-em
+Ba
 em
 em
 Ba
@@ -1833,15 +2167,15 @@ em
 em
 Nl
 en
-ym
-ym
+Ru
+Ru
 "}
 (25,1,1) = {"
 Ma
 Ma
-ym
-ym
-ym
+Ru
+Ru
+Ru
 en
 em
 em
@@ -1858,15 +2192,15 @@ em
 em
 cJ
 cJ
-cJ
+iI
 cJ
 em
 Ba
 bY
-em
-em
-em
-bY
+Fc
+Fc
+Fc
+DQ
 em
 em
 Ba
@@ -1880,16 +2214,16 @@ Ba
 em
 em
 en
-ym
-ym
-ym
+Ru
+Ru
+Ru
 "}
 (26,1,1) = {"
 Ma
-ym
-ym
-ym
-ym
+Ru
+Ru
+Ru
+Ru
 en
 em
 em
@@ -1905,8 +2239,8 @@ em
 Ba
 em
 em
-cJ
-cJ
+Wg
+Wg
 cJ
 em
 em
@@ -1928,25 +2262,25 @@ Fc
 Fc
 Ba
 en
-ym
-ym
-ym
+Ru
+Ru
+Ru
 "}
 (27,1,1) = {"
 Ma
-ym
-ym
-ym
-en
-en
-en
-en
-en
-en
-en
-en
-en
-en
+Ru
+Ru
+Ru
+ez
+ez
+ez
+ez
+ez
+ez
+ez
+ez
+ez
+ez
 em
 Ba
 em
@@ -1976,32 +2310,32 @@ Fc
 Ba
 em
 en
-ym
-ym
-ym
+Ru
+Ru
+Ru
 "}
 (28,1,1) = {"
 Ma
-ym
-ym
-en
-Nl
-Np
-Np
-Np
-Nl
-en
-nO
+Ru
+Ru
+ez
+fU
+Kr
+Kr
+Kr
+fU
+ez
+fY
 Vi
-nO
-en
-en
+fY
+ez
+ez
 em
 em
 em
 em
 cJ
-cJ
+Wg
 cJ
 cJ
 cJ
@@ -2024,31 +2358,31 @@ Fc
 em
 em
 en
-ym
-ym
-ym
+Ru
+Ru
+Ru
 "}
 (29,1,1) = {"
 Ma
-ym
-ym
-pl
-Np
-Np
-Np
-Np
-Np
-en
+Ru
+Ru
+Wy
+Kr
+Kr
+Kr
+Kr
+Kr
+ez
 Gf
 ts
 Ya
-nO
-en
+fY
+ez
 em
 em
 Fc
 cJ
-cJ
+Wg
 cJ
 cJ
 cJ
@@ -2072,31 +2406,31 @@ Fc
 em
 em
 en
-ym
-ym
-ym
+Ru
+Ru
+Ru
 "}
 (30,1,1) = {"
-ym
-ym
-ym
-pl
-Np
-Np
-Np
-Np
-Np
-pl
-nO
+Ru
+Ru
+Ru
+Wy
+Kr
+Kr
+Kr
+Kr
+Kr
+Wy
+fY
 wM
-nO
-nO
-en
+fY
+fY
+ez
 em
 em
 em
 cJ
-cJ
+xF
 cJ
 em
 Fc
@@ -2120,42 +2454,42 @@ Ba
 Ba
 em
 en
-ym
-ym
-ym
+Ru
+Ru
+Ru
 "}
 (31,1,1) = {"
-ym
-ym
-ym
-pl
-Np
-Np
-Np
-Np
-Np
-pl
-en
-en
+Ru
+Ru
+Ru
+Wy
+Kr
+Kr
+Kr
+Kr
+Kr
+Wy
+ez
+ez
 Fb
 tz
-en
+ez
 em
 Fc
 em
 cJ
-cJ
+et
 cJ
 em
-Nl
-en
+gh
+zD
 pl
 CC
 CC
 CC
-en
-en
-Nl
+zD
+zD
+gh
 em
 Ba
 Ba
@@ -2168,34 +2502,34 @@ Ba
 em
 em
 en
-ym
-ym
-ym
+Ru
+Ru
+Ru
 "}
 (32,1,1) = {"
-ym
-ym
-ym
-en
-Np
-Np
+Ru
+Ru
+Ru
+ez
+Kr
+Kr
 ro
-Np
-Nl
-en
-Np
-en
-Np
+Kr
+fU
+ez
+Kr
+ez
+Kr
 Lm
-en
+ez
 em
 em
 em
 cJ
-cJ
+et
 cJ
 Ba
-en
+zD
 zq
 ch
 pQ
@@ -2203,7 +2537,7 @@ fe
 pQ
 Np
 uf
-en
+zD
 em
 Ba
 Fc
@@ -2216,41 +2550,41 @@ Ba
 em
 em
 en
-ym
-ym
-ym
+Ru
+Ru
+Ru
 "}
 (33,1,1) = {"
-ym
-ym
-ym
-en
-en
-en
-pl
+Ru
+Ru
+Ru
+ez
+ez
+ez
+Wy
 Dl
-en
-Np
-Np
+ez
+Kr
+Kr
 qk
-Np
+Kr
 Lm
-en
+ez
 em
 em
 em
 cJ
-cJ
-cJ
+jn
+Zj
 cJ
 Jb
 aB
-Np
-Np
-Np
-Np
-Np
-uf
+In
+In
+In
+In
+In
+Zc
 pl
 em
 Ba
@@ -2264,42 +2598,42 @@ Ba
 Ba
 Ba
 en
-ym
-ym
-ym
+Ru
+Ru
+Ru
 "}
 (34,1,1) = {"
-ym
-ym
-ym
-en
-Np
-Np
-Np
-Np
+Ru
+Ru
+Ru
+ez
+Cj
+oz
+Kr
+Kr
 DE
-Np
-Np
-Nl
-en
-en
-en
+Kr
+Kr
+fU
+ez
+ez
+ez
 em
 em
 em
+Ny
 cJ
 cJ
-cJ
 em
-en
+zD
 hn
-Np
+In
 lQ
 Xc
 Uu
-Np
+In
 tp
-en
+zD
 em
 VU
 Ba
@@ -2312,42 +2646,42 @@ Eg
 em
 em
 en
-ym
-ym
-ym
+Ru
+Ru
+Ru
 "}
 (35,1,1) = {"
 Ma
-ym
-ym
-en
+Ru
+Ru
+ez
 Ri
-Np
+Kr
 ru
-Np
-Np
+Kr
+Kr
 SF
-ag
+fr
 bM
 tL
 Fx
-CC
-cJ
-cJ
-cJ
-cJ
+qw
+jn
+iX
+lB
+Wg
 cJ
 cJ
 em
-en
-Xc
-Np
+zD
+lY
+In
 Xc
 Xc
 Xc
 kf
 iy
-en
+zD
 em
 em
 em
@@ -2360,23 +2694,23 @@ em
 Ba
 em
 en
-ym
-ym
-ym
+Ru
+Ru
+Ru
 "}
 (36,1,1) = {"
 Ma
 Ma
-ym
-en
+Ru
+ez
 Ri
 IN
 dD
-Np
-Np
-Kc
-ag
-Np
+Kr
+Kr
+Kr
+fr
+kr
 xQ
 bj
 IF
@@ -2389,10 +2723,10 @@ cJ
 em
 pl
 Xc
-Np
-Np
-Np
-Np
+In
+In
+In
+In
 kf
 ze
 pl
@@ -2408,26 +2742,26 @@ em
 em
 Nl
 en
-ym
-ym
-ym
+Ru
+Ru
+Ru
 "}
 (37,1,1) = {"
 Ma
 Ma
-ym
-en
-en
-wB
+Ru
+ez
+ez
+as
 ru
-Np
-Np
-Np
-ag
+Kr
+Kr
+Kr
+fr
 ND
 ag
 ht
-en
+ez
 em
 em
 em
@@ -2439,8 +2773,8 @@ pl
 sT
 Zw
 hU
-Np
-Np
+KZ
+In
 kf
 tU
 pl
@@ -2455,27 +2789,27 @@ bY
 em
 em
 en
-ym
-ym
-ym
-ym
+Ru
+Ru
+Ru
+Ru
 "}
 (38,1,1) = {"
 Ma
 Ma
-ym
-ym
-en
-Np
-Np
-Np
-Np
+Ru
+Ru
+ez
+Kr
+Kr
+kr
+Kr
 DE
-Np
-Np
-Np
+Kr
+Kr
+Kr
 Ex
-en
+ez
 em
 em
 em
@@ -2485,13 +2819,13 @@ cJ
 em
 cC
 pl
-CC
-CC
-en
-en
+pm
+pm
+zD
+zD
 pl
-en
-Nl
+zD
+gh
 em
 Fc
 Ba
@@ -2503,27 +2837,27 @@ em
 em
 Nl
 en
-ym
-ym
-ym
+Ru
+Ru
+Ru
 Ma
 "}
 (39,1,1) = {"
 Ma
 Ma
-ym
-ym
-pl
-Np
-Np
-Np
-Np
-Np
-Np
-Np
+Ru
+Ru
+Wy
+Kr
+Kr
+Kr
+Kr
+Kr
+Kr
+Kr
 Ni
-Np
-en
+Kr
+ez
 em
 Ba
 em
@@ -2550,28 +2884,28 @@ em
 em
 em
 en
-ym
-ym
-ym
-ym
+Ru
+Ru
+Ru
+Ru
 Ma
 "}
 (40,1,1) = {"
 Ma
 Ma
 Ma
-ym
-pl
-en
-pl
-en
+Ru
+Wy
+ez
+Wy
+ez
 rB
-en
-en
-Nl
-Np
-en
-en
+ez
+ez
+ez
+ZO
+ez
+ez
 em
 em
 em
@@ -2598,27 +2932,27 @@ em
 Nl
 en
 en
-ym
-ym
-ym
-ym
+Ru
+Ru
+Ru
+Ru
 Ma
 "}
 (41,1,1) = {"
 Ma
 Ma
 Ma
-ym
-ym
-ym
-en
+Ru
+Ru
+Ru
+ez
 Vl
-nO
-nO
+fY
+fY
 BK
-en
-en
-en
+ez
+ez
+ez
 em
 em
 Ba
@@ -2644,12 +2978,12 @@ em
 em
 Nl
 en
-ym
-ym
-ym
-ym
-ym
-ym
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
 Ma
 "}
 (42,1,1) = {"
@@ -2657,14 +2991,14 @@ Ma
 Ma
 Ma
 Ma
-ym
-ym
-en
+Ru
+Ru
+ez
 Ig
-nO
-nO
+fY
+fY
 BK
-en
+ez
 em
 em
 em
@@ -2691,12 +3025,12 @@ em
 em
 em
 en
-ym
-ym
-ym
-ym
-ym
-ym
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
 Ma
 Ma
 "}
@@ -2705,14 +3039,14 @@ Ma
 Ma
 Ma
 Ma
-ym
-ym
-Nl
-en
-nO
-nO
+Ru
+Ru
+fU
+ez
+fY
+fY
 BK
-en
+ez
 em
 Ba
 Ba
@@ -2739,12 +3073,12 @@ em
 em
 Nl
 en
-ym
-ym
-ym
-ym
-ym
-ym
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
 Ma
 Ma
 "}
@@ -2753,19 +3087,19 @@ Ma
 Ma
 Ma
 Ma
-ym
-ym
-ym
-en
-en
-en
-en
-Nl
+Ru
+Ru
+Ru
+ez
+ez
+ez
+ez
+fU
 em
-em
-em
-em
-bY
+Fc
+Ba
+Fc
+Uo
 em
 Ba
 Ba
@@ -2786,13 +3120,13 @@ em
 em
 Nl
 en
-ym
-ym
-ym
-ym
-ym
-ym
-ym
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
 Ma
 Ma
 "}
@@ -2802,18 +3136,18 @@ Ma
 Ma
 Ma
 Ma
-ym
-ym
+Ru
+Ru
 Nl
 en
 em
 em
 em
 em
-bY
+DQ
 em
 em
-em
+Fc
 em
 Fc
 Ba
@@ -2833,13 +3167,13 @@ em
 em
 Nl
 en
-ym
-ym
-ym
-ym
-ym
-ym
-ym
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
 Ma
 Ma
 Ma
@@ -2850,18 +3184,18 @@ Ma
 Ma
 Ma
 Ma
-ym
-ym
-ym
+Ru
+Ru
+Ru
 en
-em
+Nl
 em
 em
 em
 em
 Ba
 Fc
-em
+Fc
 em
 Fc
 Ba
@@ -2880,14 +3214,14 @@ em
 em
 Nl
 en
-ym
-ym
-ym
-ym
-ym
-ym
-ym
-ym
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
 Ma
 Ma
 Ma
@@ -2899,9 +3233,9 @@ Ma
 Ma
 Ma
 Ma
-ym
-ym
-ym
+Ru
+Ru
+Ru
 en
 em
 em
@@ -2909,7 +3243,7 @@ em
 Ba
 em
 em
-em
+Fc
 em
 Ba
 Ba
@@ -2927,14 +3261,14 @@ em
 em
 Nl
 en
-ym
-ym
-ym
-ym
-ym
-ym
-ym
-ym
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
 Ma
 Ma
 Ma
@@ -2947,9 +3281,9 @@ Ma
 Ma
 Ma
 Ma
-ym
-ym
-ym
+Ru
+Ru
+Ru
 en
 Nl
 em
@@ -2957,7 +3291,7 @@ em
 em
 Ba
 em
-em
+Fc
 em
 Ba
 Ba
@@ -2974,15 +3308,15 @@ Fc
 em
 em
 en
-ym
-ym
-ym
-ym
+Ru
+Ru
+Ru
+Ru
 Ma
-ym
-ym
-ym
-ym
+Ru
+Ru
+Ru
+Ru
 Ma
 Ma
 Ma
@@ -2996,16 +3330,16 @@ Ma
 Ma
 Ma
 Ma
-ym
-ym
-ym
+Ru
+Ru
+Ru
 en
 en
 em
 em
-Ln
+Uo
 em
-em
+Fc
 em
 Eg
 Ba
@@ -3022,14 +3356,14 @@ Eg
 em
 em
 en
-ym
-ym
-ym
-ym
+Ru
+Ru
+Ru
+Ru
 Ma
-ym
-ym
-ym
+Ru
+Ru
+Ru
 Ma
 Ma
 Ma
@@ -3044,16 +3378,16 @@ Ma
 Ma
 Ma
 Ma
-ym
-ym
-ym
-ym
+Ru
+Ru
+Ru
+Ru
 en
 Nl
+Ba
 em
-em
-em
-Ln
+Fc
+Uo
 em
 em
 em
@@ -3070,14 +3404,14 @@ em
 em
 Nl
 en
-ym
-ym
-ym
+Ru
+Ru
+Ru
 Ma
 Ma
 Ma
-ym
-ym
+Ru
+Ru
 Ma
 Ma
 Ma
@@ -3093,10 +3427,10 @@ Ma
 Ma
 Ma
 Ma
-ym
-ym
-ym
-ym
+Ru
+Ru
+Ru
+Ru
 en
 Nl
 em
@@ -3117,10 +3451,10 @@ em
 Nl
 en
 en
-ym
-ym
-ym
-ym
+Ru
+Ru
+Ru
+Ru
 Ma
 Ma
 Ma
@@ -3142,10 +3476,10 @@ Ma
 Ma
 Ma
 Ma
-ym
-ym
-ym
-ym
+Ru
+Ru
+Ru
+Ru
 en
 em
 Nl
@@ -3163,11 +3497,11 @@ en
 en
 en
 en
-ym
-ym
-ym
-ym
-ym
+Ru
+Ru
+Ru
+Ru
+Ru
 Ma
 Ma
 Ma
@@ -3191,31 +3525,31 @@ Ma
 Ma
 Ma
 Ma
-ym
-ym
-ym
+Ru
+Ru
+Ru
 en
 en
 en
-ym
-ym
-ym
-ym
-ym
-ym
-ym
-ym
-ym
-ym
-ym
-ym
-ym
-ym
-ym
-ym
-ym
-ym
-ym
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
 Ma
 Ma
 Ma
@@ -3239,31 +3573,31 @@ Ma
 Ma
 Ma
 Ma
-ym
-ym
-ym
-ym
-ym
-ym
-ym
-ym
-ym
-ym
-ym
-ym
-ym
-ym
-ym
-ym
-ym
-ym
-ym
-ym
-ym
-ym
-ym
-ym
-ym
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
 Ma
 Ma
 Ma
@@ -3289,28 +3623,28 @@ Ma
 Ma
 Ma
 Ma
-ym
-ym
-ym
-ym
-ym
-ym
-ym
-ym
-ym
-ym
-ym
-ym
-ym
-ym
-ym
-ym
-ym
-ym
-ym
-ym
-ym
-ym
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
 Ma
 Ma
 Ma
@@ -3346,15 +3680,15 @@ Ma
 Ma
 Ma
 Ma
-ym
-ym
-ym
-ym
-ym
-ym
-ym
-ym
-ym
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
+Ru
 ym
 Ma
 Ma
@@ -3396,10 +3730,10 @@ Ma
 Ma
 Ma
 Ma
-ym
-ym
-ym
-ym
+Ru
+Ru
+Ru
+Ru
 Ma
 Ma
 Ma
