@@ -87,7 +87,7 @@ GENE SCANNER
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	pickup_sound =  'sound/items/handling/device_pickup.ogg'
 	drop_sound = 'sound/items/handling/device_drop.ogg'
-	desc = "A hand-held body scanner capable of distinguishing vital signs of the subject."
+	desc = "A chunky brick with a worn leather carry handle. Its thick screen and heavy redundancy makes it tough to break."
 	flags_1 = CONDUCT_1
 	item_flags = NOBLUDGEON
 	slot_flags = ITEM_SLOT_BELT
