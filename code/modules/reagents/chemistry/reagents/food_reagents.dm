@@ -717,7 +717,6 @@
 	color = "#eef442" // rgb: 238, 244, 66
 	taste_description = "mournful honking"
 
-
 /datum/reagent/consumable/liquidelectricity
 	name = "Liquid Electricity"
 	description = "The blood of elzuosa, and the stuff that keeps them going. Great for them, horrid for anyone else."

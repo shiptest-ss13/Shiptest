@@ -174,7 +174,9 @@
 			if(I.force >= 5)
 				do_sparks(1, FALSE, loc)
 				if(prob(25))
-					new /obj/effect/decal/cleanable/oil(loc)
+					var/obj/effect/decal/cleanable/blood/splatter/splat = new /obj/effect/decal/cleanable/blood/splatter(loc)
+					if(!QDELETED(splat) && HAS_BLOOD_DNA(src))
+						splat.add_blood_DNA(src.return_blood_DNA())
 
 	SEND_SIGNAL(I, COMSIG_ITEM_ATTACK_ZONE, src, user, affecting)
 
@@ -183,7 +185,6 @@
 
 	// the attacked_by code varies among species
 	return dna.species.spec_attacked_by(I, user, affecting, a_intent, src)
-
 
 /mob/living/carbon/human/attack_hulk(mob/living/carbon/human/user)
 	. = ..()

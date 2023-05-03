@@ -38,18 +38,6 @@
 	name = "O+"
 	compatible_types = list(/datum/blood_type/o_minus, /datum/blood_type/o_plus)
 
-/datum/blood_type/lizard
-	name = "L"
-	color = "#009696"
-	compatible_types = list(/datum/blood_type/lizard)
-
-/datum/blood_type/universal
-	name = "U"
-
-/datum/blood_type/universal/New()
-	. = ..()
-	compatible_types = subtypesof(/datum/blood_type)
-
 /datum/blood_type/xenomorph //for xenomorph gib dna
 	name = "X"
 	color = rgb(0, 255, 0)
@@ -58,3 +46,25 @@
 /datum/blood_type/animal //for simplemob gib dna
 	name = "Y-"
 	compatible_types = list(/datum/blood_type/animal)
+
+/datum/blood_type/lizard
+	name = "L"
+	color = "#009696"
+	compatible_types = list(/datum/blood_type/lizard)
+
+/datum/blood_type/elzuosa
+	name = "E"
+	color = "#7fff7f"
+	compatible_types = list(/datum/blood_type/elzuosa)
+
+/datum/blood_type/synthetic //Blood for synthetic/robotic species
+	name = "Coolant"
+	color = rgb(248, 163, 15, 165)
+	compatible_types = list(/datum/blood_type/synthetic)
+
+/datum/blood_type/universal
+	name = "U"
+
+/datum/blood_type/universal/New()
+	. = ..()
+	compatible_types = subtypesof(/datum/blood_type)

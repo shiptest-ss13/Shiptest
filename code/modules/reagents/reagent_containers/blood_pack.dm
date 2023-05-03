@@ -61,6 +61,12 @@
 /obj/item/reagent_containers/blood/lizard
 	blood_type = "L"
 
+/obj/item/reagent_containers/blood/elzuosa
+	blood_type = "E"
+
+/obj/item/reagent_containers/blood/synthetic
+	blood_type = "Coolant"
+
 /obj/item/reagent_containers/blood/squid
 	blood_type = "S"
 
