@@ -24,10 +24,10 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
-      - name: Setup cache
+      - name: Restore SpacemanDMM cache
         uses: actions/cache@v3
         with:
-          path: $HOME/SpacemanDMM
+          path: ~/SpacemanDMM
           key: ${{ runner.os }}-spacemandmm-${{ secrets.CACHE_PURGE_KEY }}
       - name: Install SpacemanDMM
         run: bash tools/ci/install_spaceman_dmm.sh dmdoc
