@@ -99,7 +99,7 @@
 		/datum/species/moth = 10,
 		/datum/species/spider = 3,
 		/datum/species/fly = 2
-		)
+	)
 	)
 	//to-do: learn how to make mobsprites for other survivors
 		//uniforms are random to show varied backgrounds, but similar goal
@@ -111,7 +111,7 @@
 		/obj/item/clothing/under/rank/cargo/miner/lavaland/old = 5,
 		/obj/item/clothing/under/color/khaki/buster = 5,
 		/obj/item/clothing/under/rank/cargo/miner = 5
-		)
+	)
 	)
 	else if (survivor_type == "hunter")
 		uniform = pickweight(list(
@@ -120,7 +120,7 @@
 		/obj/item/clothing/under/rank/cargo/miner/lavaland/old = 15,
 		/obj/item/clothing/under/rank/security/officer/camo = 5,
 		/obj/item/clothing/under/utility = 5
-		)
+	)
 	)
 	else if (survivor_type == "gunslinger")
 		uniform = pickweight(list(
@@ -130,7 +130,7 @@
 		/obj/item/clothing/under/rank/security/officer/camo = 10,
 		/obj/item/clothing/under/syndicate/camo = 10,
 		/obj/item/clothing/under/syndicate/combat = 5
-		)
+	)
 	)
 	else
 		uniform = /obj/item/clothing/under/color/random
@@ -156,7 +156,7 @@
 		/obj/item/storage/belt/bandolier = 10,
 		/obj/item/storage/belt/military = 7,
 		/obj/item/storage/belt/mining/vendor = 3,
-		)
+	)
 	)
 	else if(survivor_type == "gunslinger")
 		belt = pickweight(list(
@@ -166,7 +166,7 @@
 		/obj/item/storage/belt/fannypack = 15,
 		/obj/item/storage/belt/mining/alt = 5,
 		/obj/item/storage/belt/mining/primitive = 5
-		)
+	)
 	)
 	else
 		belt = /obj/item/storage/belt/fannypack
@@ -206,7 +206,7 @@
 	//as are bag contents
 	backpack_contents = list()
 	if(prob(70))
-		backpack_contents += pick(list( //these could stand to be expanded, right now they're just mildly modified miner ones, and I don't know how to plus that up.
+		backpack_contents += pickweight( //these could stand to be expanded, right now they're just mildly modified miner ones, and I don't know how to plus that up.
 			/obj/item/soap = 10,
 			/obj/item/stack/marker_beacon/ten = 15,
 			/obj/item/mining_scanner = 5,
@@ -219,9 +219,9 @@
 			/obj/item/stack/sheet/bone = 8,
 			/obj/item/reagent_containers/food/drinks/waterbottle = 10,
 			/obj/item/reagent_containers/food/drinks/waterbottle/empty = 2,
-		))
+		)
 	if(prob(70))
-		backpack_contents += pick(list(
+		backpack_contents += pickweight(
 			/obj/item/stack/sheet/animalhide/goliath_hide = 20,
 			/obj/item/stack/marker_beacon/ten = 10,
 			/obj/item/mining_scanner = 20,
@@ -230,9 +230,9 @@
 			/obj/item/flashlight/seclite = 10,
 			/obj/item/stack/sheet/sinew = 10,
 			/obj/item/stack/sheet/bone = 10
-		))
+		)
 	if(prob(70))
-		backpack_contents += pick(list(
+		backpack_contents += pickweight(
 			/obj/item/stack/sheet/animalhide/goliath_hide = 5,
 			/obj/item/stack/marker_beacon/ten = 5,
 			/obj/item/mining_scanner = 5,
@@ -243,18 +243,18 @@
 			/obj/item/stack/sheet/bone = 5,
 			/obj/item/kitchen/knife/combat = 3,
 			/obj/item/reagent_containers/food/snacks/rationpack = 30
-		))
+		)
 	if (prob(15)) //mayhaps a medkit
-		backpack_contents += pick(list(
+		backpack_contents += pickweight(
 			/obj/item/storage/firstaid/regular = 50,
 			/obj/item/storage/firstaid/brute = 15,
 			/obj/item/storage/firstaid/medical = 15,
 			/obj/item/storage/firstaid/fire = 10,
 			/obj/item/storage/firstaid/advanced = 5,
 			/obj/item/storage/firstaid/ancient = 5
-		))
+		)
 	if(prob(30)) //some pens maybe?
-		backpack_contents += list(
+		backpack_contents += pickweight(
 			/obj/item/reagent_containers/hypospray/medipen/survival = 1
 		)
 
@@ -330,7 +330,7 @@
 		if(prob(20))
 			suit_store = /obj/item/gun/ballistic/automatic/smg/aks74u
 		else
-			visible_message("<span class='userwarning'>The gunslinger's weapon shatters as they impact the ground!</span>")
+			visible_message("<span class='userwarning'>The[src]'s weapon shatters as they impact the ground!</span>")
 			suit_store = null
 	. = ..()
 
