@@ -10,9 +10,17 @@ permissions:
   pages: write
   id-token: write
 
+# Allow one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
 jobs:
   generate_documentation:
     if: "!contains(github.event.head_commit.message, '[ci skip]')"
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
@@ -20,7 +28,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: $HOME/SpacemanDMM
-          key: ${{ runner.os }}-spacemandmm
+          key: ${{ runner.os }}-spacemandmm-${{ secrets.CACHE_PURGE_KEY }}
       - name: Install SpacemanDMM
         run: bash tools/ci/install_spaceman_dmm.sh dmdoc
       - name: Generate documentation
