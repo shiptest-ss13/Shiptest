@@ -233,6 +233,10 @@
 	var/obj/effect/temp_visual/kinetic_blast/K = new /obj/effect/temp_visual/kinetic_blast(target_turf)
 	K.color = color
 
+//Mecha version of the KA projectile
+
+/obj/projectile/kinetic/mech
+	range = 5
 
 //Modkits
 /obj/item/borg/upgrade/modkit
