@@ -44,13 +44,13 @@
 		if(pixel_shift)
 			switch(ndir)
 				if(NORTH)
-					O.pixel_y = pixel_shift
-				if(SOUTH)
 					O.pixel_y = -pixel_shift
+				if(SOUTH)
+					O.pixel_y = pixel_shift
 				if(EAST)
-					O.pixel_x = pixel_shift
-				if(WEST)
 					O.pixel_x = -pixel_shift
+				if(WEST)
+					O.pixel_x = pixel_shift
 		after_attach(O)
 
 	qdel(src)
