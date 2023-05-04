@@ -4,6 +4,7 @@
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "drip2"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/pod,
 /area/ruin/wasteplanet/tradepost/center)
 "as" = (
@@ -14,6 +15,19 @@
 /obj/effect/turf_decal/industrial/caution,
 /turf/open/floor/pod,
 /area/ruin/wasteplanet/tradepost/warehouse)
+"aI" = (
+/obj/item/kirbyplants/random,
+/turf/open/floor/pod,
+/area/ruin/wasteplanet/tradepost/barracks)
+"aQ" = (
+/obj/structure/extinguisher_cabinet/directional/east,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/wood,
+/area/ruin/wasteplanet/tradepost/center)
 "bj" = (
 /obj/item/stack/sheet/mineral/sandbags{
 	amount = 3
@@ -21,11 +35,14 @@
 /obj/effect/turf_decal/industrial/caution{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/pod,
 /area/ruin/wasteplanet/tradepost/center)
 "bM" = (
 /obj/item/stack/sheet/mineral/sandbags,
 /obj/structure/door_assembly/door_assembly_com,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/pod,
 /area/ruin/wasteplanet/tradepost/center)
 "bY" = (
@@ -71,6 +88,7 @@
 /obj/effect/turf_decal/industrial/stand_clear{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/pavement,
 /area/overmap_encounter/planetoid/wasteplanet)
 "dD" = (
@@ -81,12 +99,17 @@
 	pixel_y = -5
 	},
 /obj/item/gun/ballistic/automatic/pistol/commander,
+/obj/item/paper/crumpled,
 /turf/open/floor/pod,
 /area/ruin/wasteplanet/tradepost/center)
 "dN" = (
 /obj/structure/door_assembly/door_assembly_sec,
 /turf/open/floor/pod,
 /area/ruin/wasteplanet/tradepost/barracks)
+"ei" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/overmap_encounter/planetoid/wasteplanet)
 "em" = (
 /turf/open/floor/plating/asteroid/wasteplanet,
 /area/overmap_encounter/planetoid/wasteplanet)
@@ -103,6 +126,7 @@
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "drip5"
 	},
+/obj/structure/marker_beacon/acidproof,
 /turf/open/floor/concrete/pavement,
 /area/overmap_encounter/planetoid/wasteplanet)
 "ez" = (
@@ -112,6 +136,8 @@
 /obj/effect/decal/cleanable/oil/streak{
 	icon_state = "streak4"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/marker_beacon/acidproof,
 /turf/open/floor/concrete/pavement,
 /area/overmap_encounter/planetoid/wasteplanet)
 "eH" = (
@@ -119,6 +145,7 @@
 /obj/item/bedsheet/hos{
 	name = "security bedsheet"
 	},
+/obj/structure/curtain/cloth/grey,
 /turf/open/floor/pod,
 /area/ruin/wasteplanet/tradepost/barracks)
 "fe" = (
@@ -132,6 +159,8 @@
 /area/ruin/wasteplanet/tradepost/warehouse)
 "fr" = (
 /obj/structure/barricade/sandbags,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/pod,
 /area/ruin/wasteplanet/tradepost/center)
 "fU" = (
@@ -162,6 +191,19 @@
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/concrete/pavement,
 /area/overmap_encounter/planetoid/wasteplanet)
+"gC" = (
+/obj/structure/bookcase/random,
+/turf/open/floor/wood,
+/area/ruin/wasteplanet/tradepost/center)
+"gI" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/pod,
+/area/ruin/wasteplanet/tradepost/center)
+"gP" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/paper/crumpled,
+/turf/open/floor/pod,
+/area/ruin/wasteplanet/tradepost/center)
 "hn" = (
 /obj/effect/turf_decal/industrial/warning/full,
 /obj/structure/extinguisher_cabinet/directional/north,
@@ -170,13 +212,37 @@
 "ht" = (
 /obj/structure/extinguisher_cabinet/directional/south,
 /obj/structure/barricade/sandbags,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/pod,
+/area/ruin/wasteplanet/tradepost/center)
+"hD" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/paperslip,
+/turf/open/floor/pod,
+/area/ruin/wasteplanet/tradepost/center)
+"hH" = (
+/obj/structure/chair/comfy/brown{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood,
 /area/ruin/wasteplanet/tradepost/center)
 "hJ" = (
 /obj/structure/chair{
 	dir = 8
 	},
 /turf/open/floor/pod,
+/area/ruin/wasteplanet/tradepost/barracks)
+"hN" = (
+/obj/structure/table/wood,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/pen/fountain,
+/turf/open/floor/wood,
+/area/ruin/wasteplanet/tradepost/center)
+"hO" = (
+/turf/closed/wall,
 /area/ruin/wasteplanet/tradepost/barracks)
 "hU" = (
 /obj/effect/turf_decal/industrial/traffic{
@@ -187,6 +253,19 @@
 	},
 /turf/open/floor/pod,
 /area/ruin/wasteplanet/tradepost/warehouse)
+"ig" = (
+/obj/structure/table,
+/obj/machinery/airalarm/directional/south,
+/turf/open/floor/pod/light,
+/area/ruin/wasteplanet/tradepost/center)
+"iq" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/pavement,
+/area/overmap_encounter/planetoid/wasteplanet)
+"ir" = (
+/obj/machinery/light/directional/east,
+/turf/open/floor/pod,
+/area/ruin/wasteplanet/tradepost/center)
 "iy" = (
 /obj/machinery/computer/mech_bay_power_console/retro{
 	dir = 8
@@ -214,6 +293,10 @@
 	},
 /turf/open/floor/pod,
 /area/ruin/wasteplanet/tradepost/barracks)
+"je" = (
+/obj/machinery/firealarm/directional/east,
+/turf/open/floor/pod/light,
+/area/ruin/wasteplanet/tradepost/center)
 "jn" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor3-old"
@@ -228,7 +311,11 @@
 /obj/effect/turf_decal/industrial/warning/cee{
 	dir = 4
 	},
+/obj/structure/marker_beacon/acidproof,
 /turf/open/floor/plating/wasteplanet,
+/area/overmap_encounter/planetoid/wasteplanet)
+"kd" = (
+/turf/closed/wall,
 /area/overmap_encounter/planetoid/wasteplanet)
 "kf" = (
 /obj/effect/turf_decal/spline/fancy/opaque/black,
@@ -236,19 +323,61 @@
 /area/ruin/wasteplanet/tradepost/warehouse)
 "kr" = (
 /mob/living/simple_animal/hostile/hivebot/rapid/rockplanet,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/oil/streak{
+	icon_state = "streak2"
+	},
 /turf/open/floor/pod,
 /area/ruin/wasteplanet/tradepost/center)
+"kt" = (
+/obj/effect/turf_decal/spline/fancy/opaque/black,
+/obj/machinery/airalarm/directional/east,
+/turf/open/floor/pod,
+/area/ruin/wasteplanet/tradepost/warehouse)
 "kU" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/wasteplanet,
 /area/overmap_encounter/planetoid/wasteplanet)
+"la" = (
+/obj/structure/filingcabinet/double,
+/obj/machinery/firealarm/directional/north,
+/turf/open/floor/pod,
+/area/ruin/wasteplanet/tradepost/center)
+"lf" = (
+/obj/effect/decal/cleanable/blood/tracks,
+/obj/item/ammo_casing/spent,
+/obj/item/ammo_casing/spent{
+	pixel_y = -11;
+	pixel_x = -3
+	},
+/obj/item/ammo_casing/spent{
+	pixel_y = -4
+	},
+/obj/item/paper/crumpled,
+/turf/open/floor/pod,
+/area/ruin/wasteplanet/tradepost/center)
+"lj" = (
+/obj/item/radio/intercom/wideband/directional/north,
+/turf/open/floor/pod/light,
+/area/ruin/wasteplanet/tradepost/center)
+"lq" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/gibspawner/robot,
+/turf/open/floor/concrete/pavement,
+/area/overmap_encounter/planetoid/wasteplanet)
 "lx" = (
+/obj/machinery/stasis{
+	dir = 1
+	},
+/obj/machinery/airalarm/directional/north,
 /turf/open/floor/pod/light,
 /area/ruin/wasteplanet/tradepost/barracks)
 "lB" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "drip4"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/pavement,
 /area/overmap_encounter/planetoid/wasteplanet)
 "lQ" = (
@@ -256,6 +385,13 @@
 /obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/pod/dark,
 /area/ruin/wasteplanet/tradepost/warehouse)
+"lT" = (
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "drip2"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/pavement,
+/area/overmap_encounter/planetoid/wasteplanet)
 "lY" = (
 /obj/effect/turf_decal/industrial/warning/full,
 /obj/machinery/light/small/broken/directional/north,
@@ -268,22 +404,57 @@
 /obj/structure/sign/warning/gasmask{
 	pixel_x = -28
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/pod,
 /area/ruin/wasteplanet/tradepost/barracks)
+"mI" = (
+/obj/structure/table/wood,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/wood,
+/area/ruin/wasteplanet/tradepost/center)
 "mK" = (
 /obj/item/bot_assembly/medbot,
 /turf/open/floor/pod/light,
 /area/ruin/wasteplanet/tradepost/barracks)
+"nn" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/clipboard,
+/obj/item/paper/crumpled,
+/obj/item/paper/crumpled,
+/turf/open/floor/pod,
+/area/ruin/wasteplanet/tradepost/center)
+"nv" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/oil/streak{
+	icon_state = "streak2"
+	},
+/turf/open/floor/concrete/pavement,
+/area/overmap_encounter/planetoid/wasteplanet)
+"nN" = (
+/obj/machinery/firealarm/directional/west,
+/turf/open/floor/pod/light,
+/area/ruin/wasteplanet/tradepost/center)
 "nO" = (
 /obj/machinery/light/small/directional/north,
+/obj/machinery/computer/operating,
 /turf/open/floor/pod/light,
 /area/ruin/wasteplanet/tradepost/barracks)
+"ox" = (
+/obj/machinery/light/directional/north,
+/turf/open/floor/pod,
+/area/ruin/wasteplanet/tradepost/center)
 "oz" = (
 /obj/effect/mob_spawn/human/corpse/inteq/vanguard,
+/obj/machinery/airalarm/directional/west,
 /turf/open/floor/pod,
 /area/ruin/wasteplanet/tradepost/center)
 "oC" = (
 /mob/living/simple_animal/hostile/hivebot/strong/rockplanet,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/pavement,
 /area/overmap_encounter/planetoid/wasteplanet)
 "pc" = (
@@ -292,6 +463,12 @@
 	},
 /turf/open/floor/concrete/pavement,
 /area/overmap_encounter/planetoid/wasteplanet)
+"pe" = (
+/obj/structure/flippedtable,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/pod,
+/area/ruin/wasteplanet/tradepost/center)
 "pl" = (
 /turf/closed/wall,
 /area/ruin/wasteplanet/tradepost/warehouse)
@@ -325,6 +502,18 @@
 	},
 /turf/open/floor/pod,
 /area/ruin/wasteplanet/tradepost/warehouse)
+"pT" = (
+/obj/machinery/airalarm/directional/east,
+/obj/item/paperslip,
+/turf/open/floor/pod,
+/area/ruin/wasteplanet/tradepost/center)
+"qg" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/pavement,
+/area/overmap_encounter/planetoid/wasteplanet)
 "qk" = (
 /obj/machinery/door/airlock/command/glass{
 	name = "Holopad Access"
@@ -338,6 +527,26 @@
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plasteel/tech,
 /area/ruin/wasteplanet/tradepost/center)
+"qy" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/turf/open/floor/wood,
+/area/ruin/wasteplanet/tradepost/center)
+"rb" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/siding/wood{
+	dir = 10
+	},
+/turf/open/floor/wood,
+/area/ruin/wasteplanet/tradepost/center)
+"rm" = (
+/obj/structure/marker_beacon/acidproof,
+/turf/open/floor/concrete/pavement,
+/area/overmap_encounter/planetoid/wasteplanet)
 "ro" = (
 /obj/structure/extinguisher_cabinet/directional/east,
 /turf/open/floor/pod,
@@ -353,6 +562,21 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/wasteplanet/tradepost/center)
+"rP" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/marker_beacon/acidproof,
+/turf/open/floor/concrete/pavement,
+/area/overmap_encounter/planetoid/wasteplanet)
+"rY" = (
+/mob/living/simple_animal/pet/cat/kitten{
+	name = "Biggles"
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 9
+	},
+/turf/open/floor/wood,
+/area/ruin/wasteplanet/tradepost/center)
 "sf" = (
 /obj/effect/decal/cleanable/molten_object{
 	pixel_x = -10;
@@ -364,6 +588,29 @@
 	},
 /turf/open/floor/concrete/pavement,
 /area/overmap_encounter/planetoid/wasteplanet)
+"so" = (
+/obj/structure/barricade/sandbags,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/structure/marker_beacon/acidproof,
+/turf/open/floor/plating/wasteplanet,
+/area/overmap_encounter/planetoid/wasteplanet)
+"su" = (
+/obj/effect/turf_decal/industrial/traffic,
+/obj/effect/turf_decal/industrial/stand_clear{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/pavement,
+/area/overmap_encounter/planetoid/wasteplanet)
+"sv" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/rust/wasteplanet,
+/area/overmap_encounter/planetoid/wasteplanet)
 "sy" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -373,6 +620,20 @@
 	},
 /turf/open/floor/plating/wasteplanet,
 /area/overmap_encounter/planetoid/wasteplanet)
+"sA" = (
+/obj/machinery/firealarm/directional/south,
+/obj/structure/bookcase/random,
+/turf/open/floor/wood,
+/area/ruin/wasteplanet/tradepost/center)
+"sH" = (
+/obj/effect/gibspawner/robot,
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/overmap_encounter/planetoid/wasteplanet)
+"sS" = (
+/obj/structure/filingcabinet/double,
+/obj/item/radio/intercom/directional/east,
+/turf/open/floor/pod,
+/area/ruin/wasteplanet/tradepost/center)
 "sT" = (
 /obj/effect/turf_decal/industrial/warning/full,
 /obj/structure/ore_box,
@@ -384,6 +645,17 @@
 	},
 /turf/open/floor/pod/dark,
 /area/ruin/wasteplanet/tradepost/warehouse)
+"ta" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/pod,
+/area/ruin/wasteplanet/tradepost/center)
+"te" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/oil/streak{
+	icon_state = "streak2"
+	},
+/turf/open/floor/concrete/pavement,
+/area/overmap_encounter/planetoid/wasteplanet)
 "tl" = (
 /obj/docking_port/stationary{
 	dir = 2;
@@ -399,12 +671,14 @@
 	dir = 9
 	},
 /obj/effect/turf_decal/industrial/warning/corner,
+/obj/structure/marker_beacon/acidproof,
 /turf/open/floor/plating/wasteplanet,
 /area/overmap_encounter/planetoid/wasteplanet)
 "tp" = (
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 4
 	},
+/obj/machinery/power/apc/auto_name/directional/south,
 /turf/open/floor/pod,
 /area/ruin/wasteplanet/tradepost/warehouse)
 "ts" = (
@@ -421,6 +695,7 @@
 /obj/structure/extinguisher_cabinet/directional/west,
 /obj/item/bot_assembly/ed209,
 /obj/effect/decal/cleanable/robot_debris,
+/obj/effect/gibspawner/robot,
 /turf/open/floor/pod,
 /area/ruin/wasteplanet/tradepost/center)
 "tU" = (
@@ -448,14 +723,50 @@
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plating/wasteplanet,
 /area/overmap_encounter/planetoid/wasteplanet)
+"uo" = (
+/obj/structure/chair{
+	dir = 1
+	},
+/obj/machinery/firealarm/directional/south,
+/turf/open/floor/pod,
+/area/ruin/wasteplanet/tradepost/center)
+"uA" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/ash/glowshroom,
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/overmap_encounter/planetoid/wasteplanet)
+"uS" = (
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/pod/light,
+/area/ruin/wasteplanet/tradepost/center)
+"vi" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood,
+/area/ruin/wasteplanet/tradepost/center)
+"vr" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/turf/open/floor/wood,
+/area/ruin/wasteplanet/tradepost/center)
 "vQ" = (
 /obj/effect/decal/cleanable/molten_object/large,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/marker_beacon/acidproof,
+/turf/open/floor/concrete/pavement,
+/area/overmap_encounter/planetoid/wasteplanet)
+"vR" = (
+/mob/living/simple_animal/hostile/hivebot/range/rockplanet,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/pavement,
 /area/overmap_encounter/planetoid/wasteplanet)
 "wA" = (
 /obj/effect/decal/cleanable/oil/streak{
 	icon_state = "streak5"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/pavement,
 /area/overmap_encounter/planetoid/wasteplanet)
 "wB" = (
@@ -476,7 +787,27 @@
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 8
 	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/pod/light,
+/area/ruin/wasteplanet/tradepost/center)
+"xu" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/flora/ash/glowshroom,
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/overmap_encounter/planetoid/wasteplanet)
+"xv" = (
+/obj/effect/decal/cleanable/oil/streak{
+	icon_state = "streak2"
+	},
+/obj/effect/decal/cleanable/oil/streak{
+	icon_state = "streak5"
+	},
+/obj/item/paper/crumpled,
+/turf/open/floor/pod,
+/area/ruin/wasteplanet/tradepost/center)
+"xw" = (
+/obj/item/paper/crumpled,
+/turf/open/floor/pod,
 /area/ruin/wasteplanet/tradepost/center)
 "xx" = (
 /mob/living/simple_animal/hostile/hivebot/rapid/rockplanet,
@@ -491,6 +822,12 @@
 	},
 /turf/open/floor/concrete/pavement,
 /area/overmap_encounter/planetoid/wasteplanet)
+"xM" = (
+/obj/structure/filingcabinet/double,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/pod,
+/area/ruin/wasteplanet/tradepost/center)
 "xQ" = (
 /obj/item/stack/sheet/mineral/sandbags{
 	pixel_y = 7
@@ -501,15 +838,24 @@
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "drip3"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/pod,
 /area/ruin/wasteplanet/tradepost/center)
 "ya" = (
 /obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/pod/light,
 /area/ruin/wasteplanet/tradepost/barracks)
-"ym" = (
-/turf/closed/mineral/random/asteroid/wasteplanet,
-/area/space)
+"yF" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/wasteplanet,
+/area/overmap_encounter/planetoid/wasteplanet)
+"yZ" = (
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "drip3"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/pavement,
+/area/overmap_encounter/planetoid/wasteplanet)
 "ze" = (
 /obj/machinery/mech_bay_recharge_port,
 /turf/open/floor/plasteel/tech/grid,
@@ -519,6 +865,7 @@
 /obj/effect/turf_decal/industrial/caution{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/pavement,
 /area/overmap_encounter/planetoid/wasteplanet)
 "zq" = (
@@ -537,11 +884,44 @@
 /obj/effect/turf_decal/industrial/caution{
 	dir = 1
 	},
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/pod/light,
 /area/ruin/wasteplanet/tradepost/barracks)
 "zY" = (
 /obj/item/stack/sheet/mineral/sandbags,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/asteroid/wasteplanet,
+/area/overmap_encounter/planetoid/wasteplanet)
+"Ak" = (
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "drip3"
+	},
+/obj/effect/decal/cleanable/oil/streak{
+	icon_state = "streak2"
+	},
+/obj/effect/decal/cleanable/oil/streak,
+/obj/effect/decal/cleanable/oil/streak{
+	icon_state = "streak4"
+	},
+/turf/open/floor/concrete/pavement,
+/area/overmap_encounter/planetoid/wasteplanet)
+"AI" = (
+/obj/structure/bed/pod,
+/obj/item/bedsheet/hos{
+	name = "security bedsheet"
+	},
+/obj/machinery/light/small/broken/directional/north,
+/obj/structure/curtain/cloth/grey,
+/turf/open/floor/pod,
+/area/ruin/wasteplanet/tradepost/barracks)
+"AT" = (
+/obj/effect/gibspawner/robot,
+/turf/open/floor/concrete/pavement,
+/area/overmap_encounter/planetoid/wasteplanet)
+"AV" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/pavement,
 /area/overmap_encounter/planetoid/wasteplanet)
 "Ba" = (
 /turf/open/floor/plating/rust/wasteplanet,
@@ -551,16 +931,36 @@
 	dir = 1
 	},
 /obj/structure/curtain,
+/obj/structure/window/reinforced/tinted{
+	dir = 4
+	},
 /turf/open/floor/pod/light,
 /area/ruin/wasteplanet/tradepost/center)
 "BN" = (
 /mob/living/simple_animal/hostile/hivebot/strong/rockplanet,
 /turf/open/floor/plating/asteroid/wasteplanet,
 /area/overmap_encounter/planetoid/wasteplanet)
+"Cf" = (
+/obj/item/bedsheet/rainbow,
+/obj/structure/bed,
+/obj/effect/turf_decal/siding/wood{
+	dir = 5
+	},
+/turf/open/floor/wood,
+/area/ruin/wasteplanet/tradepost/center)
 "Cj" = (
 /obj/item/gun/ballistic/automatic/pistol/commander/inteq,
 /turf/open/floor/pod,
 /area/ruin/wasteplanet/tradepost/center)
+"Cx" = (
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "drip3"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/pavement,
+/area/overmap_encounter/planetoid/wasteplanet)
 "CA" = (
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 4
@@ -574,6 +974,10 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/wasteplanet/tradepost/warehouse)
+"CD" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/pod,
+/area/ruin/wasteplanet/tradepost/warehouse)
 "Dl" = (
 /obj/machinery/door/airlock{
 	dir = 4;
@@ -583,16 +987,43 @@
 /area/ruin/wasteplanet/tradepost/center)
 "DE" = (
 /mob/living/simple_animal/hostile/hivebot/strong/rockplanet,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/oil/streak{
+	icon_state = "streak2"
+	},
 /turf/open/floor/pod,
 /area/ruin/wasteplanet/tradepost/center)
 "DQ" = (
 /obj/structure/girder/displaced,
 /turf/open/floor/plating/wasteplanet,
 /area/overmap_encounter/planetoid/wasteplanet)
+"DR" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/marker_beacon/acidproof,
+/turf/open/floor/concrete/pavement,
+/area/overmap_encounter/planetoid/wasteplanet)
+"DS" = (
+/obj/structure/barricade/sandbags,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/paper/crumpled,
+/turf/open/floor/pod,
+/area/ruin/wasteplanet/tradepost/center)
+"Ea" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/oil/streak,
+/turf/open/floor/concrete/pavement,
+/area/overmap_encounter/planetoid/wasteplanet)
 "Eg" = (
 /obj/structure/marker_beacon/acidproof,
 /turf/open/floor/plating/rust/wasteplanet,
 /area/overmap_encounter/planetoid/wasteplanet)
+"Eu" = (
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/pod,
+/area/ruin/wasteplanet/tradepost/center)
 "Ex" = (
 /obj/item/gun/ballistic/automatic/smg/inteq,
 /obj/effect/mob_spawn/human/corpse/inteq/enforcer,
@@ -600,6 +1031,9 @@
 	icon_state = "floor2-old"
 	},
 /obj/item/gun/ballistic/automatic/pistol/commander/inteq/no_mag,
+/obj/machinery/light/directional/south,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/pod,
 /area/ruin/wasteplanet/tradepost/center)
 "Fb" = (
@@ -612,6 +1046,13 @@
 "Fc" = (
 /turf/open/floor/plating/wasteplanet,
 /area/overmap_encounter/planetoid/wasteplanet)
+"Fn" = (
+/mob/living/simple_animal/hostile/hivebot/strong/rockplanet,
+/obj/machinery/light/directional/west,
+/obj/effect/decal/cleanable/blood/tracks,
+/obj/item/paper_bin,
+/turf/open/floor/pod,
+/area/ruin/wasteplanet/tradepost/center)
 "Fx" = (
 /obj/structure/extinguisher_cabinet/directional/west,
 /obj/effect/turf_decal/industrial/caution{
@@ -626,29 +1067,76 @@
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "drip2"
 	},
+/obj/item/paper/crumpled,
 /turf/open/floor/pod,
 /area/ruin/wasteplanet/tradepost/center)
+"Fy" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/wood,
+/area/ruin/wasteplanet/tradepost/center)
+"FP" = (
+/obj/structure/flora/ash/glowshroom,
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/overmap_encounter/planetoid/wasteplanet)
 "FV" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/pavement,
+/area/overmap_encounter/planetoid/wasteplanet)
+"Ga" = (
+/obj/effect/gibspawner/robot,
+/obj/structure/marker_beacon/acidproof,
 /turf/open/floor/concrete/pavement,
 /area/overmap_encounter/planetoid/wasteplanet)
 "Gf" = (
 /obj/effect/turf_decal/spline/fancy/opaque/black,
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/pod/light,
 /area/ruin/wasteplanet/tradepost/center)
+"Gp" = (
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/caution{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/pod,
+/area/ruin/wasteplanet/tradepost/warehouse)
+"Gt" = (
+/obj/structure/filingcabinet/double,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/pod,
+/area/ruin/wasteplanet/tradepost/center)
+"GF" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/pavement,
+/area/overmap_encounter/planetoid/wasteplanet)
 "Hb" = (
 /obj/effect/decal/cleanable/oil/streak{
 	icon_state = "streak2"
 	},
 /turf/open/floor/concrete/pavement,
 /area/overmap_encounter/planetoid/wasteplanet)
+"Hn" = (
+/obj/machinery/light/directional/south,
+/obj/structure/bookcase/random,
+/turf/open/floor/pod,
+/area/ruin/wasteplanet/tradepost/center)
 "Ho" = (
 /obj/structure/table,
 /obj/machinery/light/small/broken/directional/east,
 /turf/open/floor/pod,
 /area/ruin/wasteplanet/tradepost/barracks)
+"HE" = (
+/obj/effect/turf_decal/industrial/warning/full,
+/obj/structure/closet/crate,
+/turf/open/floor/pod/dark,
+/area/ruin/wasteplanet/tradepost/warehouse)
 "HH" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
@@ -659,12 +1147,44 @@
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "drip2"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/pavement,
+/area/overmap_encounter/planetoid/wasteplanet)
+"HK" = (
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/pod/light,
+/area/ruin/wasteplanet/tradepost/center)
+"HV" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/overmap_encounter/planetoid/wasteplanet)
+"HZ" = (
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "floor3-old"
+	},
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "floor2-old"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/pavement,
 /area/overmap_encounter/planetoid/wasteplanet)
 "Ig" = (
 /obj/structure/rack,
 /turf/open/floor/pod/light,
 /area/ruin/wasteplanet/tradepost/center)
+"Ij" = (
+/obj/structure/closet/secure_closet/personal/cabinet,
+/obj/item/pet_carrier,
+/obj/item/clothing/suit/toggle/lawyer/navy,
+/obj/item/clothing/under/misc/pj/red,
+/obj/item/clothing/under/rank/civilian/lawyer/black,
+/turf/open/floor/wood,
+/area/ruin/wasteplanet/tradepost/center)
+"Il" = (
+/obj/structure/table,
+/obj/machinery/power/apc/auto_name/directional/west,
+/turf/open/floor/pod,
+/area/ruin/wasteplanet/tradepost/barracks)
 "In" = (
 /turf/open/floor/pod,
 /area/ruin/wasteplanet/tradepost/warehouse)
@@ -695,6 +1215,7 @@
 "Jh" = (
 /obj/structure/barricade/sandbags,
 /obj/effect/turf_decal/industrial/warning/cee,
+/obj/structure/marker_beacon/acidproof,
 /turf/open/floor/plating/wasteplanet,
 /area/overmap_encounter/planetoid/wasteplanet)
 "Ji" = (
@@ -706,8 +1227,15 @@
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor2-old"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/pavement,
 /area/overmap_encounter/planetoid/wasteplanet)
+"Jt" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/pen/fourcolor,
+/turf/open/floor/pod,
+/area/ruin/wasteplanet/tradepost/center)
 "Ko" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 9
@@ -715,9 +1243,25 @@
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "drip3"
 	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/oil/streak{
+	icon_state = "streak2"
+	},
 /turf/open/floor/concrete/pavement,
 /area/overmap_encounter/planetoid/wasteplanet)
+"Kp" = (
+/obj/structure/girder/displaced,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating/wasteplanet,
+/area/overmap_encounter/planetoid/wasteplanet)
 "Kr" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/kirbyplants/random,
+/obj/item/paper/crumpled,
+/turf/open/floor/pod,
+/area/ruin/wasteplanet/tradepost/center)
+"Kx" = (
+/obj/item/kirbyplants/random,
 /turf/open/floor/pod,
 /area/ruin/wasteplanet/tradepost/center)
 "KZ" = (
@@ -737,11 +1281,52 @@
 /area/ruin/wasteplanet/tradepost/center)
 "LO" = (
 /obj/effect/decal/cleanable/oil,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/pavement,
 /area/overmap_encounter/planetoid/wasteplanet)
+"LW" = (
+/mob/living/simple_animal/hostile/hivebot/rapid/rockplanet,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/pod,
+/area/ruin/wasteplanet/tradepost/barracks)
 "Ma" = (
 /turf/template_noop,
 /area/template_noop)
+"Mb" = (
+/obj/structure/table,
+/turf/open/floor/pod/light,
+/area/ruin/wasteplanet/tradepost/center)
+"Mj" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/marker_beacon/acidproof,
+/turf/open/floor/concrete/pavement,
+/area/overmap_encounter/planetoid/wasteplanet)
+"Ms" = (
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "drip2"
+	},
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "drip5"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/pavement,
+/area/overmap_encounter/planetoid/wasteplanet)
+"Mt" = (
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "drip3"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/marker_beacon/acidproof,
+/turf/open/floor/concrete/pavement,
+/area/overmap_encounter/planetoid/wasteplanet)
+"ML" = (
+/mob/living/simple_animal/hostile/hivebot/range/rockplanet,
+/turf/open/floor/plating/rust/wasteplanet,
+/area/overmap_encounter/planetoid/wasteplanet)
 "Ni" = (
 /obj/item/ammo_casing/spent{
 	pixel_y = -4;
@@ -763,6 +1348,8 @@
 /obj/item/ammo_casing/spent{
 	pixel_y = -4
 	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/pod,
 /area/ruin/wasteplanet/tradepost/center)
 "Nl" = (
@@ -775,6 +1362,7 @@
 	pixel_y = 8;
 	id = "wtpw1"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/pod,
 /area/ruin/wasteplanet/tradepost/warehouse)
 "Nq" = (
@@ -791,12 +1379,15 @@
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "drip2"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/pavement,
 /area/overmap_encounter/planetoid/wasteplanet)
 "Ny" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor7-old"
 	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/oil/streak,
 /turf/open/floor/concrete/pavement,
 /area/overmap_encounter/planetoid/wasteplanet)
 "NC" = (
@@ -810,12 +1401,51 @@
 /obj/item/stack/sheet/mineral/sandbags{
 	amount = 2
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/pod,
 /area/ruin/wasteplanet/tradepost/center)
-"OV" = (
-/obj/item/stack/sheet/mineral/sandbags,
+"NK" = (
+/obj/item/radio/intercom/directional/north,
+/turf/open/floor/pod/light,
+/area/ruin/wasteplanet/tradepost/center)
+"NR" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/airalarm/directional/east,
+/turf/open/floor/pod,
+/area/ruin/wasteplanet/tradepost/barracks)
+"Oy" = (
+/obj/effect/decal/cleanable/oil/streak{
+	icon_state = "streak2"
+	},
+/obj/effect/decal/cleanable/oil/streak{
+	icon_state = "streak4"
+	},
+/obj/item/paperslip,
+/turf/open/floor/pod,
+/area/ruin/wasteplanet/tradepost/center)
+"OB" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/oil/streak,
 /turf/open/floor/concrete/pavement,
 /area/overmap_encounter/planetoid/wasteplanet)
+"OV" = (
+/obj/item/stack/sheet/mineral/sandbags,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/pavement,
+/area/overmap_encounter/planetoid/wasteplanet)
+"Po" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/gibspawner/robot,
+/turf/open/floor/concrete/pavement,
+/area/overmap_encounter/planetoid/wasteplanet)
+"Ps" = (
+/mob/living/simple_animal/hostile/hivebot/rapid/rockplanet,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/paper_bin,
+/turf/open/floor/pod,
+/area/ruin/wasteplanet/tradepost/center)
 "PV" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -823,12 +1453,51 @@
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plasteel/tech,
 /area/ruin/wasteplanet/tradepost/barracks)
+"PY" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/oil/streak{
+	icon_state = "streak2"
+	},
+/obj/effect/decal/cleanable/oil/streak,
+/turf/open/floor/concrete/pavement,
+/area/overmap_encounter/planetoid/wasteplanet)
+"Qe" = (
+/obj/effect/decal/cleanable/blood/tracks,
+/obj/item/ammo_casing/spent,
+/obj/item/ammo_casing/spent{
+	pixel_y = -8;
+	pixel_x = -7
+	},
+/turf/open/floor/pod,
+/area/ruin/wasteplanet/tradepost/center)
 "Qn" = (
 /mob/living/simple_animal/hostile/hivebot/strong/rockplanet,
 /turf/open/floor/plating/rust/wasteplanet,
 /area/overmap_encounter/planetoid/wasteplanet)
+"QE" = (
+/obj/item/paperslip,
+/turf/open/floor/pod,
+/area/ruin/wasteplanet/tradepost/center)
+"QK" = (
+/obj/item/clipboard,
+/turf/open/floor/pod,
+/area/ruin/wasteplanet/tradepost/center)
+"QL" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/wood,
+/area/ruin/wasteplanet/tradepost/center)
+"QZ" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/pavement,
+/area/overmap_encounter/planetoid/wasteplanet)
 "Ri" = (
 /obj/structure/filingcabinet/double,
+/turf/open/floor/pod,
+/area/ruin/wasteplanet/tradepost/center)
+"Rk" = (
+/obj/structure/barricade/sandbags,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/pod,
 /area/ruin/wasteplanet/tradepost/center)
 "Rt" = (
@@ -844,14 +1513,26 @@
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "drip2"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/pavement,
 /area/overmap_encounter/planetoid/wasteplanet)
+"RD" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/pod,
+/area/ruin/wasteplanet/tradepost/barracks)
+"RK" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/pen/fourcolor,
+/turf/open/floor/pod,
+/area/ruin/wasteplanet/tradepost/center)
 "RV" = (
 /obj/structure/bed/pod,
 /obj/item/bedsheet/hos{
 	name = "security bedsheet"
 	},
 /obj/machinery/light/small/broken/directional/north,
+/obj/structure/curtain/cloth/grey,
+/obj/item/radio/intercom/directional/west,
 /turf/open/floor/pod,
 /area/ruin/wasteplanet/tradepost/barracks)
 "Se" = (
@@ -878,6 +1559,14 @@
 	},
 /turf/open/floor/pod,
 /area/ruin/wasteplanet/tradepost/center)
+"SP" = (
+/obj/machinery/light/directional/north,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/turf/open/floor/wood,
+/area/ruin/wasteplanet/tradepost/center)
 "Tt" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "drip1"
@@ -894,6 +1583,17 @@
 	},
 /turf/open/floor/plating/wasteplanet,
 /area/overmap_encounter/planetoid/wasteplanet)
+"TD" = (
+/obj/effect/turf_decal/spline/fancy/opaque/black,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/pod,
+/area/ruin/wasteplanet/tradepost/warehouse)
+"TT" = (
+/obj/effect/decal/cleanable/oil/streak{
+	icon_state = "streak4"
+	},
+/turf/open/floor/pod,
+/area/ruin/wasteplanet/tradepost/center)
 "Uo" = (
 /obj/structure/girder/displaced,
 /turf/open/floor/plating/rust/wasteplanet,
@@ -903,16 +1603,52 @@
 /obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/pod/dark,
 /area/ruin/wasteplanet/tradepost/warehouse)
+"UG" = (
+/obj/effect/turf_decal/industrial/traffic,
+/obj/effect/turf_decal/industrial/caution{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/pavement,
+/area/overmap_encounter/planetoid/wasteplanet)
+"US" = (
+/obj/machinery/shower{
+	dir = 1
+	},
+/obj/structure/curtain,
+/obj/structure/window/reinforced/tinted{
+	dir = 4
+	},
+/obj/structure/window/reinforced/tinted{
+	dir = 8
+	},
+/turf/open/floor/pod/light,
+/area/ruin/wasteplanet/tradepost/center)
+"Vh" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/pavement,
+/area/overmap_encounter/planetoid/wasteplanet)
 "Vi" = (
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 4
 	},
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/pod/light,
 /area/ruin/wasteplanet/tradepost/center)
 "Vl" = (
 /obj/structure/extinguisher_cabinet/directional/west,
 /obj/structure/rack,
 /turf/open/floor/pod/light,
+/area/ruin/wasteplanet/tradepost/center)
+"VS" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/wood,
 /area/ruin/wasteplanet/tradepost/center)
 "VU" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -925,6 +1661,16 @@
 	},
 /turf/open/floor/concrete/pavement,
 /area/overmap_encounter/planetoid/wasteplanet)
+"Wl" = (
+/obj/machinery/shower{
+	dir = 1
+	},
+/obj/structure/curtain,
+/obj/structure/window/reinforced/tinted{
+	dir = 8
+	},
+/turf/open/floor/pod/light,
+/area/ruin/wasteplanet/tradepost/center)
 "Wy" = (
 /turf/closed/wall,
 /area/ruin/wasteplanet/tradepost/center)
@@ -948,10 +1694,33 @@
 	},
 /turf/open/floor/concrete/pavement,
 /area/overmap_encounter/planetoid/wasteplanet)
+"WO" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/oil/streak{
+	icon_state = "streak2"
+	},
+/obj/effect/decal/cleanable/oil/streak{
+	icon_state = "streak5"
+	},
+/obj/effect/decal/cleanable/oil/streak{
+	icon_state = "streak4"
+	},
+/turf/open/floor/concrete/pavement,
+/area/overmap_encounter/planetoid/wasteplanet)
 "Xc" = (
 /obj/effect/turf_decal/industrial/warning/full,
 /turf/open/floor/pod/dark,
 /area/ruin/wasteplanet/tradepost/warehouse)
+"Xf" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "drip2"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/pavement,
+/area/overmap_encounter/planetoid/wasteplanet)
 "Xo" = (
 /obj/machinery/door/airlock{
 	name = "Bathroom"
@@ -970,8 +1739,19 @@
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 4
 	},
+/obj/structure/marker_beacon/acidproof,
 /turf/open/floor/plating/wasteplanet,
 /area/overmap_encounter/planetoid/wasteplanet)
+"Xz" = (
+/obj/structure/barricade/sandbags,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/pod,
+/area/ruin/wasteplanet/tradepost/center)
+"XY" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/pod,
+/area/ruin/wasteplanet/tradepost/center)
 "Ya" = (
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 1
@@ -980,8 +1760,16 @@
 /area/ruin/wasteplanet/tradepost/center)
 "Yd" = (
 /mob/living/simple_animal/hostile/hivebot/rapid/rockplanet,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/pavement,
 /area/overmap_encounter/planetoid/wasteplanet)
+"Yl" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/ruin/wasteplanet/tradepost/center)
 "Yw" = (
 /turf/open/floor/pod,
 /area/ruin/wasteplanet/tradepost/barracks)
@@ -990,6 +1778,7 @@
 /obj/structure/chair{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/pod,
 /area/ruin/wasteplanet/tradepost/barracks)
 "Zc" = (
@@ -1012,11 +1801,28 @@
 	},
 /turf/open/floor/pod,
 /area/ruin/wasteplanet/tradepost/warehouse)
+"ZK" = (
+/obj/structure/bed/pod,
+/obj/item/bedsheet/hos{
+	name = "security bedsheet"
+	},
+/obj/structure/curtain/cloth/grey,
+/obj/item/radio/intercom/directional/east,
+/turf/open/floor/pod,
+/area/ruin/wasteplanet/tradepost/barracks)
 "ZO" = (
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/machinery/door/window/westleft,
 /turf/open/floor/pod,
 /area/ruin/wasteplanet/tradepost/center)
+"ZT" = (
+/obj/machinery/light/small/directional/north,
+/obj/structure/closet/wall/white{
+	dir = 8;
+	pixel_x = 28
+	},
+/turf/open/floor/pod/light,
+/area/ruin/wasteplanet/tradepost/barracks)
 
 (1,1,1) = {"
 Ma
@@ -1227,7 +2033,7 @@ Ma
 Ma
 Ma
 Ru
-Ru
+en
 Ru
 Ru
 Ma
@@ -1239,9 +2045,9 @@ Ma
 Ma
 Ma
 em
-em
-em
-cJ
+HV
+HV
+iq
 Ba
 em
 Ma
@@ -1274,11 +2080,11 @@ Ma
 Ma
 Ma
 Ru
+en
+Ru
+en
 Ru
 Ru
-Ru
-Ru
-Ru
 Ma
 Ma
 Ma
@@ -1286,11 +2092,11 @@ Ma
 Ma
 Ma
 Ma
-em
-cJ
+HV
+iq
 Fc
-cJ
-em
+Mj
+HV
 em
 em
 Ma
@@ -1327,7 +2133,7 @@ Ru
 Ru
 Ru
 Ru
-Ru
+en
 Ma
 Ma
 Ma
@@ -1338,9 +2144,9 @@ em
 em
 Qn
 cJ
-Fc
+kU
 em
-Fc
+kU
 Ma
 Ma
 Ma
@@ -1368,27 +2174,27 @@ Ma
 Ma
 Ru
 Ru
+en
 Ru
 Ru
 Ru
 Ru
 Ru
-Ru
-Ru
+en
 Ru
 Ru
 Ma
 Ma
 Ma
-em
-Fc
+HV
+kU
 em
 Ba
 cJ
 Ba
-em
-em
-em
+HV
+HV
+HV
 Ma
 Ma
 Ma
@@ -1414,7 +2220,7 @@ Ma
 Ma
 Ma
 Ru
-Ru
+en
 Ru
 Ru
 Ru
@@ -1429,12 +2235,12 @@ Ma
 Ma
 em
 em
-Ba
-em
+gy
+HV
 em
 cJ
 Ba
-cJ
+iq
 em
 em
 Ma
@@ -1464,8 +2270,8 @@ Ru
 Ru
 Ru
 en
-en
-en
+kd
+kd
 Nl
 em
 Nl
@@ -1477,12 +2283,12 @@ em
 em
 Ba
 BN
-em
-em
-cJ
-cJ
-cJ
-em
+sH
+HV
+iq
+rm
+AT
+HV
 Fc
 em
 Ma
@@ -1508,10 +2314,10 @@ Ma
 Ma
 Ru
 Ru
-Ru
-Ru
-Ru
 en
+Ru
+Ru
+kd
 em
 em
 Ba
@@ -1521,14 +2327,14 @@ em
 en
 en
 en
-TB
+so
 TB
 Xw
 em
 Ba
 em
-cJ
-cJ
+iq
+iq
 cJ
 zY
 em
@@ -1554,18 +2360,18 @@ Ma
 Ma
 Ma
 Ma
-Ru
-Ru
-Ru
-Ru
-Ru
 en
+Ru
+Ru
+Ru
+Ru
+kd
 Ba
 em
 em
 em
 em
-em
+FP
 em
 em
 NC
@@ -1576,15 +2382,15 @@ em
 em
 cJ
 OV
-cJ
+AV
 oC
-em
+HV
 Ru
 Ru
 Ru
 Ru
 Ru
-Ru
+en
 Ru
 Ru
 Ru
@@ -1622,13 +2428,13 @@ FV
 jD
 em
 cJ
-cJ
-cJ
+rP
+AV
 cJ
 cL
 em
-en
-en
+kd
+kd
 en
 Ru
 Ru
@@ -1649,14 +2455,14 @@ Ma
 Ma
 Ma
 Ma
+en
 Ru
 Ru
+en
 Ru
-Ru
-Ru
-Rt
-Rt
-Rt
+hO
+hO
+hO
 Rt
 nO
 mK
@@ -1667,10 +2473,10 @@ em
 Ba
 Nq
 Ry
-cJ
-cJ
-cJ
-cJ
+QZ
+GF
+AV
+iq
 pc
 tn
 sy
@@ -1682,7 +2488,7 @@ en
 en
 Ru
 Ru
-Ru
+en
 Ru
 Ru
 Ru
@@ -1702,8 +2508,8 @@ Ru
 Ru
 Ru
 Rt
-Rt
-wB
+hO
+Il
 wB
 Rt
 lx
@@ -1713,21 +2519,21 @@ cJ
 em
 em
 em
-em
+FP
 HH
-cJ
-cJ
-cJ
-cJ
+AV
+rP
+AV
+QZ
 em
 ug
 Tt
 iI
+FP
 em
 em
 em
-em
-en
+kd
 Ru
 Ru
 Ru
@@ -1745,7 +2551,7 @@ Ma
 Ma
 Ma
 Ru
-Ru
+en
 Ru
 Ru
 Ru
@@ -1754,19 +2560,19 @@ RV
 Yw
 hJ
 Rt
-nO
+ZT
 zT
 wG
-cJ
+iq
 cJ
 Fc
 Fc
 em
-FV
-cJ
-cJ
-cJ
-em
+qg
+Po
+iq
+nv
+ei
 em
 jD
 gA
@@ -1775,13 +2581,13 @@ em
 em
 Ba
 em
+kd
+Ru
+Ru
+Ru
+Ru
+Ru
 en
-Ru
-Ru
-Ru
-Ru
-Ru
-Ru
 Ru
 Ma
 Ma
@@ -1801,21 +2607,21 @@ Rt
 Yw
 Yw
 Yw
+hO
+hO
+hO
 Rt
-Rt
-Rt
-Rt
-cJ
-cJ
+Mj
+iq
 em
 Fc
 Ko
 Nu
+QZ
 cJ
-cJ
-em
-em
-em
+ei
+uA
+ei
 em
 Wg
 pA
@@ -1842,30 +2648,30 @@ Ma
 Ru
 Ru
 Ru
-Ru
+en
 Ru
 en
-Rt
+hO
 eH
 xx
 Yw
 Xo
 Ji
-Rt
-em
-cJ
+hO
+HV
+iq
 Yd
 em
-cJ
-Ry
+QZ
+Xf
 vQ
 cJ
 cJ
+QZ
+QZ
+QZ
 cJ
-cJ
-cJ
-cJ
-cJ
+te
 cJ
 em
 em
@@ -1887,36 +2693,36 @@ Ma
 Ma
 Ma
 Ma
-Ru
+en
 Ru
 Ru
 Ru
 en
 Nl
-Rt
+hO
 Yw
 Yw
 Yw
 Rt
 Rt
-Rt
-cJ
-cJ
-cJ
-cJ
-iI
+hO
+OB
+AV
+QZ
+QZ
+yZ
 Jn
-cJ
-Zj
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
+QZ
+vR
+iq
+iq
+AV
+QZ
+QZ
+QZ
 cJ
 em
-em
+FP
 Fc
 em
 em
@@ -1937,28 +2743,28 @@ Ma
 Ru
 Ru
 Ru
-Ru
+en
 Ru
 en
 em
-Rt
-RV
+hO
+AI
 Yw
 dN
-Yw
+RD
 mr
 PV
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-em
-em
-em
+QZ
+QZ
+QZ
+DR
+QZ
+Ea
+Vh
+iq
+HV
+HV
+HV
 Nq
 em
 em
@@ -1975,7 +2781,7 @@ Nl
 en
 Ru
 Ru
-Ru
+en
 Ru
 "}
 (21,1,1) = {"
@@ -1992,21 +2798,21 @@ em
 Rt
 jb
 Yw
-Yw
-xx
+RD
+LW
 Zb
 Rt
 cJ
-cJ
-cJ
-cJ
-cJ
-iI
-cJ
-em
-Ba
-DQ
-Ba
+PY
+QZ
+QZ
+QZ
+Cx
+iq
+HV
+gy
+Kp
+gy
 Ba
 Fc
 Uo
@@ -2014,7 +2820,7 @@ em
 Ba
 em
 em
-em
+FP
 em
 em
 em
@@ -2030,7 +2836,7 @@ Ru
 Ma
 Ma
 Ma
-Ru
+en
 Ru
 Ru
 en
@@ -2038,37 +2844,37 @@ Nl
 em
 em
 Rt
-eH
-Yw
-Yw
+ZK
+NR
+aI
 Ho
 wB
 Rt
 em
 em
 cJ
-Zj
-iI
-cJ
+vR
+Mt
+iq
+HV
 em
-em
-Ba
-Ba
-em
-em
-Ba
-em
-em
-em
-em
-em
-em
-em
+gy
+gy
 em
 em
 Ba
 em
 em
+em
+em
+em
+em
+em
+em
+em
+Ba
+em
+FP
 Nl
 en
 Ru
@@ -2078,7 +2884,7 @@ Ru
 Ma
 Ma
 Ru
-Ru
+en
 Ru
 Ru
 en
@@ -2087,20 +2893,20 @@ em
 Ba
 Rt
 Rt
-Rt
-Rt
-Rt
+hO
+hO
+hO
 Rt
 Rt
 em
 em
 cJ
-iI
-Wg
-cJ
-em
-em
-Ba
+Ak
+lT
+iq
+xu
+HV
+gy
 em
 Ba
 em
@@ -2127,7 +2933,7 @@ Ma
 Ma
 Ru
 Ru
-Ru
+en
 en
 Nl
 em
@@ -2138,13 +2944,13 @@ em
 em
 em
 em
+Nq
 em
-em
-em
-em
+HV
+HV
+iq
 cJ
 cJ
-cJ
 em
 em
 Ba
@@ -2154,9 +2960,9 @@ em
 em
 Ba
 em
-em
-Ba
-Fc
+FP
+sv
+yF
 Fc
 Fc
 Fc
@@ -2176,21 +2982,21 @@ Ma
 Ru
 Ru
 Ru
-en
+kd
 em
 em
+FP
 em
 em
-em
-em
-em
-Ba
-em
-em
-Fc
-em
-em
-cJ
+Nq
+xu
+gy
+HV
+HV
+kU
+xu
+HV
+iq
 cJ
 iI
 cJ
@@ -2203,7 +3009,7 @@ Fc
 DQ
 em
 em
-Ba
+sv
 Ba
 Fc
 Ba
@@ -2216,7 +3022,7 @@ em
 en
 Ru
 Ru
-Ru
+en
 "}
 (26,1,1) = {"
 Ma
@@ -2224,21 +3030,21 @@ Ru
 Ru
 Ru
 Ru
-en
+kd
 em
 em
 Fc
 em
-Ba
+ML
 em
 em
 em
 em
 em
-em
-Ba
-em
-em
+HV
+gy
+HV
+HV
 Wg
 Wg
 cJ
@@ -2251,55 +3057,55 @@ em
 em
 em
 em
+yF
+Fc
+Fc
+Ba
+Fc
+Ba
 Fc
 Fc
 Fc
 Ba
-Fc
-Ba
-Fc
-Fc
-Fc
-Ba
+kd
 en
-Ru
 Ru
 Ru
 "}
 (27,1,1) = {"
 Ma
 Ru
+en
 Ru
-Ru
 ez
 ez
 ez
-ez
-ez
-ez
-ez
-ez
+Wy
+Wy
+Wy
+Wy
+Wy
 ez
 ez
 em
 Ba
 em
-em
-em
-em
-cJ
-cJ
+HV
+HV
+HV
+iq
+Ga
 cJ
 cJ
 zo
-cJ
-cJ
-cJ
-cJ
+iq
 cJ
 Hb
 cJ
 cJ
+cJ
+QZ
+QZ
 Fc
 Fc
 Ba
@@ -2309,7 +3115,7 @@ Fc
 Fc
 Ba
 em
-en
+kd
 Ru
 Ru
 Ru
@@ -2320,14 +3126,14 @@ Ru
 Ru
 ez
 fU
-Kr
-Kr
-Kr
-fU
+Ij
+hN
+hH
+gC
 ez
-fY
+lj
 Vi
-fY
+nN
 ez
 ez
 em
@@ -2336,18 +3142,18 @@ em
 em
 cJ
 Wg
-cJ
-cJ
-cJ
+WO
+QZ
+QZ
 dB
-cJ
-cJ
-cJ
+lq
+rP
+AV
 wA
 eF
 LO
-cJ
-cJ
+QZ
+rm
 tl
 Ba
 Ba
@@ -2357,7 +3163,7 @@ Ba
 Fc
 em
 em
-en
+kd
 Ru
 Ru
 Ru
@@ -2367,17 +3173,17 @@ Ma
 Ru
 Ru
 Wy
-Kr
-Kr
-Kr
-Kr
-Kr
+rY
+Yl
+VS
+rb
+gC
 ez
 Gf
 ts
 Ya
-fY
-ez
+ig
+Wy
 em
 em
 Fc
@@ -2385,16 +3191,16 @@ cJ
 Wg
 cJ
 cJ
+iq
 cJ
+UG
+QZ
+QZ
+AV
+iq
+iq
 cJ
-zo
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
+QZ
 cJ
 Fc
 Ba
@@ -2403,7 +3209,7 @@ Fc
 Fc
 Ba
 Fc
-em
+FP
 em
 en
 Ru
@@ -2412,35 +3218,35 @@ Ru
 "}
 (30,1,1) = {"
 Ru
-Ru
+en
 Ru
 Wy
-Kr
-Kr
-Kr
-Kr
-Kr
+SP
+vi
+vi
+Fy
+Hn
 Wy
-fY
+NK
 wM
 fY
-fY
-ez
+Mb
+Wy
 em
 em
 em
 cJ
 xF
 cJ
-em
-Fc
+HV
+kU
 em
 em
 CA
 CA
 CA
-em
-em
+HV
+xu
 em
 em
 Fc
@@ -2455,7 +3261,7 @@ Ba
 em
 en
 Ru
-Ru
+en
 Ru
 "}
 (31,1,1) = {"
@@ -2463,24 +3269,24 @@ Ru
 Ru
 Ru
 Wy
-Kr
-Kr
-Kr
-Kr
-Kr
+vr
+vi
+vi
+QL
+sA
 Wy
-ez
-ez
+Wy
+Wy
 Fb
 tz
-ez
+Wy
 em
 Fc
 em
-cJ
+AT
 et
-cJ
-em
+iq
+HV
 gh
 zD
 pl
@@ -2511,30 +3317,30 @@ Ru
 Ru
 Ru
 ez
-Kr
-Kr
-ro
-Kr
+Cf
+mI
+aQ
+qy
 fU
 ez
-Kr
-ez
-Kr
+Kx
+Wy
+Eu
 Lm
-ez
+Wy
 em
 em
-em
+FP
 cJ
-et
-cJ
+Ms
+iq
 Ba
 zD
 zq
 ch
 pQ
 fe
-pQ
+Gp
 Np
 uf
 zD
@@ -2555,33 +3361,33 @@ Ru
 Ru
 "}
 (33,1,1) = {"
+en
 Ru
 Ru
-Ru
-ez
-ez
-ez
+Wy
+Wy
+Wy
 Wy
 Dl
 ez
-Kr
-Kr
+QK
+xv
 qk
-Kr
-Lm
-ez
+ro
+uo
+Wy
 em
 em
 em
 cJ
-jn
+HZ
 Zj
 cJ
 Jb
 aB
-In
-In
-In
+CD
+CD
+CD
 In
 In
 Zc
@@ -2597,7 +3403,7 @@ Fc
 Ba
 Ba
 Ba
-en
+kd
 Ru
 Ru
 Ru
@@ -2606,28 +3412,28 @@ Ru
 Ru
 Ru
 Ru
-ez
+Wy
 Cj
 oz
-Kr
-Kr
-DE
-Kr
-Kr
+lf
+Qe
+Fn
+Oy
+Rk
 fU
 ez
 ez
-ez
+Wy
 em
 em
-em
+ei
 Ny
-cJ
+DR
 cJ
 em
 zD
 hn
-In
+CD
 lQ
 Xc
 Uu
@@ -2645,7 +3451,7 @@ Ba
 Eg
 em
 em
-en
+kd
 Ru
 Ru
 Ru
@@ -2655,11 +3461,11 @@ Ma
 Ru
 Ru
 ez
+la
+ta
+pe
+RK
 Ri
-Kr
-ru
-Kr
-Kr
 SF
 fr
 bM
@@ -2669,9 +3475,9 @@ qw
 jn
 iX
 lB
-Wg
-cJ
-cJ
+lT
+QZ
+QZ
 em
 zD
 lY
@@ -2687,15 +3493,15 @@ em
 em
 em
 em
-em
+FP
 em
 em
 em
 Ba
 em
+kd
+Ru
 en
-Ru
-Ru
 Ru
 "}
 (36,1,1) = {"
@@ -2703,34 +3509,34 @@ Ma
 Ma
 Ru
 ez
-Ri
+sS
 IN
 dD
-Kr
-Kr
-Kr
-fr
+gI
+Gt
+XY
+DS
 kr
 xQ
 bj
 IF
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
+AT
+QZ
+QZ
+QZ
+DR
+QZ
 em
 pl
-Xc
+HE
 In
 In
 In
-In
-kf
+CD
+TD
 ze
 pl
-em
+FP
 em
 em
 Fc
@@ -2754,20 +3560,20 @@ ez
 ez
 as
 ru
-Kr
-Kr
-Kr
-fr
+gI
+xM
+Jt
+Xz
 ND
 ag
 ht
-ez
+Wy
 em
 em
 em
-cJ
-cJ
-cJ
+QZ
+AV
+QZ
 Fc
 pl
 sT
@@ -2775,7 +3581,7 @@ Zw
 hU
 KZ
 In
-kf
+kt
 tU
 pl
 em
@@ -2800,22 +3606,22 @@ Ma
 Ru
 Ru
 ez
-Kr
-Kr
-kr
-Kr
+ox
+QE
+Ps
+nn
 DE
-Kr
-Kr
-Kr
+TT
+XY
+hD
 Ex
-ez
+Wy
 em
 em
 em
-cJ
-cJ
-cJ
+QZ
+AV
+Hb
 em
 cC
 pl
@@ -2848,23 +3654,23 @@ Ma
 Ru
 Ru
 Wy
-Kr
-Kr
-Kr
-Kr
-Kr
-Kr
-Kr
+Kx
+xw
+gP
+ta
+ir
+pT
+ta
 Ni
 Kr
-ez
+Wy
 em
 Ba
+FP
 em
-em
-cJ
-cJ
-cJ
+iq
+iq
+iq
 zo
 cJ
 WE
@@ -2883,7 +3689,7 @@ em
 em
 em
 em
-en
+kd
 Ru
 Ru
 Ru
@@ -2898,24 +3704,24 @@ Ru
 Wy
 ez
 Wy
-ez
+Wy
 rB
-ez
-ez
-ez
+Wy
+Wy
+Wy
 ZO
-ez
-ez
+Wy
+Wy
 em
 em
 em
 em
 em
+rm
 cJ
-cJ
-dB
-cJ
-cJ
+su
+iq
+Mj
 cJ
 cJ
 em
@@ -2930,10 +3736,10 @@ Ba
 em
 em
 Nl
-en
+kd
 en
 Ru
-Ru
+en
 Ru
 Ru
 Ma
@@ -2948,11 +3754,11 @@ Ru
 ez
 Vl
 fY
-fY
+HK
 BK
+Wy
 ez
-ez
-ez
+Wy
 em
 em
 Ba
@@ -2963,10 +3769,10 @@ em
 em
 em
 cJ
-cJ
+iq
 cJ
 em
-em
+FP
 em
 em
 em
@@ -2975,7 +3781,7 @@ em
 Ba
 Ba
 em
-em
+FP
 Nl
 en
 Ru
@@ -2997,13 +3803,13 @@ ez
 Ig
 fY
 fY
-BK
+US
 ez
 em
 em
 em
-Ba
-Ba
+gy
+gy
 em
 Eg
 Ba
@@ -3011,7 +3817,7 @@ Ba
 Ba
 Ba
 cJ
-cJ
+rm
 cJ
 Ba
 Fc
@@ -3043,14 +3849,14 @@ Ru
 Ru
 fU
 ez
-fY
-fY
-BK
+je
+uS
+Wl
 ez
 em
 Ba
 Ba
-em
+HV
 em
 em
 Ba
@@ -3074,7 +3880,7 @@ em
 Nl
 en
 Ru
-Ru
+en
 Ru
 Ru
 Ru
@@ -3097,7 +3903,7 @@ ez
 fU
 em
 Fc
-Ba
+gy
 Fc
 Uo
 em
@@ -3124,7 +3930,7 @@ Ru
 Ru
 Ru
 Ru
-Ru
+en
 Ru
 Ru
 Ma
@@ -3145,23 +3951,23 @@ em
 em
 em
 DQ
-em
-em
-Fc
+HV
 em
 Fc
-Ba
+FP
 Fc
 Ba
 Fc
 Ba
 Fc
 Ba
+Fc
 Ba
 Ba
 Ba
 Ba
-em
+Ba
+FP
 em
 em
 em
@@ -3185,12 +3991,12 @@ Ma
 Ma
 Ma
 Ru
-Ru
+en
 Ru
 en
 Nl
 em
-em
+FP
 em
 em
 Ba
@@ -3241,7 +4047,7 @@ em
 em
 em
 Ba
-em
+FP
 em
 Fc
 em
@@ -3314,7 +4120,7 @@ Ru
 Ru
 Ma
 Ru
-Ru
+en
 Ru
 Ru
 Ma
@@ -3333,12 +4139,12 @@ Ma
 Ru
 Ru
 Ru
-en
-en
+kd
+kd
 em
 em
 Uo
-em
+FP
 Fc
 em
 Eg
@@ -3357,7 +4163,7 @@ em
 em
 en
 Ru
-Ru
+en
 Ru
 Ru
 Ma
@@ -3382,7 +4188,7 @@ Ru
 Ru
 Ru
 Ru
-en
+kd
 Nl
 Ba
 em
@@ -3396,7 +4202,7 @@ em
 em
 em
 em
-em
+FP
 Fc
 Fc
 em
@@ -3478,7 +4284,7 @@ Ma
 Ma
 Ru
 Ru
-Ru
+en
 Ru
 en
 em
@@ -3489,13 +4295,13 @@ en
 en
 en
 en
-en
-en
-en
-en
-en
-en
-en
+kd
+kd
+kd
+kd
+kd
+kd
+kd
 en
 Ru
 Ru
@@ -3537,6 +4343,7 @@ Ru
 Ru
 Ru
 Ru
+en
 Ru
 Ru
 Ru
@@ -3547,8 +4354,7 @@ Ru
 Ru
 Ru
 Ru
-Ru
-Ru
+en
 Ru
 Ma
 Ma
@@ -3580,6 +4386,7 @@ Ru
 Ru
 Ru
 Ru
+en
 Ru
 Ru
 Ru
@@ -3589,11 +4396,10 @@ Ru
 Ru
 Ru
 Ru
+en
 Ru
 Ru
-Ru
-Ru
-Ru
+en
 Ru
 Ru
 Ru
@@ -3630,10 +4436,10 @@ Ru
 Ru
 Ru
 Ru
+en
 Ru
 Ru
-Ru
-Ru
+en
 Ru
 Ru
 Ru
@@ -3684,12 +4490,12 @@ Ru
 Ru
 Ru
 Ru
+en
 Ru
 Ru
 Ru
 Ru
 Ru
-ym
 Ma
 Ma
 Ma
