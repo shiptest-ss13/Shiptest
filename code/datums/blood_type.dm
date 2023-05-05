@@ -59,7 +59,7 @@
 
 /datum/blood_type/synthetic //Blood for synthetic/robotic species
 	name = "Coolant"
-	color = rgb(248, 163, 15, 165)
+	color = "#dddeff"
 	compatible_types = list(/datum/blood_type/synthetic)
 
 /datum/blood_type/universal
