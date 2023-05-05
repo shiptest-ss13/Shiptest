@@ -95,7 +95,7 @@ GLOBAL_LIST_INIT(ore_probability, list(
 	mob_types = list(/mob/living/simple_animal/hostile/asteroid/ice_demon)
 	light_range = 1
 	light_color = COLOR_SOFT_RED
-	spawn_time = 500
+	spawn_time = 300
 
 /obj/structure/spawner/ice_moon/demonic_portal/clear_rock()
 	for(var/turf/F in RANGE_TURFS(3, src))
@@ -115,12 +115,6 @@ GLOBAL_LIST_INIT(ore_probability, list(
 /obj/structure/spawner/ice_moon/demonic_portal/drop_loot()
 	return
 
-/obj/structure/spawner/ice_moon/demonic_portal/ice_whelp
-	mob_types = list(/mob/living/simple_animal/hostile/asteroid/ice_whelp)
-
-/obj/structure/spawner/ice_moon/demonic_portal/snowlegion
-	mob_types = list(/mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow/tendril)
-
 /obj/structure/spawner/ice_moon/rockplanet
 	name = "gruboid den"
 	desc = "Though gruboid are typically nomadic creatures, they gather in small surface caves to reproduce. They're unlikely to be happy about being disturbed."
@@ -133,10 +127,6 @@ GLOBAL_LIST_INIT(ore_probability, list(
 		if(ismineralturf(F))
 			var/turf/closed/mineral/M = F
 			M.ScrapeAway(null, CHANGETURF_IGNORE_AIR)
-
-/obj/structure/spawner/ice_moon/demonic_portal/brimdemon
-	mob_types = list(/mob/living/simple_animal/hostile/asteroid/brimdemon)
-
 
 /obj/effect/collapsing_demonic_portal
 	name = "collapsing demonic portal"
@@ -161,6 +151,58 @@ GLOBAL_LIST_INIT(ore_probability, list(
 /obj/effect/collapsing_demonic_portal/proc/collapse()
 	drop_loot()
 	qdel(src)
+
+//portal types go here
+
+/obj/structure/spawner/ice_moon/demonic_portal/brimdemon
+	mob_types = list(/mob/living/simple_animal/hostile/asteroid/brimdemon)
+
+/obj/structure/spawner/ice_moon/demonic_portal/ice_whelp
+	mob_types = list(/mob/living/simple_animal/hostile/asteroid/ice_whelp)
+
+/obj/structure/spawner/ice_moon/demonic_portal/snowlegion
+	mob_types = list(/mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow/tendril)
+
+/obj/structure/spawner/ice_moon/demonic_portal/low_threat
+	mob_types = list(
+		/mob/living/simple_animal/hostile/asteroid/brimdemon = 35,
+		/mob/living/simple_animal/hostile/asteroid/ice_whelp = 15,
+		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow/tendril = 35,
+		/mob/living/simple_animal/hostile/asteroid/ice_demon = 15
+	)
+	max_mobs = 5
+	spawn_time = 300
+
+/obj/structure/spawner/ice_moon/demonic_portal/medium_threat
+	mob_types = list(
+		/mob/living/simple_animal/hostile/asteroid/brimdemon = 25,
+		/mob/living/simple_animal/hostile/asteroid/ice_whelp = 25,
+		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow/tendril = 25,
+		/mob/living/simple_animal/hostile/asteroid/ice_demon = 25
+	)
+	max_mobs = 7
+	spawn_time = 300
+/obj/structure/spawner/ice_moon/demonic_portal/high_threat
+	mob_types = list(
+		/mob/living/simple_animal/hostile/asteroid/brimdemon = 15,
+		/mob/living/simple_animal/hostile/asteroid/ice_whelp = 35,
+		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow/tendril = 15,
+		/mob/living/simple_animal/hostile/asteroid/ice_demon = 35
+	)
+	max_mobs = 7
+	spawn_time = 200
+
+/obj/structure/spawner/ice_moon/demonic_portal/extreme_threat
+	mob_types = list(
+		/mob/living/simple_animal/hostile/asteroid/brimdemon = 10,
+		/mob/living/simple_animal/hostile/asteroid/ice_whelp = 25,
+		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow/tendril = 15,
+		/mob/living/simple_animal/hostile/asteroid/ice_demon = 50
+	)
+	max_mobs = 10
+	spawn_time = 200
+
+//I think there's room to make portal types drop loot/spawn monsters based on the loot list but that's out of scope for what I'm doing
 
 /**
  * Drops loot from the portal. Uses variable difficulty based on drops- more valulable rewards will also add additional enemies to the attack wave.
