@@ -206,7 +206,7 @@
 	//as are bag contents
 	backpack_contents = list()
 	if(prob(70))
-		backpack_contents += pickweight( //these could stand to be expanded, right now they're just mildly modified miner ones, and I don't know how to plus that up.
+		backpack_contents += pickweight(list( //these could stand to be expanded, right now they're just mildly modified miner ones, and I don't know how to plus that up.
 			/obj/item/soap = 10,
 			/obj/item/stack/marker_beacon/ten = 15,
 			/obj/item/mining_scanner = 5,
@@ -219,9 +219,10 @@
 			/obj/item/stack/sheet/bone = 8,
 			/obj/item/reagent_containers/food/drinks/waterbottle = 10,
 			/obj/item/reagent_containers/food/drinks/waterbottle/empty = 2,
+			)
 		)
 	if(prob(70))
-		backpack_contents += pickweight(
+		backpack_contents += pickweight(list(
 			/obj/item/stack/sheet/animalhide/goliath_hide = 20,
 			/obj/item/stack/marker_beacon/ten = 10,
 			/obj/item/mining_scanner = 20,
@@ -230,9 +231,10 @@
 			/obj/item/flashlight/seclite = 10,
 			/obj/item/stack/sheet/sinew = 10,
 			/obj/item/stack/sheet/bone = 10
+			)
 		)
 	if(prob(70))
-		backpack_contents += pickweight(
+		backpack_contents += pickweight(list(
 			/obj/item/stack/sheet/animalhide/goliath_hide = 5,
 			/obj/item/stack/marker_beacon/ten = 5,
 			/obj/item/mining_scanner = 5,
@@ -243,19 +245,22 @@
 			/obj/item/stack/sheet/bone = 5,
 			/obj/item/kitchen/knife/combat = 3,
 			/obj/item/reagent_containers/food/snacks/rationpack = 30
+			)
 		)
 	if (prob(15)) //mayhaps a medkit
-		backpack_contents += pickweight(
+		backpack_contents += pickweight(list(
 			/obj/item/storage/firstaid/regular = 50,
 			/obj/item/storage/firstaid/brute = 15,
 			/obj/item/storage/firstaid/medical = 15,
 			/obj/item/storage/firstaid/fire = 10,
 			/obj/item/storage/firstaid/advanced = 5,
 			/obj/item/storage/firstaid/ancient = 5
+			)
 		)
 	if(prob(30)) //some pens maybe?
-		backpack_contents += pickweight(
+		backpack_contents += pickweight(list(
 			/obj/item/reagent_containers/hypospray/medipen/survival = 1
+			)
 		)
 
 	//pockets
@@ -322,15 +327,15 @@
 	suit_store = null
 	if (survivor_type == "hunter")
 		if(prob(20))
-			suit_store = /obj/item/gun/ballistic/rifle/boltaction/polymer
+			new /obj/item/gun/ballistic/rifle/boltaction/polymer(loc)
 		else
 			visible_message("<span class='userwarning'>The hunter's weapon shatters as they impact the ground!</span>")
 			suit_store = null
 	if(survivor_type == "gunslinger")
 		if(prob(20))
-			suit_store = /obj/item/gun/ballistic/automatic/smg/aks74u
+			new /obj/item/gun/ballistic/automatic/smg/aks74u(loc)
 		else
-			visible_message("<span class='userwarning'>The[src]'s weapon shatters as they impact the ground!</span>")
+			visible_message("<span class='userwarning'>The gunslinger's weapon shatters as they impact the ground!</span>")
 			suit_store = null
 	. = ..()
 
