@@ -327,7 +327,6 @@
 	.=..()
 	AddComponent(/datum/component/spawner, list(/mob/living/simple_animal/hostile/asteroid/hivelord/legion/tendril), 200, faction, "peels itself off from", 3)
 
-
 // Snow Legion
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow
 	name = "snow legion"

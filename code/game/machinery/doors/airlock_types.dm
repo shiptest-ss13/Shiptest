@@ -394,6 +394,8 @@
 	note_overlay_file = 'icons/obj/doors/airlocks/external/overlays.dmi'
 	assemblytype = /obj/structure/door_assembly/door_assembly_ext
 	has_hatch = FALSE
+	doorOpen = 'sound/machines/airlocks/external/airlock_ext_open.ogg'
+	doorClose = 'sound/machines/airlocks/external/airlock_ext_close.ogg'
 
 /obj/machinery/door/airlock/external/glass
 	opacity = FALSE
