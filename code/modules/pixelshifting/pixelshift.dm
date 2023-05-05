@@ -30,7 +30,7 @@
 
 // Part about mobs
 /mob/living/pixel_shift(direction)
-	if(!canface())
+	if(!canface() && !pulledby)
 		return FALSE
 	..()
 
