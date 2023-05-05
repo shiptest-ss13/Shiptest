@@ -282,19 +282,6 @@ GLOBAL_LIST_INIT(pda_styles, sortList(list(MONO, VT, ORBITRON, SHARE)))
 #define SHELTER_DEPLOY_BAD_AREA "bad area"
 #define SHELTER_DEPLOY_ANCHORED_OBJECTS "anchored objects"
 
-//debug printing macros
-//_world and _usr should really never be used.
-#define debug2_world(msg) if (GLOB.Debug2) to_chat(world, \
-	type = MESSAGE_TYPE_DEBUG, \
-	text = "DEBUG: [msg]")
-#define debug2_usr(msg) if (GLOB.Debug2&&usr) to_chat(usr, \
-	type = MESSAGE_TYPE_DEBUG, \
-	text = "DEBUG: [msg]")
-#define debug2_admins(msg) if (GLOB.Debug2) to_chat(GLOB.admins, \
-	type = MESSAGE_TYPE_DEBUG, \
-	text = "DEBUG: [msg]")
-#define debug2_world_log(msg) if (GLOB.Debug2) log_world("DEBUG: [msg]")
-
 #define INCREMENT_TALLY(L, stat) if(L[stat]){L[stat]++}else{L[stat] = 1}
 
 /// Removes characters incompatible with file names.
