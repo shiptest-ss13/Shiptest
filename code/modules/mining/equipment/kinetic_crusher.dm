@@ -13,7 +13,7 @@
 	slot_flags = ITEM_SLOT_BACK
 	throwforce = 5
 	throw_speed = 4
-	armour_penetration = 10
+	armour_penetration = 5
 	custom_materials = list(/datum/material/iron=1150, /datum/material/glass=2075)
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("smashed", "crushed", "cleaved", "chopped", "pulped")
@@ -27,8 +27,8 @@
 	var/list/trophies = list()
 	var/charged = TRUE
 	var/charge_time = 15
-	var/detonation_damage = 25
-	var/backstab_bonus = 30
+	var/detonation_damage = 20
+	var/backstab_bonus = 10
 	var/wielded = FALSE // track wielded status on item
 
 /obj/item/kinetic_crusher/Initialize()
@@ -39,7 +39,7 @@
 /obj/item/kinetic_crusher/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 60, 110) //technically it's huge and bulky, but this provides an incentive to use it
-	AddComponent(/datum/component/two_handed, force_unwielded=0, force_wielded=20)
+	AddComponent(/datum/component/two_handed, force_unwielded=0, force_wielded=15)
 
 /obj/item/kinetic_crusher/Destroy()
 	QDEL_LIST(trophies)
@@ -730,6 +730,7 @@
 	desc = "During the early design process of the Kinetic Accelerator, a great deal of money and time was invested in magnetic distruption technology. \
 	Though eventually replaced with concussive blasts, the ever-practical NT designed a second mining tool. \
 	Only a few were ever produced, mostly for NT research institutions, and they are a valulable relic in the postwar age."
+	detonation_damage = 10
 	slowdown = 0.5//hevy
 	attack_verb = list("mashed", "flattened", "bisected", "eradicated","destroyed")
 
@@ -740,7 +741,7 @@
 /obj/item/kinetic_crusher/old/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 60, 110)
-	AddComponent(/datum/component/two_handed, force_unwielded=0, force_wielded=45)//big choppa!
+	AddComponent(/datum/component/two_handed, force_unwielded=0, force_wielded=25)//big choppa!
 
 /obj/item/kinetic_crusher/old/melee_attack_chain(mob/user, atom/target, params)
 	..()
@@ -778,15 +779,15 @@
 	custom_price = 7500//a rare syndicate prototype.
 	charged = TRUE
 	charge_time = 15
-	detonation_damage = 20
-	backstab_bonus = 30
+	detonation_damage = 35
+	backstab_bonus = 15
 	wielded = FALSE // track wielded status on item
 	actions_types = list()
 
 /obj/item/kinetic_crusher/syndie_crusher/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 60, 150)
-	AddComponent(/datum/component/two_handed, force_unwielded=0, force_wielded=35)
+	AddComponent(/datum/component/two_handed, force_unwielded=0, force_wielded=10)
 
 /// triggered on wield of two handed item
 /obj/item/kinetic_crusher/syndie_crusher/on_wield(obj/item/source, mob/user)
