@@ -56,14 +56,14 @@
 
 /obj/structure/aquarium/proc/request_layer(layer_type)
 	/**
-	 * base aq layer
-	 * min_offset = this value is returned on bottom layer mode
-	 * min_offset + 0.1 fish1
-	 * min_offset + 0.2 fish2
-	 * ... these layers are returned for auto layer mode and tracked by used_layers
-	 * min_offset + max_offset = this value is returned for top layer mode
-	 * min_offset + max_offset + 1 = this is used for glass overlay
-	 */
+	* base aq layer
+	* min_offset = this value is returned on bottom layer mode
+	* min_offset + 0.1 fish1
+	* min_offset + 0.2 fish2
+	* ... these layers are returned for auto layer mode and tracked by used_layers
+	* min_offset + max_offset = this value is returned for top layer mode
+	* min_offset + max_offset + 1 = this is used for glass overlay
+	*/
 	//optional todo: hook up sending surface changed on aquarium changing layers
 	switch(layer_type)
 		if(AQUARIUM_LAYER_MODE_BOTTOM)

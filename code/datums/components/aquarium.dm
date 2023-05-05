@@ -15,11 +15,11 @@
 
 
 	/**
-	 *  Fish sprite how to:
-	 *  Need to be centered on 16,16 in the dmi and facing left by default.
-	 *  sprite_height/sprite_width is the size it will have in aquarium and used to control animation boundaries.
-	 *  source_height/source_width is the size of the original icon (ideally only the non-empty parts)
-	 */
+	* Fish sprite how to:
+	* Need to be centered on 16,16 in the dmi and facing left by default.
+	* sprite_height/sprite_width is the size it will have in aquarium and used to control animation boundaries.
+	* source_height/source_width is the size of the original icon (ideally only the non-empty parts)
+	*/
 
 
 	/// Icon used for in aquarium sprite
