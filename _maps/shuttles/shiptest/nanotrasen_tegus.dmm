@@ -65,10 +65,10 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "bv" = (
+/obj/structure/catwalk/over/plated_catwalk,
 /obj/structure/railing{
 	dir = 1
 	},
-/obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating/airless,
 /area/ship/cargo)
 "bz" = (
@@ -132,8 +132,10 @@
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "cI" = (
-/obj/structure/railing,
 /obj/structure/catwalk/over/plated_catwalk,
+/obj/structure/railing{
+	layer = 4.1
+	},
 /turf/open/floor/plating/airless,
 /area/ship/cargo)
 "cK" = (
@@ -534,7 +536,7 @@
 "hd" = (
 /obj/structure/table/reinforced,
 /obj/item/areaeditor/shuttle{
-	pixel_x = 15;
+	pixel_x = 13;
 	pixel_y = 3
 	},
 /obj/machinery/light,
@@ -2165,10 +2167,6 @@
 /turf/open/floor/plasteel,
 /area/ship/engineering/communications)
 "Ak" = (
-/obj/structure/railing{
-	dir = 8;
-	pixel_x = -4
-	},
 /obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
@@ -2289,6 +2287,9 @@
 	},
 /area/ship/maintenance/starboard)
 "Bs" = (
+/obj/structure/railing{
+	dir = 4
+	},
 /turf/open/floor/plasteel/stairs{
 	icon = 'icons/obj/stairs.dmi';
 	dir = 1
@@ -2604,8 +2605,7 @@
 "Ev" = (
 /obj/structure/table/reinforced,
 /obj/item/radio/intercom/wideband{
-	pixel_x = 2;
-	dir = 8
+	dir = 1
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
@@ -3067,6 +3067,10 @@
 /obj/item/megaphone/command,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 8
+	},
+/obj/item/assembly/signaler{
+	name = "Emergency Signaler";
+	desc = "A compact device. Your shuttle team will ping this when they are in danger. Listen for beeps!"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
