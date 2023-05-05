@@ -8,6 +8,7 @@
 	mutantbrain = /obj/item/organ/brain/mmi_holder/posibrain
 	mutanteyes = /obj/item/organ/eyes/robotic
 	mutanttongue = /obj/item/organ/tongue/robot
+	mutantheart = /obj/item/organ/heart/cybernetic/ipc
 	mutantliver = /obj/item/organ/liver/cybernetic/upgraded/ipc
 	mutantstomach = /obj/item/organ/stomach/cell
 	mutantears = /obj/item/organ/ears/robot
