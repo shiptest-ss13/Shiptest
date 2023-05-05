@@ -209,7 +209,6 @@
 	name = "coolant pump"
 	desc = "A small pump powered by the IPC's internal systems for circulating coolant."
 	status = ORGAN_ROBOTIC
-	dose_available = FALSE
 	emp_vulnerability = 30
 
 /obj/item/organ/heart/cybernetic/emp_act(severity)
