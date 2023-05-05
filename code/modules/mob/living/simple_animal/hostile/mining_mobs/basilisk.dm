@@ -116,7 +116,9 @@
 	attack_same = TRUE		// So we'll attack watchers
 	butcher_results = list(/obj/item/stack/sheet/sinew = 4, /obj/item/stack/sheet/bone = 2)
 	lava_drinker = FALSE
-	var/shell_health = 50
+	maxHealth = 40
+	health = 40
+	var/shell_health = 80 //Tough to crack, easy to kill.
 	var/has_shell = TRUE
 	var/list/shell_loot = list(/obj/item/stack/ore/diamond, /obj/item/stack/ore/diamond)
 	var/shell_snap_message = FALSE
@@ -159,6 +161,7 @@
 /mob/living/simple_animal/hostile/asteroid/basilisk/whitesands/bullet_act(obj/projectile/P)
 	shell_damage(BULLET_SHELL_DAMAGE)
 	if(has_shell)
+		playsound(src, pick('sound/weapons/bulletflyby.ogg', 'sound/weapons/bulletflyby2.ogg', 'sound/weapons/bulletflyby3.ogg'), 85, TRUE)
 		visible_message("<span class='notice'>The [P] is absorbed by the [src]'s shell, dealing minimal damage!</span>") //make it less confusing when bullets do no damage
 	return ..()
 

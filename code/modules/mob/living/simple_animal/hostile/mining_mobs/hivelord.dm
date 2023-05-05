@@ -386,8 +386,6 @@
 					backpack_contents += list(/obj/item/reagent_containers/hypospray/medipen/survival = pickweight(list(1 = 3, 2 = 2, 3 = 1)))
 				if(prob(30))
 					backpack_contents += /obj/item/gun/energy/kinetic_accelerator
-			else
-				back = /obj/item/kinetic_crusher
 		if("Oldminer")
 			suit = /obj/item/clothing/suit/hooded/explorer/old
 			mask = /obj/item/clothing/mask/gas/explorer/old

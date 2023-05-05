@@ -4,9 +4,9 @@
 	desc = "Heavy duty metal shutters that open mechanically."
 	icon = 'icons/obj/doors/shutters.dmi'
 	damage_deflection = 20
-	open_sound = 'sound/machines/shutters_open.ogg'
-	close_sound = 'sound/machines/shutters_close.ogg'
 	smoothing_groups = list(SMOOTH_GROUP_AIRLOCK)
+	open_sound = 'sound/machines/airlocks/shutters/shutters_open.ogg'
+	close_sound = 'sound/machines/airlocks/shutters/shutters_close.ogg'
 
 /obj/machinery/door/poddoor/shutters/preopen
 	icon_state = "open"
@@ -28,8 +28,8 @@
 	desc = "A gate made out of hard metal."
 	icon = 'icons/obj/doors/gates.dmi'
 	damage_deflection = 20
-	open_sound = 'sound/machines/gate.ogg'
-	close_sound = 'sound/machines/gate.ogg'
+	open_sound = 'sound/machines/airlocks/gate.ogg'
+	close_sound = 'sound/machines/airlocks/gate.ogg'
 	glass = TRUE
 	opacity = FALSE
 
