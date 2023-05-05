@@ -72,14 +72,14 @@ const RecipeList = (props, context) => {
     const recipe = recipes[title];
     if (recipe.ref === undefined) {
       return (
-        <Collapsible ml={1} color="label" title={title}>
+        <Collapsible ml={1} color="label" title={title} key={title}>
           <Box ml={1}>
             <RecipeList recipes={recipe} />
           </Box>
         </Collapsible>
       );
     } else {
-      return <Recipe title={title} recipe={recipe} />;
+      return <Recipe title={title} recipe={recipe} key={title} />;
     }
   });
 };
