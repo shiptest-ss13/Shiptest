@@ -23,7 +23,7 @@
 	maxHealth = 60
 	health = 60
 	speed = 0
-
+	mob_size = MOB_SIZE_LARGE
 	obj_damage = 60
 	melee_damage_lower = 20
 	melee_damage_upper = 30
