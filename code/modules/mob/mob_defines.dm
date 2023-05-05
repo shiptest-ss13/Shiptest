@@ -223,8 +223,5 @@
 	/// Whether the typing indicator is on. Not on /living level because of verbs
 	var/typing_indicator = FALSE
 
-	///Is the mob pixel shifted?
-	var/is_shifted
-
 	///Is the mob actively shifting?
 	var/shifting

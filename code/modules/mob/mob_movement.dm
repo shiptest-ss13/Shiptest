@@ -90,6 +90,9 @@
 	if(mob.force_moving)
 		return FALSE
 	if(mob.shifting)
+		if (mob.pulling)
+			mob.pulling.pixel_shift(direct)
+			return FALSE
 		mob.pixel_shift(direct)
 		return FALSE
 	else if(mob.is_shifted) //Cancels pixel offset on movement
