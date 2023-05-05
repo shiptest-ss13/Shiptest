@@ -81,13 +81,13 @@ GENE SCANNER
 /obj/item/healthanalyzer
 	name = "health analyzer"
 	icon = 'icons/obj/device.dmi'
-	icon_state = "health"
-	item_state = "healthanalyzer"
+	icon_state = "analyzer-1"
+	item_state = "analyzer"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	pickup_sound =  'sound/items/handling/device_pickup.ogg'
 	drop_sound = 'sound/items/handling/device_drop.ogg'
-	desc = "A hand-held body scanner capable of distinguishing vital signs of the subject."
+	desc = "A chunky brick with a worn leather carry handle. Its thick screen and heavy redundancy makes it tough to break."
 	flags_1 = CONDUCT_1
 	item_flags = NOBLUDGEON
 	slot_flags = ITEM_SLOT_BELT
@@ -99,6 +99,10 @@ GENE SCANNER
 	var/mode = SCANNER_VERBOSE
 	var/scanmode = SCANMODE_HEALTH
 	var/advanced = FALSE
+	var/healthmode = "analyzer-1"
+	var/reagentmode = "reagentanalyzer"
+	var/healthmodeinhand = "analyzer"
+	var/reagentmodeinhand = "reagentanalyzer-1"
 	custom_price = 300
 
 /obj/item/healthanalyzer/suicide_act(mob/living/carbon/user)
@@ -106,11 +110,19 @@ GENE SCANNER
 	return BRUTELOSS
 
 /obj/item/healthanalyzer/attack_self(mob/user)
+	playsound(get_turf(user), 'sound/machines/click.ogg', 50, TRUE)
 	scanmode = !scanmode
-	to_chat(user, "<span class='notice'>You switch the health analyzer to [scanmode ? "scan chemical contents" : "check physical health"].</span>")
+	if(scanmode == 1)
+		balloon_alert(user, "scanning reagents")
+		icon_state = reagentmode
+		item_state = reagentmodeinhand
+	else
+		balloon_alert(user, "scanning health")
+		icon_state = healthmode
+		item_state = healthmodeinhand
 
 /obj/item/healthanalyzer/attack(mob/living/M, mob/living/carbon/human/user)
-	flick("[icon_state]-scan", src)	//makes it so that it plays the scan animation upon scanning, including clumsy scanning
+	flick("[icon_state]-anim", src) //makes it so that it plays the scan animation upon scanning, including clumsy scanning
 	playsound(src, 'sound/effects/fastbeep.ogg', 10)
 
 	// Clumsiness/brain damage check
@@ -409,8 +421,14 @@ GENE SCANNER
 /obj/item/healthanalyzer/advanced
 	name = "advanced health analyzer"
 	icon_state = "health_adv"
+	icon_state = "advanalyzer"
+	item_state = "advanalyzer"
 	desc = "A hand-held body scanner able to distinguish vital signs of the subject with high accuracy."
 	advanced = TRUE
+	healthmode = "advanalyzer"
+	reagentmode = "advreagentanalyzer"
+	healthmodeinhand = "advanalyzer"
+	reagentmodeinhand = "advreagentanalyzer"
 
 /obj/item/analyzer
 	desc = "A hand-held environmental scanner which reports current gas levels. Alt-Click to use the built in barometer function."
@@ -843,8 +861,8 @@ GENE SCANNER
 /obj/item/reagent_scanner //essentially just the code from the PDA reagent scanner, but shoved into this object, and specifies amount
 	name = "reagent scanner"
 	icon = 'icons/obj/device.dmi'
-	icon_state = "reagent"
-	item_state = "reagentanalyzer"
+	icon_state = "reagentanalyzer"
+	item_state = "reagentanalyzer-1"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	pickup_sound =  'sound/items/handling/device_pickup.ogg'
@@ -861,7 +879,7 @@ GENE SCANNER
 
 /obj/item/reagent_scanner/afterattack(atom/A as mob|obj|turf|area, mob/user, proximity)
 	. = ..()
-	flick("[icon_state]-scan", src)
+	flick("[icon_state]-anim", src)
 	if(!proximity)
 		return
 	playsound(src, 'sound/effects/fastbeep.ogg', 10)
