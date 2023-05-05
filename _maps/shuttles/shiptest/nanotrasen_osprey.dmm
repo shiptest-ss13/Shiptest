@@ -1110,6 +1110,11 @@
 	},
 /obj/structure/window/plasma/reinforced/spawner/west,
 /obj/structure/window/plasma/reinforced/spawner,
+/obj/machinery/door/poddoor{
+	id = "osprey_thruster_starboard";
+	name = "Thruster Blast Door";
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "ie" = (
@@ -1501,6 +1506,11 @@
 	},
 /obj/structure/window/plasma/reinforced/spawner/west,
 /obj/structure/window/plasma/reinforced/spawner/north,
+/obj/machinery/door/poddoor{
+	id = "osprey_thruster_starboard";
+	name = "Thruster Blast Door";
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "kD" = (
@@ -2124,9 +2134,6 @@
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/engineering)
-"ol" = (
-/turf/closed/wall/mineral/titanium,
-/area/ship/science/ai_chamber)
 "oo" = (
 /obj/machinery/space_heater,
 /obj/effect/turf_decal/industrial/warning{
@@ -2394,11 +2401,6 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/machinery/door/poddoor{
-	id = "osprey_thruster_port";
-	name = "Thruster Blast Door";
-	dir = 4
-	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "pH" = (
@@ -2614,6 +2616,11 @@
 	},
 /obj/structure/window/plasma/reinforced/spawner/west,
 /obj/structure/window/plasma/reinforced/spawner/north,
+/obj/machinery/door/poddoor{
+	id = "osprey_thruster_port";
+	name = "Thruster Blast Door";
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "ra" = (
@@ -2687,11 +2694,6 @@
 /area/ship/crew/dorm)
 "rG" = (
 /obj/machinery/power/shuttle/engine/fueled/plasma{
-	dir = 4
-	},
-/obj/machinery/door/poddoor{
-	id = "osprey_thruster_port";
-	name = "Thruster Blast Door";
 	dir = 4
 	},
 /turf/open/floor/plating,
@@ -3449,6 +3451,11 @@
 	},
 /obj/structure/window/plasma/reinforced/spawner/west,
 /obj/structure/window/plasma/reinforced/spawner/north,
+/obj/machinery/door/poddoor{
+	id = "osprey_thruster_starboard";
+	name = "Thruster Blast Door";
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "wq" = (
@@ -3549,6 +3556,11 @@
 	},
 /obj/structure/window/plasma/reinforced/spawner/west,
 /obj/structure/window/plasma/reinforced/spawner,
+/obj/machinery/door/poddoor{
+	id = "osprey_thruster_starboard";
+	name = "Thruster Blast Door";
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "wR" = (
@@ -3569,11 +3581,6 @@
 /area/ship/medical)
 "wT" = (
 /obj/machinery/power/shuttle/engine/fueled/plasma{
-	dir = 4
-	},
-/obj/machinery/door/poddoor{
-	id = "osprey_thruster_starboard";
-	name = "Thruster Blast Door";
 	dir = 4
 	},
 /turf/open/floor/plating,
@@ -3676,6 +3683,7 @@
 /obj/effect/turf_decal/corner/opaque/green{
 	dir = 4
 	},
+/obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "xG" = (
@@ -5175,11 +5183,6 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/machinery/door/poddoor{
-	id = "osprey_thruster_starboard";
-	name = "Thruster Blast Door";
-	dir = 4
-	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "Hn" = (
@@ -6089,6 +6092,7 @@
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
+/obj/machinery/light/dim/directional/north,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "NH" = (
@@ -6987,6 +6991,11 @@
 	},
 /obj/structure/window/plasma/reinforced/spawner/west,
 /obj/structure/window/plasma/reinforced/spawner/north,
+/obj/machinery/door/poddoor{
+	id = "osprey_thruster_port";
+	name = "Thruster Blast Door";
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Tq" = (
@@ -7003,6 +7012,11 @@
 	},
 /obj/structure/window/plasma/reinforced/spawner/west,
 /obj/structure/window/plasma/reinforced/spawner,
+/obj/machinery/door/poddoor{
+	id = "osprey_thruster_port";
+	name = "Thruster Blast Door";
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Tt" = (
@@ -7296,6 +7310,11 @@
 	},
 /obj/structure/window/plasma/reinforced/spawner/west,
 /obj/structure/window/plasma/reinforced/spawner,
+/obj/machinery/door/poddoor{
+	id = "osprey_thruster_port";
+	name = "Thruster Blast Door";
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "VC" = (
@@ -7875,18 +7894,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "ZJ" = (
-/obj/effect/turf_decal/corner/transparent/neutral{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/firealarm/directional/east{
-	pixel_y = 4
-	},
-/turf/open/floor/plasteel,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/hallway/central)
 "ZK" = (
 /obj/structure/window/reinforced{
@@ -8124,13 +8132,13 @@ WU
 ao
 kP
 uz
-ol
 VV
 VV
 VV
 VV
 VV
-ol
+VV
+VV
 ao
 kP
 uz
@@ -8468,7 +8476,7 @@ Tq
 rJ
 bl
 yQ
-ZJ
+sJ
 sJ
 gy
 yE
@@ -8679,7 +8687,7 @@ xN
 ET
 IW
 IW
-sG
+ZJ
 Es
 cY
 Nd
@@ -8695,7 +8703,7 @@ xY
 eG
 Qy
 Ge
-sG
+ZJ
 gV
 gV
 bs
@@ -8716,7 +8724,7 @@ Rq
 li
 sG
 su
-sG
+ZJ
 AB
 zJ
 JW
@@ -8728,7 +8736,7 @@ Cp
 TR
 zU
 uN
-sG
+ZJ
 kV
 sG
 li
