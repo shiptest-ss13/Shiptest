@@ -115,7 +115,7 @@ A shrill beep coming from your SpySpeks means that they can't connect to the inc
 //miner monitoring kit
 /obj/item/storage/box/rxglasses/minerspykit
 	name = "miner monitoring kit"
-	desc = "this box contains an EXOCOM monitoring kit; with built-in displays to view an advanced mining camera."
+	desc = "Contains an EXOCOM monitoring kit, with built-in displays to view an advanced mining camera."
 
 /obj/item/spy_bug/miner
 	icon = 'icons/obj/telescience.dmi'
