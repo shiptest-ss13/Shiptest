@@ -3,17 +3,32 @@ on:
   push:
     branches:
       - master
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
 jobs:
   generate_documentation:
     if: "!contains(github.event.head_commit.message, '[ci skip]')"
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v2
-      - name: Setup cache
-        uses: actions/cache@v2
+      - uses: actions/checkout@v3
+      - name: Restore SpacemanDMM cache
+        uses: actions/cache@v3
         with:
-          path: $HOME/SpacemanDMM
-          key: ${{ runner.os }}-spacemandmm
+          path: ~/SpacemanDMM
+          key: ${{ runner.os }}-spacemandmm-${{ secrets.CACHE_PURGE_KEY }}
       - name: Install SpacemanDMM
         run: bash tools/ci/install_spaceman_dmm.sh dmdoc
       - name: Generate documentation
@@ -21,11 +36,13 @@ jobs:
           ~/dmdoc
           touch dmdoc/.nojekyll
           echo codedocs.shiptest.net > dmdoc/CNAME
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@3.7.1
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
         with:
-          BRANCH: gh-pages
-          CLEAN: true
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SINGLE_COMMIT: true
-          FOLDER: dmdoc
+          # Upload output directory
+          path: "dmdoc/"
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
