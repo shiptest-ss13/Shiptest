@@ -143,7 +143,8 @@
 	foodtype = RAW | MEAT | TOXIC
 
 /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/ethereal
-	icon_state = "elzuosa cellulose"
+	name = "elzuosa cellulose"
+	icon_state = "etherealmeat"
 	desc = "Technically vegan, but nobody has tested that theory."
 	filling_color = "#97ee63"
 	list_reagents = list(/datum/reagent/consumable/liquidelectricity = 3)
