@@ -908,7 +908,7 @@
  * * we are not restrained
  */
 /mob/proc/canface()
-	if(world.time < client.last_turn)
+	if(client && world.time < client.last_turn)
 		return FALSE
 	if(stat >= UNCONSCIOUS)
 		return FALSE
