@@ -1,5 +1,29 @@
 #define REEBE_DEFAULT_ATMOS "n2=100;TEMP=100.00"
 
+/datum/map_generator/single_biome/reebe
+	use_cellautomata = FALSE
+
+	biome_type = /datum/biome/reebe
+	area_type = /area/overmap_encounter/planetoid/reebe
+
+/datum/biome/reebe
+	open_turf_types = list(/turf/open/chasm/reebe_void = 1)
+
+	flora_spawn_list = list(
+		/obj/machinery/power/supermatter_crystal/shard/hugbox = 1,
+		/obj/item/nuke_core/supermatter_sliver = 5,
+		/obj/structure/lattice/clockwork = 60,
+		/obj/structure/lattice/catwalk/clockwork = 60
+	)
+	feature_spawn_list = null
+	mob_spawn_list = list(
+		/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/forgotten = 1
+	)
+
+	flora_spawn_chance = 6
+	feature_spawn_chance = 0
+	mob_spawn_chance = 1
+
 //AREAS
 /area/ruin/reebe
 	ambientsounds = REEBE
@@ -50,6 +74,7 @@
 /turf/closed/mineral/random/reebe
 	baseturfs = /turf/open/floor/grass/fairy/reebe
 	initial_gas_mix = REEBE_DEFAULT_ATMOS
+
 //LATICES
 /obj/structure/lattice/clockwork
 	name = "cog lattice"
@@ -65,26 +90,3 @@
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_LATTICE, SMOOTH_GROUP_CATWALK, SMOOTH_GROUP_OPEN_FLOOR)
 	canSmoothWith = list(SMOOTH_GROUP_CATWALK)
-
-//actual gen
-/datum/map_generator/cave_generator/reebe
-	open_turf_types = list(/turf/open/chasm/reebe_void = 1)
-	closed_turf_types = list(/turf/open/chasm/reebe_void = 1)
-
-	//closed_turf_types =  list()
-
-	mob_spawn_chance = 1
-	flora_spawn_chance = 6
-
-	mob_spawn_list = list(
-		/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/forgotten = 1)
-
-	flora_spawn_list = list(
-		/obj/machinery/power/supermatter_crystal/shard/hugbox = 1,
-		/obj/item/nuke_core/supermatter_sliver = 5,
-		/obj/structure/lattice/clockwork = 60,
-		/obj/structure/lattice/catwalk/clockwork = 60)
-	feature_spawn_list = null
-
-	initial_closed_chance = 0
-
