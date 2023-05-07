@@ -793,7 +793,8 @@ GLOBAL_LIST_INIT(ws_survivor_default_loot, list(
 		/obj/item/seeds/starthistle,
 		/obj/item/seeds/cherry/bomb,
 		/obj/item/seeds/berry/glow,
-		/obj/item/seeds/sunflower/moonflower)
+		/obj/item/seeds/sunflower/moonflower
+		)
 
 /obj/effect/spawner/lootdrop/flora
 	name = "random flora spawner"
@@ -830,7 +831,8 @@ GLOBAL_LIST_INIT(ws_survivor_default_loot, list(
 		/obj/structure/flora/ash/cacti,
 		/obj/structure/flora/ash/cap_shroom,
 		/obj/structure/flora/ash/chilly,
-		/obj/structure/flora/tree/palm)
+		/obj/structure/flora/tree/palm
+		)
 	lootcount = 1
 
 /obj/effect/spawner/lootdrop/flower
@@ -840,5 +842,90 @@ GLOBAL_LIST_INIT(ws_survivor_default_loot, list(
 		/obj/structure/flora/ausbushes/ywflowers,
 		/obj/structure/flora/ausbushes/ppflowers,
 		/obj/structure/flora/ausbushes/fullgrass,
-		/obj/structure/flora/ausbushes/sparsegrass)
+		/obj/structure/flora/ausbushes/sparsegrass
+		)
 	lootcount = 1
+
+/obj/effect/spawner/lootdrop/waste
+	name = "wasteplanet loot spawner"
+
+/obj/effect/spawner/lootdrop/waste/mechwreck
+	name = "wasteplanet mech wreckage"
+	loot = list(
+		/obj/structure/mecha_wreckage/ripley = 15,
+		/obj/structure/mecha_wreckage/ripley/firefighter = 9,
+		/obj/structure/mecha_wreckage/ripley/mkii = 9,
+		/obj/structure/mecha_wreckage/ripley/cmm = 9
+		)
+
+/obj/effect/spawner/lootdrop/waste/mechwreck/rare
+	loot = list(
+		/obj/structure/mecha_wreckage/durand = 12.5,
+		/obj/structure/mecha_wreckage/durand/cmm = 12.5,
+		/obj/structure/mecha_wreckage/odysseus = 25,
+		/obj/structure/mecha_wreckage/gygax = 25
+		)
+
+/obj/effect/spawner/lootdrop/waste/trash //debatable if this is actually loot
+	loot = list(
+		/obj/effect/decal/cleanable/greenglow/filled = 30,
+		/obj/effect/decal/cleanable/greenglow/ecto = 1,
+		/obj/effect/decal/cleanable/glass = 30,
+		/obj/effect/decal/cleanable/glass/plasma = 30,
+		/obj/effect/decal/cleanable/glass/strange = 30,
+		/obj/effect/decal/cleanable/molten_object = 30,
+		/obj/effect/decal/cleanable/molten_object/large = 30,
+		/obj/effect/decal/cleanable/oil = 30,
+		/obj/effect/decal/cleanable/oil/slippery = 30, // :)
+		/obj/effect/decal/cleanable/plastic = 30,
+		/obj/effect/decal/cleanable/ash = 30,
+		/obj/effect/decal/cleanable/ash/large = 30,
+	)
+
+/obj/effect/spawner/lootdrop/waste/radiation
+	loot = list(
+		/obj/structure/radioactive = 6,
+		/obj/structure/radioactive/stack = 6,
+		/obj/structure/radioactive/waste = 6
+	)
+
+/obj/effect/spawner/lootdrop/waste/radiation/more_rads
+	loot = list(
+		/obj/structure/radioactive = 3,
+		/obj/structure/radioactive/stack = 12,
+		/obj/structure/radioactive/waste = 12
+	)
+
+/obj/effect/spawner/lootdrop/waste/atmos_can
+	loot = list(
+		/obj/machinery/portable_atmospherics/canister/toxins = 3,
+		/obj/machinery/portable_atmospherics/canister/carbon_dioxide = 3,
+		/obj/machinery/portable_atmospherics/canister/nitrogen = 3,
+		/obj/machinery/portable_atmospherics/canister/oxygen = 3,
+		/obj/machinery/portable_atmospherics/canister/nitrous_oxide = 3,
+		/obj/machinery/portable_atmospherics/canister/water_vapor
+	)
+
+/obj/effect/spawner/lootdrop/waste/atmos_can/rare
+	loot = list(
+		/obj/machinery/portable_atmospherics/canister/tritium = 3,
+		/obj/machinery/portable_atmospherics/canister/pluoxium = 3
+	)
+
+/obj/effect/spawner/lootdrop/waste/salvageable
+	loot = list(
+		/obj/structure/salvageable/machine = 20,
+		/obj/structure/salvageable/autolathe = 15,
+		/obj/structure/salvageable/computer = 10,
+		/obj/structure/salvageable/protolathe = 10,
+		/obj/structure/salvageable/circuit_imprinter = 8,
+		/obj/structure/salvageable/destructive_analyzer = 8,
+		/obj/structure/salvageable/server = 8
+	)
+
+/obj/effect/spawner/lootdrop/waste/girder
+	loot = list(
+		/obj/structure/girder,
+		/obj/structure/girder/displaced,
+		/obj/structure/girder/reinforced
+	)
