@@ -706,7 +706,6 @@ update_label()
 	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
 	assignment = "Prisoner"
-	registered_name = "Scum"
 	uses_overlays = FALSE
 	var/goal = 0 //How far from freedom?
 	var/points = 0
