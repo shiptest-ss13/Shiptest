@@ -4,10 +4,10 @@
 ///////////////// Booze & Bottles ///////////////////
 
 /datum/crafting_recipe/lizardwine
-	name = "Kalixcis Wine"
+	name = "lizard Wine"
 	time = 40
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/grown/ash_flora/cactus_fruit =1,
+		/obj/item/organ/tail/lizard = 1,
 		/datum/reagent/consumable/ethanol = 100
 	)
 	blacklist = list(/obj/item/organ/tail/lizard/fake)

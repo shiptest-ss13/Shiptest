@@ -1,5 +1,5 @@
 /mob/living/silicon/ai/examine(mob/user)
-	. = list("<span class='info'>This is [icon2html(src, user)] <EM>[src]</EM>!")
+	. = list("<span class='info'>*---------*\nThis is [icon2html(src, user)] <EM>[src]</EM>!")
 	if (stat == DEAD)
 		. += "<span class='deadsay'>It appears to be powered-down.</span>"
 	else
@@ -14,12 +14,9 @@
 			else
 				. += "<span class='warning'><B>Its casing is melted and heat-warped!</B></span>"
 		if(deployed_shell)
-			. += "The wireless networking light is blinking."
+			. += "The wireless networking light is blinking.\n"
 		else if (!shunted && !client)
-			. += "[src]Core.exe has stopped responding! NTOS is searching for a solution to the problem..."
-	. += "</span>"
+			. += "[src]Core.exe has stopped responding! NTOS is searching for a solution to the problem...\n"
+	. += "*---------*</span>"
 
 	. += ..()
-
-/mob/living/silicon/ai/get_examine_string(mob/user, thats = FALSE)
-	return null

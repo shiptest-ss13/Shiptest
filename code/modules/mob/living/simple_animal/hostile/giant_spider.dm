@@ -53,7 +53,6 @@
 	gold_core_spawnable = HOSTILE_SPAWN
 	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_VISIBLE
 	footstep_type = FOOTSTEP_MOB_CLAW
-	mob_size = MOB_SIZE_LARGE
 	var/playable_spider = FALSE
 	var/datum/action/innate/spider/lay_web/lay_web
 	var/directive = "" //Message passed down to children, to relay the creator's orders
@@ -196,14 +195,15 @@
 	icon_state = "tarantula"
 	icon_living = "tarantula"
 	icon_dead = "tarantula_dead"
-	maxHealth = 150 // woah nelly
-	health = 150
+	maxHealth = 225 // woah nelly
+	health = 225
 	melee_damage_lower = 25
 	melee_damage_upper = 35
 	poison_per_bite = 0
 	move_to_delay = 8
-	speed = 9
+	speed = 7
 	status_flags = NONE
+	mob_size = MOB_SIZE_LARGE
 	gold_core_spawnable = NO_SPAWN
 	var/slowed_by_webs = FALSE
 

@@ -1,13 +1,13 @@
 /obj/item/retractor
 	name = "retractor"
-	desc = "Features a tensile pivot that helps train slow, precise manipulation. It can even be locked in place."
+	desc = "Retracts stuff."
 	icon = 'icons/obj/surgery.dmi' //SHIPTEST edit: cool and new tools
-	icon_state = "retractor-1"
+	icon_state = "retractor"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	pickup_sound =  'sound/items/handling/surgery2_pickup.ogg'
 	drop_sound = 'sound/items/handling/knife2_drop.ogg'
-	item_state = "clamps-1"
+	item_state = "clamps"
 	custom_materials = list(/datum/material/iron=6000, /datum/material/glass=3000)
 	flags_1 = CONDUCT_1
 	item_flags = SURGICAL_TOOL
@@ -22,14 +22,14 @@
 
 /obj/item/hemostat
 	name = "hemostat"
-	desc = "A tiny needle-eye has been machined into one of the clamps to streamline the application of ligature."
+	desc = "You think you have seen this before."
 	icon = 'icons/obj/surgery.dmi' //SHIPTEST edit: cool and new tools
-	icon_state = "hemostat-1"
+	icon_state = "hemostat"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	pickup_sound =  'sound/items/handling/surgery2_pickup.ogg'
 	drop_sound = 'sound/items/handling/knife2_drop.ogg'
-	item_state = "clamps-1"
+	item_state = "clamps"
 	custom_materials = list(/datum/material/iron=5000, /datum/material/glass=2500)
 	flags_1 = CONDUCT_1
 	item_flags = SURGICAL_TOOL
@@ -45,14 +45,14 @@
 
 /obj/item/cautery
 	name = "cautery"
-	desc = "An obtuse, rectangular design is just big enough to accomodate this cautery's incredibly durable battery."
+	desc = "This stops bleeding."
 	icon = 'icons/obj/surgery.dmi' //SHIPTEST edit: cool and new tools
-	icon_state = "cautery-1"
+	icon_state = "cautery"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	pickup_sound =  'sound/items/handling/surgery2_pickup.ogg'
 	drop_sound = 'sound/items/handling/knife2_drop.ogg'
-	item_state = "cautery-1"
+	item_state = "cautery"
 	custom_materials = list(/datum/material/iron=2500, /datum/material/glass=750)
 	flags_1 = CONDUCT_1
 	item_flags = SURGICAL_TOOL
@@ -68,11 +68,11 @@
 
 /obj/item/surgicaldrill
 	name = "surgical drill"
-	desc = "The ergonomic foregrip is actually horrible for your hands, however the drill never sees enough use for it to be realized."
+	desc = "You can drill using this item. You dig?"
 	icon = 'icons/obj/surgery.dmi' //SHIPTEST edit: cool and new tools
-	icon_state = "drill-1"
-	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
+	icon_state = "drill"
+	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
 	pickup_sound =  'sound/items/handling/surgery1_pickup.ogg'
 	drop_sound = 'sound/items/handling/metal_drop.ogg'
 	hitsound = 'sound/weapons/circsawhit.ogg'
@@ -107,14 +107,14 @@
 
 /obj/item/scalpel
 	name = "scalpel"
-	desc = "The handle of the scalpel is an awkward ergonomic mold, designed to encourage proper form. A blade release button on the end allows for easy cleaning and replacement."
+	desc = "Cut, cut, and once more cut."
 	icon = 'icons/obj/surgery.dmi' //SHIPTEST edit: cool and new tools
-	icon_state = "scalpel-1"
+	icon_state = "scalpel"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	pickup_sound =  'sound/items/handling/knife1_pickup.ogg'
 	drop_sound = 'sound/items/handling/knife2_drop.ogg'
-	item_state = "scalpel-1"
+	item_state = "scalpel"
 	flags_1 = CONDUCT_1
 	item_flags = SURGICAL_TOOL | EYE_STAB
 	force = 10
@@ -144,10 +144,9 @@
 
 /obj/item/circular_saw
 	name = "circular saw"
-	desc = "The protective drill cover often becomes crusted with blood after a few uses, giving this saw a reputation for being high-maintenance."
+	desc = "For heavy duty cutting."
 	icon = 'icons/obj/surgery.dmi' //SHIPTEST edit: cool and new tools
-	icon_state = "saw-1"
-	item_state = "saw-1"
+	icon_state = "saw"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	pickup_sound =  'sound/items/handling/surgery1_pickup.ogg'
@@ -275,11 +274,8 @@
 
 /obj/item/scalpel/advanced
 	name = "laser scalpel"
-	desc = "This updated design was released on a fast schedule, aiming to lower the amount of circular saws being turned into makeshift weaponry."
-	icon_state = "advscalpel"
-	item_state = "advscalpel"
-	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
+	desc = "An advanced scalpel which uses laser technology to cut."
+	icon_state = "scalpel_a"
 	hitsound = 'sound/weapons/blade1.ogg'
 	force = 16
 	toolspeed = 0.7
@@ -293,16 +289,16 @@
 	playsound(get_turf(user), 'sound/machines/click.ogg', 50, TRUE)
 	if(tool_behaviour == TOOL_SCALPEL)
 		tool_behaviour = TOOL_SAW
-		balloon_alert(user, "saw mode")
+		to_chat(user, "<span class='notice'>You increase the power of [src], now it can cut bones.</span>")
 		set_light_range(2)
 		force += 1 //we don't want to ruin sharpened stuff
-		icon_state = "advsaw"
+		icon_state = "saw_a"
 	else
 		tool_behaviour = TOOL_SCALPEL
-		balloon_alert(user, "scalpel mode")
+		to_chat(user, "<span class='notice'>You lower the power of [src], it can no longer cut bones.</span>")
 		set_light_range(1)
 		force -= 1
-		icon_state = "advscalpel"
+		icon_state = "scalpel_a"
 
 /obj/item/scalpel/advanced/examine()
 	. = ..()
@@ -310,13 +306,11 @@
 
 /obj/item/retractor/advanced
 	name = "mechanical pinches"
-	desc = "The innate need for surgeons to show off to their peers has made this wired glove the source of many broken coffee cups."
+	desc = "An ungainly set of rods and gears mounted onto a gauntlet apparatus."
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
-	icon_state = "advretractor"
-	item_state = "advclamps"
-	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
+	icon_state = "retractor_a"
+	item_state = "adv_clamps"
 	toolspeed = 0.7
 	force = 10 //this is in essence a hunk of metal strapped to someone's hand, it's gonna hurt
 
@@ -324,12 +318,12 @@
 	playsound(get_turf(user), 'sound/items/change_drill.ogg', 50, TRUE)
 	if(tool_behaviour == TOOL_RETRACTOR)
 		tool_behaviour = TOOL_HEMOSTAT
-		balloon_alert(user, "hemostat mode")
-		icon_state = "advhemostat"
+		to_chat(user, "<span class='notice'>You configure the gears of [src], they are now in hemostat mode.</span>")
+		icon_state = "hemostat_a"
 	else
 		tool_behaviour = TOOL_RETRACTOR
-		balloon_alert(user, "retractor mode")
-		icon_state = "advretractor"
+		to_chat(user, "<span class='notice'>You configure the gears of [src], they are now in retractor mode.</span>")
+		icon_state = "retractor_a"
 
 /obj/item/retractor/advanced/examine()
 	. = ..()
@@ -337,11 +331,8 @@
 
 /obj/item/surgicaldrill/advanced
 	name = "searing tool"
-	desc = "The hollow central grip allows for a precise, push-dagger holding style. Affectionately referred to as the Kunai by doctors of stealthier inclinations."
-	icon_state = "advdrill"
-	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
-	item_state = "advcautery"
+	desc = "It projects a high power laser used for medical application."
+	icon_state = "surgicaldrill_a"
 	hitsound = 'sound/items/welder.ogg'
 	toolspeed = 0.7
 	light_system = MOVABLE_LIGHT
@@ -353,12 +344,12 @@
 	playsound(get_turf(user), 'sound/weapons/tap.ogg', 50, TRUE)
 	if(tool_behaviour == TOOL_DRILL)
 		tool_behaviour = TOOL_CAUTERY
-		balloon_alert(user, "cautery mode")
-		icon_state = "advcautery"
+		to_chat(user, "<span class='notice'>You focus the lenses of [src], it is now in mending mode.</span>")
+		icon_state = "cautery_a"
 	else
 		tool_behaviour = TOOL_DRILL
-		balloon_alert(user, "drill mode")
-		icon_state = "advdrill"
+		to_chat(user, "<span class='notice'>You dilate the lenses of [src], it is now in drilling mode.</span>")
+		icon_state = "surgicaldrill_a"
 
 /obj/item/surgicaldrill/advanced/examine()
 	. = ..()

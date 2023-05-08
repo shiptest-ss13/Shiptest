@@ -38,6 +38,7 @@ GLOBAL_LIST_INIT(tendrils, list())
 		if(ismineralturf(F))
 			var/turf/closed/mineral/M = F
 			M.ScrapeAway(null, CHANGETURF_IGNORE_AIR)
+	AddComponent(/datum/component/gps, "Eerie Signal")
 	GLOB.tendrils += src
 
 /obj/structure/spawner/lavaland/deconstruct(disassembled)
@@ -60,6 +61,7 @@ GLOBAL_LIST_INIT(tendrils, list())
 				L.client.give_award(/datum/award/score/tendril_score, L) //Progresses score by one
 	GLOB.tendrils -= src
 	QDEL_NULL(emitted_light)
+	QDEL_NULL(gps)
 	return ..()
 
 /obj/effect/light_emitter/tendril

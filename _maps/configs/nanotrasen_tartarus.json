@@ -1,0 +1,29 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Tartarus-class Military Carrier",
+	"prefix": "NTSV",
+	"namelists": ["GENERAL", "BRITISH_NAVY", "MYTHOLOGICAL", "WEAPONS"],
+	"map_short_name": "Tartarus-class",
+	"map_path": "_maps/shuttles/shiptest/nanotrasen_tartarus.dmm",
+	"job_slots": {
+		"Head of Security": {
+			"outfit": "/datum/outfit/job/hos/nanotrasen",
+			"officer": true,
+			"slots": 1
+		},
+		"Pilot": {
+			"outfit": "/datum/outfit/job/cargo_tech/pilot",
+			"officer": true,
+			"slots": 1
+		},
+		"Security Officer": {
+			"outfit": "/datum/outfit/job/security/nanotrasen",
+			"slots": 4
+		},
+		"Deputized Prisoner": {
+			"outfit": "/datum/outfit/job/assistant/ex_prisoner",
+			"slots": 3
+		}
+	},
+	"enabled": true
+}

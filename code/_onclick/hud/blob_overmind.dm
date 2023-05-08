@@ -3,7 +3,6 @@
 	icon = 'icons/mob/blob.dmi'
 
 /atom/movable/screen/blob/MouseEntered(location,control,params)
-	. = ..()
 	openToolTip(usr,src,params,title = name,content = desc, theme = "blob")
 
 /atom/movable/screen/blob/MouseExited()
@@ -43,7 +42,7 @@
 		else
 			name = initial(name)
 			desc = initial(desc)
-	return ..()
+	..()
 
 /atom/movable/screen/blob/JumpToCore/Click()
 	if(isovermind(usr))
