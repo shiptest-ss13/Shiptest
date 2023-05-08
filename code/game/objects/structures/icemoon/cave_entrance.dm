@@ -107,7 +107,6 @@ GLOBAL_LIST_INIT(ore_probability, list(
 
 /obj/structure/spawner/ice_moon/demonic_portal/Initialize()
 	. = ..()
-	AddComponent(/datum/component/gps, "Netheric Signal")
 
 /obj/structure/spawner/ice_moon/demonic_portal/destroy_effect()
 	new /obj/effect/collapsing_demonic_portal(loc)

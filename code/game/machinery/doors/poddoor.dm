@@ -16,8 +16,8 @@
 	damage_deflection = 70
 	poddoor = TRUE
 	assemblytype = /obj/structure/poddoor_assembly
-	var/open_sound = 'sound/machines/blastdoor.ogg'
-	var/close_sound = 'sound/machines/blastdoor.ogg'
+	var/open_sound = 'sound/machines/airlocks/blastdoor.ogg'
+	var/close_sound = 'sound/machines/airlocks/blastdoor.ogg'
 
 /obj/machinery/door/poddoor/attackby(obj/item/W, mob/user, params)
 	. = ..()
@@ -152,7 +152,7 @@
 		user.visible_message("<span class='warning'>[user] begins prying open [src].</span>",\
 					"<span class='noticealien'>You begin digging your claws into [src] with all your might!</span>",\
 					"<span class='warning'>You hear groaning metal...</span>")
-		playsound(src, 'sound/machines/airlock_alien_prying.ogg', 100, TRUE)
+		playsound(src, 'sound/machines/creaking.ogg', 100, TRUE)
 
 		var/time_to_open = 5 SECONDS
 		if(hasPower())

@@ -134,8 +134,8 @@
 		usr.update_inv_hands()
 	return TRUE
 
-/atom/movable/screen/inventory/MouseEntered()
-	..()
+/atom/movable/screen/inventory/MouseEntered(location, control, params)
+	. = ..()
 	add_overlays()
 	//Apply the outline affect
 	add_stored_outline()
