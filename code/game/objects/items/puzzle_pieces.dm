@@ -132,8 +132,8 @@
 	icon_state = "closed"
 	layer = SHUTTER_LAYER
 	closingLayer = SHUTTER_LAYER
-	var/open_sound = 'sound/machines/gate.ogg'
-	var/close_sound = 'sound/machines/gate.ogg'
+	var/open_sound = 'sound/machines/airlocks/gate.ogg'
+	var/close_sound = 'sound/machines/airlocks/gate.ogg'
 	glass = TRUE
 	opacity = FALSE
 	move_resist = MOVE_FORCE_OVERPOWERING

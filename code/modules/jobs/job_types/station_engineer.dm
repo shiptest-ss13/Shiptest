@@ -217,6 +217,17 @@
 	head = /obj/item/clothing/head/beanie/black
 	accessory = /obj/item/clothing/accessory/armband/engine
 
+/datum/outfit/job/engineer/aipirate
+	name = "Nodesman (Engineer)"
+
+	uniform = /obj/item/clothing/under/utility
+	head = /obj/item/clothing/head/soft/black
+	shoes = /obj/item/clothing/shoes/combat
+	r_pocket = /obj/item/kitchen/knife/combat/survival
+	gloves = /obj/item/clothing/gloves/combat
+
+	implants = list(/obj/item/implant/radio)
+
 /datum/outfit/job/engineer/independent/frontiersmen
 	name = "Carpenter (frontiersmen)"
 
@@ -229,4 +240,3 @@
 
 	l_pocket = /obj/item/radio
 	r_pocket = /obj/item/analyzer
-
