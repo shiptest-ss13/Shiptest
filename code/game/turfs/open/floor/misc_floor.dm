@@ -190,3 +190,97 @@
 	base_icon_state = "tcomms"
 	icon = 'icons/turf/floors/misc.dmi'
 	color = null
+
+//ship turfs
+/turf/open/floor/plating/ship
+	name = "Ship Plating"
+	desc = "Report a bug if you see this."
+
+/turf/open/floor/plating/ship/dirt
+	gender = PLURAL
+	name = "dirt"
+	desc = "Upon closer examination, it's still dirt."
+	icon = 'icons/turf/floors.dmi'
+	icon_state = "dirt"
+	attachment_holes = FALSE
+	footstep = FOOTSTEP_SAND
+	barefootstep = FOOTSTEP_SAND
+	clawfootstep = FOOTSTEP_SAND
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	tiled_dirt = FALSE
+	baseturfs = /turf/open/floor/plating
+
+/turf/open/floor/plating/ship/dirt/dark
+	icon_state = "greenerdirt"
+
+/turf/open/floor/plating/grass/ship
+	baseturfs = /turf/open/floor/plating/ship/dirt
+
+/turf/open/floor/plating/grass/ship/jungle
+	name = "jungle grass"
+	desc = "Greener on the other side."
+	icon_state = "junglegrass"
+	base_icon_state = "junglegrass"
+	baseturfs = /turf/open/floor/plating/ship/dirt/dark
+	smooth_icon = 'icons/turf/floors/junglegrass.dmi'
+
+/turf/open/floor/plating/ship/water
+	name = "water"
+	desc = "Shallow water."
+	icon_state = "riverwater_motion"
+	baseturfs = /turf/open/floor/plating/ship/dirt
+	slowdown = 1
+	bullet_sizzle = TRUE
+	bullet_bounce_sound = null //needs a splashing sound one day.
+
+	footstep = FOOTSTEP_WATER
+	barefootstep = FOOTSTEP_WATER
+	clawfootstep = FOOTSTEP_WATER
+	heavyfootstep = FOOTSTEP_WATER
+
+	var/datum/reagent/reagent_to_extract = /datum/reagent/water
+	var/extracted_reagent_visible_name = "water"
+
+/turf/open/floor/plating/ship/water/attackby(obj/item/tool, mob/user, params)
+	if(!reagent_to_extract)
+		return ..()
+	var/obj/item/reagent_containers/glass/container = tool
+	if(!container)
+		return ..()
+	if(container.reagents.total_volume >= container.volume)
+		to_chat(user, "<span class='danger'>[container] is full.</span>")
+		return
+	container.reagents.add_reagent(reagent_to_extract, rand(5, 10))
+	user.visible_message("<span class='notice'>[user] scoops [extracted_reagent_visible_name] from the [src] with \the [container].</span>", "<span class='notice'>You scoop out [extracted_reagent_visible_name] from the [src] using \the [container].</span>")
+	return TRUE
+
+/turf/open/floor/plating/ship/water/can_have_cabling()
+	return FALSE
+
+/turf/open/floor/plating/ship/water/rcd_vals(mob/user, obj/item/construction/rcd/the_rcd)
+	switch(the_rcd.mode)
+		if(RCD_FLOORWALL)
+			return list("mode" = RCD_FLOORWALL, "delay" = 0, "cost" = 3)
+	return FALSE
+
+/turf/open/floor/plating/ship/water/rcd_act(mob/user, obj/item/construction/rcd/the_rcd, passed_mode)
+	switch(passed_mode)
+		if(RCD_FLOORWALL)
+			to_chat(user, "<span class='notice'>You build a floor.</span>")
+			PlaceOnTop(/turf/open/floor/plating, flags = CHANGETURF_INHERIT_AIR)
+			return TRUE
+	return FALSE
+
+/turf/open/floor/plating/ship/water/beach
+	color = COLOR_CYAN
+
+/turf/open/floor/plating/ship/water/beach/deep
+	color = "#0099ff"
+
+/turf/open/floor/plating/ship/water/tar
+	name = "tar pit"
+	desc = "Shallow tar. Will slow you down significantly. You could use a beaker to scoop some out."
+	color = "#222424"
+	slowdown = 2
+	reagent_to_extract = /datum/reagent/asphalt
+	extracted_reagent_visible_name = "tar"
