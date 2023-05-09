@@ -232,6 +232,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
+"aV" = (
+/obj/effect/landmark/subship{
+	subship_template = "/datum/map_template/shuttle/subshuttles/heron_subshuttle"
+	},
+/turf/open/floor/engine/hull/reinforced/interior,
+/area/ship/security/dock)
 "aW" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -6874,15 +6880,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/fore)
-"zh" = (
-/obj/docking_port/stationary{
-	height = 15;
-	width = 15;
-	dwidth = 7;
-	name = "heron exterior dock"
-	},
-/turf/template_noop,
-/area/template_noop)
 "zl" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/newscaster{
@@ -7124,6 +7121,15 @@
 /obj/machinery/light/small,
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew/toilet)
+"Af" = (
+/obj/docking_port/stationary{
+	height = 15;
+	width = 15;
+	dwidth = 7;
+	name = "heron exterior dock"
+	},
+/turf/template_noop,
+/area/template_noop)
 "Ag" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -15731,7 +15737,7 @@ sc
 sc
 sc
 sc
-sc
+aV
 sc
 dj
 er
@@ -15779,7 +15785,7 @@ Mm
 Mm
 "}
 (42,1,1) = {"
-zh
+Af
 oH
 na
 jc
