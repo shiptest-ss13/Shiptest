@@ -3,6 +3,8 @@ SUBSYSTEM_DEF(job)
 	init_order = INIT_ORDER_JOBS
 	flags = SS_NO_FIRE
 
+	var/list/all_crew = list()
+
 	var/list/occupations = list()		//List of all jobs
 	var/list/datum/job/name_occupations = list()	//Dict of all jobs, keys are titles
 	var/list/type_occupations = list()	//Dict of all jobs, keys are types
@@ -161,13 +163,13 @@ SUBSYSTEM_DEF(job)
 
 /datum/controller/subsystem/job/proc/get_manifest()
 	var/list/manifest_out = list()
-	for(var/datum/overmap/ship/controlled/ship as anything in SSovermap.controlled_ships)
-		if(!length(ship.manifest))
+	for(var/datum/crew/crew as anything in all_crew)
+		if(!length(crew.manifest))
 			continue
-		manifest_out["[ship.name] ([ship.source_template.short_name])"] = list()
-		for(var/crewmember in ship.manifest)
-			var/datum/job/crewmember_job = ship.manifest[crewmember]
-			manifest_out["[ship.name] ([ship.source_template.short_name])"] += list(list(
+		manifest_out["[crew.name]"] = list()
+		for(var/crewmember in crew.manifest)
+			var/datum/job/crewmember_job = crew.manifest[crewmember]
+			manifest_out["[crew.name]"] += list(list(
 				"name" = crewmember,
 				"rank" = crewmember_job.name,
 				"officer" = crewmember_job.officer

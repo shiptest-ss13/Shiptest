@@ -83,7 +83,7 @@
 	return TRUE
 
 //Gives the player the stuff he should have with his rank
-/datum/job/proc/EquipRank(mob/living/living_mob, datum/overmap/ship/controlled/ship)
+/datum/job/proc/EquipRank(mob/living/living_mob, datum/crew/crew)
 	living_mob.job = name
 
 	SEND_SIGNAL(living_mob, COMSIG_JOB_RECEIVED, living_mob.job)
@@ -118,10 +118,10 @@
 	if(living_mob)
 		after_spawn(living_mob, living_mob) // note: this happens before the mob has a key! living_mob will always have a client, H might not.
 
-	if (ship)
+	if (crew)
 		var/obj/item/card/id/idcard = living_mob.get_idcard(TRUE)
 		if (idcard)
-			idcard.add_ship_access(ship)
+			idcard.add_ship_access(crew)
 
 	return living_mob
 

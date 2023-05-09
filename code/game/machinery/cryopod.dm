@@ -161,10 +161,13 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 	if(!preserve_items_typecache)
 		preserve_items_typecache = typecacheof(preserve_items)
 	icon_state = open_state
+	var/area/A = get_area(src)
+	if (A.crew)
+		A.crew.spawn_points += src
 	return INITIALIZE_HINT_LATELOAD //Gotta populate the cryopod computer GLOB first
 
 /obj/machinery/cryopod/Destroy()
-	linked_ship?.spawn_points -= src
+	// linked_ship?.spawn_points -= src
 	return ..()
 
 /obj/machinery/cryopod/LateInitialize()
@@ -291,10 +294,11 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 /// This function can not be undone; do not call this unless you are sure. It compeletely removes all trace of the mob from the round.
 /obj/machinery/cryopod/proc/despawn_occupant()
 	var/mob/living/mob_occupant = occupant
+	var/area/A = get_area(src)
 
-	if(linked_ship)
-		if(mob_occupant.job in linked_ship.current_ship.job_slots)
-			linked_ship.current_ship.job_slots[mob_occupant.job]++
+	if(A.crew)
+		if(mob_occupant.job in A.crew.job_slots)
+			A.crew.job_slots[mob_occupant.job]++
 
 		if(mob_occupant.mind && mob_occupant.mind.assigned_role)
 			//Handle job slot/tater cleanup.
@@ -318,8 +322,8 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 
 	// Regardless of what ship you spawned in you need to be removed from it.
 	// This covers scenarios where you spawn in one ship but cryo in another.
-	for(var/datum/overmap/ship/controlled/sim_ship as anything in SSovermap.controlled_ships)
-		sim_ship.manifest -= mob_occupant.real_name
+	for(var/datum/crew/C as anything in SSjob.all_crew)
+		C.manifest -= mob_occupant.real_name
 
 	var/obj/machinery/computer/cryopod/control_computer_obj = control_computer?.resolve()
 

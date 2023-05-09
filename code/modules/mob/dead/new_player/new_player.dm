@@ -267,10 +267,10 @@
 			return "[jobtitle] is already filled to capacity."
 	return "Error: Unknown job availability."
 
-/mob/dead/new_player/proc/IsJobUnavailable(datum/job/job, datum/overmap/ship/controlled/ship, latejoin = FALSE)
+/mob/dead/new_player/proc/IsJobUnavailable(datum/job/job, datum/crew/crew, latejoin = FALSE)
 	if(!job)
 		return JOB_UNAVAILABLE_GENERIC
-	if(!(ship.job_slots[job] > 0))
+	if(!(crew.job_slots[job] > 0))
 		return JOB_UNAVAILABLE_SLOTFULL
 	if(is_banned_from(ckey, job.name))
 		return JOB_UNAVAILABLE_BANNED
@@ -284,29 +284,29 @@
 		return JOB_UNAVAILABLE_GENERIC
 	return JOB_AVAILABLE
 
-/mob/dead/new_player/proc/AttemptLateSpawn(datum/job/job, datum/overmap/ship/controlled/ship)
+/mob/dead/new_player/proc/AttemptLateSpawn(datum/job/job, datum/crew/crew)
 	if(auth_check)
 		return
 
-	var/error = IsJobUnavailable(job, ship)
+	var/error = IsJobUnavailable(job, crew)
 	if(error != JOB_AVAILABLE)
 		alert(src, get_job_unavailable_error_message(error, job))
 		return FALSE
 
 	//Removes a job slot
-	ship.job_slots[job]--
+	crew.job_slots[job]--
 
 	//Remove the player from the join queue if he was in one and reset the timer
 	SSticker.queued_players -= src
 	SSticker.queue_delay = 4
 
 	var/mob/living/carbon/human/character = create_character(TRUE)	//creates the human and transfers vars and mind
-	var/equip = job.EquipRank(character, ship)
+	var/equip = job.EquipRank(character, crew)
 	if(isliving(equip))	//Borgs get borged in the equip, so we need to make sure we handle the new mob.
 		character = equip
 
 	if(job && !job.override_latejoin_spawn(character))
-		SSjob.SendToLateJoin(character, destination = pick(ship.shuttle_port.spawn_points))
+		crew.join_crew(character, job)
 		var/atom/movable/screen/splash/Spl = new(character.client, TRUE)
 		Spl.Fade(TRUE)
 		character.playsound_local(get_turf(character), 'sound/voice/ApproachingTG.ogg', 25)
@@ -317,10 +317,9 @@
 
 	if(ishuman(character))	//These procs all expect humans
 		var/mob/living/carbon/human/humanc = character
-		ship.manifest_inject(humanc, client, job)
 		GLOB.data_core.manifest_inject(humanc, client)
-		AnnounceArrival(humanc, job.name, ship)
-		AddEmploymentContract(humanc)
+		AnnounceArrival(humanc, job.name, crew)
+		// AddEmploymentContract(humanc)
 		SSblackbox.record_feedback("tally", "species_spawned", 1, humanc.dna.species.name)
 
 		if(GLOB.summon_guns_triggered)
@@ -336,16 +335,18 @@
 
 	log_manifest(character.mind.key, character.mind, character, TRUE)
 
-	if(length(ship.job_slots) > 1 && ship.job_slots[1] == job) // if it's the "captain" equivalent job of the ship. checks to make sure it's not a one-job ship
-		minor_announce("[job.name] [character.real_name] on deck!", zlevel = ship.shuttle_port.virtual_z())
+	if(length(crew.job_slots) > 1 && crew.job_slots[1] == job) // if it's the "captain" equivalent job of the crew. checks to make sure it's not a one-job crew
+		minor_announce("[job.name] [character.real_name] on deck!", zlevel = character.virtual_z())
 	return TRUE
 
+/* Feel way out of place for shiptest, may fix it later.
 /mob/dead/new_player/proc/AddEmploymentContract(mob/living/carbon/human/employee)
 	//TODO:  figure out a way to exclude wizards/nukeops/demons from this.
 	for(var/C in GLOB.employmentCabinets)
 		var/obj/structure/filingcabinet/employment/employmentCabinet = C
 		if(!employmentCabinet.virgin)
 			employmentCabinet.addFile(employee)
+*/
 
 /mob/dead/new_player/proc/LateChoices()
 	if(auth_check)

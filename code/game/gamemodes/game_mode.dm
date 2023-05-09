@@ -470,15 +470,15 @@
 /datum/game_mode/proc/generate_credit_text()
 	. = list()
 
-	for(var/datum/overmap/ship/controlled/final_ship as anything in SSovermap.controlled_ships)
-		if(length(final_ship.job_slots) == 0) //Way to find if it's a ruin-spawned ship or similar
+	for(var/datum/crew/final_crew as anything in SSjob.all_crew)
+		if(length(final_crew.job_slots) == 0) //Way to find if it's a ruin-spawned ship or similar
 			continue
-		. += "<center><h1>The [capitalize(pick(GLOB.adjectives))] [final_ship.name]:</h1></center>"
-		if(!length(final_ship.manifest))
+		. += "<center><h1>The [capitalize(pick(GLOB.adjectives))] [final_crew.name]:</h1></center>"
+		if(!length(final_crew.manifest))
 			. += "<center><h2>It seems nobody crewed this ship today!<h2></center>"
 		else
-			for(var/name in final_ship.manifest)
-				var/datum/job/their_job = final_ship.manifest[name]
+			for(var/name in final_crew.manifest)
+				var/datum/job/their_job = final_crew.manifest[name]
 				. += "<center><h2>[name] as the [their_job.name]</h2></center><br>"
 		. += "<br>"
 

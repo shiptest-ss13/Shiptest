@@ -4,6 +4,8 @@
  * Intended to me a mostly ooc utlity.
  */
 /datum/crew
+	/// Name of the "crew"
+	var/name
 	/// Manifest list of people on the ship
 	var/list/manifest = list()
 
@@ -24,10 +26,14 @@
 	/// Lazylist of /datum/ship_applications for this ship. Only used if join_mode == SHIP_JOIN_MODE_APPLY
 	var/list/datum/ship_application/applications
 
+	/// The class of the ship or type of location
+	var/class = ""
 	/// Short memo of the ship shown to new joins
 	var/memo = null
 	///Assoc list of remaining open job slots (job = remaining slots)
 	var/list/job_slots = list()
+	///List of the job available job slots on crew creation.
+	var/list/base_job_slots = list()
 	///Time that next job slot change can occur
 	COOLDOWN_DECLARE(job_slot_adjustment_cooldown)
 
@@ -37,7 +43,7 @@
 /**
  * * Return TRUE if the crew was successfully renamed otherwise FALSE
  */
-/datum/crew/Rename(new_name, force = FALSE)
+/datum/crew/proc/Rename(new_name, force = FALSE)
 	return
 
 /**
@@ -47,8 +53,10 @@
  * * - Create the structures the players will spanw in.
  * *
  */
-/datum/crew/Initialize()
-	return
+/datum/crew/New()
+	SHOULD_CALL_PARENT(TRUE)
+
+	SSjob.all_crew += src
 
 /**
  * * Destroy a crew object
@@ -60,24 +68,24 @@
 		qdel(applications[a_key])
 	// set ourselves to ownerless to unregister signals
 	set_owner_mob(null)
+	SSjob.all_crew -= src
 	return ..()
 
 /**
  *	Add a mob to a crew and spawn it in.
  */
-/datum/crew/join_crew(mob/M, job)
+/datum/crew/proc/join_crew(mob/M, datum/job/job)
 	SHOULD_CALL_PARENT(TRUE)
-	if (!job)
-		return FALSE
-	if (!job in job_slots)
-		return FALSE
+
+	manifest_inject(M, M.client, job)
+
 
 /**
  *	Returns a turf that can be jumped to by observers, admins, and such.
  */
 /datum/crew/proc/get_jump_to_turf()
 	RETURN_TYPE(/turf)
-	return get_turf(shuttle_port)
+	return
 
 /**
  *	Weather the crew can be joined.
@@ -94,23 +102,23 @@
  * Adds the passed-in mob to the list of ship owner candidates, and makes them
  * the ship owner if there is currently none.
  *
- * * H - Human mob to add to the manifest
+ * * M - Mob to add to the manifest
  * * C - client of the mob to add to the manifest
- * * human_job - Job of the human mob to add to the manifest
+ * * job - Job of the mob to add to the manifest
  */
-/datum/crew/proc/manifest_inject(mob/living/carbon/human/H, client/C, datum/job/human_job)
+/datum/crew/proc/manifest_inject(mob/living/M, client/C, datum/job/job)
 	// no idea why this check exists
-	if(H.mind.assigned_role != H.mind.special_role)
-		manifest[H.real_name] = human_job
+	if(M.mind.assigned_role != M.mind.special_role)
+		manifest[M.real_name] = job
 
 	var/mind_info = list(
-		name = H.real_name,
+		name = M.real_name,
 		eligible = TRUE
 	)
-	LAZYSET(owner_candidates, H.mind, mind_info)
-	RegisterSignal(H.mind, COMSIG_PARENT_QDELETING, .proc/crew_mind_deleting)
+	LAZYSET(owner_candidates, M.mind, mind_info)
+	RegisterSignal(M.mind, COMSIG_PARENT_QDELETING, .proc/crew_mind_deleting)
 	if(!owner_mob)
-		set_owner_mob(H)
+		set_owner_mob(M)
 
 /datum/crew/proc/set_owner_mob(mob/new_owner)
 	if(owner_mob)

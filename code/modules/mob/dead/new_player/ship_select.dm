@@ -21,7 +21,7 @@
 	var/mob/dead/new_player/spawnee = usr
 	switch(action)
 		if("join")
-			var/datum/overmap/ship/controlled/target = locate(params["ship"]) in SSovermap.controlled_ships
+			var/datum/crew/target = locate(params["ship"]) in SSjob.all_crew
 			if(!target)
 				to_chat(spawnee, "<span class='danger'>Unable to locate ship. Please contact admins!</span>")
 				spawnee.new_player_panel()
@@ -84,7 +84,7 @@
 /datum/ship_select/ui_static_data(mob/user)
 	. = list()
 	.["ships"] = list()
-	for(var/datum/overmap/ship/controlled/S as anything in SSovermap.controlled_ships)
+	for(var/datum/crew/S as anything in SSjob.all_crew)
 		if(!S.is_join_option())
 			continue
 
@@ -101,7 +101,7 @@
 
 		var/list/ship_data = list(
 			"name" = S.name,
-			"class" = S.source_template.short_name,
+			"class" = S.class,
 			"memo" = S.memo,
 			"jobs" = ship_jobs,
 			"manifest" = S.manifest,

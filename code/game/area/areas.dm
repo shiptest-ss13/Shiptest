@@ -89,6 +89,9 @@
 	/// Whether area is underground, important for weathers which shouldn't affect caves etc.
 	var/underground = FALSE
 
+	/// Only used for "roundstart" aera, as this is purely ooc.
+	var/datum/crew/crew
+
 
 /**
  * A list of teleport locations
