@@ -163,17 +163,3 @@
 			By defending ourselves and others, we defend His embers.”
 			</body>
 			</html>"}
-
-
-/turf/open/floor/plating/grass/jungle
-	name = "jungle grass"
-	planetary_atmos = TRUE
-	desc = "Greener on the other side."
-	icon_state = "junglegrass"
-	base_icon_state = "junglegrass"
-	baseturfs = /turf/open/floor/plating/dirt/jungle
-	smooth_icon = 'icons/turf/floors/junglegrass.dmi'
-	baseturfs = /turf/open/floor/plating/grass/jungle
-
-
-

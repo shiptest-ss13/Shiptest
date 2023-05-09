@@ -192,17 +192,16 @@
 	color = null
 
 //ship turfs
-/turf/open/floor/plating/ship
+/turf/open/floor/ship
 	name = "Ship Plating"
 	desc = "Report a bug if you see this."
 
-/turf/open/floor/plating/ship/dirt
+/turf/open/floor/ship/dirt
 	gender = PLURAL
 	name = "dirt"
 	desc = "Upon closer examination, it's still dirt."
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "dirt"
-	attachment_holes = FALSE
 	footstep = FOOTSTEP_SAND
 	barefootstep = FOOTSTEP_SAND
 	clawfootstep = FOOTSTEP_SAND
@@ -210,25 +209,42 @@
 	tiled_dirt = FALSE
 	baseturfs = /turf/open/floor/plating
 
-/turf/open/floor/plating/ship/dirt/dark
+/turf/open/floor/ship/dirt/dark
 	icon_state = "greenerdirt"
 
-/turf/open/floor/plating/grass/ship
-	baseturfs = /turf/open/floor/plating/ship/dirt
+/turf/open/floor/grass/ship
+	name = "grass"
+	desc = "A patch of grass."
+	base_icon_state = "grass"
+	bullet_bounce_sound = null
+	smoothing_flags = SMOOTH_BITMASK
+	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_GRASS)
+	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_GRASS)
+	layer = HIGH_TURF_LAYER
+	var/smooth_icon = 'icons/turf/floors/grass.dmi'
+	baseturfs = /turf/open/floor/ship/dirt
 
-/turf/open/floor/plating/grass/ship/jungle
+/turf/open/floor/grass/ship/Initialize(mapload, inherited_virtual_z)
+	. = ..()
+	if(smoothing_flags)
+		var/matrix/translation = new
+		translation.Translate(-9, -9)
+		transform = translation
+		icon = smooth_icon
+
+/turf/open/floor/grass/ship/jungle
 	name = "jungle grass"
 	desc = "Greener on the other side."
 	icon_state = "junglegrass"
 	base_icon_state = "junglegrass"
-	baseturfs = /turf/open/floor/plating/ship/dirt/dark
+	baseturfs = /turf/open/floor/ship/dirt/dark
 	smooth_icon = 'icons/turf/floors/junglegrass.dmi'
 
 /turf/open/floor/plating/ship/water
 	name = "water"
 	desc = "Shallow water."
 	icon_state = "riverwater_motion"
-	baseturfs = /turf/open/floor/plating/ship/dirt
+	baseturfs = /turf/open/floor/ship/dirt
 	slowdown = 1
 	bullet_sizzle = TRUE
 	bullet_bounce_sound = null //needs a splashing sound one day.
@@ -245,7 +261,7 @@
 	if(!reagent_to_extract)
 		return ..()
 	var/obj/item/reagent_containers/glass/container = tool
-	if(!container)
+	if(!istype(tool, /obj/item/reagent_containers))
 		return ..()
 	if(container.reagents.total_volume >= container.volume)
 		to_chat(user, "<span class='danger'>[container] is full.</span>")
