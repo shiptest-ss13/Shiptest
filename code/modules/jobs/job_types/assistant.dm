@@ -235,8 +235,8 @@ Assistant
 	l_pocket = /obj/item/kitchen/knife/combat/survival
 	gloves = /obj/item/clothing/gloves/combat
 	implants = list(/obj/item/implant/radio)
-  
-  /datum/outfit/job/assistant/frontiersmen
+
+/datum/outfit/job/assistant/frontiersmen
 	name = "Deckhand (frontiersmen)"
 
 	uniform = /obj/item/clothing/under/rank/security/officer/frontier
