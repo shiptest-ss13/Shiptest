@@ -161,13 +161,13 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 	if(!preserve_items_typecache)
 		preserve_items_typecache = typecacheof(preserve_items)
 	icon_state = open_state
-	var/area/A = get_area(src)
-	if (A.crew)
-		A.crew.spawn_points += src
+//	if(linked_ship)
+//		if(mob_occupant.job in linked_ship.current_ship.job_slots)
+//				linked_ship.current_ship.job_slots[mob_occupant.job]++
 	return INITIALIZE_HINT_LATELOAD //Gotta populate the cryopod computer GLOB first
 
 /obj/machinery/cryopod/Destroy()
-	// linked_ship?.spawn_points -= src
+	linked_ship?.spawn_points -= src
 	return ..()
 
 /obj/machinery/cryopod/LateInitialize()
@@ -296,6 +296,7 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 	var/mob/living/mob_occupant = occupant
 	var/area/A = get_area(src)
 
+	/*
 	if(A.crew)
 		if(mob_occupant.job in A.crew.job_slots)
 			A.crew.job_slots[mob_occupant.job]++
@@ -305,6 +306,7 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 			if(LAZYLEN(mob_occupant.mind.objectives))
 				mob_occupant.mind.objectives.Cut()
 				mob_occupant.mind.special_role = null
+	*/
 
 	// Delete them from datacore.
 

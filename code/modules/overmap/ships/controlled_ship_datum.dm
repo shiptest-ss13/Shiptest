@@ -40,7 +40,7 @@
 	/// The maximum number of currently active missions that a ship may take on.
 	var/max_missions = 2
 
-
+	var/datum/crew/ship/crew
 
 /datum/overmap/ship/controlled/Rename(new_name, force = FALSE)
 	var/oldname = name
@@ -67,7 +67,6 @@
 	if(creation_template)
 		source_template = creation_template
 		unique_ship_access = source_template.unique_ship_access
-		job_slots = source_template.job_slots?.Copy()
 		if(create_shuttle)
 			shuttle_port = SSshuttle.load_template(creation_template, src)
 			if(!shuttle_port) //Loading failed, if the shuttle is supposed to be created, we need to delete ourselves.
@@ -89,11 +88,7 @@
 		shuttle_port.intoTheSunset()
 	if(!QDELETED(ship_account))
 		QDEL_NULL(ship_account)
-	for(var/a_key in applications)
-		// it handles removal itself
-		qdel(applications[a_key])
 	// set ourselves to ownerless to unregister signals
-	set_owner_mob(null)
 	return ..()
 
 /datum/overmap/ship/controlled/get_jump_to_turf()

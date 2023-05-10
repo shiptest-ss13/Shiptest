@@ -37,9 +37,6 @@
 	///Time that next job slot change can occur
 	COOLDOWN_DECLARE(job_slot_adjustment_cooldown)
 
-	var/list/atom/spawn_points = list()
-
-
 /**
  * * Return TRUE if the crew was successfully renamed otherwise FALSE
  */
@@ -62,7 +59,7 @@
  * * Destroy a crew object
  * * delete_location - weather the location attatched to the crew must be deleted (ship planet...)
  */
-/datum/crew/Destroy(delete_location = FALSE)
+/datum/crew/Destroy()
 	for(var/a_key in applications)
 		// it handles removal itself
 		qdel(applications[a_key])
@@ -91,7 +88,7 @@
  *	Weather the crew can be joined.
  */
 /datum/crew/proc/is_join_option()
-	return (length(spawn_points) >= 1) && (length(job_slots) >= 1) && join_mode != SHIP_JOIN_MODE_CLOSED
+	return (length(job_slots) >= 1) && join_mode != SHIP_JOIN_MODE_CLOSED
 
 /datum/crew/proc/get_application(mob/applicant)
 	var/index_key = applicant.client?.holder?.fakekey ? applicant.client.holder.fakekey : applicant.key
