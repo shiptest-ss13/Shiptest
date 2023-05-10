@@ -107,43 +107,43 @@ GLOBAL_LIST_INIT(tendrils, list())
 
 /obj/structure/spawner/lavaland/low_threat //this is the most common one, it shouldn't be a huge issue for most players.
 	mob_types = list(
-		/mob/living/simple_animal/hostile/asteroid/goliath/beast/tendril = 25,
-		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/tendril = 25,
-		/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/tendril = 25,
-		/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/icewing = 5,
+		/mob/living/simple_animal/hostile/asteroid/goliath/beast/tendril = 27,
+		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/tendril = 26,
+		/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/tendril = 26,
+		/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/icewing = 1,
 		/mob/living/simple_animal/hostile/asteroid/brimdemon = 20
 	)
-	max_mobs = 5
+	max_mobs = 4
 	spawn_time = 300
 
 /obj/structure/spawner/lavaland/medium_threat //this is less common. It starts getting dangerous here.
 	mob_types = list(
-		/mob/living/simple_animal/hostile/asteroid/goliath/beast/tendril = 25,
-		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/tendril = 25,
-		/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/tendril = 25,
-		/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/icewing = 5,
+		/mob/living/simple_animal/hostile/asteroid/goliath/beast/tendril = 27,
+		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/tendril = 26,
+		/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/tendril = 26,
+		/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/icewing = 1,
 		/mob/living/simple_animal/hostile/asteroid/brimdemon = 20
 	)
-	max_mobs = 8
+	max_mobs = 6
 	spawn_time = 200 //they spawn a little faster
 
 /obj/structure/spawner/lavaland/high_threat //this should be rare. People will have trouble with this.
 	mob_types = list(
-		/mob/living/simple_animal/hostile/asteroid/goliath/beast/tendril = 25,
-		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/tendril = 25,
-		/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/tendril = 25,
-		/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/icewing = 5,
+		/mob/living/simple_animal/hostile/asteroid/goliath/beast/tendril = 27,
+		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/tendril = 26,
+		/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/tendril = 26,
+		/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/icewing = 1,
 		/mob/living/simple_animal/hostile/asteroid/brimdemon = 20
 	)
-	max_mobs = 10
+	max_mobs = 9
 	spawn_time = 200
 
 /obj/structure/spawner/lavaland/extreme_threat //extremely rare
 	mob_types = list(
-		/mob/living/simple_animal/hostile/asteroid/goliath/beast/tendril = 25,
-		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/tendril = 25,
-		/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/tendril = 25,
-		/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/icewing = 5,
+		/mob/living/simple_animal/hostile/asteroid/goliath/beast/tendril = 27,
+		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/tendril = 26,
+		/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/tendril = 26,
+		/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/icewing = 1,
 		/mob/living/simple_animal/hostile/asteroid/brimdemon = 20
 	)
 	max_mobs = 12
@@ -166,7 +166,7 @@ GLOBAL_LIST_INIT(tendrils, list())
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/tendril = 40,
 		/mob/living/simple_animal/hostile/asteroid/basilisk/whitesands = 40
 	)
-	max_mobs = 8
+	max_mobs = 7
 	spawn_time = 200
 
 /obj/structure/spawner/lavaland/sand_world/high_threat
