@@ -364,7 +364,6 @@
 		/mob/living/simple_animal/hostile/hivebot/wasteplanet/strong = 80,
 		/mob/living/simple_animal/hostile/hivebot/wasteplanet/ranged = 50,
 		/mob/living/simple_animal/hostile/hivebot/wasteplanet/ranged/rapid = 50,
-		/obj/structure/hivebot_beacon/wasteplanet = 20
 	)
 	mob_spawn_chance = 20
 	//post my hivebot stuff: hivebot spawner, more hivebots
