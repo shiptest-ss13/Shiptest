@@ -294,9 +294,10 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 /// This function can not be undone; do not call this unless you are sure. It compeletely removes all trace of the mob from the round.
 /obj/machinery/cryopod/proc/despawn_occupant()
 	var/mob/living/mob_occupant = occupant
-	var/area/A = get_area(src)
 
 	/*
+	var/area/A = get_area(src)
+
 	if(A.crew)
 		if(mob_occupant.job in A.crew.job_slots)
 			A.crew.job_slots[mob_occupant.job]++

@@ -5,12 +5,14 @@
 	..()
 	job_slots = template.job_slots
 	base_job_slots = job_slots
+	class = template.short_name
 	ship = new(position, template)
+	name = ship.name
 	ship.crew = src
 
 /datum/crew/ship/join_crew(mob/M, datum/job/job)
 	..()
-	M.forceMove(pick(ship.shuttle_port.spawn_points))
+	pick(ship.shuttle_port.spawn_points).JoinPlayerHere(M, TRUE)
 
 /datum/crew/ship/is_join_option()
 	if (!..())
