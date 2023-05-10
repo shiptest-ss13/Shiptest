@@ -101,8 +101,8 @@
 
 		//decals and fluff structures
 		/obj/effect/spawner/lootdrop/waste/trash = 180,
-		/obj/effect/spawner/lootdrop/waste/radiation = 16,
-		/obj/effect/spawner/lootdrop/waste/radiation/more_rads = 2,
+		/obj/effect/spawner/lootdrop/waste/radiation = 8,
+		/obj/effect/spawner/lootdrop/waste/radiation/more_rads = 1,
 
 		//stuff you can actually use
 		/obj/effect/spawner/lootdrop/waste/girder = 60,
@@ -142,7 +142,7 @@
 	)
 
 	flora_spawn_chance = 25
-	feature_spawn_chance = 3
+	feature_spawn_chance = 0.5
 	mob_spawn_chance = 2
 
 /datum/biome/waste/crater
@@ -153,8 +153,8 @@
 
 	flora_spawn_list = list(
 		/obj/effect/spawner/lootdrop/waste/trash = 90,
-		/obj/effect/spawner/lootdrop/waste/radiation = 16,
-		/obj/effect/spawner/lootdrop/waste/radiation/more_rads = 2,
+		/obj/effect/spawner/lootdrop/waste/radiation = 8,
+		/obj/effect/spawner/lootdrop/waste/radiation/more_rads = 1,
 		/obj/effect/spawner/lootdrop/waste/atmos_can = 18,
 		/obj/effect/spawner/lootdrop/waste/atmos_can/rare = 0.5,
 		/obj/effect/spawner/lootdrop/waste/salvageable = 30,
@@ -165,15 +165,15 @@
 	flora_spawn_list = list(
 		/obj/structure/flora/ash/glowshroom = 180,
 		/obj/effect/spawner/lootdrop/waste/trash = 90,
-		/obj/effect/spawner/lootdrop/waste/radiation = 50,
-		/obj/effect/spawner/lootdrop/waste/radiation/more_rads = 25,
+		/obj/effect/spawner/lootdrop/waste/radiation = 25,
+		/obj/effect/spawner/lootdrop/waste/radiation/more_rads = 7,
 		/obj/effect/spawner/lootdrop/waste/atmos_can = 7,
 		/obj/effect/spawner/lootdrop/waste/salvageable = 15
 	)
 
 /datum/biome/waste/clearing
 	flora_spawn_chance = 20
-	feature_spawn_chance = 6
+	feature_spawn_chance = 2
 
 /datum/biome/waste/clearing/mushroom
 	flora_spawn_list = list(
@@ -214,7 +214,7 @@
 		/obj/effect/spawner/lootdrop/waste/mechwreck = 20,
 		/obj/effect/spawner/lootdrop/waste/mechwreck/rare = 5,
 		/obj/effect/spawner/lootdrop/waste/trash = 90,
-		/obj/effect/spawner/lootdrop/waste/radiation = 16,
+		/obj/effect/spawner/lootdrop/waste/radiation = 8,
 		/obj/effect/spawner/lootdrop/waste/radiation/more_rads = 2,
 		/obj/effect/spawner/lootdrop/waste/girder = 60,
 		/obj/structure/reagent_dispensers/fueltank = 20,
@@ -263,8 +263,8 @@
 		/obj/effect/spawner/lootdrop/waste/mechwreck = 20,
 		/obj/effect/spawner/lootdrop/waste/mechwreck/rare = 5,
 		/obj/effect/spawner/lootdrop/waste/trash = 180,
-		/obj/effect/spawner/lootdrop/waste/radiation = 16,
-		/obj/effect/spawner/lootdrop/waste/radiation/more_rads = 2,
+		/obj/effect/spawner/lootdrop/waste/radiation = 8,
+		/obj/effect/spawner/lootdrop/waste/radiation/more_rads = 1,
 		/obj/effect/spawner/lootdrop/waste/girder = 60,
 		/obj/structure/reagent_dispensers/fueltank = 20,
 		/obj/structure/reagent_dispensers/watertank = 20,
@@ -296,7 +296,7 @@
 		/obj/effect/radiation = 30,
 	)
 	flora_spawn_chance = 30
-	feature_spawn_chance = 10
+	feature_spawn_chance = 4
 	mob_spawn_chance = 5
 
 /datum/biome/cave/waste/tar_bed //tar colorings here
@@ -315,8 +315,8 @@
 /datum/biome/cave/waste/rad
 	flora_spawn_list = list(
 		/obj/effect/spawner/lootdrop/waste/trash = 90,
-		/obj/effect/spawner/lootdrop/waste/radiation = 50,
-		/obj/effect/spawner/lootdrop/waste/radiation/more_rads = 25,
+		/obj/effect/spawner/lootdrop/waste/radiation = 25,
+		/obj/effect/spawner/lootdrop/waste/radiation/more_rads = 7,
 		/obj/effect/spawner/lootdrop/waste/atmos_can = 5,
 		/obj/effect/spawner/lootdrop/waste/atmos_can/rare = 0.1,
 		/obj/effect/spawner/lootdrop/waste/salvageable = 15,
@@ -330,8 +330,8 @@
 		/turf/open/floor/plating/wasteplanet = 4
 	)
 	closed_turf_types = list(
-		/turf/closed/wall/r_wall = 1,
-		/turf/closed/wall/r_wall/rust = 3,
+		/turf/closed/wall/r_wall = 0.5,
+		/turf/closed/wall/r_wall/rust = 1,
 		/turf/closed/wall = 5,
 		/turf/closed/wall/rust = 10
 	)
