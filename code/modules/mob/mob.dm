@@ -465,6 +465,7 @@
 		return
 
 	face_atom(A)
+
 	var/list/result
 	if(client)
 		LAZYINITLIST(client.recent_examines)
@@ -479,8 +480,12 @@
 	else
 		result = A.examine(src) // if a tree is examined but no client is there to see it, did the tree ever really exist?
 
+	if(result.len)
+		for(var/i in 1 to (length(result) - 1))
+			result[i] += "\n"
 
-	to_chat(src, result.Join("\n"))
+	to_chat(src, examine_block("<span class='infoplain'>[result.Join()]</span>"))
+
 	SEND_SIGNAL(src, COMSIG_MOB_EXAMINATE, A)
 
 
@@ -593,6 +598,17 @@
 	animate(visual, pixel_x = (tile.x - our_tile.x) * world.icon_size + A.pixel_x, pixel_y = (tile.y - our_tile.y) * world.icon_size + A.pixel_y, time = 1.7, easing = EASE_OUT)
 
 	return TRUE
+
+//Update the screentip to reflect what we're hoverin over
+/atom/MouseEntered(location, control, params)
+	. = ..()
+	// Statusbar
+	status_bar_set_text(usr, name)
+	// Screentips
+	if(!usr?.client?.prefs.screentip_pref || (flags_1 & NO_SCREENTIPS_1))
+		usr.hud_used.screentip_text.maptext = ""
+	else
+		usr.hud_used.screentip_text.maptext = MAPTEXT("<span style='text-align: center'><span style='font-size: 32px'><span style='color:[usr.client.prefs.screentip_color]: 32px'>[name]</span>")
 
 ///Can this mob resist (default FALSE)
 /mob/proc/can_resist()
