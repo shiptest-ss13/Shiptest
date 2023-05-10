@@ -143,7 +143,7 @@
 	foodtype = RAW | MEAT | TOXIC
 
 /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/ethereal
-	name = "elzuosa cellulose"
+	name = "crystalline cellulose"
 	icon_state = "etherealmeat"
 	desc = "Technically vegan, but nobody has tested that theory."
 	filling_color = "#97ee63"
