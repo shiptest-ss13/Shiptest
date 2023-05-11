@@ -1398,7 +1398,6 @@
 /area/ship/science/robotics)
 "pB" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/structure/reagent_dispensers,
 /obj/structure/railing{
 	dir = 8;
 	layer = 4.1
@@ -1408,6 +1407,7 @@
 /obj/structure/fireaxecabinet{
 	pixel_y = 27
 	},
+/obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
 "pD" = (
@@ -1768,6 +1768,10 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
+/obj/item/radio/intercom{
+	dir = 8;
+	pixel_x = 22
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
 "rJ" = (
@@ -2115,9 +2119,6 @@
 /obj/structure/railing{
 	dir = 8;
 	layer = 3.1
-	},
-/obj/item/radio/intercom{
-	pixel_y = 23
 	},
 /obj/item/clothing/suit/space/hardsuit/security/independent/minutemen,
 /turf/open/floor/plasteel/tech,
@@ -4038,7 +4039,9 @@
 /area/ship/hallway/central)
 "Qn" = (
 /obj/structure/bed/dogbed,
-/mob/living/simple_animal/turtle,
+/mob/living/simple_animal/turtle{
+	name = "Jimmie"
+	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
