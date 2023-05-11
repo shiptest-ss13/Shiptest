@@ -565,13 +565,6 @@
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "cg" = (
-/obj/structure/filingcabinet,
-/obj/structure/filingcabinet{
-	pixel_x = -10
-	},
-/obj/structure/filingcabinet{
-	pixel_x = 10
-	},
 /obj/item/radio/intercom{
 	dir = 1;
 	pixel_y = -22
@@ -581,6 +574,7 @@
 /obj/item/t_scanner,
 /obj/item/switchblade,
 /obj/item/trash/candy,
+/obj/structure/filingcabinet/double,
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew/law_office)
 "cj" = (
@@ -2654,14 +2648,8 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/engineering)
 "jK" = (
-/obj/effect/turf_decal/siding/thinplating{
-	dir = 8
-	},
-/obj/effect/turf_decal/corner/transparent/blue/full,
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/open/floor/plasteel/patterned/grid,
+/obj/effect/spawner/structure/window/shuttle,
+/turf/open/floor/plating,
 /area/ship/hallway/central)
 "jO" = (
 /obj/structure/chair/comfy/brown{
@@ -8504,10 +8492,6 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/corner/transparent/blue/full,
-/obj/machinery/door/airlock/command{
-	name = "Bridge";
-	req_access_txt = "19"
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
@@ -8522,6 +8506,10 @@
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
+	},
+/obj/machinery/door/airlock/command/glass{
+	req_access_txt = "19";
+	name = "Bridge"
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
@@ -12275,6 +12263,22 @@
 	icon_state = "grid"
 	},
 /area/ship/medical)
+"TL" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/transparent/blue/full,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/plasteel/patterned/grid,
+/area/ship/hallway/central)
 "TN" = (
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 4
@@ -14119,7 +14123,7 @@
 /obj/effect/turf_decal/siding/thinplating,
 /obj/effect/turf_decal/trimline/opaque/blue/line,
 /obj/machinery/camera{
-	dir = 8
+	dir = 10
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/fore)
@@ -15917,9 +15921,9 @@ jO
 Id
 cg
 QG
-Mb
+jK
 Fs
-Mb
+jK
 np
 np
 Sm
@@ -15958,12 +15962,12 @@ QG
 QG
 qx
 Wg
-jK
+OJ
 WM
 OJ
 Zd
 dr
-Mb
+jK
 xr
 Sw
 sc
@@ -15997,7 +16001,7 @@ QG
 BV
 un
 AD
-hm
+TL
 ez
 hm
 MA
