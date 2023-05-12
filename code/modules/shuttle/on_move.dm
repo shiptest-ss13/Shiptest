@@ -20,7 +20,6 @@ All ShuttleMove procs go here
 	if(!(. & MOVE_TURF))
 		return
 
-	var/shuttle_dir = shuttle.dir
 	for(var/i in contents)
 		var/atom/movable/thing = i
 		if(ismob(thing))
@@ -44,7 +43,7 @@ All ShuttleMove procs go here
 			if(istype(thing, /obj/singularity) && !istype(thing, /obj/singularity/narsie)) //it's a singularity but not a god, ignore it.
 				continue
 			if(!thing.anchored)
-				step(thing, shuttle_dir)
+				qdel(thing)
 			else
 				qdel(thing)
 

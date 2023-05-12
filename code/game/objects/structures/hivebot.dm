@@ -7,6 +7,8 @@
 	density = TRUE
 	var/bot_type = "norm"
 	var/bot_amt = 10
+	var/spawn_time_min
+	var/spawn_time_max
 
 /obj/structure/hivebot_beacon/Initialize()
 	. = ..()
@@ -15,7 +17,7 @@
 	smoke.start()
 	visible_message("<span class='boldannounce'>[src] warps in!</span>")
 	playsound(src.loc, 'sound/effects/empulse.ogg', 25, TRUE)
-	addtimer(CALLBACK(src, .proc/warpbots), rand(10, 600))
+	addtimer(CALLBACK(src, .proc/warpbots), rand(spawn_time_min, spawn_time_max))
 
 /obj/structure/hivebot_beacon/proc/warpbots()
 	icon_state = "def_radar"
@@ -29,6 +31,7 @@
 				new /mob/living/simple_animal/hostile/hivebot/range(get_turf(src))
 			if("rapid")
 				new /mob/living/simple_animal/hostile/hivebot/rapid(get_turf(src))
+
 	sleep(100)
 	visible_message("<span class='boldannounce'>[src] warps out!</span>")
 	playsound(src.loc, 'sound/effects/empulse.ogg', 25, TRUE)
