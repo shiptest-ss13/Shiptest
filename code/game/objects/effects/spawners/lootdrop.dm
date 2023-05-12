@@ -846,8 +846,23 @@ GLOBAL_LIST_INIT(ws_survivor_default_loot, list(
 		)
 	lootcount = 1
 
-/obj/effect/spawner/lootdrop/waste
+/obj/effect/spawner/lootdrop/waste/grille_or_trash
 	name = "wasteplanet loot spawner"
+	loot = list(
+		/obj/structure/grille/broken = 5,
+		/obj/structure/grille = 5,
+		/obj/item/cigbutt = 1,
+		/obj/item/trash/cheesie = 1,
+		/obj/item/trash/candy = 1,
+		/obj/item/trash/chips = 1,
+		/obj/item/reagent_containers/food/snacks/deadmouse = 1,
+		/obj/item/trash/pistachios = 1,
+		/obj/item/trash/plate = 1,
+		/obj/item/trash/popcorn = 1,
+		/obj/item/trash/raisins = 1,
+		/obj/item/trash/sosjerky = 1,
+		/obj/item/trash/syndi_cakes = 1
+	)
 
 /obj/effect/spawner/lootdrop/waste/mechwreck
 	name = "wasteplanet mech wreckage"
@@ -902,8 +917,8 @@ GLOBAL_LIST_INIT(ws_survivor_default_loot, list(
 		/obj/machinery/portable_atmospherics/canister/carbon_dioxide = 3,
 		/obj/machinery/portable_atmospherics/canister/nitrogen = 3,
 		/obj/machinery/portable_atmospherics/canister/oxygen = 3,
-		/obj/machinery/portable_atmospherics/canister/nitrous_oxide = 3,
-		/obj/machinery/portable_atmospherics/canister/water_vapor
+		/obj/machinery/portable_atmospherics/canister/nitrous_oxide = 1,
+		/obj/machinery/portable_atmospherics/canister/water_vapor = 1
 	)
 
 /obj/effect/spawner/lootdrop/waste/atmos_can/rare
