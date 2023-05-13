@@ -128,6 +128,7 @@
 	uniform = /obj/item/clothing/under/syndicate/combat
 	head = /obj/item/clothing/head/HoS/beret/syndicate
 	ears = /obj/item/radio/headset/syndicate/alt/leader
+	mask = /obj/item/clothing/mask/chameleon
 	gloves = /obj/item/clothing/gloves/combat
 	l_pocket = /obj/item/gun/ballistic/automatic/pistol
 	r_pocket = /obj/item/kitchen/knife/combat/survival
@@ -148,6 +149,6 @@
 	H.faction |= list("PlayerSyndicate")
 
 	var/obj/item/card/id/I = H.wear_id
-	I.registered_name = H.real_name
+	I.registered_name = pick(GLOB.twinkle_names) + "-" + num2text(rand(8, 10)) // squidquest real
 	I.access |= list(ACCESS_SYNDICATE)
 	I.update_label()

@@ -167,6 +167,7 @@ Assistant
 	shoes = /obj/item/clothing/shoes/combat
 	gloves = /obj/item/clothing/gloves/combat
 	ears = /obj/item/radio/headset/syndicate/alt
+	mask = /obj/item/clothing/mask/chameleon
 	r_pocket = /obj/item/kitchen/knife/combat/survival
 	back = /obj/item/storage/backpack
 	belt = /obj/item/storage/belt/military/assault
@@ -184,7 +185,7 @@ Assistant
 	H.faction |= list("PlayerSyndicate")
 
 	var/obj/item/card/id/I = H.wear_id
-	I.registered_name = H.real_name
+	I.registered_name = pick(GLOB.twinkle_names) + "-" + num2text(rand(1, 4)) // squidquest real
 	I.assignment = "Deck Assistant"
 	I.access |= list(ACCESS_SYNDICATE)
 	I.update_label()

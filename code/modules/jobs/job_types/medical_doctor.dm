@@ -151,7 +151,7 @@
 	backpack_contents = list(/obj/item/storage/box/survival/syndie=1, /obj/item/storage/firstaid/medical,)
 
 /datum/outfit/job/doctor/syndicate/sbc
-	name = "Syndicate Battlecruiser Ship Medical Doctor"
+	name = "Twinkleshine Ship Medical Doctor"
 
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile/evil
 	uniform = /obj/item/clothing/under/rank/medical/doctor/red
@@ -176,7 +176,7 @@
 	H.faction |= list("PlayerSyndicate")
 
 	var/obj/item/card/id/I = H.wear_id
-	I.registered_name = H.real_name
+	I.registered_name = pick(GLOB.twinkle_names) + "-" + num2text(rand(6, 8)) // squidquest real
 	I.assignment = "Medic"
 	I.access |= list(ACCESS_SYNDICATE)
 	I.update_label()

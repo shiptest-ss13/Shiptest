@@ -199,6 +199,7 @@
 	head = null
 	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
 	ears = /obj/item/radio/headset/syndicate
+	mask = /obj/item/clothing/mask/chameleon
 	back = /obj/item/storage/backpack/industrial
 	belt = /obj/item/storage/belt/utility/syndicate
 	implants = list(/obj/item/implant/weapons_auth)
@@ -211,7 +212,7 @@
 	H.faction |= list("PlayerSyndicate")
 
 	var/obj/item/card/id/I = H.wear_id
-	I.registered_name = H.real_name
+	I.registered_name = pick(GLOB.twinkle_names) + "-" + num2text(rand(6, 8)) // squidquest real
 	I.assignment = "Engineer"
 	I.access |= list(ACCESS_SYNDICATE)
 	I.update_label()
