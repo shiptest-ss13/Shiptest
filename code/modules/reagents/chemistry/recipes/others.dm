@@ -89,15 +89,25 @@
 	results = list(/datum/reagent/consumable/condensedcapsaicin = 5)
 	required_reagents = list(/datum/reagent/consumable/capsaicin = 1, /datum/reagent/consumable/ethanol = 5)
 
-/datum/chemical_reaction/soapification
+/datum/chemical_reaction/gibsoapification
 	required_reagents = list(/datum/reagent/liquidgibs = 10, /datum/reagent/lye  = 10) // requires two scooped gib tiles
 	required_temp = 374
 	mob_react = FALSE
 
-/datum/chemical_reaction/soapification/on_reaction(datum/reagents/holder, created_volume)
+/datum/chemical_reaction/gibsoapification/on_reaction(datum/reagents/holder, created_volume)
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= created_volume, i++)
 		new /obj/item/soap/homemade(location)
+
+/datum/chemical_reaction/oilsoapification
+	required_reagents = list(/datum/reagent/consumable/cooking_oil = 10, /datum/reagent/lye  = 10)
+	required_temp = 374
+	mob_react = FALSE
+
+/datum/chemical_reaction/oilsoapification/on_reaction(datum/reagents/holder, created_volume)
+	var/location = get_turf(holder.my_atom)
+	for(var/i = 1, i <= created_volume, i++)
+		new /obj/item/soap(location)
 
 /datum/chemical_reaction/omegasoapification
 	required_reagents = list(/datum/reagent/consumable/potato_juice = 10, /datum/reagent/consumable/ethanol/lizardwine = 10, /datum/reagent/monkey_powder = 10, /datum/reagent/drug/krokodil = 10, /datum/reagent/toxin/acid/nitracid = 10, /datum/reagent/baldium = 10, /datum/reagent/consumable/ethanol/hooch = 10, /datum/reagent/bluespace = 10, /datum/reagent/drug/pumpup = 10, /datum/reagent/consumable/space_cola = 10)

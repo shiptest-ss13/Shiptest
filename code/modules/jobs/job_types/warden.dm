@@ -32,8 +32,8 @@
 	uniform = /obj/item/clothing/under/rank/security/warden
 	alt_uniform = /obj/item/clothing/under/rank/security/warden
 	shoes = /obj/item/clothing/shoes/jackboots
-	alt_suit = /obj/item/clothing/suit/armor/vest/security/warden
-	suit = /obj/item/clothing/suit/armor/vest/security/warden/alt
+	alt_suit = /obj/item/clothing/suit/armor/vest/security/warden/alt/nt
+	suit = /obj/item/clothing/suit/armor/vest/security/warden/alt/nt
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security //WS Edit - Alt Uniforms
 	gloves = /obj/item/clothing/gloves/color/black
 	head = /obj/item/clothing/head/warden
