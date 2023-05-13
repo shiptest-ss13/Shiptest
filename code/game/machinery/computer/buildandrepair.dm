@@ -26,8 +26,9 @@
 				to_chat(user, "<span class='notice'>You start deconstructing the frame...</span>")
 				if(P.use_tool(src, user, 20, volume=50))
 					to_chat(user, "<span class='notice'>You deconstruct the frame.</span>")
-					decon_material = new (drop_location(), 5)
-					decon_material.add_fingerprint(user)
+
+					var/obj/dropped_sheet = new decon_material(drop_location(), 5)
+					dropped_sheet.add_fingerprint(user)
 					qdel(src)
 				return
 		if(1)
@@ -125,6 +126,7 @@
 					built_comp.icon = built_icon
 					built_comp.icon_state = built_icon_state
 				built_comp.deconpath = deconpath
+				built_comp.update_icon()
 				qdel(src)
 				return
 	if(user.a_intent == INTENT_HARM)
