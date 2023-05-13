@@ -161,7 +161,8 @@
 	shoes = /obj/item/clothing/shoes/combat
 	suit = /obj/item/clothing/suit/longcoat/roboblack
 	suit_store =  null
-	ears = /obj/item/radio/headset/syndicate/alt
+	ears = /obj/item/radio/headset/syndicate
+	mask = /obj/item/clothing/mask/chameleon
 	implants = list(/obj/item/implant/weapons_auth)
 	id = /obj/item/card/id/syndicate_command/crew_id/med
 
