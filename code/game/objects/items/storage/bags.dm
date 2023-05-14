@@ -515,6 +515,14 @@
 
 /obj/item/storage/bag/bio/holding/ComponentInitialize()
 	. = ..()
-	var/datum/component/storage/storage = GetComponent(/datum/component/storage)
-	storage.max_combined_w_class = INFINITY
-	storage.max_items = 150
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_w_class = WEIGHT_CLASS_NORMAL
+	STR.max_combined_w_class = 32
+	STR.max_items = 32
+	STR.display_numerical_stacking = FALSE
+	STR.can_hold = typecacheof (list(	/obj/item/mail,
+										/obj/item/small_delivery,
+										/obj/item/paper,
+										/obj/item/reagent_containers/food/condiment/milk,
+										/obj/item/food/bread/plain
+									))

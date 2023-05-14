@@ -270,7 +270,7 @@
 	maxHealth = 50
 	gender = FEMALE
 	harm_intent_damage = 10
-	butcher_results = list(/obj/item/organ/brain = 1, /obj/item/organ/heart = 1, /obj/item/reagent_containers/food/snacks/cakeslice/birthday = 3,  \
+	butcher_results = list(/obj/item/organ/brain = 1, /obj/item/organ/heart = 1, /obj/item/food/cakeslice/birthday = 3,  \
 	/obj/item/reagent_containers/food/snacks/meat/slab = 2)
 	response_harm_continuous = "takes a bite out of"
 	response_harm_simple = "take a bite out of"
@@ -308,3 +308,23 @@
 	if(L.a_intent == INTENT_HARM && L.reagents && !stat)
 		L.reagents.add_reagent(/datum/reagent/consumable/nutriment, 0.4)
 		L.reagents.add_reagent(/datum/reagent/consumable/nutriment/vitamin, 0.4)
+
+/mob/living/simple_animal/pet/cat/breadcat
+	name = "bread cat"
+	desc = "It's a cat... with a bread!"
+	gender = MALE
+	icon_state = "breadcat"
+	icon_living = "breadcat"
+	icon_dead = "breadcat_dead"
+	collar_type = null
+	held_state = "breadcat"
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 2, /obj/item/organ/ears/cat = 1, /obj/item/organ/tail/cat = 1, /obj/item/organ/tongue/cat = 1, /obj/item/food/breadslice/plain = 1)
+
+/mob/living/simple_animal/pet/cat/halal
+	name = "arabian cat"
+	desc = "It's a cat with Agal on his head."
+	gender = MALE
+	icon_state = "cathalal"
+	icon_living = "cathalal"
+	collar_type = null
+	held_state = "cathalal"
