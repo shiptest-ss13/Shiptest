@@ -161,9 +161,9 @@ Assistant
 	head = /obj/item/clothing/head/safety_helmet
 
 /datum/outfit/job/assistant/syndicate/sbc
-	name = "Twinkleshine Deck Assistant"
+	name = "Deck Assistant (Twinkleshine)"
 
-	uniform = /obj/item/clothing/under/syndicate/aclfgrunt
+	uniform = /obj/item/clothing/under/syndicate/intern
 	shoes = /obj/item/clothing/shoes/combat
 	gloves = /obj/item/clothing/gloves/combat
 	ears = /obj/item/radio/headset/syndicate/alt

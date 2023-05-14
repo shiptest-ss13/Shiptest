@@ -151,7 +151,7 @@
 	backpack_contents = list(/obj/item/storage/box/survival/syndie=1, /obj/item/storage/firstaid/medical,)
 
 /datum/outfit/job/doctor/syndicate/sbc
-	name = "Twinkleshine Ship Medical Doctor"
+	name = "Ship Medical Doctor (Twinkleshine)"
 
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile/evil
 	uniform = /obj/item/clothing/under/rank/medical/doctor/red

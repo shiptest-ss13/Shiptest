@@ -191,9 +191,9 @@
 	glasses = null
 
 /datum/outfit/job/engineer/syndicate/sbc
-	name = "Twinkleshine Engineer"
+	name = "Ship Engineer (Twinkleshine)"
 
-	uniform = /obj/item/clothing/under/syndicate/gorlex
+	uniform = /obj/item/clothing/under/syndicate/gec
 	glasses = /obj/item/clothing/glasses/meson/night
 	shoes = /obj/item/clothing/shoes/combat
 	head = null

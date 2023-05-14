@@ -272,7 +272,7 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	backpack_contents = list(/obj/item/storage/box/survival/syndie=1)
 
 /datum/outfit/job/security/syndicate/sbc
-	name = "Twinkleshine Assault Operative"
+	name = "Operative (Twinkleshine)"
 	uniform = /obj/item/clothing/under/syndicate/aclfgrunt
 	ears = /obj/item/radio/headset/syndicate/alt
 	mask = /obj/item/clothing/mask/chameleon

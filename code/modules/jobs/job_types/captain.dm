@@ -113,7 +113,7 @@
 	courierbag = /obj/item/storage/backpack/messenger/sec
 
 /datum/outfit/job/captain/syndicate/sbc
-	name = "Twinkleshine Captain"
+	name = "Captain (Twinkleshine)"
 
 	uniform = /obj/item/clothing/under/syndicate/aclf
 	gloves = /obj/item/clothing/gloves/combat

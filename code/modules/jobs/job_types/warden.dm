@@ -124,7 +124,7 @@
 	alt_suit = null
 
 /datum/outfit/job/warden/syndicate/sbc
-	name = "Twinkleshine Lieutenant"
+	name = "Lieutenant (Twinkleshine)"
 	uniform = /obj/item/clothing/under/syndicate/combat
 	head = /obj/item/clothing/head/HoS/beret/syndicate
 	ears = /obj/item/radio/headset/syndicate/alt/leader
@@ -135,8 +135,10 @@
 	belt = /obj/item/storage/belt/military/assault
 	shoes = /obj/item/clothing/shoes/combat
 	suit = /obj/item/clothing/suit/armor/vest
+	alt_suit = /obj/item/clothing/suit/aclf
 	id = /obj/item/card/id/syndicate_command/lieutenant
 	implants = list(/obj/item/implant/weapons_auth)
+	backpack_contents = list(/obj/item/melee/baton)
 
 	backpack = /obj/item/storage/backpack/security
 	satchel = /obj/item/storage/backpack/satchel/sec
