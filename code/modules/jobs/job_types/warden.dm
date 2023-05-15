@@ -125,7 +125,7 @@
 
 /datum/outfit/job/warden/syndicate/sbc
 	name = "Lieutenant (Twinkleshine)"
-	uniform = /obj/item/clothing/under/syndicate/combat
+	uniform = /obj/item/clothing/under/syndicate/aclf
 	head = /obj/item/clothing/head/HoS/beret/syndicate
 	ears = /obj/item/radio/headset/syndicate/alt/leader
 	mask = /obj/item/clothing/mask/chameleon

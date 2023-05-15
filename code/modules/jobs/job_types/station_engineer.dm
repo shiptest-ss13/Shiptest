@@ -194,14 +194,17 @@
 	name = "Ship Engineer (Twinkleshine)"
 
 	uniform = /obj/item/clothing/under/syndicate/gec
+	accessory = null
 	glasses = /obj/item/clothing/glasses/meson/night
-	shoes = /obj/item/clothing/shoes/combat
-	head = null
+	head = /obj/item/clothing/head/hardhat/orange
 	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
 	ears = /obj/item/radio/headset/syndicate
 	mask = /obj/item/clothing/mask/chameleon
 	back = /obj/item/storage/backpack/industrial
 	belt = /obj/item/storage/belt/utility/syndicate
+	shoes = /obj/item/clothing/shoes/combat
+	suit = /obj/item/clothing/suit/hazardvest
+	alt_suit = /obj/item/clothing/suit/toggle/hazard
 	implants = list(/obj/item/implant/weapons_auth)
 	id = /obj/item/card/id/syndicate_command/crew_id/engi
 	backpack_contents = list(/obj/item/construction/rcd/combat, /obj/item/rcd_ammo/large)
