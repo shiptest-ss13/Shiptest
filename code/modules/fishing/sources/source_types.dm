@@ -20,17 +20,6 @@
 	)
 	fishing_difficulty = FISHING_DEFAULT_DIFFICULTY + 5
 
-/datum/fish_source/ocean/ripple
-	fish_table = list(
-		/obj/item/fish/trout = 10,
-		/obj/item/fish/salmon = 10,
-		/obj/item/fish/dwarf_moonfish = 10,
-		/obj/item/fish/gunner_jellyfish = 10,
-		/obj/item/fish/lanternfish = 5,
-		/obj/item/fish/firefish = 5,
-		/obj/item/fish/emulsijack = 1
-	)
-
 /datum/fish_source/ocean/beach
 	catalog_description = "Beach shore water"
 

@@ -77,7 +77,6 @@ GLOBAL_PROTECT(admin_verbs_admin)
 	/client/proc/toggleadminhelpsound,
 	/datum/admins/proc/open_borgopanel,
 	/client/proc/investigate_show,		/*various admintools for investigation. Such as a singulo grief-log*/
-	/datum/admins/proc/fishing_calculator,
 	)
 
 GLOBAL_LIST_INIT(admin_verbs_ban, list(
