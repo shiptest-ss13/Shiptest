@@ -62,7 +62,7 @@
 	back = /obj/item/storage/backpack/duffelbag/syndie/med
 	shoes = /obj/item/clothing/shoes/combat
 	suit = /obj/item/clothing/suit/longcoat/roboblack
-	alt_suit = /obj/item/clothing/suit/labcoat/raincoat
+	alt_suit = /obj/item/clothing/suit/toggle/labcoat
 	suit_store =  null
 	ears = /obj/item/radio/headset/syndicate
 	mask = /obj/item/clothing/mask/chameleon
