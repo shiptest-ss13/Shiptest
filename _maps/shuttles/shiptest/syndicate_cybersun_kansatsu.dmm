@@ -114,14 +114,6 @@
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning{
 	dir = 1
 	},
-/obj/docking_port/mobile{
-	callTime = 250;
-	dir = 2;
-	launch_status = 0;
-	name = "Scout Courier";
-	port_direction = 8;
-	preferred_direction = 4
-	},
 /obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/plasteel/white,
 /area/ship/engineering)
@@ -1191,6 +1183,14 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
+/obj/docking_port/mobile{
+	callTime = 250;
+	launch_status = 0;
+	name = "Scout Courier";
+	port_direction = 4;
+	preferred_direction = 4;
+	dheight = 2
+	},
 /turf/open/floor/plating,
 /area/ship/cargo)
 "CP" = (
@@ -1324,6 +1324,14 @@
 	},
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
+"Gj" = (
+/obj/docking_port/stationary{
+	height = 15;
+	dwidth = 15;
+	width = 30
+	},
+/turf/template_noop,
+/area/template_noop)
 "GG" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/computer/security{
@@ -2060,6 +2068,7 @@
 /area/ship/engineering)
 
 (1,1,1) = {"
+YQ
 aV
 YQ
 YQ
@@ -2077,6 +2086,7 @@ YQ
 CR
 "}
 (2,1,1) = {"
+YQ
 ru
 ru
 ru
@@ -2094,6 +2104,7 @@ ru
 ru
 "}
 (3,1,1) = {"
+YQ
 ru
 XJ
 YG
@@ -2111,6 +2122,7 @@ Ul
 ru
 "}
 (4,1,1) = {"
+YQ
 ru
 dj
 OD
@@ -2128,6 +2140,7 @@ SH
 ru
 "}
 (5,1,1) = {"
+Gj
 cu
 yw
 aQ
@@ -2145,6 +2158,7 @@ Qy
 ru
 "}
 (6,1,1) = {"
+YQ
 ru
 ru
 gj
@@ -2162,6 +2176,7 @@ Od
 nO
 "}
 (7,1,1) = {"
+YQ
 YQ
 yJ
 kM
@@ -2181,6 +2196,7 @@ YQ
 (8,1,1) = {"
 YQ
 YQ
+YQ
 kM
 MH
 RX
@@ -2196,6 +2212,7 @@ YQ
 YQ
 "}
 (9,1,1) = {"
+YQ
 YQ
 YQ
 kM
@@ -2215,6 +2232,7 @@ YQ
 (10,1,1) = {"
 YQ
 YQ
+YQ
 kM
 Vw
 Fw
@@ -2230,6 +2248,7 @@ YQ
 YQ
 "}
 (11,1,1) = {"
+YQ
 YQ
 YQ
 kM
@@ -2249,6 +2268,7 @@ YQ
 (12,1,1) = {"
 YQ
 YQ
+YQ
 kM
 in
 EX
@@ -2264,6 +2284,7 @@ YQ
 YQ
 "}
 (13,1,1) = {"
+YQ
 YQ
 YQ
 kM
@@ -2284,6 +2305,7 @@ YQ
 YQ
 YQ
 YQ
+YQ
 qA
 Jp
 QN
@@ -2301,6 +2323,7 @@ YQ
 YQ
 YQ
 YQ
+YQ
 Av
 CP
 Hd
@@ -2315,6 +2338,7 @@ YQ
 YQ
 "}
 (16,1,1) = {"
+YQ
 YQ
 YQ
 YQ
@@ -2336,6 +2360,7 @@ YQ
 YQ
 YQ
 YQ
+YQ
 qA
 hT
 qA
@@ -2353,6 +2378,7 @@ YQ
 YQ
 YQ
 YQ
+YQ
 qA
 Lr
 AM
@@ -2366,6 +2392,7 @@ YQ
 YQ
 "}
 (19,1,1) = {"
+YQ
 YQ
 YQ
 YQ
@@ -2388,6 +2415,7 @@ YQ
 YQ
 YQ
 YQ
+YQ
 bn
 vN
 aa
@@ -2400,6 +2428,7 @@ YQ
 YQ
 "}
 (21,1,1) = {"
+YQ
 YQ
 YQ
 YQ
@@ -2422,6 +2451,7 @@ YQ
 YQ
 YQ
 YQ
+YQ
 bO
 ZI
 DL
@@ -2434,6 +2464,7 @@ YQ
 YQ
 "}
 (23,1,1) = {"
+YQ
 YQ
 YQ
 YQ
@@ -2457,6 +2488,7 @@ YQ
 YQ
 YQ
 YQ
+YQ
 Rz
 JI
 uq
@@ -2468,6 +2500,7 @@ YQ
 YQ
 "}
 (25,1,1) = {"
+YQ
 YQ
 YQ
 YQ
@@ -2491,6 +2524,7 @@ YQ
 YQ
 YQ
 YQ
+YQ
 Rz
 Rz
 Rz
@@ -2502,6 +2536,7 @@ YQ
 YQ
 "}
 (27,1,1) = {"
+YQ
 YQ
 YQ
 YQ
