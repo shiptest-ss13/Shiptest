@@ -14,10 +14,10 @@ jobs:
     name: Run Linters
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           ref: master
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Restore SpacemanDMM cache
         uses: actions/cache@v3
         with:
@@ -54,7 +54,7 @@ jobs:
         if: always()
         with:
           outputFile: output-annotations.txt
-      - uses: actions/setup-python@v1
+      - uses: actions/setup-python@v4
         with:
           python-version: "3.9"
       - name: Run Check Regex
@@ -69,14 +69,14 @@ jobs:
     name: Compile Maps
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Python setup
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@v4
         with:
           python-version: "3.9"
       - name: Setup cache
         id: cache-byond
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ~/BYOND
           key: ${{ runner.os }}-byond-cache-${{ hashFiles('Dockerfile') }}
@@ -103,10 +103,10 @@ jobs:
           - 3306
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Setup cache
         id: cache-byond
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ~/BYOND
           key: ${{ runner.os }}-byond-cache-${{ hashFiles('Dockerfile') }}
@@ -144,7 +144,7 @@ jobs:
     name: Windows Build
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Restore Yarn cache
         uses: actions/cache@v3
         with:
@@ -163,7 +163,7 @@ jobs:
           md deploy
           bash tools/deploy.sh ./deploy
       - name: Deploy artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: deploy
           path: deploy

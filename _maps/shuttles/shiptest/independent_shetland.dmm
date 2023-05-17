@@ -454,7 +454,8 @@
 /obj/machinery/door/poddoor{
 	id = "amoguswindows"
 	},
-/obj/effect/spawner/structure/window/reinforced,
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/grille,
 /turf/open/floor/plating,
 /area/ship/crew/canteen)
 "ev" = (
@@ -1074,12 +1075,13 @@
 /turf/open/floor/plasteel,
 /area/ship/security)
 "jW" = (
-/obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/atmospherics/pipe/simple/green/visible,
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "kh" = (
@@ -1326,7 +1328,8 @@
 /obj/machinery/door/poddoor{
 	id = "amoguswindows"
 	},
-/obj/effect/spawner/structure/window/reinforced,
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/grille,
 /turf/open/floor/plating,
 /area/ship/hallway/port)
 "ms" = (
@@ -1353,15 +1356,6 @@
 "mH" = (
 /turf/closed/wall,
 /area/ship/engineering/electrical)
-"mL" = (
-/obj/machinery/atmospherics/pipe/simple/cyan/visible,
-/obj/effect/spawner/structure/window/reinforced,
-/obj/machinery/door/firedoor/border_only,
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
-/turf/open/floor/plating,
-/area/ship/engineering/atmospherics)
 "mP" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 1
@@ -1493,7 +1487,8 @@
 /obj/machinery/door/poddoor{
 	id = "amoguswindows"
 	},
-/obj/effect/spawner/structure/window/reinforced,
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/grille,
 /turf/open/floor/plating,
 /area/ship/hallway/fore)
 "oS" = (
@@ -1732,12 +1727,13 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "qX" = (
-/obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/atmospherics/pipe/simple/cyan/visible,
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "rd" = (
@@ -2072,6 +2068,16 @@
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/port)
+"tK" = (
+/obj/machinery/atmospherics/pipe/simple/cyan/visible,
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/grille,
+/turf/open/floor/plating,
+/area/ship/engineering/atmospherics)
 "tW" = (
 /obj/machinery/atmospherics/pipe/simple/orange/visible{
 	dir = 4
@@ -2336,7 +2342,8 @@
 /obj/machinery/door/poddoor{
 	id = "amoguswindows"
 	},
-/obj/effect/spawner/structure/window/reinforced,
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/grille,
 /turf/open/floor/plating,
 /area/ship/crew/toilet)
 "wk" = (
@@ -3226,7 +3233,8 @@
 /obj/machinery/door/poddoor{
 	id = "amoguswindows"
 	},
-/obj/effect/spawner/structure/window/reinforced,
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/grille,
 /turf/open/floor/plating,
 /area/ship/hallway/starboard)
 "Gg" = (
@@ -3349,11 +3357,12 @@
 /turf/open/floor/plasteel,
 /area/ship/engineering/atmospherics)
 "HC" = (
-/obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "HH" = (
@@ -3522,7 +3531,8 @@
 /obj/machinery/door/poddoor{
 	id = "amoguswindows"
 	},
-/obj/effect/spawner/structure/window/reinforced,
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/grille,
 /turf/open/floor/plating,
 /area/ship/bridge)
 "Jo" = (
@@ -3806,7 +3816,8 @@
 /obj/machinery/door/poddoor{
 	id = "amoguswindows"
 	},
-/obj/effect/spawner/structure/window/reinforced,
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/grille,
 /turf/open/floor/plating,
 /area/ship/crew/dorm)
 "Mg" = (
@@ -4044,7 +4055,7 @@
 	pixel_y = 8
 	},
 /obj/item/reagent_containers/glass/bottle{
-	list_reagents = list(/datum/reagent/medicine/thializid = 30);
+	list_reagents = list(/datum/reagent/medicine/thializid=30);
 	name = "thializid bottle"
 	},
 /obj/item/reagent_containers/syringe,
@@ -6224,7 +6235,7 @@ Bb
 VX
 iV
 Ci
-qX
+tK
 Xw
 zn
 he
@@ -6287,7 +6298,7 @@ DA
 ps
 Xw
 MW
-mL
+qX
 Er
 Wp
 iV

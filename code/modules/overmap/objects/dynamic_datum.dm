@@ -16,15 +16,15 @@
 	///If the level should be preserved. Useful for if you want to build a colony or something.
 	var/preserve_level = FALSE
 	///What kind of planet the level is, if it's a planet at all.
-	var/planet
+	var/datum/planet_type/planet
 	///Planet's flavor name, if it is a planet.
 	var/planet_name
 	///List of probabilities for each type of planet.
 	var/static/list/probabilities
 	///The planet that will be forced to load
 	var/force_encounter
-	///List of ruins to potentially generate
-	var/list/ruin_list
+	///Ruin types to generate
+	var/ruin_type
 	/// list of ruins and their target turf, indexed by name
 	var/list/ruin_turfs
 
@@ -109,163 +109,21 @@
  * Chooses a type of level for the dynamic level to use.
  */
 /datum/overmap/dynamic/proc/choose_level_type(load_now = TRUE) //TODO: This is a awful way of hanlding random planets. If maybe it picked from a list of datums that then would be applied on the dynamic datum, it would be a LOT better.
-	var/chosen
 	if(!probabilities)
-		probabilities = list(DYNAMIC_WORLD_LAVA = min(length(SSmapping.lava_ruins_templates), 20),
-		DYNAMIC_WORLD_ICE = min(length(SSmapping.ice_ruins_templates), 20),
-		DYNAMIC_WORLD_JUNGLE = min(length(SSmapping.jungle_ruins_templates), 20),
-		DYNAMIC_WORLD_SAND = min(length(SSmapping.sand_ruins_templates), 20),
-		DYNAMIC_WORLD_SPACERUIN = min(length(SSmapping.space_ruins_templates), 20),
-		DYNAMIC_WORLD_WASTEPLANET = min(length(SSmapping.waste_ruins_templates), 20),
-		DYNAMIC_WORLD_ROCKPLANET = min(length(SSmapping.rock_ruins_templates), 20),
-		DYNAMIC_WORLD_BEACHPLANET = min(length(SSmapping.beach_ruins_templates), 20),
-		//DYNAMIC_WORLD_REEBE = 0, //unspawnable because of major lack of skill. //you fucking probablitiy zero does not equal one you dumbass
-		DYNAMIC_WORLD_ASTEROID = 30)
+		probabilities = list()
+		for(var/datum/planet_type/planet_type as anything in subtypesof(/datum/planet_type))
+			probabilities[initial(planet_type.planet)] = initial(planet_type.weight)
 
-	if(force_encounter)
-		chosen = force_encounter
-	else
-		chosen = pickweight(probabilities)
-	switch(chosen)
-		if(DYNAMIC_WORLD_LAVA)
-			Rename("lava planet")
-			token.desc = "A very weak energy signal originating from a planet with lots of seismic and volcanic activity."
-			planet = DYNAMIC_WORLD_LAVA
-			token.icon_state = "globe"
-			token.color = COLOR_ORANGE
-			planet_name = gen_planet_name()
+	planet = SSmapping.planet_types[force_encounter ? force_encounter : pickweightAllowZero(probabilities)]
 
-			ruin_list = SSmapping.lava_ruins_templates
-			mapgen = /datum/map_generator/planet_generator/lava
-			default_baseturf = /turf/open/floor/plating/asteroid/basalt/lava_land_surface
-
-			weather_controller_type = /datum/weather_controller/lavaland
-
-		if(DYNAMIC_WORLD_ICE)
-			Rename("frozen planet")
-			token.desc = "A very weak energy signal originating from a planet with traces of water and extremely low temperatures."
-			planet = DYNAMIC_WORLD_ICE
-			token.icon_state = "globe"
-			token.color = COLOR_BLUE_LIGHT
-			planet_name = gen_planet_name()
-
-			ruin_list = SSmapping.ice_ruins_templates
-			mapgen = /datum/map_generator/planet_generator/snow
-			default_baseturf = /turf/open/floor/plating/asteroid/snow/icemoon
-
-			weather_controller_type = /datum/weather_controller/snow_planet
-
-		if(DYNAMIC_WORLD_JUNGLE)
-			Rename("jungle planet")
-			token.desc = "A very weak energy signal originating from a planet teeming with life."
-			planet = DYNAMIC_WORLD_JUNGLE
-			token.icon_state = "globe"
-			token.color = COLOR_LIME
-			planet_name = gen_planet_name()
-
-			ruin_list = SSmapping.jungle_ruins_templates
-			mapgen = /datum/map_generator/planet_generator/jungle
-			default_baseturf = /turf/open/floor/plating/dirt/jungle
-
-			weather_controller_type = /datum/weather_controller/lush
-
-		if(DYNAMIC_WORLD_SAND)
-			Rename("sand planet")
-			token.desc = "A very weak energy signal originating from a planet with many traces of silica."
-			planet = DYNAMIC_WORLD_SAND
-			token.icon_state = "globe"
-			token.color = COLOR_GRAY
-			planet_name = gen_planet_name()
-
-			ruin_list = SSmapping.sand_ruins_templates
-			mapgen = /datum/map_generator/planet_generator/sand
-			default_baseturf = /turf/open/floor/plating/asteroid/whitesands
-
-			weather_controller_type = /datum/weather_controller/desert
-
-		if(DYNAMIC_WORLD_WASTEPLANET)
-			Rename("waste disposal planet")
-			token.desc = "A very weak energy signal originating from a planet marked as waste disposal."
-			planet = DYNAMIC_WORLD_WASTEPLANET
-			token.icon_state = "globe"
-			token.color = "#a9883e"
-			planet_name = gen_planet_name()
-
-			ruin_list = SSmapping.waste_ruins_templates
-			mapgen = /datum/map_generator/single_biome/wasteplanet
-			default_baseturf = /turf/open/floor/plating/asteroid/wasteplanet
-
-			weather_controller_type = /datum/weather_controller/chlorine //let's go??
-
-		if(DYNAMIC_WORLD_ROCKPLANET)
-			Rename("rock planet")
-			token.desc = "A very weak energy signal originating from a iron rich and rocky planet."
-			planet = DYNAMIC_WORLD_ROCKPLANET
-			token.icon_state = "globe"
-			token.color = "#bd1313"
-			planet_name = gen_planet_name()
-
-			ruin_list = SSmapping.rock_ruins_templates
-			mapgen = /datum/map_generator/planet_generator/rock
-			default_baseturf = /turf/open/floor/plating/asteroid
-
-			weather_controller_type = /datum/weather_controller/rockplanet
-
-		if(DYNAMIC_WORLD_BEACHPLANET)
-			Rename("beach planet")
-			token.desc = "A very weak energy signal originating from a warm, oxygen rich planet."
-			planet = DYNAMIC_WORLD_BEACHPLANET
-			token.icon_state = "globe"
-			token.color = "#c6b597"
-			planet_name = gen_planet_name()
-
-			ruin_list = SSmapping.beach_ruins_templates
-			mapgen = /datum/map_generator/planet_generator/beach
-			default_baseturf = /turf/open/floor/plating/asteroid/sand/lit
-
-			weather_controller_type = /datum/weather_controller/lush
-
-		if(DYNAMIC_WORLD_REEBE)
-			Rename("???")
-			token.desc = "Some sort of strange portal. Theres no identification of what this is."
-			planet = DYNAMIC_WORLD_REEBE
-			token.icon_state = "wormhole"
-			token.color = COLOR_YELLOW
-			planet_name = "Reebe"
-
-			ruin_list = SSmapping.yellow_ruins_templates
-			mapgen = /datum/map_generator/single_biome/reebe
-			default_baseturf = /turf/open/chasm/reebe_void
-
-			weather_controller_type = null
-
-		if(DYNAMIC_WORLD_ASTEROID)
-			Rename("large asteroid")
-			token.desc = "A large asteroid with significant traces of minerals."
-			planet = DYNAMIC_WORLD_ASTEROID
-			token.icon_state = "asteroid"
-			token.color = COLOR_GRAY
-
-			ruin_list = null // asteroid ruins when
-			mapgen = /datum/map_generator/single_biome/asteroid
-			// Space, because asteroid maps also include space turfs and the prospect of space turfs
-			// existing without space as their baseturf scares me.
-			default_baseturf = /turf/open/space
-
-			weather_controller_type = null
-
-		if(DYNAMIC_WORLD_SPACERUIN)
-			Rename("weak energy signal")
-			token.desc = "A very weak energy signal emenating from space."
-			planet = DYNAMIC_WORLD_SPACERUIN
-			token.icon_state = "strange_event"
-			token.color = null
-
-			ruin_list = SSmapping.space_ruins_templates
-			mapgen = /datum/map_generator/single_turf/space
-			default_baseturf = /turf/open/space
-
-			weather_controller_type = null
+	Rename(planet.name)
+	token.icon_state = planet.icon_state
+	token.desc = planet.desc
+	token.color = planet.color
+	ruin_type = planet.ruin_type
+	default_baseturf = planet.default_baseturf
+	mapgen = planet.mapgen
+	weather_controller_type = planet.weather_controller_type
 
 	if(vlevel_height >= 255 && vlevel_width >= 255) //little easter egg
 		planet_name = "LV-[pick(rand(11111,99999))]"
@@ -303,8 +161,8 @@
 		return TRUE
 	log_shuttle("[src] [REF(src)] LEVEL_INIT")
 	// use the ruin type in template if it exists, or pick from ruin list if IT exists; otherwise null
-	var/ruin_type = template || (ruin_list ? ruin_list[pick(ruin_list)] : null)
-	var/list/dynamic_encounter_values = SSovermap.spawn_dynamic_encounter(src, ruin_type)
+	var/selected_ruin = template || (ruin_type ? pickweightAllowZero(SSmapping.ruin_types_probabilities[ruin_type]) : null)
+	var/list/dynamic_encounter_values = SSovermap.spawn_dynamic_encounter(src, selected_ruin)
 	if(!length(dynamic_encounter_values))
 		return FALSE
 	mapzone = dynamic_encounter_values[1]

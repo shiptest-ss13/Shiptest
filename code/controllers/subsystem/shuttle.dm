@@ -343,6 +343,7 @@ SUBSYSTEM_DEF(shuttle)
 	new_shuttle.current_ship = parent //for any ships that spawn on top of us
 
 	for(var/obj/docking_port/stationary/S in stationary_ports)
+		S.owner_ship = new_shuttle
 		S.load_roundstart()
 
 	var/obj/docking_port/mobile/transit_dock = generate_transit_dock(new_shuttle)

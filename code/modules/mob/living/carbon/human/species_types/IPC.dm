@@ -28,6 +28,7 @@
 	species_gibs = "robotic"
 	attack_sound = 'sound/items/trayhit1.ogg'
 	deathsound = "sound/voice/borg_deathsound.ogg"
+	wings_icons = list("Robotic")
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	species_language_holder = /datum/language_holder/ipc
 	loreblurb = "Integrated Positronic Chassis or \"IPC\" for short, are synthetic lifeforms composed of an Artificial \
@@ -215,9 +216,8 @@
 	addtimer(CALLBACK(src, .proc/post_revival, H), 6 SECONDS)
 
 /datum/species/ipc/proc/post_revival(mob/living/carbon/human/H)
-	if(H.stat < DEAD)
+	if(H.stat == DEAD)
 		return
-	H.say("Unit [H.real_name] is fully functional. Have a nice day.")
 	H.dna.features["ipc_screen"] = saved_screen
 	H.update_body()
 

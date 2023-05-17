@@ -4,7 +4,7 @@
 	name = "brimdemon"
 	desc = "A misshapen demon with big, red eyes and a hinged mouth. Not much is known about the creatures \
 		due to their response to any unexpected stimulus being \"brimbeam\", a deadly blood-laser barrage."
-	icon = 'icons/mob/brimdemon.dmi'
+	icon = 'icons/mob/lavaland/lavaland_monsters.dmi'
 	icon_state = "brimdemon"
 	icon_living = "brimdemon"
 	icon_dead = "brimdemon_dead"
@@ -28,7 +28,7 @@
 	attack_verb_simple = "bite"
 	attack_sound = 'sound/weapons/bite.ogg'
 	//attack_vis_effect = ATTACK_EFFECT_BITE
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat	 = 2, /obj/effect/decal/cleanable/brimdust = 1)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 2, /obj/effect/decal/cleanable/brimdust = 1)
 	loot = list()
 	robust_searching = TRUE
 	footstep_type = FOOTSTEP_MOB_CLAW
@@ -159,7 +159,7 @@
 
 /obj/effect/brimbeam
 	name = "brimbeam"
-	icon = 'icons/mob/brimdemon.dmi'
+	icon = 'icons/mob/lavaland/lavaland_monsters.dmi'
 	icon_state = "brimbeam_mid"
 	layer = ABOVE_MOB_LAYER
 	plane = -2

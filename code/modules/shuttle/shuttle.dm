@@ -207,6 +207,9 @@
 
 	var/last_dock_time
 
+	//The ship that has this port as a docking_point, ships docked to this port will be towed by the owner_ship
+	var/obj/docking_port/mobile/owner_ship
+
 	var/datum/map_template/shuttle/roundstart_template
 	var/json_key
 	//Setting this to false will prevent the roundstart_template from being loaded on Initiallize(). You should set this to false if this loads a subship on a ship map template
@@ -347,6 +350,9 @@
 	/// The sound range coeff for the landing and take off sound effects
 	var/sound_range = 60
 
+	/// The amount of turfs the shuttle is made up of (closed and open, doesn't include lattices)
+	var/turf_count = 0
+
 /obj/docking_port/mobile/proc/register()
 	SSshuttle.mobile += src
 
@@ -377,10 +383,10 @@
 /obj/docking_port/mobile/proc/load(datum/map_template/shuttle/source_template)
 	shuttle_areas = list()
 	var/list/all_turfs = return_ordered_turfs(x, y, z, dir)
-	for(var/i in 1 to all_turfs.len)
-		var/turf/curT = all_turfs[i]
+	for(var/turf/curT as anything in all_turfs)
 		var/area/shuttle/cur_area = curT.loc
 		if(istype(cur_area, area_type))
+			turf_count++
 			shuttle_areas[cur_area] = TRUE
 			if(!cur_area.mobile_port)
 				cur_area.link_to_shuttle(src)
