@@ -103,13 +103,16 @@
 /area/ruin/beach/xenolab)
 "bz" = (
 /obj/structure/window/reinforced/spawner,
+/obj/structure/sign/poster/minutemen/random{
+	pixel_x = -32
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/beach/xenolab)
 "bA" = (
 /turf/open/floor/wood/walnut,
 /area/ruin/beach/xenolab)
 "bB" = (
-/obj/structure/holosign/barrier/medical,
+/obj/structure/holosign/barrier/medical/infinite,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/beach/xenolab)
 "bC" = (
@@ -217,6 +220,12 @@
 	light_range = 2
 	},
 /area/ruin/beach/xenolab)
+"cY" = (
+/obj/effect/turf_decal/minutemen/edge{
+	dir = 8
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/powered/beach/xenolab)
 "cZ" = (
 /obj/structure/barricade/wooden,
 /turf/open/floor/plasteel/dark,
@@ -335,9 +344,7 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/beach/xenolab)
 "eR" = (
-/obj/effect/turf_decal/corner/opaque/white{
-	dir = 4
-	},
+/obj/effect/turf_decal/minutemen/edge,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/beach/xenolab)
 "eT" = (
@@ -395,6 +402,16 @@
 /mob/living/simple_animal/hostile/alien/drone,
 /turf/open/floor/plating,
 /area/ruin/beach/xenolab)
+"fC" = (
+/obj/effect/mine/explosive,
+/obj/item/restraints/legcuffs/beartrap,
+/obj/structure/window/plasma/reinforced{
+	dir = 4
+	},
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/powered/beach/xenolab)
 "fM" = (
 /obj/structure/alien/weeds,
 /obj/structure/alien/weeds,
@@ -461,6 +478,10 @@
 /obj/item/storage/bag/trash,
 /turf/open/floor/plasteel/dark,
 /area/ruin/beach/xenolab)
+"gS" = (
+/obj/effect/turf_decal/minutemen/edge,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/powered/beach/xenolab)
 "gW" = (
 /obj/structure/table/reinforced,
 /obj/item/restraints/legcuffs/beartrap,
@@ -514,10 +535,14 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/beach/xenolab)
 "hY" = (
-/obj/effect/decal/cleanable/glass/plasma,
-/obj/item/shard/plasma,
-/turf/open/floor/plating,
-/area/ruin/beach/xenolab)
+/obj/structure/chair/greyscale{
+	dir = 1
+	},
+/obj/structure/sign/poster/minutemen/random{
+	pixel_y = -32
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered/beach/xenolab)
 "ib" = (
 /obj/structure/alien/weeds,
 /mob/living/simple_animal/hostile/alien/drone,
@@ -526,6 +551,12 @@
 "if" = (
 /mob/living/simple_animal/hostile/alien/drone,
 /turf/open/floor/plasteel/dark,
+/area/ruin/beach/xenolab)
+"ig" = (
+/obj/structure/sign/poster/minutemen/random{
+	pixel_y = -32
+	},
+/turf/open/floor/plasteel/white,
 /area/ruin/beach/xenolab)
 "is" = (
 /obj/structure/alien/weeds,
@@ -570,12 +601,10 @@
 /turf/open/floor/plating,
 /area/ruin/beach/xenolab)
 "iM" = (
-/obj/structure/window/plasma/reinforced/spawner,
-/obj/structure/window/plasma/reinforced/spawner{
-	dir = 4
+/turf/closed/indestructible/hexacrete{
+	color = "#958F9D"
 	},
-/turf/open/floor/engine,
-/area/ruin/beach/xenolab)
+/area/ruin/powered/beach/xenolab)
 "iN" = (
 /obj/effect/decal/cleanable/shreds,
 /turf/open/floor/plating,
@@ -648,18 +677,21 @@
 /obj/effect/turf_decal/corner/opaque/white/diagonal,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/beach/xenolab)
+"jq" = (
+/obj/structure/barricade/sandbags,
+/obj/structure/window/plasma/reinforced{
+	dir = 8
+	},
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/powered/beach/xenolab)
 "jr" = (
 /obj/structure/chair/wood/wings{
 	dir = 4
 	},
 /turf/open/floor/wood/walnut,
 /area/ruin/beach/xenolab)
-"jt" = (
-/obj/machinery/deployable_turret,
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
-/area/ruin/powered/beach/xenolab)
 "jw" = (
 /obj/machinery/light/dim,
 /turf/open/floor/concrete/reinforced,
@@ -691,7 +723,7 @@
 /turf/open/floor/concrete,
 /area/ruin/beach/xenolab)
 "jK" = (
-/obj/effect/mine/shrapnel,
+/obj/effect/mine/explosive,
 /obj/item/restraints/legcuffs/beartrap,
 /turf/open/floor/plating/dirt{
 	light_range = 2
@@ -955,6 +987,14 @@
 /obj/item/toy/plush/goatplushie,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/beach/xenolab)
+"nI" = (
+/obj/structure/rack,
+/obj/structure/alien/weeds,
+/obj/structure/sign/poster/minutemen/random{
+	pixel_y = 32
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/beach/xenolab)
 "nO" = (
 /obj/structure/fence/corner{
 	dir = 5
@@ -981,6 +1021,9 @@
 /obj/effect/turf_decal/borderfloor{
 	dir = 9
 	},
+/obj/structure/sign/poster/minutemen/random{
+	pixel_x = -32
+	},
 /turf/open/floor/plasteel/white,
 /area/ruin/beach/xenolab)
 "oh" = (
@@ -993,7 +1036,9 @@
 /turf/open/floor/engine,
 /area/ruin/beach/xenolab)
 "oj" = (
-/obj/effect/turf_decal/corner/opaque/white,
+/obj/effect/turf_decal/minutemen/edge{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/beach/xenolab)
 "ol" = (
@@ -1040,6 +1085,9 @@
 /obj/effect/turf_decal/corner/opaque/red/border{
 	dir = 5
 	},
+/obj/structure/sign/poster/minutemen/lanchester{
+	pixel_x = 32
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/beach/xenolab)
 "oR" = (
@@ -1054,6 +1102,7 @@
 /turf/open/floor/plating,
 /area/ruin/beach/xenolab)
 "oU" = (
+/obj/effect/turf_decal/minutemen/middle,
 /obj/mecha/combat/combat_tank/minutemen/loaded,
 /turf/open/floor/concrete/reinforced,
 /area/ruin/powered/beach/xenolab)
@@ -1066,6 +1115,16 @@
 /mob/living/simple_animal/hostile/alien/queen/large,
 /turf/open/floor/concrete,
 /area/ruin/beach/xenolab)
+"ph" = (
+/obj/effect/mine/explosive,
+/obj/item/restraints/legcuffs/beartrap,
+/obj/structure/window/plasma/reinforced{
+	dir = 1
+	},
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/powered/beach/xenolab)
 "pi" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -1111,11 +1170,23 @@
 /mob/living/simple_animal/hostile/alien/queen,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/beach/xenolab)
+"pE" = (
+/obj/effect/turf_decal/minutemen/edge{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered/beach/xenolab)
 "pG" = (
 /obj/structure/alien/weeds,
 /obj/machinery/light/broken,
 /turf/open/floor/plasteel/dark,
 /area/ruin/beach/xenolab)
+"pJ" = (
+/obj/effect/turf_decal/minutemen/corner{
+	dir = 1
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/powered/beach/xenolab)
 "pK" = (
 /obj/structure/alien/weeds,
 /obj/effect/decal/cleanable/blood/splatter,
@@ -1136,9 +1207,11 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/beach/xenolab)
 "qa" = (
-/obj/effect/decal/cleanable/glass/plasma,
-/turf/open/floor/engine,
-/area/ruin/beach/xenolab)
+/obj/structure/sign/poster/minutemen/enlist{
+	pixel_x = -32
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered/beach/xenolab)
 "qf" = (
 /obj/structure/table/wood/reinforced,
 /turf/open/floor/plasteel/dark,
@@ -1306,10 +1379,10 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/beach/xenolab)
 "sa" = (
-/obj/machinery/light/broken{
-	dir = 4
+/obj/structure/sign/poster/minutemen/bard{
+	pixel_y = 32
 	},
-/turf/open/floor/plating,
+/turf/open/floor/concrete/slab_1/lit/beach,
 /area/ruin/beach/xenolab)
 "sc" = (
 /obj/effect/spawner/lootdrop/grille_or_trash,
@@ -1320,7 +1393,7 @@
 /turf/open/floor/plating,
 /area/ruin/beach/xenolab)
 "sf" = (
-/obj/effect/mine/shrapnel,
+/obj/effect/mine/explosive,
 /obj/item/restraints/legcuffs/beartrap,
 /turf/open/floor/concrete/reinforced/lit/beach,
 /area/ruin/beach/xenolab)
@@ -1395,6 +1468,16 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
+/area/ruin/powered/beach/xenolab)
+"sL" = (
+/obj/effect/mine/explosive,
+/obj/item/restraints/legcuffs/beartrap,
+/obj/structure/window/plasma/reinforced{
+	dir = 8
+	},
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
 /area/ruin/powered/beach/xenolab)
 "sP" = (
 /obj/structure/table/reinforced,
@@ -1531,10 +1614,11 @@
 /turf/open/floor/plating,
 /area/ruin/beach/xenolab)
 "us" = (
-/obj/effect/decal/cleanable/glass,
-/obj/effect/decal/cleanable/molten_object,
-/turf/open/floor/plating,
-/area/ruin/beach/xenolab)
+/obj/structure/sign/poster/minutemen/gold{
+	pixel_x = 32
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered/beach/xenolab)
 "uz" = (
 /obj/effect/decal/cleanable/plasma,
 /obj/effect/decal/cleanable/plasma,
@@ -1649,7 +1733,7 @@
 "vv" = (
 /obj/machinery/door/poddoor/multi_tile/three_tile_hor{
 	name = "Tank Storage";
-	id = "tank_door"
+	id = "cmm_tank_door"
 	},
 /turf/open/floor/concrete/reinforced,
 /area/ruin/powered/beach/xenolab)
@@ -1668,6 +1752,13 @@
 /obj/structure/firelock_frame,
 /obj/structure/barricade/wooden/crude,
 /turf/open/floor/plasteel/mono,
+/area/ruin/powered/beach/xenolab)
+"vK" = (
+/obj/structure/barricade/sandbags,
+/obj/structure/window/plasma/reinforced,
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
 /area/ruin/powered/beach/xenolab)
 "vO" = (
 /obj/structure/alien/weeds,
@@ -1787,8 +1878,15 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/beach/xenolab)
+"xw" = (
+/obj/structure/alien/weeds,
+/obj/structure/sign/poster/minutemen/random{
+	pixel_x = -32
+	},
+/turf/open/floor/wood/walnut,
+/area/ruin/beach/xenolab)
 "xy" = (
-/obj/effect/turf_decal/corner/opaque/white/mono,
+/obj/effect/turf_decal/minutemen/middle,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/beach/xenolab)
 "xz" = (
@@ -1819,7 +1917,7 @@
 /area/ruin/beach/xenolab)
 "xS" = (
 /obj/item/restraints/legcuffs/beartrap,
-/obj/effect/mine/shrapnel,
+/obj/effect/mine/explosive,
 /turf/open/floor/concrete/reinforced/lit/beach,
 /area/ruin/beach/xenolab)
 "xX" = (
@@ -1885,10 +1983,6 @@
 /obj/structure/bed/nest,
 /turf/open/floor/plasteel/tech,
 /area/ruin/beach/xenolab)
-"yI" = (
-/obj/effect/decal/cleanable/glass/plasma,
-/turf/open/floor/plating,
-/area/ruin/beach/xenolab)
 "yJ" = (
 /obj/structure/alien/weeds,
 /obj/item/poster/random_contraband,
@@ -1898,6 +1992,13 @@
 /obj/structure/alien/egg/burst,
 /obj/structure/alien/weeds,
 /turf/open/floor/concrete,
+/area/ruin/beach/xenolab)
+"yL" = (
+/obj/structure/alien/weeds/node,
+/obj/structure/sign/poster/minutemen/random{
+	pixel_y = -32
+	},
+/turf/open/floor/plasteel/dark,
 /area/ruin/beach/xenolab)
 "yM" = (
 /obj/structure/table/wood/reinforced,
@@ -1983,10 +2084,11 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/beach/xenolab)
 "zv" = (
-/obj/structure/window/plasma/reinforced/spawner{
-	dir = 8
+/obj/structure/barricade/sandbags,
+/obj/structure/sign/poster/minutemen/random{
+	pixel_y = -32
 	},
-/turf/open/floor/engine,
+/turf/open/floor/plating,
 /area/ruin/beach/xenolab)
 "zx" = (
 /obj/structure/alien/weeds,
@@ -1997,6 +2099,13 @@
 /obj/item/shard,
 /turf/open/floor/plasteel/dark,
 /area/ruin/beach/xenolab)
+"zA" = (
+/obj/effect/turf_decal/minutemen/corner,
+/obj/effect/turf_decal/corner/opaque/white{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered/beach/xenolab)
 "zB" = (
 /obj/structure/closet/secure_closet/personal/cabinet,
 /obj/item/clothing/under/rank/security/officer/minutemen,
@@ -2117,7 +2226,10 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/beach/xenolab)
 "BA" = (
-/obj/effect/turf_decal/corner/opaque/white/diagonal,
+/obj/effect/turf_decal/minutemen/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/white,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/beach/xenolab)
 "BC" = (
@@ -2279,7 +2391,7 @@
 /obj/machinery/button/door{
 	dir = 4;
 	pixel_x = -28;
-	id = "tank_door";
+	id = "cmm_tank_door";
 	name = "Tank Door Control"
 	},
 /mob/living/simple_animal/hostile/alien/maid/barmaid,
@@ -2337,6 +2449,14 @@
 /obj/machinery/light/dim,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/beach/xenolab)
+"Ei" = (
+/obj/effect/mine/explosive,
+/obj/item/restraints/legcuffs/beartrap,
+/obj/structure/window/plasma/reinforced,
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/powered/beach/xenolab)
 "Ek" = (
 /obj/machinery/door/window,
 /turf/open/floor/plasteel/dark,
@@ -2376,12 +2496,21 @@
 /turf/open/floor/plating,
 /area/ruin/beach/xenolab)
 "EE" = (
-/obj/structure/window/reinforced/spawner{
+/obj/structure/alien/weeds,
+/obj/structure/sign/poster/minutemen/random{
+	pixel_y = -32
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ruin/beach/xenolab)
+"EH" = (
+/obj/effect/turf_decal/minutemen/corner{
 	dir = 4
 	},
-/obj/item/shard,
-/turf/open/floor/engine,
-/area/ruin/beach/xenolab)
+/obj/effect/turf_decal/corner/opaque/white{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered/beach/xenolab)
 "EL" = (
 /obj/structure/alien/weeds,
 /obj/structure/bed/nest,
@@ -2405,6 +2534,12 @@
 "EV" = (
 /obj/structure/mineral_door/wood,
 /turf/open/floor/plasteel/white,
+/area/ruin/powered/beach/xenolab)
+"EW" = (
+/obj/effect/turf_decal/minutemen/edge{
+	dir = 1
+	},
+/turf/open/floor/concrete/reinforced,
 /area/ruin/powered/beach/xenolab)
 "Ff" = (
 /obj/structure/alien/weeds,
@@ -2517,12 +2652,11 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/beach/xenolab)
 "GJ" = (
-/obj/structure/window/plasma/reinforced/spawner,
-/obj/structure/window/plasma/reinforced/spawner{
-	dir = 8
+/obj/effect/decal/cleanable/plasma,
+/obj/structure/sign/poster/minutemen/random{
+	pixel_x = -32
 	},
-/obj/effect/turf_decal/atmos/mix,
-/turf/open/floor/engine,
+/turf/open/floor/plating,
 /area/ruin/beach/xenolab)
 "GK" = (
 /obj/effect/decal/cleanable/blood/gibs/torso,
@@ -2603,6 +2737,15 @@
 /obj/item/flamethrower,
 /turf/open/floor/plasteel/dark,
 /area/ruin/beach/xenolab)
+"Id" = (
+/obj/structure/barricade/sandbags,
+/obj/structure/window/plasma/reinforced{
+	dir = 1
+	},
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/powered/beach/xenolab)
 "Ig" = (
 /obj/structure/flora/ausbushes/grassybush,
 /turf/open/floor/plating/grass/beach/lit,
@@ -2634,7 +2777,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/beach/xenolab)
 "Iw" = (
-/turf/closed/wall/concrete/reinforced,
+/turf/closed/indestructible/hexacrete{
+	color = "#958F9D"
+	},
 /area/ruin/beach/xenolab)
 "Ix" = (
 /obj/effect/decal/cleanable/glass,
@@ -2674,10 +2819,16 @@
 /turf/open/floor/concrete,
 /area/ruin/powered/beach/xenolab)
 "Ja" = (
-/obj/item/shard,
-/turf/open/floor/plating/dirt{
-	light_range = 2
+/obj/structure/window/reinforced/spawner{
+	dir = 1
 	},
+/obj/structure/alien/weeds,
+/obj/effect/decal/cleanable/glass,
+/obj/item/shard,
+/obj/structure/sign/poster/minutemen/random{
+	pixel_x = -32
+	},
+/turf/open/floor/plasteel/dark,
 /area/ruin/beach/xenolab)
 "Jc" = (
 /obj/structure/window/reinforced/spawner{
@@ -2812,11 +2963,21 @@
 	light_range = 2
 	},
 /area/ruin/beach/xenolab)
+"KI" = (
+/obj/effect/turf_decal/minutemen/edge{
+	dir = 4
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/powered/beach/xenolab)
 "KS" = (
 /obj/effect/spawner/lootdrop/grille_or_trash,
 /obj/structure/alien/weeds,
 /turf/open/floor/plating,
 /area/ruin/beach/xenolab)
+"KX" = (
+/obj/effect/turf_decal/minutemen/corner,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/powered/beach/xenolab)
 "La" = (
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 8
@@ -2923,8 +3084,13 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/beach/xenolab)
 "MY" = (
-/obj/effect/decal/cleanable/glass,
-/turf/open/floor/plasteel/mono,
+/obj/structure/chair/wood/wings{
+	dir = 4
+	},
+/obj/structure/sign/poster/minutemen/random{
+	pixel_y = -32
+	},
+/turf/open/floor/wood/walnut,
 /area/ruin/beach/xenolab)
 "Nc" = (
 /obj/structure/alien/weeds,
@@ -2972,6 +3138,13 @@
 /obj/item/weldingtool/empty,
 /turf/open/floor/plating,
 /area/ruin/beach/xenolab)
+"NG" = (
+/obj/item/electronics/airlock,
+/obj/structure/sign/poster/minutemen/random{
+	pixel_y = -32
+	},
+/turf/open/floor/plating,
+/area/ruin/beach/xenolab)
 "NL" = (
 /obj/structure/alien/weeds,
 /obj/effect/decal/cleanable/blood/tracks,
@@ -2983,8 +3156,8 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/beach/xenolab)
 "NY" = (
-/obj/effect/turf_decal/corner/opaque/white{
-	dir = 8
+/obj/effect/turf_decal/minutemen/edge{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/beach/xenolab)
@@ -3094,6 +3267,16 @@
 /obj/item/gun/energy/e_gun/mini,
 /turf/open/floor/plating,
 /area/ruin/beach/xenolab)
+"Pp" = (
+/obj/structure/alien/weeds,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 10
+	},
+/obj/structure/sign/poster/minutemen/random{
+	pixel_y = -32
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/beach/xenolab)
 "Ps" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/effect/decal/cleanable/blood/footprints{
@@ -3123,6 +3306,15 @@
 /obj/item/ammo_casing/a556,
 /turf/open/floor/plating,
 /area/ruin/beach/xenolab)
+"PX" = (
+/obj/structure/barricade/sandbags,
+/obj/structure/window/plasma/reinforced{
+	dir = 4
+	},
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/powered/beach/xenolab)
 "PY" = (
 /obj/effect/decal/cleanable/molten_object,
 /obj/effect/decal/cleanable/plasma,
@@ -3256,8 +3448,11 @@
 /turf/open/floor/plating,
 /area/ruin/beach/xenolab)
 "RN" = (
-/obj/effect/turf_decal/corner/opaque/white/diagonal{
+/obj/effect/turf_decal/minutemen/corner{
 	dir = 8
+	},
+/obj/effect/turf_decal/corner/opaque/white{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/beach/xenolab)
@@ -3312,6 +3507,12 @@
 /obj/structure/alien/weeds,
 /turf/open/floor/plasteel/white,
 /area/ruin/beach/xenolab)
+"SF" = (
+/obj/effect/turf_decal/minutemen/corner{
+	dir = 4
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/powered/beach/xenolab)
 "SH" = (
 /obj/effect/decal/cleanable/molten_object/large,
 /obj/machinery/light/broken{
@@ -3547,6 +3748,12 @@
 /obj/item/gun/ballistic/shotgun,
 /turf/open/floor/plasteel/white,
 /area/ruin/beach/xenolab)
+"VB" = (
+/obj/effect/turf_decal/minutemen/corner{
+	dir = 8
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/powered/beach/xenolab)
 "VI" = (
 /obj/structure/alien/weeds/node,
 /obj/structure/alien/weeds,
@@ -3696,7 +3903,7 @@
 /turf/open/floor/plating,
 /area/ruin/beach/xenolab)
 "Xi" = (
-/obj/effect/mine/shrapnel,
+/obj/effect/mine/explosive,
 /turf/open/floor/plating/dirt{
 	light_range = 2
 	},
@@ -4661,7 +4868,7 @@ On
 KC
 WD
 uT
-ek
+EE
 Dk
 cV
 qC
@@ -5014,7 +5221,7 @@ Bq
 Vi
 hq
 Iw
-Wu
+nI
 Em
 Nd
 DZ
@@ -5239,7 +5446,7 @@ zb
 SD
 SD
 Ts
-Fr
+Pp
 Dk
 rl
 rl
@@ -5593,7 +5800,7 @@ Dk
 qQ
 bz
 zZ
-cT
+Ja
 Zu
 Dk
 Qt
@@ -5960,7 +6167,7 @@ hH
 Co
 hH
 hB
-Ez
+xw
 WJ
 Zs
 ck
@@ -6026,7 +6233,7 @@ Ar
 tk
 Qt
 XH
-CW
+yL
 Dk
 Ez
 Uf
@@ -6044,7 +6251,7 @@ gp
 ra
 ra
 tI
-jt
+LW
 Xi
 FF
 Xi
@@ -6058,7 +6265,7 @@ FF
 Xi
 FF
 Xi
-jt
+LW
 tI
 ra
 ra
@@ -6118,17 +6325,17 @@ ra
 tI
 Xi
 LW
-jK
-LW
-jK
-LW
-jK
-LW
-jK
-LW
-jK
-LW
-jK
+fC
+PX
+fC
+PX
+fC
+PX
+fC
+PX
+fC
+PX
+fC
 LW
 Xi
 tI
@@ -6189,7 +6396,7 @@ ra
 ra
 tI
 FF
-jK
+Ei
 al
 al
 al
@@ -6201,7 +6408,7 @@ al
 al
 al
 al
-jK
+ph
 FF
 KE
 ra
@@ -6261,7 +6468,7 @@ ra
 ra
 tI
 Xi
-LW
+vK
 al
 Va
 Va
@@ -6273,7 +6480,7 @@ Va
 Va
 Va
 al
-LW
+Id
 Xi
 tI
 ra
@@ -6333,7 +6540,7 @@ ra
 ra
 tI
 FF
-jK
+Ei
 al
 Va
 yA
@@ -6345,7 +6552,7 @@ rR
 jw
 Va
 al
-jK
+ph
 LW
 IQ
 ra
@@ -6405,17 +6612,17 @@ ra
 ra
 tI
 Xi
-LW
+vK
 al
 Va
 BY
 rR
+KX
+KI
+SF
 rR
 rR
-rR
-rR
-rR
-rR
+vv
 vv
 xS
 sf
@@ -6477,14 +6684,14 @@ ra
 ra
 tI
 FF
-jK
+Ei
 al
 Va
 Ka
 rR
-rR
+gS
 oU
-rR
+EW
 rR
 rR
 rR
@@ -6549,14 +6756,14 @@ ra
 ra
 tI
 jK
-LW
+vK
 al
 Va
 sP
 rR
-rR
-rR
-rR
+VB
+cY
+pJ
 rR
 rR
 rR
@@ -6621,7 +6828,7 @@ ra
 ra
 tI
 FF
-jK
+Ei
 al
 Va
 Cb
@@ -6633,7 +6840,7 @@ rR
 jw
 Va
 al
-jK
+ph
 LW
 Tx
 ra
@@ -6682,7 +6889,7 @@ Oc
 vu
 BQ
 Lk
-uL
+ig
 Dk
 rl
 Dk
@@ -6693,7 +6900,7 @@ ra
 ra
 tI
 Xi
-LW
+vK
 al
 Va
 Va
@@ -6705,7 +6912,7 @@ Va
 Va
 Va
 al
-LW
+Id
 Xi
 tI
 ra
@@ -6765,7 +6972,7 @@ ra
 ra
 tI
 FF
-jK
+Ei
 al
 al
 al
@@ -6777,7 +6984,7 @@ al
 al
 al
 al
-jK
+ph
 FF
 ls
 ra
@@ -6838,17 +7045,17 @@ ra
 tI
 Xi
 LW
-jK
-LW
-jK
-LW
-jK
-LW
-jK
-LW
-jK
-LW
-jK
+sL
+jq
+sL
+jq
+sL
+jq
+sL
+jq
+sL
+jq
+sL
 LW
 Xi
 tI
@@ -6908,7 +7115,7 @@ gp
 ra
 ra
 tI
-jt
+LW
 Xi
 FF
 Xi
@@ -6922,7 +7129,7 @@ FF
 Xi
 FF
 Xi
-jt
+LW
 tI
 ra
 ra
@@ -6955,7 +7162,7 @@ jY
 nW
 Fp
 sQ
-Mi
+NG
 Dk
 iC
 WY
@@ -7185,7 +7392,7 @@ Dk
 Dk
 Dk
 dN
-jr
+MY
 Dk
 ej
 ew
@@ -7245,7 +7452,7 @@ UD
 Op
 cd
 bm
-Lx
+GJ
 oS
 cd
 Xe
@@ -7470,7 +7677,7 @@ xO
 cj
 cs
 oX
-oX
+zv
 Dk
 mP
 yQ
@@ -7597,12 +7804,12 @@ qC
 qC
 Dk
 rl
-Va
-Va
-Va
-Va
-Va
-Va
+iM
+iM
+iM
+iM
+iM
+iM
 dD
 Dk
 YI
@@ -7669,12 +7876,12 @@ qC
 qC
 Dk
 ej
-Va
+iM
 YP
 qj
 Dz
 CB
-Va
+iM
 XP
 Dk
 Mq
@@ -7741,12 +7948,12 @@ qC
 qC
 Dk
 XP
-Va
+iM
 lj
 qj
 La
 Yr
-Va
+iM
 ds
 QC
 ej
@@ -7813,12 +8020,12 @@ qC
 qC
 Dk
 XP
-Va
-Va
+iM
+iM
 nr
 La
 Yr
-Va
+iM
 Dk
 Dk
 Dk
@@ -7886,11 +8093,11 @@ qC
 Dk
 ej
 YL
-Va
+iM
 rZ
 La
 YP
-Va
+iM
 Uz
 bF
 Xo
@@ -7958,11 +8165,11 @@ qC
 Dk
 Dk
 ew
-Va
+iM
 DC
 La
 mZ
-Va
+iM
 ZI
 ov
 NC
@@ -8030,7 +8237,7 @@ qC
 qC
 Dk
 bv
-Va
+iM
 Za
 qj
 La
@@ -8048,7 +8255,7 @@ Zh
 Zh
 Zh
 wg
-qj
+qa
 mc
 al
 qC
@@ -8102,11 +8309,11 @@ cV
 qC
 Dk
 CP
-Va
-Va
+iM
+iM
 Ac
 rI
-Va
+iM
 uM
 uX
 oR
@@ -8133,9 +8340,9 @@ al
 al
 al
 jM
-BA
+zA
 NY
-RN
+EH
 qj
 al
 ni
@@ -8175,10 +8382,10 @@ qC
 Dk
 rq
 qL
-Va
+iM
 td
 BP
-Va
+iM
 bJ
 aE
 lC
@@ -8207,7 +8414,7 @@ bC
 fR
 eR
 xy
-oj
+pE
 gm
 bC
 JD
@@ -8247,10 +8454,10 @@ qC
 Dk
 Dk
 cu
-Va
+iM
 yd
 MS
-Va
+iM
 WI
 aE
 se
@@ -8319,10 +8526,10 @@ qC
 qC
 Dk
 qL
-Va
+iM
 He
 qj
-Va
+iM
 xr
 bo
 sr
@@ -8354,7 +8561,7 @@ uh
 ar
 jn
 al
-JD
+sa
 Xu
 qO
 qO
@@ -8391,10 +8598,10 @@ qC
 qC
 Dk
 qL
-Va
-Va
+iM
+iM
 qj
-Va
+iM
 Dk
 Dk
 Dk
@@ -8409,7 +8616,7 @@ qj
 Ek
 qj
 pV
-hX
+hY
 al
 qC
 al
@@ -8464,9 +8671,9 @@ qC
 Dk
 rl
 rl
-Va
-Va
-Va
+iM
+iM
+iM
 DL
 QB
 jj
@@ -8692,11 +8899,11 @@ ej
 SH
 vS
 ej
-ej
-Ty
+MO
+IX
 al
 TK
-qj
+us
 hX
 al
 qC
@@ -8762,7 +8969,7 @@ Dk
 Dk
 ej
 Ty
-Ty
+Ws
 ej
 dj
 rS
@@ -8831,10 +9038,10 @@ Dk
 Dk
 Dk
 Dk
-Ty
+ga
 Th
 ej
-Ws
+MO
 cd
 cd
 ej
@@ -8902,7 +9109,7 @@ qC
 qC
 qC
 Dk
-MO
+ej
 ej
 dj
 ej
@@ -8975,7 +9182,7 @@ qC
 qC
 Dk
 YK
-ej
+cd
 ej
 ej
 MO
@@ -9046,16 +9253,16 @@ cV
 qC
 qC
 Dk
-ga
-Ty
-cd
 ej
-MO
-MY
 dj
-us
-EE
-ei
+ej
+Dk
+Dk
+Dk
+Dk
+Dk
+Dk
+Dk
 Dk
 qC
 qC
@@ -9117,18 +9324,18 @@ qC
 qC
 qC
 cV
-Dk
-IX
-ej
+qC
 cd
+Gj
 ej
-Ty
-Ty
-yI
-ej
-zv
-GJ
-Dk
+qC
+qC
+qC
+qC
+qC
+qC
+qC
+qC
 qC
 cV
 zH
@@ -9183,304 +9390,16 @@ ra
 ra
 ra
 ra
-gp
-qC
-qC
-qC
-qC
-qC
-Dk
-ej
-ej
-ej
-Gj
-ej
-sa
-Gj
-hY
-qa
-iM
-Dk
-qC
-qC
-gp
-ra
-ra
-ra
-ra
-ra
-ra
-ra
-ra
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-ra
-ra
-ra
-ra
-ra
-ra
-ra
-ra
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-"}
-(75,1,1) = {"
-BN
-BN
-BN
-ra
-ra
-ra
-ra
-ra
-ra
-ra
 nO
 vF
 vF
 vF
-dn
-qC
-qC
-ej
-dj
-ej
-Dk
-Dk
-Dk
-Dk
-Dk
-Dk
-Dk
-Dk
-qC
-qC
-XC
-ra
-ra
-ra
-ra
-ra
-ra
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-ra
-ra
-ra
-ra
-ra
-ra
-ra
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-"}
-(76,1,1) = {"
-BN
-BN
-BN
-BN
-BN
-ra
-ra
-ra
-ra
-ra
-ra
-ra
-ra
-ra
-gp
-qC
-ej
-cd
-ej
-ej
-qC
-qC
-qC
-qC
-cV
-qC
-qC
-qC
-qC
-qC
-rb
-ra
-ra
-ra
-ra
-ra
-ra
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-"}
-(77,1,1) = {"
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-ra
-ra
-ra
-ra
-ra
-ra
-gp
-qC
-ej
-ej
-Gj
-qC
-qC
-qC
-cV
-qC
-qC
-qC
-cV
-qC
-qC
-qC
-gp
-ra
-ra
-ra
-ra
-ra
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-"}
-(78,1,1) = {"
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-ra
-ra
-ra
-ra
-ra
-ra
-nO
-BC
+vF
+vF
+vF
 ZR
 TW
-BC
-BC
+vF
 vF
 vF
 vF
@@ -9496,47 +9415,10 @@ ra
 ra
 ra
 ra
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-"}
-(79,1,1) = {"
-BN
-BN
-BN
-BN
+ra
+ra
+ra
+ra
 BN
 BN
 BN
@@ -9549,116 +9431,9 @@ ra
 ra
 ra
 ra
-dj
-ej
-ej
 ra
 ra
 ra
-ra
-ra
-ra
-ra
-ra
-ra
-ra
-ra
-ra
-ra
-ra
-ra
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-"}
-(80,1,1) = {"
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-ra
-ra
-ra
-ra
-ra
-ej
-Ja
-ra
-ra
-ra
-ra
-ra
-ra
-ra
-ra
-ra
-ra
-ra
-ra
-ra
-ra
-ra
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
 BN
 BN
 BN

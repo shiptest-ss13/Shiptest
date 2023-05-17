@@ -316,3 +316,14 @@
 	icon = 'icons/turf/space.dmi'
 	icon_state = "black"
 	explosion_block = 1000 // fuck it, let's go higher
+
+/turf/closed/indestructible/hexacrete
+	name = "Extremely Reinforced Hexacrete"
+	desc = "Hexacrete reinforced to be resistant to just about any conventional means of destruction."
+	icon = 'icons/turf/walls/hexacrete.dmi'
+	icon_state = "hexacrete-0"
+	base_icon_state = "hexacrete"
+	rad_insulation = RAD_EXTREME_INSULATION
+	smoothing_flags = SMOOTH_BITMASK
+	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_CONCRETE_WALLS)
+	canSmoothWith = list(SMOOTH_GROUP_CONCRETE_WALLS)
