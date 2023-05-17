@@ -207,7 +207,18 @@
 	clawfootstep = FOOTSTEP_SAND
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	tiled_dirt = FALSE
+	var/ore_type = /obj/item/stack/ore/glass
+	var/turfverb = "dig up"
 	baseturfs = /turf/open/floor/plating
+
+/turf/open/floor/ship/dirt/attackby(obj/item/C, mob/user, params)
+	if((C.tool_behaviour == TOOL_SHOVEL) && params)
+		new ore_type(src, 2)
+		user.visible_message("<span class='notice'>[user] digs up [src].</span>", "<span class='notice'>You [turfverb] [src].</span>")
+		playsound(src, 'sound/effects/shovel_dig.ogg', 50, TRUE)
+		make_plating()
+	if(..())
+		return
 
 /turf/open/floor/ship/dirt/dark
 	icon_state = "greenerdirt"
