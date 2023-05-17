@@ -247,6 +247,11 @@
 "dq" = (
 /turf/closed/wall/r_wall,
 /area/ship/crew/toilet)
+"ds" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/ausbushes/brflowers,
+/turf/open/floor/grass/ship/jungle,
+/area/ship/roumain)
 "dV" = (
 /obj/structure/chair/pew/right{
 	dir = 1
@@ -401,6 +406,12 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
+"gK" = (
+/obj/structure/cable/orange{
+	icon_state = "2-8"
 	},
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
@@ -1080,6 +1091,17 @@
 /obj/effect/turf_decal/siding/wood/end,
 /turf/open/floor/wood/mahogany,
 /area/ship/roumain)
+"qZ" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/shutters{
+	name = "Body Shutters";
+	id = "body_shutters"
+	},
+/obj/structure/cable/orange{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating,
+/area/ship/roumain)
 "re" = (
 /obj/structure/railing/corner{
 	dir = 4
@@ -1149,6 +1171,12 @@
 	},
 /turf/open/floor/ship/dirt/dark,
 /area/ship/crew/toilet)
+"sA" = (
+/obj/structure/cable/orange{
+	icon_state = "1-4"
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "sD" = (
 /obj/structure/cable/orange{
 	icon_state = "1-2"
@@ -1559,6 +1587,13 @@
 /obj/item/clothing/mask/gas/hunter,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
+"Ac" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/structure/kitchenspike,
+/turf/open/floor/ship/dirt/dark,
+/area/ship/roumain)
 "Ao" = (
 /obj/structure/railing/corner,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1757,6 +1792,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
+/obj/structure/cable/orange{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/roumain)
 "Dg" = (
@@ -1786,10 +1824,11 @@
 /turf/open/floor/wood/ebony,
 /area/ship/crew/dorm)
 "Dz" = (
-/obj/structure/flora/ausbushes/brflowers,
-/obj/structure/flora/ausbushes/sparsegrass,
-/obj/structure/fermenting_barrel,
-/turf/open/floor/grass/ship/jungle,
+/obj/machinery/door/poddoor{
+	id = "glaive_body_blasts";
+	name = "Body Blast Door"
+	},
+/turf/open/floor/plasteel/dark,
 /area/ship/roumain)
 "DG" = (
 /turf/closed/wall/r_wall,
@@ -1961,7 +2000,7 @@
 /obj/structure/railing{
 	dir = 5
 	},
-/obj/item/kirbyplants/random,
+/obj/structure/kitchenspike,
 /turf/open/floor/ship/dirt/dark,
 /area/ship/roumain)
 "Fr" = (
@@ -1974,7 +2013,20 @@
 /obj/structure/railing/corner,
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/ausbushes/sparsegrass,
-/obj/structure/kitchenspike,
+/obj/machinery/button/door{
+	dir = 1;
+	pixel_x = -5;
+	pixel_y = -26;
+	name = "Body Blast Door Control";
+	id = "glaive_body_blasts"
+	},
+/obj/machinery/button/shieldwallgen{
+	dir = 1;
+	pixel_y = -25;
+	pixel_x = 6;
+	name = "Body Holofield Switch";
+	id = "glaive_body_holo"
+	},
 /turf/open/floor/grass/ship/jungle,
 /area/ship/roumain)
 "FA" = (
@@ -2029,6 +2081,12 @@
 /obj/item/toy/plush/snakeplushie,
 /turf/open/floor/ship/dirt/dark,
 /area/ship/roumain)
+"Ho" = (
+/obj/structure/cable/orange{
+	icon_state = "1-2"
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "Hw" = (
 /obj/effect/turf_decal/spline/fancy{
 	dir = 1
@@ -2053,10 +2111,18 @@
 /turf/open/floor/wood/maple,
 /area/ship/construction)
 "HB" = (
-/obj/structure/flora/ausbushes/brflowers,
-/obj/structure/flora/ausbushes/sparsegrass,
-/obj/structure/kitchenspike,
-/turf/open/floor/grass/ship/jungle,
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 1;
+	id = "glaive_body_holo"
+	},
+/obj/machinery/door/poddoor{
+	id = "glaive_body_blasts";
+	name = "Body Blast Door"
+	},
+/obj/structure/cable/orange{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plasteel/dark,
 /area/ship/roumain)
 "HS" = (
 /obj/machinery/power/apc/auto_name/north,
@@ -2069,6 +2135,19 @@
 /obj/machinery/portable_atmospherics/pump,
 /turf/open/floor/plating,
 /area/ship/engineering)
+"Ii" = (
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	id = "glaive_body_holo"
+	},
+/obj/machinery/door/poddoor{
+	id = "glaive_body_blasts";
+	name = "Body Blast Door"
+	},
+/obj/structure/cable/orange{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/roumain)
 "Il" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
@@ -2134,6 +2213,15 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/stairs,
 /area/ship/storage)
+"Jx" = (
+/obj/structure/cable/orange{
+	icon_state = "2-8"
+	},
+/obj/structure/cable/orange{
+	icon_state = "4-8"
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "Jy" = (
 /obj/machinery/power/terminal,
 /obj/structure/cable/orange{
@@ -2202,6 +2290,13 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/grass/ship/jungle,
 /area/ship/roumain)
+"LF" = (
+/obj/docking_port{
+	dwidth = 13;
+	dheight = 15
+	},
+/turf/template_noop,
+/area/template_noop)
 "LG" = (
 /obj/structure/flora/rock/jungle,
 /turf/open/floor/ship/dirt/dark,
@@ -2714,6 +2809,10 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
+"Sl" = (
+/obj/structure/fermenting_barrel,
+/turf/open/floor/ship/dirt/dark,
+/area/ship/roumain)
 "Sx" = (
 /obj/structure/window/reinforced/spawner{
 	dir = 4
@@ -3063,7 +3162,11 @@
 /obj/structure/flora/ausbushes/grassybush,
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/ausbushes/sparsegrass,
-/obj/item/kirbyplants/random,
+/obj/structure/destructible/tribal_torch,
+/obj/structure/sign/warning/vacuum/external{
+	pixel_y = -6;
+	pixel_x = -31
+	},
 /turf/open/floor/grass/ship/jungle,
 /area/ship/roumain)
 "YT" = (
@@ -3605,8 +3708,8 @@ sH
 cR
 yZ
 CH
-AN
-FA
+qZ
+sA
 sH
 sH
 sH
@@ -3617,7 +3720,7 @@ sH
 sH
 sH
 sH
-sH
+LF
 sH
 sH
 sH
@@ -3644,8 +3747,8 @@ Cr
 AN
 uY
 AN
-FA
-FA
+gK
+sA
 sH
 sH
 sH
@@ -3683,10 +3786,10 @@ wp
 ts
 wp
 wp
-FA
-FA
-FA
-FA
+Jx
+Ho
+Ho
+sA
 FA
 FA
 sH
@@ -3721,10 +3824,10 @@ lM
 aM
 Nq
 wp
-AN
-AN
-AN
-AN
+Ii
+Dz
+Dz
+HB
 wp
 FA
 FA
@@ -3759,9 +3862,9 @@ ko
 Lk
 aM
 YP
-qJ
-Dz
-HB
+ds
+aM
+aM
 Fu
 wp
 wp
@@ -3793,7 +3896,7 @@ AN
 AN
 AN
 cg
-XB
+Ac
 NL
 LG
 NL
@@ -3986,7 +4089,7 @@ ZE
 MZ
 qN
 NL
-NL
+Sl
 NL
 NL
 NL
