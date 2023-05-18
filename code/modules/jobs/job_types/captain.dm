@@ -128,6 +128,7 @@
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/eyepatch
 	id = /obj/item/card/id/syndicate_command/captain_id
 	implants = list(/obj/item/implant/weapons_auth)
+	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/pda/captain)
 
 	backpack = /obj/item/storage/backpack/security
 	satchel = /obj/item/storage/backpack/satchel/sec

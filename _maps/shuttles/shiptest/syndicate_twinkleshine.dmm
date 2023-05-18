@@ -1469,6 +1469,9 @@
 /area/ship/engineering/atmospherics)
 "iG" = (
 /obj/machinery/power/apc/auto_name/east,
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/cryo)
 "iI" = (
@@ -4783,6 +4786,10 @@
 /obj/item/clothing/under/rank/medical/doctor/red,
 /obj/item/clothing/under/syndicate/cybersun,
 /obj/item/clothing/under/syndicate/cybersun,
+/obj/item/storage/belt/medical/webbing,
+/obj/item/storage/belt/medical/webbing,
+/obj/item/storage/belt/medical,
+/obj/item/storage/belt/medical,
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "Dk" = (
@@ -5183,6 +5190,13 @@
 /obj/effect/turf_decal/trimline/opaque/syndiered/line,
 /turf/open/floor/plasteel/dark,
 /area/ship/medical/surgery)
+"FI" = (
+/obj/effect/turf_decal/corner/transparent/bar/diagonal,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel,
+/area/ship/crew/dorm)
 "FS" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/corner/opaque/syndiered{
@@ -6545,6 +6559,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew/dorm)
 "Nr" = (
@@ -6989,6 +7006,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/dorm)
@@ -7491,6 +7511,9 @@
 "SR" = (
 /obj/machinery/door/airlock/glass{
 	name = "Cryo"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/cryo)
@@ -8023,6 +8046,9 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/power/apc/auto_name/west,
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew/dorm)
 "Ws" = (
@@ -8425,6 +8451,9 @@
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/dorm)
@@ -9593,7 +9622,7 @@ vb
 fn
 iG
 SR
-Nr
+FI
 YO
 Fi
 zD

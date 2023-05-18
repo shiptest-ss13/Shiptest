@@ -58,7 +58,7 @@
 	uniform = /obj/item/clothing/under/rank/medical/doctor/red
 	alt_uniform = /obj/item/clothing/under/syndicate/cybersun
 	glasses = /obj/item/clothing/glasses/hud/health
-	belt = /obj/item/pda/medical
+	belt = /obj/item/storage/belt/medical
 	back = /obj/item/storage/backpack/duffelbag/syndie/med
 	shoes = /obj/item/clothing/shoes/combat
 	suit = /obj/item/clothing/suit/longcoat/roboblack
@@ -68,6 +68,7 @@
 	mask = /obj/item/clothing/mask/chameleon
 	id = /obj/item/card/id/syndicate_command/crew_id/med
 	implants = list(/obj/item/implant/weapons_auth)
+	backpack_contents = list(/obj/item/pda/brig_phys)
 
 	backpack = /obj/item/storage/backpack/security
 	satchel = /obj/item/storage/backpack/satchel/sec
