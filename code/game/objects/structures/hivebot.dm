@@ -37,3 +37,76 @@
 	playsound(src.loc, 'sound/effects/empulse.ogg', 25, TRUE)
 	qdel(src)
 	return
+
+/obj/structure/spawner/wasteplanet/hivebot
+	name = "beacon"
+	desc = "An active bluespace beacon, warping in creatures from a distant location."
+
+	icon = 'icons/mob/hivebot.dmi'
+	icon_state = "def_radar"
+
+	faction = list("mining")
+	max_mobs = 5
+	max_integrity = 450
+	mob_types = list(
+		/mob/living/simple_animal/hostile/hivebot/wasteplanet = 40,
+		/mob/living/simple_animal/hostile/hivebot/wasteplanet/ranged = 40,
+		/mob/living/simple_animal/hostile/hivebot/wasteplanet/ranged/rapid = 10,
+		/mob/living/simple_animal/hostile/hivebot/wasteplanet/strong = 5,
+		/mob/living/simple_animal/hostile/hivebot/mechanic = 5
+	)
+	spawn_text = "warps out of"
+	spawn_sound = list('sound/effects/empulse.ogg')
+	move_resist = INFINITY
+	anchored = TRUE
+	resistance_flags = FIRE_PROOF | LAVA_PROOF
+	var/obj/effect/light_emitter/hivespawner/emitted_light
+
+/obj/structure/spawner/wasteplanet/hivebot/Initialize()
+	. = ..()
+	emitted_light = new(loc)
+
+/obj/structure/spawner/wasteplanet/hivebot/deconstruct(disassembled)
+	destroy_effect()
+	drop_loot()
+	return ..()
+
+/obj/structure/spawner/wasteplanet/hivebot/Destroy()
+	QDEL_NULL(emitted_light)
+	return ..()
+
+/obj/structure/spawner/wasteplanet/hivebot/proc/destroy_effect()
+	playsound(loc,'sound/effects/explosionfar.ogg', 200, TRUE)
+	visible_message("<span class='boldannounce'>[src] begins to rattle and shake, sparks flying off of it!")
+
+
+/obj/structure/spawner/wasteplanet/hivebot/proc/drop_loot()
+	var/datum/effect_system/smoke_spread/smoke = new
+	smoke.set_up(2, loc)
+	smoke.start()
+	new /obj/effect/particle_effect/sparks(loc)
+	new /obj/effect/spawner/lootdrop/waste/hivebot/beacon(loc)
+
+/obj/effect/light_emitter/hivespawner
+	set_luminosity = 4
+	set_cap = 2.5
+	light_color = COLOR_RED_LIGHT
+
+
+/obj/structure/spawner/wasteplanet/hivebot/low_threat
+	max_mobs = 4
+	spawn_time = 300
+
+/obj/structure/spawner/wasteplanet/hivebot/medium_threat
+	max_mobs = 6
+	spawn_time = 250
+
+/obj/structure/spawner/wasteplanet/hivebot/high_threat
+	max_mobs = 8
+	spawn_time = 200
+
+/obj/structure/spawner/wasteplanet/hivebot/extreme_threat
+	max_mobs = 10
+	spawn_time = 150
+
+

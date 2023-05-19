@@ -26,7 +26,7 @@
 			BIOME_HIGHEST_HUMIDITY = /datum/biome/waste/tar_bed
 		),
 		BIOME_WARM = list(
-			BIOME_LOWEST_HUMIDITY = /datum/biome/waste/clearing,
+			BIOME_LOWEST_HUMIDITY = /datum/biome/waste/clearing, //to-do, add chembees
 			BIOME_LOW_HUMIDITY = /datum/biome/waste/clearing,
 			BIOME_MEDIUM_HUMIDITY = /datum/biome/waste/clearing/mushroom,
 			BIOME_HIGH_HUMIDITY = /datum/biome/waste,
@@ -255,6 +255,10 @@
 		/mob/living/simple_animal/bot/secbot/ed209/rockplanet = 3,
 		/mob/living/simple_animal/hostile/abandoned_minebot = 15,
 		/mob/living/simple_animal/bot/floorbot/rockplanet = 15,
+		/obj/structure/spawner/wasteplanet/hivebot/low_threat = 20,
+		/obj/structure/spawner/wasteplanet/hivebot/medium_threat = 10,
+		/obj/structure/spawner/wasteplanet/hivebot/high_threat = 5,
+		/obj/structure/spawner/wasteplanet/hivebot/extreme_threat = 2
 	)
 
 /datum/biome/waste/metal/rust
@@ -402,13 +406,40 @@
 		/mob/living/simple_animal/bot/secbot/ed209/rockplanet = 3,
 		/mob/living/simple_animal/hostile/abandoned_minebot = 15,
 		/mob/living/simple_animal/bot/floorbot/rockplanet = 15,
+		/obj/structure/spawner/wasteplanet/hivebot/low_threat = 20,
+		/obj/structure/spawner/wasteplanet/hivebot/medium_threat = 10,
+		/obj/structure/spawner/wasteplanet/hivebot/high_threat = 5,
+		/obj/structure/spawner/wasteplanet/hivebot/extreme_threat = 2
 	)
 
 /datum/biome/cave/waste/metal/hivebot
+	flora_spawn_list = list(
+		/obj/effect/spawner/lootdrop/waste/trash = 90,
+		/obj/effect/spawner/lootdrop/waste/radiation = 16,
+		/obj/effect/spawner/lootdrop/waste/radiation/more_rads = 2,
+		/obj/effect/spawner/lootdrop/waste/girder = 60,
+		/obj/structure/reagent_dispensers/fueltank = 10,
+		/obj/structure/reagent_dispensers/watertank = 20,
+		/obj/item/stack/cable_coil/cut = 50,
+		/obj/structure/closet/crate/secure/loot = 3,
+		/obj/effect/spawner/lootdrop/maintenance = 2,
+		/obj/effect/spawner/lootdrop/maintenance/two = 5,
+		/obj/effect/spawner/lootdrop/maintenance/three = 10,
+		/obj/effect/spawner/lootdrop/maintenance/four = 20,
+		/obj/effect/spawner/lootdrop/waste/salvageable = 40,
+		/obj/structure/foamedmetal = 100
+	)
 	mob_spawn_list = list( //Whoops! All hivebots!
 		/mob/living/simple_animal/hostile/hivebot/wasteplanet/strong = 80,
 		/mob/living/simple_animal/hostile/hivebot/wasteplanet/ranged = 50,
 		/mob/living/simple_animal/hostile/hivebot/wasteplanet/ranged/rapid = 50,
+
 	)
-	mob_spawn_chance = 20
-	//post my hivebot stuff: hivebot spawner, more hivebots
+	mob_spawn_chance = 30
+	feature_spawn_list = list(
+		/obj/structure/spawner/wasteplanet/hivebot/low_threat = 20,
+		/obj/structure/spawner/wasteplanet/hivebot/medium_threat = 10,
+		/obj/structure/spawner/wasteplanet/hivebot/high_threat = 5,
+		/obj/structure/spawner/wasteplanet/hivebot/extreme_threat = 2
+		)
+	feature_spawn_chance = 5 //hivebot biomes should have their dongles

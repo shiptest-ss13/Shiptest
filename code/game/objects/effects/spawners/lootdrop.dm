@@ -944,3 +944,128 @@ GLOBAL_LIST_INIT(ws_survivor_default_loot, list(
 		/obj/structure/girder/displaced,
 		/obj/structure/girder/reinforced
 	)
+/obj/effect/spawner/lootdrop/waste/hivebot
+	loot = list(
+	/obj/effect/spawner/lootdrop/salvage/metal,
+	/obj/effect/spawner/lootdrop/salvage/metal,
+	/obj/effect/spawner/lootdrop/salvage/metal,
+	/obj/effect/spawner/lootdrop/salvage/gold,
+	/obj/effect/spawner/lootdrop/salvage/plasma,
+	/obj/effect/spawner/lootdrop/salvage/silver,
+	/obj/effect/spawner/lootdrop/salvage/titanium,
+	/obj/item/stack/ore/salvage/scrapbluespace,
+	/obj/item/stack/ore/salvage/scrapbluespace,
+	/obj/item/stack/ore/salvage/scrapuranium
+	)
+	lootcount = 2
+
+/obj/effect/spawner/lootdrop/waste/hivebot/beacon
+	lootcount = 6
+
+/obj/effect/spawner/lootdrop/salvage
+	name = "salvage mats spawner"
+	loot = list(
+		/obj/item/stack/ore/salvage/scrapmetal,
+		/obj/item/stack/ore/salvage/scrapgold,
+		/obj/item/stack/ore/salvage/scrapplasma,
+		/obj/item/stack/ore/salvage/scrapsilver,
+		/obj/item/stack/ore/salvage/scraptitanium,
+		/obj/item/stack/ore/salvage/scrapbluespace,
+		/obj/item/stack/ore/salvage/scrapuranium
+	)
+
+/obj/effect/spawner/lootdrop/salvage/metal
+	loot = list(
+		/obj/item/stack/ore/salvage/scrapmetal
+	)
+
+/obj/effect/spawner/lootdrop/salvage/metal/Initialize()
+	lootcount = pick(list(
+		1,
+		2,
+		3,
+		4
+	))
+	return ..()
+
+/obj/effect/spawner/lootdrop/salvage/gold
+	loot = list(
+		/obj/item/stack/ore/salvage/scrapgold
+	)
+
+/obj/effect/spawner/lootdrop/salvage/gold/Initialize()
+	lootcount = pick(list(
+		1,
+		2,
+		3,
+		4
+	))
+	return ..()
+
+/obj/effect/spawner/lootdrop/salvage/plasma
+	loot = list(
+		/obj/item/stack/ore/salvage/scrapplasma
+	)
+/obj/effect/spawner/lootdrop/salvage/plasma/Initialize()
+	lootcount = pick(list(
+		1,
+		2,
+		3,
+		4
+	))
+	return ..()
+
+
+/obj/effect/spawner/lootdrop/salvage/silver
+	loot = list(
+		/obj/item/stack/ore/salvage/scrapsilver
+	)
+/obj/effect/spawner/lootdrop/salvage/silver/Initialize()
+	lootcount = pick(list(
+		1,
+		2,
+		3,
+		4
+	))
+	return ..()
+
+
+/obj/effect/spawner/lootdrop/salvage/titanium
+	loot = list(
+		/obj/item/stack/ore/salvage/scraptitanium
+	)
+/obj/effect/spawner/lootdrop/salvage/titanium/Initialize()
+	lootcount = pick(list(
+		1,
+		2,
+		3,
+		4
+	))
+	return ..()
+
+/obj/effect/spawner/lootdrop/salvage/bluespace
+	loot = list(
+		/obj/item/stack/ore/salvage/scrapbluespace
+	)
+/obj/effect/spawner/lootdrop/salvage/bluespace/Initialize()
+	lootcount = pick(list(
+		1,
+		2,
+		3,
+		4
+	))
+	return ..()
+
+/obj/effect/spawner/lootdrop/salvage/uranium
+	loot = list(
+		/obj/item/stack/ore/salvage/scrapuranium
+	)
+/obj/effect/spawner/lootdrop/salvage/uranium/Initialize()
+	lootcount = pick(list(
+		1,
+		2,
+		3,
+		4
+	))
+	return ..()
+
