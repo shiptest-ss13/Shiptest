@@ -1072,11 +1072,6 @@
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/dorm)
-"hw" = (
-/obj/machinery/computer/rdconsole/core,
-/obj/effect/turf_decal/industrial/outline/yellow,
-/turf/open/floor/plasteel/dark,
-/area/ship/science)
 "hy" = (
 /obj/structure/chair,
 /obj/structure/disposalpipe/segment{
@@ -1776,7 +1771,6 @@
 /area/ship/cargo/office)
 "lL" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/machinery/rnd/server,
 /obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/science)
@@ -4009,7 +4003,6 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/machinery/rnd/destructive_analyzer,
 /turf/open/floor/plasteel/dark,
 /area/ship/science)
 "zb" = (
@@ -7283,7 +7276,6 @@
 /area/ship/cargo)
 "TZ" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/machinery/rnd/production/circuit_imprinter/department/science,
 /turf/open/floor/plasteel/dark,
 /area/ship/science)
 "Uc" = (
@@ -8082,11 +8074,6 @@
 /obj/machinery/door/firedoor/heavy,
 /turf/open/floor/plating,
 /area/ship/science/ai_chamber)
-"ZY" = (
-/obj/effect/turf_decal/industrial/outline/yellow,
-/obj/machinery/rnd/production/protolathe/department/science,
-/turf/open/floor/plasteel/dark,
-/area/ship/science)
 "ZZ" = (
 /obj/structure/sign/nanotrasen,
 /turf/closed/wall/mineral/titanium/nodiagonal,
@@ -9585,7 +9572,7 @@ li
 li
 li
 ja
-ZY
+TZ
 VC
 TZ
 Po
@@ -9618,7 +9605,7 @@ li
 li
 li
 DP
-hw
+TZ
 VI
 rd
 Po

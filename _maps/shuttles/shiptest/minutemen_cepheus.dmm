@@ -2228,7 +2228,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "vJ" = (
-/obj/machinery/rnd/production/circuit_imprinter/department/science,
 /obj/structure/sign/poster/contraband/free_drone{
 	pixel_y = -32
 	},
@@ -2730,13 +2729,6 @@
 	dir = 1
 	},
 /obj/structure/rack,
-/obj/item/circuitboard/machine/circuit_imprinter{
-	pixel_y = -6
-	},
-/obj/item/circuitboard/machine/rdserver,
-/obj/item/circuitboard/computer/rdconsole{
-	pixel_y = 7
-	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/science/robotics)
@@ -3331,7 +3323,6 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering/electrical)
 "Iw" = (
-/obj/machinery/rnd/production/techfab/department/security,
 /obj/structure/extinguisher_cabinet{
 	pixel_x = -28
 	},
