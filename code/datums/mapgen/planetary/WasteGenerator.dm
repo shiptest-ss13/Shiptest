@@ -442,4 +442,4 @@
 		/obj/structure/spawner/wasteplanet/hivebot/high_threat = 5,
 		/obj/structure/spawner/wasteplanet/hivebot/extreme_threat = 2
 		)
-	feature_spawn_chance = 5 //hivebot biomes should have their dongles
+	feature_spawn_chance = 2 //hivebot biomes should have their dongles
