@@ -441,7 +441,7 @@ SUBSYSTEM_DEF(shuttle)
 			if(S)
 				. = TRUE
 				// If successful, returns the mobile docking port
-				var/datum/overmap/ship/controlled/new_ship = new(null, S)
+				var/datum/overmap/ship/controlled/new_ship = new(null, S, TRUE, TRUE)
 				if(new_ship?.shuttle_port)
 					user.forceMove(new_ship.get_jump_to_turf())
 					message_admins("[key_name_admin(user)] loaded [new_ship] ([S]) with the shuttle manipulator.")

@@ -1,14 +1,15 @@
 /datum/crew/ship
 	var/datum/overmap/ship/controlled/ship
 
-/datum/crew/ship/New(position, var/datum/map_template/shuttle/template)
+// Give a crew to an existing ship
+/datum/crew/ship/New(datum/overmap/ship/controlled/_ship)
 	..()
-	job_slots = template.job_slots
+	ship = _ship
+	class = _ship.source_template.short_name
+	name = _ship.name
+
+	job_slots = ship.source_template.job_slots
 	base_job_slots = job_slots
-	class = template.short_name
-	ship = new(position, template)
-	name = ship.name
-	ship.crew = src
 
 /datum/crew/ship/join_crew(mob/M, datum/job/job)
 	..()

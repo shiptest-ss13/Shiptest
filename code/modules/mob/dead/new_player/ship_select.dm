@@ -71,13 +71,13 @@
 				spawnee.new_player_panel()
 				return
 			to_chat(spawnee, "<span class='danger'>Your [template.name] is being prepared. Please be patient!</span>")
-			var/datum/crew/ship/target = new(SSovermap.get_unused_overmap_square(), template)
-			if(!target.ship?.shuttle_port)
+			var/datum/overmap/ship/controlled/target = new(SSovermap.get_unused_overmap_square(), template, TRUE, TRUE)
+			if(!target?.shuttle_port)
 				to_chat(spawnee, "<span class='danger'>There was an error loading the ship. Please contact admins!</span>")
 				spawnee.new_player_panel()
 				return
 			SSblackbox.record_feedback("tally", "ship_purchased", 1, template.name) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
-			if(!spawnee.AttemptLateSpawn(target.job_slots[1], target)) //Try to spawn as the first listed job in the job slots (usually captain)
+			if(!spawnee.AttemptLateSpawn(target.crew.job_slots[1], target.crew)) //Try to spawn as the first listed job in the job slots (usually captain)
 				to_chat(spawnee, "<span class='danger'>Ship spawned, but you were unable to be spawned. You can likely try to spawn in the ship through joining normally, but if not, please contact an admin.</span>")
 				spawnee.new_player_panel()
 

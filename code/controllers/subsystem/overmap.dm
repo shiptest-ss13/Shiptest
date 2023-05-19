@@ -191,7 +191,7 @@ SUBSYSTEM_DEF(overmap)
 #ifndef UNIT_TESTS
 	var/datum/map_template/shuttle/selected_template = SSmapping.maplist[pick(SSmapping.maplist)]
 	INIT_ANNOUNCE("Loading [selected_template.name]...")
-	new /datum/crew/ship(null, selected_template)
+	new /datum/overmap/ship/controlled/(null, selected_template, TRUE, TRUE)
 	if(SSdbcore.Connect())
 		var/datum/DBQuery/query_round_map_name = SSdbcore.NewQuery({"
 			UPDATE [format_table_name("round")] SET map_name = :map_name WHERE id = :round_id

@@ -62,8 +62,9 @@
  * * creation_template - The template used to create the ship.
  * * target_port - The port to dock the new ship to.
  */
-/datum/overmap/ship/controlled/Initialize(position, datum/map_template/shuttle/creation_template, create_shuttle = TRUE)
+/datum/overmap/ship/controlled/Initialize(position, datum/map_template/shuttle/creation_template, create_shuttle = TRUE, create_crew = FALSE)
 	. = ..()
+
 	if(creation_template)
 		source_template = creation_template
 		unique_ship_access = source_template.unique_ship_access
@@ -73,6 +74,9 @@
 				qdel(src) // Can't return INITIALIZE_HINT_QDEL here since this isn't ACTUAL initialisation. Considering changing the name of the proc.
 				return
 			refresh_engines()
+
+	if (create_crew)
+		crew = new(src)
 
 	ship_account = new(name, 2000)
 #ifdef UNIT_TESTS
