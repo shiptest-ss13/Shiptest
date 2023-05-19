@@ -84,6 +84,18 @@ GLOBAL_LIST_INIT(astroloot, list(
 	spawn_text = "climbs out of"
 	faction = list("clown")
 
+/obj/structure/spawner/carp
+	name = "carp spawn" //the non game spawn meaning
+	desc = "A puddle, which appears to be full of carp"
+	icon_state = "puddle"
+	icon = 'icons/obj/watercloset.dmi'
+	max_integrity = 150
+	max_mobs = 5
+	spawn_time = 1200
+	mob_types = list(/mob/living/simple_animal/hostile/carp)
+	spawn_text = "climbs out of"
+	faction = list("carp")
+
 /obj/structure/spawner/mining/proc/adestroy_effect()
 	playsound(loc,'sound/effects/explosionfar.ogg', 200, TRUE)
 	visible_message("<span class='boldannounce'>[src] collapses, sealing everything inside!</span>\n<span class='warning'>Ores fall out of the cave as it is destroyed!</span>")
