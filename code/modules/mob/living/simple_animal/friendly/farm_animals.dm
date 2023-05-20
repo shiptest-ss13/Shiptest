@@ -371,10 +371,10 @@
 	response_help_simple = "pet"
 	response_disarm_continuous = "gently pushes aside"
 	response_disarm_simple = "gently push aside"
-	response_harm_continuous = "kicks"
-	response_harm_simple = "kick"
-	attack_verb_continuous = "kicks"
-	attack_verb_simple = "kick"
+	response_harm_continuous = "scratches"
+	response_harm_simple = "scratch"
+	attack_verb_continuous = "scratches"
+	attack_verb_simple = "scratch"
 	health = 25
 	maxHealth = 25
 	var/eggsleft = 0

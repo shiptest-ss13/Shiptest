@@ -99,7 +99,7 @@
 	mob_spawn_chance = 0.3
 	mob_spawn_list = list(
 		/mob/living/carbon/monkey = 10,
-		/mob/living/simple_animal/hostile/retaliate/chicken = 3,
+		/mob/living/simple_animal/hostile/retaliate/chicken = 10,
 		/obj/effect/spawner/lootdrop/chicken/jungle/flock = 1
 		)
 
@@ -119,13 +119,21 @@
 		/obj/structure/flora/ash/garden = 1,
 	)
 	mob_spawn_chance = 0.6
-	mob_spawn_list = list(/mob/living/simple_animal/hostile/gorilla = 1, /mob/living/carbon/monkey = 3)
+	mob_spawn_list = list(
+		/mob/living/simple_animal/hostile/gorilla = 1,
+		/mob/living/carbon/monkey = 6,
+		/mob/living/simple_animal/hostile/retaliate/chicken = 4,
+		/obj/effect/spawner/lootdrop/chicken/jungle/flock = 1
+		)
 
 /datum/biome/jungle/plains
 	open_turf_types = list(/turf/open/floor/plating/grass/jungle/lit = 1)
 	flora_spawn_chance = 50
 	mob_spawn_chance = 1
-	mob_spawn_list = list(/mob/living/carbon/monkey = 1)
+	mob_spawn_list = list(
+		/mob/living/carbon/monkey = 1,
+		/mob/living/simple_animal/hostile/retaliate/chicken = 1
+	)
 
 /datum/biome/mudlands
 	open_turf_types = list(/turf/open/floor/plating/dirt/jungle/dark/lit = 1)
