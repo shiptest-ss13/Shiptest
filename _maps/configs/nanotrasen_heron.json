@@ -50,13 +50,18 @@
 		},
 		"Engine Technician": {
 			"outfit": "/datum/outfit/job/engineer/nt",
-			"slots": 2
+			"slots": 1
+		},
+		"Chief Engineer":{
+			"outfit": "/datum/outfit/job/ce/nt",
+			"officer": true,
+			"slots": 1
 		},
 		"Roboticist": {
 			"outfit":"/datum/outfit/job/roboticist/mechatronicengineer",
 			"slots": 1
 		},
-		"paramedic":{
+		"Paramedic":{
 			"outfit": "/datum/outfit/job/paramedic",
 			"slots": 1
 		},

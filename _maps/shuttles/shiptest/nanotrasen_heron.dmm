@@ -7635,26 +7635,25 @@
 "Cf" = (
 /obj/structure/closet/wall/orange{
 	dir = 8;
-	name = "Engineering locker";
+	name = "Chief Engineer's Locker";
 	pixel_x = 28
 	},
-/obj/item/clothing/shoes/workboots,
-/obj/item/clothing/suit/hazardvest,
-/obj/item/clothing/under/rank/engineering/engineer/nt,
-/obj/item/clothing/under/rank/engineering/engineer/electrician,
-/obj/item/clothing/glasses/meson/engine,
-/obj/item/clothing/head/welding,
-/obj/item/clothing/head/hardhat/weldhat,
-/obj/item/clothing/suit/toggle/hazard,
-/obj/item/storage/backpack/industrial,
-/obj/item/clothing/head/beret/eng/hazard,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
 /obj/effect/turf_decal/industrial/loading{
 	dir = 8
 	},
+/obj/item/clothing/under/rank/engineering/chief_engineer,
+/obj/item/clothing/suit/toggle/hazard,
+/obj/item/storage/backpack/industrial,
+/obj/item/clothing/head/beret/ce,
 /obj/item/clothing/glasses/meson/engine,
+/obj/item/clothing/shoes/workboots{
+	pixel_y = -7
+	},
+/obj/item/clothing/gloves/color/yellow,
+/obj/item/radio/headset/heads/ce,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "Ch" = (
