@@ -27,6 +27,12 @@
 	color = "#3bbbdb"
 	puzzle_id = "swordfish"
 
+/obj/item/keycard/wastepandora
+	name = "chaotic keycard"
+	desc = "Aliens find the strangest things to hold their keys..."
+	color = "#FF00FF"
+	puzzle_id = "wastepandora"
+
 /obj/item/keycard/gatedrop
 	icon_state = "golden_key"
 
