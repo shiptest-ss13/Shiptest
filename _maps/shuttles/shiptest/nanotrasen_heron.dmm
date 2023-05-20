@@ -884,6 +884,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/airalarm/directional/north,
+/obj/item/kirbyplants/random,
 /turf/open/floor/plasteel,
 /area/ship/hallway/aft)
 "dB" = (
@@ -1670,9 +1671,13 @@
 /obj/machinery/camera{
 	dir = 4
 	},
-/turf/open/floor/plasteel/white{
-	icon_state = "ridged"
+/obj/effect/turf_decal/siding/white{
+	dir = 4
 	},
+/obj/effect/turf_decal/siding/white{
+	dir = 8
+	},
+/turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
 "gt" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible{
@@ -4841,9 +4846,13 @@
 /obj/machinery/vending/wallmed{
 	pixel_x = -27
 	},
-/turf/open/floor/plasteel/white{
-	icon_state = "ridged"
+/obj/effect/turf_decal/siding/white{
+	dir = 4
 	},
+/obj/effect/turf_decal/siding/white{
+	dir = 8
+	},
+/turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
 "rs" = (
 /obj/effect/turf_decal/siding/wood{
@@ -14037,9 +14046,13 @@
 	pixel_x = -4;
 	pixel_y = -5
 	},
-/turf/open/floor/plasteel/white{
-	icon_state = "ridged"
+/obj/effect/turf_decal/siding/white{
+	dir = 4
 	},
+/obj/effect/turf_decal/siding/white{
+	dir = 8
+	},
+/turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
 "Zm" = (
 /obj/effect/turf_decal/steeldecal/steel_decals6,
