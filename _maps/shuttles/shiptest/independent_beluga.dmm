@@ -1576,42 +1576,6 @@
 /obj/machinery/light,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/cryo)
-"oO" = (
-/obj/structure/railing{
-	dir = 1
-	},
-/obj/item/spacecash/bundle/c1000{
-	pixel_x = 3;
-	pixel_y = 10
-	},
-/obj/item/spacecash/bundle/c1000{
-	pixel_y = 7;
-	pixel_x = 6
-	},
-/obj/item/spacecash/bundle/c200,
-/obj/item/spacecash/bundle/c100{
-	pixel_x = 8;
-	pixel_y = 3
-	},
-/obj/item/spacecash/bundle/c100{
-	pixel_y = -7
-	},
-/obj/item/spacecash/bundle/c500{
-	pixel_y = -5;
-	pixel_x = 5
-	},
-/obj/item/spacecash/bundle/c50{
-	pixel_x = -8;
-	pixel_y = -3
-	},
-/obj/item/clothing/accessory/medal/gold/heroism{
-	pixel_x = -6;
-	pixel_y = 5
-	},
-/obj/item/spacecash/bundle/c5,
-/obj/structure/safe/floor,
-/turf/open/floor/plating,
-/area/ship/bridge)
 "oW" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
@@ -1909,10 +1873,7 @@
 "qY" = (
 /obj/structure/closet/cabinet,
 /obj/item/storage/backpack/satchel,
-/obj/item/storage/backpack/satchel,
 /obj/item/storage/backpack/messenger,
-/obj/item/storage/backpack/messenger,
-/obj/item/storage/backpack/duffelbag,
 /obj/item/storage/backpack/duffelbag,
 /obj/item/clothing/under/suit/navy,
 /obj/item/clothing/under/suit/navy,
@@ -1934,6 +1895,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
 	},
+/obj/item/clothing/neck/cloak/trans,
+/obj/item/storage/backpack/satchel,
+/obj/item/storage/backpack/duffelbag,
+/obj/item/storage/backpack/messenger,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/cryo)
 "ra" = (
@@ -4159,6 +4124,42 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
+"LR" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/item/spacecash/bundle/c1000{
+	pixel_x = 3;
+	pixel_y = 10
+	},
+/obj/item/spacecash/bundle/c1000{
+	pixel_y = 7;
+	pixel_x = 6
+	},
+/obj/item/spacecash/bundle/c200,
+/obj/item/spacecash/bundle/c100{
+	pixel_x = 8;
+	pixel_y = 3
+	},
+/obj/item/spacecash/bundle/c100{
+	pixel_y = -7
+	},
+/obj/item/spacecash/bundle/c500{
+	pixel_y = -5;
+	pixel_x = 5
+	},
+/obj/item/spacecash/bundle/c50{
+	pixel_x = -8;
+	pixel_y = -3
+	},
+/obj/item/clothing/accessory/medal/gold/heroism{
+	pixel_x = -6;
+	pixel_y = 5
+	},
+/obj/item/spacecash/bundle/c5,
+/obj/structure/safe/floor,
+/turf/open/floor/plating,
+/area/ship/bridge)
 "Mr" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/sign/poster/contraband/space_cola{
@@ -6157,7 +6158,7 @@ gf
 Hs
 ZP
 eL
-oO
+LR
 Hd
 HE
 El
