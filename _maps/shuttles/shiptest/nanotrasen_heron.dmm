@@ -2085,10 +2085,6 @@
 	pixel_y = -5;
 	pixel_x = -3
 	},
-/obj/item/inducer{
-	pixel_x = 5;
-	pixel_y = -1
-	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
@@ -2359,6 +2355,7 @@
 	},
 /obj/item/bot_assembly/medbot,
 /obj/machinery/door/firedoor/border_only,
+/obj/effect/decal/cleanable/oil,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "iI" = (
@@ -2820,6 +2817,7 @@
 	pixel_x = -10;
 	pixel_y = 1
 	},
+/obj/item/pipe_dispenser,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "kv" = (
@@ -7488,6 +7486,9 @@
 	pixel_y = 13
 	},
 /obj/effect/decal/cleanable/blood/old,
+/obj/machinery/light/small{
+	dir = 8
+	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew/dorm/dormtwo)
 "BI" = (
