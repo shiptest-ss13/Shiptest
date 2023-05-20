@@ -217,6 +217,18 @@
 	id = "heron_subshuttle22";
 	name = "Blast Shutters"
 	},
+/obj/machinery/button/shieldwallgen{
+	id = "heron_subshuttle2";
+	pixel_x = -21;
+	pixel_y = -8;
+	dir = 4
+	},
+/obj/machinery/button/door{
+	id = "heron_subshuttle22";
+	name = "Access Shutters";
+	pixel_x = -23;
+	dir = 4
+	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/storage/eva)
 "z" = (
@@ -245,6 +257,18 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "heron_subshuttle11";
 	name = "Blast Shutters"
+	},
+/obj/machinery/button/door{
+	id = "heron_subshuttle11";
+	name = "Access Shutters";
+	pixel_x = -23;
+	dir = 4
+	},
+/obj/machinery/button/shieldwallgen{
+	id = "heron_subshuttle1";
+	pixel_x = -21;
+	pixel_y = 8;
+	dir = 4
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/storage/eva)
@@ -293,18 +317,6 @@
 /area/ship/storage/eva)
 "F" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden,
-/obj/machinery/button/door{
-	id = "heron_subshuttle11";
-	name = "Access Shutters";
-	pixel_x = -23;
-	dir = 4
-	},
-/obj/machinery/button/shieldwallgen{
-	id = "heron_subshuttle1";
-	pixel_x = -21;
-	pixel_y = 8;
-	dir = 4
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
 	icon_state = "2-5"
@@ -409,18 +421,6 @@
 	},
 /area/ship/storage/eva)
 "O" = (
-/obj/machinery/button/shieldwallgen{
-	id = "heron_subshuttle2";
-	pixel_x = -21;
-	pixel_y = -8;
-	dir = 4
-	},
-/obj/machinery/button/door{
-	id = "heron_subshuttle22";
-	name = "Access Shutters";
-	pixel_x = -23;
-	dir = 4
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/glass{
 	pixel_x = 8;
