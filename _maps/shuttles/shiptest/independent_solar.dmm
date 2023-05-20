@@ -185,15 +185,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel,
 /area/ship/security)
-"cU" = (
-/obj/docking_port/mobile{
-	can_move_docking_ports = 1;
-	launch_status = 0;
-	name = "SS Galaxy";
-	port_direction = 4
-	},
-/turf/closed/wall/r_wall,
-/area/ship/cargo)
 "cV" = (
 /obj/machinery/firealarm{
 	pixel_y = -26;
@@ -1692,6 +1683,12 @@
 	id = "mining_galaxy_cargo_holofan"
 	},
 /obj/structure/cable,
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	launch_status = 0;
+	name = "SS Galaxy";
+	port_direction = 4
+	},
 /turf/open/floor/plasteel/patterned/monofloor,
 /area/ship/cargo)
 "Dn" = (
@@ -2888,7 +2885,7 @@ Ai
 PP
 OZ
 Ai
-cU
+Ai
 Kz
 "}
 (3,1,1) = {"
