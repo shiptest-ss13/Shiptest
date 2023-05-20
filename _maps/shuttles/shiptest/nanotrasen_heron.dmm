@@ -234,7 +234,7 @@
 /area/ship/cargo)
 "aV" = (
 /obj/effect/landmark/subship{
-	subship_template = "/datum/map_template/shuttle/subshuttles/heron_subshuttle"
+	subship_template = /datum/map_template/shuttle/subshuttles/nanotrasen_falcon
 	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/security/dock)
@@ -872,7 +872,7 @@
 	layer = 3.1
 	},
 /obj/machinery/suit_storage_unit/inherit,
-/obj/item/clothing/suit/space/hardsuit/ert/lp/sec,
+/obj/item/clothing/suit/space/hardsuit/ert/sec,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "dx" = (
@@ -4888,16 +4888,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
-"rN" = (
-/obj/docking_port/stationary{
-	roundstart_template = "/datum/map_template/shuttle/subshuttles/heron_subshuttle";
-	dwidth = 7;
-	height = 7;
-	width = 13;
-	dir = 2
-	},
-/turf/open/floor/engine/hull/reinforced/interior,
-/area/ship/security/dock)
 "rO" = (
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 9
@@ -6759,6 +6749,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plastic,
 /area/ship/crew/canteen)
+"yP" = (
+/obj/effect/landmark/subship{
+	subship_template = "/datum/map_template/shuttle/subshuttles/nanotrasen_falcons"
+	},
+/turf/template_noop,
+/area/template_noop)
 "yQ" = (
 /obj/structure/bookcase/random/fiction,
 /obj/machinery/power/apc/auto_name/south,
@@ -9044,12 +9040,9 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/engineering/electrical)
 "Hg" = (
-/obj/machinery/door/window/southleft{
-	dir = 1;
-	req_access_txt = "31"
-	},
 /obj/machinery/door/firedoor,
 /obj/machinery/autolathe,
+/obj/machinery/door/window/northright,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "Hh" = (
@@ -12904,7 +12897,7 @@
 	},
 /obj/machinery/suit_storage_unit/inherit,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/clothing/suit/space/hardsuit/ert/lp/sec,
+/obj/item/clothing/suit/space/hardsuit/ert/sec,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "VH" = (
@@ -12960,7 +12953,7 @@
 	layer = 3.1
 	},
 /obj/machinery/suit_storage_unit/inherit,
-/obj/item/clothing/suit/space/hardsuit/ert/lp/sec,
+/obj/item/clothing/suit/space/hardsuit/ert/sec,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "VN" = (
@@ -15741,8 +15734,8 @@ sc
 sc
 sc
 sc
-aV
 sc
+aV
 dj
 er
 nZ
@@ -15931,7 +15924,7 @@ np
 np
 Sw
 Uy
-rN
+sc
 sc
 sc
 sc
@@ -16326,7 +16319,7 @@ Mm
 Mm
 Mm
 Mm
-Mm
+yP
 Mm
 Mm
 Mm

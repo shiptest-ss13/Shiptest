@@ -209,14 +209,14 @@
 	id = "heron_subshuttle2";
 	locked = 1
 	},
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "heron_subshuttle22";
-	name = "Blast Shutters"
-	},
 /obj/structure/cable{
 	icon_state = "0-1"
 	},
 /obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/poddoor/shutters{
+	id = "heron_subshuttle22";
+	name = "Blast Shutters"
+	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/storage/eva)
 "z" = (
@@ -232,10 +232,6 @@
 	id = "heron_subshuttle1";
 	locked = 1
 	},
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "heron_subshuttle11";
-	name = "Blast Shutters"
-	},
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -245,6 +241,10 @@
 /obj/machinery/atmospherics/components/binary/valve{
 	dir = 1;
 	name = "Shuttle Fuel Valve"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "heron_subshuttle11";
+	name = "Blast Shutters"
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/storage/eva)
@@ -363,10 +363,6 @@
 	id = "heron_subshuttle1";
 	locked = 1
 	},
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "heron_subshuttle11";
-	name = "Blast Shutters"
-	},
 /obj/structure/cable{
 	icon_state = "0-10"
 	},
@@ -374,7 +370,13 @@
 	dir = 1
 	},
 /obj/docking_port/mobile{
-	dir = 2
+	dir = 2;
+	port_direction = 8;
+	preferred_direction = 4
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "heron_subshuttle11";
+	name = "Blast Shutters"
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/storage/eva)
@@ -475,14 +477,14 @@
 	id = "heron_subshuttle2";
 	locked = 1
 	},
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "heron_subshuttle22";
-	name = "Blast Shutters"
-	},
 /obj/structure/cable{
 	icon_state = "0-9"
 	},
 /obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/poddoor/shutters{
+	id = "heron_subshuttle22";
+	name = "Blast Shutters"
+	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/storage/eva)
 "S" = (
