@@ -45,5 +45,5 @@
 	neck = null
 	glasses = /obj/item/clothing/glasses/sunglasses/big
 	l_hand = null
-	r_pocket = null
+	r_pocket = /obj/item/spacecash/bundle/mediumrand
 

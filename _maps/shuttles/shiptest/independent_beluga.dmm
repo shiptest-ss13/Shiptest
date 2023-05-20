@@ -1576,6 +1576,42 @@
 /obj/machinery/light,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/cryo)
+"oO" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/item/spacecash/bundle/c1000{
+	pixel_x = 3;
+	pixel_y = 10
+	},
+/obj/item/spacecash/bundle/c1000{
+	pixel_y = 7;
+	pixel_x = 6
+	},
+/obj/item/spacecash/bundle/c200,
+/obj/item/spacecash/bundle/c100{
+	pixel_x = 8;
+	pixel_y = 3
+	},
+/obj/item/spacecash/bundle/c100{
+	pixel_y = -7
+	},
+/obj/item/spacecash/bundle/c500{
+	pixel_y = -5;
+	pixel_x = 5
+	},
+/obj/item/spacecash/bundle/c50{
+	pixel_x = -8;
+	pixel_y = -3
+	},
+/obj/item/clothing/accessory/medal/gold/heroism{
+	pixel_x = -6;
+	pixel_y = 5
+	},
+/obj/item/spacecash/bundle/c5,
+/obj/structure/safe/floor,
+/turf/open/floor/plating,
+/area/ship/bridge)
 "oW" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
@@ -2590,39 +2626,6 @@
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 8
 	},
-/obj/structure/safe/floor{
-	pixel_x = 8;
-	pixel_y = 14
-	},
-/obj/item/spacecash/bundle/c1000{
-	pixel_x = -2;
-	pixel_y = 6
-	},
-/obj/item/spacecash/bundle/c1000{
-	pixel_x = 3;
-	pixel_y = 10
-	},
-/obj/item/spacecash/bundle/c100{
-	pixel_x = 8;
-	pixel_y = 3
-	},
-/obj/item/spacecash/bundle/c1000{
-	pixel_x = 3;
-	pixel_y = 10
-	},
-/obj/item/spacecash/bundle/c500{
-	pixel_y = -5;
-	pixel_x = 5
-	},
-/obj/item/spacecash/bundle/c50{
-	pixel_x = -8;
-	pixel_y = -3
-	},
-/obj/item/spacecash/bundle/c5,
-/obj/item/clothing/accessory/medal/gold/heroism{
-	pixel_x = -6;
-	pixel_y = 5
-	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "xV" = (
@@ -3173,11 +3176,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/trimline/opaque/yellow/line,
-/obj/item/megaphone/sec{
-	name = "syndicate megaphone";
-	pixel_x = 1;
-	pixel_y = 3
-	},
+/obj/item/megaphone/sec,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "DE" = (
@@ -4900,6 +4899,10 @@
 /turf/open/floor/wood,
 /area/ship/crew)
 "TZ" = (
+/obj/item/stack/tile/carpet/nanoweave/blue{
+	pixel_x = 10;
+	pixel_y = -10
+	},
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
 "Uh" = (
@@ -6154,7 +6157,7 @@ gf
 Hs
 ZP
 eL
-wP
+oO
 Hd
 HE
 El
