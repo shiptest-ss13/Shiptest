@@ -548,12 +548,6 @@
 				if(reinforced)
 					new /obj/machinery/door/firedoor/heavy(get_turf(src))
 				else
-					new /obj/machinery/door/firedoor(get_turf(src))
-				qdel(src)
-				return
-				if(reinforced)
-					new /obj/machinery/door/firedoor/heavy(get_turf(src))
-				else
 					var/obj/machinery/door/firedoor/F = new firelock_type(get_turf(src))
 					F.dir = src.dir
 					F.update_icon()
