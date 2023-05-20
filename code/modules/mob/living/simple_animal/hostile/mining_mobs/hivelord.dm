@@ -418,7 +418,6 @@
 		"Oldminer" = 8,
 		"Kobold" = 5,
 		"Golem" = 6,
-		"Clown" = 10,
 		pick("Shadow", "YeOlde", "Operative", "Cultist") = 4
 		)
 	)
@@ -800,38 +799,6 @@
 				r_pocket = /obj/item/kitchen/knife/combat/bone
 			if(prob(30))
 				l_pocket = /obj/item/kitchen/knife/combat/bone
-		if("Clown")
-			name = pick(GLOB.clown_names)
-			outfit = /datum/outfit/job/clown
-			belt = null
-			backpack_contents = list()
-			if(prob(70))
-				backpack_contents += pickweight(list(
-					/obj/item/stamp/clown = 1,
-					/obj/item/reagent_containers/spray/waterflower = 1,
-					/obj/item/reagent_containers/food/snacks/grown/banana = 1,
-					/obj/item/megaphone/clown = 1,
-					/obj/item/reagent_containers/food/drinks/soda_cans/canned_laughter = 1,
-					/obj/item/pneumatic_cannon/pie = 1
-					)
-				)
-			if(prob(30))
-				backpack_contents += list(
-					/obj/item/stack/sheet/mineral/bananium = pickweight(list(
-						1 = 3,
-						2 = 2,
-						3 = 1
-						)
-					)
-				)
-			if(prob(10))
-				l_pocket = pickweight(list(
-					/obj/item/bikehorn/golden = 3,
-					/obj/item/bikehorn/airhorn= 1
-					)
-				)
-			if(prob(10))
-				r_pocket = /obj/item/implanter/sad_trombone
 		if("Golem")
 			mob_species = pickweight(list(
 				/datum/species/golem/adamantine = 5,
