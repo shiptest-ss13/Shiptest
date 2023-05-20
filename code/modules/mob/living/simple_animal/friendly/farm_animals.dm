@@ -394,7 +394,7 @@
 
 	footstep_type = FOOTSTEP_MOB_CLAW
 
-/mob/living/simple_animal/chicken/hostile/retaliate/Initialize()
+/mob/living/simple_animal/hostile/retaliate/chicken/Initialize()
 	. = ..()
 	if(!body_color)
 		body_color = pick(validColors)
