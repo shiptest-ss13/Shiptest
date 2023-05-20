@@ -379,7 +379,6 @@
 	file_name = "independent_sugarcube"
 	name = "Sugarcube Transport"
 	prefix = "ISV"
-  
-  
+
 //your subshuttle here
 
