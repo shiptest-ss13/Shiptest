@@ -984,6 +984,17 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/powered)
+"mD" = (
+/obj/docking_port/stationary{
+	dir = 4;
+	dwidth = 6;
+	height = 14;
+	name = "Cave Crew";
+	roundstart_template = /datum/map_template/shuttle/subshuttles/frontiersmen_gut;
+	width = 7
+	},
+/turf/open/water/jungle,
+/area/ruin/jungle/cavecrew)
 "mI" = (
 /obj/structure/dresser,
 /obj/machinery/light,
@@ -5063,7 +5074,7 @@ Ty
 Ty
 Ty
 Ty
-Ty
+mD
 Ty
 Ty
 Ty
