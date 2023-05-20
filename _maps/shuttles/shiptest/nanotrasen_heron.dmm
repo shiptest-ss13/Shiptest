@@ -5377,9 +5377,14 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/security/dock)
 "tl" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "engie";
+	pixel_x = 2;
+	pixel_y = 1
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ship/security/dock)
 "tn" = (
@@ -7235,7 +7240,7 @@
 	id = "heron_mechbayshut";
 	name = "Mechbay Shutters"
 	},
-/turf/open/floor/plasteel/patterned/ridged,
+/turf/open/floor/plasteel/patterned/ridged/steel,
 /area/ship/science/robotics)
 "AD" = (
 /obj/effect/turf_decal/siding/thinplating/corner,
@@ -9968,6 +9973,10 @@
 /obj/effect/turf_decal/box/corners,
 /obj/machinery/light/small,
 /obj/machinery/light/small,
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "Waffle";
+	pixel_x = -12
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen/kitchen)
 "Lp" = (
@@ -12627,23 +12636,23 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "UQ" = (
-/obj/effect/turf_decal/industrial/traffic{
-	dir = 8
-	},
 /obj/machinery/power/shieldwallgen/atmos{
 	anchored = 1;
 	dir = 4;
 	id = "heron_mechbayholo";
 	locked = 1
 	},
+/obj/structure/cable{
+	icon_state = "0-1"
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
 /obj/machinery/door/poddoor{
 	id = "heron_mechbayshut";
 	name = "Mechbay Shutters"
 	},
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
-/turf/open/floor/plasteel/patterned/ridged,
+/turf/open/floor/plasteel/patterned/ridged/steel,
 /area/ship/science/robotics)
 "UR" = (
 /obj/effect/turf_decal/trimline/opaque/blue/corner{
@@ -13044,23 +13053,23 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/fore)
 "Ws" = (
-/obj/effect/turf_decal/industrial/traffic{
-	dir = 4
-	},
 /obj/machinery/power/shieldwallgen/atmos{
 	anchored = 1;
 	dir = 8;
 	id = "heron_mechbayholo";
 	locked = 1
 	},
+/obj/structure/cable{
+	icon_state = "0-1"
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
 /obj/machinery/door/poddoor{
 	id = "heron_mechbayshut";
 	name = "Mechbay Shutters"
 	},
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
-/turf/open/floor/plasteel/patterned/ridged,
+/turf/open/floor/plasteel/patterned/ridged/steel,
 /area/ship/science/robotics)
 "Wu" = (
 /obj/machinery/atmospherics/pipe/simple/orange/visible{
