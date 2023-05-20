@@ -6,8 +6,8 @@
 	layer = SHUTTER_LAYER
 	closingLayer = SHUTTER_LAYER
 	damage_deflection = 20
-	open_sound = 'sound/machines/shutters_open.ogg'
-	close_sound = 'sound/machines/shutters_close.ogg'
+	open_sound = 'sound/machines/airlocks/shutters/shutters_open.ogg'
+	close_sound = 'sound/machines/airlocks/shutters/shutters_close.ogg'
 
 /obj/machinery/door/poddoor/shutters/preopen
 	icon_state = "open"
@@ -31,8 +31,8 @@
 	layer = SHUTTER_LAYER
 	closingLayer = SHUTTER_LAYER
 	damage_deflection = 20
-	open_sound = 'sound/machines/gate.ogg'
-	close_sound = 'sound/machines/gate.ogg'
+	open_sound = 'sound/machines/airlocks/gate.ogg'
+	close_sound = 'sound/machines/airlocks/gate.ogg'
 	glass = TRUE
 	opacity = FALSE
 
