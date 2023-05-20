@@ -13114,7 +13114,10 @@
 /obj/item/clothing/glasses/hud/security/sunglasses/eyepatch,
 /obj/item/clothing/gloves/krav_maga/sec,
 /obj/item/gun/energy/e_gun/hos,
-/obj/structure/closet/secure_closet/hos,
+/obj/structure/closet/secure_closet{
+	icon_state = "hos";
+	req_access = list(58)
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
 "WC" = (
