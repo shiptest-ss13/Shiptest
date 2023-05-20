@@ -4651,9 +4651,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "qV" = (
-/obj/machinery/computer/bounty{
-	dir = 8
-	},
 /obj/structure/railing{
 	dir = 4;
 	layer = 4.1
@@ -4670,6 +4667,9 @@
 	dir = 1;
 	pixel_y = -23;
 	pixel_x = 8
+	},
+/obj/structure/frame/computer{
+	dir = 8
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
