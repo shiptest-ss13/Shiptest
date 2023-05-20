@@ -1216,7 +1216,8 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/vault{
-	name = "AI Core"
+	name = "AI Core";
+	req_access_txt = "19"
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "heron_ai_shutter";
