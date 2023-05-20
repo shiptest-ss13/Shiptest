@@ -131,3 +131,9 @@
 	id = "airbase"
 	description = "A bombed out airbase from the ICW, taken back over by nature"
 	suffix = "jungle_bombed_starport.dmm"
+
+/datum/map_template/ruin/jungle/medtech
+	name = "MedTech facility"
+	id = "medtech-facility"
+	description = "A MedTech pharmaceutical manufacturing plant where something went terribly wrong."
+	suffix = "jungle_medtech_outbreak.dmm"

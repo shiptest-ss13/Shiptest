@@ -657,11 +657,13 @@
 	dir = 4
 	},
 /obj/structure/closet/crate/hydroponics,
-/obj/item/seeds/apple,
 /obj/item/seeds/ambrosia,
 /obj/item/seeds/glowshroom,
 /obj/item/seeds/random,
+/obj/item/seeds/cabbage,
+/obj/item/seeds/aloe,
 /obj/item/seeds/coffee,
+/obj/item/seeds/corn,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/hydroponics)
 "il" = (
@@ -2379,7 +2381,7 @@
 /obj/item/assembly/flash/handheld,
 /obj/item/door_remote/chief_medical_officer,
 /obj/item/pet_carrier,
-/obj/item/wallframe/defib_mount,
+/obj/item/areaeditor/shuttle,
 /obj/item/clothing/shoes/sneakers/orange,
 /obj/item/reagent_containers/glass/bottle/vial/large,
 /obj/item/reagent_containers/glass/bottle/vial/large,
@@ -2887,7 +2889,9 @@
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 4
 	},
-/obj/machinery/plumbing/pill_press,
+/obj/machinery/plumbing/pill_press{
+	dir = 1
+	},
 /obj/machinery/firealarm{
 	dir = 4;
 	pixel_x = -28
@@ -3501,7 +3505,6 @@
 "ZS" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
-/obj/effect/turf_decal/siding/thinplating/dark,
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
