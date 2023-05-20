@@ -3897,13 +3897,11 @@
 /obj/machinery/door/window/eastright{
 	dir = 2
 	},
-/obj/machinery/door/window/southleft{
-	dir = 1
-	},
 /obj/item/folder/yellow{
 	pixel_x = -3;
 	pixel_y = 3
 	},
+/obj/machinery/door/window/northright,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "nX" = (
@@ -9038,7 +9036,9 @@
 "Hg" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/autolathe,
-/obj/machinery/door/window/northright,
+/obj/machinery/door/window/southleft{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "Hh" = (
