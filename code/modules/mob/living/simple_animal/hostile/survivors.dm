@@ -187,11 +187,11 @@
 
 	//gloves are a tossup
 	gloves = pickweight(list(
-		/obj/item/clothing/gloves/color/black = 60,
-		/obj/item/clothing/gloves/explorer = 30,
-		/obj/item/clothing/gloves/explorer/old = 10
+			/obj/item/clothing/gloves/color/black = 60,
+			/obj/item/clothing/gloves/explorer = 30,
+			/obj/item/clothing/gloves/explorer/old = 10
+			)
 		)
-	)
 
 	//bags are semi-random.
 	back = pickweight(list(
