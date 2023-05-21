@@ -195,13 +195,13 @@
 
 	//bags are semi-random.
 	back = pickweight(list(
-		/obj/item/storage/backpack = 20,
-		/obj/item/storage/backpack/explorer = 20,
-		/obj/item/storage/backpack/satchel = 20,
-		/obj/item/storage/backpack/satchel/explorer = 20,
-		/obj/item/storage/backpack/messenger = 20
+			/obj/item/storage/backpack = 20,
+			/obj/item/storage/backpack/explorer = 20,
+			/obj/item/storage/backpack/satchel = 20,
+			/obj/item/storage/backpack/satchel/explorer = 20,
+			/obj/item/storage/backpack/messenger = 20
+			)
 		)
-	)
 
 	//as are bag contents
 	backpack_contents = list()
