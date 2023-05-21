@@ -258,10 +258,7 @@
 			)
 		)
 	if(prob(30)) //some pens maybe?
-		backpack_contents += pickweight(list(
-			/obj/item/reagent_containers/hypospray/medipen/survival = 1
-			)
-		)
+		backpack_contents += /obj/item/reagent_containers/hypospray/medipen/survival
 
 	//pockets
 	if(survivor_type == "survivor") //could also use fleshing out
