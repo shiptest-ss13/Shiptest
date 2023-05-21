@@ -114,7 +114,7 @@
 /obj/effect/turf_decal/corner/transparent/black/three_quarters{
 	dir = 1
 	},
-/obj/structure/chair/greyscale,
+/obj/structure/chair,
 /turf/open/floor/plastic,
 /area/ship/crew/canteen)
 "as" = (
@@ -540,10 +540,6 @@
 "ca" = (
 /obj/effect/turf_decal/industrial/warning/cee,
 /obj/machinery/suit_storage_unit/inherit,
-/obj/item/radio/intercom{
-	dir = 8;
-	pixel_x = 22
-	},
 /obj/machinery/newscaster{
 	pixel_y = 32
 	},
@@ -2761,16 +2757,15 @@
 /obj/effect/turf_decal/corner/transparent/black/three_quarters{
 	dir = 1
 	},
-/obj/structure/railing{
-	color = "#A47449";
-	dir = 8;
-	layer = 4.1
-	},
 /obj/item/kirbyplants/random,
 /obj/effect/decal/cleanable/wrapping,
 /obj/machinery/light,
 /obj/machinery/camera{
 	dir = 5
+	},
+/obj/structure/railing/wood{
+	layer = 3.1;
+	dir = 8
 	},
 /turf/open/floor/plastic,
 /area/ship/crew/canteen)
@@ -4165,12 +4160,11 @@
 /obj/effect/turf_decal/corner/transparent/black/half{
 	dir = 8
 	},
-/obj/structure/railing{
-	color = "#A47449";
-	dir = 8;
-	layer = 4.1
-	},
 /obj/machinery/jukebox,
+/obj/structure/railing/wood{
+	layer = 3.1;
+	dir = 8
+	},
 /turf/open/floor/plastic,
 /area/ship/crew/canteen)
 "oM" = (
@@ -4415,6 +4409,11 @@
 "pG" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/garbage,
+/obj/structure/sink{
+	dir = 4;
+	pixel_x = -12;
+	pixel_y = 2
+	},
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
 	},
@@ -5874,6 +5873,9 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/storage/belt/janitor{
+	pixel_x = 7
+	},
 /turf/open/floor/plasteel,
 /area/ship/maintenance/central)
 "uF" = (
@@ -6799,8 +6801,8 @@
 /area/ship/science/robotics)
 "yI" = (
 /obj/effect/turf_decal/corner/transparent/beige/full,
-/obj/structure/chair/greyscale,
 /obj/effect/decal/cleanable/vomit/old,
+/obj/structure/chair,
 /turf/open/floor/plastic,
 /area/ship/crew/canteen)
 "yO" = (
@@ -11146,6 +11148,10 @@
 	dir = 6
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/item/radio/intercom{
+	dir = 4;
+	pixel_x = -20
+	},
 /turf/open/floor/wood,
 /area/ship/crew/dorm/dormtwo)
 "PB" = (
@@ -12300,14 +12306,13 @@
 /obj/effect/turf_decal/corner/transparent/black/three_quarters{
 	dir = 4
 	},
-/obj/structure/railing{
-	color = "#A47449";
-	dir = 8;
-	layer = 4.1
-	},
 /obj/machinery/vending/coffee,
 /obj/structure/sign/painting/library{
 	pixel_y = 32
+	},
+/obj/structure/railing/wood{
+	layer = 3.1;
+	dir = 8
 	},
 /turf/open/floor/plastic,
 /area/ship/crew/canteen)
@@ -12736,7 +12741,7 @@
 /obj/effect/turf_decal/corner/transparent/black/half{
 	dir = 4
 	},
-/obj/structure/chair/greyscale,
+/obj/structure/chair,
 /turf/open/floor/plastic,
 /area/ship/crew/canteen)
 "UU" = (
@@ -12952,11 +12957,11 @@
 "VB" = (
 /obj/effect/turf_decal/corner/transparent/beige/full,
 /obj/effect/turf_decal/corner/transparent/black/three_quarters,
-/obj/structure/chair/greyscale{
-	dir = 1
-	},
 /obj/effect/decal/cleanable/robot_debris,
 /obj/machinery/light,
+/obj/structure/chair{
+	dir = 1
+	},
 /turf/open/floor/plastic,
 /area/ship/crew/canteen)
 "VE" = (
@@ -13871,12 +13876,12 @@
 "YH" = (
 /obj/effect/turf_decal/corner/transparent/beige/full,
 /obj/effect/turf_decal/corner/transparent/black/half,
-/obj/structure/chair/greyscale{
-	dir = 1
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
+	},
+/obj/structure/chair{
+	dir = 1
 	},
 /turf/open/floor/plastic,
 /area/ship/crew/canteen)
