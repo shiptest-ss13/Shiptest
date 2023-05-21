@@ -149,15 +149,15 @@
 		)
 	else if(survivor_type == "hunter")
 		belt = 	pickweight(list(
-		/obj/item/storage/belt/mining = 30,
-		/obj/item/storage/belt/fannypack = 20,
-		/obj/item/storage/belt/mining/alt = 15,
-		/obj/item/storage/belt/mining/primitive = 15,
-		/obj/item/storage/belt/bandolier = 10,
-		/obj/item/storage/belt/military = 7,
-		/obj/item/storage/belt/mining/vendor = 3,
-	)
-	)
+			/obj/item/storage/belt/mining = 30,
+			/obj/item/storage/belt/fannypack = 20,
+			/obj/item/storage/belt/mining/alt = 15,
+			/obj/item/storage/belt/mining/primitive = 15,
+			/obj/item/storage/belt/bandolier = 10,
+			/obj/item/storage/belt/military = 7,
+			/obj/item/storage/belt/mining/vendor = 3,
+			)
+		)
 	else if(survivor_type == "gunslinger")
 		belt = pickweight(list(
 		/obj/item/storage/belt/mining = 30,
