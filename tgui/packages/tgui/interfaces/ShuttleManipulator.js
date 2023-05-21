@@ -86,8 +86,8 @@ export const ShuttleManipulatorStatus = (props, context) => {
               />
             </Table.Cell>
             <Table.Cell>{shuttle.name}</Table.Cell>
-            <Table.Cell>{shuttle.id}</Table.Cell>
-            <Table.Cell>{shuttle.status}</Table.Cell>
+            <Table.Cell>{shuttle.type}</Table.Cell>
+            <Table.Cell>{shuttle.position}</Table.Cell>
           </Table.Row>
         ))}
       </Table>
