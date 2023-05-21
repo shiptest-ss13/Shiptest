@@ -104,6 +104,7 @@
 	actions_types = list(/datum/action/item_action/toggle_research_scanner)
 	glass_colour_type = /datum/client_colour/glass_colour/purple
 	resistance_flags = ACID_PROOF
+	vision_flags = SEE_SCIENCE
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 100)
 	custom_price = 250
 	supports_variations = VOX_VARIATION
@@ -513,7 +514,7 @@
 	desc = "A strange eye, said to have been torn from an omniscient creature that used to roam the wastes."
 	icon_state = "godeye"
 	item_state = "godeye"
-	vision_flags = SEE_TURFS|SEE_MOBS|SEE_OBJS
+	vision_flags = SEE_TURFS|SEE_MOBS|SEE_OBJS|SEE_SCIENCE
 	darkness_view = 8
 	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
