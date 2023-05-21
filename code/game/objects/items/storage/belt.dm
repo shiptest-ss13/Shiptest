@@ -117,6 +117,15 @@
 	new /obj/item/t_scanner(src)
 	new /obj/item/extinguisher/mini(src)
 
+/obj/item/storage/belt/utility/atmostech/hologram/PopulateContents()
+	new /obj/item/screwdriver(src)
+	new /obj/item/wrench(src)
+	new /obj/item/weldingtool(src)
+	new /obj/item/crowbar(src)
+	new /obj/item/wirecutters(src)
+	new /obj/item/t_scanner(src)
+	new /obj/item/pipe_dispenser(src)
+
 /obj/item/storage/belt/utility/syndicate/PopulateContents()
 	new /obj/item/screwdriver/nuke(src)
 	new /obj/item/wrench/combat(src)
@@ -418,13 +427,8 @@
 	STR.max_w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/storage/belt/military/minutemen/PopulateContents()
-	new /obj/item/ammo_box/magazine/p16(src)
-	new /obj/item/ammo_box/magazine/p16(src)
-	new /obj/item/ammo_box/magazine/p16(src)
-	new /obj/item/ammo_box/magazine/p16(src)
-	new /obj/item/ammo_box/magazine/p16(src)
-	new /obj/item/ammo_box/magazine/p16(src)
-	new /obj/item/ammo_box/magazine/p16(src)
+	for(var/i in 1 to 7)
+		new /obj/item/ammo_box/magazine/p16(src)
 
 /obj/item/storage/belt/military/snack
 	name = "tactical snack rig"
@@ -501,18 +505,14 @@
 	icon_state = "assaultbelt"
 	item_state = "security"
 
+/obj/item/storage/belt/military/assault/minutemen/PopulateContents()
+	for(var/i in 1 to 6)
+		new /obj/item/ammo_box/magazine/p16(src)
+
 /obj/item/storage/belt/military/assault/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 6
-
-/obj/item/storage/belt/military/assault/full/PopulateContents()
-	new /obj/item/ammo_box/magazine/wt550m9/wtap(src)
-	new /obj/item/ammo_box/magazine/wt550m9/wtap(src)
-	new /obj/item/ammo_box/magazine/wt550m9(src)
-	new /obj/item/ammo_box/magazine/wt550m9(src)
-	new /obj/item/ammo_box/magazine/wt550m9(src)
-	new /obj/item/ammo_box/magazine/wt550m9(src)
 
 /obj/item/storage/belt/grenade
 	name = "grenadier belt"
@@ -638,6 +638,14 @@
 		/obj/item/shovel/spade,
 		/obj/item/gun/energy/floragun
 	))
+
+/obj/item/storage/belt/plant/full/PopulateContents()
+	new /obj/item/plant_analyzer(src)
+	new /obj/item/cultivator(src)
+	new /obj/item/hatchet(src)
+	new /obj/item/shovel/spade(src)
+	new /obj/item/reagent_containers/spray/pestspray(src)
+	new /obj/item/reagent_containers/spray/plantbgone(src)
 
 /obj/item/storage/belt/bandolier
 	name = "bandolier"

@@ -1,0 +1,34 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Caravan-class Modular ship",
+	"map_short_name": "Caravan-class",
+	"map_path": "_maps/shuttles/shiptest/independent_caravan.dmm",
+	"prefix": "ISV",
+	"namelists": ["GENERAL", "SPACE"],
+	"roundstart": true,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/captain/western",
+			"officer": true,
+			"slots": 1
+		},
+		"Ship's Doctor": {
+			"outfit": "/datum/outfit/job/doctor",
+			"slots": 1
+		},
+		"Engine Technician": {
+			"outfit": "/datum/outfit/job/atmos",
+			"slots": 1
+		},
+		"Asteroid Miner": {
+			"outfit": "/datum/outfit/job/miner/hazard",
+			"slots": 1
+		},
+		"Fauna Researcher": {
+			"outfit": "/datum/outfit/job/scientist",
+			"slots": 1
+		},
+		"Assistant": 1
+	},
+	"enabled": true
+}

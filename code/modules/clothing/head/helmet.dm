@@ -85,9 +85,10 @@
 				var/mob/living/carbon/C = user
 				C.head_update(src, forced = 1)
 
-			if(active_sound)
-				while(up)
-					playsound(src, "[active_sound]", 100, FALSE, 4)
+			if(up)
+				START_PROCESSING(SSobj, src)
+			else
+				STOP_PROCESSING(SSobj, src)
 
 //LightToggle
 
@@ -295,6 +296,9 @@
 	toggle_cooldown = 20
 	active_sound = 'sound/items/weeoo1.ogg'
 	dog_fashion = null
+
+/obj/item/clothing/head/helmet/justice/process(delta_time)
+	playsound(loc, "[active_sound]", 100, FALSE, 10)
 
 /obj/item/clothing/head/helmet/justice/escape
 	name = "alarm helmet"

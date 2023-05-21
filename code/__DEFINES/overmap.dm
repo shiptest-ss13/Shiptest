@@ -53,7 +53,7 @@
 #define OVERMAP_SHIP_DOCKING "docking"
 #define OVERMAP_SHIP_UNDOCKING "undocking"
 
-// Ship join modes. The string values are player-facing, so be careful modifying them.
+// Ship join modes. The string values are player-facing, so be careful modifying them. Be sure to update ShipSelect.js if you add to/change these!
 #define SHIP_JOIN_MODE_CLOSED "Locked"
 #define SHIP_JOIN_MODE_APPLY "Apply"
 #define SHIP_JOIN_MODE_OPEN "Open"
@@ -67,3 +67,7 @@
 
 ///Used to get the turf on the "physical" overmap representation.
 #define OVERMAP_TOKEN_TURF(x_pos, y_pos) locate(SSovermap.overmap_vlevel.low_x + SSovermap.overmap_vlevel.reserved_margin + x_pos - 1, SSovermap.overmap_vlevel.low_y + SSovermap.overmap_vlevel.reserved_margin + y_pos - 1, SSovermap.overmap_vlevel.z_value)
+
+// Burn direction defines
+#define BURN_NONE 0
+#define BURN_STOP -1

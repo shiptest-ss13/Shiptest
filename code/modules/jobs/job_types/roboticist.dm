@@ -96,3 +96,12 @@
 	satchel = /obj/item/storage/backpack/satchel/eng
 	duffelbag = /obj/item/storage/backpack/duffelbag/engineering
 	courierbag = /obj/item/storage/backpack/messenger/engi
+
+/datum/outfit/job/roboticist/technician/minutemen
+	name = "Mech Technician (Minutemen)"
+
+	uniform = /obj/item/clothing/under/rank/security/officer/minutemen
+	shoes = /obj/item/clothing/shoes/combat
+	ears = /obj/item/radio/headset/minutemen
+	suit = /obj/item/clothing/suit/toggle/labcoat/science
+

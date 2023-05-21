@@ -439,12 +439,14 @@
 		visible_message("<span class= 'notice'>The [src.name] hums as it powers down.</span>", \
 			"If this message is ever seen, something is wrong.", \
 			"<span class= 'notice'>You hear heavy droning fade out.</span>")
+		playsound(src, 'sound/machines/synth_no.ogg', 50, TRUE, frequency = 6120)
 		active = FALSE
 		log_game("[src] was deactivated by wire pulse at [AREACOORD(src)]")
 	else
 		visible_message("<span class= 'notice'>The [src.name] beeps as it powers up.</span>", \
 			"If this message is ever seen, something is wrong.", \
 			"<span class= 'notice'>You hear heavy droning.</span>")
+		playsound(src, 'sound/machines/synth_yes.ogg', 50, TRUE, frequency = 6120)
 		active = ACTIVE_SETUPFIELDS
 		log_game("[src] was activated by wire pulse at [AREACOORD(src)]")
 
@@ -643,11 +645,14 @@
 	name = "holofield wall"
 	desc = "An energy shield capable of blocking gas movement."
 	icon = 'icons/effects/effects.dmi'
-	icon_state = "holo_fan"
+	icon_state = "holofan_new"
 	density = FALSE
 	CanAtmosPass = ATMOS_PASS_NO
 	CanAtmosPassVertical = 1
 	hardshield = FALSE
+	layer = UNDERDOOR
+	light_color = "#f6e384"
+	light_system = MOVABLE_LIGHT //for instant visual feedback reguardless of lag
 
 /obj/machinery/shieldwall/atmos/Initialize()
 	. = ..()

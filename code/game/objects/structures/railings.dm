@@ -1,13 +1,16 @@
 /obj/structure/railing
 	name = "railing"
 	desc = "Basic railing meant to protect idiots like you from falling."
-	icon = 'icons/obj/fluff.dmi'
+	icon = 'icons/obj/railing.dmi'
 	icon_state = "railing"
 	flags_1 = ON_BORDER_1
 	pass_flags_self = LETPASSTHROW
 	density = TRUE
 	anchored = TRUE
 	climbable = TRUE
+	//stack material which is dropped upon deconstruction adn it's ammount
+	var/buildstack = /obj/item/stack/rods
+	var/buildstackamount = 3
 
 
 /obj/structure/railing/Initialize()
@@ -22,7 +25,7 @@
 	icon_state = "railing_corner"
 	density = FALSE
 	climbable = FALSE
-
+	buildstackamount = 1
 /obj/structure/railing/ComponentInitialize(skip)
 	if(skip)
 		return ..()
@@ -56,6 +59,7 @@
 	. = ..()
 	if(!anchored)
 		to_chat(user, "<span class='warning'>You cut apart the railing.</span>")
+		new buildstack(loc, buildstackamount)
 		I.play_tool_sound(src, 100)
 		deconstruct()
 		return TRUE
@@ -65,8 +69,6 @@
 	if(!loc) //quick check if it's qdeleted already.
 		return
 	if(!(flags_1 & NODECONSTRUCT_1))
-		var/obj/item/stack/rods/rod = new /obj/item/stack/rods(drop_location(), 3)
-		transfer_fingerprints_to(rod)
 		qdel(src)
 ///Implements behaviour that makes it possible to unanchor the railing.
 /obj/structure/railing/wrench_act(mob/living/user, obj/item/I)
@@ -132,7 +134,48 @@
 /obj/structure/railing/wood
 	name = "wooden railing"
 	color = "#A47449"
+	buildstack = /obj/item/stack/sheet/mineral/wood
 
 /obj/structure/railing/corner/wood
 	name = "wooden railing"
 	color = "#A47449"
+	buildstack = /obj/item/stack/sheet/mineral/wood
+
+/obj/structure/railing/modern
+	name = "modern railing"
+	desc = "Modern looking railing meant to protect idiots like you from falling."
+	icon = 'icons/obj/railing_m.dmi'
+	icon_state = "railing_m"
+	layer = ABOVE_MOB_LAYER
+	///icon for the color overlay
+	var/image/cover
+	///cover color, by default this one
+	var/railing_color = "#ffffff"
+	color = null
+
+/obj/structure/railing/modern/Initialize()
+	GetCover()
+	return ..()
+
+/obj/structure/railing/modern/proc/GetCover()
+	if(cover)
+		cut_overlay(cover)
+	cover = mutable_appearance('icons/obj/railing_m.dmi', "[icon_state]_color") //allows for the handrail part to be colored while keeping the body gray
+	cover.color = railing_color
+	add_overlay(cover)
+
+/obj/structure/railing/modern/attacked_by(obj/item/I, mob/living/user)
+	. = ..()
+	if(istype(I, /obj/item/toy/crayon))
+		var/obj/item/toy/crayon/C = I
+		railing_color = C.crayon_color
+	if(railing_color)
+		GetCover()
+
+/obj/structure/railing/modern/end
+	icon_state = "railing_m_end"
+
+/obj/structure/railing/modern/corner
+	icon_state = "railing_m_corner"
+	density = FALSE
+	climbable = FALSE

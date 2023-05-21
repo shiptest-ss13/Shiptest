@@ -11,24 +11,12 @@
 	icon_state = "bridge"
 
 /area/ruin/wasteplanet/abandoned_mechbay/bay1
-	name = "Abandoned Mechbay #1"
+	name = "Abandoned Mechbay Upper Hangar"
 	icon_state = "mechbay"
 
 /area/ruin/wasteplanet/abandoned_mechbay/bay2
-	name = "Abandoned Mechbay #2"
+	name = "Abandoned Mechbay Lower Hangar"
 	icon_state = "mechbay"
-
-/area/ruin/wasteplanet/abandoned_mechbay/bay3
-	name = "Abandoned Mechbay #3"
-	icon_state = "mechbay"
-
-/area/ruin/wasteplanet/abandoned_mechbay/bay4
-	name = "Abandoned Mechbay #4"
-	icon_state = "mechbay"
-
-/area/ruin/wasteplanet/abandoned_mechbay/readyroom
-	name = "Abandoned Mechbay Ready Room"
-	icon_state = "meeting"
 
 /area/ruin/wasteplanet/abandoned_mechbay/crewquarters
 	name = "Abandoned Mechbay Crew Quarters"

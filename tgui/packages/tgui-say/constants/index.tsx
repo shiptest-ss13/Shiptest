@@ -35,39 +35,39 @@ export const RADIO_PREFIXES = {
     label: 'Cmd',
   },
   ':e ': {
-    id: 'engi',
-    label: 'Engi',
+    id: 'centcomm',
+    label: 'CCom',
   },
   ':m ': {
-    id: 'medical',
-    label: 'Med',
+    id: 'minutemen',
+    label: 'CMM',
   },
   ':n ': {
-    id: 'science',
-    label: 'Sci',
+    id: 'nanotrasen',
+    label: 'NT',
   },
   ':o ': {
     id: 'ai',
     label: 'AI',
   },
   ':s ': {
-    id: 'security',
-    label: 'Sec',
+    id: 'solgov',
+    label: 'Sol',
   },
   ':t ': {
     id: 'syndicate',
     label: 'Syndi',
   },
-  ':u ': {
-    id: 'supply',
-    label: 'Supp',
+  ':q ': {
+    id: 'inteq',
+    label: 'IRMG',
   },
   ':v ': {
     id: 'service',
     label: 'Svc',
   },
   ':y ': {
-    id: 'centcom',
-    label: 'CCom',
+    id: 'pirate',
+    label: 'Pir',
   },
 } as const;

@@ -2,6 +2,7 @@
 
 /datum/map_template/ruin/lavaland
 	prefix = "_maps/RandomRuins/LavaRuins/"
+	ruin_type = RUINTYPE_LAVA
 
 /datum/map_template/ruin/lavaland/biodome
 	cost = 5
@@ -55,7 +56,6 @@
 	id = "hierophant"
 	description = "A strange, square chunk of metal of massive size. Inside awaits only death and many, many squares."
 	suffix = "lavaland_surface_hierophant.dmm"
-	always_place = TRUE
 	allow_duplicates = FALSE
 
 /datum/map_template/ruin/lavaland/xeno_nest

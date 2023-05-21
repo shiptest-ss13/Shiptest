@@ -627,7 +627,8 @@
 	for(var/item in l)
 		if(!first_entry)
 			. += ", "
-		if(l[item])
+		//Lists of raw numbers are handled extremely poorly in BYOND, so we need to do this
+		if(!isnum(item) && l[item])
 			. += sanitize_simple("[item] = [l[item]]", list("{"="", "}"="", "\""="", ";"="", ","=""))
 		else
 			. += sanitize_simple("[item]", list("{"="", "}"="", "\""="", ";"="", ","=""))

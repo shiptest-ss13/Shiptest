@@ -16,27 +16,25 @@
 	///If the level should be preserved. Useful for if you want to build a colony or something.
 	var/preserve_level = FALSE
 	///What kind of planet the level is, if it's a planet at all.
-	var/planet
+	var/datum/planet_type/planet
 	///Planet's flavor name, if it is a planet.
 	var/planet_name
 	///List of probabilities for each type of planet.
 	var/static/list/probabilities
 	///The planet that will be forced to load
 	var/force_encounter
-	///List of ruins to potentially generate
-	var/list/ruin_list
+	///Ruin types to generate
+	var/ruin_type
 	/// list of ruins and their target turf, indexed by name
 	var/list/ruin_turfs
-	///The mapgenerator itself
-	var/datum/map_generator/mapgen
-	///The area it will generate in
-	var/area/target_area
-	///The turf the virtual z will be covered with. Appears to only be used by cave generators
-	var/turf/surface = /turf/open/space
+
+	/// The mapgenerator itself. SHOULD NOT BE NULL if the datum ever creates an encounter
+	var/datum/map_generator/mapgen = /datum/map_generator/single_turf/space
+	/// The turf used as the backup baseturf for any reservations created by this datum. Should not be null.
+	var/turf/default_baseturf = /turf/open/space
+
 	///The weather the virtual z will have. If null, the planet will have no weather.
 	var/datum/weather_controller/weather_controller_type
-	///A planet template that contains a list of biomes to use
-	var/datum/planet/planet_template
 
 	///The Y bounds of the virtual z level
 	var/vlevel_height = QUADRANT_MAP_SIZE
@@ -71,7 +69,7 @@
 	else
 		var/dock_to_use = null
 		for(var/obj/docking_port/stationary/dock as anything in reserve_docks)
-			if(!dock.get_docked())
+			if(!dock.docked)
 				dock_to_use = dock
 				break
 
@@ -111,155 +109,21 @@
  * Chooses a type of level for the dynamic level to use.
  */
 /datum/overmap/dynamic/proc/choose_level_type(load_now = TRUE) //TODO: This is a awful way of hanlding random planets. If maybe it picked from a list of datums that then would be applied on the dynamic datum, it would be a LOT better.
-	var/chosen
 	if(!probabilities)
-		probabilities = list(DYNAMIC_WORLD_LAVA = min(length(SSmapping.lava_ruins_templates), 20),
-		DYNAMIC_WORLD_ICE = min(length(SSmapping.ice_ruins_templates), 20),
-		DYNAMIC_WORLD_JUNGLE = min(length(SSmapping.jungle_ruins_templates), 20),
-		DYNAMIC_WORLD_SAND = min(length(SSmapping.sand_ruins_templates), 20),
-		DYNAMIC_WORLD_SPACERUIN = min(length(SSmapping.space_ruins_templates), 20),
-		DYNAMIC_WORLD_WASTEPLANET = min(length(SSmapping.waste_ruins_templates), 20),
-		DYNAMIC_WORLD_ROCKPLANET = min(length(SSmapping.rock_ruins_templates), 20),
-		DYNAMIC_WORLD_BEACHPLANET = min(length(SSmapping.beach_ruins_templates), 20),
-		//DYNAMIC_WORLD_REEBE = 0, //unspawnable because of major lack of skill. //you fucking probablitiy zero does not equal one you dumbass
-		DYNAMIC_WORLD_ASTEROID = 30)
+		probabilities = list()
+		for(var/datum/planet_type/planet_type as anything in subtypesof(/datum/planet_type))
+			probabilities[initial(planet_type.planet)] = initial(planet_type.weight)
 
-	if(force_encounter)
-		chosen = force_encounter
-	else
-		chosen = pickweight(probabilities)
-	switch(chosen)
-		if(DYNAMIC_WORLD_LAVA)
-			Rename("lava planet")
-			token.desc = "A very weak energy signal originating from a planet with lots of seismic and volcanic activity."
-			planet = DYNAMIC_WORLD_LAVA
-			token.icon_state = "globe"
-			token.color = COLOR_ORANGE
-			planet_name = gen_planet_name()
+	planet = SSmapping.planet_types[force_encounter ? force_encounter : pickweightAllowZero(probabilities)]
 
-			ruin_list = SSmapping.lava_ruins_templates
-			mapgen = /datum/map_generator/planet_generator/lava
-			target_area = /area/overmap_encounter/planetoid/lava
-			surface = /turf/open/floor/plating/asteroid/basalt/lava_land_surface
-			planet_template = /datum/planet/lava
-			weather_controller_type = /datum/weather_controller/lavaland
-		if(DYNAMIC_WORLD_ICE)
-			Rename("frozen planet")
-			token.desc = "A very weak energy signal originating from a planet with traces of water and extremely low temperatures."
-			planet = DYNAMIC_WORLD_ICE
-			token.icon_state = "globe"
-			token.color = COLOR_BLUE_LIGHT
-			planet_name = gen_planet_name()
-
-			ruin_list = SSmapping.ice_ruins_templates
-			mapgen = /datum/map_generator/planet_generator/snow
-			target_area = /area/overmap_encounter/planetoid/ice
-			surface = /turf/open/floor/plating/asteroid/snow/icemoon
-			planet_template = /datum/planet/snow
-			weather_controller_type = /datum/weather_controller/snow_planet
-		if(DYNAMIC_WORLD_JUNGLE)
-			Rename("jungle planet")
-			token.desc = "A very weak energy signal originating from a planet teeming with life."
-			planet = DYNAMIC_WORLD_JUNGLE
-			token.icon_state = "globe"
-			token.color = COLOR_LIME
-			planet_name = gen_planet_name()
-
-			ruin_list = SSmapping.jungle_ruins_templates
-			mapgen = /datum/map_generator/planet_generator
-			target_area = /area/overmap_encounter/planetoid/jungle
-			surface = /turf/open/floor/plating/dirt/jungle
-			planet_template = /datum/planet/jungle
-			weather_controller_type = /datum/weather_controller/lush
-		if(DYNAMIC_WORLD_SAND)
-			Rename("sand planet")
-			token.desc = "A very weak energy signal originating from a planet with many traces of silica."
-			planet = DYNAMIC_WORLD_SAND
-			token.icon_state = "globe"
-			token.color = COLOR_GRAY
-			planet_name = gen_planet_name()
-
-			ruin_list = SSmapping.sand_ruins_templates
-			mapgen = /datum/map_generator/planet_generator/sand
-			target_area = /area/overmap_encounter/planetoid/sand
-			surface = /turf/open/floor/plating/asteroid/whitesands
-			planet_template = /datum/planet/sand //TODO, MAKE NEW PLANET TEMPLATE
-			weather_controller_type = /datum/weather_controller/desert
-		if(DYNAMIC_WORLD_WASTEPLANET)
-			Rename("waste disposal planet")
-			token.desc = "A very weak energy signal originating from a planet marked as waste disposal."
-			planet = DYNAMIC_WORLD_WASTEPLANET
-			token.icon_state = "globe"
-			token.color = "#a9883e"
-			planet_name = gen_planet_name()
-
-			ruin_list = SSmapping.waste_ruins_templates
-			mapgen = /datum/map_generator/cave_generator/wasteplanet
-			target_area = /area/overmap_encounter/planetoid/wasteplanet
-			surface = /turf/open/floor/plating/asteroid/wasteplanet
-			weather_controller_type = /datum/weather_controller/chlorine //let's go??
-			//planet_template = /datum/planet/lava //TODO, MAKE NEW PLANET TEMPLATE
-		if(DYNAMIC_WORLD_ROCKPLANET)
-			Rename("rock planet")
-			token.desc = "A very weak energy signal originating from a iron rich and rocky planet."
-			planet = DYNAMIC_WORLD_ROCKPLANET
-			token.icon_state = "globe"
-			token.color = "#bd1313"
-			planet_name = gen_planet_name()
-
-			ruin_list = SSmapping.rock_ruins_templates
-			mapgen = /datum/map_generator/planet_generator/lava //TODO, MAKE NEW PLANETGEN
-			target_area = /area/overmap_encounter/planetoid/rockplanet
-			surface = /turf/open/floor/plating/asteroid
-			weather_controller_type = /datum/weather_controller/rockplanet
-			planet_template = /datum/planet/rock
-		if(DYNAMIC_WORLD_BEACHPLANET)
-			Rename("beach planet")
-			token.desc = "A very weak energy signal originating from a warm, oxygen rich planet."
-			planet = DYNAMIC_WORLD_BEACHPLANET
-			token.icon_state = "globe"
-			token.color = "#c6b597"
-			planet_name = gen_planet_name()
-
-			ruin_list = SSmapping.beach_ruins_templates
-			mapgen = /datum/map_generator/planet_generator/beach
-			target_area = /area/overmap_encounter/planetoid/beachplanet
-			surface = /turf/open/floor/plating/asteroid/sand/lit
-			planet_template = /datum/planet/beach
-			weather_controller_type = /datum/weather_controller/lush
-		if(DYNAMIC_WORLD_REEBE)
-			Rename("???")
-			token.desc = "Some sort of strange portal. Theres no identification of what this is."
-			planet = DYNAMIC_WORLD_REEBE
-			token.icon_state = "wormhole"
-			token.color = COLOR_YELLOW
-			planet_name = "Reebe"
-
-			ruin_list = SSmapping.yellow_ruins_templates
-			mapgen = /datum/map_generator/cave_generator/reebe
-			target_area = /area/overmap_encounter/planetoid/reebe
-			surface = /turf/open/chasm/reebe_void
-		if(DYNAMIC_WORLD_ASTEROID)
-			Rename("large asteroid")
-			token.desc = "A large asteroid with significant traces of minerals."
-			planet = DYNAMIC_WORLD_ASTEROID
-			token.icon_state = "asteroid"
-			token.color = COLOR_GRAY
-
-			ruin_list = null // asteroid ruins when
-			surface = null
-			mapgen = /datum/map_generator/cave_generator/asteroid
-			weather_controller_type = null
-		if(DYNAMIC_WORLD_SPACERUIN)
-			Rename("weak energy signal")
-			token.desc = "A very weak energy signal emenating from space."
-			planet = DYNAMIC_WORLD_SPACERUIN
-			token.icon_state = "strange_event"
-			token.color = null
-			ruin_list = SSmapping.space_ruins_templates
-			surface = /turf/open/space
-			mapgen = null
-			weather_controller_type = null
+	Rename(planet.name)
+	token.icon_state = planet.icon_state
+	token.desc = planet.desc
+	token.color = planet.color
+	ruin_type = planet.ruin_type
+	default_baseturf = planet.default_baseturf
+	mapgen = planet.mapgen
+	weather_controller_type = planet.weather_controller_type
 
 	if(vlevel_height >= 255 && vlevel_width >= 255) //little easter egg
 		planet_name = "LV-[pick(rand(11111,99999))]"
@@ -273,7 +137,7 @@
 // #endif
 
 	if(!preserve_level)
-		token.desc += "It may not still be here if you leave it."
+		token.desc += " It may not still be here if you leave it."
 
 /datum/overmap/dynamic/proc/gen_planet_name()
 	. = ""
@@ -296,7 +160,9 @@
 	if(mapzone)
 		return TRUE
 	log_shuttle("[src] [REF(src)] LEVEL_INIT")
-	var/list/dynamic_encounter_values = SSovermap.spawn_dynamic_encounter(src, TRUE, ruin_type = template)
+	// use the ruin type in template if it exists, or pick from ruin list if IT exists; otherwise null
+	var/selected_ruin = template || (ruin_type ? pickweightAllowZero(SSmapping.ruin_types_probabilities[ruin_type]) : null)
+	var/list/dynamic_encounter_values = SSovermap.spawn_dynamic_encounter(src, selected_ruin)
 	if(!length(dynamic_encounter_values))
 		return FALSE
 	mapzone = dynamic_encounter_values[1]
@@ -304,10 +170,29 @@
 	ruin_turfs = dynamic_encounter_values[3]
 	return TRUE
 
+/datum/overmap/dynamic/empty
+	name = "Empty Space"
+
+/datum/overmap/dynamic/empty/choose_level_type()
+	return
+
+/datum/overmap/dynamic/empty/post_undocked(datum/overmap/ship/controlled/dock_requester)
+	if(length(mapzone?.get_mind_mobs()))
+		return //Dont fuck over stranded people? tbh this shouldn't be called on this condition, instead of bandaiding it inside
+	log_shuttle("[src] [REF(src)] UNLOAD")
+	qdel(src)
+
+
+/*
+	OVERMAP ENCOUNTER AREAS
+*/
+
 /area/overmap_encounter
 	name = "\improper Overmap Encounter"
 	icon_state = "away"
-	area_flags = HIDDEN_AREA | UNIQUE_AREA | CAVES_ALLOWED | FLORA_ALLOWED | MOB_SPAWN_ALLOWED | NOTELEPORT
+	// DO NOT PUT UNIQUE_AREA IN THESE FLAGS FOR ANY SUBTYPE. IT CAUSES WEATHER PROBLEMS
+	// THE ONLY REASON IT DIDN'T BEFORE IS BECAUSE THE CODE DIDN'T RESPECT THE FLAG
+	area_flags = HIDDEN_AREA | CAVES_ALLOWED | FLORA_ALLOWED | MOB_SPAWN_ALLOWED | NOTELEPORT
 	flags_1 = CAN_BE_DIRTY_1
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 	sound_environment = SOUND_ENVIRONMENT_STONEROOM
@@ -315,12 +200,18 @@
 	outdoors = TRUE
 	allow_weather = TRUE
 
+/area/overmap_encounter/New(...)
+	if(area_flags & UNIQUE_AREA)
+		CRASH("Area [src.name] ([src.type], REF: [REF(src)]) created with flag UNIQUE_AREA! Don't do this! Weather will break!")
+	. = ..()
+
 /area/overmap_encounter/planetoid
 	name = "\improper Unknown Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_MOUNTAINS
 	has_gravity = STANDARD_GRAVITY
 	always_unpowered = TRUE
 
+// Used for caves on multi-biome planetoids.
 /area/overmap_encounter/planetoid/cave
 	name = "\improper Planetoid Cavern"
 	sound_environment = SOUND_ENVIRONMENT_CAVE
@@ -351,14 +242,13 @@
 	sound_environment = SOUND_ENVIRONMENT_QUARRY
 	ambientsounds = AWAY_MISSION
 
+/area/overmap_encounter/planetoid/rockplanet/explored//for use in ruins
+	area_flags = VALID_TERRITORY
+
 /area/overmap_encounter/planetoid/beachplanet
 	name = "\improper Beach Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_FOREST
 	ambientsounds = BEACH
-
-/area/overmap_encounter/planetoid/rockplanet/explored//for use in ruins
-	area_flags = UNIQUE_AREA
-	area_flags = VALID_TERRITORY | UNIQUE_AREA
 
 /area/overmap_encounter/planetoid/wasteplanet
 	name = "\improper Waste Planetoid"
@@ -368,17 +258,9 @@
 /area/overmap_encounter/planetoid/reebe
 	name = "\improper Yellow Space"
 	sound_environment = SOUND_ENVIRONMENT_MOUNTAINS
-	area_flags = HIDDEN_AREA | UNIQUE_AREA | CAVES_ALLOWED | FLORA_ALLOWED | MOB_SPAWN_ALLOWED //allows jaunters to work
+	area_flags = HIDDEN_AREA | CAVES_ALLOWED | FLORA_ALLOWED | MOB_SPAWN_ALLOWED //allows jaunters to work
 	ambientsounds = REEBE
 
-/datum/overmap/dynamic/empty
-	name = "Empty Space"
 
-/datum/overmap/dynamic/empty/choose_level_type()
-	return
 
-/datum/overmap/dynamic/empty/post_undocked(datum/overmap/ship/controlled/dock_requester)
-	if(length(mapzone?.get_mind_mobs()))
-		return //Dont fuck over stranded people? tbh this shouldn't be called on this condition, instead of bandaiding it inside
-	log_shuttle("[src] [REF(src)] UNLOAD")
-	qdel(src)
+

@@ -805,9 +805,9 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	//Strange audio
 	switch(sound_type)
 		if("airlock")
-			target.playsound_local(source,'sound/machines/airlock.ogg', 30, 1)
+			target.playsound_local(source,'sound/machines/airlocks/standard/open.ogg', 30, 1)
 		if("airlock pry")
-			target.playsound_local(source,'sound/machines/airlock_alien_prying.ogg', 100, 1)
+			target.playsound_local(source,'sound/machines/creaking.ogg', 100, 1)
 			sleep(50)
 			target.playsound_local(source, 'sound/machines/airlockforced.ogg', 30, 1)
 		if("console")

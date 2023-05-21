@@ -211,6 +211,7 @@
 #define ATMOS_TANK_O2 "o2=100000;TEMP=293.15"
 #define ATMOS_TANK_N2 "n2=100000;TEMP=293.15"
 #define ATMOS_TANK_AIRMIX "o2=2644;n2=10580;TEMP=293.15"
+#define ATMOS_TANK_FUEL "o2=33000;plasma=66000;TEMP=293.15"
 
 //LAVALAND
 /// what pressure you have to be under to increase the effect of equipment meant for lavaland

@@ -17,7 +17,6 @@
 	item_state = "w_suit"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
-	fitted = FEMALE_UNIFORM_TOP
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/under/rank/medical/geneticist
@@ -37,7 +36,6 @@
 	item_state = "w_suit"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
-	fitted = FEMALE_UNIFORM_TOP
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/under/rank/medical/virologist
@@ -55,7 +53,6 @@
 	item_state = "w_suit"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
-	fitted = FEMALE_UNIFORM_TOP
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/under/rank/medical/doctor/nurse
@@ -66,7 +63,6 @@
 	permeability_coefficient = 0.5
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 10, "rad" = 0, "fire" = 0, "acid" = 0)
 	body_parts_covered = CHEST|GROIN|ARMS
-	fitted = NO_FEMALE_UNIFORM
 	can_adjust = FALSE
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
@@ -103,7 +99,6 @@
 	item_state = "w_suit"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
-	fitted = FEMALE_UNIFORM_TOP
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/under/rank/medical/chemist
@@ -121,7 +116,6 @@
 	item_state = "w_suit"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
-	fitted = FEMALE_UNIFORM_TOP
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/under/rank/medical/paramedic
@@ -140,7 +134,6 @@
 	item_state = "w_suit"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = TRUE
-	fitted = FEMALE_UNIFORM_TOP
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 //Alt job uniforms
@@ -149,7 +142,6 @@
 	name = "pharmacist's jumpsuit"
 	desc = "It's made of a special fiber that gives special protection against biohazards. For those pharmacists that want to improve or worsen their crew's health."
 	icon_state = "pharmacist"
-	fitted = NO_FEMALE_UNIFORM
 
 /obj/item/clothing/under/rank/medical/chemist/pharmacist/skirt
 	name = "pharmacist's jumpskirt"
@@ -162,7 +154,6 @@
 	name = "pharmacologist's jumpsuit"
 	desc = "It's made of a special fiber that gives special protection against biohazards. For those pharmacologist one step behind to being evil."
 	icon_state = "pharmacologist"
-	fitted = NO_FEMALE_UNIFORM
 
 /obj/item/clothing/under/rank/medical/chemist/pharmacologist/skirt
 	name = "pharmacologist's jumpskirt"
@@ -175,7 +166,6 @@
 	name = "junior chemist's jumpsuit"
 	desc = "It's made of a special fiber that gives special protection against biohazards. A jumpsuit for junior chemist staff."
 	icon_state = "junior_chemistry"
-	fitted = NO_FEMALE_UNIFORM
 
 /obj/item/clothing/under/rank/medical/chemist/junior_chemist/skirt
 	name = "junior chemist's jumpskirt"
@@ -194,7 +184,6 @@
 
 	permeability_coefficient = 0.5
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 10, "rad" = 0, "fire" = 0, "acid" = 0)
-	fitted = NO_FEMALE_UNIFORM
 
 /obj/item/clothing/under/rank/medical/psychiatrist/green
 	name = "blue psychiatrist's suit"
@@ -210,7 +199,6 @@
 	name = "junior doctor's jumpsuit"
 	desc = "It's made of a special fiber that provides minor protection against biohazards. Worn by the junior medical personnel."
 	icon_state = "junior_medical"
-	fitted = NO_FEMALE_UNIFORM
 
 /obj/item/clothing/under/rank/medical/doctor/junior_doctor/skirt
 	name = "junior doctor's jumpskirt"
@@ -225,7 +213,6 @@
 	icon_state = "medical_director"
 	permeability_coefficient = 0.5
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 10, "rad" = 0, "fire" = 0, "acid" = 0)
-	fitted = NO_FEMALE_UNIFORM
 	icon = 'icons/obj/clothing/under/medical.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/under/medical.dmi'
 
@@ -250,7 +237,6 @@
 	icon_state = "senior_medical"
 	permeability_coefficient = 0.5
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 10, "rad" = 0, "fire" = 0, "acid" = 0)
-	fitted = NO_FEMALE_UNIFORM
 	icon = 'icons/obj/clothing/under/medical.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/under/medical.dmi'
 
@@ -269,7 +255,6 @@
 	icon_state = "senior_chemistry"
 	permeability_coefficient = 0.5
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 10, "rad" = 0, "fire" = 50, "acid" = 65)
-	fitted = NO_FEMALE_UNIFORM
 	icon = 'icons/obj/clothing/under/medical.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/under/medical.dmi'
 
@@ -287,7 +272,6 @@
 	icon_state = "pathologist"
 	permeability_coefficient = 0.5
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 10, "rad" = 0, "fire" = 0, "acid" = 0)
-	fitted = NO_FEMALE_UNIFORM
 	icon = 'icons/obj/clothing/under/medical.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/under/medical.dmi'
 
@@ -304,7 +288,6 @@
 	desc = "It's made of a special fiber that provides minor protection against biohazards. It has shorts, allowing ease of movement for EMTs."
 	icon_state = "emt"
 	body_parts_covered = CHEST|GROIN|ARMS
-	fitted = NO_FEMALE_UNIFORM
 
 /obj/item/clothing/under/rank/medical/paramedic/emt/skirt
 	name = "emergency medical technician jumpskirt"
@@ -318,4 +301,3 @@
 	desc = "It's made of a special fiber that provides minor protection against biohazards. This one is in red."
 	icon_state = "scrubsred"
 	can_adjust = FALSE
-	fitted = NO_FEMALE_UNIFORM

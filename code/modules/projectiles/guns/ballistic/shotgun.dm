@@ -120,7 +120,7 @@
 
 /obj/item/gun/ballistic/shotgun/bulldog
 	name = "\improper Bulldog Shotgun"
-	desc = "A semi-auto, mag-fed shotgun for combat in narrow corridors, nicknamed 'Bulldog' by boarding parties. Compatible only with specialized 8-round drum magazines."
+	desc = "A semi-auto, mag-fed shotgun for combat in narrow corridors, nicknamed the 'Bulldog' by boarding parties. Only compatible with specialized 8-round drum magazines."
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	icon_state = "bulldog"
 	item_state = "bulldog"
@@ -152,10 +152,23 @@
 
 /obj/item/gun/ballistic/shotgun/bulldog/inteq
 	name = "\improper Mastiff Shotgun"
-	desc = "A semi-auto, mag-fed shotgun, seized from Syndicate armories by deserting troopers and modified to IRMG's standards. Compatible only with specialized 8-round drum magazines."
+	desc = "A semi-auto, mag-fed shotgun, seized from Syndicate armories by deserting troopers and modified to IRMG's standards. Only compatible with specialized 8-round drum magazines."
 	icon_state = "bulldog-inteq"
 	item_state = "bulldog-inteq"
+	mag_type = /obj/item/ammo_box/magazine/m12g
 	pin = /obj/item/firing_pin
+
+/obj/item/gun/ballistic/shotgun/bulldog/minutemen
+	name = "\improper CM-15"
+	desc = "Standard issue shotgun of the Colonial Minutemen. Most often used by boarding crews. Only compatible with specialized 8-round magazines."
+	icon = 'icons/obj/guns/48x32guns.dmi'
+	mag_type = /obj/item/ammo_box/magazine/cm15_mag
+	icon_state = "cm15"
+	item_state = "cm15"
+	pin = /obj/item/firing_pin
+	empty_alarm = FALSE
+	empty_indicator = FALSE
+	special_mags = FALSE
 
 /////////////////////////////
 // DOUBLE BARRELED SHOTGUN //

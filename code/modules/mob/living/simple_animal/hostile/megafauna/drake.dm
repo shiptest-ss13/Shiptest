@@ -38,7 +38,7 @@ Difficulty: Medium
 	attack_verb_continuous = "chomps"
 	attack_verb_simple = "chomp"
 	attack_sound = 'sound/magic/demon_attack1.ogg'
-	icon = 'icons/mob/lavaland/64x64megafauna.dmi'
+	icon = 'icons/mob/lavaland/96x96megafauna.dmi'
 	icon_state = "dragon"
 	icon_living = "dragon"
 	icon_dead = "dragon_dead"
@@ -52,8 +52,8 @@ Difficulty: Medium
 	speed = 5
 	move_to_delay = 5
 	ranged = TRUE
-	pixel_x = -16
-	base_pixel_x = -16
+	pixel_x = -32
+	base_pixel_x = -32
 	crusher_loot = list(/obj/structure/closet/crate/necropolis/dragon/crusher)
 	loot = list(/obj/structure/closet/crate/necropolis/dragon)
 	butcher_results = list(/obj/item/gem/amber = 1, /obj/item/stack/ore/diamond = 5, /obj/item/stack/sheet/sinew = 5, /obj/item/stack/sheet/bone = 30)
@@ -305,7 +305,7 @@ Difficulty: Medium
 	stop_automated_movement = TRUE
 	swooping |= SWOOP_DAMAGEABLE
 	density = FALSE
-	icon_state = "shadow"
+	icon_state = "dragon_shadow"
 	visible_message("<span class='boldwarning'>[src] swoops up high!</span>")
 
 	var/negative
@@ -512,7 +512,7 @@ Difficulty: Medium
 	duration = 10
 
 /obj/effect/temp_visual/dragon_flight
-	icon = 'icons/mob/lavaland/64x64megafauna.dmi'
+	icon = 'icons/mob/lavaland/96x96megafauna.dmi'
 	icon_state = "dragon"
 	layer = ABOVE_ALL_MOB_LAYER
 	pixel_x = -16
@@ -529,7 +529,7 @@ Difficulty: Medium
 	else
 		animate(src, pixel_x = DRAKE_SWOOP_HEIGHT*0.1, pixel_z = DRAKE_SWOOP_HEIGHT*0.15, time = 3, easing = BOUNCE_EASING)
 	sleep(3)
-	icon_state = "swoop"
+	icon_state = "dragon_swoop"
 	if(negative)
 		animate(src, pixel_x = -DRAKE_SWOOP_HEIGHT, pixel_z = DRAKE_SWOOP_HEIGHT, time = 7)
 	else

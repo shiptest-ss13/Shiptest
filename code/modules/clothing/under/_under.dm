@@ -13,7 +13,6 @@
 	clothamnt = 3
 	greyscale_colors = list(list(15, 17), list(10, 19), list(15, 10))
 	greyscale_icon_state = "under"
-	var/fitted = FEMALE_UNIFORM_FULL // For use in alternate clothing styles for women
 	var/has_sensor = HAS_SENSORS // For the crew computer
 	var/random_sensor = TRUE
 	var/sensor_mode = NO_SENSORS
@@ -74,7 +73,6 @@
 	..()
 	if(adjusted)
 		adjusted = NORMAL_STYLE
-		fitted = initial(fitted)
 		if(!alt_covers_chest)
 			body_parts_covered |= CHEST
 

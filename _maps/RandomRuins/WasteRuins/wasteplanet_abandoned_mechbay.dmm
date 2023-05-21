@@ -6,7 +6,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/abandoned_mechbay/bay2)
+/area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "ar" = (
 /obj/effect/turf_decal/trimline/opaque/neutral/arrow_ccw{
 	dir = 4
@@ -34,7 +34,7 @@
 /obj/effect/decal/cleanable/oil,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_1,
-/area/ruin/wasteplanet/abandoned_mechbay/bay3)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "aM" = (
 /obj/effect/turf_decal/trimline/opaque/neutral/arrow_ccw{
 	pixel_y = 8
@@ -51,9 +51,9 @@
 /turf/open/floor/concrete/slab_1,
 /area/ruin/wasteplanet/abandoned_mechbay/mainhall)
 "aQ" = (
-/obj/structure/railing,
 /obj/structure/railing{
-	dir = 4
+	max_integrity = 70;
+	dir = 6
 	},
 /turf/open/floor/plating/asteroid/wasteplanet,
 /area/ruin/wasteplanet/abandoned_mechbay)
@@ -72,7 +72,7 @@
 	dir = 1
 	},
 /turf/open/floor/concrete/slab_1,
-/area/ruin/wasteplanet/abandoned_mechbay/bay4)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "by" = (
 /obj/machinery/computer/mech_bay_power_console{
 	dir = 8
@@ -102,8 +102,9 @@
 	},
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/wasteplanet/abandoned_mechbay/mainhall)
+/area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "bQ" = (
 /obj/structure/table/reinforced,
 /obj/structure/railing,
@@ -113,7 +114,7 @@
 /obj/effect/gibspawner/human,
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/disabler,
 /turf/open/floor/concrete/slab_1,
-/area/ruin/wasteplanet/abandoned_mechbay/bay3)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "bZ" = (
 /obj/structure/closet/secure{
 	name = "Pilot Equipment"
@@ -136,6 +137,9 @@
 /obj/machinery/light/floor,
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/turf_decal/spline/fancy/opaque/grey,
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
 /turf/open/floor/concrete/slab_4,
 /area/ruin/wasteplanet/abandoned_mechbay/mainhall)
 "cp" = (
@@ -167,6 +171,9 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/extinguisher_cabinet{
+	pixel_x = -32
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "cB" = (
@@ -174,7 +181,7 @@
 	dir = 1
 	},
 /turf/open/floor/concrete/slab_1,
-/area/ruin/wasteplanet/abandoned_mechbay/bay4)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "cJ" = (
 /obj/structure/bed/pod,
 /obj/item/bedsheet/green,
@@ -222,7 +229,7 @@
 /area/ruin/wasteplanet/abandoned_mechbay/mainhall)
 "cY" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/spline/fancy/corner/opaque/grey{
+/obj/effect/turf_decal/spline/fancy/opaque/grey/corner{
 	dir = 1
 	},
 /turf/open/floor/concrete/slab_4,
@@ -285,14 +292,14 @@
 	id = "mechbay3"
 	},
 /turf/open/floor/concrete/slab_1,
-/area/ruin/wasteplanet/abandoned_mechbay/bay3)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "dH" = (
 /obj/machinery/mech_bay_recharge_port{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_1,
-/area/ruin/wasteplanet/abandoned_mechbay/bay3)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "dM" = (
 /obj/effect/turf_decal/trimline/transparent/neutral/filled/warning{
 	dir = 8
@@ -302,7 +309,7 @@
 	icon_state = "0-8"
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/abandoned_mechbay/bay3)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "dR" = (
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/wasteplanet/abandoned_mechbay/mechlab)
@@ -316,14 +323,12 @@
 /turf/open/floor/plating/asteroid/wasteplanet,
 /area/ruin/wasteplanet/abandoned_mechbay)
 "ec" = (
-/obj/machinery/power/apc/auto_name/south,
 /obj/machinery/airalarm/all_access{
 	dir = 8;
 	pixel_x = 25
 	},
-/obj/structure/cable,
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/wasteplanet/abandoned_mechbay/mainhall)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "ee" = (
 /obj/effect/turf_decal/industrial/warning/corner,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -341,6 +346,9 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 8
 	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/abandoned_mechbay/commandcontrol)
 "ek" = (
@@ -357,7 +365,7 @@
 	dir = 5
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/abandoned_mechbay/bay3)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "eq" = (
 /obj/effect/turf_decal/trimline/opaque/neutral/arrow_ccw{
 	pixel_y = 8
@@ -412,6 +420,9 @@
 	pixel_y = -1;
 	pixel_x = -4
 	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/wasteplanet/abandoned_mechbay/commandcontrol)
 "eA" = (
@@ -426,18 +437,15 @@
 	id = "mechbay3"
 	},
 /turf/open/floor/concrete/slab_1,
-/area/ruin/wasteplanet/abandoned_mechbay/bay3)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "eG" = (
 /obj/structure/sign/warning/radiation,
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/wasteplanet/abandoned_mechbay/mechlab)
 "eR" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/wasteplanet/abandoned_mechbay/mainhall)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "eU" = (
 /obj/effect/turf_decal/industrial/stand_clear/white,
 /obj/effect/turf_decal/industrial/warning{
@@ -445,8 +453,11 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/effect/decal/cleanable/blood/tracks,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/wasteplanet/abandoned_mechbay/mainhall)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "fa" = (
 /obj/effect/turf_decal/trimline/opaque/neutral/line{
 	pixel_y = 8
@@ -478,14 +489,14 @@
 	name = "Bay Shutters"
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/abandoned_mechbay/bay2)
+/area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "fe" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /mob/living/simple_animal/hostile/syndicate/melee{
 	name = "Syndicate Mech Pilot"
 	},
 /turf/open/floor/concrete/slab_1,
-/area/ruin/wasteplanet/abandoned_mechbay/bay4)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "fi" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 4
@@ -526,6 +537,10 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/wasteplanet/abandoned_mechbay/crewquarters)
+"fv" = (
+/obj/effect/turf_decal/number/two,
+/turf/closed/wall/concrete/reinforced,
+/area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "fw" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
@@ -541,12 +556,15 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/abandoned_mechbay/bay3)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "fE" = (
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/effect/turf_decal/trimline/opaque/neutral/line{
+	dir = 4
+	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/wasteplanet/abandoned_mechbay/mainhall)
 "fG" = (
@@ -571,6 +589,17 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
 	},
+/obj/machinery/holopad,
+/obj/effect/turf_decal/trimline/opaque/neutral/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/neutral/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/neutral/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/neutral/corner,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/abandoned_mechbay/commandcontrol)
 "fT" = (
@@ -597,21 +626,21 @@
 /obj/effect/spawner/lootdrop/maintenance/four,
 /obj/machinery/light/dim,
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/abandoned_mechbay/bay4)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "fY" = (
 /obj/effect/gibspawner/human,
 /obj/effect/turf_decal/box/white,
 /obj/structure/reagent_dispensers/fueltank,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/abandoned_mechbay/bay3)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "ga" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/wasteplanet/abandoned_mechbay/mainhall)
+/area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "gc" = (
 /obj/structure/closet/secure{
 	name = "Pilot Equipment"
@@ -633,10 +662,6 @@
 /obj/effect/decal/cleanable/greenglow,
 /turf/open/floor/mech_bay_recharge_floor,
 /area/ruin/wasteplanet/abandoned_mechbay/bay1)
-"gl" = (
-/obj/effect/turf_decal/trimline/transparent/neutral/filled/warning,
-/turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "gu" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -686,7 +711,8 @@
 /area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "gO" = (
 /obj/machinery/light_switch{
-	pixel_x = 22
+	pixel_x = 22;
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/wasteplanet/abandoned_mechbay/crewquarters)
@@ -720,13 +746,13 @@
 	dir = 1
 	},
 /turf/open/floor/concrete/slab_1,
-/area/ruin/wasteplanet/abandoned_mechbay/bay3)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "gZ" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/machinery/atmospherics/components/binary/dp_vent_pump{
-	dir = 8
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/on/layer2{
+	dir = 4
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/wasteplanet/abandoned_mechbay/mechlab)
@@ -787,7 +813,7 @@
 	},
 /obj/effect/decal/cleanable/shreds,
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/abandoned_mechbay/bay4)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "hy" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -798,7 +824,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/concrete/slab_1,
-/area/ruin/wasteplanet/abandoned_mechbay/bay3)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "hN" = (
 /obj/machinery/door/poddoor{
 	id = "baseinternal"
@@ -814,8 +840,16 @@
 /turf/open/floor/concrete/reinforced,
 /area/ruin/wasteplanet/abandoned_mechbay/mainhall)
 "hU" = (
-/obj/structure/railing,
+/obj/structure/railing{
+	max_integrity = 70
+	},
 /turf/open/floor/plating/wasteplanet,
+/area/ruin/wasteplanet/abandoned_mechbay)
+"ib" = (
+/obj/structure/railing/corner{
+	max_integrity = 70
+	},
+/turf/open/floor/plating/asteroid/wasteplanet,
 /area/ruin/wasteplanet/abandoned_mechbay)
 "ir" = (
 /obj/effect/turf_decal/trimline/transparent/neutral/filled/warning{
@@ -826,7 +860,7 @@
 	pixel_x = -25
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/abandoned_mechbay/bay2)
+/area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "iu" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -851,7 +885,7 @@
 	pixel_x = 25
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/abandoned_mechbay/bay2)
+/area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "iB" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -889,17 +923,6 @@
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/disabler,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/abandoned_mechbay/bay1)
-"jd" = (
-/obj/effect/turf_decal/industrial/warning,
-/obj/effect/turf_decal/arrows{
-	pixel_y = 8
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 1
-	},
-/turf/open/floor/concrete/slab_1,
-/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "jj" = (
 /obj/effect/turf_decal/spline/fancy/opaque/grey{
 	dir = 4
@@ -926,15 +949,15 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/abandoned_mechbay/mechlab)
 "jI" = (
-/obj/machinery/door/poddoor{
-	id = "mechbay4"
-	},
 /obj/effect/decal/cleanable/blood/tracks,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/door/poddoor{
+	id = "mechbay2"
+	},
 /turf/open/floor/concrete/slab_1,
-/area/ruin/wasteplanet/abandoned_mechbay/bay2)
+/area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "jL" = (
 /obj/machinery/door/poddoor{
 	id = "baseinternal"
@@ -962,13 +985,10 @@
 	pixel_x = 25
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/abandoned_mechbay/bay4)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "kf" = (
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1
-	},
-/obj/effect/turf_decal/number/two{
-	pixel_y = 32
 	},
 /turf/open/floor/concrete/slab_4,
 /area/ruin/wasteplanet/abandoned_mechbay/mainhall)
@@ -979,11 +999,14 @@
 "ks" = (
 /obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/locked,
+/obj/machinery/atmospherics/pipe/layer_manifold{
+	dir = 4
+	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/wasteplanet/abandoned_mechbay/mechlab)
 "kt" = (
 /obj/machinery/door/poddoor{
-	id = "mechabay1"
+	id = "mechbay1"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
@@ -995,7 +1018,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/abandoned_mechbay/bay3)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "kJ" = (
 /obj/structure/flora/rock/pile,
 /turf/open/floor/plating/asteroid/wasteplanet,
@@ -1014,7 +1037,7 @@
 	name = "Bay Shutters"
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/abandoned_mechbay/bay3)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "kV" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
@@ -1048,14 +1071,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
-/area/ruin/wasteplanet/abandoned_mechbay/bay2)
-"lc" = (
-/obj/machinery/door/poddoor{
-	id = "mechbay4"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/turf/open/floor/concrete/slab_1,
-/area/ruin/wasteplanet/abandoned_mechbay/bay4)
+/area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "lf" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/turf_decal/arrows{
@@ -1084,7 +1100,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/abandoned_mechbay/bay2)
+/area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "ln" = (
 /obj/structure/tank_dispenser,
 /obj/machinery/light{
@@ -1098,13 +1114,13 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/broken,
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/abandoned_mechbay/bay3)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "ly" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
 /turf/open/floor/concrete/slab_1,
-/area/ruin/wasteplanet/abandoned_mechbay/bay4)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "lA" = (
 /obj/structure/closet/crate,
 /obj/effect/turf_decal/industrial/outline/yellow,
@@ -1121,7 +1137,7 @@
 	},
 /obj/effect/decal/cleanable/generic,
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/abandoned_mechbay/bay2)
+/area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "lK" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1166,7 +1182,7 @@
 	icon_state = "2-8"
 	},
 /turf/open/floor/concrete/slab_1,
-/area/ruin/wasteplanet/abandoned_mechbay/bay2)
+/area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "lU" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/glass,
@@ -1178,6 +1194,9 @@
 	},
 /obj/machinery/light/floor,
 /obj/effect/decal/cleanable/oil,
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
 /turf/open/floor/concrete/slab_4,
 /area/ruin/wasteplanet/abandoned_mechbay/mainhall)
 "ma" = (
@@ -1205,7 +1224,7 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/wasteplanet/abandoned_mechbay/mainhall)
+/area/ruin/wasteplanet/abandoned_mechbay/crewquarters)
 "mr" = (
 /obj/effect/turf_decal/spline/fancy/opaque/grey{
 	dir = 8
@@ -1229,7 +1248,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/shreds,
 /turf/open/floor/concrete/slab_1,
-/area/ruin/wasteplanet/abandoned_mechbay/bay4)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "mG" = (
 /obj/effect/turf_decal/trimline/opaque/neutral/line{
 	pixel_y = 8
@@ -1267,7 +1286,7 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/wasteplanet/abandoned_mechbay/mainhall)
+/area/ruin/wasteplanet/abandoned_mechbay/crewquarters)
 "np" = (
 /obj/structure/rack,
 /obj/item/mecha_ammo/lmg,
@@ -1276,8 +1295,11 @@
 /area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "nr" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/structure/extinguisher_cabinet{
+	pixel_x = 32
+	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/wasteplanet/abandoned_mechbay/mainhall)
+/area/ruin/wasteplanet/abandoned_mechbay/crewquarters)
 "ny" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/cable{
@@ -1300,7 +1322,7 @@
 	},
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/wasteplanet/abandoned_mechbay/mainhall)
+/area/ruin/wasteplanet/abandoned_mechbay/crewquarters)
 "nE" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/box/white,
@@ -1329,14 +1351,14 @@
 	pixel_x = 24
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/abandoned_mechbay/bay3)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "oa" = (
 /obj/effect/turf_decal/trimline/transparent/neutral/filled/warning{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/oil,
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/abandoned_mechbay/bay4)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "ok" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1353,7 +1375,7 @@
 	pixel_x = 25
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/abandoned_mechbay/bay3)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "oq" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -1370,6 +1392,9 @@
 "or" = (
 /obj/machinery/autolathe,
 /obj/effect/turf_decal/box,
+/obj/structure/extinguisher_cabinet{
+	pixel_y = -32
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/wasteplanet/abandoned_mechbay/mechlab)
 "ov" = (
@@ -1397,14 +1422,14 @@
 	},
 /obj/effect/decal/cleanable/oil,
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/abandoned_mechbay/bay4)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "pa" = (
 /obj/structure/rack,
 /obj/machinery/light,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/shard,
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/abandoned_mechbay/bay3)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "po" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/effect/turf_decal/spline/fancy/opaque/grey{
@@ -1457,7 +1482,11 @@
 /obj/structure/railing/corner{
 	dir = 4
 	},
-/turf/closed/mineral/random/asteroid/wasteplanet,
+/obj/structure/railing/corner{
+	max_integrity = 70;
+	dir = 4
+	},
+/turf/open/floor/plating/asteroid/wasteplanet,
 /area/ruin/wasteplanet/abandoned_mechbay)
 "qf" = (
 /obj/effect/decal/cleanable/oil,
@@ -1467,7 +1496,7 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/concrete/slab_1,
-/area/ruin/wasteplanet/abandoned_mechbay/bay2)
+/area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "qq" = (
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/plasteel/white,
@@ -1477,25 +1506,14 @@
 /obj/effect/decal/cleanable/shreds,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /turf/open/floor/concrete/slab_1,
-/area/ruin/wasteplanet/abandoned_mechbay/bay2)
-"qB" = (
-/obj/effect/turf_decal/trimline/transparent/neutral/filled/warning{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/power/apc/auto_name/west,
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/abandoned_mechbay/bay4)
+/area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "qH" = (
 /obj/structure/rack,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/spawner/lootdrop/maintenance/six,
 /obj/item/mecha_parts/mecha_equipment/drill/diamonddrill,
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/abandoned_mechbay/bay4)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "qJ" = (
 /obj/machinery/light/small,
 /turf/open/floor/plating/wasteplanet,
@@ -1561,18 +1579,14 @@
 	pixel_x = -32
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/abandoned_mechbay/bay4)
-"rl" = (
-/obj/structure/railing/corner,
-/turf/open/floor/plating/asteroid/wasteplanet,
-/area/ruin/wasteplanet/abandoned_mechbay)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "ro" = (
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser/heavy,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
 /turf/open/floor/concrete/slab_1,
-/area/ruin/wasteplanet/abandoned_mechbay/bay3)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "rt" = (
 /obj/machinery/door/poddoor{
 	id = "mechbay4"
@@ -1595,12 +1609,6 @@
 /obj/structure/curtain,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ruin/wasteplanet/abandoned_mechbay/crewquarters)
-"rM" = (
-/obj/structure/railing/corner{
-	dir = 8
-	},
-/turf/open/floor/plating/asteroid/wasteplanet,
-/area/ruin/wasteplanet/abandoned_mechbay)
 "rN" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/turf_decal/industrial/stand_clear/white{
@@ -1653,7 +1661,7 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "exitwindow"
 	},
-/turf/open/space/basic,
+/turf/open/floor/plating,
 /area/ruin/wasteplanet/abandoned_mechbay/commandcontrol)
 "sy" = (
 /obj/machinery/computer/mech_bay_power_console{
@@ -1662,10 +1670,13 @@
 /obj/effect/decal/cleanable/oil,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_1,
-/area/ruin/wasteplanet/abandoned_mechbay/bay4)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "sB" = (
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/siding/thinplating/dark/corner{
+	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/abandoned_mechbay/commandcontrol)
@@ -1680,17 +1691,13 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/wasteplanet/abandoned_mechbay/mainhall)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "sJ" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/door/firedoor,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /turf/open/floor/plasteel/stairs{
 	dir = 1
 	},
-/area/ruin/wasteplanet/abandoned_mechbay/mainhall)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "sN" = (
 /obj/item/stack/sheet/mineral/uranium/twenty,
 /obj/item/stack/sheet/mineral/uranium/twenty,
@@ -1705,8 +1712,11 @@
 /obj/machinery/light/broken{
 	dir = 1
 	},
+/obj/structure/extinguisher_cabinet{
+	pixel_x = 32
+	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/abandoned_mechbay/bay4)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "sX" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
@@ -1748,10 +1758,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/wasteplanet/abandoned_mechbay/crewquarters)
-"tu" = (
-/obj/effect/decal/cleanable/oil,
-/turf/open/floor/concrete/slab_1,
-/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "tC" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -1774,17 +1780,6 @@
 /obj/item/mecha_parts/part/gygax_armor,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/wasteplanet/abandoned_mechbay/bay1)
-"tF" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
-/obj/effect/turf_decal/arrows{
-	pixel_y = -8;
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/turf/open/floor/concrete/slab_1,
-/area/ruin/wasteplanet/abandoned_mechbay/bay4)
 "tJ" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/effect/turf_decal/spline/fancy/opaque/grey{
@@ -1825,7 +1820,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/abandoned_mechbay/bay4)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "tZ" = (
 /turf/open/floor/concrete/slab_1,
 /area/ruin/wasteplanet/abandoned_mechbay)
@@ -1839,18 +1834,23 @@
 	id = "mechbay3"
 	},
 /turf/open/floor/concrete/slab_1,
-/area/ruin/wasteplanet/abandoned_mechbay/bay3)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "uu" = (
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/wasteplanet/abandoned_mechbay/mainhall)
 "uy" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/door/firedoor,
 /turf/open/floor/plasteel/stairs,
-/area/ruin/wasteplanet/abandoned_mechbay/mainhall)
+/area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "uC" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 5
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/abandoned_mechbay/commandcontrol)
@@ -1861,7 +1861,7 @@
 	},
 /mob/living/simple_animal/hostile/syndicate/ranged/smg/space,
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/wasteplanet/abandoned_mechbay/mainhall)
+/area/ruin/wasteplanet/abandoned_mechbay/crewquarters)
 "uM" = (
 /obj/effect/turf_decal/trimline/opaque/neutral/line{
 	pixel_y = 8
@@ -1901,9 +1901,6 @@
 	},
 /obj/machinery/camera/autoname{
 	dir = 6
-	},
-/obj/effect/turf_decal/number/one{
-	pixel_y = 32
 	},
 /turf/open/floor/concrete/slab_4,
 /area/ruin/wasteplanet/abandoned_mechbay/mainhall)
@@ -1948,11 +1945,8 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/wasteplanet/abandoned_mechbay/mainhall)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "vt" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1967,9 +1961,6 @@
 /obj/machinery/door/firedoor,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/wasteplanet/abandoned_mechbay/mainhall)
-"vB" = (
-/turf/closed/mineral/random/asteroid/rockplanet,
-/area/ruin/wasteplanet/abandoned_mechbay)
 "vD" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
@@ -1979,7 +1970,7 @@
 	dir = 1
 	},
 /turf/open/floor/concrete/slab_1,
-/area/ruin/wasteplanet/abandoned_mechbay/bay3)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "vO" = (
 /obj/machinery/light/dim{
 	dir = 1
@@ -1998,6 +1989,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/mob/living/simple_animal/hostile/syndicate/ranged/shotgun,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/abandoned_mechbay/mechlab)
 "vS" = (
@@ -2014,15 +2006,20 @@
 /obj/structure/table/reinforced,
 /obj/item/radio/intercom{
 	pixel_y = 7;
-	pixel_x = 3
-	},
-/obj/item/radio/intercom{
-	pixel_y = -5;
-	pixel_x = 3
+	pixel_x = -9;
+	dir = 8
 	},
 /obj/item/paperplane{
 	pixel_y = -3;
 	pixel_x = -5
+	},
+/obj/item/radio/intercom{
+	pixel_y = 7;
+	pixel_x = 3;
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 10
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/wasteplanet/abandoned_mechbay/commandcontrol)
@@ -2055,7 +2052,7 @@
 	icon_state = "1-8"
 	},
 /turf/open/floor/concrete/slab_1,
-/area/ruin/wasteplanet/abandoned_mechbay/bay4)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "wk" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/circuit,
@@ -2066,7 +2063,7 @@
 /turf/open/floor/plasteel/stairs{
 	dir = 1
 	},
-/area/ruin/wasteplanet/abandoned_mechbay/mainhall)
+/area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "wp" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -2094,11 +2091,11 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/wasteplanet/abandoned_mechbay/engineering)
 "wC" = (
-/obj/machinery/door/poddoor{
-	id = "mechabay1"
-	},
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/machinery/door/poddoor{
+	id = "mechbay1"
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/wasteplanet/abandoned_mechbay/bay1)
@@ -2113,29 +2110,25 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light,
+/obj/structure/extinguisher_cabinet{
+	pixel_x = 32
+	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/abandoned_mechbay/bay2)
+/area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "wL" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_1,
-/area/ruin/wasteplanet/abandoned_mechbay/bay2)
+/area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "wT" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/sign/poster/official/get_your_legs{
 	pixel_x = 32
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/wasteplanet/abandoned_mechbay/mainhall)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "xg" = (
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 8
-	},
-/obj/effect/turf_decal/number/three{
-	dir = 1;
-	pixel_y = -32
 	},
 /turf/open/floor/concrete/slab_4,
 /area/ruin/wasteplanet/abandoned_mechbay/mainhall)
@@ -2171,7 +2164,7 @@
 	icon_state = "1-4"
 	},
 /turf/open/floor/concrete/slab_1,
-/area/ruin/wasteplanet/abandoned_mechbay/bay3)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "xW" = (
 /obj/effect/turf_decal/trimline/transparent/neutral/filled/warning{
 	dir = 8
@@ -2220,13 +2213,12 @@
 	icon_state = "0-2"
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/machinery/power/smes/magical{
-	name = "power storage unit"
-	},
+/obj/machinery/power/smes,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/wasteplanet/abandoned_mechbay/engineering)
 "yy" = (
 /obj/structure/railing{
+	max_integrity = 70;
 	dir = 4
 	},
 /turf/open/floor/plating/asteroid/wasteplanet,
@@ -2253,6 +2245,9 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/abandoned_mechbay/commandcontrol)
 "yP" = (
@@ -2267,27 +2262,26 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
 	},
-/obj/machinery/door/firedoor,
 /turf/open/floor/plasteel/stairs,
-/area/ruin/wasteplanet/abandoned_mechbay/mainhall)
+/area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "zf" = (
 /obj/effect/turf_decal/trimline/opaque/neutral/filled/warning{
 	dir = 8
 	},
 /obj/machinery/light/floor,
 /mob/living/simple_animal/hostile/syndicate/ranged/smg/space,
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
 /turf/open/floor/concrete/slab_4,
 /area/ruin/wasteplanet/abandoned_mechbay/mainhall)
-"zg" = (
-/obj/machinery/mech_bay_recharge_port{
-	dir = 2
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/concrete/slab_1,
-/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "zl" = (
 /obj/structure/table,
 /obj/item/toy/cards/deck,
+/obj/item/reagent_containers/food/drinks/bottle/rum{
+	pixel_y = 7;
+	pixel_x = 4
+	},
 /turf/open/floor/plasteel,
 /area/ruin/wasteplanet/abandoned_mechbay/crewquarters)
 "zr" = (
@@ -2331,7 +2325,14 @@
 /obj/effect/decal/cleanable/oil,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/abandoned_mechbay/bay4)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
+"Ad" = (
+/obj/machinery/power/smes/magical,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/wasteplanet/abandoned_mechbay/engineering)
 "Am" = (
 /obj/machinery/door/poddoor{
 	id = "mechbay4"
@@ -2340,7 +2341,7 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/concrete/slab_1,
-/area/ruin/wasteplanet/abandoned_mechbay/bay4)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "At" = (
 /obj/machinery/power/terminal,
 /obj/structure/cable,
@@ -2354,7 +2355,14 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/abandoned_mechbay/bay2)
+/area/ruin/wasteplanet/abandoned_mechbay/bay1)
+"AP" = (
+/obj/effect/turf_decal/number/one{
+	pixel_y = 32
+	},
+/obj/effect/turf_decal/number/one,
+/turf/closed/wall/concrete/reinforced,
+/area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "AT" = (
 /obj/structure/sign/warning/radiation,
 /turf/closed/wall/concrete/reinforced,
@@ -2394,6 +2402,9 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/vomit/old,
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/wasteplanet/abandoned_mechbay/mainhall)
 "Bm" = (
@@ -2408,21 +2419,17 @@
 /obj/machinery/power/port_gen/pacman/super{
 	anchored = 1
 	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/wasteplanet/abandoned_mechbay/engineering)
-"Bp" = (
-/obj/structure/railing{
-	dir = 4
-	},
-/obj/structure/flora/rock/pile,
-/turf/open/floor/plating/asteroid/wasteplanet,
-/area/ruin/wasteplanet/abandoned_mechbay)
 "Bw" = (
 /obj/effect/turf_decal/trimline/transparent/neutral/filled/corner{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/abandoned_mechbay/bay4)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "By" = (
 /obj/structure/table/reinforced,
 /obj/item/clipboard{
@@ -2435,7 +2442,8 @@
 	pixel_y = 10;
 	pixel_x = -6
 	},
-/turf/open/floor/plasteel/mono/dark,
+/obj/effect/turf_decal/siding/thinplating/dark,
+/turf/open/floor/plasteel/tech/grid,
 /area/ruin/wasteplanet/abandoned_mechbay/commandcontrol)
 "BA" = (
 /obj/effect/turf_decal/trimline/transparent/neutral/filled/corner{
@@ -2443,7 +2451,7 @@
 	},
 /obj/effect/decal/cleanable/oil/slippery,
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/abandoned_mechbay/bay3)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "BF" = (
 /obj/structure/closet/crate,
 /obj/effect/spawner/lootdrop/donkpockets,
@@ -2475,10 +2483,10 @@
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "BX" = (
-/obj/machinery/door/poddoor{
-	id = "mechabay1"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/door/poddoor{
+	id = "mechbay1"
+	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "BY" = (
@@ -2490,7 +2498,7 @@
 	},
 /obj/effect/decal/cleanable/robot_debris,
 /turf/open/floor/concrete/slab_1,
-/area/ruin/wasteplanet/abandoned_mechbay/bay4)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "Cm" = (
 /obj/machinery/light/small,
 /obj/structure/closet/emcloset,
@@ -2505,8 +2513,11 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/wasteplanet/abandoned_mechbay/engineering)
 "Cy" = (
+/obj/effect/turf_decal/number/four{
+	dir = 1
+	},
 /turf/closed/wall/concrete/reinforced,
-/area/ruin/wasteplanet/abandoned_mechbay/bay4)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "CF" = (
 /obj/effect/turf_decal/spline/fancy/opaque/grey{
 	dir = 6
@@ -2524,7 +2535,7 @@
 /obj/effect/turf_decal/trimline/transparent/neutral/filled/warning,
 /obj/effect/decal/cleanable/generic,
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/abandoned_mechbay/bay2)
+/area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "CS" = (
 /obj/effect/turf_decal/trimline/transparent/neutral/filled/warning{
 	dir = 4
@@ -2539,7 +2550,7 @@
 	name = "Bay Shutters"
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/abandoned_mechbay/bay4)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "Dd" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
@@ -2585,8 +2596,29 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/wasteplanet/abandoned_mechbay/mainhall)
+"DC" = (
+/obj/effect/turf_decal/trimline/transparent/neutral/filled/warning{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/power/apc/auto_name/west,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/wasteplanet/abandoned_mechbay/bay1)
+"DJ" = (
+/obj/structure/railing/corner{
+	max_integrity = 70;
+	dir = 8
+	},
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet/abandoned_mechbay)
 "DM" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -2607,7 +2639,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/abandoned_mechbay/bay3)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "DO" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -2637,7 +2669,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/abandoned_mechbay/bay3)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "DU" = (
 /turf/closed/wall/concrete,
 /area/ruin/wasteplanet/abandoned_mechbay/mechlab)
@@ -2672,7 +2704,7 @@
 	pixel_x = 25
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/abandoned_mechbay/bay4)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "Ef" = (
 /obj/structure/bed/pod,
 /obj/item/bedsheet/brown,
@@ -2702,16 +2734,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/wasteplanet/abandoned_mechbay/mechlab)
-"EO" = (
-/obj/effect/turf_decal/industrial/warning/corner{
-	dir = 8
-	},
-/obj/effect/turf_decal/number/four{
-	dir = 1;
-	pixel_y = -32
-	},
-/turf/open/floor/concrete/slab_4,
-/area/ruin/wasteplanet/abandoned_mechbay/mainhall)
 "ET" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -2725,16 +2747,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/wasteplanet/abandoned_mechbay/mainhall)
-"Ff" = (
-/obj/machinery/door/poddoor{
-	id = "mechbay4"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 1
-	},
-/turf/open/floor/concrete/slab_1,
-/area/ruin/wasteplanet/abandoned_mechbay/bay4)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "Fk" = (
 /obj/effect/turf_decal/trimline/opaque/neutral/line{
 	pixel_y = 8
@@ -2749,6 +2762,9 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
 /turf/open/floor/concrete/slab_1,
@@ -2771,7 +2787,7 @@
 	dir = 4
 	},
 /turf/open/floor/concrete/slab_1,
-/area/ruin/wasteplanet/abandoned_mechbay/bay3)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "FB" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -2784,12 +2800,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech,
 /area/ruin/wasteplanet/abandoned_mechbay/mechlab)
-"FW" = (
-/obj/machinery/mech_bay_recharge_port{
-	dir = 8
-	},
-/turf/open/floor/concrete/slab_1,
-/area/ruin/wasteplanet/abandoned_mechbay/bay4)
 "FZ" = (
 /obj/effect/turf_decal/trimline/opaque/neutral/line{
 	dir = 4
@@ -2820,13 +2830,6 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/wasteplanet/abandoned_mechbay/crewquarters)
-"Go" = (
-/obj/machinery/computer/mech_bay_power_console{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/concrete/slab_1,
-/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "GE" = (
 /obj/effect/turf_decal/trimline/transparent/neutral/filled/warning,
 /obj/item/shard,
@@ -2876,7 +2879,7 @@
 	name = "Syndicate Mech Pilot"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/wasteplanet/abandoned_mechbay/mainhall)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "Hl" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
@@ -2891,6 +2894,13 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/wasteplanet/abandoned_mechbay/mechlab)
+"Hn" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/structure/reagent_dispensers/fueltank,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/wasteplanet/abandoned_mechbay/engineering)
 "Hp" = (
 /obj/effect/decal/cleanable/vomit/old,
 /obj/effect/turf_decal/arrows{
@@ -2899,13 +2909,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/wasteplanet/abandoned_mechbay/crewquarters)
-"Hv" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/abandoned_mechbay/commandcontrol)
 "Hy" = (
 /obj/effect/turf_decal/trimline/opaque/neutral/filled/warning{
 	dir = 8
@@ -2913,6 +2916,9 @@
 /obj/machinery/light/floor,
 /obj/effect/turf_decal/spline/fancy/opaque/grey{
 	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
 	},
 /turf/open/floor/concrete/slab_4,
 /area/ruin/wasteplanet/abandoned_mechbay/mainhall)
@@ -2953,11 +2959,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/wasteplanet/abandoned_mechbay/crewquarters)
-"HJ" = (
-/obj/machinery/mech_bay_recharge_port,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/concrete/slab_1,
-/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "HK" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/effect/decal/cleanable/blood/splatter,
@@ -2965,7 +2966,7 @@
 	dir = 6
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/wasteplanet/abandoned_mechbay/mainhall)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "HL" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2984,7 +2985,7 @@
 "HR" = (
 /obj/effect/turf_decal/trimline/transparent/neutral/filled/corner,
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/abandoned_mechbay/bay2)
+/area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "HW" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -3007,7 +3008,7 @@
 	dir = 8
 	},
 /turf/open/floor/concrete/slab_1,
-/area/ruin/wasteplanet/abandoned_mechbay/bay3)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "Iq" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -3015,26 +3016,19 @@
 /obj/machinery/portable_atmospherics/canister/nitrogen,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/wasteplanet/abandoned_mechbay/engineering)
-"It" = (
-/obj/effect/turf_decal/industrial/warning,
-/obj/effect/turf_decal/arrows{
-	pixel_y = 8
-	},
-/obj/effect/decal/cleanable/oil,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/turf/open/floor/concrete/slab_1,
-/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "Ix" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/mecha_wreckage/gygax,
 /turf/open/floor/mech_bay_recharge_floor,
-/area/ruin/wasteplanet/abandoned_mechbay/bay3)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "Iy" = (
 /obj/machinery/advanced_airlock_controller{
 	pixel_y = -21
 	},
-/obj/machinery/atmospherics/pipe/layer_manifold{
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
 /turf/open/floor/concrete/slab_1,
@@ -3046,7 +3040,7 @@
 	},
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/wasteplanet/abandoned_mechbay/mainhall)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "II" = (
 /obj/effect/turf_decal/trimline/opaque/neutral/line{
 	pixel_y = 8
@@ -3067,11 +3061,7 @@
 /obj/effect/decal/cleanable/oil,
 /obj/structure/mecha_wreckage/gygax,
 /turf/open/floor/mech_bay_recharge_floor,
-/area/ruin/wasteplanet/abandoned_mechbay/bay4)
-"IK" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/abandoned_mechbay/commandcontrol)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "IL" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -3081,12 +3071,12 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/concrete/slab_1,
-/area/ruin/wasteplanet/abandoned_mechbay/bay3)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "IO" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/wasteplanet/abandoned_mechbay/mainhall)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "IV" = (
 /obj/effect/turf_decal/trimline/opaque/neutral/line{
 	pixel_y = 8
@@ -3099,9 +3089,6 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer4,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/wasteplanet/abandoned_mechbay/mainhall)
 "IY" = (
@@ -3113,7 +3100,7 @@
 /obj/item/stack/cable_coil/yellow,
 /obj/item/stack/cable_coil/yellow,
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/abandoned_mechbay/bay3)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "IZ" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
@@ -3130,7 +3117,7 @@
 "Jf" = (
 /obj/structure/rack,
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/abandoned_mechbay/bay3)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "Jp" = (
 /obj/effect/turf_decal/trimline/transparent/neutral/filled/warning{
 	dir = 8
@@ -3151,18 +3138,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/wasteplanet/abandoned_mechbay/engineering)
-"Jv" = (
-/obj/structure/rack,
-/obj/item/weldingtool/largetank,
-/obj/item/weldingtool/largetank,
-/obj/item/weldingtool/largetank,
-/obj/item/clothing/mask/gas/welding,
-/obj/item/clothing/mask/gas/welding,
-/obj/item/clothing/mask/gas/welding,
-/obj/effect/decal/cleanable/dirt,
-/obj/item/storage/belt/utility/full,
-/turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "Jy" = (
 /obj/structure/bed/pod,
 /obj/item/bedsheet/cosmos,
@@ -3315,6 +3290,15 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/wasteplanet/abandoned_mechbay/crewquarters)
+"LH" = (
+/obj/machinery/door/poddoor{
+	id = "mechbay2"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "LL" = (
 /obj/effect/turf_decal/trimline/transparent/neutral/filled/corner,
 /obj/effect/decal/cleanable/oil,
@@ -3342,6 +3326,7 @@
 /obj/machinery/light/dim{
 	dir = 8
 	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/tech,
 /area/ruin/wasteplanet/abandoned_mechbay/engineering)
 "LX" = (
@@ -3393,6 +3378,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/wasteplanet/abandoned_mechbay/mainhall)
@@ -3464,7 +3452,7 @@
 	pixel_x = -25
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/abandoned_mechbay/bay3)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "Nq" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -3549,7 +3537,7 @@
 "Oc" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/wasteplanet/abandoned_mechbay/mainhall)
+/area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "Og" = (
 /obj/effect/mine/shrapnel/human_only,
 /turf/open/floor/plating/asteroid/wasteplanet,
@@ -3569,6 +3557,22 @@
 	},
 /obj/effect/decal/cleanable/vomit,
 /turf/open/floor/carpet/blue,
+/area/ruin/wasteplanet/abandoned_mechbay/crewquarters)
+"On" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/door/poddoor{
+	id = "mechbay2"
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/wasteplanet/abandoned_mechbay/bay1)
+"OP" = (
+/obj/structure/chair/sofa{
+	dir = 8
+	},
+/obj/structure/extinguisher_cabinet{
+	pixel_x = 32
+	},
+/turf/open/floor/plasteel,
 /area/ruin/wasteplanet/abandoned_mechbay/crewquarters)
 "OY" = (
 /obj/structure/table/reinforced,
@@ -3612,7 +3616,7 @@
 	pixel_x = -24
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/abandoned_mechbay/bay2)
+/area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "PN" = (
 /obj/effect/turf_decal/trimline/transparent/neutral/filled/corner{
 	dir = 8
@@ -3620,7 +3624,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/clothing/glasses/hud/diagnostic,
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/abandoned_mechbay/bay2)
+/area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "PW" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/mecha/combat/gygax{
@@ -3628,7 +3632,7 @@
 	},
 /obj/effect/decal/cleanable/blood/innards,
 /turf/open/floor/mech_bay_recharge_floor,
-/area/ruin/wasteplanet/abandoned_mechbay/bay2)
+/area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "Qe" = (
 /obj/structure/sign/warning/radiation,
 /turf/closed/wall/concrete/reinforced,
@@ -3670,6 +3674,9 @@
 	dir = 1;
 	pixel_y = -25
 	},
+/obj/effect/turf_decal/siding/thinplating/dark/corner{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/abandoned_mechbay/commandcontrol)
 "QD" = (
@@ -3684,14 +3691,25 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/wasteplanet/abandoned_mechbay/crewquarters)
+"QL" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "QM" = (
 /obj/effect/turf_decal/trimline/transparent/neutral/filled/corner{
 	dir = 4
 	},
+/obj/structure/extinguisher_cabinet{
+	pixel_x = -32
+	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/abandoned_mechbay/bay3)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "QP" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/thinplating/dark/corner{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
@@ -3721,12 +3739,15 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/concrete/slab_1,
-/area/ruin/wasteplanet/abandoned_mechbay/bay2)
+/area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "Rh" = (
 /obj/effect/turf_decal/trimline/opaque/neutral/filled/warning{
 	dir = 4
 	},
 /obj/machinery/light/floor,
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
 /turf/open/floor/concrete/slab_4,
 /area/ruin/wasteplanet/abandoned_mechbay/mainhall)
 "Rj" = (
@@ -3759,6 +3780,9 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
+/obj/effect/turf_decal/trimline/opaque/neutral/line{
+	dir = 4
+	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/wasteplanet/abandoned_mechbay/mainhall)
 "RJ" = (
@@ -3771,20 +3795,26 @@
 	pixel_x = -32
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/wasteplanet/abandoned_mechbay/mainhall)
+/area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "RP" = (
 /obj/effect/turf_decal/trimline/opaque/neutral/filled/warning{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/greenglow,
 /obj/machinery/light/floor,
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
 /turf/open/floor/concrete/slab_4,
 /area/ruin/wasteplanet/abandoned_mechbay/mainhall)
 "RR" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/extinguisher_cabinet{
+	pixel_x = -32
+	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/wasteplanet/abandoned_mechbay/mainhall)
+/area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "RT" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -3811,11 +3841,8 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/blood/splatter,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/wasteplanet/abandoned_mechbay/mainhall)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "Sh" = (
 /obj/structure/rack,
 /obj/item/wrench,
@@ -3907,7 +3934,13 @@
 	pixel_x = 25
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/wasteplanet/abandoned_mechbay/mainhall)
+/area/ruin/wasteplanet/abandoned_mechbay/bay1)
+"Tb" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet/abandoned_mechbay)
 "Tc" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
@@ -3929,12 +3962,6 @@
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/wasteplanet/abandoned_mechbay/mainhall)
-"Tq" = (
-/obj/structure/sign/warning/securearea{
-	pixel_y = 8
-	},
-/turf/closed/wall/concrete/reinforced,
-/area/ruin/wasteplanet/abandoned_mechbay/bay4)
 "Tt" = (
 /obj/structure/cable{
 	icon_state = "0-8"
@@ -3969,6 +3996,9 @@
 /obj/effect/decal/cleanable/greenglow,
 /obj/machinery/light/floor,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
 /turf/open/floor/concrete/slab_4,
 /area/ruin/wasteplanet/abandoned_mechbay/mainhall)
 "TL" = (
@@ -3987,14 +4017,13 @@
 	pixel_x = 24
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/abandoned_mechbay/bay4)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "Un" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/door/firedoor,
 /turf/open/floor/plasteel/stairs{
 	dir = 1
 	},
-/area/ruin/wasteplanet/abandoned_mechbay/mainhall)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "UH" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -4016,10 +4045,13 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
-/area/ruin/wasteplanet/abandoned_mechbay/bay3)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "UP" = (
+/obj/effect/turf_decal/number/three{
+	dir = 1
+	},
 /turf/closed/wall/concrete/reinforced,
-/area/ruin/wasteplanet/abandoned_mechbay/bay3)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "UR" = (
 /obj/machinery/door/airlock/medical,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -4037,18 +4069,21 @@
 /turf/open/floor/plasteel/stairs{
 	dir = 1
 	},
-/area/ruin/wasteplanet/abandoned_mechbay/mainhall)
-"Vb" = (
-/obj/structure/sign/warning/securearea,
-/turf/closed/wall/concrete/reinforced,
-/area/ruin/wasteplanet/abandoned_mechbay/bay2)
+/area/ruin/wasteplanet/abandoned_mechbay/bay1)
+"Vk" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/structure/reagent_dispensers/watertank,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/wasteplanet/abandoned_mechbay/engineering)
 "Vx" = (
 /obj/structure/rack,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/spawner/lootdrop/maintenance/two,
 /obj/item/mecha_parts/mecha_equipment/drill/diamonddrill,
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/abandoned_mechbay/bay4)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "VC" = (
 /obj/machinery/door/poddoor{
 	id = "baseexterior"
@@ -4086,12 +4121,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/wasteplanet/abandoned_mechbay/crewquarters)
-"Wi" = (
-/obj/structure/railing{
-	dir = 1
-	},
-/turf/open/floor/plating/asteroid/wasteplanet,
-/area/ruin/wasteplanet/abandoned_mechbay)
 "Wo" = (
 /obj/machinery/camera/autoname{
 	dir = 10
@@ -4100,16 +4129,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/wasteplanet/abandoned_mechbay)
-"Wq" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
-/obj/effect/turf_decal/industrial/stand_clear/white,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/concrete/slab_1,
-/area/ruin/wasteplanet/abandoned_mechbay/bay4)
 "Wr" = (
 /obj/machinery/camera/autoname{
 	dir = 1
@@ -4119,13 +4138,12 @@
 /area/ruin/wasteplanet/abandoned_mechbay)
 "Wt" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/wasteplanet/abandoned_mechbay/mainhall)
 "Ww" = (
-/obj/structure/railing,
+/obj/structure/railing{
+	max_integrity = 70
+	},
 /turf/open/floor/plating/asteroid/wasteplanet,
 /area/ruin/wasteplanet/abandoned_mechbay)
 "WR" = (
@@ -4149,13 +4167,19 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
-/area/ruin/wasteplanet/abandoned_mechbay/bay4)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "WZ" = (
 /obj/structure/reagent_dispensers/fueltank,
 /obj/effect/turf_decal/box/white,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/wasteplanet/abandoned_mechbay/mechlab)
+"Xa" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/closed/wall/concrete/reinforced,
+/area/ruin/wasteplanet/abandoned_mechbay/engineering)
 "Xc" = (
 /obj/structure/closet/secure_closet/engineering_electrical,
 /obj/effect/turf_decal/industrial/outline/yellow,
@@ -4206,6 +4230,10 @@
 /obj/machinery/computer/security{
 	dir = 4
 	},
+/obj/item/radio/intercom/wideband{
+	pixel_y = 31
+	},
+/obj/effect/turf_decal/box,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/wasteplanet/abandoned_mechbay/commandcontrol)
 "XU" = (
@@ -4229,11 +4257,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/wasteplanet/abandoned_mechbay/engineering)
-"XX" = (
-/obj/structure/reagent_dispensers/fueltank,
-/obj/effect/turf_decal/box/white,
-/turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "Yf" = (
 /obj/effect/turf_decal/trimline/transparent/neutral/filled/warning{
 	dir = 1
@@ -4241,7 +4264,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/shreds,
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/abandoned_mechbay/bay4)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "Ym" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -4284,12 +4307,18 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/wasteplanet/abandoned_mechbay/mainhall)
+/area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "YJ" = (
 /obj/structure/table/reinforced,
 /obj/machinery/microwave,
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/wasteplanet/abandoned_mechbay/mainhall)
+/area/ruin/wasteplanet/abandoned_mechbay/crewquarters)
+"YM" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/closed/wall/concrete/reinforced,
+/area/ruin/wasteplanet/abandoned_mechbay/engineering)
 "YO" = (
 /obj/effect/turf_decal/spline/fancy/opaque/grey{
 	dir = 1
@@ -4305,7 +4334,7 @@
 /obj/structure/reagent_dispensers/watertank,
 /obj/machinery/light/dim,
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/abandoned_mechbay/bay4)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "YR" = (
 /obj/structure/rack,
 /obj/effect/decal/cleanable/oil,
@@ -4316,13 +4345,13 @@
 /obj/item/stock_parts/scanning_module/adv,
 /obj/item/stock_parts/scanning_module/adv,
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/abandoned_mechbay/bay2)
+/area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "YX" = (
 /obj/structure/sign/warning/securearea{
 	pixel_y = 8
 	},
 /turf/closed/wall/concrete/reinforced,
-/area/ruin/wasteplanet/abandoned_mechbay/bay3)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "YZ" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/camera/autoname{
@@ -4333,7 +4362,7 @@
 	},
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/wasteplanet/abandoned_mechbay/mainhall)
+/area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "Zb" = (
 /obj/effect/turf_decal/industrial/stand_clear/white{
 	dir = 1
@@ -4342,8 +4371,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
 	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/wasteplanet/abandoned_mechbay/mainhall)
+/area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "Zf" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -4378,13 +4408,13 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/wasteplanet/abandoned_mechbay/mainhall)
+/area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "Zx" = (
 /obj/effect/turf_decal/trimline/transparent/neutral/filled/warning,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/ash/large,
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/abandoned_mechbay/bay2)
+/area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "ZD" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/turf_decal/arrows{
@@ -4405,11 +4435,11 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/structure/cable{
-	icon_state = "1-2"
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/wasteplanet/abandoned_mechbay/mainhall)
+/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 
 (1,1,1) = {"
 vd
@@ -4727,7 +4757,7 @@ eb
 tM
 eb
 eb
-rl
+ib
 yy
 yy
 yy
@@ -4772,7 +4802,7 @@ ms
 ms
 ms
 eb
-eb
+kJ
 eb
 tM
 eb
@@ -4780,7 +4810,7 @@ Ww
 pG
 aw
 pG
-Wi
+Tb
 ms
 ms
 ms
@@ -4869,8 +4899,8 @@ ms
 ms
 tM
 eb
-rl
-Bp
+ib
+yy
 yy
 yy
 yy
@@ -5163,8 +5193,8 @@ eb
 eb
 eb
 eb
-rM
-KH
+DJ
+KG
 KG
 KG
 BT
@@ -5178,15 +5208,15 @@ BJ
 FB
 Tm
 vi
-UP
-UP
-UP
-UP
-UP
-UP
-UP
-UP
-UP
+wq
+wq
+wq
+wq
+wq
+wq
+wq
+wq
+wq
 ms
 ms
 ms
@@ -5234,8 +5264,8 @@ ep
 Ni
 QM
 lt
-UP
-UP
+wq
+wq
 ms
 au
 ms
@@ -5283,8 +5313,8 @@ aE
 bU
 kD
 fY
-UP
-UP
+wq
+wq
 ms
 ms
 ms
@@ -5332,8 +5362,8 @@ Ix
 dH
 DN
 IY
-UP
-UP
+wq
+wq
 ms
 ms
 ms
@@ -5381,8 +5411,8 @@ In
 Ft
 DN
 Jf
-UP
-UP
+wq
+wq
 ms
 ms
 ms
@@ -5419,7 +5449,7 @@ iR
 sC
 xW
 Jp
-BJ
+AP
 uP
 aM
 xg
@@ -5430,8 +5460,8 @@ nR
 om
 BA
 pa
-UP
-UP
+wq
+wq
 ms
 ms
 vd
@@ -5472,15 +5502,15 @@ BJ
 RP
 Fk
 Rh
-UP
-UP
-UP
-UP
-UP
+wq
+wq
+wq
+wq
+wq
 UK
-UP
-UP
-UP
+wq
+wq
+wq
 ms
 ms
 vd
@@ -5506,13 +5536,13 @@ eb
 eb
 eb
 Hh
-uu
+KG
 nA
 uD
 nd
 wo
 RJ
-RR
+QL
 Oc
 RR
 YZ
@@ -5529,7 +5559,7 @@ IO
 HK
 sG
 Hj
-uu
+wq
 ms
 ms
 au
@@ -5554,8 +5584,8 @@ eb
 eb
 eb
 tM
-uu
-uu
+KG
+KG
 YJ
 nr
 md
@@ -5578,7 +5608,7 @@ wT
 eR
 vj
 ec
-uu
+wq
 ms
 ms
 ms
@@ -5608,26 +5638,26 @@ VG
 VG
 VG
 LF
-wq
-wq
+BJ
+BJ
 la
-wq
-wq
-wq
-wq
-wq
+BJ
+BJ
+BJ
+BJ
+BJ
 TH
 Bj
 zf
-Cy
-Cy
-Cy
-Cy
-Cy
+wq
+wq
+wq
+wq
+wq
 WT
-Cy
-Cy
-Cy
+wq
+wq
+wq
 ms
 ms
 ms
@@ -5644,7 +5674,7 @@ vd
 vd
 vd
 vd
-ms
+eb
 eb
 eb
 eb
@@ -5657,26 +5687,26 @@ eA
 cJ
 Jy
 Dd
-wq
+BJ
 ae
 HR
 PF
 ir
-kZ
+DC
 fd
-Vb
+zE
 iG
 aM
 iU
-Tq
+YX
 CS
-qB
+kZ
 qT
 oL
 Bw
 fX
-Cy
-Cy
+wq
+wq
 ms
 au
 ms
@@ -5694,9 +5724,9 @@ vd
 vd
 vd
 vd
-ms
-ms
-ms
+eb
+eb
+eb
 ms
 ms
 KG
@@ -5706,26 +5736,26 @@ de
 uN
 Gm
 vS
-wq
+BJ
 YR
 Zx
-Go
-HJ
+by
+MX
 qf
-jd
-rt
+lf
+LH
 cu
 Xp
 ZD
-Ff
+rt
 bn
 BY
 fe
 mE
 zR
 Vx
-Cy
-Cy
+wq
+wq
 ms
 ms
 ms
@@ -5755,10 +5785,10 @@ Ef
 rx
 cp
 Dd
-wq
-Jv
-gl
-zg
+BJ
+RY
+kn
+NK
 PW
 lT
 Rg
@@ -5767,14 +5797,14 @@ QU
 cW
 LO
 Am
-Wq
+IL
 wi
 IJ
 cB
 Yf
 qH
-Cy
-Cy
+wq
+wq
 ms
 ms
 au
@@ -5804,30 +5834,30 @@ gO
 xX
 ny
 DO
-wq
-XX
+BJ
+JU
 CR
-tu
+tr
 wL
 qt
-It
-Qr
+ds
+On
 NH
 II
 GH
-lc
-tF
+Qr
+hy
 ly
-FW
+In
 sy
 hv
 tW
-Cy
-Cy
+wq
+wq
 ms
 ms
 vd
-vB
+ms
 vd
 vd
 vd
@@ -5853,17 +5883,17 @@ VG
 VG
 VG
 yg
-wq
+BJ
 AA
 PN
 iy
 lh
 lG
 wH
-wq
+fv
 kf
 eq
-EO
+xg
 Cy
 sV
 oa
@@ -5871,8 +5901,8 @@ kb
 TN
 Ec
 YP
-Cy
-Cy
+wq
+wq
 ms
 ms
 vd
@@ -5896,32 +5926,32 @@ vd
 ms
 aX
 nF
-Hv
-IK
+nF
+nF
 uC
 QP
 nF
 QD
-wq
-wq
-wq
-wq
-wq
-wq
-wq
-wq
+BJ
+BJ
+BJ
+BJ
+BJ
+BJ
+BJ
+BJ
 lW
 Dy
 Rh
-Cy
-Cy
-Cy
-Cy
-Cy
-Cy
-Cy
-Cy
-Cy
+wq
+wq
+wq
+wq
+wq
+wq
+wq
+wq
+wq
 ms
 ms
 ms
@@ -6016,7 +6046,7 @@ JE
 fL
 XV
 uQ
-Iq
+Vk
 gJ
 Im
 ms
@@ -6054,7 +6084,7 @@ bZ
 gc
 WR
 Ew
-Ew
+OP
 KB
 VG
 YO
@@ -6163,7 +6193,7 @@ sN
 ea
 Tc
 uQ
-CM
+Hn
 gJ
 Im
 ms
@@ -6306,8 +6336,8 @@ uu
 uu
 uu
 Im
-Im
-Im
+Xa
+YM
 Im
 Im
 Im
@@ -6355,9 +6385,9 @@ ms
 ms
 ms
 ms
-ms
-au
-ms
+Im
+Ad
+Im
 ms
 ms
 ms
@@ -6404,9 +6434,9 @@ ms
 ms
 ms
 ms
-ms
-ms
-ms
+Im
+Im
+Im
 au
 ms
 ms

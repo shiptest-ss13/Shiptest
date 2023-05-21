@@ -219,17 +219,21 @@
 		update_light()
 
 	if (length(smoothing_groups))
-		sortTim(smoothing_groups) //In case it's not properly ordered, let's avoid duplicate entries with the same values.
+		// There used to be a sort here to prevent duplicate bitflag signatures
+		// in the bitflag list cache; the cost of always timsorting every group list every time added up.
+		// The sort now only happens if the initial key isn't found. This leads to some duplicate keys.
+		// /tg/ has a better approach; a unit test to see if any atoms have mis-sorted smoothing_groups
+		// or canSmoothWith. This is a better idea than what I do, and should be done instead.
 		SET_BITFLAG_LIST(smoothing_groups)
 	if (length(canSmoothWith))
-		sortTim(canSmoothWith)
-		if(canSmoothWith[length(canSmoothWith)] > MAX_S_TURF) //If the last element is higher than the maximum turf-only value, then it must scan turf contents for smoothing targets.
+		// If the last element is higher than the maximum turf-only value, then it must scan turf contents for smoothing targets.
+		if(canSmoothWith[length(canSmoothWith)] > MAX_S_TURF)
 			smoothing_flags |= SMOOTH_OBJ
 		SET_BITFLAG_LIST(canSmoothWith)
 
 	var/area/ship/current_ship_area = get_area(src)
 	if(!mapload && istype(current_ship_area) && current_ship_area.mobile_port)
-		connect_to_shuttle(current_ship_area.mobile_port, current_ship_area.mobile_port.get_docked())
+		connect_to_shuttle(current_ship_area.mobile_port, current_ship_area.mobile_port.docked)
 
 	var/temp_list = list()
 	for(var/i in custom_materials)
@@ -582,10 +586,10 @@
  * [COMSIG_ATOM_GET_EXAMINE_NAME] signal
  */
 /atom/proc/get_examine_name(mob/user)
-	. = "\a [src]"
+	. = "\a <b>[src]</b>"
 	var/list/override = list(gender == PLURAL ? "some" : "a", " ", "[name]")
 	if(article)
-		. = "[article] [src]"
+		. = "[article] <b>[src]</b>"
 		override[EXAMINE_POSITION_ARTICLE] = article
 	if(SEND_SIGNAL(src, COMSIG_ATOM_GET_EXAMINE_NAME, user, override) & COMPONENT_EXNAME_CHANGED)
 		. = override.Join("")
@@ -603,7 +607,11 @@
  * Produces a signal [COMSIG_PARENT_EXAMINE]
  */
 /atom/proc/examine(mob/user)
-	. = list("[get_examine_string(user, TRUE)].")
+	var/examine_string = get_examine_string(user, thats = TRUE)
+	if(examine_string)
+		. = list("[examine_string].")
+	else
+		. = list()
 
 	if(desc)
 		. += desc

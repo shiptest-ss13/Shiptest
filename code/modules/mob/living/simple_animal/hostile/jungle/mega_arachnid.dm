@@ -18,6 +18,7 @@
 	base_pixel_x = -16
 	move_to_delay = 10
 	aggro_vision_range = 9
+	environment_smash = ENVIRONMENT_SMASH_WALLS
 	speak_emote = list("chitters")
 	attack_sound = 'sound/weapons/bladeslice.ogg'
 	ranged_cooldown_time = 60

@@ -585,7 +585,7 @@
 	. = list()
 
 	//Handles dropped icons
-	var/image_dir = 0
+	var/image_dir = NONE
 	if(dropped)
 		image_dir = SOUTH
 		if(dmg_overlay_type)
@@ -596,7 +596,7 @@
 
 	var/image/limb = image(layer = -BODYPARTS_LAYER, dir = image_dir)
 	var/image/aux
-	. += limb
+	//. += limb
 
 	if(animal_origin) //Cringe ass animal-specific code.
 		if(IS_ORGANIC_LIMB(src))
@@ -608,11 +608,13 @@
 		else
 			limb.icon = 'icons/mob/augmentation/augments.dmi'
 			limb.icon_state = "[animal_origin]_[body_zone]"
+		. += limb
 		return
 
 	if(is_husked)
 		limb.icon = husk_icon
 		limb.icon_state = "[husk_type]_husk_[body_zone]"
+		. += limb
 		if(aux_zone) //Hand shit
 			aux = image(limb.icon, "[husk_type]_husk_[aux_zone]", -aux_layer, image_dir)
 			. += aux
@@ -631,18 +633,46 @@
 	if(!icon_exists(limb.icon, limb.icon_state))
 		limb_stacktrace("Limb generated with nonexistant icon. File: [limb.icon] | State: [limb.icon_state]", GLOB.Debug) //If you *really* want more of these, you can set the *other* global debug flag manually.
 
-	if(aux_zone) //Hand shit
-		aux = image(limb.icon, "[limb_id]_[aux_zone]", -aux_layer, image_dir)
-		. += aux
+	if(!is_husked)
+		. += limb
 
-	draw_color = mutation_color
-	if(should_draw_greyscale) //Should the limb be colored?
-		draw_color ||= (species_color) || (skin_tone && skintone2hex(skin_tone))
+		if(aux_zone) //Hand shit
+			aux = image(limb.icon, "[limb_id]_[aux_zone]", -aux_layer, image_dir)
+			. += aux
 
-	if(draw_color)
-		limb.color = "#[draw_color]"
-		if(aux_zone)
-			aux.color = "#[draw_color]"
+		draw_color = mutation_color
+		if(should_draw_greyscale) //Should the limb be colored outside of a forced color?
+			draw_color ||= (species_color) || (skin_tone && skintone2hex(skin_tone))
+
+		if(draw_color)
+			limb.color = "#[draw_color]"
+			if(aux_zone)
+				aux.color = "#[draw_color]"
+
+	//Ok so legs are a bit goofy in regards to layering, and we will need two images instead of one to fix that
+	if((body_zone == BODY_ZONE_R_LEG) || (body_zone == BODY_ZONE_L_LEG))
+		var/obj/item/bodypart/leg/leg_source = src
+		for(var/image/limb_image in .)
+			//remove the old, unmasked image
+			. -= limb_image
+			//add two masked images based on the old one
+			. += leg_source.generate_masked_leg(limb_image, image_dir)
+
+	/*if(!is_husked)
+		//Draw external organs like horns and frills
+		for(var/obj/item/organ/external/external_organ as anything in external_organs)
+			if(!dropped && !external_organ.can_draw_on_bodypart(owner))
+				continue
+			//Some externals have multiple layers for background, foreground and between
+			for(var/external_layer in external_organ.all_layers)
+				if(external_organ.layers & external_layer)
+					external_organ.generate_and_retrieve_overlays(
+						.,
+						image_dir,
+						external_organ.bitflag_to_layer(external_layer),
+						limb_gender,
+					)*/
+	return .
 
 /obj/item/bodypart/deconstruct(disassembled = TRUE)
 	drop_organs()

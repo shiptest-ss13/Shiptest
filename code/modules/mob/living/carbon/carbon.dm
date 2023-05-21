@@ -1000,9 +1000,9 @@
 					if(BODY_ZONE_HEAD)
 						limbtypes = typesof(/obj/item/bodypart/head)
 					if(BODY_ZONE_L_LEG)
-						limbtypes = typesof(/obj/item/bodypart/l_leg)
+						limbtypes = typesof(/obj/item/bodypart/leg/left)
 					if(BODY_ZONE_R_LEG)
-						limbtypes = typesof(/obj/item/bodypart/r_leg)
+						limbtypes = typesof(/obj/item/bodypart/leg/right)
 
 				if((edit_action == "add") && BP)
 					to_chat(usr, "<span class='boldwarning'>[src] already has such bodypart.</span>")

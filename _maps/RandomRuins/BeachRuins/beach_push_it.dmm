@@ -18,7 +18,7 @@
 /area/ruin/powered)
 "dd" = (
 /obj/structure/chair/sofa/left,
-/obj/item/stack/spacecash/c1000,
+/obj/item/spacecash/bundle/c1000,
 /turf/open/floor/carpet/royalblue,
 /area/ruin/powered)
 "dh" = (
@@ -55,6 +55,10 @@
 "ie" = (
 /obj/item/storage/pill_bottle/floorpill/full,
 /turf/open/floor/light,
+/area/ruin/powered)
+"iM" = (
+/obj/machinery/light,
+/turf/open/floor/plastic,
 /area/ruin/powered)
 "kc" = (
 /obj/structure/chair/sofa/right,
@@ -230,8 +234,14 @@
 /turf/open/floor/plasteel/vaporwave,
 /area/ruin/powered)
 "HH" = (
-/obj/machinery/vending/hydroseeds,
 /obj/machinery/light,
+/obj/structure/closet/crate/hydroponics,
+/obj/item/seeds/cannabis/rainbow,
+/obj/item/seeds/potato,
+/obj/item/seeds/random,
+/obj/item/seeds/random,
+/obj/item/seeds/random,
+/obj/item/seeds/galaxythistle,
 /turf/open/floor/plastic,
 /area/ruin/powered)
 "Iw" = (
@@ -273,7 +283,7 @@
 /area/ruin/powered)
 "Oa" = (
 /obj/structure/chair/sofa/right,
-/obj/item/stack/spacecash/c1000,
+/obj/item/spacecash/bundle/c1000,
 /turf/open/floor/plasteel/vaporwave,
 /area/ruin/powered)
 "Ou" = (
@@ -302,9 +312,9 @@
 /area/ruin/powered)
 "Sa" = (
 /obj/structure/table/glass,
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c200,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c200,
 /obj/item/stack/medical/suture,
 /obj/item/stack/medical/gauze,
 /turf/open/floor/carpet/royalblue,
@@ -357,6 +367,10 @@
 "Xs" = (
 /obj/item/gun/ballistic/automatic/pistol/commander,
 /turf/open/floor/light,
+/area/ruin/powered)
+"Xv" = (
+/obj/structure/salvageable/seed,
+/turf/open/floor/plastic,
 /area/ruin/powered)
 "XC" = (
 /obj/machinery/hydroponics,
@@ -692,7 +706,7 @@ RS
 pG
 pG
 pG
-pG
+iM
 RS
 "}
 (14,1,1) = {"
@@ -713,7 +727,7 @@ RS
 dd
 MB
 RS
-pG
+Xv
 pG
 pG
 Iw

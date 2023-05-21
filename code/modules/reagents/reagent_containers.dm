@@ -277,6 +277,10 @@
 		. += filling
 
 /obj/item/reagent_containers/get_save_vars()
+	//Leave it null.
+	if(reagents.total_volume <= 0)
+		return ..()
+
 	list_reagents = list()
 	for(var/reagent in reagents.reagent_list)
 		var/datum/reagent/R = reagent

@@ -113,7 +113,7 @@
 
 /obj/item/gun/ballistic/automatic/ebr
 	name = "\improper M514 EBR"
-	desc = "A cheap, reliable rifle often found in the hands of low-ranking Syndicate personnel. It's known for rather high stopping power and mild armor-piercing capabilities."
+	desc = "A cheap, reliable rifle often found in the hands of low-ranking Syndicate personnel. It's known for rather high stopping power and mild armor-piercing capabilities. Chambered in .308."
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	lefthand_file = 'icons/mob/inhands/weapons/64x_guns_left.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/64x_guns_right.dmi'
@@ -124,6 +124,24 @@
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/ebr
+	fire_sound = 'sound/weapons/gun/rifle/shot_alt2.ogg'
+	burst_size = 0
+	actions_types = list()
+
+/obj/item/gun/ballistic/automatic/gal
+	name = "\improper CM-GAL-S"
+	desc = "The standard issue DMR of the CMM. Dates back to the Xenofauna War, this particular model is in a carbine configuration and as such shorter than the standard model. Chambered in .308."
+	icon = 'icons/obj/guns/48x32guns.dmi'
+	fire_sound = 'sound/weapons/gun/rifle/shot.ogg'
+	icon_state = "gal"
+	item_state = "gal"
+	mag_display = TRUE
+	weapon_weight = WEAPON_MEDIUM
+	w_class = WEIGHT_CLASS_BULKY
+	mag_type = /obj/item/ammo_box/magazine/gal
+	fire_sound = 'sound/weapons/gun/rifle/gal.ogg'
+	burst_size = 0
+	actions_types = list()
 
 /obj/item/gun/ballistic/automatic/zip_pistol
 	name = "makeshift pistol"

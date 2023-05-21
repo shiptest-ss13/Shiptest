@@ -86,6 +86,7 @@
 	shoes =/obj/item/clothing/shoes/laceup
 	ears = /obj/item/radio/headset/syndicate/alt/captain
 	id = /obj/item/card/id/syndicate_command/captain_id
+	gloves = /obj/item/clothing/gloves/combat
 
 /datum/outfit/job/ce/syndicate
 	name = "Chief Engineer (Syndicate Generic)"
@@ -104,3 +105,17 @@
 	alt_suit = null
 	shoes = /obj/item/clothing/shoes/jackboots
 	gloves = /obj/item/clothing/gloves/combat
+
+/datum/outfit/job/ce/inteq
+	name = "IRMG Artificer Class II (Inteq)"
+
+	ears = /obj/item/radio/headset/inteq
+	uniform = /obj/item/clothing/under/syndicate/inteq/artificer
+	head = /obj/item/clothing/head/hardhat/white
+	mask = /obj/item/clothing/mask/gas/sechailer/inteq
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security/inteq
+	shoes = /obj/item/clothing/shoes/combat
+	gloves = /obj/item/clothing/gloves/combat
+	belt = /obj/item/storage/belt/utility/full
+
+	courierbag = /obj/item/storage/backpack/messenger/inteq

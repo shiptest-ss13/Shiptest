@@ -689,3 +689,156 @@ GLOBAL_LIST_INIT(ws_survivor_default_loot, list(
 				/obj/item/stack/cable_coil/red,
 				/obj/item/stack/rods/fifty
 				)
+
+/obj/effect/spawner/lootdrop/donut
+	name = "random donut" //donut :)
+	lootcount = 1
+	loot = list(
+				/obj/item/reagent_containers/food/snacks/donut/apple = 1,
+				/obj/item/reagent_containers/food/snacks/donut/berry = 1,
+				/obj/item/reagent_containers/food/snacks/donut/caramel = 1,
+				/obj/item/reagent_containers/food/snacks/donut/choco = 1,
+				/obj/item/reagent_containers/food/snacks/donut/laugh = 1,
+				/obj/item/reagent_containers/food/snacks/donut/matcha = 1,
+				/obj/item/reagent_containers/food/snacks/donut/meat = 1,
+				/obj/item/reagent_containers/food/snacks/donut/plain = 1,
+				/obj/item/reagent_containers/food/snacks/donut/trumpet = 1,
+				/obj/item/reagent_containers/food/snacks/donut/blumpkin = 1,
+				/obj/item/reagent_containers/food/snacks/donut/bungo = 1,
+				/obj/item/reagent_containers/food/snacks/donut/chaos = 1,
+	)
+
+/obj/effect/spawner/lootdrop/donut/jelly
+	name = "random jelly donut"
+	lootcount = 1
+	loot = list(
+				/obj/item/reagent_containers/food/snacks/donut/jelly/berry = 1,
+				/obj/item/reagent_containers/food/snacks/donut/jelly/apple = 1,
+				/obj/item/reagent_containers/food/snacks/donut/jelly/blumpkin = 1,
+				/obj/item/reagent_containers/food/snacks/donut/jelly/bungo = 1,
+				/obj/item/reagent_containers/food/snacks/donut/jelly/caramel = 1,
+				/obj/item/reagent_containers/food/snacks/donut/jelly/choco = 1,
+				/obj/item/reagent_containers/food/snacks/donut/jelly/laugh = 1,
+				/obj/item/reagent_containers/food/snacks/donut/jelly/matcha = 1,
+				/obj/item/reagent_containers/food/snacks/donut/jelly/plain = 1,
+				/obj/item/reagent_containers/food/snacks/donut/jelly/trumpet = 1,
+	)
+
+/obj/effect/spawner/lootdrop/donut/slimejelly
+	name = "random slimejelly donut"
+	lootcount = 1
+	loot = list(
+				/obj/item/reagent_containers/food/snacks/donut/jelly/slimejelly/apple = 1,
+				/obj/item/reagent_containers/food/snacks/donut/jelly/slimejelly/berry = 1,
+				/obj/item/reagent_containers/food/snacks/donut/jelly/slimejelly/blumpkin = 1,
+				/obj/item/reagent_containers/food/snacks/donut/jelly/slimejelly/bungo = 1,
+				/obj/item/reagent_containers/food/snacks/donut/jelly/slimejelly/caramel = 1,
+				/obj/item/reagent_containers/food/snacks/donut/jelly/slimejelly/choco = 1,
+				/obj/item/reagent_containers/food/snacks/donut/jelly/slimejelly/laugh = 1,
+				/obj/item/reagent_containers/food/snacks/donut/jelly/slimejelly/matcha = 1,
+				/obj/item/reagent_containers/food/snacks/donut/jelly/slimejelly/plain = 1,
+				/obj/item/reagent_containers/food/snacks/donut/jelly/slimejelly/trumpet = 1,
+	)
+
+/obj/effect/spawner/lootdrop/seeded
+	name = "GO FORTH AND CULTIVATE"
+	icon = 'icons/obj/hydroponics/seeds.dmi'
+	icon_state = "seed"//sneed
+	loot = list(
+		/obj/item/seeds/aloe,
+		/obj/item/seeds/ambrosia,
+		/obj/item/seeds/apple,
+		/obj/item/seeds/cotton,
+		/obj/item/seeds/banana,
+		/obj/item/seeds/berry,
+		/obj/item/seeds/cabbage,
+		/obj/item/seeds/carrot,
+		/obj/item/seeds/cherry,
+		/obj/item/seeds/chanter,
+		/obj/item/seeds/chili,
+		/obj/item/seeds/cocoapod,
+		/obj/item/seeds/coffee,
+		/obj/item/seeds/corn,
+		/obj/item/seeds/eggplant,
+		/obj/item/seeds/garlic,
+		/obj/item/seeds/grape,
+		/obj/item/seeds/grass,
+		/obj/item/seeds/lemon,
+		/obj/item/seeds/lime,
+		/obj/item/seeds/onion,
+		/obj/item/seeds/orange,
+		/obj/item/seeds/peas,
+		/obj/item/seeds/pineapple,
+		/obj/item/seeds/potato,
+		/obj/item/seeds/poppy,
+		/obj/item/seeds/pumpkin,
+		/obj/item/seeds/wheat/rice,
+		/obj/item/seeds/soya,
+		/obj/item/seeds/sugarcane,
+		/obj/item/seeds/sunflower,
+		/obj/item/seeds/tea,
+		/obj/item/seeds/tobacco,
+		/obj/item/seeds/tomato,
+		/obj/item/seeds/tower,
+		/obj/item/seeds/watermelon,
+		/obj/item/seeds/wheat,
+		/obj/item/seeds/whitebeet,
+		/obj/item/seeds/amanita,
+		/obj/item/seeds/glowshroom,
+		/obj/item/seeds/liberty,
+		/obj/item/seeds/nettle,
+		/obj/item/seeds/plump,
+		/obj/item/seeds/reishi,
+		/obj/item/seeds/cannabis,
+		/obj/item/seeds/starthistle,
+		/obj/item/seeds/cherry/bomb,
+		/obj/item/seeds/berry/glow,
+		/obj/item/seeds/sunflower/moonflower)
+
+/obj/effect/spawner/lootdrop/flora
+	name = "random flora spawner"
+	loot = list(
+		/obj/structure/flora/tree/chapel,
+		/obj/structure/flora/tree/pine,
+		/obj/structure/flora/tree/jungle/small,
+		/obj/structure/flora/tree/jungle,
+		/obj/structure/flora/ash/puce,
+		/obj/structure/flora/ash/fireblossom,
+		/obj/structure/flora/ash/fern,
+		/obj/structure/flora/ash/tall_shroom,
+		/obj/structure/flora/ash/stem_shroom,
+		/obj/structure/flora/ash/space/voidmelon,
+		/obj/structure/flora/ash/leaf_shroom,
+		/obj/structure/flora/junglebush/large,
+		/obj/structure/flora/junglebush/b,
+		/obj/structure/flora/junglebush/c,
+		/obj/structure/flora/ausbushes/fernybush,
+		/obj/structure/flora/ausbushes/genericbush,
+		/obj/structure/flora/ausbushes/grassybush,
+		/obj/structure/flora/ausbushes/leafybush,
+		/obj/structure/flora/ausbushes/palebush,
+		/obj/structure/flora/ausbushes/pointybush,
+		/obj/structure/flora/ausbushes/reedbush,
+		/obj/structure/flora/ausbushes/stalkybush,
+		/obj/structure/flora/ausbushes/sunnybush,
+		/obj/structure/flora/bush,
+		/obj/structure/flora/grass/jungle,
+		/obj/structure/flora/junglebush,
+		/obj/structure/flora/junglebush/b,
+		/obj/structure/flora/junglebush/c,
+		/obj/structure/flora/ash,
+		/obj/structure/flora/ash/cacti,
+		/obj/structure/flora/ash/cap_shroom,
+		/obj/structure/flora/ash/chilly,
+		/obj/structure/flora/tree/palm)
+	lootcount = 1
+
+/obj/effect/spawner/lootdrop/flower
+	name = "random flower spawner"
+	loot = list(
+		/obj/structure/flora/ausbushes/brflowers,
+		/obj/structure/flora/ausbushes/ywflowers,
+		/obj/structure/flora/ausbushes/ppflowers,
+		/obj/structure/flora/ausbushes/fullgrass,
+		/obj/structure/flora/ausbushes/sparsegrass)
+	lootcount = 1

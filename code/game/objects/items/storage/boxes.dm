@@ -1371,6 +1371,7 @@
 		/obj/item/clothing/head/maidheadband/syndicate = 1,
 		/obj/item/clothing/under/syndicate/skirt/maid = 1,
 		/obj/item/clothing/gloves/combat/maid = 1,)
+	generate_items_inside(items_inside,src)
 
 // because i have no idea where the fuck to put this
 /obj/item/storage/box/maid
@@ -1426,7 +1427,7 @@
 		/obj/item/construction/rcd/combat/admin=1,\
 		/obj/item/pipe_dispenser=1,\
 		/obj/item/card/emag=1,\
-		/obj/item/stack/spacecash/c1000=50,\
+		/obj/item/spacecash/bundle/c10000=5,\
 		/obj/item/healthanalyzer/advanced=1,\
 		/obj/item/disk/tech_disk/debug=1,\
 		/obj/item/uplink/debug=1,\

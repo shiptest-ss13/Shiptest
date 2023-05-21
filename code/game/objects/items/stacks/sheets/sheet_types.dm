@@ -46,6 +46,15 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 		new/datum/stack_recipe("radiation closet", /obj/structure/closet/radiation/empty, 2, time = 15, one_per_turf = TRUE, on_floor = TRUE)
 		)),
 	null, \
+		new/datum/stack_recipe_list("crates", list(
+		new/datum/stack_recipe("crate", /obj/structure/closet/crate, 2, time = 15, one_per_turf = TRUE, on_floor = TRUE),
+		new/datum/stack_recipe("internals crate", /obj/structure/closet/crate/internals, 2, time = 15, one_per_turf = TRUE, on_floor = TRUE),
+		new/datum/stack_recipe("engineering crate", /obj/structure/closet/crate/engineering, 2, time = 15, one_per_turf = TRUE, on_floor = TRUE),
+		new/datum/stack_recipe("medical crate", /obj/structure/closet/crate/medical, 2, time = 15, one_per_turf = TRUE, on_floor = TRUE),
+		new/datum/stack_recipe("science crate", /obj/structure/closet/crate/science, 2, time = 15, one_per_turf = TRUE, on_floor = TRUE),
+		new/datum/stack_recipe("hydroponics crate", /obj/structure/closet/crate/hydroponics, 2, time = 15, one_per_turf = TRUE, on_floor = TRUE)
+		)),
+	null, \
 	new/datum/stack_recipe("canister", /obj/machinery/portable_atmospherics/canister, 10, time = 15, one_per_turf = TRUE, on_floor = TRUE), \
 	null, \
 	new/datum/stack_recipe("plasteel floor tile", /obj/item/stack/tile/plasteel, 1, 4, 20), \
@@ -99,7 +108,8 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 	new/datum/stack_recipe("voting box", /obj/structure/votebox, 15, time = 50), \
 	new/datum/stack_recipe("mortar", /obj/item/reagent_containers/glass/mortar/metal, 3), \
 	new/datum/stack_recipe("pestle", /obj/item/pestle, 1, time = 50), \
-	new/datum/stack_recipe("hygienebot assembly", /obj/item/bot_assembly/hygienebot, 2, time = 50)
+	new/datum/stack_recipe("hygienebot assembly", /obj/item/bot_assembly/hygienebot, 2, time = 50), \
+	new/datum/stack_recipe("shower", /obj/machinery/shower, 3, time = 25)
 ))
 
 /obj/item/stack/sheet/metal
@@ -549,7 +559,6 @@ GLOBAL_LIST_INIT(runed_metal_recipes, list ( \
 	item_state = "sheet-runed"
 	icon = 'icons/obj/stack_objects.dmi'
 	custom_materials = list(/datum/material/runedmetal = MINERAL_MATERIAL_AMOUNT)
-	sheettype = "runed"
 	merge_type = /obj/item/stack/sheet/runed_metal
 	novariants = TRUE
 	grind_results = list(/datum/reagent/iron = 5, /datum/reagent/blood = 15)
@@ -688,7 +697,9 @@ GLOBAL_LIST_INIT(plastic_recipes, list(
 	new /datum/stack_recipe("large water bottle", /obj/item/reagent_containers/food/drinks/waterbottle/large/empty, 3), \
 	new /datum/stack_recipe("colo cups", /obj/item/reagent_containers/food/drinks/colocup, 1), \
 	new /datum/stack_recipe("wet floor sign", /obj/item/clothing/suit/caution, 2), \
-	new /datum/stack_recipe("blank wall sign", /obj/item/sign, 1)))
+	new /datum/stack_recipe("blank wall sign", /obj/item/sign, 1), \
+	new /datum/stack_recipe("IV drip", /obj/machinery/iv_drip, 5, time = 15)
+	))
 
 /obj/item/stack/sheet/plastic
 	name = "plastic"

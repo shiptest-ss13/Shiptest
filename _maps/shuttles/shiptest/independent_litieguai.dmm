@@ -10,23 +10,13 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "aT" = (
-/obj/item/pickaxe/emergency{
-	name = "Medical Retrieval Tool";
-	desc = "For extracting yourself from rough landings, and getting to the even rougher ones"
-	},
-/obj/item/pickaxe/emergency{
-	name = "Medical Retrieval Tool";
-	desc = "For extracting yourself from rough landings, and getting to the even rougher ones"
-	},
-/obj/item/pickaxe/emergency{
-	name = "Medical Retrieval Tool";
-	desc = "For extracting yourself from rough landings, and getting to the even rougher ones"
-	},
 /obj/structure/rack,
 /obj/effect/turf_decal/industrial/outline/red,
 /obj/item/circuitboard/machine/ore_redemption,
 /obj/item/stack/sheet/glass/fifty,
 /obj/item/stack/sheet/metal/fifty,
+/obj/item/circuitboard/machine/rdserver,
+/obj/item/circuitboard/computer/rdconsole,
 /turf/open/floor/plasteel/tech,
 /area/ship/storage)
 "bl" = (
@@ -68,11 +58,11 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/storage)
 "bX" = (
-/obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/preopen{
-	id = "traumawindows";
+	id = "traumabridge";
 	name = "Window Blast Door"
 	},
+/obj/effect/spawner/structure/window/shuttle,
 /turf/open/floor/plating,
 /area/ship/bridge)
 "ck" = (
@@ -86,7 +76,6 @@
 /obj/structure/frame/computer{
 	dir = 1
 	},
-/obj/item/circuitboard/computer/rdconsole,
 /obj/effect/turf_decal/industrial/hatch/red,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -186,7 +175,9 @@
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/bridge)
 "eM" = (
-/obj/machinery/door/window/brigdoor/southright,
+/obj/machinery/door/window/brigdoor/southright{
+	req_access_txt = "5"
+	},
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/shoes/combat,
@@ -298,15 +289,20 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/machinery/door/poddoor/shutters{
-	id = "traumalobby";
-	name = "Lobby"
-	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	dir = 4;
 	id = "traumashield"
 	},
-/turf/open/floor/plating,
+/obj/machinery/door/firedoor/border_only,
+/obj/effect/turf_decal/industrial/warning,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "traumalobby";
+	name = "Lobby"
+	},
+/turf/open/floor/engine,
 /area/ship/hallway/aft)
 "hq" = (
 /turf/open/floor/plasteel/stairs/right{
@@ -418,7 +414,9 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "kC" = (
-/obj/machinery/door/window/brigdoor/southleft,
+/obj/machinery/door/window/brigdoor/southleft{
+	req_access_txt = "5"
+	},
 /obj/item/storage/belt/medical/surgery,
 /obj/item/storage/belt/medical/paramedic,
 /obj/item/clothing/gloves/color/latex/nitrile,
@@ -441,6 +439,7 @@
 /obj/item/clothing/glasses/hud/health/sunglasses,
 /obj/item/clothing/glasses/hud/health/sunglasses,
 /obj/item/clothing/glasses/hud/health/sunglasses,
+/obj/item/storage/belt/medical/paramedic,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "kH" = (
@@ -469,6 +468,9 @@
 	},
 /obj/machinery/door/poddoor{
 	id = "traumaramp"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
 	},
 /turf/open/floor/engine,
 /area/ship/storage)
@@ -602,6 +604,18 @@
 /obj/effect/turf_decal/siding/thinplating/dark/corner,
 /obj/structure/rack,
 /obj/effect/turf_decal/industrial/outline/red,
+/obj/item/pickaxe/emergency{
+	name = "Medical Retrieval Tool";
+	desc = "For extracting yourself from rough landings, and getting to the even rougher ones"
+	},
+/obj/item/pickaxe/emergency{
+	name = "Medical Retrieval Tool";
+	desc = "For extracting yourself from rough landings, and getting to the even rougher ones"
+	},
+/obj/item/pickaxe/emergency{
+	name = "Medical Retrieval Tool";
+	desc = "For extracting yourself from rough landings, and getting to the even rougher ones"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage)
 "mO" = (
@@ -696,39 +710,38 @@
 "oQ" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/window/southleft,
-/obj/item/folder/white,
-/obj/item/pen,
 /obj/machinery/button/door{
 	id = "lobbydoors";
 	name = "Lobby Door Control";
-	pixel_y = 7;
-	dir = 1;
-	normaldoorcontrol = 1
-	},
-/obj/machinery/button/door{
-	id = "traumalobby";
-	name = "Lobby Shutter Control";
-	pixel_x = -13;
 	pixel_y = -4;
-	dir = 1
+	dir = 1;
+	normaldoorcontrol = 1;
+	pixel_x = 11
 	},
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/turf_decal/industrial/hatch/red,
 /obj/machinery/button/shieldwallgen{
 	dir = 1;
-	pixel_x = 13;
-	pixel_y = 7;
+	pixel_y = 8;
 	name = "Lobby Holoshield";
-	id = "traumashield"
+	id = "traumashield";
+	pixel_x = -6
 	},
 /obj/machinery/button/door{
 	id = "lobbydoors";
 	name = "Lobby Door Bolts Control";
-	pixel_x = -13;
+	pixel_x = 11;
 	pixel_y = 7;
 	dir = 1;
 	specialfunctions = 4;
 	normaldoorcontrol = 1
+	},
+/obj/machinery/button/door{
+	id = "traumalobby";
+	name = "Lobby Shutter Control";
+	pixel_x = -6;
+	pixel_y = -4;
+	dir = 1
 	},
 /turf/open/floor/plating,
 /area/ship/medical)
@@ -767,8 +780,8 @@
 	pixel_y = 7
 	},
 /obj/machinery/button/door{
-	id = "traumalobby";
-	name = "Lobby Shutter Control";
+	id = "traumabridge";
+	name = "Bridge Window Shutters";
 	pixel_x = -5;
 	pixel_y = 7
 	},
@@ -880,6 +893,10 @@
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
+	},
+/obj/item/radio/intercom/wideband{
+	dir = 8;
+	pixel_x = 25
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/fore)
@@ -1006,6 +1023,8 @@
 /obj/item/paper_bin,
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/turf_decal/industrial/hatch/red,
+/obj/item/folder/white,
+/obj/item/pen,
 /turf/open/floor/plating,
 /area/ship/medical)
 "ur" = (
@@ -1028,7 +1047,6 @@
 	},
 /obj/machinery/rnd/production/techfab/department/medical,
 /obj/effect/turf_decal/industrial/hatch/red,
-/obj/item/circuitboard/machine/rdserver,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "uN" = (
@@ -1279,6 +1297,9 @@
 /obj/effect/turf_decal/trimline/opaque/red/filled/warning{
 	dir = 8
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
 /obj/machinery/door/poddoor{
 	id = "traumaramp"
 	},
@@ -1312,11 +1333,16 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
+/obj/machinery/door/firedoor/border_only,
+/obj/effect/turf_decal/industrial/warning,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
 /obj/machinery/door/poddoor/shutters{
 	id = "traumalobby";
 	name = "Lobby"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/engine,
 /area/ship/hallway/aft)
 "Cr" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -1677,6 +1703,7 @@
 	pixel_y = -28
 	},
 /obj/item/storage/backpack/satchel/chem,
+/obj/item/clothing/head/beret/chem,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "KW" = (
@@ -1744,6 +1771,7 @@
 /area/ship/storage)
 "MK" = (
 /obj/machinery/smartfridge/organ,
+/obj/effect/turf_decal/siding/thinplating/dark,
 /turf/open/floor/plasteel/tech,
 /area/ship/storage)
 "MN" = (
@@ -1814,6 +1842,7 @@
 /obj/item/gun/syringe,
 /obj/item/reagent_containers/glass/bottle/sodium_thiopental,
 /obj/item/clothing/glasses/hud/health/night,
+/obj/item/clothing/head/beret/cmo,
 /turf/open/floor/carpet/nanoweave,
 /area/ship/bridge)
 "Ny" = (
@@ -1919,6 +1948,7 @@
 /area/ship/crew)
 "PL" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/on,
+/obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/external)
 "Qe" = (
@@ -1974,6 +2004,9 @@
 	},
 /obj/machinery/door/poddoor{
 	id = "traumaramp"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
 	},
 /turf/open/floor/engine,
 /area/ship/storage)
@@ -2177,15 +2210,20 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/machinery/door/poddoor/shutters{
-	id = "traumalobby";
-	name = "Lobby"
-	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	dir = 8;
 	id = "traumashield"
 	},
-/turf/open/floor/plating,
+/obj/machinery/door/firedoor/border_only,
+/obj/effect/turf_decal/industrial/warning,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "traumalobby";
+	name = "Lobby"
+	},
+/turf/open/floor/engine,
 /area/ship/hallway/aft)
 "TR" = (
 /obj/structure/chair,
@@ -2247,6 +2285,9 @@
 /obj/item/gun/ballistic/revolver/detective{
 	name = "\improper Colt Navy Special"
 	},
+/obj/item/clothing/head/beret/durathread{
+	name = "captain beret"
+	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/bridge)
 "UO" = (
@@ -2261,9 +2302,6 @@
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "UX" = (
-/obj/item/ammo_box/magazine/co9mm{
-	ammo_type = /obj/item/ammo_casing/c9mm/rubbershot
-	},
 /obj/item/ammo_box/magazine/co9mm{
 	ammo_type = /obj/item/ammo_casing/c9mm/rubbershot;
 	name = "Commander magazine (Rubbershot 9mm)"
@@ -2291,9 +2329,16 @@
 	req_access_txt = "5"
 	},
 /obj/item/gun/ballistic/automatic/pistol/commander/no_mag,
-/obj/item/ammo_box/magazine/co9mm,
 /obj/machinery/light{
 	dir = 1
+	},
+/obj/item/ammo_box/magazine/co9mm{
+	ammo_type = /obj/item/ammo_casing/c9mm/ap;
+	name = "Commander magazine (AP 9mm)"
+	},
+/obj/item/ammo_box/magazine/co9mm{
+	ammo_type = /obj/item/ammo_casing/c9mm/ap;
+	name = "Commander magazine (AP 9mm)"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)

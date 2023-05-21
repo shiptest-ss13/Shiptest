@@ -36,8 +36,8 @@
 	species_head = /obj/item/bodypart/head/ethereal
 	species_l_arm = /obj/item/bodypart/l_arm/ethereal
 	species_r_arm = /obj/item/bodypart/r_arm/ethereal
-	species_l_leg = /obj/item/bodypart/l_leg/ethereal
-	species_r_leg = /obj/item/bodypart/r_leg/ethereal
+	species_l_leg = /obj/item/bodypart/leg/left/ethereal
+	species_r_leg = /obj/item/bodypart/leg/right/ethereal
 
 	var/current_color
 	var/EMPeffect = FALSE
@@ -77,9 +77,12 @@
 
 /datum/species/ethereal/random_name(gender,unique,lastname)
 	if(unique)
-		return random_unique_ethereal_name()
+		return random_unique_lizard_name(gender)
 
-	var/randname = ethereal_name()
+	var/randname = lizard_name(gender)
+
+	if(lastname)
+		randname += " [lastname]"
 
 	return randname
 

@@ -23,16 +23,16 @@
 /obj/structure/bed,
 /obj/item/bedsheet/hos,
 /mob/living/simple_animal/hostile/nanotrasen/ranged{
-	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 999, "min_n2" = 0, "max_n2" = 0);
-	damage_coeff = list("brute" = 1, "fire" = 1, "toxin" = 1, "clone" = 1, "stamina" = 0, "oxygen" = 0);
+	atmos_requirements = list("min_oxy"=5,"max_oxy"=0,"min_tox"=0,"max_tox"=0,"min_co2"=0,"max_co2"=999,"min_n2"=0,"max_n2"=0);
+	damage_coeff = list("brute"=1,"fire"=1,"toxin"=1,"clone"=1,"stamina"=0,"oxygen"=0);
 	name = "\improper NanoTrasen Stranded Security Officer"
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried,
 /area/whitesands/surface/outdoors)
 "h" = (
 /mob/living/simple_animal/hostile/nanotrasen/ranged{
-	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 999, "min_n2" = 0, "max_n2" = 0);
-	damage_coeff = list("brute" = 1, "fire" = 1, "toxin" = 1, "clone" = 1, "stamina" = 0, "oxygen" = 0);
+	atmos_requirements = list("min_oxy"=5,"max_oxy"=0,"min_tox"=0,"max_tox"=0,"min_co2"=0,"max_co2"=999,"min_n2"=0,"max_n2"=0);
+	damage_coeff = list("brute"=1,"fire"=1,"toxin"=1,"clone"=1,"stamina"=0,"oxygen"=0);
 	dir = 4;
 	name = "\improper NanoTrasen Stranded Security Officer"
 	},
@@ -43,8 +43,8 @@
 	dir = 8
 	},
 /mob/living/simple_animal/hostile/nanotrasen/ranged{
-	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 999, "min_n2" = 0, "max_n2" = 0);
-	damage_coeff = list("brute" = 1, "fire" = 1, "toxin" = 1, "clone" = 1, "stamina" = 0, "oxygen" = 0);
+	atmos_requirements = list("min_oxy"=5,"max_oxy"=0,"min_tox"=0,"max_tox"=0,"min_co2"=0,"max_co2"=999,"min_n2"=0,"max_n2"=0);
+	damage_coeff = list("brute"=1,"fire"=1,"toxin"=1,"clone"=1,"stamina"=0,"oxygen"=0);
 	dir = 8;
 	name = "\improper NanoTrasen Stranded Security Officer"
 	},
@@ -57,15 +57,18 @@
 "k" = (
 /obj/effect/mob_spawn/human/corpse/whitesands/survivor,
 /obj/effect/decal/cleanable/blood,
-/turf/open/floor/plating/asteroid/whitesands,
+/turf/open/floor/plating/asteroid/whitesands/lit,
 /area/whitesands/surface/outdoors)
 "n" = (
-/obj/structure/sign/poster/official/ion_rifle,
+/obj/structure/sign/poster/official/ion_carbine,
 /turf/closed/wall/mineral/sandstone,
 /area/whitesands/surface/outdoors)
 "p" = (
 /obj/structure/sign/poster/official/safety_report,
 /turf/closed/wall/mineral/sandstone,
+/area/whitesands/surface/outdoors)
+"q" = (
+/turf/open/floor/plating/asteroid/whitesands/lit,
 /area/whitesands/surface/outdoors)
 "r" = (
 /obj/structure/closet/cabinet,
@@ -80,15 +83,15 @@
 /area/whitesands/surface/outdoors)
 "v" = (
 /mob/living/simple_animal/hostile/nanotrasen/ranged{
-	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 999, "min_n2" = 0, "max_n2" = 0);
-	damage_coeff = list("brute" = 1, "fire" = 1, "toxin" = 1, "clone" = 1, "stamina" = 0, "oxygen" = 0);
+	atmos_requirements = list("min_oxy"=5,"max_oxy"=0,"min_tox"=0,"max_tox"=0,"min_co2"=0,"max_co2"=999,"min_n2"=0,"max_n2"=0);
+	damage_coeff = list("brute"=1,"fire"=1,"toxin"=1,"clone"=1,"stamina"=0,"oxygen"=0);
 	dir = 8;
 	name = "\improper NanoTrasen Stranded Security Officer"
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried,
 /area/whitesands/surface/outdoors)
 "x" = (
-/obj/structure/sign/poster/official/space_cops,
+/obj/structure/sign/poster/contraband/space_cops,
 /turf/closed/wall/mineral/sandstone,
 /area/whitesands/surface/outdoors)
 "z" = (
@@ -103,7 +106,7 @@
 /turf/closed/wall/mineral/sandstone,
 /area/whitesands/surface/outdoors)
 "I" = (
-/obj/structure/sign/poster/official/twelve_gauge,
+/obj/structure/sign/poster/contraband/twelve_gauge,
 /turf/closed/wall/mineral/sandstone,
 /area/whitesands/surface/outdoors)
 "J" = (
@@ -142,7 +145,7 @@
 /obj/effect/decal/cleanable/blood{
 	icon_state = "floor3"
 	},
-/turf/open/floor/plating/asteroid/whitesands,
+/turf/open/floor/plating/asteroid/whitesands/lit,
 /area/whitesands/surface/outdoors)
 "T" = (
 /obj/structure/table/wood,
@@ -193,8 +196,8 @@ a
 a
 a
 a
-u
-u
+q
+q
 S
 a
 a
@@ -206,10 +209,10 @@ a
 (3,1,1) = {"
 a
 a
-u
-u
-u
-u
+q
+q
+q
+q
 z
 z
 a
@@ -221,10 +224,10 @@ a
 (4,1,1) = {"
 Q
 f
-u
+q
 k
-u
-u
+q
+q
 E
 K
 Q
@@ -356,12 +359,12 @@ Q
 (13,1,1) = {"
 a
 a
-u
-u
-u
-u
-u
-u
+q
+q
+q
+q
+q
+q
 a
 a
 a

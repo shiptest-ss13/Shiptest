@@ -10,7 +10,7 @@
 	var/obj/item/bodypart/storedpart
 	var/initial_icon_state
 	var/static/list/style_list_icons = list("standard" = 'icons/mob/augmentation/augments.dmi', "engineer" = 'icons/mob/augmentation/augments_engineer.dmi', "security" = 'icons/mob/augmentation/augments_security.dmi', "mining" = 'icons/mob/augmentation/augments_mining.dmi')
-	var/static/list/type_whitelist = list(/obj/item/bodypart/head/robot, /obj/item/bodypart/r_arm/robot, /obj/item/bodypart/l_arm/robot, /obj/item/bodypart/chest/robot, /obj/item/bodypart/r_leg/robot, /obj/item/bodypart/l_leg/robot)
+	var/static/list/type_whitelist = list(/obj/item/bodypart/head/robot, /obj/item/bodypart/r_arm/robot, /obj/item/bodypart/l_arm/robot, /obj/item/bodypart/chest/robot, /obj/item/bodypart/leg/right/robot, /obj/item/bodypart/leg/left/robot)
 
 /obj/machinery/aug_manipulator/examine(mob/user)
 	. = ..()

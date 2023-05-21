@@ -186,7 +186,7 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 
 #define isclothing(A) (istype(A, /obj/item/clothing))
 
-#define iscash(A) (istype(A, /obj/item/coin) || istype(A, /obj/item/stack/spacecash) || istype(A, /obj/item/holochip))
+#define iscash(A) (istype(A, /obj/item/coin) || istype(A, /obj/item/spacecash) || istype(A, /obj/item/holochip))
 
 GLOBAL_LIST_INIT(pointed_types, typecacheof(list(
 	/obj/item/pen,
@@ -228,8 +228,6 @@ GLOBAL_LIST_INIT(glass_sheet_types, typecacheof(list(
 #define isblobmonster(O) (istype(O, /mob/living/simple_animal/hostile/blob))
 
 #define isshuttleturf(T) (length(T.baseturfs) && (/turf/baseturf_skipover/shuttle in T.baseturfs))
-
-#define isspacepod(A) (istype(A, /obj/spacepod))
 
 #define isbook(O) (is_type_in_typecache(O, GLOB.book_types))
 
