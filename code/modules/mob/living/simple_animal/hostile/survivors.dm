@@ -105,33 +105,33 @@
 		//uniforms are random to show varied backgrounds, but similar goal
 	if(survivor_type == "survivor")
 		uniform = pickweight(list(
-		/obj/item/clothing/under/color/random = 65,
-		/obj/item/clothing/under/rank/cargo/miner/lavaland = 10,
-		/obj/item/clothing/under/rank/prisoner = 10,
-		/obj/item/clothing/under/rank/cargo/miner/lavaland/old = 5,
-		/obj/item/clothing/under/color/khaki/buster = 5,
-		/obj/item/clothing/under/rank/cargo/miner = 5
-	)
-	)
+			/obj/item/clothing/under/color/random = 65,
+			/obj/item/clothing/under/rank/cargo/miner/lavaland = 10,
+			/obj/item/clothing/under/rank/prisoner = 10,
+			/obj/item/clothing/under/rank/cargo/miner/lavaland/old = 5,
+			/obj/item/clothing/under/color/khaki/buster = 5,
+			/obj/item/clothing/under/rank/cargo/miner = 5
+			)
+		)
 	else if (survivor_type == "hunter")
 		uniform = pickweight(list(
-		/obj/item/clothing/under/color/random = 50,
-		/obj/item/clothing/under/rank/cargo/miner/lavaland = 25,
-		/obj/item/clothing/under/rank/cargo/miner/lavaland/old = 15,
-		/obj/item/clothing/under/rank/security/officer/camo = 5,
-		/obj/item/clothing/under/utility = 5
-	)
-	)
+			/obj/item/clothing/under/color/random = 50,
+			/obj/item/clothing/under/rank/cargo/miner/lavaland = 25,
+			/obj/item/clothing/under/rank/cargo/miner/lavaland/old = 15,
+			/obj/item/clothing/under/rank/security/officer/camo = 5,
+			/obj/item/clothing/under/utility = 5
+			)
+		)
 	else if (survivor_type == "gunslinger")
 		uniform = pickweight(list(
-		/obj/item/clothing/under/rank/cargo/miner/lavaland = 35,
-		/obj/item/clothing/under/color/random = 25,
-		/obj/item/clothing/under/rank/cargo/miner/lavaland/old = 15,
-		/obj/item/clothing/under/rank/security/officer/camo = 10,
-		/obj/item/clothing/under/syndicate/camo = 10,
-		/obj/item/clothing/under/syndicate/combat = 5
-	)
-	)
+			/obj/item/clothing/under/rank/cargo/miner/lavaland = 35,
+			/obj/item/clothing/under/color/random = 25,
+			/obj/item/clothing/under/rank/cargo/miner/lavaland/old = 15,
+			/obj/item/clothing/under/rank/security/officer/camo = 10,
+			/obj/item/clothing/under/syndicate/camo = 10,
+			/obj/item/clothing/under/syndicate/combat = 5
+			)
+		)
 	else
 		uniform = /obj/item/clothing/under/color/random
 
