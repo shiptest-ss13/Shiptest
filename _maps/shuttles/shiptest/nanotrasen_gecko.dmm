@@ -43,10 +43,6 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/maintenance/port)
 "aB" = (
-/obj/machinery/computer/rdconsole{
-	dir = 8;
-	icon_state = "computer-right"
-	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "aD" = (
@@ -1114,7 +1110,6 @@
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo/starboard)
 "kS" = (
-/obj/machinery/rnd/production/protolathe/department/engineering,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned,
 /area/ship/storage)
@@ -1362,7 +1357,6 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/obj/machinery/rnd/production/circuit_imprinter,
 /turf/open/floor/plasteel/patterned,
 /area/ship/storage)
 "or" = (
@@ -5206,7 +5200,6 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/fore)
 "ZN" = (
-/obj/machinery/rnd/server,
 /obj/machinery/firealarm{
 	dir = 4;
 	pixel_x = -24
