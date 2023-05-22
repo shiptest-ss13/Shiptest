@@ -75,15 +75,15 @@
 				return
 			refresh_engines()
 
-	if (create_crew)
-		crew = new(src)
-
 	ship_account = new(name, 2000)
 #ifdef UNIT_TESTS
 	Rename("[source_template]")
 #else
 	Rename("[source_template.prefix] [pick_list_replacements(SHIP_NAMES_FILE, pick(source_template.name_categories))]", TRUE)
 #endif
+	if (create_crew)
+		crew = new(src)
+
 	SSovermap.controlled_ships += src
 
 /datum/overmap/ship/controlled/Destroy()
