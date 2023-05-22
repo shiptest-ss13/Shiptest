@@ -548,6 +548,7 @@
 /turf/open/floor/mineral/titanium/tiled/purple,
 /area/ship/science/xenobiology)
 "hX" = (
+/obj/item/circuitboard/machine/protolathe/department/science,
 /obj/item/kirbyplants/random,
 /obj/machinery/camera/autoname{
 	dir = 1
@@ -2736,6 +2737,9 @@
 /turf/open/floor/plating,
 /area/ship/science/xenobiology)
 "Jo" = (
+/obj/machinery/computer/rdconsole/robotics{
+	dir = 8
+	},
 /turf/open/floor/mineral/titanium/tiled,
 /area/ship/science/robotics)
 "Jq" = (
@@ -2906,6 +2910,7 @@
 /turf/open/floor/mineral/titanium/tiled/purple,
 /area/ship/science/xenobiology)
 "LK" = (
+/obj/machinery/rnd/destructive_analyzer,
 /obj/machinery/light{
 	dir = 8
 	},
@@ -3081,6 +3086,12 @@
 "NY" = (
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/ship/hallway/aft)
+"NZ" = (
+/obj/machinery/computer/rdconsole/core{
+	dir = 4
+	},
+/turf/open/floor/mineral/titanium/tiled/white,
+/area/ship/science)
 "Ob" = (
 /obj/machinery/button/door{
 	id = "rdshutter";
@@ -3576,6 +3587,10 @@
 	},
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/ship/science/xenobiology)
+"Ut" = (
+/obj/machinery/rnd/production/circuit_imprinter/department/science,
+/turf/open/floor/mineral/titanium/tiled/white,
+/area/ship/science)
 "Uu" = (
 /obj/item/cigbutt{
 	pixel_x = -6;
@@ -4838,8 +4853,8 @@ AG
 Bi
 us
 LK
-HC
-HC
+NZ
+Ut
 XY
 BC
 dQ

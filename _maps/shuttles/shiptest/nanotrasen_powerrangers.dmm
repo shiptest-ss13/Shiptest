@@ -1440,6 +1440,7 @@
 /turf/open/floor/carpet/executive,
 /area/ship/crew/dorm)
 "me" = (
+/obj/machinery/rnd/production/circuit_imprinter/department/science,
 /obj/machinery/light{
 	dir = 4
 	},
@@ -1653,6 +1654,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "oz" = (
+/obj/machinery/computer/rdconsole/core{
+	dir = 8
+	},
 /obj/effect/turf_decal/corner/opaque/purple{
 	dir = 10
 	},
@@ -2474,6 +2478,7 @@
 /obj/effect/turf_decal/corner/opaque/purple{
 	dir = 6
 	},
+/obj/machinery/rnd/production/protolathe/department/basic,
 /turf/open/floor/plasteel/dark,
 /area/ship/science)
 "xr" = (

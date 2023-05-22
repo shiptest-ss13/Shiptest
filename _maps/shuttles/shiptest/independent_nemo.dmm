@@ -2618,6 +2618,7 @@
 	pixel_y = -25
 	},
 /obj/structure/frame/machine,
+/obj/item/circuitboard/machine/circuit_imprinter,
 /obj/structure/sign/poster/official/moth/boh{
 	pixel_x = 32
 	},
@@ -3465,6 +3466,9 @@
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "XO" = (
+/obj/machinery/computer/rdconsole{
+	dir = 8
+	},
 /turf/open/floor/circuit,
 /area/ship/science)
 "XT" = (

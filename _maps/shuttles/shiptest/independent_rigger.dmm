@@ -644,6 +644,7 @@
 /obj/machinery/airalarm/all_access{
 	pixel_y = 25
 	},
+/obj/item/circuitboard/machine/circuit_imprinter,
 /obj/effect/spawner/lootdrop/maintenance/three,
 /turf/open/floor/plating,
 /area/ship/construction)
@@ -834,6 +835,9 @@
 "kC" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering)
+"kK" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/construction)
 "kL" = (
 /obj/item/kirbyplants/random,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -987,6 +991,7 @@
 	},
 /obj/structure/closet/crate/bin,
 /obj/effect/turf_decal/industrial/outline/yellow,
+/obj/item/circuitboard/machine/protolathe/department/cargo,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/office)
 "lW" = (
@@ -3594,6 +3599,7 @@
 /area/ship/construction)
 "Qv" = (
 /obj/structure/closet/crate,
+/obj/item/circuitboard/computer/rdconsole,
 /obj/effect/spawner/lootdrop/maintenance/three,
 /turf/open/floor/plasteel,
 /area/ship/construction)
@@ -3998,6 +4004,9 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
+"UY" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/crew)
 "Va" = (
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/grille,
@@ -4538,16 +4547,16 @@ Ly
 Ly
 Ly
 Ly
-Ce
-Ce
-Ce
+UY
+UY
+UY
 bC
-Ce
+UY
 aN
 Hm
-Ce
+UY
 Hm
-Ce
+UY
 bC
 Pw
 bl
@@ -4571,18 +4580,18 @@ Ly
 Ly
 Ly
 Ly
-Ce
+UY
 bC
 FO
 cc
-Ce
+UY
 Hn
 AH
 AH
 te
 gc
 pY
-Ce
+UY
 iG
 db
 pv
@@ -4604,7 +4613,7 @@ Of
 Ly
 Ly
 Ly
-Ce
+UY
 bC
 MF
 Ao
@@ -4616,7 +4625,7 @@ rl
 tE
 RW
 Dr
-Ce
+UY
 CO
 Cc
 PF
@@ -4638,12 +4647,12 @@ Cw
 Ly
 Ly
 Ly
-Ce
+UY
 bC
 SE
 hG
 TS
-Ce
+UY
 Hg
 pP
 zV
@@ -4671,18 +4680,18 @@ Of
 (5,1,1) = {"
 Ly
 Ly
-Ce
+UY
 bC
 bC
-Ce
+UY
 av
-Ce
+UY
 bC
-Ce
+UY
 Hm
 Ul
-Ce
-Ce
+UY
+UY
 eT
 bC
 Pw
@@ -4704,10 +4713,10 @@ Ly
 "}
 (6,1,1) = {"
 Ce
-Ce
+UY
 bC
 bC
-Ce
+UY
 Ly
 Ly
 Ly
@@ -5418,10 +5427,10 @@ Ly
 "}
 (27,1,1) = {"
 aT
-aT
+kK
 OR
 OR
-aT
+kK
 Ly
 Ly
 Ly
@@ -5453,18 +5462,18 @@ Ly
 (28,1,1) = {"
 Ly
 Ly
-aT
+kK
 OR
 OR
-aT
+kK
 KI
-aT
+kK
 OR
-aT
+kK
 KI
 VW
-aT
-aT
+kK
+kK
 Qj
 OR
 ZE
@@ -5488,12 +5497,12 @@ Ly
 Ly
 Ly
 Ly
-aT
+kK
 OR
 Ug
 oX
 zF
-aT
+kK
 Fs
 rN
 Dm
@@ -5522,7 +5531,7 @@ sS
 Ly
 Ly
 Ly
-aT
+kK
 OR
 iH
 kj
@@ -5534,7 +5543,7 @@ Lo
 yJ
 Ug
 Qv
-aT
+kK
 DL
 Ad
 GM
@@ -5557,18 +5566,18 @@ Ly
 Ly
 Ly
 Ly
-aT
+kK
 OR
 Ug
 bc
-aT
+kK
 rJ
 sM
 Ug
 oM
 iU
 VF
-aT
+kK
 Hl
 Ad
 RO
@@ -5592,16 +5601,16 @@ Ly
 Ly
 Ly
 Ly
-aT
-aT
-aT
+kK
+kK
+kK
 OR
-aT
+kK
 VW
 KI
-aT
+kK
 KI
-aT
+kK
 OR
 ZE
 ij

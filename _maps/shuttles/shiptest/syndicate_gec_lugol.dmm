@@ -1873,6 +1873,9 @@
 /turf/open/floor/plating/airless,
 /area/ship/construction)
 "pN" = (
+/obj/machinery/rnd/production/circuit_imprinter/department/engi{
+	layer = 3
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "pT" = (
@@ -1960,6 +1963,12 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
+"qn" = (
+/obj/machinery/computer/rdconsole{
+	layer = 3
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/engineering)
 "qp" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -3845,6 +3854,9 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "Hn" = (
+/obj/machinery/rnd/production/protolathe/department/engineering{
+	layer = 3
+	},
 /obj/machinery/light/small{
 	dir = 4;
 	bulb_power = 0.5
@@ -4968,6 +4980,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/rnd/server,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "OF" = (
@@ -6370,7 +6383,7 @@ Qs
 JU
 nN
 Hx
-pN
+qn
 jN
 gR
 EF

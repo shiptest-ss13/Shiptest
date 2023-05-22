@@ -1429,6 +1429,7 @@
 /obj/effect/turf_decal/floordetail/edgedrain{
 	dir = 4
 	},
+/obj/machinery/rnd/server,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "Hr" = (
@@ -2136,6 +2137,13 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage/eva)
+"TE" = (
+/obj/effect/turf_decal/floordetail/edgedrain{
+	dir = 4
+	},
+/obj/machinery/rnd/production/techfab/department/security,
+/turf/open/floor/plasteel/patterned,
+/area/ship/cargo)
 "TM" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
@@ -2681,7 +2689,7 @@ ib
 Or
 Ol
 TZ
-Hd
+TE
 Hd
 LW
 SJ
