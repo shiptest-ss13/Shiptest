@@ -1,0 +1,29 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"prefix": "NTSV",
+	"namelists": ["GENERAL", "NATURAL_AGGRESSIVE", "BEASTS"],
+	"map_name": "Mimir-Class Rehabillitation Vessel",
+	"map_short_name": "Mimir-Class",
+	"map_path": "_maps/shuttles/shiptest/nanotrasen_mimir.dmm",
+	"limit": 1,
+	"job_slots": {
+		"Warden": {
+			"outfit": "/datum/outfit/job/warden",
+			"officer": true,
+			"slots": 1
+		},
+		"Facility Security Officer": {
+			"outfit": "/datum/outfit/job/security",
+			"slots": 2
+		},
+		"Facility Physician": {
+			"outfit": "/datum/outfit/job/brig_phys",
+			"slots": 1
+		},
+		"Patient": {
+			"outfit": "/datum/outfit/job/prisoner",
+			"slots": 2
+		}
+	},
+	"enabled": true
+}
