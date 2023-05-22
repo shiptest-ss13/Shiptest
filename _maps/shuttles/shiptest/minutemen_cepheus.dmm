@@ -2301,7 +2301,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "wu" = (
-/obj/machinery/mecha_part_fabricator,
 /obj/structure/railing{
 	dir = 8;
 	layer = 4.1;
@@ -2452,9 +2451,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/electrical)
 "xG" = (
-/obj/machinery/mecha_part_fabricator{
-	dir = 8
-	},
 /obj/structure/railing{
 	dir = 4;
 	layer = 4.1;
@@ -2730,13 +2726,6 @@
 	dir = 1
 	},
 /obj/structure/rack,
-/obj/item/circuitboard/machine/circuit_imprinter{
-	pixel_y = -6
-	},
-/obj/item/circuitboard/machine/rdserver,
-/obj/item/circuitboard/computer/rdconsole{
-	pixel_y = 7
-	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/science/robotics)
