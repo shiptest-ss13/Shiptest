@@ -115,11 +115,6 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	head = /obj/item/clothing/head/helmet/solgov
 	suit = /obj/item/clothing/suit/armor/vest/bulletproof/solgov
 
-/datum/outfit/job/security/solgov/rebel
-	name = "Boarding Specialist (Deserter)"
-
-	uniform = /obj/item/clothing/under/syndicate/camo
-
 /datum/outfit/job/security/solgov/elite
 	name = "Marine (SolGov)"
 
