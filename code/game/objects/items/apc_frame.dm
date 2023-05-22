@@ -7,7 +7,7 @@
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	w_class = WEIGHT_CLASS_SMALL
 	var/result_path
-	var/inverse = 0 // For inverse dir frames like light fixtures.
+	var/inverse = TRUE // For inverse dir frames like light fixtures.
 	var/pixel_shift //The amount of pixels
 
 /obj/item/wallframe/proc/try_build(turf/on_wall, mob/user)
@@ -85,7 +85,7 @@
 	desc = "Used for repairing or building APCs."
 	icon_state = "apc"
 	result_path = /obj/machinery/power/apc
-	inverse = 1
+	inverse = TRUE
 
 
 /obj/item/wallframe/apc/try_build(turf/on_wall, user)
