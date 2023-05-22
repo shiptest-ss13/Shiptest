@@ -241,9 +241,6 @@
 "aW" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/sign/departments/custodian{
-	pixel_x = -32
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 8
@@ -687,10 +684,6 @@
 "cw" = (
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 4
-	},
-/obj/item/kirbyplants{
-	icon_state = "plant-10";
-	pixel_x = 7
 	},
 /obj/effect/decal/cleanable/greenglow{
 	pixel_y = -10
@@ -3654,7 +3647,27 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/item/storage/backpack/ert/janitor{
-	pixel_x = -7
+	pixel_x = 6
+	},
+/obj/structure/closet/wall/blue{
+	dir = 8;
+	name = "Janitorial Closet";
+	pixel_x = 28
+	},
+/obj/item/clothing/under/rank/civilian/janitor/custodian,
+/obj/item/clothing/under/rank/civilian/janitor/sanitation_tech,
+/obj/item/clothing/suit/longcoat/science{
+	name = "janitor longcoat"
+	},
+/obj/item/clothing/shoes/galoshes{
+	pixel_x = 7;
+	pixel_y = -8
+	},
+/obj/item/clothing/head/soft/purple{
+	pixel_x = 5
+	},
+/obj/item/clothing/gloves/color/latex{
+	pixel_y = -5
 	},
 /turf/open/floor/plasteel,
 /area/ship/maintenance/central)
@@ -5873,8 +5886,9 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/storage/belt/janitor{
-	pixel_x = 7
+/obj/item/storage/belt/janitor/full{
+	pixel_x = 6;
+	pixel_y = -2
 	},
 /turf/open/floor/plasteel,
 /area/ship/maintenance/central)
@@ -7958,6 +7972,9 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
+/obj/structure/sign/departments/custodian{
+	pixel_x = -32
+	},
 /turf/open/floor/plasteel,
 /area/ship/maintenance/central)
 "Dn" = (
@@ -9434,6 +9451,13 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
+	},
+/obj/item/reagent_containers/glass/rag{
+	pixel_y = -8;
+	pixel_x = -2
+	},
+/obj/structure/sign/poster/official/moth/boh{
+	pixel_x = -32
 	},
 /turf/open/floor/plasteel,
 /area/ship/maintenance/central)
@@ -13573,6 +13597,12 @@
 "Xw" = (
 /obj/effect/turf_decal/box,
 /obj/structure/janitorialcart,
+/obj/item/reagent_containers/glass/bucket{
+	pixel_y = -5;
+	pixel_x = 5
+	},
+/obj/item/mop,
+/obj/item/pushbroom,
 /turf/open/floor/plasteel,
 /area/ship/maintenance/central)
 "Xy" = (
