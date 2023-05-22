@@ -26,6 +26,7 @@
 	desc = "Smells like it was at the bottom of a harbor."
 	color = "#3bbbdb"
 	puzzle_id = "swordfish"
+
 /obj/item/keycard/gatedrop
 	icon_state = "golden_key"
 
