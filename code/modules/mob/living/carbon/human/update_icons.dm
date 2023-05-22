@@ -737,6 +737,9 @@ generate/load female uniform sprites matching all previously decided variables
 			if(L)
 				standing.pixel_x += L["x"] //+= because of center()ing
 				standing.pixel_y += L["y"]
+	//Handle worn offsets
+	else
+		standing.pixel_y += worn_y_offset
 
 	standing.alpha = alpha
 	standing.color = color
