@@ -126,3 +126,8 @@
 //these flags are used to tell the DNA modifier if a plant gene cannot be extracted or modified.
 #define PLANT_GENE_REMOVABLE (1<<0)
 #define PLANT_GENE_EXTRACTABLE (1<<1)
+
+//used to determine what rotation mode the ore redemption machine is in
+#define ORM_BOTH 0
+#define ORM_INPUT 1
+#define ORM_OUTPUT 2
