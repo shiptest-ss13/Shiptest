@@ -9,6 +9,11 @@
 	/// Manifest list of people on the ship
 	var/list/manifest = list()
 
+
+	/// List of the species autorised to join this crew, overriden by the job specific whitelist.
+	/// Must be a specie id (/datum/species/var/id, check the modules/mob/living/carbon/species_type to know a species ID)
+	var/list/species_whitelist = list()
+
 	var/list/datum/mind/owner_candidates
 
 	/// The mob of the current ship owner. Tracking mostly uses this; that lets us pick up on logouts, which let us

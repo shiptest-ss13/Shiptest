@@ -267,7 +267,7 @@
 			return "[jobtitle] is already filled to capacity."
 	return "Error: Unknown job availability."
 
-/mob/dead/new_player/proc/IsJobUnavailable(datum/job/job, datum/crew/crew, latejoin = FALSE)
+/mob/dead/new_player/proc/IsJobUnavailable(datum/job/job, datum/crew/crew, mob/living/carbon/human/character, latejoin = FALSE)
 	if(!job)
 		return JOB_UNAVAILABLE_GENERIC
 	if(!(crew.job_slots[job] > 0))
@@ -280,18 +280,29 @@
 		return JOB_UNAVAILABLE_ACCOUNTAGE
 	if(job.required_playtime_remaining(client))
 		return JOB_UNAVAILABLE_PLAYTIME
-	if(latejoin && !job.special_check_latejoin(client))
-		return JOB_UNAVAILABLE_GENERIC
+	if(job.is_human_job)
+		// Species check
+		if(job.species_whitelist && length(job.species_whitelist) > 0)
+			if (!(character.dna.species.id in job.species_whitelist))
+				return JOB_UNAVAILABLE_JOB_SPECIES
+		else if(crew.species_whitelist && length(crew.species_whitelist) > 0)
+			if (!(character.dna.species.id in crew.species_whitelist))
+				return JOB_UNAVAILABLE_CREW_SPECIES
+
 	return JOB_AVAILABLE
 
 /mob/dead/new_player/proc/AttemptLateSpawn(datum/job/job, datum/crew/crew)
 	if(auth_check)
 		return
 
-	var/error = IsJobUnavailable(job, crew)
+	var/mob/living/carbon/human/character = create_character(FALSE)	//creates the human and transfers vars and mind
+
+	var/error = IsJobUnavailable(job, crew, character)
 	if(error != JOB_AVAILABLE)
 		alert(src, get_job_unavailable_error_message(error, job))
 		return FALSE
+
+	transfer_character()
 
 	//Removes a job slot
 	crew.job_slots[job]--
@@ -300,7 +311,6 @@
 	SSticker.queued_players -= src
 	SSticker.queue_delay = 4
 
-	var/mob/living/carbon/human/character = create_character(TRUE)	//creates the human and transfers vars and mind
 	var/equip = job.EquipRank(character, crew)
 	if(isliving(equip))	//Borgs get borged in the equip, so we need to make sure we handle the new mob.
 		character = equip

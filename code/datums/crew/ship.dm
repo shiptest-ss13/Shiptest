@@ -10,6 +10,7 @@
 
 	job_slots = ship.source_template.job_slots
 	base_job_slots = job_slots
+	species_whitelist = ship.source_template.species_whitelist
 
 /datum/crew/ship/join_crew(mob/M, datum/job/job)
 	..()

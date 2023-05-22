@@ -32,6 +32,15 @@
 	var/exp_type = ""
 	var/exp_type_department = ""
 
+	// Weather the person having this job is suposed to be a human (or other subspecies)
+	var/is_human_job = TRUE
+
+	// The list of species allowed to take on this job
+	// Override the crew's whitelist if filled
+	// Use the crew's whitelist if empty
+	// Must be a specie id (/datum/species/var/id, check the __DEFINES/mobs.dm around line 78 for "Species IDs")
+	var/list/species_whitelist = list()
+
 	/// A link to the relevant wiki related to the job. Ex: "Space_law" would link to wiki.blah/Space_law
 	var/wiki_page = ""
 

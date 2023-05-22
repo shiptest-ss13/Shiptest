@@ -16,6 +16,7 @@
 	var/enabled
 	var/short_name
 	var/list/job_slots = list()
+	var/list/species_whitelist = list()
 	var/list/name_categories = list("GENERAL")
 	var/prefix = "SV"
 	var/unique_ship_access = FALSE

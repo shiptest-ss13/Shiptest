@@ -33,13 +33,3 @@
 
 /datum/job/ai/override_latejoin_spawn()
 	return TRUE
-
-/datum/job/ai/special_check_latejoin(client/C)
-	if(!do_special_check)
-		return TRUE
-	for(var/i in GLOB.latejoin_ai_cores)
-		var/obj/structure/AIcore/latejoin_inactive/LAI = i
-		if(istype(LAI))
-			if(LAI.is_available())
-				return TRUE
-	return FALSE

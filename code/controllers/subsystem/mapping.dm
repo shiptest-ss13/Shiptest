@@ -49,6 +49,7 @@ SUBSYSTEM_DEF(mapping)
 	InitializeDefaultZLevels()
 	repopulate_sorted_areas()
 	process_teleport_locs()			//Sets up the wizard teleport locations
+	generate_selectable_species()
 	preloadTemplates()
 
 	// Add the transit levels
@@ -208,6 +209,8 @@ SUBSYSTEM_DEF(mapping)
 				job_slot.wiki_page = value["wiki_page"]
 				job_slot.exp_requirements = value["exp_requirements"]
 				job_slot.officer = value["officer"]
+				if (value["species_whitelist"])
+					job_slot.species_whitelist = make_specie_whitelist(value["species_whitelist"])
 				slots = value["slots"]
 
 			if(!job_slot || !slots)
@@ -223,8 +226,21 @@ SUBSYSTEM_DEF(mapping)
 		shuttle_templates[S.file_name] = S
 		if(isnum(data["roundstart"]) && data["roundstart"])
 			maplist[S.name] = S
+		if(islist(data["species_whitelist"]))
+			S.species_whitelist = make_specie_whitelist(data["species_whitelist"])
 #undef CHECK_STRING_EXISTS
 #undef CHECK_LIST_EXISTS
+
+/proc/make_specie_whitelist(list/in_list)
+	var/list/out_list = list()
+	for (var/string in in_list)
+		if(string == "ALL")
+			out_list.Add(GLOB.roundstart_races)
+		else if (findtext(string, regex(@"^-")))
+			out_list.Remove(splittext(string, "-"))
+		else
+			out_list.Add(string)
+	return out_list
 
 /datum/controller/subsystem/mapping/proc/preloadShelterTemplates()
 	for(var/item in subtypesof(/datum/map_template/shelter))

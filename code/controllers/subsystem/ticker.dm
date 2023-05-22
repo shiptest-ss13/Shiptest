@@ -142,8 +142,6 @@ SUBSYSTEM_DEF(ticker)
 	else if(CONFIG_GET(flag/shift_time_realtime))
 		gametime_offset = world.timeofday
 
-	generate_selectable_species()
-
 	return ..()
 
 /datum/controller/subsystem/ticker/fire()
