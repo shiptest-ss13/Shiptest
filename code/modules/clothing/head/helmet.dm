@@ -541,8 +541,6 @@
 	desc = "A standard-issue SolGov hat adorned with a feather, commonly used by Sonnensoldners."
 	icon_state = "sonnensoldner_hat"
 	item_state = "sonnensoldner_hat"
-	worn_x_dimension = 64
-	worn_y_dimension = 64
 	dog_fashion = null
 	armor = list("melee" = 40, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 60)
 

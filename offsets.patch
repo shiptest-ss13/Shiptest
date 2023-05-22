@@ -1,0 +1,27 @@
+diff --git a/code/game/objects/items.dm b/code/game/objects/items.dm
+index f3c426223cc..217fdf7dc54 100644
+--- a/code/game/objects/items.dm
++++ b/code/game/objects/items.dm
+@@ -43,6 +43,8 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
+ 	///Same as for [worn_y_dimension][/obj/item/var/worn_y_dimension] but for inhands, uses the lefthand_ and righthand_ file vars
+ 	var/inhand_y_dimension = 32
+ 
++	/// Worn overlay will be shifted by this along y axis
++	var/worn_y_offset = 0
+ 
+ 	max_integrity = 200
+ 
+diff --git a/code/modules/mob/living/carbon/human/update_icons.dm b/code/modules/mob/living/carbon/human/update_icons.dm
+index de8908bdd73..9b47f687b79 100644
+--- a/code/modules/mob/living/carbon/human/update_icons.dm
++++ b/code/modules/mob/living/carbon/human/update_icons.dm
+@@ -737,6 +737,9 @@ generate/load female uniform sprites matching all previously decided variables
+ 			if(L)
+ 				standing.pixel_x += L["x"] //+= because of center()ing
+ 				standing.pixel_y += L["y"]
++	//Handle worn offsets
++	else
++		standing.pixel_y += worn_y_offset
+ 
+ 	standing.alpha = alpha
+ 	standing.color = color
