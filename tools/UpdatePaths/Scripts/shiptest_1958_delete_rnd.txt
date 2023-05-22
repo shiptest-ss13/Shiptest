@@ -1,0 +1,35 @@
+#comment We decided it was the best idea to completely obliterate RND,
+#comment and we're doubling down on it with this script
+
+#comment Consoles
+/obj/machinery/computer/rdconsole : @DELETE
+/obj/item/circuitboard/computer/rdconsole : @DELETE
+
+#comment Bepis, Destructive Analyzer, Experimentor, all the Printers, and Servers
+/obj/machinery/rnd : @DELETE
+/obj/item/circuitboard/machine/bepis : @DELETE
+/obj/item/circuitboard/machine/destructive_analyzer : @DELETE
+/obj/item/circuitboard/machine/experimentor : @DELETE
+/obj/item/circuitboard/machine/protolathe : @DELETE
+/obj/item/circuitboard/machine/techfab : @DELETE
+/obj/item/circuitboard/machine/circuit_imprinter : @DELETE
+/obj/item/circuitboard/machine/rdserver : @DELETE
+
+#comment Exosuit Fabricator
+/obj/machinery/mecha_part_fabricator : @DELETE
+/obj/item/circuitboard/machine/mechfab : @DELETE
+
+#comment Boxes which contain any of the above
+/obj/item/storage/box/rndbasic : @DELETE
+/obj/item/storage/box/rndboards : @DELETE
+/obj/item/storage/box/rndciv : @DELETE
+/obj/item/storage/box/rndengi : @DELETE
+/obj/item/storage/box/rndmed : @DELETE
+/obj/item/storage/box/rndmining : @DELETE
+/obj/item/storage/box/rndsci : @DELETE
+/obj/item/storage/box/rndsec : @DELETE
+
+#comment Misc spawners
+/obj/effect/spawner/lootdrop/rnd : @DELETE
+/obj/effect/spawner/lootdrop/techstorage/rnd : @DELETE
+/obj/effect/spawner/lootdrop/techstorage/RnD_secure : @DELETE
