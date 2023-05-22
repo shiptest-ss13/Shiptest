@@ -541,6 +541,7 @@
 	desc = "A standard-issue SolGov hat adorned with a feather, commonly used by Sonnensoldners."
 	icon_state = "sonnensoldner_hat"
 	item_state = "sonnensoldner_hat"
+	worn_y_offset = 4
 	dog_fashion = null
 	armor = list("melee" = 40, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 60)
 
@@ -549,6 +550,7 @@
 	desc = "A unique bicorne hat given to Solarian Captains on expeditionary missions."
 	icon_state = "solgov_bicorne"
 	item_state = "solgov_bicorne"
+	worn_y_offset = 2
 	dog_fashion = null
 	armor = list("melee" = 40, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 60)
 
