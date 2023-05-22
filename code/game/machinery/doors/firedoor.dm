@@ -531,24 +531,30 @@
 				constructionStep = CONSTRUCTION_WIRES_EXPOSED
 				update_icon()
 				return
-			if(C.tool_behaviour == TOOL_WRENCH) //when in doubt, copypaste from modern tgcode
-				if(locate(/obj/machinery/door/firedoor) in get_turf(src))
-					to_chat(user, span_warning("There's already a firelock there."))
+			if(C.tool_behaviour == TOOL_WRENCH)
+				var/obj/machinery/door/firedoor/A = locate(/obj/machinery/door/firedoor) in get_turf(src)
+				if(A && A.dir == src.dir)
+					to_chat(user, "<span class='warning'>There's already a firelock there.</span>")
 					return
 				C.play_tool_sound(src)
-				user.visible_message(span_notice("[user] starts bolting down [src]..."), \
-					span_notice("You begin bolting [src]..."))
-				if(!C.use_tool(src, user, 50))
+				user.visible_message(
+					"<span class='notice'>[user] starts bolting down [src]...</span>", \
+					"<span class='notice'>You begin bolting [src]...</span>")
+				if(!C.use_tool(src, user, 30))
 					return
-				if(locate(/obj/machinery/door/firedoor) in get_turf(src))
+				var/obj/machinery/door/firedoor/D = locate(/obj/machinery/door/firedoor) in get_turf(src)
+				if(D && D.dir == src.dir)
 					return
-				user.visible_message(span_notice("[user] finishes the firelock."), \
-					span_notice("You finish the firelock."))
+				user.visible_message(
+					"<span class='notice'>[user] finishes the firelock.</span>", \
+					"<span class='notice'>You finish the firelock.</span>")
 				playsound(get_turf(src), 'sound/items/deconstruct.ogg', 50, TRUE)
 				if(reinforced)
 					new /obj/machinery/door/firedoor/heavy(get_turf(src))
 				else
-					new /obj/machinery/door/firedoor(get_turf(src))
+					var/obj/machinery/door/firedoor/F = new firelock_type(get_turf(src))
+					F.dir = src.dir
+					F.update_icon()
 				qdel(src)
 				return
 			if(istype(C, /obj/item/stack/sheet/plasteel))
