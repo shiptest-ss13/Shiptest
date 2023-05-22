@@ -198,8 +198,6 @@
 		/obj/item/bedsheet/rd/royal_cape = 3,
 		/obj/item/slime_extract/grey = 1,
 		/obj/item/borg/upgrade/modkit/trigger_guard = 4,
-		/obj/item/storage/box/rndboards = 1
-
 	)
 
 /**********************Mining Equipment Voucher**********************/
