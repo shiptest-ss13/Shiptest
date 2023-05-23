@@ -234,6 +234,13 @@ LINEN BINS
 	item_state = "sheetNT"
 	dream_messages = list("authority", "an ending")
 
+/obj/item/bedsheet/solgov
+	name = "\improper SolGov bedsheet"
+	desc = "It has the emblem of the Solar Confederation emblazoned upon it!"
+	icon_state = "sheetsolgov"
+	item_state = "sheetsolgov"
+	dream_messages = list("bureaucracy", "laws", "papers", "writing")
+
 /obj/item/bedsheet/ian
 	icon_state = "sheetian"
 	item_state = "sheetian"
