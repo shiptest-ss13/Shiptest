@@ -3445,6 +3445,21 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plating,
 /area/ship/crew/canteen)
+"SM" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/corner/transparent/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/transparent/neutral{
+	dir = 8
+	},
+/obj/effect/landmark/observer_start,
+/turf/open/floor/plasteel/dark,
+/area/ship/cargo)
 "Un" = (
 /obj/machinery/power/shuttle/engine/electric{
 	dir = 4
@@ -3660,7 +3675,7 @@ bn
 bB
 bL
 bW
-bW
+SM
 nT
 wM
 cR
