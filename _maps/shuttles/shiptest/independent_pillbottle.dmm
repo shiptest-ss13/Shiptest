@@ -1154,6 +1154,17 @@
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/fore)
+"tn" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/landmark/observer_start,
+/turf/open/floor/plasteel,
+/area/ship/hallway/fore)
 "tr" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -3737,7 +3748,7 @@ RJ
 MB
 MB
 BK
-Ud
+tn
 Ud
 gp
 Ze
