@@ -282,15 +282,9 @@
 		if(initial(D.research_icon) && initial(D.research_icon_state)) //If the design has an icon replacement skip the rest
 			icon_file = initial(D.research_icon)
 			icon_state = initial(D.research_icon_state)
-			try
-				if(!(icon_state in icon_states(icon_file)))
-					warning("design [D] with icon '[icon_file]' missing state '[icon_state]'")
-					continue
-			catch(exception/e)
-				SEND_TEXT(world.log, "Tried to load icon '[icon_file]' with icon state '[icon_state]' for design [D] but something went wrong!") // Remove later
-				SEND_TEXT(world.log, "Exception: [e.desc]") // Remove later
+			if(!(icon_state in icon_states(icon_file)))
+				warning("design [D] with icon '[icon_file]' missing state '[icon_state]'")
 				continue
-
 			I = icon(icon_file, icon_state, SOUTH)
 
 		else

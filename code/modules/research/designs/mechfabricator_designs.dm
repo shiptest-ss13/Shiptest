@@ -2,7 +2,7 @@
 /datum/design/borg
 	build_type = MECHFAB
 	category = list("Cyborg")
-	research_icon = "icons/mob/augmentation/augments.dmi"
+	research_icon = 'icons/mob/augmentation/augments.dmi'
 
 /datum/design/borg/suit
 	name = "Cyborg Endoskeleton"
