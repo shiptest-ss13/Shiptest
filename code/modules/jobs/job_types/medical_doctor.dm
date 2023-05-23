@@ -115,12 +115,6 @@
 	head = /obj/item/clothing/head/beret/solgov
 	suit =  /obj/item/clothing/suit/toggle/labcoat
 
-/datum/outfit/job/doctor/solgov/rebel
-	name = "Medical Doctor (Deserter)"
-
-	uniform = /obj/item/clothing/under/syndicate/camo
-	head = /obj/item/clothing/head/beret/solgov/terragov
-
 /datum/outfit/job/doctor/pirate
 	name = "Ship's Doctor (Pirate)"
 
