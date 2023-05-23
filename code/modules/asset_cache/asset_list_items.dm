@@ -287,7 +287,8 @@
 					warning("design [D] with icon '[icon_file]' missing state '[icon_state]'")
 					continue
 			catch
-				SEND_TEXT(world.log, "Tried to load icon [icon_file] for design [D] but it doesn't exist.") // Remove later
+				SEND_TEXT(world.log, "Tried to load icon [icon_file] with icon state [icon_state] for design [D] but something went wrong!") // Remove later
+				continue
 
 			I = icon(icon_file, icon_state, SOUTH)
 
