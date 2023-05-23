@@ -35,7 +35,7 @@
 	if(sc)
 		var/datum/tgs_message_content/response = sc.Run(u, params)
 		response = UpgradeDeprecatedCommandResponse(response, command)
-
+		
 		var/list/topic_response = TopicResponse()
 		topic_response[DMAPI5_TOPIC_RESPONSE_COMMAND_RESPONSE_MESSAGE] = response?.text
 		topic_response[DMAPI5_TOPIC_RESPONSE_COMMAND_RESPONSE] = response?._interop_serialize()
