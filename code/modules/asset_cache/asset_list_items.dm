@@ -286,8 +286,9 @@
 				if(!(icon_state in icon_states(icon_file)))
 					warning("design [D] with icon '[icon_file]' missing state '[icon_state]'")
 					continue
-			catch
-				SEND_TEXT(world.log, "Tried to load icon [icon_file] with icon state [icon_state] for design [D] but something went wrong!") // Remove later
+			catch(exception/e)
+				SEND_TEXT(world.log, "Tried to load icon '[icon_file]' with icon state '[icon_state]' for design [D] but something went wrong!") // Remove later
+				SEND_TEXT(world.log, "Exception: [e.desc]") // Remove later
 				continue
 
 			I = icon(icon_file, icon_state, SOUTH)
