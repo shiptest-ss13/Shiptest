@@ -151,6 +151,7 @@
 	name = "colonial minutemen general coat"
 	desc = "A very fancy coat used by generals of the Colonial Minutemen."
 	icon_state = "carapace_minutemen"
+	item_state = "carapace_minutemen"
 
 /obj/item/clothing/suit/armor/vest/capcarapace/duster
 	name = "captain's duster"
