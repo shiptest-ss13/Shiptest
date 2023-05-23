@@ -235,7 +235,6 @@
 	gloves = /obj/item/clothing/gloves/color/grey
 	ears = /obj/item/radio/headset
 	suit_store = null
-	mask = /obj/item/clothing/mask/gas/sechailer/swat
 	head = /obj/item/clothing/head/solgov/sonnensoldner
 	back = /obj/item/storage/backpack
 	id = /obj/item/card/id/solgov
