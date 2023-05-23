@@ -75,5 +75,8 @@
 	loot = list(
 		/obj/effect/spawner/lootdrop/chicken/jungle
 	)
-	lootcount = 7 //I was going to make this random but it wasn't cooperating
+	lootcount = 7
 	lootdoubles = TRUE
+
+/obj/effect/spawner/lootdrop/chicken/jungle/flock/New()
+	lootcount = rand(5, 10)
