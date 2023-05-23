@@ -35,6 +35,9 @@
 	// Weather the person having this job is suposed to be a human (or other subspecies)
 	var/is_human_job = TRUE
 
+	// Weather this job can come out of regular spot (aka cryo), things like AI and ghostole will typicaly have this to TRUE.
+	var/need_special_spawn_point = FALSE
+
 	// The list of species allowed to take on this job
 	// Override the crew's whitelist if filled
 	// Use the crew's whitelist if empty

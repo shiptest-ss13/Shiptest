@@ -13,8 +13,13 @@
 	/// List of the species autorised to join this crew, overriden by the job specific whitelist.
 	/// Must be a specie id (/datum/species/var/id, check the modules/mob/living/carbon/species_type to know a species ID)
 	var/list/species_whitelist = list()
+	/// Assoc list of job and their species whitelist.
+	var/list/species_whitelist_byjob = list()
 
 	var/list/datum/mind/owner_candidates
+
+	var/list/atom/spawn_points = list()
+	var/list/atom/spawn_points_byjob_name = list()
 
 	/// The mob of the current ship owner. Tracking mostly uses this; that lets us pick up on logouts, which let us
 	/// determine if a player is switching to control of a mob with a different mind, who thus shouldn't be the ship owner.
@@ -45,7 +50,8 @@
 /**
  * * Return TRUE if the crew was successfully renamed otherwise FALSE
  */
-/datum/crew/proc/Rename(new_name, force = FALSE)
+/datum/crew/proc/Rename(new_name)
+	name = new_name
 	return
 
 /**
@@ -75,9 +81,15 @@
 
 /**
  *	Add a mob to a crew and spawn it in.
+ *  Assume that if the job need a special spawn point this point is disponible (ex : AI need a disponible core.
  */
 /datum/crew/proc/join_crew(mob/M, datum/job/job)
 	SHOULD_CALL_PARENT(TRUE)
+
+	if (spawn_points_byjob_name[job.name] && length(spawn_points_byjob_name[job.name]) > 0)
+		pick(spawn_points_byjob_name[job.name]).JoinPlayerHere(M, TRUE)
+	else
+		pick(spawn_points).JoinPlayerHere(M, TRUE)
 
 	manifest_inject(M, M.client, job)
 
@@ -93,7 +105,7 @@
  *	Weather the crew can be joined.
  */
 /datum/crew/proc/is_join_option()
-	return (length(job_slots) >= 1) && join_mode != SHIP_JOIN_MODE_CLOSED
+	return (length(job_slots) >= 1 && (length(spawn_points) > 0 || length(spawn_points_byjob_name) > 0)) && join_mode != SHIP_JOIN_MODE_CLOSED
 
 /datum/crew/proc/get_application(mob/applicant)
 	var/index_key = applicant.client?.holder?.fakekey ? applicant.client.holder.fakekey : applicant.key

@@ -123,6 +123,9 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 	/// The last time the "no control computer" message was sent to admins.
 	var/last_no_computer_message = 0
 
+	/// List of the jobs to spawn in this cryopod, all if empty, must be job names.
+	var/list/jobs = list()
+
 	/// These items are preserved when the process() despawn proc occurs.
 	var/static/list/preserve_items = list(
 		/obj/item/hand_tele,
@@ -423,7 +426,14 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 /obj/machinery/cryopod/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock, idnum, override)
 	. = ..()
 	linked_ship = port
-	linked_ship.spawn_points += src
+	if (linked_ship.current_ship.crew)
+		if ((length(jobs) > 0))
+			for(var/job in jobs)
+				if(linked_ship.current_ship.crew.spawn_points_byjob_name[job] == null)
+					linked_ship.current_ship.crew.spawn_points_byjob_name[job] = list()
+				linked_ship.current_ship.crew.spawn_points_byjob_name[job].Add(src)
+		else
+			linked_ship.current_ship.crew.spawn_points.Add(src)
 
 /obj/machinery/cryopod/poor
 	name = "low quality cryogenic freezer"

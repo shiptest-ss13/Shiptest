@@ -49,6 +49,8 @@
 	message_admins("[key_name_admin(usr)] renamed vessel '[oldname]' to '[new_name]'")
 	shuttle_port?.name = new_name
 	ship_account.account_holder = new_name
+	if (crew)
+		crew.Rename(new_name)
 	if(shipkey)
 		shipkey.name = "ship key ([new_name])"
 	for(var/area/shuttle_area as anything in shuttle_port?.shuttle_areas)
@@ -65,9 +67,12 @@
 /datum/overmap/ship/controlled/Initialize(position, datum/map_template/shuttle/creation_template, create_shuttle = TRUE, create_crew = FALSE)
 	. = ..()
 
+
 	if(creation_template)
 		source_template = creation_template
 		unique_ship_access = source_template.unique_ship_access
+		if (create_crew)
+			crew = new(src)
 		if(create_shuttle)
 			shuttle_port = SSshuttle.load_template(creation_template, src)
 			if(!shuttle_port) //Loading failed, if the shuttle is supposed to be created, we need to delete ourselves.
@@ -81,8 +86,6 @@
 #else
 	Rename("[source_template.prefix] [pick_list_replacements(SHIP_NAMES_FILE, pick(source_template.name_categories))]", TRUE)
 #endif
-	if (create_crew)
-		crew = new(src)
 
 	SSovermap.controlled_ships += src
 

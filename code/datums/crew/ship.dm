@@ -6,17 +6,14 @@
 	..()
 	ship = _ship
 	class = _ship.source_template.short_name
-	name = _ship.name
 
-	job_slots = ship.source_template.job_slots
-	base_job_slots = job_slots
+	job_slots = ship.source_template.job_slots.Copy()
+	base_job_slots = job_slots.Copy()
 	species_whitelist = ship.source_template.species_whitelist
-
-/datum/crew/ship/join_crew(mob/M, datum/job/job)
-	..()
-	pick(ship.shuttle_port.spawn_points).JoinPlayerHere(M, TRUE)
+	for (var/datum/job/job in job_slots)
+		species_whitelist_byjob[job] = job.species_whitelist
 
 /datum/crew/ship/is_join_option()
 	if (!..())
 		return FALSE
-	return (ship.shuttle_port && length(ship.shuttle_port.spawn_points) >= 1)
+	return (ship.shuttle_port)

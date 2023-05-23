@@ -282,13 +282,14 @@
 		return JOB_UNAVAILABLE_PLAYTIME
 	if(job.is_human_job)
 		// Species check
-		if(job.species_whitelist && length(job.species_whitelist) > 0)
-			if (!(character.dna.species.id in job.species_whitelist))
+		if(crew.species_whitelist_byjob[job] && length(crew.species_whitelist_byjob[job]) > 0)
+			if (!(character.dna.species.id in crew.species_whitelist_byjob[job]))
 				return JOB_UNAVAILABLE_JOB_SPECIES
 		else if(crew.species_whitelist && length(crew.species_whitelist) > 0)
 			if (!(character.dna.species.id in crew.species_whitelist))
 				return JOB_UNAVAILABLE_CREW_SPECIES
-
+	if(job.need_special_spawn_point && length(crew.spawn_points_byjob_name[job.name] == 0))
+		return JOB_UNAVAILABLE_NO_SPAWNPOINT
 	return JOB_AVAILABLE
 
 /mob/dead/new_player/proc/AttemptLateSpawn(datum/job/job, datum/crew/crew)
