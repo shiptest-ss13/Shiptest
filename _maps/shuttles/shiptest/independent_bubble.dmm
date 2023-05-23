@@ -92,6 +92,19 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/science)
+"ga" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/effect/landmark/observer_start,
+/turf/open/floor/plasteel/mono,
+/area/ship/hallway/central)
 "gl" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -1368,7 +1381,7 @@ VQ
 VQ
 VQ
 jA
-im
+ga
 HH
 nH
 ny
