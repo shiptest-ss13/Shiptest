@@ -715,9 +715,7 @@
 /area/ship/crew)
 "ba" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/firealarm{
-	pixel_y = 25
-	},
+/obj/machinery/firealarm/directional/north,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -750,9 +748,7 @@
 /area/ship/crew)
 "bc" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/airalarm/all_access{
-	pixel_y = 25
-	},
+/obj/machinery/airalarm/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -836,7 +832,7 @@
 /area/ship/engineering)
 "bi" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light/small/built,
+/obj/machinery/light/small/built/directional/south,
 /obj/effect/decal/cleanable/blood,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
@@ -2913,9 +2909,7 @@
 	pixel_x = -3;
 	pixel_y = 6
 	},
-/obj/machinery/light/small/built{
-	dir = 4
-	},
+/obj/machinery/light/small/built/directional/east,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "ef" = (
@@ -3439,6 +3433,21 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
+"XZ" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/corner/transparent/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/transparent/neutral{
+	dir = 8
+	},
+/obj/effect/landmark/observer_start,
+/turf/open/floor/plasteel/dark,
+/area/ship/cargo)
 "YW" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/cargo)
@@ -3663,7 +3672,7 @@ bn
 bB
 bL
 bW
-bW
+XZ
 nT
 wM
 cR

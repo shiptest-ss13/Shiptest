@@ -757,7 +757,7 @@
 "fn" = (
 /obj/machinery/disposal/bin,
 /obj/structure/disposalpipe/trunk,
-/obj/item/radio/intercom{
+/obj/item/radio/intercom/directional/north{
 	pixel_y = 22
 	},
 /obj/machinery/light/small/directional/east,
@@ -1131,9 +1131,7 @@
 /area/ship/hallway/central)
 "ik" = (
 /obj/machinery/portable_atmospherics/scrubber/huge/movable,
-/obj/machinery/light/small{
-	dir = 4
-	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/atmospherics)
 "il" = (
@@ -1172,7 +1170,7 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/engineering)
 "ir" = (
-/obj/machinery/newscaster{
+/obj/machinery/newscaster/directional/north{
 	pixel_y = 32
 	},
 /obj/machinery/camera/autoname,
@@ -1475,9 +1473,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/machinery/light/small/directional/north,
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel,
 /area/ship/crew/janitor)
@@ -2035,7 +2031,7 @@
 /obj/structure/disposalpipe/trunk{
 	dir = 8
 	},
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /obj/structure/window/reinforced{
 	dir = 8
 	},
@@ -2457,9 +2453,7 @@
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 4
 	},
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/engineering/atmospherics)
 "pU" = (
@@ -3424,7 +3418,7 @@
 	pixel_x = -7
 	},
 /obj/item/pen/fourcolor,
-/obj/machinery/newscaster{
+/obj/machinery/newscaster/directional/north{
 	pixel_y = 32
 	},
 /obj/effect/turf_decal/corner/opaque/ntblue{
@@ -3958,9 +3952,7 @@
 /area/ship/cargo)
 "yX" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /obj/machinery/rnd/destructive_analyzer,
 /turf/open/floor/plasteel/dark,
 /area/ship/science)
@@ -4816,7 +4808,7 @@
 	},
 /obj/item/folder,
 /obj/item/pen,
-/obj/machinery/light/small,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/wood,
 /area/ship/crew/dorm)
 "EW" = (
@@ -6298,9 +6290,7 @@
 	sortTypes = list(7,8,15,29,30);
 	tag = "Command"
 	},
-/obj/structure/extinguisher_cabinet{
-	pixel_x = -32
-	},
+/obj/structure/extinguisher_cabinet/directional/north,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "Pa" = (
@@ -7435,7 +7425,7 @@
 /area/ship/cargo/office)
 "Wn" = (
 /obj/structure/table/wood,
-/obj/machinery/light/small,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/carpet/blue,
 /area/ship/bridge)
 "Wq" = (
@@ -7682,9 +7672,7 @@
 	pixel_x = -6;
 	pixel_y = -3
 	},
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/machinery/light/small/directional/north,
 /obj/machinery/firealarm/directional/north,
 /turf/open/floor/carpet/royalblue,
 /area/ship/bridge)

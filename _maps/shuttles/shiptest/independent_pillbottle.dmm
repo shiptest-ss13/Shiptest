@@ -55,9 +55,7 @@
 "ba" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
 /obj/structure/reagent_dispensers/water_cooler,
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/machinery/light/small/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
@@ -1790,7 +1788,7 @@
 /obj/item/clothing/glasses/sunglasses{
 	pixel_y = 7
 	},
-/obj/machinery/light/small,
+/obj/machinery/light/small/directional/south,
 /obj/item/reagent_containers/spray/pepper{
 	pixel_y = -7
 	},
@@ -1966,11 +1964,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/cobweb,
-/obj/item/radio/intercom{
-	dir = 4;
-	pixel_y = 3;
-	pixel_x = -22
-	},
+/obj/item/radio/intercom/directional/west,
 /turf/open/floor/plating,
 /area/ship/hallway/central)
 "Jb" = (
@@ -2210,9 +2204,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table,
 /obj/item/toy/crayon/spraycan,
@@ -2280,9 +2272,7 @@
 /obj/effect/turf_decal/atmos/air,
 /obj/machinery/portable_atmospherics/canister/air,
 /obj/item/wrench,
-/obj/machinery/light/small{
-	dir = 8
-	},
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/plating,
 /area/ship/hallway/central)
 "Oe" = (

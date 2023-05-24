@@ -1458,6 +1458,19 @@
 	dir = 4
 	},
 /area/ship/hallway)
+"yx" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/effect/landmark/observer_start,
+/turf/open/floor/plasteel/mono,
+/area/ship/hallway)
 "yG" = (
 /obj/effect/turf_decal/corner/opaque/blue{
 	dir = 8
@@ -2872,7 +2885,7 @@ Hs
 Yy
 Hs
 fC
-mx
+yx
 Oa
 WG
 Cy
