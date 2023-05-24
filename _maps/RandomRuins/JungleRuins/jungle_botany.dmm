@@ -1,92 +1,175 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"aq" = (
-/obj/machinery/gibber,
-/obj/effect/turf_decal/box,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/freezer,
-/area/ruin/jungle/botanicalresearch/kitchen)
-"aC" = (
+"af" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /obj/structure/spacevine,
-/obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood,
-/area/ruin/jungle/botanicalresearch/command)
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/botanicalresearch/cleanroom)
+"at" = (
+/obj/machinery/light,
+/obj/machinery/doorButtons/airlock_controller{
+	idExterior = "junglebotany_cleanroom_exterior";
+	idInterior = "junglebotany_cleanroom_interior";
+	idSelf = "junglebotany_cleanroom";
+	pixel_x = 24
+	},
+/obj/structure/salvageable/seed,
+/obj/structure/spacevine,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/botanicalresearch/cleanroom)
+"aC" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/mob/living/simple_animal/hostile/venus_human_trap,
+/obj/structure/spacevine/dense,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/grimy,
+/area/ruin/jungle/botanicalresearch/crew)
 "aF" = (
 /mob/living/simple_animal/hostile/venus_human_trap,
 /obj/structure/spacevine,
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/botanicalresearch/caves)
 "aH" = (
-/obj/structure/spacevine/dense,
+/obj/item/stack/ore/salvage/scrapgold,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/botanicalresearch/cleanroom)
+"aP" = (
 /obj/structure/cable{
-	icon_state = "1-8"
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/spacevine,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/ruin/jungle/botanicalresearch/engineering)
+"bj" = (
+/obj/machinery/door/airlock/highsecurity{
+	req_access_txt = "205";
+	name = "Clean Room";
+	id_tag = "junglebotany_cleanroom_exterior"
+	},
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 4
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/botanicalresearch/caves)
-"aP" = (
-/obj/effect/turf_decal/industrial/warning{
+/obj/structure/spacevine,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/botanicalresearch/cleanroom)
+"bm" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/door/airlock/highsecurity{
+	req_access_txt = "205";
+	name = "Clean Room";
+	id_tag = "junglebotany_cleanroom_interior"
+	},
+/obj/effect/mapping_helpers/airlock/locked,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 8
+	},
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/botanicalresearch/cleanroom)
+"bs" = (
+/obj/machinery/door/airlock/security{
+	req_access_txt = "203";
+	name = "Security Officer's Room"
 	},
 /obj/structure/spacevine,
 /obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood,
+/area/ruin/jungle/botanicalresearch/checkpoint)
+"bJ" = (
+/obj/structure/salvageable/computer,
+/obj/structure/spacevine,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
-/area/ruin/jungle/botanicalresearch/engineering)
+/area/ruin/jungle/botanicalresearch/command)
 "bP" = (
 /obj/structure/table/reinforced,
 /obj/structure/spacevine,
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/botanicalresearch/caves)
-"bW" = (
-/obj/structure/spacevine,
-/obj/structure/table/wood/reinforced,
-/obj/item/stamp/denied,
+"bV" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/structure/spacevine/dense,
+/obj/item/stack/ore/salvage/scrapgold,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood,
-/area/ruin/jungle/botanicalresearch/command)
-"bZ" = (
-/obj/item/stack/cable_coil/cut/red,
-/turf/open/floor/plating/dirt/jungle/lit,
-/area/template_noop)
+/turf/open/floor/plasteel/grimy,
+/area/ruin/jungle/botanicalresearch/crew)
+"bW" = (
+/obj/machinery/power/rad_collector{
+	req_access = list(205)
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/botanicalresearch/engineering)
 "cj" = (
 /obj/item/stack/cable_coil/cut/red,
 /obj/item/stack/sheet/metal,
 /obj/structure/spacevine,
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/botanicalresearch/engineering)
-"cD" = (
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
-	dir = 8
-	},
+"cy" = (
+/obj/machinery/power/smes/engineering,
 /obj/structure/cable{
-	icon_state = "2-8"
+	icon_state = "0-8"
 	},
-/mob/living/simple_animal/hostile/venus_human_trap,
-/obj/structure/spacevine,
-/obj/item/stack/ore/salvage/scrapgold,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/white,
-/area/ruin/jungle/botanicalresearch/cleanroom)
+/turf/open/floor/engine/hull/reinforced/interior,
+/area/ruin/jungle/botanicalresearch/vault)
+"cL" = (
+/obj/structure/rack,
+/obj/item/storage/bag/plants/holding,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/engine/hull/reinforced/interior,
+/area/ruin/jungle/botanicalresearch/vault)
 "cT" = (
 /obj/structure/table/reinforced,
 /obj/structure/spacevine,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/freezer,
 /area/ruin/jungle/botanicalresearch/kitchen)
-"dj" = (
-/obj/structure/spacevine,
+"dh" = (
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/door/airlock/command{
+	req_access_txt = "206";
+	name = "Administration"
+	},
+/obj/structure/spacevine,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/grimy,
-/area/ruin/jungle/botanicalresearch/checkpoint)
-"dq" = (
-/obj/item/shard/plasma,
-/turf/open/floor/plating/dirt/jungle/lit,
-/area/template_noop)
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/botanicalresearch/command)
+"dj" = (
+/obj/item/stack/rods,
+/obj/structure/spacevine,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/ruin/jungle/botanicalresearch/engineering)
+"dz" = (
+/obj/machinery/power/rad_collector{
+	req_access = list(205)
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/rust,
+/area/ruin/jungle/botanicalresearch/engineering)
 "dB" = (
 /obj/structure/cable{
 	icon_state = "4-9"
@@ -115,52 +198,48 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/botanicalresearch/engineering)
-"dM" = (
-/obj/structure/spacevine,
-/obj/item/stack/ore/salvage/scrapgold,
-/turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/botanicalresearch/caves)
 "dS" = (
-/obj/structure/spacevine,
-/obj/structure/cable{
-	icon_state = "4-9"
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood,
-/area/ruin/jungle/botanicalresearch/command)
+/obj/structure/sign/warning/securearea,
+/turf/closed/wall/concrete/reinforced,
+/area/ruin/jungle/botanicalresearch/caves)
 "dU" = (
-/obj/structure/fence/door,
-/obj/structure/barricade/wooden/crude,
-/turf/open/floor/plating/dirt/jungle/lit,
-/area/template_noop)
+/obj/structure/spacevine,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/botanicalresearch/command)
 "dZ" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/closet/crate/rcd,
+/obj/effect/turf_decal/box,
+/obj/item/storage/box/stockparts/t3,
+/obj/item/storage/box/stockparts/t3,
+/obj/item/storage/box/stockparts/t3,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ruin/jungle/botanicalresearch/vault)
 "ee" = (
-/obj/structure/spacevine,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/carpet/purple,
-/area/ruin/jungle/botanicalresearch/command)
-"eu" = (
-/obj/item/shard/plasma,
-/obj/structure/spacevine/weak,
-/turf/open/floor/plating/dirt/jungle/lit,
+/obj/structure/fence/corner{
+	dir = 1
+	},
+/turf/open/floor/plating/grass/jungle/lit,
 /area/template_noop)
 "ex" = (
-/obj/structure/sign/warning/securearea,
-/turf/closed/wall/concrete/reinforced,
-/area/ruin/jungle/botanicalresearch/caves)
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/spacevine,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/ruin/jungle/botanicalresearch/engineering)
 "ez" = (
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/jungle/botanicalresearch/checkpoint)
-"eH" = (
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/white,
-/area/ruin/jungle/botanicalresearch/cleanroom)
 "eN" = (
 /obj/structure/cable{
 	icon_state = "1-6"
@@ -172,104 +251,15 @@
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/botanicalresearch/crew)
 "eO" = (
-/obj/machinery/grill,
-/turf/open/floor/plating/grass/jungle/lit,
-/area/template_noop)
-"eR" = (
-/obj/machinery/door/airlock{
-	name = "Cabin 1"
-	},
-/obj/structure/spacevine,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood,
-/area/ruin/jungle/botanicalresearch/crew)
-"fd" = (
-/obj/structure/spacevine/dense,
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/botanicalresearch/caves)
-"fh" = (
-/turf/closed/wall/concrete/reinforced,
-/area/ruin/jungle/botanicalresearch/kitchen)
-"fk" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/concrete/reinforced,
-/area/ruin/jungle/botanicalresearch/vault)
-"fx" = (
-/obj/structure/cable{
-	icon_state = "4-10"
-	},
-/obj/structure/cable{
-	icon_state = "4-9"
-	},
-/obj/structure/spacevine,
-/turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/botanicalresearch/caves)
-"fF" = (
-/obj/machinery/power/rad_collector{
-	req_access = list(205)
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/rust,
-/area/ruin/jungle/botanicalresearch/engineering)
-"fP" = (
-/obj/structure/table/reinforced,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/structure/spacevine,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/freezer,
-/area/ruin/jungle/botanicalresearch/kitchen)
-"fT" = (
-/obj/structure/cable{
-	icon_state = "2-5"
-	},
-/obj/structure/spacevine,
-/turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/botanicalresearch/caves)
-"gb" = (
-/obj/structure/salvageable/machine{
-	icon = 'icons/obj/stationobjs.dmi';
-	icon_state = "scanner_unanchor";
-	name = "broken communications antenna"
-	},
+/obj/structure/grille/broken,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/turf/open/floor/concrete/reinforced,
-/area/template_noop)
-"gd" = (
-/obj/machinery/power/apc/auto_name/north{
-	req_access_txt = "206";
-	start_charge = 0
-	},
-/obj/structure/cable{
-	icon_state = "0-6"
-	},
-/obj/structure/salvageable/server,
-/obj/structure/spacevine,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark,
-/area/ruin/jungle/botanicalresearch/command)
-"gm" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/spacevine/weak,
-/obj/effect/decal/cleanable/dirt,
+/obj/structure/spacevine/dense,
+/obj/effect/decal/cleanable/glass/plasma,
 /turf/open/floor/plating,
-/area/ruin/jungle/botanicalresearch/engineering)
-"gu" = (
-/obj/machinery/light,
-/obj/structure/spacevine,
-/turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/botanicalresearch/checkpoint)
-"gB" = (
+/area/ruin/jungle/botanicalresearch/caves)
+"eR" = (
 /obj/machinery/light/small{
 	dir = 1
 	},
@@ -277,73 +267,7 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
 /area/ruin/jungle/botanicalresearch/crew)
-"gN" = (
-/obj/structure/marker_beacon,
-/turf/open/floor/concrete/pavement,
-/area/template_noop)
-"gP" = (
-/obj/effect/radiation,
-/turf/open/floor/plating/dirt/jungle/lit,
-/area/template_noop)
-"gQ" = (
-/obj/structure/fence{
-	dir = 4
-	},
-/obj/structure/spacevine,
-/turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/botanicalresearch/caves)
-"gT" = (
-/obj/structure/spacevine,
-/obj/structure/closet/secure_closet/RD{
-	req_access = list(206);
-	populate = 0
-	},
-/obj/item/clothing/under/rank/rnd/research_director,
-/obj/item/clothing/under/rank/rnd/research_director/turtleneck,
-/obj/item/storage/toolbox/syndicate,
-/obj/item/clothing/shoes/laceup,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/carpet/purple,
-/area/ruin/jungle/botanicalresearch/command)
-"gV" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/structure/spacevine,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark,
-/area/ruin/jungle/botanicalresearch/checkpoint)
-"gW" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/item/stack/ore/salvage/scrapsilver,
-/turf/open/floor/plating/dirt/jungle/lit,
-/area/template_noop)
-"he" = (
-/obj/structure/spacevine,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark,
-/area/ruin/jungle/botanicalresearch/engineering)
-"hi" = (
-/obj/item/stack/ore/salvage/scrapgold,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/white,
-/area/ruin/jungle/botanicalresearch/cleanroom)
-"hl" = (
-/turf/closed/wall/concrete/reinforced,
-/area/ruin/jungle/botanicalresearch/vault)
-"hs" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 8
-	},
-/obj/structure/rack,
-/obj/structure/spacevine,
-/obj/item/stack/ore/salvage/scrapuranium/five,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark,
-/area/ruin/jungle/botanicalresearch/engineering)
-"hE" = (
+"fa" = (
 /obj/structure/closet/secure_closet/freezer/meat/open,
 /obj/item/reagent_containers/food/snacks/meat/slab/monkey,
 /obj/item/reagent_containers/food/snacks/meat/slab/monkey,
@@ -368,6 +292,192 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/freezer,
 /area/ruin/jungle/botanicalresearch/kitchen)
+"fd" = (
+/obj/structure/salvageable/computer{
+	dir = 4
+	},
+/obj/item/stack/ore/salvage/scrapgold,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/grimy,
+/area/ruin/jungle/botanicalresearch/checkpoint)
+"fh" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/structure/spacevine,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/botanicalresearch/checkpoint)
+"fk" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/jungle/botanicalresearch/vault)
+"fx" = (
+/obj/structure/cable{
+	icon_state = "4-10"
+	},
+/obj/structure/cable{
+	icon_state = "4-9"
+	},
+/obj/structure/spacevine,
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin/jungle/botanicalresearch/caves)
+"fF" = (
+/obj/structure/salvageable/computer{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/grimy,
+/area/ruin/jungle/botanicalresearch/checkpoint)
+"fH" = (
+/obj/machinery/processor,
+/obj/effect/turf_decal/box,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/freezer,
+/area/ruin/jungle/botanicalresearch/kitchen)
+"fP" = (
+/turf/open/floor/plating/dirt/jungle/lit,
+/area/template_noop)
+"fQ" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/table/reinforced,
+/obj/structure/spacevine,
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin/jungle/botanicalresearch/caves)
+"fT" = (
+/obj/structure/cable{
+	icon_state = "2-5"
+	},
+/obj/structure/spacevine,
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin/jungle/botanicalresearch/caves)
+"gb" = (
+/obj/structure/salvageable/machine{
+	icon = 'icons/obj/stationobjs.dmi';
+	icon_state = "scanner_unanchor";
+	name = "broken communications antenna"
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/concrete/reinforced,
+/area/template_noop)
+"gd" = (
+/obj/structure/spacevine,
+/obj/structure/closet/secure_closet/RD{
+	req_access = list(206);
+	populate = 0
+	},
+/obj/item/clothing/under/rank/rnd/research_director,
+/obj/item/clothing/under/rank/rnd/research_director/turtleneck,
+/obj/item/storage/toolbox/syndicate,
+/obj/item/clothing/shoes/laceup,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/carpet/purple,
+/area/ruin/jungle/botanicalresearch/command)
+"gm" = (
+/obj/structure/fence/corner,
+/turf/open/floor/plating/grass/jungle/lit,
+/area/template_noop)
+"gu" = (
+/obj/machinery/light,
+/obj/structure/spacevine,
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin/jungle/botanicalresearch/checkpoint)
+"gA" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/spacevine/weak,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light,
+/turf/open/floor/plating,
+/area/ruin/jungle/botanicalresearch/engineering)
+"gB" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/botanicalresearch/cleanroom)
+"gN" = (
+/obj/structure/marker_beacon,
+/turf/open/floor/concrete/pavement,
+/area/template_noop)
+"gP" = (
+/obj/structure/flora/tree/jungle/small,
+/turf/open/floor/plating/grass/jungle/lit,
+/area/template_noop)
+"gQ" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/engine/hull/reinforced/interior,
+/area/ruin/jungle/botanicalresearch/vault)
+"gT" = (
+/obj/structure/spacevine,
+/obj/item/bedsheet/rd,
+/obj/structure/bed,
+/obj/machinery/light_switch{
+	dir = 6;
+	pixel_y = -23
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/carpet/purple,
+/area/ruin/jungle/botanicalresearch/command)
+"gW" = (
+/obj/machinery/door/airlock/command{
+	req_access_txt = "206";
+	name = "Administration"
+	},
+/obj/structure/spacevine,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood,
+/area/ruin/jungle/botanicalresearch/command)
+"he" = (
+/obj/item/stack/rods,
+/obj/structure/spacevine/weak,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/ruin/jungle/botanicalresearch/engineering)
+"hi" = (
+/obj/item/shard/plasma,
+/obj/structure/spacevine/weak,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/ruin/jungle/botanicalresearch/engineering)
+"hj" = (
+/obj/structure/closet/secure_closet/freezer/fridge/open,
+/obj/effect/turf_decal/box,
+/obj/item/storage/box/ingredients/american,
+/obj/item/storage/box/ingredients/carnivore,
+/obj/item/storage/box/ingredients/delights,
+/obj/item/storage/box/ingredients/exotic,
+/obj/item/storage/box/ingredients/fiesta,
+/obj/item/storage/box/ingredients/fruity,
+/obj/item/storage/box/ingredients/grains,
+/obj/item/storage/box/ingredients/italian,
+/obj/item/storage/box/ingredients/sweets,
+/obj/item/storage/box/ingredients/wildcard,
+/obj/item/storage/box/ingredients/vegetarian,
+/obj/structure/spacevine,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/freezer,
+/area/ruin/jungle/botanicalresearch/kitchen)
+"hl" = (
+/turf/closed/wall/concrete/reinforced,
+/area/ruin/jungle/botanicalresearch/vault)
+"hs" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/structure/rack,
+/obj/structure/spacevine,
+/obj/item/stack/ore/salvage/scrapuranium/five,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/botanicalresearch/engineering)
 "hI" = (
 /obj/machinery/door/airlock{
 	name = "Cabin 3"
@@ -415,16 +525,13 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/botanicalresearch/engineering)
 "if" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /obj/structure/spacevine,
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/botanicalresearch/caves)
-"iM" = (
+/obj/structure/table/wood/reinforced,
+/obj/item/pen/fountain,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood,
+/area/ruin/jungle/botanicalresearch/command)
+"io" = (
 /obj/effect/mob_spawn/human/corpse/junglebotany/sec,
 /obj/structure/spacevine,
 /obj/structure/cable{
@@ -433,6 +540,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/jungle/botanicalresearch/checkpoint)
+"iM" = (
+/obj/machinery/door/airlock/public/glass,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/spacevine/dense,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/grimy,
+/area/ruin/jungle/botanicalresearch/crew)
 "iR" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -444,20 +560,45 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
 /area/ruin/jungle/botanicalresearch/command)
-"iU" = (
-/obj/item/stack/cable_coil/cut/red,
-/obj/item/stack/ore/salvage/scrapuranium,
-/turf/open/floor/plating/dirt/jungle/lit,
-/area/template_noop)
-"ji" = (
-/obj/structure/fence/door/opened,
+"iT" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /obj/structure/spacevine/dense,
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/botanicalresearch/caves)
+"iU" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/engine/hull/reinforced/interior,
+/area/ruin/jungle/botanicalresearch/vault)
+"jh" = (
+/obj/machinery/power/terminal,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/spacevine,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/rust,
+/area/ruin/jungle/botanicalresearch/engineering)
+"ji" = (
+/obj/structure/fence{
+	dir = 4
+	},
+/obj/structure/spacevine,
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin/jungle/botanicalresearch/caves)
 "jp" = (
-/obj/item/stack/ore/salvage/scrapmetal,
-/turf/open/floor/plating/dirt/jungle/lit,
-/area/template_noop)
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/structure/spacevine,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/grimy,
+/area/ruin/jungle/botanicalresearch/crew)
 "jw" = (
 /mob/living/simple_animal/hostile/venus_human_trap,
 /obj/structure/spacevine,
@@ -481,26 +622,39 @@
 /turf/open/floor/concrete/pavement,
 /area/template_noop)
 "jU" = (
-/obj/structure/fence/corner,
+/obj/structure/fence{
+	dir = 4
+	},
 /turf/open/floor/plating/grass/jungle/lit,
 /area/template_noop)
 "jW" = (
-/obj/structure/closet/secure_closet/personal/cabinet,
-/obj/structure/spacevine,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood{
-	icon_state = "wood-broken4"
-	},
-/area/ruin/jungle/botanicalresearch/crew)
-"jX" = (
-/obj/machinery/processor,
-/obj/effect/turf_decal/box,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/freezer,
-/area/ruin/jungle/botanicalresearch/kitchen)
-"ko" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/reinforced,
+/area/ruin/jungle/botanicalresearch/vault)
+"jX" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/rust,
+/area/ruin/jungle/botanicalresearch/engineering)
+"ko" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/closet/crate/hydroponics,
+/obj/effect/spawner/lootdrop/seed_vault,
+/obj/effect/spawner/lootdrop/seed_vault,
+/obj/effect/spawner/lootdrop/seed_vault,
+/obj/effect/turf_decal/box,
+/obj/item/seeds/wheat/meat,
+/obj/item/seeds/wheat/meat,
+/obj/item/seeds/wheat/meat,
+/obj/item/seeds/wheat/meat,
+/obj/item/seeds/wheat/meat,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/engine/hull/reinforced/interior,
 /area/ruin/jungle/botanicalresearch/vault)
 "ks" = (
 /obj/structure/cable{
@@ -524,50 +678,63 @@
 /turf/open/floor/concrete/reinforced,
 /area/ruin/jungle/botanicalresearch/vault)
 "kA" = (
-/obj/machinery/door/airlock/security{
-	req_access_txt = "203";
-	name = "Security Officer's Room"
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
 	},
 /obj/structure/spacevine,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood,
-/area/ruin/jungle/botanicalresearch/checkpoint)
-"kC" = (
-/obj/structure/flora/junglebush/b,
-/obj/structure/spacevine,
-/turf/open/floor/plating/grass/jungle/lit,
-/area/template_noop)
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/botanicalresearch/engineering)
 "kV" = (
-/obj/item/shard/plasma,
-/obj/structure/spacevine/dense,
-/obj/item/stack/ore/salvage/scrapmetal/five,
-/turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/botanicalresearch/caves)
+/obj/machinery/power/apc/auto_name/north{
+	req_access_txt = "205";
+	start_charge = 0
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/spacevine,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/grimy,
+/area/ruin/jungle/botanicalresearch/crew)
 "li" = (
+/obj/machinery/grill,
 /turf/open/floor/plating/grass/jungle/lit,
 /area/template_noop)
 "lj" = (
 /obj/structure/spacevine,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
-/area/ruin/jungle/botanicalresearch/engineering)
-"lk" = (
-/obj/structure/spacevine,
-/obj/structure/table/wood/reinforced,
-/obj/item/paper_bin,
-/obj/item/pen,
+/obj/structure/cable{
+	icon_state = "4-9"
+	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
 /area/ruin/jungle/botanicalresearch/command)
+"lk" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/spacevine/weak,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/ruin/jungle/botanicalresearch/engineering)
 "lK" = (
-/obj/structure/spacevine,
-/obj/machinery/door/airlock/command{
-	req_access_txt = "206";
-	name = "Administration"
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/machinery/power/rad_collector{
+	req_access = list(205)
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/carpet/purple,
-/area/ruin/jungle/botanicalresearch/command)
+/turf/open/floor/plating,
+/area/ruin/jungle/botanicalresearch/engineering)
+"lY" = (
+/obj/structure/spacevine/weak,
+/obj/item/stack/ore/salvage/scrapmetal/five,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin/jungle/botanicalresearch/engineering)
 "mc" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -575,38 +742,66 @@
 /obj/structure/spacevine/dense,
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/botanicalresearch/caves)
+"md" = (
+/obj/structure/flora/ausbushes/sunnybush,
+/turf/open/floor/plating/grass/jungle/lit,
+/area/template_noop)
 "mj" = (
-/obj/structure/spacevine/weak,
-/obj/item/stack/ore/salvage/scrapmetal/five,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/botanicalresearch/engineering)
-"mk" = (
-/obj/item/shard/plasma,
-/obj/structure/spacevine/dense,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/obj/item/shard/plasma,
-/turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/botanicalresearch/caves)
-"mB" = (
-/obj/structure/spacevine/weak,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
-/area/ruin/jungle/botanicalresearch/engineering)
-"nf" = (
-/obj/machinery/door/airlock/public/glass,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/structure/spacevine/dense,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/power/smes,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/rust,
+/area/ruin/jungle/botanicalresearch/engineering)
+"mu" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/structure/spacevine,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/freezer,
+/area/ruin/jungle/botanicalresearch/kitchen)
+"mB" = (
+/obj/structure/table/reinforced,
+/obj/effect/spawner/lootdrop/donkpockets,
+/obj/effect/spawner/lootdrop/donkpockets,
+/obj/effect/spawner/lootdrop/donkpockets,
+/obj/structure/spacevine,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/freezer,
+/area/ruin/jungle/botanicalresearch/kitchen)
+"mH" = (
+/obj/structure/salvageable/autolathe,
+/obj/item/seeds/wheat/meat,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/botanicalresearch/cleanroom)
+"mQ" = (
+/obj/item/ammo_casing/c45{
+	projectile_type = null;
+	icon_state = "pistol-steel-empty";
+	name = "spent .45 bullet casing";
+	desc = "A .45 bullet casing. This one appears to be spent."
+	},
+/obj/structure/spacevine,
+/mob/living/simple_animal/hostile/venus_human_trap,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/grimy,
-/area/ruin/jungle/botanicalresearch/crew)
+/area/ruin/jungle/botanicalresearch/checkpoint)
+"nf" = (
+/obj/structure/spacevine,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/botanicalresearch/engineering)
 "ni" = (
 /obj/item/stack/rods,
 /obj/item/stack/sheet/metal,
@@ -644,6 +839,82 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/botanicalresearch/command)
 "nE" = (
+/obj/machinery/door/airlock{
+	name = "Freezer"
+	},
+/obj/structure/spacevine/dense,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/freezer,
+/area/ruin/jungle/botanicalresearch/kitchen)
+"nJ" = (
+/obj/machinery/hydroponics/constructable,
+/obj/item/stack/ore/salvage/scrapgold,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/botanicalresearch/cleanroom)
+"nK" = (
+/obj/item/stack/sheet/metal,
+/obj/structure/spacevine,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/botanicalresearch/engineering)
+"nL" = (
+/obj/structure/spacevine/weak,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/rust,
+/area/ruin/jungle/botanicalresearch/engineering)
+"nO" = (
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/spacevine,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/ruin/jungle/botanicalresearch/engineering)
+"nT" = (
+/obj/structure/spacevine,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/grimy,
+/area/ruin/jungle/botanicalresearch/checkpoint)
+"od" = (
+/obj/item/stack/rods,
+/obj/structure/spacevine/weak,
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin/jungle/botanicalresearch/engineering)
+"of" = (
+/obj/structure/closet/crate/science,
+/obj/effect/turf_decal/box,
+/obj/effect/spawner/lootdrop/rnd,
+/obj/effect/spawner/lootdrop/rnd,
+/obj/effect/spawner/lootdrop/rnd,
+/obj/effect/spawner/lootdrop/salvage_laser,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/engine/hull/reinforced/interior,
+/area/ruin/jungle/botanicalresearch/vault)
+"oh" = (
+/obj/item/shard/plasma,
+/obj/structure/spacevine/dense,
+/obj/item/stack/ore/salvage/scrapmetal/five,
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin/jungle/botanicalresearch/caves)
+"oj" = (
+/obj/structure/fence/door/opened,
+/obj/structure/spacevine,
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin/jungle/botanicalresearch/caves)
+"ol" = (
+/obj/effect/turf_decal/industrial/warning/corner,
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/jungle/botanicalresearch/vault)
+"os" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -655,66 +926,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ruin/jungle/botanicalresearch/engineering)
-"nJ" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
-/obj/structure/closet/secure_closet/engineering_welding{
-	req_access = list(205)
-	},
-/obj/structure/spacevine,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark,
-/area/ruin/jungle/botanicalresearch/engineering)
-"nL" = (
-/obj/structure/spacevine/weak,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/rust,
-/area/ruin/jungle/botanicalresearch/engineering)
-"nO" = (
-/obj/structure/spacevine/dense,
-/obj/machinery/power/floodlight,
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/botanicalresearch/caves)
-"nT" = (
-/obj/item/stack/ore/salvage/scrapmetal/five,
-/turf/open/floor/plating/dirt/jungle/lit,
-/area/template_noop)
-"od" = (
-/obj/item/stack/rods,
-/obj/structure/spacevine/weak,
-/turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/botanicalresearch/engineering)
-"of" = (
-/obj/structure/spacevine,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood,
-/area/ruin/jungle/botanicalresearch/command)
-"oh" = (
-/obj/structure/salvageable/computer,
-/obj/structure/spacevine,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark,
-/area/ruin/jungle/botanicalresearch/command)
-"oi" = (
-/obj/item/stack/ore/salvage/scrapuranium,
-/turf/open/floor/plating/dirt/jungle/lit,
-/area/template_noop)
-"oj" = (
-/obj/structure/fence/door/opened,
-/obj/structure/spacevine,
-/turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/botanicalresearch/caves)
-"os" = (
-/obj/structure/spacevine/dense,
-/obj/structure/cable{
-	icon_state = "5-8"
-	},
-/turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/botanicalresearch/caves)
 "pg" = (
 /obj/structure/spacevine/dense,
 /obj/structure/cable{
@@ -730,47 +941,22 @@
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/botanicalresearch/caves)
 "pm" = (
-/obj/structure/closet/secure_closet/freezer/meat/open,
-/obj/item/reagent_containers/food/snacks/meat/slab/monkey,
-/obj/item/reagent_containers/food/snacks/meat/slab/monkey,
-/obj/item/reagent_containers/food/snacks/meat/slab/monkey,
-/obj/item/reagent_containers/food/snacks/meat/slab/monkey,
-/obj/item/reagent_containers/food/snacks/meat/slab/monkey,
-/obj/item/reagent_containers/food/snacks/meat/slab/monkey,
-/obj/item/reagent_containers/food/snacks/meat/slab/monkey,
-/obj/item/reagent_containers/food/snacks/meat/slab/monkey,
-/obj/item/reagent_containers/food/snacks/meat/slab/monkey,
-/obj/item/reagent_containers/food/snacks/meat/slab/monkey,
-/obj/item/reagent_containers/food/snacks/meat/slab/monkey,
-/obj/item/reagent_containers/food/snacks/meat/slab/monkey,
-/obj/item/reagent_containers/food/snacks/meat/slab/monkey,
-/obj/item/reagent_containers/food/snacks/meat/slab/monkey,
-/obj/item/reagent_containers/food/snacks/meat/slab/meatwheat,
-/obj/item/reagent_containers/food/snacks/meat/slab/meatwheat,
-/obj/item/reagent_containers/food/snacks/meat/slab/meatwheat,
-/obj/item/reagent_containers/food/snacks/meat/slab/meatwheat,
-/obj/item/reagent_containers/food/snacks/meat/slab/meatwheat,
-/obj/item/reagent_containers/food/snacks/meat/slab/meatwheat,
-/obj/item/reagent_containers/food/snacks/meat/slab/meatwheat,
-/obj/item/reagent_containers/food/snacks/meat/slab/meatwheat,
-/obj/item/reagent_containers/food/snacks/meat/slab/meatwheat,
 /obj/structure/spacevine,
-/turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/botanicalresearch/caves)
+/obj/structure/table/wood/reinforced,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood,
+/area/ruin/jungle/botanicalresearch/command)
 "pu" = (
 /obj/structure/spacevine,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/jungle/botanicalresearch/crew)
 "py" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/spacevine,
+/obj/structure/filingcabinet/double,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/rust,
-/area/ruin/jungle/botanicalresearch/engineering)
+/turf/open/floor/wood,
+/area/ruin/jungle/botanicalresearch/command)
 "pz" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -779,25 +965,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/jungle/botanicalresearch/crew)
-"pI" = (
-/obj/structure/closet/crate/science,
-/obj/effect/turf_decal/box,
-/obj/effect/spawner/lootdrop/rnd,
-/obj/effect/spawner/lootdrop/rnd,
-/obj/effect/spawner/lootdrop/rnd,
-/obj/effect/spawner/lootdrop/salvage_laser,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/engine/hull/reinforced/interior,
-/area/ruin/jungle/botanicalresearch/vault)
 "pM" = (
-/obj/structure/cable{
-	icon_state = "2-8"
+/obj/structure/spacevine,
+/obj/machinery/light{
+	dir = 1
 	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/spacevine/weak,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
-/area/ruin/jungle/botanicalresearch/engineering)
+/turf/open/floor/wood,
+/area/ruin/jungle/botanicalresearch/command)
 "pQ" = (
 /obj/structure/cable{
 	icon_state = "0-8"
@@ -807,33 +982,17 @@
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ruin/jungle/botanicalresearch/vault)
 "qb" = (
-/obj/machinery/door/airlock{
-	name = "Cabin 4"
-	},
+/obj/machinery/light/small,
 /obj/structure/spacevine,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
 /area/ruin/jungle/botanicalresearch/crew)
 "qf" = (
-/obj/structure/table/reinforced,
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/obj/machinery/power/apc/auto_name/west{
-	start_charge = 0
-	},
+/obj/machinery/atmospherics/components/unary/tank/air,
 /obj/structure/spacevine,
-/obj/item/stamp{
-	pixel_x = -10
-	},
-/obj/item/stamp/denied{
-	pixel_x = 12
-	},
-/obj/item/paper_bin,
-/obj/item/pen,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/grimy,
-/area/ruin/jungle/botanicalresearch/checkpoint)
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/botanicalresearch/cleanroom)
 "qn" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -841,46 +1000,28 @@
 /obj/structure/spacevine,
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/botanicalresearch/caves)
-"qy" = (
-/obj/item/stack/rods,
-/obj/structure/spacevine,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
-/area/ruin/jungle/botanicalresearch/engineering)
 "qz" = (
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/jungle/botanicalresearch/cleanroom)
-"qA" = (
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/spacevine,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
-/area/ruin/jungle/botanicalresearch/engineering)
 "qC" = (
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
-/obj/structure/spacevine,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/white,
-/area/ruin/jungle/botanicalresearch/cleanroom)
-"qK" = (
-/obj/item/stack/ore/salvage/scrapuranium/five,
-/turf/open/floor/plating/dirt/jungle/lit,
-/area/template_noop)
-"qQ" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/obj/machinery/power/smes,
-/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/spacevine,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/rust,
-/area/ruin/jungle/botanicalresearch/engineering)
+/turf/open/floor/plasteel/grimy,
+/area/ruin/jungle/botanicalresearch/crew)
+"qQ" = (
+/obj/structure/cable{
+	icon_state = "6-8"
+	},
+/obj/effect/mob_spawn/human/corpse/junglebotany{
+	brute_damage = 200
+	},
+/obj/item/kitchen/knife,
+/obj/structure/spacevine,
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin/jungle/botanicalresearch/caves)
 "qT" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -888,102 +1029,92 @@
 /obj/structure/spacevine,
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/botanicalresearch/caves)
-"rj" = (
-/obj/structure/table/reinforced,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/spawner/lootdrop/donkpockets,
+"re" = (
 /obj/structure/spacevine,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/freezer,
-/area/ruin/jungle/botanicalresearch/kitchen)
+/obj/item/wrench/old,
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin/jungle/botanicalresearch/caves)
 "rs" = (
 /obj/structure/spacevine/dense,
 /obj/structure/cable{
-	icon_state = "4-8"
+	icon_state = "1-8"
 	},
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/botanicalresearch/caves)
-"ru" = (
-/obj/machinery/door/airlock/command{
-	req_access_txt = "206";
-	name = "Administration"
-	},
+"rt" = (
 /obj/structure/spacevine,
+/obj/structure/table/wood/reinforced,
+/obj/item/stamp/denied,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
 /area/ruin/jungle/botanicalresearch/command)
-"rv" = (
-/obj/machinery/light/small,
-/obj/structure/spacevine,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/grimy,
-/area/ruin/jungle/botanicalresearch/crew)
-"rx" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/door/airlock/command{
-	req_access_txt = "206";
-	name = "Administration"
-	},
-/obj/structure/spacevine,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark,
-/area/ruin/jungle/botanicalresearch/command)
-"rV" = (
-/obj/machinery/power/floodlight,
-/obj/structure/cable,
-/turf/open/floor/plating/rust,
-/area/ruin/jungle/botanicalresearch/caves)
-"rY" = (
+"ru" = (
 /mob/living/simple_animal/hostile/venus_human_trap,
 /obj/structure/spacevine,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/botanicalresearch/engineering)
-"sl" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
+"rv" = (
+/obj/effect/turf_decal/industrial/warning,
+/obj/structure/spacevine,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/botanicalresearch/engineering)
+"rV" = (
+/obj/machinery/atmospherics/components/unary/tank/air,
+/obj/machinery/light{
+	dir = 1
 	},
-/obj/machinery/door/airlock/highsecurity{
-	req_access_txt = "205";
-	name = "Clean Room";
-	id_tag = "junglebotany_cleanroom_interior"
-	},
-/obj/effect/mapping_helpers/airlock/locked,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 8
-	},
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 4
-	},
+/obj/structure/spacevine,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/white,
 /area/ruin/jungle/botanicalresearch/cleanroom)
-"sp" = (
-/obj/item/stack/sheet/metal,
+"sg" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
 /obj/structure/spacevine,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
-/area/ruin/jungle/botanicalresearch/engineering)
-"sx" = (
+/turf/open/floor/plasteel/grimy,
+/area/ruin/jungle/botanicalresearch/crew)
+"sl" = (
 /obj/item/stack/rods,
 /obj/structure/spacevine,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/botanicalresearch/engineering)
-"sz" = (
-/obj/structure/fence/corner{
-	dir = 8
+"sp" = (
+/obj/structure/cable{
+	icon_state = "2-4"
 	},
-/turf/open/floor/plating/grass/jungle/lit,
+/obj/structure/spacevine/weak,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/ruin/jungle/botanicalresearch/engineering)
+"sx" = (
+/obj/structure/spacevine,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/grimy,
+/area/ruin/jungle/botanicalresearch/checkpoint)
+"sz" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/structure/spacevine,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/botanicalresearch/engineering)
+"sB" = (
+/obj/item/stack/ore/salvage/scrapuranium,
+/turf/open/floor/plating/dirt/jungle/lit,
 /area/template_noop)
 "sC" = (
-/obj/structure/spacevine/dense,
-/mob/living/simple_animal/hostile/venus_human_trap,
-/turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/botanicalresearch/caves)
+/obj/structure/closet/crate/hydroponics,
+/obj/effect/turf_decal/box,
+/obj/effect/spawner/lootdrop/techstorage/service,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/engine/hull/reinforced/interior,
+/area/ruin/jungle/botanicalresearch/vault)
 "sG" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -991,6 +1122,9 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/spacevine,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ruin/jungle/botanicalresearch/engineering)
 "sN" = (
@@ -1001,55 +1135,42 @@
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/botanicalresearch/caves)
 "sP" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 8
-	},
-/obj/structure/rack,
-/obj/structure/spacevine,
-/obj/item/stack/ore/salvage/scrapplasma/five,
-/obj/item/stack/ore/salvage/scrapplasma/five,
-/obj/item/stack/ore/salvage/scrapplasma/five,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark,
-/area/ruin/jungle/botanicalresearch/engineering)
-"sY" = (
-/obj/structure/spacevine/weak,
-/obj/item/stack/ore/salvage/scrapgold,
-/turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/botanicalresearch/engineering)
-"sZ" = (
-/obj/item/stack/rods,
-/obj/item/stack/ore/salvage/scraptitanium/five,
-/turf/open/floor/plating/dirt/jungle/lit,
-/area/template_noop)
-"ta" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable{
-	icon_state = "2-8"
+	icon_state = "4-8"
 	},
-/obj/item/stack/rods,
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/spacevine,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/light,
 /turf/open/floor/plating,
 /area/ruin/jungle/botanicalresearch/engineering)
-"tg" = (
-/obj/structure/filingcabinet/double,
-/obj/machinery/light,
+"sY" = (
+/obj/structure/spacevine,
+/obj/machinery/door/airlock/command{
+	req_access_txt = "206";
+	name = "Administration"
+	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/grimy,
+/turf/open/floor/carpet/purple,
+/area/ruin/jungle/botanicalresearch/command)
+"tg" = (
+/obj/structure/spacevine,
+/obj/machinery/light_switch{
+	dir = 6;
+	pixel_y = -23
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood,
 /area/ruin/jungle/botanicalresearch/checkpoint)
 "tj" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/door/airlock/engineering{
-	name = "Emitter Room";
-	req_access_txt = "205"
-	},
+/obj/item/bedsheet/green,
+/obj/structure/bed,
 /obj/structure/spacevine,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark,
-/area/ruin/jungle/botanicalresearch/engineering)
+/turf/open/floor/wood{
+	icon_state = "wood-broken4"
+	},
+/area/ruin/jungle/botanicalresearch/crew)
 "tk" = (
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -1060,21 +1181,27 @@
 	},
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/botanicalresearch/caves)
-"tn" = (
-/obj/machinery/hydroponics/constructable,
-/obj/item/stack/ore/salvage/scrapgold,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/white,
-/area/ruin/jungle/botanicalresearch/cleanroom)
 "tu" = (
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/jungle/botanicalresearch/command)
 "tv" = (
-/obj/structure/spacevine,
-/obj/structure/table/wood/reinforced,
-/obj/item/stamp,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 6
+	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/jungle/botanicalresearch/vault)
+"tF" = (
+/obj/machinery/door/airlock/command{
+	req_access_txt = "206";
+	name = "Administration"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/spacevine,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
 /area/ruin/jungle/botanicalresearch/command)
 "tI" = (
 /obj/effect/spawner/lootdrop/salvage_50,
@@ -1082,38 +1209,31 @@
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/botanicalresearch/caves)
 "tJ" = (
-/obj/structure/cable{
-	icon_state = "1-4"
+/obj/effect/turf_decal/industrial/warning{
+	dir = 10
 	},
-/obj/structure/closet/crate/rcd,
-/obj/effect/turf_decal/box,
-/obj/item/storage/box/stockparts/t3,
-/obj/item/storage/box/stockparts/t3,
-/obj/item/storage/box/stockparts/t3,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/engine/hull/reinforced/interior,
+/turf/open/floor/concrete/reinforced,
 /area/ruin/jungle/botanicalresearch/vault)
-"tN" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/door/airlock/highsecurity{
-	req_access_txt = "205";
-	name = "Clean Room"
-	},
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+"tK" = (
+/obj/structure/spacevine,
+/obj/structure/table/wood/reinforced,
+/obj/machinery/light{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/white,
-/area/ruin/jungle/botanicalresearch/cleanroom)
-"tP" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/shutters,
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/turf/open/floor/plating,
+/turf/open/floor/carpet/purple,
+/area/ruin/jungle/botanicalresearch/command)
+"tN" = (
+/turf/closed/wall/concrete/reinforced,
 /area/ruin/jungle/botanicalresearch/caves)
+"tP" = (
+/obj/effect/radiation{
+	rad_power = 44;
+	rad_range = 3
+	},
+/turf/open/floor/plating/dirt/jungle/lit,
+/area/template_noop)
 "tY" = (
 /obj/structure/spacevine,
 /obj/machinery/light{
@@ -1123,40 +1243,35 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/botanicalresearch/command)
 "tZ" = (
+/obj/structure/spacevine/dense,
+/obj/machinery/power/floodlight,
 /obj/structure/cable{
-	icon_state = "1-2"
+	icon_state = "0-8"
 	},
-/obj/structure/closet/crate/hydroponics,
-/obj/effect/spawner/lootdrop/seed_vault,
-/obj/effect/spawner/lootdrop/seed_vault,
-/obj/effect/spawner/lootdrop/seed_vault,
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin/jungle/botanicalresearch/caves)
+"ub" = (
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/closet/crate/freezer,
 /obj/effect/turf_decal/box,
-/obj/item/seeds/wheat/meat,
-/obj/item/seeds/wheat/meat,
-/obj/item/seeds/wheat/meat,
-/obj/item/seeds/wheat/meat,
-/obj/item/seeds/wheat/meat,
+/obj/item/seeds/replicapod,
+/obj/item/seeds/replicapod,
+/obj/item/seeds/replicapod,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ruin/jungle/botanicalresearch/vault)
-"ub" = (
-/obj/structure/spacevine,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark,
-/area/ruin/jungle/botanicalresearch/command)
 "ue" = (
-/obj/structure/flora/junglebush/c,
-/obj/structure/spacevine,
+/obj/structure/spacevine/dense,
 /turf/open/floor/plating/grass/jungle/lit,
 /area/template_noop)
 "ui" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/spacevine/dense,
+/obj/machinery/light/small,
+/obj/structure/spacevine,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/freezer,
-/area/ruin/jungle/botanicalresearch/kitchen)
+/turf/open/floor/plasteel/grimy,
+/area/ruin/jungle/botanicalresearch/crew)
 "uk" = (
 /obj/structure/spacevine,
 /obj/effect/decal/cleanable/dirt,
@@ -1174,265 +1289,145 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/botanicalresearch/engineering)
 "uz" = (
-/obj/item/bedsheet/green,
-/obj/structure/bed,
+/obj/structure/closet/secure_closet/freezer/kitchen/maintenance,
+/obj/effect/turf_decal/box,
 /obj/structure/spacevine,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood{
-	icon_state = "wood-broken4"
-	},
-/area/ruin/jungle/botanicalresearch/crew)
+/turf/open/floor/plasteel/freezer,
+/area/ruin/jungle/botanicalresearch/kitchen)
 "uX" = (
 /obj/structure/spacevine/dense,
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/botanicalresearch/caves)
 "vm" = (
-/obj/machinery/light/small{
-	dir = 8
+/obj/machinery/door/airlock{
+	name = "Cabin 1"
 	},
-/obj/structure/spacevine/dense,
-/obj/item/stack/ore/salvage/scrapgold,
+/obj/structure/spacevine,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/grimy,
+/turf/open/floor/wood,
 /area/ruin/jungle/botanicalresearch/crew)
-"vv" = (
-/obj/machinery/light{
-	dir = 1
+"vz" = (
+/obj/structure/tank_dispenser/plasma,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/botanicalresearch/engineering)
+"vG" = (
+/obj/structure/spacevine,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood,
+/area/ruin/jungle/botanicalresearch/command)
+"wr" = (
+/obj/structure/spacevine/weak,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin/jungle/botanicalresearch/engineering)
+"wy" = (
+/obj/item/stack/sheet/metal,
+/obj/structure/spacevine,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/ruin/jungle/botanicalresearch/engineering)
+"wJ" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
 	},
-/obj/structure/salvageable/computer,
+/obj/machinery/light/small,
+/obj/machinery/doorButtons/access_button{
+	idDoor = "junglebotany_cleanroom_interior";
+	idSelf = "junglebotany_cleanroom";
+	pixel_y = 24
+	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/white,
 /area/ruin/jungle/botanicalresearch/cleanroom)
-"vz" = (
+"wK" = (
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/engine/hull/reinforced/interior,
-/area/ruin/jungle/botanicalresearch/vault)
-"vG" = (
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/structure/spacevine,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/plating/rust,
 /area/ruin/jungle/botanicalresearch/engineering)
-"vX" = (
-/obj/structure/salvageable/computer{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/grimy,
-/area/ruin/jungle/botanicalresearch/checkpoint)
-"wr" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/white,
-/area/ruin/jungle/botanicalresearch/cleanroom)
-"wy" = (
-/obj/structure/spacevine,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/table/reinforced,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood,
-/area/ruin/jungle/botanicalresearch/command)
-"wA" = (
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/obj/structure/spacevine,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/grimy,
-/area/ruin/jungle/botanicalresearch/crew)
-"wJ" = (
-/obj/item/ammo_casing/c45{
-	projectile_type = null;
-	icon_state = "pistol-steel-empty";
-	name = "spent .45 bullet casing";
-	desc = "A .45 bullet casing. This one appears to be spent."
-	},
-/obj/structure/spacevine,
-/obj/item/paper{
-	info = "Make sure the fake Nanotrasen sign stays up."
-	},
-/obj/structure/table/reinforced,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/grimy,
-/area/ruin/jungle/botanicalresearch/checkpoint)
 "wN" = (
-/obj/structure/flora/junglebush/large,
-/turf/open/floor/plating/grass/jungle/lit,
-/area/template_noop)
-"wR" = (
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/spacevine,
+/obj/item/stack/ore/salvage/scrapgold,
+/mob/living/simple_animal/hostile/venus_human_trap,
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin/jungle/botanicalresearch/caves)
+"wR" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/spacevine,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin/jungle/botanicalresearch/caves)
+"xf" = (
+/obj/structure/spacevine/weak,
+/obj/item/stack/ore/salvage/scrapgold,
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin/jungle/botanicalresearch/engineering)
+"xi" = (
+/obj/structure/spacevine,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood,
+/area/ruin/jungle/botanicalresearch/checkpoint)
+"xF" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-9"
+	},
+/obj/structure/spacevine,
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin/jungle/botanicalresearch/caves)
+"xL" = (
+/obj/structure/fence,
+/turf/open/floor/plating/grass/jungle/lit,
+/area/template_noop)
+"xP" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/item/stack/ore/salvage/scrapsilver,
+/turf/open/floor/plating/dirt/jungle/lit,
+/area/template_noop)
+"xZ" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 8
+	},
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/obj/structure/spacevine,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
-/area/ruin/jungle/botanicalresearch/engineering)
-"wT" = (
-/obj/machinery/door/airlock/highsecurity{
-	req_access_txt = "205";
-	name = "Clean Room";
-	id_tag = "junglebotany_cleanroom_exterior"
-	},
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/spacevine,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/white,
-/area/ruin/jungle/botanicalresearch/cleanroom)
-"wX" = (
-/obj/machinery/button/door{
-	id = "junglebotany_secpost_exterior_window";
-	pixel_y = -24;
-	pixel_x = -6;
-	name = "External Window Shutters"
-	},
-/obj/machinery/button/door{
-	id = "junglebotany_secpost_interior";
-	pixel_y = -34;
-	pixel_x = 6;
-	name = "Internal Blast Door"
-	},
-/obj/machinery/button/door{
-	id = "junglebotany_secpost_exterior_window";
-	pixel_y = -24;
-	pixel_x = 6;
-	name = "Internal Window Shutters"
-	},
-/obj/machinery/button/door{
-	id = "junglebotany_secpost_exterior";
-	pixel_y = -34;
-	pixel_x = -6;
-	name = "External Blast Door"
-	},
-/obj/item/ammo_casing/c45{
-	projectile_type = null;
-	icon_state = "pistol-steel-empty";
-	name = "spent .45 bullet casing";
-	desc = "A .45 bullet casing. This one appears to be spent."
-	},
-/obj/structure/spacevine,
 /mob/living/simple_animal/hostile/venus_human_trap,
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/grimy,
-/area/ruin/jungle/botanicalresearch/checkpoint)
-"xf" = (
-/obj/machinery/light{
-	dir = 1
-	},
 /obj/structure/spacevine,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/grimy,
-/area/ruin/jungle/botanicalresearch/checkpoint)
-"xL" = (
-/turf/closed/wall/concrete/reinforced,
-/area/ruin/jungle/botanicalresearch/caves)
-"xZ" = (
-/obj/item/stack/rods,
-/obj/structure/spacevine/dense,
-/turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/botanicalresearch/caves)
-"ya" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/structure/spacevine,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark,
-/area/ruin/jungle/botanicalresearch/checkpoint)
-"yc" = (
-/obj/structure/spacevine,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/freezer,
-/area/ruin/jungle/botanicalresearch/kitchen)
-"yi" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/concrete/reinforced,
-/area/ruin/jungle/botanicalresearch/vault)
-"yq" = (
-/obj/structure/salvageable/autolathe,
-/obj/item/seeds/wheat/meat,
+/obj/item/stack/ore/salvage/scrapgold,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/white,
 /area/ruin/jungle/botanicalresearch/cleanroom)
-"yw" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
+"ya" = (
+/obj/item/shard/plasma,
+/obj/structure/spacevine/dense,
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/concrete/reinforced,
-/area/ruin/jungle/botanicalresearch/vault)
-"yy" = (
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/obj/structure/closet/crate/freezer,
-/obj/effect/turf_decal/box,
-/obj/item/seeds/replicapod,
-/obj/item/seeds/replicapod,
-/obj/item/seeds/replicapod,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/engine/hull/reinforced/interior,
-/area/ruin/jungle/botanicalresearch/vault)
-"yF" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/obj/structure/spacevine,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/rust,
-/area/ruin/jungle/botanicalresearch/engineering)
-"yJ" = (
-/obj/structure/spacevine,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/grimy,
-/area/ruin/jungle/botanicalresearch/checkpoint)
-"yK" = (
-/obj/machinery/door/airlock/command{
-	req_access_txt = "206";
-	name = "Administration"
-	},
-/obj/structure/spacevine/dense,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood,
-/area/ruin/jungle/botanicalresearch/command)
-"yL" = (
-/obj/machinery/atmospherics/components/unary/tank/air,
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/structure/spacevine,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/white,
-/area/ruin/jungle/botanicalresearch/cleanroom)
-"yN" = (
+/obj/item/shard/plasma,
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin/jungle/botanicalresearch/caves)
+"yc" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -1444,21 +1439,69 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ruin/jungle/botanicalresearch/engineering)
-"yO" = (
-/obj/structure/cable{
-	icon_state = "1-2"
+"yi" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
 	},
-/obj/structure/table/reinforced,
-/obj/structure/spacevine,
-/turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/botanicalresearch/caves)
-"zk" = (
-/obj/structure/closet/secure_closet/freezer/kitchen/maintenance,
-/obj/effect/turf_decal/box,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/jungle/botanicalresearch/vault)
+"yw" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/jungle/botanicalresearch/vault)
+"yF" = (
 /obj/structure/spacevine,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/freezer,
-/area/ruin/jungle/botanicalresearch/kitchen)
+/turf/open/floor/carpet/purple,
+/area/ruin/jungle/botanicalresearch/command)
+"yK" = (
+/obj/structure/flora/junglebush/b,
+/obj/structure/spacevine,
+/turf/open/floor/plating/grass/jungle/lit,
+/area/template_noop)
+"yL" = (
+/obj/item/ammo_casing/c45{
+	projectile_type = null;
+	icon_state = "pistol-steel-empty";
+	name = "spent .45 bullet casing";
+	desc = "A .45 bullet casing. This one appears to be spent."
+	},
+/obj/item/ammo_casing/c45{
+	projectile_type = null;
+	icon_state = "pistol-steel-empty";
+	name = "spent .45 bullet casing";
+	desc = "A .45 bullet casing. This one appears to be spent."
+	},
+/obj/structure/spacevine,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/grimy,
+/area/ruin/jungle/botanicalresearch/checkpoint)
+"yN" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/structure/closet/secure_closet/engineering_personal{
+	req_access = list(205);
+	populate = 0
+	},
+/obj/item/storage/belt/utility/full,
+/obj/item/storage/toolbox/mechanical/old,
+/obj/item/storage/box/stockparts/basic,
+/obj/item/storage/box/stockparts/basic,
+/obj/structure/spacevine,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/botanicalresearch/engineering)
 "zm" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -1469,71 +1512,73 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/botanicalresearch/engineering)
 "zn" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/structure/spacevine,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/freezer,
-/area/ruin/jungle/botanicalresearch/kitchen)
+/obj/item/stack/ore/salvage/scraptitanium,
+/turf/open/floor/plating/dirt/jungle/lit,
+/area/template_noop)
 "zs" = (
-/obj/structure/spacevine,
-/obj/structure/table/wood/reinforced,
-/obj/item/stamp/rd,
+/obj/machinery/airalarm/all_access{
+	pixel_y = 24
+	},
+/obj/structure/salvageable/destructive_analyzer{
+	name = "broken destructive plant analyzer"
+	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood,
-/area/ruin/jungle/botanicalresearch/command)
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/botanicalresearch/cleanroom)
 "zx" = (
-/obj/structure/spacevine,
-/obj/item/stack/ore/salvage/scrapgold,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
-/area/ruin/jungle/botanicalresearch/engineering)
+/obj/item/stack/ore/salvage/scrapmetal,
+/turf/open/floor/plating/dirt/jungle/lit,
+/area/template_noop)
 "zI" = (
-/obj/structure/closet/secure_closet/freezer/fridge/open,
-/obj/effect/turf_decal/box,
-/obj/item/storage/box/ingredients/american,
-/obj/item/storage/box/ingredients/carnivore,
-/obj/item/storage/box/ingredients/delights,
-/obj/item/storage/box/ingredients/exotic,
-/obj/item/storage/box/ingredients/fiesta,
-/obj/item/storage/box/ingredients/fruity,
-/obj/item/storage/box/ingredients/grains,
-/obj/item/storage/box/ingredients/italian,
-/obj/item/storage/box/ingredients/sweets,
-/obj/item/storage/box/ingredients/wildcard,
-/obj/item/storage/box/ingredients/vegetarian,
 /obj/structure/spacevine,
+/turf/open/floor/plating/grass/jungle/lit,
+/area/template_noop)
+"zP" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/spacevine/dense,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/freezer,
 /area/ruin/jungle/botanicalresearch/kitchen)
 "zV" = (
-/obj/effect/turf_decal/industrial/warning,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 5
+	},
 /obj/structure/spacevine,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/botanicalresearch/engineering)
 "zY" = (
-/obj/structure/closet/secure_closet/personal/cabinet,
-/obj/structure/spacevine,
+/obj/item/stack/cable_coil/cut/red,
+/obj/item/stack/ore/salvage/scrapuranium,
+/turf/open/floor/plating/dirt/jungle/lit,
+/area/template_noop)
+"Ah" = (
+/obj/structure/cable,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/power/port_gen/pacman,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood,
-/area/ruin/jungle/botanicalresearch/crew)
-"Ak" = (
-/obj/machinery/power/apc/auto_name/north{
-	req_access_txt = "206"
+/turf/open/floor/plating,
+/area/ruin/jungle/botanicalresearch/engineering)
+"Ai" = (
+/obj/structure/flora/junglebush/large,
+/turf/open/floor/plating/grass/jungle/lit,
+/area/template_noop)
+"Aq" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
 	},
-/obj/structure/cable{
-	icon_state = "4-8"
+/obj/machinery/door/airlock/highsecurity{
+	req_access_txt = "205";
+	name = "Clean Room"
 	},
-/obj/structure/cable{
-	icon_state = "0-8"
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 8
 	},
-/obj/structure/rack,
-/obj/item/storage/bag/plants/portaseeder,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/engine/hull/reinforced/interior,
-/area/ruin/jungle/botanicalresearch/vault)
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/botanicalresearch/cleanroom)
 "Ar" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1546,70 +1591,9 @@
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/botanicalresearch/engineering)
 "As" = (
-/obj/machinery/light/small,
-/obj/structure/spacevine,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood,
-/area/ruin/jungle/botanicalresearch/crew)
-"AG" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 6
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/concrete/reinforced,
-/area/ruin/jungle/botanicalresearch/vault)
+/turf/closed/wall/concrete/reinforced,
+/area/ruin/jungle/botanicalresearch/kitchen)
 "Bd" = (
-/obj/structure/spacevine,
-/turf/open/floor/plating/grass/jungle/lit,
-/area/template_noop)
-"Bi" = (
-/obj/structure/spacevine,
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/structure/salvageable/computer,
-/turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/botanicalresearch/checkpoint)
-"BH" = (
-/obj/structure/spacevine/dense,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/grimy,
-/area/ruin/jungle/botanicalresearch/crew)
-"BK" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/structure/spacevine/dense,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark,
-/area/ruin/jungle/botanicalresearch/command)
-"BO" = (
-/obj/machinery/door/airlock/engineering{
-	name = "Emitter Room";
-	req_access_txt = "205"
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/spacevine,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark,
-/area/ruin/jungle/botanicalresearch/engineering)
-"BU" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/obj/structure/spacevine,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark,
-/area/ruin/jungle/botanicalresearch/command)
-"Ci" = (
 /obj/machinery/power/terminal{
 	dir = 8
 	},
@@ -1625,6 +1609,69 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/reinforced,
 /area/ruin/jungle/botanicalresearch/vault)
+"Bi" = (
+/obj/structure/spacevine,
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/structure/salvageable/computer,
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin/jungle/botanicalresearch/checkpoint)
+"Bt" = (
+/obj/machinery/door/airlock/command{
+	req_access_txt = "206";
+	name = "Administration"
+	},
+/obj/structure/spacevine/dense,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood,
+/area/ruin/jungle/botanicalresearch/command)
+"Bz" = (
+/obj/machinery/icecream_vat,
+/obj/effect/turf_decal/box,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/freezer,
+/area/ruin/jungle/botanicalresearch/kitchen)
+"BH" = (
+/obj/structure/spacevine/dense,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/grimy,
+/area/ruin/jungle/botanicalresearch/crew)
+"BK" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/spacevine/dense,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/botanicalresearch/command)
+"BU" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/spacevine,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/botanicalresearch/command)
+"Cd" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/spacevine,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/freezer,
+/area/ruin/jungle/botanicalresearch/kitchen)
+"Ci" = (
+/obj/structure/fence/cut/large,
+/obj/structure/spacevine,
+/turf/open/floor/plating/grass/jungle/lit,
+/area/template_noop)
 "Cn" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1632,29 +1679,30 @@
 /obj/structure/spacevine/dense,
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/botanicalresearch/caves)
-"Cw" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
-/mob/living/simple_animal/hostile/venus_human_trap,
-/obj/structure/spacevine/dense,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/grimy,
-/area/ruin/jungle/botanicalresearch/crew)
-"CI" = (
-/obj/structure/table/reinforced,
-/obj/item/reagent_containers/food/snacks/meat/steak/plain/human,
+"Cy" = (
+/obj/item/crowbar/red,
 /obj/structure/spacevine,
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/botanicalresearch/caves)
-"CL" = (
-/obj/structure/cable{
-	icon_state = "1-2"
+"CB" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/structure/closet/secure_closet/engineering_welding{
+	req_access = list(205)
 	},
 /obj/structure/spacevine,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/botanicalresearch/engineering)
+"CI" = (
+/obj/item/shard/plasma,
+/obj/structure/spacevine/weak,
+/turf/open/floor/plating/dirt/jungle/lit,
+/area/template_noop)
 "CY" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1664,26 +1712,66 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/botanicalresearch/engineering)
-"Dj" = (
-/obj/structure/fence{
-	dir = 4
+"CZ" = (
+/obj/machinery/door/airlock/engineering{
+	name = "Emitter Room";
+	req_access_txt = "205"
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/spacevine,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/botanicalresearch/engineering)
+"Dj" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	external_pressure_bound = 105
+	},
+/obj/effect/mob_spawn/human/corpse/junglebotany{
+	brute_damage = 200
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/botanicalresearch/cleanroom)
+"DB" = (
+/obj/structure/flora/tree/jungle,
 /turf/open/floor/plating/grass/jungle/lit,
 /area/template_noop)
 "Ec" = (
-/obj/structure/spacevine,
-/obj/item/wrench/old,
+/obj/structure/spacevine/dense,
+/obj/structure/cable{
+	icon_state = "5-8"
+	},
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/botanicalresearch/caves)
 "Ee" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/structure/spacevine,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/botanicalresearch/caves)
+/turf/open/floor/plasteel/grimy,
+/area/ruin/jungle/botanicalresearch/checkpoint)
+"Eg" = (
+/obj/structure/spacevine,
+/obj/item/stack/ore/salvage/scrapgold,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/ruin/jungle/botanicalresearch/engineering)
 "Ei" = (
 /obj/item/shard/plasma,
 /obj/structure/spacevine/weak,
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/botanicalresearch/engineering)
+"Et" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1;
+	external_pressure_bound = 105
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/botanicalresearch/cleanroom)
 "Eu" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters/preopen{
@@ -1709,41 +1797,51 @@
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/jungle/botanicalresearch/engineering)
 "EQ" = (
-/obj/machinery/door/airlock{
-	name = "Freezer"
-	},
-/obj/structure/spacevine/dense,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/freezer,
-/area/ruin/jungle/botanicalresearch/kitchen)
-"Fa" = (
-/obj/machinery/door/airlock/vault{
+/obj/machinery/power/apc/auto_name/north{
 	req_access_txt = "206"
 	},
-/obj/effect/mapping_helpers/airlock/locked,
 /obj/structure/cable{
-	icon_state = "1-2"
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/structure/rack,
+/obj/item/storage/bag/plants/portaseeder,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/engine/hull/reinforced/interior,
+/area/ruin/jungle/botanicalresearch/vault)
+"EX" = (
+/obj/structure/cable,
+/obj/machinery/power/emitter/prototype{
+	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/concrete/reinforced,
-/area/ruin/jungle/botanicalresearch/vault)
-"Ff" = (
-/obj/structure/cable{
-	icon_state = "1-2"
+/obj/machinery/light{
+	dir = 8
 	},
-/obj/structure/cable{
-	icon_state = "2-9"
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/botanicalresearch/engineering)
+"Fa" = (
+/obj/effect/mob_spawn/human/corpse/junglebotany{
+	brute_damage = 200
 	},
 /obj/structure/spacevine,
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/botanicalresearch/caves)
 "Fh" = (
-/obj/machinery/power/rad_collector{
-	req_access = list(205)
-	},
+/obj/structure/spacevine,
+/obj/structure/table/wood/reinforced,
+/obj/item/stamp/rd,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark,
-/area/ruin/jungle/botanicalresearch/engineering)
+/turf/open/floor/wood,
+/area/ruin/jungle/botanicalresearch/command)
+"Fi" = (
+/obj/structure/table/reinforced,
+/obj/item/reagent_containers/food/snacks/meat/steak/plain/human,
+/obj/structure/spacevine,
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin/jungle/botanicalresearch/caves)
 "Fr" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 9
@@ -1752,30 +1850,9 @@
 /turf/open/floor/concrete/reinforced,
 /area/ruin/jungle/botanicalresearch/vault)
 "Fy" = (
-/obj/machinery/atmospherics/components/unary/tank/air,
-/obj/structure/spacevine,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/white,
-/area/ruin/jungle/botanicalresearch/cleanroom)
-"FK" = (
-/obj/effect/radiation{
-	rad_power = 44;
-	rad_range = 3
-	},
-/turf/open/floor/plating/dirt/jungle/lit,
-/area/template_noop)
-"FL" = (
-/obj/machinery/light_switch{
-	dir = 6;
-	pixel_y = -23
-	},
-/obj/machinery/light/small{
-	dir = 4
-	},
-/obj/structure/spacevine,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/grimy,
-/area/ruin/jungle/botanicalresearch/crew)
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin/jungle/botanicalresearch/caves)
 "FO" = (
 /obj/machinery/door/airlock/engineering{
 	name = "Engineering";
@@ -1784,45 +1861,12 @@
 /obj/structure/spacevine,
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/botanicalresearch/engineering)
-"FQ" = (
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/obj/structure/spacevine,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/freezer,
-/area/ruin/jungle/botanicalresearch/kitchen)
-"FS" = (
-/obj/item/ammo_casing/c45{
-	projectile_type = null;
-	icon_state = "pistol-steel-empty";
-	name = "spent .45 bullet casing";
-	desc = "A .45 bullet casing. This one appears to be spent."
-	},
-/obj/item/ammo_casing/c45{
-	projectile_type = null;
-	icon_state = "pistol-steel-empty";
-	name = "spent .45 bullet casing";
-	desc = "A .45 bullet casing. This one appears to be spent."
-	},
-/obj/structure/spacevine,
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/grimy,
-/area/ruin/jungle/botanicalresearch/checkpoint)
 "Ga" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/structure/spacevine,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark,
-/area/ruin/jungle/botanicalresearch/engineering)
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/botanicalresearch/cleanroom)
 "Gf" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 10
@@ -1831,15 +1875,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/botanicalresearch/engineering)
+"Gn" = (
+/obj/effect/radiation{
+	rad_power = 44;
+	rad_range = 3
+	},
+/obj/item/stack/ore/salvage/scraptitanium/five,
+/turf/open/floor/plating/dirt/jungle/lit,
+/area/template_noop)
 "Go" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/obj/machinery/power/smes,
-/obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ruin/jungle/botanicalresearch/engineering)
@@ -1858,69 +1902,67 @@
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/botanicalresearch/engineering)
 "Gt" = (
-/obj/machinery/door/airlock/security{
-	req_access_txt = "203";
-	name = "Checkpoint"
+/obj/structure/bed,
+/obj/item/bedsheet/hos,
+/obj/structure/spacevine,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood,
+/area/ruin/jungle/botanicalresearch/checkpoint)
+"GA" = (
+/obj/item/ammo_casing/c45{
+	projectile_type = null;
+	icon_state = "pistol-steel-empty";
+	name = "spent .45 bullet casing";
+	desc = "A .45 bullet casing. This one appears to be spent."
 	},
 /obj/structure/spacevine,
+/obj/item/paper{
+	info = "Make sure the fake Nanotrasen sign stays up."
+	},
+/obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/jungle/botanicalresearch/checkpoint)
-"GA" = (
-/obj/structure/cable{
-	icon_state = "6-8"
-	},
-/obj/effect/mob_spawn/human/corpse/junglebotany{
-	brute_damage = 200
-	},
-/obj/item/kitchen/knife,
-/obj/structure/spacevine,
-/turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/botanicalresearch/caves)
-"Hb" = (
-/obj/structure/spacevine,
-/obj/structure/table/wood/reinforced,
+"GB" = (
 /obj/machinery/light{
-	dir = 8
+	dir = 1
 	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/carpet/purple,
-/area/ruin/jungle/botanicalresearch/command)
-"Hp" = (
-/obj/structure/spacevine,
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood,
-/area/ruin/jungle/botanicalresearch/command)
-"Hu" = (
-/obj/machinery/hydroponics/constructable,
+/obj/structure/salvageable/computer,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/white,
 /area/ruin/jungle/botanicalresearch/cleanroom)
-"HB" = (
-/obj/structure/cable{
-	icon_state = "2-4"
+"Hi" = (
+/obj/effect/radiation,
+/turf/open/floor/plating/dirt/jungle/lit,
+/area/template_noop)
+"Ho" = (
+/obj/structure/fence/corner{
+	dir = 8
 	},
-/obj/structure/spacevine/weak,
+/turf/open/floor/plating/grass/jungle/lit,
+/area/template_noop)
+"Hp" = (
+/obj/machinery/gibber,
+/obj/effect/turf_decal/box,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
-/area/ruin/jungle/botanicalresearch/engineering)
-"HC" = (
+/turf/open/floor/plasteel/freezer,
+/area/ruin/jungle/botanicalresearch/kitchen)
+"Hu" = (
+/obj/structure/spacevine/dense,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin/jungle/botanicalresearch/caves)
+"Hx" = (
 /obj/effect/turf_decal/industrial/warning{
-	dir = 4
+	dir = 9
 	},
-/obj/structure/closet/secure_closet/engineering_personal{
-	req_access = list(205);
-	populate = 0
-	},
-/obj/item/storage/belt/utility/full,
-/obj/item/storage/toolbox/mechanical/old,
-/obj/item/storage/box/stockparts/basic,
-/obj/item/storage/box/stockparts/basic,
 /obj/structure/spacevine,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/botanicalresearch/engineering)
 "HG" = (
@@ -1935,23 +1977,6 @@
 /obj/item/stack/cable_coil/cut/red,
 /obj/structure/spacevine,
 /turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/botanicalresearch/engineering)
-"HJ" = (
-/obj/machinery/power/apc/auto_name/north{
-	req_access_txt = "206"
-	},
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
-/obj/structure/closet/secure_closet/engineering_electrical{
-	req_access = list(205)
-	},
-/obj/structure/spacevine,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark,
 /area/ruin/jungle/botanicalresearch/engineering)
 "HV" = (
 /obj/structure/spacevine,
@@ -1971,6 +1996,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ruin/jungle/botanicalresearch/vault)
+"Io" = (
+/obj/structure/spacevine,
+/obj/structure/table/wood/reinforced,
+/obj/item/paper_bin,
+/obj/item/pen,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood,
+/area/ruin/jungle/botanicalresearch/command)
 "Iz" = (
 /obj/structure/cable{
 	icon_state = "2-9"
@@ -1979,127 +2012,98 @@
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/botanicalresearch/caves)
 "IC" = (
-/obj/machinery/airalarm/all_access{
-	pixel_y = 24
-	},
-/obj/structure/salvageable/destructive_analyzer{
-	name = "broken destructive plant analyzer"
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/white,
-/area/ruin/jungle/botanicalresearch/cleanroom)
-"IF" = (
-/obj/machinery/light,
-/obj/machinery/doorButtons/airlock_controller{
-	idExterior = "junglebotany_cleanroom_exterior";
-	idInterior = "junglebotany_cleanroom_interior";
-	idSelf = "junglebotany_cleanroom";
-	pixel_x = 24
-	},
-/obj/structure/salvageable/seed,
-/obj/structure/spacevine,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/white,
-/area/ruin/jungle/botanicalresearch/cleanroom)
-"Ji" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
-/obj/structure/spacevine,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/grimy,
-/area/ruin/jungle/botanicalresearch/crew)
-"Jj" = (
-/obj/structure/spacevine,
-/obj/machinery/light_switch{
-	dir = 6;
-	pixel_y = -23
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood,
-/area/ruin/jungle/botanicalresearch/checkpoint)
-"Jo" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/light/small,
-/obj/machinery/doorButtons/access_button{
-	idDoor = "junglebotany_cleanroom_interior";
-	idSelf = "junglebotany_cleanroom";
-	pixel_y = 24
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/white,
-/area/ruin/jungle/botanicalresearch/cleanroom)
-"Jv" = (
-/obj/machinery/power/terminal,
 /obj/structure/cable{
-	icon_state = "0-8"
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
+	icon_state = "1-2"
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/spacevine,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/rust,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/plating,
 /area/ruin/jungle/botanicalresearch/engineering)
+"Ji" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/shutters,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plating,
+/area/ruin/jungle/botanicalresearch/caves)
+"Jo" = (
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "junglebotany_secpost_interior_window"
+	},
+/obj/structure/table/reinforced,
+/obj/machinery/door/window/brigdoor{
+	dir = 8;
+	req_access_txt = "203"
+	},
+/obj/machinery/door/window/eastleft,
+/obj/item/paper_bin,
+/obj/item/pen,
+/turf/open/floor/plasteel/grimy,
+/area/ruin/jungle/botanicalresearch/checkpoint)
 "JE" = (
+/obj/structure/spacevine/dense,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/structure/spacevine/dense,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/botanicalresearch/caves)
-"Kb" = (
-/obj/machinery/icecream_vat,
-/obj/effect/turf_decal/box,
+"JZ" = (
+/obj/structure/grille/broken,
+/obj/structure/spacevine/weak,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/effect/decal/cleanable/glass/plasma,
+/turf/open/floor/plating,
+/area/template_noop)
+"Kc" = (
+/obj/item/stack/sheet/metal,
+/obj/structure/spacevine/weak,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/freezer,
-/area/ruin/jungle/botanicalresearch/kitchen)
+/turf/open/floor/plating,
+/area/ruin/jungle/botanicalresearch/engineering)
+"Kd" = (
+/obj/item/stack/rods,
+/turf/open/floor/plating/dirt/jungle/lit,
+/area/template_noop)
 "Ke" = (
 /turf/template_noop,
 /area/template_noop)
 "Ki" = (
-/obj/structure/closet/secure_closet/freezer/kitchen/maintenance,
-/obj/item/storage/box/donkpockets,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/effect/turf_decal/box,
-/obj/structure/spacevine,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/freezer,
-/area/ruin/jungle/botanicalresearch/kitchen)
-"Km" = (
-/obj/structure/spacevine,
-/obj/structure/table/wood/reinforced,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood,
-/area/ruin/jungle/botanicalresearch/command)
-"Ko" = (
-/obj/structure/grille/broken,
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/obj/structure/spacevine/dense,
-/obj/effect/decal/cleanable/glass/plasma,
-/turf/open/floor/plating,
-/area/ruin/jungle/botanicalresearch/caves)
-"Kx" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 5
-	},
-/obj/structure/spacevine,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark,
-/area/ruin/jungle/botanicalresearch/engineering)
-"KA" = (
-/obj/effect/turf_decal/industrial/warning{
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/botanicalresearch/cleanroom)
+"Km" = (
+/obj/item/paper{
+	info = "I am of the belief we have angered SolGov with our research... There's going to be a containment failure."
+	},
+/obj/effect/mob_spawn/human/corpse/junglebotany/director,
+/obj/structure/spacevine,
+/obj/item/melee/classic_baton/telescopic{
+	icon_state = "telebaton_1";
+	on = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/carpet/purple,
+/area/ruin/jungle/botanicalresearch/command)
+"KA" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 6
+	},
+/mob/living/simple_animal/hostile/venus_human_trap,
 /obj/structure/spacevine,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
@@ -2118,18 +2122,28 @@
 /obj/item/stack/sheet/metal,
 /turf/open/floor/plating/dirt/jungle/lit,
 /area/template_noop)
-"KP" = (
-/obj/structure/flora/tree/jungle,
-/turf/open/floor/plating/grass/jungle/lit,
-/area/template_noop)
 "KV" = (
-/obj/structure/spacevine,
-/turf/open/floor/plating/dirt/jungle/lit,
-/area/template_noop)
-"KW" = (
-/obj/structure/cable{
-	icon_state = "4-8"
+/obj/machinery/door/airlock/security{
+	req_access_txt = "203";
+	name = "Checkpoint"
 	},
+/obj/structure/spacevine,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/grimy,
+/area/ruin/jungle/botanicalresearch/checkpoint)
+"KW" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/siphon/on/layer2{
+	internal_pressure_bound = 0;
+	dir = 1;
+	external_pressure_bound = 101;
+	pressure_checks = 1
+	},
+/obj/structure/cable,
+/obj/machinery/power/apc/auto_name/south{
+	req_access_txt = "205";
+	start_charge = 0
+	},
+/obj/structure/closet/l3closet/scientist,
 /obj/structure/spacevine,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/white,
@@ -2142,14 +2156,12 @@
 	},
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/botanicalresearch/caves)
-"Lu" = (
-/obj/structure/flora/ausbushes/sunnybush,
-/turf/open/floor/plating/grass/jungle/lit,
-/area/template_noop)
 "Lz" = (
-/obj/structure/fence,
-/turf/open/floor/plating/grass/jungle/lit,
-/area/template_noop)
+/obj/structure/table/reinforced,
+/obj/machinery/microwave,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/freezer,
+/area/ruin/jungle/botanicalresearch/kitchen)
 "LB" = (
 /obj/item/bedsheet/green,
 /obj/structure/bed,
@@ -2157,14 +2169,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
 /area/ruin/jungle/botanicalresearch/crew)
-"LW" = (
-/obj/structure/salvageable/computer{
-	dir = 4
-	},
-/obj/item/stack/ore/salvage/scrapgold,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/grimy,
-/area/ruin/jungle/botanicalresearch/checkpoint)
+"Mb" = (
+/obj/structure/spacevine/dense,
+/mob/living/simple_animal/hostile/venus_human_trap,
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin/jungle/botanicalresearch/caves)
 "Me" = (
 /obj/machinery/light,
 /obj/structure/cable{
@@ -2173,13 +2182,6 @@
 /obj/structure/spacevine,
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/botanicalresearch/checkpoint)
-"Mt" = (
-/obj/structure/cable,
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/power/port_gen/pacman,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
-/area/ruin/jungle/botanicalresearch/engineering)
 "MC" = (
 /obj/structure/spacevine/dense,
 /obj/structure/cable{
@@ -2189,12 +2191,9 @@
 /area/ruin/jungle/botanicalresearch/caves)
 "MG" = (
 /obj/structure/spacevine,
-/obj/machinery/light{
-	dir = 1
-	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood,
-/area/ruin/jungle/botanicalresearch/command)
+/turf/open/floor/plating,
+/area/ruin/jungle/botanicalresearch/engineering)
 "MM" = (
 /obj/structure/spacevine,
 /obj/machinery/light,
@@ -2213,27 +2212,50 @@
 /turf/open/floor/plating/grass/jungle/lit,
 /area/template_noop)
 "MX" = (
+/obj/structure/table/reinforced,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/apc/auto_name/west{
+	start_charge = 0
+	},
+/obj/structure/spacevine,
+/obj/item/stamp{
+	pixel_x = -10
+	},
+/obj/item/stamp/denied{
+	pixel_x = 12
+	},
+/obj/item/paper_bin,
+/obj/item/pen,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/grimy,
+/area/ruin/jungle/botanicalresearch/checkpoint)
+"Nf" = (
+/obj/structure/closet/secure_closet/security{
+	req_access = list(203);
+	populate = 0
+	},
+/obj/item/ammo_box/magazine/m45/rubbershot,
+/obj/item/ammo_box/magazine/m45/rubbershot,
+/obj/item/ammo_box/magazine/m45,
+/obj/item/clothing/shoes/jackboots,
+/obj/item/clothing/under/rank/security/officer,
+/obj/item/clothing/head/helmet,
+/obj/item/clothing/suit/armor/vest/alt,
+/obj/structure/spacevine,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood,
+/area/ruin/jungle/botanicalresearch/checkpoint)
+"Nn" = (
 /obj/machinery/light,
 /obj/structure/salvageable/machine,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/white,
 /area/ruin/jungle/botanicalresearch/cleanroom)
-"Nf" = (
-/obj/structure/bed,
-/obj/item/bedsheet/hos,
-/obj/structure/spacevine,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood,
-/area/ruin/jungle/botanicalresearch/checkpoint)
-"Nn" = (
-/obj/structure/spacevine,
-/obj/structure/salvageable/computer,
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood,
-/area/ruin/jungle/botanicalresearch/command)
 "Nz" = (
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -2249,21 +2271,17 @@
 /turf/open/floor/plasteel/freezer,
 /area/ruin/jungle/botanicalresearch/kitchen)
 "NB" = (
-/obj/structure/cable,
-/obj/machinery/power/emitter/prototype{
-	dir = 4
+/obj/machinery/door/airlock{
+	name = "Cabin 4"
 	},
+/obj/structure/spacevine,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark,
-/area/ruin/jungle/botanicalresearch/engineering)
+/turf/open/floor/wood,
+/area/ruin/jungle/botanicalresearch/crew)
 "ND" = (
-/obj/machinery/power/smes/engineering,
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/engine/hull/reinforced/interior,
-/area/ruin/jungle/botanicalresearch/vault)
+/obj/item/stack/ore/salvage/scrapmetal/five,
+/turf/open/floor/plating/dirt/jungle/lit,
+/area/template_noop)
 "NP" = (
 /obj/structure/cable{
 	icon_state = "4-10"
@@ -2272,11 +2290,13 @@
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/botanicalresearch/caves)
 "NT" = (
-/obj/item/stack/sheet/metal,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /obj/structure/spacevine,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark,
-/area/ruin/jungle/botanicalresearch/engineering)
+/obj/item/stack/ore/salvage/scrapgold,
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin/jungle/botanicalresearch/caves)
 "Oj" = (
 /obj/machinery/light{
 	dir = 4
@@ -2291,30 +2311,39 @@
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/botanicalresearch/cleanroom)
 "Ok" = (
-/obj/effect/turf_decal/industrial/warning/corner{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
 /obj/structure/spacevine,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/botanicalresearch/engineering)
+"Op" = (
+/obj/item/stack/ore/salvage/scrapuranium/five,
+/turf/open/floor/plating/dirt/jungle/lit,
+/area/template_noop)
 "Oq" = (
 /obj/structure/spacevine,
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/botanicalresearch/caves)
-"OB" = (
-/obj/item/paper{
-	info = "I am of the belief we have angered SolGov with our research... There's going to be a containment failure."
+"Or" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "2-8"
 	},
-/obj/effect/mob_spawn/human/corpse/junglebotany/director,
+/obj/item/stack/rods,
 /obj/structure/spacevine,
-/obj/item/melee/classic_baton/telescopic{
-	icon_state = "telebaton_1";
-	on = 1
-	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/carpet/purple,
-/area/ruin/jungle/botanicalresearch/command)
+/turf/open/floor/plating,
+/area/ruin/jungle/botanicalresearch/engineering)
+"OB" = (
+/obj/structure/spacevine,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/freezer,
+/area/ruin/jungle/botanicalresearch/kitchen)
 "OC" = (
 /obj/structure/cable{
 	icon_state = "1-6"
@@ -2325,61 +2354,81 @@
 /obj/structure/spacevine,
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/botanicalresearch/caves)
-"OE" = (
+"OQ" = (
+/obj/item/stack/rods,
+/obj/structure/spacevine/dense,
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin/jungle/botanicalresearch/caves)
+"OX" = (
+/obj/machinery/button/door{
+	id = "junglebotany_secpost_exterior_window";
+	pixel_y = -24;
+	pixel_x = -6;
+	name = "External Window Shutters"
+	},
+/obj/machinery/button/door{
+	id = "junglebotany_secpost_interior";
+	pixel_y = -34;
+	pixel_x = 6;
+	name = "Internal Blast Door"
+	},
+/obj/machinery/button/door{
+	id = "junglebotany_secpost_interior_window";
+	pixel_y = -24;
+	pixel_x = 6;
+	name = "Internal Window Shutters"
+	},
+/obj/machinery/button/door{
+	id = "junglebotany_secpost_exterior";
+	pixel_y = -34;
+	pixel_x = -6;
+	name = "External Blast Door"
+	},
+/obj/item/ammo_casing/c45{
+	projectile_type = null;
+	icon_state = "pistol-steel-empty";
+	name = "spent .45 bullet casing";
+	desc = "A .45 bullet casing. This one appears to be spent."
+	},
+/obj/structure/spacevine,
+/mob/living/simple_animal/hostile/venus_human_trap,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/grimy,
+/area/ruin/jungle/botanicalresearch/checkpoint)
+"Pd" = (
+/obj/structure/spacevine,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /obj/structure/table/reinforced,
-/obj/machinery/microwave,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood,
+/area/ruin/jungle/botanicalresearch/command)
+"Pl" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/smes,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/ruin/jungle/botanicalresearch/engineering)
+"PO" = (
+/turf/open/floor/plating/grass/jungle/lit,
+/area/template_noop)
+"PR" = (
+/obj/structure/table/reinforced,
+/obj/effect/spawner/lootdrop/donkpockets,
+/obj/structure/spacevine,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/freezer,
 /area/ruin/jungle/botanicalresearch/kitchen)
-"OQ" = (
-/obj/item/stack/ore/salvage/scraptitanium,
-/turf/open/floor/plating/dirt/jungle/lit,
-/area/template_noop)
-"OR" = (
-/obj/machinery/power/terminal,
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/spacevine,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/rust,
-/area/ruin/jungle/botanicalresearch/engineering)
-"OX" = (
-/obj/effect/turf_decal/industrial/warning/corner,
-/obj/effect/turf_decal/industrial/warning/corner{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/concrete/reinforced,
-/area/ruin/jungle/botanicalresearch/vault)
-"Pd" = (
-/obj/effect/mob_spawn/human/corpse/junglebotany{
-	brute_damage = 200
-	},
-/obj/structure/spacevine,
-/turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/botanicalresearch/caves)
-"PO" = (
-/obj/machinery/power/apc/auto_name/north{
-	req_access_txt = "205";
-	start_charge = 0
-	},
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/obj/structure/spacevine,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/grimy,
-/area/ruin/jungle/botanicalresearch/crew)
-"PR" = (
-/obj/machinery/door/airlock{
-	name = "Cabin 2"
-	},
-/obj/structure/spacevine,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood,
-/area/ruin/jungle/botanicalresearch/crew)
 "PX" = (
 /obj/machinery/door/poddoor{
 	id = "junglebotany_secpost_exterior"
@@ -2398,49 +2447,24 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
 /area/ruin/jungle/botanicalresearch/command)
-"Qq" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/white,
-/area/ruin/jungle/botanicalresearch/cleanroom)
-"Qz" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/siphon/on/layer2{
-	internal_pressure_bound = 0;
-	dir = 1;
-	external_pressure_bound = 101;
-	pressure_checks = 1
-	},
-/obj/structure/cable,
-/obj/machinery/power/apc/auto_name/south{
-	req_access_txt = "205";
-	start_charge = 0
-	},
-/obj/structure/closet/l3closet/scientist,
-/obj/structure/spacevine,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/white,
-/area/ruin/jungle/botanicalresearch/cleanroom)
-"QC" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 10
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/concrete/reinforced,
-/area/ruin/jungle/botanicalresearch/vault)
-"QM" = (
-/obj/machinery/door/airlock/command{
-	req_access_txt = "206";
-	name = "Administration"
+"Qx" = (
+/obj/machinery/power/terminal,
+/obj/structure/cable{
+	icon_state = "0-8"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/spacevine,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/rust,
+/area/ruin/jungle/botanicalresearch/engineering)
+"QC" = (
 /obj/structure/spacevine,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
-/area/ruin/jungle/botanicalresearch/command)
+/area/ruin/jungle/botanicalresearch/engineering)
 "QS" = (
 /obj/item/stack/cable_coil/cut/red,
 /obj/item/shard/plasma,
@@ -2457,6 +2481,14 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/jungle/botanicalresearch/command)
+"Rg" = (
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 1
+	},
+/obj/structure/spacevine,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/botanicalresearch/engineering)
 "Rk" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -2468,15 +2500,22 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/botanicalresearch/engineering)
-"Rn" = (
-/obj/item/shard/plasma,
-/obj/structure/spacevine/weak,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
-/area/ruin/jungle/botanicalresearch/engineering)
 "Rt" = (
-/turf/open/floor/plating/dirt/jungle/lit,
-/area/template_noop)
+/obj/structure/closet/crate/large,
+/obj/item/stack/sheet/mineral/coal{
+	amount = 50
+	},
+/obj/item/stack/sheet/mineral/coal{
+	amount = 50
+	},
+/obj/item/stack/sheet/mineral/coal{
+	amount = 50
+	},
+/obj/item/stack/sheet/mineral/coal{
+	amount = 50
+	},
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin/jungle/botanicalresearch/caves)
 "RB" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2484,6 +2523,23 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/reinforced,
 /area/ruin/jungle/botanicalresearch/vault)
+"RK" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/spacevine,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/freezer,
+/area/ruin/jungle/botanicalresearch/kitchen)
+"RM" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/industrial/warning,
+/obj/structure/spacevine,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/botanicalresearch/engineering)
 "RO" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2493,34 +2549,49 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ruin/jungle/botanicalresearch/engineering)
-"Sb" = (
-/obj/structure/flora/tree/jungle/small,
-/turf/open/floor/plating/grass/jungle/lit,
-/area/template_noop)
-"Sd" = (
-/obj/effect/radiation{
-	rad_power = 44;
-	rad_range = 3
+"RY" = (
+/obj/machinery/light{
+	dir = 4
 	},
-/obj/item/stack/ore/salvage/scraptitanium/five,
-/turf/open/floor/plating/dirt/jungle/lit,
-/area/template_noop)
-"Sg" = (
-/obj/structure/closet/crate/engineering/electrical,
-/obj/effect/turf_decal/box,
-/obj/item/storage/toolbox/electrical,
-/obj/item/storage/toolbox/electrical,
-/obj/item/circuitboard/machine/rtg/advanced,
-/obj/item/circuitboard/machine/rtg/advanced,
-/obj/item/circuitboard/machine/rtg/advanced,
+/obj/structure/spacevine,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/engine/hull/reinforced/interior,
-/area/ruin/jungle/botanicalresearch/vault)
-"Sh" = (
-/obj/structure/fence/corner{
-	dir = 1
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/botanicalresearch/checkpoint)
+"Sa" = (
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
-/turf/open/floor/plating/grass/jungle/lit,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/spacevine,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/rust,
+/area/ruin/jungle/botanicalresearch/engineering)
+"Sb" = (
+/obj/structure/filingcabinet/double,
+/obj/machinery/light,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/grimy,
+/area/ruin/jungle/botanicalresearch/checkpoint)
+"Sd" = (
+/obj/machinery/hydroponics/constructable,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/botanicalresearch/cleanroom)
+"Sg" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/spacevine,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/botanicalresearch/engineering)
+"Sh" = (
+/obj/structure/fence/door,
+/obj/structure/barricade/wooden/crude,
+/turf/open/floor/plating/dirt/jungle/lit,
 /area/template_noop)
 "Sp" = (
 /obj/structure/spacevine,
@@ -2536,9 +2607,16 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/botanicalresearch/engineering)
 "SK" = (
-/obj/item/crowbar/red,
-/obj/structure/spacevine,
-/turf/open/floor/plating/dirt/jungle,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/botanicalresearch/cleanroom)
+"SM" = (
+/obj/machinery/power/floodlight,
+/obj/structure/cable,
+/turf/open/floor/plating/rust,
 /area/ruin/jungle/botanicalresearch/caves)
 "SO" = (
 /obj/structure/cable{
@@ -2558,6 +2636,30 @@
 /obj/structure/spacevine/weak,
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/botanicalresearch/engineering)
+"Tn" = (
+/obj/item/ammo_casing/c45{
+	projectile_type = null;
+	icon_state = "pistol-steel-empty";
+	name = "spent .45 bullet casing";
+	desc = "A .45 bullet casing. This one appears to be spent."
+	},
+/obj/structure/spacevine,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/grimy,
+/area/ruin/jungle/botanicalresearch/checkpoint)
+"Tp" = (
+/obj/item/shard/plasma,
+/turf/open/floor/plating/dirt/jungle/lit,
+/area/template_noop)
 "Tt" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -2570,36 +2672,25 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ruin/jungle/botanicalresearch/engineering)
-"Tx" = (
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/obj/structure/spacevine,
-/obj/item/stack/ore/salvage/scrapgold,
-/mob/living/simple_animal/hostile/venus_human_trap,
-/turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/botanicalresearch/caves)
-"TG" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/rust,
-/area/ruin/jungle/botanicalresearch/engineering)
 "TH" = (
+/obj/structure/closet/secure_closet/personal/cabinet,
+/obj/structure/spacevine,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood{
+	icon_state = "wood-broken4"
+	},
+/area/ruin/jungle/botanicalresearch/crew)
+"TI" = (
+/obj/machinery/door/airlock/vault{
+	req_access_txt = "206"
+	},
+/obj/effect/mapping_helpers/airlock/locked,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/structure/spacevine,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/freezer,
-/area/ruin/jungle/botanicalresearch/kitchen)
-"TI" = (
-/obj/structure/fence/cut/large,
-/obj/structure/spacevine,
-/turf/open/floor/plating/grass/jungle/lit,
-/area/template_noop)
+/turf/open/floor/concrete/reinforced,
+/area/ruin/jungle/botanicalresearch/vault)
 "TM" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -2608,55 +2699,42 @@
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/botanicalresearch/caves)
 "TN" = (
-/obj/structure/grille/broken,
-/obj/structure/spacevine/weak,
 /obj/structure/cable{
-	icon_state = "0-2"
+	icon_state = "1-8"
 	},
-/obj/effect/decal/cleanable/glass/plasma,
-/turf/open/floor/plating,
-/area/template_noop)
-"TV" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable{
-	icon_state = "1-2"
+	icon_state = "2-8"
 	},
-/obj/effect/turf_decal/industrial/warning,
 /obj/structure/spacevine,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plating,
 /area/ruin/jungle/botanicalresearch/engineering)
 "Uq" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 6
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
-/mob/living/simple_animal/hostile/venus_human_trap,
-/obj/structure/spacevine,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark,
-/area/ruin/jungle/botanicalresearch/engineering)
-"UA" = (
-/obj/item/stack/rods,
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/spacevine/weak,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ruin/jungle/botanicalresearch/engineering)
 "UC" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/structure/spacevine,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/dark,
 /area/ruin/jungle/botanicalresearch/engineering)
-"UZ" = (
-/obj/structure/spacevine/dense,
-/obj/structure/cable{
-	icon_state = "1-2"
+"UD" = (
+/obj/machinery/door/airlock{
+	name = "Cabin 2"
 	},
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/botanicalresearch/caves)
+/obj/structure/spacevine,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood,
+/area/ruin/jungle/botanicalresearch/crew)
 "Va" = (
 /obj/structure/spacevine,
 /obj/structure/sign/nanotrasen{
@@ -2680,103 +2758,154 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/botanicalresearch/engineering)
+"Vu" = (
+/obj/structure/flora/junglebush/c,
+/obj/structure/spacevine,
+/turf/open/floor/plating/grass/jungle/lit,
+/area/template_noop)
+"VG" = (
+/obj/structure/closet/secure_closet/freezer/kitchen/maintenance,
+/obj/item/storage/box/donkpockets,
+/obj/effect/spawner/lootdrop/donkpockets,
+/obj/effect/spawner/lootdrop/donkpockets,
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/effect/turf_decal/box,
+/obj/structure/spacevine,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/freezer,
+/area/ruin/jungle/botanicalresearch/kitchen)
 "VS" = (
-/obj/item/stack/rods,
+/obj/structure/spacevine,
 /turf/open/floor/plating/dirt/jungle/lit,
 /area/template_noop)
 "VW" = (
-/obj/structure/spacevine/dense,
-/turf/open/floor/plating/grass/jungle/lit,
-/area/template_noop)
-"Wc" = (
-/obj/structure/closet/crate/large,
-/obj/item/stack/sheet/mineral/coal{
-	amount = 50
-	},
-/obj/item/stack/sheet/mineral/coal{
-	amount = 50
-	},
-/obj/item/stack/sheet/mineral/coal{
-	amount = 50
-	},
-/obj/item/stack/sheet/mineral/coal{
-	amount = 50
-	},
+/obj/structure/spacevine/weak,
+/obj/item/stack/ore/salvage/scrapbluespace,
 /turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/botanicalresearch/caves)
+/area/ruin/jungle/botanicalresearch/engineering)
 "Wj" = (
+/obj/structure/closet/secure_closet/personal/cabinet,
 /obj/structure/spacevine,
-/obj/structure/filingcabinet/double,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
-/area/ruin/jungle/botanicalresearch/command)
+/area/ruin/jungle/botanicalresearch/crew)
 "Wu" = (
+/obj/machinery/power/apc/auto_name/north{
+	req_access_txt = "205";
+	start_charge = 0
+	},
 /obj/structure/cable{
-	icon_state = "1-2"
+	icon_state = "0-2"
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/structure/closet/secure_closet/engineering_electrical{
+	req_access = list(205)
 	},
 /obj/structure/spacevine,
-/obj/item/stack/ore/salvage/scrapgold,
-/turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/botanicalresearch/caves)
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/botanicalresearch/engineering)
 "WE" = (
 /turf/closed/mineral/random/jungle,
 /area/ruin/jungle/botanicalresearch/caves)
+"WF" = (
+/obj/structure/spacevine,
+/obj/structure/table/wood/reinforced,
+/obj/item/stamp,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood,
+/area/ruin/jungle/botanicalresearch/command)
+"WI" = (
+/obj/structure/spacevine,
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood,
+/area/ruin/jungle/botanicalresearch/command)
 "WV" = (
 /obj/structure/spacevine,
 /mob/living/simple_animal/hostile/venus_human_trap,
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/botanicalresearch/caves)
 "Xd" = (
-/obj/item/ammo_casing/c45{
-	projectile_type = null;
-	icon_state = "pistol-steel-empty";
-	name = "spent .45 bullet casing";
-	desc = "A .45 bullet casing. This one appears to be spent."
-	},
-/obj/structure/spacevine,
-/mob/living/simple_animal/hostile/venus_human_trap,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/closet/crate/engineering/electrical,
+/obj/effect/turf_decal/box,
+/obj/item/storage/toolbox/electrical,
+/obj/item/storage/toolbox/electrical,
+/obj/item/circuitboard/machine/rtg/advanced,
+/obj/item/circuitboard/machine/rtg/advanced,
+/obj/item/circuitboard/machine/rtg/advanced,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/grimy,
-/area/ruin/jungle/botanicalresearch/checkpoint)
+/turf/open/floor/engine/hull/reinforced/interior,
+/area/ruin/jungle/botanicalresearch/vault)
 "Xh" = (
 /obj/structure/spacevine,
 /obj/structure/table/wood/reinforced,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/purple,
 /area/ruin/jungle/botanicalresearch/command)
-"Xr" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 1;
-	external_pressure_bound = 105
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/white,
-/area/ruin/jungle/botanicalresearch/cleanroom)
 "XD" = (
-/obj/structure/tank_dispenser/plasma,
+/obj/machinery/light_switch{
+	dir = 6;
+	pixel_y = -23
+	},
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/structure/spacevine,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/grimy,
+/area/ruin/jungle/botanicalresearch/crew)
+"XH" = (
+/obj/machinery/power/apc/auto_name/north{
+	req_access_txt = "206";
+	start_charge = 0
+	},
+/obj/structure/cable{
+	icon_state = "0-6"
+	},
+/obj/structure/salvageable/server,
+/obj/structure/spacevine,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
-/area/ruin/jungle/botanicalresearch/engineering)
-"XH" = (
-/obj/structure/spacevine/weak,
-/obj/item/stack/ore/salvage/scrapbluespace,
-/turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/botanicalresearch/engineering)
+/area/ruin/jungle/botanicalresearch/command)
 "XO" = (
-/obj/structure/closet/crate/hydroponics,
-/obj/effect/turf_decal/box,
-/obj/effect/spawner/lootdrop/techstorage/service,
+/obj/structure/spacevine,
+/obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/engine/hull/reinforced/interior,
-/area/ruin/jungle/botanicalresearch/vault)
+/turf/open/floor/wood,
+/area/ruin/jungle/botanicalresearch/command)
+"XS" = (
+/obj/structure/spacevine,
+/obj/structure/salvageable/computer,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood,
+/area/ruin/jungle/botanicalresearch/command)
 "XV" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
 /obj/effect/spawner/lootdrop/salvage_machine,
+/obj/structure/spacevine,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/botanicalresearch/engineering)
+"XZ" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/engineering{
+	name = "Emitter Room";
+	req_access_txt = "205"
+	},
 /obj/structure/spacevine,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
@@ -2789,20 +2918,25 @@
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/botanicalresearch/caves)
 "Yk" = (
-/obj/item/stack/sheet/metal,
-/obj/structure/spacevine/weak,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
-/area/ruin/jungle/botanicalresearch/engineering)
-"Yl" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/spacevine,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood,
-/area/ruin/jungle/botanicalresearch/checkpoint)
+/turf/open/floor/plating/rust,
+/area/ruin/jungle/botanicalresearch/engineering)
 "Yr" = (
-/obj/structure/spacevine/weak,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/structure/rack,
+/obj/structure/spacevine,
+/obj/item/stack/ore/salvage/scrapplasma/five,
+/obj/item/stack/ore/salvage/scrapplasma/five,
+/obj/item/stack/ore/salvage/scrapplasma/five,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/dirt/jungle,
+/turf/open/floor/plasteel/dark,
 /area/ruin/jungle/botanicalresearch/engineering)
 "Yt" = (
 /obj/effect/spawner/structure/window/reinforced,
@@ -2813,48 +2947,19 @@
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/ruin/jungle/botanicalresearch/checkpoint)
-"Yv" = (
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "junglebotany_secpost_interior_window"
-	},
-/obj/structure/table/reinforced,
-/obj/machinery/door/window/brigdoor{
-	dir = 8;
-	req_access_txt = "203"
-	},
-/obj/machinery/door/window/eastleft,
-/obj/item/paper_bin,
-/obj/item/pen,
-/turf/open/floor/plasteel/grimy,
-/area/ruin/jungle/botanicalresearch/checkpoint)
 "Yy" = (
 /obj/item/stack/sheet/metal,
 /obj/structure/spacevine/weak,
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/botanicalresearch/engineering)
+"YE" = (
+/obj/structure/fence/door/opened,
+/obj/structure/spacevine/dense,
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin/jungle/botanicalresearch/caves)
 "YF" = (
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/jungle/botanicalresearch/crew)
-"YG" = (
-/obj/item/ammo_casing/c45{
-	projectile_type = null;
-	icon_state = "pistol-steel-empty";
-	name = "spent .45 bullet casing";
-	desc = "A .45 bullet casing. This one appears to be spent."
-	},
-/obj/structure/spacevine,
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/grimy,
-/area/ruin/jungle/botanicalresearch/checkpoint)
 "YR" = (
 /obj/machinery/door/airlock/security{
 	req_access_txt = "203";
@@ -2883,11 +2988,10 @@
 /turf/open/floor/plating,
 /area/ruin/jungle/botanicalresearch/engineering)
 "Zh" = (
-/obj/structure/rack,
-/obj/item/storage/bag/plants/holding,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/engine/hull/reinforced/interior,
-/area/ruin/jungle/botanicalresearch/vault)
+/obj/structure/spacevine,
+/obj/item/stack/ore/salvage/scrapgold,
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin/jungle/botanicalresearch/caves)
 "Zj" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable{
@@ -2901,13 +3005,14 @@
 /turf/open/floor/plating,
 /area/ruin/jungle/botanicalresearch/engineering)
 "Zl" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/spacevine,
+/obj/structure/spacevine/weak,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/grimy,
-/area/ruin/jungle/botanicalresearch/crew)
+/turf/open/floor/plating,
+/area/ruin/jungle/botanicalresearch/engineering)
+"Zn" = (
+/obj/item/stack/cable_coil/cut/red,
+/turf/open/floor/plating/dirt/jungle/lit,
+/area/template_noop)
 "Zo" = (
 /obj/structure/spacevine,
 /obj/structure/cable{
@@ -2920,15 +3025,33 @@
 /turf/open/floor/wood,
 /area/ruin/jungle/botanicalresearch/command)
 "Zq" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	external_pressure_bound = 105
-	},
-/obj/effect/mob_spawn/human/corpse/junglebotany{
-	brute_damage = 200
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/white,
-/area/ruin/jungle/botanicalresearch/cleanroom)
+/obj/structure/closet/secure_closet/freezer/meat/open,
+/obj/item/reagent_containers/food/snacks/meat/slab/monkey,
+/obj/item/reagent_containers/food/snacks/meat/slab/monkey,
+/obj/item/reagent_containers/food/snacks/meat/slab/monkey,
+/obj/item/reagent_containers/food/snacks/meat/slab/monkey,
+/obj/item/reagent_containers/food/snacks/meat/slab/monkey,
+/obj/item/reagent_containers/food/snacks/meat/slab/monkey,
+/obj/item/reagent_containers/food/snacks/meat/slab/monkey,
+/obj/item/reagent_containers/food/snacks/meat/slab/monkey,
+/obj/item/reagent_containers/food/snacks/meat/slab/monkey,
+/obj/item/reagent_containers/food/snacks/meat/slab/monkey,
+/obj/item/reagent_containers/food/snacks/meat/slab/monkey,
+/obj/item/reagent_containers/food/snacks/meat/slab/monkey,
+/obj/item/reagent_containers/food/snacks/meat/slab/monkey,
+/obj/item/reagent_containers/food/snacks/meat/slab/monkey,
+/obj/item/reagent_containers/food/snacks/meat/slab/meatwheat,
+/obj/item/reagent_containers/food/snacks/meat/slab/meatwheat,
+/obj/item/reagent_containers/food/snacks/meat/slab/meatwheat,
+/obj/item/reagent_containers/food/snacks/meat/slab/meatwheat,
+/obj/item/reagent_containers/food/snacks/meat/slab/meatwheat,
+/obj/item/reagent_containers/food/snacks/meat/slab/meatwheat,
+/obj/item/reagent_containers/food/snacks/meat/slab/meatwheat,
+/obj/item/reagent_containers/food/snacks/meat/slab/meatwheat,
+/obj/item/reagent_containers/food/snacks/meat/slab/meatwheat,
+/obj/structure/spacevine,
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin/jungle/botanicalresearch/caves)
 "Zr" = (
 /obj/item/stack/cable_coil/cut/red,
 /obj/machinery/light/broken{
@@ -2938,53 +3061,20 @@
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/botanicalresearch/engineering)
 "Zy" = (
-/obj/structure/closet/secure_closet/security{
-	req_access = list(203);
-	populate = 0
-	},
-/obj/item/ammo_box/magazine/m45/rubbershot,
-/obj/item/ammo_box/magazine/m45/rubbershot,
-/obj/item/ammo_box/magazine/m45,
-/obj/item/clothing/shoes/jackboots,
-/obj/item/clothing/under/rank/security/officer,
-/obj/item/clothing/head/helmet,
-/obj/item/clothing/suit/armor/vest/alt,
-/obj/structure/spacevine,
-/obj/machinery/light/small{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood,
-/area/ruin/jungle/botanicalresearch/checkpoint)
-"ZJ" = (
-/obj/structure/spacevine,
-/obj/structure/table/wood/reinforced,
-/obj/item/pen/fountain,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood,
-/area/ruin/jungle/botanicalresearch/command)
+/obj/item/stack/rods,
+/obj/item/stack/ore/salvage/scraptitanium/five,
+/turf/open/floor/plating/dirt/jungle/lit,
+/area/template_noop)
 "ZO" = (
-/obj/structure/spacevine,
-/obj/item/bedsheet/rd,
-/obj/structure/bed,
-/obj/machinery/light_switch{
-	dir = 6;
-	pixel_y = -23
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/carpet/purple,
-/area/ruin/jungle/botanicalresearch/command)
-"ZW" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/spacevine/dense,
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/obj/machinery/power/rad_collector{
-	req_access = list(205)
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
-/area/ruin/jungle/botanicalresearch/engineering)
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin/jungle/botanicalresearch/caves)
 
 (1,1,1) = {"
 Ke
@@ -3144,16 +3234,16 @@ WE
 WE
 WE
 WE
-fh
-fh
-fh
-fh
-fh
-fh
-fh
-fh
-fh
-fh
+As
+As
+As
+As
+As
+As
+As
+As
+As
+As
 WE
 WE
 WE
@@ -3206,16 +3296,16 @@ WE
 WE
 WE
 WE
-fh
-hE
-yc
-fh
-aq
-Kb
-zn
-yc
+As
+fa
+OB
+As
+Hp
+Bz
+mu
+OB
 cT
-fh
+As
 WE
 WE
 WE
@@ -3245,10 +3335,10 @@ WE
 TM
 Yg
 Yg
-tj
-CL
-NB
-XD
+XZ
+Sg
+EX
+vz
 EN
 WE
 WE
@@ -3268,16 +3358,16 @@ WE
 WE
 WE
 WE
-fh
-zI
-yc
-EQ
-yc
-yc
-yc
-yc
-jX
-fh
+As
+hj
+OB
+nE
+OB
+OB
+OB
+OB
+fH
+As
 WE
 WE
 WE
@@ -3308,9 +3398,9 @@ Zc
 EN
 EN
 EN
-NT
+nK
 MQ
-qy
+dj
 EN
 EN
 EN
@@ -3331,15 +3421,15 @@ YF
 YF
 YF
 YF
-Ki
-yc
-fh
-yc
-yc
-yc
-yc
-OE
-fh
+VG
+OB
+As
+OB
+OB
+OB
+OB
+Lz
+As
 WE
 WE
 WE
@@ -3368,9 +3458,9 @@ WE
 WE
 Zc
 EN
-Fh
-UA
-Rn
+bW
+he
+hi
 Gs
 cj
 MQ
@@ -3383,25 +3473,25 @@ WE
 WE
 WE
 YF
-uz
-zY
+tj
+Wj
 YF
-vm
+bV
 pu
 pz
 YF
-zY
-uz
+Wj
+tj
 YF
-zk
-yc
-fh
+uz
+OB
+As
 Nz
-TH
-TH
-FQ
-fP
-fh
+Cd
+Cd
+RK
+PR
+As
 WE
 WE
 WE
@@ -3430,13 +3520,13 @@ WE
 WE
 Zc
 EN
-Yk
+Kc
 Gs
-Rt
+fP
 Gs
-sY
+xf
 HI
-fF
+dz
 EN
 WE
 WE
@@ -3445,25 +3535,25 @@ WE
 WE
 WE
 YF
-gB
-Sp
 eR
+Sp
+vm
 pu
 pu
 pu
 hI
 Sp
-As
+qb
 YF
-fh
-fh
-fh
+As
+As
+As
 cT
 cT
-rj
-ui
-fh
-fh
+mB
+zP
+As
+As
 uX
 Oq
 Oq
@@ -3492,13 +3582,13 @@ WE
 WE
 Zc
 EN
-HB
-qK
-dq
-Rt
+sp
+Op
+Tp
+fP
 Gs
 Ei
-sx
+sl
 EN
 WE
 WE
@@ -3510,9 +3600,9 @@ YF
 YF
 YF
 YF
-PO
-wA
-rv
+kV
+sg
+ui
 YF
 YF
 YF
@@ -3525,13 +3615,13 @@ Oq
 Oq
 Zc
 Oq
-gQ
+ji
 uX
 Oq
 Oq
-Bd
+zI
 Oq
-Wc
+Rt
 WE
 WE
 WE
@@ -3556,9 +3646,9 @@ Zc
 EN
 Zr
 Gs
-Rt
-FK
-sZ
+fP
+tP
+Zy
 Gs
 SY
 EN
@@ -3570,13 +3660,13 @@ WE
 WE
 YF
 LB
-jW
+TH
 YF
-Cw
-Zl
+aC
+qC
 pu
 YF
-jW
+TH
 LB
 YF
 WE
@@ -3585,15 +3675,15 @@ TM
 Yg
 Yg
 Yg
-Tx
+wN
 Oq
-gQ
+ji
 uX
 Oq
-VW
-eO
-VW
-SK
+ue
+li
+ue
+Cy
 WE
 WE
 WE
@@ -3616,13 +3706,13 @@ WE
 WE
 Zc
 EN
-sp
+wy
 Gs
 Gs
-Rt
-Rt
+fP
+fP
 KM
-XH
+VW
 EN
 WE
 WE
@@ -3631,15 +3721,15 @@ WE
 WE
 WE
 YF
-gB
+eR
 Sp
-PR
+UD
 pu
-Zl
+qC
 BH
-qb
+NB
 Sp
-As
+qb
 YF
 WE
 WE
@@ -3649,12 +3739,12 @@ Oq
 Oq
 Oq
 Oq
-ji
+YE
 uX
-Bd
-Bd
-Bd
-Bd
+zI
+zI
+zI
+zI
 Oq
 WE
 WE
@@ -3678,11 +3768,11 @@ WE
 WE
 Zc
 EN
-zx
+Eg
 QS
 ni
 Gs
-bZ
+Zn
 od
 nL
 EN
@@ -3696,9 +3786,9 @@ YF
 YF
 YF
 YF
-Ji
-Zl
-FL
+jp
+qC
+XD
 YF
 YF
 YF
@@ -3711,11 +3801,11 @@ Oq
 Oq
 Oq
 Oq
-gQ
+ji
 uX
-Bd
-VW
-Bd
+zI
+ue
+zI
 Oq
 Oq
 WE
@@ -3740,13 +3830,13 @@ WE
 WE
 Zc
 EN
-ta
-lj
+Or
+MG
 EI
 Yy
 Gs
 nL
-ZW
+lK
 EN
 WE
 WE
@@ -3759,7 +3849,7 @@ WE
 WE
 YF
 YF
-nf
+iM
 YF
 YF
 WE
@@ -3773,13 +3863,13 @@ bP
 Oq
 bP
 Oq
-gQ
+ji
 uX
 Oq
-Bd
+zI
 Oq
 Oq
-pm
+Zq
 WE
 WE
 WE
@@ -3800,7 +3890,7 @@ WE
 EN
 EN
 EN
-BO
+CZ
 EN
 EN
 EN
@@ -3829,13 +3919,13 @@ WE
 WE
 WE
 Oq
-GA
+qQ
 Oq
-CI
+Fi
 Oq
 bP
 Oq
-gQ
+ji
 uX
 Oq
 Oq
@@ -3860,20 +3950,20 @@ WE
 WE
 WE
 EN
-he
-he
-vG
-sG
-sG
+QC
+QC
+ex
+aP
+aP
 SO
-TG
+jX
 Ar
-TG
+wK
 SO
-sG
-py
-py
-py
+aP
+Yk
+Yk
+Yk
 Zg
 FO
 Oq
@@ -3891,10 +3981,10 @@ tk
 Le
 hP
 Yg
-Wu
-Ff
-yO
-rV
+NT
+xF
+fQ
+SM
 bP
 Oq
 WE
@@ -3922,18 +4012,18 @@ WE
 WE
 WE
 EN
-he
-he
+QC
+QC
 RO
-he
-he
+QC
+nf
 EN
 EN
-yN
+yc
 EN
 EN
-dL
-aP
+Hx
+kA
 zm
 Gf
 RO
@@ -3943,7 +4033,7 @@ Oq
 Oq
 tu
 tu
-ru
+gW
 tu
 tu
 tu
@@ -3956,14 +4046,14 @@ Oq
 Oq
 Oq
 bP
-Ec
+re
 bP
 Oq
 Oq
 WE
 ez
-Zy
-Jj
+Nf
+tg
 ez
 WE
 WE
@@ -3984,32 +4074,32 @@ WE
 WE
 WE
 EN
-he
-qA
-nE
-sG
-sG
-sG
+QC
+nO
+os
+aP
+aP
+aP
 sG
 Tt
-sG
-Mt
-Kx
-HC
-SD
+aP
+Ah
 zV
+yN
+SD
+rv
 CY
 EN
 tu
 tu
 tu
 tu
-of
-of
+vG
+vG
 tu
 Xh
-ee
-Hb
+yF
+tK
 tu
 Zc
 WE
@@ -4024,8 +4114,8 @@ Oq
 WE
 WE
 ez
-Nf
-Yl
+Gt
+xi
 ez
 WE
 WE
@@ -4046,7 +4136,7 @@ WE
 WE
 WE
 EN
-he
+QC
 RO
 RO
 hl
@@ -4058,19 +4148,19 @@ hl
 hl
 hl
 hl
-nJ
-zV
+CB
+rv
 CY
 EN
-oh
+bJ
 tY
-ub
+dU
 tu
-MG
-of
+pM
+vG
 tu
 hU
-ee
+yF
 Xh
 tu
 Zc
@@ -4087,7 +4177,7 @@ WE
 ez
 ez
 ez
-kA
+bs
 ez
 ez
 ez
@@ -4108,9 +4198,9 @@ WE
 WE
 WE
 EN
-he
+QC
 RO
-RO
+sP
 hl
 hl
 hl
@@ -4120,20 +4210,20 @@ hl
 hl
 hl
 hl
-HJ
-TV
-yF
+Wu
+RM
+Sa
 EN
-gd
-ub
+XH
+dU
 nk
 tu
-of
-of
+vG
+vG
 tu
 Xh
-OB
-gT
+Km
+gd
 tu
 Zc
 Oq
@@ -4147,11 +4237,11 @@ Oq
 WE
 WE
 ez
-vX
-LW
-yJ
-qf
-tg
+fF
+fd
+sx
+MX
+Sb
 ez
 hW
 Oq
@@ -4170,32 +4260,32 @@ WE
 WE
 WE
 EN
-he
+QC
 RO
 RO
 hl
 hl
-yy
-vz
-tZ
-vz
-tJ
+ub
+iU
+ko
+iU
+dZ
 hl
 hl
 ib
 kt
 RO
 EN
-oh
+bJ
 dB
-ub
+dU
 tu
-of
-of
+vG
+vG
 tu
 jw
-ee
-ZO
+yF
+gT
 tu
 Zc
 Oq
@@ -4209,18 +4299,18 @@ WE
 WE
 TM
 YR
-Xd
-dj
-dj
-YG
-dj
+mQ
+nT
+nT
+Tn
+nT
 Yt
 Oq
 Oq
 WE
 WE
 WE
-Sh
+ee
 Ke
 Ke
 Ke
@@ -4232,16 +4322,16 @@ WE
 WE
 WE
 EN
-rY
-Jv
-qQ
+ru
+Qx
+mj
 hl
 hl
 Ig
 Fr
 yi
-QC
-ND
+tJ
+cy
 hl
 hl
 hl
@@ -4249,14 +4339,14 @@ EN
 dC
 EN
 tu
-QM
+tF
 tu
 tu
-of
-of
+vG
+vG
 tu
 tu
-lK
+sY
 tu
 tu
 Zc
@@ -4271,11 +4361,11 @@ WE
 WE
 Zc
 ez
-xf
-wJ
-iM
-FS
-wX
+Ee
+GA
+io
+yL
+OX
 ez
 Bi
 Oq
@@ -4283,8 +4373,8 @@ Oq
 WE
 WE
 MV
-TI
-Sh
+Ci
+ee
 Ke
 Ke
 "}
@@ -4294,33 +4384,33 @@ WE
 WE
 WE
 EN
-he
+QC
 CY
 RO
 hl
 hl
-Ak
+EQ
 yw
-ko
-OX
-Ci
-Fa
+jW
+ol
+Bd
+TI
 RB
-Fa
+TI
 BK
 BU
-rx
+dh
 HG
 iR
 Zo
 Qh
-of
-of
-of
-of
-of
-of
-yK
+vG
+vG
+vG
+vG
+vG
+vG
+Bt
 Zc
 uX
 WE
@@ -4333,21 +4423,21 @@ Oq
 Oq
 Me
 ez
-Gt
+KV
 ez
 Eu
-Yv
+Jo
 Eu
 ez
 Va
 Oq
 Oq
 WE
-ex
-KP
-ue
+dS
+DB
+Vu
 MV
-Sh
+ee
 Ke
 "}
 (23,1,1) = {"
@@ -4356,16 +4446,16 @@ WE
 WE
 WE
 EN
-lj
-OR
-Go
+MG
+jh
+Pl
 hl
 hl
 pQ
 kv
 fk
-AG
-Zh
+tv
+cL
 hl
 hl
 hl
@@ -4376,12 +4466,12 @@ tu
 tu
 tu
 tu
-dS
-of
-of
-Wj
-Wj
-of
+lj
+vG
+vG
+py
+py
+vG
 tu
 sN
 Oq
@@ -4396,7 +4486,7 @@ Oq
 Zc
 KL
 uk
-ya
+fh
 uk
 uk
 uk
@@ -4405,12 +4495,12 @@ Oq
 Oq
 Oq
 Oq
-gQ
-wN
-Bd
-kC
+ji
+Ai
+zI
+yK
 MV
-Sh
+ee
 "}
 (24,1,1) = {"
 WE
@@ -4418,16 +4508,16 @@ WE
 WE
 WE
 EN
-lj
-lj
+MG
+MG
 RO
 hl
 hl
-Sg
-dZ
-XO
-dZ
-pI
+Xd
+gQ
+sC
+gQ
+of
 hl
 hl
 dL
@@ -4438,11 +4528,11 @@ gN
 jS
 gN
 tu
-wy
-of
-of
-ZJ
-tv
+Pd
+vG
+vG
+if
+WF
 MM
 tu
 Oq
@@ -4450,7 +4540,7 @@ fx
 Oq
 mc
 Yg
-JE
+iT
 Yg
 Yg
 Yg
@@ -4468,11 +4558,11 @@ Oq
 Oq
 Oq
 oj
-KV
-KV
-Bd
-Sb
-Dj
+VS
+VS
+zI
+gP
+jU
 "}
 (25,1,1) = {"
 WE
@@ -4480,9 +4570,9 @@ WE
 WE
 WE
 EN
-Yr
-mB
-gm
+wr
+Zl
+gA
 hl
 hl
 hl
@@ -4492,20 +4582,20 @@ hl
 hl
 hl
 hl
-Ga
-zV
+Ok
+rv
 RO
 EN
 jS
 gb
 ks
 QW
-Nn
-of
-of
-lk
-zs
-of
+XS
+vG
+vG
+Io
+Fh
+vG
 tu
 uX
 Cn
@@ -4515,26 +4605,26 @@ Oq
 uX
 Oq
 Oq
-Pd
-dM
+Fa
+Zh
 Oq
 KL
 uk
 uk
 uk
 uk
-gV
+RY
 PX
 Oq
 WV
 Oq
 Oq
-gQ
-li
-KV
-KV
-KV
-dU
+ji
+PO
+VS
+VS
+VS
+Sh
 "}
 (26,1,1) = {"
 WE
@@ -4542,9 +4632,9 @@ WE
 WE
 WE
 EN
-Yr
-oi
-gm
+wr
+sB
+Uq
 hl
 hl
 hl
@@ -4554,20 +4644,20 @@ hl
 hl
 hl
 hl
-Ga
-zV
+sz
+rv
 RO
 EN
 gN
 jS
 gN
 tu
-aC
-of
-of
-Km
-bW
-of
+XO
+vG
+vG
+pm
+rt
+vG
 tu
 Oq
 Zc
@@ -4591,32 +4681,32 @@ WE
 WE
 WE
 WE
-ex
-li
-Sb
-Lu
-sz
-jU
+dS
+PO
+gP
+md
+Ho
+gm
 "}
 (27,1,1) = {"
 WE
 WE
 WE
 WE
-UC
-Rt
-Rt
-gW
-mB
-aP
-aP
-aP
+Go
+fP
+fP
+xP
+Zl
+kA
+kA
+kA
 Rk
 hs
-sP
+Yr
 XV
 XV
-Ok
+Rg
 Vj
 RO
 EN
@@ -4624,12 +4714,12 @@ tu
 tu
 tu
 tu
-of
-of
-of
-Hp
-of
-of
+vG
+vG
+vG
+WI
+vG
+vG
 tu
 Oq
 Vi
@@ -4654,9 +4744,9 @@ WE
 WE
 WE
 WE
-Lz
-Lz
-Lz
+xL
+xL
+xL
 MV
 Ke
 "}
@@ -4664,22 +4754,22 @@ Ke
 Ke
 WE
 WE
-nT
-Rt
-Sd
-Rt
-gm
-Kx
-KA
-KA
-KA
-KA
-KA
-KA
-KA
-KA
-KA
+ND
+fP
+Gn
+fP
 Uq
+zV
+UC
+UC
+UC
+UC
+UC
+UC
+UC
+UC
+UC
+KA
 RO
 EN
 Oq
@@ -4687,7 +4777,7 @@ Oq
 Oq
 tu
 tu
-ru
+gW
 tu
 tu
 tu
@@ -4726,27 +4816,27 @@ Ke
 Ke
 WE
 WE
-Rt
-Rt
-Rt
-mj
-pM
-sG
-sG
-sG
-sG
-sG
-sG
-sG
-sG
-sG
-sG
-sG
-wR
+fP
+fP
+fP
+lY
+lk
+aP
+IC
+aP
+aP
+aP
+aP
+aP
+IC
+aP
+aP
+aP
+TN
 un
 Yg
 Yg
-if
+wR
 Yg
 Yg
 Yg
@@ -4788,9 +4878,9 @@ Ke
 Ke
 WE
 WE
-Rt
-Rt
-Rt
+fP
+fP
+fP
 EN
 EN
 EN
@@ -4808,7 +4898,7 @@ EN
 EN
 WE
 WE
-rs
+Hu
 WE
 Oq
 Oq
@@ -4851,8 +4941,8 @@ Ke
 Ke
 WE
 WE
-nT
-Ee
+ND
+Fy
 WE
 WE
 WE
@@ -4870,13 +4960,13 @@ WE
 WE
 WE
 WE
-rs
+Hu
 WE
 WE
 WE
 WE
 qz
-wT
+bj
 qz
 WE
 WE
@@ -4932,13 +5022,13 @@ WE
 WE
 WE
 WE
-rs
+Hu
 WE
 WE
 WE
 qz
 qz
-KW
+af
 qz
 qz
 WE
@@ -4983,25 +5073,25 @@ WE
 WE
 WE
 WE
-xL
-xL
-OQ
-Rt
-xL
-xL
+tN
+tN
+zn
+fP
+tN
+tN
 WE
 WE
 WE
 WE
 uX
-os
+Ec
 WE
 WE
 WE
 qz
-yL
-cD
-Qz
+rV
+xZ
+KW
 qz
 WE
 WE
@@ -5045,12 +5135,12 @@ WE
 WE
 WE
 WE
-xL
-iU
-Rt
-gP
-jp
-tP
+tN
+zY
+fP
+Hi
+zx
+Ji
 EF
 WE
 WE
@@ -5061,9 +5151,9 @@ WE
 WE
 WE
 qz
-Fy
-qC
-IF
+qf
+Ga
+at
 qz
 WE
 WE
@@ -5107,24 +5197,24 @@ WE
 WE
 WE
 WE
-xL
-kV
-jp
-VS
-nT
-tP
+tN
+oh
+zx
+Kd
+ND
+Ji
 Gq
 uX
 WE
 WE
-rs
+Hu
 uX
 WE
 WE
 WE
 qz
 qz
-sl
+bm
 qz
 qz
 WE
@@ -5169,24 +5259,24 @@ WE
 WE
 WE
 WE
-xL
+tN
 uX
 uX
-OQ
-eu
-TN
+zn
+CI
+JZ
 Gq
 uX
-xZ
+OQ
 uX
-rs
+Hu
 WE
 WE
 WE
 WE
 WE
 qz
-Jo
+wJ
 qz
 WE
 WE
@@ -5231,24 +5321,24 @@ WE
 WE
 WE
 WE
-xL
+tN
 uX
 uX
 uX
 uX
-Ko
-UZ
-mk
+eO
+JE
+ya
 pg
 pg
-fd
+rs
 WE
 WE
 WE
 WE
 WE
 qz
-Qq
+Ki
 qz
 WE
 WE
@@ -5293,24 +5383,24 @@ WE
 WE
 WE
 WE
-xL
-uX
-uX
-uX
-uX
-tP
-aH
-nO
-WE
-WE
-WE
-WE
-WE
-WE
-qz
-qz
-qz
 tN
+uX
+uX
+uX
+uX
+Ji
+ZO
+tZ
+WE
+WE
+WE
+WE
+WE
+WE
+qz
+qz
+qz
+Aq
 qz
 qz
 qz
@@ -5355,13 +5445,13 @@ WE
 WE
 WE
 WE
-xL
+tN
 uX
 uX
 uX
-sC
-tP
-aH
+Mb
+Ji
+ZO
 uX
 WE
 WE
@@ -5370,11 +5460,11 @@ WE
 WE
 WE
 qz
-Hu
-wr
-Qq
-wr
-Hu
+Sd
+gB
+Ki
+gB
+Sd
 qz
 WE
 WE
@@ -5417,13 +5507,13 @@ Ke
 WE
 WE
 WE
-xL
+tN
 uX
 uX
 uX
 uX
-tP
-fd
+Ji
+rs
 uX
 uX
 WE
@@ -5432,11 +5522,11 @@ WE
 WE
 WE
 qz
-vv
-wr
-Qq
-hi
-yq
+GB
+gB
+Ki
+aH
+mH
 qz
 WE
 WE
@@ -5479,12 +5569,12 @@ Ke
 Ke
 WE
 WE
-xL
-xL
-xL
-xL
-xL
-xL
+tN
+tN
+tN
+tN
+tN
+tN
 WE
 WE
 WE
@@ -5494,11 +5584,11 @@ WE
 WE
 WE
 qz
-IC
-Zq
-eH
-Xr
-MX
+zs
+Dj
+SK
+Et
+Nn
 qz
 WE
 WE
@@ -5556,11 +5646,11 @@ WE
 WE
 WE
 qz
-tn
-wr
-wr
-wr
-Hu
+nJ
+gB
+gB
+gB
+Sd
 qz
 WE
 WE
