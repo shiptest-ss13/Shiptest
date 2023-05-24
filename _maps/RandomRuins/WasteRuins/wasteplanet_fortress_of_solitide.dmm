@@ -356,7 +356,7 @@
 "dp" = (
 /obj/structure/headpike,
 /obj/effect/decal/cleanable/generic,
-/turf/open/floor/plating/asteroid/lowpressure,
+/turf/open/floor/plating/asteroid/wasteplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "dv" = (
 /obj/structure/reagent_dispensers/water_cooler,
@@ -1194,7 +1194,7 @@
 /area/ruin/powered)
 "ll" = (
 /obj/structure/headpike,
-/turf/open/floor/plating/asteroid/lowpressure,
+/turf/open/floor/plating/asteroid/wasteplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "lp" = (
 /obj/effect/decal/cleanable/blood/old,
@@ -1656,7 +1656,7 @@
 /area/ruin/powered)
 "oW" = (
 /obj/structure/flora/rock,
-/turf/open/floor/plating/asteroid/lowpressure,
+/turf/open/floor/plating/asteroid/wasteplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "oX" = (
 /obj/structure/sign/poster/contraband/pgf,
@@ -2137,7 +2137,7 @@
 /area/ruin/powered)
 "tR" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/asteroid/lowpressure,
+/turf/open/floor/plating/asteroid/wasteplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "tT" = (
 /obj/machinery/door/airlock/maintenance{
@@ -2736,7 +2736,7 @@
 /area/ruin/powered)
 "zG" = (
 /obj/item/gun/ballistic/automatic/pistol/commander,
-/turf/open/floor/plating/asteroid/lowpressure,
+/turf/open/floor/plating/asteroid/wasteplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "zK" = (
 /turf/closed/indestructible/reinforced,
@@ -3400,7 +3400,7 @@
 	pixel_y = 1
 	},
 /obj/effect/decal/cleanable/blood/old,
-/turf/open/floor/plating/asteroid/lowpressure,
+/turf/open/floor/plating/asteroid/wasteplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Fl" = (
 /obj/effect/decal/cleanable/robot_debris,
@@ -3656,7 +3656,7 @@
 	pixel_y = -1
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/asteroid/lowpressure,
+/turf/open/floor/plating/asteroid/wasteplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "In" = (
 /obj/effect/decal/cleanable/blood/tracks{
@@ -3707,7 +3707,7 @@
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
 "IA" = (
-/turf/open/floor/plating/asteroid/lowpressure,
+/turf/open/floor/plating/asteroid/wasteplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "IB" = (
 /obj/item/storage/fancy/cigarettes/cigpack_robustgold,
@@ -4708,7 +4708,7 @@
 "Sy" = (
 /obj/structure/headpike,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/asteroid/lowpressure,
+/turf/open/floor/plating/asteroid/wasteplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "SC" = (
 /obj/machinery/door/airlock/maintenance,
@@ -5323,12 +5323,8 @@
 /turf/open/floor/plating,
 /area/ruin/powered)
 "XL" = (
-/obj/effect/mob_spawn/human/corpse/whitesands/survivor,
 /obj/effect/decal/cleanable/blood,
 /obj/machinery/light/directional/north,
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
 /obj/effect/mob_spawn/human/corpse/damaged/whitesands/survivor,
 /obj/effect/decal/cleanable/blood,
 /obj/machinery/light/directional/north,
