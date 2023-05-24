@@ -7,8 +7,8 @@
 /datum/map_template/ruin/jungle/jungle_botany_ruin
 	id = "jungle_botany-ruin"
 	suffix = "jungle_botany.dmm"
-	name = "Ruined Botany Research Facility"
-	description = "A research facility of great botany discoveries. Long since abandoned, willingly or not..."
+	name = "Forgotten Botanical Research Facility"
+	description = "A large research compound built into a large bauxite mountain, now forgotten and sealed off..."
 
 /datum/map_template/ruin/jungle/solgov_crash
 	name = "Abandoned SolGov Exploration Pod"

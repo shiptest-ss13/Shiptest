@@ -264,3 +264,43 @@
 	back = /obj/item/storage/backpack
 	id = /obj/item/card/id/solgov/commander
 	backpack_contents = null
+
+/obj/effect/mob_spawn/human/corpse/junglebotany
+	name = "Dead Botanist"
+	id_job = "Botanical Researcher"
+	outfit = /datum/outfit/junglebotany
+
+/obj/effect/mob_spawn/human/corpse/junglebotany/sec
+	name = "Dead Botanical Security Guard"
+	id_job = "Security Officer"
+	outfit = /datum/outfit/junglebotany/sec
+
+/obj/effect/mob_spawn/human/corpse/junglebotany/director
+	name = "Dead Botanical Research Director"
+	id_job = "Research Director"
+	outfit = /datum/outfit/junglebotany/director
+
+/datum/outfit/junglebotany
+	name = "Botanical Researcher Corpse"
+	uniform = /obj/item/clothing/under/rank/civilian/hydroponics
+	shoes = /obj/item/clothing/shoes/sneakers/black
+	ears = /obj/item/radio/headset
+	back = /obj/item/storage/backpack/satchel
+	id = /obj/item/card/id/away/junglebotany
+
+/datum/outfit/junglebotany/sec
+	name = "Botanical Security Officer Corpse"
+	uniform = /obj/item/clothing/under/rank/security/officer
+	shoes = /obj/item/clothing/shoes/jackboots
+	ears = /obj/item/radio/headset/bowman
+	back = /obj/item/storage/backpack/security
+	belt = /obj/item/gun/ballistic/automatic/pistol/m1911/no_mag
+	id = /obj/item/card/id/away/junglebotany/security
+
+/datum/outfit/junglebotany/director
+	name = "Botanical Research Director Corpse"
+	uniform = /obj/item/clothing/under/rank/rnd/research_director
+	shoes = /obj/item/clothing/shoes/laceup
+	ears = /obj/item/radio/headset/headset_sci
+	back = /obj/item/storage/backpack/satchel/leather
+	id = /obj/item/card/id/away/junglebotany/command

@@ -130,3 +130,45 @@
 /area/ruin/jungle/syndifort/jerry
 	name = "Syndicate Fort Tower"
 	icon_state = "bridge"
+
+// Forgotten Botanical Research Facility
+
+/area/ruin/jungle/botanicalresearch
+	name = "Forgotten Botanical Research Facility"
+	icon_state = "red"
+
+/area/ruin/jungle/botanicalresearch/command
+	name = "Forgotten Botanical Research Facility Administration"
+	icon_state = "blue"
+
+/area/ruin/jungle/botanicalresearch/cleanroom
+	name = "Forgotten Botanical Research Facility Cleanroom"
+	icon_state = "yellow"
+
+/area/ruin/jungle/botanicalresearch/crew
+	name = "Forgotten Botanical Research Facility Living Quarters"
+	icon_state = "crew_quarters"
+
+/area/ruin/jungle/botanicalresearch/engineering
+	name = "Forgotten Botanical Research Facility Engineering"
+	icon_state = "engine"
+
+/area/ruin/jungle/botanicalresearch/vault
+	name = "Forgotten Botanical Research Facility Vault"
+	icon_state = "storage"
+
+/area/ruin/jungle/botanicalresearch/checkpoint
+	name = "Forgotten Botanical Research Facility Security Checkpoint"
+	icon_state = "security"
+
+/area/ruin/jungle/botanicalresearch/kitchen
+	name = "Forgotten Botanical Research Facility Kitchen"
+	icon_state = "yellow"
+
+/area/ruin/jungle/botanicalresearch/caves
+	name = "Forgotten Caves"
+	icon_state = "unexplored"
+	always_unpowered = TRUE
+	ambientsounds = MINING
+	min_ambience_cooldown = 70 SECONDS
+	max_ambience_cooldown = 220 SECONDS
