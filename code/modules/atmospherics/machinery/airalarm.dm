@@ -45,6 +45,7 @@
 	icon_state = "alarm_bitem"
 	result_path = /obj/machinery/airalarm
 	pixel_shift = 28
+	inverse_pixel_shift = TRUE
 
 #define AALARM_MODE_SCRUBBING 1
 #define AALARM_MODE_VENTING 2 //makes draught
