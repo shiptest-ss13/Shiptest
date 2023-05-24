@@ -23,6 +23,7 @@
 	var/datum/techweb/stored_research
 	var/obj/item/disk/design_disk/inserted_disk
 	var/datum/component/remote_materials/materials
+	var/direction_to_edit = ORM_BOTH //ORM_INPUT is 1, ORM_OUTPUT is 2, any other value is ORM_BOTH (defaults to 0) (should only ever be either 0, 1, or 2, but won't completely break if something weird happens and it becomes >2 or <0)
 
 /obj/machinery/mineral/ore_redemption/Initialize(mapload)
 	. = ..()
@@ -49,7 +50,13 @@
 	if(in_range(user, src) || isobserver(user))
 		. += "<span class='notice'>The status display reads: Smelting <b>[ore_multiplier]</b> sheet(s) per piece of ore.<br>Reward point generation at <b>[point_upgrade*100]%</b>.</span>"
 	if(panel_open)
-		. += "<span class='notice'>Alt-click to rotate the input and output direction.</span>"
+		if(direction_to_edit == ORM_INPUT)
+			. += "<span class='notice'>Alt-click to rotate the input direction.</span>"
+		else if (direction_to_edit == ORM_OUTPUT)
+			. += "<span class='notice'>Alt-click to rotate the output direction.</span>"
+		else //defaults to both
+			. += "<span class='notice'>Alt-click to rotate the input and output direction.</span>"
+		. += "<span class='notice'>Use a multitool to change the rotation mode.</span>"
 
 /obj/machinery/mineral/ore_redemption/proc/smelt_ore(obj/item/stack/ore/O)
 	if(QDELETED(O))
@@ -145,6 +152,19 @@
 	if(!powered())
 		return ..()
 
+	if(istype(W, /obj/item/multitool))
+		if(panel_open)
+			direction_to_edit++ //toggles through whether alt+click will rotate input AND output, or either input OR output
+			if(direction_to_edit > ORM_OUTPUT)
+				direction_to_edit = ORM_BOTH
+			if(direction_to_edit == ORM_INPUT)
+				to_chat(user, "<span class='notice'>You change [src]'s I/O settings. you will now only change the input direction.</span>")
+			else if(direction_to_edit == ORM_OUTPUT)
+				to_chat(user, "<span class='notice'>You change [src]'s I/O settings, you will now only change the output direction.</span>")
+			else //defaults to both
+				to_chat(user, "<span class='notice'>You change [src]'s I/O settings, you will now change the input and output directions.</span>")
+			return
+
 	if(istype(W, /obj/item/disk/design_disk))
 		if(user.transferItemToLoc(W, src))
 			inserted_disk = W
@@ -163,9 +183,16 @@
 	if(!user.canUseTopic(src, BE_CLOSE))
 		return
 	if(panel_open)
-		input_dir = turn(input_dir, -90)
-		output_dir = turn(output_dir, -90)
-		to_chat(user, "<span class='notice'>You change [src]'s I/O settings, setting the input to [dir2text(input_dir)] and the output to [dir2text(output_dir)].</span>")
+		if(direction_to_edit == ORM_INPUT)
+			input_dir = turn(input_dir, -90)
+			to_chat(user, "<span class='notice'>You change [src]'s I/O settings, setting the input to [dir2text(input_dir)].</span>")
+		else if(direction_to_edit == ORM_OUTPUT)
+			output_dir = turn(output_dir, -90)
+			to_chat(user, "<span class='notice'>You change [src]'s I/O settings, setting the output to [dir2text(output_dir)].</span>")
+		else //defaults to both
+			input_dir = turn(input_dir, -90)
+			output_dir = turn(output_dir, -90)
+			to_chat(user, "<span class='notice'>You change [src]'s I/O settings, setting the input to [dir2text(input_dir)] and the output to [dir2text(output_dir)].</span>")
 		unregister_input_turf() // someone just rotated the input and output directions, unregister the old turf
 		register_input_turf() // register the new one
 		return TRUE

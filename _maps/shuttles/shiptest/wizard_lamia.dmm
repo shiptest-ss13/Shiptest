@@ -142,24 +142,23 @@
 	},
 /turf/open/floor/engine/cult,
 /area/ship/science)
+"aN" = (
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/structure/closet/crate/medical,
+/obj/item/storage/firstaid/regular,
+/obj/item/storage/firstaid/o2,
+/obj/item/storage/firstaid/toxin,
+/obj/item/storage/backpack/duffelbag/med/surgery,
+/obj/machinery/power/apc/auto_name/directional/west,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/firealarm/directional/north,
+/turf/open/floor/plasteel,
+/area/ship/storage)
 "aP" = (
 /turf/open/floor/carpet/purple,
 /area/ship/crew/canteen)
-"aQ" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small/directional/south,
-/obj/structure/table/wood/fancy/royalblack,
-/obj/item/paper_bin/bundlenatural{
-	pixel_y = 5
-	},
-/obj/item/mining_scanner{
-	desc = "A grimoire penned by the mighty magus Antoras. Revelations of Rock is regarded as one of the most important and influential tomes to ever grace the Federation, granting it's reader the ability to divine minerals. And we mean REALLY divine. The book contains detailed information on hundreds of thousands of types of soil, minerals, gemstones, and more. A wizard wielding this tome could indeed, within seconds, precisely deduce how many individual grains of sand were on a planet. This tome alone is touted as the grandfather of the modern Wizard Federation, and certainly is responsible for your gem-encrusted hardsuits and your emerald-plated vessel. Your operations will, through the power of this stony grimoire, surely proceed smooth as slate and clear as crystal. That.. being said... It would appear that some, okay well, MOST of the pages have been ripped out of this copy. Through your wizardly intellect however, you deduce that missing pages will not lessen it's power. After all, tomes don't ACTUALLY utilize those pages, right?";
-	icon = 'icons/obj/library.dmi';
-	icon_state = "book";
-	name = "The Grimoire of Rock Revelation"
-	},
-/turf/open/floor/wood,
-/area/ship/crew/library)
 "aR" = (
 /obj/machinery/vending/coffee,
 /obj/effect/decal/cleanable/dirt,
@@ -225,6 +224,18 @@
 	},
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/dorm)
+"bg" = (
+/obj/machinery/computer/cryopod/directional/north{
+	pixel_y = 27
+	},
+/obj/machinery/cryopod{
+	close_state = "bscanner_green";
+	icon_state = "bscanner_open";
+	name = "suspension sanctum";
+	open_state = "bscanner_open"
+	},
+/turf/open/floor/carpet/royalblue,
+/area/ship/crew/dorm)
 "bh" = (
 /obj/structure/table,
 /obj/machinery/microwave{
@@ -239,13 +250,6 @@
 	},
 /turf/open/floor/wood,
 /area/ship/crew/canteen/kitchen)
-"bk" = (
-/obj/machinery/light/small/directional/west{
-	brightness = 3
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood,
-/area/ship/hallway/central)
 "bl" = (
 /obj/effect/decal/cleanable/blood/gibs/down,
 /turf/open/floor/wood,
@@ -407,19 +411,6 @@
 	},
 /turf/open/floor/bronze,
 /area/ship/cargo)
-"bZ" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced/fulltile{
-	color = "#008000"
-	},
-/obj/structure/curtain/cloth/fancy,
-/obj/machinery/door/poddoor/shutters{
-	dir = 4;
-	id = "wizardship_bridge"
-	},
-/obj/machinery/door/firedoor/window,
-/turf/open/floor/plating,
-/area/ship/science)
 "ca" = (
 /obj/machinery/power/smes{
 	name = "mana crystal bank"
@@ -507,15 +498,6 @@
 	},
 /turf/open/floor/wood,
 /area/ship/crew/canteen/kitchen)
-"cB" = (
-/obj/structure/table/wood/fancy,
-/obj/item/skub{
-	pixel_y = 11
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/firealarm/directional/east,
-/turf/open/floor/plasteel/white,
-/area/ship/crew/toilet)
 "cD" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -532,13 +514,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/orange,
 /area/ship/crew/library)
-"dk" = (
-/obj/machinery/light/small/directional/east,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
-	dir = 8
-	},
-/turf/open/floor/carpet/royalblue,
-/area/ship/crew/dorm)
 "do" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -551,37 +526,9 @@
 	},
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
-"dy" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/power/apc/auto_name/directional/west,
-/obj/structure/cable,
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/turf/open/floor/plating,
-/area/ship/maintenance/aft)
-"dA" = (
-/obj/structure/chair/bronze{
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/item/radio/intercom/wideband/directional/north,
-/turf/open/floor/carpet/stellar,
-/area/ship/bridge)
 "dH" = (
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
-"eb" = (
-/obj/structure/sign/poster/contraband/random{
-	pixel_y = 32
-	},
-/turf/open/floor/wood,
-/area/ship/hallway/aft)
 "ee" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 1
@@ -591,70 +538,40 @@
 	name = "emerald wall"
 	},
 /area/ship/maintenance/aft)
-"eg" = (
-/obj/structure/table/wood/fancy/royalblue,
-/obj/item/book/granter/spell/charge{
-	pixel_y = 4
-	},
-/obj/item/gun/energy/e_gun/mini{
-	desc = "The small and submissive wand of wizards-in-training, firing bursts of raw magical energy to disable or kill foes. Comes with built-in nightlight!";
-	gunlight_state = "nothingwand";
-	icon = 'icons/obj/guns/magic.dmi';
-	icon_state = "nothingwand";
-	name = "acolyte's training wand of duality";
-	pixel_x = -2;
-	pixel_y = 2
-	},
-/obj/machinery/power/apc/auto_name/directional/west,
+"fg" = (
+/obj/structure/closet/cabinet,
+/obj/item/clothing/head/wizard/yellow,
+/obj/item/clothing/head/wizard/red,
+/obj/item/clothing/head/wizard/marisa,
+/obj/item/clothing/head/wizard/black,
+/obj/item/clothing/head/wizard,
+/obj/item/clothing/suit/wizrobe/yellow,
+/obj/item/clothing/suit/wizrobe/red,
+/obj/item/clothing/suit/wizrobe/marisa,
+/obj/item/clothing/suit/wizrobe/black,
+/obj/item/clothing/suit/wizrobe,
+/obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/item/spacecash/bundle/c1000,
-/obj/item/spacecash/bundle/c1000,
-/obj/item/spacecash/bundle/c1000,
-/turf/open/floor/carpet/stellar,
-/area/ship/bridge)
-"ej" = (
-/obj/structure/destructible/cult/tome,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/item/storage/fancy/candle_box,
-/obj/item/storage/box/matches{
-	pixel_x = -5
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -25
 	},
-/obj/machinery/firealarm/directional/east,
-/turf/open/floor/engine/cult,
-/area/ship/science)
-"el" = (
-/obj/structure/chair/wood/wings{
-	dir = 8
+/turf/open/floor/carpet/royalblue,
+/area/ship/crew/dorm)
+"ft" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile{
+	color = "#008000"
 	},
-/obj/machinery/power/apc/auto_name/directional/north,
-/obj/structure/cable{
-	icon_state = "0-2"
+/obj/structure/curtain/cloth/fancy,
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "wizardship_bridge"
 	},
-/obj/machinery/light/directional/east,
-/turf/open/floor/carpet/royalblack,
-/area/ship/hallway/starboard)
-"ez" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/item/trash/candle,
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/obj/machinery/power/apc/auto_name/directional/north,
-/turf/open/floor/engine/cult,
-/area/ship/science)
-"fu" = (
-/obj/structure/showcase{
-	desc = "A historical figure of great importance to the wizard federation. He spent his long life learning magic, stealing artifacts, and harassing idiots with swords. May he rest forever, Rodney.";
-	icon = 'icons/mob/mob.dmi';
-	icon_state = "nim";
-	name = "wizard of yendor showcase"
-	},
-/obj/machinery/firealarm/directional/south,
-/obj/machinery/light/directional/east,
-/turf/open/floor/carpet/stellar,
-/area/ship/bridge)
+/turf/open/floor/plating,
+/area/ship/maintenance/aft)
 "fx" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -680,15 +597,6 @@
 /obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/toilet)
-"go" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
-	dir = 8
-	},
-/obj/machinery/light/directional/east,
-/obj/item/radio/intercom/directional/east,
-/turf/open/floor/bronze,
-/area/ship/cargo)
 "gz" = (
 /mob/living/simple_animal/hostile/carp/ranged{
 	desc = "A wizard's favorite familiar, the Magicarp!";
@@ -724,10 +632,6 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel,
 /area/ship/storage)
-"gH" = (
-/obj/machinery/firealarm/directional/north,
-/turf/open/floor/wood,
-/area/ship/hallway/aft)
 "gL" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/gun/magic/wand/nothing{
@@ -742,22 +646,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
-"gP" = (
-/obj/structure/table/wood/fancy/royalblue,
-/obj/item/areaeditor/shuttle,
-/obj/item/clothing/shoes/sandal/magic{
-	pixel_y = -7
-	},
-/obj/item/clothing/suit/wizrobe/magusblue{
-	pixel_y = 5
-	},
-/obj/item/clothing/head/wizard/magus{
-	pixel_y = 11
-	},
-/obj/item/radio/intercom/directional/south,
-/obj/machinery/light/directional/west,
-/turf/open/floor/carpet/stellar,
-/area/ship/bridge)
 "hh" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -779,18 +667,6 @@
 /obj/item/book/codex_gigas,
 /turf/open/floor/engine/cult,
 /area/ship/science)
-"hz" = (
-/obj/machinery/atmospherics/components/unary/tank/air{
-	dir = 1;
-	piping_layer = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 1
-	},
-/obj/machinery/light/small/directional/east,
-/turf/open/floor/plating,
-/area/ship/maintenance/aft)
 "hA" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -806,19 +682,20 @@
 	},
 /turf/open/floor/carpet/royalblue,
 /area/ship/hallway/aft)
-"hG" = (
-/obj/machinery/suit_storage_unit/open,
-/obj/item/tank/internals/emergency_oxygen/engi,
-/obj/item/clothing/suit/space/hardsuit/wizard,
-/obj/machinery/power/apc/auto_name/directional/south,
-/obj/structure/cable,
-/turf/open/floor/bronze,
-/area/ship/cargo)
-"ia" = (
-/obj/machinery/light/directional/south,
-/obj/machinery/computer/arcade,
-/turf/open/floor/wood,
+"hC" = (
+/obj/machinery/light/directional/north,
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/carpet/purple,
 /area/ship/crew/canteen)
+"ib" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/libraryscanner,
+/obj/machinery/firealarm/directional/south,
+/turf/open/floor/wood,
+/area/ship/crew/library)
 "if" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -891,49 +768,43 @@
 	},
 /area/ship/cargo)
 "jR" = (
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/light/directional/west,
+/obj/structure/closet/crate/miningcar{
+	name = "mining car"
+	},
+/obj/item/pickaxe/emergency{
+	attack_verb = list("hit","spelled","cantripped","ensorceled");
+	desc = "Forged by the greatest smiths of the academy, enchanted by the archmagus council, this is a TRUE boulder eradicator.";
+	icon = 'icons/obj/guns/magic.dmi';
+	icon_state = "staffofflight";
+	name = "staff of rock removal"
+	},
+/obj/item/pickaxe/emergency{
+	attack_verb = list("hit","spelled","cantripped","ensorceled");
+	desc = "Forged by the greatest smiths of the academy, enchanted by the archmagus council, this is a TRUE boulder eradicator.";
+	icon = 'icons/obj/guns/magic.dmi';
+	icon_state = "staffofflight";
+	name = "staff of rock removal"
+	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/libraryscanner,
-/obj/machinery/firealarm/directional/south,
-/turf/open/floor/wood,
-/area/ship/crew/library)
-"kO" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/vending/autodrobe/all_access,
-/turf/open/floor/wood,
-/area/ship/hallway/aft)
-"kP" = (
-/obj/structure/chair/wood/wings{
+/obj/item/storage/bag/ore,
+/obj/item/storage/bag/ore,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 4
 	},
-/obj/machinery/light_switch{
-	dir = 4;
-	pixel_x = -25
-	},
-/turf/open/floor/carpet/royalblack,
-/area/ship/hallway/starboard)
-"lp" = (
-/obj/machinery/power/apc/auto_name/directional/east,
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/turf/open/floor/wood,
-/area/ship/hallway/central)
-"lq" = (
-/obj/structure/chair/wood/wings{
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+/turf/open/floor/plasteel,
+/area/ship/storage)
+"kc" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 10
-	},
-/turf/open/floor/carpet/royalblack,
-/area/ship/hallway/starboard)
-"ly" = (
+/obj/machinery/light/directional/east,
+/obj/item/radio/intercom/directional/east,
+/turf/open/floor/bronze,
+/area/ship/cargo)
+"kH" = (
 /obj/machinery/door/airlock{
 	dir = 4;
 	icon = 'icons/obj/doors/airlocks/station/uranium.dmi';
@@ -956,6 +827,71 @@
 	},
 /turf/open/floor/carpet/black,
 /area/ship/hallway/central)
+"kL" = (
+/obj/docking_port/stationary{
+	dwidth = 4;
+	width = 10;
+	height = 15;
+	dir = 8
+	},
+/turf/template_noop,
+/area/space)
+"kO" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/vending/autodrobe/all_access,
+/turf/open/floor/wood,
+/area/ship/hallway/aft)
+"kP" = (
+/obj/structure/chair/wood/wings{
+	dir = 4
+	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -25
+	},
+/turf/open/floor/carpet/royalblack,
+/area/ship/hallway/starboard)
+"lq" = (
+/obj/structure/chair/wood/wings{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 10
+	},
+/turf/open/floor/carpet/royalblack,
+/area/ship/hallway/starboard)
+"lr" = (
+/obj/machinery/light/directional/north,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/trash/candy,
+/turf/open/floor/wood,
+/area/ship/hallway/aft)
+"ls" = (
+/obj/structure/showcase{
+	desc = "A historical figure of great importance to the wizard federation. He spent his long life learning magic, stealing artifacts, and harassing idiots with swords. May he rest forever, Rodney.";
+	icon = 'icons/mob/mob.dmi';
+	icon_state = "nim";
+	name = "wizard of yendor showcase"
+	},
+/obj/machinery/firealarm/directional/south,
+/obj/machinery/light/directional/east,
+/turf/open/floor/carpet/stellar,
+/area/ship/bridge)
+"lY" = (
+/obj/machinery/door/airlock{
+	dir = 4;
+	icon = 'icons/obj/doors/airlocks/station/uranium.dmi';
+	name = "External Airlock"
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/bronze,
+/area/ship/cargo)
 "mr" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 9
@@ -972,29 +908,17 @@
 	name = "emerald wall"
 	},
 /area/ship/hallway/starboard)
-"mx" = (
-/obj/item/storage/bag/tray,
-/obj/item/reagent_containers/food/snacks/burger/spell,
-/obj/structure/table/wood/fancy/cyan,
-/obj/machinery/firealarm/directional/east,
-/turf/open/floor/carpet/royalblue,
-/area/ship/crew/dorm)
-"mB" = (
-/obj/machinery/light/broken/directional/north,
-/turf/open/floor/wood,
-/area/ship/hallway/aft)
-"mH" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced/fulltile{
-	color = "#008000"
+"my" = (
+/obj/effect/decal/cleanable/blood,
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable{
+	icon_state = "0-2"
 	},
-/obj/structure/curtain/cloth/fancy,
-/obj/machinery/door/firedoor/window,
-/obj/machinery/door/poddoor/shutters{
+/obj/machinery/light_switch{
 	dir = 4;
-	id = "wizardship_bridge"
+	pixel_x = -25
 	},
-/turf/open/floor/plating,
+/turf/open/floor/wood,
 /area/ship/crew/canteen/kitchen)
 "ni" = (
 /turf/closed/wall/mineral/uranium/safe{
@@ -1008,6 +932,19 @@
 	name = "emerald wall"
 	},
 /area/ship/crew/library)
+"no" = (
+/obj/machinery/light/directional/south,
+/turf/open/floor/carpet/royalblack,
+/area/ship/hallway/starboard)
+"nq" = (
+/obj/machinery/light/small/directional/west{
+	brightness = 3
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/crew/toilet)
 "nC" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
@@ -1022,18 +959,13 @@
 	},
 /turf/open/floor/carpet/purple,
 /area/ship/crew/canteen)
+"nT" = (
+/obj/machinery/firealarm/directional/west,
+/turf/open/floor/carpet/royalblack,
+/area/ship/hallway/starboard)
 "oz" = (
 /turf/open/floor/wood,
 /area/ship/crew/canteen/kitchen)
-"oA" = (
-/obj/machinery/door/airlock{
-	dir = 4;
-	icon = 'icons/obj/doors/airlocks/station/uranium.dmi';
-	name = "External Airlock"
-	},
-/obj/structure/fans/tiny,
-/turf/open/floor/bronze,
-/area/ship/cargo)
 "oB" = (
 /obj/structure/frame/machine,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1057,14 +989,30 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
-"oV" = (
-/obj/machinery/light/directional/north,
-/obj/machinery/power/apc/auto_name/directional/north,
-/obj/structure/cable{
-	icon_state = "0-4"
+"pe" = (
+/obj/machinery/door/airlock{
+	dir = 4;
+	icon = 'icons/obj/doors/airlocks/station/uranium.dmi';
+	name = "Kitchen"
 	},
-/turf/open/floor/carpet/purple,
-/area/ship/crew/canteen)
+/obj/effect/decal/cleanable/food/pie_smudge,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/turf/open/floor/wood,
+/area/ship/crew/canteen/kitchen)
 "pf" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1106,14 +1054,6 @@
 	},
 /turf/open/floor/wood,
 /area/ship/hallway/aft)
-"pM" = (
-/obj/machinery/power/apc/auto_name/directional/north,
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
-/turf/open/floor/wood,
-/area/ship/hallway/aft)
 "pR" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
@@ -1126,29 +1066,20 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4,
 /turf/open/floor/wood,
 /area/ship/hallway/aft)
-"qu" = (
-/obj/machinery/vending/snack/random,
-/obj/machinery/firealarm/directional/west,
+"pZ" = (
+/obj/machinery/light/broken/directional/north,
 /turf/open/floor/wood,
-/area/ship/hallway/central)
-"qN" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced/fulltile{
-	color = "#008000"
+/area/ship/hallway/aft)
+"qk" = (
+/obj/machinery/light/directional/north,
+/obj/machinery/jukebox{
+	name = "altar of rhythm"
 	},
-/obj/structure/curtain/cloth/fancy,
-/obj/docking_port/mobile{
-	dir = 4;
-	launch_status = 0;
-	port_direction = 8
+/obj/structure/cable{
+	icon_state = "0-8"
 	},
-/obj/machinery/door/firedoor/window,
-/obj/machinery/door/poddoor/shutters{
-	dir = 4;
-	id = "wizardship_bridge"
-	},
-/turf/open/floor/plating,
-/area/ship/science)
+/turf/open/floor/wood,
+/area/ship/crew/canteen)
 "qT" = (
 /obj/structure/sign/poster/official/no_erp,
 /turf/closed/wall/mineral/uranium/safe{
@@ -1169,11 +1100,24 @@
 /obj/item/reagent_containers/food/condiment/enzyme,
 /turf/open/floor/wood,
 /area/ship/crew/canteen/kitchen)
-"rB" = (
-/obj/effect/decal/cleanable/food/egg_smudge,
-/obj/machinery/firealarm/directional/north,
+"rj" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/airalarm/directional/north,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
+/obj/machinery/light/small/directional/west,
+/obj/item/kirbyplants/random,
+/obj/item/book/granter/spell/smoke/lesser,
 /turf/open/floor/wood,
-/area/ship/crew/canteen/kitchen)
+/area/ship/crew/library)
+"rk" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/trash/candle,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/power/apc/auto_name/directional/north,
+/turf/open/floor/engine/cult,
+/area/ship/science)
 "rH" = (
 /obj/structure/spider/stickyweb,
 /obj/item/relic,
@@ -1185,90 +1129,34 @@
 	},
 /turf/open/floor/engine/cult,
 /area/ship/science)
-"rJ" = (
-/obj/machinery/door/airlock{
-	dir = 4;
-	icon = 'icons/obj/doors/airlocks/station/uranium.dmi';
-	name = "Engine"
-	},
+"sb" = (
+/obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
-	icon_state = "4-8"
+	icon_state = "0-2"
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 8
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/turf/open/floor/bronze,
-/area/ship/maintenance/aft)
-"rV" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced/fulltile{
-	color = "#008000"
-	},
-/obj/structure/curtain/cloth/fancy,
-/obj/machinery/door/poddoor/shutters{
-	dir = 4;
-	id = "wizardship_bridge"
-	},
-/turf/open/floor/plating,
-/area/ship/maintenance/aft)
-"sW" = (
-/obj/machinery/power/port_gen/pacman{
-	name = "mana pylon"
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/cable/yellow{
-	icon_state = "0-8"
-	},
-/obj/machinery/firealarm/directional/north,
-/turf/open/floor/plating,
-/area/ship/maintenance/aft)
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
+/turf/open/floor/wood,
+/area/ship/hallway/aft)
 "sX" = (
 /obj/machinery/airalarm/directional/east,
 /turf/open/floor/carpet/royalblack,
 /area/ship/hallway/starboard)
+"tg" = (
+/obj/structure/chair/bronze{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/item/radio/intercom/wideband/directional/north,
+/turf/open/floor/carpet/stellar,
+/area/ship/bridge)
 "tv" = (
 /turf/closed/wall/mineral/uranium/safe{
 	desc = "A wall plated with emerald.";
 	name = "emerald wall"
 	},
 /area/ship/crew/dorm)
-"tN" = (
-/obj/machinery/door/airlock{
-	dir = 4;
-	icon = 'icons/obj/doors/airlocks/station/uranium.dmi';
-	name = "Kitchen"
-	},
-/obj/effect/decal/cleanable/food/pie_smudge,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/turf/open/floor/wood,
-/area/ship/crew/canteen/kitchen)
-"uc" = (
-/obj/machinery/firealarm/directional/west,
-/turf/open/floor/carpet/royalblack,
-/area/ship/hallway/starboard)
 "ud" = (
 /obj/structure/sign/poster/contraband/backdoor_xeno_babes_6,
 /turf/closed/wall/mineral/uranium/safe{
@@ -1285,19 +1173,6 @@
 	},
 /turf/open/floor/engine/cult,
 /area/ship/science)
-"us" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced/fulltile{
-	color = "#008000"
-	},
-/obj/structure/curtain/cloth/fancy,
-/obj/machinery/door/firedoor/window,
-/obj/machinery/door/poddoor/shutters{
-	dir = 4;
-	id = "wizardship_bridge"
-	},
-/turf/open/floor/plating,
-/area/ship/science)
 "vk" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/yellow{
@@ -1310,36 +1185,72 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
-"vp" = (
-/obj/effect/turf_decal/industrial/outline/yellow,
-/obj/structure/closet/crate/medical,
-/obj/item/storage/firstaid/regular,
-/obj/item/storage/firstaid/o2,
-/obj/item/storage/firstaid/toxin,
-/obj/item/storage/backpack/duffelbag/med/surgery,
-/obj/machinery/power/apc/auto_name/directional/west,
-/obj/structure/cable{
-	icon_state = "0-4"
+"vt" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile{
+	color = "#008000"
 	},
-/obj/machinery/firealarm/directional/north,
-/turf/open/floor/plasteel,
-/area/ship/storage)
-"vR" = (
-/obj/machinery/light/directional/south,
-/turf/open/floor/carpet/royalblack,
-/area/ship/hallway/starboard)
+/obj/structure/curtain/cloth/fancy,
+/obj/machinery/door/firedoor/window,
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "wizardship_bridge"
+	},
+/turf/open/floor/plating,
+/area/ship/crew/canteen/kitchen)
+"wa" = (
+/obj/structure/table/wood/fancy/purple,
+/obj/machinery/firealarm/directional/south,
+/turf/open/floor/carpet/purple,
+/area/ship/crew/canteen)
+"wh" = (
+/obj/structure/table/wood/fancy/royalblue,
+/obj/item/areaeditor/shuttle,
+/obj/item/clothing/shoes/sandal/magic{
+	pixel_y = -7
+	},
+/obj/item/clothing/suit/wizrobe/magusblue{
+	pixel_y = 5
+	},
+/obj/item/clothing/head/wizard/magus{
+	pixel_y = 11
+	},
+/obj/item/radio/intercom/directional/south,
+/obj/machinery/light/directional/west,
+/turf/open/floor/carpet/stellar,
+/area/ship/bridge)
 "wj" = (
 /turf/closed/wall/mineral/uranium/safe{
 	desc = "A wall plated with emerald.";
 	name = "emerald wall"
 	},
 /area/ship/storage)
+"wo" = (
+/obj/machinery/suit_storage_unit/open,
+/obj/item/tank/internals/emergency_oxygen/engi,
+/obj/item/clothing/suit/space/hardsuit/wizard,
+/obj/machinery/airalarm/directional/south,
+/obj/machinery/firealarm/directional/west,
+/turf/open/floor/bronze,
+/area/ship/cargo)
 "wq" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 8
 	},
 /turf/open/floor/carpet/stellar,
 /area/ship/bridge)
+"wu" = (
+/obj/machinery/atmospherics/components/unary/tank/air{
+	dir = 1;
+	piping_layer = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/plating,
+/area/ship/maintenance/aft)
 "wE" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/trash/candle,
@@ -1358,6 +1269,25 @@
 	},
 /turf/open/floor/carpet/royalblack,
 /area/ship/hallway/starboard)
+"wY" = (
+/obj/structure/sink{
+	pixel_y = 20
+	},
+/obj/item/razor{
+	desc = "The latest and greatest magic razor born from the science of shaving.";
+	name = "wand of hair slaying";
+	pixel_x = 11;
+	pixel_y = 7
+	},
+/obj/machinery/power/apc/auto_name/directional/east,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/structure/mirror/magic/lesser{
+	pixel_y = 31
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/crew/toilet)
 "xc" = (
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/wood,
@@ -1381,33 +1311,34 @@
 /turf/open/floor/wood,
 /area/ship/crew/canteen/kitchen)
 "xx" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/airalarm/directional/north,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
-/obj/machinery/light/small/directional/west,
-/obj/item/kirbyplants/random,
-/obj/item/book/granter/spell/smoke/lesser,
-/turf/open/floor/wood,
-/area/ship/crew/library)
-"xK" = (
-/obj/structure/closet/cabinet,
-/obj/item/clothing/head/wizard/yellow,
-/obj/item/clothing/head/wizard/red,
-/obj/item/clothing/head/wizard/marisa,
-/obj/item/clothing/head/wizard/black,
-/obj/item/clothing/head/wizard,
-/obj/item/clothing/suit/wizrobe/yellow,
-/obj/item/clothing/suit/wizrobe/red,
-/obj/item/clothing/suit/wizrobe/marisa,
-/obj/item/clothing/suit/wizrobe/black,
-/obj/item/clothing/suit/wizrobe,
-/obj/machinery/power/apc/auto_name/directional/north,
-/obj/structure/cable{
-	icon_state = "0-4"
+/obj/machinery/suit_storage_unit/open,
+/obj/item/tank/internals/emergency_oxygen/engi,
+/obj/item/clothing/suit/space/hardsuit/wizard,
+/obj/machinery/power/apc/auto_name/directional/south,
+/obj/structure/cable,
+/turf/open/floor/bronze,
+/area/ship/cargo)
+"xF" = (
+/obj/structure/chair/wood/wings{
+	dir = 8
 	},
-/obj/machinery/light_switch{
-	dir = 4;
-	pixel_x = -25
+/obj/item/radio/intercom/directional/north{
+	pixel_y = 26
+	},
+/turf/open/floor/carpet/royalblack,
+/area/ship/hallway/starboard)
+"yq" = (
+/obj/structure/sign/poster/contraband/random{
+	pixel_y = 32
+	},
+/turf/open/floor/wood,
+/area/ship/hallway/aft)
+"yu" = (
+/obj/machinery/light/small/directional/west{
+	brightness = 3
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 4
 	},
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/dorm)
@@ -1431,15 +1362,6 @@
 	name = "emerald wall"
 	},
 /area/ship/hallway/central)
-"zF" = (
-/obj/structure/chair/wood/wings{
-	dir = 8
-	},
-/obj/item/radio/intercom/directional/north{
-	pixel_y = 26
-	},
-/turf/open/floor/carpet/royalblack,
-/area/ship/hallway/starboard)
 "zT" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/trash/candle,
@@ -1451,6 +1373,14 @@
 	},
 /turf/open/floor/engine/cult,
 /area/ship/science)
+"Ag" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 8
+	},
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/wood,
+/area/ship/hallway/central)
 "An" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 1
@@ -1464,6 +1394,21 @@
 	},
 /turf/open/floor/bronze,
 /area/ship/cargo)
+"AC" = (
+/obj/structure/chair/wood/wings{
+	dir = 8
+	},
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/light/directional/east,
+/turf/open/floor/carpet/royalblack,
+/area/ship/hallway/starboard)
+"AL" = (
+/obj/machinery/firealarm/directional/north,
+/turf/open/floor/wood,
+/area/ship/hallway/aft)
 "Cc" = (
 /obj/item/reagent_containers/food/drinks/shaker{
 	pixel_x = -1
@@ -1478,23 +1423,6 @@
 	name = "emerald wall"
 	},
 /area/ship/crew/library)
-"Cr" = (
-/obj/effect/decal/cleanable/blood,
-/obj/machinery/power/apc/auto_name/directional/north,
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/obj/machinery/light_switch{
-	dir = 4;
-	pixel_x = -25
-	},
-/turf/open/floor/wood,
-/area/ship/crew/canteen/kitchen)
-"Cs" = (
-/obj/structure/table/wood/fancy/purple,
-/obj/machinery/firealarm/directional/south,
-/turf/open/floor/carpet/purple,
-/area/ship/crew/canteen)
 "CF" = (
 /turf/closed/wall/mineral/uranium/safe{
 	desc = "A wall plated with emerald.";
@@ -1526,6 +1454,16 @@
 	},
 /turf/open/floor/bronze,
 /area/ship/cargo)
+"Dl" = (
+/obj/structure/destructible/cult/tome,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/storage/fancy/candle_box,
+/obj/item/storage/box/matches{
+	pixel_x = -5
+	},
+/obj/machinery/firealarm/directional/east,
+/turf/open/floor/engine/cult,
+/area/ship/science)
 "DP" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/spider/stickyweb,
@@ -1540,15 +1478,6 @@
 	},
 /turf/open/floor/engine/cult,
 /area/ship/science)
-"DW" = (
-/obj/machinery/button/door{
-	id = "wizardship_bridge";
-	name = "bridge shutters";
-	pixel_y = 31
-	},
-/obj/machinery/airalarm/directional/east,
-/turf/open/floor/carpet/stellar,
-/area/ship/bridge)
 "Ee" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 4
@@ -1567,15 +1496,6 @@
 	},
 /turf/open/floor/carpet/royalblack,
 /area/ship/hallway/starboard)
-"Eq" = (
-/obj/machinery/light/small/directional/west{
-	brightness = 3
-	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
-	dir = 4
-	},
-/turf/open/floor/plasteel/white,
-/area/ship/crew/toilet)
 "Es" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
@@ -1589,6 +1509,15 @@
 	},
 /turf/open/floor/wood,
 /area/ship/hallway/aft)
+"Ew" = (
+/obj/machinery/button/door{
+	id = "wizardship_bridge";
+	name = "bridge shutters";
+	pixel_y = 31
+	},
+/obj/machinery/airalarm/directional/east,
+/turf/open/floor/carpet/stellar,
+/area/ship/bridge)
 "Ez" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 6
@@ -1665,15 +1594,6 @@
 	},
 /turf/open/floor/wood,
 /area/ship/hallway/aft)
-"GI" = (
-/obj/machinery/computer/bookmanagement{
-	name = "archival servitor";
-	pixel_y = 1
-	},
-/obj/structure/table/wood/fancy/royalblack,
-/obj/item/radio/intercom/directional/south,
-/turf/open/floor/carpet/orange,
-/area/ship/crew/library)
 "GM" = (
 /turf/open/floor/carpet/orange,
 /area/ship/crew/library)
@@ -1689,18 +1609,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/storage)
-"HQ" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced/fulltile{
-	color = "#008000"
-	},
-/obj/structure/curtain/cloth/fancy,
-/obj/machinery/door/poddoor/shutters{
-	dir = 4;
-	id = "wizardship_bridge"
-	},
-/turf/open/floor/plating,
-/area/ship/hallway/aft)
 "HS" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/purple,
@@ -1726,19 +1634,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
-"Ib" = (
-/obj/machinery/light/directional/north,
-/obj/effect/decal/cleanable/dirt,
-/obj/item/trash/candy,
-/turf/open/floor/wood,
-/area/ship/hallway/aft)
-"Ih" = (
-/obj/machinery/power/apc/auto_name/directional/west,
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/turf/open/floor/carpet/orange,
-/area/ship/crew/library)
 "IJ" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/spider/stickyweb,
@@ -1788,6 +1683,36 @@
 	},
 /turf/open/floor/wood,
 /area/ship/hallway/central)
+"Jx" = (
+/obj/machinery/power/apc/auto_name/directional/east,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/wood,
+/area/ship/hallway/central)
+"JA" = (
+/obj/structure/table/wood/fancy/royalblue,
+/obj/item/book/granter/spell/charge{
+	pixel_y = 4
+	},
+/obj/item/gun/energy/e_gun/mini{
+	desc = "The small and submissive wand of wizards-in-training, firing bursts of raw magical energy to disable or kill foes. Comes with built-in nightlight!";
+	gunlight_state = "nothingwand";
+	icon = 'icons/obj/guns/magic.dmi';
+	icon_state = "nothingwand";
+	name = "acolyte's training wand of duality";
+	pixel_x = -2;
+	pixel_y = 2
+	},
+/obj/machinery/power/apc/auto_name/directional/west,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
+/turf/open/floor/carpet/stellar,
+/area/ship/bridge)
 "JB" = (
 /obj/structure/sign/poster/random,
 /turf/closed/wall/mineral/uranium/safe{
@@ -1804,6 +1729,13 @@
 	},
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
+"Kd" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable,
+/obj/machinery/power/terminal,
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/plating,
+/area/ship/maintenance/aft)
 "Ke" = (
 /obj/item/trash/popcorn,
 /turf/open/floor/carpet/orange,
@@ -1829,14 +1761,6 @@
 	},
 /turf/open/floor/wood,
 /area/ship/crew/canteen/kitchen)
-"Kn" = (
-/obj/machinery/suit_storage_unit/open,
-/obj/item/tank/internals/emergency_oxygen/engi,
-/obj/item/clothing/suit/space/hardsuit/wizard,
-/obj/machinery/airalarm/directional/south,
-/obj/machinery/firealarm/directional/west,
-/turf/open/floor/bronze,
-/area/ship/cargo)
 "Kz" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile{
@@ -1846,33 +1770,49 @@
 /obj/machinery/door/firedoor/window,
 /turf/open/floor/plating,
 /area/ship/hallway/aft)
+"KK" = (
+/obj/machinery/light/directional/south,
+/obj/machinery/computer/arcade,
+/turf/open/floor/wood,
+/area/ship/crew/canteen)
 "KS" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
 /area/ship/hallway/aft)
+"KT" = (
+/obj/structure/chair/wood/wings,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/spider/stickyweb,
+/obj/item/soulstone/anybody,
+/obj/structure/sign/poster/contraband/power{
+	pixel_x = 32
+	},
+/turf/open/floor/engine/cult,
+/area/ship/science)
 "KW" = (
 /obj/machinery/airalarm/directional/north,
 /turf/open/floor/wood,
 /area/ship/hallway/aft)
-"KX" = (
-/obj/structure/sink{
-	pixel_y = 20
+"Lf" = (
+/obj/machinery/door/airlock{
+	dir = 4;
+	icon = 'icons/obj/doors/airlocks/station/uranium.dmi';
+	name = "Archives"
 	},
-/obj/item/razor{
-	desc = "The latest and greatest magic razor born from the science of shaving.";
-	name = "wand of hair slaying";
-	pixel_x = 11;
-	pixel_y = 7
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
 	},
-/obj/machinery/power/apc/auto_name/directional/east,
-/obj/structure/cable{
-	icon_state = "0-8"
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
 	},
-/obj/structure/mirror/magic/lesser{
-	pixel_y = 31
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
 	},
-/turf/open/floor/plasteel/white,
-/area/ship/crew/toilet)
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/turf/open/floor/wood,
+/area/ship/hallway/central)
 "Ll" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
@@ -1883,15 +1823,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
-"LL" = (
-/obj/machinery/light/small/directional/west{
-	brightness = 3
-	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
-	dir = 4
-	},
-/turf/open/floor/carpet/royalblue,
-/area/ship/crew/dorm)
 "LZ" = (
 /obj/structure/sign/poster/contraband/random,
 /turf/closed/wall/mineral/uranium/safe{
@@ -1905,16 +1836,6 @@
 	},
 /turf/open/floor/carpet/stellar,
 /area/ship/bridge)
-"Md" = (
-/obj/machinery/light/directional/north,
-/obj/machinery/jukebox{
-	name = "altar of rhythm"
-	},
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/turf/open/floor/wood,
-/area/ship/crew/canteen)
 "Me" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/cigbutt{
@@ -1957,6 +1878,37 @@
 /obj/structure/table/wood/fancy/purple,
 /turf/open/floor/carpet/purple,
 /area/ship/crew/canteen)
+"ME" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile{
+	color = "#008000"
+	},
+/obj/structure/curtain/cloth/fancy,
+/obj/docking_port/mobile{
+	dir = 4;
+	launch_status = 0;
+	port_direction = 8
+	},
+/obj/machinery/door/firedoor/window,
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "wizardship_bridge"
+	},
+/turf/open/floor/plating,
+/area/ship/science)
+"MQ" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile{
+	color = "#008000"
+	},
+/obj/structure/curtain/cloth/fancy,
+/obj/machinery/door/firedoor/window,
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "wizardship_bridge"
+	},
+/turf/open/floor/plating,
+/area/ship/science)
 "MX" = (
 /obj/structure/sign/poster/random,
 /turf/closed/wall/mineral/uranium/safe{
@@ -1982,6 +1934,18 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
 	dir = 8
 	},
+/turf/open/floor/carpet/green,
+/area/ship/hallway/central)
+"Nq" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer4,
+/obj/effect/landmark/observer_start,
 /turf/open/floor/carpet/green,
 /area/ship/hallway/central)
 "Ny" = (
@@ -2029,6 +1993,13 @@
 /obj/structure/spider/stickyweb,
 /turf/open/floor/engine/cult,
 /area/ship/science)
+"OV" = (
+/obj/item/storage/bag/tray,
+/obj/item/reagent_containers/food/snacks/burger/spell,
+/obj/structure/table/wood/fancy/cyan,
+/obj/machinery/firealarm/directional/east,
+/turf/open/floor/carpet/royalblue,
+/area/ship/crew/dorm)
 "OW" = (
 /obj/machinery/modular_computer/console/preset/command,
 /turf/open/floor/carpet/stellar,
@@ -2042,34 +2013,6 @@
 /obj/machinery/door/firedoor/window,
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
-"Qi" = (
-/obj/effect/turf_decal/industrial/outline/yellow,
-/obj/machinery/light/directional/west,
-/obj/structure/closet/crate/miningcar{
-	name = "mining car"
-	},
-/obj/item/pickaxe/emergency{
-	attack_verb = list("hit","spelled","cantripped","ensorceled");
-	desc = "Forged by the greatest smiths of the academy, enchanted by the archmagus council, this is a TRUE boulder eradicator.";
-	icon = 'icons/obj/guns/magic.dmi';
-	icon_state = "staffofflight";
-	name = "staff of rock removal"
-	},
-/obj/item/pickaxe/emergency{
-	attack_verb = list("hit","spelled","cantripped","ensorceled");
-	desc = "Forged by the greatest smiths of the academy, enchanted by the archmagus council, this is a TRUE boulder eradicator.";
-	icon = 'icons/obj/guns/magic.dmi';
-	icon_state = "staffofflight";
-	name = "staff of rock removal"
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/item/storage/bag/ore,
-/obj/item/storage/bag/ore,
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
-/area/ship/storage)
 "Ql" = (
 /obj/machinery/bookbinder,
 /obj/machinery/light_switch{
@@ -2084,26 +2027,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/external)
-"QG" = (
-/obj/machinery/door/airlock{
-	dir = 4;
-	icon = 'icons/obj/doors/airlocks/station/uranium.dmi';
-	name = "Archives"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/turf/open/floor/wood,
-/area/ship/hallway/central)
 "QJ" = (
 /obj/machinery/deepfryer{
 	name = "cauldron of savour"
@@ -2114,17 +2037,6 @@
 /obj/machinery/computer/cargo/express,
 /turf/open/floor/carpet/stellar,
 /area/ship/bridge)
-"Ry" = (
-/obj/effect/decal/cleanable/blood/gibs/up,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 10
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 9
-	},
-/obj/machinery/light/directional/east,
-/turf/open/floor/wood,
-/area/ship/crew/canteen/kitchen)
 "RD" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile{
@@ -2143,6 +2055,25 @@
 	},
 /turf/open/floor/wood,
 /area/ship/crew/library)
+"RH" = (
+/obj/machinery/light/small/directional/east,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/crew/toilet)
+"RJ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/power/apc/auto_name/directional/west,
+/obj/structure/cable,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/aft)
 "Sf" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/structure/closet/crate,
@@ -2207,23 +2138,6 @@
 	},
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
-"SD" = (
-/obj/docking_port/stationary{
-	dwidth = 4;
-	width = 10;
-	height = 15;
-	dir = 8
-	},
-/turf/template_noop,
-/area/space)
-"Tb" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
-	dir = 8
-	},
-/obj/machinery/light/small/directional/east,
-/turf/open/floor/wood,
-/area/ship/hallway/central)
 "Tc" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/vomit/old,
@@ -2236,10 +2150,33 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/toilet)
+"Tf" = (
+/obj/machinery/power/port_gen/pacman{
+	name = "mana pylon"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/obj/machinery/firealarm/directional/north,
+/turf/open/floor/plating,
+/area/ship/maintenance/aft)
 "Tn" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/trash/semki,
 /turf/open/floor/wood,
+/area/ship/hallway/aft)
+"Tp" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile{
+	color = "#008000"
+	},
+/obj/structure/curtain/cloth/fancy,
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "wizardship_bridge"
+	},
+/turf/open/floor/plating,
 /area/ship/hallway/aft)
 "Tt" = (
 /turf/closed/wall/mineral/uranium/safe{
@@ -2247,36 +2184,29 @@
 	name = "emerald wall"
 	},
 /area/ship/bridge)
+"Tv" = (
+/obj/machinery/light/small/directional/west{
+	brightness = 3
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood,
+/area/ship/hallway/central)
+"TI" = (
+/obj/effect/decal/cleanable/food/egg_smudge,
+/obj/machinery/firealarm/directional/north,
+/turf/open/floor/wood,
+/area/ship/crew/canteen/kitchen)
 "TQ" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 1
 	},
 /turf/open/floor/wood,
 /area/ship/hallway/aft)
-"TS" = (
-/obj/machinery/light/small/directional/east,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
-	dir = 8
-	},
-/turf/open/floor/plasteel/white,
-/area/ship/crew/toilet)
 "TY" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/spider/stickyweb,
 /turf/open/floor/engine/cult,
 /area/ship/science)
-"Uq" = (
-/obj/machinery/computer/cryopod/directional/north{
-	pixel_y = 27
-	},
-/obj/machinery/cryopod{
-	close_state = "bscanner_green";
-	icon_state = "bscanner_open";
-	name = "suspension sanctum";
-	open_state = "bscanner_open"
-	},
-/turf/open/floor/carpet/royalblue,
-/area/ship/crew/dorm)
 "Uu" = (
 /obj/structure/sign/poster/official/ue_no,
 /turf/closed/wall/mineral/uranium/safe{
@@ -2284,6 +2214,13 @@
 	name = "emerald wall"
 	},
 /area/ship/crew/canteen)
+"UH" = (
+/obj/machinery/power/apc/auto_name/directional/west,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/carpet/orange,
+/area/ship/crew/library)
 "Va" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable{
@@ -2306,6 +2243,26 @@
 	},
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
+"Ve" = (
+/obj/machinery/vending/snack/random,
+/obj/machinery/firealarm/directional/west,
+/turf/open/floor/wood,
+/area/ship/hallway/central)
+"Vk" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small/directional/south,
+/obj/structure/table/wood/fancy/royalblack,
+/obj/item/paper_bin/bundlenatural{
+	pixel_y = 5
+	},
+/obj/item/mining_scanner{
+	desc = "A grimoire penned by the mighty magus Antoras. Revelations of Rock is regarded as one of the most important and influential tomes to ever grace the Federation, granting it's reader the ability to divine minerals. And we mean REALLY divine. The book contains detailed information on hundreds of thousands of types of soil, minerals, gemstones, and more. A wizard wielding this tome could indeed, within seconds, precisely deduce how many individual grains of sand were on a planet. This tome alone is touted as the grandfather of the modern Wizard Federation, and certainly is responsible for your gem-encrusted hardsuits and your emerald-plated vessel. Your operations will, through the power of this stony grimoire, surely proceed smooth as slate and clear as crystal. That.. being said... It would appear that some, okay well, MOST of the pages have been ripped out of this copy. Through your wizardly intellect however, you deduce that missing pages will not lessen it's power. After all, tomes don't ACTUALLY utilize those pages, right?";
+	icon = 'icons/obj/library.dmi';
+	icon_state = "book";
+	name = "The Grimoire of Rock Revelation"
+	},
+/turf/open/floor/wood,
+/area/ship/crew/library)
 "Vy" = (
 /turf/open/floor/wood,
 /area/ship/hallway/aft)
@@ -2342,6 +2299,19 @@
 	},
 /turf/open/floor/carpet/royalblack,
 /area/ship/hallway/starboard)
+"Wi" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile{
+	color = "#008000"
+	},
+/obj/structure/curtain/cloth/fancy,
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "wizardship_bridge"
+	},
+/obj/machinery/door/firedoor/window,
+/turf/open/floor/plating,
+/area/ship/science)
 "Wp" = (
 /obj/effect/decal/cleanable/blood/old,
 /obj/item/cigbutt/cigarbutt,
@@ -2353,6 +2323,15 @@
 	},
 /turf/open/floor/carpet/royalblack,
 /area/ship/hallway/starboard)
+"WA" = (
+/obj/structure/table/wood/fancy,
+/obj/item/skub{
+	pixel_y = 11
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/firealarm/directional/east,
+/turf/open/floor/plasteel/white,
+/area/ship/crew/toilet)
 "WE" = (
 /obj/item/bedsheet/wiz,
 /obj/structure/bed,
@@ -2360,6 +2339,11 @@
 /obj/item/toy/plush/plushvar,
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/dorm)
+"WR" = (
+/obj/machinery/light/directional/south,
+/obj/item/radio/intercom/directional/south,
+/turf/open/floor/carpet/purple,
+/area/ship/crew/canteen)
 "WV" = (
 /obj/machinery/door/window/southright{
 	dir = 8
@@ -2416,22 +2400,40 @@
 /obj/machinery/vending/classicbeats,
 /turf/open/floor/wood,
 /area/ship/hallway/aft)
-"Yd" = (
-/obj/machinery/light/directional/south,
-/obj/item/radio/intercom/directional/south,
-/turf/open/floor/carpet/purple,
-/area/ship/crew/canteen)
-"Yn" = (
-/obj/structure/cable{
-	icon_state = "1-2"
+"Yg" = (
+/obj/machinery/door/airlock{
+	dir = 4;
+	icon = 'icons/obj/doors/airlocks/station/uranium.dmi';
+	name = "Engine"
 	},
 /obj/structure/cable{
-	icon_state = "2-4"
+	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer2,
-/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer4,
-/turf/open/floor/carpet/green,
-/area/ship/hallway/central)
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/turf/open/floor/bronze,
+/area/ship/maintenance/aft)
+"Yq" = (
+/obj/effect/decal/cleanable/blood/gibs/up,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 9
+	},
+/obj/machinery/light/directional/east,
+/turf/open/floor/wood,
+/area/ship/crew/canteen/kitchen)
 "Yx" = (
 /turf/closed/wall/mineral/uranium/safe{
 	desc = "A wall plated with emerald.";
@@ -2463,29 +2465,28 @@
 	},
 /turf/open/floor/carpet/stellar,
 /area/ship/bridge)
+"YH" = (
+/obj/machinery/light/small/directional/east,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 8
+	},
+/turf/open/floor/carpet/royalblue,
+/area/ship/crew/dorm)
+"YN" = (
+/obj/machinery/computer/bookmanagement{
+	name = "archival servitor";
+	pixel_y = 1
+	},
+/obj/structure/table/wood/fancy/royalblack,
+/obj/item/radio/intercom/directional/south,
+/turf/open/floor/carpet/orange,
+/area/ship/crew/library)
 "Zj" = (
 /obj/machinery/suit_storage_unit/open,
 /obj/item/tank/internals/emergency_oxygen/engi,
 /obj/item/clothing/suit/space/hardsuit/wizard,
 /turf/open/floor/bronze,
 /area/ship/cargo)
-"Zw" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/cable,
-/obj/machinery/power/terminal,
-/obj/machinery/light/small/directional/west,
-/turf/open/floor/plating,
-/area/ship/maintenance/aft)
-"ZT" = (
-/obj/structure/chair/wood/wings,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/spider/stickyweb,
-/obj/item/soulstone/anybody,
-/obj/structure/sign/poster/contraband/power{
-	pixel_x = 32
-	},
-/turf/open/floor/engine/cult,
-/area/ship/science)
 "ZW" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/closet/crate{
@@ -2521,9 +2522,9 @@ No
 No
 So
 So
-bZ
-qN
-us
+Wi
+ME
+MQ
 So
 IN
 No
@@ -2559,8 +2560,8 @@ bb
 aT
 oB
 IN
-HQ
-HQ
+Tp
+Tp
 IN
 No
 No
@@ -2583,7 +2584,7 @@ No
 No
 nl
 Cq
-Ih
+UH
 if
 aJ
 Va
@@ -2601,7 +2602,7 @@ No
 No
 No
 No
-SD
+kL
 No
 No
 No
@@ -2617,9 +2618,9 @@ nl
 JB
 NN
 GM
-jR
+ib
 So
-ez
+rk
 uh
 TY
 IJ
@@ -2634,7 +2635,7 @@ wj
 wj
 jQ
 oD
-oA
+lY
 jQ
 jQ
 No
@@ -2647,28 +2648,28 @@ No
 No
 nl
 nl
-xx
+rj
 Ez
 An
-aQ
+Vk
 So
-ZT
-ej
+KT
+Dl
 Ot
 hq
 bn
 IN
-eb
+yq
 Ge
 Vy
 IN
-vp
-Qi
+aN
+jR
 gF
 bW
 Ar
 bX
-Kn
+wo
 jQ
 No
 No
@@ -2683,7 +2684,7 @@ NN
 dd
 RE
 St
-GI
+YN
 So
 So
 So
@@ -2691,7 +2692,7 @@ So
 So
 So
 IN
-mB
+pZ
 fx
 cD
 bA
@@ -2724,7 +2725,7 @@ MA
 NF
 bo
 IN
-gH
+AL
 Ge
 KS
 wj
@@ -2732,9 +2733,9 @@ ZW
 bK
 Sf
 bY
-go
+kc
 Xm
-hG
+xx
 jQ
 No
 No
@@ -2742,20 +2743,20 @@ No
 (8,1,1) = {"
 Tt
 Tt
-eg
-gP
+JA
+wh
 Tt
 ay
 zA
-QG
+Lf
 ay
 ay
 Yx
-oV
+hC
 aP
 aP
 HS
-Yd
+WR
 IN
 KS
 Jn
@@ -2766,7 +2767,7 @@ LZ
 tv
 jC
 jC
-rJ
+Yg
 jC
 jC
 jC
@@ -2775,33 +2776,33 @@ No
 (9,1,1) = {"
 ab
 OW
-dA
+tg
 Mb
 yQ
 aV
 Ee
 Xz
-bk
-qu
+Tv
+Ve
 Uu
 WV
 qY
 nQ
 Cc
-Cs
+wa
 IN
-pM
+sb
 Sq
 TQ
 tv
-xK
-LL
+fg
+yu
 bR
 jC
 ca
 cf
-dy
-Zw
+RJ
+Kd
 ck
 cl
 "}
@@ -2813,7 +2814,7 @@ YF
 aj
 am
 Np
-Yn
+Nq
 hh
 am
 aK
@@ -2845,9 +2846,9 @@ af
 wq
 yQ
 bd
-Tb
+Ag
 Jo
-lp
+Jx
 aG
 Yx
 SC
@@ -2860,9 +2861,9 @@ cD
 pR
 Vy
 tv
-Uq
-dk
-mx
+bg
+YH
+OV
 jC
 vk
 gL
@@ -2874,20 +2875,20 @@ cl
 (12,1,1) = {"
 Tt
 Tt
-DW
-fu
+Ew
+ls
 Tt
 ay
 ay
-ly
+kH
 ay
 ay
 iu
-Md
+qk
 Me
 iU
 wT
-ia
+KK
 IN
 KW
 XS
@@ -2897,10 +2898,10 @@ CF
 qT
 CF
 jC
-sW
+Tf
 Ia
 HV
-hz
+wu
 ee
 QD
 "}
@@ -2910,7 +2911,7 @@ Tt
 Tt
 Tt
 Tt
-uc
+nT
 kP
 Ek
 aB
@@ -2927,11 +2928,11 @@ Ge
 Vy
 CF
 bG
-Eq
+nq
 bT
 jC
 jC
-rV
+ft
 jC
 jC
 jC
@@ -2947,15 +2948,15 @@ ao
 ar
 lq
 wX
-vR
+no
 Gh
 Gh
 RD
-tN
+pe
 RD
 Gh
 IN
-Ib
+lr
 Mf
 cD
 bB
@@ -2977,24 +2978,24 @@ No
 No
 ni
 ni
-el
+AC
 Wp
 aq
 an
 Gh
-Cr
+my
 cA
 jA
 oz
 zn
 IN
-eb
+yq
 Vy
 KS
 IN
-KX
-TS
-cB
+wY
+RH
+WA
 CF
 No
 No
@@ -3045,10 +3046,10 @@ No
 No
 ni
 ni
-zF
+xF
 sX
 Gh
-rB
+TI
 ba
 bh
 bl
@@ -3083,12 +3084,12 @@ ni
 Gh
 Kj
 Nm
-Ry
+Yq
 nC
 bu
 IN
-HQ
-HQ
+Tp
+Tp
 IN
 No
 No
@@ -3115,9 +3116,9 @@ No
 No
 Gh
 Gh
-mH
+vt
 Gh
-mH
+vt
 Gh
 Gh
 No

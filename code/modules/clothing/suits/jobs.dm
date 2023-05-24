@@ -257,6 +257,34 @@
 
 //SolGov suits
 
+/obj/item/clothing/suit/solgov
+	name = "SolGov robe"
+	desc = "A set of plain SolGov robes, commonly used by civilians."
+	body_parts_covered = CHEST|GROIN|ARMS
+	icon_state = "solgov_robe"
+	item_state = "solgov_robe"
+
+/obj/item/clothing/suit/solgov/dress
+	name = "SolGov dress"
+	desc = "A plain SolGov dress, commonly used by civilians."
+	body_parts_covered = CHEST|GROIN
+	icon_state = "solgov_dress"
+	item_state = "solgov_dress"
+
+/obj/item/clothing/suit/bureaucrat
+	name = "SolGov bureaucrat robe"
+	desc = "A set of unique SolGov robes, utilized by Solarian Bureaucrats."
+	body_parts_covered = CHEST|GROIN|ARMS
+	icon_state = "solgov_bureaucrat_robe"
+	item_state = "solgov_bureaucrat_robe"
+
+/obj/item/clothing/suit/solgov/jacket
+	name = "SolGov jacket"
+	desc = "A plain SolGov jacket, commonly used by civilians."
+	body_parts_covered = CHEST|GROIN|ARMS
+	icon_state = "solgov_jacket"
+	item_state = "solgov_jacket"
+
 /obj/item/clothing/suit/toggle/solgov
 	name = "\improper SolGov coat"
 	desc = "An armored coat worn for special occasions. This one is dyed in SolGov blue."
