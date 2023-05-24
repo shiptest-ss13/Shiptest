@@ -64,6 +64,12 @@
 
 
 		if("buy")
+			if(is_banned_from(spawnee.ckey, "Ship Purchasing"))
+				to_chat(spawnee, "<span class='danger'>You are banned from purchasing ships!</span>")
+				spawnee.new_player_panel()
+				ui.close()
+				return
+
 			ui.close()
 			var/datum/map_template/shuttle/template = SSmapping.ship_purchase_list[params["name"]]
 			if(!template.enabled)
@@ -84,6 +90,7 @@
 /datum/ship_select/ui_static_data(mob/user)
 	. = list()
 	.["ships"] = list()
+	.["purchaseBanned"] = is_banned_from(user.ckey, "Ship Purchasing")
 	for(var/datum/crew/S as anything in SSjob.all_crew)
 		if(!S.is_join_option())
 			continue

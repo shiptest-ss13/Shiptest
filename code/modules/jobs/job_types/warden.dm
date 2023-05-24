@@ -53,15 +53,6 @@
 
 	chameleon_extras = /obj/item/gun/ballistic/shotgun/automatic/combat/compact
 
-/datum/outfit/job/warden/solgov
-	name = "Brig Officer (SolGov)"
-
-	ears = /obj/item/radio/headset/solgov/alt
-	uniform = /obj/item/clothing/under/solgov
-	accessory = /obj/item/clothing/accessory/armband
-	head = /obj/item/clothing/head/beret/solgov
-	suit = /obj/item/clothing/suit/armor/vest/bulletproof/solgov/rep
-
 /datum/outfit/job/warden/chiefmastersergeant
 	name = "Chief Master Sergeant"
 	r_pocket = /obj/item/gun/ballistic/automatic/pistol/solgov
