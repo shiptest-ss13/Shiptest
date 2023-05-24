@@ -1557,6 +1557,14 @@
 /obj/item/bedsheet/captain,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
+"Hv" = (
+/obj/effect/turf_decal/corner/opaque/red/full,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/landmark/observer_start,
+/turf/open/floor/plasteel,
+/area/ship/hallway/aft)
 "HF" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
@@ -2913,7 +2921,7 @@ dH
 uq
 ur
 go
-Bl
+Hv
 Bl
 rh
 BN
