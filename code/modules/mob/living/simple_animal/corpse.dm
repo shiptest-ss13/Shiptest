@@ -221,24 +221,21 @@
 	id = /obj/item/card/id
 	glasses = /obj/item/clothing/glasses/hud/health
 
-/obj/effect/mob_spawn/human/corpse/solgov/infantry
-	name = "SolGov Infantryman"
-	id_job = "SolGov Infantryman"
-	outfit = /datum/outfit/solgov/infantrymancorpse
+/obj/effect/mob_spawn/human/corpse/solgov/sonnensoldner
+	name = "SolGov Sonnensoldner"
+	id_job = "SolGov Sonnensoldner"
+	outfit = /datum/outfit/solgov/sonnensoldner
 	id_access_list = list(ACCESS_SOLGOV)
-	hairstyle = "Buzzcut"
-	facial_hairstyle = "Shaved"
 
-/datum/outfit/solgov/infantrymancorpse
-	name = "SGV Infantry Corpse"
+/datum/outfit/solgov/sonnensoldner
+	name = "SolGov Sonnensoldner"
 	uniform = /obj/item/clothing/under/solgov
 	suit = /obj/item/clothing/suit/armor/vest/bulletproof/solgov
 	shoes = /obj/item/clothing/shoes/jackboots
 	gloves = /obj/item/clothing/gloves/color/grey
 	ears = /obj/item/radio/headset
 	suit_store = null
-	mask = /obj/item/clothing/mask/gas/sechailer/swat
-	head = /obj/item/clothing/head/helmet/solgov
+	head = /obj/item/clothing/head/solgov/sonnensoldner
 	back = /obj/item/storage/backpack
 	id = /obj/item/card/id/solgov
 	backpack_contents = null
@@ -304,3 +301,4 @@
 	ears = /obj/item/radio/headset/headset_sci
 	back = /obj/item/storage/backpack/satchel/leather
 	id = /obj/item/card/id/away/junglebotany/command
+
