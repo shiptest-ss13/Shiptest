@@ -1,84 +1,55 @@
-/obj/item/survey_handheld
-	name = "Survey Handheld"
-	desc = "A small tool designed for quick and inefficient data collection about your local star sector."
+/obj/item/gear_pack/powered/survey_pack
+	name = "Survey Pack"
+	desc = "A large scientific kit designed for planetary survey"
 	icon = 'icons/obj/item/survey_handheld.dmi'
 	icon_state = "survey"
-	var/static/list/z_active = list()
-	var/static/list/z_history = list()
-	var/active = FALSE
-	var/survey_value = 300
+	lefthand_file = 'icons/mob/inhands/equipment/backpack_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/backpack_righthand.dmi'
+	attachment = /obj/item/attachment/survey_scanner
+	var/survey_mult = 1
 	var/survey_delay = 4 SECONDS
-	w_class = WEIGHT_CLASS_BULKY
 
 
-/obj/item/survey_handheld/advanced
-	name = "Advanced Survey Handheld"
-	desc = "An improved version of its predecessor this tool collects large amounts of data."
+
+/obj/item/gear_pack/powered/survey_pack/advanced //can be purchased, is Expendy.
+	name = "Advanced Survey Pack"
+	desc = "A high hech piece of scientific kit designed for thorough planetary survey"
 	icon_state = "survey-adv"
-	survey_value = 450
-	survey_delay = 3 SECONDS
+	survey_mult = 1.5
 
-/obj/item/survey_handheld/elite
-	name = "Experimental Survey Handheld"
-	desc = "An improvement on even the Advanced version; this handheld was designed to be extremely fast in collecting data."
+/obj/item/gear_pack/powered/survey_pack/advanced/nt
+	name = "Nanotrasen Survey Pack"
+	desc = "A large, high tech piece of Nanotrasen kit, designed for mining survey."
+	icon_state = "survey-nt"
+	survey_mult = 1.6
+	survey_delay = 3
+	//give these meson view?
+
+/obj/item/gear_pack/powered/survey_pack/Experimental //these should never be purchasable or manufacturable, loot only.
+	name = "Experimental Survey Pack"
+	desc = "An experimental survey pack, capable of analyzing entire regions in seconds."
 	icon_state = "survey-elite"
-	survey_value = 650
+	survey_mult = 2
 	survey_delay = 2 SECONDS
 
-/datum/design/survey_handheld
-	name = "Survey Handheld"
-	id = "survey-handheld"
-	build_type = AUTOLATHE
-	build_path = /obj/item/survey_handheld
-	materials = list(
-		/datum/material/iron = 2000,
-		/datum/material/glass = 1000,
-	)
-	category = list("initial", "Tools")
 
-/datum/design/survey_handheld_advanced
-	name = "Advanced Survey Handheld"
-	id = "survey-handheld-advanced"
-	build_type = PROTOLATHE
-	build_path = /obj/item/survey_handheld/advanced
-	materials = list(
-		/datum/material/iron = 3000,
-		/datum/material/glass = 2000,
-		/datum/material/gold = 2000,
-	)
-	category = list("Tool Designs")
+/obj/item/attachment/survey_scanner
+	name = "Survey Scanner"
+	desc = "A wired tool designed to work in tandem with a survey pack"
+	w_class = WEIGHT_CLASS_BULKY
+	item_flags = ABSTRACT
+	icon_state = "survey"
+	pack = /obj/item/gear_pack/powered/survey_pack
+	var/survey_mult
+	var/survey_delay
 
-/datum/design/survey_handheld_elite
-	name = "Elite Survey Handheld"
-	id = "survey-handheld-elite"
-	build_type = PROTOLATHE
-	build_path = /obj/item/survey_handheld/elite
-	materials = list(
-		/datum/material/iron = 5000,
-		/datum/material/silver = 5000,
-		/datum/material/gold = 3000,
-		/datum/material/uranium = 3000,
-		/datum/material/diamond = 2000,
-	)
-	category = list("Tool Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
-
-
-/datum/design/survey_handheld_exp
-	name = "Experimental Survey Handheld"
-	id = "survey-handheld-exp"
-	build_type = PROTOLATHE
-	build_path = /obj/item/survey_handheld/elite
-	materials = list(
-		/datum/material/iron = 5000,
-		/datum/material/silver = 5000,
-		/datum/material/gold = 3000,
-		/datum/material/uranium = 3000,
-		/datum/material/diamond = 3000,
-		/datum/material/bluespace = 3000,
-	)
-	category = list("Tool Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+/obj/item/attachment/survey_scanner/Initialize()
+	. = ..()
+	pack = loc
+	if (!istype(pack))
+		return INITIALIZE_HINT_QDEL
+	survey_mult = pack.survey_mult
+	survey_delay = pack.survey_delay
 
 /obj/structure/anomaly
 	name = "Defaultic Bind"
