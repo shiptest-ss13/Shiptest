@@ -226,8 +226,6 @@
 /turf/open/floor/grass/ship
 	name = "grass"
 	desc = "A patch of grass."
-	base_icon_state = "grass"
-	bullet_bounce_sound = null
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_GRASS)
 	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_GRASS)
