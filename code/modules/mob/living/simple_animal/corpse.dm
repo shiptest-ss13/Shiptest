@@ -292,7 +292,7 @@
 	name = "Botanical Security Officer Corpse"
 	uniform = /obj/item/clothing/under/rank/security/officer
 	shoes = /obj/item/clothing/shoes/jackboots
-	ears = /obj/item/radio/headset/bowman
+	ears = /obj/item/radio/headset/headset_sec
 	back = /obj/item/storage/backpack/security
 	belt = /obj/item/gun/ballistic/automatic/pistol/m1911/no_mag
 	id = /obj/item/card/id/away/junglebotany/security
