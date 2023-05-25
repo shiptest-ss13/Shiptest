@@ -1026,7 +1026,7 @@
 				"UI"=scanner_occupant.dna.uni_identity,
 				"UE"=scanner_occupant.dna.unique_enzymes,
 				"name"=scanner_occupant.real_name,
-				"blood_type"=scanner_occupant.dna.blood_type)
+				"blood_type"=scanner_occupant.dna.blood_type.name)
 
 			return
 

@@ -47,8 +47,9 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	///The gradient color used to color the gradient.
 	var/grad_color
 	///The color used for the "white" of the eye, if the eye has one.
-	var/sclera_color = "e8e8e8"
-
+	var/sclera_color = "#e8e8e8"
+	/// The color used for blush overlay
+	var/blush_color = COLOR_BLUSH_PINK
 	///Does the species use skintones or not? As of now only used by humans.
 	var/use_skintones = FALSE
 	///If your race bleeds something other than bog standard blood, change this to reagent id. For example, ethereals bleed liquid electricity.
@@ -157,6 +158,9 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/bodytemp_cooling_rate_max = HUMAN_BODYTEMP_COOLING_MAX
 	/// The maximum rate at which a species can cool down per tick
 	var/bodytemp_heating_rate_max = HUMAN_BODYTEMP_HEATING_MAX
+
+	///Does our species have colors for its' damage overlays?
+	var/use_damage_color = TRUE
 
 	///Species-only traits. Can be found in [code/_DEFINES/DNA.dm]
 	var/list/species_traits = list()
@@ -445,7 +449,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	regenerate_organs(C,old_species)
 
 	if(exotic_bloodtype && C.dna.blood_type != exotic_bloodtype)
-		C.dna.blood_type = exotic_bloodtype
+		C.dna.blood_type = get_blood_type(exotic_bloodtype)
 
 	if(old_species.mutanthands)
 		for(var/obj/item/I in C.held_items)
@@ -755,7 +759,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			// blush
 			if (HAS_TRAIT(H, TRAIT_BLUSHING)) // Caused by either the *blush emote or the "drunk" mood event
 				var/mutable_appearance/blush_overlay = mutable_appearance('icons/mob/human_face.dmi', "blush", -BODY_ADJ_LAYER) //should appear behind the eyes
-				blush_overlay.color = COLOR_BLUSH_PINK
+				if(H.dna && H.dna.species && H.dna.species.blush_color)
+					blush_overlay.color = H.dna.species.blush_color
 				standing += blush_overlay
 
 			// snore

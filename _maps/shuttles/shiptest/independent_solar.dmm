@@ -1303,6 +1303,19 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel,
 /area/ship/hallway)
+"zh" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/effect/landmark/observer_start,
+/turf/open/floor/plasteel/mono,
+/area/ship/hallway)
 "zq" = (
 /obj/effect/turf_decal/corner/opaque/blue{
 	dir = 8
@@ -2904,7 +2917,7 @@ uI
 yG
 EZ
 tv
-mx
+zh
 Oa
 hj
 OQ
