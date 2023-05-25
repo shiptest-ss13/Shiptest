@@ -42,19 +42,6 @@
 
 //Shiptest outfits
 
-/datum/outfit/job/cargo_tech/solgov
-	name = "Cargo Technician (SolGov)"
-
-	uniform = /obj/item/clothing/under/solgov
-	accessory = /obj/item/clothing/accessory/armband/cargo
-	shoes = /obj/item/clothing/shoes/combat
-	head = /obj/item/clothing/head/beret/solgov/plain
-
-/datum/outfit/job/cargo_tech/solgov/pilot
-	name = "Pilot (SolGov)"
-
-	suit = /obj/item/clothing/suit/jacket
-
 /datum/outfit/job/cargo_tech/pilot
 	name = "Pilot"
 
