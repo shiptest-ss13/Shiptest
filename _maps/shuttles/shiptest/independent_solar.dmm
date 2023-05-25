@@ -1387,6 +1387,12 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel,
 /area/ship/hallway)
+"zh" = (
+/obj/structure/closet/crate/engineering,
+/obj/item/stack/sheet/glass/fifty,
+/obj/item/stack/sheet/metal/twenty,
+/turf/open/floor/plating,
+/area/ship/cargo)
 "zq" = (
 /obj/effect/turf_decal/corner/opaque/blue{
 	dir = 8
@@ -1851,17 +1857,10 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway)
 "Gf" = (
-/obj/effect/turf_decal/industrial/warning,
-/obj/item/stack/sheet/mineral/titanium/twenty,
 /obj/structure/closet/crate,
 /obj/item/stack/sheet/metal/fifty,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/orange/hidden{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
+/obj/item/stack/sheet/mineral/titanium/twenty,
+/turf/open/floor/plating,
 /area/ship/cargo)
 "Gi" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -2370,9 +2369,7 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway)
 "PJ" = (
-/obj/structure/closet/crate/engineering,
-/obj/item/stack/sheet/metal/twenty,
-/obj/item/stack/sheet/glass/fifty,
+/obj/machinery/computer/cargo/express,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "PP" = (
@@ -2947,7 +2944,7 @@ cV
 No
 lV
 Co
-OY
+zh
 OY
 vN
 EB
@@ -2967,9 +2964,9 @@ gf
 Pq
 RB
 PJ
+Co
+OY
 Gf
-OY
-OY
 vN
 EB
 Kz
