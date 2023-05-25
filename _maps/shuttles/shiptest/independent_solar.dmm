@@ -1202,13 +1202,13 @@
 /turf/open/floor/plating,
 /area/ship/hallway)
 "wM" = (
-/obj/machinery/computer{
-	dir = 8
-	},
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/transparent/neutral{
+	dir = 8
+	},
+/obj/machinery/computer/crew/syndie{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -1468,10 +1468,12 @@
 /obj/item/assembly/flash/handheld,
 /obj/item/slime_scanner,
 /obj/item/slime_extract/grey,
-/obj/item/storage/box/rndboards{
-	desc = "A box containing boards for research equipment.";
-	name = "research equipment box"
+/obj/item/circuitboard/machine/circuit_imprinter{
+	pixel_y = -6
 	},
+/obj/item/circuitboard/machine/rdserver,
+/obj/item/circuitboard/machine/protolathe/department/science,
+/obj/item/circuitboard/machine/destructive_analyzer,
 /turf/open/floor/plasteel/white,
 /area/ship/science)
 "zT" = (
