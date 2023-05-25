@@ -51,12 +51,6 @@
 	accessory = /obj/item/clothing/accessory/armband/cargo
 	head = /obj/item/clothing/head/beret/solgov/plain
 
-/datum/outfit/job/miner/solgov/rebel
-	name = "Pioneer (Deserter)"
-
-	uniform = /obj/item/clothing/under/syndicate/camo
-	head = /obj/item/clothing/head/beret/solgov/terragov/plain
-
 /datum/outfit/job/miner/equipped
 	name = "Shaft Miner (Equipment)"
 	suit = /obj/item/clothing/suit/hooded/explorer
@@ -100,11 +94,6 @@
 	accessory = /obj/item/clothing/accessory/armband/cargo
 	head = /obj/item/clothing/head/hardhat/mining
 	suit =  /obj/item/clothing/suit/hazardvest
-
-/datum/outfit/job/miner/solgov/rebel
-	name = "Field Engineer (Deserter)"
-
-	uniform = /obj/item/clothing/under/syndicate/camo
 
 /datum/outfit/job/miner/scientist
 	name = "Minerologist"
