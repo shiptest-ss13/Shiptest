@@ -521,15 +521,6 @@
 	unique_reskin = null
 	armor = list("melee" = 15, "bullet" = 60, "laser" = 10, "energy" = 10, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 
-/obj/item/clothing/head/helmet/solgov
-	name = "\improper SolGov Helmet"
-	desc = "A helmet manufactured by SolGov to protect craniums. Painted in green to provide some degree of camoflauge."
-	icon_state = "helmet_terragov"
-	item_state = "helmet_terragov"
-	can_flashlight = FALSE
-	dog_fashion = null
-	armor = list("melee" = 15, "bullet" = 60, "laser" = 10, "energy" = 10, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
-
 /obj/item/clothing/head/solgov
 	name = "\improper SolGov officer's cap"
 	desc = "A blue cap worn by high-ranking officers of SolGov."
@@ -544,6 +535,24 @@
 	armor = list("melee" = 40, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 60)
 	icon_state = "cap_terragov"
 	item_state = "cap_terragov"
+
+/obj/item/clothing/head/solgov/sonnensoldner
+	name = "\improper Sonnensoldner Hat"
+	desc = "A standard-issue SolGov hat adorned with a feather, commonly used by Sonnensoldners."
+	icon_state = "sonnensoldner_hat"
+	item_state = "sonnensoldner_hat"
+	worn_y_offset = 4
+	dog_fashion = null
+	armor = list("melee" = 40, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 60)
+
+/obj/item/clothing/head/solgov/captain
+	name = "\improper SolGov bicorne hat"
+	desc = "A unique bicorne hat given to Solarian Captains on expeditionary missions."
+	icon_state = "solgov_bicorne"
+	item_state = "solgov_bicorne"
+	worn_y_offset = 2
+	dog_fashion = null
+	armor = list("melee" = 40, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 60)
 
 /obj/item/clothing/head/helmet/space/plasmaman/solgov
 	name = "\improper SolGov envirosuit helmet"

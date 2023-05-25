@@ -143,12 +143,13 @@
 	foodtype = RAW | MEAT | TOXIC
 
 /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/ethereal
+	name = "crystalline cellulose"
 	icon_state = "etherealmeat"
-	desc = "So shiny you feel like ingesting it might make you shine too"
+	desc = "Technically vegan, but nobody has tested that theory."
 	filling_color = "#97ee63"
 	list_reagents = list(/datum/reagent/consumable/liquidelectricity = 3)
-	tastes = list("pure electricity" = 2, "meat" = 1)
-	foodtype = RAW | MEAT | TOXIC
+	tastes = list("pure electricity" = 2, "a strangely woody flavor" = 1)
+	foodtype = RAW | VEGETABLES
 
 ////////////////////////////////////// OTHER MEATS ////////////////////////////////////////////////////////
 
