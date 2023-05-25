@@ -1,12 +1,16 @@
 /datum/outfit/job/solgov
 
 /datum/outfit/job/solgov/post_equip(mob/living/carbon/human/H, visualsOnly)
+	. = ..()
+	if(visualsOnly)
+		return
 	H.faction |= list("playerSolgov")
 
 /datum/outfit/job/solgov/assistant
 	name = "Scribe (SolGov)"
 	jobtype = /datum/job/assistant
 
+	head = /obj/item/clothing/head/beret/solgov/plain
 	uniform = /obj/item/clothing/under/solgov/formal
 	shoes = /obj/item/clothing/shoes/laceup
 	suit = /obj/item/clothing/suit/solgov
@@ -15,9 +19,18 @@
 	name = "Bureaucrat (SolGov)"
 	jobtype = /datum/job/curator
 
+	head = /obj/item/clothing/head/beret/solgov
 	uniform = /obj/item/clothing/under/solgov/formal
 	shoes = /obj/item/clothing/shoes/laceup
 	suit = /obj/item/clothing/suit/solgov/bureaucrat
+	belt = /obj/item/pda/curator
+	l_hand = /obj/item/storage/bag/books
+	r_pocket = /obj/item/key/displaycase
+	l_pocket = /obj/item/laser_pointer
+	accessory = /obj/item/clothing/accessory/pocketprotector/full
+	backpack_contents = list(
+		/obj/item/barcodescanner = 1
+	)
 
 /datum/outfit/job/solgov/captain
 	name = "Captain (SolGov)"
@@ -25,8 +38,8 @@
 
 	id = /obj/item/card/id/gold
 	belt = /obj/item/pda/captain
-	gloves = /obj/item/clothing/gloves/color/captain
-	ears = /obj/item/radio/headset/heads/captain
+	gloves = /obj/item/clothing/gloves/combat
+	ears = /obj/item/radio/headset/solgov
 	uniform =  /obj/item/clothing/under/solgov/formal/captain
 	suit = /obj/item/clothing/suit/armor/vest/bulletproof/solgov/captain
 	shoes = /obj/item/clothing/shoes/laceup
