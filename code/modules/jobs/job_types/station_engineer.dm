@@ -136,11 +136,6 @@
 	head = /obj/item/clothing/head/hardhat/orange
 	suit =  /obj/item/clothing/suit/hazardvest
 
-/datum/outfit/job/engineer/solgov/rebel
-	name = "Ship Engineer (Deserter)"
-
-	uniform = /obj/item/clothing/under/syndicate/camo
-
 /datum/outfit/job/engineer/pirate
 	name = "Ship's Engineer (Pirate)"
 
@@ -190,6 +185,36 @@
 	alt_uniform = null
 	glasses = null
 
+/datum/outfit/job/engineer/syndicate/sbc
+	name = "Ship Engineer (Twinkleshine)"
+
+	uniform = /obj/item/clothing/under/syndicate/gec
+	accessory = null
+	glasses = /obj/item/clothing/glasses/meson/night
+	head = /obj/item/clothing/head/hardhat/orange
+	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
+	ears = /obj/item/radio/headset/syndicate
+	mask = /obj/item/clothing/mask/chameleon
+	back = /obj/item/storage/backpack/industrial
+	belt = /obj/item/storage/belt/utility/syndicate
+	shoes = /obj/item/clothing/shoes/combat
+	suit = /obj/item/clothing/suit/hazardvest
+	alt_suit = /obj/item/clothing/suit/toggle/hazard
+	implants = list(/obj/item/implant/weapons_auth)
+	id = /obj/item/card/id/syndicate_command/crew_id/engi
+	backpack_contents = list(/obj/item/construction/rcd/combat, /obj/item/rcd_ammo/large)
+
+	box = /obj/item/storage/box/survival/syndie
+
+/datum/outfit/job/engineer/syndicate/sbc/post_equip(mob/living/carbon/human/H)
+	H.faction |= list("PlayerSyndicate")
+
+	var/obj/item/card/id/I = H.wear_id
+	I.registered_name = pick(GLOB.twinkle_names) + "-" + num2text(rand(6, 8)) // squidquest real
+	I.assignment = "Engineer"
+	I.access |= list(ACCESS_SYNDICATE)
+	I.update_label()
+
 /datum/outfit/job/engineer/independent/ship_engineer
 	name = "Ship Engineer (Independent)"
 
@@ -215,3 +240,14 @@
 	r_pocket = /obj/item/radio
 	head = /obj/item/clothing/head/beanie/black
 	accessory = /obj/item/clothing/accessory/armband/engine
+
+/datum/outfit/job/engineer/aipirate
+	name = "Nodesman (Engineer)"
+
+	uniform = /obj/item/clothing/under/utility
+	head = /obj/item/clothing/head/soft/black
+	shoes = /obj/item/clothing/shoes/combat
+	r_pocket = /obj/item/kitchen/knife/combat/survival
+	gloves = /obj/item/clothing/gloves/combat
+
+	implants = list(/obj/item/implant/radio)

@@ -183,7 +183,12 @@
 #undef PATH_POWERCOIL
 #undef PATH_RPCOIL
 
-
+/obj/item/circuitboard/machine/tesla_ground
+	name = "Tesla Ground (Machine Board)"
+	icon_state = "engineering"
+	build_path = /obj/machinery/power/tesla_coil/tesla_ground
+	req_components = list(/obj/item/stock_parts/capacitor = 1)
+	needs_anchored = TRUE
 
 /obj/item/circuitboard/machine/cell_charger
 	name = "Cell Charger (Machine Board)"
@@ -1464,6 +1469,12 @@
 	req_components = list(/obj/item/stock_parts/capacitor = 3,
 		/obj/item/stock_parts/micro_laser = 3)
 
+/obj/item/circuitboard/machine/shuttle/engine/electric/bad
+	name = "Outdated Ion Thruster (Machine Board)"
+	build_path = /obj/machinery/power/shuttle/engine/electric/bad
+	req_components = list(/obj/item/stock_parts/capacitor = 2,
+		/obj/item/stock_parts/micro_laser = 2)
+
 /obj/item/circuitboard/machine/shuttle/engine/expulsion
 	name = "Expulsion Thruster (Machine Board)"
 	build_path = /obj/machinery/power/shuttle/engine/fueled/expulsion
@@ -1502,4 +1513,13 @@
 		/obj/item/stack/cable_coil = 5,
 		/obj/item/stock_parts/cell = 3,
 		/obj/item/stock_parts/capacitor = 1
+	)
+
+/obj/item/circuitboard/machine/shuttle/smes/micro
+	name = "Micro Electric Engine Precharger (Machine Board)"
+	build_path = /obj/machinery/power/smes/shuttle/micro
+	req_components = list(
+		/obj/item/stack/cable_coil = 5,
+		/obj/item/stock_parts/cell = 3,
+		/obj/item/stock_parts/capacitor = 2
 	)

@@ -119,3 +119,10 @@
 	belt = /obj/item/storage/belt/utility/full
 
 	courierbag = /obj/item/storage/backpack/messenger/inteq
+
+/datum/outfit/job/ce/nt
+	name = "Chief Engineer (NT)"
+
+	head = /obj/item/clothing/head/beret/ce
+	belt = /obj/item/storage/belt/utility/full
+	suit = /obj/item/clothing/suit/hazardvest
