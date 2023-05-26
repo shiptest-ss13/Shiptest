@@ -10541,6 +10541,12 @@
 /obj/effect/turf_decal/atmos/air,
 /turf/open/floor/engine/air,
 /area/ship/engineering/atmospherics)
+"Nt" = (
+/obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "Nv" = (
 /obj/machinery/atmospherics/pipe/simple/orange/visible/layer2{
 	dir = 6
@@ -13287,6 +13293,16 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
+"XR" = (
+/obj/effect/turf_decal/techfloor,
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/obj/machinery/camera{
+	dir = 6
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/engineering/communications)
 "XT" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 8
@@ -13413,12 +13429,6 @@
 	icon_state = "0-4"
 	},
 /turf/open/floor/plasteel/tech,
-/area/ship/engineering)
-"Yo" = (
-/obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4{
-	dir = 4
-	},
-/turf/open/floor/plating,
 /area/ship/engineering)
 "Yq" = (
 /obj/effect/turf_decal/corner/opaque/yellow/full,
@@ -13892,7 +13902,7 @@ Uq
 Uq
 hr
 VN
-Yo
+Nt
 Mm
 Mm
 Mm
@@ -14477,7 +14487,7 @@ wP
 OT
 wi
 lK
-ag
+XR
 nK
 OH
 ag
