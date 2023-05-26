@@ -5,7 +5,7 @@
 	icon_state = "survey"
 	lefthand_file = 'icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/backpack_righthand.dmi'
-	attachment = /obj/item/attachment/survey_scanner
+	attachment_type = /obj/item/attachment/survey_scanner
 	var/survey_mult = 1
 	var/survey_delay = 4 SECONDS
 
@@ -37,19 +37,19 @@
 	name = "Survey Scanner"
 	desc = "A wired tool designed to work in tandem with a survey pack"
 	w_class = WEIGHT_CLASS_BULKY
-	item_flags = ABSTRACT
+	icon = 'icons/obj/item/survey_handheld.dmi'
 	icon_state = "survey"
+	lefthand_file = 'icons/mob/inhands/equipment/backpack_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/backpack_righthand.dmi'
 	pack = /obj/item/gear_pack/powered/survey_pack
 	var/survey_mult
 	var/survey_delay
 
 /obj/item/attachment/survey_scanner/Initialize()
 	. = ..()
-	pack = loc
-	if (!istype(pack))
-		return INITIALIZE_HINT_QDEL
-	survey_mult = pack.survey_mult
-	survey_delay = pack.survey_delay
+	survey_mult = pack?:survey_mult
+	survey_delay = pack?:survey_delay
+	return ..()
 
 /obj/structure/anomaly
 	name = "Defaultic Bind"
