@@ -1317,6 +1317,13 @@
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
+"mo" = (
+/obj/item/spear,
+/obj/structure/sign/poster/contraband/random{
+	pixel_y = 28
+	},
+/turf/open/floor/plating,
+/area/ruin/powered)
 "mv" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/sign/poster/contraband/missing_gloves,
@@ -1883,6 +1890,13 @@
 	},
 /obj/structure/cable{
 	icon_state = "1-8"
+	},
+/turf/open/floor/plating/rust,
+/area/ruin/powered)
+"ra" = (
+/obj/effect/decal/cleanable/generic,
+/obj/structure/sign/poster/contraband/random{
+	pixel_y = -28
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
@@ -2584,6 +2598,12 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/powered)
+"yp" = (
+/obj/structure/sign/poster/contraband/random{
+	pixel_y = 28
+	},
+/turf/open/floor/plating,
+/area/ruin/powered)
 "yw" = (
 /obj/structure/sign/poster/contraband/masked_men,
 /turf/closed/wall/r_wall/rust,
@@ -3072,7 +3092,6 @@
 /area/ruin/powered)
 "Ce" = (
 /obj/effect/decal/cleanable/blood/old,
-/obj/structure/sign/poster/contraband/random,
 /turf/closed/wall/r_wall/rust,
 /area/ruin/powered)
 "Cf" = (
@@ -4120,6 +4139,13 @@
 /obj/effect/decal/cleanable/cobweb,
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
+"Nc" = (
+/obj/effect/decal/cleanable/blood/old,
+/obj/structure/sign/poster/contraband/random{
+	pixel_y = -28
+	},
+/turf/open/floor/plating/rust,
+/area/ruin/powered)
 "Nd" = (
 /obj/structure/bed,
 /turf/open/floor/plating/rust,
@@ -4649,7 +4675,8 @@
 /area/ruin/powered)
 "RG" = (
 /obj/machinery/door/airlock/maintenance{
-	name = "The Serpentorium"
+	name = "The Serpentorium";
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ruin/powered)
@@ -4711,7 +4738,9 @@
 /turf/open/floor/plating/asteroid/wasteplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "SC" = (
-/obj/machinery/door/airlock/maintenance,
+/obj/machinery/door/airlock/maintenance{
+	dir = 4
+	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -4860,6 +4889,12 @@
 /obj/item/bedsheet/random,
 /mob/living/simple_animal/hostile/rat{
 	dir = 4
+	},
+/turf/open/floor/plating/rust,
+/area/ruin/powered)
+"TD" = (
+/obj/structure/sign/poster/contraband/random{
+	pixel_y = 28
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
@@ -5327,7 +5362,6 @@
 /obj/machinery/light/directional/north,
 /obj/effect/mob_spawn/human/corpse/damaged/whitesands/survivor,
 /obj/effect/decal/cleanable/blood,
-/obj/machinery/light/directional/north,
 /turf/open/floor/plating,
 /area/ruin/powered)
 "XR" = (
@@ -6344,7 +6378,7 @@ in
 in
 "}
 (18,1,1) = {"
-fi
+xx
 Xm
 Qm
 XF
@@ -6389,7 +6423,7 @@ in
 "}
 (19,1,1) = {"
 xx
-Eb
+mo
 Ou
 av
 Vd
@@ -6483,7 +6517,7 @@ Hp
 vG
 av
 Mv
-lz
+ra
 Ce
 vD
 xx
@@ -6609,7 +6643,7 @@ in
 "}
 (24,1,1) = {"
 xx
-av
+TD
 bs
 XF
 In
@@ -6696,7 +6730,7 @@ IA
 IA
 "}
 (26,1,1) = {"
-fi
+xx
 UK
 IE
 wq
@@ -6747,8 +6781,8 @@ mP
 zL
 av
 nM
-pR
-fi
+Nc
+xx
 vD
 dI
 av
@@ -6785,7 +6819,7 @@ IA
 "}
 (28,1,1) = {"
 xx
-Hp
+yp
 kD
 eS
 Dl
@@ -6872,7 +6906,7 @@ IA
 ll
 "}
 (30,1,1) = {"
-fi
+xx
 CT
 tY
 av

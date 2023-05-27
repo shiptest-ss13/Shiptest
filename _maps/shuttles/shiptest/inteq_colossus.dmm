@@ -305,10 +305,8 @@
 	pixel_y = 5
 	},
 /obj/item/clothing/ears/earmuffs,
-/obj/machinery/status_display/shuttle{
-	pixel_x = 32
-	},
 /obj/machinery/light/directional/north,
+/obj/structure/extinguisher_cabinet/directional/east,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "eg" = (
@@ -713,7 +711,7 @@
 /obj/structure/closet/wall{
 	icon_door = "orange_wall";
 	name = "uniform closet";
-	pixel_y = 32
+	pixel_y = 28
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
@@ -2108,7 +2106,7 @@
 /obj/structure/closet/wall{
 	icon_door = "orange_wall";
 	name = "uniform closet";
-	pixel_y = 32
+	pixel_y = 28
 	},
 /obj/machinery/firealarm/directional/east,
 /turf/open/floor/plasteel/grimy,
@@ -3952,7 +3950,6 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
 "Ss" = (
-/obj/structure/extinguisher_cabinet/directional/north,
 /obj/effect/decal/cleanable/oil/streak,
 /obj/effect/landmark/start/assistant,
 /obj/structure/sign/warning/incident{
@@ -4191,7 +4188,8 @@
 /obj/machinery/turretid{
 	pixel_y = 32;
 	req_access = null;
-	req_access_txt = "58"
+	req_access_txt = "58";
+	lethal = 1
 	},
 /obj/structure/table/reinforced,
 /obj/item/storage/fancy/cigarettes/cigars/havana,
@@ -4360,7 +4358,6 @@
 /area/ship/engineering)
 "XC" = (
 /obj/machinery/rnd/production/protolathe/department/security,
-/obj/structure/extinguisher_cabinet/directional/north,
 /obj/effect/turf_decal/trimline/opaque/yellow/line{
 	dir = 6
 	},
@@ -4369,6 +4366,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/oil/streak,
+/obj/structure/extinguisher_cabinet/directional/east,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "XF" = (

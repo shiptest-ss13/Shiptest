@@ -423,17 +423,6 @@
 	pixel_y = -20;
 	dir = 1
 	},
-/obj/machinery/suit_storage_unit/independent/engineering,
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
-/obj/machinery/button/door{
-	id = "tidedoors";
-	name = "Blast Door Control";
-	pixel_y = -25;
-	dir = 1
-	},
 /obj/structure/closet/crate/radiation,
 /obj/item/clothing/head/radiation,
 /obj/item/clothing/suit/radiation,
@@ -442,21 +431,11 @@
 /turf/open/floor/plating,
 /area/ship/cargo)
 "wb" = (
-/obj/item/storage/backpack/duffelbag/med/surgery,
 /obj/structure/closet/secure_closet/medical2,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/broken/directional/south,
-/obj/item/defibrillator/loaded,
-/obj/effect/spawner/lootdrop/maintenance/eight,
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
-/obj/structure/closet/secure_closet/medical2,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/broken,
 /obj/effect/spawner/lootdrop/maintenance/eight,
 /obj/item/storage/firstaid/regular,
+/obj/machinery/light/broken/directional/south,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "yr" = (
