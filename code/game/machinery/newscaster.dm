@@ -176,6 +176,8 @@ GLOBAL_LIST_EMPTY(allCasters)
 	icon_state = "newscaster"
 	custom_materials = list(/datum/material/iron=14000, /datum/material/glass=8000)
 	result_path = /obj/machinery/newscaster
+	inverse_pixel_shift = TRUE
+	pixel_shift = 30
 
 
 /obj/machinery/newscaster

@@ -141,7 +141,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom, 31)
 	icon_state = "intercom"
 	result_path = /obj/item/radio/intercom/unscrewed
 	pixel_shift = 31
-	inverse = TRUE
+	inverse = FALSE
 	custom_materials = list(/datum/material/iron = 75, /datum/material/glass = 25)
 
 //wideband radio

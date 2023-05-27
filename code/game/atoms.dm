@@ -142,6 +142,7 @@
 	/// The icon state prefix used for connectors. Equivalent to the base_icon_state.
 	var/connector_icon_state = null
 	/// Typecache of atom types that this wall will NOT form connector overlays into when smoothing.
+	/// Types should set this equal to a list; this list is, on init, used to create a typecache that is itself cached by SSicon_smooth.
 	var/list/no_connector_typecache = null
 	/// If true, the typecache constructed for no_connector_typecache will NOT include subtypes.
 	var/connector_strict_typing = FALSE
@@ -246,7 +247,7 @@
 			smoothing_flags |= SMOOTH_OBJ
 		SET_BITFLAG_LIST(canSmoothWith)
 	if (length(no_connector_typecache))
-		no_connector_typecache = typecacheof(no_connector_typecache, only_root_path = connector_strict_typing)
+		no_connector_typecache = SSicon_smooth.get_no_connector_typecache(src.type, no_connector_typecache, connector_strict_typing)
 
 	var/area/ship/current_ship_area = get_area(src)
 	if(!mapload && istype(current_ship_area) && current_ship_area.mobile_port)

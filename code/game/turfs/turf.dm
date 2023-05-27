@@ -113,7 +113,7 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 			smoothing_flags |= SMOOTH_OBJ
 		SET_BITFLAG_LIST(canSmoothWith)
 	if (length(no_connector_typecache))
-		no_connector_typecache = typecacheof(no_connector_typecache, only_root_path = connector_strict_typing)
+		no_connector_typecache = SSicon_smooth.get_no_connector_typecache(src.type, no_connector_typecache, connector_strict_typing)
 
 	if (smoothing_flags & (SMOOTH_CORNERS|SMOOTH_BITMASK))
 		QUEUE_SMOOTH(src)
