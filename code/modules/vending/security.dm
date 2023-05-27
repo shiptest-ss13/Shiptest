@@ -139,32 +139,6 @@
 		"C-20r SMG" = /obj/item/gun/ballistic/automatic/smg/c20r/unrestricted,
 		"Bulldog Shotgun" = /obj/item/gun/ballistic/shotgun/bulldog/unrestricted)
 
-/obj/machinery/vending/security/marine/solgov
-	icon_state = "solgov-marine"
-	icon_deny = "solgov-marine-deny"
-	light_mask = "solgov-marine-mask"
-	icon_vend = "solgov-marine-vend"
-	req_access = list(ACCESS_SECURITY)
-	products = list(
-		/obj/item/restraints/handcuffs = 10,
-		/obj/item/assembly/flash/handheld = 10,
-		/obj/item/flashlight/seclite = 10,
-		/obj/item/reagent_containers/hypospray/combat = 1,
-		/obj/item/ammo_box/magazine/rifle47x33mm = 5,
-		/obj/item/ammo_box/magazine/pistol556mm = 10,
-		/obj/item/stock_parts/cell/gun = 10,
-		/obj/item/screwdriver/nuke = 5,
-		/obj/item/grenade/c4 = 5,
-		/obj/item/grenade/frag = 5,
-		/obj/item/grenade/flashbang = 5,
-		/obj/item/grenade/barrier = 10,
-		/obj/item/melee/transforming/energy/ctf/solgov = 3,
-		)
-	voucher_items = list(
-		"Tactical Energy Gun" = /obj/item/gun/energy/e_gun/stun,
-		"SGV \"Solar\" HMG" = /obj/item/gun/ballistic/automatic/hmg/solar,
-		"TGV \"Swiss Cheese\" Assault Rifle" = /obj/item/gun/ballistic/automatic/assualt/swiss_cheese)
-
 /obj/machinery/vending/security/marine/nanotrasen
 	icon_state = "nt-marine"
 	icon_deny = "nt-marine-deny"
@@ -195,11 +169,6 @@
 	icon = 'icons/obj/vending.dmi'
 	icon_state = "sec-voucher"
 	w_class = WEIGHT_CLASS_TINY //WS end
-
-/obj/item/gun_voucher/solgov
-	name = "solgov weapon voucher"
-	desc = "A token used to redeem equipment from your nearest marine vendor."
-	icon_state = "solgov-voucher"
 
 /obj/item/gun_voucher/syndicate
 	name = "syndicate weapon voucher"
