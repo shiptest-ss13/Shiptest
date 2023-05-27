@@ -47,18 +47,22 @@
 	icon_state = "syndicate";
 	name = "armor locker"
 	},
-/obj/machinery/light/small/directional/west,
 /obj/item/clothing/suit/armor/vest/syndie,
 /obj/item/clothing/suit/armor/vest/syndie,
 /obj/item/clothing/head/helmet/operator,
 /obj/item/clothing/head/helmet/operator,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/radio/intercom/directional/west,
+/obj/item/radio/intercom/directional/west{
+	pixel_y = -5
+	},
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
 /obj/effect/turf_decal/industrial/outline,
+/obj/machinery/light/small/directional/west{
+	pixel_y = 7
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
 "bN" = (
@@ -158,7 +162,8 @@
 	name = "Engine Access"
 	},
 /obj/machinery/door/poddoor{
-	id = "wrecker_engine_stbd"
+	id = "wrecker_engine_stbd";
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -260,8 +265,12 @@
 	icon_state = "syndicate";
 	name = "ammunition locker"
 	},
-/obj/machinery/light/small/directional/east,
-/obj/machinery/firealarm/directional/east,
+/obj/machinery/light/small/directional/east{
+	pixel_y = -8
+	},
+/obj/machinery/firealarm/directional/east{
+	pixel_y = 6
+	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/airalarm/directional/north,
@@ -284,6 +293,9 @@
 /obj/item/tank/internals/oxygen,
 /obj/item/clothing/suit/space/syndicate/surplus,
 /obj/item/clothing/head/helmet/space/syndicate/surplus,
+/obj/structure/sign/syndicate{
+	pixel_y = 28
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/central)
 "fL" = (
@@ -516,7 +528,8 @@
 	name = "Engine Access"
 	},
 /obj/machinery/door/poddoor{
-	id = "wrecker_engine_stbd"
+	id = "wrecker_engine_stbd";
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -597,7 +610,8 @@
 	},
 /obj/structure/window/reinforced/spawner/east,
 /obj/machinery/door/poddoor{
-	id = "wrecker_engine_stbd"
+	id = "wrecker_engine_stbd";
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -1973,6 +1987,9 @@
 /obj/item/tank/internals/oxygen,
 /obj/item/clothing/suit/space/syndicate/surplus,
 /obj/item/clothing/head/helmet/space/syndicate/surplus,
+/obj/structure/sign/syndicate{
+	pixel_y = 28
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/central)
 "IO" = (
@@ -2691,10 +2708,6 @@
 /obj/effect/decal/cleanable/oil/streak,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
-"SF" = (
-/obj/structure/sign/syndicate,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/hallway/central)
 "SJ" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -3264,10 +3277,11 @@
 
 (1,1,1) = {"
 nn
-nn
+iT
 Ua
 Xz
 Ua
+iT
 nn
 nn
 nn
@@ -3276,12 +3290,11 @@ nn
 nn
 nn
 nn
-nn
-nn
+sE
 MF
 TT
-MF
-nn
+Ua
+sE
 "}
 (2,1,1) = {"
 nn
@@ -3581,7 +3594,7 @@ Zb
 nn
 cs
 IK
-SF
+cs
 ZR
 iI
 DO

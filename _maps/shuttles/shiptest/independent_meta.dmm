@@ -1924,31 +1924,17 @@
 	id = "whiteship_bridge";
 	name = "Bridge Blast Door Control";
 	pixel_x = 5;
-	pixel_y = -25;
+	pixel_y = -21;
 	dir = 1
 	},
 /obj/machinery/button/door{
 	id = "whiteship_windows";
 	name = "Windows Blast Door Control";
-	pixel_x = -5;
-	pixel_y = -25;
+	pixel_x = -6;
+	pixel_y = -21;
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/opaque/blue,
-/obj/machinery/button/door{
-	id = "whiteship_starboard";
-	name = "Starboard Blast Door Control";
-	pixel_x = 5;
-	pixel_y = -32;
-	dir = 1
-	},
-/obj/machinery/button/door{
-	id = "whiteship_port";
-	name = "Port Blast Door Control";
-	pixel_x = -5;
-	pixel_y = -32;
-	dir = 1
-	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "cG" = (
@@ -1962,6 +1948,20 @@
 	},
 /obj/structure/frame/computer/retro{
 	dir = 8
+	},
+/obj/machinery/button/door{
+	id = "whiteship_port";
+	name = "Port Blast Door Control";
+	pixel_x = -5;
+	pixel_y = -21;
+	dir = 1
+	},
+/obj/machinery/button/door{
+	id = "whiteship_starboard";
+	name = "Starboard Blast Door Control";
+	pixel_x = 6;
+	pixel_y = -21;
+	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
