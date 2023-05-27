@@ -988,6 +988,14 @@
 /obj/structure/cable/yellow,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
+"MP" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/effect/landmark/observer_start,
+/turf/open/floor/plating,
+/area/ship/maintenance/central)
 "MS" = (
 /obj/structure/falsewall,
 /turf/open/floor/plating,
@@ -1608,7 +1616,7 @@ nT
 wj
 yo
 Wn
-lC
+MP
 bA
 qn
 PP

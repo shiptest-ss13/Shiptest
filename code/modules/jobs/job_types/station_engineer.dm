@@ -136,11 +136,6 @@
 	head = /obj/item/clothing/head/hardhat/orange
 	suit =  /obj/item/clothing/suit/hazardvest
 
-/datum/outfit/job/engineer/solgov/rebel
-	name = "Ship Engineer (Deserter)"
-
-	uniform = /obj/item/clothing/under/syndicate/camo
-
 /datum/outfit/job/engineer/pirate
 	name = "Ship's Engineer (Pirate)"
 

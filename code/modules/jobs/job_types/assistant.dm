@@ -72,19 +72,6 @@ Assistant
 
 //Shiptest outfits
 
-/datum/outfit/job/assistant/solgov
-	name = "Sailor (SolGov)"
-
-	uniform = /obj/item/clothing/under/solgov
-	shoes = /obj/item/clothing/shoes/combat
-	head = /obj/item/clothing/head/beret/solgov/plain
-
-/datum/outfit/job/assistant/solgov/rebel
-	name = "Sailor (Deserter)"
-
-	uniform = /obj/item/clothing/under/syndicate/camo
-	head = /obj/item/clothing/head/beret/solgov/terragov/plain
-
 /datum/outfit/job/assistant/minutemen
 	name = "Volunteer (Minutemen)"
 
