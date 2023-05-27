@@ -2,7 +2,7 @@
 /obj/item/bodypart/chest
 	name = BODY_ZONE_CHEST
 	desc = "It's impolite to stare at a person's chest."
-	icon_state = "default_human_chest"
+	icon_state = "human_chest"
 	max_damage = 200
 	body_zone = BODY_ZONE_CHEST
 	body_part = CHEST
@@ -61,7 +61,7 @@
 		Latin 'sinestra' (left hand), because the left hand was supposed to \
 		be possessed by the devil? This arm appears to be possessed by no \
 		one though."
-	icon_state = "default_human_l_arm"
+	icon_state = "human_l_arm"
 	attack_verb = list("slaps", "punches")
 	max_damage = 50
 	max_stamina_damage = 50
@@ -163,7 +163,7 @@
 	name = "right arm"
 	desc = "Over 87% of humans are right handed. That figure is much lower \
 		among humans missing their right arm."
-	icon_state = "default_human_r_arm"
+	icon_state = "human_r_arm"
 	attack_verb = list("slaps", "punches")
 	max_damage = 50
 	body_zone = BODY_ZONE_R_ARM
@@ -265,7 +265,7 @@
 	name = "left leg"
 	desc = "Some athletes prefer to tie their left shoelaces first for good \
 		luck. In this instance, it probably would not have helped."
-	icon_state = "default_human_l_leg"
+	icon_state = "human_l_leg"
 	attack_verb = list("kicks", "stomps")
 	max_damage = 50
 	body_zone = BODY_ZONE_L_LEG
@@ -358,7 +358,7 @@
 		shake it all about. And apparently then it detaches.\n\
 		The hokey pokey has certainly changed a lot since space colonisation."
 	// alternative spellings of 'pokey' are available
-	icon_state = "default_human_r_leg"
+	icon_state = "human_r_leg"
 	attack_verb = list("kicks", "stomps")
 	max_damage = 50
 	body_zone = BODY_ZONE_R_LEG

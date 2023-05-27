@@ -329,10 +329,10 @@
 	role = "Medical Officer"
 
 /datum/antagonist/ert/solgov
-	name = "SolGov Officer"
-	outfit = /datum/outfit/solgov
+	name = "SolGov Sonnensoldner"
+	outfit = /datum/outfit/solgov/sonnensoldner
 	random_names = FALSE
-	role = "SolGov Officer"
+	role = "SolGov Sonnensoldner"
 
 /datum/antagonist/ert/solgov/leader
 	name = "SolGov Commander"

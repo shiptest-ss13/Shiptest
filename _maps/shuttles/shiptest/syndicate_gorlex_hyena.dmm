@@ -772,6 +772,14 @@
 /obj/effect/decal/cleanable/oil/streak,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
+"nQ" = (
+/obj/effect/turf_decal/corner/transparent/bar{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/landmark/observer_start,
+/turf/open/floor/plasteel,
+/area/ship/crew)
 "nR" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/vending/cola/sodie,
@@ -2104,7 +2112,7 @@
 /obj/item/clothing/mask/breath,
 /obj/machinery/suit_storage_unit/inherit/industrial{
 	req_access = null;
-	req_one_access = list(48, 56)
+	req_one_access = list(48,56)
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
@@ -2986,7 +2994,7 @@
 /obj/item/clothing/mask/breath,
 /obj/machinery/suit_storage_unit/inherit/industrial{
 	req_access = null;
-	req_one_access = list(48, 56)
+	req_one_access = list(48,56)
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
@@ -3524,7 +3532,7 @@ mX
 rP
 vi
 UI
-vN
+nQ
 Ai
 UX
 Ms
