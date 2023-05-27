@@ -31,12 +31,14 @@
 
 /obj/item/bodypart/leg/left/digitigrade
 	icon = 'icons/mob/species/lizard/bodyparts.dmi'
+	icon_state = "digitigrade_l_leg"
 	uses_mutcolor = TRUE
 	limb_id = "digitigrade"
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ORGANIC | BODYTYPE_DIGITIGRADE
 
 /obj/item/bodypart/leg/right/digitigrade
 	icon = 'icons/mob/species/lizard/bodyparts.dmi'
+	icon_state = "digitigrade_r_leg"
 	uses_mutcolor = TRUE
 	limb_id = "digitigrade"
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ORGANIC | BODYTYPE_DIGITIGRADE
