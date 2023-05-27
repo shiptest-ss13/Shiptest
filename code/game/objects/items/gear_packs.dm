@@ -33,7 +33,7 @@
 	update_power()
 	return
 
-/obj/item/gear_pack/fire_act(exposed_temperaure, exposed_volume)
+/obj/item/gear_pack/fire_act(exposed_temperature, exposed_volume)
 	. = ..()
 	if(attachment?.loc == src)
 		attachment.fire_act(exposed_temperature, exposed_volume)
@@ -110,7 +110,7 @@
 		if(cell)
 			to_chat(user, "<span class='warning'>[src] already has a cell!</span>")
 		else
-			if(C.maxcharge < attachment.revivecost)
+			if(C.maxcharge < attachment.usecost)
 				to_chat(user, "<span class='notice'>[src] requires a higher capacity cell.</span>")
 				return
 			if(!user.transferItemToLoc(W, src))
@@ -211,8 +211,6 @@
 	base_icon_state = "defibpaddles"
 
 	var/usecost = 1000
-	var/cooldown = FALSE
-	var/busy = FALSE
 	var/obj/item/gear_pack/pack
 
 /obj/item/attachment/Initialize()
@@ -221,7 +219,6 @@
 	if (!loc || !istype(loc, /obj/item/defibrillator))
 		return INITIALIZE_HINT_QDEL
 	pack = loc
-	busy = FALSE
 	update_icon()
 
 /obj/item/attachment/Destroy()
@@ -256,6 +253,7 @@
 		snap_back()
 
 /obj/item/attachment/dropped(mob/user)
+	. = ..()
 	if(user)
 		UnregisterSignal(user, COMSIG_MOVABLE_MOVED)
 		if(user != loc)
@@ -267,5 +265,5 @@
 	if(!pack)
 		return
 	pack.on = FALSE
-	forceMove(defib)
+	forceMove(pack)
 	pack.update_power()
