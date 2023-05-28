@@ -31,6 +31,13 @@
 /obj/effect/turf_decal/steeldecal/steel_decals10,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/crew/cryo)
+"ax" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "premier_windows"
+	},
+/turf/open/floor/plating,
+/area/ship/crew/cryo)
 "aF" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
@@ -418,9 +425,9 @@
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/crew)
 "ej" = (
-/obj/item/radio/intercom/wideband{
+/obj/machinery/firealarm{
 	dir = 4;
-	pixel_x = -25
+	pixel_x = -23
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/bridge)
@@ -1334,9 +1341,14 @@
 	pixel_x = 8;
 	pixel_y = 7
 	},
+/obj/item/radio/intercom/wideband{
+	icon_state = "intercom-wideband-table";
+	pixel_x = -6;
+	pixel_y = 5
+	},
 /obj/item/reagent_containers/food/drinks/britcup{
 	pixel_x = -6;
-	pixel_y = -2
+	pixel_y = -1
 	},
 /obj/item/phone{
 	pixel_x = 9;
@@ -1626,12 +1638,12 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "pq" = (
-/obj/machinery/door/airlock/external,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
+/obj/machinery/door/airlock/external/glass,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/crew/cryo)
 "pA" = (
@@ -1712,7 +1724,8 @@
 	name = "Privacy Shutters";
 	pixel_x = 24;
 	pixel_y = -9;
-	dir = 8
+	dir = 8;
+	req_access_txt = "38"
 	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew/library)
@@ -1776,7 +1789,7 @@
 "qr" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "premier_windows"
+	id = "premier_meeting_windows"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/library)
@@ -1938,7 +1951,8 @@
 	id = "premier_privacy";
 	name = "Privacy Shutters";
 	pixel_x = 7;
-	pixel_y = 8
+	pixel_y = 7;
+	dir = 4
 	},
 /turf/open/floor/carpet/red_gold,
 /area/ship/crew/library)
@@ -2422,10 +2436,10 @@
 	pixel_x = -3;
 	pixel_y = 6
 	},
-/obj/item/documents/nanotrasen{
-	desc = "\"Top Secret\" Nanotrasen documents, filled with complex diagrams and lists of names, dates and coordinates. On second glance, most of the documents are spreadsheets for elaborate Yo Momma jokes.";
-	pixel_y = -10;
-	pixel_x = 5
+/obj/item/documents{
+	pixel_y = -7;
+	pixel_x = 7;
+	desc = "\"Top Secret\" The Document is filled with stock statistics on something called GuzzleCoin... what could it possibly be?"
 	},
 /turf/open/floor/carpet/red_gold,
 /area/ship/crew/library)
@@ -2764,7 +2778,7 @@
 /area/ship/crew)
 "zx" = (
 /obj/structure/noticeboard{
-	pixel_y = 32
+	pixel_y = 28
 	},
 /obj/item/grown/log{
 	pixel_x = 7;
@@ -3470,13 +3484,7 @@
 	},
 /obj/item/radio/intercom{
 	dir = 1;
-	pixel_x = 4;
 	pixel_y = -20
-	},
-/obj/machinery/firealarm{
-	dir = 1;
-	pixel_y = -22;
-	pixel_x = -9
 	},
 /obj/effect/turf_decal/steeldecal/steel_decals10{
 	dir = 6
@@ -3748,10 +3756,10 @@
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/crew/dorm)
 "Iy" = (
-/obj/machinery/door/airlock/external,
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
+/obj/machinery/door/airlock/external/glass,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/crew/cryo)
 "IB" = (
@@ -3826,18 +3834,16 @@
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 8
 	},
-/obj/item/reagent_containers/syringe/contraband/space_drugs{
-	pixel_x = 7;
-	pixel_y = -2
-	},
-/obj/item/reagent_containers/syringe/contraband/methamphetamine{
-	pixel_x = 4
-	},
 /obj/item/canvas/twentythreeXtwentythree{
 	desc = "Earnings chart your soul out on this whiteboard!";
 	name = "whiteboard";
 	pixel_x = 0;
 	pixel_y = 0
+	},
+/obj/item/reagent_containers/syringe/contraband,
+/obj/item/reagent_containers/syringe/contraband{
+	pixel_x = 6;
+	pixel_y = -2
 	},
 /turf/open/floor/wood,
 /area/ship/crew/library)
@@ -4065,9 +4071,13 @@
 	pixel_x = 28
 	},
 /obj/machinery/door/firedoor/border_only,
-/obj/item/reagent_containers/syringe/contraband/fentanyl,
-/obj/item/reagent_containers/syringe/contraband/crank{
-	pixel_y = 3
+/obj/item/reagent_containers/syringe/contraband{
+	pixel_x = 6;
+	pixel_y = -2
+	},
+/obj/item/reagent_containers/syringe/contraband{
+	pixel_x = 2;
+	pixel_y = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
@@ -4542,7 +4552,7 @@
 "Qj" = (
 /obj/structure/fluff/hedge,
 /obj/structure/sign/poster/official/high_class_martini{
-	pixel_y = 32
+	pixel_x = -32
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/cryo)
@@ -4551,7 +4561,15 @@
 /obj/structure/sign/poster/official/sgt{
 	pixel_x = 32
 	},
-/obj/machinery/light,
+/obj/machinery/button/door{
+	id = "premier_meeting_windows";
+	pixel_x = -10;
+	pixel_y = -23;
+	dir = 1
+	},
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/crew/library)
 "QE" = (
@@ -5628,7 +5646,7 @@ AF
 "}
 (15,1,1) = {"
 Sv
-ul
+ax
 Qj
 IP
 MO
@@ -5691,7 +5709,7 @@ IC
 "}
 (18,1,1) = {"
 Sv
-ul
+ax
 Tl
 lx
 MO
