@@ -817,6 +817,7 @@
 	},
 /obj/structure/cable,
 /obj/item/radio/intercom/wideband/directional/east,
+/obj/machinery/power/apc/auto_name/directional/south,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "ms" = (
@@ -891,6 +892,7 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/light/small/directional/west,
+/obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "nO" = (
@@ -1277,6 +1279,7 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/light/small/directional/north,
+/obj/machinery/power/apc/auto_name/directional/east,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/maintenance/central)
 "ty" = (
@@ -2059,6 +2062,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/machinery/power/apc/auto_name/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "EQ" = (
@@ -2126,10 +2130,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "FV" = (
-/obj/structure/railing/corner{
-	dir = 4;
-	layer = 3.1
-	},
 /obj/effect/turf_decal/spline/fancy/opaque/black/corner{
 	dir = 4
 	},
@@ -2148,6 +2148,7 @@
 	icon_state = "0-4"
 	},
 /obj/structure/reagent_dispensers/fueltank,
+/obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "Ga" = (
@@ -2725,6 +2726,7 @@
 	dir = 5
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/obj/machinery/power/apc/auto_name/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "QH" = (
