@@ -210,14 +210,17 @@
 	resistance_flags = INDESTRUCTIBLE
 	base_icon_state = "defibpaddles"
 
+	var/req_pack = TRUE
 	var/usecost = 1000
 	var/obj/item/gear_pack/pack
 
 /obj/item/attachment/Initialize()
 	. = ..()
 	ADD_TRAIT(src, TRAIT_NO_STORAGE_INSERT, GENERIC_ITEM_TRAIT)
-	if (!loc || !istype(loc, /obj/item/defibrillator))
+	if (!loc || !istype(loc, /obj/item/gear_pack))
 		return INITIALIZE_HINT_QDEL
+	if(!req_pack)
+		return
 	pack = loc
 	update_icon()
 
@@ -227,6 +230,8 @@
 
 /obj/item/attachment/equipped(mob/user, slot)
 	. = ..()
+	if(!req_pack)
+		return
 	RegisterSignal(user, COMSIG_MOVABLE_MOVED, .proc/check_range)
 
 /obj/item/attachment/Moved()
@@ -236,13 +241,13 @@
 
 /obj/item/attachment/fire_act(exposed_temperature, exposed_volume)
 	. = ..()
-	if(pack && loc != pack)
+	if((req_pack && pack) && loc != pack)
 		pack.fire_act(exposed_temperature, exposed_volume)
 
 /obj/item/attachment/proc/check_range()
 	SIGNAL_HANDLER
 
-	if(!pack)
+	if(!req_pack ||!pack)
 		return
 	if(!in_range(src,pack))
 		var/mob/living/L = loc
@@ -254,10 +259,12 @@
 
 /obj/item/attachment/dropped(mob/user)
 	. = ..()
+	if(!req_pack)
+		return ..()
 	if(user)
 		UnregisterSignal(user, COMSIG_MOVABLE_MOVED)
 		if(user != loc)
-			to_chat(user, "<span class='notice'>The [src] snap back into the main unit.</span>")
+			to_chat(user, "<span class='notice'>[src] snap back into the main unit.</span>")
 			snap_back()
 	return
 
