@@ -199,17 +199,17 @@
 
 	name = "attachment"
 	desc = "The Attachment."
-	icon = 'icons/obj/defib.dmi'
-	icon_state = "defibpaddles0"
-	item_state = "defibpaddles0"
-	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
+	icon = 'icons/obj/hydroponics/equipment.dmi'
+	icon_state = "mister"
+	item_state = "mister"
+	lefthand_file = 'icons/mob/inhands/equipment/mister_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/mister_righthand.dmi'
 
 	force = 0
 	throwforce = 6
 	w_class = WEIGHT_CLASS_BULKY
 	resistance_flags = INDESTRUCTIBLE
-	base_icon_state = "defibpaddles"
+	base_icon_state = "mister"
 
 	var/req_pack = TRUE
 	var/usecost = 1000
