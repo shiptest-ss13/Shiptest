@@ -428,7 +428,7 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 	name = "low quality cryogenic freezer"
 	desc = "Keeps crew frozen in cryostasis until they are needed in order to cut down on supply usage. This one seems cheaply made."
 
-/obj/machinery/cryopod/apply_effects_to_mob(mob/living/carbon/sleepyhead)
+/obj/machinery/cryopod/poor/apply_effects_to_mob(mob/living/carbon/sleepyhead)
 	sleepyhead.SetSleeping(50)
 	sleepyhead.set_disgust(120)
 	sleepyhead.set_nutrition(70)
