@@ -128,14 +128,6 @@
 	head = /obj/item/clothing/head/soft/inteq
 	shoes = /obj/item/clothing/shoes/combat
 
-/datum/outfit/job/engineer/solgov
-	name = "Ship Engineer (SolGov)"
-
-	uniform = /obj/item/clothing/under/solgov
-	accessory = /obj/item/clothing/accessory/armband/engine
-	head = /obj/item/clothing/head/hardhat/orange
-	suit =  /obj/item/clothing/suit/hazardvest
-
 /datum/outfit/job/engineer/pirate
 	name = "Ship's Engineer (Pirate)"
 
@@ -168,6 +160,7 @@
 	accessory = /obj/item/clothing/accessory/armband/engine
 	glasses = /obj/item/clothing/glasses/sunglasses
 	shoes = /obj/item/clothing/shoes/jackboots
+
 /datum/outfit/job/engineer/gec
 	name = "Station Engineer (GEC)"
 
@@ -251,3 +244,16 @@
 	gloves = /obj/item/clothing/gloves/combat
 
 	implants = list(/obj/item/implant/radio)
+
+/datum/outfit/job/engineer/independent/frontiersmen
+	name = "Carpenter (frontiersmen)"
+
+	belt = /obj/item/storage/belt/utility/full/engi
+	uniform = /obj/item/clothing/under/rank/security/officer/frontier
+	suit = /obj/item/clothing/suit/toggle/industrial
+	shoes = /obj/item/clothing/shoes/workboots
+	glasses = /obj/item/clothing/glasses/welding
+	head = /obj/item/clothing/head/helmet/space/pirate/bandana
+
+	l_pocket = /obj/item/radio
+	r_pocket = /obj/item/analyzer

@@ -42,19 +42,6 @@
 
 //Shiptest outfits
 
-/datum/outfit/job/cargo_tech/solgov
-	name = "Cargo Technician (SolGov)"
-
-	uniform = /obj/item/clothing/under/solgov
-	accessory = /obj/item/clothing/accessory/armband/cargo
-	shoes = /obj/item/clothing/shoes/combat
-	head = /obj/item/clothing/head/beret/solgov/plain
-
-/datum/outfit/job/cargo_tech/solgov/pilot
-	name = "Pilot (SolGov)"
-
-	suit = /obj/item/clothing/suit/jacket
-
 /datum/outfit/job/cargo_tech/pilot
 	name = "Pilot"
 
@@ -83,4 +70,16 @@
 		/obj/item/modular_computer/tablet/preset/cargo = 1,
 		/obj/item/export_scanner = 1,
 		/obj/item/kitchen/knife/hunting = 1
+	)
+
+/datum/outfit/job/cargo_tech/frontiersmen
+	name = "Cargo Tech (frontiersmen)"
+
+	uniform = /obj/item/clothing/under/rank/security/officer/frontier
+	suit = /obj/item/clothing/suit/hazardvest
+	ears = /obj/item/radio/headset/pirate
+	shoes = /obj/item/clothing/shoes/workboots
+	head = /obj/item/clothing/head/soft
+	backpack_contents = list(
+		/obj/item/modular_computer/tablet/preset/cargo = 1,
 	)
