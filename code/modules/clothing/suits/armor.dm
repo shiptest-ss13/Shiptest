@@ -393,21 +393,26 @@
 	item_state = "blueshield"
 
 /obj/item/clothing/suit/armor/vest/bulletproof/solgov
-	name = "\improper SolGov armor vest"
-	desc = "A standard armor vest fielded for SolGov's infantry."
-	icon_state = "armor_solgov"
-	item_state = "armor_solgov"
+	name = "\improper Sonnensoldner gambison"
+	desc = "A standard armor vest fielded for SolGov's Sonnensoldners."
+	icon_state = "solgov_gambison"
+	item_state = "solgov_gambison"
+
+/obj/item/clothing/suit/armor/vest/bulletproof/solgov/overseer
+	name = "\improper SolGov Overseer robe"
+	desc = "An elaborately designed robe utilized by SolGov overseers."
+	icon_state = "solgov_overseer_robe"
+	item_state = "solgov_overseer_robe"
+
+/obj/item/clothing/suit/armor/vest/bulletproof/solgov/captain
+	name = "\improper SolGov Captain coat"
+	desc = "An armored coat typically used by SolGov captains."
+	icon_state = "solgov_coat"
+	item_state = "solgov_coat"
 
 /obj/item/clothing/suit/armor/vest/bulletproof/solgov/Initialize()
 	. = ..()
 	allowed |= list(/obj/item/gun/ballistic/automatic/assualt/swiss_cheese, /obj/item/tank)
-
-/obj/item/clothing/suit/armor/vest/bulletproof/solgov/rep
-	name = "\improper SolGov Inspector armor vest"
-	desc = "A type I armor vest emblazoned with the SolGov logo."
-	icon_state = "armor_alt_solgov"
-	item_state = "armor_alt_solgov"
-	armor = list("melee" = 35, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 
 /obj/item/clothing/suit/armor/vest/hop
 	name = "head of personnel's parade jacket"

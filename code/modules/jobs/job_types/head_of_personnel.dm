@@ -69,17 +69,6 @@
 	shoes = /obj/item/clothing/shoes/laceup
 	head = /obj/item/clothing/head/hopcap/nt
 
-/datum/outfit/job/head_of_personnel/solgov
-	name = "Executive Officer (SolGov)"
-	ears = /obj/item/radio/headset/solgov
-	uniform = /obj/item/clothing/under/rank/command/lieutenant
-	head = /obj/item/clothing/head/solgov
-	shoes = /obj/item/clothing/shoes/laceup
-
-/datum/outfit/job/head_of_personnel/solgov/rebel
-	name = "Executive Officer (Deserter)"
-	head = /obj/item/clothing/head/solgov/terragov
-
 /datum/outfit/job/head_of_personnel/pirate
 	name = "First Mate (Pirate)"
 	ears = /obj/item/radio/headset/pirate
