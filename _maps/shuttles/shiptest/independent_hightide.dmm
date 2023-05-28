@@ -148,7 +148,9 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "eD" = (
-/obj/machinery/door/airlock/maintenance_hatch,
+/obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4
+	},
 /obj/structure/barricade/wooden/crude,
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1119,13 +1121,13 @@
 /obj/item/storage/bag/ore,
 /obj/item/mining_scanner,
 /obj/item/shovel/spoon,
-/obj/machinery/light/directional/south,
 /obj/item/shovel/spoon,
 /obj/item/mining_scanner,
 /obj/item/storage/bag/ore,
 /obj/item/pickaxe/emergency,
 /obj/effect/spawner/lootdrop/maintenance/eight,
 /obj/effect/decal/cleanable/glass,
+/obj/machinery/light/directional/north,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "RI" = (

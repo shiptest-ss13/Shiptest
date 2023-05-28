@@ -53,10 +53,6 @@
 /turf/open/floor/plating/airless,
 /area/ship/external)
 "ay" = (
-/obj/structure/railing{
-	dir = 5;
-	layer = 3.1
-	},
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 5
 	},
@@ -354,7 +350,6 @@
 /obj/structure/cable{
 	icon_state = "0-6"
 	},
-/obj/machinery/light/dim/directional/west,
 /turf/open/floor/circuit/red,
 /area/ship/maintenance/central)
 "eF" = (
@@ -421,15 +416,15 @@
 /obj/effect/turf_decal/spline/fancy/opaque/black,
 /obj/machinery/airalarm/directional/north,
 /obj/machinery/button/door{
-	dir = 8;
-	pixel_x = 28;
-	pixel_y = -7;
+	dir = 2;
+	pixel_x = 26;
+	pixel_y = -10;
 	name = "cargo bay door";
 	id = "noderidergogo"
 	},
 /obj/machinery/button/shieldwallgen{
 	dir = 8;
-	pixel_x = 27;
+	pixel_x = 21;
 	pixel_y = 4;
 	id = "noderiders";
 	name = "cargo airshield"
@@ -845,6 +840,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/camera/emp_proof,
+/obj/structure/railing,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "mJ" = (
@@ -1237,6 +1233,7 @@
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/item/radio/intercom/directional/north,
+/obj/structure/railing,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering)
 "sD" = (
@@ -1392,6 +1389,9 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/structure/railing/corner{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "vE" = (
@@ -1484,7 +1484,9 @@
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 1
 	},
-/obj/machinery/light/small/directional/south,
+/obj/machinery/light/small/directional/south{
+	pixel_x = 16
+	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
@@ -1565,9 +1567,11 @@
 	pixel_y = 25
 	},
 /obj/machinery/firealarm/directional/west,
-/obj/machinery/light/small/built/directional/north,
 /obj/machinery/computer/communications{
 	icon_state = "computer-left"
+	},
+/obj/machinery/light/small/built/directional/north{
+	pixel_x = 16
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
@@ -1998,9 +2002,8 @@
 	icon_state = "2-8"
 	},
 /obj/machinery/button/door{
-	dir = 8;
-	pixel_y = 26;
-	pixel_x = 41;
+	pixel_y = 22;
+	pixel_x = 38;
 	name = "bridge lockdown";
 	id = "noderiderbridge"
 	},
@@ -2256,7 +2259,7 @@
 	dir = 8
 	},
 /obj/machinery/advanced_airlock_controller{
-	pixel_y = 32
+	pixel_y = 25
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -2337,6 +2340,7 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/light/directional/north,
+/obj/structure/railing,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "JZ" = (
@@ -2434,10 +2438,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "KF" = (
-/obj/structure/railing{
-	dir = 1;
-	layer = 3.1
-	},
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 1
 	},
@@ -2506,7 +2506,6 @@
 /obj/structure/cable{
 	icon_state = "0-5"
 	},
-/obj/machinery/light/dim/directional/west,
 /turf/open/floor/circuit/red,
 /area/ship/maintenance/central)
 "LY" = (
@@ -2609,10 +2608,6 @@
 /turf/open/floor/plating/airless,
 /area/ship/bridge)
 "Nl" = (
-/obj/structure/railing{
-	dir = 1;
-	layer = 3.1
-	},
 /obj/structure/cable{
 	icon_state = "1-6"
 	},
@@ -2909,6 +2904,9 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/structure/railing{
+	dir = 8
+	},
 /turf/open/floor/plasteel/stairs,
 /area/ship/engineering)
 "TI" = (
@@ -3061,8 +3059,8 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/button/door{
-	pixel_y = 27;
-	pixel_x = -26;
+	pixel_y = 33;
+	pixel_x = -22;
 	dir = 4;
 	name = "emergency blast shutters";
 	id = "noderidercore"
@@ -3877,7 +3875,7 @@ yW
 wu
 Kc
 DM
-Kc
+wu
 XP
 jt
 OK
@@ -4000,7 +3998,7 @@ Em
 mo
 oJ
 Ut
-pm
+Am
 LC
 pm
 VC
