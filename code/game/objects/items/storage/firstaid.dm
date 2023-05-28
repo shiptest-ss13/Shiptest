@@ -96,7 +96,7 @@
 		/obj/item/clothing/mask/muzzle,
 		/obj/item/storage/bag/chemistry,
 		/obj/item/storage/bag/bio,
-		/obj/item/reagent_containers/blood,
+		/obj/item/reagent_containers/glass/blood,
 		/obj/item/tank/internals/emergency_oxygen,
 		/obj/item/gun/syringe/syndicate,
 		/obj/item/implantcase,
