@@ -4,8 +4,7 @@
 	implements = list(
 		TOOL_SCREWDRIVER		= 100,
 		TOOL_SCALPEL 			= 75, // med borgs could try to unscrew shell with scalpel
-		/obj/item/kitchen/knife	= 50,
-		/obj/item				= 10) // 10% success with any sharp item.
+		/obj/item/kitchen/knife	= 50)
 	time = 2.4 SECONDS
 	preop_sound = 'sound/items/screwdriver.ogg'
 	success_sound = 'sound/items/screwdriver2.ogg'
@@ -18,8 +17,6 @@
 /datum/surgery_step/mechanic_open/tool_check(mob/user, obj/item/tool)
 	if(istype(tool))
 		preop_sound = tool.usesound
-	else if(!tool.get_sharpness()) //if its not a tool, then we check if its sharp
-		return FALSE
 	. = ..()
 
 //close shell
@@ -28,8 +25,7 @@
 	implements = list(
 		TOOL_SCREWDRIVER		= 100,
 		TOOL_SCALPEL 			= 75,
-		/obj/item/kitchen/knife	= 50,
-		/obj/item				= 10) // 10% success with any sharp item.
+		/obj/item/kitchen/knife	= 50)
 	time = 2.4 SECONDS
 	preop_sound = 'sound/items/screwdriver.ogg'
 	success_sound = 'sound/items/screwdriver2.ogg'
@@ -42,8 +38,6 @@
 /datum/surgery_step/mechanic_close/tool_check(mob/user, obj/item/tool)
 	if(istype(tool))
 		preop_sound = tool.usesound
-	else if(!tool.get_sharpness()) //if its not a tool, then we check if its sharp
-		return FALSE
 	. = ..()
 
 //prepare electronics
