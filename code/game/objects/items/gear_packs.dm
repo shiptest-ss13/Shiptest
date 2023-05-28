@@ -196,8 +196,9 @@
 			return FALSE
 
 /obj/item/attachment
-	name = "defibrillator paddles"
-	desc = "A pair of plastic-gripped paddles with flat metal surfaces that are used to deliver powerful electric shocks."
+
+	name = "attachment"
+	desc = "The Attachment."
 	icon = 'icons/obj/defib.dmi'
 	icon_state = "defibpaddles0"
 	item_state = "defibpaddles0"

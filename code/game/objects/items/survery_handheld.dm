@@ -34,7 +34,7 @@
 
 
 /obj/item/attachment/survey_scanner
-	name = "Survey Scanner"
+	name = "survey scanner"
 	desc = "A wired tool designed to work in tandem with a survey pack"
 	w_class = WEIGHT_CLASS_BULKY
 	icon = 'icons/obj/item/survey_handheld.dmi'
