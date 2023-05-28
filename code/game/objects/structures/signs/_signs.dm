@@ -248,10 +248,6 @@
 	desc = "A large flag displaying the logo of solgov, the local government of the sol system."
 	icon = 'icons/obj/solgov_logos.dmi'
 	icon_state = "solgovflag-left"
-	pixel_y = 26
-
-/obj/structure/sign/solgov_flag/right
-	icon_state = "solgovflag-right"
 
 // colonial minutemen seal
 /obj/structure/sign/minutemen
