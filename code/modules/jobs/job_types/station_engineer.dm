@@ -128,14 +128,6 @@
 	head = /obj/item/clothing/head/soft/inteq
 	shoes = /obj/item/clothing/shoes/combat
 
-/datum/outfit/job/engineer/solgov
-	name = "Ship Engineer (SolGov)"
-
-	uniform = /obj/item/clothing/under/solgov
-	accessory = /obj/item/clothing/accessory/armband/engine
-	head = /obj/item/clothing/head/hardhat/orange
-	suit =  /obj/item/clothing/suit/hazardvest
-
 /datum/outfit/job/engineer/pirate
 	name = "Ship's Engineer (Pirate)"
 
