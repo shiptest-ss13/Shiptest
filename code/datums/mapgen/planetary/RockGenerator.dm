@@ -83,7 +83,7 @@
 /datum/biome/rock
 	open_turf_types = list(/turf/open/floor/plating/asteroid/rockplanet/lit = 1)
 
-	feature_spawn_chance = 0.5
+	feature_spawn_chance = 0.25
 	feature_spawn_list = list(
 		/obj/structure/geyser/random = 2,
 		/obj/structure/elite_tumor = 1,
@@ -145,7 +145,7 @@
 		/obj/structure/flora/ash/fern = 2,
 		/obj/structure/flora/ash/puce = 1,
 	)
-	feature_spawn_chance = 0.9
+	feature_spawn_chance = 0.5
 	feature_spawn_list = list(
 		/obj/structure/geyser/random = 2,
 		/obj/structure/elite_tumor = 1,
