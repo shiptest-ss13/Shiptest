@@ -824,6 +824,10 @@
 	anchored = 1
 	},
 /obj/machinery/light/small,
+/obj/item/seeds/cannabis{
+	pixel_y = -5;
+	pixel_x = -5
+	},
 /turf/open/floor/plating/rust,
 /area/ship/engineering)
 "eV" = (
@@ -1405,6 +1409,10 @@
 /obj/item/kirbyplants/random,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
+	},
+/obj/item/seeds/corn{
+	pixel_y = -8;
+	pixel_x = 5
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
@@ -3281,6 +3289,10 @@
 "qr" = (
 /obj/structure/closet/emcloset/wall{
 	pixel_y = 28
+	},
+/obj/item/seeds/berry{
+	pixel_x = -8;
+	pixel_y = 6
 	},
 /turf/open/floor/plating{
 	icon_state = "foam_plating"
@@ -6319,6 +6331,15 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/item/seeds/potato{
+	pixel_x = -5;
+	pixel_y = 5
+	},
+/obj/item/seeds/garlic{
+	pixel_x = 5;
+	pixel_y = 2
+	},
+/obj/item/seeds/grass,
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
 	},
@@ -7635,12 +7656,12 @@
 /turf/closed/wall,
 /area/ship/security/armory)
 "JO" = (
-/obj/machinery/vending/hydroseeds,
 /obj/effect/turf_decal/siding/wood,
 /obj/machinery/light,
 /obj/structure/sign/departments/botany{
 	pixel_x = 32
 	},
+/obj/structure/salvageable/seed,
 /turf/open/floor/concrete/slab_1,
 /area/ship/crew/canteen/kitchen)
 "JQ" = (
@@ -8574,6 +8595,10 @@
 /obj/item/trash/candy,
 /obj/item/trash/waffles,
 /obj/item/flashlight,
+/obj/item/seeds/chili{
+	pixel_y = -7;
+	pixel_x = -2
+	},
 /turf/open/floor/plating,
 /area/ship/hallway/central)
 "MF" = (
