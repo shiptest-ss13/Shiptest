@@ -6782,6 +6782,7 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/turf/open/floor/plasteel/tech,
 /area/ship/cargo/office)
 "yW" = (
 /obj/effect/turf_decal/techfloor/orange{
@@ -8911,6 +8912,7 @@
 /area/ship/crew/office)
 "GJ" = (
 /obj/structure/tank_dispenser/oxygen,
+/turf/open/floor/plasteel/tech,
 /area/ship/cargo/office)
 "GL" = (
 /obj/effect/turf_decal/steeldecal/steel_decals3{
@@ -9609,7 +9611,7 @@
 	dir = 9
 	},
 /obj/machinery/computer/atmos_control/tank/toxin_tank{
-	sensors = list("heron_plasm" = "Heron Plasma Tank")
+	sensors = list("heron_plasm"="Heron Plasma Tank")
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/atmospherics)
@@ -11139,6 +11141,7 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
+/turf/open/floor/plasteel/tech,
 /area/ship/cargo/office)
 "PT" = (
 /obj/structure/cable/yellow{
@@ -12393,7 +12396,7 @@
 	},
 /obj/effect/turf_decal/corner/opaque/yellow/diagonal,
 /obj/effect/turf_decal/corner/opaque/yellow/full,
-/turf/open/floor/pod,
+/turf/open/floor/plasteel,
 /area/ship/cargo)
 "UI" = (
 /obj/structure/table,
@@ -13762,7 +13765,7 @@
 "ZE" = (
 /obj/docking_port/stationary{
 	height = 15;
-	width = 15;
+	width = 30;
 	dwidth = 7;
 	name = "heron exterior dock"
 	},
