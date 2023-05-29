@@ -20,7 +20,7 @@
 	pixel_y = 11;
 	pixel_x = -5
 	},
-/obj/machinery/light/small{
+/obj/machinery/light/small/directional/south{
 	light_color = "#694c12"
 	},
 /turf/open/floor/wood/walnut,
@@ -402,8 +402,7 @@
 /area/ruin/beach)
 "sN" = (
 /obj/structure/chair/sofa,
-/obj/machinery/light/small{
-	dir = 1;
+/obj/machinery/light/small/directional/north{
 	light_color = "#694c12"
 	},
 /obj/structure/safe/floor,
@@ -949,9 +948,7 @@
 /area/ruin/beach)
 "LE" = (
 /obj/structure/table/wood,
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/machinery/light/small/directional/north,
 /obj/item/gun/ballistic/shotgun/winchester/lethal,
 /turf/open/floor/wood,
 /area/ruin/beach)
@@ -1031,9 +1028,7 @@
 /area/ruin/beach)
 "Pj" = (
 /obj/structure/table/wood/bar,
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/machinery/light/small/directional/north,
 /obj/item/binoculars{
 	pixel_x = -1;
 	layer = 2.9
@@ -1045,8 +1040,7 @@
 /obj/item/pneumatic_cannon/speargun,
 /obj/item/storage/backpack/magspear_quiver,
 /obj/item/kitchen/knife/hunting,
-/obj/machinery/light/small{
-	dir = 4;
+/obj/machinery/light/small/directional/east{
 	light_color = "#d8b1b1"
 	},
 /turf/open/floor/wood,
