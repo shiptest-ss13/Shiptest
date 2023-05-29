@@ -567,3 +567,15 @@ Contains:
 	armor = list("melee" = 40, "bullet" = 20, "laser" = 20,"energy" = 30, "bomb" = 60, "bio" = 100, "rad" = 90, "fire" = 85, "acid" = 75)
 	slowdown = 0.5
 	w_class = WEIGHT_CLASS_NORMAL
+
+
+/obj/item/clothing/suit/space/scar
+	name = "Scar Suit"
+	desc = "A heavily modified eva suit, custom made for the captain of the ember."
+	icon_state = "hostile_env"
+	item_state = "hostile_env"
+	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
+	resistance_flags = FIRE_PROOF
+	slowdown = 0.5
+	armor = list("melee" = 40, "bullet" = 35, "laser" = 30, "energy" = 25, "bomb" = 70, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
+	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/melee/transforming/energy, /obj/item/tank/internals)
