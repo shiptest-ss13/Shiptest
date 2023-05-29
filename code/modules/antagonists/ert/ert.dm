@@ -333,8 +333,3 @@
 	outfit = /datum/outfit/solgov/sonnensoldner
 	random_names = FALSE
 	role = "SolGov Sonnensoldner"
-
-/datum/antagonist/ert/solgov/leader
-	name = "SolGov Commander"
-	outfit = /datum/outfit/solgov/commander
-	role = "SolGov Commander"
