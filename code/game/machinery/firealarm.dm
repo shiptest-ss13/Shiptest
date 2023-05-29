@@ -45,6 +45,8 @@
 	if(building)
 		buildstage = 0
 		panel_open = TRUE
+		if(ndir)
+			setDir(ndir)
 	update_icon()
 	myarea = get_area(src)
 	LAZYADD(myarea.firealarms, src)
