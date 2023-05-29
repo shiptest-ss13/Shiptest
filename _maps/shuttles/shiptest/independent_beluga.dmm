@@ -2054,14 +2054,19 @@
 /turf/open/floor/wood,
 /area/ship/crew/library)
 "sK" = (
-/obj/structure/window/reinforced/spawner{
+/obj/structure/toilet{
 	dir = 8
 	},
-/obj/machinery/shower{
-	pixel_y = 10
+/obj/structure/sink{
+	pixel_y = 23;
+	pixel_x = -8
 	},
-/obj/structure/curtain/bounty,
-/turf/open/floor/plating/catwalk_floor,
+/obj/machinery/computer/helm/viewscreen{
+	dir = 8;
+	pixel_x = 24
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
 /area/ship/security)
 "sO" = (
 /obj/effect/spawner/structure/window/reinforced,
@@ -2407,18 +2412,29 @@
 /turf/open/floor/wood,
 /area/ship/crew/library)
 "wi" = (
-/obj/effect/turf_decal/siding/wideplating/dark{
-	dir = 1
+/obj/effect/turf_decal/corner/opaque/white/diagonal,
+/obj/machinery/power/apc/auto_name/north,
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
 	},
-/obj/structure/window/reinforced/spawner/north{
+/obj/item/cutting_board{
+	pixel_x = -3;
 	pixel_y = 1
 	},
-/obj/structure/filingcabinet/chestdrawer,
-/obj/effect/turf_decal/trimline/opaque/yellow/line{
-	dir = 1
+/obj/structure/table,
+/obj/item/kitchen/knife{
+	pixel_x = 11;
+	pixel_y = 7
 	},
-/turf/open/floor/plasteel/dark,
-/area/ship/security)
+/obj/item/reagent_containers/food/snacks/meat/slab/chicken{
+	pixel_x = -4
+	},
+/obj/item/reagent_containers/food/snacks/meat/rawcutlet/chicken{
+	pixel_x = 1;
+	pixel_y = 3
+	},
+/turf/open/floor/plasteel,
+/area/ship/crew/canteen)
 "wn" = (
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/hallway/central)
@@ -2628,14 +2644,12 @@
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/canteen)
 "ya" = (
-/obj/docking_port/stationary{
-	height = 15;
-	width = 15;
-	dwidth = 7;
-	name = "main beluga dock"
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "premier_cell_windows"
 	},
-/turf/template_noop,
-/area/template_noop)
+/turf/open/floor/plating,
+/area/ship/security)
 "yc" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -2719,12 +2733,15 @@
 /turf/open/floor/wood/walnut,
 /area/ship/crew)
 "yP" = (
-/obj/effect/spawner/structure/window/shuttle,
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "premier_windows"
+/obj/docking_port/stationary{
+	height = 15;
+	width = 30;
+	name = "main beluga dock";
+	dir = 2;
+	dwidth = 2
 	},
-/turf/open/floor/plating,
-/area/ship/security)
+/turf/template_noop,
+/area/template_noop)
 "yU" = (
 /obj/effect/turf_decal/borderfloorwhite{
 	dir = 9
@@ -3210,26 +3227,23 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "El" = (
-/obj/effect/turf_decal/techfloor,
-/obj/item/gun/energy/disabler{
-	pixel_y = 5
+/obj/effect/turf_decal/siding/wideplating/dark{
+	dir = 1
 	},
-/obj/item/melee/classic_baton/telescopic{
-	pixel_y = 5
+/obj/structure/window/reinforced/spawner/north{
+	pixel_y = 1
 	},
-/obj/structure/rack,
-/obj/structure/window/reinforced/spawner{
+/obj/structure/filingcabinet/chestdrawer,
+/obj/effect/turf_decal/trimline/opaque/yellow/line{
+	dir = 1
+	},
+/obj/machinery/button/door{
+	id = "premier_cell_windows";
+	name = "Cell Shutter";
+	pixel_x = 24;
 	dir = 8
 	},
-/obj/machinery/door/window/brigdoor/southright{
-	req_access_txt = "1"
-	},
-/obj/structure/window/reinforced/spawner/east,
-/obj/item/melee/classic_baton/telescopic{
-	pixel_x = 5;
-	pixel_y = 5
-	},
-/turf/open/floor/plasteel/tech/grid,
+/turf/open/floor/plasteel/dark,
 /area/ship/security)
 "Eo" = (
 /obj/machinery/power/smes/shuttle/precharged{
@@ -3655,14 +3669,16 @@
 /turf/open/floor/plating,
 /area/ship/bridge)
 "HO" = (
-/obj/machinery/processor,
-/obj/effect/turf_decal/corner/opaque/white/diagonal,
-/obj/machinery/power/apc/auto_name/north,
-/obj/structure/cable/yellow{
-	icon_state = "0-2"
+/obj/structure/window/reinforced/spawner{
+	dir = 8
 	},
-/turf/open/floor/plasteel,
-/area/ship/crew/canteen)
+/obj/machinery/shower{
+	pixel_y = 10
+	},
+/obj/structure/curtain/bounty,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
+/area/ship/security)
 "HP" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 4
@@ -4265,18 +4281,23 @@
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
 "Nm" = (
-/obj/structure/toilet{
+/obj/effect/turf_decal/techfloor,
+/obj/item/gun/energy/disabler{
+	pixel_y = 5
+	},
+/obj/structure/rack,
+/obj/structure/window/reinforced/spawner{
 	dir = 8
 	},
-/obj/structure/sink{
-	pixel_y = 23;
-	pixel_x = -8
+/obj/machinery/door/window/brigdoor/southright{
+	req_access_txt = "1"
 	},
-/obj/machinery/computer/helm/viewscreen{
-	dir = 8;
-	pixel_x = 24
+/obj/structure/window/reinforced/spawner/east,
+/obj/item/melee/baton/loaded,
+/obj/item/melee/baton/loaded{
+	pixel_x = 5
 	},
-/turf/open/floor/plating/catwalk_floor,
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/security)
 "Nv" = (
 /obj/structure/bed,
@@ -4329,10 +4350,6 @@
 /obj/item/kitchen/rollingpin{
 	pixel_x = 4;
 	pixel_y = -5
-	},
-/obj/item/kitchen/knife{
-	pixel_x = 11;
-	pixel_y = 3
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
@@ -5359,7 +5376,6 @@ Sv
 Sv
 Sv
 Sv
-Sv
 DE
 XY
 DE
@@ -5370,9 +5386,9 @@ Sv
 Sv
 Sv
 Sv
+Sv
 "}
 (2,1,1) = {"
-Sv
 Sv
 Sv
 Sv
@@ -5391,9 +5407,9 @@ Sv
 Sv
 Sv
 Sv
+Sv
 "}
 (3,1,1) = {"
-Sv
 Sv
 Sv
 Sv
@@ -5412,9 +5428,9 @@ Sv
 Sv
 Sv
 Sv
+Sv
 "}
 (4,1,1) = {"
-Sv
 Sv
 Sv
 Sv
@@ -5433,9 +5449,9 @@ Sv
 Sv
 Sv
 Sv
+Sv
 "}
 (5,1,1) = {"
-Sv
 Sv
 Sv
 Sv
@@ -5454,9 +5470,9 @@ lJ
 Sv
 Sv
 Sv
+Sv
 "}
 (6,1,1) = {"
-Sv
 Sv
 Sv
 Sv
@@ -5475,9 +5491,9 @@ ZY
 DE
 Sv
 Sv
+Sv
 "}
 (7,1,1) = {"
-Sv
 Sv
 Sv
 Sv
@@ -5496,9 +5512,9 @@ dE
 DE
 Sv
 Sv
+Sv
 "}
 (8,1,1) = {"
-Sv
 Sv
 Sv
 Sv
@@ -5517,9 +5533,9 @@ bW
 hM
 Sv
 Sv
+Sv
 "}
 (9,1,1) = {"
-Sv
 Sv
 Sv
 Xw
@@ -5538,9 +5554,9 @@ DE
 DE
 pF
 Sv
+Sv
 "}
 (10,1,1) = {"
-Sv
 Sv
 Xw
 ul
@@ -5559,9 +5575,9 @@ QV
 Oa
 AF
 yy
+Sv
 "}
 (11,1,1) = {"
-Sv
 Sv
 ul
 zz
@@ -5580,9 +5596,9 @@ Oa
 ge
 fr
 AF
+Sv
 "}
 (12,1,1) = {"
-Sv
 Sv
 ul
 cb
@@ -5601,9 +5617,9 @@ rQ
 qo
 hJ
 AF
+Sv
 "}
 (13,1,1) = {"
-Sv
 Sv
 ul
 FT
@@ -5622,9 +5638,9 @@ mc
 uj
 IT
 AF
+Sv
 "}
 (14,1,1) = {"
-Sv
 ul
 ul
 ul
@@ -5643,9 +5659,9 @@ Oa
 Sh
 qg
 AF
+Sv
 "}
 (15,1,1) = {"
-Sv
 ax
 Qj
 IP
@@ -5664,9 +5680,9 @@ Oa
 Sh
 UO
 AF
+Sv
 "}
 (16,1,1) = {"
-Sv
 fg
 bo
 Di
@@ -5685,9 +5701,9 @@ ZN
 UW
 RM
 pA
+Sv
 "}
 (17,1,1) = {"
-ya
 GV
 Jr
 KJ
@@ -5706,9 +5722,9 @@ NZ
 Zx
 EX
 IC
+yP
 "}
 (18,1,1) = {"
-Sv
 ax
 Tl
 lx
@@ -5727,9 +5743,9 @@ Ei
 VK
 cR
 AF
+Sv
 "}
 (19,1,1) = {"
-Sv
 ul
 NB
 NB
@@ -5748,9 +5764,9 @@ bF
 bF
 bF
 bF
+Sv
 "}
 (20,1,1) = {"
-Sv
 Sv
 NB
 Nv
@@ -5769,9 +5785,9 @@ ni
 ky
 Ko
 qR
+Sv
 "}
 (21,1,1) = {"
-Sv
 Sv
 NB
 Nv
@@ -5790,9 +5806,9 @@ lE
 WV
 hU
 bF
+Sv
 "}
 (22,1,1) = {"
-Sv
 Sv
 aF
 MG
@@ -5811,9 +5827,9 @@ bF
 bF
 bF
 bF
+Sv
 "}
 (23,1,1) = {"
-Sv
 Sv
 aF
 Iw
@@ -5832,9 +5848,9 @@ Ey
 xe
 FF
 bF
+Sv
 "}
 (24,1,1) = {"
-Sv
 Sv
 aF
 EM
@@ -5853,9 +5869,9 @@ LE
 CU
 Hq
 PW
+Sv
 "}
 (25,1,1) = {"
-Sv
 Sv
 bD
 bD
@@ -5874,9 +5890,9 @@ bF
 bF
 bF
 bF
+Sv
 "}
 (26,1,1) = {"
-Sv
 Sv
 bD
 pn
@@ -5895,12 +5911,12 @@ dY
 vR
 Vo
 bG
+Sv
 "}
 (27,1,1) = {"
 Sv
-Sv
 bD
-HO
+wi
 uL
 TQ
 Pa
@@ -5916,9 +5932,9 @@ ZZ
 OK
 mQ
 bG
+Sv
 "}
 (28,1,1) = {"
-Sv
 Sv
 ES
 bD
@@ -5937,9 +5953,9 @@ jD
 IH
 bG
 Am
+Sv
 "}
 (29,1,1) = {"
-Sv
 Sv
 Sv
 bD
@@ -5958,9 +5974,9 @@ PY
 Oi
 bG
 Sv
+Sv
 "}
 (30,1,1) = {"
-Sv
 Sv
 Sv
 AS
@@ -5979,9 +5995,9 @@ wx
 ln
 bG
 Sv
+Sv
 "}
 (31,1,1) = {"
-Sv
 Sv
 Sv
 AS
@@ -6000,9 +6016,9 @@ CP
 vG
 bG
 Sv
+Sv
 "}
 (32,1,1) = {"
-Sv
 Sv
 Sv
 bD
@@ -6021,9 +6037,9 @@ hE
 nz
 qr
 Sv
+Sv
 "}
 (33,1,1) = {"
-Sv
 Sv
 Sv
 bD
@@ -6042,9 +6058,9 @@ ck
 qC
 qr
 Sv
+Sv
 "}
 (34,1,1) = {"
-Sv
 Sv
 Sv
 bD
@@ -6063,9 +6079,9 @@ xi
 uz
 qr
 Sv
+Sv
 "}
 (35,1,1) = {"
-Sv
 Sv
 Sv
 FH
@@ -6084,9 +6100,9 @@ JA
 ev
 qr
 Sv
+Sv
 "}
 (36,1,1) = {"
-Sv
 Sv
 Sv
 FH
@@ -6105,9 +6121,9 @@ fK
 QA
 bG
 Sv
+Sv
 "}
 (37,1,1) = {"
-Sv
 Sv
 Sv
 Hs
@@ -6126,9 +6142,9 @@ bG
 bG
 Am
 Sv
+Sv
 "}
 (38,1,1) = {"
-Sv
 Sv
 Sv
 Dr
@@ -6147,9 +6163,9 @@ DA
 OE
 Sv
 Sv
+Sv
 "}
 (39,1,1) = {"
-Sv
 Sv
 Sv
 Dr
@@ -6168,9 +6184,9 @@ RW
 OE
 Sv
 Sv
+Sv
 "}
 (40,1,1) = {"
-Sv
 Sv
 Sv
 gf
@@ -6180,7 +6196,7 @@ eL
 LR
 Hd
 HE
-El
+Nm
 fV
 fX
 pk
@@ -6189,9 +6205,9 @@ RW
 OE
 Sv
 Sv
+Sv
 "}
 (41,1,1) = {"
-Sv
 Sv
 Sv
 Sv
@@ -6210,9 +6226,9 @@ ys
 OE
 Sv
 Sv
+Sv
 "}
 (42,1,1) = {"
-Sv
 Sv
 Sv
 Sv
@@ -6222,18 +6238,18 @@ ag
 BV
 Ff
 Hs
-sK
+HO
 Nw
 lM
-wi
+El
 OE
 OE
 iP
 Sv
 Sv
+Sv
 "}
 (43,1,1) = {"
-Sv
 Sv
 Sv
 Sv
@@ -6243,7 +6259,7 @@ iU
 vb
 FU
 Hs
-Nm
+sK
 uy
 hH
 OE
@@ -6252,9 +6268,9 @@ Sv
 Sv
 Sv
 Sv
+Sv
 "}
 (44,1,1) = {"
-Sv
 Sv
 Sv
 Sv
@@ -6266,8 +6282,9 @@ hP
 Hs
 OE
 OE
-yP
+ya
 iP
+Sv
 Sv
 Sv
 Sv
@@ -6275,7 +6292,6 @@ Sv
 Sv
 "}
 (45,1,1) = {"
-Sv
 Sv
 Sv
 Sv
@@ -6294,9 +6310,9 @@ Sv
 Sv
 Sv
 Sv
+Sv
 "}
 (46,1,1) = {"
-Sv
 Sv
 Sv
 Sv
@@ -6315,9 +6331,9 @@ Sv
 Sv
 Sv
 Sv
+Sv
 "}
 (47,1,1) = {"
-Sv
 Sv
 Sv
 Sv
@@ -6336,9 +6352,9 @@ Sv
 Sv
 Sv
 Sv
+Sv
 "}
 (48,1,1) = {"
-Sv
 Sv
 Sv
 Sv
@@ -6348,6 +6364,7 @@ Dr
 Dr
 Dr
 gf
+Sv
 Sv
 Sv
 Sv
