@@ -54,7 +54,7 @@
 			step_towards(M,src)
 
 	//Damaging the turf
-	if( T && prob(turf_removal_chance) )
+	if(T && prob(turf_removal_chance))
 		switch(ex_act_force)
 			if(EXPLODE_DEVASTATE)
 				SSexplosions.highturf += T
