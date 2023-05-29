@@ -4,12 +4,7 @@
 	icon_state = "bioscrambler"
 	aSignal = /obj/item/assembly/signaler/anomaly/bioscrambler
 	immortal = TRUE
-	/// Cooldown for every anomaly pulse
-	COOLDOWN_DECLARE(pulse_cooldown)
-	/// How many seconds between each anomaly pulses
-	var/pulse_delay = 15 SECONDS
-	/// Range of the anomaly pulse
-	var/range = 6
+	range = 4
 
 /obj/effect/anomaly/bioscrambler/anomalyEffect(seconds_per_tick)
 	. = ..()
@@ -19,14 +14,23 @@
 	COOLDOWN_START(src, pulse_cooldown, pulse_delay)
 	for(var/mob/living/carbon/nearby in range(range, src))
 		nearby.bioscramble(name)
-		if (nearby.run_armor_check(attack_flag = "bio") >= 100)
-			nearby.apply_damage(10, CLONE, spread_damage = TRUE)
+		if (nearby.run_armor_check(attack_flag = "bio") <= 100)
+			nearby.apply_damage(10, CLONE)
+			nearby.apply_effects(stutter = 3, eyeblur = 5, drowsy = 1,)
 
 /obj/effect/anomaly/bioscrambler/big
 	pulse_delay = 10
-	range = 10
+	range = 7
 
 /obj/effect/anomaly/bioscrambler/big/Initialize(mapload, new_lifespan, drops_core)
 	. = ..()
 
-	transform *= 3
+	transform *= 1.5
+
+/obj/effect/anomaly/bioscrambler/planetary
+	immortal = TRUE
+	immobile = TRUE
+
+/obj/effect/anomaly/bioscrambler/big/planetary
+	immortal = TRUE
+	immobile = TRUE

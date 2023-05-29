@@ -11,9 +11,15 @@
 	var/obj/item/assembly/signaler/anomaly/aSignal = /obj/item/assembly/signaler/anomaly
 	var/area/impact_area
 
-	var/lifespan = null
+	var/lifespan = 990
 	var/death_time
 	var/research_value
+
+	//for anomaly effects, range is how far the effects can reach, the cooldown lets us wire in effects that happen every pulse delay seconds
+	var/range = 6
+
+	COOLDOWN_DECLARE(pulse_cooldown)
+	var/pulse_delay = 15 SECONDS
 
 	var/countdown_colour
 	var/obj/effect/countdown/anomaly/countdown
@@ -21,9 +27,9 @@
 	/// Do we drop a core when we're neutralized?
 	var/drops_core = TRUE
 	///Do we keep on living forever?
-	var/immortal = TRUE
+	var/immortal = FALSE
 	///Do we stay in one place?
-	var/immobile = TRUE
+	var/immobile = FALSE
 
 /obj/effect/anomaly/Initialize(mapload, new_lifespan, drops_core = TRUE)
 	. = ..()

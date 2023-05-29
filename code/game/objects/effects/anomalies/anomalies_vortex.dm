@@ -62,3 +62,7 @@
 				SSexplosions.medturf += T
 			if(EXPLODE_LIGHT)
 				SSexplosions.lowturf += T
+
+/obj/effect/anomaly/vortex/planetary
+	immortal = TRUE
+	immobile = TRUE

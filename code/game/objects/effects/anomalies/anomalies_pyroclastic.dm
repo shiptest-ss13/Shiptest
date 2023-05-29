@@ -2,18 +2,33 @@
 /obj/effect/anomaly/pyro
 	name = "pyroclastic anomaly"
 	icon_state = "pyroclastic"
+	range = 4
 	var/ticks = 0
 	/// How many seconds between each gas release
-	var/releasedelay = 10
+	pulse_delay = 10
 	aSignal = /obj/item/assembly/signaler/anomaly/pyro
 
 /obj/effect/anomaly/pyro/anomalyEffect(seconds_per_tick)
 	..()
+
+	for(var/mob/living/carbon/nearby in range(range, src))
+		nearby.adjust_bodytemperature(20)
+		visible_message("[src] pulses!")
+
+	if(!COOLDOWN_FINISHED(src, pulse_cooldown))
+		return
+	COOLDOWN_START(src, pulse_cooldown, pulse_delay)
+
+	for(var/mob/living/carbon/nearby in range(range/2, src))
+		nearby.fire_stacks += 3
+		nearby.IgniteMob()
+		visible_message("<span_class:warning>[src] ignites [nearby]!")
+
 	ticks += seconds_per_tick
-	if(ticks < releasedelay)
+	if(ticks < pulse_cooldown)
 		return FALSE
 	else
-		ticks -= releasedelay
+		ticks -= pulse_cooldown
 	var/turf/open/tile = get_turf(src)
 	if(istype(tile))
 		tile.atmos_spawn_air("o2=5;plasma=10;TEMP=500")
@@ -39,20 +54,15 @@
 /obj/effect/anomaly/pyro/big
 	immortal = TRUE
 	aSignal = null
-	releasedelay = 2
+	pulse_delay = 2
+	range = 6
 	move_force = MOVE_FORCE_OVERPOWERING
 
 /obj/effect/anomaly/pyro/big/Initialize(mapload, new_lifespan, drops_core)
 	. = ..()
 
-	transform *= 3
+	transform *= 2
 
-/obj/effect/anomaly/pyro/big/Bumped(atom/movable/bumpee)
-	. = ..()
-
-	if(isliving(bumpee))
-		var/mob/living/living = bumpee
-		living.dust()
 
 /obj/effect/anomaly/pyro/big/anomalyEffect(seconds_per_tick)
 	. = ..()
@@ -63,3 +73,12 @@
 	var/turf/turf = get_turf(src)
 	if(!isgroundlessturf(turf))
 		turf.TerraformTurf(/turf/open/lava/smooth, flags = CHANGETURF_INHERIT_AIR)
+
+
+/obj/effect/anomaly/pyro/planetary
+	immortal = TRUE
+	immobile = TRUE
+
+/obj/effect/anomaly/pyro/big/planetary
+	immortal = TRUE
+	immobile = TRUE

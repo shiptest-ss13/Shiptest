@@ -6,14 +6,14 @@
 	/// Time passed since the last effect, increased by delta_time of the SSobj
 	var/ticks = 0
 	/// How many seconds between each small hallucination pulses
-	var/release_delay = 5
+	pulse_delay = 5
 
 /obj/effect/anomaly/hallucination/anomalyEffect(delta_time)
 	. = ..()
 	ticks += delta_time
-	if(ticks < release_delay)
+	if(ticks < pulse_delay)
 		return
-	ticks -= release_delay
+	ticks -= pulse_delay
 	var/turf/open/our_turf = get_turf(src)
 	if(istype(our_turf))
 		hallucination_pulse(our_turf, 5)
@@ -45,3 +45,6 @@
 		)
 		to_chat(near, span_warning(pick(messages)))
 
+/obj/effect/anomaly/hallucination/planetary
+	immortal = TRUE
+	immobile = TRUE

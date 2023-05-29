@@ -5,14 +5,25 @@
 	density = TRUE
 	aSignal = /obj/item/assembly/signaler/anomaly/bluespace
 	///range from which we can teleport someone
-	var/teleport_range = 1
+	range = 3
+	var/reagent_amount = 3
 	///Distance we can teleport someone passively
 	var/teleport_distance = 6
 
 /obj/effect/anomaly/bluespace/anomalyEffect()
 	..()
-	for(var/mob/living/M in range(teleport_range,src))
-		do_teleport(M, locate(M.x, M.y, M.z), teleport_distance, channel = TELEPORT_CHANNEL_BLUESPACE)
+	for(var/mob/living/Mob in range(range,src))
+		do_teleport(Mob, locate(Mob.x, Mob.y, Mob.z), teleport_distance, channel = TELEPORT_CHANNEL_BLUESPACE)
+
+
+	if(!COOLDOWN_FINISHED(src, pulse_cooldown))
+		return
+
+	COOLDOWN_START(src, pulse_cooldown, pulse_delay)
+	for(var/mob/living/Mob in range(range,src))
+		if(iscarbon(Mob))
+			var/mob/living/carbon/carbon = Mob
+			carbon.reagents?.add_reagent(/datum/reagent/bluespace, reagent_amount)
 
 /obj/effect/anomaly/bluespace/Bumped(atom/movable/AM)
 	if(isliving(AM))
@@ -82,23 +93,32 @@
 /obj/effect/anomaly/bluespace/stabilize(anchor, has_core)
 	. = ..()
 
-	teleport_range = 0 //bumping already teleports, so this just prevents people from being teleported when they don't expect it when interacting with stable bsanoms
+	range = 0 //bumping already teleports, so this just prevents people from being teleported when they don't expect it when interacting with stable bsanoms
 
 /obj/effect/anomaly/bluespace/big
 	immortal = TRUE
-	teleport_range = 2
+	range = 4
 	teleport_distance = 12
 	aSignal = null
+	reagent_amount = 20
 
 /obj/effect/anomaly/bluespace/big/Initialize(mapload, new_lifespan, drops_core)
 	. = ..()
 
-	transform *= 3
+	transform *= 1.5
 
 /obj/effect/anomaly/bluespace/big/Bumped(atom/movable/bumpee)
 	if(iscarbon(bumpee))
 		var/mob/living/carbon/carbon = bumpee
-		carbon.reagents?.add_reagent(/datum/reagent/bluespace, 20)
+		carbon.reagents?.add_reagent(/datum/reagent/bluespace, reagent_amount)
 
 	if(!isliving(bumpee))
 		return ..()
+
+/obj/effect/anomaly/bluespace/planetary
+	immortal = TRUE
+	immobile = TRUE
+
+/obj/effect/anomaly/bluespace/big/planetary
+	immortal = TRUE
+	immobile = TRUE

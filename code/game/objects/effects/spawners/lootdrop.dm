@@ -807,23 +807,23 @@
 /obj/effect/spawner/lootdrop/anomaly
 	name = "random anomaly spawner"
 	loot = list(
-		/obj/effect/anomaly/bioscrambler,
-		/obj/effect/anomaly/bluespace,
-		/obj/effect/anomaly/flux,
-		/obj/effect/anomaly/grav,
-		/obj/effect/anomaly/hallucination,
-		/obj/effect/anomaly/pyro,
-		/obj/effect/anomaly/vortex,
-		/obj/effect/anomaly/grav/high
+		/obj/effect/anomaly/bioscrambler/planetary,
+		/obj/effect/anomaly/bluespace/planetary,
+		/obj/effect/anomaly/flux/planetary,
+		/obj/effect/anomaly/grav/planetary,
+		/obj/effect/anomaly/hallucination/planetary,
+		/obj/effect/anomaly/pyro/planetary,
+		/obj/effect/anomaly/vortex/planetary,
+		/obj/effect/anomaly/grav/high/planetary
 	)
 
 /obj/effect/spawner/lootdrop/anomaly/big
 	name = "random big anomaly spawner"
 	loot = list(
-		/obj/effect/anomaly/bioscrambler/big,
-		/obj/effect/anomaly/bluespace/big,
-		/obj/effect/anomaly/flux/big,
-		/obj/effect/anomaly/grav/high/big,
-		/obj/effect/anomaly/pyro/big
+		/obj/effect/anomaly/bioscrambler/big/planetary,
+		/obj/effect/anomaly/bluespace/big/planetary,
+		/obj/effect/anomaly/flux/big/planetary,
+		/obj/effect/anomaly/grav/high/big/planetary,
+		/obj/effect/anomaly/pyro/big/planetary
 
 	)
