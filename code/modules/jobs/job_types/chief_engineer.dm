@@ -126,3 +126,13 @@
 	head = /obj/item/clothing/head/beret/ce
 	belt = /obj/item/storage/belt/utility/full
 	suit = /obj/item/clothing/suit/hazardvest
+
+/datum/outfit/job/ce/frontiersmen
+	name = "Head Carpenter (Frontiersmen)"
+
+	ears = /obj/item/radio/headset/pirate
+	uniform = /obj/item/clothing/under/rank/security/officer/frontier/officer
+	head = /obj/item/clothing/head/hardhat/white
+	shoes = /obj/item/clothing/shoes/combat
+	gloves = /obj/item/clothing/gloves/combat
+	belt = /obj/item/storage/belt/utility/full

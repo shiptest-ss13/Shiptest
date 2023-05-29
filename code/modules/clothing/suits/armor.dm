@@ -405,7 +405,7 @@
 	item_state = "solgov_overseer_robe"
 
 /obj/item/clothing/suit/armor/vest/bulletproof/solgov/captain
-	name = "\improper SoLGov Captain coat"
+	name = "\improper SolGov Captain coat"
 	desc = "An armored coat typically used by SolGov captains."
 	icon_state = "solgov_coat"
 	item_state = "solgov_coat"
