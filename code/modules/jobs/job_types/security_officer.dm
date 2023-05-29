@@ -106,40 +106,6 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 
 //Shiptest outfits begin
 
-/datum/outfit/job/security/solgov
-	name = "Boarding Specialist (SolGov)"
-
-	uniform = /obj/item/clothing/under/solgov
-	accessory = /obj/item/clothing/accessory/armband
-	shoes = /obj/item/clothing/shoes/combat
-	head = /obj/item/clothing/head/helmet/solgov
-	suit = /obj/item/clothing/suit/armor/vest/bulletproof/solgov
-
-/datum/outfit/job/security/solgov/rebel
-	name = "Boarding Specialist (Deserter)"
-
-	uniform = /obj/item/clothing/under/syndicate/camo
-
-/datum/outfit/job/security/solgov/elite
-	name = "Marine (SolGov)"
-
-	uniform = /obj/item/clothing/under/solgov/elite
-	shoes = /obj/item/clothing/shoes/combat/swat
-	gloves = /obj/item/clothing/gloves/tackler/combat
-
-	backpack = /obj/item/storage/backpack/ert/security
-	backpack_contents = list(/obj/item/melee/baton/loaded=1, /obj/item/ammo_box/magazine/co9mm=1, /obj/item/gun_voucher/solgov=1)
-
-/datum/outfit/job/security/marine
-	name = "Marine (SolGov)"
-
-	uniform = /obj/item/clothing/under/solgov/elite
-	shoes = /obj/item/clothing/shoes/combat/swat
-	gloves = /obj/item/clothing/gloves/tackler/combat
-
-	backpack = /obj/item/storage/backpack/ert/security
-	backpack_contents = list(/obj/item/melee/baton/loaded=1, /obj/item/ammo_box/magazine/co9mm=1, /obj/item/gun_voucher/solgov=1)
-
 /datum/outfit/job/security/pirate
 	name = "Buccaneer (Pirate)"
 
@@ -313,5 +279,22 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	backpack_contents = list(/obj/item/melee/baton/loaded=1)
 
 	implants = list(/obj/item/implant/radio)
+
+
+/datum/outfit/job/security/Frontiersmen
+	name = "Buccaneer (Frontiersmen)"
+
+	head = /obj/item/clothing/head/beret/sec/frontier
+	mask = /obj/item/clothing/mask/gas/sechailer/minutemen
+	suit = null
+	uniform = /obj/item/clothing/under/rank/security/officer/frontier
+	shoes = /obj/item/clothing/shoes/combat
+	gloves = /obj/item/clothing/gloves/combat
+	ears = /obj/item/radio/headset/pirate/alt
+
+	belt = /obj/item/storage/belt/security/webbing
+
+	l_pocket = /obj/item/flashlight/seclite
+	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
 
 //Shiptest outfits end

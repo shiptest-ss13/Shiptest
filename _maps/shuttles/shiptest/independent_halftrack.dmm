@@ -1001,6 +1001,19 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
+"yY" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/landmark/observer_start,
+/turf/open/floor/carpet/nanoweave/beige,
+/area/ship/hallway/aft)
 "zg" = (
 /obj/machinery/light{
 	dir = 1
@@ -2466,7 +2479,7 @@ RW
 dH
 uq
 ur
-go
+yY
 ur
 ur
 ur
