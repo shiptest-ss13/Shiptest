@@ -73,6 +73,8 @@
 
 //Bodypart change blocking flags
 #define BP_BLOCK_CHANGE_SPECIES (1<<0)
+#define BODYTYPE_BIOSCRAMBLE_COMPATIBLE (BODYTYPE_HUMANOID)
+#define BODYTYPE_CAN_BE_BIOSCRAMBLED(bodytype) (!(bodytype & BODYTYPE_ROBOTIC) && (bodytype & BODYTYPE_BIOSCRAMBLE_COMPATIBLE))
 
 //Defines for Species IDs
 #define SPECIES_ABDUCTOR "abductor"

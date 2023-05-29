@@ -803,3 +803,27 @@
 		/obj/structure/flora/ausbushes/fullgrass,
 		/obj/structure/flora/ausbushes/sparsegrass)
 	lootcount = 1
+
+/obj/effect/spawner/lootdrop/anomaly
+	name = "random anomaly spawner"
+	loot = list(
+		/obj/effect/anomaly/bioscrambler,
+		/obj/effect/anomaly/bluespace,
+		/obj/effect/anomaly/flux,
+		/obj/effect/anomaly/grav,
+		/obj/effect/anomaly/hallucination,
+		/obj/effect/anomaly/pyro,
+		/obj/effect/anomaly/vortex,
+		/obj/effect/anomaly/grav/high
+	)
+
+/obj/effect/spawner/lootdrop/anomaly/big
+	name = "random big anomaly spawner"
+	loot = list(
+		/obj/effect/anomaly/bioscrambler/big,
+		/obj/effect/anomaly/bluespace/big,
+		/obj/effect/anomaly/flux/big,
+		/obj/effect/anomaly/grav/high/big,
+		/obj/effect/anomaly/pyro/big
+
+	)

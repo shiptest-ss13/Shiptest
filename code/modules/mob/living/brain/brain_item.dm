@@ -26,7 +26,7 @@
 
 	var/list/datum/brain_trauma/traumas = list()
 
-/obj/item/organ/brain/Insert(mob/living/carbon/C, special = 0,no_id_transfer = FALSE)
+/obj/item/organ/brain/Insert(mob/living/carbon/C, special = 0,no_id_transfer = FALSE, drop_if_replaced)
 	..()
 
 	name = "brain"
@@ -254,7 +254,7 @@
 	QDEL_NULL(stored_mmi)
 	return ..()
 
-/obj/item/organ/brain/mmi_holder/Insert(mob/living/carbon/C, special = 0, no_id_transfer = FALSE)
+/obj/item/organ/brain/mmi_holder/Insert(mob/living/carbon/C, special = 0, no_id_transfer = FALSE, drop_if_replaced)
 	if(special)
 		return ..()
 	if(!stored_mmi)

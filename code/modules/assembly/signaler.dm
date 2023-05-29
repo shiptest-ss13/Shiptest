@@ -185,6 +185,7 @@
 	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
 	resistance_flags = FIRE_PROOF
 	var/anomaly_type = /obj/effect/anomaly
+	var/research
 
 /obj/item/assembly/signaler/anomaly/receive_signal(datum/signal/signal)
 	if(!signal)
@@ -193,8 +194,8 @@
 		return FALSE
 	if(suicider)
 		manual_suicide(suicider)
-	for(var/obj/effect/anomaly/A in get_turf(src))
-		A.anomalyNeutralize()
+	for(var/obj/effect/anomaly/Anomaly in get_turf(src))
+		Anomaly.anomalyNeutralize()
 	return TRUE
 
 /obj/item/assembly/signaler/anomaly/manual_suicide(mob/living/carbon/user)
@@ -208,7 +209,10 @@
 		to_chat(user, "<span class='notice'>Analyzing... [src]'s stabilized field is fluctuating along frequency [format_frequency(frequency)], code [code].</span>")
 	..()
 
+
+
 //Anomaly cores
+
 /obj/item/assembly/signaler/anomaly/pyro
 	name = "\improper pyroclastic anomaly core"
 	desc = "The neutralized core of a pyroclastic anomaly. It feels warm to the touch. It'd probably be valuable for research."
@@ -237,7 +241,21 @@
 	name = "\improper vortex anomaly core"
 	desc = "The neutralized core of a vortex anomaly. It won't sit still, as if some invisible force is acting on it. It'd probably be valuable for research."
 	icon_state = "vortex core"
-	anomaly_type = /obj/effect/anomaly/bhole
+	anomaly_type = /obj/effect/anomaly/vortex
+
+/obj/item/assembly/signaler/anomaly/hallucination
+	name = "\improper hallucination anomaly core"
+	desc = "The neutralized core of a hallucination anomaly. It seems to be moving, but it's probably your imagination. It'd probably be valuable for research."
+	icon_state = "hallucination_core"
+	anomaly_type = /obj/effect/anomaly/hallucination
+
+/obj/item/assembly/signaler/anomaly/bioscrambler
+	name = "\improper delimber anomaly core"
+	desc = "The neutralized core of a delimber anomaly. It's squirming, as if moving. It'd probably be valuable for research."
+	icon_state = "delimber_core"
+	anomaly_type = /obj/effect/anomaly/bioscrambler
+
+
 
 /obj/item/assembly/signaler/anomaly/attack_self()
 	return
