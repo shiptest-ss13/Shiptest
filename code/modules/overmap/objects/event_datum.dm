@@ -35,24 +35,31 @@
 	return
 
 
-///METEOR STORMS - Bounces harmlessly off the shield... unless your shield is breached
+///METEOR STORMS - explodes your ship if you go too fast
 /datum/overmap/event/meteor
 	name = "asteroid storm (moderate)"
 	token_icon_state = "meteor1"
 	chance_to_affect = 15
 	spread_chance = 50
 	chain_rate = 4
+	var/safe_speed = 3
 	var/list/meteor_types = list(
 		/obj/effect/meteor/dust=3,
 		/obj/effect/meteor/medium=8,
-		/obj/effect/meteor/big=3,
-		/obj/effect/meteor/flaming=1,
+		/obj/effect/meteor/big=1,
 		/obj/effect/meteor/irradiated=3
 	)
 
 /datum/overmap/event/meteor/Initialize(position, ...)
 	. = ..()
 	token.icon_state = "meteor[rand(1, 4)]"
+
+/datum/overmap/event/meteor/apply_effect()
+	for(var/datum/overmap/ship/controlled/S in get_nearby_overmap_objects())
+		while(MAGNITUDE(S.speed_x, S.speed_y^2) > safe_speed)
+			stoplag()
+			if(prob(chance_to_affect))
+				affect_ship(S)
 
 /datum/overmap/event/meteor/affect_ship(datum/overmap/ship/controlled/S)
 	spawn_meteor(meteor_types, S.shuttle_port.get_virtual_level(), 0)
@@ -61,10 +68,9 @@
 	name = "asteroid storm (minor)"
 	chain_rate = 3
 	meteor_types = list(
+		/obj/effect/meteor/dust=12,
 		/obj/effect/meteor/medium=4,
-		/obj/effect/meteor/big=8,
-		/obj/effect/meteor/flaming=3,
-		/obj/effect/meteor/irradiated=3
+		/obj/effect/meteor/irradiated=2
 	)
 
 /datum/overmap/event/meteor/major
@@ -72,14 +78,14 @@
 	spread_chance = 25
 	chain_rate = 6
 	meteor_types = list(
-		/obj/effect/meteor/medium=5,
-		/obj/effect/meteor/big=75,
+		/obj/effect/meteor/medium=50,
+		/obj/effect/meteor/big=25,
 		/obj/effect/meteor/flaming=10,
 		/obj/effect/meteor/irradiated=10,
 		/obj/effect/meteor/tunguska = 1
 	)
 
-///ION STORM - Causes EMP pulses on the shuttle, wreaking havoc on the shields
+///ION STORM - explodes your IPCs
 /datum/overmap/event/emp
 	name = "ion storm (moderate)"
 	token_icon_state = "ion1"
@@ -99,7 +105,6 @@
 	for(var/mob/M as anything in GLOB.player_list)
 		if(S.shuttle_port.is_in_shuttle_bounds(M))
 			M.playsound_local(S.shuttle_port, 'sound/weapons/ionrifle.ogg', strength)
-			shake_camera(M, 10, strength)
 
 /datum/overmap/event/emp/minor
 	name = "ion storm (minor)"
@@ -111,13 +116,14 @@
 	chain_rate = 4
 	strength = 5
 
-///ELECTRICAL STORM - Zaps places in the shuttle
+///ELECTRICAL STORM - explodes your computer and IPCs
 /datum/overmap/event/electric
 	name = "electrical storm (moderate)"
 	token_icon_state = "electrical1"
 	chance_to_affect = 15
 	spread_chance = 30
 	chain_rate = 3
+	var/zap_flag = ZAP_STORM_FLAGS
 	var/max_damage = 15
 	var/min_damage = 5
 
@@ -128,11 +134,10 @@
 /datum/overmap/event/electric/affect_ship(datum/overmap/ship/controlled/S)
 	var/datum/virtual_level/ship_vlevel = S.shuttle_port.get_virtual_level()
 	var/turf/source = ship_vlevel.get_side_turf(pick(GLOB.cardinals))
-	tesla_zap(source, 10, TESLA_DEFAULT_POWER, ZAP_TESLA_FLAGS)
+	tesla_zap(source, 10, TESLA_DEFAULT_POWER, zap_flag)
 	for(var/mob/M as anything in GLOB.player_list)
 		if(S.shuttle_port.is_in_shuttle_bounds(M))
 			M.playsound_local(source, 'sound/magic/lightningshock.ogg', rand(min_damage / 10, max_damage / 10))
-			shake_camera(M, 10, rand(min_damage / 10, max_damage / 10))
 
 /datum/overmap/event/electric/minor
 	name = "electrical storm (minor)"
@@ -147,6 +152,7 @@
 	chain_rate = 6
 	max_damage = 20
 	min_damage = 10
+	zap_flag = ZAP_TESLA_FLAGS
 
 /datum/overmap/event/nebula
 	name = "nebula"
@@ -196,6 +202,55 @@
 	S.overmap_move(other_wormhole.x, other_wormhole.y)
 	S.overmap_step(S.get_heading())
 
+//Carp "meteors" - throws carp at the ship
+
+/datum/overmap/event/meteor/carp
+	name = "carp migration (moderate)"
+	token_icon_state = "carp1"
+	chance_to_affect = 15
+	spread_chance = 50
+	chain_rate = 4
+	safe_speed = 1
+	meteor_types = list(
+		/obj/effect/meteor/carp=8,
+		/obj/effect/meteor/dust=3, //numbers I pulled out of my ass
+	)
+
+/datum/overmap/event/meteor/carp/Initialize(position, ...)
+	. = ..()
+	token.icon_state = "carp[rand(1, 4)]"
+
+/datum/overmap/event/meteor/carp/minor
+	name = "carp migration (minor)"
+	token_icon_state = "carp1"
+	chance_to_affect = 5
+	spread_chance = 25
+	chain_rate = 4
+
+/datum/overmap/event/meteor/carp/major
+	name = "carp migration (major)"
+	token_icon_state = "carp1"
+	chance_to_affect = 25
+	spread_chance = 25
+	chain_rate = 4
+
+// dust clouds throw dust if you go Way Fast
+/datum/overmap/event/meteor/dust
+	name = "dust cloud"
+	token_icon_state = "carp1"
+	chance_to_affect = 30
+	spread_chance = 50
+	chain_rate = 4
+	safe_speed = 7
+	meteor_types = list(
+		/obj/effect/meteor/dust=3,
+	)
+
+/datum/overmap/event/meteor/dust/Initialize(position, ...)
+	. = ..()
+	token.icon_state = "dust[rand(1, 4)]"
+
+
 GLOBAL_LIST_INIT(overmap_event_pick_list, list(
 	/datum/overmap/event/wormhole = 10,
 	/datum/overmap/event/nebula = 60,
@@ -207,6 +262,11 @@ GLOBAL_LIST_INIT(overmap_event_pick_list, list(
 	/datum/overmap/event/emp/major = 45,
 	/datum/overmap/event/meteor/minor = 45,
 	/datum/overmap/event/meteor = 40,
-	/datum/overmap/event/meteor/major = 35
+	/datum/overmap/event/meteor/major = 35,
+	/datum/overmap/event/meteor/carp/minor = 45,
+	/datum/overmap/event/meteor/carp = 40,
+	/datum/overmap/event/meteor/carp/major = 35,
+	/datum/overmap/event/meteor/dust = 50
+
 ))
 

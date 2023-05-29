@@ -113,8 +113,10 @@
 		probabilities = list()
 		for(var/datum/planet_type/planet_type as anything in subtypesof(/datum/planet_type))
 			probabilities[initial(planet_type.planet)] = initial(planet_type.weight)
-
+			if(planet_type == istype(planet_type,/datum/planet_type/gas_giant))
+				preserve_level = 1
 	planet = SSmapping.planet_types[force_encounter ? force_encounter : pickweightAllowZero(probabilities)]
+
 
 	Rename(planet.name)
 	token.icon_state = planet.icon_state
@@ -261,6 +263,8 @@
 	area_flags = HIDDEN_AREA | CAVES_ALLOWED | FLORA_ALLOWED | MOB_SPAWN_ALLOWED //allows jaunters to work
 	ambientsounds = REEBE
 
-
-
-
+/area/overmap_encounter/planetoid/gas_giant
+	name = "\improper Gas Giant"
+	sound_environment = SOUND_ENVIRONMENT_MOUNTAINS
+	ambientsounds = REEBE
+	has_gravity = GAS_GIANT_GRAVITY
