@@ -121,6 +121,7 @@
 	planet = SSmapping.planet_types[force_encounter ? force_encounter : pickweightAllowZero(probabilities)]
 
 
+
 	if(planet.planet !=DYNAMIC_WORLD_ASTEROID && planet.planet != DYNAMIC_WORLD_SPACERUIN) //these aren't real planets
 		planet_name = gen_planet_name()
 		Rename(planet_name)
@@ -136,6 +137,7 @@
 	landing_sound = planet.landing_sound
 	preserve_level = planet.preserve_level //it came to me while I was looking at chickens
 
+
 	if(vlevel_height >= 255 && vlevel_width >= 255) //little easter egg
 		planet_name = "LV-[pick(rand(11111,99999))]"
 		token.icon_state = "sector"
@@ -148,7 +150,8 @@
 // #endif
 
 	if(!preserve_level)
-		token.desc += " It may not still be here if you leave it."
+		token.desc += "It may not still be here if you leave it."
+	token.update_icon()
 
 /datum/overmap/dynamic/proc/gen_planet_name()
 	. = ""
