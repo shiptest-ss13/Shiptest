@@ -86,10 +86,8 @@
 		for(var/mob/Mob as anything in GLOB.player_list)
 			if(dock_requester.shuttle_port.is_in_shuttle_bounds(Mob))
 				Mob.play_screen_text("<span class='maptext' style=font-size:24pt;text-align:center valign='top'><u>[planet_name]</u></span><br>[station_time_timestamp_fancy("hh:mm")]")
-				if (landing_sound == "friendly")
-					playsound(Mob, 'sound/effects/planet_landing_1.ogg', 100)
-				if (landing_sound == "hostile")
-					playsound(Mob, 'sound/effects/planet_landing_2.ogg', 100)
+				playsound(Mob, landing_sound, 100)
+
 
 /datum/overmap/dynamic/post_undocked(datum/overmap/dock_requester)
 	if(preserve_level)
@@ -122,8 +120,12 @@
 			probabilities[initial(planet_type.planet)] = initial(planet_type.weight)
 	planet = SSmapping.planet_types[force_encounter ? force_encounter : pickweightAllowZero(probabilities)]
 
-	planet_name = gen_planet_name()
-	Rename(planet_name)
+
+	if(planet.planet !=DYNAMIC_WORLD_ASTEROID && planet.planet != DYNAMIC_WORLD_SPACERUIN) //these aren't real planets
+		planet_name = gen_planet_name()
+		Rename(planet_name)
+	if(planet.planet == DYNAMIC_WORLD_ASTEROID || planet.planet == DYNAMIC_WORLD_SPACERUIN)
+		Rename(planet.name)
 	token.icon_state = planet.icon_state
 	token.desc = planet.desc
 	token.color = planet.color

@@ -59,11 +59,10 @@
 
 /datum/overmap/event/meteor/apply_effect()
 	for(var/datum/overmap/ship/controlled/Ship in get_nearby_overmap_objects())
-		if(MAGNITUDE(Ship.speed_x, Ship.speed_y) > safe_speed)
-			if(prob(chance_to_affect))
+		if(Ship.get_speed() > safe_speed)
+			var/how_fast =  (Ship.get_speed() - safe_speed)
+			if(prob(chance_to_affect + how_fast))
 				affect_ship(Ship)
-				return
-			return
 
 /datum/overmap/event/meteor/affect_ship(datum/overmap/ship/controlled/Ship)
 	spawn_meteor(meteor_types, Ship.shuttle_port.get_virtual_level(), 0)
@@ -96,6 +95,7 @@
 	token_icon_state = "ion1"
 	spread_chance = 20
 	chain_rate = 2
+	chance_to_affect = 20
 	var/strength = 4
 
 /datum/overmap/event/emp/Initialize(position, ...)
@@ -103,10 +103,15 @@
 	token.icon_state = "ion[rand(1, 4)]"
 
 /datum/overmap/event/emp/affect_ship(datum/overmap/ship/controlled/S)
+	message_admins("1")
 	var/area/source_area = pick(S.shuttle_port.shuttle_areas)
+	message_admins("2")
 	source_area.set_fire_alarm_effect()
+	message_admins("3")
 	var/source_object = pick(source_area.contents)
+	message_admins("4")
 	empulse(get_turf(source_object), round(rand(strength / 2, strength)), rand(strength, strength * 2))
+	message_admins("EMP PULSE at [source_object]")
 	for(var/mob/M as anything in GLOB.player_list)
 		if(S.shuttle_port.is_in_shuttle_bounds(M))
 			M.playsound_local(S.shuttle_port, 'sound/weapons/ionrifle.ogg', strength)
@@ -114,12 +119,14 @@
 /datum/overmap/event/emp/minor
 	name = "ion storm (minor)"
 	chain_rate = 1
-	strength = 2
+	strength = 1
+	chance_to_affect = 15
 
 /datum/overmap/event/emp/major
 	name = "ion storm (major)"
+	chance_to_affect = 25
 	chain_rate = 4
-	strength = 8
+	strength = 6
 
 ///ELECTRICAL STORM - explodes your computer and IPCs
 /datum/overmap/event/electric
@@ -219,7 +226,7 @@
 	chance_to_affect = 15
 	spread_chance = 50
 	chain_rate = 4
-	safe_speed = 1
+	safe_speed = 2
 	meteor_types = list(
 		/obj/effect/meteor/carp=8,
 		/obj/effect/meteor/carp/big=1, //numbers I pulled out of my ass
