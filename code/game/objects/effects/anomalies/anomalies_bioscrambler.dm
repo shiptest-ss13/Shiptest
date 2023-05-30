@@ -13,10 +13,11 @@
 
 	COOLDOWN_START(src, pulse_cooldown, pulse_delay)
 	for(var/mob/living/carbon/nearby in range(range, src))
-		nearby.bioscramble(name)
 		if (nearby.run_armor_check(attack_flag = "bio") <= 100)
 			nearby.apply_damage(10, CLONE)
 			nearby.apply_effects(stutter = 3, eyeblur = 5, drowsy = 1,)
+		for(nearby in range(range/2, src))
+			nearby.bioscramble(name)
 
 /obj/effect/anomaly/bioscrambler/big
 	pulse_delay = 10
