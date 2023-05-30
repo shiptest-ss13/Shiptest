@@ -133,7 +133,6 @@
 	smoothing_flags = NONE
 	smoothing_groups = null
 	canSmoothWith = null
-	baseturfs = /turf/open/chasm/reebe_void
 	tiled_dirt = FALSE
 
 /turf/open/chasm/gas_giant/Initialize(mapload, inherited_virtual_z)
