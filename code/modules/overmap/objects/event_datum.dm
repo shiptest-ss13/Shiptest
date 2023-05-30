@@ -103,15 +103,10 @@
 	token.icon_state = "ion[rand(1, 4)]"
 
 /datum/overmap/event/emp/affect_ship(datum/overmap/ship/controlled/S)
-	message_admins("1")
 	var/area/source_area = pick(S.shuttle_port.shuttle_areas)
-	message_admins("2")
 	source_area.set_fire_alarm_effect()
-	message_admins("3")
 	var/source_object = pick(source_area.contents)
-	message_admins("4")
 	empulse(get_turf(source_object), round(rand(strength / 2, strength)), rand(strength, strength * 2))
-	message_admins("EMP PULSE at [source_object]")
 	for(var/mob/M as anything in GLOB.player_list)
 		if(S.shuttle_port.is_in_shuttle_bounds(M))
 			M.playsound_local(S.shuttle_port, 'sound/weapons/ionrifle.ogg', strength)
