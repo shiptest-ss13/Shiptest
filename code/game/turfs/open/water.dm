@@ -66,7 +66,7 @@
 /turf/open/water/tar
 	name = "tar pit"
 	desc = "Shallow tar. Will slow you down significantly. You could use a beaker to scoop some out..."
-	color = "#222424"
+	color = "#473a3a"
 	light_range = 0
 	slowdown = 2
 	reagent_to_extract = /datum/reagent/asphalt
