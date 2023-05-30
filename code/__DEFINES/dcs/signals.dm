@@ -171,6 +171,8 @@
 	#define COMPONENT_NO_ATTACK_HAND (1<<0) //works on all 3.
 ///from base of atom/set_opacity(): (new_opacity)
 #define COMSIG_ATOM_SET_OPACITY "atom_set_opacity"
+///from base of some atom/connect_to_shuttle()
+#define COMSIG_ATOM_CONNECT_TO_SHUTTLE "atom_connect_to_shuttle"
 
 //from base of atom/movable/on_enter_storage(): (datum/component/storage/concrete/master_storage)
 #define COMISG_STORAGE_ENTERED "storage_entered"

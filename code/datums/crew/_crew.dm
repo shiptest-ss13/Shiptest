@@ -18,8 +18,8 @@
 
 	var/list/datum/mind/owner_candidates
 
-	var/list/atom/spawn_points = list()
-	var/list/atom/spawn_points_byjob_name = list()
+	var/list/datum/component/spawn_point/spawn_points = list()
+	var/list/datum/component/spawn_point/spawn_points_byjob_name = list()
 
 	/// The mob of the current ship owner. Tracking mostly uses this; that lets us pick up on logouts, which let us
 	/// determine if a player is switching to control of a mob with a different mind, who thus shouldn't be the ship owner.
@@ -68,7 +68,6 @@
 
 /**
  * * Destroy a crew object
- * * delete_location - weather the location attatched to the crew must be deleted (ship planet...)
  */
 /datum/crew/Destroy()
 	for(var/a_key in applications)
@@ -87,9 +86,9 @@
 	SHOULD_CALL_PARENT(TRUE)
 
 	if (spawn_points_byjob_name[job.name] && length(spawn_points_byjob_name[job.name]) > 0)
-		pick(spawn_points_byjob_name[job.name]).JoinPlayerHere(M, TRUE)
+		pick(spawn_points_byjob_name[job.name]).spawn_player(M)
 	else
-		pick(spawn_points).JoinPlayerHere(M, TRUE)
+		pick(spawn_points).spawn_player(M)
 
 	manifest_inject(M, M.client, job)
 
