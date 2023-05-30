@@ -1,0 +1,23 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Masinyane-Class Personal Shuttle",
+	"map_short_name": "Masinyane-Class",
+	"prefix": "ISV",
+	"namelists": ["MYTHOLOGICAL", "NATURAL"],
+	"map_path": "_maps/shuttles/shiptest/independent_masinyane.dmm",
+	"job_slots": {
+		"Private Ship Owner": {
+			"outfit": "/datum/outfit/job/captain/independent/owner",
+			"officer": true,
+			"slots": 1
+		},
+		"Ship Engineer": {
+			"outfit": "/datum/outfit/job/engineer/independent/ship_engineer",
+			"slots": 1
+		},
+		"Crewmate": {
+			"outfit": "/datum/outfit/job/assistant/independent/crewmatefancy",
+			"slots": 1
+		}
+	}
+}

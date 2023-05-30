@@ -1,13 +1,14 @@
 // Hey! Listen! Update \config\jungleruinblacklist.txt with your new ruins!
 
+/datum/map_template/ruin/jungle
+	prefix = "_maps/RandomRuins/JungleRuins/"
+	ruin_type = RUINTYPE_JUNGLE
+
 /datum/map_template/ruin/jungle/jungle_botany_ruin
 	id = "jungle_botany-ruin"
 	suffix = "jungle_botany.dmm"
 	name = "Ruined Botany Research Facility"
 	description = "A research facility of great botany discoveries. Long since abandoned, willingly or not..."
-
-/datum/map_template/ruin/jungle
-	prefix = "_maps/RandomRuins/JungleRuins/"
 
 /datum/map_template/ruin/jungle/solgov_crash
 	name = "Abandoned SolGov Exploration Pod"
@@ -104,7 +105,7 @@
 /datum/map_template/ruin/jungle/roommates
 	name = "Roommates"
 	id = "roommates"
-	description = "And they were roommates."
+	description = "A shack once inhabited by a clown and a mime... and they were roommates."
 	suffix = "jungle_surface_roommates.dmm"
 
 /datum/map_template/ruin/jungle/ninjashrine
@@ -125,3 +126,14 @@
 	description = "a crashed shuttle, and a hidden beautiful lake."
 	suffix = "jungle_paradise.dmm"
 
+/datum/map_template/ruin/jungle/airbase
+	name = "Bombed Airbase"
+	id = "airbase"
+	description = "A bombed out airbase from the ICW, taken back over by nature"
+	suffix = "jungle_bombed_starport.dmm"
+
+/datum/map_template/ruin/jungle/medtech
+	name = "MedTech facility"
+	id = "medtech-facility"
+	description = "A MedTech pharmaceutical manufacturing plant where something went terribly wrong."
+	suffix = "jungle_medtech_outbreak.dmm"

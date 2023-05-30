@@ -11,6 +11,11 @@ SUBSYSTEM_DEF(fire_burning)
 	msg = "P:[length(processing)]"
 	return ..()
 
+/datum/controller/subsystem/fire_burning/get_metrics()
+	. = ..()
+	var/list/cust = list()
+	cust["processing"] = length(processing)
+	.["custom"] = cust
 
 /datum/controller/subsystem/fire_burning/fire(resumed = 0)
 	if (!resumed)

@@ -82,3 +82,11 @@
 	sheet_type = /obj/item/stack/tile/bronze
 	sheet_amount = 2
 	girder_type = /obj/structure/girder/bronze
+
+/turf/closed/wall/bathhouse
+	desc = "It's cool to the touch, pleasantly so."
+	icon = 'icons/turf/shuttleold.dmi'
+	icon_state = "block"
+	base_icon_state = "block"
+	smoothing_flags = NONE
+	canSmoothWith = null

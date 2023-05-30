@@ -72,6 +72,33 @@
 	else if(islizard(H))
 		return pick('sound/voice/lizard/lizard_scream_1.ogg', 'sound/voice/lizard/lizard_scream_2.ogg', 'sound/voice/lizard/lizard_scream_3.ogg', 'sound/voice/lizard/lizard_scream_4.ogg')
 
+/datum/emote/living/carbon/human/hiss
+	key = "hiss"
+	key_third_person = "hisses"
+	message = "hisses!"
+	emote_type = EMOTE_AUDIBLE
+	vary = TRUE
+
+/datum/emote/living/carbon/human/hiss/get_sound(mob/living/user)
+	if(!ishuman(user))
+		return
+	var/mob/living/carbon/human/H = user
+	if (islizard(H))
+		return 'sound/voice/lizard/hiss.ogg'
+
+/datum/emote/living/carbon/human/weh
+	key = "weh"
+	key_third_person = "lets out a weh"
+	message = "lets out a weh!"
+	emote_type = EMOTE_AUDIBLE
+	vary = TRUE
+
+/datum/emote/living/carbon/human/weh/get_sound(mob/living/user)
+	if(!ishuman(user))
+		return
+	var/mob/living/carbon/human/H = user
+	if (islizard(H))
+		return 'sound/voice/lizard/weh.ogg'
 
 /datum/emote/living/carbon/human/pale
 	key = "pale"

@@ -16,7 +16,7 @@
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage/concrete/wallet)
 	STR.max_items = 4
 	STR.set_holdable(list(
-		/obj/item/stack/spacecash,
+		/obj/item/spacecash/bundle,
 		/obj/item/holochip,
 		/obj/item/card,
 		/obj/item/clothing/mask/cigarette,
@@ -120,5 +120,5 @@
 	icon_state = "random_wallet"
 
 /obj/item/storage/wallet/random/PopulateContents()
-	new /obj/item/holochip(src, rand(5,30))
+	new /obj/item/spacecash/bundle/pocketchange(src)
 	icon_state = "wallet"

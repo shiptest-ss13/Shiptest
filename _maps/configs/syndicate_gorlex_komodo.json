@@ -1,0 +1,42 @@
+{
+	"prefix": "SSV",
+	"namelists": ["GENERAL", "NATURAL_AGGRESSIVE", "BEASTS", "WEAPONS"],
+	"map_name": "Komodo-class Warship",
+	"map_short_name": "Komodo-class",
+	"map_path": "_maps/shuttles/shiptest/syndicate_gorlex_komodo.dmm",
+	"map_id": "syndicate_gorlex_komodo",
+	"limit": 1,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/captain/syndicate/gorlex",
+			"officer": true,
+			"slots": 1
+		},
+		"Sergeant": {
+			"outfit": "/datum/outfit/job/hos/syndicate",
+			"officer": true,
+			"slots": 1
+		},
+		"Medic": {
+			"outfit": "/datum/outfit/job/doctor/syndicate_komodo",
+			"slots": 1
+		},
+		"Mechanic": {
+			"outfit": "/datum/outfit/job/engineer/syndicate/gorlex",
+			"slots": 1
+		},
+		"Trooper": {
+			"outfit": "/datum/outfit/job/security/syndicate/gorlex",
+			"slots": 3
+		},
+		"Deck assistant": {
+			"outfit": "/datum/outfit/job/assistant/syndicate/gorlex",
+			"slots": 2
+		},
+		"Bridge officer": {
+			"outfit": "/datum/outfit/job/head_of_personnel/syndicate",
+			"slots": 1
+		}
+	},
+	"enabled": true
+}

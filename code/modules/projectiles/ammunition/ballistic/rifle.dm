@@ -68,12 +68,12 @@
 	caliber = ".300BLK"
 	projectile_type = /obj/projectile/bullet/aac_300blk
 
-/obj/item/ammo_casing/win308
-	name = ".308 Winchester FMJ bullet casing"
-	desc = "A .308 Winchester FMJ bullet casing."
+/obj/item/ammo_casing/a308
+	name = ".308 bullet casing"
+	desc = "A .308 bullet casing."
 	icon_state = "rifle-steel"
-	caliber = ".308 Winchester FMJ"
-	projectile_type = /obj/projectile/bullet/win308
+	caliber = ".308"
+	projectile_type = /obj/projectile/bullet/a308
 
 // 40mm (Grenade Launcher)
 

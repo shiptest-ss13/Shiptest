@@ -41,6 +41,7 @@
 	genes = list()
 	mutatelist = list()
 	research = PLANT_RESEARCH_TIER_2
+	reagents_add = list(/datum/reagent/toxin/formaldehyde = 0.01, /datum/reagent/toxin/zombiepowder = 0.01, /datum/reagent/liquidgibs = 0.2)//restores, someone must have removed them at some point
 
 //Galaxy Thistle
 /obj/item/seeds/galaxythistle

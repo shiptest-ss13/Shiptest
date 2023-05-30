@@ -21,14 +21,14 @@
 	///A weakref of the connected engine heater with fuel.
 	var/datum/weakref/attached_heater
 
-/obj/machinery/power/shuttle/engine/fueled/burn_engine(percentage = 100)
+/obj/machinery/power/shuttle/engine/fueled/burn_engine(percentage = 100, deltatime)
 	..()
 	var/obj/machinery/atmospherics/components/unary/shuttle/heater/resolved_heater = attached_heater?.resolve()
 	if(!resolved_heater)
 		return
 	if(heat_creation)
 		heat_engine()
-	var/to_use = fuel_use * (percentage / 100)
+	var/to_use = fuel_use * (percentage / 100) * deltatime
 	return resolved_heater.consume_fuel(to_use, fuel_type) / to_use * thrust //This proc returns how much was actually burned, so let's use that and multiply it by the thrust to get all the thrust we CAN give.
 
 /obj/machinery/power/shuttle/engine/fueled/return_fuel()
@@ -117,6 +117,12 @@
 	///Amount, in kilojoules, needed for a full burn.
 	var/power_per_burn = 50000
 
+/obj/machinery/power/shuttle/engine/electric/bad
+	name = "Outdated Ion Thruster"
+	circuit = /obj/item/circuitboard/machine/shuttle/engine/electric/bad
+	thrust = 2
+	power_per_burn = 70000
+
 /obj/machinery/power/shuttle/engine/electric/premium
 	name = "high performance ion thruster"
 	desc = "An expensive variant of a standard ion thruster, using highest quality components in order to achieve much better performance."
@@ -135,6 +141,21 @@
 /obj/machinery/power/smes/shuttle/precharged
 	charge = 1e6
 
+/obj/machinery/power/smes/shuttle/micro
+	name = "micro electric engine precharger"
+	desc = "A low-capacity, high transfer superconducting magnetic energy storage unit specially made for use with compact shuttle engines."
+	icon = 'icons/obj/shuttle.dmi'
+	input_level = 0
+	input_level_max = 50000
+	output_level = 50000
+	circuit = /obj/item/circuitboard/machine/shuttle/smes/micro
+	density = 0
+	capacity = 1e6
+
+/obj/machinery/power/smes/shuttle/micro/precharged
+	charge = 1e6
+
+
 /obj/machinery/power/shuttle/engine/electric/update_engine()
 	. = ..()
 	if(!.)
@@ -147,7 +168,7 @@
 	. = ..()
 	connect_to_network()
 
-/obj/machinery/power/shuttle/engine/electric/burn_engine(percentage = 100)
+/obj/machinery/power/shuttle/engine/electric/burn_engine(percentage = 100, deltatime)
 	. = ..()
 	var/true_percentage = min(newavail() / power_per_burn, percentage / 100)
 	add_delayedload(power_per_burn * true_percentage)
@@ -170,8 +191,8 @@
  * Turns a specific reagent or reagents into thrust.
  */
 /obj/machinery/power/shuttle/engine/liquid
-	name = "liquid thruster"
-	desc = "A thruster that burns reagents stored in the engine for fuel."
+	name = "If you see me, ping a coder."
+	desc = "Wow! You really shouldn't be seeing this!" //if you want the engines to work and be movable, you need to make a subtype of them.
 	///How much fuel can be loaded into the engine.
 	var/max_reagents = 0
 	///What reagent is consumed to burn the engine, and how much is needed.
@@ -218,6 +239,14 @@
 	thrust = 20
 	fuel_reagents = list(/datum/reagent/fuel/oil = 50)
 	circuit = /obj/item/circuitboard/machine/shuttle/engine/oil
+
+/obj/machinery/power/shuttle/engine/liquid/beer
+	name = "beer thruster"
+	desc = "Beer is quite possibly the worst thing to use as interstellar propulsion, how these even work is a mystery."
+	max_reagents = 1000
+	thrust = 10
+	fuel_reagents= list(/datum/reagent/consumable/ethanol/beer = 50)
+	circuit = /obj/item/circuitboard/machine/shuttle/engine/beer
 
 /**
  * ### Void Engines

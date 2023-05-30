@@ -43,6 +43,7 @@
 #define COLOR_LIGHT_GRAYISH_RED "#E4C7C5"
 /// Warm but extremely diluted red. rgb(250, 130, 130)
 #define COLOR_SOFT_RED "#FA8282"
+#define COLOR_BUBBLEGUM_RED "#950A0A"
 
 #define COLOR_YELLOW "#FFFF00"
 #define COLOR_VIVID_YELLOW "#FBFF23"
@@ -69,6 +70,7 @@
 #define COLOR_PINK "#FFC0CB"
 #define COLOR_MOSTLY_PURE_PINK "#E4005B"
 #define COLOR_BLUSH_PINK "#D84C59"
+#define COLOR_BLUSH_TEAL "#009696"
 #define COLOR_MAGENTA "#FF00FF"
 #define COLOR_STRONG_MAGENTA "#B800B8"
 #define COLOR_PURPLE "#800080"
@@ -163,3 +165,6 @@
 #define LIGHT_COLOR_TUNGSTEN "#FAE1AF"
 /// Barely visible cyan-ish hue, as the doctor prescribed. rgb(240, 250, 250)
 #define LIGHT_COLOR_HALOGEN "#F0FAFA"
+
+/// Color used for default blood
+#define COLOR_BLOOD "#CC0000"

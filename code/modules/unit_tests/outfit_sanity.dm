@@ -14,8 +14,8 @@
 	glasses = /obj/item/clothing/glasses/sunglasses
 	mask = /obj/item/clothing/mask/cigarette/cigar/havana
 	shoes = /obj/item/clothing/shoes/laceup
-	l_hand = /obj/item/stack/spacecash/c1000
-	r_hand = /obj/item/stack/spacecash/c1000
+	l_hand = /obj/item/stack/sheet/glass/five
+	r_hand = /obj/item/stack/sheet/glass/five
 
 /datum/unit_test/outfit_sanity/Run()
 	var/mob/living/carbon/human/H = allocate(/mob/living/carbon/human)

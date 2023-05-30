@@ -106,40 +106,6 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 
 //Shiptest outfits begin
 
-/datum/outfit/job/security/solgov
-	name = "Boarding Specialist (SolGov)"
-
-	uniform = /obj/item/clothing/under/solgov
-	accessory = /obj/item/clothing/accessory/armband
-	shoes = /obj/item/clothing/shoes/combat
-	head = /obj/item/clothing/head/helmet/solgov
-	suit = /obj/item/clothing/suit/armor/vest/bulletproof/solgov
-
-/datum/outfit/job/security/solgov/rebel
-	name = "Boarding Specialist (Deserter)"
-
-	uniform = /obj/item/clothing/under/syndicate/camo
-
-/datum/outfit/job/security/solgov/elite
-	name = "Marine (SolGov)"
-
-	uniform = /obj/item/clothing/under/solgov/elite
-	shoes = /obj/item/clothing/shoes/combat/swat
-	gloves = /obj/item/clothing/gloves/tackler/combat
-
-	backpack = /obj/item/storage/backpack/ert/security
-	backpack_contents = list(/obj/item/melee/baton/loaded=1, /obj/item/ammo_box/magazine/co9mm=1, /obj/item/gun_voucher/solgov=1)
-
-/datum/outfit/job/security/marine
-	name = "Marine (SolGov)"
-
-	uniform = /obj/item/clothing/under/solgov/elite
-	shoes = /obj/item/clothing/shoes/combat/swat
-	gloves = /obj/item/clothing/gloves/tackler/combat
-
-	backpack = /obj/item/storage/backpack/ert/security
-	backpack_contents = list(/obj/item/melee/baton/loaded=1, /obj/item/ammo_box/magazine/co9mm=1, /obj/item/gun_voucher/solgov=1)
-
 /datum/outfit/job/security/pirate
 	name = "Buccaneer (Pirate)"
 
@@ -181,7 +147,7 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	l_pocket = /obj/item/flashlight/seclite
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
 
-	backpack = /obj/item/storage/backpack
+	backpack = /obj/item/storage/backpack/security/cmm
 	box = /obj/item/storage/box/survival/engineer/radio
 	backpack_contents = null
 
@@ -205,6 +171,13 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 
 	suit_store = /obj/item/gun/ballistic/automatic/assualt/p16/minutemen
 	belt = /obj/item/storage/belt/military/minutemen
+
+/datum/outfit/job/security/minutemen/mechpilot
+	name = "Mech Pilot  (Colonial Minutemen)"
+
+	suit = /obj/item/clothing/suit/armor/vest/alt
+	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
+	glasses = /obj/item/clothing/glasses/hud/diagnostic
 
 	backpack_contents = list(/obj/item/melee/classic_baton=1, /obj/item/gun/ballistic/automatic/pistol/commander=1, /obj/item/restraints/handcuffs=1)
 
@@ -263,5 +236,65 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	suit = /obj/item/clothing/suit/armor/vest
 	id = /obj/item/card/id/syndicate_command/crew_id
 	backpack_contents = list(/obj/item/storage/box/survival/syndie=1)
+
+/datum/outfit/job/security/syndicate/sbc
+	name = "Operative (Twinkleshine)"
+	uniform = /obj/item/clothing/under/syndicate/combat
+	ears = /obj/item/radio/headset/syndicate/alt
+	mask = /obj/item/clothing/mask/chameleon
+	gloves = /obj/item/clothing/gloves/combat
+	shoes = /obj/item/clothing/shoes/combat
+	l_pocket = /obj/item/gun/ballistic/automatic/pistol
+	r_pocket = /obj/item/kitchen/knife/combat/survival
+	belt = /obj/item/storage/belt/military/assault
+	id = /obj/item/card/id/syndicate_command/crew_id
+	implants = list(/obj/item/implant/weapons_auth)
+	backpack_contents = list(/obj/item/gun_voucher/syndicate=1)
+
+	head = null
+	backpack = /obj/item/storage/backpack/security
+	satchel = /obj/item/storage/backpack/satchel/sec
+	duffelbag = /obj/item/storage/backpack/duffelbag/syndie
+	courierbag = /obj/item/storage/backpack/messenger/sec
+
+	box = /obj/item/storage/box/survival/syndie
+
+/datum/outfit/job/security/syndicate/sbc/post_equip(mob/living/carbon/human/H)
+	H.faction |= list("PlayerSyndicate")
+
+	var/obj/item/card/id/I = H.wear_id
+	I.registered_name = pick(GLOB.twinkle_names) + "-" + num2text(rand(4, 8)) // squidquest real
+	I.assignment = "Operative"
+	I.access |= list(ACCESS_SYNDICATE)
+	I.update_label()
+
+/datum/outfit/job/security/aipirate
+	name = "Nodesman (Security)"
+
+	uniform = /obj/item/clothing/under/utility
+	head = /obj/item/clothing/head/soft/black
+	shoes = /obj/item/clothing/shoes/combat
+	l_pocket = /obj/item/kitchen/knife/combat
+
+	backpack_contents = list(/obj/item/melee/baton/loaded=1)
+
+	implants = list(/obj/item/implant/radio)
+
+
+/datum/outfit/job/security/Frontiersmen
+	name = "Buccaneer (Frontiersmen)"
+
+	head = /obj/item/clothing/head/beret/sec/frontier
+	mask = /obj/item/clothing/mask/gas/sechailer/minutemen
+	suit = null
+	uniform = /obj/item/clothing/under/rank/security/officer/frontier
+	shoes = /obj/item/clothing/shoes/combat
+	gloves = /obj/item/clothing/gloves/combat
+	ears = /obj/item/radio/headset/pirate/alt
+
+	belt = /obj/item/storage/belt/security/webbing
+
+	l_pocket = /obj/item/flashlight/seclite
+	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
 
 //Shiptest outfits end

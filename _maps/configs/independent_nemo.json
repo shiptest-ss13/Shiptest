@@ -1,0 +1,35 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Nemo-class Fauna Research Vessel",
+	"prefix": "ISV",
+	"namelists": ["NATURAL"],
+	"map_short_name": "Nemo-class",
+	"map_path": "_maps/shuttles/shiptest/independent_nemo.dmm",
+	"job_slots": {
+		"Research Director": 1,
+		"Fauna Researcher": {
+			"outfit": "/datum/outfit/job/scientist",
+			"slots": 1
+		},
+		"Fauna Retrieval Specialist": {
+			"outfit": "/datum/outfit/job/miner/scientist",
+			"slots": 1
+		},
+		"Excavator": {
+			"outfit": "/datum/outfit/job/miner/hazard",
+			"slots": 1
+		},
+		"Mech Pilot": {
+			"outfit": "/datum/outfit/job/roboticist/technician",
+			"slots": 1
+		},
+		"Ship Engineer": {
+			"outfit": "/datum/outfit/job/engineer/maintenancetechnician",
+			"slots": 1
+		},
+		"Atmospheric Technician": 1,
+		"Curator": 1,
+		"Assistant": 1
+	},
+	"enabled": true
+}

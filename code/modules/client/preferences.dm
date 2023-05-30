@@ -149,6 +149,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/clientfps = 60 //WS Edit - Client FPS Tweak
 
 	var/parallax
+	///Do we show screentips, if so, how big?
+	var/screentip_pref = TRUE
+	///Color of screentips at top of screen
+	var/screentip_color = "#ffd391"
 
 	var/ambientocclusion = TRUE
 	///Should we automatically fit the viewport?
@@ -233,7 +237,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		dat += "<div class='notice'>Please create an account to save your preferences</div>"
 
 	dat += "</center>"
-
 	dat += "<HR>"
 
 	switch(current_tab)
@@ -1000,6 +1003,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "High"
 			dat += "</a><br>"
 
+			dat += "<b>Set screentip mode:</b> <a href='?_src_=prefs;preference=screentipmode'>[screentip_pref ? "Enabled" : "Disabled"]</a><br>"
+			dat += "<b>Screentip color:</b><span style='border: 1px solid #161616; background-color: [screentip_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=screentipcolor'>Change</a><BR>"
+
+
 			dat += "<b>Ambient Occlusion:</b> <a href='?_src_=prefs;preference=ambientocclusion'>[ambientocclusion ? "Enabled" : "Disabled"]</a><br>"
 			dat += "<b>Fit Viewport:</b> <a href='?_src_=prefs;preference=auto_fit_viewport'>[auto_fit_viewport ? "Auto" : "Manual"]</a><br>"
 			if (CONFIG_GET(string/default_view) != CONFIG_GET(string/default_view_square))
@@ -1315,6 +1322,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/list/handled_conflicts = list()
 	for(var/quirk_index in SSquirks.quirk_instances)
 		var/datum/quirk/quirk_instance = SSquirks.quirk_instances[quirk_index]
+		if(!quirk_instance)
+			continue
 		if(quirk_instance.mood_quirk && CONFIG_GET(flag/disable_human_mood))
 			quirk_conflicts[quirk_instance.name] = "Mood and mood quirks are disabled."
 			if(!handled_conflicts["mood"])
@@ -2241,6 +2250,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if (parent && parent.mob && parent.mob.hud_used)
 						parent.mob.hud_used.update_parallax_pref(parent.mob)
 
+				if("screentipmode")
+					screentip_pref = !screentip_pref
+
+				if("screentipcolor")
+					var/new_screentipcolor = input(user, "Choose your screentip color:", "Character Preference", screentip_color) as color|null
+					if(new_screentipcolor)
+						screentip_color = sanitize_ooccolor(new_screentipcolor)
+
 				if("ambientocclusion")
 					ambientocclusion = !ambientocclusion
 					if(parent && parent.screen && parent.screen.len)
@@ -2367,6 +2384,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		pref_species = new /datum/species/human
 		save_character()
 
+	//prosthetics work for vox and kepori and update just fine for everyone
+	character.dna.features = features.Copy()
+	character.set_species(chosen_species, icon_update = FALSE, pref_load = TRUE)
+
 	for(var/pros_limbs in prosthetic_limbs)
 		var/obj/item/bodypart/old_part = character.get_bodypart(pros_limbs)
 		if(old_part)
@@ -2396,8 +2417,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if(old_part)
 					qdel(old_part)
 
-	character.dna.features = features.Copy()
-	character.set_species(chosen_species, icon_update = FALSE, pref_load = TRUE)
+	if(pref_species.id == "ipc") // If triggered, vox and kepori arms do not spawn in but ipcs sprites break without it as the code for setting the right prosthetics for them is in set_species().
+		character.set_species(chosen_species, icon_update = FALSE, pref_load = TRUE)
 	//Because of how set_species replaces all bodyparts with new ones, hair needs to be set AFTER species.
 	character.dna.real_name = character.real_name
 	character.hair_color = hair_color
@@ -2415,7 +2436,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		character.update_body()
 		character.update_hair()
 		character.update_body_parts(TRUE)
-
 	character.dna.update_body_size()
 
 /datum/preferences/proc/get_default_name(name_id)

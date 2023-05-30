@@ -11,6 +11,11 @@ SUBSYSTEM_DEF(acid)
 	msg = "P:[length(processing)]"
 	return ..()
 
+/datum/controller/subsystem/acid/get_metrics()
+	. = ..()
+	var/list/cust = list()
+	cust["processing"] = length(processing)
+	.["custom"] = cust
 
 /datum/controller/subsystem/acid/fire(resumed = 0)
 	if (!resumed)

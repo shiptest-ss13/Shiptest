@@ -426,9 +426,6 @@
 ///How much a mob's sprite should be moved when they're lying down
 #define PIXEL_Y_OFFSET_LYING -6
 
-///Define for spawning megafauna instead of a mob for cave gen
-#define SPAWN_MEGAFAUNA "bluh bluh huge boss"
-
 /// Breathing types. Lungs can access either by these or by a string, which will be considered a gas ID.
 #define BREATH_OXY /datum/breathing_class/oxygen
 #define BREATH_PLASMA /datum/breathing_class/plasma

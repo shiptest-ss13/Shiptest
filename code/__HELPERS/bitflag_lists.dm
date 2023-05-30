@@ -1,5 +1,11 @@
 GLOBAL_LIST_EMPTY(bitflag_lists)
 
+
+// This version of SET_BITFLAG_LIST has been modified to further cache bitflag lists
+// to minimize sorting, as sorting is very expensive when done for all smoothable atoms.
+// A unit test, as /tg/ has, would be a better solution, but as of writing this I do not have the time
+// or energy to do this. Somebody help, please. I'm begging.
+
 /**
  * System for storing bitflags past the 24 limit, making use of an associative list.
  *
@@ -15,11 +21,19 @@ GLOBAL_LIST_EMPTY(bitflag_lists)
 	do { \
 		var/txt_signature = target.Join("-"); \
 		if(!GLOB.bitflag_lists[txt_signature]) { \
-			var/list/new_bitflag_list = list(); \
-			for(var/value in target) { \
-				new_bitflag_list["[round(value / 24)]"] |= (1 << (value % 24)); \
+			sortTim(target); \
+			var/new_txt_signature = target.Join("-"); \
+			if(GLOB.bitflag_lists[new_txt_signature]) { \
+				GLOB.bitflag_lists[txt_signature] = GLOB.bitflag_lists[new_txt_signature]; \
 			}; \
-			GLOB.bitflag_lists[txt_signature] = new_bitflag_list; \
+			else { \
+				var/list/new_bitflag_list = list(); \
+				for(var/value in target) { \
+					new_bitflag_list["[round(value / 24)]"] |= (1 << (value % 24)); \
+				}; \
+				GLOB.bitflag_lists[new_txt_signature] = new_bitflag_list; \
+				GLOB.bitflag_lists[txt_signature] = new_bitflag_list; \
+			}; \
 		}; \
 		target = GLOB.bitflag_lists[txt_signature]; \
 	} while (FALSE)

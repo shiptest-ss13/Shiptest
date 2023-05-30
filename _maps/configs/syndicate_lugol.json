@@ -1,0 +1,37 @@
+{
+	"map_name": "Lugol-class GEC Engineering Project",
+	"prefix": "SEV",
+	"map_short_name": "Lugol-class",
+	"namelists": ["ENGINEERING", "MYTHOLOGICAL", "SPACE"],
+	"map_path": "_maps/shuttles/shiptest/syndicate_gec_lugol.dmm",
+	"map_id": "gec_lugol",
+	"limit": 2,
+	"job_slots": {
+		"Project Overseer": {
+			"outfit": "/datum/outfit/job/ce/gec",
+			"slots": 1,
+			"officer": true
+		},
+		"GEC Engineer": {
+			"outfit": "/datum/outfit/job/engineer/gec",
+			"slots": 3
+		},
+		"Atmospheric Technician": {
+			"outfit": "/datum/outfit/job/atmos/gec",
+			"slots": 3
+		},
+		"Beverage Specialist": {
+			"outfit": "/datum/outfit/job/bartender/syndicate",
+			"slots": 1
+		},
+		"Shaft Miner": {
+			"outfit": "/datum/outfit/job/miner/syndicate/gec",
+			"slots": 1
+		},
+		"GEC Apprentice": {
+			"outfit": "/datum/outfit/job/assistant/syndicate/gec",
+			"slots": 2
+		}
+	},
+"enabled": true
+}

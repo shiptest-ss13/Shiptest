@@ -420,12 +420,13 @@
 	cached_results["fire"] = min(total_fuel, oxidation_power) * 2
 	return cached_results["fire"] ? REACTING : NO_REACTION
 
-//fusion: a terrible idea that was fun but broken. Now reworked to be less broken and more interesting. Again (and again, and again). Again!
+//fusion: a terrible idea that was fun but broken. Now reworked to be "less" broken and more interesting. Again (and again, and again). Again!
 //Fusion Rework Counter: Please increment this if you make a major overhaul to this system again.
 //6 reworks
 
 /proc/fusion_ball(datum/holder, reaction_energy, standard_energy)
 	var/turf/open/location
+
 	if (istype(holder,/datum/pipeline)) //Find the tile the reaction is occuring on, or a random part of the network if it's a pipenet.
 		var/datum/pipeline/fusion_pipenet = holder
 		location = get_turf(pick(fusion_pipenet.members))

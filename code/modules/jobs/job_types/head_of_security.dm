@@ -77,33 +77,6 @@
 	id = /obj/item/card/id/syndicate_command/crew_id
 	backpack_contents = list(/obj/item/melee/baton/loaded=1, /obj/item/storage/box/survival/syndie=1)
 
-/datum/outfit/job/hos/inteq
-	name = "IRMG Vanguard (Inteq)"
-
-	ears = /obj/item/radio/headset/inteq/alt/captain
-	uniform = /obj/item/clothing/under/syndicate/inteq
-	head = /obj/item/clothing/head/beret/sec/hos/inteq
-	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
-	mask = /obj/item/clothing/mask/gas/sechailer/inteq
-	belt = /obj/item/storage/belt/security/webbing/inteq
-	suit = /obj/item/clothing/suit/armor/hos/inteq
-	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security/inteq
-	shoes = /obj/item/clothing/shoes/combat
-	gloves = /obj/item/clothing/gloves/combat
-
-	courierbag = /obj/item/storage/backpack/messenger/inteq
-	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/ammo_box/magazine/co9mm=1, /obj/item/pda/heads/hos)
-
-/datum/outfit/job/hos/inteq/naked
-	name = "IRMG Vanguard (Inteq) (Naked)"
-	head = null
-	mask = null
-	glasses = null
-	belt = null
-	suit = null
-	gloves = null
-	suit_store = null
-
 /datum/outfit/job/hos/nanotrasen
 	name = "Head of Security (Nanotrasen)"
 
@@ -112,3 +85,14 @@
 	alt_uniform = null
 	head = /obj/item/clothing/head/beret/sec/hos
 
+/datum/outfit/job/hos/frontiersmen
+	name = "Master At Arms (frontiersmen)"
+
+	ears = /obj/item/radio/headset/syndicate/alt
+	uniform = /obj/item/clothing/under/rank/security/officer/frontier/officer
+	head = /obj/item/clothing/head/caphat/frontier
+	suit = /obj/item/clothing/suit/armor/vest/bulletproof/frontier
+	shoes = /obj/item/clothing/shoes/cowboy/black
+	gloves = /obj/item/clothing/gloves/combat
+	backpack_contents = list(/obj/item/melee/baton/loaded=1)
+	suit_store = null

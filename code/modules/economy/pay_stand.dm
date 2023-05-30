@@ -74,7 +74,7 @@
 		else
 			to_chat(user, "<span class='warning'>ERROR: Insufficient funds to make transaction.</span>")
 			return
-	if(istype(W, /obj/item/stack/spacecash))
+	if(istype(W, /obj/item/spacecash/bundle))
 		to_chat(user, "What is this, the 2000s? We only take card here.")
 		return
 	if(istype(W, /obj/item/coin))

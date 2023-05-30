@@ -48,9 +48,10 @@ LINEN BINS
 
 /obj/item/bedsheet/attackby(obj/item/I, mob/user, params)
 	if(I.tool_behaviour == TOOL_WIRECUTTER || I.get_sharpness())
-		var/obj/item/stack/sheet/cotton/cloth/C = new (get_turf(src), 3)
-		transfer_fingerprints_to(C)
-		C.add_fingerprint(user)
+		var/obj/item/stack/sheet/cotton/cloth/shreds = new (get_turf(src), 3)
+		if(!QDELETED(shreds)) //stacks merged
+			transfer_fingerprints_to(shreds)
+			shreds.add_fingerprint(user)
 		qdel(src)
 		to_chat(user, "<span class='notice'>You tear [src] up.</span>")
 	else
@@ -233,6 +234,13 @@ LINEN BINS
 	icon_state = "sheetNT"
 	item_state = "sheetNT"
 	dream_messages = list("authority", "an ending")
+
+/obj/item/bedsheet/solgov
+	name = "\improper SolGov bedsheet"
+	desc = "It has the emblem of the Solar Confederation emblazoned upon it!"
+	icon_state = "sheetsolgov"
+	item_state = "sheetsolgov"
+	dream_messages = list("bureaucracy", "laws", "papers", "writing")
 
 /obj/item/bedsheet/ian
 	icon_state = "sheetian"

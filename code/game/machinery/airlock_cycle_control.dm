@@ -111,6 +111,10 @@
 /obj/machinery/advanced_airlock_controller/mix_chamber
 	depressurization_margin = 0.15 // The minimum - We really don't want contamination.
 
+/obj/machinery/advanced_airlock_controller/internal //cycles doors but doesn't drain
+	exterior_pressure = ONE_ATMOSPHERE
+	depressurization_margin = ONE_ATMOSPHERE
+
 /obj/machinery/advanced_airlock_controller/New(loc, ndir, nbuild)
 	..()
 	wires = new /datum/wires/advanced_airlock_controller(src)
