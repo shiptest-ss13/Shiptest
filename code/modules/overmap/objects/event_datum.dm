@@ -56,8 +56,7 @@
 
 /datum/overmap/event/meteor/apply_effect()
 	for(var/datum/overmap/ship/controlled/S in get_nearby_overmap_objects())
-		while(MAGNITUDE(S.speed_x, S.speed_y^2) > safe_speed)
-			stoplag()
+		if(MAGNITUDE(S.speed_x, S.speed_y^2) > safe_speed)
 			if(prob(chance_to_affect))
 				affect_ship(S)
 
@@ -91,7 +90,7 @@
 	token_icon_state = "ion1"
 	spread_chance = 20
 	chain_rate = 2
-	var/strength = 3
+	var/strength = 4
 
 /datum/overmap/event/emp/Initialize(position, ...)
 	. = ..()
@@ -109,12 +108,12 @@
 /datum/overmap/event/emp/minor
 	name = "ion storm (minor)"
 	chain_rate = 1
-	strength = 1
+	strength = 2
 
 /datum/overmap/event/emp/major
 	name = "ion storm (major)"
 	chain_rate = 4
-	strength = 5
+	strength = 8
 
 ///ELECTRICAL STORM - explodes your computer and IPCs
 /datum/overmap/event/electric
@@ -213,7 +212,8 @@
 	safe_speed = 1
 	meteor_types = list(
 		/obj/effect/meteor/carp=8,
-		/obj/effect/meteor/dust=3, //numbers I pulled out of my ass
+		/obj/effect/meteor/dust=3,
+		/obj/effect/meteor/carp/big=1, //numbers I pulled out of my ass
 	)
 
 /datum/overmap/event/meteor/carp/Initialize(position, ...)
@@ -233,6 +233,10 @@
 	chance_to_affect = 25
 	spread_chance = 25
 	chain_rate = 4
+	meteor_types = list(
+		/obj/effect/meteor/carp=7,
+		/obj/effect/meteor/carp/big=1,
+	)
 
 // dust clouds throw dust if you go Way Fast
 /datum/overmap/event/meteor/dust

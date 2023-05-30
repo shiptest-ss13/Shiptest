@@ -344,6 +344,18 @@ GLOBAL_LIST_INIT(meteorsC, list(/obj/effect/meteor/dust)) //for space dust event
 	meteordrop = list(/mob/living/simple_animal/hostile/carp)
 	dropamt = 1
 
+/obj/effect/meteor/carp/big
+	name = "high velocity space carp"
+	desc = "What the devil?"
+	icon = 'icons/mob/broadMobs.dmi'
+	icon_state = "megacarp"
+	hits = 1
+	hitpwr = 1
+	pass_flags = PASSTABLE
+	meteordrop = list(/mob/living/simple_animal/hostile/carp/megacarp)
+	dropamt = 1
+
+
 //////////////////////////
 //Spookoween meteors
 /////////////////////////

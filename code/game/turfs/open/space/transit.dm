@@ -36,8 +36,8 @@
 		return
 	if(iseffect(src))
 		return
-	if(isliving(src) || !istype(src, /mob/living/simple_animal/hostile/carp)) //they're *space* carp
-		var/mob/living/poor_soul = src			// This may not seem like much, but if you toss someone out
+	if(isliving(src))
+		var/mob/living/poor_soul = src	// This may not seem like much, but if you toss someone out
 		poor_soul.apply_damage_type(25, BRUTE)	// and they go through like four tiles, they're goners
 		return
 	qdel(src)
