@@ -45,6 +45,8 @@
 
 	///When you take a bite you cant jam it in for surgery anymore.
 /obj/item/organ/proc/Insert(mob/living/carbon/M, special = 0, drop_if_replaced = TRUE)
+	SHOULD_CALL_PARENT(TRUE)
+
 	if(!iscarbon(M) || owner == M)
 		return
 
@@ -228,3 +230,7 @@
  */
 /obj/item/organ/proc/get_availability(datum/species/S)
 	return TRUE
+
+/// Tries to replace the existing organ on the passed mob with this one, with special handling for replacing a brain without ghosting target
+/obj/item/organ/proc/replace_into(mob/living/carbon/new_owner)
+	Insert(new_owner, special = TRUE, drop_if_replaced = FALSE)

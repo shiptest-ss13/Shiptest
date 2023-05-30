@@ -180,7 +180,8 @@
 	feature_spawn_chance = 0.5
 	feature_spawn_list = list(
 		/obj/item/pickaxe/rusted = 1,
-		/obj/structure/spawner/ice_moon = 1
+		/obj/structure/spawner/ice_moon = 1,
+		/obj/effect/spawner/lootdrop/anomaly = 1
 	)
 
 /datum/biome/cave/jungle/dirt
