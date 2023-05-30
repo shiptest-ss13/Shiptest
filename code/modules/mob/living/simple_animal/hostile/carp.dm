@@ -139,6 +139,9 @@
 		add_dead_carp_overlay()
 	..()
 
+/mob/living/simple_animal/hostile/carp/throw_atom_into_space()
+	return
+
 /mob/living/simple_animal/hostile/carp/tamed()
 	. = ..()
 	can_buckle = TRUE
