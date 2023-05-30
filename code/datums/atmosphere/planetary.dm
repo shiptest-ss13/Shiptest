@@ -59,7 +59,7 @@
 		GAS_O2=5,
 		GAS_H2O=7,
 		GAS_N2=5,
-		GAS_N20=7,
+		GAS_NITROUS=7,
 		GAS_CO2=5,
 	)
 	restricted_gases = list(
