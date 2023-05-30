@@ -53,7 +53,7 @@
 
 	base_gases = list(
 		GAS_N2=10,
-		GAS_N20=10,
+		GAS_NITROUS=10,
 	)
 	normal_gases = list(
 		GAS_O2=5,
@@ -63,7 +63,7 @@
 		GAS_CO2=5,
 	)
 	restricted_gases = list(
-		GAS_PLASMA=0.1,
+		GAS_NITROUS=7,
 	)
 	restricted_chance = 1
 

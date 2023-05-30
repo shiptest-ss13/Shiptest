@@ -12,7 +12,7 @@
 
 /datum/planet_type/lava
 	name = "lava planet"
-	desc = "A world rich in seismic and volcanic activity. High temperatures and xenofauna dangers await anyone trying to brave it"
+	desc = "A planet rife with seismic and volcanic activity. High temperatures and dangerous xenofauna render it dangerous for the unprepared"
 	planet = DYNAMIC_WORLD_LAVA
 	icon_state = "globe"
 	color = COLOR_ORANGE
@@ -23,7 +23,7 @@
 
 /datum/planet_type/ice
 	name = "frozen planet"
-	desc = "A world with lots of water, currently in an ice age. Anyone venturing here would have to contend with both the cold, and the creatures on the world"
+	desc = "A frozen planet covered in thick snow, thicker ice, and dangerous predators."
 	planet = DYNAMIC_WORLD_ICE
 	icon_state = "globe"
 	color = COLOR_BLUE_LIGHT
@@ -67,7 +67,7 @@
 
 /datum/planet_type/beach
 	name = "beach planet"
-	desc = "The platonic ideal of vacation spots. Warm, comfortable temperatures, breathable atmosphere."
+	desc = "The platonic ideal of vacation spots. Warm, comfortable temperatures, and a breathable atmosphere."
 	planet = DYNAMIC_WORLD_BEACHPLANET
 	icon_state = "globe"
 	color = "#c6b597"
@@ -137,7 +137,7 @@
 
 /datum/planet_type/plasma_giant
 	name = "plasma giant"
-	desc = "A backbone of interstellar travel, the mighty plasma giant allows fuel collection to take place."
+	desc = "The backbone of interstellar travel, the mighty plasma giant allows fuel collection to take place."
 	planet = DYNAMIC_WORLD_PLASMA_GIANT
 	color = COLOR_PURPLE
 	mapgen = /datum/map_generator/single_biome/plasma_giant

@@ -56,7 +56,7 @@
 
 /datum/overmap/event/meteor/apply_effect()
 	for(var/datum/overmap/ship/controlled/S in get_nearby_overmap_objects())
-		if(MAGNITUDE(S.speed_x, S.speed_y^2) > safe_speed)
+		if(MAGNITUDE(S.speed_x, S.speed_y) > safe_speed)
 			if(prob(chance_to_affect))
 				affect_ship(S)
 
