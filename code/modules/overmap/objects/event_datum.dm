@@ -62,6 +62,8 @@
 		if(MAGNITUDE(Ship.speed_x, Ship.speed_y) > safe_speed)
 			if(prob(chance_to_affect))
 				affect_ship(Ship)
+				return
+			return
 
 /datum/overmap/event/meteor/affect_ship(datum/overmap/ship/controlled/Ship)
 	spawn_meteor(meteor_types, Ship.shuttle_port.get_virtual_level(), 0)

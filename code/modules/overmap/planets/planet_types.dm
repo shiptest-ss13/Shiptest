@@ -10,6 +10,7 @@
 	var/color = "#ffffff"
 	var/weight = 20
 	var/preserve_level = FALSE
+	var/landing_sound
 
 /datum/planet_type/lava
 	name = "lava planet"
@@ -21,6 +22,8 @@
 	default_baseturf = /turf/open/floor/plating/asteroid/basalt/lava
 	weather_controller_type = /datum/weather_controller/lavaland
 	ruin_type = RUINTYPE_LAVA
+	landing_sound = "hostile"
+
 
 /datum/planet_type/ice
 	name = "frozen planet"
@@ -32,6 +35,7 @@
 	default_baseturf = /turf/open/floor/plating/asteroid/snow/icemoon
 	weather_controller_type = /datum/weather_controller/snow_planet
 	ruin_type = RUINTYPE_ICE
+	landing_sound = "hostile"
 
 /datum/planet_type/jungle
 	name = "jungle planet"
@@ -43,6 +47,7 @@
 	default_baseturf = /turf/open/floor/plating/dirt/jungle
 	weather_controller_type = /datum/weather_controller/lush
 	ruin_type = RUINTYPE_JUNGLE
+	landing_sound = "friendly"
 
 /datum/planet_type/rock
 	name = "rock planet"
@@ -54,6 +59,7 @@
 	default_baseturf = /turf/open/floor/plating/asteroid
 	weather_controller_type = /datum/weather_controller/rockplanet
 	ruin_type = RUINTYPE_ROCK
+	landing_sound = "hostile"
 
 /datum/planet_type/sand
 	name = "sand planet"
@@ -65,6 +71,7 @@
 	default_baseturf = /turf/open/floor/plating/asteroid/whitesands
 	weather_controller_type = /datum/weather_controller/desert
 	ruin_type = RUINTYPE_SAND
+	landing_sound = "hostile"
 
 /datum/planet_type/beach
 	name = "beach planet"
@@ -76,6 +83,7 @@
 	default_baseturf = /turf/open/floor/plating/asteroid/sand/lit
 	weather_controller_type = /datum/weather_controller/lush
 	ruin_type = RUINTYPE_BEACH
+	landing_sound = "friendly"
 
 /datum/planet_type/reebe
 	name = "???"
@@ -101,6 +109,7 @@
 	default_baseturf = /turf/open/space
 	weather_controller_type = null
 	ruin_type = null // asteroid ruins when
+	landing_sound = "friendly"
 
 /datum/planet_type/spaceruin
 	name = "weak energy signal"
@@ -112,6 +121,7 @@
 	default_baseturf = /turf/open/space
 	weather_controller_type = null
 	ruin_type = RUINTYPE_SPACE
+	landing_sound = "hostile"
 
 /datum/planet_type/waste
 	name = "waste disposal planet"
@@ -123,6 +133,7 @@
 	default_baseturf = /turf/open/floor/plating/asteroid/wasteplanet
 	weather_controller_type = /datum/weather_controller/chlorine
 	ruin_type = RUINTYPE_WASTE
+	landing_sound = "hostile"
 
 /datum/planet_type/gas_giant
 	name = "gas giant"
@@ -136,6 +147,7 @@
 	ruin_type = null //it's a Gas Giant. Not Cloud fuckin City
 	weight = 5
 	preserve_level = TRUE
+	landing_sound = "friendly"
 
 /datum/planet_type/plasma_giant
 	name = "plasma giant"
@@ -147,3 +159,4 @@
 	weight = 1
 	icon_state = "globe"
 	preserve_level = TRUE
+	landing_sound = "friendly"
