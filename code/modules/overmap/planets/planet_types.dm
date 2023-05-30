@@ -139,7 +139,7 @@
 	name = "gas giant"
 	desc = "A floating ball of gas, with high gravity and even higher pressure."
 	planet = DYNAMIC_WORLD_GAS_GIANT
-	icon_state = "globe"
+	icon_state = "giant"
 	color = COLOR_DARK_MODERATE_ORANGE
 	mapgen = /datum/map_generator/single_biome/gas_giant
 	default_baseturf = /turf/open/chasm/gas_giant
@@ -157,6 +157,6 @@
 	mapgen = /datum/map_generator/single_biome/plasma_giant
 	default_baseturf = /turf/open/chasm/gas_giant/plasma
 	weight = 1
-	icon_state = "globe"
+	icon_state = "giant"
 	preserve_level = TRUE
 	landing_sound = 'sound/effects/planet_landing_1.ogg'
