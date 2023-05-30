@@ -9,10 +9,11 @@
 	var/icon_state = "globe"
 	var/color = "#ffffff"
 	var/weight = 20
+	var/preserve_level = FALSE
 
 /datum/planet_type/lava
 	name = "lava planet"
-	desc = "A planet rife with seismic and volcanic activity. High temperatures and dangerous xenofauna render it dangerous for the unprepared"
+	desc = "A planet rife with seismic and volcanic activity. High temperatures and dangerous xenofauna render it dangerous for the unprepared."
 	planet = DYNAMIC_WORLD_LAVA
 	icon_state = "globe"
 	color = COLOR_ORANGE
@@ -134,6 +135,7 @@
 	weather_controller_type = null
 	ruin_type = null //it's a Gas Giant. Not Cloud fuckin City
 	weight = 5
+	preserve_level = TRUE
 
 /datum/planet_type/plasma_giant
 	name = "plasma giant"
@@ -144,3 +146,4 @@
 	default_baseturf = /turf/open/chasm/gas_giant/plasma
 	weight = 1
 	icon_state = "globe"
+	preserve_level = TRUE

@@ -113,12 +113,10 @@
 		probabilities = list()
 		for(var/datum/planet_type/planet_type as anything in subtypesof(/datum/planet_type))
 			probabilities[initial(planet_type.planet)] = initial(planet_type.weight)
-			if(planet_type == istype(planet_type,/datum/planet_type/gas_giant))
-				preserve_level = 1
 	planet = SSmapping.planet_types[force_encounter ? force_encounter : pickweightAllowZero(probabilities)]
 
 
-	Rename(planet.name)
+	Rename(gen_planet_name())
 	token.icon_state = planet.icon_state
 	token.desc = planet.desc
 	token.color = planet.color
@@ -126,6 +124,7 @@
 	default_baseturf = planet.default_baseturf
 	mapgen = planet.mapgen
 	weather_controller_type = planet.weather_controller_type
+	preserve_level = planet.preserve_level //it came to me while I was looking at chickens
 
 	if(vlevel_height >= 255 && vlevel_width >= 255) //little easter egg
 		planet_name = "LV-[pick(rand(11111,99999))]"

@@ -11,10 +11,12 @@
 	var/spread_chance = 0
 	///How many additional tiles to spawn at once in the selected orbit. Used with OVERMAP_GENERATOR_SOLAR.
 	var/chain_rate = 0
+	var/desc
 
 /datum/overmap/event/Initialize(position, ...)
 	. = ..()
 	SSovermap.events += src
+	token.desc = desc
 
 /datum/overmap/event/Destroy()
 	. = ..()
@@ -24,20 +26,21 @@
  * The main proc for calling other procs. Called by SSovermap.
  */
 /datum/overmap/event/proc/apply_effect()
-	for(var/datum/overmap/ship/controlled/S in get_nearby_overmap_objects())
+	for(var/datum/overmap/ship/controlled/Ship in get_nearby_overmap_objects())
 		if(prob(chance_to_affect))
-			affect_ship(S)
+			affect_ship(Ship)
 
 /**
  * The proc called on all ships that are currently being affected.
  */
-/datum/overmap/event/proc/affect_ship(datum/overmap/ship/controlled/S)
+/datum/overmap/event/proc/affect_ship(datum/overmap/ship/controlled/Ship)
 	return
 
 
 ///METEOR STORMS - explodes your ship if you go too fast
 /datum/overmap/event/meteor
-	name = "asteroid storm (moderate)"
+	name = "asteroid field (moderate)"
+	desc = "An area of space rich with asteroids, going fast through here could prove dangerous"
 	token_icon_state = "meteor1"
 	chance_to_affect = 15
 	spread_chance = 50
@@ -55,16 +58,16 @@
 	token.icon_state = "meteor[rand(1, 4)]"
 
 /datum/overmap/event/meteor/apply_effect()
-	for(var/datum/overmap/ship/controlled/S in get_nearby_overmap_objects())
-		if(MAGNITUDE(S.speed_x, S.speed_y) > safe_speed)
+	for(var/datum/overmap/ship/controlled/Ship in get_nearby_overmap_objects())
+		if(MAGNITUDE(Ship.speed_x, Ship.speed_y) > safe_speed)
 			if(prob(chance_to_affect))
-				affect_ship(S)
+				affect_ship(Ship)
 
-/datum/overmap/event/meteor/affect_ship(datum/overmap/ship/controlled/S)
-	spawn_meteor(meteor_types, S.shuttle_port.get_virtual_level(), 0)
+/datum/overmap/event/meteor/affect_ship(datum/overmap/ship/controlled/Ship)
+	spawn_meteor(meteor_types, Ship.shuttle_port.get_virtual_level(), 0)
 
 /datum/overmap/event/meteor/minor
-	name = "asteroid storm (minor)"
+	name = "asteroid field (minor)"
 	chain_rate = 3
 	meteor_types = list(
 		/obj/effect/meteor/dust=12,
@@ -73,7 +76,7 @@
 	)
 
 /datum/overmap/event/meteor/major
-	name = "asteroid storm (major)"
+	name = "asteroid field (major)"
 	spread_chance = 25
 	chain_rate = 6
 	meteor_types = list(
@@ -87,6 +90,7 @@
 ///ION STORM - explodes your IPCs
 /datum/overmap/event/emp
 	name = "ion storm (moderate)"
+	desc = "A heavily ionized area of space, prone to causing electromagnetic pulses in ships"
 	token_icon_state = "ion1"
 	spread_chance = 20
 	chain_rate = 2
@@ -118,6 +122,7 @@
 ///ELECTRICAL STORM - explodes your computer and IPCs
 /datum/overmap/event/electric
 	name = "electrical storm (moderate)"
+	desc = "A spatial anomaly, an unfortunately common sight on the frontier. Disturbing it tends to lead to intense electrical discharges"
 	token_icon_state = "electrical1"
 	chance_to_affect = 15
 	spread_chance = 30
@@ -155,6 +160,7 @@
 
 /datum/overmap/event/nebula
 	name = "nebula"
+	desc = "There's coffee in here"
 	token_icon_state = "nebula"
 	chain_rate = 8
 	spread_chance = 75
@@ -165,6 +171,7 @@
 
 /datum/overmap/event/wormhole
 	name = "wormhole"
+	desc = "A hole through space. If you go through here, you might end up anywhere."
 	token_icon_state = "wormhole"
 	spread_chance = 0
 	chain_rate = 0
@@ -205,6 +212,7 @@
 
 /datum/overmap/event/meteor/carp
 	name = "carp migration (moderate)"
+	desc = "A migratory school of space carp. They travel at high speeds, and flying through them may cause them to impact your ship"
 	token_icon_state = "carp1"
 	chance_to_affect = 15
 	spread_chance = 50
@@ -212,7 +220,6 @@
 	safe_speed = 1
 	meteor_types = list(
 		/obj/effect/meteor/carp=8,
-		/obj/effect/meteor/dust=3,
 		/obj/effect/meteor/carp/big=1, //numbers I pulled out of my ass
 	)
 
@@ -241,6 +248,7 @@
 // dust clouds throw dust if you go Way Fast
 /datum/overmap/event/meteor/dust
 	name = "dust cloud"
+	desc = "A cloud of spaceborne dust. Relatively harmless, unless you're travelling at relative speeds"
 	token_icon_state = "carp1"
 	chance_to_affect = 30
 	spread_chance = 50

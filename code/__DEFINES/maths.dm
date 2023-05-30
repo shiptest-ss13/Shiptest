@@ -260,3 +260,6 @@
 		power++ //Transfer to output, increment power, repeat until the input pile is all used
 
 	return output
+
+//Magnitude. used for ship velocity
+#define MAGNITUDE(a, b) (sqrt(a ** 2 + b ** 2))
