@@ -15,8 +15,8 @@
 	var/death_time
 	var/research_value
 
-	//for anomaly effects, range is how far the effects can reach, the cooldown lets us wire in effects that happen every pulse delay seconds
-	var/range = 6
+	//for anomaly effects, effectrange is how far the effects can reach, the cooldown lets us wire in effects that happen every pulse delay seconds
+	var/effectrange = 6
 
 	COOLDOWN_DECLARE(pulse_cooldown)
 	var/pulse_delay = 15 SECONDS

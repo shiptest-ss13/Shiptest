@@ -5,14 +5,14 @@
 	density = TRUE
 	aSignal = /obj/item/assembly/signaler/anomaly/bluespace
 	///range from which we can teleport someone
-	range = 3
+	effectrange = 3
 	var/reagent_amount = 3
 	///Distance we can teleport someone passively
 	var/teleport_distance = 6
 
 /obj/effect/anomaly/bluespace/anomalyEffect()
 	..()
-	for(var/mob/living/Mob in range(range,src))
+	for(var/mob/living/Mob in range(effectrange,src))
 		do_teleport(Mob, locate(Mob.x, Mob.y, Mob.z), teleport_distance, channel = TELEPORT_CHANNEL_BLUESPACE)
 
 
@@ -20,7 +20,7 @@
 		return
 
 	COOLDOWN_START(src, pulse_cooldown, pulse_delay)
-	for(var/mob/living/Mob in range(range,src))
+	for(var/mob/living/Mob in range(effectrange,src))
 		if(iscarbon(Mob))
 			var/mob/living/carbon/carbon = Mob
 			carbon.reagents?.add_reagent(/datum/reagent/bluespace, reagent_amount)
@@ -93,11 +93,11 @@
 /obj/effect/anomaly/bluespace/stabilize(anchor, has_core)
 	. = ..()
 
-	range = 0 //bumping already teleports, so this just prevents people from being teleported when they don't expect it when interacting with stable bsanoms
+	effectrange = 0 //bumping already teleports, so this just prevents people from being teleported when they don't expect it when interacting with stable bsanoms
 
 /obj/effect/anomaly/bluespace/big
 	immortal = TRUE
-	range = 4
+	effectrange = 4
 	teleport_distance = 12
 	aSignal = null
 	reagent_amount = 20

@@ -249,12 +249,6 @@
 	icon_state = "hallucination_core"
 	anomaly_type = /obj/effect/anomaly/hallucination
 
-/obj/item/assembly/signaler/anomaly/bioscrambler
-	name = "\improper delimber anomaly core"
-	desc = "The neutralized core of a delimber anomaly. It's squirming, as if moving. It'd probably be valuable for research."
-	icon_state = "delimber_core"
-	anomaly_type = /obj/effect/anomaly/bioscrambler
-
 
 
 /obj/item/assembly/signaler/anomaly/attack_self()

@@ -4,7 +4,7 @@
 	density = TRUE
 	aSignal = /obj/item/assembly/signaler/anomaly/flux
 	pulse_delay = 4
-	range = 0
+	effectrange = 0
 	var/canshock = FALSE
 	var/shockdamage = 20
 	var/explosive = FLUX_EXPLOSIVE
@@ -23,7 +23,7 @@
 /obj/effect/anomaly/flux/anomalyEffect()
 	..()
 	canshock = TRUE
-	for(var/mob/living/Mob in range(range, src))
+	for(var/mob/living/Mob in range(effectrange, src))
 		mobShock(Mob)
 
 	if(!COOLDOWN_FINISHED(src, pulse_cooldown))
@@ -69,7 +69,7 @@
 	aSignal = null
 	shockdamage = 30
 	pulse_delay = 2
-	range = 1
+	effectrange = 1
 
 	zap_range = 2
 	zap_power = 3000

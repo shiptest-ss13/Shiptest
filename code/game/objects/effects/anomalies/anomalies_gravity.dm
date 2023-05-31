@@ -11,7 +11,7 @@
 	icon_state = "gravity"
 	density = FALSE
 	aSignal = /obj/item/assembly/signaler/anomaly/grav
-	range = 4
+	effectrange = 4
 	var/boing = 0
 	///Warp effect holder for displacement filter to "pulse" the anomaly
 	var/atom/movable/warp_effect/warp
@@ -26,12 +26,12 @@
 /obj/effect/anomaly/grav/anomalyEffect()
 	..()
 	boing = 1
-	for(var/obj/O in orange(range, src))
+	for(var/obj/O in orange(effectrange, src))
 		if(!O.anchored)
 			step_towards(O,src)
 	for(var/mob/living/Mob in range(0, src))
 		gravShock(Mob)
-	for(var/mob/living/Mob in orange(range, src))
+	for(var/mob/living/Mob in orange(effectrange, src))
 		if(!Mob.mob_negates_gravity())
 			step_towards(Mob,src)
 	for(var/obj/O in range(0,src))
@@ -40,7 +40,7 @@
 				var/turf/T = O.loc
 				if(T.intact && HAS_TRAIT(O, TRAIT_T_RAY_VISIBLE))
 					continue
-			var/mob/living/target = locate() in view(range,src)
+			var/mob/living/target = locate() in view(effectrange,src)
 			if(target && !target.stat)
 				O.throw_at(target, 5, 10)
 
@@ -49,7 +49,7 @@
 		return
 
 	COOLDOWN_START(src, pulse_cooldown, pulse_delay)
-	for(var/mob/living/carbon/thronglee in orange(range/2, src))
+	for(var/mob/living/carbon/thronglee in orange(effectrange/2, src))
 		if(thronglee.run_armor_check(attack_flag = "melee") >= 40)
 			thronglee.break_random_bone()
 		if(thronglee.run_armor_check(attack_flag = "melee") >= 60)
@@ -75,15 +75,15 @@
 		Guy.throw_at(target, 5, 1)
 		boing = 0
 		if(iscarbon(Guy))
-			for(var/mob/living/carbon/carbon)
-				if(carbon.run_armor_check(attack_flag = "melee") >= 20)
-					carbon.break_random_bone()
-				else if(carbon.run_armor_check(attack_flag = "melee") >= 40)
-					carbon.break_all_bones() //crunch
-				carbon.apply_damage(10, BRUTE)
+			for(var/mob/living/carbon/guy in range(0, src))
+				if(guy.run_armor_check(attack_flag = "melee") >= 20)
+					guy.break_random_bone()
+				else if(guy.run_armor_check(attack_flag = "melee") >= 40)
+					guy.break_all_bones() //crunch
+				guy.apply_damage(10, BRUTE)
 
 /obj/effect/anomaly/grav/high
-	range = 7
+	effectrange = 7
 	var/grav_field
 
 /obj/effect/anomaly/grav/high/Initialize(mapload, new_lifespan)
@@ -91,7 +91,7 @@
 	INVOKE_ASYNC(src, .proc/setup_grav_field)
 
 /obj/effect/anomaly/grav/high/proc/setup_grav_field()
-	grav_field = make_field(/datum/proximity_monitor/advanced/gravity, list("current_range" = range, "host" = src, "gravity_value" = rand(0,3)))
+	grav_field = make_field(/datum/proximity_monitor/advanced/gravity, list("current_range" = effectrange, "host" = src, "gravity_value" = rand(0,3)))
 
 /obj/effect/anomaly/grav/high/Destroy()
 	QDEL_NULL(grav_field)
@@ -102,6 +102,7 @@
 	immortal = TRUE
 	aSignal = null
 	move_force = MOVE_FORCE_OVERPOWERING
+	effectrange = 6
 
 /obj/effect/anomaly/grav/high/big/Initialize(mapload, new_lifespan, drops_core)
 	. = ..()

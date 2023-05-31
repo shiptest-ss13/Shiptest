@@ -2,7 +2,7 @@
 /obj/effect/anomaly/pyro
 	name = "pyroclastic anomaly"
 	icon_state = "pyroclastic"
-	range = 4
+	effectrange = 4
 	var/ticks = 0
 	/// How many seconds between each gas release
 	pulse_delay = 10
@@ -11,7 +11,7 @@
 /obj/effect/anomaly/pyro/anomalyEffect(seconds_per_tick)
 	..()
 
-	for(var/mob/living/carbon/nearby in range(range, src))
+	for(var/mob/living/carbon/nearby in range(effectrange, src))
 		nearby.adjust_bodytemperature(20)
 		visible_message("[src] pulses!")
 
@@ -19,7 +19,7 @@
 		return
 	COOLDOWN_START(src, pulse_cooldown, pulse_delay)
 
-	for(var/mob/living/carbon/nearby in range(range/2, src))
+	for(var/mob/living/carbon/nearby in range(effectrange/2, src))
 		nearby.fire_stacks += 3
 		nearby.IgniteMob()
 		visible_message("<span_class:warning>[src] ignites [nearby]!")
@@ -55,7 +55,7 @@
 	immortal = TRUE
 	aSignal = null
 	pulse_delay = 2
-	range = 6
+	effectrange = 6
 	move_force = MOVE_FORCE_OVERPOWERING
 
 /obj/effect/anomaly/pyro/big/Initialize(mapload, new_lifespan, drops_core)
