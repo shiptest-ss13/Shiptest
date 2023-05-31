@@ -198,6 +198,7 @@ GLOBAL_LIST_INIT(hailer_phrases, list(
 	icon_state = "inteq_balaclava"
 	item_state = "inteq_balaclava"
 	strip_delay = 60
+	alternate_worn_layer = BODY_LAYER
 	flags_inv = HIDEFACIALHAIR|HIDEFACE|HIDEEARS|HIDEHAIR
 
 /obj/item/clothing/mask/gas/sechailer/minutemen

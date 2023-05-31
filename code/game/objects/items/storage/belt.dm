@@ -827,4 +827,9 @@
 	desc = "A set of tactical webbing for operators of the IRMG, can hold security gear."
 	icon_state = "inteq_webbing"
 	item_state = "inteq_webbing"
-	content_overlays = FALSE
+
+/obj/item/storage/belt/security/webbing/inteq/alt
+	name = "inteq drop pouch harness"
+	desc = "A harness with a bunch of pouches attached to them emblazoned in the colors of the IRMG, can hold security gear."
+	icon_state = "inteq_droppouch"
+	item_state = "inteq_droppouch"
