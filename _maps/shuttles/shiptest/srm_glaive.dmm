@@ -747,16 +747,16 @@
 /obj/item/flashlight/seclite,
 /obj/item/borg/upgrade/modkit/indoors,
 /obj/item/gun/energy/kinetic_accelerator,
-/obj/item/t_scanner/adv_mining_scanner,
 /obj/item/storage/bag/ore,
 /obj/structure/cable/orange{
 	icon_state = "4-10"
 	},
 /obj/item/shovel,
 /obj/item/gps/mining,
-/obj/item/pickaxe/mini,
 /obj/structure/closet/secure_closet/miningcloset,
 /obj/item/stack/marker_beacon/thirty,
+/obj/item/pickaxe,
+/obj/item/t_scanner/adv_mining_scanner/lesser,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
 "li" = (
@@ -945,14 +945,14 @@
 /obj/item/flashlight/seclite,
 /obj/item/borg/upgrade/modkit/indoors,
 /obj/item/gun/energy/kinetic_accelerator,
-/obj/item/t_scanner/adv_mining_scanner,
 /obj/item/storage/bag/ore,
 /obj/item/gun/ballistic/shotgun/winchester/mk1/lethal,
 /obj/item/shovel,
 /obj/item/gps/mining,
-/obj/item/pickaxe/mini,
 /obj/structure/closet/secure_closet/miningcloset,
 /obj/item/stack/marker_beacon/thirty,
+/obj/item/pickaxe,
+/obj/item/t_scanner/adv_mining_scanner/lesser,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
 "nt" = (
@@ -1094,10 +1094,11 @@
 /turf/open/floor/ship/dirt/dark,
 /area/ship/roumain)
 "qQ" = (
-/obj/item/clothing/suit/space/hardsuit/mining/heavy,
-/obj/item/clothing/mask/gas/hunter,
 /obj/machinery/suit_storage_unit/inherit,
 /obj/effect/turf_decal/siding/wood/end,
+/obj/item/clothing/suit/space/hardsuit/mining/independent,
+/obj/item/clothing/mask/breath,
+/obj/item/tank/internals/oxygen,
 /turf/open/floor/wood/mahogany,
 /area/ship/roumain)
 "qZ" = (
@@ -1119,7 +1120,6 @@
 /area/ship/roumain)
 "rj" = (
 /obj/structure/table/wood,
-/obj/item/slimepotion/slime/sentience,
 /obj/item/slimepotion/slime/sentience,
 /turf/open/floor/grass/ship/jungle,
 /area/ship/roumain)
@@ -1593,7 +1593,7 @@
 	},
 /obj/machinery/suit_storage_unit/inherit,
 /obj/item/clothing/suit/space/hardsuit/mining/independent,
-/obj/item/clothing/mask/gas/hunter,
+/obj/item/clothing/mask/breath,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
 "Ac" = (
@@ -2102,10 +2102,10 @@
 	},
 /obj/machinery/suit_storage_unit/inherit,
 /obj/item/clothing/suit/space/hardsuit/mining/independent,
-/obj/item/clothing/mask/gas/hunter,
 /obj/structure/cable/orange{
 	icon_state = "6-9"
 	},
+/obj/item/clothing/mask/breath,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
 "HA" = (
@@ -2488,13 +2488,13 @@
 /obj/item/flashlight/seclite,
 /obj/item/borg/upgrade/modkit/indoors,
 /obj/item/gun/energy/kinetic_accelerator,
-/obj/item/t_scanner/adv_mining_scanner,
 /obj/item/storage/bag/ore,
 /obj/item/shovel,
 /obj/item/gps/mining,
-/obj/item/pickaxe/mini,
 /obj/structure/closet/secure_closet/miningcloset,
 /obj/item/stack/marker_beacon/thirty,
+/obj/item/pickaxe,
+/obj/item/t_scanner/adv_mining_scanner/lesser,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
 "MV" = (
@@ -3026,7 +3026,7 @@
 "Wr" = (
 /obj/machinery/suit_storage_unit/inherit,
 /obj/item/clothing/suit/space/hardsuit/mining/independent,
-/obj/item/clothing/mask/gas/hunter,
+/obj/item/clothing/mask/breath,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
 "Wy" = (
