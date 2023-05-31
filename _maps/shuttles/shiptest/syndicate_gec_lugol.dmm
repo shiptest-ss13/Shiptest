@@ -231,9 +231,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "cq" = (
-/obj/structure/railing{
-	dir = 5
-	},
 /obj/structure/filingcabinet/chestdrawer{
 	pixel_x = -3
 	},
@@ -302,7 +299,7 @@
 	dir = 1
 	},
 /obj/machinery/portable_atmospherics/pump,
-/obj/structure/extinguisher_cabinet/directional/north,
+/obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/atmospherics)
 "cX" = (
@@ -364,9 +361,6 @@
 	dir = 1;
 	pixel_x = -2;
 	pixel_y = 2
-	},
-/obj/structure/railing/corner{
-	dir = 1
 	},
 /obj/item/kirbyplants{
 	icon_state = "plant-14";
@@ -503,11 +497,8 @@
 /area/ship/bridge)
 "fD" = (
 /obj/structure/tank_dispenser,
-/obj/machinery/button/door{
-	id = "atmoswindow";
-	name = "Window Shutters";
-	pixel_x = 5;
-	pixel_y = 27
+/obj/structure/railing{
+	dir = 6
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/atmospherics)
@@ -1103,6 +1094,7 @@
 /obj/structure/easel{
 	anchored = 1
 	},
+/obj/structure/railing,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "jZ" = (
@@ -1752,9 +1744,6 @@
 /obj/structure/chair/comfy/shuttle{
 	dir = 4
 	},
-/obj/structure/railing{
-	dir = 8
-	},
 /obj/machinery/airalarm/directional/north,
 /obj/structure/catwalk/over/plated_catwalk/white{
 	color = "#4c535b"
@@ -1841,6 +1830,9 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
+	},
+/obj/structure/railing{
+	dir = 6
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -2749,6 +2741,9 @@
 /obj/structure/filingcabinet{
 	pixel_x = 7
 	},
+/obj/structure/railing{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "yn" = (
@@ -3035,9 +3030,6 @@
 /area/ship/engineering/atmospherics)
 "AH" = (
 /obj/structure/table/reinforced,
-/obj/structure/railing{
-	dir = 9
-	},
 /obj/item/documents{
 	desc = "Upon closer inspection, this is just an egg salad recipe.";
 	icon_state = "docs_part";
@@ -3441,6 +3433,19 @@
 	},
 /turf/open/floor/plasteel/tech/airless,
 /area/ship/construction)
+"Ej" = (
+/obj/structure/catwalk/over/plated_catwalk/white{
+	color = "#4c535b"
+	},
+/obj/machinery/button/door{
+	dir = 8;
+	id = "airmixchamber";
+	name = "Air Mix Drain";
+	pixel_x = 27;
+	pixel_y = -5
+	},
+/turf/open/floor/plating/airless,
+/area/ship/construction)
 "El" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -3504,15 +3509,6 @@
 /obj/machinery/door/firedoor/heavy,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
-"Ex" = (
-/obj/structure/railing{
-	dir = 8
-	},
-/obj/structure/catwalk/over/plated_catwalk/white{
-	color = "#4c535b"
-	},
-/turf/open/floor/plating,
-/area/ship/bridge)
 "EE" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/carbon_input,
 /turf/open/floor/engine/plasma,
@@ -3553,6 +3549,7 @@
 	dir = 8
 	},
 /obj/machinery/holopad/emergency/command,
+/obj/structure/railing/corner,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "Fe" = (
@@ -3624,9 +3621,6 @@
 "FL" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 4
-	},
-/obj/structure/railing/corner{
-	dir = 1
 	},
 /obj/structure/catwalk/over/plated_catwalk/white{
 	color = "#4c535b"
@@ -3909,6 +3903,12 @@
 	name = "Atmospheric Technician's Locker";
 	populate = 0
 	},
+/obj/machinery/button/door{
+	id = "atmoswindow";
+	name = "Window Shutters";
+	pixel_x = 24;
+	pixel_y = 22
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/atmospherics)
 "HK" = (
@@ -4155,20 +4155,6 @@
 	},
 /turf/open/floor/plasteel/tech/airless,
 /area/ship/construction)
-"Jy" = (
-/obj/structure/railing{
-	dir = 8;
-	layer = 4.1;
-	pixel_x = -8
-	},
-/obj/effect/turf_decal/corner/transparent/solgovgold{
-	dir = 9
-	},
-/obj/effect/turf_decal/industrial/traffic{
-	dir = 8
-	},
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/engineering/atmospherics)
 "Jz" = (
 /obj/machinery/atmospherics/pipe/simple/cyan/visible/layer2{
 	dir = 10
@@ -4274,7 +4260,7 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/yellow/visible,
-/obj/structure/extinguisher_cabinet/directional/north,
+/obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/atmospherics)
 "Kd" = (
@@ -4299,8 +4285,8 @@
 	dir = 8;
 	id = "airmixchamber";
 	name = "Air Mix Drain";
-	pixel_x = 27;
-	pixel_y = -5
+	pixel_x = 22;
+	pixel_y = -8
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -4324,11 +4310,11 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/structure/extinguisher_cabinet/directional/north,
 /obj/machinery/meter/atmos/layer4{
 	desc = "It measures Plasma to Engines.";
 	name = "Plasma to Engines"
 	},
+/obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
 "Kq" = (
@@ -4549,7 +4535,7 @@
 /obj/effect/turf_decal/corner/transparent/solgovgold{
 	dir = 6
 	},
-/obj/structure/extinguisher_cabinet/directional/north,
+/obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "Ls" = (
@@ -5149,6 +5135,9 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
+/obj/structure/railing{
+	dir = 6
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "QM" = (
@@ -5181,6 +5170,12 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/structure/railing{
+	dir = 8
 	},
 /turf/open/floor/plasteel/stairs{
 	icon = 'icons/obj/stairs.dmi'
@@ -5359,9 +5354,6 @@
 /area/ship/engineering)
 "SO" = (
 /obj/structure/table/reinforced,
-/obj/structure/railing{
-	dir = 9
-	},
 /obj/item/radio/intercom/wideband/table{
 	dir = 1
 	},
@@ -6027,6 +6019,10 @@
 	},
 /obj/structure/catwalk/over/plated_catwalk/white{
 	color = "#4c535b"
+	},
+/obj/structure/railing/corner,
+/obj/structure/railing/corner{
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -6972,7 +6968,7 @@ wq
 "}
 (24,1,1) = {"
 DI
-Jy
+MG
 DX
 Kc
 SJ
@@ -7095,7 +7091,7 @@ Ad
 NE
 NE
 qR
-Ex
+dt
 FL
 dt
 ZZ
@@ -7206,7 +7202,7 @@ kD
 kD
 Mb
 rg
-Ls
+Ej
 ia
 GF
 vU

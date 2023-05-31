@@ -17,6 +17,7 @@
 	id = "foreshutter";
 	name = "Window Shutters"
 	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/mineral/titanium/tiled/blue,
 /area/ship/bridge)
 "ak" = (
@@ -345,6 +346,7 @@
 /area/ship/hallway/aft)
 "eV" = (
 /obj/structure/bookcase/random,
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/carpet/purple,
 /area/ship/crew/office)
 "fb" = (
@@ -807,13 +809,15 @@
 	id = "slimelock";
 	name = "Lockdown Shutters";
 	pixel_x = 7;
-	pixel_y = -25
+	pixel_y = -21;
+	dir = 1
 	},
 /obj/machinery/button/door{
 	id = "slimekill";
 	name = "Coldroom Release Shutter Control";
 	pixel_x = -7;
-	pixel_y = -25
+	pixel_y = -21;
+	dir = 1
 	},
 /obj/item/stack/tile/mineral/titanium/tiled/white,
 /obj/machinery/atmospherics/pipe/manifold/general/hidden{
@@ -971,19 +975,18 @@
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "mX" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light_switch{
+	pixel_x = 6;
+	pixel_y = 21
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/machinery/button/door{
 	id = "rdshutter";
 	name = "lockdown shutters";
 	pixel_x = -5;
-	pixel_y = 39
+	pixel_y = 22
 	},
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light_switch{
-	pixel_x = 6;
-	pixel_y = 40
-	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/item/radio/intercom/directional/north,
 /turf/open/floor/carpet/purple,
 /area/ship/crew/office)
 "nm" = (
@@ -995,9 +998,7 @@
 "nn" = (
 /obj/structure/frame/computer,
 /obj/item/shard,
-/obj/machinery/camera/autoname{
-	dir = 8
-	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/mineral/titanium/tiled/blue,
 /area/ship/bridge)
 "nr" = (
@@ -1733,6 +1734,7 @@
 	dir = 8;
 	pixel_x = 30
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "zw" = (
@@ -3116,9 +3118,11 @@
 /obj/structure/chair/comfy/shuttle{
 	dir = 1
 	},
-/obj/machinery/light/directional/east,
 /obj/item/radio/intercom/wideband/directional/west{
 	set_dir_on_move = 0
+	},
+/obj/machinery/camera/autoname{
+	dir = 8
 	},
 /turf/open/floor/mineral/titanium/tiled/blue,
 /area/ship/bridge)
@@ -3307,6 +3311,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "QT" = (
@@ -4112,7 +4117,6 @@
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/ship/hallway/aft)
 "Zs" = (
-/obj/machinery/light/directional/west,
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable{
 	icon_state = "0-4"
