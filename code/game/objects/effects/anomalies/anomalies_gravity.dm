@@ -44,17 +44,6 @@
 			if(target && !target.stat)
 				O.throw_at(target, 5, 10)
 
-	if(!COOLDOWN_FINISHED(src, pulse_cooldown))
-		return
-
-	COOLDOWN_START(src, pulse_cooldown, pulse_delay)
-	for(var/mob/living/carbon/carbon in orange(range/2, src))
-		if(carbon.run_armor_check(attack_flag = "melee") >= 40)
-			carbon.break_random_bone()
-		if(carbon.run_armor_check(attack_flag = "melee") >= 60)
-			carbon.break_all_bones() //crunch
-		carbon.apply_damage(10, BRUTE)
-
 /obj/effect/anomaly/grav/proc/on_entered(datum/source, atom/movable/AM)
 	SIGNAL_HANDLER
 

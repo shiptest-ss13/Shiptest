@@ -21,7 +21,7 @@
 
 /obj/effect/anomaly/bioscrambler/big
 	pulse_delay = 10
-	range = 7
+	range = 6
 
 /obj/effect/anomaly/bioscrambler/big/Initialize(mapload, new_lifespan, drops_core)
 	. = ..()
