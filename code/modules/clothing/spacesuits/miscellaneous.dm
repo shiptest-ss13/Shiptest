@@ -568,6 +568,21 @@ Contains:
 	slowdown = 0.5
 	w_class = WEIGHT_CLASS_NORMAL
 
+/obj/item/clothing/suit/space/inteq
+	name = "inteq space suit"
+	desc = "A lightly armored space suit for IRMG personnel for EVA operations, it seems more flexible than most space suits."
+	item_state = "space-inteq"
+	icon_state = "space-inteq"
+	armor = list("melee" = 15, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 15, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
+	w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/clothing/head/helmet/space/inteq
+	name = "inteq space helmet"
+	desc = "A black space helmet with an opaque yellow visor, there is a small 'IRMG' written on the earpad."
+	item_state = "space-inteq"
+	icon_state = "space-inteq"
+	armor = list("melee" = 15, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 15, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
+	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/clothing/suit/space/scar
 	name = "Scar Suit"

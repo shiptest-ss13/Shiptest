@@ -333,14 +333,14 @@
 
 /obj/item/clothing/suit/armor/hos/inteq
 	name = "inteq battle coat"
-	desc = "A luxurious brown coat with an crossweave of Kevlar and fur from genuine wolves, as protective as it is stylish."
+	desc = "A luxurious brown coat made from a crossweave of kevlar and ballistic fibre, the collar and wrist trims are made from genuine wolf fur. as protective as it is stylish."
 	icon_state = "armor_inteq_battlecoat"
 	item_state = "inteq_battlecoat"
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/suit/armor/inteq/corpsman
 	name = "inteq corpsman vest"
-	desc = "A shortened brown labcoat with an armor vest under it, for the IRMG's support division medical staff."
+	desc = "A shortened brown labcoat with an armor vest under it, for the IRMG's support division Corpsmen."
 	icon_state = "armor_inteq_labcoat"
 	item_state = "inteq_labcoat"
 	allowed = list(
