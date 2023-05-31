@@ -134,19 +134,15 @@
 // Forgotten Botanical Research Facility
 
 /area/ruin/jungle/botanicalresearch
-	name = "Forgotten Botanical Research Facility"
+	name = "Forgotten Botanical Research Facility Cleanroom"
 	icon_state = "red"
 
 /area/ruin/jungle/botanicalresearch/command
 	name = "Forgotten Botanical Research Facility Administration"
 	icon_state = "blue"
 
-/area/ruin/jungle/botanicalresearch/cleanroom
-	name = "Forgotten Botanical Research Facility Cleanroom"
-	icon_state = "yellow"
-
 /area/ruin/jungle/botanicalresearch/crew
-	name = "Forgotten Botanical Research Facility Living Quarters"
+	name = "Forgotten Botanical Research Facility Crew Area"
 	icon_state = "crew_quarters"
 
 /area/ruin/jungle/botanicalresearch/engineering
@@ -160,10 +156,6 @@
 /area/ruin/jungle/botanicalresearch/checkpoint
 	name = "Forgotten Botanical Research Facility Security Checkpoint"
 	icon_state = "security"
-
-/area/ruin/jungle/botanicalresearch/kitchen
-	name = "Forgotten Botanical Research Facility Kitchen"
-	icon_state = "yellow"
 
 /area/ruin/jungle/botanicalresearch/caves
 	name = "Forgotten Caves"
