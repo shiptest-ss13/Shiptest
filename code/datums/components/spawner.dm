@@ -46,7 +46,7 @@
 	if(spawn_delay > world.time)
 		return 0
 	spawn_delay = world.time + spawn_time
-	var/chosen_mob_type = pick(mob_types)
+	var/chosen_mob_type = pickweight(mob_types)
 	var/mob/living/simple_animal/L = new chosen_mob_type(P.loc)
 	L.flags_1 |= (P.flags_1 & ADMIN_SPAWNED_1)
 	spawned_mobs += L
