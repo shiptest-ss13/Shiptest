@@ -4,7 +4,8 @@
 	implements = list(
 		TOOL_SCREWDRIVER		= 100,
 		TOOL_SCALPEL 			= 75, // med borgs could try to unscrew shell with scalpel
-		/obj/item/kitchen/knife	= 50)
+		/obj/item/kitchen/knife	= 50,
+		/obj/item				= 10)
 	time = 2.4 SECONDS
 	preop_sound = 'sound/items/screwdriver.ogg'
 	success_sound = 'sound/items/screwdriver2.ogg'
@@ -15,9 +16,11 @@
 			"<span class='notice'>[user] begins to unscrew the shell of [target]'s [parse_zone(target_zone)].</span>")
 
 /datum/surgery_step/mechanic_open/tool_check(mob/user, obj/item/tool)
-	if(istype(tool))
+	if(implement_type == /obj/item && !tool.get_sharpness())
+		return FALSE
+	if(tool.usesound)
 		preop_sound = tool.usesound
-	. = ..()
+	return TRUE
 
 //close shell
 /datum/surgery_step/mechanic_close
@@ -25,7 +28,8 @@
 	implements = list(
 		TOOL_SCREWDRIVER		= 100,
 		TOOL_SCALPEL 			= 75,
-		/obj/item/kitchen/knife	= 50)
+		/obj/item/kitchen/knife	= 50,
+		/obj/item				= 10)
 	time = 2.4 SECONDS
 	preop_sound = 'sound/items/screwdriver.ogg'
 	success_sound = 'sound/items/screwdriver2.ogg'
@@ -36,9 +40,11 @@
 			"<span class='notice'>[user] begins to screw the shell of [target]'s [parse_zone(target_zone)].</span>")
 
 /datum/surgery_step/mechanic_close/tool_check(mob/user, obj/item/tool)
-	if(istype(tool))
+	if(implement_type == /obj/item && !tool.get_sharpness())
+		return FALSE
+	if(tool.usesound)
 		preop_sound = tool.usesound
-	. = ..()
+	return TRUE
 
 //prepare electronics
 /datum/surgery_step/prepare_electronics
