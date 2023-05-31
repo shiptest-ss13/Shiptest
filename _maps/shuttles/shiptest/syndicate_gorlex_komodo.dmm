@@ -737,6 +737,7 @@
 	dir = 1;
 	name = "Helm"
 	},
+/obj/structure/railing/corner,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "gE" = (
@@ -846,10 +847,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
 "hp" = (
-/obj/structure/railing{
-	dir = 1
-	},
-/obj/structure/railing,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -1417,6 +1414,9 @@
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 10
 	},
+/obj/structure/railing{
+	dir = 10
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "nk" = (
@@ -1453,10 +1453,6 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew/canteen)
 "ny" = (
-/obj/structure/railing{
-	dir = 1
-	},
-/obj/structure/railing,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
@@ -1492,6 +1488,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
+/obj/structure/railing,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "nR" = (
@@ -1650,9 +1647,6 @@
 	id = "syndiewarship_windows";
 	name = "Window Control";
 	pixel_y = -4
-	},
-/obj/structure/railing{
-	dir = 5
 	},
 /obj/item/desk_flag{
 	pixel_x = -10
@@ -1956,9 +1950,6 @@
 /area/ship/cargo)
 "sT" = (
 /obj/effect/turf_decal/borderfloor{
-	dir = 4
-	},
-/obj/structure/railing{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/generic,
@@ -2369,7 +2360,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
-/obj/structure/extinguisher_cabinet/directional/north,
+/obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/engineering)
 "wO" = (
@@ -2706,9 +2697,6 @@
 /area/ship/engineering)
 "AS" = (
 /obj/effect/turf_decal/borderfloor{
-	dir = 8
-	},
-/obj/structure/railing{
 	dir = 8
 	},
 /obj/item/gun/ballistic/automatic/pistol/m1911{
@@ -3179,9 +3167,6 @@
 	pixel_y = -6
 	},
 /obj/machinery/light/directional/west,
-/obj/structure/railing{
-	dir = 1
-	},
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
@@ -3435,6 +3420,9 @@
 	dir = 1
 	},
 /obj/machinery/firealarm/directional/south,
+/obj/structure/railing{
+	dir = 5
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "HM" = (
@@ -3636,9 +3624,6 @@
 "IL" = (
 /obj/structure/table/reinforced,
 /obj/machinery/light/directional/east,
-/obj/structure/railing{
-	dir = 1
-	},
 /obj/item/paper_bin{
 	pixel_x = 6
 	},
@@ -3956,9 +3941,6 @@
 /obj/effect/turf_decal/borderfloor{
 	dir = 4
 	},
-/obj/structure/railing{
-	dir = 4
-	},
 /obj/effect/decal/cleanable/generic{
 	pixel_x = -12;
 	pixel_y = 7
@@ -4274,6 +4256,9 @@
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 6
 	},
+/obj/structure/railing{
+	dir = 6
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "Pz" = (
@@ -4299,6 +4284,10 @@
 	},
 /obj/effect/decal/cleanable/blood/old,
 /obj/structure/bed/dogbed,
+/obj/structure/railing{
+	dir = 9;
+	layer = 2.9
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "PE" = (
@@ -4531,6 +4520,9 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/structure/railing/corner{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "SC" = (
@@ -4637,12 +4629,6 @@
 /area/ship/security/armory)
 "TH" = (
 /obj/effect/turf_decal/borderfloor{
-	dir = 8
-	},
-/obj/structure/railing/corner{
-	dir = 1
-	},
-/obj/structure/railing/corner{
 	dir = 8
 	},
 /obj/structure/chair/comfy/shuttle{
@@ -4978,9 +4964,6 @@
 	pixel_x = -4;
 	pixel_y = 5
 	},
-/obj/structure/railing{
-	dir = 9
-	},
 /obj/machinery/photocopier/faxmachine/longrange{
 	pixel_x = 4;
 	pixel_y = 0
@@ -5006,6 +4989,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
+/obj/structure/railing,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "WT" = (
@@ -5322,10 +5306,6 @@
 /obj/effect/turf_decal/borderfloor{
 	dir = 4
 	},
-/obj/structure/railing/corner{
-	dir = 4
-	},
-/obj/structure/railing/corner,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
