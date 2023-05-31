@@ -61,3 +61,10 @@
 		return
 	if (port && port.current_ship && port.current_ship.crew)
 		connect_to_crew(port.current_ship.crew)
+
+
+////
+/datum/component/spawn_point/mob_spawn/Initialize(list/_jobs=list(), _exclusive=TRUE)
+	if(!istype(parent, /obj/effect/mob_spawn)
+		return COMPONENT_INCOMPATIBLE
+	return ..()
