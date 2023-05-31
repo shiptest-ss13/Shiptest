@@ -420,8 +420,8 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 
 /obj/machinery/cryopod/apply_effects_to_mob(mob/living/carbon/sleepyhead)
 	sleepyhead.SetSleeping(60)
-	sleepyhead.set_disgust(55)
-	sleepyhead.set_nutrition(150)
+	sleepyhead.set_disgust(57) // puke maybe once maybe twice
+	sleepyhead.set_nutrition(200)
 	to_chat(sleepyhead, "<span class='userdanger'>A wave of nausea comes over you, brought on by cryosleep...</span>")
 
 /obj/machinery/cryopod/poor
@@ -430,6 +430,6 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 
 /obj/machinery/cryopod/poor/apply_effects_to_mob(mob/living/carbon/sleepyhead)
 	sleepyhead.SetSleeping(80)
-	sleepyhead.set_disgust(75)
+	sleepyhead.set_disgust(75) //nasty
 	sleepyhead.set_nutrition(70)
 	to_chat(sleepyhead, "<span class='userdanger'>The low-quality cryo pod ejects you unceremoniously, you feel REALLY sick...</span>")
