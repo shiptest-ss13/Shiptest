@@ -171,6 +171,7 @@
 	icon_state = "stairs"
 	base_icon_state = "stairs"
 	tiled_dirt = FALSE
+	color = COLOR_FLOORTILE_GRAY
 
 /turf/open/floor/plasteel/stairs/left
 	icon_state = "stairs-l"

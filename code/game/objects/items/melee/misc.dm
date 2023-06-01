@@ -126,6 +126,12 @@
 		user.death(FALSE)
 	REMOVE_TRAIT(src, TRAIT_NODROP, SABRE_SUICIDE_TRAIT)
 
+/obj/item/melee/sabre/solgov
+	name = "solarian sabre"
+	desc = "A refined ceremonial blade often given to soldiers and high ranking officials of SolGov."
+	icon_state = "sabresolgov"
+	item_state = "sabresolgov"
+
 /obj/item/melee/beesword
 	name = "The Stinger"
 	desc = "Taken from a giant bee and folded over one thousand times in pure honey. Can sting through anything."
