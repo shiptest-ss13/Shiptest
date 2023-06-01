@@ -144,12 +144,12 @@
 /obj/structure/railing/modern
 	name = "modern railing"
 	desc = "Modern looking railing meant to protect idiots like you from falling."
-	icon = 'icons/obj/railing_m.dmi'
+	icon = 'icons/obj/railing_modern.dmi'
 	icon_state = "railing_m"
 	layer = ABOVE_MOB_LAYER
 	///icon for the color overlay
 	var/image/cover
-	///cover color, by default this one
+	///cover color, by default white
 	var/railing_color = "#ffffff"
 	color = null
 
@@ -160,15 +160,15 @@
 /obj/structure/railing/modern/proc/GetCover()
 	if(cover)
 		cut_overlay(cover)
-	cover = mutable_appearance('icons/obj/railing_m.dmi', "[icon_state]_color") //allows for the handrail part to be colored while keeping the body gray
+	cover = mutable_appearance('icons/obj/railing_modern.dmi', "[icon_state]_color") //allows for the handrail part to be colored while keeping the body gray
 	cover.color = railing_color
 	add_overlay(cover)
 
 /obj/structure/railing/modern/attacked_by(obj/item/I, mob/living/user)
 	. = ..()
-	if(istype(I, /obj/item/toy/crayon))
-		var/obj/item/toy/crayon/C = I
-		railing_color = C.crayon_color
+	if(istype(I, /obj/item/toy/crayon/spraycan))
+		var/obj/item/toy/crayon/spraycan/C = I
+		railing_color = C.paint_color
 	if(railing_color)
 		GetCover()
 
@@ -176,6 +176,8 @@
 	icon_state = "railing_m_end"
 
 /obj/structure/railing/modern/corner
+	name = "modern railing corner"
 	icon_state = "railing_m_corner"
 	density = FALSE
 	climbable = FALSE
+	buildstackamount = 1
