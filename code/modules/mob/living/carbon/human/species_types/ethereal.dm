@@ -1,7 +1,7 @@
 #define ETHEREAL_EMAG_COLORS list("#00ffff", "#ffc0cb", "#9400D3", "#4B0082", "#0000FF", "#00FF00", "#FFFF00", "#FF7F00", "#FF0000")
 
 /datum/species/ethereal
-	name = "\improper Elzuosa"
+	name = "\improper Elzuose"
 	id = SPECIES_ETHEREAL
 	attack_verb = "burn"
 	attack_sound = 'sound/weapons/etherealhit.ogg'
@@ -47,12 +47,12 @@
 	var/drain_time = 0 //used to keep ethereals from spam draining power sources
 	var/obj/effect/dummy/lighting_obj/ethereal_light
 
-/datum/species/ethereal/Destroy(force)
+/datum/species/elzuose/Destroy(force)
 	if(ethereal_light)
 		QDEL_NULL(ethereal_light)
 	return ..()
 
-/datum/species/ethereal/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load)
+/datum/species/elzuose/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load)
 	. = ..()
 	if(!ishuman(C))
 		return
@@ -252,7 +252,7 @@
 			H.visible_message("<span class='danger'>[H]'s EM frequency is scrambled to a random color.</span>")
 		else
 			// select new color
-			var/new_etherealcolor = input(user, "Choose your elzuosa color:", "Character Preference",default_color) as color|null
+			var/new_etherealcolor = input(user, "Choose your Elzuose color:", "Character Preference",default_color) as color|null
 			if(new_etherealcolor)
 				var/temp_hsv = RGBtoHSV(new_etherealcolor)
 				if(ReadHSV(temp_hsv)[3] >= ReadHSV("#505050")[3]) // elzu colors should be bright ok??
