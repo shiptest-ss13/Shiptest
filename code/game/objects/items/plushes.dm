@@ -701,11 +701,6 @@
 	desc = "An adorable mothperson plushy. It's a colorfull bug!"
 	icon_state = "moffplush_rainbow"
 
-/obj/item/toy/plush/flushed
-	name = "flushed plushie"
-	desc = "Hgrgrhrhg cute."
-	icon_state = "flushplush"
-
 /obj/item/toy/plush/moth/suicide_act(mob/living/user)
 	user.visible_message("<span class='suicide'>[user] stares deeply into the eyes of [src] and it begins consuming [user.p_them()]!  It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	suicide_count++
@@ -780,6 +775,11 @@
 	icon_state = "plushie_knight"
 	attack_verb = list("poked")
 	should_squeak = FALSE
+
+/obj/item/toy/plush/flushed
+	name = "flushed plushie"
+	desc = "Hgrgrhrhg cute."
+	icon_state = "flushplush"
 
 /obj/item/toy/plush/among
 	name = "amoung pequeño"
