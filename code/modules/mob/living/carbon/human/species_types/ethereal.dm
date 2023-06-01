@@ -47,12 +47,12 @@
 	var/drain_time = 0 //used to keep ethereals from spam draining power sources
 	var/obj/effect/dummy/lighting_obj/ethereal_light
 
-/datum/species/elzuose/Destroy(force)
+/datum/species/ethereal/Destroy(force)
 	if(ethereal_light)
 		QDEL_NULL(ethereal_light)
 	return ..()
 
-/datum/species/elzuose/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load)
+/datum/species/ethereal/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load)
 	. = ..()
 	if(!ishuman(C))
 		return
