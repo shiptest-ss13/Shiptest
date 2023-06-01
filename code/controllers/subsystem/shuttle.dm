@@ -64,6 +64,7 @@ SUBSYSTEM_DEF(shuttle)
 			else
 				var/obj/docking_port/mobile/M = requester
 				message_admins("Shuttle [M] repeatedly failed to create transit zone.")
+				log_runtime("Shuttle [M] repeatedly failed to create transit zone.")
 		if(MC_TICK_CHECK)
 			break
 

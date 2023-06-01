@@ -47,6 +47,7 @@
 	if(!..() || (!COOLDOWN_FINISHED(src, rename_cooldown) && !force))
 		return FALSE
 	message_admins("[key_name_admin(usr)] renamed vessel '[oldname]' to '[new_name]'")
+	log_admin("[key_name(src)] has renamed vessel '[oldname]' to '[new_name]'")
 	shuttle_port?.name = new_name
 	ship_account.account_holder = new_name
 	if (crew)

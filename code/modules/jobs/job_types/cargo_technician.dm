@@ -71,3 +71,15 @@
 		/obj/item/export_scanner = 1,
 		/obj/item/kitchen/knife/hunting = 1
 	)
+
+/datum/outfit/job/cargo_tech/frontiersmen
+	name = "Cargo Tech (frontiersmen)"
+
+	uniform = /obj/item/clothing/under/rank/security/officer/frontier
+	suit = /obj/item/clothing/suit/hazardvest
+	ears = /obj/item/radio/headset/pirate
+	shoes = /obj/item/clothing/shoes/workboots
+	head = /obj/item/clothing/head/soft
+	backpack_contents = list(
+		/obj/item/modular_computer/tablet/preset/cargo = 1,
+	)
