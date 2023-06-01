@@ -1,7 +1,5 @@
 /datum/job/janitor
 	name = "Janitor"
-	total_positions = 2
-	spawn_positions = 1
 	wiki_page = "Janitor" //WS Edit - Wikilinks/Warning
 
 	outfit = /datum/outfit/job/janitor

@@ -65,6 +65,6 @@
 
 ////
 /datum/component/spawn_point/mob_spawn/Initialize(list/_jobs=list(), _exclusive=TRUE)
-	if(!istype(parent, /obj/effect/mob_spawn)
+	if(!istype(parent, /obj/effect/mob_spawn))
 		return COMPONENT_INCOMPATIBLE
 	return ..()

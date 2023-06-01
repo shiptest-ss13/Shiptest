@@ -1,7 +1,5 @@
 /datum/job/lawyer
 	name = "Lawyer"
-	total_positions = 2
-	spawn_positions = 2
 	wiki_page = "Lawyer" //WS Edit - Wikilinks/Warning
 	var/lawyers = 0 //Counts lawyer amount
 

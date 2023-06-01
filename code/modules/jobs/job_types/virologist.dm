@@ -1,7 +1,5 @@
 /datum/job/virologist
 	name = "Virologist"
-	total_positions = 1
-	spawn_positions = 1
 	exp_type = EXP_TYPE_CREW
 	exp_requirements = 60
 	wiki_page = "Infections" //WS Edit - Wikilinks/Warning

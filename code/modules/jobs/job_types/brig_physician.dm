@@ -1,7 +1,5 @@
 /datum/job/brig_phys
 	name = "Brig Physician"
-	total_positions = 1
-	spawn_positions = 1
 	minimal_player_age = 7
 	exp_requirements = 300
 	exp_type = EXP_TYPE_CREW
