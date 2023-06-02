@@ -341,6 +341,7 @@ GLOBAL_LIST_INIT(meteorsC, list(/obj/effect/meteor/dust)) //for space dust event
 	hits = 1
 	hitpwr = 0
 	pass_flags = PASSTABLE
+	meteorsound = 'sound/effects/blobattack.ogg'
 	meteordrop = list(/mob/living/simple_animal/hostile/carp)
 	dropamt = 1
 
