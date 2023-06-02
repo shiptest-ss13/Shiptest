@@ -126,6 +126,7 @@
 		var/list/ship_data = list(
 			"name" = T.name,
 			"desc" = T.description,
+			"tags" = T.tags,
 			"crewCount" = length(T.job_slots)
 		)
 		.["templates"] += list(ship_data)

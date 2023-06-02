@@ -4,6 +4,7 @@
 	var/file_name
 
 	var/description
+	var/tags
 	var/admin_notes
 
 	var/list/movement_force // If set, overrides default movement_force on shuttle
@@ -194,6 +195,7 @@
 	.["templateName"] = name
 	.["templateShortName"] = short_name
 	.["templateDescription"] = description
+	.["templateTags"] = tags
 	.["templateCategory"] = category
 	.["templateLimit"] = limit
 	.["templateEnabled"] = enabled
@@ -225,6 +227,10 @@
 			return TRUE
 		if("setTemplateDescription")
 			description = params["new_template_description"]
+			update_static_data(usr, ui)
+			return TRUE
+		if("setTemplateTags")
+			tags = params["new_template_tags"]
 			update_static_data(usr, ui)
 			return TRUE
 		if("setTemplateCategory")
