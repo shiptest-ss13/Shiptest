@@ -7,10 +7,12 @@
 	pixel_y = -176
 
 /obj/effect/anomaly/grav
-	name = "gravitational anomaly"
+	name = "throngler"
 	icon_state = "gravity"
+	desc = "A mysterious anomaly that sucks things towards it with a gravitational field, as you get closer, it gets more intense."
 	density = FALSE
 	aSignal = /obj/item/assembly/signaler/anomaly/grav
+	bSignal = null
 	effectrange = 4
 	var/boing = 0
 	///Warp effect holder for displacement filter to "pulse" the anomaly
@@ -44,18 +46,16 @@
 			if(target && !target.stat)
 				O.throw_at(target, 5, 10)
 
-
 	if(!COOLDOWN_FINISHED(src, pulse_cooldown))
 		return
 
 	COOLDOWN_START(src, pulse_cooldown, pulse_delay)
-	for(var/mob/living/carbon/thronglee in orange(effectrange/2, src))
-		if(thronglee.run_armor_check(attack_flag = "melee") >= 40)
-			thronglee.break_random_bone()
-		if(thronglee.run_armor_check(attack_flag = "melee") >= 60)
-			thronglee.break_all_bones() //crunch
-		thronglee.apply_damage(10, BRUTE)
-
+	for(var/mob/living/carbon/carbon in orange(effectrange/2, src))
+		if(carbon.run_armor_check(attack_flag = "melee") >= 40)
+			carbon.break_random_bone()
+		if(carbon.run_armor_check(attack_flag = "melee") >= 60)
+			carbon.break_all_bones() //crunch
+		carbon.apply_damage(10, BRUTE)
 
 /obj/effect/anomaly/grav/proc/on_entered(datum/source, atom/movable/AM)
 	SIGNAL_HANDLER
@@ -75,15 +75,15 @@
 		Guy.throw_at(target, 5, 1)
 		boing = 0
 		if(iscarbon(Guy))
-			for(var/mob/living/carbon/guy in range(0, src))
-				if(guy.run_armor_check(attack_flag = "melee") >= 20)
-					guy.break_random_bone()
-				else if(guy.run_armor_check(attack_flag = "melee") >= 40)
-					guy.break_all_bones() //crunch
-				guy.apply_damage(10, BRUTE)
+			for(var/mob/living/carbon/carbon)
+				if(carbon.run_armor_check(attack_flag = "melee") >= 20)
+					carbon.break_random_bone()
+				else if(carbon.run_armor_check(attack_flag = "melee") >= 40)
+					carbon.break_all_bones() //crunch
+				carbon.apply_damage(10, BRUTE)
 
 /obj/effect/anomaly/grav/high
-	effectrange = 7
+	effectrange = 5
 	var/grav_field
 
 /obj/effect/anomaly/grav/high/Initialize(mapload, new_lifespan)
@@ -100,9 +100,8 @@
 ///Bigger, meaner, immortal gravity anomaly. although this is just the super grav anomaly but bigger and shattering move force
 /obj/effect/anomaly/grav/high/big
 	immortal = TRUE
-	aSignal = null
+	effectrange = 7
 	move_force = MOVE_FORCE_OVERPOWERING
-	effectrange = 6
 
 /obj/effect/anomaly/grav/high/big/Initialize(mapload, new_lifespan, drops_core)
 	. = ..()

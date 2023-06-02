@@ -198,6 +198,8 @@
 		Anomaly.anomalyNeutralize()
 	return TRUE
 
+
+
 /obj/item/assembly/signaler/anomaly/manual_suicide(mob/living/carbon/user)
 	user.visible_message("<span class='suicide'>[user]'s [src] is reacting to the radio signal, warping [user.p_their()] body!</span>")
 	user.set_suicide(TRUE)
@@ -209,6 +211,21 @@
 		to_chat(user, "<span class='notice'>Analyzing... [src]'s stabilized field is fluctuating along frequency [format_frequency(frequency)], code [code].</span>")
 	..()
 
+/obj/item/assembly/signaler/anomaly/det_signal
+	name = "anomaly field"
+	research = null
+	anomaly_type = null
+
+/obj/item/assembly/signaler/anomaly/receive_signal(datum/signal/signal)
+	if(!signal)
+		return FALSE
+	if(signal.data["code"] != code)
+		return FALSE
+	if(suicider)
+		manual_suicide(suicider)
+	for(var/obj/effect/anomaly/Anomaly in get_turf(src))
+		Anomaly.detonate()
+	return TRUE
 
 
 //Anomaly cores
@@ -249,7 +266,36 @@
 	icon_state = "hallucination_core"
 	anomaly_type = /obj/effect/anomaly/hallucination
 
+/obj/item/assembly/signaler/anomaly/sparkler
+	name = "\improper sparkler anomaly core"
+	desc = "The neutralized core of a sparkler anomaly. Tiny electrical sparks arc off it."
+	anomaly_type = /obj/effect/anomaly/sparkler
 
+/obj/item/assembly/signaler/anomaly/veins
+	name = "\improper fountain anomaly core"
+	desc = "The neutralized core of a fountain anomaly. Blood drips off of it."
+	anomaly_type = /obj/effect/anomaly/sparkler
+
+/obj/item/assembly/signaler/anomaly/phantom
+	name = "\improper phantom anomaly core"
+	desc = "The neutralized core of a phantom anomaly. It quietly screams."
+	anomaly_type = /obj/effect/anomaly/phantom
+
+/obj/item/assembly/signaler/anomaly/pulsar
+	name = "\improper pulsar anomaly core"
+	desc = "The neutralized core of a pulsar anomaly. Electromagnetic crackles come off it."
+
+/obj/item/assembly/signaler/anomaly/plasmasoul
+	name = "\improper plasmasoul anomaly core"
+	desc = "The neutralized core of a plasmasoul anomaly. The air around it hisses."
+
+/obj/item/assembly/signaler/anomaly/heartbeat
+	name = "\improper heartbeat anomaly core"
+	desc = "The neutralized core of a heartbeat anomaly. It's concerningly warm to the touch."
+
+/obj/item/assembly/signaler/anomaly/tvstatic
+	name = "\improper static anomaly core"
+	desc = "The neutralized core of a static anomaly. Your head hurts just staring at it"
 
 /obj/item/assembly/signaler/anomaly/attack_self()
 	return

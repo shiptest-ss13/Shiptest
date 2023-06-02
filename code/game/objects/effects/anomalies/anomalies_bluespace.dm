@@ -1,7 +1,8 @@
 
 /obj/effect/anomaly/bluespace
-	name = "bluespace anomaly"
+	name = "jumper"
 	icon_state = "bluespace"
+	desc = "A mysterious anomaly that causes teleportation around it."
 	density = TRUE
 	aSignal = /obj/item/assembly/signaler/anomaly/bluespace
 	///range from which we can teleport someone
@@ -15,7 +16,6 @@
 	for(var/mob/living/Mob in range(effectrange,src))
 		do_teleport(Mob, locate(Mob.x, Mob.y, Mob.z), teleport_distance, channel = TELEPORT_CHANNEL_BLUESPACE)
 
-
 	if(!COOLDOWN_FINISHED(src, pulse_cooldown))
 		return
 
@@ -26,8 +26,7 @@
 			carbon.reagents?.add_reagent(/datum/reagent/bluespace, reagent_amount)
 
 /obj/effect/anomaly/bluespace/Bumped(atom/movable/AM)
-	if(isliving(AM))
-		do_teleport(AM, locate(AM.x, AM.y, AM.z), 8, channel = TELEPORT_CHANNEL_BLUESPACE)
+	do_teleport(AM, locate(AM.x, AM.y, AM.z), 8, channel = TELEPORT_CHANNEL_BLUESPACE)
 
 /obj/effect/anomaly/bluespace/detonate()
 	var/turf/T = pick(get_area_turfs(impact_area))
@@ -76,6 +75,7 @@
 			var/mob/give_sparkles = A
 			if(give_sparkles.client)
 				blue_effect(give_sparkles)
+	. = ..()
 
 /obj/effect/anomaly/bluespace/proc/blue_effect(mob/M)
 	var/obj/blueeffect = new /obj(src)
@@ -99,7 +99,6 @@
 	immortal = TRUE
 	effectrange = 4
 	teleport_distance = 12
-	aSignal = null
 	reagent_amount = 20
 
 /obj/effect/anomaly/bluespace/big/Initialize(mapload, new_lifespan, drops_core)
@@ -108,6 +107,7 @@
 	transform *= 1.5
 
 /obj/effect/anomaly/bluespace/big/Bumped(atom/movable/bumpee)
+	. = ..()
 	if(iscarbon(bumpee))
 		var/mob/living/carbon/carbon = bumpee
 		carbon.reagents?.add_reagent(/datum/reagent/bluespace, reagent_amount)

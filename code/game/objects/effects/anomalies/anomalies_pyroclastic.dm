@@ -1,10 +1,9 @@
 
 /obj/effect/anomaly/pyro
-	name = "pyroclastic anomaly"
+	name = "plasmaball"
 	icon_state = "pyroclastic"
+	desc = "A mysterious anomaly, made of an everburning gas. Those who approach it tend to absorb it's heat, or even ignite."
 	effectrange = 4
-	var/ticks = 0
-	/// How many seconds between each gas release
 	pulse_delay = 10
 	aSignal = /obj/item/assembly/signaler/anomaly/pyro
 
@@ -22,20 +21,25 @@
 	for(var/mob/living/carbon/nearby in range(effectrange/2, src))
 		nearby.fire_stacks += 3
 		nearby.IgniteMob()
-		visible_message("<span_class:warning>[src] ignites [nearby]!")
+		visible_message("<span class='warning'>[src] ignites [nearby]!")
 
-	ticks += seconds_per_tick
-	if(ticks < pulse_cooldown)
-		return FALSE
-	else
-		ticks -= pulse_cooldown
-	var/turf/open/tile = get_turf(src)
-	if(istype(tile))
-		tile.atmos_spawn_air("o2=5;plasma=10;TEMP=500")
-	return TRUE
+
+/obj/effect/anomaly/pyro/Bumped(atom/movable/AM)
+	if(isobj(AM))
+		var/obj/firething = AM
+		if(firething.resistance_flags & FIRE_PROOF)
+			firething.resistance_flags &= ~FIRE_PROOF
+		if(firething.armor.fire > 50) //*Me copies from lava code
+			firething.armor = firething.armor.setRating(fire = 50)
+		firething.fire_act(10000, 1000)
+	if(iscarbon(AM))
+		var/mob/living/carbon/onfire
+		onfire.fire_stacks += 3
+		onfire.IgniteMob()
 
 /obj/effect/anomaly/pyro/detonate()
 	INVOKE_ASYNC(src, PROC_REF(makepyroslime))
+	. = ..()
 
 /obj/effect/anomaly/pyro/proc/makepyroslime()
 	var/turf/open/tile = get_turf(src)
@@ -53,10 +57,8 @@
 
 /obj/effect/anomaly/pyro/big
 	immortal = TRUE
-	aSignal = null
 	pulse_delay = 2
 	effectrange = 6
-	move_force = MOVE_FORCE_OVERPOWERING
 
 /obj/effect/anomaly/pyro/big/Initialize(mapload, new_lifespan, drops_core)
 	. = ..()

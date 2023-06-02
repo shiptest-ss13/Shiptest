@@ -49,3 +49,7 @@
 		animate(B, alpha = 0, time = 32)
 	return ..()
 
+/obj/projectile/curse_hand/phantom
+	name = "phantom hand"
+	damage = 15
+	paralyze = 5
