@@ -56,16 +56,6 @@
 	var/mob/living/silicon/ai/AI = usr
 	GLOB.crewmonitor.show(AI,AI)
 
-/atom/movable/screen/ai/crew_manifest
-	name = "Crew Manifest"
-	icon_state = "manifest"
-
-/atom/movable/screen/ai/crew_manifest/Click()
-	if(..())
-		return
-	var/mob/living/silicon/ai/AI = usr
-	AI.ai_roster()
-
 /atom/movable/screen/ai/alerts
 	name = "Show Alerts"
 	icon_state = "alerts"
@@ -212,12 +202,6 @@
 //Crew Monitoring
 	using = new /atom/movable/screen/ai/crew_monitor()
 	using.screen_loc = ui_ai_crew_monitor
-	using.hud = src
-	static_inventory += using
-
-//Crew Manifest
-	using = new /atom/movable/screen/ai/crew_manifest()
-	using.screen_loc = ui_ai_crew_manifest
 	using.hud = src
 	static_inventory += using
 
