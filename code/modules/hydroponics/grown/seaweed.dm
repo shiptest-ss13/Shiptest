@@ -1,4 +1,3 @@
-// seaweed
 /obj/item/seeds/seaweed
 	name = "pack of seaweed seeds" //dude, i pinkypromise! of course seaweed has seeds :)
 	desc = "These seeds grow into seaweed."
@@ -23,4 +22,3 @@
 	bitesize_mod = 3
 	foodtype = VEGETABLES
 	grind_results = list(/datum/reagent/water = 1)
-
