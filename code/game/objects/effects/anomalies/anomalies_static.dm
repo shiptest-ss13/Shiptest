@@ -26,19 +26,17 @@
 	COOLDOWN_START(src, pulse_cooldown, pulse_delay)
 
 	for(var/mob/living/carbon/looking in range(effectrange, src))
-		if (HAS_TRAIT(looking, SEE_TURFS) || (looking.mind && HAS_TRAIT(looking.mind, SEE_TURFS)))
+		if (!HAS_TRAIT(looking, TRAIT_MINDSHIELD))
 			looking.adjustOrganLoss(ORGAN_SLOT_BRAIN, 10, 200)
 			playsound(looking, 'sound/effects/walkietalkie.ogg')
-			/*
 		if(looking.getOrganLoss(ORGAN_SLOT_BRAIN) >= 150)
 			var/mob/living/carbon/victim = looking
-			var/obj/effect/anomaly/tvstatic/expansion
-			expansion = new(victim.loc)
+			var/obj/effect/anomaly/tvstatic/planetary/expansion
+			expansion = new(get_turf(victim))
 			visible_message("<span class='warning'> The static overtakes [looking], [expansion] taking their place!</span>")
 			//looking.death() may be cool to have someone screaming while the Static overtakes them
 			expansion.victim = victim
 			victim.forceMove(expansion)
-			*/
 	return
 
 
