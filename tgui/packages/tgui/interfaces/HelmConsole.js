@@ -1,15 +1,5 @@
 import { useBackend } from '../backend';
-import {
-  Button,
-  ByondUi,
-  LabeledList,
-  Section,
-  ProgressBar,
-  AnimatedNumber,
-  Knob,
-  LabeledControls,
-  NumberInput,
-} from '../components';
+import { Button, ByondUi, LabeledList, Section, ProgressBar, AnimatedNumber, Knob, LabeledControls, NumberInput } from '../components';
 import { Window } from '../layouts';
 import { Table } from '../components/Table';
 
@@ -69,16 +59,14 @@ const SharedContent = (_props, context) => {
             disabled={isViewer}
             onClick={() => act('reload_ship')}
           />
-        }
-      >
+        }>
         <LabeledList>
           <LabeledList.Item label="Class">{shipInfo.class}</LabeledList.Item>
           <LabeledList.Item label="Sensor Range">
             <ProgressBar
               value={shipInfo.sensor_range}
               minValue={1}
-              maxValue={8}
-            >
+              maxValue={8}>
               <AnimatedNumber value={shipInfo.sensor_range} />
             </ProgressBar>
           </LabeledList.Item>
@@ -150,8 +138,7 @@ const ShipContent = (_props, context) => {
                 bad: [7, Infinity],
               }}
               maxValue={10}
-              value={speed}
-            >
+              value={speed}>
               <AnimatedNumber
                 value={speed}
                 format={(value) => value.toFixed(1)}
@@ -183,8 +170,7 @@ const ShipContent = (_props, context) => {
             disabled={isViewer}
             onClick={() => act('reload_engines')}
           />
-        }
-      >
+        }>
         <Table>
           <Table.Row bold>
             <Table.Cell collapsing>Name</Table.Cell>
@@ -223,8 +209,7 @@ const ShipContent = (_props, context) => {
                       }}
                       maxValue={engine.maxFuel}
                       minValue={0}
-                      value={engine.fuel}
-                    >
+                      value={engine.fuel}>
                       <AnimatedNumber
                         value={(engine.fuel / engine.maxFuel) * 100}
                         format={(value) => Math.round(value)}
@@ -313,10 +298,9 @@ const ShipControlContent = (_props, context) => {
             onClick={() => act('toggle_ai_control')}
           />
         </>
-      }
-    >
+      }>
       <LabeledControls>
-        <LabeledControls.Item label="Direction" width={'50%'}>
+        <LabeledControls.Item label="Direction" width={'100%'}>
           <Table collapsing>
             <Table.Row height={1}>
               <Table.Cell width={1}>
