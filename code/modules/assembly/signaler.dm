@@ -293,6 +293,10 @@
 	name = "\improper heartbeat anomaly core"
 	desc = "The neutralized core of a heartbeat anomaly. It's concerningly warm to the touch."
 
+/obj/item/assembly/signaler/anomaly/tvstatic
+	name = "\improper static anomaly core"
+	desc = "The neutralized core of a static anomaly. Your head hurts just staring at it"
+
 /obj/item/assembly/signaler/anomaly/attack_self()
 	return
 

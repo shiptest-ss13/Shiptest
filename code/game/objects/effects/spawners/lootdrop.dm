@@ -813,7 +813,14 @@
 		/obj/effect/anomaly/hallucination/planetary,
 		/obj/effect/anomaly/pyro/planetary,
 		/obj/effect/anomaly/vortex/planetary,
-		/obj/effect/anomaly/grav/high/planetary
+		/obj/effect/anomaly/grav/high/planetary,
+		/obj/effect/anomaly/heartbeat/planetary,
+		/obj/effect/anomaly/sparkler/planetary,
+		/obj/effect/anomaly/tvstatic/planetary,
+		/obj/effect/anomaly/veins/planetary,
+		/obj/effect/anomaly/plasmasoul/planetary,
+		/obj/effect/anomaly/phantom/planetary,
+		/obj/effect/anomaly/melter/planetary,
 	)
 
 /obj/effect/spawner/lootdrop/anomaly/big

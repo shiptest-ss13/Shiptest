@@ -3,56 +3,63 @@
 	icon_state = "static"
 	desc = "A mysterious anomaly. A hole in the world, endless buzzing emitting from it."
 	density = TRUE
-	aSignal = /obj/item/assembly/signaler/anomaly/veins
+	aSignal = /obj/item/assembly/signaler/anomaly/tvstatic
 	effectrange = 6
-	pulse_delay = 4
+	pulse_delay = 6
+	var/mob/living/carbon/victim
 
-/obj/effect/visible_heretic_influence/examine(mob/user)
+/obj/effect/anomaly/tvstatic/examine(mob/user)
 	. = ..()
-	if(IS_HERETIC(user) || !ishuman(user))
+	if(!iscarbon(user))
 		return
+	if(iscarbon(user))
+		var/mob/living/carbon/bah = user
+		to_chat(bah, span_userdanger("Your head aches as you stare into the [src]!"))
+		bah.adjustOrganLoss(ORGAN_SLOT_BRAIN, 10, 100)
 
-	var/mob/living/carbon/human_user = user
-	to_chat(human_user, span_userdanger("Your mind burns as you stare at the tear!"))
-	human_user.adjustOrganLoss(ORGAN_SLOT_BRAIN, 10, 190)
-
-/obj/effect/anomaly/veins/anomalyEffect()
+/obj/effect/anomaly/tvstatic/anomalyEffect()
 	..()
 
 	if(!COOLDOWN_FINISHED(src, pulse_cooldown))
 		return
 
 	COOLDOWN_START(src, pulse_cooldown, pulse_delay)
-	var/turf/spot = locate(rand(src.x-effectrange/2, src.x+effectrange/2), rand(src.y-effectrange/2, src.y+effectrange/2), src.z)
-	var/obj/effect/gibspawner/mess = pick(list(
-		/obj/effect/gibspawner/human,
-		/obj/effect/gibspawner/xeno,
-		/obj/effect/gibspawner/generic/animal
-	))
-	new mess(spot)
 
-	for(var/mob/living/carbon/suckee in range(effectrange, src))
-		if(suckee.run_armor_check(attack_flag = "melee") <= 40 )
-			suckee.bleed(20)
-			suckee.apply_damage(5, BRUTE)
-			visible_message("<span class='warning'>Blood starts to fly off of [suckee], heading for the [src]!")
+	for(var/mob/living/carbon/looking in range(effectrange, src))
+		if (HAS_TRAIT(looking, SEE_TURFS) || (looking.mind && HAS_TRAIT(looking.mind, SEE_TURFS)))
+			looking.adjustOrganLoss(ORGAN_SLOT_BRAIN, 10, 200)
+			playsound(looking, 'sound/effects/walkietalkie.ogg')
 
+
+		if(looking.getOrganLoss(ORGAN_SLOT_BRAIN) >= 150)
+			var/obj/effect/anomaly/tvstatic/expansion
+			expansion = new(looking.loc)
+			visible_message("<span class='warning'> The static overtakes [looking], [expansion] taking their place!</span>")
+			//looking.death() may be cool to have someone screaming while the Static overtakes them
+			expansion.victim = looking
+			looking.forceMove(expansion)
 	return
 
 
-/obj/effect/anomaly/veins/Bumped(atom/movable/AM)
+/obj/effect/anomaly/tvstatic/Bumped(atom/movable/AM)
 	anomalyEffect()
-	new /obj/effect/gibspawner/human(loc)
 
-/obj/effect/anomaly/veins/detonate()
-	for(var/mob/living/carbon/suckee in range(effectrange, src))
-		suckee.bleed(200)
-		visible_message("<span class='warning'>[suckee] hemorrages, a fountain of blood heading for [src]!")
-		anomalyEffect()
-		anomalyEffect()
+/obj/effect/anomaly/tvstatic/detonate()
+	for(var/mob/living/carbon/looking in range(effectrange, src))
+		visible_message("<span class='boldwarning'> The static lashes out!</span>")
+		sleep(5 SECONDS)
+		if (HAS_TRAIT(looking, SEE_TURFS) || (looking.mind && HAS_TRAIT(looking.mind, SEE_TURFS)))
+			looking.adjustOrganLoss(ORGAN_SLOT_BRAIN, 100, 200)
+			playsound(looking, 'sound/effects/walkietalkie.ogg')
 		anomalyEffect()
 	. = ..()
 
-/obj/effect/anomaly/veins/planetary
+/obj/effect/anomaly/tvstatic/anomalyNeutralize()
+	if(var/mob/living/carbon/victim)
+		victim.forceMove(drop_location())
+	. = ..()
+
+
+/obj/effect/anomaly/tvstatic/planetary
 	immortal = TRUE
 	immobile = TRUE

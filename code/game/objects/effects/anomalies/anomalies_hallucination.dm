@@ -7,6 +7,7 @@
 	var/ticks = 0
 	/// How many seconds between each small hallucination pulses
 	pulse_delay = 5
+	effectrange = 5
 
 /obj/effect/anomaly/hallucination/anomalyEffect(delta_time)
 	. = ..()
@@ -24,8 +25,8 @@
 		hallucination_pulse(our_turf, 10)
 	. = ..()
 
-/obj/effect/anomaly/hallucination/proc/hallucination_pulse(turf/open/location, range)
-	for(var/mob/living/carbon/human/near in view(location, range))
+/obj/effect/anomaly/hallucination/proc/hallucination_pulse(turf/open/location, effectrange)
+	for(var/mob/living/carbon/human/near in view(location, effectrange))
 		// If they are immune to hallucinations.
 		if (HAS_TRAIT(near, SEE_TURFS) || (near.mind && HAS_TRAIT(near.mind, SEE_TURFS)))
 			continue

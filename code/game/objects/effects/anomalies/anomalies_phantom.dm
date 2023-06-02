@@ -51,7 +51,7 @@
 			return
 		hand.fire()
 		i++
-		sleep() 20 TICKS
+		sleep(20 TICKS)
 	new /obj/effect/mob_spawn/human/corpse/damaged/legioninfested(loc)
 	. = ..()
 
