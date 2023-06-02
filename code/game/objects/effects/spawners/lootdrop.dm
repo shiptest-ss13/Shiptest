@@ -807,7 +807,6 @@
 /obj/effect/spawner/lootdrop/anomaly
 	name = "random anomaly spawner"
 	loot = list(
-		/obj/effect/anomaly/bioscrambler/planetary,
 		/obj/effect/anomaly/bluespace/planetary,
 		/obj/effect/anomaly/flux/planetary,
 		/obj/effect/anomaly/grav/planetary,
@@ -820,7 +819,6 @@
 /obj/effect/spawner/lootdrop/anomaly/big
 	name = "random big anomaly spawner"
 	loot = list(
-		/obj/effect/anomaly/bioscrambler/big/planetary,
 		/obj/effect/anomaly/bluespace/big/planetary,
 		/obj/effect/anomaly/flux/big/planetary,
 		/obj/effect/anomaly/grav/high/big/planetary,

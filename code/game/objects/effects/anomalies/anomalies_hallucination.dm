@@ -22,6 +22,7 @@
 	var/turf/open/our_turf = get_turf(src)
 	if(istype(our_turf))
 		hallucination_pulse(our_turf, 10)
+	. = ..()
 
 /obj/effect/anomaly/hallucination/proc/hallucination_pulse(turf/open/location, range)
 	for(var/mob/living/carbon/human/near in view(location, range))

@@ -1,10 +1,11 @@
 /obj/effect/anomaly/flux
-	name = "flux wave anomaly"
+	name = "tesla"
 	icon_state = "flux"
+	desc = "A mysterious anomaly that sends out a near constant stream of electrical arcs."
 	density = TRUE
 	aSignal = /obj/item/assembly/signaler/anomaly/flux
 	pulse_delay = 4
-	range = 0
+	effectrange = 0
 	var/canshock = FALSE
 	var/shockdamage = 20
 	var/explosive = FLUX_EXPLOSIVE
@@ -23,7 +24,7 @@
 /obj/effect/anomaly/flux/anomalyEffect()
 	..()
 	canshock = TRUE
-	for(var/mob/living/Mob in range(range, src))
+	for(var/mob/living/Mob in range(effectrange, src))
 		mobShock(Mob)
 
 	if(!COOLDOWN_FINISHED(src, pulse_cooldown))
@@ -60,16 +61,17 @@
 		if(FLUX_NO_EXPLOSION)
 			new /obj/effect/particle_effect/sparks(loc)
 
+	. = ..()
+
 /obj/effect/anomaly/flux/minor/Initialize(mapload, new_lifespan, drops_core = FALSE, explosive = FLUX_NO_EXPLOSION)
 	return ..()
 
 
 /obj/effect/anomaly/flux/big
 	immortal = TRUE
-	aSignal = null
 	shockdamage = 30
 	pulse_delay = 2
-	range = 1
+	effectrange = 1
 
 	zap_range = 2
 	zap_power = 3000

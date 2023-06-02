@@ -8,7 +8,9 @@
 	anchored = TRUE
 	light_range = 3
 
+	//aSignal drops as the core, bSignal allows people to signal to detonate
 	var/obj/item/assembly/signaler/anomaly/aSignal = /obj/item/assembly/signaler/anomaly
+	var/obj/item/assembly/signaler/anomaly/bSignal = /obj/item/assembly/signaler/anomaly/det_signal
 	var/area/impact_area
 
 	var/lifespan = 990
@@ -16,9 +18,10 @@
 	var/research_value
 
 	//for anomaly effects, range is how far the effects can reach, the cooldown lets us wire in effects that happen every pulse delay seconds
-	var/range = 6
+	var/effectrange = 6
 
 	COOLDOWN_DECLARE(pulse_cooldown)
+	COOLDOWN_DECLARE(pulse_secondary_cooldown)
 	var/pulse_delay = 15 SECONDS
 
 	var/countdown_colour
@@ -52,6 +55,17 @@
 		if(ISMULTIPLE(frequency, 2))//signaller frequencies are always uneven!
 			frequency++
 		aSignal.set_frequency(frequency)
+
+	if(bSignal)
+		bSignal = new bSignal(src)
+		bSignal.code = rand(1,100)
+		bSignal.anomaly_type = type
+		var/frequency = rand(MIN_FREE_FREQ, MAX_FREE_FREQ)
+		if(ISMULTIPLE(frequency, 2))//signaller frequencies are always uneven!
+			frequency++
+		bSignal.set_frequency(frequency)
+
+
 
 	if(lifespan)
 		if(new_lifespan)
@@ -90,6 +104,7 @@
 		step(src,pick(GLOB.alldirs))
 
 /obj/effect/anomaly/proc/detonate()
+	qdel(src)
 	return
 
 /obj/effect/anomaly/ex_act(severity, target)
@@ -112,9 +127,12 @@
 
 	qdel(src)
 
+
 /obj/effect/anomaly/attackby(obj/item/weapon, mob/user, params)
 	if(weapon.tool_behaviour == TOOL_ANALYZER && aSignal)
 		to_chat(user, span_notice("Analyzing... [src]'s unstable field is fluctuating along frequency [format_frequency(aSignal.frequency)], code [aSignal.code]."))
+		if(bSignal)
+			to_chat(user, span_notice("A second field is fluctuating along [format_frequency(bSignal.frequency)], code [bSignal.code]." ))
 		return TRUE
 
 	return ..()

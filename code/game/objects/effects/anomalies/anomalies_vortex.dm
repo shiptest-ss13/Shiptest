@@ -1,9 +1,10 @@
 
 /obj/effect/anomaly/vortex
-	name = "vortex anomaly"
+	name = "vortex"
 	icon_state = "vortex"
-	desc = "That's a nice station you have there. It'd be a shame if something happened to it."
+	desc = "A mysterious anomaly, this one destroys everything around it."
 	aSignal = /obj/item/assembly/signaler/anomaly/vortex
+	bSignal = null
 
 /obj/effect/anomaly/vortex/anomalyEffect()
 	..()
