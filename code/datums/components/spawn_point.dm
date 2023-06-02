@@ -38,7 +38,11 @@
 		crew.spawn_points.Add(src)
 	if(jobs_name.len)
 		for(var/jname in jobs_name)
-			crew.spawn_points_byjob_name[jname] += src
+			if(crew.spawn_points_byjob_name[jname])
+				crew.spawn_points_byjob_name[jname] += src
+			else
+				crew.spawn_points_byjob_name[jname] = list(src)
+
 
 /datum/component/spawn_point/proc/disconnect_from_crew()
 	if(!crew)
@@ -54,7 +58,8 @@
  */
 /datum/component/spawn_point/proc/spawn_player(mob/M)
 	var/atom/P = parent
-	. = P.JoinPlayerHere(M)
+	P.JoinPlayerHere(M)
+	. = M
 
 /datum/component/spawn_point/proc/connect_to_shuttle(atom/source, obj/docking_port/mobile/port)
 	if (crew)
@@ -62,9 +67,55 @@
 	if (port && port.current_ship && port.current_ship.crew)
 		connect_to_crew(port.current_ship.crew)
 
+/**
+ *
+ * To handle `/obj/effect/mob_spawn`
+ *
+ */
+/datum/component/spawn_point/mob_spawn
+	var/uses = 0
+	var/datum/job/spawner_job
 
-////
+/**
+ * _jobs : must be a list containing exacly one string being the name of the job.
+ */
 /datum/component/spawn_point/mob_spawn/Initialize(list/_jobs=list(), _exclusive=TRUE)
 	if(!istype(parent, /obj/effect/mob_spawn))
 		return COMPONENT_INCOMPATIBLE
-	return ..()
+	..()
+
+/datum/component/spawn_point/mob_spawn/Destroy()
+	disconnect_from_crew()
+
+/datum/component/spawn_point/mob_spawn/spawn_player(mob/M)
+	var/obj/effect/mob_spawn/P = parent
+	. = P.create(M.ckey)
+	if (parent) //The parent might get deleted if it's out of use.
+		update_uses()
+
+/datum/component/spawn_point/mob_spawn/connect_to_crew(datum/crew/_crew)
+	..()
+	spawner_job = crew.get_job_by_name(jobs_name[1])
+	if(!spawner_job)
+		spawner_job = new /datum/job(jobs_name[1], null)
+		spawner_job.is_human_job = FALSE
+		spawner_job.need_special_spawn_point = TRUE
+	update_uses()
+
+
+/datum/component/spawn_point/mob_spawn/disconnect_from_crew()
+	if(!crew)
+		return
+	update_uses()
+	crew.job_slots[spawner_job] -= uses
+
+	uses = 0
+	spawner_job = null
+	..()
+
+/datum/component/spawn_point/mob_spawn/proc/update_uses()
+	if (!crew)
+		return
+	var/obj/effect/mob_spawn/P = parent
+	crew.job_slots[spawner_job] += P.uses - uses
+	uses = P.uses

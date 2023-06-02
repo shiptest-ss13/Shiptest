@@ -86,9 +86,9 @@
 	SHOULD_CALL_PARENT(TRUE)
 
 	if (spawn_points_byjob_name[job.name] && length(spawn_points_byjob_name[job.name]) > 0)
-		pick(spawn_points_byjob_name[job.name]).spawn_player(M)
+		. = pick(spawn_points_byjob_name[job.name]).spawn_player(M)
 	else
-		pick(spawn_points).spawn_player(M)
+		. = pick(spawn_points).spawn_player(M)
 
 	manifest_inject(M, M.client, job)
 
@@ -222,3 +222,9 @@
 	if(cand_mob && cand_mob.mind != candidate)
 		stack_trace("AAAAAAAAAAAAAAAGH")
 	return (cand_mob != null && cand_mob.client && !cand_mob.client.is_afk() ? cand_mob : null)
+
+/datum/crew/proc/get_job_by_name(var/jobname)
+	for(var/datum/job/job in job_slots)
+		if (job.name == jobname)
+			return job
+	return FALSE

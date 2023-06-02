@@ -305,9 +305,6 @@
 
 	transfer_character()
 
-	//Removes a job slot
-	crew.job_slots[job]--
-
 	//Remove the player from the join queue if he was in one and reset the timer
 	SSticker.queued_players -= src
 	SSticker.queue_delay = 4
@@ -317,7 +314,7 @@
 		character = equip
 
 	if(job && !job.override_latejoin_spawn(character))
-		crew.join_crew(character, job)
+		character = crew.join_crew(character, job)
 		var/atom/movable/screen/splash/Spl = new(character.client, TRUE)
 		Spl.Fade(TRUE)
 		character.playsound_local(get_turf(character), 'sound/voice/ApproachingTG.ogg', 25)

@@ -32,6 +32,7 @@
 	var/show_flavour = TRUE
 	var/banType = ROLE_LAVALAND
 	var/ghost_usable = TRUE
+	var/jobname //The name of the job associated with this spawner
 
 //ATTACK GHOST IGNORING PARENT RETURN VALUE
 /obj/effect/mob_spawn/attack_ghost(mob/user)
@@ -61,6 +62,15 @@
 	else if(ghost_usable)
 		GLOB.poi_list |= src
 		LAZYADD(GLOB.mob_spawners[name], src)
+
+/obj/effect/mob_spawn/ComponentInitialize()
+	if (ghost_usable && !death)
+		AddComponent(/datum/component/spawn_point/mob_spawn, list(jobname ? jobname : name))
+
+/obj/effect/mob_spawn/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock, idnum, override)
+	. = ..()
+	SEND_SIGNAL(src, COMSIG_ATOM_CONNECT_TO_SHUTTLE, port)
+
 
 /obj/effect/mob_spawn/Destroy()
 	GLOB.poi_list -= src
