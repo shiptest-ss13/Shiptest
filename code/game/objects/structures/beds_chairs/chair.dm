@@ -201,7 +201,6 @@
 	item_chair = null
 	icon_state = "officechair_gray"
 
-
 /obj/structure/chair/office/Moved()
 	. = ..()
 	if(has_gravity())
