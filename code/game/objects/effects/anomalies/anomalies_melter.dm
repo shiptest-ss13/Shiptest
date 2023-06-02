@@ -33,6 +33,7 @@
 /obj/effect/anomaly/melter/detonate()
 	for(var/mob/living/carbon/meltee in range(effectrange, src))
 		for(var/X in meltee.get_equipped_items())
+			var/obj/item/I = X
 			I.acid_act(200, 20)
 			I.update_icon()
 	for(var/obj/item in range(effectrange, src))
