@@ -2768,7 +2768,6 @@
 /area/ship/cargo)
 "Em" = (
 /obj/machinery/rnd/production/techfab/department/security,
-/obj/structure/extinguisher_cabinet/directional/north,
 /obj/machinery/light_switch{
 	dir = 1;
 	pixel_x = 8;
@@ -2777,6 +2776,7 @@
 /obj/machinery/camera/autoname{
 	dir = 5
 	},
+/obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
 "Eo" = (
@@ -2812,8 +2812,8 @@
 	pixel_x = -10;
 	pixel_y = 3
 	},
-/obj/structure/sign/poster/contraband/donut_corp{
-	pixel_x = 32
+/obj/machinery/light/directional/east{
+	light_color = "#e8eaff"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
@@ -2967,14 +2967,13 @@
 /obj/effect/turf_decal/corner/transparent/black/half{
 	dir = 4
 	},
-/obj/structure/railing{
-	color = "#A47449";
-	dir = 1
-	},
 /obj/machinery/jukebox,
 /obj/effect/decal/cleanable/wrapping,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
+	},
+/obj/structure/railing/wood{
+	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
@@ -3526,12 +3525,11 @@
 /obj/effect/turf_decal/corner/transparent/black/half{
 	dir = 8
 	},
-/obj/structure/railing{
-	color = "#A47449";
-	dir = 1
-	},
 /obj/machinery/light/small/directional/west,
 /obj/structure/chair,
+/obj/structure/railing/wood{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "Mi" = (
@@ -4544,9 +4542,6 @@
 /obj/item/trash/can/food{
 	pixel_x = -8;
 	pixel_y = 4
-	},
-/obj/machinery/light/directional/east{
-	light_color = "#e8eaff"
 	},
 /obj/machinery/button/door{
 	dir = 8;
