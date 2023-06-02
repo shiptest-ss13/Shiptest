@@ -187,7 +187,7 @@ export const ShipSelect = (props, context) => {
                   <LabeledList.Item label="Description">
                     {template.desc || 'No Description'}
                   </LabeledList.Item>
-                  <LabeledList.Item Label="Ship Tags">
+                  <LabeledList.Item label="Ship Tags">
                     {template.tags || 'No Tags'}
                   </LabeledList.Item>
                   <LabeledList.Item label="Crew">
