@@ -32,6 +32,6 @@
 		i = i + 1
 	. = ..()
 
-/obj/effect/anomaly/sparkler/plantary
+/obj/effect/anomaly/sparkler/planetary
 	immortal = TRUE
 	immobile = TRUE
