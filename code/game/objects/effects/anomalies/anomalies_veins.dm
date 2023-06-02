@@ -4,7 +4,7 @@
 	desc = "A mysterious anomaly, surrounded by blood of an unknown origin."
 	density = TRUE
 	aSignal = /obj/item/assembly/signaler/anomaly/veins
-	effectrange = 6
+	effectrange = 3
 	pulse_delay = 4
 
 
@@ -15,13 +15,7 @@
 		return
 
 	COOLDOWN_START(src, pulse_cooldown, pulse_delay)
-	var/turf/spot = locate(rand(src.x-effectrange/2, src.x+effectrange/2), rand(src.y-effectrange/2, src.y+effectrange/2), src.z)
-	var/obj/effect/gibspawner/mess = pick(list(
-		/obj/effect/gibspawner/human,
-		/obj/effect/gibspawner/xeno,
-		/obj/effect/gibspawner/generic/animal
-	))
-	new mess(spot)
+
 
 	for(var/mob/living/carbon/suckee in range(effectrange, src))
 		if(suckee.run_armor_check(attack_flag = "melee") <= 40 )
@@ -34,7 +28,13 @@
 
 /obj/effect/anomaly/veins/Bumped(atom/movable/AM)
 	anomalyEffect()
-	new /obj/effect/gibspawner/human(loc)
+	var/turf/spot = locate(rand(src.x-effectrange/2, src.x+effectrange/2), rand(src.y-effectrange/2, src.y+effectrange/2), src.z)
+	var/obj/effect/gibspawner/mess = pick(list(
+		/obj/effect/gibspawner/human,
+		/obj/effect/gibspawner/xeno,
+		/obj/effect/gibspawner/generic/animal
+	))
+	new mess(spot)
 
 /obj/effect/anomaly/veins/detonate()
 	for(var/mob/living/carbon/suckee in range(effectrange, src))

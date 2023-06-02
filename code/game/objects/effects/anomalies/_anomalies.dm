@@ -104,6 +104,7 @@
 		step(src,pick(GLOB.alldirs))
 
 /obj/effect/anomaly/proc/detonate()
+	new /obj/effect/particle_effect/smoke/bad(loc)
 	qdel(src)
 	return
 
