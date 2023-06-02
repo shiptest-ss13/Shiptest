@@ -129,7 +129,7 @@
 	planet = DYNAMIC_WORLD_WASTEPLANET
 	icon_state = "globe"
 	color = "#a9883e"
-	mapgen = /datum/map_generator/planet_generator/waste
+	mapgen = /datum/map_generator/single_biome/wasteplanet
 	default_baseturf = /turf/open/floor/plating/asteroid/wasteplanet
 	weather_controller_type = /datum/weather_controller/chlorine
 	ruin_type = RUINTYPE_WASTE
@@ -139,13 +139,13 @@
 	name = "gas giant"
 	desc = "A floating ball of gas, with high gravity and even higher pressure."
 	planet = DYNAMIC_WORLD_GAS_GIANT
-	icon_state = "giant"
+	icon_state = "globe"
 	color = COLOR_DARK_MODERATE_ORANGE
 	mapgen = /datum/map_generator/single_biome/gas_giant
 	default_baseturf = /turf/open/chasm/gas_giant
 	weather_controller_type = null
 	ruin_type = null //it's a Gas Giant. Not Cloud fuckin City
-	weight = 5
+	weight = 0
 	preserve_level = TRUE
 	landing_sound = 'sound/effects/planet_landing_1.ogg'
 
@@ -156,7 +156,7 @@
 	color = COLOR_PURPLE
 	mapgen = /datum/map_generator/single_biome/plasma_giant
 	default_baseturf = /turf/open/chasm/gas_giant/plasma
-	weight = 1
-	icon_state = "giant"
+	weight = 0
+	icon_state = "globe"
 	preserve_level = TRUE
 	landing_sound = 'sound/effects/planet_landing_1.ogg'
