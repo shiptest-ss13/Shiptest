@@ -102,7 +102,7 @@ export const ShipSelect = (props, context) => {
                   {selectedShip.desc || 'No Description'}
                 </LabeledList.Item>
                 <LabeledList.Item label="Ship Tags">
-                  {selectedShip.tags.length ? selectedShip.tags.join('') : 'Not Set'}
+                  {selectedShip.tags || 'No Tags'}
                 </LabeledList.Item>
                 <LabeledList.Item label="Ship Memo">
                   {selectedShip.memo || 'No Memo'}
@@ -188,7 +188,7 @@ export const ShipSelect = (props, context) => {
                     {template.desc || 'No Description'}
                   </LabeledList.Item>
                   <LabeledList.Item label="Ship Tags">
-                    {selectedShip.tags.length ? selectedShip.tags.join('') : 'Not Set'}
+                    {template.tags || 'No Tags'}
                   </LabeledList.Item>
                   <LabeledList.Item label="Crew">
                     {template.crewCount}
