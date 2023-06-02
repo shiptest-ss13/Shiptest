@@ -74,13 +74,12 @@
 		var/atom/target = get_edge_target_turf(Guy, get_dir(src, get_step_away(Guy, src)))
 		Guy.throw_at(target, 5, 1)
 		boing = 0
-		if(iscarbon(Guy))
-			for(var/mob/living/carbon/carbon)
-				if(carbon.run_armor_check(attack_flag = "melee") >= 20)
-					carbon.break_random_bone()
-				else if(carbon.run_armor_check(attack_flag = "melee") >= 40)
-					carbon.break_all_bones() //crunch
-				carbon.apply_damage(10, BRUTE)
+		for(var/mob/living/carbon/guy in range(0, src))
+			if(guy.run_armor_check(attack_flag = "melee") >= 20)
+				guy.break_random_bone()
+			else if(guy.run_armor_check(attack_flag = "melee") >= 40)
+				guy.break_all_bones() //crunch
+			guy.apply_damage(10, BRUTE)
 
 /obj/effect/anomaly/grav/high
 	effectrange = 5
