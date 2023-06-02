@@ -29,8 +29,7 @@
 		if (HAS_TRAIT(looking, SEE_TURFS) || (looking.mind && HAS_TRAIT(looking.mind, SEE_TURFS)))
 			looking.adjustOrganLoss(ORGAN_SLOT_BRAIN, 10, 200)
 			playsound(looking, 'sound/effects/walkietalkie.ogg')
-
-/*
+			/*
 		if(looking.getOrganLoss(ORGAN_SLOT_BRAIN) >= 150)
 			var/mob/living/carbon/victim = looking
 			var/obj/effect/anomaly/tvstatic/expansion
@@ -39,8 +38,9 @@
 			//looking.death() may be cool to have someone screaming while the Static overtakes them
 			expansion.victim = victim
 			victim.forceMove(expansion)
+			*/
 	return
-*/
+
 
 /obj/effect/anomaly/tvstatic/Bumped(atom/movable/AM)
 	anomalyEffect()
