@@ -87,8 +87,8 @@
 	feature_spawn_list = list(
 		/obj/structure/geyser/random = 2,
 		/obj/structure/elite_tumor = 1,
-		/obj/effect/spawner/lootdrop/anomaly = 5,
-		/obj/effect/spawner/lootdrop/anomaly/big = 1 //get out of here stalker
+		/obj/effect/spawner/lootdrop/anomaly = 3,
+		/obj/effect/spawner/lootdrop/anomaly/big = 0.1 //get out of here stalker
 	)
 
 	flora_spawn_chance = 5
@@ -151,7 +151,7 @@
 		/obj/structure/elite_tumor = 1,
 		/obj/structure/spawner/ice_moon/rockplanet = 4,
 		/obj/effect/spawner/lootdrop/anomaly = 3,
-		/obj/effect/spawner/lootdrop/anomaly/big = 2,
+		/obj/effect/spawner/lootdrop/anomaly/big = 0.1
 	)
 	mob_spawn_chance = 6
 	mob_spawn_list = list(
