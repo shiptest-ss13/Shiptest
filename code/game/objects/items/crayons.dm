@@ -694,7 +694,7 @@
 /obj/item/toy/crayon/spraycan/afterattack(atom/target, mob/user, proximity, params)
 	if(!proximity)
 		return
-	
+
 	if(istype(target, /obj/structure/railing/modern))
 		return
 
