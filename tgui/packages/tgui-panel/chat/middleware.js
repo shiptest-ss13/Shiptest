@@ -6,7 +6,13 @@
 
 import DOMPurify from 'dompurify';
 import { storage } from 'common/storage';
-import { loadSettings, updateSettings } from '../settings/actions';
+import {
+  loadSettings,
+  updateSettings,
+  addHighlightSetting,
+  removeHighlightSetting,
+  updateHighlightSetting,
+} from '../settings/actions';
 import { selectSettings } from '../settings/selectors';
 import {
   addChatPage,
@@ -123,7 +129,14 @@ export const chatMiddleware = (store) => {
       chatRenderer.rebuildChat();
       return next(action);
     }
-    if (type === updateSettings.type || type === loadSettings.type) {
+
+    if (
+      type === updateSettings.type ||
+      type === loadSettings.type ||
+      type === addHighlightSetting.type ||
+      type === removeHighlightSetting.type ||
+      type === updateHighlightSetting.type
+    ) {
       next(action);
       const settings = selectSettings(store.getState());
       chatRenderer.setHighlight(
@@ -132,6 +145,7 @@ export const chatMiddleware = (store) => {
         settings.matchWord,
         settings.matchCase
       );
+
       return;
     }
     if (type === 'roundrestart') {
