@@ -99,7 +99,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	for(var/I in active_tickets)
 		var/datum/admin_help/AH = I
 		if(AH.initiator)
-			if(isnull(AH.statclick))
+			if(QDELETED(AH.statclick))
 				total_statclick_errors++
 				AH.statclick = new(null, AH)
 				if(!AH.error_screamed)
