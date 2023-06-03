@@ -51,3 +51,13 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/salad/eggbowl
 	subcategory = CAT_EGG
+
+/datum/crafting_recipe/food/eggroll
+	name = "Eggroll"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/grown/seaweed = 1,
+		/obj/item/reagent_containers/food/snacks/salad/boiledrice = 1,
+		/obj/item/reagent_containers/food/snacks/friedegg = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/eggroll
+	subcategory = CAT_EGG

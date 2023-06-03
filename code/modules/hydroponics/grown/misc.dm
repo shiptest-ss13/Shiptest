@@ -271,3 +271,12 @@
 	bitesize_mod = 1
 	foodtype = VEGETABLES
 	grind_results = list(/datum/reagent/water = 1, /datum/reagent/consumable/sodiumchloride = 2)
+
+/obj/item/reagent_containers/food/snacks/grown/seaweed/sheet
+	name = "seaweed sheet"
+	desc = "A dried sheet of seaweed used for making sushi."
+	icon_state = "seaweedsheet"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 1)
+	tastes = list("seaweed" = 1)
+	foodtype = VEGETABLES
+	w_class = WEIGHT_CLASS_SMALL

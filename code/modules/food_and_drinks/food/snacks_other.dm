@@ -761,12 +761,3 @@
 	filling_color = "#ECA735"
 	tastes = list("fried corn" = 1)
 	foodtype = JUNKFOOD | FRIED
-
-/obj/item/reagent_containers/food/snacks/seaweedsheet
-	name = "seaweed sheet"
-	desc = "A dried sheet of seaweed used for making sushi."
-	icon_state = "seaweedsheet"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 1)
-	tastes = list("seaweed" = 1)
-	foodtype = VEGETABLES
-	w_class = WEIGHT_CLASS_SMALL
