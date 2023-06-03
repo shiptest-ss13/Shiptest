@@ -23,9 +23,7 @@
 	dir = 1
 	},
 /mob/living/simple_animal/chicken,
-/turf/open/floor/plating{
-	icon_state = "greenerdirt"
-	},
+/turf/open/floor/ship/dirt/dark,
 /area/ship/roumain)
 "ap" = (
 /obj/machinery/airalarm/directional/east,
@@ -69,9 +67,7 @@
 "aM" = (
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/open/floor/grass{
-	icon_state = "junglegrass"
-	},
+/turf/open/floor/grass/ship/jungle,
 /area/ship/roumain)
 "aS" = (
 /obj/item/storage/box/masks,
@@ -99,9 +95,7 @@
 /area/ship/medical)
 "aY" = (
 /obj/structure/destructible/tribal_torch,
-/turf/open/floor/grass{
-	icon_state = "junglegrass"
-	},
+/turf/open/floor/grass/ship/jungle,
 /area/ship/crew/toilet)
 "bi" = (
 /obj/machinery/mineral/ore_redemption,
@@ -138,9 +132,7 @@
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/closet/mob_capture,
-/turf/open/floor/grass{
-	icon_state = "junglegrass"
-	},
+/turf/open/floor/grass/ship/jungle,
 /area/ship/roumain)
 "bW" = (
 /obj/structure/railing/corner{
@@ -150,9 +142,7 @@
 /obj/item/seeds/tower,
 /obj/item/seeds/tower,
 /obj/item/hatchet,
-/turf/open/floor/grass{
-	icon_state = "junglegrass"
-	},
+/turf/open/floor/ship/dirt/dark,
 /area/ship/roumain)
 "bY" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -181,18 +171,13 @@
 /mob/living/simple_animal/crab{
 	name = "Jannet"
 	},
-/turf/open/floor/plating{
-	icon_state = "riverwater_motion";
-	name = "wet plating"
-	},
+/turf/open/floor/plating/ship/water,
 /area/ship/roumain)
 "cj" = (
 /obj/structure/railing{
 	dir = 8
 	},
-/turf/open/floor/plating{
-	icon_state = "greenerdirt"
-	},
+/turf/open/floor/ship/dirt/dark,
 /area/ship/roumain)
 "co" = (
 /obj/machinery/power/terminal,
@@ -262,15 +247,18 @@
 "dq" = (
 /turf/closed/wall/r_wall,
 /area/ship/crew/toilet)
+"ds" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/ausbushes/brflowers,
+/turf/open/floor/grass/ship/jungle,
+/area/ship/roumain)
 "dV" = (
 /obj/structure/chair/pew/right{
 	dir = 1
 	},
 /obj/structure/flora/ausbushes/brflowers,
 /mob/living/simple_animal/hostile/retaliate/goat,
-/turf/open/floor/grass{
-	icon_state = "junglegrass"
-	},
+/turf/open/floor/grass/ship/jungle,
 /area/ship/roumain)
 "eU" = (
 /obj/effect/turf_decal/industrial/warning,
@@ -309,9 +297,7 @@
 /obj/item/reagent_containers/food/snacks/meat/slab,
 /obj/item/reagent_containers/food/snacks/meat/slab,
 /obj/item/reagent_containers/food/snacks/meat/slab/bear,
-/turf/open/floor/grass{
-	icon_state = "junglegrass"
-	},
+/turf/open/floor/grass/ship/jungle,
 /area/ship/roumain)
 "fi" = (
 /turf/closed/wall/r_wall,
@@ -402,9 +388,7 @@
 	dir = 1
 	},
 /obj/structure/flora/ausbushes/brflowers,
-/turf/open/floor/grass{
-	icon_state = "junglegrass"
-	},
+/turf/open/floor/grass/ship/jungle,
 /area/ship/roumain)
 "go" = (
 /obj/machinery/power/apc/auto_name/west,
@@ -422,6 +406,12 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
+"gK" = (
+/obj/structure/cable/orange{
+	icon_state = "2-8"
 	},
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
@@ -502,9 +492,7 @@
 /obj/item/reagent_containers/food/snacks/egg,
 /obj/item/seeds/lavaland/puce,
 /obj/item/seeds/lavaland/puce,
-/turf/open/floor/grass{
-	icon_state = "junglegrass"
-	},
+/turf/open/floor/ship/dirt/dark,
 /area/ship/roumain)
 "hT" = (
 /obj/structure/cable/orange{
@@ -547,9 +535,7 @@
 	pixel_x = 6;
 	pixel_y = 7
 	},
-/turf/open/floor/grass{
-	icon_state = "junglegrass"
-	},
+/turf/open/floor/grass/ship/jungle,
 /area/ship/roumain)
 "ir" = (
 /obj/structure/cable/orange{
@@ -599,10 +585,7 @@
 	dir = 8
 	},
 /obj/structure/flora/ausbushes/reedbush,
-/turf/open/floor/plating{
-	icon_state = "riverwater_motion";
-	name = "wet plating"
-	},
+/turf/open/floor/plating/ship/water,
 /area/ship/roumain)
 "iR" = (
 /obj/structure/cable/orange{
@@ -627,7 +610,7 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
-/turf/open/floor/plating/grass/jungle/actuallydark,
+/turf/open/floor/grass/ship/jungle,
 /area/ship/roumain)
 "iY" = (
 /obj/effect/spawner/structure/window/reinforced,
@@ -721,18 +704,14 @@
 	desc = "A sturdy oak tree imported directly from the homeworld of the Montagne who runs the ship it resides on. It is planted in soil from the same place.";
 	name = "Montagne's Oak"
 	},
-/turf/open/floor/grass{
-	icon_state = "junglegrass"
-	},
+/turf/open/floor/grass/ship/jungle,
 /area/ship/roumain)
 "ko" = (
 /obj/structure/railing{
 	dir = 1
 	},
 /obj/structure/destructible/tribal_torch,
-/turf/open/floor/grass{
-	icon_state = "junglegrass"
-	},
+/turf/open/floor/grass/ship/jungle,
 /area/ship/roumain)
 "kD" = (
 /obj/effect/turf_decal/siding/wood{
@@ -768,16 +747,16 @@
 /obj/item/flashlight/seclite,
 /obj/item/borg/upgrade/modkit/indoors,
 /obj/item/gun/energy/kinetic_accelerator,
-/obj/item/t_scanner/adv_mining_scanner,
 /obj/item/storage/bag/ore,
 /obj/structure/cable/orange{
 	icon_state = "4-10"
 	},
 /obj/item/shovel,
 /obj/item/gps/mining,
-/obj/item/pickaxe/mini,
 /obj/structure/closet/secure_closet/miningcloset,
 /obj/item/stack/marker_beacon/thirty,
+/obj/item/pickaxe,
+/obj/item/t_scanner/adv_mining_scanner/lesser,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
 "li" = (
@@ -844,9 +823,7 @@
 	pixel_y = 9;
 	pixel_x = -4
 	},
-/turf/open/floor/plating{
-	icon_state = "greenerdirt"
-	},
+/turf/open/floor/ship/dirt/dark,
 /area/ship/roumain)
 "lM" = (
 /obj/structure/railing/corner{
@@ -857,9 +834,7 @@
 /obj/item/seeds/cotton,
 /obj/item/storage/bag/plants/portaseeder,
 /obj/item/storage/bag/plants,
-/turf/open/floor/grass{
-	icon_state = "junglegrass"
-	},
+/turf/open/floor/ship/dirt/dark,
 /area/ship/roumain)
 "lO" = (
 /obj/structure/cable/orange{
@@ -883,9 +858,7 @@
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/item/kirbyplants/random,
-/turf/open/floor/grass{
-	icon_state = "junglegrass"
-	},
+/turf/open/floor/grass/ship/jungle,
 /area/ship/roumain)
 "mr" = (
 /obj/structure/cable/orange{
@@ -943,9 +916,7 @@
 	dir = 8;
 	pixel_x = 32
 	},
-/turf/open/floor/grass{
-	icon_state = "junglegrass"
-	},
+/turf/open/floor/grass/ship/jungle,
 /area/ship/crew/toilet)
 "mS" = (
 /obj/structure/cable/orange{
@@ -965,9 +936,7 @@
 	dir = 1
 	},
 /mob/living/simple_animal/cow,
-/turf/open/floor/plating{
-	icon_state = "greenerdirt"
-	},
+/turf/open/floor/ship/dirt/dark,
 /area/ship/roumain)
 "nk" = (
 /obj/item/storage/box/emptysandbags,
@@ -976,14 +945,14 @@
 /obj/item/flashlight/seclite,
 /obj/item/borg/upgrade/modkit/indoors,
 /obj/item/gun/energy/kinetic_accelerator,
-/obj/item/t_scanner/adv_mining_scanner,
 /obj/item/storage/bag/ore,
 /obj/item/gun/ballistic/shotgun/winchester/mk1/lethal,
 /obj/item/shovel,
 /obj/item/gps/mining,
-/obj/item/pickaxe/mini,
 /obj/structure/closet/secure_closet/miningcloset,
 /obj/item/stack/marker_beacon/thirty,
+/obj/item/pickaxe,
+/obj/item/t_scanner/adv_mining_scanner/lesser,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
 "nt" = (
@@ -1055,10 +1024,7 @@
 /area/ship/engineering/engine)
 "pd" = (
 /obj/structure/flora/rock/jungle,
-/turf/open/floor/plating{
-	icon_state = "riverwater_motion";
-	name = "wet plating"
-	},
+/turf/open/floor/plating/ship/water,
 /area/ship/roumain)
 "pH" = (
 /obj/structure/cable/orange{
@@ -1119,40 +1085,43 @@
 /area/ship/storage)
 "qJ" = (
 /obj/structure/destructible/tribal_torch,
-/turf/open/floor/grass{
-	icon_state = "junglegrass"
-	},
+/turf/open/floor/grass/ship/jungle,
 /area/ship/roumain)
 "qN" = (
 /obj/structure/railing/corner{
 	dir = 1
 	},
-/turf/open/floor/plating{
-	icon_state = "greenerdirt"
-	},
+/turf/open/floor/ship/dirt/dark,
 /area/ship/roumain)
 "qQ" = (
-/obj/item/clothing/suit/space/hardsuit/mining/heavy,
-/obj/item/clothing/mask/gas/hunter,
 /obj/machinery/suit_storage_unit/inherit,
 /obj/effect/turf_decal/siding/wood/end,
+/obj/item/clothing/suit/space/hardsuit/mining/independent,
+/obj/item/clothing/mask/breath,
+/obj/item/tank/internals/oxygen,
 /turf/open/floor/wood/mahogany,
+/area/ship/roumain)
+"qZ" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/shutters{
+	name = "Body Shutters";
+	id = "body_shutters"
+	},
+/obj/structure/cable/orange{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating,
 /area/ship/roumain)
 "re" = (
 /obj/structure/railing/corner{
 	dir = 4
 	},
-/turf/open/floor/plating{
-	icon_state = "greenerdirt"
-	},
+/turf/open/floor/ship/dirt/dark,
 /area/ship/roumain)
 "rj" = (
 /obj/structure/table/wood,
 /obj/item/slimepotion/slime/sentience,
-/obj/item/slimepotion/slime/sentience,
-/turf/open/floor/grass{
-	icon_state = "junglegrass"
-	},
+/turf/open/floor/grass/ship/jungle,
 /area/ship/roumain)
 "rD" = (
 /obj/effect/turf_decal/siding/wood/end,
@@ -1162,15 +1131,11 @@
 /turf/open/floor/wood/yew,
 /area/ship/roumain)
 "rE" = (
-/turf/open/floor/grass{
-	icon_state = "junglegrass"
-	},
+/turf/open/floor/grass/ship/jungle,
 /area/ship/crew/toilet)
 "rK" = (
 /obj/machinery/airalarm/directional/east,
-/turf/open/floor/grass{
-	icon_state = "junglegrass"
-	},
+/turf/open/floor/grass/ship/jungle,
 /area/ship/crew/toilet)
 "sb" = (
 /obj/effect/turf_decal/industrial/warning,
@@ -1182,9 +1147,7 @@
 /obj/structure/railing{
 	dir = 10
 	},
-/turf/open/floor/plating{
-	icon_state = "greenerdirt"
-	},
+/turf/open/floor/ship/dirt/dark,
 /area/ship/roumain)
 "sr" = (
 /obj/machinery/door/airlock/mining{
@@ -1215,10 +1178,14 @@
 /obj/effect/turf_decal/stoneborder{
 	dir = 1
 	},
-/turf/open/floor/plating{
-	icon_state = "greenerdirt"
-	},
+/turf/open/floor/ship/dirt/dark,
 /area/ship/crew/toilet)
+"sA" = (
+/obj/structure/cable/orange{
+	icon_state = "1-4"
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "sD" = (
 /obj/structure/cable/orange{
 	icon_state = "1-2"
@@ -1313,18 +1280,14 @@
 /area/ship/storage)
 "uI" = (
 /obj/structure/railing,
-/turf/open/floor/plating{
-	icon_state = "greenerdirt"
-	},
+/turf/open/floor/ship/dirt/dark,
 /area/ship/roumain)
 "uM" = (
 /obj/structure/railing/corner{
 	dir = 1
 	},
 /obj/item/lighter,
-/turf/open/floor/plating{
-	icon_state = "greenerdirt"
-	},
+/turf/open/floor/ship/dirt/dark,
 /area/ship/roumain)
 "uP" = (
 /obj/effect/turf_decal/industrial/warning,
@@ -1398,24 +1361,18 @@
 /area/ship/roumain)
 "ww" = (
 /obj/structure/sink/puddle,
-/turf/open/floor/plating{
-	icon_state = "greenerdirt"
-	},
+/turf/open/floor/ship/dirt/dark,
 /area/ship/crew/toilet)
 "wA" = (
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/railing,
-/turf/open/floor/grass{
-	icon_state = "junglegrass"
-	},
+/turf/open/floor/grass/ship/jungle,
 /area/ship/roumain)
 "wD" = (
 /obj/vehicle/ridden/wheelchair,
 /obj/item/melee/transforming/cleaving_saw/old,
-/turf/open/floor/plating{
-	icon_state = "greenerdirt"
-	},
+/turf/open/floor/ship/dirt/dark,
 /area/ship/roumain)
 "wE" = (
 /obj/machinery/door/airlock/glass{
@@ -1471,25 +1428,18 @@
 /obj/structure/railing{
 	dir = 8
 	},
-/turf/open/floor/plating{
-	icon_state = "riverwater_motion";
-	name = "wet plating"
-	},
+/turf/open/floor/plating/ship/water,
 /area/ship/roumain)
 "xC" = (
 /obj/structure/chair/pew/right{
 	dir = 1
 	},
 /obj/structure/flora/ausbushes/brflowers,
-/turf/open/floor/grass{
-	icon_state = "junglegrass"
-	},
+/turf/open/floor/grass/ship/jungle,
 /area/ship/roumain)
 "xD" = (
 /obj/structure/sink/puddle,
-/turf/open/floor/plating{
-	icon_state = "greenerdirt"
-	},
+/turf/open/floor/ship/dirt/dark,
 /area/ship/medical)
 "yn" = (
 /obj/structure/cable/orange{
@@ -1550,9 +1500,7 @@
 "yN" = (
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/ausbushes/grassybush,
-/turf/open/floor/grass{
-	icon_state = "junglegrass"
-	},
+/turf/open/floor/grass/ship/jungle,
 /area/ship/roumain)
 "yV" = (
 /obj/item/soap/deluxe,
@@ -1567,9 +1515,7 @@
 /obj/effect/turf_decal/stoneborder{
 	dir = 1
 	},
-/turf/open/floor/plating{
-	icon_state = "greenerdirt"
-	},
+/turf/open/floor/ship/dirt/dark,
 /area/ship/crew/toilet)
 "yZ" = (
 /obj/effect/spawner/structure/window/reinforced,
@@ -1647,15 +1593,20 @@
 	},
 /obj/machinery/suit_storage_unit/inherit,
 /obj/item/clothing/suit/space/hardsuit/mining/independent,
-/obj/item/clothing/mask/gas/hunter,
+/obj/item/clothing/mask/breath,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
+"Ac" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/structure/kitchenspike,
+/turf/open/floor/ship/dirt/dark,
+/area/ship/roumain)
 "Ao" = (
 /obj/structure/railing/corner,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating{
-	icon_state = "greenerdirt"
-	},
+/turf/open/floor/ship/dirt/dark,
 /area/ship/roumain)
 "Ar" = (
 /obj/structure/closet/crate/freezer,
@@ -1732,9 +1683,7 @@
 	dir = 1
 	},
 /mob/living/simple_animal/chicken,
-/turf/open/floor/plating{
-	icon_state = "greenerdirt"
-	},
+/turf/open/floor/ship/dirt/dark,
 /area/ship/roumain)
 "Bu" = (
 /obj/effect/spawner/structure/window/reinforced,
@@ -1758,17 +1707,13 @@
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/machinery/smartfridge/drying_rack,
-/turf/open/floor/grass{
-	icon_state = "junglegrass"
-	},
+/turf/open/floor/grass/ship/jungle,
 /area/ship/roumain)
 "Bz" = (
 /obj/structure/railing{
 	dir = 1
 	},
-/turf/open/floor/plating{
-	icon_state = "greenerdirt"
-	},
+/turf/open/floor/ship/dirt/dark,
 /area/ship/roumain)
 "BB" = (
 /obj/structure/table/wood,
@@ -1801,9 +1746,7 @@
 	dir = 1
 	},
 /mob/living/simple_animal/cow,
-/turf/open/floor/plating{
-	icon_state = "greenerdirt"
-	},
+/turf/open/floor/ship/dirt/dark,
 /area/ship/roumain)
 "Cr" = (
 /obj/structure/cable/orange{
@@ -1833,9 +1776,7 @@
 /obj/structure/chair/pew{
 	dir = 1
 	},
-/turf/open/floor/plating{
-	icon_state = "greenerdirt"
-	},
+/turf/open/floor/ship/dirt/dark,
 /area/ship/roumain)
 "CF" = (
 /obj/effect/turf_decal/siding/wood{
@@ -1860,6 +1801,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
+/obj/structure/cable/orange{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/roumain)
 "Dg" = (
@@ -1874,7 +1818,7 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
-/turf/open/floor/plating/grass/jungle/actuallydark,
+/turf/open/floor/grass/ship/jungle,
 /area/ship/roumain)
 "Du" = (
 /obj/structure/cable/orange{
@@ -1889,12 +1833,11 @@
 /turf/open/floor/wood/ebony,
 /area/ship/crew/dorm)
 "Dz" = (
-/obj/structure/flora/ausbushes/brflowers,
-/obj/structure/flora/ausbushes/sparsegrass,
-/obj/structure/fermenting_barrel,
-/turf/open/floor/grass{
-	icon_state = "junglegrass"
+/obj/machinery/door/poddoor{
+	id = "glaive_body_blasts";
+	name = "Body Blast Door"
 	},
+/turf/open/floor/plasteel/dark,
 /area/ship/roumain)
 "DG" = (
 /turf/closed/wall/r_wall,
@@ -1919,16 +1862,12 @@
 "DS" = (
 /obj/structure/flora/ausbushes/grassybush,
 /obj/structure/flora/ausbushes/brflowers,
-/turf/open/floor/grass{
-	icon_state = "junglegrass"
-	},
+/turf/open/floor/grass/ship/jungle,
 /area/ship/roumain)
 "DX" = (
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/ausbushes/sunnybush,
-/turf/open/floor/grass{
-	icon_state = "junglegrass"
-	},
+/turf/open/floor/grass/ship/jungle,
 /area/ship/roumain)
 "Et" = (
 /obj/structure/cable/orange{
@@ -2009,9 +1948,7 @@
 "EN" = (
 /obj/item/reagent_containers/glass/bottle/diethylamine,
 /obj/item/reagent_containers/glass/bottle/diethylamine,
-/turf/open/floor/grass{
-	icon_state = "junglegrass"
-	},
+/turf/open/floor/grass/ship/jungle,
 /area/ship/construction)
 "EO" = (
 /obj/structure/cable/orange{
@@ -2026,9 +1963,7 @@
 /area/ship/medical)
 "Fa" = (
 /obj/structure/railing/corner,
-/turf/open/floor/plating{
-	icon_state = "greenerdirt"
-	},
+/turf/open/floor/ship/dirt/dark,
 /area/ship/roumain)
 "Fd" = (
 /obj/effect/turf_decal/siding/wood{
@@ -2074,10 +2009,8 @@
 /obj/structure/railing{
 	dir = 5
 	},
-/obj/item/kirbyplants/random,
-/turf/open/floor/plating{
-	icon_state = "greenerdirt"
-	},
+/obj/structure/kitchenspike,
+/turf/open/floor/ship/dirt/dark,
 /area/ship/roumain)
 "Fr" = (
 /obj/structure/table/wood,
@@ -2089,10 +2022,21 @@
 /obj/structure/railing/corner,
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/ausbushes/sparsegrass,
-/obj/structure/kitchenspike,
-/turf/open/floor/grass{
-	icon_state = "junglegrass"
+/obj/machinery/button/door{
+	dir = 1;
+	pixel_x = -5;
+	pixel_y = -26;
+	name = "Body Blast Door Control";
+	id = "glaive_body_blasts"
 	},
+/obj/machinery/button/shieldwallgen{
+	dir = 1;
+	pixel_y = -25;
+	pixel_x = 6;
+	name = "Body Holofield Switch";
+	id = "glaive_body_holo"
+	},
+/turf/open/floor/grass/ship/jungle,
 /area/ship/roumain)
 "FA" = (
 /turf/open/floor/engine/hull,
@@ -2144,20 +2088,24 @@
 "GP" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/toy/plush/snakeplushie,
-/turf/open/floor/plating{
-	icon_state = "greenerdirt"
-	},
+/turf/open/floor/ship/dirt/dark,
 /area/ship/roumain)
+"Ho" = (
+/obj/structure/cable/orange{
+	icon_state = "1-2"
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "Hw" = (
 /obj/effect/turf_decal/spline/fancy{
 	dir = 1
 	},
 /obj/machinery/suit_storage_unit/inherit,
 /obj/item/clothing/suit/space/hardsuit/mining/independent,
-/obj/item/clothing/mask/gas/hunter,
 /obj/structure/cable/orange{
 	icon_state = "6-9"
 	},
+/obj/item/clothing/mask/breath,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
 "HA" = (
@@ -2172,12 +2120,18 @@
 /turf/open/floor/wood/maple,
 /area/ship/construction)
 "HB" = (
-/obj/structure/flora/ausbushes/brflowers,
-/obj/structure/flora/ausbushes/sparsegrass,
-/obj/structure/kitchenspike,
-/turf/open/floor/grass{
-	icon_state = "junglegrass"
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 1;
+	id = "glaive_body_holo"
 	},
+/obj/machinery/door/poddoor{
+	id = "glaive_body_blasts";
+	name = "Body Blast Door"
+	},
+/obj/structure/cable/orange{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plasteel/dark,
 /area/ship/roumain)
 "HS" = (
 /obj/machinery/power/apc/auto_name/north,
@@ -2190,6 +2144,19 @@
 /obj/machinery/portable_atmospherics/pump,
 /turf/open/floor/plating,
 /area/ship/engineering)
+"Ii" = (
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	id = "glaive_body_holo"
+	},
+/obj/machinery/door/poddoor{
+	id = "glaive_body_blasts";
+	name = "Body Blast Door"
+	},
+/obj/structure/cable/orange{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/roumain)
 "Il" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
@@ -2255,6 +2222,15 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/stairs,
 /area/ship/storage)
+"Jx" = (
+/obj/structure/cable/orange{
+	icon_state = "2-8"
+	},
+/obj/structure/cable/orange{
+	icon_state = "4-8"
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "Jy" = (
 /obj/machinery/power/terminal,
 /obj/structure/cable/orange{
@@ -2299,10 +2275,7 @@
 /obj/structure/railing{
 	dir = 5
 	},
-/turf/open/floor/plating{
-	icon_state = "riverwater_motion";
-	name = "wet plating"
-	},
+/turf/open/floor/plating/ship/water,
 /area/ship/roumain)
 "KX" = (
 /obj/structure/flora/ausbushes/reedbush,
@@ -2312,32 +2285,30 @@
 /mob/living/simple_animal/crab{
 	name = "Tracie"
 	},
-/turf/open/floor/plating{
-	icon_state = "riverwater_motion";
-	name = "wet plating"
-	},
+/turf/open/floor/plating/ship/water,
 /area/ship/roumain)
 "Lj" = (
 /obj/structure/destructible/tribal_torch,
 /obj/structure/railing{
 	dir = 8
 	},
-/turf/open/floor/plating{
-	icon_state = "greenerdirt"
-	},
+/turf/open/floor/ship/dirt/dark,
 /area/ship/roumain)
 "Lk" = (
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/ausbushes/fullgrass,
-/turf/open/floor/grass{
-	icon_state = "junglegrass"
-	},
+/turf/open/floor/grass/ship/jungle,
 /area/ship/roumain)
+"LF" = (
+/obj/docking_port{
+	dwidth = 13;
+	dheight = 15
+	},
+/turf/template_noop,
+/area/template_noop)
 "LG" = (
 /obj/structure/flora/rock/jungle,
-/turf/open/floor/plating{
-	icon_state = "greenerdirt"
-	},
+/turf/open/floor/ship/dirt/dark,
 /area/ship/roumain)
 "LL" = (
 /obj/structure/cable/orange{
@@ -2364,9 +2335,7 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
-/turf/open/floor/grass{
-	icon_state = "junglegrass"
-	},
+/turf/open/floor/grass/ship/jungle,
 /area/ship/crew/toilet)
 "Ma" = (
 /obj/machinery/power/shuttle/engine/fueled/plasma{
@@ -2519,13 +2488,13 @@
 /obj/item/flashlight/seclite,
 /obj/item/borg/upgrade/modkit/indoors,
 /obj/item/gun/energy/kinetic_accelerator,
-/obj/item/t_scanner/adv_mining_scanner,
 /obj/item/storage/bag/ore,
 /obj/item/shovel,
 /obj/item/gps/mining,
-/obj/item/pickaxe/mini,
 /obj/structure/closet/secure_closet/miningcloset,
 /obj/item/stack/marker_beacon/thirty,
+/obj/item/pickaxe,
+/obj/item/t_scanner/adv_mining_scanner/lesser,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
 "MV" = (
@@ -2562,9 +2531,7 @@
 	dir = 9
 	},
 /obj/item/kirbyplants/random,
-/turf/open/floor/plating{
-	icon_state = "greenerdirt"
-	},
+/turf/open/floor/ship/dirt/dark,
 /area/ship/roumain)
 "Nd" = (
 /obj/machinery/door/airlock/glass{
@@ -2614,9 +2581,7 @@
 /obj/item/seeds/lavaland/porcini,
 /obj/item/seeds/lavaland/cactus,
 /obj/item/cultivator/rake,
-/turf/open/floor/grass{
-	icon_state = "junglegrass"
-	},
+/turf/open/floor/ship/dirt/dark,
 /area/ship/roumain)
 "NE" = (
 /obj/structure/toilet{
@@ -2629,24 +2594,18 @@
 /turf/open/floor/wood/ebony,
 /area/ship/crew/toilet)
 "NL" = (
-/turf/open/floor/plating{
-	icon_state = "greenerdirt"
-	},
+/turf/open/floor/ship/dirt/dark,
 /area/ship/roumain)
 "NT" = (
 /obj/structure/railing/corner{
 	dir = 8
 	},
-/turf/open/floor/plating{
-	icon_state = "greenerdirt"
-	},
+/turf/open/floor/ship/dirt/dark,
 /area/ship/roumain)
 "NV" = (
 /obj/item/reagent_containers/glass/bottle/mutagen,
 /obj/item/reagent_containers/glass/bottle/mutagen,
-/turf/open/floor/grass{
-	icon_state = "junglegrass"
-	},
+/turf/open/floor/grass/ship/jungle,
 /area/ship/construction)
 "NX" = (
 /obj/machinery/atmospherics/components/binary/pump,
@@ -2715,19 +2674,13 @@
 /obj/structure/railing{
 	dir = 9
 	},
-/turf/open/floor/plating{
-	icon_state = "riverwater_motion";
-	name = "wet plating"
-	},
+/turf/open/floor/plating/ship/water,
 /area/ship/roumain)
 "Qm" = (
 /obj/structure/railing{
 	dir = 4
 	},
-/turf/open/floor/plating{
-	icon_state = "riverwater_motion";
-	name = "wet plating"
-	},
+/turf/open/floor/plating/ship/water,
 /area/ship/roumain)
 "QA" = (
 /obj/structure/cable/orange{
@@ -2788,9 +2741,7 @@
 /area/ship/construction)
 "QX" = (
 /obj/structure/bonfire/dense,
-/turf/open/floor/plating{
-	icon_state = "greenerdirt"
-	},
+/turf/open/floor/ship/dirt/dark,
 /area/ship/roumain)
 "Ra" = (
 /obj/structure/cable/orange{
@@ -2806,10 +2757,7 @@
 /obj/structure/railing{
 	dir = 8
 	},
-/turf/open/floor/plating{
-	icon_state = "riverwater_motion";
-	name = "wet plating"
-	},
+/turf/open/floor/plating/ship/water,
 /area/ship/roumain)
 "Rn" = (
 /obj/structure/table/wood,
@@ -2837,9 +2785,7 @@
 /area/ship/roumain)
 "RJ" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating{
-	icon_state = "greenerdirt"
-	},
+/turf/open/floor/ship/dirt/dark,
 /area/ship/roumain)
 "RT" = (
 /obj/structure/cable/orange{
@@ -2872,6 +2818,10 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
+"Sl" = (
+/obj/structure/fermenting_barrel,
+/turf/open/floor/ship/dirt/dark,
+/area/ship/roumain)
 "Sx" = (
 /obj/structure/window/reinforced/spawner{
 	dir = 4
@@ -2886,9 +2836,7 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/loom,
-/turf/open/floor/grass{
-	icon_state = "junglegrass"
-	},
+/turf/open/floor/grass/ship/jungle,
 /area/ship/roumain)
 "SK" = (
 /obj/structure/railing/corner{
@@ -2959,19 +2907,14 @@
 /obj/structure/railing{
 	dir = 4
 	},
-/turf/open/floor/plating{
-	icon_state = "greenerdirt"
-	},
+/turf/open/floor/ship/dirt/dark,
 /area/ship/roumain)
 "Ue" = (
 /obj/structure/flora/ausbushes/reedbush,
 /obj/structure/railing{
 	dir = 4
 	},
-/turf/open/floor/plating{
-	icon_state = "riverwater_motion";
-	name = "wet plating"
-	},
+/turf/open/floor/plating/ship/water,
 /area/ship/roumain)
 "Ul" = (
 /obj/effect/turf_decal/siding/wood{
@@ -2999,9 +2942,7 @@
 /obj/structure/railing{
 	dir = 6
 	},
-/turf/open/floor/plating{
-	icon_state = "greenerdirt"
-	},
+/turf/open/floor/ship/dirt/dark,
 /area/ship/roumain)
 "US" = (
 /obj/structure/cable/orange{
@@ -3020,9 +2961,7 @@
 /mob/living/simple_animal/pet/gondola{
 	name = "Grand Hunter Montagnes"
 	},
-/turf/open/floor/grass{
-	icon_state = "junglegrass"
-	},
+/turf/open/floor/grass/ship/jungle,
 /area/ship/construction)
 "Vn" = (
 /obj/machinery/power/terminal,
@@ -3047,9 +2986,7 @@
 	dir = 1
 	},
 /obj/structure/flora/junglebush/large,
-/turf/open/floor/plating{
-	icon_state = "greenerdirt"
-	},
+/turf/open/floor/ship/dirt/dark,
 /area/ship/roumain)
 "VL" = (
 /obj/effect/spawner/structure/window/reinforced,
@@ -3070,9 +3007,7 @@
 /area/ship/roumain)
 "VQ" = (
 /obj/structure/flora/junglebush/c,
-/turf/open/floor/plating{
-	icon_state = "greenerdirt"
-	},
+/turf/open/floor/ship/dirt/dark,
 /area/ship/roumain)
 "VX" = (
 /turf/open/floor/plasteel/tech,
@@ -3091,7 +3026,7 @@
 "Wr" = (
 /obj/machinery/suit_storage_unit/inherit,
 /obj/item/clothing/suit/space/hardsuit/mining/independent,
-/obj/item/clothing/mask/gas/hunter,
+/obj/item/clothing/mask/breath,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
 "Wy" = (
@@ -3118,9 +3053,7 @@
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/railing,
-/turf/open/floor/grass{
-	icon_state = "junglegrass"
-	},
+/turf/open/floor/grass/ship/jungle,
 /area/ship/roumain)
 "Xp" = (
 /obj/structure/table/optable,
@@ -3135,24 +3068,17 @@
 /area/ship/medical)
 "Xq" = (
 /obj/item/seeds/cotton/durathread,
-/turf/open/floor/grass{
-	icon_state = "junglegrass"
-	},
+/turf/open/floor/grass/ship/jungle,
 /area/ship/construction)
 "Xt" = (
-/turf/open/floor/plating{
-	icon_state = "riverwater_motion";
-	name = "wet plating"
-	},
+/turf/open/floor/plating/ship/water,
 /area/ship/roumain)
 "XB" = (
 /obj/structure/railing{
 	dir = 1
 	},
 /obj/structure/flora/junglebush/b,
-/turf/open/floor/plating{
-	icon_state = "greenerdirt"
-	},
+/turf/open/floor/ship/dirt/dark,
 /area/ship/roumain)
 "XK" = (
 /obj/structure/cable/green,
@@ -3211,9 +3137,7 @@
 /obj/structure/railing{
 	dir = 4
 	},
-/turf/open/floor/plating{
-	icon_state = "greenerdirt"
-	},
+/turf/open/floor/ship/dirt/dark,
 /area/ship/roumain)
 "YE" = (
 /obj/machinery/power/apc/auto_name/west,
@@ -3247,17 +3171,17 @@
 /obj/structure/flora/ausbushes/grassybush,
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/ausbushes/sparsegrass,
-/obj/item/kirbyplants/random,
-/turf/open/floor/grass{
-	icon_state = "junglegrass"
+/obj/structure/destructible/tribal_torch,
+/obj/structure/sign/warning/vacuum/external{
+	pixel_y = -6;
+	pixel_x = -31
 	},
+/turf/open/floor/grass/ship/jungle,
 /area/ship/roumain)
 "YT" = (
 /obj/item/kirbyplants/random,
 /obj/structure/flora/ausbushes/fullgrass,
-/turf/open/floor/grass{
-	icon_state = "junglegrass"
-	},
+/turf/open/floor/grass/ship/jungle,
 /area/ship/roumain)
 "Zh" = (
 /obj/effect/turf_decal/industrial/warning,
@@ -3282,10 +3206,7 @@
 /obj/structure/railing/corner{
 	dir = 1
 	},
-/turf/open/floor/plating{
-	icon_state = "riverwater_motion";
-	name = "wet plating"
-	},
+/turf/open/floor/plating/ship/water,
 /area/ship/roumain)
 "ZK" = (
 /obj/structure/cable/orange{
@@ -3312,10 +3233,7 @@
 /area/ship/crew/dorm)
 "ZV" = (
 /obj/structure/flora/ausbushes/reedbush,
-/turf/open/floor/plating{
-	icon_state = "riverwater_motion";
-	name = "wet plating"
-	},
+/turf/open/floor/plating/ship/water,
 /area/ship/roumain)
 "ZW" = (
 /obj/structure/railing/corner{
@@ -3799,8 +3717,8 @@ sH
 cR
 yZ
 CH
-AN
-FA
+qZ
+sA
 sH
 sH
 sH
@@ -3811,7 +3729,7 @@ sH
 sH
 sH
 sH
-sH
+LF
 sH
 sH
 sH
@@ -3838,8 +3756,8 @@ Cr
 AN
 uY
 AN
-FA
-FA
+gK
+sA
 sH
 sH
 sH
@@ -3877,10 +3795,10 @@ wp
 ts
 wp
 wp
-FA
-FA
-FA
-FA
+Jx
+Ho
+Ho
+sA
 FA
 FA
 sH
@@ -3915,10 +3833,10 @@ lM
 aM
 Nq
 wp
-AN
-AN
-AN
-AN
+Ii
+Dz
+Dz
+HB
 wp
 FA
 FA
@@ -3953,9 +3871,9 @@ ko
 Lk
 aM
 YP
-qJ
-Dz
-HB
+ds
+aM
+aM
 Fu
 wp
 wp
@@ -3987,7 +3905,7 @@ AN
 AN
 AN
 cg
-XB
+Ac
 NL
 LG
 NL
@@ -4180,7 +4098,7 @@ ZE
 MZ
 qN
 NL
-NL
+Sl
 NL
 NL
 NL
