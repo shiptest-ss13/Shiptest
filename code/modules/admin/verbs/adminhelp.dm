@@ -231,7 +231,6 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	RemoveActive()
 	GLOB.ahelp_tickets.closed_tickets -= src
 	GLOB.ahelp_tickets.resolved_tickets -= src
-	GLOB.ahelp_tickets.active_tickets -= src
 	return ..()
 
 /datum/admin_help/proc/AddInteraction(formatted_message)
