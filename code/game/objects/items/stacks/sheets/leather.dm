@@ -95,20 +95,6 @@ GLOBAL_LIST_INIT(monkey_recipes, list ( \
 	icon_state = "sheet-lizard"
 	item_state = "sheet-lizard"
 
-/obj/item/stack/sheet/animalhide/carp
-	name = "carp scales"
-	desc = "The scaly skin of a space carp. It looks quite beatiful when detached from the foul creature who once wore it."
-	singular_name = "carp scale"
-	icon_state = "sheet-carp"
-
-GLOBAL_LIST_INIT(carp_recipes, list ( \
-	new/datum/stack_recipe("carpskin chair", /obj/structure/chair/comfy/carp, 2, check_density = FALSE, category = CAT_FURNITURE), \
-	))
-
-/obj/item/stack/sheet/animalhide/carp/get_main_recipes()
-	. = ..()
-	. += GLOB.carp_recipes
-
 /obj/item/stack/sheet/animalhide/xeno
 	name = "alien hide"
 	desc = "The skin of a terrible creature."

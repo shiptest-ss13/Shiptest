@@ -195,21 +195,11 @@
 /obj/structure/chair/comfy/shuttle/GetArmrest()
 	return mutable_appearance('icons/obj/chairs.dmi', "shuttle_chair_armrest")
 
-/obj/structure/chair/comfy/carp
-	name = "carpskin chair"
-	desc = "A luxurious chair, the many purple scales reflect the light in a most pleasing manner."
-	icon_state = "carp_chair"
-	buildstacktype = /obj/item/stack/sheet/animalhide/carp
-
-/obj/structure/chair/comfy/carp/GetArmrest()
-	return mutable_appearance('icons/obj/chairs.dmi', "carp_chair_armrest")
-
 /obj/structure/chair/office
 	anchored = FALSE
 	buildstackamount = 5
 	item_chair = null
 	icon_state = "officechair_dark"
-
 
 /obj/structure/chair/office/Moved()
 	. = ..()

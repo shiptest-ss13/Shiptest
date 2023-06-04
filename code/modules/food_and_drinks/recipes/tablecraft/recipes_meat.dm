@@ -107,9 +107,20 @@
 	name = "Fi-shi roll"
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/grown/seaweed = 8,
-		/mob/living/simple_animal/beachcarp/salmon = 1
+		/obj/item/reagent_containers/food/snacks/carpmeat = 4
 	)
 	result = /obj/item/reagent_containers/food/snacks/fishi
+	subcategory = CAT_MEAT
+
+/datum/crafting_recipe/food/nigiri_sushi
+	name = "Nigiri sushi"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/grown/seaweed = 1,
+		/obj/item/reagent_containers/food/snacks/salad/boiledrice = 1,
+		/obj/item/reagent_containers/food/snacks/carpmeat = 1,
+		/datum/reagent/consumable/soysauce = 2
+	)
+	result = /obj/item/reagent_containers/food/snacks/nigiri_sushi
 	subcategory = CAT_MEAT
 
 ////////////////////////////////////////////////MR SPIDER////////////////////////////////////////////////

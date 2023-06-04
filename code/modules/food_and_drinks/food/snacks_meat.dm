@@ -113,11 +113,20 @@
 	desc = "An entire fish, surrounded by a thick layer of seaweed. is this... edible?"
 	icon_state = "fi-shi"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 2, /datum/reagent/toxin/carpotoxin = 2)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 20, /datum/reagent/consumable/nutriment/vitamin = 8, /datum/reagent/toxin/carpotoxin = 8 )
+	list_reagents = list(/datum/reagent/consumable/nutriment = 18, /datum/reagent/consumable/nutriment/vitamin = 8, /datum/reagent/toxin/carpotoxin = 8 )
 	filling_color = "#eac57b"
 	tastes = list("raw fish" = 6, "dried seaweed" = 3)
 	foodtype = VEGETABLES | MEAT
 
+/obj/item/reagent_containers/food/snacks/nigiri_sushi
+	name = "nigiri sushi"
+	desc = "A simple nigiri of fish atop a packed rice ball with a seaweed wrapping and a side of soy sauce."
+	icon_state = "nigiri_sushi"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 2)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 10, /datum/reagent/consumable/nutriment/vitamin = 6)
+	filling_color = "#d3ceba"
+	tastes = list("boiled rice" = 2, "fish filet" = 2, "soy sauce" = 2, "dried seaweed" = 1)
+	foodtype = VEGETABLES | MEAT
 
 ////////////////////////////////////////////MEATS AND ALIKE////////////////////////////////////////////
 
