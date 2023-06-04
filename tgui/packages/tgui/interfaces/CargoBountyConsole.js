@@ -17,8 +17,7 @@ export const CargoBountyConsole = (props, context) => {
               content="Print Bounty List"
               onClick={() => act('Print')}
             />
-          }
-        >
+          }>
           <Table border>
             <Table.Row bold italic color="label" fontSize={1.25}>
               <Table.Cell p={1} textAlign="center">
@@ -42,8 +41,7 @@ export const CargoBountyConsole = (props, context) => {
                 key={bounty.name}
                 backgroundColor={
                   bounty.priority === 1 ? 'rgba(252, 152, 3, 0.25)' : ''
-                }
-              >
+                }>
                 <Table.Cell bold p={1}>
                   {bounty.name}
                 </Table.Cell>

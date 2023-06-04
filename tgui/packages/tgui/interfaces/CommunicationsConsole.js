@@ -1,18 +1,7 @@
 import { sortBy } from 'common/collections';
 import { capitalize } from 'common/string';
 import { useBackend, useLocalState } from '../backend';
-import {
-  Blink,
-  Box,
-  Button,
-  Dimmer,
-  Flex,
-  Icon,
-  Input,
-  Modal,
-  Section,
-  TextArea,
-} from '../components';
+import { Blink, Box, Button, Dimmer, Flex, Icon, Input, Modal, Section, TextArea } from '../components';
 import { Window } from '../layouts';
 import { sanitizeText } from '../sanitize';
 
@@ -171,8 +160,7 @@ const PageBuyingShuttle = (props, context) => {
               style={{
                 display: 'inline-block',
                 width: '70%',
-              }}
-            >
+              }}>
               {shuttle.name}
             </span>
           }
@@ -193,8 +181,7 @@ const PageBuyingShuttle = (props, context) => {
               }
               tooltipPosition="left"
             />
-          }
-        >
+          }>
           <Box>{shuttle.description}</Box>
           {shuttle.prerequisites ? (
             <b>Prerequisites: {shuttle.prerequisites}</b>
@@ -594,10 +581,10 @@ const PageMessages = (props, context) => {
                 message.answered
                   ? undefined
                   : () =>
-                      act('answerMessage', {
-                        message: parseInt(messageIndex, 10) + 1,
-                        answer: answerIndex + 1,
-                      })
+                    act('answerMessage', {
+                      message: parseInt(messageIndex, 10) + 1,
+                      answer: answerIndex + 1,
+                    })
               }
             />
           ))}
@@ -624,8 +611,7 @@ const PageMessages = (props, context) => {
               })
             }
           />
-        }
-      >
+        }>
         <Box dangerouslySetInnerHTML={textHtml} />
 
         {answers}
@@ -654,8 +640,7 @@ export const CommunicationsConsole = (props, context) => {
       width={400}
       height={650}
       theme={emagged ? 'syndicate' : undefined}
-      resizable
-    >
+      resizable>
       <Window.Content scrollable>
         {!hasConnection && <NoConnectionModal />}
 

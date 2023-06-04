@@ -19,8 +19,7 @@ export const CellularEmporium = (props, context) => {
                   disabled={!data.can_readapt}
                   onClick={() => act('readapt')}
                 />
-              }
-            >
+              }>
               {data.genetic_points_remaining}
             </LabeledList.Item>
           </LabeledList>
@@ -45,8 +44,7 @@ export const CellularEmporium = (props, context) => {
                       }
                     />
                   </>
-                }
-              >
+                }>
                 {ability.desc}
                 <Box color="good">{ability.helptext}</Box>
               </LabeledList.Item>

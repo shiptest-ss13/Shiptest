@@ -1,13 +1,6 @@
 import { round, toFixed } from 'common/math';
 import { useBackend } from '../backend';
-import {
-  AnimatedNumber,
-  Box,
-  Button,
-  LabeledList,
-  NumberInput,
-  Section,
-} from '../components';
+import { AnimatedNumber, Box, Button, LabeledList, NumberInput, Section } from '../components';
 import { Window } from '../layouts';
 import { BeakerContents } from './common/BeakerContents';
 
@@ -34,8 +27,7 @@ export const ChemHeater = (props, context) => {
               content={isActive ? 'On' : 'Off'}
               onClick={() => act('power')}
             />
-          }
-        >
+          }>
           <LabeledList>
             <LabeledList.Item label="Target">
               <NumberInput
@@ -81,8 +73,7 @@ export const ChemHeater = (props, context) => {
                 />
               </>
             )
-          }
-        >
+          }>
           <BeakerContents
             beakerLoaded={isBeakerLoaded}
             beakerContents={beakerContents}

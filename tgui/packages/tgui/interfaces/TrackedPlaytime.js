@@ -25,8 +25,7 @@ const PlaytimeSection = (props) => {
               p={0.5}
               style={{
                 'vertical-align': 'middle',
-              }}
-            >
+              }}>
               <Box align="right">{jobName}</Box>
             </Table.Cell>
 

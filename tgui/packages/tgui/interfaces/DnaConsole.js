@@ -4,21 +4,7 @@ import { classes } from 'common/react';
 import { capitalize } from 'common/string';
 import { resolveAsset } from '../assets';
 import { useBackend } from '../backend';
-import {
-  Box,
-  Button,
-  Collapsible,
-  Dimmer,
-  Divider,
-  Dropdown,
-  Flex,
-  Icon,
-  LabeledList,
-  NumberInput,
-  ProgressBar,
-  Section,
-  Stack,
-} from '../components';
+import { Box, Button, Collapsible, Dimmer, Divider, Dropdown, Flex, Icon, LabeledList, NumberInput, ProgressBar, Section, Stack } from '../components';
 import { Window } from '../layouts';
 
 const SUBJECT_CONCIOUS = 0;
@@ -144,8 +130,7 @@ const DnaScannerButtons = (props, context) => {
       {!!isViableSubject && (
         <Button
           disabled={!isScrambleReady || isPulsingRads}
-          onClick={() => act('scramble_dna')}
-        >
+          onClick={() => act('scramble_dna')}>
           Scramble DNA
           {!isScrambleReady && ` (${scrambleSeconds}s)`}
         </Button>
@@ -243,8 +228,7 @@ const DnaScannerContent = (props, context) => {
             good: [70, 101],
             average: [30, 70],
             bad: [-Infinity, 30],
-          }}
-        >
+          }}>
           {subjectHealth}%
         </ProgressBar>
       </LabeledList.Item>
@@ -258,8 +242,7 @@ const DnaScannerContent = (props, context) => {
             average: [30, 71],
             good: [0, 30],
             olive: [-Infinity, 0],
-          }}
-        >
+          }}>
           {subjectRads}%
         </ProgressBar>
       </LabeledList.Item>
@@ -280,8 +263,7 @@ export const DnaConsoleCommands = (props, context) => {
             Injector on cooldown ({injectorSeconds}s)
           </Box>
         )
-      }
-    >
+      }>
       <LabeledList>
         <LabeledList.Item label="Mode">
           <Button
@@ -479,8 +461,7 @@ const StorageMutations = (props, context) => {
       <Flex.Item width="140px">
         <Section
           title={`${capitalize(data.view.storageMode)} Storage`}
-          level={2}
-        >
+          level={2}>
           {mutations.map((mutation) => (
             <Button
               key={mutation.ByondRef}
@@ -796,8 +777,7 @@ const DnaConsoleSequencer = (props, context) => {
           <Section
             title="Sequences"
             height="214px"
-            overflowY={mutations.length > 8 && 'scroll'}
-          >
+            overflowY={mutations.length > 8 && 'scroll'}>
             {mutations.map((mutation) => (
               <GenomeImage
                 key={mutation.Alias}
@@ -870,8 +850,7 @@ const DnaConsoleSequencer = (props, context) => {
                   }
                 />
               )
-            }
-          >
+            }>
             <GenomeSequencer mutation={mutation} />
           </Section>
         )}
@@ -932,8 +911,7 @@ const GeneCycler = (props, context) => {
         }
         const prevGene = GENES[(index - 1 + length) % length];
         onChange(e, prevGene);
-      }}
-    >
+      }}>
       {gene}
     </Button>
   );
@@ -1222,8 +1200,7 @@ const GeneticMakeupBuffers = (props, context) => {
               }
             />
           </>
-        }
-      >
+        }>
         <GeneticMakeupBufferInfo index={i} makeup={makeup} />
       </Collapsible>
     );
@@ -1291,8 +1268,7 @@ const GeneticMakeupBufferInfo = (props, context) => {
                 index,
                 type: 'ue',
               })
-            }
-          >
+            }>
             Transfer
             {!isViableSubject && ' (Delayed)'}
           </Button>
@@ -1316,8 +1292,7 @@ const GeneticMakeupBufferInfo = (props, context) => {
                 index,
                 type: 'ui',
               })
-            }
-          >
+            }>
             Transfer
             {!isViableSubject && ' (Delayed)'}
           </Button>
@@ -1341,8 +1316,7 @@ const GeneticMakeupBufferInfo = (props, context) => {
                 index,
                 type: 'mixed',
               })
-            }
-          >
+            }>
             Transfer
             {!isViableSubject && ' (Delayed)'}
           </Button>
@@ -1397,8 +1371,7 @@ const DnaConsoleAdvancedInjectors = (props, context) => {
                 }
               />
             </>
-          }
-        >
+          }>
           <StorageMutations
             mutations={injector.mutations}
             customMode={`advinj${advInjectors.findIndex(

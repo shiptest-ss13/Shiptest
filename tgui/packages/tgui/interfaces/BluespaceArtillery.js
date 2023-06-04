@@ -19,8 +19,7 @@ export const BluespaceArtillery = (props, context) => {
                   disabled={!unlocked}
                   onClick={() => act('recalibrate')}
                 />
-              }
-            >
+              }>
               <Box color={target ? 'average' : 'bad'} fontSize="25px">
                 {target || 'No Target Set'}
               </Box>

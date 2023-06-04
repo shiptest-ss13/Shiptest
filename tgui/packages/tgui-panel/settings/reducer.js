@@ -4,16 +4,7 @@
  * @license MIT
  */
 
-import {
-  changeSettingsTab,
-  loadSettings,
-  openChatSettings,
-  toggleSettings,
-  updateSettings,
-  addHighlightSetting,
-  removeHighlightSetting,
-  updateHighlightSetting,
-} from './actions';
+import { changeSettingsTab, loadSettings, openChatSettings, toggleSettings, updateSettings, addHighlightSetting, removeHighlightSetting, updateHighlightSetting } from './actions';
 import { createDefaultHighlightSetting } from './model';
 import { SETTINGS_TABS, FONTS, MAX_HIGHLIGHT_SETTINGS } from './constants';
 

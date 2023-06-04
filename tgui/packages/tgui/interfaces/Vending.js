@@ -39,8 +39,7 @@ const VendingRow = (props, context) => {
             (productStock <= 0 && 'bad') ||
             (productStock <= product.max_amount / 2 && 'average') ||
             'good'
-          }
-        >
+          }>
           {(!productStock && '0') ||
             (product.max_amount >= 0 && productStock) ||
             (product.max_amount < 0 && '∞')}{' '}

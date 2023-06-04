@@ -52,8 +52,7 @@ const AirAlarmStatus = (props, context) => {
                 <LabeledList.Item
                   key={entry.name}
                   label={entry.name}
-                  color={status.color}
-                >
+                  color={status.color}>
                   {toFixed(entry.value, 2)}
                   {entry.unit}
                 </LabeledList.Item>
@@ -64,8 +63,7 @@ const AirAlarmStatus = (props, context) => {
             </LabeledList.Item>
             <LabeledList.Item
               label="Area status"
-              color={data.atmos_alarm || data.fire_alarm ? 'bad' : 'good'}
-            >
+              color={data.atmos_alarm || data.fire_alarm ? 'bad' : 'good'}>
               {(data.atmos_alarm && 'Atmosphere Alarm') ||
                 (data.fire_alarm && 'Fire Alarm') ||
                 'Nominal'}
@@ -76,10 +74,9 @@ const AirAlarmStatus = (props, context) => {
                 data.heating.mode === 'Heat'
                   ? 'average'
                   : !data.heating.mode
-                  ? 'gray'
-                  : 'good'
-              }
-            >
+                    ? 'gray'
+                    : 'good'
+              }>
               {data.heating.enabled ? data.heating.mode : 'Disabled'}
             </LabeledList.Item>
           </>
@@ -136,8 +133,7 @@ const AirAlarmControl = (props, context) => {
             onClick={() => setScreen()}
           />
         )
-      }
-    >
+      }>
       <Component />
     </Section>
   );

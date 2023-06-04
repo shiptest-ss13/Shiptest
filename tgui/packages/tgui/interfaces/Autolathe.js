@@ -1,18 +1,5 @@
 import { useBackend, useLocalState } from '../backend';
-import {
-  Button,
-  LabeledList,
-  Section,
-  ProgressBar,
-  Flex,
-  Box,
-  Table,
-  Collapsible,
-  Input,
-  NumberInput,
-  Dimmer,
-  Icon,
-} from '../components';
+import { Button, LabeledList, Section, ProgressBar, Flex, Box, Table, Collapsible, Input, NumberInput, Dimmer, Icon } from '../components';
 import { Window } from '../layouts';
 import { capitalize } from 'common/string';
 
@@ -50,8 +37,7 @@ export const Autolathe = (props, context) => {
                 act('diskEject');
               }}
             />
-          }
-        >
+          }>
           <LabeledList>
             <LabeledList.Item label="Total Materials">
               <ProgressBar
@@ -62,8 +48,7 @@ export const Autolathe = (props, context) => {
                   'good': [materialsmax * 0.85, materialsmax],
                   'average': [materialsmax * 0.25, materialsmax * 0.85],
                   'bad': [0, materialsmax * 0.25],
-                }}
-              >
+                }}>
                 {materialtotal + '/' + materialsmax + ' cm³'}
               </ProgressBar>
             </LabeledList.Item>
@@ -134,8 +119,7 @@ export const Autolathe = (props, context) => {
                   setCategory('None');
                 }}
               />
-            }
-          >
+            }>
             {active === 1 && (
               <Dimmer fontSize="32px">
                 <Icon name="cog" spin />
@@ -314,8 +298,7 @@ const MaterialRow = (props, context) => {
               value={materialsmax - material.mineral_amount}
               maxValue={materialsmax}
               color="black"
-              backgroundColor={material.matcolour}
-            >
+              backgroundColor={material.matcolour}>
               <div style={{ transform: 'scaleX(-1)' }}>
                 {material.mineral_amount + ' cm³'}
               </div>

@@ -33,8 +33,7 @@ export const NtosAtmos = (props, context) => {
                   color={getGasColor(gas.name)}
                   value={gas.percentage}
                   minValue={0}
-                  maxValue={gasMaxPercentage}
-                >
+                  maxValue={gasMaxPercentage}>
                   {toFixed(gas.percentage, 2) + '%'}
                 </ProgressBar>
               </LabeledList.Item>

@@ -88,8 +88,7 @@ const CrewTable = (props, context) => {
         <Table.Row key={sensor.name}>
           <Table.Cell
             bold={jobIsHead(sensor.ijob)}
-            color={jobToColor(sensor.ijob)}
-          >
+            color={jobToColor(sensor.ijob)}>
             {sensor.name} ({sensor.assignment})
           </Table.Cell>
           <Table.Cell collapsing textAlign="center">

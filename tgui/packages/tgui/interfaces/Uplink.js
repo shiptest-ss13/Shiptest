@@ -1,15 +1,6 @@
 import { createSearch, decodeHtmlEntities } from 'common/string';
 import { useBackend, useLocalState } from '../backend';
-import {
-  Box,
-  Button,
-  Flex,
-  Input,
-  Section,
-  Table,
-  Tabs,
-  NoticeBox,
-} from '../components';
+import { Box, Button, Flex, Input, Section, Table, Tabs, NoticeBox } from '../components';
 import { formatMoney } from '../format';
 import { Window } from '../layouts';
 
@@ -75,8 +66,7 @@ export const GenericUplink = (props, context) => {
             <Button icon="lock" content="Lock" onClick={() => act('lock')} />
           )}
         </>
-      }
-    >
+      }>
       <Flex>
         {searchText.length === 0 && (
           <Flex.Item>
@@ -85,8 +75,7 @@ export const GenericUplink = (props, context) => {
                 <Tabs.Tab
                   key={category.name}
                   selected={category.name === selectedCategory}
-                  onClick={() => setSelectedCategory(category.name)}
-                >
+                  onClick={() => setSelectedCategory(category.name)}>
                   {category.name} ({category.items?.length || 0})
                 </Tabs.Tab>
               ))}
@@ -177,8 +166,7 @@ const ItemList = (props, context) => {
             })
           }
         />
-      }
-    >
+      }>
       {decodeHtmlEntities(item.desc)}
     </Section>
   ));

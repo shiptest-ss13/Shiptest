@@ -14,8 +14,7 @@ export const CrewManifest = (props, context) => {
           <Section
             className={'CrewManifest--' + department}
             key={department}
-            title={department}
-          >
+            title={department}>
             <Table>
               {Object.entries(crew).map(([crewIndex, crewMember]) => (
                 <Table.Row key={crewIndex}>
@@ -27,8 +26,7 @@ export const CrewManifest = (props, context) => {
                       'CrewManifest__Cell CrewManifest__Cell--' +
                       (crewMember.rank === 'Captain' ? 'Captain' : 'Command')
                     }
-                    collapsing
-                  >
+                    collapsing>
                     {!!crewMember.officer && (
                       <Icon
                         name={
@@ -40,8 +38,7 @@ export const CrewManifest = (props, context) => {
                   <Table.Cell
                     className={'CrewManifest__Cell'}
                     collapsing
-                    color="label"
-                  >
+                    color="label">
                     {crewMember.rank}
                   </Table.Cell>
                 </Table.Row>

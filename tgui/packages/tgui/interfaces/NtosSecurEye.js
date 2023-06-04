@@ -1,11 +1,7 @@
 import { useBackend } from '../backend';
 import { Button, ByondUi } from '../components';
 import { NtosWindow } from '../layouts';
-import {
-  prevNextCamera,
-  selectCameras,
-  CameraConsoleContent,
-} from './CameraConsole';
+import { prevNextCamera, selectCameras, CameraConsoleContent } from './CameraConsole';
 
 export const NtosSecurEye = (props, context) => {
   const { act, data, config } = useBackend(context);

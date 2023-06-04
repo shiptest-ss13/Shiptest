@@ -60,8 +60,7 @@ export const RouletteBoard = (props, context) => {
       style={{
         // Setting it to 1 px makes sure it always takes up minimum width
         'width': '1px',
-      }}
-    >
+      }}>
       <tr className="Roulette__board-row">
         <td rowSpan="3" className="Roulette__board-cell">
           <Button
@@ -75,8 +74,7 @@ export const RouletteBoard = (props, context) => {
         {firstRow.map((number) => (
           <td
             key={number}
-            className="Roulette__board-cell Table__cell-collapsing"
-          >
+            className="Roulette__board-cell Table__cell-collapsing">
             <RouletteNumberButton number={number} />
           </td>
         ))}
@@ -95,8 +93,7 @@ export const RouletteBoard = (props, context) => {
         {secondRow.map((number) => (
           <td
             key={number}
-            className="Roulette__board-cell Table__cell-collapsing"
-          >
+            className="Roulette__board-cell Table__cell-collapsing">
             <RouletteNumberButton number={number} />
           </td>
         ))}
@@ -115,8 +112,7 @@ export const RouletteBoard = (props, context) => {
         {thirdRow.map((number) => (
           <td
             key={number}
-            className="Roulette__board-cell Table__cell-collapsing"
-          >
+            className="Roulette__board-cell Table__cell-collapsing">
             <RouletteNumberButton number={number} />
           </td>
         ))}
@@ -250,8 +246,7 @@ export const RouletteBetTable = (props, context) => {
             'Roulette',
             'Roulette__lowertable--cell',
             'Roulette__lowertable--header',
-          ])}
-        >
+          ])}>
           Last Spun:
         </th>
         <th
@@ -259,8 +254,7 @@ export const RouletteBetTable = (props, context) => {
             'Roulette',
             'Roulette__lowertable--cell',
             'Roulette__lowertable--header',
-          ])}
-        >
+          ])}>
           Current Bet:
         </th>
       </tr>
@@ -271,8 +265,7 @@ export const RouletteBetTable = (props, context) => {
             'Roulette__lowertable--cell',
             'Roulette__lowertable--spinresult',
             'Roulette__lowertable--spinresult-' + getNumberColor(data.LastSpin),
-          ])}
-        >
+          ])}>
           {data.LastSpin}
         </td>
         <td
@@ -280,8 +273,7 @@ export const RouletteBetTable = (props, context) => {
             'Roulette',
             'Roulette__lowertable--cell',
             'Roulette__lowertable--betscell',
-          ])}
-        >
+          ])}>
           <Box bold mt={1} mb={1} fontSize="25px" textAlign="center">
             {data.BetAmount} cr on {BetType}
           </Box>

@@ -1,12 +1,5 @@
 import { useBackend } from '../backend';
-import {
-  Dropdown,
-  Input,
-  LabeledList,
-  NumberInput,
-  Section,
-  Table,
-} from '../components';
+import { Dropdown, Input, LabeledList, NumberInput, Section, Table } from '../components';
 import { Button } from '../components/Button';
 import { Window } from '../layouts';
 

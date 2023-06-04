@@ -27,8 +27,7 @@ export const NtosNetChat = (props, context) => {
                 verticalAlign="top"
                 style={{
                   width: '200px',
-                }}
-              >
+                }}>
                 <Box height="537px" overflowY="scroll">
                   <Button.Input
                     fluid
@@ -111,8 +110,7 @@ export const NtosNetChat = (props, context) => {
                 verticalAlign="top"
                 style={{
                   width: '150px',
-                }}
-              >
+                }}>
                 <Box height="477px" overflowY="scroll">
                   {clients.map((client) => (
                     <Box key={client.name}>{client.name}</Box>

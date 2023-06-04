@@ -13,8 +13,7 @@ export const Application = (props, context) => {
       title={ship_name + ' application as ' + player_name}
       width={500}
       height={600}
-      resizable
-    >
+      resizable>
       <Window.Content>
         <Stack fill vertical>
           <Stack.Item grow>

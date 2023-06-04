@@ -17,8 +17,7 @@ export const VaultController = (props, context) => {
               disabled={data.stored < data.max}
               onClick={() => act('togglelock')}
             />
-          }
-        >
+          }>
           <LabeledList>
             <LabeledList.Item label="Charge">
               <ProgressBar
@@ -27,8 +26,7 @@ export const VaultController = (props, context) => {
                   good: [1, Infinity],
                   average: [0.3, 1],
                   bad: [-Infinity, 0.3],
-                }}
-              >
+                }}>
                 {toFixed(data.stored / 1000) +
                   ' / ' +
                   toFixed(data.max / 1000) +

@@ -1,13 +1,5 @@
 import { useBackend, useSharedState } from '../backend';
-import {
-  ProgressBar,
-  Section,
-  Tabs,
-  Button,
-  LabeledList,
-  Box,
-  Stack,
-} from '../components';
+import { ProgressBar, Section, Tabs, Button, LabeledList, Box, Stack } from '../components';
 import { Window } from '../layouts';
 import { CargoCatalog } from './Cargo';
 
@@ -27,24 +19,21 @@ export const OutpostComms = (props, context) => {
                   {!!data.outpostDocked && (
                     <Tabs.Tab
                       selected={tab === 'cargo'}
-                      onClick={() => setTab('cargo')}
-                    >
+                      onClick={() => setTab('cargo')}>
                       Cargo
                     </Tabs.Tab>
                   )}
                   {!!data.onShip && (
                     <Tabs.Tab
                       selected={tab === 'shipMissions'}
-                      onClick={() => setTab('shipMissions')}
-                    >
+                      onClick={() => setTab('shipMissions')}>
                       Current Missions
                     </Tabs.Tab>
                   )}
                   {!!data.outpostDocked && (
                     <Tabs.Tab
                       selected={tab === 'outpostMissions'}
-                      onClick={() => setTab('outpostMissions')}
-                    >
+                      onClick={() => setTab('outpostMissions')}>
                       Available Missions
                     </Tabs.Tab>
                   )}
@@ -90,8 +79,7 @@ const CargoExpressContent = (props, context) => {
             <Button
               selected={data.usingBeacon}
               disabled={!data.hasBeacon}
-              onClick={() => act('LZBeacon')}
-            >
+              onClick={() => act('LZBeacon')}>
               {data.beaconzone} ({data.beaconName})
             </Button>
             <Button
@@ -112,8 +100,7 @@ const ShipMissionsContent = (props, context) => {
   const { act, data } = useBackend(context);
   return (
     <Section
-      title={'Current Missions ' + data.numMissions + '/' + data.maxMissions}
-    >
+      title={'Current Missions ' + data.numMissions + '/' + data.maxMissions}>
       <MissionsList
         showButton={data.outpostDocked}
         missions={data.shipMissions}
@@ -126,8 +113,7 @@ const OutpostMissionsContent = (props, context) => {
   const { act, data } = useBackend(context);
   return (
     <Section
-      title={'Available Missions ' + data.numMissions + '/' + data.maxMissions}
-    >
+      title={'Available Missions ' + data.numMissions + '/' + data.maxMissions}>
       <MissionsList
         showButton={data.outpostDocked}
         missions={data.outpostMissions}
@@ -156,13 +142,11 @@ const MissionsList = (props, context) => {
               average: [0.25, 0.75],
               bad: [0, 0.25],
             }}
-            value={mission.remaining / mission.duration}
-          >
+            value={mission.remaining / mission.duration}>
             {mission.timeStr}
           </ProgressBar>
         </>
-      }
-    >
+      }>
       {mission.desc}
       {!!showButton && (
         <Button
@@ -170,8 +154,7 @@ const MissionsList = (props, context) => {
             act('mission-act', {
               ref: mission.ref,
             })
-          }
-        >
+          }>
           {mission.actStr}
         </Button>
       )}

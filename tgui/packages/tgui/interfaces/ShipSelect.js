@@ -1,13 +1,5 @@
 import { useBackend, useLocalState } from '../backend';
-import {
-  Button,
-  Input,
-  Section,
-  Tabs,
-  Table,
-  LabeledList,
-  Collapsible,
-} from '../components';
+import { Button, Input, Section, Tabs, Table, LabeledList, Collapsible } from '../components';
 import { Window } from '../layouts';
 import { createSearch } from 'common/string';
 
@@ -57,8 +49,7 @@ export const ShipSelect = (props, context) => {
                   setTab(3);
                 }}
               />
-            }
-          >
+            }>
             <Table>
               <Table.Row header>
                 <Table.Cell collapsing>Join</Table.Cell>
@@ -115,8 +106,7 @@ export const ShipSelect = (props, context) => {
                     setTab(1);
                   }}
                 />
-              }
-            >
+              }>
               <Table>
                 <Table.Row header>
                   <Table.Cell collapsing>Join</Table.Cell>
@@ -163,8 +153,7 @@ export const ShipSelect = (props, context) => {
                   }}
                 />
               </>
-            }
-          >
+            }>
             {templates.filter(searchFor(searchText)).map((template) => (
               <Collapsible
                 title={template.name}
@@ -178,8 +167,7 @@ export const ShipSelect = (props, context) => {
                       });
                     }}
                   />
-                }
-              >
+                }>
                 <LabeledList>
                   <LabeledList.Item label="Description">
                     {template.desc || 'No Description'}
@@ -191,8 +179,7 @@ export const ShipSelect = (props, context) => {
                     <a
                       href={'https://shiptest.net/wiki/' + template.name}
                       target="_blank"
-                      rel="noreferrer"
-                    >
+                      rel="noreferrer">
                       Here
                     </a>
                   </LabeledList.Item>

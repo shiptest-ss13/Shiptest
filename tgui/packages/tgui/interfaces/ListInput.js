@@ -140,8 +140,7 @@ export const ListInput = (props, context) => {
                     setDisplayedArray(buttons);
                   }}
                 />
-              }
-            >
+              }>
               {displayedArray.map((button) => (
                 <Button
                   key={button}
@@ -156,8 +155,7 @@ export const ListInput = (props, context) => {
                       setSelectedButton(button);
                     }
                     setLastCharCode(null);
-                  }}
-                >
+                  }}>
                   {button}
                 </Button>
               ))}

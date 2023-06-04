@@ -18,8 +18,7 @@ export const ParticleAccelerator = (props, context) => {
                   content={'Run Scan'}
                   onClick={() => act('scan')}
                 />
-              }
-            >
+              }>
               <Box color={assembled ? 'good' : 'bad'}>
                 {assembled
                   ? 'Ready - All parts in place'

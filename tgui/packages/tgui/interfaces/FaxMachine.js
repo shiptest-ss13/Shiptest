@@ -44,8 +44,7 @@ const FaxContent = (props, context) => {
           content={data.authenticated ? 'Log Out' : 'Log In'}
           color={data.authenticated ? 'bad' : 'good'}
         />
-      }
-    >
+      }>
       <LabeledList>
         <LabeledListItem label="Authentication">
           <Box color="label">

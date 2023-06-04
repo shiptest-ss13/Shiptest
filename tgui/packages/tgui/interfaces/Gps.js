@@ -36,8 +36,7 @@ export const Gps = (props, context) => {
       title="Global Positioning System"
       width={470}
       height={700}
-      resizable
-    >
+      resizable>
       <Window.Content scrollable>
         <Section
           title="Control"
@@ -48,8 +47,7 @@ export const Gps = (props, context) => {
               selected={power}
               onClick={() => act('power')}
             />
-          }
-        >
+          }>
           <LabeledList>
             <LabeledList.Item label="Tag">
               <Button
@@ -93,8 +91,7 @@ export const Gps = (props, context) => {
                 {signals.map((signal) => (
                   <Table.Row
                     key={signal.entrytag + signal.coords + signal.index}
-                    className="candystripe"
-                  >
+                    className="candystripe">
                     <Table.Cell bold color="label">
                       {signal.entrytag}
                     </Table.Cell>
@@ -103,8 +100,7 @@ export const Gps = (props, context) => {
                       opacity={
                         signal.dist !== undefined &&
                         clamp(1.2 / Math.log(Math.E + signal.dist / 20), 0.4, 1)
-                      }
-                    >
+                      }>
                       {signal.degrees !== undefined && (
                         <Icon
                           mr={1}

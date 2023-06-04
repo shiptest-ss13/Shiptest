@@ -46,8 +46,7 @@ export const NtosRadarContent = (props, context) => {
                     act('selecttarget', {
                       ref: object.ref,
                     });
-                  }}
-                >
+                  }}>
                   {object.name}
                 </div>
               ))}
@@ -65,42 +64,40 @@ export const NtosRadarContent = (props, context) => {
         position="relative"
         m={1.5}
         width={45}
-        height={45}
-      >
+        height={45}>
         {Object.keys(target).length === 0
           ? !!selected && (
-              <NoticeBox
-                position="absolute"
-                top={20.6}
-                left={1.35}
-                width={42}
-                fontSize="30px"
-                textAlign="center"
-              >
-                Signal Lost
-              </NoticeBox>
-            )
+            <NoticeBox
+              position="absolute"
+              top={20.6}
+              left={1.35}
+              width={42}
+              fontSize="30px"
+              textAlign="center">
+              Signal Lost
+            </NoticeBox>
+          )
           : (!!target.userot && (
-              <Box
-                as="img"
-                src={resolveAsset(target.arrowstyle)}
-                position="absolute"
-                top="20px"
-                left="243px"
-                style={{
-                  'transform': `rotate(${target.rot}deg)`,
-                }}
-              />
-            )) || (
-              <Icon
-                name={target.pointer}
-                position="absolute"
-                size={2}
-                color={target.color}
-                top={target.locy * 10 + 19 + 'px'}
-                left={target.locx * 10 + 16 + 'px'}
-              />
-            )}
+            <Box
+              as="img"
+              src={resolveAsset(target.arrowstyle)}
+              position="absolute"
+              top="20px"
+              left="243px"
+              style={{
+                'transform': `rotate(${target.rot}deg)`,
+              }}
+            />
+          )) || (
+            <Icon
+              name={target.pointer}
+              position="absolute"
+              size={2}
+              color={target.color}
+              top={target.locy * 10 + 19 + 'px'}
+              left={target.locx * 10 + 16 + 'px'}
+            />
+          )}
       </Flex.Item>
     </Flex>
   );

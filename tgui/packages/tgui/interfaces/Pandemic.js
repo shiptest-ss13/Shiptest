@@ -1,15 +1,6 @@
 import { map } from 'common/collections';
 import { useBackend } from '../backend';
-import {
-  Box,
-  Button,
-  Collapsible,
-  Grid,
-  Input,
-  LabeledList,
-  NoticeBox,
-  Section,
-} from '../components';
+import { Box, Button, Collapsible, Grid, Input, LabeledList, NoticeBox, Section } from '../components';
 import { Window } from '../layouts';
 
 export const PandemicBeakerDisplay = (props, context) => {
@@ -41,8 +32,7 @@ export const PandemicBeakerDisplay = (props, context) => {
             onClick={() => act('eject_beaker')}
           />
         </>
-      }
-    >
+      }>
       {has_beaker ? (
         !beaker_empty ? (
           has_blood ? (
@@ -102,8 +92,7 @@ export const PandemicDiseaseDisplay = (props, context) => {
               })
             }
           />
-        }
-      >
+        }>
         <Grid>
           <Grid.Column>{virus.description}</Grid.Column>
           <Grid.Column>
@@ -183,8 +172,7 @@ export const PandemicSymptomDisplay = (props, context) => {
             Neutered
           </Box>
         )
-      }
-    >
+      }>
       <Grid>
         <Grid.Column size={2}>{desc}</Grid.Column>
         <Grid.Column>

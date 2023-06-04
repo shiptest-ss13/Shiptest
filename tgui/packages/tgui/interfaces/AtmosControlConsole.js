@@ -17,8 +17,7 @@ export const AtmosControlConsole = (props, context) => {
               <Section
                 key={sensor.id_tag}
                 title={!data.tank && sensor.long_name}
-                level={2}
-              >
+                level={2}>
                 <LabeledList>
                   <LabeledList.Item label="Pressure">
                     {toFixed(sensor.pressure, 2) + ' kPa'}
@@ -47,8 +46,7 @@ export const AtmosControlConsole = (props, context) => {
                 content="Reconnect"
                 onClick={() => act('reconnect')}
               />
-            }
-          >
+            }>
             <LabeledList>
               <LabeledList.Item label="Input Injector">
                 <Button

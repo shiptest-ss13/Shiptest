@@ -30,16 +30,14 @@ export const TurbineComputer = (props, context) => {
                 onClick={() => act('reconnect')}
               />
             </>
-          }
-        >
+          }>
           {(!operational && (
             <LabeledList>
               <LabeledList.Item
                 label="Compressor Status"
                 color={
                   !data.compressor || data.compressor_broke ? 'bad' : 'good'
-                }
-              >
+                }>
                 {data.compressor_broke
                   ? data.compressor
                     ? 'Offline'
@@ -48,8 +46,7 @@ export const TurbineComputer = (props, context) => {
               </LabeledList.Item>
               <LabeledList.Item
                 label="Turbine Status"
-                color={!data.turbine || data.turbine_broke ? 'bad' : 'good'}
-              >
+                color={!data.turbine || data.turbine_broke ? 'bad' : 'good'}>
                 {data.turbine_broke
                   ? data.turbine
                     ? 'Offline'

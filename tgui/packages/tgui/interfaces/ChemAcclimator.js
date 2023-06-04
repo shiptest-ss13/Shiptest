@@ -54,8 +54,7 @@ export const ChemAcclimator = (props, context) => {
               selected={data.enabled}
               onClick={() => act('toggle_power')}
             />
-          }
-        >
+          }>
           <LabeledList>
             <LabeledList.Item label="Volume">
               <NumberInput
