@@ -118,7 +118,7 @@
 	name = "cyborg torso"
 	desc = "A heavily reinforced case containing cyborg logic boards, with space for a standard power cell."
 	item_state = "buildpipe"
-	static_icon =  'icons/mob/augmentation/augments.dmi'
+	static_icon = 'icons/mob/augmentation/augments.dmi'
 	icon = null
 	limb_id = "robotic"
 	flags_1 = CONDUCT_1

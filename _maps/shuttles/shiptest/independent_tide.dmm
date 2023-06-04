@@ -84,8 +84,6 @@
 /obj/effect/decal/cleanable/oil/streak,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/effect/decal/cleanable/glass,
-/obj/item/pipe_dispenser,
-/obj/item/construction/rcd,
 /obj/item/trash/syndi_cakes,
 /obj/machinery/airalarm/directional/north,
 /obj/effect/spawner/lootdrop/maintenance/eight,
@@ -196,9 +194,14 @@
 /obj/machinery/button/door{
 	id = "tidedoors";
 	name = "Blast Door Control";
-	pixel_y = -25
+	pixel_y = -25;
+	dir = 1
 	},
-/obj/machinery/suit_storage_unit/independent/engineering,
+/obj/structure/closet/crate/radiation,
+/obj/item/clothing/head/radiation,
+/obj/item/clothing/suit/radiation,
+/obj/item/clothing/suit/radiation,
+/obj/item/clothing/head/radiation,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "ng" = (
@@ -285,6 +288,7 @@
 /area/ship/maintenance/fore)
 "rG" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/landmark/observer_start,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "sd" = (
@@ -378,13 +382,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/trash/sosjerky,
 /obj/item/cigbutt,
-/obj/item/circuitboard/machine/rdserver,
 /obj/structure/closet/secure_closet{
 	req_access = list(11)
 	},
-/obj/item/circuitboard/machine/circuit_imprinter,
-/obj/item/circuitboard/computer/rdconsole,
-/obj/item/circuitboard/machine/destructive_analyzer,
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "yZ" = (
@@ -609,12 +609,11 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
 "LR" = (
-/obj/item/storage/backpack/duffelbag/med/surgery,
 /obj/structure/closet/secure_closet/medical2,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/broken,
-/obj/item/defibrillator/loaded,
 /obj/effect/spawner/lootdrop/maintenance/eight,
+/obj/item/storage/firstaid/regular,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "Mk" = (
