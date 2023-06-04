@@ -222,6 +222,6 @@
 	name = "Seaweed Sheet"
 	id = "seaweedsheet"
 	build_type = BIOGENERATOR
-	materials = list(/datum/material/biomass = 3)
+	materials = list(/datum/material/biomass = 60)
 	build_path = /obj/item/reagent_containers/food/snacks/grown/seaweed/sheet
 	category = list("initial","Food")
