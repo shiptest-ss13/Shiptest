@@ -75,8 +75,7 @@
 	// Every node has a parent pipeline and an air associated with it, but we need to accomdate for edge cases like init dir cache building...
 	if(parents[i])
 		nullifyPipenet(parents[i])
-	if(airs[i])
-		QDEL_NULL(airs[i])
+	airs[i] = null
 	..()
 
 /obj/machinery/atmospherics/components/on_construction()

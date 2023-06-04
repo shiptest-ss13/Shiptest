@@ -83,10 +83,10 @@
 	parent = P
 
 /obj/machinery/atmospherics/pipe/Destroy()
-	QDEL_NULL(parent)
+	parent = null
 
 	releaseAirToTurf()
-	QDEL_NULL(air_temporary)
+	air_temporary = null
 
 	var/turf/T = loc
 	for(var/obj/machinery/meter/meter in T)
