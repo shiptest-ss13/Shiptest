@@ -20,7 +20,7 @@
 		return FALSE
 	if(tool.usesound)
 		preop_sound = tool.usesound
-	return TRUE
+	return ..()
 
 //close shell
 /datum/surgery_step/mechanic_close
