@@ -109,6 +109,8 @@
 		var/list/ship_data = list(
 			"name" = S.name,
 			"class" = S.source_template.short_name,
+			"desc" = S.source_template.description,
+			"tags" = S.source_template.tags,
 			"memo" = S.memo,
 			"jobs" = ship_jobs,
 			"manifest" = S.manifest,
