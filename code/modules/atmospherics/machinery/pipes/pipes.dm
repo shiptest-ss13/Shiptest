@@ -83,7 +83,7 @@
 	parent = P
 
 /obj/machinery/atmospherics/pipe/Destroy()
-	parent = null
+	QDEL_NULL(parent)
 
 	releaseAirToTurf()
 	air_temporary = null
