@@ -44,7 +44,7 @@
 		return FALSE
 	if(tool.usesound)
 		preop_sound = tool.usesound
-	return TRUE
+	return ..()
 
 //prepare electronics
 /datum/surgery_step/prepare_electronics
