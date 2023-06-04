@@ -588,7 +588,6 @@
 	harvest_message_med = "You discover some edible weeds within the patch."
 	harvest_message_high = "You discover some edible weeds within the patch."
 
-
 /obj/effect/spawner/lootdrop/garden
 	name = "lush garden seeder"
 	lootcount = 3
@@ -699,7 +698,6 @@
 	plant = list(
 			/obj/item/reagent_containers/food/snacks/grown/seaweed = 1
 			)
-
 
 /obj/item/reagent_containers/food/snacks/grown/berries/poison/stealth //careful eating from random jungle bushes
 	seed = /obj/item/seeds/berry/poison
