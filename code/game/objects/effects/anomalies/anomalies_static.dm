@@ -33,8 +33,8 @@
 			var/mob/living/carbon/victim = looking
 			var/obj/effect/anomaly/tvstatic/planetary/expansion
 			expansion = new(get_turf(victim))
-			visible_message("<span class='warning'> The static overtakes [looking], [expansion] taking their place!</span>")
-			looking.death()
+			visible_message("<span class='warning'> The static overtakes [victim], [expansion] taking their place!</span>")
+			victim.death()
 			stored_mob = victim
 			victim.forceMove(expansion)
 	return
