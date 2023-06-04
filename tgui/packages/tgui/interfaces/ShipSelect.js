@@ -102,7 +102,8 @@ export const ShipSelect = (props, context) => {
                   {selectedShip.desc || 'No Description'}
                 </LabeledList.Item>
                 <LabeledList.Item label="Ship Tags">
-                  {(template.tags && template.tags.join(', ')) || 'No Tags Set'}
+                  {(selectedShip.tags && selectedShip.tags.join(', ')) ||
+                    'No Tags Set'}
                 </LabeledList.Item>
                 <LabeledList.Item label="Ship Memo">
                   {selectedShip.memo || 'No Memo'}
