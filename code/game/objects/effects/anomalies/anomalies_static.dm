@@ -46,7 +46,6 @@
 /obj/effect/anomaly/tvstatic/detonate()
 	for(var/mob/living/carbon/looking in range(effectrange, src))
 		visible_message("<span class='boldwarning'> The static lashes out!</span>")
-		sleep(5 SECONDS)
 		if (HAS_TRAIT(looking, SEE_TURFS) || (looking.mind && HAS_TRAIT(looking.mind, SEE_TURFS)))
 			looking.adjustOrganLoss(ORGAN_SLOT_BRAIN, 100, 200)
 			playsound(looking, 'sound/effects/walkietalkie.ogg')
