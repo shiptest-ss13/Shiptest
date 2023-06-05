@@ -113,7 +113,7 @@
 	desc = "An entire fish, surrounded by a thick layer of seaweed. is this... edible?"
 	icon_state = "fi-shi"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 2, /datum/reagent/toxin/carpotoxin = 2)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 18, /datum/reagent/consumable/nutriment/vitamin = 8, /datum/reagent/toxin/carpotoxin = 8 )
+	list_reagents = list(/datum/reagent/consumable/nutriment = 18, /datum/reagent/consumable/nutriment/vitamin = 8, /datum/reagent/toxin/carpotoxin = 8)
 	filling_color = "#eac57b"
 	tastes = list("raw fish" = 6, "dried seaweed" = 3)
 	foodtype = VEGETABLES | MEAT
