@@ -2111,7 +2111,6 @@
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen/kitchen)
 "ss" = (
-/obj/machinery/light/small/directional/north,
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
 	},
@@ -2129,11 +2128,13 @@
 /obj/machinery/button/door{
 	id = "engine";
 	name = "Engine shutter control";
-	pixel_y = 26
+	pixel_y = 22;
+	pixel_x = 9
 	},
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "sv" = (
