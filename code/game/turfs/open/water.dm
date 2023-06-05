@@ -23,7 +23,7 @@
 	if(!reagent_to_extract)
 		return ..()
 	var/obj/item/reagent_containers/glass/container = tool
-	if(!container)
+	if(!istype(tool, /obj/item/reagent_containers))
 		return ..()
 	if(container.reagents.total_volume >= container.volume)
 		to_chat(user, "<span class='danger'>[container] is full.</span>")

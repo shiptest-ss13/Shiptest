@@ -75,3 +75,12 @@
 	suit = /obj/item/clothing/suit/toggle/hazard
 	head = /obj/item/clothing/head/hardhat
 	id = /obj/item/card/id/syndicate_command/crew_id
+
+/datum/outfit/job/atmos/frontiersmen
+	name = "Atmospheric Technician (Frontiersmen)"
+
+	uniform = /obj/item/clothing/under/rank/security/officer/frontier
+	suit = /obj/item/clothing/suit/hooded/wintercoat/engineering/atmos
+	head = /obj/item/clothing/head/hardhat
+	ears = /obj/item/radio/headset/pirate
+	mask = /obj/item/clothing/mask/gas/atmos

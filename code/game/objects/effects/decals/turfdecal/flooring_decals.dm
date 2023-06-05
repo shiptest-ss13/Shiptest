@@ -728,13 +728,90 @@ TURF_DECAL_COLOR_HELPER(transparent/inteqbrown, "#4b2a18", 140)
 /obj/effect/turf_decal/rechargefloor
 	icon_state = "recharge_floor"
 
-/obj/effect/turf_decal/solgov //Credit to baystation for these sprites!
-	alpha = 230
+/obj/effect/turf_decal/solgov
 	icon = 'icons/obj/solgov_floor.dmi'
+	icon_state = "top-left"
+
+/obj/effect/turf_decal/solgov/top
+	icon_state = "top-center"
+
+/obj/effect/turf_decal/solgov/top_right
+	icon_state = "top-right"
+
+/obj/effect/turf_decal/solgov/center_left
+	icon_state = "center-left"
+
+/obj/effect/turf_decal/solgov/center
 	icon_state = "center"
 
+/obj/effect/turf_decal/solgov/center_right
+	icon_state = "center-right"
+
+/obj/effect/turf_decal/solgov/bottom_left
+	icon_state = "bottom-left"
+
+/obj/effect/turf_decal/solgov/bottom_center
+	icon_state = "bottom-center"
+
+/obj/effect/turf_decal/solgov/bottom_right
+	icon_state = "bottom-right"
+
+/obj/effect/turf_decal/solgov/wood
+	icon_state = "top-left-wood"
+
+/obj/effect/turf_decal/solgov/wood/top
+	icon_state = "top-center-wood"
+
+/obj/effect/turf_decal/solgov/wood/top_right
+	icon_state = "top-right-wood"
+
+/obj/effect/turf_decal/solgov/wood/center_left
+	icon_state = "center-left-wood"
+
+/obj/effect/turf_decal/solgov/wood/center
+	icon_state = "center-wood"
+
+/obj/effect/turf_decal/solgov/wood/center_right
+	icon_state = "center-right-wood"
+
+/obj/effect/turf_decal/solgov/wood/bottom_left
+	icon_state = "bottom-left-wood"
+
+/obj/effect/turf_decal/solgov/wood/bottom_center
+	icon_state = "bottom-center-wood"
+
+/obj/effect/turf_decal/solgov/wood/bottom_right
+	icon_state = "bottom-right-wood"
+
+/obj/effect/turf_decal/solgov/all
+	icon_state = "top-left-all"
+
+/obj/effect/turf_decal/solgov/all/top
+	icon_state = "top-center-all"
+
+/obj/effect/turf_decal/solgov/all/top_right
+	icon_state = "top-right-all"
+
+/obj/effect/turf_decal/solgov/all/center_left
+	icon_state = "center-left-all"
+
+/obj/effect/turf_decal/solgov/all/center
+	icon_state = "center-all"
+
+/obj/effect/turf_decal/solgov/all/center_right
+	icon_state = "center-right-all"
+
+/obj/effect/turf_decal/solgov/all/bottom_left
+	icon_state = "bottom-left-all"
+
+/obj/effect/turf_decal/solgov/all/bottom_center
+	icon_state = "bottom-center-all"
+
+/obj/effect/turf_decal/solgov/all/bottom_right
+	icon_state = "bottom-right-all"
+
 /obj/effect/turf_decal/road
-	name = "roal decal"
+	name = "road decal"
 	icon_state = "road"
 	alpha = 180
 

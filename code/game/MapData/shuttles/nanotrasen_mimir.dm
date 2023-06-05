@@ -9,7 +9,6 @@
 
 /obj/item/storage/backpack/satchel/flat/mimir_refill/PopulateContents()
 	new /obj/item/vending_refill/hydronutrients(src)
-	new /obj/item/vending_refill/hydroseeds(src)
 
 /obj/item/storage/backpack/satchel/flat/mimir_transfer/PopulateContents()
 	new /obj/item/reagent_containers/food/drinks/bottle/whiskey(src)

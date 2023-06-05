@@ -151,7 +151,7 @@
 	suit = /obj/item/clothing/suit/armor/hos/roumain/montagne
 	head = /obj/item/clothing/head/HoS/cowboy/montagne
 	gloves = null
-	id = /obj/item/card/id/captains_spare
+	id = /obj/item/card/id/gold
 	duffelbag = /obj/item/storage/backpack/cultpack
 	courierbag = /obj/item/storage/backpack/cultpack
 	backpack_contents = list(

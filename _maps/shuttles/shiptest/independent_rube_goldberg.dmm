@@ -929,20 +929,7 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
-"id" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 4
-	},
-/obj/effect/turf_decal/corner/opaque/brown/border{
-	dir = 9
-	},
-/turf/open/floor/plasteel/tech/techmaint,
-/area/ship/engineering)
-"ij" = (
-/obj/machinery/air_sensor/atmos/nitrogen_tank,
-/turf/open/floor/engine/airless,
-/area/ship/engineering/atmospherics)
-"iw" = (
+"hZ" = (
 /obj/machinery/light{
 	dir = 1
 	},
@@ -966,6 +953,19 @@
 /obj/item/reagent_containers/food/snacks/meat/slab,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/canteen)
+"id" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/opaque/brown/border{
+	dir = 9
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/engineering)
+"ij" = (
+/obj/machinery/air_sensor/atmos/nitrogen_tank,
+/turf/open/floor/engine/airless,
+/area/ship/engineering/atmospherics)
 "ix" = (
 /obj/structure/lattice/catwalk,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -3914,10 +3914,6 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/dorm)
-"LC" = (
-/obj/effect/decal/cleanable/blood/old,
-/turf/open/floor/plating,
-/area/ship/engineering/engine)
 "LF" = (
 /obj/machinery/atmospherics/pipe/simple/general/visible/layer2{
 	dir = 6
@@ -4104,6 +4100,11 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/tech/techmaint,
+/area/ship/engineering/engine)
+"Ns" = (
+/obj/effect/decal/cleanable/blood/old,
+/obj/effect/landmark/observer_start,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Nw" = (
 /obj/structure/mineral_door/wood,
@@ -5625,7 +5626,7 @@ Zg
 Zg
 Zg
 tt
-iw
+hZ
 Hb
 rW
 fU
@@ -6414,7 +6415,7 @@ yz
 Hn
 rj
 Fr
-LC
+Ns
 Ru
 vW
 rm

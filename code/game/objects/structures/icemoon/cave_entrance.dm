@@ -519,17 +519,17 @@ GLOBAL_LIST_INIT(ore_probability, list(
 			if(prob(45))
 				new /obj/item/rod_of_asclepius(loc)
 			if(prob(35))
-				new /obj/effect/mob_spawn/human/corpse/solgov/infantry(loc)
+				new /obj/effect/mob_spawn/human/corpse/solgov/sonnensoldner(loc)
 				new /mob/living/simple_animal/hostile/blob/blobspore/weak(loc)
 			else
 				new /obj/effect/mob_spawn/human/doctor(loc)
 			if(prob(35))
-				new /obj/effect/mob_spawn/human/corpse/solgov/infantry(loc)
+				new /obj/effect/mob_spawn/human/corpse/solgov/sonnensoldner(loc)
 				new /mob/living/simple_animal/hostile/blob/blobspore/weak(loc)
 			else
 				new /obj/effect/mob_spawn/human/doctor(loc)
 			if(prob(35))
-				new /obj/effect/mob_spawn/human/corpse/solgov/infantry(loc)
+				new /obj/effect/mob_spawn/human/corpse/solgov/sonnensoldner(loc)
 				new /mob/living/simple_animal/hostile/blob/blobspore/weak(loc)
 			else
 				new /obj/effect/mob_spawn/human/doctor(loc)
