@@ -356,6 +356,13 @@ LINEN BINS
 	dream_messages = list("authority", "a silvery ID", "a bomb", "a mech", "a facehugger", "maniacal laughter", "the research director")
 	desc = "It appears to have a beaker emblem, and is made out of fire-resistant material, although it probably won't protect you in the event of fires you're familiar with every day."
 
+/obj/item/bedsheet/double/solgov
+	name = "double SolGov bedsheet"
+	icon_state = "double_sheetsolgov"
+	item_state = "double_sheetsolgov"
+	dream_messages = list("bureaucracy", "laws", "papers", "writing")
+	desc = "It has the emblem of the Solar Confederation emblazoned upon it!"
+
 /obj/item/bedsheet/random/Initialize()
 	..()
 	var/type = pick(typesof(/obj/item/bedsheet) - /obj/item/bedsheet/random)
