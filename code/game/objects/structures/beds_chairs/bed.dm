@@ -206,7 +206,7 @@
 	desc = "This looks similar to contraptions from Earth. Could aliens be stealing our technology?"
 	icon_state = "abed"
 
-//Double Beds, for luxurious sleeping, i.e. the captain and maybe heads - if people use this for ERP, send them to skyrat, or worse, acacia
+//Double Beds, for luxurious sleeping, i.e. the captain and maybe heads - no quirky refrence here. Move along
 /obj/structure/bed/double
 	name = "double bed"
 	desc = "A luxurious double bed, for those too important for small dreams."
