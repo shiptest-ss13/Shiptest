@@ -359,7 +359,7 @@
 	if(!direction)
 		direction = get_dir(src, newloc)
 
-	if(set_dir_on_move && dir != direction && update_dir && !face_mouse) // SKYRAT EDIT - && !face_mouse
+	if(set_dir_on_move && dir != direction && update_dir && !face_mouse) //for facing direction on harm - face_mouse
 		setDir(direction)
 
 	var/is_multi_tile_object = bound_width > 32 || bound_height > 32
