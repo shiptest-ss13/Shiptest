@@ -124,10 +124,8 @@ export const chatMiddleware = (store) => {
       next(action);
       const settings = selectSettings(store.getState());
       chatRenderer.setHighlight(
-        settings.highlightText,
-        settings.highlightColor,
-        settings.matchWord,
-        settings.matchCase
+        settings.highlightSettings,
+        settings.highlightSettingById
       );
 
       return;
