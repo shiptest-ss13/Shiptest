@@ -2047,7 +2047,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						hairstyle = random_hairstyle(gender)
 
 				if("synthetic")
-					var/new_synthetic = input(user, "Choose your synthetic status.", "Character Preference", synthetic) as null|anything in list(NOT_SYNTHETIC, SYNTHETIC_FBP, SYNTHETIC_POSI)
+					var/new_synthetic = input(user, "Choose your synthetic status.", "Character Preference", synthetic) as null|anything in GLOB.synthetic_options
 					if(new_synthetic)
 						synthetic = new_synthetic
 

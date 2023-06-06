@@ -446,7 +446,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["feature_human_tail"], features["tail_human"])
 	READ_FILE(S["feature_human_ears"], features["ears"])
 
-	READ_FILE(S["synthetic"], features["synthetic"])
+	READ_FILE(S["synthetic"], synthetic)
 
 	//Custom names
 	for(var/custom_name_id in GLOB.preferences_custom_names)
@@ -549,7 +549,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	features["vox_neck_quills"] = sanitize_inlist(features["vox_neck_quills"], GLOB.vox_neck_quills_list, "None")
 	features["elzu_horns"] 	= sanitize_inlist(features["elzu_horns"], GLOB.elzu_horns_list)
 	features["tail_elzu"]	= sanitize_inlist(features["tail_elzu"], GLOB.tails_list_elzu)
-	features["synthetic"]	= sanitize_integer(features["synthetic"], FALSE, TRUE, FALSE)
+	features["synthetic"]	= sanitize_inlist(features["synthetic"], GLOB.synthetic_options)
 	features["flavor_text"]		= sanitize_text(features["flavor_text"], initial(features["flavor_text"]))
 
 	all_quirks = SANITIZE_LIST(all_quirks)
