@@ -40,3 +40,33 @@
 	light_range = 2
 	light_power = 0.2
 	light_color = LIGHT_COLOR_LAVA
+
+/turf/open/water/waste
+	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
+	planetary_atmos = TRUE
+
+/turf/open/water/waste/lit
+	light_range = 2
+	light_power = 0.2
+	light_color = LIGHT_COLOR_LAVA
+
+/turf/open/floor/plating/dirt/old/waste
+	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
+	planetary_atmos = TRUE
+
+/turf/open/floor/plating/dirt/old/waste/lit
+	light_range = 2
+	light_power = 0.2
+	light_color = LIGHT_COLOR_LAVA
+
+/turf/open/floor/wood/waste
+	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
+	planetary_atmos = TRUE
+
+/turf/open/indestructible/hierophant/waste
+	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
+	planetary_atmos = TRUE
+
+/turf/open/indestructible/hierophant/two/waste
+	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
+	planetary_atmos = TRUE
