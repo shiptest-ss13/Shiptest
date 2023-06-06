@@ -39,15 +39,15 @@
 	return
 
 /obj/structure/spawner/wasteplanet/hivebot
-	name = "beacon"
-	desc = "An active bluespace beacon, warping in creatures from a distant location."
+	name = "hivebot fabricator"
+	desc = "An active fabricator, creating hivebots out of resources from below the surface."
 
-	icon = 'icons/mob/hivebot.dmi'
-	icon_state = "def_radar"
+	icon = 'icons/obj/machines/bsm.dmi'
+	icon_state = "bsm_on"
 
 	faction = list("mining")
 	max_mobs = 5
-	max_integrity = 450
+	max_integrity = 250
 	mob_types = list(
 		/mob/living/simple_animal/hostile/hivebot/wasteplanet = 40,
 		/mob/living/simple_animal/hostile/hivebot/wasteplanet/ranged = 40,
@@ -55,8 +55,8 @@
 		/mob/living/simple_animal/hostile/hivebot/wasteplanet/strong = 5,
 		/mob/living/simple_animal/hostile/hivebot/mechanic = 5
 	)
-	spawn_text = "warps out of"
-	spawn_sound = list('sound/effects/empulse.ogg')
+	spawn_text = "crawls out of"
+	spawn_sound = list('sound/effects/suitstep2.ogg')
 	move_resist = INFINITY
 	anchored = TRUE
 	resistance_flags = FIRE_PROOF | LAVA_PROOF
@@ -98,11 +98,11 @@
 	spawn_time = 300
 
 /obj/structure/spawner/wasteplanet/hivebot/medium_threat
-	max_mobs = 6
+	max_mobs = 5
 	spawn_time = 250
 
 /obj/structure/spawner/wasteplanet/hivebot/high_threat
-	max_mobs = 8
+	max_mobs = 7
 	spawn_time = 200
 
 /obj/structure/spawner/wasteplanet/hivebot/extreme_threat

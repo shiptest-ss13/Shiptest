@@ -111,7 +111,7 @@
 		/obj/item/stack/cable_coil/cut = 50,
 		/obj/structure/closet/crate/secure/loot = 3,
 		/obj/effect/spawner/lootdrop/waste/atmos_can = 5,
-		/obj/effect/spawner/lootdrop/waste/atmos_can/rare = 1,
+		/obj/effect/spawner/lootdrop/waste/atmos_can/rare = 0.1,
 		/obj/effect/spawner/lootdrop/waste/salvageable = 30,
 		/obj/effect/spawner/lootdrop/waste/grille_or_trash = 20,
 		/obj/effect/spawner/lootdrop/maintenance = 20,
@@ -192,7 +192,7 @@
 		/obj/item/stack/cable_coil/cut = 50,
 		/obj/structure/closet/crate/secure/loot = 3,
 		/obj/effect/spawner/lootdrop/waste/atmos_can = 5,
-		/obj/effect/spawner/lootdrop/waste/atmos_can/rare = 1,
+		/obj/effect/spawner/lootdrop/waste/atmos_can/rare = 0.1,
 		/obj/effect/spawner/lootdrop/waste/salvageable = 30,
 		/obj/effect/spawner/lootdrop/waste/grille_or_trash = 20,
 		/obj/effect/spawner/lootdrop/maintenance = 20,
@@ -235,7 +235,7 @@
 		/obj/item/stack/cable_coil/cut = 50,
 		/obj/structure/closet/crate/secure/loot = 3,
 		/obj/effect/spawner/lootdrop/waste/atmos_can = 5,
-		/obj/effect/spawner/lootdrop/waste/atmos_can/rare = 1,
+		/obj/effect/spawner/lootdrop/waste/atmos_can/rare = 0.1,
 		/obj/effect/spawner/lootdrop/waste/salvageable = 30,
 		/obj/effect/spawner/lootdrop/waste/grille_or_trash = 20,
 		/obj/effect/spawner/lootdrop/maintenance = 20,
@@ -244,7 +244,7 @@
 		/obj/effect/spawner/lootdrop/maintenance/four = 2,
 		/obj/structure/closet/crate/secure/loot = 3,
 		/obj/effect/spawner/lootdrop/waste/atmos_can = 18,
-		/obj/effect/spawner/lootdrop/waste/atmos_can/rare = 1,
+		/obj/effect/spawner/lootdrop/waste/atmos_can/rare = 0.1,
 		/obj/effect/spawner/lootdrop/waste/salvageable = 30
 	)
 	mob_spawn_list = list( //nor organics, more biased towards hivebots though
@@ -297,7 +297,7 @@
 		/obj/item/stack/cable_coil/cut = 50,
 		/obj/structure/closet/crate/secure/loot = 3,
 		/obj/effect/spawner/lootdrop/waste/atmos_can = 5,
-		/obj/effect/spawner/lootdrop/waste/atmos_can/rare = 2,
+		/obj/effect/spawner/lootdrop/waste/atmos_can/rare = 0.5,
 		/obj/effect/spawner/lootdrop/waste/salvageable = 30,
 		/obj/effect/spawner/lootdrop/waste/grille_or_trash = 20,
 		/obj/effect/spawner/lootdrop/maintenance = 2,
@@ -340,7 +340,7 @@
 
 /datum/biome/cave/waste/tar_bed/full
 	open_turf_types = list(
-		/turf/open/water/tar
+		/turf/open/water/tar/waste
 	)
 	flora_spawn_chance = 0
 
@@ -350,7 +350,7 @@
 		/obj/effect/spawner/lootdrop/waste/radiation = 25,
 		/obj/effect/spawner/lootdrop/waste/radiation/more_rads = 7,
 		/obj/effect/spawner/lootdrop/waste/atmos_can = 5,
-		/obj/effect/spawner/lootdrop/waste/atmos_can/rare = 1,
+		/obj/effect/spawner/lootdrop/waste/atmos_can/rare = 0.5,
 		/obj/effect/spawner/lootdrop/waste/salvageable = 15,
 		/obj/effect/spawner/lootdrop/waste/girder = 20,
 		/obj/structure/reagent_dispensers/fueltank = 1,
@@ -389,7 +389,7 @@
 		/obj/item/stack/cable_coil/cut = 50,
 		/obj/structure/closet/crate/secure/loot = 3,
 		/obj/effect/spawner/lootdrop/waste/atmos_can = 5,
-		/obj/effect/spawner/lootdrop/waste/atmos_can/rare = 2,
+		/obj/effect/spawner/lootdrop/waste/atmos_can/rare = 0.5,
 		/obj/effect/spawner/lootdrop/waste/salvageable = 30,
 		/obj/effect/spawner/lootdrop/waste/grille_or_trash = 20,
 		/obj/effect/spawner/lootdrop/maintenance = 2,
