@@ -61,6 +61,16 @@
 	light_power = 0.2
 	light_color = LIGHT_COLOR_LAVA
 
+/turf/open/floor/plating/grass/wasteplanet
+	icon_state = "junglegrass"
+	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
+	planetary_atmos = TRUE
+
+/turf/open/floor/plating/grass/wasteplanet/lit
+	light_range = 2
+	light_power = 0.2
+	light_color = LIGHT_COLOR_LAVA
+
 /turf/open/floor/wood/waste
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 	planetary_atmos = TRUE
