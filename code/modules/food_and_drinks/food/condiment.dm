@@ -308,3 +308,35 @@
 	name = "bbq sauce pack"
 	originalname = "bbq sauce"
 	list_reagents = list(/datum/reagent/consumable/bbqsauce = 10)
+
+
+/obj/item/reagent_containers/food/condiment/ketchup
+	name = "ketchup bottle"
+	desc = "You feel more american already"
+	icon_state = "ketchup"
+	list_reagents = list(/datum/reagent/consumable/ketchup = 50)
+
+/obj/item/reagent_containers/food/condiment/bbqsauce
+	name = "bbq sauce bottle"
+	desc = "Hand wipes not included"
+	icon_state = "bbqsauce"
+	list_reagents = list(/datum/reagent/consumable/bbqsauce = 50)
+
+/obj/item/reagent_containers/food/condiment/hotsauce
+	name = "hot sauce bottle"
+	desc = "You can almost TASTE the stomach ulcers now!"
+	icon_state = "hotsauce"
+	list_reagents = list(/datum/reagent/consumable/capsaicin = 50)
+
+/obj/item/reagent_containers/food/condiment/coldsauce
+	name = "cold sauce bottle"
+	desc = "Leaves the tounge numb in it's passage"
+	icon_state = "coldsauce"
+	list_reagents = list(/datum/reagent/consumable/frostoil = 50)
+
+/obj/item/reagent_containers/food/condiment/oliveoil
+	name = "olive oil bottle"
+	desc = "A delicious oil used in cooking"
+	icon_state = "oliveoil"
+	list_reagents = list(/datum/reagent/consumable/cornoil = 50)
+
