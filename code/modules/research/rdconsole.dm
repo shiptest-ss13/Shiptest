@@ -136,7 +136,7 @@ Nothing else in the console has ID requirements.
 				return
 			else
 				playsound(src, 'sound/machines/ping.ogg', 50, 3, -1)
-				visible_message("<span class='notice'>You insert [E] into a slot on the [src], producting [E.research] points from the extract's chemical makeup!</span>")
+				visible_message("<span class='notice'>[user] inserts [E] into a slot on the [src], producting [E.research] points from the extract's chemical makeup!</span>")
 				stored_research.add_point_list(list(TECHWEB_POINT_TYPE_GENERIC = E.research))
 				slime_already_researched[E.type] = TRUE
 				qdel(D)

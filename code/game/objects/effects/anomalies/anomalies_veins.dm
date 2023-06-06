@@ -1,7 +1,7 @@
 /obj/effect/anomaly/veins
-	name = "fountain"
+	name = "veins"
 	icon_state = "veins"
-	desc = "A mysterious anomaly, surrounded by blood of an unknown origin."
+	desc = "A mysterious anomaly, throbbing purple veins, suspended midair."
 	density = TRUE
 	aSignal = /obj/item/assembly/signaler/anomaly/veins
 	effectrange = 3
@@ -27,6 +27,11 @@
 
 
 /obj/effect/anomaly/veins/Bumped(atom/movable/AM)
+	if(!COOLDOWN_FINISHED(src, pulse_secondary_cooldown))
+		return
+
+	COOLDOWN_START(src, pulse_secondary_cooldown, 10)
+
 	anomalyEffect()
 	var/turf/spot = locate(rand(src.x-effectrange/2, src.x+effectrange/2), rand(src.y-effectrange/2, src.y+effectrange/2), src.z)
 	var/obj/effect/gibspawner/mess = pick(list(

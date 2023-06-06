@@ -216,7 +216,7 @@
 	research = null
 	anomaly_type = null
 
-/obj/item/assembly/signaler/anomaly/receive_signal(datum/signal/signal)
+/obj/item/assembly/signaler/anomaly/det_signal/receive_signal(datum/signal/signal)
 	if(!signal)
 		return FALSE
 	if(signal.data["code"] != code)

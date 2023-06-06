@@ -35,7 +35,7 @@
 			expansion = new(get_turf(victim))
 			visible_message("<span class='warning'> The static overtakes [victim], [expansion] taking their place!</span>")
 			victim.death()
-			stored_mob = victim
+			expansion.stored_mob = victim
 			victim.forceMove(expansion)
 	return
 
@@ -54,9 +54,12 @@
 
 
 /obj/effect/anomaly/tvstatic/anomalyNeutralize()
-	if(stored_mob)
-		stored_mob.forceMove(get_turf(src))
-		stored_mob = null
+	var/turf/T = get_turf(src)
+	if(T)
+		if(stored_mob)
+			visible_message("<span class='warning'>The static spits out [stored_mob], their body coming out in a burst!</span>")
+			stored_mob.forceMove(get_turf(src))
+			stored_mob = null
 	. = ..()
 
 

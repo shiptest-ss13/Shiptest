@@ -97,8 +97,7 @@
 		/obj/structure/flora/rock/hell = 5,
 		/obj/structure/elite_tumor = 1,
 		/obj/structure/geyser/random = 1,
-		/obj/effect/spawner/lootdrop/anomaly = 1,
-		/obj/effect/spawner/lootdrop/anomaly/big = 1
+		/obj/effect/spawner/lootdrop/anomaly/lava = 1,
 	)
 	mob_spawn_chance = 4
 	mob_spawn_list = list(
@@ -155,7 +154,7 @@
 	feature_spawn_list = list(
 		/obj/structure/flora/tree/dead/barren = 50,
 		/obj/structure/flora/tree/dead/tall/grey = 49,
-		/obj/effect/spawner/lootdrop/anomaly = 1
+		/obj/effect/spawner/lootdrop/anomaly/lava = 1
 	)
 
 /datum/biome/lavaland/plains/dense/mixed

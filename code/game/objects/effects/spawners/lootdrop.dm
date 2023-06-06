@@ -823,6 +823,30 @@
 		/obj/effect/anomaly/melter/planetary,
 	)
 
+/obj/effect/spawner/lootdrop/anomaly/safe
+	name = "relatively safe anomaly spawner"
+	loot = list(
+		/obj/effect/anomaly/hallucination/planetary,
+		/obj/effect/anomaly/pyro/planetary,
+		/obj/effect/anomaly/sparkler/planetary,
+		/obj/effect/anomaly/veins/planetary,
+		/obj/effect/anomaly/phantom/planetary,
+	)
+
+/obj/effect/spawner/lootdrop/anomaly/dangerous
+	name = "relatively dangerous anomaly spawner"
+	loot = list(
+		/obj/effect/anomaly/bluespace/planetary,
+		/obj/effect/anomaly/flux/planetary,
+		/obj/effect/anomaly/grav/planetary,
+		/obj/effect/anomaly/vortex/planetary,
+		/obj/effect/anomaly/grav/high/planetary,
+		/obj/effect/anomaly/heartbeat/planetary,
+		/obj/effect/anomaly/tvstatic/planetary,
+		/obj/effect/anomaly/plasmasoul/planetary,
+		/obj/effect/anomaly/melter/planetary,
+	)
+
 /obj/effect/spawner/lootdrop/anomaly/big
 	name = "random big anomaly spawner"
 	loot = list(
@@ -831,4 +855,99 @@
 		/obj/effect/anomaly/grav/high/big/planetary,
 		/obj/effect/anomaly/pyro/big/planetary
 
+	)
+
+//handpicked lists relevant to the planets they're on
+
+/obj/effect/spawner/lootdrop/anomaly/jungle
+	name = "Jungle Anomaly Spawner"
+	loot = list(
+		/obj/effect/anomaly/flux/planetary,
+		/obj/effect/anomaly/grav/planetary,
+		/obj/effect/anomaly/hallucination/planetary,
+		/obj/effect/anomaly/heartbeat/planetary,
+		/obj/effect/anomaly/tvstatic/planetary,
+		/obj/effect/anomaly/veins/planetary,
+		/obj/effect/anomaly/phantom/planetary,
+	)
+
+/obj/effect/spawner/lootdrop/anomaly/beach
+	name = "Beach anomaly spawner"
+	loot = list(
+		/obj/effect/anomaly/hallucination/planetary,
+		/obj/effect/anomaly/sparkler/planetary,
+		/obj/effect/anomaly/veins/planetary,
+		/obj/effect/anomaly/phantom/planetary,
+	)
+
+/obj/effect/spawner/lootdrop/anomaly/sand
+	name = "Sand anomaly spawner"
+	loot = list(
+		/obj/effect/anomaly/bluespace/planetary,
+		/obj/effect/anomaly/flux/planetary,
+		/obj/effect/anomaly/grav/planetary,
+		/obj/effect/anomaly/pyro/planetary,
+		/obj/effect/anomaly/sparkler/planetary,
+		/obj/effect/anomaly/tvstatic/planetary,
+		/obj/effect/anomaly/veins/planetary,
+		/obj/effect/anomaly/plasmasoul/planetary,
+		/obj/effect/anomaly/phantom/planetary,
+		/obj/effect/anomaly/melter/planetary,
+	)
+
+/obj/effect/spawner/lootdrop/anomaly/rock
+	name = "Rock anomaly spawner"
+	loot = list(
+		/obj/effect/anomaly/bluespace/planetary,
+		/obj/effect/anomaly/flux/planetary,
+		/obj/effect/anomaly/grav/planetary,
+		/obj/effect/anomaly/hallucination/planetary,
+		/obj/effect/anomaly/pyro/planetary,
+		/obj/effect/anomaly/vortex/planetary,
+		/obj/effect/anomaly/grav/high/planetary,
+		/obj/effect/anomaly/heartbeat/planetary,
+		/obj/effect/anomaly/sparkler/planetary,
+		/obj/effect/anomaly/tvstatic/planetary,
+		/obj/effect/anomaly/veins/planetary,
+		/obj/effect/anomaly/plasmasoul/planetary,
+		/obj/effect/anomaly/phantom/planetary,
+		/obj/effect/anomaly/melter/planetary,
+	)
+
+/obj/effect/spawner/lootdrop/anomaly/lava
+	name = "Lava anomaly spawner"
+	loot = list(
+		/obj/effect/anomaly/bluespace/planetary,
+		/obj/effect/anomaly/flux/planetary,
+		/obj/effect/anomaly/grav/planetary,
+		/obj/effect/anomaly/hallucination/planetary,
+		/obj/effect/anomaly/pyro/planetary,
+		/obj/effect/anomaly/vortex/planetary,
+		/obj/effect/anomaly/grav/high/planetary,
+		/obj/effect/anomaly/plasmasoul/planetary,
+	)
+
+/obj/effect/spawner/lootdrop/anomaly/ice
+	name = "Ice anomaly spawner"
+	loot = list(
+		/obj/effect/anomaly/bluespace/planetary,
+		/obj/effect/anomaly/grav/planetary,
+		/obj/effect/anomaly/hallucination/planetary,
+		/obj/effect/anomaly/vortex/planetary,
+		/obj/effect/anomaly/grav/high/planetary,
+		/obj/effect/anomaly/plasmasoul/planetary,
+		/obj/effect/anomaly/phantom/planetary,
+	)
+
+/obj/effect/spawner/lootdrop/anomaly/waste
+	name = "Waste anomaly spawner"
+	loot = list(
+		/obj/effect/anomaly/bluespace/planetary,
+		/obj/effect/anomaly/grav/planetary,
+		/obj/effect/anomaly/hallucination/planetary,
+		/obj/effect/anomaly/vortex/planetary,
+		/obj/effect/anomaly/heartbeat/planetary,
+		/obj/effect/anomaly/veins/planetary,
+		/obj/effect/anomaly/plasmasoul/planetary,
+		/obj/effect/anomaly/melter/planetary,
 	)

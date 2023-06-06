@@ -113,7 +113,7 @@
 		/obj/structure/spawner/ice_moon/demonic_portal = 1,
 		/obj/structure/spawner/ice_moon/demonic_portal/ice_whelp = 1,
 		/obj/structure/spawner/ice_moon/demonic_portal/snowlegion = 1,
-		/obj/effect/spawner/lootdrop/anomaly = 1
+		/obj/effect/spawner/lootdrop/anomaly/ice = 1
 	)
 
 /datum/biome/snow/lush
@@ -193,8 +193,8 @@
 		/obj/structure/spawner/ice_moon/demonic_portal/ice_whelp = 1,
 		/obj/structure/spawner/ice_moon/demonic_portal/snowlegion = 1,
 		/obj/structure/spawner/ice_moon/demonic_portal/brimdemon = 1,
-		/obj/effect/spawner/lootdrop/anomaly = 1,
-		/obj/effect/spawner/lootdrop/anomaly/big = 1
+		/obj/effect/spawner/lootdrop/anomaly/ice = 1,
+		/obj/effect/spawner/lootdrop/anomaly/big = 0.1
 	)
 
 
@@ -238,7 +238,7 @@
 		/obj/structure/spawner/ice_moon/demonic_portal/snowlegion = 1,
 		/obj/structure/spawner/ice_moon = 1,
 		/obj/structure/spawner/ice_moon/polarbear = 1,
-		/obj/effect/spawner/lootdrop/anomaly = 1
+		/obj/effect/spawner/lootdrop/anomaly/ice = 1
 	)
 
 /datum/biome/cave/snow/thawed
@@ -275,7 +275,7 @@
 		/obj/structure/spawner/ice_moon/demonic_portal/snowlegion = 1,
 		/obj/structure/spawner/ice_moon = 3,
 		/obj/structure/spawner/ice_moon/polarbear = 3,
-		/obj/effect/spawner/lootdrop/anomaly = 1
+		/obj/effect/spawner/lootdrop/anomaly/ice = 1
 	)
 
 /datum/biome/cave/volcanic/lava
