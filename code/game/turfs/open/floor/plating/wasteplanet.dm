@@ -41,7 +41,6 @@
 /turf/open/water/tar/waste/lit
 	light_range = 2
 	light_power = 0.2
-<<<<<<< HEAD
 	light_color = LIGHT_COLOR_LAVA
 
 /turf/open/water/waste
@@ -73,6 +72,5 @@
 /turf/open/indestructible/hierophant/two/waste
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 	planetary_atmos = TRUE
-=======
 	light_color = LIGHT_COLOR_FLARE
->>>>>>> 759475736db4c4ab64a3f111a35028d9a375a5bd
+
