@@ -157,9 +157,15 @@
 		if(BODY_ZONE_HEAD)
 			L = robotic ? new species.species_robotic_head() : new species.species_head()
 		if(BODY_ZONE_L_LEG)
-			L = robotic ? new species.species_robotic_l_leg() : new species.species_l_leg()
+			if(species.is_digitigrade(src))
+				L = robotic ? new species.species_robotic_digi_l_leg() : new species.species_digi_l_leg()
+			else
+				L = robotic ? new species.species_robotic_l_leg() : new species.species_l_leg()
 		if(BODY_ZONE_R_LEG)
-			L = robotic ? new species.species_robotic_r_leg() : new species.species_r_leg()
+			if(species.is_digitigrade(src))
+				L = robotic ? new species.species_robotic_digi_r_leg() : new species.species_digi_r_leg()
+			else
+				L = robotic ? new species.species_robotic_r_leg() : new species.species_r_leg()
 		if(BODY_ZONE_CHEST)
 			L = robotic ? new species.species_robotic_chest() : new species.species_chest()
 	. = L

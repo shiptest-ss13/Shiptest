@@ -220,12 +220,18 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/obj/item/bodypart/species_r_leg = /obj/item/bodypart/leg/right
 	var/obj/item/bodypart/species_l_leg = /obj/item/bodypart/leg/left
 
+	var/obj/item/bodypart/species_digi_l_leg = /obj/item/bodypart/leg/left/digitigrade
+	var/obj/item/bodypart/species_digi_r_leg = /obj/item/bodypart/leg/right/digitigrade
+
 	var/obj/item/bodypart/species_robotic_chest = /obj/item/bodypart/chest/robot
 	var/obj/item/bodypart/species_robotic_head = /obj/item/bodypart/head/robot
 	var/obj/item/bodypart/species_robotic_l_arm = /obj/item/bodypart/l_arm/robot/surplus
 	var/obj/item/bodypart/species_robotic_r_arm = /obj/item/bodypart/r_arm/robot/surplus
 	var/obj/item/bodypart/species_robotic_l_leg = /obj/item/bodypart/leg/left/robot/surplus
 	var/obj/item/bodypart/species_robotic_r_leg = /obj/item/bodypart/leg/right/robot/surplus
+
+	var/obj/item/bodypart/species_robotic_digi_l_leg = /obj/item/bodypart/leg/left/robot/surplus/lizard/digitigrade
+	var/obj/item/bodypart/species_robotic_digi_r_leg = /obj/item/bodypart/leg/right/robot/surplus/lizard/digitigrade
 
 	var/obj/item/organ/brain/robotic_brain = /obj/item/organ/brain/mmi_holder
 	var/obj/item/organ/heart/robotic_heart = /obj/item/organ/heart/cybernetic
@@ -380,13 +386,12 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			QDEL_NULL(old)
 		I.Insert(C)
 
+/datum/species/proc/is_digitigrade(mob/living/carbon/leg_haver)
+	return (digitigrade_customization == DIGITIGRADE_OPTIONAL && leg_haver.dna.features["legs"] == "Digitigrade Legs") || digitigrade_customization == DIGITIGRADE_FORCED
+
 /datum/species/proc/replace_body(mob/living/carbon/C, datum/species/new_species, robotic = FALSE)
 	new_species ||= C.dna.species //If no new species is provided, assume its src.
 	//Note for future: Potentionally add a new C.dna.species() to build a template species for more accurate limb replacement
-
-	if((new_species.digitigrade_customization == DIGITIGRADE_OPTIONAL && C.dna.features["legs"] == "Digitigrade Legs") || new_species.digitigrade_customization == DIGITIGRADE_FORCED)
-		new_species.species_r_leg = /obj/item/bodypart/leg/right/digitigrade
-		new_species.species_l_leg = /obj/item/bodypart/leg/left/digitigrade
 
 	for(var/obj/item/bodypart/old_part as anything in C.bodyparts)
 		if(old_part.change_exempt_flags & BP_BLOCK_CHANGE_SPECIES)
@@ -926,7 +931,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				if("waggingspines")
 					S = GLOB.animated_spines_list[H.dna.features["spines"]]
 				if("snout")
-					S = (HD.bodytype & BODYTYPE_ROBOTIC) ? GLOB.snouts_list["Synthetic"] : GLOB.snouts_list[H.dna.features["snout"]]
+					S = GLOB.snouts_list[H.dna.features["snout"]]
 				if("frills")
 					S = GLOB.frills_list[H.dna.features["frills"]]
 				if("horns")
@@ -993,17 +998,27 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			else if(bodypart == "waggingtail_lizard" || bodypart == "waggingtail_human" || bodypart == "waggingtail_elzu")
 				bodypart = "waggingtail"
 
+			var/used_color_src = S.color_src
+
+			var/icon_state_name = S.icon_state
+			if(S.synthetic_icon_state)
+				var/obj/item/bodypart/attachment_point = H.get_bodypart(S.body_zone)
+				if(attachment_point && IS_ROBOTIC_LIMB(attachment_point))
+					icon_state_name = S.synthetic_icon_state
+					if(S.synthetic_color_src)
+						used_color_src = S.synthetic_color_src
+
 			if(S.gender_specific)
-				accessory_overlay.icon_state = "[g]_[bodypart]_[S.icon_state]_[layertext]"
+				accessory_overlay.icon_state = "[g]_[bodypart]_[icon_state_name]_[layertext]"
 			else
-				accessory_overlay.icon_state = "m_[bodypart]_[S.icon_state]_[layertext]"
+				accessory_overlay.icon_state = "m_[bodypart]_[icon_state_name]_[layertext]"
 
 			if(S.center)
 				accessory_overlay = center_image(accessory_overlay, S.dimension_x, S.dimension_y)
 
 			if(!(HAS_TRAIT(H, TRAIT_HUSK)))
 				if(!forced_colour)
-					switch(S.color_src)
+					switch(used_color_src)
 						if(MUTCOLORS)
 							if(fixed_mut_color)
 								accessory_overlay.color = "#[fixed_mut_color]"

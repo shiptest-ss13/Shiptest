@@ -429,6 +429,17 @@
 	overlay_icon_state = "robotic_r_leg_overlay"
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
 
+/obj/item/bodypart/leg/left/robot/surplus/lizard/digitigrade
+	name = "surplus prosthetic digitigrade lizard left leg"
+	limb_id = "digitigrade"
+	overlay_icon_state = "digitigrade_l_leg_overlay"
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_DIGITIGRADE
+
+/obj/item/bodypart/leg/right/robot/surplus/lizard/digitigrade
+	name = "surplus prosthetic digitigrade lizard right leg"
+	limb_id = "digitigrade"
+	overlay_icon_state = "digitigrade_r_leg_overlay"
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_DIGITIGRADE
 
 //Kepori Robotic
 /obj/item/bodypart/chest/robot/kepori

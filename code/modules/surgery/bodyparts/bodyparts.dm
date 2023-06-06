@@ -655,6 +655,10 @@
 		if(aux_zone) //Hand shit
 			aux = image(limb.icon, "[limb_id]_[aux_zone]", -aux_layer, image_dir)
 			. += aux
+			if(overlay_icon_state)
+				var/image/overlay = image(limb.icon, "[limb_id]_[aux_zone]_overlay", -aux_layer, image_dir)
+				overlay.color = "#[species_secondary_color]"
+				. += overlay
 
 		draw_color = mutation_color
 		if(should_draw_greyscale) //Should the limb be colored outside of a forced color?
