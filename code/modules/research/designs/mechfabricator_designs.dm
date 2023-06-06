@@ -150,7 +150,7 @@
 	id = "lprosthetic_l_leg"
 	build_path = /obj/item/bodypart/leg/left/robot/surplus/lizard
 
-/datum/design/prosthetic_l_arm/lizard
+/datum/design/prosthetic_r_leg/lizard
 	name = "Surplus Prosthetic Lizard Right Leg"
 	id = "lprosthetic_r_leg"
 	build_path = /obj/item/bodypart/leg/right/robot/surplus/lizard

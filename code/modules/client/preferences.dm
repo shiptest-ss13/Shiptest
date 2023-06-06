@@ -122,7 +122,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						)
 	var/list/randomise = list(RANDOM_UNDERWEAR = TRUE, RANDOM_UNDERWEAR_COLOR = TRUE, RANDOM_UNDERSHIRT = TRUE, RANDOM_SOCKS = TRUE, RANDOM_BACKPACK = TRUE, RANDOM_JUMPSUIT_STYLE = TRUE, RANDOM_EXOWEAR_STYLE = TRUE, RANDOM_HAIRSTYLE = TRUE, RANDOM_HAIR_COLOR = TRUE, RANDOM_FACIAL_HAIRSTYLE = TRUE, RANDOM_FACIAL_HAIR_COLOR = TRUE, RANDOM_SKIN_TONE = TRUE, RANDOM_EYE_COLOR = TRUE)
 	var/list/friendlyGenders = list("Male" = "male", "Female" = "female", "Other" = "plural")
-	var/synthetic = FALSE
+	var/synthetic = NOT_SYNTHETIC
 	var/list/prosthetic_limbs = list(BODY_ZONE_L_ARM = PROSTHETIC_NORMAL, BODY_ZONE_R_ARM = PROSTHETIC_NORMAL, BODY_ZONE_L_LEG = PROSTHETIC_NORMAL, BODY_ZONE_R_LEG = PROSTHETIC_NORMAL)
 	var/phobia = "spiders"
 	var/list/alt_titles_preferences = list()
@@ -836,9 +836,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "</tr></table>"
 
 			dat += "<h3>Prosthetic Limbs</h3>"
-			dat += "<a href='?_src_=prefs;preference=synthetic'>Synthetic: [synthetic ? "Yes" : "No"]</a><br>"
+			dat += "<a href='?_src_=prefs;preference=synthetic'>Synthetic: [synthetic]</a><br>"
 
-			if(!synthetic)
+			if(synthetic == NOT_SYNTHETIC)
 				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_PROSTHETIC]'>Random Prosthetic: [(randomise[RANDOM_PROSTHETIC]) ? "Yes" : "No"]</a><br>"
 
 				dat += "<table>"
@@ -2047,7 +2047,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						hairstyle = random_hairstyle(gender)
 
 				if("synthetic")
-					synthetic = !synthetic
+					var/new_synthetic = input(user, "Choose your synthetic status.", "Character Preference", synthetic) as null|anything in list(NOT_SYNTHETIC, SYNTHETIC_FBP, SYNTHETIC_POSI)
+					if(new_synthetic)
+						synthetic = new_synthetic
 
 				if("limbs")
 					if(href_list["customize_limb"])
@@ -2388,11 +2390,16 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		pref_species = new /datum/species/human
 		save_character()
 
+	chosen_species = new chosen_species
+
+	if(synthetic == SYNTHETIC_POSI)
+		chosen_species.robotic_brain = /obj/item/organ/brain/mmi_holder/posibrain
+
 	//prosthetics work for vox and kepori and update just fine for everyone
 	character.dna.features = features.Copy()
-	character.set_species(chosen_species, icon_update = FALSE, pref_load = TRUE, robotic = synthetic)
+	character.set_species(chosen_species, icon_update = FALSE, pref_load = TRUE, robotic = (synthetic != NOT_SYNTHETIC))
 
-	if(!synthetic)
+	if(synthetic == NOT_SYNTHETIC)
 		for(var/pros_limb in prosthetic_limbs)
 			var/obj/item/bodypart/old_part = character.get_bodypart(pros_limb)
 			if(old_part)
