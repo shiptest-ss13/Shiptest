@@ -1,6 +1,6 @@
 /obj/item/paper/crumpled/bloody/fluff/ruins/wasteplanet_pandora
 	name = "hastily scribbled note"
-	info = "<i>Of COURSE these tribal FUCKS would worship some demon-box. We never should have gone into this damned cult cave and just bombed the thing from above...<BR><BR>I've barricaded the chapel but these burns are going to be the death of me. If anyone finds this, go to centcomm and call our commander an arsewipe for me.</i>"
+	info = "<i>Of COURSE these tribal FUCKS would worship some demon-box. We never should have gone into this damned cult cave and just bombed the thing from above...<BR><BR>I've barricaded the chapel but these burns are going to be the death of me. If anyone finds this, go to centcom and call our commander an arsewipe for me.</i>"
 
 /obj/item/paper/fluff/ruins/wasteplanet_pandora
 	name = "Mission Orders - Top Secret"
