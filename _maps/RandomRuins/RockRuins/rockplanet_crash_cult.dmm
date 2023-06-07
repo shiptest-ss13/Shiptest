@@ -61,6 +61,9 @@
 /obj/effect/turf_decal/corner/opaque/blue{
 	dir = 4
 	},
+/obj/machinery/airalarm/directional/south{
+	pixel_y = -25
+	},
 /turf/open/floor/plating,
 /area/ruin/unpowered)
 "cD" = (
@@ -168,9 +171,6 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/opaque/blue,
-/obj/machinery/airalarm/directional/south{
-	pixel_y = -25
-	},
 /turf/open/floor/plating,
 /area/ruin/unpowered)
 "fE" = (
@@ -421,7 +421,7 @@
 /area/ruin/unpowered)
 "qg" = (
 /mob/living/simple_animal/hostile/construct/artificer/hostile{
-	loot = list(/obj/item/ectoplasm, /obj/item/necromantic_stone)
+	loot = list(/obj/item/ectoplasm,/obj/item/necromantic_stone)
 	},
 /turf/open/floor/plating,
 /area/ruin/unpowered)
@@ -430,7 +430,7 @@
 	dir = 4
 	},
 /mob/living/simple_animal/hostile/construct/wraith/hostile{
-	loot = list(/obj/item/ectoplasm, /obj/item/rod_of_asclepius)
+	loot = list(/obj/item/ectoplasm,/obj/item/rod_of_asclepius)
 	},
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
@@ -465,7 +465,7 @@
 /turf/open/floor/plasteel/cult,
 /area/ruin/unpowered)
 "rB" = (
-/obj/machinery/light/broken,
+/obj/machinery/light/broken/directional/south,
 /obj/effect/turf_decal/corner/opaque/blue,
 /obj/effect/turf_decal/corner/opaque/blue{
 	dir = 8
@@ -474,9 +474,7 @@
 /area/ruin/unpowered)
 "rH" = (
 /obj/machinery/hydroponics/constructable,
-/obj/machinery/light/broken{
-	dir = 8
-	},
+/obj/machinery/light/broken/directional/west,
 /obj/effect/turf_decal/corner/opaque/green{
 	dir = 8
 	},
@@ -508,9 +506,7 @@
 /turf/open/floor/plating,
 /area/ruin/unpowered)
 "sX" = (
-/obj/machinery/light/broken{
-	dir = 8
-	},
+/obj/machinery/light/broken/directional/west,
 /obj/effect/turf_decal/corner/opaque/blue{
 	dir = 8
 	},
@@ -625,9 +621,7 @@
 /turf/open/floor/plating,
 /area/ruin/unpowered)
 "wn" = (
-/obj/machinery/light/broken{
-	dir = 4
-	},
+/obj/machinery/light/broken/directional/east,
 /obj/effect/turf_decal/corner/opaque/green,
 /turf/open/floor/plating,
 /area/ruin/unpowered)
@@ -648,10 +642,6 @@
 /area/ruin/unpowered)
 "wB" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
-/obj/item/radio/intercom/wideband{
-	pixel_x = -25;
-	pixel_y = 28
-	},
 /turf/open/floor/plating,
 /area/ruin/unpowered)
 "wG" = (
@@ -751,6 +741,14 @@
 /obj/machinery/atmospherics/pipe/simple/yellow/visible,
 /obj/machinery/door/poddoor{
 	id = "whiteship_windows"
+	},
+/turf/open/floor/plating,
+/area/ruin/unpowered)
+"zo" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor{
+	id = "whiteship_bridge";
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ruin/unpowered)
@@ -960,7 +958,7 @@
 "Gz" = (
 /obj/effect/rune/narsie,
 /mob/living/simple_animal/hostile/construct/juggernaut/hostile{
-	loot = list(/obj/item/ectoplasm, /obj/item/nullrod/armblade/tentacle)
+	loot = list(/obj/item/ectoplasm,/obj/item/nullrod/armblade/tentacle)
 	},
 /obj/structure/sacrificealtar,
 /obj/effect/decal/cleanable/blood{
@@ -1109,6 +1107,7 @@
 /obj/effect/turf_decal/corner/opaque/blue{
 	dir = 1
 	},
+/obj/item/radio/intercom/wideband/directional/north,
 /turf/open/floor/plating,
 /area/ruin/unpowered)
 "Ka" = (
@@ -1252,6 +1251,14 @@
 	},
 /turf/open/floor/plasteel/cult,
 /area/ruin/unpowered)
+"RY" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor{
+	id = "whiteship_windows";
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/unpowered)
 "Sm" = (
 /obj/machinery/hydroponics/constructable,
 /obj/effect/turf_decal/corner/opaque/green{
@@ -1297,9 +1304,7 @@
 /turf/closed/wall/mineral/titanium,
 /area/ruin/unpowered)
 "UE" = (
-/obj/machinery/light/broken{
-	dir = 8
-	},
+/obj/machinery/light/broken/directional/west,
 /obj/effect/turf_decal/corner/opaque/blue{
 	dir = 1
 	},
@@ -1307,6 +1312,14 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/corner/opaque/blue,
+/turf/open/floor/plating,
+/area/ruin/unpowered)
+"UI" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor{
+	id = "whiteship_bridge";
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ruin/unpowered)
 "Vz" = (
@@ -1342,6 +1355,14 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/cult,
+/area/ruin/unpowered)
+"Wi" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor{
+	id = "whiteship_windows";
+	dir = 8
+	},
+/turf/open/floor/plating,
 /area/ruin/unpowered)
 "Wm" = (
 /obj/effect/decal/cleanable/blood/tracks{
@@ -1398,7 +1419,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 8
 	},
-/obj/machinery/light/broken,
+/obj/machinery/light/broken/directional/south,
 /obj/effect/turf_decal/corner/opaque/blue,
 /obj/effect/turf_decal/corner/opaque/blue{
 	dir = 8
@@ -1519,7 +1540,7 @@ nv
 IO
 Rq
 nv
-EQ
+RY
 xD
 hs
 mq
@@ -1554,12 +1575,12 @@ Jh
 lu
 Jh
 Zg
-EQ
+Wi
 xD
 iK
 XN
 nv
-EQ
+RY
 xD
 xt
 Yp
@@ -1689,12 +1710,12 @@ EQ
 "}
 (15,1,1) = {"
 nv
-EQ
+RY
 xb
 On
 Hl
 Nt
-EQ
+RY
 nv
 IO
 xb
@@ -1704,7 +1725,7 @@ xD
 tX
 rB
 xD
-EQ
+RY
 nv
 "}
 (16,1,1) = {"
@@ -1729,22 +1750,22 @@ uo
 "}
 (17,1,1) = {"
 nv
-EQ
+nv
 Tn
 rf
 Aw
 xD
-EQ
+RY
 nv
 Vz
 dh
 xD
-EQ
+RY
 nv
 Cm
 Zm
 Nt
-EQ
+Nt
 nv
 "}
 (18,1,1) = {"
@@ -1770,8 +1791,8 @@ EQ
 (19,1,1) = {"
 Nt
 Nt
-EQ
-EQ
+RY
+Wi
 Nt
 Nt
 Es
@@ -1782,8 +1803,8 @@ Nt
 eK
 Nt
 Nt
-EQ
-EQ
+Wi
+Wi
 Nt
 Nt
 "}
@@ -1893,8 +1914,8 @@ XI
 XI
 Es
 Es
-as
-as
+Nt
+Nt
 JX
 vT
 xT
@@ -1914,10 +1935,10 @@ XI
 XI
 Es
 Es
-as
-as
-as
-as
+Nt
+UI
+UI
+zo
 xD
 xD
 Es

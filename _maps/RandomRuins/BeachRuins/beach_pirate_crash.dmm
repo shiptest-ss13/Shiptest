@@ -7,9 +7,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/vomit/old,
-/obj/machinery/light/small{
-	dir = 4
-	},
+/obj/machinery/light/small/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -23,7 +21,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
-/obj/machinery/light/small,
+/obj/machinery/light/small/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
 /area/ruin/beach/piratecrash)
@@ -141,7 +139,7 @@
 /turf/open/floor/plating/grass/beach/lit,
 /area/ruin/unpowered)
 "dt" = (
-/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-6"
 	},
@@ -228,7 +226,9 @@
 /obj/structure/cable{
 	icon_state = "4-9"
 	},
-/obj/machinery/door/airlock/external/glass,
+/obj/machinery/door/airlock/external/glass{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ruin/beach/piratecrash/shuttle)
 "gn" = (
@@ -271,12 +271,12 @@
 /area/ruin/unpowered)
 "gU" = (
 /obj/structure/flora/ausbushes/stalkybush{
-	pixel_y = 10;
-	pixel_x = 7
+	pixel_x = 7;
+	pixel_y = 10
 	},
 /obj/structure/flora/ausbushes/stalkybush{
-	pixel_y = 6;
-	pixel_x = -15
+	pixel_x = -15;
+	pixel_y = 6
 	},
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/effect/turf_decal/weather/sand{
@@ -334,7 +334,9 @@
 /turf/open/floor/plating/rust,
 /area/ruin/beach/piratecrash/shuttle)
 "ih" = (
-/obj/machinery/door/airlock/external/glass,
+/obj/machinery/door/airlock/external/glass{
+	dir = 4
+	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -368,8 +370,8 @@
 	pixel_y = 2
 	},
 /obj/structure/flora/ausbushes/stalkybush{
-	pixel_y = 10;
-	pixel_x = 3
+	pixel_x = 3;
+	pixel_y = 10
 	},
 /turf/open/water/beach,
 /area/ruin/unpowered)
@@ -384,8 +386,8 @@
 /area/ruin/unpowered)
 "jE" = (
 /mob/living/simple_animal/hostile/pirate/ranged{
-	faction = list("pirate","mining");
-	environment_smash = 0
+	environment_smash = 0;
+	faction = list("pirate","mining")
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/unpowered)
@@ -431,9 +433,11 @@
 /turf/open/floor/plating/asteroid/sand/lit,
 /area/ruin/unpowered)
 "lb" = (
-/obj/structure/mineral_door/wood,
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/wood{
+	dir = 4
 	},
 /turf/open/floor/wood,
 /area/ruin/beach/piratecrash)
@@ -509,8 +513,8 @@
 	dir = 1
 	},
 /obj/structure/flora/ausbushes/stalkybush{
-	pixel_y = 10;
-	pixel_x = 3
+	pixel_x = 3;
+	pixel_y = 10
 	},
 /turf/open/water/beach,
 /area/ruin/unpowered)
@@ -519,8 +523,8 @@
 	icon_state = "1-4"
 	},
 /mob/living/simple_animal/hostile/pirate/melee{
-	faction = list("pirate","mining");
-	environment_smash = 0
+	environment_smash = 0;
+	faction = list("pirate","mining")
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -601,8 +605,8 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/stairs{
-	dir = 1;
 	color = "#A47449";
+	dir = 1;
 	footstep = "wood"
 	},
 /area/ruin/beach/piratecrash)
@@ -693,9 +697,7 @@
 /area/ruin/beach/piratecrash)
 "uf" = (
 /obj/structure/table/wood,
-/obj/machinery/light/small{
-	dir = 4
-	},
+/obj/machinery/light/small/directional/east,
 /obj/item/stack/medical/gauze/improvised,
 /obj/item/stack/medical/gauze/improvised,
 /obj/item/stack/medical/gauze/improvised,
@@ -833,15 +835,15 @@
 /area/ruin/unpowered)
 "xN" = (
 /obj/structure/flora/ausbushes/stalkybush{
-	pixel_y = 23;
-	pixel_x = -3
+	pixel_x = -3;
+	pixel_y = 23
 	},
 /obj/structure/flora/ausbushes/stalkybush{
 	pixel_y = 6
 	},
 /obj/structure/flora/ausbushes/stalkybush{
-	pixel_y = 15;
-	pixel_x = 10
+	pixel_x = 10;
+	pixel_y = 15
 	},
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/water/beach{
@@ -1012,9 +1014,7 @@
 /turf/open/floor/wood,
 /area/ruin/beach/piratecrash/shuttle)
 "Fb" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
+/obj/machinery/light/small/directional/east,
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
@@ -1078,7 +1078,7 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/machinery/light/small,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/plating/rust,
 /area/ruin/beach/piratecrash/storage)
 "GF" = (
@@ -1098,7 +1098,7 @@
 /turf/open/floor/plating/asteroid/sand/lit,
 /area/ruin/unpowered)
 "GP" = (
-/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -1122,7 +1122,7 @@
 /turf/open/water/beach,
 /area/ruin/unpowered)
 "Hq" = (
-/obj/structure/mineral_door/wood,
+/obj/machinery/door/airlock/wood,
 /turf/open/floor/wood,
 /area/ruin/beach/piratecrash)
 "Hu" = (
@@ -1133,8 +1133,8 @@
 	dir = 6
 	},
 /obj/structure/flora/tree/palm{
-	pixel_y = 13;
-	pixel_x = -5
+	pixel_x = -5;
+	pixel_y = 13
 	},
 /turf/open/floor/plating/asteroid/sand/lit,
 /area/ruin/unpowered)
@@ -1204,8 +1204,8 @@
 	pixel_y = 19
 	},
 /obj/item/hemostat{
-	pixel_y = 15;
-	pixel_x = 9
+	pixel_x = 9;
+	pixel_y = 15
 	},
 /obj/item/cautery{
 	pixel_y = 15
@@ -1247,8 +1247,8 @@
 /area/ruin/unpowered)
 "MH" = (
 /turf/open/floor/plasteel/stairs{
-	dir = 4;
 	color = "#A47449";
+	dir = 4;
 	footstep = "wood"
 	},
 /area/ruin/beach/piratecrash)
@@ -1286,9 +1286,7 @@
 /area/ruin/unpowered)
 "MS" = (
 /obj/effect/decal/cleanable/glass,
-/obj/machinery/light/small{
-	dir = 4
-	},
+/obj/machinery/light/small/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating{
@@ -1300,7 +1298,7 @@
 /turf/open/floor/plating,
 /area/ruin/beach/piratecrash)
 "Nu" = (
-/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -1330,9 +1328,7 @@
 /area/ruin/unpowered)
 "Ou" = (
 /obj/structure/table,
-/obj/machinery/light/small{
-	dir = 4
-	},
+/obj/machinery/light/small/directional/east,
 /obj/item/clothing/gloves/color/fyellow,
 /obj/item/clothing/head/hardhat,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1360,16 +1356,14 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/machinery/light/small{
-	dir = 4
-	},
+/obj/machinery/light/small/directional/east,
 /obj/machinery/porta_turret/syndicate/pod{
-	name = "laser turret";
-	dir = 8;
 	desc = "A turret built with substandard parts and run down further with age. Still capable of delivering lethal lasers to the odd space carp, but not much else.";
+	dir = 8;
 	faction = list("Syndicate","pirate");
 	lethal_projectile = /obj/projectile/beam/weak/penetrator;
-	lethal_projectile_sound = 'sound/weapons/plasma_cutter.ogg'
+	lethal_projectile_sound = 'sound/weapons/plasma_cutter.ogg';
+	name = "laser turret"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1383,7 +1377,9 @@
 /obj/structure/cable{
 	icon_state = "5-8"
 	},
-/obj/machinery/door/airlock/external/glass,
+/obj/machinery/door/airlock/external/glass{
+	dir = 4
+	},
 /obj/structure/cable{
 	icon_state = "4-10"
 	},
@@ -1403,12 +1399,12 @@
 /area/ruin/beach/piratecrash)
 "Qj" = (
 /obj/structure/flora/ausbushes/stalkybush{
-	pixel_y = 17;
-	pixel_x = -5
+	pixel_x = -5;
+	pixel_y = 17
 	},
 /obj/structure/flora/ausbushes/stalkybush{
-	pixel_y = 6;
-	pixel_x = 10
+	pixel_x = 10;
+	pixel_y = 6
 	},
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/water/beach{
@@ -1486,8 +1482,8 @@
 /area/ruin/unpowered)
 "Vc" = (
 /mob/living/simple_animal/hostile/pirate/melee{
-	faction = list("pirate","mining");
-	environment_smash = 0
+	environment_smash = 0;
+	faction = list("pirate","mining")
 	},
 /turf/open/floor/plating/asteroid/sand/lit,
 /area/ruin/unpowered)
@@ -1500,7 +1496,7 @@
 	},
 /area/ruin/beach/piratecrash)
 "Vi" = (
-/obj/machinery/light/small/broken,
+/obj/machinery/light/small/broken/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
 /area/ruin/beach/piratecrash)

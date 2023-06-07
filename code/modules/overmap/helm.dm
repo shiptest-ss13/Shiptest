@@ -34,6 +34,16 @@
 	/// store an ntnet relay for tablets on the ship
 	var/obj/machinery/ntnet_relay/integrated/ntnet_relay
 
+/obj/machinery/computer/helm/retro
+	icon = 'icons/obj/machines/retro_computer.dmi'
+	icon_state = "computer-retro"
+	deconpath = /obj/structure/frame/computer/retro
+
+/obj/machinery/computer/helm/solgov
+	icon = 'icons/obj/machines/retro_computer.dmi'
+	icon_state = "computer-solgov"
+	deconpath = /obj/structure/frame/computer/solgov
+
 /datum/config_entry/number/bluespace_jump_wait
 	default = 30 MINUTES
 
@@ -292,6 +302,7 @@
 			if("toggle_engine")
 				var/obj/machinery/power/shuttle/engine/E = locate(params["engine"]) in current_ship.shuttle_port.engine_list
 				E.enabled = !E.enabled
+				E.update_icon_state()
 				current_ship.refresh_engines()
 				return
 			if("change_burn_percentage")
@@ -395,11 +406,15 @@
 
 /obj/machinery/computer/helm/viewscreen
 	name = "ship viewscreen"
-	icon = 'icons/obj/stationobjs.dmi'
-	icon_state = "telescreen"
+	icon_state = "wallconsole"
+	icon_screen = "wallconsole_navigation"
+	icon_keyboard = null
 	layer = SIGN_LAYER
 	density = FALSE
 	viewer = TRUE
+	unique_icon = TRUE
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/helm/viewscreen, 17)
 
 #undef JUMP_STATE_OFF
 #undef JUMP_STATE_CHARGING
