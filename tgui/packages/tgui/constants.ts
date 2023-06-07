@@ -297,18 +297,33 @@ const GASES = [
 ] as const;
 
 // Returns gas label based on gasId
-export const getGasLabel = (name: string, fallbackValue?: string) => {
-  if (!name) return fallbackValue || 'None';
-  const findGas = getGasByName(name);
-  const fallback = fallbackValue || name;
-  return findGas?.label ? findGas.label : fallback;
+export const getGasLabel = (gasId: string, fallbackValue?: string) => {
+  if (!gasId) return fallbackValue || 'None';
+
+  const gasSearchString = gasId.toLowerCase();
+
+  for (let idx = 0; idx < GASES.length; idx++) {
+    if (GASES[idx].id === gasSearchString) {
+      return GASES[idx].label;
+    }
+  }
+
+  return fallbackValue || 'None';
 };
 
 // Returns gas color based on gasId
-export const getGasColor = (name: string) => {
-  if (!name) return 'black';
-  const findGas = getGasByName(name);
-  return findGas?.color ? findGas.color : 'black';
+export const getGasColor = (gasId: string) => {
+  if (!gasId) return 'black';
+
+  const gasSearchString = gasId.toLowerCase();
+
+  for (let idx = 0; idx < GASES.length; idx++) {
+    if (GASES[idx].id === gasSearchString) {
+      return GASES[idx].color;
+    }
+  }
+
+  return 'black';
 };
 
 // Returns gas object based on gasId
@@ -334,10 +349,3 @@ export const getGasFromPath = (gasPath: string): Gas | undefined => {
     }
   }
 };
-function getGasByName(name: string) {
-  const unCapitalizedName = name.toLowerCase();
-  const findGas = GASES.find(
-    (gas) => gas.name.toLowerCase() === unCapitalizedName
-  );
-  return findGas;
-}

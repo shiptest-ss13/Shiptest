@@ -28,9 +28,9 @@ export const NtosAtmos = (props, context) => {
         <Section>
           <LabeledList>
             {gases.map((gas) => (
-              <LabeledList.Item key={gas.name} label={getGasLabel(gas.name)}>
+              <LabeledList.Item key={gas.name} label={gas.name}>
                 <ProgressBar
-                  color={getGasColor(gas.name)}
+                  color={getGasColor(gas.id)}
                   value={gas.percentage}
                   minValue={0}
                   maxValue={gasMaxPercentage}>

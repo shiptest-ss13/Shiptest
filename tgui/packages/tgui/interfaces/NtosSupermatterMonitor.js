@@ -3,7 +3,7 @@ import { flow } from 'common/fp';
 import { toFixed } from 'common/math';
 import { useBackend } from '../backend';
 import { Button, LabeledList, ProgressBar, Section, Stack, Table } from '../components';
-import { getGasColor, getGasLabel } from '../constants';
+import { getGasColor } from '../constants';
 import { NtosWindow } from '../layouts';
 
 const logScale = (value) => Math.log2(16 + Math.max(0, value)) - 4;
@@ -100,9 +100,9 @@ export const NtosSupermatterMonitorContent = (props, context) => {
           }>
           <LabeledList>
             {gases.map((gas) => (
-              <LabeledList.Item key={gas.name} label={getGasLabel(gas.name)}>
+              <LabeledList.Item key={gas.name} label={gas.name}>
                 <ProgressBar
-                  color={getGasColor(gas.name)}
+                  color={getGasColor(gas.id)}
                   value={gas.amount}
                   minValue={0}
                   maxValue={gasMaxAmount}>
