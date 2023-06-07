@@ -37,6 +37,8 @@
 	premium = list(/obj/item/clothing/suit/armor/vest/security/officer = 3,
 					/obj/item/clothing/head/beret/sec/officer = 2,
 					/obj/item/clothing/head/beret/sec/officer = 2)
+	contraband = list(/obj/item/clothing/head/helmet/justice = 1,
+					/obj/item/clothing/head/helmet/justice/escape = 1)
 	refill_canister = /obj/item/vending_refill/wardrobe/sec_wardrobe
 	payment_department = ACCOUNT_SEC
 	light_color = COLOR_MOSTLY_PURE_RED

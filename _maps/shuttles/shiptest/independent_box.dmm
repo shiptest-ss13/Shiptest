@@ -612,18 +612,8 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/medical)
 "cB" = (
-/obj/structure/toilet{
-	dir = 4
-	},
-/obj/machinery/door/window/survival_pod{
-	dir = 4
-	},
-/obj/structure/curtain,
-/obj/structure/window/reinforced/tinted/frosted{
-	dir = 1
-	},
-/turf/open/floor/mineral/titanium/airless,
-/area/ship/crew)
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/medical)
 "cC" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -731,6 +721,13 @@
 	},
 /obj/effect/turf_decal/siding/white{
 	dir = 1
+	},
+/obj/machinery/reagentgrinder{
+	pixel_y = 8;
+	pixel_x = 16
+	},
+/obj/item/reagent_containers/glass/filter{
+	pixel_x = -8
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew)
@@ -1260,10 +1257,6 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/engineering)
 "ja" = (
-/obj/structure/frame/machine,
-/obj/item/stack/cable_coil/cyan{
-	amount = 5
-	},
 /obj/structure/sign/poster/official/cleanliness{
 	pixel_x = 32
 	},
@@ -1274,6 +1267,7 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 1
 	},
+/obj/structure/table/chem,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew)
 "jk" = (
@@ -1545,15 +1539,16 @@
 /turf/open/floor/plasteel/white,
 /area/ship/cargo)
 "ss" = (
-/obj/machinery/firealarm/directional/west,
-/obj/structure/curtain,
-/obj/machinery/shower{
-	pixel_y = 15
+/obj/structure/toilet{
+	dir = 4
 	},
 /obj/machinery/door/window/survival_pod{
 	dir = 4
 	},
-/obj/item/soap,
+/obj/structure/curtain,
+/obj/structure/window/reinforced/tinted/frosted{
+	dir = 1
+	},
 /turf/open/floor/mineral/titanium/airless,
 /area/ship/crew)
 "su" = (
@@ -2546,17 +2541,13 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
 "NT" = (
-/obj/structure/table/chem,
-/obj/machinery/reagentgrinder{
-	pixel_y = 6;
-	pixel_x = 16
-	},
 /obj/machinery/airalarm/directional/south,
-/obj/item/reagent_containers/glass/filter{
-	pixel_x = -8
-	},
 /obj/effect/turf_decal/siding/white{
 	dir = 1
+	},
+/obj/structure/frame/machine,
+/obj/item/stack/cable_coil/cyan{
+	amount = 5
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew)
@@ -2807,8 +2798,17 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "XD" = (
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/medical)
+/obj/machinery/firealarm/directional/west,
+/obj/structure/curtain,
+/obj/machinery/shower{
+	pixel_y = 15
+	},
+/obj/machinery/door/window/survival_pod{
+	dir = 4
+	},
+/obj/item/soap,
+/turf/open/floor/mineral/titanium/airless,
+/area/ship/crew)
 "XN" = (
 /obj/structure/extinguisher_cabinet/directional/north,
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -3193,8 +3193,8 @@ bM
 VQ
 Ic
 tD
+XD
 ss
-cB
 tD
 nQ
 aa
@@ -3211,7 +3211,7 @@ jV
 bz
 bN
 cd
-XD
+cB
 cF
 hS
 LV

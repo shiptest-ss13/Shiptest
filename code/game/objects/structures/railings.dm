@@ -158,6 +158,10 @@
 	GetCover()
 	return ..()
 
+/obj/structure/railing/modern/examine(mob/user)
+	. = ..()
+	. += "<span class='notice'>The handrail can be recolored with a <b>spraycan</b>.</span>"
+
 /obj/structure/railing/modern/proc/GetCover()
 	if(cover)
 		cut_overlay(cover)
