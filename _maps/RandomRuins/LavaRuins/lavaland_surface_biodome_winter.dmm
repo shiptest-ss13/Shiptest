@@ -12,9 +12,7 @@
 /obj/structure/table,
 /obj/item/stack/medical/gauze,
 /obj/item/stack/medical/gauze,
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/plating,
 /area/ruin/powered/snow_biodome)
 "ae" = (
@@ -26,9 +24,7 @@
 /area/ruin/powered/snow_biodome)
 "ag" = (
 /obj/structure/reagent_dispensers/beerkeg,
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/plating,
 /area/ruin/powered/snow_biodome)
 "ah" = (
@@ -132,7 +128,7 @@
 /turf/open/floor/wood,
 /area/ruin/powered/snow_biodome)
 "aE" = (
-/obj/structure/extinguisher_cabinet,
+/obj/structure/extinguisher_cabinet/directional/north,
 /turf/closed/wall/mineral/wood,
 /area/ruin/powered/snow_biodome)
 "aF" = (
@@ -193,62 +189,49 @@
 	},
 /area/ruin/powered/snow_biodome)
 "bv" = (
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/plating/ice,
 /area/ruin/powered/snow_biodome)
 "bw" = (
-/obj/machinery/light/small{
-	brightness = 3;
-	dir = 8
+/obj/machinery/light/small/directional/west{
+	brightness = 3
 	},
 /turf/open/floor/wood,
 /area/ruin/powered/snow_biodome)
 "bx" = (
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/wood,
 /area/ruin/powered/snow_biodome)
 "by" = (
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/plating/asteroid/snow,
 /area/ruin/powered/snow_biodome)
 "bz" = (
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/floor/wood,
 /area/ruin/powered/snow_biodome)
 "bB" = (
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/plating/asteroid/snow,
 /area/ruin/powered/snow_biodome)
 "bD" = (
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/plating/asteroid/snow,
 /area/ruin/powered/snow_biodome)
 "bM" = (
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/floor/plating/asteroid/snow,
 /area/ruin/powered/snow_biodome)
 "bN" = (
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/floor/plating/ice,
 /area/ruin/powered/snow_biodome)
 "dS" = (
-/obj/machinery/light/small,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/pod/dark,
 /area/ruin/powered/snow_biodome)
 "eb" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/pod/dark,
 /area/ruin/powered/snow_biodome)
 "eg" = (
@@ -256,9 +239,8 @@
 /turf/open/floor/pod/dark,
 /area/ruin/powered/snow_biodome)
 "gh" = (
-/obj/machinery/light/small{
-	brightness = 3;
-	dir = 8
+/obj/machinery/light/small/directional/west{
+	brightness = 3
 	},
 /turf/open/floor/pod/dark,
 /area/ruin/powered/snow_biodome)
@@ -267,26 +249,21 @@
 /turf/open/floor/pod/dark,
 /area/ruin/powered/snow_biodome)
 "hA" = (
-/obj/machinery/light/built{
-	dir = 1
-	},
-/obj/effect/mapping_helpers/no_lava,
+/obj/machinery/light/built/directional/north,
 /turf/open/floor/pod/dark{
 	initial_gas_mix = "LAVALAND_ATMOS"
 	},
 /area/ruin/powered/snow_biodome)
 "qt" = (
-/obj/machinery/door/airlock/silver,
+/obj/machinery/door/airlock/silver{
+	dir = 8
+	},
 /obj/structure/fans/tiny,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 8
 	},
 /turf/open/floor/pod/dark,
 /area/ruin/powered/snow_biodome)
-"tb" = (
-/obj/effect/mapping_helpers/no_lava,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors/explored)
 "tl" = (
 /turf/open/floor/pod/light,
 /area/ruin/powered/snow_biodome)
@@ -295,7 +272,9 @@
 /turf/open/floor/pod/dark,
 /area/ruin/powered/snow_biodome)
 "zT" = (
-/obj/machinery/door/airlock/silver,
+/obj/machinery/door/airlock/silver{
+	dir = 4
+	},
 /obj/structure/fans/tiny,
 /turf/open/floor/plating,
 /area/ruin/powered/snow_biodome)
@@ -336,9 +315,7 @@
 "KS" = (
 /obj/item/chainsaw,
 /obj/structure/closet,
-/obj/machinery/light/small{
-	dir = 4
-	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/pod/dark,
 /area/ruin/powered/snow_biodome)
 "Mp" = (
@@ -350,7 +327,9 @@
 /turf/open/floor/pod/dark,
 /area/ruin/powered/snow_biodome)
 "PD" = (
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/airlock/hatch{
+	dir = 4
+	},
 /obj/structure/fans/tiny,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 4
@@ -363,11 +342,6 @@
 /obj/item/paper_bin,
 /turf/open/floor/pod/dark,
 /area/ruin/powered/snow_biodome)
-"Qa" = (
-/obj/effect/mapping_helpers/no_lava,
-/obj/effect/mapping_helpers/no_lava,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors/explored)
 "QI" = (
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors/explored)
@@ -401,7 +375,7 @@
 /turf/closed/wall/r_wall,
 /area/ruin/powered/snow_biodome)
 "Zq" = (
-/obj/machinery/light/small,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/white,
 /area/ruin/powered/snow_biodome)
 
@@ -562,7 +536,7 @@ ak
 Wg
 Wg
 QI
-tb
+QI
 aa
 "}
 (6,1,1) = {"
@@ -594,7 +568,7 @@ ak
 ak
 Wg
 QI
-tb
+QI
 aa
 "}
 (7,1,1) = {"
@@ -626,7 +600,7 @@ ak
 bM
 Wg
 Wg
-tb
+QI
 aa
 "}
 (8,1,1) = {"
@@ -658,8 +632,8 @@ ak
 az
 ak
 Wg
-tb
-tb
+QI
+QI
 "}
 (9,1,1) = {"
 aa
@@ -691,7 +665,7 @@ ak
 ak
 Wg
 hA
-tb
+QI
 "}
 (10,1,1) = {"
 Wg
@@ -722,8 +696,8 @@ ak
 ak
 ak
 Wg
-tb
-tb
+QI
+QI
 "}
 (11,1,1) = {"
 Wg
@@ -755,7 +729,7 @@ Wg
 Wg
 Wg
 Wg
-tb
+QI
 "}
 (12,1,1) = {"
 Wg
@@ -787,7 +761,7 @@ Wg
 Dd
 Dd
 Wg
-tb
+QI
 "}
 (13,1,1) = {"
 Wg
@@ -819,7 +793,7 @@ Wg
 Mp
 dS
 Wg
-tb
+QI
 "}
 (14,1,1) = {"
 Wg
@@ -851,7 +825,7 @@ Wg
 tl
 tl
 Wg
-tb
+QI
 "}
 (15,1,1) = {"
 Wg
@@ -883,7 +857,7 @@ aO
 tl
 tl
 Ez
-Qa
+QI
 "}
 (16,1,1) = {"
 Wg
@@ -915,7 +889,7 @@ aP
 tl
 tl
 aP
-Qa
+QI
 "}
 (17,1,1) = {"
 Wg
@@ -947,7 +921,7 @@ Wg
 tl
 tl
 Wg
-tb
+QI
 "}
 (18,1,1) = {"
 Wg
@@ -979,7 +953,7 @@ Wg
 HP
 dS
 Wg
-tb
+QI
 "}
 (19,1,1) = {"
 Wg
@@ -1011,7 +985,7 @@ Wg
 QK
 AM
 Wg
-tb
+QI
 "}
 (20,1,1) = {"
 Wg
@@ -1043,7 +1017,7 @@ Wg
 Wg
 Wg
 Wg
-tb
+QI
 "}
 (21,1,1) = {"
 Wg
@@ -1074,8 +1048,8 @@ ak
 ak
 ak
 Wg
-tb
-tb
+QI
+QI
 "}
 (22,1,1) = {"
 aa
@@ -1107,7 +1081,7 @@ ak
 ak
 Wg
 hA
-tb
+QI
 "}
 (23,1,1) = {"
 aa
@@ -1138,8 +1112,8 @@ ak
 ak
 ak
 Wg
-tb
-tb
+QI
+QI
 "}
 (24,1,1) = {"
 aa
@@ -1170,7 +1144,7 @@ ak
 bM
 Wg
 Wg
-tb
+QI
 aa
 "}
 (25,1,1) = {"
@@ -1202,7 +1176,7 @@ aC
 ak
 Wg
 QI
-tb
+QI
 aa
 "}
 (26,1,1) = {"
