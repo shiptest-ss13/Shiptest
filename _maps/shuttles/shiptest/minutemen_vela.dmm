@@ -6716,12 +6716,14 @@
 /area/ship/science)
 "LK" = (
 /obj/structure/reagent_dispensers/watertank,
-/obj/effect/turf_decal/trimline/opaque/brown,
 /obj/effect/turf_decal/box/corners{
 	dir = 1
 	},
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 6
+	},
+/obj/effect/turf_decal/box/corners{
+	dir = 8
 	},
 /turf/open/floor/pod/dark,
 /area/ship/cargo)
