@@ -344,7 +344,9 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
-/obj/machinery/firealarm/directional/west,
+/obj/machinery/firealarm/directional/west{
+	pixel_y = 6
+	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -353,8 +355,8 @@
 	dir = 4;
 	id = "traumaenginer";
 	name = "Engine Shutter Control";
-	pixel_x = -25;
-	pixel_y = -6
+	pixel_x = -22;
+	pixel_y = -8
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -1397,7 +1399,9 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
-/obj/machinery/firealarm/directional/east,
+/obj/machinery/firealarm/directional/east{
+	pixel_y = 6
+	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -1406,8 +1410,8 @@
 	dir = 8;
 	id = "traumaenginel";
 	name = "Engine Shutter Control";
-	pixel_x = 25;
-	pixel_y = -6
+	pixel_x = 22;
+	pixel_y = -7
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
