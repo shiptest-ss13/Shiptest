@@ -28,7 +28,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/derelict)
 "gk" = (
-/obj/machinery/light/broken,
+/obj/machinery/light/broken/directional/south,
 /turf/open/floor/plasteel,
 /area/ruin/space/derelict)
 "gr" = (
@@ -94,7 +94,7 @@
 /turf/open/space,
 /area/ruin/space/derelict)
 "nU" = (
-/obj/machinery/light/broken,
+/obj/machinery/light/broken/directional/south,
 /obj/item/stack/tile/plasteel,
 /turf/open/floor/plating,
 /area/ruin/space/derelict)
@@ -166,7 +166,9 @@
 /turf/open/floor/plating,
 /area/ruin/space/derelict)
 "Au" = (
-/obj/machinery/door/airlock/engineering,
+/obj/machinery/door/airlock/engineering{
+	dir = 8
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/derelict)
 "AP" = (
@@ -193,7 +195,7 @@
 /turf/open/floor/plating,
 /area/ruin/space/derelict)
 "EN" = (
-/obj/machinery/light/broken,
+/obj/machinery/light/broken/directional/south,
 /obj/structure/table,
 /turf/open/floor/plasteel,
 /area/ruin/space/derelict)
@@ -232,7 +234,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/derelict)
 "Jd" = (
-/obj/machinery/light/broken,
+/obj/machinery/light/broken/directional/south,
 /obj/structure/closet/crate/large,
 /turf/open/floor/plasteel,
 /area/ruin/space/derelict)
@@ -280,7 +282,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/derelict)
 "Pq" = (
-/obj/machinery/light/broken,
+/obj/machinery/light/broken/directional/south,
 /obj/machinery/portable_atmospherics/canister/air,
 /turf/open/floor/plasteel,
 /area/ruin/space/derelict)
@@ -341,7 +343,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/derelict)
 "XP" = (
-/obj/machinery/light/broken,
+/obj/machinery/light/broken/directional/south,
 /obj/structure/bed,
 /obj/item/bedsheet/random,
 /turf/open/floor/plasteel,

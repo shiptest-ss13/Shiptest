@@ -55,6 +55,8 @@
 	hud_possible = list(DIAG_AIRLOCK_HUD)
 	req_ship_access = TRUE
 
+	smoothing_groups = list(SMOOTH_GROUP_AIRLOCK)
+
 	FASTDMM_PROP(\
 		pinned_vars = list("req_access_txt", "req_one_access_txt", "name")\
 	)
@@ -586,10 +588,9 @@
 				note_overlay = get_airlock_overlay(notetype, note_overlay_file)
 			if(has_hatch)
 				if(hatchstate)
-					hatch_overlay = get_airlock_overlay("hatch_open", overlays_file)
+					hatch_overlay = get_airlock_overlay("hatch_open", icon)
 				else
-					hatch_overlay = get_airlock_overlay("hatch_closed", overlays_file)
-				hatch_overlay.color = hatch_colour
+					hatch_overlay = get_airlock_overlay("hatch_closed", icon)
 
 		if(AIRLOCK_DENY)
 			if(!hasPower())
@@ -617,10 +618,9 @@
 				note_overlay = get_airlock_overlay(notetype, note_overlay_file)
 			if(has_hatch)
 				if(hatchstate)
-					hatch_overlay = get_airlock_overlay("hatch_open", overlays_file)
+					hatch_overlay = get_airlock_overlay("hatch_open", icon)
 				else
-					hatch_overlay = get_airlock_overlay("hatch_closed", overlays_file)
-				hatch_overlay.color = hatch_colour
+					hatch_overlay = get_airlock_overlay("hatch_closed", icon)
 
 		if(AIRLOCK_EMAG)
 			frame_overlay = get_airlock_overlay("closed", icon)
@@ -661,8 +661,7 @@
 			if(note)
 				note_overlay = get_airlock_overlay("[notetype]_closing", note_overlay_file)
 			if(has_hatch)
-				hatch_overlay = get_airlock_overlay("hatch_closing", overlays_file)
-				hatch_overlay.color = hatch_colour
+				hatch_overlay = get_airlock_overlay("hatch_closing", icon)
 
 		if(AIRLOCK_OPEN)
 			frame_overlay = get_airlock_overlay("open", icon)
@@ -696,8 +695,7 @@
 			if(note)
 				note_overlay = get_airlock_overlay("[notetype]_opening", note_overlay_file)
 			if(has_hatch)
-				hatch_overlay = get_airlock_overlay("hatch_opening", overlays_file)
-				hatch_overlay.color = hatch_colour
+				hatch_overlay = get_airlock_overlay("hatch_opening", icon)
 
 	cut_overlays()
 	add_overlay(frame_overlay)
