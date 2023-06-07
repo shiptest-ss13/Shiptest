@@ -8,11 +8,11 @@ import { NtosWindow } from '../layouts';
 
 export const NtosAtmos = (props, context) => {
   const { act, data } = useBackend(context);
-  const { AirTemp, AirPressure } = data;
+  const { AirTemp, AirPressure, AirData } = data;
   const gases = flow([
     filter((gas) => gas.percentage >= 0.01),
     sortBy((gas) => -gas.percentage),
-  ])(data.AirData || []);
+  ])(AirData || []);
   const gasMaxPercentage = Math.max(1, ...gases.map((gas) => gas.percentage));
   return (
     <NtosWindow width={300} height={350} resizable>
