@@ -2,6 +2,11 @@
 	name = "computer frame"
 	icon_state = "console_frame"
 	state = 0
+	base_icon_state = "console"
+	var/obj/item/stack/sheet/decon_material = /obj/item/stack/sheet/metal
+	var/built_icon = 'icons/obj/machines/computer.dmi'
+	var/built_icon_state = "computer"
+	var/deconpath = /obj/structure/frame/computer
 
 /obj/structure/frame/computer/attackby(obj/item/P, mob/user, params)
 	add_fingerprint(user)
@@ -21,8 +26,9 @@
 				to_chat(user, "<span class='notice'>You start deconstructing the frame...</span>")
 				if(P.use_tool(src, user, 20, volume=50))
 					to_chat(user, "<span class='notice'>You deconstruct the frame.</span>")
-					var/obj/item/stack/sheet/metal/M = new (drop_location(), 5)
-					M.add_fingerprint(user)
+
+					var/obj/dropped_sheet = new decon_material(drop_location(), 5)
+					dropped_sheet.add_fingerprint(user)
 					qdel(src)
 				return
 		if(1)
@@ -113,9 +119,14 @@
 			if(P.tool_behaviour == TOOL_SCREWDRIVER)
 				P.play_tool_sound(src)
 				to_chat(user, "<span class='notice'>You connect the monitor.</span>")
-				var/obj/B = new circuit.build_path (loc, circuit)
-				B.setDir(dir)
-				transfer_fingerprints_to(B)
+				var/obj/machinery/computer/built_comp = new circuit.build_path (loc, circuit)
+				built_comp.setDir(dir)
+				transfer_fingerprints_to(built_comp)
+				if(!built_comp.unique_icon)
+					built_comp.icon = built_icon
+					built_comp.icon_state = built_icon_state
+				built_comp.deconpath = deconpath
+				built_comp.update_icon()
 				qdel(src)
 				return
 	if(user.a_intent == INTENT_HARM)
@@ -125,7 +136,7 @@
 	. = ..()
 	var/mutable_appearance/step
 	if(circuit)
-		step = mutable_appearance(icon, "[state]")
+		step = mutable_appearance(icon, "[base_icon_state]-[state]")
 	else
 		step = mutable_appearance(icon, null)
 	. += step
@@ -149,3 +160,21 @@
 		return
 
 	setDir(turn(dir, -90))
+
+/obj/structure/frame/computer/retro
+	name = "retro computer frame"
+	icon_state = "console_frame-retro"
+	base_icon_state = "retro"
+	decon_material = /obj/item/stack/sheet/plastic
+	built_icon = 'icons/obj/machines/retro_computer.dmi'
+	built_icon_state = "computer-retro"
+	deconpath = /obj/structure/frame/computer/retro
+
+/obj/structure/frame/computer/solgov
+	name = "wooden computer frame"
+	icon_state = "console_frame-solgov"
+	base_icon_state = "solgov"
+	decon_material = /obj/item/stack/sheet/mineral/wood
+	built_icon = 'icons/obj/machines/retro_computer.dmi'
+	built_icon_state = "computer-solgov"
+	deconpath = /obj/structure/frame/computer/retro

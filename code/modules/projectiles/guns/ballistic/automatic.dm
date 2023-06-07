@@ -143,6 +143,12 @@
 	burst_size = 0
 	actions_types = list()
 
+/obj/item/gun/ballistic/automatic/gal/inteq
+	name = "\improper SsG-04"
+	desc = "A marksman rifle purchased from the Colonial Minutemen and modified to suit IRMG's needs. Chambered in .308."
+	icon_state = "gal-inteq"
+	item_state = "gal-inteq"
+
 /obj/item/gun/ballistic/automatic/zip_pistol
 	name = "makeshift pistol"
 	desc = "A makeshift pistol. It's a miracle it even works."
