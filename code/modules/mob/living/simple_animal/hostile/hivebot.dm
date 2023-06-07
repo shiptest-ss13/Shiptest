@@ -33,6 +33,8 @@
 	bubble_icon = "machine"
 	speech_span = SPAN_ROBOT
 	del_on_death = 1
+	minbodytemp = 0
+	maxbodytemp = 600
 	loot = list(/obj/effect/decal/cleanable/robot_debris)
 	var/alert_light
 
