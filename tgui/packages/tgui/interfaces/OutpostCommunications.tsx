@@ -1,5 +1,5 @@
 import { useBackend, useSharedState } from '../backend';
-import { ProgressBar, Section, Tabs, Button, LabeledList, Box, Stack, Flex } from '../components';
+import { ProgressBar, Section, Tabs, Button, LabeledList, Box, Stack } from '../components';
 import { Window } from '../layouts';
 import { CargoCatalog } from './Cargo';
 
