@@ -57,7 +57,8 @@
 /area/ship/shuttle)
 "dm" = (
 /obj/machinery/light/small{
-	dir = 4
+	dir = 4;
+	pixel_x = 28
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 10
@@ -151,7 +152,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 8
 	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/layer2{
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 8
 	},
 /turf/open/floor/plasteel/patterned,
@@ -197,7 +198,7 @@
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
-/obj/machinery/computer/crew{
+/obj/machinery/computer/crew/retro{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -264,7 +265,7 @@
 	pixel_x = -28
 	},
 /obj/item/binoculars,
-/obj/item/storage/firstaid,
+/obj/item/storage/firstaid/regular,
 /obj/item/storage/box/bodybags,
 /obj/item/pinpointer/crew,
 /obj/item/storage/toolbox/emergency,
@@ -278,12 +279,12 @@
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 2
 	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/layer2{
-	dir = 1
-	},
 /obj/item/assembly/signaler{
 	name = "Emergency Signaler";
 	desc = "A remote signaler device. The label reads ''Stranded without communications? Ping this device to alert your captain who, too, has been provided with a remote signaler!''"
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/shuttle)
@@ -311,7 +312,8 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/machinery/light/dim{
 	dir = 8;
-	bulb_power = 0.5
+	bulb_power = 0.5;
+	pixel_x = -32
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/shuttle)
@@ -364,7 +366,7 @@
 /area/ship/shuttle)
 "yP" = (
 /obj/effect/turf_decal/corner/transparent/neutral,
-/obj/machinery/computer/helm{
+/obj/machinery/computer/helm/retro{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -405,7 +407,8 @@
 /obj/machinery/airalarm/directional/east,
 /obj/machinery/light/small{
 	dir = 1;
-	bulb_power = 0.5
+	bulb_power = 0.5;
+	pixel_y = 28
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/shuttle)
@@ -575,7 +578,7 @@
 	target_pressure = 1000;
 	dir = 1
 	},
-/obj/machinery/power/apc/auto_name/east,
+/obj/machinery/power/apc/auto_name/directional/east,
 /turf/open/floor/plasteel/tech,
 /area/ship/shuttle)
 "MD" = (
@@ -637,7 +640,8 @@
 	layer = 2.8
 	},
 /obj/machinery/light{
-	bulb_power = 0.5
+	bulb_power = 0.5;
+	pixel_y = -32
 	},
 /obj/structure/railing{
 	layer = 4.2
@@ -664,7 +668,8 @@
 /area/ship/shuttle)
 "Rf" = (
 /obj/item/radio/intercom/wideband{
-	pixel_y = 3
+	dir = 1;
+	pixel_y = 10
 	},
 /obj/structure/table/reinforced,
 /turf/open/floor/plasteel/dark,
@@ -698,7 +703,8 @@
 	dir = 8
 	},
 /obj/machinery/light/small{
-	bulb_power = 0.5
+	bulb_power = 0.5;
+	pixel_y = -28
 	},
 /obj/structure/cable,
 /obj/machinery/power/terminal{
@@ -731,7 +737,8 @@
 	layer = 4.2
 	},
 /obj/machinery/light{
-	dir = 1
+	dir = 1;
+	pixel_y = 32
 	},
 /turf/open/floor/plasteel/patterned/monofloor{
 	dir = 8

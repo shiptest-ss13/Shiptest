@@ -24,6 +24,7 @@ Assistant
 	jobtype = /datum/job/assistant
 	r_pocket = /obj/item/radio
 	belt = /obj/item/pda
+	ears = /obj/item/radio/headset
 
 /datum/outfit/job/assistant/pre_equip(mob/living/carbon/human/H)
 	..()

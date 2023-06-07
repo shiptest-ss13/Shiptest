@@ -61,6 +61,7 @@
 	gloves = /obj/item/clothing/gloves/fingerless
 	glasses = /obj/item/clothing/glasses/sunglasses/big
 	head = /obj/item/clothing/head/soft
+	ears = /obj/item/radio/headset/nanotrasen
 
 /datum/outfit/job/cargo_tech/donk
 	name = "Customer Associate (Donk! Co.)"
