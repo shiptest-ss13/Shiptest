@@ -65,3 +65,9 @@
 	id = "beach_crashed_engineer"
 	description = "An abandoned camp built by a crashed engineer"
 	suffix = "beach_crashed_engineer.dmm"
+
+/datum/map_template/ruin/beachplanet/sandcastle
+	name = "Sandcastle"
+	id = "sandcastle"
+	description = "A comically large sandcastle complete with a prison, guards, armory and treasury. And a sandwich."
+	suffix = "beach_sand_castle.dmm"
