@@ -11,6 +11,10 @@
 #define SMOOTH_QUEUED (1<<4)
 /// Smooths with objects, and will thus need to scan turfs for contents.
 #define SMOOTH_OBJ (1<<5)
+/// When smoothing, this atom will also use "connectors" if the atom being smoothed into is not one of a set of approved types.
+/// Only works when SMOOTH_BITMASK is also set.
+#define SMOOTH_CONNECTORS (1<<6)
+
 
 DEFINE_BITFIELD(smoothing_flags, list(
 	"SMOOTH_CORNERS" = SMOOTH_CORNERS,
@@ -19,6 +23,7 @@ DEFINE_BITFIELD(smoothing_flags, list(
 	"SMOOTH_BORDER" = SMOOTH_BORDER,
 	"SMOOTH_QUEUED" = SMOOTH_QUEUED,
 	"SMOOTH_OBJ" = SMOOTH_OBJ,
+	"SMOOTH_CONNECTORS" = SMOOTH_CONNECTORS,
 ))
 
 
