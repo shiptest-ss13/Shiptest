@@ -1269,10 +1269,6 @@
 	},
 /turf/open/floor/plating/asteroid/sand/lit,
 /area/ruin/beach/oceantown)
-"qJ" = (
-/obj/machinery/light/small/directional/west,
-/turf/open/floor/plating/grass/beach/lit,
-/area/ruin/beach/oceantown)
 "qW" = (
 /obj/structure/chair/wood{
 	dir = 4
@@ -1463,6 +1459,9 @@
 	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
+	},
+/obj/structure/mineral_door/wood{
+	name = "Hotel"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/beach/oceantown)
@@ -2155,11 +2154,6 @@
 "BP" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/ausbushes/ywflowers,
-/turf/open/floor/plating/grass/beach/lit,
-/area/ruin/beach/oceantown)
-"BQ" = (
-/obj/structure/flora/ausbushes/fullgrass,
-/obj/machinery/light/small/directional/west,
 /turf/open/floor/plating/grass/beach/lit,
 /area/ruin/beach/oceantown)
 "BV" = (
@@ -3927,26 +3921,11 @@
 "UX" = (
 /turf/closed/wall/mineral/wood/nonmetal,
 /area/ruin/beach/oceantown/shop)
-"Vb" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 8
-	},
-/obj/machinery/light/small/directional/west,
-/turf/open/floor/wood{
-	light_range = 2
-	},
-/area/ruin/beach/oceantown)
 "Vf" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
 /obj/effect/turf_decal/box,
 /turf/open/floor/plasteel/white,
 /area/ruin/beach/oceantown/bar)
-"Vn" = (
-/obj/machinery/light/small/directional/west,
-/turf/open/floor/concrete/pavement{
-	light_range = 2
-	},
-/area/ruin/beach/oceantown)
 "Vr" = (
 /obj/structure/bed,
 /obj/item/bedsheet/dorms,
@@ -4054,6 +4033,11 @@
 /turf/open/floor/wood{
 	light_range = 2
 	},
+/area/ruin/beach/oceantown)
+"Wt" = (
+/obj/effect/turf_decal/weather/sand,
+/obj/effect/turf_decal/weather/sand,
+/turf/open/water/beach,
 /area/ruin/beach/oceantown)
 "Wu" = (
 /obj/effect/turf_decal/corner/opaque/white/diagonal{
@@ -6057,7 +6041,7 @@ Ru
 Ru
 Ru
 Ru
-Vn
+Ru
 Ru
 Ru
 Ru
@@ -6126,11 +6110,11 @@ xo
 xo
 xo
 xo
-Vb
-Vb
-Vb
 xo
-Vb
+xo
+xo
+xo
+xo
 xo
 xo
 xo
@@ -6199,10 +6183,10 @@ uC
 FF
 Wl
 Wl
-qJ
-qJ
-qJ
-qJ
+Wl
+Wl
+Wl
+Wl
 Wl
 Wl
 Wl
@@ -6275,8 +6259,8 @@ pB
 Wl
 Wl
 FF
-BQ
-BQ
+FF
+FF
 Wl
 rl
 qw
@@ -8480,7 +8464,7 @@ YU
 YU
 "}
 (55,1,1) = {"
-qp
+Wt
 sa
 sa
 sa
@@ -8557,7 +8541,7 @@ YU
 YU
 "}
 (56,1,1) = {"
-ev
+qp
 sa
 sa
 sa
@@ -8634,7 +8618,7 @@ YU
 YU
 "}
 (57,1,1) = {"
-ev
+qp
 sa
 sa
 sa
@@ -8711,7 +8695,7 @@ YU
 YU
 "}
 (58,1,1) = {"
-ev
+qp
 sa
 sa
 sa
