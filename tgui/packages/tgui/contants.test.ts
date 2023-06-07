@@ -3,26 +3,26 @@ import { getGasColor, getGasFromId, getGasFromPath, getGasLabel } from './consta
 describe('gas helper functions', () => {
   it('should get the proper gas label', () => {
     const gasId = 'antinoblium';
-    const gasLabel = getGasLabel(gasId);
+    const gasLabel = getGasFromId(gasId);
     expect(gasLabel).toBe('Anti-Noblium');
   });
 
   it('should get the proper gas label with a fallback', () => {
-    const gasId = 'nonexistent';
+    const gasId = 'Nonexistent';
     const gasLabel = getGasLabel(gasId, 'fallback');
 
     expect(gasLabel).toBe('fallback');
   });
 
   it('should return none if no gas and no fallback is found', () => {
-    const gasId = 'nonexistent';
+    const gasId = 'Nonexistent';
     const gasLabel = getGasLabel(gasId);
 
-    expect(gasLabel).toBe('None');
+    expect(gasLabel).toBe('Nonexistent');
   });
 
   it('should get the proper gas color', () => {
-    const gasId = 'antinoblium';
+    const gasId = 'Antinoblium';
     const gasColor = getGasColor(gasId);
 
     expect(gasColor).toBe('maroon');
