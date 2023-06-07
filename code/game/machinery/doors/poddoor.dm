@@ -5,7 +5,7 @@
 	icon_state = "closed"
 	var/id = 1
 	layer = BLASTDOOR_LAYER
-	closingLayer = CLOSED_BLASTDOOR_LAYER
+	closingLayer = BLASTDOOR_LAYER
 	sub_door = TRUE
 	explosion_block = 3
 	heat_proof = TRUE
@@ -16,6 +16,7 @@
 	damage_deflection = 70
 	poddoor = TRUE
 	assemblytype = /obj/structure/poddoor_assembly
+	smoothing_groups = list(SMOOTH_GROUP_AIRLOCK)
 	var/open_sound = 'sound/machines/airlocks/blastdoor.ogg'
 	var/close_sound = 'sound/machines/airlocks/blastdoor.ogg'
 

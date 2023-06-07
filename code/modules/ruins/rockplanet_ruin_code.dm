@@ -5,6 +5,7 @@
 	icon = 'icons/obj/doors/crusher.dmi'
 	damage_deflection = 70
 	glass = TRUE
+	smoothing_groups = null
 
 /obj/machinery/door/poddoor/crusher/crush()
 	. = ..()

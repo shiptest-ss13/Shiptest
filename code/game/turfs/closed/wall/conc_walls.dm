@@ -6,7 +6,7 @@
 	base_icon_state = "concrete"
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_CONCRETE_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_CONCRETE_WALLS)
+	canSmoothWith = list(SMOOTH_GROUP_CONCRETE_WALLS,SMOOTH_GROUP_AIRLOCK)
 	rad_insulation = RAD_HEAVY_INSULATION
 	hardness = 30 // doesn't matter much; everything that uses it gets overridden
 	explosion_block = 3

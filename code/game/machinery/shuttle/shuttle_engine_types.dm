@@ -224,7 +224,7 @@
 		CRASH("Attempted to read the fuel value an uninitialized liquid engine")
 	var/true_percentage = INFINITY
 	for(var/reagent in fuel_reagents)
-		true_percentage = min(reagents.get_reagent_amount(reagent) / fuel_reagents[reagent], true_percentage)
+		true_percentage = min(reagents?.get_reagent_amount(reagent) / fuel_reagents[reagent], true_percentage)
 	return reagent_amount_holder * true_percentage //Multiplies the total amount needed by the smallest percentage of any reagent in the recipe
 
 /obj/machinery/power/shuttle/engine/liquid/return_fuel_cap()
