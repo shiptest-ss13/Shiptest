@@ -1,7 +1,8 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "aD" = (
 /turf/open/floor/plating/asteroid/sand/lit{
-	light_color = s
+	light_power = 0;
+	light_range = 0
 	},
 /area/ruin/unpowered)
 "aI" = (
@@ -82,13 +83,6 @@
 	},
 /turf/open/floor/plating/asteroid/sand/lit,
 /area/ruin/unpowered)
-"fC" = (
-/mob/living/simple_animal/hostile/skeleton/templar,
-/obj/effect/turf_decal/weather/sand{
-	dir = 6
-	},
-/turf/open/floor/carpet/red,
-/area/ruin/unpowered)
 "fM" = (
 /obj/effect/turf_decal/weather/dirt{
 	icon_state = "dirt_side_corner";
@@ -108,15 +102,6 @@
 /area/ruin/unpowered)
 "gw" = (
 /obj/effect/mob_spawn/human/corpse/charredskeleton,
-/turf/open/floor/plating/asteroid/sand/lit{
-	light_power = 0;
-	light_range = 0
-	},
-/area/ruin/unpowered)
-"gM" = (
-/obj/item/restraints/legcuffs/beartrap{
-	armed = 1
-	},
 /turf/open/floor/plating/asteroid/sand/lit{
 	light_power = 0;
 	light_range = 0
@@ -157,19 +142,27 @@
 /turf/open/floor/plating/asteroid/sand/lit,
 /area/ruin/unpowered)
 "mQ" = (
-/obj/structure/trap/damage,
-/turf/open/floor/plating/asteroid/sand/lit{
-	light_power = 0;
-	light_range = 0
+/obj/effect/turf_decal/weather/sand{
+	dir = 5
 	},
+/turf/open/floor/carpet/red,
 /area/ruin/unpowered)
 "mX" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/floor/plating/dirt/dark,
 /area/ruin/unpowered)
 "nC" = (
+/obj/item/restraints/legcuffs/beartrap{
+	armed = 1
+	},
+/turf/open/floor/plating/asteroid/sand/lit{
+	light_power = 0;
+	light_range = 0
+	},
+/area/ruin/unpowered)
+"nH" = (
 /obj/effect/turf_decal/weather/sand{
-	dir = 1
+	dir = 4
 	},
 /turf/open/floor/carpet/red,
 /area/ruin/unpowered)
@@ -188,12 +181,24 @@
 "oi" = (
 /turf/closed/wall/mineral/sandstone,
 /area/ruin/unpowered)
+"pA" = (
+/obj/effect/turf_decal/weather/sand{
+	dir = 9
+	},
+/turf/open/floor/carpet/red,
+/area/ruin/unpowered)
 "pE" = (
 /obj/machinery/door/poddoor/gates,
 /turf/open/floor/plating/asteroid/sand/lit{
 	light_power = 0;
 	light_range = 0
 	},
+/area/ruin/unpowered)
+"qc" = (
+/obj/effect/turf_decal/weather/sand{
+	dir = 1
+	},
+/turf/open/floor/carpet/red,
 /area/ruin/unpowered)
 "qL" = (
 /obj/effect/turf_decal/weather/sand,
@@ -257,6 +262,12 @@
 	light_power = 0;
 	light_range = 0
 	},
+/area/ruin/unpowered)
+"sa" = (
+/obj/effect/turf_decal/weather/sand{
+	dir = 8
+	},
+/turf/open/floor/carpet/red,
 /area/ruin/unpowered)
 "sv" = (
 /obj/effect/turf_decal/weather/sand{
@@ -330,23 +341,12 @@
 	light_range = 0
 	},
 /area/ruin/unpowered)
-"vY" = (
-/obj/effect/turf_decal/weather/sand{
-	dir = 5
-	},
-/turf/open/floor/carpet/red,
-/area/ruin/unpowered)
 "xK" = (
+/obj/item/stack/sheet/mineral/gold,
 /turf/open/floor/plating/asteroid/sand/lit{
 	light_power = 0;
 	light_range = 0
 	},
-/area/ruin/unpowered)
-"xQ" = (
-/obj/effect/turf_decal/weather/sand{
-	dir = 10
-	},
-/turf/open/floor/carpet/red,
 /area/ruin/unpowered)
 "yG" = (
 /obj/structure/flora/rock{
@@ -387,12 +387,6 @@
 	light_power = 0.8;
 	light_range = 2
 	},
-/area/ruin/unpowered)
-"AP" = (
-/obj/effect/turf_decal/weather/sand{
-	dir = 6
-	},
-/turf/open/floor/carpet/red,
 /area/ruin/unpowered)
 "Bd" = (
 /obj/structure/railing{
@@ -469,10 +463,10 @@
 /area/ruin/unpowered)
 "CS" = (
 /mob/living/simple_animal/hostile/skeleton/templar,
-/turf/open/floor/plating/asteroid/sand/lit{
-	light_power = 0;
-	light_range = 0
+/obj/effect/turf_decal/weather/sand{
+	dir = 6
 	},
+/turf/open/floor/carpet/red,
 /area/ruin/unpowered)
 "Dl" = (
 /obj/structure/falsewall/sandstone,
@@ -562,21 +556,43 @@
 /obj/effect/turf_decal/weather/sand,
 /turf/open/floor/carpet/red,
 /area/ruin/unpowered)
+"JB" = (
+/obj/structure/trap/stun,
+/turf/open/floor/plating/asteroid/sand/lit{
+	light_power = 0;
+	light_range = 0
+	},
+/area/ruin/unpowered)
+"JJ" = (
+/mob/living/simple_animal/hostile/skeleton/templar,
+/obj/effect/turf_decal/weather/sand{
+	dir = 10
+	},
+/turf/open/floor/carpet/red,
+/area/ruin/unpowered)
 "JO" = (
 /obj/item/stack/ore/glass/beach,
 /turf/open/floor/plating/asteroid/sand/lit,
 /area/ruin/unpowered)
 "JT" = (
-/obj/effect/turf_decal/weather/sand{
-	dir = 9
+/obj/structure/trap/damage,
+/turf/open/floor/plating/asteroid/sand/lit{
+	light_power = 0;
+	light_range = 0
 	},
-/turf/open/floor/carpet/red,
 /area/ruin/unpowered)
 "Kz" = (
 /obj/effect/turf_decal/weather/sand{
 	icon_state = "sand_dug"
 	},
 /turf/open/floor/plating/asteroid/sand/lit,
+/area/ruin/unpowered)
+"MD" = (
+/mob/living/simple_animal/hostile/skeleton/templar,
+/turf/open/floor/plating/asteroid/sand/lit{
+	light_power = 0;
+	light_range = 0
+	},
 /area/ruin/unpowered)
 "Nn" = (
 /obj/structure/rack,
@@ -634,6 +650,12 @@
 	light_range = 0
 	},
 /area/ruin/unpowered)
+"Qc" = (
+/obj/effect/turf_decal/weather/sand{
+	dir = 10
+	},
+/turf/open/floor/carpet/red,
+/area/ruin/unpowered)
 "QI" = (
 /obj/structure/statue/sandstone/venus,
 /turf/open/floor/plating/asteroid/sand/lit,
@@ -641,32 +663,12 @@
 "Rj" = (
 /turf/template_noop,
 /area/template_noop)
-"RQ" = (
-/obj/effect/turf_decal/weather/sand{
-	dir = 8
-	},
-/turf/open/floor/carpet/red,
-/area/ruin/unpowered)
-"SC" = (
-/mob/living/simple_animal/hostile/skeleton/templar,
-/obj/effect/turf_decal/weather/sand{
-	dir = 10
-	},
-/turf/open/floor/carpet/red,
-/area/ruin/unpowered)
 "Tw" = (
 /obj/structure/flora/rock,
 /turf/open/floor/plating/asteroid/sand/lit,
 /area/ruin/unpowered)
 "TM" = (
 /obj/item/stack/sheet/mineral/sandstone,
-/turf/open/floor/plating/asteroid/sand/lit{
-	light_power = 0;
-	light_range = 0
-	},
-/area/ruin/unpowered)
-"Ut" = (
-/obj/item/stack/sheet/mineral/gold,
 /turf/open/floor/plating/asteroid/sand/lit{
 	light_power = 0;
 	light_range = 0
@@ -723,12 +725,6 @@
 	light_range = 0
 	},
 /area/ruin/unpowered)
-"Xd" = (
-/obj/effect/turf_decal/weather/sand{
-	dir = 4
-	},
-/turf/open/floor/carpet/red,
-/area/ruin/unpowered)
 "Xk" = (
 /obj/structure/table/wood,
 /turf/open/floor/plating/asteroid/sand/lit{
@@ -775,11 +771,10 @@
 /turf/open/floor/plating/dirt/dark,
 /area/ruin/unpowered)
 "ZF" = (
-/obj/structure/trap/stun,
-/turf/open/floor/plating/asteroid/sand/lit{
-	light_power = 0;
-	light_range = 0
+/obj/effect/turf_decal/weather/sand{
+	dir = 6
 	},
+/turf/open/floor/carpet/red,
 /area/ruin/unpowered)
 "ZK" = (
 /obj/structure/closet/cabinet,
@@ -1175,7 +1170,7 @@ Yw
 oi
 oi
 oi
-xK
+aD
 TM
 uB
 oi
@@ -1225,13 +1220,13 @@ JO
 Yw
 oi
 oi
-xK
-xK
+aD
+aD
 Dy
 Wt
 TM
 qR
-xK
+aD
 oi
 oi
 Yw
@@ -1276,15 +1271,15 @@ Yw
 JO
 oi
 oi
-xK
+aD
 TM
 qR
-xK
-xK
+aD
+aD
 qR
-xK
-xK
-xK
+aD
+aD
+aD
 oi
 oi
 Yw
@@ -1306,8 +1301,8 @@ Hl
 Hl
 Zt
 oi
-xK
-xK
+aD
+aD
 oi
 oi
 JO
@@ -1327,17 +1322,17 @@ Yw
 sH
 Yw
 oi
-xK
+aD
 EL
-xK
+aD
 qR
-xK
-xK
-xK
-xK
+aD
+aD
+aD
+aD
 TM
-xK
-xK
+aD
+aD
 oi
 Yw
 Yw
@@ -1359,8 +1354,8 @@ Eq
 DK
 oi
 BT
-xK
-xK
+aD
+aD
 oi
 JO
 Yw
@@ -1382,14 +1377,14 @@ oi
 lJ
 TM
 Dy
-xK
-xK
-xK
-xK
-xK
-xK
+aD
+aD
+aD
+aD
+aD
+aD
 Dy
-xK
+aD
 oi
 oi
 Yw
@@ -1430,19 +1425,19 @@ AD
 Yw
 Yw
 oi
-xK
+aD
 Wt
 rS
-xK
-xK
+aD
+aD
 bi
 oi
 bi
-xK
-xK
-xK
+aD
+aD
+aD
 qR
-xK
+aD
 oi
 oi
 oi
@@ -1454,18 +1449,18 @@ oi
 oi
 oi
 oi
-xK
-xK
-xK
-xK
+aD
+aD
+aD
+aD
 bi
 oi
 bi
-xK
-xK
-xK
-xK
-xK
+aD
+aD
+aD
+aD
+aD
 oi
 Yw
 AD
@@ -1482,42 +1477,42 @@ AD
 Yw
 JO
 oi
-xK
+aD
 TM
-xK
-xK
-xK
+aD
+aD
+aD
 oi
 oi
 oi
 qR
-xK
-xK
+aD
+aD
 qR
-xK
+aD
 oi
-xK
-xK
+aD
+aD
 bi
-xK
-xK
+aD
+aD
 bi
-xK
-xK
-xK
+aD
+aD
+aD
 oi
-xK
-xK
-xK
-xK
+aD
+aD
+aD
+aD
 oi
 oi
 oi
-xK
-xK
-xK
-xK
-xK
+aD
+aD
+aD
+aD
+aD
 oi
 Yw
 AD
@@ -1534,42 +1529,42 @@ AD
 Yw
 Yw
 oi
-xK
+aD
 qR
 qR
-xK
-xK
+aD
+aD
 bi
 oi
 bi
-xK
-xK
-xK
-xK
-xK
+aD
+aD
+aD
+aD
+aD
 ub
-JT
-RQ
-RQ
-RQ
-RQ
-RQ
-RQ
-RQ
-xQ
+pA
+sa
+sa
+sa
+sa
+sa
+sa
+sa
+Qc
 ub
-xK
-xK
+aD
+aD
 Co
-xK
+aD
 bi
 oi
 bi
-xK
-xK
-xK
-xK
-xK
+aD
+aD
+aD
+aD
+aD
 oi
 Yw
 Yw
@@ -1589,35 +1584,35 @@ oi
 oi
 fX
 TM
-xK
+aD
 Dy
-xK
-xK
-xK
-xK
-xK
-xK
-xK
-xK
+aD
+aD
+aD
+aD
+aD
+aD
+aD
+aD
 ub
-vY
-Xd
-Xd
-Xd
-Xd
-Xd
-Xd
-Xd
-AP
+mQ
+nH
+nH
+nH
+nH
+nH
+nH
+nH
+ZF
 ub
-xK
-xK
-xK
-xK
-xK
-xK
-xK
-xK
+aD
+aD
+aD
+aD
+aD
+aD
+aD
+aD
 oi
 pE
 oi
@@ -1639,39 +1634,39 @@ Yw
 Yw
 Yw
 oi
-xK
+aD
 Wt
-xK
-xK
+aD
+aD
 TM
-xK
-xK
+aD
+aD
 TM
-xK
+aD
 qR
-xK
-xK
+aD
+aD
 oi
-xK
-xK
+aD
+aD
 bi
-xK
-xK
+aD
+aD
 bi
-xK
-xK
-xK
+aD
+aD
+aD
 oi
-xK
-xK
-xK
-xK
-xK
-xK
+aD
+aD
+aD
+aD
+aD
+aD
 Co
 oi
 XM
-xK
+aD
 bc
 Dl
 Yw
@@ -1693,14 +1688,14 @@ JO
 oi
 oi
 uB
-xK
+aD
 qR
-xK
-xK
-xK
-xK
-xK
-xK
+aD
+aD
+aD
+aD
+aD
+aD
 oi
 oi
 oi
@@ -1716,11 +1711,11 @@ oi
 oi
 oi
 Gq
-xK
-CS
-xK
-xK
-xK
+aD
+MD
+aD
+aD
+aD
 oi
 bG
 eT
@@ -1745,13 +1740,13 @@ Yw
 Yw
 oi
 oi
-xK
-xK
-xK
-xK
-xK
-xK
-xK
+aD
+aD
+aD
+aD
+aD
+aD
+aD
 oi
 oi
 Yw
@@ -1769,10 +1764,10 @@ Yw
 oi
 oi
 hO
-xK
-xK
-xK
-xK
+aD
+aD
+aD
+aD
 oi
 Gh
 oi
@@ -1799,11 +1794,11 @@ Yw
 oi
 oi
 oi
-xK
-xK
-xK
-xK
-xK
+aD
+aD
+aD
+aD
+aD
 oi
 Yw
 Yw
@@ -1822,9 +1817,9 @@ Kz
 oi
 oi
 oi
-xK
-xK
-xK
+aD
+aD
+aD
 oi
 oi
 oi
@@ -1904,10 +1899,10 @@ sH
 Yw
 Yw
 oi
-xK
-JT
-xQ
-xK
+aD
+pA
+Qc
+aD
 oi
 Yw
 JO
@@ -1956,10 +1951,10 @@ Yw
 Yw
 sH
 oi
-xK
-nC
+aD
+qc
 Ju
-xK
+aD
 oi
 Yw
 Yw
@@ -2009,7 +2004,7 @@ Yw
 JO
 oi
 bi
-nC
+qc
 Ju
 bi
 oi
@@ -2017,7 +2012,7 @@ Yw
 Yw
 JO
 Yw
-xK
+aD
 OV
 sv
 qY
@@ -2060,10 +2055,10 @@ Yw
 Yw
 Yw
 oi
-xK
-nC
+aD
+qc
 Ju
-xK
+aD
 ub
 Yw
 Yw
@@ -2112,10 +2107,10 @@ JO
 Yw
 Yw
 oi
-xK
-nC
+aD
+qc
 Ju
-xK
+aD
 ub
 Yw
 Yw
@@ -2126,7 +2121,7 @@ No
 ZR
 Oy
 Yw
-aD
+Yw
 Yw
 Yw
 Yw
@@ -2165,7 +2160,7 @@ Yw
 Yw
 oi
 bi
-nC
+qc
 Ju
 bi
 oi
@@ -2216,10 +2211,10 @@ Yw
 Yw
 sH
 oi
-xK
-nC
+aD
+qc
 Ju
-xK
+aD
 oi
 Yw
 JO
@@ -2268,10 +2263,10 @@ JO
 Yw
 Yw
 oi
-xK
-vY
-AP
-xK
+aD
+mQ
+ZF
+aD
 oi
 Yw
 zw
@@ -2371,11 +2366,11 @@ Yw
 oi
 oi
 oi
-xK
-xK
-xK
-xK
-xK
+aD
+aD
+aD
+aD
+aD
 oi
 Yw
 Yw
@@ -2422,12 +2417,12 @@ Yw
 oi
 oi
 Nn
-xK
-xK
-xK
-xK
-xK
-xK
+aD
+aD
+aD
+aD
+aD
+aD
 oi
 oi
 Yw
@@ -2444,13 +2439,13 @@ Yw
 Yw
 oi
 oi
-xK
-xK
-mQ
-xK
-xK
-ZF
-xK
+aD
+aD
+JT
+aD
+aD
+JB
+aD
 oi
 oi
 Yw
@@ -2474,13 +2469,13 @@ oi
 oi
 oi
 vy
-xK
-xK
-xK
-xK
-xK
-xK
-xK
+aD
+aD
+aD
+aD
+aD
+aD
+aD
 oi
 oi
 oi
@@ -2495,15 +2490,15 @@ oi
 oi
 oi
 oi
-xK
-gM
-xK
-xK
-gM
-xK
-xK
-xK
-xK
+aD
+nC
+aD
+aD
+nC
+aD
+aD
+aD
+aD
 oi
 oi
 Yw
@@ -2526,37 +2521,37 @@ oi
 UO
 Gs
 oi
-xK
+aD
 Co
-xK
-xK
-xK
-xK
-xK
-xK
-xK
+aD
+aD
+aD
+aD
+aD
+aD
+aD
 oi
-xK
-xK
+aD
+aD
 bi
-xK
-xK
+aD
+aD
 bi
-xK
-xK
-xK
+aD
+aD
+aD
 oi
-xK
-xK
-xK
-xK
-xK
-xK
-mQ
-xK
-mQ
-xK
-ZF
+aD
+aD
+aD
+aD
+aD
+aD
+JT
+aD
+JT
+aD
+JB
 oi
 JO
 Yw
@@ -2575,40 +2570,40 @@ Yw
 Yw
 oi
 oi
-xK
-xK
+aD
+aD
 gw
-xK
-xK
-xK
-xK
-xK
-xK
-xK
-xK
-xK
+aD
+aD
+aD
+aD
+aD
+aD
+aD
+aD
+aD
 ub
-JT
-RQ
-RQ
-RQ
-RQ
-RQ
-RQ
-RQ
-SC
+pA
+sa
+sa
+sa
+sa
+sa
+sa
+sa
+JJ
 ub
-gM
-xK
-xK
-xK
-gM
-xK
-xK
-xK
-xK
-xK
-xK
+nC
+aD
+aD
+aD
+nC
+aD
+aD
+aD
+aD
+aD
+aD
 oi
 oi
 sH
@@ -2627,40 +2622,40 @@ Yw
 JO
 oi
 WR
-xK
-xK
-xK
-xK
+aD
+aD
+aD
+aD
 bi
 oi
 bi
-xK
-xK
-xK
-xK
-xK
+aD
+aD
+aD
+aD
+aD
 ub
-vY
-Xd
-Xd
-Xd
-Xd
-Xd
-Xd
-Xd
-fC
-ub
-xK
-xK
-gM
-xK
-xK
-oi
-xK
-ZF
-xK
-xK
 mQ
+nH
+nH
+nH
+nH
+nH
+nH
+nH
+CS
+ub
+aD
+aD
+nC
+aD
+aD
+oi
+aD
+JB
+aD
+aD
+JT
 oi
 oi
 Yw
@@ -2679,40 +2674,40 @@ Yw
 Yw
 oi
 VO
-xK
+aD
 Co
-xK
-xK
+aD
+aD
 oi
 oi
 oi
-xK
-xK
-xK
-xK
-xK
+aD
+aD
+aD
+aD
+aD
 oi
-xK
-xK
+aD
+aD
 bi
-xK
-xK
+aD
+aD
 bi
-xK
-xK
-xK
+aD
+aD
+aD
 oi
-xK
-xK
-oi
-oi
+aD
+aD
 oi
 oi
 oi
-xK
-xK
-ZF
-xK
+oi
+oi
+aD
+aD
+JB
+aD
 oi
 oi
 Yw
@@ -2731,18 +2726,18 @@ Yw
 Yw
 oi
 WR
-xK
-xK
-xK
-xK
+aD
+aD
+aD
+aD
 bi
 oi
 bi
-xK
-xK
-xK
-xK
-xK
+aD
+aD
+aD
+aD
+aD
 oi
 oi
 oi
@@ -2758,13 +2753,13 @@ oi
 oi
 oi
 sG
-Ut
+xK
 oi
-mQ
-xK
-xK
-xK
-xK
+JT
+aD
+aD
+aD
+aD
 oi
 oi
 Yw
@@ -2783,17 +2778,17 @@ Yw
 Yw
 oi
 oi
-xK
-xK
-xK
-xK
-xK
-xK
-xK
-xK
-xK
-xK
-xK
+aD
+aD
+aD
+aD
+aD
+aD
+aD
+aD
+aD
+aD
+aD
 oi
 oi
 Yw
@@ -2808,15 +2803,15 @@ oi
 oi
 es
 Ws
-xK
+aD
 Ws
-xK
-xK
-xK
-xK
-xK
-ZF
-xK
+aD
+aD
+aD
+aD
+aD
+JB
+aD
 oi
 oi
 JO
@@ -2839,10 +2834,10 @@ aI
 ZK
 oi
 gw
-xK
-xK
-xK
-xK
+aD
+aD
+aD
+aD
 oi
 Ci
 Xk
@@ -2859,16 +2854,16 @@ JO
 Yw
 oi
 BP
-Ut
 xK
-xK
-xK
-ZF
-xK
-mQ
-xK
-xK
-xK
+aD
+aD
+aD
+JB
+aD
+JT
+aD
+aD
+aD
 oi
 Yw
 Yw
@@ -2890,11 +2885,11 @@ oi
 oi
 oi
 PA
-xK
-xK
+aD
+aD
 Co
-xK
-xK
+aD
+aD
 Gs
 oi
 oi
@@ -2913,13 +2908,13 @@ oi
 oi
 tG
 Ws
-xK
-xK
-xK
-xK
-xK
-xK
-mQ
+aD
+aD
+aD
+aD
+aD
+aD
+JT
 oi
 oi
 JO
@@ -2942,11 +2937,11 @@ JO
 oi
 oi
 kI
-xK
-xK
-xK
-xK
-xK
+aD
+aD
+aD
+aD
+aD
 UO
 oi
 oi
@@ -2964,13 +2959,13 @@ Yw
 Yw
 oi
 oi
+aD
 xK
-Ut
-xK
-ZF
-xK
-xK
-xK
+aD
+JB
+aD
+aD
+aD
 oi
 oi
 Yw
