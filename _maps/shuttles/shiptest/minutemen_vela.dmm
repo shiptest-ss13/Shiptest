@@ -1145,7 +1145,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "hw" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -2662,9 +2661,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -4128,9 +4124,6 @@
 /obj/effect/turf_decal/trimline/opaque/solgovgold/filled/warning{
 	dir = 8
 	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "xc" = (
@@ -5038,7 +5031,6 @@
 	dir = 1
 	},
 /obj/machinery/door/airlock,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "BO" = (
@@ -5553,9 +5545,6 @@
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
-	},
-/obj/machinery/door/airlock/security{
-	req_access_txt = list("1")
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
@@ -7561,9 +7550,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/door/airlock{
 	name = "Rec Room"
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew)
