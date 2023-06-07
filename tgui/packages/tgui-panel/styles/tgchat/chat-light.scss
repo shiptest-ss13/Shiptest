@@ -289,6 +289,11 @@ em {
   font-weight: bold;
 }
 
+.looc {
+  color: #002eb8;
+  font-weight: bold;
+}
+
 .adminobserverooc {
   color: #0099cc;
   font-weight: bold;
@@ -306,6 +311,11 @@ em {
 
 .admin {
   color: #4473ff;
+  font-weight: bold;
+}
+
+.admindebug {
+  color: #f9a825;
   font-weight: bold;
 }
 
@@ -343,44 +353,40 @@ em {
   color: #008000;
 }
 
-.sciradio {
-  color: #993399;
+.ntradio {
+  color: #4e3399;
 }
 
 .comradio {
   color: #948f02;
 }
 
-.secradio {
+.pirradio {
   color: #a30000;
 }
 
-.medradio {
+.cmmradio {
   color: #337296;
 }
 
-.engradio {
-  color: #fb5613;
-}
-
-.suppradio {
-  color: #a8732b;
-}
-
-.servradio {
-  color: #6eaa2c;
+.irmgradio {
+  color: #885231;
 }
 
 .syndradio {
-  color: #6d3f40;
-}
-
-.gangradio {
-  color: #ac2ea1;
+  color: #612425;
 }
 
 .centcomradio {
   color: #686868;
+}
+
+.solgovradio {
+  color: #444e5f;
+}
+
+.widebandradio {
+  color: #508166;
 }
 
 .aiprivradio {
@@ -388,7 +394,7 @@ em {
 }
 
 .redteamradio {
-  color: #ff0000 !important;
+  color: #ff0000;
 }
 
 .blueteamradio {
@@ -566,28 +572,28 @@ h2.alert {
 }
 
 .cult {
-  color: #973e3b;
+  color: #960000;
 }
 
 .cultitalic {
-  color: #973e3b;
+  color: #960000;
   font-style: italic;
 }
 
 .cultbold {
-  color: #973e3b;
+  color: #960000;
   font-style: italic;
   font-weight: bold;
 }
 
 .cultboldtalic {
-  color: #973e3b;
+  color: #960000;
   font-weight: bold;
   font-size: 185%;
 }
 
 .cultlarge {
-  color: #973e3b;
+  color: #960000;
   font-weight: bold;
   font-size: 185%;
 }
@@ -599,13 +605,13 @@ h2.alert {
 }
 
 .narsie {
-  color: #973e3b;
+  color: #960000;
   font-weight: bold;
   font-size: 925%;
 }
 
 .narsiesmall {
-  color: #973e3b;
+  color: #960000;
   font-weight: bold;
   font-size: 370%;
 }
@@ -700,7 +706,7 @@ h2.alert {
   font-weight: bold;
 }
 
-.spiderbroodmother {
+.spider {
   color: #4d004d;
   font-weight: bold;
   font-size: 185%;
@@ -884,6 +890,15 @@ h2.alert {
 
 .resonate {
   color: #298f85;
+}
+
+.monkeyhive {
+  color: #774704;
+}
+
+.monkeylead {
+  color: #774704;
+  font-size: 80%;
 }
 
 .connectionClosed,

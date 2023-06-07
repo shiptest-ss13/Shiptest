@@ -271,6 +271,11 @@ em {
   font-weight: bold;
 }
 
+.looc {
+  color: #d8b555;
+  font-weight: bold;
+}
+
 .adminobserverooc {
   color: #0099cc;
   font-weight: bold;
@@ -283,6 +288,11 @@ em {
 
 .adminsay {
   color: #ff4500;
+  font-weight: bold;
+}
+
+.admindebug {
+  color: #f9a825;
   font-weight: bold;
 }
 
@@ -319,51 +329,44 @@ em {
   color: #88ff88;
 }
 
-/* RADIO COLORS */
-/* IF YOU CHANGE THIS KEEP IT IN SYNC WITH TGUI CONSTANTS */
-
 .radio {
   color: #1ecc43;
 }
 
-.sciradio {
-  color: #c68cfa;
+.ntradio {
+  color: #7f6cd4;
 }
 
 .comradio {
   color: #fcdf03;
 }
 
-.secradio {
+.pirradio {
   color: #dd3535;
 }
 
-.medradio {
+.cmmradio {
   color: #57b8f0;
 }
 
-.engradio {
-  color: #f37746;
-}
-
-.suppradio {
-  color: #b88646;
-}
-
-.servradio {
-  color: #6ca729;
+.irmgradio {
+  color: #af693d;
 }
 
 .syndradio {
-  color: #8f4a4b;
-}
-
-.gangradio {
-  color: #ac2ea1;
+  color: #8d4143;
 }
 
 .centcomradio {
   color: #2681a5;
+}
+
+.solgovradio {
+  color: #7589af;
+}
+
+.widebandradio {
+  color: #8de7b6;
 }
 
 .aiprivradio {
@@ -371,19 +374,11 @@ em {
 }
 
 .redteamradio {
-  color: #ff4444 !important;
+  color: #ff4444;
 }
 
 .blueteamradio {
-  color: #3434fd !important;
-}
-
-.greenteamradio {
-  color: #34fd34 !important;
-}
-
-.yellowteamradio {
-  color: #fdfd34 !important;
+  color: #3434fd;
 }
 
 .yell {
@@ -515,7 +510,6 @@ em {
 .grey {
   color: #838383;
 }
-
 .red {
   color: #ff0000;
 }
@@ -538,42 +532,41 @@ em {
   font-weight: bold;
   font-size: 185%;
 }
-
 .cult {
-  color: #973e3b;
+  color: #aa1c1c;
 }
 
 .cultitalic {
-  color: #973e3b;
+  color: #aa1c1c;
   font-style: italic;
 }
 
 .cultbold {
-  color: #973e3b;
+  color: #aa1c1c;
   font-style: italic;
   font-weight: bold;
 }
 
 .cultboldtalic {
-  color: #973e3b;
+  color: #aa1c1c;
   font-weight: bold;
   font-size: 185%;
 }
 
 .cultlarge {
-  color: #973e3b;
+  color: #aa1c1c;
   font-weight: bold;
   font-size: 185%;
 }
 
 .narsie {
-  color: #973e3b;
+  color: #aa1c1c;
   font-weight: bold;
   font-size: 925%;
 }
 
 .narsiesmall {
-  color: #973e3b;
+  color: #aa1c1c;
   font-weight: bold;
   font-size: 370%;
 }
@@ -668,7 +661,7 @@ em {
   font-weight: bold;
 }
 
-.spiderbroodmother {
+.spider {
   color: #8800ff;
   font-weight: bold;
   font-size: 185%;
@@ -679,7 +672,6 @@ em {
   font-weight: bold;
   font-size: 120%;
 }
-
 .interface {
   color: #750e75;
 }
@@ -811,7 +803,6 @@ em {
 .hugeicon {
   font-size: 5em;
 }
-
 .memo {
   color: #638500;
   text-align: center;
@@ -852,6 +843,15 @@ em {
 
 .resonate {
   color: #298f85;
+}
+
+.monkeyhive {
+  color: #a56408;
+}
+
+.monkeylead {
+  color: #af6805;
+  font-size: 80%;
 }
 
 .connectionClosed,
