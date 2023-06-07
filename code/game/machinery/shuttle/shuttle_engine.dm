@@ -21,7 +21,7 @@
  * Uses up a specified percentage of the fuel cost, and returns the amount of thrust if successful.
  * * percentage - The percentage of total thrust that should be used
  */
-/obj/machinery/power/shuttle/engine/proc/burn_engine(percentage = 100)
+/obj/machinery/power/shuttle/engine/proc/burn_engine(percentage = 100, deltatime)
 	update_icon_state()
 	return FALSE
 
@@ -55,7 +55,7 @@
 	update_engine() //Calls this so it sets the accurate icon
 	if(panel_open)
 		icon_state = icon_state_open
-	else if(thruster_active)
+	else if(thruster_active && enabled && return_fuel())
 		icon_state = icon_state_closed
 	else
 		icon_state = icon_state_off

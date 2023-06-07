@@ -20,9 +20,9 @@
 	speak_emote = list("bellows")
 	speed = 3
 	throw_deflection = 10
-	maxHealth = 200
-	health = 200
-	armor = list("melee" = 30, "bullet" = 15, "laser" = 10, "energy" = 10, "bomb" = 10, "bio" = 10, "rad" = 10, "fire" = 10, "acid" = 10)
+	maxHealth = 80
+	health = 80
+	armor = list("melee" = 40, "bullet" = 40, "laser" = 25, "energy" = 10, "bomb" = 50, "bio" = 10, "rad" = 10, "fire" = 10, "acid" = 10) //Thick carapace, weak to AP ammo.
 	harm_intent_damage = 0
 	obj_damage = 100
 	melee_damage_lower = 12
@@ -246,8 +246,8 @@
 	icon_living = "ancient_goliath"
 	icon_aggro = "ancient_goliath_alert"
 	icon_dead = "ancient_goliath_dead"
-	maxHealth = 350
-	health = 350
+	maxHealth = 180
+	health = 180
 	speed = 4
 	crusher_loot = /obj/item/crusher_trophy/elder_tentacle
 	pre_attack_icon = "ancient_goliath_preattack"

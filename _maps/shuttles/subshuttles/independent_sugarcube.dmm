@@ -1,0 +1,403 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/turf/closed/wall/rust,
+/area/ship/storage)
+"b" = (
+/turf/closed/wall,
+/area/ship/storage)
+"c" = (
+/obj/structure/grille,
+/obj/structure/window/fulltile,
+/turf/open/floor/plating,
+/area/ship/storage)
+"d" = (
+/obj/structure/fans/tiny,
+/obj/machinery/door/airlock/external/glass,
+/obj/effect/decal/cleanable/oil/slippery,
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	preferred_direction = 4;
+	port_direction = 8;
+	dir = 2
+	},
+/turf/open/floor/plating,
+/area/ship/storage)
+"e" = (
+/obj/structure/window/reinforced/spawner/east,
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
+"f" = (
+/obj/structure/chair{
+	dir = 4
+	},
+/obj/structure/window/reinforced/spawner/west,
+/obj/structure/safe/floor,
+/obj/item/clothing/suit/space/hardsuit/carp/old,
+/obj/item/clothing/suit/space/hardsuit/carp/old,
+/obj/item/toy/plush/among,
+/turf/open/floor/plating,
+/area/ship/storage)
+"g" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
+"h" = (
+/obj/item/reagent_containers/food/snacks/rationpack,
+/obj/item/reagent_containers/food/snacks/rationpack,
+/obj/item/trash/cheesie,
+/obj/item/trash/cheesie,
+/obj/item/trash/candy,
+/obj/structure/closet/crate,
+/obj/item/reagent_containers/food/drinks/beer,
+/obj/item/reagent_containers/food/drinks/beer,
+/turf/open/floor/plating,
+/area/ship/storage)
+"i" = (
+/obj/structure/chair{
+	dir = 4
+	},
+/obj/structure/window/reinforced/spawner/west,
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plating,
+/area/ship/storage)
+"j" = (
+/obj/structure/chair{
+	dir = 4
+	},
+/obj/structure/window/reinforced/spawner/west,
+/turf/open/floor/plating,
+/area/ship/storage)
+"k" = (
+/obj/structure/chair{
+	dir = 4
+	},
+/obj/structure/window/reinforced/spawner/west,
+/obj/structure/window/reinforced/spawner/east,
+/obj/machinery/light/directional/north,
+/turf/open/floor/plating,
+/area/ship/storage)
+"l" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ship/storage)
+"m" = (
+/obj/structure/window/reinforced/spawner/west,
+/obj/item/radio/intercom/wideband/directional/north,
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/storage)
+"n" = (
+/obj/machinery/computer/helm{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ship/storage)
+"o" = (
+/obj/machinery/power/port_gen/pacman{
+	anchored = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/item/stack/sheet/mineral/plasma/five,
+/obj/item/stack/sheet/mineral/plasma/five,
+/turf/open/floor/plating,
+/area/ship/engineering)
+"p" = (
+/obj/machinery/light/small/directional/east,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
+"q" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/trash/chips,
+/turf/open/floor/plating,
+/area/ship/storage)
+"r" = (
+/obj/structure/chair{
+	dir = 4
+	},
+/obj/structure/window/reinforced/spawner/west,
+/obj/structure/window/reinforced/spawner/east,
+/turf/open/floor/plating,
+/area/ship/storage)
+"s" = (
+/obj/structure/window/reinforced/spawner/west,
+/obj/machinery/holopad/emergency/command,
+/turf/open/floor/plating,
+/area/ship/storage)
+"t" = (
+/obj/structure/table/reinforced,
+/turf/open/floor/plating,
+/area/ship/storage)
+"u" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/reagent_containers/pill/floorpill{
+	pixel_x = -1;
+	pixel_y = -4
+	},
+/obj/item/reagent_containers/pill/floorpill{
+	pixel_x = 7;
+	pixel_y = 10
+	},
+/obj/item/reagent_containers/pill/floorpill{
+	pixel_x = -7;
+	pixel_y = 5
+	},
+/obj/machinery/power/apc/auto_name/directional/west,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
+"v" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/cockroach/glockroach,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
+"w" = (
+/obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
+"x" = (
+/mob/living/simple_animal/deer{
+	desc = "A strange looking pony? It likes sugarcubes that is for sure!";
+	name = "Applejack"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plating,
+/area/ship/storage)
+"y" = (
+/turf/open/floor/plating,
+/area/ship/storage)
+"z" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/chair{
+	dir = 4
+	},
+/obj/structure/window/reinforced/spawner/west,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating,
+/area/ship/storage)
+"A" = (
+/obj/effect/decal/cleanable/glass,
+/obj/item/shard,
+/obj/item/shard,
+/obj/item/kitchen/knife/shiv,
+/turf/open/floor/plating,
+/area/ship/storage)
+"B" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/telecomms/relay,
+/turf/open/floor/plating,
+/area/ship/storage)
+"C" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
+"D" = (
+/obj/structure/rack,
+/obj/item/storage/toolbox/mechanical/old,
+/obj/item/circuitboard/machine/autolathe,
+/obj/item/pickaxe/improvised,
+/obj/item/pickaxe/improvised,
+/obj/effect/spawner/lootdrop/glowstick,
+/obj/effect/spawner/lootdrop/glowstick,
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/ship/engineering)
+"E" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/ship/storage)
+"F" = (
+/obj/structure/chair{
+	dir = 4
+	},
+/obj/structure/window/reinforced/spawner/west,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ship/storage)
+"G" = (
+/obj/structure/chair{
+	dir = 4
+	},
+/obj/structure/window/reinforced/spawner/west,
+/obj/structure/window/reinforced/spawner/east,
+/obj/machinery/light/directional/south,
+/turf/open/floor/plating,
+/area/ship/storage)
+"H" = (
+/obj/structure/window/reinforced/spawner/west,
+/turf/open/floor/plating,
+/area/ship/storage)
+"I" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/chair/comfy/shuttle{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ship/storage)
+"J" = (
+/obj/structure/fans/tiny,
+/obj/machinery/door/airlock/external/glass,
+/turf/open/floor/plating,
+/area/ship/storage)
+"K" = (
+/obj/structure/sign/poster/official/moth/meth,
+/turf/closed/wall/rust,
+/area/ship/engineering)
+"L" = (
+/turf/closed/wall,
+/area/ship/engineering)
+"Z" = (
+/turf/closed/wall/rust,
+/area/ship/engineering)
+
+(1,1,1) = {"
+Z
+e
+L
+Z
+e
+L
+"}
+(2,1,1) = {"
+Z
+C
+o
+u
+C
+L
+"}
+(3,1,1) = {"
+Z
+g
+p
+v
+D
+L
+"}
+(4,1,1) = {"
+L
+L
+K
+w
+L
+Z
+"}
+(5,1,1) = {"
+c
+h
+q
+E
+y
+c
+"}
+(6,1,1) = {"
+a
+i
+z
+x
+f
+b
+"}
+(7,1,1) = {"
+c
+j
+j
+y
+F
+c
+"}
+(8,1,1) = {"
+b
+k
+r
+l
+G
+b
+"}
+(9,1,1) = {"
+d
+l
+l
+y
+l
+J
+"}
+(10,1,1) = {"
+a
+m
+s
+A
+H
+a
+"}
+(11,1,1) = {"
+c
+n
+t
+B
+I
+c
+"}
+(12,1,1) = {"
+c
+c
+c
+c
+c
+c
+"}

@@ -106,6 +106,8 @@
 
 /obj/docking_port/mobile/proc/preflight_check(list/old_turfs, list/new_turfs, list/areas_to_move, rotation)
 	var/list/exceptions_list = list()
+	// Recount turfs since we've got them all anyways
+	var/new_turf_count = 0
 	// C-like for loop; see top of file for explanation
 	for(var/i = 1, i <= old_turfs.len, i++)
 		try
@@ -143,10 +145,15 @@
 			if(move_mode & MOVE_AREA)
 				areas_to_move[old_area] = TRUE
 
+			if(move_mode & MOVE_TURF)
+				new_turf_count++
+
 			old_turfs[oldT] = move_mode
 
 		catch(var/exception/e2)
 			exceptions_list += e2
+
+	turf_count = new_turf_count
 
 	for(var/exception/e3 in exceptions_list)
 		CHECK_TICK

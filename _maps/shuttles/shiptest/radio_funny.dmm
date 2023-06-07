@@ -1,4 +1,9 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"aw" = (
+/obj/structure/table/bronze,
+/obj/machinery/light/directional/north,
+/turf/open/floor/carpet/nanoweave/blue,
+/area/ship/bridge)
 "az" = (
 /obj/structure/window/bronze{
 	dir = 4
@@ -12,32 +17,27 @@
 	},
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
-"aJ" = (
-/obj/structure/sink{
-	dir = 1
-	},
-/obj/structure/mirror{
-	pixel_y = -30
-	},
-/obj/machinery/light,
-/turf/open/floor/plasteel/freezer,
-/area/ship/bridge)
 "aW" = (
 /obj/structure/frame/computer,
 /turf/open/floor/carpet/nanoweave/blue,
+/area/ship/bridge)
+"bf" = (
+/obj/structure/table/bronze,
+/obj/machinery/light/directional/north,
+/turf/open/floor/carpet/nanoweave,
 /area/ship/bridge)
 "bD" = (
 /obj/structure/shuttle/engine/heater,
 /obj/structure/window/reinforced/spawner,
 /turf/open/floor/plasteel/freezer,
 /area/ship/bridge)
-"bF" = (
-/obj/structure/table/bronze,
-/obj/item/storage/firstaid/advanced,
-/obj/machinery/light{
-	dir = 1
+"cK" = (
+/obj/machinery/suit_storage_unit/standard_unit,
+/obj/structure/window/bronze{
+	dir = 4
 	},
-/turf/open/floor/carpet/nanoweave/blue,
+/obj/machinery/light/directional/south,
+/turf/open/floor/carpet/nanoweave/red,
 /area/ship/bridge)
 "cS" = (
 /obj/structure/chair/bronze{
@@ -58,6 +58,12 @@
 /area/ship/bridge)
 "gG" = (
 /obj/machinery/light/floor,
+/turf/open/floor/carpet/nanoweave/blue,
+/area/ship/bridge)
+"ib" = (
+/obj/structure/table/bronze,
+/obj/item/storage/firstaid/advanced,
+/obj/machinery/light/directional/north,
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
 "io" = (
@@ -118,18 +124,37 @@
 	},
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/bridge)
-"th" = (
-/obj/machinery/light/floor,
-/turf/open/floor/carpet/nanoweave/red,
+"tj" = (
+/obj/structure/table/bronze,
+/obj/machinery/microwave,
+/obj/machinery/light/directional/east,
+/turf/open/floor/carpet/nanoweave/orange,
 /area/ship/bridge)
 "tv" = (
 /obj/structure/shuttle/engine/heater,
 /obj/structure/window/reinforced/spawner,
 /turf/open/floor/carpet/nanoweave/orange,
 /area/ship/bridge)
+"tL" = (
+/turf/template_noop,
+/area/template_noop)
+"tZ" = (
+/obj/machinery/shower{
+	dir = 1
+	},
+/obj/structure/curtain,
+/obj/machinery/light/directional/west,
+/turf/open/floor/plasteel/freezer,
+/area/ship/bridge)
 "up" = (
 /obj/structure/window/bronze,
 /turf/open/floor/carpet/nanoweave/blue,
+/area/ship/bridge)
+"uu" = (
+/obj/structure/table/bronze,
+/obj/machinery/light/floor,
+/obj/item/radio/intercom/directional/north,
+/turf/open/floor/carpet/nanoweave/red,
 /area/ship/bridge)
 "uS" = (
 /obj/structure/window/bronze{
@@ -144,44 +169,6 @@
 /obj/structure/table/bronze,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/bridge)
-"wJ" = (
-/obj/structure/tank_dispenser/oxygen,
-/obj/structure/window/bronze{
-	dir = 8
-	},
-/obj/machinery/light,
-/turf/open/floor/carpet/nanoweave/red,
-/area/ship/bridge)
-"wV" = (
-/obj/structure/window/bronze{
-	dir = 8
-	},
-/obj/machinery/jukebox,
-/obj/structure/window/bronze{
-	dir = 1
-	},
-/obj/item/radio/intercom/wideband{
-	pixel_y = -32
-	},
-/turf/open/floor/carpet/nanoweave/beige,
-/area/ship/bridge)
-"xx" = (
-/obj/structure/table/bronze,
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/carpet/nanoweave,
-/area/ship/bridge)
-"yX" = (
-/obj/machinery/shower{
-	dir = 1
-	},
-/obj/structure/curtain,
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/open/floor/plasteel/freezer,
-/area/ship/bridge)
 "Au" = (
 /obj/structure/bed,
 /obj/item/bedsheet/syndie,
@@ -194,6 +181,14 @@
 	},
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/bridge)
+"Bm" = (
+/obj/structure/tank_dispenser/oxygen,
+/obj/structure/window/bronze{
+	dir = 8
+	},
+/obj/machinery/light/directional/south,
+/turf/open/floor/carpet/nanoweave/red,
+/area/ship/bridge)
 "BI" = (
 /obj/structure/table/bronze,
 /obj/item/trash/plate,
@@ -201,13 +196,6 @@
 /area/ship/bridge)
 "EK" = (
 /turf/open/floor/carpet/nanoweave,
-/area/ship/bridge)
-"EY" = (
-/obj/structure/table/bronze,
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
 "GQ" = (
 /obj/machinery/door/window/westright{
@@ -226,6 +214,16 @@
 	},
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/bridge)
+"HL" = (
+/obj/structure/sink{
+	dir = 1
+	},
+/obj/structure/mirror{
+	pixel_y = -30
+	},
+/obj/machinery/light/directional/south,
+/turf/open/floor/plasteel/freezer,
+/area/ship/bridge)
 "HZ" = (
 /obj/effect/mob_spawn/human/lavaland_syndicate/comms{
 	dir = 4
@@ -243,34 +241,20 @@
 /obj/machinery/computer/helm,
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
+"Ko" = (
+/obj/structure/table/bronze,
+/obj/machinery/light/directional/north,
+/turf/open/floor/carpet/nanoweave/orange,
+/area/ship/bridge)
 "Kr" = (
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
-"Ky" = (
-/turf/open/space,
-/area/space)
 "KK" = (
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/bridge)
 "Lu" = (
 /obj/structure/table/bronze,
 /obj/item/kitchen/knife,
-/turf/open/floor/carpet/nanoweave/orange,
-/area/ship/bridge)
-"Mj" = (
-/obj/machinery/suit_storage_unit/standard_unit,
-/obj/structure/window/bronze{
-	dir = 4
-	},
-/obj/machinery/light,
-/turf/open/floor/carpet/nanoweave/red,
-/area/ship/bridge)
-"Mo" = (
-/obj/structure/table/bronze,
-/obj/machinery/microwave,
-/obj/machinery/light{
-	dir = 4
-	},
 /turf/open/floor/carpet/nanoweave/orange,
 /area/ship/bridge)
 "MW" = (
@@ -284,16 +268,26 @@
 	},
 /turf/open/floor/carpet/nanoweave/orange,
 /area/ship/bridge)
+"Np" = (
+/obj/structure/window/bronze{
+	dir = 8
+	},
+/obj/machinery/jukebox,
+/obj/structure/window/bronze{
+	dir = 1
+	},
+/obj/item/radio/intercom/wideband/directional/north,
+/turf/open/floor/carpet/nanoweave/beige,
+/area/ship/bridge)
 "Ob" = (
 /obj/structure/chair/plastic{
 	dir = 4
 	},
 /turf/open/floor/carpet/nanoweave/orange,
 /area/ship/bridge)
-"Ph" = (
-/obj/structure/table/bronze,
+"Pd" = (
 /obj/machinery/light/floor,
-/obj/item/radio/intercom,
+/obj/effect/landmark/observer_start,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/bridge)
 "Qw" = (
@@ -324,13 +318,6 @@
 "Ve" = (
 /obj/effect/spawner/structure/window/shuttle,
 /turf/open/floor/plating,
-/area/ship/bridge)
-"Vx" = (
-/obj/structure/table/bronze,
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/carpet/nanoweave/orange,
 /area/ship/bridge)
 "VS" = (
 /obj/machinery/telecomms/allinone,
@@ -368,54 +355,54 @@
 /area/ship/bridge)
 
 (1,1,1) = {"
-Ky
-Ky
-Ky
-Ky
-Ky
-Ky
+tL
+tL
+tL
+tL
+tL
+tL
 Yx
 Ve
 Ve
 Ve
 Yx
-Ky
-Ky
+tL
+tL
 "}
 (2,1,1) = {"
-Ky
-Ky
-Ky
-Ky
+tL
+tL
+tL
+tL
 Yx
 Ve
 Yx
 HZ
 Qw
-aJ
+HL
 Yx
 Yx
-Ky
+tL
 "}
 (3,1,1) = {"
-Ky
+tL
 Yx
 Ve
 Ve
 Yx
-xx
+bf
 EK
 EK
 Rj
 de
-yX
+tZ
 Yx
 Yx
 "}
 (4,1,1) = {"
 Yx
 Yx
-bF
+ib
 eI
 rm
 Au
@@ -436,10 +423,10 @@ up
 Ba
 Hu
 Ba
-wV
+Np
 QG
 HJ
-wJ
+Bm
 Yx
 "}
 (6,1,1) = {"
@@ -449,10 +436,10 @@ cS
 gG
 GQ
 Kr
-th
+Pd
 KK
 io
-Ph
+uu
 Ya
 gb
 sq
@@ -469,13 +456,13 @@ uS
 iX
 vt
 az
-Mj
+cK
 Yx
 "}
 (8,1,1) = {"
 Yx
 Yx
-EY
+aw
 pO
 VS
 pY
@@ -488,25 +475,25 @@ tv
 oK
 "}
 (9,1,1) = {"
-Ky
+tL
 Yx
 Ve
 Ve
 Yx
-Vx
+Ko
 Tq
 Ob
 Ob
 Ob
-Mo
+tj
 Yx
 Yx
 "}
 (10,1,1) = {"
-Ky
-Ky
-Ky
-Ky
+tL
+tL
+tL
+tL
 Yx
 Ve
 Yx
@@ -515,20 +502,20 @@ BI
 Lu
 Yx
 Yx
-Ky
+tL
 "}
 (11,1,1) = {"
-Ky
-Ky
-Ky
-Ky
-Ky
-Ky
+tL
+tL
+tL
+tL
+tL
+tL
 Yx
 Ve
 Ve
 Ve
 Yx
-Ky
-Ky
+tL
+tL
 "}

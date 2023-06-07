@@ -34,6 +34,16 @@
 	/// store an ntnet relay for tablets on the ship
 	var/obj/machinery/ntnet_relay/integrated/ntnet_relay
 
+/obj/machinery/computer/helm/retro
+	icon = 'icons/obj/machines/retro_computer.dmi'
+	icon_state = "computer-retro"
+	deconpath = /obj/structure/frame/computer/retro
+
+/obj/machinery/computer/helm/solgov
+	icon = 'icons/obj/machines/retro_computer.dmi'
+	icon_state = "computer-solgov"
+	deconpath = /obj/structure/frame/computer/solgov
+
 /datum/config_entry/number/bluespace_jump_wait
 	default = 30 MINUTES
 
@@ -196,9 +206,11 @@
 	.["heading"] = dir2text(current_ship.get_heading()) || "None"
 	.["speed"] = current_ship.get_speed()
 	.["eta"] = current_ship.get_eta()
-	.["est_thrust"] = current_ship.est_thrust
+	.["estThrust"] = current_ship.est_thrust
 	.["engineInfo"] = list()
-	.["ai_controls"] = allow_ai_control
+	.["aiControls"] = allow_ai_control
+	.["burnDirection"] = current_ship.burn_direction
+	.["burnPercentage"] = current_ship.burn_percentage
 	for(var/obj/machinery/power/shuttle/engine/E as anything in current_ship.shuttle_port.engine_list)
 		var/list/engine_data
 		if(!E.thruster_active)
@@ -226,11 +238,11 @@
 	.["shipInfo"] = list(
 		name = current_ship.name,
 		class = current_ship.source_template?.name,
-		mass = current_ship.mass,
+		mass = current_ship.shuttle_port.turf_count,
 		sensor_range = 4
 	)
 	.["canFly"] = TRUE
-	.["ai_user"] = issilicon(user)
+	.["aiUser"] = issilicon(user)
 
 /obj/machinery/computer/helm/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
 	. = ..()
@@ -290,13 +302,25 @@
 			if("toggle_engine")
 				var/obj/machinery/power/shuttle/engine/E = locate(params["engine"]) in current_ship.shuttle_port.engine_list
 				E.enabled = !E.enabled
+				E.update_icon_state()
 				current_ship.refresh_engines()
 				return
+			if("change_burn_percentage")
+				var/new_percentage = clamp(text2num(params["percentage"]), 1, 100)
+				current_ship.burn_percentage = new_percentage
+				return
 			if("change_heading")
-				current_ship.burn_engines(text2num(params["dir"]))
+				var/new_direction = text2num(params["dir"])
+				if(new_direction == current_ship.burn_direction)
+					current_ship.change_heading(BURN_NONE)
+					return
+				current_ship.change_heading(new_direction)
 				return
 			if("stop")
-				current_ship.burn_engines()
+				if(current_ship.burn_direction == BURN_NONE)
+					current_ship.change_heading(BURN_STOP)
+					return
+				current_ship.change_heading(BURN_NONE)
 				return
 			if("bluespace_jump")
 				if(calibrating)
@@ -382,11 +406,15 @@
 
 /obj/machinery/computer/helm/viewscreen
 	name = "ship viewscreen"
-	icon = 'icons/obj/stationobjs.dmi'
-	icon_state = "telescreen"
+	icon_state = "wallconsole"
+	icon_screen = "wallconsole_navigation"
+	icon_keyboard = null
 	layer = SIGN_LAYER
 	density = FALSE
 	viewer = TRUE
+	unique_icon = TRUE
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/helm/viewscreen, 17)
 
 #undef JUMP_STATE_OFF
 #undef JUMP_STATE_CHARGING

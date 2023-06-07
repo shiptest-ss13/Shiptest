@@ -1,7 +1,6 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "aK" = (
-/obj/item/wrench/old,
-/obj/structure/rack,
+/obj/machinery/grill/unwrenched,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "aN" = (
@@ -34,7 +33,8 @@
 /area/ship/maintenance/central)
 "bQ" = (
 /obj/machinery/door/airlock/maintenance_hatch{
-	welded = 1
+	welded = 1;
+	dir = 4
 	},
 /obj/structure/barricade/wooden/crude,
 /obj/effect/mapping_helpers/airlock/abandoned,
@@ -148,7 +148,9 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "eD" = (
-/obj/machinery/door/airlock/maintenance_hatch,
+/obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4
+	},
 /obj/structure/barricade/wooden/crude,
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -219,12 +221,10 @@
 /turf/open/floor/plating,
 /area/ship/cargo)
 "iR" = (
-/obj/machinery/cryopod{
-	close_state = "crate";
-	dir = 8;
+/obj/machinery/cryopod/poor{
+	dir = 4;
 	icon = 'icons/obj/crates.dmi';
-	icon_state = "crateopen";
-	open_state = "crateopen"
+	icon_state = "crateopen"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
@@ -237,7 +237,9 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "jr" = (
-/obj/machinery/door/airlock/maintenance_hatch,
+/obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4
+	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 8
 	},
@@ -277,7 +279,8 @@
 /area/ship/cargo)
 "ko" = (
 /obj/machinery/door/airlock/maintenance_hatch{
-	name = "Wrench Storage"
+	name = "Wrench Storage";
+	dir = 4
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -321,7 +324,8 @@
 /area/ship/maintenance/fore)
 "lW" = (
 /obj/machinery/door/airlock/maintenance_hatch{
-	welded = 1
+	welded = 1;
+	dir = 4
 	},
 /obj/structure/barricade/wooden/crude,
 /obj/effect/mapping_helpers/airlock/abandoned,
@@ -372,7 +376,9 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
 "nB" = (
-/obj/machinery/door/airlock/maintenance_hatch,
+/obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4
+	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -392,10 +398,7 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "ob" = (
-/obj/item/radio/intercom/wideband{
-	dir = 1;
-	pixel_y = -25
-	},
+/obj/item/radio/intercom/wideband/directional/south,
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "of" = (
@@ -405,7 +408,9 @@
 /turf/closed/wall/r_wall,
 /area/ship/maintenance/starboard)
 "oY" = (
-/obj/machinery/door/airlock/maintenance_hatch,
+/obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4
+	},
 /obj/docking_port/mobile{
 	dir = 8;
 	launch_status = 0;
@@ -451,11 +456,11 @@
 /obj/item/storage/box/drinkingglasses,
 /obj/item/storage/cans/sixbeer,
 /obj/item/storage/cans/sixbeer,
-/obj/machinery/power/apc/auto_name/east,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
 /obj/effect/decal/cleanable/glass,
+/obj/machinery/power/apc/auto_name/directional/east,
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "pZ" = (
@@ -481,10 +486,7 @@
 /area/ship/maintenance/port)
 "qE" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/computer/cryopod{
-	dir = 1;
-	pixel_y = -23
-	},
+/obj/machinery/computer/cryopod/directional/south,
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "qO" = (
@@ -613,7 +615,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
 "wK" = (
@@ -644,7 +646,9 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
 "xh" = (
-/obj/machinery/door/airlock/maintenance_hatch,
+/obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4
+	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 4
@@ -671,10 +675,10 @@
 /area/ship/maintenance/starboard)
 "xA" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/power/apc/auto_name/west,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/machinery/power/apc/auto_name/directional/west,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "xI" = (
@@ -741,7 +745,9 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
 "At" = (
-/obj/machinery/door/airlock/maintenance_hatch,
+/obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4
+	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 8
 	},
@@ -783,6 +789,9 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
+"Cm" = (
+/turf/open/floor/plating,
+/area/template_noop)
 "CO" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -803,7 +812,9 @@
 /turf/open/floor/plating,
 /area/ship/cargo)
 "DP" = (
-/obj/machinery/door/airlock/maintenance_hatch,
+/obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4
+	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -925,12 +936,10 @@
 "KL" = (
 /obj/item/trash/semki,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/cryopod{
-	close_state = "crate";
-	dir = 8;
+/obj/machinery/cryopod/poor{
+	dir = 4;
 	icon = 'icons/obj/crates.dmi';
-	icon_state = "crateopen";
-	open_state = "crateopen"
+	icon_state = "crateopen"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
@@ -1011,6 +1020,15 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
+"ND" = (
+/obj/docking_port/stationary{
+	width = 30;
+	height = 15;
+	dwidth = 15;
+	dir = 8
+	},
+/turf/template_noop,
+/area/template_noop)
 "NI" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
@@ -1020,12 +1038,10 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/machinery/power/apc/auto_name/south{
-	dir = 1
-	},
 /obj/effect/decal/cleanable/glass,
 /obj/item/trash/cheesie,
 /obj/item/areaeditor/shuttle,
+/obj/machinery/power/apc/auto_name/directional/south,
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "NY" = (
@@ -1078,7 +1094,8 @@
 /area/ship/maintenance/port)
 "QC" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/grill/unwrenched,
+/obj/item/wrench/old,
+/obj/structure/rack,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "Rc" = (
@@ -1104,13 +1121,13 @@
 /obj/item/storage/bag/ore,
 /obj/item/mining_scanner,
 /obj/item/shovel/spoon,
-/obj/machinery/light,
 /obj/item/shovel/spoon,
 /obj/item/mining_scanner,
 /obj/item/storage/bag/ore,
 /obj/item/pickaxe/emergency,
 /obj/effect/spawner/lootdrop/maintenance/eight,
 /obj/effect/decal/cleanable/glass,
+/obj/machinery/light/directional/north,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "RI" = (
@@ -1192,7 +1209,6 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/machinery/power/apc/auto_name/south,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 8
 	},
@@ -1315,7 +1331,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/machinery/power/apc/auto_name/west,
+/obj/machinery/power/apc/auto_name/directional/west,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "Yc" = (
@@ -1352,7 +1368,38 @@ cg
 cg
 cg
 cg
+ND
 cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+"}
+(2,1,1) = {"
+cg
+cg
+cg
+cg
+cg
+cg
+Cm
 fh
 fO
 fO
@@ -1376,7 +1423,7 @@ cg
 cg
 cg
 "}
-(2,1,1) = {"
+(3,1,1) = {"
 cg
 cg
 cg
@@ -1407,7 +1454,7 @@ cg
 cg
 cg
 "}
-(3,1,1) = {"
+(4,1,1) = {"
 cg
 cg
 cg
@@ -1438,7 +1485,7 @@ cg
 cg
 cg
 "}
-(4,1,1) = {"
+(5,1,1) = {"
 LY
 Rd
 Rd
@@ -1469,7 +1516,7 @@ KU
 nT
 nT
 "}
-(5,1,1) = {"
+(6,1,1) = {"
 Rd
 pX
 ob
@@ -1500,7 +1547,7 @@ rl
 uE
 VA
 "}
-(6,1,1) = {"
+(7,1,1) = {"
 Rd
 pZ
 SA
@@ -1531,7 +1578,7 @@ VK
 xf
 VA
 "}
-(7,1,1) = {"
+(8,1,1) = {"
 Rd
 nK
 LV
@@ -1562,7 +1609,7 @@ nB
 KU
 KU
 "}
-(8,1,1) = {"
+(9,1,1) = {"
 LY
 Rd
 Rd
@@ -1593,7 +1640,7 @@ Wr
 KU
 cg
 "}
-(9,1,1) = {"
+(10,1,1) = {"
 cg
 cg
 VC
@@ -1624,7 +1671,7 @@ OG
 KU
 cg
 "}
-(10,1,1) = {"
+(11,1,1) = {"
 cg
 cg
 cg
@@ -1655,7 +1702,7 @@ nB
 nT
 cg
 "}
-(11,1,1) = {"
+(12,1,1) = {"
 cg
 cg
 cg
@@ -1686,7 +1733,7 @@ PS
 nT
 nT
 "}
-(12,1,1) = {"
+(13,1,1) = {"
 cg
 cg
 cg
@@ -1717,7 +1764,7 @@ PC
 uE
 VA
 "}
-(13,1,1) = {"
+(14,1,1) = {"
 cg
 cg
 cg
@@ -1748,7 +1795,7 @@ Zi
 Mj
 VA
 "}
-(14,1,1) = {"
+(15,1,1) = {"
 cg
 cg
 xq
@@ -1779,7 +1826,7 @@ KU
 KU
 nT
 "}
-(15,1,1) = {"
+(16,1,1) = {"
 cg
 cg
 TV
@@ -1810,7 +1857,7 @@ cg
 cg
 cg
 "}
-(16,1,1) = {"
+(17,1,1) = {"
 cg
 cg
 TV
@@ -1841,7 +1888,7 @@ cg
 cg
 cg
 "}
-(17,1,1) = {"
+(18,1,1) = {"
 cg
 cg
 Il
@@ -1872,7 +1919,7 @@ cg
 cg
 cg
 "}
-(18,1,1) = {"
+(19,1,1) = {"
 cg
 cg
 cg

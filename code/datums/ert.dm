@@ -87,12 +87,3 @@
 	mission = "Create entertainment for the crew."
 	polldesc = "a Code Rainbow Nanotrasen Emergency Response Party"
 	code = "Rainbow"
-
-/datum/ert/solgov
-	roles = list(/datum/antagonist/ert/solgov)
-	leader_role = /datum/antagonist/ert/solgov/leader
-	teamsize = 7
-	opendoors = FALSE
-	rename_team = "Hired SolGov Marines"
-	mission = "Assist in conflict resolution."
-	polldesc = "a military squad hired by Nanotrasen"

@@ -4,6 +4,7 @@
 	icon = 'icons/obj/railing.dmi'
 	icon_state = "railing"
 	flags_1 = ON_BORDER_1
+	layer = RAILING_LAYER
 	pass_flags_self = LETPASSTHROW
 	density = TRUE
 	anchored = TRUE
