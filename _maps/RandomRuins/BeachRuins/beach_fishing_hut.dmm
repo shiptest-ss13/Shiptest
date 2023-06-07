@@ -1,10 +1,4 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"aa" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
-/turf/open/floor/wood/ebony,
-/area/ruin/beach)
 "ae" = (
 /obj/structure/chair/sofa/left{
 	dir = 8
@@ -12,20 +6,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet,
 /area/ruin/beach)
-"av" = (
-/obj/structure/table/wood/bar,
-/obj/item/reagent_containers/food/snacks/cubancarp{
-	pixel_y = 6;
-	pixel_x = 11
-	},
-/obj/item/reagent_containers/food/drinks/soda_cans/cola{
-	pixel_y = 11;
-	pixel_x = -5
-	},
-/obj/machinery/light/small{
-	light_color = "#694c12"
-	},
-/turf/open/floor/wood/walnut,
+"as" = (
+/obj/structure/closet/crate/bin,
+/obj/item/reagent_containers/food/snacks/fishmeat/carp/imitation,
+/obj/item/reagent_containers/food/snacks/fishmeat/carp/imitation,
+/obj/item/reagent_containers/food/snacks/fishmeat/carp/imitation,
+/obj/effect/turf_decal/corner/opaque/pink/diagonal,
+/turf/open/floor/plastic,
 /area/ruin/beach)
 "aF" = (
 /obj/effect/turf_decal/weather/sand/corner{
@@ -69,14 +56,12 @@
 	},
 /turf/open/water/beach,
 /area/ruin/beach)
-"dW" = (
+"dH" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
-/obj/effect/turf_decal/siding/wideplating/corner,
-/obj/effect/turf_decal/spline/fancy/opaque/inteqbrown,
-/obj/structure/railing/modern{
-	railing_color = "#422e1d";
+/obj/structure/flora/ausbushes/stalkybush,
+/obj/structure/railing{
 	dir = 8
 	},
 /turf/open/water/beach/deep,
@@ -134,34 +119,19 @@
 	},
 /turf/open/water/beach/deep,
 /area/ruin/beach)
-"ge" = (
-/turf/open/floor/wood/walnut{
-	icon_state = "wood-broken6"
-	},
-/area/ruin/beach)
-"gu" = (
-/obj/structure/railing/modern{
-	railing_color = "#422e1d";
-	dir = 4
-	},
-/obj/structure/flora/ausbushes/stalkybush,
-/obj/effect/turf_decal/weather/sand,
-/obj/effect/turf_decal/siding/wood{
-	dir = 4
-	},
-/turf/open/water/beach/deep,
-/area/ruin/beach)
-"gz" = (
+"fW" = (
 /obj/effect/turf_decal/corner/opaque/lightgrey/diagonal,
 /obj/machinery/atmospherics/pipe/heat_exchanging/junction{
 	dir = 1
 	},
 /obj/structure/kitchenspike,
-/obj/machinery/light{
-	dir = 4;
-	light_color = "#34aeeb"
-	},
+/obj/machinery/light/dim/directional/east,
 /turf/open/floor/plastic,
+/area/ruin/beach)
+"ge" = (
+/turf/open/floor/wood/walnut{
+	icon_state = "wood-broken6"
+	},
 /area/ruin/beach)
 "gT" = (
 /turf/open/floor/wood/ebony,
@@ -195,6 +165,11 @@
 "hK" = (
 /turf/open/water/beach,
 /area/ruin/beach)
+"hS" = (
+/obj/machinery/light/small/directional/west,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood/walnut,
+/area/ruin/beach)
 "hW" = (
 /obj/effect/turf_decal/weather/sand/corner,
 /obj/effect/turf_decal/borderfloor/corner{
@@ -211,7 +186,20 @@
 	},
 /turf/open/water/beach/deep,
 /area/ruin/beach)
-"jz" = (
+"iV" = (
+/obj/effect/decal/cleanable/garbage{
+	pixel_y = -14
+	},
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/wood/walnut,
+/area/ruin/beach)
+"jD" = (
+/obj/effect/turf_decal/weather/sand{
+	dir = 1
+	},
+/turf/open/water/beach/deep,
+/area/ruin/beach)
+"jZ" = (
 /obj/item/toy/plush/carpplushie/dehy_carp,
 /obj/item/toy/plush/carpplushie/dehy_carp,
 /obj/item/toy/plush/carpplushie/dehy_carp,
@@ -220,14 +208,8 @@
 	name = "freeze dried carp"
 	},
 /obj/effect/turf_decal/corner/opaque/pink/diagonal,
-/obj/machinery/light,
+/obj/machinery/light/dim/directional/south,
 /turf/open/floor/plastic,
-/area/ruin/beach)
-"jD" = (
-/obj/effect/turf_decal/weather/sand{
-	dir = 1
-	},
-/turf/open/water/beach/deep,
 /area/ruin/beach)
 "kj" = (
 /obj/structure/closet/cabinet,
@@ -251,6 +233,20 @@
 	},
 /turf/open/floor/wood/walnut,
 /area/ruin/beach)
+"ls" = (
+/obj/machinery/door/airlock/freezer{
+	name = "Freezer Room";
+	dir = 4
+	},
+/obj/effect/decal/cleanable/blood/footprints{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/blood/footprints{
+	dir = 8;
+	pixel_y = 6
+	},
+/turf/open/floor/plasteel/showroomfloor,
+/area/ruin/beach)
 "ly" = (
 /obj/effect/turf_decal/corner/opaque/lightgrey/diagonal,
 /obj/machinery/atmospherics/pipe/heat_exchanging/simple{
@@ -266,6 +262,16 @@
 	},
 /obj/effect/turf_decal/siding/white{
 	dir = 4
+	},
+/turf/open/water/beach/deep,
+/area/ruin/beach)
+"mu" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 4
+	},
+/obj/structure/railing/corner{
+	dir = 4;
+	layer = 3.1
 	},
 /turf/open/water/beach/deep,
 /area/ruin/beach)
@@ -304,6 +310,16 @@
 	},
 /turf/open/water/beach,
 /area/ruin/beach)
+"nK" = (
+/obj/structure/closet/cabinet,
+/obj/item/pneumatic_cannon/speargun,
+/obj/item/storage/backpack/magspear_quiver,
+/obj/item/kitchen/knife/hunting,
+/obj/machinery/light/small/directional/east{
+	light_color = "#d8b1b1"
+	},
+/turf/open/floor/wood,
+/area/ruin/beach)
 "ov" = (
 /obj/effect/turf_decal/siding/yellow{
 	dir = 1
@@ -311,18 +327,17 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/walnut,
 /area/ruin/beach)
-"oE" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/open/floor/wood/ebony,
-/area/ruin/beach)
-"oH" = (
+"oD" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
-/obj/structure/railing/modern/end{
-	railing_color = "#422e1d";
+/obj/effect/turf_decal/siding/wideplating/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/inteqbrown{
+	dir = 1
+	},
+/obj/structure/railing{
 	dir = 8
 	},
 /turf/open/water/beach/deep,
@@ -336,17 +351,6 @@
 /area/ruin/beach)
 "oS" = (
 /turf/open/floor/wood,
-/area/ruin/beach)
-"pe" = (
-/obj/effect/turf_decal/sand/plating,
-/obj/effect/turf_decal/siding/wood{
-	dir = 8
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 4
-	},
-/obj/machinery/door/airlock/wood,
-/turf/open/floor/wood/ebony,
 /area/ruin/beach)
 "pC" = (
 /obj/effect/turf_decal/weather/sand/corner{
@@ -395,6 +399,13 @@
 	},
 /turf/open/water/beach/deep,
 /area/ruin/beach)
+"ss" = (
+/obj/effect/turf_decal/siding/wood,
+/obj/structure/railing{
+	layer = 3.3
+	},
+/turf/open/water/beach/deep,
+/area/ruin/beach)
 "sA" = (
 /obj/structure/chair/plastic{
 	dir = 8
@@ -407,30 +418,6 @@
 "sJ" = (
 /obj/structure/flora/bigplant,
 /turf/open/floor/wood/walnut,
-/area/ruin/beach)
-"sN" = (
-/obj/structure/chair/sofa,
-/obj/machinery/light/small{
-	dir = 1;
-	light_color = "#694c12"
-	},
-/obj/structure/safe/floor,
-/obj/item/book/granter/martial/carp,
-/obj/item/grenade/clusterbuster/spawner_spesscarp,
-/turf/open/floor/carpet,
-/area/ruin/beach)
-"sR" = (
-/obj/effect/turf_decal/corner/opaque/lightgrey/diagonal,
-/obj/machinery/atmospherics/pipe/heat_exchanging/simple{
-	dir = 5
-	},
-/obj/item/reagent_containers/food/snacks/fishmeat/carp,
-/obj/item/reagent_containers/food/snacks/fishmeat/carp,
-/obj/item/reagent_containers/food/snacks/fishmeat/carp,
-/obj/item/reagent_containers/food/snacks/fishmeat/carp,
-/obj/item/reagent_containers/food/snacks/fishmeat/carp,
-/obj/structure/closet/secure_closet/freezer,
-/turf/open/floor/plastic,
 /area/ruin/beach)
 "sV" = (
 /obj/structure/spacevine,
@@ -493,19 +480,12 @@
 	},
 /turf/open/water/beach/deep,
 /area/ruin/beach)
-"uY" = (
+"uK" = (
 /obj/effect/turf_decal/siding/wood{
-	dir = 8
-	},
-/obj/effect/turf_decal/siding/wideplating/corner{
-	dir = 4
-	},
-/obj/effect/turf_decal/spline/fancy/opaque/inteqbrown{
 	dir = 1
 	},
-/obj/structure/railing/modern{
-	railing_color = "#422e1d";
-	dir = 8
+/obj/structure/railing{
+	dir = 1
 	},
 /turf/open/water/beach/deep,
 /area/ruin/beach)
@@ -559,11 +539,24 @@
 	},
 /turf/open/water/beach/deep,
 /area/ruin/beach)
+"wC" = (
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/wood/ebony,
+/area/ruin/beach)
 "wH" = (
 /obj/effect/turf_decal/borderfloor/corner{
 	dir = 8
 	},
 /obj/effect/turf_decal/siding/white/corner{
+	dir = 8
+	},
+/turf/open/water/beach/deep,
+/area/ruin/beach)
+"xc" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 8
+	},
+/obj/structure/railing/corner{
 	dir = 8
 	},
 /turf/open/water/beach/deep,
@@ -597,16 +590,6 @@
 	},
 /obj/structure/flora/rock/jungle,
 /turf/open/water/beach,
-/area/ruin/beach)
-"yD" = (
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 1
-	},
-/obj/structure/railing/modern/corner{
-	railing_color = "#422e1d";
-	dir = 1
-	},
-/turf/open/water/beach/deep,
 /area/ruin/beach)
 "yL" = (
 /obj/effect/turf_decal/siding/yellow/corner{
@@ -660,11 +643,18 @@
 	},
 /turf/open/water/beach/deep,
 /area/ruin/beach)
-"AF" = (
-/obj/machinery/light/small{
-	dir = 1
+"AD" = (
+/obj/structure/closet/crate/freezer,
+/obj/item/reagent_containers/food/snacks/fishmeat/carp,
+/obj/item/reagent_containers/food/snacks/fishmeat/carp,
+/obj/item/reagent_containers/food/snacks/fishmeat/carp,
+/obj/item/reagent_containers/food/snacks/fishmeat/carp,
+/obj/item/reagent_containers/food/snacks/fishmeat/carp,
+/obj/machinery/atmospherics/pipe/heat_exchanging/simple{
+	dir = 9
 	},
-/turf/open/floor/concrete/tiles,
+/obj/effect/turf_decal/corner/opaque/lightgrey/diagonal,
+/turf/open/floor/plastic,
 /area/ruin/beach)
 "AO" = (
 /obj/effect/turf_decal/weather/sand{
@@ -675,17 +665,6 @@
 "AT" = (
 /obj/structure/flora/ausbushes/reedbush,
 /turf/open/water/beach,
-/area/ruin/beach)
-"AY" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 4
-	},
-/obj/structure/railing/modern/end{
-	railing_color = "#422e1d";
-	dir = 4
-	},
-/obj/structure/flora/junglebush/b,
-/turf/open/floor/plating/grass/beach,
 /area/ruin/beach)
 "Bg" = (
 /obj/effect/turf_decal/corner/opaque/pink/diagonal,
@@ -713,18 +692,14 @@
 	},
 /turf/open/floor/plastic,
 /area/ruin/beach)
-"Cm" = (
-/obj/structure/closet/crate/freezer,
-/obj/item/reagent_containers/food/snacks/fishmeat/carp,
-/obj/item/reagent_containers/food/snacks/fishmeat/carp,
-/obj/item/reagent_containers/food/snacks/fishmeat/carp,
-/obj/item/reagent_containers/food/snacks/fishmeat/carp,
-/obj/item/reagent_containers/food/snacks/fishmeat/carp,
-/obj/machinery/atmospherics/pipe/heat_exchanging/simple{
-	dir = 9
+"Cp" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
 	},
-/obj/effect/turf_decal/corner/opaque/lightgrey/diagonal,
-/turf/open/floor/plastic,
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/open/water/beach/deep,
 /area/ruin/beach)
 "CJ" = (
 /obj/structure/flora/ausbushes/stalkybush,
@@ -754,34 +729,11 @@
 	},
 /turf/open/water/beach/deep,
 /area/ruin/beach)
+"DC" = (
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/wood/ebony,
+/area/ruin/beach)
 "DM" = (
-/turf/open/water/beach/deep,
-/area/ruin/beach)
-"DO" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 4
-	},
-/obj/structure/railing/modern{
-	railing_color = "#422e1d";
-	dir = 4
-	},
-/turf/open/water/beach/deep,
-/area/ruin/beach)
-"DS" = (
-/obj/machinery/light/small{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/walnut,
-/area/ruin/beach)
-"Ek" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 8
-	},
-/obj/structure/railing/modern{
-	railing_color = "#422e1d";
-	dir = 8
-	},
 /turf/open/water/beach/deep,
 /area/ruin/beach)
 "Em" = (
@@ -794,6 +746,15 @@
 /obj/structure/flora/ausbushes/reedbush,
 /turf/open/water/beach/deep,
 /area/ruin/beach)
+"Fv" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 1
+	},
+/obj/structure/railing/corner{
+	dir = 1
+	},
+/turf/open/water/beach/deep,
+/area/ruin/beach)
 "FG" = (
 /turf/template_noop,
 /area/template_noop)
@@ -804,13 +765,14 @@
 /obj/effect/turf_decal/spline/fancy/opaque/inteqbrown,
 /turf/open/water/beach/deep,
 /area/ruin/beach)
-"FK" = (
+"FR" = (
+/obj/structure/flora/ausbushes/stalkybush,
+/obj/effect/turf_decal/weather/sand,
 /obj/effect/turf_decal/siding/wood{
-	dir = 1
+	dir = 4
 	},
-/obj/structure/railing/modern{
-	railing_color = "#422e1d";
-	dir = 1
+/obj/structure/railing{
+	dir = 4
 	},
 /turf/open/water/beach/deep,
 /area/ruin/beach)
@@ -848,16 +810,6 @@
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/plastic,
 /area/ruin/beach)
-"GM" = (
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 8
-	},
-/obj/structure/railing/modern/corner{
-	railing_color = "#422e1d";
-	dir = 8
-	},
-/turf/open/water/beach/deep,
-/area/ruin/beach)
 "GP" = (
 /obj/structure/chair/sofa/right,
 /obj/effect/decal/cleanable/cobweb,
@@ -866,6 +818,15 @@
 	},
 /turf/open/floor/carpet,
 /area/ruin/beach)
+"GV" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/open/water/beach/deep,
+/area/ruin/beach)
 "He" = (
 /obj/effect/turf_decal/corner/opaque/pink/diagonal,
 /obj/effect/decal/cleanable/blood/footprints{
@@ -873,19 +834,6 @@
 	pixel_y = 6
 	},
 /turf/open/floor/plastic,
-/area/ruin/beach)
-"Hj" = (
-/obj/machinery/door/airlock/freezer{
-	name = "Freezer Room"
-	},
-/obj/effect/decal/cleanable/blood/footprints{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/blood/footprints{
-	dir = 8;
-	pixel_y = 6
-	},
-/turf/open/floor/plasteel/showroomfloor,
 /area/ruin/beach)
 "HW" = (
 /obj/effect/turf_decal/corner/opaque/pink/diagonal,
@@ -902,15 +850,6 @@
 /obj/effect/turf_decal/borderfloor/corner,
 /obj/effect/turf_decal/siding/white/corner,
 /turf/open/water/beach/deep,
-/area/ruin/beach)
-"Iv" = (
-/obj/machinery/light/small{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/garbage{
-	pixel_y = -14
-	},
-/turf/open/floor/wood/walnut,
 /area/ruin/beach)
 "IN" = (
 /obj/effect/turf_decal/borderfloor{
@@ -976,13 +915,18 @@
 /obj/item/trash/can,
 /turf/open/floor/wood/walnut,
 /area/ruin/beach)
-"LE" = (
-/obj/structure/table/wood,
-/obj/machinery/light/small{
-	dir = 1
+"LO" = (
+/obj/effect/turf_decal/sand/plating,
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
 	},
-/obj/item/gun/ballistic/shotgun/winchester/lethal,
-/turf/open/floor/wood,
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/machinery/door/airlock/wood{
+	dir = 4
+	},
+/turf/open/floor/wood/ebony,
 /area/ruin/beach)
 "LP" = (
 /obj/structure/railing/wood{
@@ -1018,12 +962,40 @@
 	},
 /turf/open/floor/wood/walnut,
 /area/ruin/beach)
-"Nq" = (
-/obj/effect/turf_decal/siding/wood/corner,
-/obj/structure/railing/modern/corner{
-	railing_color = "#422e1d"
+"Nh" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
 	},
-/turf/open/water/beach/deep,
+/obj/structure/flora/junglebush/b,
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/open/floor/plating/grass/beach,
+/area/ruin/beach)
+"NT" = (
+/obj/structure/table/wood/bar,
+/obj/item/reagent_containers/food/snacks/cubancarp{
+	pixel_y = 6;
+	pixel_x = 11
+	},
+/obj/item/reagent_containers/food/drinks/soda_cans/cola{
+	pixel_y = 11;
+	pixel_x = -5
+	},
+/obj/machinery/light/small/directional/south{
+	light_color = "#694c12"
+	},
+/turf/open/floor/wood/walnut,
+/area/ruin/beach)
+"NZ" = (
+/obj/structure/chair/sofa,
+/obj/machinery/light/small/directional/north{
+	light_color = "#694c12"
+	},
+/obj/structure/safe/floor,
+/obj/item/book/granter/martial/carp,
+/obj/item/grenade/clusterbuster/spawner_spesscarp,
+/turf/open/floor/carpet,
 /area/ruin/beach)
 "Ok" = (
 /obj/effect/turf_decal/corner/opaque/pink/diagonal,
@@ -1032,26 +1004,15 @@
 "Ol" = (
 /turf/open/floor/carpet,
 /area/ruin/beach)
-"Os" = (
-/obj/structure/table/wood/reinforced,
-/obj/effect/turf_decal/corner/opaque/pink/diagonal,
-/obj/item/kitchen/knife{
-	pixel_y = 12;
-	pixel_x = 9
-	},
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/item/reagent_containers/food/snacks/fishfingers{
-	pixel_y = 5;
-	pixel_x = -4
-	},
-/turf/open/floor/plastic,
-/area/ruin/beach)
 "OE" = (
 /obj/effect/turf_decal/weather/sand/corner{
 	dir = 4
 	},
+/turf/open/water/beach/deep,
+/area/ruin/beach)
+"ON" = (
+/obj/effect/turf_decal/siding/wood/corner,
+/obj/structure/railing/corner,
 /turf/open/water/beach/deep,
 /area/ruin/beach)
 "OO" = (
@@ -1062,28 +1023,6 @@
 /obj/structure/spawner/carp,
 /turf/open/floor/plating/asteroid/sand,
 /area/ruin/beach)
-"Pj" = (
-/obj/structure/table/wood/bar,
-/obj/machinery/light/small{
-	dir = 1
-	},
-/obj/item/binoculars{
-	pixel_x = -1;
-	layer = 2.9
-	},
-/turf/open/floor/wood/ebony,
-/area/ruin/beach)
-"PB" = (
-/obj/structure/closet/cabinet,
-/obj/item/pneumatic_cannon/speargun,
-/obj/item/storage/backpack/magspear_quiver,
-/obj/item/kitchen/knife/hunting,
-/obj/machinery/light/small{
-	dir = 4;
-	light_color = "#d8b1b1"
-	},
-/turf/open/floor/wood,
-/area/ruin/beach)
 "PM" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -1093,6 +1032,20 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/walnut,
+/area/ruin/beach)
+"PX" = (
+/obj/structure/table/wood/reinforced,
+/obj/effect/turf_decal/corner/opaque/pink/diagonal,
+/obj/item/kitchen/knife{
+	pixel_y = 12;
+	pixel_x = 9
+	},
+/obj/item/reagent_containers/food/snacks/fishfingers{
+	pixel_y = 5;
+	pixel_x = -4
+	},
+/obj/machinery/light/dim/directional/east,
+/turf/open/floor/plastic,
 /area/ruin/beach)
 "Qi" = (
 /obj/effect/turf_decal/weather/sand{
@@ -1140,26 +1093,22 @@
 	},
 /turf/open/floor/carpet,
 /area/ruin/beach)
-"Sl" = (
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 4
+"Rs" = (
+/obj/effect/turf_decal/corner/opaque/lightgrey/diagonal,
+/obj/machinery/atmospherics/pipe/heat_exchanging/simple{
+	dir = 5
 	},
-/obj/structure/railing/modern/corner{
-	railing_color = "#422e1d";
-	dir = 4
-	},
-/turf/open/water/beach/deep,
+/obj/item/reagent_containers/food/snacks/fishmeat/carp,
+/obj/item/reagent_containers/food/snacks/fishmeat/carp,
+/obj/item/reagent_containers/food/snacks/fishmeat/carp,
+/obj/item/reagent_containers/food/snacks/fishmeat/carp,
+/obj/item/reagent_containers/food/snacks/fishmeat/carp,
+/obj/structure/closet/secure_closet/freezer,
+/turf/open/floor/plastic,
 /area/ruin/beach)
-"SC" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 8
-	},
-/obj/structure/railing/modern{
-	railing_color = "#422e1d";
-	dir = 8
-	},
-/obj/structure/flora/ausbushes/stalkybush,
-/turf/open/water/beach/deep,
+"Rx" = (
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/concrete/tiles,
 /area/ruin/beach)
 "SV" = (
 /obj/structure/flora/driftlog,
@@ -1279,12 +1228,11 @@
 	},
 /turf/open/water/beach,
 /area/ruin/beach)
-"Xp" = (
-/obj/effect/turf_decal/siding/wood,
-/obj/structure/railing/modern{
-	railing_color = "#422e1d"
-	},
-/turf/open/water/beach/deep,
+"Xk" = (
+/obj/structure/table/wood,
+/obj/machinery/light/small/directional/north,
+/obj/item/gun/ballistic/shotgun/winchester/lethal,
+/turf/open/floor/wood,
 /area/ruin/beach)
 "Xr" = (
 /obj/structure/table/wood/bar,
@@ -1324,18 +1272,30 @@
 	},
 /turf/open/water/beach/deep,
 /area/ruin/beach)
+"Yn" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/wideplating/corner,
+/obj/effect/turf_decal/spline/fancy/opaque/inteqbrown,
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/open/water/beach/deep,
+/area/ruin/beach)
+"Yr" = (
+/obj/structure/table/wood/bar,
+/obj/machinery/light/small/directional/north,
+/obj/item/binoculars{
+	pixel_x = -1;
+	layer = 2.9
+	},
+/turf/open/floor/wood/ebony,
+/area/ruin/beach)
 "Yu" = (
 /turf/open/floor/wood/walnut{
 	icon_state = "wood-broken7"
 	},
-/area/ruin/beach)
-"Yz" = (
-/obj/structure/closet/crate/bin,
-/obj/item/reagent_containers/food/snacks/fishmeat/carp/imitation,
-/obj/item/reagent_containers/food/snacks/fishmeat/carp/imitation,
-/obj/item/reagent_containers/food/snacks/fishmeat/carp/imitation,
-/obj/effect/turf_decal/corner/opaque/pink/diagonal,
-/turf/open/floor/plastic,
 /area/ruin/beach)
 "YJ" = (
 /obj/effect/turf_decal/spline/fancy/opaque/inteqbrown/corner{
@@ -1789,9 +1749,9 @@ ut
 bE
 bE
 ut
-DO
-DO
-Sl
+GV
+GV
+mu
 DM
 hK
 hK
@@ -1814,16 +1774,16 @@ hK
 DM
 DM
 DM
-Nq
-DO
-DO
-DO
-DO
-DO
-DO
-DO
-gu
-AY
+ON
+GV
+GV
+GV
+GV
+GV
+GV
+GV
+FR
+Nh
 ut
 GP
 Ol
@@ -1831,9 +1791,9 @@ hh
 ov
 Vt
 ut
-oE
+wC
 WP
-FK
+uK
 DM
 hK
 hK
@@ -1856,7 +1816,7 @@ DM
 DM
 DM
 DM
-Xp
+ss
 Xr
 gT
 gT
@@ -1867,7 +1827,7 @@ gT
 gT
 Ut
 ut
-sN
+NZ
 yo
 fo
 nn
@@ -1875,7 +1835,7 @@ dd
 KW
 gT
 Xt
-FK
+uK
 DM
 hK
 hK
@@ -1898,14 +1858,14 @@ DM
 DM
 Eq
 DM
-Xp
+ss
 sA
 gT
 gT
 gT
 gT
 gT
-aa
+DC
 gT
 gT
 ut
@@ -1917,7 +1877,7 @@ Yu
 KW
 gT
 gT
-FK
+uK
 DM
 hK
 hK
@@ -1940,26 +1900,26 @@ DM
 DM
 uC
 DM
-GM
-Ek
-dW
+xc
+Cp
+Yn
 gT
 gT
-uY
-oH
+oD
+Cp
 ut
 ut
-pe
+LO
 ut
 ut
 ut
 BD
 yL
-av
+NT
 ut
-Pj
+Yr
 gT
-FK
+uK
 DM
 DM
 gZ
@@ -1999,9 +1959,9 @@ dd
 WT
 MT
 ut
-SC
-Ek
-yD
+dH
+Cp
+Fv
 DM
 DM
 uZ
@@ -2035,7 +1995,7 @@ bE
 Gr
 Ok
 ZV
-jz
+jZ
 ut
 ut
 ut
@@ -2080,12 +2040,12 @@ Bg
 zq
 ut
 sJ
-DS
+hS
 Yu
-Iv
+iV
 Ly
 ut
-AF
+Rx
 sp
 XA
 qE
@@ -2159,9 +2119,9 @@ kw
 FW
 ut
 Uj
-Os
+PX
 HW
-Yz
+as
 ut
 QW
 yQ
@@ -2202,10 +2162,10 @@ FW
 ut
 ut
 ut
-Hj
+ls
 ut
 ut
-LE
+Xk
 ZJ
 oS
 oS
@@ -2245,15 +2205,15 @@ xl
 ut
 vD
 Wk
-sR
+Rs
 ut
 Ty
 oS
 ZL
 kj
-PB
+nK
 ut
-AF
+Rx
 tA
 aF
 pC
@@ -2287,7 +2247,7 @@ OE
 ut
 vM
 Gt
-Cm
+AD
 ut
 ut
 bE
@@ -2328,7 +2288,7 @@ vc
 fh
 ut
 ly
-gz
+fW
 tj
 ut
 VQ

@@ -6,7 +6,9 @@
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "an" = (
-/obj/machinery/door/airlock,
+/obj/machinery/door/airlock{
+	dir = 4
+	},
 /turf/open/floor/plasteel/grimy,
 /area/ruin/unpowered)
 "bs" = (
@@ -49,9 +51,7 @@
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "mf" = (
 /obj/structure/bed,
-/obj/machinery/light/broken{
-	dir = 8
-	},
+/obj/machinery/light/broken/directional/west,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/unpowered)
 "mk" = (
@@ -168,9 +168,7 @@
 /area/ruin/unpowered)
 "CX" = (
 /obj/machinery/portable_atmospherics/canister/oxygen,
-/obj/machinery/light/broken{
-	dir = 4
-	},
+/obj/machinery/light/broken/directional/east,
 /turf/open/floor/plasteel/mono,
 /area/ruin/unpowered)
 "Du" = (
@@ -191,9 +189,7 @@
 /turf/open/floor/plasteel/mono,
 /area/ruin/unpowered)
 "HW" = (
-/obj/machinery/light/broken{
-	dir = 4
-	},
+/obj/machinery/light/broken/directional/east,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/unpowered)
 "Jz" = (
@@ -218,7 +214,7 @@
 /turf/open/floor/plasteel/grimy,
 /area/ruin/unpowered)
 "NV" = (
-/obj/machinery/light/broken,
+/obj/machinery/light/broken/directional/south,
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/plasteel/rockvault,
 /area/ruin/unpowered)
@@ -294,9 +290,7 @@
 /obj/item/toy/figure/miner{
 	pixel_x = -5
 	},
-/obj/machinery/light/broken{
-	dir = 4
-	},
+/obj/machinery/light/broken/directional/east,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/unpowered)
 "TI" = (
@@ -306,9 +300,7 @@
 /turf/open/floor/plasteel/grimy,
 /area/ruin/unpowered)
 "Uu" = (
-/obj/machinery/light/broken{
-	dir = 1
-	},
+/obj/machinery/light/broken/directional/north,
 /obj/effect/decal/cleanable/oil,
 /turf/open/floor/plasteel/rockvault,
 /area/ruin/unpowered)
@@ -347,7 +339,9 @@
 /turf/open/floor/plasteel/grimy,
 /area/ruin/unpowered)
 "YS" = (
-/obj/machinery/door/airlock/mining,
+/obj/machinery/door/airlock/mining{
+	dir = 8
+	},
 /turf/open/floor/plasteel/rockvault,
 /area/ruin/unpowered)
 "YW" = (

@@ -60,9 +60,7 @@
 	icon_state = "6-10"
 	},
 /obj/item/stack/cable_coil/cut/red,
-/obj/machinery/light/small/built{
-	dir = 1
-	},
+/obj/machinery/light/small/built/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating{
@@ -106,7 +104,7 @@
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/has_grav/transport18mid)
 "dH" = (
-/obj/machinery/power/apc/auto_name/east,
+/obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -127,7 +125,7 @@
 /turf/template_noop,
 /area/template_noop)
 "et" = (
-/obj/machinery/light/broken,
+/obj/machinery/light/broken/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/vomit/old,
 /obj/item/trash/plate{
@@ -183,7 +181,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/light/small/broken,
+/obj/machinery/light/small/broken/directional/south,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/airless,
@@ -241,9 +239,7 @@
 /turf/open/floor/plating/airless,
 /area/ruin/space/transport18aft)
 "gD" = (
-/obj/machinery/light/broken{
-	dir = 1
-	},
+/obj/machinery/light/broken/directional/north,
 /obj/machinery/suit_storage_unit/open,
 /obj/effect/turf_decal/industrial/fire{
 	dir = 1
@@ -254,7 +250,7 @@
 /area/ruin/space/has_grav/transport18mid)
 "gY" = (
 /obj/structure/table/reinforced,
-/obj/item/radio/intercom,
+/obj/item/radio/intercom/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/transport18mid)
@@ -285,7 +281,7 @@
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/has_grav/transport18mid)
 "iW" = (
-/obj/machinery/light/small/broken,
+/obj/machinery/light/small/broken/directional/south,
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/plumbing/tank,
 /obj/effect/decal/cleanable/dirt,
@@ -293,7 +289,7 @@
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/has_grav/transport18mid)
 "iZ" = (
-/obj/machinery/power/apc/auto_name/west,
+/obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -326,7 +322,7 @@
 /obj/structure/closet/crate/large{
 	name = "damp crate"
 	},
-/obj/machinery/light/small,
+/obj/machinery/light/small/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/has_grav/transport18mid)
@@ -391,9 +387,7 @@
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/has_grav/transport18mid)
 "lf" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/machinery/light/small/directional/north,
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/plumbing/tank,
 /obj/effect/decal/cleanable/dirt,
@@ -503,9 +497,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/machinery/light/small/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/transport18mid)
@@ -560,7 +552,7 @@
 /area/ruin/space/has_grav/transport18mid)
 "nL" = (
 /obj/structure/bed,
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet/airless,
@@ -585,9 +577,7 @@
 /obj/item/storage/cans/sixbeer,
 /obj/item/storage/cans/sixbeer,
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/machinery/light/small/directional/north,
 /obj/item/stack/sheet/mineral/wood,
 /obj/effect/decal/cleanable/greenglow,
 /turf/open/floor/plasteel/dark/airless,
@@ -596,7 +586,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/light/small/broken,
+/obj/machinery/light/small/broken/directional/south,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/airless,
@@ -697,8 +687,8 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/transport18aft)
 "qY" = (
-/obj/machinery/light/broken,
-/obj/machinery/power/apc/auto_name/south,
+/obj/machinery/light/broken/directional/south,
+/obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable,
 /obj/effect/turf_decal/industrial/fire,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -721,9 +711,7 @@
 /area/ruin/space/transport18aft)
 "rV" = (
 /obj/structure/table/reinforced,
-/obj/machinery/light/dim{
-	dir = 1
-	},
+/obj/machinery/light/dim/directional/north,
 /obj/item/trash/plate{
 	pixel_x = -5
 	},
@@ -745,9 +733,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/light/small/broken{
-	dir = 1
-	},
+/obj/machinery/light/small/broken/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/transport18mid)
@@ -790,9 +776,7 @@
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/has_grav/transport18mid)
 "ur" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/machinery/light/small/directional/north,
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1034,7 +1018,7 @@
 /area/ruin/space/has_grav/transport18mid)
 "Ah" = (
 /obj/structure/table/reinforced,
-/obj/item/radio/intercom/wideband,
+/obj/item/radio/intercom/wideband/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/airless,
@@ -1056,7 +1040,7 @@
 "Bv" = (
 /obj/structure/reagent_dispensers/beerkeg,
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/machinery/light/small/broken,
+/obj/machinery/light/small/broken/directional/south,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark/airless,
@@ -1080,7 +1064,7 @@
 /turf/closed/wall,
 /area/ruin/space/has_grav/transport18mid)
 "CH" = (
-/obj/machinery/light/small,
+/obj/machinery/light/small/directional/south,
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1124,9 +1108,7 @@
 /turf/closed/wall/rust,
 /area/ruin/space/has_grav/transport18mid)
 "Dr" = (
-/obj/machinery/light/dim{
-	dir = 1
-	},
+/obj/machinery/light/dim/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet/airless,
@@ -1140,26 +1122,20 @@
 "DF" = (
 /obj/structure/reagent_dispensers/beerkeg,
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/machinery/light/small/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/has_grav/transport18mid)
 "DM" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/machinery/light/small/broken{
-	dir = 1
-	},
+/obj/machinery/light/small/broken/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/has_grav/transport18mid)
 "EB" = (
-/obj/machinery/light/small/broken{
-	dir = 1
-	},
+/obj/machinery/light/small/broken/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/airless,
 /area/ruin/space/transport18aft)
@@ -1233,9 +1209,7 @@
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/transport18mid)
 "Hd" = (
-/obj/machinery/light/dim{
-	dir = 8
-	},
+/obj/machinery/light/dim/directional/west,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/vomit/old,
@@ -1309,7 +1283,7 @@
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/transport18mid)
 "Jl" = (
-/obj/machinery/power/apc/auto_name/east,
+/obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -1401,9 +1375,7 @@
 /area/ruin/space/transport18aft)
 "MA" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/machinery/light/small/built{
-	dir = 1
-	},
+/obj/machinery/light/small/built/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark/airless,
@@ -1593,9 +1565,7 @@
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/has_grav/transport18mid)
 "TD" = (
-/obj/machinery/light/broken{
-	dir = 8
-	},
+/obj/machinery/light/broken/directional/west,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/fluff/paper/stack{
@@ -1640,7 +1610,7 @@
 "Va" = (
 /obj/structure/reagent_dispensers/beerkeg,
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/machinery/light/small/broken,
+/obj/machinery/light/small/broken/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/has_grav/transport18mid)
@@ -1713,7 +1683,7 @@
 /obj/structure/closet/crate/large{
 	name = "damp crate"
 	},
-/obj/machinery/light/small/broken,
+/obj/machinery/light/small/broken/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/has_grav/transport18mid)

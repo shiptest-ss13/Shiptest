@@ -13,13 +13,6 @@
 /obj/structure/sign/poster/ripped,
 /turf/closed/wall/rust,
 /area/icemoon/underground/explored)
-"bR" = (
-/obj/machinery/light/small/broken{
-	dir = 4
-	},
-/obj/structure/fluff/fokoff_sign,
-/turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/underground/explored)
 "bY" = (
 /obj/structure/flora/stump,
 /turf/open/floor/plating/asteroid/snow/icemoon,
@@ -86,12 +79,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
 /area/ruin/powered)
-"jP" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
-/turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/underground/explored)
 "kl" = (
 /obj/structure/sign/poster/official/nanotrasen_logo,
 /turf/closed/wall,
@@ -182,25 +169,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
 /area/ruin/powered)
-"pV" = (
-/obj/machinery/door/airlock/maintenance_hatch,
-/turf/open/floor/plating,
-/area/ruin/powered)
-"rC" = (
-/obj/structure/closet/secure_closet/freezer,
-/obj/item/reagent_containers/food/snacks/fishmeat/carp,
-/obj/item/reagent_containers/food/snacks/fishmeat/carp,
-/obj/item/reagent_containers/food/snacks/fishmeat/carp,
-/obj/item/reagent_containers/food/condiment/pack/ketchup,
-/obj/item/reagent_containers/food/condiment/pack/ketchup,
-/obj/item/reagent_containers/food/condiment/pack/ketchup,
-/obj/effect/turf_decal/corner/opaque/black{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/opaque/black{
-	dir = 2
-	},
-/turf/open/floor/plasteel,
+"rB" = (
+/obj/structure/showcase/machinery/tv,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/broken/directional/north,
+/turf/open/floor/holofloor/wood,
 /area/ruin/powered)
 "sG" = (
 /obj/effect/decal/cleanable/vomit,
@@ -289,6 +262,22 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/powered)
+"yn" = (
+/obj/structure/closet/secure_closet/freezer,
+/obj/item/reagent_containers/food/snacks/fishmeat/carp,
+/obj/item/reagent_containers/food/snacks/fishmeat/carp,
+/obj/item/reagent_containers/food/snacks/fishmeat/carp,
+/obj/item/reagent_containers/food/condiment/pack/ketchup,
+/obj/item/reagent_containers/food/condiment/pack/ketchup,
+/obj/item/reagent_containers/food/condiment/pack/ketchup,
+/obj/effect/turf_decal/corner/opaque/black{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/black{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
+/area/ruin/powered)
 "yS" = (
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/plating/asteroid/snow/icemoon,
@@ -301,14 +290,6 @@
 "zT" = (
 /turf/open/floor/plating/snowed/smoothed/icemoon,
 /area/icemoon/underground/explored)
-"AG" = (
-/obj/structure/showcase/machinery/tv,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/broken{
-	dir = 1
-	},
-/turf/open/floor/holofloor/wood,
-/area/ruin/powered)
 "AM" = (
 /obj/effect/decal/cleanable/blood/gibs/down,
 /obj/item/pickaxe,
@@ -326,6 +307,12 @@
 /obj/item/reagent_containers/food/snacks/meat/slab/human,
 /obj/item/reagent_containers/food/snacks/meat/slab/human,
 /turf/open/floor/wood,
+/area/ruin/powered)
+"AY" = (
+/obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4
+	},
+/turf/open/floor/plating,
 /area/ruin/powered)
 "Bq" = (
 /obj/structure/flora/tree/pine,
@@ -555,6 +542,10 @@
 "Vn" = (
 /turf/closed/wall/mineral/wood,
 /area/ruin/powered)
+"Wr" = (
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/plating/asteroid/snow/icemoon,
+/area/icemoon/underground/explored)
 "Ws" = (
 /obj/structure/fence/cut/medium{
 	dir = 4
@@ -567,6 +558,17 @@
 /obj/item/bedsheet/cult,
 /turf/open/floor/wood,
 /area/ruin/powered)
+"Xo" = (
+/obj/machinery/door/airlock/wood{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/ruin/powered)
+"Yd" = (
+/obj/machinery/light/small/broken/directional/east,
+/obj/structure/fluff/fokoff_sign,
+/turf/open/floor/plating/asteroid/snow/icemoon,
+/area/icemoon/underground/explored)
 "Ze" = (
 /turf/closed/wall,
 /area/icemoon/underground/explored)
@@ -623,11 +625,11 @@ tN
 pc
 Og
 Og
-bR
+Yd
 Og
 Og
 Og
-jP
+Wr
 Og
 Og
 Og
@@ -833,13 +835,13 @@ Ei
 Ei
 la
 Vn
-rC
+yn
 ut
 Vn
 tF
 iz
 Vn
-AG
+rB
 aM
 yb
 Vn
@@ -875,7 +877,7 @@ pP
 Vn
 wQ
 QR
-pV
+AY
 wQ
 Og
 Tc
@@ -900,7 +902,7 @@ yS
 zT
 Vn
 Vn
-SZ
+Xo
 Vn
 Vn
 Og
