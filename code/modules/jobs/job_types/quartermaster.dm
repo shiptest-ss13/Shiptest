@@ -72,19 +72,3 @@
 	name = "Chief Economist"
 	uniform = /obj/item/clothing/under/suit/tan
 	neck = /obj/item/clothing/neck/tie/brown
-
-
-/datum/outfit/job/quartermaster/minutemen
-	name = "Supply Officer (Colonial Minutemen)"
-
-	ears = /obj/item/radio/headset/minutemen/alt
-	uniform = /obj/item/clothing/under/rank/command/minutemen
-	alt_uniform = null
-	suit = /obj/item/clothing/suit/toggle/lawyer/minutemen
-	alt_suit = null
-
-	shoes = /obj/item/clothing/shoes/combat
-	head = /obj/item/clothing/head/cowboy/sec/minutemen
-	backpack = /obj/item/storage/backpack
-	backpack_contents = list(
-		/obj/item/melee/classic_baton/telescopic=1, /obj/item/modular_computer/tablet/preset/advanced = 1)
