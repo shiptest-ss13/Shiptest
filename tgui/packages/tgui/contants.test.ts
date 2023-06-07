@@ -2,35 +2,35 @@ import { getGasColor, getGasFromId, getGasFromPath, getGasLabel } from './consta
 
 describe('gas helper functions', () => {
   it('should get the proper gas label', () => {
-    const gasId = 'antinoblium';
-    const gasLabel = getGasFromId(gasId);
+    const gasName = 'antinoblium';
+    const gasLabel = getGasLabel(gasName);
     expect(gasLabel).toBe('Anti-Noblium');
   });
 
   it('should get the proper gas label with a fallback', () => {
-    const gasId = 'Nonexistent';
-    const gasLabel = getGasLabel(gasId, 'fallback');
+    const gasName = 'nonexistent';
+    const gasLabel = getGasLabel(gasName, 'fallback');
 
     expect(gasLabel).toBe('fallback');
   });
 
   it('should return none if no gas and no fallback is found', () => {
-    const gasId = 'Nonexistent';
-    const gasLabel = getGasLabel(gasId);
+    const gasName = 'nonexistent';
+    const gasLabel = getGasLabel(gasName);
 
     expect(gasLabel).toBe('Nonexistent');
   });
 
   it('should get the proper gas color', () => {
-    const gasId = 'Antinoblium';
-    const gasColor = getGasColor(gasId);
+    const gasName = 'Antinoblium';
+    const gasColor = getGasColor(gasName);
 
     expect(gasColor).toBe('maroon');
   });
 
   it('should return a string if no gas is found', () => {
-    const gasId = 'nonexistent';
-    const gasColor = getGasColor(gasId);
+    const gasName = 'nonexistent';
+    const gasColor = getGasColor(gasName);
 
     expect(gasColor).toBe('black');
   });
