@@ -89,7 +89,7 @@
 /datum/biome/waste
 	open_turf_types = list(
 		/turf/open/floor/plating/asteroid/wasteplanet/lit = 80,
-		/turf/open/floor/plating/rust/wasteplanet/lit = 15,
+		/turf/open/floor/plating/wasteplanet/rust/lit = 15,
 		/turf/open/floor/plating/wasteplanet/lit = 5
 	)
 
@@ -153,7 +153,7 @@
 /datum/biome/waste/crater
 	open_turf_types = list(
 		/turf/open/floor/plating/asteroid/wasteplanet/lit = 90,
-		/turf/open/floor/plating/rust/wasteplanet/lit = 10,
+		/turf/open/floor/plating/wasteplanet/rust/lit = 10,
 	)
 
 	flora_spawn_list = list(
@@ -207,7 +207,7 @@
 /datum/biome/waste/tar_bed //tar colorings
 	open_turf_types = list(
 		/turf/open/floor/plating/asteroid/wasteplanet/lit = 70,
-		/turf/open/floor/plating/rust/wasteplanet/lit = 10,
+		/turf/open/floor/plating/wasteplanet/rust/lit = 10,
 	)
 
 /datum/biome/waste/tar_bed/total
@@ -219,7 +219,7 @@
 /datum/biome/waste/metal
 	open_turf_types = list(
 		/turf/open/floor/plating/asteroid/wasteplanet/lit = 5,
-		/turf/open/floor/plating/rust/wasteplanet/lit = 45,
+		/turf/open/floor/plating/wasteplanet/rust/lit = 45,
 		/turf/open/floor/plating/wasteplanet/lit = 50
 	)
 
@@ -264,7 +264,7 @@
 /datum/biome/waste/metal/rust
 	open_turf_types = list(
 		/turf/open/floor/plating/asteroid/wasteplanet/lit = 1,
-		/turf/open/floor/plating/rust/wasteplanet/lit = 10,
+		/turf/open/floor/plating/wasteplanet/rust/lit = 10,
 		/turf/open/floor/plating/wasteplanet/lit = 4
 	)
 
@@ -273,7 +273,7 @@
 /datum/biome/cave/waste
 	open_turf_types = list(
 		/turf/open/floor/plating/asteroid/wasteplanet = 80,
-		/turf/open/floor/plating/rust/wasteplanet = 15,
+		/turf/open/floor/plating/wasteplanet/rust = 15,
 		/turf/open/floor/plating/wasteplanet = 5
 	)
 
@@ -334,7 +334,7 @@
 /datum/biome/cave/waste/tar_bed //tar colorings here
 	open_turf_types = list(
 		/turf/open/floor/plating/asteroid/wasteplanet = 70,
-		/turf/open/floor/plating/rust/wasteplanet = 20,
+		/turf/open/floor/plating/wasteplanet/rust = 20,
 		/turf/open/water/tar/waste = 3
 	)
 
@@ -368,7 +368,7 @@
 
 /datum/biome/cave/waste/metal //deeper in, there's no normal stuff here
 	open_turf_types = list(
-		/turf/open/floor/plating/rust/wasteplanet = 10,
+		/turf/open/floor/plating/wasteplanet/rust = 10,
 		/turf/open/floor/plating/wasteplanet = 4
 	)
 	closed_turf_types = list(
