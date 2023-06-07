@@ -169,6 +169,8 @@
 	. = ..()
 	if(istype(I, /obj/item/toy/crayon/spraycan))
 		var/obj/item/toy/crayon/spraycan/C = I
+		if(C.is_capped)
+			return
 		railing_color = C.paint_color
 	if(railing_color)
 		GetCover()

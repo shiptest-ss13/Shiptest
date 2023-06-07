@@ -695,14 +695,15 @@
 	if(!proximity)
 		return
 
-	if(istype(target, /obj/structure/railing/modern))
-		return
-
 	if(is_capped)
 		to_chat(user, "<span class='warning'>Take the cap off first!</span>")
 		return
 
 	if(check_empty(user))
+		return
+
+	if(istype(target, /obj/structure/railing/modern))
+		playsound(user.loc, 'sound/effects/spray.ogg', 25, TRUE, 5)
 		return
 
 	if(iscarbon(target))
