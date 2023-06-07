@@ -21,9 +21,9 @@
 		if(.) //not dead
 			handle_blood()
 
-//		if(isLivingSSD())//if you're disconnected, you're going to sleep
-//			if(AmountSleeping() < 20)
-//				AdjustSleeping(20)//adjust every 10 seconds
+		if(isLivingSSD())//if you're disconnected, you're going to sleep
+			if(AmountSleeping() < 20)
+				AdjustSleeping(20)//adjust every 10 seconds
 
 		if(stat != DEAD)
 			var/bprv = handle_bodyparts()
