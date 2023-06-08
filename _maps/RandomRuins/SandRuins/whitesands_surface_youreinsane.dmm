@@ -204,7 +204,8 @@
 /obj/machinery/door/airlock/engineering/glass/critical{
 	heat_proof = 1;
 	name = "Supermatter Chamber";
-	req_access_txt = "10"
+	req_access_txt = "10";
+	dir = 4
 	},
 /turf/open/floor/plating{
 	icon_state = "platingdmg2";
@@ -221,7 +222,8 @@
 /obj/machinery/door/airlock/engineering/glass/critical{
 	heat_proof = 1;
 	name = "Supermatter Chamber";
-	req_access_txt = "10"
+	req_access_txt = "10";
+	dir = 4
 	},
 /turf/open/floor/engine,
 /area/whitesands/surface/outdoors)

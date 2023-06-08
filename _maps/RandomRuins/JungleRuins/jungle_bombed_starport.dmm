@@ -116,7 +116,7 @@
 /obj/structure/chair/office{
 	dir = 8
 	},
-/obj/machinery/light/broken,
+/obj/machinery/light/broken/directional/south,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/jungle/starport/tower)
 "aS" = (
@@ -565,9 +565,7 @@
 "dZ" = (
 /obj/structure/table/wood,
 /obj/item/book/manual/wiki/engineering_guide,
-/obj/machinery/light/small/broken{
-	dir = 8
-	},
+/obj/machinery/light/small/broken/directional/west,
 /turf/open/floor/wood,
 /area/ruin/jungle/starport)
 "eb" = (
@@ -638,13 +636,11 @@
 /area/ruin/jungle/starport)
 "eu" = (
 /obj/structure/spider/stickyweb,
-/obj/machinery/light/broken,
+/obj/machinery/light/broken/directional/south,
 /turf/open/floor/plasteel,
 /area/ruin/jungle/starport)
 "ev" = (
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/jungle/starport)
 "ex" = (
@@ -699,7 +695,9 @@
 	},
 /area/ruin/jungle/starport)
 "fi" = (
-/obj/machinery/door/airlock,
+/obj/machinery/door/airlock{
+	dir = 4
+	},
 /obj/structure/barricade/wooden/crude,
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -794,16 +792,12 @@
 	pixel_x = -24;
 	pixel_y = 22
 	},
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/plating,
 /area/ruin/jungle/starport/plasma)
 "fX" = (
 /obj/effect/decal/remains/human,
-/obj/machinery/light/broken{
-	dir = 4
-	},
+/obj/machinery/light/broken/directional/east,
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/starport)
 "fY" = (
@@ -920,9 +914,7 @@
 /obj/structure/railing/corner{
 	dir = 8
 	},
-/obj/machinery/light/broken{
-	dir = 8
-	},
+/obj/machinery/light/broken/directional/west,
 /turf/open/floor/concrete/slab_1{
 	light_range = 2
 	},
@@ -962,15 +954,14 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /obj/item/wrench/combat,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/jungle/starport/plasma)
 "he" = (
 /obj/machinery/door/airlock/command{
-	name = "Flight Control"
+	name = "Flight Control";
+	dir = 4
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -1036,9 +1027,7 @@
 /obj/structure/toilet{
 	dir = 8
 	},
-/obj/machinery/light/small/broken{
-	dir = 1
-	},
+/obj/machinery/light/small/broken/directional/north,
 /turf/open/floor/plasteel/patterned,
 /area/ruin/jungle/starport)
 "hu" = (
@@ -1096,7 +1085,7 @@
 /area/ruin/jungle/starport)
 "hJ" = (
 /obj/machinery/vending/games,
-/obj/machinery/light/broken,
+/obj/machinery/light/broken/directional/south,
 /turf/open/floor/plating,
 /area/ruin/jungle/starport)
 "hL" = (
@@ -1167,9 +1156,7 @@
 /area/ruin/jungle/starport)
 "ig" = (
 /obj/effect/decal/cleanable/vomit/old,
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/jungle/starport/tower)
 "ih" = (
@@ -1319,7 +1306,9 @@
 /turf/open/floor/plasteel/grimy,
 /area/ruin/jungle/starport)
 "jh" = (
-/obj/machinery/door/airlock,
+/obj/machinery/door/airlock{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/jungle/starport)
 "jl" = (
@@ -1354,9 +1343,7 @@
 /area/ruin/jungle/starport)
 "jw" = (
 /obj/structure/spider/stickyweb,
-/obj/machinery/light/broken{
-	dir = 4
-	},
+/obj/machinery/light/broken/directional/east,
 /turf/open/floor/plasteel,
 /area/ruin/jungle/starport)
 "jE" = (
@@ -1485,6 +1472,14 @@
 	light_range = 2
 	},
 /area/ruin/jungle/starport)
+"kE" = (
+/obj/machinery/door/airlock/glass{
+	dir = 4;
+	pixel_y = 0
+	},
+/obj/structure/barricade/wooden/crude,
+/turf/open/floor/plating/rust,
+/area/ruin/jungle/starport)
 "kF" = (
 /turf/open/floor/plating/dirt/jungle/wasteland{
 	icon_state = "wasteland8"
@@ -1566,7 +1561,9 @@
 	},
 /area/ruin/jungle/starport)
 "lg" = (
-/obj/machinery/door/airlock,
+/obj/machinery/door/airlock{
+	dir = 4
+	},
 /obj/structure/barricade/wooden/crude,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/jungle/starport)
@@ -1836,21 +1833,14 @@
 /area/ruin/jungle/starport)
 "ni" = (
 /obj/structure/table,
-/obj/machinery/light/broken{
-	dir = 1
-	},
+/obj/machinery/light/broken/directional/north,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/jungle/starport)
 "nm" = (
 /obj/machinery/power/terminal,
 /obj/structure/cable,
-/obj/item/radio/intercom{
-	dir = 8;
-	pixel_x = 26
-	},
-/obj/machinery/light/small{
-	dir = 4
-	},
+/obj/item/radio/intercom/directional/east,
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/plating,
 /area/ruin/jungle/starport)
 "np" = (
@@ -1895,9 +1885,7 @@
 "nI" = (
 /obj/structure/table/wood,
 /obj/item/book/manual/wiki/toxins,
-/obj/machinery/light/small/broken{
-	dir = 4
-	},
+/obj/machinery/light/small/broken/directional/east,
 /turf/open/floor/wood{
 	icon_state = "wood-broken3"
 	},
@@ -2063,9 +2051,7 @@
 /area/ruin/jungle/starport)
 "oC" = (
 /obj/structure/railing/corner,
-/obj/machinery/light/broken{
-	dir = 4
-	},
+/obj/machinery/light/broken/directional/east,
 /turf/open/floor/concrete/slab_1{
 	light_range = 2
 	},
@@ -2093,9 +2079,7 @@
 /obj/structure/railing/corner{
 	dir = 8
 	},
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/concrete/slab_1{
 	light_range = 2
 	},
@@ -2342,7 +2326,8 @@
 "qJ" = (
 /obj/structure/spacevine,
 /obj/machinery/door/poddoor{
-	id = "jbs1"
+	id = "jbs1";
+	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/jungle/starport)
@@ -2842,9 +2827,7 @@
 "tC" = (
 /obj/structure/railing/corner,
 /obj/structure/spacevine,
-/obj/machinery/light/broken{
-	dir = 4
-	},
+/obj/machinery/light/broken/directional/east,
 /turf/open/floor/concrete/slab_1{
 	light_range = 2
 	},
@@ -2873,7 +2856,9 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/structure/poddoor_assembly,
+/obj/structure/poddoor_assembly{
+	dir = 4
+	},
 /turf/open/floor/mineral/plastitanium{
 	icon_state = "plastitanium_dam2"
 	},
@@ -2972,9 +2957,7 @@
 "us" = (
 /obj/structure/table/wood,
 /obj/item/storage/book/bible,
-/obj/machinery/light/small/broken{
-	dir = 8
-	},
+/obj/machinery/light/small/broken/directional/west,
 /turf/open/floor/wood{
 	icon_state = "wood-broken"
 	},
@@ -3319,9 +3302,7 @@
 "wE" = (
 /obj/structure/reagent_dispensers/water_cooler,
 /obj/structure/spider/stickyweb,
-/obj/machinery/light/broken{
-	dir = 8
-	},
+/obj/machinery/light/broken/directional/west,
 /turf/open/floor/plasteel,
 /area/ruin/jungle/starport)
 "wG" = (
@@ -3456,9 +3437,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/jungle/starport)
 "xm" = (
-/obj/machinery/light/broken{
-	dir = 8
-	},
+/obj/machinery/light/broken/directional/west,
 /turf/open/floor/plasteel,
 /area/ruin/jungle/starport)
 "xn" = (
@@ -3608,9 +3587,7 @@
 /area/ruin/jungle/starport)
 "yw" = (
 /obj/item/chair,
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/plasteel,
 /area/ruin/jungle/starport)
 "yA" = (
@@ -3712,7 +3689,9 @@
 /turf/open/floor/plasteel/patterned,
 /area/ruin/jungle/starport)
 "zu" = (
-/obj/machinery/door/airlock,
+/obj/machinery/door/airlock{
+	dir = 4
+	},
 /obj/structure/barricade/wooden/crude,
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -3763,9 +3742,7 @@
 /area/ruin/jungle/starport)
 "zV" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light/broken{
-	dir = 1
-	},
+/obj/machinery/light/broken/directional/north,
 /turf/open/floor/plating,
 /area/ruin/jungle/starport)
 "zZ" = (
@@ -3848,7 +3825,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/machinery/power/apc/auto_name/west{
+/obj/machinery/power/apc/auto_name/directional/west{
 	start_charge = 0
 	},
 /turf/open/floor/mineral/plastitanium,
@@ -4120,9 +4097,7 @@
 /area/ruin/jungle/starport)
 "CR" = (
 /obj/effect/decal/cleanable/blood/drip,
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/jungle/starport/tower)
 "CS" = (
@@ -4141,11 +4116,8 @@
 	},
 /area/ruin/jungle/starport)
 "CW" = (
-/obj/item/radio/intercom{
-	dir = 1;
-	pixel_y = -24
-	},
-/obj/machinery/light/broken,
+/obj/item/radio/intercom/directional/south,
+/obj/machinery/light/broken/directional/south,
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/starport)
 "CZ" = (
@@ -4206,9 +4178,7 @@
 /obj/machinery/atmospherics/pipe/manifold/orange{
 	dir = 8
 	},
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /obj/structure/spider/cocoon,
 /turf/open/floor/plating,
 /area/ruin/jungle/starport)
@@ -4329,9 +4299,7 @@
 /obj/structure/toilet{
 	dir = 8
 	},
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel/patterned,
 /area/ruin/jungle/starport)
 "DU" = (
@@ -4357,7 +4325,7 @@
 	dir = 8
 	},
 /obj/structure/table/reinforced,
-/obj/machinery/light/broken,
+/obj/machinery/light/broken/directional/south,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/jungle/starport/tower)
 "Eb" = (
@@ -4428,9 +4396,7 @@
 /area/ruin/jungle/starport)
 "ED" = (
 /obj/structure/reagent_dispensers/water_cooler,
-/obj/machinery/light/broken{
-	dir = 1
-	},
+/obj/machinery/light/broken/directional/north,
 /turf/open/floor/plasteel,
 /area/ruin/jungle/starport)
 "EE" = (
@@ -4515,9 +4481,7 @@
 /turf/open/floor/plasteel/grimy,
 /area/ruin/jungle/starport)
 "Fb" = (
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /obj/machinery/suit_storage_unit/inherit/industrial,
 /turf/open/floor/vault,
 /area/ruin/jungle/starport)
@@ -4588,9 +4552,7 @@
 	},
 /area/ruin/jungle/starport)
 "FM" = (
-/obj/machinery/light/broken{
-	dir = 8
-	},
+/obj/machinery/light/broken/directional/west,
 /turf/open/floor/concrete/slab_1{
 	light_range = 2
 	},
@@ -4918,14 +4880,8 @@
 /area/ruin/jungle/starport)
 "HG" = (
 /obj/structure/table/reinforced,
-/obj/item/radio/intercom{
-	dir = 8;
-	pixel_x = 2
-	},
-/obj/item/radio/intercom{
-	dir = 8;
-	pixel_x = -9
-	},
+/obj/item/radio/intercom/directional/east,
+/obj/item/radio/intercom/directional/east,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/jungle/starport/tower)
 "HI" = (
@@ -5251,13 +5207,11 @@
 	},
 /area/ruin/jungle/starport)
 "JR" = (
-/obj/item/radio/intercom{
+/obj/item/radio/intercom/directional/north{
 	pixel_y = 24
 	},
 /obj/item/stack/sheet/metal,
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel,
 /area/ruin/jungle/starport)
 "JT" = (
@@ -5330,9 +5284,7 @@
 	},
 /obj/machinery/portable_atmospherics/canister/toxins,
 /obj/effect/turf_decal/industrial/warning,
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/jungle/starport/plasma)
 "KE" = (
@@ -5554,26 +5506,19 @@
 /area/ruin/jungle/starport)
 "Mf" = (
 /obj/structure/spacevine,
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/concrete/slab_1{
 	light_range = 2
 	},
 /area/ruin/jungle/starport)
 "Mh" = (
 /obj/structure/table,
-/obj/item/radio/intercom{
-	dir = 1;
-	pixel_y = -24
-	},
-/obj/machinery/light,
+/obj/item/radio/intercom/directional/south,
+/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/jungle/starport)
 "Mi" = (
-/obj/machinery/light/broken{
-	dir = 8
-	},
+/obj/machinery/light/broken/directional/west,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/jungle/starport)
 "Mq" = (
@@ -5643,9 +5588,7 @@
 /turf/open/water/jungle,
 /area/ruin/jungle/starport)
 "MQ" = (
-/obj/structure/extinguisher_cabinet{
-	pixel_y = 32
-	},
+/obj/structure/extinguisher_cabinet/directional/north,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/jungle/starport)
 "MR" = (
@@ -5818,7 +5761,9 @@
 /area/ruin/jungle/starport)
 "Ok" = (
 /obj/structure/spacevine/dense,
-/obj/structure/poddoor_assembly,
+/obj/structure/poddoor_assembly{
+	dir = 4
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/jungle/starport)
 "On" = (
@@ -5841,10 +5786,7 @@
 /area/ruin/jungle/starport)
 "Ox" = (
 /obj/structure/table/reinforced,
-/obj/item/radio/intercom/wideband{
-	dir = 8;
-	pixel_x = 1
-	},
+/obj/item/radio/intercom/wideband/directional/east,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/jungle/starport/tower)
 "Oz" = (
@@ -5928,9 +5870,7 @@
 "Pf" = (
 /obj/machinery/power/terminal,
 /obj/structure/cable,
-/obj/machinery/light/small{
-	dir = 8
-	},
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/plating,
 /area/ruin/jungle/starport)
 "Pg" = (
@@ -6127,14 +6067,12 @@
 /turf/open/floor/plating,
 /area/ruin/jungle/starport)
 "Qs" = (
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/jungle/starport/plasma)
 "Qv" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
-/obj/machinery/light/broken,
+/obj/machinery/light/broken/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/starport)
 "Qw" = (
@@ -6176,7 +6114,7 @@
 "QO" = (
 /obj/machinery/suit_storage_unit/industrial/atmos_firesuit,
 /obj/item/watertank/atmos,
-/obj/machinery/light/broken,
+/obj/machinery/light/broken/directional/south,
 /turf/open/floor/vault,
 /area/ruin/jungle/starport)
 "QP" = (
@@ -6205,7 +6143,7 @@
 /turf/open/water/jungle,
 /area/ruin/jungle/starport)
 "QV" = (
-/obj/machinery/power/apc/auto_name/east{
+/obj/machinery/power/apc/auto_name/directional/east{
 	start_charge = 0
 	},
 /obj/structure/cable,
@@ -6306,9 +6244,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/jungle/starport)
 "RH" = (
-/obj/machinery/light/broken{
-	dir = 4
-	},
+/obj/machinery/light/broken/directional/east,
 /turf/open/floor/concrete/slab_1{
 	light_range = 2
 	},
@@ -6365,9 +6301,7 @@
 /area/ruin/jungle/starport)
 "Sd" = (
 /obj/structure/closet,
-/obj/machinery/light/broken{
-	dir = 4
-	},
+/obj/machinery/light/broken/directional/east,
 /obj/item/clothing/gloves/color/black,
 /obj/item/clothing/gloves/color/black,
 /obj/item/clothing/gloves/color/black,
@@ -6605,9 +6539,7 @@
 /obj/effect/decal/cleanable/glass,
 /obj/structure/spider/stickyweb,
 /obj/item/stack/cable_coil/cut/red,
-/obj/machinery/light/broken{
-	dir = 8
-	},
+/obj/machinery/light/broken/directional/west,
 /turf/open/floor/plasteel,
 /area/ruin/jungle/starport)
 "Tj" = (
@@ -6702,9 +6634,7 @@
 /obj/structure/table/reinforced,
 /obj/item/folder,
 /obj/item/pen,
-/obj/machinery/light/broken{
-	dir = 1
-	},
+/obj/machinery/light/broken/directional/north,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/jungle/starport/tower)
 "TL" = (
@@ -6977,10 +6907,7 @@
 /area/ruin/jungle/starport)
 "Vz" = (
 /obj/structure/spider/stickyweb,
-/obj/item/radio/intercom{
-	dir = 8;
-	pixel_x = 26
-	},
+/obj/item/radio/intercom/directional/east,
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/starport)
 "VA" = (
@@ -7149,9 +7076,7 @@
 /area/ruin/jungle/starport)
 "WF" = (
 /obj/item/chair,
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel,
 /area/ruin/jungle/starport)
 "WG" = (
@@ -7259,9 +7184,7 @@
 /obj/structure/sign/warning/gasmask{
 	pixel_y = 32
 	},
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/plating,
 /area/ruin/jungle/starport)
 "Xk" = (
@@ -7297,9 +7220,7 @@
 /obj/machinery/atmospherics/pipe/manifold/orange{
 	dir = 8
 	},
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/plating,
 /area/ruin/jungle/starport)
 "Xs" = (
@@ -7434,12 +7355,10 @@
 /area/ruin/jungle/starport)
 "Yl" = (
 /obj/structure/table,
-/obj/item/radio/intercom{
+/obj/item/radio/intercom/directional/north{
 	pixel_y = 24
 	},
-/obj/machinery/light/broken{
-	dir = 1
-	},
+/obj/machinery/light/broken/directional/north,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/jungle/starport)
 "Yp" = (
@@ -7612,9 +7531,7 @@
 "Zo" = (
 /obj/structure/spider/stickyweb,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light/broken{
-	dir = 4
-	},
+/obj/machinery/light/broken/directional/east,
 /turf/open/floor/plasteel,
 /area/ruin/jungle/starport)
 "Zr" = (
@@ -7649,6 +7566,14 @@
 	light_range = 2
 	},
 /area/ruin/jungle/starport)
+"ZT" = (
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor{
+	id = "jbs2";
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/jungle/starport/tower)
 "ZU" = (
 /obj/structure/spacevine,
 /turf/open/floor/plating/dirt/dark{
@@ -10868,17 +10793,17 @@ BR
 yH
 UD
 wg
-ya
-ya
-ya
-ya
-ya
-ya
-ya
-ya
-ya
-ya
-ya
+bN
+ZT
+ZT
+ZT
+ZT
+ZT
+ZT
+ZT
+ZT
+ZT
+bN
 Tf
 wg
 wg
@@ -13634,7 +13559,7 @@ Wo
 qR
 AQ
 Wo
-PG
+kE
 Wo
 Wo
 Wo
