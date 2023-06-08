@@ -59,6 +59,7 @@
 	icon = 'icons/obj/monitors.dmi'
 	icon_state = "aac_bitem"
 	result_path = /obj/machinery/advanced_airlock_controller
+	inverse = FALSE
 
 /obj/machinery/advanced_airlock_controller
 	name = "advanced airlock controller"
@@ -110,6 +111,10 @@
 
 /obj/machinery/advanced_airlock_controller/mix_chamber
 	depressurization_margin = 0.15 // The minimum - We really don't want contamination.
+
+/obj/machinery/advanced_airlock_controller/internal //cycles doors but doesn't drain
+	exterior_pressure = ONE_ATMOSPHERE
+	depressurization_margin = ONE_ATMOSPHERE
 
 /obj/machinery/advanced_airlock_controller/New(loc, ndir, nbuild)
 	..()

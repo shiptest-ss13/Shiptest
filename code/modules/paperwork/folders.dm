@@ -27,6 +27,13 @@
 	desc = "A white folder."
 	icon_state = "folder_white"
 
+/obj/item/folder/solgov
+	desc = "A blue folder with a SolGov seal."
+	icon_state = "folder_solgov"
+
+/obj/item/folder/terragov
+	desc = "A green folder with a Terran Regency seal."
+	icon_state = "folder_terragov"
 
 /obj/item/folder/update_overlays()
 	. = ..()
@@ -37,7 +44,7 @@
 /obj/item/folder/attackby(obj/item/W, mob/user, params)
 	if(burn_paper_product_attackby_check(W, user))
 		return
-	if(istype(W, /obj/item/paper) || istype(W, /obj/item/photo) || istype(W, /obj/item/documents))
+	if(istype(W, /obj/item/paper) || istype(W, /obj/item/photo) || istype(W, /obj/item/documents) || istype(W, /obj/item/disk))
 		if(!user.transferItemToLoc(W, src))
 			return
 		to_chat(user, "<span class='notice'>You put [W] into [src].</span>")
@@ -121,4 +128,23 @@
 /obj/item/folder/syndicate/mining/Initialize()
 	. = ..()
 	new /obj/item/documents/syndicate/mining(src)
+	update_icon()
+
+/obj/item/folder/solgov/red
+	desc = "A blue folder with a SolGov seal."
+	icon_state = "folder_solgovred"
+
+/obj/item/folder/solgov/red/Initialize()
+	. = ..()
+	new /obj/item/documents/solgov(src)
+	update_icon()
+
+
+/obj/item/folder/terragov/red
+	desc = "A green folder with a Terran Regency seal."
+	icon_state = "folder_terragovred"
+
+/obj/item/folder/terragov/red/Initialize()
+	. = ..()
+	new /obj/item/documents/terragov(src)
 	update_icon()

@@ -139,8 +139,8 @@
 							/obj/item/clothing/neck/scarf/red,
 							/obj/item/clothing/under/suit/white,
 							/obj/item/clothing/head/beanie/red,
-							/obj/item/clothing/head/ushanka)
-	free_clothes = list(/obj/item/clothing/head/ushanka,
+							/obj/item/clothing/head/trapper)
+	free_clothes = list(/obj/item/clothing/head/trapper,
 						/obj/item/clothing/under/suit/white,
 						/obj/item/toy/crayon/spraycan)
 	gang_objective = "We are starting to run low on supplies at the home base, my friend. Make sure every comrade has a bottle of some kind of booze on them, friend."

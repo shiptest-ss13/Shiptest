@@ -149,7 +149,7 @@
 	if(!search_objects)
 		. = hearers(vision_range, targets_from) - src //Remove self, so we don't suicide
 
-		var/static/hostile_machines = typecacheof(list(/obj/machinery/porta_turret, /obj/mecha, /obj/spacepod)) //WS - add spacepod
+		var/static/hostile_machines = typecacheof(list(/obj/machinery/porta_turret, /obj/mecha))
 
 		. += typecache_filter_list(view(vision_range, targets_from), hostile_machines)
 
@@ -573,7 +573,7 @@
 		toggle_ai(AI_ON)
 
 /mob/living/simple_animal/hostile/proc/ListTargetsLazy(_Z)//Step 1, find out what we can see
-	var/static/hostile_machines = typecacheof(list(/obj/machinery/porta_turret, /obj/mecha, /obj/spacepod)) //WS - add spacepod
+	var/static/hostile_machines = typecacheof(list(/obj/machinery/porta_turret, /obj/mecha)) //WS - add spacepod
 	. = list()
 	for (var/mob/M as anything in SSmobs.clients_by_zlevel[_Z])
 		if (get_dist(M, src) < vision_range)
@@ -598,6 +598,8 @@
 	if(!can_charge_target(target))
 		return FALSE
 	Shake(15, 15, 1 SECONDS)
+	var/obj/effect/temp_visual/decoy/new_decoy = new /obj/effect/temp_visual/decoy(loc,src)
+	animate(new_decoy, alpha = 0, color = "#5a5858", transform = matrix()*2, time = 3)
 	target.visible_message("<span class='danger'>[src] prepares to pounce!</span>")
 	addtimer(CALLBACK(src, .proc/handle_charge_target, target), 1.5 SECONDS, TIMER_STOPPABLE)
 

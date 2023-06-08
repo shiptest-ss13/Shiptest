@@ -64,6 +64,7 @@ SUBSYSTEM_DEF(shuttle)
 			else
 				var/obj/docking_port/mobile/M = requester
 				message_admins("Shuttle [M] repeatedly failed to create transit zone.")
+				log_runtime("Shuttle [M] repeatedly failed to create transit zone.")
 		if(MC_TICK_CHECK)
 			break
 
@@ -116,13 +117,9 @@ SUBSYSTEM_DEF(shuttle)
 
 	// Shuttles travelling on their side have their dimensions swapped
 	// from our perspective
-	switch(dock_dir)
-		if(NORTH, SOUTH)
-			transit_width += M.width
-			transit_height += M.height
-		if(EAST, WEST)
-			transit_width += M.height
-			transit_height += M.width
+	var/list/union_coords = M.return_union_coords(M.get_all_towed_shuttles(), 0, 0, dock_dir)
+	transit_width += union_coords[3] - union_coords[1] + 1
+	transit_height += union_coords[4] - union_coords[2] + 1
 
 	var/transit_path = /turf/open/space/transit
 	switch(travel_dir)
@@ -137,7 +134,17 @@ SUBSYSTEM_DEF(shuttle)
 
 	var/transit_name = "Transit Map Zone"
 	var/datum/map_zone/mapzone = SSmapping.create_map_zone(transit_name)
-	var/datum/virtual_level/vlevel = SSmapping.create_virtual_level(transit_name, list(ZTRAIT_RESERVED = TRUE), mapzone, transit_width, transit_height, ALLOCATION_FREE)
+	var/datum/virtual_level/vlevel = SSmapping.create_virtual_level(
+		transit_name,
+		list(
+			ZTRAIT_RESERVED = TRUE,
+			ZTRAIT_SUN_TYPE = STATIC_EXPOSED
+		),
+		mapzone,
+		transit_width,
+		transit_height,
+		ALLOCATION_FREE
+	)
 
 	vlevel.reserve_margin(TRANSIT_SIZE_BORDER)
 
@@ -154,25 +161,10 @@ SUBSYSTEM_DEF(shuttle)
 		)
 
 	// Then create a transit docking port in the middle
-	var/coords = M.return_coords(0, 0, dock_dir)
-	/*  0------2
-	*   |      |
-	*   |      |
-	*   |  x   |
-	*   3------1
-	*/
-
-	var/x0 = coords[1]
-	var/y0 = coords[2]
-	var/x1 = coords[3]
-	var/y1 = coords[4]
-	// Then we want the point closest to -infinity,-infinity
-	var/x2 = min(x0, x1)
-	var/y2 = min(y0, y1)
-
-	// Then invert the numbers
-	var/transit_x = bottomleft.x + SHUTTLE_TRANSIT_BORDER + abs(x2)
-	var/transit_y = bottomleft.y + SHUTTLE_TRANSIT_BORDER + abs(y2)
+	// union coords (1,2) points from the docking port to the bottom left corner of the bounding box
+	// So if we negate those coordinates, we get the vector pointing from the bottom left of the bounding box to the docking port
+	var/transit_x = bottomleft.x + SHUTTLE_TRANSIT_BORDER + abs(union_coords[1])
+	var/transit_y = bottomleft.y + SHUTTLE_TRANSIT_BORDER + abs(union_coords[2])
 
 	var/turf/midpoint = locate(transit_x, transit_y, bottomleft.z)
 	if(!midpoint)
@@ -279,7 +271,7 @@ SUBSYSTEM_DEF(shuttle)
 	if(!to_replace || !replacement)
 		return
 	var/obj/docking_port/mobile/new_shuttle = load_template(replacement, parent, FALSE)
-	var/obj/docking_port/stationary/old_shuttle_location = to_replace.get_docked()
+	var/obj/docking_port/stationary/old_shuttle_location = to_replace.docked
 	var/result = new_shuttle.canDock(old_shuttle_location)
 
 	if((result != SHUTTLE_CAN_DOCK) && (result != SHUTTLE_SOMEONE_ELSE_DOCKED)) //Someone else /IS/ docked, the old shuttle!
@@ -348,9 +340,12 @@ SUBSYSTEM_DEF(shuttle)
 		WARNING(msg)
 		return
 
-	if(!new_shuttle.can_move_docking_ports && length(stationary_ports))
-		log_world("Map warning: Shuttle Template [template.mappath] has [length(stationary_ports)] stationary docking port(s) and does not have var/can_move_docking_ports set to TRUE. Will not move these ports.")
 	new_shuttle.docking_points = stationary_ports
+	new_shuttle.current_ship = parent //for any ships that spawn on top of us
+
+	for(var/obj/docking_port/stationary/S in stationary_ports)
+		S.owner_ship = new_shuttle
+		S.load_roundstart()
 
 	var/obj/docking_port/mobile/transit_dock = generate_transit_dock(new_shuttle)
 
@@ -365,6 +360,9 @@ SUBSYSTEM_DEF(shuttle)
 
 	new_shuttle.initiate_docking(transit_dock)
 	new_shuttle.linkup(transit_dock, parent)
+
+	var/area/fill_area = GLOB.areas_by_type[/area/space]
+	loading_zone.fill_in(turf_type = /turf/open/space/transit/south, area_override = fill_area ? fill_area : /area/space)
 	QDEL_NULL(loading_zone)
 
 	//Everything fine
@@ -416,13 +414,26 @@ SUBSYSTEM_DEF(shuttle)
 	data["shuttles"] = list()
 	for(var/obj/docking_port/mobile/M as anything in mobile)
 		var/list/L = list()
+
+		if(M.current_ship)
+			L["type"] = "[M.current_ship.source_template ? (M.current_ship.source_template.short_name ? M.current_ship.source_template.short_name : M.current_ship.source_template.name) : "Custom"]"
+		else
+			L["type"] = "???"
+
 		L["name"] = M.name
 		L["id"] = REF(M)
 		L["timer"] = M.timer
 		L["can_fly"] = TRUE
 		if (M.mode != SHUTTLE_IDLE)
 			L["mode"] = capitalize(M.mode)
-		L["status"] = M.getDbgStatusText()
+
+		if(M.current_ship)
+			if(M.current_ship.docked_to)
+				L["position"] = "Docked at [M.current_ship.docked_to.name] ([M.current_ship.docked_to.x], [M.current_ship.docked_to.y])"
+			else
+				L["position"] = "Flying At ([M.current_ship.x], [M.current_ship.y])"
+		else
+			L["position"] = "???"
 
 		data["shuttles"] += list(L)
 

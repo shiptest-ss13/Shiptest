@@ -3,7 +3,7 @@
 	desc = "We require data on the behavior of electrical storms in the system for an ongoing study. \
 			Please anchor the attached sensor array to your ship and fly it through the storms.\
 			It must be powered to collect the data. "
-	value = 1250 // base value, before adding bonus for number of things to fly through
+	value = 1500 // base value, before adding bonus for number of things to fly through
 	duration = 30 MINUTES
 	weight = 8
 
@@ -14,7 +14,7 @@
 
 /datum/mission/research/New(...)
 	num_wanted = rand(num_wanted - 1, num_wanted + 1)
-	value += num_wanted * 75
+	value += num_wanted * 150
 	return ..()
 
 /datum/mission/research/accept(datum/overmap/ship/controlled/acceptor, turf/accept_loc)
@@ -69,7 +69,7 @@
 	desc = "We require data on the behavior of asteroid fields in the system for an ongoing study. \
 			Please anchor the attached sensor array to your ship and fly it through the fields. \
 			It must be powered to collect the data."
-	value = 1500
+	value = 2000
 	weight = 4
 	objective_type = /datum/overmap/event/meteor
 

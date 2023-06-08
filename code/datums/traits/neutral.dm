@@ -5,7 +5,7 @@
 	name = "Ageusia"
 	desc = "You can't taste anything! Toxic food will still poison you."
 	value = 0
-	mob_trait = TRAIT_AGEUSIA
+	mob_traits = list(TRAIT_AGEUSIA)
 	gain_text = "<span class='notice'>You can't taste anything!</span>"
 	lose_text = "<span class='notice'>You can taste again!</span>"
 	medical_record_text = "Patient suffers from ageusia and is incapable of tasting food or reagents."
@@ -40,7 +40,7 @@
 	gain_text = "<span class='notice'>You feel like you understand what things should look like.</span>"
 	lose_text = "<span class='notice'>Well who cares about deco anyways?</span>"
 	medical_record_text = "Patient seems to be rather stuck up."
-	mob_trait = TRAIT_SNOB
+	mob_traits = list(TRAIT_SNOB)
 
 /datum/quirk/pineapple_liker
 	name = "Ananas Affinity"
@@ -173,7 +173,7 @@
 	name = "Smooth-Headed"
 	desc = "You have no hair and are quite insecure about it! Keep your wig on, or at least your head covered up."
 	value = 0
-	mob_trait = TRAIT_BALD
+	mob_traits = list(TRAIT_BALD)
 	gain_text = "<span class='notice'>Your head is as smooth as can be, it's terrible.</span>"
 	lose_text = "<span class='notice'>Your head itches, could it be... growing hair?!</span>"
 	medical_record_text = "Patient starkly refused to take off headwear during examination."
@@ -189,11 +189,12 @@
 	RegisterSignal(H, COMSIG_CARBON_UNEQUIP_HAT, .proc/unequip_hat)
 
 /datum/quirk/bald/remove()
-	var/mob/living/carbon/human/H = quirk_holder
-	H.hairstyle = old_hair
-	H.update_hair()
-	UnregisterSignal(H, list(COMSIG_CARBON_EQUIP_HAT, COMSIG_CARBON_UNEQUIP_HAT))
-	SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "bad_hair_day")
+	if(quirk_holder)
+		var/mob/living/carbon/human/H = quirk_holder
+		H.hairstyle = old_hair
+		H.update_hair()
+		UnregisterSignal(H, list(COMSIG_CARBON_EQUIP_HAT, COMSIG_CARBON_UNEQUIP_HAT))
+		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "bad_hair_day")
 
 /datum/quirk/bald/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -224,3 +225,4 @@
 	SIGNAL_HANDLER
 
 	SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "bad_hair_day", /datum/mood_event/bald)
+

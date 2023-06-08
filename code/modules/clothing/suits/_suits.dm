@@ -14,14 +14,17 @@
 	greyscale_colors = list(list(13, 16), list(10, 18), list(13, 21))
 	greyscale_icon_state = "coat"
 	supports_variations = VOX_VARIATION
+	mob_overlay_icon = 'icons/mob/clothing/suit.dmi'
 
 /obj/item/clothing/suit/worn_overlays(isinhands = FALSE)
 	. = list()
 	if(!isinhands)
 		if(damaged_clothes)
-			. += mutable_appearance('icons/effects/item_damage.dmi', "damaged[blood_overlay_type]")
+			. += mutable_appearance('icons/effects/item_damage.dmi', "damageduniform")
 		if(HAS_BLOOD_DNA(src))
-			. += mutable_appearance('icons/effects/blood.dmi', "[blood_overlay_type]blood")
+			var/mutable_appearance/bloody_armor = mutable_appearance('icons/effects/blood.dmi', "[blood_overlay_type]blood")
+			bloody_armor.color = get_blood_dna_color(return_blood_DNA())
+			. += bloody_armor
 		var/mob/living/carbon/human/M = loc
 		if(ishuman(M) && M.w_uniform)
 			var/obj/item/clothing/under/U = M.w_uniform

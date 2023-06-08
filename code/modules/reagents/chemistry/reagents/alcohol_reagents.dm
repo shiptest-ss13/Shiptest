@@ -740,7 +740,6 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	dorf_mode = TRUE
 	if(badlands_chugs.dna?.check_mutation(DORFISM))
 		boozepwr = 120 //lifeblood of dwarves (boozepower = nutrition)
-		quality = DRINK_FANTASTIC //dorf drink for dorfs to drink
 	else
 		boozepwr = 5 //We've had worse in the mines
 
@@ -2197,17 +2196,6 @@ All effects don't start immediately, but rather get worse over time; the rate is
 			if(prob(70))
 				M.vomit()
 	return ..()
-
-
-/datum/reagent/consumable/ethanol/planet_cracker
-	name = "Planet Cracker"
-	description = "This jubilant drink celebrates humanity's triumph over the alien menace. May be offensive to non-human crewmembers."
-	boozepwr = 50
-	quality = DRINK_FANTASTIC
-	taste_description = "triumph with a hint of bitterness"
-	glass_icon_state = "planet_cracker"
-	glass_name = "Planet Cracker"
-	glass_desc = "Although historians believe the drink was originally created to commemorate the end of an important conflict in man's past, its origins have largely been forgotten and it is today seen more as a general symbol of human supremacy."
 
 /datum/reagent/consumable/ethanol/mauna_loa
 	name = "Mauna Loa"

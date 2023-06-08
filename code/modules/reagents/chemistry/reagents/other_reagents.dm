@@ -1,7 +1,7 @@
 /datum/reagent/blood
 	data = list("donor"=null,"viruses"=null,"blood_DNA"=null,"blood_type"=null,"resistances"=null,"trace_chem"=null,"mind"=null,"ckey"=null,"gender"=null,"real_name"=null,"cloneable"=null,"factions"=null,"quirks"=null)
 	name = "Blood"
-	color = "#C80000" // rgb: 200, 0, 0
+	color = COLOR_BLOOD
 	metabolization_rate = 5 //fast rate so it disappears fast.
 	taste_description = "iron"
 	taste_mult = 1.3
@@ -24,17 +24,22 @@
 				L.ForceContractDisease(D)
 
 	if(iscarbon(L))
-		var/mob/living/carbon/C = L
-		if(C.get_blood_id() == /datum/reagent/blood && (method == INJECT || (method == INGEST && C.dna && C.dna.species && (DRINKSBLOOD in C.dna.species.species_traits))))
-			if(!data || !(data["blood_type"] in get_safe_blood(C.dna.blood_type)))
-				C.reagents.add_reagent(/datum/reagent/toxin, reac_volume * 0.5)
-			else
-				C.blood_volume = min(C.blood_volume + round(reac_volume, 0.1), BLOOD_VOLUME_MAXIMUM)
+		var/mob/living/carbon/exposed_carbon = L
+		if(exposed_carbon.get_blood_id() == /datum/reagent/blood && (method == INJECT || (method == INGEST && exposed_carbon.dna && exposed_carbon.dna.species && (DRINKSBLOOD in exposed_carbon.dna.species.species_traits))))
+			if(data && data["blood_type"])
+				var/datum/blood_type/blood_type = data["blood_type"]
+				if(blood_type.type in exposed_carbon.dna.blood_type.compatible_types)
+					exposed_carbon.blood_volume = min(exposed_carbon.blood_volume + round(reac_volume, 0.1), BLOOD_VOLUME_MAXIMUM)
+					return
+			exposed_carbon.reagents.add_reagent(/datum/reagent/toxin, reac_volume * 0.5)
 
 
 /datum/reagent/blood/on_new(list/data)
 	if(istype(data))
 		SetViruses(src, data)
+		var/datum/blood_type/blood_type = data["blood_type"]
+		if(blood_type)
+			color = blood_type.color
 
 /datum/reagent/blood/on_merge(list/mix_data)
 	if(data && mix_data)
@@ -1801,6 +1806,37 @@
 	taste_description = "blueyalty" //also intentional
 	carpet_type = /turf/open/floor/carpet/royalblue
 
+//the ultimate fertilizer
+/datum/reagent/genesis
+	name = "Genesis Serum"
+	description = "A mysterious substance capable of spontaneously gestating plant life when given a surface to adhere to."
+	color = "#328242"
+	taste_description = "primordial essence"
+	reagent_state = LIQUID
+
+/datum/reagent/genesis/expose_turf(turf/T, reac_volume)
+	if(istype(T, /turf/open/floor/grass))//prevents spamming effect via. smoke or such
+		return
+	if(isplatingturf(T) || istype(T, /turf/open/floor/plasteel))
+		var/turf/open/floor/F = T
+		playsound(T, 'sound/effects/bubbles.ogg', 50)
+		F.PlaceOnTop(/turf/open/floor/grass, flags = CHANGETURF_INHERIT_AIR)
+		new /obj/effect/spawner/lootdrop/flower(T)
+		if(prob(75))
+			new /obj/effect/spawner/lootdrop/flora(T)
+	..()
+
+/datum/reagent/genesis/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
+	. = ..()
+	if(chems.has_reagent(type, 1))
+		mytray.adjustHealth(round(chems.get_reagent_amount(type) * 1))
+		if(myseed)
+			myseed.adjust_potency(round(chems.get_reagent_amount(type)))
+			myseed.adjust_yield(round(chems.get_reagent_amount(type) * 0.5))
+			myseed.adjust_endurance(round(chems.get_reagent_amount(type) * 0.5))
+			myseed.adjust_production(round(chems.get_reagent_amount(type) * 0.5))
+			myseed.adjust_lifespan(round(chems.get_reagent_amount(type) * 0.5))
+
 /datum/reagent/bromine
 	name = "Bromine"
 	description = "A brownish liquid that's highly reactive. Useful for stopping free radicals, but not intended for human consumption."
@@ -2644,6 +2680,13 @@
 	concrete_type = /datum/reagent/concrete/hexacrete
 	units_per_aggregate = 2
 
+/datum/reagent/cement/roadmix
+	name = "Road mixture"
+	description = "A mix of cement and asphalt. Looks less tasty than normal cement."
+	color = "#5c6361"
+	potency = 3
+	concrete_type = /datum/reagent/concrete/pavement
+
 /datum/reagent/concrete
 	name = "Concrete"
 	description = "A mix of cement and aggregate, commonly used as a bulk building material."
@@ -2696,6 +2739,12 @@
 	wall_type = /turf/closed/wall/concrete/reinforced
 	floor_type = /turf/open/floor/concrete/reinforced
 
+/datum/reagent/concrete/pavement
+	name = "Pavement"
+	description = "Road surface, blacktop, asphalt concrete, whatever you call it, it's the most common material used in constructing runways for ships and roadways for vehicles."
+	color = "#3f4543"
+	floor_type = /turf/open/floor/concrete/pavement
+
 /datum/reagent/calcium
 	name = "Calcium"
 	description = "A dull gray metal important to bones."
@@ -2715,6 +2764,19 @@
 	description = "A light, reflective grey metal used in ship construction."
 	reagent_state = SOLID
 	color = "#c2c2c2"
+
+/datum/reagent/asphalt
+	name = "Asphalt"
+	description = "A dark, viscous liquid. Often found in oil deposits, although sometimes it can seep to the surface."
+	color = "#111212"
+	taste_description = "petroleum"
+
+/datum/reagent/asphalt/on_mob_life(mob/living/carbon/M)
+	. = ..()
+	if(prob(min(current_cycle/2, 5)))
+		M.adjustToxLoss(2*REM)
+	if(prob(min(current_cycle/4, 10)))
+		M.adjustOrganLoss(ORGAN_SLOT_STOMACH,3*REM)
 
 /datum/reagent/mutationtoxin/kobold
 	name = "Kobold Mutation Toxin"

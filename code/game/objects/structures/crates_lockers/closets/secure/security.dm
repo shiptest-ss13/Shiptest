@@ -111,6 +111,11 @@
 	new /obj/item/storage/photo_album/HoS(src)
 	new /obj/item/gun_voucher //WS edit - gun gun gun gun gun gun gun
 
+/obj/structure/closet/secure_closet/empty/warden
+	name = "\proper warden's locker"
+	req_access = list(ACCESS_ARMORY)
+	icon_state = "warden"
+
 /obj/structure/closet/secure_closet/warden
 	name = "\proper warden's locker"
 	req_access = list(ACCESS_ARMORY)
@@ -319,9 +324,9 @@
 /obj/structure/closet/secure_closet/tac/PopulateContents()
 	..()
 	new /obj/item/gun/ballistic/automatic/smg/wt550(src)
-	new /obj/item/clothing/head/helmet/alt(src)
+	new /obj/item/clothing/head/helmet/bulletproof(src)
 	new /obj/item/clothing/mask/gas/sechailer(src)
-	new /obj/item/clothing/suit/armor/bulletproof(src)
+	new /obj/item/clothing/suit/armor/vest/bulletproof(src)
 
 /obj/structure/closet/secure_closet/lethalshots
 	name = "lethal ammunition"
@@ -385,7 +390,7 @@
 	new /obj/item/storage/briefcase(src)
 	new	/obj/item/storage/firstaid/regular(src)
 	new /obj/item/clothing/glasses/sunglasses(src)
-	new /obj/item/clothing/suit/armor/vest/solgov/rep(src)
+	new /obj/item/clothing/suit/armor/vest/bulletproof/solgov(src)
 	new /obj/item/clothing/suit/armor/solgov_trenchcoat(src)
 	new /obj/item/clothing/accessory/waistcoat/solgov(src)
 	new /obj/item/clothing/shoes/laceup(src)

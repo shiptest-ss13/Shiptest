@@ -50,6 +50,7 @@
 	volume = 15
 	custom_materials = list(/datum/material/glass=100)
 	custom_price = 20
+	var/filled_desc = "The challenge is not taking as many as you can, but guessing what it is before you pass out."
 
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass/on_reagent_change(changetype)
 	cut_overlays()
@@ -58,8 +59,8 @@
 
 	if (reagents.reagent_list.len > 0)
 		var/datum/reagent/largest_reagent = reagents.get_master_reagent()
-		name = "filled shot glass"
-		desc = "The challenge is not taking as many as you can, but guessing what it is before you pass out."
+		name = "filled [initial(src.name)]"
+		desc = filled_desc
 
 		if(largest_reagent.shot_glass_icon_state)
 			icon_state = largest_reagent.shot_glass_icon_state
@@ -72,9 +73,20 @@
 
 	else
 		icon_state = "shotglass"
-		name = "shot glass"
-		desc = "A shot glass - the universal symbol for bad decisions."
+		name = initial(src.name)
+		desc = initial(src.desc)
 		return
+
+/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass/commemorative
+	name = "commemorative shot glass"
+	desc = "A shot glass - the universal symbol for bad decisions. There's a mushroom cloud engraved on the bottom, and the words \"AAA-200\" written around the rim."
+	filled_desc = "The challenge is not taking as many as you can, but guessing what it is before you pass out. The words \"AAA-200\" are written around the rim."
+	list_reagents = list(/datum/reagent/consumable/ethanol/vodka = 12, /datum/reagent/uranium = 2, /datum/reagent/uranium/radium = 1)
+
+/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass/commemorative/examine(mob/user)
+	. = ..()
+	if(ishumanbasic(user))
+		. += "You feel like this might be in poor taste."
 
 /obj/item/reagent_containers/food/drinks/drinkingglass/filled/Initialize()
 	. = ..()

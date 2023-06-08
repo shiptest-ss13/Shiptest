@@ -39,7 +39,7 @@ SUBSYSTEM_DEF(air)
 
 	//atmos singletons
 	var/list/gas_reactions = list()
-	var/list/atmos_gen
+	var/list/string_mixes
 
 	//Special functions lists
 	var/list/turf/open/high_pressure_delta = list()
@@ -612,19 +612,56 @@ SUBSYSTEM_DEF(air)
 
 	return pipe_init_dirs_cache[type]["[dir]"]
 
-/datum/controller/subsystem/air/proc/generate_atmos()
-	atmos_gen = list()
-	for(var/T in subtypesof(/datum/atmosphere))
-		var/datum/atmosphere/atmostype = T
-		atmos_gen[initial(atmostype.id)] = new atmostype
-
-/datum/controller/subsystem/air/proc/preprocess_gas_string(gas_string)
-	if(!atmos_gen)
+// Once we've got __auxtools_parse_gas_string, replace this with the original preprocess_gas_string (commented out, below);
+// there's no need to cache because auxtools can parse strings in an actually reasonable amount of time.
+// Atmosphere datums will also require some changes to put them back how they were before. I am sorry
+/datum/controller/subsystem/air/proc/get_gas_string_mix(gas_string)
+	if(!string_mixes)
 		generate_atmos()
-	if(!atmos_gen[gas_string])
-		return gas_string
-	var/datum/atmosphere/mix = atmos_gen[gas_string]
-	return mix.gas_string
+
+	var/datum/gas_mixture/ret_mix = string_mixes[gas_string]
+	if(ret_mix)
+		return ret_mix
+
+	ret_mix = new(CELL_VOLUME)
+	var/list/gas_list = params2list(gas_string)
+
+	if(gas_list["TEMP"])
+		var/temp = text2num(gas_list["TEMP"])
+		gas_list -= "TEMP"
+		if(!isnum(temp) || temp < TCMB)
+			temp = TCMB
+		ret_mix.set_temperature(temp)
+	ret_mix.clear()
+	for(var/id in gas_list)
+		ret_mix.set_moles(id, text2num(gas_list[id]))
+	ret_mix.mark_immutable()
+
+	string_mixes[gas_string] = ret_mix
+	return ret_mix
+
+/datum/controller/subsystem/air/proc/generate_atmos()
+	string_mixes = list()
+	for(var/T in subtypesof(/datum/atmosphere))
+		var/datum/atmosphere/atmostype = new T
+		string_mixes[initial(atmostype.id)] = atmostype.gasmix
+		qdel(atmostype)
+
+// Saved for when we switch to auxmos 2.0 and gain access to __auxtools_parse_gas_string
+// /datum/controller/subsystem/air/proc/preprocess_gas_string(gas_string)
+// 	if(!string_mixes)
+// 		generate_atmos()
+// 	if(!string_mixes[gas_string])
+// 		return gas_string
+// 	var/datum/atmosphere/mix = string_mixes[gas_string]
+// 	return mix.gas_string
+
+// /datum/controller/subsystem/air/proc/generate_atmos()
+// 	string_mixes = list()
+// 	for(var/T in subtypesof(/datum/atmosphere))
+// 		var/datum/atmosphere/atmostype = T
+// 		string_mixes[initial(atmostype.id)] = new atmostype
+
 
 #undef SSAIR_EXCITEDGROUPS
 #undef SSAIR_HIGHPRESSURE

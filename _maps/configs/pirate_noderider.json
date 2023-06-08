@@ -1,0 +1,28 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Jupiter-Class Stormrider",
+	"map_short_name": "Jupiter-Class",
+	"prefix": "ISV",
+	"namelists": ["WEAPONS"],
+	"map_path": "_maps/shuttles/shiptest/pirate_noderider.dmm",
+	"job_slots": {
+		"Command Node": {
+			"outfit": "/datum/outfit/job/captain/aipirate",
+			"officer": true,
+			"slots": 1
+		},
+		"Assault Node": {
+			"outfit": "/datum/outfit/job/security/aipirate",
+			"slots": 2
+		},
+		"Engineering Node": {
+			"outfit": "/datum/outfit/job/engineer/aipirate",
+			"slots": 1
+		},
+		"Fodder": {
+			"outfit": "/datum/outfit/job/assistant/aipirate",
+			"slots": 2
+		}
+	},
+	"enabled": false
+}

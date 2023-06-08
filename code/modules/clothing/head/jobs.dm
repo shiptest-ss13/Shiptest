@@ -57,6 +57,16 @@
 	desc = "A fancy bicorne used by generals of the Colonial Minutemen."
 	icon_state = "minuteman_general_hat"
 
+/obj/item/clothing/head/caphat/frontier
+	name = "\improper Frontiersmen commander's cap"
+	desc = "An imposing peaked cap, meant for a commander of the Frontiersmen."
+	icon_state = "frontier_cap"
+
+/obj/item/clothing/head/caphat/frontier/admiral
+	name = "\improper Frontiersmen admiral's cap"
+	desc = "An imposing peaked cap meant for only the highest of officers of the Frontiersman pirate fleet."
+	icon_state = "frontier_admiral_cap"
+
 //Head of Personnel
 /obj/item/clothing/head/hopcap
 	name = "head of personnel's cap"

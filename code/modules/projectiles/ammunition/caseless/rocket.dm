@@ -1,9 +1,10 @@
 /obj/item/ammo_casing/caseless/rocket
 	name = "\improper PM-9HE"
 	desc = "An 84mm High Explosive rocket. Fire at people and pray."
-	caliber = "84mm"
 	icon_state = "srm-8"
+	caliber = "84mm"
 	projectile_type = /obj/projectile/bullet/a84mm_he
+	auto_rotate = FALSE
 
 /obj/item/ammo_casing/caseless/rocket/hedp
 	name = "\improper PM-9HEDP"
@@ -15,5 +16,5 @@
 /obj/item/ammo_casing/caseless/a75
 	desc = "A .75 bullet casing."
 	caliber = "75"
-	icon_state = "s-casing-live"
+	icon_state = "magnum-brass"
 	projectile_type = /obj/projectile/bullet/gyro

@@ -151,3 +151,4 @@
 	select_name = "kill"
 	projectile_type = /obj/projectile/beam/weak/penetrator
 	variance = 0.8
+	fire_sound = 'sound/weapons/laser4.ogg'

@@ -16,7 +16,8 @@
 	air_update_turf(1)
 	return ..()
 
-/obj/structure/spacepoddoor/CanPass(atom/movable/A, turf/T)
-	if(istype(A, /obj/spacepod))
-		return TRUE
-	return ..()
+///obj/structure/spacepoddoor/CanPass(atom/movable/A, turf/T)
+//	if(istype(A, /obj/spacepod))
+//		return TRUE
+//	return ..()
+//we may want this later for a mech-specific door or smth

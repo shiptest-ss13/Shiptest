@@ -47,3 +47,7 @@
 
 /obj/structure/destructible/tribal_torch/fire_act(exposed_temperature, exposed_volume)
 	StartBurning()
+
+/obj/structure/destructible/tribal_torch/lit/Initialize()
+	. = ..()
+	StartBurning()

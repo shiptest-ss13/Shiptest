@@ -2,7 +2,7 @@
  * Contents:
  *		Welding mask
  *		Cakehat
- *		Ushanka
+ *		trapper
  *		Pumpkin head
  *		Kitty ears
  *		Cardborg disguise
@@ -110,11 +110,11 @@
 	..()
 
 /*
- * Ushanka
+ * Trapper Hat
  */
-/obj/item/clothing/head/ushanka
-	name = "ushanka"
-	desc = "Perfect for winter in Siberia, da?"
+/obj/item/clothing/head/trapper
+	name = "trapper hat"
+	desc = "Perfect for the cold weather."
 	icon_state = "ushankadown"
 	item_state = "ushankadown"
 	flags_inv = HIDEEARS|HIDEHAIR
@@ -122,19 +122,19 @@
 	cold_protection = HEAD
 	min_cold_protection_temperature = FIRE_HELM_MIN_TEMP_PROTECT
 
-	dog_fashion = /datum/dog_fashion/head/ushanka
+	dog_fashion = /datum/dog_fashion/head/trapper
 
-/obj/item/clothing/head/ushanka/attack_self(mob/user)
+/obj/item/clothing/head/trapper/attack_self(mob/user)
 	if(earflaps)
 		src.icon_state = "ushankaup"
 		src.item_state = "ushankaup"
 		earflaps = 0
-		to_chat(user, "<span class='notice'>You raise the ear flaps on the ushanka.</span>")
+		to_chat(user, "<span class='notice'>You raise the ear flaps on the trapper.</span>")
 	else
 		src.icon_state = "ushankadown"
 		src.item_state = "ushankadown"
 		earflaps = 1
-		to_chat(user, "<span class='notice'>You lower the ear flaps on the ushanka.</span>")
+		to_chat(user, "<span class='notice'>You lower the ear flaps on the trapper.</span>")
 
 /*
  * Pumpkin head

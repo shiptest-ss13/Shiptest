@@ -37,9 +37,10 @@ require only minor tweaks.
 #define ZTRAIT_LAVA_RUINS "Lava Ruins"
 #define ZTRAIT_ICE_RUINS "Ice Ruins"
 #define ZTRAIT_ICE_RUINS_UNDERGROUND "Ice Ruins Underground"
-#define ZTRAIT_SAND_RUINS "Sand Ruins" //WS edit - Whitesands
+#define ZTRAIT_SAND_RUINS "Sand Ruins"
 #define ZTRAIT_JUNGLE_RUINS "Jungle Ruins"
 #define ZTRAIT_ROCK_RUINS "Rock Ruins"
+#define ZTRAIT_WASTE_RUINS "Waste Ruins"
 
 // boolean - weather types that occur on the level
 #define ZTRAIT_SANDSTORM "Weather_Sandstorm"
@@ -47,6 +48,16 @@ require only minor tweaks.
 #define ZTRAIT_ASHSTORM "Weather_Ashstorm"
 #define ZTRAIT_ACIDRAIN "Weather_Acidrain"
 #define ZTRAIT_TEMPERATURE_GRADIENT "Weather_Gradient" //WS edit - Whitesands
+
+// enum - how SSsun should calculate sun exposure on this level
+#define ZTRAIT_SUN_TYPE "Sun Cycle Type"
+	// if left null, the value below will be assumed
+	// default & original SSsun behaviour - orbit the 'station' horizontially
+	#define AZIMUTH null
+	// static - exposed everywhere by default
+	#define STATIC_EXPOSED "Static Exposed"
+	// static - obstructed everywhere
+	#define STATIC_OBSCURED "Static Obscured"
 
 // number - bombcap is multiplied by this before being applied to bombs
 #define ZTRAIT_BOMBCAP_MULTIPLIER "Bombcap Multiplier"
@@ -125,19 +136,24 @@ require only minor tweaks.
 
 
 ///Map generation defines
-#define PERLIN_LAYER_HEIGHT "perlin_height"
-#define PERLIN_LAYER_HUMIDITY "perlin_humidity"
-#define PERLIN_LAYER_HEAT "perlin_heat"
+#define BIOME_LOWEST_HUMIDITY "biome_lowest_humidity"
+#define BIOME_LOW_HUMIDITY "biome_low_humidity"
+#define BIOME_MEDIUM_HUMIDITY "biome_medium_humidity"
+#define BIOME_HIGH_HUMIDITY "biome_high_humidity"
+#define BIOME_HIGHEST_HUMIDITY "biome_highest_humidity"
 
-#define BIOME_LOW_HEAT "low_heat"
-#define BIOME_LOWMEDIUM_HEAT "lowmedium_heat"
-#define BIOME_HIGHMEDIUM_HEAT "highmedium_heat"
-#define BIOME_HIGH_HEAT "high_heat"
+#define BIOME_COLDEST "coldest"
+#define BIOME_COLD "cold"
+#define BIOME_WARM "warm"
+#define BIOME_TEMPERATE "perfect"
+#define BIOME_HOT "hot"
+#define BIOME_HOTTEST "hottest"
 
-#define BIOME_LOW_HUMIDITY "low_humidity"
-#define BIOME_LOWMEDIUM_HUMIDITY "lowmedium_humidity"
-#define BIOME_HIGHMEDIUM_HUMIDITY "highmedium_humidity"
-#define BIOME_HIGH_HUMIDITY "high_humidity"
+#define BIOME_COLDEST_CAVE "coldest_cave"
+#define BIOME_COLD_CAVE "cold_cave"
+#define BIOME_WARM_CAVE "warm_cave"
+#define BIOME_HOT_CAVE "hot_cave"
+
 
 #define ALLOCATION_FREE 1
 #define ALLOCATION_QUADRANT 2

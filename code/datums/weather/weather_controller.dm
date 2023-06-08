@@ -98,7 +98,18 @@
 	)
 
 /datum/weather_controller/chlorine
-	possible_weathers = list(/datum/weather/acid_rain = 100)
+	possible_weathers = list(
+		/datum/weather/acid_rain = 30,
+		/datum/weather/nuclear_fallout = 40,
+		/datum/weather/nuclear_fallout/normal = 10,
+	)
 
 /datum/weather_controller/shrouded
 	possible_weathers = list(/datum/weather/shroud_storm = 100)
+
+/datum/weather_controller/rockplanet
+	possible_weathers = list(
+		/datum/weather/sandstorm/rockplanet/harmless = 80,
+		/datum/weather/sandstorm/rockplanet = 20,
+		/datum/weather/snowfall = 5,
+	)

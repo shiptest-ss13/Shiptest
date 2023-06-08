@@ -148,8 +148,8 @@
 	reqs = list(/obj/item/robot_suit = 1,
 				/obj/item/clothing/head/helmet = 1,
 				/obj/item/clothing/suit/armor/vest = 1,
-				/obj/item/bodypart/l_leg/robot = 1,
-				/obj/item/bodypart/r_leg/robot = 1,
+				/obj/item/bodypart/leg/left/robot = 1,
+				/obj/item/bodypart/leg/right/robot = 1,
 				/obj/item/stack/sheet/metal = 1,
 				/obj/item/stack/cable_coil = 1,
 				/obj/item/gun/energy/disabler = 1,
@@ -318,9 +318,9 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
-/datum/crafting_recipe/laserslug
+/datum/crafting_recipe/laserscatter
 	name = "Scatter Laser Shell"
-	result = /obj/item/ammo_casing/shotgun/laserslug
+	result = /obj/item/ammo_casing/shotgun/laserscatter
 	reqs = list(/obj/item/ammo_casing/shotgun/techshell = 1,
 				/obj/item/stock_parts/capacitor/adv = 1,
 				/obj/item/stock_parts/micro_laser/high = 1)
@@ -1135,4 +1135,19 @@
 	result = /obj/item/spear/crystal
 	time = 4 SECONDS
 	reqs = list(/obj/item/strange_crystal = 2)
+	category = CAT_MISC
+
+/datum/crafting_recipe/freezer
+	name = "Freezer"
+	result = /obj/structure/closet/crate/freezer
+	time = 2 SECONDS
+	reqs = list(/datum/reagent/consumable/ice = 25,
+	/obj/item/stack/sheet/metal = 2)
+	category = CAT_MISC
+/datum/crafting_recipe/mothplush
+	name = "Moth Plushie"
+	result = /obj/item/toy/plush/moth
+	reqs = list(/obj/item/stack/sheet/animalhide/mothroach = 1,
+				/obj/item/organ/heart = 1,
+				/obj/item/stack/sheet/cotton/cloth = 3)
 	category = CAT_MISC

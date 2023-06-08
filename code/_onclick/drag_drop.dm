@@ -91,26 +91,6 @@
 /atom/movable/screen/click_catcher/IsAutoclickable()
 	. = 1
 
-//WS Begin - Please fucking work for spacepod code
-/client/MouseMove(object,location,control,params)
-	mouseParams = params
-	mouseLocation = location
-	if(mouseObject != object)
-		if(mouseObject)
-			// unregister signal to current mouseObject
-			UnregisterSignal(mouseObject, COMSIG_PARENT_QDELETING)
-		mouseObject = object
-		// register signal to new mouseObject
-		RegisterSignal(mouseObject, COMSIG_PARENT_QDELETING, .proc/clear_mouseObject)
-	mouseControlObject = control
-	if(mob && LAZYLEN(mob.mousemove_intercept_objects))
-		for(var/datum/D in mob.mousemove_intercept_objects)
-			D.onMouseMove(object, location, control, params)
-	..()
-/datum/proc/onMouseMove(object, location, control, params)
-	return
-//WS End
-
 /client/MouseDrag(src_object,atom/over_object,src_location,over_location,src_control,over_control,params)
 	var/list/modifiers = params2list(params)
 	if (LAZYACCESS(modifiers, MIDDLE_CLICK))

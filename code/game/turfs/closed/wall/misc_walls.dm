@@ -59,6 +59,10 @@
 	smoothing_flags = SMOOTH_BITMASK
 	hardness = 45
 
+/turf/closed/wall/rust/yesdiag
+	icon_state = "rusty_wall-255"
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS
+
 /turf/closed/wall/rust/icecropolis
 	baseturfs = /turf/open/indestructible/necropolis/air
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
@@ -72,6 +76,10 @@
 	smoothing_flags = SMOOTH_BITMASK
 	hardness = 15
 
+/turf/closed/wall/r_wall/rust/yesdiag
+	icon_state = "rusty_reinforced_wall-255"
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS
+
 /turf/closed/wall/mineral/bronze
 	name = "clockwork wall"
 	desc = "A huge chunk of bronze, decorated like gears and cogs."
@@ -82,3 +90,11 @@
 	sheet_type = /obj/item/stack/tile/bronze
 	sheet_amount = 2
 	girder_type = /obj/structure/girder/bronze
+
+/turf/closed/wall/bathhouse
+	desc = "It's cool to the touch, pleasantly so."
+	icon = 'icons/turf/shuttleold.dmi'
+	icon_state = "block"
+	base_icon_state = "block"
+	smoothing_flags = NONE
+	canSmoothWith = null

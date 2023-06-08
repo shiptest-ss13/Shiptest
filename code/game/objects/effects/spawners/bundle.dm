@@ -121,7 +121,7 @@
 	name = "commie costume spawner"
 	items = list(
 		/obj/item/clothing/under/costume/soviet,
-		/obj/item/clothing/head/ushanka)
+		/obj/item/clothing/head/trapper)
 
 /obj/effect/spawner/bundle/costume/imperium_monk
 	name = "imperium monk costume spawner"

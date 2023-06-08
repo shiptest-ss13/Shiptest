@@ -14,11 +14,6 @@
 	-Nanotrasen Naval Command
 	"}
 
-/datum/station_goal/bluespace_cannon/on_report()
-	//Unlock BSA parts
-	var/datum/supply_pack/engineering/bsa/P = SSshuttle.supply_packs[/datum/supply_pack/engineering/bsa]
-	P.special_enabled = TRUE
-
 /datum/station_goal/bluespace_cannon/check_completion()
 	if(..())
 		return TRUE
@@ -237,6 +232,7 @@
 	circuit = /obj/item/circuitboard/computer/bsa_control
 	icon = 'icons/obj/machines/particle_accelerator.dmi'
 	icon_state = "control_boxp"
+	unique_icon = TRUE
 
 	var/obj/machinery/bsa/full/cannon
 	var/notice

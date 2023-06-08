@@ -305,6 +305,11 @@
 	text += " vine."
 	. += text
 
+
+/obj/structure/spacevine/fire_act(exposed_temperature, exposed_volume)
+	. = ..()
+	qdel(src)
+
 /obj/structure/spacevine/Destroy()
 	for(var/datum/spacevine_mutation/SM in mutations)
 		SM.on_death(src)
@@ -552,3 +557,8 @@
 	name = "dense space vines"
 	opacity = TRUE
 	icon_state = "Hvy1"
+
+/obj/structure/spacevine/weak
+	name = "weak space vines"
+	desc = "An extremely expansionistic species of vine. This one appears to be more fragile than most."
+	max_integrity = 25

@@ -122,6 +122,6 @@
 	description = "Yarr. Comes with one free pirate speak manual."
 	path = /obj/item/clothing/head/pirate
 
-/datum/gear/hat/ushanka
-	display_name = "space ushanka"
-	path = /obj/item/clothing/head/ushanka
+/datum/gear/hat/trapper
+	display_name = "trapper hat"
+	path = /obj/item/clothing/head/trapper

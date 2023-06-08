@@ -85,12 +85,13 @@
 	W.update_label()
 
 /datum/outfit/russiancorpse/hunter
+	name = "Frontiersman Corpse (Hunter)"
 	ears = /obj/item/radio/headset
 	r_hand = /obj/item/gun/ballistic/rifle/boltaction
 
 /datum/outfit/russiancorpse/hunter/pre_equip(mob/living/carbon/human/H)
 	if(prob(50))
-		head = /obj/item/clothing/head/ushanka
+		head = /obj/item/clothing/head/trapper
 
 /datum/outfit/bountyarmor
 	name = "Bounty Hunter - Armored"

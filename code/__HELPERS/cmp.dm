@@ -110,6 +110,18 @@ GLOBAL_VAR_INIT(cmp_field, "name")
 	else
 		return sorttext(b_name, a_name)
 
+/proc/cmp_quirk_value_dsc(datum/quirk/A, datum/quirk/B)
+	var/a_value = initial(A.value)
+	var/b_value = initial(B.value)
+
+	var/a_name = initial(A.name)
+	var/b_name = initial(B.name)
+
+	if(a_value != b_value)
+		return b_value - a_value
+	else
+		return sorttext(b_name, a_name)
+
 /proc/cmp_job_display_asc(datum/job/A, datum/job/B)
 	return A.display_order - B.display_order
 

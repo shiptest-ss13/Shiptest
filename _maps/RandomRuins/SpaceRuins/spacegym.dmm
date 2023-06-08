@@ -56,6 +56,12 @@
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/spacegym)
+"r" = (
+/obj/machinery/door/airlock{
+	dir = 4
+	},
+/turf/open/floor/plasteel/airless,
+/area/ruin/space/has_grav/spacegym)
 "s" = (
 /obj/machinery/shower,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
@@ -63,7 +69,7 @@
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/spacegym)
 "u" = (
-/turf/open/space/basic,
+/turf/open/space,
 /area/space)
 "v" = (
 /obj/item/reagent_containers/spray/cleaner,
@@ -108,7 +114,7 @@
 /area/ruin/space/has_grav/spacegym)
 "I" = (
 /obj/structure/lattice,
-/turf/open/space/basic,
+/turf/open/space,
 /area/ruin/space/has_grav/spacegym)
 "J" = (
 /obj/structure/weightmachine/weightlifter,
@@ -117,7 +123,7 @@
 "L" = (
 /obj/structure/lattice,
 /obj/structure/grille,
-/turf/open/space/basic,
+/turf/open/space,
 /area/ruin/space/has_grav/spacegym)
 "O" = (
 /turf/closed/wall,
@@ -252,7 +258,7 @@ O
 O
 O
 O
-h
+r
 O
 O
 u

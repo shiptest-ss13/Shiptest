@@ -454,7 +454,7 @@
 	name = "Marine Heavy"
 
 	id = /obj/item/card/id/ert/security
-	suit = /obj/item/clothing/suit/armor/vest/marine/security
+	suit = /obj/item/clothing/suit/armor/vest/marine/heavy
 	back = /obj/item/storage/backpack/ert/security
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	head = /obj/item/clothing/head/helmet/marine/security
@@ -473,7 +473,7 @@
 	name = "Marine Medic"
 
 	id = /obj/item/card/id/ert/medical
-	suit = /obj/item/clothing/suit/armor/vest/marine/medic
+	suit = /obj/item/clothing/suit/armor/vest/marine
 	accessory = /obj/item/clothing/accessory/holster/marine
 	back = /obj/item/storage/backpack/ert/medical
 	l_pocket = /obj/item/healthanalyzer
@@ -502,7 +502,7 @@
 	name = "Marine Engineer"
 
 	id = /obj/item/card/id/ert/engineer
-	suit = /obj/item/clothing/suit/armor/vest/marine/engineer
+	suit = /obj/item/clothing/suit/armor/vest/marine/medium
 	head = /obj/item/clothing/head/helmet/marine/engineer
 	back = /obj/item/storage/backpack/ert/engineer
 	backpack_contents = list(

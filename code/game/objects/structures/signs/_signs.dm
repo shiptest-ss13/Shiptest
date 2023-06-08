@@ -61,6 +61,9 @@
 
 /obj/structure/sign/wrench_act(mob/living/user, obj/item/wrench/I)
 	. = ..()
+	//If it's not buildable, just make them hit it with the wrench.
+	if(!buildable_sign)
+		return FALSE
 	user.visible_message(
 		"<span class='notice'>[user] starts removing [src]...</span>", \
 		"<span class='notice'>You start unfastening [src].</span>")
@@ -245,10 +248,6 @@
 	desc = "A large flag displaying the logo of solgov, the local government of the sol system."
 	icon = 'icons/obj/solgov_logos.dmi'
 	icon_state = "solgovflag-left"
-	pixel_y = 26
-
-/obj/structure/sign/solgov_flag/right
-	icon_state = "solgovflag-right"
 
 // colonial minutemen seal
 /obj/structure/sign/minutemen

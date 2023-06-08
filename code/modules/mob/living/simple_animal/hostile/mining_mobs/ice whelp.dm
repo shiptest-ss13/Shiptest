@@ -14,10 +14,10 @@
 	move_to_delay = 20
 	ranged = TRUE
 	ranged_cooldown_time = 200
-	maxHealth = 300
-	health = 300
+	maxHealth = 80
+	health = 80
+	armor = list("melee" = 40, "bullet" = 40, "laser" = 25, "energy" = 10, "bomb" = 50, "bio" = 10, "rad" = 10, "fire" = 10, "acid" = 10)
 	obj_damage = 15
-	environment_smash = ENVIRONMENT_SMASH_MINERALS
 	melee_damage_lower = 20
 	melee_damage_upper = 20
 	attack_verb_continuous = "chomps"

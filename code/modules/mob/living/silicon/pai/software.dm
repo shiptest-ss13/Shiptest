@@ -4,6 +4,23 @@
 //  - Put cable in user's hand instead of on the ground
 //  - Camera jack
 
+GLOBAL_LIST_INIT(pai_faces, list(
+		"null",
+		"what",
+		"sad",
+		"off",
+		"laugh",
+		"happy",
+		"face",
+		"estatic",
+		"cat",
+		"angry",
+		"sunglasses",
+		"woozy",
+		"bookworm",
+		"greenjary",
+	))
+
 
 /mob/living/silicon/pai/var/list/available_software = list( //WS -- idk what to do about removing code so i'm just putting this note here to say, removes messanger and manifest, thet get it for free now
 															//Nightvision
@@ -155,33 +172,8 @@
 				radio.attack_self(src)
 
 			if("image") // Set pAI card display face
-				var/newImage = input("Select your new display image.", "Display Image", "Happy") in sortList(list("Happy", "Cat", "Extremely Happy", "Face", "Laugh", "Off", "Sad", "Angry", "What", "Sunglasses"))
-				var/pID = 1
-
-				switch(newImage)
-					if("Happy")
-						pID = 1
-					if("Cat")
-						pID = 2
-					if("Extremely Happy")
-						pID = 3
-					if("Face")
-						pID = 4
-					if("Laugh")
-						pID = 5
-					if("Off")
-						pID = 6
-					if("Sad")
-						pID = 7
-					if("Angry")
-						pID = 8
-					if("What")
-						pID = 9
-					if("Null")
-						pID = 10
-					if("Sunglasses")
-						pID = 11
-				card.setEmotion(pID)
+				var/new_emotion = input("Select your new display image.", "Display Image", "null") in sortList(GLOB.pai_faces)
+				card.set_emotion(new_emotion)
 
 			if("news")
 				newscaster.ui_interact(src)

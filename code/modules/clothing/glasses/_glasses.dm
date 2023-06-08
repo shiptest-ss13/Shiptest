@@ -114,6 +114,11 @@
 	icon_state = "prescriptionpurple"
 	vision_correction = 1
 
+/obj/item/clothing/glasses/science/prescription/fake
+	name = "science glasses"
+	desc = "A pair of glasses fitted with an analyzer for scanning items and reagents. Someone seems to have popped out the perscription lenses... "
+	vision_correction = 0
+
 /obj/item/clothing/glasses/night
 	name = "night vision goggles"
 	desc = "You can totally see in the dark now!"

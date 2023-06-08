@@ -23,7 +23,7 @@
 	shoes = /obj/item/clothing/shoes/sneakers/blue
 	suit =  /obj/item/clothing/suit/toggle/labcoat/paramedic
 	alt_suit = /obj/item/clothing/suit/apron/surgical
-	dcoat = /obj/item/clothing/suit/hooded/wintercoat/medical //WS Edit - Alt Uniforms
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/medical/paramedic //WS Edit - Alt Uniforms
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile
 	belt = /obj/item/storage/belt/medical/paramedic
 	id = /obj/item/card/id
@@ -47,24 +47,14 @@
 
 //Shiptest outfits
 
-/datum/outfit/job/paramedic/solgov
-	name = "Combat Medic (SolGov)"
-
-	uniform = /obj/item/clothing/under/solgov
-	accessory = /obj/item/clothing/accessory/armband/medblue
-	shoes = /obj/item/clothing/shoes/combat
-	head = /obj/item/clothing/head/beret/solgov
-	suit =  /obj/item/clothing/suit/armor/vest/solgov/rep
-	ears = /obj/item/radio/headset/headset_medsec/alt
-
-	backpack = /obj/item/storage/backpack/security
-
 /datum/outfit/job/paramedic/traumateam
 	name = "Paramedic (Trauma Team Technician)"
 
 	uniform = /obj/item/clothing/under/rank/security/brig_phys
 	shoes = /obj/item/clothing/shoes/combat
 	backpack = /obj/item/storage/backpack/ert/medical
+	belt = /obj/item/storage/belt/medical/webbing/paramedic
+
 /datum/outfit/job/paramedic/syndicate/gorlex
 	name = "Paramedic (Gorlex)"
 
@@ -91,3 +81,10 @@
 	shoes = /obj/item/clothing/shoes/combat
 	belt = /obj/item/storage/belt/medical/webbing/paramedic
 	ears = /obj/item/radio/headset/headset_medsec/alt
+
+/datum/outfit/job/paramedic/minutemen
+	name = "BARD Combat Medic (Minutemen)"
+
+	uniform = /obj/item/clothing/under/rank/medical/paramedic/emt
+	head = /obj/item/clothing/head/soft/paramedic
+	suit = /obj/item/clothing/suit/armor/

@@ -136,3 +136,58 @@
 	name = "advanced command holopad"
 	em_name = "command"
 	em_spawn_type = /mob/living/simple_animal/hologram/command
+
+/obj/machinery/holopad/emergency/kitchen
+	name = "advanced kitchen holopad"
+	em_name = "culinary"
+	em_spawn_type = /mob/living/simple_animal/hologram/kitchen
+
+/obj/machinery/holopad/emergency/botany
+	name = "advanced botany holopad"
+	em_name = "botanical"
+	em_spawn_type = /mob/living/simple_animal/hologram/botany
+
+/obj/machinery/holopad/emergency/counselor
+	name = "advanced counseling holopad"
+	em_name = "counseling"
+	em_spawn_type = /mob/living/simple_animal/hologram/psychologist
+
+/obj/machinery/holopad/emergency/atmos
+	name = "advanced atmospheric holopad"
+	em_name = "atmospheric"
+	em_spawn_type = /mob/living/simple_animal/hologram/atmos
+
+/obj/machinery/holopad/emergency/janitor
+	name = "advanced custodial holopad"
+	em_name = "custodial"
+	em_spawn_type = /mob/living/simple_animal/hologram/janitor
+
+/obj/machinery/holopad/emergency/security
+	name = "advanced security holopad"
+	em_name = "security"
+	em_spawn_type = /mob/living/simple_animal/hologram/security
+
+/obj/machinery/holopad/emergency/cargo
+	name = "advanced logistics holopad"
+	em_name = "logistics"
+	em_spawn_type = /mob/living/simple_animal/hologram/cargo
+
+/obj/machinery/holopad/emergency/clown
+	name = "advanced comedy holopad"
+	em_name = "comedy"
+	em_spawn_type = /mob/living/simple_animal/hologram/clown
+
+/obj/machinery/holopad/emergency/detective
+	name = "advanced forensics holopad"
+	em_name = "forensics"
+	em_spawn_type = /mob/living/simple_animal/hologram/detective
+
+/obj/machinery/holopad/emergency/curator
+	name = "advanced literacy holopad"
+	em_name = "literacy"
+	em_spawn_type = /mob/living/simple_animal/hologram/curator
+
+/obj/machinery/holopad/emergency/buddy
+	name = "advanced company holopad"
+	em_name = "company"
+	em_spawn_type = /mob/living/simple_animal/hologram/assistant

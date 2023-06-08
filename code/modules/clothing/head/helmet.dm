@@ -85,9 +85,10 @@
 				var/mob/living/carbon/C = user
 				C.head_update(src, forced = 1)
 
-			if(active_sound)
-				while(up)
-					playsound(src, "[active_sound]", 100, FALSE, 4)
+			if(up)
+				START_PROCESSING(SSobj, src)
+			else
+				STOP_PROCESSING(SSobj, src)
 
 //LightToggle
 
@@ -202,7 +203,7 @@
 			return
 	return ..()
 
-/obj/item/clothing/head/helmet/alt
+/obj/item/clothing/head/helmet/bulletproof
 	name = "bulletproof helmet"
 	desc = "A bulletproof combat helmet that excels in protecting the wearer against traditional projectile weaponry and explosives to a minor extent."
 	icon_state = "helmetalt"
@@ -210,6 +211,13 @@
 	armor = list("melee" = 15, "bullet" = 60, "laser" = 10, "energy" = 10, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	can_flashlight = TRUE
 	dog_fashion = null
+	allow_post_reskins = TRUE
+	unique_reskin = list("Urban" = "helmetalt",
+		"Desert" = "helmetalt_desert",
+		"Woodland" = "helmetalt_woodland",
+		"Snow" = "helmetalt_snow",
+		)
+
 
 /obj/item/clothing/head/helmet/marine
 	name = "tactical combat helmet"
@@ -271,6 +279,10 @@
 	visor_flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF
 	dog_fashion = null
 
+/obj/item/clothing/head/helmet/riot/minutemen
+	name = "\improper Minutemen riot helmet"
+	desc = "Designed to protect against close range attacks. Mainly used by the CM-BARD against hostile xenofauna, it also sees prolific use on some Minutemen member worlds."
+	icon_state = "riot_minutemen"
 
 
 /obj/item/clothing/head/helmet/justice
@@ -284,6 +296,9 @@
 	toggle_cooldown = 20
 	active_sound = 'sound/items/weeoo1.ogg'
 	dog_fashion = null
+
+/obj/item/clothing/head/helmet/justice/process(delta_time)
+	playsound(loc, "[active_sound]", 100, FALSE, 10)
 
 /obj/item/clothing/head/helmet/justice/escape
 	name = "alarm helmet"
@@ -462,9 +477,9 @@
 	armor = list("melee" = 25, "bullet" = 30, "laser" = 0, "energy" = 10, "bomb" = 10, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 50)
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/helmet
 
-/obj/item/clothing/head/helmet/rus_ushanka
-	name = "battle ushanka"
-	desc = "100% bear."
+/obj/item/clothing/head/helmet/r_trapper
+	name = "reinforced trapper hat"
+	desc = "An occasional sight on the heads of soldiers stationed on cold worlds. 200% bear."
 	icon_state = "rus_ushanka"
 	item_state = "rus_ushanka"
 	body_parts_covered = HEAD
@@ -498,18 +513,13 @@
 	icon_state = "inteq_helmet"
 	can_flashlight = TRUE
 
-/obj/item/clothing/head/helmet/alt/minutemen
-	name = "minutemen ballistic helmet"
-	desc = "A bulletproof helmet that is worn by members of the colonial minutemen."
+/obj/item/clothing/head/helmet/bulletproof/minutemen
+	name = "\improper Minutemen ballistic helmet"
+	desc = "A bulletproof helmet that is worn by members of the Colonial Minutemen."
 	icon_state = "antichristhelm"
-
-/obj/item/clothing/head/helmet/solgov
-	name = "\improper SolGov Helmet"
-	desc = "A helmet manufactured by SolGov to protect craniums. Painted in green to provide some degree of camoflauge."
-	icon_state = "helmet_terragov"
-	item_state = "helmet_terragov"
-	can_flashlight = FALSE
-	dog_fashion = null
+	allow_post_reskins = TRUE
+	unique_reskin = null
+	armor = list("melee" = 15, "bullet" = 60, "laser" = 10, "energy" = 10, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 
 /obj/item/clothing/head/solgov
 	name = "\improper SolGov officer's cap"
@@ -526,6 +536,24 @@
 	icon_state = "cap_terragov"
 	item_state = "cap_terragov"
 
+/obj/item/clothing/head/solgov/sonnensoldner
+	name = "\improper Sonnensoldner Hat"
+	desc = "A standard-issue SolGov hat adorned with a feather, commonly used by Sonnensoldners."
+	icon_state = "sonnensoldner_hat"
+	item_state = "sonnensoldner_hat"
+	worn_y_offset = 4
+	dog_fashion = null
+	armor = list("melee" = 40, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 60)
+
+/obj/item/clothing/head/solgov/captain
+	name = "\improper SolGov bicorne hat"
+	desc = "A unique bicorne hat given to Solarian Captains on expeditionary missions."
+	icon_state = "solgov_bicorne"
+	item_state = "solgov_bicorne"
+	worn_y_offset = 2
+	dog_fashion = null
+	armor = list("melee" = 40, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 60)
+
 /obj/item/clothing/head/helmet/space/plasmaman/solgov
 	name = "\improper SolGov envirosuit helmet"
 	desc = "A generic white envirohelmet with a secondary blue."
@@ -537,3 +565,34 @@
 	desc = "A robust combat helmet commonly employed by Syndicate forces, regardless of alignment."
 	icon_state = "operator"
 	item_state = "operator"
+
+/obj/item/clothing/head/helmet/bulletproof/m10
+	name = "\improper M10 pattern Helmet"
+	desc = "A classic looking helmet, derived from numerous convergently-similar designs from all across inhabited space. A faded tag reads: 'The difference between an open-casket and closed-casket funeral. Wear on head for best results.'"
+	icon_state = "m10helm"
+	can_flashlight = TRUE
+	dog_fashion = null
+	unique_reskin = list("Urban" = "m10helm",
+		"Desert" = "m10helm_desert",
+		"Woodland" = "m10helm_woodland",
+		"Snow" = "m10helm_snow",
+		)
+
+/obj/item/clothing/head/helmet/bulletproof/x11
+	name = "\improper Type X11 Helmet"
+	desc = "This bulky helmet is a mainstay product of any Bezuts-based armor manufacturer worth their spice. It's a (relatively) comfortable fit for individuals with frills, horns, antlers, thorns, branches, spikes, webbing..."
+	icon_state = "x11helm"
+	can_flashlight = TRUE
+	dog_fashion = null
+	allow_post_reskins = TRUE
+	unique_reskin = list("Urban" = "x11helm",
+		"Desert" = "x11helm_desert",
+		"Woodland" = "x11helm_woodland",
+		"Snow" = "x11helm_snow",
+		)
+
+/obj/item/clothing/head/helmet/bulletproof/x11/frontier
+	name = "\improper Frontiersmen X11 Helmet"
+	desc = "A heavily modified X11 used by the Frontiersmen pirate fleet."
+	icon_state = "x11helm_frontier"
+	unique_reskin = null

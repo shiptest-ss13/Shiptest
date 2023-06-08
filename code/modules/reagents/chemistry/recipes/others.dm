@@ -89,15 +89,25 @@
 	results = list(/datum/reagent/consumable/condensedcapsaicin = 5)
 	required_reagents = list(/datum/reagent/consumable/capsaicin = 1, /datum/reagent/consumable/ethanol = 5)
 
-/datum/chemical_reaction/soapification
+/datum/chemical_reaction/gibsoapification
 	required_reagents = list(/datum/reagent/liquidgibs = 10, /datum/reagent/lye  = 10) // requires two scooped gib tiles
 	required_temp = 374
 	mob_react = FALSE
 
-/datum/chemical_reaction/soapification/on_reaction(datum/reagents/holder, created_volume)
+/datum/chemical_reaction/gibsoapification/on_reaction(datum/reagents/holder, created_volume)
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= created_volume, i++)
 		new /obj/item/soap/homemade(location)
+
+/datum/chemical_reaction/oilsoapification
+	required_reagents = list(/datum/reagent/consumable/cooking_oil = 10, /datum/reagent/lye  = 10)
+	required_temp = 374
+	mob_react = FALSE
+
+/datum/chemical_reaction/oilsoapification/on_reaction(datum/reagents/holder, created_volume)
+	var/location = get_turf(holder.my_atom)
+	for(var/i = 1, i <= created_volume, i++)
+		new /obj/item/soap(location)
 
 /datum/chemical_reaction/omegasoapification
 	required_reagents = list(/datum/reagent/consumable/potato_juice = 10, /datum/reagent/consumable/ethanol/lizardwine = 10, /datum/reagent/monkey_powder = 10, /datum/reagent/drug/krokodil = 10, /datum/reagent/toxin/acid/nitracid = 10, /datum/reagent/baldium = 10, /datum/reagent/consumable/ethanol/hooch = 10, /datum/reagent/bluespace = 10, /datum/reagent/drug/pumpup = 10, /datum/reagent/consumable/space_cola = 10)
@@ -409,6 +419,10 @@
 	results = list(/datum/reagent/carpet/royal/blue = 2)
 	required_reagents = list(/datum/reagent/carpet/blue = 1, /datum/reagent/royal_bee_jelly = 1)
 
+/datum/chemical_reaction/genesis
+	results = list(/datum/reagent/genesis = 10)
+	required_reagents = list(/datum/reagent/diethylamine = 10, /datum/reagent/medicine/strange_reagent = 1, /datum/reagent/teslium = 1)
+	mix_message = "The diethylamine sparks and is infused with the essence of vibrant life, turning a brillian green!"
 
 /datum/chemical_reaction/oil
 	results = list(/datum/reagent/fuel/oil = 3)
@@ -651,3 +665,14 @@
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= created_volume, i++)
 		new /obj/item/stack/sheet/mineral/titanium(location)
+
+/datum/chemical_reaction/asphalt_heat
+	results = list(/datum/reagent/carbon = 0.4, /datum/reagent/acetone = 0.2, /datum/reagent/consumable/ethanol = 0.2, /datum/reagent/consumable/ethanol = 0.2)
+	required_reagents = list(/datum/reagent/asphalt = 1)
+	required_temp = 418
+	mix_message = "The mixture separates."
+
+/datum/chemical_reaction/pavement
+	results = list(/datum/reagent/cement/roadmix = 2)
+	required_reagents = list(/datum/reagent/cement = 1, /datum/reagent/asphalt = 1)
+	mix_message = "The mixture mixing suddenly reminds you of cramped urban worlds."

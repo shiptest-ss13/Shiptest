@@ -8,14 +8,14 @@ SUBSYSTEM_DEF(mapping)
 
 	var/list/map_templates = list()
 
+/* HEY LISTEN //
+ * IF YOU ADD A NEW TYPE OF RUIN, ADD IT TO code\__DEFINES\ruins.dm
+ */
+
+	var/list/ruin_types_list = list()
+	var/list/ruin_types_probabilities = list()
 	var/list/ruins_templates = list()
-	var/list/space_ruins_templates = list()
-	var/list/lava_ruins_templates = list()
-	var/list/ice_ruins_templates = list()
-	var/list/sand_ruins_templates = list()
-	var/list/jungle_ruins_templates = list()
-	var/list/rock_ruins_templates = list()
-	var/list/yellow_ruins_templates = list()
+	var/list/planet_types = list()
 
 	var/list/maplist
 	var/list/ship_purchase_list
@@ -83,15 +83,7 @@ SUBSYSTEM_DEF(mapping)
 	initialized = SSmapping.initialized
 	map_templates = SSmapping.map_templates
 	ruins_templates = SSmapping.ruins_templates
-	space_ruins_templates = SSmapping.space_ruins_templates
-	lava_ruins_templates = SSmapping.lava_ruins_templates
-	rock_ruins_templates = SSmapping.rock_ruins_templates
-	sand_ruins_templates = SSmapping.sand_ruins_templates
-	jungle_ruins_templates = SSmapping.jungle_ruins_templates
-	ice_ruins_templates = SSmapping.ice_ruins_templates
-	shuttle_templates = SSmapping.shuttle_templates
-	shelter_templates = SSmapping.shelter_templates
-	holodeck_templates = SSmapping.holodeck_templates
+	ruin_types_list = SSmapping.ruins_templates
 
 	z_list = SSmapping.z_list
 
@@ -115,13 +107,19 @@ SUBSYSTEM_DEF(mapping)
 	preloadHolodeckTemplates()
 
 /datum/controller/subsystem/mapping/proc/preloadRuinTemplates()
+	for(var/datum/planet_type/type as anything in subtypesof(/datum/planet_type))
+		planet_types[initial(type.planet)] = new type
+
 	// Still supporting bans by filename
+	// I hate this so much. I want to kill it because I don't think ANYONE uses this
+	// Couldn't you just remove it on a fork or something??? come onnnnnnnnnnnn stop EXISTING already
 	var/list/banned = generateMapList("[global.config.directory]/lavaruinblacklist.txt")
 	banned += generateMapList("[global.config.directory]/spaceruinblacklist.txt")
 	banned += generateMapList("[global.config.directory]/iceruinblacklist.txt")
 	banned += generateMapList("[global.config.directory]/sandruinblacklist.txt")
 	banned += generateMapList("[global.config.directory]/jungleruinblacklist.txt")
 	banned += generateMapList("[global.config.directory]/rockruinblacklist.txt")
+	banned += generateMapList("[global.config.directory]/wasteruinblacklist.txt")
 
 	for(var/item in sortList(subtypesof(/datum/map_template/ruin), /proc/cmp_ruincost_priority))
 		var/datum/map_template/ruin/ruin_type = item
@@ -135,22 +133,11 @@ SUBSYSTEM_DEF(mapping)
 
 		map_templates[R.name] = R
 		ruins_templates[R.name] = R
+		ruin_types_list[R.ruin_type] += list(R.name = R)
 
-		if(istype(R, /datum/map_template/ruin/lavaland))
-			lava_ruins_templates[R.name] = R
-		else if(istype(R, /datum/map_template/ruin/whitesands))
-			sand_ruins_templates[R.name] = R
-		else if(istype(R, /datum/map_template/ruin/jungle))
-			jungle_ruins_templates[R.name] = R
-		else if(istype(R, /datum/map_template/ruin/icemoon))
-			ice_ruins_templates[R.name] = R
-		else if(istype(R, /datum/map_template/ruin/space))
-			space_ruins_templates[R.name] = R
-		else if(istype(R, /datum/map_template/ruin/rockplanet))
-			rock_ruins_templates[R.name] = R
-		else if(istype(R, /datum/map_template/ruin/reebe))
-			yellow_ruins_templates[R.name] = R
-
+		var/list/ruin_entry = list()
+		ruin_entry[R] = initial(R.placement_weight)
+		ruin_types_probabilities[R.ruin_type] += ruin_entry
 
 /datum/controller/subsystem/mapping/proc/preloadShuttleTemplates()
 	for(var/item in subtypesof(/datum/map_template/shuttle))

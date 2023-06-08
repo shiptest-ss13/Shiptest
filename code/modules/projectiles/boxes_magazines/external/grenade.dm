@@ -5,4 +5,3 @@
 	caliber = "75"
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 	max_ammo = 8
-

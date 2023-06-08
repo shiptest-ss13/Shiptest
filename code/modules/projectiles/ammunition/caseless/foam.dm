@@ -10,7 +10,7 @@
 	var/modified = FALSE
 
 /obj/item/ammo_casing/caseless/foam_dart/update_icon()
-	..()
+	. = ..()
 	if (modified)
 		icon_state = "foamdart_empty"
 		desc = "It's nerf or nothing! ... Although, this one doesn't look too safe."

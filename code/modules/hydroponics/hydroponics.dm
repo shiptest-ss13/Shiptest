@@ -241,11 +241,11 @@
 				adjustWeeds(1 / rating) // Weeds flourish
 
 			// If the plant is too old, lose health fast
-			if(age > myseed.lifespan)
-				adjustHealth(-rand(1,5) / rating)
+			if((age / 20) > myseed.lifespan)
+				adjustHealth(-rand(1,3) / rating)
 
 			// Harvest code
-			if(age > myseed.production && (age - lastproduce) > myseed.production && (!harvest && !dead))
+			if(age > (myseed.production * 1.5) && (age - lastproduce) > (myseed.production * 1.5) && (!harvest && !dead))
 				if(myseed && myseed.yield != -1) // Unharvestable shouldn't be harvested
 					harvest = TRUE
 				else
@@ -558,26 +558,23 @@
 		var/obj/item/plant_analyzer/P_analyzer = O
 		if(myseed)
 			if(P_analyzer.scan_mode == PLANT_SCANMODE_STATS)
-				to_chat(user, "*** <B>[myseed.plantname]</B> ***" )
-				to_chat(user, "- Plant Age: <span class='notice'>[age]</span>")
+				to_chat(user, examine_block("<B>[myseed.plantname]</B>"))
+				to_chat(user, examine_block("Plant Age: <span class='notice'>[age]</span>"))
 				var/list/text_string = myseed.get_analyzer_text()
 				if(text_string)
-					to_chat(user, text_string)
-					to_chat(user, "*---------*")
+					to_chat(user, examine_block(text_string))
 			if(myseed.reagents_add && P_analyzer.scan_mode == PLANT_SCANMODE_CHEMICALS)
-				to_chat(user, "- <B>Plant Reagents</B> -")
-				to_chat(user, "*---------*")
+				to_chat(user, examine_block("<B>Plant Reagents</B>"))
 				for(var/datum/plant_gene/reagent/Gene in myseed.genes)
-					to_chat(user, "<span class='notice'>- [Gene.get_name()] -</span>")
-				to_chat(user, "*---------*")
+					to_chat(user, examine_block("<span class='notice'>- [Gene.get_name()] -</span>"))
 		else
-			to_chat(user, "<B>No plant found.</B>")
-		to_chat(user, "- Weed level: <span class='notice'>[weedlevel] / 10</span>")
-		to_chat(user, "- Pest level: <span class='notice'>[pestlevel] / 10</span>")
-		to_chat(user, "- Toxicity level: <span class='notice'>[toxic] / 100</span>")
-		to_chat(user, "- Water level: <span class='notice'>[waterlevel] / [maxwater]</span>")
-		to_chat(user, "- Nutrition level: <span class='notice'>[reagents.total_volume] / [maxnutri]</span>")
-		to_chat(user, "<br/>")
+			to_chat(user, examine_block( "<B>No plant found.</B>"))
+		to_chat(user, examine_block("\nWeed level: <span class='notice'>[weedlevel] / 10</span>"))
+		to_chat(user, examine_block("\nPest level: <span class='notice'>[pestlevel] / 10</span>"))
+		to_chat(user, examine_block("\nToxicity level: <span class='notice'>[toxic] / 100</span>"))
+		to_chat(user, examine_block("\nWater level: <span class='notice'>[waterlevel] / [maxwater]</span>"))
+		to_chat(user, examine_block("\nNutrition level: <span class='notice'>[reagents.total_volume] / [maxnutri]</span>"))
+		to_chat(user, examine_block("<br/>"))
 		return
 
 	else if(istype(O, /obj/item/cultivator))
@@ -683,7 +680,7 @@
 	if(!anchored)
 		return
 	self_sustaining = !self_sustaining
-	idle_power_usage = self_sustaining ? 2500 : 0
+	idle_power_usage = self_sustaining ? 1250 : 0
 	to_chat(user, "<span class='notice'>You [self_sustaining ? "activate" : "deactivated"] [src]'s autogrow function[self_sustaining ? ", maintaining the tray's health while using high amounts of power" : ""].")
 	update_icon()
 

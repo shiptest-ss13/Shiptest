@@ -31,10 +31,6 @@
 
 	if(!stray_spawnable_supply_packs.len)
 		stray_spawnable_supply_packs = SSshuttle.supply_packs.Copy()
-		for(var/pack in stray_spawnable_supply_packs)
-			var/datum/supply_pack/pack_type = pack
-			if(initial(pack_type.special))
-				stray_spawnable_supply_packs -= pack
 
 ///Spawns a random supply pack, puts it in a pod, and spawns it on a random tile of the selected area
 /datum/round_event/stray_cargo/start()
@@ -78,20 +74,3 @@
 	var/list/possible_areas = typecache_filter_list(GLOB.sortedAreas,allowed_areas)
 	if (length(possible_areas))
 		return pick(possible_areas)
-
-///A rare variant that drops a crate containing syndicate uplink items
-/datum/round_event_control/stray_cargo/syndicate
-	name = "Stray Syndicate Cargo Pod"
-	typepath = /datum/round_event/stray_cargo/syndicate
-	weight = 6
-	max_occurrences = 1
-	earliest_start = 30 MINUTES
-
-/datum/round_event/stray_cargo/syndicate
-	possible_pack_types = list(/datum/supply_pack/misc/syndicate)
-
-///Apply the syndicate pod skin
-/datum/round_event/stray_cargo/syndicate/make_pod()
-	var/obj/structure/closet/supplypod/S = new
-	S.setStyle(STYLE_SYNDICATE)
-	return S

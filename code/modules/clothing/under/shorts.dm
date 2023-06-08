@@ -3,7 +3,6 @@
 	desc = "95% Polyester, 5% Spandex!"
 	gender = PLURAL
 	body_parts_covered = GROIN
-	fitted = NO_FEMALE_UNIFORM
 	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
 	can_adjust = FALSE
 	icon = 'icons/obj/clothing/under/shorts_pants.dmi'

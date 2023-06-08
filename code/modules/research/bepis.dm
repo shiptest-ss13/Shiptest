@@ -50,7 +50,7 @@
 	if(!is_operational)
 		to_chat(user, "<span class='notice'>[src] can't accept money when it's not functioning.</span>")
 		return
-	if(istype(O, /obj/item/holochip) || istype(O, /obj/item/stack/spacecash))
+	if(istype(O, /obj/item/holochip) || istype(O, /obj/item/spacecash/bundle))
 		var/deposit_value = O.get_item_credit_value()
 		banked_cash += deposit_value
 		qdel(O)
@@ -116,7 +116,7 @@
 		say("Cannot withdraw more than stored funds. Aborting.")
 	else
 		banked_cash -= withdraw_value
-		new /obj/item/holochip(src.loc, withdraw_value)
+		new /obj/item/spacecash/bundle(src.loc, withdraw_value)
 		say("Withdrawing [withdraw_value] credits from the chamber.")
 	update_icon_state()
 	return

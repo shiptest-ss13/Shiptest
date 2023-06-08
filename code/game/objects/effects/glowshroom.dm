@@ -2,7 +2,7 @@
 
 /obj/structure/glowshroom
 	name = "glowshroom"
-	desc = "Mycena Bregprox, a species of mushroom that glows in the dark."
+	desc = "Mycena bregprox, a species of mushroom that glows in the dark."
 	anchored = TRUE
 	opacity = FALSE
 	density = FALSE
@@ -21,13 +21,13 @@
 
 /obj/structure/glowshroom/glowcap
 	name = "glowcap"
-	desc = "Mycena Ruthenia, a species of mushroom that, while it does glow in the dark, is not actually bioluminescent."
+	desc = "Mycena ruthenia, a species of mushroom that, while it does glow in the dark, is not actually bioluminescent."
 	icon_state = "glowcap"
 	myseed = /obj/item/seeds/glowshroom/glowcap
 
 /obj/structure/glowshroom/shadowshroom
 	name = "shadowshroom"
-	desc = "Mycena Umbra, a species of mushroom that emits shadow instead of light."
+	desc = "Mycena umbra, a species of mushroom that emits shadow instead of light."
 	icon_state = "shadowshroom"
 	myseed = /obj/item/seeds/glowshroom/shadowshroom
 

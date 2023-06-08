@@ -10,25 +10,49 @@
 	token_icon_state = "ship"
 	///Timer ID of the looping movement timer
 	var/movement_callback_id
-	///Max possible speed (1 tile per second)
-	var/static/max_speed = 1/(1 SECONDS)
-	///Minimum speed. Any lower is rounded down. (0.5 tiles per minute)
-	var/static/min_speed = 1/(2 MINUTES)
-	///The current speed in x/y direction in grid squares per minute
-	var/list/speed[2]
+	///Max possible speed (1 tile per tick / 600 tiles per minute)
+	var/static/max_speed = 1
+	///Minimum speed. Any lower is rounded down. (0.01 tiles per minute)
+	var/static/min_speed = 1/(100 MINUTES)
+
+	///The current speed in x direction in grid squares per minute
+	var/speed_x = 0
+	///The current speed in y direction in grid squares per minute
+	var/speed_y = 0
+	///The direction being accelerated in
+	var/burn_direction = BURN_NONE
+	///Percentage of thruster power being used
+	var/burn_percentage = 50
+
 	///ONLY USED FOR NON-SIMULATED SHIPS. The amount per burn that this ship accelerates
 	var/acceleration_speed = 0.02
+
+/datum/overmap/ship/Initialize(position, ...)
+	. = ..()
+	if(docked_to)
+		RegisterSignal(docked_to, COMSIG_OVERMAP_MOVED, .proc/on_docked_to_moved)
 
 /datum/overmap/ship/Destroy()
 	. = ..()
 	if(movement_callback_id)
 		deltimer(movement_callback_id)
 
+/datum/overmap/ship/complete_dock(datum/overmap/dock_target, datum/docking_ticket/ticket)
+	. = ..()
+	RegisterSignal(dock_target, COMSIG_OVERMAP_MOVED, .proc/on_docked_to_moved)
+
+/datum/overmap/ship/complete_undock()
+	UnregisterSignal(docked_to, COMSIG_OVERMAP_MOVED)
+	. = ..()
+
 /datum/overmap/ship/Undock(force = FALSE)
 	. = ..()
 	if(istype(/datum/overmap/ship, docked_to))
 		var/datum/overmap/ship/old_dock = docked_to
-		adjust_speed(old_dock.speed[1], old_dock.speed[2])
+		adjust_speed(old_dock.speed_x, old_dock.speed_y)
+
+/datum/overmap/ship/proc/on_docked_to_moved()
+	token.update_screen()
 
 /**
  * Change the speed in any direction.
@@ -38,13 +62,18 @@
 /datum/overmap/ship/proc/adjust_speed(n_x, n_y)
 	var/offset = 1
 	if(movement_callback_id)
-		var/previous_time = 1 / MAGNITUDE(speed[1], speed[2])
+		var/previous_time = 1 / MAGNITUDE(speed_x, speed_y)
 		offset = clamp(timeleft(movement_callback_id) / previous_time, 0, 1)
 		deltimer(movement_callback_id)
 		movement_callback_id = null //just in case
 
-	speed[1] += n_x
-	speed[2] += n_y
+	speed_x = min(max_speed, speed_x + n_x)
+	speed_y = min(max_speed, speed_y + n_y)
+
+	if(speed_x < min_speed && speed_x > -min_speed)
+		speed_x = 0
+	if(speed_y < min_speed && speed_y > -min_speed)
+		speed_y = 0
 
 	token.update_icon_state()
 	update_visuals()
@@ -52,7 +81,7 @@
 	if(is_still() || QDELING(src) || movement_callback_id)
 		return
 
-	var/timer = 1 / MAGNITUDE(speed[1], speed[2]) * offset
+	var/timer = 1 / MAGNITUDE(speed_x, speed_y) * offset
 	movement_callback_id = addtimer(CALLBACK(src, .proc/tick_move), timer, TIMER_STOPPABLE)
 
 /**
@@ -60,18 +89,18 @@
  */
 /datum/overmap/ship/proc/tick_move()
 	if(is_still() || QDELING(src) || docked_to)
-		decelerate(max_speed)
+		adjust_speed(-speed_x, -speed_y)
 		deltimer(movement_callback_id)
 		movement_callback_id = null
 		return
-	overmap_move(x + SIGN(speed[1]), y + SIGN(speed[2]))
+	overmap_move(x + SIGN(speed_x), y + SIGN(speed_y))
 	update_visuals()
 
 	if(movement_callback_id)
 		deltimer(movement_callback_id)
 
 	//Queue another movement
-	var/current_speed = MAGNITUDE(speed[1], speed[2])
+	var/current_speed = MAGNITUDE(speed_x, speed_y)
 	if(!current_speed)
 		return
 
@@ -83,7 +112,7 @@
  * Returns whether or not the ship is moving in any direction.
  */
 /datum/overmap/ship/proc/is_still()
-	return !speed[1] && !speed[2]
+	return !speed_x && !speed_y
 
 /**
  * Returns the total speed in all directions.
@@ -94,24 +123,23 @@
 /datum/overmap/ship/proc/get_speed()
 	if(is_still())
 		return 0
-	return 60 SECONDS * MAGNITUDE(speed[1], speed[2]) //It's per minute, which is 60 seconds
+	return 60 SECONDS * MAGNITUDE(speed_x, speed_y) //It's per tick, which is 0.1 seconds
 
 /**
  * Returns the direction the ship is moving in terms of dirs
  */
 /datum/overmap/ship/proc/get_heading()
-	var/direction = 0
-	if(speed[1])
-		if(speed[1] > 0)
-			direction |= EAST
+	. = NONE
+	if(speed_x)
+		if(speed_x > 0)
+			. |= EAST
 		else
-			direction |= WEST
-	if(speed[2])
-		if(speed[2] > 0)
-			direction |= NORTH
+			. |= WEST
+	if(speed_y)
+		if(speed_y > 0)
+			. |= NORTH
 		else
-			direction |= SOUTH
-	return direction
+			. |= SOUTH
 
 /**
  * Returns the estimated time in deciseconds to the next tile at current speed, or approx. time until reaching the destination when on autopilot
@@ -123,52 +151,66 @@
 	. /= 10 //they're in deciseconds
 	return "[add_leading(num2text((. / 60) % 60), 2, "0")]:[add_leading(num2text(. % 60), 2, "0")]"
 
-/**
- * Change the speed in a specified dir.
- * * direction - dir to accelerate in (NORTH, SOUTH, SOUTHEAST, etc.)
- * * acceleration - How much to accelerate by
- */
-/datum/overmap/ship/proc/accelerate(direction, acceleration)
-	var/heading = get_heading()
-	if(!(direction in GLOB.cardinals))
-		acceleration *= 0.5 //Makes it so going diagonally isn't 2x as efficient
-	if(heading && (direction & DIRFLIP(heading))) //This is so if you burn in the opposite direction you're moving, you can actually reach zero
-		if(EWCOMPONENT(direction))
-			acceleration = min(acceleration, abs(speed[1]))
+/datum/overmap/ship/process(delta_time)
+	if(burn_direction == BURN_STOP && is_still())
+		change_heading(BURN_NONE)
+		return
+
+	var/added_velocity = calculate_burn(burn_direction, burn_engines(burn_percentage, delta_time))
+
+	//Slows down the ship just enough to come to a full stop
+	if(burn_direction == BURN_STOP)
+		if(speed_x > 0)
+			added_velocity["x"] = max(-speed_x, added_velocity["x"])
 		else
-			acceleration = min(acceleration, abs(speed[2]))
+			added_velocity["x"] = min(-speed_x, added_velocity["x"])
+		if(speed_y > 0)
+			added_velocity["y"] = max(-speed_y, added_velocity["y"])
+		else
+			added_velocity["y"] = min(-speed_y, added_velocity["y"])
+
+	adjust_speed(added_velocity["x"], added_velocity["y"])
+
+/**
+ * Calculates the amount of acceleration to apply to the ship given the direction and velocity increase
+ * * direction - The direction to accelerate in
+ * * acceleration - The acceleration to apply
+ */
+/datum/overmap/ship/proc/calculate_burn(direction, acceleration)
+	var/heading = get_heading()
+	//Slowing down
+	if(direction == BURN_STOP && heading)
+		direction = DIRFLIP(heading)
+	if(!(direction in GLOB.cardinals))
+		acceleration /= SQRT_2 //Makes it so going diagonally isn't 2x as efficient
+
+	var/list/acceleration_vector = list("x" = 0, "y" = 0)
+
 	if(direction & EAST)
-		adjust_speed(acceleration, 0)
-	if(direction & WEST)
-		adjust_speed(-acceleration, 0)
+		acceleration_vector["x"] = acceleration
+	else if(direction & WEST)
+		acceleration_vector["x"] = -acceleration
 	if(direction & NORTH)
-		adjust_speed(0, acceleration)
-	if(direction & SOUTH)
-		adjust_speed(0, -acceleration)
+		acceleration_vector["y"] = acceleration
+	else if(direction & SOUTH)
+		acceleration_vector["y"] = -acceleration
+
+	return acceleration_vector
 
 /**
- * Reduce the speed or stop in all directions.
- * * acceleration - How much to decelerate by
+ * Returns the amount of acceleration to apply to the ship based on the percentage of the engines that are burning, and the time since the last burn tick.
+ * * percentage - The percentage of the engines that are burning
+ * * deltatime - The time since the last burn tick
  */
-/datum/overmap/ship/proc/decelerate(acceleration)
-	if(speed[1] && speed[2]) //another check to make sure that deceleration isn't 2x as fast when moving diagonally
-		adjust_speed(-SIGN(speed[1]) * min(acceleration * 0.5, abs(speed[1])), -SIGN(speed[2]) * min(acceleration * 0.5, abs(speed[2])))
-	else if(speed[1])
-		adjust_speed(-SIGN(speed[1]) * min(acceleration, abs(speed[1])), 0)
-	else if(speed[2])
-		adjust_speed(0, -SIGN(speed[2]) * min(acceleration, abs(speed[2])))
+/datum/overmap/ship/proc/burn_engines(percentage = 100, deltatime)
+	return acceleration_speed * (percentage / 100) * deltatime
 
-/**
- * Burns the engines in one direction, accelerating in that direction.
- * Unsimulated ships use the acceleration_speed var, simulated ships check eacch engine's thrust and fuel.
- * If no dir variable is provided, it decelerates the vessel.
- * * n_dir - The direction to move in
- */
-/datum/overmap/ship/proc/burn_engines(n_dir = null, percentage = 100)
-	if(!n_dir)
-		decelerate(acceleration_speed * (percentage / 100))
+/datum/overmap/ship/proc/change_heading(direction)
+	burn_direction = direction
+	if(burn_direction == BURN_NONE)
+		STOP_PROCESSING(SSphysics, src)
 	else
-		accelerate(n_dir, acceleration_speed * (percentage / 100))
+		START_PROCESSING(SSphysics, src)
 
 /**
  * Updates the visuals of the ship based on heading and whether or not it's moving.

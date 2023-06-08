@@ -118,6 +118,11 @@
 	'sound/hallucinations/turn_around2.ogg', 'sound/hallucinations/veryfar_noise.ogg', \
 	'sound/hallucinations/wail.ogg')
 
+#define BEACH list( \
+	'sound/ambience/shore.ogg', 'sound/ambience/seag1.ogg','sound/ambience/seag2.ogg','sound/ambience/seag2.ogg', \
+	'sound/ambience/ambiodd.ogg','sound/ambience/ambinice.ogg')
+
+
 #define INTERACTION_SOUND_RANGE_MODIFIER -3
 #define EQUIP_SOUND_VOLUME 30
 #define PICKUP_SOUND_VOLUME 15

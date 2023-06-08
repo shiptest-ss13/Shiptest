@@ -145,7 +145,7 @@
 		var/area/A = V
 		if(!(my_controller.mapzone.is_in_bounds(A)))
 			continue
-		if(protect_indoors && !A.outdoors)
+		if(protect_indoors && !A.allow_weather)
 			outside_areas |= A
 			continue
 		if(A.underground && !affects_underground)

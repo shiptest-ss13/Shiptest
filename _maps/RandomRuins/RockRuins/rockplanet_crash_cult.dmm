@@ -24,7 +24,7 @@
 "aS" = (
 /obj/structure/marker_beacon,
 /obj/effect/decal/cleanable/blood/tracks,
-/turf/open/floor/plating/asteroid,
+/turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "bl" = (
 /mob/living/simple_animal/hostile/construct/proteon/hostile,
@@ -60,6 +60,9 @@
 /obj/effect/turf_decal/corner/opaque/blue,
 /obj/effect/turf_decal/corner/opaque/blue{
 	dir = 4
+	},
+/obj/machinery/airalarm/directional/south{
+	pixel_y = -25
 	},
 /turf/open/floor/plating,
 /area/ruin/unpowered)
@@ -135,7 +138,7 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
 	},
-/turf/open/floor/plating/asteroid,
+/turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "eX" = (
 /obj/machinery/atmospherics/components/unary/vent_pump{
@@ -168,9 +171,6 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/opaque/blue,
-/obj/machinery/airalarm/directional/south{
-	pixel_y = -25
-	},
 /turf/open/floor/plating,
 /area/ruin/unpowered)
 "fE" = (
@@ -246,7 +246,7 @@
 /area/ruin/unpowered)
 "jU" = (
 /obj/structure/flora/rock/pile,
-/turf/open/floor/plating/asteroid,
+/turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "kj" = (
 /obj/structure/cable{
@@ -290,7 +290,7 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 10
 	},
-/turf/open/floor/plating/asteroid,
+/turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "lu" = (
 /obj/effect/decal/cleanable/blood{
@@ -396,7 +396,7 @@
 /obj/item/flashlight/glowstick/red{
 	on = 1
 	},
-/turf/open/floor/plating/asteroid,
+/turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "oA" = (
 /obj/structure/table,
@@ -421,7 +421,7 @@
 /area/ruin/unpowered)
 "qg" = (
 /mob/living/simple_animal/hostile/construct/artificer/hostile{
-	loot = list(/obj/item/ectoplasm, /obj/item/necromantic_stone)
+	loot = list(/obj/item/ectoplasm,/obj/item/necromantic_stone)
 	},
 /turf/open/floor/plating,
 /area/ruin/unpowered)
@@ -430,7 +430,7 @@
 	dir = 4
 	},
 /mob/living/simple_animal/hostile/construct/wraith/hostile{
-	loot = list(/obj/item/ectoplasm, /obj/item/rod_of_asclepius)
+	loot = list(/obj/item/ectoplasm,/obj/item/rod_of_asclepius)
 	},
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
@@ -465,7 +465,7 @@
 /turf/open/floor/plasteel/cult,
 /area/ruin/unpowered)
 "rB" = (
-/obj/machinery/light/broken,
+/obj/machinery/light/broken/directional/south,
 /obj/effect/turf_decal/corner/opaque/blue,
 /obj/effect/turf_decal/corner/opaque/blue{
 	dir = 8
@@ -474,9 +474,7 @@
 /area/ruin/unpowered)
 "rH" = (
 /obj/machinery/hydroponics/constructable,
-/obj/machinery/light/broken{
-	dir = 8
-	},
+/obj/machinery/light/broken/directional/west,
 /obj/effect/turf_decal/corner/opaque/green{
 	dir = 8
 	},
@@ -508,9 +506,7 @@
 /turf/open/floor/plating,
 /area/ruin/unpowered)
 "sX" = (
-/obj/machinery/light/broken{
-	dir = 8
-	},
+/obj/machinery/light/broken/directional/west,
 /obj/effect/turf_decal/corner/opaque/blue{
 	dir = 8
 	},
@@ -565,9 +561,6 @@
 /turf/open/floor/plasteel/cult,
 /area/ruin/unpowered)
 "uo" = (
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 1
-	},
 /obj/machinery/door/airlock/cult/friendly,
 /turf/open/floor/plasteel,
 /area/ruin/unpowered)
@@ -628,9 +621,7 @@
 /turf/open/floor/plating,
 /area/ruin/unpowered)
 "wn" = (
-/obj/machinery/light/broken{
-	dir = 4
-	},
+/obj/machinery/light/broken/directional/east,
 /obj/effect/turf_decal/corner/opaque/green,
 /turf/open/floor/plating,
 /area/ruin/unpowered)
@@ -651,10 +642,6 @@
 /area/ruin/unpowered)
 "wB" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
-/obj/item/radio/intercom/wideband{
-	pixel_x = -25;
-	pixel_y = 28
-	},
 /turf/open/floor/plating,
 /area/ruin/unpowered)
 "wG" = (
@@ -727,7 +714,7 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 5
 	},
-/turf/open/floor/plating/asteroid,
+/turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "yb" = (
 /obj/machinery/hydroponics/constructable,
@@ -754,6 +741,14 @@
 /obj/machinery/atmospherics/pipe/simple/yellow/visible,
 /obj/machinery/door/poddoor{
 	id = "whiteship_windows"
+	},
+/turf/open/floor/plating,
+/area/ruin/unpowered)
+"zo" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor{
+	id = "whiteship_bridge";
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ruin/unpowered)
@@ -811,9 +806,6 @@
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/plasteel/cult,
 /area/ruin/unpowered)
-"Bf" = (
-/turf/open/floor/plating/asteroid,
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "Bz" = (
 /obj/machinery/atmospherics/components/unary/vent_pump,
 /obj/machinery/advanced_airlock_controller{
@@ -897,7 +889,6 @@
 /area/ruin/unpowered)
 "Dc" = (
 /obj/machinery/door/airlock/external,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/plasteel/cult,
 /area/ruin/unpowered)
@@ -914,6 +905,9 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/closed/wall/mineral/titanium,
 /area/ruin/unpowered)
+"Es" = (
+/turf/open/floor/plating/asteroid/rockplanet/lit,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "Ez" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 1
@@ -959,12 +953,12 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 5
 	},
-/turf/open/floor/plating/asteroid,
+/turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Gz" = (
 /obj/effect/rune/narsie,
 /mob/living/simple_animal/hostile/construct/juggernaut/hostile{
-	loot = list(/obj/item/ectoplasm, /obj/item/nullrod/armblade/tentacle)
+	loot = list(/obj/item/ectoplasm,/obj/item/nullrod/armblade/tentacle)
 	},
 /obj/structure/sacrificealtar,
 /obj/effect/decal/cleanable/blood{
@@ -1113,6 +1107,7 @@
 /obj/effect/turf_decal/corner/opaque/blue{
 	dir = 1
 	},
+/obj/item/radio/intercom/wideband/directional/north,
 /turf/open/floor/plating,
 /area/ruin/unpowered)
 "Ka" = (
@@ -1218,7 +1213,7 @@
 "PU" = (
 /obj/item/pickaxe/rusted,
 /obj/effect/gibspawner/human/bodypartless,
-/turf/open/floor/plating/asteroid,
+/turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "QK" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -1256,10 +1251,14 @@
 	},
 /turf/open/floor/plasteel/cult,
 /area/ruin/unpowered)
-"RA" = (
-/obj/structure/marker_beacon,
-/turf/open/floor/plating/asteroid,
-/area/overmap_encounter/planetoid/rockplanet/explored)
+"RY" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor{
+	id = "whiteship_windows";
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/unpowered)
 "Sm" = (
 /obj/machinery/hydroponics/constructable,
 /obj/effect/turf_decal/corner/opaque/green{
@@ -1279,6 +1278,10 @@
 	},
 /turf/open/floor/plasteel/cult,
 /area/ruin/unpowered)
+"SP" = (
+/obj/structure/marker_beacon,
+/turf/open/floor/plating/asteroid/rockplanet/lit,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "Tn" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1292,7 +1295,7 @@
 /area/ruin/unpowered)
 "Us" = (
 /obj/structure/flora/rock,
-/turf/open/floor/plating/asteroid,
+/turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "UA" = (
 /obj/structure/sign/warning/longtermwaste{
@@ -1301,9 +1304,7 @@
 /turf/closed/wall/mineral/titanium,
 /area/ruin/unpowered)
 "UE" = (
-/obj/machinery/light/broken{
-	dir = 8
-	},
+/obj/machinery/light/broken/directional/west,
 /obj/effect/turf_decal/corner/opaque/blue{
 	dir = 1
 	},
@@ -1311,6 +1312,14 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/corner/opaque/blue,
+/turf/open/floor/plating,
+/area/ruin/unpowered)
+"UI" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor{
+	id = "whiteship_bridge";
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ruin/unpowered)
 "Vz" = (
@@ -1346,6 +1355,14 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/cult,
+/area/ruin/unpowered)
+"Wi" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor{
+	id = "whiteship_windows";
+	dir = 8
+	},
+/turf/open/floor/plating,
 /area/ruin/unpowered)
 "Wm" = (
 /obj/effect/decal/cleanable/blood/tracks{
@@ -1402,7 +1419,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 8
 	},
-/obj/machinery/light/broken,
+/obj/machinery/light/broken/directional/south,
 /obj/effect/turf_decal/corner/opaque/blue,
 /obj/effect/turf_decal/corner/opaque/blue{
 	dir = 8
@@ -1412,24 +1429,24 @@
 /area/ruin/unpowered)
 
 (1,1,1) = {"
-Bf
-Bf
-Bf
-RA
+Es
+Es
+Es
+SP
 jU
-Bf
-Bf
+Es
+Es
 Nt
 Dj
 Ax
 UA
-Bf
+Es
 Us
-Bf
-RA
-Bf
-Bf
-Bf
+Es
+SP
+Es
+Es
+Es
 "}
 (2,1,1) = {"
 Nt
@@ -1443,7 +1460,7 @@ EQ
 HE
 KH
 EQ
-Bf
+Es
 Nt
 Nt
 Nt
@@ -1458,12 +1475,12 @@ dh
 wH
 lF
 Nt
-Bf
+Es
 EQ
 xo
 xb
 EQ
-Bf
+Es
 Dr
 yb
 rH
@@ -1478,12 +1495,12 @@ dh
 ig
 dh
 xD
-Bf
+Es
 EQ
 SC
 xb
 EQ
-Bf
+Es
 xD
 OB
 Hm
@@ -1498,12 +1515,12 @@ Jh
 Jq
 TR
 vJ
-Bf
+Es
 Nt
 Mn
 Ba
 Nt
-Bf
+Es
 xD
 sY
 VV
@@ -1523,7 +1540,7 @@ nv
 IO
 Rq
 nv
-EQ
+RY
 xD
 hs
 mq
@@ -1558,12 +1575,12 @@ Jh
 lu
 Jh
 Zg
-EQ
+Wi
 xD
 iK
 XN
 nv
-EQ
+RY
 xD
 xt
 Yp
@@ -1578,12 +1595,12 @@ Jh
 dh
 Ru
 Nt
-Bf
+Es
 xD
 IO
 Jh
 Nt
-Bf
+Es
 Nt
 wH
 kr
@@ -1598,12 +1615,12 @@ KV
 bl
 Sq
 xD
-Bf
+Es
 EQ
 Wm
 Rq
 EQ
-Bf
+Es
 Nt
 cZ
 wn
@@ -1618,12 +1635,12 @@ xD
 Nt
 Nt
 xD
-Bf
+Es
 EQ
 xI
 hD
 EQ
-Bf
+Es
 Nt
 xD
 xD
@@ -1632,24 +1649,24 @@ Nt
 Nt
 "}
 (12,1,1) = {"
-Bf
-Bf
-Bf
-RA
-Bf
+Es
+Es
+Es
+SP
+Es
 ou
-Bf
+Es
 xD
 IO
 KV
 EQ
-Bf
-Bf
-Bf
-RA
-Bf
-Bf
-Bf
+Es
+Es
+Es
+SP
+Es
+Es
+Es
 "}
 (13,1,1) = {"
 xD
@@ -1658,12 +1675,12 @@ Nt
 Nt
 xD
 xD
-Bf
+Es
 xD
 zP
 Ba
 EQ
-Bf
+Es
 Nt
 Nt
 Nt
@@ -1678,12 +1695,12 @@ II
 mx
 qS
 Nt
-Bf
+Es
 Nt
 Wm
 dh
 Nt
-Bf
+Es
 xD
 lG
 fE
@@ -1693,12 +1710,12 @@ EQ
 "}
 (15,1,1) = {"
 nv
-EQ
+RY
 xb
 On
 Hl
 Nt
-EQ
+RY
 nv
 IO
 xb
@@ -1708,7 +1725,7 @@ xD
 tX
 rB
 xD
-EQ
+RY
 nv
 "}
 (16,1,1) = {"
@@ -1733,22 +1750,22 @@ uo
 "}
 (17,1,1) = {"
 nv
-EQ
+nv
 Tn
 rf
 Aw
 xD
-EQ
+RY
 nv
 Vz
 dh
 xD
-EQ
+RY
 nv
 Cm
 Zm
 Nt
-EQ
+Nt
 nv
 "}
 (18,1,1) = {"
@@ -1758,7 +1775,7 @@ my
 Fe
 cD
 Nt
-Bf
+Es
 Nt
 ex
 Nr
@@ -1774,11 +1791,11 @@ EQ
 (19,1,1) = {"
 Nt
 Nt
-EQ
-EQ
+RY
+Wi
 Nt
 Nt
-Bf
+Es
 xD
 IO
 Rq
@@ -1786,19 +1803,19 @@ Nt
 eK
 Nt
 Nt
-EQ
-EQ
+Wi
+Wi
 Nt
 Nt
 "}
 (20,1,1) = {"
-Bf
-Bf
-Bf
-Bf
-RA
-Bf
-Bf
+Es
+Es
+Es
+Es
+SP
+Es
+Es
 xD
 Mn
 Jh
@@ -1806,18 +1823,18 @@ Nt
 xY
 aS
 li
-Bf
-Bf
-Bf
+Es
+Es
+Es
 XI
 "}
 (21,1,1) = {"
 XI
-Bf
+Es
 Us
-Bf
-Bf
-Bf
+Es
+Es
+Es
 xD
 xD
 QK
@@ -1833,10 +1850,10 @@ XI
 "}
 (22,1,1) = {"
 XI
-Bf
-Bf
+Es
+Es
 jU
-Bf
+Es
 Nt
 xD
 BX
@@ -1854,9 +1871,9 @@ XI
 (23,1,1) = {"
 XI
 XI
-Bf
-RA
-Bf
+Es
+SP
+Es
 as
 sX
 wB
@@ -1867,16 +1884,16 @@ UE
 as
 Fn
 PU
-Bf
-RA
-Bf
+Es
+SP
+Es
 "}
 (24,1,1) = {"
 XI
 XI
-Bf
+Es
 ou
-Bf
+Es
 as
 dj
 wG
@@ -1885,27 +1902,27 @@ Rq
 Ht
 ct
 xD
-Bf
+Es
 jU
 XI
 XI
-Bf
+Es
 "}
 (25,1,1) = {"
 XI
 XI
 XI
-Bf
-Bf
-as
-as
+Es
+Es
+Nt
+Nt
 JX
 vT
 xT
 GW
 xD
 xD
-Bf
+Es
 XI
 XI
 XI
@@ -1916,18 +1933,18 @@ XI
 XI
 XI
 XI
-Bf
-Bf
-as
-as
-as
-as
+Es
+Es
+Nt
+UI
+UI
+zo
 xD
 xD
-Bf
-Bf
-Bf
-Bf
+Es
+Es
+Es
+Es
 XI
 XI
 "}
