@@ -249,6 +249,10 @@
 	for (var/i in 1 to 4)
 		new /obj/item/ammo_box/a762_39(src)
 
+/obj/item/storage/toolbox/ammo/a308/PopulateContents()
+	for (var/i in 1 to 4)
+		new /obj/item/ammo_box/a308
+
 /obj/item/storage/toolbox/ammo/c45/PopulateContents()
 	name = "ammo can (.45)"
 	for (var/i in 1 to 4)
