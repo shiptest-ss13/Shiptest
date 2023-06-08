@@ -1,7 +1,7 @@
 import { useBackend, useLocalState } from '../backend';
 import { Button, Input, Section, Tabs, Table, LabeledList, Collapsible } from '../components';
 import { Window } from '../layouts';
-import { createSearch } from 'common/string';
+import { createSearch, decodeHtmlEntities } from 'common/string';
 
 export const ShipSelect = (props, context) => {
   const { act, data } = useBackend(context);
@@ -26,10 +26,10 @@ export const ShipSelect = (props, context) => {
     { name: 'Ship Select', tab: 1 },
     { name: 'Ship Purchase', tab: 3 },
   ]);
-  const formatShipName = (name) => {
-    // replace all &#34 with "/ because the json data we get is funky otherwise
-    return name.replace(/&#34;/g, '"');
-  };
+  // const formatShipName = (name) => {
+  //   // replace all &#34 with "/ because the json data we get is funky otherwise
+  //   return name.replace(/&#34;/g, '"');
+  // };
   const searchFor = (searchText) =>
     createSearch(searchText, (thing) => thing.name);
 
@@ -69,42 +69,48 @@ export const ShipSelect = (props, context) => {
                 <Table.Cell>Ship Name</Table.Cell>
                 <Table.Cell>Ship Class</Table.Cell>
               </Table.Row>
-              {Object.values(ships).map((ship) => (
-                <Table.Row key={ship.name}>
-                  <Table.Cell>
-                    <Button
-                      content={
-                        ship.joinMode === applyStates.apply ? 'Apply' : 'Join'
-                      }
-                      color={
-                        ship.joinMode === applyStates.apply ? 'average' : 'good'
-                      }
-                      onClick={() => {
-                        setSelectedShip(ship);
-                        setTab(2);
-                        // Add a new tab to the list of shown tabs, on index 1
-                        setShownTabs((tabs) => {
-                          const newTabs = [...tabs];
-                          const newTab = {
-                            name: 'Job Select',
-                            tab: 2,
-                          };
-                          newTabs.splice(1, 0, newTab);
-                          return newTabs;
-                        });
-                      }}
-                    />
-                  </Table.Cell>
-                  <Table.Cell>{formatShipName(ship.name)}</Table.Cell>
-                  <Table.Cell>{ship.class}</Table.Cell>
-                </Table.Row>
-              ))}
+              {Object.values(ships).map((ship) => {
+                const shipName = decodeHtmlEntities(ship.name);
+                return (
+                  <Table.Row key={shipName}>
+                    <Table.Cell>
+                      <Button
+                        content={
+                          ship.joinMode === applyStates.apply ? 'Apply' : 'Join'
+                        }
+                        color={
+                          ship.joinMode === applyStates.apply
+                            ? 'average'
+                            : 'good'
+                        }
+                        onClick={() => {
+                          setSelectedShip(ship);
+                          setTab(2);
+                          // Add a new tab to the list of shown tabs, on index 1
+                          setShownTabs((tabs) => {
+                            const newTabs = [...tabs];
+                            const newTab = {
+                              name: 'Job Select',
+                              tab: 2,
+                            };
+                            newTabs.splice(1, 0, newTab);
+                            return newTabs;
+                          });
+                        }}
+                      />
+                    </Table.Cell>
+                    <Table.Cell>{shipName}</Table.Cell>
+                    <Table.Cell>{ship.class}</Table.Cell>
+                  </Table.Row>
+                );
+              })}
             </Table>
           </Section>
         )}
         {tab === 2 && (
           <>
-            <Section title={`Ship Info - ${formatShipName(selectedShip.name)}`}>
+            <Section
+              title={`Ship Info - ${decodeHtmlEntities(selectedShip.name)}`}>
               <LabeledList>
                 <LabeledList.Item label="Ship Class">
                   {selectedShip.class}

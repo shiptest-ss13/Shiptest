@@ -2,6 +2,7 @@ import { useBackend } from '../backend';
 import { Button, ByondUi, LabeledList, Section, ProgressBar, AnimatedNumber, Knob, LabeledControls, NumberInput } from '../components';
 import { Window } from '../layouts';
 import { Table } from '../components/Table';
+import { decodeHtmlEntities } from 'common/string';
 
 export const HelmConsole = (_props, context) => {
   const { data } = useBackend(context);
@@ -41,7 +42,7 @@ const SharedContent = (_props, context) => {
       <Section
         title={
           <Button.Input
-            content={shipInfo.name}
+            content={decodeHtmlEntities(shipInfo.name)}
             currentValue={shipInfo.name}
             disabled={isViewer}
             onCommit={(_e, value) =>
