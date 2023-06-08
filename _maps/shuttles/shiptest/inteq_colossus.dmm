@@ -596,10 +596,6 @@
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 4
 	},
-/obj/item/stack/sheet/glass,
-/obj/item/stack/sheet/glass,
-/obj/item/stack/cable_coil/yellow,
-/obj/item/screwdriver,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office)
 "gl" = (
@@ -1319,7 +1315,6 @@
 "pm" = (
 /obj/effect/turf_decal/siding/thinplating,
 /obj/effect/turf_decal/trimline/opaque/yellow/line,
-/obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
 "pv" = (
@@ -2791,12 +2786,9 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/port)
 "FQ" = (
-/obj/structure/frame/computer{
-	anchored = 1;
-	can_be_unanchored = 1;
+/obj/machinery/computer/rdconsole/core{
 	dir = 4
 	},
-/obj/item/circuitboard/computer/rdconsole,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office)
 "FW" = (
@@ -3302,10 +3294,6 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "LU" = (
-/obj/structure/frame/machine{
-	anchored = 1
-	},
-/obj/item/circuitboard/machine/rdserver,
 /obj/effect/turf_decal/corner/opaque/yellow,
 /obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 1
@@ -3313,12 +3301,12 @@
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 4
 	},
-/obj/item/stock_parts/scanning_module,
 /obj/structure/sign/poster/official/fruit_bowl{
 	pixel_x = 32
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/newscaster/security_unit/directional/north,
+/obj/machinery/rnd/server,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office)
 "Md" = (
