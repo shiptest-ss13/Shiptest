@@ -161,8 +161,9 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/bridge)
 "cv" = (
-/turf/open/floor/plating/airless,
-/area/template_noop)
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/external/dark)
 "cM" = (
 /obj/structure/closet/secure_closet/freezer{
 	anchored = 1;
@@ -1242,19 +1243,23 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "oe" = (
-/obj/structure/table/reinforced,
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
 /obj/effect/turf_decal/borderfloor{
 	dir = 5
 	},
-/obj/machinery/photocopier/faxmachine/longrange,
 /obj/item/radio/intercom/directional/north{
 	freerange = 1;
 	freqlock = 1;
 	frequency = 1347;
 	name = "IRMG shortwave intercom"
+	},
+/obj/machinery/telecomms/relay/preset/mining{
+	freq_listening = list(1347);
+	id = "IRMG Relay";
+	name = "IRMG Relay";
+	network = "irmg_commnet"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -1686,15 +1691,7 @@
 	dir = 1
 	},
 /obj/structure/table/reinforced,
-/obj/item/paper_bin,
-/obj/item/pen/fountain,
-/obj/item/spacecash/bundle/c1000,
-/obj/item/spacecash/bundle/c1000,
-/obj/item/spacecash/bundle/c1000,
-/obj/item/spacecash/bundle/c1000,
-/obj/item/gps{
-	pixel_x = 12
-	},
+/obj/machinery/photocopier/faxmachine/longrange,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "sP" = (
@@ -3666,6 +3663,11 @@
 /obj/item/storage/lockbox/medal/sec{
 	pixel_y = 5
 	},
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "Qm" = (
@@ -4190,13 +4192,14 @@
 	req_access_txt = "58"
 	},
 /obj/structure/table/reinforced,
-/obj/item/storage/fancy/cigarettes/cigars/havana,
-/obj/item/lighter{
-	pixel_y = 5
-	},
 /obj/item/toy/figure/vanguard{
 	pixel_x = -10;
 	pixel_y = 5
+	},
+/obj/item/paper_bin,
+/obj/item/pen/fountain,
+/obj/item/gps{
+	pixel_x = 12
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
