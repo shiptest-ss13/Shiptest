@@ -338,7 +338,6 @@
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 4
 	},
-/obj/machinery/power/apc/auto_name/directional/west,
 /obj/machinery/light_switch{
 	pixel_y = 25
 	},
@@ -1172,6 +1171,9 @@
 	id_tag = "colossus_armory";
 	name = "Armory";
 	req_access_txt = "1"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
