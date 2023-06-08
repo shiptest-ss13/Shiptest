@@ -1195,7 +1195,7 @@
 	icon_state = "hardsuit0-solgov"
 	item_state = "hardsuit0-solgov"
 	hardsuit_type = "solgov"
-	armor = list("melee" = 50, "bullet" = 45, "laser" = 40,"energy" = 30, "bomb" = 60, "bio" = 100, "rad" = 90, "fire" = 85, "acid" = 75)
+	armor = list("melee" = 50, "bullet" = 45, "laser" = 40, "energy" = 30, "bomb" = 60, "bio" = 100, "rad" = 60, "fire" = 90, "acid" = 75)
 
 /obj/item/clothing/suit/space/hardsuit/solgov
 	icon_state = "hardsuit_solgov"
