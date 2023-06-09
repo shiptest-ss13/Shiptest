@@ -41,7 +41,7 @@
 	icon_state = "2-4"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/power/apc/auto_name/north{
+/obj/machinery/power/apc/auto_name/directional/north{
 	charging = 20000
 	},
 /obj/structure/cable{
@@ -73,9 +73,7 @@
 /obj/machinery/cryopod{
 	dir = 4
 	},
-/obj/machinery/computer/cryopod{
-	pixel_y = 32
-	},
+/obj/machinery/computer/cryopod/directional/north,
 /turf/open/floor/plating,
 /area/ship/storage)
 "j" = (
@@ -91,9 +89,7 @@
 	},
 /obj/structure/window/reinforced/spawner/west,
 /obj/structure/window/reinforced/spawner/east,
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/plating,
 /area/ship/storage)
 "l" = (
@@ -102,9 +98,7 @@
 /area/ship/storage)
 "m" = (
 /obj/structure/window/reinforced/spawner/west,
-/obj/item/radio/intercom/wideband{
-	pixel_y = 26
-	},
+/obj/item/radio/intercom/wideband/directional/north,
 /obj/structure/chair/comfy/shuttle{
 	dir = 4
 	},
@@ -130,9 +124,7 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/power/port_gen/pacman,
-/obj/machinery/light/small{
-	dir = 4
-	},
+/obj/machinery/light/small/directional/east,
 /obj/item/stack/sheet/mineral/plasma/five,
 /obj/machinery/power/terminal{
 	dir = 1
@@ -188,7 +180,9 @@
 /turf/open/floor/plating,
 /area/ship/storage)
 "w" = (
-/obj/machinery/door/airlock/maintenance_hatch,
+/obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/storage)
 "x" = (
@@ -259,7 +253,7 @@
 	},
 /obj/structure/window/reinforced/spawner/west,
 /obj/structure/window/reinforced/spawner/east,
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/floor/plating,
 /area/ship/storage)
 "H" = (

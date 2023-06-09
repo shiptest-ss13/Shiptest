@@ -112,6 +112,9 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 		if(canSmoothWith[length(canSmoothWith)] > MAX_S_TURF)
 			smoothing_flags |= SMOOTH_OBJ
 		SET_BITFLAG_LIST(canSmoothWith)
+	if (length(no_connector_typecache))
+		no_connector_typecache = SSicon_smooth.get_no_connector_typecache(src.type, no_connector_typecache, connector_strict_typing)
+
 	if (smoothing_flags & (SMOOTH_CORNERS|SMOOTH_BITMASK))
 		QUEUE_SMOOTH(src)
 
@@ -661,7 +664,7 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 /turf/proc/on_turf_saved()
 	// This is all we can do. I'm sorry mappers, but there's no way to get any more details.
 	var/first = TRUE
-	for(var/datum/component/decal/decal as anything in GetComponents(/datum/component/decal))
+	for(var/datum/element/decal/decal as anything in GetComponents(/datum/element/decal))
 		if(!first)
 			. += ",\n"
 		. += "[/obj/effect/turf_decal]{\n\ticon = '[decal.pic.icon]';\n\ticon_state = \"[decal.pic.icon_state]\";\n\tdir = [decal.pic.dir];\n\tcolor = \"[decal.pic.color]\"\n\t}"

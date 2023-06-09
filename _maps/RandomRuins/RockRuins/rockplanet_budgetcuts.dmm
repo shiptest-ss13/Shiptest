@@ -111,9 +111,7 @@
 "by" = (
 /obj/machinery/vending/cola/random,
 /obj/effect/turf_decal/industrial/warning,
-/obj/machinery/light/dim{
-	dir = 1
-	},
+/obj/machinery/light/dim/directional/north,
 /turf/open/floor/plasteel,
 /area/ruin/powered)
 "bD" = (
@@ -241,7 +239,9 @@
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "do" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/airlock/hatch{
+	dir = 4
+	},
 /obj/machinery/door/firedoor,
 /turf/open/floor/wood,
 /area/ruin/powered)
@@ -272,9 +272,7 @@
 /turf/open/floor/engine,
 /area/ruin/powered)
 "eb" = (
-/obj/machinery/light/dim{
-	dir = 1
-	},
+/obj/machinery/light/dim/directional/north,
 /obj/effect/turf_decal/siding/white{
 	dir = 1
 	},
@@ -297,6 +295,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"eI" = (
+/obj/machinery/door/airlock/hatch{
+	dir = 8
+	},
+/obj/machinery/door/firedoor,
+/turf/open/floor/wood,
+/area/ruin/powered)
 "eM" = (
 /obj/structure/table/reinforced,
 /obj/item/aicard{
@@ -331,9 +336,7 @@
 /turf/closed/wall/r_wall/rust,
 /area/ruin/powered)
 "fe" = (
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/engine,
 /area/ruin/powered)
@@ -392,7 +395,7 @@
 /obj/machinery/microwave{
 	pixel_y = 5
 	},
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
@@ -403,9 +406,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
-/obj/machinery/light/dim{
-	dir = 4
-	},
+/obj/machinery/light/dim/directional/east,
 /turf/open/floor/wood,
 /area/ruin/powered)
 "gm" = (
@@ -617,9 +618,7 @@
 /turf/open/floor/plating,
 /area/ruin/powered)
 "jT" = (
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /obj/effect/decal/cleanable/oil,
 /turf/open/floor/engine,
 /area/ruin/powered)
@@ -635,9 +634,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/structure/dresser,
-/obj/machinery/light/dim{
-	dir = 4
-	},
+/obj/machinery/light/dim/directional/east,
 /turf/open/floor/wood{
 	icon_state = "wood-broken6"
 	},
@@ -895,9 +892,7 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/powered)
 "nS" = (
-/obj/machinery/light/dim{
-	dir = 1
-	},
+/obj/machinery/light/dim/directional/north,
 /obj/structure/railing{
 	dir = 4
 	},
@@ -1036,9 +1031,7 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	pixel_y = 10
 	},
-/obj/machinery/light/dim{
-	dir = 4
-	},
+/obj/machinery/light/dim/directional/east,
 /obj/effect/turf_decal/corner/opaque/red/border{
 	dir = 4
 	},
@@ -1088,9 +1081,7 @@
 /area/ruin/powered)
 "qJ" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/dim{
-	dir = 1
-	},
+/obj/machinery/light/dim/directional/north,
 /obj/effect/turf_decal/siding/white{
 	dir = 1
 	},
@@ -1267,7 +1258,9 @@
 /turf/open/floor/plasteel/showroomfloor,
 /area/ruin/powered)
 "tV" = (
-/obj/machinery/door/airlock/freezer,
+/obj/machinery/door/airlock/freezer{
+	dir = 8
+	},
 /obj/machinery/door/firedoor,
 /turf/open/floor/plasteel/showroomfloor,
 /area/ruin/powered)
@@ -1309,7 +1302,7 @@
 	},
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/effect/turf_decal/corner/opaque/red/full,
-/obj/item/radio/intercom{
+/obj/item/radio/intercom/directional/north{
 	pixel_x = 1;
 	pixel_y = 23
 	},
@@ -1325,13 +1318,7 @@
 	},
 /obj/item/trash/plate,
 /obj/item/trash/popcorn,
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/item/radio/intercom{
-	pixel_x = 1;
-	pixel_y = 23
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/plastic,
 /area/ruin/powered)
 "vb" = (
@@ -1368,16 +1355,12 @@
 "vr" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/oil,
-/obj/machinery/light/small/broken{
-	dir = 1
-	},
+/obj/machinery/light/small/broken/directional/north,
 /mob/living/simple_animal/hostile/pirate/ranged/space,
 /turf/open/floor/plating,
 /area/ruin/powered)
 "vz" = (
-/obj/machinery/light/dim{
-	dir = 8
-	},
+/obj/machinery/light/dim/directional/west,
 /obj/effect/turf_decal/corner/transparent/purple/border{
 	dir = 8
 	},
@@ -1416,10 +1399,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/item/radio/intercom{
-	pixel_x = 1;
-	pixel_y = 23
-	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/wood,
 /area/ruin/powered)
 "wd" = (
@@ -1566,7 +1546,7 @@
 	pixel_x = -3;
 	pixel_y = 3
 	},
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/showroomfloor,
@@ -1589,9 +1569,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/powered)
 "An" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
+/obj/machinery/light/small/directional/east,
 /obj/structure/bed/pod,
 /obj/structure/railing{
 	dir = 4
@@ -1623,7 +1601,9 @@
 /turf/open/water/jungle,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "AV" = (
-/obj/machinery/door/airlock/mining,
+/obj/machinery/door/airlock/mining{
+	dir = 4
+	},
 /obj/machinery/door/firedoor,
 /obj/structure/barricade/wooden/crude,
 /turf/open/floor/plasteel,
@@ -1640,11 +1620,7 @@
 /obj/machinery/newscaster/security_unit{
 	pixel_y = 32
 	},
-/obj/item/radio/intercom{
-	pixel_x = -24;
-	pixel_y = 1;
-	dir = 4
-	},
+/obj/item/radio/intercom/directional/west,
 /turf/open/floor/carpet/red,
 /area/ruin/powered)
 "Ba" = (
@@ -1692,7 +1668,7 @@
 /area/ruin/powered)
 "BF" = (
 /obj/structure/fluff/hedge,
-/obj/machinery/light/dim,
+/obj/machinery/light/dim/directional/south,
 /obj/effect/turf_decal/siding/white{
 	dir = 4
 	},
@@ -1735,7 +1711,7 @@
 "Cn" = (
 /obj/machinery/processor,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/radio/intercom{
+/obj/item/radio/intercom/directional/north{
 	pixel_x = 1;
 	pixel_y = 23
 	},
@@ -1753,9 +1729,7 @@
 "Cx" = (
 /obj/structure/bed/pod,
 /obj/item/bedsheet/dorms,
-/obj/machinery/light/dim{
-	dir = 4
-	},
+/obj/machinery/light/dim/directional/east,
 /turf/open/floor/wood,
 /area/ruin/powered)
 "CG" = (
@@ -1940,11 +1914,9 @@
 /turf/open/water/jungle,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Fo" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
+/obj/machinery/light/small/directional/east,
 /obj/effect/decal/cleanable/garbage,
-/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/plasteel/rockvault,
 /area/ruin/powered)
 "Fq" = (
@@ -2016,10 +1988,7 @@
 	pixel_x = 4;
 	pixel_y = 5
 	},
-/obj/item/radio/intercom{
-	pixel_x = 1;
-	pixel_y = 23
-	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/powered)
 "FR" = (
@@ -2141,9 +2110,7 @@
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "IJ" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/engine,
 /area/ruin/powered)
 "IW" = (
@@ -2177,7 +2144,9 @@
 /turf/closed/mineral/random/asteroid/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Jm" = (
-/obj/machinery/door/airlock/maintenance_hatch,
+/obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4
+	},
 /obj/structure/grille/broken,
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
@@ -2234,6 +2203,7 @@
 /obj/structure/railing{
 	dir = 8
 	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plastic,
 /area/ruin/powered)
 "KO" = (
@@ -2261,7 +2231,7 @@
 /obj/item/desk_flag{
 	pixel_x = -9
 	},
-/obj/machinery/light/dim,
+/obj/machinery/light/dim/directional/south,
 /turf/open/floor/plasteel,
 /area/ruin/powered)
 "KW" = (
@@ -2270,7 +2240,9 @@
 /turf/open/floor/plasteel/dark,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "KZ" = (
-/obj/machinery/door/airlock/security/glass,
+/obj/machinery/door/airlock/security/glass{
+	dir = 4
+	},
 /obj/machinery/door/firedoor,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered)
@@ -2297,18 +2269,14 @@
 "Ma" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/barricade/sandbags,
-/obj/machinery/light/dim{
-	dir = 8
-	},
+/obj/machinery/light/dim/directional/west,
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
 "Md" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
 	},
-/obj/machinery/light/dim{
-	dir = 4
-	},
+/obj/machinery/light/dim/directional/east,
 /obj/item/kirbyplants/random,
 /turf/open/floor/wood,
 /area/ruin/powered)
@@ -2328,14 +2296,13 @@
 /area/ruin/powered)
 "Na" = (
 /obj/structure/displaycase/labcage,
-/obj/item/radio/intercom{
-	pixel_x = 1;
-	pixel_y = 23
-	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/carpet/purple,
 /area/ruin/powered)
 "Ne" = (
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/airlock/hatch{
+	dir = 4
+	},
 /obj/machinery/door/firedoor,
 /turf/open/floor/wood,
 /area/ruin/powered)
@@ -2345,9 +2312,7 @@
 	},
 /obj/structure/railing/corner,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/pod/light,
 /area/ruin/powered)
 "NB" = (
@@ -2367,7 +2332,7 @@
 /area/ruin/powered)
 "NP" = (
 /obj/machinery/vending/security,
-/obj/item/radio/intercom{
+/obj/item/radio/intercom/directional/north{
 	pixel_x = 1;
 	pixel_y = 23
 	},
@@ -2485,7 +2450,9 @@
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Qd" = (
-/obj/machinery/door/airlock/security,
+/obj/machinery/door/airlock/security{
+	dir = 4
+	},
 /obj/machinery/door/firedoor,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/powered)
@@ -2538,16 +2505,11 @@
 /obj/item/healthanalyzer{
 	pixel_y = 14
 	},
-/obj/structure/extinguisher_cabinet{
-	pixel_x = -27;
-	pixel_y = 1
-	},
+/obj/structure/extinguisher_cabinet/directional/north,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/powered)
 "Rb" = (
@@ -2561,9 +2523,7 @@
 "Rm" = (
 /obj/structure/bed/pod,
 /obj/item/bedsheet/dorms,
-/obj/machinery/light/dim{
-	dir = 4
-	},
+/obj/machinery/light/dim/directional/east,
 /turf/open/floor/carpet/black,
 /area/ruin/powered)
 "RC" = (
@@ -2609,7 +2569,9 @@
 /turf/open/floor/plating/dirt/jungle/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "So" = (
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/airlock/hatch{
+	dir = 4
+	},
 /obj/machinery/door/firedoor,
 /obj/structure/barricade/wooden/crude,
 /turf/open/floor/wood,
@@ -2638,7 +2600,7 @@
 /obj/machinery/recharger{
 	pixel_y = 4
 	},
-/obj/machinery/light/dim,
+/obj/machinery/light/dim/directional/south,
 /obj/structure/railing{
 	dir = 4
 	},
@@ -2757,13 +2719,11 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
-/obj/machinery/light/dim{
-	dir = 1
-	},
+/obj/machinery/light/dim/directional/north,
 /obj/structure/railing{
 	dir = 1
 	},
-/obj/item/radio/intercom{
+/obj/item/radio/intercom/directional/north{
 	pixel_x = 1;
 	pixel_y = 23
 	},
@@ -2798,10 +2758,7 @@
 "Ww" = (
 /obj/structure/closet/radiation,
 /obj/effect/turf_decal/industrial/warning,
-/obj/item/radio/intercom{
-	pixel_x = 1;
-	pixel_y = 23
-	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/powered)
 "WY" = (
@@ -2818,9 +2775,7 @@
 /turf/open/floor/plating,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "XB" = (
-/obj/machinery/light/dim{
-	dir = 8
-	},
+/obj/machinery/light/dim/directional/west,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/catwalk_floor,
 /area/ruin/powered)
@@ -2829,9 +2784,7 @@
 	dir = 1
 	},
 /obj/structure/bookcase/random,
-/obj/machinery/light/dim{
-	dir = 1
-	},
+/obj/machinery/light/dim/directional/north,
 /turf/open/floor/wood,
 /area/ruin/powered)
 "XR" = (
@@ -2842,9 +2795,7 @@
 /turf/open/floor/plasteel/dark,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Yg" = (
-/obj/machinery/light/dim{
-	dir = 4
-	},
+/obj/machinery/light/dim/directional/east,
 /obj/effect/turf_decal/corner/opaque/red/border{
 	dir = 4
 	},
@@ -2906,7 +2857,7 @@
 /obj/effect/turf_decal/corner/transparent/purple/border{
 	dir = 1
 	},
-/obj/item/radio/intercom{
+/obj/item/radio/intercom/directional/north{
 	pixel_x = 1;
 	pixel_y = 23
 	},
@@ -2925,10 +2876,7 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 1
 	},
-/obj/item/radio/intercom{
-	pixel_x = 1;
-	pixel_y = 23
-	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel,
 /area/ruin/powered)
 "ZC" = (
@@ -2974,9 +2922,7 @@
 /turf/open/floor/carpet/purple,
 /area/ruin/powered)
 "ZY" = (
-/obj/machinery/light/dim{
-	dir = 1
-	},
+/obj/machinery/light/dim/directional/north,
 /obj/structure/railing{
 	dir = 8
 	},
@@ -3641,7 +3587,7 @@ Dx
 cP
 cP
 cP
-Ne
+eI
 cP
 cP
 Ne

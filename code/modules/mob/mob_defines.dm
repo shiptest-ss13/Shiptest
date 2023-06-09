@@ -225,3 +225,6 @@
 
 	///Is the mob actively shifting?
 	var/shifting
+
+	/// Takes the four cardinal direction defines. Any atoms moving into this atom's tile will be allowed to from the added directions.
+	var/passthroughable = NONE

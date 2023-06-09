@@ -20,7 +20,6 @@ All ShuttleMove procs go here
 	if(!(. & MOVE_TURF))
 		return
 
-	var/shuttle_dir = shuttle.dir
 	for(var/i in contents)
 		var/atom/movable/thing = i
 		if(ismob(thing))
@@ -44,7 +43,7 @@ All ShuttleMove procs go here
 			if(istype(thing, /obj/singularity) && !istype(thing, /obj/singularity/narsie)) //it's a singularity but not a god, ignore it.
 				continue
 			if(!thing.anchored)
-				step(thing, shuttle_dir)
+				qdel(thing)
 			else
 				qdel(thing)
 
@@ -79,7 +78,7 @@ All ShuttleMove procs go here
 /turf/proc/afterShuttleMove(turf/oldT, rotation, list/all_towed_shuttles)
 	//Dealing with the turf we left behind
 	oldT.TransferComponents(src)
-
+	SEND_SIGNAL(oldT, COMSIG_TURF_AFTER_SHUTTLE_MOVE, src) //Mostly for decals
 	//find the boundary between the shuttle that left and what remains
 	var/area/ship/A = loc
 	var/obj/docking_port/mobile/top_shuttle = A?.mobile_port
