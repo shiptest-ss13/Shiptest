@@ -2419,6 +2419,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						old_part.drop_limb(TRUE)
 						qdel(old_part)
 					character.regenerate_limb(pros_limb, robotic = TRUE)
+	else
+		C.dna.blood_type
 
 	if(pref_species.id == "ipc") // If triggered, vox and kepori arms do not spawn in but ipcs sprites break without it as the code for setting the right prosthetics for them is in set_species().
 		character.set_species(chosen_species, icon_update = FALSE, pref_load = TRUE)

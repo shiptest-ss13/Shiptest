@@ -1776,7 +1776,7 @@
 /datum/sprite_accessory/tails/lizard/large
 	name = "Large"
 	icon_state = "large"
-	synthetic_icon_state = "large_synth"
+	synthetic_icon_state = "synth"
 
 /datum/sprite_accessory/tails_animated/lizard/large
 	name = "Large"
