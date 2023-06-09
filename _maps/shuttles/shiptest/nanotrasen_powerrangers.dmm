@@ -235,6 +235,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/starboard)
 "cR" = (
@@ -671,6 +674,9 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "ih" = (
@@ -916,7 +922,7 @@
 /obj/structure/chair/comfy/teal{
 	dir = 1
 	},
-/turf/open/floor/circuit/green/anim,
+/turf/open/floor/circuit/green/airless,
 /area/ship/engineering)
 "kS" = (
 /obj/effect/turf_decal/corner/opaque/blue/diagonal,
@@ -1133,7 +1139,7 @@
 	},
 /obj/item/wrench,
 /obj/item/stack/cable_coil/cyan,
-/turf/open/floor/circuit/green/anim,
+/turf/open/floor/circuit/green/airless,
 /area/ship/engineering)
 "oM" = (
 /obj/machinery/door/window/eastleft{
@@ -1967,7 +1973,7 @@
 /area/ship/crew)
 "Dr" = (
 /obj/structure/chair/comfy/teal,
-/turf/open/floor/circuit/green/anim,
+/turf/open/floor/circuit/green/airless,
 /area/ship/engineering)
 "Dx" = (
 /turf/open/floor/plasteel/dark,
@@ -2117,6 +2123,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "Gc" = (
@@ -2142,7 +2151,7 @@
 /obj/structure/AIcore,
 /obj/item/mmi/posibrain,
 /obj/item/circuitboard/aicore,
-/turf/open/floor/circuit/green/anim,
+/turf/open/floor/circuit/green/airless,
 /area/ship/engineering)
 "GC" = (
 /obj/effect/turf_decal/corner/opaque/blue/diagonal,
@@ -2284,7 +2293,7 @@
 /obj/item/radio/intercom/directional/west,
 /obj/structure/table/reinforced,
 /obj/item/aicard,
-/turf/open/floor/circuit/green/anim,
+/turf/open/floor/circuit/green/airless,
 /area/ship/engineering)
 "JO" = (
 /obj/structure/cable{
@@ -3039,7 +3048,7 @@
 /area/ship/engineering)
 "WJ" = (
 /obj/machinery/holopad,
-/turf/open/floor/circuit/green/anim,
+/turf/open/floor/circuit/green/airless,
 /area/ship/engineering)
 "WR" = (
 /turf/open/floor/plasteel/dark,
