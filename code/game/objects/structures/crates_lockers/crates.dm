@@ -147,7 +147,7 @@
 	new /obj/item/reagent_containers/glass/blood/OMinus(src)
 	new /obj/item/reagent_containers/glass/blood/OPlus(src)
 	new /obj/item/reagent_containers/glass/blood/lizard(src)
-	new /obj/item/reagent_containers/glass/blood/elzuosa(src)
+	new /obj/item/reagent_containers/glass/blood/elzuose(src)
 	new /obj/item/reagent_containers/glass/blood/synthetic(src)
 	for(var/i in 1 to 3)
 		new /obj/item/reagent_containers/glass/blood/random(src)

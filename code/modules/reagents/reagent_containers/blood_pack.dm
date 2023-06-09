@@ -65,7 +65,7 @@
 /obj/item/reagent_containers/glass/blood/lizard
 	blood_type = "L"
 
-/obj/item/reagent_containers/glass/blood/elzuosa
+/obj/item/reagent_containers/glass/blood/elzuose
 	blood_type = "E"
 
 /obj/item/reagent_containers/glass/blood/synthetic

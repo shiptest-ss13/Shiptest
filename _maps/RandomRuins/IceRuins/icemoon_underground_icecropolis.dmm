@@ -511,13 +511,6 @@
 "je" = (
 /turf/closed/mineral/random/high_chance/volcanic/icecropolis,
 /area/ruin/unpowered/icecropolis)
-"jE" = (
-/obj/structure/cable/blue{
-	icon_state = "0-8"
-	},
-/obj/machinery/power/apc/auto_name/north,
-/turf/open/floor/plating,
-/area/ruin/unpowered/icecropolis/rusty)
 "jK" = (
 /obj/structure/stone_tile/slab,
 /obj/structure/table/wood/fancy/royalblue,
@@ -846,13 +839,6 @@
 /obj/item/bedsheet/wiz,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/gold)
-"qr" = (
-/obj/item/spacecash/bundle/c1000,
-/obj/item/spacecash/bundle/c1000,
-/obj/item/spacecash/bundle/c1000,
-/obj/item/clothing/mask/fakemoustache/italian,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
-/area/ruin/unpowered/icecropolis/reach)
 "qA" = (
 /obj/effect/decal/cleanable/blood/gibs/core,
 /turf/open/floor/mineral/gold,
@@ -1094,6 +1080,10 @@
 	},
 /turf/open/lava,
 /area/ruin/unpowered/icecropolis)
+"uL" = (
+/obj/item/radio/intercom/wideband/directional/east,
+/turf/open/floor/wood/icecropolis,
+/area/ruin/unpowered/icecropolis/russia)
 "uO" = (
 /obj/structure/table_frame,
 /obj/item/table_bell/brass,
@@ -1227,6 +1217,13 @@
 /obj/structure/bookcase/random/fiction,
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis)
+"xf" = (
+/obj/structure/cable/blue{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/apc/auto_name/directional/north,
+/turf/open/floor/wood/icecropolis,
+/area/ruin/unpowered/icecropolis/russia)
 "xx" = (
 /obj/structure/stone_tile/slab/cracked,
 /obj/structure/table/wood/fancy/red_gold,
@@ -1636,6 +1633,13 @@
 /obj/structure/barricade/wooden,
 /turf/open/indestructible/necropolis/air,
 /area/ruin/unpowered/icecropolis)
+"EV" = (
+/obj/structure/cable/blue{
+	icon_state = "0-8"
+	},
+/obj/machinery/power/apc/auto_name/directional/north,
+/turf/open/floor/plating,
+/area/ruin/unpowered/icecropolis/rusty)
 "EX" = (
 /obj/structure/table/wood/reinforced,
 /obj/effect/spawner/lootdrop/pizzaparty,
@@ -1678,6 +1682,13 @@
 /obj/item/grenade/chem_grenade/cleaner,
 /turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/russia)
+"FK" = (
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/clothing/mask/fakemoustache/italian,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
+/area/ruin/unpowered/icecropolis/reach)
 "FN" = (
 /obj/item/rcd_ammo,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
@@ -1849,23 +1860,6 @@
 /obj/structure/table/reinforced,
 /turf/open/floor/plating,
 /area/ruin/unpowered/icecropolis/rusty)
-"Ig" = (
-/obj/structure/stone_tile/slab,
-/obj/structure/closet/cabinet{
-	desc = "A wooden cabinet with an engraving stating, Things for Humanoids.";
-	name = "Things for Humanoids"
-	},
-/obj/item/stock_parts/cell/hyper/empty,
-/obj/item/reagent_containers/food/drinks/bottle/cognac,
-/obj/item/reagent_containers/food/condiment/mayonnaise,
-/obj/item/reagent_containers/food/snacks/chocolatebar,
-/obj/item/spacecash/bundle/c10,
-/obj/item/tank/internals/emergency_oxygen/double,
-/obj/item/tank/internals/plasmaman/belt,
-/obj/item/toy/plush/plushvar,
-/obj/item/toy/plush/among,
-/turf/open/indestructible/boss/air,
-/area/ruin/unpowered/icecropolis)
 "Ik" = (
 /obj/structure/fluff/drake_statue,
 /obj/structure/stone_tile/slab,
@@ -1884,13 +1878,6 @@
 /obj/effect/decal/cleanable/blood/gibs/core,
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis)
-"Ip" = (
-/obj/item/radio/intercom/wideband{
-	dir = 8;
-	pixel_x = 28
-	},
-/turf/open/floor/wood/icecropolis,
-/area/ruin/unpowered/icecropolis/russia)
 "Iq" = (
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/dirt,
@@ -2304,13 +2291,6 @@
 	},
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/ruin/unpowered/icecropolis/outside)
-"PT" = (
-/obj/structure/cable/blue{
-	icon_state = "0-2"
-	},
-/obj/machinery/power/apc/auto_name/north,
-/turf/open/floor/wood/icecropolis,
-/area/ruin/unpowered/icecropolis/russia)
 "PV" = (
 /obj/item/guardiancreator/choose,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
@@ -2499,6 +2479,23 @@
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/reach)
+"Te" = (
+/obj/structure/stone_tile/slab,
+/obj/structure/closet/cabinet{
+	desc = "A wooden cabinet with an engraving stating, Things for Humanoids.";
+	name = "Things for Humanoids"
+	},
+/obj/item/stock_parts/cell/hyper/empty,
+/obj/item/reagent_containers/food/drinks/bottle/cognac,
+/obj/item/reagent_containers/food/condiment/mayonnaise,
+/obj/item/reagent_containers/food/snacks/chocolatebar,
+/obj/item/spacecash/bundle/c10,
+/obj/item/tank/internals/emergency_oxygen/double,
+/obj/item/tank/internals/plasmaman/belt,
+/obj/item/toy/plush/plushvar,
+/obj/item/toy/plush/among,
+/turf/open/indestructible/boss/air,
+/area/ruin/unpowered/icecropolis)
 "Tf" = (
 /obj/structure/stone_tile/slab,
 /turf/open/indestructible/boss/air,
@@ -4050,7 +4047,7 @@ tA
 je
 je
 VV
-Ig
+Te
 VU
 VU
 VU
@@ -5056,7 +5053,7 @@ ph
 tA
 tA
 zN
-Ip
+uL
 mu
 aM
 tA
@@ -5174,7 +5171,7 @@ in
 sa
 Bs
 sa
-PT
+xf
 Ut
 in
 tA
@@ -7505,7 +7502,7 @@ fE
 jV
 nE
 li
-jE
+EV
 Ur
 Od
 li
@@ -8953,7 +8950,7 @@ nE
 jV
 fE
 iV
-qr
+FK
 iV
 Vk
 ge

@@ -1,4 +1,14 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ad" = (
+/obj/structure/grille,
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "pirateshutters";
+	name = "Blast Shutters"
+	},
+/obj/structure/window/plasma/reinforced/plastitanium,
+/turf/open/floor/plating,
+/area/ship/bridge)
 "au" = (
 /obj/structure/frame/computer,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -28,10 +38,7 @@
 	pixel_x = -25;
 	pixel_y = 5
 	},
-/obj/machinery/light/small{
-	dir = 8;
-	pixel_y = -10
-	},
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/pod/light,
 /area/ship/bridge)
 "bb" = (
@@ -39,18 +46,9 @@
 	dir = 1
 	},
 /obj/structure/railing,
-/obj/item/radio/intercom/wideband{
-	dir = 8;
-	pixel_x = 22;
-	pixel_y = 10
-	},
-/obj/item/radio/intercom{
-	dir = 8;
-	pixel_x = 22;
-	pixel_y = -10
-	},
 /obj/effect/landmark/start/captain,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/radio/intercom/wideband/directional/east,
 /turf/open/floor/pod/light,
 /area/ship/bridge)
 "br" = (
@@ -129,10 +127,7 @@
 /area/ship/cargo)
 "fi" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/machinery/airalarm/all_access{
-	dir = 4;
-	pixel_x = -25
-	},
+/obj/machinery/airalarm/directional/west,
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
@@ -147,7 +142,7 @@
 	dir = 1
 	},
 /obj/effect/landmark/start/head_of_personnel,
-/obj/machinery/power/apc/auto_name/east,
+/obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -211,6 +206,7 @@
 "kK" = (
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
+	dir = 4;
 	id = "pirateshutters";
 	name = "Blast Shutters"
 	},
@@ -241,15 +237,13 @@
 	pixel_x = 15;
 	pixel_y = 26
 	},
-/obj/item/radio/intercom{
-	pixel_y = 22
-	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security)
 "mJ" = (
@@ -258,9 +252,7 @@
 /obj/structure/cable{
 	icon_state = "4-6"
 	},
-/obj/structure/extinguisher_cabinet{
-	pixel_y = 32
-	},
+/obj/structure/extinguisher_cabinet/directional/north,
 /obj/effect/landmark/start/security_officer,
 /turf/open/floor/pod/light,
 /area/ship/security)
@@ -312,7 +304,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -334,15 +326,14 @@
 	pixel_x = -15;
 	pixel_y = 26
 	},
-/obj/item/radio/intercom{
-	pixel_y = 22
-	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
+/obj/item/radio/intercom/directional/north,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security)
 "nQ" = (
@@ -364,6 +355,7 @@
 "nW" = (
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
+	dir = 4;
 	id = "pirateshutters";
 	name = "Blast Shutters"
 	},
@@ -384,10 +376,7 @@
 /turf/open/floor/engine/hull,
 /area/ship/external)
 "pm" = (
-/obj/machinery/light/small{
-	dir = 8;
-	pixel_y = 12
-	},
+/obj/machinery/light/small/directional/west,
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 8
 	},
@@ -419,10 +408,6 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security)
 "pS" = (
-/obj/machinery/light/small{
-	dir = 4;
-	pixel_y = 12
-	},
 /obj/item/storage/box{
 	icon_state = "lethalshot_box";
 	name = "dusty shotshell box"
@@ -457,6 +442,15 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security)
+"qh" = (
+/obj/docking_port/stationary{
+	dwidth = 4;
+	width = 8;
+	height = 15;
+	dir = 8
+	},
+/turf/template_noop,
+/area/template_noop)
 "qP" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
@@ -471,6 +465,9 @@
 	dir = 8
 	},
 /obj/structure/catwalk/over,
+/obj/effect/turf_decal/number/two{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/security)
 "rc" = (
@@ -510,9 +507,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security)
 "rL" = (
-/obj/machinery/light/small{
-	dir = 8
-	},
+/obj/machinery/light/small/directional/west,
 /obj/effect/turf_decal/industrial/stand_clear{
 	dir = 1
 	},
@@ -523,10 +518,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ship/cargo)
 "sc" = (
-/obj/machinery/airalarm/all_access{
-	dir = 1;
-	pixel_y = -25
-	},
+/obj/machinery/airalarm/directional/south,
 /obj/item/clothing/suit/space/orange,
 /obj/item/clothing/mask/breath,
 /obj/item/tank/internals/oxygen,
@@ -555,6 +547,9 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/catwalk/over,
+/obj/effect/turf_decal/number/zero{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/security)
 "sx" = (
@@ -565,19 +560,14 @@
 /obj/machinery/status_display/shuttle{
 	pixel_y = -32
 	},
-/obj/machinery/light/small{
-	pixel_x = -12
-	},
+/obj/machinery/light/small/directional/south,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 10
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security)
 "sI" = (
-/obj/machinery/firealarm{
-	dir = 1;
-	pixel_y = -25
-	},
+/obj/machinery/firealarm/directional/south,
 /obj/item/kitchen/knife/hunting{
 	pixel_y = 5
 	},
@@ -634,6 +624,7 @@
 /area/ship/crew)
 "ui" = (
 /obj/machinery/door/airlock/hatch{
+	dir = 4;
 	name = "External Access Hatch"
 	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
@@ -642,7 +633,7 @@
 /turf/open/floor/pod/light,
 /area/ship/crew)
 "uo" = (
-/obj/machinery/light/small,
+/obj/machinery/light/small/directional/south,
 /obj/machinery/atmospherics/components/unary/vent_pump/siphon/layer4{
 	dir = 4
 	},
@@ -676,6 +667,7 @@
 /area/ship/crew)
 "vo" = (
 /obj/machinery/door/airlock/hatch{
+	dir = 4;
 	name = "External Access Hatch"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -705,8 +697,21 @@
 	location = "forward"
 	},
 /obj/structure/catwalk/over,
+/obj/effect/turf_decal/number/five{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/crew)
+"vN" = (
+/obj/structure/grille,
+/obj/machinery/door/poddoor/shutters{
+	id = "pirateshutters";
+	name = "Blast Shutters";
+	dir = 4
+	},
+/obj/structure/window/plasma/reinforced/plastitanium,
+/turf/open/floor/plating,
+/area/ship/bridge)
 "vW" = (
 /obj/structure/table,
 /obj/machinery/microwave{
@@ -725,6 +730,7 @@
 /obj/machinery/door/window/southright,
 /obj/structure/curtain/bounty,
 /obj/effect/decal/cleanable/vomit/old,
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/pod/light,
 /area/ship/crew)
 "wP" = (
@@ -782,6 +788,7 @@
 "za" = (
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
+	dir = 4;
 	id = "pirateshutters";
 	name = "Blast Shutters"
 	},
@@ -802,9 +809,7 @@
 	},
 /obj/item/healthanalyzer,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light/small{
-	dir = 8
-	},
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/pod/light,
 /area/ship/crew)
 "zR" = (
@@ -836,6 +841,9 @@
 	},
 /obj/effect/landmark/observer_start,
 /obj/structure/catwalk/over,
+/obj/effect/turf_decal/miskilamo_small/right{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/crew)
 "AL" = (
@@ -843,7 +851,7 @@
 /obj/effect/spawner/lootdrop/donkpockets,
 /obj/effect/spawner/lootdrop/donkpockets,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
-/obj/item/radio/intercom,
+/obj/item/radio/intercom/directional/north,
 /obj/item/lighter{
 	pixel_x = 14
 	},
@@ -876,9 +884,6 @@
 "Bw" = (
 /obj/effect/spawner/lootdrop/minor/pirate_or_bandana,
 /obj/effect/spawner/lootdrop/minor/pirate_or_bandana,
-/obj/machinery/light/small{
-	dir = 4
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/clothing/shoes/jackboots,
 /obj/item/clothing/shoes/jackboots,
@@ -932,6 +937,9 @@
 	dir = 8
 	},
 /obj/structure/catwalk/over,
+/obj/effect/turf_decal/miskilamo_small{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/crew)
 "Cj" = (
@@ -973,10 +981,7 @@
 /area/ship/hallway/starboard)
 "Df" = (
 /obj/structure/reagent_dispensers/watertank,
-/obj/item/radio/intercom{
-	dir = 4;
-	pixel_x = -22
-	},
+/obj/item/radio/intercom/directional/west,
 /turf/open/floor/pod/light,
 /area/ship/cargo)
 "DG" = (
@@ -1021,9 +1026,7 @@
 /obj/machinery/defibrillator_mount/loaded{
 	pixel_y = -32
 	},
-/obj/machinery/light/small{
-	dir = 8
-	},
+/obj/machinery/light/small/directional/west,
 /obj/effect/turf_decal/industrial/outline,
 /turf/open/floor/pod/light,
 /area/ship/crew)
@@ -1045,7 +1048,7 @@
 /obj/effect/turf_decal/siding{
 	dir = 4
 	},
-/obj/machinery/power/apc/auto_name/south,
+/obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable,
 /turf/open/floor/pod/light,
 /area/ship/crew)
@@ -1061,6 +1064,9 @@
 	icon_state = "2-9"
 	},
 /obj/structure/catwalk/over,
+/obj/effect/turf_decal/miskilamo_small/left{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/crew)
 "Ey" = (
@@ -1075,7 +1081,7 @@
 	dir = 4
 	},
 /obj/structure/curtain/bounty,
-/obj/machinery/computer/cryopod{
+/obj/machinery/computer/cryopod/directional/north{
 	pixel_y = -25
 	},
 /turf/open/floor/pod/light,
@@ -1083,16 +1089,10 @@
 "EH" = (
 /obj/structure/bed,
 /obj/structure/curtain/bounty,
-/obj/machinery/airalarm/all_access{
-	dir = 1;
-	pixel_y = -25
-	},
+/obj/machinery/airalarm/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/bedsheet/brown,
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = 26
-	},
+/obj/machinery/firealarm/directional/west,
 /turf/open/floor/pod/light,
 /area/ship/crew)
 "Fx" = (
@@ -1129,7 +1129,7 @@
 	icon_state = "2-4"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -1178,19 +1178,13 @@
 /area/ship/cargo)
 "Id" = (
 /obj/structure/railing,
-/obj/item/radio/intercom{
-	pixel_y = 22
-	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/pod/light,
 /area/ship/cargo)
 "Ie" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/extinguisher_cabinet{
-	pixel_x = 32
-	},
-/obj/machinery/airalarm/all_access{
-	pixel_y = 25
-	},
+/obj/machinery/airalarm/directional/north,
+/obj/structure/extinguisher_cabinet/directional/east,
 /turf/open/floor/pod/light,
 /area/ship/cargo)
 "IF" = (
@@ -1319,7 +1313,7 @@
 /area/ship/hallway/port)
 "Mp" = (
 /obj/machinery/atmospherics/components/binary/pump/on/layer2,
-/obj/machinery/power/apc/auto_name/east,
+/obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -1339,9 +1333,7 @@
 /obj/structure/sign/poster/contraband/random{
 	pixel_x = -32
 	},
-/obj/machinery/light/small{
-	dir = 8
-	},
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/pod/light,
 /area/ship/cargo)
 "Nq" = (
@@ -1384,14 +1376,12 @@
 /obj/structure/sign/warning/nosmoking{
 	pixel_x = 32
 	},
-/obj/machinery/light/small{
-	dir = 4
-	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/pod/light,
 /area/ship/cargo)
 "Ol" = (
 /obj/machinery/atmospherics/components/binary/pump/on/layer2,
-/obj/machinery/power/apc/auto_name/west,
+/obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -1413,13 +1403,7 @@
 /obj/machinery/power/smes/engineering{
 	charge = 1e+006
 	},
-/obj/machinery/light/small{
-	dir = 8
-	},
-/obj/item/radio/intercom{
-	dir = 4;
-	pixel_x = -22
-	},
+/obj/machinery/light/small/directional/west,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -1450,6 +1434,7 @@
 /area/ship/hallway/port)
 "Py" = (
 /obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4;
 	name = "Port Engines"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -1484,6 +1469,7 @@
 /area/ship/hallway/port)
 "QO" = (
 /obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4;
 	name = "Port Engines"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -1647,6 +1633,7 @@
 /area/ship/cargo)
 "Ty" = (
 /obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4;
 	name = "Starboard Engines"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -1690,6 +1677,7 @@
 /area/ship/hallway/starboard)
 "Ut" = (
 /obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4;
 	name = "Starboard Engines"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -1732,13 +1720,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/machinery/light/small{
-	dir = 4
-	},
-/obj/item/radio/intercom{
-	dir = 8;
-	pixel_x = 22
-	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/plating,
 /area/ship/hallway/starboard)
 "Vp" = (
@@ -1757,6 +1739,7 @@
 /obj/item/storage/toolbox/electrical,
 /obj/item/multitool,
 /obj/item/clothing/glasses/welding,
+/obj/item/radio/intercom/directional/west,
 /turf/open/floor/plating,
 /area/ship/hallway/port)
 "VC" = (
@@ -1772,10 +1755,7 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/obj/machinery/airalarm/all_access{
-	dir = 8;
-	pixel_x = 25
-	},
+/obj/machinery/airalarm/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ship/hallway/port)
@@ -1877,10 +1857,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/airalarm/all_access{
-	dir = 4;
-	pixel_x = -25
-	},
+/obj/machinery/airalarm/directional/west,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ship/hallway/starboard)
@@ -1897,6 +1874,7 @@
 /obj/structure/cable{
 	icon_state = "8-10"
 	},
+/obj/item/radio/intercom/directional/east,
 /turf/open/floor/plating{
 	icon_state = "platingdmg3"
 	},
@@ -1922,9 +1900,7 @@
 /turf/open/floor/plating,
 /area/ship/hallway/port)
 "ZB" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
+/obj/machinery/light/small/directional/east,
 /obj/effect/turf_decal/industrial/stand_clear{
 	dir = 1
 	},
@@ -2028,7 +2004,7 @@ XJ
 XJ
 XJ
 XJ
-XJ
+qh
 XJ
 XJ
 XJ
@@ -2125,10 +2101,10 @@ FF
 Fx
 "}
 (8,1,1) = {"
-XB
-XB
+vN
+ad
 Bb
-XB
+ad
 Bb
 iA
 mJ
@@ -2206,10 +2182,10 @@ rc
 TP
 "}
 (11,1,1) = {"
-XB
-XB
+vN
+ad
 Bb
-XB
+ad
 Bb
 iA
 nB

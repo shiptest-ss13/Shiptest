@@ -534,6 +534,6 @@
 		/obj/item/reagent_containers/glass/blood/OMinus = 1,
 		/obj/item/reagent_containers/glass/blood/OPlus = 1,
 		/obj/item/reagent_containers/glass/blood/lizard = 1,
-		/obj/item/reagent_containers/glass/blood/elzuosa = 1,
+		/obj/item/reagent_containers/glass/blood/elzuose = 1,
 		/obj/item/reagent_containers/glass/blood/synthetic = 1,
 		/obj/item/reagent_containers/glass/blood/random = 5)

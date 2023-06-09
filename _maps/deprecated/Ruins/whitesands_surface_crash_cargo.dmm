@@ -261,9 +261,7 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/obj/machinery/firealarm{
-	pixel_y = 25
-	},
+/obj/machinery/firealarm/directional/north,
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/table,
 /obj/machinery/cell_charger,
@@ -368,10 +366,7 @@
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/firealarm{
-	dir = 8;
-	pixel_x = -26
-	},
+/obj/machinery/firealarm/directional/east,
 /obj/effect/turf_decal/industrial/traffic/corner{
 	dir = 8
 	},
@@ -488,9 +483,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/light/small/built{
-	dir = 1
-	},
+/obj/machinery/light/small/built/directional/north,
 /obj/machinery/atmospherics/components/unary/vent_pump/layer1{
 	dir = 4
 	},
@@ -630,25 +623,16 @@
 	},
 /area/whitesands/surface/outdoors)
 "OM" = (
-/obj/machinery/light/built{
-	dir = 4
-	},
+/obj/machinery/light/built/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = 25
-	},
+/obj/machinery/firealarm/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/whitesands/surface/outdoors)
 "Po" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/airalarm/all_access{
-	pixel_y = 25
-	},
-/obj/machinery/light/small/built{
-	dir = 1
-	},
+/obj/machinery/airalarm/directional/north,
+/obj/machinery/light/small/built/directional/north,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
 	dir = 4
 	},
@@ -767,9 +751,7 @@
 /turf/open/floor/plasteel/dark,
 /area/whitesands/surface/outdoors)
 "Wv" = (
-/obj/machinery/light/built{
-	dir = 8
-	},
+/obj/machinery/light/built/directional/west,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable{
