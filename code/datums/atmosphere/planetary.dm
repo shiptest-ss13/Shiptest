@@ -87,3 +87,28 @@
 		GAS_PLASMA=0.1,
 	)
 	restricted_chance = 1
+
+/datum/atmosphere/wasteplanet
+	id = WASTEPLANET_DEFAULT_ATMOS
+
+
+	base_gases = list(
+		GAS_O2=7,
+		GAS_N2=10,
+	)
+	normal_gases = list(
+		GAS_O2=7,
+		GAS_O2=3,
+		GAS_N2=5,
+		GAS_N2=2
+	)
+	restricted_gases = list(
+		GAS_H2O=1,
+	)
+	restricted_chance = 10
+
+	minimum_pressure = ONE_ATMOSPHERE - 30
+	maximum_pressure = ONE_ATMOSPHERE + 100
+
+	minimum_temp = T20C + 1
+	maximum_temp = T20C + 80
