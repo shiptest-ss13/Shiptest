@@ -314,7 +314,7 @@
 	feature_spawn_list = list(
 		/obj/effect/radiation/waste = 30,
 		/obj/effect/radiation/waste/intense = 10,
-		/obj/structure/geyser/random = 1
+		/obj/structure/geyser/random = 1,
 		/obj/effect/spawner/lootdrop/anomaly/waste = 3
 	)
 	mob_spawn_list = list(
