@@ -1017,6 +1017,7 @@ DEFINE_BITFIELD(turret_flags, list(
 	icon_state = "apc"
 	result_path = /obj/machinery/turretid
 	custom_materials = list(/datum/material/iron=MINERAL_MATERIAL_AMOUNT)
+	inverse_pixel_shift = TRUE
 
 /obj/item/gun/proc/get_turret_properties()
 	. = list()

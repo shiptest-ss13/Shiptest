@@ -1247,6 +1247,16 @@ Nothing else in the console has ID requirements.
 	req_access = null
 	req_access_txt = "29"
 
+/obj/machinery/computer/rdconsole/robotics/retro
+	icon = 'icons/obj/machines/retro_computer.dmi'
+	icon_state = "computer-retro"
+	deconpath = /obj/structure/frame/computer/retro
+
+/obj/machinery/computer/rdconsole/robotics/solgov
+	icon = 'icons/obj/machines/retro_computer.dmi'
+	icon_state = "computer-solgov"
+	deconpath = /obj/structure/frame/computer/solgov
+
 /obj/machinery/computer/rdconsole/robotics/Initialize()
 	. = ..()
 	if(circuit)
