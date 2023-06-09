@@ -75,7 +75,7 @@
 		Guy.throw_at(target, 5, 1)
 		boing = 0
 		if(iscarbon(Guy))
-			for(var/mob/living/carbon/carbon)
+			for(var/mob/living/carbon/carbon in range(0,src))
 				if(carbon.run_armor_check(attack_flag = "melee") >= 20)
 					carbon.break_random_bone()
 				else if(carbon.run_armor_check(attack_flag = "melee") >= 40)
