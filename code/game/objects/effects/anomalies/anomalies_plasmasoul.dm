@@ -19,8 +19,8 @@
 		if(iscarbon(Mob))
 			var/mob/living/carbon/carbon = Mob
 			carbon.reagents?.add_reagent(/datum/reagent/toxin/plasma, reagent_amount)
-			to_chat(mob, span_warning("Your blood feels thick.."))
-			playsound(mob, 'sound/effects/bubbles.ogg', 50)
+			to_chat(Mob, span_warning("Your blood feels thick.."))
+			playsound(Mob, 'sound/effects/bubbles.ogg', 50)
 
 
 	if(!COOLDOWN_FINISHED(src, pulse_secondary_cooldown))
