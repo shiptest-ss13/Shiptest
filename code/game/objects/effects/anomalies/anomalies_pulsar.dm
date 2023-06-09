@@ -5,7 +5,7 @@
 	density = TRUE
 	aSignal = /obj/item/assembly/signaler/anomaly/pulsar
 	effectrange = 4
-	pulse_delay = 15
+	pulse_delay = 15 SECONDS
 
 
 /obj/effect/anomaly/pulsar/anomalyEffect()

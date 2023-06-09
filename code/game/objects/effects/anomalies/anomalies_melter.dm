@@ -3,7 +3,7 @@
 	icon_state = "inferno"
 	desc = "A mysterious anomaly. Everburning green flames with a horrid sizzle, melting what's near"
 	effectrange = 2
-	pulse_delay = 10
+	pulse_delay = 10 SECONDS
 	aSignal = /obj/item/assembly/signaler/anomaly/pyro
 
 /obj/effect/anomaly/melter/anomalyEffect(seconds_per_tick)

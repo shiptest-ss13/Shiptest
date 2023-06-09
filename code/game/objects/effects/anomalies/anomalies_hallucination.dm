@@ -6,7 +6,7 @@
 	/// Time passed since the last effect, increased by delta_time of the SSobj
 	var/ticks = 0
 	/// How many seconds between each small hallucination pulses
-	pulse_delay = 5
+	pulse_delay = 5 SECONDS
 	effectrange = 5
 
 /obj/effect/anomaly/hallucination/anomalyEffect(delta_time)

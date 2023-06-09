@@ -5,7 +5,7 @@
 	density = TRUE
 	aSignal = /obj/item/assembly/signaler/anomaly/sparkler
 	effectrange = 4
-	pulse_delay = 1
+	pulse_delay = 1 SECONDS
 
 /obj/effect/anomaly/sparkler/anomalyEffect()
 	..()

@@ -5,7 +5,7 @@
 	density = FALSE
 	aSignal = /obj/item/assembly/signaler/anomaly/phantom
 	effectrange = 3
-	pulse_delay = 5
+	pulse_delay = 5 SECONDS
 
 
 /obj/effect/anomaly/phantom/anomalyEffect()

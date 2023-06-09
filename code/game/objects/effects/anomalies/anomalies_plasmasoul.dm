@@ -5,8 +5,8 @@
 	density = TRUE
 	aSignal = /obj/item/assembly/signaler/anomaly/plasmasoul
 	effectrange = 3
-	pulse_cooldown = 6
-	pulse_secondary_cooldown = 18
+	pulse_cooldown = 6 SECONDS
+	pulse_secondary_cooldown = 18 SECONDS
 	var/reagent_amount = 5
 
 /obj/effect/anomaly/plasmasoul/anomalyEffect()

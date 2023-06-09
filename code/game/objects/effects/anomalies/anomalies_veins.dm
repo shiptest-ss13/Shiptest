@@ -5,7 +5,7 @@
 	density = TRUE
 	aSignal = /obj/item/assembly/signaler/anomaly/veins
 	effectrange = 3
-	pulse_delay = 4
+	pulse_delay = 4 SECONDS
 
 
 /obj/effect/anomaly/veins/anomalyEffect()

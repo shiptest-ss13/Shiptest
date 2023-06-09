@@ -4,7 +4,7 @@
 	desc = "A mysterious anomaly that sends out a near constant stream of electrical arcs."
 	density = TRUE
 	aSignal = /obj/item/assembly/signaler/anomaly/flux
-	pulse_delay = 4
+	pulse_delay = 4 SECONDS
 	effectrange = 0
 	var/canshock = FALSE
 	var/shockdamage = 20

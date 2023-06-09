@@ -4,7 +4,7 @@
 	icon_state = "pyroclastic"
 	desc = "A mysterious anomaly, made of an everburning gas. Those who approach it tend to absorb it's heat, or even ignite."
 	effectrange = 4
-	pulse_delay = 10
+	pulse_delay = 10 SECONDS
 	aSignal = /obj/item/assembly/signaler/anomaly/pyro
 
 /obj/effect/anomaly/pyro/anomalyEffect(seconds_per_tick)

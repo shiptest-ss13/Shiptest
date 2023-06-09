@@ -90,11 +90,6 @@
 	M.client.screen -= blueeffect
 	qdel(blueeffect)
 
-/obj/effect/anomaly/bluespace/stabilize(anchor, has_core)
-	. = ..()
-
-	effectrange = 0 //bumping already teleports, so this just prevents people from being teleported when they don't expect it when interacting with stable bsanoms
-
 /obj/effect/anomaly/bluespace/big
 	immortal = TRUE
 	effectrange = 4
