@@ -70,18 +70,18 @@ ENABLE_LOCALHOST_RANK
 
 ## Unhash this to track player playtime in the database. Requires database to be enabled.
 ## Playtime requirements for ship spawning and job selection is ignored unless this is enabled.
-#USE_EXP_TRACKING
+USE_EXP_TRACKING
 ## Allows admins to bypass job and ship playtime requirements.
 #USE_EXP_RESTRICTIONS_ADMIN_BYPASS
 
 ## The "base" minimum number of minutes as living to spawn a ship from the join menu.
 ## Ships may have differing true values depending on the template's coefficient, defined in JSON.
 ## The ship spawn playtime restriction is the ONLY restriction that applies for ship spawning.
-#SHIP_SPAWN_BASE_EXP_MIN 600
+SHIP_SPAWN_BASE_EXP_MIN 600
 ## The "base" minimum number of minutes as living to spawn into an officer job.
 ## Ships may have differing true values depending on the template's coefficient, defined in JSON.
 ## Once the ship has been spawned, this restriction will apply for any officer job being joined on a ship.
-#OFFICER_JOIN_BASE_EXP_MIN 300
+OFFICER_JOIN_BASE_EXP_MIN 300
 
 ## log OOC channel
 LOG_OOC

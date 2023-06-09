@@ -182,7 +182,7 @@
 /datum/map_template/shuttle/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
-		ui = new(user, src, "ShipEditor") // ? test playtime restriction modification
+		ui = new(user, src, "ShipEditor")
 		ui.open()
 
 /datum/map_template/shuttle/ui_static_data(mob/user)

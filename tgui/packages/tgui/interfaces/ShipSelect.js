@@ -152,9 +152,9 @@ export const ShipSelect = (props, context) => {
                     <Table.Cell>{job.slots}</Table.Cell>
                     <Table.Cell>
                       {
-                        ((job.minTime > 0) &&
-                          job.minTime + 'm ' +
-                          ((data.playMin < template.minTime && '(Unmet)') ||
+                        ((job.minTime > 0) && (
+                          job.minTime.toString() + 'm ' +
+                          ((data.playMin < job.minTime) && '(Unmet)') ||
                             '(Met)'
                         )) || '-'
                       }
@@ -191,11 +191,12 @@ export const ShipSelect = (props, context) => {
                 title={template.name}
                 key={template.name}
                 color={
-                  ((template.curNum >= template.limit ||
-                  data.playMin < template.minTime) &&
-                    'bad'
-                  ) || ((!data.shipSpawnAllowed) &&
+                  ((!data.shipSpawnAllowed) &&
                     'average'
+                  ) || (
+                    (template.curNum >= template.limit ||
+                    data.playMin < template.minTime) &&
+                    'bad'
                   ) || (
                     'default'
                   )

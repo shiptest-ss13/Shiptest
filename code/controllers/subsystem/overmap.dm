@@ -396,7 +396,7 @@ SUBSYSTEM_DEF(overmap)
 /datum/controller/subsystem/overmap/proc/get_num_cap_ships()
 	var/ship_count = 0
 	for(var/datum/overmap/ship/controlled/Ship as anything in controlled_ships)
-		if(!Ship.source_template || Ship.source_template.category != "subshuttles") // ? stupid fucking way of checking, document
+		if(!Ship.source_template || Ship.source_template.category != "subshuttles")
 			ship_count++
 	return ship_count
 

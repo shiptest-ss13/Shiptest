@@ -69,8 +69,6 @@
 				spawnee.new_player_panel()
 				ui.close()
 				return
-			// ? tidy up
-			// ui.close()
 
 			var/datum/map_template/shuttle/template = SSmapping.ship_purchase_list[params["name"]]
 			if(!SSovermap.player_ship_spawn_allowed())
@@ -78,7 +76,6 @@
 				return
 			if(!template.enabled)
 				to_chat(spawnee, "<span class='danger'>This ship is not currently available for purchase!</span>")
-				// spawnee.new_player_panel()
 				return
 			if(!template.has_ship_spawn_playtime(spawnee.client))
 				to_chat(spawnee, "<span class='danger'>You do not have enough playtime to spawn this ship!</span>")

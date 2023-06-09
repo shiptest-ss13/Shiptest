@@ -216,7 +216,6 @@ SUBSYSTEM_DEF(mapping)
 			S.job_slots[job_slot] = slots
 		if(isnum(data["limit"]))
 			S.limit = data["limit"]
-		// ? test alt values in JSON
 		if(isnum(data["spawn_time_coeff"]))
 			S.spawn_time_coeff = data["spawn_time_coeff"]
 		if(isnum(data["officer_time_coeff"]))

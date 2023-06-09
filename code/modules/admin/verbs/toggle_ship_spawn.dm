@@ -2,7 +2,7 @@ GLOBAL_VAR_INIT(ship_spawn_enabled, TRUE)
 
 /client/proc/toggle_ship_spawn()
 	set name = "Toggle Ship Spawn"
-	set category = "Admin"
+	set category = "Server"
 	set desc = "Toggles the ability of players to create ships via the roundstart screen or shuttle creator."
 
 	if(!holder)
