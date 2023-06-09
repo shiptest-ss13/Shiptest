@@ -112,6 +112,8 @@
 	var/clean_speedies = cleanspeed * min(user.mind.get_skill_modifier(/datum/skill/cleaning, SKILL_SPEED_MODIFIER)+0.1,1) //less scaling for soapies
 	//I couldn't feasibly  fix the overlay bugs caused by cleaning items we are wearing.
 	//So this is a workaround. This also makes more sense from an IC standpoint. ~Carn
+	target.add_overlay(GLOB.cleaning_bubbles)
+	playsound(src, 'sound/misc/slip.ogg', 15, TRUE, -14)
 	if(user.client && ((target in user.client.screen) && !user.is_holding(target)))
 		to_chat(user, "<span class='warning'>You need to take that [target.name] off before cleaning it!</span>")
 	else if(istype(target, /obj/effect/decal/cleanable))
@@ -130,7 +132,6 @@
 			user?.mind.adjust_experience(/datum/skill/cleaning, CLEAN_SKILL_GENERIC_WASH_XP)
 			H.update_lips(null)
 		decreaseUses(user)
-		return
 	else if(istype(target, /obj/structure/window))
 		user.visible_message("<span class='notice'>[user] begins to clean \the [target.name] with [src]...</span>", "<span class='notice'>You begin to clean \the [target.name] with [src]...</span>")
 		if(do_after(user, clean_speedies, target = target))
@@ -150,6 +151,7 @@
 			target.remove_atom_colour(WASHABLE_COLOUR_PRIORITY)
 			user?.mind.adjust_experience(/datum/skill/cleaning, CLEAN_SKILL_GENERIC_WASH_XP)
 			decreaseUses(user)
+	target.cut_overlay(GLOB.cleaning_bubbles)
 	return
 
 
@@ -227,7 +229,6 @@
 				continue
 		M.emote("flip")
 	flip_cooldown = world.time + 7
-
 //canned laughter
 /obj/item/reagent_containers/food/drinks/soda_cans/canned_laughter
 	name = "Canned Laughter"
