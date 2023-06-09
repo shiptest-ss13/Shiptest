@@ -20,10 +20,6 @@
 /obj/effect/anomaly/tvstatic/anomalyEffect()
 	..()
 
-	if(!COOLDOWN_FINISHED(src, pulse_secondary_cooldown))
-		return
-
-	COOLDOWN_START(src, pulse_secondary_cooldown, pulse_delay/4)
 	var/turf/spot = locate(rand(src.x-effectrange, src.x+effectrange), rand(src.y-effectrange, src.y+effectrange), src.z)
 	new /obj/effect/particle_effect/staticball(spot)
 

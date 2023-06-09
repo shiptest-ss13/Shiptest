@@ -5,8 +5,7 @@
 	density = TRUE
 	aSignal = /obj/item/assembly/signaler/anomaly/plasmasoul
 	effectrange = 3
-	pulse_cooldown = 6 SECONDS
-	pulse_secondary_cooldown = 18 SECONDS
+	pulse_delay = 6 SECONDS
 	var/reagent_amount = 5
 
 /obj/effect/anomaly/plasmasoul/anomalyEffect()
@@ -20,12 +19,14 @@
 		if(iscarbon(Mob))
 			var/mob/living/carbon/carbon = Mob
 			carbon.reagents?.add_reagent(/datum/reagent/toxin/plasma, reagent_amount)
+			to_chat(mob, span_warning("Your blood feels thick.."))
+			playsound(mob, 'sound/effects/bubbles.ogg', 50)
 
 
 	if(!COOLDOWN_FINISHED(src, pulse_secondary_cooldown))
 		return
 
-	COOLDOWN_START(src, pulse_secondary_cooldown, pulse_delay*4)
+	COOLDOWN_START(src, pulse_secondary_cooldown, pulse_delay*3)
 	var/turf/open/tile = get_turf(src)
 	if(istype(tile))
 		tile.atmos_spawn_air("o2=250;plasma=750;TEMP=1000")
