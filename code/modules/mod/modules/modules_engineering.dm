@@ -92,7 +92,7 @@
 
 /obj/item/mod/module/tether/on_use()
 	if(mod.wearer.has_gravity(get_turf(src)))
-		balloon_alert(mod.wearer, "Гравитация мешает!")
+		balloon_alert(mod.wearer, "too much gravity!!")
 		playsound(src, 'sound/weapons/gun/general/dry_fire.ogg', 25, TRUE)
 		return FALSE
 	return ..()
