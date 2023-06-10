@@ -577,3 +577,4 @@
 	icon_screen = "medlaptop"
 	icon_keyboard = "laptop_key"
 	pass_flags = PASSTABLE
+	unique_icon = TRUE
