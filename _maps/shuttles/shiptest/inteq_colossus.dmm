@@ -1260,6 +1260,7 @@
 	name = "IRMG shortwave intercom"
 	},
 /obj/machinery/telecomms/relay/preset/mining{
+	autolinkers = list("relay","hub");
 	freq_listening = list(1347);
 	id = "IRMG Relay";
 	name = "IRMG Relay";
