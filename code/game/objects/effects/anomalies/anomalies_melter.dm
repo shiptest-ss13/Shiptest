@@ -1,6 +1,6 @@
 /obj/effect/anomaly/melter
 	name = "melter"
-	icon_state = "inferno"
+	icon_state = "melter"
 	desc = "A mysterious anomaly. Everburning green flames with a horrid sizzle, melting what's near"
 	effectrange = 2
 	pulse_delay = 10 SECONDS
