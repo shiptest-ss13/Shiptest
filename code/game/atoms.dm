@@ -135,6 +135,22 @@
 	var/list/smoothing_groups = null
 	///List of smoothing groups this atom can smooth with. If this is null and atom is smooth, it smooths only with itself.
 	var/list/canSmoothWith = null
+
+	/// The icon file of the connector to use when smoothing.
+	/// Use of connectors requires the smoothing flags SMOOTH_BITMASK and SMOOTH_CONNECTORS.
+	var/connector_icon = null
+	/// The icon state prefix used for connectors. Equivalent to the base_icon_state.
+	var/connector_icon_state = null
+	/// Typecache of atom types that this wall will NOT form connector overlays into when smoothing.
+	/// Types should set this equal to a list; this list is, on init, used to create a typecache that is itself cached by SSicon_smooth.
+	var/list/no_connector_typecache = null
+	/// If true, the typecache constructed for no_connector_typecache will NOT include subtypes.
+	var/connector_strict_typing = FALSE
+	/// The current connector junction, saved to stop overlay changes if none are necessary.
+	var/connector_junction = null
+	/// The current connector overlay appearance. Saved so that it can be cut when necessary.
+	var/connector_overlay
+
 	///Reference to atom being orbited
 	var/atom/orbit_target
 	///Default X pixel offset
@@ -230,6 +246,8 @@
 		if(canSmoothWith[length(canSmoothWith)] > MAX_S_TURF)
 			smoothing_flags |= SMOOTH_OBJ
 		SET_BITFLAG_LIST(canSmoothWith)
+	if (length(no_connector_typecache))
+		no_connector_typecache = SSicon_smooth.get_no_connector_typecache(src.type, no_connector_typecache, connector_strict_typing)
 
 	var/area/ship/current_ship_area = get_area(src)
 	if(!mapload && istype(current_ship_area) && current_ship_area.mobile_port)

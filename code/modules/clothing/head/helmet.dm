@@ -85,11 +85,6 @@
 				var/mob/living/carbon/C = user
 				C.head_update(src, forced = 1)
 
-			if(up)
-				START_PROCESSING(SSobj, src)
-			else
-				STOP_PROCESSING(SSobj, src)
-
 //LightToggle
 
 /obj/item/clothing/head/helmet/ComponentInitialize()
@@ -136,7 +131,7 @@
 		return TRUE
 
 /obj/item/clothing/head/helmet/proc/toggle_helmlight()
-	set name = "Toggle Helmetlight"
+	set name = "Toggle Helmet light"
 	set category = "Object"
 	set desc = "Click to toggle your helmet's attached flashlight."
 
@@ -294,18 +289,29 @@
 	actions_types = list(/datum/action/item_action/toggle_helmet_light)
 	can_toggle = 1
 	toggle_cooldown = 20
-	active_sound = 'sound/items/weeoo1.ogg'
+	var/datum/looping_sound/siren/weewooloop
 	dog_fashion = null
 
-/obj/item/clothing/head/helmet/justice/process(delta_time)
-	playsound(loc, "[active_sound]", 100, FALSE, 10)
+/obj/item/clothing/head/helmet/justice/Initialize()
+	. = ..()
+	weewooloop = new(list(src), FALSE)
+
+/obj/item/clothing/head/helmet/justice/Destroy()
+	QDEL_NULL(weewooloop)
+	return ..()
+
+/obj/item/clothing/head/helmet/justice/attack_self(mob/user)
+	. = ..()
+	if(up)
+		weewooloop.start()
+	else
+		weewooloop.stop()
+
 
 /obj/item/clothing/head/helmet/justice/escape
 	name = "alarm helmet"
 	desc = "WEEEEOOO. WEEEEEOOO. STOP THAT MONKEY. WEEEOOOO."
 	icon_state = "justice2"
-	toggle_message = "You turn off the light on"
-	alt_toggle_message = "You turn on the light on"
 
 /obj/item/clothing/head/helmet/swat
 	name = "\improper SWAT helmet"

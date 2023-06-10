@@ -176,13 +176,15 @@ GLOBAL_LIST_EMPTY(allCasters)
 	icon_state = "newscaster"
 	custom_materials = list(/datum/material/iron=14000, /datum/material/glass=8000)
 	result_path = /obj/machinery/newscaster
+	inverse_pixel_shift = TRUE
+	pixel_shift = 30
 
 
 /obj/machinery/newscaster
 	name = "newscaster"
-	desc = "A standard Nanotrasen-licensed newsfeed handler. All the news you absolutely have no use for, in one place!"
+	desc = "A standard Nanotrasen brand newsfeed handler. All the news you absolutely have no use for, in one place!"
 	icon = 'icons/obj/terminals.dmi'
-	icon_state = "newscaster_normal"
+	icon_state = "newscaster"
 	verb_say = "beeps"
 	verb_ask = "beeps"
 	verb_exclaim = "beeps"
@@ -211,9 +213,13 @@ GLOBAL_LIST_EMPTY(allCasters)
 		dir_amount = 4\
 	)
 
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/newscaster, 30)
+
 /obj/machinery/newscaster/security_unit
 	name = "security newscaster"
-	securityCaster = 1
+	securityCaster = TRUE
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/newscaster/security_unit, 30)
 
 /obj/machinery/newscaster/Initialize(mapload, ndir, building)
 	. = ..()
@@ -232,31 +238,26 @@ GLOBAL_LIST_EMPTY(allCasters)
 	picture = null
 	return ..()
 
-/obj/machinery/newscaster/update_icon_state()
-	if(machine_stat & (NOPOWER|BROKEN))
-		icon_state = "newscaster_off"
-	else
-		if(GLOB.news_network.wanted_issue.active)
-			icon_state = "newscaster_wanted"
-		else
-			icon_state = "newscaster_normal"
-
 /obj/machinery/newscaster/update_overlays()
 	. = ..()
+	SSvis_overlays.remove_vis_overlay(src, managed_vis_overlays)
+	if(machine_stat & BROKEN)
+		SSvis_overlays.add_vis_overlay(src, icon, "newscaster_broken", layer, plane, dir)
+		return
 
-	if(!(machine_stat & (NOPOWER|BROKEN)) && !GLOB.news_network.wanted_issue.active && alert)
-		. += "newscaster_alert"
+	if(machine_stat & NOPOWER)
+		return
 
-	var/hp_percent = obj_integrity * 100 /max_integrity
-	switch(hp_percent)
-		if(75 to 100)
-			return
-		if(50 to 75)
-			. += "crack1"
-		if(25 to 50)
-			. += "crack2"
-		else
-			. += "crack3"
+	if(GLOB.news_network.wanted_issue.active)
+		SSvis_overlays.add_vis_overlay(src, icon, "newscaster_wanted", layer, plane, dir)
+		SSvis_overlays.add_vis_overlay(src, icon, "newscaster_wanted", layer, EMISSIVE_PLANE, dir)
+	else if(alert)
+		SSvis_overlays.add_vis_overlay(src, icon, "newscaster_alert", layer, plane, dir)
+		SSvis_overlays.add_vis_overlay(src, icon, "newscaster_alert", layer, EMISSIVE_PLANE, dir)
+	else
+		SSvis_overlays.add_vis_overlay(src, icon, "newscaster_normal", layer, plane, dir)
+		SSvis_overlays.add_vis_overlay(src, icon, "newscaster_normal", layer, EMISSIVE_PLANE, dir)
+
 
 /obj/machinery/newscaster/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, attack_dir)
 	. = ..()
