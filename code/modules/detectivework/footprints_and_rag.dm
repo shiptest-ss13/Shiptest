@@ -40,7 +40,7 @@
 
 	else if(istype(target) && (src in user))
 		target.add_overlay(GLOB.cleaning_bubbles)
-		playsound(src, 'sound/misc/slip.ogg', 15, TRUE, -14)
+		playsound(src, 'sound/misc/slip.ogg', 15, TRUE, -8)
 		user.visible_message("<span class='notice'>[user] starts to wipe down [target] with [src]!</span>", "<span class='notice'>You start to wipe down [target] with [src]...</span>")
 		if(do_after(user,30, target = target))
 			user.visible_message("<span class='notice'>[user] finishes wiping off [target]!</span>", "<span class='notice'>You finish wiping off [target].</span>")
