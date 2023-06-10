@@ -281,7 +281,7 @@
 
 /obj/item/ammo_box/a308
 	name = "ammo box (.308)"
-	icon_state = "a308_box"
+	icon_state = "a308box"
 	ammo_type = /obj/item/ammo_casing/a308
 	max_ammo = 30
 
