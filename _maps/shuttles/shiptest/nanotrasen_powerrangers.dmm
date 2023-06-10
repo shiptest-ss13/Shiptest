@@ -608,9 +608,10 @@
 /area/ship/bridge)
 "hz" = (
 /obj/docking_port/mobile{
-	dwidth = 22;
-	dheight = 2;
-	dir = 2
+	dheight = 1;
+	dir = 2;
+	preferred_direction = 4;
+	port_direction = 8
 	},
 /turf/open/floor/engine/hull,
 /area/ship/external)
@@ -1994,8 +1995,9 @@
 /area/ship/bridge)
 "En" = (
 /obj/docking_port/stationary{
-	width = 15;
-	height = 15
+	width = 30;
+	height = 15;
+	dwidth = 15
 	},
 /turf/template_noop,
 /area/template_noop)
