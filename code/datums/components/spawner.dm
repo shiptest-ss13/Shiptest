@@ -4,12 +4,12 @@
 	var/list/spawned_mobs = list()
 	var/spawn_delay = 0
 	var/max_mobs = 5
-	var/spawn_text = "emerges from"
+	var/list/spawn_text = list("emerges from")
 	var/list/faction = list("mining")
+	var/list/spawn_sound = list()
 
 
-
-/datum/component/spawner/Initialize(_mob_types, _spawn_time, _faction, _spawn_text, _max_mobs)
+/datum/component/spawner/Initialize(_mob_types, _spawn_time, _faction, _spawn_text, _max_mobs, _spawn_sound)
 	if(_spawn_time)
 		spawn_time=_spawn_time
 	if(_mob_types)
@@ -20,6 +20,8 @@
 		spawn_text=_spawn_text
 	if(_max_mobs)
 		max_mobs=_max_mobs
+	if(_spawn_sound)
+		spawn_sound=_spawn_sound
 
 	RegisterSignal(parent, list(COMSIG_PARENT_QDELETING), .proc/stop_spawning)
 	START_PROCESSING(SSprocessing, src)
@@ -44,10 +46,11 @@
 	if(spawn_delay > world.time)
 		return 0
 	spawn_delay = world.time + spawn_time
-	var/chosen_mob_type = pick(mob_types)
+	var/chosen_mob_type = pickweight(mob_types)
 	var/mob/living/simple_animal/L = new chosen_mob_type(P.loc)
 	L.flags_1 |= (P.flags_1 & ADMIN_SPAWNED_1)
 	spawned_mobs += L
 	L.nest = src
 	L.faction = src.faction
-	P.visible_message("<span class='danger'>[L] [spawn_text] [P].</span>")
+	P.visible_message("<span class='danger'>[L] [pick(spawn_text)] [P].</span>")
+	playsound(P, pick(spawn_sound), 50, TRUE)
