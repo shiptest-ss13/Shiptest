@@ -341,7 +341,7 @@
 	dir = 4
 	},
 /obj/machinery/light_switch{
-	pixel_y = 25
+	pixel_y = 22
 	},
 /obj/item/paper/crumpled,
 /turf/open/floor/plasteel/dark,
@@ -900,7 +900,7 @@
 	id = "colossus_thrusters";
 	name = "Thruster Shield Control";
 	pixel_x = -6;
-	pixel_y = 25
+	pixel_y = 23
 	},
 /obj/effect/turf_decal/corner_techfloor_gray{
 	dir = 4
@@ -1562,7 +1562,7 @@
 	id = "colossus_thrusters";
 	name = "Thruster Shield Control";
 	pixel_x = -6;
-	pixel_y = -25
+	pixel_y = -20
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -2259,8 +2259,8 @@
 	dir = 1;
 	id = "colossus_starboard";
 	name = "Starboard Cargo Door Control";
-	pixel_x = -6;
-	pixel_y = -25
+	pixel_x = -4;
+	pixel_y = -20
 	},
 /obj/effect/turf_decal/industrial/caution{
 	dir = 1
@@ -2277,7 +2277,7 @@
 	dir = 1;
 	id = "colossus_cargo_starboard";
 	pixel_x = 5;
-	pixel_y = -25
+	pixel_y = -19
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
@@ -2408,8 +2408,8 @@
 	dir = 1;
 	id = "colossus_windows";
 	name = "Window Lockdown";
-	pixel_x = -6;
-	pixel_y = -25
+	pixel_x = -4;
+	pixel_y = -21
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
@@ -2846,8 +2846,8 @@
 "Gy" = (
 /obj/machinery/light_switch{
 	dir = 4;
-	pixel_x = -25;
-	pixel_y = -10
+	pixel_x = -20;
+	pixel_y = 10
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -3163,8 +3163,8 @@
 	dir = 1;
 	id = "colossus_starboard";
 	name = "Starboard Cargo Door Control";
-	pixel_x = 6;
-	pixel_y = -25
+	pixel_x = 4;
+	pixel_y = -20
 	},
 /obj/effect/turf_decal/industrial/caution{
 	dir = 1
@@ -3173,7 +3173,7 @@
 	dir = 1;
 	id = "colossus_cargo_starboard";
 	pixel_x = -5;
-	pixel_y = -25
+	pixel_y = -19
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
@@ -3505,7 +3505,7 @@
 /obj/machinery/light_switch{
 	dir = 1;
 	pixel_x = 5;
-	pixel_y = -25
+	pixel_y = -20
 	},
 /obj/effect/turf_decal/corner/opaque/yellow,
 /obj/effect/turf_decal/corner/opaque/brown{
@@ -3648,13 +3648,13 @@
 	id = "colossus_port";
 	name = "Port Cargo Door Control";
 	pixel_x = -6;
-	pixel_y = 25
+	pixel_y = 23
 	},
 /obj/effect/turf_decal/industrial/caution,
 /obj/machinery/button/shieldwallgen{
 	id = "colossus_cargo_port";
 	pixel_x = 5;
-	pixel_y = 25
+	pixel_y = 21
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
@@ -4569,14 +4569,14 @@
 	id = "colossus_port";
 	name = "Port Cargo Door Control";
 	pixel_x = 6;
-	pixel_y = 25
+	pixel_y = 23
 	},
 /obj/effect/turf_decal/industrial/caution,
 /obj/structure/ore_box,
 /obj/machinery/button/shieldwallgen{
 	id = "colossus_cargo_port";
 	pixel_x = -5;
-	pixel_y = 25
+	pixel_y = 21
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
