@@ -72,9 +72,12 @@
 /turf/open/floor/plasteel/white/airless,
 /area/ruin/unpowered)
 "dt" = (
-/obj/machinery/door/airlock/security,
+/obj/machinery/door/airlock/security{
+	dir = 8
+	},
 /obj/machinery/door/poddoor{
-	id = "cryocontainmentlockdown"
+	id = "cryocontainmentlockdown";
+	dir = 8
 	},
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 8
@@ -194,7 +197,8 @@
 /area/ruin/unpowered)
 "gC" = (
 /obj/machinery/door/poddoor{
-	id = "cryocontainmentlockdown"
+	id = "cryocontainmentlockdown";
+	dir = 8
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -214,14 +218,12 @@
 "gJ" = (
 /obj/item/stack/ore/salvage/scrapuranium,
 /obj/structure/salvageable/protolathe,
-/obj/machinery/light,
+/obj/machinery/light/dim/directional/south,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/unpowered)
 "ha" = (
 /obj/structure/table/reinforced,
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/white/airless,
 /area/ruin/unpowered)
 "hl" = (
@@ -238,17 +240,12 @@
 /turf/open/floor/plasteel/white/airless,
 /area/ruin/unpowered)
 "hE" = (
-/obj/structure/salvageable/computer{
-	dir = 1
-	},
-/obj/machinery/light/broken,
-/turf/open/floor/plating/airless{
-	icon_state = "platingdmg3"
-	},
+/obj/item/stack/ore/salvage/scrapgold,
+/obj/machinery/light/broken/directional/south,
+/turf/open/floor/plasteel/dark/airless,
 /area/ruin/unpowered)
 "ih" = (
 /obj/effect/decal/cleanable/blood/gibs/limb,
-/obj/machinery/light/built,
 /obj/item/light/tube/broken,
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -259,6 +256,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/machinery/light/built/directional/south,
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered)
 "iA" = (
@@ -403,9 +401,12 @@
 /turf/open/floor/engine/airless,
 /area/ruin/unpowered)
 "qf" = (
-/obj/machinery/door/airlock/public/glass,
+/obj/machinery/door/airlock/public/glass{
+	dir = 8
+	},
 /obj/machinery/door/poddoor{
-	id = "cryocontainmentlockdown"
+	id = "cryocontainmentlockdown";
+	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -418,7 +419,8 @@
 	},
 /obj/machinery/power/apc/away{
 	pixel_x = -25;
-	start_charge = 0
+	start_charge = 0;
+	dir = 8
 	},
 /obj/item/ammo_casing/spent{
 	pixel_x = -9;
@@ -518,12 +520,10 @@
 "ve" = (
 /obj/structure/table/greyscale,
 /obj/item/storage/fancy/cigarettes/cigpack_carp,
-/obj/machinery/light/small{
-	dir = 8
-	},
 /obj/machinery/atmospherics/components/unary/vent_pump/layer2{
 	dir = 8
 	},
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered)
 "vj" = (
@@ -555,7 +555,7 @@
 	pixel_y = 1
 	},
 /obj/structure/salvageable/circuit_imprinter,
-/obj/machinery/light,
+/obj/machinery/light/dim/directional/south,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/unpowered)
 "xB" = (
@@ -573,10 +573,7 @@
 /area/ruin/unpowered)
 "ye" = (
 /obj/structure/closet/wardrobe/chemistry_white,
-/obj/machinery/light/broken{
-	dir = 8;
-	icon_state = "tube-broken"
-	},
+/obj/machinery/light/broken/directional/west,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/unpowered)
 "yM" = (
@@ -668,9 +665,11 @@
 /area/ruin/unpowered)
 "EH" = (
 /obj/machinery/atmospherics/pipe/simple/general,
-/obj/structure/door_assembly/door_assembly_vault,
 /obj/machinery/door/poddoor/preopen{
 	id = "cryocontainmentblastdoors"
+	},
+/obj/structure/door_assembly/door_assembly_hatch{
+	anchored = 1
 	},
 /turf/open/floor/engine/airless,
 /area/ruin/unpowered)
@@ -685,9 +684,7 @@
 /area/ruin/unpowered)
 "Fk" = (
 /obj/machinery/smartfridge/chemistry,
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/white/airless,
 /area/ruin/unpowered)
 "Fq" = (
@@ -749,18 +746,14 @@
 /turf/open/floor/plating/asteroid/airless,
 /area/ruin/unpowered)
 "Hn" = (
-/obj/machinery/light/broken{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/engine/airless,
 /area/ruin/unpowered)
 "Hu" = (
 /obj/structure/salvageable/computer{
 	dir = 8
 	},
-/obj/machinery/light/broken{
-	dir = 4
-	},
+/obj/machinery/light/broken/directional/east,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/unpowered)
 "Hy" = (
@@ -832,13 +825,6 @@
 /area/ruin/unpowered)
 "Jj" = (
 /turf/open/floor/engine/airless,
-/area/ruin/unpowered)
-"KC" = (
-/obj/item/stack/ore/salvage/scrapmetal,
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/plasteel/dark/airless,
 /area/ruin/unpowered)
 "KY" = (
 /obj/structure/lattice,
@@ -925,9 +911,7 @@
 /obj/machinery/atmospherics/components/binary/pump{
 	dir = 8
 	},
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/white/airless,
 /area/ruin/unpowered)
 "NM" = (
@@ -974,9 +958,7 @@
 /area/ruin/unpowered)
 "PL" = (
 /obj/effect/decal/cleanable/greenglow,
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/unpowered)
 "PN" = (
@@ -1010,6 +992,7 @@
 /area/ruin/unpowered)
 "QP" = (
 /obj/machinery/chem_master,
+/obj/machinery/light/dim/directional/north,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/unpowered)
 "QV" = (
@@ -1037,10 +1020,7 @@
 /area/ruin/unpowered)
 "RJ" = (
 /obj/item/stack/ore/salvage/scrapplasma,
-/obj/machinery/light/broken{
-	dir = 8;
-	icon_state = "tube-broken"
-	},
+/obj/machinery/light/broken/directional/west,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/unpowered)
 "RK" = (
@@ -1067,10 +1047,10 @@
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/unpowered)
 "Sk" = (
-/obj/machinery/light/broken,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/machinery/light/directional/south,
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered)
 "Sp" = (
@@ -1091,10 +1071,10 @@
 	},
 /area/ruin/unpowered)
 "Tr" = (
-/obj/machinery/door/airlock/vault{
-	name = "Secure Technology"
-	},
 /obj/effect/mapping_helpers/airlock/locked,
+/obj/machinery/door/airlock/hatch{
+	dir = 8
+	},
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered)
 "TF" = (
@@ -1120,9 +1100,6 @@
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered)
 "Ue" = (
-/obj/machinery/light{
-	dir = 1
-	},
 /obj/structure/chair/greyscale{
 	dir = 8
 	},
@@ -1131,6 +1108,7 @@
 	dir = 4
 	},
 /obj/effect/mob_spawn/human/corpse/nanotrasensoldier,
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/unpowered)
 "Ul" = (
@@ -1186,16 +1164,10 @@
 "WS" = (
 /obj/structure/table/chem,
 /obj/item/reagent_containers/glass/beaker/large/silver_sulfadiazine,
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/dim/directional/north,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/unpowered)
 "Xn" = (
-/obj/machinery/light/broken{
-	dir = 8;
-	icon_state = "tube-broken"
-	},
 /obj/item/ammo_casing/spent{
 	dir = 8;
 	pixel_x = -1;
@@ -1215,13 +1187,14 @@
 	dir = 1;
 	pixel_x = -10
 	},
+/obj/machinery/light/broken/directional/west,
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered)
 "Xq" = (
 /obj/structure/fluff/paper/stack{
 	dir = 8
 	},
-/obj/machinery/light/broken,
+/obj/machinery/light/broken/directional/south,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/unpowered)
 "Xs" = (
@@ -1241,10 +1214,10 @@
 /area/ruin/unpowered)
 "Yc" = (
 /mob/living/simple_animal/hostile/carp/megacarp,
+/obj/machinery/light/floor,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/unpowered)
 "Ye" = (
-/obj/machinery/light/broken,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -1254,6 +1227,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/machinery/light/broken/directional/south,
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered)
 "YC" = (
@@ -1788,7 +1762,7 @@ bW
 BV
 kU
 tm
-hE
+RX
 Cq
 IX
 IX
@@ -1820,7 +1794,7 @@ Mw
 TL
 TL
 TG
-aK
+hE
 Cq
 yM
 IX
@@ -2069,7 +2043,7 @@ fN
 Cq
 IX
 lR
-KC
+aO
 TG
 bW
 Lw
