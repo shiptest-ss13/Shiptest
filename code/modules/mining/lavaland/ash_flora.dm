@@ -509,7 +509,7 @@
 	regrowth_time_low = 10 MINUTES
 	regrowth_time_high = 20 MINUTES
 	num_sprites = 1
-	light_power = 1
+	light_power = 0.5
 	light_range = 3
 	light_color = "#11fa25"
 

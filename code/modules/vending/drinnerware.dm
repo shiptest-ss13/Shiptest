@@ -16,6 +16,7 @@
 		/obj/item/clothing/suit/apron/chef = 2,
 		/obj/item/kitchen/rollingpin = 2,
 		/obj/item/kitchen/knife = 2,
+		/obj/item/kitchen/knife/pizza_cutter = 2,
 		/obj/item/book/granter/crafting_recipe/cooking_sweets_101 = 2)
 	contraband = list(
 		/obj/item/kitchen/rollingpin = 2,
