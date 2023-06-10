@@ -754,7 +754,8 @@
 		/obj/item/seeds/starthistle,
 		/obj/item/seeds/cherry/bomb,
 		/obj/item/seeds/berry/glow,
-		/obj/item/seeds/sunflower/moonflower)
+		/obj/item/seeds/sunflower/moonflower
+		)
 
 /obj/effect/spawner/lootdrop/flora
 	name = "random flora spawner"
@@ -791,7 +792,8 @@
 		/obj/structure/flora/ash/cacti,
 		/obj/structure/flora/ash/cap_shroom,
 		/obj/structure/flora/ash/chilly,
-		/obj/structure/flora/tree/palm)
+		/obj/structure/flora/tree/palm
+		)
 	lootcount = 1
 
 /obj/effect/spawner/lootdrop/flower
@@ -801,5 +803,229 @@
 		/obj/structure/flora/ausbushes/ywflowers,
 		/obj/structure/flora/ausbushes/ppflowers,
 		/obj/structure/flora/ausbushes/fullgrass,
-		/obj/structure/flora/ausbushes/sparsegrass)
+		/obj/structure/flora/ausbushes/sparsegrass
+		)
 	lootcount = 1
+
+/obj/effect/spawner/lootdrop/waste/grille_or_trash
+	name = "wasteplanet loot spawner"
+	loot = list(
+		/obj/structure/grille/broken = 5,
+		/obj/structure/grille = 5,
+		/obj/item/cigbutt = 1,
+		/obj/item/trash/cheesie = 1,
+		/obj/item/trash/candy = 1,
+		/obj/item/trash/chips = 1,
+		/obj/item/reagent_containers/food/snacks/deadmouse = 1,
+		/obj/item/trash/pistachios = 1,
+		/obj/item/trash/plate = 1,
+		/obj/item/trash/popcorn = 1,
+		/obj/item/trash/raisins = 1,
+		/obj/item/trash/sosjerky = 1,
+		/obj/item/trash/syndi_cakes = 1
+	)
+
+/obj/effect/spawner/lootdrop/waste/mechwreck
+	name = "wasteplanet mech wreckage"
+	loot = list(
+		/obj/structure/mecha_wreckage/ripley = 15,
+		/obj/structure/mecha_wreckage/ripley/firefighter = 9,
+		/obj/structure/mecha_wreckage/ripley/mkii = 9,
+		/obj/structure/mecha_wreckage/ripley/cmm = 9
+		)
+
+/obj/effect/spawner/lootdrop/waste/mechwreck/rare
+	loot = list(
+		/obj/structure/mecha_wreckage/durand = 12.5,
+		/obj/structure/mecha_wreckage/durand/cmm = 12.5,
+		/obj/structure/mecha_wreckage/odysseus = 25,
+		/obj/structure/mecha_wreckage/gygax = 25
+		)
+
+/obj/effect/spawner/lootdrop/waste/trash //debatable if this is actually loot
+	loot = list(
+		/obj/effect/decal/cleanable/greenglow/filled = 30,
+		/obj/effect/decal/cleanable/greenglow/ecto = 1,
+		/obj/effect/decal/cleanable/glass = 30,
+		/obj/effect/decal/cleanable/glass/plasma = 30,
+		/obj/effect/decal/cleanable/glass/strange = 30,
+		/obj/effect/decal/cleanable/molten_object = 30,
+		/obj/effect/decal/cleanable/molten_object/large = 30,
+		/obj/effect/decal/cleanable/oil = 30,
+		/obj/effect/decal/cleanable/oil/slippery = 1, // :)
+		/obj/effect/decal/cleanable/plastic = 30,
+		/obj/effect/decal/cleanable/ash = 30,
+		/obj/effect/decal/cleanable/ash/large = 30,
+	)
+
+/obj/effect/spawner/lootdrop/waste/radiation
+	loot = list(
+		/obj/structure/radioactive = 6,
+		/obj/structure/radioactive/stack = 6,
+		/obj/structure/radioactive/waste = 6
+	)
+
+/obj/effect/spawner/lootdrop/waste/radiation/more_rads
+	loot = list(
+		/obj/structure/radioactive = 3,
+		/obj/structure/radioactive/stack = 12,
+		/obj/structure/radioactive/waste = 12
+	)
+
+/obj/effect/spawner/lootdrop/waste/atmos_can
+	loot = list(
+		/obj/machinery/portable_atmospherics/canister/toxins = 3,
+		/obj/machinery/portable_atmospherics/canister/carbon_dioxide = 3,
+		/obj/machinery/portable_atmospherics/canister/nitrogen = 3,
+		/obj/machinery/portable_atmospherics/canister/oxygen = 3,
+		/obj/machinery/portable_atmospherics/canister/nitrous_oxide = 1,
+		/obj/machinery/portable_atmospherics/canister/water_vapor = 1
+	)
+
+/obj/effect/spawner/lootdrop/waste/atmos_can/rare
+	loot = list(
+		/obj/machinery/portable_atmospherics/canister/tritium = 3,
+		/obj/machinery/portable_atmospherics/canister/pluoxium = 3
+	)
+
+/obj/effect/spawner/lootdrop/waste/salvageable
+	loot = list(
+		/obj/structure/salvageable/machine = 20,
+		/obj/structure/salvageable/autolathe = 15,
+		/obj/structure/salvageable/computer = 10,
+		/obj/structure/salvageable/protolathe = 10,
+		/obj/structure/salvageable/circuit_imprinter = 8,
+		/obj/structure/salvageable/destructive_analyzer = 8,
+		/obj/structure/salvageable/server = 8
+	)
+
+/obj/effect/spawner/lootdrop/waste/girder
+	loot = list(
+		/obj/structure/girder,
+		/obj/structure/girder/displaced,
+		/obj/structure/girder/reinforced
+	)
+/obj/effect/spawner/lootdrop/waste/hivebot
+	loot = list(
+	/obj/effect/spawner/lootdrop/salvage/metal,
+	/obj/effect/spawner/lootdrop/salvage/metal,
+	/obj/effect/spawner/lootdrop/salvage/metal,
+	/obj/effect/spawner/lootdrop/salvage/gold,
+	/obj/effect/spawner/lootdrop/salvage/plasma,
+	/obj/effect/spawner/lootdrop/salvage/silver,
+	/obj/effect/spawner/lootdrop/salvage/titanium,
+	/obj/item/stack/ore/salvage/scrapbluespace,
+	/obj/item/stack/ore/salvage/scrapbluespace,
+	/obj/item/stack/ore/salvage/scrapuranium
+	)
+	lootcount = 2
+
+/obj/effect/spawner/lootdrop/waste/hivebot/beacon
+	lootcount = 6
+
+/obj/effect/spawner/lootdrop/salvage
+	name = "salvage mats spawner"
+	loot = list(
+		/obj/item/stack/ore/salvage/scrapmetal,
+		/obj/item/stack/ore/salvage/scrapgold,
+		/obj/item/stack/ore/salvage/scrapplasma,
+		/obj/item/stack/ore/salvage/scrapsilver,
+		/obj/item/stack/ore/salvage/scraptitanium,
+		/obj/item/stack/ore/salvage/scrapbluespace,
+		/obj/item/stack/ore/salvage/scrapuranium
+	)
+
+/obj/effect/spawner/lootdrop/salvage/metal
+	loot = list(
+		/obj/item/stack/ore/salvage/scrapmetal
+	)
+
+/obj/effect/spawner/lootdrop/salvage/metal/Initialize()
+	lootcount = pick(list(
+		1,
+		2,
+		3,
+		4
+	))
+	return ..()
+
+/obj/effect/spawner/lootdrop/salvage/gold
+	loot = list(
+		/obj/item/stack/ore/salvage/scrapgold
+	)
+
+/obj/effect/spawner/lootdrop/salvage/gold/Initialize()
+	lootcount = pick(list(
+		1,
+		2,
+		3,
+		4
+	))
+	return ..()
+
+/obj/effect/spawner/lootdrop/salvage/plasma
+	loot = list(
+		/obj/item/stack/ore/salvage/scrapplasma
+	)
+/obj/effect/spawner/lootdrop/salvage/plasma/Initialize()
+	lootcount = pick(list(
+		1,
+		2,
+		3,
+		4
+	))
+	return ..()
+
+
+/obj/effect/spawner/lootdrop/salvage/silver
+	loot = list(
+		/obj/item/stack/ore/salvage/scrapsilver
+	)
+/obj/effect/spawner/lootdrop/salvage/silver/Initialize()
+	lootcount = pick(list(
+		1,
+		2,
+		3,
+		4
+	))
+	return ..()
+
+
+/obj/effect/spawner/lootdrop/salvage/titanium
+	loot = list(
+		/obj/item/stack/ore/salvage/scraptitanium
+	)
+/obj/effect/spawner/lootdrop/salvage/titanium/Initialize()
+	lootcount = pick(list(
+		1,
+		2,
+		3,
+		4
+	))
+	return ..()
+
+/obj/effect/spawner/lootdrop/salvage/bluespace
+	loot = list(
+		/obj/item/stack/ore/salvage/scrapbluespace
+	)
+/obj/effect/spawner/lootdrop/salvage/bluespace/Initialize()
+	lootcount = pick(list(
+		1,
+		2,
+		3,
+		4
+	))
+	return ..()
+
+/obj/effect/spawner/lootdrop/salvage/uranium
+	loot = list(
+		/obj/item/stack/ore/salvage/scrapuranium
+	)
+/obj/effect/spawner/lootdrop/salvage/uranium/Initialize()
+	lootcount = pick(list(
+		1,
+		2,
+		3,
+		4
+	))
+	return ..()
