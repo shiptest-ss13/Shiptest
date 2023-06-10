@@ -140,21 +140,7 @@
 /obj/machinery/power/apc/auto_name
 	auto_name = TRUE
 
-/obj/machinery/power/apc/auto_name/north //Pixel offsets get overwritten on New()
-	dir = NORTH
-	pixel_y = 23
-
-/obj/machinery/power/apc/auto_name/south
-	dir = SOUTH
-	pixel_y = -23
-
-/obj/machinery/power/apc/auto_name/east
-	dir = EAST
-	pixel_x = 24
-
-/obj/machinery/power/apc/auto_name/west
-	dir = WEST
-	pixel_x = -25
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 
 /obj/machinery/power/apc/get_cell()
 	return cell
@@ -179,8 +165,7 @@
 	if (building)
 		setDir(ndir)
 	tdir = dir		// to fix Vars bug
-	setDir(SOUTH)
-
+//!!!!!!!!!!!!!! FUCK YOU SINGLE LINE OF CODE!! FUCK YOU YOU PIECE OF SHIT!!!!! setDir(SOUTH)
 	switch(tdir)
 		if(NORTH)
 			if((pixel_y != initial(pixel_y)) && (pixel_y != 23))
@@ -308,6 +293,8 @@
 			icon_state = "apc0"
 		else if(update_state & (UPSTATE_OPENED1|UPSTATE_OPENED2))
 			var/basestate = "apc[ cell ? "2" : "1" ]"
+			if(has_electronics == APC_ELECTRONICS_INSTALLED) //god
+				. += "apc-electronics"
 			if(update_state & UPSTATE_OPENED1)
 				if(update_state & (UPSTATE_MAINT|UPSTATE_BROKE))
 					icon_state = "apcmaint" //disabled APC cannot hold cell
@@ -329,6 +316,16 @@
 
 	if(!(update_state & UPSTATE_ALLGOOD))
 		SSvis_overlays.remove_vis_overlay(src, managed_vis_overlays)
+
+	if(!cell) //it always peeved me that abandoned ships always had the apc lights on. this should fix it
+		icon_update_needed = FALSE
+		set_light(0)
+		return
+
+	if(cell.charge <= 0)
+		icon_update_needed = FALSE
+		set_light(0)
+		return
 
 	if(update & 2)
 		SSvis_overlays.remove_vis_overlay(src, managed_vis_overlays)

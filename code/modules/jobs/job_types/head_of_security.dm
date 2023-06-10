@@ -85,3 +85,14 @@
 	alt_uniform = null
 	head = /obj/item/clothing/head/beret/sec/hos
 
+/datum/outfit/job/hos/frontiersmen
+	name = "Master At Arms (frontiersmen)"
+
+	ears = /obj/item/radio/headset/syndicate/alt
+	uniform = /obj/item/clothing/under/rank/security/officer/frontier/officer
+	head = /obj/item/clothing/head/caphat/frontier
+	suit = /obj/item/clothing/suit/armor/vest/bulletproof/frontier
+	shoes = /obj/item/clothing/shoes/cowboy/black
+	gloves = /obj/item/clothing/gloves/combat
+	backpack_contents = list(/obj/item/melee/baton/loaded=1)
+	suit_store = null

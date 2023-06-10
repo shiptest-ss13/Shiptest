@@ -348,6 +348,94 @@
 	else
 		STOP_PROCESSING(SSobj, src)
 
+//junglefowl
+/mob/living/simple_animal/hostile/retaliate/chicken
+	name = "\improper junglefowl"
+	desc = "A small, fierce, feathered beast."
+	gender = FEMALE
+	mob_biotypes = MOB_ORGANIC|MOB_BEAST
+	icon_state = "chicken_brown"
+	icon_living = "chicken_brown"
+	icon_dead = "chicken_brown_dead"
+	speak = list("Cluck!","BWAAAAARK BWAK BWAK BWAK!","Bwaak bwak.")
+	speak_emote = list("clucks","croons")
+	emote_hear = list("clucks.")
+	emote_see = list("pecks at the ground.","flaps its wings viciously.")
+	density = FALSE
+	speak_chance = 2
+	turns_per_move = 3
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/chicken = 2)
+	var/egg_type = /obj/item/reagent_containers/food/snacks/egg
+	food_type = list(/obj/item/reagent_containers/food/snacks/grown/wheat)
+	response_help_continuous = "pets"
+	response_help_simple = "pet"
+	response_disarm_continuous = "gently pushes aside"
+	response_disarm_simple = "gently push aside"
+	response_harm_continuous = "scratches"
+	response_harm_simple = "scratch"
+	attack_verb_continuous = "scratches"
+	attack_verb_simple = "scratch"
+	health = 25
+	maxHealth = 25
+	var/eggsleft = 0
+	var/eggsFertile = TRUE
+	var/body_color
+	var/icon_prefix = "chicken"
+	pass_flags = PASSTABLE
+	mob_size = MOB_SIZE_SMALL
+	var/list/feedMessages = list("It clucks happily.","It clucks happily.")
+	var/list/layMessage = EGG_LAYING_MESSAGES
+	var/list/validColors = list("brown","black","white")
+	gold_core_spawnable = FRIENDLY_SPAWN
+	var/static/chicken_count = 0
+	environment_smash = ENVIRONMENT_SMASH_NONE
+	melee_damage_lower = 3
+	melee_damage_upper = 10
+
+	footstep_type = FOOTSTEP_MOB_CLAW
+
+/mob/living/simple_animal/hostile/retaliate/chicken/Initialize()
+	. = ..()
+	if(!body_color)
+		body_color = pick(validColors)
+	icon_state = "[icon_prefix]_[body_color]"
+	icon_living = "[icon_prefix]_[body_color]"
+	icon_dead = "[icon_prefix]_[body_color]_dead"
+	pixel_x = rand(-6, 6)
+	pixel_y = rand(0, 10)
+	++chicken_count
+
+/mob/living/simple_animal/hostile/retaliate/chicken/Destroy()
+	--chicken_count
+	return ..()
+
+/mob/living/simple_animal/hostile/retaliate/chicken/attackby(obj/item/O, mob/user, params)
+	if(is_type_in_list(O, food_type))
+		if(!stat && eggsleft < 8)
+			var/feedmsg = "[user] feeds [O] to [name]! [pick(feedMessages)]"
+			user.visible_message(feedmsg)
+			qdel(O)
+			eggsleft += rand(1, 4)
+		else
+			to_chat(user, "<span class='warning'>[name] doesn't seem hungry!</span>")
+	else
+		..()
+
+/mob/living/simple_animal/hostile/retaliate/chicken/Life()
+	. =..()
+	if(!.)
+		return
+	if((!stat && prob(3) && eggsleft > 0) && egg_type)
+		visible_message("<span class='alertalien'>[src] [pick(layMessage)]</span>")
+		eggsleft--
+		var/obj/item/E = new egg_type(get_turf(src))
+		E.pixel_x = E.base_pixel_x + rand(-6,6)
+		E.pixel_y = E.base_pixel_y + rand(-6,6)
+		if(eggsFertile)
+			if(chicken_count < MAX_CHICKENS && prob(25))
+				START_PROCESSING(SSobj, E)
+
+
 /mob/living/simple_animal/deer
 	name = "doe"
 	desc = "A gentle, peaceful forest animal. How did this get into space?"
@@ -378,3 +466,4 @@
 	blood_volume = BLOOD_VOLUME_NORMAL
 	food_type = list(/obj/item/reagent_containers/food/snacks/grown/apple)
 	footstep_type = FOOTSTEP_MOB_SHOE
+

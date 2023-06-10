@@ -131,6 +131,8 @@
 	contraband = list(
 		/obj/item/clothing/suit/judgerobe = 1,
 		/obj/item/clothing/head/powdered_wig = 1,
+		/obj/item/clothing/accessory/fan_mime_pin = 1,
+		/obj/item/clothing/accessory/fan_clown_pin = 1,
 		/obj/item/gun/magic/wand/nothing = 2,
 		/obj/item/clothing/glasses/sunglasses/garb = 2,
 		/obj/item/clothing/glasses/blindfold = 1,

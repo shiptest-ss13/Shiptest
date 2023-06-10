@@ -668,7 +668,9 @@
 	if(user.a_intent == INTENT_HARM)
 		return ..()
 	if(user.transferItemToLoc(W, drop_location()))
-		return 1
+		W.pixel_x = pick(9,0,-9)
+		W.pixel_y = pick(10,1)
+		return TRUE
 
 /obj/structure/rack/attack_paw(mob/living/user)
 	attack_hand(user)

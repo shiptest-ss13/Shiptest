@@ -69,17 +69,6 @@
 	shoes = /obj/item/clothing/shoes/laceup
 	head = /obj/item/clothing/head/hopcap/nt
 
-/datum/outfit/job/head_of_personnel/solgov
-	name = "Executive Officer (SolGov)"
-	ears = /obj/item/radio/headset/solgov
-	uniform = /obj/item/clothing/under/rank/command/lieutenant
-	head = /obj/item/clothing/head/solgov
-	shoes = /obj/item/clothing/shoes/laceup
-
-/datum/outfit/job/head_of_personnel/solgov/rebel
-	name = "Executive Officer (Deserter)"
-	head = /obj/item/clothing/head/solgov/terragov
-
 /datum/outfit/job/head_of_personnel/pirate
 	name = "First Mate (Pirate)"
 	ears = /obj/item/radio/headset/pirate
@@ -136,3 +125,15 @@
 	id = /obj/item/card/id/syndicate_command/crew_id
 	r_pocket = /obj/item/kitchen/knife/combat/survival
 	glasses = /obj/item/clothing/glasses/sunglasses
+
+/datum/outfit/job/head_of_personnel/frontiersmen
+	name = "Bridge Officer (frontiersmen)"
+
+	ears = /obj/item/radio/headset/pirate/alt
+	uniform = /obj/item/clothing/under/rank/security/officer/frontier/officer
+	shoes = /obj/item/clothing/shoes/cowboy/black
+	head = /obj/item/clothing/head/beret/sec/frontier/officer
+	gloves = /obj/item/clothing/gloves/combat
+	r_pocket = /obj/item/kitchen/knife/combat/survival
+	glasses = /obj/item/clothing/glasses/sunglasses
+	suit = /obj/item/clothing/suit/armor/vest/bulletproof/frontier

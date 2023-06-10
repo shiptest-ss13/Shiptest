@@ -11,9 +11,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/transparent/neutral,
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /obj/structure/sign/poster/official/random{
 	pixel_x = -32
 	},
@@ -31,7 +29,7 @@
 /turf/closed/indestructible/riveted,
 /area/whitesands/surface/outdoors)
 "cl" = (
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/floor/plating,
 /area/whitesands/surface/outdoors)
 "cy" = (
@@ -97,9 +95,7 @@
 	},
 /obj/effect/turf_decal/corner/transparent/neutral,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /obj/structure/sign/poster/official/random{
 	pixel_x = 32
 	},
@@ -132,7 +128,7 @@
 /obj/structure/rack,
 /obj/item/reagent_containers/hypospray/medipen/survival,
 /obj/effect/turf_decal/box,
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/floor/engine,
 /area/whitesands/surface/outdoors)
 "ej" = (
@@ -247,9 +243,7 @@
 /area/whitesands/surface/outdoors)
 "gn" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on,
 /turf/open/floor/plasteel,
 /area/whitesands/surface/outdoors)
@@ -321,7 +315,7 @@
 "hL" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/box,
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/floor/engine,
 /area/whitesands/surface/outdoors)
 "hX" = (
@@ -363,7 +357,9 @@
 /turf/open/floor/plasteel,
 /area/whitesands/surface/outdoors)
 "iT" = (
-/obj/machinery/door/airlock/atmos/glass,
+/obj/machinery/door/airlock/atmos/glass{
+	dir = 4
+	},
 /obj/effect/turf_decal/corner/transparent/neutral,
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
@@ -475,7 +471,9 @@
 /turf/open/floor/plasteel/white,
 /area/whitesands/surface/outdoors)
 "mh" = (
-/obj/structure/door_assembly/door_assembly_research,
+/obj/structure/door_assembly/door_assembly_research{
+	dir = 4
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/plating{
 	icon_state = "platingdmg3"
@@ -543,9 +541,7 @@
 /turf/open/floor/plating,
 /area/whitesands/surface/outdoors)
 "oD" = (
-/obj/machinery/light/small{
-	dir = 8
-	},
+/obj/machinery/light/small/directional/west,
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
@@ -565,9 +561,7 @@
 /obj/structure/rack,
 /obj/item/storage/box,
 /obj/effect/turf_decal/box,
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/engine,
 /area/whitesands/surface/outdoors)
 "pw" = (
@@ -610,9 +604,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/white,
 /area/whitesands/surface/outdoors)
 "qI" = (
@@ -886,7 +878,9 @@
 /turf/open/floor/plasteel/white,
 /area/whitesands/surface/outdoors)
 "yc" = (
-/obj/structure/door_assembly/door_assembly_research,
+/obj/structure/door_assembly/door_assembly_research{
+	dir = 4
+	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/plating{
 	icon_state = "platingdmg1"
@@ -1011,7 +1005,7 @@
 "Dr" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/floor/plating,
 /area/whitesands/surface/outdoors)
 "Dt" = (
@@ -1058,9 +1052,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/white,
 /area/whitesands/surface/outdoors)
 "FM" = (
@@ -1136,7 +1128,7 @@
 /turf/open/floor/plating,
 /area/whitesands/surface/outdoors)
 "Hw" = (
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 8
 	},
@@ -1408,7 +1400,7 @@
 /turf/open/floor/plating,
 /area/whitesands/surface/outdoors)
 "Qr" = (
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -1704,9 +1696,7 @@
 /obj/structure/rack,
 /obj/item/reagent_containers/hypospray/medipen/survival,
 /obj/effect/turf_decal/box,
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/engine,
 /area/whitesands/surface/outdoors)
 "Zx" = (

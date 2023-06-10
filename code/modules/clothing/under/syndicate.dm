@@ -224,7 +224,7 @@
 
 /obj/item/clothing/under/syndicate/inteq
 	name = "inteq turtleneck"
-	desc = "A drab brown turtleneck with black digital camo pants, it has a small 'IRMG' embroidered onto the shoulder."
+	desc = "A rich brown turtleneck with black pants, it has a small 'IRMG' embroidered onto the shoulder."
 	icon_state = "inteq"
 	item_state = "bl_suit"
 	has_sensor = HAS_SENSORS
@@ -236,7 +236,7 @@
 
 /obj/item/clothing/under/syndicate/inteq/skirt
 	name = "inteq skirtleneck"
-	desc = "A drab brown turtleneck with a free flowing black skirt, it has a small 'IRMG' embroidered onto the shoulder."
+	desc = "A rich brown turtleneck with a free flowing black skirt, it has a small 'IRMG' embroidered onto the shoulder."
 	icon_state = "inteq_skirt"
 	item_state = "bl_suit"
 	has_sensor = HAS_SENSORS
@@ -247,25 +247,25 @@
 
 /obj/item/clothing/under/syndicate/inteq/artificer
 	name = "inteq artificer overalls"
-	desc = "A black set of overalls atop a standard issue turtleneck, for the IRMG's support division engineers."
+	desc = "A black set of overalls atop a standard issue turtleneck, for the IRMG's support division Artificers."
 	icon_state = "inteqeng"
 	supports_variations = KEPORI_VARIATION | DIGITIGRADE_VARIATION
 
 /obj/item/clothing/under/syndicate/inteq/skirt/artificer
 	name = "inteq artificer overall skirt"
-	desc = "A black set of overalls in the likeness of a skirt atop a standard issue turtleneck, for the IRMG's support division engineers."
+	desc = "A black set of overalls in the likeness of a skirt atop a standard issue turtleneck, for the IRMG's support division Artificers."
 	icon_state = "inteqeng_skirt"
 	supports_variations = KEPORI_VARIATION | DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/under/syndicate/inteq/corpsman
 	name = "inteq corpsman turtleneck"
-	desc = "A sterile white turtleneck with tactical cargo pants, it is emblazoned with the lettering 'IRMG' on the shoulder. For the IRMG's support division corpsmen."
+	desc = "A sterile white turtleneck with tactical cargo pants, it is emblazoned with the lettering 'IRMG' on the shoulder. For the IRMG's support division Corpsmen."
 	icon_state = "inteqmed"
 	supports_variations = KEPORI_VARIATION | DIGITIGRADE_VARIATION
 
 /obj/item/clothing/under/syndicate/inteq/skirt/corpsman
 	name = "inteq corpsman skirtleneck"
-	desc = "A sterile white turtleneck with a free flowing black skirt, it is emblazoned with the lettering 'IRMG' on the shoulder. For the IRMG's support division corpsmen."
+	desc = "A sterile white turtleneck with a free flowing black skirt, it is emblazoned with the lettering 'IRMG' on the shoulder. For the IRMG's support division Corpsmen."
 	icon_state = "inteqmed_skirt"
 	supports_variations = KEPORI_VARIATION | DIGITIGRADE_VARIATION_NO_NEW_ICON
 
