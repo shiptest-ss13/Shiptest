@@ -5112,12 +5112,6 @@
 /turf/open/floor/plating/airless,
 /area/ship/cargo/starboard)
 "Gr" = (
-/obj/effect/turf_decal/industrial/fire{
-	dir = 4
-	},
-/obj/machinery/atmospherics/components/unary/outlet_injector/atmos/incinerator_input{
-	dir = 8
-	},
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/incinerator_input{
 	dir = 8
 	},
@@ -5474,9 +5468,6 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/dark/hidden/layer1{
-	dir = 10
-	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 8;
 	filter_types = list("n2","co2","bz","water_vapor","miasma","freon","pluox","tritium","n20","no2","nob");
@@ -5487,17 +5478,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/dark/hidden/layer1{
 	dir = 10
-	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
-	dir = 8;
-	filter_types = list("n2","co2","bz","water_vapor","miasma","freon","pluox","tritium","n20","no2","nob");
-	id_tag = null
-	},
-/obj/machinery/atmospherics/pipe/simple/purple/hidden{
-	dir = 6
-	},
-/obj/effect/turf_decal/industrial/warning{
-	dir = 8
 	},
 /turf/open/floor/engine/vacuum,
 /area/ship/engineering/engine)
