@@ -42,6 +42,7 @@
 /area/ship/engineering)
 "an" = (
 /obj/machinery/telecomms/processor/preset_four{
+	autolinkers = list("processor4","bus");
 	network = "irmg_commnet"
 	},
 /turf/open/floor/circuit/telecomms/mainframe,
@@ -235,10 +236,9 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/power/apc/auto_name/directional/east,
-/obj/machinery/telecomms/relay/preset/mining{
-	freq_listening = list(1347);
-	id = "IRMG Relay";
-	name = "IRMG Relay";
+/obj/machinery/telecomms/server/presets/common{
+	autolinkers = list("common","hub");
+	freq_listening = list(1459);
 	network = "irmg_commnet"
 	},
 /turf/open/floor/circuit/telecomms/mainframe,
@@ -1693,6 +1693,7 @@
 /area/ship/engineering/engine)
 "ls" = (
 /obj/machinery/telecomms/server/presets/inteq{
+	autolinkers = list("inteq","hub");
 	freq_listening = list(1347);
 	network = "irmg_commnet"
 	},
@@ -3796,9 +3797,8 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew/cryo)
 "xl" = (
-/obj/machinery/telecomms/server/presets/common{
-	autolinkers = list("processor4","broadcasterB");
-	freq_listening = list(1459);
+/obj/machinery/telecomms/bus/preset_four{
+	autolinkers = list("hub","processor4","bus");
 	network = "irmg_commnet"
 	},
 /turf/open/floor/circuit/telecomms/mainframe,
@@ -3834,6 +3834,7 @@
 /area/ship/engineering)
 "xz" = (
 /obj/machinery/telecomms/broadcaster/preset_right{
+	autolinkers = list("broadcasterB","hub");
 	network = "irmg_commnet"
 	},
 /obj/structure/window/reinforced/survival_pod{
@@ -5171,7 +5172,9 @@
 /area/ship/crew/canteen)
 "Gz" = (
 /obj/machinery/light/directional/south,
-/obj/machinery/telecomms/bus/preset_four{
+/obj/machinery/telecomms/hub{
+	autolinkers = list("hub","bus","relay","messaging","inteq","common","broadcasterB","receiverB");
+	id = "IRMG Communications Hub";
 	network = "irmg_commnet"
 	},
 /turf/open/floor/circuit/telecomms/mainframe,
@@ -5877,6 +5880,7 @@
 /area/ship/hallway/central)
 "LV" = (
 /obj/machinery/telecomms/receiver/preset_right{
+	autolinkers = list("receiverB","hub");
 	freq_listening = list(1347,1359);
 	network = "irmg_commnet"
 	},
