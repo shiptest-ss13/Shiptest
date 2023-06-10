@@ -1,7 +1,19 @@
 import { classes } from 'common/react';
 import { createSearch } from 'common/string';
 import { useBackend, useLocalState } from '../backend';
-import { Box, Button, Dimmer, Flex, Icon, Input, NoticeBox, NumberInput, Section, Table, Tabs } from '../components';
+import {
+  Box,
+  Button,
+  Dimmer,
+  Flex,
+  Icon,
+  Input,
+  NoticeBox,
+  NumberInput,
+  Section,
+  Table,
+  Tabs,
+} from '../components';
 import { formatMoney } from '../format';
 import { Window } from '../layouts';
 
@@ -72,7 +84,8 @@ export const BiogeneratorContent = (props, context) => {
             onClick={() => act('activate')}
           />
         </>
-      }>
+      }
+    >
       <Flex>
         {searchText.length === 0 && (
           <Flex.Item>
@@ -81,7 +94,8 @@ export const BiogeneratorContent = (props, context) => {
                 <Tabs.Tab
                   key={category.name}
                   selected={category.name === selectedCategory}
-                  onClick={() => setSelectedCategory(category.name)}>
+                  onClick={() => setSelectedCategory(category.name)}
+                >
                   {category.name} ({category.items?.length || 0})
                 </Tabs.Tab>
               ))}

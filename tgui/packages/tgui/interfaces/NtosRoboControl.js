@@ -1,5 +1,11 @@
 import { useBackend } from '../backend';
-import { Button, LabeledList, ProgressBar, Section, Stack } from '../components';
+import {
+  Button,
+  LabeledList,
+  ProgressBar,
+  Section,
+  Stack,
+} from '../components';
 import { NtosWindow } from '../layouts';
 
 const getMuleByRef = (mules, ref) => {
@@ -86,7 +92,8 @@ const RobotInfo = (props, context) => {
             />
           </>
         )
-      }>
+      }
+    >
       <Stack>
         <Stack.Item grow={1} basis={0}>
           <LabeledList>

@@ -1,5 +1,13 @@
 import { useBackend, useLocalState } from '../backend';
-import { Button, Input, Section, Tabs, Table, LabeledList, Collapsible } from '../components';
+import {
+  Button,
+  Input,
+  Section,
+  Tabs,
+  Table,
+  LabeledList,
+  Collapsible,
+} from '../components';
 import { Window } from '../layouts';
 import { createSearch, decodeHtmlEntities } from 'common/string';
 
@@ -43,7 +51,8 @@ export const ShipSelect = (props, context) => {
             <Tabs.Tab
               key={`${index}-${tabbing.name}`}
               selected={tab === tabbing.tab}
-              onClick={() => setTab(tabbing.tab)}>
+              onClick={() => setTab(tabbing.tab)}
+            >
               {tabbing.name}
             </Tabs.Tab>
           ))}
@@ -62,7 +71,8 @@ export const ShipSelect = (props, context) => {
                   setTab(3);
                 }}
               />
-            }>
+            }
+          >
             <Table>
               <Table.Row header>
                 <Table.Cell collapsing>Join</Table.Cell>
@@ -110,7 +120,8 @@ export const ShipSelect = (props, context) => {
         {tab === 2 && (
           <>
             <Section
-              title={`Ship Info - ${decodeHtmlEntities(selectedShip.name)}`}>
+              title={`Ship Info - ${decodeHtmlEntities(selectedShip.name)}`}
+            >
               <LabeledList>
                 <LabeledList.Item label="Ship Class">
                   {selectedShip.class}
@@ -135,7 +146,8 @@ export const ShipSelect = (props, context) => {
                     setTab(1);
                   }}
                 />
-              }>
+              }
+            >
               <Table>
                 <Table.Row header>
                   <Table.Cell collapsing>Join</Table.Cell>
@@ -182,7 +194,8 @@ export const ShipSelect = (props, context) => {
                   }}
                 />
               </>
-            }>
+            }
+          >
             {templates.filter(searchFor(searchText)).map((template) => (
               <Collapsible
                 title={template.name}
@@ -196,7 +209,8 @@ export const ShipSelect = (props, context) => {
                       });
                     }}
                   />
-                }>
+                }
+              >
                 <LabeledList>
                   <LabeledList.Item label="Description">
                     {template.desc || 'No Description'}
@@ -208,7 +222,8 @@ export const ShipSelect = (props, context) => {
                     <a
                       href={'https://shiptest.net/wiki/' + template.name}
                       target="_blank"
-                      rel="noreferrer">
+                      rel="noreferrer"
+                    >
                       Here
                     </a>
                   </LabeledList.Item>

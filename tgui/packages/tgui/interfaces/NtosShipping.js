@@ -15,7 +15,8 @@ export const NtosShipping = (props, context) => {
               content="Eject Id"
               onClick={() => act('ejectid')}
             />
-          }>
+          }
+        >
           <LabeledList>
             <LabeledList.Item label="Current User">
               {data.current_user || 'N/A'}

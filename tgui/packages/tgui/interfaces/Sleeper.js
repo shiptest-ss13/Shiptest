@@ -1,5 +1,12 @@
 import { useBackend } from '../backend';
-import { AnimatedNumber, Box, Section, LabeledList, Button, ProgressBar } from '../components';
+import {
+  AnimatedNumber,
+  Box,
+  Section,
+  LabeledList,
+  Button,
+  ProgressBar,
+} from '../components';
 import { Window } from '../layouts';
 import { sortBy } from 'common/collections';
 import { toFixed } from 'common/math';
@@ -47,7 +54,8 @@ export const Sleeper = (props, context) => {
                 {occupant.stat}
               </Box>
             ))
-          }>
+          }
+        >
           {!!occupied && (
             <>
               <ProgressBar
@@ -79,12 +87,14 @@ export const Sleeper = (props, context) => {
                 )}
                 <LabeledList.Item
                   label="Cells"
-                  color={occupant.cloneLoss ? 'bad' : 'good'}>
+                  color={occupant.cloneLoss ? 'bad' : 'good'}
+                >
                   {occupant.cloneLoss ? 'Damaged' : 'Healthy'}
                 </LabeledList.Item>
                 <LabeledList.Item
                   label="Brain"
-                  color={occupant.brainLoss ? 'bad' : 'good'}>
+                  color={occupant.brainLoss ? 'bad' : 'good'}
+                >
                   {occupant.brainLoss ? 'Abnormal' : 'Healthy'}
                 </LabeledList.Item>
                 <LabeledList.Item label="Reagents">
@@ -119,7 +129,8 @@ export const Sleeper = (props, context) => {
                 })
               }
             />
-          ))}>
+          ))}
+        >
           <Box mr={-1}>
             {chemicals.map((chemical) => (
               <Button

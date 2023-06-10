@@ -30,7 +30,8 @@ export const TransferValve = (props, context) => {
               disabled={!attached_device}
               onClick={() => act('device')}
             />
-          }>
+          }
+        >
           <LabeledList>
             {attached_device ? (
               <LabeledList.Item label="Attachment">

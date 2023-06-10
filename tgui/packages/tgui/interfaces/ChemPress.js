@@ -1,5 +1,12 @@
 import { useBackend } from '../backend';
-import { Box, Button, Input, LabeledList, NumberInput, Section } from '../components';
+import {
+  Box,
+  Button,
+  Input,
+  LabeledList,
+  NumberInput,
+  Section,
+} from '../components';
 import { Window } from '../layouts';
 
 export const ChemPress = (props, context) => {
@@ -88,7 +95,8 @@ export const ChemPress = (props, context) => {
                       act('change_pill_style', {
                         id: pill.id,
                       })
-                    }>
+                    }
+                  >
                     <Box mx={-1} className={pill.class_name} />
                   </Button>
                 ))}

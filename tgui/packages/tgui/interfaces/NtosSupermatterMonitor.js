@@ -2,7 +2,14 @@ import { sortBy } from 'common/collections';
 import { flow } from 'common/fp';
 import { toFixed } from 'common/math';
 import { useBackend } from '../backend';
-import { Button, LabeledList, ProgressBar, Section, Stack, Table } from '../components';
+import {
+  Button,
+  LabeledList,
+  ProgressBar,
+  Section,
+  Stack,
+  Table,
+} from '../components';
 import { getGasColor } from '../constants';
 import { NtosWindow } from '../layouts';
 
@@ -54,7 +61,8 @@ export const NtosSupermatterMonitorContent = (props, context) => {
                   good: [-Infinity, 5000],
                   average: [5000, 7000],
                   bad: [7000, Infinity],
-                }}>
+                }}
+              >
                 {toFixed(SM_power) + ' MeV/cm3'}
               </ProgressBar>
             </LabeledList.Item>
@@ -68,7 +76,8 @@ export const NtosSupermatterMonitorContent = (props, context) => {
                   good: [logScale(80), logScale(373)],
                   average: [logScale(373), logScale(1000)],
                   bad: [logScale(1000), Infinity],
-                }}>
+                }}
+              >
                 {toFixed(SM_ambienttemp) + ' K'}
               </ProgressBar>
             </LabeledList.Item>
@@ -81,7 +90,8 @@ export const NtosSupermatterMonitorContent = (props, context) => {
                   good: [logScale(1), logScale(300)],
                   average: [-Infinity, logScale(1000)],
                   bad: [logScale(1000), +Infinity],
-                }}>
+                }}
+              >
                 {toFixed(SM_ambientpressure) + ' kPa'}
               </ProgressBar>
             </LabeledList.Item>
@@ -97,7 +107,8 @@ export const NtosSupermatterMonitorContent = (props, context) => {
               content="Back"
               onClick={() => act('PRG_clear')}
             />
-          }>
+          }
+        >
           <LabeledList>
             {gases.map((gas) => (
               <LabeledList.Item key={gas.name} label={gas.name}>
@@ -105,7 +116,8 @@ export const NtosSupermatterMonitorContent = (props, context) => {
                   color={getGasColor(gas.id)}
                   value={gas.amount}
                   minValue={0}
-                  maxValue={gasMaxAmount}>
+                  maxValue={gasMaxAmount}
+                >
                   {toFixed(gas.amount, 2) + '%'}
                 </ProgressBar>
               </LabeledList.Item>
@@ -129,7 +141,8 @@ const SupermatterList = (props, context) => {
           content="Refresh"
           onClick={() => act('PRG_refresh')}
         />
-      }>
+      }
+    >
       <Table>
         {supermatters.map((sm) => (
           <Table.Row key={sm.uid}>

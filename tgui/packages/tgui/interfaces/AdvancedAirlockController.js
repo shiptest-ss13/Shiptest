@@ -2,7 +2,14 @@ import { toFixed } from 'common/math';
 import { decodeHtmlEntities } from 'common/string';
 import { Fragment } from 'inferno';
 import { useBackend } from '../backend';
-import { Box, Button, LabeledList, NumberInput, Section, ProgressBar } from '../components';
+import {
+  Box,
+  Button,
+  LabeledList,
+  NumberInput,
+  Section,
+  ProgressBar,
+} from '../components';
 import { InterfaceLockNoticeBox } from './common/InterfaceLockNoticeBox';
 import { classes } from 'common/react';
 import { Window } from '../layouts';
@@ -100,7 +107,8 @@ export const AACStatus = (props, context) => {
                 average: [0.25, 0.75],
                 bad: [-Infinity, 0.25],
               }}
-              value={pressure / maxpressure}>
+              value={pressure / maxpressure}
+            >
               {toFixed(pressure, 2)} kPa
             </ProgressBar>
           </LabeledList.Item>
@@ -157,8 +165,8 @@ export const AACStatus = (props, context) => {
               : 'depressurization') +
             (data.skip_timer < data.skip_delay
               ? ' (in ' +
-              Math.round((data.skip_delay - data.skip_timer) / 10) +
-              ' seconds)'
+                Math.round((data.skip_delay - data.skip_timer) / 10) +
+                ' seconds)'
               : '')
           }
           color="danger"
@@ -295,7 +303,8 @@ export const Vent = (props, context) => {
             })
           }
         />
-      }>
+      }
+    >
       <LabeledList>
         <LabeledList.Item label="Roles">
           <Button
@@ -368,7 +377,8 @@ export const Airlock = (props, context) => {
             )
           }
         />
-      }>
+      }
+    >
       <LabeledList>
         <LabeledList.Item label="Roles">
           <Button

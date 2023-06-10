@@ -1,6 +1,14 @@
 import { classes } from 'common/react';
 import { useBackend, useLocalState } from '../backend';
-import { Box, Button, ColorBox, Flex, LabeledList, Section, Tabs } from '../components';
+import {
+  Box,
+  Button,
+  ColorBox,
+  Flex,
+  LabeledList,
+  Section,
+  Tabs,
+} from '../components';
 import { Window } from '../layouts';
 
 const ROOT_CATEGORIES = ['Atmospherics', 'Disposals', 'Transit Tubes'];
@@ -153,7 +161,8 @@ export const RapidPipeDispenser = (props, context) => {
                         dir: preview.dir,
                         flipped: preview.flipped,
                       })
-                    }>
+                    }
+                  >
                     <Box
                       className={classes([
                         'pipes32x32',
@@ -177,7 +186,8 @@ export const RapidPipeDispenser = (props, context) => {
                     key={category.cat_name}
                     icon={ICON_BY_CATEGORY_NAME[category.cat_name]}
                     selected={category.cat_name === shownCategory.cat_name}
-                    onClick={() => setCategoryName(category.cat_name)}>
+                    onClick={() => setCategoryName(category.cat_name)}
+                  >
                     {category.cat_name}
                   </Tabs.Tab>
                 ))}

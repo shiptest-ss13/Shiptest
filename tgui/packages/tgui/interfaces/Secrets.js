@@ -1,6 +1,13 @@
 import { toFixed } from 'common/math';
 import { useBackend, useLocalState } from '../backend';
-import { Button, Flex, LabeledControls, NoticeBox, RoundGauge, Section } from '../components';
+import {
+  Button,
+  Flex,
+  LabeledControls,
+  NoticeBox,
+  RoundGauge,
+  Section,
+} from '../components';
 import { Window } from '../layouts';
 
 const TAB2NAME = [
@@ -44,7 +51,8 @@ const DebuggingTab = (props, context) => {
       height="100%"
       textAlign="center"
       align="stretch"
-      justify="center">
+      justify="center"
+    >
       <Flex.Item my={0.5}>
         <Button
           lineHeight={lineHeightDebug}
@@ -77,7 +85,8 @@ const HelpfulTab = (props, context) => {
         direction="row"
         height="100%"
         align="stretch"
-        justify="space-between">
+        justify="space-between"
+      >
         <Flex.Item grow={1}>
           <Button
             icon="plus"
@@ -103,7 +112,8 @@ const HelpfulTab = (props, context) => {
         direction="row"
         height="100%"
         align="stretch"
-        justify="space-between">
+        justify="space-between"
+      >
         <Flex.Item grow={1}>
           <Button
             icon="bomb"
@@ -138,7 +148,8 @@ const HelpfulTab = (props, context) => {
         direction="row"
         height="100%"
         align="stretch"
-        justify="space-between">
+        justify="space-between"
+      >
         <Flex.Item grow={1}>
           <Button
             icon="address-book"
@@ -173,7 +184,8 @@ const HelpfulTab = (props, context) => {
         direction="row"
         height="100%"
         align="stretch"
-        justify="space-between">
+        justify="space-between"
+      >
         <Flex.Item grow={1}>
           <Button
             icon="flag"
@@ -208,7 +220,8 @@ const HelpfulTab = (props, context) => {
         direction="row"
         height="100%"
         align="stretch"
-        justify="space-between">
+        justify="space-between"
+      >
         <Flex.Item grow={1}>
           <Button
             icon="pencil-alt"
@@ -242,7 +255,8 @@ const FunTab = (props, context) => {
         direction="row"
         height="100%"
         align="stretch"
-        justify="space-between">
+        justify="space-between"
+      >
         <Flex.Item grow={1}>
           <Button
             icon="grin-beam-sweat"
@@ -277,7 +291,8 @@ const FunTab = (props, context) => {
         direction="row"
         height="100%"
         align="stretch"
-        justify="space-between">
+        justify="space-between"
+      >
         <Flex.Item>
           <Button
             icon="bolt"
@@ -312,7 +327,8 @@ const FunTab = (props, context) => {
         direction="row"
         height="100%"
         align="stretch"
-        justify="space-between">
+        justify="space-between"
+      >
         <Flex.Item grow={1}>
           <Button
             icon="user-ninja"
@@ -329,7 +345,8 @@ const FunTab = (props, context) => {
         direction="row"
         height="100%"
         align="stretch"
-        justify="space-between">
+        justify="space-between"
+      >
         <Flex.Item grow={1}>
           <Button
             icon="grin-beam-sweat"
@@ -364,7 +381,8 @@ const FunTab = (props, context) => {
         direction="row"
         height="100%"
         align="stretch"
-        justify="space-between">
+        justify="space-between"
+      >
         <Flex.Item grow={1}>
           <Button
             icon="hammer"
@@ -389,7 +407,8 @@ const FunTab = (props, context) => {
         direction="row"
         height="100%"
         align="stretch"
-        justify="space-between">
+        justify="space-between"
+      >
         <Flex.Item grow={1}>
           <Button
             icon="bullseye"
@@ -423,7 +442,8 @@ const FunForYouTab = (props, context) => {
       direction="column"
       height="100%"
       align="stretch"
-      justify="center">
+      justify="center"
+    >
       <Flex.Item>
         <NoticeBox danger>
           <Button
@@ -568,7 +588,8 @@ export const Secrets = (props, context) => {
                     onClick={() => act('show_admins')}
                   />
                 </>
-              }>
+              }
+            >
               <Flex mx={-0.5} align="stretch" justify="center">
                 <Flex.Item bold>
                   <NoticeBox color="black">
@@ -581,7 +602,8 @@ export const Secrets = (props, context) => {
                 textAlign="center"
                 mx={-0.5}
                 align="stretch"
-                justify="center">
+                justify="center"
+              >
                 <Flex.Item ml={-10} mr={1}>
                   <Button
                     selected={tabIndex === 2}
@@ -614,7 +636,8 @@ export const Secrets = (props, context) => {
                   <LabeledControls>
                     <LabeledControls.Item
                       minWidth="66px"
-                      label="Chances of admin complaint">
+                      label="Chances of admin complaint"
+                    >
                       <RoundGauge
                         size={2}
                         value={TAB2NAME[tabIndex - 1].gauge}
@@ -650,7 +673,8 @@ export const Secrets = (props, context) => {
                 TAB2NAME[tabIndex - 1].title +
                 ' Or: ' +
                 TAB2NAME[tabIndex - 1].blurb
-              }>
+              }
+            >
               <TabComponent />
             </Section>
           </Flex.Item>

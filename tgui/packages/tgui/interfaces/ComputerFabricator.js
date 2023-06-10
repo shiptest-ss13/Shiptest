@@ -86,7 +86,8 @@ const CfStep2 = (props, context) => {
         <Box bold color="good">
           {data.totalprice} cr
         </Box>
-      }>
+      }
+    >
       <Table>
         <Table.Row>
           <Table.Cell bold position="relative">
@@ -409,7 +410,8 @@ const CfStep3 = (props, context) => {
         mt={0.5}
         textAlign="center"
         fontSize="18px"
-        color={data.credits >= data.totalprice ? 'good' : 'bad'}>
+        color={data.credits >= data.totalprice ? 'good' : 'bad'}
+      >
         {data.credits} cr
       </Box>
       <Button

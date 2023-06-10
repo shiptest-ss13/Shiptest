@@ -1,5 +1,12 @@
 import { useBackend, useLocalState } from '../backend';
-import { Button, LabeledList, Section, Table, Tabs, Divider } from '../components';
+import {
+  Button,
+  LabeledList,
+  Section,
+  Table,
+  Tabs,
+  Divider,
+} from '../components';
 import { Window } from '../layouts';
 
 export const ShipOwner = (props, context) => {
@@ -39,7 +46,8 @@ const ShipOwnerContent = (props, context) => {
             Job Slots
           </Tabs.Tab>
         </Tabs>
-      }>
+      }
+    >
       {(!memo || memo.length <= 0) && (
         <div className="NoticeBox">You need to set a ship memo!</div>
       )}
@@ -57,8 +65,8 @@ const ShipOwnerContent = (props, context) => {
                   joinMode === 'Open'
                     ? 'good'
                     : joinMode === 'Apply'
-                      ? 'average'
-                      : 'bad'
+                    ? 'average'
+                    : 'bad'
                 }
                 onClick={() => act('cycleJoin')}
               />

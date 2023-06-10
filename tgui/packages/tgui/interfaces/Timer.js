@@ -25,7 +25,8 @@ export const Timer = (props, context) => {
                 onClick={() => act('time')}
               />
             </>
-          }>
+          }
+        >
           <Button
             icon="fast-backward"
             disabled={timing}

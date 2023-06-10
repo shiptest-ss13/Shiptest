@@ -19,7 +19,8 @@ export const Cloner = (props, context) => {
               onClick={() => act('ejectbeaker')}
               content="Eject"
             />
-          }>
+          }
+        >
           <BeakerContents
             beakerLoaded={data.isBeakerLoaded}
             beakerContents={data.beakerContents}

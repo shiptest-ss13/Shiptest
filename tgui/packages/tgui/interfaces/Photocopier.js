@@ -1,4 +1,11 @@
-import { ProgressBar, NumberInput, Button, Section, Box, Flex } from '../components';
+import {
+  ProgressBar,
+  NumberInput,
+  Button,
+  Section,
+  Box,
+  Flex,
+} from '../components';
 import { useBackend } from '../backend';
 import { Window } from '../layouts';
 
@@ -43,10 +50,12 @@ export const Toner = (props, context) => {
         <Button
           disabled={!current_toner}
           onClick={() => act('remove_toner')}
-          icon="eject">
+          icon="eject"
+        >
           Eject
         </Button>
-      }>
+      }
+    >
       <ProgressBar
         ranges={{
           good: [average_toner, max_toner],
@@ -94,7 +103,8 @@ export const Options = (props, context) => {
             icon="copy"
             textAlign="center"
             disabled={!has_enough_toner}
-            onClick={() => act('make_copy')}>
+            onClick={() => act('make_copy')}
+          >
             Copy
           </Button>
         </Flex.Item>
@@ -110,7 +120,8 @@ export const Options = (props, context) => {
                 act('color_mode', {
                   mode: 'Greyscale',
                 })
-              }>
+              }
+            >
               Greyscale
             </Button>
           </Flex.Item>
@@ -123,7 +134,8 @@ export const Options = (props, context) => {
                 act('color_mode', {
                   mode: 'Color',
                 })
-              }>
+              }
+            >
               Color
             </Button>
           </Flex.Item>
@@ -134,7 +146,8 @@ export const Options = (props, context) => {
         textAlign="center"
         icon="reply"
         fluid
-        onClick={() => act('remove')}>
+        onClick={() => act('remove')}
+      >
         Remove item
       </Button>
     </Section>
@@ -153,7 +166,8 @@ export const AIOptions = (props, context) => {
           icon="images"
           textAlign="center"
           disabled={!can_AI_print}
-          onClick={() => act('ai_photo')}>
+          onClick={() => act('ai_photo')}
+        >
           Print photo from database
         </Button>
       </Box>

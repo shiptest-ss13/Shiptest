@@ -1,5 +1,12 @@
 import { useBackend, useSharedState } from '../backend';
-import { Button, Flex, LabeledList, NoticeBox, Section, Tabs } from '../components';
+import {
+  Button,
+  Flex,
+  LabeledList,
+  NoticeBox,
+  Section,
+  Tabs,
+} from '../components';
 import { Window } from '../layouts';
 
 export const TachyonArray = (props, context) => {
@@ -39,7 +46,8 @@ export const TachyonArrayContent = (props, context) => {
                 icon="file"
                 key={record.name}
                 selected={record.name === activeRecordName}
-                onClick={() => setActiveRecordName(record.name)}>
+                onClick={() => setActiveRecordName(record.name)}
+              >
                 {record.name}
               </Tabs.Tab>
             ))}
@@ -72,7 +80,8 @@ export const TachyonArrayContent = (props, context) => {
                     }
                   />
                 </>
-              }>
+              }
+            >
               <LabeledList>
                 <LabeledList.Item label="Timestamp">
                   {activeRecord.timestamp}

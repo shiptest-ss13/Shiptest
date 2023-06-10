@@ -44,7 +44,8 @@ export const ThermalGenerator = (props, context) => {
                 value={power}
                 minValue={0}
                 maxValue={maxPowerDisplay}
-                color="yellow">
+                color="yellow"
+              >
                 {formatSiUnit(power, 0, 'W')}
               </ProgressBar>
             </LabeledList.Item>
@@ -57,7 +58,8 @@ export const ThermalGenerator = (props, context) => {
                   blue: [-Infinity, 293],
                   good: [293, 500],
                   average: [500, Infinity],
-                }}>
+                }}
+              >
                 {coldCircTemp} K {coldCircPressure} kPa
               </ProgressBar>
             </LabeledList.Item>
@@ -70,7 +72,8 @@ export const ThermalGenerator = (props, context) => {
                   blue: [-Infinity, 293],
                   good: [293, 500],
                   average: [500, Infinity],
-                }}>
+                }}
+              >
                 {hotCircTemp} K {hotCircPressure} kPa
               </ProgressBar>
             </LabeledList.Item>

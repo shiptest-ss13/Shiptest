@@ -1,5 +1,14 @@
 import { useBackend, useSharedState } from '../backend';
-import { Box, Button, Dimmer, Icon, LabeledList, Stack, Section, Tabs } from '../components';
+import {
+  Box,
+  Button,
+  Dimmer,
+  Icon,
+  LabeledList,
+  Stack,
+  Section,
+  Tabs,
+} from '../components';
 import { capitalize } from 'common/string';
 import { Window } from '../layouts';
 
@@ -28,7 +37,8 @@ export const Limbgrower = (props, context) => {
       height={
         Math.max(460, 195 + categories.length * 23) + reagents.length * 25
       }
-      resizable>
+      resizable
+    >
       {!!busy && (
         <Dimmer fontSize="32px">
           <Icon name="cog" spin={1} />
@@ -57,7 +67,8 @@ export const Limbgrower = (props, context) => {
                       })
                     }
                   />
-                }>
+                }
+              >
                 {reagent.reagent_amount}u
               </LabeledList.Item>
             ))}
@@ -73,7 +84,8 @@ export const Limbgrower = (props, context) => {
                       <Tabs.Tab
                         key={category.name}
                         selected={tab === category.name}
-                        onClick={() => setTab(category.name)}>
+                        onClick={() => setTab(category.name)}
+                      >
                         {capitalize(category.name)}
                       </Tabs.Tab>
                     ))}
@@ -98,7 +110,8 @@ export const Limbgrower = (props, context) => {
                             })
                           }
                         />
-                      }>
+                      }
+                    >
                       {design.needed_reagents.map((reagent) => (
                         <Box key={reagent.name}>
                           {reagent.name}: {reagent.amount}u

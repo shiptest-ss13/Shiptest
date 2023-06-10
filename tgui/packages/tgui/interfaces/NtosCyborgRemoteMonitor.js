@@ -42,7 +42,8 @@ export const NtosCyborgRemoteMonitorContent = (props, context) => {
                   })
                 }
               />
-            }>
+            }
+          >
             <LabeledList>
               <LabeledList.Item label="Status">
                 <Box
@@ -50,16 +51,17 @@ export const NtosCyborgRemoteMonitorContent = (props, context) => {
                     cyborg.status
                       ? 'bad'
                       : cyborg.locked_down
-                        ? 'average'
-                        : 'good'
-                  }>
+                      ? 'average'
+                      : 'good'
+                  }
+                >
                   {cyborg.status
                     ? 'Not Responding'
                     : cyborg.locked_down
-                      ? 'Locked Down'
-                      : cyborg.shell_discon
-                        ? 'Nominal/Disconnected'
-                        : 'Nominal'}
+                    ? 'Locked Down'
+                    : cyborg.shell_discon
+                    ? 'Nominal/Disconnected'
+                    : 'Nominal'}
                 </Box>
               </LabeledList.Item>
               <LabeledList.Item label="Charge">
@@ -68,9 +70,10 @@ export const NtosCyborgRemoteMonitorContent = (props, context) => {
                     cyborg.charge <= 30
                       ? 'bad'
                       : cyborg.charge <= 70
-                        ? 'average'
-                        : 'good'
-                  }>
+                      ? 'average'
+                      : 'good'
+                  }
+                >
                   {typeof cyborg.charge === 'number'
                     ? cyborg.charge + '%'
                     : 'Not Found'}

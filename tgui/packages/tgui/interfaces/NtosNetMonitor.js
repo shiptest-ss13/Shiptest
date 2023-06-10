@@ -1,5 +1,12 @@
 import { useBackend } from '../backend';
-import { Box, Button, LabeledList, NoticeBox, NumberInput, Section } from '../components';
+import {
+  Box,
+  Button,
+  LabeledList,
+  NoticeBox,
+  NumberInput,
+  Section,
+} from '../components';
 import { NtosWindow } from '../layouts';
 
 export const NtosNetMonitor = (props, context) => {
@@ -34,7 +41,8 @@ export const NtosNetMonitor = (props, context) => {
               selected={ntnetstatus}
               onClick={() => act('toggleWireless')}
             />
-          }>
+          }
+        >
           {ntnetrelays ? (
             <LabeledList>
               <LabeledList.Item label="Active NTNet Relays">
@@ -149,7 +157,8 @@ export const NtosNetMonitor = (props, context) => {
                 content="Clear Logs"
                 onClick={() => act('purgelogs')}
               />
-            }>
+            }
+          >
             {ntnetlogs.map((log) => (
               <Box key={log.entry} className="candystripe">
                 {log.entry}

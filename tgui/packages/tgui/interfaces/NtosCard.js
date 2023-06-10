@@ -1,5 +1,13 @@
 import { useBackend, useLocalState } from '../backend';
-import { Box, Button, Flex, Input, NoticeBox, Section, Tabs } from '../components';
+import {
+  Box,
+  Button,
+  Flex,
+  Input,
+  NoticeBox,
+  Section,
+  Tabs,
+} from '../components';
 import { NtosWindow } from '../layouts';
 import { AccessList } from './common/AccessList';
 
@@ -79,7 +87,8 @@ export const NtosCardContent = (props, context) => {
               }}
             />
           </>
-        }>
+        }
+      >
         <Button
           fluid
           icon="eject"
@@ -155,7 +164,8 @@ export const NtosCardContent = (props, context) => {
                   color="bad"
                   onClick={() => act('PRG_terminate')}
                 />
-              }>
+              }
+            >
               <Button.Input
                 fluid
                 content="Custom..."
@@ -173,7 +183,8 @@ export const NtosCardContent = (props, context) => {
                       <Tabs.Tab
                         key={department}
                         selected={department === selectedDepartment}
-                        onClick={() => setSelectedDepartment(department)}>
+                        onClick={() => setSelectedDepartment(department)}
+                      >
                         {department}
                       </Tabs.Tab>
                     ))}

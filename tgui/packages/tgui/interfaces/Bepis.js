@@ -1,5 +1,12 @@
 import { useBackend } from '../backend';
-import { Box, Button, Grid, LabeledList, NumberInput, Section } from '../components';
+import {
+  Box,
+  Button,
+  Grid,
+  LabeledList,
+  NumberInput,
+  Section,
+} from '../components';
 import { Window } from '../layouts';
 
 export const Bepis = (props, context) => {
@@ -19,7 +26,8 @@ export const Bepis = (props, context) => {
                 selected={!data.manual_power}
                 onClick={() => act('toggle_power')}
               />
-            }>
+            }
+          >
             All you need to know about the B.E.P.I.S. and you! The B.E.P.I.S.
             performs hundreds of tests a second using electrical and financial
             resources to invent new products, or discover new technologies
@@ -33,7 +41,8 @@ export const Bepis = (props, context) => {
                 content="Reset Account"
                 onClick={() => act('account_reset')}
               />
-            }>
+            }
+          >
             Console is currently being operated by{' '}
             {data.account_owner ? data.account_owner : 'no one'}.
           </Section>

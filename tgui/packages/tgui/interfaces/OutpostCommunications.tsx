@@ -1,5 +1,13 @@
 import { useBackend, useSharedState } from '../backend';
-import { ProgressBar, Section, Tabs, Button, LabeledList, Box, Stack } from '../components';
+import {
+  ProgressBar,
+  Section,
+  Tabs,
+  Button,
+  LabeledList,
+  Box,
+  Stack,
+} from '../components';
 import { Window } from '../layouts';
 import { CargoCatalog } from './Cargo';
 
@@ -48,21 +56,24 @@ export const OutpostCommunications = (props, context) => {
                   {!!outpostDocked && (
                     <Tabs.Tab
                       selected={tab === 'cargo'}
-                      onClick={() => setTab('cargo')}>
+                      onClick={() => setTab('cargo')}
+                    >
                       Cargo
                     </Tabs.Tab>
                   )}
                   {!!onShip && (
                     <Tabs.Tab
                       selected={tab === 'shipMissions'}
-                      onClick={() => setTab('shipMissions')}>
+                      onClick={() => setTab('shipMissions')}
+                    >
                       Current Missions
                     </Tabs.Tab>
                   )}
                   {!!outpostDocked && (
                     <Tabs.Tab
                       selected={tab === 'outpostMissions'}
-                      onClick={() => setTab('outpostMissions')}>
+                      onClick={() => setTab('outpostMissions')}
+                    >
                       Available Missions
                     </Tabs.Tab>
                   )}
@@ -117,7 +128,8 @@ const CargoExpressContent = (props, context) => {
             <Button
               selected={usingBeacon}
               disabled={!hasBeacon}
-              onClick={() => act('LZBeacon')}>
+              onClick={() => act('LZBeacon')}
+            >
               {beaconZone} ({beaconName})
             </Button>
             <Button
@@ -177,7 +189,8 @@ const MissionsList = (props, context) => {
           act('mission-act', {
             ref: mission.ref,
           })
-        }>
+        }
+      >
         {mission.actStr}
       </Button>
     );
@@ -198,7 +211,8 @@ const MissionsList = (props, context) => {
             average: [0.25, 0.75],
             bad: [0, 0.25],
           }}
-          value={mission.remaining / mission.duration}>
+          value={mission.remaining / mission.duration}
+        >
           {mission.timeStr}
         </ProgressBar>
       </Stack.Item>
@@ -215,7 +229,8 @@ const MissionsList = (props, context) => {
         verticalAlign="top"
         labelWrap
         label={mission.name}
-        buttons={missionValues(mission)}>
+        buttons={missionValues(mission)}
+      >
         {mission.desc}
       </LabeledList.Item>
       <LabeledList.Divider />

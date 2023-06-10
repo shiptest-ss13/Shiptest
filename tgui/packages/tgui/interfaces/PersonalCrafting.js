@@ -1,5 +1,13 @@
 import { useBackend, useLocalState } from '../backend';
-import { Button, Dimmer, Flex, Icon, LabeledList, Section, Tabs } from '../components';
+import {
+  Button,
+  Dimmer,
+  Flex,
+  Icon,
+  LabeledList,
+  Section,
+  Tabs,
+} from '../components';
 import { Window } from '../layouts';
 
 export const PersonalCrafting = (props, context) => {
@@ -74,7 +82,8 @@ export const PersonalCrafting = (props, context) => {
                 onClick={() => act('toggle_recipes')}
               />
             </>
-          }>
+          }
+        >
           <Flex>
             <Flex.Item>
               <Tabs vertical>
@@ -88,7 +97,8 @@ export const PersonalCrafting = (props, context) => {
                         category: category.category,
                         subcategory: category.subcategory,
                       });
-                    }}>
+                    }}
+                  >
                     {category.name}
                   </Tabs.Tab>
                 ))}
@@ -134,7 +144,8 @@ const CraftingList = (props, context) => {
                 })
               }
             />
-          }>
+          }
+        >
           {craftable.req_text}
         </LabeledList.Item>
       );
@@ -156,7 +167,8 @@ const CraftingList = (props, context) => {
               })
             }
           />
-        }>
+        }
+      >
         <LabeledList>
           {!!craftable.req_text && (
             <LabeledList.Item label="Required">

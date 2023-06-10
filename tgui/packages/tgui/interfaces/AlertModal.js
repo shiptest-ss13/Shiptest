@@ -22,7 +22,8 @@ export const AlertModal = (props, context) => {
             <Flex
               direction="column"
               className="AlertModal__Message"
-              height="100%">
+              height="100%"
+            >
               <Flex.Item>
                 <Box m={1}>{message}</Box>
               </Flex.Item>
@@ -34,7 +35,8 @@ export const AlertModal = (props, context) => {
                 <Flex.Item key={button} mx={1}>
                   <Button
                     px={3}
-                    onClick={() => act('choose', { choice: button })}>
+                    onClick={() => act('choose', { choice: button })}
+                  >
                     {button}
                   </Button>
                 </Flex.Item>

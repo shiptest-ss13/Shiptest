@@ -113,7 +113,8 @@ export const ShuttleManipulatorTemplates = (props, context) => {
               <Tabs.Tab
                 key={templateId}
                 selected={selectedTemplateId === templateId}
-                onClick={() => setSelectedTemplateId(templateId)}>
+                onClick={() => setSelectedTemplateId(templateId)}
+              >
                 {template.category}
               </Tabs.Tab>
             ))(templateObject)}
@@ -146,7 +147,8 @@ export const ShuttleManipulatorTemplates = (props, context) => {
                       }
                     />
                   </>
-                }>
+                }
+              >
                 {(!!actualTemplate.description ||
                   !!actualTemplate.admin_notes) && (
                   <LabeledList>

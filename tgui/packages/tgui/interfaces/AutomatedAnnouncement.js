@@ -23,7 +23,8 @@ export const AutomatedAnnouncement = (props, context) => {
               content={arrivalToggle ? 'On' : 'Off'}
               onClick={() => act('ArrivalToggle')}
             />
-          }>
+          }
+        >
           <LabeledList>
             <LabeledList.Item
               label="Message"
@@ -33,7 +34,8 @@ export const AutomatedAnnouncement = (props, context) => {
                   tooltip={TOOLTIP_TEXT}
                   tooltipPosition="left"
                 />
-              }>
+              }
+            >
               <Input
                 fluid
                 value={arrival}
@@ -55,7 +57,8 @@ export const AutomatedAnnouncement = (props, context) => {
               content={newheadToggle ? 'On' : 'Off'}
               onClick={() => act('NewheadToggle')}
             />
-          }>
+          }
+        >
           <LabeledList>
             <LabeledList.Item
               label="Message"
@@ -65,7 +68,8 @@ export const AutomatedAnnouncement = (props, context) => {
                   tooltip={TOOLTIP_TEXT}
                   tooltipPosition="left"
                 />
-              }>
+              }
+            >
               <Input
                 fluid
                 value={newhead}

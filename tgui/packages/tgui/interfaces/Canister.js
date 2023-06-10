@@ -1,6 +1,18 @@
 import { toFixed } from 'common/math';
 import { useBackend } from '../backend';
-import { AnimatedNumber, Box, Button, Flex, Icon, Knob, LabeledControls, LabeledList, RoundGauge, Section, Tooltip } from '../components';
+import {
+  AnimatedNumber,
+  Box,
+  Button,
+  Flex,
+  Icon,
+  Knob,
+  LabeledControls,
+  LabeledList,
+  RoundGauge,
+  Section,
+  Tooltip,
+} from '../components';
 import { formatSiUnit } from '../format';
 import { Window } from '../layouts';
 
@@ -52,7 +64,8 @@ export const Canister = (props, context) => {
                     onClick={() => act('relabel')}
                   />
                 </>
-              }>
+              }
+            >
               <LabeledControls>
                 <LabeledControls.Item minWidth="66px" label="Pressure">
                   <AnimatedNumber
@@ -152,7 +165,8 @@ export const Canister = (props, context) => {
                     onClick={() => act('eject')}
                   />
                 )
-              }>
+              }
+            >
               {!!hasHoldingTank && (
                 <LabeledList>
                   <LabeledList.Item label="Label">

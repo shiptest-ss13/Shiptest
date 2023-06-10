@@ -1,7 +1,14 @@
 import { map } from 'common/collections';
 import { classes } from 'common/react';
 import { useBackend, useLocalState } from '../backend';
-import { Box, Button, Input, LabeledList, NumberInput, Section } from '../components';
+import {
+  Box,
+  Button,
+  Input,
+  LabeledList,
+  NumberInput,
+  Section,
+} from '../components';
 import { Window } from '../layouts';
 
 export const ChemReactionChamber = (props, context) => {
@@ -27,7 +34,8 @@ export const ChemReactionChamber = (props, context) => {
             <Box inline bold color={emptying ? 'bad' : 'good'}>
               {emptying ? 'Emptying' : 'Filling'}
             </Box>
-          }>
+          }
+        >
           <LabeledList>
             <tr className="LabledList__row">
               <td colSpan="2" className="LabeledList__cell">
@@ -42,7 +50,8 @@ export const ChemReactionChamber = (props, context) => {
                 className={classes([
                   'LabeledList__buttons',
                   'LabeledList__cell',
-                ])}>
+                ])}
+              >
                 <NumberInput
                   value={reagentQuantity}
                   minValue={1}
@@ -78,7 +87,8 @@ export const ChemReactionChamber = (props, context) => {
                       })
                     }
                   />
-                }>
+                }
+              >
                 {amount}
               </LabeledList.Item>
             ))(reagents)}

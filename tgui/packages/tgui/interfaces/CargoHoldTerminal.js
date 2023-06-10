@@ -1,5 +1,11 @@
 import { useBackend } from '../backend';
-import { AnimatedNumber, Box, Button, LabeledList, Section } from '../components';
+import {
+  AnimatedNumber,
+  Box,
+  Button,
+  LabeledList,
+  Section,
+} from '../components';
 import { Window } from '../layouts';
 
 export const CargoHoldTerminal = (props, context) => {
@@ -35,7 +41,8 @@ export const CargoHoldTerminal = (props, context) => {
                 onClick={() => act(sending ? 'stop' : 'send')}
               />
             </>
-          }>
+          }
+        >
           <LabeledList>
             <LabeledList.Item label="Status" color={pad ? 'good' : 'bad'}>
               {pad ? 'Online' : 'Not Found'}
