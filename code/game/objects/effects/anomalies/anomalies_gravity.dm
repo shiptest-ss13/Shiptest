@@ -91,7 +91,7 @@
 	INVOKE_ASYNC(src, .proc/setup_grav_field)
 
 /obj/effect/anomaly/grav/high/proc/setup_grav_field()
-	grav_field = make_field(/datum/proximity_monitor/advanced/gravity, list("current_range" = effectrange, "host" = src, "gravity_value" = rand(0,3)))
+	grav_field = make_field(/datum/proximity_monitor/advanced/gravity, list("current_range" = effectrange, "host" = src, "gravity_value" = 2))
 
 /obj/effect/anomaly/grav/high/Destroy()
 	QDEL_NULL(grav_field)

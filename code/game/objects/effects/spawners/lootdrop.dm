@@ -945,7 +945,6 @@
 /obj/effect/spawner/lootdrop/anomaly/waste
 	name = "Waste anomaly spawner"
 	loot = list(
-		/obj/effect/anomaly/bluespace/planetary,
 		/obj/effect/anomaly/grav/planetary,
 		/obj/effect/anomaly/hallucination/planetary,
 		/obj/effect/anomaly/vortex/planetary,
