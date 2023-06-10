@@ -57,6 +57,8 @@
 
 /datum/outfit/job/solgov/sonnensoldner
 	name = "Sonnensöldner (SolGov)"
+	jobtype = /datum/job/officer
+
 	id = /obj/item/card/id/solgov
 	uniform = /obj/item/clothing/under/solgov
 	suit = /obj/item/clothing/suit/armor/vest/bulletproof/solgov
@@ -77,7 +79,7 @@
 	job_icon = "solgovrepresentative"
 	jobtype = /datum/job/solgov
 
-	id = /obj/item/card/id/silver
+	id = /obj/item/card/id/solgov
 	head = /obj/item/clothing/head/solgov
 	uniform = /obj/item/clothing/under/solgov/formal
 	accessory = /obj/item/clothing/accessory/waistcoat/solgov
@@ -101,7 +103,7 @@
 	name = "Overseer (SolGov)"
 	jobtype = /datum/job/head_of_personnel
 
-	id = /obj/item/card/id/silver
+	id = /obj/item/card/id/solgov
 	belt = /obj/item/pda/heads/head_of_personnel
 	ears = /obj/item/radio/headset/solgov
 	uniform = /obj/item/clothing/under/solgov/formal
