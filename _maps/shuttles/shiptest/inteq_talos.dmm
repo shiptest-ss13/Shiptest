@@ -5118,6 +5118,12 @@
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/incinerator_input{
 	dir = 8
 	},
+/obj/merge_conflict_marker{
+	name = "---Merge Conflict Marker---",desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
+	},
+/obj/machinery/atmospherics/components/unary/outlet_injector/atmos/incinerator_input{
+	dir = 8
+	},
 /turf/open/floor/engine/vacuum,
 /area/ship/engineering/engine)
 "Gt" = (
@@ -5481,6 +5487,23 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/purple/hidden{
 	dir = 6
+	},
+/obj/merge_conflict_marker{
+	name = "---Merge Conflict Marker---",desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
+	},
+/obj/machinery/atmospherics/pipe/simple/dark/hidden/layer1{
+	dir = 10
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 8;
+	filter_types = list("n2","co2","bz","water_vapor","miasma","freon","pluox","tritium","n20","no2","nob");
+	id_tag = null
+	},
+/obj/machinery/atmospherics/pipe/simple/purple/hidden{
+	dir = 6
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
 	},
 /turf/open/floor/engine/vacuum,
 /area/ship/engineering/engine)
@@ -5896,6 +5919,13 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "talos_engine_shutter"
 	},
+/obj/merge_conflict_marker{
+	name = "---Merge Conflict Marker---",desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
+	},
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/shutters{
+	id = "talos_engine_shutter"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Mf" = (
@@ -6234,6 +6264,17 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/airless,
 /area/ship/external/dark)
+"Pk" = (
+/obj/merge_conflict_marker{
+	name = "---Merge Conflict Marker---",desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
+	},
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "talos_engine_shutter"
+	},
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/engineering/engine)
 "Pm" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1;
@@ -7962,7 +8003,7 @@ ud
 xo
 pU
 pU
-pU
+Pk
 pU
 VL
 Dc
