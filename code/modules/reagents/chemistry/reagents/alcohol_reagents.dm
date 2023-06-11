@@ -2475,7 +2475,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 
 /datum/reagent/consumable/ethanol/ash_wine/on_mob_life(mob/living/M)
 	var/high_message = pick("you feel far more devoted to the cause", "you feel like you should go on a hunt")
-	var/cleanse_message = pick("divine light purifys you", "you are purged of foul spirts")
+	var/cleanse_message = pick("divine light purifies you", "you are purged of foul spirts")
 	//needs to get updated anytime someone adds a srm job
 	var/static/list/increased_toxin_loss = list("Hunter Montagne", "Hunter Doctor", "Hunter", "Shadow")
 	if(prob(10))
