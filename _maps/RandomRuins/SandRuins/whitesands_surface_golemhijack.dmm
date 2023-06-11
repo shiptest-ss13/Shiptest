@@ -54,7 +54,9 @@
 /turf/open/floor/plasteel/dark,
 /area/whitesands/surface/outdoors)
 "cW" = (
-/obj/structure/door_assembly/door_assembly_min,
+/obj/structure/door_assembly/door_assembly_min{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/whitesands/surface/outdoors)
 "dz" = (
@@ -575,9 +577,7 @@
 /turf/open/floor/mineral/titanium/purple,
 /area/whitesands/surface/outdoors)
 "Gs" = (
-/obj/machinery/light/small{
-	dir = 8
-	},
+/obj/machinery/light/small/directional/west,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/freezer,
 /area/whitesands/surface/outdoors)

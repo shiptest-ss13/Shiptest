@@ -193,18 +193,14 @@
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/line{
 	dir = 8
 	},
-/obj/machinery/light/small/broken{
-	dir = 8
-	},
+/obj/machinery/light/small/broken/directional/west,
 /turf/open/floor/plasteel/icemoon,
 /area/icemoon/surface/outdoors)
 "aL" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/line{
 	dir = 4
 	},
-/obj/machinery/light/small{
-	dir = 4
-	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/icemoon,
 /area/icemoon/surface/outdoors)
 "aM" = (
@@ -326,9 +322,7 @@
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1
 	},
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/machinery/light/small/directional/north,
 /obj/machinery/meter/atmos,
 /turf/open/floor/plasteel/icemoon,
 /area/icemoon/surface/outdoors)
@@ -405,7 +399,8 @@
 /area/icemoon/surface/outdoors)
 "bi" = (
 /obj/machinery/door/airlock/engineering{
-	name = "The Singularity Engine"
+	name = "The Singularity Engine";
+	dir = 8
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -443,10 +438,6 @@
 /turf/open/floor/plasteel/icemoon,
 /area/icemoon/surface/outdoors)
 "bl" = (
-/obj/machinery/door/airlock/engineering{
-	name = "Engine Entry";
-	req_access_txt = "204"
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -455,6 +446,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
+	},
+/obj/machinery/door/airlock/engineering{
+	name = "The Singularity Engine";
+	dir = 8
 	},
 /turf/open/floor/plasteel/dark{
 	initial_gas_mix = "ICEMOON_ATMOS"
@@ -689,7 +684,8 @@
 /area/icemoon/surface/outdoors)
 "bI" = (
 /obj/machinery/door/airlock/atmos{
-	name = "Atmospherics"
+	name = "Atmospherics";
+	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -903,7 +899,7 @@
 /turf/open/floor/plasteel/icemoon,
 /area/icemoon/surface/outdoors)
 "ci" = (
-/obj/machinery/light/broken,
+/obj/machinery/light/broken/directional/south,
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/line,
 /turf/open/floor/plasteel/icemoon,
 /area/icemoon/surface/outdoors)
@@ -929,10 +925,8 @@
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/line{
 	dir = 4
 	},
-/obj/machinery/light/dim{
-	dir = 4
-	},
-/obj/machinery/newscaster{
+/obj/machinery/light/dim/directional/east,
+/obj/machinery/newscaster/directional/north{
 	pixel_x = 32
 	},
 /turf/open/floor/plasteel/icemoon,
@@ -986,9 +980,7 @@
 /obj/machinery/atmospherics/pipe/simple/green/visible{
 	dir = 1
 	},
-/obj/machinery/light/dim{
-	dir = 4
-	},
+/obj/machinery/light/dim/directional/east,
 /turf/open/floor/plasteel/icemoon,
 /area/icemoon/surface/outdoors)
 "ct" = (
@@ -1185,7 +1177,7 @@
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 8
 	},
-/obj/machinery/light/small,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/icemoon,
 /area/icemoon/surface/outdoors)
 "cR" = (
@@ -1316,7 +1308,7 @@
 /area/icemoon/surface/outdoors)
 "df" = (
 /obj/machinery/rnd/production/protolathe/department/engineering,
-/obj/machinery/light/small/broken,
+/obj/machinery/light/small/broken/directional/south,
 /obj/effect/turf_decal/corner/transparent/neutral/half{
 	dir = 1
 	},
@@ -1385,7 +1377,7 @@
 /turf/open/floor/plating/icemoon,
 /area/icemoon/surface/outdoors)
 "dp" = (
-/obj/machinery/light/built,
+/obj/machinery/light/built/directional/south,
 /turf/open/floor/plating/icemoon,
 /area/icemoon/surface/outdoors)
 "dq" = (
@@ -1512,7 +1504,8 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/atmos{
-	name = "Atmospherics"
+	name = "Atmospherics";
+	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
