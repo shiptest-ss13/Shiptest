@@ -257,36 +257,36 @@
 			</head>
 			<body>
 			<h3>Trickwines for idiots</h3>
-			Ok so you just joined the srm and you want to make some brews! Im to tired of explaining all of this so im jotting it all down for you clowns.<br>
-			Trickwines almost all share the same effect. When you drink them it provides a benifical effect and when you toss them at someone it provides some sort of bad effect.
+			Okay, so you just joined the SRM and you want to make some brews! I'm tired of explaining all of this so I'm jotting it all down for you clowns.<br>
+			Trickwines almost all share the same effect. When you drink them it provides a beneficial effect and when you toss them at someone it provides some sort of bad effect.
 			<h2> Breakaway flasks</h2>
-			Honestly i love these things, im not a scientist so i cant exactly explain this but somehow when you fuse plasma into glass it makes it ultra sharp and makes it really good for cracking over fauna heads.<br>
+			Honestly i love these things, I'm not a scientist so i cant exactly explain this but somehow when you fuse plasma into glass it makes it ultra sharp and makes it really good for cracking over fauna heads.<br>
 			The simplest way i have found of making them is crafting them with a chunk of glass, plasma, and a welder.<br>
-			I should not trickwines dont seem to form without flasks. I think its something about the plasma reacting with it though<br>
+			I should note, trickwines don't seem to form without flasks. I think it's something to do with the plasma reacting with the mixture.<br>
 
 			<h2> Ashwine </h2>
-			Its kind of our trademark and its one of the simplist one to make. The montages love using this stuff in cerimonies as well so it should get you some good boy points.<br>
-			Its made with 3:1:1 absinthe, mushroom hallucinogen, ash.<br>
-			Mushroom halluciogens come from mushroom caps and you can ferment absinthe from moonflowers<br>
-			Its a mild hallucinogenic but seems to have powerful cleansing effects on the devoted srm.<br>
-			It can also really fuck someone up, causes there vision to go shakey and blury which makes it difficult for them to fight.<br>
+			It's kind of our trademark, and its one of the simplest trickwines to make. The Montages love using this stuff in ceremonies as well so it should get you some good boy points.<br>
+			It's made with a ratio of 3:1:1 absinthe, mushroom hallucinogen, and ash respectively.<br>
+			Mushroom hallucinogens come from mushroom caps and you can ferment absinthe from moonflowers.<br>
+			Its a mild hallucinogenic but seems to have powerful cleansing effects on the devoted SRM.<br>
+			It can also really fuck someone up, causing their vision to go shaky and blurry which makes it difficult for them to fight.<br>
 
 			<h2> Icewine </h2>
 			This one helps stopping foes in there tracks. Its also got a nice taste
 			Its made with 3:1:1 saké, polar bear fur, frost oil(grind chilled peppers).<br>
 			You can get polar bear fur and frost oil from grinding up polar bear hides and chilled peppers.<br>
-			Its pretty good at sealing burns and lowering your tempature quickly.<br>
-			However it completly encases foes in ice and drops there tempature heavily.<br>
+			It's pretty good at sealing burns and lowering your temperature quickly.<br>
+			However, it completely encases foes in ice and drops their temperature substantially.<br>
 
 			<h2> Shockwine </h2>
 			Easily my favorite, this thing is great at scorching most fauna.<br>
-			Its made with vodka, calcium, lemon juice.<br>
-			If you did not know vodka requires enzymes instead of the normal fermenting procces.<br>
-			Its a nice upper. Great for if your trying to run away.<br>
-			This one is really flashy. Expect some severe burns on your target<br>
+			Its made with vodka, calcium, and lemon juice.<br>
+			If you did not know, vodka requires enzymes instead of the normal fermenting process.<br>
+			It's a nice upper. Great if you're trying to run away.<br>
+			This one's really flashy. Expect some severe burns on your target<br>
 
-				<br>Baxter Baxter, Seinor Brewer<br>
-				Now please stop asking how the uranium got into those flasks
+				<br>Baxter Baxter, Senior Brewer<br>
+				P.S.: please stop asking how the uranium got into those flasks.
 
 				</body>
 				</html>"}
