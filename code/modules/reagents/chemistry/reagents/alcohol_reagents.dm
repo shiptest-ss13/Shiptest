@@ -2518,7 +2518,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 		if(!iscarbon(M))
 			reac_volume = reac_volume * 2
 		M.adjust_bodytemperature((-20*reac_volume) * TEMPERATURE_DAMAGE_COEFFICIENT)
-		M.Paralyze(1*reac_volume)
+		M.Paralyze(reac_volume)
 		walk(M, 0) //stops them mid pathing even if they're stunimmunee
 		M.apply_status_effect(/datum/status_effect/ice_block_talisman, (0.1 * reac_volume) SECONDS)
 
