@@ -20,6 +20,7 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 	density = FALSE
 	req_one_access = list(ACCESS_HEADS, ACCESS_ARMORY) //Heads of staff or the warden can go here to claim recover items from their department that people went were cryodormed with.
 
+	unique_icon = TRUE
 	/// Used for logging people entering cryosleep and important items they are carrying. Shows crew members.
 	var/list/frozen_crew = list()
 	/// Used for logging people entering cryosleep and important items they are carrying. Shows items.
@@ -27,6 +28,15 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 
 	/// Whether or not to store items from people going into cryosleep.
 	var/allow_items = TRUE
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 17)
+
+/obj/machinery/computer/cryopod/retro
+	desc = "An interface between crew and the cryogenic storage oversight systems. This one appears to  be strugggling to catch up with the more modren cryogenic storage system version."
+	icon_state = "wallconsole_old"
+	icon_screen = "wallconsole_old_cryo"
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 17)
 
 /obj/machinery/computer/cryopod/Initialize()
 	. = ..()
@@ -418,12 +428,18 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 	linked_ship = port
 	linked_ship.spawn_points += src
 
+/obj/machinery/cryopod/apply_effects_to_mob(mob/living/carbon/sleepyhead)
+	sleepyhead.SetSleeping(60)
+	sleepyhead.set_disgust(57) // puke maybe once maybe twice
+	sleepyhead.set_nutrition(200)
+	to_chat(sleepyhead, "<span class='userdanger'>A wave of nausea comes over you, brought on by cryosleep...</span>")
+
 /obj/machinery/cryopod/poor
 	name = "low quality cryogenic freezer"
 	desc = "Keeps crew frozen in cryostasis until they are needed in order to cut down on supply usage. This one seems cheaply made."
 
 /obj/machinery/cryopod/poor/apply_effects_to_mob(mob/living/carbon/sleepyhead)
-	sleepyhead.SetSleeping(50)
-	sleepyhead.set_disgust(60)
-	sleepyhead.set_nutrition(160)
-	to_chat(sleepyhead, "<span class='bolddanger'>A very bad headache wakes you up from cryosleep...</span>")
+	sleepyhead.SetSleeping(80)
+	sleepyhead.set_disgust(75) //nasty
+	sleepyhead.set_nutrition(70)
+	to_chat(sleepyhead, "<span class='userdanger'>The low-quality cryo pod ejects you unceremoniously, you feel REALLY sick...</span>")

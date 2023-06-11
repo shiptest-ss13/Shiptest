@@ -272,7 +272,7 @@
 		"Human" = /datum/species/human,
 		"Sarathi" = /datum/species/lizard,
 		"Moth" = /datum/species/moth,
-		"Elzuosa" = /datum/species/ethereal,
+		"Elzuose" = /datum/species/ethereal,
 		"Pod" = /datum/species/pod,
 		"Fly" = /datum/species/fly,
 		"Jelly" = /datum/species/jelly,

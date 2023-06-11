@@ -673,17 +673,17 @@
 				uniform = /obj/item/clothing/under/solgov
 				suit = /obj/item/clothing/suit/armor/vest/bulletproof/solgov
 				shoes = /obj/item/clothing/shoes/jackboots
-				gloves = /obj/item/clothing/gloves/color/grey
+				gloves = /obj/item/clothing/gloves/color/black
 				mask = /obj/item/clothing/mask/gas/sechailer
-				head = /obj/item/clothing/head/helmet/solgov
+				head = /obj/item/clothing/head/solgov/sonnensoldner
 				id = /obj/item/card/id/solgov
 			else
-				uniform = /obj/item/clothing/under/solgov/elite
+				uniform = /obj/item/clothing/under/solgov
 				suit = /obj/item/clothing/suit/space/hardsuit/solgov
 				shoes = /obj/item/clothing/shoes/combat
 				gloves = /obj/item/clothing/gloves/combat
 				mask = /obj/item/clothing/mask/gas/sechailer/swat
-				id = /obj/item/card/id/solgov/elite
+				id = /obj/item/card/id/solgov
 			if(prob(85))
 				back = /obj/item/storage/backpack
 				backpack_contents = list()
@@ -746,7 +746,7 @@
 					)
 			else
 				back = pickweight(list(
-					/obj/item/gun/ballistic/shotgun/automatic = 5,
+					/obj/item/energyhalberd = 5,
 					/obj/item/gun/ballistic/rocketlauncher/unrestricted = 5
 					)
 				)

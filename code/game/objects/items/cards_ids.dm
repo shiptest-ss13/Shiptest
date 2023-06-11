@@ -829,11 +829,6 @@ update_label()
 	desc = "A SolGov ID with no proper access to speak of. This one indicates a Commander."
 	assignment = "Commander"
 
-/obj/item/card/id/solgov/elite
-	name = "\improper SolGov ID"
-	desc = "A SolGov ID with no proper access to speak of. This one indicates an Elite."
-	assignment = "Elite"
-
 /obj/item/card/id/away/slime //We're ranchin, baby! //It's slimin time
 	name = "\improper Slime Lab access card"
 	desc = "An ID card with access to the Slime Lab"
