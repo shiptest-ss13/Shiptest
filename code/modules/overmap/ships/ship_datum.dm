@@ -35,7 +35,7 @@
 /datum/overmap/ship/Destroy()
 	. = ..()
 	if(movement_callback_id)
-		deltimer(movement_callback_id)
+		deltimer(movement_callback_id, SSovermap_movement)
 
 /datum/overmap/ship/complete_dock(datum/overmap/dock_target, datum/docking_ticket/ticket)
 	. = ..()
@@ -63,8 +63,8 @@
 	var/offset = 1
 	if(movement_callback_id)
 		var/previous_time = 1 / MAGNITUDE(speed_x, speed_y)
-		offset = clamp(timeleft(movement_callback_id) / previous_time, 0, 1)
-		deltimer(movement_callback_id)
+		offset = clamp(timeleft(movement_callback_id, SSovermap_movement) / previous_time, 0, 1)
+		deltimer(movement_callback_id, SSovermap_movement)
 		movement_callback_id = null //just in case
 
 	speed_x = min(max_speed, speed_x + n_x)
@@ -82,7 +82,7 @@
 		return
 
 	var/timer = 1 / MAGNITUDE(speed_x, speed_y) * offset
-	movement_callback_id = addtimer(CALLBACK(src, .proc/tick_move), timer, TIMER_STOPPABLE)
+	movement_callback_id = addtimer(CALLBACK(src, .proc/tick_move), timer, TIMER_STOPPABLE, SSovermap_movement)
 
 /**
  * Called by [/datum/overmap/ship/proc/adjust_speed], this continually moves the ship according to its speed
@@ -90,14 +90,14 @@
 /datum/overmap/ship/proc/tick_move()
 	if(is_still() || QDELING(src) || docked_to)
 		adjust_speed(-speed_x, -speed_y)
-		deltimer(movement_callback_id)
+		deltimer(movement_callback_id, SSovermap_movement)
 		movement_callback_id = null
 		return
 	overmap_move(x + SIGN(speed_x), y + SIGN(speed_y))
 	update_visuals()
 
 	if(movement_callback_id)
-		deltimer(movement_callback_id)
+		deltimer(movement_callback_id, SSovermap_movement)
 
 	//Queue another movement
 	var/current_speed = MAGNITUDE(speed_x, speed_y)
@@ -105,7 +105,7 @@
 		return
 
 	var/timer = 1 / current_speed
-	movement_callback_id = addtimer(CALLBACK(src, .proc/tick_move), timer, TIMER_STOPPABLE)
+	movement_callback_id = addtimer(CALLBACK(src, .proc/tick_move), timer, TIMER_STOPPABLE, SSovermap_movement)
 	token.update_screen()
 
 /**
@@ -145,7 +145,7 @@
  * Returns the estimated time in deciseconds to the next tile at current speed, or approx. time until reaching the destination when on autopilot
  */
 /datum/overmap/ship/proc/get_eta()
-	. += timeleft(movement_callback_id)
+	. += timeleft(movement_callback_id, SSovermap_movement)
 	if(!.)
 		return "--:--"
 	. /= 10 //they're in deciseconds
