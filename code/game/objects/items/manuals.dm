@@ -265,7 +265,7 @@
 			I should note, trickwines don't seem to form without flasks. I think it's something to do with the plasma reacting with the mixture.<br>
 
 			<h2> Ashwine </h2>
-			It's kind of our trademark, and its one of the simplest trickwines to make. The Montages love using this stuff in ceremonies as well so it should get you some good boy points.<br>
+			It's kind of our trademark, and its one of the simplest trickwines to make. The Montagnes love using this stuff in ceremonies as well so it should get you some good boy points.<br>
 			It's made with a ratio of 3:1:1 absinthe, mushroom hallucinogen, and ash respectively.<br>
 			Mushroom hallucinogens come from mushroom caps and you can ferment absinthe from moonflowers.<br>
 			Its a mild hallucinogenic but seems to have powerful cleansing effects on the devoted SRM.<br>
