@@ -2542,8 +2542,8 @@ All effects don't start immediately, but rather get worse over time; the rate is
 /datum/reagent/consumable/ethanol/shock_wine/expose_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
 	if(method == TOUCH)
 		//simple mobs are so tanky and i want this to be useful on them
-		if(!iscarbon(M))
-			reac_volume = reac_volume * 4
-		M.electrocute_act(0.25 * reac_volume, src, siemens_coeff = 1, flags = SHOCK_NOSTUN|SHOCK_TESLA)
+		if(iscarbon(M))
+			reac_volume = reac_volume / 4
+		M.electrocute_act(reac_volume, src, siemens_coeff = 1, flags = SHOCK_NOSTUN|SHOCK_TESLA)
 		do_sparks(5, FALSE, M)
 		playsound(M, 'sound/machines/defib_zap.ogg', 100, TRUE)
