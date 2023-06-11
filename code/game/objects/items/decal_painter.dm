@@ -201,9 +201,9 @@
 		to_chat(user, "<span class='warning'>\The [src] can only be used on flooring.</span>")
 		return
 	if(color_disallowed.Find(decal_state))
-		F.AddElement(/datum/element/decal, 'icons/turf/decals.dmi', decal_state, decal_dir, color, null, null, alpha)
+		F.AddElement(/datum/element/decal, 'icons/turf/decals.dmi', decal_state, decal_dir, FALSE, color, null, null, alpha)
 	else
-		F.AddElement(/datum/element/decal, 'icons/turf/decals.dmi', decal_state, decal_dir, decal_color, null, null, alpha)
+		F.AddElement(/datum/element/decal, 'icons/turf/decals.dmi', decal_state, decal_dir, FALSE, decal_color, null, null, alpha)
 	playsound(src.loc, 'sound/effects/spray2.ogg', 50, TRUE)
 
 /obj/item/decal_painter/attack_self(mob/user)
