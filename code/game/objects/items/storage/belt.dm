@@ -743,6 +743,7 @@
 	icon_state = "sheath"
 	item_state = "sheath"
 	base_icon_state = "sheath"
+	inhand_icon_state = "sheath"
 	w_class = WEIGHT_CLASS_BULKY
 
 /obj/item/storage/belt/sabre/ComponentInitialize()
