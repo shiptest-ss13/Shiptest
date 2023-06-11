@@ -2,17 +2,268 @@
 "a" = (
 /turf/open/space/basic,
 /area/space)
+"b" = (
+/obj/machinery/computer/cargo/express/solgov{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/space)
+"c" = (
+/obj/structure/window/reinforced/fulltile/shuttle,
+/turf/closed/wall/mineral/titanium,
+/area/space)
+"d" = (
+/obj/effect/landmark/start/captain,
+/obj/effect/turf_decal/spline/fancy/wood{
+	dir = 4
+	},
+/turf/open/floor/wood,
+/area/space)
+"h" = (
+/obj/structure/filingcabinet/double,
+/obj/item/documents/solgov,
+/obj/effect/turf_decal/spline/fancy/wood{
+	dir = 1
+	},
+/turf/open/floor/wood,
+/area/space)
 "k" = (
-/obj/structure/fluff/hedge/opaque,
+/obj/structure/fluff/hedge,
+/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/wood,
+/area/space)
+"l" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/space)
+"m" = (
+/obj/item/kirbyplants{
+	icon_state = "plant-21";
+	pixel_x = 7;
+	pixel_y = 18
+	},
+/obj/item/kirbyplants{
+	icon_state = "plant-22";
+	pixel_y = 11;
+	pixel_x = -6
+	},
+/obj/item/kirbyplants{
+	icon_state = "plant-22";
+	pixel_x = 8;
+	pixel_y = 2
+	},
+/obj/effect/turf_decal/spline/fancy/wood{
+	dir = 1
+	},
+/turf/open/floor/wood,
+/area/space)
+"o" = (
+/obj/item/kirbyplants{
+	icon_state = "plant-11";
+	pixel_x = 10;
+	pixel_y = 0;
+	layer = 2.89
+	},
+/obj/structure/table/wood/fancy/purple,
+/obj/item/paper/crumpled,
+/obj/item/pen/fountain/solgov,
+/obj/effect/turf_decal/spline/fancy/wood{
+	dir = 4
+	},
 /turf/open/floor/wood,
 /area/space)
 "p" = (
 /turf/open/floor/plating,
 /area/space)
+"r" = (
+/obj/structure/table/wood/fancy/purple,
+/obj/machinery/photocopier/faxmachine/longrange,
+/obj/item/desk_flag/solgov{
+	pixel_x = 8;
+	pixel_y = 13
+	},
+/obj/effect/turf_decal/spline/fancy/wood{
+	dir = 5
+	},
+/turf/open/floor/wood,
+/area/space)
+"t" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/turf/open/floor/plating,
+/area/space)
+"u" = (
+/obj/structure/table/wood/fancy/purple,
+/obj/item/paper_bin/carbon{
+	pixel_x = 7;
+	pixel_y = 8
+	},
+/obj/item/paper_bin{
+	pixel_x = -5;
+	pixel_y = -1
+	},
+/obj/item/folder/solgov{
+	pixel_x = 4;
+	pixel_y = 0
+	},
+/obj/item/pen/solgov{
+	pixel_x = 2
+	},
+/turf/open/floor/wood,
+/area/space)
+"v" = (
+/obj/structure/table/wood/fancy/purple,
+/obj/item/paper_bin/carbon{
+	pixel_x = 7;
+	pixel_y = 8
+	},
+/obj/item/paper_bin{
+	pixel_x = -5;
+	pixel_y = -1
+	},
+/obj/item/folder/solgov{
+	pixel_x = 4;
+	pixel_y = 0
+	},
+/obj/item/pen/solgov{
+	pixel_x = 2
+	},
+/obj/effect/turf_decal/spline/fancy/wood{
+	dir = 4
+	},
+/turf/open/floor/wood,
+/area/space)
+"w" = (
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/turf/open/floor/engine/hull,
+/area/space)
+"x" = (
+/obj/structure/table/wood/fancy/purple,
+/obj/item/binoculars{
+	pixel_y = 7
+	},
+/obj/effect/turf_decal/spline/fancy/wood{
+	dir = 1
+	},
+/turf/open/floor/wood,
+/area/space)
+"A" = (
+/obj/structure/closet/secure_closet/captains{
+	populate = 0
+	},
+/obj/item/clothing/neck/cloak/solgov,
+/obj/item/clothing/under/solgov/formal/captain,
+/obj/item/clothing/shoes/laceup,
+/obj/item/clothing/head/solgov/captain,
+/obj/item/folder/solgov,
+/obj/item/folder/solgov,
+/obj/item/folder/solgov/red,
+/obj/item/folder/solgov/red,
+/obj/item/clothing/under/solgov/formal,
+/obj/item/clothing/gloves/combat,
+/obj/item/storage/backpack/captain,
+/obj/item/door_remote/captain,
+/turf/open/floor/carpet/royalblue,
+/area/space)
+"B" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 4
+	},
+/obj/effect/turf_decal/techfloor/orange{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/space)
+"C" = (
+/turf/open/floor/carpet/royalblue,
+/area/space)
+"D" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 8
+	},
+/obj/structure/dresser,
+/turf/open/floor/wood,
+/area/space)
+"E" = (
+/obj/machinery/computer/helm/solgov{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/space)
+"F" = (
+/obj/item/bedsheet/double/solgov,
+/obj/structure/bed/double,
+/turf/open/floor/carpet/royalblue,
+/area/space)
+"G" = (
+/obj/structure/noticeboard/captain{
+	pixel_y = 25
+	},
+/turf/open/space/basic,
+/area/space)
+"K" = (
+/obj/structure/table/wood/fancy/purple,
+/obj/machinery/computer/secure_data/laptop{
+	dir = 8;
+	pixel_y = 5;
+	pixel_x = 4
+	},
+/obj/effect/turf_decal/spline/fancy/wood{
+	dir = 4
+	},
+/turf/open/floor/wood,
+/area/space)
+"M" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 10
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/space)
 "P" = (
 /turf/closed/wall/mineral/titanium,
 /area/space)
+"R" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 9
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/space)
+"S" = (
+/obj/item/kirbyplants{
+	icon_state = "plant-17";
+	pixel_y = 23;
+	pixel_x = -7
+	},
+/turf/open/space/basic,
+/area/space)
 "T" = (
+/turf/open/floor/wood,
+/area/space)
+"W" = (
+/obj/structure/grille,
+/turf/open/floor/plating,
+/area/space)
+"X" = (
+/obj/structure/table/wood/fancy/blue,
+/obj/machinery/photocopier/faxmachine/longrange,
+/obj/item/desk_flag/solgov{
+	pixel_x = -9;
+	pixel_y = 14
+	},
+/turf/open/floor/wood,
+/area/space)
+"Y" = (
+/obj/structure/filingcabinet/double,
 /turf/open/floor/wood,
 /area/space)
 
@@ -60,12 +311,12 @@ a
 a
 a
 P
-P
-p
-p
-p
-p
-P
+R
+w
+w
+w
+w
+M
 P
 a
 a
@@ -92,12 +343,12 @@ a
 a
 P
 P
-a
-p
-p
-p
-p
-a
+P
+B
+B
+B
+B
+P
 P
 P
 a
@@ -151,22 +402,22 @@ a
 a
 a
 a
-a
-a
-a
-P
-a
-a
-a
-a
-a
-a
-a
+W
+W
 a
 P
 a
 a
 a
+a
+a
+a
+a
+a
+P
+a
+W
+W
 a
 a
 a
@@ -183,7 +434,7 @@ a
 a
 a
 a
-p
+a
 p
 a
 P
@@ -198,7 +449,7 @@ P
 P
 a
 p
-p
+a
 a
 a
 a
@@ -214,24 +465,24 @@ a
 a
 a
 a
+W
+a
+p
 a
 a
+P
+P
+P
+P
 a
 a
 a
 P
 a
 a
+p
 a
-a
-a
-a
-P
-a
-a
-a
-a
-a
+W
 a
 a
 a
@@ -246,24 +497,24 @@ a
 a
 a
 a
+W
+p
 p
 a
 a
+P
 a
 a
 P
 a
 a
 a
-a
-a
-a
 P
 a
 a
-a
-a
 p
+p
+W
 a
 a
 a
@@ -278,24 +529,24 @@ a
 a
 a
 a
-p
-a
-a
-a
-P
-P
-a
-a
-P
-P
-a
-a
-P
-P
-a
-a
+W
 a
 p
+p
+P
+P
+a
+a
+P
+P
+P
+a
+P
+P
+p
+p
+a
+W
 a
 a
 a
@@ -312,20 +563,20 @@ a
 a
 a
 a
-a
-a
-P
-a
-a
-a
-a
-a
-a
-a
+p
 a
 P
 a
 a
+a
+a
+a
+a
+a
+a
+P
+a
+p
 a
 a
 a
@@ -341,10 +592,10 @@ a
 a
 a
 a
+W
+a
+a
 p
-a
-a
-a
 a
 P
 a
@@ -357,10 +608,10 @@ a
 a
 P
 a
-a
-a
-a
 p
+a
+a
+W
 a
 a
 a
@@ -373,11 +624,11 @@ a
 a
 a
 a
+W
 p
-a
-a
-a
-a
+p
+P
+P
 P
 a
 a
@@ -389,10 +640,10 @@ a
 a
 P
 a
-a
-a
-a
 p
+p
+p
+W
 a
 a
 a
@@ -405,26 +656,26 @@ a
 a
 a
 a
-p
+W
+a
+P
+P
+a
+P
+P
+P
+P
+P
 a
 a
 a
 a
 P
 a
-a
-a
-a
-a
-a
-a
-a
-P
-a
-a
-a
-a
 p
+a
+a
+W
 a
 a
 a
@@ -439,9 +690,6 @@ a
 a
 a
 a
-a
-a
-a
 P
 a
 a
@@ -449,11 +697,14 @@ a
 a
 a
 a
+P
+P
+a
 a
 a
 P
 a
-a
+p
 a
 a
 a
@@ -472,16 +723,16 @@ a
 P
 P
 P
-P
-P
-P
-P
+a
+a
 P
 a
 a
 a
 a
-a
+P
+P
+P
 a
 P
 P
@@ -506,6 +757,7 @@ a
 a
 a
 a
+P
 a
 a
 a
@@ -518,8 +770,7 @@ a
 a
 a
 a
-a
-a
+P
 P
 P
 P
@@ -538,6 +789,7 @@ a
 a
 a
 a
+P
 a
 a
 a
@@ -550,8 +802,7 @@ a
 a
 a
 a
-a
-a
+P
 a
 a
 a
@@ -570,8 +821,6 @@ a
 a
 a
 a
-a
-a
 P
 a
 a
@@ -579,11 +828,13 @@ a
 a
 a
 a
+a
+P
 P
 a
 a
 a
-a
+P
 a
 a
 a
@@ -602,8 +853,6 @@ a
 a
 a
 a
-a
-a
 P
 a
 a
@@ -611,11 +860,13 @@ a
 a
 a
 a
+a
 P
 a
 a
 a
 a
+P
 a
 a
 a
@@ -634,15 +885,6 @@ a
 a
 a
 a
-a
-a
-P
-a
-a
-a
-a
-a
-a
 P
 a
 a
@@ -651,6 +893,15 @@ a
 a
 a
 a
+P
+a
+a
+a
+a
+P
+P
+P
+P
 P
 a
 a
@@ -666,6 +917,12 @@ a
 a
 a
 a
+P
+a
+a
+a
+a
+a
 a
 a
 P
@@ -675,15 +932,9 @@ a
 a
 a
 a
-P
-a
-a
-a
-a
-a
 a
 P
-P
+a
 a
 a
 a
@@ -693,8 +944,8 @@ a
 a
 P
 a
-P
-P
+a
+a
 P
 P
 P
@@ -704,17 +955,17 @@ P
 p
 p
 p
-p
 P
 P
 P
-a
-a
-a
-a
-a
-a
 P
+G
+a
+a
+a
+a
+a
+t
 a
 a
 a
@@ -740,7 +991,7 @@ a
 a
 a
 P
-a
+p
 P
 P
 P
@@ -760,7 +1011,7 @@ a
 a
 a
 P
-a
+P
 a
 a
 a
@@ -772,9 +1023,9 @@ a
 a
 P
 P
-a
-k
 T
+k
+F
 P
 P
 p
@@ -791,23 +1042,23 @@ P
 a
 a
 a
-P
-a
-a
-a
-a
-a
-a
-a
-a
-a
 a
 P
-T
+a
+a
+a
+a
+a
+a
+a
+a
+a
+c
+m
 T
 k
-T
-T
+C
+A
 P
 a
 a
@@ -823,23 +1074,23 @@ P
 a
 a
 a
-P
-a
-a
-a
-a
-a
-a
-a
-a
-a
 a
 P
+a
+a
+a
+a
+a
+a
+a
+a
+a
+P
+h
 T
-T
-k
-T
-T
+D
+l
+l
 P
 a
 a
@@ -854,27 +1105,27 @@ P
 P
 a
 P
-P
-P
-a
-a
-a
-a
-a
-a
-a
-a
 a
 a
 P
+a
+a
+a
+a
+a
+a
+a
+a
+a
+P
+x
 T
 T
 T
 T
-T
 P
-P
-p
+a
+a
 P
 a
 a
@@ -887,23 +1138,23 @@ a
 a
 P
 a
-P
-a
-a
-a
-a
-a
-a
-a
-a
-a
 a
 P
-T
-T
-T
-T
-T
+a
+a
+a
+a
+a
+a
+a
+a
+a
+P
+r
+d
+v
+o
+K
 P
 a
 a
@@ -918,22 +1169,22 @@ P
 a
 a
 P
-P
-P
-a
-a
-a
-a
-a
-a
-a
-a
 a
 a
 P
+a
+a
+a
+a
+a
+a
+a
+a
+a
 P
-a
-a
+P
+t
+t
 P
 P
 P
@@ -951,8 +1202,8 @@ a
 a
 P
 P
-a
-a
+P
+P
 a
 a
 a
@@ -969,8 +1220,8 @@ a
 a
 P
 P
-a
-a
+P
+p
 P
 P
 a
@@ -1000,10 +1251,10 @@ a
 a
 a
 P
+X
+S
 a
-a
-a
-a
+T
 P
 a
 a
@@ -1032,10 +1283,10 @@ a
 a
 a
 P
+u
 a
 a
-a
-a
+T
 P
 a
 a
@@ -1064,10 +1315,10 @@ a
 a
 a
 P
+Y
 a
 a
-a
-a
+T
 P
 a
 a
@@ -1190,14 +1441,14 @@ a
 a
 a
 a
-P
+t
+T
+T
 a
 a
-a
-a
-a
-a
-P
+T
+T
+t
 a
 "}
 (38,1,1) = {"
@@ -1222,14 +1473,14 @@ a
 a
 a
 a
-P
+t
+T
+T
 a
 a
-a
-a
-a
-a
-P
+T
+T
+t
 a
 "}
 (39,1,1) = {"
@@ -1254,14 +1505,14 @@ a
 a
 a
 a
-P
+t
+E
 a
 a
 a
 a
-a
-a
-P
+b
+t
 a
 "}
 (40,1,1) = {"
@@ -1286,14 +1537,14 @@ a
 a
 a
 a
+P
+P
 a
 a
 a
 a
-a
-a
-a
-a
+P
+P
 a
 "}
 (41,1,1) = {"
@@ -1319,12 +1570,12 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
-a
+P
+t
+t
+t
+t
+P
 a
 a
 "}
