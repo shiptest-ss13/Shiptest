@@ -185,6 +185,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
+/obj/structure/cable,
 /turf/open/floor/plating/rust,
 /area/ship/maintenance/central)
 "bP" = (
@@ -740,9 +741,6 @@
 /obj/machinery/atmospherics/components/unary/portables_connector{
 	dir = 4
 	},
-/obj/machinery/atmospherics/components/unary/portables_connector{
-	dir = 4
-	},
 /obj/item/reagent_containers/glass/bottle/welding_fuel,
 /obj/machinery/door/poddoor{
 	dir = 4;
@@ -992,7 +990,6 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "sK" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/components/binary/pump,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/door/airlock/hatch,
@@ -2236,6 +2233,12 @@
 "QM" = (
 /turf/closed/wall/r_wall,
 /area/ship/bridge)
+"QN" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/turf/closed/wall/mineral/titanium/survival/nodiagonal,
+/area/ship/storage/eva)
 "QU" = (
 /obj/structure/girder/reinforced,
 /obj/structure/window/fulltile,
@@ -3155,7 +3158,7 @@ mF
 mF
 XV
 vd
-XS
+QN
 XS
 GU
 XS
