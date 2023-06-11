@@ -111,3 +111,14 @@
 	default_baseturf = /turf/open/space
 	weather_controller_type = null
 	ruin_type = RUINTYPE_SPACE
+
+/datum/planet_type/waste
+	name = "waste disposal planet"
+	desc = "A very weak energy signal originating from a planet marked as waste disposal."
+	planet = DYNAMIC_WORLD_WASTEPLANET
+	icon_state = "globe"
+	color = "#a9883e"
+	mapgen = /datum/map_generator/planet_generator/waste
+	default_baseturf = /turf/open/floor/plating/asteroid/wasteplanet
+	weather_controller_type = /datum/weather_controller/chlorine
+	ruin_type = RUINTYPE_WASTE

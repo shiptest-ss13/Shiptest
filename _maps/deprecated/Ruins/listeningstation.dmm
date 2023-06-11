@@ -24,10 +24,7 @@
 /obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/computer/bookmanagement,
-/obj/machinery/firealarm{
-	dir = 2;
-	pixel_y = 26
-	},
+/obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/listeningstation)
 "af" = (
@@ -50,10 +47,10 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/newscaster{
+/obj/machinery/newscaster/directional/north{
 	pixel_y = 32
 	},
-/obj/item/radio/intercom{
+/obj/item/radio/intercom/directional/north{
 	freerange = 1;
 	name = "Syndicate Radio Intercom";
 	pixel_x = -30
@@ -136,7 +133,7 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/listeningstation)
 "ao" = (
-/obj/machinery/light/small,
+/obj/machinery/light/small/directional/south,
 /obj/structure/sign/warning/vacuum{
 	pixel_y = 32
 	},
@@ -158,7 +155,7 @@
 /obj/machinery/shower{
 	pixel_y = 14
 	},
-/obj/machinery/light/small,
+/obj/machinery/light/small/directional/south,
 /obj/item/soap,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/showroomfloor,
@@ -221,12 +218,8 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/listeningstation)
 "av" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
-/obj/structure/extinguisher_cabinet{
-	pixel_x = 25
-	},
+/obj/machinery/light/small/directional/east,
+/obj/structure/extinguisher_cabinet/directional/north,
 /obj/structure/table,
 /obj/item/paper_bin,
 /obj/item/paper/fluff/ruins/listeningstation/reports/november,
@@ -250,9 +243,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/listeningstation)
 "ax" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
+/obj/machinery/light/small/directional/east,
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 4
 	},
@@ -379,10 +370,7 @@
 "aH" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/crate/bin,
-/obj/structure/extinguisher_cabinet{
-	pixel_x = -27;
-	pixel_y = 1
-	},
+/obj/structure/extinguisher_cabinet/directional/north,
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
@@ -480,16 +468,11 @@
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = -26
-	},
+/obj/machinery/firealarm/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/listeningstation)
 "aO" = (
-/obj/machinery/light/small{
-	dir = 8
-	},
+/obj/machinery/light/small/directional/west,
 /obj/structure/closet/crate,
 /obj/item/stack/sheet/metal/twenty,
 /obj/item/stack/sheet/glass{
@@ -598,13 +581,8 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/listeningstation)
 "aW" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
-/obj/machinery/firealarm{
-	dir = 2;
-	pixel_y = 26
-	},
+/obj/machinery/light/small/directional/north,
+/obj/machinery/firealarm/directional/north,
 /obj/effect/turf_decal/corner/opaque/red{
 	dir = 1
 	},
@@ -691,9 +669,7 @@
 /area/ruin/space/has_grav/listeningstation)
 "bb" = (
 /obj/effect/turf_decal/industrial/fire/corner,
-/obj/machinery/light/small{
-	dir = 4
-	},
+/obj/machinery/light/small/directional/east,
 /obj/machinery/airalarm/syndicate{
 	dir = 8;
 	pixel_x = 25
@@ -706,7 +682,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/listeningstation)
 "bc" = (
-/obj/machinery/light/small,
+/obj/machinery/light/small/directional/south,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/emcloset/anchored,
 /turf/open/floor/plasteel,
@@ -718,9 +694,7 @@
 /area/ruin/space/has_grav/listeningstation)
 "be" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/extinguisher_cabinet{
-	pixel_y = -29
-	},
+/obj/structure/extinguisher_cabinet/directional/north,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
 	icon_state = "vent_map_on-1";
 	dir = 1
@@ -759,9 +733,8 @@
 /area/ruin/space/has_grav/listeningstation)
 "bi" = (
 /obj/structure/table,
-/obj/machinery/light/small{
-	brightness = 3;
-	dir = 8
+/obj/machinery/light/small/directional/west{
+	brightness = 3
 	},
 /obj/item/storage/box/donkpockets{
 	pixel_x = -2;
@@ -969,7 +942,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/item/storage/photo_album,
-/obj/machinery/light/small,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/space/has_grav/listeningstation)
 "bx" = (
@@ -1031,7 +1004,7 @@
 	pixel_x = 11
 	},
 /obj/machinery/iv_drip,
-/obj/machinery/light/small,
+/obj/machinery/light/small/directional/south,
 /obj/machinery/airalarm/syndicate{
 	dir = 1;
 	pixel_y = -25

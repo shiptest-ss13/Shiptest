@@ -117,6 +117,12 @@
 	///Amount, in kilojoules, needed for a full burn.
 	var/power_per_burn = 50000
 
+/obj/machinery/power/shuttle/engine/electric/bad
+	name = "Outdated Ion Thruster"
+	circuit = /obj/item/circuitboard/machine/shuttle/engine/electric/bad
+	thrust = 2
+	power_per_burn = 70000
+
 /obj/machinery/power/shuttle/engine/electric/premium
 	name = "high performance ion thruster"
 	desc = "An expensive variant of a standard ion thruster, using highest quality components in order to achieve much better performance."
@@ -127,13 +133,25 @@
 	name = "electric engine precharger"
 	desc = "A medium-capacity, high transfer superconducting magnetic energy storage unit specially made for use with shuttle engines."
 	icon = 'icons/obj/shuttle.dmi'
-	input_level = 0
+	input_level = 5000
 	input_level_max = 50000
 	output_level = 50000
 	circuit = /obj/item/circuitboard/machine/shuttle/smes
 
 /obj/machinery/power/smes/shuttle/precharged
 	charge = 1e6
+
+/obj/machinery/power/smes/shuttle/micro
+	name = "micro electric engine precharger"
+	desc = "A low-capacity, high transfer superconducting magnetic energy storage unit specially made for use with compact shuttle engines."
+	icon = 'icons/obj/shuttle.dmi'
+	circuit = /obj/item/circuitboard/machine/shuttle/smes/micro
+	density = 0
+	capacity = 1e6
+
+/obj/machinery/power/smes/shuttle/micro/precharged
+	charge = 1e6
+
 
 /obj/machinery/power/shuttle/engine/electric/update_engine()
 	. = ..()
@@ -203,7 +221,7 @@
 		CRASH("Attempted to read the fuel value an uninitialized liquid engine")
 	var/true_percentage = INFINITY
 	for(var/reagent in fuel_reagents)
-		true_percentage = min(reagents.get_reagent_amount(reagent) / fuel_reagents[reagent], true_percentage)
+		true_percentage = min(reagents?.get_reagent_amount(reagent) / fuel_reagents[reagent], true_percentage)
 	return reagent_amount_holder * true_percentage //Multiplies the total amount needed by the smallest percentage of any reagent in the recipe
 
 /obj/machinery/power/shuttle/engine/liquid/return_fuel_cap()

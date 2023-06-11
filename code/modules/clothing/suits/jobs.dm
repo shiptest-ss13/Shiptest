@@ -95,6 +95,16 @@
 	resistance_flags = NONE
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo/large
 
+/obj/item/clothing/suit/hazardvest/solgov
+	name = "SolGov hazard vest"
+	desc = "A high-visibility vest used in work zones by solarian engineers."
+	icon_state = "hazard_solgov"
+	item_state = "hazard_solgov"
+	blood_overlay_type = "armor"
+	allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/t_scanner, /obj/item/radio)
+	resistance_flags = NONE
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo/large
+
 /obj/item/clothing/suit/toggle/hazard
 	name = "high-visibility jacket"
 	desc = "A highlighter-yellow jacket with reflective stripes."
@@ -256,6 +266,34 @@
 	body_parts_covered = CHEST|GROIN|ARMS|HANDS
 
 //SolGov suits
+
+/obj/item/clothing/suit/solgov
+	name = "SolGov robe"
+	desc = "A set of plain SolGov robes, commonly used by civilians."
+	body_parts_covered = CHEST|GROIN|ARMS
+	icon_state = "solgov_robe"
+	item_state = "solgov_robe"
+
+/obj/item/clothing/suit/solgov/dress
+	name = "SolGov dress"
+	desc = "A plain SolGov dress, commonly used by civilians."
+	body_parts_covered = CHEST|GROIN
+	icon_state = "solgov_dress"
+	item_state = "solgov_dress"
+
+/obj/item/clothing/suit/solgov/bureaucrat
+	name = "SolGov bureaucrat robe"
+	desc = "A set of unique SolGov robes, utilized by Solarian Bureaucrats."
+	body_parts_covered = CHEST|GROIN|ARMS
+	icon_state = "solgov_bureaucrat_robe"
+	item_state = "solgov_bureaucrat_robe"
+
+/obj/item/clothing/suit/solgov/jacket
+	name = "SolGov jacket"
+	desc = "A plain SolGov jacket, commonly used by civilians."
+	body_parts_covered = CHEST|GROIN|ARMS
+	icon_state = "solgov_jacket"
+	item_state = "solgov_jacket"
 
 /obj/item/clothing/suit/toggle/solgov
 	name = "\improper SolGov coat"

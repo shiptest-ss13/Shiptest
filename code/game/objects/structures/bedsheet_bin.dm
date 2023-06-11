@@ -48,9 +48,10 @@ LINEN BINS
 
 /obj/item/bedsheet/attackby(obj/item/I, mob/user, params)
 	if(I.tool_behaviour == TOOL_WIRECUTTER || I.get_sharpness())
-		var/obj/item/stack/sheet/cotton/cloth/C = new (get_turf(src), 3)
-		transfer_fingerprints_to(C)
-		C.add_fingerprint(user)
+		var/obj/item/stack/sheet/cotton/cloth/shreds = new (get_turf(src), 3)
+		if(!QDELETED(shreds)) //stacks merged
+			transfer_fingerprints_to(shreds)
+			shreds.add_fingerprint(user)
 		qdel(src)
 		to_chat(user, "<span class='notice'>You tear [src] up.</span>")
 	else
@@ -234,6 +235,13 @@ LINEN BINS
 	item_state = "sheetNT"
 	dream_messages = list("authority", "an ending")
 
+/obj/item/bedsheet/solgov
+	name = "\improper SolGov bedsheet"
+	desc = "It has the emblem of the Solar Confederation emblazoned upon it!"
+	icon_state = "sheetsolgov"
+	item_state = "sheetsolgov"
+	dream_messages = list("bureaucracy", "laws", "papers", "writing")
+
 /obj/item/bedsheet/ian
 	icon_state = "sheetian"
 	item_state = "sheetian"
@@ -252,6 +260,108 @@ LINEN BINS
 	icon_state = "random_bedsheet"
 	name = "random bedsheet"
 	desc = "If you're reading this description ingame, something has gone wrong! Honk!"
+
+/obj/item/bedsheet/double
+	icon_state = "double_sheetwhite"
+	dying_key = DYE_REGISTRY_DOUBLE_BEDSHEET
+
+/obj/item/bedsheet/double/Initialize()
+	..()
+	desc += " This one is double."
+
+/obj/item/bedsheet/double/blue
+	icon_state = "double_sheetblue"
+	item_state = "sheetblue"
+	dream_messages = list("blue")
+
+/obj/item/bedsheet/double/green
+	icon_state = "double_sheetgreen"
+	item_state = "sheetgreen"
+	dream_messages = list("green")
+
+/obj/item/bedsheet/double/grey
+	icon_state = "double_sheetgrey"
+	item_state = "sheetgrey"
+	dream_messages = list("grey")
+
+/obj/item/bedsheet/double/orange
+	icon_state = "double_sheetorange"
+	item_state = "sheetorange"
+	dream_messages = list("orange")
+
+/obj/item/bedsheet/double/purple
+	icon_state = "double_sheetpurple"
+	item_state = "sheetpurple"
+	dream_messages = list("purple")
+
+/obj/item/bedsheet/double/red
+	icon_state = "double_sheetred"
+	item_state = "sheetred"
+	dream_messages = list("red")
+
+/obj/item/bedsheet/double/yellow
+	icon_state = "double_sheetyellow"
+	item_state = "sheetyellow"
+	dream_messages = list("yellow")
+
+/obj/item/bedsheet/double/brown
+	icon_state = "double_sheetbrown"
+	item_state = "sheetbrown"
+	dream_messages = list("brown")
+
+/obj/item/bedsheet/double/black
+	icon_state = "double_sheetblack"
+	item_state = "sheetblack"
+	dream_messages = list("black")
+
+/obj/item/bedsheet/double/patriot
+	name = "double patriotic bedsheet"
+	icon_state = "double_sheetUSA"
+	item_state = "sheetUSA"
+	dream_messages = list("America", "freedom", "fireworks", "bald eagles")
+	desc = "You've never felt more free than when sleeping on this."
+
+/obj/item/bedsheet/double/rainbow
+	name = "double rainbow bedsheet"
+	icon_state = "double_sheetrainbow"
+	item_state = "sheetrainbow"
+	dream_messages = list("red", "orange", "yellow", "green", "blue", "purple", "a rainbow")
+	desc = "A multicolored blanket. It's actually several different sheets cut up and sewn together."
+
+/obj/item/bedsheet/double/mime
+	name = "double mime's blanket"
+	icon_state = "double_sheetmime"
+	item_state = "sheetmime"
+	dream_messages = list("silence", "gestures", "a pale face", "a gaping mouth", "the mime")
+	desc = "A very soothing striped blanket.  All the noise just seems to fade out when you're under the covers in this."
+
+/obj/item/bedsheet/double/clown
+	name = "double clown's blanket"
+	icon_state = "double_sheetclown"
+	item_state = "sheetrainbow"
+	dream_messages = list("honk", "laughter", "a prank", "a joke", "a smiling face", "the clown")
+	desc = "A rainbow blanket with a clown mask woven in. It smells faintly of bananas."
+
+/obj/item/bedsheet/double/captain
+	name = "double captain's bedsheet"
+	icon_state = "double_sheetcaptain"
+	item_state = "sheetcaptain"
+	dream_messages = list("authority", "a golden ID", "sunglasses", "a green disc", "an antique gun", "the captain")
+	desc = "It has a Nanotrasen symbol on it, and was woven with a revolutionary new kind of thread guaranteed to have 0.01% permeability for most non-chemical substances, popular among most modern captains."
+
+/obj/item/bedsheet/double/rd
+	name = "double research director's bedsheet"
+	icon_state = "double_sheetrd"
+	item_state = "sheetrd"
+	dream_messages = list("authority", "a silvery ID", "a bomb", "a mech", "a facehugger", "maniacal laughter", "the research director")
+	desc = "It appears to have a beaker emblem, and is made out of fire-resistant material, although it probably won't protect you in the event of fires you're familiar with every day."
+
+/obj/item/bedsheet/double/solgov
+	name = "double SolGov bedsheet"
+	icon_state = "double_sheetsolgov"
+	item_state = "double_sheetsolgov"
+	dream_messages = list("bureaucracy", "laws", "papers", "writing")
+	desc = "It has the emblem of the Solar Confederation emblazoned upon it!"
 
 /obj/item/bedsheet/random/Initialize()
 	..()

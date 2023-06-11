@@ -22,7 +22,7 @@
 	if(!reagent_to_extract)
 		return ..()
 	var/obj/item/reagent_containers/glass/container = tool
-	if(!container)
+	if(!istype(tool, /obj/item/reagent_containers))
 		return ..()
 	if(container.reagents.total_volume >= container.volume)
 		to_chat(user, "<span class='danger'>[container] is full.</span>")
@@ -48,6 +48,9 @@
 			return TRUE
 	return FALSE
 
+/turf/open/water/MakeSlippery(wet_setting, min_wet_time, wet_time_to_add, max_wet_time, permanent) //water? wet? not in this economy.
+	return
+
 /turf/open/water/jungle
 	light_range = 2
 	light_power = 0.6
@@ -66,7 +69,7 @@
 /turf/open/water/tar
 	name = "tar pit"
 	desc = "Shallow tar. Will slow you down significantly. You could use a beaker to scoop some out..."
-	color = "#222424"
+	color = "#473a3a"
 	light_range = 0
 	slowdown = 2
 	reagent_to_extract = /datum/reagent/asphalt

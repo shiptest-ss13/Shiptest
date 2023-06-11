@@ -42,7 +42,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
 	},
-/obj/machinery/power/apc/auto_name/south{
+/obj/machinery/power/apc/auto_name/directional/south{
 	start_charge = 0
 	},
 /obj/effect/turf_decal/siding/wood/corner,
@@ -117,7 +117,7 @@
 	pixel_x = -14;
 	pixel_y = 1
 	},
-/obj/machinery/light/dim,
+/obj/machinery/light/dim/directional/south,
 /turf/open/floor/plating/dirt/jungle/dark,
 /area/ruin/jungle/paradise/darkmisc)
 "aM" = (
@@ -267,7 +267,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
 /area/ruin/jungle/paradise/darkmisc)
@@ -321,7 +321,7 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/jungle/paradise/comms)
 "bW" = (
-/obj/structure/extinguisher_cabinet,
+/obj/structure/extinguisher_cabinet/directional/north,
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ruin/jungle/paradise/shuttle)
 "bX" = (
@@ -485,9 +485,7 @@
 /obj/item/weldingtool,
 /obj/item/wirecutters,
 /obj/item/stack/cable_coil,
-/obj/machinery/light/broken{
-	dir = 8
-	},
+/obj/machinery/light/broken/directional/west,
 /turf/open/floor/plasteel,
 /area/ruin/jungle/paradise/shuttle)
 "da" = (
@@ -637,9 +635,7 @@
 /area/ruin/jungle/paradise/darkmisc)
 "dU" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/broken{
-	dir = 4
-	},
+/obj/machinery/light/broken/directional/east,
 /turf/open/floor/plasteel,
 /area/ruin/jungle/paradise/shuttle)
 "dW" = (
@@ -1212,9 +1208,7 @@
 "hp" = (
 /obj/structure/flora/rock/jungle,
 /obj/structure/flora/grass/jungle/b,
-/obj/machinery/light/dim{
-	dir = 4
-	},
+/obj/machinery/light/dim/directional/east,
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/paradise/darkmisc)
 "hr" = (
@@ -1315,9 +1309,7 @@
 /area/ruin/jungle/paradise/comms)
 "hX" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small/broken{
-	dir = 4
-	},
+/obj/machinery/light/small/broken/directional/east,
 /turf/open/floor/plasteel,
 /area/ruin/jungle/paradise/shuttle)
 "hY" = (
@@ -1342,7 +1334,7 @@
 /turf/open/water/jungle,
 /area/ruin/jungle/paradise/misc)
 "ie" = (
-/obj/structure/extinguisher_cabinet,
+/obj/structure/extinguisher_cabinet/directional/north,
 /turf/closed/wall/mineral/titanium,
 /area/ruin/jungle/paradise/shuttle)
 "ik" = (
@@ -1367,8 +1359,7 @@
 /turf/closed/wall/mineral/wood,
 /area/ruin/jungle/paradise/misc)
 "iq" = (
-/obj/machinery/light{
-	dir = 8;
+/obj/machinery/light/directional/west{
 	light_color = "#e8eaff"
 	},
 /turf/open/floor/plating/dirt/jungle,
@@ -1648,10 +1639,8 @@
 	pixel_x = -2;
 	pixel_y = 8
 	},
-/obj/item/radio/intercom{
-	dir = 1;
-	name = "Station Intercom (General)";
-	pixel_y = -24
+/obj/item/radio/intercom/directional/south{
+	name = "Station Intercom (General)"
 	},
 /turf/open/floor/mineral/titanium/blue,
 /area/ruin/jungle/paradise/shuttle)
@@ -2083,9 +2072,7 @@
 /turf/open/water/jungle,
 /area/ruin/jungle/paradise/darkmisc)
 "mr" = (
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /obj/structure/radioactive/stack,
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/paradise/shuttle)
@@ -2132,9 +2119,7 @@
 	},
 /area/ruin/jungle/paradise/shuttle)
 "mA" = (
-/obj/machinery/light/small{
-	dir = 8
-	},
+/obj/machinery/light/small/directional/west,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -2146,9 +2131,7 @@
 /turf/open/floor/plating/dirt/jungle/dark,
 /area/ruin/jungle/paradise/shuttle)
 "mC" = (
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_2,
 /area/ruin/jungle/paradise/construction)
@@ -2164,10 +2147,7 @@
 "mL" = (
 /obj/structure/table,
 /obj/item/folder/blue,
-/obj/structure/extinguisher_cabinet{
-	dir = 4;
-	pixel_y = -27
-	},
+/obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/mineral/titanium/blue,
 /area/ruin/jungle/paradise/shuttle)
 "mO" = (
@@ -2213,15 +2193,13 @@
 /turf/open/water/jungle,
 /area/ruin/jungle/paradise/darkmisc)
 "nf" = (
-/obj/item/radio/intercom{
-	dir = 1;
-	name = "Station Intercom (General)";
-	pixel_y = -24
+/obj/item/radio/intercom/directional/south{
+	name = "Station Intercom (General)"
 	},
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 8
 	},
-/obj/machinery/light/broken,
+/obj/machinery/light/broken/directional/south,
 /turf/open/floor/mineral/titanium/blue,
 /area/ruin/jungle/paradise/shuttle)
 "ng" = (
@@ -2331,9 +2309,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
 	},
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
 /area/ruin/jungle/paradise/misc)
@@ -2504,7 +2480,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-10"
 	},
-/obj/machinery/power/apc/auto_name/north{
+/obj/machinery/power/apc/auto_name/directional/north{
 	start_charge = 1
 	},
 /turf/open/floor/plasteel,
@@ -3021,10 +2997,8 @@
 	pixel_x = 1;
 	pixel_y = 13
 	},
-/obj/item/radio/intercom{
-	dir = 4;
-	name = "Station Intercom (General)";
-	pixel_x = -27
+/obj/item/radio/intercom/directional/west{
+	name = "Station Intercom (General)"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/mineral/titanium,
@@ -3148,7 +3122,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 10
 	},
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /obj/structure/railing{
 	dir = 10;
 	layer = 3.9
@@ -3243,9 +3217,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/jungle/paradise/shuttle)
 "ta" = (
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /obj/item/storage/box/bodybags{
 	pixel_x = 11;
 	pixel_y = 5
@@ -3263,7 +3235,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-5"
 	},
-/obj/machinery/power/apc/auto_name/south{
+/obj/machinery/power/apc/auto_name/directional/south{
 	start_charge = 0
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -3500,9 +3472,7 @@
 	},
 /area/ruin/jungle/paradise/comms)
 "uQ" = (
-/obj/machinery/light/broken{
-	dir = 4
-	},
+/obj/machinery/light/broken/directional/east,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/mineral/plastitanium/red/brig,
 /area/ruin/jungle/paradise/shuttle)
@@ -3596,7 +3566,7 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 8
 	},
-/obj/machinery/power/apc/auto_name/south{
+/obj/machinery/power/apc/auto_name/directional/south{
 	start_charge = 0
 	},
 /turf/open/floor/mineral/titanium/blue,
@@ -3618,9 +3588,7 @@
 /area/ruin/jungle/paradise/darkmisc)
 "vD" = (
 /obj/effect/decal/cleanable/plasma,
-/obj/machinery/light/broken{
-	dir = 8
-	},
+/obj/machinery/light/broken/directional/west,
 /turf/open/floor/mineral/titanium/blue,
 /area/ruin/jungle/paradise/shuttle)
 "vE" = (
@@ -3679,9 +3647,7 @@
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/paradise/darkmisc)
 "vX" = (
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/pod,
 /area/ruin/jungle/paradise/misc)
 "wj" = (
@@ -3774,9 +3740,7 @@
 	color = "#A47449";
 	layer = 3.9
 	},
-/obj/machinery/light/small{
-	dir = 4
-	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/wood/walnut,
 /area/ruin/jungle/paradise/dorms)
 "wK" = (
@@ -3875,9 +3839,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
 	},
-/obj/machinery/light/dim{
-	dir = 8
-	},
+/obj/machinery/light/dim/directional/west,
 /turf/open/water/jungle,
 /area/ruin/jungle/paradise/darkmisc)
 "xw" = (
@@ -4003,7 +3965,7 @@
 	},
 /area/ruin/jungle/paradise/shuttle)
 "yf" = (
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 1
 	},
@@ -4113,9 +4075,7 @@
 /turf/open/floor/pod/dark,
 /area/ruin/jungle/paradise/med)
 "zc" = (
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/paradise/shuttle)
 "ze" = (
@@ -4182,9 +4142,7 @@
 /turf/open/water/jungle,
 /area/ruin/jungle/paradise/misc)
 "zz" = (
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /obj/effect/decal/cleanable/robot_debris{
 	icon_state = "gib7"
 	},
@@ -4258,9 +4216,7 @@
 /turf/open/floor/mineral/titanium/blue,
 /area/ruin/jungle/paradise/shuttle)
 "zS" = (
-/obj/machinery/light/dim{
-	dir = 8
-	},
+/obj/machinery/light/dim/directional/west,
 /obj/structure/table/reinforced,
 /obj/item/circuitboard/mecha/ripley/peripherals{
 	pixel_x = -4;
@@ -4383,7 +4339,7 @@
 /turf/open/floor/plating/dirt/jungle/dark,
 /area/ruin/jungle/paradise/shuttle)
 "AB" = (
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/floor/plating/grass/jungle,
 /area/ruin/jungle/paradise/shuttle)
 "AL" = (
@@ -4460,9 +4416,7 @@
 /turf/open/floor/plating/dirt/jungle/wasteland,
 /area/ruin/jungle/paradise/darkmisc)
 "Be" = (
-/obj/machinery/light/broken{
-	dir = 4
-	},
+/obj/machinery/light/broken/directional/east,
 /turf/open/floor/mineral/titanium/blue,
 /area/ruin/jungle/paradise/shuttle)
 "Bg" = (
@@ -4666,7 +4620,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-9"
 	},
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
@@ -4733,9 +4687,7 @@
 /area/ruin/jungle/paradise/shuttle)
 "Da" = (
 /obj/structure/frame/machine,
-/obj/machinery/light/small/broken{
-	dir = 4
-	},
+/obj/machinery/light/small/broken/directional/east,
 /obj/item/reagent_containers/syringe/penacid{
 	pixel_x = -5
 	},
@@ -4766,9 +4718,7 @@
 /turf/open/water/jungle,
 /area/ruin/jungle/paradise/misc)
 "Dl" = (
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /obj/structure/frame/computer{
 	dir = 4
 	},
@@ -4802,7 +4752,7 @@
 /area/ruin/jungle/paradise/shuttle)
 "Dy" = (
 /obj/structure/cable/yellow,
-/obj/machinery/power/apc/auto_name/west{
+/obj/machinery/power/apc/auto_name/directional/west{
 	start_charge = 0
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -4987,11 +4937,11 @@
 	dir = 10
 	},
 /obj/machinery/iv_drip,
-/obj/machinery/light/dim,
+/obj/machinery/light/dim/directional/south,
 /obj/structure/cable/yellow{
 	icon_state = "0-5"
 	},
-/obj/machinery/power/apc/auto_name/south{
+/obj/machinery/power/apc/auto_name/directional/south{
 	start_charge = 0
 	},
 /turf/open/floor/pod/dark,
@@ -5226,7 +5176,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-10"
 	},
-/obj/machinery/power/apc/auto_name/east{
+/obj/machinery/power/apc/auto_name/directional/east{
 	start_charge = 0
 	},
 /obj/structure/cable/yellow,
@@ -5416,7 +5366,8 @@
 "HG" = (
 /obj/machinery/door/airlock/command/glass{
 	name = "Cockpit";
-	req_access_txt = "19"
+	req_access_txt = "19";
+	dir = 4
 	},
 /obj/machinery/door/firedoor,
 /obj/effect/mapping_helpers/airlock/abandoned,
@@ -5476,7 +5427,7 @@
 /area/ruin/jungle/paradise/construction)
 "Ih" = (
 /obj/structure/table/wood,
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /obj/item/reagent_containers/food/snacks/breadslice/moldy{
 	pixel_x = -8
 	},
@@ -5541,7 +5492,7 @@
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/paradise/darkmisc)
 "IT" = (
-/obj/machinery/light/broken,
+/obj/machinery/light/broken/directional/south,
 /turf/open/floor/mineral/titanium/blue,
 /area/ruin/jungle/paradise/shuttle)
 "IW" = (
@@ -5675,9 +5626,7 @@
 /turf/open/water/jungle,
 /area/ruin/jungle/paradise/misc)
 "JM" = (
-/obj/machinery/light/dim{
-	dir = 8
-	},
+/obj/machinery/light/dim/directional/west,
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
@@ -5709,7 +5658,7 @@
 "Kh" = (
 /obj/structure/lattice/catwalk,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
-/obj/machinery/power/apc/auto_name/east{
+/obj/machinery/power/apc/auto_name/directional/east{
 	start_charge = 0
 	},
 /obj/structure/cable/yellow{
@@ -5942,9 +5891,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/jungle/paradise/comms)
 "LA" = (
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/paradise/shuttle)
 "LB" = (
@@ -6377,9 +6324,7 @@
 /turf/open/floor/plating/grass/jungle,
 /area/ruin/jungle/paradise/misc)
 "Ob" = (
-/obj/machinery/light/broken{
-	dir = 8
-	},
+/obj/machinery/light/broken/directional/west,
 /obj/structure/table_frame,
 /obj/item/stack/sheet/mineral/silver/five{
 	pixel_x = 6;
@@ -6474,10 +6419,8 @@
 	pixel_x = -4;
 	pixel_y = 2
 	},
-/obj/item/radio/intercom{
-	dir = 1;
-	name = "Station Intercom (General)";
-	pixel_y = -23
+/obj/item/radio/intercom/directional/south{
+	name = "Station Intercom (General)"
 	},
 /obj/item/book/manual/wiki/security_space_law{
 	pixel_x = -4;
@@ -6712,9 +6655,7 @@
 /turf/open/floor/plating/dirt/jungle/dark,
 /area/ruin/jungle/paradise/darkmisc)
 "PY" = (
-/obj/machinery/light/broken{
-	dir = 1
-	},
+/obj/machinery/light/broken/directional/north,
 /turf/open/floor/plating/dirt/jungle/dark,
 /area/ruin/jungle/paradise/darkmisc)
 "PZ" = (
@@ -6744,7 +6685,7 @@
 /area/ruin/jungle/paradise/construction)
 "Qn" = (
 /obj/effect/turf_decal/siding/wood,
-/obj/machinery/light/small,
+/obj/machinery/light/small/directional/south,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/walnut,
 /area/ruin/jungle/paradise/dorms)
@@ -6861,7 +6802,7 @@
 /turf/open/floor/mineral/titanium/white,
 /area/ruin/jungle/paradise/shuttle)
 "Ri" = (
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/floor/plating/ashplanet/rocky,
 /area/ruin/jungle/paradise/mine)
 "Rn" = (
@@ -7313,9 +7254,7 @@
 /turf/open/floor/wood,
 /area/ruin/jungle/paradise/darkmisc)
 "UJ" = (
-/obj/machinery/light/broken{
-	dir = 4
-	},
+/obj/machinery/light/broken/directional/east,
 /obj/structure/frame/computer{
 	anchored = 1
 	},
@@ -7734,7 +7673,7 @@
 /turf/open/water/jungle,
 /area/ruin/jungle/paradise/darkmisc)
 "Xh" = (
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/paradise/misc)
 "Xm" = (
@@ -7758,7 +7697,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 6
 	},
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /obj/structure/railing{
 	dir = 6;
 	layer = 3.9
@@ -7991,9 +7930,7 @@
 	pixel_x = 2;
 	pixel_y = -11
 	},
-/obj/machinery/light/broken{
-	dir = 8
-	},
+/obj/machinery/light/broken/directional/west,
 /turf/open/floor/mineral/titanium/blue,
 /area/ruin/jungle/paradise/shuttle)
 "YU" = (
@@ -8071,9 +8008,7 @@
 	dir = 10;
 	id = "mining_internal"
 	},
-/obj/machinery/light/small{
-	dir = 4
-	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/plating,
 /area/ruin/jungle/paradise/construction)
 "Zx" = (
@@ -8081,7 +8016,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 6
 	},
-/obj/machinery/light/dim,
+/obj/machinery/light/dim/directional/south,
 /turf/open/floor/pod/dark,
 /area/ruin/jungle/paradise/med)
 "Zz" = (
