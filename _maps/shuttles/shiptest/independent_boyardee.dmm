@@ -767,6 +767,14 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance)
+"qp" = (
+/obj/docking_port/stationary{
+	width = 15;
+	height = 15;
+	dir = 8
+	},
+/turf/closed/wall,
+/area/ship/crew/canteen)
 "qq" = (
 /obj/machinery/mineral/ore_redemption,
 /obj/effect/turf_decal/box,
@@ -2740,9 +2748,10 @@
 /area/ship/bridge)
 "ZW" = (
 /obj/docking_port/stationary{
-	width = 15;
+	width = 30;
 	height = 15;
-	dir = 8
+	dir = 8;
+	dwidth = 15
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -2943,7 +2952,7 @@ Qm
 sU
 CP
 rt
-sU
+qp
 XQ
 sU
 sU
