@@ -2511,7 +2511,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	M.adjust_bodytemperature(-10 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal())
 	M.adjustFireLoss(-1)
 	..()
-	. = 1
+	return TRUE
 
 /datum/reagent/consumable/ethanol/ice_wine/expose_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
 	if(method == TOUCH)
