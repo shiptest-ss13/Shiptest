@@ -351,6 +351,10 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/ship/cargo/starboard
 	name = "Starboard Cargo Bay"
 
+/area/ship/cargo/hangar
+	name = "Hangar"
+	icon_state = "hangar"
+
 /// Hallways ///
 /area/ship/hallway
 	name = "Hallway"
