@@ -13,3 +13,8 @@
 /obj/item/paper/codelab/researchernote
 	name = "Head Researchers Note"
 	info = "With the help of these new 'volunteers' we are making great progress with our genetic research. These samples will earn us fame across the galaxy!<BR>Earlier, one of the junior scientists wanted to try some gene editing on a white sample he recieved, which made it grow and mutate rapidly and slide into a hole in the floor on its own. Truly fascinating stuff!<BR>The janitor can get it later, but we'll have to repeat the experiment under controlled conditions, perhaps even introducing it to one of the subjects."
+
+/obj/machinery/porta_turret/centcom_shuttle/weak/codelab
+	name = "old perimeter defense turret"
+	desc = "An old nanotrasen defense turret, rusted and weakened with age and constant use. Still capable of delivering lethal lasers to unwanted guests."
+	faction = list("nanotrasen", "turret") //why are there 3 different factions for nanotrasen mobs :withered:

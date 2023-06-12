@@ -1,8 +1,4 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"af" = (
-/obj/machinery/portable_atmospherics/canister/air,
-/turf/open/floor/plating,
-/area/ruin/unpowered/codelab/maintenance)
 "ai" = (
 /obj/effect/decal/cleanable/molten_object,
 /turf/open/floor/carpet/nanoweave/red,
@@ -11,11 +7,9 @@
 /obj/structure/table,
 /obj/structure/window/reinforced/spawner/west,
 /obj/item/modular_computer/laptop/preset,
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/reception)
 "aR" = (
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/item/trash/can,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/reception)
@@ -30,7 +24,6 @@
 /obj/structure/closet/crate/large{
 	anchored = 1
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/item/toy/plush/flushed,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/storage)
@@ -38,7 +31,6 @@
 /obj/structure/chair/office/light{
 	dir = 1
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/reception)
 "bq" = (
@@ -51,23 +43,14 @@
 /obj/machinery/atmospherics/pipe/simple/general/hidden{
 	dir = 5
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
 "bz" = (
 /obj/structure/cable{
 	icon_state = "5-8"
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/laboratory)
-"bB" = (
-/obj/structure/cable{
-	icon_state = "6-8"
-	},
-/obj/machinery/light/small/directional/north,
-/turf/open/floor/plating/rust,
-/area/ruin/unpowered/codelab/maintenance)
 "bE" = (
 /obj/effect/turf_decal/corner/opaque/white/mono,
 /obj/structure/cable{
@@ -82,31 +65,29 @@
 /turf/open/floor/carpet/nanoweave/red,
 /area/ruin/unpowered/codelab/laboratory)
 "cc" = (
-/obj/structure/spider/stickyweb,
-/obj/effect/decal/remains/human,
-/turf/open/floor/plating,
-/area/ruin/unpowered/codelab/maintenance)
+/obj/effect/turf_decal/industrial/stand_clear{
+	dir = 4
+	},
+/turf/open/floor/concrete/pavement,
+/area/ruin/unpowered/codelab/exterior)
 "cd" = (
 /obj/machinery/light/dim/directional/north,
 /obj/effect/decal/cleanable/generic,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/storage)
-"ce" = (
-/obj/structure/cable{
-	icon_state = "5-8"
-	},
-/turf/open/floor/plating,
-/area/ruin/unpowered/codelab/maintenance)
 "ck" = (
-/obj/structure/cable{
-	icon_state = "4-8"
+/obj/machinery/door/airlock/external,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 1
 	},
-/turf/open/floor/plating/rust,
-/area/ruin/unpowered/codelab/maintenance)
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/reception)
 "cl" = (
-/obj/machinery/light/small/directional/south,
-/turf/open/floor/plating/rust,
-/area/ruin/unpowered/codelab/maintenance)
+/obj/effect/turf_decal/box/white/corners{
+	dir = 4
+	},
+/turf/open/floor/concrete/pavement,
+/area/ruin/unpowered/codelab/exterior)
 "cv" = (
 /obj/structure/fence,
 /turf/open/floor/plating/grass/lava,
@@ -116,7 +97,6 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/molten_object,
-/obj/effect/turf_decal/corner/opaque/white/mono,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
 "cH" = (
@@ -131,17 +111,7 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
-"cO" = (
-/obj/structure/closet/crate/secure/plasma{
-	anchored = 1
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/item/stack/sheet/mineral/plasma,
-/obj/item/stack/sheet/mineral/plasma,
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/storage)
 "cR" = (
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/effect/decal/cleanable/wrapping,
 /turf/open/floor/plasteel/white,
@@ -152,11 +122,6 @@
 /obj/item/flashlight/lamp,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/reception)
-"dn" = (
-/obj/effect/turf_decal/corner/opaque/white/mono,
-/obj/machinery/light/dim/directional/west,
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/subjectrooms)
 "ds" = (
 /obj/effect/decal/remains/human,
 /turf/open/floor/carpet/nanoweave/red,
@@ -182,23 +147,18 @@
 /obj/machinery/light/dim/directional/east,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
-"dX" = (
-/obj/effect/spawner/lootdrop/maintenance,
-/turf/open/floor/plating,
-/area/ruin/unpowered/codelab/maintenance)
 "ec" = (
 /obj/structure/closet/crate/medical{
 	anchored = 1
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/item/reagent_containers/syringe,
 /obj/item/circular_saw,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/storage)
 "ef" = (
-/obj/structure/closet,
-/obj/effect/spawner/lootdrop/maintenance,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/machinery/door/airlock/external{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ruin/unpowered/codelab/maintenance)
 "eg" = (
@@ -210,15 +170,6 @@
 /obj/item/toy/plush/snakeplushie,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/storage)
-"em" = (
-/obj/machinery/door/airlock/maintenance_hatch{
-	dir = 8
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plating/rust,
-/area/ruin/unpowered/codelab/maintenance)
 "en" = (
 /obj/machinery/atmospherics/pipe/simple/general/hidden{
 	dir = 9
@@ -228,10 +179,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
-"eo" = (
-/obj/structure/spider/stickyweb,
-/turf/open/floor/plating,
-/area/ruin/unpowered/codelab/maintenance)
 "et" = (
 /turf/closed/wall/mineral/titanium,
 /area/ruin/unpowered/codelab/laboratory)
@@ -242,17 +189,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
-"eI" = (
-/obj/structure/grille,
-/turf/open/floor/plating,
-/area/ruin/unpowered/codelab/maintenance)
-"ff" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/salvageable/computer{
-	dir = 1
-	},
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/laboratory)
 "fq" = (
 /obj/effect/turf_decal/corner/opaque/white/mono,
 /obj/machinery/power/apc/auto_name/directional/north,
@@ -264,7 +200,6 @@
 /area/ruin/unpowered/codelab/subjectrooms)
 "fr" = (
 /obj/structure/closet/cardboard,
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/item/shard/plasma,
 /obj/item/trash/energybar,
 /turf/open/floor/plasteel/white,
@@ -282,10 +217,6 @@
 "fv" = (
 /turf/open/floor/carpet/nanoweave/red,
 /area/ruin/unpowered/codelab/laboratory)
-"fT" = (
-/obj/structure/window/reinforced/spawner/east,
-/turf/open/floor/plating/rust,
-/area/ruin/unpowered/codelab/maintenance)
 "fU" = (
 /obj/machinery/camera{
 	dir = 10
@@ -317,14 +248,12 @@
 	req_access = null;
 	req_access_txt = "16"
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/storage)
 "gC" = (
 /obj/structure/cable{
 	icon_state = "5-8"
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/storage)
 "gE" = (
@@ -343,11 +272,10 @@
 /area/ruin/unpowered/codelab/storage)
 "hc" = (
 /obj/structure/cable{
-	icon_state = "4-10"
+	icon_state = "1-2"
 	},
-/obj/effect/spawner/lootdrop/grille_or_trash,
-/turf/open/floor/plating/rust,
-/area/ruin/unpowered/codelab/maintenance)
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/storage)
 "hu" = (
 /obj/machinery/airalarm/directional/north,
 /obj/structure/fluff/paper/stack{
@@ -362,22 +290,11 @@
 /obj/structure/fluff/paper/stack{
 	dir = 10
 	},
-/obj/effect/turf_decal/corner/opaque/white/mono,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
 "hE" = (
 /turf/closed/wall/mineral/titanium,
 /area/ruin/unpowered/codelab/reception)
-"hK" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plating,
-/area/ruin/unpowered/codelab/maintenance)
-"hU" = (
-/obj/effect/spawner/lootdrop/grille_or_trash,
-/turf/open/floor/plating,
-/area/ruin/unpowered/codelab/maintenance)
 "ie" = (
 /obj/structure/fluff/paper/stack{
 	dir = 9
@@ -387,7 +304,6 @@
 /area/ruin/unpowered/codelab/subjectrooms)
 "ih" = (
 /obj/structure/closet/cardboard,
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/item/trash/cheesie,
 /obj/item/trash/plate,
 /turf/open/floor/plasteel/white,
@@ -421,7 +337,6 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/item/pickaxe/drill,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/storage)
@@ -444,18 +359,12 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ruin/unpowered/codelab/laboratory)
 "iE" = (
 /obj/machinery/door/airlock/maintenance_hatch,
 /turf/open/floor/plating,
 /area/ruin/unpowered/codelab/laboratory)
-"iH" = (
-/obj/structure/spider/stickyweb,
-/obj/effect/spawner/lootdrop/maintenance,
-/turf/open/floor/plating,
-/area/ruin/unpowered/codelab/maintenance)
 "iI" = (
 /obj/structure/closet/crate{
 	anchored = 1
@@ -468,19 +377,15 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/reception)
-"jj" = (
-/obj/structure/cable{
-	icon_state = "4-10"
-	},
-/obj/machinery/door/airlock/maintenance_hatch{
-	dir = 8
-	},
-/turf/open/floor/plating,
-/area/ruin/unpowered/codelab/maintenance)
 "jk" = (
-/obj/structure/barricade/wooden,
+/obj/structure/cable{
+	icon_state = "1-6"
+	},
+/obj/structure/cable{
+	icon_state = "1-10"
+	},
 /turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/reception)
+/area/ruin/unpowered/codelab/storage)
 "jm" = (
 /obj/structure/cable{
 	icon_state = "6-9"
@@ -491,13 +396,8 @@
 /obj/machinery/computer/security/telescreen{
 	pixel_y = 27
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
-"jq" = (
-/obj/effect/spawner/lootdrop/grille_or_trash,
-/turf/open/floor/plating/rust,
-/area/ruin/unpowered/codelab/maintenance)
 "jz" = (
 /obj/structure/chair/sofa/right{
 	dir = 1
@@ -505,10 +405,9 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/reception)
 "jB" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/wrapping,
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/storage)
+/obj/structure/flora/ausbushes/hell,
+/turf/open/floor/concrete/pavement,
+/area/ruin/unpowered/codelab/exterior)
 "jC" = (
 /obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel/white,
@@ -517,7 +416,6 @@
 /obj/structure/chair{
 	dir = 4
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/reception)
 "jJ" = (
@@ -525,13 +423,10 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/storage)
 "jK" = (
-/obj/structure/rack,
-/obj/item/reagent_containers/food/snacks/canned/peaches/maint,
-/turf/open/floor/plating,
-/area/ruin/unpowered/codelab/maintenance)
-"jR" = (
-/obj/structure/rack,
-/obj/item/storage/toolbox/mechanical,
+/obj/structure/cable{
+	icon_state = "0-10"
+	},
+/obj/machinery/power/rtg,
 /turf/open/floor/plating,
 /area/ruin/unpowered/codelab/maintenance)
 "jV" = (
@@ -546,12 +441,10 @@
 /obj/structure/fluff/paper/stack{
 	dir = 8
 	},
-/obj/effect/turf_decal/corner/opaque/white/mono,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
 "kl" = (
 /obj/structure/window/reinforced/spawner/east,
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/reception)
 "kt" = (
@@ -563,23 +456,23 @@
 /turf/open/floor/plating/grass/lava/orange,
 /area/ruin/unpowered/codelab/exterior)
 "kY" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/chair/office/light{
-	dir = 1
+/obj/structure/cable{
+	icon_state = "0-9"
+	},
+/obj/machinery/power/shieldwallgen/atmos{
+	dir = 8;
+	id = "NTGen Doorfield"
+	},
+/obj/machinery/door/poddoor{
+	id = "NTGen Door"
 	},
 /turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/laboratory)
+/area/ruin/unpowered/codelab/storage)
 "lc" = (
 /obj/structure/flora/ausbushes/fullgrass/hell,
 /turf/open/floor/plating/grass/lava/orange,
 /area/ruin/unpowered/codelab/exterior)
-"ll" = (
-/obj/structure/rack,
-/obj/item/storage/toolbox/emergency,
-/turf/open/floor/plating,
-/area/ruin/unpowered/codelab/maintenance)
 "ln" = (
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
@@ -600,19 +493,6 @@
 /obj/item/paper/pamphlet,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/reception)
-"lv" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/item/shard,
-/turf/open/floor/plating/rust,
-/area/ruin/unpowered/codelab/maintenance)
-"lP" = (
-/obj/structure/cable{
-	icon_state = "5-10"
-	},
-/turf/open/floor/plating,
-/area/ruin/unpowered/codelab/maintenance)
 "lU" = (
 /obj/structure/closet/cardboard,
 /obj/item/clothing/under/pants/black,
@@ -620,7 +500,6 @@
 /area/ruin/unpowered/codelab/subjectrooms)
 "lW" = (
 /obj/structure/filingcabinet/double/grey,
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/reception)
 "lY" = (
@@ -644,18 +523,8 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
-"mT" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plating/rust,
-/area/ruin/unpowered/codelab/maintenance)
 "mX" = (
 /obj/machinery/camera,
-/obj/effect/turf_decal/corner/opaque/white/mono,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
 "nm" = (
@@ -675,14 +544,12 @@
 "nG" = (
 /obj/item/newspaper,
 /obj/effect/decal/cleanable/molten_object,
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/dim/directional/north,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
 "nH" = (
 /obj/item/newspaper,
 /obj/structure/fluff/paper/stack,
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
 "nL" = (
@@ -700,28 +567,15 @@
 /obj/structure/fluff/paper/stack,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
-"nS" = (
-/obj/effect/spawner/lootdrop/grille_or_trash,
-/obj/machinery/light/small/directional/south,
-/turf/open/floor/plating/rust,
-/area/ruin/unpowered/codelab/maintenance)
-"ok" = (
-/obj/structure/window/reinforced/spawner/east,
-/obj/item/stack/cable_coil/random/five,
-/obj/structure/frame/machine,
-/obj/item/circuitboard/machine/cell_charger,
-/turf/open/floor/plating,
-/area/ruin/unpowered/codelab/maintenance)
 "ol" = (
-/obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/maintenance,
-/turf/open/floor/plating/rust,
-/area/ruin/unpowered/codelab/maintenance)
-"om" = (
-/obj/structure/rack,
-/obj/item/stock_parts/cell/high,
-/obj/item/stock_parts/cell/super,
-/turf/open/floor/plating/rust,
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/structure/cable,
+/turf/open/floor/plating,
 /area/ruin/unpowered/codelab/maintenance)
 "oo" = (
 /obj/machinery/atmospherics/components/unary/portables_connector,
@@ -747,19 +601,8 @@
 /obj/structure/cable{
 	icon_state = "6-9"
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/storage)
-"oz" = (
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/obj/machinery/power/port_gen/pacman/super,
-/turf/open/floor/plating,
-/area/ruin/unpowered/codelab/maintenance)
 "oK" = (
 /obj/machinery/door/window/brigdoor/eastleft{
 	dir = 8
@@ -769,7 +612,6 @@
 "oY" = (
 /obj/structure/table,
 /obj/machinery/door/window/brigdoor,
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/item/paper/codelab/reception,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/reception)
@@ -814,7 +656,6 @@
 	pixel_x = -7;
 	pixel_y = 5
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/item/paper/codelab/researchernote,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/laboratory)
@@ -838,14 +679,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/reception)
-"qf" = (
-/obj/structure/fence/door,
-/turf/open/floor/plating/grass/lava/orange,
-/area/ruin/unpowered/codelab/exterior)
-"qm" = (
-/obj/effect/decal/cleanable/cobweb,
-/turf/open/floor/plating,
-/area/ruin/unpowered/codelab/maintenance)
 "qr" = (
 /obj/machinery/sleeper{
 	pixel_y = 2;
@@ -858,31 +691,16 @@
 /area/ruin/unpowered/codelab/subjectrooms)
 "qs" = (
 /obj/structure/closet/cardboard,
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/item/reagent_containers/food/drinks/soda_cans/plasma,
 /obj/item/trash/popcorn,
 /obj/item/trash/energybar,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/storage)
 "qt" = (
-/obj/structure/cable{
-	icon_state = "4-8"
+/obj/machinery/door/airlock/external{
+	dir = 8
 	},
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/obj/machinery/power/apc/auto_name/directional/north,
-/turf/open/floor/plating,
-/area/ruin/unpowered/codelab/maintenance)
-"qA" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/generic,
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/reception)
-"qB" = (
-/obj/structure/rack,
-/obj/effect/spawner/lootdrop/maintenance,
-/turf/open/floor/plating,
+/turf/open/floor/plating/rust,
 /area/ruin/unpowered/codelab/maintenance)
 "qU" = (
 /obj/structure/window/reinforced/spawner/east,
@@ -904,14 +722,6 @@
 	},
 /turf/open/floor/plating/grass/lava/orange,
 /area/ruin/unpowered/codelab/exterior)
-"rn" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/subjectrooms)
-"rp" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/carpet/nanoweave/red,
-/area/ruin/unpowered/codelab/laboratory)
 "rw" = (
 /obj/structure/chair/office/light{
 	dir = 4
@@ -924,7 +734,6 @@
 /area/ruin/unpowered/codelab/exterior)
 "rA" = (
 /obj/structure/closet/crate/trashcart,
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/item/pushbroom,
 /obj/item/trash/can/food/peaches,
 /obj/item/trash/candy,
@@ -947,7 +756,6 @@
 /area/ruin/unpowered/codelab/laboratory)
 "rI" = (
 /obj/structure/fluff/paper/stack,
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/dim/directional/south,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
@@ -955,12 +763,10 @@
 /obj/structure/closet/crate/secure{
 	anchored = 1
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/item/pickaxe,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/storage)
 "rV" = (
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/cobweb,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/reception)
@@ -973,7 +779,6 @@
 /area/ruin/unpowered/codelab/subjectrooms)
 "sc" = (
 /obj/effect/turf_decal/corner/opaque/white/mono,
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -1004,16 +809,16 @@
 /obj/structure/closet/crate/large{
 	anchored = 1
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/item/toy/plush/among,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/storage)
 "sA" = (
 /obj/structure/cable{
-	icon_state = "5-10"
+	icon_state = "0-8"
 	},
-/obj/effect/spawner/lootdrop/grille_or_trash,
-/turf/open/floor/plating/rust,
+/obj/machinery/power/rtg,
+/obj/machinery/power/rtg,
+/turf/open/floor/plating,
 /area/ruin/unpowered/codelab/maintenance)
 "sE" = (
 /obj/structure/fluff/paper/stack,
@@ -1021,7 +826,6 @@
 /area/ruin/unpowered/codelab/subjectrooms)
 "sW" = (
 /obj/machinery/airalarm/directional/east,
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
 "tp" = (
@@ -1033,16 +837,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/laboratory)
-"ts" = (
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/light/small/directional/south,
-/turf/open/floor/plating,
-/area/ruin/unpowered/codelab/maintenance)
 "tx" = (
 /obj/effect/turf_decal/corner/opaque/white/mono,
 /obj/structure/fluff/paper/stack{
@@ -1055,69 +849,36 @@
 	dir = 10
 	},
 /obj/effect/decal/cleanable/molten_object,
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
 "tD" = (
 /obj/effect/decal/cleanable/generic,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/reception)
-"tE" = (
-/obj/structure/spider/stickyweb,
-/obj/item/clothing/under/pants/white,
-/turf/open/floor/plating,
-/area/ruin/unpowered/codelab/maintenance)
 "tH" = (
 /obj/structure/flora/ausbushes/sparsegrass/hell,
 /turf/open/floor/plating/grass/lava/purple,
 /area/ruin/unpowered/codelab/exterior)
-"ue" = (
-/obj/structure/cable{
-	icon_state = "4-9"
-	},
-/turf/open/floor/plating/rust,
-/area/ruin/unpowered/codelab/maintenance)
 "uf" = (
 /obj/structure/fence/corner{
 	dir = 4
 	},
 /turf/open/floor/plating/grass/lava/orange,
 /area/ruin/unpowered/codelab/exterior)
-"uh" = (
-/obj/effect/decal/cleanable/cobweb,
-/obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/maintenance,
-/turf/open/floor/plating/rust,
-/area/ruin/unpowered/codelab/maintenance)
 "uj" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/generic,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/storage)
 "uA" = (
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/dim/directional/north,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ruin/unpowered/codelab/laboratory)
-"uV" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/effect/spawner/lootdrop/grille_or_trash,
-/turf/open/floor/plating/rust,
-/area/ruin/unpowered/codelab/maintenance)
-"uZ" = (
-/obj/machinery/door/airlock/maintenance_hatch{
-	dir = 8
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plating,
-/area/ruin/unpowered/codelab/maintenance)
 "vb" = (
 /obj/structure/table,
 /obj/item/reagent_containers/glass/beaker/cryoxadone{
@@ -1153,17 +914,25 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
 "vG" = (
-/obj/structure/cable{
-	icon_state = "6-9"
+/obj/machinery/button/shieldwallgen{
+	dir = 8;
+	id = "NTGen Doorfield";
+	pixel_x = 24;
+	pixel_y = -5
 	},
-/turf/open/floor/plating/rust,
-/area/ruin/unpowered/codelab/maintenance)
+/obj/machinery/button/door{
+	dir = 8;
+	pixel_y = 7;
+	pixel_x = 25;
+	id = "NTGen Door"
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/storage)
 "vQ" = (
 /obj/structure/flora/ausbushes/sparsegrass/hell,
 /turf/open/floor/plating/grass/lava/orange,
 /area/ruin/unpowered/codelab/exterior)
 "vU" = (
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/dim/directional/south,
 /obj/effect/decal/cleanable/wrapping,
 /turf/open/floor/plasteel/white,
@@ -1182,7 +951,6 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
 "wu" = (
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/dim/directional/west,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
@@ -1195,7 +963,6 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
 "wM" = (
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/molten_object/large,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/reception)
@@ -1211,23 +978,15 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/storage)
 "wP" = (
-/obj/effect/turf_decal/corner/opaque/white/mono,
 /obj/structure/table,
 /obj/item/reagent_containers/glass/beaker/large/epinephrine,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
-"wW" = (
-/obj/structure/cable{
-	icon_state = "6-9"
-	},
-/turf/open/floor/plating,
-/area/ruin/unpowered/codelab/maintenance)
 "wZ" = (
 /obj/structure/fluff/paper/stack{
 	dir = 10
 	},
 /obj/effect/decal/cleanable/molten_object/large,
-/obj/effect/turf_decal/corner/opaque/white/mono,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
 "xi" = (
@@ -1236,16 +995,6 @@
 	},
 /turf/open/floor/carpet/nanoweave/red,
 /area/ruin/unpowered/codelab/laboratory)
-"xk" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/fluff/paper/stack{
-	dir = 6
-	},
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/subjectrooms)
 "xx" = (
 /turf/open/floor/carpet/lone,
 /area/ruin/unpowered/codelab/subjectrooms)
@@ -1296,17 +1045,22 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
 "yd" = (
-/obj/machinery/power/smes/engineering,
 /obj/structure/cable{
-	icon_state = "0-2"
+	icon_state = "0-5"
 	},
-/turf/open/floor/plating,
-/area/ruin/unpowered/codelab/maintenance)
+/obj/machinery/power/shieldwallgen/atmos{
+	dir = 4;
+	id = "NTGen Doorfield"
+	},
+/obj/machinery/door/poddoor{
+	id = "NTGen Door"
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/storage)
 "ye" = (
 /obj/structure/fluff/paper/stack{
 	dir = 6
 	},
-/obj/effect/turf_decal/corner/opaque/white/mono,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
 "yo" = (
@@ -1314,9 +1068,9 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/reception)
 "yG" = (
-/obj/structure/spider/stickyweb,
-/turf/open/floor/plating/rust,
-/area/ruin/unpowered/codelab/maintenance)
+/obj/effect/turf_decal/box/white/corners,
+/turf/open/floor/concrete/pavement,
+/area/ruin/unpowered/codelab/exterior)
 "yJ" = (
 /obj/structure/closet/crate/internals{
 	anchored = 1
@@ -1324,7 +1078,6 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/item/tank/internals/oxygen/yellow,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/storage)
@@ -1358,13 +1111,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/storage)
-"zw" = (
-/obj/structure/fluff/paper/stack{
-	dir = 9
-	},
-/obj/effect/turf_decal/corner/opaque/white/mono,
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/subjectrooms)
 "zG" = (
 /obj/structure/closet/crate/medical{
 	anchored = 1
@@ -1377,11 +1123,18 @@
 /obj/structure/fluff/paper/stack{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/opaque/white/mono,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
 "zI" = (
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/structure/cable{
+	icon_state = "6-8"
+	},
+/obj/structure/cable{
+	icon_state = "5-8"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating/rust,
 /area/ruin/unpowered/codelab/maintenance)
 "zK" = (
@@ -1400,7 +1153,6 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/laboratory)
 "zY" = (
-/obj/effect/turf_decal/corner/opaque/white/mono,
 /obj/structure/table,
 /obj/item/reagent_containers/glass/beaker/slime,
 /turf/open/floor/plasteel/white,
@@ -1435,7 +1187,6 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/wrapping,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/storage)
@@ -1494,7 +1245,6 @@
 /area/ruin/unpowered/codelab/storage)
 "Br" = (
 /obj/structure/closet/cardboard,
-/obj/effect/turf_decal/corner/opaque/white/mono,
 /obj/machinery/light/dim/directional/east,
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1
@@ -1506,25 +1256,15 @@
 /turf/open/floor/plating/grass/lava/orange,
 /area/ruin/unpowered/codelab/exterior)
 "Bu" = (
-/obj/effect/turf_decal/corner/opaque/white/mono,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/subjectrooms)
-"BE" = (
-/obj/structure/fluff/paper/stack{
-	dir = 6
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/subjectrooms)
+/obj/effect/turf_decal/dept/cargo,
+/turf/open/floor/concrete/pavement,
+/area/ruin/unpowered/codelab/exterior)
 "BF" = (
+/obj/machinery/power/smes/engineering,
 /obj/structure/cable{
-	icon_state = "2-8"
+	icon_state = "0-2"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/rust,
 /area/ruin/unpowered/codelab/maintenance)
 "BJ" = (
 /obj/machinery/camera,
@@ -1533,19 +1273,12 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
-"BO" = (
-/obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/maintenance,
-/obj/effect/spawner/lootdrop/maintenance,
-/turf/open/floor/plating,
-/area/ruin/unpowered/codelab/maintenance)
 "BP" = (
-/obj/machinery/door/airlock/maintenance_hatch,
-/obj/structure/cable{
-	icon_state = "6-9"
+/obj/effect/turf_decal/industrial/stand_clear{
+	dir = 8
 	},
-/turf/open/floor/plating/rust,
-/area/ruin/unpowered/codelab/maintenance)
+/turf/open/floor/concrete/pavement,
+/area/ruin/unpowered/codelab/exterior)
 "Cd" = (
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/reception)
@@ -1555,19 +1288,10 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/reception)
-"Cv" = (
-/obj/machinery/door/airlock/maintenance_hatch,
-/turf/open/floor/plating/rust,
-/area/ruin/unpowered/codelab/maintenance)
 "Cw" = (
 /obj/structure/chair/sofa/left{
 	dir = 1
 	},
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/reception)
-"CA" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/barricade/wooden,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/reception)
 "CC" = (
@@ -1587,11 +1311,11 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/reception)
 "CV" = (
-/obj/structure/cable{
-	icon_state = "1-2"
+/obj/effect/turf_decal/box/white/corners{
+	dir = 8
 	},
-/turf/open/floor/plating/rust,
-/area/ruin/unpowered/codelab/maintenance)
+/turf/open/floor/concrete/pavement,
+/area/ruin/unpowered/codelab/exterior)
 "CZ" = (
 /obj/machinery/atmospherics/pipe/manifold/general/hidden,
 /obj/effect/turf_decal/industrial/warning/corner{
@@ -1603,16 +1327,10 @@
 /obj/structure/closet/crate/secure/plasma{
 	anchored = 1
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/item/stack/sheet/mineral/plasma,
 /obj/item/tank/internals/plasma,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/storage)
-"Dh" = (
-/obj/machinery/airalarm/directional/east,
-/obj/effect/turf_decal/corner/opaque/white/mono,
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/subjectrooms)
 "Di" = (
 /obj/effect/decal/cleanable/molten_object,
 /obj/effect/decal/cleanable/food/plant_smudge,
@@ -1626,13 +1344,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
-"Dl" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/light/small/directional/south,
-/turf/open/floor/plating/rust,
-/area/ruin/unpowered/codelab/maintenance)
 "Do" = (
 /obj/machinery/light/dim/directional/north,
 /obj/effect/decal/cleanable/molten_object,
@@ -1645,7 +1356,6 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/reception)
 "DD" = (
@@ -1709,28 +1419,20 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
 "EY" = (
 /obj/structure/closet/crate/secure/engineering{
 	anchored = 1
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/item/storage/toolbox/mechanical,
 /obj/item/storage/toolbox/electrical,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/storage)
-"Fa" = (
-/obj/structure/fluff/paper/stack,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/subjectrooms)
 "Ff" = (
 /obj/structure/closet/crate/secure{
 	anchored = 1
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/item/storage/fancy/cigarettes/cigpack_cannabis,
 /obj/item/storage/fancy/cigarettes/cigpack_cannabis,
 /obj/item/storage/fancy/cigarettes/cigpack_syndicate,
@@ -1747,12 +1449,19 @@
 /area/ruin/unpowered/codelab/maintenance)
 "Fy" = (
 /obj/machinery/modular_computer/console/preset/research,
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/laboratory)
 "FF" = (
-/obj/structure/grille,
-/turf/open/floor/plating/rust,
+/obj/structure/cable{
+	icon_state = "2-9"
+	},
+/obj/structure/cable{
+	icon_state = "2-5"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating,
 /area/ruin/unpowered/codelab/maintenance)
 "FG" = (
 /obj/structure/chair/office/light{
@@ -1768,22 +1477,16 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/reception)
 "FJ" = (
-/obj/machinery/light/small/directional/north,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/structure/cable{
+	icon_state = "0-6"
+	},
+/obj/machinery/power/rtg,
 /turf/open/floor/plating/rust,
 /area/ruin/unpowered/codelab/maintenance)
-"FO" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/storage)
 "Gb" = (
 /obj/machinery/camera{
 	dir = 10
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
 "Gc" = (
@@ -1795,30 +1498,17 @@
 "Gd" = (
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/laboratory)
-"Gj" = (
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/turf/open/floor/plating,
-/area/ruin/unpowered/codelab/maintenance)
 "Gq" = (
 /obj/effect/decal/cleanable/molten_object/large,
 /obj/effect/decal/cleanable/food/plant_smudge,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
-"Gw" = (
-/obj/machinery/door/airlock/public,
-/obj/structure/barricade/wooden/crude,
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/reception)
 "GG" = (
 /obj/structure/chair/office/light,
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/reception)
 "GH" = (
 /obj/structure/closet/crate/trashcart,
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/item/pushbroom,
 /obj/item/trash/popcorn,
 /obj/item/trash/boritos,
@@ -1830,7 +1520,6 @@
 /obj/structure/closet/crate{
 	anchored = 1
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/item/storage/toolbox/mechanical/old,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/storage)
@@ -1850,7 +1539,6 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
 "Hd" = (
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/fluff/paper/stack{
 	dir = 6
 	},
@@ -1866,13 +1554,8 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/reception)
-"Hw" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/laboratory)
 "HQ" = (
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/storage)
@@ -1880,10 +1563,6 @@
 /obj/structure/flora/ausbushes/hell,
 /turf/open/floor/plating/grass/lava/orange,
 /area/ruin/unpowered/codelab/exterior)
-"Ie" = (
-/obj/effect/decal/cleanable/cobweb,
-/turf/open/floor/plating/rust,
-/area/ruin/unpowered/codelab/maintenance)
 "Ig" = (
 /obj/structure/chair/office/light{
 	dir = 8
@@ -1891,7 +1570,6 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/laboratory)
 "Iu" = (
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/dim/directional/east,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
@@ -1919,21 +1597,9 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
 "IO" = (
-/obj/structure/fence{
-	dir = 4
-	},
-/turf/open/floor/plating/asteroid/basalt/lava,
+/obj/structure/fence/door,
+/turf/open/floor/concrete/pavement,
 /area/ruin/unpowered/codelab/exterior)
-"IY" = (
-/obj/structure/table,
-/obj/structure/window/reinforced/spawner,
-/obj/machinery/computer/med_data/laptop{
-	dir = 1;
-	pixel_y = 7
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/reception)
 "Jb" = (
 /obj/structure/flora/ausbushes/fernybush/hell,
 /turf/open/floor/plating/grass/lava,
@@ -1949,22 +1615,8 @@
 /obj/structure/cable{
 	icon_state = "6-9"
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ruin/unpowered/codelab/laboratory)
-"Jy" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/door/window/brigdoor/eastright,
-/obj/effect/spawner/lootdrop/maintenance,
-/turf/open/floor/plating/rust,
-/area/ruin/unpowered/codelab/maintenance)
-"JF" = (
-/obj/machinery/power/terminal,
-/obj/structure/cable,
-/turf/open/floor/plating,
-/area/ruin/unpowered/codelab/maintenance)
 "JM" = (
 /obj/machinery/door/window/brigdoor/eastright,
 /turf/open/floor/plasteel/white,
@@ -1974,12 +1626,11 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/reception)
 "JZ" = (
-/obj/structure/cable{
-	icon_state = "4-8"
+/obj/effect/turf_decal/industrial/loading{
+	dir = 1
 	},
-/obj/effect/spawner/lootdrop/maintenance,
-/turf/open/floor/plating,
-/area/ruin/unpowered/codelab/maintenance)
+/turf/open/floor/concrete/pavement,
+/area/ruin/unpowered/codelab/exterior)
 "Ka" = (
 /obj/structure/table/optable,
 /turf/open/floor/plasteel/white,
@@ -1990,17 +1641,14 @@
 	},
 /obj/structure/closet/cardboard,
 /obj/item/clothing/under/color/white,
-/obj/effect/turf_decal/corner/opaque/white/mono,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
 "Kv" = (
 /obj/item/clipboard,
-/obj/effect/turf_decal/corner/opaque/white/mono,
 /obj/machinery/light/dim/directional/west,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
 "Kw" = (
-/obj/effect/turf_decal/corner/opaque/white/mono,
 /obj/structure/table,
 /obj/item/trash/plate,
 /obj/item/trash/plate{
@@ -2012,7 +1660,6 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/laboratory)
 "KQ" = (
@@ -2026,8 +1673,6 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
 "KT" = (
-/obj/effect/turf_decal/corner/opaque/white/mono,
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 4
 	},
@@ -2045,7 +1690,6 @@
 /obj/machinery/camera{
 	dir = 10
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/laboratory)
 "LV" = (
@@ -2062,19 +1706,12 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/laboratory)
-"ME" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/turf/open/floor/plating/rust,
-/area/ruin/unpowered/codelab/maintenance)
 "MK" = (
 /obj/structure/table,
 /obj/item/reagent_containers/glass/beaker/large,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/laboratory)
 "MN" = (
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/holosign/barrier/infinite,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/storage)
@@ -2090,7 +1727,6 @@
 /obj/structure/closet/crate/medical{
 	anchored = 1
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/item/stack/medical/gauze/twelve,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/storage)
@@ -2099,33 +1735,19 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/reception)
-"NB" = (
-/obj/structure/cable{
-	icon_state = "6-8"
-	},
-/turf/open/floor/plating/rust,
-/area/ruin/unpowered/codelab/maintenance)
 "NL" = (
-/obj/effect/decal/cleanable/cobweb/cobweb2,
-/obj/structure/closet,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/structure/cable{
+	icon_state = "0-10"
+	},
+/obj/machinery/power/rtg,
 /turf/open/floor/plating/rust,
 /area/ruin/unpowered/codelab/maintenance)
 "NW" = (
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/item/cigbutt/cigarbutt,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/reception)
-"NX" = (
-/obj/structure/fluff/paper/stack{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/subjectrooms)
 "Ob" = (
 /obj/structure/chair/sofa{
 	dir = 1
@@ -2142,12 +1764,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
-"Oe" = (
-/obj/structure/spider/stickyweb,
-/obj/effect/decal/cleanable/cobweb/cobweb2,
-/obj/structure/spider/cocoon,
-/turf/open/floor/plating,
-/area/ruin/unpowered/codelab/maintenance)
 "Op" = (
 /obj/machinery/door/airlock/public{
 	dir = 8
@@ -2158,11 +1774,6 @@
 /obj/machinery/dna_scannernew,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/laboratory)
-"Ot" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light/dim/directional/south,
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/storage)
 "OE" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2170,40 +1781,19 @@
 /obj/effect/decal/cleanable/molten_object,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/storage)
-"OH" = (
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plating,
-/area/ruin/unpowered/codelab/maintenance)
-"OK" = (
-/obj/structure/window/reinforced/spawner/east,
-/turf/open/floor/plating,
-/area/ruin/unpowered/codelab/maintenance)
 "OM" = (
-/obj/structure/cable{
-	icon_state = "4-9"
+/obj/machinery/door/poddoor{
+	id = "NTGen Door"
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/laboratory)
+/area/ruin/unpowered/codelab/storage)
 "OW" = (
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/ash,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/reception)
 "Pc" = (
 /turf/closed/wall/mineral/titanium,
 /area/ruin/unpowered/codelab/storage)
-"Pw" = (
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/turf/open/floor/plating/rust,
-/area/ruin/unpowered/codelab/maintenance)
 "PK" = (
 /obj/structure/table,
 /obj/structure/window/reinforced/spawner,
@@ -2222,7 +1812,6 @@
 /obj/structure/fluff/paper/stack{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/opaque/white/mono,
 /obj/machinery/light/dim/directional/north,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
@@ -2245,7 +1834,6 @@
 /obj/machinery/atmospherics/pipe/simple/general/hidden{
 	dir = 5
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
@@ -2261,21 +1849,9 @@
 /obj/structure/closet/crate/large{
 	anchored = 1
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/item/toy/plush/nukeplushie,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/storage)
-"QY" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/light/small/directional/north,
-/obj/effect/spawner/lootdrop/maintenance,
-/turf/open/floor/plating/rust,
-/area/ruin/unpowered/codelab/maintenance)
 "Rf" = (
 /obj/structure/table,
 /obj/structure/window/reinforced/spawner,
@@ -2288,7 +1864,6 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
@@ -2306,7 +1881,6 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/storage)
 "Rp" = (
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/food/plant_smudge,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/reception)
@@ -2316,7 +1890,6 @@
 	icon_state = "4-8"
 	},
 /obj/structure/fluff/paper/stack,
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
 "RI" = (
@@ -2327,11 +1900,11 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/storage)
 "Sf" = (
-/obj/machinery/atmospherics/components/unary/portables_connector,
-/obj/machinery/portable_atmospherics/canister/nitrous_oxide,
-/obj/effect/turf_decal/corner/opaque/white/mono,
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/subjectrooms)
+/obj/effect/turf_decal/box/white/corners{
+	dir = 1
+	},
+/turf/open/floor/concrete/pavement,
+/area/ruin/unpowered/codelab/exterior)
 "Sn" = (
 /obj/structure/fence,
 /turf/open/floor/plating/grass/lava/purple,
@@ -2340,7 +1913,6 @@
 /obj/structure/cable{
 	icon_state = "4-10"
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/storage)
 "SG" = (
@@ -2350,30 +1922,11 @@
 /obj/effect/decal/cleanable/molten_object/large,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
-"SU" = (
-/obj/machinery/power/port_gen/pacman/mrs,
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/turf/open/floor/plating,
-/area/ruin/unpowered/codelab/maintenance)
-"SV" = (
-/obj/machinery/light/small/directional/west,
-/turf/open/floor/plating,
-/area/ruin/unpowered/codelab/maintenance)
-"SX" = (
-/obj/structure/cable{
-	icon_state = "2-5"
-	},
-/obj/machinery/door/airlock/maintenance_hatch,
-/turf/open/floor/plating/rust,
-/area/ruin/unpowered/codelab/maintenance)
 "SY" = (
 /turf/open/floor/plating/grass/lava/orange,
 /area/ruin/unpowered/codelab/exterior)
 "Tg" = (
 /obj/structure/filingcabinet/double,
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/reception)
 "TJ" = (
@@ -2392,10 +1945,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
-"Ud" = (
-/obj/machinery/portable_atmospherics/canister/oxygen,
-/turf/open/floor/plating,
-/area/ruin/unpowered/codelab/maintenance)
 "Uf" = (
 /obj/structure/table,
 /obj/structure/window/reinforced/spawner,
@@ -2407,7 +1956,6 @@
 /obj/structure/closet/crate/wooden{
 	anchored = 1
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/storage)
 "Uj" = (
@@ -2422,20 +1970,17 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/reception)
 "Ux" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/shreds,
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/storage)
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/rtg,
+/turf/open/floor/plating/rust,
+/area/ruin/unpowered/codelab/maintenance)
 "Uy" = (
 /turf/open/floor/plating,
 /area/ruin/unpowered/codelab/maintenance)
 "UM" = (
 /turf/closed/wall/mineral/titanium,
-/area/ruin/unpowered/codelab/maintenance)
-"US" = (
-/obj/structure/spider/stickyweb,
-/mob/living/simple_animal/hostile/poison/giant_spider/nurse,
-/turf/open/floor/plating,
 /area/ruin/unpowered/codelab/maintenance)
 "UU" = (
 /obj/structure/fence/corner{
@@ -2443,33 +1988,10 @@
 	},
 /turf/open/floor/plating/grass/lava/purple,
 /area/ruin/unpowered/codelab/exterior)
-"Vf" = (
-/obj/structure/rack,
-/obj/effect/spawner/lootdrop/maintenance,
-/obj/machinery/light/small/directional/south,
-/turf/open/floor/plating/rust,
-/area/ruin/unpowered/codelab/maintenance)
-"Vi" = (
-/obj/effect/turf_decal/corner/opaque/white/mono,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/subjectrooms)
-"Vk" = (
-/obj/item/stack/cable_coil/random/five,
-/turf/open/floor/plating,
-/area/ruin/unpowered/codelab/maintenance)
-"Vq" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/light/small/directional/north,
-/turf/open/floor/plating,
-/area/ruin/unpowered/codelab/maintenance)
 "VQ" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/fluff/paper/stack{
 	dir = 1
 	},
@@ -2483,11 +2005,6 @@
 /mob/living/simple_animal/slime,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
-"Wq" = (
-/obj/structure/spider/stickyweb,
-/obj/structure/spider/cocoon,
-/turf/open/floor/plating,
-/area/ruin/unpowered/codelab/maintenance)
 "Wt" = (
 /obj/structure/table,
 /obj/structure/window/reinforced/spawner,
@@ -2523,20 +2040,12 @@
 /obj/structure/fluff/paper/stack{
 	dir = 6
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/cobweb,
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 4
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
-"Xa" = (
-/obj/effect/decal/cleanable/cobweb/cobweb2,
-/obj/structure/closet,
-/obj/effect/spawner/lootdrop/maintenance,
-/obj/effect/spawner/lootdrop/maintenance,
-/turf/open/floor/plating/rust,
-/area/ruin/unpowered/codelab/maintenance)
 "Xh" = (
 /obj/machinery/camera{
 	dir = 4
@@ -2548,8 +2057,11 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/reception)
 "Xq" = (
-/obj/structure/closet/crate,
-/turf/open/floor/plating,
+/obj/structure/cable{
+	icon_state = "0-9"
+	},
+/obj/machinery/power/rtg,
+/turf/open/floor/plating/rust,
 /area/ruin/unpowered/codelab/maintenance)
 "Xx" = (
 /obj/effect/decal/cleanable/generic,
@@ -2558,20 +2070,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
-"Xy" = (
-/obj/structure/spider/stickyweb,
-/obj/item/toy/plush/spider{
-	name = "knitting spider plushie";
-	desc = "A plushie depicting an adorable rendition of a large spider. It seems to have knitted some pants!"
-	},
-/turf/open/floor/plating,
-/area/ruin/unpowered/codelab/maintenance)
-"XJ" = (
-/obj/structure/cable{
-	icon_state = "4-9"
-	},
-/turf/open/floor/plating,
-/area/ruin/unpowered/codelab/maintenance)
 "XZ" = (
 /obj/structure/closet/crate/secure/plasma{
 	anchored = 1
@@ -2583,7 +2081,8 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/storage)
 "Ya" = (
-/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/door/airlock/external,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/reception)
 "Yq" = (
@@ -2620,7 +2119,6 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/molten_object,
-/obj/effect/turf_decal/corner/opaque/white/mono,
 /obj/machinery/light/dim/directional/south,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
@@ -2636,13 +2134,11 @@
 /obj/machinery/light/dim/directional/east,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/reception)
-"Zk" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/storage)
 "Zl" = (
-/obj/structure/fence/door,
-/turf/open/floor/plating/asteroid/basalt/lava,
+/obj/structure/fence{
+	dir = 4
+	},
+/turf/open/floor/concrete/pavement,
 /area/ruin/unpowered/codelab/exterior)
 "Zs" = (
 /obj/structure/flora/tree/dead/hell,
@@ -2656,7 +2152,7 @@
 /turf/open/floor/plating,
 /area/ruin/unpowered/codelab/laboratory)
 "Zx" = (
-/turf/open/floor/plating/asteroid/basalt/lava,
+/turf/open/floor/concrete/pavement,
 /area/ruin/unpowered/codelab/exterior)
 "Zy" = (
 /obj/machinery/vending/snack/teal,
@@ -2669,17 +2165,6 @@
 /obj/item/tank/internals/oxygen,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/storage)
-"ZS" = (
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/turf/open/floor/plating/rust,
-/area/ruin/unpowered/codelab/maintenance)
-"ZV" = (
-/obj/effect/spawner/lootdrop/grille_or_trash,
-/obj/machinery/light/small/built/directional/north,
-/turf/open/floor/plating/rust,
-/area/ruin/unpowered/codelab/maintenance)
 
 (1,1,1) = {"
 Iv
@@ -2903,10 +2388,10 @@ SY
 rf
 SY
 SY
-UM
-UM
-UM
-UM
+SY
+SY
+SY
+SY
 He
 He
 He
@@ -2938,24 +2423,24 @@ Lx
 SY
 rf
 SY
-UM
-UM
-SU
-Uy
-om
+SY
+SY
+SY
+SY
+SY
 He
 BJ
 KT
-dn
+wu
 iw
 He
 rV
 Rp
 tD
 Cd
-Ya
-Ya
-qA
+Cd
+Cd
+tD
 Cd
 hE
 mA
@@ -2974,25 +2459,25 @@ SY
 SY
 rf
 SY
-UM
-oz
-Pw
-Vk
-zI
+SY
+SY
+SY
+SY
+SY
 He
 Qi
 QJ
-rn
+EM
 vb
 He
-qA
-Ya
+tD
+Cd
 Hk
 DB
 Cj
 Yr
 Rp
-Ya
+Cd
 hE
 mA
 mA
@@ -3010,15 +2495,15 @@ SY
 SY
 rf
 SY
-UM
-mT
-JF
-yd
-ZS
+SY
+SY
+SY
+SY
+SY
 He
 sr
 xN
-rn
+EM
 Ef
 He
 He
@@ -3046,16 +2531,16 @@ Iv
 SY
 rf
 vQ
-UM
-QY
-JF
-yd
-ts
+SY
+SY
+SY
+SY
+SY
 He
-Sf
+oo
 pG
 Ai
-GN
+EM
 He
 WV
 EM
@@ -3064,7 +2549,7 @@ EM
 hE
 FH
 Cd
-Ya
+Cd
 PL
 Cd
 ls
@@ -3082,26 +2567,26 @@ Iv
 lc
 rf
 SY
-UM
-ME
-JF
-yd
-OH
+SY
+SY
+SY
+SY
+SY
 He
 jn
-Dh
+sW
 Iu
 xx
 zZ
 TJ
-Fa
+sE
 EX
-BE
+ye
 hE
 Nq
 Cd
-Ya
-Ya
+Cd
+Cd
 NW
 Cw
 hE
@@ -3118,11 +2603,11 @@ Iv
 SY
 rf
 SY
-UM
-ok
-fT
-OK
-Jy
+SY
+SY
+SY
+SY
+SY
 He
 He
 He
@@ -3130,14 +2615,14 @@ He
 He
 He
 Ay
-BE
+ye
 AG
 wd
 hE
 Xo
-qA
+tD
 Cd
-Ya
+Cd
 Cd
 Ob
 hE
@@ -3154,11 +2639,11 @@ Iv
 SY
 rf
 SY
-UM
-eo
-cc
-yG
-hK
+SY
+SY
+SY
+SY
+SY
 He
 zK
 pE
@@ -3190,11 +2675,11 @@ Iv
 SY
 rf
 SY
-UM
-Wq
-tE
-ll
-JZ
+SY
+SY
+SY
+SY
+SY
 He
 PP
 sE
@@ -3210,7 +2695,7 @@ oK
 aP
 Uf
 Cd
-Ya
+Cd
 jz
 hE
 mA
@@ -3226,31 +2711,31 @@ Iv
 SY
 rf
 SY
-UM
-Xy
-Uy
-yG
-hK
+SY
+SY
+SY
+SY
+SY
 He
 Ka
 cA
-NX
+Uj
 xx
 Hc
 mO
 GN
-Bu
+bE
 GN
 hE
 OW
-Ya
+Cd
 ya
-qA
-Ya
-ls
+tD
+Cd
 hE
-mA
-mA
+hE
+hE
+hE
 Ys
 mA
 gY
@@ -3262,11 +2747,11 @@ Iv
 SY
 rf
 SY
-UM
-US
-dX
-Fx
-Dl
+SY
+SY
+SY
+SY
+SY
 He
 He
 He
@@ -3281,13 +2766,13 @@ hE
 Yq
 GG
 oY
-Ya
-Ya
-jk
+Cd
+Cd
 hE
-mA
-mA
-mA
+Cd
+Cd
+hE
+Zx
 Zx
 rf
 SY
@@ -3298,11 +2783,11 @@ Iv
 SY
 rf
 Lx
-UM
-tE
-Wq
-jR
-JZ
+SY
+SY
+SY
+SY
+SY
 He
 qr
 Kv
@@ -3311,21 +2796,21 @@ kh
 He
 tx
 GN
-Bu
+bE
 Uj
 hE
 Wv
 wM
-IY
+PK
+Cd
+Cd
 Ya
-Ya
-Ya
-Gw
+Cd
+Cd
+ck
 Zx
 Zx
-SY
-Zx
-rf
+IO
 SY
 Iv
 "}
@@ -3334,33 +2819,33 @@ Iv
 SY
 rf
 SY
-UM
-Oe
-cc
-iH
-hK
+SY
+SY
+SY
+SY
+SY
 He
 zH
 lU
 hx
-rn
+EM
 He
 LV
-Fa
+sE
 bE
 Gq
 hE
 Tg
 Cd
 Rf
-Ya
-Ya
-qA
-Gw
+Cd
+Cd
+hE
+hE
+hE
+hE
 Zx
 Zx
-Zx
-SY
 Zl
 SY
 Iv
@@ -3370,33 +2855,33 @@ Iv
 SY
 rf
 SY
-UM
-UM
-UM
-UM
-uZ
+SY
+SY
+SY
+SY
+SY
 He
 Ka
 dQ
-zw
+nL
 xx
 zZ
 Ze
-Vi
+GN
 bE
 tx
 hE
 lW
-Ya
+Cd
 Wt
+Cd
+Cd
 Ya
-Ya
-CA
-Gw
+Cd
+Cd
+ck
 Zx
 Zx
-Zx
-SY
 IO
 SY
 SY
@@ -3406,11 +2891,11 @@ Iv
 Lx
 rf
 SY
-UM
-qm
-Fx
-Uy
-ce
+SY
+SY
+SY
+SY
+SY
 He
 He
 He
@@ -3418,22 +2903,22 @@ He
 He
 He
 hu
-NX
-xk
+Uj
+Od
 nM
 hE
 Do
 bl
 dg
 Cd
-Ya
 Cd
 hE
-SY
+Cd
+Cd
+hE
 Zx
-SY
 Zx
-qf
+rf
 SY
 SY
 "}
@@ -3442,11 +2927,11 @@ Iv
 SY
 rf
 SY
-UM
-ZV
-Uy
-sA
-cl
+SY
+SY
+SY
+SY
+Zx
 He
 KQ
 ie
@@ -3455,21 +2940,21 @@ Gc
 He
 Jk
 EM
-Bu
+bE
 nQ
 hE
-Ya
-Ya
+Cd
+Cd
 PK
 Cd
-Ya
-pY
+Cd
 hE
-SY
-SY
-SY
+hE
+hE
+hE
 Zx
-IO
+Zx
+rf
 SY
 SY
 "}
@@ -3478,11 +2963,11 @@ Iv
 SY
 DU
 SY
-UM
-Uy
-lP
-FF
-Uy
+SY
+SY
+SY
+Zx
+Zx
 He
 nG
 wZ
@@ -3491,7 +2976,7 @@ xx
 Hc
 Ze
 Uj
-Bu
+bE
 IL
 hE
 JM
@@ -3499,11 +2984,11 @@ CJ
 aY
 tD
 Cd
-zj
+pY
 hE
 lc
 SY
-SY
+Zx
 Zx
 rf
 lc
@@ -3514,11 +2999,11 @@ Iv
 SY
 DU
 SY
-UM
-jj
-UM
-UM
-BO
+SY
+SY
+SY
+Zx
+Zx
 He
 YB
 VX
@@ -3526,22 +3011,22 @@ ye
 tA
 He
 Hd
-Vi
+GN
 VQ
-Vi
+GN
 hE
 Cd
 Cd
-Ya
-Ya
+Cd
+Cd
 aR
-pQ
+zj
 hE
 SY
 SY
 Zx
-SY
-IO
+Zx
+rf
 SY
 SY
 "}
@@ -3550,11 +3035,11 @@ Iv
 nm
 DU
 vQ
-UM
-NB
-qB
-UM
-UM
+SY
+SY
+SY
+Zx
+Zx
 He
 He
 He
@@ -3567,16 +3052,16 @@ SG
 Gb
 hE
 Xo
-Ya
+Cd
 Fw
 Cd
-Ya
-DJ
+Cd
+pQ
 hE
 SY
 Lx
-SY
-SY
+Zx
+Zx
 rf
 SY
 SY
@@ -3586,10 +3071,10 @@ Iv
 nm
 DU
 nm
+nm
+nm
 UM
-jq
-wW
-SV
+UM
 ef
 He
 mX
@@ -3600,14 +3085,14 @@ zZ
 Ze
 GN
 Ru
-Vi
+GN
 hE
-qA
+tD
 OW
 Cd
-Ya
 Cd
-Ya
+Cd
+DJ
 hE
 SY
 SY
@@ -3622,16 +3107,16 @@ Iv
 rz
 DU
 nm
+nm
+nm
 UM
+Fx
 Uy
-FF
-vG
-hU
 He
 oo
 bv
-GN
-rn
+EM
+EM
 He
 yc
 ln
@@ -3647,8 +3132,8 @@ ls
 hE
 SY
 Zx
-SY
-SY
+Zx
+Zx
 rf
 SY
 SY
@@ -3658,11 +3143,11 @@ Iv
 nm
 DU
 nm
+nm
+nm
 UM
-UM
-UM
-eI
-ue
+Fx
+Uy
 He
 sr
 CZ
@@ -3682,8 +3167,8 @@ hE
 hE
 hE
 SY
-SY
-SY
+Zx
+Zx
 Zx
 rf
 SY
@@ -3694,19 +3179,19 @@ Iv
 nm
 DU
 nm
+nm
+nm
 UM
-Ie
-Cv
-Uy
-ck
+Fx
+Fx
 He
 wc
 en
-GN
+EM
 zY
 He
-jB
-Zk
+hb
+HQ
 rG
 ec
 qs
@@ -3718,8 +3203,8 @@ SY
 SY
 SY
 SY
-HW
-SY
+Zx
+Zx
 SY
 rf
 SY
@@ -3730,11 +3215,11 @@ Iv
 nm
 DU
 nm
+nm
+nm
 UM
-dX
-UM
-UM
-JZ
+Uy
+Uy
 He
 Kj
 Br
@@ -3743,10 +3228,10 @@ wP
 He
 QD
 MN
-FO
+vk
 Ni
-Zk
-Zk
+HQ
+HQ
 Ro
 Pc
 SY
@@ -3755,7 +3240,7 @@ SY
 vQ
 SY
 Zx
-SY
+Zx
 SY
 rf
 SY
@@ -3766,9 +3251,9 @@ nm
 nm
 DU
 nm
+nm
 UM
-Fx
-Ud
+UM
 UM
 qt
 et
@@ -3779,7 +3264,7 @@ et
 et
 rS
 DL
-FO
+vk
 Ro
 Aq
 Ff
@@ -3790,8 +3275,8 @@ SY
 SY
 SY
 SY
-SY
-SY
+Zx
+Zx
 HW
 rf
 SY
@@ -3803,17 +3288,17 @@ nm
 DU
 nm
 UM
-Fx
-Vf
 UM
-Dl
+Fx
+Uy
+Fx
 et
 pF
 ds
 yY
 FG
 et
-Zk
+HQ
 so
 ij
 QQ
@@ -3826,9 +3311,9 @@ SY
 SY
 SY
 Zx
-SY
 Zx
-SY
+Zx
+Zx
 rf
 SY
 SY
@@ -3840,31 +3325,31 @@ DU
 nm
 UM
 Fx
-BO
-UM
-hK
+Uy
+Fx
+Uy
 et
 Fy
 cH
 xQ
-rp
+fv
 et
 Pc
 Pc
 Ex
-Zk
-Zk
+HQ
+HQ
 Di
-Zk
+HQ
 Pc
 SY
 HW
 vQ
 SY
-SY
-SY
-SY
-SY
+Zx
+Zx
+Zx
+Zx
 rf
 SY
 SY
@@ -3875,23 +3360,23 @@ nm
 DU
 nm
 UM
-UM
-UM
-UM
-hK
+Uy
+Fx
+Fx
+Fx
 et
-Hw
-Hw
-Hw
+Gd
+Gd
+Gd
 jV
 et
 Bf
-Zk
-FO
-jJ
-Zk
 HQ
-Zk
+vk
+jJ
+HQ
+HQ
+HQ
 Pc
 SY
 SY
@@ -3899,8 +3384,8 @@ Zx
 Zx
 Zx
 Zx
-SY
-vQ
+Zx
+Zx
 rf
 SY
 SY
@@ -3911,32 +3396,32 @@ nm
 DU
 nm
 UM
-ol
-UM
-ef
-uV
+Fx
+Uy
+Uy
+Uy
 et
 ai
 fv
-rp
+fv
 xi
 et
 DD
-Zk
+HQ
 zb
 Bp
 Ui
-Zk
-Zk
+HQ
+HQ
 Pc
 SY
 Zx
 Zx
-SY
 Zx
 Zx
 Zx
-SY
+Zx
+Zx
 rf
 SY
 SY
@@ -3948,31 +3433,31 @@ DU
 nm
 UM
 Uy
-SX
-CV
-Gj
+Fx
+Fx
+Fx
 et
 uA
 fv
 Gd
-Hw
+Gd
 et
 ge
-Zk
+HQ
 OE
 eg
 GK
-jB
+hb
 Ro
 Pc
 SY
+Sf
+BP
 Zx
-SY
 Zx
+BP
+CV
 Zx
-SY
-SY
-lc
 rf
 SY
 SY
@@ -3983,32 +3468,32 @@ nm
 DU
 nm
 UM
-hc
-UM
-UM
-UM
+Uy
+Fx
+Uy
+Uy
 et
 WF
 yL
-Hw
-ff
+Gd
+Mv
 et
 Aq
-Zk
-FO
+HQ
+vk
 fr
 iz
-Zk
+HQ
 HQ
 Pc
 SY
 Zx
-lc
 Zx
 Zx
 Zx
 Zx
-SY
+Zx
+Zx
 rf
 SY
 SY
@@ -4019,14 +3504,14 @@ nm
 DU
 tH
 UM
-bB
-UM
-qB
-af
+Fx
+Uy
+Fx
+Uy
 et
 IG
 rH
-Hw
+Gd
 Oq
 et
 Pc
@@ -4034,17 +3519,17 @@ Pc
 vk
 rA
 qY
-Zk
-Ot
+HQ
+sp
 Pc
 SY
 Zx
 Zx
 Zx
-SY
-SY
 Zx
-SY
+Zx
+Zx
+Zx
 rf
 SY
 SY
@@ -4055,32 +3540,32 @@ nm
 DU
 nm
 UM
-Fx
-BP
-zI
 Uy
+Fx
+Uy
+Fx
 et
 Eh
-OM
-Hw
+ow
+Gd
 Mv
 et
 HQ
-Zk
+HQ
 AA
-Zk
+HQ
 Ro
 jJ
-Zk
+HQ
 Pc
 SY
 Zx
 Zx
-SY
 Zx
-SY
 Zx
-SY
+Zx
+Zx
+Zx
 rf
 SY
 Iv
@@ -4091,32 +3576,32 @@ nm
 DU
 nm
 UM
-Xa
-UM
-XJ
+Uy
 Fx
+Fx
+Uy
 et
 uA
 Bm
 Gd
 Gd
 et
-Ux
+Aq
 bd
 iq
 ih
-cO
+Ni
 dF
 RI
 Pc
 SY
-SY
 Zx
 Zx
 Zx
 Zx
-SY
-SY
+Zx
+Zx
+Zx
 rf
 SY
 Iv
@@ -4127,17 +3612,17 @@ nm
 DU
 nm
 UM
-UM
-UM
-Vq
-nS
+Fx
+Uy
+Uy
+Fx
 et
-rp
+fv
 iB
 bG
 rw
 et
-Zk
+HQ
 hb
 wN
 ZG
@@ -4147,12 +3632,12 @@ Pc
 Pc
 SY
 Zx
-SY
-SY
 Zx
 Zx
 Zx
-SY
+Zx
+Zx
+Zx
 rf
 SY
 Iv
@@ -4163,21 +3648,21 @@ nm
 DU
 nm
 UM
-uh
-UM
-lv
+Fx
 Uy
+Uy
+Fx
 et
 Gd
 KO
 pk
 DZ
 et
-Zk
-Zk
-FO
-Zk
-jB
+HQ
+HQ
+vk
+HQ
+hb
 Ro
 DD
 Pc
@@ -4185,10 +3670,10 @@ SY
 Zx
 Zx
 Zx
-SY
 Zx
 Zx
-SY
+Zx
+Zx
 rf
 SY
 Iv
@@ -4199,10 +3684,10 @@ nm
 DU
 nm
 UM
+Uy
 Fx
-UM
-em
-UM
+Uy
+Fx
 et
 Gd
 bz
@@ -4211,20 +3696,20 @@ pk
 et
 XZ
 zG
-FO
+vk
 jJ
 sz
-Zk
+HQ
 HQ
 Pc
 SY
 Zx
-SY
-Zx
-vQ
 Zx
 Zx
-SY
+Zx
+Zx
+Zx
+Zx
 rf
 SY
 Iv
@@ -4236,7 +3721,7 @@ DU
 nm
 UM
 FJ
-Fx
+Uy
 BF
 pr
 Zv
@@ -4245,22 +3730,22 @@ Gd
 Ig
 LD
 et
-Zk
+HQ
 GH
 yJ
 EY
-cO
+Ni
 Ri
-Zk
+HQ
 Pc
 SY
 Zx
 Zx
 Zx
 Zx
-SY
 Zx
-SY
+Zx
+Zx
 rf
 SY
 Iv
@@ -4271,32 +3756,32 @@ nm
 DU
 nm
 UM
-Uy
+Ux
 FF
+ol
 Uy
-Fx
 iE
 Gd
 jm
-rp
+fv
 bq
 et
 cR
-Ux
-FO
-Zk
-Zk
-Zk
-Ot
+Aq
+vk
+HQ
+HQ
+HQ
+sp
 Pc
 SY
-SY
-SY
-SY
 Zx
-SY
 Zx
-SY
+Zx
+Zx
+Zx
+Zx
+Zx
 rf
 SY
 Iv
@@ -4308,12 +3793,12 @@ DU
 nm
 UM
 NL
-Uy
+Fx
 zI
 Uy
 et
 AE
-kY
+rH
 Jv
 im
 et
@@ -4321,18 +3806,18 @@ Pc
 Pc
 fu
 Nn
-jB
-Zk
+hb
+HQ
 dy
 Pc
 SY
-SY
 Zx
 Zx
 Zx
 Zx
-SY
-SY
+Zx
+Zx
+Zx
 rf
 SY
 Iv
@@ -4345,30 +3830,30 @@ nm
 UM
 UM
 jK
-Fx
+sA
 Xq
 et
 MK
-Hw
+Gd
 Gd
 ow
 et
-Zk
+HQ
 HQ
 gC
-Zk
+HQ
 Ro
-Zk
+HQ
 Pc
 Pc
 SY
-SY
-Zx
-SY
-SY
+cl
+cc
 Zx
 Zx
-SY
+cc
+yG
+Zx
 rf
 SY
 Iv
@@ -4396,15 +3881,15 @@ Pc
 Pc
 Pc
 Pc
-nm
-SY
-Zx
-SY
-SY
 SY
 SY
 Zx
-SY
+Zx
+Zx
+Zx
+Zx
+Zx
+Zx
 rf
 SY
 SY
@@ -4422,23 +3907,23 @@ nm
 nm
 nm
 Pc
-Zk
+HQ
 zu
 Xh
 St
-Zk
-Pc
-nm
-nm
-nm
-nm
-nm
-nm
-SY
-SY
-SY
-SY
-SY
+HQ
+HQ
+HQ
+HQ
+HQ
+yd
+JZ
+Zx
+Zx
+Zx
+Zx
+Zx
+Zx
 SY
 Lx
 rf
@@ -4459,21 +3944,21 @@ rz
 nm
 Pc
 cd
-Zk
+HQ
 ox
 uj
-sp
-Pc
-nm
-tH
-nm
-nm
-nm
-nm
-SY
-SY
-SY
-HW
+hc
+hc
+hc
+hc
+jk
+OM
+Bu
+Zx
+Zx
+Zx
+Zx
+jB
 SY
 SY
 SY
@@ -4498,17 +3983,17 @@ Pc
 jC
 gq
 lo
-Pc
-Pc
-nm
-nm
-nm
-nm
-kt
-nm
-nm
-Lx
-SY
+HQ
+HQ
+hb
+vG
+HQ
+kY
+JZ
+Zx
+Zx
+Zx
+Zx
 SY
 SY
 SY
@@ -4535,11 +4020,11 @@ Pc
 Pc
 Pc
 Pc
-nm
-nm
-nm
-Lg
-nm
+Pc
+Pc
+Pc
+Pc
+Pc
 nm
 nm
 nm
