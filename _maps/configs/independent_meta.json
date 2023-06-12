@@ -6,9 +6,15 @@
 	"job_slots": {
 		"Captain": 1,
 		"Quartermaster": 1,
-		"Medical Doctor": 1,
+		"Medical Doctor": {
+			"outfit": "/datum/outfit/job/doctor",
+			"slots": 1
+		},
 		"Station Engineer": 1,
-		"Shaft Miner": 1,
+		"Shaft Miner": {
+			"outfit": "/datum/outfit/job/shaft_miner",
+			"slots": 1
+		},
 		"Assistant": 3
 	},
 	"enabled": true
