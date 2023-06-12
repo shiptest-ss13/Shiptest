@@ -1,18 +1,18 @@
 {
 	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
 	"map_name": "Kilo-class Mining Ship",
-	"prefix": "SV",
-	"namelists": ["GENERAL", "SPACE", "NATURAL", "NATURAL_AGGRESSIVE"],
+	"prefix": "ISV",
+	"namelists": [
+		"GENERAL",
+		"SPACE",
+		"NATURAL"
+	],
 	"map_short_name": "Kilo-class",
 	"map_path": "_maps/shuttles/shiptest/independent_kilo.dmm",
 	"job_slots": {
 		"Captain": {
 			"outfit": "/datum/outfit/job/captain/western",
 			"officer": true,
-			"slots": 1
-		},
-		"Foreman": {
-			"outfit": "/datum/outfit/job/quartermaster/western",
 			"slots": 1
 		},
 		"Ship's Doctor": {
@@ -25,11 +25,11 @@
 		},
 		"Asteroid Miner": {
 			"outfit": "/datum/outfit/job/miner/hazard",
-			"slots": 2
+			"slots": 1
 		},
 		"Deckhand": {
 			"outfit": "/datum/outfit/job/assistant",
-			"slots": 2
+			"slots": 1
 		}
 	},
 	"enabled": true
