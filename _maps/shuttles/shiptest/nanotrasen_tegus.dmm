@@ -447,6 +447,16 @@
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/central)
+"fh" = (
+/obj/docking_port/stationary{
+	dir = 1;
+	height = 15;
+	dwidth = 7;
+	width = 15;
+	name = "Subship Port 2"
+	},
+/turf/template_noop,
+/area/template_noop)
 "fj" = (
 /obj/effect/turf_decal/borderfloor/full,
 /obj/machinery/door/firedoor/border_only,
@@ -964,6 +974,16 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo/hangar)
+"le" = (
+/obj/docking_port/stationary{
+	dir = 2;
+	height = 15;
+	dwidth = 7;
+	width = 15;
+	name = "Subship Port 1"
+	},
+/turf/template_noop,
+/area/template_noop)
 "lf" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 5
@@ -2143,7 +2163,7 @@
 /area/ship/engineering/engine)
 "zY" = (
 /obj/effect/landmark/subship{
-	subship_template = /datum/map_template/shuttle/subshuttles/nanotrasen_tegus
+	subship_template = /datum/map_template/shuttle/subshuttles/anole
 	},
 /turf/open/floor/plating,
 /area/ship/cargo/hangar)
@@ -4779,7 +4799,7 @@ lW
 ut
 "}
 (20,1,1) = {"
-ut
+fh
 kc
 TH
 dm
@@ -4802,7 +4822,7 @@ GF
 ff
 TH
 XL
-ut
+le
 "}
 (21,1,1) = {"
 ut
