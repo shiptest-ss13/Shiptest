@@ -86,5 +86,9 @@
 	icon_state = "stamp-syndicate"
 	dye_color = DYE_SYNDICATE
 
+/obj/item/stamp/solgov
+	name = "SolGov rubber stamp"
+	icon_state = "stamp-solgov"
+
 /obj/item/stamp/attack_paw(mob/user)
 	return attack_hand(user)
