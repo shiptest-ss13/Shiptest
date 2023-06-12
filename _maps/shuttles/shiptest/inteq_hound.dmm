@@ -206,10 +206,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/effect/turf_decal/corner_techfloor_gray,
-/obj/effect/turf_decal/corner_techfloor_gray{
-	dir = 1
-	},
+/obj/effect/turf_decal/corner_techfloor_gray/diagonal,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "fk" = (
@@ -2368,9 +2365,8 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/effect/turf_decal/corner_techfloor_gray,
 /obj/effect/turf_decal/corner_techfloor_gray{
-	dir = 4
+	dir = 6
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
