@@ -994,6 +994,12 @@
 /obj/machinery/power/smes/shuttle{
 	dir = 8
 	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/effect/turf_decal/techfloor/orange{
+	dir = 4
+	},
 /turf/open/floor/engine/airless,
 /area/awaymission/BMPship/Aft)
 "ds" = (
@@ -2344,15 +2350,6 @@
 	dir = 2
 	},
 /turf/open/floor/plasteel,
-/area/awaymission/BMPship/Aft)
-"AL" = (
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/machinery/power/smes/shuttle{
-	dir = 8
-	},
-/turf/open/floor/engine/airless,
 /area/awaymission/BMPship/Aft)
 "AX" = (
 /obj/machinery/light/small/directional/north,
@@ -5600,9 +5597,9 @@ aa
 aa
 aa
 ht
-AL
-AL
-AL
+dr
+dr
+dr
 ht
 ht
 dr
