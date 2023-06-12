@@ -830,12 +830,11 @@ DEFINE_BITFIELD(turret_flags, list(
 	faction = list("neutral", "turret")
 
 /obj/machinery/porta_turret/ship/ballistic
-	stun_projectile = /obj/projectile/bullet
-	lethal_projectile = /obj/projectile/bullet
+	stun_projectile = /obj/projectile/bullet/turret/rubber
+	lethal_projectile = /obj/projectile/bullet/turret
 	lethal_projectile_sound = 'sound/weapons/gun/smg/shot.ogg'
 	stun_projectile_sound = 'sound/weapons/gun/smg/shot.ogg'
 	desc = "A ballistic machine gun auto-turret."
-	mode = TURRET_LETHAL
 
 /obj/machinery/porta_turret/ship/solgov
 	faction = list("playerSolgov", "turret")
