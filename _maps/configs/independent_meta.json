@@ -1,7 +1,13 @@
 {
 	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
 	"map_name": "Meta-class Freighter",
+	"prefix": "ISV",
 	"map_short_name": "Meta-class",
+	"namelists": [
+		"GENERAL",
+		"SPACE",
+		"HISTORICAL"
+	],
 	"map_path": "_maps/shuttles/shiptest/independent_meta.dmm",
 	"job_slots": {
 		"Captain": 1,
