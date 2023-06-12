@@ -292,3 +292,8 @@
 	description = "<span class='warning'>I was forced to eat cement...</span>\n"
 	mood_change = -6
 	timeout = 4 MINUTES
+
+/datum/mood_event/bad_touch_bear_hug
+	description = "I just got squeezed way too hard."
+	mood_change = -1
+	timeout = 2 MINUTES

@@ -1,6 +1,11 @@
 /datum/mood_event/hug
 	description = "<span class='nicegreen'>Hugs are nice.</span>\n"
 	mood_change = 1
+	timeout = 2
+
+/datum/mood_event/bear_hug
+	description = "I got squeezed very tightly, but it was quite nice."
+	mood_change = 1
 	timeout = 2 MINUTES
 
 /datum/mood_event/betterhug

@@ -420,7 +420,13 @@
 	else if(M.zone_selected == BODY_ZONE_CHEST || M.zone_selected == BODY_ZONE_PRECISE_GROIN)			//WS Edit - Adds more help emotes
 		SEND_SIGNAL(src, COMSIG_CARBON_HUGGED, M)
 		SEND_SIGNAL(M, COMSIG_CARBON_HUG, M, src)
-		M.visible_message("<span class='notice'>[M] hugs [src] to make [p_them()] feel better!</span>", \
+		if (M.grab_state >= GRAB_AGGRESSIVE)
+			M.visible_message(span_notice("[M] embraces [src] in a tight bear hug!"), \
+						null, span_hear("You hear the rustling of clothes."), DEFAULT_MESSAGE_RANGE, list(M, src))
+			to_chat(M, span_notice("You wrap [src] into a tight bear hug!"))
+			to_chat(src, span_notice("[M] squeezes you super tightly in a firm bear hug!"))
+		else
+			M.visible_message("<span class='notice'>[M] hugs [src] to make [p_them()] feel better!</span>", \
 					"<span class='notice'>You hug [src] to make [p_them()] feel better!</span>")
 		if(istype(M.dna.species, /datum/species/moth)) //WS edit - moth dust from hugging
 			mothdust += 15;
@@ -432,12 +438,17 @@
 
 		// No moodlets for people who hate touches
 		if(!HAS_TRAIT(src, TRAIT_BADTOUCH))
-			if(bodytemperature > M.bodytemperature)
-				if(!HAS_TRAIT(M, TRAIT_BADTOUCH))
-					SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "hug", /datum/mood_event/warmhug, src) // Hugger got a warm hug (Unless they hate hugs)
-				SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "hug", /datum/mood_event/hug) // Reciver always gets a mood for being hugged
-			else
-				SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "hug", /datum/mood_event/warmhug, M) // You got a warm hug
+			if (M.grab_state >= GRAB_AGGRESSIVE)
+				SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "hug", /datum/mood_event/bear_hug)
+				if(bodytemperature > M.bodytemperature)
+					if(!HAS_TRAIT(M, TRAIT_BADTOUCH))
+						SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "hug", /datum/mood_event/warmhug) // Hugger got a warm hug (Unless they hate hugs)
+					SEND_SIGNAL(M, "hug", /datum/mood_event/hug) // Receiver always gets a mood for being hugged
+				else
+					SEND_SIGNAL(M, "hug", /datum/mood_event/warmhug,) // You got a warm hug
+		else
+			if (M.grab_state >= GRAB_AGGRESSIVE)
+				SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "hug", /datum/mood_event/bad_touch_bear_hug)
 
 		// Let people know if they hugged someone really warm or really cold
 		if(M.bodytemperature > M.dna.species.bodytemp_heat_damage_limit)
