@@ -1016,6 +1016,9 @@ DEFINE_BITFIELD(turret_flags, list(
 	else
 		icon_state = "control_standby"
 
+/obj/machinery/turretid/lethal
+	lethal = TRUE
+
 /obj/item/wallframe/turret_control
 	name = "turret control frame"
 	desc = "Used for building turret control panels."
