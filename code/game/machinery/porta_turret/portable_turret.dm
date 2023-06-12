@@ -804,14 +804,11 @@ DEFINE_BITFIELD(turret_flags, list(
 	faction = list("neutral", "turret")
 	mode = TURRET_STUN
 
-/obj/machinery/porta_turret/centcom_shuttle/ComponentInitialize()
+/obj/machinery/porta_turret/ship/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/empprotection, EMP_PROTECT_SELF | EMP_PROTECT_WIRES)
 
-/obj/machinery/porta_turret/centcom_shuttle/assess_perp(mob/living/carbon/human/perp)
-	return 0
-
-/obj/machinery/porta_turret/centcom_shuttle/setup()
+/obj/machinery/porta_turret/ship/setup()
 	return
 
 /obj/machinery/porta_turret/ship/examine(mob/user)
