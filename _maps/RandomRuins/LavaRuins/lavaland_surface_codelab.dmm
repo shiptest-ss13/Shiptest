@@ -1,4 +1,19 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ad" = (
+/obj/machinery/door/airlock/external{
+	dir = 8
+	},
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/airlock/locked,
+/turf/open/floor/plating,
+/area/ruin/unpowered/codelab/maintenance)
+"ae" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/carpet/nanoweave/red,
+/area/ruin/unpowered/codelab/laboratory)
 "ai" = (
 /obj/effect/decal/cleanable/molten_object,
 /obj/structure/table/chem,
@@ -12,32 +27,6 @@
 /obj/item/reagent_containers/syringe,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/laboratory)
-"aw" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/laboratory)
-"aF" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 6
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 6
-	},
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/storage)
-"aH" = (
-/obj/structure/fluff/paper/stack{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/molten_object,
-/obj/effect/turf_decal/corner/opaque/ntblue/border{
-	dir = 4
-	},
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/subjectrooms)
 "aP" = (
 /obj/structure/table,
 /obj/structure/window/reinforced/spawner/west,
@@ -57,6 +46,18 @@
 	},
 /turf/open/floor/carpet/nanoweave/purple,
 /area/ruin/unpowered/codelab/reception)
+"aT" = (
+/obj/machinery/airalarm/directional/north,
+/turf/open/floor/carpet/nanoweave/purple,
+/area/ruin/unpowered/codelab/laboratory)
+"aU" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/structure/sign/poster/contraband/ntos{
+	pixel_x = -30
+	},
+/obj/effect/decal/cleanable/chem_pile,
+/turf/open/floor/wood,
+/area/ruin/unpowered/codelab/laboratory)
 "aY" = (
 /obj/structure/table,
 /obj/structure/window/reinforced/spawner,
@@ -67,13 +68,6 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/unpowered/codelab/reception)
-"ba" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 1
-	},
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/storage)
 "bd" = (
 /obj/structure/closet/crate/large{
 	anchored = 1
@@ -81,19 +75,15 @@
 /obj/item/toy/plush/flushed,
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/codelab/storage)
+"bh" = (
+/obj/machinery/airalarm/directional/north,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/laboratory)
 "bl" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 9
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
-	dir = 9
-	},
-/turf/open/floor/plating/rust,
-/area/ruin/unpowered/codelab/maintenance)
-"bn" = (
-/obj/machinery/door/airlock/maintenance_hatch{
-	dir = 4
-	},
+/obj/structure/chair/office/light,
+/turf/open/floor/wood,
+/area/ruin/unpowered/codelab/reception)
+"bp" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -116,10 +106,15 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
+"bw" = (
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/concrete/pavement,
+/area/ruin/unpowered/codelab/exterior)
 "bz" = (
 /obj/structure/cable{
 	icon_state = "5-8"
 	},
+/obj/effect/decal/cleanable/generic,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ruin/unpowered/codelab/laboratory)
 "bE" = (
@@ -127,12 +122,8 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
 "bG" = (
@@ -141,22 +132,11 @@
 /obj/effect/decal/cleanable/food/plant_smudge,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ruin/unpowered/codelab/laboratory)
-"bH" = (
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/obj/machinery/power/rtg,
-/obj/machinery/light/small/directional/north,
-/turf/open/floor/plating/rust,
-/area/ruin/unpowered/codelab/maintenance)
 "bV" = (
+/obj/structure/window/plasma/reinforced,
 /obj/structure/window/plasma/reinforced{
-	dir = 8
+	dir = 4
 	},
-/obj/structure/window/plasma/reinforced{
-	dir = 1
-	},
-/obj/effect/turf_decal/atmos/air,
 /turf/open/floor/engine,
 /area/ruin/unpowered/codelab/maintenance)
 "cc" = (
@@ -176,12 +156,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/storage)
-"ch" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 8
-	},
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/subjectrooms)
 "ck" = (
 /obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
@@ -195,23 +169,26 @@
 	},
 /turf/open/floor/concrete/pavement,
 /area/ruin/unpowered/codelab/exterior)
+"cu" = (
+/obj/structure/closet/secure_closet/personal/cabinet,
+/obj/item/clothing/neck/tie/trans,
+/obj/item/spacecash/bundle/c100,
+/turf/open/floor/wood,
+/area/ruin/unpowered/codelab/laboratory)
 "cv" = (
 /obj/structure/fence,
 /turf/open/floor/plating/grass/lava,
 /area/ruin/unpowered/codelab/exterior)
 "cA" = (
-/obj/machinery/power/terminal{
-	dir = 8
+/obj/machinery/camera,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
 	},
-/obj/structure/cable{
-	icon_state = "0-4"
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
 	},
-/obj/structure/cable,
-/obj/structure/cable{
-	icon_state = "0-5"
-	},
-/turf/open/floor/plating,
-/area/ruin/unpowered/codelab/maintenance)
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/reception)
 "cH" = (
 /obj/structure/chair/office/light{
 	dir = 1
@@ -219,40 +196,25 @@
 /turf/open/floor/carpet/nanoweave/red,
 /area/ruin/unpowered/codelab/laboratory)
 "cI" = (
-/obj/structure/fluff/paper/stack{
-	dir = 6
-	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/subjectrooms)
-"cN" = (
-/obj/effect/decal/cleanable/molten_object,
-/turf/open/floor/plasteel/tech,
-/area/ruin/unpowered/codelab/storage)
-"cP" = (
-/obj/machinery/atmospherics/pipe/simple/general/visible{
-	dir = 10
-	},
-/obj/machinery/light/small/directional/north,
-/turf/open/floor/plating/rust,
-/area/ruin/unpowered/codelab/maintenance)
-"cR" = (
-/obj/machinery/camera{
-	dir = 10
-	},
-/obj/effect/decal/cleanable/molten_object,
-/obj/effect/turf_decal/corner/opaque/lime/border{
-	dir = 4
-	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 8
-	},
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/subjectrooms)
-"cX" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/subjectrooms)
+"cR" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/carpet/nanoweave/purple,
 /area/ruin/unpowered/codelab/reception)
+"cT" = (
+/obj/structure/table/optable,
+/obj/effect/turf_decal/corner/opaque/purple/border{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/subjectrooms)
 "dg" = (
 /obj/structure/table,
 /obj/machinery/door/window/brigdoor,
@@ -260,31 +222,44 @@
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/wood,
 /area/ruin/unpowered/codelab/reception)
-"dh" = (
-/obj/effect/turf_decal/corner/opaque/white/mono,
-/obj/structure/fluff/paper/stack,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/subjectrooms)
-"dl" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+"dk" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/turf/open/floor/plating/rust,
-/area/ruin/unpowered/codelab/maintenance)
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/carpet/nanoweave/purple,
+/area/ruin/unpowered/codelab/laboratory)
+"dq" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/effect/decal/cleanable/generic,
+/turf/open/floor/wood,
+/area/ruin/unpowered/codelab/laboratory)
 "ds" = (
 /obj/effect/decal/remains/human,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ruin/unpowered/codelab/laboratory)
-"dy" = (
-/obj/item/clipboard,
-/obj/effect/turf_decal/corner/opaque/purple/border{
-	dir = 8
+"dt" = (
+/obj/effect/decal/cleanable/molten_object,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 1
 	},
-/obj/machinery/light/broken/directional/west,
 /turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/subjectrooms)
+/area/ruin/unpowered/codelab/storage)
+"dy" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/reception)
 "dF" = (
 /obj/structure/closet/crate/secure{
 	anchored = 1
@@ -293,27 +268,10 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/codelab/storage)
 "dQ" = (
-/obj/machinery/atmospherics/pipe/simple/cyan/visible{
-	dir = 10
-	},
-/obj/machinery/light/small/directional/north,
-/turf/open/floor/plating/rust,
-/area/ruin/unpowered/codelab/maintenance)
-"dS" = (
-/obj/effect/turf_decal/corner/opaque/white/mono,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/obj/structure/table,
+/obj/item/trash/plate,
 /turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/subjectrooms)
-"dV" = (
-/obj/effect/decal/cleanable/cobweb/cobweb2,
-/turf/open/floor/plasteel/tech,
-/area/ruin/unpowered/codelab/storage)
+/area/ruin/unpowered/codelab/laboratory)
 "ec" = (
 /obj/structure/closet/crate/medical{
 	anchored = 1
@@ -360,19 +318,6 @@
 "et" = (
 /turf/closed/wall/mineral/titanium,
 /area/ruin/unpowered/codelab/laboratory)
-"ev" = (
-/obj/machinery/atmospherics/components/binary/pump/on{
-	name = "Air to Distro";
-	target_pressure = 1000
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
-	dir = 8
-	},
-/turf/open/floor/plating/rust,
-/area/ruin/unpowered/codelab/maintenance)
 "eE" = (
 /obj/structure/closet/cardboard,
 /obj/effect/turf_decal/industrial/warning/corner{
@@ -381,45 +326,35 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
 "eH" = (
+/obj/machinery/light/broken/directional/north,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/subjectrooms)
+"eI" = (
+/obj/machinery/door/airlock/external,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/reception)
+"eV" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 6
+	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
-	dir = 6
+	dir = 8
+	},
+/turf/open/floor/plating/rust,
+/area/ruin/unpowered/codelab/maintenance)
+"eY" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-6"
 	},
 /turf/open/floor/plating,
 /area/ruin/unpowered/codelab/maintenance)
-"eM" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/structure/sign/poster/official/random{
-	pixel_y = 32
-	},
-/turf/open/floor/carpet/nanoweave/purple,
-/area/ruin/unpowered/codelab/laboratory)
-"eR" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/turf/open/floor/carpet/nanoweave/purple,
-/area/ruin/unpowered/codelab/laboratory)
-"fb" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 9
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 9
-	},
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/storage)
 "fq" = (
 /obj/effect/turf_decal/corner/opaque/white/mono,
 /obj/machinery/power/apc/auto_name/directional/north,
@@ -441,6 +376,14 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/codelab/storage)
+"fs" = (
+/obj/machinery/door/airlock/public{
+	name = "Subject Cryogenic Storage"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/subjectrooms)
 "fu" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -461,19 +404,11 @@
 	},
 /turf/open/floor/carpet/nanoweave/red,
 /area/ruin/unpowered/codelab/laboratory)
-"fO" = (
-/obj/machinery/light/broken/directional/north,
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/subjectrooms)
-"fS" = (
-/obj/machinery/atmospherics/components/binary/pump/on{
-	name = "Nitrogen to Air"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/ruin/unpowered/codelab/maintenance)
+"fK" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/turf/open/floor/carpet/nanoweave/purple,
+/area/ruin/unpowered/codelab/laboratory)
 "fU" = (
 /obj/machinery/camera{
 	dir = 10
@@ -484,14 +419,6 @@
 /obj/item/shard,
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/codelab/storage)
-"fX" = (
-/obj/structure/cable{
-	icon_state = "0-10"
-	},
-/obj/machinery/power/rtg,
-/obj/effect/decal/cleanable/cobweb/cobweb2,
-/turf/open/floor/plating,
-/area/ruin/unpowered/codelab/maintenance)
 "fZ" = (
 /obj/structure/chair{
 	dir = 4
@@ -499,10 +426,13 @@
 /obj/machinery/light/dim/directional/west,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/reception)
-"gd" = (
-/obj/machinery/computer/atmos_control/tank/air_tank,
-/turf/open/floor/plating,
-/area/ruin/unpowered/codelab/maintenance)
+"gc" = (
+/obj/effect/turf_decal/corner/opaque/white/mono,
+/obj/structure/fluff/paper/stack,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/subjectrooms)
 "ge" = (
 /obj/structure/closet/crate/science,
 /obj/machinery/light/dim/directional/north,
@@ -511,22 +441,6 @@
 /obj/item/clothing/head/beret/sci,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/storage)
-"gp" = (
-/obj/structure/cable{
-	icon_state = "1-9"
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/light/dim/directional/south,
-/turf/open/floor/plating,
-/area/ruin/unpowered/codelab/maintenance)
 "gq" = (
 /obj/machinery/turretid{
 	pixel_x = 28;
@@ -538,44 +452,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/storage)
-"gs" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/light/dim/directional/south,
-/turf/open/floor/carpet/nanoweave/purple,
-/area/ruin/unpowered/codelab/laboratory)
-"gy" = (
-/obj/machinery/camera,
-/obj/effect/turf_decal/techfloor/hole/right{
-	dir = 4
-	},
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/subjectrooms)
-"gz" = (
-/obj/structure/fluff/paper/stack{
-	dir = 6
-	},
-/obj/effect/turf_decal/corner/opaque/lime/border{
-	dir = 4
-	},
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/subjectrooms)
-"gB" = (
-/obj/structure/window/plasma/reinforced{
-	dir = 4
-	},
-/obj/machinery/atmospherics/components/unary/outlet_injector/atmos/nitrogen_input{
-	dir = 4
-	},
-/turf/open/floor/engine/n2,
-/area/ruin/unpowered/codelab/maintenance)
 "gC" = (
 /obj/structure/cable{
 	icon_state = "5-8"
@@ -586,29 +462,24 @@
 /obj/structure/flora/ausbushes/sparsegrass/hell,
 /turf/open/floor/plating/grass/lava,
 /area/ruin/unpowered/codelab/exterior)
-"gX" = (
+"gN" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/carpet/nanoweave/purple,
+/area/ruin/unpowered/codelab/reception)
+"gS" = (
+/obj/machinery/power/rtg,
 /obj/structure/cable{
-	icon_state = "4-8"
+	icon_state = "0-10"
 	},
-/obj/structure/closet/crate/large{
-	anchored = 1
-	},
-/obj/item/toy/plush/hornet/gay,
-/turf/open/floor/plasteel/tech,
-/area/ruin/unpowered/codelab/storage)
+/turf/open/floor/plating/rust,
+/area/ruin/unpowered/codelab/maintenance)
 "gY" = (
 /obj/structure/fence{
 	dir = 4
 	},
 /turf/open/floor/plating/grass/lava,
 /area/ruin/unpowered/codelab/exterior)
-"ha" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
-/obj/structure/sign/poster/official/random{
-	pixel_y = 32
-	},
-/turf/open/floor/carpet/nanoweave/purple,
-/area/ruin/unpowered/codelab/laboratory)
 "hb" = (
 /obj/effect/decal/cleanable/wrapping,
 /turf/open/floor/plasteel/white,
@@ -619,10 +490,18 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/storage)
-"hk" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/subjectrooms)
+"hf" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/carpet/nanoweave/purple,
+/area/ruin/unpowered/codelab/laboratory)
 "hu" = (
 /obj/machinery/airalarm/directional/north,
 /obj/structure/fluff/paper/stack{
@@ -645,44 +524,78 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
-"hE" = (
-/turf/closed/wall/mineral/titanium,
-/area/ruin/unpowered/codelab/reception)
-"hG" = (
-/obj/machinery/atmospherics/pipe/simple/cyan/visible,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+"hA" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/closet/crate/large{
+	anchored = 1
+	},
+/obj/item/toy/plush/hornet/gay,
+/turf/open/floor/plasteel/tech,
+/area/ruin/unpowered/codelab/storage)
+"hB" = (
+/obj/machinery/door/airlock/maintenance_hatch{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
-	dir = 10
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ruin/unpowered/codelab/maintenance)
-"hH" = (
-/obj/effect/turf_decal/corner/opaque/white/mono,
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
+"hC" = (
+/obj/structure/fluff/paper/stack,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/light/broken/directional/north,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
-"hW" = (
-/obj/structure/flora/rock/hell{
-	pixel_y = -1
+"hE" = (
+/turf/closed/wall/mineral/titanium,
+/area/ruin/unpowered/codelab/reception)
+"hJ" = (
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
-/turf/open/floor/plating/grass/lava/purple,
-/area/ruin/unpowered/codelab/exterior)
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/storage)
+"hO" = (
+/obj/structure/window/plasma/reinforced{
+	dir = 4
+	},
+/obj/machinery/atmospherics/components/unary/outlet_injector/atmos/nitrogen_input{
+	dir = 4
+	},
+/turf/open/floor/engine/n2,
+/area/ruin/unpowered/codelab/maintenance)
+"hV" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/light/dim/directional/south,
+/turf/open/floor/carpet/nanoweave/purple,
+/area/ruin/unpowered/codelab/laboratory)
 "ie" = (
 /obj/effect/decal/cleanable/molten_object/large,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
-"if" = (
-/obj/structure/table,
-/obj/machinery/microwave,
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/laboratory)
 "ih" = (
 /obj/structure/closet/cardboard,
 /obj/item/trash/cheesie,
@@ -695,15 +608,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/codelab/storage)
-"ii" = (
-/obj/effect/turf_decal/corner/opaque/purple/border{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 10
-	},
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/subjectrooms)
 "ij" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -723,6 +627,7 @@
 /area/ruin/unpowered/codelab/reception)
 "im" = (
 /obj/machinery/light/broken/directional/south,
+/obj/effect/decal/cleanable/generic,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/laboratory)
 "iq" = (
@@ -758,15 +663,14 @@
 	},
 /turf/open/floor/carpet/nanoweave/red,
 /area/ruin/unpowered/codelab/laboratory)
-"iD" = (
-/obj/structure/table,
-/obj/item/trash/plate,
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/laboratory)
 "iE" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
-/turf/open/floor/plating/rust,
-/area/ruin/unpowered/codelab/maintenance)
+/obj/machinery/door/airlock{
+	name = "Dormitory"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/turf/open/floor/wood,
+/area/ruin/unpowered/codelab/laboratory)
 "iI" = (
 /obj/structure/closet/crate{
 	anchored = 1
@@ -779,13 +683,6 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/reception)
-"iQ" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
-	dir = 8
-	},
-/turf/open/floor/carpet/nanoweave/purple,
 /area/ruin/unpowered/codelab/reception)
 "jk" = (
 /obj/structure/cable{
@@ -807,19 +704,15 @@
 /turf/open/floor/carpet/nanoweave/red,
 /area/ruin/unpowered/codelab/laboratory)
 "jn" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 5
+/obj/effect/turf_decal/corner/opaque/white/mono,
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
-/turf/open/floor/concrete/pavement,
-/area/ruin/unpowered/codelab/maintenance)
-"jx" = (
-/obj/effect/decal/cleanable/food/pie_smudge{
-	desc = "Some kind of strange white goo.";
-	name = "strange goo"
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
 	},
-/mob/living/simple_animal/slime,
-/obj/effect/turf_decal/corner/opaque/lime/border{
-	dir = 8
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
@@ -830,18 +723,16 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/reception)
 "jB" = (
-/obj/machinery/light/small/directional/north,
-/turf/open/floor/wood,
-/area/ruin/unpowered/codelab/laboratory)
+/obj/machinery/atmospherics/pipe/simple/cyan/visible{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/visible/layer2,
+/turf/open/floor/plating,
+/area/ruin/unpowered/codelab/maintenance)
 "jC" = (
 /obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/storage)
-"jF" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/turf/open/floor/carpet/nanoweave/purple,
-/area/ruin/unpowered/codelab/laboratory)
 "jH" = (
 /obj/structure/chair{
 	dir = 4
@@ -857,29 +748,36 @@
 /obj/item/flashlight/lamp/green,
 /turf/open/floor/wood,
 /area/ruin/unpowered/codelab/laboratory)
-"jM" = (
-/obj/machinery/door/airlock/public{
-	name = "Testing Room C"
+"jN" = (
+/obj/effect/decal/cleanable/food/pie_smudge{
+	desc = "Some kind of strange white goo.";
+	name = "strange goo"
 	},
-/obj/effect/mapping_helpers/airlock/locked,
+/mob/living/simple_animal/slime,
+/obj/effect/turf_decal/corner/opaque/lime/border{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/subjectrooms)
+"jT" = (
+/obj/effect/turf_decal/corner/opaque/white/mono,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
-"jT" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
-/turf/open/floor/carpet/nanoweave/purple,
-/area/ruin/unpowered/codelab/laboratory)
 "jV" = (
 /obj/structure/chair/office/light{
 	dir = 4
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/laboratory)
+"jY" = (
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/plating,
+/area/ruin/unpowered/codelab/maintenance)
 "kh" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
@@ -887,37 +785,40 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
 "kl" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/turf/open/floor/carpet/nanoweave/red,
-/area/ruin/unpowered/codelab/laboratory)
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/rtg,
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/plating/rust,
+/area/ruin/unpowered/codelab/maintenance)
 "kt" = (
 /obj/structure/flora/tree/dead_pine,
 /turf/open/floor/plating/grass/lava/purple,
 /area/ruin/unpowered/codelab/exterior)
-"kw" = (
-/obj/structure/closet/l3closet/scientist,
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/laboratory)
-"kz" = (
-/obj/structure/fluff/paper/stack{
-	dir = 1
+"kC" = (
+/obj/machinery/atmospherics/pipe/simple/cyan/visible,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/subjectrooms)
+/obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
+	dir = 10
+	},
+/turf/open/floor/plating,
+/area/ruin/unpowered/codelab/maintenance)
 "kF" = (
 /obj/structure/fence,
 /turf/open/floor/plating/grass/lava/orange,
 /area/ruin/unpowered/codelab/exterior)
-"kU" = (
-/obj/effect/decal/cleanable/ash,
-/obj/effect/turf_decal/siding/wood{
-	dir = 1
+"kS" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
 	},
-/turf/open/floor/wood,
-/area/ruin/unpowered/codelab/reception)
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/laboratory)
 "kY" = (
 /obj/structure/cable{
 	icon_state = "0-9"
@@ -935,11 +836,10 @@
 /obj/structure/flora/ausbushes/fullgrass/hell,
 /turf/open/floor/plating/grass/lava/orange,
 /area/ruin/unpowered/codelab/exterior)
-"lf" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/turf/open/floor/carpet/nanoweave/purple,
-/area/ruin/unpowered/codelab/reception)
+"ld" = (
+/obj/effect/decal/cleanable/confetti,
+/turf/open/floor/wood,
+/area/ruin/unpowered/codelab/laboratory)
 "ln" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
@@ -956,18 +856,35 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/storage)
-"lr" = (
-/obj/effect/decal/cleanable/generic,
-/obj/effect/turf_decal/corner_techfloor_grid/full{
-	dir = 1
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/unpowered/codelab/reception)
 "ls" = (
 /obj/structure/rack,
 /obj/item/paper/pamphlet,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/reception)
+"lv" = (
+/obj/structure/window/plasma/reinforced,
+/obj/structure/window/plasma/reinforced{
+	dir = 8
+	},
+/obj/structure/window/plasma/reinforced{
+	dir = 4
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/nitrogen_output,
+/turf/open/floor/engine/n2,
+/area/ruin/unpowered/codelab/maintenance)
+"lM" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/storage)
+"lQ" = (
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/wood,
+/area/ruin/unpowered/codelab/laboratory)
 "lU" = (
 /obj/structure/closet/cardboard,
 /obj/item/clothing/under/pants/black,
@@ -985,45 +902,50 @@
 /turf/open/floor/carpet/nanoweave/purple,
 /area/ruin/unpowered/codelab/reception)
 "lZ" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
-	dir = 8
-	},
+/obj/machinery/computer/atmos_control/tank/nitrogen_tank,
 /turf/open/floor/plating/rust,
 /area/ruin/unpowered/codelab/maintenance)
 "md" = (
 /obj/structure/flora/ausbushes/ywflowers/hell,
 /turf/open/floor/plating/grass/lava/orange,
 /area/ruin/unpowered/codelab/exterior)
-"mj" = (
-/obj/machinery/atmospherics/pipe/simple/cyan/visible{
-	dir = 4
-	},
+"mg" = (
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 4
 	},
+/obj/machinery/light/dim/directional/south,
+/obj/machinery/atmospherics/components/trinary/mixer/airmix{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ruin/unpowered/codelab/maintenance)
+"mp" = (
+/obj/machinery/camera{
+	dir = 10
+	},
+/obj/structure/fluff/paper/stack{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/opaque/purple/border{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/subjectrooms)
 "mA" = (
 /turf/open/floor/plating/grass/lava,
 /area/ruin/unpowered/codelab/exterior)
-"mF" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+"mE" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/reception)
-"mM" = (
-/obj/machinery/door/airlock/external{
-	dir = 8
-	},
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+/area/ruin/unpowered/codelab/storage)
+"mI" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/airlock/locked,
-/turf/open/floor/plating,
+/turf/open/floor/plating/rust,
 /area/ruin/unpowered/codelab/maintenance)
 "mO" = (
 /obj/effect/turf_decal/corner/opaque/white/mono,
@@ -1037,36 +959,25 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
-"mP" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/laboratory)
 "mW" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/structure/cable{
-	icon_state = "1-6"
-	},
-/turf/open/floor/plating,
-/area/ruin/unpowered/codelab/maintenance)
+/obj/structure/closet/secure_closet/personal/cabinet,
+/obj/item/clothing/neck/tie/purple,
+/obj/item/spacecash/bundle/c1000,
+/turf/open/floor/wood,
+/area/ruin/unpowered/codelab/laboratory)
 "mX" = (
 /obj/machinery/atmospherics/components/unary/portables_connector,
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
+"nb" = (
+/obj/structure/table/wood,
+/obj/item/research_notes/loot/tiny,
+/turf/open/floor/wood,
+/area/ruin/unpowered/codelab/laboratory)
 "nm" = (
 /turf/open/floor/plating/grass/lava/purple,
 /area/ruin/unpowered/codelab/exterior)
-"no" = (
-/obj/effect/decal/cleanable/generic,
-/obj/machinery/airalarm/directional/north,
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/reception)
 "nu" = (
 /obj/structure/closet/crate/internals{
 	anchored = 1
@@ -1075,15 +986,35 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/codelab/storage)
 "nx" = (
-/obj/effect/decal/cleanable/molten_object/large,
-/mob/living/simple_animal/slime,
-/obj/effect/decal/cleanable/food/plant_smudge,
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/laboratory)
+/obj/structure/cable{
+	icon_state = "1-9"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/light/dim/directional/south,
+/turf/open/floor/plating,
+/area/ruin/unpowered/codelab/maintenance)
 "ny" = (
 /obj/structure/sign/nanotrasen,
 /turf/closed/wall/mineral/titanium,
 /area/ruin/unpowered/codelab/exterior)
+"nF" = (
+/obj/effect/decal/cleanable/generic,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/reception)
 "nG" = (
 /obj/structure/fluff/paper/stack{
 	dir = 6
@@ -1102,61 +1033,43 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
 "nL" = (
-/obj/effect/decal/cleanable/wrapping,
-/obj/effect/turf_decal/industrial/outline,
-/turf/open/floor/plasteel/tech,
-/area/ruin/unpowered/codelab/storage)
+/obj/machinery/door/airlock/public{
+	name = "Testing Room C"
+	},
+/obj/effect/mapping_helpers/airlock/locked,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/subjectrooms)
 "nM" = (
 /obj/structure/closet/cardboard,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
-"nP" = (
-/obj/structure/table,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/item/storage/box/cups,
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/laboratory)
-"nQ" = (
-/obj/structure/marker_beacon,
-/obj/machinery/button{
-	pixel_x = -5;
-	pixel_y = 26;
-	name = "broken door button";
-	desc = "A remote control switch, rendered unusable due to harsh conditions and age."
-	},
-/obj/machinery/button/shieldwallgen{
-	id = "NTGen Doorfield";
-	pixel_x = 6;
-	pixel_y = 25
-	},
-/turf/open/floor/plating/grass/lava/orange,
-/area/ruin/unpowered/codelab/exterior)
-"ok" = (
+"nN" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
-/turf/open/floor/carpet/nanoweave/purple,
-/area/ruin/unpowered/codelab/laboratory)
-"ol" = (
-/obj/structure/sink/kitchen{
-	dir = 4;
-	pixel_x = -12
-	},
-/obj/structure/mirror{
-	pixel_x = -24
-	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/storage)
+"nQ" = (
+/obj/structure/bed,
+/obj/item/bedsheet/rd,
+/obj/structure/curtain/cloth/fancy,
+/turf/open/floor/wood,
 /area/ruin/unpowered/codelab/laboratory)
-"on" = (
-/obj/structure/chair{
-	dir = 1
-	},
-/turf/open/floor/carpet/nanoweave/red,
-/area/ruin/unpowered/codelab/laboratory)
+"nW" = (
+/obj/effect/turf_decal/corner_techfloor_grid/full,
+/turf/open/floor/plasteel/dark,
+/area/ruin/unpowered/codelab/reception)
+"oe" = (
+/obj/effect/turf_decal/corner_techfloor_grid/full,
+/turf/open/floor/plasteel/tech,
+/area/ruin/unpowered/codelab/storage)
+"ol" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/turf/open/floor/plating/rust,
+/area/ruin/unpowered/codelab/maintenance)
 "oo" = (
 /obj/machinery/computer/security/telescreen/research{
 	pixel_y = 27
@@ -1178,6 +1091,22 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/storage)
+"or" = (
+/obj/item/newspaper,
+/obj/structure/fluff/paper/stack,
+/obj/effect/turf_decal/corner/opaque/purple/border{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/subjectrooms)
+"ot" = (
+/obj/effect/decal/cleanable/wrapping,
+/obj/machinery/light/small/directional/east,
+/obj/effect/turf_decal/corner_techfloor_grid/full{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/unpowered/codelab/storage)
 "ow" = (
 /obj/structure/cable{
 	icon_state = "4-9"
@@ -1196,9 +1125,20 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/storage)
-"oz" = (
-/obj/machinery/light/small/directional/north,
-/obj/structure/closet/emcloset/anchored,
+"oB" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/molten_object,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/laboratory)
+"oC" = (
+/obj/machinery/atmospherics/pipe/simple/cyan/visible{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
+	dir = 4
+	},
 /turf/open/floor/plating/rust,
 /area/ruin/unpowered/codelab/maintenance)
 "oK" = (
@@ -1210,38 +1150,23 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/unpowered/codelab/reception)
-"oL" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 4
-	},
-/obj/structure/chair/comfy/brown{
-	dir = 8
-	},
-/turf/open/floor/wood,
-/area/ruin/unpowered/codelab/laboratory)
-"oM" = (
-/obj/machinery/atmospherics/pipe/manifold/supply/visible/layer2,
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
-/turf/open/floor/plating/rust,
-/area/ruin/unpowered/codelab/maintenance)
-"oO" = (
-/obj/structure/window/plasma/reinforced,
+"oT" = (
 /obj/structure/window/plasma/reinforced{
 	dir = 8
 	},
 /obj/structure/window/plasma/reinforced{
-	dir = 4
+	dir = 1
 	},
-/obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/nitrogen_output,
-/turf/open/floor/engine/n2,
+/obj/effect/turf_decal/atmos/air,
+/turf/open/floor/engine,
 /area/ruin/unpowered/codelab/maintenance)
-"oU" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
-/obj/structure/cable{
-	icon_state = "1-2"
+"oW" = (
+/obj/effect/decal/cleanable/molten_object,
+/obj/effect/turf_decal/corner/opaque/lime/border{
+	dir = 8
 	},
-/turf/open/floor/plating/rust,
-/area/ruin/unpowered/codelab/maintenance)
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/subjectrooms)
 "oY" = (
 /obj/structure/table,
 /obj/machinery/door/window/brigdoor,
@@ -1258,14 +1183,6 @@
 	},
 /turf/open/floor/carpet/nanoweave/red,
 /area/ruin/unpowered/codelab/laboratory)
-"pq" = (
-/obj/effect/turf_decal/corner_techfloor_grid{
-	dir = 10
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/turf/open/floor/plasteel/dark,
-/area/ruin/unpowered/codelab/reception)
 "pr" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -1278,21 +1195,30 @@
 	},
 /turf/open/floor/carpet/nanoweave/purple,
 /area/ruin/unpowered/codelab/laboratory)
+"pt" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/storage)
+"pA" = (
+/obj/machinery/airalarm/directional/north,
+/turf/open/floor/plating/rust,
+/area/ruin/unpowered/codelab/maintenance)
 "pB" = (
 /obj/structure/flora/ausbushes/ywflowers/hell,
 /turf/open/floor/plating/grass/lava,
 /area/ruin/unpowered/codelab/exterior)
 "pE" = (
-/obj/structure/closet/crate/medical{
-	anchored = 1
-	},
-/obj/item/stack/medical/gauze/twelve,
-/obj/effect/turf_decal/industrial/outline/yellow,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+/obj/machinery/camera,
+/obj/effect/turf_decal/techfloor/hole/right{
 	dir = 4
 	},
-/turf/open/floor/plasteel/tech,
-/area/ruin/unpowered/codelab/storage)
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/subjectrooms)
 "pF" = (
 /obj/item/reagent_containers/food/drinks/mug/tea{
 	pixel_y = 9;
@@ -1320,24 +1246,9 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
-"pM" = (
-/obj/machinery/door/airlock/external{
-	dir = 8
-	},
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
-	dir = 4
-	},
-/turf/open/floor/plating/rust,
-/area/ruin/unpowered/codelab/maintenance)
-"pP" = (
-/obj/machinery/atmospherics/pipe/layer_manifold,
-/turf/open/floor/plating,
+"pO" = (
+/obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4,
+/turf/open/floor/concrete/pavement,
 /area/ruin/unpowered/codelab/maintenance)
 "pQ" = (
 /obj/structure/table,
@@ -1347,17 +1258,10 @@
 /obj/machinery/light/broken/directional/south,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/reception)
-"pS" = (
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
-	dir = 1
+"pR" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/storage)
-"pV" = (
-/obj/item/newspaper,
-/obj/effect/decal/cleanable/molten_object,
-/obj/machinery/light/broken/directional/north,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
 "pY" = (
@@ -1366,15 +1270,32 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/reception)
-"qe" = (
-/obj/structure/table/wood,
-/obj/item/research_notes/loot/tiny,
-/turf/open/floor/wood,
-/area/ruin/unpowered/codelab/laboratory)
-"qk" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/turf/open/floor/carpet/nanoweave/purple,
+"qb" = (
+/obj/effect/turf_decal/corner_techfloor_grid{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/codelab/reception)
+"qd" = (
+/obj/structure/table,
+/obj/machinery/microwave,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/laboratory)
+"qe" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/structure/cable,
+/obj/structure/cable{
+	icon_state = "0-5"
+	},
+/turf/open/floor/plating,
+/area/ruin/unpowered/codelab/maintenance)
 "qr" = (
 /obj/machinery/sleeper{
 	pixel_y = 2;
@@ -1404,21 +1325,30 @@
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/unpowered/codelab/maintenance)
-"qQ" = (
-/obj/structure/cable{
-	icon_state = "4-8"
+"qw" = (
+/obj/effect/decal/cleanable/food/pie_smudge{
+	desc = "Some kind of strange white goo.";
+	name = "strange goo"
 	},
-/obj/structure/fluff/paper/stack{
-	dir = 9
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+/obj/machinery/light/dim/directional/east,
+/obj/effect/turf_decal/corner/opaque/purple/border{
 	dir = 4
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
+"qJ" = (
+/obj/machinery/light/small/directional/west,
+/obj/effect/turf_decal/corner_techfloor_grid/full{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/unpowered/codelab/storage)
+"qM" = (
+/obj/structure/flora/rock/hell{
+	pixel_y = -1
+	},
+/turf/open/floor/plating/grass/lava/purple,
+/area/ruin/unpowered/codelab/exterior)
 "qU" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1441,21 +1371,17 @@
 /obj/item/toy/plush/slimeplushie,
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/codelab/storage)
+"re" = (
+/obj/effect/decal/cleanable/shreds,
+/obj/effect/turf_decal/industrial/outline/yellow,
+/turf/open/floor/plasteel/tech,
+/area/ruin/unpowered/codelab/storage)
 "rf" = (
 /obj/structure/fence{
 	dir = 4
 	},
 /turf/open/floor/plating/grass/lava/orange,
 /area/ruin/unpowered/codelab/exterior)
-"rr" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 5
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 5
-	},
-/turf/open/floor/carpet/nanoweave/purple,
-/area/ruin/unpowered/codelab/reception)
 "rw" = (
 /obj/structure/closet/crate/bin,
 /obj/effect/spawner/lootdrop/maintenance/two,
@@ -1508,13 +1434,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
-"rR" = (
-/obj/machinery/atmospherics/components/trinary/filter/atmos/o2{
-	dir = 8;
-	piping_layer = 4
-	},
-/turf/open/floor/plating,
-/area/ruin/unpowered/codelab/maintenance)
 "rS" = (
 /obj/structure/closet/crate/secure{
 	anchored = 1
@@ -1522,6 +1441,14 @@
 /obj/item/pickaxe,
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/codelab/storage)
+"rT" = (
+/obj/structure/fluff/paper/stack{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/subjectrooms)
 "rV" = (
 /obj/effect/decal/cleanable/cobweb,
 /obj/effect/turf_decal/corner_techfloor_grid/full{
@@ -1530,23 +1457,13 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/codelab/reception)
 "rY" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 9
+/obj/structure/cable{
+	icon_state = "0-10"
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 9
-	},
-/turf/open/floor/carpet/nanoweave/purple,
-/area/ruin/unpowered/codelab/reception)
-"sb" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 8
-	},
-/obj/structure/chair/comfy{
-	dir = 4
-	},
-/turf/open/floor/wood,
-/area/ruin/unpowered/codelab/laboratory)
+/obj/machinery/power/rtg,
+/obj/effect/decal/cleanable/cobweb/cobweb2,
+/turf/open/floor/plating/rust,
+/area/ruin/unpowered/codelab/maintenance)
 "sc" = (
 /obj/effect/turf_decal/corner/opaque/white/mono,
 /obj/structure/cable{
@@ -1554,13 +1471,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
-"si" = (
-/obj/structure/sign/nanotrasen{
-	pixel_y = 32
-	},
-/obj/structure/marker_beacon,
-/turf/open/floor/plating/grass/lava/purple,
-/area/ruin/unpowered/codelab/exterior)
 "sk" = (
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /turf/open/floor/plasteel/white,
@@ -1582,11 +1492,14 @@
 /obj/machinery/atmospherics/components/unary/thermomachine/freezer/on,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
-"su" = (
-/obj/effect/turf_decal/corner_techfloor_grid/full{
-	dir = 4
+"st" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
 	},
-/turf/open/floor/plasteel/dark,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/turf/open/floor/carpet/nanoweave/purple,
 /area/ruin/unpowered/codelab/reception)
 "sz" = (
 /obj/structure/closet/crate/large{
@@ -1602,24 +1515,52 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/unpowered/codelab/laboratory)
-"sD" = (
-/obj/machinery/light/small/directional/north,
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/storage)
 "sE" = (
 /obj/structure/fluff/paper/stack,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
+"sL" = (
+/obj/effect/turf_decal/corner_techfloor_grid/full{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/unpowered/codelab/storage)
 "sW" = (
 /obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
-"tf" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 10
+"sY" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 9
 	},
-/turf/closed/wall/mineral/titanium,
-/area/ruin/unpowered/codelab/subjectrooms)
+/obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
+	dir = 9
+	},
+/turf/open/floor/plating/rust,
+/area/ruin/unpowered/codelab/maintenance)
+"tb" = (
+/obj/structure/closet/secure_closet/personal/cabinet,
+/obj/item/clothing/neck/tie/rainbow,
+/obj/item/spacecash/bundle/c20,
+/turf/open/floor/wood,
+/area/ruin/unpowered/codelab/laboratory)
+"tf" = (
+/obj/structure/cable{
+	icon_state = "0-10"
+	},
+/obj/machinery/power/rtg,
+/obj/effect/decal/cleanable/cobweb/cobweb2,
+/turf/open/floor/plating,
+/area/ruin/unpowered/codelab/maintenance)
+"ti" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
+/obj/structure/chair/comfy{
+	dir = 4
+	},
+/turf/open/floor/wood,
+/area/ruin/unpowered/codelab/laboratory)
 "tp" = (
 /obj/structure/cable{
 	icon_state = "1-6"
@@ -1631,12 +1572,19 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/laboratory)
-"ts" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 6
-	},
+"tr" = (
+/obj/structure/reagent_dispensers/water_cooler,
+/obj/machinery/light/dim/directional/north,
 /turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/subjectrooms)
+/area/ruin/unpowered/codelab/laboratory)
+"tu" = (
+/obj/effect/turf_decal/industrial/outline,
+/turf/open/floor/plasteel/tech,
+/area/ruin/unpowered/codelab/storage)
+"tv" = (
+/obj/machinery/computer/atmos_control/tank/air_tank,
+/turf/open/floor/plating,
+/area/ruin/unpowered/codelab/maintenance)
 "tx" = (
 /obj/effect/turf_decal/corner/opaque/white/mono,
 /obj/structure/fluff/paper/stack{
@@ -1646,42 +1594,26 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
 "tA" = (
-/obj/structure/window/plasma/reinforced,
-/obj/structure/window/plasma/reinforced{
-	dir = 8
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
 	},
-/obj/machinery/atmospherics/components/unary/vent_pump/high_volume/siphon/atmos/air_output,
-/turf/open/floor/engine,
-/area/ruin/unpowered/codelab/maintenance)
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/turf/open/floor/carpet/nanoweave/purple,
+/area/ruin/unpowered/codelab/reception)
+"tC" = (
+/obj/structure/table/wood,
+/obj/item/trash/plate,
+/obj/effect/decal/cleanable/food/flour,
+/turf/open/floor/wood,
+/area/ruin/unpowered/codelab/laboratory)
 "tD" = (
 /obj/effect/decal/cleanable/generic,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/reception)
-"tG" = (
-/obj/machinery/airalarm/directional/north,
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/laboratory)
 "tH" = (
 /obj/structure/flora/ausbushes/sparsegrass/hell,
 /turf/open/floor/plating/grass/lava/purple,
 /area/ruin/unpowered/codelab/exterior)
-"tQ" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/ruin/unpowered/codelab/maintenance)
-"tS" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/subjectrooms)
 "uf" = (
 /obj/structure/fence/corner{
 	dir = 4
@@ -1702,22 +1634,17 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/storage)
-"uq" = (
-/obj/machinery/atmospherics/pipe/simple/cyan/visible{
-	dir = 9
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
-	dir = 4
+"us" = (
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable{
+	icon_state = "0-2"
 	},
 /turf/open/floor/plating,
 /area/ruin/unpowered/codelab/maintenance)
 "uw" = (
-/obj/machinery/atmospherics/components/trinary/filter/atmos/n2{
-	dir = 8;
-	piping_layer = 4
-	},
-/turf/open/floor/plating/rust,
-/area/ruin/unpowered/codelab/maintenance)
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/turf/open/floor/carpet/nanoweave/purple,
+/area/ruin/unpowered/codelab/reception)
 "uA" = (
 /obj/machinery/light/dim/directional/north,
 /obj/structure/table/chem,
@@ -1731,6 +1658,29 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/laboratory)
+"uB" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/storage)
+"uH" = (
+/turf/open/floor/wood,
+/area/ruin/unpowered/codelab/reception)
+"uK" = (
+/obj/effect/turf_decal/corner_techfloor_grid{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/dark,
+/area/ruin/unpowered/codelab/reception)
+"uL" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 10
+	},
+/turf/open/floor/plating,
+/area/ruin/unpowered/codelab/maintenance)
 "vb" = (
 /obj/structure/table,
 /obj/item/reagent_containers/glass/beaker/cryoxadone{
@@ -1750,24 +1700,39 @@
 /obj/effect/turf_decal/corner/opaque/white/mono,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
+"vd" = (
+/obj/machinery/atmospherics/pipe/simple/cyan/visible,
+/turf/open/floor/plating,
+/area/ruin/unpowered/codelab/maintenance)
 "vk" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/storage)
-"vo" = (
-/obj/structure/cable{
-	icon_state = "0-10"
+"vn" = (
+/obj/structure/window/plasma/reinforced{
+	dir = 4
 	},
-/obj/machinery/power/rtg,
-/obj/effect/decal/cleanable/cobweb/cobweb2,
-/turf/open/floor/plating/rust,
+/obj/machinery/atmospherics/components/unary/outlet_injector/atmos/oxygen_input{
+	dir = 4
+	},
+/turf/open/floor/engine/o2,
 /area/ruin/unpowered/codelab/maintenance)
-"vA" = (
-/obj/machinery/airalarm/directional/north,
-/turf/open/floor/carpet/nanoweave/purple,
-/area/ruin/unpowered/codelab/laboratory)
+"vx" = (
+/obj/machinery/camera{
+	dir = 10
+	},
+/obj/structure/fluff/paper/stack{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/molten_object,
+/obj/effect/turf_decal/corner/opaque/ntblue/border{
+	dir = 8
+	},
+/obj/machinery/light/broken/directional/south,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/subjectrooms)
 "vD" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1801,25 +1766,13 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/codelab/storage)
+"vH" = (
+/turf/open/floor/carpet/nanoweave/purple,
+/area/ruin/unpowered/codelab/laboratory)
 "vQ" = (
 /obj/structure/flora/ausbushes/sparsegrass/hell,
 /turf/open/floor/plating/grass/lava/orange,
 /area/ruin/unpowered/codelab/exterior)
-"vS" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 5
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 5
-	},
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/reception)
-"vT" = (
-/obj/machinery/door/airlock/silver{
-	name = "Bathroom"
-	},
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/laboratory)
 "vU" = (
 /obj/machinery/light/dim/directional/south,
 /obj/effect/decal/cleanable/wrapping,
@@ -1838,43 +1791,22 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
-"we" = (
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
-	dir = 1
+"wi" = (
+/obj/effect/turf_decal/corner_techfloor_grid/full{
+	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
-	dir = 1
-	},
-/turf/open/floor/carpet/nanoweave/purple,
+/turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/codelab/reception)
-"wh" = (
-/turf/open/floor/wood,
-/area/ruin/unpowered/codelab/reception)
-"wq" = (
-/mob/living/simple_animal/slime,
-/obj/effect/turf_decal/corner/opaque/ntblue/border{
-	dir = 8
+"wr" = (
+/obj/machinery/door/airlock/silver{
+	name = "Bathroom"
 	},
 /turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/subjectrooms)
-"ws" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 1
-	},
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/reception)
+/area/ruin/unpowered/codelab/laboratory)
 "wu" = (
 /obj/machinery/light/dim/directional/west,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
-"ww" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
-/turf/open/floor/carpet/nanoweave/purple,
-/area/ruin/unpowered/codelab/reception)
 "wJ" = (
 /obj/structure/closet/cardboard,
 /obj/effect/turf_decal/industrial/warning/corner{
@@ -1902,6 +1834,16 @@
 /obj/item/reagent_containers/glass/beaker/large/epinephrine,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
+"wQ" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/turf/open/floor/carpet/nanoweave/purple,
+/area/ruin/unpowered/codelab/laboratory)
 "wZ" = (
 /obj/effect/decal/cleanable/food/pie_smudge{
 	desc = "Some kind of strange white goo.";
@@ -1922,21 +1864,41 @@
 /obj/item/scalpel,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/laboratory)
-"xr" = (
-/obj/machinery/atmospherics/components/binary/pump/on{
-	name = "Nitrogen to Air"
+"xm" = (
+/obj/machinery/atmospherics/components/trinary/filter/atmos/o2{
+	dir = 8;
+	piping_layer = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+/turf/open/floor/plating,
+/area/ruin/unpowered/codelab/maintenance)
+"xr" = (
+/obj/machinery/camera{
+	dir = 10
+	},
+/obj/effect/decal/cleanable/molten_object,
+/obj/effect/turf_decal/corner/opaque/lime/border{
 	dir = 4
 	},
-/turf/open/floor/plating/rust,
-/area/ruin/unpowered/codelab/maintenance)
-"xx" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
+"xx" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
+	},
+/turf/closed/wall/mineral/titanium,
+/area/ruin/unpowered/codelab/subjectrooms)
+"xy" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/reception)
 "xB" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1954,19 +1916,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
-"xF" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/ruin/unpowered/codelab/maintenance)
-"xK" = (
-/obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/visible/layer4,
-/turf/open/floor/plating/rust,
-/area/ruin/unpowered/codelab/maintenance)
 "xM" = (
 /obj/effect/decal/cleanable/molten_object/large,
 /obj/effect/turf_decal/industrial/warning/corner{
@@ -1982,17 +1931,23 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
 "xQ" = (
-/obj/structure/cable{
-	icon_state = "1-2"
+/obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
+	dir = 4
 	},
-/turf/open/floor/plasteel/tech,
-/area/ruin/unpowered/codelab/storage)
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/visible/layer4,
+/turf/open/floor/plating/rust,
+/area/ruin/unpowered/codelab/maintenance)
 "xU" = (
-/obj/structure/fluff/paper/stack,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/subjectrooms)
+/obj/structure/window/plasma/reinforced,
+/obj/structure/window/plasma/reinforced{
+	dir = 8
+	},
+/obj/structure/window/plasma/reinforced{
+	dir = 4
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/oxygen_output,
+/turf/open/floor/engine/n2,
+/area/ruin/unpowered/codelab/maintenance)
 "ya" = (
 /obj/structure/table,
 /obj/structure/window/reinforced/spawner,
@@ -2029,29 +1984,35 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
+"yl" = (
+/obj/structure/closet/l3closet/scientist,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/laboratory)
 "yo" = (
 /obj/machinery/vending/cigarette,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/reception)
-"yA" = (
-/obj/machinery/atmospherics/pipe/simple/general/visible{
-	dir = 10
+"yu" = (
+/obj/structure/window/plasma/reinforced,
+/obj/structure/window/plasma/reinforced{
+	dir = 8
 	},
-/turf/open/floor/plating/rust,
+/obj/machinery/atmospherics/components/unary/vent_pump/high_volume/siphon/atmos/air_output,
+/turf/open/floor/engine,
 /area/ruin/unpowered/codelab/maintenance)
+"yE" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/wood,
+/area/ruin/unpowered/codelab/laboratory)
 "yG" = (
 /obj/effect/turf_decal/box/white/corners,
 /turf/open/floor/concrete/pavement,
 /area/ruin/unpowered/codelab/exterior)
-"yI" = (
-/obj/machinery/atmospherics/components/trinary/mixer/airmix{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
-	dir = 4
-	},
-/turf/open/floor/plating/rust,
-/area/ruin/unpowered/codelab/maintenance)
 "yJ" = (
 /obj/structure/closet/crate/internals{
 	anchored = 1
@@ -2062,35 +2023,23 @@
 /obj/item/tank/internals/oxygen/yellow,
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/codelab/storage)
-"yK" = (
-/obj/effect/decal/cleanable/wrapping,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 1
-	},
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/storage)
 "yL" = (
 /obj/effect/decal/cleanable/molten_object/large,
 /obj/effect/decal/cleanable/food/plant_smudge,
 /mob/living/simple_animal/slime,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/laboratory)
-"yQ" = (
+"yS" = (
 /obj/structure/cable{
 	icon_state = "1-2"
-	},
-/obj/effect/turf_decal/corner_techfloor_grid{
-	dir = 5
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/codelab/storage)
 "yY" = (
 /obj/structure/table,
-/obj/item/clothing/under/suit/senior_scientist,
-/obj/item/research_notes/loot/small{
-	pixel_y = 6;
-	pixel_x = 10
-	},
+/obj/item/modular_computer/laptop,
+/obj/machinery/light/dim/directional/west,
+/obj/item/pen/fountain,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/laboratory)
 "zb" = (
@@ -2100,29 +2049,22 @@
 /obj/effect/decal/cleanable/generic,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/storage)
-"zi" = (
-/obj/effect/decal/cleanable/food/plant_smudge,
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 1
-	},
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/reception)
 "zj" = (
 /obj/structure/table,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/reception)
-"zp" = (
-/obj/machinery/atmospherics/pipe/simple/cyan/visible{
-	dir = 5
-	},
-/turf/open/floor/plating,
-/area/ruin/unpowered/codelab/maintenance)
 "zu" = (
 /obj/structure/cable{
 	icon_state = "6-8"
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/storage)
+"zz" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/subjectrooms)
 "zG" = (
 /obj/structure/closet/crate/medical{
 	anchored = 1
@@ -2164,33 +2106,23 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/laboratory)
-"zU" = (
-/obj/effect/decal/cleanable/oil/streak{
-	pixel_x = -12;
-	pixel_y = 9
-	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 4
-	},
+"zQ" = (
+/obj/effect/decal/cleanable/generic,
+/obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/subjectrooms)
+/area/ruin/unpowered/codelab/reception)
 "zY" = (
 /obj/structure/table,
 /obj/item/reagent_containers/glass/beaker/slime,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
 "zZ" = (
-/obj/effect/decal/cleanable/generic,
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
-	dir = 4
+/obj/structure/table,
+/obj/effect/turf_decal/corner_techfloor_grid/full{
+	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/turf/open/floor/carpet/nanoweave/purple,
+/turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/codelab/reception)
-"Af" = (
-/obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4,
-/turf/open/floor/concrete/pavement,
-/area/ruin/unpowered/codelab/maintenance)
 "Ai" = (
 /obj/machinery/light/dim/directional/east,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -2202,11 +2134,6 @@
 /obj/effect/decal/cleanable/shreds,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/storage)
-"Ar" = (
-/obj/effect/decal/cleanable/shreds,
-/obj/effect/turf_decal/industrial/outline/yellow,
-/turf/open/floor/plasteel/tech,
-/area/ruin/unpowered/codelab/storage)
 "Ay" = (
 /obj/effect/turf_decal/corner/opaque/white/mono,
 /obj/effect/turf_decal/industrial/warning/corner{
@@ -2215,6 +2142,10 @@
 /obj/machinery/light/dim/directional/north,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
+"Az" = (
+/obj/effect/turf_decal/dept/science,
+/turf/open/floor/concrete/pavement,
+/area/ruin/unpowered/codelab/exterior)
 "AA" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2269,26 +2200,39 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
+"AQ" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/turf/open/floor/carpet/nanoweave/purple,
+/area/ruin/unpowered/codelab/laboratory)
+"AT" = (
+/obj/machinery/door/airlock{
+	dir = 4;
+	name = "Dormitory"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/wood,
+/area/ruin/unpowered/codelab/laboratory)
 "Bf" = (
 /obj/machinery/airalarm/directional/north,
 /obj/effect/decal/cleanable/cobweb,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/storage)
-"Bi" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 10
-	},
-/turf/open/floor/plating,
-/area/ruin/unpowered/codelab/maintenance)
 "Bm" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/door/airlock/research/glass{
-	dir = 8
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 1
 	},
 /turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/laboratory)
+/area/ruin/unpowered/codelab/reception)
 "Bp" = (
 /obj/structure/closet/crate/internals{
 	anchored = 1
@@ -2318,14 +2262,17 @@
 /obj/effect/turf_decal/dept/cargo,
 /turf/open/floor/concrete/pavement,
 /area/ruin/unpowered/codelab/exterior)
-"Bv" = (
-/obj/item/newspaper,
-/obj/structure/fluff/paper/stack,
-/obj/effect/turf_decal/corner/opaque/purple/border{
-	dir = 8
+"Bx" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/subjectrooms)
+/area/ruin/unpowered/codelab/laboratory)
+"BA" = (
+/obj/structure/flora/tree/dead/tall/grey,
+/turf/open/floor/plating/grass/lava/orange,
+/area/ruin/unpowered/codelab/exterior)
 "BF" = (
 /obj/machinery/power/smes/engineering,
 /obj/structure/cable{
@@ -2334,35 +2281,38 @@
 /turf/open/floor/plating/rust,
 /area/ruin/unpowered/codelab/maintenance)
 "BJ" = (
-/obj/machinery/door/airlock/public{
-	name = "Testing Room A"
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4
 	},
-/obj/effect/mapping_helpers/airlock/locked,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/chair/comfy/brown{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/ruin/unpowered/codelab/laboratory)
+"BN" = (
+/obj/effect/decal/cleanable/molten_object/large,
+/mob/living/simple_animal/slime,
+/obj/effect/decal/cleanable/food/plant_smudge,
 /turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/subjectrooms)
+/area/ruin/unpowered/codelab/laboratory)
 "BP" = (
 /obj/effect/turf_decal/industrial/stand_clear{
 	dir = 8
 	},
 /turf/open/floor/concrete/pavement,
 /area/ruin/unpowered/codelab/exterior)
-"BU" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/ruin/unpowered/codelab/maintenance)
 "Cd" = (
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/reception)
+"Ci" = (
+/obj/structure/fluff/paper/stack{
+	dir = 6
+	},
+/obj/effect/turf_decal/corner/opaque/lime/border{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/subjectrooms)
 "Cj" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2372,18 +2322,41 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/codelab/reception)
+"Cv" = (
+/obj/effect/decal/cleanable/ash,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/turf/open/floor/wood,
+/area/ruin/unpowered/codelab/reception)
 "Cw" = (
 /obj/structure/chair/sofa/left{
 	dir = 1
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/reception)
+"Cz" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/light/dim/directional/south,
+/turf/open/floor/carpet/nanoweave/purple,
+/area/ruin/unpowered/codelab/laboratory)
 "CC" = (
-/obj/effect/turf_decal/corner/opaque/white/mono,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/research/glass{
+	dir = 8
+	},
 /turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/subjectrooms)
+/area/ruin/unpowered/codelab/laboratory)
 "CJ" = (
 /obj/structure/table,
 /obj/structure/window/reinforced/spawner/east,
@@ -2394,15 +2367,11 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/unpowered/codelab/reception)
-"CM" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 4
-	},
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/laboratory)
+"CU" = (
+/obj/machinery/light/small/directional/north,
+/obj/structure/closet/emcloset/anchored,
+/turf/open/floor/plating/rust,
+/area/ruin/unpowered/codelab/maintenance)
 "CV" = (
 /obj/effect/turf_decal/box/white/corners{
 	dir = 8
@@ -2439,12 +2408,34 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
 "Do" = (
-/obj/machinery/light/dim/directional/north,
 /obj/effect/decal/cleanable/molten_object,
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
+/obj/machinery/light/broken/directional/north,
 /turf/open/floor/wood,
+/area/ruin/unpowered/codelab/reception)
+"Dv" = (
+/obj/structure/marker_beacon,
+/obj/machinery/button{
+	pixel_x = -5;
+	pixel_y = 26;
+	name = "broken door button";
+	desc = "A remote control switch, rendered unusable due to harsh conditions and age."
+	},
+/obj/machinery/button/shieldwallgen{
+	id = "NTGen Doorfield";
+	pixel_x = 6;
+	pixel_y = 25
+	},
+/turf/open/floor/plating/grass/lava/orange,
+/area/ruin/unpowered/codelab/exterior)
+"Dy" = (
+/obj/effect/decal/cleanable/generic,
+/obj/effect/turf_decal/corner_techfloor_grid/full{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/codelab/reception)
 "DB" = (
 /obj/machinery/camera{
@@ -2462,6 +2453,16 @@
 /obj/machinery/porta_turret/ai,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/storage)
+"DI" = (
+/obj/structure/holosign/barrier/infinite,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/storage)
 "DJ" = (
 /obj/structure/chair/comfy/brown{
 	dir = 8
@@ -2475,14 +2476,17 @@
 /obj/item/reagent_containers/syringe/thializid,
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/codelab/storage)
-"DO" = (
-/obj/structure/window/plasma/reinforced,
-/obj/structure/window/plasma/reinforced{
-	dir = 8
+"DP" = (
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
-/obj/effect/turf_decal/atmos/oxygen,
-/turf/open/floor/engine/o2,
-/area/ruin/unpowered/codelab/maintenance)
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/storage)
+"DR" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/reception)
 "DU" = (
 /obj/structure/fence{
 	dir = 4
@@ -2490,8 +2494,19 @@
 /turf/open/floor/plating/grass/lava/purple,
 /area/ruin/unpowered/codelab/exterior)
 "DZ" = (
-/turf/open/floor/carpet/nanoweave/purple,
-/area/ruin/unpowered/codelab/laboratory)
+/obj/effect/decal/cleanable/wrapping,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/storage)
+"Ed" = (
+/obj/structure/fluff/paper/stack{
+	dir = 6
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/subjectrooms)
 "Ef" = (
 /obj/structure/table,
 /obj/item/paper/crumpled/codelab/subjectnote{
@@ -2504,15 +2519,6 @@
 /obj/structure/closet/wardrobe/science_white,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/laboratory)
-"En" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/storage)
 "Ex" = (
 /obj/machinery/camera,
 /obj/structure/cable{
@@ -2520,23 +2526,27 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/storage)
-"EA" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
-	dir = 1
-	},
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/storage)
 "EM" = (
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
+"EV" = (
+/obj/structure/window/plasma/reinforced,
+/obj/structure/window/plasma/reinforced{
+	dir = 8
+	},
+/obj/effect/turf_decal/atmos/nitrogen,
+/turf/open/floor/engine/n2,
+/area/ruin/unpowered/codelab/maintenance)
 "EX" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/structure/fluff/paper/stack{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
@@ -2556,16 +2566,14 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/codelab/storage)
-"Fe" = (
-/obj/structure/window/plasma/reinforced,
-/obj/structure/window/plasma/reinforced{
-	dir = 8
+"Fc" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 6
 	},
-/obj/structure/window/plasma/reinforced{
-	dir = 4
+/obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
+	dir = 6
 	},
-/obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/oxygen_output,
-/turf/open/floor/engine/n2,
+/turf/open/floor/plating,
 /area/ruin/unpowered/codelab/maintenance)
 "Ff" = (
 /obj/structure/closet/crate/secure{
@@ -2578,14 +2586,10 @@
 /obj/item/storage/belt/fannypack/blue,
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/codelab/storage)
-"Fj" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/turf/open/floor/carpet/nanoweave/purple,
+"Fv" = (
+/obj/structure/closet/emcloset/anchored,
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/reception)
 "Fw" = (
 /obj/item/trash/semki,
@@ -2600,13 +2604,6 @@
 /area/ruin/unpowered/codelab/maintenance)
 "Fy" = (
 /obj/machinery/modular_computer/console/preset/research,
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/laboratory)
-"FD" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/effect/decal/cleanable/molten_object,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/laboratory)
 "FF" = (
@@ -2640,6 +2637,17 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/reception)
+"FI" = (
+/obj/effect/turf_decal/corner/opaque/white/mono,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/subjectrooms)
 "FJ" = (
 /obj/structure/cable{
 	icon_state = "0-6"
@@ -2647,10 +2655,23 @@
 /obj/machinery/power/rtg,
 /turf/open/floor/plating/rust,
 /area/ruin/unpowered/codelab/maintenance)
-"FO" = (
-/obj/structure/bookcase/manuals/research_and_development,
+"FM" = (
+/obj/effect/decal/cleanable/oil/streak{
+	pixel_x = -12;
+	pixel_y = 9
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
+	},
 /turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/reception)
+/area/ruin/unpowered/codelab/subjectrooms)
+"FQ" = (
+/obj/structure/sign/nanotrasen{
+	pixel_y = 32
+	},
+/obj/structure/marker_beacon,
+/turf/open/floor/plating/grass/lava/purple,
+/area/ruin/unpowered/codelab/exterior)
 "Gb" = (
 /obj/machinery/camera{
 	dir = 10
@@ -2670,29 +2691,36 @@
 "Gd" = (
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/laboratory)
+"Gm" = (
+/obj/machinery/atmospherics/components/trinary/filter/atmos/n2{
+	dir = 8;
+	piping_layer = 4
+	},
+/turf/open/floor/plating/rust,
+/area/ruin/unpowered/codelab/maintenance)
 "Gq" = (
 /obj/effect/decal/cleanable/molten_object/large,
 /obj/effect/decal/cleanable/food/plant_smudge,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
-"Gz" = (
-/obj/machinery/shower{
-	dir = 8;
-	pixel_y = 8
+"GA" = (
+/obj/structure/fluff/paper/stack{
+	dir = 8
 	},
-/obj/structure/curtain,
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/laboratory)
-"GD" = (
-/obj/structure/table/optable,
-/obj/effect/turf_decal/corner/opaque/purple/border{
+/obj/effect/decal/cleanable/molten_object,
+/obj/effect/turf_decal/corner/opaque/ntblue/border{
 	dir = 4
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
+"GE" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/laboratory)
 "GG" = (
-/obj/structure/chair/office/light,
-/turf/open/floor/wood,
+/turf/open/floor/carpet/nanoweave/purple,
 /area/ruin/unpowered/codelab/reception)
 "GH" = (
 /obj/structure/closet/crate/trashcart,
@@ -2703,6 +2731,14 @@
 /obj/item/trash/syndi_cakes,
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/codelab/storage)
+"GI" = (
+/obj/effect/decal/cleanable/generic,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/carpet/nanoweave/purple,
+/area/ruin/unpowered/codelab/reception)
 "GK" = (
 /obj/structure/closet/crate{
 	anchored = 1
@@ -2714,20 +2750,6 @@
 /obj/effect/turf_decal/corner/opaque/white/mono,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
-"GP" = (
-/obj/effect/turf_decal/corner_techfloor_grid{
-	dir = 9
-	},
-/turf/open/floor/plasteel/tech,
-/area/ruin/unpowered/codelab/storage)
-"GT" = (
-/obj/machinery/door/airlock{
-	name = "Dormitory"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/turf/open/floor/wood,
-/area/ruin/unpowered/codelab/laboratory)
 "GY" = (
 /obj/machinery/door/airlock/public{
 	dir = 8
@@ -2756,10 +2778,9 @@
 "He" = (
 /turf/closed/wall/mineral/titanium,
 /area/ruin/unpowered/codelab/subjectrooms)
-"Hi" = (
-/obj/machinery/power/apc/auto_name/directional/north,
-/obj/structure/cable{
-	icon_state = "0-2"
+"Hh" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ruin/unpowered/codelab/maintenance)
@@ -2773,36 +2794,41 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/reception)
-"Hs" = (
-/obj/effect/decal/cleanable/food/pie_smudge{
-	desc = "Some kind of strange white goo.";
-	name = "strange goo"
+"Hz" = (
+/obj/structure/chair{
+	dir = 1
 	},
-/obj/machinery/light/dim/directional/east,
-/obj/effect/turf_decal/corner/opaque/purple/border{
-	dir = 4
+/turf/open/floor/carpet/nanoweave/red,
+/area/ruin/unpowered/codelab/laboratory)
+"HH" = (
+/obj/structure/closet/crate/large{
+	anchored = 1
 	},
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/subjectrooms)
+/obj/item/toy/plush/carpplushie,
+/obj/effect/turf_decal/industrial/outline/yellow,
+/turf/open/floor/plasteel/tech,
+/area/ruin/unpowered/codelab/storage)
+"HP" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/turf/open/floor/wood,
+/area/ruin/unpowered/codelab/reception)
 "HQ" = (
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/storage)
-"HV" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 9
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/turf/open/floor/wood,
-/area/ruin/unpowered/codelab/laboratory)
 "HW" = (
 /obj/structure/flora/ausbushes/hell,
 /turf/open/floor/plating/grass/lava/orange,
 /area/ruin/unpowered/codelab/exterior)
-"HX" = (
-/obj/machinery/computer/atmos_control/tank/nitrogen_tank,
-/turf/open/floor/plating/rust,
+"Ic" = (
+/obj/machinery/atmospherics/pipe/simple/cyan/visible{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
+	dir = 4
+	},
+/turf/open/floor/plating,
 /area/ruin/unpowered/codelab/maintenance)
 "Ig" = (
 /obj/structure/chair/office/light{
@@ -2810,23 +2836,48 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/laboratory)
-"Io" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/storage)
 "Iu" = (
-/turf/open/floor/carpet/nanoweave/purple,
-/area/ruin/unpowered/codelab/reception)
+/obj/structure/window/plasma/reinforced,
+/obj/structure/window/plasma/reinforced{
+	dir = 8
+	},
+/obj/effect/turf_decal/atmos/oxygen,
+/turf/open/floor/engine/o2,
+/area/ruin/unpowered/codelab/maintenance)
 "Iv" = (
 /turf/template_noop,
 /area/template_noop)
-"Iw" = (
-/obj/machinery/light/small/directional/north,
-/turf/open/floor/concrete/pavement,
-/area/ruin/unpowered/codelab/exterior)
+"Ix" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
+	},
+/turf/open/floor/carpet/nanoweave/purple,
+/area/ruin/unpowered/codelab/reception)
+"IC" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/structure/sign/poster/official/random{
+	pixel_y = 32
+	},
+/turf/open/floor/carpet/nanoweave/purple,
+/area/ruin/unpowered/codelab/laboratory)
+"IE" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/storage)
+"IF" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/obj/structure/table,
+/obj/item/trash/plate,
+/obj/item/reagent_containers/food/drinks/drinkingglass{
+	pixel_y = 14;
+	pixel_x = -8
+	},
+/turf/open/floor/carpet/nanoweave/red,
+/area/ruin/unpowered/codelab/laboratory)
 "IG" = (
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
@@ -2841,29 +2892,25 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
 "IO" = (
-/obj/structure/fence/door,
+/obj/structure/fence/door{
+	open = 1
+	},
 /turf/open/floor/concrete/pavement,
 /area/ruin/unpowered/codelab/exterior)
-"IP" = (
-/obj/structure/window/plasma/reinforced,
-/obj/structure/window/plasma/reinforced{
-	dir = 8
-	},
-/obj/effect/turf_decal/atmos/nitrogen,
-/turf/open/floor/engine/n2,
-/area/ruin/unpowered/codelab/maintenance)
 "Jb" = (
 /obj/structure/flora/ausbushes/fernybush/hell,
 /turf/open/floor/plating/grass/lava,
 /area/ruin/unpowered/codelab/exterior)
-"Jc" = (
-/obj/effect/decal/cleanable/wrapping,
-/obj/machinery/light/small/directional/east,
-/obj/effect/turf_decal/corner_techfloor_grid/full{
-	dir = 1
+"Jh" = (
+/obj/structure/toilet{
+	pixel_y = 11
 	},
-/turf/open/floor/plasteel/tech,
-/area/ruin/unpowered/codelab/storage)
+/obj/machinery/door/window/eastright{
+	dir = 2;
+	req_access = list(11)
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/laboratory)
 "Jk" = (
 /obj/effect/turf_decal/corner/opaque/white/mono,
 /obj/effect/turf_decal/industrial/warning/corner{
@@ -2883,17 +2930,29 @@
 	},
 /turf/open/floor/carpet/nanoweave/red,
 /area/ruin/unpowered/codelab/laboratory)
-"JI" = (
-/obj/structure/reagent_dispensers/water_cooler,
-/obj/machinery/light/dim/directional/north,
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/laboratory)
 "JM" = (
+/obj/machinery/door/window/brigdoor/eastright,
+/obj/effect/turf_decal/siding/wood{
+	dir = 5
+	},
+/turf/open/floor/wood,
+/area/ruin/unpowered/codelab/reception)
+"JO" = (
 /obj/machinery/door/airlock/public{
 	dir = 8
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/reception)
+"JP" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/turf/open/floor/carpet/nanoweave/purple,
+/area/ruin/unpowered/codelab/laboratory)
 "JR" = (
 /obj/item/trash/chips,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -2904,6 +2963,25 @@
 	},
 /turf/open/floor/carpet/nanoweave/purple,
 /area/ruin/unpowered/codelab/reception)
+"JS" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/subjectrooms)
+"JV" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/turf/open/floor/carpet/nanoweave/purple,
+/area/ruin/unpowered/codelab/reception)
 "JZ" = (
 /obj/effect/turf_decal/industrial/loading{
 	dir = 1
@@ -2911,14 +2989,11 @@
 /turf/open/floor/concrete/pavement,
 /area/ruin/unpowered/codelab/exterior)
 "Ka" = (
-/obj/effect/turf_decal/corner/opaque/white/mono,
-/obj/structure/cable{
-	icon_state = "4-8"
+/obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
+	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/subjectrooms)
+/turf/open/floor/plating/rust,
+/area/ruin/unpowered/codelab/maintenance)
 "Kj" = (
 /obj/machinery/computer/security/telescreen{
 	pixel_y = 27
@@ -2927,23 +3002,17 @@
 /obj/item/clothing/under/color/white,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
-"Ku" = (
-/obj/effect/decal/cleanable/food/pie_smudge{
-	desc = "Some kind of strange white goo.";
-	name = "strange goo"
-	},
-/obj/effect/decal/cleanable/molten_object/large,
-/obj/effect/turf_decal/corner/opaque/ntblue/border{
-	dir = 8
-	},
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/subjectrooms)
 "Kv" = (
-/obj/structure/closet/crate/secure/plasma{
-	anchored = 1
+/obj/effect/decal/cleanable/molten_object,
+/obj/effect/turf_decal/industrial/loading{
+	dir = 4
 	},
-/obj/item/stack/sheet/mineral/plasma,
-/obj/item/stack/sheet/mineral/plasma,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/codelab/storage)
 "Kw" = (
@@ -2954,28 +3023,20 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
-"Ky" = (
+"KA" = (
+/obj/structure/table,
+/obj/item/modular_computer/laptop,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/laboratory)
+"KO" = (
 /obj/machinery/door/airlock/public{
-	name = "Testing Room B"
+	name = "Testing Room A"
 	},
+/obj/effect/mapping_helpers/airlock/locked,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
-"KD" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 1
-	},
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/storage)
-"KJ" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
-/turf/open/floor/carpet/nanoweave/purple,
-/area/ruin/unpowered/codelab/reception)
-"KO" = (
-/obj/structure/flora/tree/dead/tall/grey,
-/turf/open/floor/plating/grass/lava/orange,
-/area/ruin/unpowered/codelab/exterior)
 "KQ" = (
 /obj/structure/fluff/empty_sleeper/nanotrasen{
 	pixel_y = 3
@@ -2986,26 +3047,34 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
-"KR" = (
-/obj/effect/turf_decal/corner_techfloor_grid/full,
-/turf/open/floor/plasteel/tech,
-/area/ruin/unpowered/codelab/storage)
 "KT" = (
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 4
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
-"Le" = (
-/obj/effect/decal/cleanable/generic,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 6
+"KZ" = (
+/obj/structure/table,
+/obj/item/slime_extract/grey,
+/obj/item/reagent_containers/glass/beaker{
+	pixel_y = 10;
+	pixel_x = -9
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 6
+/obj/item/research_notes/loot/small{
+	pixel_y = 6;
+	pixel_x = 10
 	},
 /turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/reception)
+/area/ruin/unpowered/codelab/laboratory)
+"Le" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/storage)
 "Lg" = (
 /obj/structure/flora/rock/hell,
 /turf/open/floor/plating/grass/lava/purple,
@@ -3021,61 +3090,95 @@
 /obj/structure/table,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/laboratory)
-"LT" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+"LO" = (
+/obj/effect/decal/cleanable/wrapping,
+/obj/effect/turf_decal/industrial/outline,
+/turf/open/floor/plasteel/tech,
+/area/ruin/unpowered/codelab/storage)
+"LV" = (
+/obj/structure/marker_beacon,
+/turf/open/floor/concrete/pavement,
+/area/ruin/unpowered/codelab/exterior)
+"LW" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/reception)
+"Mb" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/corner_techfloor_grid{
+	dir = 5
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/unpowered/codelab/storage)
+"Mo" = (
+/obj/structure/window/reinforced/survival_pod{
 	dir = 4
 	},
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/laboratory)
+"Mu" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/structure/sign/poster/official/random{
+	pixel_y = 32
+	},
 /turf/open/floor/carpet/nanoweave/purple,
-/area/ruin/unpowered/codelab/reception)
-"LV" = (
-/obj/machinery/door/airlock/external,
+/area/ruin/unpowered/codelab/laboratory)
+"Mv" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/storage)
+"MK" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper,
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/reception)
-"Mv" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/turf/open/floor/wood,
-/area/ruin/unpowered/codelab/laboratory)
-"Mx" = (
-/obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
+/obj/structure/chair{
 	dir = 4
 	},
-/turf/open/floor/plating/rust,
-/area/ruin/unpowered/codelab/maintenance)
-"MK" = (
-/obj/structure/table,
-/obj/item/modular_computer/laptop,
-/turf/open/floor/plasteel/white,
+/turf/open/floor/carpet/nanoweave/red,
 /area/ruin/unpowered/codelab/laboratory)
 "MN" = (
 /obj/structure/holosign/barrier/infinite,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/storage)
-"MQ" = (
-/obj/machinery/camera{
+"MS" = (
+/obj/machinery/atmospherics/pipe/simple/cyan/visible{
 	dir = 10
 	},
-/obj/structure/fluff/paper/stack{
-	dir = 8
-	},
-/obj/effect/turf_decal/corner/opaque/purple/border{
-	dir = 8
-	},
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/subjectrooms)
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/plating/rust,
+/area/ruin/unpowered/codelab/maintenance)
+"MX" = (
+/obj/structure/bed,
+/obj/item/bedsheet/purple,
+/obj/structure/curtain/cloth/grey,
+/turf/open/floor/wood,
+/area/ruin/unpowered/codelab/laboratory)
+"Nd" = (
+/obj/effect/decal/cleanable/molten_object,
+/turf/open/floor/plasteel/tech,
+/area/ruin/unpowered/codelab/storage)
 "Ni" = (
-/obj/structure/holosign/barrier/infinite,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 5
+/obj/structure/closet/crate/secure/plasma{
+	anchored = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 5
-	},
-/turf/open/floor/plasteel/white,
+/obj/item/stack/sheet/mineral/plasma,
+/obj/item/stack/sheet/mineral/plasma,
+/turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/codelab/storage)
 "Nn" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -3086,6 +3189,18 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/storage)
+"No" = (
+/obj/structure/window/plasma/reinforced{
+	dir = 4
+	},
+/obj/structure/window/plasma/reinforced{
+	dir = 1
+	},
+/obj/machinery/atmospherics/components/unary/outlet_injector/atmos/air_input{
+	dir = 4
+	},
+/turf/open/floor/engine,
+/area/ruin/unpowered/codelab/maintenance)
 "Nq" = (
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
@@ -3099,29 +3214,12 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/reception)
-"Ns" = (
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
-/obj/structure/table,
-/obj/item/trash/plate,
-/obj/item/reagent_containers/food/drinks/drinkingglass{
-	pixel_y = 14;
-	pixel_x = -8
+"NK" = (
+/obj/structure/sign/poster/contraband/cybersun_med{
+	pixel_y = 31
 	},
-/turf/open/floor/carpet/nanoweave/red,
+/turf/open/floor/wood,
 /area/ruin/unpowered/codelab/laboratory)
-"Nu" = (
-/obj/machinery/door/airlock/public{
-	name = "Subject Cryogenic Storage"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/subjectrooms)
-"NF" = (
-/obj/effect/turf_decal/dept/science,
-/turf/open/floor/concrete/pavement,
-/area/ruin/unpowered/codelab/exterior)
 "NL" = (
 /turf/open/floor/wood,
 /area/ruin/unpowered/codelab/laboratory)
@@ -3149,14 +3247,25 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
 "On" = (
-/obj/structure/closet/cardboard,
-/obj/machinery/light/dim/directional/south,
-/obj/effect/turf_decal/corner/opaque/lime/border{
+/obj/machinery/atmospherics/pipe/simple/general/visible{
+	dir = 10
+	},
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/plating/rust,
+/area/ruin/unpowered/codelab/maintenance)
+"Oo" = (
+/obj/machinery/atmospherics/components/binary/pump/on{
+	name = "Air to Distro";
+	target_pressure = 1000
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 8
 	},
-/obj/item/disk/tech_disk/major,
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/subjectrooms)
+/turf/open/floor/plating/rust,
+/area/ruin/unpowered/codelab/maintenance)
 "Op" = (
 /obj/machinery/door/airlock/public{
 	dir = 8
@@ -3167,14 +3276,17 @@
 /obj/effect/decal/cleanable/molten_object,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/laboratory)
-"Or" = (
-/obj/effect/decal/cleanable/molten_object,
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
-	dir = 1
+"Ou" = (
+/obj/effect/decal/cleanable/food/pie_smudge{
+	desc = "Some kind of strange white goo.";
+	name = "strange goo"
+	},
+/obj/effect/decal/cleanable/molten_object/large,
+/obj/effect/turf_decal/corner/opaque/ntblue/border{
+	dir = 8
 	},
 /turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/storage)
+/area/ruin/unpowered/codelab/subjectrooms)
 "OE" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -3182,54 +3294,68 @@
 /obj/effect/decal/cleanable/molten_object,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/storage)
-"OG" = (
-/obj/structure/closet/secure_closet/personal/cabinet,
-/turf/open/floor/wood,
-/area/ruin/unpowered/codelab/laboratory)
 "OM" = (
 /obj/machinery/door/poddoor{
 	id = "NTGen Door"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/unpowered/codelab/storage)
+"OO" = (
+/obj/effect/decal/cleanable/generic,
+/turf/open/floor/carpet/nanoweave/purple,
+/area/ruin/unpowered/codelab/reception)
 "OW" = (
 /obj/effect/decal/cleanable/ash,
 /turf/open/floor/carpet/nanoweave/purple,
 /area/ruin/unpowered/codelab/reception)
+"OY" = (
+/obj/machinery/atmospherics/pipe/layer_manifold,
+/turf/open/floor/plating,
+/area/ruin/unpowered/codelab/maintenance)
 "Pc" = (
 /turf/closed/wall/mineral/titanium,
 /area/ruin/unpowered/codelab/storage)
-"Pv" = (
-/obj/machinery/light/small/directional/west,
-/obj/effect/turf_decal/corner_techfloor_grid/full{
-	dir = 8
-	},
-/turf/open/floor/plasteel/tech,
-/area/ruin/unpowered/codelab/storage)
-"Px" = (
-/obj/effect/decal/cleanable/molten_object,
-/obj/effect/turf_decal/industrial/loading{
-	dir = 4
-	},
+"Pg" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
-/turf/open/floor/plasteel/tech,
-/area/ruin/unpowered/codelab/storage)
-"PA" = (
-/obj/structure/table,
-/obj/item/modular_computer/laptop,
-/obj/item/disk/design_disk/adv{
-	pixel_x = -9;
-	pixel_y = 8
-	},
-/obj/machinery/light/dim/directional/west,
-/obj/item/pen/fountain,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/laboratory)
+"Pp" = (
+/obj/machinery/computer/atmos_control/tank/oxygen_tank,
+/obj/machinery/atmospherics/pipe/layer_manifold,
+/turf/open/floor/plating/rust,
+/area/ruin/unpowered/codelab/maintenance)
+"Ps" = (
+/obj/machinery/atmospherics/components/binary/pump/on{
+	name = "Nitrogen to Air"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/unpowered/codelab/maintenance)
+"PA" = (
+/obj/structure/closet/cardboard,
+/obj/machinery/light/dim/directional/south,
+/obj/effect/turf_decal/corner/opaque/lime/border{
+	dir = 8
+	},
+/obj/item/disk/tech_disk/major,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/subjectrooms)
+"PE" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/unpowered/codelab/maintenance)
 "PK" = (
 /obj/structure/table,
 /obj/structure/window/reinforced/spawner,
@@ -3241,8 +3367,8 @@
 /turf/open/floor/wood,
 /area/ruin/unpowered/codelab/reception)
 "PL" = (
-/obj/machinery/light/dim/directional/west,
 /obj/effect/decal/cleanable/ash,
+/obj/machinery/light/broken/directional/west,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/reception)
 "PP" = (
@@ -3252,24 +3378,21 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
-"PY" = (
-/obj/machinery/atmospherics/pipe/layer_manifold{
+"Qa" = (
+/obj/machinery/atmospherics/pipe/simple/cyan/visible{
 	dir = 4
 	},
-/turf/open/floor/plating/rust,
-/area/ruin/unpowered/codelab/maintenance)
-"Qc" = (
-/obj/machinery/light/small/directional/north,
-/turf/open/floor/plating,
-/area/ruin/unpowered/codelab/maintenance)
-"Qf" = (
-/obj/machinery/atmospherics/pipe/manifold/cyan/visible,
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 4
 	},
-/obj/machinery/light/dim/directional/south,
 /turf/open/floor/plating,
 /area/ruin/unpowered/codelab/maintenance)
+"Qf" = (
+/obj/structure/table,
+/obj/effect/spawner/lootdrop/donkpockets,
+/obj/item/storage/box/cups,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/laboratory)
 "Qi" = (
 /obj/machinery/atmospherics/components/unary/cryo_cell{
 	icon_state = "pod-open";
@@ -3277,23 +3400,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
-"Qp" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/storage)
-"Qq" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 1
-	},
-/turf/open/floor/wood,
-/area/ruin/unpowered/codelab/reception)
-"Qt" = (
-/obj/effect/turf_decal/industrial/outline,
-/turf/open/floor/plasteel/tech,
-/area/ruin/unpowered/codelab/storage)
 "QD" = (
 /obj/machinery/light/dim/directional/north,
 /obj/structure/holosign/barrier/infinite,
@@ -3308,10 +3414,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
-"QK" = (
-/obj/machinery/atmospherics/pipe/simple/cyan/visible,
-/turf/open/floor/plating,
-/area/ruin/unpowered/codelab/maintenance)
 "QO" = (
 /obj/structure/fence/corner{
 	dir = 9
@@ -3332,10 +3434,15 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/codelab/storage)
-"QT" = (
-/obj/machinery/porta_turret/centcom_shuttle/weak/codelab,
-/turf/closed/wall/mineral/titanium,
-/area/ruin/unpowered/codelab/exterior)
+"Rd" = (
+/obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/cyan/visible{
+	dir = 4
+	},
+/turf/open/floor/plating/rust,
+/area/ruin/unpowered/codelab/maintenance)
 "Rf" = (
 /obj/structure/table,
 /obj/structure/window/reinforced/spawner,
@@ -3385,19 +3492,6 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
-"RD" = (
-/obj/effect/decal/cleanable/molten_object,
-/obj/effect/turf_decal/corner/opaque/lime/border{
-	dir = 8
-	},
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/subjectrooms)
-"RE" = (
-/obj/structure/cable{
-	icon_state = "5-8"
-	},
-/turf/open/floor/plating/rust,
-/area/ruin/unpowered/codelab/maintenance)
 "RI" = (
 /obj/structure/closet/crate/large{
 	anchored = 1
@@ -3406,43 +3500,6 @@
 /obj/effect/turf_decal/industrial/outline,
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/codelab/storage)
-"RK" = (
-/obj/effect/turf_decal/corner_techfloor_grid/full,
-/turf/open/floor/plasteel/dark,
-/area/ruin/unpowered/codelab/reception)
-"RL" = (
-/obj/effect/turf_decal/corner_techfloor_grid/full{
-	dir = 4
-	},
-/turf/open/floor/plasteel/tech,
-/area/ruin/unpowered/codelab/storage)
-"RQ" = (
-/obj/structure/sign/poster/contraband/cybersun_med{
-	pixel_y = 31
-	},
-/turf/open/floor/wood,
-/area/ruin/unpowered/codelab/laboratory)
-"RR" = (
-/obj/structure/table,
-/obj/effect/turf_decal/corner_techfloor_grid/full{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/unpowered/codelab/reception)
-"RY" = (
-/obj/machinery/power/rtg,
-/obj/structure/cable{
-	icon_state = "0-10"
-	},
-/turf/open/floor/plating/rust,
-/area/ruin/unpowered/codelab/maintenance)
-"Sb" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 6
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/turf/open/floor/wood,
-/area/ruin/unpowered/codelab/laboratory)
 "Sf" = (
 /obj/effect/turf_decal/box/white/corners{
 	dir = 1
@@ -3459,25 +3516,14 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/storage)
-"Sy" = (
-/obj/structure/cable{
-	icon_state = "4-8"
+"SE" = (
+/obj/item/clipboard,
+/obj/effect/turf_decal/corner/opaque/purple/border{
+	dir = 8
 	},
-/obj/effect/turf_decal/industrial/loading{
-	dir = 4
-	},
-/turf/open/floor/plasteel/tech,
-/area/ruin/unpowered/codelab/storage)
-"SC" = (
-/obj/structure/toilet{
-	pixel_y = 11
-	},
-/obj/machinery/door/window/eastright{
-	dir = 2;
-	req_access = list(11)
-	},
+/obj/machinery/light/broken/directional/west,
 /turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/laboratory)
+/area/ruin/unpowered/codelab/subjectrooms)
 "SG" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -3491,22 +3537,9 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
-"SW" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/structure/sign/poster/contraband/ntos{
-	pixel_x = -30
-	},
-/turf/open/floor/wood,
-/area/ruin/unpowered/codelab/laboratory)
 "SY" = (
 /turf/open/floor/plating/grass/lava/orange,
 /area/ruin/unpowered/codelab/exterior)
-"Tb" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 8
-	},
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/reception)
 "Tg" = (
 /obj/structure/filingcabinet/double,
 /obj/effect/turf_decal/siding/wood{
@@ -3514,29 +3547,38 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/unpowered/codelab/reception)
-"Tp" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+"Th" = (
+/obj/machinery/atmospherics/pipe/simple/cyan/visible{
+	dir = 5
+	},
+/turf/open/floor/plating,
+/area/ruin/unpowered/codelab/maintenance)
+"Tl" = (
+/obj/machinery/door/airlock/external{
+	dir = 8
+	},
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
+	dir = 4
+	},
+/turf/open/floor/plating/rust,
+/area/ruin/unpowered/codelab/maintenance)
+"Tv" = (
+/obj/structure/bookcase/manuals/research_and_development,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/reception)
-"Ts" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
+"TB" = (
+/mob/living/simple_animal/slime,
+/obj/effect/turf_decal/corner/opaque/ntblue/border{
+	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/structure/chair{
-	dir = 4
-	},
-/turf/open/floor/carpet/nanoweave/red,
-/area/ruin/unpowered/codelab/laboratory)
-"Tt" = (
-/obj/structure/closet/emcloset/anchored,
-/obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/reception)
+/area/ruin/unpowered/codelab/subjectrooms)
 "TJ" = (
 /obj/effect/turf_decal/corner/opaque/white/mono,
 /obj/structure/cable{
@@ -3549,44 +3591,22 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
-"TK" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 10
-	},
+"TN" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
 	},
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/storage)
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/turf/open/floor/wood,
+/area/ruin/unpowered/codelab/laboratory)
 "TS" = (
-/obj/structure/bed,
-/obj/item/bedsheet/purple,
-/obj/structure/curtain/cloth/grey,
-/turf/open/floor/wood,
-/area/ruin/unpowered/codelab/laboratory)
-"TU" = (
-/obj/machinery/door/airlock{
-	dir = 4;
-	name = "Dormitory"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/turf/open/floor/wood,
-/area/ruin/unpowered/codelab/laboratory)
-"TY" = (
-/obj/machinery/camera,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+/obj/machinery/atmospherics/pipe/simple/general/visible{
 	dir = 10
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 10
+/turf/open/floor/plating/rust,
+/area/ruin/unpowered/codelab/maintenance)
+"TZ" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/reception)
@@ -3619,76 +3639,75 @@
 /obj/effect/turf_decal/corner_techfloor_grid/full,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/codelab/reception)
-"Up" = (
-/obj/structure/cable{
-	icon_state = "4-8"
+"Uv" = (
+/obj/machinery/atmospherics/components/binary/pump/on{
+	name = "Nitrogen to Air"
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
-/turf/open/floor/carpet/nanoweave/purple,
-/area/ruin/unpowered/codelab/laboratory)
+/turf/open/floor/plating/rust,
+/area/ruin/unpowered/codelab/maintenance)
 "Ux" = (
-/obj/structure/window/reinforced/survival_pod{
-	dir = 4
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 8
 	},
 /turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/laboratory)
+/area/ruin/unpowered/codelab/subjectrooms)
 "Uy" = (
 /turf/open/floor/plating,
 /area/ruin/unpowered/codelab/maintenance)
 "UM" = (
 /turf/closed/wall/mineral/titanium,
 /area/ruin/unpowered/codelab/maintenance)
+"UQ" = (
+/obj/effect/decal/cleanable/food/plant_smudge,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/reception)
+"US" = (
+/obj/item/newspaper,
+/obj/effect/decal/cleanable/molten_object,
+/obj/machinery/light/broken/directional/north,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/subjectrooms)
 "UU" = (
 /obj/structure/fence/corner{
 	dir = 5
 	},
 /turf/open/floor/plating/grass/lava/purple,
 /area/ruin/unpowered/codelab/exterior)
-"UY" = (
-/obj/machinery/door/window/brigdoor/eastright,
-/obj/effect/turf_decal/siding/wood{
-	dir = 5
-	},
-/turf/open/floor/wood,
-/area/ruin/unpowered/codelab/reception)
 "UZ" = (
-/obj/structure/table,
-/obj/item/slime_extract/grey,
-/obj/item/reagent_containers/glass/beaker{
-	pixel_y = 10;
-	pixel_x = -9
-	},
-/obj/item/research_notes/loot/small{
-	pixel_y = 6;
-	pixel_x = 10
-	},
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/laboratory)
-"Vc" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+/obj/effect/turf_decal/corner/opaque/purple/border{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
+	dir = 10
 	},
-/obj/structure/cable{
-	icon_state = "4-8"
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/subjectrooms)
+"Va" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 5
 	},
-/turf/open/floor/carpet/nanoweave/purple,
-/area/ruin/unpowered/codelab/laboratory)
-"VM" = (
-/obj/structure/window/plasma/reinforced,
-/obj/structure/window/plasma/reinforced{
-	dir = 4
-	},
-/turf/open/floor/engine,
-/area/ruin/unpowered/codelab/maintenance)
-"VQ" = (
-/obj/structure/marker_beacon,
 /turf/open/floor/concrete/pavement,
+/area/ruin/unpowered/codelab/maintenance)
+"Vk" = (
+/obj/structure/sink/kitchen{
+	dir = 4;
+	pixel_x = -12
+	},
+/obj/structure/mirror{
+	pixel_x = -24
+	},
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/laboratory)
+"VQ" = (
+/obj/machinery/porta_turret/centcom_shuttle/weak/codelab,
+/turf/closed/wall/mineral/titanium,
 /area/ruin/unpowered/codelab/exterior)
 "VX" = (
 /obj/structure/closet/cardboard,
@@ -3696,15 +3715,12 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
-"Ws" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 4
+"Wr" = (
+/obj/effect/turf_decal/corner_techfloor_grid{
+	dir = 9
 	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/ruin/unpowered/codelab/maintenance)
+/turf/open/floor/plasteel/tech,
+/area/ruin/unpowered/codelab/storage)
 "Wt" = (
 /obj/structure/table,
 /obj/structure/window/reinforced/spawner,
@@ -3721,10 +3737,8 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/unpowered/codelab/reception)
-"WC" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 4
-	},
+"Wy" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/laboratory)
 "WF" = (
@@ -3739,13 +3753,6 @@
 	},
 /obj/item/slime_extract/grey,
 /turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/laboratory)
-"WL" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 10
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/turf/open/floor/wood,
 /area/ruin/unpowered/codelab/laboratory)
 "WQ" = (
 /obj/structure/fence/corner{
@@ -3763,20 +3770,11 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
-"Xc" = (
-/obj/structure/window/plasma/reinforced{
-	dir = 4
-	},
-/obj/machinery/atmospherics/components/unary/outlet_injector/atmos/oxygen_input{
-	dir = 4
-	},
-/turf/open/floor/engine/o2,
+"Xf" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/visible/layer2,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/turf/open/floor/plating/rust,
 /area/ruin/unpowered/codelab/maintenance)
-"Xd" = (
-/obj/structure/table/wood,
-/obj/item/trash/plate,
-/turf/open/floor/wood,
-/area/ruin/unpowered/codelab/laboratory)
 "Xh" = (
 /obj/machinery/camera{
 	dir = 4
@@ -3803,28 +3801,43 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
-"XA" = (
-/obj/effect/turf_decal/corner_techfloor_grid{
-	dir = 5
+"XE" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/effect/decal/cleanable/cobweb/cobweb2,
+/turf/open/floor/wood,
+/area/ruin/unpowered/codelab/laboratory)
+"XH" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/turf/open/floor/carpet/nanoweave/purple,
+/area/ruin/unpowered/codelab/reception)
+"XI" = (
+/obj/machinery/door/airlock/public{
+	name = "Testing Room B"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/turf/open/floor/plasteel/dark,
-/area/ruin/unpowered/codelab/reception)
-"XQ" = (
-/obj/machinery/camera{
-	dir = 10
-	},
-/obj/structure/fluff/paper/stack{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/molten_object,
-/obj/effect/turf_decal/corner/opaque/ntblue/border{
-	dir = 8
-	},
-/obj/machinery/light/broken/directional/south,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
+"XM" = (
+/obj/effect/turf_decal/corner/opaque/white/mono,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/subjectrooms)
+"XT" = (
+/obj/structure/closet/crate/medical{
+	anchored = 1
+	},
+/obj/item/stack/medical/gauze/twelve,
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/unpowered/codelab/storage)
 "XZ" = (
 /obj/structure/closet/crate/secure/plasma{
 	anchored = 1
@@ -3848,29 +3861,6 @@
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/reception)
-"Yh" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/laboratory)
-"Yn" = (
-/obj/structure/window/plasma/reinforced{
-	dir = 4
-	},
-/obj/structure/window/plasma/reinforced{
-	dir = 1
-	},
-/obj/machinery/atmospherics/components/unary/outlet_injector/atmos/air_input{
-	dir = 4
-	},
-/turf/open/floor/engine,
-/area/ruin/unpowered/codelab/maintenance)
-"Yp" = (
-/obj/machinery/atmospherics/pipe/simple/cyan/visible{
-	dir = 5
-	},
-/obj/machinery/atmospherics/pipe/manifold/supply/visible/layer2,
-/turf/open/floor/plating,
-/area/ruin/unpowered/codelab/maintenance)
 "Yq" = (
 /obj/machinery/light/dim/directional/north,
 /obj/effect/turf_decal/siding/wood{
@@ -3894,30 +3884,28 @@
 /obj/structure/flora/ausbushes/hell,
 /turf/open/floor/plating/grass/lava,
 /area/ruin/unpowered/codelab/exterior)
-"YA" = (
-/obj/machinery/atmospherics/pipe/simple/cyan/visible{
-	dir = 4
+"Yx" = (
+/obj/structure/table,
+/obj/item/clothing/under/suit/senior_scientist,
+/obj/item/research_notes/loot/small{
+	pixel_y = 6;
+	pixel_x = 10
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
-	dir = 4
+/obj/item/disk/design_disk/adv{
+	pixel_x = -9;
+	pixel_y = 8
 	},
-/turf/open/floor/plating/rust,
-/area/ruin/unpowered/codelab/maintenance)
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/laboratory)
 "YB" = (
-/obj/machinery/computer/atmos_control/tank/oxygen_tank,
-/obj/machinery/atmospherics/pipe/layer_manifold,
-/turf/open/floor/plating/rust,
-/area/ruin/unpowered/codelab/maintenance)
-"YI" = (
-/obj/machinery/airalarm/directional/north,
-/turf/open/floor/plating/rust,
-/area/ruin/unpowered/codelab/maintenance)
-"YM" = (
-/obj/structure/closet/crate/large{
-	anchored = 1
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
-/obj/item/toy/plush/carpplushie,
-/obj/effect/turf_decal/industrial/outline/yellow,
+/turf/open/floor/plating/rust,
+/area/ruin/unpowered/codelab/maintenance)
+"YE" = (
+/obj/effect/decal/cleanable/cobweb/cobweb2,
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/codelab/storage)
 "YV" = (
@@ -3939,6 +3927,23 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/light/broken/directional/north,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/subjectrooms)
+"Zf" = (
+/obj/machinery/shower{
+	dir = 8;
+	pixel_y = 8
+	},
+/obj/structure/curtain,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/laboratory)
+"Zg" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
 "Zi" = (
@@ -3952,20 +3957,34 @@
 	},
 /turf/open/floor/concrete/pavement,
 /area/ruin/unpowered/codelab/exterior)
-"Zp" = (
-/obj/structure/bed,
-/obj/item/bedsheet/rd,
-/obj/structure/curtain/cloth/fancy,
-/turf/open/floor/wood,
-/area/ruin/unpowered/codelab/laboratory)
+"Zq" = (
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 1
+	},
+/turf/open/floor/carpet/nanoweave/purple,
+/area/ruin/unpowered/codelab/reception)
+"Zr" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/unpowered/codelab/maintenance)
 "Zs" = (
 /obj/structure/flora/tree/dead/hell,
 /turf/open/floor/plating/grass/lava,
 /area/ruin/unpowered/codelab/exterior)
-"Zt" = (
-/obj/effect/decal/cleanable/generic,
-/turf/open/floor/carpet/nanoweave/purple,
-/area/ruin/unpowered/codelab/reception)
+"Zu" = (
+/obj/machinery/atmospherics/pipe/layer_manifold{
+	dir = 4
+	},
+/turf/open/floor/plating/rust,
+/area/ruin/unpowered/codelab/maintenance)
 "Zv" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -3996,6 +4015,29 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/codelab/storage)
+"ZN" = (
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/storage)
+"ZO" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/industrial/loading{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/unpowered/codelab/storage)
+"ZQ" = (
+/obj/structure/cable{
+	icon_state = "5-8"
+	},
+/turf/open/floor/plating/rust,
+/area/ruin/unpowered/codelab/maintenance)
+"ZV" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/turf/open/floor/carpet/nanoweave/purple,
+/area/ruin/unpowered/codelab/reception)
 
 (1,1,1) = {"
 Iv
@@ -4089,7 +4131,7 @@ cv
 cv
 cv
 cv
-QT
+VQ
 cv
 cv
 cv
@@ -4187,7 +4229,7 @@ lc
 SY
 rf
 SY
-KO
+BA
 SY
 SY
 SY
@@ -4231,7 +4273,7 @@ SY
 Zx
 Zx
 He
-gy
+pE
 KT
 wu
 iw
@@ -4239,7 +4281,7 @@ He
 hE
 jH
 fZ
-RR
+zZ
 Un
 il
 jH
@@ -4275,12 +4317,12 @@ vb
 He
 rV
 Rp
-Le
-XA
-pq
-vS
+nF
+qb
+uK
+xy
 tD
-RK
+nW
 hE
 mA
 YV
@@ -4302,22 +4344,22 @@ SY
 SY
 SY
 SY
-Af
-jn
+pO
+Va
 He
 sr
 xN
 EM
 Ef
 He
-lr
-cX
+Dy
+DR
 Hk
 DB
 Cj
 Yr
-zi
-su
+UQ
+wi
 hE
 mA
 mA
@@ -4340,11 +4382,11 @@ SY
 SY
 UM
 UM
-mM
+ad
 He
 mX
 pG
-zU
+FM
 kh
 He
 He
@@ -4353,7 +4395,7 @@ AN
 He
 hE
 qU
-JM
+JO
 hE
 hE
 hE
@@ -4376,14 +4418,14 @@ SY
 SY
 SY
 UM
-oz
-xF
+CU
+Hh
 He
 oo
 sW
 Ai
 AL
-Nu
+fs
 WV
 EM
 Od
@@ -4394,7 +4436,7 @@ Cd
 Cd
 PL
 ls
-FO
+Tv
 hE
 mA
 mA
@@ -4407,14 +4449,14 @@ mA
 (12,1,1) = {"
 Iv
 lc
-QT
+VQ
 SY
 SY
 SY
 SY
 UM
 Fx
-Ws
+Zr
 He
 He
 He
@@ -4422,14 +4464,14 @@ He
 He
 He
 TJ
-xU
-tS
+hC
+Zg
 ye
 hE
 Nq
-LT
-Iu
-Iu
+Ix
+GG
+GG
 NW
 Cw
 hE
@@ -4437,7 +4479,7 @@ gE
 mA
 pB
 mA
-QT
+VQ
 mA
 Iv
 "}
@@ -4450,24 +4492,24 @@ SY
 SY
 SY
 UM
-iE
-xK
+ol
+xQ
 He
 zK
-Ku
-wq
-XQ
+Ou
+TB
+vx
 He
 Ay
 EM
 AG
 wd
 hE
-TY
-zZ
-iQ
-lf
-rr
+cA
+GI
+XH
+gN
+st
 Ob
 hE
 mA
@@ -4487,10 +4529,10 @@ SY
 SY
 SY
 UM
-Qc
-tQ
+jY
+PE
 He
-fO
+eH
 sE
 nH
 YW
@@ -4502,7 +4544,7 @@ lU
 hE
 Cd
 Cd
-Tb
+LW
 lY
 JR
 iN
@@ -4525,23 +4567,23 @@ SY
 UM
 UM
 UM
-pM
+Tl
 He
 PP
-aH
+GA
 hx
 AL
-BJ
+KO
 xM
-hk
-EX
+cI
+JS
 rI
 hE
 oK
 aP
 Uf
-Iu
-Fj
+GG
+cR
 jz
 hE
 mA
@@ -4560,9 +4602,9 @@ SY
 SY
 UM
 UM
-gd
-eH
-bl
+tv
+Fc
+sY
 He
 He
 He
@@ -4570,15 +4612,15 @@ He
 He
 He
 mO
-CC
-Ka
+XM
+bE
 GN
 hE
-kU
-wh
+Cv
+uH
 ya
-Zt
-Fj
+OO
+cR
 hE
 hE
 hE
@@ -4596,31 +4638,31 @@ rf
 SY
 SY
 UM
-bV
-tA
-ev
-zp
+oT
+yu
+Oo
+Th
 He
 qr
-dy
-Bv
-MQ
+SE
+or
+mp
 He
 eE
 EM
-qQ
+EX
 EM
 hE
 Yq
-GG
+bl
 oY
-Iu
-Fj
+GG
+cR
 hE
-Tt
+Fv
 Cd
 hE
-Iw
+bw
 Zx
 rf
 SY
@@ -4633,10 +4675,10 @@ rf
 Lx
 SY
 UM
-Yn
-VM
-lZ
-PY
+No
+bV
+eV
+Zu
 He
 zH
 lU
@@ -4645,17 +4687,17 @@ kh
 He
 tx
 GN
-bE
+jn
 Uj
 hE
 Wv
 wM
 PK
-Iu
-we
-LV
-ws
-mF
+GG
+Zq
+eI
+Bm
+TZ
 ck
 Zx
 Zx
@@ -4670,26 +4712,26 @@ rf
 SY
 SY
 UM
-dQ
-QK
-hG
-Yp
+MS
+vd
+kC
+jB
 He
-GD
-Hs
-ii
+cT
+qw
+UZ
 AL
-Ky
+XI
 Xx
 EM
-bE
+jn
 Gq
 hE
 Tg
-wh
+uH
 Rf
-KJ
-ww
+ZV
+tA
 hE
 hE
 hE
@@ -4707,29 +4749,29 @@ rf
 SY
 SY
 UM
-IP
-HX
-dl
-yI
+EV
+lZ
+mI
+Rd
 He
 He
 He
 He
-tf
+xx
 He
-Ze
-dh
-Ka
+jT
+gc
+bE
 GN
 hE
 lW
-wh
+uH
 Wt
-Iu
-we
+GG
+Zq
 Ya
-ws
-mF
+Bm
+TZ
 ck
 Zx
 Zx
@@ -4744,15 +4786,15 @@ rf
 SY
 SY
 UM
-gB
-oO
-fS
-Qf
+hO
+lv
+Ps
+mg
 He
 KQ
-RD
-jx
-On
+oW
+jN
+PA
 He
 hu
 EM
@@ -4760,15 +4802,15 @@ Od
 nM
 hE
 Do
-GG
+bl
 dg
-Iu
-Fj
+GG
+cR
 hE
-Tt
+Fv
 Cd
 hE
-Iw
+bw
 Zx
 rf
 SY
@@ -4781,26 +4823,26 @@ rf
 SY
 SY
 UM
-cP
-pP
-uw
-mj
+On
+OY
+Gm
+Qa
 He
-pV
+US
 ie
 VX
 Gc
-jM
+nL
 Jk
 EM
-bE
+jn
 GN
 hE
-Qq
-wh
+HP
+uH
 PK
-Iu
-Fj
+GG
+cR
 hE
 hE
 hE
@@ -4818,26 +4860,26 @@ DU
 SY
 SY
 UM
-DO
-YB
-xF
-YA
+Iu
+Pp
+Hh
+oC
 He
 nG
 wZ
-gz
-cR
+Ci
+xr
 He
-Ze
-kz
-dS
+jT
+rT
+FI
 IL
 hE
-UY
+JM
 CJ
 aY
-Zt
-Fj
+OO
+cR
 pY
 hE
 lc
@@ -4855,10 +4897,10 @@ DU
 SY
 SY
 UM
-Xc
-Fe
-xr
-uq
+vn
+xU
+Uv
+Ic
 He
 He
 He
@@ -4872,8 +4914,8 @@ GN
 hE
 Cd
 Cd
-Tp
-Iu
+dy
+GG
 aR
 zj
 hE
@@ -4892,26 +4934,26 @@ DU
 vQ
 SY
 UM
-yA
-pP
-rR
-Mx
+TS
+OY
+xm
+Ka
 He
-gy
+pE
 wu
-ts
+zz
 Gc
-Nu
+fs
 wJ
-cI
+Ed
 SG
 Gb
 hE
 Xo
-qk
+uw
 Fw
-lf
-rY
+gN
+JV
 pQ
 hE
 SY
@@ -4929,26 +4971,26 @@ DU
 nm
 SY
 UM
-YI
+pA
 Uy
-Bi
+uL
 ef
 He
 mX
 bv
-ch
-xx
+Ux
+pR
 He
-hH
-CC
+Ze
+XM
 Ru
 GN
 hE
-no
+zQ
 OW
-Iu
-Iu
-Iu
+GG
+GG
+GG
 DJ
 hE
 SY
@@ -4966,10 +5008,10 @@ DU
 nm
 nm
 UM
-Hi
-oU
-mW
-oM
+us
+YB
+eY
+Xf
 He
 sr
 CZ
@@ -4989,7 +5031,7 @@ yo
 ls
 hE
 SY
-VQ
+LV
 Zx
 Zx
 rf
@@ -5006,7 +5048,7 @@ UM
 FJ
 Uy
 BF
-gp
+nx
 He
 wc
 en
@@ -5028,7 +5070,7 @@ hE
 SY
 Zx
 Zx
-VQ
+LV
 rf
 SY
 Iv
@@ -5040,10 +5082,10 @@ DU
 nm
 nm
 UM
-bH
+kl
 FF
-cA
-BU
+qe
+bp
 He
 Kj
 Br
@@ -5056,7 +5098,7 @@ rG
 ec
 qs
 iI
-cN
+Nd
 Pc
 SY
 SY
@@ -5077,10 +5119,10 @@ DU
 nm
 nm
 UM
-vo
-RY
-RE
-BU
+rY
+gS
+ZQ
+bp
 et
 et
 et
@@ -5089,8 +5131,8 @@ et
 et
 QD
 HQ
-TK
-Ni
+Mv
+DI
 HQ
 HQ
 Ro
@@ -5115,20 +5157,20 @@ nm
 nm
 UM
 UM
-fX
+tf
 Uy
 qt
 et
 pF
 ds
-PA
+yY
 FG
 et
 rS
 DL
-Sy
+ZO
 Hc
-Ar
+re
 Ff
 HQ
 Pc
@@ -5154,14 +5196,14 @@ UM
 UM
 UM
 UM
-bn
+hB
 et
 Fy
 cH
-yY
+Yx
 bG
 et
-YM
+HH
 so
 ij
 QQ
@@ -5173,10 +5215,10 @@ vQ
 SY
 SY
 SY
-VQ
+LV
 Zx
 Zx
-VQ
+LV
 rf
 SY
 SY
@@ -5187,11 +5229,11 @@ nm
 DU
 nm
 et
-ol
-Ux
-vT
-DZ
-Vc
+Vk
+Mo
+wr
+vH
+hf
 et
 Gd
 Gd
@@ -5201,7 +5243,7 @@ et
 Pc
 Pc
 Ex
-En
+pt
 HQ
 Di
 HQ
@@ -5224,22 +5266,22 @@ nm
 DU
 nm
 et
-SC
-Gz
+Jh
+Zf
 et
-DZ
-Vc
+vH
+hf
 et
 WF
 Gd
-nx
+BN
 jV
 et
 Bf
 HQ
-Qp
-Or
-KD
+nN
+dt
+uB
 HQ
 HQ
 Pc
@@ -5264,8 +5306,8 @@ et
 et
 et
 et
-DZ
-Vc
+vH
+hV
 et
 ai
 rH
@@ -5281,12 +5323,12 @@ HQ
 HQ
 Pc
 SY
-VQ
+LV
 Zx
 Zx
 Zx
 Zx
-VQ
+LV
 Zx
 rf
 SY
@@ -5298,16 +5340,16 @@ Lg
 DU
 nm
 et
-TS
-OG
+MX
+tb
 et
-DZ
-eR
+vH
+dk
 et
 uA
 Gd
 Gd
-UZ
+KZ
 et
 ge
 HQ
@@ -5335,15 +5377,15 @@ nm
 DU
 nm
 et
-RQ
-Xd
+NK
+tC
 et
-ha
-Up
+IC
+JP
 et
-kw
+yl
 yL
-WC
+GE
 Ig
 et
 Aq
@@ -5372,15 +5414,15 @@ nm
 DU
 tH
 et
-jB
-oL
+lQ
+BJ
 et
-DZ
-eR
+vH
+dk
 et
 IG
 Gd
-CM
+Pg
 Oq
 et
 Pc
@@ -5409,21 +5451,21 @@ nm
 DU
 nm
 et
-Mv
-WL
-GT
-jF
-jT
+XE
+TN
+iE
+fK
+AQ
 et
 Eh
 ow
-mP
+kS
 Gd
 et
 HQ
 HQ
 AA
-En
+pt
 Ro
 jJ
 HQ
@@ -5449,11 +5491,11 @@ et
 et
 et
 et
-vA
-gs
+aT
+Cz
 et
 et
-Bm
+CC
 zN
 et
 et
@@ -5461,17 +5503,17 @@ Aq
 bd
 iq
 ih
-Kv
+Ni
 dF
 RI
 Pc
 SY
-VQ
+LV
 Zx
 Zx
 Zx
 Zx
-VQ
+LV
 Zx
 rf
 SY
@@ -5480,22 +5522,22 @@ Iv
 (41,1,1) = {"
 Iv
 nm
-QT
+VQ
 nm
 et
-SW
-Sb
-GT
-jF
-jT
+aU
+dq
+iE
+fK
+AQ
 et
-if
-FD
-mP
+qd
+oB
+kS
 rw
 et
 HQ
-nL
+LO
 wN
 ZG
 fU
@@ -5510,7 +5552,7 @@ Zx
 Zx
 Zx
 Zx
-QT
+VQ
 SY
 Iv
 "}
@@ -5520,22 +5562,22 @@ nm
 DU
 nm
 et
-jB
-sb
+lQ
+ti
 et
-DZ
-eR
+vH
+dk
 et
-nP
+Qf
 iB
 pk
 Gd
 et
 HQ
 HQ
-Io
-pS
-yK
+DP
+mE
+DZ
 Ro
 DD
 Pc
@@ -5557,32 +5599,32 @@ nm
 DU
 nm
 et
-NL
-qe
+ld
+nb
 et
-eM
-ok
+Mu
+wQ
 et
-JI
+tr
 bz
-Ts
-iD
+MK
+dQ
 et
 XZ
 zG
-Sy
-Px
+ZO
+Kv
 sz
 HQ
 HQ
 Pc
 SY
-VQ
+LV
 Zx
 Zx
 Zx
 Zx
-VQ
+LV
 Zx
 rf
 SY
@@ -5594,22 +5636,22 @@ nm
 DU
 nm
 et
-TS
-OG
+MX
+cu
 et
-DZ
+vH
 pr
 Zv
 tp
-kl
-Ns
+ae
+IF
 LD
 et
-dV
+YE
 GH
 yJ
 EY
-Kv
+Ni
 Ri
 HQ
 Pc
@@ -5635,18 +5677,18 @@ et
 et
 et
 et
-TU
+AT
 et
-tG
+bh
 jm
 fv
 bq
 et
 Pc
 Pc
-gX
-pE
-Qt
+hA
+XT
+tu
 HQ
 sp
 Pc
@@ -5668,19 +5710,19 @@ nm
 DU
 nm
 et
-Zp
+nQ
 NL
 NL
 zI
-HV
+yE
 et
 AE
-on
+Hz
 Jv
 im
 et
-sD
-aF
+ZN
+lM
 fu
 Nn
 hb
@@ -5706,18 +5748,18 @@ DU
 nm
 et
 et
-OG
+mW
 jK
 sA
 Xq
 et
-MK
-Yh
-aw
+KA
+Wy
+Bx
 ow
 et
 HQ
-En
+pt
 gC
 HQ
 Ro
@@ -5751,7 +5793,7 @@ et
 et
 et
 zN
-Bm
+CC
 et
 Op
 op
@@ -5760,14 +5802,14 @@ Pc
 Pc
 Pc
 Pc
-nQ
+Dv
 SY
-VQ
+LV
 Zx
 Zx
 Zx
 Zx
-VQ
+LV
 Zx
 rf
 SY
@@ -5787,15 +5829,15 @@ nm
 nm
 nm
 Pc
-En
+pt
 zu
 Xh
 St
-EA
-KD
-Pv
-GP
-KR
+Le
+uB
+qJ
+Wr
+oe
 yd
 Bu
 Zx
@@ -5825,13 +5867,13 @@ rz
 nm
 Pc
 cd
-ba
+IE
 ox
 uj
-fb
+hJ
 hc
-yQ
-xQ
+Mb
+yS
 jk
 OM
 JZ
@@ -5867,11 +5909,11 @@ gq
 lo
 HQ
 HQ
-Jc
+ot
 vG
-RL
+sL
 kY
-NF
+Az
 Zx
 Zx
 Zx
@@ -5908,7 +5950,7 @@ Pc
 Pc
 Pc
 Pc
-si
+FQ
 nm
 nm
 SY
@@ -5930,7 +5972,7 @@ nm
 nm
 nm
 nm
-hW
+qM
 nm
 nm
 nm
@@ -5976,7 +6018,7 @@ Sn
 Sn
 Sn
 Sn
-QT
+VQ
 Sn
 Sn
 Sn
