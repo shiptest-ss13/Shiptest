@@ -72,6 +72,21 @@
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/cargo/hangar)
+"bw" = (
+/obj/structure/catwalk/over/plated_catwalk/white{
+	color = "#4c535b"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 9
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/engine)
 "bz" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/closet/emcloset/wall{
@@ -625,6 +640,17 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo/hangar)
+"hE" = (
+/obj/structure/catwalk/over/plated_catwalk/white{
+	color = "#4c535b"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "6-8"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/engine)
 "hG" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
@@ -699,6 +725,9 @@
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "iY" = (
@@ -1360,6 +1389,9 @@
 	dir = 5
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/stairs{
 	dir = 1
 	},
@@ -1403,6 +1435,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -2066,6 +2101,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 5
 	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "zr" = (
@@ -2077,6 +2115,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 6
+	},
+/obj/structure/cable{
+	icon_state = "5-8"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -2097,9 +2138,11 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light/small/directional/south,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-1"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
@@ -2179,6 +2222,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 10
 	},
+/obj/structure/cable{
+	icon_state = "2-9"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Az" = (
@@ -2190,7 +2236,10 @@
 "AB" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/obj/machinery/light/directional/east,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/light/dim/directional/east,
 /turf/open/floor/plasteel/stairs,
 /area/ship/engineering/engine)
 "Bh" = (
@@ -2300,6 +2349,9 @@
 	name = "Engine Blast Door";
 	pixel_y = -27
 	},
+/obj/structure/cable{
+	icon_state = "0-1"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
 "Cb" = (
@@ -2310,6 +2362,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -2761,9 +2816,11 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light/small/directional/north,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
@@ -2841,6 +2898,15 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/steeldecal/steel_decals_central7,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
 "Ia" = (
@@ -3036,7 +3102,7 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
 	dir = 4
 	},
-/obj/machinery/light/directional/east,
+/obj/machinery/light/dim/directional/east,
 /turf/open/floor/plasteel/stairs{
 	dir = 1
 	},
@@ -3229,12 +3295,12 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
 "Nb" = (
-/obj/machinery/door/airlock/external,
 /obj/structure/catwalk/over/plated_catwalk/white{
 	color = "#4c535b"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/machinery/door/airlock/external/glass,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Nc" = (
@@ -3259,6 +3325,9 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
@@ -3446,6 +3515,21 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo/hangar)
+"OU" = (
+/obj/structure/catwalk/over/plated_catwalk/white{
+	color = "#4c535b"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 6
+	},
+/obj/structure/cable{
+	icon_state = "4-10"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/engine)
 "OW" = (
 /obj/machinery/power/terminal{
 	dir = 8
@@ -3458,6 +3542,15 @@
 /obj/effect/turf_decal/steeldecal/steel_decals_central7,
 /obj/machinery/atmospherics/components/binary/volume_pump/layer2{
 	name = "Scrubbers to External"
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
@@ -3949,6 +4042,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 10
 	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Wf" = (
@@ -4294,7 +4390,7 @@ eN
 rs
 Nb
 sb
-jq
+hE
 CO
 xZ
 vy
@@ -4328,7 +4424,7 @@ ho
 Fn
 rc
 ZY
-zr
+OU
 Jr
 xZ
 xZ
@@ -4354,7 +4450,7 @@ iV
 qS
 Cb
 AB
-Jr
+bw
 hi
 xZ
 eq
