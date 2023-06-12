@@ -54,6 +54,80 @@
 	tastes = list("fish" = 1, "chips" = 1)
 	foodtype = MEAT | VEGETABLES | FRIED
 
+/obj/item/reagent_containers/food/snacks/vegetariansushiroll
+	name = "vegetarian sushi roll"
+	desc = "A roll of simple vegetarian sushi with rice, carrots, and potatoes. Sliceable into pieces!"
+	icon_state = "vegan-sushi-roll"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 12, /datum/reagent/consumable/nutriment/vitamin = 4)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 12, /datum/reagent/consumable/nutriment/vitamin = 4)
+	filling_color = "#7daa70"
+	tastes = list("boiled rice" = 4, "carrots" = 2, "potato" = 2)
+	foodtype = VEGETABLES
+	slice_path = /obj/item/reagent_containers/food/snacks/vegetariansushislice
+	slices_num = 4
+
+/obj/item/reagent_containers/food/snacks/vegetariansushislice
+	name = "vegetarian sushi slice"
+	desc = "A slice of simple vegetarian sushi with rice, carrots, and potatoes."
+	icon_state = "vegan-sushi-slice"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 1)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 1)
+	filling_color = "#7daa70"
+	tastes = list("boiled rice" = 4, "carrots" = 2, "potato" = 2)
+	foodtype = VEGETABLES
+
+/obj/item/reagent_containers/food/snacks/spicyfiletsushiroll
+	name = "spicy filet sushi roll"
+	desc = "A roll of tasty, spicy sushi made with fish and vegetables. Sliceable into pieces!"
+	icon_state = "spicy-sushi-roll"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 2)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 12, /datum/reagent/consumable/nutriment/vitamin = 4)
+	filling_color = "#d8b02c"
+	tastes = list("boiled rice" = 4, "fish" = 2, "spicyness" = 2)
+	foodtype = VEGETABLES | MEAT
+	slice_path = /obj/item/reagent_containers/food/snacks/spicyfiletsushislice
+	slices_num = 4
+
+/obj/item/reagent_containers/food/snacks/spicyfiletsushislice
+	name = "spicy filet sushi slice"
+	desc = "A slice of tasty, spicy sushi made with fish and vegetables. Don't eat it too fast!."
+	icon_state = "spicy-sushi-slice"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 1)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 1)
+	filling_color = "#d8b02c"
+	tastes = list("boiled rice" = 4, "fish" = 2, "spicyness" = 2)
+	foodtype = VEGETABLES | MEAT
+
+/obj/item/reagent_containers/food/snacks/onigiri
+	name = "onigiri"
+	desc = "A ball of cooked rice surrounding a filling formed into a triangular shape and wrapped in seaweed."
+	icon_state = "onigiri"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 2)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 1)
+	filling_color = "#d3ceba"
+	tastes = list("rice" = 1, "dried seaweed" = 1)
+	foodtype = VEGETABLES
+
+/obj/item/reagent_containers/food/snacks/fishi
+	name = "Fi-shi roll"
+	desc = "An entire fish, surrounded by a thick layer of seaweed. is this... edible?"
+	icon_state = "fi-shi"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 2, /datum/reagent/toxin/carpotoxin = 2)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 18, /datum/reagent/consumable/nutriment/vitamin = 8, /datum/reagent/toxin/carpotoxin = 8)
+	filling_color = "#eac57b"
+	tastes = list("raw fish" = 6, "dried seaweed" = 3)
+	foodtype = VEGETABLES | MEAT
+
+/obj/item/reagent_containers/food/snacks/nigiri_sushi
+	name = "nigiri sushi"
+	desc = "A simple nigiri of fish atop a packed rice ball with a seaweed wrapping and a side of soy sauce."
+	icon_state = "nigiri_sushi"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 2)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 10, /datum/reagent/consumable/nutriment/vitamin = 6)
+	filling_color = "#d3ceba"
+	tastes = list("boiled rice" = 2, "fish filet" = 2, "soy sauce" = 2, "dried seaweed" = 1)
+	foodtype = VEGETABLES | MEAT
+
 ////////////////////////////////////////////MEATS AND ALIKE////////////////////////////////////////////
 
 /obj/item/reagent_containers/food/snacks/tofu

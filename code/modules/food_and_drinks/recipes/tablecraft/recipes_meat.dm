@@ -91,6 +91,38 @@
 	result = /obj/item/reagent_containers/food/snacks/sashimi
 	subcategory = CAT_MEAT
 
+/datum/crafting_recipe/food/spicyfiletsushiroll
+	name = "Spicy sushi roll"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/grown/seaweed = 1,
+		/obj/item/reagent_containers/food/snacks/salad/boiledrice = 1,
+		/obj/item/reagent_containers/food/snacks/carpmeat = 1,
+		/obj/item/reagent_containers/food/snacks/grown/chili = 1,
+		/obj/item/reagent_containers/food/snacks/grown/onion = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/spicyfiletsushiroll
+	subcategory = CAT_MEAT
+
+/datum/crafting_recipe/food/fishi
+	name = "Fi-shi roll"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/grown/seaweed = 8,
+		/obj/item/reagent_containers/food/snacks/carpmeat = 4
+	)
+	result = /obj/item/reagent_containers/food/snacks/fishi
+	subcategory = CAT_MEAT
+
+/datum/crafting_recipe/food/nigiri_sushi
+	name = "Nigiri sushi"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/grown/seaweed = 1,
+		/obj/item/reagent_containers/food/snacks/salad/boiledrice = 1,
+		/obj/item/reagent_containers/food/snacks/carpmeat = 1,
+		/datum/reagent/consumable/soysauce = 2
+	)
+	result = /obj/item/reagent_containers/food/snacks/nigiri_sushi
+	subcategory = CAT_MEAT
+
 ////////////////////////////////////////////////MR SPIDER////////////////////////////////////////////////
 
 /datum/crafting_recipe/food/spidereggsham

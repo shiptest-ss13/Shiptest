@@ -205,3 +205,30 @@
 	name = "resting contraption"
 	desc = "This looks similar to contraptions from Earth. Could aliens be stealing our technology?"
 	icon_state = "abed"
+
+//Double Beds, for luxurious sleeping, i.e. the captain and maybe heads - no quirky refrence here. Move along
+/obj/structure/bed/double
+	name = "double bed"
+	desc = "A luxurious double bed, for those too important for small dreams."
+	icon_state = "bed_double"
+	buildstackamount = 4
+	max_buckled_mobs = 2
+	///The mob who buckled to this bed second, to avoid other mobs getting pixel-shifted before they unbuckles.
+	var/mob/living/goldilocks
+
+/obj/structure/bed/double/post_buckle_mob(mob/living/M)
+	if(buckled_mobs.len > 1 && !goldilocks) //Push the second buckled mob a bit higher from the normal lying position, also, if someone can figure out the same thing for plushes, i'll be really glad to know how to
+		M.pixel_y = initial(M.pixel_y) + 6
+		goldilocks = M
+		RegisterSignal(goldilocks, COMSIG_PARENT_QDELETING, PROC_REF(goldilocks_deleted))
+
+//Called when the signal is raised, removes the reference
+//preventing the hard delete.
+/obj/structure/bed/double/proc/goldilocks_deleted(datum/source, force)
+	UnregisterSignal(goldilocks, COMSIG_PARENT_QDELETING)
+	goldilocks = null
+
+/obj/structure/bed/double/maint
+	name = "double dirty mattress"
+	desc = "An old grubby king sized mattress. You really try to not think about what could be the cause of those stains."
+	icon_state = "dirty_mattress_double"
