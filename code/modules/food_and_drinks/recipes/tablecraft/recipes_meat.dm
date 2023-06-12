@@ -86,7 +86,7 @@
 	reqs = list(
 		/datum/reagent/consumable/soysauce = 5,
 		/obj/item/reagent_containers/food/snacks/spidereggs = 1,
-		/obj/item/reagent_containers/food/snacks/fishmeat/carp = 1
+		/obj/item/reagent_containers/food/snacks/fishmeat = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/sashimi
 	subcategory = CAT_MEAT
@@ -96,7 +96,7 @@
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/grown/seaweed = 1,
 		/obj/item/reagent_containers/food/snacks/salad/boiledrice = 1,
-		/obj/item/reagent_containers/food/snacks/carpmeat = 1,
+		/obj/item/reagent_containers/food/snacks/fishmeat = 1,
 		/obj/item/reagent_containers/food/snacks/grown/chili = 1,
 		/obj/item/reagent_containers/food/snacks/grown/onion = 1
 	)
@@ -107,7 +107,7 @@
 	name = "Fi-shi roll"
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/grown/seaweed = 8,
-		/obj/item/reagent_containers/food/snacks/carpmeat = 4
+		/obj/item/reagent_containers/food/snacks/fishmeat/carp = 4
 	)
 	result = /obj/item/reagent_containers/food/snacks/fishi
 	subcategory = CAT_MEAT
@@ -117,7 +117,7 @@
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/grown/seaweed = 1,
 		/obj/item/reagent_containers/food/snacks/salad/boiledrice = 1,
-		/obj/item/reagent_containers/food/snacks/carpmeat = 1,
+		/obj/item/reagent_containers/food/snacks/fishmeat = 1,
 		/datum/reagent/consumable/soysauce = 2
 	)
 	result = /obj/item/reagent_containers/food/snacks/nigiri_sushi
