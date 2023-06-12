@@ -544,9 +544,6 @@ TURF_DECAL_COLOR_HELPER(transparent/inteqbrown, "#4b2a18", 140)
 /obj/effect/turf_decal/floordetail/pryhole
 	icon_state = "pryhole"
 
-/obj/effect/turf_decal/floordetail/edgedrain
-	icon_state = "edge"
-
 /obj/effect/turf_decal/floordetail/traction
 	icon_state = "traction"
 
