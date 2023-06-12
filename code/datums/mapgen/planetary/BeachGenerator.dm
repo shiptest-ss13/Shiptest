@@ -152,7 +152,8 @@
 	open_turf_types = list(/turf/open/water/beach = 1)
 	flora_spawn_list = list(
 		/obj/structure/flora/rock/beach = 1,
-		/obj/structure/flora/rock/pile = 1
+		/obj/structure/flora/rock/pile = 1,
+		/obj/structure/flora/ash/garden/seaweed = 1
 	)
 	flora_spawn_chance = 1
 
