@@ -651,12 +651,6 @@
 /obj/machinery/cell_charger,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
-"eI" = (
-/obj/machinery/porta_turret/centcom_shuttle/weak{
-	dir = 9
-	},
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
 "eK" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/corner{
 	dir = 4
@@ -1395,9 +1389,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "jg" = (
-/obj/machinery/porta_turret/centcom_shuttle/weak{
-	dir = 10
-	},
+/obj/machinery/porta_turret/ship/weak,
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
 "jj" = (
@@ -7383,12 +7375,6 @@
 	},
 /turf/open/floor/carpet/orange,
 /area/ship/bridge)
-"WW" = (
-/obj/machinery/porta_turret/centcom_shuttle/weak{
-	dir = 6
-	},
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
 "Xg" = (
 /turf/open/floor/carpet/black,
 /area/ship/crew/dorm)
@@ -7458,12 +7444,6 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
-"Ye" = (
-/obj/machinery/porta_turret/centcom_shuttle/weak{
-	dir = 5
-	},
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
 "Yp" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -7866,7 +7846,7 @@ sw
 "}
 (5,1,1) = {"
 sw
-eI
+jg
 sV
 sV
 sV
@@ -8070,7 +8050,7 @@ vp
 "}
 (11,1,1) = {"
 sw
-Ye
+jg
 sV
 sV
 sW
@@ -8099,7 +8079,7 @@ sc
 jW
 ao
 ao
-WW
+jg
 MV
 "}
 (12,1,1) = {"
@@ -8820,7 +8800,7 @@ sw
 sw
 sw
 sw
-Ye
+jg
 yp
 jj
 Gl
@@ -8845,7 +8825,7 @@ as
 QR
 WG
 mK
-WW
+jg
 sw
 sw
 sw
@@ -9435,7 +9415,7 @@ sw
 sw
 sw
 sw
-Ye
+jg
 Pp
 fN
 Pp
@@ -9454,7 +9434,7 @@ Gq
 If
 YZ
 fK
-WW
+jg
 sw
 sw
 sw

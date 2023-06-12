@@ -3309,14 +3309,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
-"GS" = (
-/obj/machinery/porta_turret/centcom_shuttle/ballistic{
-	dir = 6;
-	name = "ship turret";
-	on = 0
-	},
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
 "GT" = (
 /obj/machinery/light/directional/north,
 /obj/effect/turf_decal/industrial/warning{
@@ -3371,14 +3363,6 @@
 	icon_state = "platingdmg3"
 	},
 /area/ship/maintenance/starboard)
-"Hr" = (
-/obj/machinery/porta_turret/centcom_shuttle/ballistic{
-	dir = 5;
-	name = "ship turret";
-	on = 0
-	},
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
 "Hv" = (
 /obj/structure/railing/corner{
 	dir = 8
@@ -4601,11 +4585,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/maintenance/port)
 "Te" = (
-/obj/machinery/porta_turret/centcom_shuttle/ballistic{
-	dir = 10;
-	name = "ship turret";
-	on = 0
-	},
+/obj/machinery/porta_turret/ship/ballistic,
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
 "TB" = (
@@ -4767,14 +4747,6 @@
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/engineering)
-"UN" = (
-/obj/machinery/porta_turret/centcom_shuttle/ballistic{
-	dir = 9;
-	name = "ship turret";
-	on = 0
-	},
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
 "UO" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/turf_decal/industrial/warning{
@@ -5380,7 +5352,7 @@ CM
 CM
 CM
 CM
-UN
+Te
 gN
 gN
 gN
@@ -5400,7 +5372,7 @@ CM
 CM
 CM
 CM
-UN
+Te
 Vk
 Vk
 Rk
@@ -5441,7 +5413,7 @@ Aj
 Aj
 ti
 ti
-UN
+Te
 lu
 lu
 Ep
@@ -5858,7 +5830,7 @@ uR
 lV
 sq
 hY
-GS
+Te
 "}
 (13,1,1) = {"
 CM
@@ -6057,7 +6029,7 @@ TR
 TR
 CM
 CM
-Hr
+Te
 lu
 lu
 gE
@@ -6084,7 +6056,7 @@ CM
 CM
 CM
 CM
-Hr
+Te
 OQ
 OQ
 OQ
@@ -6092,7 +6064,7 @@ OQ
 OQ
 OQ
 OQ
-GS
+Te
 CM
 CM
 CM
@@ -6104,7 +6076,7 @@ CM
 CM
 CM
 CM
-Hr
+Te
 tf
 tf
 tf
@@ -6112,7 +6084,7 @@ tf
 gE
 io
 io
-GS
+Te
 CM
 CM
 CM
@@ -6120,7 +6092,7 @@ hY
 hY
 hY
 hY
-GS
+Te
 CM
 CM
 "}

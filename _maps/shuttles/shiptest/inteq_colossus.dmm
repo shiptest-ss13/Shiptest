@@ -74,14 +74,6 @@
 /obj/item/radio/intercom/directional/west,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/port)
-"bd" = (
-/obj/machinery/porta_turret/centcom_shuttle/ballistic{
-	dir = 9;
-	name = "ship turret";
-	on = 0
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/bridge)
 "bn" = (
 /obj/structure/cable{
 	icon_state = "0-4"
@@ -158,11 +150,7 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "cj" = (
-/obj/machinery/porta_turret/centcom_shuttle/ballistic{
-	dir = 10;
-	name = "ship turret";
-	on = 0
-	},
+/obj/machinery/porta_turret/ship/ballistic,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/bridge)
 "cv" = (
@@ -2020,11 +2008,7 @@
 	},
 /area/ship/cargo)
 "wr" = (
-/obj/machinery/porta_turret/centcom_shuttle/ballistic{
-	dir = 6;
-	name = "ship turret";
-	on = 0
-	},
+/obj/machinery/porta_turret/ship/ballistic,
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
 "wA" = (
@@ -2327,14 +2311,6 @@
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
-"Ao" = (
-/obj/machinery/porta_turret/centcom_shuttle/ballistic{
-	dir = 6;
-	name = "ship turret";
-	on = 0
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/bridge)
 "AB" = (
 /turf/open/floor/carpet/orange,
 /area/ship/bridge)
@@ -3232,14 +3208,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
-"Lj" = (
-/obj/machinery/porta_turret/centcom_shuttle/ballistic{
-	dir = 5;
-	name = "ship turret";
-	on = 0
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/bridge)
 "Lm" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/item/trash/can,
@@ -3396,14 +3364,6 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
-"Nb" = (
-/obj/machinery/porta_turret/centcom_shuttle/ballistic{
-	dir = 5;
-	name = "ship turret";
-	on = 0
-	},
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
 "Nz" = (
 /obj/structure/chair{
 	dir = 4
@@ -4718,7 +4678,7 @@ XJ
 (8,1,1) = {"
 XJ
 XJ
-Nb
+wr
 bo
 bo
 bo
@@ -4915,7 +4875,7 @@ XJ
 "}
 (17,1,1) = {"
 XJ
-bd
+cj
 ZB
 ZB
 ZB
@@ -5135,7 +5095,7 @@ kI
 "}
 (27,1,1) = {"
 XJ
-Nb
+wr
 hD
 hD
 hD
@@ -5312,7 +5272,7 @@ XJ
 (35,1,1) = {"
 XJ
 XJ
-Lj
+cj
 SC
 SC
 SC
@@ -5324,10 +5284,10 @@ XJ
 XJ
 XJ
 XJ
-Nb
+wr
 dE
 dE
 dE
-Ao
+cj
 XJ
 "}
