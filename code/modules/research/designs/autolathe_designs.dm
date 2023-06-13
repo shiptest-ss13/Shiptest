@@ -586,6 +586,14 @@
 	build_path = /obj/item/storage/pill_bottle
 	category = list("initial", "Medical", "Medical Designs")
 
+/datum/design/chem_jug
+	name = "Chemical Jug"
+	id = "chem_jug"
+	build_type = AUTOLATHE | PROTOLATHE
+	materials = list(/datum/material/plastic = 4000)
+	build_path = /obj/item/reagent_containers/glass/chem_jug/open
+	category = list("initial", "Medical", "Medical Designs")
+
 /datum/design/recorder
 	name = "Universal Recorder"
 	id = "recorder"

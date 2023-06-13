@@ -236,3 +236,8 @@
 	..()
 	for(var/i in 1 to 5)
 		new /obj/item/coin/silver(src)
+
+/obj/structure/closet/crate/chem
+	desc = "A small crate for the storage and transportation of chemicals."
+	name = "chemical crate"
+	icon_state = "chemcrate"
