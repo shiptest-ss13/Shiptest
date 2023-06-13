@@ -184,17 +184,16 @@ There are several things that need to be remembered:
 		inv.update_icon()
 
 	//Bloody hands begin
-	var/mutable_appearance/bloody_overlay = mutable_appearance('icons/effects/blood.dmi', "bloodyhands", -GLOVES_LAYER)
-	cut_overlay(bloody_overlay)
 	if(!gloves && blood_in_hands && (num_hands > 0))
-		bloody_overlay = mutable_appearance('icons/effects/blood.dmi', "bloodyhands", -GLOVES_LAYER)
+		var/mutable_appearance/bloody_overlay = mutable_appearance('icons/effects/blood.dmi', "bloodyhands", -GLOVES_LAYER)
 		if(num_hands < 2)
 			if(has_left_hand(FALSE))
 				bloody_overlay.icon_state = "bloodyhands_left"
 			else if(has_right_hand(FALSE))
 				bloody_overlay.icon_state = "bloodyhands_right"
+		bloody_overlay.color = get_blood_dna_color(return_blood_DNA())
 
-		add_overlay(bloody_overlay)
+		overlays_standing[GLOVES_LAYER] = bloody_overlay
 	//Bloody hands end
 
 
@@ -316,7 +315,7 @@ There are several things that need to be remembered:
 			handled_by_bodytype = FALSE
 			icon_file = DEFAULT_SHOES_PATH
 
-		shoes_overlay = I.build_worn_icon(default_layer = UNIFORM_LAYER, default_icon_file = icon_file, isinhands = FALSE, mob_species = CHECK_USE_AUTOGEN)
+		shoes_overlay = I.build_worn_icon(default_layer = SHOES_LAYER, default_icon_file = icon_file, isinhands = FALSE, mob_species = CHECK_USE_AUTOGEN)
 
 		if(!shoes_overlay)
 			return
@@ -737,6 +736,9 @@ generate/load female uniform sprites matching all previously decided variables
 			if(L)
 				standing.pixel_x += L["x"] //+= because of center()ing
 				standing.pixel_y += L["y"]
+	//Handle worn offsets
+	else
+		standing.pixel_y += worn_y_offset
 
 	standing.alpha = alpha
 	standing.color = color

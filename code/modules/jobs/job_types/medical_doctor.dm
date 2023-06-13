@@ -106,21 +106,6 @@
 	suit = null
 	suit_store = null
 
-/datum/outfit/job/doctor/solgov
-	name = "Medical Doctor (SolGov)"
-
-	uniform = /obj/item/clothing/under/solgov
-	accessory = /obj/item/clothing/accessory/armband/medblue
-	shoes = /obj/item/clothing/shoes/sneakers/white
-	head = /obj/item/clothing/head/beret/solgov
-	suit =  /obj/item/clothing/suit/toggle/labcoat
-
-/datum/outfit/job/doctor/solgov/rebel
-	name = "Medical Doctor (Deserter)"
-
-	uniform = /obj/item/clothing/under/syndicate/camo
-	head = /obj/item/clothing/head/beret/solgov/terragov
-
 /datum/outfit/job/doctor/pirate
 	name = "Ship's Doctor (Pirate)"
 
@@ -166,3 +151,12 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag
 	courierbag = /obj/item/storage/backpack/messenger
 	backpack_contents = list(/obj/item/storage/firstaid/roumain=1)
+
+/datum/outfit/job/doctor/frontiersmen
+	name = "Surgeon (frontiersmen)"
+
+	uniform = /obj/item/clothing/under/rank/security/officer/frontier
+	glasses = /obj/item/clothing/glasses/hud/health/prescription
+	ears = /obj/item/radio/headset/pirate
+	r_pocket = /obj/item/kitchen/knife/combat/survival
+	backpack_contents = list(/obj/item/storage/firstaid/medical,)

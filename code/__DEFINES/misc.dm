@@ -1,21 +1,8 @@
-// Byond direction defines, because I want to put them somewhere.
-// #define NORTH 1
-// #define SOUTH 2
-// #define EAST 4
-// #define WEST 8
-
-#define TEXT_NORTH "[NORTH]"
-#define TEXT_SOUTH "[SOUTH]"
-#define TEXT_EAST "[EAST]"
-#define TEXT_WEST "[WEST]"
-
-/// Inverse direction, taking into account UP|DOWN if necessary.
-#define REVERSE_DIR(dir) (((dir & 85) << 1) | ((dir & 170) >> 1))
-
 //Human Overlays Indexes/////////
-#define MUTATIONS_LAYER 30 //mutations. Tk headglows, cold resistance glow, etc
-#define HANDS_UNDER_BODY_LAYER 29 //Held items that render underneath the user due to perspective
-#define BODY_BEHIND_LAYER 28 //certain mutantrace features (tail when looking south) that must appear behind the body parts
+#define MUTATIONS_LAYER 31 //mutations. Tk headglows, cold resistance glow, etc
+#define HANDS_UNDER_BODY_LAYER 30 //Held items that render underneath the user due to perspective
+#define BODY_BEHIND_LAYER 29 //certain mutantrace features (tail when looking south) that must appear behind the body parts
+#define BODYPARTS_LOW_LAYER 28 //Layer for bodyparts that should appear behind every other bodypart - Mostly, legs when facing WEST or EAST
 #define BODYPARTS_LAYER 27 //Initially "AUGMENTS", this was repurposed to be a catch-all bodyparts flag
 #define BODY_ADJ_LAYER 26 //certain mutantrace features (snout, body markings) that must appear above the body parts
 #define BODY_LAYER 25 //underwear, undershirts, socks, eyes, lips(makeup)
@@ -23,7 +10,7 @@
 #define DAMAGE_LAYER 23 //damage indicators (cuts and burns)
 #define UNIFORM_LAYER 22
 #define ID_LAYER 21 //lmao at the idiot who put both ids and hands on the same layer
-#define HANDS_PART_LAYER 20
+#define BODYPARTS_HIGH_LAYER 20
 #define GLOVES_LAYER 19
 #define SHOES_LAYER 18
 #define EARS_LAYER 17
@@ -43,7 +30,7 @@
 #define BODY_FRONT_LAYER 3
 #define HALO_LAYER 2 //blood cult ascended halo, because there's currently no better solution for adding/removing
 #define FIRE_LAYER 1 //If you're on fire
-#define TOTAL_LAYERS 30 //KEEP THIS UP-TO-DATE OR SHIT WILL BREAK ;_;
+#define TOTAL_LAYERS 31 //KEEP THIS UP-TO-DATE OR SHIT WILL BREAK ;_;
 
 //Human Overlay Index Shortcuts for alternate_worn_layer, layers
 //Because I *KNOW* somebody will think layer+1 means "above"
@@ -123,12 +110,11 @@
 GLOBAL_LIST_EMPTY(bloody_footprints_cache)
 
 //Bloody shoes/footprints
-#define MAX_SHOE_BLOODINESS 100
-#define BLOODY_FOOTPRINT_BASE_ALPHA 150
-#define BLOOD_GAIN_PER_STEP 100
-#define BLOOD_LOSS_PER_STEP 5
-#define BLOOD_LOSS_IN_SPREAD 20
-#define BLOOD_AMOUNT_PER_DECAL 20
+#define BLOODY_FOOTPRINT_BASE_ALPHA 80 /// Minimum alpha of footprints
+#define BLOOD_AMOUNT_PER_DECAL 50 /// How much blood a regular blood splatter contains
+#define BLOOD_ITEM_MAX 200 /// How much blood an item can have stuck on it
+#define BLOOD_POOL_MAX 300 /// How much blood a blood decal can contain
+#define BLOOD_FOOTPRINTS_MIN 5 /// How much blood a footprint need to at least contain
 
 //Bloody shoe blood states
 #define BLOOD_STATE_HUMAN "blood"
@@ -280,19 +266,6 @@ GLOBAL_LIST_INIT(pda_styles, sortList(list(MONO, VT, ORBITRON, SHARE)))
 #define SHELTER_DEPLOY_BAD_TURFS "bad turfs"
 #define SHELTER_DEPLOY_BAD_AREA "bad area"
 #define SHELTER_DEPLOY_ANCHORED_OBJECTS "anchored objects"
-
-//debug printing macros
-//_world and _usr should really never be used.
-#define debug2_world(msg) if (GLOB.Debug2) to_chat(world, \
-	type = MESSAGE_TYPE_DEBUG, \
-	text = "DEBUG: [msg]")
-#define debug2_usr(msg) if (GLOB.Debug2&&usr) to_chat(usr, \
-	type = MESSAGE_TYPE_DEBUG, \
-	text = "DEBUG: [msg]")
-#define debug2_admins(msg) if (GLOB.Debug2) to_chat(GLOB.admins, \
-	type = MESSAGE_TYPE_DEBUG, \
-	text = "DEBUG: [msg]")
-#define debug2_world_log(msg) if (GLOB.Debug2) log_world("DEBUG: [msg]")
 
 #define INCREMENT_TALLY(L, stat) if(L[stat]){L[stat]++}else{L[stat] = 1}
 

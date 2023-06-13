@@ -167,6 +167,7 @@
 		. += hide_appearance
 
 /atom/movable/screen/movable/action_button/MouseEntered(location,control,params)
+	. = ..()
 	if(!QDELETED(src))
 		openToolTip(usr,src,params,title = name,content = desc,theme = actiontooltipstyle)
 

@@ -1,7 +1,11 @@
 {
 	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
 	"prefix": "SSV",
-	"namelists": ["GENERAL", "SPACE", "NATURAL_AGGRESSIVE"],
+	"namelists": [
+		"CYBERSUN",
+		"SPACE",
+		"NATURAL_AGGRESSIVE"
+	],
 	"map_name": "Kansatsu-Class Scout Courier",
 	"map_short_name": "Kansatsu-Class",
 	"map_path": "_maps/shuttles/shiptest/syndicate_cybersun_kansatsu.dmm",
@@ -30,5 +34,5 @@
 			"slots": 2
 		}
 	},
-	"enabled": false
+	"enabled": true
 }

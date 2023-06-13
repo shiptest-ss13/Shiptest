@@ -101,6 +101,7 @@ Override makes it so the alert is not replaced until cleared by a clear_alert wi
 
 
 /atom/movable/screen/alert/MouseEntered(location,control,params)
+	. = ..()
 	if(!QDELETED(src))
 		openToolTip(usr,src,params,title = name,content = desc,theme = alerttooltipstyle)
 

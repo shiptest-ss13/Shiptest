@@ -1,11 +1,17 @@
 {
 	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
-	"map_name": "Dwayne-class Long Range Mining Transport",
-	"prefix": "SV",
-	"namelists": ["GENERAL", "SPACE", "NATURAL", "MERCANTILE"],
-	"map_short_name": "Dwayne-class",
+	"map_name": "Mark.II Dwayne-class Long Range Mining Transport",
+	"prefix": "ISV",
+	"namelists": [
+		"GENERAL",
+		"SPACE",
+		"NATURAL",
+		"MERCANTILE"
+	],
+	"map_short_name": "Mk.II Dwayne-class ",
 	"map_path": "_maps/shuttles/shiptest/independent_dwayne.dmm",
 	"roundstart": true,
+	"limit": 1,
 	"job_slots": {
 		"Captain": {
 			"outfit": "/datum/outfit/job/captain/western",

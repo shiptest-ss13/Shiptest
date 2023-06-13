@@ -272,6 +272,17 @@
 	material_flags = MATERIAL_ADD_PREFIX | MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS
 	buildstack = null //No buildstack, so generate from mat datums
 
+/obj/structure/table/chem
+	name = "chemistry counter"
+	desc = "A square piece of metal designed to be resistant to any chemical spill."
+	icon = 'icons/obj/smooth_structures/table_chem.dmi'
+	icon_state = "table_chem-0"
+	base_icon_state = "table_chem"
+	smoothing_groups = list(SMOOTH_GROUP_CHEM_TABLES)
+	canSmoothWith = list(SMOOTH_GROUP_CHEM_TABLES)
+	buildstack = /obj/item/stack/sheet/mineral/plastitanium
+	can_flip = FALSE
+
 ///Table on wheels
 /obj/structure/table/rolling
 	name = "Rolling table"
@@ -574,7 +585,7 @@
 	smoothing_groups = null
 	canSmoothWith = null
 	can_buckle = 1
-	buckle_lying = NO_BUCKLE_LYING
+	buckle_lying = 90 //I don't see why you wouldn't be lying down while buckled to it
 	buckle_requires_restraints = FALSE
 	can_flip = FALSE
 	var/mob/living/carbon/human/patient = null
@@ -657,7 +668,9 @@
 	if(user.a_intent == INTENT_HARM)
 		return ..()
 	if(user.transferItemToLoc(W, drop_location()))
-		return 1
+		W.pixel_x = pick(9,0,-9)
+		W.pixel_y = pick(10,1)
+		return TRUE
 
 /obj/structure/rack/attack_paw(mob/living/user)
 	attack_hand(user)

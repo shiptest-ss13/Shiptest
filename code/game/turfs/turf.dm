@@ -1,3 +1,5 @@
+GLOBAL_LIST_EMPTY(created_baseturf_lists)
+
 /turf
 	icon = 'icons/turf/floors.dmi'
 	flags_1 = CAN_BE_DIRTY_1
@@ -110,6 +112,9 @@
 		if(canSmoothWith[length(canSmoothWith)] > MAX_S_TURF)
 			smoothing_flags |= SMOOTH_OBJ
 		SET_BITFLAG_LIST(canSmoothWith)
+	if (length(no_connector_typecache))
+		no_connector_typecache = SSicon_smooth.get_no_connector_typecache(src.type, no_connector_typecache, connector_strict_typing)
+
 	if (smoothing_flags & (SMOOTH_CORNERS|SMOOTH_BITMASK))
 		QUEUE_SMOOTH(src)
 
@@ -384,7 +389,6 @@
 
 // A proc in case it needs to be recreated or badmins want to change the baseturfs
 /turf/proc/assemble_baseturfs(turf/fake_baseturf_type)
-	var/static/list/created_baseturf_lists = list()
 	var/turf/current_target
 	if(fake_baseturf_type)
 		if(length(fake_baseturf_type)) // We were given a list, just apply it and move on
@@ -401,8 +405,8 @@
 			current_target = baseturfs
 
 	// If we've made the output before we don't need to regenerate it
-	if(created_baseturf_lists[current_target])
-		var/list/premade_baseturfs = created_baseturf_lists[current_target]
+	if(GLOB.created_baseturf_lists[current_target])
+		var/list/premade_baseturfs = GLOB.created_baseturf_lists[current_target]
 		if(length(premade_baseturfs))
 			baseturfs = baseturfs_string_list(premade_baseturfs.Copy(), src)
 		else
@@ -413,7 +417,7 @@
 	//Most things only have 1 baseturf so this loop won't run in most cases
 	if(current_target == next_target)
 		baseturfs = current_target
-		created_baseturf_lists[current_target] = current_target
+		GLOB.created_baseturf_lists[current_target] = current_target
 		return current_target
 	var/list/new_baseturfs = list(current_target)
 	for(var/i=0;current_target != next_target;i++)
@@ -428,7 +432,7 @@
 		next_target = initial(current_target.baseturfs)
 
 	baseturfs = baseturfs_string_list(new_baseturfs, src)
-	created_baseturf_lists[new_baseturfs[new_baseturfs.len]] = new_baseturfs.Copy()
+	GLOB.created_baseturf_lists[new_baseturfs[new_baseturfs.len]] = new_baseturfs.Copy()
 	return new_baseturfs
 
 /turf/proc/levelupdate()
@@ -660,7 +664,7 @@
 /turf/proc/on_turf_saved()
 	// This is all we can do. I'm sorry mappers, but there's no way to get any more details.
 	var/first = TRUE
-	for(var/datum/component/decal/decal as anything in GetComponents(/datum/component/decal))
+	for(var/datum/element/decal/decal as anything in GetComponents(/datum/element/decal))
 		if(!first)
 			. += ",\n"
 		. += "[/obj/effect/turf_decal]{\n\ticon = '[decal.pic.icon]';\n\ticon_state = \"[decal.pic.icon_state]\";\n\tdir = [decal.pic.dir];\n\tcolor = \"[decal.pic.color]\"\n\t}"

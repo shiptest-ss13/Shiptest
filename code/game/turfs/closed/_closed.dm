@@ -78,7 +78,7 @@
 /turf/closed/indestructible/reinforced
 	name = "reinforced wall"
 	desc = "A huge chunk of reinforced metal used to separate rooms. Effectively impervious to conventional methods of destruction."
-	icon = 'icons/turf/walls/reinforced_wall.dmi'
+	icon = 'icons/turf/walls/rwalls/reinforced_wall.dmi'
 	icon_state = "reinforced_wall-0"
 	base_icon_state = "reinforced_wall"
 	smoothing_flags = SMOOTH_BITMASK
