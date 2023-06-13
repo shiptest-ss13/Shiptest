@@ -490,8 +490,3 @@
 	required_reagents = list(/datum/reagent/stabilizing_agent = 1,/datum/reagent/fluorosurfactant = 1,/datum/reagent/carbon = 1)
 	required_temp = 200
 	is_cold_recipe = 1
-
-/datum/chemical_reaction/reagent_explosion/patriotism_overload
-	required_reagents = list(/datum/reagent/consumable/ethanol/planet_cracker = 1, /datum/reagent/consumable/ethanol/triumphal_arch = 1)
-	strengthdiv = 20
-	mix_message = "<span class='boldannounce'>The two patriotic drinks instantly reject each other!</span>"
