@@ -11,7 +11,10 @@
 	"prefix": "ISV",
 	"job_slots": {
 		"Chief Medical Officer": 1,
-		"Medical Doctor": 3,
+		"Medical Doctor": {
+			"outfit": "/datum/outfit/job/doctor",
+			"slots": 3
+		},
 		"Paramedic": 2,
 		"Assistant": 3
 	},
