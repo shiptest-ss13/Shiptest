@@ -241,3 +241,5 @@
 	desc = "A small crate for the storage and transportation of chemicals."
 	name = "chemical crate"
 	icon_state = "chemcrate"
+	material_drop = /obj/item/stack/sheet/mineral/gold
+	material_drop_amount = 1
