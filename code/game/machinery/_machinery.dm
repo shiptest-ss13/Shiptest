@@ -335,7 +335,7 @@ Class Procs:
 		user.set_machine(src)
 	. = ..()
 
-/obj/machinery/ui_act(action, list/params)
+/obj/machinery/ui_act(action, list/params, datum/tgui/ui)
 	add_fingerprint(usr)
 	if(isliving(usr) && in_range(src, usr))
 		play_click_sound()

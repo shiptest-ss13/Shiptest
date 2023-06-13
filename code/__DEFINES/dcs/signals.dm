@@ -691,3 +691,6 @@
 #define COMSIG_OVERMAP_DOCK "overmap_dock"
 /// From overmap Undock(): (datum/overmap)
 #define COMSIG_OVERMAP_UNDOCK "overmap_undock"
+
+#define COMSIG_SHIP_MODULES_UPDATED "ship_modules_updated"
+#define COMSIG_SHIP_REFRESH_ENGINES "ship_refresh_engines"

@@ -66,11 +66,8 @@
 	///Time that next job slot change can occur
 	COOLDOWN_DECLARE(job_slot_adjustment_cooldown)
 
-
-
-
-
-
+	/// List of installed ship modules. typepath -> module[]
+	var/list/datum/ship_module/modules = list()
 
 /datum/overmap/ship/controlled/Rename(new_name, force = FALSE)
 	var/oldname = name
@@ -125,10 +122,46 @@
 		qdel(applications[a_key])
 	// set ourselves to ownerless to unregister signals
 	set_owner_mob(null)
+	QDEL_LIST(modules)
 	return ..()
 
 /datum/overmap/ship/controlled/get_jump_to_turf()
 	return get_turf(shuttle_port)
+
+/mob/verb/debug_shit()
+	usr.put_in_hands(new /obj/item/ship_module_card/hyper_drive)
+	new /obj/machinery/computer/ship_modules(get_turf(src))
+
+/datum/overmap/ship/controlled/proc/install_module(datum/ship_module/module_path)
+	if(!ispath(module_path))
+		return MODULE_INSTALL_PATH_INVALID
+
+	var/datum/ship_module/module = new module_path
+	if(!module.can_install(src))
+		qdel(module)
+		return MODULE_INSTALL_FAILED
+	module.install(src)
+	return MODULE_INSTALL_SUCCESS
+
+/datum/overmap/ship/controlled/proc/get_installed_modules(module_path, enabled_only = TRUE)
+	RETURN_TYPE(/list/datum/ship_module)
+
+	var/list/check_list = list()
+	if(isnull(module_path))
+		for(var/module_type in modules)
+			for(var/datum/ship_module/module as anything in get_installed_modules(module_type, enabled_only = enabled_only))
+				check_list += module
+	else
+		check_list = modules[module_path] || list()
+
+	if(!enabled_only)
+		return check_list
+
+	var/list/enabled_list = list()
+	for(var/datum/ship_module/module as anything in check_list)
+		if(module.is_enabled)
+			enabled_list += module
+	return enabled_list
 
 /datum/overmap/ship/controlled/pre_dock(datum/overmap/to_dock, datum/docking_ticket/ticket)
 	if(ticket.target != src || ticket.issuer != to_dock)
@@ -201,9 +234,13 @@
 		thrust_used += E.burn_engine(percentage, deltatime)
 
 	thrust_used = thrust_used / (shuttle_port.turf_count * 100)
-	est_thrust = thrust_used / percentage * 100 //cheeky way of rechecking the thrust, check it every time it's used
 
-	return thrust_used
+	var/thrust_modifier = 1
+	for(var/datum/ship_module/module as anything in get_installed_modules())
+		thrust_modifier *= module.thrust_modifier
+
+	est_thrust = thrust_used * (thrust_modifier / percentage * 100)
+	return thrust_used * thrust_modifier
 
 /**
  * Just double checks all the engines on the shuttle
@@ -215,6 +252,7 @@
 		if(E.enabled)
 			calculated_thrust += E.thrust
 	est_thrust = calculated_thrust / (shuttle_port.turf_count * 100)
+	SEND_SIGNAL(src, COMSIG_SHIP_REFRESH_ENGINES)
 
 /**
  * Calculates the average fuel fullness of all engines.

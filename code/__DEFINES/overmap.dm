@@ -71,3 +71,7 @@
 // Burn direction defines
 #define BURN_NONE 0
 #define BURN_STOP -1
+
+#define MODULE_INSTALL_PATH_INVALID "path"
+#define MODULE_INSTALL_FAILED "failed"
+#define MODULE_INSTALL_SUCCESS "success"
