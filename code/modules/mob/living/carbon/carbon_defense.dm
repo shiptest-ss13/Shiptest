@@ -384,6 +384,7 @@
 		Paralyze(60)
 
 /mob/living/carbon/proc/help_shake_act(mob/living/carbon/M)
+	var/nosound = FALSE
 	if(on_fire)
 		to_chat(M, "<span class='warning'>You can't put [p_them()] out with just your bare hands!</span>")
 		return
@@ -403,6 +404,15 @@
 			mothdust += 10;
 		if(istype(dna.species, /datum/species/moth))
 			M.mothdust += 10; // End WS edit
+
+	if(M.zone_selected == BODY_ZONE_PRECISE_MOUTH) // Nose boops!
+		nosound = TRUE
+		playsound(src, 'sound/effects/Nose_boop.ogg', 50, 0)
+		M.visible_message(span_notice("[M] boops [src]'s nose."), span_notice("You boop [src] on the nose."))
+		if(HAS_TRAIT(src, TRAIT_BADTOUCH))
+			to_chat(M, span_warning("A scowl forms on [src]'s face as you daringly press your finger against [p_their()] nose."))
+// Should add in mood effects and a text for friendly
+
 	else if(check_zone(M.zone_selected) == BODY_ZONE_HEAD) //Headpats!
 		SEND_SIGNAL(src, COMSIG_CARBON_HEADPAT, M)
 		M.visible_message("<span class='notice'>[M] gives [src] a pat on the head to make [p_them()] feel better!</span>", \
@@ -491,8 +501,8 @@
 	AdjustParalyzed(-60)
 	AdjustImmobilized(-60)
 	set_resting(FALSE)
-
-	playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, TRUE, -1)
+	if(!nosound)
+		playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, TRUE, -1)
 
 // Shake animation
 #define SHAKE_ANIMATION_OFFSET (4)
