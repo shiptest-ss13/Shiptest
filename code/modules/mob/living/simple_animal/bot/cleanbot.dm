@@ -315,10 +315,13 @@
 		mode = BOT_CLEANING
 
 		var/turf/T = get_turf(A)
-		if(do_after(src, 1, target = T))
+		target.add_overlay(GLOB.cleaning_bubbles)
+		playsound(src, 'sound/misc/slip.ogg', 15, TRUE, -8)
+		if(do_after(src, 1 SECONDS, target = T))
 			T.wash(CLEAN_WASH)
 			visible_message("<span class='notice'>[src] cleans \the [T].</span>")
-			target = null
+		target.cut_overlay(GLOB.cleaning_bubbles)
+		target = null
 
 		mode = BOT_IDLE
 		icon_state = "cleanbot[on]"
