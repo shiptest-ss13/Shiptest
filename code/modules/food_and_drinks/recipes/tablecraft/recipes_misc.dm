@@ -388,3 +388,23 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/bechamel_sauce
 	subcategory = CAT_MISCFOOD
+
+/datum/crafting_recipe/food/vegetariansushiroll
+	name = "Vegetarian sushi roll"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/grown/seaweed = 1,
+		/obj/item/reagent_containers/food/snacks/salad/boiledrice = 1,
+		/obj/item/reagent_containers/food/snacks/grown/carrot = 1,
+		/obj/item/reagent_containers/food/snacks/grown/potato = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/vegetariansushiroll
+	subcategory = CAT_MISCFOOD
+
+/datum/crafting_recipe/food/onigiri
+	name = "Onigiri"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/grown/seaweed = 1,
+		/obj/item/reagent_containers/food/snacks/salad/boiledrice = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/onigiri
+	subcategory = CAT_MISCFOOD

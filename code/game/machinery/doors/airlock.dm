@@ -55,6 +55,8 @@
 	hud_possible = list(DIAG_AIRLOCK_HUD)
 	req_ship_access = TRUE
 
+	smoothing_groups = list(SMOOTH_GROUP_AIRLOCK)
+
 	FASTDMM_PROP(\
 		pinned_vars = list("req_access_txt", "req_one_access_txt", "name")\
 	)
@@ -80,12 +82,19 @@
 	var/obj/item/seal
 	var/detonated = FALSE
 	var/abandoned = FALSE
-	var/doorOpen = 'sound/machines/airlock.ogg'
-	var/doorClose = 'sound/machines/airlockclose.ogg'
-	var/doorDeni = 'sound/machines/deniedbeep.ogg' // i'm thinkin' Deni's
-	var/boltUp = 'sound/machines/boltsup.ogg'
-	var/boltDown = 'sound/machines/boltsdown.ogg'
+
+	var/doorOpen = 'sound/machines/airlocks/standard/open.ogg'
+	var/doorClose = 'sound/machines/airlocks/standard/close.ogg'
+	var/doorDeni = 'sound/machines/airlocks/access_denied.ogg' // i'm thinkin' Deni's
+	var/boltUp = 'sound/machines/airlocks/bolts_up.ogg'
+	var/boltDown = 'sound/machines/airlocks/bolts_down.ogg'
+
+	var/pry_sound = 'sound/machines/creaking.ogg'
+	var/pry_open_sound = 'sound/machines/airlocks/open_force.ogg'
+	var/pry_close_sound = 'sound/machines/airlocks/close_force.ogg'
+
 	var/noPower = 'sound/machines/doorclick.ogg'
+
 	var/previous_airlock = /obj/structure/door_assembly //what airlock assembly mineral plating was applied to
 	var/airlock_material //material of inner filling; if its an airlock with glass, this should be set to "glass"
 	var/overlays_file = 'icons/obj/doors/airlocks/station/overlays.dmi'
@@ -110,8 +119,8 @@
 	var/hatch_offset_x = 0
 	var/hatch_offset_y = 0
 	var/hatch_colour = "#7d7d7d"
-	var/hatch_open_sound = 'sound/machines/hatch_open.ogg'
-	var/hatch_close_sound = 'sound/machines/hatch_close.ogg'
+	var/hatch_open_sound = 'sound/machines/airlocks/hatch/hatch_open.ogg'
+	var/hatch_close_sound = 'sound/machines/airlocks/hatch/hatch_close.ogg'
 
 /obj/machinery/door/airlock/Initialize()
 	. = ..()
@@ -579,10 +588,9 @@
 				note_overlay = get_airlock_overlay(notetype, note_overlay_file)
 			if(has_hatch)
 				if(hatchstate)
-					hatch_overlay = get_airlock_overlay("hatch_open", overlays_file)
+					hatch_overlay = get_airlock_overlay("hatch_open", icon)
 				else
-					hatch_overlay = get_airlock_overlay("hatch_closed", overlays_file)
-				hatch_overlay.color = hatch_colour
+					hatch_overlay = get_airlock_overlay("hatch_closed", icon)
 
 		if(AIRLOCK_DENY)
 			if(!hasPower())
@@ -610,10 +618,9 @@
 				note_overlay = get_airlock_overlay(notetype, note_overlay_file)
 			if(has_hatch)
 				if(hatchstate)
-					hatch_overlay = get_airlock_overlay("hatch_open", overlays_file)
+					hatch_overlay = get_airlock_overlay("hatch_open", icon)
 				else
-					hatch_overlay = get_airlock_overlay("hatch_closed", overlays_file)
-				hatch_overlay.color = hatch_colour
+					hatch_overlay = get_airlock_overlay("hatch_closed", icon)
 
 		if(AIRLOCK_EMAG)
 			frame_overlay = get_airlock_overlay("closed", icon)
@@ -654,8 +661,7 @@
 			if(note)
 				note_overlay = get_airlock_overlay("[notetype]_closing", note_overlay_file)
 			if(has_hatch)
-				hatch_overlay = get_airlock_overlay("hatch_closing", overlays_file)
-				hatch_overlay.color = hatch_colour
+				hatch_overlay = get_airlock_overlay("hatch_closing", icon)
 
 		if(AIRLOCK_OPEN)
 			frame_overlay = get_airlock_overlay("open", icon)
@@ -689,8 +695,7 @@
 			if(note)
 				note_overlay = get_airlock_overlay("[notetype]_opening", note_overlay_file)
 			if(has_hatch)
-				hatch_overlay = get_airlock_overlay("hatch_opening", overlays_file)
-				hatch_overlay.color = hatch_colour
+				hatch_overlay = get_airlock_overlay("hatch_opening", icon)
 
 	cut_overlays()
 	add_overlay(frame_overlay)
@@ -1215,7 +1220,7 @@
 
 			if(!prying_so_hard)
 				var/time_to_open = 50
-				playsound(src, 'sound/machines/airlock_alien_prying.ogg', 100, TRUE, mono_adj = TRUE) //is it aliens or just the CE being a dick?
+				playsound(src, pry_sound, 100, TRUE, mono_adj = TRUE) //is it aliens or just the CE being a dick?
 				prying_so_hard = TRUE
 				if(do_after(user, time_to_open, TRUE, src))
 					open(2)
@@ -1249,7 +1254,7 @@
 		if(closeOther != null && istype(closeOther, /obj/machinery/door/airlock/) && !closeOther.density)
 			closeOther.close()
 	else
-		playsound(src, 'sound/machines/airlockforced.ogg', 30, TRUE, mono_adj = TRUE)
+		playsound(src, pry_open_sound, 30, TRUE, mono_adj = TRUE)
 
 	if(autoclose)
 		autoclose_in(normalspeed ? 150 : 15)
@@ -1295,7 +1300,7 @@
 		use_power(50)
 		playsound(src, doorClose, 30, FALSE, mono_adj = TRUE)
 	else
-		playsound(src, 'sound/machines/airlockforced.ogg', 30, TRUE, mono_adj = TRUE)
+		playsound(src, pry_close_sound, 30, TRUE, mono_adj = TRUE)
 
 	var/obj/structure/window/killthis = (locate(/obj/structure/window) in get_turf(src))
 	if(killthis)
@@ -1402,7 +1407,7 @@
 	var/time_to_open = 5 //half a second
 	if(hasPower())
 		time_to_open = 5 SECONDS //Powered airlocks take longer to open, and are loud.
-		playsound(src, 'sound/machines/airlock_alien_prying.ogg', 100, TRUE, mono_adj = TRUE)
+		playsound(src, 'sound/machines/creaking.ogg', 100, TRUE, mono_adj = TRUE)
 
 
 	if(do_after(user, time_to_open, TRUE, src))

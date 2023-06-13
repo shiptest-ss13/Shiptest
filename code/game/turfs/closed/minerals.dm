@@ -4,9 +4,12 @@
 	name = "rock"
 	icon = 'icons/turf/mining.dmi'
 	icon_state = "rock"
-	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER | SMOOTH_CONNECTORS
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_MINERAL_WALLS)
 	canSmoothWith = list(SMOOTH_GROUP_MINERAL_WALLS)
+	connector_icon = 'icons/turf/connectors/smoothrocks_connector.dmi'
+	connector_icon_state = "smoothrocks_connector"
+	no_connector_typecache = list(/turf/closed/mineral)
 	baseturfs = /turf/open/floor/plating/asteroid/airless
 	initial_gas_mix = AIRLESS_ATMOS
 	opacity = TRUE
@@ -215,6 +218,8 @@
 
 
 /turf/closed/mineral/random/volcanic
+	name = "basalt"
+	desc = "Eruptions stack like layer-cake, forming vast oceans of dried magma."
 	environment_type = "basalt"
 	turf_type = /turf/open/floor/plating/asteroid/basalt/lava_land_surface
 	baseturfs = /turf/open/floor/plating/asteroid/basalt/lava_land_surface
@@ -234,7 +239,8 @@
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 
 /turf/closed/mineral/random/snow
-	name = "rocky wall"
+	name = "schist"
+	desc = "Say it fives times fast."
 	icon = 'icons/turf/walls/rockwall_icemoon.dmi'
 	smooth_icon = 'icons/turf/walls/rockwall_icemoon.dmi'
 	icon_state = "rockwall_icemoon-0"
@@ -254,7 +260,8 @@
 		/turf/closed/mineral/gibtonite/ice/icemoon = 4, /obj/item/stack/ore/bluespace_crystal = 1)
 
 /turf/closed/mineral/ice
-	name = "icey wall"
+	name = "icy wall"
+	desc = "Frozen water forms wavy patterns, an ocean frozen in pantomime."
 	icon = 'icons/turf/walls/icewall.dmi'
 	smooth_icon = 'icons/turf/walls/icewall.dmi'
 	icon_state = "icewall-0"
@@ -309,8 +316,10 @@
 	smooth_icon = 'icons/turf/walls/mountain_wall.dmi'
 	icon_state = "mountainrock"
 	base_icon_state = "mountain_wall"
-	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
-	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS)
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER | SMOOTH_CONNECTORS
+	connector_icon = 'icons/turf/connectors/mountain_wall_connector.dmi'
+	connector_icon_state = "mountain_wall_connector"
+	no_connector_typecache = list(/turf/closed/mineral/random/labormineral/ice)
 	defer_change = TRUE
 	environment_type = "snow"
 	turf_type = /turf/open/floor/plating/asteroid/snow/icemoon
@@ -331,7 +340,10 @@
 	icon_state = "icerock_iron"
 	smooth_icon = 'icons/turf/walls/icerock_wall.dmi'
 	base_icon_state = "icerock_wall"
-	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER | SMOOTH_CONNECTORS
+	connector_icon = 'icons/turf/connectors/icerock_wall_connector.dmi'
+	connector_icon_state = "icerock_wall_connector"
+	no_connector_typecache = list(/turf/closed/mineral/iron/ice, /turf/closed/mineral/plasma/ice)
 	turf_type = /turf/open/floor/plating/asteroid/snow/ice
 	baseturfs = /turf/open/floor/plating/asteroid/snow/ice
 	initial_gas_mix = FROZEN_ATMOS
@@ -378,7 +390,10 @@
 	icon_state = "icerock_plasma"
 	smooth_icon = 'icons/turf/walls/icerock_wall.dmi'
 	base_icon_state = "icerock_wall"
-	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER | SMOOTH_CONNECTORS
+	connector_icon = 'icons/turf/connectors/icerock_wall_connector.dmi'
+	connector_icon_state = "icerock_wall_connector"
+	no_connector_typecache = list(/turf/closed/mineral/plasma/ice, /turf/closed/mineral/iron/ice)
 	turf_type = /turf/open/floor/plating/asteroid/snow/ice
 	baseturfs = /turf/open/floor/plating/asteroid/snow/ice
 	initial_gas_mix = FROZEN_ATMOS
@@ -469,6 +484,10 @@
 	icon = 'icons/turf/mining.dmi'
 	icon_state = "redrock"
 	smooth_icon = 'icons/turf/walls/red_wall.dmi'
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER | SMOOTH_CONNECTORS
+	connector_icon = 'icons/turf/connectors/red_wall_connector.dmi'
+	connector_icon_state = "red_wall_connector"
+	no_connector_typecache = list(/turf/closed/mineral/asteroid)
 	base_icon_state = "red_wall"
 
 //GIBTONITE
@@ -646,7 +665,7 @@
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands/dried
 	initial_gas_mix = WHITESANDS_ATMOS
 	defer_change = TRUE
-	has_borders = FALSE
+	has_borders = TRUE
 
 /turf/closed/mineral/uranium/whitesands
 	icon = 'icons/turf/walls/ws_walls.dmi'
@@ -656,7 +675,7 @@
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands/dried
 	initial_gas_mix = WHITESANDS_ATMOS
 	defer_change = TRUE
-	has_borders = FALSE
+	has_borders = TRUE
 
 /turf/closed/mineral/diamond/whitesands
 	icon = 'icons/turf/walls/ws_walls.dmi'
@@ -666,7 +685,7 @@
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands/dried
 	initial_gas_mix = WHITESANDS_ATMOS
 	defer_change = TRUE
-	has_borders = FALSE
+	has_borders = TRUE
 
 /turf/closed/mineral/plasma/whitesands
 	icon = 'icons/turf/walls/ws_walls.dmi'
@@ -676,7 +695,7 @@
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands/dried
 	initial_gas_mix = WHITESANDS_ATMOS
 	defer_change = TRUE
-	has_borders = FALSE
+	has_borders = TRUE
 
 /turf/closed/mineral/bscrystal/whitesands
 	icon = 'icons/turf/walls/ws_walls.dmi'
@@ -686,7 +705,7 @@
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands/dried
 	initial_gas_mix = WHITESANDS_ATMOS
 	defer_change = TRUE
-	has_borders = FALSE
+	has_borders = TRUE
 
 /turf/closed/mineral/gibtonite/whitesands
 	icon = 'icons/turf/walls/ws_walls.dmi'
@@ -696,20 +715,22 @@
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands/dried
 	initial_gas_mix = WHITESANDS_ATMOS
 	defer_change = TRUE
-	has_borders = FALSE
+	has_borders = TRUE
 
 /turf/closed/mineral/random/whitesands
+	name = "limestone"
+	desc = "The powdered remains of what once lived here, under the endless sea."
 	icon = 'icons/turf/walls/ws_walls.dmi'
 	smooth_icon = 'icons/turf/walls/ws_walls.dmi'
 	environment_type = WHITESANDS_WALL_ENV
 	turf_type = /turf/open/floor/plating/asteroid/whitesands
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands/dried
-	mineralSpawnChanceList = list(/obj/item/stack/ore/uranium = 5, /obj/item/stack/ore/diamond = 1, /obj/item/stack/ore/gold = 10,
-		/obj/item/stack/ore/silver = 12, /obj/item/stack/ore/plasma = 20, /obj/item/stack/ore/iron = 40, /obj/item/stack/ore/titanium = 11,
-		/turf/closed/mineral/gibtonite/whitesands = 4, /turf/open/floor/plating/asteroid/whitesands = 2, /obj/item/stack/ore/bluespace_crystal = 1)
+	mineralSpawnChanceList = list(/obj/item/stack/ore/uranium = 5, /obj/item/stack/ore/diamond = 3, /obj/item/stack/ore/gold = 10,
+		/obj/item/stack/ore/silver = 10, /obj/item/stack/ore/plasma = 15, /obj/item/stack/ore/iron = 45, /obj/item/stack/ore/titanium = 11,
+		/turf/closed/mineral/gibtonite/whitesands = 4, /turf/open/floor/plating/asteroid/whitesands = 2, /obj/item/stack/ore/bluespace_crystal = 4)
 	initial_gas_mix = WHITESANDS_ATMOS
 	defer_change = TRUE
-	has_borders = FALSE
+	has_borders = TRUE
 
 /turf/closed/mineral/random/high_chance
 	icon = 'icons/turf/walls/ws_walls.dmi'
@@ -719,7 +740,7 @@
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands/dried
 	initial_gas_mix = WHITESANDS_ATMOS
 	defer_change = TRUE
-	has_borders = FALSE
+	has_borders = TRUE
 
 /turf/closed/mineral/random/labormineral/whitesands
 	icon = 'icons/turf/walls/ws_walls.dmi'
@@ -729,7 +750,7 @@
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands/dried
 	initial_gas_mix = WHITESANDS_ATMOS
 	defer_change = TRUE
-	has_borders = FALSE
+	has_borders = TRUE
 
 /turf/closed/mineral/random/low_chance
 	icon = 'icons/turf/walls/ws_walls.dmi'
@@ -739,10 +760,11 @@
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands/dried
 	initial_gas_mix = WHITESANDS_ATMOS
 	defer_change = TRUE
-	has_borders = FALSE
+	has_borders = TRUE
 
 /turf/closed/mineral/random/jungle
-	name = "mountain wall"
+	name = "bauxite"
+	desc = "Silt and mud are mummified, taking a rigid shape in the morning sun."
 	icon = 'icons/turf/walls/jungle_wall.dmi'
 	smooth_icon = 'icons/turf/walls/jungle_wall.dmi'
 	icon_state = "jungle_wall-0"
@@ -751,16 +773,17 @@
 	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS)
 	turf_type = /turf/open/floor/plating/dirt/jungle
 	baseturfs = /turf/open/floor/plating/dirt/jungle
-	mineralSpawnChanceList = list(/obj/item/stack/ore/uranium = 5, /obj/item/stack/ore/diamond = 1, /obj/item/stack/ore/gold = 10,
-		/obj/item/stack/ore/silver = 12, /obj/item/stack/ore/plasma = 20, /obj/item/stack/ore/iron = 40, /obj/item/stack/ore/titanium = 11,
-		/obj/item/stack/ore/bluespace_crystal = 1)
+	mineralSpawnChanceList = list(/obj/item/stack/ore/uranium = 8, /obj/item/stack/ore/diamond = 8, /obj/item/stack/ore/gold = 10,
+		/obj/item/stack/ore/silver = 4, /obj/item/stack/ore/plasma = 25, /obj/item/stack/ore/iron = 25, /obj/item/stack/ore/titanium = 10,
+		/obj/item/stack/ore/bluespace_crystal = 5)
 
 /turf/closed/mineral/random/beach
 	baseturfs = /turf/open/floor/plating/asteroid/sand/dense
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 
 /turf/closed/mineral/random/asteroid/rockplanet
-	name = "iron rock"
+	name = "hematite"
+	desc = "Iron grit rusts softly, bringing forth a crimson hue."
 	icon = 'icons/turf/mining.dmi'
 	icon_state = "redrock"
 	smooth_icon = 'icons/turf/walls/red_wall.dmi'
@@ -768,26 +791,37 @@
 	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
 	baseturfs = /turf/open/floor/plating/asteroid/rockplanet
 	turf_type = /turf/open/floor/plating/asteroid/rockplanet
-	mineralSpawnChanceList = list(/obj/item/stack/ore/uranium = 5, /obj/item/stack/ore/diamond = 1, /obj/item/stack/ore/gold = 10,
-		/obj/item/stack/ore/silver = 12, /obj/item/stack/ore/plasma = 20, /obj/item/stack/ore/iron = 40, /obj/item/stack/ore/titanium = 11,
-		/turf/closed/mineral/gibtonite/rockplanet = 4, /obj/item/stack/ore/bluespace_crystal = 1)
+	mineralSpawnChanceList = list(/obj/item/stack/ore/uranium = 15, /obj/item/stack/ore/diamond = 1, /obj/item/stack/ore/gold = 15,
+		/obj/item/stack/ore/silver = 12, /obj/item/stack/ore/plasma = 5, /obj/item/stack/ore/iron = 65, /obj/item/stack/ore/titanium = 18)
 
 /turf/closed/mineral/gibtonite/rockplanet
-	name = "iron rock"
+	name = "hematite"
+	desc = "Iron grit rusts softly, bringing forth a crimson hue."
 	icon = 'icons/turf/mining.dmi'
 	icon_state = "redrock"
 	smooth_icon = 'icons/turf/walls/red_wall.dmi'
 	base_icon_state = "red_wall"
 
 /turf/closed/mineral/random/asteroid/wasteplanet
-	name = "cracked rock"
+	name = "polluted rock"
+	desc = "Whatever once held sway, the poison is all that remains."
 	icon = 'icons/turf/walls/wasteplanet.dmi'
 	icon_state = "wasteplanet-255"
 	smooth_icon = 'icons/turf/walls/wasteplanet.dmi'
 	base_icon_state = "wasteplanet"
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 	baseturfs = /turf/open/floor/plating/asteroid/wasteplanet
-	mineralSpawnChanceList = list(/obj/item/stack/ore/uranium = 7, /obj/item/stack/ore/diamond = 1, /obj/item/stack/ore/gold = 5,
-		/obj/item/stack/ore/silver = 7, /obj/item/stack/ore/plasma = 15, /obj/item/stack/ore/iron = 55, /obj/item/stack/ore/titanium = 6,
-		/obj/item/stack/ore/bluespace_crystal = 1)
+	mineralSpawnChanceList = list(/obj/item/stack/ore/uranium = 30, /obj/item/stack/ore/diamond = 0.5, /obj/item/stack/ore/gold = 5,
+		/obj/item/stack/ore/silver = 7, /obj/item/stack/ore/plasma = 35, /obj/item/stack/ore/iron = 35, /obj/item/stack/ore/titanium = 10)
 	mineralChance = 30
+
+/turf/closed/mineral/snowmountain/cavern/shipside
+	name = "ice cavern rock"
+	icon = 'icons/turf/mining.dmi'
+	smooth_icon = 'icons/turf/walls/icerock_wall.dmi'
+	icon_state = "icerock"
+	base_icon_state = "icerock_wall"
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
+	baseturfs = /turf/open/floor/plating
+	environment_type = "snow_cavern"
+	turf_type = /turf/open/floor/plating

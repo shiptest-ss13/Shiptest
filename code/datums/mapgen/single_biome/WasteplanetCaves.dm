@@ -18,7 +18,7 @@
 		/obj/structure/mecha_wreckage/ripley = 15,
 		/obj/structure/mecha_wreckage/ripley/firefighter = 9,
 		/obj/structure/mecha_wreckage/ripley/mkii = 9,
-		/obj/structure/girder = 90,
+		/obj/structure/girder = 60,
 		/obj/structure/reagent_dispensers/fueltank = 30,
 		/obj/item/stack/cable_coil/cut = 30,
 		/obj/effect/decal/cleanable/greenglow = 60,
@@ -29,6 +29,8 @@
 		/obj/structure/radioactive = 6,
 		/obj/structure/radioactive/stack = 6,
 		/obj/structure/radioactive/waste = 6,
+		/obj/structure/flora/ash/garden/waste = 15,
+		/obj/structure/flora/ash/glowshroom = 90,
 
 		/obj/structure/salvageable/machine = 20,
 		/obj/structure/salvageable/autolathe = 15,
@@ -58,6 +60,6 @@
 		/mob/living/simple_animal/bot/floorbot/rockplanet = 15,
 	)
 
-	flora_spawn_chance = 5
+	flora_spawn_chance = 10
 	feature_spawn_chance = 0.1
 	mob_spawn_chance = 2

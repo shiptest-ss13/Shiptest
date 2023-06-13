@@ -135,6 +135,8 @@
 			var/turf/end_T = get_turf(target)
 			if(start_T && end_T)
 				log_combat(src, thrown_thing, "thrown", addition="grab from tile in [AREACOORD(start_T)] towards tile at [AREACOORD(end_T)]")
+		do_attack_animation(target, no_effect = 1)
+		playsound(loc, 'sound/weapons/punchmiss.ogg', 50, TRUE, -1)
 		visible_message("<span class='danger'>[src] throws [thrown_thing].</span>", \
 						"<span class='danger'>You throw [thrown_thing].</span>")
 		log_message("has thrown [thrown_thing]", LOG_ATTACK)
@@ -1000,9 +1002,9 @@
 					if(BODY_ZONE_HEAD)
 						limbtypes = typesof(/obj/item/bodypart/head)
 					if(BODY_ZONE_L_LEG)
-						limbtypes = typesof(/obj/item/bodypart/l_leg)
+						limbtypes = typesof(/obj/item/bodypart/leg/left)
 					if(BODY_ZONE_R_LEG)
-						limbtypes = typesof(/obj/item/bodypart/r_leg)
+						limbtypes = typesof(/obj/item/bodypart/leg/right)
 
 				if((edit_action == "add") && BP)
 					to_chat(usr, "<span class='boldwarning'>[src] already has such bodypart.</span>")

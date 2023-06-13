@@ -67,8 +67,8 @@ GLOBAL_LIST_INIT(spider_last, world.file2list("strings/names/spider_last.txt"))
 	species_head = /obj/item/bodypart/head/rachnid
 	species_l_arm = /obj/item/bodypart/l_arm/rachnid
 	species_r_arm = /obj/item/bodypart/r_arm/rachnid
-	species_l_leg = /obj/item/bodypart/l_leg/rachnid
-	species_r_leg = /obj/item/bodypart/r_leg/rachnid
+	species_l_leg = /obj/item/bodypart/leg/left/rachnid
+	species_r_leg = /obj/item/bodypart/leg/right/rachnid
 
 /proc/random_unique_spider_name(attempts_to_find_unique_name=10)
 	for(var/i in 1 to attempts_to_find_unique_name)

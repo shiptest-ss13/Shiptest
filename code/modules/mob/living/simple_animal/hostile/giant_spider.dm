@@ -53,6 +53,7 @@
 	gold_core_spawnable = HOSTILE_SPAWN
 	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_VISIBLE
 	footstep_type = FOOTSTEP_MOB_CLAW
+	mob_size = MOB_SIZE_LARGE
 	var/playable_spider = FALSE
 	var/datum/action/innate/spider/lay_web/lay_web
 	var/directive = "" //Message passed down to children, to relay the creator's orders
@@ -164,11 +165,11 @@
 	icon_state = "hunter"
 	icon_living = "hunter"
 	icon_dead = "hunter_dead"
-	maxHealth = 120
-	health = 120
+	maxHealth = 80
+	health = 80
 	melee_damage_lower = 10
 	melee_damage_upper = 20
-	poison_per_bite = 10
+	poison_per_bite = 5
 	move_to_delay = 5
 	gold_core_spawnable = NO_SPAWN
 
@@ -181,9 +182,9 @@
 	icon_dead = "viper_dead"
 	maxHealth = 40
 	health = 40
-	melee_damage_lower = 1
-	melee_damage_upper = 1
-	poison_per_bite = 12
+	melee_damage_lower = 3
+	melee_damage_upper = 8
+	poison_per_bite = 2
 	move_to_delay = 4
 	poison_type = /datum/reagent/toxin/venom //all in venom, glass cannon. you bite 5 times and they are DEFINITELY dead, but 40 health and you are extremely obvious. Ambush, maybe?
 	speed = 1
@@ -195,15 +196,14 @@
 	icon_state = "tarantula"
 	icon_living = "tarantula"
 	icon_dead = "tarantula_dead"
-	maxHealth = 300 // woah nelly
-	health = 300
-	melee_damage_lower = 35
-	melee_damage_upper = 40
+	maxHealth = 150 // woah nelly
+	health = 150
+	melee_damage_lower = 25
+	melee_damage_upper = 35
 	poison_per_bite = 0
 	move_to_delay = 8
-	speed = 7
+	speed = 9
 	status_flags = NONE
-	mob_size = MOB_SIZE_LARGE
 	gold_core_spawnable = NO_SPAWN
 	var/slowed_by_webs = FALSE
 

@@ -279,7 +279,7 @@
 
 /obj/item/clothing/accessory/armband
 	name = "red armband"
-	desc = "An fancy red armband!"
+	desc = "A fancy red armband!"
 	icon_state = "redband"
 	attachment_slot = null
 
@@ -288,33 +288,33 @@
 	desc = "An armband, worn by personnel authorized to act as a deputy of corporate security."
 
 /obj/item/clothing/accessory/armband/cargo
-	name = "cargo bay guard armband"
-	desc = "An armband, worn by the private security forces to display which department they're assigned to. This one is brown."
+	name = "brown armband"
+	desc = "A fancy brown armband!"
 	icon_state = "cargoband"
 
 /obj/item/clothing/accessory/armband/engine
-	name = "engineering guard armband"
-	desc = "An armband, worn by the private security forces to display which department they're assigned to. This one is orange with a reflective strip!"
+	name = "orange armband"
+	desc = "A fancy orange and yellow armband!"
 	icon_state = "engieband"
 
 /obj/item/clothing/accessory/armband/science
-	name = "science guard armband"
-	desc = "An armband, worn by the private security forces to display which department they're assigned to. This one is purple."
+	name = "purple armband"
+	desc = "A fancy purple armband!"
 	icon_state = "rndband"
 
 /obj/item/clothing/accessory/armband/hydro
-	name = "hydroponics guard armband"
-	desc = "An armband, worn by the private security forces to display which department they're assigned to. This one is green and blue."
+	name = "green and blue armband"
+	desc = "A fancy green and blue armband!"
 	icon_state = "hydroband"
 
 /obj/item/clothing/accessory/armband/med
-	name = "medical guard armband"
-	desc = "An armband, worn by the private security forces to display which department they're assigned to. This one is white."
+	name = "white armband"
+	desc = "A fancy white armband!"
 	icon_state = "medband"
 
 /obj/item/clothing/accessory/armband/medblue
-	name = "medical guard armband"
-	desc = "An armband, worn by the private security forces to display which department they're assigned to. This one is white and blue."
+	name = "white and blue armband"
+	desc = "A fancy white and blue armband!"
 	icon_state = "medblueband"
 
 //////////////

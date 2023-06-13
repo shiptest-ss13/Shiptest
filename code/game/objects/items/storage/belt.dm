@@ -2,7 +2,7 @@
 	name = "belt"
 	desc = "Can hold various things."
 	icon = 'icons/obj/clothing/belts.dmi'
-	icon_state = "utilitybelt"
+	icon_state = "utility"
 	item_state = "utility"
 	lefthand_file = 'icons/mob/inhands/equipment/belt_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/belt_righthand.dmi'
@@ -31,7 +31,7 @@
 /obj/item/storage/belt/utility
 	name = "toolbelt" //Carn: utility belt is nicer, but it bamboozles the text parsing.
 	desc = "Holds tools."
-	icon_state = "utilitybelt"
+	icon_state = "utility"
 	item_state = "utility"
 	content_overlays = TRUE
 	custom_price = 350
@@ -68,6 +68,10 @@
 		/obj/item/pipe_dispenser,
 		/obj/item/inducer,
 		/obj/item/plunger,
+		/obj/item/airlock_painter,
+		/obj/item/decal_painter,
+		/obj/item/floor_painter,
+		/obj/item/chisel,
 		/obj/item/clothing/glasses/welding, //WS edit: ok mald sure I'll add the welding stuff to the. ok.
 		/obj/item/clothing/mask/gas/welding,
 		/obj/item/clothing/head/welding //WS end
@@ -76,7 +80,7 @@
 /obj/item/storage/belt/utility/chief
 	name = "\improper Chief Engineer's toolbelt" //"the Chief Engineer's toolbelt", because "Chief Engineer's toolbelt" is not a proper noun
 	desc = "Holds tools, looks snazzy."
-	icon_state = "utilitybelt_ce"
+	icon_state = "utility_ce"
 	item_state = "utility_ce"
 
 /obj/item/storage/belt/utility/chief/full/PopulateContents()
@@ -147,7 +151,7 @@
 /obj/item/storage/belt/medical
 	name = "medical belt"
 	desc = "Can hold various medical equipment."
-	icon_state = "medicalbelt"
+	icon_state = "medical"
 	item_state = "medical"
 
 /obj/item/storage/belt/medical/webbing
@@ -246,7 +250,7 @@
 /obj/item/storage/belt/security
 	name = "security belt"
 	desc = "Can hold security gear like handcuffs and flashes."
-	icon_state = "securitybelt"
+	icon_state = "security"
 	item_state = "security"//Could likely use a better one.
 	content_overlays = TRUE
 
@@ -376,8 +380,8 @@
 /obj/item/storage/belt/soulstone
 	name = "soul stone belt"
 	desc = "Designed for ease of access to the shards during a fight, as to not let a single enemy spirit slip away."
-	icon_state = "soulstonebelt"
-	item_state = "soulstonebelt"
+	icon_state = "soulstone"
+	item_state = "soulstone"
 
 /obj/item/storage/belt/soulstone/ComponentInitialize()
 	. = ..()
@@ -402,8 +406,8 @@
 /obj/item/storage/belt/champion
 	name = "championship belt"
 	desc = "Proves to the world that you are the strongest!"
-	icon_state = "championbelt"
-	item_state = "championbelt"
+	icon_state = "champion"
+	item_state = "champion"
 	custom_materials = list(/datum/material/gold=400)
 
 /obj/item/storage/belt/champion/ComponentInitialize()
@@ -481,8 +485,8 @@
 	name = "agent belt"
 	desc = "A belt used by abductor agents."
 	icon = 'icons/obj/abductor.dmi'
-	icon_state = "belt"
-	item_state = "security"
+	icon_state = "grenadebeltnew"
+	item_state = "grenadebeltnew"
 
 /obj/item/storage/belt/military/abductor/full/PopulateContents()
 	new /obj/item/screwdriver/abductor(src)
@@ -497,13 +501,13 @@
 	name = "army belt"
 	desc = "A belt used by military forces."
 	icon_state = "grenadebeltold"
-	item_state = "security"
+	item_state = "grenadebeltol"
 
 /obj/item/storage/belt/military/assault
 	name = "assault belt"
 	desc = "A tactical assault belt."
-	icon_state = "assaultbelt"
-	item_state = "security"
+	icon_state = "assault"
+	item_state = "assault"
 
 /obj/item/storage/belt/military/assault/minutemen/PopulateContents()
 	for(var/i in 1 to 6)
@@ -518,7 +522,7 @@
 	name = "grenadier belt"
 	desc = "A belt for holding grenades."
 	icon_state = "grenadebeltnew"
-	item_state = "security"
+	item_state = "grenadebeltnew"
 
 /obj/item/storage/belt/grenade/ComponentInitialize()
 	. = ..()
@@ -557,8 +561,8 @@
 /obj/item/storage/belt/wands
 	name = "wand belt"
 	desc = "A belt designed to hold various rods of power. A veritable fanny pack of exotic magic."
-	icon_state = "soulstonebelt"
-	item_state = "soulstonebelt"
+	icon_state = "soulstone"
+	item_state = "soulstone"
 
 /obj/item/storage/belt/wands/ComponentInitialize()
 	. = ..()
@@ -583,8 +587,8 @@
 /obj/item/storage/belt/janitor
 	name = "janibelt"
 	desc = "A belt used to hold most janitorial supplies."
-	icon_state = "janibelt"
-	item_state = "janibelt"
+	icon_state = "jani"
+	item_state = "jani"
 
 /obj/item/storage/belt/janitor/ComponentInitialize()
 	. = ..()
@@ -598,6 +602,7 @@
 		/obj/item/reagent_containers/spray,
 		/obj/item/soap,
 		/obj/item/holosign_creator,
+		/obj/item/clothing/suit/caution,
 		/obj/item/forcefield_projector,
 		/obj/item/key/janitor,
 		/obj/item/clothing/gloves,
@@ -617,8 +622,8 @@
 /obj/item/storage/belt/plant
 	name = "botanical belt"
 	desc = "A belt used to hold most hydroponics supplies. Suprisingly, not green."
-	icon_state = "plantbelt"
-	item_state = "plantbelt"
+	icon_state = "plant"
+	item_state = "plant"
 	content_overlays = TRUE
 
 /obj/item/storage/belt/plant/ComponentInitialize()
@@ -777,9 +782,59 @@
 	new /obj/item/melee/sabre(src)
 	update_icon()
 
+/obj/item/storage/belt/solgov
+	name = "solarian sabre sheath"
+	desc = "An ornate sheath designed to hold an officer's blade."
+	icon_state = "sheath-solgov"
+	item_state = "sheath-solgov"
+	w_class = WEIGHT_CLASS_BULKY
+
+/obj/item/storage/belt/solgov/ComponentInitialize()
+	. = ..()
+	AddElement(/datum/element/update_icon_updates_onmob)
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 1
+	STR.use_sound = null
+	STR.max_w_class = WEIGHT_CLASS_BULKY
+	STR.set_holdable(list(
+		/obj/item/melee/sabre/solgov
+		))
+
+/obj/item/storage/belt/solgov/examine(mob/user)
+	. = ..()
+	if(length(contents))
+		. += "<span class='notice'>Alt-click it to quickly draw the blade.</span>"
+
+/obj/item/storage/belt/solgov/AltClick(mob/user)
+	if(!iscarbon(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
+		return
+	if(length(contents))
+		var/obj/item/I = contents[1]
+		user.visible_message("<span class='notice'>[user] takes [I] out of [src].</span>", "<span class='notice'>You take [I] out of [src].</span>")
+		user.put_in_hands(I)
+		update_icon()
+	else
+		to_chat(user, "<span class='warning'>[src] is empty!</span>")
+
+/obj/item/storage/belt/solgov/update_icon_state()
+	icon_state = "sheath-solgov"
+	item_state = "sheath-solgov"
+	if(contents.len)
+		icon_state += "-sabre"
+		item_state += "-sabre"
+
+/obj/item/storage/belt/solgov/PopulateContents()
+	new /obj/item/melee/sabre/solgov(src)
+	update_icon()
+
 /obj/item/storage/belt/security/webbing/inteq
 	name = "inteq webbing"
 	desc = "A set of tactical webbing for operators of the IRMG, can hold security gear."
 	icon_state = "inteq_webbing"
 	item_state = "inteq_webbing"
-	content_overlays = FALSE
+
+/obj/item/storage/belt/security/webbing/inteq/alt
+	name = "inteq drop pouch harness"
+	desc = "A harness with a bunch of pouches attached to them emblazoned in the colors of the IRMG, can hold security gear."
+	icon_state = "inteq_droppouch"
+	item_state = "inteq_droppouch"

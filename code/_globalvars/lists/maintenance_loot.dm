@@ -143,7 +143,7 @@ GLOBAL_LIST_INIT(common_loot, list( //common: basic items
 		/obj/item/tank/internals/emergency_oxygen = 1,
 		/obj/item/bodybag = 1,
 		/obj/item/grenade/smokebomb = 1,
-		/obj/item/stack/spacecash/c10 = 1,
+		/obj/item/spacecash/bundle/pocketchange = 1,
 		/obj/item/stack/tape = 1,
 
 		//light sources

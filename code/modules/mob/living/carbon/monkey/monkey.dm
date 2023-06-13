@@ -20,8 +20,8 @@
 		/obj/item/bodypart/head/monkey,
 		/obj/item/bodypart/l_arm/monkey,
 		/obj/item/bodypart/r_arm/monkey,
-		/obj/item/bodypart/r_leg/monkey,
-		/obj/item/bodypart/l_leg/monkey,
+		/obj/item/bodypart/leg/right/monkey,
+		/obj/item/bodypart/leg/left/monkey,
 		)
 	hud_type = /datum/hud/monkey
 	melee_damage_lower = 1
@@ -52,6 +52,7 @@
 	create_dna(src)
 	dna.initialize_dna(random_blood_type())
 	AddComponent(/datum/component/footstep, FOOTSTEP_MOB_BAREFOOT, 1, -6)
+	AddComponent(/datum/component/bloodysoles/feet)
 
 /mob/living/carbon/monkey/Destroy()
 	SSmobs.cubemonkeys -= src

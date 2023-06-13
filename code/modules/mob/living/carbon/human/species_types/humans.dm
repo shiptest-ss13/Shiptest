@@ -15,6 +15,19 @@
 /datum/species/human/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load)
 	if(C.dna.features["ears"] == "Cat")
 		mutantears = /obj/item/organ/ears/cat
+	if(C.dna.features["ears"] == "Fox")
+		mutantears = /obj/item/organ/ears/fox
 	if(C.dna.features["tail_human"] == "Cat")
 		mutant_organs |= /obj/item/organ/tail/cat
+	if(C.dna.features["tail_human"] == "Fox")
+		mutant_organs |= /obj/item/organ/tail/fox
 	return ..()
+
+/datum/species/human/spec_death(gibbed, mob/living/carbon/human/H)
+	if(H)
+		stop_wagging_tail(H)
+
+/datum/species/human/spec_stun(mob/living/carbon/human/H,amount)
+	if(H)
+		stop_wagging_tail(H)
+	. = ..()

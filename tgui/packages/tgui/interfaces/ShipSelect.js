@@ -49,6 +49,10 @@ export const ShipSelect = (props, context) => {
             buttons={
               <Button
                 content="Purchase Ship"
+                tooltip={
+                  data.purchaseBanned && 'You are banned from purchasing ships.'
+                }
+                disabled={data.purchaseBanned}
                 onClick={() => {
                   setTab(3);
                 }}
@@ -93,6 +97,9 @@ export const ShipSelect = (props, context) => {
                 </LabeledList.Item>
                 <LabeledList.Item label="Ship Join Status">
                   {selectedShip.joinMode}
+                </LabeledList.Item>
+                <LabeledList.Item label="Ship Description">
+                  {selectedShip.desc || 'No Description'}
                 </LabeledList.Item>
                 <LabeledList.Item label="Ship Memo">
                   {selectedShip.memo || 'No Memo'}
@@ -175,7 +182,7 @@ export const ShipSelect = (props, context) => {
               >
                 <LabeledList>
                   <LabeledList.Item label="Description">
-                    {template.description || 'No Description'}
+                    {template.desc || 'No Description'}
                   </LabeledList.Item>
                   <LabeledList.Item label="Crew">
                     {template.crewCount}

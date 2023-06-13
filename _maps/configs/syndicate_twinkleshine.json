@@ -1,34 +1,45 @@
 {
 	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"prefix": "SSV",
+	"namelists": ["GORLEX", "SPACE", "ACLF"],
 	"map_name": "Twinkleshine-class Battle Cruiser",
 	"map_short_name": "Twinkleshine-class",
 	"map_path": "_maps/shuttles/shiptest/syndicate_twinkleshine.dmm",
 	"job_slots": {
 		"Captain": {
-			"outfit": "/datum/outfit/syndicate_empty/sbc/assault/captain",
+			"outfit": "/datum/outfit/job/captain/syndicate/sbc",
 			"officer": true,
 			"slots": 1
 		},
-		"Operative": {
-			"outfit": "/datum/outfit/syndicate_empty/sbc/assault/operative",
+		"Lieutenant": {
+			"outfit": "/datum/outfit/job/warden/syndicate/sbc",
 			"officer": true,
 			"slots": 1
 		},
 		"Medic": {
-			"outfit": "/datum/outfit/syndicate_empty/sbc/med",
+			"outfit": "/datum/outfit/job/brig_phys/syndicate/sbc",
 			"slots": 2
 		},
-		"Mechanic": {
-			"outfit": "/datum/outfit/syndicate_empty/sbc/engi",
+		"Engineer": {
+			"outfit": "/datum/outfit/job/engineer/syndicate/sbc",
 			"slots": 2
 		},
-		"Trooper": {
-			"outfit": "/datum/outfit/syndicate_empty/sbc/assault",
+		"Operative": {
+			"outfit": "/datum/outfit/job/security/syndicate/sbc",
 			"slots": 5
 		},
+		"Bartender": {
+			"outfit": "/datum/outfit/job/bartender/syndicate/sbc",
+			"slots": 1
+		},
+		"Miner": {
+			"outfit": "/datum/outfit/job/miner/syndicate/sbc",
+			"slots": 1
+		},
 		"Deck Assistant": {
-			"outfit": "/datum/outfit/syndicate_empty/sbc",
+			"outfit": "/datum/outfit/job/assistant/syndicate/sbc",
 			"slots": 2
 		}
-	}
+	},
+	"enabled" : false
 }
