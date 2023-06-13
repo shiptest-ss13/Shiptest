@@ -542,7 +542,7 @@
 	icon_state = "poster-cardinal-1"
 
 /obj/structure/sign/poster/contraband/cardinal_port_starboard
-	name = "Captain Cardinal port and starbird"
+	name = "Captain Cardinal Port and Starbird"
 	desc = "Captain Cardinal would like to remind you that the left of the ship is port, and the right of the ship is starBIRD! Get it, right?"
 	icon_state = "poster-cardinal-2"
 
