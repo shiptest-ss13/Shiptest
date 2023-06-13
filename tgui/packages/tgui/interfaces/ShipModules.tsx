@@ -16,18 +16,18 @@ type ModuleData = {
 
 export const ShipModules = (_: any, context: any) => {
   const { data } = useBackend<ShipModulesData>(context);
-  let active_modules: ModuleData[] = [];
-  let inactive_modules: ModuleData[] = [];
-
-  for (let module of data.modules) {
-    if (module.enabled) {
-      active_modules.push(module);
-    } else {
-      inactive_modules.push(module);
-    }
-  }
 
   const [tab, setTab] = useLocalState(context, 'tab', 'active');
+
+  let rendering: ModuleData[] = [];
+  for (let module of data.modules) {
+    if (module.enabled && tab === 'active') {
+      rendering.push(module);
+    }
+    if (!module.enabled && tab === 'disabled') {
+      rendering.push(module);
+    }
+  }
 
   return (
     <Window title="Ship Modules" width={400} height={400}>
@@ -52,20 +52,12 @@ export const ShipModules = (_: any, context: any) => {
           }
         >
           <Stack fill vertical>
-            {tab === 'active' && active_modules.length === 0 && (
-              <NoticeBox>There are no active modules on this ship.</NoticeBox>
-            )}
-            {tab === 'disabled' && inactive_modules.length === 0 && (
-              <NoticeBox>There are no disabled modules on this ship.</NoticeBox>
-            )}
-            {tab === 'active' &&
-              active_modules.map((module) => (
-                <Module key={module.ref} module={module} />
-              ))}
-            {tab === 'disabled' &&
-              inactive_modules.map((module) => (
-                <Module key={module.ref} module={module} />
-              ))}
+            {(rendering.length === 0 && (
+              <NoticeBox>
+                There are no {tab === 'active' ? 'active' : 'disabled'} modules.
+              </NoticeBox>
+            )) ||
+              rendering.map((module, i) => <Module key={i} module={module} />)}
           </Stack>
         </Section>
       </Window.Content>

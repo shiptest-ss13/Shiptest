@@ -128,10 +128,6 @@
 /datum/overmap/ship/controlled/get_jump_to_turf()
 	return get_turf(shuttle_port)
 
-/mob/verb/debug_shit()
-	usr.put_in_hands(new /obj/item/ship_module_card/hyper_drive)
-	new /obj/machinery/computer/ship_modules(get_turf(src))
-
 /datum/overmap/ship/controlled/proc/install_module(datum/ship_module/module_path)
 	if(!ispath(module_path))
 		return MODULE_INSTALL_PATH_INVALID
