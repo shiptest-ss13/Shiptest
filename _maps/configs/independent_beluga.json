@@ -1,0 +1,38 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Beluga-Class Transport",
+	"prefix": "ISV",
+	"namelists": ["CRUISE", "NATURAL"],
+	"map_short_name": "Beluga-class",
+	"map_path": "_maps/shuttles/shiptest/independent_beluga.dmm",
+	"limit": 2,
+	"roundstart": true,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/captain",
+			"officer": true,
+			"slots": 1
+		},
+		"First Officer": {
+			"outfit": "/datum/outfit/job/head_of_personnel/beluga",
+			"officer": true,
+			"slots": 1
+		},
+		"Mechanic": {
+			"outfit": "/datum/outfit/job/engineer",
+			"slots": 1
+		},
+		"Private Security Officer": {
+			"outfit": "/datum/outfit/job/security/inteq/beluga",
+			"slots": 2
+		},
+		"High-Class Passenger": {
+			"outfit": "/datum/outfit/job/lawyer/passenger",
+			"slots" : 4
+		},
+		"Bartender": 1,
+		"Janitor": 1,
+		"Assistant": 2
+	},
+	"enabled": true
+}
