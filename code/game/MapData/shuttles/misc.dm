@@ -19,6 +19,15 @@
 	icon_state = "engineering"
 	build_path = /obj/machinery/power/port_gen/pacman/super/not_very
 
+/obj/structure/salvageable/protolathe/reployer
+	name = "reployer"
+	desc = "It's a reployer, come on, you KNOW what this does."
+
+/obj/item/circuitboard/machine/autolathe/reployer
+	name = "Reployer (Machine Board)"
+	icon_state= "generic"
+	build_path = /obj/structure/salvageable/protolathe/reployer
+
 /turf/open/floor/plating/conf_haz
 	initial_gas_mix = "n2=104;TEMP=293.15"
 

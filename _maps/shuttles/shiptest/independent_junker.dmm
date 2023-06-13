@@ -622,7 +622,9 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "kj" = (
-/obj/structure/closet/secure_closet/personal,
+/obj/structure/closet/secure_closet/personal{
+	req_access = list(10)
+	},
 /obj/item/stack/sheet/metal/five,
 /obj/item/circuitboard/machine/paystand,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -661,17 +663,18 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/glass,
 /obj/item/stack/tape/industrial/electrical,
-/obj/structure/closet/firecloset/wall{
-	dir = 4;
-	name = "emergency repair kit";
-	pixel_x = -27
-	},
 /obj/item/stack/tape/industrial,
 /obj/item/wirecutters/old,
 /obj/item/clothing/mask/gas,
 /obj/item/reagent_containers/glass/bottle/welding_fuel{
 	desc = "A small bottle. Pour on engine in case of emergency."
 	},
+/obj/structure/closet/firecloset/empty{
+	req_access = list(10);
+	name = "emergency repair closet";
+	desc = "It's a storage unit for repair supplies."
+	},
+/obj/item/extinguisher/mini,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "ls" = (
@@ -1085,7 +1088,6 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/closet/crate/radiation,
 /obj/item/clothing/head/radiation,
 /obj/item/clothing/suit/radiation,
 /obj/item/clothing/head/radiation,
@@ -1093,6 +1095,7 @@
 /obj/item/geiger_counter,
 /obj/item/geiger_counter,
 /obj/machinery/light/small/directional/east,
+/obj/structure/closet/crate/secure/engineering,
 /turf/open/floor/pod/dark,
 /area/ship/storage/eva)
 "ua" = (
@@ -1238,6 +1241,11 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/effect/spawner/lootdrop/maintenance/eight,
+/obj/structure/safe/floor{
+	number_of_tumblers = 5
+	},
+/obj/item/card/id/captains_spare,
+/obj/item/circuitboard/machine/autolathe/reployer,
 /turf/open/floor/plating/rust,
 /area/ship/engineering/electrical)
 "wi" = (
@@ -1759,7 +1767,9 @@
 /turf/open/floor/pod/dark,
 /area/ship/crew/office)
 "Gq" = (
-/obj/structure/closet/secure_closet/freezer/kitchen/maintenance,
+/obj/structure/closet/secure_closet/freezer/kitchen/maintenance{
+	req_access = list(10)
+	},
 /obj/machinery/light_switch{
 	dir = 4;
 	pixel_x = -20;
@@ -1795,12 +1805,15 @@
 /area/ship/storage/eva)
 "Hj" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/toolcloset,
 /obj/effect/spawner/lootdrop/maintenance/two,
 /obj/item/decal_painter,
 /obj/item/storage/box/mousetraps,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
+	},
+/obj/structure/closet/toolcloset{
+	secure = 1;
+	req_access_txt = "10"
 	},
 /turf/open/floor/plating,
 /area/ship/storage)
@@ -2124,9 +2137,6 @@
 /area/ship/maintenance/starboard)
 "Og" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/salvageable/protolathe{
-	name = "reployer"
-	},
 /obj/item/stack/cable_coil/cut/red{
 	pixel_x = -15;
 	pixel_y = -8
@@ -2156,6 +2166,7 @@
 	pixel_y = 17;
 	pixel_x = 10
 	},
+/obj/structure/salvageable/protolathe/reployer,
 /turf/open/floor/pod/dark,
 /area/ship/crew/office)
 "Ol" = (
