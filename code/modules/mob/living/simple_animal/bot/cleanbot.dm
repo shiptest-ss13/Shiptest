@@ -306,7 +306,6 @@
 		target_types = list(
 		/mob/living/simple_animal/hostile/cockroach,
 		/mob/living/simple_animal/mouse,
-		/obj/effect/decal/cleanable/ants,
 		)
 
 	if(drawn)
