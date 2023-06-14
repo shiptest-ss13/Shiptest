@@ -148,3 +148,13 @@
 	tastes = list("egg" = 1, "bacon" = 1, "bun" = 1)
 
 	foodtype = MEAT | BREAKFAST | GRAIN
+
+/obj/item/reagent_containers/food/snacks/eggrolls
+	name = "eggrolls"
+	desc = "A core of fried eggs, packed into rice with a layer of seaweed protecting the inner sweetness"
+	icon_state = "eggroll"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 1)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 5)
+	filling_color = "#d3ceba"
+	tastes = list("rice" = 1, "dried seaweed" = 1, "eggs" = 1)
+	foodtype = BREAKFAST | FRIED

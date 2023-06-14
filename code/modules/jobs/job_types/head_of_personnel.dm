@@ -126,6 +126,15 @@
 	r_pocket = /obj/item/kitchen/knife/combat/survival
 	glasses = /obj/item/clothing/glasses/sunglasses
 
+/datum/outfit/job/head_of_personnel/beluga
+
+	uniform = /obj/item/clothing/under/rank/command/head_of_personnel
+	glasses = /obj/item/clothing/glasses/sunglasses/big
+	shoes = /obj/item/clothing/shoes/cowboy/fancy
+	head = /obj/item/clothing/head/beret/hop
+	backpack_contents = list(/obj/item/storage/box/ids=1,\
+		/obj/item/melee/classic_baton/telescopic=1, /obj/item/modular_computer/tablet/preset/advanced = 1)
+
 /datum/outfit/job/head_of_personnel/frontiersmen
 	name = "Bridge Officer (frontiersmen)"
 
@@ -137,3 +146,4 @@
 	r_pocket = /obj/item/kitchen/knife/combat/survival
 	glasses = /obj/item/clothing/glasses/sunglasses
 	suit = /obj/item/clothing/suit/armor/vest/bulletproof/frontier
+
