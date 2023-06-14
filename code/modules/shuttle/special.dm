@@ -181,43 +181,12 @@
 	else
 		status_flags &= ~GODMODE
 
-// Bar table, a wooden table that kicks you in a direction if you're not
-// barstaff (defined as someone who was a roundstart bartender or someone
-// with CENTCOM_BARSTAFF)
+// Bar table, a wooden table that used to throw you but now doesn't
+// because ruin mappers cannot be trusted.
 
 /obj/structure/table/wood/bar
-	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
-	flags_1 = NODECONSTRUCT_1
-	max_integrity = 1000
-	var/boot_dir = 1
-
-/obj/structure/table/wood/bar/Initialize()
-	. = ..()
-	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered
-	)
-	AddElement(/datum/element/connect_loc, loc_connections)
-
-/obj/structure/table/wood/bar/proc/on_entered(datum/source, atom/movable/AM)
-	SIGNAL_HANDLER
-	if(isliving(AM) && !is_barstaff(AM))
-		// No climbing on the bar please
-		var/mob/living/M = AM
-		var/throwtarget = get_edge_target_turf(src, boot_dir)
-		M.Paralyze(40)
-		M.throw_at(throwtarget, 5, 1)
-		to_chat(M, "<span class='notice'>No climbing on the bar please.</span>")
-
-/obj/structure/table/wood/bar/proc/is_barstaff(mob/living/user)
-	. = FALSE
-	if(ishuman(user))
-		var/mob/living/carbon/human/H = user
-		if(H.mind && H.mind.assigned_role == "Bartender")
-			return TRUE
-
-	var/obj/item/card/id/ID = user.get_idcard(FALSE)
-	if(ID && (ACCESS_CENT_BAR in ID.access))
-		return TRUE
+	name = "bar table"
+	desc = "A table used in bars."
 
 //Luxury Shuttle Blockers
 
