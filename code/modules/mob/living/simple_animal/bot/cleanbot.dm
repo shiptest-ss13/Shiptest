@@ -287,23 +287,38 @@
 		/obj/effect/decal/cleanable/greenglow,
 		/obj/effect/decal/cleanable/dirt,
 		/obj/effect/decal/cleanable/insectguts,
-		/obj/effect/decal/remains
+		/obj/effect/decal/cleanable/generic,
+		/obj/effect/decal/cleanable/shreds,
+		/obj/effect/decal/cleanable/glass,
+		/obj/effect/decal/cleanable/wrapping,
+		/obj/effect/decal/cleanable/glitter,
+		/obj/effect/decal/cleanable/confetti,
+		/obj/effect/decal/remains,
 		)
 
 	if(blood)
-		target_types += /obj/effect/decal/cleanable/xenoblood
-		target_types += /obj/effect/decal/cleanable/blood
+		target_types = list(
+		/obj/effect/decal/cleanable/xenoblood,
+		/obj/effect/decal/cleanable/blood,
+		)
 
 	if(pests)
-		target_types += /mob/living/simple_animal/hostile/cockroach
-		target_types += /mob/living/simple_animal/mouse
+		target_types = list(
+		/mob/living/simple_animal/hostile/cockroach,
+		/mob/living/simple_animal/mouse,
+		/obj/effect/decal/cleanable/ants,
+		)
 
 	if(drawn)
-		target_types += /obj/effect/decal/cleanable/crayon
+		target_types = list(
+		/obj/effect/decal/cleanable/crayon,
+		)
 
 	if(trash)
-		target_types += /obj/item/trash
-		target_types += /obj/item/reagent_containers/food/snacks/deadmouse
+		target_types = list(
+		/obj/item/trash,
+		/obj/item/reagent_containers/food/snacks/deadmouse,
+		)
 
 	target_types = typecacheof(target_types)
 
