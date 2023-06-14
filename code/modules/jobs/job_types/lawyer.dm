@@ -37,3 +37,13 @@
 	neck = /obj/item/clothing/neck/tie/blue
 	l_hand = /obj/item/clipboard
 	r_pocket = /obj/item/pen/fountain
+
+/datum/outfit/job/lawyer/passenger
+	uniform = /obj/item/clothing/under/suit/black
+	suit = null
+	ears = /obj/item/radio/headset/headset_cent
+	neck = null
+	glasses = /obj/item/clothing/glasses/sunglasses/big
+	l_hand = null
+	r_pocket = /obj/item/spacecash/bundle/mediumrand
+
