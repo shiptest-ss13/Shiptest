@@ -98,15 +98,15 @@ export const ShipSelect = (props, context) => {
                 <LabeledList.Item label="Ship Join Status">
                   {selectedShip.joinMode}
                 </LabeledList.Item>
+                <LabeledList.Item label="Ship Memo">
+                  {selectedShip.memo || 'No Memo'}
+                </LabeledList.Item>
                 <LabeledList.Item label="Ship Description">
                   {selectedShip.desc || 'No Description'}
                 </LabeledList.Item>
                 <LabeledList.Item label="Ship Tags">
                   {(selectedShip.tags && selectedShip.tags.join(', ')) ||
                     'No Tags Set'}
-                </LabeledList.Item>
-                <LabeledList.Item label="Ship Memo">
-                  {selectedShip.memo || 'No Memo'}
                 </LabeledList.Item>
               </LabeledList>
             </Section>
