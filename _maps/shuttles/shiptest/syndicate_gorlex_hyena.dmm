@@ -1063,11 +1063,11 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/structure/sign/poster/contraband/syndicate_recruitment{
-	pixel_y = -32
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
+	},
+/obj/machinery/turretid/lethal{
+	pixel_y = -24
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -2237,7 +2237,7 @@
 /area/ship/maintenance/port)
 "Ln" = (
 /obj/structure/closet/emcloset/wall{
-	pixel_y = 32
+	pixel_y = 28
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono/dark,

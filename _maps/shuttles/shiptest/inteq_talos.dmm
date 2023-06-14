@@ -7040,10 +7040,8 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/starboard)
 "Us" = (
-/obj/machinery/turretid{
-	pixel_y = 32;
-	req_access = null;
-	req_one_access = list(19,3)
+/obj/machinery/turretid/lethal{
+	pixel_y = 32
 	},
 /turf/open/floor/carpet/orange,
 /area/ship/bridge)

@@ -4145,12 +4145,6 @@
 	dir = 8
 	},
 /obj/machinery/light/directional/north,
-/obj/machinery/turretid{
-	pixel_y = 32;
-	req_access = null;
-	req_access_txt = "58";
-	lethal = 1
-	},
 /obj/structure/table/reinforced,
 /obj/item/storage/fancy/cigarettes/cigars/havana,
 /obj/item/lighter{
@@ -4159,6 +4153,9 @@
 /obj/item/toy/figure/vanguard{
 	pixel_x = -10;
 	pixel_y = 5
+	},
+/obj/machinery/turretid/lethal{
+	pixel_y = 32
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
