@@ -252,7 +252,7 @@
 /obj/item/storage/toolbox/ammo/a308/PopulateContents()
 	name = "ammo can (.308)"
 	for (var/i in 1 to 4)
-		new /obj/item/ammo_box/a308
+		new /obj/item/ammo_box/a308(src)
 
 /obj/item/storage/toolbox/ammo/c45/PopulateContents()
 	name = "ammo can (.45)"
