@@ -5,7 +5,8 @@
 	icon_state = "chem_jug"
 	item_state = "sheet-plastic"
 	w_class = WEIGHT_CLASS_BULKY
-	throw_range = 3
+	reagent_flags = REFILLABLE | DUNKABLE
+	throw_range = 2
 	volume = 150
 	amount_per_transfer_from_this = 25
 	possible_transfer_amounts = list(25,50,75,100,150)
@@ -101,5 +102,3 @@
 	name = "jug of sulfur"
 	icon_state = "chem_jug_sulfur"
 	list_reagents = list(/datum/reagent/sulfur = 150)
-
-
