@@ -13,7 +13,7 @@
 	model = "Cleanbot"
 	bot_core_type = /obj/machinery/bot_core/cleanbot
 	window_id = "autoclean"
-	window_name = "Automatic Station Cleaner v1.4"
+	window_name = "Automatic Environment Cleaner v1.4"
 	pass_flags = PASSMOB
 	path_image_color = "#993299"
 
