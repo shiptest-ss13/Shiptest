@@ -623,7 +623,7 @@
 /area/ship/maintenance/port)
 "kj" = (
 /obj/structure/closet/secure_closet/personal{
-	req_access = list(10)
+	req_access = list(11)
 	},
 /obj/item/stack/sheet/metal/five,
 /obj/item/circuitboard/machine/paystand,
@@ -670,9 +670,9 @@
 	desc = "A small bottle. Pour on engine in case of emergency."
 	},
 /obj/structure/closet/firecloset/empty{
-	req_access = list(10);
 	name = "emergency repair closet";
-	desc = "It's a storage unit for repair supplies."
+	desc = "It's a storage unit for repair supplies.";
+	req_access_txt = "10"
 	},
 /obj/item/extinguisher/mini,
 /turf/open/floor/plating,
@@ -941,7 +941,8 @@
 "sh" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/components/unary/shuttle/heater{
-	dir = 1
+	dir = 1;
+	CanAtmosPass = 0
 	},
 /turf/open/floor/pod/light,
 /area/ship/maintenance/aft)
@@ -1095,7 +1096,9 @@
 /obj/item/geiger_counter,
 /obj/item/geiger_counter,
 /obj/machinery/light/small/directional/east,
-/obj/structure/closet/crate/secure/engineering,
+/obj/structure/closet/crate/secure/engineering{
+	req_access = list(11)
+	},
 /turf/open/floor/pod/dark,
 /area/ship/storage/eva)
 "ua" = (
@@ -1308,7 +1311,8 @@
 /area/ship/crew/canteen)
 "xr" = (
 /obj/machinery/atmospherics/components/unary/shuttle/heater{
-	dir = 1
+	dir = 1;
+	CanAtmosPass = 0
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
@@ -1768,7 +1772,7 @@
 /area/ship/crew/office)
 "Gq" = (
 /obj/structure/closet/secure_closet/freezer/kitchen/maintenance{
-	req_access = list(10)
+	req_access = list(11)
 	},
 /obj/machinery/light_switch{
 	dir = 4;
@@ -1813,7 +1817,7 @@
 	},
 /obj/structure/closet/toolcloset{
 	secure = 1;
-	req_access_txt = "10"
+	req_access = list(11)
 	},
 /turf/open/floor/plating,
 /area/ship/storage)
@@ -2273,15 +2277,14 @@
 /obj/structure/cable{
 	icon_state = "8-9"
 	},
-/obj/structure/closet/secure_closet/wall{
-	dir = 8;
-	pixel_x = 26;
-	name = "secure locker (Open in Case of Emergency)";
-	welded = 1
-	},
 /obj/item/gun/ballistic/automatic/pistol/disposable,
 /obj/item/reagent_containers/food/drinks/bottle/hooch,
 /obj/machinery/light/dim/directional/south,
+/obj/structure/closet/wall/blue{
+	dir = 8;
+	pixel_x = 32;
+	welded = 1
+	},
 /turf/open/floor/plating,
 /area/ship/bridge)
 "Rg" = (
