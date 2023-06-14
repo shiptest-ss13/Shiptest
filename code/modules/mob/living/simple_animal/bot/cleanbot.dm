@@ -297,24 +297,24 @@
 		)
 
 	if(blood)
-		target_types = list(
+		target_types += list(
 		/obj/effect/decal/cleanable/xenoblood,
 		/obj/effect/decal/cleanable/blood,
 		)
 
 	if(pests)
-		target_types = list(
+		target_types += list(
 		/mob/living/simple_animal/hostile/cockroach,
 		/mob/living/simple_animal/mouse,
 		)
 
 	if(drawn)
-		target_types = list(
+		target_types += list(
 		/obj/effect/decal/cleanable/crayon,
 		)
 
 	if(trash)
-		target_types = list(
+		target_types += list(
 		/obj/item/trash,
 		/obj/item/reagent_containers/food/snacks/deadmouse,
 		)
