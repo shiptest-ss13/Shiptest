@@ -454,7 +454,13 @@ The proc would return a human next to the bot to be set to the patient var.
 Pass the desired type path itself, declaring a temporary var beforehand is not required.
 */
 /mob/living/simple_animal/bot/proc/scan(scan_type, old_target, scan_range = DEFAULT_SCAN_RANGE)
-	var/list/adjacent = shuffle(view(1, src))
+	var/turf/T = get_turf(src)
+	if(!T)
+		return
+	var/list/adjacent = T.GetAtmosAdjacentTurfs()
+	if(shuffle)	//If we were on the same tile as another bot, let's randomize our choices so we dont both go the same way
+		adjacent = shuffle(adjacent)
+		shuffle = FALSE
 	for(var/scan in adjacent)//Let's see if there's something right next to us first!
 		if(check_bot(scan))	//Is there another bot there? Then let's just skip it
 			continue
