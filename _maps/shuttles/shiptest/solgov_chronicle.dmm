@@ -1054,6 +1054,9 @@
 	dir = 1
 	},
 /obj/machinery/light/small/directional/south,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/engineering)
 "kg" = (
@@ -4309,6 +4312,9 @@
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/effect/turf_decal/techfloor{
 	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
 	},
 /turf/open/floor/circuit/green,
 /area/ship/engineering)
