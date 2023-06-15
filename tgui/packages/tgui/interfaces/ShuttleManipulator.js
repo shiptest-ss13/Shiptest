@@ -150,11 +150,17 @@ export const ShuttleManipulatorTemplates = (props, context) => {
                 }
               >
                 {(!!actualTemplate.description ||
+                  !!actualTemplate.tags ||
                   !!actualTemplate.admin_notes) && (
                   <LabeledList>
                     {!!actualTemplate.description && (
                       <LabeledList.Item label="Description">
                         {actualTemplate.description}
+                      </LabeledList.Item>
+                    )}
+                    {!!actualTemplate.tags && (
+                      <LabeledList.Item label="Ship Tags">
+                        {actualTemplate.tags}
                       </LabeledList.Item>
                     )}
                     {!!actualTemplate.admin_notes && (

@@ -60,6 +60,20 @@ export const ShipEditor = (props, context) => {
               />
             </LabeledList.Item>
 
+            <LabeledList.Item label="Ship Tags">
+              <Input
+                value={data.templateTags}
+                width={20}
+                height={10}
+                placeholder={'No Tags Set'}
+                onChange={(e, value) =>
+                  act('SetTemplateTags', {
+                    new_template_tags: value,
+                  })
+                }
+              />
+            </LabeledList.Item>
+
             <LabeledList.Item label="Admin Panel Category">
               <Input
                 value={data.templateCategory}
