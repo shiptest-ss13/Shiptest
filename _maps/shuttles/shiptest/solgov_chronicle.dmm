@@ -102,7 +102,7 @@
 	dir = 6
 	},
 /obj/structure/cable{
-	icon_state = "1-2"
+	icon_state = "2-8"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/engineering)
@@ -173,6 +173,9 @@
 /obj/machinery/door/window/brigdoor/northright{
 	dir = 2;
 	req_one_access = list(61,11)
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 4
 	},
 /turf/open/floor/circuit,
 /area/ship/engineering)
@@ -1088,7 +1091,7 @@
 /area/ship/bridge)
 "kz" = (
 /obj/machinery/telecomms/hub{
-	autolinkers = list("solgov","BroadcasterA","RecieverA","solgovPDA");
+	autolinkers = list("solgov","broadcasterA","receiverA","solgovPDA");
 	network = "Most Serene Solar Commnet";
 	id = "Solgov Hub"
 	},
@@ -1459,19 +1462,22 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/structure/closet/crate/bin,
-/obj/effect/turf_decal/techfloor{
-	dir = 1
-	},
 /obj/effect/turf_decal/corner/opaque/solgovblue{
 	dir = 10
 	},
-/obj/item/trash/chips,
-/obj/structure/cable{
-	icon_state = "0-2"
+/obj/effect/turf_decal/techfloor{
+	dir = 8
 	},
-/obj/machinery/power/apc/auto_name/directional/north,
-/turf/open/floor/plasteel/white,
+/obj/machinery/door/window/brigdoor/northleft{
+	dir = 2;
+	req_one_access = list(61,11)
+	},
+/obj/machinery/telecomms/bus{
+	id = "Bussy The Bus Mainframe";
+	network = "Most Serene Solar Commnet";
+	autolinkers = list("processor7","solgov")
+	},
+/turf/open/floor/circuit,
 /area/ship/engineering)
 "oK" = (
 /obj/effect/turf_decal/box/corners{
@@ -1626,12 +1632,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
-"ru" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/closed/wall/mineral/titanium,
-/area/ship/cargo)
 "rw" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2667,7 +2667,7 @@
 /area/ship/crew/dorm)
 "AV" = (
 /obj/machinery/telecomms/processor{
-	autolinkers = list("sproingle");
+	autolinkers = list("processor7");
 	network = "Most Serene Solar Commnet";
 	pixel_y = 0
 	},
@@ -2677,6 +2677,7 @@
 	req_one_access = list(61,11)
 	},
 /obj/machinery/light/small/directional/west,
+/obj/effect/turf_decal/techfloor,
 /turf/open/floor/circuit/green,
 /area/ship/engineering)
 "AZ" = (
@@ -2786,7 +2787,7 @@
 /obj/machinery/door/airlock/solgov{
 	dir = 4;
 	name = "Captain's Quarters";
-	req_access = list(19)
+	req_access = list(20)
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2823,7 +2824,7 @@
 /obj/machinery/door/airlock/solgov{
 	dir = 4;
 	name = "Overseer's Quarters";
-	req_access = list(20)
+	req_access = list(57)
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -3174,9 +3175,6 @@
 	dir = 4
 	},
 /obj/machinery/navbeacon/wayfinding/tcomms,
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
 /turf/open/floor/plasteel/white,
 /area/ship/engineering)
 "GP" = (
@@ -3358,6 +3356,9 @@
 /obj/structure/sign/poster/solgov/random{
 	pixel_y = 30
 	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
 /turf/open/floor/circuit,
 /area/ship/engineering)
 "II" = (
@@ -3400,8 +3401,12 @@
 /turf/open/floor/wood/walnut,
 /area/ship/bridge)
 "Jn" = (
-/obj/item/bedsheet/double/solgov,
-/obj/structure/bed/double,
+/obj/item/bedsheet/double/solgov{
+	dir = 1
+	},
+/obj/structure/bed/double{
+	dir = 1
+	},
 /obj/machinery/newscaster/directional/west,
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/carpet/royalblue,
@@ -4301,6 +4306,7 @@
 	dir = 4;
 	req_one_access = list(61,11)
 	},
+/obj/machinery/power/apc/auto_name/directional/south,
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
@@ -4355,9 +4361,6 @@
 	dir = 5
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
 /turf/open/floor/plasteel/white,
 /area/ship/engineering)
 "Tr" = (
@@ -4866,6 +4869,7 @@
 /area/ship/cargo)
 "ZC" = (
 /obj/item/radio/intercom/directional/west,
+/obj/structure/table/wood,
 /turf/open/floor/wood/walnut,
 /area/ship/bridge)
 "ZE" = (
@@ -5282,7 +5286,7 @@ pS
 KZ
 pS
 vx
-vx
+tJ
 RV
 Xm
 So
@@ -5505,7 +5509,7 @@ UJ
 wT
 fq
 nF
-ru
+UJ
 pl
 Vi
 dd
