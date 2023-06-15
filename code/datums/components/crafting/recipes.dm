@@ -1145,6 +1145,15 @@
 	/obj/item/stack/sheet/metal = 2)
 	category = CAT_MISC
 
+/datum/crafting_recipe/aquarium
+	name = "Aquarium"
+	result = /obj/structure/aquarium
+	time = 10 SECONDS
+	reqs = list(/obj/item/stack/sheet/metal = 15,
+				/obj/item/stack/sheet/glass = 10,
+				/obj/item/aquarium_kit = 1)
+	category = CAT_MISC
+
 /datum/crafting_recipe/mothplush
 	name = "Moth Plushie"
 	result = /obj/item/toy/plush/moth
