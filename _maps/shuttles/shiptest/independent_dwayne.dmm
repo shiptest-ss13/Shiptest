@@ -34,7 +34,7 @@
 	icon_state = "0-4"
 	},
 /turf/open/floor/plating/airless,
-/area/ship/external)
+/area/ship/engineering)
 "aI" = (
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 4
@@ -290,7 +290,7 @@
 	dir = 4
 	},
 /turf/open/floor/plating/airless,
-/area/ship/external)
+/area/ship/engineering)
 "gT" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
@@ -1090,9 +1090,6 @@
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer2,
 /turf/open/floor/plating,
 /area/ship/crew)
-"xo" = (
-/turf/closed/wall,
-/area/ship/external)
 "xr" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/preopen{
@@ -1241,7 +1238,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/obj/effect/turf_decal/corner/opaque/blue/half{
+/obj/effect/turf_decal/corner/opaque/ntblue/half{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
@@ -1249,7 +1246,7 @@
 "Cn" = (
 /obj/structure/catwalk,
 /turf/closed/wall,
-/area/ship/external)
+/area/ship/engineering)
 "Cp" = (
 /turf/open/floor/plasteel,
 /area/ship/cargo)
@@ -1796,10 +1793,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
-/obj/effect/turf_decal/corner/opaque/blue/half{
+/obj/machinery/light/directional/south,
+/obj/effect/turf_decal/corner/opaque/ntblue/half{
 	dir = 4
 	},
-/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "OW" = (
@@ -2167,7 +2164,7 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/obj/effect/turf_decal/corner/opaque/blue/half{
+/obj/effect/turf_decal/corner/opaque/ntblue/half{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
@@ -2247,9 +2244,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
-"Zp" = (
-/turf/closed/wall,
-/area/template_noop)
 "Zv" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
@@ -2355,7 +2349,7 @@ OJ
 (3,1,1) = {"
 OJ
 OJ
-xo
+mF
 gF
 aD
 Cn
@@ -2369,7 +2363,7 @@ zq
 Cn
 aD
 gF
-Zp
+mF
 OJ
 "}
 (4,1,1) = {"

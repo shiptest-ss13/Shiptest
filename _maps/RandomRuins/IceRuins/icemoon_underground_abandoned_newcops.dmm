@@ -431,6 +431,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
 /area/ruin/powered)
+"tJ" = (
+/obj/machinery/door/poddoor/shuttledock{
+	dir = 4
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/plating,
+/area/ruin/powered)
 "tP" = (
 /obj/effect/turf_decal/corner/transparent/bar,
 /obj/effect/turf_decal/corner/transparent/bar{
@@ -848,8 +855,10 @@
 /turf/open/floor/wood,
 /area/ruin/powered)
 "Lq" = (
-/obj/machinery/door/poddoor/shuttledock,
 /obj/structure/fans/tiny,
+/obj/machinery/door/poddoor/shuttledock{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ruin/powered)
 "Lt" = (
@@ -2406,7 +2415,7 @@ fa
 vV
 vV
 vV
-Lq
+tJ
 Lq
 Lq
 Lq
