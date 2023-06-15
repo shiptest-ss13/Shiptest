@@ -85,7 +85,7 @@
 	results = list(/datum/reagent/consumable/hell_ramen = 6)
 	required_reagents = list(/datum/reagent/consumable/capsaicin = 1, /datum/reagent/consumable/hot_ramen = 6)
 
-/datum/chemical_reaction/imitationfishmeat/carp
+/datum/chemical_reaction/imitationcarpmeat
 	required_reagents = list(/datum/reagent/toxin/carpotoxin = 5)
 	required_container = /obj/item/reagent_containers/food/snacks/tofu
 	mix_message = "The mixture becomes similar to carp meat."
