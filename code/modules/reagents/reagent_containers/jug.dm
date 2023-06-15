@@ -44,61 +44,61 @@
 	cap_on = FALSE
 
 /obj/item/reagent_containers/glass/chem_jug/carbon
-	name = "jug of carbon"
+	name = "chemical jug (carbon)"
 	icon_state = "chem_jug_carbon"
 	list_reagents = list(/datum/reagent/carbon = 150)
 
 /obj/item/reagent_containers/glass/chem_jug/oxygen
-	name = "jug of oxygen"
+	name = "chemical jug (oxygen)"
 	icon_state = "chem_jug_oxygen"
 	list_reagents = list(/datum/reagent/oxygen = 150)
 
 /obj/item/reagent_containers/glass/chem_jug/nitrogen
-	name = "jug of nitrogen"
+	name = "chemical jug (nitrogen)"
 	icon_state = "chem_jug_nitrogen"
 	list_reagents = list(/datum/reagent/nitrogen = 150)
 
 /obj/item/reagent_containers/glass/chem_jug/hydrogen
-	name = "jug of hydrogen"
+	name = "chemical jug (hydrogen)"
 	icon_state = "chem_jug_hydrogen"
 	list_reagents = list(/datum/reagent/hydrogen = 150)
 
 /obj/item/reagent_containers/glass/chem_jug/radium
-	name = "jug of radium"
+	name = "chemical jug (radium)"
 	icon_state = "chem_jug_radium"
 	list_reagents = list(/datum/reagent/radium = 150)
 
 /obj/item/reagent_containers/glass/chem_jug/aluminium
-	name = "jug of aluminium"
+	name = "chemical jug (aluminium)"
 	icon_state = "chem_jug_aluminium"
 	list_reagents = list(/datum/reagent/aluminium = 150)
 
 /obj/item/reagent_containers/glass/chem_jug/chlorine
-	name = "jug of chlorine"
+	name = "chemical jug (chlorine)"
 	icon_state = "chem_jug_chlorine"
 	list_reagents = list(/datum/reagent/chlorine = 150)
 
 /obj/item/reagent_containers/glass/chem_jug/copper
-	name = "jug of copper"
+	name = "chemical jug (copper)"
 	icon_state = "chem_jug_copper"
 	list_reagents = list(/datum/reagent/copper = 150)
 
 /obj/item/reagent_containers/glass/chem_jug/bromine
-	name = "jug of bromine"
+	name = "chemical jug (bromine)"
 	icon_state = "chem_jug_bromine"
 	list_reagents = list(/datum/reagent/bromine = 150)
 
 /obj/item/reagent_containers/glass/chem_jug/iodine
-	name = "jug of iodine"
+	name = "chemical jug (iodine)"
 	icon_state = "chem_jug_iodine"
 	list_reagents = list(/datum/reagent/iodine = 150)
 
 /obj/item/reagent_containers/glass/chem_jug/potassium
-	name = "jug of potassium"
+	name = "chemical jug (potassium)"
 	icon_state = "chem_jug_potassium"
 	list_reagents = list(/datum/reagent/potassium = 150)
 
 /obj/item/reagent_containers/glass/chem_jug/sulfur
-	name = "jug of sulfur"
+	name = "chemical jug (sulfur)"
 	icon_state = "chem_jug_sulfur"
 	list_reagents = list(/datum/reagent/sulfur = 150)
