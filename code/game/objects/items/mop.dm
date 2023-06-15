@@ -24,20 +24,20 @@
 	create_reagents(mopcap)
 
 
-/obj/item/mop/proc/clean(turf/A, mob/living/cleaner)
+/obj/item/mop/proc/clean(turf/target, mob/living/cleaner)
 	if(reagents.has_reagent(/datum/reagent/water, 1) || reagents.has_reagent(/datum/reagent/water/holywater, 1) || reagents.has_reagent(/datum/reagent/consumable/ethanol/vodka, 1) || reagents.has_reagent(/datum/reagent/space_cleaner, 1))
-		for(var/obj/effect/decal/cleanable/cleanable_decal in A)
+		for(var/obj/effect/decal/cleanable/cleanable_decal in target)
 			cleaner?.mind.adjust_experience(/datum/skill/cleaning, max(round(cleanable_decal.beauty / CLEAN_SKILL_BEAUTY_ADJUSTMENT, 1), 0)) //it is intentional that the mop rounds xp but soap does not, USE THE SACRED TOOL
-		A.wash(CLEAN_SCRUB)
+		target.wash(CLEAN_SCRUB)
 
-	reagents.expose(A, TOUCH, 10)	//Needed for proper floor wetting.
+	reagents.expose(target, TOUCH, 10)	//Needed for proper floor wetting.
 	var/val2remove = 1
 	if(cleaner?.mind)
 		val2remove = round(cleaner.mind.get_skill_modifier(/datum/skill/cleaning, SKILL_SPEED_MODIFIER),0.1)
 	reagents.remove_any(val2remove)			//reaction() doesn't use up the reagents
 
 
-/obj/item/mop/afterattack(atom/A, mob/user, proximity)
+/obj/item/mop/afterattack(atom/target, mob/user, proximity)
 	. = ..()
 	if(!proximity)
 		return
@@ -46,17 +46,20 @@
 		to_chat(user, "<span class='warning'>Your mop is dry!</span>")
 		return
 
-	var/turf/T = get_turf(A)
+	var/turf/T = get_turf(target)
 
-	if(istype(A, /obj/item/reagent_containers/glass/bucket) || istype(A, /obj/structure/janitorialcart))
+	if(istype(target, /obj/item/reagent_containers/glass/bucket) || istype(target, /obj/structure/janitorialcart))
 		return
 
 	if(T)
+		target.add_overlay(GLOB.cleaning_bubbles)
+		playsound(src, 'sound/misc/slip.ogg', 15, TRUE, -8)
 		user.visible_message("<span class='notice'>[user] begins to clean \the [T] with [src].</span>", "<span class='notice'>You begin to clean \the [T] with [src]...</span>")
 		var/clean_speedies = user.mind.get_skill_modifier(/datum/skill/cleaning, SKILL_SPEED_MODIFIER)
 		if(do_after(user, mopspeed*clean_speedies, target = T))
 			to_chat(user, "<span class='notice'>You finish mopping.</span>")
 			clean(T, user)
+		target.cut_overlay(GLOB.cleaning_bubbles)
 
 
 /obj/effect/attackby(obj/item/I, mob/user, params)
