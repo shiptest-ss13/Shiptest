@@ -172,7 +172,7 @@
 	},
 /obj/machinery/door/window/brigdoor/northright{
 	dir = 2;
-	req_one_access = list(61, 11)
+	req_one_access = list(61,11)
 	},
 /turf/open/floor/circuit,
 /area/ship/engineering)
@@ -595,6 +595,7 @@
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "fN" = (
+/obj/machinery/holopad/secure,
 /turf/open/floor/wood,
 /area/ship/bridge)
 "fT" = (
@@ -672,6 +673,7 @@
 /turf/open/floor/plating,
 /area/ship/bridge)
 "gs" = (
+/obj/effect/landmark/start/security_officer,
 /turf/open/floor/plasteel/white,
 /area/ship/security/armory)
 "gB" = (
@@ -1220,6 +1222,7 @@
 "mz" = (
 /obj/effect/turf_decal/corner/opaque/solgovblue/three_quarters,
 /obj/structure/chair/office,
+/obj/effect/landmark/start/station_engineer,
 /turf/open/floor/plasteel/white,
 /area/ship/engineering)
 "mA" = (
@@ -1362,6 +1365,7 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 8
 	},
+/obj/effect/landmark/observer_start,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "nU" = (
@@ -1792,7 +1796,7 @@
 	pixel_y = 24;
 	req_ship_access = 1;
 	req_access = null;
-	req_one_access = list(1, 48)
+	req_one_access = list(1,48)
 	},
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/on/layer2{
 	dir = 4
@@ -1896,7 +1900,7 @@
 /obj/structure/window/reinforced,
 /obj/machinery/door/window/brigdoor/eastleft{
 	dir = 8;
-	req_one_access = list(61, 11)
+	req_one_access = list(61,11)
 	},
 /obj/machinery/telecomms/message_server{
 	pixel_y = 0;
@@ -2637,6 +2641,7 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
+/obj/effect/landmark/start/shaft_miner,
 /turf/open/floor/plasteel/white,
 /area/ship/security/armory)
 "AN" = (
@@ -2671,7 +2676,7 @@
 /obj/structure/window/reinforced,
 /obj/machinery/door/window/brigdoor/westleft{
 	dir = 4;
-	req_one_access = list(61, 11)
+	req_one_access = list(61,11)
 	},
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/circuit/green,
@@ -3034,6 +3039,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/holopad/secure,
 /turf/open/floor/wood,
 /area/ship/crew/office)
 "Fa" = (
@@ -3179,7 +3185,7 @@
 /obj/machinery/door/airlock/solgov{
 	dir = 4;
 	name = "Armaments Wing";
-	req_one_access = list(1, 48)
+	req_one_access = list(1,48)
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -3265,6 +3271,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
+/obj/effect/landmark/start/shaft_miner,
 /turf/open/floor/plasteel/white,
 /area/ship/security/armory)
 "HM" = (
@@ -3342,13 +3349,13 @@
 /area/ship/engineering/engine)
 "IH" = (
 /obj/machinery/telecomms/server/presets/solgov{
-	autolinkers = list("solgov", "sproingle");
+	autolinkers = list("solgov","sproingle");
 	network = "Most Serene Solar Commnet";
 	pixel_y = 0
 	},
 /obj/machinery/door/window/brigdoor/northleft{
 	dir = 2;
-	req_one_access = list(61, 11)
+	req_one_access = list(61,11)
 	},
 /obj/structure/sign/poster/solgov/random{
 	pixel_y = 30
@@ -3372,6 +3379,7 @@
 /area/ship/bridge)
 "Ja" = (
 /obj/structure/chair/sofa,
+/obj/effect/landmark/start/assistant,
 /turf/open/floor/carpet/blue,
 /area/ship/crew)
 "Jd" = (
@@ -4300,7 +4308,7 @@
 	},
 /obj/machinery/door/window/brigdoor/westright{
 	dir = 4;
-	req_one_access = list(61, 11)
+	req_one_access = list(61,11)
 	},
 /obj/effect/turf_decal/techfloor{
 	dir = 1
@@ -4726,6 +4734,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
+/obj/effect/landmark/start/station_engineer,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engine)
 "XA" = (
