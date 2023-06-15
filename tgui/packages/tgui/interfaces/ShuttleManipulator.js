@@ -155,12 +155,14 @@ export const ShuttleManipulatorTemplates = (props, context) => {
                   <LabeledList>
                     {!!actualTemplate.description && (
                       <LabeledList.Item label="Description">
-                        {actualTemplate.description}
+                        {actualTemplate.description || 'No Description'}
                       </LabeledList.Item>
                     )}
                     {!!actualTemplate.tags && (
                       <LabeledList.Item label="Ship Tags">
-                        {actualTemplate.tags}
+                        {(actualTemplate.tags &&
+                          actualTemplate.tags.join(', ')) ||
+                          'No Tags Set'}
                       </LabeledList.Item>
                     )}
                     {!!actualTemplate.admin_notes && (

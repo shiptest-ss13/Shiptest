@@ -4,7 +4,7 @@
 	var/file_name
 
 	var/description
-	var/tags
+	var/list/tags
 	var/admin_notes
 
 	var/list/movement_force // If set, overrides default movement_force on shuttle
