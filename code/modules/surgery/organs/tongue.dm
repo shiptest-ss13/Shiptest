@@ -68,14 +68,25 @@
 	modifies_speech = TRUE
 
 /obj/item/organ/tongue/lizard/handle_speech(datum/source, list/speech_args)
-	if(speech_args[SPEECH_LANGUAGE] == /datum/language/draconic) //WS edit - lizard tongues don't hiss when speaking Draconic
+	if(speech_args[SPEECH_LANGUAGE] == /datum/language/draconic) //lizard tongues don't hiss when speaking Draconic
 		return
+
 	var/static/regex/lizard_hiss = new("s+", "g")
 	var/static/regex/lizard_hiSS = new("S+", "g")
+	var/static/regex/lizard_kss = new(@"(\w)x", "g")
+	var/static/regex/lizard_kSS = new(@"(\w)X", "g")
+	var/static/regex/lizard_ecks = new(@"\bx([\-|r|R]|\b)", "g")
+	var/static/regex/lizard_eckS = new(@"\bX([\-|r|R]|\b)", "g")
+
 	var/message = speech_args[SPEECH_MESSAGE]
 	if(message[1] != "*")
 		message = lizard_hiss.Replace(message, "sss")
 		message = lizard_hiSS.Replace(message, "SSS")
+		message = lizard_kss.Replace(message, "$1kss")
+		message = lizard_kSS.Replace(message, "$1KSS")
+		message = lizard_ecks.Replace(message, "ecks$1")
+		message = lizard_eckS.Replace(message, "ECKS$1")
+
 	speech_args[SPEECH_MESSAGE] = message
 
 /obj/item/organ/tongue/fly

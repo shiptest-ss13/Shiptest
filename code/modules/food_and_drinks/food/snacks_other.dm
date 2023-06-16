@@ -761,4 +761,3 @@
 	filling_color = "#ECA735"
 	tastes = list("fried corn" = 1)
 	foodtype = JUNKFOOD | FRIED
-
