@@ -1600,12 +1600,10 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "pC" = (
-/obj/structure/table/wood,
-/obj/item/radio/intercom/wideband/table{
-	dir = 8;
-	pixel_x = -4
-	},
 /obj/machinery/light/directional/west,
+/obj/machinery/modular_computer/console/preset/command{
+	dir = 4
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/bridge)
 "pR" = (
@@ -5057,6 +5055,10 @@
 "ZC" = (
 /obj/item/radio/intercom/directional/west,
 /obj/structure/table/wood,
+/obj/item/radio/intercom/wideband/table{
+	dir = 8;
+	pixel_x = -4
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/bridge)
 "ZE" = (
