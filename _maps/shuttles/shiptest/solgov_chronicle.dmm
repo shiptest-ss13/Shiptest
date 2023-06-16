@@ -547,6 +547,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/industrial/outline/red,
+/obj/item/clothing/glasses/meson,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "fq" = (
@@ -3034,14 +3035,27 @@
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "EZ" = (
-/obj/effect/landmark/start/captain,
 /obj/effect/turf_decal/spline/fancy/wood{
 	dir = 4
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/holopad/secure,
+/obj/item/kirbyplants{
+	icon_state = "plant-21";
+	pixel_x = 7;
+	pixel_y = 18
+	},
+/obj/item/kirbyplants{
+	icon_state = "plant-22";
+	pixel_x = 8;
+	pixel_y = 2
+	},
+/obj/item/kirbyplants{
+	icon_state = "plant-22";
+	pixel_y = 11;
+	pixel_x = -6
+	},
 /turf/open/floor/wood,
 /area/ship/crew/office)
 "Fa" = (
@@ -3243,26 +3257,14 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "Hp" = (
-/obj/item/kirbyplants{
-	icon_state = "plant-21";
-	pixel_x = 7;
-	pixel_y = 18
-	},
-/obj/item/kirbyplants{
-	icon_state = "plant-22";
-	pixel_y = 11;
-	pixel_x = -6
-	},
-/obj/item/kirbyplants{
-	icon_state = "plant-22";
-	pixel_x = 8;
-	pixel_y = 2
-	},
 /obj/effect/turf_decal/spline/fancy/wood{
 	dir = 1
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/structure/extinguisher_cabinet/directional/west,
+/obj/machinery/suit_storage_unit/inherit,
+/obj/item/clothing/suit/space/hardsuit/solgov,
+/obj/item/tank/jetpack/oxygen,
 /turf/open/floor/wood,
 /area/ship/crew/office)
 "HA" = (
@@ -4505,6 +4507,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/effect/landmark/start/captain,
 /turf/open/floor/wood,
 /area/ship/crew/office)
 "US" = (
@@ -4565,6 +4568,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/holopad/secure,
 /turf/open/floor/wood,
 /area/ship/crew/office)
 "VM" = (
