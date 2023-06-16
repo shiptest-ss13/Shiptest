@@ -3307,6 +3307,10 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
 	},
+/obj/structure/closet/firecloset/wall{
+	dir = 1;
+	pixel_y = -28
+	},
 /turf/open/floor/wood,
 /area/ship/crew/crewtwo)
 "Gv" = (
@@ -3594,6 +3598,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/wood,
 /area/ship/bridge)
 "JJ" = (
@@ -3853,7 +3858,10 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/machinery/airalarm/directional/south,
+/obj/structure/closet/firecloset/wall{
+	dir = 1;
+	pixel_y = -28
+	},
 /turf/open/floor/wood,
 /area/ship/bridge)
 "Me" = (
@@ -3922,6 +3930,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
+	},
+/obj/structure/closet/firecloset/wall{
+	dir = 1;
+	pixel_y = -28
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/engineering/engine)
