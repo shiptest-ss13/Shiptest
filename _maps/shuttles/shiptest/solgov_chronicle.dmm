@@ -232,6 +232,11 @@
 	dir = 4
 	},
 /obj/machinery/light/small/directional/south,
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = 13;
+	pixel_y = -20
+	},
 /turf/open/floor/plasteel/freezer,
 /area/ship/crew)
 "bH" = (
@@ -329,6 +334,7 @@
 /obj/effect/turf_decal/techfloor,
 /obj/structure/rack,
 /obj/machinery/firealarm/directional/south,
+/obj/item/stack/sheet/mineral/plasma/twenty,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "dj" = (
@@ -1527,6 +1533,12 @@
 	},
 /obj/structure/rack,
 /obj/item/radio/intercom/directional/north,
+/obj/item/stack/sheet/metal/five,
+/obj/item/stack/sheet/metal/five,
+/obj/item/stack/sheet/metal/five,
+/obj/item/stack/sheet/glass/five,
+/obj/item/stack/sheet/glass/five,
+/obj/item/stack/sheet/glass/five,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "pC" = (
