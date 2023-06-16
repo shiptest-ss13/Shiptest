@@ -36,3 +36,6 @@
 
 /datum/movespeed_modifier/reagent/hepanephrodaxon
 	multiplicative_slowdown = -0.45
+
+/datum/movespeed_modifier/reagent/shock_wine
+	multiplicative_slowdown = -0.15

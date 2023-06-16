@@ -29,8 +29,7 @@
 	anchors += locate(x+2,y-2,z)
 
 	for(var/turf/T in anchors)
-		var/datum/beam/B = Beam(T, "vine", time=INFINITY, maxdistance=5, beam_type=/obj/effect/ebeam/vine)
-		B.sleep_time = 10 //these shouldn't move, so let's slow down updates to 1 second (any slower and the deletion of the vines would be too slow)
+		Beam(T, "vine", maxdistance=5, beam_type=/obj/effect/ebeam/vine)
 	addtimer(CALLBACK(src, .proc/bear_fruit), growth_time)
 
 /**
@@ -125,7 +124,7 @@
 			if(O.density)
 				return
 
-	var/datum/beam/newVine = Beam(the_target, "vine", time=INFINITY, maxdistance = vine_grab_distance, beam_type=/obj/effect/ebeam/vine)
+	var/datum/beam/newVine = Beam(the_target, icon_state = "vine", maxdistance = vine_grab_distance, beam_type=/obj/effect/ebeam/vine, emissive = FALSE)
 	RegisterSignal(newVine, COMSIG_PARENT_QDELETING, .proc/remove_vine, newVine)
 	vines += newVine
 	if(isliving(the_target))
@@ -182,7 +181,7 @@
 			if(!AM.anchored)
 				step(AM,get_dir(AM,src))
 		if(get_dist(src,B.target) == 0)
-			B.End()
+			qdel(B)
 
 /**
  * Removes a vine from the list.
