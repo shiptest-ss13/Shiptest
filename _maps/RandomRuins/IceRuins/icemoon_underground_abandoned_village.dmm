@@ -49,6 +49,9 @@
 /obj/machinery/light/broken/directional/north,
 /turf/open/floor/holofloor/wood,
 /area/ruin/powered)
+"gz" = (
+/turf/closed/mineral/random/snow,
+/area/icemoon/underground/explored)
 "gG" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/snacks/sashimi{
@@ -64,6 +67,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet,
 /area/ruin/powered)
+"he" = (
+/obj/structure/chair/sofa/left,
+/turf/closed/mineral/random/snow,
+/area/icemoon/underground/explored)
 "hD" = (
 /obj/effect/decal/cleanable/blood/gibs/limb,
 /turf/open/floor/engine/cult,
@@ -139,13 +146,6 @@
 	},
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/icemoon/underground/explored)
-"nR" = (
-/obj/structure/chair/sofa/left,
-/turf/closed/mineral/random/snow,
-/area/icemoon/underground/explored)
-"ou" = (
-/turf/closed/mineral/ice,
-/area/icemoon/underground/explored)
 "oB" = (
 /obj/structure/table/wood,
 /obj/structure/bedsheetbin/empty,
@@ -185,24 +185,8 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/powered)
-"rC" = (
-/obj/structure/closet/secure_closet/freezer,
-/obj/item/reagent_containers/food/snacks/carpmeat,
-/obj/item/reagent_containers/food/snacks/carpmeat,
-/obj/item/reagent_containers/food/snacks/carpmeat,
-/obj/item/reagent_containers/food/condiment/pack/ketchup,
-/obj/item/reagent_containers/food/condiment/pack/ketchup,
-/obj/item/reagent_containers/food/condiment/pack/ketchup,
-/obj/effect/turf_decal/corner/opaque/black{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/opaque/black{
-	dir = 2
-	},
-/turf/open/floor/plasteel,
-/area/ruin/powered)
-"ss" = (
-/turf/closed/mineral/random/snow,
+"rL" = (
+/turf/closed/mineral/ice,
 /area/icemoon/underground/explored)
 "sG" = (
 /obj/effect/decal/cleanable/vomit,
@@ -252,6 +236,22 @@
 /obj/structure/table/wood,
 /obj/structure/bedsheetbin,
 /turf/open/floor/wood,
+/area/ruin/powered)
+"up" = (
+/obj/structure/closet/secure_closet/freezer,
+/obj/item/reagent_containers/food/snacks/fishmeat/carp,
+/obj/item/reagent_containers/food/snacks/fishmeat/carp,
+/obj/item/reagent_containers/food/snacks/fishmeat/carp,
+/obj/item/reagent_containers/food/condiment/pack/ketchup,
+/obj/item/reagent_containers/food/condiment/pack/ketchup,
+/obj/item/reagent_containers/food/condiment/pack/ketchup,
+/obj/effect/turf_decal/corner/opaque/black{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/black{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
 /area/ruin/powered)
 "us" = (
 /obj/effect/decal/cleanable/blood/splatter,
@@ -660,7 +660,7 @@ Og
 Og
 aZ
 pI
-ou
+rL
 Og
 kl
 Og
@@ -687,20 +687,20 @@ tN
 pc
 Og
 Og
-ss
+gz
 Ze
-ou
+rL
 ks
-ou
+rL
 Ze
-ss
-ss
-ss
-ss
-ss
-ss
-ss
-ss
+gz
+gz
+gz
+gz
+gz
+gz
+gz
+gz
 Tc
 pc
 pc
@@ -717,23 +717,23 @@ Og
 Og
 Og
 Rv
-ss
-ss
-ou
+gz
+gz
+rL
 FR
 pI
-ss
-ss
+gz
+gz
 Vn
 Vn
 Vn
-ss
-ss
-ss
-ss
-ss
-ss
-ss
+gz
+gz
+gz
+gz
+gz
+gz
+gz
 pc
 Og
 Og
@@ -746,14 +746,14 @@ pI
 Og
 Og
 bY
-ss
-ss
-ss
+gz
+gz
+gz
 pI
 zT
 zT
 zT
-ss
+gz
 Vn
 UI
 Vn
@@ -763,8 +763,8 @@ wQ
 QR
 QR
 wQ
-ss
-ss
+gz
+gz
 Og
 Rv
 Og
@@ -775,8 +775,8 @@ tN
 Og
 oF
 Og
-ss
-ss
+gz
+gz
 Vn
 Vn
 Vn
@@ -793,8 +793,8 @@ DI
 SN
 wo
 wQ
-ss
-ss
+gz
+gz
 oF
 Og
 Og
@@ -805,8 +805,8 @@ tN
 Og
 Og
 Og
-ss
-ss
+gz
+gz
 Vn
 cj
 sY
@@ -824,8 +824,8 @@ tt
 Gr
 QR
 lg
-ss
-ss
+gz
+gz
 Og
 Og
 tN
@@ -834,11 +834,11 @@ tN
 tN
 Og
 Og
-ss
-ss
+gz
+gz
 la
 Vn
-rC
+up
 ut
 Vn
 tF
@@ -854,8 +854,8 @@ SN
 QR
 QR
 Og
-ss
-ss
+gz
+gz
 Og
 Og
 tN
@@ -864,8 +864,8 @@ tN
 tN
 Og
 Kd
-ss
-ss
+gz
+gz
 lo
 Ha
 li
@@ -884,8 +884,8 @@ pV
 wQ
 Og
 Tc
-ss
-ss
+gz
+gz
 Og
 Og
 tN
@@ -894,8 +894,8 @@ tN
 tN
 Og
 pc
-ss
-ss
+gz
+gz
 lo
 Vn
 Hx
@@ -914,8 +914,8 @@ zT
 tg
 Bq
 Og
-ss
-ss
+gz
+gz
 Og
 Og
 tN
@@ -924,8 +924,8 @@ tN
 tN
 Og
 pc
-ss
-ss
+gz
+gz
 lo
 Vn
 Vn
@@ -944,9 +944,9 @@ zT
 Ws
 Og
 Og
-ss
-ss
-ss
+gz
+gz
+gz
 Og
 tN
 "}
@@ -954,8 +954,8 @@ tN
 tN
 Og
 pc
-ss
-ss
+gz
+gz
 us
 Sk
 Qt
@@ -974,18 +974,18 @@ Vn
 Vn
 Vn
 Vn
-ss
-ss
-ss
+gz
+gz
+gz
 pI
 tN
 "}
 (14,1,1) = {"
 tN
 Og
-ss
-ss
-ss
+gz
+gz
+gz
 Ei
 Bq
 pj
@@ -1004,16 +1004,16 @@ Vn
 LZ
 AN
 Vn
-ss
-ss
-ss
+gz
+gz
+gz
 Og
 tN
 "}
 (15,1,1) = {"
 tN
 Og
-ss
+gz
 Vn
 Vn
 Vn
@@ -1034,8 +1034,8 @@ zR
 cB
 GK
 Vn
-ss
-ss
+gz
+gz
 bY
 Og
 tN
@@ -1043,7 +1043,7 @@ tN
 (16,1,1) = {"
 tN
 Og
-ss
+gz
 Vn
 EF
 hD
@@ -1064,8 +1064,8 @@ Vn
 Vn
 Vn
 Vn
-ss
-ss
+gz
+gz
 Og
 Og
 tN
@@ -1073,7 +1073,7 @@ tN
 (17,1,1) = {"
 tN
 Og
-ss
+gz
 Vn
 Cl
 PQ
@@ -1094,8 +1094,8 @@ Og
 Gy
 sG
 Vn
-ss
-ss
+gz
+gz
 Og
 Og
 tN
@@ -1103,7 +1103,7 @@ tN
 (18,1,1) = {"
 tN
 Og
-ss
+gz
 Vn
 mi
 AM
@@ -1124,8 +1124,8 @@ Og
 Vn
 Vn
 Vn
-ss
-ss
+gz
+gz
 Og
 Og
 tN
@@ -1133,7 +1133,7 @@ tN
 (19,1,1) = {"
 tN
 Og
-ss
+gz
 Vn
 Vn
 Vn
@@ -1154,8 +1154,8 @@ Og
 Og
 Og
 Bq
-ss
-ss
+gz
+gz
 Og
 Dm
 tN
@@ -1163,10 +1163,10 @@ tN
 (20,1,1) = {"
 tN
 Og
-ss
-ss
-ss
-nR
+gz
+gz
+gz
+he
 Vn
 xN
 Cd
@@ -1184,8 +1184,8 @@ Og
 Og
 Og
 Og
-ss
-ss
+gz
+gz
 Og
 Og
 tN
@@ -1195,8 +1195,8 @@ tN
 Og
 Og
 pj
-ss
-ss
+gz
+gz
 Vn
 Vn
 Vn
@@ -1213,9 +1213,9 @@ pj
 Og
 Og
 DM
-ss
-ss
-ss
+gz
+gz
+gz
 Og
 Og
 tN
@@ -1225,10 +1225,10 @@ tN
 bY
 Og
 Og
-ss
-ss
-ss
-ss
+gz
+gz
+gz
+gz
 Bq
 Og
 Og
@@ -1242,9 +1242,9 @@ xc
 pc
 pc
 Og
-ss
-ss
-ss
+gz
+gz
+gz
 bY
 Og
 Og
@@ -1256,10 +1256,10 @@ tN
 pI
 Og
 Og
-ss
-ss
-ss
-ss
+gz
+gz
+gz
+gz
 DM
 Tc
 pc
@@ -1270,10 +1270,10 @@ xc
 xc
 xc
 xc
-ss
-ss
-ss
-ss
+gz
+gz
+gz
+gz
 Og
 Og
 Og
@@ -1288,21 +1288,21 @@ pc
 Og
 Og
 Og
-ss
-ss
-ss
-ss
-ss
-ss
+gz
+gz
+gz
+gz
+gz
+gz
 xc
 xc
 xc
 xc
 xc
-ss
-ss
-ss
-ss
+gz
+gz
+gz
+gz
 pI
 oF
 Og
@@ -1318,20 +1318,20 @@ xc
 pc
 pc
 Og
-ss
-ss
-ss
-ss
-ss
-ss
-ss
-ss
-ss
-ss
-ss
-ss
-ss
-ss
+gz
+gz
+gz
+gz
+gz
+gz
+gz
+gz
+gz
+gz
+gz
+gz
+gz
+gz
 Og
 Og
 Og
@@ -1349,17 +1349,17 @@ pc
 oF
 Og
 pI
-ss
-ss
-ss
-ss
-ss
-ss
-ss
-ss
-ss
-ss
-ss
+gz
+gz
+gz
+gz
+gz
+gz
+gz
+gz
+gz
+gz
+gz
 pc
 Og
 Og

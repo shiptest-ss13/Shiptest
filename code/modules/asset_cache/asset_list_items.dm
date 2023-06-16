@@ -144,6 +144,12 @@
 		"sga.ttf" = 'html/sga.ttf'
 	)
 
+/// Override this in order to start the creation of the spritehseet.
+/// This is where all your Insert, InsertAll, etc calls should be inside.
+/datum/asset/spritesheet/proc/create_spritesheets()
+	SHOULD_CALL_PARENT(FALSE)
+	CRASH("create_spritesheets() not implemented for [type]!")
+
 /datum/asset/spritesheet/chat
 	name = "chat"
 
@@ -402,4 +408,24 @@
 /datum/asset/simple/pai
 	assets = list(
 		"paigrid.png" = 'html/paigrid.png'
+	)
+
+/datum/asset/spritesheet/fish
+	name = "fish"
+
+/datum/asset/spritesheet/fish/create_spritesheets()
+	for (var/path in subtypesof(/obj/item/fish))
+		var/obj/item/fish/fish_type = path
+		var/fish_icon = initial(fish_type.icon)
+		var/fish_icon_state = initial(fish_type.icon_state)
+		var/id = sanitize_css_class_name("[fish_icon][fish_icon_state]")
+		if(sprites[id]) //no dupes
+			continue
+		Insert(id, fish_icon, fish_icon_state)
+
+
+/datum/asset/simple/fishing_minigame
+	assets = list(
+		"fishing_background_default" = 'icons/ui_icons/fishing/default.png',
+		"fishing_background_lavaland" = 'icons/ui_icons/fishing/lavaland.png'
 	)
