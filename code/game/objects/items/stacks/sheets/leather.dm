@@ -220,6 +220,7 @@ GLOBAL_LIST_INIT(sinew_recipes, list ( \
 	icon_state = "polar_bear_hide"
 	singular_name = "polar bear hide"
 	merge_type = /obj/item/stack/sheet/animalhide/goliath_hide/polar_bear_hide
+	grind_results = list(/datum/reagent/polar_bear_fur = 20)
 
 /obj/item/stack/sheet/animalhide/ashdrake
 	name = "ash drake hide"

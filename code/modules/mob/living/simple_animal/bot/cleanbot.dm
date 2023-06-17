@@ -13,7 +13,7 @@
 	model = "Cleanbot"
 	bot_core_type = /obj/machinery/bot_core/cleanbot
 	window_id = "autoclean"
-	window_name = "Automatic Station Cleaner v1.4"
+	window_name = "Automatic Environment Cleaner v1.4"
 	pass_flags = PASSMOB
 	path_image_color = "#993299"
 
@@ -251,29 +251,27 @@
 			mode = BOT_IDLE
 			return
 
-		if(loc == get_turf(target))
-			if(!(check_bot(target) && prob(50)))	//Target is not defined at the parent. 50% chance to still try and clean so we dont get stuck on the last blood drop.
-				UnarmedAttack(target)	//Rather than check at every step of the way, let's check before we do an action, so we can rescan before the other bot.
-				if(QDELETED(target)) //We done here.
-					target = null
-					mode = BOT_IDLE
-					return
-			else
-				shuffle = TRUE	//Shuffle the list the next time we scan so we dont both go the same way.
-			path = list()
-
-		if(!path || path.len == 0) //No path, need a new one
-			//Try to produce a path to the target, and ignore airlocks to which it has access.
-			path = get_path_to(src, target.loc, /turf/proc/Distance_cardinal, 0, 30, id=access_card)
-			if(!bot_move(target))
-				add_to_ignore(target)
+		if(get_dist(src, target) <= 1)
+			UnarmedAttack(target) //Rather than check at every step of the way, let's check before we do an action, so we can rescan before the other bot.
+			if(QDELETED(target)) //We done here.
 				target = null
-				path = list()
+				mode = BOT_IDLE
 				return
+
+		if(target && path.len == 0 && (get_dist(src,target) > 1))
+			path = get_path_to(src, target.loc, /turf/proc/Distance_cardinal, 30, id=access_card)
 			mode = BOT_MOVING
-		else if(!bot_move(target))
-			target = null
-			mode = BOT_IDLE
+			if(!path.len) //try to get closer if you can't reach the target directly
+				path = get_path_to(src, target.loc, /turf/proc/Distance_cardinal, 30, 1, id=access_card)
+				if(!path.len) //Do not chase a target we cannot reach.
+					add_to_ignore(target)
+					target = null
+					path = list()
+
+		if(path.len > 0 && target)
+			if(!bot_move(path[path.len]))
+				target = null
+				mode = BOT_IDLE
 			return
 
 	oldloc = loc
@@ -289,23 +287,37 @@
 		/obj/effect/decal/cleanable/greenglow,
 		/obj/effect/decal/cleanable/dirt,
 		/obj/effect/decal/cleanable/insectguts,
-		/obj/effect/decal/remains
+		/obj/effect/decal/cleanable/generic,
+		/obj/effect/decal/cleanable/shreds,
+		/obj/effect/decal/cleanable/glass,
+		/obj/effect/decal/cleanable/wrapping,
+		/obj/effect/decal/cleanable/glitter,
+		/obj/effect/decal/cleanable/confetti,
+		/obj/effect/decal/remains,
 		)
 
 	if(blood)
-		target_types += /obj/effect/decal/cleanable/xenoblood
-		target_types += /obj/effect/decal/cleanable/blood
+		target_types += list(
+		/obj/effect/decal/cleanable/xenoblood,
+		/obj/effect/decal/cleanable/blood,
+		)
 
 	if(pests)
-		target_types += /mob/living/simple_animal/hostile/cockroach
-		target_types += /mob/living/simple_animal/mouse
+		target_types += list(
+		/mob/living/simple_animal/hostile/cockroach,
+		/mob/living/simple_animal/mouse,
+		)
 
 	if(drawn)
-		target_types += /obj/effect/decal/cleanable/crayon
+		target_types += list(
+		/obj/effect/decal/cleanable/crayon,
+		)
 
 	if(trash)
-		target_types += /obj/item/trash
-		target_types += /obj/item/reagent_containers/food/snacks/deadmouse
+		target_types += list(
+		/obj/item/trash,
+		/obj/item/reagent_containers/food/snacks/deadmouse,
+		)
 
 	target_types = typecacheof(target_types)
 
@@ -315,10 +327,13 @@
 		mode = BOT_CLEANING
 
 		var/turf/T = get_turf(A)
-		if(do_after(src, 1, target = T))
+		target.add_overlay(GLOB.cleaning_bubbles)
+		playsound(src, 'sound/misc/slip.ogg', 15, TRUE, -8)
+		if(do_after(src, 1 SECONDS, target = T))
 			T.wash(CLEAN_WASH)
 			visible_message("<span class='notice'>[src] cleans \the [T].</span>")
-			target = null
+		target.cut_overlay(GLOB.cleaning_bubbles)
+		target = null
 
 		mode = BOT_IDLE
 		icon_state = "cleanbot[on]"
