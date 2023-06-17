@@ -367,7 +367,7 @@
 	name = "RIG heat suit"
 	desc = "A fully heat resistance suit based on an early RIG hardsuit prototype. It sacrifices armor of any kind for intricate heatsinks. It remains rather bulky as a result."
 	armor = list("melee" = 1, "bullet" = 1, "laser" = 1, "energy" = 1, "bomb" = 50, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 75)
-	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ancient
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/lp
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	resistance_flags = ACID_PROOF | FIRE_PROOF

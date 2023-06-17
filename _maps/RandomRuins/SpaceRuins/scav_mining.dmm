@@ -25,8 +25,10 @@
 /turf/open/floor/plating/asteroid/airless,
 /area/ruin/space/has_grav)
 "ak" = (
-/obj/machinery/door/airlock/hatch,
 /obj/machinery/atmospherics/pipe/simple{
+	dir = 4
+	},
+/obj/machinery/door/airlock/hatch{
 	dir = 4
 	},
 /turf/open/floor/plating/airless,
@@ -172,14 +174,14 @@
 /turf/open/floor/plating/asteroid/airless,
 /area/ruin/space/has_grav)
 "nd" = (
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/airlock/hatch{
+	dir = 4
+	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/scav_mining/entrance)
 "nw" = (
 /obj/structure/table,
-/obj/machinery/light/small/broken{
-	dir = 8
-	},
+/obj/machinery/light/small/broken/directional/west,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/scav_mining/dorm)
 "nA" = (
@@ -210,9 +212,7 @@
 /turf/open/space,
 /area/space)
 "pw" = (
-/obj/machinery/light/small/broken{
-	dir = 1
-	},
+/obj/machinery/light/small/broken/directional/north,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/scav_mining/entrance)
 "pA" = (
@@ -334,7 +334,9 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/scav_mining/core)
 "xv" = (
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/airlock/hatch{
+	dir = 4
+	},
 /obj/structure/barricade/wooden,
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -391,9 +393,7 @@
 /turf/open/floor/plating/asteroid/airless,
 /area/ruin/space/has_grav)
 "Cs" = (
-/obj/machinery/light/small/broken{
-	dir = 4
-	},
+/obj/machinery/light/small/broken/directional/east,
 /turf/open/floor/plating/asteroid/airless,
 /area/ruin/space/has_grav)
 "CG" = (
@@ -471,7 +471,9 @@
 /area/ruin/space/has_grav/scav_mining/dorm)
 "Ia" = (
 /obj/effect/decal/cleanable/oil,
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/airlock/hatch{
+	dir = 4
+	},
 /obj/machinery/atmospherics/pipe/simple{
 	dir = 8
 	},
@@ -585,7 +587,7 @@
 /area/ruin/space/has_grav)
 "OI" = (
 /obj/structure/closet/crate,
-/obj/machinery/light/small/broken,
+/obj/machinery/light/small/broken/directional/south,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/scav_mining/entrance)
 "Pj" = (
@@ -612,9 +614,7 @@
 /turf/closed/wall/rust,
 /area/ruin/space/has_grav/scav_mining/entrance)
 "Sd" = (
-/obj/machinery/power/apc/auto_name/east{
-	pixel_x = 25
-	},
+/obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/scav_mining/core)
@@ -635,9 +635,7 @@
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/scav_mining/entrance)
 "Ti" = (
-/obj/machinery/power/apc/auto_name/east{
-	pixel_x = 25
-	},
+/obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -659,9 +657,7 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/scav_mining/core)
 "Uk" = (
-/obj/machinery/light/small/broken{
-	dir = 8
-	},
+/obj/machinery/light/small/broken/directional/west,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/scav_mining/dorm)
 "Uz" = (
@@ -721,9 +717,7 @@
 /area/ruin/space/has_grav/scav_mining/dorm)
 "YF" = (
 /obj/structure/table,
-/obj/machinery/power/apc/auto_name/west{
-	pixel_x = -25
-	},
+/obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -734,9 +728,7 @@
 /obj/machinery/atmospherics/components/unary/portables_connector{
 	dir = 4
 	},
-/obj/machinery/light/small/broken{
-	dir = 8
-	},
+/obj/machinery/light/small/broken/directional/west,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/scav_mining/core)
 "Zi" = (
@@ -750,7 +742,7 @@
 /obj/machinery/advanced_airlock_controller{
 	pixel_y = 25
 	},
-/obj/machinery/light/small/broken,
+/obj/machinery/light/small/broken/directional/south,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/scav_mining/entrance)
 "ZH" = (

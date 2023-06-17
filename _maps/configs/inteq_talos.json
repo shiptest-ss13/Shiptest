@@ -2,7 +2,12 @@
 	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
 	"map_name": "Talos-Class Command Clipper",
 	"prefix": "IRMV",
-	"namelists": ["MYTHOLOGICAL", "BEASTS", "NATURAL_AGGRESSIVE"],
+	"namelists": [
+		"MYTHOLOGICAL",
+		"BEASTS",
+		"NATURAL_AGGRESSIVE",
+		"INTEQ"
+	],
 	"map_short_name": "Talos-class",
 	"map_path": "_maps/shuttles/shiptest/inteq_talos.dmm",
 	"limit": 1,
@@ -28,7 +33,7 @@
 		},
 		"Corpsman": {
 			"outfit": "/datum/outfit/job/paramedic/inteq",
-			"slots": 1
+			"slots": 2
 		},
 		"Enforcer": {
 			"outfit": "/datum/outfit/job/security/inteq",
@@ -36,7 +41,7 @@
 		},
 		"Recruit": {
 			"outfit": "/datum/outfit/job/assistant/inteq",
-			"slots": 7
+			"slots": 4
 		}
 	},
 	"enabled": true
