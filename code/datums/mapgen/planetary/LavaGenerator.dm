@@ -99,7 +99,7 @@
 		/obj/structure/flora/rock/hell = 5,
 		/obj/structure/elite_tumor = 1,
 		/obj/structure/geyser/random = 1,
-		/obj/effect/spawner/lootdrop/anomaly/lava = 1,
+		/obj/effect/spawner/lootdrop/anomaly/lava = 0.5
 
 	)
 	mob_spawn_chance = 4

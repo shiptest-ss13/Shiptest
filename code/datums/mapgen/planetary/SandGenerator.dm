@@ -93,7 +93,7 @@
 	feature_spawn_list = list(
 		/obj/structure/geyser/random = 4,
 		/obj/structure/elite_tumor = 2,
-		/obj/effect/spawner/lootdrop/anomaly/sand = 4,
+		/obj/effect/spawner/lootdrop/anomaly/sand = 2,
 	)
 	mob_spawn_chance = 4
 	mob_spawn_list = list(
