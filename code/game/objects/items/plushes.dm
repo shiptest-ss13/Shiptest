@@ -781,6 +781,15 @@
 	desc = "Hgrgrhrhg cute."
 	icon_state = "flushplush"
 
+/obj/item/toy/plush/blahaj
+	name = "Solarian Marine Society mascot plushie"
+	desc = "The adorable little mascot of the solarian marine society. Popular with vampires."
+	icon = 'icons/obj/item/plushes_48x32.dmi'
+	icon_state = "blahaj"
+	item_state = "blahaj"
+	lefthand_file = 'icons/mob/inhands/misc/plushes_lefthand.dmi' //todo: give plushies a basic/detailed inhand and move this on to base type
+	righthand_file = 'icons/mob/inhands/misc/plushes_righthand.dmi'
+
 /obj/item/toy/plush/among
 	name = "amoung pequeño"
 	desc = "A little pill shaped guy, with a price tag of 3€."
