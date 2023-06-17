@@ -646,6 +646,9 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/sign/poster/contraband/hacking_guide{
+	pixel_x = -28
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "oL" = (
@@ -1964,7 +1967,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "PO" = (
-/obj/structure/extinguisher_cabinet/directional/north,
 /obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 1
 	},
@@ -1972,9 +1974,7 @@
 	dir = 8
 	},
 /obj/effect/landmark/start/assistant,
-/obj/structure/sign/poster/contraband/hacking_guide{
-	pixel_x = -28
-	},
+/obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "Qn" = (
