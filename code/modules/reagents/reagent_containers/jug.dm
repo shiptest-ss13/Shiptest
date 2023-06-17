@@ -40,6 +40,43 @@
 	else
 		. += "<span class='warning'>The tamper seal is <b>broken</b>.</span>"
 
+
+/obj/item/reagent_containers/glass/chem_jug/SplashReagents(atom/target, thrown = FALSE)
+	if(!reagents || !reagents.total_volume || !spillable)
+		return
+
+	if(ismob(target) && target.reagents)
+		if(thrown)
+			reagents.total_volume *= rand(1,3) * 0.1 //little makes contact with the target
+		var/mob/M = target
+		var/R
+		playsound(src, 'sound/items/glass_splash.ogg', 50, 1)
+		target.visible_message("<span class='danger'>[M] is splashed with something!</span>", \
+						"<span class='userdanger'>[M] is splashed with something!</span>")
+		for(var/datum/reagent/A in reagents.reagent_list)
+			R += "[A.type]  ([num2text(A.volume)]),"
+
+		if(thrownby)
+			log_combat(thrownby, M, "splashed", R)
+		reagents.expose(target, TOUCH, 0.3)
+
+	else if(bartender_check(target) && thrown)
+		visible_message("<span class='notice'>[src] lands onto the [target.name] without spilling a single drop.</span>")
+		return
+
+	else
+		if(isturf(target) && reagents.reagent_list.len && thrownby)
+			log_combat(thrownby, target, "splashed (thrown) [english_list(reagents.reagent_list)]", "in [AREACOORD(target)]")
+			log_game("[key_name(thrownby)] splashed (thrown) [english_list(reagents.reagent_list)] on [target] in [AREACOORD(target)].")
+			message_admins("[ADMIN_LOOKUPFLW(thrownby)] splashed (thrown) [english_list(reagents.reagent_list)] on [target] in [ADMIN_VERBOSEJMP(target)].")
+		playsound(src, 'sound/items/glass_splash.ogg', 50, 1)
+		visible_message("<span class='notice'>[src] spills its contents all over [target].</span>")
+		reagents.expose(target, TOUCH, 0.3)
+		if(QDELETED(src))
+			return
+
+	reagents.remove_any(45)
+
 /obj/item/reagent_containers/glass/chem_jug/open
 	cap_on = FALSE
 
