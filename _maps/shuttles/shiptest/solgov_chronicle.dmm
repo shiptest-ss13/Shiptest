@@ -16,9 +16,6 @@
 /turf/open/floor/wood/walnut,
 /area/ship/bridge)
 "ah" = (
-/obj/effect/turf_decal/techfloor/corner{
-	dir = 4
-	},
 /obj/effect/turf_decal/corner/opaque/solgovgold/three_quarters{
 	dir = 4
 	},
@@ -38,6 +35,9 @@
 /obj/machinery/firealarm/directional/west,
 /obj/structure/cable{
 	icon_state = "1-4"
+	},
+/obj/effect/turf_decal/techfloor/corner{
+	dir = 4
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/engineering)
@@ -853,7 +853,7 @@
 /obj/machinery/door/airlock/solgov{
 	dir = 4;
 	name = "Bridge";
-	req_access = list(20)
+	req_access = list(19)
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2109,12 +2109,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/crewtwo)
 "vr" = (
-/obj/effect/turf_decal/techfloor/corner{
-	dir = 4
-	},
-/obj/effect/turf_decal/techfloor/corner{
-	dir = 8
-	},
 /obj/effect/turf_decal/corner/opaque/solgovgold/three_quarters,
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -2123,6 +2117,12 @@
 	dir = 5
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/obj/effect/turf_decal/techfloor/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/techfloor/corner{
+	dir = 4
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/engineering)
 "vx" = (
