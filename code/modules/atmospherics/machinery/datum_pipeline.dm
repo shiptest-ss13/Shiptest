@@ -50,12 +50,10 @@
 				considered_pipe.air_temporary = null
 		else
 			addMachineryMember(base)
-
-	if(!air)
-		air = new
-
-	air.set_volume(volume)
-	SSair.add_to_expansion(src, base)
+		if(!air)
+			air = new
+		air.set_volume(volume)
+		SSair.add_to_expansion(src, base)
 
 ///Has the same effect as build_pipeline(), but this doesn't queue its work, so overrun abounds. It's useful for the pregame
 /datum/pipeline/proc/build_pipeline_blocking(obj/machinery/atmospherics/base)
