@@ -952,7 +952,7 @@
 		/obj/effect/anomaly/melter/planetary,
 	)
 
-/obj/effect/spawner/lootdrop/anomaly/rock
+/obj/effect/spawner/lootdrop/anomaly/rock/cave
 	loot = list(
 		/obj/effect/anomaly/flux/planetary,
 		/obj/effect/anomaly/grav/planetary,
