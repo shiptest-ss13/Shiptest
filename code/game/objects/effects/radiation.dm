@@ -21,3 +21,14 @@
 				radiation_pulse(O, rad_power, rad_range)
 		_pulse = world.time + rad_delay
 	..()
+
+/obj/effect/radiation/waste
+	rad_power = 33
+	rad_delay = 40
+	rad_prob = 20
+	rad_spread = 3
+
+/obj/effect/radiation/waste/intense //3.6 roetgen. Not bad. Not good.
+	rad_power = 120
+	rad_delay = 80
+	rad_prob = 10

@@ -10,6 +10,15 @@
 	var/receive_frequency = FREQ_ATMOS_ALARMS
 	var/datum/radio_frequency/radio_connection
 
+/obj/machinery/computer/atmos_alert/retro
+	icon = 'icons/obj/machines/retro_computer.dmi'
+	icon_state = "computer-retro"
+	deconpath = /obj/structure/frame/computer/retro
+
+/obj/machinery/computer/atmos_alert/solgov
+	icon = 'icons/obj/machines/retro_computer.dmi'
+	icon_state = "computer-solgov"
+	deconpath = /obj/structure/frame/computer/solgov
 
 /obj/machinery/computer/atmos_alert/Initialize()
 	. = ..()

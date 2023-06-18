@@ -33,6 +33,8 @@
 	bubble_icon = "machine"
 	speech_span = SPAN_ROBOT
 	del_on_death = 1
+	minbodytemp = 0
+	maxbodytemp = 600
 	loot = list(/obj/effect/decal/cleanable/robot_debris)
 	var/alert_light
 
@@ -67,6 +69,7 @@
 
 /mob/living/simple_animal/hostile/hivebot/death(gibbed)
 	do_sparks(3, TRUE, src)
+	new /obj/effect/spawner/lootdrop/waste/hivebot(loc)
 	..(TRUE)
 
 /mob/living/simple_animal/hostile/hivebot/range
@@ -170,3 +173,43 @@
 			return
 		new /obj/structure/foamedmetal(H.loc)
 		playsound(get_turf(H), 'sound/effects/extinguish.ogg', 50, TRUE, -1)
+
+
+/mob/living/simple_animal/hostile/hivebot/wasteplanet
+	name = "hivebot"
+	desc = "A smallish robot, this one is armed!"
+	icon_state = "basic"
+	icon_living = "basic"
+	icon_dead = "basic"
+	ranged = FALSE
+	faction = list("mining", "hivebot")
+	health = 30
+	maxHealth = 30
+	healable = 0
+	melee_damage_lower = 5
+	melee_damage_upper = 15
+
+
+/mob/living/simple_animal/hostile/hivebot/wasteplanet/ranged
+	ranged = TRUE
+	icon_state = "ranged"
+	icon_living = "ranged"
+	icon_dead = "ranged"
+	ranged = TRUE
+	retreat_distance = 5
+	minimum_distance = 5
+
+/mob/living/simple_animal/hostile/hivebot/wasteplanet/ranged/rapid
+	rapid = 3
+
+/mob/living/simple_animal/hostile/hivebot/wasteplanet/strong
+	name = "strong hivebot"
+	icon_state = "strong"
+	icon_living = "strong"
+	icon_dead = "strong"
+	desc = "A robot, this one is armed and looks tough!"
+	health = 80
+	maxHealth = 80
+	ranged = TRUE
+	retreat_distance = 5
+	minimum_distance = 5

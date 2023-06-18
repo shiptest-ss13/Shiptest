@@ -265,7 +265,7 @@
 	heat_protection = HEAD
 	armor = list("melee" = 30, "bullet" = 5, "laser" = 10, "energy" = 20, "bomb" = 50, "bio" = 100, "rad" = 50, "fire" = 50, "acid" = 75)
 	light_range = 7
-	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/resonator, /obj/item/mining_scanner, /obj/item/t_scanner/adv_mining_scanner, /obj/item/gun/energy/kinetic_accelerator, /obj/item/pinpointer/deepcore, /obj/item/environmental_regulator)
+	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/resonator, /obj/item/mining_scanner, /obj/item/t_scanner/adv_mining_scanner, /obj/item/gun/energy/kinetic_accelerator, /obj/item/environmental_regulator)
 
 /obj/item/clothing/head/helmet/space/hardsuit/mining/Initialize()
 	. = ..()
@@ -1191,18 +1191,18 @@
 
 /obj/item/clothing/head/helmet/space/hardsuit/solgov
 	name = "\improper SolGov hardsuit helmet"
-	desc = "An armored spaceproof helmet. The glass has a metallic shine on it."
+	desc = "An armored spaceproof helmet, its visor is reminiscent of knights of yore."
 	icon_state = "hardsuit0-solgov"
 	item_state = "hardsuit0-solgov"
 	hardsuit_type = "solgov"
-	armor = list("melee" = 50, "bullet" = 45, "laser" = 40,"energy" = 30, "bomb" = 60, "bio" = 100, "rad" = 90, "fire" = 85, "acid" = 75)
+	armor = list("melee" = 50, "bullet" = 45, "laser" = 40, "energy" = 30, "bomb" = 60, "bio" = 100, "rad" = 60, "fire" = 90, "acid" = 75)
 
 /obj/item/clothing/suit/space/hardsuit/solgov
 	icon_state = "hardsuit_solgov"
 	name = "\improper SolGov hardsuit"
 	desc = "An armored spaceproof suit. A powered exoskeleton keeps the suit light and mobile."
 	item_state = "hardsuit_solgov"
-	armor = list("melee" = 50, "bullet" = 45, "laser" = 40, "energy" = 30, "bomb" = 60, "bio" = 100, "rad" = 90, "fire" = 85, "acid" = 75) //intentionally the fucking strong, this is master chief-tier armor //is this really what you call the strong?? is this the best solgov has to offer??????
+	armor = list("melee" = 50, "bullet" = 45, "laser" = 40, "energy" = 30, "bomb" = 60, "bio" = 100, "rad" = 60, "fire" = 90, "acid" = 75) //intentionally the fucking strong, this is master chief-tier armor //is this really what you call the strong?? is this the best solgov has to offer??????
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/solgov
 	slowdown = 0
 

@@ -29,7 +29,7 @@
 			new /obj/item/reagent_containers/glass/bottle/potion/flight(src)
 		if(7)
 			new /obj/item/pickaxe/diamond(src)
-			new /obj/item/pinpointer/deepcore/advanced(src)
+			new /obj/item/t_scanner/adv_mining_scanner(src)
 		if(8)
 			if(prob(50))
 				new /obj/item/disk/design_disk/modkit_disc/resonator_blast(src)
@@ -107,7 +107,7 @@
 				new /obj/item/reagent_containers/glass/bottle/potion/flight(src)
 			if(7)
 				new /obj/item/pickaxe/diamond(src)
-				new /obj/item/pinpointer/deepcore/advanced(src)
+				new /obj/item/t_scanner/adv_mining_scanner(src)
 			if(8)
 				if(prob(50))
 					new /obj/item/disk/design_disk/modkit_disc/resonator_blast(src)
@@ -574,7 +574,7 @@
 
 /obj/projectile/hook/fire(setAngle)
 	if(firer)
-		chain = firer.Beam(src, icon_state = "chain")
+		chain = firer.Beam(src, icon_state = "chain", emissive = FALSE)
 	..()
 	//TODO: root the firer until the chain returns
 

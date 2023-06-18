@@ -2,7 +2,9 @@
 	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
 	"map_name": "Lagoon-class Cruise Ship",
 	"prefix": "ISV",
-	"namelists": ["CRUISE"],
+	"namelists": [
+		"CRUISE"
+	],
 	"map_short_name": "Lagoon-class",
 	"map_path": "_maps/shuttles/shiptest/independent_lagoon.dmm",
 	"job_slots": {
@@ -23,8 +25,6 @@
 		"Curator": 1,
 		"Chaplain": 1,
 		"Janitor": 1,
-		"Clown": 1,
-		"Mime": 1,
 		"Passenger": {
 			"outfit": "/datum/outfit/job/assistant/corporate",
 			"slots": 10

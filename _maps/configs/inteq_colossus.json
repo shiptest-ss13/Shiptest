@@ -2,13 +2,23 @@
 	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
 	"map_name": "Colossus-Class Armored Frigate",
 	"prefix": "IRMV",
-	"namelists": ["MYTHOLOGICAL", "BEASTS", "NATURAL_AGGRESSIVE"],
+	"namelists": [
+		"MYTHOLOGICAL",
+		"BEASTS",
+		"NATURAL_AGGRESSIVE",
+		"INTEQ"
+	],
 	"map_short_name": "Colossus-class",
 	"map_path": "_maps/shuttles/shiptest/inteq_colossus.dmm",
 	"limit": 1,
 	"job_slots": {
 		"Vanguard": {
 			"outfit": "/datum/outfit/job/captain/inteq/naked",
+			"officer": true,
+			"slots": 1
+		},
+		"Master At Arms": {
+			"outfit": "/datum/outfit/job/warden/inteq",
 			"officer": true,
 			"slots": 1
 		},

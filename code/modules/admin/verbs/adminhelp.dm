@@ -11,6 +11,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	var/list/active_tickets = list()
 	var/list/closed_tickets = list()
 	var/list/resolved_tickets = list()
+	var/total_statclick_errors = 0
 
 	var/obj/effect/statclick/ticket_list/astatclick = new(null, null, AHELP_ACTIVE)
 	var/obj/effect/statclick/ticket_list/cstatclick = new(null, null, AHELP_CLOSED)
@@ -98,6 +99,14 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	for(var/I in active_tickets)
 		var/datum/admin_help/AH = I
 		if(AH.initiator)
+			if(QDELETED(AH.statclick))
+				total_statclick_errors++
+				AH.statclick = new(null, AH)
+				if(!AH.error_screamed)
+					stack_trace("statclick null?")
+					message_admins("Ticket #[AH.id] had a null statclick, this message will only be shown once.")
+					AH.error_screamed = TRUE
+
 			L[++L.len] = list("#[AH.id]. [AH.initiator_key_name]:", "[AH.statclick.update()]", REF(AH))
 		else
 			++num_disconnected
@@ -105,6 +114,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 		L[++L.len] = list("Disconnected:", "[astatclick.update("[num_disconnected]")]", null, REF(astatclick))
 	L[++L.len] = list("Closed Tickets:", "[cstatclick.update("[closed_tickets.len]")]", null, REF(cstatclick))
 	L[++L.len] = list("Resolved Tickets:", "[rstatclick.update("[resolved_tickets.len]")]", null, REF(rstatclick))
+	L[++L.len] = list("Statclick Errors:", "[total_statclick_errors]", null, null)
 	return L
 
 //Reassociate still open ticket if one exists
@@ -168,6 +178,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	var/list/_interactions	//use AddInteraction() or, preferably, admin_ticket_log()
 
 	var/obj/effect/statclick/ahelp/statclick
+	var/error_screamed = FALSE
 
 	var/static/ticket_counter = 0
 
@@ -325,6 +336,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 //private
 /datum/admin_help/proc/RemoveActive()
 	if(state != AHELP_ACTIVE)
+		stack_trace("Attempt to remove non-active ticket")
 		return
 	closed_at = world.time
 	QDEL_NULL(statclick)

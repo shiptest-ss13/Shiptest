@@ -29,6 +29,18 @@
 	},
 /turf/open/floor/carpet/airless,
 /area/ruin/space/has_grav/astraeus/dorms_med)
+"aN" = (
+/obj/structure/chair{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/blue{
+	dir = 5
+	},
+/obj/machinery/power/apc/auto_name/directional/west{
+	start_charge = 0
+	},
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/space/has_grav/astraeus/bridge)
 "bo" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/airless,
@@ -65,44 +77,31 @@
 "cT" = (
 /obj/structure/lattice,
 /obj/item/stack/tile/plasteel,
-/turf/template_noop,
+/turf/open/space,
 /area/space/nearstation)
-"dd" = (
-/obj/effect/turf_decal/industrial/hatch/yellow,
-/obj/structure/closet/crate/internals,
-/obj/machinery/light/small{
-	dir = 4
-	},
-/turf/open/floor/plasteel/airless,
-/area/ruin/space/has_grav/astraeus/hallway)
 "dk" = (
 /obj/structure/lattice,
 /obj/item/stack/cable_coil/cut/red{
 	amount = 2
 	},
-/turf/template_noop,
+/turf/open/space,
 /area/space/nearstation)
 "dm" = (
 /obj/item/stack/tile/plasteel,
-/turf/template_noop,
-/area/template_noop)
+/turf/open/space,
+/area/space/nearstation)
 "do" = (
 /obj/structure/lattice,
 /obj/structure/disposalpipe/trunk{
 	dir = 8
 	},
-/turf/template_noop,
+/turf/open/space,
 /area/space/nearstation)
 "dp" = (
 /obj/item/stack/cable_coil/cut/red{
 	amount = 2
 	},
-/turf/template_noop,
-/area/template_noop)
-"dq" = (
-/obj/structure/lattice,
-/mob/living/simple_animal/hostile/carp,
-/turf/template_noop,
+/turf/open/space,
 /area/space/nearstation)
 "dx" = (
 /obj/effect/spawner/lootdrop/maintenance,
@@ -112,16 +111,10 @@
 /obj/item/stack/tile/plasteel,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/astraeus/hallway)
-"dQ" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small,
-/obj/item/stack/rods,
-/turf/open/floor/plasteel/airless,
-/area/ruin/space/has_grav/astraeus/hallway)
 "dY" = (
 /obj/structure/lattice,
 /obj/item/shard,
-/turf/template_noop,
+/turf/open/space,
 /area/space/nearstation)
 "eh" = (
 /obj/item/stack/sheet/metal,
@@ -137,15 +130,15 @@
 "ei" = (
 /obj/structure/lattice,
 /obj/item/stack/sheet/plasteel,
-/turf/template_noop,
+/turf/open/space,
 /area/space/nearstation)
 "eq" = (
 /obj/structure/fluff/broken_flooring{
 	dir = 4;
 	icon_state = "pile"
 	},
-/turf/template_noop,
-/area/template_noop)
+/turf/open/space,
+/area/space/nearstation)
 "es" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -202,24 +195,25 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
-/turf/template_noop,
+/turf/open/space,
 /area/ruin/space/has_grav/astraeus/bridge)
 "gR" = (
 /obj/item/stack/sheet/metal,
-/turf/template_noop,
-/area/template_noop)
+/turf/open/space,
+/area/space/nearstation)
 "gT" = (
 /turf/open/floor/plating/airless{
 	icon_state = "platingdmg2"
 	},
 /area/ruin/space/has_grav/astraeus/custodial)
-"he" = (
-/obj/machinery/power/apc/auto_name/east{
-	start_charge = 0
-	},
-/obj/structure/cable,
-/turf/open/floor/plating/airless,
-/area/ruin/space/has_grav/astraeus/custodial)
+"hg" = (
+/mob/living/simple_animal/hostile/carp,
+/turf/open/space,
+/area/ruin/unpowered)
+"hh" = (
+/obj/item/shard,
+/turf/open/space,
+/area/space/nearstation)
 "ho" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -276,6 +270,12 @@
 	},
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/astraeus/munitions)
+"hP" = (
+/obj/structure/table/reinforced,
+/obj/effect/turf_decal/corner/opaque/blue/full,
+/obj/item/radio/intercom/wideband/directional/north,
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/space/has_grav/astraeus/bridge)
 "hU" = (
 /obj/effect/turf_decal/corner/opaque/blue{
 	dir = 10
@@ -300,16 +300,12 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/astraeus/disposals)
-"is" = (
-/obj/structure/table_frame/wood,
-/obj/machinery/power/apc/auto_name/east{
-	start_charge = 0
-	},
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
+"ii" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small/directional/south,
+/obj/item/stack/rods,
 /turf/open/floor/plasteel/airless,
-/area/ruin/space/has_grav/astraeus/dorms_med)
+/area/ruin/space/has_grav/astraeus/hallway)
 "it" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/structure/closet,
@@ -328,6 +324,10 @@
 /mob/living/simple_animal/hostile/carp,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/has_grav/astraeus/bridge)
+"iR" = (
+/obj/structure/lattice,
+/turf/open/space,
+/area/space/nearstation)
 "jd" = (
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plating/airless,
@@ -367,18 +367,6 @@
 /obj/structure/girder/reinforced,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/astraeus/bridge)
-"kz" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/power/apc/auto_name/east{
-	start_charge = 0
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/turf/open/floor/plating/airless{
-	icon_state = "platingdmg3"
-	},
-/area/ruin/space/has_grav/astraeus/disposals)
 "kS" = (
 /obj/structure/rack,
 /obj/item/circuitboard/machine/shuttle/heater,
@@ -389,16 +377,13 @@
 	dir = 4;
 	icon_state = "singular"
 	},
-/turf/template_noop,
-/area/template_noop)
+/turf/open/space,
+/area/space/nearstation)
 "lo" = (
 /obj/structure/grille,
-/obj/machinery/door/poddoor/preopen,
-/turf/open/floor/plating/airless,
-/area/ruin/space/has_grav/astraeus/bridge)
-"lq" = (
-/obj/item/stack/rods,
-/obj/machinery/door/poddoor/preopen,
+/obj/machinery/door/poddoor/preopen{
+	dir = 8
+	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/astraeus/bridge)
 "ls" = (
@@ -411,7 +396,9 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/industrial/warning,
-/obj/machinery/door/poddoor/preopen,
+/obj/machinery/door/poddoor/preopen{
+	dir = 8
+	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/astraeus/munitions)
 "lx" = (
@@ -427,6 +414,13 @@
 	icon_state = "platingdmg2"
 	},
 /area/ruin/unpowered)
+"lJ" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/preopen{
+	dir = 4
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/astraeus/bridge)
 "lT" = (
 /obj/structure/rack,
 /obj/item/circuitboard/machine/space_heater,
@@ -450,9 +444,20 @@
 /obj/item/pen,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/has_grav/astraeus/bridge)
+"mh" = (
+/obj/structure/table_frame/wood,
+/obj/machinery/power/apc/auto_name/directional/east{
+	start_charge = 0
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plasteel/airless,
+/area/ruin/space/has_grav/astraeus/dorms_med)
 "ms" = (
 /obj/structure/door_assembly/door_assembly_com{
-	anchored = 1
+	anchored = 1;
+	dir = 8
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -462,7 +467,7 @@
 "mw" = (
 /obj/structure/lattice,
 /obj/item/stack/rods,
-/turf/template_noop,
+/turf/open/space,
 /area/space/nearstation)
 "mA" = (
 /turf/open/floor/plating/airless,
@@ -497,11 +502,20 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/astraeus/munitions)
+"nI" = (
+/obj/item/stack/sheet/metal,
+/turf/open/space,
+/area/ruin/unpowered)
 "oh" = (
 /obj/structure/frame/machine,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/astraeus/munitions)
+"oz" = (
+/obj/machinery/vending/cola/blue,
+/obj/machinery/light/built/directional/west,
+/turf/open/floor/plasteel/airless,
+/area/ruin/space/has_grav/astraeus/dorms_med)
 "oE" = (
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/astraeus/dorms_med)
@@ -538,16 +552,11 @@
 /area/ruin/space/has_grav/astraeus/munitions)
 "pL" = (
 /obj/effect/decal/cleanable/glass,
-/obj/machinery/door/poddoor/preopen,
+/obj/machinery/door/poddoor/preopen{
+	dir = 8
+	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/astraeus/bridge)
-"pO" = (
-/obj/machinery/power/apc/auto_name/east{
-	start_charge = 0
-	},
-/obj/effect/spawner/lootdrop/maintenance,
-/turf/open/floor/plasteel/airless,
-/area/ruin/space/has_grav/astraeus/munitions)
 "pT" = (
 /obj/item/stack/conveyor,
 /obj/effect/spawner/lootdrop/maintenance,
@@ -573,7 +582,7 @@
 /area/ruin/space/has_grav/astraeus/disposals)
 "qr" = (
 /obj/structure/catwalk,
-/turf/template_noop,
+/turf/open/space,
 /area/ruin/space/has_grav/astraeus/bridge)
 "qO" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
@@ -588,6 +597,14 @@
 /obj/structure/chair/office,
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/astraeus/dorms_med)
+"qX" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/bed/roller,
+/obj/effect/decal/cleanable/blood/old,
+/obj/effect/mob_spawn/human/corpse/damaged,
+/obj/structure/extinguisher_cabinet/directional/north,
+/turf/open/floor/plasteel/airless,
+/area/ruin/space/has_grav/astraeus/hallway)
 "ra" = (
 /mob/living/simple_animal/hostile/asteroid/basilisk,
 /turf/open/floor/plating/asteroid/airless,
@@ -613,20 +630,32 @@
 "rk" = (
 /obj/structure/lattice,
 /obj/item/clothing/neck/stethoscope,
-/turf/template_noop,
+/turf/open/space,
 /area/space/nearstation)
+"rv" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/preopen{
+	dir = 8
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/astraeus/bridge)
 "rw" = (
 /obj/item/stack/sheet/plasteel/twenty,
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/astraeus/disposals)
+"ry" = (
+/turf/template_noop,
+/area/space/nearstation)
 "rU" = (
 /turf/open/floor/plating/airless{
 	icon_state = "platingdmg3"
 	},
 /area/ruin/space/has_grav/astraeus/disposals)
-"rW" = (
-/obj/machinery/light/small/broken,
+"rY" = (
+/obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/structure/closet/crate/internals,
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/astraeus/hallway)
 "si" = (
@@ -665,8 +694,8 @@
 /obj/item/stack/cable_coil/cut/red{
 	amount = 2
 	},
-/turf/template_noop,
-/area/template_noop)
+/turf/open/space,
+/area/space/nearstation)
 "ti" = (
 /obj/item/stack/sheet/metal/five,
 /turf/open/floor/plating/airless,
@@ -693,22 +722,8 @@
 /obj/structure/mopbucket,
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/astraeus/custodial)
-"ue" = (
-/obj/structure/table/wood,
-/obj/item/spacecash/bundle/c1000,
-/turf/open/floor/carpet/airless,
-/area/ruin/space/has_grav/astraeus/dorms_med)
 "ul" = (
 /obj/structure/reagent_dispensers/watertank,
-/turf/open/floor/plasteel/airless,
-/area/ruin/space/has_grav/astraeus/munitions)
-"uo" = (
-/obj/machinery/conveyor{
-	dir = 4
-	},
-/obj/machinery/light{
-	dir = 8
-	},
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/astraeus/munitions)
 "ur" = (
@@ -725,6 +740,11 @@
 	},
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/astraeus/hallway)
+"uN" = (
+/obj/structure/table/wood,
+/obj/item/spacecash/bundle/c1000,
+/turf/open/floor/carpet/airless,
+/area/ruin/space/has_grav/astraeus/dorms_med)
 "vl" = (
 /obj/structure/lattice,
 /obj/item/stack/cable_coil/cut/red{
@@ -733,7 +753,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/turf/template_noop,
+/turf/open/space,
 /area/space/nearstation)
 "vn" = (
 /obj/structure/grille/broken,
@@ -741,6 +761,18 @@
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/astraeus/dorms_med)
+"vC" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/power/apc/auto_name/directional/east{
+	start_charge = 0
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plating/airless{
+	icon_state = "platingdmg3"
+	},
+/area/ruin/space/has_grav/astraeus/disposals)
 "vF" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
@@ -806,7 +838,8 @@
 /area/ruin/space/has_grav/astraeus/munitions)
 "wF" = (
 /obj/machinery/door/airlock/command{
-	name = "Bridge"
+	name = "Bridge";
+	dir = 8
 	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 8
@@ -821,7 +854,7 @@
 /area/ruin/space/has_grav/astraeus/hallway)
 "wX" = (
 /obj/structure/lattice,
-/turf/template_noop,
+/turf/open/space,
 /area/ruin/unpowered)
 "xb" = (
 /obj/structure/table_frame/wood,
@@ -848,7 +881,7 @@
 	icon_state = "1-2"
 	},
 /obj/structure/catwalk,
-/turf/template_noop,
+/turf/open/space,
 /area/ruin/space/has_grav/astraeus/bridge)
 "xw" = (
 /obj/effect/decal/cleanable/blood/tracks{
@@ -881,12 +914,18 @@
 "yc" = (
 /obj/structure/lattice,
 /obj/structure/filingcabinet,
-/turf/template_noop,
+/turf/open/space,
 /area/space/nearstation)
 "yd" = (
 /obj/machinery/holopad,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/astraeus/bridge)
+"yo" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/ammo_box/magazine/wt550m9,
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/plasteel/airless,
+/area/ruin/space/has_grav/astraeus/munitions)
 "yq" = (
 /obj/structure/table,
 /obj/effect/turf_decal/industrial/warning{
@@ -911,7 +950,7 @@
 "yH" = (
 /obj/structure/lattice,
 /obj/machinery/airalarm/directional/east,
-/turf/template_noop,
+/turf/open/space,
 /area/space/nearstation)
 "yJ" = (
 /obj/machinery/conveyor{
@@ -955,7 +994,8 @@
 /area/ruin/space/has_grav/astraeus/disposals)
 "AE" = (
 /obj/machinery/door/airlock/command{
-	name = "Bridge"
+	name = "Bridge";
+	dir = 8
 	},
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/astraeus/bridge)
@@ -980,6 +1020,13 @@
 /obj/structure/closet/emcloset,
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/astraeus/dorms_med)
+"BI" = (
+/obj/machinery/conveyor{
+	dir = 4
+	},
+/obj/machinery/light/directional/west,
+/turf/open/floor/plasteel/airless,
+/area/ruin/space/has_grav/astraeus/munitions)
 "BM" = (
 /obj/machinery/door/airlock/command{
 	name = "Conference Room"
@@ -998,10 +1045,21 @@
 /obj/machinery/airalarm/directional/west,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/has_grav/astraeus/bridge)
+"BR" = (
+/obj/machinery/light/small/broken/directional/south,
+/turf/open/floor/plasteel/airless,
+/area/ruin/space/has_grav/astraeus/munitions)
+"Cb" = (
+/obj/machinery/power/apc/auto_name/directional/east{
+	start_charge = 0
+	},
+/obj/structure/cable,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/astraeus/custodial)
 "Cx" = (
 /mob/living/simple_animal/hostile/carp,
-/turf/template_noop,
-/area/template_noop)
+/turf/open/space,
+/area/space/nearstation)
 "CD" = (
 /obj/item/reagent_containers/glass/bucket,
 /obj/effect/decal/cleanable/dirt,
@@ -1025,6 +1083,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/astraeus/munitions)
+"CU" = (
+/obj/machinery/light/small/directional/west,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/airless,
+/area/ruin/space/has_grav/astraeus/hallway)
 "Dc" = (
 /turf/closed/wall,
 /area/ruin/space/has_grav/astraeus/hallway)
@@ -1049,17 +1112,10 @@
 /obj/machinery/cell_charger,
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/astraeus/munitions)
-"DJ" = (
-/obj/machinery/light/small{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/airless,
-/area/ruin/space/has_grav/astraeus/hallway)
 "Ee" = (
 /obj/item/stack/sheet/plasteel,
-/turf/template_noop,
-/area/template_noop)
+/turf/open/space,
+/area/space/nearstation)
 "Et" = (
 /obj/item/wrench,
 /obj/effect/turf_decal/industrial/outline/yellow,
@@ -1085,22 +1141,19 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/astraeus/dorms_med)
+"EV" = (
+/obj/structure/lattice,
+/mob/living/simple_animal/hostile/carp,
+/turf/open/space,
+/area/space/nearstation)
 "EX" = (
 /obj/structure/grille,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/astraeus/disposals)
 "Fb" = (
 /obj/item/stack/tile/carpet,
-/turf/template_noop,
-/area/template_noop)
-"Fm" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/item/ammo_box/magazine/wt550m9,
-/obj/machinery/light/small{
-	dir = 8
-	},
-/turf/open/floor/plasteel/airless,
-/area/ruin/space/has_grav/astraeus/munitions)
+/turf/open/space,
+/area/space/nearstation)
 "Fp" = (
 /obj/effect/decal/remains/human,
 /turf/open/floor/plasteel/airless,
@@ -1123,8 +1176,8 @@
 /area/ruin/unpowered)
 "FL" = (
 /obj/item/chair,
-/turf/template_noop,
-/area/template_noop)
+/turf/open/space,
+/area/space/nearstation)
 "FV" = (
 /obj/item/stack/rods,
 /obj/effect/decal/cleanable/glass,
@@ -1155,6 +1208,9 @@
 	},
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/astraeus/hallway)
+"Gw" = (
+/turf/open/space,
+/area/space/nearstation)
 "GG" = (
 /obj/item/stack/sheet/glass/fifty,
 /turf/open/floor/plating/airless{
@@ -1202,16 +1258,6 @@
 /obj/structure/closet/l3closet/janitor,
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/astraeus/custodial)
-"HD" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/bed/roller,
-/obj/effect/decal/cleanable/blood/old,
-/obj/effect/mob_spawn/human/corpse/damaged,
-/obj/structure/extinguisher_cabinet{
-	pixel_y = 32
-	},
-/turf/open/floor/plasteel/airless,
-/area/ruin/space/has_grav/astraeus/hallway)
 "HE" = (
 /obj/effect/turf_decal/corner/opaque/blue/full,
 /obj/structure/frame/computer{
@@ -1235,13 +1281,6 @@
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
-	},
-/turf/open/floor/plasteel/airless,
-/area/ruin/space/has_grav/astraeus/dorms_med)
-"Iv" = (
-/obj/machinery/vending/cola/blue,
-/obj/machinery/light/built{
-	dir = 8
 	},
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/astraeus/dorms_med)
@@ -1273,9 +1312,21 @@
 /obj/machinery/conveyor,
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/astraeus/munitions)
+"IX" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/blood/tracks,
+/obj/machinery/light/small/directional/east,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/airless,
+/area/ruin/space/has_grav/astraeus/hallway)
 "Jk" = (
 /obj/structure/catwalk,
-/turf/template_noop,
+/turf/open/space,
 /area/ruin/space/has_grav/astraeus/munitions)
 "Jr" = (
 /obj/effect/turf_decal/corner/opaque/blue{
@@ -1297,7 +1348,8 @@
 /area/ruin/space/has_grav/astraeus/munitions)
 "Jx" = (
 /obj/machinery/door/airlock/command{
-	name = "Bridge"
+	name = "Bridge";
+	dir = 4
 	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 4
@@ -1378,8 +1430,8 @@
 /obj/item/shard{
 	icon_state = "medium"
 	},
-/turf/template_noop,
-/area/template_noop)
+/turf/open/space,
+/area/space/nearstation)
 "LG" = (
 /obj/structure/girder,
 /turf/open/floor/plating/airless,
@@ -1398,7 +1450,7 @@
 	icon_state = "2-4"
 	},
 /obj/structure/catwalk,
-/turf/template_noop,
+/turf/open/space,
 /area/ruin/space/has_grav/astraeus/bridge)
 "Mk" = (
 /obj/structure/girder/displaced,
@@ -1510,6 +1562,13 @@
 	},
 /turf/open/floor/carpet/airless,
 /area/ruin/space/has_grav/astraeus/dorms_med)
+"Pb" = (
+/obj/machinery/power/apc/auto_name/directional/east{
+	start_charge = 0
+	},
+/obj/effect/spawner/lootdrop/maintenance,
+/turf/open/floor/plasteel/airless,
+/area/ruin/space/has_grav/astraeus/munitions)
 "Pd" = (
 /obj/effect/decal/cleanable/vomit/old,
 /obj/structure/cable{
@@ -1522,7 +1581,7 @@
 	icon_state = "4-8"
 	},
 /obj/structure/catwalk,
-/turf/template_noop,
+/turf/open/space,
 /area/ruin/space/has_grav/astraeus/bridge)
 "Pg" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -1537,28 +1596,6 @@
 	},
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/astraeus/hallway)
-"Pp" = (
-/obj/structure/chair{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/opaque/blue{
-	dir = 5
-	},
-/obj/machinery/power/apc/auto_name/west{
-	start_charge = 0
-	},
-/turf/open/floor/plasteel/dark/airless,
-/area/ruin/space/has_grav/astraeus/bridge)
-"PJ" = (
-/obj/machinery/light/small/broken,
-/turf/open/floor/plasteel/airless,
-/area/ruin/space/has_grav/astraeus/munitions)
-"PS" = (
-/obj/structure/table/reinforced,
-/obj/effect/turf_decal/corner/opaque/blue/full,
-/obj/item/radio/intercom/wideband,
-/turf/open/floor/plasteel/dark/airless,
-/area/ruin/space/has_grav/astraeus/bridge)
 "Qw" = (
 /obj/item/shard,
 /turf/template_noop,
@@ -1574,6 +1611,13 @@
 "QZ" = (
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/astraeus/hallway)
+"Rf" = (
+/obj/structure/door_assembly/door_assembly_com{
+	anchored = 1;
+	dir = 4
+	},
+/turf/open/floor/plasteel/airless,
+/area/ruin/space/has_grav/astraeus/munitions)
 "Rh" = (
 /obj/effect/turf_decal/corner/opaque/blue/full,
 /obj/structure/table/reinforced,
@@ -1583,8 +1627,12 @@
 "Rn" = (
 /obj/structure/lattice,
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
-/turf/template_noop,
+/turf/open/space,
 /area/space/nearstation)
+"Rt" = (
+/obj/machinery/light/small/broken/directional/south,
+/turf/open/floor/plasteel/airless,
+/area/ruin/space/has_grav/astraeus/hallway)
 "RG" = (
 /turf/open/floor/plating/airless{
 	icon_state = "platingdmg3"
@@ -1593,7 +1641,7 @@
 "RJ" = (
 /obj/structure/sign/warning/securearea,
 /obj/structure/catwalk,
-/turf/template_noop,
+/turf/open/space,
 /area/ruin/space/has_grav/astraeus/bridge)
 "RK" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -1706,28 +1754,6 @@
 	},
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/astraeus/dorms_med)
-"Va" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood/tracks,
-/obj/machinery/light/small{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plasteel/airless,
-/area/ruin/space/has_grav/astraeus/hallway)
-"Vh" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/broken,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plasteel/airless,
-/area/ruin/space/has_grav/astraeus/hallway)
 "Vt" = (
 /obj/structure/bed/dogbed/ian,
 /turf/open/floor/plasteel/airless,
@@ -1753,18 +1779,6 @@
 /obj/item/pickaxe/silver,
 /turf/open/floor/plating/asteroid/airless,
 /area/ruin/unpowered)
-"VH" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/glass,
-/obj/machinery/power/apc/auto_name/south{
-	start_charge = 0
-	},
-/obj/item/defibrillator/compact,
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/turf/open/floor/plasteel/airless,
-/area/ruin/space/has_grav/astraeus/hallway)
 "VT" = (
 /obj/structure/sign/warning/securearea,
 /turf/closed/wall/r_wall,
@@ -1828,15 +1842,8 @@
 /area/ruin/space/has_grav/astraeus/bridge)
 "Wy" = (
 /obj/item/stack/tile/wood,
-/turf/template_noop,
-/area/template_noop)
-"WJ" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark/airless,
-/area/ruin/space/has_grav/astraeus/bridge)
+/turf/open/space,
+/area/space/nearstation)
 "WL" = (
 /turf/closed/wall,
 /area/ruin/space/has_grav/astraeus/dorms_med)
@@ -1850,6 +1857,10 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/astraeus/dorms_med)
+"WQ" = (
+/obj/item/stack/rods,
+/turf/open/space,
+/area/space/nearstation)
 "WU" = (
 /obj/item/clothing/suit/space/hardsuit/mining,
 /turf/open/floor/plating/asteroid/airless,
@@ -1860,7 +1871,8 @@
 /area/ruin/unpowered)
 "Xm" = (
 /obj/structure/door_assembly/door_assembly_com{
-	anchored = 1
+	anchored = 1;
+	dir = 4
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1870,6 +1882,18 @@
 	},
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/astraeus/dorms_med)
+"Xp" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/glass,
+/obj/machinery/power/apc/auto_name/directional/south{
+	start_charge = 0
+	},
+/obj/item/defibrillator/compact,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plasteel/airless,
+/area/ruin/space/has_grav/astraeus/hallway)
 "Xq" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/wallframe/firealarm{
@@ -1906,7 +1930,7 @@
 "Yl" = (
 /obj/structure/lattice,
 /obj/structure/cable,
-/turf/template_noop,
+/turf/open/space,
 /area/space/nearstation)
 "Yq" = (
 /obj/structure/cable{
@@ -1952,7 +1976,7 @@
 /obj/item/stack/cable_coil/cut/red{
 	amount = 2
 	},
-/turf/template_noop,
+/turf/open/space,
 /area/ruin/space/has_grav/astraeus/bridge)
 "Zk" = (
 /obj/structure/lattice,
@@ -1978,6 +2002,14 @@
 	},
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/astraeus/hallway)
+"Zq" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/broken/directional/south,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/airless,
+/area/ruin/space/has_grav/astraeus/hallway)
 "Zz" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 10
@@ -1994,6 +2026,11 @@
 /obj/item/reagent_containers/blood,
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/astraeus/hallway)
+"ZD" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/directional/west,
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/space/has_grav/astraeus/bridge)
 "ZN" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
@@ -2016,7 +2053,7 @@
 	amount = 2
 	},
 /obj/structure/catwalk,
-/turf/template_noop,
+/turf/open/space,
 /area/ruin/space/has_grav/astraeus/bridge)
 
 (1,1,1) = {"
@@ -2026,7 +2063,7 @@ ac
 ac
 ac
 ac
-YO
+WQ
 ac
 ac
 ac
@@ -2035,7 +2072,7 @@ ac
 ac
 ac
 ac
-dp
+ac
 ac
 ac
 ac
@@ -2070,9 +2107,9 @@ ac
 am
 am
 ac
-XD
-XD
-Cx
+dk
+iR
+ac
 YX
 ac
 Ee
@@ -2101,21 +2138,21 @@ ac
 dp
 ac
 ac
-YO
+WQ
 GK
 GK
-XD
-XD
-XD
+iR
+iR
+iR
 UK
-XD
-XD
+EV
+iR
 vl
 tr
 JI
 Wl
 fU
-XD
+iR
 ac
 ac
 ac
@@ -2135,20 +2172,20 @@ ac
 ac
 ac
 eq
-XD
+iR
 mA
-XD
-XD
+iR
+iR
 GS
 LG
 ls
 RN
-XD
-XD
+iR
+iR
 am
 QZ
 Gv
-rW
+Rt
 Wl
 Tg
 qU
@@ -2209,14 +2246,14 @@ ac
 ac
 ac
 es
-he
+Cb
 mL
 tM
 CE
 Hs
 Mk
 qO
-dd
+rY
 uH
 it
 Dc
@@ -2228,7 +2265,7 @@ OD
 Vt
 eh
 yH
-XD
+iR
 Wy
 ac
 ac
@@ -2281,15 +2318,15 @@ ac
 (8,1,1) = {"
 ac
 dp
-XD
+iR
 TA
 ht
 nm
-uo
+BI
 sR
 Fx
 Nd
-Fm
+yo
 jT
 sR
 ac
@@ -2301,8 +2338,8 @@ As
 Qw
 ge
 Is
-Iv
-XD
+oz
+iR
 gR
 ac
 ac
@@ -2318,7 +2355,7 @@ ac
 (9,1,1) = {"
 ac
 am
-XD
+iR
 TA
 ht
 nH
@@ -2339,9 +2376,9 @@ ac
 ge
 WM
 oE
-XD
-XD
-YO
+iR
+iR
+WQ
 FL
 Wy
 ac
@@ -2363,22 +2400,22 @@ ht
 sR
 sR
 Ns
-pw
+Rf
 sR
 xs
 Dc
 Dc
 Xq
 Gv
-VH
+Xp
 Dc
 Dc
 WL
 EO
 au
-XD
-XD
-ac
+iR
+iR
+Gw
 ac
 ac
 ac
@@ -2392,16 +2429,16 @@ ac
 (11,1,1) = {"
 am
 cT
-XD
+iR
 sR
 ht
 sR
 wv
 sR
 IA
-XD
-XD
-ac
+iR
+iR
+ry
 TW
 jI
 VX
@@ -2409,14 +2446,14 @@ Tz
 Gv
 sk
 pX
-DJ
+CU
 wf
 MS
-ue
+uN
 xb
 sL
 Fb
-YO
+WQ
 ac
 ac
 GV
@@ -2428,8 +2465,8 @@ ac
 "}
 (12,1,1) = {"
 bv
-dq
-XD
+EV
+iR
 sR
 ht
 bo
@@ -2439,8 +2476,8 @@ ae
 xE
 Rn
 Ss
-ac
-Va
+ry
+IX
 Wd
 ty
 Zz
@@ -2452,7 +2489,7 @@ Ln
 BB
 Sv
 vF
-XD
+iR
 ac
 ac
 ac
@@ -2465,7 +2502,7 @@ ac
 "}
 (13,1,1) = {"
 am
-XD
+iR
 dx
 sR
 ht
@@ -2479,9 +2516,9 @@ Tc
 xs
 Dc
 Dc
-HD
+qX
 xw
-Vh
+Zq
 Dc
 Dc
 Ni
@@ -2489,7 +2526,7 @@ Ir
 OI
 vV
 Dw
-XD
+iR
 ac
 ac
 ac
@@ -2502,7 +2539,7 @@ ac
 "}
 (14,1,1) = {"
 bH
-XD
+iR
 am
 sR
 hA
@@ -2526,7 +2563,7 @@ oE
 Pd
 UU
 oE
-XD
+iR
 ac
 ac
 ac
@@ -2539,7 +2576,7 @@ ac
 "}
 (15,1,1) = {"
 am
-XD
+iR
 QZ
 sR
 ht
@@ -2560,10 +2597,10 @@ VY
 ac
 ge
 BC
-is
+mh
 do
 yc
-XD
+iR
 ac
 ac
 ac
@@ -2576,7 +2613,7 @@ ac
 "}
 (16,1,1) = {"
 am
-XD
+iR
 dA
 sR
 ht
@@ -2598,11 +2635,11 @@ kk
 Jy
 Jy
 Jy
-XD
-YO
+iR
+WQ
 Cx
 Wy
-YO
+WQ
 ac
 ac
 Nj
@@ -2613,7 +2650,7 @@ ac
 "}
 (17,1,1) = {"
 cT
-XD
+iR
 QZ
 TA
 ht
@@ -2621,22 +2658,22 @@ bo
 sR
 yq
 bo
-PJ
+BR
 xs
 ho
 KD
 VA
-Pp
+aN
 XM
-WJ
+ZD
 Mw
 BO
 Wh
 KD
 Jy
 kk
-XD
-XD
+iR
+iR
 ac
 ac
 ac
@@ -2672,8 +2709,8 @@ wl
 lx
 gJ
 ei
-XD
-XD
+iR
+iR
 ac
 ac
 ac
@@ -2686,7 +2723,7 @@ ac
 ac
 "}
 (19,1,1) = {"
-XD
+iR
 am
 tr
 TA
@@ -2709,7 +2746,7 @@ jG
 KD
 Zd
 ac
-XD
+iR
 ac
 ac
 ac
@@ -2725,7 +2762,7 @@ ac
 (20,1,1) = {"
 QZ
 dx
-dQ
+ii
 TA
 hM
 ps
@@ -2740,7 +2777,7 @@ gg
 GT
 YV
 TV
-PS
+hP
 Jr
 ur
 KD
@@ -2765,7 +2802,7 @@ am
 QZ
 pw
 ia
-pO
+Pb
 xE
 bo
 JH
@@ -2819,8 +2856,8 @@ LH
 HE
 xW
 ZY
-Qw
-YO
+hh
+WQ
 ac
 ac
 ac
@@ -2836,7 +2873,7 @@ ac
 (23,1,1) = {"
 QZ
 am
-XD
+iR
 fo
 ih
 je
@@ -2871,9 +2908,9 @@ ac
 ac
 "}
 (24,1,1) = {"
-XD
-XD
-XD
+iR
+iR
+iR
 eE
 jd
 je
@@ -2883,15 +2920,15 @@ Le
 eE
 TA
 ho
-KD
-KD
+Jy
+lJ
 lo
-KD
-KD
-KD
-KD
+rv
+rv
+rv
+rv
 pL
-lq
+Jy
 Mf
 xu
 ZY
@@ -2910,7 +2947,7 @@ ac
 (25,1,1) = {"
 ac
 ac
-XD
+iR
 fo
 je
 pT
@@ -2923,10 +2960,10 @@ lt
 TA
 ac
 Qw
-XD
+iR
 ac
 ac
-XD
+iR
 ac
 RJ
 EG
@@ -2946,23 +2983,23 @@ ac
 "}
 (26,1,1) = {"
 ac
-XD
-XD
+iR
+iR
 fo
 je
 pU
 yJ
 Fz
-YO
+WQ
 ac
 Jk
-XD
+iR
 Jk
 ac
 ac
-XD
-XD
-XD
+iR
+iR
+iR
 dY
 ac
 qr
@@ -2983,24 +3020,24 @@ ac
 "}
 (27,1,1) = {"
 dm
-XD
+iR
 dp
 eE
 jO
 qk
 zr
 we
-XD
-XD
+iR
+iR
 Jk
 ac
 Jk
 ac
 ac
-XD
+iR
 ac
-YO
-XD
+WQ
+iR
 ac
 qr
 ac
@@ -3020,7 +3057,7 @@ ac
 "}
 (28,1,1) = {"
 ac
-XD
+iR
 dm
 eE
 kf
@@ -3034,7 +3071,7 @@ ac
 ac
 ac
 ac
-XD
+iR
 ac
 ac
 ac
@@ -3058,9 +3095,9 @@ ac
 (29,1,1) = {"
 ac
 dk
-ac
+Gw
 fu
-kz
+vC
 rw
 Ac
 we
@@ -3075,10 +3112,10 @@ ac
 ac
 ac
 ac
-YO
+WQ
 ac
 ac
-YO
+WQ
 ac
 ac
 ac
@@ -3094,14 +3131,14 @@ ac
 "}
 (30,1,1) = {"
 ac
-XD
+iR
 cT
 eE
 eE
 eE
 fo
 eE
-ac
+Gw
 ac
 ac
 ac
@@ -3146,7 +3183,7 @@ ac
 ac
 ac
 ac
-YO
+WQ
 le
 ac
 ac
@@ -3188,7 +3225,7 @@ zq
 ac
 ac
 ac
-YO
+WQ
 ac
 ac
 ac
@@ -3229,7 +3266,7 @@ zq
 ac
 ac
 ac
-YO
+WQ
 ac
 ac
 ac
@@ -3251,7 +3288,7 @@ ac
 ac
 ac
 ac
-YO
+WQ
 zq
 zq
 zq
@@ -3673,7 +3710,7 @@ ac
 ac
 ac
 ac
-Cx
+hg
 ac
 ac
 ac
@@ -3706,7 +3743,7 @@ zq
 zq
 zq
 ac
-gR
+nI
 ac
 ac
 ac
