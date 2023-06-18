@@ -21,8 +21,11 @@
 //95% chance of success, not 100 because organs are delicate
 /datum/surgery_step/hepatectomy
 	name = "remove damaged liver section"
-	implements = list(TOOL_SCALPEL = 95, /obj/item/melee/transforming/energy/sword = 65, /obj/item/kitchen/knife = 45,
-		/obj/item/shard = 35)
+	implements = list(
+		TOOL_SCALPEL = 95,
+		/obj/item/melee/transforming/energy/sword = 20,
+		/obj/item/kitchen/knife = 15,
+		/obj/item/shard = 10)
 	time = 52
 	experience_given = (MEDICAL_SKILL_ORGAN_FIX*0.8) //repeatable so not as much xp
 

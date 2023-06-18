@@ -2,8 +2,12 @@
 //make incision
 /datum/surgery_step/incise
 	name = "make incision"
-	implements = list(TOOL_SCALPEL = 100, /obj/item/melee/transforming/energy/sword = 75, /obj/item/kitchen/knife = 65,
-		/obj/item/shard = 45, /obj/item = 30) // 30% success with any sharp item.
+	implements = list(
+		TOOL_SCALPEL = 100,
+		/obj/item/melee/transforming/energy/sword = 40,
+		/obj/item/kitchen/knife = 20,
+		/obj/item/shard = 15,
+		/obj/item = 10) // 10% success with any sharp item. (why)
 	time = 1.6 SECONDS
 	preop_sound = 'sound/surgery/scalpel1.ogg'
 	success_sound = 'sound/surgery/scalpel2.ogg'
@@ -44,7 +48,11 @@
 //clamp bleeders
 /datum/surgery_step/clamp_bleeders
 	name = "clamp bleeders"
-	implements = list(TOOL_HEMOSTAT = 100, TOOL_WIRECUTTER = 60, /obj/item/stack/packageWrap = 35, /obj/item/stack/cable_coil = 15)
+	implements = list(
+		TOOL_HEMOSTAT = 100,
+		TOOL_WIRECUTTER = 30,
+		/obj/item/stack/packageWrap = 15,
+		/obj/item/stack/cable_coil = 10)
 	time = 2.4 SECONDS
 	preop_sound = 'sound/surgery/hemostat1.ogg'
 
@@ -64,7 +72,11 @@
 //retract skin
 /datum/surgery_step/retract_skin
 	name = "retract skin"
-	implements = list(TOOL_RETRACTOR = 100, TOOL_SCREWDRIVER = 45, TOOL_WIRECUTTER = 35, /obj/item/stack/rods = 35)
+	implements = list(
+		TOOL_RETRACTOR = 100,
+		TOOL_SCREWDRIVER = 20,
+		TOOL_WIRECUTTER = 15,
+		/obj/item/stack/rods = 10)
 	time = 2.4 SECONDS
 	preop_sound = 'sound/surgery/retractor1.ogg'
 	success_sound = 'sound/surgery/retractor2.ogg'
@@ -79,8 +91,11 @@
 //close incision
 /datum/surgery_step/close
 	name = "mend incision"
-	implements = list(TOOL_CAUTERY = 100, /obj/item/gun/energy/laser = 90, TOOL_WELDER = 70,
-		/obj/item = 30) // 30% success with any hot item.
+	implements = list(
+		TOOL_CAUTERY = 100,
+		TOOL_WELDER = 40,
+		/obj/item/gun/energy/laser = 60,
+		/obj/item = 30) // 30% success with any hot item. //this is fine, and decently reasonable
 	time = 2.4 SECONDS
 	preop_sound = 'sound/surgery/cautery1.ogg'
 	success_sound = 'sound/surgery/cautery2.ogg'
@@ -109,8 +124,13 @@
 //saw bone
 /datum/surgery_step/saw
 	name = "saw bone"
-	implements = list(TOOL_SAW = 100,/obj/item/melee/arm_blade = 75,
-	/obj/item/fireaxe = 50, /obj/item/hatchet = 35, /obj/item/kitchen/knife/butcher = 25, /obj/item = 20) //20% success (sort of) with any sharp item with a force>=10
+	implements = list(
+		TOOL_SAW = 100,
+		/obj/item/melee/arm_blade = 40,
+		/obj/item/fireaxe = 30,
+		/obj/item/hatchet = 20,
+		/obj/item/kitchen/knife/butcher = 15,
+		/obj/item = 10) //10% success (sort of) with any sharp item with a force>=10
 	time = 5.4 SECONDS
 	preop_sound = list(
 		/obj/item/circular_saw = 'sound/surgery/saw.ogg',
@@ -142,7 +162,12 @@
 //drill bone
 /datum/surgery_step/drill
 	name = "drill bone"
-	implements = list(TOOL_DRILL = 100, /obj/item/screwdriver/power = 80, /obj/item/pickaxe/drill = 60, TOOL_SCREWDRIVER = 25, /obj/item/kitchen/spoon = 20)
+	implements = list(
+		TOOL_DRILL = 100,
+		/obj/item/screwdriver/power = 30,
+		/obj/item/pickaxe/drill = 25,
+		TOOL_SCREWDRIVER = 20,
+		/obj/item/kitchen/spoon = 10) //spoon? really? this should be awful.
 	time = 30
 
 /datum/surgery_step/drill/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)

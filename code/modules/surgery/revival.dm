@@ -27,7 +27,10 @@
 
 /datum/surgery_step/revive
 	name = "shock brain"
-	implements = list(/obj/item/shockpaddles = 100, /obj/item/melee/baton = 75, /obj/item/gun/energy = 60)
+	implements = list(
+		/obj/item/shockpaddles = 100, //this is useful for reviving simepeople.
+		/obj/item/melee/baton = 20, //there's no reason to use a defib with this chance being high - so keep it low.
+		/obj/item/gun/energy = 20)
 	time = 12 SECONDS
 	success_sound = 'sound/magic/lightningbolt.ogg'
 	failure_sound = 'sound/machines/defib_zap.ogg'

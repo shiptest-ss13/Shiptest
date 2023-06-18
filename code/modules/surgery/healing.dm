@@ -25,7 +25,9 @@
 
 /datum/surgery_step/heal
 	name = "repair body"
-	implements = list(TOOL_HEMOSTAT = 100, TOOL_SCREWDRIVER = 65, /obj/item/pen = 55)
+	implements = list(
+		TOOL_HEMOSTAT = 100,
+		TOOL_SCREWDRIVER = 20)//something else could be added here - but I would prefer not. Hemostat is not that hard to come by and SHOULD be standard for ship equipment.
 	repeatable = TRUE
 	time = 2.5 SECONDS
 	success_sound = 'sound/surgery/retractor2.ogg'
