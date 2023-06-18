@@ -184,7 +184,7 @@
 	illustration = "cybersun"
 	max_blueprints = 7
 
-/obj/item/disk/design_disk/cyber_organ/tier3/Initialize()
+/obj/item/disk/design_disk/ipc_parts/Initialize()
 	. = ..()
 	blueprints[1] = new /datum/design/robotic_liver()
 	blueprints[2] = new /datum/design/robotic_eyes()
