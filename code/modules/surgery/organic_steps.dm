@@ -167,7 +167,7 @@
 		/obj/item/screwdriver/power = 30,
 		/obj/item/pickaxe/drill = 25,
 		TOOL_SCREWDRIVER = 20,
-		/obj/item/kitchen/spoon = 10) //spoon? really? this should be awful.
+		/obj/item/kitchen/spoon = 4.13) //i made this as awful as possible.
 	time = 30
 
 /datum/surgery_step/drill/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
