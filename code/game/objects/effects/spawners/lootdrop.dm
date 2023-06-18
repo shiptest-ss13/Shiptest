@@ -861,6 +861,7 @@
 	)
 
 //handpicked lists relevant to the planets they're on
+// /cave lists are made for spawning in cave biomes. Not every anomaly goes well there. We don't have enough anomalies to really populate them all though
 
 /obj/effect/spawner/lootdrop/anomaly/jungle
 	name = "Jungle Anomaly Spawner"
@@ -874,8 +875,29 @@
 		/obj/effect/anomaly/phantom/planetary,
 	)
 
+/obj/effect/spawner/lootdrop/anomaly/jungle/cave
+	loot = list(
+		/obj/effect/anomaly/flux/planetary,
+		/obj/effect/anomaly/grav/planetary,
+		/obj/effect/anomaly/hallucination/planetary,
+		/obj/effect/anomaly/heartbeat/planetary,
+		/obj/effect/anomaly/tvstatic/planetary,
+		/obj/effect/anomaly/veins/planetary,
+		/obj/effect/anomaly/phantom/planetary,
+	)
+
+//beaches don't currently have anomalies, but I don't see a reason why they couldn't have *some*
+
 /obj/effect/spawner/lootdrop/anomaly/beach
 	name = "Beach anomaly spawner"
+	loot = list(
+		/obj/effect/anomaly/hallucination/planetary,
+		/obj/effect/anomaly/sparkler/planetary,
+		/obj/effect/anomaly/veins/planetary,
+		/obj/effect/anomaly/phantom/planetary,
+	)
+
+/obj/effect/spawner/lootdrop/anomaly/beach/cave
 	loot = list(
 		/obj/effect/anomaly/hallucination/planetary,
 		/obj/effect/anomaly/sparkler/planetary,
@@ -887,6 +909,19 @@
 	name = "Sand anomaly spawner"
 	loot = list(
 		/obj/effect/anomaly/bluespace/planetary,
+		/obj/effect/anomaly/flux/planetary,
+		/obj/effect/anomaly/grav/planetary,
+		/obj/effect/anomaly/pyro/planetary,
+		/obj/effect/anomaly/sparkler/planetary,
+		/obj/effect/anomaly/tvstatic/planetary,
+		/obj/effect/anomaly/veins/planetary,
+		/obj/effect/anomaly/plasmasoul/planetary,
+		/obj/effect/anomaly/phantom/planetary,
+		/obj/effect/anomaly/melter/planetary,
+	)
+
+/obj/effect/spawner/lootdrop/anomaly/sand/cave
+	loot = list(
 		/obj/effect/anomaly/flux/planetary,
 		/obj/effect/anomaly/grav/planetary,
 		/obj/effect/anomaly/pyro/planetary,
@@ -917,6 +952,21 @@
 		/obj/effect/anomaly/melter/planetary,
 	)
 
+/obj/effect/spawner/lootdrop/anomaly/rock
+	loot = list(
+		/obj/effect/anomaly/flux/planetary,
+		/obj/effect/anomaly/grav/planetary,
+		/obj/effect/anomaly/hallucination/planetary,
+		/obj/effect/anomaly/pyro/planetary,
+		/obj/effect/anomaly/grav/high/planetary,
+		/obj/effect/anomaly/heartbeat/planetary,
+		/obj/effect/anomaly/sparkler/planetary,
+		/obj/effect/anomaly/veins/planetary,
+		/obj/effect/anomaly/plasmasoul/planetary,
+		/obj/effect/anomaly/phantom/planetary,
+		/obj/effect/anomaly/melter/planetary,
+	)
+
 /obj/effect/spawner/lootdrop/anomaly/lava
 	name = "Lava anomaly spawner"
 	loot = list(
@@ -930,6 +980,16 @@
 		/obj/effect/anomaly/plasmasoul/planetary,
 	)
 
+/obj/effect/spawner/lootdrop/anomaly/lava/cave
+	loot = list(
+		/obj/effect/anomaly/flux/planetary,
+		/obj/effect/anomaly/grav/planetary,
+		/obj/effect/anomaly/hallucination/planetary,
+		/obj/effect/anomaly/pyro/planetary,
+		/obj/effect/anomaly/grav/high/planetary,
+		/obj/effect/anomaly/plasmasoul/planetary,
+	)
+
 /obj/effect/spawner/lootdrop/anomaly/ice
 	name = "Ice anomaly spawner"
 	loot = list(
@@ -937,6 +997,15 @@
 		/obj/effect/anomaly/grav/planetary,
 		/obj/effect/anomaly/hallucination/planetary,
 		/obj/effect/anomaly/vortex/planetary,
+		/obj/effect/anomaly/grav/high/planetary,
+		/obj/effect/anomaly/plasmasoul/planetary,
+		/obj/effect/anomaly/phantom/planetary,
+	)
+
+/obj/effect/spawner/lootdrop/anomaly/ice/cave
+	loot = list(
+		/obj/effect/anomaly/grav/planetary,
+		/obj/effect/anomaly/hallucination/planetary,
 		/obj/effect/anomaly/grav/high/planetary,
 		/obj/effect/anomaly/plasmasoul/planetary,
 		/obj/effect/anomaly/phantom/planetary,
@@ -954,6 +1023,15 @@
 		/obj/effect/anomaly/melter/planetary,
 	)
 
+/obj/effect/spawner/lootdrop/anomaly/waste/cave
+	loot = list(
+		/obj/effect/anomaly/grav/planetary,
+		/obj/effect/anomaly/hallucination/planetary,
+		/obj/effect/anomaly/heartbeat/planetary,
+		/obj/effect/anomaly/veins/planetary,
+		/obj/effect/anomaly/plasmasoul/planetary,
+		/obj/effect/anomaly/melter/planetary,
+	)
 //wasteplanet things
 
 /obj/effect/spawner/lootdrop/waste/grille_or_trash

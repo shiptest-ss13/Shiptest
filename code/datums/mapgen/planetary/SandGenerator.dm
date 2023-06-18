@@ -93,7 +93,7 @@
 	feature_spawn_list = list(
 		/obj/structure/geyser/random = 4,
 		/obj/structure/elite_tumor = 2,
-		/obj/effect/spawner/lootdrop/anomaly/sand = 2,
+		/obj/effect/spawner/lootdrop/anomaly/sand = 0.5,
 	)
 	mob_spawn_chance = 4
 	mob_spawn_list = list(
@@ -174,7 +174,10 @@
 
 /datum/biome/cave/sand
 	closed_turf_types = list(/turf/closed/mineral/random/whitesands = 1)
-	open_turf_types = list(/turf/open/floor/plating/asteroid/whitesands = 5, /turf/open/floor/plating/asteroid/whitesands/dried = 1)
+	open_turf_types = list(
+		/turf/open/floor/plating/asteroid/whitesands = 5,
+		/turf/open/floor/plating/asteroid/whitesands/dried = 1
+	)
 	flora_spawn_chance = 4
 	flora_spawn_list = list(
 		/obj/structure/flora/rock = 4,
@@ -182,7 +185,11 @@
 		/obj/structure/flora/ash/fern = 2,
 		/obj/structure/flora/ash/puce = 1,
 	)
-	feature_spawn_list = list(/obj/structure/geyser/random = 1, /obj/structure/elite_tumor = 2)
+	feature_spawn_list = list(
+		/obj/structure/geyser/random = 1,
+		/obj/structure/elite_tumor = 2
+		/obj/effect/spawner/lootdrop/anomaly/sand/cave = 0.1
+	)
 	mob_spawn_chance = 4
 	mob_spawn_list = list(
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/random = 50,
