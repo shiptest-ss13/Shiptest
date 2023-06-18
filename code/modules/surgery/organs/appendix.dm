@@ -5,7 +5,7 @@
 	slot = ORGAN_SLOT_APPENDIX
 
 	healing_factor = STANDARD_ORGAN_HEALING
-	decay_factor = STANDARD_ORGAN_DECAY
+	decay_factor = STANDARD_ORGAN_DECAY / 2 //~30 minutes
 
 	now_failing = "<span class='warning'>An explosion of pain erupts in your lower right abdomen!</span>"
 	now_fixed = "<span class='info'>The pain in your abdomen has subsided.</span>"
