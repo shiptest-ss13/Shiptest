@@ -9,7 +9,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 
 	healing_factor = STANDARD_ORGAN_HEALING
-	decay_factor = STANDARD_ORGAN_DECAY / 2 //~30 mintues
+	decay_factor = STANDARD_ORGAN_DECAY
 
 	low_threshold_passed = "<span class='warning'>You feel short of breath.</span>"
 	high_threshold_passed = "<span class='warning'>You feel some sort of constriction around your chest as your breathing becomes shallow and rapid.</span>"
