@@ -37,7 +37,7 @@
 	reconcile_air()
 	update = air.react(src)
 
-/datum/pipeline/proc/build_pipeline(obj/machinery/atmospherics/base) building = TRUE
+/datum/pipeline/proc/build_pipeline(obj/machinery/atmospherics/base)
 	if(!QDELETED(base))
 		building = TRUE
 		var/volume = 0
