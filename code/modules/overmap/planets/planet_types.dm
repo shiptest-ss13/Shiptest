@@ -118,7 +118,7 @@
 	planet = DYNAMIC_WORLD_WASTEPLANET
 	icon_state = "globe"
 	color = "#a9883e"
-	mapgen = /datum/map_generator/single_biome/wasteplanet
+	mapgen = /datum/map_generator/planet_generator/waste
 	default_baseturf = /turf/open/floor/plating/asteroid/wasteplanet
 	weather_controller_type = /datum/weather_controller/chlorine
 	ruin_type = RUINTYPE_WASTE

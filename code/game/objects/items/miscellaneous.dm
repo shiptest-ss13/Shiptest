@@ -118,6 +118,9 @@
 	new /obj/item/clothing/mask/gas/carp(src)
 	new /obj/item/kitchen/knife/hunting(src)
 	new /obj/item/storage/box/papersack/meat(src)
+	new /obj/item/fishing_rod(src)
+	new /obj/item/fishing_line(src)
+	new /obj/item/fishing_hook(src)
 
 /obj/item/storage/box/hero/ghostbuster
 	name = "Spectre Inspector - 1980's."

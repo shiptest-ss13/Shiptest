@@ -173,9 +173,7 @@
 /obj/machinery/chem_dispenser/drinks/beer{
 	dir = 8
 	},
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /obj/structure/table/wood,
 /turf/open/floor/wood{
 	icon_state = "wood-broken3"
@@ -327,7 +325,7 @@
 /turf/open/floor/plating,
 /area/whitesands/surface/outdoors)
 "ry" = (
-/obj/machinery/newscaster{
+/obj/machinery/newscaster/directional/north{
 	pixel_x = -30;
 	pixel_y = 30
 	},
@@ -646,7 +644,7 @@
 /turf/open/floor/plasteel/dark,
 /area/whitesands/surface/outdoors)
 "Hc" = (
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/closed/wall/mineral/sandstone,
 /area/whitesands/surface/outdoors)
 "HA" = (
@@ -910,9 +908,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
 	},
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/mono/dark,
 /area/whitesands/surface/outdoors)
 "Qk" = (
@@ -958,9 +954,7 @@
 	},
 /area/whitesands/surface/outdoors)
 "TU" = (
-/obj/structure/extinguisher_cabinet{
-	pixel_y = -30
-	},
+/obj/structure/extinguisher_cabinet/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood{
@@ -999,10 +993,7 @@
 	dir = 4;
 	pixel_x = -12
 	},
-/obj/structure/extinguisher_cabinet{
-	pixel_x = -30;
-	pixel_y = -30
-	},
+/obj/structure/extinguisher_cabinet/directional/north,
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating,
 /area/whitesands/surface/outdoors)
@@ -1067,9 +1058,7 @@
 /area/whitesands/surface/outdoors)
 "Ys" = (
 /obj/item/storage/box/drinkingglasses,
-/obj/machinery/firealarm{
-	pixel_y = -28
-	},
+/obj/machinery/firealarm/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,

@@ -217,13 +217,13 @@
 
 /obj/item/clothing/head/beret/sec/inteq
 	name = "inteq beret"
-	desc = "A comfortable looking brown beret with a golden insignia. Denotes the wearer as part of the IRMG."
+	desc = "A comfortable looking brown beret with a badge of the golden shield of the IRMG. Denotes the wearer as part of the IRMG."
 	icon_state = "inteq_beret"
 	item_state = "inteq_beret"
 
 /obj/item/clothing/head/beret/sec/hos/inteq
 	name = "inteq vanguard beret"
-	desc = "A comfortable looking brown beret with a golden insignia. Denotes the wearer as a vanguard of the IRMG. The padding inside feels thicker."
+	desc = "A comfortable looking brown beret with a badge of the golden shield of the IRMG. Denotes the wearer as a vanguard of the IRMG. The padding inside feels thicker."
 	icon_state = "inteq_beret"
 	item_state = "inteq_beret"
 
