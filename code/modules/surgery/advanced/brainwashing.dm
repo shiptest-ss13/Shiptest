@@ -29,7 +29,7 @@
 	name = "brainwash"
 	implements = list(
 		TOOL_HEMOSTAT = 85,
-		/obj/item/soap = 60 //haha. brainwashing. get it?
+		/obj/item/soap = 60, //haha. brainwashing. get it?
 		TOOL_WIRECUTTER = 30,
 		/obj/item/stack/packageWrap = 20,
 		/obj/item/stack/cable_coil = 10)
