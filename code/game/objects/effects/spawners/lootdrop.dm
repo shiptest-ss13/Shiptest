@@ -867,7 +867,6 @@
 	name = "Jungle Anomaly Spawner"
 	loot = list(
 		/obj/effect/anomaly/flux/planetary,
-		/obj/effect/anomaly/grav/planetary,
 		/obj/effect/anomaly/hallucination/planetary,
 		/obj/effect/anomaly/heartbeat/planetary,
 		/obj/effect/anomaly/tvstatic/planetary,
@@ -878,7 +877,6 @@
 /obj/effect/spawner/lootdrop/anomaly/jungle/cave
 	loot = list(
 		/obj/effect/anomaly/flux/planetary,
-		/obj/effect/anomaly/grav/planetary,
 		/obj/effect/anomaly/hallucination/planetary,
 		/obj/effect/anomaly/heartbeat/planetary,
 		/obj/effect/anomaly/tvstatic/planetary,
@@ -910,12 +908,9 @@
 	loot = list(
 		/obj/effect/anomaly/bluespace/planetary,
 		/obj/effect/anomaly/flux/planetary,
-		/obj/effect/anomaly/grav/planetary,
-		/obj/effect/anomaly/pyro/planetary,
 		/obj/effect/anomaly/sparkler/planetary,
 		/obj/effect/anomaly/tvstatic/planetary,
 		/obj/effect/anomaly/veins/planetary,
-		/obj/effect/anomaly/plasmasoul/planetary,
 		/obj/effect/anomaly/phantom/planetary,
 		/obj/effect/anomaly/melter/planetary,
 	)
@@ -923,12 +918,10 @@
 /obj/effect/spawner/lootdrop/anomaly/sand/cave
 	loot = list(
 		/obj/effect/anomaly/flux/planetary,
-		/obj/effect/anomaly/grav/planetary,
 		/obj/effect/anomaly/pyro/planetary,
 		/obj/effect/anomaly/sparkler/planetary,
 		/obj/effect/anomaly/tvstatic/planetary,
 		/obj/effect/anomaly/veins/planetary,
-		/obj/effect/anomaly/plasmasoul/planetary,
 		/obj/effect/anomaly/phantom/planetary,
 		/obj/effect/anomaly/melter/planetary,
 	)
@@ -976,17 +969,14 @@
 		/obj/effect/anomaly/hallucination/planetary,
 		/obj/effect/anomaly/pyro/planetary,
 		/obj/effect/anomaly/vortex/planetary,
-		/obj/effect/anomaly/grav/high/planetary,
 		/obj/effect/anomaly/plasmasoul/planetary,
 	)
 
 /obj/effect/spawner/lootdrop/anomaly/lava/cave
 	loot = list(
 		/obj/effect/anomaly/flux/planetary,
-		/obj/effect/anomaly/grav/planetary,
 		/obj/effect/anomaly/hallucination/planetary,
 		/obj/effect/anomaly/pyro/planetary,
-		/obj/effect/anomaly/grav/high/planetary,
 		/obj/effect/anomaly/plasmasoul/planetary,
 	)
 
@@ -1004,7 +994,6 @@
 
 /obj/effect/spawner/lootdrop/anomaly/ice/cave
 	loot = list(
-		/obj/effect/anomaly/grav/planetary,
 		/obj/effect/anomaly/hallucination/planetary,
 		/obj/effect/anomaly/grav/high/planetary,
 		/obj/effect/anomaly/plasmasoul/planetary,
@@ -1014,8 +1003,6 @@
 /obj/effect/spawner/lootdrop/anomaly/waste
 	name = "Waste anomaly spawner"
 	loot = list(
-		/obj/effect/anomaly/grav/planetary,
-		/obj/effect/anomaly/hallucination/planetary,
 		/obj/effect/anomaly/vortex/planetary,
 		/obj/effect/anomaly/heartbeat/planetary,
 		/obj/effect/anomaly/veins/planetary,
@@ -1025,8 +1012,6 @@
 
 /obj/effect/spawner/lootdrop/anomaly/waste/cave
 	loot = list(
-		/obj/effect/anomaly/grav/planetary,
-		/obj/effect/anomaly/hallucination/planetary,
 		/obj/effect/anomaly/heartbeat/planetary,
 		/obj/effect/anomaly/veins/planetary,
 		/obj/effect/anomaly/plasmasoul/planetary,
