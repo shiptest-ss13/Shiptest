@@ -424,8 +424,6 @@
 	/// Create a dummy reservation to safeguard this space from being allocated mid-clearing in case the virtual level does get deleted
 	var/datum/dummy_space_reservation/safeguard = new(low_x, low_y, high_x, high_y, z_value)
 
-	var/area/space_area = GLOB.areas_by_type[/area/space]
-
 	var/list/turf/block_turfs = get_block()
 
 	for(var/turf/turf as anything in block_turfs)
