@@ -5,14 +5,19 @@
 	density = TRUE
 	anchored = TRUE
 	var/salvageable_parts = list()
+	var/frame_type = /obj/structure/frame/machine
 
 /obj/item/stack/ore/salvage/examine(mob/user)
 	. = ..()
 	. += "You can use a crowbar to salvage this."
 
 /obj/structure/salvageable/proc/dismantle(mob/living/user)
-	var/obj/frame = new /obj/structure/frame/machine(get_turf(src))
-	frame.anchored = TRUE
+	var/obj/frame = new frame_type(loc)
+	if(anchored)
+		frame.anchored = TRUE
+	else
+		frame.anchored = FALSE
+	frame.dir = dir
 	for(var/path in salvageable_parts)
 		if(prob(salvageable_parts[path]))
 			new path (loc)
@@ -30,6 +35,20 @@
 		dismantle(user)
 		tool.play_tool_sound(src, 100)
 		qdel(src)
+	return TRUE
+
+/obj/structure/salvageable/default_unfasten_wrench(mob/living/user, obj/item/I, time = 20)
+	. = ..()
+	var/obj/frame = frame_type
+	if(. == SUCCESSFUL_UNFASTEN)
+		if(anchored)
+			frame.anchored = TRUE
+		else
+			frame.anchored = FALSE //is this bad code? i'm not sure! i'll let the reviewer decide
+
+/obj/structure/salvageable/wrench_act(mob/living/user, obj/item/I)
+	..()
+	default_unfasten_wrench(user, I)
 	return TRUE
 
 
@@ -59,6 +78,7 @@
 /obj/structure/salvageable/computer
 	name = "broken computer"
 	icon_state = "computer_broken"
+	frame_type = /obj/structure/frame/computer/retro
 	salvageable_parts = list(
 		/obj/item/stack/sheet/glass/two = 80,
 		/obj/item/stack/cable_coil/cut = 90,
@@ -210,14 +230,14 @@
 		if(41 to 60)
 			visible_message("<span class='danger'>You flinch as the [src]'s laser apparatus lights up, but your tool destroys it before it activates...</span>")
 		if(61 to 79)
-			visible_message("<span class='danger'>You see a bright light from the [src] before the laser reactivates in your face!</span>")
+			visible_message("<span class='danger'>You see a dim light from the [src] before the laser reactivates in your face!</span>")
 			shoot_projectile(user, /obj/projectile/beam/scatter)
 		if(80 to 89)
 			visible_message("<span class='danger'>You see a bright light from the [src] before the laser reactivates in your face!</span>")
 			shoot_projectile(user, /obj/projectile/beam)
 		if(90 to 100)
-			visible_message("<span class='danger'>You see a bright light from the [src] before the laser reactivates in your face!</span>")
-			shoot_projectile(user, /obj/projectile/beam/laser/heavylaser)
+			visible_message("<span class='danger'>You see an intense light from the [src] before the laser reactivates in your face!</span>")
+			shoot_projectile(user, /obj/projectile/beam/laser/heavylaser) //i'd like to make this flash people. but i'm not sure how to do that. shame!
 
 /obj/structure/salvageable/destructive_analyzer/proc/shoot_projectile(mob/living/target, obj/projectile/projectile_to_shoot)
 	var/obj/projectile/projectile_being_shot = new projectile_to_shoot(get_turf(src))
@@ -646,7 +666,7 @@
 			/obj/item/circuitboard/computer/med_data = 5,
 		)
 
-//DESTRUCTIVE ANAL
+//DESTRUCTIVE ANAL //i'm killing you
 /obj/effect/spawner/lootdrop/destructive_anal_loot //what do people usually put in these things anayways
 	loot = list(
 			/obj/item/storage/toolbox/syndicate/empty = 650,
