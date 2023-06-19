@@ -279,7 +279,6 @@
 		"Kodiak - 'Polar'" = image(icon = 'icons/mob/robots.dmi', icon_state = "kodiak-standard"),
 		"Noble" = image(icon = 'icons/mob/robots.dmi', icon_state = "Noble-STD"),
 		"R34 - STR4a 'Durin'" = image(icon = 'icons/mob/robots.dmi', icon_state = "durin"),
-		"Booty" = image(icon = 'icons/mob/robots.dmi', icon_state = "booty-blue")
 		)
 		default_icons = sortList(default_icons)
 	var/default_borg_icon = show_radial_menu(R, R , default_icons, custom_check = CALLBACK(src, .proc/check_menu, R), radius = 42, require_near = TRUE)
@@ -320,10 +319,6 @@
 			cyborg_base_icon = "durin"
 			cyborg_icon_override = 'icons/mob/robots.dmi'
 			special_light_key = "durin"
-		if("Booty")
-			cyborg_base_icon = "booty-blue"
-			cyborg_icon_override = 'icons/mob/robots.dmi'
-			special_light_key = "booty-blue"
 		else
 			return FALSE
 	return ..()
@@ -373,7 +368,6 @@
 		"Kodiak - 'Arachne'" = image(icon = 'icons/mob/robots.dmi', icon_state = "arachne"),
 		"Noble" = image(icon = 'icons/mob/robots.dmi', icon_state = "Noble-MED"),
 		"R34 - MED6a 'Gibbs'" = image(icon = 'icons/mob/robots.dmi', icon_state = "gibbs"),
-		"Booty" = image(icon = 'icons/mob/robots.dmi', icon_state = "booty-white"),
 		"Qualified Doctor" = image(icon = 'icons/mob/robots.dmi', icon_state = "qualified_doctor")
 		)
 		med_icons = sortList(med_icons)
@@ -421,10 +415,6 @@
 			cyborg_base_icon = "gibbs"
 			cyborg_icon_override = 'icons/mob/robots.dmi'
 			special_light_key = "gibbs"
-		if("Booty")
-			cyborg_base_icon = "booty-white"
-			cyborg_icon_override = 'icons/mob/robots.dmi'
-			special_light_key = "booty-white"
 		if("Qualified Doctor")
 			cyborg_base_icon = "qualified-doctor"
 			cyborg_icon_override = 'icons/mob/robots.dmi'
@@ -452,7 +442,7 @@
 		/obj/item/analyzer,
 		/obj/item/geiger_counter/cyborg,
 		/obj/item/assembly/signaler/cyborg,
-		/obj/item/areaeditor/blueprints/cyborg,
+		/obj/item/areaeditor/shuttle/cyborg,
 		/obj/item/electroadaptive_pseudocircuit,
 		/obj/item/stack/sheet/metal/cyborg,
 		/obj/item/stack/sheet/glass/cyborg,
@@ -483,7 +473,6 @@
 		"Kodiak" = image(icon = 'icons/mob/robots.dmi', icon_state = "kodiak-eng"),
 		"Noble" = image(icon = 'icons/mob/robots.dmi', icon_state = "Noble-ENG"),
 		"R34 - ENG7a 'Conagher'" = image(icon = 'icons/mob/robots.dmi', icon_state = "conagher"),
-		"Booty" = image(icon = 'icons/mob/robots.dmi', icon_state = "booty-yellow")
 		)
 		engi_icons = sortList(engi_icons)
 	var/engi_borg_icon = show_radial_menu(R, R , engi_icons, custom_check = CALLBACK(src, .proc/check_menu, R), radius = 42, require_near = TRUE)
@@ -530,10 +519,6 @@
 			cyborg_base_icon = "conagher"
 			cyborg_icon_override = 'icons/mob/robots.dmi'
 			special_light_key = "conagher"
-		if("Booty")
-			cyborg_base_icon = "booty-yellow"
-			cyborg_icon_override = 'icons/mob/robots.dmi'
-			special_light_key = "booty-yellow"
 		else
 			return FALSE
 	return ..()
@@ -570,7 +555,6 @@
 		"Kodiak" = image(icon = 'icons/mob/robots.dmi', icon_state = "kodiak-sec"),
 		"Noble" = image(icon = 'icons/mob/robots.dmi', icon_state = "Noble-SEC"),
 		"R34 - SEC10a 'Woody'" = image(icon = 'icons/mob/robots.dmi', icon_state = "woody"),
-		"Booty" = image(icon = 'icons/mob/robots.dmi', icon_state = "booty-red")
 		)
 		sec_icons = sortList(sec_icons)
 	var/sec_borg_icon = show_radial_menu(R, R , sec_icons, custom_check = CALLBACK(src, .proc/check_menu, R), radius = 42, require_near = TRUE)
@@ -613,10 +597,6 @@
 			cyborg_base_icon = "woody"
 			cyborg_icon_override = 'icons/mob/robots.dmi'
 			special_light_key = "woody"
-		if("Booty")
-			cyborg_base_icon = "booty-red"
-			cyborg_icon_override = 'icons/mob/robots.dmi'
-			special_light_key = "booty-red"
 		else
 			return FALSE
 	return ..()
@@ -699,7 +679,6 @@
 		"#29" = image(icon = 'icons/mob/robots.dmi', icon_state = "servbot-jani"),
 		"Noble" = image(icon = 'icons/mob/robots.dmi', icon_state = "Noble-JAN"),
 		"R34 - CUS3a 'Flynn'" = image(icon = 'icons/mob/robots.dmi', icon_state = "flynn"),
-		"Booty" = image(icon = 'icons/mob/robots.dmi', icon_state = "booty-green")
 		)
 		jan_icons = sortList(jan_icons)
 	var/jan_borg_icon = show_radial_menu(R, R , jan_icons, custom_check = CALLBACK(src, .proc/check_menu, R), radius = 42, require_near = TRUE)
@@ -742,10 +721,6 @@
 			cyborg_base_icon = "flynn"
 			cyborg_icon_override = 'icons/mob/robots.dmi'
 			special_light_key = "flynn"
-		if("Booty")
-			cyborg_base_icon = "booty-green"
-			cyborg_icon_override = 'icons/mob/robots.dmi'
-			special_light_key = "booty-green"
 		else
 			return FALSE
 	return ..()
@@ -853,7 +828,6 @@
 		"Kodiak - 'Teddy'" = image(icon = 'icons/mob/robots.dmi', icon_state = "kodiak-service"),
 		"Noble" = image(icon = 'icons/mob/robots.dmi', icon_state = "Noble-SRV"),
 		"R34 - SRV9a 'Llyod'" = image(icon = 'icons/mob/robots.dmi', icon_state = "lloyd"),
-		"Booty" = image(icon = 'icons/mob/robots.dmi', icon_state = "booty-flower")
 		)
 		service_icons = sortList(service_icons)
 	var/service_robot_icon = show_radial_menu(R, R , service_icons, custom_check = CALLBACK(src, .proc/check_menu, R), radius = 42, require_near = TRUE)
@@ -900,10 +874,6 @@
 			cyborg_base_icon = "lloyd"
 			cyborg_icon_override = 'icons/mob/robots.dmi'
 			special_light_key = "lloyd"
-		if("Booty")
-			cyborg_base_icon = "booty-flower"
-			cyborg_icon_override = 'icons/mob/robots.dmi'
-			special_light_key = "booty-flower"
 		else
 			return FALSE
 	return ..()

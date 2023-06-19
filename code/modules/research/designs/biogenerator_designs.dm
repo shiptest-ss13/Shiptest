@@ -193,3 +193,35 @@
 	materials = list(/datum/material/biomass= 300)
 	build_path = /obj/item/clothing/head/rice_hat
 	category = list("initial","Organic Materials")
+
+/datum/design/rngplant
+	name = "SYNTHESIS"
+	id = "rngplant"
+	build_type = BIOGENERATOR
+	materials = list(/datum/material/biomass= 2000)
+	build_path = /obj/effect/spawner/lootdrop/seeded
+	category = list("initial","LIFESEED_2.0")
+
+/datum/design/genesis
+	name = "GENESIS"
+	id = "genesis"
+	build_type = BIOGENERATOR
+	materials = list(/datum/material/biomass= 2500)
+	make_reagents = list(/datum/reagent/genesis = 25)
+	category = list("initial","LIFESEED_2.0")
+
+/datum/design/strangeseed
+	name = "{DATA_CORRUPT}"
+	id = "strangeseed"
+	build_type = BIOGENERATOR
+	materials = list(/datum/material/biomass= 5000)
+	build_path = /obj/item/seeds/random
+	category = list("initial","LIFESEED_2.0")
+
+/datum/design/seaweed_sheet
+	name = "Seaweed Sheet"
+	id = "seaweedsheet"
+	build_type = BIOGENERATOR
+	materials = list(/datum/material/biomass = 60)
+	build_path = /obj/item/reagent_containers/food/snacks/grown/seaweed/sheet
+	category = list("initial","Food")

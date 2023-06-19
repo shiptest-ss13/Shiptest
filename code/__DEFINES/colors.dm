@@ -11,7 +11,7 @@
 
 
 #define COLOR_MONOTILE "#545c68"
-#define COLOR_TILE_GRAY "#4c535b"
+#define COLOR_TILE_GRAY "#444547"
 #define COLOR_TILE_DARK_GRAY "#404040"
 #define COLOR_WARNING "#D2D53D"
 
@@ -29,7 +29,7 @@
 #define COLOR_VERY_LIGHT_GRAY "#EEEEEE"
 #define COLOR_SILVER "#C0C0C0"
 #define COLOR_GRAY "#808080"
-#define COLOR_FLOORTILE_GRAY "#8D8B8B"
+#define COLOR_FLOORTILE_GRAY "#a3a2a0"
 #define COLOR_ALMOST_BLACK "#333333"
 #define COLOR_BLACK "#000000"
 #define COLOR_HALF_TRANSPARENT_BLACK "#0000007A"
@@ -70,6 +70,7 @@
 #define COLOR_PINK "#FFC0CB"
 #define COLOR_MOSTLY_PURE_PINK "#E4005B"
 #define COLOR_BLUSH_PINK "#D84C59"
+#define COLOR_BLUSH_TEAL "#009696"
 #define COLOR_MAGENTA "#FF00FF"
 #define COLOR_STRONG_MAGENTA "#B800B8"
 #define COLOR_PURPLE "#800080"
@@ -164,3 +165,6 @@
 #define LIGHT_COLOR_TUNGSTEN "#FAE1AF"
 /// Barely visible cyan-ish hue, as the doctor prescribed. rgb(240, 250, 250)
 #define LIGHT_COLOR_HALOGEN "#F0FAFA"
+
+/// Color used for default blood
+#define COLOR_BLOOD "#CC0000"

@@ -40,11 +40,12 @@ GLOBAL_LIST_INIT(astroloot, list(
 	var/mob_types = list(/mob/living/simple_animal/hostile/carp)
 	var/spawn_text = "emerges from"
 	var/faction = list("hostile")
+	var/spawn_sound = list('sound/effects/break_stone.ogg')
 	var/spawner_type = /datum/component/spawner
 
 /obj/structure/spawner/Initialize()
 	. = ..()
-	AddComponent(spawner_type, mob_types, spawn_time, faction, spawn_text, max_mobs)
+	AddComponent(spawner_type, mob_types, spawn_time, faction, spawn_text, max_mobs, spawn_sound)
 
 /obj/structure/spawner/attack_animal(mob/living/simple_animal/M)
 	if(faction_check(faction, M.faction, FALSE)&&!M.client)
@@ -83,6 +84,18 @@ GLOBAL_LIST_INIT(astroloot, list(
 	mob_types = list(/mob/living/simple_animal/hostile/retaliate/clown, /mob/living/simple_animal/hostile/retaliate/clown/fleshclown, /mob/living/simple_animal/hostile/retaliate/clown/clownhulk, /mob/living/simple_animal/hostile/retaliate/clown/longface, /mob/living/simple_animal/hostile/retaliate/clown/clownhulk/chlown, /mob/living/simple_animal/hostile/retaliate/clown/clownhulk/honcmunculus, /mob/living/simple_animal/hostile/retaliate/clown/mutant/blob, /mob/living/simple_animal/hostile/retaliate/clown/banana, /mob/living/simple_animal/hostile/retaliate/clown/honkling, /mob/living/simple_animal/hostile/retaliate/clown/lube)
 	spawn_text = "climbs out of"
 	faction = list("clown")
+
+/obj/structure/spawner/carp
+	name = "carp spawn" //the non game spawn meaning
+	desc = "A puddle, which appears to be full of carp"
+	icon_state = "puddle"
+	icon = 'icons/obj/watercloset.dmi'
+	max_integrity = 150
+	max_mobs = 5
+	spawn_time = 1200
+	mob_types = list(/mob/living/simple_animal/hostile/carp)
+	spawn_text = "climbs out of"
+	faction = list("carp")
 
 /obj/structure/spawner/mining/proc/adestroy_effect()
 	playsound(loc,'sound/effects/explosionfar.ogg', 200, TRUE)

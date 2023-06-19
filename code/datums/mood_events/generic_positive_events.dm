@@ -238,3 +238,8 @@
 		description = "[beau.name] gave me a kiss, ahh!!"
 	else
 		description = "[beau.name] blew a kiss at me, I must be a real catch!"
+
+/datum/mood_event/fishing
+	description = "Fishing is relaxing"
+	mood_change = 5
+	timeout = 3 MINUTES

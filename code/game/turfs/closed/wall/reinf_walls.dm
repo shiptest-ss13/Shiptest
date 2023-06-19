@@ -1,7 +1,7 @@
 /turf/closed/wall/r_wall
 	name = "reinforced wall"
 	desc = "A huge chunk of reinforced metal used to separate rooms."
-	icon = 'icons/turf/walls/reinforced_wall.dmi'
+	icon = 'icons/turf/walls/rwalls/reinforced_wall.dmi'
 	icon_state = "reinforced_wall-0"
 	base_icon_state = "reinforced_wall"
 	opacity = TRUE
@@ -21,6 +21,9 @@
 	///Dismantled state, related to deconstruction.
 	var/d_state = INTACT
 
+/turf/closed/wall/r_wall/yesdiag
+	icon_state = "reinforced_wall-255"
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS
 
 /turf/closed/wall/r_wall/deconstruction_hints(mob/user)
 	switch(d_state)
@@ -208,17 +211,24 @@
 
 /turf/closed/wall/r_wall/update_icon()
 	. = ..()
-	if(d_state != INTACT)
-		smoothing_flags = NONE
-	else
-		smoothing_flags = SMOOTH_BITMASK
-		QUEUE_SMOOTH_NEIGHBORS(src)
-		QUEUE_SMOOTH(src)
+	QUEUE_SMOOTH_NEIGHBORS(src)
+	QUEUE_SMOOTH(src)
 
 /turf/closed/wall/r_wall/update_icon_state()
 	if(d_state != INTACT)
-		icon_state = "r_wall-[d_state]"
+		base_icon_state = "reinforced_wall"
+		switch(d_state)
+			if(SUPPORT_LINES, COVER)
+				icon = 'icons/turf/walls/rwalls/reinforced_wall_2.dmi'
+			if(CUT_COVER)
+				icon = 'icons/turf/walls/rwalls/reinforced_wall_3.dmi'
+			if(ANCHOR_BOLTS, SUPPORT_RODS)
+				icon = 'icons/turf/walls/rwalls/reinforced_wall_4.dmi'
+			if(SHEATH)
+				icon = 'icons/turf/walls/rwalls/reinforced_wall_5.dmi'
 	else
+		icon = initial(icon)
+		base_icon_state = initial(base_icon_state)
 		icon_state = "[base_icon_state]-[smoothing_junction]"
 
 /turf/closed/wall/r_wall/wall_singularity_pull(current_size)
@@ -243,9 +253,10 @@
 	base_icon_state = "plastitanium_wall"
 	explosion_block = 20
 	sheet_type = /obj/item/stack/sheet/mineral/plastitanium
+	sheet_amount = 1
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_SYNDICATE_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_SYNDICATE_WALLS, SMOOTH_GROUP_PLASTITANIUM_WALLS, SMOOTH_GROUP_AIRLOCK, SMOOTH_GROUP_SHUTTLE_PARTS)
+	canSmoothWith = list(SMOOTH_GROUP_SYNDICATE_WALLS, SMOOTH_GROUP_PLASTITANIUM_WALLS, SMOOTH_GROUP_AIRLOCK, SMOOTH_GROUP_SHUTTLE_PARTS, SMOOTH_GROUP_WALLS)
 
 /turf/closed/wall/r_wall/syndicate/rcd_vals(mob/user, obj/item/construction/rcd/the_rcd)
 	return FALSE

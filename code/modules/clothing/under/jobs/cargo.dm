@@ -58,6 +58,7 @@
 	name = "asteroid miner's jumpsuit"
 	icon_state = "hazard"
 	item_state = "hazard"
+	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/under/rank/cargo/miner/lavaland/old
 	icon_state = "explorerold"

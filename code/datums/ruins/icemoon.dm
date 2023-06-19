@@ -4,6 +4,7 @@
 	prefix = "_maps/RandomRuins/IceRuins/"
 	allow_duplicates = FALSE
 	cost = 5
+	ruin_type = RUINTYPE_ICE
 
 // above ground only
 

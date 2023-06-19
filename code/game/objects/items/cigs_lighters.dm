@@ -806,7 +806,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		playsound(src, 'sound/magic/fireball.ogg', 10, TRUE)
 
 /obj/item/lighter/enigma
-	name = "/improper Enigma Shipworks Lighter"
+	name = "\improper Enigma Shipworks Lighter"
 	desc = "A lighter from a now defunct company. Feels nice to hold."
 	icon_state = "enigmaburner"
 	heat = 1500

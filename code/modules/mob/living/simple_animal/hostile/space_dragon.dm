@@ -109,7 +109,7 @@
 	if(istype(target, /turf/closed/wall))
 		var/turf/closed/wall/thewall = target
 		to_chat(src, "<span class='warning'>You begin tearing through the wall...</span>")
-		playsound(src, 'sound/machines/airlock_alien_prying.ogg', 100, TRUE)
+		playsound(src, 'sound/machines/creaking.ogg', 100, TRUE)
 		var/timetotear = 40
 		if(istype(target, /turf/closed/wall/r_wall))
 			timetotear = 120

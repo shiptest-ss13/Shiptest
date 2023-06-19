@@ -47,8 +47,9 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	///The gradient color used to color the gradient.
 	var/grad_color
 	///The color used for the "white" of the eye, if the eye has one.
-	var/sclera_color = "e8e8e8"
-
+	var/sclera_color = "#e8e8e8"
+	/// The color used for blush overlay
+	var/blush_color = COLOR_BLUSH_PINK
 	///Does the species use skintones or not? As of now only used by humans.
 	var/use_skintones = FALSE
 	///If your race bleeds something other than bog standard blood, change this to reagent id. For example, ethereals bleed liquid electricity.
@@ -158,6 +159,9 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	/// The maximum rate at which a species can cool down per tick
 	var/bodytemp_heating_rate_max = HUMAN_BODYTEMP_HEATING_MAX
 
+	///Does our species have colors for its' damage overlays?
+	var/use_damage_color = TRUE
+
 	///Species-only traits. Can be found in [code/_DEFINES/DNA.dm]
 	var/list/species_traits = list()
 	///Generic traits tied to having the species.
@@ -216,8 +220,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/obj/item/bodypart/species_head = /obj/item/bodypart/head
 	var/obj/item/bodypart/species_l_arm = /obj/item/bodypart/l_arm
 	var/obj/item/bodypart/species_r_arm = /obj/item/bodypart/r_arm
-	var/obj/item/bodypart/species_r_leg = /obj/item/bodypart/r_leg
-	var/obj/item/bodypart/species_l_leg = /obj/item/bodypart/l_leg
+	var/obj/item/bodypart/species_r_leg = /obj/item/bodypart/leg/right
+	var/obj/item/bodypart/species_l_leg = /obj/item/bodypart/leg/left
 
 	///For custom overrides for species ass images
 	var/icon/ass_image
@@ -359,8 +363,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	//Note for future: Potentionally add a new C.dna.species() to build a template species for more accurate limb replacement
 
 	if((new_species.digitigrade_customization == DIGITIGRADE_OPTIONAL && C.dna.features["legs"] == "Digitigrade Legs") || new_species.digitigrade_customization == DIGITIGRADE_FORCED)
-		new_species.species_r_leg = /obj/item/bodypart/r_leg/digitigrade
-		new_species.species_l_leg = /obj/item/bodypart/l_leg/digitigrade
+		new_species.species_r_leg = /obj/item/bodypart/leg/right/digitigrade
+		new_species.species_l_leg = /obj/item/bodypart/leg/left/digitigrade
 
 	for(var/obj/item/bodypart/old_part as anything in C.bodyparts)
 		if(old_part.change_exempt_flags & BP_BLOCK_CHANGE_SPECIES)
@@ -396,14 +400,14 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				new_part.update_limb(is_creating = TRUE)
 				qdel(old_part)
 			if(BODY_ZONE_L_LEG)
-				var/obj/item/bodypart/l_leg/new_part = new new_species.species_l_leg()
+				var/obj/item/bodypart/leg/left/new_part = new new_species.species_l_leg()
 				new_part.brute_dam = old_part.brute_dam
 				new_part.burn_dam = old_part.burn_dam
 				new_part.replace_limb(C, TRUE)
 				new_part.update_limb(is_creating = TRUE)
 				qdel(old_part)
 			if(BODY_ZONE_R_LEG)
-				var/obj/item/bodypart/r_leg/new_part = new new_species.species_r_leg()
+				var/obj/item/bodypart/leg/right/new_part = new new_species.species_r_leg()
 				new_part.brute_dam = old_part.brute_dam
 				new_part.burn_dam = old_part.burn_dam
 				new_part.replace_limb(C, TRUE)
@@ -445,7 +449,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	regenerate_organs(C,old_species)
 
 	if(exotic_bloodtype && C.dna.blood_type != exotic_bloodtype)
-		C.dna.blood_type = exotic_bloodtype
+		C.dna.blood_type = get_blood_type(exotic_bloodtype)
 
 	if(old_species.mutanthands)
 		for(var/obj/item/I in C.held_items)
@@ -755,7 +759,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			// blush
 			if (HAS_TRAIT(H, TRAIT_BLUSHING)) // Caused by either the *blush emote or the "drunk" mood event
 				var/mutable_appearance/blush_overlay = mutable_appearance('icons/mob/human_face.dmi', "blush", -BODY_ADJ_LAYER) //should appear behind the eyes
-				blush_overlay.color = COLOR_BLUSH_PINK
+				if(H.dna && H.dna.species && H.dna.species.blush_color)
+					blush_overlay.color = H.dna.species.blush_color
 				standing += blush_overlay
 
 			// snore
@@ -820,7 +825,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		if(H.wear_suit && (H.wear_suit.flags_inv & HIDEJUMPSUIT))
 			bodyparts_to_add -= "tail_human"
 
-
 	if("waggingtail_human" in mutant_bodyparts)
 		if(H.wear_suit && (H.wear_suit.flags_inv & HIDEJUMPSUIT))
 			bodyparts_to_add -= "waggingtail_human"
@@ -854,16 +858,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			bodyparts_to_add -= "ears"
 			bodyparts_to_add -= "ears"
 
-	if("wings" in mutant_bodyparts)
-		if(!H.dna.features["wings"] || H.dna.features["wings"] == "None" || (H.wear_suit && (H.wear_suit.flags_inv & HIDEJUMPSUIT) && (!H.wear_suit.species_exception || !is_type_in_list(src, H.wear_suit.species_exception))))
-			bodyparts_to_add -= "wings"
-
-	if("wings_open" in mutant_bodyparts)
-		if(H.wear_suit && (H.wear_suit.flags_inv & HIDEJUMPSUIT) && (!H.wear_suit.species_exception || !is_type_in_list(src, H.wear_suit.species_exception)))
-			bodyparts_to_add -= "wings_open"
-		else if ("wings" in mutant_bodyparts)
-			bodyparts_to_add -= "wings_open"
-
 	if("ipc_screen" in mutant_bodyparts)
 		if(!H.dna.features["ipc_screen"] || H.dna.features["ipc_screen"] == "None" || (H.wear_mask && (H.wear_mask.flags_inv & HIDEEYES)) || !HD)
 			bodyparts_to_add -= "ipc_screen"
@@ -872,14 +866,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		if(!H.dna.features["ipc_antenna"] || H.dna.features["ipc_antenna"] == "None" || H.head && (H.head.flags_inv & HIDEEARS) || !HD)
 			bodyparts_to_add -= "ipc_antenna"
 
-	if("spider_legs" in mutant_bodyparts)
-		if(!H.dna.features["spider_legs"] || H.dna.features["spider_legs"] == "None" || (H.wear_suit && (H.wear_suit.flags_inv & HIDEJUMPSUIT) && (!H.wear_suit.species_exception || !is_type_in_list(src, H.wear_suit.species_exception))))
-			bodyparts_to_add -= "spider_legs"
-
-	if("spider_spinneret" in mutant_bodyparts)
-		if(!H.dna.features["spider_spinneret"] || H.dna.features["spider_spinneret"] == "None" || (H.wear_suit && (H.wear_suit.flags_inv & HIDEJUMPSUIT) && (!H.wear_suit.species_exception || !is_type_in_list(src, H.wear_suit.species_exception))))
-			bodyparts_to_add -= "spider_spinneret"
-
 	if("spider_mandibles" in mutant_bodyparts)
 		if(!H.dna.features["spider_mandibles"] || H.dna.features["spider_mandibles"] == "None" || H.head && (H.head.flags_inv & HIDEFACE) || (H.wear_mask && (H.wear_mask.flags_inv & HIDEFACE)) || !HD) //|| HD.status == BODYTYPE_ROBOTIC removed from here
 			bodyparts_to_add -= "spider_mandibles"
@@ -887,10 +873,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	if("squid_face" in mutant_bodyparts)
 		if(!H.dna.features["squid_face"] || H.dna.features["squid_face"] == "None" || H.head && (H.head.flags_inv & HIDEFACE) || (H.wear_mask && (H.wear_mask.flags_inv & HIDEFACE)) || !HD) // || HD.status == BODYTYPE_ROBOTIC
 			bodyparts_to_add -= "squid_face"
-
-	if("kepori_body_feathers" in mutant_bodyparts)
-		if(!H.dna.features["kepori_body_feathers"] || H.dna.features["kepori_body_feathers"] == "None" || (H.wear_suit && (H.wear_suit.flags_inv & HIDEJUMPSUIT)))
-			bodyparts_to_add -= "kepori_body_feathers"
 
 	if("kepori_tail_feathers" in mutant_bodyparts)
 		if(!H.dna.features["kepori_tail_feathers"] || H.dna.features["kepori_tail_feathers"] == "None")
@@ -907,20 +889,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	if("vox_neck_quills" in mutant_bodyparts)
 		if(!H.dna.features["vox_neck_quills"] || H.dna.features["vox_neck_quills"] == "None")
 			bodyparts_to_add -= "vox_neck_quills"
-
-	if("elzu_horns" in mutant_bodyparts)
-		if(!H.dna.features["elzu_horns"] || H.dna.features["elzu_horns"] == "None" || H.head && (H.head.flags_inv & HIDEHAIR) || (H.wear_mask && (H.wear_mask.flags_inv & HIDEHAIR)) || !HD)
-			bodyparts_to_add -= "elzu_horns"
-
-	if("tail_elzu" in mutant_bodyparts)
-		if(H.wear_suit && (H.wear_suit.flags_inv & HIDEJUMPSUIT))
-			bodyparts_to_add -= "tail_elzu"
-
-	if("waggingtail_elzu" in mutant_bodyparts)
-		if(H.wear_suit && (H.wear_suit.flags_inv & HIDEJUMPSUIT))
-			bodyparts_to_add -= "waggingtail_elzu"
-		else if ("tail_elzu" in mutant_bodyparts)
-			bodyparts_to_add -= "waggingtail_elzu"
 
 ////PUT ALL YOUR WEIRD ASS REAL-LIMB HANDLING HERE
 	///Digi handling
@@ -1108,7 +1076,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		H.setOxyLoss(0)
 		H.losebreath = 0
 
-		var/takes_crit_damage = (!HAS_TRAIT(H, TRAIT_NOCRITDAMAGE))
+		var/takes_crit_damage = (!HAS_TRAIT(H, TRAIT_NOCRITDAMAGE) && H.stat != DEAD)
 		if((H.health < H.crit_threshold) && takes_crit_damage)
 			H.adjustBruteLoss(1)
 	if(flying_species)

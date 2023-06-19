@@ -3,6 +3,11 @@
 	"map_name": "BYO-class Do-It-Yourself Enthusiast Special",
 	"map_short_name": "BYO-class",
 	"map_path": "_maps/shuttles/shiptest/independent_byo.dmm",
+	"namelists": [
+		"ENGINEERING",
+		"GENERAL"
+	],
+	"prefix": "ISV",
 	"job_slots": {
 		"Architect": {
 			"outfit": "/datum/outfit/job/engineer/hazard",
@@ -13,5 +18,5 @@
 			"slots": 4
 		}
 	},
-	"enabled": true
+	"enabled": false
 }

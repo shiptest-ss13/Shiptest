@@ -1743,6 +1743,10 @@
 	name = "Dark Tiger"
 	icon_state = "dtiger"
 
+/datum/sprite_accessory/tails/lizard/ltiger
+	name = "Light Tiger"
+	icon_state = "ltiger"
+
 /datum/sprite_accessory/tails_animated/lizard/ltiger
 	name = "Light Tiger"
 	icon_state = "ltiger"
@@ -1754,6 +1758,14 @@
 /datum/sprite_accessory/tails_animated/lizard/spikes
 	name = "Spikes"
 	icon_state = "spikes"
+
+/datum/sprite_accessory/tails/lizard/large
+	name = "Large"
+	icon_state = "large"
+
+/datum/sprite_accessory/tails_animated/lizard/large
+	name = "Large"
+	icon_state = "large"
 
 /datum/sprite_accessory/tails/human/none
 	name = "None"
@@ -1784,6 +1796,30 @@
 	icon_state = "cat"
 	color_src = HAIR
 	image_alpha = 150
+
+/datum/sprite_accessory/tails/human/fox
+	icon = 'icons/mob/species/misc/fox.dmi'
+	name = "Fox"
+	icon_state = "fox"
+	color_src = HAIR
+
+/datum/sprite_accessory/tails_animated/human/fox
+	icon = 'icons/mob/species/misc/fox.dmi'
+	name = "Fox"
+	icon_state = "fox"
+	color_src = HAIR
+
+/datum/sprite_accessory/tails/human/fox/alt
+	icon = 'icons/mob/species/misc/fox.dmi'
+	name = "Fox 2"
+	icon_state = "fox2"
+	color_src = HAIR
+
+/datum/sprite_accessory/tails_animated/human/fox/alt
+	icon = 'icons/mob/species/misc/fox.dmi'
+	name = "Fox 2"
+	icon_state = "fox2"
+	color_src = HAIR
 
 /datum/sprite_accessory/snouts
 	icon = 'icons/mob/mutant_bodyparts.dmi'
@@ -1850,6 +1886,13 @@
 	hasinner = FALSE
 	color_src = HAIR
 	image_alpha = 150
+
+/datum/sprite_accessory/ears/fox
+	icon = 'icons/mob/species/misc/fox.dmi'
+	name = "Fox"
+	icon_state = "fox"
+	hasinner = 1
+	color_src = HAIR
 
 /datum/sprite_accessory/wings/none
 	name = "None"
@@ -1922,6 +1965,23 @@
 /datum/sprite_accessory/wings_open/mothra
 	name = "Mothra"
 	icon_state = "mothra"
+	color_src = 0
+	dimension_x = 96
+	center = TRUE
+	dimension_y = 32
+
+/datum/sprite_accessory/wings/robotic
+	name = "Robotic"
+	icon_state = "robotic"
+	color_src = 0
+	dimension_x = 96
+	center = TRUE
+	dimension_y = 32
+	locked = TRUE
+
+/datum/sprite_accessory/wings_open/robotic
+	name = "Robotic"
+	icon_state = "robotic"
 	color_src = 0
 	dimension_x = 96
 	center = TRUE
@@ -2835,7 +2895,7 @@
 	name = "Ruffhawk"
 	icon_state = "ruffhawk"
 
-//Elzuosa help
+//Elzuose help
 
 /datum/sprite_accessory/elzu_horns
 	icon = 'icons/mob/ethereal_parts.dmi'

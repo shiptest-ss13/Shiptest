@@ -26,7 +26,8 @@
 	reagents = AM.reagents
 	turn_connects = _turn_connects
 
-	RegisterSignal(parent, list(COMSIG_MOVABLE_MOVED,COMSIG_PARENT_PREQDELETED), .proc/disable)
+	RegisterSignal(parent, list(COMSIG_MOVABLE_MOVED), .proc/on_parent_moved)
+	RegisterSignal(parent, list(COMSIG_PARENT_PREQDELETED), .proc/disable)
 	RegisterSignal(parent, list(COMSIG_OBJ_DEFAULT_UNFASTEN_WRENCH), .proc/toggle_active)
 	RegisterSignal(parent, list(COMSIG_OBJ_HIDE), .proc/hide)
 	RegisterSignal(parent, list(COMSIG_ATOM_UPDATE_OVERLAYS), .proc/create_overlays) //called by lateinit on startup
@@ -131,6 +132,15 @@
 			I = image('icons/obj/plumbing/plumbers.dmi', color,layer = AM.layer - 1) //color is not color as in the var, it's just the name of the icon_state
 			I.dir = D
 		overlays += I
+
+
+/datum/component/plumbing/proc/on_parent_moved()
+	SIGNAL_HANDLER
+
+	var/atom/movable/AM = parent
+	if (!AM.anchored)
+		disable()
+
 
 ///we stop acting like a plumbing thing and disconnect if we are, so we can safely be moved and stuff
 /datum/component/plumbing/proc/disable()

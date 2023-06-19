@@ -239,6 +239,58 @@
 			</body>
 			</html>"}
 
+/obj/item/book/manual/trickwines_4_brewers
+	name = "Trickwines for brewers"
+	icon_state = "book2"
+	author = "Baxter Baxter"
+	title = "Trickwines for brewers"
+	dat = {"<html>
+			<head>
+			<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+			<style>
+			h1 {font-size: 18px; margin: 15px 0px 5px;}
+			h2 {font-size: 15px; margin: 15px 0px 5px;}
+			li {margin: 2px 0px 2px 15px;}
+			ul {list-style: none; margin: 5px; padding: 0px;}
+			ol {margin: 5px; padding: 0px 15px;}
+			</style>
+			</head>
+			<body>
+			<h3>Trickwines for idiots</h3>
+			Okay, so you just joined the SRM and you want to make some brews! I'm tired of explaining all of this so I'm jotting it all down for you clowns.<br>
+			Trickwines almost all share the same effect. When you drink them, they provide a beneficial effect and when you toss them at someone it provides some sort of bad effect.
+			<h2> Breakaway flasks</h2>
+			Honestly, I love these things. I'm not a scientist so I cant exactly explain how it works but somehow when you fuse plasma into glass it makes it ultra sharp and makes it really good for cracking over fauna heads.<br>
+			The simplest way I have found of making them is crafting them with a chunk of glass, plasma, and a welder.<br>
+			I should note: trickwines don't seem to form without flasks. I think it's something to do with the plasma reacting with the mixture.<br>
+
+			<h2> Ashwine </h2>
+			It's kind of our trademark, and it's one of the simplest trickwines to make. The Montagnes love using this stuff in ceremonies as well so it should get you some good boy points.<br>
+			It's made with a ratio of 3:1:1 absinthe, mushroom hallucinogen, and ash respectively.<br>
+			Mushroom hallucinogens come from mushroom caps and you can ferment absinthe from moonflowers.<br>
+			Its a mild hallucinogenic but seems to have powerful cleansing effects on the devoted SRM.<br>
+			It can also really fuck someone up, causing their vision to go shaky and blurry which makes it difficult for them to fight.<br>
+
+			<h2> Icewine </h2>
+			This one helps stopping foes in their tracks. It's also got a nice taste.
+			Its made with 3:1:1 saké, polar bear fur, frost oil(grind chilled peppers).<br>
+			You can get polar bear fur and frost oil from grinding up polar bear hides and chilled peppers.<br>
+			It's pretty good at sealing burns and lowering your temperature quickly.<br>
+			However, it completely encases foes in ice and drops their temperature substantially.<br>
+
+			<h2> Shockwine </h2>
+			Easily my favorite, this thing is great at scorching most fauna.<br>
+			Its made with vodka, calcium, and lemon juice.<br>
+			If you did not know, vodka requires enzymes instead of the normal fermenting process.<br>
+			It's a nice upper. Great if you're trying to run away.<br>
+			This one's really flashy. Expect some severe burns on your target<br>
+
+				<br>Baxter Baxter, Senior Brewer<br>
+				P.S.: please stop asking how the uranium got into those flasks.
+
+				</body>
+				</html>"}
+
 // Wiki books that are linked to the configured wiki link.
 
 // A book that links to the wiki
@@ -255,29 +307,27 @@
 	var/wikiurl = CONFIG_GET(string/wikiurl)
 	if(wikiurl)
 		dat = {"
-
-			<html>
-			<head>
-			<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+			<iframe
+				id='ext_frame'
+				src='[wikiurl]/frame.html'
+				style='border: none; width: 100vw; height: 100vh;'>
+			</iframe>
 			<style>
-				iframe {
-					display: none;
+			html, body {
+				height: 100vh;
+				width: 100vw;
+				margin: 0;
+				overflow: hidden;
+			}
+			body > :not(iframe) {
+				display: none;
 				}
 			</style>
-			</head>
-			<body>
-			<script type="text/javascript">
-				function pageloaded(myframe) {
-					document.getElementById("loading").style.display = "none";
-					myframe.style.display = "inline";
+			<script>
+				window.onmessage = function() {
+					document.getElementById('ext_frame').contentWindow.postMessage('[page_link]', '*')
 				}
 			</script>
-			<p id='loading'>You start skimming through the manual...</p>
-			<iframe width='100%' height='97%' onload="pageloaded(this)" src="[wikiurl]/[page_link]?printable=yes&remove_links=1" frameborder="0" id="main_frame"></iframe>
-			</body>
-
-			</html>
-
 			"}
 
 /obj/item/book/manual/wiki/chemistry
@@ -285,21 +335,21 @@
 	icon_state ="chemistrybook"
 	author = "Nanotrasen"
 	title = "Chemistry Textbook"
-	page_link = "Guide_to_chemistry"
+	page_link = "Guide_to_Chemistry"
 
 /obj/item/book/manual/wiki/engineering_construction
 	name = "Station Repairs and Construction"
 	icon_state ="bookEngineering"
 	author = "Engineering Encyclopedia"
 	title = "Station Repairs and Construction"
-	page_link = "Guide_to_construction"
+	page_link = "Guide_to_Construction"
 
 /obj/item/book/manual/wiki/engineering_guide
 	name = "Engineering Textbook"
 	icon_state ="bookEngineering2"
 	author = "Engineering Encyclopedia"
 	title = "Engineering Textbook"
-	page_link = "Guide_to_engineering"
+	page_link = "Guide_to_Engineering"
 
 /obj/item/book/manual/wiki/engineering_singulo_tesla
 	name = "Singularity and Tesla for Dummies"
@@ -374,7 +424,7 @@
 	icon_state = "rdbook"
 	author = "Dr. H.P. Kritz"
 	title = "Mentoring your Experiments"
-	page_link = "Experimentor"
+	page_link = "E.X.P.E.R.I-MENTOR"
 
 /obj/item/book/manual/wiki/cooking_to_serve_man
 	name = "To Serve Man"

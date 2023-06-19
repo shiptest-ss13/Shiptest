@@ -4,6 +4,7 @@
 	prefix = "_maps/RandomRuins/RockRuins/"
 	allow_duplicates = FALSE
 	cost = 5
+	ruin_type = RUINTYPE_ROCK
 
 /datum/map_template/ruin/rockplanet/heirophant
 	name = "Ancient Heirophant"
@@ -86,3 +87,9 @@
 	description = "A factory made for HARM and AGONY."
 	id = "rockplanet_harmfactory"
 	suffix = "rockplanet_harmfactory.dmm"
+
+/datum/map_template/ruin/rockplanet/budgetcuts
+	name = "Budgetcuts"
+	description = "Nanotrasen's gotta lay off some personnel, and this facility hasn't been worth the effort so far"
+	id = "rockplanet_budgetcuts"
+	suffix = "rockplanet_budgetcuts.dmm"

@@ -30,6 +30,16 @@
 	/// The account to charge purchases to, defaults to the cargo budget
 	var/datum/bank_account/charge_account
 
+/obj/machinery/computer/cargo/express/retro
+	icon = 'icons/obj/machines/retro_computer.dmi'
+	icon_state = "computer-retro"
+	deconpath = /obj/structure/frame/computer/retro
+
+/obj/machinery/computer/cargo/express/solgov
+	icon = 'icons/obj/machines/retro_computer.dmi'
+	icon_state = "computer-solgov"
+	deconpath = /obj/structure/frame/computer/solgov
+
 /obj/machinery/computer/cargo/express/Initialize()
 	. = ..()
 	packin_up()
@@ -56,9 +66,9 @@
 
 /obj/machinery/computer/cargo/express/attackby(obj/item/W, mob/living/user, params)
 	var/value = 0
-	if(istype(W, /obj/item/stack/spacecash))
-		var/obj/item/stack/spacecash/C = W
-		value = C.value * C.amount
+	if(istype(W, /obj/item/spacecash/bundle))
+		var/obj/item/spacecash/bundle/C = W
+		value = C.value
 	else if(istype(W, /obj/item/holochip))
 		var/obj/item/holochip/H = W
 		value = H.credits
