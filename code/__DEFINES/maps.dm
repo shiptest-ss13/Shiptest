@@ -136,6 +136,23 @@ require only minor tweaks.
 
 
 ///Map generation defines
+
+// These are used by SSmap_gen to run the phases of map generation in order.
+// As they are numeric, they can also be used to estimate the progress a map
+// has made towards generating, even in a queue.
+#define MAPGEN_PHASE_GENERATE 0
+#define MAPGEN_PHASE_AFTERCHANGE 1
+#define MAPGEN_PHASE_RUIN_PLACE 2
+#define MAPGEN_PHASE_RUIN_PLACING 3
+#define MAPGEN_PHASE_POPULATE 4
+#define MAPGEN_PHASE_FINISHED 5
+
+// Map generation priorities. Lower numbers are higher priority
+// as they are inserted at earlier positions in the queue.
+#define MAPGEN_PRIORITY_HIGH 1
+#define MAPGEN_PRIORITY_MED 2
+#define MAPGEN_PRIORITY_LOW 3
+
 #define BIOME_LOWEST_HUMIDITY "biome_lowest_humidity"
 #define BIOME_LOW_HUMIDITY "biome_low_humidity"
 #define BIOME_MEDIUM_HUMIDITY "biome_medium_humidity"

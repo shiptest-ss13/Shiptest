@@ -1,12 +1,14 @@
 /datum/map_generator/single_turf
+	do_populate = FALSE
+
 	var/turf/turf_type
 	var/area/area_type
 
 	var/area/used_area
 
-/datum/map_generator/single_turf/New(...)
+/datum/map_generator/single_turf/New(list/_turfs, ...)
+	. = ..()
 	used_area = GLOB.areas_by_type[area_type] || new area_type
-	return ..()
 
 /datum/map_generator/single_turf/generate_turf(turf/gen_turf, changeturf_flags)
 	var/area/A = get_area(gen_turf)

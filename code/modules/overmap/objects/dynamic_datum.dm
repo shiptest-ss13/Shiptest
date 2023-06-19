@@ -64,7 +64,7 @@
 		return get_turf(pick(reserve_docks))
 
 /datum/overmap/dynamic/pre_docked(datum/overmap/ship/controlled/dock_requester)
-	if(!load_level())
+	if(!load_level(dock_requester))
 		return new /datum/docking_ticket(_docking_error = "[src] cannot be docked to.")
 	else
 		var/dock_to_use = null
@@ -154,15 +154,15 @@
 
 /**
  * Load a level for a ship that's visiting the level.
- * * visiting shuttle - The docking port of the shuttle visiting the level.
+ * * dock_requester - The datum that initiated the load upon docking. Passed to spawn_dynamic_encounter to allow for progress reports.
  */
-/datum/overmap/dynamic/proc/load_level()
+/datum/overmap/dynamic/proc/load_level(datum/overmap/ship/controlled/dock_requester = null)
 	if(mapzone)
 		return TRUE
 	log_shuttle("[src] [REF(src)] LEVEL_INIT")
 	// use the ruin type in template if it exists, or pick from ruin list if IT exists; otherwise null
 	var/selected_ruin = template || (ruin_type ? pickweightAllowZero(SSmapping.ruin_types_probabilities[ruin_type]) : null)
-	var/list/dynamic_encounter_values = SSovermap.spawn_dynamic_encounter(src, selected_ruin)
+	var/list/dynamic_encounter_values = SSovermap.spawn_dynamic_encounter(src, selected_ruin, dock_requester)
 	if(!length(dynamic_encounter_values))
 		return FALSE
 	mapzone = dynamic_encounter_values[1]
