@@ -23,7 +23,7 @@
 	return
 
 /datum/overmap/dynamic/outpost/pre_docked(datum/overmap/ship/controlled/dock_requester)
-	if(!load_drydock())
+	if(!load_drydock(dock_requester))
 		return FALSE
 	var/dock_to_use = null
 	for(var/obj/docking_port/stationary/dock as anything in reserve_docks)
@@ -43,12 +43,12 @@
 	return
 
 // this should be reworked sometime
-/datum/overmap/dynamic/outpost/proc/load_drydock()
+/datum/overmap/dynamic/outpost/proc/load_drydock(datum/overmap/ship/controlled/dock_requester = null)
 	if(mapzone)
 		return TRUE
 	log_shuttle("[src] [REF(src)] OUTPOST LEVEL_INIT")
 	// we just use the default mapgen for now
-	var/list/dynamic_encounter_values = SSovermap.spawn_dynamic_encounter(src, null)
+	var/list/dynamic_encounter_values = SSovermap.spawn_dynamic_encounter(src, null, dock_requester)
 	if(!length(dynamic_encounter_values))
 		return FALSE
 	mapzone = dynamic_encounter_values[1]

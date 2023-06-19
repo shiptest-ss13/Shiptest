@@ -215,9 +215,9 @@ SUBSYSTEM_DEF(overmap)
  * Reserves a square dynamic encounter area, generates it, and spawns a ruin in it if one is supplied.
  * * on_planet - If the encounter should be on a generated planet. Required, as it will be otherwise inaccessible.
  * * ruin_type - The type of ruin to spawn, or null if none should be placed.
- * * requesting - The ship datum whose helms we should feed progress updates to.
+ * * requesting - The ship datum whose helms we should feed progress updates to. May be null.
  */
-/datum/controller/subsystem/overmap/proc/spawn_dynamic_encounter(datum/overmap/dynamic/dynamic_datum, ruin_type, datum/overmap/ship/controlled/requesting)
+/datum/controller/subsystem/overmap/proc/spawn_dynamic_encounter(datum/overmap/dynamic/dynamic_datum, ruin_type, datum/overmap/ship/controlled/requesting = null)
 	log_shuttle("SSOVERMAP: SPAWNING DYNAMIC ENCOUNTER STARTED")
 	if(!dynamic_datum)
 		CRASH("spawn_dynamic_encounter called without any datum to spawn!")
@@ -265,14 +265,15 @@ SUBSYSTEM_DEF(overmap)
 	var/total_phases = SSmap_gen.jobs.Find(mapgen) * MAPGEN_PHASE_FINISHED
 
 	while(mapgen.phase != MAPGEN_PHASE_FINISHED)
-		var/local_pos = SSmap_gen.jobs.Find(mapgen)
-		var/incomplete_phases = local_pos * MAPGEN_PHASE_FINISHED
-		for(var/i = 1, i <= local_pos, i++)
-			var/datum/map_generator/job = SSmap_gen.jobs[i]
-			incomplete_phases -= job.phase - ((job.phase_index-1)/length(job.turfs))
+		if(requesting)
+			var/local_pos = SSmap_gen.jobs.Find(mapgen)
+			var/incomplete_phases = local_pos * MAPGEN_PHASE_FINISHED
+			for(var/i = 1, i <= local_pos, i++)
+				var/datum/map_generator/job = SSmap_gen.jobs[i]
+				incomplete_phases -= job.phase - ((job.phase_index-1)/length(job.turfs))
 
-		for(var/obj/machinery/computer/helm/Helm as anything in requesting.helms)
-			Helm.say("Landing Progress: [round(100 * (total_phases - incomplete_phases) / total_phases)]%")
+			for(var/obj/machinery/computer/helm/Helm as anything in requesting.helms)
+				Helm.say("Landing Progress: [round(100 * (total_phases - incomplete_phases) / total_phases)]%")
 		// stoplag() is a dumb solution to ensuring synchronicity, but I'm lazy.
 		stoplag(30)
 
