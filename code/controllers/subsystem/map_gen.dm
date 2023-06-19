@@ -45,7 +45,7 @@ SUBSYSTEM_DEF(map_gen)
 	// BINARY_INSERT inserts after all elements of the same priority in the list, so the list functions as an ordered queue.
 	BINARY_INSERT(gen_to_queue, jobs, /datum/map_generator, gen_to_queue, priority, COMPARE_KEY)
 
-	var/message = "MAPGEN: map_generator datum [get_log_string(cur_map_gen)] added to map generator queue at position [jobs.Find(gen_to_queue)]"
+	var/message = "MAPGEN: map_generator datum [get_log_string(gen_to_queue)] added to map generator queue at position [jobs.Find(gen_to_queue)]"
 	log_shuttle(message)
 	log_world(message)
 
