@@ -1164,7 +1164,7 @@
 
 /datum/crafting_recipe/breakawayflask
 	name = "Breakaway Flask"
-	result = /obj/item/reagent_containers/food/drinks/drinkingglass/breakawayflask
+	result = /obj/item/reagent_containers/food/drinks/breakawayflask
 	time = 5 SECONDS
 	reqs = list(/obj/item/stack/sheet/glass = 5,
 				/obj/item/stack/sheet/mineral/plasma = 1)
