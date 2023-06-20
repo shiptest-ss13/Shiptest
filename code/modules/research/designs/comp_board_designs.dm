@@ -13,14 +13,12 @@
 	build_path = /obj/item/circuitboard/computer/arcade/battle
 	category = list("Computer Boards")
 
-
 /datum/design/board/orion_trail
 	name = "Computer Design (Orion Trail Arcade Machine)"
 	desc = "Allows for the construction of circuit boards used to build a new Orion Trail machine."
 	id = "arcade_orion"
 	build_path = /obj/item/circuitboard/computer/arcade/orion_trail
 	category = list("Computer Boards")
-
 
 /datum/design/board/seccamera
 	name = "Computer Design (Security Camera)"
@@ -165,7 +163,6 @@
 	build_path = /obj/item/circuitboard/computer/slot_machine
 	category = list("Computer Boards")
 
-
 /datum/design/board/powermonitor
 	name = "Computer Design (Power Monitor)"
 	desc = "Allows for the construction of circuit boards used to build a new power monitor."
@@ -277,7 +274,6 @@
 	build_path = /obj/item/circuitboard/computer/libraryconsole
 	category = list("Computer Boards")
 
-
 /datum/design/board/apc_control
 	name = "Computer Design (APC Control)"
 	desc = "Allows for the construction of circuit boards used to build a new APC control console."
@@ -311,6 +307,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 //////////////Shuttle Computers///////////////
+
 /datum/design/board/shuttle/shuttle_helm
 	name = "Computer Design (Shuttle Helm Console)"
 	desc = "Allows for the construction of circuit boards used to pilot a spacecraft."

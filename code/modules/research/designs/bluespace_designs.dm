@@ -38,10 +38,10 @@
 	name = "GPS Device"
 	desc = "Little thingie that can track its position at all times."
 	id = "telesci_gps"
-	build_type = PROTOLATHE
+	build_type = PROTOLATHE | AUTOLATHE
 	materials = list(/datum/material/iron = 500, /datum/material/glass = 1000)
 	build_path = /obj/item/gps
-	category = list("Bluespace Designs")
+	category = list("Bluespace Designs", "Imported")
 
 /datum/design/desynchronizer
 	name = "Desynchronizer"

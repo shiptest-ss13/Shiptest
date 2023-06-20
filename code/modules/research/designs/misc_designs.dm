@@ -7,10 +7,10 @@
 	name = "Health Scanner HUD"
 	desc = "A heads-up display that scans the humans in view and provides accurate data about their health status."
 	id = "health_hud"
-	build_type = PROTOLATHE
+	build_type = PROTOLATHE | AUTOLATHE
 	materials = list(/datum/material/iron = 500, /datum/material/glass = 500)
 	build_path = /obj/item/clothing/glasses/hud/health
-	category = list("Equipment")
+	category = list("Equipment", "Imported")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/health_hud_night
@@ -47,10 +47,10 @@
 	name = "Diagnostic HUD"
 	desc = "A HUD used to analyze and determine faults within robotic machinery."
 	id = "diagnostic_hud"
-	build_type = PROTOLATHE
+	build_type = PROTOLATHE | AUTOLATHE
 	materials = list(/datum/material/iron = 500, /datum/material/glass = 500)
 	build_path = /obj/item/clothing/glasses/hud/diagnostic
-	category = list("Equipment")
+	category = list("Equipment", "Imported")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/diagnostic_hud_night
@@ -80,10 +80,10 @@
 	name = "Welding Gas Mask"
 	desc = "A gas mask with built in welding goggles and face shield. Looks like a skull, clearly designed by a nerd."
 	id = "weldingmask"
-	build_type = PROTOLATHE
+	build_type = PROTOLATHE | AUTOLATHE
 	materials = list(/datum/material/iron = 3000, /datum/material/glass = 1000)
 	build_path = /obj/item/clothing/mask/gas/welding
-	category = list("Equipment")
+	category = list("Equipment", "Imported")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_CARGO
 
 /datum/design/bright_helmet
@@ -104,7 +104,6 @@
 	materials = list(/datum/material/iron = 1000, /datum/material/glass = 100)
 	build_path = /obj/item/reagent_containers/glass/maunamug
 	category = list("Equipment")
-
 
 /datum/design/rolling_table
 	name = "Rolly poly"
@@ -207,10 +206,10 @@
 	name = "Science Goggles"
 	desc = "Goggles fitted with a portable analyzer capable of determining the research worth of an item or components of a machine."
 	id = "scigoggles"
-	build_type = PROTOLATHE
+	build_type = PROTOLATHE | AUTOLATHE
 	materials = list(/datum/material/iron = 500, /datum/material/glass = 500)
 	build_path = /obj/item/clothing/glasses/science
-	category = list("Equipment")
+	category = list("Equipment", "Imported")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/diskplantgene
@@ -257,10 +256,10 @@
 	name = "Anomaly Neutralizer"
 	desc = "An advanced tool capable of instantly neutralizing anomalies, designed to capture the fleeting aberrations created by the engine."
 	id = "anomaly_neutralizer"
-	build_type = PROTOLATHE
+	build_type = PROTOLATHE | AUTOLATHE
 	materials = list(/datum/material/iron = 2000, /datum/material/gold = 2000, /datum/material/plasma = 5000, /datum/material/uranium = 2000)
 	build_path = /obj/item/anomaly_neutralizer
-	category = list("Equipment")
+	category = list("Equipment", "Imported")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/donksoft_refill
@@ -489,8 +488,6 @@
 	build_path = /obj/item/clothing/head/helmet/knight/greyscale
 	category = list("Imported")
 
-
-
 /////////////////////////////////////////
 /////////////Security////////////////////
 /////////////////////////////////////////
@@ -563,8 +560,6 @@
 	category = list("Equipment")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_ENGINEERING
 
-
-
 /////////////////////////////////////////
 /////////////////Tape////////////////////
 /////////////////////////////////////////
@@ -586,8 +581,6 @@
 	build_path = /obj/item/stack/tape/industrial/pro
 	category = list("Equipment")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
-
-
 
 /////////////////////////////////////////
 ////////////Tackle Gloves////////////////

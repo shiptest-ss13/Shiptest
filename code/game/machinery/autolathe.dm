@@ -268,7 +268,7 @@
 	materials.retrieve_all()
 
 /obj/machinery/autolathe/attackby(obj/item/O, mob/living/user, params)
-	if (busy)
+	if(busy)
 		to_chat(user, "<span class=\"alert\">The autolathe is busy. Please wait for completion of previous operation.</span>")
 		return TRUE
 
@@ -306,12 +306,20 @@
 /obj/machinery/autolathe/proc/eject(mob/living/user)
 	if(!d_disk)
 		return
+	if(busy)
+		to_chat(user, "<span class=\"alert\">The autolathe is busy. Please wait for completion of previous operation.</span>")
+		return TRUE
 	if(!istype(user) || !Adjacent(user) || !user.put_in_active_hand(d_disk))
 		d_disk.forceMove(drop_location())
 	categories -= d_disk.name
 	d_disk = null
 
 /obj/machinery/autolathe/AltClick(mob/user)
+	if(!d_disk)
+		return
+	if(busy)
+		to_chat(user, "<span class=\"alert\">The autolathe is busy. Please wait for completion of previous operation.</span>")
+		return TRUE
 	if(d_disk && user.canUseTopic(src, !issilicon(user)))
 		to_chat(user, "<span class='notice'>You take out [d_disk] from [src].</span>")
 		playsound(src, 'sound/machines/click.ogg', 50, FALSE)
@@ -344,7 +352,8 @@
 		for(var/i=1, i<=multiplier, i++)
 			var/obj/item/new_item = new being_built.build_path(A)
 			new_item.autolathe_crafted(src)
-
+			d_disk.used_charges += 1
+			d_disk.check_charges()
 			if(length(picked_materials))
 				new_item.set_custom_materials(picked_materials, 1 / multiplier) //Ensure we get the non multiplied amount
 				for(var/x in picked_materials)

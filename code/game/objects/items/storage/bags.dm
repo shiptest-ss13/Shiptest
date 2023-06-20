@@ -100,10 +100,8 @@
 /obj/item/storage/bag/ore
 	name = "mining satchel"
 	desc = "This little bugger can be used to store and transport ores."
-	//WS Begin - Better bag sprites
 	icon = 'icons/obj/bags.dmi'
 	icon_state = "minebag"
-	//WS end
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_POCKETS
 	component_type = /datum/component/storage/concrete/stack
 	var/spam_protection = FALSE //If this is TRUE, the holder won't receive any messages when they fail to pick up ore through crossing it
@@ -116,7 +114,7 @@
 	STR.allow_quick_empty = TRUE
 	STR.set_holdable(list(/obj/item/stack/ore))
 	STR.max_w_class = WEIGHT_CLASS_HUGE
-	STR.max_combined_stack_amount = 50
+	STR.max_combined_stack_amount = 150
 
 /obj/item/storage/bag/ore/equipped(mob/user)
 	. = ..()
