@@ -210,9 +210,9 @@
 	var/NTOS_type = /obj/item/modular_computer/internal
 
 /obj/item/gun/energy/e_gun/e11
-	name = "E-11 energy rifle"
-	desc = "A hybrid energy gun fondly remembered as one of the worst weapons ever made that put Eoehoma out of buisness. It hurts, but thats if you can even get hit with it."
-	icon_state = "e11	"
+	name = "E-11 hybrid energy rifle"
+	desc = "A hybrid energy gun fondly remembered as one of the worst weapons ever made. It hurts, but thats if you can even get hit with it."
+	icon_state = "e11"
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler, /obj/item/ammo_casing/energy/laser/eoehoma)
 	can_flashlight = TRUE
 	ammo_x_offset = 0

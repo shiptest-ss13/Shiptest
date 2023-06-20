@@ -36,3 +36,8 @@
 	desc = "An integrated disabler that draws from a cyborg's power cell. This weapon contains a limiter to prevent the cyborg's power cell from overheating."
 	can_charge = FALSE
 	use_cyborg_cell = TRUE
+
+/obj/item/gun/energy/disabler/e60
+	name = "E-60"
+	desc = "A self-defense weapon that exhausts organic targets, weakening them until they collapse."
+	icon_state = "e60"
