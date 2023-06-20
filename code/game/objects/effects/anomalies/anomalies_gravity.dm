@@ -9,7 +9,7 @@
 /obj/effect/anomaly/grav
 	name = "throngler"
 	icon_state = "gravity"
-	desc = "A mysterious anomaly that sucks things towards it with a gravitational field, as you get closer, it gets more intense."
+	desc = "A mysterious anomaly that sucks things towards it with a gravitational field, ending in what has been termed a 'throngling'."
 	density = FALSE
 	aSignal = /obj/item/assembly/signaler/anomaly/grav
 	bSignal = null

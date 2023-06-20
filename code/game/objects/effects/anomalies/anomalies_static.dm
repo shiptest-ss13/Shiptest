@@ -12,7 +12,7 @@
 	. = ..()
 	if(!iscarbon(user))
 		return
-	if(iscarbon(user))
+	if(iscarbon(user) && !user.research_scanner) //this'll probably cause some weirdness when I start using research scanner in more places / on more items. Oh well.
 		var/mob/living/carbon/bah = user
 		to_chat(bah, span_userdanger("Your head aches as you stare into the [src]!"))
 		bah.adjustOrganLoss(ORGAN_SLOT_BRAIN, 5, 100)
@@ -31,18 +31,18 @@
 
 	for(var/mob/living/carbon/looking in range(effectrange, src))
 		playsound(src, 'sound/effects/walkietalkie.ogg', 100)
-		if (!HAS_TRAIT(looking, TRAIT_MINDSHIELD) && looking.stat != DEAD)
+		if (!HAS_TRAIT(looking, TRAIT_MINDSHIELD) && looking.stat != DEAD || !looking.research_scanner && looking.stat != DEAD)
 			looking.adjustOrganLoss(ORGAN_SLOT_BRAIN, 4, 200)
 			playsound(src, 'sound/effects/stall.ogg', 100)
-		if(looking.getOrganLoss(ORGAN_SLOT_BRAIN) >= 150 && looking.stat != DEAD)
-			if(prob(20))
-				var/mob/living/carbon/victim = looking
-				var/obj/effect/anomaly/tvstatic/planetary/expansion
-				expansion = new(get_turf(victim))
-				visible_message("<span class='warning'> The static overtakes [victim], [expansion] taking their place!</span>")
-				victim.death()
-				expansion.stored_mob = victim
-				victim.forceMove(expansion)
+			if(looking.getOrganLoss(ORGAN_SLOT_BRAIN) >= 150 && looking.stat != DEAD)
+				if(prob(20))
+					var/mob/living/carbon/victim = looking
+					var/obj/effect/anomaly/tvstatic/planetary/expansion
+					expansion = new(get_turf(victim))
+					visible_message("<span class='warning'> The static overtakes [victim], [expansion] taking their place!</span>")
+					victim.death()
+					expansion.stored_mob = victim
+					victim.forceMove(expansion)
 	return
 
 
@@ -51,7 +51,7 @@
 
 /obj/effect/anomaly/tvstatic/detonate()
 	for(var/mob/living/carbon/looking in range(effectrange, src))
-		visible_message("<span class='boldwarning'> The static lashes out!</span>")
+		visible_message("<span class='boldwarning'> The static lashes out, agony filling your mind as its tendrils scrape your thoughts!</span>")
 		if (!HAS_TRAIT(looking, TRAIT_MINDSHIELD) && looking.stat != DEAD)
 			looking.adjustOrganLoss(ORGAN_SLOT_BRAIN, 100, 200)
 			playsound(src, 'sound/effects/stall.ogg', 100)
@@ -88,9 +88,3 @@
 	playsound(src, "walkietalkie", 100, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
 	QDEL_IN(src, 20)
 
-	flick(icon_state, src)
-	playsound(src, "sparks", 100, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
-	var/turf/T = loc
-	if(isturf(T))
-		T.hotspot_expose(1000,100)
-	QDEL_IN(src, 20)

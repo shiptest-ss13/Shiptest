@@ -43,6 +43,7 @@
 		return INITIALIZE_HINT_QDEL
 
 	research_value = rand(500,4000)
+	pulse_delay = rand(pulse_delay*0.5, pulse_delay*1.5)
 
 	src.drops_core = drops_core
 	if(aSignal)
@@ -131,9 +132,17 @@
 
 /obj/effect/anomaly/attackby(obj/item/weapon, mob/user, params)
 	if(weapon.tool_behaviour == TOOL_ANALYZER && aSignal)
-		to_chat(user, span_notice("Analyzing... [src]'s field is fluctuating along frequency [format_frequency(aSignal.frequency)], code [aSignal.code]. It's likely that pulsing it would cause it to stabilize!"))
-		if(bSignal)
-			to_chat(user, span_notice("A second field is fluctuating along [format_frequency(bSignal.frequency)], code [bSignal.code]. It is higly unstable." ))
+		to_chat(user, span_notice("Analyzing..."))
+		if(do_after(user, 20, TRUE, src))
+			to_chat(user, span_notice("[src]'s primary field is fluctuating along frequency [format_frequency(aSignal.frequency)], code [aSignal.code]."))
+			if(bSignal)
+				to_chat(user, span_notice("A second field is fluctuating along [format_frequency(bSignal.frequency)], code [bSignal.code]. It is highly unstable." ))
 		return TRUE
 
 	return ..()
+
+
+/obj/effect/anomaly/tvstatic/examine(mob/user)
+	. = ..()
+	if(user.research_scanner == TRUE)
+		to_chat(user, span_notice("If harvested, this anomaly would be worth [research_value] research points."))
