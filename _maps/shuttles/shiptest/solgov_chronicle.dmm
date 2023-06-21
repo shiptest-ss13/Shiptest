@@ -104,10 +104,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
 	},
+/obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/white,
 /area/ship/engineering)
 "bd" = (
@@ -733,6 +733,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/plasteel/stairs{
 	dir = 1
 	},
@@ -1102,12 +1103,12 @@
 /turf/open/floor/wood,
 /area/ship/crew)
 "ke" = (
+/obj/machinery/power/apc/auto_name/directional/south,
 /obj/effect/turf_decal/corner/opaque/solgovblue/three_quarters{
 	dir = 1
 	},
-/obj/machinery/light/small/directional/south,
 /obj/structure/cable{
-	icon_state = "4-8"
+	icon_state = "0-4"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/engineering)
@@ -1177,6 +1178,9 @@
 "kT" = (
 /obj/effect/turf_decal/corner/opaque/solgovblue/three_quarters{
 	dir = 8
+	},
+/obj/effect/turf_decal/corner/opaque/solgovblue/three_quarters{
+	dir = 4
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/engineering)
@@ -2836,7 +2840,6 @@
 /turf/open/floor/engine/o2,
 /area/ship/engineering/engine)
 "BE" = (
-/obj/machinery/navbeacon/wayfinding/sec,
 /obj/effect/turf_decal/corner/opaque/solgovblue{
 	dir = 4
 	},
@@ -2847,7 +2850,6 @@
 	dir = 1;
 	color = "#543C30"
 	},
-/obj/machinery/navbeacon/wayfinding/bridge,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -3327,7 +3329,6 @@
 /obj/effect/turf_decal/corner/opaque/solgovblue/three_quarters{
 	dir = 4
 	},
-/obj/machinery/navbeacon/wayfinding/tcomms,
 /turf/open/floor/plasteel/white,
 /area/ship/engineering)
 "GP" = (
@@ -4061,20 +4062,6 @@
 	},
 /turf/open/floor/wood,
 /area/ship/crew/office)
-"OD" = (
-/obj/effect/turf_decal/corner/opaque/solgovblue{
-	dir = 9
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/machinery/navbeacon/wayfinding/engineering,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/tech,
-/area/ship/engineering/engine)
 "OU" = (
 /obj/item/clothing/neck/cloak/overseer,
 /obj/item/clothing/suit/armor/vest/bulletproof/solgov/overseer,
@@ -4383,6 +4370,11 @@
 /obj/item/cutting_board,
 /obj/item/kitchen/knife,
 /obj/machinery/newscaster/directional/north,
+/obj/structure/sink{
+	pixel_y = 20;
+	pixel_x = -15;
+	layer = 2.79
+	},
 /turf/open/floor/wood/mahogany,
 /area/ship/crew)
 "Sd" = (
@@ -4485,12 +4477,8 @@
 	dir = 4;
 	req_one_access = list(61,11)
 	},
-/obj/machinery/power/apc/auto_name/directional/south,
 /obj/effect/turf_decal/techfloor{
 	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "0-4"
 	},
 /turf/open/floor/circuit/green,
 /area/ship/engineering)
@@ -5214,7 +5202,7 @@ Pb
 zq
 Ad
 sS
-OD
+sS
 Cb
 lA
 Ex
