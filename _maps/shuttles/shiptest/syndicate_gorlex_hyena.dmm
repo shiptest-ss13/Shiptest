@@ -828,9 +828,6 @@
 /obj/effect/turf_decal/industrial/outline,
 /obj/machinery/light/small/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/sign/poster/contraband/hacking_guide{
-	pixel_y = -32
-	},
 /obj/structure/tank_dispenser/oxygen,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
@@ -1331,10 +1328,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/structure/sign/poster/contraband/random{
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/poster/syndicate/random{
 	pixel_y = 32
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "wE" = (
@@ -1508,6 +1505,9 @@
 /obj/effect/turf_decal/corner/transparent/bar,
 /obj/machinery/firealarm/directional/west,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/sign/poster/syndicate/random{
+	pixel_y = -32
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew)
 "zA" = (
@@ -1575,9 +1575,6 @@
 /obj/effect/turf_decal/corner/transparent/bar,
 /obj/item/reagent_containers/food/snacks/syndicake,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/sign/poster/contraband/random{
-	pixel_y = -32
-	},
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel,
 /area/ship/crew)
@@ -1635,11 +1632,11 @@
 /obj/structure/curtain/cloth/fancy{
 	name = "blood-red curtains"
 	},
-/obj/structure/sign/poster/contraband/random{
-	pixel_y = -32
-	},
 /obj/structure/window/reinforced/tinted/frosted{
 	dir = 8
+	},
+/obj/structure/sign/poster/syndicate/random{
+	pixel_y = -32
 	},
 /turf/open/floor/carpet/red,
 /area/ship/crew/dorm)
@@ -2858,9 +2855,6 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/structure/sign/poster/contraband/random{
-	pixel_x = 32
-	},
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
@@ -2935,9 +2929,6 @@
 /area/ship/bridge)
 "VQ" = (
 /obj/effect/turf_decal/industrial/outline,
-/obj/structure/sign/poster/contraband/random{
-	pixel_x = -32
-	},
 /obj/structure/closet{
 	anchored = 1;
 	icon_door = "eng_tool";
@@ -2955,6 +2946,9 @@
 /obj/item/stack/cable_coil/random,
 /obj/item/stack/cable_coil/random,
 /obj/item/stack/cable_coil/random,
+/obj/structure/sign/poster/syndicate/random{
+	pixel_x = -32
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
 "VR" = (
