@@ -190,7 +190,6 @@ export const ShipSelect = (props, context) => {
                   value={searchText}
                   onInput={(_, value) => setSearchText(value)}
                 />
-
                 <Button
                   content="Back"
                   onClick={() => {
