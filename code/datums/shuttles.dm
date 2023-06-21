@@ -346,11 +346,6 @@
 /datum/map_template/shuttle/subshuttles
 	category = "subshuttles"
 
-/datum/map_template/shuttle/subshuttles/anole
-	file_name = "nanotrasen_anole"
-	name = "Anole Transport Shuttle"
-	prefix = "NTSV"
-
 /datum/map_template/shuttle/subshuttles/pill
 	file_name = "independent_pill"
 	name = "Pill-Class Torture Device"
@@ -378,5 +373,15 @@
 	file_name = "independent_sugarcube"
 	name = "Sugarcube Transport"
 	prefix = "ISV"
+
+/datum/map_template/shuttle/subshuttles/anole
+	file_name = "nanotrasen_anole"
+	name = "Anole Transport Shuttle"
+	prefix = "NTSV"
+
+/datum/map_template/shuttle/subshuttles/anole/damaged
+	file_name = "nanotrasen_anole_damaged"
+	name = "Anole Transport Shuttle (Damaged)"
+	prefix = "NTSV"
 
 //your subshuttle here

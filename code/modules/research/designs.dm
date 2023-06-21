@@ -155,3 +155,19 @@ other types of metals and chemistry for reagents).
 	. = ..()
 	blueprints[1] = new /datum/design/cmm_ripley_upgrade
 	blueprints[2] = new /datum/design/cmm_durand_upgrade
+
+/obj/item/disk/design_disk/tcomms_parts
+	name = "design disk - telecomms parts"
+	desc = "A design disk containing stock part blueprints for Nanotrasen's renowned telecommunications systems." //patented!
+	color = "#01476F"
+	max_blueprints = 7
+
+/obj/item/disk/design_disk/tcomms_parts/Initialize()
+	. = ..()
+	blueprints[1] = new /datum/design/subspace_ansible
+	blueprints[2] = new /datum/design/hyperwave_filter
+	blueprints[3] = new /datum/design/subspace_amplifier
+	blueprints[4] = new /datum/design/subspace_treatment
+	blueprints[5] = new /datum/design/subspace_analyzer
+	blueprints[6] = new /datum/design/subspace_crystal
+	blueprints[7] = new /datum/design/subspace_transmitter

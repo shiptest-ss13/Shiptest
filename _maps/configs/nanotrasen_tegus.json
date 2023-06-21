@@ -1,6 +1,6 @@
 {
 	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
-	"map_name": "Tegus-class Mining Carrier",
+	"map_name": "Tegus-class Logistics Freighter",
 	"prefix": "NTSV",
 	"namelists": ["GENERAL", "BRITISH_NAVY", "MYTHOLOGICAL", "SPACE"],
 	"map_short_name": "Tegus-class",
@@ -12,12 +12,8 @@
 			"officer": true,
 			"slots": 1
 		},
-		"Mechanic": {
-			"outfit": "/datum/outfit/job/engineer/nt",
-			"slots": 1
-		},
-		"Shaft Miner": {
-			"outfit": "/datum/outfit/job/miner",
+		"Field Technician": {
+			"outfit": "/datum/outfit/job/engineer/nt/field",
 			"slots": 2
 		},
 		"Pilot": {
@@ -26,7 +22,7 @@
 		},
 		"Deckhand": {
 			"outfit": "/datum/outfit/job/assistant",
-			"slots": 1
+			"slots": 2
 		}
 	},
 	"enabled": true

@@ -464,7 +464,16 @@
 	log_smes()
 
 /obj/machinery/power/smes/engineering
-	charge = 1.5e6 // Engineering starts with some charge for singulo
+	charge = 1.5e6 // Engineering starts with some charge for singulo //yeah that's totally what they're used for
+
+/obj/machinery/power/smes/micro //like a micro engine precharger but an SMES unit
+	name = "micro power storage unit"
+	desc = "A low-capacity superconducting magnetic energy storage (SMES) unit."
+	capacity = 1e6
+	circuit = /obj/item/circuitboard/machine/smes/micro
+
+/obj/machinery/power/smes/micro/precharged
+	charge = 3e5 //same ratio as engineering SMESes. that's fair, i think.
 
 /obj/machinery/power/smes/magical
 	name = "magical power storage unit"

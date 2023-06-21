@@ -57,6 +57,12 @@
 	uniform = /obj/item/clothing/under/rank/engineering/engineer/nt
 	head = /obj/item/clothing/head/hardhat
 
+/datum/outfit/job/engineer/nt/field
+	name = "Field Technician (Nanotrasen)"
+	uniform = /obj/item/clothing/under/rank/cargo/miner/lavaland
+	head = /obj/item/clothing/head/hardhat
+	suit = /obj/item/clothing/suit/hazardvest
+
 /datum/outfit/job/engineer/electrician
 	name = "Station Engineer (Electrician)"
 
