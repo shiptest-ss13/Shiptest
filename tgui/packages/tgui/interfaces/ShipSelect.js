@@ -9,7 +9,7 @@ import {
   Collapsible,
 } from '../components';
 import { Window } from '../layouts';
-import { createSearch } from 'common/string';
+import { createSearch, decodeHtmlEntities } from 'common/string';
 
 export const ShipSelect = (props, context) => {
   const { act, data } = useBackend(context);
@@ -30,6 +30,14 @@ export const ShipSelect = (props, context) => {
     closed: 'Locked',
   };
 
+  const [shownTabs, setShownTabs] = useLocalState(context, 'tabs', [
+    { name: 'Ship Select', tab: 1 },
+    { name: 'Ship Purchase', tab: 3 },
+  ]);
+  // const formatShipName = (name) => {
+  //   // replace all &#34 with "/ because the json data we get is funky otherwise
+  //   return name.replace(/&#34;/g, '"');
+  // };
   const searchFor = (searchText) =>
     createSearch(searchText, (thing) => thing.name);
 
@@ -39,9 +47,14 @@ export const ShipSelect = (props, context) => {
     <Window title="Ship Select" width={800} height={600} resizable>
       <Window.Content scrollable>
         <Tabs>
-          <Tabs.Tab selected={tab === 1}>Ship Select</Tabs.Tab>
-          <Tabs.Tab selected={tab === 2}>Job Select</Tabs.Tab>
-          <Tabs.Tab selected={tab === 3}>Ship Purchase</Tabs.Tab>
+          {shownTabs.map((tabbing, index) => (
+            <Tabs.Tab
+              key={`${index}-${tabbing.name}`}
+              selected={tab === tabbing.tab}
+              onClick={() => setTab(tabbing.tab)}>
+              {tabbing.name}
+            </Tabs.Tab>
+          ))}
         </Tabs>
         {tab === 1 && (
           <Section
@@ -57,40 +70,55 @@ export const ShipSelect = (props, context) => {
                   setTab(3);
                 }}
               />
-            }
-          >
+            }>
             <Table>
               <Table.Row header>
                 <Table.Cell collapsing>Join</Table.Cell>
                 <Table.Cell>Ship Name</Table.Cell>
                 <Table.Cell>Ship Class</Table.Cell>
               </Table.Row>
-              {Object.values(ships).map((ship) => (
-                <Table.Row key={ship.name}>
-                  <Table.Cell>
-                    <Button
-                      content={
-                        ship.joinMode === applyStates.apply ? 'Apply' : 'Join'
-                      }
-                      color={
-                        ship.joinMode === applyStates.apply ? 'average' : 'good'
-                      }
-                      onClick={() => {
-                        setSelectedShip(ship);
-                        setTab(2);
-                      }}
-                    />
-                  </Table.Cell>
-                  <Table.Cell>{ship.name}</Table.Cell>
-                  <Table.Cell>{ship.class}</Table.Cell>
-                </Table.Row>
-              ))}
+              {Object.values(ships).map((ship) => {
+                const shipName = decodeHtmlEntities(ship.name);
+                return (
+                  <Table.Row key={shipName}>
+                    <Table.Cell>
+                      <Button
+                        content={
+                          ship.joinMode === applyStates.apply ? 'Apply' : 'Join'
+                        }
+                        color={
+                          ship.joinMode === applyStates.apply
+                            ? 'average'
+                            : 'good'
+                        }
+                        onClick={() => {
+                          setSelectedShip(ship);
+                          setTab(2);
+                          // Add a new tab to the list of shown tabs, on index 1
+                          setShownTabs((tabs) => {
+                            const newTabs = [...tabs];
+                            const newTab = {
+                              name: 'Job Select',
+                              tab: 2,
+                            };
+                            newTabs.splice(1, 0, newTab);
+                            return newTabs;
+                          });
+                        }}
+                      />
+                    </Table.Cell>
+                    <Table.Cell>{shipName}</Table.Cell>
+                    <Table.Cell>{ship.class}</Table.Cell>
+                  </Table.Row>
+                );
+              })}
             </Table>
           </Section>
         )}
         {tab === 2 && (
           <>
-            <Section title={`Ship Details - ${selectedShip.name}`}>
+            <Section
+              title={`Ship Details - ${decodeHtmlEntities(selectedShip.name)}`}>
               <LabeledList>
                 <LabeledList.Item label="Ship Class">
                   {selectedShip.class}
@@ -123,8 +151,7 @@ export const ShipSelect = (props, context) => {
                     setTab(1);
                   }}
                 />
-              }
-            >
+              }>
               <Table>
                 <Table.Row header>
                   <Table.Cell collapsing>Join</Table.Cell>
@@ -171,8 +198,7 @@ export const ShipSelect = (props, context) => {
                   }}
                 />
               </>
-            }
-          >
+            }>
             {templates.filter(searchFor(searchText)).map((template) => (
               <Collapsible
                 title={template.name}
@@ -186,8 +212,7 @@ export const ShipSelect = (props, context) => {
                       });
                     }}
                   />
-                }
-              >
+                }>
                 <LabeledList>
                   <LabeledList.Item label="Description">
                     {template.desc || 'No Description'}
@@ -203,8 +228,7 @@ export const ShipSelect = (props, context) => {
                     <a
                       href={'https://shiptest.net/wiki/' + template.name}
                       target="_blank"
-                      rel="noreferrer"
-                    >
+                      rel="noreferrer">
                       Here
                     </a>
                   </LabeledList.Item>
