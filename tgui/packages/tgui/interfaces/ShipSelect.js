@@ -90,7 +90,7 @@ export const ShipSelect = (props, context) => {
         )}
         {tab === 2 && (
           <>
-            <Section title={`Ship Info - ${selectedShip.name}`}>
+            <Section title={`Ship Details - ${selectedShip.name}`}>
               <LabeledList>
                 <LabeledList.Item label="Ship Class">
                   {selectedShip.class}
@@ -101,6 +101,10 @@ export const ShipSelect = (props, context) => {
                 <LabeledList.Item label="Ship Memo">
                   {selectedShip.memo || 'No Memo'}
                 </LabeledList.Item>
+              </LabeledList>
+            </Section>
+            <Collapsible title={'Ship Info'}>
+              <LabeledList>
                 <LabeledList.Item label="Ship Description">
                   {selectedShip.desc || 'No Description'}
                 </LabeledList.Item>
@@ -109,7 +113,7 @@ export const ShipSelect = (props, context) => {
                     'No Tags Set'}
                 </LabeledList.Item>
               </LabeledList>
-            </Section>
+            </Collapsible>
             <Section
               title="Job Selection"
               buttons={

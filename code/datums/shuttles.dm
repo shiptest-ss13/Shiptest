@@ -1,11 +1,10 @@
 /datum/map_template/shuttle
 	name = "Base Shuttle Template"
-	var/category
+	var/category = "Basic"
 	var/file_name
 
 	var/description
 	var/list/tags
-	var/admin_notes
 
 	var/list/movement_force // If set, overrides default movement_force on shuttle
 
@@ -229,8 +228,16 @@
 			description = params["new_template_description"]
 			update_static_data(usr, ui)
 			return TRUE
-		if("setTemplateTags")
-			tags = params["new_template_tags"]
+		if("addTemplateTags")
+			if(!tags)
+				tags = list()
+			if(!(params["new_template_tags"] in tags))
+				tags.Add(params["new_template_tags"])
+			update_static_data(usr, ui)
+			return TRUE
+		if("removeTemplateTags")
+			if(params["new_template_tags"] in tags)
+				tags.Remove(params["new_template_tags"])
 			update_static_data(usr, ui)
 			return TRUE
 		if("setTemplateCategory")
