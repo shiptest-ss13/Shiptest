@@ -93,7 +93,7 @@
 	feature_spawn_list = list(
 		/obj/structure/geyser/random = 4,
 		/obj/structure/elite_tumor = 2,
-		/obj/effect/spawner/lootdrop/anomaly/sand = 0.5,
+		/obj/effect/spawner/lootdrop/anomaly/sand = 0.7,
 	)
 	mob_spawn_chance = 4
 	mob_spawn_list = list(
@@ -188,7 +188,7 @@
 	feature_spawn_list = list(
 		/obj/structure/geyser/random = 1,
 		/obj/structure/elite_tumor = 2,
-		/obj/effect/spawner/lootdrop/anomaly/sand/cave = 0.1
+		/obj/effect/spawner/lootdrop/anomaly/sand/cave = 0.5
 	)
 	mob_spawn_chance = 4
 	mob_spawn_list = list(
