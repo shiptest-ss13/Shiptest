@@ -6,7 +6,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "aI" = (
-/obj/structure/sign/number/four,
+/obj/structure/sign/number/four{
+	pixel_y = 5
+	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/maintenance/fore)
 "aJ" = (
@@ -97,7 +99,9 @@
 /area/ship/security/armory)
 "cf" = (
 /obj/structure/table/reinforced,
-/obj/item/radio/intercom/directional/east,
+/obj/item/radio/intercom/directional/east{
+	pixel_y = 7
+	},
 /obj/item/toy/figure/syndie{
 	pixel_x = 11;
 	pixel_y = -3
@@ -367,7 +371,7 @@
 	anchored = 1;
 	icon_state = "hos";
 	name = "captain's locker";
-	req_access_txt = "list(ACCESS_CAPTAIN)"
+	req_access = "list(ACCESS_CAPTAIN)"
 	},
 /obj/item/storage/backpack/security,
 /obj/item/clothing/under/syndicate/combat,
@@ -386,7 +390,8 @@
 /area/ship/bridge)
 "hy" = (
 /obj/structure/sign/number/eight{
-	dir = 1
+	dir = 1;
+	pixel_y = 5
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/bridge)
@@ -513,7 +518,7 @@
 	on = 0
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/maintenance/starboard)
+/area/ship/bridge)
 "iI" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/trimline/opaque/red/filled/warning,
@@ -721,7 +726,7 @@
 	on = 0
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/crew/dorm)
+/area/ship/bridge)
 "nx" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -932,7 +937,9 @@
 /turf/open/floor/carpet/red_gold,
 /area/ship/bridge)
 "qs" = (
-/obj/structure/sign/number/eight,
+/obj/structure/sign/number/eight{
+	pixel_y = 5
+	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/maintenance/fore)
 "qO" = (
@@ -1086,7 +1093,7 @@
 /obj/machinery/door/airlock/grunge{
 	dir = 8;
 	name = "Bridge";
-	req_access_txt = "list(ACCESS_HEADS)"
+	req_access = "list(ACCESS_HEADS)"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1123,7 +1130,7 @@
 /obj/structure/window/reinforced/tinted/frosted,
 /obj/machinery/suit_storage_unit/inherit{
 	name = "captain's suit storage unit";
-	req_access_txt = "list(ACCESS_CAPTAIN)"
+	req_access = "list(ACCESS_CAPTAIN)"
 	},
 /obj/item/clothing/suit/space/hardsuit/syndi,
 /obj/item/clothing/mask/gas/syndicate,
@@ -1252,14 +1259,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
-"uP" = (
-/obj/machinery/porta_turret/centcom_shuttle/ballistic{
-	dir = 6;
-	name = "ship turret";
-	on = 0
-	},
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/maintenance/fore)
 "vi" = (
 /obj/structure/table,
 /obj/item/toy/cards/deck/syndicate{
@@ -1381,7 +1380,8 @@
 /area/ship/crew)
 "xZ" = (
 /obj/structure/sign/number/four{
-	dir = 1
+	dir = 1;
+	pixel_y = 5
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/bridge)
@@ -1761,7 +1761,8 @@
 /area/ship/maintenance/starboard)
 "En" = (
 /obj/structure/sign/number/nine{
-	dir = 1
+	dir = 1;
+	pixel_y = 5
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/bridge)
@@ -2017,6 +2018,12 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/turretid{
+	lethal = 1;
+	pixel_y = 22;
+	req_access = null;
+	req_access_txt = "58"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "JB" = (
@@ -2055,7 +2062,7 @@
 	on = 0
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/maintenance/port)
+/area/ship/bridge)
 "JP" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
@@ -2662,7 +2669,7 @@
 	on = 0
 	},
 /turf/closed/wall/mineral/plastitanium,
-/area/ship/hallway/central)
+/area/ship/bridge)
 "Ru" = (
 /obj/structure/sign/warning/vacuum/external{
 	pixel_y = -9
@@ -2925,7 +2932,7 @@
 	on = 0
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/storage)
+/area/ship/bridge)
 "VQ" = (
 /obj/effect/turf_decal/industrial/outline,
 /obj/structure/sign/poster/contraband/random{
@@ -3170,7 +3177,9 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "XZ" = (
-/obj/structure/sign/number/nine,
+/obj/structure/sign/number/nine{
+	pixel_y = 5
+	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/maintenance/fore)
 "Yv" = (
@@ -3866,5 +3875,5 @@ nn
 nn
 nn
 oO
-uP
+mm
 "}
