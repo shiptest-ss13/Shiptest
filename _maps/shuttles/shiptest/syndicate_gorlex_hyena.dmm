@@ -371,7 +371,7 @@
 	anchored = 1;
 	icon_state = "hos";
 	name = "captain's locker";
-	req_access = "list(ACCESS_CAPTAIN)"
+	req_access = list(ACCESS_CAPTAIN)
 	},
 /obj/item/storage/backpack/security,
 /obj/item/clothing/under/syndicate/combat,
@@ -745,7 +745,7 @@
 	id = "wreckerarmory";
 	name = "armory shutters";
 	pixel_y = 23;
-	req_access = "list(19)"
+	req_access = list(ACCESS_HEADS)
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
@@ -1090,7 +1090,7 @@
 /obj/machinery/door/airlock/grunge{
 	dir = 8;
 	name = "Bridge";
-	req_access = "list(ACCESS_HEADS)"
+	req_access = list(ACCESS_HEADS)
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1127,7 +1127,7 @@
 /obj/structure/window/reinforced/tinted/frosted,
 /obj/machinery/suit_storage_unit/inherit{
 	name = "captain's suit storage unit";
-	req_access = "list(ACCESS_CAPTAIN)"
+	req_access = list(ACCESS_CAPTAIN)
 	},
 /obj/item/clothing/suit/space/hardsuit/syndi,
 /obj/item/clothing/mask/gas/syndicate,
@@ -2564,7 +2564,7 @@
 	id = "wreckerarmory";
 	name = "armory shutters";
 	pixel_y = -21;
-	req_access = "list(19)"
+	req_access = list(ACCESS_HEADS)
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
