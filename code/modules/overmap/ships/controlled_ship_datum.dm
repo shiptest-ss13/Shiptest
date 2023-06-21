@@ -189,9 +189,6 @@
 		Dock(E)
 
 /datum/overmap/ship/controlled/burn_engines(percentage = 100, deltatime)
-	if(docked_to || docking)
-		CRASH("[src] burned engines while docking or docked!")
-
 	var/thrust_used = 0 //The amount of thrust that the engines will provide with one burn
 	refresh_engines()
 	calculate_avg_fuel()
