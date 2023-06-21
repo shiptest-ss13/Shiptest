@@ -252,7 +252,7 @@
 "el" = (
 /obj/effect/turf_decal/industrial/outline,
 /obj/machinery/suit_storage_unit/inherit/industrial{
-	req_access = list(ACCESS_ENGINE_EQUIP)
+	req_access = list(11)
 	},
 /obj/item/clothing/suit/space/syndicate/black/engie,
 /obj/item/clothing/head/helmet/space/syndicate/black/engie,
@@ -371,7 +371,7 @@
 	anchored = 1;
 	icon_state = "hos";
 	name = "captain's locker";
-	req_access = list(ACCESS_CAPTAIN)
+	req_access = list(20)
 	},
 /obj/item/storage/backpack/security,
 /obj/item/clothing/under/syndicate/combat,
@@ -745,7 +745,7 @@
 	id = "wreckerarmory";
 	name = "armory shutters";
 	pixel_y = 23;
-	req_access = list(ACCESS_HEADS)
+	req_access = list(19)
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
@@ -978,7 +978,7 @@
 	anchored = 1;
 	icon_state = "eng_secure";
 	name = "mechanic's locker";
-	req_access = list(ACCESS_ENGINE_EQUIP)
+	req_access = list(11)
 	},
 /obj/item/clothing/shoes/workboots,
 /obj/item/clothing/under/syndicate/gorlex,
@@ -1090,7 +1090,7 @@
 /obj/machinery/door/airlock/grunge{
 	dir = 8;
 	name = "Bridge";
-	req_access = list(ACCESS_HEADS)
+	req_access = list(19)
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1127,7 +1127,7 @@
 /obj/structure/window/reinforced/tinted/frosted,
 /obj/machinery/suit_storage_unit/inherit{
 	name = "captain's suit storage unit";
-	req_access = list(ACCESS_CAPTAIN)
+	req_access = list(20)
 	},
 /obj/item/clothing/suit/space/hardsuit/syndi,
 /obj/item/clothing/mask/gas/syndicate,
@@ -1143,7 +1143,7 @@
 	anchored = 1;
 	icon_state = "mining";
 	name = "wrecker's locker";
-	req_access = list(ACCESS_MINING)
+	req_access = list(48)
 	},
 /obj/item/clothing/shoes/workboots/mining,
 /obj/item/clothing/under/syndicate/gorlex,
@@ -1544,14 +1544,14 @@
 /obj/item/clothing/glasses/welding,
 /obj/item/clothing/head/hardhat/orange,
 /obj/item/clothing/head/soft/grey,
-/obj/machinery/firealarm/directional/south,
 /obj/machinery/light/small/directional/north,
 /obj/structure/closet/secure_closet{
 	anchored = 1;
 	icon_state = "mining";
 	name = "wrecker's locker";
-	req_access = list(ACCESS_MINING)
+	req_access = list(48)
 	},
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
 "zZ" = (
@@ -2016,10 +2016,8 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/turretid{
-	lethal = 1;
 	pixel_y = 22;
-	req_access = null;
-	req_access_txt = "58"
+	req_access = list(19)
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
@@ -2045,7 +2043,7 @@
 /obj/item/clothing/head/helmet/space/syndicate/black/orange,
 /obj/item/tank/jetpack/carbondioxide,
 /obj/machinery/suit_storage_unit/inherit/industrial{
-	req_one_access = list(ACCESS_MINING, ACCESS_CE)
+	req_one_access = list(48,56)
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
@@ -2217,7 +2215,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/suit_storage_unit/inherit{
 	name = "foreman's suit storage unit";
-	req_access = list(ACCESS_CE)
+	req_access = list(56)
 	},
 /obj/item/clothing/shoes/magboots/syndie,
 /obj/item/clothing/suit/space/hardsuit/syndi/scarlet,
@@ -2249,7 +2247,7 @@
 "Lj" = (
 /obj/machinery/door/airlock/hatch{
 	name = "Port Thrusters";
-	req_access = list(ACCESS_ENGINE)
+	req_access = list(10)
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2452,7 +2450,7 @@
 /obj/machinery/door/airlock/grunge{
 	dir = 4;
 	name = "Locker Room";
-	req_one_access = list(ACCESS_ENGINE, ACCESS_MINING)
+	req_one_access = list(10,48)
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2560,7 +2558,7 @@
 	id = "wreckerarmory";
 	name = "armory shutters";
 	pixel_y = -21;
-	req_access = list(ACCESS_HEADS)
+	req_access = list(19)
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
@@ -2862,7 +2860,7 @@
 "Vx" = (
 /obj/machinery/door/airlock/hatch{
 	name = "Starboard Thrusters";
-	req_access = list(ACCESS_ENGINE)
+	req_access = list(10)
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2953,7 +2951,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/clothing/suit/space/syndicate/black/orange,
 /obj/machinery/suit_storage_unit/inherit/industrial{
-	req_one_access = list(ACCESS_MINING, ACCESS_CE)
+	req_one_access = list(48,56)
 	},
 /obj/item/clothing/mask/gas/syndicate,
 /obj/item/clothing/head/helmet/space/syndicate/black/orange,
@@ -2965,7 +2963,7 @@
 	anchored = 1;
 	icon_state = "warden";
 	name = "foreman's locker";
-	req_access = list(ACCESS_CE)
+	req_access = list(56)
 	},
 /obj/item/clothing/shoes/jackboots,
 /obj/item/clothing/under/syndicate/gorlex,
@@ -3116,7 +3114,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/airlock/grunge{
 	name = "Foreman's Office";
-	req_access = list(ACCESS_CE)
+	req_access = list(56)
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo/office)
