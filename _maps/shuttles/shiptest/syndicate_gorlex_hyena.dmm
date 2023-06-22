@@ -346,9 +346,7 @@
 	},
 /obj/effect/turf_decal/corner/transparent/bar,
 /obj/item/storage/cans/sixbeer,
-/obj/machinery/status_display/shuttle{
-	pixel_y = -27
-	},
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel,
 /area/ship/crew)
 "gM" = (
@@ -2025,10 +2023,6 @@
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
 	},
-/obj/machinery/status_display/shuttle{
-	pixel_x = -32;
-	pixel_y = -16
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/documents/syndicate/mining,
 /obj/structure/filingcabinet,
@@ -2239,9 +2233,9 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/maintenance/port)
 "Lg" = (
-/obj/machinery/airalarm/directional/east,
 /obj/structure/weightmachine/weightlifter,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "Lj" = (
@@ -2845,7 +2839,6 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew/dorm)
 "Vv" = (
-/obj/machinery/light/directional/east,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 4
 	},
@@ -2855,6 +2848,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
 	},
+/obj/machinery/computer/helm/viewscreen/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "Vx" = (
