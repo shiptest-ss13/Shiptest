@@ -249,7 +249,7 @@
 	name = "inteq artificer overalls"
 	desc = "A black set of overalls atop a standard issue turtleneck, for the IRMG's support division Artificers."
 	icon_state = "inteqeng"
-	supports_variations = KEPORI_VARIATION | VOX_VARIATION | DIGITIGRADE_VARIATION 
+	supports_variations = KEPORI_VARIATION | VOX_VARIATION | DIGITIGRADE_VARIATION
 
 /obj/item/clothing/under/syndicate/inteq/skirt/artificer
 	name = "inteq artificer overall skirt"
@@ -281,5 +281,3 @@
 	. = ..()
 	var/obj/item/clothing/accessory/maidapron/inteq/A = new (src)
 	attach_accessory(A)
-
-
