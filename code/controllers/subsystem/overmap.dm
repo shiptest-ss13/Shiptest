@@ -270,7 +270,7 @@ SUBSYSTEM_DEF(overmap)
 			var/incomplete_phases = local_pos * MAPGEN_PHASE_FINISHED
 			for(var/i = 1, i <= local_pos, i++)
 				var/datum/map_generator/job = SSmap_gen.jobs[i]
-				incomplete_phases -= job.phase - ((job.phase_index-1)/length(job.turfs))
+				incomplete_phases -= job.phase + ((job.phase_index-1)/length(job.turfs))
 
 			for(var/obj/machinery/computer/helm/Helm as anything in requesting.helms)
 				Helm.say("Landing Progress: [round(100 * (total_phases - incomplete_phases) / total_phases)]%")

@@ -1,6 +1,13 @@
 SUBSYSTEM_DEF(map_gen)
 	name = "Map Generation"
 	wait = 1
+	// ? according to kapu, SS_TICKER and SS_BACKGROUND don't play well together.
+	// ? additionally, map generation needs to happen at high server load, so SS_BACKGROUND is undesireable.
+	// ? however, moving it up would move it above SSair: long queues may lead it to eat ticks.
+	// ? thus SSair must be moved up. however, it must also not conflict with SScallbacks, which handles atmos callbacks
+	// ? for SSair and is, i BELIEVE, consistently scheduled first to ensure it completes.
+	// ? also, live tests revealed a bug with a reservation corner that was repeatedly allocated for vlevels.
+	// ? this should be fixed: possible overlap with the simultaneous dock SGTs?
 	flags = SS_TICKER | SS_BACKGROUND
 	init_order = INIT_ORDER_MAP_GEN
 	priority = FIRE_PRIORITY_MAP_GEN // not 100% sure this makes a difference, due to confluence of SS_TICKER and SS_BACKGROUND
@@ -24,9 +31,6 @@ SUBSYSTEM_DEF(map_gen)
 /datum/controller/subsystem/map_gen/Initialize(timeofday)
 	if(initialized)
 		return
-	if(length(jobs))
-		// This should be set by default anyway. Just in case.
-		can_fire = TRUE
 	initialize_biomes()
 	return ..()
 
@@ -53,11 +57,6 @@ SUBSYSTEM_DEF(map_gen)
 	can_fire = TRUE
 
 /datum/controller/subsystem/map_gen/fire(resumed = 0)
-	if(!jobs)
-		// in case our only job was removed early due to qdeletion
-		can_fire = FALSE
-		return
-
 	// jobs are sorted by priority, and handled in order
 	for(var/datum/map_generator/cur_map_gen in jobs) // serves as a queue
 		while(cur_map_gen.phase != MAPGEN_PHASE_FINISHED)
