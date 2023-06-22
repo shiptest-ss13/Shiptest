@@ -204,11 +204,10 @@ There are several things that need to be remembered:
 
 		var/handled_by_bodytype = TRUE
 		var/icon_file
-		/*
+		
 		if((dna.species.bodytype & BODYTYPE_VOX) && (I.supports_variations & VOX_VARIATION))
 			icon_file = VOX_GLOVES_PATH
-		*/
-
+		
 		if(!(icon_exists(icon_file, RESOLVE_ICON_STATE(I))))
 			handled_by_bodytype = FALSE
 			icon_file = DEFAULT_GLOVES_PATH
@@ -236,13 +235,12 @@ There are several things that need to be remembered:
 		update_hud_glasses(I)
 		if(!(head?.flags_inv & HIDEEYES) && !(wear_mask?.flags_inv & HIDEEYES))
 			var/mutable_appearance/glasses_overlay
-			var/handled_by_bodytype
+			var/handled_by_bodytype = TRUE
 			var/icon_file
-			/*
+			
 			if((dna.species.bodytype & BODYTYPE_VOX) && (I.supports_variations & VOX_VARIATION))
 				icon_file = VOX_GLASSES_PATH
-			*/
-
+			
 			if(!(icon_exists(icon_file, RESOLVE_ICON_STATE(I))))
 				handled_by_bodytype = FALSE
 				icon_file = DEFAULT_GLASSES_PATH
@@ -272,11 +270,10 @@ There are several things that need to be remembered:
 
 		var/handled_by_bodytype = TRUE
 		var/icon_file
-		/*
+		
 		if((dna.species.bodytype & BODYTYPE_VOX) && (I.supports_variations & VOX_VARIATION))
 			icon_file = VOX_EARS_PATH
-		*/
-
+		
 		if(!(icon_exists(icon_file, RESOLVE_ICON_STATE(I))))
 			handled_by_bodytype = FALSE
 			icon_file = DEFAULT_EARS_PATH
@@ -311,6 +308,9 @@ There are several things that need to be remembered:
 			if(leg.limb_id == "digitigrade")//Snowflakey and bad. But it makes it look consistent.
 				icon_file = DIGITIGRADE_SHOES_PATH
 
+		if((I.supports_variations & VOX_VARIATION) && (dna.species.bodytype & BODYTYPE_VOX))
+			icon_file = VOX_SHOES_PATH
+			
 		if(!(icon_exists(icon_file, RESOLVE_ICON_STATE(I))))
 			handled_by_bodytype = FALSE
 			icon_file = DEFAULT_SHOES_PATH
@@ -389,6 +389,9 @@ There are several things that need to be remembered:
 		update_hud_belt(I)
 		var/handled_by_bodytype
 		var/icon_file
+
+		if((I.supports_variations & VOX_VARIATION) && (dna.species.bodytype & BODYTYPE_VOX))
+			icon_file = VOX_BELT_PATH
 
 		if(!(icon_exists(icon_file, RESOLVE_ICON_STATE(I))))
 			handled_by_bodytype = FALSE
