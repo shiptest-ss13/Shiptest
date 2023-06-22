@@ -89,12 +89,12 @@
 	ruin_type = RUINTYPE_YELLOW
 
 /datum/planet_type/asteroid
-	name = "large asteroid"
-	desc = "A large asteroid with significant traces of minerals."
+	name = "asteroid field"
+	desc = "A field of asteroids with significant traces of minerals."
 	planet = DYNAMIC_WORLD_ASTEROID
 	icon_state = "asteroid"
 	color = COLOR_GRAY
-	mapgen = /datum/map_generator/single_biome/asteroid
+	mapgen = /datum/map_generator/planet_generator/asteroid
 	// Space, because asteroid maps also include space turfs and the prospect of space turfs
 	// existing without space as their baseturf scares me.
 	default_baseturf = /turf/open/space

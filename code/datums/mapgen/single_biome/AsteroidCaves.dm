@@ -1,3 +1,4 @@
+/*
 /datum/map_generator/single_biome/asteroid
 	initial_closed_chance = 55
 	smoothing_iterations = 50
@@ -69,4 +70,4 @@
 
 	flora_spawn_chance = 2
 	feature_spawn_chance = 1
-	mob_spawn_chance = 6
+	mob_spawn_chance = 6 */ //asteroids are now in planetary/asteroidgenerator

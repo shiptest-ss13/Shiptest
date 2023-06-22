@@ -261,6 +261,11 @@
 	area_flags = HIDDEN_AREA | CAVES_ALLOWED | FLORA_ALLOWED | MOB_SPAWN_ALLOWED //allows jaunters to work
 	ambientsounds = REEBE
 
+/area/overmap_encounter/planetoid/asteroid
+	name = "\improper Asteroid Field"
+	sound_environment = SOUND_ENVIRONMENT_QUARRY
+	ambientsounds = SPACE
+
 
 
 
