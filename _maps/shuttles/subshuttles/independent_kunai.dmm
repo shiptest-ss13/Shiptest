@@ -8,11 +8,17 @@
 	info = "USE THE MULTITOOL TO FILTER YOUR RADIO FREQUENCY"
 	},
 /obj/item/multitool,
+/obj/effect/turf_decal/techfloor{
+	dir = 5
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "ab" = (
 /obj/machinery/computer/helm{
 	dir = 8
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 6
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
@@ -135,10 +141,7 @@
 	name = "engine shutters";
 	id = "polengine"
 	},
-/obj/effect/turf_decal/corner_techfloor_grid{
-	dir = 4
-	},
-/obj/effect/turf_decal/corner_techfloor_grid{
+/obj/effect/turf_decal/techfloor{
 	dir = 9
 	},
 /turf/open/floor/plasteel/tech,
@@ -202,6 +205,9 @@
 	pixel_y = 2;
 	dir = 4;
 	pixel_x = 4
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -328,9 +334,8 @@
 /obj/machinery/power/terminal,
 /obj/structure/cable,
 /obj/item/radio/intercom/wideband/directional/west,
-/obj/effect/turf_decal/corner_techfloor_grid,
-/obj/effect/turf_decal/corner_techfloor_grid{
-	dir = 9
+/obj/effect/turf_decal/techfloor{
+	dir = 10
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)

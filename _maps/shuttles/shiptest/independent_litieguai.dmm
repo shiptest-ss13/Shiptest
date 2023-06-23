@@ -91,7 +91,7 @@
 /obj/effect/turf_decal/industrial/loading{
 	dir = 4
 	},
-/turf/open/floor/plasteel/showroomfloor,
+/turf/open/floor/plasteel/tech/techmaint,
 /area/ship/medical)
 "cI" = (
 /obj/effect/turf_decal/trimline/opaque/red/filled/line{
@@ -240,7 +240,7 @@
 /obj/item/organ/ears,
 /obj/item/organ/ears,
 /obj/effect/turf_decal/industrial/hatch/red,
-/turf/open/floor/plasteel/showroomfloor,
+/turf/open/floor/plasteel/tech/techmaint,
 /area/ship/medical)
 "fp" = (
 /turf/closed/wall/mineral/titanium,
@@ -301,7 +301,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
 	},
-/turf/open/floor/plasteel/showroomfloor,
+/turf/open/floor/plasteel/tech/techmaint,
 /area/ship/storage)
 "hF" = (
 /obj/structure/table/reinforced,
@@ -366,7 +366,7 @@
 	dir = 4
 	},
 /obj/machinery/airalarm/directional/south,
-/turf/open/floor/plasteel/showroomfloor,
+/turf/open/floor/plasteel/freezer,
 /area/ship/crew/toilet)
 "iP" = (
 /obj/machinery/power/smes/engineering{
@@ -497,7 +497,10 @@
 	dir = 4;
 	pixel_x = -12
 	},
-/turf/open/floor/plasteel/showroomfloor,
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/techmaint,
 /area/ship/medical)
 "lF" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
@@ -590,7 +593,7 @@
 	name = "Medical Retrieval Tool"
 	},
 /obj/effect/turf_decal/industrial/outline/red,
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
 "mO" = (
 /obj/machinery/computer/med_data,
@@ -738,7 +741,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/turf/open/floor/plasteel/showroomfloor,
+/turf/open/floor/plasteel/freezer,
 /area/ship/crew/toilet)
 "pK" = (
 /obj/structure/table/reinforced,
@@ -775,7 +778,7 @@
 	pixel_x = 25
 	},
 /obj/machinery/firealarm/directional/north,
-/turf/open/floor/plasteel/showroomfloor,
+/turf/open/floor/plasteel/freezer,
 /area/ship/crew/toilet)
 "qQ" = (
 /obj/effect/turf_decal/trimline/opaque/red/filled/warning{
@@ -968,7 +971,10 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
-/turf/open/floor/plasteel/showroomfloor,
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/techmaint,
 /area/ship/medical)
 "uq" = (
 /obj/structure/table/reinforced,
@@ -1149,7 +1155,7 @@
 /obj/structure/bodycontainer/morgue{
 	dir = 8
 	},
-/turf/open/floor/plasteel/showroomfloor,
+/turf/open/floor/plasteel/tech/techmaint,
 /area/ship/medical)
 "zE" = (
 /obj/structure/cable{
@@ -1206,7 +1212,10 @@
 /obj/structure/railing{
 	dir = 6
 	},
-/turf/open/floor/plasteel/showroomfloor,
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/techmaint,
 /area/ship/storage)
 "AJ" = (
 /turf/closed/wall/mineral/titanium,
@@ -1421,7 +1430,10 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
-/turf/open/floor/plasteel/showroomfloor,
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/techmaint,
 /area/ship/medical)
 "Gs" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
@@ -1488,7 +1500,10 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
-/turf/open/floor/plasteel/showroomfloor,
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/techmaint,
 /area/ship/medical)
 "HP" = (
 /turf/open/floor/carpet/nanoweave/beige,
@@ -1647,7 +1662,10 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/siding/thinplating/dark/corner,
-/turf/open/floor/plasteel/showroomfloor,
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/techmaint,
 /area/ship/storage)
 "Lt" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -1697,7 +1715,7 @@
 	desc = "For extracting yourself from rough landings, and getting to the even rougher ones";
 	name = "Medical Retrieval Tool"
 	},
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
 "MN" = (
 /obj/machinery/power/port_gen/pacman,
@@ -1808,7 +1826,10 @@
 /area/ship/storage)
 "Po" = (
 /obj/machinery/holopad/emergency/medical,
-/turf/open/floor/plasteel/showroomfloor,
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/techmaint,
 /area/ship/medical)
 "Pp" = (
 /obj/effect/turf_decal/corner/opaque/white/mono,
@@ -1876,7 +1897,7 @@
 	},
 /obj/machinery/door/window/survival_pod,
 /obj/structure/curtain,
-/turf/open/floor/plasteel/showroomfloor,
+/turf/open/floor/plasteel/freezer,
 /area/ship/crew/toilet)
 "Qp" = (
 /obj/machinery/vending/snack/random,
@@ -2040,7 +2061,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
 	},
-/turf/open/floor/plasteel/showroomfloor,
+/turf/open/floor/plasteel/tech/techmaint,
 /area/ship/storage)
 "Sy" = (
 /obj/machinery/stasis,
@@ -2073,7 +2094,7 @@
 	},
 /obj/machinery/door/window/survival_pod,
 /obj/item/soap,
-/turf/open/floor/plasteel/showroomfloor,
+/turf/open/floor/plasteel/freezer,
 /area/ship/crew/toilet)
 "SR" = (
 /obj/machinery/airalarm/directional/north,
@@ -2325,7 +2346,7 @@
 /obj/structure/sign/poster/official/cleanliness{
 	pixel_y = -32
 	},
-/turf/open/floor/plasteel/showroomfloor,
+/turf/open/floor/plasteel/freezer,
 /area/ship/crew/toilet)
 "Wc" = (
 /obj/machinery/door/airlock/command{
@@ -2483,7 +2504,10 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
-/turf/open/floor/plasteel/showroomfloor,
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/techmaint,
 /area/ship/medical)
 "YI" = (
 /obj/machinery/light/directional/west,
@@ -2530,7 +2554,10 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/maintenance/port)
 "ZN" = (
-/turf/open/floor/plasteel/showroomfloor,
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/techmaint,
 /area/ship/medical)
 "ZO" = (
 /obj/machinery/vending/cola/random,

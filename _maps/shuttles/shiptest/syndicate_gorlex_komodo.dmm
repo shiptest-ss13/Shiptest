@@ -931,7 +931,8 @@
 /area/ship/hallway/central)
 "iL" = (
 /obj/structure/railing/corner{
-	dir = 4
+	dir = 4;
+	layer = 2.8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/stairs{
@@ -956,7 +957,7 @@
 /obj/item/soap/syndie,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/small/directional/west,
-/turf/open/floor/plasteel/showroomfloor,
+/turf/open/floor/plasteel/freezer,
 /area/ship/hallway/aft)
 "iX" = (
 /obj/machinery/shower{
@@ -1674,7 +1675,7 @@
 /obj/structure/sign/poster/official/moth/smokey{
 	pixel_x = 28
 	},
-/turf/open/floor/plasteel/showroomfloor,
+/turf/open/floor/plasteel/freezer,
 /area/ship/hallway/aft)
 "qu" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -2196,7 +2197,8 @@
 	dir = 8
 	},
 /obj/structure/railing{
-	dir = 1
+	dir = 1;
+	layer = 2.8
 	},
 /obj/machinery/computer/cryopod/directional/north{
 	pixel_y = 26
@@ -4361,10 +4363,11 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/hallway/central)
 "QU" = (
-/obj/structure/railing{
-	dir = 1
-	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/railing{
+	dir = 1;
+	layer = 2.8
+	},
 /turf/open/floor/pod/dark,
 /area/ship/crew/dorm)
 "Rk" = (
@@ -5280,7 +5283,7 @@
 	pixel_x = -26
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/showroomfloor,
+/turf/open/floor/plasteel/freezer,
 /area/ship/hallway/aft)
 "Zu" = (
 /obj/structure/railing/corner{

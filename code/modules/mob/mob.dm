@@ -599,17 +599,6 @@
 
 	return TRUE
 
-//Update the screentip to reflect what we're hoverin over
-/atom/MouseEntered(location, control, params)
-	. = ..()
-	// Statusbar
-	status_bar_set_text(usr, name)
-	// Screentips
-	if(!usr?.client?.prefs.screentip_pref || (flags_1 & NO_SCREENTIPS_1))
-		usr.hud_used.screentip_text.maptext = ""
-	else
-		usr.hud_used.screentip_text.maptext = MAPTEXT("<span style='text-align: center'><span style='font-size: 32px'><span style='color:[usr.client.prefs.screentip_color]: 32px'>[name]</span>")
-
 ///Can this mob resist (default FALSE)
 /mob/proc/can_resist()
 	return FALSE		//overridden in living.dm

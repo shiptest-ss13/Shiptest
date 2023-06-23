@@ -82,10 +82,10 @@
 	},
 /obj/effect/turf_decal/techfloor,
 /obj/machinery/suit_storage_unit/inherit/industrial,
-/obj/structure/extinguisher_cabinet/directional/north,
 /obj/item/tank/jetpack/carbondioxide,
 /obj/item/clothing/suit/space/hardsuit/security/independent/frontier,
 /obj/item/clothing/mask/breath,
+/obj/structure/extinguisher_cabinet/directional/east,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "aw" = (
@@ -391,7 +391,9 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "ck" = (
-/obj/machinery/door/airlock/grunge,
+/obj/machinery/door/airlock/grunge{
+	dir = 4
+	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew)
 "cl" = (
@@ -489,7 +491,8 @@
 	},
 /obj/machinery/door/airlock/engineering{
 	name = "Engineering";
-	req_access_txt = "10"
+	req_access_txt = "10";
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/ship/engineering/electrical)
@@ -548,7 +551,7 @@
 	icon_state = "dirty_mattress"
 	},
 /obj/structure/sign/poster/contraband/masked_men{
-	pixel_x = -32
+	pixel_x = -28
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
@@ -680,7 +683,8 @@
 	layer = 3.1
 	},
 /obj/machinery/door/poddoor{
-	id = "pirate_cutter_escape"
+	id = "pirate_cutter_escape";
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/office)
@@ -749,10 +753,6 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/machinery/door/poddoor{
-	id = "cutter_engines_lockdown";
-	name = "Engine Blast Door"
-	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "eE" = (
@@ -809,7 +809,15 @@
 	req_access = null;
 	anchored = 1
 	},
+
+/obj/machinery/light/small,
+/obj/item/seeds/cannabis{
+	pixel_y = -5;
+	pixel_x = -5
+	},
+
 /obj/machinery/light/small/directional/south,
+
 /turf/open/floor/plating/rust,
 /area/ship/engineering)
 "eV" = (
@@ -1110,7 +1118,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plasteel/patterned/dirty,
+/turf/open/floor/plasteel/dark,
 /area/ship/security/range)
 "fX" = (
 /obj/effect/turf_decal/steeldecal/steel_decals10{
@@ -1229,7 +1237,7 @@
 	pixel_x = -11;
 	pixel_y = -3
 	},
-/turf/open/floor/plasteel/patterned/dirty,
+/turf/open/floor/plasteel/dark,
 /area/ship/security/range)
 "gu" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -1356,6 +1364,7 @@
 /obj/effect/decal/cleanable/oil/streak{
 	pixel_x = -11
 	},
+/obj/item/radio/intercom/directional/east,
 /turf/open/floor/plating/rust,
 /area/ship/medical)
 "hy" = (
@@ -1368,6 +1377,10 @@
 /obj/item/kirbyplants/random,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
+	},
+/obj/item/seeds/corn{
+	pixel_y = -8;
+	pixel_x = 5
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
@@ -1498,7 +1511,6 @@
 /obj/effect/turf_decal/trimline/transparent/lightgrey/line{
 	dir = 4
 	},
-/obj/structure/extinguisher_cabinet/directional/north,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -1506,6 +1518,7 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
+/obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/atmospherics)
 "iB" = (
@@ -1586,6 +1599,7 @@
 	pixel_x = -10
 	},
 /obj/structure/extinguisher_cabinet/directional/north,
+/obj/item/radio/intercom/directional/west,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/medical)
 "iT" = (
@@ -1738,7 +1752,7 @@
 	pixel_y = -17
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/patterned/dirty,
+/turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "jv" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1824,7 +1838,8 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/freezer{
-	name = "Kitchen"
+	name = "Kitchen";
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen/kitchen)
@@ -2012,7 +2027,8 @@
 	dir = 8
 	},
 /obj/machinery/door/airlock/atmos{
-	name = "Atmospherics Office"
+	name = "Atmospherics Office";
+	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/purple/hidden{
 	dir = 8
@@ -2094,7 +2110,7 @@
 	pixel_y = 23;
 	pixel_x = -2
 	},
-/turf/open/floor/plasteel/patterned/dirty,
+/turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "kK" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2185,10 +2201,6 @@
 "ld" = (
 /obj/machinery/power/shuttle/engine/fueled/plasma{
 	dir = 4
-	},
-/obj/machinery/door/poddoor{
-	id = "cutter_engines_lockdown";
-	name = "Engine Blast Door"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -2303,7 +2315,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
 	},
-/turf/open/floor/plasteel/patterned/dirty,
+/turf/open/floor/plasteel/dark,
 /area/ship/security/range)
 "lO" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
@@ -2341,7 +2353,8 @@
 /area/ship/medical)
 "lT" = (
 /obj/machinery/door/poddoor{
-	id = "cutter_disposals_hatch"
+	id = "cutter_disposals_hatch";
+	dir = 4
 	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/engineering/incinerator)
@@ -2394,7 +2407,7 @@
 /obj/item/clothing/head/helmet/bulletproof/x11/frontier,
 /obj/item/clothing/head/helmet/bulletproof/x11/frontier,
 /obj/item/clothing/head/helmet/bulletproof/x11/frontier,
-/turf/open/floor/plasteel/patterned/dirty,
+/turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "mn" = (
 /obj/structure/railing{
@@ -2483,10 +2496,6 @@
 "mL" = (
 /obj/machinery/power/shuttle/engine/fueled/plasma{
 	dir = 4
-	},
-/obj/machinery/door/poddoor{
-	id = "cutter_engines_lockdown";
-	name = "Engine Blast Door"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/incinerator)
@@ -2839,7 +2848,8 @@
 /area/ship/maintenance/fore)
 "oy" = (
 /obj/machinery/door/airlock/engineering/glass{
-	req_access_txt = "10"
+	req_access_txt = "10";
+	dir = 4
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -3193,12 +3203,16 @@
 	dir = 1
 	},
 /obj/item/reagent_containers/food/drinks/bottle/pruno,
-/obj/structure/extinguisher_cabinet/directional/north,
-/turf/open/floor/plasteel/patterned/dirty,
+/obj/structure/extinguisher_cabinet/directional/east,
+/turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
 "qr" = (
 /obj/structure/closet/emcloset/wall{
 	pixel_y = 28
+	},
+/obj/item/seeds/berry{
+	pixel_x = -8;
+	pixel_y = 6
 	},
 /turf/open/floor/plating{
 	icon_state = "foam_plating"
@@ -3211,7 +3225,7 @@
 /obj/effect/turf_decal/techfloor/hole{
 	dir = 1
 	},
-/turf/open/floor/plasteel/patterned/dirty,
+/turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "qw" = (
 /obj/structure/catwalk/over/plated_catwalk,
@@ -3291,7 +3305,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plasteel/patterned/dirty,
+/turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen/kitchen)
 "qP" = (
 /obj/effect/decal/cleanable/dirt,
@@ -3778,7 +3792,8 @@
 	locked = 1
 	},
 /obj/machinery/door/poddoor{
-	id = "cutter_gun_hatch"
+	id = "cutter_gun_hatch";
+	dir = 4
 	},
 /turf/open/floor/plasteel/elevatorshaft{
 	color = "#808080"
@@ -3968,7 +3983,7 @@
 /obj/structure/sign/poster/contraband/stechkin{
 	pixel_y = -32
 	},
-/turf/open/floor/plasteel/patterned/dirty,
+/turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "um" = (
 /obj/structure/cable{
@@ -4286,7 +4301,9 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/airlock/maintenance_hatch,
+/obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4
+	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -4349,7 +4366,7 @@
 	dir = 1;
 	pixel_y = -22
 	},
-/turf/open/floor/plasteel/patterned/dirty,
+/turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "vy" = (
 /obj/structure/plaque/static_plaque/golden{
@@ -4367,7 +4384,7 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
 "vC" = (
-/turf/open/floor/plasteel/patterned/dirty,
+/turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "vD" = (
 /obj/machinery/suit_storage_unit/standard_unit,
@@ -4871,12 +4888,8 @@
 	},
 /obj/machinery/light/directional/north,
 /obj/machinery/light_switch{
-	pixel_x = 6;
-	pixel_y = 22
-	},
-/obj/item/radio/intercom/directional/north{
-	pixel_y = 22;
-	pixel_x = -6
+	pixel_x = 11;
+	pixel_y = 19
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -4961,7 +4974,7 @@
 /obj/item/multitool{
 	pixel_x = 9
 	},
-/turf/open/floor/plasteel/patterned/dirty,
+/turf/open/floor/plasteel/dark,
 /area/ship/security/range)
 "yF" = (
 /obj/machinery/door/window/northleft{
@@ -5239,11 +5252,11 @@
 	dir = 1;
 	pixel_y = -22
 	},
-/obj/structure/extinguisher_cabinet/directional/north,
 /obj/machinery/firealarm/directional/south,
 /obj/machinery/atmospherics/pipe/simple/brown/hidden{
 	dir = 4
 	},
+/obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/plating,
 /area/ship/engineering/incinerator)
 "Ah" = (
@@ -5269,7 +5282,9 @@
 	},
 /obj/effect/turf_decal/techfloor,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/airlock/grunge,
+/obj/machinery/door/airlock/grunge{
+	dir = 4
+	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
@@ -5475,6 +5490,14 @@
 /obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
+"Bj" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor{
+	id = "cutter_windows_general";
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/incinerator)
 "Bm" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood{
@@ -5500,7 +5523,7 @@
 /area/ship/medical)
 "Bo" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/patterned/dirty,
+/turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "Bp" = (
 /turf/closed/wall/r_wall/syndicate,
@@ -5534,7 +5557,8 @@
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "cutter_bridge_lockdown";
-	name = "Lockdown Shutters"
+	name = "Lockdown Shutters";
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/fore)
@@ -5556,7 +5580,7 @@
 /obj/item/gun/ballistic/rifle/boltaction{
 	pixel_y = 5
 	},
-/turf/open/floor/plasteel/patterned/dirty,
+/turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "Bz" = (
 /obj/effect/turf_decal/techfloor,
@@ -5879,7 +5903,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/turf/open/floor/plasteel/patterned/dirty,
+/turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen/kitchen)
 "Db" = (
 /obj/effect/turf_decal/industrial/warning/corner{
@@ -5906,6 +5930,14 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/maintenance/port)
+"Ds" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor{
+	id = "cutter_ce_lockdown";
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/communications)
 "Dv" = (
 /obj/structure/closet/crate/freezer/surplus_limbs,
 /obj/effect/turf_decal/industrial/warning{
@@ -6021,7 +6053,9 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
 "Ea" = (
-/obj/machinery/door/airlock/engineering,
+/obj/machinery/door/airlock/engineering{
+	dir = 4
+	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -6163,6 +6197,15 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/item/seeds/potato{
+	pixel_x = -5;
+	pixel_y = 5
+	},
+/obj/item/seeds/garlic{
+	pixel_x = 5;
+	pixel_y = 2
+	},
+/obj/item/seeds/grass,
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
 	},
@@ -6293,7 +6336,7 @@
 /obj/machinery/door/airlock/hatch{
 	name = "Cannon Bay"
 	},
-/turf/open/floor/plasteel/patterned/dirty,
+/turf/open/floor/plasteel/dark,
 /area/ship/security/range)
 "EX" = (
 /obj/machinery/suit_storage_unit/inherit/industrial,
@@ -6323,10 +6366,10 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/extinguisher_cabinet/directional/north,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
+/obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/electrical)
 "Fg" = (
@@ -6425,6 +6468,11 @@
 	},
 /obj/machinery/door/window/eastleft{
 	name = "Engine Access"
+	},
+/obj/machinery/door/poddoor{
+	id = "cutter_engines_lockdown";
+	name = "Engine Blast Door";
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -6536,14 +6584,15 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/machinery/door/poddoor{
-	id = "cutter_gun_hatch"
-	},
 /obj/machinery/power/shieldwallgen/atmos{
 	anchored = 1;
 	id = "cutter_gun_holo";
 	locked = 1;
 	dir = 1
+	},
+/obj/machinery/door/poddoor{
+	id = "cutter_gun_hatch";
+	dir = 4
 	},
 /turf/open/floor/plasteel/elevatorshaft{
 	color = "#808080"
@@ -7322,7 +7371,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
-/turf/open/floor/plasteel/patterned/dirty,
+/turf/open/floor/plasteel/dark,
 /area/ship/security/range)
 "Jk" = (
 /obj/effect/turf_decal/steeldecal/steel_decals10,
@@ -7436,12 +7485,12 @@
 /turf/closed/wall,
 /area/ship/security/armory)
 "JO" = (
-/obj/machinery/vending/hydroseeds,
 /obj/effect/turf_decal/siding/wood,
 /obj/machinery/light/directional/south,
 /obj/structure/sign/departments/botany{
 	pixel_x = 32
 	},
+/obj/structure/salvageable/seed,
 /turf/open/floor/concrete/slab_1,
 /area/ship/crew/canteen/kitchen)
 "JQ" = (
@@ -7835,10 +7884,6 @@
 	pixel_y = -1
 	},
 /obj/machinery/firealarm/directional/north,
-/obj/item/radio/intercom/directional/north{
-	pixel_y = 22;
-	pixel_x = 5
-	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/medical)
 "KT" = (
@@ -7881,7 +7926,7 @@
 	dir = 1
 	},
 /obj/structure/extinguisher_cabinet/directional/north,
-/turf/open/floor/plasteel/patterned/dirty,
+/turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "KW" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
@@ -8019,7 +8064,8 @@
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "cutter_general_lockdown";
-	name = "Lockdown Shutters"
+	name = "Lockdown Shutters";
+	dir = 4
 	},
 /turf/open/floor/plating{
 	icon_state = "foam_plating"
@@ -8309,7 +8355,8 @@
 "Ms" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor{
-	id = "cutter_bridge_window"
+	id = "cutter_bridge_window";
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -8326,7 +8373,8 @@
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "cutter_general_lockdown";
-	name = "Lockdown Shutters"
+	name = "Lockdown Shutters";
+	dir = 4
 	},
 /turf/open/floor/plating{
 	icon_state = "foam_plating"
@@ -8341,13 +8389,18 @@
 /turf/closed/wall,
 /area/ship/medical)
 "Mz" = (
-/obj/structure/extinguisher_cabinet/directional/north,
 /obj/structure/closet/crate/bin,
 /obj/item/trash/syndi_cakes,
 /obj/item/trash/plate,
 /obj/item/trash/candy,
 /obj/item/trash/waffles,
 /obj/item/flashlight,
+
+/obj/item/seeds/chili{
+	pixel_y = -7;
+	pixel_x = -2
+	},
+/obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/plating,
 /area/ship/hallway/central)
 "MF" = (
@@ -8482,7 +8535,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
-/turf/open/floor/plasteel/patterned/dirty,
+/turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
 "Nx" = (
 /obj/effect/turf_decal/techfloor{
@@ -8582,8 +8635,9 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/item/radio/intercom/wideband/directional/west{
-	icon_state = "intercom-wideband-table"
+/obj/item/radio/intercom/wideband/table{
+	dir = 8;
+	pixel_x = -4
 	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/security)
@@ -8902,7 +8956,8 @@
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "cutter_general_lockdown";
-	name = "Lockdown Shutters"
+	name = "Lockdown Shutters";
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
@@ -8949,7 +9004,7 @@
 	pixel_y = -6;
 	pixel_x = 5
 	},
-/turf/open/floor/plasteel/patterned/dirty,
+/turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "Ps" = (
 /obj/structure/railing{
@@ -9119,10 +9174,12 @@
 	pixel_y = -4
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/patterned/dirty,
+/turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "Qk" = (
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/airlock/hatch{
+	dir = 4
+	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -9342,7 +9399,8 @@
 /area/ship/maintenance/port)
 "RS" = (
 /obj/machinery/door/poddoor{
-	id = "pirate_cutter_escape"
+	id = "pirate_cutter_escape";
+	dir = 4
 	},
 /obj/structure/barricade/wooden/crude{
 	layer = 3.1
@@ -9401,7 +9459,8 @@
 	dir = 8
 	},
 /obj/machinery/door/airlock/wood{
-	req_access_txt = "20"
+	req_access_txt = "20";
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office)
@@ -9639,6 +9698,11 @@
 	},
 /obj/structure/window/plasma/reinforced/spawner/west,
 /obj/structure/window/plasma/reinforced/spawner/east,
+/obj/machinery/door/poddoor{
+	id = "cutter_engines_lockdown";
+	name = "Engine Blast Door";
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Tn" = (
@@ -9646,6 +9710,7 @@
 	dir = 6
 	},
 /obj/item/tank/internals/plasma/full,
+/obj/structure/extinguisher_cabinet/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "To" = (
@@ -10079,7 +10144,7 @@
 /area/ship/security)
 "VC" = (
 /obj/structure/railing/corner,
-/obj/structure/extinguisher_cabinet/directional/north,
+/obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/plasteel/stairs,
 /area/ship/security)
 "VD" = (
@@ -10133,6 +10198,11 @@
 	},
 /obj/structure/window/plasma/reinforced/spawner/west,
 /obj/structure/window/plasma/reinforced/spawner/east,
+/obj/machinery/door/poddoor{
+	id = "cutter_engines_lockdown";
+	name = "Engine Blast Door";
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/incinerator)
 "VN" = (
@@ -10162,7 +10232,7 @@
 /obj/structure/sign/poster/official/ion_carbine{
 	pixel_y = 32
 	},
-/turf/open/floor/plasteel/patterned/dirty,
+/turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "Wb" = (
 /obj/structure/bed,
@@ -10382,7 +10452,7 @@
 	pixel_y = -4
 	},
 /obj/item/clothing/suit/armor/riot,
-/turf/open/floor/plasteel/patterned/dirty,
+/turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "Xd" = (
 /obj/structure/sink/puddle,
@@ -10599,7 +10669,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plasteel/patterned/dirty,
+/turf/open/floor/plasteel/dark,
 /area/ship/security/range)
 "Yk" = (
 /obj/item/stock_parts/subspace/treatment{
@@ -10750,7 +10820,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/turf/open/floor/plasteel/patterned/dirty,
+/turf/open/floor/plasteel/dark,
 /area/ship/security/range)
 "Zf" = (
 /obj/structure/catwalk/over/plated_catwalk,
@@ -10856,7 +10926,8 @@
 "Zy" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor{
-	id = "cutter_windows_general"
+	id = "cutter_windows_general";
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/crew/canteen/kitchen)
@@ -10928,7 +10999,8 @@
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "cutter_bridge_lockdown";
-	name = "Lockdown Shutters"
+	name = "Lockdown Shutters";
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/fore)
@@ -10981,8 +11053,8 @@ ws
 ws
 GM
 lT
-nD
-nD
+Bj
+aO
 ws
 ws
 ws
@@ -11036,7 +11108,7 @@ ws
 ws
 ws
 ws
-Yv
+Ds
 Yv
 LZ
 qU
@@ -11072,7 +11144,7 @@ ws
 ws
 ws
 ws
-Yv
+Ds
 Yv
 YH
 uO

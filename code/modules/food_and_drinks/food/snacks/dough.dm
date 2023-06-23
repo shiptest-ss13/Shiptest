@@ -58,6 +58,8 @@
 	desc = "A slice of dough. Can be cooked into a bun."
 	icon = 'icons/obj/food/food_ingredients.dmi'
 	icon_state = "doughslice"
+	slice_path = /obj/item/reagent_containers/food/snacks/bait/doughball
+	slices_num = 5
 	cooked_type = /obj/item/reagent_containers/food/snacks/bun
 	filling_color = "#CD853F"
 	tastes = list("dough" = 1)
