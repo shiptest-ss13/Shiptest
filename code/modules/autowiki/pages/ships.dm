@@ -34,6 +34,8 @@
 			"size" = size
 		))
 
+		//Other fields: manufacturer, faction, color
+
 	return output
 
 /datum/autowiki/ship/proc/count_crew(list/crew)
