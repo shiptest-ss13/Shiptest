@@ -5,9 +5,9 @@
 	var/output = ""
 
 	for(var/shipname in SSmapping.shuttle_templates)
-		var/datum/map_template/shuttle/shiptest/ship = SSmapping.shuttle_templates[shipname]
+		var/datum/map_template/shuttle/ship = SSmapping.shuttle_templates[shipname]
 
-		if(!istype(ship))
+		if(!ship.job_slots)
 			continue
 
 		var/size = "Unknown"
