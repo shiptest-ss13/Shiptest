@@ -471,7 +471,8 @@
 "hG" = (
 /obj/machinery/button/massdriver{
 	dir = 4;
-	pixel_x = -20
+	pixel_x = -20;
+	id = "junk_driver"
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1841,7 +1842,8 @@
 /area/ship/cargo)
 "Ii" = (
 /obj/machinery/mass_driver{
-	dir = 8
+	dir = 8;
+	id = "junk_driver"
 	},
 /obj/structure/disposalpipe/trunk,
 /turf/open/floor/plating,
