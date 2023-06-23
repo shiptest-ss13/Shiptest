@@ -21,12 +21,18 @@
 
 /obj/structure/salvageable/protolathe/reployer
 	name = "reployer"
-	desc = "It's a reployer, come on, you KNOW what this does."
+	desc = "It's just a reployer. This one appears to be broken"
+
+/obj/machinery/reployer
+	name = "reployer"
+	desc = "It's just a reployer."
+	icon = 'icons/obj/salvage_structure.dmi'
+	icon_state = "wreck_protolathe"
 
 /obj/item/circuitboard/machine/autolathe/reployer
 	name = "Reployer (Machine Board)"
 	icon_state= "generic"
-	build_path = /obj/structure/salvageable/protolathe/reployer
+	build_path = /obj/machinery/reployer
 
 /turf/open/floor/plating/conf_haz
 	initial_gas_mix = "n2=104;TEMP=293.15"
