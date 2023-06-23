@@ -204,3 +204,4 @@
 	icon_state = "e10"
 	w_class = WEIGHT_CLASS_SMALL
 	ammo_type = list(/obj/item/ammo_casing/energy/lasergun/eoehoma)
+	manufacturer = MANUFACTURER_EOEHOMA

@@ -2,6 +2,15 @@
 #define DUALWIELD_PENALTY_EXTRA_MULTIPLIER 1.4
 #define FIRING_PIN_REMOVAL_DELAY 50
 
+#define MANUFACTURER_NONE null
+#define MANUFACTURER_SHARPLITE "the Sharplite Defense logo"
+#define MANUFACTURER_HUNTERSPRIDE "the Hunter's Pride Arms and Ammunition logo"
+#define MANUFACTURER_SOLARARMORIES "the Solarbundswaffenkammer emblem"
+#define MANUFACTURER_SCARBOROUGH "the Scarborough Arms logo"
+#define MANUFACTURER_EOEHOMA "the Eoehoma Firearms log"
+#define MANUFACTURER_URSA "the Major Ursa's Reserve logo"
+#define MANUFACTURER_BRAZIL "an green flag with a blue circle and a yellow diamond around it"
+
 /obj/item/gun
 	name = "gun"
 	desc = "It's a gun. It's pretty terrible, though."
@@ -20,6 +29,9 @@
 	attack_verb = list("struck", "hit", "bashed")
 	pickup_sound = 'sound/items/handling/gun_pickup.ogg'
 	drop_sound = 'sound/items/handling/gun_drop.ogg'
+
+	/// The manufacturer of this weapon. For flavor mostly. If none, this will not show.
+	var/manufacturer = MANUFACTURER_NONE
 
 	var/fire_sound = 'sound/weapons/gun/pistol/shot.ogg'
 	var/vary_fire_sound = TRUE
@@ -131,6 +143,9 @@
 			. += "<span class='info'>[bayonet] looks like it can be <b>unscrewed</b> from [src].</span>"
 	else if(can_bayonet)
 		. += "It has a <b>bayonet</b> lug on it."
+
+	if(manufacturer)
+		. += "<span class='notice'>It has <b>[manufacturer]</b> engraved on it.</span>"
 
 /obj/item/gun/equipped(mob/living/user, slot)
 	. = ..()
