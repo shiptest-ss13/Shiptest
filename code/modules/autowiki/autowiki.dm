@@ -22,12 +22,29 @@
 		var/datum/autowiki/autowiki = new autowiki_type
 		var/output = autowiki.generate()
 
-		if (!istext(output))
-			CRASH("[autowiki_type] does not generate a proper output!")
+		//Generates a page for each key:value pair with the key as the title and the value as the content, and generates an index at the root page
+		if(islist(output))
+			var/root = ""
+			for(var/title in output)
+				total_output += json_encode(list(
+					"title" = "[autowiki.page]/[title]",
+					"text" = output[title],
+				)) + "\n"
+				root += autowiki.include_template("[autowiki.page]/[title]")
 
-		total_output += json_encode(list(
-			"title" = autowiki.page,
-			"text" = output,
-		)) + "\n"
+			output = root
+
+			continue
+
+		//Generates a single page with the output.
+		if (istext(output))
+			total_output += json_encode(list(
+				"title" = autowiki.page,
+				"text" = output,
+			)) + "\n"
+
+			continue
+
+		CRASH("[autowiki_type] does not generate a proper output!")
 
 	return total_output

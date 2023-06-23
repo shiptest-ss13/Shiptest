@@ -53,11 +53,12 @@
 	var/mob/living/carbon/human/dummy/wiki_dummy = new(locate(1,1,1))
 	wiki_dummy.setDir(SOUTH)
 	for(var/datum/job/job as anything in crew)
-
 		var/filename = SANITIZE_FILENAME(escape_value(format_text(initial(job.outfit.name))))
 
 		//Only generate each unique outfit once
 		if(!(filename in job_icon_list))
+			//Spin the wheel
+			randomize_human(wiki_dummy)
 			//Limited to just the humanoid-compliant roundstart species, but at least it's not just human.
 			wiki_dummy.set_species(pick(list(/datum/species/ethereal, /datum/species/human, /datum/species/ipc, /datum/species/lizard, /datum/species/moth, /datum/species/spider)))
 			job.equip(wiki_dummy, TRUE, FALSE)
