@@ -78,7 +78,7 @@
 	token.update_icon_state()
 	update_visuals()
 
-	if(is_still() || QDELING(src) || movement_callback_id)
+	if(is_still() || QDELING(src) || movement_callback_id || docked_to || docking)
 		return
 
 	var/timer = 1 / MAGNITUDE(speed_x, speed_y) * offset
@@ -152,7 +152,7 @@
 	return "[add_leading(num2text((. / 60) % 60), 2, "0")]:[add_leading(num2text(. % 60), 2, "0")]"
 
 /datum/overmap/ship/process(delta_time)
-	if(burn_direction == BURN_STOP && is_still())
+	if((burn_direction == BURN_STOP && is_still()) || docked_to || docking)
 		change_heading(BURN_NONE)
 		return
 
@@ -203,6 +203,9 @@
  * * deltatime - The time since the last burn tick
  */
 /datum/overmap/ship/proc/burn_engines(percentage = 100, deltatime)
+	if(docked_to || docking)
+		CRASH("Ship burned engines while docking or docked!")
+
 	return acceleration_speed * (percentage / 100) * deltatime
 
 /datum/overmap/ship/proc/change_heading(direction)
