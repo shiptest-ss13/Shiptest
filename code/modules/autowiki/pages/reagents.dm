@@ -7,9 +7,6 @@
 	for(var/id in GLOB.chemical_reactions_list)
 		var/datum/chemical_reaction/reaction = GLOB.chemical_reactions_list[id]
 
-		world.log << id
-		world.log << json_encode(reaction)
-
 		for(var/datum/reagent/result_chem as anything in reaction.results)
 			var/description = ""
 			var/result_units = reaction.results[result_chem]

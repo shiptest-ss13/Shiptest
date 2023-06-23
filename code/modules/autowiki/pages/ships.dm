@@ -1,5 +1,6 @@
 /datum/autowiki/ship
 	page = "Template:Autowiki/Content/Ships"
+	var/mob/living/carbon/human/dummy/wiki_dummy = new()
 
 /datum/autowiki/ship/generate()
 	var/output = ""
@@ -55,26 +56,6 @@
 	for(var/datum/job/job as anything in crew)
 		var/filename = SANITIZE_FILENAME(escape_value(format_text(initial(job.outfit.name))))
 
-		//Only generate each unique outfit once
-		if(!(filename in job_icon_list))
-			//Spin the wheel
-			randomize_human(wiki_dummy)
-			//Limited to just the humanoid-compliant roundstart species, but at least it's not just human.
-			wiki_dummy.set_species(pick(list(/datum/species/ethereal, /datum/species/human, /datum/species/ipc, /datum/species/lizard, /datum/species/moth, /datum/species/spider)))
-			//Delete all the old stuff they had
-			for(var/obj/item/item in wiki_dummy.get_equipped_items())
-				qdel(item)
-
-			job.equip(wiki_dummy, TRUE, FALSE)
-			COMPILE_OVERLAYS(wiki_dummy)
-			var/icon/wiki_icon = icon(getFlatIcon(wiki_dummy), frame = 1)
-
-			//Make all icons 32x32 for wiki sizing consistency
-			if(wiki_icon.Height() != 32 || wiki_icon.Width() != 32)
-				wiki_icon.Crop(1, 1, 32, 32)
-
-			upload_icon(wiki_icon, filename)
-
 		output += include_template("Autowiki/ShipCrewMember", list(
 			"name" = escape_value(job.name),
 			"officer" = job.officer ? "Yes" : "No",
@@ -82,4 +63,29 @@
 			"icon" = filename
 		))
 
+		//Only generate each unique outfit once
+		if(filename in job_icon_list)
+			continue
+
+		upload_icon(get_dummy_image(job), filename)
+
 	return output
+
+/datum/autowiki/ship/proc/get_dummy_image(datum/job/to_equip)
+	//Spin the wheel
+	randomize_human(wiki_dummy)
+	//Limited to just the humanoid-compliant roundstart species, but at least it's not just human.
+	wiki_dummy.set_species(pick(list(/datum/species/ethereal, /datum/species/human, /datum/species/ipc, /datum/species/lizard, /datum/species/moth, /datum/species/spider)))
+	//Delete all the old stuff they had
+	for(var/obj/item/item in wiki_dummy.get_equipped_items())
+		qdel(item)
+
+	to_equip.equip(wiki_dummy, TRUE, FALSE)
+	COMPILE_OVERLAYS(wiki_dummy)
+	var/icon/wiki_icon = icon(getFlatIcon(wiki_dummy), frame = 1)
+
+	//Make all icons 32x32 for wiki sizing consistency
+	if(wiki_icon.Height() != 32 || wiki_icon.Width() != 32)
+		wiki_icon.Crop(1, 1, 32, 32)
+
+	return wiki_icon
