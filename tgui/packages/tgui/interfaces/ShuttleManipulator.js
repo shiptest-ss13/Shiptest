@@ -1,6 +1,14 @@
 import { map } from 'common/collections';
 import { useBackend, useLocalState } from '../backend';
-import { Button, Flex, LabeledList, Section, Table, Tabs } from '../components';
+import {
+  Button,
+  Flex,
+  LabeledList,
+  Section,
+  Table,
+  Tabs,
+  Collapsible,
+} from '../components';
 import { ButtonConfirm } from '../components/Button';
 import { Window } from '../layouts';
 
@@ -124,7 +132,7 @@ export const ShuttleManipulatorTemplates = (props, context) => {
           {actualTemplates.map((actualTemplate) => {
             // Whoever made the structure being sent is an asshole
             return (
-              <Section
+              <Collapsible
                 title={actualTemplate.name}
                 level={2}
                 key={actualTemplate.file_name}
@@ -149,22 +157,19 @@ export const ShuttleManipulatorTemplates = (props, context) => {
                   </>
                 }
               >
-                {(!!actualTemplate.description ||
-                  !!actualTemplate.admin_notes) && (
+                {
                   <LabeledList>
-                    {!!actualTemplate.description && (
-                      <LabeledList.Item label="Description">
-                        {actualTemplate.description}
-                      </LabeledList.Item>
-                    )}
-                    {!!actualTemplate.admin_notes && (
-                      <LabeledList.Item label="Admin Notes">
-                        {actualTemplate.admin_notes}
-                      </LabeledList.Item>
-                    )}
+                    <LabeledList.Item label="Description">
+                      {actualTemplate.description || 'No Description'}
+                    </LabeledList.Item>
+                    <LabeledList.Item label="Ship Tags">
+                      {(actualTemplate.tags &&
+                        actualTemplate.tags.join(', ')) ||
+                        'No Tags Set'}
+                    </LabeledList.Item>
                   </LabeledList>
-                )}
-              </Section>
+                }
+              </Collapsible>
             );
           })}
         </Flex.Item>

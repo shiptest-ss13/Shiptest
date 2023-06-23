@@ -189,6 +189,8 @@ SUBSYSTEM_DEF(mapping)
 			S.unique_ship_access = data[ "unique_ship_access" ]
 		if(istext(data["description"]))
 			S.description = data["description"]
+		if(islist(data["tags"]))
+			S.tags = data["tags"]
 
 		S.job_slots = list()
 		var/list/job_slot_list = data["job_slots"]
