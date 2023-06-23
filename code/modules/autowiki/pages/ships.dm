@@ -61,6 +61,10 @@
 			randomize_human(wiki_dummy)
 			//Limited to just the humanoid-compliant roundstart species, but at least it's not just human.
 			wiki_dummy.set_species(pick(list(/datum/species/ethereal, /datum/species/human, /datum/species/ipc, /datum/species/lizard, /datum/species/moth, /datum/species/spider)))
+			//Delete all the old stuff they had
+			for(var/obj/item/item in wiki_dummy.get_equipped_items())
+				qdel(item)
+
 			job.equip(wiki_dummy, TRUE, FALSE)
 			COMPILE_OVERLAYS(wiki_dummy)
 			var/icon/wiki_icon = icon(getFlatIcon(wiki_dummy), frame = 1)
