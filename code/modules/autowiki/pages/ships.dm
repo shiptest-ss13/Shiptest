@@ -29,7 +29,7 @@
 			"shortname" = escape_value(ship.short_name) || ship_name,
 			"description" = escape_value(ship.description),
 			"prefix" = escape_value(ship.prefix),
-			"tags" = escape_value(ship.tags.Join("\n")),
+			"tags" = escape_value(ship.tags?.Join("\n")),
 			"limit" = ship.limit,
 			"crewCount" = count_crew(ship.job_slots),
 			"crew" = format_crew_list(ship.job_slots),
