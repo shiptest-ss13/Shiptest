@@ -25,10 +25,12 @@ Autowiki/Reagent
 	for(var/datum/chemical_reaction/reaction as anything in all_reactions)
 		var/required_chems = ""
 		for(var/datum/reagent/required_chem_type as anything in reaction.required_reagents)
-			required_chems += format_required_reagent(required_chem_type, reaction.required_reagents[required_chem_type], required_chem_type in mixable_reagents)
+			var/has_tooltip = (required_chem_type in mixable_reagents) && !(required_chem_type in reaction.results)
+			required_chems += format_required_reagent(required_chem_type, reaction.required_reagents[required_chem_type], has_tooltip)
 
 		for(var/datum/reagent/required_catalyst_type as anything in reaction.required_catalysts)
-			required_chems += format_required_reagent(required_catalyst_type, reaction.required_catalysts[required_catalyst_type], required_catalyst_type in mixable_reagents, "Catalyst")
+			var/has_tooltip = (required_catalyst_type in mixable_reagents) && !(required_catalyst_type in reaction.results)
+			required_chems += format_required_reagent(required_catalyst_type, reaction.required_catalysts[required_catalyst_type], has_tooltip, "Catalyst")
 
 		for(var/datum/reagent/result_chem_type as anything in reaction.results)
 			var/result_name = escape_value(initial(result_chem_type.name))
@@ -42,7 +44,7 @@ Autowiki/Reagent
 
 			var/description = include_template("Autowiki/Reaction", details)
 			if(result_name in output)
-				output[result_name] += "OR<br />[description]"
+				output[result_name] += "<br />OR<br />[description]"
 			else
 				output[result_name] = description
 
