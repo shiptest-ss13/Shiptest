@@ -17,8 +17,8 @@
 	time = 6.4 SECONDS
 	implements = list(
 		TOOL_HEMOSTAT = 100,
-		TOOL_WRENCH = 15,
-		TOOL_CROWBAR = 10)
+		TOOL_WRENCH = 30,
+		TOOL_CROWBAR = 20)
 	preop_sound = 'sound/surgery/bone1.ogg'
 	success_sound = 'sound/surgery/bone3.ogg'
 
