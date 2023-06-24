@@ -1,6 +1,6 @@
 /datum/autowiki/ship
 	page = "Template:Autowiki/Content/Ships"
-	var/mob/living/carbon/human/dummy/wiki_dummy = new()
+	var/mob/living/carbon/human/dummy/consistent/wiki_dummy = new()
 
 /datum/autowiki/ship/generate()
 	var/output = ""
@@ -67,18 +67,21 @@
 		if(filename in job_icon_list)
 			continue
 
-		upload_icon(get_dummy_image(job), filename)
+		upload_icon(get_dummy_image(job, filename), filename)
 
 	return output
 
-/datum/autowiki/ship/proc/get_dummy_image(datum/job/to_equip)
-	//Spin the wheel
-	randomize_human(wiki_dummy)
+/datum/autowiki/ship/proc/get_dummy_image(datum/job/to_equip, filename)
 	//Limited to just the humanoid-compliant roundstart species, but at least it's not just human.
-	wiki_dummy.set_species(pick(list(/datum/species/ethereal, /datum/species/human, /datum/species/ipc, /datum/species/lizard, /datum/species/moth, /datum/species/spider)))
+	var/static/list/species = list(/datum/species/ethereal, /datum/species/human, /datum/species/ipc, /datum/species/lizard, /datum/species/moth, /datum/species/spider)
+	//Length times ascii char of the last letter, good enough(?) #entropy
+	var/seed = length(filename) * text2ascii(filename, length(filename))
+	//Controlled randomisation
+	wiki_dummy.seeded_randomization(seed)
+	//Each outfit will always have the same species
+	wiki_dummy.set_species(species[seed % length(species) + 1])
 	//Delete all the old stuff they had
-	for(var/obj/item/item in wiki_dummy.get_equipped_items())
-		qdel(item)
+	wiki_dummy.wipe_state()
 
 	to_equip.equip(wiki_dummy, TRUE, FALSE)
 	COMPILE_OVERLAYS(wiki_dummy)
