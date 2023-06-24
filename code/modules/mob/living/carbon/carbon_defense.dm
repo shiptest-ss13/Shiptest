@@ -437,7 +437,19 @@
 
 		if(HAS_TRAIT(src, TRAIT_BADTOUCH))
 			SEND_SIGNAL(src, COMSIG_CARBON_HUGGED, M)
-			to_chat(M, span_warning("[src] looks visibly upset as you pull [p_them()] tail.")) //need to change this text
+			to_chat(M, span_warning("[src] makes a grumbling noise as you pull on [p_their()] tail."))
+
+// Rips off fake tails
+	else if ((M.zone_selected == BODY_ZONE_PRECISE_GROIN) && (istype(head, /obj/item/clothing/head/kitty) || istype(head, /obj/item/clothing/head/collectable/kitty)))
+		var/obj/item/clothing/head/faketail = head
+		M.visible_message(span_danger("[M] pulls on [src]'s tail... and it rips off!"), \
+					null, span_hear("You hear a ripping sound."), DEFAULT_MESSAGE_RANGE, list(M, src))
+		to_chat(M, span_danger("You pull on [src]'s tail... and it rips off!"))
+		to_chat(src, span_userdanger("[M] pulls on your tail... and it rips off!"))
+		playsound(loc, 'sound/effects/rip1.ogg', 75, TRUE)
+		dropItemToGround(faketail)
+		M.put_in_hands(faketail)
+		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "rippedtail", /datum/mood_event/rippedtail)
 
 	else if(M.zone_selected == BODY_ZONE_CHEST || M.zone_selected == BODY_ZONE_PRECISE_GROIN)			//WS Edit - Adds more help emotes
 		SEND_SIGNAL(src, COMSIG_CARBON_HUGGED, M)
