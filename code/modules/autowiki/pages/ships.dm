@@ -8,7 +8,7 @@
 	for(var/shipname in SSmapping.shuttle_templates)
 		var/datum/map_template/shuttle/ship = SSmapping.shuttle_templates[shipname]
 
-		if(!ship.job_slots)
+		if(!length(ship.job_slots))
 			continue
 
 		var/size = "Unknown"

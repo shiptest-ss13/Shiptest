@@ -37,8 +37,10 @@
 #define PILL_STYLE_COUNT 22 //Update this if you add more pill icons or you die
 #define RANDOM_PILL_STYLE 22 //Dont change this one though
 
-GLOBAL_LIST_INIT(base_dispenser_reagents, list(
+//used for the autowiki, these reagents you should be able to aquire easily
+GLOBAL_LIST_INIT(base_reagents, list(
 	/datum/reagent/aluminium,
+	/datum/reagent/blood,
 	/datum/reagent/bromine,
 	/datum/reagent/carbon,
 	/datum/reagent/chlorine,
