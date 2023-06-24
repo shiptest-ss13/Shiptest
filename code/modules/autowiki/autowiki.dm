@@ -32,9 +32,8 @@
 				)) + "\n"
 				root += autowiki.include_template("[autowiki.page]/[title]")
 
+			//Run the next conditional
 			output = root
-
-			continue
 
 		//Generates a single page with the output.
 		if (istext(output))
