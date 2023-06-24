@@ -41,7 +41,7 @@
 		var/mob/living/carbon/human/H = target
 		var/obj/item/organ/lungs/L = H.getorganslot(ORGAN_SLOT_LUNGS)
 		L.operated = TRUE
-		H.setOrganLoss(ORGAN_SLOT_LUNGS, 60)
+		H.setOrganLoss(ORGAN_SLOT_LUNGS, 25)
 		display_results(user, target, "<span class='notice'>You successfully excise [H]'s most damaged lobe.</span>",
 			"<span class='notice'>Successfully removes a piece of [H]'s lungs.</span>",
 			"")
@@ -53,6 +53,6 @@
 		display_results(user, target, "<span class='warning'>You screw up, failing to excise [H]'s damaged lobe!</span>",
 			"<span class='warning'>[user] screws up!</span>",
 			"<span class='warning'>[user] screws up!</span>")
-		H.losebreath += 4
-		H.adjustOrganLoss(ORGAN_SLOT_LUNGS, 10)
+		H.losebreath += 10
+		H.adjustOrganLoss(ORGAN_SLOT_LUNGS, 20)
 	return FALSE

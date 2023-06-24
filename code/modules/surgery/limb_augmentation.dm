@@ -32,7 +32,6 @@
 	else
 		user.visible_message("<span class='notice'>[user] looks for [target]'s [parse_zone(user.zone_selected)].</span>", "<span class='notice'>You look for [target]'s [parse_zone(user.zone_selected)]...</span>")
 
-
 //ACTUAL SURGERIES
 
 /datum/surgery/augmentation

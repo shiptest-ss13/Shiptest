@@ -68,7 +68,9 @@
 	time = 6.4 SECONDS
 	name = "manipulate organs"
 	repeatable = TRUE
-	implements = list(/obj/item/organ = 100, /obj/item/organ_storage = 100, /obj/item/mmi = 100)
+	implements = list(/obj/item/organ = 100,
+		/obj/item/organ_storage = 100,
+		/obj/item/mmi = 100)
 	preop_sound = 'sound/surgery/organ2.ogg'
 	success_sound = 'sound/surgery/organ1.ogg'
 	var/implements_extract = list(TOOL_HEMOSTAT = 100, TOOL_CROWBAR = 55, /obj/item/kitchen/fork = 35)

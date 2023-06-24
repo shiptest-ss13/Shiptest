@@ -23,9 +23,9 @@
 	name = "incise heart"
 	implements = list(
 		TOOL_SCALPEL = 90,
-		/obj/item/shard = 20, // it's at LEAST a little smaller than a knife or an ENERGY SWORD, so it can have a 1/5 to succeed.
+		/obj/item/shard = 30,// it's at LEAST a little smaller than a knife or an ENERGY SWORD
 		/obj/item/melee/transforming/energy/sword = 15,
-		/obj/item/kitchen/knife = 15)
+		/obj/item/kitchen/knife = 15)// heart surgery with a god damn knife.
 	time = 1.6 SECONDS
 	preop_sound = 'sound/surgery/scalpel1.ogg'
 	success_sound = 'sound/surgery/scalpel2.ogg'

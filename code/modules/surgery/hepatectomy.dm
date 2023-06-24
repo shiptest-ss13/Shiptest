@@ -44,7 +44,7 @@
 
 /datum/surgery_step/hepatectomy/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery)
 	var/mob/living/carbon/human/H = target
-	H.adjustOrganLoss(ORGAN_SLOT_LIVER, 15)
+	H.adjustOrganLoss(ORGAN_SLOT_LIVER, 20)
 	display_results(user, target, "<span class='warning'>You cut the wrong part of [target]'s liver!</span>",
 		"<span class='warning'>[user] cuts the wrong part of [target]'s liver!</span>",
 		"<span class='warning'>[user] cuts the wrong part of [target]'s liver!</span>")

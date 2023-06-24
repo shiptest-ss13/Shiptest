@@ -37,7 +37,7 @@
 
 /datum/surgery_step/gastrectomy/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	var/mob/living/carbon/human/H = target
-	H.setOrganLoss(ORGAN_SLOT_STOMACH, 20) // Stomachs have a threshold for being able to even digest food, so I might tweak this number
+	H.setOrganLoss(ORGAN_SLOT_STOMACH, 10) // Stomachs have a threshold for being able to even digest food, so I might tweak this number
 	display_results(user, target, "<span class='notice'>You successfully remove the damaged part of [target]'s stomach.</span>",
 		"<span class='notice'>[user] successfully removes the damaged part of [target]'s stomach.</span>",
 		"<span class='notice'>[user] successfully removes the damaged part of [target]'s stomach.</span>")
@@ -45,7 +45,7 @@
 
 /datum/surgery_step/gastrectomy/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery)
 	var/mob/living/carbon/human/H = target
-	H.adjustOrganLoss(ORGAN_SLOT_STOMACH, 15)
+	H.adjustOrganLoss(ORGAN_SLOT_STOMACH, 20)
 	display_results(user, target, "<span class='warning'>You cut the wrong part of [target]'s stomach!</span>",
 		"<span class='warning'>[user] cuts the wrong part of [target]'s stomach!</span>",
 		"<span class='warning'>[user] cuts the wrong part of [target]'s stomach!</span>")

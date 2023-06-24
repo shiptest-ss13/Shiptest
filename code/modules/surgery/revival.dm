@@ -30,6 +30,7 @@
 	implements = list(
 		/obj/item/shockpaddles = 100,//this is useful for reviving simepeople.
 		/obj/item/gun/energy = 20,//should be tasers only
+		/obj/item/melee/baton = 25,//i hate this a lot
 		/obj/item/inducer = 15)//there's no reason to use a defib with this chance being high - so keep it low.
 	time = 12 SECONDS
 	success_sound = 'sound/magic/lightningbolt.ogg'
