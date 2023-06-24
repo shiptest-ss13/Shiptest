@@ -414,10 +414,10 @@
 /area/ship/hangar/port)
 "dc" = (
 /obj/structure/extinguisher_cabinet/directional/south,
-/obj/effect/turf_decal/floordetail/edgedrain,
 /obj/effect/turf_decal/corner/opaque/black{
 	dir = 1
 	},
+/obj/effect/turf_decal/borderfloor,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "dd" = (
@@ -522,8 +522,8 @@
 	dir = 4;
 	pixel_y = 1
 	},
-/obj/effect/turf_decal/floordetail/edgedrain{
-	dir = 8
+/obj/effect/turf_decal/borderfloor{
+	dir = 10
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/toilet)
@@ -1341,10 +1341,10 @@
 /obj/structure/sign/poster/minutemen/random{
 	pixel_y = -30
 	},
-/obj/effect/turf_decal/floordetail/edgedrain,
 /obj/effect/turf_decal/corner/opaque/black{
 	dir = 1
 	},
+/obj/effect/turf_decal/borderfloor,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "iz" = (
@@ -1929,10 +1929,10 @@
 /area/ship/bridge)
 "lu" = (
 /obj/machinery/light/directional/south,
-/obj/effect/turf_decal/floordetail/edgedrain,
 /obj/effect/turf_decal/corner/opaque/black{
 	dir = 1
 	},
+/obj/effect/turf_decal/borderfloor,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "lv" = (
@@ -3643,8 +3643,8 @@
 /obj/structure/urinal{
 	pixel_y = 32
 	},
-/obj/effect/turf_decal/floordetail/edgedrain{
-	dir = 1
+/obj/effect/turf_decal/borderfloor{
+	dir = 9
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/toilet)
@@ -3896,8 +3896,8 @@
 	pixel_y = 1
 	},
 /obj/machinery/light/small/directional/north,
-/obj/effect/turf_decal/floordetail/edgedrain{
-	dir = 8
+/obj/effect/turf_decal/borderfloor{
+	dir = 9
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/toilet)
@@ -6667,10 +6667,10 @@
 /area/ship/hallway/central)
 "KE" = (
 /obj/machinery/firealarm/directional/south,
-/obj/effect/turf_decal/floordetail/edgedrain,
 /obj/effect/turf_decal/corner/opaque/black{
 	dir = 1
 	},
+/obj/effect/turf_decal/borderfloor,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "KN" = (
@@ -6729,10 +6729,10 @@
 /obj/structure/urinal{
 	pixel_y = 32
 	},
-/obj/effect/turf_decal/floordetail/edgedrain{
-	dir = 1
-	},
 /obj/machinery/light/small/directional/east,
+/obj/effect/turf_decal/borderfloor{
+	dir = 5
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/toilet)
 "LB" = (
@@ -8797,10 +8797,10 @@
 	pixel_y = 19
 	},
 /obj/machinery/light/directional/south,
-/obj/effect/turf_decal/floordetail/edgedrain,
 /obj/effect/turf_decal/corner/opaque/black{
 	dir = 1
 	},
+/obj/effect/turf_decal/borderfloor,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "Wr" = (
