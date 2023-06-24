@@ -3,7 +3,7 @@
 	var/mob/living/carbon/human/dummy/consistent/wiki_dummy = new()
 
 /datum/autowiki/ship/generate()
-	var/output = ""
+	var/list/output = list()
 
 	for(var/shipname in SSmapping.shuttle_templates)
 		var/datum/map_template/shuttle/ship = SSmapping.shuttle_templates[shipname]
@@ -23,9 +23,10 @@
 			if(57 to INFINITY)
 				size = "Undockable" //let's hope this is never the case
 
-		output += "\n\n" + include_template("Autowiki/Ship", list(
-			"name" = escape_value(ship.name),
-			"shortname" = escape_value(ship.short_name) || escape_value(ship.name),
+		var/ship_name = escape_value(ship.name)
+		output[ship_name] = include_template("Autowiki/Ship", list(
+			"name" = ship_name,
+			"shortname" = escape_value(ship.short_name) || ship_name,
 			"description" = escape_value(ship.description),
 			"prefix" = escape_value(ship.prefix),
 			"limit" = ship.limit,
