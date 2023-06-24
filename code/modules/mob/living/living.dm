@@ -1789,6 +1789,8 @@
 	. = body_position
 	body_position = new_value
 	if(new_value == LYING_DOWN) // From standing to lying down.
+		if(has_gravity() && m_intent != MOVE_INTENT_WALK)
+			playsound(src, "bodyfall", 50, TRUE) // Will play the falling sound if not walking
 		on_lying_down()
 	else // From lying down to standing up.
 		on_standing_up()
