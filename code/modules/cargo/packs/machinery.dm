@@ -154,34 +154,6 @@
 	crate_name = "shield generators crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
 
-/datum/supply_pack/machinery/deepcore_drill
-	name = "Deep Core Mining Drill Crate"
-	desc = "Contains three deep core mining drills to boost your productivity."
-	cost = 3000
-	contains = list(/obj/item/deepcorecapsule,
-					/obj/item/deepcorecapsule,
-					/obj/item/deepcorecapsule)
-	crate_name = "deep core drill crate"
-	crate_type = /obj/structure/closet/crate/science
-
-/datum/supply_pack/machinery/deepcore_logi
-	name = "Deep Core Mining Logistics Crate"
-	desc = "Contains the logistics systems needed to run your deep core mining drills. Some assembly required."
-	cost = 5000
-	contains = list(/obj/machinery/deepcore/hopper,
-					/obj/item/multitool,
-					/obj/item/circuitboard/machine/deepcore/hub,
-					/obj/item/stock_parts/capacitor,
-					/obj/item/stock_parts/micro_laser,
-					/obj/item/stock_parts/micro_laser,
-					/obj/item/stock_parts/matter_bin,
-					/obj/item/stock_parts/matter_bin,
-					/obj/item/stock_parts/matter_bin,
-					/obj/item/stock_parts/manipulator,
-					/obj/item/stock_parts/manipulator)
-	crate_name = "deep core logi crate"
-	crate_type = /obj/structure/closet/crate/science
-
 /datum/supply_pack/machinery/blackmarket_telepad
 	name = "Black Market LTSRBT"
 	desc = "Need a faster and better way of transporting your illegal goods from and to the sector? Fear not, the Long-To-Short-Range-Bluespace-Transceiver (LTSRBT for short) is here to help. Contains a LTSRBT circuit, two bluespace crystals, and one ansible."

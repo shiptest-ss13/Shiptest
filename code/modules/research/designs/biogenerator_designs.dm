@@ -217,3 +217,11 @@
 	materials = list(/datum/material/biomass= 5000)
 	build_path = /obj/item/seeds/random
 	category = list("initial","LIFESEED_2.0")
+
+/datum/design/seaweed_sheet
+	name = "Seaweed Sheet"
+	id = "seaweedsheet"
+	build_type = BIOGENERATOR
+	materials = list(/datum/material/biomass = 60)
+	build_path = /obj/item/reagent_containers/food/snacks/grown/seaweed/sheet
+	category = list("initial","Food")
