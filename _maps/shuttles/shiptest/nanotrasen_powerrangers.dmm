@@ -767,6 +767,7 @@
 /obj/structure/chair/sofa/corner{
 	dir = 8
 	},
+/obj/machinery/firealarm/directional/south,
 /turf/open/floor/carpet/lone,
 /area/ship/crew)
 "hN" = (
@@ -830,6 +831,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/machinery/firealarm/directional/south,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "ix" = (
@@ -2170,6 +2172,7 @@
 /area/ship/hallway/starboard)
 "xp" = (
 /obj/machinery/airalarm/directional/west,
+/obj/machinery/firealarm/directional/north,
 /turf/open/floor/wood,
 /area/ship/medical)
 "xq" = (
@@ -2207,14 +2210,6 @@
 	},
 /turf/closed/wall/r_wall,
 /area/ship/crew/cryo)
-"xJ" = (
-/obj/effect/turf_decal/trimline/opaque/ntblue/filled/line{
-	dir = 1
-	},
-/obj/structure/table/wood,
-/obj/machinery/light/dim/directional/north,
-/turf/open/floor/plasteel,
-/area/ship/hallway/starboard)
 "xK" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/effect/turf_decal/industrial/stand_clear{
@@ -2581,6 +2576,7 @@
 /obj/item/watertank/atmos,
 /obj/structure/rack,
 /obj/effect/turf_decal/corner/opaque/brown/mono,
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/storage)
 "Ek" = (
@@ -2811,6 +2807,7 @@
 /obj/structure/chair{
 	dir = 8
 	},
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "GW" = (
@@ -3075,6 +3072,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/trimline/opaque/ntblue/filled/line,
+/obj/machinery/firealarm/directional/south,
 /turf/open/floor/plasteel,
 /area/ship/hallway/starboard)
 "Lg" = (
@@ -3119,6 +3117,7 @@
 	id = "Engineering_Specialist_Shutters";
 	name = "Privacy Shutters"
 	},
+/obj/machinery/firealarm/directional/south,
 /turf/open/floor/wood,
 /area/ship/engineering)
 "LU" = (
@@ -3621,6 +3620,14 @@
 /obj/effect/turf_decal/trimline/opaque/white,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
+"SN" = (
+/obj/effect/turf_decal/trimline/opaque/ntblue/filled/line{
+	dir = 1
+	},
+/obj/structure/table/wood,
+/obj/machinery/light/dim/directional/north,
+/turf/open/floor/plasteel,
+/area/ship/hallway/starboard)
 "SU" = (
 /obj/machinery/light/dim/directional/west,
 /obj/structure/cable{
@@ -3647,6 +3654,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/machinery/firealarm/directional/north,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "Tl" = (
@@ -3810,6 +3818,7 @@
 "Vk" = (
 /obj/structure/bed,
 /obj/item/bedsheet/nanotrasen,
+/obj/machinery/firealarm/directional/north,
 /turf/open/floor/wood,
 /area/ship/bridge)
 "Vm" = (
@@ -3992,6 +4001,7 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/machinery/firealarm/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/cryo)
 "XL" = (
@@ -4167,6 +4177,7 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/port)
 "Zv" = (
+/obj/machinery/firealarm/directional/west,
 /turf/open/floor/wood,
 /area/ship/security)
 "Zw" = (
@@ -4251,6 +4262,7 @@
 /obj/effect/turf_decal/trimline/opaque/ntblue/filled/line{
 	dir = 1
 	},
+/obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel,
 /area/ship/hallway/port)
 "ZZ" = (
@@ -4709,7 +4721,7 @@ WG
 Tz
 zW
 Vp
-xJ
+SN
 KX
 fV
 Ji
