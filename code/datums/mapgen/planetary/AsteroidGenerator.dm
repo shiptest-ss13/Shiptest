@@ -123,7 +123,7 @@
 
 	flora_spawn_chance = 2
 	feature_spawn_chance = 1
-	mob_spawn_chance = 12
+	mob_spawn_chance = 6
 
 /datum/biome/cave/asteroid/ice
 	open_turf_types = list(
@@ -140,8 +140,15 @@
 	mob_spawn_chance = 2
 
 /datum/biome/cave/asteroid/carp_den
+	closed_turf_types =  list(
+	/turf/closed/mineral/random = 5
+	)
+	open_turf_types = list(
+	/turf/open/floor/plating/asteroid/airless = 1
+	)
+
 	flora_spawn_list = list(
-	/obj/structure/flora/ash/space/voidmelon = 2,
+	/obj/structure/flora/ash/space/voidmelon = 3,
 	/obj/structure/flora/rock = 1,
 	/obj/structure/flora/rock/pile = 1
 	)
@@ -152,11 +159,11 @@
 
 	mob_spawn_list = list(
 	/mob/living/simple_animal/hostile/carp = 25, /obj/structure/spawner/mining/carp = 30, \
-		/mob/living/simple_animal/hostile/carp/megacarp = 15
+		/mob/living/simple_animal/hostile/carp/megacarp = 30
 		)
 
-	flora_spawn_chance = 6
+	flora_spawn_chance = 18
 	feature_spawn_chance = 1
-	mob_spawn_chance = 36
+	mob_spawn_chance = 12
 
 
