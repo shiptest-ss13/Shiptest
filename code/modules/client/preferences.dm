@@ -122,7 +122,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						)
 	var/list/randomise = list(RANDOM_UNDERWEAR = TRUE, RANDOM_UNDERWEAR_COLOR = TRUE, RANDOM_UNDERSHIRT = TRUE, RANDOM_SOCKS = TRUE, RANDOM_BACKPACK = TRUE, RANDOM_JUMPSUIT_STYLE = TRUE, RANDOM_EXOWEAR_STYLE = TRUE, RANDOM_HAIRSTYLE = TRUE, RANDOM_HAIR_COLOR = TRUE, RANDOM_FACIAL_HAIRSTYLE = TRUE, RANDOM_FACIAL_HAIR_COLOR = TRUE, RANDOM_SKIN_TONE = TRUE, RANDOM_EYE_COLOR = TRUE)
 	var/list/friendlyGenders = list("Male" = "male", "Female" = "female", "Other" = "plural")
-	var/synthetic = FALSE
+	var/fbp = FALSE
 	var/list/prosthetic_limbs = list(BODY_ZONE_L_ARM = PROSTHETIC_NORMAL, BODY_ZONE_R_ARM = PROSTHETIC_NORMAL, BODY_ZONE_L_LEG = PROSTHETIC_NORMAL, BODY_ZONE_R_LEG = PROSTHETIC_NORMAL)
 	var/phobia = "spiders"
 	var/list/alt_titles_preferences = list()
@@ -836,9 +836,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "</tr></table>"
 
 			dat += "<h3>Prosthetic Limbs</h3>"
-			dat += "<a href='?_src_=prefs;preference=synthetic'>Synthetic: [synthetic ? "Yes" : "No"]</a><br>"
+			dat += "<a href='?_src_=prefs;preference=fbp'>Full Body Prosthesis: [fbp ? "Yes" : "No"]</a><br>"
 
-			if(!synthetic)
+			if(!fbp)
 				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_PROSTHETIC]'>Random Prosthetic: [(randomise[RANDOM_PROSTHETIC]) ? "Yes" : "No"]</a><br>"
 
 				dat += "<table>"
@@ -2046,8 +2046,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						facial_hairstyle = random_facial_hairstyle(gender)
 						hairstyle = random_hairstyle(gender)
 
-				if("synthetic")
-					synthetic = !synthetic
+				if("fbp")
+					fbp = !fbp
 
 				if("limbs")
 					if(href_list["customize_limb"])
@@ -2372,6 +2372,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	character.exowear = exowear
 
+	character.fbp = fbp
+
 	character.flavor_text = features["flavor_text"] //Let's update their flavor_text at least initially
 
 	if(loadout) //I have been told not to do this because it's too taxing on performance, but hey, I did it anyways! //I hate you old me //don't be mean
@@ -2390,9 +2392,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	//prosthetics work for vox and kepori and update just fine for everyone
 	character.dna.features = features.Copy()
-	character.set_species(chosen_species, icon_update = FALSE, pref_load = TRUE, robotic = synthetic)
+	character.set_species(chosen_species, icon_update = FALSE, pref_load = TRUE, robotic = fbp)
 
-	if(!synthetic)
+	if(!fbp)
 		for(var/pros_limb in prosthetic_limbs)
 			var/obj/item/bodypart/old_part = character.get_bodypart(pros_limb)
 			if(old_part)
@@ -2412,8 +2414,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						old_part.drop_limb(TRUE)
 						qdel(old_part)
 					character.regenerate_limb(pros_limb, robotic = TRUE)
-	else
-		C.dna.blood_type
 
 	if(pref_species.id == "ipc") // If triggered, vox and kepori arms do not spawn in but ipcs sprites break without it as the code for setting the right prosthetics for them is in set_species().
 		character.set_species(chosen_species, icon_update = FALSE, pref_load = TRUE)

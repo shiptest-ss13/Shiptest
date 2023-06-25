@@ -446,7 +446,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["feature_human_tail"], features["tail_human"])
 	READ_FILE(S["feature_human_ears"], features["ears"])
 
-	READ_FILE(S["synthetic"], features["synthetic"])
+	READ_FILE(S["fbp"], fbp)
 
 	//Custom names
 	for(var/custom_name_id in GLOB.preferences_custom_names)
@@ -516,6 +516,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	jumpsuit_style	= sanitize_inlist(jumpsuit_style, GLOB.jumpsuitlist, initial(jumpsuit_style))
 	exowear		= sanitize_inlist(exowear, GLOB.exowearlist, initial(exowear))
 	uplink_spawn_loc = sanitize_inlist(uplink_spawn_loc, GLOB.uplink_spawn_loc_list, initial(uplink_spawn_loc))
+	fbp				= sanitize_integer(fbp, FALSE, TRUE, FALSE)
 	features["grad_style"]			= sanitize_inlist(features["grad_style"], GLOB.hair_gradients_list)
 	features["grad_color"]		= sanitize_hexcolor(features["grad_color"])
 	features["body_size"] = sanitize_inlist(features["body_size"], GLOB.body_sizes, "Normal")
@@ -549,7 +550,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	features["vox_neck_quills"] = sanitize_inlist(features["vox_neck_quills"], GLOB.vox_neck_quills_list, "None")
 	features["elzu_horns"] 	= sanitize_inlist(features["elzu_horns"], GLOB.elzu_horns_list)
 	features["tail_elzu"]	= sanitize_inlist(features["tail_elzu"], GLOB.tails_list_elzu)
-	features["synthetic"]	= sanitize_integer(features["synthetic"], FALSE, TRUE, FALSE)
 	features["flavor_text"]		= sanitize_text(features["flavor_text"], initial(features["flavor_text"]))
 
 	all_quirks = SANITIZE_LIST(all_quirks)
@@ -627,7 +627,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["feature_vox_neck_quills"], features["vox_neck_quills"])
 	WRITE_FILE(S["feature_elzu_horns"]			, features["elzu_horns"])
 	WRITE_FILE(S["feature_tail_elzu"]			, features["tail_elzu"])
-	WRITE_FILE(S["synthetic"]					, synthetic)
+	WRITE_FILE(S["fbp"]							, fbp)
 
 	//Flavor text
 	WRITE_FILE(S["feature_flavor_text"], features["flavor_text"])
