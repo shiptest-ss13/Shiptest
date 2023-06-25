@@ -189,14 +189,14 @@
 /turf/open/floor/wood,
 /area/ship/security)
 "bD" = (
-/obj/structure/cable{
-	icon_state = "4-8"
+/obj/effect/turf_decal/trimline/opaque/ntblue/filled/line{
+	dir = 1
 	},
-/obj/structure/cable{
-	icon_state = "5-8"
+/obj/structure/chair/wood{
+	dir = 8
 	},
-/turf/open/floor/circuit/telecomms,
-/area/ship/engineering)
+/turf/open/floor/plasteel,
+/area/ship/hallway/starboard)
 "bN" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -1884,11 +1884,11 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
+/obj/effect/turf_decal/corner/opaque/orange/full,
+/obj/effect/turf_decal/siding/yellow/corner,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
-/obj/effect/turf_decal/corner/opaque/orange/full,
-/obj/effect/turf_decal/siding/yellow/corner,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "us" = (
@@ -2274,12 +2274,12 @@
 /turf/open/floor/plasteel/white,
 /area/ship/crew/toilet)
 "yU" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 8
-	},
 /obj/effect/turf_decal/corner/opaque/orange/full,
 /obj/effect/turf_decal/siding/yellow{
 	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
@@ -2417,10 +2417,10 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
+/obj/effect/turf_decal/corner/opaque/orange/full,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
-/obj/effect/turf_decal/corner/opaque/orange/full,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "Cg" = (
@@ -3590,6 +3590,15 @@
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/port)
+"RK" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "5-8"
+	},
+/turf/open/floor/circuit/telecomms,
+/area/ship/engineering)
 "RS" = (
 /obj/machinery/button/door{
 	dir = 4;
@@ -3620,14 +3629,6 @@
 /obj/effect/turf_decal/trimline/opaque/white,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
-"SN" = (
-/obj/effect/turf_decal/trimline/opaque/ntblue/filled/line{
-	dir = 1
-	},
-/obj/structure/table/wood,
-/obj/machinery/light/dim/directional/north,
-/turf/open/floor/plasteel,
-/area/ship/hallway/starboard)
 "SU" = (
 /obj/machinery/light/dim/directional/west,
 /obj/structure/cable{
@@ -3686,9 +3687,8 @@
 /obj/effect/turf_decal/trimline/opaque/ntblue/filled/line{
 	dir = 1
 	},
-/obj/structure/chair/wood{
-	dir = 8
-	},
+/obj/structure/table/wood,
+/obj/machinery/light/dim/directional/north,
 /turf/open/floor/plasteel,
 /area/ship/hallway/starboard)
 "TZ" = (
@@ -4679,7 +4679,7 @@ Ov
 Dr
 WJ
 kQ
-bD
+RK
 sm
 dC
 Tz
@@ -4721,7 +4721,7 @@ WG
 Tz
 zW
 Vp
-SN
+TR
 KX
 fV
 Ji
@@ -4756,7 +4756,7 @@ yA
 Tz
 zW
 Vp
-TR
+bD
 iD
 fV
 fV
