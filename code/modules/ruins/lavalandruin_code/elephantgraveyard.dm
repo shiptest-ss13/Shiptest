@@ -104,7 +104,7 @@
 //***Grave mounds.
 /obj/structure/closet/crate/grave
 	name = "burial mound"
-	desc = "An marked patch of soil, adorned with a wooden cross"
+	desc = "A marked patch of soil, adorned with a wooden cross"
 	icon_state = "grave"
 	dense_when_open = TRUE
 	material_drop = /obj/item/stack/ore/glass/basalt
@@ -182,12 +182,12 @@
 
 /obj/structure/closet/crate/grave/stone
 	name = "burial mound"
-	desc = "An marked patch of soil, adorned with a sandstone slab"
+	desc = "A marked patch of soil, adorned with a sandstone slab"
 	icon_state = "grave_lead"
 
 /obj/structure/closet/crate/grave/loot
 	name = "burial mound"
-	desc = "An marked patch of soil, showing signs of a burial long ago. You wouldn't disturb a grave... right?"
+	desc = "A marked patch of soil, showing signs of a burial long ago. You wouldn't disturb a grave... right?"
 	opened = FALSE
 
 /obj/structure/closet/crate/grave/loot/PopulateContents()  //GRAVEROBBING IS NOW A FEATURE
