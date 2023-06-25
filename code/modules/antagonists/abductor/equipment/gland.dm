@@ -82,7 +82,7 @@
 	clear_mind_control()
 	..()
 
-/obj/item/organ/heart/gland/Insert(mob/living/carbon/M, special = 0, drop_if_replaced)
+/obj/item/organ/heart/gland/Insert(mob/living/carbon/M, special = 0)
 	..()
 	if(special != 2 && uses) // Special 2 means abductor surgery
 		Start()

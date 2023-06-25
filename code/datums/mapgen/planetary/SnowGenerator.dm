@@ -112,8 +112,8 @@
 	)
 	feature_spawn_chance = 0.1
 	feature_spawn_list = list(
-		/obj/effect/spawner/lootdrop/anomaly/ice = 1,
-		/obj/effect/spawner/lootdrop/anomaly/big = 0.01,
+		/obj/effect/spawner/lootdrop/anomaly/ice = 12,
+		/obj/effect/spawner/lootdrop/anomaly/big = 1,
 		/obj/structure/spawner/ice_moon/demonic_portal/low_threat = 25,
 		/obj/structure/spawner/ice_moon/demonic_portal/medium_threat = 50,
 		/obj/structure/spawner/ice_moon/demonic_portal/high_threat = 13

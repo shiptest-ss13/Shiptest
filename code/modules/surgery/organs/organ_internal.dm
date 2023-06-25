@@ -45,8 +45,6 @@
 
 	///When you take a bite you cant jam it in for surgery anymore.
 /obj/item/organ/proc/Insert(mob/living/carbon/M, special = 0, drop_if_replaced = TRUE)
-	SHOULD_CALL_PARENT(TRUE)
-
 	if(!iscarbon(M) || owner == M)
 		return
 

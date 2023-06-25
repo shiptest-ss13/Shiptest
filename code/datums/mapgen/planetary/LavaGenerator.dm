@@ -160,8 +160,8 @@
 	feature_spawn_chance = 5
 	feature_spawn_list = list(
 		/obj/structure/flora/tree/dead/barren = 50,
-		/obj/structure/flora/tree/dead/tall/grey = 49,
-		/obj/effect/spawner/lootdrop/anomaly/lava = 1
+		/obj/structure/flora/tree/dead/tall/grey = 45,
+		/obj/effect/spawner/lootdrop/anomaly/lava = 5
 	)
 
 /datum/biome/lavaland/plains/dense/mixed
