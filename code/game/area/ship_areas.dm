@@ -346,6 +346,20 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/ship/cargo/starboard
 	name = "Starboard Cargo Bay"
 
+/// Hangars ///
+
+/area/ship/hangar
+	name = "Hangar"
+	icon_state = "shuttlered"
+	sound_environment = SOUND_AREA_LARGE_ENCLOSED
+	ambientsounds = ENGINEERING
+
+/area/ship/hangar/port
+	name = "Port Hangar"
+
+/area/ship/hangar/starboard
+	name = "Starboard Hangar"
+
 /// Hallways ///
 /area/ship/hallway
 	name = "Hallway"

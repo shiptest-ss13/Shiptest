@@ -2374,12 +2374,6 @@
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/grass,
 /area/wizard_station)
-"ayM" = (
-/obj/structure/table/wood/bar,
-/obj/structure/safe/floor,
-/obj/item/seeds/cherry/bomb,
-/turf/open/floor/wood,
-/area/centcom/holding)
 "ayO" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/box/syringes,
@@ -5207,14 +5201,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/centcom/ferry)
-"aTq" = (
-/obj/structure/table/wood/bar,
-/obj/item/stack/sheet/glass/fifty,
-/obj/item/stack/sheet/metal/fifty,
-/obj/item/storage/toolbox/mechanical,
-/obj/item/multitool,
-/turf/open/floor/wood,
-/area/centcom/holding)
 "aTu" = (
 /obj/structure/flora/ausbushes/fernybush,
 /obj/structure/flora/ausbushes/fullgrass,
@@ -5262,13 +5248,6 @@
 	pixel_y = 28
 	},
 /turf/open/floor/plasteel,
-/area/centcom/holding)
-"aTK" = (
-/obj/structure/table/wood/bar,
-/obj/structure/mirror{
-	pixel_y = 28
-	},
-/turf/open/floor/wood,
 /area/centcom/holding)
 "aTO" = (
 /obj/machinery/door/airlock/centcom{
@@ -5597,15 +5576,6 @@
 	},
 /turf/open/floor/plating/airless,
 /area/syndicate_mothership/control)
-"aWd" = (
-/obj/structure/closet/secure_closet/freezer/meat/open,
-/obj/item/reagent_containers/food/snacks/carpmeat,
-/obj/item/reagent_containers/food/snacks/carpmeat,
-/obj/item/reagent_containers/food/snacks/carpmeat,
-/obj/item/reagent_containers/food/snacks/carpmeat,
-/obj/item/reagent_containers/food/snacks/carpmeat,
-/turf/open/floor/plasteel,
-/area/centcom/holding)
 "aWj" = (
 /obj/machinery/light/small/directional/west{
 	brightness = 3
@@ -6445,6 +6415,14 @@
 /obj/effect/turf_decal/corner/opaque/blue,
 /turf/open/floor/plasteel,
 /area/centcom/evac)
+"byE" = (
+/obj/structure/table/wood,
+/obj/item/stack/sheet/glass/fifty,
+/obj/item/stack/sheet/metal/fifty,
+/obj/item/storage/toolbox/mechanical,
+/obj/item/multitool,
+/turf/open/floor/wood,
+/area/centcom/holding)
 "bzD" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/turf_decal/corner/opaque/blue{
@@ -8058,6 +8036,13 @@
 /obj/machinery/firealarm/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/centcom/control)
+"ffT" = (
+/obj/structure/table/wood,
+/obj/structure/mirror{
+	pixel_y = 28
+	},
+/turf/open/floor/wood,
+/area/centcom/holding)
 "fhE" = (
 /obj/machinery/door/poddoor{
 	id = "XCCQMLoaddoor2";
@@ -10856,6 +10841,41 @@
 /obj/effect/turf_decal/corner/transparent/neutral,
 /turf/open/floor/plasteel,
 /area/tdome/tdomeobserve)
+"lHy" = (
+/obj/structure/closet/secure_closet/freezer/meat/open,
+/obj/item/reagent_containers/food/snacks/meat/rawbacon,
+/obj/item/reagent_containers/food/snacks/meat/rawbacon,
+/obj/item/reagent_containers/food/snacks/meat/rawbacon,
+/obj/item/reagent_containers/food/snacks/meat/rawbacon,
+/obj/item/reagent_containers/food/snacks/meat/slab/killertomato,
+/obj/item/reagent_containers/food/snacks/meat/slab/killertomato,
+/obj/item/reagent_containers/food/snacks/meat/slab/killertomato,
+/obj/item/reagent_containers/food/snacks/meat/slab/killertomato,
+/obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/lizard,
+/obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/lizard,
+/obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/lizard,
+/obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/lizard,
+/obj/item/reagent_containers/food/snacks/sausage,
+/obj/item/reagent_containers/food/snacks/sausage,
+/obj/item/reagent_containers/food/snacks/meat/rawcutlet,
+/obj/item/reagent_containers/food/snacks/meat/rawcutlet,
+/obj/item/reagent_containers/food/snacks/meat/rawcutlet,
+/obj/item/reagent_containers/food/snacks/fishmeat/carp,
+/obj/item/reagent_containers/food/snacks/fishmeat/carp,
+/obj/item/reagent_containers/food/snacks/fishmeat/carp,
+/obj/item/reagent_containers/food/snacks/fishmeat/carp,
+/obj/effect/turf_decal/corner/transparent/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/transparent/neutral{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/tdome/tdomeobserve)
 "lIm" = (
 /obj/structure/table,
 /obj/item/paper/pamphlet/centcom/visitor_info,
@@ -11805,6 +11825,12 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/centcom/ferry)
+"oba" = (
+/obj/structure/table/wood,
+/obj/structure/safe/floor,
+/obj/item/seeds/cherry/bomb,
+/turf/open/floor/wood,
+/area/centcom/holding)
 "obp" = (
 /obj/item/storage/fancy/cigarettes/cigars{
 	pixel_y = 6
@@ -12570,6 +12596,15 @@
 /obj/machinery/light/directional/north,
 /turf/open/floor/plasteel,
 /area/centcom/evac)
+"pCe" = (
+/obj/structure/closet/secure_closet/freezer/meat/open,
+/obj/item/reagent_containers/food/snacks/fishmeat/carp,
+/obj/item/reagent_containers/food/snacks/fishmeat/carp,
+/obj/item/reagent_containers/food/snacks/fishmeat/carp,
+/obj/item/reagent_containers/food/snacks/fishmeat/carp,
+/obj/item/reagent_containers/food/snacks/fishmeat/carp,
+/turf/open/floor/plasteel,
+/area/centcom/holding)
 "pDx" = (
 /obj/structure/table/wood,
 /obj/item/book/manual/wiki/barman_recipes,
@@ -13683,41 +13718,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/centcom/ferry)
-"sbD" = (
-/obj/structure/closet/secure_closet/freezer/meat/open,
-/obj/item/reagent_containers/food/snacks/meat/rawbacon,
-/obj/item/reagent_containers/food/snacks/meat/rawbacon,
-/obj/item/reagent_containers/food/snacks/meat/rawbacon,
-/obj/item/reagent_containers/food/snacks/meat/rawbacon,
-/obj/item/reagent_containers/food/snacks/meat/slab/killertomato,
-/obj/item/reagent_containers/food/snacks/meat/slab/killertomato,
-/obj/item/reagent_containers/food/snacks/meat/slab/killertomato,
-/obj/item/reagent_containers/food/snacks/meat/slab/killertomato,
-/obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/lizard,
-/obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/lizard,
-/obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/lizard,
-/obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/lizard,
-/obj/item/reagent_containers/food/snacks/sausage,
-/obj/item/reagent_containers/food/snacks/sausage,
-/obj/item/reagent_containers/food/snacks/meat/rawcutlet,
-/obj/item/reagent_containers/food/snacks/meat/rawcutlet,
-/obj/item/reagent_containers/food/snacks/meat/rawcutlet,
-/obj/item/reagent_containers/food/snacks/carpmeat,
-/obj/item/reagent_containers/food/snacks/carpmeat,
-/obj/item/reagent_containers/food/snacks/carpmeat,
-/obj/item/reagent_containers/food/snacks/carpmeat,
-/obj/effect/turf_decal/corner/transparent/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/transparent/neutral,
-/obj/effect/turf_decal/corner/transparent/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/corner/transparent/neutral{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
-/area/tdome/tdomeobserve)
 "sdr" = (
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
@@ -41982,14 +41982,14 @@ aaa
 aaa
 aaa
 aWO
-aTq
+byE
 aCT
 aMG
 aYN
 aWO
 aPT
 auG
-aWd
+pCe
 aWO
 aWO
 aFa
@@ -43010,7 +43010,7 @@ aaa
 aaa
 aaa
 aWO
-ayM
+oba
 aCT
 aoV
 aCT
@@ -43524,7 +43524,7 @@ aaa
 aaa
 aaa
 aWO
-aTK
+ffT
 aCT
 aCT
 aCT
@@ -56387,7 +56387,7 @@ aEv
 tQR
 huh
 aEp
-sbD
+lHy
 dhD
 lii
 rUH

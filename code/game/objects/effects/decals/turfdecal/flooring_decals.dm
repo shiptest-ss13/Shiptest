@@ -544,9 +544,6 @@ TURF_DECAL_COLOR_HELPER(transparent/inteqbrown, "#4b2a18", 140)
 /obj/effect/turf_decal/floordetail/pryhole
 	icon_state = "pryhole"
 
-/obj/effect/turf_decal/floordetail/edgedrain
-	icon_state = "edge"
-
 /obj/effect/turf_decal/floordetail/traction
 	icon_state = "traction"
 
@@ -593,37 +590,35 @@ TURF_DECAL_COLOR_HELPER(transparent/inteqbrown, "#4b2a18", 140)
 
 /obj/effect/turf_decal/borderfloor
 	name = "border floor"
-	icon_state = "borderfloor_white"
-	color = "#545c68"
+	icon_state = "borderfloor"
 
 /obj/effect/turf_decal/borderfloor/corner
-	icon_state = "borderfloorcorner_white"
+	icon_state = "borderfloorcorner"
 
 /obj/effect/turf_decal/borderfloor/corner2
-	icon_state = "borderfloorcorner2_white"
+	icon_state = "borderfloorcorner2"
 
 /obj/effect/turf_decal/borderfloor/full
-	icon_state = "borderfloorfull_white"
+	icon_state = "borderfloorfull"
 
 /obj/effect/turf_decal/borderfloor/cee
-	icon_state = "borderfloorcee_white"
+	icon_state = "borderfloorcee"
 
 /obj/effect/turf_decal/borderfloorblack
 	name = "border floor"
-	icon_state = "borderfloor_white"
-	color = COLOR_ALMOST_BLACK
+	icon_state = "borderfloor_black"
 
 /obj/effect/turf_decal/borderfloorblack/corner
-	icon_state = "borderfloorcorner_white"
+	icon_state = "borderfloorcorner_black"
 
 /obj/effect/turf_decal/borderfloorblack/corner2
-	icon_state = "borderfloorcorner2_white"
+	icon_state = "borderfloorcorner2_black"
 
 /obj/effect/turf_decal/borderfloorblack/full
-	icon_state = "borderfloorfull_white"
+	icon_state = "borderfloorfull_black"
 
 /obj/effect/turf_decal/borderfloorblack/cee
-	icon_state = "borderfloorcee_white"
+	icon_state = "borderfloorcee_black"
 
 /obj/effect/turf_decal/borderfloorwhite
 	name = "border floor"

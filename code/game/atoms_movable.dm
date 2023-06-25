@@ -72,6 +72,9 @@
 	*/
 	var/list/important_recursive_contents
 
+	/// Whether a user will face atoms on entering them with a mouse. Despite being a mob variable, it is here for performance
+	var/face_mouse = FALSE
+
 /atom/movable/Initialize(mapload)
 	. = ..()
 	switch(blocks_emissive)
@@ -348,7 +351,7 @@
 // Here's where we rewrite how byond handles movement except slightly different
 // To be removed on step_ conversion
 // All this work to prevent a second bump
-/atom/movable/Move(atom/newloc, direction, glide_size_override = 0)
+/atom/movable/Move(atom/newloc, direction, glide_size_override = 0, update_dir = TRUE)
 	. = FALSE
 	if(!newloc || newloc == loc)
 		return
@@ -356,7 +359,7 @@
 	if(!direction)
 		direction = get_dir(src, newloc)
 
-	if(set_dir_on_move)
+	if(set_dir_on_move && dir != direction && update_dir && !face_mouse) //for facing direction on harm - face_mouse
 		setDir(direction)
 
 	var/is_multi_tile_object = bound_width > 32 || bound_height > 32
@@ -484,7 +487,7 @@
 						moving_diagonally = SECOND_DIAG_STEP
 						. = step(src, SOUTH)
 			if(moving_diagonally == SECOND_DIAG_STEP)
-				if(!. && set_dir_on_move)
+				if(!. && set_dir_on_move && !face_mouse)
 					setDir(first_step_dir)
 				else if (!inertia_moving)
 					inertia_next_move = world.time + inertia_move_delay
@@ -516,7 +519,7 @@
 
 	last_move = direct
 
-	if(set_dir_on_move)
+	if(set_dir_on_move && !face_mouse)
 		setDir(direct)
 	if(. && has_buckled_mobs() && !handle_buckled_mob_movement(loc, direct, glide_size_override)) //movement failed due to buckled mob(s)
 		return FALSE

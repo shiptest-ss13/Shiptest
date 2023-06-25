@@ -574,6 +574,20 @@
 	harvest_message_med = "You pry something odd from the poisoned soil."
 	harvest_message_high = "You pry something odd from the poisoned soil."
 
+/obj/structure/flora/ash/garden/seaweed //yea, i code :)
+	name = "seaweed patch"
+	gender = NEUTER
+	desc = "A patch of seaweed, floating on the surface of the water"
+	icon_state = "seaweed"
+	harvested_name = "seaweed patch"
+	harvested_desc = "A patch of seaweed, floating on the surface of the water. It seems someone has already searched through this"
+	harvest = /obj/effect/spawner/lootdrop/garden/seaweed
+	harvest_amount_high = 1
+	harvest_amount_low = 1
+	harvest_message_low = "You discover some edible weeds within the patch."
+	harvest_message_med = "You discover some edible weeds within the patch."
+	harvest_message_high = "You discover some edible weeds within the patch."
+
 /obj/effect/spawner/lootdrop/garden
 	name = "lush garden seeder"
 	lootcount = 3
@@ -678,6 +692,12 @@
 			/obj/item/reagent_containers/food/snacks/grown/mushroom/libertycap = 4,
 			/obj/item/reagent_containers/food/snacks/grown/mushroom/reishi = 4,
 			/obj/item/reagent_containers/food/snacks/grown/berries/glow = 4)
+
+/obj/effect/spawner/lootdrop/garden/seaweed
+	name = "seaweed patch seeder"
+	plant = list(
+			/obj/item/reagent_containers/food/snacks/grown/seaweed = 1
+			)
 
 /obj/item/reagent_containers/food/snacks/grown/berries/poison/stealth //careful eating from random jungle bushes
 	seed = /obj/item/seeds/berry/poison

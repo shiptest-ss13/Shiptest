@@ -742,6 +742,7 @@
 	desc = "An ornate sheath designed to hold an officer's blade."
 	icon_state = "sheath"
 	item_state = "sheath"
+	base_icon_state = "sheath"
 	w_class = WEIGHT_CLASS_BULKY
 
 /obj/item/storage/belt/sabre/ComponentInitialize()
@@ -772,8 +773,8 @@
 		to_chat(user, "<span class='warning'>[src] is empty!</span>")
 
 /obj/item/storage/belt/sabre/update_icon_state()
-	icon_state = "sheath"
-	item_state = "sheath"
+	icon_state = "[base_icon_state]"
+	item_state = "[base_icon_state]"
 	if(contents.len)
 		icon_state += "-sabre"
 		item_state += "-sabre"
@@ -782,15 +783,16 @@
 	new /obj/item/melee/sabre(src)
 	update_icon()
 
-/obj/item/storage/belt/solgov
+/obj/item/storage/belt/sabre/solgov
 	name = "solarian sabre sheath"
 	desc = "An ornate sheath designed to hold an officer's blade."
+	base_icon_state = "sheath-solgov"
 	icon_state = "sheath-solgov"
 	item_state = "sheath-solgov"
 	w_class = WEIGHT_CLASS_BULKY
 
-/obj/item/storage/belt/solgov/ComponentInitialize()
-	. = ..()
+/obj/item/storage/belt/sabre/solgov/ComponentInitialize()
+	AddComponent(component_type)
 	AddElement(/datum/element/update_icon_updates_onmob)
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 1
@@ -800,30 +802,7 @@
 		/obj/item/melee/sabre/solgov
 		))
 
-/obj/item/storage/belt/solgov/examine(mob/user)
-	. = ..()
-	if(length(contents))
-		. += "<span class='notice'>Alt-click it to quickly draw the blade.</span>"
-
-/obj/item/storage/belt/solgov/AltClick(mob/user)
-	if(!iscarbon(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
-		return
-	if(length(contents))
-		var/obj/item/I = contents[1]
-		user.visible_message("<span class='notice'>[user] takes [I] out of [src].</span>", "<span class='notice'>You take [I] out of [src].</span>")
-		user.put_in_hands(I)
-		update_icon()
-	else
-		to_chat(user, "<span class='warning'>[src] is empty!</span>")
-
-/obj/item/storage/belt/solgov/update_icon_state()
-	icon_state = "sheath-solgov"
-	item_state = "sheath-solgov"
-	if(contents.len)
-		icon_state += "-sabre"
-		item_state += "-sabre"
-
-/obj/item/storage/belt/solgov/PopulateContents()
+/obj/item/storage/belt/sabre/solgov/PopulateContents()
 	new /obj/item/melee/sabre/solgov(src)
 	update_icon()
 

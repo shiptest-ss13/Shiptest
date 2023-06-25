@@ -54,8 +54,8 @@
 
 /turf/open/floor/plasteel/tech
 	icon = 'icons/turf/floors/techfloor.dmi'
-	icon_state = "techfloor_gray"
-	base_icon_state = "techfloor_gray"
+	icon_state = "techfloor"
+	base_icon_state = "techfloor"
 	floor_tile = /obj/item/stack/tile/plasteel/tech
 
 /turf/open/floor/plasteel/tech/airless
@@ -82,22 +82,13 @@
 /turf/open/floor/plasteel/patterned/brushed
 	icon_state = "kafel_full"
 	base_icon_state = "kafel_full"
-/turf/open/floor/plasteel/patterned/monofloor
-	icon_state = "steel_monofloor"
-	base_icon_state = "steel_monofloor"
+
 /turf/open/floor/plasteel/patterned/grid
 	icon_state = "grid"
 	base_icon_state = "grid"
 /turf/open/floor/plasteel/patterned/ridged
 	icon_state = "ridged"
 	base_icon_state = "ridged"
-/turf/open/floor/plasteel/patterned/dirty
-	icon_state = "dirty"
-	base_icon_state = "dirty"
-/turf/open/floor/plasteel/patterned/dirty/lighter
-	icon_state = "dirty_lighter"
-	base_icon_state = "dirty_lighter"
-
 
 /turf/open/floor/plasteel/showroomfloor
 	icon = 'icons/turf/floors.dmi'

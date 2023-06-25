@@ -223,7 +223,7 @@
 	},
 /area/ruin/unpowered)
 "qI" = (
-/obj/structure/mineral_door/wood,
+/obj/machinery/door/airlock/wood,
 /turf/open/floor/wood,
 /area/ruin/unpowered)
 "rl" = (
@@ -466,9 +466,11 @@
 /turf/open/floor/wood,
 /area/ruin/unpowered)
 "Pv" = (
-/obj/structure/mineral_door/wood,
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/wood{
+	dir = 4
 	},
 /turf/open/floor/wood,
 /area/ruin/unpowered)
@@ -484,10 +486,10 @@
 /turf/open/floor/wood,
 /area/ruin/unpowered)
 "Qt" = (
-/obj/structure/mineral_door/wood,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/door/airlock/wood,
 /turf/open/floor/wood,
 /area/ruin/unpowered)
 "QQ" = (
