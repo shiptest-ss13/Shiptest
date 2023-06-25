@@ -882,9 +882,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 ////PUT ALL YOUR WEIRD ASS REAL-LIMB HANDLING HERE
 	///Digi handling
-
-	//TODO: MAKE THIS NOT SUCK//
-
 	if(H.dna.species.bodytype & BODYTYPE_DIGITIGRADE)
 		var/uniform_compatible = FALSE
 		var/suit_compatible = FALSE
