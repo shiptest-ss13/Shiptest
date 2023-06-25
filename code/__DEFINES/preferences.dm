@@ -131,6 +131,5 @@
 #define PROSTHETIC_AMPUTATED "amputated"
 #define PROSTHETIC_ROBOTIC "prosthetic"
 
-#define NOT_SYNTHETIC "No"
-#define SYNTHETIC_FBP "Full Body Prosthetic"
-#define SYNTHETIC_POSI "Positronic"
+#define NOT_SYNTHETIC FALSE
+#define IS_SYNTHETIC TRUE
