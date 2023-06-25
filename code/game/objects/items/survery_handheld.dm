@@ -42,6 +42,7 @@
 	lefthand_file = 'icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/backpack_righthand.dmi'
 	pack = /obj/item/gear_pack/powered/survey_pack
+	tool_behaviour = TOOL_ANALYZER
 	var/survey_mult
 	var/survey_delay
 
