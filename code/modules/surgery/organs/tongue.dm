@@ -31,7 +31,7 @@
 
 /obj/item/organ/tongue/proc/handle_speech(datum/source, list/speech_args)
 
-/obj/item/organ/tongue/Insert(mob/living/carbon/M, special = 0, drop_if_replaced)
+/obj/item/organ/tongue/Insert(mob/living/carbon/M, special = 0)
 	..()
 	if (modifies_speech)
 		RegisterSignal(M, COMSIG_MOB_SAY, .proc/handle_speech)

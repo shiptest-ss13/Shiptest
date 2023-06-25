@@ -23,7 +23,7 @@
 	GLOB.zombie_infection_list -= src
 	. = ..()
 
-/obj/item/organ/zombie_infection/Insert(mob/living/carbon/M, special = 0, drop_if_replaced)
+/obj/item/organ/zombie_infection/Insert(mob/living/carbon/M, special = 0)
 	. = ..()
 	START_PROCESSING(SSobj, src)
 

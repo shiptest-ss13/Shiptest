@@ -14,7 +14,7 @@
 	QDEL_LIST(alien_powers)
 	return ..()
 
-/obj/item/organ/alien/Insert(mob/living/carbon/M, special = 0, drop_if_replaced)
+/obj/item/organ/alien/Insert(mob/living/carbon/M, special = 0)
 	..()
 	for(var/obj/effect/proc_holder/alien/P in alien_powers)
 		M.AddAbility(P)
@@ -83,7 +83,7 @@
 	else
 		owner.adjustPlasma(plasma_rate * 0.1)
 
-/obj/item/organ/alien/plasmavessel/Insert(mob/living/carbon/M, special = 0, drop_if_replaced)
+/obj/item/organ/alien/plasmavessel/Insert(mob/living/carbon/M, special = 0)
 	..()
 	if(isalien(M))
 		var/mob/living/carbon/alien/A = M
@@ -106,7 +106,7 @@
 	var/recent_queen_death = 0 //Indicates if the queen died recently, aliens are heavily weakened while this is active.
 	alien_powers = list(/obj/effect/proc_holder/alien/whisper)
 
-/obj/item/organ/alien/hivenode/Insert(mob/living/carbon/M, special = 0, drop_if_replaced)
+/obj/item/organ/alien/hivenode/Insert(mob/living/carbon/M, special = 0)
 	..()
 	M.faction |= ROLE_ALIEN
 	ADD_TRAIT(M, TRAIT_XENO_IMMUNE, "xeno immune")

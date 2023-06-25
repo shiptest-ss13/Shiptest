@@ -142,7 +142,7 @@
 	return ..()
 
 
-/obj/effect/anomaly/tvstatic/examine(mob/user)
+/obj/effect/anomaly/examine(mob/user)
 	. = ..()
 	if(user.research_scanner == TRUE)
 		to_chat(user, span_notice("If harvested, this anomaly would be worth [research_value] research points."))
