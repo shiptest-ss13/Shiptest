@@ -248,6 +248,24 @@
 			ouija_spaghetti_list[initial(A.name)] = A
 	return ouija_spaghetti_list
 
+/obj/item/choice_beacon/computer
+	name = "computer board delivery beacon"
+	desc = "Use Nanotrasen's finest cargo pod delivery systems to deliver a computer of your choice to your doorstep." //replace Nanotrasen with any other faction (they all have nice delivery systems)
+
+/obj/item/choice_beacon/computer/generate_display_names()
+	var/static/list/computer_list
+	if(!computer_list)
+		computer_list = list()
+		var/list/templist = list(
+		/obj/item/circuitboard/computer/crew,
+		/obj/item/circuitboard/computer/cargo/express,
+		/obj/item/circuitboard/computer/arcade/orion_trail,
+		/obj/item/circuitboard/computer/security)
+		for(var/V in templist)
+			var/atom/A = V
+			computer_list[initial(A.name)] = A
+	return computer_list
+
 /obj/structure/legionpike
 	name = "legion on a spear"
 	desc = "EXTREME interior decorating. You can feel it watching you."
