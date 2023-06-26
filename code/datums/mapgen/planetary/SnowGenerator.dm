@@ -114,7 +114,8 @@
 	feature_spawn_list = list(
 		/obj/structure/spawner/ice_moon/demonic_portal = 1,
 		/obj/structure/spawner/ice_moon/demonic_portal/ice_whelp = 1,
-		/obj/structure/spawner/ice_moon/demonic_portal/snowlegion = 1
+		/obj/structure/spawner/ice_moon/demonic_portal/snowlegion = 1,
+		/obj/effect/survey_point = 4
 	)
 
 /datum/biome/snow/lush
@@ -165,7 +166,8 @@
 		/obj/structure/spawner/ice_moon = 3,
 		/obj/structure/spawner/ice_moon/polarbear = 3,
 		/obj/structure/statue/snow/snowman = 3,
-		/obj/structure/statue/snow/snowlegion = 1
+		/obj/structure/statue/snow/snowlegion = 1,
+		/obj/effect/survey_point = 4
 	)
 	mob_spawn_list = list(
 		/mob/living/simple_animal/hostile/asteroid/wolf/random = 30,
@@ -208,7 +210,8 @@
 		/obj/structure/spawner/ice_moon/demonic_portal/low_threat = 25,
 		/obj/structure/spawner/ice_moon/demonic_portal/medium_threat = 50,
 		/obj/structure/spawner/ice_moon/demonic_portal/high_threat = 13,
-		/obj/structure/spawner/ice_moon/demonic_portal/extreme_threat = 12
+		/obj/structure/spawner/ice_moon/demonic_portal/extreme_threat = 12,
+		/obj/effect/survey_point = 100
 	)
 
 
@@ -260,7 +263,8 @@
 		/obj/structure/spawner/ice_moon/demonic_portal/ice_whelp = 1,
 		/obj/structure/spawner/ice_moon/demonic_portal/snowlegion = 1,
 		/obj/structure/spawner/ice_moon = 1,
-		/obj/structure/spawner/ice_moon/polarbear = 1
+		/obj/structure/spawner/ice_moon/polarbear = 1,
+		/obj/effect/survey_point = 4
 	)
 
 /datum/biome/cave/snow/thawed
@@ -310,6 +314,7 @@
 		/obj/structure/spawner/ice_moon/demonic_portal/snowlegion = 1,
 		/obj/structure/spawner/ice_moon = 3,
 		/obj/structure/spawner/ice_moon/polarbear = 3,
+		/obj/effect/survey_point = 4
 	)
 
 /datum/biome/cave/volcanic/lava

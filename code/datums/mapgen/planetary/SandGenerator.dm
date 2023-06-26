@@ -90,7 +90,11 @@
 		/obj/structure/flora/ash/stem_shroom = 4 ,
 	)
 	feature_spawn_chance = 0.1
-	feature_spawn_list = list(/obj/structure/geyser/random = 1, /obj/structure/elite_tumor = 2)
+	feature_spawn_list = list(
+	/obj/structure/geyser/random = 1,
+	/obj/structure/elite_tumor = 2,
+	/obj/effect/survey_point = 4
+	)
 	mob_spawn_chance = 4
 	mob_spawn_list = list(
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/random = 50,
@@ -178,7 +182,11 @@
 		/obj/structure/flora/ash/fern = 2,
 		/obj/structure/flora/ash/puce = 1,
 	)
-	feature_spawn_list = list(/obj/structure/geyser/random = 1, /obj/structure/elite_tumor = 2)
+	feature_spawn_list = list(
+	/obj/structure/geyser/random = 1,
+	/obj/structure/elite_tumor = 2,
+	/obj/effect/survey_point = 4
+	)
 	mob_spawn_chance = 4
 	mob_spawn_list = list(
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/random = 50,

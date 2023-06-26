@@ -22,7 +22,6 @@
 	var/obj/item/attachment/attachment_type = /obj/item/attachment
 	var/obj/item/attachment/attachment
 
-
 /obj/item/gear_pack/get_cell()
 	return cell
 
@@ -90,8 +89,6 @@
 			else
 				to_chat(user, "<span class='warning'>Strap the [src]'s belt on first!</span>")
 		return
-	else if(istype(loc, /obj/machinery/defibrillator_mount))
-		ui_action_click() //checks for this are handled in defibrillator.mount.dm
 	return ..()
 
 /obj/item/gear_pack/MouseDrop(obj/over_object)
@@ -101,7 +98,6 @@
 		if(!M.incapacitated() && istype(over_object, /atom/movable/screen/inventory/hand))
 			var/atom/movable/screen/inventory/hand/H = over_object
 			M.putItemFromInventoryInHandIfPossible(src, H.held_index)
-
 /obj/item/gear_pack/attackby(obj/item/W, mob/user, params)
 	if(W == attachment)
 		toggle_attachment()

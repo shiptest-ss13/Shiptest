@@ -1,4 +1,4 @@
-/obj/item/gear_pack/powered/survey_pack
+/obj/item/gear_pack/survey_pack
 	name = "Survey Pack"
 	desc = "A large scientific kit designed for planetary survey"
 	icon = 'icons/obj/item/survey_handheld.dmi'
@@ -11,21 +11,21 @@
 
 
 
-/obj/item/gear_pack/powered/survey_pack/advanced //can be purchased, is Expendy.
+/obj/item/gear_pack/survey_pack/advanced //can be purchased, is Expendy.
 	name = "Advanced Survey Pack"
 	desc = "A high hech piece of scientific kit designed for thorough planetary survey"
 	icon_state = "survey-adv"
 	survey_mult = 1.5
 
-/obj/item/gear_pack/powered/survey_pack/advanced/nt
+/obj/item/gear_pack/survey_pack/advanced/nt
 	name = "Nanotrasen Survey Pack"
 	desc = "A large, high tech piece of Nanotrasen kit, designed for mining survey."
 	icon_state = "survey-nt"
 	survey_mult = 1.6
 	survey_delay = 3
-	//give these meson view?
+	slowdown = 0.5
 
-/obj/item/gear_pack/powered/survey_pack/Experimental //these should never be purchasable or manufacturable, loot only.
+/obj/item/gear_pack/survey_pack/Experimental //these should never be purchasable or manufacturable, loot only.
 	name = "Experimental Survey Pack"
 	desc = "An experimental survey pack, capable of analyzing entire regions in seconds."
 	icon_state = "survey-elite"
@@ -41,16 +41,19 @@
 	icon_state = "survey"
 	lefthand_file = 'icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/backpack_righthand.dmi'
-	pack = /obj/item/gear_pack/powered/survey_pack
+	pack = /obj/item/gear_pack/survey_pack
 	tool_behaviour = TOOL_ANALYZER
+	usecost = 100
 	var/survey_mult
 	var/survey_delay
+	var/active
 
 /obj/item/attachment/survey_scanner/Initialize()
 	. = ..()
 	survey_mult = pack?:survey_mult
 	survey_delay = pack?:survey_delay
 	return ..()
+
 
 /obj/structure/anomaly
 	name = "Defaultic Bind"

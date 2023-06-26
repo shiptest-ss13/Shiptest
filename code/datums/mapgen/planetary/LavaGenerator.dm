@@ -96,6 +96,7 @@
 	)
 	feature_spawn_chance = 0.3
 	feature_spawn_list = list(
+		/obj/effect/survey_point = 3,
 		/obj/structure/flora/rock/hell = 5,
 		/obj/structure/elite_tumor = 1,
 		/obj/structure/geyser/random = 1
@@ -159,6 +160,7 @@
 	feature_spawn_list = list(
 		/obj/structure/flora/tree/dead/barren = 1,
 		/obj/structure/flora/tree/dead/tall/grey = 1,
+		/obj/effect/survey_point = 0.5
 	)
 
 /datum/biome/lavaland/plains/dense/mixed
@@ -242,6 +244,10 @@
 		/obj/structure/flora/ash/tall_shroom = 2,
 		/obj/structure/flora/ash/fern = 2,
 		/obj/structure/flora/ash/puce = 2
+	)
+	feature_spawn_chance = 1
+	feature_spawn_list = list(
+		/obj/effect/survey_point = 1
 	)
 
 /datum/biome/cave/lavaland/rocky
