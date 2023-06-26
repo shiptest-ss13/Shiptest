@@ -113,6 +113,11 @@
 	)
 	mob_spawn_chance = 1
 
+	feature_spawn_chance = 1
+	feature_spawn_list = list(
+		/obj/effect/survey_point
+	)
+
 /datum/biome/grass/dense
 	flora_spawn_chance = 70
 	mob_spawn_list = list(
@@ -122,7 +127,6 @@
 		/mob/living/simple_animal/hostile/poison/bees = 3,
 	)
 	mob_spawn_chance = 2
-	feature_spawn_chance = 0.1
 
 /datum/biome/beach
 	open_turf_types = list(/turf/open/floor/plating/asteroid/sand/lit = 1)
@@ -136,6 +140,10 @@
 		/obj/item/toy/seashell = 1,
 	)
 	flora_spawn_chance = 5
+	feature_spawn_chance = 1
+	feature_spawn_list = list(
+		/obj/effect/survey_point
+	)
 
 /datum/biome/beach/dense
 	open_turf_types = list(/turf/open/floor/plating/asteroid/sand/dense/lit = 1)
@@ -156,6 +164,10 @@
 		/obj/structure/flora/ash/garden/seaweed = 1
 	)
 	flora_spawn_chance = 1
+	feature_spawn_chance = 0.1
+	feature_spawn_list = list(
+		/obj/effect/survey_point
+	)
 
 /datum/biome/ocean/deep
 	open_turf_types = list(/turf/open/water/beach/deep = 1)
@@ -169,6 +181,10 @@
 	mob_spawn_list = list(
 		/mob/living/simple_animal/hostile/bear/cave = 5,
 		/mob/living/simple_animal/hostile/asteroid/lobstrosity/beach = 1,
+	)
+	feature_spawn_chance = 1
+	feature_spawn_list = list(
+		/obj/effect/survey_point
 	)
 
 /datum/biome/cave/beach/cove

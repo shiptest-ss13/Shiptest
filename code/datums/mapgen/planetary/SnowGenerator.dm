@@ -119,6 +119,7 @@
 		/obj/effect/spawner/minefield = 2,
 		/obj/structure/vein/ice/classtwo = 50,
 		/obj/structure/vein/ice/classthree = 10,
+		/obj/effect/survey_point = 40
 	)
 
 /datum/biome/snow/lush
@@ -174,6 +175,7 @@
 		/obj/structure/vein/ice = 3,
 		/obj/structure/vein/ice/classtwo = 4,
 		/obj/structure/vein/ice/classthree = 1,
+		/obj/effect/survey_point = 4
 	)
 	mob_spawn_list = list(
 		/mob/living/simple_animal/hostile/asteroid/wolf/random = 30,
@@ -218,6 +220,7 @@
 		/obj/structure/vein/ice = 300,
 		/obj/structure/vein/ice/classtwo = 500,
 		/obj/structure/vein/ice/classthree = 50,
+		/obj/effect/survey_point = 100
 	)
 
 
@@ -273,6 +276,7 @@
 		/obj/structure/vein/ice/classtwo = 50,
 		/obj/structure/vein/ice/classthree = 6,
 		/obj/effect/spawner/minefield = 2,
+		/obj/effect/survey_point = 4
 	)
 
 /datum/biome/cave/snow/thawed
@@ -317,6 +321,9 @@
 		/obj/item/mine/pressure/explosive/fire/live = 1,
 	)
 	feature_spawn_chance = 0.2
+	feature_spawn_list = list(
+		/obj/effect/survey_point = 4
+	)
 
 /datum/biome/cave/volcanic/lava
 	open_turf_types = list(

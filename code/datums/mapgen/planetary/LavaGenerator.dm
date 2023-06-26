@@ -109,6 +109,7 @@
 		/obj/structure/vein/classthree = 1,
 		/obj/effect/spawner/minefield = 1,
 		/obj/effect/spawner/lootdrop/anomaly/lava = 1,
+		/obj/effect/survey_point = 3,
 	)
 	mob_spawn_chance = 4
 	mob_spawn_list = list(
@@ -171,6 +172,7 @@
 		/obj/structure/vein = 5,
 		/obj/structure/vein/classtwo = 2,
 		/obj/structure/vein/classthree = 1,
+		/obj/effect/survey_point = 20
 	)
 
 /datum/biome/lavaland/plains/dense/mixed
@@ -253,6 +255,10 @@
 		/obj/structure/flora/ash/puce = 2,
 		/obj/item/mine/proximity/explosive/live = 1,
 		/obj/item/mine/pressure/explosive/rusty/live = 1
+	)
+	feature_spawn_chance = 1
+	feature_spawn_list = list(
+		/obj/effect/survey_point = 1
 	)
 
 /datum/biome/cave/lavaland/rocky

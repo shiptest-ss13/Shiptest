@@ -38,7 +38,7 @@
 		/obj/item/shard = 10)// special tools not only cut down time but also improve probability
 	time = 125
 	silicons_obey_prob = TRUE
-	repeatable = TRUE
+	repeatable = FALSE //If you fuck it up you fuck it up
 	experience_given = 0 //experience recieved scales with what's being dissected + which step you're doing.
 
 /datum/surgery_step/dissection/preop(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery)
@@ -58,24 +58,26 @@
 									/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient = 2
 									)
 	if(isalienqueen(target) || isalienroyal(target))
-		cost = (MAX_DISSECTION_REWARD*38)
+		cost = (BASE_HUMAN_REWARD*5)
 	else if(isalienadult(target))
-		cost = (MAX_DISSECTION_REWARD*30)
-	else if(isalien(target))
-		cost = (MAX_DISSECTION_REWARD*14)
-	else if(ismegafauna(target))
-		cost = (MAX_DISSECTION_REWARD*30)
+		cost = (BASE_HUMAN_REWARD*4)
+	else if(ismonkey(target))
+		cost = (BASE_HUMAN_REWARD*0.5)
 	else if(ishuman(target))
 		var/mob/living/carbon/human/H = target
 		if(H?.dna?.species)
 			if(isabductor(H))
-				cost = (MAX_DISSECTION_REWARD*24)
-			else if(iszombie(H) || isshadow(H) || isandroid(H))
-				cost = (MAX_DISSECTION_REWARD*20)
-	else for(var/type in mob_mult_list) // THIS. ELSE IF(). ENDS. HERE.
-		if(istype(target, type))
-			cost = (MAX_DISSECTION_REWARD*mob_mult_list[type])
-			break
+				cost = (BASE_HUMAN_REWARD*3)
+			else if(isgolem(H) || iszombie(H) || isshadow(H) || isandroid(H))
+				cost = (BASE_HUMAN_REWARD*3)
+			else if(isjellyperson(H) || ispodperson(H) || issquidperson(H) || isalien(H))
+				cost = (BASE_HUMAN_REWARD*3)
+			else if(isskeleton(H))
+				cost = (BASE_HUMAN_REWARD * 0.5)
+	else
+		cost = (BASE_HUMAN_REWARD * 0.5)
+
+
 
 	//now we do math for surgeries already done (no double dipping!).
 	for(var/i in typesof(/datum/surgery/advanced/experimental_dissection))
@@ -120,24 +122,16 @@
 
 /datum/surgery/advanced/experimental_dissection/adv
 	name = "Thorough Dissection"
-	value_multiplier = 0.5
+	value_multiplier = 1.5
 	replaced_by = /datum/surgery/advanced/experimental_dissection/exp
 	requires_tech = TRUE
 
 /datum/surgery/advanced/experimental_dissection/exp
 	name = "Experimental Dissection"
-	value_multiplier = 1
-	replaced_by = /datum/surgery/advanced/experimental_dissection/alien
-	requires_tech = TRUE
-
-/datum/surgery/advanced/experimental_dissection/alien
-	name = "Extraterrestrial Dissection"
 	value_multiplier = 2
 	requires_tech = TRUE
-	replaced_by = null
 
-
-#undef MAX_DISSECTION_REWARD
+#undef BASE_HUMAN_REWARD
 #undef EXPDIS_FAIL_MSG
 #undef PUBLIC_TECHWEB_GAIN
 #undef PRIVATE_TECHWEB_GAIN

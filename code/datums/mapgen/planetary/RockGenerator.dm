@@ -82,7 +82,6 @@
 
 /datum/biome/rock
 	open_turf_types = list(/turf/open/floor/plating/asteroid/rockplanet/lit = 1)
-
 	feature_spawn_chance = 0.25
 	feature_spawn_list = list(
 		/obj/structure/geyser/random = 80,
@@ -93,6 +92,7 @@
 		/obj/structure/vein/classthree = 10,
 		/obj/effect/spawner/minefield = 2,
 		/obj/effect/spawner/lootdrop/anomaly/big = 1 //get out of here stalker
+		/obj/effect/survey_point = 4
 	)
 
 	flora_spawn_chance = 5
@@ -163,6 +163,7 @@
 		/obj/structure/spawner/burrow/rock_plant = 4,
 		/obj/effect/spawner/minefield = 1,
 		/obj/effect/spawner/lootdrop/anomaly/rock/cave = 1,
+		/obj/effect/survey_point = 4
 	)
 	mob_spawn_chance = 6
 	mob_spawn_list = list(

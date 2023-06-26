@@ -654,12 +654,6 @@
 	surgery = /datum/surgery/advanced/experimental_dissection/exp
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
-/datum/design/surgery/experimental_dissection/ext
-	name = "Extraterrestrial Dissection"
-	id = "surgery_ext_dissection"
-	surgery = /datum/surgery/advanced/experimental_dissection/alien
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
-
 /datum/design/surgery/lobotomy
 	name = "Lobotomy"
 	desc = "An invasive surgical procedure which guarantees removal of almost all brain traumas, but might cause another permanent trauma in return."
