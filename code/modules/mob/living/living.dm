@@ -474,7 +474,9 @@
 			if(!silent)
 				to_chat(src, "<span class='notice'>You will now lay down as soon as you are able to.</span>")
 		else
-			if(!silent)
+			if(!silent && m_intent == MOVE_INTENT_WALK)
+				to_chat(src, "<span class='notice'>You gently lay down.</span>")
+			else if(!silent)
 				to_chat(src, "<span class='notice'>You lay down.</span>")
 			set_lying_down()
 	else
