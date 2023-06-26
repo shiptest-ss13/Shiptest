@@ -299,11 +299,11 @@
 	timeout = 2 MINUTES
 
 /datum/mood_event/rippedtail
-	description = "I ripped their tail right off, what have I done!"
+	description = "<span class='warning'>I ripped their tail right off, what have I done!</span>\n"
 	mood_change = -5
 	timeout = 30 SECONDS
 
 /datum/mood_event/bad_tailpull
-	description = (span_warning("Someone pulled my tail... How dare they?")
-	mood_change = -2
+	description = "<span class='warning'>Someone pulled my tail... How dare they?</span>\n"
+	mood_change = -3
 	timeout = 4 MINUTES

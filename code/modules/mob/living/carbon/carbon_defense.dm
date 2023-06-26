@@ -428,19 +428,19 @@
 			to_chat(M, "<span class='warning'>[src] looks visibly upset as you pat [p_them()] on the head.</span>")
 
 // Tail pulls!
-	else if ((M.zone_selected == BODY_ZONE_PRECISE_GROIN) && !isnull(src.getorgan(/obj/item/organ/tail)))
-		SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, M, /datum/mood_event/tailpulled)
+	else if((M.zone_selected == BODY_ZONE_PRECISE_GROIN) && !isnull(src.getorgan(/obj/item/organ/tail)))
 		M.visible_message(span_notice("[M] pulls on [src]'s tail!"), \
 					null, span_hear("You hear a soft patter."), DEFAULT_MESSAGE_RANGE, list(M, src))
 		to_chat(M, span_notice("You pull on [src]'s tail!"))
 		to_chat(src, span_notice("[M] pulls on your tail!"))
-
-		if(HAS_TRAIT(src, TRAIT_BADTOUCH))
-			SEND_SIGNAL(src, COMSIG_CARBON_HUGGED, M)
+		if(!HAS_TRAIT(src, TRAIT_BADTOUCH))
+			SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, M, /datum/mood_event/tailpulled)
+		else
+			SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, M, /datum/mood_event/bad_tailpull)
 			to_chat(M, span_warning("[src] makes a grumbling noise as you pull on [p_their()] tail."))
 
 // Rips off fake tails
-	else if ((M.zone_selected == BODY_ZONE_PRECISE_GROIN) && (istype(head, /obj/item/clothing/head/kitty) || istype(head, /obj/item/clothing/head/collectable/kitty)))
+	else if((M.zone_selected == BODY_ZONE_PRECISE_GROIN) && (istype(head, /obj/item/clothing/head/kitty) || istype(head, /obj/item/clothing/head/collectable/kitty)))
 		var/obj/item/clothing/head/faketail = head
 		M.visible_message(span_danger("[M] pulls on [src]'s tail... and it rips off!"), \
 					null, span_hear("You hear a ripping sound."), DEFAULT_MESSAGE_RANGE, list(M, src))
