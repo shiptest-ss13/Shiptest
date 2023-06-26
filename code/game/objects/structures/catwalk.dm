@@ -27,15 +27,14 @@
 
 /obj/structure/catwalk/over/plated_catwalk
 	name = "plated catwalk"
-	icon_state = "catwalk_plated"
 	plated_tile = /obj/item/stack/tile/plasteel
+	icon_state = "catwalk_plated"
 
 /obj/structure/catwalk/over/plated_catwalk/dark
 	plated_tile = /obj/item/stack/tile/plasteel/dark
 	icon_state = "catwalk_plateddark"
 
 /obj/structure/catwalk/over/plated_catwalk/white
-	name = "plated catwalk"
 	plated_tile = /obj/item/stack/tile/plasteel/white
 	icon_state = "catwalk_platedwhite"
 
@@ -44,11 +43,10 @@
 	cut_overlays()
 	icon_state = hatch_open ? "open" : "catwalk"
 	if(plated_tile)
-		var/turf/open/floor/turf_type = initial(plated_tile.turf_type)
 		smoothing_flags &= ~SMOOTH_BITMASK
 		SSicon_smooth.remove_from_queues(src)
 		var/image/I = image('icons/obj/smooth_structures/more_catwalk.dmi', "plated")
-		I.color = initial(turf_type.color)
+		I.color = initial(plated_tile.color)
 		overlays += I
 	else
 		smoothing_flags |= SMOOTH_BITMASK

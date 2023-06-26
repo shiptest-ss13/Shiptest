@@ -56,7 +56,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/maintenance/port)
 "ax" = (
-/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/apc/auto_name/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/plastic,
 /obj/effect/turf_decal/techfloor/orange{
@@ -110,7 +110,7 @@
 "aV" = (
 /obj/structure/closet/emcloset/wall{
 	dir = 8;
-	pixel_x = 32
+	pixel_x = 28
 	},
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -144,11 +144,12 @@
 	dir = 8
 	},
 /obj/structure/window/reinforced/spawner,
-/obj/machinery/door/poddoor/shutters{
-	id = "starboard_eng"
-	},
 /obj/structure/cable{
 	icon_state = "0-8"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "starboard_eng";
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
@@ -291,9 +292,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "bQ" = (
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /obj/effect/turf_decal/corner/opaque/blue/diagonal,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -435,7 +434,7 @@
 /turf/open/floor/mineral/plastitanium/red/brig,
 /area/ship/hallway/central)
 "cE" = (
-/obj/machinery/power/apc/auto_name/south,
+/obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -538,9 +537,7 @@
 /area/ship/crew/canteen)
 "dw" = (
 /obj/structure/closet/lasertag/blue,
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /obj/effect/turf_decal/siding/yellow{
 	dir = 1
 	},
@@ -574,7 +571,7 @@
 /obj/structure/railing/modern/end{
 	dir = 1
 	},
-/obj/machinery/power/apc/auto_name/west,
+/obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -635,9 +632,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "dM" = (
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/effect/turf_decal/siding/red{
 	dir = 1
@@ -647,9 +642,7 @@
 "dN" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/item/reagent_containers/glass/bucket/wooden,
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/effect/turf_decal/spline/fancy/wood{
 	dir = 1
@@ -696,7 +689,7 @@
 /turf/closed/wall/r_wall,
 /area/ship/security/prison)
 "dZ" = (
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /obj/item/kirbyplants/random,
 /obj/effect/turf_decal/siding/red,
 /turf/open/floor/mineral/plastitanium/red/brig,
@@ -715,7 +708,7 @@
 /turf/open/floor/mineral/plastitanium/red/brig,
 /area/ship/hallway/central)
 "ee" = (
-/obj/machinery/power/apc/auto_name/west,
+/obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -742,7 +735,8 @@
 /obj/structure/cable,
 /obj/machinery/door/poddoor/shutters{
 	id = "mimir_mining_shut";
-	name = "Mining Bay Shutters"
+	name = "Mining Bay Shutters";
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/storage/eva)
@@ -804,7 +798,7 @@
 /obj/item/laser_pointer/purple,
 /obj/item/tank/internals/plasmaman/belt,
 /obj/item/clothing/under/plasmaman/prisoner/skirt,
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/floor/wood,
 /area/ship/crew/dorm)
 "eC" = (
@@ -857,9 +851,7 @@
 /obj/item/shovel/spoon,
 /obj/item/storage/bag/ore,
 /obj/item/mining_scanner,
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /obj/effect/turf_decal/siding/brown{
 	dir = 1
 	},
@@ -879,7 +871,8 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "starboard_eng"
+	id = "starboard_eng";
+	dir = 4
 	},
 /obj/structure/cable{
 	icon_state = "0-8"
@@ -933,8 +926,7 @@
 /obj/effect/turf_decal/corner/opaque/neutral{
 	dir = 10
 	},
-/obj/machinery/light{
-	dir = 4;
+/obj/machinery/light/directional/east{
 	light_color = "#e8eaff"
 	},
 /turf/open/floor/plasteel,
@@ -999,7 +991,9 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/maintenance/starboard)
 "fL" = (
-/obj/structure/mineral_door/wood,
+/obj/machinery/door/airlock/wood{
+	dir = 4
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/toilet)
 "fS" = (
@@ -1238,7 +1232,7 @@
 /turf/closed/wall/rust,
 /area/ship/crew/toilet)
 "hj" = (
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -1433,9 +1427,7 @@
 /area/ship/maintenance/port)
 "id" = (
 /obj/structure/chair/sofa/corner,
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /obj/effect/turf_decal/spline/plain/opaque/blue{
 	dir = 1
 	},
@@ -1463,10 +1455,12 @@
 /area/ship/maintenance/starboard)
 "ij" = (
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "midpoint_shut"
+	id = "midpoint_shut";
+	dir = 4
 	},
 /obj/machinery/door/airlock/security/glass/seclock{
-	name = "Midpoint Airlock"
+	name = "Midpoint Airlock";
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
@@ -1655,7 +1649,8 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/maintenance_hatch{
-	name = "Starboard Maintenance"
+	name = "Starboard Maintenance";
+	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -1671,7 +1666,7 @@
 /area/ship/engineering)
 "jw" = (
 /obj/machinery/chem_master/condimaster,
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /obj/effect/turf_decal/siding/wideplating/light,
 /obj/effect/turf_decal/siding/wideplating/light{
 	dir = 1
@@ -1726,7 +1721,7 @@
 /area/ship/crew/canteen/kitchen)
 "jK" = (
 /obj/structure/reagent_dispensers/watertank,
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/wood,
 /area/ship/crew/hydroponics)
@@ -1982,7 +1977,8 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "port_eng"
+	id = "port_eng";
+	dir = 4
 	},
 /obj/structure/cable{
 	icon_state = "0-8"
@@ -2019,7 +2015,7 @@
 /turf/open/floor/plating,
 /area/ship/crew/canteen)
 "lc" = (
-/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -2112,9 +2108,7 @@
 	dir = 8;
 	pixel_x = 32
 	},
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/crew/dorm/dormthree)
 "lC" = (
@@ -2219,7 +2213,8 @@
 /area/ship/crew/hydroponics)
 "mE" = (
 /obj/machinery/door/airlock/wood{
-	name = "Prisoner Dorms"
+	name = "Prisoner Dorms";
+	dir = 4
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2264,9 +2259,7 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "mJ" = (
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -2389,7 +2382,8 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/medical/glass{
-	name = "Medbay"
+	name = "Medbay";
+	dir = 4
 	},
 /obj/effect/turf_decal/corner/opaque/blue/diagonal,
 /turf/open/floor/plasteel/white,
@@ -2465,7 +2459,7 @@
 /area/ship/crew/canteen/kitchen)
 "nS" = (
 /obj/structure/ore_box,
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
@@ -2684,9 +2678,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/maintenance/port)
 "pe" = (
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -2714,10 +2706,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "pA" = (
-/obj/item/radio/intercom/wideband{
-	dir = 4;
-	pixel_x = -25
-	},
+/obj/item/radio/intercom/wideband/directional/west,
 /obj/effect/turf_decal/steeldecal/steel_decals6{
 	dir = 6
 	},
@@ -2790,7 +2779,7 @@
 /turf/open/floor/mineral/plastitanium/red/brig,
 /area/ship/hallway/central)
 "qb" = (
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /obj/structure/bookcase/random/nonfiction,
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2878,7 +2867,7 @@
 /area/ship/security/armory)
 "qm" = (
 /obj/structure/reagent_dispensers/water_cooler,
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
@@ -2897,7 +2886,8 @@
 	},
 /obj/effect/decal/cleanable/oil,
 /obj/machinery/door/poddoor/shutters{
-	id = "port_eng"
+	id = "port_eng";
+	dir = 4
 	},
 /obj/structure/cable{
 	icon_state = "0-8"
@@ -3021,7 +3011,7 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "qW" = (
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
@@ -3043,7 +3033,9 @@
 /turf/open/floor/plasteel,
 /area/ship/security)
 "rn" = (
-/obj/structure/mineral_door/wood,
+/obj/machinery/door/airlock/wood{
+	dir = 4
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/dorm/dormthree)
 "rq" = (
@@ -3087,7 +3079,8 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/maintenance_hatch/seclock{
-	name = "Port Maintenance"
+	name = "Port Maintenance";
+	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -3140,6 +3133,10 @@
 "rT" = (
 /obj/machinery/camera/autoname,
 /obj/item/kirbyplants/photosynthetic,
+/obj/machinery/light_switch{
+	pixel_y = 24;
+	pixel_x = -9
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "rV" = (
@@ -3333,9 +3330,7 @@
 /turf/open/floor/plasteel,
 /area/ship/security/prison)
 "te" = (
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 1
 	},
@@ -3399,7 +3394,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/machinery/door/airlock/command/glass/seclock,
+/obj/machinery/door/airlock/command/glass/seclock{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "tE" = (
@@ -3456,7 +3453,7 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "tY" = (
-/obj/machinery/power/apc/auto_name/east,
+/obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable,
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 6
@@ -3496,7 +3493,7 @@
 /obj/item/assembly/flash,
 /obj/item/reagent_containers/spray/pepper,
 /obj/item/clothing/glasses/hud/security/sunglasses,
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /obj/item/tank/internals/plasmaman/belt,
 /obj/item/clothing/head/helmet/space/plasmaman/security,
 /obj/item/clothing/under/plasmaman/security,
@@ -3521,7 +3518,8 @@
 	},
 /obj/machinery/door/poddoor/shutters{
 	id = "mimir_mining_airlock_shut";
-	name = "Mining Airlock Shutters"
+	name = "Mining Airlock Shutters";
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/storage/eva)
@@ -3567,14 +3565,15 @@
 	},
 /obj/machinery/door/poddoor/shutters{
 	id = "mimir_mining_shut";
-	name = "Mining Bay Shutters"
+	name = "Mining Bay Shutters";
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/storage/eva)
 "uO" = (
 /obj/structure/closet/firecloset/wall{
 	dir = 8;
-	pixel_x = 32
+	pixel_x = 28
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -3602,10 +3601,6 @@
 /area/ship/crew/dorm/dormthree)
 "vg" = (
 /obj/machinery/airalarm/directional/north,
-/obj/machinery/light_switch{
-	pixel_y = 24;
-	pixel_x = -9
-	},
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
@@ -3652,7 +3647,7 @@
 /turf/open/floor/plating,
 /area/ship/bridge)
 "vq" = (
-/obj/machinery/power/apc/auto_name/south,
+/obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable{
 	icon_state = "0-9"
 	},
@@ -3670,9 +3665,7 @@
 /obj/item/gun/energy/disabler,
 /obj/item/gun/energy/disabler,
 /obj/item/gun/energy/disabler,
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /obj/effect/turf_decal/siding/red{
 	dir = 5
 	},
@@ -3752,7 +3745,7 @@
 /area/ship/engineering/electrical)
 "wk" = (
 /obj/structure/closet/emcloset/wall{
-	pixel_y = 32
+	pixel_y = 28
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -3877,7 +3870,8 @@
 "wW" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "midpoint_shut"
+	id = "midpoint_shut";
+	dir = 4
 	},
 /obj/structure/cable{
 	icon_state = "0-6"
@@ -4053,7 +4047,7 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "yc" = (
-/obj/machinery/power/apc/auto_name/west,
+/obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -4163,10 +4157,19 @@
 /obj/structure/cable,
 /obj/machinery/door/poddoor/shutters{
 	id = "mimir_mining_airlock_shut";
-	name = "Mining Airlock Shutters"
+	name = "Mining Airlock Shutters";
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/storage/eva)
+"yG" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/shutters{
+	id = "mimir_nose_shut";
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
 "yI" = (
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
@@ -4196,7 +4199,8 @@
 	},
 /obj/structure/window/reinforced/spawner,
 /obj/machinery/door/poddoor/shutters{
-	id = "port_eng"
+	id = "port_eng";
+	dir = 4
 	},
 /obj/structure/cable{
 	icon_state = "0-8"
@@ -4256,7 +4260,8 @@
 /area/ship/engineering/electrical)
 "zd" = (
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "quickpoint_shut"
+	id = "quickpoint_shut";
+	dir = 4
 	},
 /obj/structure/cable{
 	icon_state = "0-4"
@@ -4277,7 +4282,7 @@
 /turf/open/floor/plasteel,
 /area/ship/security)
 "zn" = (
-/obj/machinery/power/apc/auto_name/east,
+/obj/machinery/power/apc/auto_name/directional/east,
 /obj/machinery/airalarm/directional/north,
 /obj/effect/turf_decal/steeldecal/steel_decals_central7{
 	pixel_y = 2;
@@ -4317,7 +4322,7 @@
 /turf/open/floor/plastic,
 /area/ship/crew/canteen/kitchen)
 "zs" = (
-/obj/structure/table/wood/bar,
+/obj/structure/table/wood,
 /obj/item/reagent_containers/food/drinks/shaker,
 /obj/item/reagent_containers/food/drinks/modglass/large,
 /obj/item/reagent_containers/food/drinks/modglass/large,
@@ -4391,9 +4396,7 @@
 /turf/closed/wall,
 /area/ship/crew/dorm/dormfive)
 "Ae" = (
-/obj/machinery/light/broken{
-	dir = 4
-	},
+/obj/machinery/light/broken/directional/east,
 /turf/open/floor/plating,
 /area/ship/crew/canteen)
 "Af" = (
@@ -4617,9 +4620,7 @@
 "BE" = (
 /obj/structure/table,
 /obj/machinery/cell_charger,
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /obj/structure/cable{
 	icon_state = "0-9"
 	},
@@ -4706,7 +4707,7 @@
 /turf/open/floor/plastic,
 /area/ship/crew/dorm/dormthree)
 "Cb" = (
-/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-10"
 	},
@@ -4914,7 +4915,7 @@
 /obj/item/clothing/suit/space/hardsuit/carp/old,
 /obj/item/clothing/mask/gas/explorer/old,
 /obj/item/tank/internals/emergency_oxygen/double,
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
@@ -5059,7 +5060,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engine)
 "DH" = (
-/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -5209,7 +5210,8 @@
 	},
 /obj/machinery/door/poddoor/shutters{
 	id = "mimir_mining_airlock_shut";
-	name = "Mining Airlock Shutters"
+	name = "Mining Airlock Shutters";
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/storage/eva)
@@ -5220,7 +5222,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
-/obj/machinery/power/apc/auto_name/south,
+/obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -5244,16 +5246,14 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/light/dim{
-	dir = 1
-	},
+/obj/machinery/light/dim/directional/north,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "EV" = (
 /turf/closed/wall/r_wall,
 /area/ship/crew/dorm/dormfour)
 "EX" = (
-/obj/machinery/power/apc/auto_name/south,
+/obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/techfloor/orange{
@@ -5323,12 +5323,12 @@
 /obj/structure/chair/sofa{
 	dir = 1
 	},
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/floor/carpet/red,
 /area/ship/crew/dorm/dormthree)
 "Ft" = (
 /obj/machinery/vending/coffee,
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /obj/structure/cable{
 	icon_state = "5-9"
 	},
@@ -5413,7 +5413,8 @@
 /area/ship/maintenance/starboard)
 "FH" = (
 /obj/machinery/door/airlock/mining/glass{
-	name = "Mining"
+	name = "Mining";
+	dir = 4
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -5432,7 +5433,8 @@
 	},
 /obj/machinery/door/poddoor/shutters{
 	id = "mimir_mining_shut";
-	name = "Mining Bay Shutters"
+	name = "Mining Bay Shutters";
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/storage/eva)
@@ -5477,9 +5479,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/wood,
 /area/ship/crew/dorm/dormthree)
 "FU" = (
@@ -5544,7 +5544,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/maintenance/starboard)
 "Gk" = (
-/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -5600,13 +5600,11 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/machinery/power/apc/auto_name/south,
+/obj/machinery/power/apc/auto_name/directional/south,
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "GA" = (
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /obj/machinery/door/window/brigdoor/security/holding,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
@@ -5654,7 +5652,7 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
-/obj/machinery/power/apc/auto_name/south,
+/obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -5679,9 +5677,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/maintenance/starboard)
 "GV" = (
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /obj/structure/closet/cardboard,
 /obj/effect/turf_decal/siding/yellow{
 	dir = 8
@@ -5758,7 +5754,8 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/maintenance_hatch/seclock{
-	name = "Port Maintenance"
+	name = "Port Maintenance";
+	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -5786,9 +5783,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "HD" = (
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -5889,10 +5884,12 @@
 /area/ship/security/prison)
 "Ig" = (
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "quickpoint_shut"
+	id = "quickpoint_shut";
+	dir = 4
 	},
 /obj/machinery/door/airlock/security/glass/seclock{
-	name = "Quickpoint Airlock"
+	name = "Quickpoint Airlock";
+	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -6049,9 +6046,7 @@
 /obj/structure/chair/sofa{
 	dir = 4
 	},
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/carpet/red,
 /area/ship/crew/dorm/dormthree)
 "Jd" = (
@@ -6129,7 +6124,7 @@
 /turf/open/floor/mineral/plastitanium/red/brig,
 /area/ship/hallway/central)
 "Jy" = (
-/obj/machinery/power/apc/auto_name/west,
+/obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -6226,7 +6221,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "JV" = (
-/obj/machinery/computer/cryopod{
+/obj/machinery/computer/cryopod/directional/north{
 	pixel_y = 25
 	},
 /turf/open/floor/pod/dark,
@@ -6326,6 +6321,14 @@
 	},
 /turf/open/floor/plating,
 /area/ship/crew/dorm/dormthree)
+"KC" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/shutters{
+	id = "mimir_nose_shut";
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
 "KF" = (
 /turf/open/floor/noslip,
 /area/ship/security/prison)
@@ -6394,7 +6397,7 @@
 	},
 /obj/structure/closet/firecloset/wall{
 	dir = 8;
-	pixel_x = 32
+	pixel_x = 28
 	},
 /obj/effect/turf_decal/corner/opaque/orange/border{
 	dir = 8
@@ -6516,7 +6519,7 @@
 /turf/closed/wall,
 /area/ship/crew/dorm/dormfive)
 "LA" = (
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/floor/engine/hull,
 /area/ship/external)
 "LB" = (
@@ -6587,9 +6590,7 @@
 /obj/structure/chair/greyscale{
 	dir = 4
 	},
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /obj/effect/turf_decal/siding/white{
 	dir = 8
 	},
@@ -6603,9 +6604,7 @@
 /obj/item/reagent_containers/hypospray/medipen/survival{
 	pixel_y = 7
 	},
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /obj/effect/turf_decal/siding/brown{
 	dir = 4
 	},
@@ -6645,7 +6644,7 @@
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/hydroponics)
 "Mm" = (
-/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/apc/auto_name/directional/north,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
@@ -6721,7 +6720,8 @@
 	},
 /obj/machinery/door/poddoor/shutters{
 	id = "mimir_mining_airlock_shut";
-	name = "Mining Airlock Shutters"
+	name = "Mining Airlock Shutters";
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/storage/eva)
@@ -6828,9 +6828,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/techfloor,
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Ns" = (
@@ -6901,7 +6899,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "NC" = (
-/obj/machinery/power/apc/auto_name/west,
+/obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable{
 	icon_state = "0-5"
 	},
@@ -7031,7 +7029,7 @@
 /obj/item/tank/internals/plasmaman/belt,
 /obj/item/clothing/under/plasmaman/prisoner/skirt,
 /obj/machinery/airalarm/directional/west,
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/floor/wood,
 /area/ship/crew/dorm)
 "Oj" = (
@@ -7052,7 +7050,7 @@
 /obj/structure/mirror{
 	pixel_x = -25
 	},
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/floor/plastic,
 /area/ship/crew/dorm/dormthree)
 "Ov" = (
@@ -7124,7 +7122,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "OZ" = (
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/toilet)
 "Pc" = (
@@ -7391,7 +7389,8 @@
 /area/ship/security/prison)
 "QT" = (
 /obj/machinery/door/airlock/maintenance_hatch{
-	name = "Starboard Maintenance"
+	name = "Starboard Maintenance";
+	dir = 4
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -7463,7 +7462,7 @@
 /area/ship/bridge)
 "Rm" = (
 /obj/structure/closet/firecloset/wall{
-	pixel_y = 32
+	pixel_y = 28
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -7474,7 +7473,7 @@
 /turf/open/floor/mineral/plastitanium/red/brig,
 /area/ship/hallway/central)
 "Rr" = (
-/obj/machinery/power/apc/auto_name/east,
+/obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable,
 /obj/effect/turf_decal/siding/wideplating/light{
 	dir = 8
@@ -7537,7 +7536,8 @@
 /obj/structure/cable,
 /obj/machinery/door/poddoor/shutters{
 	id = "mimir_mining_airlock_shut";
-	name = "Mining Airlock Shutters"
+	name = "Mining Airlock Shutters";
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ship/storage/eva)
@@ -7591,11 +7591,12 @@
 /obj/structure/window/reinforced/spawner{
 	dir = 8
 	},
-/obj/machinery/door/poddoor/shutters{
-	id = "starboard_eng"
-	},
 /obj/structure/cable{
 	icon_state = "0-8"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "starboard_eng";
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
@@ -7613,7 +7614,7 @@
 /area/ship/crew/hydroponics)
 "Sn" = (
 /obj/machinery/flasher/portable,
-/obj/machinery/power/apc/auto_name/south,
+/obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable{
 	icon_state = "0-5"
 	},
@@ -7622,10 +7623,12 @@
 /area/ship/security/armory)
 "Sp" = (
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "midpoint_shut"
+	id = "midpoint_shut";
+	dir = 4
 	},
 /obj/machinery/door/airlock/security/glass/seclock{
-	name = "Midpoint Airlock"
+	name = "Midpoint Airlock";
+	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -7651,9 +7654,7 @@
 /area/ship/storage/eva)
 "Sz" = (
 /obj/machinery/flasher/portable,
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /obj/structure/cable{
 	icon_state = "1-5"
 	},
@@ -7673,7 +7674,7 @@
 /turf/closed/wall/rust,
 /area/ship/crew/canteen)
 "SG" = (
-/obj/machinery/light/broken,
+/obj/machinery/light/broken/directional/south,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/canteen)
 "SI" = (
@@ -7861,9 +7862,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "TP" = (
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -7880,7 +7879,7 @@
 /turf/open/floor/plasteel,
 /area/ship/security/prison)
 "TY" = (
-/obj/machinery/light/dim,
+/obj/machinery/light/dim/directional/south,
 /obj/item/reagent_containers/food/drinks/beer/light{
 	pixel_x = -8;
 	pixel_y = 7
@@ -7904,9 +7903,7 @@
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm/dormfive)
 "TZ" = (
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /obj/item/kirbyplants/random,
 /obj/structure/cable{
 	icon_state = "8-10"
@@ -8000,7 +7997,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/electrical)
 "Uy" = (
-/obj/machinery/power/apc/auto_name/east,
+/obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -8020,9 +8017,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 6
 	},
-/obj/machinery/light/dim{
-	dir = 1
-	},
+/obj/machinery/light/dim/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/techfloor/orange/corner,
 /obj/effect/turf_decal/techfloor/orange{
@@ -8046,14 +8041,23 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/crew/dorm/dormthree)
 "UI" = (
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /obj/structure/chair/wood{
 	dir = 4
 	},
 /turf/open/floor/pod/dark,
 /area/ship/crew/cryo)
+"UJ" = (
+/obj/structure/chair/greyscale,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/effect/landmark/observer_start,
+/turf/open/floor/plasteel,
+/area/ship/security/prison)
 "UL" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -8306,7 +8310,8 @@
 	},
 /obj/machinery/door/poddoor/shutters{
 	id = "mimir_mining_airlock_shut";
-	name = "Mining Airlock Shutters"
+	name = "Mining Airlock Shutters";
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/storage/eva)
@@ -8330,7 +8335,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Wq" = (
-/obj/structure/mineral_door/wood,
+/obj/machinery/door/airlock/wood,
 /turf/open/floor/wood,
 /area/ship/crew/dorm/dormthree)
 "Wr" = (
@@ -8408,11 +8413,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/maintenance/port)
 "Wz" = (
-/obj/item/radio/intercom{
-	dir = 4;
-	pixel_x = -22;
-	pixel_y = 8
-	},
+/obj/item/radio/intercom/directional/west,
 /obj/machinery/button/door{
 	dir = 4;
 	name = "Shutters";
@@ -8479,9 +8480,7 @@
 /area/ship/security/armory)
 "WU" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/machinery/light/dim{
-	dir = 4
-	},
+/obj/machinery/light/dim/directional/east,
 /obj/structure/rack,
 /obj/item/flashlight/flare,
 /obj/effect/turf_decal/techfloor/orange{
@@ -8608,9 +8607,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "Yl" = (
-/obj/machinery/light/broken{
-	dir = 1
-	},
+/obj/machinery/light/broken/directional/north,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/canteen)
 "Ym" = (
@@ -8643,9 +8640,7 @@
 /area/ship/storage/eva)
 "Yo" = (
 /obj/machinery/washing_machine,
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /obj/effect/turf_decal/siding/yellow{
 	dir = 1
 	},
@@ -8797,7 +8792,7 @@
 /turf/open/floor/plasteel,
 /area/ship/security/prison)
 "Zh" = (
-/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -8855,9 +8850,7 @@
 /turf/open/floor/pod/dark,
 /area/ship/crew/cryo)
 "ZP" = (
-/obj/machinery/light/dim{
-	dir = 8
-	},
+/obj/machinery/light/dim/directional/west,
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
@@ -8892,10 +8885,11 @@ jY
 jY
 jY
 jY
-jY
+WF
 OL
 OL
 OL
+WF
 jY
 jY
 jY
@@ -8916,12 +8910,11 @@ jY
 jY
 jY
 jY
-jY
-jY
+Wf
 wT
 wT
 wT
-jY
+Wf
 jY
 jY
 jY
@@ -9585,7 +9578,7 @@ qy
 dw
 DR
 xR
-oU
+UJ
 hm
 MU
 PP
@@ -10633,7 +10626,7 @@ dr
 dr
 Rv
 vo
-vo
+yG
 jY
 jY
 jY
@@ -10672,7 +10665,7 @@ tW
 qF
 xT
 vo
-vo
+KC
 jY
 jY
 jY
@@ -10707,11 +10700,11 @@ jg
 jg
 jg
 jg
-vo
-vo
-vo
-vo
-vo
+KC
+KC
+KC
+KC
+KC
 jY
 jY
 jY

@@ -53,14 +53,14 @@
 			mix_filling_color(S)
 			S.reagents.trans_to(src,min(S.reagents.total_volume, 15), transfered_by = user) //limit of 15, we don't want our custom food to be completely filled by just one ingredient with large reagent volume.
 			foodtype |= S.foodtype
-			update_snack_overlays(S)
+			update_customizable_overlays(S)
 			to_chat(user, "<span class='notice'>You add the [I.name] to the [name].</span>")
-			update_name(S)
+			update_food_name(S)
 	else
 		. = ..()
 
 
-/obj/item/reagent_containers/food/snacks/customizable/proc/update_name(obj/item/reagent_containers/food/snacks/S)
+/obj/item/reagent_containers/food/snacks/customizable/proc/update_food_name(obj/item/reagent_containers/food/snacks/S)
 	for(var/obj/item/I in ingredients)
 		if(!istype(S, I.type))
 			customname = "custom"
@@ -101,7 +101,7 @@
 		rgbcolor[4] = (customcolor[4]+ingcolor[4])/2
 		filling_color = rgb(rgbcolor[1], rgbcolor[2], rgbcolor[3], rgbcolor[4])
 
-/obj/item/reagent_containers/food/snacks/customizable/update_snack_overlays(obj/item/reagent_containers/food/snacks/S)
+/obj/item/reagent_containers/food/snacks/customizable/update_customizable_overlays(obj/item/reagent_containers/food/snacks/S)
 	var/mutable_appearance/filling = mutable_appearance(icon, "[initial(icon_state)]_filling")
 	if(S.filling_color == "#FFFFFF")
 		filling.color = pick("#FF0000","#0000FF","#008000","#FFFF00")
@@ -137,7 +137,7 @@
 /obj/item/reagent_containers/food/snacks/customizable/initialize_slice(obj/item/reagent_containers/food/snacks/slice, reagents_per_slice)
 	..()
 	slice.filling_color = filling_color
-	slice.update_snack_overlays(src)
+	slice.update_customizable_overlays(src)
 
 
 /obj/item/reagent_containers/food/snacks/customizable/Destroy()

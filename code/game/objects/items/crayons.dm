@@ -702,6 +702,10 @@
 	if(check_empty(user))
 		return
 
+	if(istype(target, /obj/structure/railing/modern))
+		playsound(user.loc, 'sound/effects/spray.ogg', 25, TRUE, 5)
+		return
+
 	if(iscarbon(target))
 		if(pre_noise || post_noise)
 			playsound(user.loc, 'sound/effects/spray.ogg', 25, TRUE, 5)

@@ -44,19 +44,6 @@
 	gloves = /obj/item/clothing/gloves/color/black
 	shoes = /obj/item/clothing/shoes/workboots
 
-/datum/outfit/job/miner/solgov
-	name = "Pioneer (SolGov)"
-
-	uniform = /obj/item/clothing/under/solgov
-	accessory = /obj/item/clothing/accessory/armband/cargo
-	head = /obj/item/clothing/head/beret/solgov/plain
-
-/datum/outfit/job/miner/solgov/rebel
-	name = "Pioneer (Deserter)"
-
-	uniform = /obj/item/clothing/under/syndicate/camo
-	head = /obj/item/clothing/head/beret/solgov/terragov/plain
-
 /datum/outfit/job/miner/equipped
 	name = "Shaft Miner (Equipment)"
 	suit = /obj/item/clothing/suit/hooded/explorer
@@ -68,7 +55,7 @@
 		/obj/item/flashlight/seclite=1,\
 		/obj/item/kitchen/knife/combat/survival=1,
 		/obj/item/mining_voucher=1,
-		/obj/item/pinpointer/deepcore=1,
+		/obj/item/mining_scanner=1,
 		/obj/item/gun/energy/kinetic_accelerator=1,\
 		/obj/item/stack/marker_beacon/ten=1)
 
@@ -92,19 +79,6 @@
 	uniform = /obj/item/clothing/under/rank/cargo/miner/hazard
 	alt_uniform = null
 	alt_suit = /obj/item/clothing/suit/toggle/hazard
-
-/datum/outfit/job/miner/solgov
-	name = "Field Engineer (SolGov)"
-
-	uniform = /obj/item/clothing/under/solgov
-	accessory = /obj/item/clothing/accessory/armband/cargo
-	head = /obj/item/clothing/head/hardhat/mining
-	suit =  /obj/item/clothing/suit/hazardvest
-
-/datum/outfit/job/miner/solgov/rebel
-	name = "Field Engineer (Deserter)"
-
-	uniform = /obj/item/clothing/under/syndicate/camo
 
 /datum/outfit/job/miner/scientist
 	name = "Minerologist"
@@ -174,7 +148,7 @@
 		/obj/item/flashlight/seclite=1,
 		/obj/item/kitchen/knife/combat/survival=1,
 		/obj/item/mining_voucher=1,
-		/obj/item/pinpointer/deepcore=1,
+		/obj/item/mining_scanner=1,
 		/obj/item/wrench=1
 	)
 
@@ -210,3 +184,14 @@
 	head = /obj/item/clothing/head/hardhat/orange
 	suit = /obj/item/clothing/suit/toggle/industrial
 	suit_store = /obj/item/tank/internals/emergency_oxygen/double
+
+/datum/outfit/job/miner/hazard/minutemen
+	name = "Industrial Miner (Minutemen)"
+	gloves = /obj/item/clothing/gloves/color/black
+	shoes = /obj/item/clothing/shoes/combat
+	backpack_contents = list(
+		/obj/item/flashlight/seclite=1,
+		/obj/item/stack/marker_beacon/ten=1,
+		/obj/item/weldingtool=1
+		)
+
