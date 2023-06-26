@@ -24,6 +24,14 @@
 /datum/mood_event/besthug/add_effects(mob/friend)
 	description = "<span class='nicegreen'>[friend.name] is great to be around, [friend.p_they()] makes me feel so happy!</span>\n"
 
+/datum/mood_event/best_boop
+	description = "<span class='nicegreen'>Someone booped my nose, they are silly!</span>\n"
+	mood_change = 5
+	timeout = 4 MINUTES
+
+/datum/mood_event/best_boop/add_effects(mob/friend)
+	description = "<span class='nicegreen'>[friend.name] booped my nose, [friend.p_they()] [friend.p_are()] silly!</span>\n"
+
 /datum/mood_event/warmhug
 	description = "<span class='nicegreen'>Warm cozy hugs are the best!</span>\n"
 	mood_change = 1
