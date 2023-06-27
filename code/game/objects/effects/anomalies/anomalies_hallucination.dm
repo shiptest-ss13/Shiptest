@@ -26,7 +26,7 @@
 	. = ..()
 
 /obj/effect/anomaly/hallucination/proc/hallucination_pulse(turf/open/location, effectrange)
-	for(var/mob/living/carbon/human/near in view(location, effectrange))
+	for(var/mob/living/carbon/human/user in view(location, effectrange))
 		// If they are immune to the anomaly
 		if (iscarbon(user) && !user.research_scanner)
 			continue
