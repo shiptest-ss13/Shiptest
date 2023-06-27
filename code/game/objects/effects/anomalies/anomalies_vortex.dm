@@ -26,7 +26,7 @@
 			SSexplosions.medobj += O
 
 /obj/effect/anomaly/vortex/proc/grav(r, ex_act_force, pull_chance, turf_removal_chance)
-	for(var/t = -r, t < r, t++)
+	for(var/t in -r to r)
 		affect_coord(x+t, y-r, ex_act_force, pull_chance, turf_removal_chance)
 		affect_coord(x-t, y+r, ex_act_force, pull_chance, turf_removal_chance)
 		affect_coord(x+r, y+t, ex_act_force, pull_chance, turf_removal_chance)
