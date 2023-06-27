@@ -100,9 +100,3 @@
 		cam_background.icon_state = "clear"
 		cam_background.fill_rect(1, 1, size_x, size_y)
 		return TRUE
-/obj/overmap/update_icon()
-	. = ..()
-	if(color)
-		filters = filter(type="drop_shadow", color = color + "F0", size = 2, offset = 1,x = 0, y = 0)
-	else
-		filters = filter(type="drop_shadow", color = "#808080", size = 2, offset = 1,x = 0, y = 0)
