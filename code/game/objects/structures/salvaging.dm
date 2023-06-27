@@ -38,10 +38,7 @@
 	. = ..()
 	var/obj/frame = frame_type
 	if(. == SUCCESSFUL_UNFASTEN)
-		if(anchored)
-			frame.anchored = TRUE
-		else
-			frame.anchored = FALSE //is this bad code? i'm not sure! i'll let the reviewer decide
+		frame.anchored = anchored
 
 /obj/structure/salvageable/wrench_act(mob/living/user, obj/item/I)
 	..()
