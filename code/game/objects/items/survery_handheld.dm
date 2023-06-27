@@ -20,7 +20,7 @@
 /obj/item/gear_pack/survey_pack/advanced/nt
 	name = "Nanotrasen Survey Pack"
 	desc = "A large, high tech piece of Nanotrasen kit, designed for mining survey."
-	icon_state = "survey-nt"
+	icon_state = "survey-adv"
 	survey_mult = 1.6
 	survey_delay = 3
 	slowdown = 0.5
