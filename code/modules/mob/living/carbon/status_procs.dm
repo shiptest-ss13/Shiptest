@@ -96,6 +96,5 @@
 		B.break_bone()
 
 /mob/living/carbon/proc/break_random_bone() //this might work
-	var/obj/item/bodypart/B = get_bodypart()
-	for(B in bodyparts)
-		B.break_bone()
+	var/obj/item/bodypart/limb = pick(bodyparts)
+	limb.break_bone
