@@ -1161,3 +1161,12 @@
 				/obj/item/organ/heart = 1,
 				/obj/item/stack/sheet/cotton/cloth = 3)
 	category = CAT_MISC
+
+/datum/crafting_recipe/breakawayflask
+	name = "Breakaway Flask"
+	result = /obj/item/reagent_containers/food/drinks/drinkingglass/breakawayflask
+	time = 5 SECONDS
+	reqs = list(/obj/item/stack/sheet/glass = 5,
+				/obj/item/stack/sheet/mineral/plasma = 1)
+	tools = list(TOOL_WELDER)
+	category = CAT_MISC

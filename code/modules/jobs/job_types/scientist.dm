@@ -82,3 +82,9 @@
 	alt_suit = /obj/item/clothing/suit/toggle/labcoat/science
 	dcoat = null
 	neck = /obj/item/clothing/neck/tie/purple
+
+/datum/outfit/job/scientist/minutemen
+	name = "Scientist (Minutemen)"
+
+	uniform = /obj/item/clothing/under/rank/security/officer/minutemen
+	backpack = /obj/item/storage/backpack/security/cmm
