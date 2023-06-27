@@ -12,7 +12,10 @@
 	. = ..()
 	research_value = rand(250, 1000)
 
-
+/obj/effect/survey_point/examine(mob/user)
+	. = ..()
+	if(user.research_scanner)
+		to_chat(user, "<span class='notice'>This survey point appears to be worth [research_value] research points")
 
 /obj/effect/survey_point/attackby(obj/item/item, mob/user, params)
 	if(ispath(/obj/item/attachment/survey_scanner))
