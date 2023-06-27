@@ -48,7 +48,7 @@
 	var/survey_delay
 	var/active
 
-/obj/item/attachment/survey_scanner/Initialize()
+/obj/item/attachment/survey_scanner/New(loc, ...)
 	. = ..()
 	survey_mult = pack?:survey_mult
 	survey_delay = pack?:survey_delay
