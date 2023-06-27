@@ -132,7 +132,7 @@
 
 /obj/effect/anomaly/attackby(obj/item/weapon, mob/user, params)
 	if(weapon.tool_behaviour == TOOL_ANALYZER && aSignal)
-		to_chat(user, span_notice("Analyzing..."))
+		to_chat(user, span_notice("You start analyzing [src]."))
 		if(do_after(user, 20, TRUE, src))
 			to_chat(user, span_notice("[src]'s primary field is fluctuating along frequency [format_frequency(aSignal.frequency)], code [aSignal.code]."))
 			if(bSignal)
