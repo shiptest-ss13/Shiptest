@@ -27,8 +27,8 @@
 
 /obj/effect/anomaly/hallucination/proc/hallucination_pulse(turf/open/location, effectrange)
 	for(var/mob/living/carbon/human/near in view(location, effectrange))
-		// If they are immune to hallucinations.
-		if (HAS_TRAIT(near, SEE_TURFS) || (near.mind && HAS_TRAIT(near.mind, SEE_TURFS)))
+		// If they are immune to the anomaly
+		if (iscarbon(user) && !user.research_scanner)
 			continue
 
 		// Blind people don't get hallucinations.
