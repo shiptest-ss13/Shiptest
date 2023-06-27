@@ -251,3 +251,9 @@
   - rscadd: added the Junker-class salvage(d) ship
   - rscadd: added the reployer
   - rscdel: removed the trunktide (older version of the junker)
+2023-06-27:
+  Bjarl:
+  - bugfix: chicken flocks will now spawn
+  tmtmtl30:
+  - bugfix: Different planets should hopefully no longer repeatedly generate in the
+      exact same part of the map, overwriting each other and causing double-dock SGTs.
