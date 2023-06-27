@@ -72,3 +72,5 @@
 
 	/// How many "units of blood" we have on our hands
 	var/blood_in_hands = 0
+
+	var/coretemperature = HUMAN_BODYTEMP_NORMAL //Rot code needs to be updated if we ever have different body temps

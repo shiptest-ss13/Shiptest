@@ -1532,6 +1532,21 @@
 	return total_change
 
 /**
+ * Adjust the core temperature of a mob
+ *
+ * vars:
+ * * amount The amount of degrees to change body temperature by
+ * * min_temp (optional) The minimum body temperature after adjustment
+ * * max_temp (optional) The maximum body temperature after adjustment
+ */
+/mob/living/carbon/human/proc/adjust_coretemperature(amount, min_temp=0, max_temp=INFINITY)
+	set_coretemperature(clamp(coretemperature + amount, min_temp, max_temp))
+
+/mob/living/carbon/human/proc/set_coretemperature(value)
+	SEND_SIGNAL(src, COMSIG_HUMAN_CORETEMP_CHANGE, coretemperature, value)
+	coretemperature = value
+
+/**
  * get_body_temp_normal Returns the mobs normal body temperature with any modifications applied
  *
  * This applies the result from proc/get_body_temp_normal_change() against the HUMAN_BODYTEMP_NORMAL and returns the result
