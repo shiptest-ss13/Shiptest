@@ -32,20 +32,20 @@
 			continue
 
 		// Blind people don't get hallucinations.
-		if (near.is_blind())
+		if (user.is_blind())
 			continue
 
 		// Everyone else gets hallucinations.
-		var/dist = sqrt(1 / max(1, get_dist(near, location)))
-		near.hallucination += 50 * dist
-		near.hallucination = clamp(near.hallucination, 0, 150)
+		var/dist = sqrt(1 / max(1, get_dist(user, location)))
+		user.hallucination += 50 * dist
+		user.hallucination = clamp(user.hallucination, 0, 150)
 		var/list/messages = list(
 			"You feel your conscious mind fall apart!",
 			"Reality warps around you!",
 			"Something's wispering around you!",
 			"You are going insane!",
 		)
-		to_chat(near, span_warning(pick(messages)))
+		to_chat(user, span_warning(pick(messages)))
 
 /obj/effect/anomaly/hallucination/planetary
 	immortal = TRUE
