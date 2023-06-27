@@ -128,8 +128,8 @@
 		TOOL_SAW = 100,
 		/obj/item/melee/arm_blade = 40,
 		/obj/item/fireaxe = 30,
-		/obj/item/hatchet = 20,
-		/obj/item/kitchen/knife/butcher = 15,
+		/obj/item/hatchet = 25,
+		/obj/item/kitchen/knife/butcher = 10,
 		/obj/item = 10) //10% success (sort of) with any sharp item with a force>=10
 	time = 5.4 SECONDS
 	preop_sound = list(
