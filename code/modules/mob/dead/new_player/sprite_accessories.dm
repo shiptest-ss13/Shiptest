@@ -2895,7 +2895,7 @@
 	name = "Ruffhawk"
 	icon_state = "ruffhawk"
 
-//Elzuosa help
+//Elzuose help
 
 /datum/sprite_accessory/elzu_horns
 	icon = 'icons/mob/ethereal_parts.dmi'

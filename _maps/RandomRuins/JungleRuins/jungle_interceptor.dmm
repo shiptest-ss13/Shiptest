@@ -52,15 +52,6 @@
 /obj/structure/spacevine,
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ruin/jungle/interceptor/starhall)
-"aB" = (
-/obj/effect/spawner/structure/window/shuttle,
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "condorwindows";
-	name = "External Shutters"
-	},
-/obj/structure/spacevine,
-/turf/open/floor/plating,
-/area/ruin/jungle/interceptor/crewquarters)
 "aG" = (
 /obj/structure/lattice,
 /turf/open/floor/plating/dirt/jungle/dark,
@@ -92,7 +83,6 @@
 	name = "External Shutters"
 	},
 /obj/structure/frame/machine,
-/obj/structure/spacevine,
 /turf/open/floor/plating/airless,
 /area/ruin/jungle/interceptor/crashsite)
 "aZ" = (
@@ -108,7 +98,7 @@
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/interceptor/porthall)
 "bb" = (
-/obj/structure/table/wood/bar,
+/obj/structure/table/wood,
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
@@ -145,10 +135,7 @@
 	icon_state = "1-2"
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/light/small/broken{
-	dir = 8;
-	pixel_y = 14
-	},
+/obj/machinery/light/small/broken/directional/west,
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/crashsite)
 "bh" = (
@@ -173,11 +160,7 @@
 	pixel_x = -25;
 	pixel_y = -10
 	},
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = -25;
-	pixel_y = 6
-	},
+/obj/machinery/firealarm/directional/west,
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
 	},
@@ -200,9 +183,7 @@
 	dir = 1;
 	id = "starlauncherone"
 	},
-/obj/machinery/light/small/broken{
-	dir = 8
-	},
+/obj/machinery/light/small/broken/directional/west,
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/interceptor/starlauncherone)
 "bI" = (
@@ -233,9 +214,7 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
-/obj/machinery/light/broken{
-	dir = 4
-	},
+/obj/machinery/light/broken/directional/east,
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/interceptor/crashsite)
 "bQ" = (
@@ -255,10 +234,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/item/shard,
-/obj/machinery/light/small/broken{
-	dir = 4;
-	pixel_y = 12
-	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/jungle/interceptor/security)
 "bS" = (
@@ -273,6 +248,10 @@
 /obj/machinery/power/smes/shuttle{
 	dir = 1
 	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "External Shutters"
+	},
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/crashsite)
 "bV" = (
@@ -284,10 +263,6 @@
 /area/ruin/jungle/interceptor/bridge)
 "ca" = (
 /obj/structure/cable,
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "condorwindows";
-	name = "External Shutters"
-	},
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/interceptor/porthall)
 "cb" = (
@@ -330,7 +305,9 @@
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/porthall)
 "co" = (
-/obj/machinery/door/airlock/maintenance,
+/obj/machinery/door/airlock/maintenance{
+	dir = 4
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
@@ -396,6 +373,10 @@
 	},
 /obj/machinery/power/smes/shuttle{
 	dir = 1
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "External Shutters"
 	},
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/starhall)
@@ -654,12 +635,15 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
-/obj/machinery/door/airlock/command/glass,
+/obj/machinery/door/airlock/command/glass{
+	dir = 8
+	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "bridgeshutters"
+	id = "bridgeshutters";
+	dir = 4
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -750,11 +734,7 @@
 	pixel_x = 25;
 	pixel_y = -6
 	},
-/obj/machinery/firealarm{
-	dir = 8;
-	pixel_x = 25;
-	pixel_y = 6
-	},
+/obj/machinery/firealarm/directional/east,
 /obj/structure/spacevine,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/jungle/interceptor/crashsite)
@@ -789,14 +769,10 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/robot_debris/gib,
-/obj/machinery/firealarm{
-	dir = 1;
-	pixel_y = -25;
-	pixel_x = 5
-	},
+/obj/machinery/firealarm/directional/south,
 /obj/machinery/light_switch{
 	dir = 1;
-	pixel_x = -7;
+	pixel_x = -10;
 	pixel_y = -23
 	},
 /turf/open/floor/plasteel/mono/dark,
@@ -833,6 +809,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/jungle/interceptor/starlauncherone)
+"gm" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "External Shutters";
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ruin/jungle/interceptor/starhall)
 "gq" = (
 /obj/machinery/door/window/northleft,
 /obj/effect/turf_decal/industrial/warning{
@@ -865,9 +850,7 @@
 /obj/structure/curtain/cloth,
 /obj/machinery/door/window/westleft,
 /obj/effect/decal/remains/human,
-/obj/machinery/light/broken{
-	dir = 4
-	},
+/obj/machinery/light/broken/directional/east,
 /obj/effect/turf_decal/corner/opaque/black{
 	icon_state = "siding_line";
 	dir = 4
@@ -891,6 +874,10 @@
 /obj/item/shard,
 /obj/machinery/power/smes/shuttle{
 	dir = 1
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "External Shutters"
 	},
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/porthall)
@@ -980,11 +967,12 @@
 /area/ruin/jungle/interceptor/crashsite)
 "hC" = (
 /obj/effect/spawner/structure/window/shuttle,
+/obj/structure/spacevine,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "condorwindows";
-	name = "External Shutters"
+	name = "External Shutters";
+	dir = 4
 	},
-/obj/structure/spacevine,
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/starlauncherone)
 "hD" = (
@@ -993,9 +981,7 @@
 	},
 /obj/structure/catwalk/over,
 /obj/structure/spacevine,
-/obj/machinery/light/broken{
-	dir = 1
-	},
+/obj/machinery/light/broken/directional/north,
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/crashsite)
 "hE" = (
@@ -1061,9 +1047,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
-/obj/machinery/light/small/broken{
-	dir = 8
-	},
+/obj/machinery/light/small/broken/directional/west,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plasteel/tech/techmaint,
@@ -1098,9 +1082,7 @@
 /obj/structure/frame/machine,
 /obj/item/stack/cable_coil/cut/green,
 /obj/item/stack/ore/salvage/scrapmetal,
-/obj/machinery/light/small/broken{
-	dir = 8
-	},
+/obj/machinery/light/small/broken/directional/west,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/jungle/interceptor/starhall)
 "if" = (
@@ -1172,6 +1154,10 @@
 /obj/machinery/power/smes/shuttle{
 	dir = 1
 	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "External Shutters"
+	},
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/starhall)
 "iC" = (
@@ -1207,10 +1193,6 @@
 	dir = 1
 	},
 /obj/structure/cable,
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "condorwindows";
-	name = "External Shutters"
-	},
 /turf/open/floor/plating/airless,
 /area/ruin/jungle/interceptor/crashsite)
 "jf" = (
@@ -1295,11 +1277,7 @@
 	pixel_x = 25;
 	pixel_y = -6
 	},
-/obj/machinery/firealarm{
-	dir = 8;
-	pixel_x = 25;
-	pixel_y = 6
-	},
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/starhall)
 "jM" = (
@@ -1364,9 +1342,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/jungle/interceptor/starlaunchertwo)
 "km" = (
-/obj/machinery/light/broken{
-	dir = 4
-	},
+/obj/machinery/light/broken/directional/east,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plasteel/tech,
@@ -1418,9 +1394,7 @@
 /obj/item/shard,
 /obj/effect/decal/cleanable/glass,
 /obj/structure/spacevine,
-/obj/machinery/light/broken{
-	dir = 1
-	},
+/obj/machinery/light/broken/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/interceptor/starhall)
 "li" = (
@@ -1621,15 +1595,8 @@
 /area/ruin/jungle/interceptor/crashsite)
 "nw" = (
 /obj/structure/table/reinforced,
-/obj/item/radio/intercom/wideband{
-	dir = 8;
-	pixel_x = 22;
-	pixel_y = 1
-	},
-/obj/item/radio/intercom{
-	dir = 1;
-	pixel_y = -22
-	},
+/obj/item/radio/intercom/wideband/directional/east,
+/obj/item/radio/intercom/directional/south,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
@@ -1641,7 +1608,8 @@
 /area/ruin/jungle/interceptor/crashsite)
 "nA" = (
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "bridgeshutters"
+	id = "bridgeshutters";
+	dir = 4
 	},
 /obj/structure/lattice{
 	icon_state = "lattice-127"
@@ -1669,7 +1637,8 @@
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "condorwindows";
-	name = "External Shutters"
+	name = "External Shutters";
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/starlauncherone)
@@ -1731,9 +1700,7 @@
 "oj" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/door/firedoor/border_only,
-/obj/machinery/light/small/broken{
-	dir = 4
-	},
+/obj/machinery/light/small/broken/directional/east,
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/interceptor/afthall)
@@ -1742,11 +1709,7 @@
 	icon_state = "0-4"
 	},
 /obj/structure/table,
-/obj/item/radio/intercom{
-	dir = 1;
-	pixel_y = 6;
-	pixel_x = -6
-	},
+/obj/item/radio/intercom/directional/south,
 /obj/machinery/button/massdriver{
 	id = "starlaunchertwo";
 	name = "starboard launcher two button";
@@ -1757,7 +1720,7 @@
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/interceptor/starlaunchertwo)
 "oz" = (
-/obj/structure/table/wood/bar,
+/obj/structure/table/wood,
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -1795,17 +1758,25 @@
 	pixel_x = 25;
 	pixel_y = -9
 	},
-/obj/machinery/firealarm{
-	dir = 8;
-	pixel_x = 25;
-	pixel_y = 6
-	},
+/obj/machinery/firealarm/directional/east,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/green{
 	icon_state = "1-2"
 	},
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/starlaunchertwo)
+"oY" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/structure/cable/orange{
+	icon_state = "0-4"
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "External Shutters";
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/jungle/interceptor/security)
 "oZ" = (
 /obj/effect/turf_decal/corner/opaque/purple/three_quarters{
 	icon_state = "borderfloorcorner_white";
@@ -1919,9 +1890,7 @@
 /obj/structure/frame/computer{
 	anchored = 1
 	},
-/obj/machinery/light/broken{
-	dir = 1
-	},
+/obj/machinery/light/broken/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/ruin/jungle/interceptor/bridge)
 "pW" = (
@@ -1939,7 +1908,9 @@
 /turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/ruin/jungle/interceptor/crashsite)
 "qa" = (
-/obj/machinery/door/airlock/public/glass,
+/obj/machinery/door/airlock/public/glass{
+	dir = 4
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
@@ -1961,9 +1932,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/jungle/interceptor/forehall)
 "qf" = (
-/obj/machinery/light/broken{
-	dir = 8
-	},
+/obj/machinery/light/broken/directional/west,
 /obj/effect/decal/cleanable/robot_debris/gib,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
@@ -1991,10 +1960,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/light/small/broken{
-	dir = 4;
-	pixel_y = 12
-	},
+/obj/machinery/light/small/broken/directional/east,
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/interceptor/starlaunchertwo)
 "ql" = (
@@ -2013,9 +1979,7 @@
 	pixel_y = -23
 	},
 /obj/structure/closet/emcloset/anchored,
-/obj/machinery/light/small/broken{
-	dir = 4
-	},
+/obj/machinery/light/small/broken/directional/east,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine,
 /turf/open/floor/plasteel/tech/techmaint,
@@ -2044,9 +2008,7 @@
 /obj/effect/turf_decal/corner/opaque/bottlegreen/border{
 	dir = 5
 	},
-/obj/machinery/light/small/broken{
-	dir = 4
-	},
+/obj/machinery/light/small/broken/directional/east,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/jungle/interceptor/starhall)
 "qy" = (
@@ -2159,9 +2121,7 @@
 "rH" = (
 /obj/effect/turf_decal/corner_steel_grid/full,
 /obj/machinery/airalarm/directional/south,
-/obj/machinery/light/broken{
-	dir = 8
-	},
+/obj/machinery/light/broken/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/interceptor/starhall)
 "rO" = (
@@ -2209,16 +2169,10 @@
 	dir = 1
 	},
 /obj/structure/cable,
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "condorwindows";
-	name = "External Shutters"
-	},
 /turf/open/floor/plating/airless,
 /area/ruin/jungle/interceptor/starhall)
 "sf" = (
-/obj/machinery/light/broken{
-	dir = 8
-	},
+/obj/machinery/light/broken/directional/west,
 /obj/structure/lattice{
 	icon_state = "lattice-13"
 	},
@@ -2277,9 +2231,7 @@
 /obj/structure/lattice{
 	icon_state = "lattice-127"
 	},
-/obj/machinery/light/broken{
-	dir = 1
-	},
+/obj/machinery/light/broken/directional/north,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/ruin/jungle/interceptor/bridge)
 "sV" = (
@@ -2329,9 +2281,7 @@
 	dir = 10
 	},
 /obj/structure/frame/machine,
-/obj/machinery/light/small/broken{
-	dir = 8
-	},
+/obj/machinery/light/small/broken/directional/west,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/jungle/interceptor/starhall)
@@ -2386,7 +2336,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/interceptor/afthall)
 "tQ" = (
-/obj/structure/table/wood/bar,
+/obj/structure/table/wood,
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
@@ -2507,7 +2457,7 @@
 /turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/ruin/jungle/interceptor/crashsite)
 "uR" = (
-/obj/structure/table/wood/bar,
+/obj/structure/table/wood,
 /obj/structure/window/reinforced/spawner{
 	dir = 4
 	},
@@ -2579,7 +2529,9 @@
 /turf/open/floor/wood,
 /area/ruin/jungle/interceptor/starhall)
 "vx" = (
-/obj/machinery/door/airlock/security/glass,
+/obj/machinery/door/airlock/security/glass{
+	dir = 4
+	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
@@ -2600,6 +2552,14 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/crashsite)
+"vF" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "bridgeshutters";
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ruin/jungle/interceptor/bridge)
 "vG" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ruin/jungle/interceptor/security)
@@ -2607,7 +2567,8 @@
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "condorwindows";
-	name = "External Shutters"
+	name = "External Shutters";
+	dir = 8
 	},
 /obj/structure/spacevine,
 /turf/open/floor/plating,
@@ -2633,7 +2594,8 @@
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "condorwindows";
-	name = "External Shutters"
+	name = "External Shutters";
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/starlaunchertwo)
@@ -2650,9 +2612,7 @@
 /obj/effect/turf_decal/corner/opaque/blue/three_quarters{
 	dir = 4
 	},
-/obj/machinery/light/broken{
-	dir = 8
-	},
+/obj/machinery/light/broken/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/interceptor/afthall)
 "wn" = (
@@ -2663,7 +2623,8 @@
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "condorwindows";
-	name = "External Shutters"
+	name = "External Shutters";
+	dir = 4
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/interceptor/forehall)
@@ -2723,10 +2684,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small/broken{
-	dir = 8;
-	pixel_y = 14
-	},
+/obj/machinery/light/small/broken/directional/west,
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/crashsite)
 "wJ" = (
@@ -2764,9 +2722,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/broken{
-	dir = 4
-	},
+/obj/machinery/light/broken/directional/east,
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/interceptor/starhall)
@@ -2777,6 +2733,14 @@
 "wS" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ruin/jungle/interceptor/forehall)
+"wT" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "bridgeshutters";
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/jungle/interceptor/bridge)
 "wU" = (
 /obj/structure/spacevine,
 /turf/closed/wall/mineral/titanium,
@@ -2797,7 +2761,7 @@
 /turf/open/floor/plating/grass/jungle/lit,
 /area/ruin/jungle/interceptor/porthall)
 "xa" = (
-/obj/structure/table/wood/bar,
+/obj/structure/table/wood,
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
@@ -2875,9 +2839,7 @@
 	icon_state = "borderfloor_white";
 	dir = 4
 	},
-/obj/machinery/light/broken{
-	dir = 4
-	},
+/obj/machinery/light/broken/directional/east,
 /turf/open/floor/plasteel/white,
 /area/ruin/jungle/interceptor/porthall)
 "xY" = (
@@ -2912,7 +2874,7 @@
 /obj/structure/toilet{
 	dir = 4
 	},
-/obj/machinery/light/small/broken,
+/obj/machinery/light/small/broken/directional/south,
 /obj/effect/decal/remains/human,
 /obj/item/clothing/under/rank/civilian/janitor/sanitation_tech,
 /obj/item/clothing/head/soft/purple,
@@ -2972,7 +2934,8 @@
 "yw" = (
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "condorwindows";
-	name = "External Shutters"
+	name = "External Shutters";
+	dir = 8
 	},
 /obj/item/shard,
 /obj/structure/grille,
@@ -3010,9 +2973,7 @@
 "yZ" = (
 /obj/effect/turf_decal/corner_steel_grid/full,
 /obj/item/kirbyplants/dead,
-/obj/machinery/light/broken{
-	dir = 8
-	},
+/obj/machinery/light/broken/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/interceptor/starhall)
 "za" = (
@@ -3031,6 +2992,10 @@
 /obj/item/shard,
 /obj/machinery/power/smes/shuttle{
 	dir = 1
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "External Shutters"
 	},
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/crashsite)
@@ -3124,9 +3089,7 @@
 /obj/item/clothing/gloves/combat,
 /obj/item/clothing/shoes/jackboots,
 /obj/item/ammo_box/c9mm,
-/obj/machinery/light/small/broken{
-	dir = 1
-	},
+/obj/machinery/light/small/broken/directional/north,
 /obj/effect/turf_decal/corner/transparent/bar/three_quarters{
 	dir = 4
 	},
@@ -3260,10 +3223,6 @@
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/plastic,
-/obj/machinery/light/small/broken{
-	dir = 8;
-	pixel_y = 14
-	},
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/crewquarters)
 "Bh" = (
@@ -3405,11 +3364,7 @@
 	pixel_x = -25;
 	pixel_y = -10
 	},
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = -25;
-	pixel_y = 6
-	},
+/obj/machinery/firealarm/directional/west,
 /obj/structure/cable/green{
 	icon_state = "1-2"
 	},
@@ -3445,18 +3400,22 @@
 	pixel_x = 25;
 	pixel_y = -6
 	},
-/obj/machinery/firealarm{
-	dir = 8;
-	pixel_x = 25;
-	pixel_y = 6
-	},
+/obj/machinery/firealarm/directional/east,
 /obj/machinery/door/firedoor/border_only,
-/obj/machinery/light/broken{
-	dir = 4
-	},
+/obj/machinery/light/broken/directional/east,
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/interceptor/starhall)
+"CN" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "External Shutters";
+	dir = 4
+	},
+/obj/structure/spacevine,
+/turf/open/floor/plating,
+/area/ruin/jungle/interceptor/crewquarters)
 "CO" = (
 /obj/structure/flora/ausbushes/fernybush,
 /obj/structure/flora/ausbushes/grassybush,
@@ -3525,7 +3484,8 @@
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "condorwindows";
-	name = "External Shutters"
+	name = "External Shutters";
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/security)
@@ -3556,9 +3516,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/broken{
-	dir = 1
-	},
+/obj/machinery/light/broken/directional/north,
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plasteel/white,
 /area/ruin/jungle/interceptor/porthall)
@@ -3569,10 +3527,7 @@
 /area/ruin/jungle/interceptor/crashsite)
 "DG" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
-/obj/machinery/firealarm{
-	pixel_y = 25;
-	pixel_x = 5
-	},
+/obj/machinery/firealarm/directional/north,
 /obj/machinery/light_switch{
 	pixel_y = 23;
 	pixel_x = -7
@@ -3584,7 +3539,9 @@
 /obj/structure/cable/orange{
 	icon_state = "4-8"
 	},
-/obj/machinery/door/airlock/security,
+/obj/machinery/door/airlock/security{
+	dir = 4
+	},
 /obj/effect/turf_decal/corner/opaque/red/full,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -3659,19 +3616,12 @@
 /obj/effect/turf_decal/corner/opaque/bottlegreen/border{
 	dir = 5
 	},
-/obj/machinery/light/small/broken{
-	dir = 4;
-	pixel_y = 12
-	},
+/obj/machinery/light/small/broken/directional/east,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/jungle/interceptor/starhall)
 "ES" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/firealarm{
-	dir = 8;
-	pixel_x = 25;
-	pixel_y = 6
-	},
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/interceptor/crashsite)
 "EY" = (
@@ -3699,9 +3649,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small/broken{
-	dir = 8
-	},
+/obj/machinery/light/small/broken/directional/west,
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/interceptor/starlauncherone)
 "Fk" = (
@@ -3838,9 +3786,7 @@
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/crashsite)
 "GM" = (
-/obj/machinery/light/small/broken{
-	dir = 4
-	},
+/obj/machinery/light/small/broken/directional/east,
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/crashsite)
 "GT" = (
@@ -3852,10 +3798,7 @@
 /obj/structure/cable/green{
 	icon_state = "1-9"
 	},
-/obj/machinery/light/small{
-	dir = 4;
-	pixel_y = 12
-	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/starhall)
 "GU" = (
@@ -3965,7 +3908,8 @@
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "condorwindows";
-	name = "External Shutters"
+	name = "External Shutters";
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/afthall)
@@ -4023,7 +3967,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
-/obj/machinery/door/airlock/command/glass,
+/obj/machinery/door/airlock/command/glass{
+	dir = 4
+	},
 /obj/structure/cable/green{
 	icon_state = "4-8"
 	},
@@ -4031,7 +3977,8 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "bridgeshutters"
+	id = "bridgeshutters";
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/jungle/interceptor/bridge)
@@ -4039,7 +3986,9 @@
 /obj/structure/cable/green{
 	icon_state = "4-8"
 	},
-/obj/machinery/door/airlock/maintenance,
+/obj/machinery/door/airlock/maintenance{
+	dir = 4
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
@@ -4061,7 +4010,9 @@
 /turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/ruin/jungle/interceptor/afthall)
 "Iw" = (
-/obj/machinery/door/airlock/public,
+/obj/machinery/door/airlock/public{
+	dir = 8
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
@@ -4124,7 +4075,7 @@
 /turf/open/floor/plating/dirt/jungle/lit,
 /area/ruin/jungle/interceptor/crashsite)
 "Je" = (
-/obj/structure/table/wood/bar,
+/obj/structure/table/wood,
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
@@ -4152,11 +4103,7 @@
 	pixel_x = -25;
 	pixel_y = -10
 	},
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = -25;
-	pixel_y = 6
-	},
+/obj/machinery/firealarm/directional/west,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/crashsite)
@@ -4240,10 +4187,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
-/obj/machinery/light/small/broken{
-	dir = 4;
-	pixel_y = 12
-	},
+/obj/machinery/light/small/broken/directional/east,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/jungle/interceptor/starlauncherone)
 "JZ" = (
@@ -4281,6 +4225,10 @@
 /obj/item/stack/cable_coil/cut/orange,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "External Shutters"
+	},
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/interceptor/porthall)
 "Kr" = (
@@ -4347,6 +4295,7 @@
 	pixel_x = -25;
 	pixel_y = -16
 	},
+/obj/machinery/light/small/broken/directional/west,
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/crewquarters)
 "KW" = (
@@ -4362,6 +4311,7 @@
 /obj/structure/cable/green{
 	icon_state = "0-8"
 	},
+/obj/item/radio/intercom/directional/east,
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/interceptor/starlauncherone)
 "Ld" = (
@@ -4369,17 +4319,11 @@
 	dir = 4
 	},
 /obj/machinery/suit_storage_unit/open,
-/obj/machinery/light/broken{
-	dir = 4
-	},
+/obj/machinery/light/broken/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/interceptor/afthall)
 "Le" = (
-/obj/machinery/firealarm{
-	dir = 8;
-	pixel_x = 25;
-	pixel_y = 6
-	},
+/obj/machinery/firealarm/directional/east,
 /obj/machinery/light_switch{
 	dir = 8;
 	pixel_x = 25;
@@ -4389,12 +4333,13 @@
 /area/ruin/jungle/interceptor/starhall)
 "Lf" = (
 /obj/effect/spawner/structure/window/shuttle,
+/obj/structure/spacevine,
+/obj/structure/spacevine,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "condorwindows";
-	name = "External Shutters"
+	name = "External Shutters";
+	dir = 4
 	},
-/obj/structure/spacevine,
-/obj/structure/spacevine,
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/interceptor/starlauncherone)
 "Lh" = (
@@ -4554,13 +4499,6 @@
 /obj/item/clothing/under/rank/prisoner,
 /obj/item/clothing/shoes/sneakers/orange,
 /obj/item/clothing/shoes/sneakers/orange,
-/obj/machinery/button/massdriver{
-	id = "starlauncherone";
-	name = "starboard launcher one button";
-	pixel_x = 4;
-	dir = 1;
-	pixel_y = 10
-	},
 /obj/structure/bed,
 /obj/item/bedsheet/orange,
 /obj/effect/turf_decal/corner/opaque/orange/bordercee,
@@ -4572,6 +4510,7 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/effect/decal/cleanable/glass,
+/obj/machinery/light/small/broken/directional/east,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/jungle/interceptor/security)
 "MF" = (
@@ -4817,11 +4756,6 @@
 /area/ruin/jungle/interceptor/forehall)
 "Oy" = (
 /obj/structure/table,
-/obj/item/radio/intercom{
-	dir = 1;
-	pixel_y = 6;
-	pixel_x = 5
-	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
@@ -5004,7 +4938,7 @@
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/porthall)
 "Qf" = (
-/obj/structure/table/wood/bar,
+/obj/structure/table/wood,
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -5108,9 +5042,7 @@
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/starhall)
 "Rb" = (
-/obj/machinery/light/broken{
-	dir = 1
-	},
+/obj/machinery/light/broken/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/interceptor/porthall)
@@ -5127,7 +5059,7 @@
 	},
 /obj/structure/frame/machine,
 /obj/item/stack/cable_coil/cut/green,
-/obj/machinery/light/broken,
+/obj/machinery/light/broken/directional/south,
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
 	},
@@ -5157,9 +5089,7 @@
 	dir = 1;
 	id = "starlaunchertwo"
 	},
-/obj/machinery/light/small/broken{
-	dir = 8
-	},
+/obj/machinery/light/small/broken/directional/west,
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/interceptor/starlaunchertwo)
 "RD" = (
@@ -5203,9 +5133,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
-/obj/machinery/light/small/broken{
-	dir = 8
-	},
+/obj/machinery/light/small/broken/directional/west,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/jungle/interceptor/crashsite)
@@ -5262,11 +5190,7 @@
 	pixel_x = 25;
 	pixel_y = -6
 	},
-/obj/machinery/firealarm{
-	dir = 8;
-	pixel_x = 25;
-	pixel_y = 6
-	},
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/interceptor/starhall)
 "Sr" = (
@@ -5330,7 +5254,9 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ruin/jungle/interceptor/afthall)
 "SG" = (
-/obj/machinery/door/airlock/public/glass,
+/obj/machinery/door/airlock/public/glass{
+	dir = 4
+	},
 /obj/structure/cable/orange{
 	icon_state = "4-8"
 	},
@@ -5378,6 +5304,15 @@
 /obj/effect/decal/cleanable/plastic,
 /turf/open/floor/wood,
 /area/ruin/jungle/interceptor/crewquarters)
+"SP" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "External Shutters";
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/jungle/interceptor/starhall)
 "ST" = (
 /obj/machinery/power/terminal,
 /obj/structure/cable/orange{
@@ -5674,10 +5609,6 @@
 /area/ruin/jungle/interceptor/starhall)
 "UZ" = (
 /obj/structure/cable,
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "condorwindows";
-	name = "External Shutters"
-	},
 /obj/structure/frame/machine,
 /obj/item/stack/cable_coil/cut/orange,
 /obj/item/stack/ore/salvage/scrapmetal,
@@ -5714,9 +5645,7 @@
 /obj/effect/turf_decal/corner/opaque/bottlegreen/border{
 	dir = 9
 	},
-/obj/machinery/light/small/broken{
-	dir = 1
-	},
+/obj/machinery/light/small/broken/directional/north,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/jungle/interceptor/starhall)
 "Vq" = (
@@ -5729,17 +5658,15 @@
 /obj/machinery/camera/autoname{
 	dir = 1
 	},
-/obj/machinery/light/small/broken{
-	dir = 4;
-	pixel_y = 12
-	},
+/obj/machinery/light/small/broken/directional/east,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/jungle/interceptor/starlauncherone)
 "Vr" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "condorwindows";
-	name = "External Shutters"
+	name = "External Shutters";
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/crashsite)
@@ -5836,6 +5763,15 @@
 /obj/structure/flora/ausbushes/leafybush,
 /turf/open/floor/plating/grass/jungle/lit,
 /area/ruin/jungle/interceptor/crashsite)
+"Wc" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "External Shutters";
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/jungle/interceptor/crashsite)
 "We" = (
 /obj/structure/cable/orange{
 	icon_state = "2-8"
@@ -5895,9 +5831,7 @@
 /turf/closed/wall/mineral/titanium,
 /area/ruin/jungle/interceptor/crewquarters)
 "Ww" = (
-/obj/machinery/light/small/broken{
-	dir = 4
-	},
+/obj/machinery/light/small/broken/directional/east,
 /obj/effect/decal/cleanable/blood/old,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/techmaint,
@@ -5926,9 +5860,7 @@
 /obj/structure/table,
 /obj/machinery/chem_dispenser/drinks,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
-/obj/machinery/light/broken{
-	dir = 1
-	},
+/obj/machinery/light/broken/directional/north,
 /turf/open/floor/wood,
 /area/ruin/jungle/interceptor/starhall)
 "WP" = (
@@ -5967,7 +5899,7 @@
 /obj/effect/turf_decal/corner/opaque/blue/border{
 	dir = 6
 	},
-/obj/machinery/light/broken,
+/obj/machinery/light/broken/directional/south,
 /turf/open/floor/plasteel/white,
 /area/ruin/jungle/interceptor/porthall)
 "Xh" = (
@@ -6055,7 +5987,7 @@
 /obj/effect/turf_decal/corner/opaque/bottlegreen/border{
 	dir = 10
 	},
-/obj/machinery/light/small/broken,
+/obj/machinery/light/small/broken/directional/south,
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/jungle/interceptor/starhall)
@@ -6075,7 +6007,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/jungle/interceptor/starlauncherone)
 "XQ" = (
-/obj/structure/table/wood/bar,
+/obj/structure/table/wood,
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/wood,
@@ -6094,7 +6026,9 @@
 /area/ruin/jungle/interceptor/crashsite)
 "Ya" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/door/airlock/maintenance,
+/obj/machinery/door/airlock/maintenance{
+	dir = 4
+	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -6233,11 +6167,7 @@
 	dir = 1;
 	pixel_y = 2
 	},
-/obj/item/radio/intercom{
-	dir = 1;
-	pixel_y = 6;
-	pixel_x = 5
-	},
+/obj/item/radio/intercom/directional/east,
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/interceptor/crashsite)
 "YN" = (
@@ -6298,7 +6228,9 @@
 /obj/structure/cable/green{
 	icon_state = "4-8"
 	},
-/obj/machinery/door/airlock/security/glass,
+/obj/machinery/door/airlock/security/glass{
+	dir = 4
+	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
@@ -6638,7 +6570,7 @@ Hv
 bA
 OQ
 Vr
-Vr
+Wc
 FE
 FE
 OQ
@@ -7055,7 +6987,7 @@ Be
 JZ
 Hv
 FE
-Vr
+Wc
 rs
 tD
 bI
@@ -7214,7 +7146,7 @@ bA
 FE
 FE
 OQ
-Vr
+Wc
 SW
 qJ
 OQ
@@ -7528,7 +7460,7 @@ au
 YY
 YY
 GZ
-Dr
+oY
 Dr
 vG
 Ah
@@ -7646,7 +7578,7 @@ hH
 Ok
 xP
 KU
-Rd
+wT
 Ms
 zd
 fi
@@ -7964,9 +7896,9 @@ Wo
 BU
 Yi
 Mb
-Rd
+vF
 nA
-Rd
+wT
 Ik
 Km
 Km
@@ -8003,7 +7935,7 @@ Zx
 Zx
 ao
 ql
-aB
+CN
 RK
 Hn
 gx
@@ -8114,7 +8046,7 @@ iO
 vl
 vl
 Wt
-aB
+CN
 RK
 RK
 Wt
@@ -8594,7 +8526,7 @@ Gc
 Gc
 Ni
 hC
-hC
+nF
 nF
 Ni
 Gc
@@ -8824,7 +8756,7 @@ DM
 XE
 DM
 DM
-pC
+SP
 wO
 XE
 cL
@@ -8977,9 +8909,9 @@ Tw
 uv
 Uu
 wO
-pC
-pC
-pC
+gm
+gm
+gm
 XE
 DM
 DM

@@ -77,6 +77,7 @@
 	if(!..() || (!COOLDOWN_FINISHED(src, rename_cooldown) && !force))
 		return FALSE
 	message_admins("[key_name_admin(usr)] renamed vessel '[oldname]' to '[new_name]'")
+	log_admin("[key_name(src)] has renamed vessel '[oldname]' to '[new_name]'")
 	shuttle_port?.name = new_name
 	ship_account.account_holder = new_name
 	if(shipkey)
@@ -188,9 +189,6 @@
 		Dock(E)
 
 /datum/overmap/ship/controlled/burn_engines(percentage = 100, deltatime)
-	if(docked_to || docking)
-		CRASH("[src] burned engines while docking or docked!")
-
 	var/thrust_used = 0 //The amount of thrust that the engines will provide with one burn
 	refresh_engines()
 	calculate_avg_fuel()

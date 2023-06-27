@@ -152,7 +152,7 @@
 
 /obj/item/clothing/head/soft/inteq
 	name = "inteq utility cover"
-	desc = "A drab brown utility cover with a golden insignia on it. Worn by IRMG operators."
+	desc = "A rich brown utility cover with the golden shield of the IRMG on it."
 	icon_state = "inteqsoft"
 	soft_type = "inteq"
 	armor = list("melee" = 30, "bullet" = 25, "laser" = 25, "energy" = 35, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = 50)
@@ -160,7 +160,7 @@
 
 /obj/item/clothing/head/soft/inteq/corpsman
 	name = "inteq corpsman utility cover"
-	desc = "A sterile white utility cover with a blue cross emblazoned on it. Worn by the IRMG's support division corpsmen."
+	desc = "A sterile white utility cover with a green cross emblazoned on it. Worn by the IRMG's support division Corpsmen."
 	icon_state = "inteqmedsoft"
 	soft_type = "inteqmed"
 	dog_fashion = null
