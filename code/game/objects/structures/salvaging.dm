@@ -13,10 +13,7 @@
 
 /obj/structure/salvageable/proc/dismantle(mob/living/user)
 	var/obj/frame = new frame_type(loc)
-	if(anchored)
-		frame.anchored = TRUE
-	else
-		frame.anchored = FALSE
+	frame.anchored = anchored
 	frame.dir = dir
 	for(var/path in salvageable_parts)
 		if(prob(salvageable_parts[path]))
