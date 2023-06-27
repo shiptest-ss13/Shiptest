@@ -86,7 +86,7 @@
 	blueeffect.plane = FULLSCREEN_PLANE
 	blueeffect.mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	M.client.screen += blueeffect
-	sleep(20)
+	stoplag(20)
 	M.client.screen -= blueeffect
 	qdel(blueeffect)
 
