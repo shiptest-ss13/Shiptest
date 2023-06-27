@@ -94,7 +94,7 @@
 	desc = "Contains two state of the art survey packs, great for getting information on planetary conditions."
 	cost = 2500
 	contains = list(
-		/obj/item/gear_pack/survey_pack
-		/obj/item/gear_pack/survey_pack
+		/obj/item/gear_pack/survey_pack,
+		/obj/item/gear_pack/survey_pack,
 	)
 	crate_name = "Survey Scanner Kit"
