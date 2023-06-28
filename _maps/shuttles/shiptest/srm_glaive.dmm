@@ -363,7 +363,9 @@
 /obj/item/kitchen/knife/combat,
 /obj/item/gun/ballistic/revolver/nagant,
 /obj/item/ammo_box/n762,
-/obj/structure/closet/secure_closet/montagnes,
+/obj/structure/closet/secure_closet/montagnes{
+	req_access = list(22)
+	},
 /obj/item/disk/holodisk/roumain,
 /obj/item/clothing/shoes/cowboy/black,
 /obj/item/clothing/shoes/cowboy,
