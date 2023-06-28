@@ -325,7 +325,7 @@
 	},
 /obj/machinery/computer/telecomms/monitor{
 	dir = 8;
-	network = "ntsv_commnet"
+	network = "nt_commnet"
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 8
@@ -2244,7 +2244,7 @@
 /obj/machinery/telecomms/bus/preset_two{
 	network = "nt_commnet"
 	},
-/turf/open/floor/circuit/green/telecomms/mainframe,
+/turf/open/floor/circuit/green,
 /area/ship/engineering/communications)
 "yg" = (
 /obj/structure/girder,
@@ -2273,7 +2273,7 @@
 	id = "Nanotrasen Receiver"
 	},
 /obj/structure/window/reinforced/spawner,
-/turf/open/floor/circuit/green/telecomms/mainframe,
+/turf/open/floor/circuit/green,
 /area/ship/engineering/communications)
 "yJ" = (
 /obj/structure/table/reinforced,
@@ -2491,7 +2491,7 @@
 	id = "Nanotrasen Broadcaster"
 	},
 /obj/structure/window/reinforced/spawner,
-/turf/open/floor/circuit/green/telecomms/mainframe,
+/turf/open/floor/circuit/green,
 /area/ship/engineering/communications)
 "Bl" = (
 /obj/structure/railing{
@@ -2895,7 +2895,7 @@
 /obj/machinery/telecomms/hub/preset{
 	network = "nt_commnet"
 	},
-/turf/open/floor/circuit/telecomms/mainframe,
+/turf/open/floor/circuit,
 /area/ship/engineering/communications)
 "EU" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -2988,13 +2988,13 @@
 "FL" = (
 /obj/machinery/blackbox_recorder,
 /obj/structure/window/reinforced/spawner/north,
-/turf/open/floor/circuit/telecomms/mainframe,
+/turf/open/floor/circuit,
 /area/ship/engineering/communications)
 "FN" = (
 /obj/machinery/telecomms/processor/preset_two{
 	network = "nt_commnet"
 	},
-/turf/open/floor/circuit/green/telecomms/mainframe,
+/turf/open/floor/circuit/green,
 /area/ship/engineering/communications)
 "FQ" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3093,7 +3093,7 @@
 	network = "nt_commnet";
 	id = "Tegus Relay"
 	},
-/turf/open/floor/circuit/telecomms/mainframe,
+/turf/open/floor/circuit,
 /area/ship/engineering/communications)
 "Hl" = (
 /obj/effect/turf_decal/industrial/traffic{
@@ -3926,7 +3926,7 @@
 	network = "nt_commnet"
 	},
 /obj/structure/window/reinforced/spawner/north,
-/turf/open/floor/circuit/telecomms/mainframe,
+/turf/open/floor/circuit,
 /area/ship/engineering/communications)
 "PQ" = (
 /obj/machinery/cryopod{
