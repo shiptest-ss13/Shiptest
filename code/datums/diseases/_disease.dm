@@ -65,7 +65,7 @@
 /datum/disease/proc/stage_act()
 	var/cure = has_cure()
 
-	if(carrier && !cure || if(affected_mob.reagents.has_reagent(/datum/reagent/medicine/spaceacillin))
+	if(carrier && !cure || if(affected_mob.reagents.has_reagent(/datum/reagent/medicine/spaceacillin)))
 		return
 
 	stage = min(stage, max_stages)

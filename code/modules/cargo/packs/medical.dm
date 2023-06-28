@@ -172,3 +172,17 @@
 	contains = list(/obj/machinery/iv_drip/saline)
 	crate_name = "saline glucose crate"
 	crate_type = /obj/structure/closet/crate/large
+
+/datum/supply_pack/medical/antiviral
+	name = "Antiviral Syringe Kit"
+	desc = "Contains several syringes preloaded with Spaceacillin."
+	cost = 1000
+	contains = list(
+		/obj/item/reagent_containers/syringe/antiviral,
+		/obj/item/reagent_containers/syringe/antiviral,
+		/obj/item/reagent_containers/syringe/antiviral,
+		/obj/item/reagent_containers/syringe/antiviral,
+		/obj/item/reagent_containers/syringe/antiviral,
+		/obj/item/reagent_containers/syringe/antiviral
+	)
+	crate_name = "Antiviral Syringes"
