@@ -24,6 +24,9 @@
 	if(!(type in D.viable_mobtypes))
 		return FALSE
 
+	if(reagents.has_reagent(/datum/reagent/medicine/spaceacillin))
+		return FALSE
+
 	return TRUE
 
 
