@@ -392,9 +392,4 @@
 	name = "Anole Transport Shuttle"
 	prefix = "NTSV"
 
-/datum/map_template/shuttle/subshuttles/anole/damaged
-	file_name = "nanotrasen_anole_damaged"
-	name = "Anole Transport Shuttle (Damaged)"
-	prefix = "NTSV"
-
 //your subshuttle here

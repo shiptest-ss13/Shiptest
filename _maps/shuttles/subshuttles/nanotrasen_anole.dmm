@@ -197,18 +197,20 @@
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/shuttle)
 "oi" = (
-/obj/machinery/atmospherics/components/unary/portables_connector/visible/layer4{
+/obj/machinery/atmospherics/components/unary/tank/air{
+	piping_layer = 4;
 	dir = 1
 	},
-/obj/machinery/portable_atmospherics/canister/air,
 /turf/open/floor/plasteel/tech,
 /area/ship/shuttle)
 "oI" = (
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
-/obj/machinery/computer/crew/retro{
-	dir = 8
+/obj/item/choice_beacon/computer,
+/obj/structure/frame/computer/retro{
+	dir = 8;
+	anchored = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/shuttle)

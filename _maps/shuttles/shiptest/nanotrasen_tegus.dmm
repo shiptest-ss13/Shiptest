@@ -2387,7 +2387,7 @@
 /area/ship/engineering/engine)
 "zY" = (
 /obj/effect/landmark/subship{
-	subship_template = /datum/map_template/shuttle/subshuttles/anole/damaged
+	subship_template = /datum/map_template/shuttle/subshuttles/anole
 	},
 /obj/effect/turf_decal/ntspaceworks_small,
 /turf/open/floor/plating,
@@ -4180,19 +4180,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
-"SF" = (
-/obj/effect/turf_decal/industrial/outline/yellow,
-/obj/structure/closet/crate/engineering{
-	name = "Shuttle Repair Supplies"
-	},
-/obj/item/stack/sheet/metal/five,
-/obj/item/stack/sheet/glass/five,
-/obj/item/storage/box/lights/mixed,
-/obj/item/storage/box/stockparts/basic,
-/obj/item/choice_beacon/computer,
-/obj/item/circuitboard/computer/shuttle/helm,
-/turf/open/floor/plasteel/dark,
-/area/ship/cargo)
 "SI" = (
 /obj/machinery/door/airlock/grunge{
 	dir = 4;
@@ -5335,7 +5322,7 @@ pO
 Ku
 Fg
 GQ
-SF
+Ak
 Rp
 pC
 kG
