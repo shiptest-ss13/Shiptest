@@ -14,7 +14,6 @@
 		/obj/item/clothing/suit/wizrobe/yellow = 1,
 		/obj/item/clothing/shoes/sandal/magic = 1,
 		/obj/item/staff = 2)
-	contraband = list(/obj/item/reagent_containers/glass/bottle/wizarditis = 1)	//No one can get to the machine to hack it anyways; for the lulz - Microwave
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 100, "energy" = 100, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 50)
 	resistance_flags = FIRE_PROOF
 	default_price = 250

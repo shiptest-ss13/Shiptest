@@ -319,8 +319,6 @@
 	new /mob/living/simple_animal/hostile/asteroid/hivelord/legion(loc)
 	new /mob/living/simple_animal/hostile/asteroid/hivelord/legion(loc)
 	new /mob/living/simple_animal/hostile/asteroid/hivelord/legion(loc)
-	if(prob(45))
-		new /obj/item/reagent_containers/glass/bottle/necropolis_seed(loc)
 	..(gibbed)
 
 /mob/living/simple_animal/hostile/big_legion/Initialize()

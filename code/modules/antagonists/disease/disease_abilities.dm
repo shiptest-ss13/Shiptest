@@ -23,19 +23,14 @@ new /datum/disease_ability/symptom/powerful/narcolepsy,
 new /datum/disease_ability/symptom/medium/fever,
 new /datum/disease_ability/symptom/medium/shivering,
 new /datum/disease_ability/symptom/medium/headache,
-new /datum/disease_ability/symptom/medium/nano_boost,
-new /datum/disease_ability/symptom/medium/nano_destroy,
 new /datum/disease_ability/symptom/medium/viraladaptation,
-new /datum/disease_ability/symptom/medium/viralevolution,
 new /datum/disease_ability/symptom/medium/disfiguration,
 new /datum/disease_ability/symptom/medium/polyvitiligo,
 new /datum/disease_ability/symptom/medium/itching,
 new /datum/disease_ability/symptom/medium/heal/weight_loss,
 new /datum/disease_ability/symptom/medium/heal/sensory_restoration,
 new /datum/disease_ability/symptom/medium/heal/mind_restoration,
-new /datum/disease_ability/symptom/powerful/fire,
 new /datum/disease_ability/symptom/powerful/flesh_eating,
-new /datum/disease_ability/symptom/powerful/genetic_mutation,
 new /datum/disease_ability/symptom/powerful/inorganic_adaptation,
 new /datum/disease_ability/symptom/powerful/heal/starlight,
 new /datum/disease_ability/symptom/powerful/heal/oxygen,
@@ -362,11 +357,6 @@ new /datum/disease_ability/symptom/powerful/youth
 /datum/disease_ability/symptom/medium/headache
 	symptoms = list(/datum/symptom/headache)
 
-/datum/disease_ability/symptom/medium/nano_boost
-	symptoms = list(/datum/symptom/nano_boost)
-
-/datum/disease_ability/symptom/medium/nano_destroy
-	symptoms = list(/datum/symptom/nano_destroy)
 
 /datum/disease_ability/symptom/medium/viraladaptation
 	symptoms = list(/datum/symptom/viraladaptation)
@@ -402,15 +392,9 @@ new /datum/disease_ability/symptom/powerful/youth
 
 /******POWERFUL******/
 
-/datum/disease_ability/symptom/powerful/fire
-	symptoms = list(/datum/symptom/fire)
 
 /datum/disease_ability/symptom/powerful/flesh_eating
 	symptoms = list(/datum/symptom/flesh_eating)
-
-/datum/disease_ability/symptom/powerful/genetic_mutation
-	symptoms = list(/datum/symptom/genetic_mutation)
-	cost = 8
 
 /datum/disease_ability/symptom/powerful/inorganic_adaptation
 	symptoms = list(/datum/symptom/inorganic_adaptation)

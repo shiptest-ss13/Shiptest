@@ -245,10 +245,6 @@
 	desc = "A small bottle. Contains a small dosage of Fukkos Miracos."
 	spawned_disease = /datum/disease/magnitis
 
-/obj/item/reagent_containers/glass/bottle/wizarditis
-	name = "Wizarditis culture bottle"
-	desc = "A small bottle. Contains a sample of Rincewindus Vulgaris."
-	spawned_disease = /datum/disease/wizarditis
 
 /obj/item/reagent_containers/glass/bottle/anxiety
 	name = "Severe Anxiety culture bottle"
@@ -260,10 +256,6 @@
 	desc = "A small bottle. Contains a sample of invasive Apidae."
 	spawned_disease = /datum/disease/beesease
 
-/obj/item/reagent_containers/glass/bottle/fluspanish
-	name = "Spanish flu culture bottle"
-	desc = "A small bottle. Contains a sample of Inquisitius."
-	spawned_disease = /datum/disease/fluspanish
 
 /obj/item/reagent_containers/glass/bottle/tuberculosis
 	name = "Fungal Tuberculosis culture bottle"
@@ -275,11 +267,6 @@
 	desc = "A small bottle containing Bio Virus Antidote Kit."
 	list_reagents = list(/datum/reagent/vaccine/fungal_tb = 30)
 
-/obj/item/reagent_containers/glass/bottle/necropolis_seed
-	name = "bowl of blood"
-	desc = "A clay bowl containing a fledgling spire, preserved in blood. When consumed, allows the user to transform into an avatar of the Necropolis. A robust virologist may be able to unlock its full potential..."
-	icon_state = "mortar_bone"
-	spawned_disease = /datum/disease/advance/necropolis
 
 //Oldstation.dmm chemical storage bottles
 

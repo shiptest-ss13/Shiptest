@@ -16,20 +16,13 @@
 	symptoms = list(new/datum/symptom/cough)
 	..()
 
-/datum/disease/advance/necropolis
-	copy_type = /datum/disease/advance
-
-/datum/disease/advance/necropolis/New()
-	name = "Necropolis Seed"
-	symptoms = list(new/datum/symptom/necroseed)
-	..()
-
 //Randomly generated Disease, for virus crates and events
 /datum/disease/advance/random
-	name = "Experimental Disease"
+	name = "Experimental Disease Disease"
 	copy_type = /datum/disease/advance
+	var/max_pwr = 8
 
-/datum/disease/advance/random/New(max_symptoms, max_level = 8)
+/datum/disease/advance/random/New(max_symptoms, max_level = max_pwr)
 	if(!max_symptoms)
 		max_symptoms = rand(1, VIRUS_SYMPTOM_LIMIT)
 	var/list/datum/symptom/possible_symptoms = list()
@@ -48,3 +41,4 @@
 	Refresh()
 
 	name = "Sample #[rand(1,10000)]"
+
