@@ -265,7 +265,6 @@
 /obj/item/storage/backpack/captain,
 /obj/item/door_remote/captain,
 /obj/item/storage/belt/sabre/solgov,
-/obj/item/radio/headset/solgov/alt/captain,
 /obj/item/clothing/under/solgov/dress,
 /obj/item/clothing/suit/armor/vest/bulletproof/solgov/captain,
 /obj/item/stamp/solgov,
@@ -1179,9 +1178,6 @@
 /obj/effect/turf_decal/corner/opaque/solgovblue/three_quarters{
 	dir = 8
 	},
-/obj/effect/turf_decal/corner/opaque/solgovblue/three_quarters{
-	dir = 4
-	},
 /turf/open/floor/plasteel/white,
 /area/ship/engineering)
 "lc" = (
@@ -1644,11 +1640,6 @@
 "qg" = (
 /obj/structure/closet/cabinet,
 /obj/item/clothing/suit/solgov/dress,
-/obj/item/clothing/suit/solgov/dress,
-/obj/item/clothing/suit/solgov/dress,
-/obj/item/clothing/suit/solgov/dress,
-/obj/item/clothing/suit/solgov/jacket,
-/obj/item/clothing/suit/solgov/jacket,
 /obj/item/clothing/suit/solgov/jacket,
 /obj/item/radio/headset,
 /obj/item/radio/headset,
@@ -1658,6 +1649,10 @@
 /obj/item/radio,
 /obj/item/radio/intercom/directional/north,
 /obj/machinery/light/small/directional/east,
+/obj/item/clothing/under/solgov,
+/obj/item/clothing/under/solgov,
+/obj/item/clothing/under/solgov/dress,
+/obj/item/clothing/under/solgov/dress,
 /turf/open/floor/wood,
 /area/ship/crew/dorm)
 "qz" = (
@@ -2682,11 +2677,6 @@
 "Au" = (
 /obj/structure/closet/cabinet,
 /obj/item/clothing/suit/solgov/dress,
-/obj/item/clothing/suit/solgov/dress,
-/obj/item/clothing/suit/solgov/dress,
-/obj/item/clothing/suit/solgov/dress,
-/obj/item/clothing/suit/solgov/jacket,
-/obj/item/clothing/suit/solgov/jacket,
 /obj/item/clothing/suit/solgov/jacket,
 /obj/item/radio/headset,
 /obj/item/radio/headset,
@@ -2702,6 +2692,10 @@
 	pixel_y = 21;
 	pixel_x = -12
 	},
+/obj/item/clothing/under/solgov,
+/obj/item/clothing/under/solgov,
+/obj/item/clothing/under/solgov/dress,
+/obj/item/clothing/under/solgov/dress,
 /turf/open/floor/wood,
 /area/ship/crew/dorm)
 "Ax" = (
@@ -2764,10 +2758,6 @@
 /turf/open/floor/plasteel/white,
 /area/ship/security/armory)
 "AR" = (
-/obj/structure/closet/wall/white{
-	dir = 4;
-	pixel_x = -28
-	},
 /obj/structure/mirror{
 	pixel_y = 24
 	},
@@ -4076,7 +4066,6 @@
 /obj/item/folder/solgov/red,
 /obj/item/clothing/under/solgov/formal,
 /obj/item/clothing/head/solgov,
-/obj/item/radio/headset/solgov/alt,
 /obj/item/storage/belt/sabre/solgov,
 /obj/item/storage/backpack,
 /obj/item/pen/solgov,
@@ -4718,10 +4707,6 @@
 /turf/open/floor/wood,
 /area/ship/crew)
 "Vo" = (
-/obj/structure/closet/wall/white{
-	dir = 4;
-	pixel_x = -28
-	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
