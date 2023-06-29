@@ -120,7 +120,7 @@ export const ShipSelect = (props, context) => {
         {tab === 2 && (
           <>
             <Section
-              title={`Ship Info - ${decodeHtmlEntities(selectedShip.name)}`}
+              title={`Ship Details - ${decodeHtmlEntities(selectedShip.name)}`}
             >
               <LabeledList>
                 <LabeledList.Item label="Ship Class">
@@ -129,14 +129,22 @@ export const ShipSelect = (props, context) => {
                 <LabeledList.Item label="Ship Join Status">
                   {selectedShip.joinMode}
                 </LabeledList.Item>
-                <LabeledList.Item label="Ship Description">
-                  {selectedShip.desc || 'No Description'}
-                </LabeledList.Item>
                 <LabeledList.Item label="Ship Memo">
                   {selectedShip.memo || 'No Memo'}
                 </LabeledList.Item>
               </LabeledList>
             </Section>
+            <Collapsible title={'Ship Info'}>
+              <LabeledList>
+                <LabeledList.Item label="Ship Description">
+                  {selectedShip.desc || 'No Description'}
+                </LabeledList.Item>
+                <LabeledList.Item label="Ship Tags">
+                  {(selectedShip.tags && selectedShip.tags.join(', ')) ||
+                    'No Tags Set'}
+                </LabeledList.Item>
+              </LabeledList>
+            </Collapsible>
             <Section
               title="Job Selection"
               buttons={
@@ -186,7 +194,6 @@ export const ShipSelect = (props, context) => {
                   value={searchText}
                   onInput={(_, value) => setSearchText(value)}
                 />
-
                 <Button
                   content="Back"
                   onClick={() => {
@@ -214,6 +221,10 @@ export const ShipSelect = (props, context) => {
                 <LabeledList>
                   <LabeledList.Item label="Description">
                     {template.desc || 'No Description'}
+                  </LabeledList.Item>
+                  <LabeledList.Item label="Ship Tags">
+                    {(template.tags && template.tags.join(', ')) ||
+                      'No Tags Set'}
                   </LabeledList.Item>
                   <LabeledList.Item label="Crew">
                     {template.crewCount}
