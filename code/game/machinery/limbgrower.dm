@@ -244,6 +244,7 @@
 	var/obj/item/bodypart/limb
 	limb = new buildpath(loc)
 	limb.name = "\improper synthetic [limb.bodytype & BODYTYPE_DIGITIGRADE ? "digitigrade ":""][selected_category] [limb.plaintext_zone]"
+	limb.limb_id = selected_category
 	//fun override colors
 	limb.mutation_color = random_color()
 	limb.update_icon_dropped()
