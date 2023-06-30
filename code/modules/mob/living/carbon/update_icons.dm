@@ -263,17 +263,17 @@
 //Updated by Kapu#1178
 //TG variant port by MrSamu99#8996
 /**
-  * Called from update_body_parts() these procs handle the limb icon cache.
-  * the limb icon cache adds an icon_render_key to a human mob, it represents:
-  * - Gender, if applicable
-  * - The ID of the limb
-  * - Whether or not it's digitigrade
-  * - Draw color, if applicable
-  *
-  * These procs only store limbs as to increase the number of matching icon_render_keys
-  * This cache exists because drawing 6/7 icons for humans constantly is quite a waste
-  * See RemieRichards on irc.rizon.net #coderbus (RIP remie :sob:)
-  */
+ * Called from update_body_parts() these procs handle the limb icon cache.
+ * the limb icon cache adds an icon_render_key to a human mob, it represents:
+ * - Gender, if applicable
+ * - The ID of the limb
+ * - Whether or not it's digitigrade
+ * - Draw color, if applicable
+ *
+ * These procs only store limbs as to increase the number of matching icon_render_keys
+ * This cache exists because drawing 6/7 icons for humans constantly is quite a waste
+ * See RemieRichards on irc.rizon.net #coderbus (RIP remie :sob:)
+*/
 /obj/item/bodypart/proc/generate_icon_key()
 	RETURN_TYPE(/list)
 	. = list()
