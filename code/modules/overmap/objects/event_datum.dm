@@ -266,6 +266,26 @@
 	. = ..()
 	token.icon_state = "dust[rand(1, 4)]"
 
+/datum/overmap/event/anomaly
+	name = "anomaly field"
+	desc = "A highly anomalous area of space, disturbing it leads to the manifestation of odd spatial phenomena"
+	token_icon_state = "anomaly1"
+	chance_to_affect = 10
+	spread_chance = 35
+	chain_rate = 6
+
+/datum/overmap/event/anomaly/Initialize(position, ...)
+	. = ..()
+	token.icon_state = "anomaly[rand(1, 4)]"
+
+/datum/overmap/event/anomaly/affect_ship(datum/overmap/ship/controlled/S)
+	var/area/source_area = pick(S.shuttle_port.shuttle_areas)
+	var/source_object = pick(source_area.contents)
+	new /obj/effect/spawner/lootdrop/anomaly/storm(get_turf(source_object))
+	for(var/mob/M as anything in GLOB.player_list)
+		if(S.shuttle_port.is_in_shuttle_bounds(M))
+			M.playsound_local(S.shuttle_port, 'sound/effects/bamf.ogg', 100)
+
 
 GLOBAL_LIST_INIT(overmap_event_pick_list, list(
 	/datum/overmap/event/wormhole = 10,
@@ -282,7 +302,7 @@ GLOBAL_LIST_INIT(overmap_event_pick_list, list(
 	/datum/overmap/event/meteor/carp/minor = 45,
 	/datum/overmap/event/meteor/carp = 35,
 	/datum/overmap/event/meteor/carp/major = 20,
-	/datum/overmap/event/meteor/dust = 50
-
+	/datum/overmap/event/meteor/dust = 50,
+	/datum/overmap/event/anomaly = 10000
 ))
 
