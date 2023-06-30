@@ -389,17 +389,11 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 /datum/species/proc/is_digitigrade(mob/living/carbon/leg_haver)
 	return (digitigrade_customization == DIGITIGRADE_OPTIONAL && leg_haver.dna.features["legs"] == "Digitigrade Legs") || digitigrade_customization == DIGITIGRADE_FORCED
 
-/datum/species/proc/replace_body(mob/living/carbon/C, datum/species/new_species, pref_load, robotic = FALSE)
+/datum/species/proc/replace_body(mob/living/carbon/C, datum/species/new_species, robotic = FALSE)
 	new_species ||= C.dna.species //If no new species is provided, assume its src.
 	//Note for future: Potentionally add a new C.dna.species() to build a template species for more accurate limb replacement
 
-	var/obj/item/bodypart/chest/old_chest = C.get_bodypart(BODY_ZONE_CHEST)
-	var/total_replacement = !(old_chest.bodytype & new_species.bodytype)
-
 	for(var/obj/item/bodypart/old_part as anything in C.bodyparts)
-		if(old_part.change_exempt_flags & BP_BLOCK_CHANGE_SPECIES && !pref_load && !total_replacement)
-			continue
-
 		var/obj/item/bodypart/new_part = C.new_body_part(old_part.body_zone, robotic, FALSE, new_species)
 		new_part.brute_dam = old_part.brute_dam
 		new_part.burn_dam = old_part.burn_dam
@@ -408,15 +402,15 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		qdel(old_part)
 
 /**
- * Proc called when a carbon becomes this species.
- *
- * This sets up and adds/changes/removes things, qualities, abilities, and traits so that the transformation is as smooth and bugfree as possible.
- * Produces a [COMSIG_SPECIES_GAIN] signal.
- * Arguments:
- * * C - Carbon, this is whoever became the new species.
- * * old_species - The species that the carbon used to be before becoming this race, used for regenerating organs.
- * * pref_load - Preferences to be loaded from character setup, loads in preferred mutant things like bodyparts, digilegs, skin color, etc.
- */
+	* Proc called when a carbon becomes this species.
+	*
+	* This sets up and adds/changes/removes things, qualities, abilities, and traits so that the transformation is as smooth and bugfree as possible.
+	* Produces a [COMSIG_SPECIES_GAIN] signal.
+	* Arguments:
+	* * C - Carbon, this is whoever became the new species.
+	* * old_species - The species that the carbon used to be before becoming this race, used for regenerating organs.
+	* * pref_load - Preferences to be loaded from character setup, loads in preferred mutant things like bodyparts, digilegs, skin color, etc.
+*/
 /datum/species/proc/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load, robotic = FALSE)
 	// Drop the items the new species can't wear
 	if((AGENDER in species_traits))
@@ -435,7 +429,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	if(C.hud_used)
 		C.hud_used.update_locked_slots()
 
-	replace_body(C, pref_load = pref_load, robotic = robotic)
+	replace_body(C, robotic = robotic)
 
 	C.mob_biotypes = inherent_biotypes
 

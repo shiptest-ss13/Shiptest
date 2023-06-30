@@ -23,7 +23,6 @@
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
-	change_exempt_flags = BP_BLOCK_CHANGE_SPECIES
 
 	brute_reduction = 5
 	burn_reduction = 4
@@ -49,7 +48,6 @@
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
-	change_exempt_flags = BP_BLOCK_CHANGE_SPECIES
 
 	brute_reduction = 5
 	burn_reduction = 4
@@ -75,7 +73,6 @@
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
-	change_exempt_flags = BP_BLOCK_CHANGE_SPECIES
 
 	brute_reduction = 5
 	burn_reduction = 4
@@ -101,7 +98,6 @@
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
-	change_exempt_flags = BP_BLOCK_CHANGE_SPECIES
 
 	brute_reduction = 5
 	burn_reduction = 4
@@ -126,7 +122,6 @@
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
-	change_exempt_flags = BP_BLOCK_CHANGE_SPECIES
 
 	brute_reduction = 5
 	burn_reduction = 4
@@ -232,7 +227,6 @@
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
-	change_exempt_flags = BP_BLOCK_CHANGE_SPECIES
 
 	brute_reduction = 5
 	burn_reduction = 4

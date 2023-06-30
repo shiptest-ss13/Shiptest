@@ -14,8 +14,6 @@
 	var/datum/weakref/original_owner = null
 	///List of bodytypes flags, important for fitting clothing. If you'd like to know if a bodypart is organic, please use is_organic_limb()
 	var/bodytype = BODYTYPE_HUMANOID | BODYTYPE_ORGANIC
-	///Defines when a bodypart should not be changed. Example: BP_BLOCK_CHANGE_SPECIES prevents the limb from being overwritten on species gain
-	var/change_exempt_flags
 
 	///Whether the clothing being worn forces the limb into being "squished" to plantigrade/standard humanoid compliance
 	var/plantigrade_forced = FALSE
