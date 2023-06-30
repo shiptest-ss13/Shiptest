@@ -417,4 +417,4 @@ All ShuttleMove procs go here
 	if(!monitor)
 		qdel(src)
 		return
-	addtimer(CALLBACK(monitor, /datum/proximity_monitor/proc/SetRange, monitor.current_range, TRUE), 0, TIMER_UNIQUE)
+	addtimer(CALLBACK(monitor, TYPE_PROC_REF(/datum/proximity_monitor, SetRange), monitor.current_range, TRUE), 0, TIMER_UNIQUE)

@@ -1106,7 +1106,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 	to_chat(malf, "<span class='notice'>Temporarily masking AI subroutines in APC. Expected duration: [duration] seconds</span>")
 
 	malf.malfhack = src
-	malf.malfhacking = addtimer(CALLBACK(src, /obj/machinery/power/apc/proc/malfunhidehack, malf), duration, TIMER_STOPPABLE)
+	malf.malfhacking = addtimer(CALLBACK(src, TYPE_PROC_REF(/obj/machinery/power/apc, malfunhidehack), malf), duration, TIMER_STOPPABLE)
 
 	var/atom/movable/screen/alert/hackingapc/A
 	A = malf.throw_alert("hackingapc", /atom/movable/screen/alert/hackingapc)
@@ -1123,7 +1123,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 	malf.clear_alert("hackingapc")
 
 	malfhackhide = -1
-	malfhackhidecooldown = addtimer(CALLBACK(src, /obj/machinery/power/apc/proc/malfhiderestore, malf), 600, TIMER_STOPPABLE)
+	malfhackhidecooldown = addtimer(CALLBACK(src, TYPE_PROC_REF(/obj/machinery/power/apc, malfhiderestore), malf), 600, TIMER_STOPPABLE)
 
 /obj/machinery/power/apc/proc/malfhiderestore(mob/living/silicon/ai/malf)
 	if(src.machine_stat & BROKEN)

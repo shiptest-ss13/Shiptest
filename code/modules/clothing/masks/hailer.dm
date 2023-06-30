@@ -131,7 +131,7 @@ GLOBAL_LIST_INIT(hailer_phrases, list(
 	if(!overuse_cooldown) // check if we can reset recent uses
 		recent_uses = 0
 		overuse_cooldown = TRUE
-		addtimer(CALLBACK(src, /obj/item/clothing/mask/gas/sechailer/proc/reset_overuse_cooldown), OVERUSE_COOLDOWN)
+		addtimer(CALLBACK(src, TYPE_PROC_REF(/obj/item/clothing/mask/gas/sechailer, reset_overuse_cooldown)), OVERUSE_COOLDOWN)
 
 	switch(recent_uses)
 		if(3)
@@ -167,7 +167,7 @@ GLOBAL_LIST_INIT(hailer_phrases, list(
 		usr.audible_message("[usr]'s Compli-o-Nator: <font color='red' size='4'><b>[initial(phrase.phrase_text)]</b></font>")
 		playsound(src, "sound/runtime/complionator/[initial(phrase.phrase_sound)].ogg", 100, FALSE, 4)
 		cooldown = TRUE
-		addtimer(CALLBACK(src, /obj/item/clothing/mask/gas/sechailer/proc/reset_cooldown), PHRASE_COOLDOWN)
+		addtimer(CALLBACK(src, TYPE_PROC_REF(/obj/item/clothing/mask/gas/sechailer, reset_cooldown)), PHRASE_COOLDOWN)
 		. = TRUE
 
 /obj/item/clothing/mask/gas/sechailer/proc/reset_cooldown()

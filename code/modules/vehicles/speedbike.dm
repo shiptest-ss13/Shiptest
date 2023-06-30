@@ -44,7 +44,6 @@
 	icon = 'icons/obj/car.dmi'
 	icon_state = "speedwagon"
 	layer = LYING_MOB_LAYER
-	var/static/mutable_appearance/overlay = mutable_appearance(icon, "speedwagon_cover", ABOVE_MOB_LAYER)
 	max_buckled_mobs = 4
 	var/crash_all = FALSE //CHAOS
 	pixel_y = -48
@@ -52,7 +51,7 @@
 
 /obj/vehicle/ridden/space/speedwagon/Initialize()
 	. = ..()
-	add_overlay(overlay)
+	add_overlay(image(icon, "speedwagon_cover", ABOVE_MOB_LAYER))
 	var/datum/component/riding/D = LoadComponent(/datum/component/riding)
 	D.vehicle_move_delay = 0
 	D.set_riding_offsets(1, list(TEXT_NORTH = list(-10, -4), TEXT_SOUTH = list(16, 3), TEXT_EAST = list(-4, 30), TEXT_WEST = list(4, -3)))
