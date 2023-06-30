@@ -402,15 +402,15 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		qdel(old_part)
 
 /**
-	* Proc called when a carbon becomes this species.
-	*
-	* This sets up and adds/changes/removes things, qualities, abilities, and traits so that the transformation is as smooth and bugfree as possible.
-	* Produces a [COMSIG_SPECIES_GAIN] signal.
-	* Arguments:
-	* * C - Carbon, this is whoever became the new species.
-	* * old_species - The species that the carbon used to be before becoming this race, used for regenerating organs.
-	* * pref_load - Preferences to be loaded from character setup, loads in preferred mutant things like bodyparts, digilegs, skin color, etc.
-*/
+ * Proc called when a carbon becomes this species.
+ *
+ * This sets up and adds/changes/removes things, qualities, abilities, and traits so that the transformation is as smooth and bugfree as possible.
+ * Produces a [COMSIG_SPECIES_GAIN] signal.
+ * Arguments:
+ * * C - Carbon, this is whoever became the new species.
+ * * old_species - The species that the carbon used to be before becoming this race, used for regenerating organs.
+ * * pref_load - Preferences to be loaded from character setup, loads in preferred mutant things like bodyparts, digilegs, skin color, etc.
+ */
 /datum/species/proc/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load, robotic = FALSE)
 	// Drop the items the new species can't wear
 	if((AGENDER in species_traits))
