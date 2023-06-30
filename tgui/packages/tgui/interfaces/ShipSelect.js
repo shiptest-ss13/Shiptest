@@ -230,7 +230,7 @@ export const ShipSelect = (props, context) => {
                   (!data.shipSpawnAllowed && 'average') ||
                   ((template.curNum >= template.limit ||
                     data.playMin < template.minTime) &&
-                    'bad') ||
+                    'grey') ||
                   'default'
                 }
                 buttons={
