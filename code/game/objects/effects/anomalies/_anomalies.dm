@@ -147,5 +147,5 @@
 	if(user.research_scanner == TRUE)
 		to_chat(user, span_notice("If harvested, this anomaly would be worth [research_value] research points."))
 
-obj/effect/anomaly/throw_atom_into_space()
+/obj/effect/anomaly/throw_atom_into_space()
 	qdel(src)

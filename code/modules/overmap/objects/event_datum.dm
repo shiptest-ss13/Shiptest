@@ -303,6 +303,6 @@ GLOBAL_LIST_INIT(overmap_event_pick_list, list(
 	/datum/overmap/event/meteor/carp = 35,
 	/datum/overmap/event/meteor/carp/major = 20,
 	/datum/overmap/event/meteor/dust = 50,
-	/datum/overmap/event/anomaly = 10000
+	/datum/overmap/event/anomaly = 10
 ))
 
