@@ -3,6 +3,14 @@
 /obj/machinery/atmospherics/pipe/simple/orange/visible,
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ruin/powered/slimelab/lava)
+"ai" = (
+/obj/structure/flora/ausbushes/grassybush,
+/obj/machinery/light/broken/directional/east,
+/obj/structure/spacevine{
+	pixel_x = 32
+	},
+/turf/open/floor/plating/grass/jungle,
+/area/ruin/powered/slimelab/lab)
 "aj" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -14,19 +22,11 @@
 "al" = (
 /turf/open/floor/plating/asteroid/iceberg,
 /area/ruin/unpowered)
-"aw" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
-/area/ruin/powered/slimelab)
+"an" = (
+/obj/machinery/light/small/directional/north,
+/obj/structure/spacevine,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered/slimelab/lab)
 "aF" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -43,6 +43,23 @@
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 4
 	},
+/turf/open/floor/plasteel,
+/area/ruin/powered/slimelab)
+"aR" = (
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/machinery/light/broken/directional/west,
+/obj/structure/spacevine/dense{
+	pixel_x = -32
+	},
+/obj/structure/spacevine,
+/turf/open/floor/plating/grass/jungle,
+/area/ruin/powered/slimelab/lab)
+"aZ" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 8
+	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel,
 /area/ruin/powered/slimelab)
 "be" = (
@@ -95,38 +112,21 @@
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/wood,
 /area/ruin/powered/slimelab)
-"bG" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/open/floor/plasteel,
-/area/ruin/powered/slimelab)
 "bS" = (
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/plating/dirt/jungle/dark,
 /area/ruin/powered/slimelab/slimedome)
-"bW" = (
-/obj/structure/table,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/item/storage/toolbox/mechanical,
-/obj/machinery/light/small{
-	dir = 1
+"cb" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/sign/departments/engineering{
+	pixel_x = -32;
+	pixel_y = 1
 	},
 /turf/open/floor/plasteel,
-/area/ruin/powered/slimelab/lava)
-"bY" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/open/floor/plating,
-/area/ruin/powered/slimelab/slimedome)
+/area/ruin/powered/slimelab)
 "cc" = (
 /obj/machinery/disposal/deliveryChute{
 	dir = 4;
@@ -141,40 +141,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/powered/slimelab/lab)
-"cf" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/power/apc/auto_name/south,
-/obj/structure/cable,
-/obj/effect/turf_decal/siding/wood/end,
-/obj/structure/disposalpipe/segment,
-/obj/structure/spacevine{
-	pixel_y = -32
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/powered/slimelab/lab)
-"ck" = (
-/obj/effect/turf_decal/corner/opaque/purple/diagonal,
-/obj/effect/turf_decal/siding/purple,
-/obj/machinery/light/small{
-	dir = 8
-	},
-/obj/structure/closet/wardrobe/science_white,
-/turf/open/floor/plasteel/white,
-/area/ruin/powered/slimelab/lab)
-"cm" = (
-/obj/structure/sign/warning/biohazard{
-	pixel_x = 29;
-	pixel_y = 4
-	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 8
-	},
-/obj/structure/closet/crate/bin,
-/obj/machinery/firealarm{
-	pixel_y = 24
-	},
-/turf/open/floor/plasteel,
-/area/ruin/powered/slimelab)
 "cq" = (
 /obj/structure/flora/ausbushes/fernybush,
 /turf/open/floor/plating/grass/jungle,
@@ -237,7 +203,8 @@
 "df" = (
 /obj/machinery/door/airlock/atmos{
 	name = "Atmospherics";
-	req_access_txt = "200"
+	req_access_txt = "200";
+	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -284,16 +251,6 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/powered/slimelab/cafe)
-"dE" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/structure/closet/crate/bin,
-/turf/open/floor/plasteel/tech/grid,
-/area/ruin/powered/slimelab/lava)
 "dG" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -304,6 +261,14 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
 /area/ruin/powered/slimelab)
+"dH" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/spacevine{
+	pixel_y = -32
+	},
+/obj/machinery/firealarm/directional/south,
+/turf/open/floor/plating/grass/jungle,
+/area/ruin/powered/slimelab/lab)
 "dK" = (
 /obj/structure/disposalpipe/segment{
 	dir = 9
@@ -331,6 +296,11 @@
 /obj/structure/spacevine,
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/powered/slimelab/lab)
+"dZ" = (
+/obj/structure/tank_dispenser/oxygen,
+/obj/machinery/firealarm/directional/west,
+/turf/open/floor/plasteel,
+/area/ruin/powered/slimelab)
 "ea" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -352,7 +322,8 @@
 /area/ruin/powered/slimelab/lab)
 "eg" = (
 /obj/machinery/door/airlock{
-	name = "Janitor's Closet"
+	name = "Janitor's Closet";
+	dir = 4
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -371,6 +342,16 @@
 /obj/structure/spacevine,
 /turf/open/floor/plating/grass/jungle,
 /area/ruin/powered/slimelab/lab)
+"ek" = (
+/obj/structure/closet/emcloset/anchored,
+/obj/effect/turf_decal/corner/opaque/purple/diagonal,
+/obj/effect/turf_decal/siding/purple{
+	dir = 9
+	},
+/obj/machinery/light/small/broken/directional/west,
+/obj/machinery/firealarm/directional/north,
+/turf/open/floor/plasteel,
+/area/ruin/powered/slimelab/lab)
 "em" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/effect/turf_decal/siding/wood/corner{
@@ -383,6 +364,43 @@
 /obj/structure/spacevine,
 /turf/open/floor/plating/grass/jungle,
 /area/ruin/powered/slimelab/lab)
+"er" = (
+/obj/structure/closet/l3closet/scientist,
+/obj/effect/turf_decal/corner/opaque/purple/diagonal{
+	dir = 4
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/purple{
+	dir = 5
+	},
+/obj/machinery/light/small/broken/directional/north,
+/turf/open/floor/plasteel,
+/area/ruin/powered/slimelab/lab)
+"et" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/machinery/button/door{
+	dir = 8;
+	id = "iusmine";
+	name = "Mining Exit";
+	pixel_x = 24;
+	pixel_y = 6
+	},
+/obj/machinery/button/shieldwallgen{
+	dir = 8;
+	id = "iusmine";
+	pixel_x = 25;
+	pixel_y = -5
+	},
+/turf/open/floor/plasteel,
+/area/ruin/powered/slimelab)
 "ey" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
@@ -393,22 +411,17 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/powered/slimelab)
-"eE" = (
-/obj/structure/table,
-/obj/effect/turf_decal/corner/opaque/purple/diagonal,
-/obj/item/clothing/glasses/science/prescription{
-	pixel_x = -6;
-	pixel_y = 9
+"eA" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1
 	},
-/obj/item/storage/box/syringes{
-	pixel_x = 9;
-	pixel_y = 6
+/obj/effect/turf_decal/corner/opaque/green/diagonal,
+/obj/effect/turf_decal/siding/green{
+	dir = 10
 	},
-/obj/item/reagent_containers/dropper{
-	pixel_x = -4
-	},
-/turf/open/floor/plasteel/white,
-/area/ruin/powered/slimelab/lab)
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/plasteel,
+/area/ruin/powered/slimelab/slimedome)
 "eR" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
@@ -494,29 +507,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/powered/slimelab)
-"fW" = (
-/obj/structure/table/glass,
-/obj/structure/window/reinforced,
-/obj/machinery/button/door{
-	dir = 1;
-	id = "iusent";
-	name = "Entrance Lockdown";
-	pixel_x = -5;
-	pixel_y = -4
-	},
-/obj/machinery/button/door{
-	dir = 1;
-	id = "iusoffice";
-	name = "Shutter Control";
-	pixel_x = -5;
-	pixel_y = 6
-	},
-/obj/item/stamp{
-	pixel_x = 6;
-	pixel_y = 5
-	},
-/turf/open/floor/plasteel/white,
-/area/ruin/powered/slimelab/checkpoint)
 "fX" = (
 /obj/effect/turf_decal/corner/opaque/purple/diagonal,
 /obj/effect/turf_decal/siding/purple,
@@ -566,32 +556,11 @@
 "gI" = (
 /turf/template_noop,
 /area/template_noop)
-"gY" = (
-/obj/structure/sign/warning/biohazard{
-	pixel_y = -26
-	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 8
-	},
-/obj/machinery/light,
-/turf/open/floor/plating,
+"gO" = (
+/obj/structure/flora/ausbushes/sunnybush,
+/obj/machinery/light/directional/north,
+/turf/open/floor/plating/grass/jungle,
 /area/ruin/powered/slimelab/slimedome)
-"hb" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 8
-	},
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
-/area/ruin/powered/slimelab/checkpoint)
-"hc" = (
-/obj/machinery/holopad/emergency/command,
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/open/floor/plasteel/white,
-/area/ruin/powered/slimelab/checkpoint)
 "hg" = (
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 8
@@ -614,6 +583,12 @@
 /obj/machinery/smartfridge,
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ruin/powered/slimelab/cafe)
+"hp" = (
+/obj/structure/closet/firecloset/full,
+/obj/item/storage/firstaid/fire,
+/obj/machinery/firealarm/directional/south,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/powered/slimelab/lava)
 "hx" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/open/floor/plating/grass/jungle,
@@ -633,6 +608,11 @@
 	},
 /turf/open/floor/plating/snowed,
 /area/ruin/unpowered)
+"hL" = (
+/obj/machinery/hydroponics/soil,
+/obj/item/seeds/watermelon,
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin/powered/slimelab/slimedome)
 "hX" = (
 /obj/machinery/door/airlock{
 	name = "Reception";
@@ -647,13 +627,13 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/slimelab/checkpoint)
-"if" = (
-/obj/machinery/light/small{
+"id" = (
+/obj/effect/turf_decal/siding/thinplating{
 	dir = 1
 	},
-/obj/structure/spacevine,
-/turf/open/floor/plasteel/dark,
-/area/ruin/powered/slimelab/lab)
+/obj/machinery/firealarm/directional/south,
+/turf/open/floor/plasteel,
+/area/ruin/powered/slimelab)
 "in" = (
 /obj/structure/chair/wood,
 /turf/open/floor/carpet/green,
@@ -669,12 +649,6 @@
 /obj/structure/spacevine/dense,
 /turf/open/floor/plasteel/white,
 /area/ruin/powered/slimelab/lab)
-"iD" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/open/floor/plating/dirt/jungle,
-/area/ruin/powered/slimelab/slimedome)
 "iE" = (
 /obj/machinery/atmospherics/pipe/simple/orange/visible,
 /obj/structure/cable{
@@ -718,26 +692,29 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "iusoffice"
+	id = "iusoffice";
+	dir = 4
 	},
-/obj/machinery/door/airlock/public/glass,
+/obj/machinery/door/airlock/public/glass{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/slimelab/checkpoint)
-"iU" = (
-/obj/structure/closet/firecloset/full,
-/obj/item/storage/firstaid/fire,
-/obj/machinery/firealarm{
-	dir = 1;
-	pixel_x = -7;
-	pixel_y = -24
-	},
-/turf/open/floor/plasteel/tech/grid,
-/area/ruin/powered/slimelab/lava)
 "ja" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
 /obj/structure/disposalpipe/segment,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered/slimelab/lab)
+"jb" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/slimelab/lab)
 "jf" = (
@@ -767,41 +744,12 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/powered/slimelab/lab)
-"jr" = (
-/obj/structure/table/glass,
-/obj/structure/window/reinforced,
-/obj/item/radio/intercom{
-	dir = 1
-	},
-/obj/item/radio/intercom{
-	dir = 1;
-	pixel_y = 10
-	},
-/turf/open/floor/plasteel/white,
-/area/ruin/powered/slimelab/checkpoint)
 "jt" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
 /turf/open/floor/wood,
 /area/ruin/powered/slimelab/cafe)
-"jv" = (
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/firealarm{
-	dir = 8;
-	pixel_x = 24;
-	pixel_y = 8
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/powered/slimelab)
 "jx" = (
 /obj/structure/chair{
 	dir = 1
@@ -872,6 +820,16 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
 /area/ruin/powered/slimelab)
+"kv" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/plasteel,
+/area/ruin/powered/slimelab)
 "ky" = (
 /obj/structure/flora/ausbushes/grassybush,
 /obj/structure/flora/ausbushes/sparsegrass,
@@ -889,6 +847,13 @@
 	},
 /turf/open/floor/plating/dirt/jungle/dark,
 /area/ruin/powered/slimelab/lab)
+"kB" = (
+/obj/structure/table,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/item/storage/toolbox/mechanical,
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/plasteel,
+/area/ruin/powered/slimelab/lava)
 "kE" = (
 /obj/item/clothing/suit/hooded/wintercoat/science,
 /obj/structure/flora/ausbushes/fullgrass,
@@ -919,21 +884,6 @@
 	},
 /obj/structure/spacevine/dense,
 /turf/open/floor/plasteel/white,
-/area/ruin/powered/slimelab/lab)
-"kP" = (
-/obj/structure/closet/l3closet/scientist,
-/obj/effect/turf_decal/corner/opaque/purple/diagonal,
-/obj/effect/turf_decal/siding/purple{
-	dir = 10
-	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 1
-	},
-/obj/machinery/light/small/broken{
-	dir = 8
-	},
-/obj/item/storage/bag/bio,
-/turf/open/floor/plasteel,
 /area/ruin/powered/slimelab/lab)
 "kR" = (
 /obj/machinery/disposal/deliveryChute{
@@ -979,6 +929,14 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/powered/slimelab/lab)
+"li" = (
+/obj/item/kirbyplants{
+	desc = "Oh hello Reginald. Didn't see you there.";
+	icon_state = "plant-14";
+	name = "Reginald"
+	},
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin/powered/slimelab/slimedome)
 "ln" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
@@ -1001,6 +959,11 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/slimelab/lab)
+"lq" = (
+/obj/machinery/hydroponics/soil,
+/obj/machinery/light/directional/south,
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin/powered/slimelab/slimedome)
 "lr" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -1014,20 +977,6 @@
 	dir = 1
 	},
 /area/ruin/powered/slimelab)
-"lw" = (
-/obj/structure/closet/emcloset/anchored,
-/obj/effect/turf_decal/corner/opaque/purple/diagonal,
-/obj/effect/turf_decal/siding/purple{
-	dir = 9
-	},
-/obj/machinery/light/small/broken{
-	dir = 8
-	},
-/obj/machinery/firealarm{
-	pixel_y = 24
-	},
-/turf/open/floor/plasteel,
-/area/ruin/powered/slimelab/lab)
 "lA" = (
 /obj/structure/table,
 /obj/effect/turf_decal/siding/wood{
@@ -1036,6 +985,18 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ruin/powered/slimelab/cafe)
+"lC" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/machinery/light/broken/directional/east,
+/turf/open/floor/plating/grass/jungle,
+/area/ruin/powered/slimelab/lab)
+"lE" = (
+/obj/machinery/power/apc/auto_name/directional/west,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plasteel,
+/area/ruin/powered/slimelab)
 "lK" = (
 /obj/machinery/power/generator{
 	dir = 8
@@ -1090,20 +1051,6 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/powered/slimelab/checkpoint)
-"lW" = (
-/obj/structure/table,
-/obj/effect/turf_decal/corner/opaque/purple/diagonal,
-/obj/item/slime_scanner{
-	pixel_x = 6
-	},
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/item/slime_scanner{
-	pixel_x = -6
-	},
-/turf/open/floor/plasteel/white,
-/area/ruin/powered/slimelab/lab)
 "lY" = (
 /obj/effect/turf_decal/siding/blue/end,
 /obj/structure/sign/poster/random{
@@ -1111,23 +1058,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/powered/slimelab)
-"mb" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/machinery/button/door{
-	desc = "In the event of lava doing things it should not be doing. Press this button and run.";
-	id = "iuslava";
-	name = "Emergency Lava Shutters";
-	pixel_x = -5;
-	pixel_y = 24
-	},
-/obj/machinery/power/terminal{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/turf/open/floor/plasteel/tech/grid,
-/area/ruin/powered/slimelab/lava)
 "mf" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1146,16 +1076,6 @@
 	icon_state = "reinforced_hull"
 	},
 /area/ruin/powered/slimelab/lava)
-"mo" = (
-/obj/structure/flora/ausbushes/grassybush,
-/obj/machinery/light/broken{
-	dir = 4
-	},
-/obj/structure/spacevine{
-	pixel_x = 32
-	},
-/turf/open/floor/plating/grass/jungle,
-/area/ruin/powered/slimelab/lab)
 "ms" = (
 /obj/structure/chair,
 /obj/effect/turf_decal/box,
@@ -1188,6 +1108,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/white,
 /area/ruin/powered/slimelab/lab)
+"mA" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 4
+	},
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/plasteel,
+/area/ruin/powered/slimelab)
 "mB" = (
 /obj/effect/turf_decal/siding/blue/corner,
 /obj/effect/turf_decal/siding/blue/corner{
@@ -1215,13 +1142,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/powered/slimelab/checkpoint)
-"mM" = (
-/obj/effect/turf_decal/industrial/outline/grey,
-/obj/effect/turf_decal/corner/opaque/green/mono,
-/obj/machinery/light/small,
-/obj/machinery/biogenerator/vault,
-/turf/open/floor/plasteel,
-/area/ruin/powered/slimelab/slimedome)
 "mO" = (
 /obj/structure/marker_beacon,
 /turf/open/floor/plating/snowed,
@@ -1264,18 +1184,6 @@
 /obj/structure/sink/puddle,
 /turf/open/floor/plating/grass/jungle,
 /area/ruin/powered/slimelab/slimedome)
-"np" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/firealarm{
-	pixel_y = 28
-	},
-/turf/open/floor/plasteel,
-/area/ruin/powered/slimelab/lava)
 "nq" = (
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/wood,
@@ -1293,19 +1201,6 @@
 "nx" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ruin/powered/slimelab/slimedome)
-"nz" = (
-/obj/structure/chair{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/firealarm{
-	dir = 1;
-	pixel_y = -24
-	},
-/turf/open/floor/plasteel,
-/area/ruin/powered/slimelab/checkpoint)
 "nB" = (
 /obj/effect/turf_decal/weather/dirt/corner,
 /turf/open/water,
@@ -1315,13 +1210,6 @@
 /obj/structure/spacevine,
 /turf/open/floor/plasteel/white,
 /area/ruin/powered/slimelab/lab)
-"nP" = (
-/obj/structure/flora/ausbushes/genericbush,
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/plating/grass/jungle,
-/area/ruin/powered/slimelab/slimedome)
 "nR" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -1350,6 +1238,29 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/slimelab)
+"od" = (
+/obj/structure/table/glass,
+/obj/structure/window/reinforced,
+/obj/machinery/button/door{
+	dir = 1;
+	id = "iusent";
+	name = "Entrance Lockdown";
+	pixel_x = -5;
+	pixel_y = -4
+	},
+/obj/machinery/button/door{
+	dir = 1;
+	id = "iusoffice";
+	name = "Shutter Control";
+	pixel_x = -5;
+	pixel_y = 6
+	},
+/obj/item/stamp{
+	pixel_x = 6;
+	pixel_y = 5
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/powered/slimelab/checkpoint)
 "oe" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
@@ -1376,57 +1287,22 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/slimelab)
-"og" = (
-/obj/machinery/atmospherics/components/unary/tank/air{
-	piping_layer = 2
-	},
-/obj/machinery/light{
-	dir = 1
-	},
+"op" = (
+/obj/machinery/atmospherics/pipe/layer_manifold,
 /turf/open/floor/plating,
-/area/ruin/powered/slimelab/lava)
-"oj" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/turf/open/floor/engine,
-/area/ruin/powered/slimelab/lava)
-"ol" = (
+/area/ruin/powered/slimelab/checkpoint)
+"oq" = (
 /obj/structure/rack,
 /obj/item/pickaxe,
 /obj/item/pickaxe,
 /obj/item/mining_scanner,
 /obj/item/mining_scanner,
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /obj/item/stack/marker_beacon/thirty,
 /obj/item/stack/marker_beacon/thirty,
 /obj/item/clothing/suit/hooded/wintercoat/miner,
 /turf/open/floor/plasteel,
 /area/ruin/powered/slimelab)
-"om" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 1
-	},
-/obj/machinery/power/apc/auto_name/west,
-/obj/structure/cable,
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/structure/closet/crate/bin,
-/turf/open/floor/plating,
-/area/ruin/powered/slimelab/slimedome)
-"op" = (
-/obj/machinery/atmospherics/pipe/layer_manifold,
-/turf/open/floor/plating,
-/area/ruin/powered/slimelab/checkpoint)
 "ot" = (
 /obj/machinery/monkey_recycler,
 /obj/effect/turf_decal/corner/opaque/purple/diagonal,
@@ -1473,24 +1349,19 @@
 /obj/structure/table/wood,
 /turf/open/floor/carpet/green,
 /area/ruin/powered/slimelab/cafe)
-"pn" = (
-/obj/effect/turf_decal/siding/thinplating{
-	dir = 4
+"pA" = (
+/obj/structure/closet/l3closet/scientist,
+/obj/effect/turf_decal/corner/opaque/purple/diagonal,
+/obj/effect/turf_decal/siding/purple{
+	dir = 10
 	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/sign/departments/engineering{
-	pixel_x = -32;
-	pixel_y = 1
-	},
-/turf/open/floor/plasteel,
-/area/ruin/powered/slimelab)
-"pw" = (
-/obj/machinery/light/small{
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
-/obj/structure/reagent_dispensers/watertank/high,
+/obj/machinery/light/small/broken/directional/west,
+/obj/item/storage/bag/bio,
 /turf/open/floor/plasteel,
-/area/ruin/powered/slimelab)
+/area/ruin/powered/slimelab/lab)
 "pC" = (
 /obj/effect/turf_decal/corner/opaque/purple/diagonal,
 /obj/effect/turf_decal/siding/purple{
@@ -1498,6 +1369,16 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/powered/slimelab/lab)
+"pM" = (
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/structure/chair/stool/bar{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/ruin/powered/slimelab/cafe)
 "pP" = (
 /obj/structure/closet/secure_closet/freezer/kitchen,
 /turf/open/floor/plasteel/patterned/grid,
@@ -1512,6 +1393,14 @@
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/slimelab)
+"pT" = (
+/obj/structure/table/wood,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 1
+	},
+/obj/machinery/light/directional/south,
+/turf/open/floor/carpet/green,
+/area/ruin/powered/slimelab/cafe)
 "pU" = (
 /obj/effect/turf_decal/corner/opaque/purple/diagonal,
 /obj/effect/turf_decal/siding/purple,
@@ -1529,18 +1418,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
 /area/ruin/powered/slimelab/checkpoint)
-"qd" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/powered/slimelab/lab)
 "qg" = (
 /obj/structure/disposalpipe/segment{
 	dir = 6
@@ -1557,6 +1434,16 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/powered/slimelab/slimedome)
+"qx" = (
+/obj/machinery/airalarm/directional/west,
+/obj/effect/turf_decal/corner/opaque/purple/diagonal,
+/obj/effect/turf_decal/siding/purple,
+/obj/effect/turf_decal/siding/purple{
+	dir = 1
+	},
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/plasteel/white,
+/area/ruin/powered/slimelab/lab)
 "qy" = (
 /obj/structure/chair/plastic{
 	dir = 1
@@ -1585,6 +1472,16 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/powered/slimelab/checkpoint)
+"qC" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered/slimelab/lab)
 "qI" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
@@ -1595,6 +1492,17 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
 /area/ruin/powered/slimelab/cafe)
+"qS" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/light/directional/east,
+/turf/open/floor/plasteel,
+/area/ruin/powered/slimelab)
 "qU" = (
 /obj/structure/chair/wood{
 	dir = 8
@@ -1608,36 +1516,12 @@
 "rg" = (
 /turf/open/floor/plating/grass/jungle,
 /area/ruin/powered/slimelab/slimedome)
-"ro" = (
-/obj/machinery/button/door{
-	dir = 1;
-	id = "iuskill";
-	name = "Shutter Control";
-	pixel_x = 8;
-	pixel_y = -24
-	},
-/obj/structure/flora/ausbushes/ppflowers,
-/obj/structure/flora/ausbushes/sparsegrass,
-/obj/structure/spacevine{
-	pixel_x = -33
-	},
-/obj/structure/spacevine{
-	pixel_y = -32
-	},
-/turf/open/floor/plating/grass/jungle,
-/area/ruin/powered/slimelab/lab)
 "rp" = (
 /obj/structure/disposalpipe/segment{
 	dir = 5
 	},
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ruin/powered/slimelab/cafe)
-"rq" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/plating/grass/jungle,
-/area/ruin/powered/slimelab/slimedome)
 "rr" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -1646,13 +1530,18 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/floor/plating/grass/jungle,
 /area/ruin/powered/slimelab/lab)
-"ru" = (
-/obj/machinery/power/apc/auto_name/west,
-/obj/structure/cable{
-	icon_state = "0-4"
+"rs" = (
+/obj/structure/table,
+/obj/effect/turf_decal/corner/opaque/purple/diagonal,
+/obj/item/slime_scanner{
+	pixel_x = 6
 	},
-/turf/open/floor/plasteel,
-/area/ruin/powered/slimelab)
+/obj/machinery/light/directional/east,
+/obj/item/slime_scanner{
+	pixel_x = -6
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/powered/slimelab/lab)
 "rH" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -1684,17 +1573,6 @@
 /obj/structure/flora/junglebush,
 /turf/open/floor/plating/grass/jungle,
 /area/ruin/powered/slimelab/slimedome)
-"rU" = (
-/obj/effect/turf_decal/siding/thinplating{
-	dir = 1
-	},
-/obj/machinery/firealarm{
-	dir = 1;
-	pixel_x = -6;
-	pixel_y = -24
-	},
-/turf/open/floor/plasteel,
-/area/ruin/powered/slimelab)
 "st" = (
 /obj/structure/disposalpipe/segment{
 	dir = 10
@@ -1748,6 +1626,13 @@
 /obj/machinery/atmospherics/components/binary/pump/on/layer2,
 /turf/open/floor/plating,
 /area/ruin/powered/slimelab/lava)
+"sO" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 4
+	},
+/obj/machinery/firealarm/directional/north,
+/turf/open/floor/plasteel,
+/area/ruin/powered/slimelab)
 "sW" = (
 /obj/structure/window/plasma/reinforced,
 /obj/structure/window/plasma/reinforced{
@@ -1766,6 +1651,16 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/powered/slimelab)
+"sZ" = (
+/obj/machinery/light/directional/north,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/engine,
+/area/ruin/powered/slimelab/lava)
 "te" = (
 /obj/structure/fence/end{
 	dir = 8
@@ -1815,6 +1710,17 @@
 /obj/structure/disposalpipe/trunk,
 /turf/open/floor/plating,
 /area/ruin/powered/slimelab/slimedome)
+"tu" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/firealarm/directional/west,
+/turf/open/floor/plasteel,
+/area/ruin/powered/slimelab)
 "tz" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -1837,6 +1743,34 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/powered/slimelab)
+"tN" = (
+/obj/structure/table,
+/obj/effect/turf_decal/corner/opaque/purple/diagonal,
+/obj/item/clothing/glasses/science/prescription{
+	pixel_x = -6;
+	pixel_y = 9
+	},
+/obj/item/storage/box/syringes{
+	pixel_x = 9;
+	pixel_y = 6
+	},
+/obj/item/reagent_containers/dropper{
+	pixel_x = -4
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/powered/slimelab/lab)
+"tQ" = (
+/obj/structure/sign/warning/biohazard{
+	pixel_x = 29;
+	pixel_y = 4
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
+/obj/structure/closet/crate/bin,
+/obj/machinery/firealarm/directional/north,
+/turf/open/floor/plasteel,
+/area/ruin/powered/slimelab)
 "tS" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -1845,7 +1779,8 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock{
-	name = "Restroom"
+	name = "Restroom";
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/slimelab)
@@ -1866,6 +1801,28 @@
 "uz" = (
 /turf/open/floor/plasteel,
 /area/ruin/powered/slimelab/checkpoint)
+"uH" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/machinery/light/directional/west,
+/turf/open/floor/plating,
+/area/ruin/powered/slimelab/slimedome)
+"uJ" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 10
+	},
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/plasteel,
+/area/ruin/powered/slimelab)
+"uK" = (
+/obj/machinery/light/directional/south,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/engine,
+/area/ruin/powered/slimelab/lava)
 "uM" = (
 /obj/machinery/airalarm/directional/east,
 /obj/structure/sink{
@@ -1891,23 +1848,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/powered/slimelab/lab)
-"vc" = (
-/obj/structure/closet/emcloset/anchored,
-/obj/effect/turf_decal/corner/opaque/purple/diagonal{
-	dir = 4
-	},
-/obj/machinery/light/small/broken{
-	dir = 1
-	},
-/obj/effect/turf_decal/siding/purple{
-	dir = 9
-	},
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = -24
-	},
-/turf/open/floor/plasteel,
-/area/ruin/powered/slimelab/lab)
 "vg" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/siding/wood,
@@ -1915,15 +1855,6 @@
 /obj/structure/spacevine,
 /turf/open/floor/plasteel/white,
 /area/ruin/powered/slimelab/lab)
-"vi" = (
-/obj/effect/turf_decal/siding/thinplating{
-	dir = 10
-	},
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/open/floor/plasteel,
-/area/ruin/powered/slimelab)
 "vk" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
@@ -1950,16 +1881,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/powered/slimelab/lab)
-"vp" = (
-/obj/structure/sign/warning/biohazard{
-	pixel_y = -26
-	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 4
-	},
-/obj/machinery/light,
-/turf/open/floor/plating,
-/area/ruin/powered/slimelab/slimedome)
 "vr" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
@@ -1985,16 +1906,6 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/powered/slimelab/lab)
-"vF" = (
-/obj/effect/turf_decal/siding/thinplating{
-	dir = 4
-	},
-/obj/item/kirbyplants/random,
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/open/floor/plasteel,
-/area/ruin/powered/slimelab)
 "vG" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2016,6 +1927,13 @@
 	},
 /turf/open/lava/smooth,
 /area/ruin/powered/slimelab/lava)
+"vP" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 8
+	},
+/obj/machinery/light/directional/east,
+/turf/open/floor/plasteel,
+/area/ruin/powered/slimelab/checkpoint)
 "vQ" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
@@ -2027,6 +1945,11 @@
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/open/floor/plating/grass/jungle,
 /area/ruin/powered/slimelab/lab)
+"vS" = (
+/obj/structure/flora/ausbushes/genericbush,
+/obj/machinery/light/directional/north,
+/turf/open/floor/plating/grass/jungle,
+/area/ruin/powered/slimelab/slimedome)
 "vU" = (
 /obj/effect/turf_decal/corner/opaque/purple/diagonal,
 /obj/effect/turf_decal/siding/purple{
@@ -2035,20 +1958,18 @@
 /obj/structure/spacevine/dense,
 /turf/open/floor/plasteel/white,
 /area/ruin/powered/slimelab/lab)
-"vV" = (
-/obj/structure/closet/emcloset/anchored,
-/obj/effect/turf_decal/corner/opaque/green/diagonal,
-/obj/effect/turf_decal/siding/green{
-	dir = 9
-	},
-/obj/machinery/light/small{
-	dir = 8
-	},
-/obj/machinery/firealarm{
-	pixel_y = 24
-	},
-/turf/open/floor/plasteel,
+"vW" = (
+/obj/machinery/light/directional/west,
+/turf/open/floor/plating/dirt/jungle,
 /area/ruin/powered/slimelab/slimedome)
+"vZ" = (
+/obj/machinery/light/directional/east,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/closet/crate/bin,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/powered/slimelab/lava)
 "wc" = (
 /turf/closed/wall/r_wall,
 /area/ruin/powered/slimelab/lab)
@@ -2197,29 +2118,16 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/powered/slimelab)
-"xw" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 1
+"xB" = (
+/obj/structure/sign/warning/biohazard{
+	pixel_y = -26
 	},
-/obj/structure/cable{
-	icon_state = "2-8"
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 8
 	},
-/obj/machinery/button/door{
-	dir = 8;
-	id = "iusmine";
-	name = "Mining Exit";
-	pixel_x = 24;
-	pixel_y = 6
-	},
-/obj/machinery/button/shieldwallgen{
-	dir = 8;
-	id = "iusmine";
-	pixel_x = 25;
-	pixel_y = -5
-	},
-/turf/open/floor/plasteel,
-/area/ruin/powered/slimelab)
+/obj/machinery/light/directional/south,
+/turf/open/floor/plating,
+/area/ruin/powered/slimelab/slimedome)
 "xD" = (
 /obj/effect/turf_decal/corner/opaque/purple/diagonal,
 /obj/effect/turf_decal/siding/purple{
@@ -2231,6 +2139,23 @@
 /obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel,
 /area/ruin/powered/slimelab/lab)
+"xI" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/machinery/button/door{
+	desc = "In the event of lava doing things it should not be doing. Press this button and run.";
+	id = "iuslava";
+	name = "Emergency Lava Shutters";
+	pixel_x = -5;
+	pixel_y = 24
+	},
+/obj/machinery/power/terminal{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/powered/slimelab/lava)
 "xK" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -2291,15 +2216,6 @@
 	icon_state = "reinforced_hull"
 	},
 /area/ruin/powered/slimelab/lava)
-"xZ" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 1
-	},
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/open/floor/plasteel/white,
-/area/ruin/powered/slimelab/checkpoint)
 "yb" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
@@ -2316,6 +2232,19 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/slimelab)
+"yc" = (
+/obj/structure/filingcabinet,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/firealarm/directional/north,
+/turf/open/floor/plasteel/white,
+/area/ruin/powered/slimelab/checkpoint)
+"yk" = (
+/obj/structure/flora/ausbushes/genericbush,
+/obj/machinery/light/directional/east,
+/turf/open/floor/plating/grass/jungle,
+/area/ruin/powered/slimelab/slimedome)
 "yq" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 5
@@ -2436,6 +2365,13 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ruin/powered/slimelab/lava)
+"zq" = (
+/obj/effect/turf_decal/siding/blue/end{
+	dir = 4
+	},
+/obj/machinery/light/directional/east,
+/turf/open/floor/plasteel,
+/area/ruin/powered/slimelab)
 "zs" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ruin/powered/slimelab)
@@ -2471,18 +2407,6 @@
 "zQ" = (
 /turf/open/water,
 /area/ruin/unpowered)
-"zR" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 6
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 6
-	},
-/obj/machinery/firealarm{
-	pixel_y = 26
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/powered/slimelab/lab)
 "Aa" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -2500,7 +2424,8 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/public/glass{
-	name = "Biodome"
+	name = "Biodome";
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/slimelab/slimedome)
@@ -2529,15 +2454,6 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/powered/slimelab/cafe)
-"Ap" = (
-/obj/effect/turf_decal/siding/blue/end{
-	dir = 8
-	},
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/open/floor/plasteel,
-/area/ruin/powered/slimelab)
 "Aw" = (
 /turf/open/water,
 /area/ruin/powered/slimelab/slimedome)
@@ -2591,23 +2507,14 @@
 /obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/slimelab/lab)
-"AO" = (
-/obj/item/kirbyplants{
-	desc = "Oh hello Reginald. Didn't see you there.";
-	icon_state = "plant-14";
-	name = "Reginald"
+"AN" = (
+/obj/machinery/holopad/emergency/command,
+/obj/machinery/light/directional/west,
+/obj/item/radio/intercom/directional/south{
+	pixel_y = -37
 	},
-/turf/open/floor/plating/dirt/jungle,
-/area/ruin/powered/slimelab/slimedome)
-"AZ" = (
-/obj/structure/tank_dispenser/oxygen,
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = -27;
-	pixel_y = 5
-	},
-/turf/open/floor/plasteel,
-/area/ruin/powered/slimelab)
+/turf/open/floor/plasteel/white,
+/area/ruin/powered/slimelab/checkpoint)
 "Ba" = (
 /turf/open/floor/plating/asteroid/icerock,
 /area/ruin/unpowered)
@@ -2620,18 +2527,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/powered/slimelab)
-"Bg" = (
-/obj/machinery/airalarm/directional/west,
-/obj/effect/turf_decal/corner/opaque/purple/diagonal,
-/obj/effect/turf_decal/siding/purple,
-/obj/effect/turf_decal/siding/purple{
-	dir = 1
-	},
-/obj/machinery/light/small{
-	dir = 8
-	},
-/turf/open/floor/plasteel/white,
-/area/ruin/powered/slimelab/lab)
 "Bp" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -2640,7 +2535,8 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/public/glass{
-	name = "Biodome"
+	name = "Biodome";
+	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -2653,6 +2549,17 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/slimelab/slimedome)
+"Bs" = (
+/obj/structure/closet/toolcloset,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 1
+	},
+/obj/structure/cable,
+/obj/machinery/power/apc/auto_name/directional/south,
+/obj/machinery/light/directional/east,
+/obj/item/storage/belt/utility,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/powered/slimelab/lava)
 "Bu" = (
 /obj/item/bedsheet/random,
 /obj/structure/bed,
@@ -2699,6 +2606,16 @@
 /obj/effect/turf_decal/corner/transparent/green/diagonal,
 /turf/open/floor/plasteel,
 /area/ruin/powered/slimelab/slimedome)
+"BN" = (
+/obj/structure/sign/warning/biohazard{
+	pixel_y = -26
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4
+	},
+/obj/machinery/light/directional/south,
+/turf/open/floor/plating,
+/area/ruin/powered/slimelab/slimedome)
 "BU" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
@@ -2712,16 +2629,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/slimelab/lab)
-"Cb" = (
-/obj/machinery/power/apc/auto_name/north,
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/obj/structure/chair/stool/bar{
-	dir = 8
-	},
-/turf/open/floor/wood,
-/area/ruin/powered/slimelab/cafe)
 "Cd" = (
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/ausbushes/sparsegrass,
@@ -2733,6 +2640,17 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/powered/slimelab)
+"Cj" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/power/apc/auto_name/directional/south,
+/obj/structure/cable,
+/obj/effect/turf_decal/siding/wood/end,
+/obj/structure/disposalpipe/segment,
+/obj/structure/spacevine{
+	pixel_y = -32
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered/slimelab/lab)
 "Cp" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -2791,21 +2709,34 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/slimelab)
-"CH" = (
-/obj/structure/table/wood,
+"CN" = (
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/firealarm/directional/east,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered/slimelab)
+"CO" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
-/obj/machinery/light,
-/turf/open/floor/carpet/green,
-/area/ruin/powered/slimelab/cafe)
-"CX" = (
-/obj/machinery/autolathe,
-/obj/machinery/light/small{
-	dir = 4
-	},
+/obj/machinery/power/apc/auto_name/directional/west,
+/obj/structure/cable,
+/obj/machinery/light/directional/west,
+/obj/structure/closet/crate/bin,
+/turf/open/floor/plating,
+/area/ruin/powered/slimelab/slimedome)
+"CR" = (
+/obj/effect/turf_decal/corner/transparent/green/diagonal,
+/obj/machinery/power/apc/auto_name/directional/west,
 /turf/open/floor/plasteel,
-/area/ruin/powered/slimelab/lava)
+/area/ruin/powered/slimelab/slimedome)
 "Db" = (
 /obj/structure/closet/secure_closet/personal,
 /turf/open/floor/carpet/blue,
@@ -2815,9 +2746,12 @@
 /turf/open/floor/plating/dirt/jungle/dark,
 /area/ruin/powered/slimelab/slimedome)
 "Dg" = (
-/obj/machinery/door/airlock/external/glass,
+/obj/machinery/door/airlock/external/glass{
+	dir = 8
+	},
 /obj/machinery/door/poddoor/preopen{
-	id = "iusent"
+	id = "iusent";
+	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -2835,51 +2769,43 @@
 /obj/item/kirbyplants/random,
 /turf/open/floor/plasteel,
 /area/ruin/powered/slimelab)
-"Do" = (
-/obj/structure/flora/ausbushes/sparsegrass,
-/obj/structure/spacevine{
-	pixel_y = -32
-	},
-/obj/machinery/firealarm{
-	dir = 1;
-	pixel_y = -26
-	},
-/turf/open/floor/plating/grass/jungle,
-/area/ruin/powered/slimelab/lab)
 "Dv" = (
 /obj/structure/fence/door,
 /turf/open/floor/plating/asteroid/icerock,
 /area/ruin/unpowered)
-"Dx" = (
-/obj/structure/table/wood,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/wood,
-/area/ruin/powered/slimelab)
 "DC" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel,
 /area/ruin/powered/slimelab)
-"DE" = (
-/obj/effect/turf_decal/corner/transparent/green/diagonal,
-/obj/machinery/power/apc/auto_name/west,
-/turf/open/floor/plasteel,
-/area/ruin/powered/slimelab/slimedome)
+"DI" = (
+/obj/machinery/light/directional/west,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/engine,
+/area/ruin/powered/slimelab/lava)
 "DK" = (
 /turf/open/floor/plasteel/patterned/grid,
 /area/ruin/powered/slimelab/cafe)
 "Ea" = (
 /turf/open/floor/plasteel/patterned,
 /area/ruin/powered/slimelab)
+"Eb" = (
+/obj/machinery/light/small/directional/south,
+/obj/effect/turf_decal/corner/transparent/green/diagonal,
+/turf/open/floor/plasteel,
+/area/ruin/powered/slimelab/slimedome)
 "Eh" = (
 /obj/structure/barricade/wooden/crude,
 /obj/machinery/door/airlock/research{
 	name = "Xenobiological Lab";
-	req_access_txt = "55"
+	req_access_txt = "55";
+	dir = 4
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -2906,17 +2832,6 @@
 "Em" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ruin/powered/slimelab/checkpoint)
-"En" = (
-/obj/item/kirbyplants/random,
-/obj/effect/turf_decal/siding/thinplating{
-	dir = 4
-	},
-/obj/machinery/firealarm{
-	pixel_x = 4;
-	pixel_y = 26
-	},
-/turf/open/floor/plasteel,
-/area/ruin/powered/slimelab)
 "Es" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
@@ -2935,7 +2850,8 @@
 /area/ruin/powered/slimelab/cafe)
 "EB" = (
 /obj/machinery/door/poddoor/preopen{
-	id = "iuslava"
+	id = "iuslava";
+	dir = 4
 	},
 /obj/structure/window/plasma/reinforced/fulltile,
 /obj/structure/grille,
@@ -2994,6 +2910,11 @@
 /obj/machinery/processor,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ruin/powered/slimelab/cafe)
+"Fg" = (
+/obj/machinery/light/small/directional/north,
+/obj/structure/reagent_dispensers/watertank/high,
+/turf/open/floor/plasteel,
+/area/ruin/powered/slimelab)
 "Fj" = (
 /obj/machinery/atmospherics/pipe/heat_exchanging/junction{
 	dir = 4
@@ -3015,6 +2936,16 @@
 	},
 /obj/item/stack/sheet/mineral/plasma,
 /turf/open/floor/plasteel/white,
+/area/ruin/powered/slimelab/lab)
+"Fs" = (
+/obj/structure/flora/ausbushes/grassybush,
+/obj/effect/mob_spawn/slime,
+/obj/machinery/light/broken/directional/west,
+/obj/structure/spacevine{
+	pixel_x = -33
+	},
+/obj/structure/spacevine,
+/turf/open/floor/plating/grass/jungle,
 /area/ruin/powered/slimelab/lab)
 "FA" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -3053,15 +2984,6 @@
 /obj/structure/marker_beacon,
 /turf/open/floor/plating/asteroid/iceberg,
 /area/ruin/unpowered)
-"Gb" = (
-/obj/effect/turf_decal/siding/blue/end{
-	dir = 4
-	},
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
-/area/ruin/powered/slimelab)
 "Gu" = (
 /obj/structure/flora/ausbushes/grassybush,
 /turf/open/floor/plating/grass/jungle,
@@ -3082,25 +3004,16 @@
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ruin/powered/slimelab/cafe)
-"GW" = (
-/obj/machinery/hydroponics/soil,
-/obj/item/seeds/watermelon,
-/turf/open/floor/plating/dirt/jungle,
-/area/ruin/powered/slimelab/slimedome)
+"Ha" = (
+/obj/structure/table,
+/obj/machinery/microwave,
+/obj/machinery/light/directional/north,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/patterned/grid,
+/area/ruin/powered/slimelab/cafe)
 "Hd" = (
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/powered/slimelab/slimedome)
-"Hf" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 1
-	},
-/obj/machinery/firealarm{
-	dir = 1;
-	pixel_x = -7;
-	pixel_y = -25
-	},
-/turf/open/floor/wood,
-/area/ruin/powered/slimelab/cafe)
 "Hg" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -3169,6 +3082,16 @@
 /obj/structure/marker_beacon,
 /turf/open/floor/plating/asteroid/icerock,
 /area/ruin/unpowered)
+"HY" = (
+/obj/structure/closet/emcloset/anchored,
+/obj/effect/turf_decal/corner/opaque/green/diagonal,
+/obj/effect/turf_decal/siding/green{
+	dir = 9
+	},
+/obj/machinery/light/small/directional/west,
+/obj/machinery/firealarm/directional/north,
+/turf/open/floor/plasteel,
+/area/ruin/powered/slimelab/slimedome)
 "HZ" = (
 /obj/structure/disposalpipe/segment,
 /obj/effect/turf_decal/corner/opaque/purple/diagonal,
@@ -3201,11 +3124,6 @@
 /obj/structure/spacevine/dense,
 /turf/open/floor/plasteel/white,
 /area/ruin/powered/slimelab/lab)
-"Ip" = (
-/obj/machinery/vending/snack/random,
-/obj/machinery/light,
-/turf/open/floor/wood,
-/area/ruin/powered/slimelab)
 "IB" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -3215,6 +3133,14 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /turf/open/floor/plasteel/dark,
+/area/ruin/powered/slimelab)
+"IE" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 4
+	},
+/obj/item/kirbyplants/random,
+/obj/machinery/light/directional/west,
+/turf/open/floor/plasteel,
 /area/ruin/powered/slimelab)
 "IJ" = (
 /obj/structure/spacevine,
@@ -3249,10 +3175,18 @@
 	},
 /obj/machinery/door/airlock/research{
 	name = "Xenobiological Lab";
-	req_access_txt = "55"
+	req_access_txt = "55";
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/slimelab/lab)
+"Jg" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 4
+	},
+/obj/machinery/firealarm/directional/west,
+/turf/open/floor/plasteel,
+/area/ruin/powered/slimelab)
 "Jj" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -3264,24 +3198,25 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "iusoffice"
+	id = "iusoffice";
+	dir = 4
 	},
-/obj/machinery/door/airlock/public/glass,
+/obj/machinery/door/airlock/public/glass{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/slimelab/checkpoint)
-"Jo" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/opaque/green/diagonal,
-/obj/effect/turf_decal/siding/green{
-	dir = 10
-	},
-/obj/machinery/light/small{
+"Jp" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/turf/open/floor/plasteel,
-/area/ruin/powered/slimelab/slimedome)
+/obj/item/kirbyplants/random,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/apc/auto_name/directional/north,
+/turf/open/floor/plasteel/white,
+/area/ruin/powered/slimelab/checkpoint)
 "Jt" = (
 /obj/machinery/atmospherics/components/binary/pump{
 	dir = 1;
@@ -3346,17 +3281,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/slimelab)
-"JJ" = (
-/obj/structure/filingcabinet,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 8
-	},
-/obj/machinery/firealarm{
-	pixel_x = 7;
-	pixel_y = 26
-	},
-/turf/open/floor/plasteel/white,
-/area/ruin/powered/slimelab/checkpoint)
 "JN" = (
 /obj/structure/window/reinforced{
 	dir = 4
@@ -3378,13 +3302,6 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/powered/slimelab)
-"JW" = (
-/obj/structure/flora/ausbushes/sunnybush,
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/plating/grass/jungle,
-/area/ruin/powered/slimelab/slimedome)
 "JY" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -3414,22 +3331,22 @@
 /obj/structure/spacevine/dense,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/slimelab/lab)
-"Kd" = (
-/obj/machinery/light,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/turf/open/floor/engine,
-/area/ruin/powered/slimelab/lava)
 "Kg" = (
 /obj/structure/table,
 /obj/item/storage/box/beakers,
 /obj/effect/turf_decal/corner/opaque/purple/diagonal,
 /turf/open/floor/plasteel/white,
 /area/ruin/powered/slimelab/lab)
+"Ki" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/firealarm/directional/north,
+/turf/open/floor/plasteel,
+/area/ruin/powered/slimelab/lava)
 "Km" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -3547,6 +3464,12 @@
 /obj/structure/spacevine/dense,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/slimelab/lab)
+"LQ" = (
+/obj/structure/table/wood,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/machinery/light/directional/north,
+/turf/open/floor/wood,
+/area/ruin/powered/slimelab)
 "LV" = (
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 5
@@ -3563,16 +3486,6 @@
 	},
 /turf/open/floor/engine,
 /area/ruin/powered/slimelab/lava)
-"Mb" = (
-/obj/effect/turf_decal/siding/thinplating{
-	dir = 4
-	},
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = -26
-	},
-/turf/open/floor/plasteel,
-/area/ruin/powered/slimelab)
 "Mc" = (
 /obj/effect/turf_decal/industrial/stand_clear{
 	dir = 8
@@ -3584,6 +3497,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/white,
 /area/ruin/powered/slimelab/lab)
+"Md" = (
+/obj/structure/table/glass,
+/obj/structure/window/reinforced,
+/turf/open/floor/plasteel/white,
+/area/ruin/powered/slimelab/checkpoint)
 "Mg" = (
 /turf/open/floor/plating/asteroid/icerock/smooth,
 /area/ruin/unpowered)
@@ -3598,6 +3516,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/white,
 /area/ruin/powered/slimelab/lab)
+"My" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/machinery/firealarm/directional/south,
+/turf/open/floor/wood,
+/area/ruin/powered/slimelab/cafe)
 "MD" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -3616,6 +3541,16 @@
 	},
 /turf/open/lava/smooth,
 /area/ruin/powered/slimelab/lava)
+"MM" = (
+/obj/machinery/door/airlock/external/glass{
+	dir = 8
+	},
+/obj/machinery/door/poddoor/preopen{
+	id = "iusent";
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ruin/powered/slimelab/checkpoint)
 "MZ" = (
 /obj/structure/table,
 /obj/effect/turf_decal/corner/opaque/purple/diagonal,
@@ -3690,23 +3625,10 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/powered/slimelab)
-"NG" = (
-/obj/effect/turf_decal/siding/thinplating{
-	dir = 1
-	},
-/obj/machinery/light/small,
-/turf/open/floor/plasteel,
-/area/ruin/powered/slimelab)
-"NM" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 4
-	},
-/obj/item/kirbyplants/random,
-/obj/machinery/light/small{
-	dir = 8
-	},
-/turf/open/floor/plasteel,
-/area/ruin/powered/slimelab)
+"NJ" = (
+/obj/machinery/light/directional/north,
+/turf/open/floor/plating/grass/jungle,
+/area/ruin/powered/slimelab/slimedome)
 "NP" = (
 /obj/structure/closet/firecloset,
 /obj/effect/turf_decal/siding/wood,
@@ -3717,6 +3639,13 @@
 /obj/structure/flora/ausbushes/pointybush,
 /turf/open/floor/plating/grass/jungle,
 /area/ruin/powered/slimelab/slimedome)
+"NS" = (
+/obj/structure/chair/wood{
+	dir = 8
+	},
+/obj/machinery/light/directional/east,
+/turf/open/floor/carpet/green,
+/area/ruin/powered/slimelab/cafe)
 "NX" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
@@ -3746,28 +3675,20 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/slimelab/lab)
-"Ol" = (
-/obj/structure/flora/ausbushes/sparsegrass,
-/obj/machinery/light/broken{
-	dir = 4
-	},
-/turf/open/floor/plating/grass/jungle,
-/area/ruin/powered/slimelab/lab)
 "Om" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/spacevine,
 /turf/open/floor/plating/grass/jungle,
 /area/ruin/powered/slimelab/lab)
-"Oq" = (
-/obj/structure/table,
-/obj/machinery/microwave,
-/obj/machinery/light{
-	dir = 1
+"On" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4
 	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/patterned/grid,
-/area/ruin/powered/slimelab/cafe)
+/obj/item/kirbyplants/random,
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/plasteel,
+/area/ruin/powered/slimelab)
 "OB" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters{
@@ -3827,25 +3748,21 @@
 	},
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/powered/slimelab/slimedome)
-"Pi" = (
-/obj/machinery/hydroponics/soil,
-/obj/machinery/light,
-/turf/open/floor/plating/dirt/jungle,
-/area/ruin/powered/slimelab/slimedome)
-"Pj" = (
-/obj/effect/turf_decal/siding/thinplating{
-	dir = 4
-	},
-/obj/machinery/light/small{
-	dir = 8
-	},
-/turf/open/floor/plasteel,
+"Pf" = (
+/obj/structure/table,
+/obj/machinery/light/directional/south,
+/turf/open/floor/plasteel/patterned,
 /area/ruin/powered/slimelab)
 "Pn" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 1
 	},
 /turf/open/floor/plasteel,
+/area/ruin/powered/slimelab)
+"Po" = (
+/obj/structure/closet/secure_closet/personal,
+/obj/machinery/firealarm/directional/north,
+/turf/open/floor/carpet/blue,
 /area/ruin/powered/slimelab)
 "Pp" = (
 /obj/structure/bedsheetbin,
@@ -3860,16 +3777,6 @@
 /obj/structure/spacevine,
 /turf/open/floor/plasteel/white,
 /area/ruin/powered/slimelab/lab)
-"Px" = (
-/obj/structure/table/glass,
-/obj/machinery/door/window/brigdoor,
-/obj/machinery/door/firedoor/border_only,
-/obj/item/radio/intercom/wideband{
-	dir = 1;
-	pixel_y = 4
-	},
-/turf/open/floor/plasteel/white,
-/area/ruin/powered/slimelab/checkpoint)
 "Pz" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -3883,19 +3790,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/slimelab)
-"PC" = (
-/obj/structure/closet/toolcloset,
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 1
-	},
-/obj/structure/cable,
-/obj/machinery/power/apc/auto_name/south,
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/item/storage/belt/utility,
-/turf/open/floor/plasteel/tech/grid,
-/area/ruin/powered/slimelab/lava)
 "PD" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 4
@@ -3980,6 +3874,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/slimelab/lab)
+"Qp" = (
+/obj/machinery/atmospherics/components/unary/tank/air{
+	piping_layer = 2
+	},
+/obj/machinery/light/directional/north,
+/turf/open/floor/plating,
+/area/ruin/powered/slimelab/lava)
 "Qs" = (
 /obj/structure/flora/junglebush/large,
 /turf/open/floor/plating/grass/jungle,
@@ -4056,6 +3957,16 @@
 	icon_state = "reinforced_hull"
 	},
 /area/ruin/powered/slimelab/lava)
+"Rc" = (
+/mob/living/simple_animal/hostile/asteroid/polarbear{
+	desc = "This poor bear looks far scrunklier than is healthy for a bear.";
+	healable = 0;
+	health = 1;
+	maxHealth = 1;
+	name = "scrunkly polar bear"
+	},
+/turf/open/floor/plating/dirt,
+/area/ruin/unpowered)
 "Re" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
@@ -4076,15 +3987,6 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/siding/thinplating{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
-/area/ruin/powered/slimelab)
-"Rj" = (
-/obj/effect/turf_decal/siding/thinplating{
-	dir = 8
-	},
-/obj/machinery/light/small{
 	dir = 4
 	},
 /turf/open/floor/plasteel,
@@ -4143,7 +4045,8 @@
 "RP" = (
 /obj/machinery/door/airlock/engineering{
 	name = "Engineering";
-	req_access_txt = "200"
+	req_access_txt = "200";
+	dir = 4
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
@@ -4199,38 +4102,22 @@
 /turf/open/floor/plating,
 /area/ruin/powered/slimelab/checkpoint)
 "Sj" = (
-/obj/machinery/door/airlock/external/glass,
+/obj/machinery/door/airlock/external/glass{
+	dir = 4
+	},
 /obj/machinery/door/poddoor/preopen{
-	id = "iusent"
+	id = "iusent";
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ruin/powered/slimelab/checkpoint)
-"Sk" = (
-/obj/structure/cable{
-	icon_state = "4-8"
+"Sm" = (
+/obj/effect/turf_decal/siding/blue/end{
+	dir = 8
 	},
-/obj/machinery/firealarm{
-	dir = 1;
-	pixel_x = -7;
-	pixel_y = -25
-	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/plasteel,
 /area/ruin/powered/slimelab)
-"Sl" = (
-/obj/structure/closet/secure_closet/personal,
-/obj/machinery/firealarm{
-	pixel_x = -6;
-	pixel_y = 26
-	},
-/turf/open/floor/carpet/blue,
-/area/ruin/powered/slimelab)
-"Sr" = (
-/obj/structure/flora/ausbushes/genericbush,
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/open/floor/plating/grass/jungle,
-/area/ruin/powered/slimelab/slimedome)
 "Su" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
@@ -4264,12 +4151,38 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/powered/slimelab)
+"SW" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/light/directional/east,
+/turf/open/floor/plasteel/white,
+/area/ruin/powered/slimelab/checkpoint)
 "SY" = (
 /obj/effect/turf_decal/weather/dirt/corner{
 	dir = 8
 	},
 /turf/open/water,
 /area/ruin/powered/slimelab/slimedome)
+"SZ" = (
+/obj/structure/closet/emcloset/anchored,
+/obj/effect/turf_decal/corner/opaque/purple/diagonal{
+	dir = 4
+	},
+/obj/machinery/light/small/broken/directional/north,
+/obj/effect/turf_decal/siding/purple{
+	dir = 9
+	},
+/obj/machinery/firealarm/directional/west,
+/turf/open/floor/plasteel,
+/area/ruin/powered/slimelab/lab)
+"Tb" = (
+/obj/effect/turf_decal/corner/opaque/purple/diagonal,
+/obj/effect/turf_decal/siding/purple,
+/obj/machinery/light/small/directional/west,
+/obj/structure/closet/wardrobe/science_white,
+/turf/open/floor/plasteel/white,
+/area/ruin/powered/slimelab/lab)
 "Td" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 4
@@ -4289,16 +4202,6 @@
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ruin/powered/slimelab/cafe)
-"Tf" = (
-/mob/living/simple_animal/hostile/asteroid/polarbear{
-	desc = "This poor bear looks far scrunklier than is healthy for a bear.";
-	healable = 0;
-	health = 1;
-	maxHealth = 1;
-	name = "scrunkly polar bear"
-	},
-/turf/open/floor/plating/dirt,
-/area/ruin/unpowered)
 "Th" = (
 /turf/open/floor/plasteel/white,
 /area/ruin/powered/slimelab/checkpoint)
@@ -4314,15 +4217,6 @@
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/powered/slimelab)
-"Tn" = (
-/obj/structure/chair/wood{
-	dir = 8
-	},
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/open/floor/carpet/green,
-/area/ruin/powered/slimelab/cafe)
 "Tx" = (
 /turf/open/floor/plating/asteroid/icerock/cracked,
 /area/ruin/unpowered)
@@ -4385,22 +4279,6 @@
 /obj/machinery/vending/clothing,
 /turf/open/floor/carpet/blue,
 /area/ruin/powered/slimelab)
-"Ua" = (
-/obj/structure/closet/l3closet/scientist,
-/obj/effect/turf_decal/corner/opaque/purple/diagonal{
-	dir = 4
-	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 8
-	},
-/obj/effect/turf_decal/siding/purple{
-	dir = 5
-	},
-/obj/machinery/light/small/broken{
-	dir = 1
-	},
-/turf/open/floor/plasteel,
-/area/ruin/powered/slimelab/lab)
 "Uk" = (
 /turf/open/floor/plasteel/stairs/medium{
 	dir = 1
@@ -4428,17 +4306,13 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/powered/slimelab/lab)
-"UH" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 8
-	},
-/obj/item/kirbyplants/random,
+"UA" = (
 /obj/structure/cable{
-	icon_state = "0-4"
+	icon_state = "4-8"
 	},
-/obj/machinery/power/apc/auto_name/north,
-/turf/open/floor/plasteel/white,
-/area/ruin/powered/slimelab/checkpoint)
+/obj/machinery/firealarm/directional/south,
+/turf/open/floor/plasteel,
+/area/ruin/powered/slimelab)
 "UJ" = (
 /obj/effect/turf_decal/corner/opaque/green/diagonal,
 /obj/effect/turf_decal/siding/green{
@@ -4476,6 +4350,13 @@
 /obj/effect/turf_decal/industrial/warning/corner,
 /turf/open/floor/plasteel,
 /area/ruin/powered/slimelab)
+"UW" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 1
+	},
+/obj/machinery/light/small/directional/south,
+/turf/open/floor/plasteel,
+/area/ruin/powered/slimelab)
 "Vc" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/structure/cable{
@@ -4489,10 +4370,6 @@
 	},
 /turf/open/water,
 /area/ruin/powered/slimelab/slimedome)
-"Vj" = (
-/obj/machinery/light,
-/turf/open/floor/plasteel/patterned/grid,
-/area/ruin/powered/slimelab/cafe)
 "Vs" = (
 /turf/open/floor/wood,
 /area/ruin/powered/slimelab/cafe)
@@ -4509,19 +4386,6 @@
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/powered/slimelab)
-"VA" = (
-/obj/structure/closet/emcloset/anchored,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/item/clothing/suit/hooded/wintercoat,
-/obj/item/clothing/suit/hooded/wintercoat,
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2{
-	dir = 1
-	},
-/turf/open/floor/plating,
-/area/ruin/powered/slimelab/checkpoint)
 "VM" = (
 /obj/effect/turf_decal/siding/wood/corner,
 /obj/machinery/light_switch{
@@ -4533,6 +4397,28 @@
 /obj/structure/flora/ausbushes/brflowers,
 /turf/open/floor/plating/grass/jungle,
 /area/ruin/powered/slimelab/slimedome)
+"VS" = (
+/obj/structure/table/glass,
+/obj/machinery/door/window/brigdoor,
+/obj/machinery/door/firedoor/border_only,
+/obj/item/radio/intercom/wideband/table,
+/turf/open/floor/plasteel/white,
+/area/ruin/powered/slimelab/checkpoint)
+"VV" = (
+/obj/machinery/light/directional/south,
+/turf/open/floor/plasteel/patterned/grid,
+/area/ruin/powered/slimelab/cafe)
+"Wp" = (
+/obj/structure/closet/emcloset/anchored,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/light/directional/east,
+/obj/item/clothing/suit/hooded/wintercoat,
+/obj/item/clothing/suit/hooded/wintercoat,
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ruin/powered/slimelab/checkpoint)
 "Wt" = (
 /obj/effect/turf_decal/corner/opaque/purple/diagonal{
 	dir = 4
@@ -4550,18 +4436,6 @@
 /obj/structure/chair/office,
 /turf/open/floor/plasteel/white,
 /area/ruin/powered/slimelab/checkpoint)
-"Wx" = (
-/obj/structure/flora/ausbushes/ppflowers,
-/obj/structure/flora/ausbushes/sparsegrass,
-/obj/machinery/light/broken{
-	dir = 8
-	},
-/obj/structure/spacevine/dense{
-	pixel_x = -32
-	},
-/obj/structure/spacevine,
-/turf/open/floor/plating/grass/jungle,
-/area/ruin/powered/slimelab/lab)
 "Wz" = (
 /obj/machinery/door/poddoor{
 	id = "iusmine"
@@ -4661,6 +4535,11 @@
 	icon_state = "reinforced_hull"
 	},
 /area/ruin/powered/slimelab/lava)
+"XF" = (
+/obj/machinery/vending/snack/random,
+/obj/machinery/light/directional/south,
+/turf/open/floor/wood,
+/area/ruin/powered/slimelab)
 "XI" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
@@ -4708,6 +4587,16 @@
 	},
 /turf/open/floor/carpet/green,
 /area/ruin/powered/slimelab/cafe)
+"Ye" = (
+/obj/structure/chair{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/firealarm/directional/south,
+/turf/open/floor/plasteel,
+/area/ruin/powered/slimelab/checkpoint)
 "Yh" = (
 /obj/structure/rack,
 /obj/item/mop,
@@ -4741,11 +4630,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/white,
 /area/ruin/powered/slimelab/lab)
-"YE" = (
-/obj/structure/table,
-/obj/machinery/light,
-/turf/open/floor/plasteel/patterned,
-/area/ruin/powered/slimelab)
 "YF" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -4756,6 +4640,24 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
 /area/ruin/powered/slimelab/checkpoint)
+"YG" = (
+/obj/machinery/button/door{
+	dir = 1;
+	id = "iuskill";
+	name = "Shutter Control";
+	pixel_x = 8;
+	pixel_y = -24
+	},
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/spacevine{
+	pixel_x = -33
+	},
+/obj/structure/spacevine{
+	pixel_y = -32
+	},
+/turf/open/floor/plating/grass/jungle,
+/area/ruin/powered/slimelab/lab)
 "YO" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -4770,6 +4672,17 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
 /area/ruin/powered/slimelab/lava)
+"YS" = (
+/obj/effect/turf_decal/industrial/outline/grey,
+/obj/effect/turf_decal/corner/opaque/green/mono,
+/obj/machinery/biogenerator/vault,
+/turf/open/floor/plasteel,
+/area/ruin/powered/slimelab/slimedome)
+"YV" = (
+/obj/machinery/autolathe,
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/plasteel,
+/area/ruin/powered/slimelab/lava)
 "YW" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
@@ -4780,45 +4693,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/powered/slimelab/slimedome)
-"Zd" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 4
-	},
-/obj/effect/turf_decal/siding/thinplating{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = -25;
-	pixel_y = 6
-	},
-/turf/open/floor/plasteel,
-/area/ruin/powered/slimelab)
-"Zg" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/turf/open/floor/engine,
-/area/ruin/powered/slimelab/lava)
-"Zi" = (
-/obj/structure/flora/ausbushes/grassybush,
-/obj/effect/mob_spawn/slime,
-/obj/machinery/light/broken{
-	dir = 8
-	},
-/obj/structure/spacevine{
-	pixel_x = -33
-	},
-/obj/structure/spacevine,
-/turf/open/floor/plating/grass/jungle,
-/area/ruin/powered/slimelab/lab)
 "Zm" = (
 /obj/structure/table,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
@@ -4846,7 +4720,8 @@
 "ZM" = (
 /obj/machinery/door/airlock/engineering{
 	name = "Lava Pit";
-	req_access_txt = "200"
+	req_access_txt = "200";
+	dir = 4
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -4858,7 +4733,8 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/poddoor/preopen{
-	id = "iuslava"
+	id = "iuslava";
+	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -5246,7 +5122,7 @@ gI
 gI
 Ba
 LG
-Tf
+Rc
 zQ
 tB
 ae
@@ -5254,7 +5130,7 @@ ae
 Jt
 iE
 LY
-Zg
+DI
 wR
 vG
 HQ
@@ -5407,13 +5283,13 @@ uh
 uh
 uh
 Np
-oj
+sZ
 mg
 mQ
 mQ
 mQ
 XB
-Kd
+uK
 Np
 uh
 Ba
@@ -5633,7 +5509,7 @@ uh
 uh
 Em
 op
-VA
+Wp
 kf
 Em
 uh
@@ -5669,9 +5545,9 @@ uh
 Np
 uh
 Np
-mb
+xI
 fh
-iU
+hp
 Np
 JA
 tl
@@ -5684,7 +5560,7 @@ Em
 Em
 Em
 Em
-Sj
+MM
 Em
 Dg
 Em
@@ -5725,17 +5601,17 @@ lR
 PS
 kz
 Np
-og
+Qp
 LI
 za
 hE
 Np
-pw
-ru
+Fg
+lE
 Em
 Nc
-hc
-jr
+AN
+Md
 uz
 ws
 YF
@@ -5773,9 +5649,9 @@ uh
 uh
 uh
 Np
-dE
+vZ
 zo
-PC
+Bs
 Np
 JA
 NX
@@ -5787,7 +5663,7 @@ DC
 Em
 FD
 Wu
-fW
+od
 mJ
 PD
 qB
@@ -5830,19 +5706,19 @@ RP
 Np
 Np
 Np
-CX
+YV
 Zm
 YR
 Np
 zs
 eg
 Em
-JJ
+yc
 Th
-Px
+VS
 sx
 Aj
-nz
+Ye
 Em
 uh
 uh
@@ -5883,13 +5759,13 @@ LB
 fm
 Np
 Np
-bW
+kB
 aj
 Np
-NM
-Sk
+On
+UA
 Em
-UH
+Jp
 Th
 zO
 ms
@@ -5928,28 +5804,28 @@ zs
 zs
 zs
 zs
-Dx
+LQ
 oE
 IB
 JY
 ZU
-Ip
+XF
 Np
 Np
-np
+Ki
 Np
 Pn
 By
 hX
 RK
-xZ
+SW
 jJ
 sx
-hb
+vP
 MD
 zs
 Bu
-Ap
+Sm
 Bu
 zs
 be
@@ -5976,8 +5852,8 @@ uh
 uh
 JV
 Tj
-AZ
-ol
+dZ
+oq
 na
 zs
 qU
@@ -5990,7 +5866,7 @@ Lk
 Np
 df
 Np
-bG
+kv
 Hg
 Em
 Em
@@ -6032,7 +5908,7 @@ bs
 EL
 US
 zs
-En
+sO
 Cg
 kg
 JD
@@ -6041,15 +5917,15 @@ fR
 fR
 NE
 Rh
-pn
+cb
 HK
 WM
 NB
 fR
-Mb
+Jg
 wi
 aP
-vF
+IE
 sY
 zs
 Qz
@@ -6080,8 +5956,8 @@ uh
 uh
 mv
 Vw
-xw
-aw
+et
+qS
 gG
 wf
 Km
@@ -6092,7 +5968,7 @@ FO
 QU
 QU
 CG
-jv
+CN
 tz
 PH
 JZ
@@ -6152,7 +6028,7 @@ nx
 Bp
 nx
 nx
-vi
+uJ
 JF
 ST
 zs
@@ -6160,10 +6036,10 @@ TX
 RY
 jW
 zs
-Oq
+Ha
 KJ
 KJ
-Vj
+VV
 be
 uh
 uh
@@ -6195,20 +6071,20 @@ NR
 hx
 Gu
 Hd
-iD
+vW
 hx
 cR
 rg
 nx
-vV
+HY
 UJ
-Jo
+eA
 nx
 SK
 JF
-rU
+id
 zs
-Sl
+Po
 tE
 Db
 zs
@@ -6261,7 +6137,7 @@ JF
 ST
 zs
 Bu
-Gb
+zq
 Bu
 zs
 OR
@@ -6292,7 +6168,7 @@ uh
 uh
 nx
 nx
-rq
+NJ
 rg
 VN
 Ul
@@ -6310,13 +6186,13 @@ nx
 nx
 ng
 Pz
-NG
+UW
 zs
 zs
 zs
 zs
 zs
-Cb
+pM
 Vs
 aF
 QI
@@ -6356,17 +6232,17 @@ Gu
 jf
 rg
 rg
-bY
+uH
 hh
-om
+CO
 Sx
 ku
 JF
 LV
 oe
-Zd
+tu
 Dh
-Pj
+mA
 OD
 jt
 Vs
@@ -6425,7 +6301,7 @@ TV
 Td
 fd
 EK
-CH
+pT
 be
 uh
 uh
@@ -6470,7 +6346,7 @@ PE
 gj
 Az
 hg
-Rj
+aZ
 OD
 XA
 WU
@@ -6516,7 +6392,7 @@ Hd
 Hd
 SF
 nx
-cm
+tQ
 xK
 EX
 zs
@@ -6580,7 +6456,7 @@ nq
 in
 Lo
 wp
-Hf
+My
 be
 uh
 uh
@@ -6603,7 +6479,7 @@ uh
 uh
 nx
 nx
-JW
+gO
 rg
 rg
 Hd
@@ -6620,13 +6496,13 @@ Hd
 rg
 Zx
 bq
-lw
+ek
 XT
-kP
+pA
 zs
 jm
 rN
-YE
+Pf
 zs
 nq
 in
@@ -6670,7 +6546,7 @@ rg
 rg
 rg
 Cd
-Pi
+lq
 bq
 xD
 uY
@@ -6682,7 +6558,7 @@ cC
 zs
 Ky
 vr
-Tn
+NS
 vQ
 wN
 be
@@ -6766,7 +6642,7 @@ rg
 tj
 rg
 Hd
-AO
+li
 OV
 rg
 NC
@@ -6776,19 +6652,19 @@ Gu
 rg
 Df
 bq
-ck
+Tb
 Cp
-Bg
+qx
 jZ
 Rv
 fr
-Zi
+Fs
 bp
 dy
 cc
 rH
-Wx
-ro
+aR
+YG
 XU
 xX
 TP
@@ -6931,7 +6807,7 @@ bq
 bq
 bq
 bq
-zR
+jb
 ZG
 Jy
 ZG
@@ -6969,7 +6845,7 @@ uh
 uh
 nx
 nx
-nP
+vS
 rg
 rg
 rg
@@ -6978,12 +6854,12 @@ nl
 rg
 OV
 OV
-vp
+BN
 bq
-vc
+SZ
 Wt
 bq
-qd
+qC
 lh
 Ty
 EH
@@ -6996,7 +6872,7 @@ BU
 tp
 wo
 vR
-Do
+dH
 bq
 xo
 TP
@@ -7048,7 +6924,7 @@ Ok
 UR
 Nl
 zH
-cf
+Cj
 Ct
 dK
 te
@@ -7082,12 +6958,12 @@ rg
 rg
 rg
 Gu
-gY
+xB
 bq
-Ua
+er
 vn
 bq
-if
+an
 PX
 jq
 ot
@@ -7179,7 +7055,7 @@ uh
 uh
 nx
 Zx
-GW
+hL
 Gu
 rg
 Df
@@ -7188,7 +7064,7 @@ zK
 rg
 Un
 rg
-DE
+CR
 Rr
 nx
 MZ
@@ -7235,13 +7111,13 @@ Zx
 Df
 rg
 rg
-Sr
+yk
 Gu
 rg
 rg
 rg
 BI
-BI
+Eb
 nx
 Fm
 TW
@@ -7250,12 +7126,12 @@ Ay
 Hw
 Cq
 ea
-mo
+ai
 kA
 Il
 Mc
 JN
-Ol
+lC
 xt
 bq
 uh
@@ -7293,11 +7169,11 @@ nx
 nx
 Yy
 oW
-mM
+YS
 Cr
 Kg
-lW
-eE
+rs
+tN
 Gw
 Ie
 NP

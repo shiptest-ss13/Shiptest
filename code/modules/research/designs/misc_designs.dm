@@ -610,3 +610,15 @@
 	build_path = /obj/item/clothing/gloves/tackler/rocket
 	category = list("Equipment")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+
+/////////////////////////////////////////
+/////////Fishing Equipment///////////////
+/////////////////////////////////////////
+
+/datum/design/fishing_rod_tech
+	name = "Advanced Fishing Rod"
+	id = "fishing_rod_tech"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/uranium = 1000, /datum/material/plastic = 2000)
+	build_path = /obj/item/fishing_rod/tech
+	category = list("Equipment")

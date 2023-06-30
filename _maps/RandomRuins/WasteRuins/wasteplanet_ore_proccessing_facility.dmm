@@ -41,9 +41,7 @@
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
 "ch" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/machinery/light/small/directional/north,
 /obj/machinery/conveyor/auto{
 	id = "rockplanet_ore_process"
 	},
@@ -120,7 +118,7 @@
 	dir = 1;
 	id = "rockplanet_ore_process"
 	},
-/obj/machinery/light/small,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
 "jA" = (
@@ -170,15 +168,20 @@
 	smoothing_groups = null
 	},
 /area/ruin/powered)
+"lC" = (
+/obj/machinery/door/airlock/mining{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/airlock/locked,
+/turf/open/floor/plating/rust,
+/area/ruin/powered)
 "lW" = (
 /obj/structure/flora/rock/pile,
 /turf/open/floor/plating/asteroid/wasteplanet,
 /area/ruin/powered)
 "mg" = (
 /obj/effect/mob_spawn/human/corpse/cargo_tech,
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
 "mE" = (
@@ -231,7 +234,7 @@
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
 "pv" = (
-/obj/machinery/light/small/broken,
+/obj/machinery/light/small/broken/directional/south,
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
 "pJ" = (
@@ -251,9 +254,7 @@
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
 "qb" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
+/obj/machinery/light/small/directional/east,
 /obj/structure/railing{
 	dir = 8
 	},
@@ -321,7 +322,7 @@
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
 "uB" = (
-/obj/machinery/light/small,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
 "vV" = (
@@ -329,7 +330,7 @@
 	dir = 4;
 	id = "rockplanet_ore_process"
 	},
-/obj/machinery/light/small,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
 "wi" = (
@@ -475,9 +476,7 @@
 	dir = 1;
 	id = "rockplanet_ore_process"
 	},
-/obj/machinery/light/small{
-	dir = 8
-	},
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
 "FH" = (
@@ -494,9 +493,6 @@
 /obj/machinery/door/airlock/mining,
 /obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/plating/rust,
-/area/ruin/powered)
-"GO" = (
-/turf/closed/indestructible/fakedoor,
 /area/ruin/powered)
 "Hr" = (
 /obj/machinery/conveyor/auto{
@@ -644,7 +640,7 @@
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
 "NZ" = (
-/obj/machinery/light/small,
+/obj/machinery/light/small/directional/south,
 /obj/structure/closet/secure_closet/miner,
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
@@ -653,9 +649,7 @@
 	dir = 8;
 	id = "rockplanet_ore_process"
 	},
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
 "Pd" = (
@@ -718,9 +712,7 @@
 	dir = 8;
 	id = "rockplanet_ore_process"
 	},
-/obj/machinery/light/small{
-	dir = 4
-	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
 "WV" = (
@@ -767,9 +759,7 @@
 	},
 /area/ruin/powered)
 "ZL" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
 
@@ -956,7 +946,7 @@ rx
 rx
 rx
 rx
-Gv
+lC
 rx
 rx
 rx
@@ -1119,7 +1109,7 @@ rx
 rx
 rx
 rx
-Gv
+lC
 rx
 rx
 qk
@@ -1457,7 +1447,7 @@ bE
 bE
 bE
 bE
-GO
+bE
 bE
 MX
 bE

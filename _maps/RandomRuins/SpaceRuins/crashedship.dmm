@@ -33,22 +33,8 @@
 	},
 /turf/open/floor/plasteel,
 /area/awaymission/BMPship/Midship)
-"ag" = (
-/obj/machinery/porta_turret{
-	dir = 8;
-	installation = /obj/item/gun/energy/lasercannon;
-	set_obj_flags = "EMAGGED"
-	},
-/turf/open/floor/engine,
-/area/awaymission/BMPship/Aft)
 "ah" = (
 /turf/open/floor/engine,
-/area/awaymission/BMPship/Aft)
-"ai" = (
-/obj/machinery/light/small{
-	dir = 8
-	},
-/turf/open/floor/plating,
 /area/awaymission/BMPship/Aft)
 "aj" = (
 /obj/effect/spawner/structure/window/hollow/reinforced/middle{
@@ -72,10 +58,6 @@
 /obj/effect/spawner/structure/window/hollow/reinforced/middle{
 	dir = 4
 	},
-/turf/open/floor/engine,
-/area/awaymission/BMPship/Aft)
-"ao" = (
-/obj/machinery/light/small,
 /turf/open/floor/engine,
 /area/awaymission/BMPship/Aft)
 "ap" = (
@@ -174,50 +156,15 @@
 	},
 /turf/open/floor/plating,
 /area/awaymission/BMPship/Aft)
-"aF" = (
-/obj/structure/table,
-/obj/item/storage/box,
-/obj/machinery/light/small{
-	dir = 1
-	},
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
-/turf/open/floor/plating,
-/area/awaymission/BMPship/Aft)
 "aG" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
 /turf/open/floor/plating,
 /area/awaymission/BMPship/Aft)
-"aH" = (
-/obj/effect/turf_decal/corner/transparent/bar,
-/obj/effect/turf_decal/corner/transparent/bar{
-	dir = 1
-	},
-/obj/machinery/light/small,
-/obj/machinery/button/door{
-	id = "packerMine";
-	pixel_x = 0;
-	pixel_y = -25
-	},
-/turf/open/floor/plasteel,
-/area/awaymission/BMPship/Midship)
 "aI" = (
 /turf/closed/wall/mineral/titanium/overspace,
 /area/awaymission/BMPship/Fore)
-"aJ" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
-/obj/machinery/button/door{
-	id = "packerMine";
-	pixel_x = 0;
-	pixel_y = 25
-	},
-/turf/open/floor/plating/asteroid/airless,
-/area/awaymission/BMPship/Midship)
 "aL" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -350,12 +297,6 @@
 "bm" = (
 /turf/open/floor/wood,
 /area/awaymission/BMPship/Fore)
-"bn" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
-/turf/open/floor/wood,
-/area/awaymission/BMPship/Fore)
 "bo" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -366,7 +307,9 @@
 /turf/open/floor/plating,
 /area/awaymission/BMPship/Fore)
 "bq" = (
-/obj/machinery/door/airlock/external,
+/obj/machinery/door/airlock/external{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/awaymission/BMPship/Fore)
 "bs" = (
@@ -396,24 +339,12 @@
 	},
 /turf/open/floor/plating,
 /area/awaymission/BMPship/Fore)
-"bw" = (
-/obj/machinery/light/small,
-/obj/effect/turf_decal/industrial/warning{
-	dir = 2
-	},
-/turf/open/floor/plating,
-/area/awaymission/BMPship/Fore)
 "bx" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 6
 	},
 /turf/open/floor/plating,
 /area/awaymission/BMPship/Fore)
-"by" = (
-/obj/machinery/light,
-/obj/effect/decal/cleanable/blood/gibs/old,
-/turf/open/floor/plating/airless,
-/area/awaymission/BMPship/Midship)
 "bA" = (
 /obj/machinery/sleeper{
 	dir = 1
@@ -422,10 +353,6 @@
 /area/awaymission/BMPship/Midship)
 "bB" = (
 /obj/machinery/sleep_console,
-/turf/open/floor/plating/airless,
-/area/awaymission/BMPship/Midship)
-"bC" = (
-/obj/machinery/light,
 /turf/open/floor/plating/airless,
 /area/awaymission/BMPship/Midship)
 "bD" = (
@@ -468,13 +395,6 @@
 /turf/open/floor/plating,
 /area/awaymission/BMPship/Aft)
 "bM" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 2
-	},
-/turf/open/floor/plating,
-/area/awaymission/BMPship/Aft)
-"bN" = (
-/obj/machinery/light/small,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 2
 	},
@@ -560,16 +480,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/awaymission/BMPship/Midship)
-"bY" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/transparent/bar,
-/obj/effect/turf_decal/corner/transparent/bar{
-	dir = 1
-	},
-/turf/open/floor/plasteel,
-/area/awaymission/BMPship/Midship)
 "bZ" = (
 /obj/machinery/hydroponics,
 /obj/effect/turf_decal/corner/opaque/green{
@@ -590,16 +500,6 @@
 /obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 4
 	},
-/turf/open/floor/plasteel,
-/area/awaymission/BMPship/Midship)
-"cb" = (
-/obj/effect/turf_decal/corner/opaque/yellow{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/opaque/yellow{
-	dir = 4
-	},
-/obj/structure/salvageable/seed,
 /turf/open/floor/plasteel,
 /area/awaymission/BMPship/Midship)
 "cc" = (
@@ -680,28 +580,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/awaymission/BMPship/Midship)
-"ci" = (
-/obj/machinery/processor,
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/effect/turf_decal/corner/opaque/blue{
-	dir = 4
-	},
-/obj/effect/turf_decal/corner/opaque/blue{
-	dir = 8
-	},
-/obj/effect/turf_decal/corner/opaque/white{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/opaque/white{
-	dir = 2
-	},
-/turf/open/floor/plasteel,
-/area/awaymission/BMPship/Midship)
 "cj" = (
 /obj/structure/table,
 /obj/item/reagent_containers/food/drinks/beer,
@@ -714,17 +592,6 @@
 "ck" = (
 /obj/structure/table,
 /obj/item/kitchen/knife,
-/obj/effect/turf_decal/corner/transparent/bar,
-/obj/effect/turf_decal/corner/transparent/bar{
-	dir = 1
-	},
-/turf/open/floor/plasteel,
-/area/awaymission/BMPship/Midship)
-"cl" = (
-/obj/structure/table,
-/obj/machinery/light/small{
-	dir = 1
-	},
 /obj/effect/turf_decal/corner/transparent/bar,
 /obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
@@ -815,12 +682,6 @@
 /turf/open/floor/plasteel/showroomfloor,
 /area/awaymission/BMPship/Aft)
 "cy" = (
-/turf/open/floor/plasteel/white,
-/area/awaymission/BMPship/Aft)
-"cz" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
 /turf/open/floor/plasteel/white,
 /area/awaymission/BMPship/Aft)
 "cA" = (
@@ -1063,6 +924,10 @@
 	},
 /turf/open/floor/plasteel,
 /area/awaymission/BMPship/Midship)
+"dh" = (
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/plating/airless,
+/area/awaymission/BMPship/Fore)
 "di" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -1115,36 +980,36 @@
 	},
 /turf/open/floor/plating,
 /area/awaymission/BMPship/Aft)
-"dp" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/machinery/light/small{
-	dir = 4
-	},
-/obj/effect/turf_decal/industrial/warning{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
-/area/awaymission/BMPship/Aft)
 "dq" = (
 /obj/item/multitool,
+/obj/machinery/power/terminal{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
 /turf/open/floor/engine,
 /area/awaymission/BMPship/Aft)
 "dr" = (
-/obj/structure/shuttle/engine/heater{
+/obj/machinery/power/smes/shuttle{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/effect/turf_decal/techfloor/orange{
 	dir = 4
+	},
+/turf/open/floor/engine/airless,
+/area/awaymission/BMPship/Aft)
+"ds" = (
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 8
 	},
 /obj/structure/window/reinforced{
 	dir = 8
 	},
 /turf/open/floor/engine/airless,
-/area/awaymission/BMPship/Aft)
-"ds" = (
-/obj/structure/shuttle/engine/propulsion{
-	dir = 4
-	},
-/turf/template_noop,
 /area/awaymission/BMPship/Aft)
 "dt" = (
 /obj/structure/table,
@@ -1155,25 +1020,6 @@
 /obj/structure/chair/stool,
 /turf/open/floor/carpet,
 /area/awaymission/BMPship/Fore)
-"dv" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/carpet,
-/area/awaymission/BMPship/Fore)
-"dw" = (
-/obj/machinery/light/small{
-	dir = 8
-	},
-/obj/effect/turf_decal/corner/transparent/bar,
-/obj/effect/turf_decal/corner/transparent/bar{
-	dir = 1
-	},
-/turf/open/floor/plasteel,
-/area/awaymission/BMPship/Midship)
 "dx" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -1204,34 +1050,9 @@
 	},
 /turf/open/floor/plasteel,
 /area/awaymission/BMPship/Midship)
-"dA" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
-/obj/effect/turf_decal/corner/transparent/bar,
-/obj/effect/turf_decal/corner/transparent/bar{
-	dir = 1
-	},
-/turf/open/floor/plasteel,
-/area/awaymission/BMPship/Midship)
 "dB" = (
 /turf/closed/wall/r_wall,
 /area/awaymission/BMPship/Midship)
-"dC" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
-/turf/open/floor/plasteel/showroomfloor,
-/area/awaymission/BMPship/Aft)
-"dD" = (
-/obj/machinery/light/small{
-	dir = 8
-	},
-/obj/effect/turf_decal/industrial/warning{
-	dir = 8
-	},
-/turf/open/floor/plasteel,
-/area/awaymission/BMPship/Aft)
 "dE" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1499,19 +1320,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/awaymission/BMPship/Midship)
-"en" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/machinery/light/small{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/transparent/bar,
-/obj/effect/turf_decal/corner/transparent/bar{
-	dir = 1
-	},
-/turf/open/floor/plasteel,
-/area/awaymission/BMPship/Midship)
 "eo" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -1628,16 +1436,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/awaymission/BMPship/Midship)
-"eC" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/transparent/bar,
-/obj/effect/turf_decal/corner/transparent/bar{
-	dir = 1
-	},
-/turf/open/floor/plasteel,
-/area/awaymission/BMPship/Midship)
 "eD" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -1673,13 +1471,6 @@
 	},
 /turf/open/floor/plating,
 /area/awaymission/BMPship/Fore)
-"eI" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small{
-	dir = 8
-	},
-/turf/open/floor/plating,
-/area/awaymission/BMPship/Midship)
 "eJ" = (
 /obj/machinery/door/window{
 	base_state = "right";
@@ -1687,14 +1478,6 @@
 	icon_state = "right"
 	},
 /turf/open/floor/plating,
-/area/awaymission/BMPship/Midship)
-"eK" = (
-/obj/machinery/light,
-/obj/effect/turf_decal/corner/transparent/bar,
-/obj/effect/turf_decal/corner/transparent/bar{
-	dir = 1
-	},
-/turf/open/floor/plasteel,
 /area/awaymission/BMPship/Midship)
 "eL" = (
 /obj/effect/gibspawner/generic,
@@ -1749,21 +1532,22 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel,
 /area/awaymission/BMPship/Aft)
 "eS" = (
 /obj/effect/decal/cleanable/cobweb,
-/obj/machinery/power/port_gen/pacman/super,
+/obj/machinery/power/terminal{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
 /turf/open/floor/engine,
 /area/awaymission/BMPship/Aft)
 "eT" = (
-/obj/structure/closet,
-/turf/open/floor/carpet,
-/area/awaymission/BMPship/Fore)
-"eU" = (
-/obj/machinery/light{
-	dir = 4
-	},
 /obj/structure/closet,
 /turf/open/floor/carpet,
 /area/awaymission/BMPship/Fore)
@@ -1898,19 +1682,14 @@
 /obj/item/stack/cable_coil,
 /turf/open/floor/plating,
 /area/awaymission/BMPship/Aft)
-"fr" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
-/obj/effect/turf_decal/industrial/warning{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
-/area/awaymission/BMPship/Aft)
 "fs" = (
 /obj/item/stack/sheet/mineral/uranium{
 	amount = 50
 	},
+/obj/machinery/power/terminal{
+	dir = 4
+	},
+/obj/structure/cable,
 /turf/open/floor/engine,
 /area/awaymission/BMPship/Aft)
 "ft" = (
@@ -2003,12 +1782,18 @@
 /area/awaymission/BMPship/Aft)
 "fG" = (
 /obj/effect/decal/cleanable/oil,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating,
 /area/awaymission/BMPship/Aft)
 "fH" = (
 /obj/structure/reagent_dispensers/fueltank,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
 	},
 /turf/open/floor/plasteel,
 /area/awaymission/BMPship/Aft)
@@ -2091,14 +1876,6 @@
 	icon_state = "platingdmg1"
 	},
 /area/awaymission/BMPship/Fore)
-"fV" = (
-/obj/machinery/light/small,
-/obj/effect/turf_decal/corner/transparent/bar,
-/obj/effect/turf_decal/corner/transparent/bar{
-	dir = 1
-	},
-/turf/open/floor/plasteel,
-/area/awaymission/BMPship/Midship)
 "fW" = (
 /turf/open/floor/plasteel{
 	icon_state = "platingdmg3"
@@ -2149,12 +1926,6 @@
 /obj/machinery/door/airlock/titanium,
 /turf/open/floor/plating,
 /area/awaymission/BMPship/Midship)
-"gf" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/plasteel,
-/area/awaymission/BMPship/Aft)
 "gg" = (
 /obj/structure/chair/stool,
 /turf/open/floor/plasteel,
@@ -2181,31 +1952,11 @@
 	},
 /turf/open/floor/plating/airless,
 /area/awaymission/BMPship/Fore)
-"gl" = (
-/obj/machinery/porta_turret{
-	dir = 8;
-	installation = /obj/item/gun/energy/lasercannon;
-	set_obj_flags = "EMAGGED"
-	},
-/turf/open/floor/engine,
-/area/awaymission/BMPship/Fore)
-"gm" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/open/floor/engine,
-/area/awaymission/BMPship/Fore)
 "gn" = (
 /obj/structure/cable,
 /turf/open/floor/plating/airless{
 	icon_state = "platingdmg3"
 	},
-/area/awaymission/BMPship/Fore)
-"go" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/open/floor/plating/airless,
 /area/awaymission/BMPship/Fore)
 "gp" = (
 /turf/open/floor/plating/asteroid/airless,
@@ -2213,12 +1964,6 @@
 "gq" = (
 /obj/structure/rack,
 /turf/open/floor/plating/airless,
-/area/awaymission/BMPship/Fore)
-"gr" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/open/floor/plating/asteroid/airless,
 /area/awaymission/BMPship/Fore)
 "gs" = (
 /turf/open/floor/plating/asteroid/airless,
@@ -2424,21 +2169,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/awaymission/BMPship/Aft)
-"hf" = (
-/obj/structure/toilet{
-	dir = 8
-	},
-/obj/machinery/light/small{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/opaque/white{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/opaque/white{
-	dir = 2
-	},
-/turf/open/floor/plasteel,
-/area/awaymission/BMPship/Aft)
 "hg" = (
 /turf/open/floor/plating/airless{
 	icon_state = "platingdmg3"
@@ -2485,12 +2215,6 @@
 	},
 /turf/open/floor/engine,
 /area/awaymission/BMPship/Aft)
-"hp" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/open/floor/engine,
-/area/awaymission/BMPship/Aft)
 "hq" = (
 /obj/item/storage/box/matches,
 /obj/item/storage/fancy/cigarettes/dromedaryco,
@@ -2520,33 +2244,321 @@
 "hE" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/awaymission/BMPship/Fore)
+"iJ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/plating,
+/area/awaymission/BMPship/Midship)
+"jl" = (
+/obj/machinery/light/directional/east,
+/obj/structure/closet,
+/turf/open/floor/carpet,
+/area/awaymission/BMPship/Fore)
+"pe" = (
+/obj/machinery/light/directional/south,
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/awaymission/BMPship/Midship)
+"pJ" = (
+/obj/machinery/power/port_gen/pacman/super,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plasteel,
+/area/awaymission/BMPship/Aft)
+"qv" = (
+/obj/machinery/light/directional/south,
+/obj/effect/decal/cleanable/blood/gibs/old,
+/turf/open/floor/plating/airless,
+/area/awaymission/BMPship/Midship)
+"qU" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/plasteel,
+/area/awaymission/BMPship/Aft)
+"qY" = (
+/obj/effect/turf_decal/corner/opaque/yellow{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/yellow{
+	dir = 4
+	},
+/obj/structure/salvageable/seed,
+/turf/open/floor/plasteel,
+/area/awaymission/BMPship/Midship)
+"sk" = (
+/obj/structure/table,
+/obj/machinery/light/small/directional/north,
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/awaymission/BMPship/Midship)
+"sB" = (
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
+	dir = 1
+	},
+/obj/machinery/light/small/directional/south,
+/obj/machinery/button/door{
+	id = "packerMine";
+	pixel_x = 0;
+	pixel_y = -25
+	},
+/turf/open/floor/plasteel,
+/area/awaymission/BMPship/Midship)
+"ui" = (
+/obj/machinery/light/small/directional/west,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/awaymission/BMPship/Aft)
 "vh" = (
 /turf/template_noop,
 /area/space/nearstation)
 "wh" = (
 /turf/template_noop,
 /area/awaymission/BMPship)
+"wq" = (
+/obj/machinery/light/directional/east,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/carpet,
+/area/awaymission/BMPship/Fore)
+"Ae" = (
+/obj/structure/toilet{
+	dir = 8
+	},
+/obj/machinery/light/small/directional/north,
+/obj/effect/turf_decal/corner/opaque/white{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/white{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
+/area/awaymission/BMPship/Aft)
+"AX" = (
+/obj/machinery/light/small/directional/north,
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/awaymission/BMPship/Midship)
+"Bm" = (
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/engine,
+/area/awaymission/BMPship/Aft)
+"BZ" = (
+/obj/machinery/light/small/directional/south,
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/awaymission/BMPship/Midship)
+"Ca" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/plasteel,
+/area/awaymission/BMPship/Aft)
+"CP" = (
+/obj/machinery/light/small/directional/south,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 2
+	},
+/turf/open/floor/plating,
+/area/awaymission/BMPship/Aft)
+"Dq" = (
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/plasteel/white,
+/area/awaymission/BMPship/Aft)
+"DX" = (
+/obj/machinery/power/terminal{
+	dir = 4
+	},
+/obj/structure/cable,
+/turf/open/floor/engine,
+/area/awaymission/BMPship/Aft)
+"ED" = (
+/obj/machinery/power/terminal{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/engine,
+/area/awaymission/BMPship/Aft)
+"EJ" = (
+/obj/machinery/light/small/directional/east,
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/awaymission/BMPship/Midship)
 "EQ" = (
 /obj/structure/lattice,
 /turf/template_noop,
 /area/awaymission/BMPship/Midship)
+"Fl" = (
+/obj/machinery/light/directional/north,
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/awaymission/BMPship/Midship)
+"Go" = (
+/obj/machinery/door/airlock/titanium,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/awaymission/BMPship/Aft)
 "Hy" = (
 /obj/machinery/door/poddoor/shutters{
 	id = "packerMine"
 	},
 /turf/open/floor/plating/airless,
 /area/awaymission/BMPship/Midship)
+"HP" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/machinery/light/small/directional/east,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/awaymission/BMPship/Aft)
+"JI" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/light/small/directional/north,
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/awaymission/BMPship/Midship)
+"Kq" = (
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
+	dir = 1
+	},
+/obj/machinery/light/small/directional/south,
+/turf/open/floor/plasteel,
+/area/awaymission/BMPship/Midship)
+"Lr" = (
+/obj/machinery/light/small/directional/east,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel,
+/area/awaymission/BMPship/Aft)
 "Mx" = (
 /turf/closed/mineral/random,
 /area/awaymission/BMPship/Midship)
-"QM" = (
-/obj/machinery/light/small{
+"MV" = (
+/obj/machinery/light/small/directional/west,
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
-/turf/open/floor/plating/airless{
-	icon_state = "platingdmg1"
-	},
+/turf/open/floor/plasteel,
 /area/awaymission/BMPship/Midship)
+"Op" = (
+/obj/machinery/porta_turret{
+	dir = 8;
+	installation = /obj/item/gun/energy/lasercannon;
+	set_obj_flags = "EMAGGED"
+	},
+/turf/open/floor/engine,
+/area/awaymission/BMPship/Aft)
+"OQ" = (
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/plating/asteroid/airless,
+/area/awaymission/BMPship/Fore)
+"Pb" = (
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/engine,
+/area/awaymission/BMPship/Fore)
+"Qe" = (
+/obj/structure/table,
+/obj/item/storage/box,
+/obj/machinery/light/small/directional/north,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/awaymission/BMPship/Aft)
+"Rp" = (
+/obj/machinery/light/small/directional/south,
+/turf/open/floor/engine,
+/area/awaymission/BMPship/Aft)
+"RG" = (
+/obj/machinery/porta_turret{
+	dir = 8;
+	installation = /obj/item/gun/energy/lasercannon;
+	set_obj_flags = "EMAGGED"
+	},
+/turf/open/floor/engine,
+/area/awaymission/BMPship/Fore)
+"SL" = (
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/plasteel/showroomfloor,
+/area/awaymission/BMPship/Aft)
+"SN" = (
+/obj/machinery/light/directional/north,
+/turf/open/floor/plasteel,
+/area/awaymission/BMPship/Aft)
+"SS" = (
+/obj/machinery/light/small/directional/south,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 2
+	},
+/turf/open/floor/plating,
+/area/awaymission/BMPship/Fore)
+"Uc" = (
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/wood,
+/area/awaymission/BMPship/Fore)
+"WI" = (
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/plating,
+/area/awaymission/BMPship/Aft)
 "Xc" = (
 /obj/structure/frame/computer{
 	anchored = 1;
@@ -2554,14 +2566,60 @@
 	},
 /turf/open/floor/carpet,
 /area/awaymission/BMPship/Fore)
-"Zb" = (
-/obj/effect/turf_decal/corner/transparent/bar,
-/obj/effect/turf_decal/corner/transparent/bar{
+"Xi" = (
+/obj/machinery/light/directional/south,
+/turf/open/floor/plating/airless,
+/area/awaymission/BMPship/Midship)
+"Xp" = (
+/obj/machinery/light/small/directional/north,
+/obj/machinery/button/door{
+	id = "packerMine";
+	pixel_x = 0;
+	pixel_y = 25
+	},
+/turf/open/floor/plating/asteroid/airless,
+/area/awaymission/BMPship/Midship)
+"YE" = (
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/plating/airless{
+	icon_state = "platingdmg1"
+	},
+/area/awaymission/BMPship/Midship)
+"ZA" = (
+/obj/machinery/processor,
+/obj/machinery/light/directional/north,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/opaque/blue{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/opaque/blue{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/machinery/light/small,
+/obj/effect/turf_decal/corner/opaque/white{
+	dir = 2
+	},
 /turf/open/floor/plasteel,
 /area/awaymission/BMPship/Midship)
+"ZB" = (
+/obj/machinery/power/terminal{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/engine,
+/area/awaymission/BMPship/Aft)
 
 (1,1,1) = {"
 aa
@@ -3154,9 +3212,9 @@ fw
 fu
 fT
 cG
-gl
+RG
 gG
-gl
+RG
 cG
 gb
 gb
@@ -3187,7 +3245,7 @@ aa
 aa
 cG
 aS
-bn
+Uc
 bm
 fc
 bV
@@ -3205,7 +3263,7 @@ fx
 fK
 fU
 cG
-gm
+Pb
 gG
 gG
 cG
@@ -3296,12 +3354,12 @@ bV
 bV
 cI
 db
-dv
+wq
 dI
 db
 ex
 bV
-eU
+jl
 aT
 fz
 fM
@@ -3358,7 +3416,7 @@ aT
 aT
 aT
 aT
-go
+dh
 fI
 fv
 cG
@@ -3398,12 +3456,12 @@ bX
 ce
 ce
 ce
-dw
+MV
 dy
 ce
 ce
 ce
-dw
+MV
 ce
 ce
 ce
@@ -3443,9 +3501,9 @@ aa
 cG
 aV
 bp
-bw
+SS
 aq
-bY
+Fl
 cp
 ce
 ce
@@ -3458,7 +3516,7 @@ ce
 ce
 ce
 ce
-fV
+BZ
 aq
 gq
 gp
@@ -3555,14 +3613,14 @@ dy
 dB
 eh
 eh
-eI
+iJ
 eh
 ej
 dB
 ce
 ce
 aq
-gr
+OQ
 gI
 fv
 gK
@@ -3598,7 +3656,7 @@ aX
 bp
 bx
 aq
-cb
+qY
 cq
 cJ
 dd
@@ -3802,7 +3860,7 @@ aa
 aa
 aa
 aq
-bY
+Fl
 ce
 ce
 ce
@@ -3912,7 +3970,7 @@ aq
 dN
 dz
 eA
-eK
+pe
 aq
 aq
 cK
@@ -4019,7 +4077,7 @@ dz
 dz
 dz
 fN
-fV
+BZ
 fm
 gs
 gs
@@ -4106,18 +4164,18 @@ aq
 hg
 at
 hg
-by
+qv
 aq
-ci
+ZA
 ct
 cO
 dy
-dA
+EJ
 dP
 el
 ce
 ce
-dA
+EJ
 fi
 fB
 dy
@@ -4172,9 +4230,9 @@ dB
 fj
 dB
 dy
-aH
+sB
 fm
-aJ
+Xp
 at
 gs
 gL
@@ -4319,7 +4377,7 @@ dy
 dB
 dP
 dB
-eC
+AX
 ce
 dB
 fk
@@ -4376,9 +4434,9 @@ dB
 fk
 dB
 dy
-Zb
+Kq
 fm
-QM
+YE
 at
 at
 at
@@ -4463,9 +4521,9 @@ ay
 aL
 bc
 at
-bC
+Xi
 aq
-cl
+sk
 ce
 cP
 dy
@@ -4529,7 +4587,7 @@ dz
 dT
 dz
 dK
-Zb
+Kq
 fm
 gx
 at
@@ -4624,7 +4682,7 @@ aq
 aq
 aq
 aq
-en
+JI
 ce
 dy
 eX
@@ -4710,9 +4768,9 @@ aa
 aa
 aa
 ht
-ag
+Op
 ah
-ag
+Op
 ac
 aC
 al
@@ -4741,9 +4799,9 @@ gX
 cE
 hk
 ht
-ag
+Op
 ah
-ag
+Op
 ac
 aa
 aa
@@ -4763,14 +4821,14 @@ aa
 ht
 ah
 ah
-ao
+Rp
 ac
 aD
 al
 al
 al
 bE
-bN
+CP
 ac
 cw
 cw
@@ -4792,7 +4850,7 @@ gX
 hb
 cE
 ht
-hp
+Bm
 ah
 ah
 ac
@@ -4863,11 +4921,11 @@ aa
 aa
 aa
 ht
-ai
+WI
 al
 al
 ac
-aF
+Qe
 al
 al
 al
@@ -4887,7 +4945,7 @@ fo
 fD
 cw
 ac
-gf
+SN
 cE
 cE
 gX
@@ -4896,7 +4954,7 @@ cE
 ht
 hq
 al
-ai
+WI
 ac
 aa
 aa
@@ -4925,7 +4983,7 @@ al
 bG
 bM
 ac
-cz
+Dq
 cS
 ac
 cw
@@ -5030,12 +5088,12 @@ ac
 cB
 cU
 ac
-dC
+SL
 cw
 cw
 cw
 cw
-dC
+SL
 cw
 fF
 fQ
@@ -5127,22 +5185,22 @@ al
 al
 al
 dm
-bN
+CP
 ac
 cV
 cV
 cV
-dD
+ui
 dY
 et
 eG
 eP
-dD
+ui
 cV
 cV
 cV
 ac
-gf
+SN
 gX
 cE
 ht
@@ -5248,7 +5306,7 @@ gj
 gD
 gP
 ht
-hf
+Ae
 ht
 ae
 aa
@@ -5292,7 +5350,7 @@ fR
 eQ
 al
 fq
-cE
+pJ
 ht
 ht
 ht
@@ -5386,14 +5444,14 @@ aa
 aa
 ac
 cX
-dp
-eu
+HP
+Ca
 ec
 eu
 eu
 eR
-cX
-fr
+qU
+Lr
 fH
 ht
 aa
@@ -5438,12 +5496,12 @@ aa
 ac
 ht
 ht
-ak
+Go
 ht
 ht
 ac
 ht
-ak
+Go
 ht
 ht
 ht
@@ -5489,12 +5547,12 @@ aa
 ae
 ht
 dq
-ah
-ah
+ED
+DX
 ht
 ht
 eS
-ah
+ZB
 fs
 ht
 ae
@@ -5589,16 +5647,16 @@ aa
 aa
 aa
 aa
-ae
+ht
 ds
 ds
 ds
-ae
-ae
+ht
+ht
 ds
 ds
 ds
-ae
+ht
 aa
 aa
 aa

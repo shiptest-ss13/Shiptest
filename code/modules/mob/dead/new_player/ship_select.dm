@@ -138,6 +138,8 @@
 		var/list/ship_data = list(
 			"name" = S.name,
 			"class" = S.source_template.short_name,
+			"desc" = S.source_template.description,
+			"tags" = S.source_template.tags,
 			"memo" = S.memo,
 			"jobs" = ship_jobs,
 			"manifest" = S.manifest,
@@ -155,6 +157,7 @@
 		var/list/ship_data = list(
 			"name" = T.name,
 			"desc" = T.description,
+			"tags" = T.tags,
 			"crewCount" = length(T.job_slots),
 			"limit" = T.limit,
 			"curNum" = template_num_lookup[T] || 0,
