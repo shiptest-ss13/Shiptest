@@ -1709,6 +1709,7 @@
 	icon = 'icons/mob/mutant_bodyparts.dmi'
 	color_src = MUTCOLORS_SECONDARY
 	body_zone = BODY_ZONE_CHEST
+	synthetic_icon_state = "none"
 
 /datum/sprite_accessory/body_markings/none
 	name = "None"
@@ -1717,21 +1718,22 @@
 /datum/sprite_accessory/body_markings/dtiger
 	name = "Dark Tiger Body"
 	icon_state = "dtiger"
-	gender_specific = 1
+	gender_specific = TRUE
 
 /datum/sprite_accessory/body_markings/ltiger
 	name = "Light Tiger Body"
 	icon_state = "ltiger"
-	gender_specific = 1
+	gender_specific = TRUE
 
 /datum/sprite_accessory/body_markings/lbelly
 	name = "Light Belly"
 	icon_state = "lbelly"
-	gender_specific = 1
+	gender_specific = TRUE
 
 /datum/sprite_accessory/tails
 	icon = 'icons/mob/mutant_bodyparts.dmi'
 	body_zone = BODY_ZONE_CHEST
+	synthetic_icon_state = "synth"
 
 /datum/sprite_accessory/tails_animated
 	icon = 'icons/mob/mutant_bodyparts.dmi'
@@ -1740,7 +1742,6 @@
 /datum/sprite_accessory/tails/lizard/smooth
 	name = "Smooth"
 	icon_state = "smooth"
-	synthetic_icon_state = "synth"
 
 /datum/sprite_accessory/tails_animated/lizard/smooth
 	name = "Smooth"
@@ -1749,7 +1750,6 @@
 /datum/sprite_accessory/tails/lizard/dtiger
 	name = "Dark Tiger"
 	icon_state = "dtiger"
-	synthetic_icon_state = "synth"
 
 /datum/sprite_accessory/tails_animated/lizard/dtiger
 	name = "Dark Tiger"
@@ -1758,7 +1758,6 @@
 /datum/sprite_accessory/tails/lizard/ltiger
 	name = "Light Tiger"
 	icon_state = "ltiger"
-	synthetic_icon_state = "synth"
 
 /datum/sprite_accessory/tails_animated/lizard/ltiger
 	name = "Light Tiger"
@@ -1767,7 +1766,6 @@
 /datum/sprite_accessory/tails/lizard/spikes
 	name = "Spikes"
 	icon_state = "spikes"
-	synthetic_icon_state = "synth"
 
 /datum/sprite_accessory/tails_animated/lizard/spikes
 	name = "Spikes"
@@ -1776,10 +1774,12 @@
 /datum/sprite_accessory/tails/lizard/large
 	name = "Large"
 	icon_state = "large"
+	synthetic_icon_state = "large" //fight me
 
 /datum/sprite_accessory/tails_animated/lizard/large
 	name = "Large"
 	icon_state = "large"
+	synthetic_icon_state = "large"
 
 /datum/sprite_accessory/tails/human/none
 	name = "None"
@@ -1858,8 +1858,9 @@
 
 /datum/sprite_accessory/horns
 	icon = 'icons/mob/mutant_bodyparts.dmi'
-	color_src = MUTCOLORS_SECONDARY
+	color_src = HAIR
 	body_zone = BODY_ZONE_HEAD
+	synthetic_color_src = MUTCOLORS_SECONDARY
 
 /datum/sprite_accessory/horns/none
 	name = "None"

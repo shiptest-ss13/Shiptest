@@ -477,6 +477,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<h3>Horns</h3>"
 
 				dat += "<a href='?_src_=prefs;preference=horns;task=input'>[features["horns"]]</a><BR>"
+				dat += "<span style='border:1px solid #161616; background-color: #[hair_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=hair;task=input'>Change</a><BR>"
+				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_HAIR_COLOR]'>[(randomise[RANDOM_HAIR_COLOR]) ? "Lock" : "Unlock"]</A><BR>"
 
 				mutant_category++
 				if(mutant_category >= MAX_MUTANT_ROWS)
@@ -1441,6 +1443,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	if(href_list["preference"] == "species")
 		switch(href_list["task"])
+			if("random")
+				random_species()
+				ShowChoices(user)
+				return TRUE
 			if("close")
 				user << browse(null, "window=mob_species")
 				ShowChoices(user)
@@ -1462,7 +1468,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				species_looking_at = href_list["newspecies"]
 
 		ShowSpeciesChoices(user)
-		return 1
+		return TRUE
 
 	if(href_list["preference"] == "trait")
 		switch(href_list["task"])
@@ -1557,8 +1563,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					eye_color = random_eye_color()
 				if("s_tone")
 					skin_tone = random_skin_tone()
-				if("species")
-					random_species()
 				if("bag")
 					backpack = pick(GLOB.backpacklist)
 				if("suit")
