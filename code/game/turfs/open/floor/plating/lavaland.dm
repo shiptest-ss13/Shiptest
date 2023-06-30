@@ -30,13 +30,6 @@
 		if("basalt5", "basalt9")
 			B.set_light(1.4, 0.6, LIGHT_COLOR_LAVA) //barely anything!
 
-///////Surface. The surface is warm, but survivable without a suit. Internals are required. The floors break to chasms, which drop you into the underground.
-
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface
-	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
-	planetary_atmos = TRUE
-	baseturfs = /turf/open/lava/smooth/lava_land_surface
-
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 	baseturfs = /turf/open/indestructible/necropolis/icecropolis
@@ -72,21 +65,6 @@
 	light_power = 0.3
 	light_color = LIGHT_COLOR_FIRE
 
-/turf/open/floor/plating/grass/lava
-	name = "ungodly grass"
-	desc = "Common grass, tinged to unnatural colours by chemicals in the atmosphere."
-	baseturfs = /turf/open/floor/plating/grass/lava
-	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
-	icon_state = "grass-255"
-	base_icon_state = "grass"
-	planetary_atmos = TRUE
-	icon = 'icons/turf/floors/lava_grass_red.dmi'
-	smooth_icon = 'icons/turf/floors/lava_grass_red.dmi'
-	light_range = 2
-	light_power = 0.6
-	light_color = LIGHT_COLOR_FIRE
-	gender = PLURAL
-
 /turf/open/floor/plating/grass/lava/orange
 	icon = 'icons/turf/floors/lava_grass_orange.dmi'
 	smooth_icon = 'icons/turf/floors/lava_grass_orange.dmi'
@@ -96,3 +74,24 @@
 	baseturfs = /turf/open/floor/plating/grass/lava/purple
 	icon = 'icons/turf/floors/lava_grass_purple.dmi'
 	smooth_icon = 'icons/turf/floors/lava_grass_purple.dmi'
+
+/turf/open/floor/plating/moss //subtype as grass eri
+	name = "mossy carpet"
+	desc = "When the forests burned away and the sky grew dark, the moss learned to feed on the falling ash."
+	baseturfs = /turf/open/floor/plating/ashplanet //explosions and damage can destroy the moss
+	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
+	planetary_atmos = TRUE
+	icon_state = "moss"
+	icon = 'icons/turf/lava_moss.dmi'
+	base_icon_state = "moss"
+	bullet_bounce_sound = null
+	footstep = FOOTSTEP_GRASS
+	barefootstep = FOOTSTEP_GRASS
+	clawfootstep = FOOTSTEP_GRASS
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	layer = HIGH_TURF_LAYER
+	gender = PLURAL
+	light_power = 1
+	light_range = 2
+	pixel_x = -9
+	pixel_y = -9

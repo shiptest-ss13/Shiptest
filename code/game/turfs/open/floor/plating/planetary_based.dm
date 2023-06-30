@@ -15,25 +15,34 @@
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	attachment_holes = FALSE
 
-	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
+	initial_gas_mix = DEFAULT_ATMOS_DETECTOR //this is pure plasma so it's easy to tell if this is being used where it shouldn't be. Think of it like a really shitty canary.
 	//what color we are (for the lit var)
 	light_color = LIGHT_COLOR_TUNGSTEN
+	//how powerful our light is
+	var/light_pwr = 0.8
 	//they *are* planetary tiles
 	planetary_atmos = TRUE
 	/// the icon name to be used: for example, asteroid1 - asteroid12 in the icon file
 	base_icon_state  = "asteroid"
-	/// Base turf type to be created by the tunnel
-	var/turf_type = /turf/open/floor/plating/planetary // is this unused?
+
+	//can a floor have a different icon?
+	var/floor_variants = TRUE
 	/// Probability floor has a different icon state
 	var/floor_variance = 20
 	/// The max amount of unique icons, plus one
 	var/max_icon_states = 12
+
+
 	/// Itemstack to drop when dug by a shovel
 	var/obj/item/stack/digResult = /obj/item/stack/ore/glass
 	//we don't want some things to be dug (Yet at least)
 	var/can_dig = TRUE
 	/// Whether the turf has been dug or not
 	var/dug
+
+	//if a tile can be broken, or burnt (they all should be able to eventually, but that's a Lot Of Sprites and a fair bit of logic. Maybe in shiptest 2)
+	var/can_burn = FALSE
+	var/can_break = FALSE
 
 
 /turf/open/floor/plating/planetary/examine(mob/user)
@@ -44,13 +53,14 @@
 	var/proper_name = name
 	. = ..()
 	name = proper_name
-
-	if(prob(floor_variance))
-		icon_state = "[base_icon_state][rand(0,max_icon_states)]"
-	if(lit)
-		light_color = light_color
-		light_range = 2
-		light_power = 0.8
+	if(floor_variants)
+		if(prob(floor_variance))
+			icon_state = "[base_icon_state][rand(0,max_icon_states)]"
+	if(!lit)
+		return
+	light_color = light_color
+	light_range = 2
+	light_power = light_pwr
 
 
 /// Drops itemstack when dug and changes icon
@@ -75,6 +85,8 @@
 	return
 
 /turf/open/floor/plating/planetary/burn_tile()
+	if(can_burn)
+		. = ..()
 	return
 
 /turf/open/floor/plating/planetary/MakeSlippery(wet_setting, min_wet_time, wet_time_to_add, max_wet_time, permanent)
@@ -84,6 +96,8 @@
 	return
 
 /turf/open/floor/plating/planetary/crush()
+	if(can_crush)
+		. = ..()
 	return
 
 /turf/open/floor/plating/planetary/attackby(obj/item/W, mob/user, params)
@@ -133,6 +147,7 @@ grass
 	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_GRASS)
 	layer = HIGH_TURF_LAYER
 	can_dig = FALSE
+	floor_variants = FALSE
 	var/smooth_icon = 'icons/turf/floors/grass.dmi'
 
 /turf/open/floor/plating/planetary/grass/Initialize(mapload, inherited_virtual_z)
@@ -153,6 +168,7 @@ dirt
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "dirt"
 	tiled_dirt = FALSE
+	floor_variants = FALSE
 
 /turf/open/floor/plating/planetary/dirt/dark
 	icon_state = "greenerdirt"
@@ -166,6 +182,7 @@ sands
 	icon = 'icons/misc/beach.dmi'
 	icon_state = "sand"
 	base_icon_state = "sand"
+	floor_variants = FALSE
 
 /*
 Ice Ice Baby
@@ -182,6 +199,7 @@ Ice Ice Baby
 	barefootstep = FOOTSTEP_ICE
 	clawfootstep = FOOTSTEP_ICE
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	floor_variants = FALSE
 
 /turf/open/floor/plating/planetary/ice/Initialize(mapload, inherited_virtual_z)
 	. = ..()
@@ -214,6 +232,9 @@ Snow
 	bullet_sizzle = TRUE
 	bullet_bounce_sound = null
 	digResult = /obj/item/stack/sheet/mineral/snow
+
+	floor_variants = TRUE
+
 	// footprint vars
 	var/entered_dirs
 	var/exited_dirs
@@ -304,6 +325,8 @@ Liquids
 	clawfootstep = FOOTSTEP_WATER
 	heavyfootstep = FOOTSTEP_WATER
 
+	floor_variants = FALSE
+
 	var/datum/reagent/reagent_to_extract = /datum/reagent/water
 	var/extracted_reagent_visible_name = "water"
 
@@ -340,6 +363,9 @@ Liquids
 			return TRUE
 	return FALSE
 
+
+
+
 /*
 Liquid hot magma
 */
@@ -359,6 +385,8 @@ Liquid hot magma
 	barefootstep = FOOTSTEP_LAVA
 	clawfootstep = FOOTSTEP_LAVA
 	heavyfootstep = FOOTSTEP_LAVA
+
+	floor_variants = FALSE
 
 	var/particle_emitter = /obj/effect/particle_emitter/lava
 
@@ -524,3 +552,177 @@ Liquid hot magma
 			if(L) //mobs turning into object corpses could get deleted here.
 				L.adjust_fire_stacks(20)
 				L.IgniteMob()
+
+/turf/open/floor/plating/planetary/lava/plasma
+	name = "liquid plasma"
+	desc = "A flowing stream of chilled liquid plasma. You probably shouldn't get in."
+	icon_state = "liquidplasma"
+	baseturfs = /turf/open/floor/plating/planetary/lava/plasma
+	light_range = 3
+	light_power = 0.75
+	light_color = LIGHT_COLOR_PURPLE
+	particle_emitter = null
+	floor_variants = FALSE
+
+/turf/open/floor/plating/planetary/lava/plasma/attackby(obj/item/I, mob/user, params)
+	. = ..()
+	var/obj/item/reagent_containers/glass/C = I
+	if(C.reagents.total_volume >= C.volume)
+		to_chat(user, "<span class='danger'>[C] is full.</span>")
+		return
+	C.reagents.add_reagent(/datum/reagent/toxin/plasma, rand(5, 10))
+	user.visible_message("<span class='notice'>[user] scoops some plasma from the [src] with \the [C].</span>", "<span class='notice'>You scoop out some plasma from the [src] using \the [C].</span>")
+	return TRUE
+
+/turf/open/floor/plating/planetary/lava/plasma/burn_stuff(AM)
+	. = 0
+
+	if(is_safe())
+		return FALSE
+
+	var/thing_to_check = src
+	if (AM)
+		thing_to_check = list(AM)
+	for(var/thing in thing_to_check)
+		if(isobj(thing))
+			var/obj/O = thing
+			if((O.resistance_flags & (FREEZE_PROOF)) || O.throwing)
+				continue
+
+		else if (isliving(thing))
+			. = 1
+			var/mob/living/L = thing
+			if(L.movement_type & FLYING)
+				continue	//YOU'RE FLYING OVER IT
+			if("snow" in L.weather_immunities)
+				continue
+
+			var/buckle_check = L.buckling
+			if(!buckle_check)
+				buckle_check = L.buckled
+			if(isobj(buckle_check))
+				var/obj/O = buckle_check
+				if(O.resistance_flags & FREEZE_PROOF)
+					continue
+
+			else if(isliving(buckle_check))
+				var/mob/living/live = buckle_check
+				if("snow" in live.weather_immunities)
+					continue
+
+			L.adjustFireLoss(2)
+			if(L)
+				L.adjust_fire_stacks(20) //dipping into a stream of plasma would probably make you more flammable than usual
+				L.adjust_bodytemperature(-rand(50,65)) //its cold, man
+				if(ishuman(L))//are they a carbon?
+					var/list/plasma_parts = list()//a list of the organic parts to be turned into plasma limbs
+					var/list/robo_parts = list()//keep a reference of robotic parts so we know if we can turn them into a plasmaman
+					var/mob/living/carbon/human/PP = L
+					var/S = PP.dna.species
+					if(istype(S, /datum/species/plasmaman) || istype(S, /datum/species/android)) //ignore plasmamen/robotic species
+						continue
+
+					for(var/BP in PP.bodyparts)
+						var/obj/item/bodypart/NN = BP
+						if(IS_ORGANIC_LIMB(NN) && NN.limb_id != "plasmaman") //getting every organic, non-plasmaman limb (augments/androids are immune to this)
+							plasma_parts += NN
+						if(!IS_ORGANIC_LIMB(NN))
+							robo_parts += NN
+
+					if(prob(35)) //checking if the delay is over & if the victim actually has any parts to nom
+						PP.adjustToxLoss(15)
+						PP.adjustFireLoss(25)
+						if(plasma_parts.len)
+							var/obj/item/bodypart/NB = pick(plasma_parts) //using the above-mentioned list to get a choice of limbs for dismember() to use
+							PP.emote("scream")
+							NB.limb_id = "plasmaman"//change the species_id of the limb to that of a plasmaman
+							NB.no_update = TRUE
+							NB.change_bodypart_status()
+							PP.visible_message(
+								"<span class='warning'>[L] screams in pain as [L.p_their()] [NB] melts down to the bone!</span>",
+								"<span class='userdanger'>You scream out in pain as your [NB] melts down to the bone, leaving an eerie plasma-like glow where flesh used to be!</span>")
+						if(!plasma_parts.len && !robo_parts.len) //a person with no potential organic limbs left AND no robotic limbs, time to turn them into a plasmaman
+							PP.IgniteMob()
+							PP.set_species(/datum/species/plasmaman)
+							PP.visible_message(
+								"<span class='warning'>[L] bursts into a brilliant purple flame as [L.p_their()] entire body is that of a skeleton!</span>",
+								"<span class='userdanger'>Your senses numb as all of your remaining flesh is turned into a purple slurry, sloshing off your body and leaving only your bones to show in a vibrant purple!</span>")
+
+/turf/open/floor/plating/planetary/lava/acid
+	name = "acid lake"
+	icon_state = "acid"
+	baseturfs = /turf/open/floor/plating/planetary/lava/acid
+
+	light_range = 2
+	light_power = 0.75
+	light_color = LIGHT_COLOR_SLIME_LAMP
+
+/turf/open/acid/attackby(obj/item/C, mob/user, params)
+	..()
+	if(istype(C, /obj/item/stack/rods))
+		var/obj/item/stack/rods/R = C
+		var/obj/structure/lattice/H = locate(/obj/structure/lattice, src)
+		if(H)
+			to_chat(user, "<span class='warning'>There is already a lattice here!</span>")
+			return
+		if(R.use(2))
+			to_chat(user, "<span class='notice'>You construct a catwalk.</span>")
+			playsound(src, 'sound/weapons/genhit.ogg', 50, TRUE)
+			new /obj/structure/lattice/catwalk(locate(x, y, z))
+		else
+			to_chat(user, "<span class='warning'>You need one rod to build a lattice.</span>")
+		return
+		//to-do, acidproof containers can scoop up acid.
+
+/turf/open/acid/proc/melt_stuff(thing_to_melt)
+	if(is_safe_to_cross())
+		return FALSE
+	. = FALSE
+	var/thing_to_check = src
+	if (thing_to_melt)
+		thing_to_check = list(thing_to_melt)
+	for(var/thing in thing_to_check)
+		if(isobj(thing))
+			var/obj/object_to_melt = thing
+			if((object_to_melt.resistance_flags & (ACID_PROOF|INDESTRUCTIBLE)) || object_to_melt.throwing)
+				continue
+			. = TRUE
+			if((object_to_melt.acid_level))
+				continue
+			if(object_to_melt.resistance_flags & UNACIDABLE)
+				object_to_melt.resistance_flags &= ~UNACIDABLE
+			if(object_to_melt.armor.acid == 100) //acid proof armor will probably be acid proof
+				continue
+			object_to_melt.acid_act(10, 20)
+
+		else if (isliving(thing))
+			. = TRUE
+			var/mob/living/L = thing
+			if(L.movement_type & FLYING)
+				continue	//YOU'RE FLYING OVER IT
+			var/buckle_check = L.buckling
+			if(!buckle_check)
+				buckle_check = L.buckled
+			if(isobj(buckle_check))
+				var/obj/O = buckle_check
+				if(O.resistance_flags & LAVA_PROOF)
+					continue
+			else if(isliving(buckle_check))
+				var/mob/living/live = buckle_check
+				if("acid" in live.weather_immunities)
+					continue
+
+			if(iscarbon(L))
+				var/mob/living/carbon/C = L
+				var/obj/item/clothing/S = C.get_item_by_slot(ITEM_SLOT_OCLOTHING)
+				var/obj/item/clothing/H = C.get_item_by_slot(ITEM_SLOT_HEAD)
+
+				if(S && H && S.armor.acid == 100 && H.armor.acid == 100)
+					return
+
+			if("acid" in L.weather_immunities)
+				continue
+
+			L.adjustFireLoss(20)
+			if(L) //mobs turning into object corpses could get deleted here.
+				L.acid_act(50, 100)

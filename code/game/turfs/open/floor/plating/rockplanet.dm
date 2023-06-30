@@ -1,48 +1,66 @@
-/turf/open/floor/plating/asteroid/rockplanet
+//roc
+//rock
+
+/turf/open/floor/plating/planetary/rockplanet
+	baseturfs = /turf/open/floor/plating/planetary/rockplanet
+	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
+	light_color = COLOR_ROCKPLANET_LIGHT
+
+/turf/open/floor/plating/planetary/rockplanet/lit
+	lit = TRUE
+	baseturfs = /turf/open/floor/plating/planetary/rockplanet/lit
+
+//rock sand.
+
+/turf/open/floor/plating/planetary/sand/rockplanet
 	name = "iron sand"
 	icon_state = "dry_soft"
 	base_icon_state = "dry_soft"
 	floor_variance = 100
 	max_icon_states = 7
 	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
-	planetary_atmos = TRUE
-	baseturfs = /turf/open/floor/plating/asteroid/rockplanet
-	turf_type = /turf/open/floor/plating/asteroid/rockplanet
+	baseturfs = /turf/open/floor/plating/planetary/sand/rockplanet
 	digResult = /obj/item/stack/ore/glass/rockplanet
+	light_color = COLOR_ROCKPLANET_LIGHT
+	floor_variants = TRUE
 
-/turf/open/floor/plating/asteroid/rockplanet/lit
-	light_range = 2
-	light_power = 0.6
-	light_color = COLOR_VERY_LIGHT_GRAY
-
-/turf/open/floor/plating/asteroid/rockplanet/cracked
+/turf/open/floor/plating/planetary/sand/cracked
 	name = "iron cracked sand"
 	icon_state = "dry_cracked0"
 	base_icon_state = "dry_cracked"
-	baseturfs = /turf/open/floor/plating/asteroid/rockplanet
-	turf_type = /turf/open/floor/plating/asteroid/rockplanet
+	baseturfs = /turf/open/floor/plating/planetary/sand/rockplanet
 
-/turf/open/floor/plating/asteroid/rockplanet/cracked/lit
-	light_range = 2
-	light_power = 0.6
-	light_color = COLOR_VERY_LIGHT_GRAY
-	baseturfs = /turf/open/floor/plating/asteroid/rockplanet/lit
-	turf_type = /turf/open/floor/plating/asteroid/rockplanet/lit
-
-/turf/open/floor/plating/asteroid/rockplanet/wet
+/turf/open/floor/plating/planetary/sand/wet
 	icon_state = "wet_soft0"
 	base_icon_state = "wet_soft"
 
-/turf/open/floor/plating/asteroid/rockplanet/wet/lit
-	light_range = 2
-	light_power = 0.6
-
-/turf/open/floor/plating/asteroid/rockplanet/wet/cracked
+/turf/open/floor/plating/planetary/sand/cracked/wet
 	name = "iron cracked sand"
 	icon_state = "wet_cracked0"
 	base_icon_state = "wet_cracked"
 
-/turf/open/floor/plating/asteroid/rockplanet/wet/cracked/lit
-	light_range = 2
-	light_power = 0.6
-	light_color = COLOR_VERY_LIGHT_GRAY
+/turf/open/floor/plating/planetary/sand/rockplanet/lit
+	lit = TRUE
+	baseturfs = /turf/open/floor/plating/planetary/rockplanet/lit
+
+/turf/open/floor/plating/planetary/sand/rockplanet/wet/lit
+	lit = TRUE
+	baseturfs = /turf/open/floor/plating/planetary/rockplanet/lit
+
+/turf/open/floor/plating/planetary/sand/rockplanet/cracked/lit
+	lit = TRUE
+	baseturfs = /turf/open/floor/plating/planetary/rockplanet/lit
+
+/turf/open/floor/plating/planetary/sand/rockplanet/cracked/wet/lit
+	lit = TRUE
+	baseturfs = /turf/open/floor/plating/planetary/rockplanet/lit
+
+//snow
+
+/turf/open/floor/plating/planetary/snow/rockplanet
+	baseturfs = /turf/open/floor/plating/planetary/rockplanet
+	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/plating/planetary/snow/rockplanet/lit
+	lit = TRUE
+	baseturfs = /turf/open/floor/plating/planetary/rockplanet/lit

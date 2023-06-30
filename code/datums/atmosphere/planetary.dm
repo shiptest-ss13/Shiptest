@@ -50,8 +50,9 @@
 	minimum_pressure = HAZARD_LOW_PRESSURE + 10
 	maximum_pressure = LAVALAND_EQUIPMENT_EFFECT_PRESSURE - 1
 
-	minimum_temp = 180
-	maximum_temp = 180
+	minimum_temp = 80 //fucking cold to
+	maximum_temp = 200 //still cold
+	//I had to stop myself from putting a fuck there I use it too much
 
 /datum/atmosphere/wasteplanet
 	id = WASTEPLANET_DEFAULT_ATMOS
@@ -77,3 +78,28 @@
 
 	minimum_temp = T20C + 1
 	maximum_temp = T20C + 80
+
+//sandplanet
+/datum/atmosphere/whitesands
+	id = SANDPLANET_ATMOS
+
+	base_gases = list(
+		GAS_O2=5,
+		GAS_N2=10,
+	)
+	normal_gases = list(
+		GAS_O2=10,
+		GAS_N2=10,
+		GAS_CO2=10,
+	)
+	restricted_gases = list(
+		GAS_PLASMA=0.1,
+		GAS_H2O=0.1,
+	)
+	restricted_chance = 50
+
+	minimum_pressure = HAZARD_LOW_PRESSURE + 10
+	maximum_pressure = LAVALAND_EQUIPMENT_EFFECT_PRESSURE - 1
+
+	minimum_temp = 120
+	maximum_temp = 210 //No longer always 180
