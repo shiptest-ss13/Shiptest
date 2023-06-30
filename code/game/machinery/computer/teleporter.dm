@@ -90,7 +90,7 @@
 			say("Processing hub calibration to target...")
 			calibrating = TRUE
 			power_station.update_icon()
-			addtimer(CALLBACK(src, .proc/finish_calibration), 50 * (3 - power_station.teleporter_hub.accuracy)) //Better parts mean faster calibration
+			addtimer(CALLBACK(src, PROC_REF(finish_calibration)), 50 * (3 - power_station.teleporter_hub.accuracy)) //Better parts mean faster calibration
 			. = TRUE
 
 /obj/machinery/computer/teleporter/proc/finish_calibration()

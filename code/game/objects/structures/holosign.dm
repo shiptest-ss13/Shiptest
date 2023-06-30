@@ -221,7 +221,7 @@
 			var/mob/living/M = user
 			M.electrocute_act(15,"Energy Barrier", flags = SHOCK_NOGLOVES)
 			shockcd = TRUE
-			addtimer(CALLBACK(src, .proc/cooldown), 5)
+			addtimer(CALLBACK(src, PROC_REF(cooldown)), 5)
 
 /obj/structure/holosign/barrier/cyborg/hacked/Bumped(atom/movable/AM)
 	if(shockcd)
@@ -233,7 +233,7 @@
 	var/mob/living/M = AM
 	M.electrocute_act(15,"Energy Barrier", flags = SHOCK_NOGLOVES)
 	shockcd = TRUE
-	addtimer(CALLBACK(src, .proc/cooldown), 5)
+	addtimer(CALLBACK(src, PROC_REF(cooldown)), 5)
 
 /* Infinite Holosigns for admin/etc use */
 

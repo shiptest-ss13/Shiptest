@@ -40,7 +40,7 @@
 
 /mob/living/simple_animal/hostile/retaliate/goose/Initialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_MOVABLE_MOVED, .proc/goosement)
+	RegisterSignal(src, COMSIG_MOVABLE_MOVED, PROC_REF(goosement))
 
 /mob/living/simple_animal/hostile/retaliate/goose/proc/goosement(atom/movable/AM, OldLoc, Dir, Forced)
 	if(stat == DEAD)
@@ -144,7 +144,7 @@
 /mob/living/simple_animal/hostile/retaliate/goose/proc/choke(obj/item/reagent_containers/food/plastic)
 	if(stat == DEAD || choking)
 		return
-	addtimer(CALLBACK(src, .proc/suffocate), 300)
+	addtimer(CALLBACK(src, PROC_REF(suffocate)), 300)
 
 /mob/living/simple_animal/hostile/retaliate/goose/vomit/choke(obj/item/reagent_containers/food/plastic)
 	if(stat == DEAD || choking)
@@ -152,9 +152,9 @@
 	if(prob(25))
 		visible_message("<span class='warning'>[src] is gagging on \the [plastic]!</span>")
 		manual_emote("gags!")
-		addtimer(CALLBACK(src, .proc/vomit), 300)
+		addtimer(CALLBACK(src, PROC_REF(vomit)), 300)
 	else
-		addtimer(CALLBACK(src, .proc/suffocate), 300)
+		addtimer(CALLBACK(src, PROC_REF(suffocate)), 300)
 
 /mob/living/simple_animal/hostile/retaliate/goose/Life()
 	. = ..()
@@ -201,13 +201,13 @@
 
 /mob/living/simple_animal/hostile/retaliate/goose/vomit/proc/vomit_prestart(duration)
 	flick("vomit_start",src)
-	addtimer(CALLBACK(src, .proc/vomit_start, duration), 13) //13 is the length of the vomit_start animation in gooseloose.dmi
+	addtimer(CALLBACK(src, PROC_REF(vomit_start), duration), 13) //13 is the length of the vomit_start animation in gooseloose.dmi
 
 /mob/living/simple_animal/hostile/retaliate/goose/vomit/proc/vomit_start(duration)
 	vomiting = TRUE
 	icon_state = "vomit"
 	vomit()
-	addtimer(CALLBACK(src, .proc/vomit_preend), duration)
+	addtimer(CALLBACK(src, PROC_REF(vomit_preend)), duration)
 
 /mob/living/simple_animal/hostile/retaliate/goose/vomit/proc/vomit_preend()
 	for (var/obj/item/consumed in contents) //Get rid of any food left in the poor thing
@@ -236,11 +236,11 @@
 /mob/living/simple_animal/hostile/retaliate/goose/vomit/proc/deadchat_plays_goose()
 	stop_automated_movement = TRUE
 	AddComponent(/datum/component/deadchat_control, ANARCHY_MODE, list(
-		"up" = CALLBACK(GLOBAL_PROC, .proc/_step, src, NORTH),
-		"down" = CALLBACK(GLOBAL_PROC, .proc/_step, src, SOUTH),
-		"left" = CALLBACK(GLOBAL_PROC, .proc/_step, src, WEST),
-		"right" = CALLBACK(GLOBAL_PROC, .proc/_step, src, EAST),
-		"vomit" = CALLBACK(src, .proc/vomit_prestart, 25)), 12 SECONDS, 4 SECONDS)
+		"up" = CALLBACK(GLOBAL_PROC, PROC_REF(_step), src, NORTH),
+		"down" = CALLBACK(GLOBAL_PROC, PROC_REF(_step), src, SOUTH),
+		"left" = CALLBACK(GLOBAL_PROC, PROC_REF(_step), src, WEST),
+		"right" = CALLBACK(GLOBAL_PROC, PROC_REF(_step), src, EAST),
+		"vomit" = CALLBACK(src, PROC_REF(vomit_prestart), 25)), 12 SECONDS, 4 SECONDS)
 
 /datum/action/cooldown/vomit
 	name = "Vomit"

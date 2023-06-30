@@ -5,7 +5,7 @@
 	var/list/swarm_members = list()
 	var/static/list/swarming_loc_connections = list(
 		COMSIG_ATOM_EXITED =.proc/leave_swarm, \
-		COMSIG_ATOM_ENTERED = .proc/join_swarm \
+		COMSIG_ATOM_ENTERED = PROC_REF(join_swarm) \
 	)
 
 /datum/component/swarming/Initialize(max_x = 24, max_y = 24)

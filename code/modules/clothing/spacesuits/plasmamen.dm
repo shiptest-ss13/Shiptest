@@ -326,7 +326,7 @@
 //bomb scanner for RD helmet
 /obj/item/clothing/head/helmet/space/plasmaman/rd/Initialize()
 	. = ..()
-	RegisterSignal(SSdcs, COMSIG_GLOB_EXPLOSION, .proc/sense_explosion)
+	RegisterSignal(SSdcs, COMSIG_GLOB_EXPLOSION, PROC_REF(sense_explosion))
 
 /obj/item/clothing/head/helmet/space/plasmaman/rd/equipped(mob/living/carbon/human/user, slot)
 	..()

@@ -146,8 +146,8 @@ GLOBAL_VAR_INIT(deaths_during_shift, 0)
 		gangbanger.add_antag_datum(new_gangster)
 		gangbanger.current.playsound_local(gangbanger.current, 'sound/ambience/antag/thatshowfamiliesworks.ogg', 100, FALSE, pressure_affected = FALSE)
 		to_chat(gangbanger.current, "<B>As you're the first gangster, your uniform and spraycan are in your inventory!</B>")
-	addtimer(CALLBACK(src, .proc/announce_gang_locations), 5 MINUTES)
-	addtimer(CALLBACK(src, .proc/five_minute_warning), time_to_end - 5 MINUTES)
+	addtimer(CALLBACK(src, PROC_REF(announce_gang_locations)), 5 MINUTES)
+	addtimer(CALLBACK(src, PROC_REF(five_minute_warning)), time_to_end - 5 MINUTES)
 	gamemode_ready = TRUE
 	..()
 

@@ -59,7 +59,7 @@
 		// Will help make emagging the console not so easy to get away with.
 		MK.info += "<br><br><font color='red'>£%@%(*$%&(£&?*(%&£/{}</font>"
 		var/time = 100 * length(linkedServer.decryptkey)
-		addtimer(CALLBACK(src, .proc/UnmagConsole), time)
+		addtimer(CALLBACK(src, PROC_REF(UnmagConsole)), time)
 		message = rebootmsg
 	else
 		to_chat(user, "<span class='notice'>A no server error appears on the screen.</span>")
@@ -347,7 +347,7 @@
 				hacking = TRUE
 				screen = MSG_MON_SCREEN_HACKED
 				//Time it takes to bruteforce is dependant on the password length.
-				addtimer(CALLBACK(src, .proc/finish_bruteforce, usr), 100*length(linkedServer.decryptkey))
+				addtimer(CALLBACK(src, PROC_REF(finish_bruteforce), usr), 100*length(linkedServer.decryptkey))
 
 		//Delete the log.
 		if (href_list["delete_logs"])

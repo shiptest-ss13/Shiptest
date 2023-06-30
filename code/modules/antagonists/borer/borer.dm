@@ -43,7 +43,7 @@
 	to_chat(B.victim, "<span class='danger'>You feel the captive mind of [src] begin to resist your control.</span>")
 
 	var/delay = rand(150,250) + B.victim.getOrganLoss(ORGAN_SLOT_BRAIN)
-	addtimer(CALLBACK(src, .proc/return_control, src.loc), delay)
+	addtimer(CALLBACK(src, PROC_REF(return_control), src.loc), delay)
 
 /mob/living/captive_brain/proc/return_control(mob/living/simple_animal/borer/B)
 	if(!B || !B.controlling)
@@ -540,7 +540,7 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 
 	leaving = TRUE
 
-	addtimer(CALLBACK(src, .proc/release_host), 100)
+	addtimer(CALLBACK(src, PROC_REF(release_host)), 100)
 
 /mob/living/simple_animal/borer/proc/release_host()
 	if(!victim || !src || QDELETED(victim) || QDELETED(src))
@@ -673,7 +673,7 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 	bonding = TRUE
 
 	var/delay = 200+(victim.getOrganLoss(ORGAN_SLOT_BRAIN)*5)
-	addtimer(CALLBACK(src, .proc/assume_control), delay)
+	addtimer(CALLBACK(src, PROC_REF(assume_control)), delay)
 
 /mob/living/simple_animal/borer/proc/assume_control()
 	if(!victim || !src || controlling || victim.stat == DEAD)
@@ -864,7 +864,7 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 		if(hiding)
 			src.hide()
 		leaping = TRUE
-		throw_at(A, MAX_BORER_LEAP_DIST, 1, src, FALSE, TRUE, callback = CALLBACK(src, .proc/leap_end))
+		throw_at(A, MAX_BORER_LEAP_DIST, 1, src, FALSE, TRUE, callback = CALLBACK(src, PROC_REF(leap_end)))
 
 /mob/living/simple_animal/borer/proc/leap_end()
 	leaping = FALSE
@@ -893,7 +893,7 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 				step_towards(src,L)
 				if(iscarbon(hit_atom))
 					var/mob/living/carbon/C = hit_atom
-					addtimer(CALLBACK(src, .proc/infect_victim, C), 15)
+					addtimer(CALLBACK(src, PROC_REF(infect_victim), C), 15)
 			else
 				Paralyze(40, 1, 1)
 

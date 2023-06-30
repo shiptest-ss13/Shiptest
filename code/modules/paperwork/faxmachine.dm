@@ -117,7 +117,7 @@ GLOBAL_LIST_EMPTY(alldepartments)
 					sendfax(destination,usr)
 
 				if(sendcooldown)
-					addtimer(CALLBACK(src, .proc/handle_cooldown, action, params), sendcooldown)
+					addtimer(CALLBACK(src, PROC_REF(handle_cooldown), action, params), sendcooldown)
 
 		if("paper")
 			if(paper_copy)
@@ -210,7 +210,7 @@ GLOBAL_LIST_EMPTY(alldepartments)
 	if(department == "Unknown" || department == destination)
 		return FALSE	//You can't send faxes to "Unknown" or yourself
 
-	addtimer(CALLBACK(src, .proc/handle_copying, incoming), 10)
+	addtimer(CALLBACK(src, PROC_REF(handle_copying), incoming), 10)
 
 /obj/machinery/photocopier/faxmachine/do_copy_loop(datum/callback/copy_cb, mob/user, obj/item/tocopy)
 	..()
@@ -225,13 +225,13 @@ GLOBAL_LIST_EMPTY(alldepartments)
 	use_power(active_power_usage)
 	if(istype(incoming, /obj/item/paper))
 		if(istype(incoming, /obj/item/paper/contract/employment))
-			do_copy_loop(CALLBACK(src, .proc/make_devil_paper_copy, incoming), usr, TRUE)
+			do_copy_loop(CALLBACK(src, PROC_REF(make_devil_paper_copy), incoming), usr, TRUE)
 			return TRUE
-		do_copy_loop(CALLBACK(src, .proc/make_paper_copy, incoming), usr, TRUE)
+		do_copy_loop(CALLBACK(src, PROC_REF(make_paper_copy), incoming), usr, TRUE)
 	else if(istype(incoming, /obj/item/photo))
-		do_copy_loop(CALLBACK(src, .proc/make_photo_copy, incoming), usr, TRUE)
+		do_copy_loop(CALLBACK(src, PROC_REF(make_photo_copy), incoming), usr, TRUE)
 	else if(istype(incoming, /obj/item/documents))
-		do_copy_loop(CALLBACK(src, .proc/make_document_copy, incoming), usr, TRUE)
+		do_copy_loop(CALLBACK(src, PROC_REF(make_document_copy), incoming), usr, TRUE)
 	else
 		return FALSE
 

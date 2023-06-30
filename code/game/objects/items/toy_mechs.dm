@@ -179,7 +179,7 @@
 		to_chat(user, "<span class='notice'>You offer battle to [target.name]!</span>")
 		to_chat(target, "<span class='notice'><b>[user.name] wants to battle with [user.p_their()] [name]!</b> <i>Attack them with a toy mech to initiate combat.</i></span>")
 		wants_to_battle = TRUE
-		addtimer(CALLBACK(src, .proc/withdraw_offer, user), 6 SECONDS)
+		addtimer(CALLBACK(src, PROC_REF(withdraw_offer), user), 6 SECONDS)
 		return
 
 	..()

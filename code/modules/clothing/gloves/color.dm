@@ -48,7 +48,7 @@
 
 /obj/item/clothing/gloves/color/yellow/sprayon/equipped(mob/user, slot)
 	. = ..()
-	RegisterSignal(user, COMSIG_LIVING_SHOCK_PREVENTED, .proc/Shocked)
+	RegisterSignal(user, COMSIG_LIVING_SHOCK_PREVENTED, PROC_REF(Shocked))
 
 /obj/item/clothing/gloves/color/yellow/sprayon/proc/Shocked()
 	shocks_remaining--
@@ -72,7 +72,7 @@
 
 /obj/item/clothing/gloves/color/yellow/sprayon/tape/equipped(mob/user, slot)
 	. = ..()
-	RegisterSignal(user, COMSIG_LIVING_SHOCK_PREVENTED, .proc/Shocked)
+	RegisterSignal(user, COMSIG_LIVING_SHOCK_PREVENTED, PROC_REF(Shocked))
 
 /obj/item/clothing/gloves/color/yellow/sprayon/tape/Shocked(mob/user)
 	if(prob(50)) //Fear the unpredictable

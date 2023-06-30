@@ -43,13 +43,13 @@
 
 /obj/structure/closet/Initialize(mapload)
 	if(mapload && !opened)		// if closed, any item at the crate's loc is put in the contents
-		addtimer(CALLBACK(src, .proc/take_contents), 0)
+		addtimer(CALLBACK(src, PROC_REF(take_contents)), 0)
 	. = ..()
 	update_icon()
 	if(populate)
 		PopulateContents()
 
-	RegisterSignal(src, COMSIG_ATOM_CANREACH, .proc/canreach_react)
+	RegisterSignal(src, COMSIG_ATOM_CANREACH, PROC_REF(canreach_react))
 
 /obj/structure/closet/proc/canreach_react(datum/source, list/next)
 	return COMPONENT_BLOCK_REACH //closed block, open have nothing inside.
