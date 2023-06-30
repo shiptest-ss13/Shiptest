@@ -244,11 +244,6 @@
 	var/obj/item/bodypart/limb
 	limb = new buildpath(loc)
 	limb.name = "\improper synthetic [limb.bodytype & BODYTYPE_DIGITIGRADE ? "digitigrade ":""][selected_category] [limb.plaintext_zone]"
-	//super snowflake code to make digitigrade work with the rest of the limbs
-	if(limb.bodytype & BODYTYPE_DIGITIGRADE)
-		limb.limb_id = "digitigrade"
-	else
-		limb.limb_id = selected_category
 	//fun override colors
 	limb.mutation_color = random_color()
 	limb.update_icon_dropped()

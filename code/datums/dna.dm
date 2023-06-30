@@ -353,6 +353,7 @@
 		update_atom_languages()
 
 /mob/living/carbon/human/set_species(datum/species/mrace, icon_update = TRUE, pref_load = FALSE, robotic = FALSE)
+	robotic ||= fbp
 	..()
 	if(icon_update)
 		update_hair()

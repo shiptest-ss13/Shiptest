@@ -359,86 +359,82 @@
 /obj/item/bodypart/chest/robot/lizard
 	name = "prosthetic lizard chest"
 	is_dimorphic = TRUE
-	static_icon = 'icons/mob/augmentation/augments_lizard.dmi'
+	icon = 'icons/mob/augmentation/augments_lizard.dmi'
 	should_draw_greyscale = TRUE
-	overlay_icon_state = "robotic_chest_overlay"
+	overlay_icon_state = TRUE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
 	acceptable_bodytype = BODYTYPE_HUMANOID
 
 /obj/item/bodypart/head/robot/lizard
 	name = "prosthetic lizard head"
-	static_icon = 'icons/mob/augmentation/augments_lizard.dmi'
+	icon = 'icons/mob/augmentation/augments_lizard.dmi'
 	should_draw_greyscale = TRUE
-	overlay_icon_state = "robotic_head_overlay"
+	overlay_icon_state = TRUE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
 
 /obj/item/bodypart/l_arm/robot/lizard
 	name = "prosthetic lizard left arm"
-	static_icon = 'icons/mob/augmentation/augments_lizard.dmi'
+	icon = 'icons/mob/augmentation/augments_lizard.dmi'
 	should_draw_greyscale = TRUE
-	overlay_icon_state = "robotic_l_arm_overlay"
+	overlay_icon_state = TRUE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
 
 /obj/item/bodypart/r_arm/robot/lizard
 	name = "prosthetic lizard right arm"
-	static_icon = 'icons/mob/augmentation/augments_lizard.dmi'
+	icon = 'icons/mob/augmentation/augments_lizard.dmi'
 	should_draw_greyscale = TRUE
-	overlay_icon_state = "robotic_r_arm_overlay"
+	overlay_icon_state = TRUE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
 
 /obj/item/bodypart/leg/left/robot/lizard
 	name = "prosthetic lizard left leg"
-	static_icon = 'icons/mob/augmentation/augments_lizard.dmi'
+	icon = 'icons/mob/augmentation/augments_lizard.dmi'
 	should_draw_greyscale = TRUE
-	overlay_icon_state = "robotic_l_leg_overlay"
+	overlay_icon_state = TRUE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
 
 /obj/item/bodypart/leg/left/robot/lizard
 	name = "prosthetic lizard right leg"
-	static_icon = 'icons/mob/augmentation/augments_lizard.dmi'
+	icon = 'icons/mob/augmentation/augments_lizard.dmi'
 	should_draw_greyscale = TRUE
-	overlay_icon_state = "robotic_r_leg_overlay"
+	overlay_icon_state = TRUE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
 
 // Surplus Lizard Robotic
 /obj/item/bodypart/l_arm/robot/surplus/lizard
 	name = "surplus prosthetic lizard left arm"
-	static_icon = 'icons/mob/augmentation/augments_lizard.dmi'
+	icon = 'icons/mob/augmentation/augments_lizard.dmi'
 	should_draw_greyscale = TRUE
-	overlay_icon_state = "robotic_l_arm_overlay"
+	overlay_icon_state = TRUE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
 
 /obj/item/bodypart/r_arm/robot/surplus/lizard
 	name = "surplus prosthetic lizard right arm"
-	static_icon = 'icons/mob/augmentation/augments_lizard.dmi'
+	icon = 'icons/mob/augmentation/augments_lizard.dmi'
 	should_draw_greyscale = TRUE
-	overlay_icon_state = "robotic_r_arm_overlay"
+	overlay_icon_state = TRUE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
 
 /obj/item/bodypart/leg/left/robot/surplus/lizard
 	name = "surplus prosthetic lizard left leg"
-	static_icon = 'icons/mob/augmentation/augments_lizard.dmi'
+	icon = 'icons/mob/augmentation/augments_lizard.dmi'
 	should_draw_greyscale = TRUE
-	overlay_icon_state = "robotic_l_leg_overlay"
+	overlay_icon_state = TRUE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
 
 /obj/item/bodypart/leg/right/robot/surplus/lizard
 	name = "surplus prosthetic lizard right leg"
-	static_icon = 'icons/mob/augmentation/augments_lizard.dmi'
+	icon = 'icons/mob/augmentation/augments_lizard.dmi'
 	should_draw_greyscale = TRUE
-	overlay_icon_state = "robotic_r_leg_overlay"
+	overlay_icon_state = TRUE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
 
 /obj/item/bodypart/leg/left/robot/surplus/lizard/digitigrade
 	name = "surplus prosthetic digitigrade lizard left leg"
-	limb_id = "digitigrade"
-	overlay_icon_state = "digitigrade_l_leg_overlay"
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_DIGITIGRADE
 
 /obj/item/bodypart/leg/right/robot/surplus/lizard/digitigrade
 	name = "surplus prosthetic digitigrade lizard right leg"
-	limb_id = "digitigrade"
-	overlay_icon_state = "digitigrade_r_leg_overlay"
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_DIGITIGRADE
 
 //Kepori Robotic

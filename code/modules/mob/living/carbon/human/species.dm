@@ -220,8 +220,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/obj/item/bodypart/species_r_leg = /obj/item/bodypart/leg/right
 	var/obj/item/bodypart/species_l_leg = /obj/item/bodypart/leg/left
 
-	var/obj/item/bodypart/species_digi_l_leg = /obj/item/bodypart/leg/left/digitigrade
-	var/obj/item/bodypart/species_digi_r_leg = /obj/item/bodypart/leg/right/digitigrade
+	var/obj/item/bodypart/species_digi_l_leg = /obj/item/bodypart/leg/left/lizard/digitigrade
+	var/obj/item/bodypart/species_digi_r_leg = /obj/item/bodypart/leg/right/lizard/digitigrade
 
 	var/obj/item/bodypart/species_robotic_chest = /obj/item/bodypart/chest/robot
 	var/obj/item/bodypart/species_robotic_head = /obj/item/bodypart/head/robot
@@ -880,7 +880,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		if(!H.dna.features["vox_neck_quills"] || H.dna.features["vox_neck_quills"] == "None")
 			bodyparts_to_add -= "vox_neck_quills"
 
-////PUT ALL YOUR WEIRD ASS REAL-LIMB HANDLING HERE
+	////PUT ALL YOUR WEIRD ASS REAL-LIMB HANDLING HERE
+	
 	///Digi handling
 	if(H.dna.species.bodytype & BODYTYPE_DIGITIGRADE)
 		var/uniform_compatible = FALSE
@@ -890,17 +891,12 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		if((!H.wear_suit) || (H.wear_suit.supports_variations & DIGITIGRADE_VARIATION) || !(H.wear_suit.body_parts_covered & LEGS) || (H.wear_suit.supports_variations & DIGITIGRADE_VARIATION_NO_NEW_ICON)) //Checks suit compatability
 			suit_compatible = TRUE
 
-		if((uniform_compatible && suit_compatible) || (suit_compatible && H.wear_suit?.flags_inv & HIDEJUMPSUIT)) //If the uniform is hidden, it doesnt matter if its compatible
-			for(var/obj/item/bodypart/BP as anything in H.bodyparts)
-				if(BP.bodytype & BODYTYPE_DIGITIGRADE)
-					BP.limb_id = "digitigrade"
+		var/show_digitigrade = suit_compatible && (uniform_compatible || H.wear_suit?.flags_inv & HIDEJUMPSUIT) //If the uniform is hidden, it doesnt matter if its compatible
+		for(var/obj/item/bodypart/BP as anything in H.bodyparts)
+			if(BP.bodytype & BODYTYPE_DIGITIGRADE)
+				BP.plantigrade_forced = !show_digitigrade
 
-		else
-			for(var/obj/item/bodypart/BP as anything in H.bodyparts)
-				if(BP.bodytype & BODYTYPE_DIGITIGRADE)
-					BP.limb_id = "lizard"
 	///End digi handling
-
 
 	////END REAL-LIMB HANDLING
 	H.update_body_parts()

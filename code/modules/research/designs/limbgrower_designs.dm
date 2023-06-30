@@ -39,7 +39,7 @@
 	id = "digi_l_leg"
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 25)
-	build_path = /obj/item/bodypart/leg/left/digitigrade
+	build_path = /obj/item/bodypart/leg/left/lizard/digitigrade
 	category = list("initial",SPECIES_LIZARD)
 
 /datum/design/digitigrade/rightleg
@@ -47,7 +47,7 @@
 	id = "digi_r_leg"
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 25)
-	build_path = /obj/item/bodypart/leg/right/digitigrade
+	build_path = /obj/item/bodypart/leg/right/lizard/digitigrade
 	category = list("initial",SPECIES_LIZARD)
 
 //Non-limb limb designs

@@ -1776,7 +1776,6 @@
 /datum/sprite_accessory/tails/lizard/large
 	name = "Large"
 	icon_state = "large"
-	synthetic_icon_state = "synth"
 
 /datum/sprite_accessory/tails_animated/lizard/large
 	name = "Large"
@@ -1839,27 +1838,23 @@
 /datum/sprite_accessory/snouts
 	icon = 'icons/mob/mutant_bodyparts.dmi'
 	body_zone = BODY_ZONE_HEAD
-	synthetic_color_src = MUTCOLORS_SECONDARY
+	synthetic_icon_state = "none"
 
 /datum/sprite_accessory/snouts/sharp
 	name = "Sharp"
 	icon_state = "sharp"
-	synthetic_icon_state = "synth"
 
 /datum/sprite_accessory/snouts/round
 	name = "Round"
 	icon_state = "round"
-	synthetic_icon_state = "synth"
 
 /datum/sprite_accessory/snouts/sharplight
 	name = "Sharp + Light"
 	icon_state = "sharplight"
-	synthetic_icon_state = "synth"
 
 /datum/sprite_accessory/snouts/roundlight
 	name = "Round + Light"
 	icon_state = "roundlight"
-	synthetic_icon_state = "synth"
 
 /datum/sprite_accessory/horns
 	icon = 'icons/mob/mutant_bodyparts.dmi'
