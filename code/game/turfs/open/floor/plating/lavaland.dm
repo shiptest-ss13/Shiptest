@@ -1,6 +1,6 @@
-/turf/open/floor/plating/asteroid/basalt
+/turf/open/floor/plating/planetary/lavaland
 	name = "volcanic floor"
-	baseturfs = /turf/open/floor/plating/asteroid/basalt
+	baseturfs = /turf/open/floor/plating/planetary/lavaland
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "basalt"
 	icon_plating = "basalt"
@@ -8,16 +8,8 @@
 	floor_variance = 15
 	digResult = /obj/item/stack/ore/glass/basalt
 
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit
-	light_range = 2
-	light_power = 0.6
-	light_color = LIGHT_COLOR_FIRE
+/turf/open/floor/plating/planetary/lavaland/lit
 
-/turf/open/floor/plating/asteroid/basalt/lava //lava underneath
-	baseturfs = /turf/open/lava/smooth
-
-/turf/open/floor/plating/asteroid/basalt/airless
-	initial_gas_mix = AIRLESS_ATMOS
 
 /turf/open/floor/plating/asteroid/basalt/Initialize(mapload, inherited_virtual_z)
 	. = ..()
