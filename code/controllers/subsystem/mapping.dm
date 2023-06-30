@@ -189,6 +189,8 @@ SUBSYSTEM_DEF(mapping)
 			S.unique_ship_access = data[ "unique_ship_access" ]
 		if(istext(data["description"]))
 			S.description = data["description"]
+		if(islist(data["tags"]))
+			S.tags = data["tags"]
 
 		S.job_slots = list()
 		var/list/job_slot_list = data["job_slots"]
@@ -251,7 +253,9 @@ SUBSYSTEM_DEF(mapping)
 /// Creates basic physical levels so we dont have to do that during runtime every time, nothing bad will happen if this wont run, as allocation will handle adding new levels
 /datum/controller/subsystem/mapping/proc/init_reserved_levels()
 	add_new_zlevel("Free Allocation Level", allocation_type = ALLOCATION_FREE)
+	CHECK_TICK
 	add_new_zlevel("Quadrant Allocation Level", allocation_type = ALLOCATION_QUADRANT)
+	CHECK_TICK
 
 /datum/controller/subsystem/mapping/proc/preloadHolodeckTemplates()
 	for(var/item in subtypesof(/datum/map_template/holodeck))

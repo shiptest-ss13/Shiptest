@@ -2785,3 +2785,9 @@
 	race = /datum/species/lizard/ashwalker/kobold
 	process_flags = ORGANIC | SYNTHETIC //WS Edit - IPCs
 	taste_description = "short savagery"
+
+/datum/reagent/polar_bear_fur //used for icewine crafting
+	name = "Polar Bear Fur"
+	description = "Fur obtained from griding up a polar bears hide"
+	reagent_state = SOLID
+	color = "#eeeeee" // rgb: 238, 238, 238
