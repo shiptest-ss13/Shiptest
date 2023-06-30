@@ -67,10 +67,9 @@ export const ShipSelect = (props, context) => {
                   /* worth noting that disabled ship spawn doesn't cause the
                   button to be disabled, as we want to let people look around */
                   (data.purchaseBanned &&
-                    'You are banned from purchasing ships.'
-                  ) || ((!data.shipSpawnAllowed) &&
-                    'No more ships may be spawned at this time.'
-                  )
+                    'You are banned from purchasing ships.') ||
+                  (!data.shipSpawnAllowed &&
+                    'No more ships may be spawned at this time.')
                 }
                 disabled={data.purchaseBanned}
                 onClick={() => {
@@ -175,10 +174,10 @@ export const ShipSelect = (props, context) => {
                       <Button
                         content="Select"
                         tooltip={
-                          (data.playMin < job.minTime) &&
-                            'You do not have enough playtime to play this job.'
+                          data.playMin < job.minTime &&
+                          'You do not have enough playtime to play this job.'
                         }
-                        disabled={(data.playMin < job.minTime)}
+                        disabled={data.playMin < job.minTime}
                         onClick={() => {
                           act('join', {
                             ship: selectedShip.ref,
@@ -190,13 +189,12 @@ export const ShipSelect = (props, context) => {
                     <Table.Cell>{job.name}</Table.Cell>
                     <Table.Cell>{job.slots}</Table.Cell>
                     <Table.Cell>
-                      {
-                        ((job.minTime > 0) && (
-                          job.minTime.toString() + 'm ' +
-                          ((data.playMin < job.minTime) && '(Unmet)') ||
-                            '(Met)'
-                        )) || '-'
-                      }
+                      {(job.minTime > 0 &&
+                        (job.minTime.toString() +
+                          'm ' +
+                          (data.playMin < job.minTime && '(Unmet)') ||
+                          '(Met)')) ||
+                        '-'}
                     </Table.Cell>
                   </Table.Row>
                 ))}
@@ -229,32 +227,27 @@ export const ShipSelect = (props, context) => {
                 title={template.name}
                 key={template.name}
                 color={
-                  ((!data.shipSpawnAllowed) &&
-                    'average'
-                  ) || (
-                    (template.curNum >= template.limit ||
+                  (!data.shipSpawnAllowed && 'average') ||
+                  ((template.curNum >= template.limit ||
                     data.playMin < template.minTime) &&
-                    'bad'
-                  ) || (
-                    'default'
-                  )
+                    'bad') ||
+                  'default'
                 }
                 buttons={
                   <Button
                     content="Buy"
                     tooltip={
-                      ((!data.shipSpawnAllowed) &&
-                        'No more ships may be spawned at this time.'
-                      ) || ((template.curNum >= template.limit) &&
-                        'There are too many ships of this type.'
-                      ) || ((data.playMin < template.minTime) &&
-                        'You do not have enough playtime to buy this ship.'
-                      )
+                      (!data.shipSpawnAllowed &&
+                        'No more ships may be spawned at this time.') ||
+                      (template.curNum >= template.limit &&
+                        'There are too many ships of this type.') ||
+                      (data.playMin < template.minTime &&
+                        'You do not have enough playtime to buy this ship.')
                     }
                     disabled={
-                      (!data.shipSpawnAllowed) ||
-                      (template.curNum >= template.limit) ||
-                      (data.playMin < template.minTime)
+                      !data.shipSpawnAllowed ||
+                      template.curNum >= template.limit ||
+                      data.playMin < template.minTime
                     }
                     onClick={() => {
                       act('buy', {
@@ -279,11 +272,10 @@ export const ShipSelect = (props, context) => {
                     {template.limit}
                   </LabeledList.Item>
                   <LabeledList.Item label="Min. Playtime">
-                    {
-                      template.minTime + 'm ' +
+                    {template.minTime +
+                      'm ' +
                       ((data.playMin < template.minTime && '(Unmet)') ||
-                      '(Met)')
-                    }
+                        '(Met)')}
                   </LabeledList.Item>
                   <LabeledList.Item label="Wiki Link">
                     <a
