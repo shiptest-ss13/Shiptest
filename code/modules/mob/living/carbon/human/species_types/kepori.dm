@@ -41,6 +41,8 @@
 	/// See: [/datum/component/tackler/var/skill_mod]
 	var/skill_mod = 2
 
+	bodytype = BODYTYPE_KEPORI
+
 	species_chest = /obj/item/bodypart/chest/kepori
 	species_head = /obj/item/bodypart/head/kepori
 	species_l_arm = /obj/item/bodypart/l_arm/kepori

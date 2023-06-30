@@ -27,6 +27,8 @@
 	bodytemp_cold_divisor = VOX_BODYTEMP_COLD_DIVISOR
 	bodytemp_autorecovery_min = VOX_BODYTEMP_AUTORECOVERY_MIN
 
+	bodytype = BODYTYPE_VOX
+
 	species_chest = /obj/item/bodypart/chest/vox
 	species_head = /obj/item/bodypart/head/vox
 	species_l_arm = /obj/item/bodypart/l_arm/vox
