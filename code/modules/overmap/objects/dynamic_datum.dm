@@ -122,10 +122,11 @@
 
 
 	if(planet.planet !=DYNAMIC_WORLD_ASTEROID && planet.planet != DYNAMIC_WORLD_SPACERUIN) //these aren't real planets
-		planet_name = "[gen_planet_name()]" + " ([planet.name])"
+		planet_name = "[gen_planet_name()]"
 		Rename(planet_name)
 	if(planet.planet == DYNAMIC_WORLD_ASTEROID || planet.planet == DYNAMIC_WORLD_SPACERUIN)
 		Rename(planet.name)
+	token.name = "[planet_name]" + " ([planet.name])"
 	token.icon_state = planet.icon_state
 	token.desc = planet.desc
 	token.color = planet.color
