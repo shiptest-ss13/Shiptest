@@ -12,7 +12,7 @@
 #if (DM_VERSION == 514 && DM_BUILD > 1575 && DM_BUILD <= 1577)
 #error Your version of BYOND currently has a crashing issue that will prevent you from running Dream Daemon test servers.
 #error We require developers to test their content, so an inability to test means we cannot allow the compile.
-#error Please consider downgrading to 514.1575 or lower.
+#error Please consider upgrading to 514.1577 or above.
 #endif
 
 // Keep savefile compatibilty at minimum supported level
