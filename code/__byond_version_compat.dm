@@ -57,7 +57,8 @@
 	if (istext(Src) && !fexists(Src))
 		return 0
 	if (!fexists(Dst))
-		rustg_file_append("", Dst) //I Just Want To See If It Works Okay?
+		#warn DO NOT COMMIT THIS TO MASTER IT WILL EAT THE WORLD
+		shell("touch [Dst]")
 	return fcopy(Src, Dst)
 
 #define fcopy(Src, Dst) world.__fcopy(Src, Dst)
