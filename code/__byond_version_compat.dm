@@ -49,14 +49,15 @@
 #define GLOBAL_PROC_REF(X) (/proc/##X)
 #endif
 
-#if DM_VERSION == 515
+// I heard that this was fixed in 1609 (not public currently), but that could be wrong, so keep an eye on this
+#if (DM_VERSION == 515 && DM_BUILD > 1609)
 /// fcopy will crash on 515 linux if given a non-existant file, instead of returning 0 like on 514 linux or 515 windows
 /// var case matches documentation for fcopy.
 /world/proc/__fcopy(Src, Dst)
 	if (istext(Src) && !fexists(Src))
 		return 0
 	if (!fexists(Dst))
-		text2file("", Dst)
+		rustg_file_append("", Dst) //I Just Want To See If It Works Okay?
 	return fcopy(Src, Dst)
 
 #define fcopy(Src, Dst) world.__fcopy(Src, Dst)
