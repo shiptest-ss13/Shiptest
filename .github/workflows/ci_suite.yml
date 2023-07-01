@@ -95,9 +95,6 @@ jobs:
     if: "!contains(github.event.head_commit.message, '[ci skip]')"
     name: Integration Tests
     uses: ./.github/workflows/run_integration_tests.yml
-    concurrency:
-      group: run_all_tests-${{ github.ref }}
-      cancel-in-progress: true
 
   run_alternate_tests:
     if: "!contains(github.event.head_commit.message, '[ci skip]')"
@@ -107,13 +104,10 @@ jobs:
       matrix:
         major: [515]
         minor: [1506]
-    concurrency:
-      group: run_all_tests-${{ github.ref }}-${{ matrix.setup.major }}.${{ matrix.setup.minor }}
-      cancel-in-progress: true
     uses: ./.github/workflows/run_integration_tests.yml
     with:
-      major: ${{ matrix.setup.major }}
-      minor: ${{ matrix.setup.minor }}
+      major: ${{ matrix.major }}
+      minor: ${{ matrix.minor }}
 
   test_windows:
     if: "!contains(github.event.head_commit.message, '[ci skip]')"
