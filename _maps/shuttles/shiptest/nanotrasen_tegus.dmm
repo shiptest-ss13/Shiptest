@@ -3638,7 +3638,9 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "NT" = (
-/obj/machinery/door/window/southleft,
+/obj/machinery/door/window/southleft{
+	req_access_txt = "61"
+	},
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering/communications)
