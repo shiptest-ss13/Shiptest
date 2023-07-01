@@ -60,3 +60,8 @@
 	. = ..()
 	if (. == BULLET_ACT_HIT)
 		finale()
+
+/obj/projectile/curse_hand/phantom
+	name = "phantom hand"
+	damage = 15
+	paralyze = 5
