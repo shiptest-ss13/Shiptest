@@ -64,6 +64,7 @@
 	light_color = light_color
 	light_range = 2
 	light_power = light_pwr
+	update_light()
 
 
 /// Drops itemstack when dug and changes icon

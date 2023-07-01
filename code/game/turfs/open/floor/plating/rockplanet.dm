@@ -40,7 +40,7 @@
 	icon_state = "wet_cracked0"
 	base_icon_state = "wet_cracked"
 
-/turf/open/floor/plating/planetary/sand/rockplanet/rockplanet/lit
+/turf/open/floor/plating/planetary/sand/rockplanet/lit
 	lit = TRUE
 	baseturfs = /turf/open/floor/plating/planetary/rockplanet/lit
 
