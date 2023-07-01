@@ -241,4 +241,4 @@
 		var/obj/item/I = AM
 		if (I.item_flags & ABSTRACT)
 			return
-	INVOKE_ASYNC(master, /obj/item/assembly/infra/proc/trigger_beam, AM, get_turf(src))
+	INVOKE_ASYNC(master, TYPE_PROC_REF(/obj/item/assembly/infra, trigger_beam), AM, get_turf(src))

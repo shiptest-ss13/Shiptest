@@ -1472,7 +1472,7 @@
 	if(cooldown <= world.time)
 		cooldown = (world.time + 300)
 		user.visible_message("<span class='notice'>[user] adjusts the dial on [src].</span>")
-		addtimer(CALLBACK(GLOBAL_PROC, PROC_REF(playsound), src, 'sound/items/radiostatic.ogg', 50, FALSE), 0.5 SECONDS)
+		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(playsound), src, 'sound/items/radiostatic.ogg', 50, FALSE), 0.5 SECONDS)
 	else
 		to_chat(user, "<span class='warning'>The dial on [src] jams up</span>")
 		return
@@ -1487,4 +1487,4 @@
 /obj/item/toy/braintoy/attack_self(mob/user)
 	if(cooldown <= world.time)
 		cooldown = (world.time + 10)
-		addtimer(CALLBACK(GLOBAL_PROC, PROC_REF(playsound), src, 'sound/effects/blobattack.ogg', 50, FALSE), 0.5 SECONDS)
+		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(playsound), src, 'sound/effects/blobattack.ogg', 50, FALSE), 0.5 SECONDS)
