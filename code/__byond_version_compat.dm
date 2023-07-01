@@ -15,6 +15,11 @@
 #error Please consider upgrading to 514.1577 or above.
 #endif
 
+#if (DM_VERSION == 514 && DM_BUILD == 1589)
+#error Warning! Byond 514.1589 has been known to be unstable. Use at your own risk.
+#error Please consider using 514.1588.
+#endif
+
 // Keep savefile compatibilty at minimum supported level
 #if DM_VERSION >= 515
 /savefile/byond_version = MIN_COMPILER_VERSION
