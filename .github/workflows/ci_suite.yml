@@ -105,7 +105,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        setup: ${{ fromJSON($(jq -nRc '[inputs | capture("^(?<major>[0-9]+)\\.(?<minor>[0-9]+)$")]' .github/alternate_byond_versions.txt)) }}
+        major: [515]
+        minor: [1506]
     concurrency:
       group: run_all_tests-${{ github.ref }}-${{ matrix.setup.major }}.${{ matrix.setup.minor }}
       cancel-in-progress: true
