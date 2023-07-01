@@ -75,6 +75,7 @@ GLOBAL_PROTECT(admin_verbs_admin)
 	/client/proc/toggleprayers,
 	/client/proc/toggle_prayer_sound,
 	/client/proc/toggleadminhelpsound,
+	/client/proc/overmap_datum_token_manager,
 	/datum/admins/proc/open_borgopanel,
 	/client/proc/investigate_show,		/*various admintools for investigation. Such as a singulo grief-log*/
 	)

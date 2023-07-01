@@ -37,6 +37,7 @@
 
 /obj/overmap/Destroy(force)
 	if(parent)
+		stack_trace("attempted to qdel a token that still has a parent")
 		return QDEL_HINT_LETMELIVE
 	if(render_map)
 		QDEL_NULL(cam_screen)
