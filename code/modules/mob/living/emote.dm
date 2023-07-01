@@ -667,3 +667,81 @@
 	key_third_person = "clacks"
 	message = "clacks their beak."
 	emote_type = EMOTE_VISIBLE
+
+/datum/emote/living/tilt
+	key = "tilt"
+	key_third_person = "tilts"
+	message = "tilts their head to the side."
+
+/datum/emote/living/carbon/snap
+	key = "snap"
+	key_third_person = "snaps"
+	message = "snaps their fingers."
+	message_param = "snaps their fingers at %t."
+	emote_type = EMOTE_AUDIBLE
+	hands_use_check = TRUE
+	muzzle_ignore = TRUE
+
+/datum/emote/living/snap/get_sound(mob/living/user)
+	return pick('sound/misc/fingersnap1.ogg',
+				'sound/misc/fingersnap2.ogg')
+
+/datum/emote/living/snap2
+	key = "snap2"
+	key_third_person = "snaps twice"
+	message = "snaps twice."
+	message_param = "snaps twice at %t."
+	emote_type = EMOTE_AUDIBLE
+	muzzle_ignore = TRUE
+	hands_use_check = TRUE
+	vary = TRUE
+	sound = 'sound/misc/snap2.ogg'
+
+/datum/emote/living/snap3
+	key = "snap3"
+	key_third_person = "snaps thrice"
+	message = "snaps thrice."
+	message_param = "snaps thrice at %t."
+	emote_type = EMOTE_AUDIBLE
+	muzzle_ignore = TRUE
+	hands_use_check = TRUE
+	vary = TRUE
+	sound = 'sound/misc/snap3.ogg'
+
+/datum/emote/living/carbon/clap
+	key = "clap"
+	key_third_person = "claps"
+	message = "claps."
+	muzzle_ignore = TRUE
+	hands_use_check = TRUE
+	emote_type = EMOTE_AUDIBLE
+	vary = TRUE
+
+/datum/emote/living/carbon/clap/get_sound(mob/living/user)
+	if(ishuman(user))
+		if(!user.get_bodypart(BODY_ZONE_L_ARM) || !user.get_bodypart(BODY_ZONE_R_ARM))
+			return
+		else
+			return pick('sound/misc/clap1.ogg',
+							'sound/misc/clap2.ogg',
+							'sound/misc/clap3.ogg',
+							'sound/misc/clap4.ogg')
+
+/datum/emote/living/clap1
+	key = "clap1"
+	key_third_person = "claps once"
+	message = "claps once."
+	emote_type = EMOTE_AUDIBLE
+	muzzle_ignore = TRUE
+	hands_use_check = TRUE
+	vary = TRUE
+	mob_type_allowed_typecache = list(/mob/living/carbon, /mob/living/silicon/pai)
+
+/datum/emote/living/clap1/get_sound(mob/living/user)
+	return pick('sound/misc/claponce1.ogg',
+				'sound/misc/claponce2.ogg')
+
+/datum/emote/living/clap1/can_run_emote(mob/living/carbon/user, status_check = TRUE , intentional)
+	if(user.usable_hands < 2)
+		return FALSE
+	return ..()
