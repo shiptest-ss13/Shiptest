@@ -283,22 +283,59 @@
 		if(1 to 45)
 			audible_message("<span class='notice'>The [src] makes a crashing sound as its salvaged.</span>")
 
-		if(46 to 50)
+		if(46 to 89)
 			playsound(src, 'sound/machines/buzz-two.ogg', 100, FALSE, FALSE)
 			audible_message("<span class='danger'>You hear a buzz from the [src] and a voice,</span>")
 			new /mob/living/simple_animal/bot/medbot/rockplanet(get_turf(src))
 
-		if(51 to 77)
+		if(95 to 100)
 			playsound(src, 'sound/machines/buzz-two.ogg', 100, FALSE, FALSE)
 			audible_message("<span class='danger'>You hear a buzz from the [src] and a voice,</span>")
 
 			new /mob/living/simple_animal/bot/firebot/rockplanet(get_turf(src))
 
-		if(77 to 100)
+		if(90 to 94)
 			playsound(src, 'sound/machines/buzz-two.ogg', 100, FALSE, FALSE)
 			audible_message("<span class='danger'>You hear as buzz from the [src] as an abandoned security bot rolls out from the [src]!!</span>")
 
 			new /mob/living/simple_animal/bot/secbot/ed209/rockplanet(get_turf(src))
+
+/obj/structure/salvageable/safe_server //i am evil and horrible and i don't deserve to touch code
+	name = "broken server"
+	icon_state = "wreck_server"
+	salvageable_parts = list(
+		/obj/item/stack/sheet/glass/two = 80,
+		/obj/item/stack/cable_coil/cut = 80,
+		/obj/item/stack/ore/salvage/scrapuranium/five = 60,
+		/obj/item/stack/ore/salvage/scrapmetal/five = 60,
+		/obj/item/stack/ore/salvage/scrapbluespace = 60,
+
+		/obj/item/research_notes/loot/tiny = 50,
+		/obj/item/research_notes/loot/medium = 20,
+		/obj/item/research_notes/loot/big = 5,
+
+		/obj/item/disk/tech_disk/major = 3,
+		/obj/item/disk/tech_disk = 20,
+		/obj/item/disk/data = 20,
+		/obj/item/disk/holodisk = 20,
+		/obj/item/disk/plantgene = 20,
+
+		/obj/item/computer_hardware/network_card = 40,
+		/obj/item/computer_hardware/network_card = 40,
+		/obj/item/computer_hardware/processor_unit = 40,
+		/obj/item/computer_hardware/processor_unit = 40,
+		/obj/item/stock_parts/subspace/amplifier = 40,
+		/obj/item/stock_parts/subspace/amplifier = 40,
+		/obj/item/stock_parts/subspace/analyzer = 40,
+		/obj/item/stock_parts/subspace/analyzer = 40,
+		/obj/item/stock_parts/subspace/ansible = 40,
+		/obj/item/stock_parts/subspace/ansible = 40,
+		/obj/item/stock_parts/subspace/transmitter = 40,
+		/obj/item/stock_parts/subspace/transmitter = 40,
+		/obj/item/stock_parts/subspace/crystal = 30,
+		/obj/item/stock_parts/subspace/crystal = 30,
+		/obj/item/computer_hardware/network_card/advanced = 20,
+	)
 
 /obj/structure/salvageable/seed
 	name = "ruined seed vendor"
