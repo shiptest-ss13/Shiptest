@@ -55,6 +55,8 @@
 /world/proc/__fcopy(Src, Dst)
 	if (istext(Src) && !fexists(Src))
 		return 0
+	if (!fexists(Dst))
+		text2file("", Dst)
 	return fcopy(Src, Dst)
 
 #define fcopy(Src, Dst) world.__fcopy(Src, Dst)
