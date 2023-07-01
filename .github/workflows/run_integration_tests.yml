@@ -46,6 +46,7 @@ jobs:
         run: |
           bash tools/ci/install_auxmos.sh
       - name: Configure version
+        if: ${{ inputs.major }}
         run: |
           echo "BYOND_MAJOR=${{ inputs.major }}" >> $GITHUB_ENV
           echo "BYOND_MINOR=${{ inputs.minor }}" >> $GITHUB_ENV
