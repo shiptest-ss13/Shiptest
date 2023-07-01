@@ -32,9 +32,12 @@ Dirt
 	desc = "Looks a bit dry."
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "wasteland"
+	base_icon_state = "wasteland"
 	slowdown = 1
 	baseturfs = /turf/open/floor/plating/planetary/jungle
+	max_icon_states = 12
 	floor_variance = 15
+	floor_variants = TRUE
 
 /turf/open/floor/plating/planetary/dirt/jungle/lit
 	baseturfs = /turf/open/floor/plating/planetary/jungle/lit

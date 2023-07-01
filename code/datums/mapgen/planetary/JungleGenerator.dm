@@ -151,7 +151,7 @@
 	open_turf_types = list(/turf/open/floor/plating/planetary/dirt/jungle/wasteland/lit = 1)
 
 /datum/biome/jungle/water
-	open_turf_types = list(/turf/open/floor/plating/planetary/water/jungle = 1)
+	open_turf_types = list(/turf/open/floor/plating/planetary/water/jungle/lit = 1)
 	mob_spawn_chance = 1
 	mob_spawn_list = list(/mob/living/simple_animal/hostile/carp = 1)
 	flora_spawn_chance = 1
@@ -233,7 +233,7 @@
 	)
 
 /datum/biome/cave/lush/bright
-	open_turf_types = list(/turf/open/floor/plating/planetary/grass/jungle/lit = 12, /turf/open/floor/plating/planetary/water/jungle = 1)
+	open_turf_types = list(/turf/open/floor/plating/planetary/grass/jungle/lit = 12, /turf/open/floor/plating/planetary/water/jungle/lit = 1)
 	flora_spawn_chance = 40
 	mob_spawn_chance = 1
 	mob_spawn_list = list(

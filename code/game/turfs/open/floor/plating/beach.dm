@@ -57,7 +57,7 @@
 	initial_gas_mix = BEACHPLANET_DEFAULT_ATMOS
 	light_color = COLOR_BEACHPLANET_LIGHT
 
-/turf/open/floor/plating/planetary/sand/dense
+/turf/open/floor/plating/planetary/sand/beach/dense
 	icon_state = "light_sand"
 
 /turf/open/floor/plating/planetary/sand/beach/lit

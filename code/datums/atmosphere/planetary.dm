@@ -54,6 +54,7 @@
 	maximum_temp = 200 //still cold
 	//I had to stop myself from putting a fuck there I use it too much
 
+//wasteplanet
 /datum/atmosphere/wasteplanet
 	id = WASTEPLANET_DEFAULT_ATMOS
 
@@ -103,3 +104,75 @@
 
 	minimum_temp = 120
 	maximum_temp = 210 //No longer always 180
+
+//Jungleplanet
+
+/datum/atmosphere/jungleplanet
+	id = JUNGLEPLANET_DEFAULT_ATMOS
+
+	base_gases = list(
+		GAS_O2=15,
+		GAS_N2=60,
+	)
+	normal_gases = list(
+		GAS_O2=1,
+		GAS_N2=4,
+	)
+	restricted_gases = list(
+		GAS_PLASMA=0.1,
+	)
+	restricted_chance = 0
+
+	minimum_pressure = 101.3
+	maximum_pressure = 135.7 //Nonsense values
+
+	minimum_temp = T20C
+	maximum_temp = T20C + 30
+
+//welcome to the beach
+
+/datum/atmosphere/beach
+	id = BEACHPLANET_DEFAULT_ATMOS
+
+	base_gases = list(
+		GAS_O2=10,
+		GAS_N2=40,
+	)
+	normal_gases = list(
+		GAS_O2=1,
+		GAS_N2=4,
+	)
+	restricted_gases = list(
+		GAS_PLASMA=0.1,
+	)
+	restricted_chance = 0
+
+	minimum_pressure = 101.3
+	maximum_pressure = 135.7
+
+	minimum_temp = T20C - 10
+	maximum_temp = T20C + 10
+
+//rockplanets have lots of CO2 and are moderately cold.
+/datum/atmosphere/rockplanet
+
+	id = ROCKPLANET_DEFAULT_ATMOS
+
+	base_gases = list(
+		GAS_CO2=5,
+		GAS_N2=1,
+	)
+	normal_gases = list(
+		GAS_CO2=3,
+		GAS_N2=1,
+	)
+	restricted_gases = list(
+		GAS_PLASMA=0.1,
+	)
+	restricted_chance = 0
+
+	minimum_pressure = 101.3
+	maximum_pressure = 135.7
+
+	minimum_temp = 170
+	maximum_temp = 230

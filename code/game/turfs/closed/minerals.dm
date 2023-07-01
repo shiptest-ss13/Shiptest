@@ -778,7 +778,7 @@
 		/obj/item/stack/ore/bluespace_crystal = 5)
 
 /turf/closed/mineral/random/beach
-	baseturfs = /turf/open/floor/plating/planetary/sand/dense
+	baseturfs = /turf/open/floor/plating/planetary/sand/beach/dense
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 
 /turf/closed/mineral/random/asteroid/rockplanet
