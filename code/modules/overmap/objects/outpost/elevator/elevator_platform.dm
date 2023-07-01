@@ -12,13 +12,16 @@
 	max_integrity = 200 // built like a brick shithouse, it it could move up and down
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
 
-	layer = LATTICE_LAYER //under pipes // DEBUG: change?
+	layer = TURF_PLATING_DECAL_LAYER //under pipes
 	plane = FLOOR_PLANE
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_ELEVATOR)
 	canSmoothWith = list(SMOOTH_GROUP_ELEVATOR)
 	obj_flags = CAN_BE_HIT | BLOCK_Z_OUT_DOWN
 
+	/// The list of things to move when the platform does.
+	/// I would love to handle this imperatively, i.e. by reading off of turf contents.
+	/// Unfortunately, there are a million fucking edge cases that make that difficult.
 	var/list/atom/movable/lift_load // things to move
 	// handles behavior
 	var/datum/elevator_master/master_datum
@@ -26,8 +29,6 @@
 /obj/structure/elevator_platform/Initialize(mapload)
 	. = ..()
 
-	// DEBUG: signals here may proc multiple times when moving due to items being moved after elevator
-	// DEBUG: also not 100% sure it works correctly with forceMove(), especially on turf leave. consider
 	var/static/list/connections = list(
 		COMSIG_ATOM_ENTERED = .proc/AddItemOnPlat,
 		COMSIG_ATOM_CREATED = .proc/AddItemOnPlat,
@@ -48,7 +49,6 @@
 			master_datum = new(src)
 
 /obj/structure/elevator_platform/Destroy()
-	// DEBUG: may leave the master_datum in a state without any platforms, but not dead
 	if(master_datum)
 		master_datum.remove_platform(src)
 
@@ -88,13 +88,21 @@
 	else
 		destination = going
 	// has to happen before anything is moved, obviously
+	// DEBUG: test, ensure logging is adequate
 	if(do_crush)
 		for(var/mob/living/crushed in destination.contents)
-			to_chat(crushed, "<span class='userdanger'>You are crushed by [src]!</span>")
-			// DEBUG: this should DEFINITELY be logged
+			crushed.visible_message("<span class='danger'>[src] crushes [crushed]!</span>", \
+						"<span class='userdanger'>You are crushed by [src]!</span>")
+
+			log_game("[src] ([REF(src)]) crushed [key_name(crushed)] at [AREACOORD(src)], user [usr].")
+			message_admins("[src] crushed [ADMINLOOKUPFLW(crushed)] at [ADMIN_VERBOSEJMP(crushed)]!")
+
 			crushed.gib(FALSE,FALSE,FALSE)//the nicest kind of gibbing, keeping everything intact.
 
+	// checks in AddItemOnPlat / RemoveItemOnPlat ensure no duplicates are added to lift_load
 	forceMove(destination)
 	for(var/atom/movable/thing as anything in things2move)
-		// DEBUG: likely causes items to exit and reenter the queue? unsure, depends on behavior of connect_loc
+		if(!thing) // if we let the nulls stick around they fuck EVERYTHING
+			lift_load -= thing
+			continue
 		thing.forceMove(destination)

@@ -71,8 +71,7 @@
 				spawnee.new_player_panel()
 				return
 			to_chat(spawnee, "<span class='danger'>Your [template.name] is being prepared. Please be patient!</span>")
-			// DEBUG: this (and other locate() calls) fall apart if non-physical outposts exist
-			var/datum/overmap/ship/controlled/target = new(locate(/datum/overmap/outpost) in SSovermap.overmap_objects, template)
+			var/datum/overmap/ship/controlled/target = SSovermap.spawn_ship_at_start(template)
 			if(!target?.shuttle_port)
 				to_chat(spawnee, "<span class='danger'>There was an error loading the ship. Please contact admins!</span>")
 				spawnee.new_player_panel()

@@ -42,6 +42,7 @@ const ElevatorButtonsContent = (props, context) => {
         <Table.Cell
           key={floor}>
           <Button.Checkbox
+            diabled={floor.ref === null}
             checked={floor.is_dest}
             content={floor.num}
             onClick={() => act('set_dest', {
@@ -56,6 +57,7 @@ const ElevatorButtonsContent = (props, context) => {
         {floors.length > 0 && (
         <Table.Cell>
           <Button.Checkbox
+            diasbled={floors[0].ref === null}
             checked={floors[0].is_dest}
             content={"★1"}
             onClick={() => act('set_dest', {
@@ -65,7 +67,7 @@ const ElevatorButtonsContent = (props, context) => {
         </Table.Cell>
         )}
         <Table.Cell>
-          {/* // DEBUG: re-enable these, add color logic, disabled status to open and close door buttons */}
+          {/* unfinished. oh well */}
           <Button
             disabled
             content={"◀|▶"}
@@ -73,6 +75,7 @@ const ElevatorButtonsContent = (props, context) => {
           />
         </Table.Cell>
         <Table.Cell>
+          {/* interestingly, this button doesn't work even on real elevators */}
           <Button
             disabled
             content={"▶|◀"}

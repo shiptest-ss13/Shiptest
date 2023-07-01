@@ -75,20 +75,5 @@ GLOBAL_LIST_INIT(all_overmap_world_types, list(
 #define BURN_NONE 0
 #define BURN_STOP -1
 
-// DEBUG: this is maybe fine? see GLOB.log_directory
+// The filepath used to store the admin-controlled next round outpost map override.
 #define OUTPOST_OVERRIDE_FILEPATH "data/outpost_override.json"
-
-// DEBUG: should probably use datums instead of defines
-// Outpost skins. Uniquely identifies an outpost map, elevator map, and set of hangar maps.
-#define OUTPOST_SKIN_TEST "test"
-
-// DEBUG: remove this list?
-// An above define must be included in this list for the outpost datum to pick it as a possible skin.
-// GLOBAL_LIST_INIT(outpost_skins, list(
-// 	OUTPOST_SKIN_TEST,
-// ))
-
-// Elevator shaft types for "physical" outpost maps. Controls the use of the elevator shaft to spawn hangars.
-#define ELEVATOR_SHAFT_NORMAL "elevator_shaft_normal"
-#define ELEVATOR_SHAFT_ADMIN "elevator_shaft_admin" // DEBUG: unused
-

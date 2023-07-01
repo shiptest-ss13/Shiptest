@@ -23,12 +23,8 @@ SUBSYSTEM_DEF(mapping)
 	var/list/shuttle_templates = list()
 	var/list/shelter_templates = list()
 	var/list/holodeck_templates = list()
-	// Includes templates for "main" outpost maps only.
+	// List mapping TYPES of outpost map templates to instances of their singletons.
 	var/list/outpost_templates = list()
-	// List of outpost hangar templates.
-	var/list/hangar_templates = list()
-	// List of elevator map templates.
-	var/list/elevator_templates = list()
 
 	var/list/areas_in_z = list()
 
@@ -98,8 +94,6 @@ SUBSYSTEM_DEF(mapping)
 	holodeck_templates = SSmapping.holodeck_templates
 
 	outpost_templates = SSmapping.outpost_templates
-	hangar_templates = SSmapping.hangar_templates
-	elevator_templates = SSmapping.elevator_templates
 
 	z_list = SSmapping.z_list
 
@@ -235,11 +229,14 @@ SUBSYSTEM_DEF(mapping)
 		if(isnum(data["enabled"]) && data["enabled"])
 			S.enabled = TRUE
 			ship_purchase_list[S.name] = S
+		if(isnum(data["space_spawn"]) && data["space_spawn"])
+			S.space_spawn = TRUE
 		if(isnum(data["limit"]))
 			S.limit = data["limit"]
 		shuttle_templates[S.file_name] = S
 		if(isnum(data["roundstart"]) && data["roundstart"])
 			maplist[S.name] = S
+
 #undef CHECK_STRING_EXISTS
 #undef CHECK_LIST_EXISTS
 
@@ -280,39 +277,11 @@ SUBSYSTEM_DEF(mapping)
 		holodeck_templates[holo_template.template_id] = holo_template
 		map_templates[holo_template.template_id] = holo_template
 
-// DEBUG: unify under one type?
 /datum/controller/subsystem/mapping/proc/preloadOutpostTemplates()
 	for(var/datum/map_template/outpost/outpost_type as anything in subtypesof(/datum/map_template/outpost))
-		if(!initial(outpost_type.skin))
-			CRASH("Tried to preload outpost [outpost_type] with invalid skin!")
-		if(!initial(outpost_type.suffix))
-			CRASH("Tried to preload outpost [outpost_type] with invalid suffix!")
-
 		var/datum/map_template/outpost/outpost_template = new outpost_type()
-		outpost_templates[outpost_template.name] = outpost_template
+		outpost_templates[outpost_template.type] = outpost_template
 		map_templates[outpost_template.name] = outpost_template
-
-	for(var/datum/map_template/hangar/hangar_type as anything in subtypesof(/datum/map_template/hangar))
-		// the other preloaders let you just omit the equivalents
-		// i am not so merciful
-		if(!initial(hangar_type.skin))
-			CRASH("Tried to preload hangar [hangar_type] with invalid skin!")
-		if(!initial(hangar_type.port_width))
-			CRASH("Tried to preload hangar [hangar_type] with invalid port_width!")
-		if(!initial(hangar_type.port_height))
-			CRASH("Tried to preload hangar [hangar_type] with invalid port_height!")
-
-		var/datum/map_template/hangar/hangar_template = new hangar_type()
-		hangar_templates[hangar_template.name] = hangar_template
-		map_templates[hangar_template.name] = hangar_template
-
-	for(var/datum/map_template/outpost_elevator/elevator_type as anything in subtypesof(/datum/map_template/outpost_elevator))
-		if(!initial(elevator_type.skin))
-			CRASH("Tried to preload elevator [elevator_type] with invalid skin!")
-
-		var/datum/map_template/outpost_elevator/elevator_template = new elevator_type()
-		elevator_templates[elevator_template.name] = elevator_template
-		map_templates[elevator_template.name] = elevator_template
 
 //////////////////
 // RESERVATIONS //

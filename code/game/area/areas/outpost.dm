@@ -1,12 +1,6 @@
 // Outpost areas. Generally fairly similar to ship ones, but need to be kept separate due to their not having a corresponding docking port.
 
 
-// DEBUG: add outpost name to /area/outpost instances, so that teleport menu isn't confusing
-// for(var/area/shuttle_area as anything in shuttle_port?.shuttle_areas)
-// 	shuttle_area.rename_area("[new_name] [initial(shuttle_area.name)]")
-
-
-// DEBUG: add these to the dirty groups for automatic dirtying (really, should just modularize again)
 // DEBUG: set ambient noises
 /area/outpost
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
@@ -207,22 +201,15 @@
 	sound_environment = SOUND_AREA_SPACE
 
 
-// DEBUG: make this better. might need better name?
 /area/hangar
 	name = "Hangar"
 	icon_state = "hangar"
 
-	area_flags = UNIQUE_AREA | NOTELEPORT // DEBUG: consider making nonunique? HIDDEN_AREA?
+	area_flags = UNIQUE_AREA | NOTELEPORT | HIDDEN_AREA
 	sound_environment = SOUND_AREA_LARGE_ENCLOSED
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 	has_gravity = STANDARD_GRAVITY
 
-	requires_power = FALSE
-	power_equip = FALSE // nice try, but you can't power your machines just by placing them outside the ship // DEBUG: does this break doors?
+	power_equip = TRUE // provided begrudgingly, mostly for mappers
 	power_light = TRUE
 	power_environ = TRUE
-
-	// DEBUG: this solution doesn't evne fucking work. how does light fixture code suck such utter fucking ass
-	lighting_brightness_bulb = 20
-	// DEBUG: this var is UNUSED. idiots!!!
-	lighting_brightness_tube = 20

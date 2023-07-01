@@ -103,19 +103,15 @@
 			if(!shuttle_port) //Loading failed, if the shuttle is supposed to be created, we need to delete ourselves.
 				qdel(src) // Can't return INITIALIZE_HINT_QDEL here since this isn't ACTUAL initialisation. Considering changing the name of the proc.
 				return
-			// DEBUG: create ships in-place to save on load time (no need to then dock it again)
-			// DEBUG: also consider making this behavior NATIVE to New(). unsure
+			// DEBUG: consider making this behavior NATIVE to New(). unsure
 			if(istype(position, /datum/overmap))
-				// DEBUG: altering the behavior of the base proc is bad
 				docked_to = null // Dock() complains if you're already docked to something when you Dock, even on force
-				// DEBUG: this is also dumb, but in complete_dock() the -= line fails otherwise. ugh
-				x = 1
-				y = 1
-				Dock(position, TRUE)
+				Dock(position, TRUE) // DEBUG: this causes a runtime error due to both /datum/overmap/Initialize() and /datum/overmap/complete_dock() calling RegisterSignal(a, COMSIG_OVERMAP_MOVED, .proc/on_docked_to_moved)
 
 			refresh_engines()
 
 	ship_account = new(name, 2000)
+
 #ifdef UNIT_TESTS
 	Rename("[source_template]")
 #else
@@ -154,7 +150,6 @@
 	shuttle_port.play_engine_sound(shuttle_port, shuttle_port.landing_sound)
 	shuttle_port.play_engine_sound(ticket.target_port, shuttle_port.landing_sound)
 
-// DEBUG: inability to defer / cancel at last second means guaranteed SGTs if two people try to dock at the same time
 /datum/overmap/ship/controlled/complete_dock(datum/overmap/dock_target, datum/docking_ticket/ticket)
 	shuttle_port.initiate_docking(ticket.target_port)
 	. = ..()
@@ -311,14 +306,17 @@
 		owner_mind = null
 		if(owner_act)
 			QDEL_NULL(owner_act)
-		// this gets automatically deleted in /datum/Destroy() if we are being destroyed
-		owner_check_timer_id = addtimer(CALLBACK(src, .proc/check_owner), 5 MINUTES, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
+		// turns out that timers don't get added to active_timers if the datum is getting qdeleted.
+		// so this timer was sitting around after deletion and clogging up runtime logs. thus, the QDELING() check. oops!
+		if(!owner_check_timer_id && !QDELING(src))
+			owner_check_timer_id = addtimer(CALLBACK(src, .proc/check_owner), 5 MINUTES, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
 		return
 
 	owner_mob = new_owner
 	owner_mind = owner_mob.mind
 	if(owner_check_timer_id) // we know we have an owner since we didn't return up there
 		deltimer(owner_check_timer_id)
+		owner_check_timer_id = null
 
 	// testing trace
 	// not 100% sure this is needed
