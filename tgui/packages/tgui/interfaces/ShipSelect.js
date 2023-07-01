@@ -64,7 +64,12 @@ export const ShipSelect = (props, context) => {
               <Button
                 content="Purchase Ship"
                 tooltip={
-                  data.purchaseBanned && 'You are banned from purchasing ships.'
+                  /* worth noting that disabled ship spawn doesn't cause the
+                  button to be disabled, as we want to let people look around */
+                  (data.purchaseBanned &&
+                    'You are banned from purchasing ships.') ||
+                  (!data.shipSpawnAllowed &&
+                    'No more ships may be spawned at this time.')
                 }
                 disabled={data.purchaseBanned}
                 onClick={() => {
@@ -161,12 +166,18 @@ export const ShipSelect = (props, context) => {
                   <Table.Cell collapsing>Join</Table.Cell>
                   <Table.Cell>Job Name</Table.Cell>
                   <Table.Cell>Slots</Table.Cell>
+                  <Table.Cell>Min. Playtime</Table.Cell>
                 </Table.Row>
                 {selectedShip.jobs.map((job) => (
                   <Table.Row key={job.name}>
                     <Table.Cell>
                       <Button
                         content="Select"
+                        tooltip={
+                          data.playMin < job.minTime &&
+                          'You do not have enough playtime to play this job.'
+                        }
+                        disabled={data.playMin < job.minTime}
                         onClick={() => {
                           act('join', {
                             ship: selectedShip.ref,
@@ -177,6 +188,14 @@ export const ShipSelect = (props, context) => {
                     </Table.Cell>
                     <Table.Cell>{job.name}</Table.Cell>
                     <Table.Cell>{job.slots}</Table.Cell>
+                    <Table.Cell>
+                      {(job.minTime > 0 &&
+                        (job.minTime.toString() +
+                          'm ' +
+                          (data.playMin < job.minTime && '(Unmet)') ||
+                          '(Met)')) ||
+                        '-'}
+                    </Table.Cell>
                   </Table.Row>
                 ))}
               </Table>
@@ -207,9 +226,29 @@ export const ShipSelect = (props, context) => {
               <Collapsible
                 title={template.name}
                 key={template.name}
+                color={
+                  (!data.shipSpawnAllowed && 'average') ||
+                  ((template.curNum >= template.limit ||
+                    data.playMin < template.minTime) &&
+                    'grey') ||
+                  'default'
+                }
                 buttons={
                   <Button
                     content="Buy"
+                    tooltip={
+                      (!data.shipSpawnAllowed &&
+                        'No more ships may be spawned at this time.') ||
+                      (template.curNum >= template.limit &&
+                        'There are too many ships of this type.') ||
+                      (data.playMin < template.minTime &&
+                        'You do not have enough playtime to buy this ship.')
+                    }
+                    disabled={
+                      !data.shipSpawnAllowed ||
+                      template.curNum >= template.limit ||
+                      data.playMin < template.minTime
+                    }
                     onClick={() => {
                       act('buy', {
                         name: template.name,
@@ -226,8 +265,17 @@ export const ShipSelect = (props, context) => {
                     {(template.tags && template.tags.join(', ')) ||
                       'No Tags Set'}
                   </LabeledList.Item>
-                  <LabeledList.Item label="Crew">
+                  <LabeledList.Item label="Std. Crew">
                     {template.crewCount}
+                  </LabeledList.Item>
+                  <LabeledList.Item label="Max #">
+                    {template.limit}
+                  </LabeledList.Item>
+                  <LabeledList.Item label="Min. Playtime">
+                    {template.minTime +
+                      'm ' +
+                      ((data.playMin < template.minTime && '(Unmet)') ||
+                        '(Met)')}
                   </LabeledList.Item>
                   <LabeledList.Item label="Wiki Link">
                     <a
