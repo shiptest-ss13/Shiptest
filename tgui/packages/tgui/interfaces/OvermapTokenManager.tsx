@@ -70,7 +70,7 @@ const JumpButton = (
   return (
     <Button
       icon="arrow-right"
-      tooltip={props.tooltip_override || 'Jump'}
+      tooltip={props.tooltip_override || 'Jump to Token'}
       onClick={() => act('jump', { ref: target_ref })}
     />
   );
@@ -86,7 +86,7 @@ const TokenInfo = (props: { datum: OvermapDatumData }, context: any) => {
       {datum.ship_port_ref && (
         <JumpButton
           target_ref={datum.ship_port_ref}
-          tooltip_override="Jump to Ship Actual"
+          tooltip_override="Jump to Ship"
         />
       )}
       <Button
