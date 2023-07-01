@@ -86,7 +86,7 @@
 		for(var/mob/Mob as anything in GLOB.player_list)
 			if(dock_requester.shuttle_port.is_in_shuttle_bounds(Mob))
 				Mob.play_screen_text("<span class='maptext' style=font-size:24pt;text-align:center valign='top'><u>[planet_name]</u></span><br>[station_time_timestamp_fancy("hh:mm")]")
-				playsound(Mob, landing_sound, 100)
+				playsound(Mob, landing_sound, 50)
 
 
 /datum/overmap/dynamic/post_undocked(datum/overmap/dock_requester)
@@ -122,7 +122,7 @@
 
 
 	if(planet.planet !=DYNAMIC_WORLD_ASTEROID && planet.planet != DYNAMIC_WORLD_SPACERUIN) //these aren't real planets
-		planet_name = gen_planet_name()
+		planet_name = "[gen_planet_name()]" + " ([planet.name])"
 		Rename(planet_name)
 	if(planet.planet == DYNAMIC_WORLD_ASTEROID || planet.planet == DYNAMIC_WORLD_SPACERUIN)
 		Rename(planet.name)
