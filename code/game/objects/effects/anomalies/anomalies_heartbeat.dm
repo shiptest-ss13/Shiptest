@@ -26,6 +26,9 @@
 	var/turf/spot = locate(rand(src.x-effectrange, src.x+effectrange), rand(src.y-effectrange, src.y+effectrange), src.z)
 	playsound(spot, 'sound/health/slowbeat2.ogg', 100)
 	radiation_pulse(spot, 200, effectrange)
+	for(var/mob/living/carbon/nearby in range(effectrange, spot))
+		nearby.apply_damage(10, BURN)
+		to_chat(nearby, "Radiation burns open on your body.")
 
 /obj/effect/anomaly/heartbeat/Bumped(atom/movable/AM)
 	var/turf/spot = locate(rand(src.x-effectrange, src.x+effectrange), rand(src.y-effectrange, src.y+effectrange), src.z)
