@@ -117,54 +117,6 @@
 	icon_state = "[icon_state][rand(1, 9)]"
 	. = ..()
 
-/turf/open/floor/plating/ice
-	name = "ice sheet"
-	desc = "A sheet of solid ice. Looks slippery."
-	icon = 'icons/turf/snow.dmi'
-	icon_state = "ice"
-	initial_gas_mix = FROZEN_ATMOS
-	initial_temperature = 180
-	planetary_atmos = TRUE
-	baseturfs = /turf/open/floor/plating/ice
-	slowdown = 1
-	attachment_holes = FALSE
-	bullet_sizzle = TRUE
-	footstep = FOOTSTEP_ICE
-	barefootstep = FOOTSTEP_ICE
-	clawfootstep = FOOTSTEP_ICE
-	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
-
-/turf/open/floor/plating/ice/Initialize(mapload, inherited_virtual_z)
-	. = ..()
-	MakeSlippery(TURF_WET_PERMAFROST, INFINITY, 0, INFINITY, TRUE)
-
-/turf/open/floor/plating/ice/try_replace_tile(obj/item/stack/tile/T, mob/user, params)
-	return
-
-/turf/open/floor/plating/ice/smooth
-	icon_state = "ice_turf-255"
-	icon = 'icons/turf/floors/ice_turf.dmi'
-	base_icon_state = "ice_turf"
-	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
-	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_ICE)
-	canSmoothWith = list(SMOOTH_GROUP_FLOOR_ICE)
-
-/turf/open/floor/plating/ice/lit
-	light_range = 2
-	light_power = 1
-	light_color = LIGHT_COLOR_LIGHT_CYAN
-
-/turf/open/floor/plating/ice/colder
-	initial_temperature = 140
-
-/turf/open/floor/plating/ice/temperate
-	initial_temperature = 255.37
-
-/turf/open/floor/plating/ice/break_tile()
-	return
-
-/turf/open/floor/plating/ice/burn_tile()
-	return
 
 /turf/open/floor/plating/ice/iceberg
 	name = "cracked ice floor"
@@ -212,3 +164,12 @@
 	clawfootstep = FOOTSTEP_SAND
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	tiled_dirt = FALSE
+
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis
+	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+	baseturfs = /turf/open/indestructible/necropolis/icecropolis
+
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside
+	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
+	planetary_atmos = FALSE
+	baseturfs = /turf/open/indestructible/necropolis/air

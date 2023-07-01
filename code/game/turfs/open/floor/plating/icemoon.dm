@@ -104,6 +104,26 @@
 	baseturfs = /turf/open/floor/plating/planetary/iceplanet/iceberg/lit
 	lit = TRUE
 
+//and the actual ice
+
+/turf/open/floor/plating/planetary/ice/iceplanet
+	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+	light_color = COLOR_ICEPLANET_LIGHT
+	baseturfs = /turf/open/floor/plating/planetary/iceplanet/iceberg
+
+/turf/open/floor/plating/planetary/ice/iceplanet/iceberg
+	name = "cracked ice floor"
+	desc = "A sheet of solid ice. It looks cracked, yet still slippery."
+	icon_state = "ice1"
+
+/turf/open/floor/plating/planetary/ice/iceplanet/lit
+	lit = TRUE
+	baseturfs = /turf/open/floor/plating/planetary/iceplanet/iceberg/lit
+
+/turf/open/floor/plating/planetary/ice/iceplanet/iceberg/lit
+	lit = TRUE
+	baseturfs = /turf/open/floor/plating/planetary/iceplanet/iceberg/lit
+
 //liquid cold plasma
 
 /turf/open/floor/plating/planetary/lava/plasma/iceplanet

@@ -28,12 +28,12 @@
 
 /turf/open/floor/plating/planetary/dirt/jungle/lit
 	baseturfs = /turf/open/floor/plating/planetary/beach/lit
-	lit = true
+	lit = TRUE
 
 
 /turf/open/floor/plating/planetary/dirt/beach/dark/lit
 	baseturfs = /turf/open/floor/plating/planetary/beach/lit
-	lit = true
+	lit = TRUE
 
 
 //wait- one second

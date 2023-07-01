@@ -81,7 +81,7 @@
 
 //sandplanet
 /datum/atmosphere/whitesands
-	id = SANDPLANET_ATMOS
+	id = SANDPLANET_DEFAULT_ATMOS
 
 	base_gases = list(
 		GAS_O2=5,

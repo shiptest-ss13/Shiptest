@@ -3,6 +3,7 @@
 /turf/open/floor/plating/planetary/whitesands //i'd change the name but we already have a /sand in the form of sandtiles.
 	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
 	baseturfs = /turf/open/floor/plating/planetary/whitesands
+	icon = 'icons/turf/floors//ws_floors.dmi'
 	icon_state = "whitesands_basalt0"
 	icon_plating = "whitesands_basalt0"
 	can_dig = FALSE
@@ -27,7 +28,7 @@
 	digResult = /obj/item/stack/ore/glass/whitesands
 	floor_variants = TRUE
 
-/turf/open/floor/plating/planetary/whitesands/sands/whitesands/dried
+/turf/open/floor/plating/planetary/whitesands/sand/whitesands/dried
 	name = "dried sand"
 	baseturfs = /turf/open/floor/plating/planetary/whitesands
 	icon_state = "dried_up"
@@ -44,7 +45,7 @@
 
 //Ourple grass? In this economy?
 
-/turf/open/floor/plating/asteroid/whitesands/grass
+/turf/open/floor/plating/planetary/whitesands/grass
 	name = "purple grass"
 	desc = "The few flora that thrive here tend to take on a purple color."
 	icon = 'icons/turf/floors/lava_grass_purple.dmi'
@@ -55,18 +56,18 @@
 	light_color = COLOR_SANDPLANET_LIGHT
 	can_dig = FALSE
 
-/turf/open/floor/plating/asteroid/whitesands/grass/dead
+/turf/open/floor/plating/planetary/whitesands/grass/dead
 	name = "dead grass"
 	desc = "Sadly deceased grass, decay giving it an unearthly hue."
 	color = "#ddffb3"
 	baseturfs = /turf/open/floor/plating/planetary/sand/whitesands
 	light_color = COLOR_SANDPLANET_LIGHT
 
-/turf/open/floor/plating/asteroid/whitesands/grass/lit
+/turf/open/floor/plating/planetary/whitesands/grass/lit
 	baseturfs = /turf/open/floor/plating/planetary/sand/whitesands/lit
 	lit = TRUE
 
-/turf/open/floor/plating/asteroid/whitesands/grass/dead/lit
+/turf/open/floor/plating/planetary/whitesands/dead/lit
 	baseturfs = /turf/open/floor/plating/planetary/sand/whitesands/lit
 	lit = TRUE
 
@@ -81,7 +82,10 @@
 	baseturfs = /turf/open/floor/plating/planetary/whitesands/lit
 	lit = TRUE
 
-//and giant pits of acid
+//and melty things
+
+/turf/open/floor/plating/planetary/lava/whitesands
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
 
 /turf/open/floor/plating/planetary/lava/acid/whitesands
-	initial_gas_mix = SANDPLANET_ATMOS
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS

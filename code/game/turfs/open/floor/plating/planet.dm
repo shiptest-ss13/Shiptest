@@ -19,7 +19,10 @@
 	//what color we are (for the lit var)
 	light_color = LIGHT_COLOR_TUNGSTEN
 	//how powerful our light is
-	var/light_pwr = 0.8
+	var/light_pwr = 1
+	//and if they are lit up
+	var/lit = FALSE
+
 	//they *are* planetary tiles
 	planetary_atmos = TRUE
 	/// the icon name to be used: for example, asteroid1 - asteroid12 in the icon file
@@ -96,7 +99,7 @@
 	return
 
 /turf/open/floor/plating/planetary/crush()
-	if(can_crush)
+	if(can_break)
 		. = ..()
 	return
 
@@ -221,7 +224,7 @@ Snow
 	name = "snow"
 	desc = "Looks cold."
 	icon = 'icons/turf/snow.dmi'
-	baseturfs = /turf/open/floor/plating/asteroid/icerock
+	baseturfs = /turf/open/floor/plating/planetary/snow
 	icon_state = "snow"
 	icon_plating = "snow"
 	slowdown = 1.5
@@ -343,8 +346,8 @@ Liquids
 
 	if(istype(tool, /obj/item/fish))
 		user.visible_message("<span class='notice'>[user] tosses [tool] into [src].</span>", "<span class='notice'>You release [tool] into [src].</span>")
-		playsound(fish, "sound/effects/bigsplash.ogg", 90)
-		qdel(fish)
+		playsound(tool, "sound/effects/bigsplash.ogg", 90)
+		qdel(tool)
 
 /turf/open/floor/plating/planetary/water/can_have_cabling()
 	return FALSE
@@ -557,6 +560,7 @@ Liquid hot magma
 	name = "liquid plasma"
 	desc = "A flowing stream of chilled liquid plasma. You probably shouldn't get in."
 	icon_state = "liquidplasma"
+	icon = 'icons/turf/floors.dmi'
 	baseturfs = /turf/open/floor/plating/planetary/lava/plasma
 	light_range = 3
 	light_power = 0.75
@@ -651,13 +655,14 @@ Liquid hot magma
 /turf/open/floor/plating/planetary/lava/acid
 	name = "acid lake"
 	icon_state = "acid"
+	icon = 'icons/turf/floors.dmi'
 	baseturfs = /turf/open/floor/plating/planetary/lava/acid
 
 	light_range = 2
 	light_power = 0.75
 	light_color = LIGHT_COLOR_SLIME_LAMP
 
-/turf/open/acid/attackby(obj/item/C, mob/user, params)
+/turf/open/floor/plating/planetary/lava/acid/attackby(obj/item/C, mob/user, params)
 	..()
 	if(istype(C, /obj/item/stack/rods))
 		var/obj/item/stack/rods/R = C
@@ -674,13 +679,13 @@ Liquid hot magma
 		return
 		//to-do, acidproof containers can scoop up acid.
 
-/turf/open/acid/proc/melt_stuff(thing_to_melt)
-	if(is_safe_to_cross())
+/turf/open/floor/plating/planetary/lava/acid/burn_stuff(AM)
+	if(is_safe())
 		return FALSE
 	. = FALSE
 	var/thing_to_check = src
-	if (thing_to_melt)
-		thing_to_check = list(thing_to_melt)
+	if (AM)
+		thing_to_check = list(AM)
 	for(var/thing in thing_to_check)
 		if(isobj(thing))
 			var/obj/object_to_melt = thing

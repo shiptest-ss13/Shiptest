@@ -17,7 +17,7 @@
 	icon_state = "globe"
 	color = COLOR_ORANGE
 	mapgen = /datum/map_generator/planet_generator/lava
-	default_baseturf = /turf/open/floor/plating/asteroid/basalt/lava
+	default_baseturf = /turf/open/floor/plating/planetary/lavaland
 	weather_controller_type = /datum/weather_controller/lavaland
 	ruin_type = RUINTYPE_LAVA
 
@@ -28,7 +28,7 @@
 	icon_state = "globe"
 	color = COLOR_BLUE_LIGHT
 	mapgen = /datum/map_generator/planet_generator/snow
-	default_baseturf = /turf/open/floor/plating/asteroid/snow/icemoon
+	default_baseturf = /turf/open/floor/plating/planetary/iceplanet
 	weather_controller_type = /datum/weather_controller/snow_planet
 	ruin_type = RUINTYPE_ICE
 
@@ -39,7 +39,7 @@
 	icon_state = "globe"
 	color = COLOR_LIME
 	mapgen = /datum/map_generator/planet_generator/jungle
-	default_baseturf = /turf/open/floor/plating/dirt/jungle
+	default_baseturf = /turf/open/floor/plating/planetary/jungle
 	weather_controller_type = /datum/weather_controller/lush
 	ruin_type = RUINTYPE_JUNGLE
 
@@ -50,7 +50,7 @@
 	icon_state = "globe"
 	color = "#bd1313"
 	mapgen = /datum/map_generator/planet_generator/rock
-	default_baseturf = /turf/open/floor/plating/asteroid
+	default_baseturf = /turf/open/floor/plating/planetary/rockplanet
 	weather_controller_type = /datum/weather_controller/rockplanet
 	ruin_type = RUINTYPE_ROCK
 
@@ -61,7 +61,7 @@
 	icon_state = "globe"
 	color = COLOR_GRAY
 	mapgen = /datum/map_generator/planet_generator/sand
-	default_baseturf = /turf/open/floor/plating/asteroid/whitesands
+	default_baseturf = /turf/open/floor/plating/planetary/whitesands
 	weather_controller_type = /datum/weather_controller/desert
 	ruin_type = RUINTYPE_SAND
 
@@ -72,7 +72,7 @@
 	icon_state = "globe"
 	color = "#c6b597"
 	mapgen = /datum/map_generator/planet_generator/beach
-	default_baseturf = /turf/open/floor/plating/asteroid/sand/lit
+	default_baseturf = /turf/open/floor/plating/planetary/beach
 	weather_controller_type = /datum/weather_controller/lush
 	ruin_type = RUINTYPE_BEACH
 
@@ -119,6 +119,6 @@
 	icon_state = "globe"
 	color = "#a9883e"
 	mapgen = /datum/map_generator/planet_generator/waste
-	default_baseturf = /turf/open/floor/plating/asteroid/wasteplanet
+	default_baseturf = /turf/open/floor/plating/planetary/wasteplanet
 	weather_controller_type = /datum/weather_controller/chlorine
 	ruin_type = RUINTYPE_WASTE

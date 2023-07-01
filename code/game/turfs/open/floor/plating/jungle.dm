@@ -38,15 +38,15 @@ Dirt
 
 /turf/open/floor/plating/planetary/dirt/jungle/lit
 	baseturfs = /turf/open/floor/plating/planetary/jungle/lit
-	lit = true
+	lit = TRUE
 
 /turf/open/floor/plating/planetary/dirt/jungle/dark/lit
 	baseturfs = /turf/open/floor/plating/planetary/jungle/lit
-	lit = true
+	lit = TRUE
 
 /turf/open/floor/plating/planetary/dirt/jungle/wasteland/lit
 	baseturfs = /turf/open/floor/plating/planetary/jungle/lit
-	lit = true
+	lit = TRUE
 
 /*
 this stupid grass was why I made this pr.

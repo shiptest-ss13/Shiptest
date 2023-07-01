@@ -28,12 +28,12 @@
 	icon_state = "skull-half"
 
 //***Wasteland floor and rock turfs here.
-/turf/open/floor/plating/asteroid/basalt/wasteland //Like a more fun version of living in Arizona.
+/turf/open/floor/plating/planetary/lavaland/wasteland //Like a more fun version of living in Arizona.
 	name = "cracked earth"
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "wasteland"
 	base_icon_state = "wasteland"
-	baseturfs = /turf/open/floor/plating/asteroid/basalt/wasteland
+	baseturfs = /turf/open/floor/plating/planetary/lavaland/wasteland
 	digResult = /obj/item/stack/ore/glass/basalt
 	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
 	slowdown = 0.5
@@ -44,8 +44,7 @@
 	name = "ancient dry rock"
 	color = "#B5651D"
 	environment_type = "wasteland"
-	turf_type = /turf/open/floor/plating/asteroid/basalt/wasteland
-	baseturfs = /turf/open/floor/plating/asteroid/basalt/wasteland
+	baseturfs = /turf/open/floor/plating/planetary/lavaland/wasteland
 	smooth_icon = 'icons/turf/walls/rock_wall.dmi'
 	base_icon_state = "rock_wall"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER

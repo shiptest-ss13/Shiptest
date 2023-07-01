@@ -87,7 +87,7 @@
 
 /datum/biome/snow
 	open_turf_types = list(
-		/turf/open/floor/plating/asteroid/snow/lit = 25
+		/turf/open/floor/plating/planetary/snow/iceplanet/lit = 25
 	)
 	flora_spawn_list = list(
 		/obj/structure/flora/tree/pine = 2,
@@ -119,7 +119,7 @@
 
 /datum/biome/snow/lush
 	open_turf_types = list(
-		/turf/open/floor/plating/asteroid/snow/lit = 25
+		/turf/open/floor/plating/planetary/snow/iceplanet/lit = 25
 	)
 	flora_spawn_list = list(
 		/obj/structure/flora/grass/both = 1,
@@ -128,7 +128,7 @@
 
 /datum/biome/snow/thawed
 	open_turf_types = list(
-		/turf/open/floor/plating/asteroid/icerock/lit = 1
+		/turf/open/floor/plating/planetary/iceplanet/lit = 1
 	)
 	flora_spawn_chance = 40
 	flora_spawn_list = list(
@@ -158,7 +158,7 @@
 
 /datum/biome/arctic
 	open_turf_types = list(
-		/turf/open/floor/plating/asteroid/snow/lit = 1
+		/turf/open/floor/plating/planetary/snow/iceplanet/lit = 1
 	)
 	feature_spawn_chance = 0.1
 	feature_spawn_list = list(
@@ -189,8 +189,8 @@
 
 /datum/biome/iceberg
 	open_turf_types = list(
-		/turf/open/floor/plating/asteroid/iceberg/lit = 6,
-		/turf/open/floor/plating/ice/iceberg/lit = 1,
+		/turf/open/floor/plating/planetary/iceplanet/iceberg/lit = 6,
+		/turf/open/floor/plating/planetary/ice/iceplanet/lit = 1,
 		/turf/closed/mineral/ice = 10
 	)
 	mob_spawn_chance = 2
@@ -214,18 +214,18 @@
 
 /datum/biome/iceberg/lake
 	open_turf_types = list(
-		/turf/open/floor/plating/ice/lit = 1
+		/turf/open/floor/plating/planetary/iceplanet/lit = 1
 	)
 
 /datum/biome/plasma
 	open_turf_types = list(
-		/turf/open/lava/plasma/ice_moon = 5,
-		/turf/open/floor/plating/asteroid/icerock/smooth = 1
+		/turf/open/floor/plating/planetary/lava/plasma/iceplanet = 5,
+		/turf/open/floor/plating/planetary/iceplanet/smooth = 1
 	)
 
 /datum/biome/cave/snow
 	open_turf_types = list(
-		/turf/open/floor/plating/asteroid/icerock = 1
+		/turf/open/floor/plating/planetary/iceplanet = 1
 	)
 	flora_spawn_chance = 6
 	flora_spawn_list = list(
@@ -265,7 +265,7 @@
 
 /datum/biome/cave/snow/thawed
 	open_turf_types = list(
-		/turf/open/floor/plating/asteroid/icerock/cracked = 1
+		/turf/open/floor/plating/planetary/iceplanet/cracked = 1
 	)
 	closed_turf_types = list(
 		/turf/closed/mineral/random/snow = 1
@@ -273,8 +273,8 @@
 
 /datum/biome/cave/snow/ice
 	open_turf_types = list(
-		/turf/open/floor/plating/asteroid/icerock = 20,
-		/turf/open/floor/plating/ice = 3
+		/turf/open/floor/plating/planetary/iceplanet = 20,
+		/turf/open/floor/plating/planetary/ice/iceplanet = 3
 	)
 	closed_turf_types = list(
 		/turf/closed/mineral/random/snow = 1
@@ -282,7 +282,7 @@
 
 /datum/biome/cave/volcanic
 	open_turf_types = list(
-		/turf/open/floor/plating/asteroid/basalt = 1
+		/turf/open/floor/plating/planetary/iceplanet = 1
 	)
 	closed_turf_types = list(
 		/turf/closed/mineral/random/snow = 1
@@ -315,7 +315,7 @@
 /datum/biome/cave/volcanic/lava
 	open_turf_types = list(
 		/turf/open/lava/smooth = 10,
-		/turf/open/floor/plating/asteroid/icerock/smooth = 1
+		/turf/open/floor/plating/planetary/iceplanet/smooth = 1
 	)
 
 /datum/biome/cave/volcanic/lava/total
@@ -325,6 +325,6 @@
 
 /datum/biome/cave/volcanic/lava/plasma
 	open_turf_types = list(
-		/turf/open/lava/plasma = 7,
-		/turf/open/floor/plating/asteroid/icerock/smooth = 1
+		/turf/open/floor/plating/planetary/lava/plasma/iceplanet = 7,
+		/turf/open/floor/plating/planetary/iceplanet/smooth = 1
 	)

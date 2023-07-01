@@ -254,30 +254,6 @@
 	owner.AddSpell(new /obj/effect/proc_holder/spell/targeted/turf_teleport/blink(null))
 	owner.AddSpell(new /obj/effect/proc_holder/spell/targeted/ethereal_jaunt(null))
 
-/datum/antagonist/wizard/academy
-	name = "Academy Teacher"
-	outfit_type = /datum/outfit/wizard/academy
-	move_to_lair = FALSE
-
-/datum/antagonist/wizard/academy/equip_wizard()
-	. = ..()
-
-	owner.AddSpell(new /obj/effect/proc_holder/spell/targeted/ethereal_jaunt)
-	owner.AddSpell(new /obj/effect/proc_holder/spell/targeted/projectile/magic_missile)
-	owner.AddSpell(new /obj/effect/proc_holder/spell/aimed/fireball)
-
-	var/mob/living/M = owner.current
-	if(!istype(M))
-		return
-
-	var/obj/item/implant/exile/Implant = new/obj/item/implant/exile(M)
-	Implant.implant(M)
-
-/datum/antagonist/wizard/academy/create_objectives()
-	var/datum/objective/new_objective = new("Protect Wizard Academy from the intruders")
-	new_objective.owner = owner
-	objectives += new_objective
-
 //Solo wizard report
 /datum/antagonist/wizard/roundend_report()
 	var/list/parts = list()

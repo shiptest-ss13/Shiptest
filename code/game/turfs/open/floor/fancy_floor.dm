@@ -125,6 +125,8 @@
 	if(..())
 		return
 
+//to-do, get grass edge sprites for fairy grass and repath it as a real grass instead of a plating.
+
 /turf/open/floor/grass/fairy //like grass but fae-er
 	name = "fairygrass patch"
 	desc = "Something about this grass makes you want to frolic. Or get high."
@@ -138,7 +140,7 @@
 	icon_state = "fairygrass[rand(0,3)]"
 
 /turf/open/floor/grass/fairy/beach
-	baseturfs = /turf/open/floor/plating/beach/sand
+	baseturfs = /turf/open/floor/plating/planetary/sand/beach/lit
 	planetary_atmos = TRUE
 
 /turf/open/floor/grass/snow

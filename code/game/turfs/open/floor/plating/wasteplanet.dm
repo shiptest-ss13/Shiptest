@@ -56,6 +56,7 @@
 	reagent_to_extract = /datum/reagent/asphalt
 	extracted_reagent_visible_name = "tar"
 	light_color = COLOR_WASTEPLANET_LIGHT
+	initial_gas_mix = WASTEPLANET_DEFAULT_ATMOS
 
 /turf/open/floor/plating/planetary/water/wasteplanet/lit
 	lit = TRUE
