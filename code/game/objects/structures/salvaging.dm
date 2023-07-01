@@ -12,7 +12,7 @@
 	. += "You can use a crowbar to salvage this."
 
 /obj/structure/salvageable/proc/dismantle(mob/living/user)
-	var/obj/frame = new frame_type(loc)
+	var/obj/frame = new frame_type(get_turf(src))
 	frame.anchored = anchored
 	frame.dir = dir
 	for(var/path in salvageable_parts)
