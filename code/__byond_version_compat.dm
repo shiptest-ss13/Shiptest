@@ -56,9 +56,6 @@
 /world/proc/__fcopy(Src, Dst)
 	if (istext(Src) && !fexists(Src))
 		return 0
-	if (!fexists(Dst))
-		#warn DO NOT COMMIT THIS TO MASTER IT WILL EAT THE WORLD
-		shell("touch [Dst]")
 	return fcopy(Src, Dst)
 
 #define fcopy(Src, Dst) world.__fcopy(Src, Dst)
