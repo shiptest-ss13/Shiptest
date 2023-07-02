@@ -97,7 +97,6 @@
 	return list(
 		"body_markings" = pick(GLOB.body_markings_list),
 		"body_size" = pick(GLOB.body_sizes),
-		"caps" = pick(GLOB.caps_list),
 		"ears" = "None",
 		"elzu_horns" = pick(GLOB.elzu_horns_list),
 		"ethcolor" = GLOB.color_list_ethereal[pick(GLOB.color_list_ethereal)],

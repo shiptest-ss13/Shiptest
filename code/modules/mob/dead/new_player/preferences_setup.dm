@@ -12,7 +12,7 @@
 	if(randomise[RANDOM_AGE] || randomise[RANDOM_AGE_ANTAG] && antag_override)
 		age = rand(AGE_MIN,AGE_MAX)
 	if(randomise[RANDOM_UNDERWEAR])
-		underwear = random_underwear(gender)
+		underwear = random_underwear()
 	if(randomise[RANDOM_UNDERWEAR_COLOR])
 		underwear_color = random_short_color()
 	if(randomise[RANDOM_UNDERSHIRT])

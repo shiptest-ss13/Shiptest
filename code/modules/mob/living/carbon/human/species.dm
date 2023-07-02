@@ -978,8 +978,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 					S = GLOB.moth_markings_list[H.dna.features["moth_markings"]]
 				if("squid_face")
 					S = GLOB.squid_face_list[H.dna.features["squid_face"]]
-				if("caps")
-					S = GLOB.caps_list[H.dna.features["caps"]]
 				if("ipc_screen")
 					S = GLOB.ipc_screens_list[H.dna.features["ipc_screen"]]
 				if("ipc_antenna")
