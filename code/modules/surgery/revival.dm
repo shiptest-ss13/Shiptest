@@ -28,15 +28,14 @@
 /datum/surgery_step/revive
 	name = "shock brain"
 	implements = list(
-		/obj/item/shockpaddles = 100,//this is useful for reviving simepeople.
-		/obj/item/gun/energy = 20,//should be tasers only
-		/obj/item/melee/baton = 25,//i hate this a lot
-		/obj/item/inducer = 15)//there's no reason to use a defib with this chance being high - so keep it low.
-	time = 12 SECONDS
+		/obj/item/shockpaddles = 100,	//this is useful for reviving simepeople.
+		/obj/item/melee/baton = 33,		//i hate this a lot
+		/obj/item/gun/energy = 20,		//should be tasers only
+		/obj/item/inducer = 15)			//there's no reason to use a defib with this chance being high - so keep it low.
+	time = 4 SECONDS
 	success_sound = 'sound/magic/lightningbolt.ogg'
 	failure_sound = 'sound/machines/defib_zap.ogg'
 	repeatable = TRUE
-	time = 120
 	experience_given = MEDICAL_SKILL_ADVANCED
 
 /datum/surgery_step/revive/tool_check(mob/user, obj/item/tool)
