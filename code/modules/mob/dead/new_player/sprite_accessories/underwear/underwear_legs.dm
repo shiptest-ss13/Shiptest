@@ -2,8 +2,8 @@
 	icon = 'icons/mob/clothing/underwear/underwear_legs.dmi'
 	//freedom
 	gender = NEUTER
-	//If the sprite has digitigrade support - changes the icon_state iconstate_d
-	var/has_digitigrade = TRUE
+	//Whether the underwear uses a special sprite for digitigrade style (i.e. briefs, not panties). Adds a "_d" suffix to the icon state
+	var/has_digitigrade = FALSE
 
 //Male undergarment bottoms
 
@@ -14,22 +14,27 @@
 /datum/sprite_accessory/underwear/briefs
 	name = "Briefs"
 	icon_state = "briefs"
+	has_digitigrade = TRUE
 
 /datum/sprite_accessory/underwear/boxers
 	name = "Boxer"
 	icon_state = "boxers"
+	has_digitigrade = TRUE
 
 /datum/sprite_accessory/underwear/stripe
 	name = "Striped Boxers"
 	icon_state = "stripe"
+	has_digitigrade = TRUE
 
 /datum/sprite_accessory/underwear/midway
 	name = "Midway Boxers"
 	icon_state = "midway"
+	has_digitigrade = TRUE
 
 /datum/sprite_accessory/underwear/longjohns
 	name = "Long Johns"
 	icon_state = "longjohns"
+	has_digitigrade = TRUE
 
 /datum/sprite_accessory/underwear/mankini
 	name = "Mankini"
@@ -39,6 +44,7 @@
 	name = "Heart Boxers"
 	icon_state = "heart"
 	use_static = TRUE
+	has_digitigrade = TRUE
 
 //Female undergarment bottoms
 
@@ -61,6 +67,7 @@
 /datum/sprite_accessory/underwear/boyshorts
 	name = "Boyshorts (Greyscale)"
 	icon_state = "boyshorts"
+	has_digitigrade = TRUE
 
 /datum/sprite_accessory/underwear/catgirl
 	name = "Catgirl Panties (Greyscale)"

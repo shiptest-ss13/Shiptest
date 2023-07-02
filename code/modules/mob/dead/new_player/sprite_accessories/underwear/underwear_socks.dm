@@ -1,7 +1,5 @@
 /datum/sprite_accessory/socks
 	icon = 'icons/mob/clothing/underwear/underwear_socks.dmi'
-	//If the sprite has digitigrade support - changes the icon_state iconstate_d
-	var/has_digitigrade = TRUE
 
 /datum/sprite_accessory/socks/nude
 	name = "Nude"
@@ -23,8 +21,12 @@
 	name = "Thigh Socks (Greyscale)"
 	icon_state = "thigh"
 
+/datum/sprite_accessory/socks/striped_thigh
+	name = "Striped Thigh-Highs (Greyscale)"
+	icon_state = "striped_thigh"
+
 /datum/sprite_accessory/socks/striped_knee
-	name = "Striped knee-highs"
+	name = "Striped knee-highs (Greyscale)"
 	icon_state = "striped_knee"
 
 /datum/sprite_accessory/socks/pantyhose_short
@@ -104,9 +106,4 @@
 /datum/sprite_accessory/socks/ace_thigh
 	name = "Thigh-high (Asexual)"
 	icon_state = "ace_thigh"
-	use_static = TRUE
-
-/datum/sprite_accessory/socks/striped_thigh
-	name = "Thigh-high (Striped)"
-	icon_state = "striped_thigh"
 	use_static = TRUE
