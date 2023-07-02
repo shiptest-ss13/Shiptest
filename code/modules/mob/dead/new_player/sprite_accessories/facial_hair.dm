@@ -2,7 +2,7 @@
 
 /datum/sprite_accessory/facial_hair
 	icon = 'icons/mob/human_face.dmi'
-	gender = MALE 
+	gender = MALE
 
 /datum/sprite_accessory/facial_hair/abe
 	name = "Beard (Abraham Lincoln)"
