@@ -491,13 +491,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	if(gender == MALE)
 		hairstyle								= sanitize_inlist(hairstyle, GLOB.hairstyles_male_list)
 		facial_hairstyle						= sanitize_inlist(facial_hairstyle, GLOB.facial_hairstyles_male_list)
-		underwear								= sanitize_inlist(underwear, GLOB.underwear_m)
-		undershirt 								= sanitize_inlist(undershirt, GLOB.undershirt_m)
 	else if(gender == FEMALE)
 		hairstyle								= sanitize_inlist(hairstyle, GLOB.hairstyles_female_list)
 		facial_hairstyle						= sanitize_inlist(facial_hairstyle, GLOB.facial_hairstyles_female_list)
-		underwear								= sanitize_inlist(underwear, GLOB.underwear_f)
-		undershirt								= sanitize_inlist(undershirt, GLOB.undershirt_f)
 	else
 		hairstyle								= sanitize_inlist(hairstyle, GLOB.hairstyles_list)
 		facial_hairstyle						= sanitize_inlist(facial_hairstyle, GLOB.facial_hairstyles_list)

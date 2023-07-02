@@ -9,9 +9,9 @@
 
 //Start normal shirts
 
-/datum/sprite_accessory/undershirt/teeshirt
+/datum/sprite_accessory/undershirt/tshirt
 	name = "T-Shirt (Greyscale)"
-	icon_state = "teeshirt"
+	icon_state = "tshirt"
 
 /datum/sprite_accessory/undershirt/jersey
 	name = "Jersey (Greyscale)"

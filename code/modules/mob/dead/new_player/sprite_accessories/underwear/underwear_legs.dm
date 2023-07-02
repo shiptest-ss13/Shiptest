@@ -37,7 +37,7 @@
 
 /datum/sprite_accessory/underwear/hearts
 	name = "Heart Boxers"
-	icon_state = "hearts"
+	icon_state = "heart"
 	use_static = TRUE
 
 //Female undergarment bottoms
