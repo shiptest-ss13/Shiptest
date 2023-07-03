@@ -645,7 +645,7 @@
 	name = "holofield wall"
 	desc = "An energy shield capable of blocking gas movement."
 	icon = 'icons/effects/effects.dmi'
-	icon_state = "holofan_new"
+	icon_state = "holofield"
 	density = FALSE
 	CanAtmosPass = ATMOS_PASS_NO
 	CanAtmosPassVertical = 1
