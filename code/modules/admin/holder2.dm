@@ -29,6 +29,9 @@ GLOBAL_PROTECT(href_token)
 
 	var/deadmined
 
+	//Admin help manager
+	var/datum/admin_help_ui/admin_interface
+
 	var/datum/filter_editor/filteriffic
 
 /datum/admins/New(datum/admin_rank/R, ckey, force_active = FALSE, protected)

@@ -83,9 +83,10 @@
 #define ADMIN_PUNISHMENT_NYA "Neko"
 #define ADMIN_PUNISHMENT_PIE "Cream Pie"
 
-#define AHELP_ACTIVE 1
-#define AHELP_CLOSED 2
-#define AHELP_RESOLVED 3
+#define AHELP_UNCLAIMED 1
+#define AHELP_ACTIVE 2
+#define AHELP_CLOSED 3
+#define AHELP_RESOLVED 4
 
 /// Number of identical messages required before the spam-prevention will warn you to stfu
 #define SPAM_TRIGGER_WARNING 5
