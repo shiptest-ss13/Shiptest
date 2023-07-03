@@ -82,6 +82,11 @@
 /turf/open/floor/planetary/try_replace_tile(obj/item/stack/tile/T, mob/user, params)
 	return
 
+/turf/open/floor/planetary/proc/getDug()
+	dug = TRUE
+	new digResult(src, 5)
+	icon_state = "[base_icon_state]_dug"
+
 /turf/open/floor/planetary/burn_tile()
 	if(can_burn)
 		. = ..()
@@ -100,6 +105,16 @@
 
 /turf/open/floor/planetary/attackby(obj/item/W, mob/user, params)
 	. = ..()
+	if(.)
+		return TRUE
+
+	if(istype(W, /obj/item/stack/rods))
+		build_with_rods(W, user)
+		return TRUE
+	else if(istype(W, /obj/item/stack/tile/plasteel))
+		build_with_floor_tiles(W, user)
+		return TRUE
+
 
 /turf/open/floor/planetary/ex_act(severity, target)
 	. = SEND_SIGNAL(src, COMSIG_ATOM_EX_ACT, severity, target)

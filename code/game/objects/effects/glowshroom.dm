@@ -16,8 +16,8 @@
 	var/spreadIntoAdjacentChance = 60
 	var/obj/item/seeds/myseed = /obj/item/seeds/glowshroom
 	var/static/list/blacklisted_glowshroom_turfs = typecacheof(list(
-	/turf/open/floor/plating/planetary/lava,
-	/turf/open/floor/plating/planetary/water))
+	/turf/open/floor/planetary/lava,
+	/turf/open/floor/planetary/water))
 
 /obj/structure/glowshroom/glowcap
 	name = "glowcap"
