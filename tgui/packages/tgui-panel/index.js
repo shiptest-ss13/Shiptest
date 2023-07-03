@@ -6,7 +6,6 @@
 
 // Themes
 import './styles/main.scss';
-import './styles/themes/admin.scss';
 import './styles/themes/light.scss';
 
 import { perf } from 'common/perf';
