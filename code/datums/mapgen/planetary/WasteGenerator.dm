@@ -88,7 +88,7 @@
 
 /datum/biome/waste
 	open_turf_types = list(
-		/turf/open/floor/plating/planetary/wasteplanet/lit = 80,
+		/turf/open/floor/planetary/wasteplanet/lit = 80,
 		/turf/open/floor/plating/wasteplanet/rust/lit = 15,
 		/turf/open/floor/plating/wasteplanet/lit = 5
 	)
@@ -152,7 +152,7 @@
 
 /datum/biome/waste/crater
 	open_turf_types = list(
-		/turf/open/floor/plating/planetary/wasteplanet/lit = 90,
+		/turf/open/floor/planetary/wasteplanet/lit = 90,
 		/turf/open/floor/plating/wasteplanet/rust/lit = 10,
 	)
 
@@ -206,19 +206,19 @@
 
 /datum/biome/waste/tar_bed //tar colorings
 	open_turf_types = list(
-		/turf/open/floor/plating/planetary/wasteplanet/lit = 70,
+		/turf/open/floor/planetary/wasteplanet/lit = 70,
 		/turf/open/floor/plating/wasteplanet/rust/lit = 10,
 	)
 
 /datum/biome/waste/tar_bed/total
 	open_turf_types = list(
-		/turf/open/floor/plating/planetary/water/wasteplanet/lit
+		/turf/open/floor/planetary/water/wasteplanet/lit
 	)
 	flora_spawn_chance = 0
 
 /datum/biome/waste/metal
 	open_turf_types = list(
-		/turf/open/floor/plating/planetary/wasteplanet/lit = 5,
+		/turf/open/floor/planetary/wasteplanet/lit = 5,
 		/turf/open/floor/plating/wasteplanet/rust/lit = 45,
 		/turf/open/floor/plating/wasteplanet/lit = 50
 	)
@@ -263,7 +263,7 @@
 
 /datum/biome/waste/metal/rust
 	open_turf_types = list(
-		/turf/open/floor/plating/planetary/wasteplanet/lit = 1,
+		/turf/open/floor/planetary/wasteplanet/lit = 1,
 		/turf/open/floor/plating/wasteplanet/rust/lit = 10,
 		/turf/open/floor/plating/wasteplanet/lit = 4
 	)
@@ -272,7 +272,7 @@
 
 /datum/biome/cave/waste
 	open_turf_types = list(
-		/turf/open/floor/plating/planetary/wasteplanet = 80,
+		/turf/open/floor/planetary/wasteplanet = 80,
 		/turf/open/floor/plating/wasteplanet/rust = 15,
 		/turf/open/floor/plating/wasteplanet = 5
 	)
@@ -333,14 +333,14 @@
 
 /datum/biome/cave/waste/tar_bed //tar colorings here
 	open_turf_types = list(
-		/turf/open/floor/plating/planetary/wasteplanet = 70,
+		/turf/open/floor/planetary/wasteplanet = 70,
 		/turf/open/floor/plating/wasteplanet/rust = 20,
-		/turf/open/floor/plating/planetary/water/wasteplanet = 3
+		/turf/open/floor/planetary/water/wasteplanet = 3
 	)
 
 /datum/biome/cave/waste/tar_bed/full
 	open_turf_types = list(
-		/turf/open/floor/plating/planetary/water/wasteplanet
+		/turf/open/floor/planetary/water/wasteplanet
 	)
 	flora_spawn_chance = 0
 

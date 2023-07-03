@@ -194,8 +194,8 @@
 
 /turf/closed/mineral/random/high_chance/volcanic
 	environment_type = "basalt"
-	turf_type = /turf/open/floor/plating/planetary/lavaland
-	baseturfs = /turf/open/floor/plating/planetary/lavaland
+	turf_type = /turf/open/floor/planetary/lavaland
+	baseturfs = /turf/open/floor/planetary/lavaland
 	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
 	defer_change = 1
 	mineralSpawnChanceList = list(
@@ -221,8 +221,8 @@
 	name = "basalt"
 	desc = "Eruptions stack like layer-cake, forming vast oceans of dried magma."
 	environment_type = "basalt"
-	turf_type = /turf/open/floor/plating/planetary/lavaland
-	baseturfs = /turf/open/floor/plating/planetary/lavaland
+	turf_type = /turf/open/floor/planetary/lavaland
+	baseturfs = /turf/open/floor/planetary/lavaland
 	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
 	defer_change = 1
 
@@ -248,8 +248,8 @@
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
 	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS)
 	environment_type = "snow_cavern"
-	turf_type = /turf/open/floor/plating/planetary/iceplanet
-	baseturfs = /turf/open/floor/plating/planetary/iceplanet
+	turf_type = /turf/open/floor/planetary/iceplanet
+	baseturfs = /turf/open/floor/planetary/iceplanet
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 	defer_change = TRUE
 	mineralChance = 20 //as most caves is snowy, might as well bump up the chance
@@ -268,8 +268,8 @@
 	base_icon_state = "icewall"
 	defer_change = TRUE
 	environment_type = "snow_cavern"
-	turf_type = /turf/open/floor/plating/planetary/iceplanet/iceberg/lit
-	baseturfs = /turf/open/floor/plating/planetary/iceplanet/iceberg/lit
+	turf_type = /turf/open/floor/planetary/iceplanet/iceberg/lit
+	baseturfs = /turf/open/floor/planetary/iceplanet/iceberg/lit
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 	opacity = FALSE
 	light_range = 2
@@ -277,7 +277,7 @@
 
 
 /turf/closed/mineral/random/snow/underground
-	baseturfs = /turf/open/floor/plating/planetary/snow/iceplanet/ice
+	baseturfs = /turf/open/floor/planetary/snow/iceplanet/ice
 	// abundant ore
 	mineralChance = 20
 	mineralSpawnChanceList = list(
@@ -300,8 +300,8 @@
 
 /turf/closed/mineral/random/labormineral/volcanic
 	environment_type = "basalt"
-	turf_type = /turf/open/floor/plating/planetary/lavaland
-	baseturfs = /turf/open/floor/plating/planetary/lavaland
+	turf_type = /turf/open/floor/planetary/lavaland
+	baseturfs = /turf/open/floor/planetary/lavaland
 	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
 	defer_change = 1
 	mineralSpawnChanceList = list(
@@ -322,8 +322,8 @@
 	no_connector_typecache = list(/turf/closed/mineral/random/labormineral/ice)
 	defer_change = TRUE
 	environment_type = "snow"
-	turf_type = /turf/open/floor/plating/planetary/snow/iceplanet/ice
-	baseturfs = /turf/open/floor/plating/planetary/snow/iceplanet/ice
+	turf_type = /turf/open/floor/planetary/snow/iceplanet/ice
+	baseturfs = /turf/open/floor/planetary/snow/iceplanet/ice
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 	defer_change = TRUE
 	mineralSpawnChanceList = list(
@@ -344,8 +344,8 @@
 	connector_icon = 'icons/turf/connectors/icerock_wall_connector.dmi'
 	connector_icon_state = "icerock_wall_connector"
 	no_connector_typecache = list(/turf/closed/mineral/iron/ice, /turf/closed/mineral/plasma/ice)
-	turf_type = /turf/open/floor/plating/planetary/snow/iceplanet/ice
-	baseturfs = /turf/open/floor/plating/planetary/snow/iceplanet/ice
+	turf_type = /turf/open/floor/planetary/snow/iceplanet/ice
+	baseturfs = /turf/open/floor/planetary/snow/iceplanet/ice
 	initial_gas_mix = FROZEN_ATMOS
 	defer_change = TRUE
 
@@ -363,8 +363,8 @@
 
 /turf/closed/mineral/gold/volcanic
 	environment_type = "basalt"
-	turf_type = /turf/open/floor/plating/planetary/lavaland
-	baseturfs = /turf/open/floor/plating/planetary/lavaland
+	turf_type = /turf/open/floor/planetary/lavaland
+	baseturfs = /turf/open/floor/planetary/lavaland
 	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
 	defer_change = TRUE
 
@@ -373,8 +373,8 @@
 	scan_state = "rock_Silver"
 
 /turf/closed/mineral/silver/ice/icemoon
-	turf_type = /turf/open/floor/plating/planetary/snow/iceplanet/ice
-	baseturfs = /turf/open/floor/plating/planetary/snow/iceplanet/ice
+	turf_type = /turf/open/floor/planetary/snow/iceplanet/ice
+	baseturfs = /turf/open/floor/planetary/snow/iceplanet/ice
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 
 /turf/closed/mineral/titanium
@@ -394,8 +394,8 @@
 	connector_icon = 'icons/turf/connectors/icerock_wall_connector.dmi'
 	connector_icon_state = "icerock_wall_connector"
 	no_connector_typecache = list(/turf/closed/mineral/plasma/ice, /turf/closed/mineral/iron/ice)
-	turf_type = /turf/open/floor/plating/planetary/snow/iceplanet/ice
-	baseturfs = /turf/open/floor/plating/planetary/snow/iceplanet/ice
+	turf_type = /turf/open/floor/planetary/snow/iceplanet/ice
+	baseturfs = /turf/open/floor/planetary/snow/iceplanet/ice
 	initial_gas_mix = FROZEN_ATMOS
 	defer_change = TRUE
 
@@ -411,8 +411,8 @@
 
 /turf/closed/mineral/bscrystal/volcanic
 	environment_type = "basalt"
-	turf_type = /turf/open/floor/plating/planetary/lavaland
-	baseturfs = /turf/open/floor/plating/planetary/lavaland
+	turf_type = /turf/open/floor/planetary/lavaland
+	baseturfs = /turf/open/floor/planetary/lavaland
 	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
 	defer_change = TRUE
 
@@ -424,8 +424,8 @@
 
 /turf/closed/mineral/volcanic/lava_land_surface
 	environment_type = "basalt"
-	turf_type = /turf/open/floor/plating/planetary/lavaland
-	baseturfs = /turf/open/floor/plating/planetary/lavaland
+	turf_type = /turf/open/floor/planetary/lavaland
+	baseturfs = /turf/open/floor/planetary/lavaland
 	defer_change = TRUE
 
 /turf/closed/mineral/ash_rock //wall piece
@@ -450,15 +450,15 @@
 	base_icon_state = "mountain_wall"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
 	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS)
-	baseturfs = /turf/open/floor/plating/planetary/iceplanet
+	baseturfs = /turf/open/floor/planetary/iceplanet
 	initial_gas_mix = FROZEN_ATMOS
 	environment_type = "snow"
-	turf_type = /turf/open/floor/plating/planetary/iceplanet
+	turf_type = /turf/open/floor/planetary/iceplanet
 	defer_change = TRUE
 
 /turf/closed/mineral/snowmountain/icemoon
-	turf_type = /turf/open/floor/plating/planetary/iceplanet
-	baseturfs = /turf/open/floor/plating/planetary/iceplanet
+	turf_type = /turf/open/floor/planetary/iceplanet
+	baseturfs = /turf/open/floor/planetary/iceplanet
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 
 /turf/closed/mineral/snowmountain/cavern
@@ -468,13 +468,13 @@
 	icon_state = "icerock"
 	base_icon_state = "icerock_wall"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
-	baseturfs = /turf/open/floor/plating/planetary/iceplanet
+	baseturfs = /turf/open/floor/planetary/iceplanet
 	environment_type = "snow_cavern"
-	turf_type = /turf/open/floor/plating/planetary/iceplanet
+	turf_type = /turf/open/floor/planetary/iceplanet
 
 /turf/closed/mineral/snowmountain/cavern/icemoon
-	baseturfs = /turf/open/floor/plating/planetary/iceplanet
-	turf_type = /turf/open/floor/plating/planetary/iceplanet
+	baseturfs = /turf/open/floor/planetary/iceplanet
+	turf_type = /turf/open/floor/planetary/iceplanet
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 
 //yoo RED ROCK RED ROCK
@@ -582,8 +582,8 @@
 
 /turf/closed/mineral/gibtonite/volcanic
 	environment_type = "basalt"
-	turf_type = /turf/open/floor/plating/planetary/lavaland
-	baseturfs = /turf/open/floor/plating/planetary/lavaland
+	turf_type = /turf/open/floor/planetary/lavaland
+	baseturfs = /turf/open/floor/planetary/lavaland
 	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
 	defer_change = TRUE
 
@@ -594,14 +594,14 @@
 	icon_state = "rockwall_icemoon-0"
 	base_icon_state = "rockwall_icemoon"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
-	turf_type = /turf/open/floor/plating/planetary/snow/iceplanet/ice
-	baseturfs = /turf/open/floor/plating/planetary/snow/iceplanet/ice
+	turf_type = /turf/open/floor/planetary/snow/iceplanet/ice
+	baseturfs = /turf/open/floor/planetary/snow/iceplanet/ice
 	initial_gas_mix = FROZEN_ATMOS
 	defer_change = TRUE
 
 /turf/closed/mineral/gibtonite/ice/icemoon
-	turf_type = /turf/open/floor/plating/planetary/iceplanet
-	baseturfs = /turf/open/floor/plating/planetary/iceplanet
+	turf_type = /turf/open/floor/planetary/iceplanet
+	baseturfs = /turf/open/floor/planetary/iceplanet
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 	defer_change = TRUE
 
@@ -609,8 +609,8 @@
 	name = "Very strong rock"
 	desc = "Seems to be stronger than the other rocks in the area. Only a master of mining techniques could destroy this."
 	environment_type = "basalt"
-	turf_type = /turf/open/floor/plating/planetary/lavaland
-	baseturfs = /turf/open/floor/plating/planetary/lavaland
+	turf_type = /turf/open/floor/planetary/lavaland
+	baseturfs = /turf/open/floor/planetary/lavaland
 	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
 	defer_change = 1
 	smooth_icon = 'icons/turf/walls/rock_wall.dmi'
@@ -661,8 +661,8 @@
 	icon = 'icons/turf/walls/ws_walls.dmi'
 	smooth_icon = 'icons/turf/walls/ws_walls.dmi'
 	environment_type = "smoothrocks-0"
-	turf_type = /turf/open/floor/plating/planetary/whitesands/sand/whitesands/dried
-	baseturfs = /turf/open/floor/plating/planetary/whitesands/sand/whitesands/dried
+	turf_type = 	/turf/open/floor/planetary/whitesands
+	baseturfs = 	/turf/open/floor/planetary/whitesands
 	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
 	defer_change = TRUE
 	has_borders = TRUE
@@ -671,8 +671,8 @@
 	icon = 'icons/turf/walls/ws_walls.dmi'
 	smooth_icon = 'icons/turf/walls/ws_walls.dmi'
 	environment_type = "smoothrocks-0"
-	turf_type = /turf/open/floor/plating/planetary/whitesands/sand/whitesands/dried
-	baseturfs = /turf/open/floor/plating/planetary/whitesands/sand/whitesands/dried
+	turf_type = 	/turf/open/floor/planetary/whitesands
+	baseturfs = 	/turf/open/floor/planetary/whitesands
 	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
 	defer_change = TRUE
 	has_borders = TRUE
@@ -681,8 +681,8 @@
 	icon = 'icons/turf/walls/ws_walls.dmi'
 	smooth_icon = 'icons/turf/walls/ws_walls.dmi'
 	environment_type = "smoothrocks-0"
-	turf_type = /turf/open/floor/plating/planetary/whitesands/sand/whitesands/dried
-	baseturfs = /turf/open/floor/plating/planetary/whitesands/sand/whitesands/dried
+	turf_type = 	/turf/open/floor/planetary/whitesands
+	baseturfs = 	/turf/open/floor/planetary/whitesands
 	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
 	defer_change = TRUE
 	has_borders = TRUE
@@ -691,8 +691,8 @@
 	icon = 'icons/turf/walls/ws_walls.dmi'
 	smooth_icon = 'icons/turf/walls/ws_walls.dmi'
 	environment_type = "smoothrocks-0"
-	turf_type = /turf/open/floor/plating/planetary/whitesands/sand/whitesands/dried
-	baseturfs = /turf/open/floor/plating/planetary/whitesands/sand/whitesands/dried
+	turf_type = 	/turf/open/floor/planetary/whitesands
+	baseturfs = 	/turf/open/floor/planetary/whitesands
 	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
 	defer_change = TRUE
 	has_borders = TRUE
@@ -701,8 +701,8 @@
 	icon = 'icons/turf/walls/ws_walls.dmi'
 	smooth_icon = 'icons/turf/walls/ws_walls.dmi'
 	environment_type = "smoothrocks-0"
-	turf_type = /turf/open/floor/plating/planetary/whitesands/sand/whitesands/dried
-	baseturfs = /turf/open/floor/plating/planetary/whitesands/sand/whitesands/dried
+	turf_type = 	/turf/open/floor/planetary/whitesands
+	baseturfs = 	/turf/open/floor/planetary/whitesands
 	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
 	defer_change = TRUE
 	has_borders = TRUE
@@ -711,8 +711,8 @@
 	icon = 'icons/turf/walls/ws_walls.dmi'
 	smooth_icon = 'icons/turf/walls/ws_walls.dmi'
 	environment_type = "smoothrocks-0"
-	turf_type = /turf/open/floor/plating/planetary/whitesands/sand/whitesands/dried
-	baseturfs = /turf/open/floor/plating/planetary/whitesands/sand/whitesands/dried
+	turf_type = 	/turf/open/floor/planetary/whitesands
+	baseturfs = 	/turf/open/floor/planetary/whitesands
 	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
 	defer_change = TRUE
 	has_borders = TRUE
@@ -723,8 +723,8 @@
 	icon = 'icons/turf/walls/ws_walls.dmi'
 	smooth_icon = 'icons/turf/walls/ws_walls.dmi'
 	environment_type = "smoothrocks-0"
-	turf_type = /turf/open/floor/plating/planetary/whitesands/sand/whitesands/dried
-	baseturfs = /turf/open/floor/plating/planetary/whitesands/sand/whitesands/dried
+	turf_type = 	/turf/open/floor/planetary/whitesands
+	baseturfs = 	/turf/open/floor/planetary/whitesands
 	mineralSpawnChanceList = list(/obj/item/stack/ore/uranium = 5, /obj/item/stack/ore/diamond = 3, /obj/item/stack/ore/gold = 10,
 		/obj/item/stack/ore/silver = 10, /obj/item/stack/ore/plasma = 15, /obj/item/stack/ore/iron = 45, /obj/item/stack/ore/titanium = 11,
 		/obj/item/stack/ore/bluespace_crystal = 4)
@@ -736,8 +736,8 @@
 	icon = 'icons/turf/walls/ws_walls.dmi'
 	smooth_icon = 'icons/turf/walls/ws_walls.dmi'
 	environment_type = "smoothrocks-0"
-	turf_type = /turf/open/floor/plating/planetary/whitesands/sand/whitesands/dried
-	baseturfs = /turf/open/floor/plating/planetary/whitesands/sand/whitesands/dried
+	turf_type = 	/turf/open/floor/planetary/whitesands
+	baseturfs = 	/turf/open/floor/planetary/whitesands
 	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
 	defer_change = TRUE
 	has_borders = TRUE
@@ -746,8 +746,8 @@
 	icon = 'icons/turf/walls/ws_walls.dmi'
 	smooth_icon = 'icons/turf/walls/ws_walls.dmi'
 	environment_type = "smoothrocks-0"
-	turf_type = /turf/open/floor/plating/planetary/whitesands/sand/whitesands/dried
-	baseturfs = /turf/open/floor/plating/planetary/whitesands/sand/whitesands/dried
+	turf_type = 	/turf/open/floor/planetary/whitesands
+	baseturfs = 	/turf/open/floor/planetary/whitesands
 	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
 	defer_change = TRUE
 	has_borders = TRUE
@@ -756,8 +756,8 @@
 	icon = 'icons/turf/walls/ws_walls.dmi'
 	smooth_icon = 'icons/turf/walls/ws_walls.dmi'
 	environment_type = "smoothrocks-0"
-	turf_type =/turf/open/floor/plating/planetary/whitesands/sand/whitesands/dried
-	baseturfs = /turf/open/floor/plating/planetary/whitesands/sand/whitesands/dried
+	turf_type =	/turf/open/floor/planetary/whitesands
+	baseturfs = 	/turf/open/floor/planetary/whitesands
 	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
 	defer_change = TRUE
 	has_borders = TRUE
@@ -771,14 +771,14 @@
 	base_icon_state = "jungle_wall"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
 	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS)
-	turf_type = /turf/open/floor/plating/planetary/dirt/jungle
-	baseturfs = /turf/open/floor/plating/planetary/dirt/jungle
+	turf_type = /turf/open/floor/planetary/dirt/jungle
+	baseturfs = /turf/open/floor/planetary/dirt/jungle
 	mineralSpawnChanceList = list(/obj/item/stack/ore/uranium = 8, /obj/item/stack/ore/diamond = 8, /obj/item/stack/ore/gold = 10,
 		/obj/item/stack/ore/silver = 4, /obj/item/stack/ore/plasma = 25, /obj/item/stack/ore/iron = 25, /obj/item/stack/ore/titanium = 10,
 		/obj/item/stack/ore/bluespace_crystal = 5)
 
 /turf/closed/mineral/random/beach
-	baseturfs = /turf/open/floor/plating/planetary/sand/beach/dense
+	baseturfs = /turf/open/floor/planetary/sand/beach/dense
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 
 /turf/closed/mineral/random/asteroid/rockplanet
@@ -789,8 +789,8 @@
 	smooth_icon = 'icons/turf/walls/red_wall.dmi'
 	base_icon_state = "red_wall"
 	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
-	baseturfs = /turf/open/floor/plating/planetary/sand/rockplanet
-	turf_type = /turf/open/floor/plating/planetary/sand/rockplanet
+	baseturfs = /turf/open/floor/planetary/sand/rockplanet
+	turf_type = /turf/open/floor/planetary/sand/rockplanet
 	mineralSpawnChanceList = list(/obj/item/stack/ore/uranium = 15, /obj/item/stack/ore/diamond = 1, /obj/item/stack/ore/gold = 15,
 		/obj/item/stack/ore/silver = 12, /obj/item/stack/ore/plasma = 5, /obj/item/stack/ore/iron = 65, /obj/item/stack/ore/titanium = 18)
 
@@ -810,8 +810,8 @@
 	smooth_icon = 'icons/turf/walls/wasteplanet.dmi'
 	base_icon_state = "wasteplanet"
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
-	baseturfs = /turf/open/floor/plating/planetary/wasteplanet
-	turf_type = /turf/open/floor/plating/planetary/wasteplanet
+	baseturfs = /turf/open/floor/planetary/wasteplanet
+	turf_type = /turf/open/floor/planetary/wasteplanet
 	mineralSpawnChanceList = list(/obj/item/stack/ore/uranium = 30, /obj/item/stack/ore/diamond = 0.5, /obj/item/stack/ore/gold = 5,
 		/obj/item/stack/ore/silver = 7, /obj/item/stack/ore/plasma = 35, /obj/item/stack/ore/iron = 35, /obj/item/stack/ore/titanium = 10)
 	mineralChance = 30

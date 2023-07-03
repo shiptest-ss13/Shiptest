@@ -81,7 +81,7 @@
 	)
 
 /datum/biome/grass
-	open_turf_types = list(/turf/open/floor/plating/planetary/grass/beach/lit = 1)
+	open_turf_types = list(/turf/open/floor/planetary/grass/beach/lit = 1)
 	flora_spawn_list = list(
 		/obj/structure/flora/tree/jungle = 1,
 		/obj/structure/flora/ausbushes/brflowers = 1,
@@ -124,7 +124,7 @@
 	feature_spawn_chance = 0.1
 
 /datum/biome/beach
-	open_turf_types = list(/turf/open/floor/plating/planetary/sand/beach/lit = 1)
+	open_turf_types = list(/turf/open/floor/planetary/sand/beach/lit = 1)
 	mob_spawn_list = list(
 		/mob/living/simple_animal/crab = 7,
 		/mob/living/simple_animal/hostile/asteroid/lobstrosity/beach = 5
@@ -140,7 +140,7 @@
 	flora_spawn_chance = 5
 
 /datum/biome/beach/dense
-	open_turf_types = list(/turf/open/floor/plating/planetary/sand/beach/dense/lit = 1)
+	open_turf_types = list(/turf/open/floor/planetary/sand/beach/dense/lit = 1)
 	flora_spawn_list = list(
 		/obj/structure/flora/rock/asteroid = 6,
 		/obj/structure/flora/rock/beach = 2,
@@ -151,7 +151,7 @@
 	flora_spawn_chance = 2
 
 /datum/biome/ocean
-	open_turf_types = list(/turf/open/floor/plating/planetary/water/beach/lit = 1)
+	open_turf_types = list(/turf/open/floor/planetary/water/beach/lit = 1)
 	flora_spawn_list = list(
 		/obj/structure/flora/rock/beach = 1,
 		/obj/structure/flora/rock/pile = 1,
@@ -160,10 +160,10 @@
 	flora_spawn_chance = 1
 
 /datum/biome/ocean/deep
-	open_turf_types = list(/turf/open/floor/plating/planetary/water/beach/deep/lit = 1)
+	open_turf_types = list(/turf/open/floor/planetary/water/beach/deep/lit = 1)
 
 /datum/biome/cave/beach
-	open_turf_types = list(/turf/open/floor/plating/planetary/sand/beach/dense = 1)
+	open_turf_types = list(/turf/open/floor/planetary/sand/beach/dense = 1)
 	closed_turf_types = list(/turf/closed/mineral/random/beach = 1)
 	flora_spawn_chance = 4
 	flora_spawn_list = list(/obj/structure/flora/rock/beach = 1, /obj/structure/flora/rock/asteroid = 6)
@@ -174,7 +174,7 @@
 	)
 
 /datum/biome/cave/beach/cove
-	open_turf_types = list(/turf/open/floor/plating/planetary/sand/beach/dense = 1)
+	open_turf_types = list(/turf/open/floor/planetary/sand/beach/dense = 1)
 	flora_spawn_list = list(/obj/structure/flora/tree/dead_pine = 1, /obj/structure/flora/rock/beach = 1, /obj/structure/flora/driftwood = 3, /obj/structure/flora/driftlog = 2)
 	flora_spawn_chance = 6
 

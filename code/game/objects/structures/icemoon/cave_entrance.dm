@@ -525,7 +525,7 @@ GLOBAL_LIST_INIT(ore_probability, list(
 				new /mob/living/simple_animal/hostile/bear/snow(loc)
 				new /obj/effect/decal/remains/human(loc)
 			new /mob/living/simple_animal/hostile/asteroid/ice_demon(loc)
-			new /turf/open/floor/plating/planetary/iceplanet/smooth(loc)
+			new /turf/open/floor/planetary/iceplanet/smooth(loc)
 		if(7)//FUCK FUCK HELP SWARMERS IN VAULT
 			visible_message("<span class='userdanger'>Something beeps. Small, glowing forms spill out of the portal en masse!</span>")
 			playsound(loc,'sound/ambience/ambitech.ogg', 150, FALSE, 50, TRUE, TRUE)
@@ -728,7 +728,7 @@ GLOBAL_LIST_INIT(ore_probability, list(
 			new /mob/living/simple_animal/hostile/asteroid/goliath/beast(loc)
 			new /mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient(loc)
 			new /obj/effect/mob_spawn/human/miner/old(loc)
-			new /turf/open/floor/plating/planetary/lavaland(loc)
+			new /turf/open/floor/planetary/lavaland(loc)
 		if(12)//sailing the ocean blue
 			visible_message("<span class='userdanger'>Water pours out of the portal, followed by a strange vessel. It's occupied.</span>")
 			playsound(loc,'sound/ambience/shore.ogg', 150, FALSE, 50, TRUE, TRUE)
@@ -764,7 +764,7 @@ GLOBAL_LIST_INIT(ore_probability, list(
 				new /mob/living/simple_animal/hostile/carp/megacarp(loc)
 			new /mob/living/simple_animal/hostile/carp/megacarp(loc)
 			new /mob/living/simple_animal/hostile/carp(loc)
-			new /turf/open/floor/plating/planetary/water/beach/deep(loc)
+			new /turf/open/floor/planetary/water/beach/deep(loc)
 		if(13)//hydroponics forest
 			visible_message("<span class='userdanger'>You catch a glimpse of a strange forest. Smells like weed and bad choices.</span>")
 			playsound(loc,'sound/ambience/shore.ogg', 150, FALSE, 50, TRUE, TRUE)
@@ -807,7 +807,7 @@ GLOBAL_LIST_INIT(ore_probability, list(
 			new /obj/item/cultivator/rake(loc)
 			new /obj/structure/spacevine(loc)
 			new /mob/living/simple_animal/hostile/venus_human_trap(loc)
-			new /turf/open/floor/plating/planetary/sand/beach(loc)
+			new /turf/open/floor/planetary/sand/beach(loc)
 		if(14)//fallout ss13
 			visible_message("<span class='userdanger'>You hear a geiger counter click and smell ash.</span>")
 			playsound(loc,'sound/items/radiostatic.ogg', 100, FALSE, 50, TRUE, TRUE)
@@ -830,7 +830,7 @@ GLOBAL_LIST_INIT(ore_probability, list(
 				new /mob/living/simple_animal/hostile/cockroach/glockroach(loc)
 			new /obj/item/geiger_counter(loc)
 			new /mob/living/simple_animal/hostile/cockroach/glockroach(loc)
-			new /turf/open/floor/plating/planetary/wasteplanet(loc) //this needs to be subtyped properly
+			new /turf/open/floor/planetary/wasteplanet(loc) //this needs to be subtyped properly
 
 		if(15)//the cultists amoung us
 			visible_message("<span class='userdanger'>Chanting and a hateful red glow spill through the portal.</span>")
@@ -1105,4 +1105,4 @@ GLOBAL_LIST_INIT(ore_probability, list(
 				new /mob/living/simple_animal/hostile/gorilla(loc)
 			new /obj/item/sequence_scanner(loc)
 			new /obj/structure/flora/grass/jungle(loc)
-			new /turf/open/floor/plating/planetary/grass/jungle(loc)
+			new /turf/open/floor/planetary/grass/jungle(loc)

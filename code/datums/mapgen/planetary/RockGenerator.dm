@@ -81,7 +81,7 @@
 	)
 
 /datum/biome/rock
-	open_turf_types = list(/turf/open/floor/plating/planetary/sand/rockplanet/lit = 1)
+	open_turf_types = list(/turf/open/floor/planetary/sand/rockplanet/lit = 1)
 
 	feature_spawn_chance = 0.1
 	feature_spawn_list = list(/obj/structure/geyser/random = 1, /obj/structure/elite_tumor = 2)
@@ -105,12 +105,12 @@
 	)
 
 /datum/biome/rock/icecap
-	open_turf_types = list(/turf/open/floor/plating/planetary/snow/rockplanet/lit = 5)
+	open_turf_types = list(/turf/open/floor/planetary/snow/rockplanet/lit = 5)
 	flora_spawn_chance = 1
 	mob_spawn_chance = 2
 
 /datum/biome/rock/wetlands
-	open_turf_types = list(/turf/open/floor/plating/planetary/sand/rockplanet/rockplanet/wet/lit = 1)
+	open_turf_types = list(/turf/open/floor/planetary/sand/rockplanet/rockplanet/wet/lit = 1)
 	flora_spawn_chance = 5
 	mob_spawn_chance = 4
 	mob_spawn_list = list(
@@ -130,7 +130,7 @@
 
 /datum/biome/cave/rock
 	closed_turf_types = list(/turf/closed/mineral/random/asteroid/rockplanet = 1)
-	open_turf_types = list(/turf/open/floor/plating/planetary/sand/rockplanet/cracked = 1)
+	open_turf_types = list(/turf/open/floor/planetary/sand/rockplanet/cracked = 1)
 	flora_spawn_chance = 4
 	flora_spawn_list = list(
 		/obj/structure/flora/rock/rockplanet = 4,
@@ -151,7 +151,7 @@
 	)
 
 /datum/biome/cave/rock/wet
-	open_turf_types = list(/turf/open/floor/plating/planetary/sand/rockplanet/cracked/wet = 1)
+	open_turf_types = list(/turf/open/floor/planetary/sand/rockplanet/cracked/wet = 1)
 	flora_spawn_chance = 5
 	flora_spawn_list = list(
 		/obj/structure/flora/rock/rockplanet = 4,
