@@ -78,13 +78,6 @@
 				else
 					message_admins("[key_name_admin(usr)] tried to create changelings. Unfortunately, there were no candidates available.")
 					log_admin("[key_name(usr)] failed to create changelings.")
-			if("revs")
-				if(src.makeRevs())
-					message_admins("[key_name(usr)] started a revolution.")
-					log_admin("[key_name(usr)] started a revolution.")
-				else
-					message_admins("[key_name_admin(usr)] tried to start a revolution. Unfortunately, there were no candidates available.")
-					log_admin("[key_name(usr)] failed to start a revolution.")
 			if("cult")
 				if(src.makeCult())
 					message_admins("[key_name(usr)] started a cult.")

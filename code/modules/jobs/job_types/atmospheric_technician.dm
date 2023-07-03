@@ -1,7 +1,5 @@
 /datum/job/atmos
 	name = "Atmospheric Technician"
-	total_positions = 3
-	spawn_positions = 2
 	wiki_page = "Guide_to_Atmospherics" //WS Edit - Wikilinks/Warning
 
 	outfit = /datum/outfit/job/atmos

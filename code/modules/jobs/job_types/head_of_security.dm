@@ -1,8 +1,6 @@
 /datum/job/hos
 	name = "Head of Security"
 	auto_deadmin_role_flags = DEADMIN_POSITION_HEAD|DEADMIN_POSITION_SECURITY
-	total_positions = 1
-	spawn_positions = 1
 	minimal_player_age = 14
 	officer = TRUE
 	wiki_page = "Head_of_Security" //WS Edit - Wikilinks/Warning

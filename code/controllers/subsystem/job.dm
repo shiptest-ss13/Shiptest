@@ -6,9 +6,6 @@ SUBSYSTEM_DEF(job)
 	var/list/occupations = list()		//List of all jobs
 	var/list/datum/job/name_occupations = list()	//Dict of all jobs, keys are titles
 	var/list/type_occupations = list()	//Dict of all jobs, keys are types
-	var/list/prioritized_jobs = list()
-
-	var/overflow_role = "Assistant"
 
 /datum/controller/subsystem/job/Initialize(timeofday)
 	if(!occupations.len)
@@ -55,59 +52,29 @@ SUBSYSTEM_DEF(job)
 	SetupOccupations()
 	return
 
-/datum/controller/subsystem/job/proc/handle_auto_deadmin_roles(client/C, rank)
-	if(!C?.holder)
-		return TRUE
-	var/datum/job/job = GetJob(rank)
-
-	var/timegate_expired = FALSE
-	// allow only forcing deadminning in the first X seconds of the round if auto_deadmin_timegate is set in config
-	var/timegate = CONFIG_GET(number/auto_deadmin_timegate)
-	if(timegate && (world.time - SSticker.round_start_time > timegate))
-		timegate_expired = TRUE
-
-	if(!job)
-		return
-	if((job.auto_deadmin_role_flags & DEADMIN_POSITION_HEAD) && ((CONFIG_GET(flag/auto_deadmin_heads) && !timegate_expired) || (C.prefs?.toggles & DEADMIN_POSITION_HEAD)))
-		return C.holder.auto_deadmin()
-	else if((job.auto_deadmin_role_flags & DEADMIN_POSITION_SECURITY) && ((CONFIG_GET(flag/auto_deadmin_security) && !timegate_expired) || (C.prefs?.toggles & DEADMIN_POSITION_SECURITY)))
-		return C.holder.auto_deadmin()
-	else if((job.auto_deadmin_role_flags & DEADMIN_POSITION_SILICON) && ((CONFIG_GET(flag/auto_deadmin_silicons) && !timegate_expired) || (C.prefs?.toggles & DEADMIN_POSITION_SILICON))) //in the event there's ever psuedo-silicon roles added, ie synths.
-		return C.holder.auto_deadmin()
-
 /datum/controller/subsystem/job/Recover()
 	set waitfor = FALSE
 	var/oldjobs = SSjob.occupations
 	sleep(20)
-	for (var/datum/job/J in oldjobs)
-		INVOKE_ASYNC(src, .proc/RecoverJob, J)
 
-/datum/controller/subsystem/job/proc/RecoverJob(datum/job/J)
-	var/datum/job/newjob = GetJob(J.name)
-	if (!istype(newjob))
-		return
-	newjob.total_positions = J.total_positions
-	newjob.spawn_positions = J.spawn_positions
-	newjob.current_positions = J.current_positions
-
-/atom/proc/JoinPlayerHere(mob/M, buckle)
+/atom/proc/join_player_here(mob/M)
 	// By default, just place the mob on the same turf as the marker or whatever.
 	M.forceMove(get_turf(src))
 
-/obj/structure/chair/JoinPlayerHere(mob/M, buckle)
+/obj/structure/chair/join_player_here(mob/M)
 	// Placing a mob in a chair will attempt to buckle it, or else fall back to default.
-	if (buckle && isliving(M) && buckle_mob(M, FALSE, FALSE))
+	if (isliving(M) && buckle_mob(M, FALSE, FALSE))
 		return
 	..()
 
 /datum/controller/subsystem/job/proc/SendToLateJoin(mob/M, buckle = TRUE, atom/destination)
 	if(destination)
-		destination.JoinPlayerHere(M, buckle)
+		destination.join_player_here(M, buckle)
 		return TRUE
 
 	if(M.mind && M.mind.assigned_role && length(GLOB.jobspawn_overrides[M.mind.assigned_role])) //We're doing something special today.
 		destination = pick(GLOB.jobspawn_overrides[M.mind.assigned_role])
-		destination.JoinPlayerHere(M, FALSE)
+		destination.join_player_here(M, FALSE)
 		return TRUE
 
 	var/msg = "Unable to send mob [M] to late join!"

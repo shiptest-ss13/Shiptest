@@ -1,7 +1,5 @@
 /datum/job/scientist
 	name = "Scientist"
-	total_positions = 5
-	spawn_positions = 3
 	wiki_page = "Scientist" //WS Edit - Wikilinks/Warning
 
 	outfit = /datum/outfit/job/scientist

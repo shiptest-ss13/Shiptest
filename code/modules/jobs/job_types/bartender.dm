@@ -1,7 +1,5 @@
 /datum/job/bartender
 	name = "Bartender"
-	total_positions = 1
-	spawn_positions = 1
 	wiki_page = "Drinks" //WS Edit - Wikilinks/Warning
 
 	outfit = /datum/outfit/job/bartender

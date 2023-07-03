@@ -130,7 +130,6 @@
 				var/diff = power * CONFUSION_STACK_MAX_MULTIPLIER - M.confused
 				M.confused += min(power, diff)
 			if(user)
-				terrible_conversion_proc(M, user)
 				visible_message("<span class='danger'>[user] blinds [M] with the flash!</span>")
 				to_chat(user, "<span class='danger'>You blind [M] with the flash!</span>")
 				to_chat(M, "<span class='userdanger'>[user] blinds you with the flash!</span>")
@@ -186,26 +185,6 @@
 	if(!..())
 		return
 	AOE_flash()
-
-/obj/item/assembly/flash/proc/terrible_conversion_proc(mob/living/carbon/H, mob/user)
-	if(istype(H) && H.stat != DEAD)
-		if(user.mind)
-			var/datum/antagonist/rev/head/converter = user.mind.has_antag_datum(/datum/antagonist/rev/head)
-			if(!converter)
-				return
-			if(!H.client)
-				to_chat(user, "<span class='warning'>This mind is so vacant that it is not susceptible to influence!</span>")
-				return
-			if(H.stat != CONSCIOUS)
-				to_chat(user, "<span class='warning'>They must be conscious before you can convert [H.p_them()]!</span>")
-				return
-			if(converter.add_revolutionary(H.mind))
-				if(prob(1) || SSevents.holidays && SSevents.holidays[APRIL_FOOLS])
-					H.say("You son of a bitch! I'm in.", forced = "That son of a bitch! They're in.")
-				times_used -- //Flashes less likely to burn out for headrevs when used for conversion
-			else
-				to_chat(user, "<span class='warning'>This mind seems resistant to the flash!</span>")
-
 
 /obj/item/assembly/flash/cyborg
 

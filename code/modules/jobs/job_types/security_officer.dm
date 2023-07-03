@@ -1,8 +1,6 @@
 /datum/job/officer
 	name = "Security Officer"
 	auto_deadmin_role_flags = DEADMIN_POSITION_SECURITY
-	total_positions = 5 //Handled in /datum/controller/occupations/proc/setup_officer_positions()
-	spawn_positions = 5 //Handled in /datum/controller/occupations/proc/setup_officer_positions()
 	minimal_player_age = 7
 	wiki_page = "Space_Law" //WS Edit - Wikilinks/Warning
 

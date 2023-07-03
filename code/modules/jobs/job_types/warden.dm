@@ -1,8 +1,6 @@
 /datum/job/warden
 	name = "Warden"
 	auto_deadmin_role_flags = DEADMIN_POSITION_SECURITY
-	total_positions = 1
-	spawn_positions = 1
 	minimal_player_age = 7
 	officer = TRUE
 	wiki_page = "Space_Law" //WS Edit - Wikilinks/Warning

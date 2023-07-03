@@ -1,7 +1,5 @@
 /datum/job/roboticist
 	name = "Roboticist"
-	total_positions = 2
-	spawn_positions = 2
 	wiki_page = "Guide_to_Robotics" //WS Edit - Wikilinks/Warning
 
 	outfit = /datum/outfit/job/roboticist

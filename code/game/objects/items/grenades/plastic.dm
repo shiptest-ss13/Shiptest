@@ -124,8 +124,6 @@
 			message_say = "FOR THE HIVE!"
 		else if(UM.has_antag_datum(/datum/antagonist/cult))
 			message_say = "FOR NAR'SIE!"
-		else if(UM.has_antag_datum(/datum/antagonist/rev))
-			message_say = "VIVA LA REVOLUTION!"
 		else if(UM.has_antag_datum(/datum/antagonist/brother))
 			message_say = "FOR MY BROTHER!"
 		else if(UM.has_antag_datum(/datum/antagonist/ninja))

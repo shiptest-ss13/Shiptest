@@ -306,7 +306,8 @@
 		character = equip
 
 	if(job && !job.override_latejoin_spawn(character))
-		SSjob.SendToLateJoin(character, destination = pick(ship.shuttle_port.spawn_points))
+		var/atom/spawn_point = pick(ship.shuttle_port.spawn_points)
+		spawn_point.join_player_here(character)
 		var/atom/movable/screen/splash/Spl = new(character.client, TRUE)
 		Spl.Fade(TRUE)
 		character.playsound_local(get_turf(character), 'sound/voice/ApproachingTG.ogg', 25)

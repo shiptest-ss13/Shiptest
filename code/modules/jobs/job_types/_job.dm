@@ -15,15 +15,6 @@
 	//Bitflags for the job
 	var/auto_deadmin_role_flags = NONE
 
-	//How many players can be this job
-	var/total_positions = 0
-
-	//How many players can spawn in as this job
-	var/spawn_positions = 0
-
-	//How many players have this job
-	var/current_positions = 0
-
 	//If you have the use_age_restriction_for_jobs config option enabled and the database set up, this option will add a requirement for players to be at least minimal_player_age days old. (meaning they first signed in at least that many days before.)
 	var/minimal_player_age = 0
 
@@ -95,8 +86,6 @@
 	if(living_mob.client.holder)
 		if(CONFIG_GET(flag/auto_deadmin_players) || (living_mob.client.prefs?.toggles & DEADMIN_ALWAYS))
 			living_mob.client.holder.auto_deadmin()
-		else
-			SSjob.handle_auto_deadmin_roles(living_mob.client, name)
 
 	radio_help_message(living_mob)
 	//WS Begin - Wikilinks
