@@ -13,10 +13,6 @@
 	name = "T-Shirt (Greyscale)"
 	icon_state = "tshirt"
 
-/datum/sprite_accessory/undershirt/jersey
-	name = "Jersey (Greyscale)"
-	icon_state = "jersey"
-
 /datum/sprite_accessory/undershirt/polo
 	name = "Polo Shirt (Greyscale)"
 	icon_state = "polo"

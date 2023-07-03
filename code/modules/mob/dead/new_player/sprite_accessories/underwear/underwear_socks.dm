@@ -51,11 +51,6 @@
 	icon_state = "inteq"
 	use_static = TRUE
 
-/datum/sprite_accessory/socks/inteq_toeless
-	name = "Toeless Inteq Thigh-Highs"
-	icon_state = "inteq_toeless"
-	use_static = TRUE
-
 /datum/sprite_accessory/socks/stocking
 	name = "Black Stockings"
 	icon_state = "stocking"
