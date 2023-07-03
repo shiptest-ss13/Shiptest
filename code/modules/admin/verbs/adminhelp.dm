@@ -29,7 +29,6 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	var/list/active_tickets = list()
 	var/list/closed_tickets = list()
 	var/list/resolved_tickets = list()
-	var/total_statclick_errors = 0
 
 	var/obj/effect/statclick/ticket_list/browse_statclick = new(null, null, null)
 	var/obj/effect/statclick/ticket_list/ustatclick = new(null, null, AHELP_UNCLAIMED)
@@ -215,8 +214,6 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 		stat("Disconnected:", astatclick.update("[num_disconnected]"))
 	stat("Closed Tickets:", cstatclick.update("[closed_tickets.len]"))
 	stat("Resolved Tickets:", rstatclick.update("[resolved_tickets.len]"))
-	stat("Statclick Errors:", "[total_statclick_errors]", null, null)
-
 
 //Reassociate still open ticket if one exists
 /datum/admin_help_tickets/proc/ClientLogin(client/C)
@@ -298,7 +295,6 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	var/list/_interactions	//use AddInteraction() or, preferably, admin_ticket_log()
 
 	var/obj/effect/statclick/ahelp/statclick
-	var/error_screamed = FALSE
 
 	var/static/ticket_counter = 0
 
