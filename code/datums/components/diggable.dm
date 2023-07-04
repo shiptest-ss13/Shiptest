@@ -22,9 +22,8 @@
 		return
 	var/turf/parent_turf = parent
 	bastard.visible_message(span_notice("[bastard] starts to dig up [parent_turf]."), span_notice("You start to dig."))
-	if(do_after(bastard, 20, TRUE, src))
-		for(var/i in 1 to amount)
-			new to_spawn(parent_turf)
-		bastard.visible_message(span_notice("[bastard] digs up [parent_turf]."), span_notice("You [action_text] [parent_turf]."))
-		playsound(parent_turf, 'sound/effects/shovel_dig.ogg', 50, TRUE)
-		parent_turf.ScrapeAway(flags = CHANGETURF_INHERIT_AIR)
+	for(var/i in 1 to amount)
+		new to_spawn(parent_turf)
+	bastard.visible_message(span_notice("[bastard] digs up [parent_turf]."), span_notice("You [action_text] [parent_turf]."))
+	playsound(parent_turf, 'sound/effects/shovel_dig.ogg', 50, TRUE)
+	parent_turf.ScrapeAway(flags = CHANGETURF_INHERIT_AIR)
