@@ -775,9 +775,12 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			if(underwear)
 				var/mutable_appearance/underwear_overlay
 				var/icon_state = underwear.icon_state
+				var/icon_file = underwear.icon
+				if((H.dna.species.bodytype & BODYTYPE_KEPORI))
+					icon_file = KEPORI_UNDERWEAR_LEGS_PATH
 				if(underwear.has_digitigrade && (H.dna.species.bodytype & BODYTYPE_DIGITIGRADE))
 					icon_state += "_d"
-				underwear_overlay = mutable_appearance(underwear.icon, icon_state, -BODY_LAYER)
+				underwear_overlay = mutable_appearance(icon_file, icon_state, -BODY_LAYER)
 				if(!underwear.use_static)
 					underwear_overlay.color = "#" + H.underwear_color
 				standing += underwear_overlay
@@ -787,9 +790,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			if(undershirt)
 				var/mutable_appearance/undershirt_overlay
 				var/icon_file = undershirt.icon
-				if(H.dna.species.sexes && H.gender == FEMALE && (H.dna.species.bodytype & BODYTYPE_HUMANOID))
-					undershirt_overlay = wear_female_version(icon_file, undershirt.icon_state, BODY_LAYER)
-				else if((H.dna.species.bodytype & BODYTYPE_KEPORI))
+				if((H.dna.species.bodytype & BODYTYPE_KEPORI))
 					icon_file = KEPORI_UNDERWEAR_TORSO_PATH
 				undershirt_overlay = mutable_appearance(icon_file, undershirt.icon_state, -BODY_LAYER)
 				if(!undershirt.use_static)

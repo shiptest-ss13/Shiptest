@@ -9,6 +9,49 @@
 
 //Start normal shirts
 
+//Female undergarment tops
+
+/datum/sprite_accessory/undershirt/bra
+	name = "Bra"
+	icon_state = "bra"
+
+/datum/sprite_accessory/undershirt/altbra
+	name = "Bra (Alt)"
+	icon_state = "bra_alt"
+
+/datum/sprite_accessory/undershirt/sportsbra
+	name = "Sports Bra"
+	icon_state = "bra_sports"
+
+/datum/sprite_accessory/undershirt/sportsbraalt
+	name = "Sports Bra (Alt)"
+	icon_state = "bra_sports_alt"
+
+/datum/sprite_accessory/undershirt/swimming
+	name = "Swimming Top"
+	icon_state = "swimming"
+
+/datum/sprite_accessory/undershirt/straplessbra
+	name = "Strapless Bra"
+	icon_state = "bra_strapless"
+
+/datum/sprite_accessory/undershirt/straplessbralt
+	name = "Strapless Bra (Alt)"
+	icon_state = "bra_strapless_alt"
+
+/datum/sprite_accessory/undershirt/halterbra
+	name = "Halter Bra"
+	icon_state = "bra_halter"
+
+/datum/sprite_accessory/undershirt/catgirl
+	name = "Catgirl Bra" //The balance must be preserved
+	icon_state = "bra_cat"
+
+/datum/sprite_accessory/undershirt/beekini
+	name = "Bee-Kini Top"
+	icon_state = "beekini"
+	use_static = TRUE
+
 /datum/sprite_accessory/undershirt/tshirt
 	name = "T-Shirt (Greyscale)"
 	icon_state = "tshirt"
@@ -95,39 +138,4 @@
 /datum/sprite_accessory/undershirt/tank_ace
 	name = "Tank Top (Asexual)"
 	icon_state = "ace"
-	use_static = TRUE
-
-//Female undergarment tops
-
-/datum/sprite_accessory/undershirt/bra
-	name = "Bra"
-	icon_state = "bra"
-
-/datum/sprite_accessory/undershirt/altbra
-	name = "Alt Bra"
-	icon_state = "bra_alt"
-
-/datum/sprite_accessory/undershirt/swimming
-	name = "Swimming Top"
-	icon_state = "swimming"
-
-/datum/sprite_accessory/undershirt/straplessbra
-	name = "Strapless Bra"
-	icon_state = "bra_strapless"
-
-/datum/sprite_accessory/undershirt/altstraplessbra
-	name = "Alt Strapless Bra"
-	icon_state = "bra_strapless_alt"
-
-/datum/sprite_accessory/undershirt/halterbra
-	name = "Halter Bra"
-	icon_state = "bra_halter"
-
-/datum/sprite_accessory/undershirt/catgirl
-	name = "Catgirl Bra" //The balance must be preserved
-	icon_state = "bra_cat"
-
-/datum/sprite_accessory/undershirt/beekini
-	name = "Bee-Kini Top"
-	icon_state = "beekini"
 	use_static = TRUE
