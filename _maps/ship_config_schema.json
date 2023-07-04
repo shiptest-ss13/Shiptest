@@ -129,6 +129,20 @@
 			"maximum": 100,
 			"default": 2
 		},
+		"spawn_time_coeff": {
+			"title": "Required Spawn Playtime Coefficient",
+			"type": "number",
+			"description": "A multiplier used, along with the config value SHIP_SPAWN_BASE_EXP_MIN, to determine the amount of time a player must have spent as Living to spawn this ship from the join menu.",
+			"minimum": 0,
+			"default": 1
+		},
+		"officer_time_coeff": {
+			"title": "Required Officer Playtime Coefficient",
+			"type": "number",
+			"description": "A multiplier used, along with the config value OFFICER_JOIN_BASE_EXP_MIN, to determine the amount of time a player must have spent as Living to spawn as an officer job on this ship AFTER it has been spawned.",
+			"minimum": 0,
+			"default": 1
+		},
 		"enabled": {
 			"title": "Selectable",
 			"type": "boolean",
