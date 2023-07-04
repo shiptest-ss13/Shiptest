@@ -1,7 +1,7 @@
 //the satanic den - Sand planets
 
 /turf/open/floor/planetary/whitesands //i'd change the name but we already have a /sand in the form of sandtiles.
-	name = "dried up"
+	name = "dried sand"
 	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
 	baseturfs = /turf/open/floor/planetary/whitesands
 	icon = 'icons/turf/floors//ws_floors.dmi'

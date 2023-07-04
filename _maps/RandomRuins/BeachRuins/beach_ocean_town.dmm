@@ -3,14 +3,12 @@
 /obj/effect/turf_decal/weather/sand{
 	dir = 8
 	},
-/turf/open/floor/plating/dirt/dark{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt/dark,
 /area/ruin/beach/oceantown)
 "aj" = (
 /obj/structure/flora/ausbushes/leafybush,
 /obj/structure/flora/ausbushes/ppflowers,
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/planetary/grass/beach/lit,
 /area/ruin/beach/oceantown)
 "ao" = (
 /obj/structure/sink{
@@ -43,7 +41,7 @@
 "aA" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/railing/wood,
-/turf/open/floor/plating/asteroid/sand/lit,
+/turf/open/floor/planetary/sand/beach/dense,
 /area/ruin/beach/oceantown)
 "aD" = (
 /obj/structure/railing/corner/wood{
@@ -103,9 +101,7 @@
 /obj/effect/turf_decal/weather/sand{
 	dir = 1
 	},
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "bs" = (
 /obj/machinery/vending/cola/random,
@@ -120,12 +116,12 @@
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/ausbushes/ppflowers,
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/planetary/grass/beach/lit,
 /area/ruin/beach/oceantown)
 "ca" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/ywflowers,
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/planetary/grass/beach/lit,
 /area/ruin/beach/oceantown)
 "cb" = (
 /obj/effect/turf_decal/siding/wood{
@@ -141,9 +137,7 @@
 "ce" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/seeds/grape,
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "ck" = (
 /obj/structure/railing,
@@ -156,15 +150,13 @@
 /obj/structure/railing/wood{
 	dir = 8
 	},
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "ct" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/ppflowers,
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/planetary/grass/beach/lit,
 /area/ruin/beach/oceantown)
 "cx" = (
 /obj/structure/railing{
@@ -230,9 +222,7 @@
 /obj/effect/turf_decal/weather/sand{
 	dir = 5
 	},
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "dl" = (
 /obj/structure/railing/corner/wood{
@@ -244,15 +234,13 @@
 /obj/structure/railing/corner/wood{
 	dir = 4
 	},
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "dy" = (
 /obj/effect/turf_decal/weather/sand{
 	dir = 8
 	},
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/planetary/grass/beach/lit,
 /area/ruin/beach/oceantown)
 "dA" = (
 /obj/effect/turf_decal/siding/thinplating/light{
@@ -295,9 +283,7 @@
 /obj/effect/turf_decal/weather/sand{
 	dir = 1
 	},
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "ed" = (
 /obj/item/kirbyplants/random,
@@ -321,7 +307,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/beach/oceantown/bar)
 "ek" = (
-/turf/open/floor/plating/grass/jungle,
+/turf/open/floor/planetary/grass/jungle,
 /area/ruin/beach/oceantown)
 "el" = (
 /obj/structure/table,
@@ -354,7 +340,7 @@
 /obj/effect/turf_decal/weather/sand{
 	dir = 9
 	},
-/turf/open/floor/plating/asteroid/sand/lit,
+/turf/open/floor/planetary/sand/beach/dense,
 /area/ruin/beach/oceantown)
 "eB" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -374,7 +360,7 @@
 /obj/structure/railing/corner{
 	dir = 1
 	},
-/turf/open/floor/plating/asteroid/sand/lit,
+/turf/open/floor/planetary/sand/beach/dense,
 /area/ruin/beach/oceantown)
 "eK" = (
 /obj/machinery/shower{
@@ -385,7 +371,7 @@
 /area/ruin/beach/oceantown)
 "eM" = (
 /obj/effect/turf_decal/siding/wood,
-/turf/open/floor/plating/asteroid/sand/lit,
+/turf/open/floor/planetary/sand/beach/dense,
 /area/ruin/beach/oceantown)
 "eN" = (
 /obj/structure/chair/sofa/corner{
@@ -427,22 +413,20 @@
 /obj/effect/turf_decal/weather/sand{
 	dir = 5
 	},
-/turf/open/floor/plating/asteroid/sand/lit,
+/turf/open/floor/planetary/sand/beach/dense,
 /area/ruin/beach/oceantown)
 "fv" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/ausbushes/leafybush,
 /obj/structure/flora/ausbushes/brflowers,
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/planetary/grass/beach/lit,
 /area/ruin/beach/oceantown)
 "fy" = (
 /obj/structure/railing/corner/wood,
 /obj/effect/turf_decal/weather/sand{
 	dir = 9
 	},
-/turf/open/floor/plating/dirt/dark{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt/dark,
 /area/ruin/beach/oceantown)
 "fz" = (
 /obj/effect/turf_decal/siding/wood{
@@ -472,7 +456,7 @@
 /obj/structure/railing/corner/wood{
 	dir = 8
 	},
-/turf/open/floor/plating/asteroid/sand/lit,
+/turf/open/floor/planetary/sand/beach/dense,
 /area/ruin/beach/oceantown)
 "fG" = (
 /obj/effect/turf_decal/siding/wood{
@@ -502,14 +486,12 @@
 "fZ" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/seeds/cabbage,
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "gd" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/lavendergrass,
-/turf/open/floor/plating/grass,
+/turf/open/floor/planetary/grass,
 /area/ruin/beach/oceantown)
 "ge" = (
 /obj/structure/table,
@@ -525,7 +507,7 @@
 /area/ruin/beach/oceantown)
 "gn" = (
 /obj/structure/flora/ausbushes/leafybush,
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/planetary/grass/beach/lit,
 /area/ruin/beach/oceantown)
 "gu" = (
 /obj/effect/turf_decal/sand/plating{
@@ -558,7 +540,7 @@
 /area/ruin/beach/oceantown)
 "gN" = (
 /obj/effect/turf_decal/siding/wood/corner,
-/turf/open/floor/plating/asteroid/sand/lit,
+/turf/open/floor/planetary/sand/beach/dense,
 /area/ruin/beach/oceantown)
 "gX" = (
 /obj/machinery/light/small/directional/west,
@@ -577,7 +559,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
-/turf/open/floor/plating/asteroid/sand/lit,
+/turf/open/floor/planetary/sand/beach/dense,
 /area/ruin/beach/oceantown)
 "hc" = (
 /obj/machinery/autolathe,
@@ -587,11 +569,11 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
-/turf/open/floor/plating/asteroid/sand/lit,
+/turf/open/floor/planetary/sand/beach/dense,
 /area/ruin/beach/oceantown)
 "hu" = (
 /obj/structure/flora/ausbushes/lavendergrass,
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/planetary/grass/beach/lit,
 /area/ruin/beach/oceantown)
 "hw" = (
 /obj/structure/sign/poster/official/cleanliness{
@@ -622,13 +604,13 @@
 "hL" = (
 /obj/structure/flora/ausbushes/grassybush,
 /obj/structure/flora/ausbushes/brflowers,
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/planetary/grass/beach/lit,
 /area/ruin/beach/oceantown)
 "hM" = (
 /obj/structure/flora/tree/palm{
 	icon_state = "palm2"
 	},
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/planetary/grass/beach/lit,
 /area/ruin/beach/oceantown)
 "hW" = (
 /obj/structure/railing/wood{
@@ -646,7 +628,7 @@
 /area/ruin/beach/oceantown)
 "id" = (
 /obj/structure/flora/ausbushes/genericbush,
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/planetary/grass/beach/lit,
 /area/ruin/beach/oceantown)
 "ie" = (
 /obj/effect/turf_decal/siding/wood{
@@ -667,7 +649,7 @@
 /area/ruin/beach/oceantown)
 "ij" = (
 /obj/item/chisel,
-/turf/open/floor/plating/asteroid/sand/lit,
+/turf/open/floor/planetary/sand/beach/dense,
 /area/ruin/beach/oceantown)
 "im" = (
 /obj/effect/turf_decal/siding/wood{
@@ -680,7 +662,7 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/leafybush,
 /obj/structure/flora/ausbushes/ppflowers,
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/planetary/grass/beach/lit,
 /area/ruin/beach/oceantown)
 "io" = (
 /obj/machinery/door/airlock/public/glass{
@@ -699,9 +681,7 @@
 /area/ruin/beach/oceantown/hotel)
 "iw" = (
 /obj/structure/flora/rock/pile,
-/turf/open/floor/plating/dirt/dark{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt/dark,
 /area/ruin/beach/oceantown)
 "ix" = (
 /obj/structure/rack,
@@ -716,7 +696,7 @@
 "iC" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/leafybush,
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/planetary/grass/beach/lit,
 /area/ruin/beach/oceantown)
 "iM" = (
 /turf/template_noop,
@@ -725,13 +705,13 @@
 /obj/structure/railing/corner/wood{
 	dir = 8
 	},
-/turf/open/floor/plating/asteroid/sand/lit,
+/turf/open/floor/planetary/sand/beach/dense,
 /area/ruin/beach/oceantown)
 "iT" = (
 /obj/structure/flora/tree/jungle{
 	icon_state = "tree5"
 	},
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/planetary/grass/beach/lit,
 /area/ruin/beach/oceantown)
 "iW" = (
 /obj/machinery/door/airlock/public/glass{
@@ -759,9 +739,7 @@
 "jL" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/seeds/peas,
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "jQ" = (
 /obj/structure/railing/corner/wood,
@@ -770,17 +748,15 @@
 "jY" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/seeds/tower,
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "kb" = (
-/turf/open/floor/plating/grass,
+/turf/open/floor/planetary/grass,
 /area/ruin/beach/oceantown)
 "kd" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/lavendergrass,
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/planetary/grass/beach/lit,
 /area/ruin/beach/oceantown)
 "kf" = (
 /obj/effect/turf_decal/siding/wood/end{
@@ -793,7 +769,7 @@
 "kj" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/lavendergrass,
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/planetary/grass/beach/lit,
 /area/ruin/beach/oceantown)
 "km" = (
 /obj/structure/closet/athletic_mixed,
@@ -801,7 +777,7 @@
 /area/ruin/beach/oceantown/hotel)
 "kn" = (
 /obj/structure/flora/ausbushes/leafybush,
-/turf/open/floor/plating/grass,
+/turf/open/floor/planetary/grass,
 /area/ruin/beach/oceantown)
 "kp" = (
 /obj/effect/turf_decal/siding/wood/corner{
@@ -832,7 +808,7 @@
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 4
 	},
-/turf/open/floor/plating/asteroid/sand/lit,
+/turf/open/floor/planetary/sand/beach/dense,
 /area/ruin/beach/oceantown)
 "kG" = (
 /obj/effect/turf_decal/siding/wood{
@@ -867,7 +843,7 @@
 /area/ruin/beach/oceantown)
 "kN" = (
 /obj/structure/railing/corner,
-/turf/open/floor/plating/asteroid/sand/lit,
+/turf/open/floor/planetary/sand/beach/dense,
 /area/ruin/beach/oceantown)
 "kP" = (
 /obj/effect/turf_decal/siding/thinplating/light{
@@ -905,14 +881,12 @@
 /obj/structure/flora/tree/jungle{
 	icon_state = "tree3"
 	},
-/turf/open/floor/plating/grass/jungle,
+/turf/open/floor/planetary/grass/jungle,
 /area/ruin/beach/oceantown)
 "ly" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/seeds/tobacco,
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "lE" = (
 /obj/machinery/door/airlock/public/glass{
@@ -933,7 +907,7 @@
 /area/ruin/beach/oceantown)
 "lT" = (
 /obj/structure/fluff/beach_umbrella/cap,
-/turf/open/floor/plating/asteroid/sand/lit,
+/turf/open/floor/planetary/sand/beach/dense,
 /area/ruin/beach/oceantown)
 "lZ" = (
 /obj/effect/turf_decal/weather/sand{
@@ -953,7 +927,7 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/leafybush,
 /obj/structure/flora/ausbushes/ppflowers,
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/planetary/grass/beach/lit,
 /area/ruin/beach/oceantown)
 "mi" = (
 /obj/effect/turf_decal/siding/wood,
@@ -1004,9 +978,7 @@
 /obj/effect/turf_decal/weather/sand{
 	dir = 9
 	},
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "mJ" = (
 /obj/structure/chair/sofa/right{
@@ -1023,7 +995,7 @@
 "mX" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/planetary/grass/beach/lit,
 /area/ruin/beach/oceantown)
 "mY" = (
 /obj/effect/turf_decal/corner/opaque/white/diagonal{
@@ -1038,7 +1010,7 @@
 "ni" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/ppflowers,
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/planetary/grass/beach/lit,
 /area/ruin/beach/oceantown)
 "nj" = (
 /obj/machinery/door/airlock/public/glass{
@@ -1060,9 +1032,7 @@
 /obj/effect/turf_decal/weather/sand{
 	dir = 8
 	},
-/turf/open/floor/plating/dirt/dark{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt/dark,
 /area/ruin/beach/oceantown)
 "nM" = (
 /obj/machinery/washing_machine,
@@ -1079,9 +1049,7 @@
 /obj/structure/railing{
 	dir = 8
 	},
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "oc" = (
 /obj/effect/turf_decal/siding/thinplating/light,
@@ -1117,7 +1085,7 @@
 /area/ruin/beach/oceantown/bar)
 "ox" = (
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/open/floor/plating/grass/jungle,
+/turf/open/floor/planetary/grass/jungle,
 /area/ruin/beach/oceantown)
 "oz" = (
 /obj/effect/turf_decal/weather/sand{
@@ -1147,9 +1115,7 @@
 /obj/effect/turf_decal/weather/sand{
 	dir = 5
 	},
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "oT" = (
 /turf/open/floor/carpet,
@@ -1157,7 +1123,7 @@
 "pe" = (
 /obj/item/stack/sheet/mineral/sandstone,
 /obj/item/stack/sheet/mineral/sandstone,
-/turf/open/floor/plating/asteroid/sand/lit,
+/turf/open/floor/planetary/sand/beach/dense,
 /area/ruin/beach/oceantown)
 "pm" = (
 /obj/machinery/light/small/directional/east,
@@ -1170,7 +1136,7 @@
 /obj/machinery/door/airlock/wood{
 	dir = 4
 	},
-/turf/open/floor/plating/asteroid/sand/lit,
+/turf/open/floor/planetary/sand/beach/dense,
 /area/ruin/beach/oceantown)
 "pr" = (
 /obj/effect/turf_decal/industrial/stand_clear{
@@ -1200,7 +1166,7 @@
 /obj/structure/chair/plastic{
 	dir = 4
 	},
-/turf/open/floor/plating/asteroid/sand/lit,
+/turf/open/floor/planetary/sand/beach/dense,
 /area/ruin/beach/oceantown)
 "pv" = (
 /obj/effect/turf_decal/weather/sand{
@@ -1213,18 +1179,16 @@
 /area/ruin/beach/oceantown)
 "px" = (
 /obj/structure/fluff/beach_umbrella,
-/turf/open/floor/plating/asteroid/sand/lit,
+/turf/open/floor/planetary/sand/beach/dense,
 /area/ruin/beach/oceantown)
 "pB" = (
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/planetary/grass/beach/lit,
 /area/ruin/beach/oceantown)
 "pE" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/seeds/cotton,
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "qb" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -1239,7 +1203,7 @@
 /obj/structure/railing/corner{
 	dir = 4
 	},
-/turf/open/floor/plating/asteroid/sand/lit,
+/turf/open/floor/planetary/sand/beach/dense,
 /area/ruin/beach/oceantown)
 "qp" = (
 /obj/effect/turf_decal/weather/sand,
@@ -1250,23 +1214,21 @@
 /obj/item/reagent_containers/food/drinks/drinkingglass/filled/cola{
 	name = "Ocean Cola"
 	},
-/turf/open/floor/plating/asteroid/sand/lit,
+/turf/open/floor/planetary/sand/beach/dense,
 /area/ruin/beach/oceantown)
 "qw" = (
-/turf/open/floor/plating/dirt/dark{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt/dark,
 /area/ruin/beach/oceantown)
 "qB" = (
 /obj/effect/turf_decal/sand,
 /obj/effect/turf_decal/weather/sand{
 	dir = 4
 	},
-/turf/open/floor/plating/asteroid/sand/lit,
+/turf/open/floor/planetary/sand/beach/dense,
 /area/ruin/beach/oceantown)
 "qJ" = (
 /obj/machinery/light/small/directional/west,
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/planetary/grass/beach/lit,
 /area/ruin/beach/oceantown)
 "qW" = (
 /obj/structure/chair/wood{
@@ -1302,33 +1264,27 @@
 "ri" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/seeds/carrot,
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "rl" = (
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "ru" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/seeds/chanter,
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "ry" = (
 /obj/structure/chair/stool/bar{
 	dir = 4
 	},
-/turf/open/floor/plating/asteroid/sand/lit,
+/turf/open/floor/planetary/sand/beach/dense,
 /area/ruin/beach/oceantown)
 "rz" = (
 /obj/structure/flora/tree/jungle{
 	icon_state = "tree10"
 	},
-/turf/open/floor/plating/grass,
+/turf/open/floor/planetary/grass,
 /area/ruin/beach/oceantown)
 "rH" = (
 /obj/machinery/vending/boozeomat,
@@ -1366,7 +1322,7 @@
 /turf/open/water/beach,
 /area/ruin/beach/oceantown)
 "sa" = (
-/turf/open/floor/plating/asteroid/sand/lit,
+/turf/open/floor/planetary/sand/beach/dense,
 /area/ruin/beach/oceantown)
 "sb" = (
 /obj/structure/table,
@@ -1381,7 +1337,7 @@
 /area/ruin/beach/oceantown)
 "sh" = (
 /obj/item/toy/beach_ball,
-/turf/open/floor/plating/asteroid/sand/lit,
+/turf/open/floor/planetary/sand/beach/dense,
 /area/ruin/beach/oceantown)
 "sj" = (
 /obj/structure/chair/sofa/right{
@@ -1427,17 +1383,13 @@
 /area/ruin/beach/oceantown/bar)
 "sH" = (
 /obj/structure/railing/wood,
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "sQ" = (
 /obj/effect/turf_decal/weather/sand{
 	dir = 4
 	},
-/turf/open/floor/plating/dirt/dark{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt/dark,
 /area/ruin/beach/oceantown)
 "sS" = (
 /obj/machinery/light/small/directional/south,
@@ -1467,7 +1419,7 @@
 /area/ruin/beach/oceantown)
 "ti" = (
 /obj/structure/flora/junglebush,
-/turf/open/floor/plating/asteroid/sand/lit,
+/turf/open/floor/planetary/sand/beach/dense,
 /area/ruin/beach/oceantown)
 "tj" = (
 /turf/open/floor/concrete/slab_1{
@@ -1490,9 +1442,7 @@
 /obj/effect/turf_decal/weather/sand{
 	dir = 4
 	},
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "tD" = (
 /obj/structure/table,
@@ -1517,9 +1467,7 @@
 "tU" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/seeds/eggplant,
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "tW" = (
 /obj/structure/table,
@@ -1545,7 +1493,7 @@
 "ue" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/ywflowers,
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/planetary/grass/beach/lit,
 /area/ruin/beach/oceantown)
 "uh" = (
 /obj/structure/table/wood,
@@ -1590,15 +1538,13 @@
 "uC" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/grassybush,
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/planetary/grass/beach/lit,
 /area/ruin/beach/oceantown)
 "uI" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/seeds/watermelon,
 /obj/item/shovel/spade,
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "uV" = (
 /obj/machinery/light/small/directional/east,
@@ -1629,9 +1575,7 @@
 	},
 /obj/item/melee/roastingstick,
 /obj/item/reagent_containers/food/snacks/sausage,
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "vy" = (
 /obj/machinery/pdapainter,
@@ -1639,14 +1583,12 @@
 /area/ruin/beach/oceantown/shop)
 "vE" = (
 /obj/structure/flora/ausbushes/brflowers,
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/planetary/grass/beach/lit,
 /area/ruin/beach/oceantown)
 "vF" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/seeds/wheat,
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "vI" = (
 /obj/structure/table/wood,
@@ -1654,7 +1596,7 @@
 /area/ruin/beach/oceantown)
 "vL" = (
 /obj/structure/table/wood,
-/turf/open/floor/plating/asteroid/sand/lit,
+/turf/open/floor/planetary/sand/beach/dense,
 /area/ruin/beach/oceantown)
 "we" = (
 /obj/effect/turf_decal/siding/thinplating/dark/corner,
@@ -1663,13 +1605,13 @@
 "wf" = (
 /obj/structure/flora/ausbushes/leafybush,
 /obj/structure/flora/ausbushes/lavendergrass,
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/planetary/grass/beach/lit,
 /area/ruin/beach/oceantown)
 "wo" = (
 /obj/effect/turf_decal/weather/sand{
 	dir = 4
 	},
-/turf/open/floor/plating/asteroid/sand/lit,
+/turf/open/floor/planetary/sand/beach/dense,
 /area/ruin/beach/oceantown)
 "wt" = (
 /obj/effect/turf_decal/weather/sand{
@@ -1699,12 +1641,12 @@
 /area/ruin/beach/oceantown/shop)
 "ww" = (
 /obj/structure/statue/sandstone/assistant,
-/turf/open/floor/plating/asteroid/sand/lit,
+/turf/open/floor/planetary/sand/beach/dense,
 /area/ruin/beach/oceantown)
 "wF" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/brflowers,
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/planetary/grass/beach/lit,
 /area/ruin/beach/oceantown)
 "wH" = (
 /obj/effect/turf_decal/siding/wood{
@@ -1731,16 +1673,16 @@
 /obj/structure/flora/tree/jungle{
 	icon_state = "tree6"
 	},
-/turf/open/floor/plating/grass,
+/turf/open/floor/planetary/grass,
 /area/ruin/beach/oceantown)
 "wS" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/ausbushes/ppflowers,
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/planetary/grass/beach/lit,
 /area/ruin/beach/oceantown)
 "wZ" = (
 /obj/item/stack/sheet/mineral/sandstone,
-/turf/open/floor/plating/asteroid/sand/lit,
+/turf/open/floor/planetary/sand/beach/dense,
 /area/ruin/beach/oceantown)
 "xe" = (
 /obj/machinery/door/airlock/public/glass{
@@ -1773,13 +1715,13 @@
 /obj/effect/turf_decal/weather/sand{
 	dir = 10
 	},
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/planetary/grass/beach/lit,
 /area/ruin/beach/oceantown)
 "xx" = (
 /obj/structure/flora/tree/palm{
 	icon_state = "palm2"
 	},
-/turf/open/floor/plating/asteroid/sand/lit,
+/turf/open/floor/planetary/sand/beach/dense,
 /area/ruin/beach/oceantown)
 "xy" = (
 /obj/machinery/light/directional/north,
@@ -1788,15 +1730,13 @@
 "xz" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/seeds/aloe,
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "xE" = (
 /obj/structure/flora/tree/jungle/small{
 	icon_state = "tree1"
 	},
-/turf/open/floor/plating/grass/jungle,
+/turf/open/floor/planetary/grass/jungle,
 /area/ruin/beach/oceantown)
 "xF" = (
 /obj/item/kirbyplants/random,
@@ -1815,9 +1755,7 @@
 /obj/effect/turf_decal/weather/sand{
 	dir = 6
 	},
-/turf/open/floor/plating/dirt/dark{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt/dark,
 /area/ruin/beach/oceantown)
 "xL" = (
 /turf/open/floor/plasteel/dark,
@@ -1834,7 +1772,7 @@
 /obj/structure/railing/wood{
 	dir = 6
 	},
-/turf/open/floor/plating/asteroid/sand/lit,
+/turf/open/floor/planetary/sand/beach/dense,
 /area/ruin/beach/oceantown)
 "yc" = (
 /obj/structure/rack,
@@ -1844,7 +1782,7 @@
 "yl" = (
 /obj/structure/flora/ausbushes/leafybush,
 /obj/structure/flora/ausbushes/ywflowers,
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/planetary/grass/beach/lit,
 /area/ruin/beach/oceantown)
 "yu" = (
 /obj/structure/table/wood,
@@ -1882,9 +1820,7 @@
 /obj/structure/railing/corner{
 	dir = 8
 	},
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "yC" = (
 /obj/structure/table/wood,
@@ -1927,7 +1863,7 @@
 /area/ruin/beach/oceantown)
 "yQ" = (
 /obj/structure/railing/corner/wood,
-/turf/open/floor/plating/asteroid/sand/lit,
+/turf/open/floor/planetary/sand/beach/dense,
 /area/ruin/beach/oceantown)
 "yS" = (
 /turf/closed/wall/concrete,
@@ -1939,9 +1875,7 @@
 /obj/effect/turf_decal/weather/sand{
 	dir = 1
 	},
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "zg" = (
 /obj/structure/chair/stool/bar{
@@ -1980,9 +1914,7 @@
 "zD" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/seeds/cherry,
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "zI" = (
 /obj/structure/railing/wood{
@@ -1994,18 +1926,14 @@
 /obj/structure/railing/wood{
 	dir = 4
 	},
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "zP" = (
 /obj/structure/railing/wood,
 /obj/effect/turf_decal/weather/sand{
 	dir = 9
 	},
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "zQ" = (
 /obj/effect/turf_decal/siding/wood/corner{
@@ -2018,9 +1946,7 @@
 "zU" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/seeds/banana,
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "zX" = (
 /obj/machinery/biogenerator,
@@ -2052,7 +1978,7 @@
 /obj/structure/flora/tree/jungle/small{
 	icon_state = "tree2"
 	},
-/turf/open/floor/plating/grass/jungle,
+/turf/open/floor/planetary/grass/jungle,
 /area/ruin/beach/oceantown)
 "Ap" = (
 /obj/structure/window{
@@ -2071,9 +1997,7 @@
 "AA" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/seeds/plump,
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "AD" = (
 /obj/structure/table,
@@ -2100,7 +2024,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
-/turf/open/floor/plating/asteroid/sand/lit,
+/turf/open/floor/planetary/sand/beach/dense,
 /area/ruin/beach/oceantown)
 "AY" = (
 /obj/effect/turf_decal/corner/opaque/white/diagonal{
@@ -2146,12 +2070,12 @@
 "BP" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/ausbushes/ywflowers,
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/planetary/grass/beach/lit,
 /area/ruin/beach/oceantown)
 "BQ" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/machinery/light/small/directional/west,
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/planetary/grass/beach/lit,
 /area/ruin/beach/oceantown)
 "BV" = (
 /obj/structure/filingcabinet,
@@ -2165,7 +2089,7 @@
 /area/ruin/beach/oceantown/bar)
 "BY" = (
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/open/floor/plating/asteroid/sand/lit,
+/turf/open/floor/planetary/sand/beach/dense,
 /area/ruin/beach/oceantown)
 "Ca" = (
 /obj/effect/turf_decal/weather/sand/corner{
@@ -2177,13 +2101,13 @@
 /obj/structure/flora/tree/jungle{
 	icon_state = "tree5"
 	},
-/turf/open/floor/plating/grass,
+/turf/open/floor/planetary/grass,
 /area/ruin/beach/oceantown)
 "Cd" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/ausbushes/fernybush,
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/planetary/grass/beach/lit,
 /area/ruin/beach/oceantown)
 "Cf" = (
 /obj/effect/turf_decal/siding/wood{
@@ -2203,9 +2127,7 @@
 /obj/structure/railing/corner/wood{
 	dir = 8
 	},
-/turf/open/floor/plating/dirt/dark{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt/dark,
 /area/ruin/beach/oceantown)
 "Cq" = (
 /obj/effect/turf_decal/siding/wood{
@@ -2259,7 +2181,7 @@
 "CS" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/railing/corner/wood,
-/turf/open/floor/plating/asteroid/sand/lit,
+/turf/open/floor/planetary/sand/beach/dense,
 /area/ruin/beach/oceantown)
 "CT" = (
 /obj/structure/rack,
@@ -2288,9 +2210,7 @@
 /obj/effect/turf_decal/weather/sand{
 	dir = 1
 	},
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "Dj" = (
 /obj/effect/turf_decal/corner/opaque/white/diagonal{
@@ -2315,9 +2235,7 @@
 	dir = 8
 	},
 /obj/item/melee/roastingstick,
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "Dy" = (
 /obj/effect/turf_decal/weather/sand{
@@ -2326,9 +2244,7 @@
 /obj/effect/turf_decal/weather/sand{
 	dir = 10
 	},
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "DC" = (
 /turf/open/floor/wood{
@@ -2338,15 +2254,11 @@
 "DD" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/seeds/bamboo,
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "DE" = (
 /obj/structure/railing/wood,
-/turf/open/floor/plating/dirt/dark{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt/dark,
 /area/ruin/beach/oceantown)
 "DK" = (
 /obj/effect/turf_decal/industrial/warning,
@@ -2368,11 +2280,11 @@
 "DP" = (
 /obj/structure/flora/ausbushes/genericbush,
 /obj/structure/flora/ausbushes/ppflowers,
-/turf/open/floor/plating/grass/beach,
+/turf/open/floor/planetary/grass/beach,
 /area/ruin/beach/oceantown)
 "DT" = (
 /obj/structure/chair/plastic,
-/turf/open/floor/plating/asteroid/sand/lit,
+/turf/open/floor/planetary/sand/beach/dense,
 /area/ruin/beach/oceantown)
 "DX" = (
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
@@ -2382,7 +2294,7 @@
 /area/ruin/beach/oceantown/bar)
 "Eb" = (
 /obj/structure/flora/ausbushes/lavendergrass,
-/turf/open/floor/plating/grass,
+/turf/open/floor/planetary/grass,
 /area/ruin/beach/oceantown)
 "Ed" = (
 /obj/machinery/shower{
@@ -2425,7 +2337,7 @@
 /obj/structure/chair/plastic{
 	dir = 8
 	},
-/turf/open/floor/plating/asteroid/sand/lit,
+/turf/open/floor/planetary/sand/beach/dense,
 /area/ruin/beach/oceantown)
 "Ew" = (
 /obj/effect/turf_decal/siding/wood,
@@ -2448,12 +2360,12 @@
 /obj/structure/chair/stool/bar{
 	dir = 8
 	},
-/turf/open/floor/plating/asteroid/sand/lit,
+/turf/open/floor/planetary/sand/beach/dense,
 /area/ruin/beach/oceantown)
 "EC" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/ausbushes/brflowers,
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/planetary/grass/beach/lit,
 /area/ruin/beach/oceantown)
 "EH" = (
 /obj/structure/chair/wood{
@@ -2472,13 +2384,11 @@
 /area/ruin/beach/oceantown/bar)
 "EQ" = (
 /obj/structure/flora/ausbushes/grassybush,
-/turf/open/floor/plating/asteroid/sand/lit,
+/turf/open/floor/planetary/sand/beach/dense,
 /area/ruin/beach/oceantown)
 "ER" = (
 /obj/structure/railing,
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "ES" = (
 /obj/effect/turf_decal/weather/sand{
@@ -2494,9 +2404,7 @@
 /obj/effect/turf_decal/weather/sand{
 	dir = 10
 	},
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "EX" = (
 /obj/structure/table/wood,
@@ -2515,11 +2423,11 @@
 /obj/structure/flora/tree/jungle{
 	icon_state = "tree9"
 	},
-/turf/open/floor/plating/grass,
+/turf/open/floor/planetary/grass,
 /area/ruin/beach/oceantown)
 "FF" = (
 /obj/structure/flora/ausbushes/fullgrass,
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/planetary/grass/beach/lit,
 /area/ruin/beach/oceantown)
 "FI" = (
 /obj/structure/table/wood,
@@ -2530,9 +2438,7 @@
 /obj/structure/railing{
 	dir = 1
 	},
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "FM" = (
 /obj/structure/table/wood,
@@ -2557,9 +2463,7 @@
 /obj/effect/turf_decal/weather/sand{
 	dir = 10
 	},
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "FT" = (
 /obj/effect/turf_decal/siding/wood{
@@ -2629,17 +2533,13 @@
 "Gq" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/seeds/tea,
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "Gt" = (
 /obj/structure/railing{
 	dir = 4
 	},
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "Gz" = (
 /obj/structure/table/wood,
@@ -2651,7 +2551,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/planetary/grass/beach/lit,
 /area/ruin/beach/oceantown)
 "GE" = (
 /obj/effect/turf_decal/road{
@@ -2665,9 +2565,7 @@
 /obj/effect/turf_decal/weather/sand{
 	dir = 9
 	},
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "GJ" = (
 /obj/structure/rack,
@@ -2721,15 +2619,13 @@
 /obj/item/reagent_containers/food/snacks/sausage,
 /obj/item/reagent_containers/food/snacks/sausage,
 /obj/item/reagent_containers/food/snacks/sausage,
-/turf/open/floor/plating/asteroid/sand/lit,
+/turf/open/floor/planetary/sand/beach/dense,
 /area/ruin/beach/oceantown)
 "Hi" = (
 /obj/structure/railing/wood{
 	dir = 6
 	},
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "Hp" = (
 /obj/structure/table/wood,
@@ -2756,9 +2652,7 @@
 /obj/effect/turf_decal/weather/sand{
 	dir = 1
 	},
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "Hz" = (
 /obj/structure/flora/ausbushes/reedbush,
@@ -2777,7 +2671,7 @@
 /obj/structure/chair/plastic{
 	dir = 1
 	},
-/turf/open/floor/plating/asteroid/sand/lit,
+/turf/open/floor/planetary/sand/beach/dense,
 /area/ruin/beach/oceantown)
 "HO" = (
 /obj/machinery/seed_extractor,
@@ -2796,7 +2690,7 @@
 /obj/structure/flora/tree/jungle{
 	icon_state = "tree3"
 	},
-/turf/open/floor/plating/grass,
+/turf/open/floor/planetary/grass,
 /area/ruin/beach/oceantown)
 "HW" = (
 /obj/structure/table,
@@ -2807,9 +2701,7 @@
 /area/ruin/beach/oceantown)
 "Ia" = (
 /obj/structure/bonfire/prelit,
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "Ib" = (
 /obj/structure/fence{
@@ -2823,7 +2715,7 @@
 /obj/structure/railing/wood{
 	dir = 8
 	},
-/turf/open/floor/plating/asteroid/sand/lit,
+/turf/open/floor/planetary/sand/beach/dense,
 /area/ruin/beach/oceantown)
 "Ii" = (
 /obj/effect/turf_decal/siding/wood{
@@ -2858,7 +2750,7 @@
 "Io" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/planetary/grass/beach/lit,
 /area/ruin/beach/oceantown)
 "Ip" = (
 /obj/structure/table,
@@ -2885,7 +2777,7 @@
 /area/ruin/beach/oceantown)
 "IF" = (
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/open/floor/plating/grass,
+/turf/open/floor/planetary/grass,
 /area/ruin/beach/oceantown)
 "IR" = (
 /obj/structure/table/wood,
@@ -2943,39 +2835,33 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/leafybush,
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/planetary/grass/beach/lit,
 /area/ruin/beach/oceantown)
 "JD" = (
 /obj/structure/flora/ausbushes/grassybush,
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/planetary/grass/beach/lit,
 /area/ruin/beach/oceantown)
 "JL" = (
 /obj/structure/railing/wood{
 	dir = 5
 	},
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "JQ" = (
 /obj/structure/railing/wood,
 /obj/effect/turf_decal/weather/sand{
 	dir = 5
 	},
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "JS" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/seeds/apple,
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "JT" = (
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/planetary/grass/beach/lit,
 /area/ruin/beach/oceantown/shop)
 "JU" = (
 /obj/structure/table/wood,
@@ -3019,14 +2905,12 @@
 /obj/structure/railing/wood{
 	dir = 10
 	},
-/turf/open/floor/plating/asteroid/sand/lit,
+/turf/open/floor/planetary/sand/beach/dense,
 /area/ruin/beach/oceantown)
 "Kn" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/seeds/wheat/rice,
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "Ko" = (
 /obj/effect/turf_decal/siding/wood,
@@ -3087,7 +2971,7 @@
 /obj/structure/chair/stool/bar{
 	dir = 1
 	},
-/turf/open/floor/plating/asteroid/sand/lit,
+/turf/open/floor/planetary/sand/beach/dense,
 /area/ruin/beach/oceantown)
 "KO" = (
 /obj/structure/closet/secure_closet/personal/cabinet,
@@ -3107,7 +2991,7 @@
 "KS" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/leafybush,
-/turf/open/floor/plating/grass,
+/turf/open/floor/planetary/grass,
 /area/ruin/beach/oceantown)
 "KT" = (
 /obj/effect/turf_decal/weather/sand{
@@ -3116,16 +3000,12 @@
 /obj/effect/turf_decal/weather/sand{
 	dir = 6
 	},
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "KU" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/seeds/potato,
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "Lc" = (
 /obj/structure/table/wood,
@@ -3133,7 +3013,7 @@
 	name = "perfect cornuto";
 	desc = "you can't be quite sure how long this cornuto has sat in the sun. Yet it remains perfectly intact. No melting, no signs of damage. It beckons to you."
 	},
-/turf/open/floor/plating/asteroid/sand/lit,
+/turf/open/floor/planetary/sand/beach/dense,
 /area/ruin/beach/oceantown)
 "Ln" = (
 /obj/effect/turf_decal/siding/wood{
@@ -3153,9 +3033,7 @@
 "Lr" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/seeds/orange,
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "Lx" = (
 /obj/structure/rack,
@@ -3223,9 +3101,7 @@
 /obj/structure/sink{
 	pixel_y = 17
 	},
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "Mp" = (
 /obj/effect/turf_decal/siding/wood{
@@ -3240,29 +3116,29 @@
 /area/ruin/beach/oceantown)
 "Mq" = (
 /obj/structure/flora/tree/jungle,
-/turf/open/floor/plating/grass,
+/turf/open/floor/planetary/grass,
 /area/ruin/beach/oceantown)
 "Ms" = (
 /obj/structure/flora/junglebush/large,
-/turf/open/floor/plating/asteroid/sand/lit,
+/turf/open/floor/planetary/sand/beach/dense,
 /area/ruin/beach/oceantown)
 "Mu" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 1
 	},
-/turf/open/floor/plating/asteroid/sand/lit,
+/turf/open/floor/planetary/sand/beach/dense,
 /area/ruin/beach/oceantown)
 "ME" = (
 /obj/structure/flora/tree/jungle{
 	icon_state = "tree7"
 	},
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/planetary/grass/beach/lit,
 /area/ruin/beach/oceantown)
 "MF" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/lavendergrass,
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/planetary/grass/beach/lit,
 /area/ruin/beach/oceantown)
 "MG" = (
 /obj/structure/chair/office{
@@ -3339,9 +3215,7 @@
 "Nw" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/seeds/sugarcane,
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "NA" = (
 /obj/structure/table/wood,
@@ -3353,9 +3227,7 @@
 /area/ruin/beach/oceantown/bar)
 "NB" = (
 /obj/structure/railing/corner/wood,
-/turf/open/floor/plating/dirt/dark{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt/dark,
 /area/ruin/beach/oceantown)
 "ND" = (
 /obj/effect/turf_decal/siding/wood/corner{
@@ -3365,7 +3237,7 @@
 /area/ruin/beach/oceantown)
 "NS" = (
 /obj/item/shovel/spade,
-/turf/open/floor/plating/asteroid/sand/lit,
+/turf/open/floor/planetary/sand/beach/dense,
 /area/ruin/beach/oceantown)
 "NT" = (
 /obj/structure/fence{
@@ -3378,7 +3250,7 @@
 /area/ruin/beach/oceantown)
 "NV" = (
 /obj/structure/flora/tree/palm,
-/turf/open/floor/plating/asteroid/sand/lit,
+/turf/open/floor/planetary/sand/beach/dense,
 /area/ruin/beach/oceantown)
 "NX" = (
 /obj/structure/rack,
@@ -3431,7 +3303,7 @@
 /area/ruin/beach/oceantown/shop)
 "OI" = (
 /obj/structure/flora/ausbushes/ppflowers,
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/planetary/grass/beach/lit,
 /area/ruin/beach/oceantown)
 "OK" = (
 /obj/effect/turf_decal/weather/sand{
@@ -3442,7 +3314,7 @@
 "ON" = (
 /obj/structure/flora/junglebush/large,
 /obj/structure/flora/junglebush,
-/turf/open/floor/plating/asteroid/sand/lit,
+/turf/open/floor/planetary/sand/beach/dense,
 /area/ruin/beach/oceantown)
 "OP" = (
 /obj/effect/turf_decal/weather/sand{
@@ -3465,7 +3337,7 @@
 "OR" = (
 /obj/structure/flora/ausbushes/grassybush,
 /obj/structure/flora/ausbushes/ppflowers,
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/planetary/grass/beach/lit,
 /area/ruin/beach/oceantown)
 "OT" = (
 /obj/effect/turf_decal/corner/opaque/white/diagonal{
@@ -3546,9 +3418,7 @@
 /area/ruin/beach/oceantown/bar)
 "PC" = (
 /obj/structure/flora/rock/pile,
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "PE" = (
 /obj/structure/chair/sofa/right,
@@ -3589,7 +3459,7 @@
 /area/ruin/beach/oceantown/shop)
 "Qm" = (
 /obj/structure/railing/wood,
-/turf/open/floor/plating/asteroid/sand/lit,
+/turf/open/floor/planetary/sand/beach/dense,
 /area/ruin/beach/oceantown)
 "Qo" = (
 /obj/machinery/light/small/directional/north,
@@ -3602,9 +3472,7 @@
 /obj/effect/turf_decal/weather/sand{
 	dir = 6
 	},
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "QA" = (
 /obj/item/shovel/spade,
@@ -3621,7 +3489,7 @@
 /area/ruin/beach/oceantown)
 "QK" = (
 /obj/structure/flora/ausbushes/ywflowers,
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/planetary/grass/beach/lit,
 /area/ruin/beach/oceantown)
 "QM" = (
 /obj/machinery/door/airlock{
@@ -3633,7 +3501,7 @@
 "QT" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/leafybush,
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/planetary/grass/beach/lit,
 /area/ruin/beach/oceantown)
 "Rm" = (
 /obj/structure/chair/stool/bar{
@@ -3674,9 +3542,7 @@
 "RQ" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/seeds/chili,
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "RS" = (
 /obj/effect/turf_decal/siding/wood,
@@ -3698,7 +3564,7 @@
 "Sh" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/genericbush,
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/planetary/grass/beach/lit,
 /area/ruin/beach/oceantown)
 "Sm" = (
 /obj/machinery/light/directional/west,
@@ -3725,7 +3591,7 @@
 "Sy" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/ppflowers,
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/planetary/grass/beach/lit,
 /area/ruin/beach/oceantown)
 "SC" = (
 /obj/structure/fence/door,
@@ -3744,9 +3610,7 @@
 /obj/structure/railing/wood{
 	dir = 6
 	},
-/turf/open/floor/plating/dirt/dark{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt/dark,
 /area/ruin/beach/oceantown)
 "SS" = (
 /obj/structure/rack,
@@ -3796,14 +3660,12 @@
 	},
 /obj/effect/turf_decal/weather/sand,
 /obj/item/reagent_containers/food/snacks/sausage,
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "Ts" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/fullgrass,
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/planetary/grass/beach/lit,
 /area/ruin/beach/oceantown)
 "TA" = (
 /obj/structure/railing/wood{
@@ -3812,9 +3674,7 @@
 /obj/effect/turf_decal/weather/sand{
 	dir = 8
 	},
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "Uc" = (
 /obj/effect/turf_decal/siding/thinplating/dark,
@@ -3841,14 +3701,12 @@
 "Uq" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/ausbushes/palebush,
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/planetary/grass/beach/lit,
 /area/ruin/beach/oceantown)
 "Us" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/seeds/lemon,
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "Uu" = (
 /obj/structure/table/wood,
@@ -3858,9 +3716,7 @@
 /obj/effect/turf_decal/weather/sand{
 	dir = 6
 	},
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "UA" = (
 /obj/structure/chair/wood,
@@ -3903,9 +3759,7 @@
 /obj/effect/turf_decal/weather/sand{
 	dir = 8
 	},
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "UU" = (
 /obj/effect/turf_decal/road{
@@ -3952,9 +3806,7 @@
 "VJ" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/seeds/coffee,
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "VK" = (
 /obj/structure/fence{
@@ -4035,10 +3887,10 @@
 /obj/effect/turf_decal/weather/sand{
 	dir = 1
 	},
-/turf/open/floor/plating/asteroid/sand/lit,
+/turf/open/floor/planetary/sand/beach/dense,
 /area/ruin/beach/oceantown)
 "Wl" = (
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/planetary/grass/beach/lit,
 /area/ruin/beach/oceantown)
 "Ws" = (
 /obj/item/reagent_containers/glass/bucket/wooden,
@@ -4101,30 +3953,26 @@
 /obj/effect/turf_decal/weather/sand{
 	dir = 1
 	},
-/turf/open/floor/plating/dirt/dark{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt/dark,
 /area/ruin/beach/oceantown)
 "Xc" = (
 /obj/structure/railing/wood{
 	dir = 10
 	},
-/turf/open/floor/plating/asteroid/sand/lit,
+/turf/open/floor/planetary/sand/beach/dense,
 /area/ruin/beach/oceantown)
 "Xs" = (
 /obj/structure/chair/stool/bar,
-/turf/open/floor/plating/asteroid/sand/lit,
+/turf/open/floor/planetary/sand/beach/dense,
 /area/ruin/beach/oceantown)
 "Xv" = (
 /obj/structure/flora/ausbushes/grassybush,
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/planetary/grass/beach/lit,
 /area/ruin/beach/oceantown)
 "XC" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/seeds/cocoapod,
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 "XI" = (
 /obj/structure/table/wood/fancy/black,
@@ -4136,7 +3984,7 @@
 /area/ruin/beach/oceantown/bar)
 "XJ" = (
 /obj/structure/flora/ausbushes/fullgrass,
-/turf/open/floor/plating/grass,
+/turf/open/floor/planetary/grass,
 /area/ruin/beach/oceantown)
 "XQ" = (
 /obj/structure/rack,
@@ -4168,9 +4016,7 @@
 /obj/effect/turf_decal/weather/sand{
 	dir = 1
 	},
-/turf/open/floor/plating/dirt/dark{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt/dark,
 /area/ruin/beach/oceantown)
 "XZ" = (
 /obj/structure/flora/ausbushes/stalkybush{
@@ -4228,7 +4074,7 @@
 /area/ruin/beach/oceantown/hotel)
 "YE" = (
 /obj/structure/fluff/beach_umbrella/engine,
-/turf/open/floor/plating/asteroid/sand/lit,
+/turf/open/floor/planetary/sand/beach/dense,
 /area/ruin/beach/oceantown)
 "YL" = (
 /obj/effect/turf_decal/siding/wood{
@@ -4247,7 +4093,7 @@
 	dir = 6
 	},
 /obj/structure/closet/crate/bin,
-/turf/open/floor/plating/asteroid/sand/lit,
+/turf/open/floor/planetary/sand/beach/dense,
 /area/ruin/beach/oceantown)
 "Zf" = (
 /obj/machinery/door/airlock{
@@ -4271,12 +4117,12 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/leafybush,
 /obj/structure/flora/ausbushes/lavendergrass,
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/planetary/grass/beach/lit,
 /area/ruin/beach/oceantown)
 "ZB" = (
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/planetary/grass/beach/lit,
 /area/ruin/beach/oceantown)
 "ZJ" = (
 /obj/structure/rack,
@@ -4307,9 +4153,7 @@
 /obj/effect/turf_decal/weather/sand{
 	dir = 4
 	},
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/planetary/dirt,
 /area/ruin/beach/oceantown)
 
 (1,1,1) = {"
