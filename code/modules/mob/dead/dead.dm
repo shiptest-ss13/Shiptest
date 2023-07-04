@@ -45,7 +45,8 @@ INITIALIZE_IMMEDIATE(/mob/dead)
 /mob/dead/get_stat_tab_status()
 	var/list/tab_data = ..()
 
-	tab_data["Game Mode"] = GENERATE_STAT_TEXT("[SSticker.hide_mode ? "Secret" : "[GLOB.master_mode]"]")
+	if(!SSticker.hide_mode)
+		tab_data["Game Mode"] = GENERATE_STAT_TEXT("[GLOB.master_mode]")
 
 	if(SSticker.HasRoundStarted())
 		return tab_data
@@ -58,9 +59,6 @@ INITIALIZE_IMMEDIATE(/mob/dead)
 	else
 		tab_data["Time To Start"] = GENERATE_STAT_TEXT("SOON")
 
-	tab_data["Players"] = GENERATE_STAT_TEXT("[SSticker.totalPlayers]")
-	if(client.holder)
-		tab_data["Players Ready"] = GENERATE_STAT_TEXT("[SSticker.totalPlayersReady]")
 	return tab_data
 
 

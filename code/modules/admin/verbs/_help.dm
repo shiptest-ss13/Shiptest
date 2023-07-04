@@ -129,7 +129,7 @@
 		if("claim")
 			if(ticket.claimee)
 				var/confirm = alert("This ticket is already claimed, override claim?", null,"Yes", "No")
-				if(confirm != "Yes")
+				if(confirm == "No")
 					return
 			claim_ticket = CLAIM_OVERRIDE
 		if("reject")
@@ -559,7 +559,7 @@
 		claim_ticket = CLAIM_OVERRIDE
 	return claim_ticket
 
-/datum/help_ticket/proc/MessageNoRecipient(msg, sanitized = FALSE)
+/datum/help_ticket/proc/MessageNoRecipient(msg)
 	return
 
 /datum/help_ticket/proc/key_name_ticket(mob/user)
@@ -710,7 +710,7 @@
 	Close(silent = TRUE)
 
 /datum/help_ticket/proc/Retitle(key_name = key_name_ticket(usr))
-	var/new_title = stripped_input(usr, "Enter a title for the ticket", "Rename Ticket", name)
+	var/new_title = capped_input(usr, "Enter a title for the ticket", "Rename Ticket", name)
 	if(new_title)
 		name = new_title
 		//not saying the original name cause it could be a long ass message
@@ -785,8 +785,6 @@
 		else
 			final = "[msg] - All admins stealthed\[[english_list(stealthmins)]\], AFK\[[english_list(afkmins)]\], or lacks +BAN\[[english_list(powerlessmins)]\]! Total: [allmins.len] "
 		send2tgs(source,final)
-		SStopic.crosscomms_send("ahelp", final, source)
-
 
 /proc/send2tgs(msg,msg2)
 	msg = replacetext(replacetext(msg, "\proper", ""), "\improper", "")
@@ -884,7 +882,7 @@
 					surname_found = i
 					break
 			//forenames
-			for(var/i in 1 to surname_found-1)
+			for(var/i=1, i<surname_found, i++)
 				var/word = ckey(L[i])
 				if(word)
 					forenames[word] = M

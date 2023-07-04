@@ -55,7 +55,7 @@
 
 	if(AH)
 		message_admins("[key_name_admin(src)] has started replying to [key_name_admin(C, 0, 0)]'s admin help.")
-	var/msg = stripped_multiline_input(src,"Message:", "Private message to [C.holder?.fakekey ? "an Administrator" : key_name(C, 0, 0)].")
+	var/msg = capped_multiline_input(src,"Message:", "Private message to [C.holder?.fakekey ? "an Administrator" : key_name(C, 0, 0)].")
 	if (!msg)
 		message_admins("[key_name_admin(src)] has cancelled their reply to [key_name_admin(C, 0, 0)]'s admin help.")
 		return
@@ -89,7 +89,7 @@
 		to_chat(src, "<span class='danger'>Error: Admin-PM: You are unable to use admin PM-s (muted).</span>", type = MESSAGE_TYPE_ADMINPM)
 		return
 
-	if(!holder && !current_adminhelp_ticket)	//no ticket? https://www.youtube.com/watch?v=iHSPf6x1Fdo
+	if(!holder && !current_adminhelp_ticket) //no ticket? https://www.youtube.com/watch?v=iHSPf6x1Fdo
 		to_chat(src, "<span class='danger'>You can no longer reply to this ticket, please open another one by using the Adminhelp verb if need be.</span>", type = MESSAGE_TYPE_ADMINPM)
 		to_chat(src, "<span class='notice'>Message: [msg]</span>", type = MESSAGE_TYPE_ADMINPM)
 		return

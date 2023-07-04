@@ -102,8 +102,6 @@
 /mob/living/carbon/human/get_stat_tab_status()
 	var/list/tab_data = ..()
 
-	tab_data["Intent"] = GENERATE_STAT_TEXT("[a_intent]")
-	tab_data["Move Mode"] = GENERATE_STAT_TEXT("[m_intent]")
 	if (internal)
 		if (!internal.air_contents)
 			qdel(internal)
@@ -124,7 +122,7 @@
 			var/datum/species/ethereal/eth_species = src.dna?.species
 			if(istype(eth_species))
 				var/obj/item/organ/stomach/ethereal/stomach = src.getorganslot(ORGAN_SLOT_STOMACH)
-					if(istype(stomach))
+				if(istype(stomach))
 					tab_data["Crystal Charge:"] = GENERATE_STAT_TEXT("[round((stomach.crystal_charge / ETHEREAL_CHARGE_SCALING_MULTIPLIER), 0.1)]%")
 	return tab_data
 

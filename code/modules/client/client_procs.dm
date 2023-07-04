@@ -86,21 +86,10 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	// Log all hrefs
 	log_href("[src] (usr:[usr]\[[COORD(usr)]\]) : [hsrc ? "[hsrc] " : ""][href]")
 
-	// Mentor Msg
+	// Mentor PM
 	if(href_list["mentor_msg"])
-		if(CONFIG_GET(flag/mentors_mobname_only))
-			var/mob/M = locate(href_list["mentor_msg"])
-			cmd_mentor_pm(M,null)
-		else
-			cmd_mentor_pm(href_list["mentor_msg"],null)
-		return
-
-	// Mentor Follow
-	if(href_list["mentor_follow"])
-		var/mob/living/M = locate(href_list["mentor_follow"])
-		if(istype(M))
-			mentor_follow(M)
-		return
+		cmd_mentor_pm(href_list["mentor_msg"], null)
+		return TRUE
 
 	//byond bug ID:2256651
 	if (asset_cache_job && (asset_cache_job in completed_asset_jobs))
@@ -119,6 +108,8 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	switch(href_list["_src_"])
 		if("holder")
 			hsrc = holder
+		if("mentor")
+			hsrc = mentor_datum
 		if("usr")
 			hsrc = mob
 		if("prefs")
@@ -223,6 +214,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	tgui_panel = new(src)
 
 	GLOB.ahelp_tickets.ClientLogin(src)
+	GLOB.mhelp_tickets.ClientLogin(src)
 	GLOB.interviews.client_login(src)
 	var/connecting_admin = FALSE //because de-admined admins connecting should be treated like admins.
 	//Admin Authorisation
@@ -250,11 +242,6 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		if(isnull(address) || (address in localhost_addresses))
 			var/datum/admin_rank/localhost_rank = new("!localhost!", R_EVERYTHING, R_DBRANKS, R_EVERYTHING) //+EVERYTHING -DBRANKS *EVERYTHING
 			new /datum/admins(localhost_rank, ckey, 1, 1)
-
-	//Mentor Authorisation
-	var/datum/mentors/mentor = GLOB.mentor_datums[ckey]
-	if(mentor)
-		mentor.associate(src)
 
 	//preferences datum - also holds some persistent data for the client (because we may as well keep these datums to a minimum)
 	prefs = GLOB.preferences_datums[ckey]
@@ -401,9 +388,6 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 			to_chat(src, memo_message)
 		adminGreet()
 
-	if(mentor && !holder) //WS Edit - Mentors
-		mentor_memo_output("Show") //WS End
-
 	if (mob && reconnecting)
 		var/stealth_admin = mob.client?.holder?.fakekey
 		var/announce_leave = mob.client?.prefs?.broadcast_login_logout
@@ -495,6 +479,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 
 	GLOB.clients -= src
 	GLOB.directory -= ckey
+	GLOB.mentors -= src
 	log_access("Logout: [key_name(src)]")
 	GLOB.ahelp_tickets.ClientLogout(src)
 	GLOB.interviews.client_logout(src)

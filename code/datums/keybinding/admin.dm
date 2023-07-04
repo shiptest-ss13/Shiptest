@@ -34,7 +34,7 @@
 	return TRUE
 
 /datum/keybinding/admin/mentor_say/can_use(client/user)
-	return check_mentor(user)
+	return user.mentor_datum ? TRUE : FALSE
 
 /datum/keybinding/admin/admin_ghost
 	hotkey_keys = list("F5")

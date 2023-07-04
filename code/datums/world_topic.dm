@@ -168,9 +168,6 @@
 	var/list/afkmins = adm["afk"]
 	.["admins"] = presentmins.len + afkmins.len //equivalent to the info gotten from adminwho
 
-	var/list/mnt = get_mentor_counts()
-	.["mentors"] = mnt["total"] // we don't have stealth mentors, so we can just use the total.
-
 	.["gamestate"] = SSticker.current_state
 
 	if(key_valid)
@@ -181,6 +178,7 @@
 
 	.["security_level"] = get_security_level()
 	.["round_duration"] = SSticker ? round((world.time - SSticker.round_start_time)/10) : 0
+	.["round_duration"] = SSticker ? round((world.timeofday - SSticker.round_start_timeofday)/10) : 0
 	// Amount of world's ticks in seconds, useful for calculating round duration
 
 	//Time dilation stats.

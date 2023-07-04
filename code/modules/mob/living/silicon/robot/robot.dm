@@ -319,19 +319,19 @@
 	else
 		ion_trail.stop()
 
-/mob/living/silicon/robot/get_status_tab_items()
-	. = ..()
-	. += ""
+/mob/living/silicon/robot/get_stat_tab_status()
+	var/list/tab_data = ..()
 	if(cell)
-		. += "Charge Left: [cell.charge]/[cell.maxcharge]"
+		tab_data["Charge Left"] = GENERATE_STAT_TEXT("[cell.charge]/[cell.maxcharge]")
 	else
-		. += text("No Cell Inserted!")
+		tab_data["Charge Left"] = GENERATE_STAT_TEXT("No Cell Inserted!")
 
 	if(module)
 		for(var/datum/robot_energy_storage/st in module.storages)
-			. += "[st.name]: [st.energy]/[st.max_energy]"
+			tab_data["[st.name]"] = GENERATE_STAT_TEXT("[st.energy]/[st.max_energy]")
 	if(connected_ai)
-		. += "Master AI: [connected_ai.name]"
+		tab_data["Master AI"] = GENERATE_STAT_TEXT("[connected_ai.name]")
+	return tab_data
 
 
 /mob/living/silicon/robot/triggerAlarm(class, area/home, cameras, obj/source)

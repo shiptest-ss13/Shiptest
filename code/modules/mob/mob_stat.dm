@@ -48,7 +48,7 @@
 		// ===== ADMIN PMS =====
 		if("(!) Admin PM")
 			client.stat_update_mode = STAT_MEDIUM_UPDATE
-			var/datum/admin_help/ticket = client.current_adminhelp_ticket
+			var/datum/help_ticket/ticket = client.current_adminhelp_ticket
 			tab_data["ckey"] = key_name(client, FALSE, FALSE)
 			tab_data["admin_name"] = key_name(ticket.claimee, FALSE, FALSE)
 			//Messages:
@@ -128,20 +128,32 @@
  */
 /mob/proc/get_stat_tab_status()
 	var/list/tab_data = list()
-	tab_data["Map"] = GENERATE_STAT_TEXT("[SSmapping.config?.map_name || "Loading..."]")
-	var/datum/map_config/cached = SSmapping.next_map_config
-	if(cached)
-		tab_data["Next Map"] = GENERATE_STAT_TEXT(cached.map_name)
+	//tab_data["Map"] = GENERATE_STAT_TEXT("[SSmapping.config?.map_name || "Loading..."]")
 	tab_data["Round ID"] = GENERATE_STAT_TEXT("[GLOB.round_id ? GLOB.round_id : "Null"]")
 	tab_data["Server Time"] = GENERATE_STAT_TEXT(time2text(world.timeofday,"YYYY-MM-DD hh:mm:ss"))
-	tab_data["Round Time"] = GENERATE_STAT_TEXT(worldtime2text())
 	tab_data["Station Time"] = GENERATE_STAT_TEXT(station_time_timestamp())
+	tab_data["divider_1"] = GENERATE_STAT_BLANK
+
 	tab_data["Time Dilation"] = GENERATE_STAT_TEXT("[round(SStime_track.time_dilation_current,1)]% AVG:([round(SStime_track.time_dilation_avg_fast,1)]%, [round(SStime_track.time_dilation_avg,1)]%, [round(SStime_track.time_dilation_avg_slow,1)]%)")
-	tab_data["Players Connected"] = GENERATE_STAT_TEXT("[GLOB.clients.len]")
-	if(SSshuttle.emergency)
-		var/ETA = SSshuttle.emergency.getModeStr()
-		if(ETA)
-			tab_data[ETA] = GENERATE_STAT_TEXT(SSshuttle.emergency.getTimerStr())
+	if (SSticker.round_start_time)
+		tab_data["Internal Round Timer"] = GENERATE_STAT_TEXT(time2text(world.time - SSticker.round_start_time, "hh:mm:ss", 0))
+		tab_data["Actual Round Timer"] = GENERATE_STAT_TEXT(time2text(world.timeofday - SSticker.round_start_timeofday, "hh:mm:ss", 0))
+	else
+		tab_data["Lobby Timer"] = GENERATE_STAT_TEXT(worldtime2text())
+	tab_data["divider_2"] = GENERATE_STAT_BLANK
+
+	if(!SSticker.HasRoundStarted())
+		tab_data["Players Ready/Connected"] = GENERATE_STAT_TEXT("[SSticker.totalPlayersReady]/[GLOB.clients.len]")
+	else
+		tab_data["Players Playing/Connected"] = GENERATE_STAT_TEXT("[get_active_player_count()]/[GLOB.clients.len]")
+	if(SSticker.round_start_time)
+		tab_data["Security Level"] = GENERATE_STAT_TEXT("[capitalize(get_security_level())]")
+
+	tab_data["divider_3"] = GENERATE_STAT_DIVIDER
+	//if(SSshuttle.emergency)
+	//	var/ETA = SSshuttle.emergency.getModeStr() todo: change this to bluespace jump
+	//	if(ETA)
+	//		tab_data[ETA] = GENERATE_STAT_TEXT(SSshuttle.emergency.getTimerStr())
 	return tab_data
 
 /mob/proc/get_stat_tab_master_controller()
@@ -163,7 +175,7 @@
 	else
 		tab_data["Failsafe Controller"] = GENERATE_STAT_TEXT("ERROR")
 	if(Master)
-		tab_data["divider_2"] = list(type=STAT_DIVIDER)
+		tab_data["divider_2"] = GENERATE_STAT_DIVIDER
 		for(var/datum/controller/subsystem/SS in Master.subsystems)
 			tab_data += SS.stat_entry()
 	tab_data += GLOB.cameranet.stat_entry()
@@ -179,7 +191,7 @@
 		"Status",
 	)
 	//Get Tickets
-	if(client.current_ticket)
+	if(client.current_adminhelp_ticket)
 		//Bwoinks come after status
 		tabs += "(!) Admin PM"
 	//Listed turfs
@@ -223,7 +235,7 @@
 			GLOB.ahelp_tickets.BrowseTickets(src)
 		if("open_ticket")
 			var/ticket_id = text2num(params["id"])
-			var/datum/admin_help/AH = GLOB.ahelp_tickets.TicketByID(ticket_id)
+			var/datum/help_ticket/AH = GLOB.ahelp_tickets.TicketByID(ticket_id)
 			if(AH && client.holder)
 				AH.ui_interact(src)
 		if("atomClick")

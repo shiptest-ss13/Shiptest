@@ -416,10 +416,6 @@
 		tab_data["Health"] = GENERATE_STAT_TEXT("[health]")
 	return tab_data
 
-/mob/living/carbon/get_proc_holders()
-	. = ..()
-	. += add_abilities_to_panel()
-
 /mob/living/carbon/attack_ui(slot)
 	if(!has_hand_for_held_index(active_hand_index))
 		return 0

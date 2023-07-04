@@ -35,7 +35,6 @@
 	SEND_TEXT(world.log, text)
 #endif
 
-
 /* Items with ADMINPRIVATE prefixed are stripped from public logs. */
 /proc/log_admin(text)
 	GLOB.admin_log.Add(text)
@@ -55,11 +54,6 @@
 /proc/log_dsay(text)
 	if (CONFIG_GET(flag/log_adminchat))
 		WRITE_LOG(GLOB.world_game_log, "ADMIN: DSAY: [text]")
-
-/proc/log_mentor(text)
-	GLOB.mentorlog.Add(text)
-	if (CONFIG_GET(flag/log_admin))
-		WRITE_FILE(GLOB.world_game_log, "\[[time_stamp()]]MENTOR: [text]")
 
 /* All other items are public. */
 /proc/log_game(text)
@@ -262,7 +256,7 @@
 
 
 /* Helper procs for building detailed log lines */
-/proc/key_name(whom, include_link = null, include_name = TRUE)
+/proc/key_name(whom, include_link = null, include_name = TRUE, href = "priv_msg")
 	var/mob/M
 	var/client/C
 	var/key
@@ -319,11 +313,11 @@
 	if(key)
 		if(C && C.holder && C.holder.fakekey && !include_name)
 			if(include_link)
-				. += "<a href='?priv_msg=[C.findStealthKey()]'>"
+				. += "<a href='?[href]=[C.findStealthKey()]'>"
 			. += "Administrator"
 		else
 			if(include_link)
-				. += "<a href='?priv_msg=[ckey]'>"
+				. += "<a href='?[href]=[ckey]'>"
 			. += key
 		if(!C)
 			. += "\[DC\]"

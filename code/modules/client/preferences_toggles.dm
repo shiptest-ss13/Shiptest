@@ -60,18 +60,6 @@
 	prefs.save_preferences()
 	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Toggle Ghost Laws", "[prefs.chat_toggles & CHAT_GHOSTLAWS ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
-/client/proc/toggle_hear_radio()
-	set name = "Show/Hide Radio Chatter"
-	set category = "Prefs - Admin"
-	set desc = "Toggle seeing radiochatter from nearby radios and speakers"
-	if(!holder)
-		return
-	prefs.chat_toggles ^= CHAT_RADIO
-	prefs.save_preferences()
-	to_chat(usr, "You will [(prefs.chat_toggles & CHAT_RADIO) ? "now" : "no longer"] see radio chatter from nearby radios or speakers")
-	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Toggle Radio Chatter", "[prefs.chat_toggles & CHAT_RADIO ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
-
-CHAT_LOGIN_LOGOUT
 //please be aware that the following two verbs have inverted stat output, so that "Toggle Deathrattle|1" still means you activated it
 /client/verb/toggle_deathrattle()
 	set name = "Toggle Deathrattle"
@@ -168,27 +156,23 @@ TOGGLE_CHECKBOX(/datum/verbs/menu/Settings/Sound, toggleendofroundsounds)()
 		to_chat(usr, "You will no longer hear ambient sounds.")
 		usr.stop_sound_channel(CHANNEL_AMBIENCE)
 		usr.stop_sound_channel(CHANNEL_BUZZ)
-		usr.client.buzz_playing = FALSE
+	//	usr.client.buzz_playing = FALSE Needs port https://github.com/BeeStation/BeeStation-Hornet/pull/4349/
 	usr.client.update_ambience_pref()
 	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Toggle Ambience", "[usr.client.prefs.toggles & SOUND_AMBIENCE ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
-
-/datum/verbs/menu/Settings/Sound/Toggle_Soundscape/Get_checked(client/C)
-	return C.prefs.toggles & SOUND_AMBIENCE
 
 /client/verb/toggle_ship_ambience()
 	set name = "Hear/Silence Ship Ambience"
 	set category = "Preferences"
 	set desc = "Hear Ship Ambience Roar"
-	prefs.toggles ^= PREFTOGGLE_SOUND_SHIP_AMBIENCE
+	prefs.toggles ^= SOUND_SHIP_AMBIENCE
 	prefs.save_preferences()
-	if(prefs.toggles & PREFTOGGLE_SOUND_SHIP_AMBIENCE)
+	if(prefs.toggles & SOUND_SHIP_AMBIENCE)
 		to_chat(usr, "You will now hear ship ambience.")
 	else
 		to_chat(usr, "You will no longer hear ship ambience.")
 		usr.stop_sound_channel(CHANNEL_BUZZ)
-		usr.client.buzz_playing = FALSE
-	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Toggle Ship Ambience", "[usr.client.prefs.toggles & PREFTOGGLE_SOUND_SHIP_AMBIENCE ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, I bet you read this comment expecting to see the same thing :^)
-
+	//	usr.client.buzz_playing = FALSE Needs port https://github.com/BeeStation/BeeStation-Hornet/pull/4349/
+	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Toggle Ship Ambience", "[usr.client.prefs.toggles & SOUND_SHIP_AMBIENCE ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, I bet you read this comment expecting to see the same thing :^)
 
 /client/verb/toggle_announcement_sound()
 	set name = "Hear/Silence Announcements"
@@ -229,15 +213,6 @@ TOGGLE_CHECKBOX(/datum/verbs/menu/Settings/Sound, toggle_radio_sound)()
 	prefs.save_preferences()
 	to_chat(usr, "You will [(prefs.chat_toggles & CHAT_OOC) ? "now" : "no longer"] see messages on the OOC channel.")
 	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Toggle Seeing OOC", "[prefs.chat_toggles & CHAT_OOC ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
-
-/client/verb/listen_ooc()
-	set name = "Show/Hide OOC"
-	set category = "Preferences"
-	set desc = "Show LOOC Chat"
-	prefs.chat_toggles ^= CHAT_LOOC
-	prefs.save_preferences()
-	to_chat(usr, "You will [(prefs.chat_toggles & CHAT_LOOC) ? "now" : "no longer"] see messages on the LOOC channel.")
-	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Toggle Seeing LOOC", "[prefs.chat_toggles & CHAT_LOOC ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/verb/listen_bank_card()
 	set name = "Show/Hide Income Updates"

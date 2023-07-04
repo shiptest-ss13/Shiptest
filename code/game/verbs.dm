@@ -34,7 +34,7 @@
 					continue
 				//Binary insert at the correct position
 				var/list/verbs = sorted_verbs["[V.category]"]
-				BINARY_INSERT(V, verbs, procpath, name)
+				BINARY_INSERT_TEXT(V, verbs, procpath, name)
 				sorted_verbs["[V.category]"] = verbs
 			else
 				//Add category with verb

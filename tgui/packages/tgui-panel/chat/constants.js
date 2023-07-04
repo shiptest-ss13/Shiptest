@@ -35,6 +35,7 @@ export const MESSAGE_TYPE_MODCHAT = 'modchat';
 export const MESSAGE_TYPE_PRAYER = 'prayer';
 export const MESSAGE_TYPE_EVENTCHAT = 'eventchat';
 export const MESSAGE_TYPE_ADMINLOG = 'adminlog';
+export const MESSAGE_TYPE_MENTORLOG = 'mentorlog';
 export const MESSAGE_TYPE_ATTACKLOG = 'attacklog';
 export const MESSAGE_TYPE_DEBUG = 'debug';
 
@@ -130,7 +131,15 @@ export const MESSAGE_TYPES = [
     type: MESSAGE_TYPE_ADMINLOG,
     name: 'Admin Log',
     description: 'ADMIN LOG: Urist McAdmin has jumped to coordinates X, Y, Z',
-    selector: '.log_message',
+    selector: '.adminlog',
+    admin: true,
+  },
+  {
+    type: MESSAGE_TYPE_MENTORLOG,
+    name: 'Mentor Log',
+    description:
+      "MENTOR LOG: Spacestation13mentor has started replying to Spacestation13player's mentor help.",
+    selector: '.mentorlog',
     admin: true,
   },
   {

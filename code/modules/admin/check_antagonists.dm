@@ -144,7 +144,7 @@
 		dat += "Current Game Mode: <B>[SSticker.mode.name]</B><BR>"
 	if(istype(SSticker.mode, /datum/game_mode/dynamic))	// Currently only used by dynamic. If more start using this, find a better way.
 		dat += "<a href='?_src_=holder;[HrefToken()];gamemode_panel=1'>Gamemode Panel</a><br>"
-	dat += "Round Duration: <B>[DisplayTimeText(world.time - SSticker.round_start_time)]</B><BR>"
+	dat += "Round Duration: <B>[time2text(world.timeofday - SSticker.round_start_timeofday, "hh:mm:ss", 0)]</B><BR>"
 	dat += "<B>Continuous Round Status</B><BR>"
 	dat += "<a href='?_src_=holder;[HrefToken()];toggle_continuous=1'>[CONFIG_GET(keyed_list/continuous)[SSticker.mode.config_tag] ? "Continue if antagonists die" : "End on antagonist death"]</a>"
 	if(CONFIG_GET(keyed_list/continuous)[SSticker.mode.config_tag])

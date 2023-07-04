@@ -36,7 +36,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/help_tickets/admin, new)
 
 // Used for methods where input via arg doesn't work
 /client/proc/get_adminhelp()
-	var/msg = stripped_multiline_input(src, "Please describe your problem concisely and an admin will help as soon as they're able. Include the names of the people you are ahelping against if applicable.", "Adminhelp contents")
+	var/msg = capped_multiline_input(src, "Please describe your problem concisely and an admin will help as soon as they're able. Include the names of the people you are ahelping against if applicable.", "Adminhelp contents")
 	adminhelp(msg)
 
 /client/verb/adminhelp(msg as message)
@@ -151,8 +151,8 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/help_tickets/admin, new)
 			heard_by_no_admins = TRUE
 
 	bwoink = is_bwoink
-	//if(!bwoink)
-	//	sendadminhelp2ext("**ADMINHELP: (#[id]) [initiator.key]: ** \"[msg]\" [heard_by_no_admins ? "**(NO ADMINS)**" : "" ]")
+	if(!bwoink)
+		send2tgs("ahelp", "**ADMINHELP: (#[id]) [initiator.key]: ** \"[msg]\" [heard_by_no_admins ? "**(NO ADMINS)**" : "" ]")
 	return TRUE
 
 /datum/help_ticket/admin/NewFrom(datum/help_ticket/old_ticket)
@@ -165,7 +165,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/help_tickets/admin, new)
 	if(admin_number_present <= 0)
 		to_chat(initiator, "<span class='notice'>No active admins are online, your adminhelp was sent through TGS to admins who are available. This may use IRC or Discord.</span>")
 		heard_by_no_admins = TRUE
-	sendadminhelp2ext("**ADMINHELP: (#[id]) [initiator.key]: ** \"[initial_msg]\" [heard_by_no_admins ? "**(NO ADMINS)**" : "" ]")
+	send2tgs("ahelp", "**ADMINHELP: (#[id]) [initiator.key]: ** \"[initial_msg]\" [heard_by_no_admins ? "**(NO ADMINS)**" : "" ]")
 	return TRUE
 
 /datum/help_ticket/admin/AddInteraction(msg_color, message, name_from, name_to, safe_from, safe_to)
@@ -176,7 +176,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/help_tickets/admin, new)
 
 /datum/help_ticket/admin/TimeoutVerb()
 	initiator.remove_verb(/client/verb/adminhelp)
-	initiator.adminhelptimerid = addtimer(CALLBACK(initiator, TYPE_PROC_REF(/client, giveadminhelpverb)), 1200, TIMER_STOPPABLE)
+	initiator.adminhelptimerid = addtimer(CALLBACK(initiator, /client/proc/giveadminhelpverb), 1200, TIMER_STOPPABLE)
 
 /datum/help_ticket/admin/get_ticket_additional_data(mob/user, list/data)
 	data["antag_status"] = "None"
@@ -193,12 +193,11 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/help_tickets/admin, new)
 /datum/help_ticket/admin/message_ticket_managers(msg)
 	message_admins(msg)
 
-/datum/help_ticket/admin/MessageNoRecipient(msg, add_to_ticket = TRUE, sanitized = FALSE)
+/datum/help_ticket/admin/MessageNoRecipient(msg, add_to_ticket = TRUE)
 	var/ref_src = "[REF(src)]"
-	var/sanitized_msg = sanitized ? msg : sanitize(msg)
 
 	//Message to be sent to all admins
-	var/admin_msg = "<span class='adminnotice'><span class='adminhelp'>Ticket [TicketHref("#[id]", ref_src)]</span><b>: [LinkedReplyName(ref_src)] [FullMonty(ref_src)]:</b> <span class='linkify'>[keywords_lookup(sanitized_msg)]</span></span>"
+	var/admin_msg = "<span class='adminnotice'><span class='adminhelp'>Ticket [TicketHref("#[id]", ref_src)]</span><b>: [LinkedReplyName(ref_src)] [FullMonty(ref_src)]:</b> <span class='linkify'>[keywords_lookup(msg)]</span></span>"
 
 	if(add_to_ticket)
 		AddInteraction("red", msg, initiator_key_name, claimee_key_name, "You", "Administrator")
@@ -217,7 +216,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/help_tickets/admin, new)
 	if(add_to_ticket)
 		to_chat(initiator,
 			type = message_type,
-			html = "<span class='adminnotice'>PM to-<b>Admins</b>: <span class='linkify'>[sanitized_msg]</span></span>")
+			html = "<span class='adminnotice'>PM to-<b>Admins</b>: <span class='linkify'>[msg]</span></span>")
 
 
 /datum/help_ticket/admin/proc/FullMonty(ref_src)
@@ -258,7 +257,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/help_tickets/admin, new)
 		Claim(silent = TRUE)
 
 	if(initiator)
-		addtimer(CALLBACK(initiator, TYPE_PROC_REF(/client,giveadminhelpverb)), 5 SECONDS)
+		addtimer(CALLBACK(initiator, /client/proc/giveadminhelpverb), 5 SECONDS)
 		SEND_SOUND(initiator, sound(reply_sound))
 		resolve_message(status = "marked as IC Issue!", message = "\A [handling_name] has handled your ticket and has determined that the issue you are facing is an in-character issue and does not require [handling_name] intervention at this time.<br />\
 		For further resolution, you should pursue options that are in character, such as filing a report with security or a head of staff.<br />\
@@ -271,8 +270,8 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/help_tickets/admin, new)
 	AddInteraction("red", "Marked as IC issue by [key_name]")
 	Resolve(silent = TRUE)
 
-//	if(!bwoink)
-//		sendadminhelp2ext("Ticket #[id] marked as IC by [key_name(usr, include_link = FALSE)]")
+	if(!bwoink)
+		send2tgs("ahelp", "Ticket #[id] marked as IC by [key_name(usr, include_link = FALSE)]")
 
 /datum/help_ticket/admin/proc/MHelpThis(key_name = key_name_ticket(usr))
 	if(state > TICKET_ACTIVE)
@@ -289,12 +288,12 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/help_tickets/admin, new)
 	blackbox_feedback(1, "mhelp this")
 	var/msg = "<span class='[span_class]'>Ticket [TicketHref("#[id]")] transferred to mentorhelp by [key_name]</span>"
 	AddInteraction("red", "Transferred to mentorhelp by [key_name].")
-//	if(!bwoink)
-//		sendadminhelp2ext("Ticket #[id] transferred to mentorhelp by [key_name(usr, include_link = FALSE)]")
+	if(!bwoink)
+		send2tgs("ahelp", "Ticket #[id] transferred to mentorhelp by [key_name(usr, include_link = FALSE)]")
 	Close(silent = TRUE, hide_interaction = TRUE)
-//	if(initiator.prefs.muted & MUTE_MHELP)
-//		message_admins(src, "<span class='danger'>Attempted de-escalation to mentorhelp failed because [initiator_key_name] is mhelp muted.</span>")
-//		return
+	if(initiator.prefs.muted & MUTE_MENTORHELP)
+		message_admins(src, "<span class='danger'>Attempted de-escalation to mentorhelp failed because [initiator_key_name] is mhelp muted.</span>")
+		return
 	message_admins(msg)
 	log_admin_private(msg)
 	var/datum/help_ticket/mentor/ticket = new(initiator)
@@ -325,100 +324,26 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/help_tickets/admin, new)
 
 /datum/help_ticket/admin/Claim(key_name = key_name_ticket(usr), silent = FALSE)
 	..()
-	//if(!bwoink && !silent && !claimee)
-	//	sendadminhelp2ext("Ticket #[id] is being investigated by [key_name(usr, include_link = FALSE)]")
+	if(!bwoink && !silent && !claimee)
+		send2tgs("ahelp", "Ticket #[id] is being investigated by [key_name(usr, include_link = FALSE)]")
 
 /datum/help_ticket/admin/Close(key_name = key_name_ticket(usr), silent = FALSE, hide_interaction = FALSE)
 	..()
-	//if(!bwoink && !silent)
-	//	sendadminhelp2ext("Ticket #[id] closed by [key_name(usr, include_link = FALSE)]")
+	if(!bwoink && !silent)
+		send2tgs("ahelp", "Ticket #[id] closed by [key_name(usr, include_link = FALSE)]")
 
 /datum/help_ticket/admin/Resolve(key_name = key_name_ticket(usr), silent = FALSE)
 	..()
-	addtimer(CALLBACK(initiator, TYPE_PROC_REF(/client, giveadminhelpverb)), 5 SECONDS)
-	//if(!bwoink)
-	//	sendadminhelp2ext("Ticket #[id] resolved by [key_name(usr, include_link = FALSE)]")
+	addtimer(CALLBACK(initiator, /client/proc/giveadminhelpverb), 5 SECONDS)
+	if(!bwoink)
+		send2tgs("ahelp", "Ticket #[id] resolved by [key_name(usr, include_link = FALSE)]")
 
 /datum/help_ticket/admin/Reject(key_name = key_name_ticket(usr), extra_text = ", and clearly state the names of anybody you are reporting")
 	..()
 	if(initiator)
 		initiator.giveadminhelpverb()
-	//if(!bwoink)
-	//	sendadminhelp2ext("Ticket #[id] rejected by [key_name(usr, include_link = FALSE)]")
+	if(!bwoink)
+		send2tgs("ahelp", "Ticket #[id] rejected by [key_name(usr, include_link = FALSE)]")
 
 /datum/help_ticket/admin/resolve_message(status = "Resolved", message = null, extratext = " If your ticket was a report, then the appropriate action has been taken where necessary.")
 	..()
-
-/*
- * Checks a given message to see if any of the words are something we want to treat specially, as detailed below.
- *
- * There are 3 cases where a word is something we want to act on
- * 1. Admin pings, like @adminckey. Pings the admin in question, text is not clickable
- * 2. Datum refs, like @0x2001169 or @mob_23. Clicking on the link opens up the VV for that datum
- * 3. Ticket refs, like #3. Displays the status and ahelper in the link, clicking on it brings up the ticket panel for it.
- * Returns a list being used as a tuple. Index ASAY_LINK_NEW_MESSAGE_INDEX contains the new message text (with clickable links and such)
- * while index ASAY_LINK_PINGED_ADMINS_INDEX contains a list of pinged admin clients, if there are any.
- *
- * Arguments:
- * * msg - the message being scanned
- */
-/proc/check_asay_links(msg)
-	var/list/msglist = splittext(msg, " ") //explode the input msg into a list
-	var/list/pinged_admins = list() // if we ping any admins, store them here so we can ping them after
-	var/modified = FALSE // did we find anything?
-
-	var/i = 0
-	for(var/word in msglist)
-		i++
-		if(!length(word))
-			continue
-
-		switch(word[1])
-			if("@")
-				var/stripped_word = ckey(copytext(word, 2))
-
-				// first we check if it's a ckey of an admin
-				var/client/client_check = GLOB.directory[stripped_word]
-				if(client_check?.holder)
-					msglist[i] = "<u>[word]</u>"
-					pinged_admins[stripped_word] = client_check
-					modified = TRUE
-					continue
-
-				// then if not, we check if it's a datum ref
-
-				var/word_with_brackets = "\[[stripped_word]\]" // the actual memory address lookups need the bracket wraps
-				var/datum/datum_check = locate(word_with_brackets)
-				if(!istype(datum_check))
-					continue
-				msglist[i] = "<u><a href='?_src_=vars;[HrefToken(forceGlobal = TRUE)];Vars=[word_with_brackets]'>[word]</A></u>"
-				modified = TRUE
-
-			if("#") // check if we're linking a ticket
-				var/possible_ticket_id = text2num(copytext(word, 2))
-				if(!possible_ticket_id)
-					continue
-
-				var/datum/admin_help/ahelp_check = GLOB.ahelp_tickets?.TicketByID(possible_ticket_id)
-				if(!ahelp_check)
-					continue
-
-				var/state_word
-				switch(ahelp_check.state)
-					if(TICKET_ACTIVE)
-						state_word = "Active"
-					if(TICKET_CLOSED)
-						state_word = "Closed"
-					if(TICKET_CLOSED)
-						state_word = "Resolved"
-					if(TICKET_UNCLAIMED)
-						state_word = "Unclaimed"
-
-				msglist[i]= "<u><A href='?_src_=holder;[HrefToken(forceGlobal = TRUE)];ahelp=[REF(ahelp_check)];ahelp_action=ticket'>[word] ([state_word] | [ahelp_check.initiator_key_name])</A></u>"
-				modified = TRUE
-
-	if(modified)
-		var/list/return_list = list()
-		return_list[ASAY_LINK_NEW_MESSAGE_INDEX] = jointext(msglist, " ") // without tuples, we must make do!
-		return_list[ASAY_LINK_PINGED_ADMINS_INDEX] = pinged_admins
-		return return_list

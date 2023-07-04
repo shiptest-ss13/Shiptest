@@ -479,14 +479,12 @@
 	// First we detain them by removing all the verbs they have on client
 	for (var/v in client.verbs)
 		var/procpath/verb_path = v
-		if (!(verb_path in GLOB.stat_panel_verbs))
-			remove_verb(client, verb_path)
+		client.remove_verb(verb_path, FALSE)
 
 	// Then remove those on their mob as well
 	for (var/v in verbs)
 		var/procpath/verb_path = v
-		if (!(verb_path in GLOB.stat_panel_verbs))
-			remove_verb(src, verb_path)
+		remove_verb(verb_path, FALSE)
 
 	// Then we create the interview form and show it to the client
 	var/datum/interview/I = GLOB.interviews.interview_for_client(client)
@@ -494,4 +492,13 @@
 		I.ui_interact(src)
 
 	// Add verb for re-opening the interview panel, and re-init the verbs for the stat panel
-	add_verb(src, /mob/dead/new_player/proc/open_interview)
+	add_verb(/mob/dead/new_player/proc/open_interview)
+
+	UpdateMobStat(forced = TRUE)
+	set_stat_tab("Interview")
+
+	to_chat(src, "<span class='boldannounce'>Panic Bunker Active - Interview Required</span>" \
+					+ "\n<span class='danger'>To prevent abuse, players with no/low playtime are required to complete an interview to gain access." \
+					+ "\nThis is only required once and only for the duration that the panic bunker is active.</span>" \
+					+ "\n<span class='boldwarning'>If the interview interface is not open, use the Open Interview verb in the top right.</span>")
+

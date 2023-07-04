@@ -14,7 +14,7 @@ SUBSYSTEM_DEF(ticker)
 	var/start_immediately = FALSE
 	var/setup_done = FALSE //All game setup done including mode post setup and
 
-	var/hide_mode = 0
+	var/hide_mode = FALSE
 	var/datum/game_mode/mode = null
 
 	var/login_music							//music played in pregame lobby
@@ -217,8 +217,8 @@ SUBSYSTEM_DEF(ticker)
 	if(GLOB.master_mode == "random" || GLOB.master_mode == "secret")
 		runnable_modes = config.get_runnable_modes()
 
-		if(GLOB.master_mode == "secret")
-			hide_mode = 1
+		if(GLOB.master_mode == "secret" || GLOB.master_mode == "secret_extended")
+			hide_mode = TRUE
 			if(GLOB.secret_force_mode != "secret")
 				var/datum/game_mode/smode = config.pick_mode(GLOB.secret_force_mode)
 				if(!smode.can_start())
@@ -426,6 +426,7 @@ SUBSYSTEM_DEF(ticker)
 	queue_delay = SSticker.queue_delay
 	queued_players = SSticker.queued_players
 	round_start_time = SSticker.round_start_time
+	round_start_timeofday = SSticker.round_start_timeofday
 
 	queue_delay = SSticker.queue_delay
 	queued_players = SSticker.queued_players
