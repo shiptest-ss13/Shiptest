@@ -1,6 +1,6 @@
 /mob/living/carbon/human/Initialize()
 	add_verb(/mob/living/proc/mob_sleep)
-	add_verb(/mob/living/proc/lay_down)
+	add_verb(/mob/living/proc/toggle_resting)
 
 	icon_state = ""		//Remove the inherent human icon that is visible on the map editor. We're rendering ourselves limb by limb, having it still be there results in a bug where the basic human icon appears below as south in all directions and generally looks nasty.
 
@@ -78,7 +78,7 @@
 			tab_data["Energy Charge"] = GENERATE_STAT_TEXT("[round(SN.cell.charge/100)]%")
 			tab_data["Smoke Bombs"] = GENERATE_STAT_TEXT("[SN.s_bombs]")
 			//Ninja status
-			tab_data["Fingerprints"] = GENERATE_STAT_TEXT("[rustg_hash_string(RUSTG_HASH_MD5, dna.uni_identity)]")
+			tab_data["Fingerprints"] = GENERATE_STAT_TEXT("[(dna.uni_identity)]")
 			tab_data["Unique Identity"] = GENERATE_STAT_TEXT("[dna.unique_enzymes]")
 			tab_data["Overall Status"] = GENERATE_STAT_TEXT("[stat > 1 ? "dead" : "[health]% healthy"]")
 			tab_data["Nutrition Status"] = GENERATE_STAT_TEXT("[nutrition]")
@@ -114,13 +114,12 @@
 	var/mob/living/simple_animal/borer/borer = has_brain_worms()
 	if(borer && borer.controlling)
 		tab_data["Borer Health:"] = GENERATE_STAT_TEXT("[borer.health]")
-		tab_date["Borer Chemicals:"] = GENERATE_STAT_TEXT("[borer.chemicals]")
+		tab_data["Borer Chemicals:"] = GENERATE_STAT_TEXT("[borer.chemicals]")
 	if(mind)
 		var/datum/antagonist/changeling/changeling = mind.has_antag_datum(/datum/antagonist/changeling)
 		if(changeling)
 			tab_data["Chemical Storage"] = GENERATE_STAT_TEXT("[changeling.chem_charges]/[changeling.chem_storage]")
 			tab_data["Absorbed DNA"] = GENERATE_STAT_TEXT("[changeling.absorbedcount]")
-		var/datum/antagonist/hivemind/hivemind = mind.has_antag_datum(/datum/antagonist/hivemind)
 		if(istype(src))
 			var/datum/species/ethereal/eth_species = src.dna?.species
 			if(istype(eth_species))

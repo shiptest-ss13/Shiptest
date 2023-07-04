@@ -135,12 +135,13 @@
 	update_health_hud()
 	..()
 
-/mob/living/simple_animal/revenant/get_status_tab_items()
-	. = ..()
-	. += "Current essence: [essence]/[essence_regen_cap]E"
-	. += "Stolen essence: [essence_accumulated]E"
-	. += "Unused stolen essence: [essence_excess]E"
-	. += "Stolen perfect souls: [perfectsouls]"
+/mob/living/simple_animal/revenant/get_stat_tab_status()
+	var/list/tab_data = ..()
+	tab_data["Current essence"] = GENERATE_STAT_TEXT("[essence]/[essence_regen_cap]E")
+	tab_data["Stolen essence"] = GENERATE_STAT_TEXT("[essence_accumulated]E")
+	tab_data["Unused stolen essence"] = GENERATE_STAT_TEXT("[essence_excess]E")
+	tab_data["Stolen perfect souls"] = GENERATE_STAT_TEXT("[perfectsouls]")
+	return tab_data
 
 /mob/living/simple_animal/revenant/update_health_hud()
 	if(hud_used)

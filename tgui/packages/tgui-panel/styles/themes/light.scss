@@ -40,16 +40,7 @@
       'color-default': rgb(0, 0, 0)
     )
   );
-  @include meta.load-css(
-    '~tgui/styles/components/Section.scss',
-    $with: (
-      // 'background-color': rgba(0, 0, 0, 0.1),
-      'shadow-color': rgba(0, 0, 0, 0.1),
-      'shadow-size': 1em,
-      'shadow-type': outset,
-      'shadow-offset': 0 0.2em
-    )
-  );
+  @include meta.load-css('~tgui/styles/components/Section.scss');
   @include meta.load-css(
     '~tgui/styles/components/Button.scss',
     $with: (
@@ -95,8 +86,8 @@
     )
   );
 
-  // Goonchat styles
-  @include meta.load-css('../goon/chat-light.scss');
+  //Tgchat styles
+  @include meta.load-css('../tgchat/chat-light.scss');
 
   //Stat styles
   @include meta.load-css(

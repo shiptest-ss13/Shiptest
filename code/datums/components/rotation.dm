@@ -67,7 +67,7 @@
 		if(src.rotation_flags & ROTATION_COUNTERCLOCKWISE)
 			AM.add_verb(/atom/movable/proc/simple_rotate_counterclockwise)
 
-/datum/component/simple_rotation/proc/remove_verbs()
+/datum/component/simple_rotation/proc/remove_rotation_verbs()
 	if(parent)
 		var/atom/movable/AM = parent
 		AM.verbs -= /atom/movable/proc/simple_rotate_flip

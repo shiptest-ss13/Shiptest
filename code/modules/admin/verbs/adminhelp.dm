@@ -36,7 +36,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/help_tickets/admin, new)
 
 // Used for methods where input via arg doesn't work
 /client/proc/get_adminhelp()
-	var/msg = capped_multiline_input(src, "Please describe your problem concisely and an admin will help as soon as they're able. Include the names of the people you are ahelping against if applicable.", "Adminhelp contents")
+	var/msg = stripped_multiline_input(src, "Please describe your problem concisely and an admin will help as soon as they're able. Include the names of the people you are ahelping against if applicable.", "Adminhelp contents")
 	adminhelp(msg)
 
 /client/verb/adminhelp(msg as message)
@@ -151,8 +151,8 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/help_tickets/admin, new)
 			heard_by_no_admins = TRUE
 
 	bwoink = is_bwoink
-	if(!bwoink)
-		sendadminhelp2ext("**ADMINHELP: (#[id]) [initiator.key]: ** \"[msg]\" [heard_by_no_admins ? "**(NO ADMINS)**" : "" ]")
+	//if(!bwoink)
+	//	sendadminhelp2ext("**ADMINHELP: (#[id]) [initiator.key]: ** \"[msg]\" [heard_by_no_admins ? "**(NO ADMINS)**" : "" ]")
 	return TRUE
 
 /datum/help_ticket/admin/NewFrom(datum/help_ticket/old_ticket)
@@ -206,7 +206,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/help_tickets/admin, new)
 
 	//send this msg to all admins
 	for(var/client/X in GLOB.admins)
-		if(X.prefs.toggles & PREFTOGGLE_SOUND_ADMINHELP)
+		if(X.prefs.toggles & SOUND_ADMINHELP)
 			SEND_SOUND(X, sound(reply_sound))
 		window_flash(X, ignorepref = TRUE)
 		to_chat(X,
@@ -271,8 +271,8 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/help_tickets/admin, new)
 	AddInteraction("red", "Marked as IC issue by [key_name]")
 	Resolve(silent = TRUE)
 
-	if(!bwoink)
-		sendadminhelp2ext("Ticket #[id] marked as IC by [key_name(usr, include_link = FALSE)]")
+//	if(!bwoink)
+//		sendadminhelp2ext("Ticket #[id] marked as IC by [key_name(usr, include_link = FALSE)]")
 
 /datum/help_ticket/admin/proc/MHelpThis(key_name = key_name_ticket(usr))
 	if(state > TICKET_ACTIVE)
@@ -289,12 +289,12 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/help_tickets/admin, new)
 	blackbox_feedback(1, "mhelp this")
 	var/msg = "<span class='[span_class]'>Ticket [TicketHref("#[id]")] transferred to mentorhelp by [key_name]</span>"
 	AddInteraction("red", "Transferred to mentorhelp by [key_name].")
-	if(!bwoink)
-		sendadminhelp2ext("Ticket #[id] transferred to mentorhelp by [key_name(usr, include_link = FALSE)]")
+//	if(!bwoink)
+//		sendadminhelp2ext("Ticket #[id] transferred to mentorhelp by [key_name(usr, include_link = FALSE)]")
 	Close(silent = TRUE, hide_interaction = TRUE)
-	if(initiator.prefs.muted & MUTE_MHELP)
-		message_admins(src, "<span class='danger'>Attempted de-escalation to mentorhelp failed because [initiator_key_name] is mhelp muted.</span>")
-		return
+//	if(initiator.prefs.muted & MUTE_MHELP)
+//		message_admins(src, "<span class='danger'>Attempted de-escalation to mentorhelp failed because [initiator_key_name] is mhelp muted.</span>")
+//		return
 	message_admins(msg)
 	log_admin_private(msg)
 	var/datum/help_ticket/mentor/ticket = new(initiator)
@@ -348,3 +348,77 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/help_tickets/admin, new)
 
 /datum/help_ticket/admin/resolve_message(status = "Resolved", message = null, extratext = " If your ticket was a report, then the appropriate action has been taken where necessary.")
 	..()
+
+/*
+ * Checks a given message to see if any of the words are something we want to treat specially, as detailed below.
+ *
+ * There are 3 cases where a word is something we want to act on
+ * 1. Admin pings, like @adminckey. Pings the admin in question, text is not clickable
+ * 2. Datum refs, like @0x2001169 or @mob_23. Clicking on the link opens up the VV for that datum
+ * 3. Ticket refs, like #3. Displays the status and ahelper in the link, clicking on it brings up the ticket panel for it.
+ * Returns a list being used as a tuple. Index ASAY_LINK_NEW_MESSAGE_INDEX contains the new message text (with clickable links and such)
+ * while index ASAY_LINK_PINGED_ADMINS_INDEX contains a list of pinged admin clients, if there are any.
+ *
+ * Arguments:
+ * * msg - the message being scanned
+ */
+/proc/check_asay_links(msg)
+	var/list/msglist = splittext(msg, " ") //explode the input msg into a list
+	var/list/pinged_admins = list() // if we ping any admins, store them here so we can ping them after
+	var/modified = FALSE // did we find anything?
+
+	var/i = 0
+	for(var/word in msglist)
+		i++
+		if(!length(word))
+			continue
+
+		switch(word[1])
+			if("@")
+				var/stripped_word = ckey(copytext(word, 2))
+
+				// first we check if it's a ckey of an admin
+				var/client/client_check = GLOB.directory[stripped_word]
+				if(client_check?.holder)
+					msglist[i] = "<u>[word]</u>"
+					pinged_admins[stripped_word] = client_check
+					modified = TRUE
+					continue
+
+				// then if not, we check if it's a datum ref
+
+				var/word_with_brackets = "\[[stripped_word]\]" // the actual memory address lookups need the bracket wraps
+				var/datum/datum_check = locate(word_with_brackets)
+				if(!istype(datum_check))
+					continue
+				msglist[i] = "<u><a href='?_src_=vars;[HrefToken(forceGlobal = TRUE)];Vars=[word_with_brackets]'>[word]</A></u>"
+				modified = TRUE
+
+			if("#") // check if we're linking a ticket
+				var/possible_ticket_id = text2num(copytext(word, 2))
+				if(!possible_ticket_id)
+					continue
+
+				var/datum/admin_help/ahelp_check = GLOB.ahelp_tickets?.TicketByID(possible_ticket_id)
+				if(!ahelp_check)
+					continue
+
+				var/state_word
+				switch(ahelp_check.state)
+					if(TICKET_ACTIVE)
+						state_word = "Active"
+					if(TICKET_CLOSED)
+						state_word = "Closed"
+					if(TICKET_CLOSED)
+						state_word = "Resolved"
+					if(TICKET_UNCLAIMED)
+						state_word = "Unclaimed"
+
+				msglist[i]= "<u><A href='?_src_=holder;[HrefToken(forceGlobal = TRUE)];ahelp=[REF(ahelp_check)];ahelp_action=ticket'>[word] ([state_word] | [ahelp_check.initiator_key_name])</A></u>"
+				modified = TRUE
+
+	if(modified)
+		var/list/return_list = list()
+		return_list[ASAY_LINK_NEW_MESSAGE_INDEX] = jointext(msglist, " ") // without tuples, we must make do!
+		return_list[ASAY_LINK_PINGED_ADMINS_INDEX] = pinged_admins
+		return return_list

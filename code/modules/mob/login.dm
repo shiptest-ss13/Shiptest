@@ -71,8 +71,12 @@
 	update_mouse_pointer()
 	if(client)
 		client.change_view(getScreenSize(client.prefs.widescreenpref)) // Resets the client.view in case it was changed.
-
+		
+		//Reset verb information, give verbs accessible to the mob.
+		if(client.tgui_panel)
+			client.tgui_panel.set_verb_infomation(client)
 		if(client.player_details.player_actions.len)
+
 			for(var/datum/action/A in client.player_details.player_actions)
 				A.Grant(src)
 

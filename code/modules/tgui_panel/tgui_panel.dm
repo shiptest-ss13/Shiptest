@@ -49,6 +49,8 @@
 	window.send_asset(get_asset_datum(/datum/asset/simple/namespaced/fontawesome))
 	window.send_asset(get_asset_datum(/datum/asset/spritesheet/chat))
 	request_telemetry()
+	// Send verbs
+	set_verb_infomation(client)
 	addtimer(CALLBACK(src, .proc/on_initialize_timed_out), 5 SECONDS)
 
 /**

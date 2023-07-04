@@ -21,10 +21,10 @@
 	var/bomb_cooldown = 0
 	var/static/list/boom_signals = list(COMSIG_PARENT_ATTACKBY, COMSIG_ATOM_BUMPED, COMSIG_ATOM_ATTACK_HAND)
 
-/mob/living/simple_animal/hostile/guardian/bomb/get_status_tab_items()
-	. = ..()
+/mob/living/simple_animal/hostile/guardian/bomb/get_stat_tab_status()
+	var/list/tab_data = ..()
 	if(bomb_cooldown >= world.time)
-		. += "Bomb Cooldown Remaining: [DisplayTimeText(bomb_cooldown - world.time)]"
+		tab_data["Bomb Cooldown Remaining"] = GENERATE_STAT_TEXT("[DisplayTimeText(bomb_cooldown - world.time)]")
 
 /mob/living/simple_animal/hostile/guardian/bomb/AttackingTarget()
 	. = ..()

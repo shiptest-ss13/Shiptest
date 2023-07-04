@@ -48,9 +48,9 @@
 		// ===== ADMIN PMS =====
 		if("(!) Admin PM")
 			client.stat_update_mode = STAT_MEDIUM_UPDATE
-			var/datum/admin_help/ticket = client.current_ticket
+			var/datum/admin_help/ticket = client.current_adminhelp_ticket
 			tab_data["ckey"] = key_name(client, FALSE, FALSE)
-			tab_data["admin_name"] = key_name(ticket.claimed_admin, FALSE, FALSE)
+			tab_data["admin_name"] = key_name(ticket.claimee, FALSE, FALSE)
 			//Messages:
 			tab_data["messages"] = list()
 			for(var/datum/ticket_interaction/message as() in ticket._interactions)
@@ -76,8 +76,6 @@
 						overrides += I.loc
 				tab_data[REF(listed_turf)] = list(
 					text="[listed_turf.name]",
-					icon=SSstat.get_flat_icon(client, listed_turf),
-					type=STAT_ATOM,
 				)
 				var/sanity = MAX_ICONS_PER_TILE
 				for(var/atom/A in listed_turf)
@@ -92,21 +90,9 @@
 					sanity --
 					tab_data[REF(A)] = list(
 						text="[A.name]",
-						icon=SSstat.get_flat_icon(client, A),
-						type=STAT_ATOM,
 					)
 					if(sanity < 0)
 						break
-			var/list/all_verbs = get_all_verbs()								// ~0.252 CPU Time [14000 CALLS]
-			if(selected_tab in all_verbs)
-				client.stat_update_mode = STAT_SLOW_UPDATE
-				for(var/verb in all_verbs[selected_tab])
-					var/procpath/V = verb
-					tab_data["[V.name]"] = list(
-						action = "verb",
-						params = list("verb" = V.name),
-						type=STAT_VERB,
-					)
 			if(mind)
 				tab_data += get_spell_stat_data(mind.spell_list, selected_tab)
 			tab_data += get_spell_stat_data(mob_spell_list, selected_tab)
@@ -128,6 +114,7 @@
 		else
 			var/list/verbs_to_copy = client.sorted_verbs[i]
 			all_verbs[i] = verbs_to_copy.Copy()
+		//TODO: Call tgui_panel/add_verbs on pickup and remove on drop.
 	for(var/atom/A as() in contents)
 		//As an optimisation we will make it so all verbs on objects will go into the object tab.
 		//If you don't want this to happen change this.
@@ -286,8 +273,8 @@
 			if(message)
 				if(world.time > client.last_adminhelp_reply + 10 SECONDS)
 					client.last_adminhelp_reply = world.time
-					if(client.current_ticket)
-						client.current_ticket.MessageNoRecipient(message)
+					if(client.current_adminhelp_ticket)
+						client.current_adminhelp_ticket.MessageNoRecipient(message, sanitized = TRUE)
 					else
 						to_chat(src, "<span class='warning'>Your issue has already been resolved!</span>")
 				else

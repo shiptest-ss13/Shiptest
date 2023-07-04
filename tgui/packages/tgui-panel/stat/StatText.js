@@ -1,5 +1,13 @@
 import { useSelector } from 'common/redux';
-import { Button, Flex, Knob, Tabs, Box, Section } from 'tgui/components';
+import {
+  Button,
+  Flex,
+  Knob,
+  Tabs,
+  Box,
+  Section,
+  Fragment,
+} from 'tgui/components';
 import { useSettings } from '../settings';
 import { selectStatPanel } from './selectors';
 import { sendMessage } from 'tgui/backend';
@@ -28,7 +36,7 @@ export const StatText = (props, context) => {
   );
   return (
     <div className="StatBorder">
-      <Section>
+      <Box>
         {statPanelData
           ? Object.keys(statPanelData).map(
               (key) =>
@@ -48,7 +56,6 @@ export const StatText = (props, context) => {
                     <StatTextAtom
                       atom_ref={key}
                       atom_name={statPanelData[key].text}
-                      atom_icon={statPanelData[key].icon}
                     />
                   )) ||
                   (statPanelData[key].type === STAT_DIVIDER && (
@@ -66,7 +73,7 @@ export const StatText = (props, context) => {
               params={statPanelData[verb].params}
             />
           ))}
-      </Section>
+      </Box>
     </div>
   );
 };
@@ -110,7 +117,7 @@ export const StatTextButton = (props, context) => {
 };
 
 export const StatTextAtom = (props, context) => {
-  const { atom_name, atom_icon, atom_ref } = props;
+  const { atom_name, atom_ref } = props;
   return (
     <Flex.Item mt={1}>
       <Button
@@ -127,18 +134,7 @@ export const StatTextAtom = (props, context) => {
         }
         color="transparent"
       >
-        <Flex>
-          <Flex.Item>
-            <img
-              src={`data:image/jpeg;base64,${atom_icon}`}
-              style={{
-                'vertical-align': 'middle',
-                'horizontal-align': 'middle',
-              }}
-            />
-          </Flex.Item>
-          <Flex.Item ml={1}>{atom_name}</Flex.Item>
-        </Flex>
+        {atom_name}
       </Button>
     </Flex.Item>
   );
@@ -213,7 +209,6 @@ export const HoboStatText = (props, context) => {
                     <HoboStatTextAtom
                       atom_ref={key}
                       atom_name={statPanelData[key].text}
-                      atom_icon={statPanelData[key].icon}
                     />
                   )) ||
                   (statPanelData[key].type === STAT_DIVIDER && (

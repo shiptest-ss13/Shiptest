@@ -39,7 +39,7 @@
 
 /mob/living/carbon/alien/Initialize()
 	add_verb(/mob/living/proc/mob_sleep)
-	add_verb(/mob/living/proc/lay_down)
+	add_verb(/mob/living/proc/toggle_resting)
 
 	create_bodyparts() //initialize bodyparts
 
