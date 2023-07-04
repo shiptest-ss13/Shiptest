@@ -690,9 +690,14 @@
 	set category = "Admin"
 	set name = "Unprison"
 	if (is_centcom_level(M))
-		SSjob.SendToLateJoin(M)
-		message_admins("[key_name_admin(usr)] has unprisoned [key_name_admin(M)]")
-		log_admin("[key_name(usr)] has unprisoned [key_name(M)]")
+		var/datum/overmap/ship/controlled/original_ship = M.mind.original_ship.resolve()
+		if(original_ship)
+			var/atom/new_spawn_point = pick(original_ship.shuttle_port.spawn_points)
+			new_spawn_point.join_player_here(M)
+			message_admins("[key_name_admin(usr)] has unprisoned [key_name_admin(M)]")
+			log_admin("[key_name(usr)] has unprisoned [key_name(M)]")
+		else
+			alert("[M.name] could not be sent back to their original ship.")
 	else
 		alert("[M.name] is not prisoned.")
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Unprison") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!

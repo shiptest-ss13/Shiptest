@@ -29,7 +29,6 @@ SUBSYSTEM_DEF(job)
 
 	return 1
 
-
 /datum/controller/subsystem/job/proc/GetJob(rank)
 	if(!occupations.len)
 		SetupOccupations()
@@ -42,20 +41,9 @@ SUBSYSTEM_DEF(job)
 		SetupOccupations()
 	return type_occupations[jobtype]
 
-/datum/controller/subsystem/job/proc/ResetOccupations()
-	JobDebug("Occupations reset.")
-	for(var/i in GLOB.new_player_list)
-		var/mob/dead/new_player/player = i
-		if((player) && (player.mind))
-			player.mind.assigned_role = null
-			player.mind.special_role = null
-	SetupOccupations()
-	return
-
 /datum/controller/subsystem/job/Recover()
 	set waitfor = FALSE
 	var/oldjobs = SSjob.occupations
-	sleep(20)
 
 /atom/proc/join_player_here(mob/M)
 	// By default, just place the mob on the same turf as the marker or whatever.
@@ -66,65 +54,6 @@ SUBSYSTEM_DEF(job)
 	if (isliving(M) && buckle_mob(M, FALSE, FALSE))
 		return
 	..()
-
-/datum/controller/subsystem/job/proc/SendToLateJoin(mob/M, buckle = TRUE, atom/destination)
-	if(destination)
-		destination.join_player_here(M, buckle)
-		return TRUE
-
-	if(M.mind && M.mind.assigned_role && length(GLOB.jobspawn_overrides[M.mind.assigned_role])) //We're doing something special today.
-		destination = pick(GLOB.jobspawn_overrides[M.mind.assigned_role])
-		destination.join_player_here(M, FALSE)
-		return TRUE
-
-	var/msg = "Unable to send mob [M] to late join!"
-	message_admins(msg)
-	CRASH(msg)
-
-
-///////////////////////////////////
-//Keeps track of all living heads//
-///////////////////////////////////
-/datum/controller/subsystem/job/proc/get_living_heads()
-	. = list()
-	for(var/i in GLOB.human_list)
-		var/mob/living/carbon/human/player = i
-		if(player.stat != DEAD && player.mind && (player.mind.assigned_role in GLOB.command_positions))
-			. |= player.mind
-
-
-////////////////////////////
-//Keeps track of all heads//
-////////////////////////////
-/datum/controller/subsystem/job/proc/get_all_heads()
-	. = list()
-	for(var/i in GLOB.mob_list)
-		var/mob/player = i
-		if(player.mind && (player.mind.assigned_role in GLOB.command_positions))
-			. |= player.mind
-
-//////////////////////////////////////////////
-//Keeps track of all living security members//
-//////////////////////////////////////////////
-/datum/controller/subsystem/job/proc/get_living_sec()
-	. = list()
-	for(var/i in GLOB.human_list)
-		var/mob/living/carbon/human/player = i
-		if(player.stat != DEAD && player.mind && (player.mind.assigned_role in GLOB.security_positions))
-			. |= player.mind
-
-////////////////////////////////////////
-//Keeps track of all  security members//
-////////////////////////////////////////
-/datum/controller/subsystem/job/proc/get_all_sec()
-	. = list()
-	for(var/i in GLOB.human_list)
-		var/mob/living/carbon/human/player = i
-		if(player.mind && (player.mind.assigned_role in GLOB.security_positions))
-			. |= player.mind
-
-/datum/controller/subsystem/job/proc/JobDebug(message)
-	log_job_debug(message)
 
 /datum/controller/subsystem/job/proc/get_manifest()
 	var/list/manifest_out = list()

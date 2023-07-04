@@ -87,8 +87,8 @@
 	/// A lazy list of statuses to add next to this mind in the traitor panel
 	var/list/special_statuses
 
-	///WS edit - Crew objectives variable, stores crew objective datums
-	var/list/crew_objectives
+	/// A weakref to the /datum/overmap/ship/controlled the original mob spawned on
+	var/datum/weakref/original_ship
 
 /datum/mind/New(_key)
 	SSticker.minds += src
