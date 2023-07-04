@@ -178,7 +178,7 @@
 /turf/open/floor/circuit,
 /area/ctf)
 "ahl" = (
-/turf/open/floor/plating/asteroid/snow/airless,
+/turf/open/floor/planetary/snow/iceplanet,
 /area/syndicate_mothership)
 "ahp" = (
 /obj/structure/barricade/security/ctf,
@@ -361,7 +361,7 @@
 	name = "Syndicate Auxillary Shuttle Dock";
 	width = 50
 	},
-/turf/open/floor/plating/asteroid/snow/airless,
+/turf/open/floor/planetary/snow/iceplanet,
 /area/syndicate_mothership)
 "akl" = (
 /turf/open/floor/wood,
@@ -399,7 +399,7 @@
 	set_cap = 1;
 	set_luminosity = 4
 	},
-/turf/open/floor/plating/asteroid/snow/airless,
+/turf/open/floor/planetary/snow/iceplanet,
 /area/syndicate_mothership)
 "akv" = (
 /obj/machinery/door/poddoor/shuttledock{
@@ -710,7 +710,7 @@
 	set_cap = 1;
 	set_luminosity = 4
 	},
-/turf/open/floor/plating/asteroid/snow/airless,
+/turf/open/floor/planetary/snow/iceplanet,
 /area/syndicate_mothership)
 "amk" = (
 /obj/effect/spawner/structure/window/reinforced,
@@ -767,19 +767,15 @@
 /area/abductor_ship)
 "amy" = (
 /obj/structure/flora/grass/brown,
-/turf/open/floor/plating/asteroid/snow/airless,
+/turf/open/floor/planetary/snow/iceplanet,
 /area/syndicate_mothership)
 "amz" = (
 /obj/structure/flora/tree/pine,
-/turf/open/floor/plating/asteroid/snow/airless,
+/turf/open/floor/planetary/snow/iceplanet,
 /area/syndicate_mothership)
 "amA" = (
 /obj/structure/flora/grass/both,
-/turf/open/floor/plating/asteroid/snow/airless,
-/area/syndicate_mothership)
-"amB" = (
-/obj/effect/baseturf_helper/asteroid/snow,
-/turf/closed/indestructible/rock/snow,
+/turf/open/floor/planetary/snow/iceplanet,
 /area/syndicate_mothership)
 "amC" = (
 /obj/item/disk/data,
@@ -787,7 +783,7 @@
 	set_cap = 1;
 	set_luminosity = 4
 	},
-/turf/open/floor/plating/asteroid/snow/airless,
+/turf/open/floor/planetary/snow/iceplanet,
 /area/syndicate_mothership)
 "amD" = (
 /turf/closed/indestructible/riveted,
@@ -846,7 +842,7 @@
 	set_cap = 1;
 	set_luminosity = 4
 	},
-/turf/open/floor/plating/asteroid/snow/airless,
+/turf/open/floor/planetary/snow/iceplanet,
 /area/syndicate_mothership)
 "ani" = (
 /obj/machinery/newscaster/security_unit{
@@ -887,7 +883,7 @@
 /area/centcom/ferry)
 "anx" = (
 /obj/structure/flora/bush,
-/turf/open/floor/plating/asteroid/snow/airless,
+/turf/open/floor/planetary/snow/iceplanet,
 /area/syndicate_mothership)
 "any" = (
 /obj/machinery/light/directional/west,
@@ -1020,7 +1016,7 @@
 	set_cap = 1;
 	set_luminosity = 4
 	},
-/turf/open/floor/plating/asteroid/snow/airless,
+/turf/open/floor/planetary/snow/iceplanet,
 /area/syndicate_mothership)
 "aoY" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
@@ -1148,7 +1144,7 @@
 	set_cap = 1;
 	set_luminosity = 4
 	},
-/turf/open/floor/plating/asteroid/snow/airless,
+/turf/open/floor/planetary/snow/iceplanet,
 /area/syndicate_mothership)
 "apI" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
@@ -1303,7 +1299,7 @@
 	set_cap = 1;
 	set_luminosity = 4
 	},
-/turf/open/floor/plating/asteroid/snow/airless,
+/turf/open/floor/planetary/snow/iceplanet,
 /area/syndicate_mothership/control)
 "aqN" = (
 /obj/structure/urinal{
@@ -1367,7 +1363,7 @@
 	set_cap = 1;
 	set_luminosity = 4
 	},
-/turf/open/floor/plating/asteroid/snow/airless,
+/turf/open/floor/planetary/snow/iceplanet,
 /area/syndicate_mothership)
 "arj" = (
 /obj/structure/mirror{
@@ -1702,10 +1698,6 @@
 	},
 /turf/open/floor/engine/cult,
 /area/wizard_station)
-"atY" = (
-/obj/effect/baseturf_helper/asteroid/snow,
-/turf/closed/indestructible/syndicate,
-/area/syndicate_mothership/control)
 "atZ" = (
 /obj/structure/sign/map/right{
 	pixel_y = -32
@@ -2768,7 +2760,7 @@
 /area/centcom/control)
 "aBY" = (
 /obj/item/toy/figure/syndie,
-/turf/open/floor/plating/asteroid/snow/airless,
+/turf/open/floor/planetary/snow/iceplanet,
 /area/syndicate_mothership)
 "aCb" = (
 /obj/machinery/door/airlock/external,
@@ -2792,7 +2784,7 @@
 /area/wizard_station)
 "aCp" = (
 /obj/structure/statue/uranium/nuke,
-/turf/open/floor/plating/asteroid/snow/airless,
+/turf/open/floor/planetary/snow/iceplanet,
 /area/syndicate_mothership)
 "aCH" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
@@ -3204,13 +3196,6 @@
 	},
 /turf/open/lava/airless,
 /area/wizard_station)
-"aGA" = (
-/obj/structure/table/reinforced,
-/obj/machinery/door/firedoor,
-/obj/item/paper/pamphlet/centcom/visitor_info,
-/obj/effect/turf_decal/industrial/outline/yellow,
-/turf/open/floor/plasteel,
-/area/tdome/tdomeobserve)
 "aGB" = (
 /obj/structure/table,
 /obj/item/gun/energy/ionrifle,
@@ -4097,7 +4082,7 @@
 	name = "\improper FOURTH WALL";
 	pixel_x = -32
 	},
-/turf/open/floor/plating/asteroid/snow/airless,
+/turf/open/floor/planetary/snow/iceplanet,
 /area/syndicate_mothership)
 "aME" = (
 /obj/machinery/computer/camera_advanced{
@@ -4582,7 +4567,6 @@
 /area/centcom/supplypod)
 "aPz" = (
 /obj/structure/table/reinforced,
-/obj/item/paper/pamphlet/centcom/visitor_info,
 /turf/open/floor/plasteel,
 /area/centcom/supplypod)
 "aPA" = (
@@ -6322,23 +6306,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/tdome/arena)
-"bmw" = (
-/obj/item/paper/pamphlet/centcom/visitor_info,
-/obj/item/paper/pamphlet/centcom/visitor_info,
-/obj/item/paper/pamphlet/centcom/visitor_info,
-/obj/structure/table/wood,
-/obj/effect/turf_decal/corner/transparent/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/transparent/neutral,
-/obj/effect/turf_decal/corner/transparent/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/corner/transparent/neutral{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
-/area/centcom/control)
 "bsD" = (
 /obj/structure/table/reinforced,
 /obj/item/folder,
@@ -9733,9 +9700,6 @@
 /area/ctf)
 "jgY" = (
 /obj/structure/table,
-/obj/item/paper/pamphlet/centcom/visitor_info,
-/obj/item/paper/pamphlet/centcom/visitor_info,
-/obj/item/paper/pamphlet/centcom/visitor_info,
 /obj/machinery/light/directional/west,
 /obj/effect/turf_decal/corner/opaque/green{
 	dir = 1
@@ -10878,9 +10842,6 @@
 /area/tdome/tdomeobserve)
 "lIm" = (
 /obj/structure/table,
-/obj/item/paper/pamphlet/centcom/visitor_info,
-/obj/item/paper/pamphlet/centcom/visitor_info,
-/obj/item/paper/pamphlet/centcom/visitor_info,
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plasteel,
 /area/centcom/control)
@@ -13373,9 +13334,6 @@
 /area/ctf)
 "rpW" = (
 /obj/structure/table,
-/obj/item/paper/pamphlet/centcom/visitor_info,
-/obj/item/paper/pamphlet/centcom/visitor_info,
-/obj/item/paper/pamphlet/centcom/visitor_info,
 /obj/machinery/light/directional/north,
 /obj/effect/turf_decal/corner/opaque/green{
 	dir = 1
@@ -15681,6 +15639,12 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/centcom/control)
+"xBJ" = (
+/obj/effect/light_emitter{
+	set_cap = 1;
+	set_luminosity = 4
+	},
+/area/syndicate_mothership)
 "xEx" = (
 /obj/structure/chair,
 /obj/effect/turf_decal/industrial/warning{
@@ -25706,7 +25670,7 @@ aaa
 aaa
 aaa
 aaa
-amB
+ahh
 ahh
 ahh
 ahh
@@ -32969,7 +32933,7 @@ ahl
 ahl
 ahl
 akt
-akt
+xBJ
 ang
 ang
 ang
@@ -33227,7 +33191,7 @@ ahl
 ahl
 aoW
 ang
-atY
+ang
 vcL
 hON
 fUK
@@ -58438,7 +58402,7 @@ aYS
 aiu
 ain
 aEv
-aGA
+aXC
 aEv
 sdr
 qVj
@@ -59980,7 +59944,7 @@ avF
 aiu
 ain
 aEv
-aGA
+aXC
 aEv
 sdr
 ric
@@ -64574,7 +64538,7 @@ alw
 akl
 aim
 ewb
-bmw
+gDP
 iZH
 eFB
 aqg
