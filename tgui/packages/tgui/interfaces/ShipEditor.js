@@ -118,6 +118,30 @@ export const ShipEditor = (props, context) => {
               />
             </LabeledList.Item>
 
+            <LabeledList.Item label="Spawn Time Coeff.">
+              <NumberInput
+                value={data.templateSpawnCoeff}
+                minValue={0}
+                maxValue={100}
+                stepPixelSize={30}
+                onChange={(e, value) =>
+                  act('setSpawnCoeff', { new_spawn_coeff: value })
+                }
+              />
+            </LabeledList.Item>
+
+            <LabeledList.Item label="Officer Time Coeff.">
+              <NumberInput
+                value={data.templateOfficerCoeff}
+                minValue={0}
+                maxValue={100}
+                stepPixelSize={30}
+                onChange={(e, value) =>
+                  act('setOfficerCoeff', { new_officer_coeff: value })
+                }
+              />
+            </LabeledList.Item>
+
             <LabeledList.Item label="Enabled">
               <Button
                 content={data.templateEnabled ? 'Enabled' : 'Disabled'}

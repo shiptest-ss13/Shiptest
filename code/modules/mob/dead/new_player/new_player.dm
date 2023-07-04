@@ -267,7 +267,7 @@
 			return "[jobtitle] is already filled to capacity."
 	return "Error: Unknown job availability."
 
-/mob/dead/new_player/proc/IsJobUnavailable(datum/job/job, datum/overmap/ship/controlled/ship, latejoin = FALSE)
+/mob/dead/new_player/proc/IsJobUnavailable(datum/job/job, datum/overmap/ship/controlled/ship, check_playtime, latejoin = FALSE)
 	if(!job)
 		return JOB_UNAVAILABLE_GENERIC
 	if(!(ship.job_slots[job] > 0))
@@ -278,17 +278,17 @@
 		return JOB_UNAVAILABLE_GENERIC
 	if(!job.player_old_enough(client))
 		return JOB_UNAVAILABLE_ACCOUNTAGE
-	if(job.required_playtime_remaining(client))
+	if(check_playtime && !ship.source_template.has_job_playtime(client, job))
 		return JOB_UNAVAILABLE_PLAYTIME
 	if(latejoin && !job.special_check_latejoin(client))
 		return JOB_UNAVAILABLE_GENERIC
 	return JOB_AVAILABLE
 
-/mob/dead/new_player/proc/AttemptLateSpawn(datum/job/job, datum/overmap/ship/controlled/ship)
+/mob/dead/new_player/proc/AttemptLateSpawn(datum/job/job, datum/overmap/ship/controlled/ship, check_playtime = TRUE)
 	if(auth_check)
 		return
 
-	var/error = IsJobUnavailable(job, ship)
+	var/error = IsJobUnavailable(job, ship, check_playtime)
 	if(error != JOB_AVAILABLE)
 		alert(src, get_job_unavailable_error_message(error, job))
 		return FALSE

@@ -2,8 +2,6 @@
 	name = "Station Engineer"
 	total_positions = 5
 	spawn_positions = 5
-	exp_requirements = 60
-	exp_type = EXP_TYPE_CREW
 	wiki_page = "Station_Engineer" //WS Edit - Wikilinks/Warning
 
 	outfit = /datum/outfit/job/engineer
