@@ -185,6 +185,7 @@
 	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
 	resistance_flags = FIRE_PROOF
 	var/anomaly_type = /obj/effect/anomaly
+	var/research
 
 /obj/item/assembly/signaler/anomaly/receive_signal(datum/signal/signal)
 	if(!signal)
@@ -193,9 +194,11 @@
 		return FALSE
 	if(suicider)
 		manual_suicide(suicider)
-	for(var/obj/effect/anomaly/A in get_turf(src))
-		A.anomalyNeutralize()
+	for(var/obj/effect/anomaly/Anomaly in get_turf(src))
+		Anomaly.anomalyNeutralize()
 	return TRUE
+
+
 
 /obj/item/assembly/signaler/anomaly/manual_suicide(mob/living/carbon/user)
 	user.visible_message("<span class='suicide'>[user]'s [src] is reacting to the radio signal, warping [user.p_their()] body!</span>")
@@ -208,7 +211,25 @@
 		to_chat(user, "<span class='notice'>Analyzing... [src]'s stabilized field is fluctuating along frequency [format_frequency(frequency)], code [code].</span>")
 	..()
 
+/obj/item/assembly/signaler/anomaly/det_signal
+	name = "anomaly field"
+	research = null
+	anomaly_type = null
+
+/obj/item/assembly/signaler/anomaly/det_signal/receive_signal(datum/signal/signal)
+	if(!signal)
+		return FALSE
+	if(signal.data["code"] != code)
+		return FALSE
+	if(suicider)
+		manual_suicide(suicider)
+	for(var/obj/effect/anomaly/Anomaly in get_turf(src))
+		Anomaly.detonate()
+	return TRUE
+
+
 //Anomaly cores
+
 /obj/item/assembly/signaler/anomaly/pyro
 	name = "\improper pyroclastic anomaly core"
 	desc = "The neutralized core of a pyroclastic anomaly. It feels warm to the touch. It'd probably be valuable for research."
@@ -237,7 +258,44 @@
 	name = "\improper vortex anomaly core"
 	desc = "The neutralized core of a vortex anomaly. It won't sit still, as if some invisible force is acting on it. It'd probably be valuable for research."
 	icon_state = "vortex core"
-	anomaly_type = /obj/effect/anomaly/bhole
+	anomaly_type = /obj/effect/anomaly/vortex
+
+/obj/item/assembly/signaler/anomaly/hallucination
+	name = "\improper hallucination anomaly core"
+	desc = "The neutralized core of a hallucination anomaly. It seems to be moving, but it's probably your imagination. It'd probably be valuable for research."
+	icon_state = "hallucination_core"
+	anomaly_type = /obj/effect/anomaly/hallucination
+
+/obj/item/assembly/signaler/anomaly/sparkler
+	name = "\improper sparkler anomaly core"
+	desc = "The neutralized core of a sparkler anomaly. Tiny electrical sparks arc off it."
+	anomaly_type = /obj/effect/anomaly/sparkler
+
+/obj/item/assembly/signaler/anomaly/veins
+	name = "\improper fountain anomaly core"
+	desc = "The neutralized core of a fountain anomaly. Blood drips off of it."
+	anomaly_type = /obj/effect/anomaly/sparkler
+
+/obj/item/assembly/signaler/anomaly/phantom
+	name = "\improper phantom anomaly core"
+	desc = "The neutralized core of a phantom anomaly. It quietly screams."
+	anomaly_type = /obj/effect/anomaly/phantom
+
+/obj/item/assembly/signaler/anomaly/pulsar
+	name = "\improper pulsar anomaly core"
+	desc = "The neutralized core of a pulsar anomaly. Electromagnetic crackles come off it."
+
+/obj/item/assembly/signaler/anomaly/plasmasoul
+	name = "\improper plasmasoul anomaly core"
+	desc = "The neutralized core of a plasmasoul anomaly. The air around it hisses."
+
+/obj/item/assembly/signaler/anomaly/heartbeat
+	name = "\improper heartbeat anomaly core"
+	desc = "The neutralized core of a heartbeat anomaly. It's concerningly warm to the touch."
+
+/obj/item/assembly/signaler/anomaly/tvstatic
+	name = "\improper static anomaly core"
+	desc = "The neutralized core of a static anomaly. Your head hurts just staring at it"
 
 /obj/item/assembly/signaler/anomaly/attack_self()
 	return
