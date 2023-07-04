@@ -57,7 +57,7 @@
 	return ..()
 
 /datum/biome/cave/asteroid
-	open_turf_types = list(/turf/open/floor/plating/asteroid/airless = 1)
+	open_turf_types = list(/turf/open/floor/planetary/asteroid = 1)
 	closed_turf_types =  list(/turf/closed/mineral/random = 1)
 
 	flora_spawn_list = list(/obj/structure/flora/ash/space/voidmelon = 2)
