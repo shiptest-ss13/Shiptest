@@ -10,7 +10,7 @@
 	connector_icon = 'icons/turf/connectors/smoothrocks_connector.dmi'
 	connector_icon_state = "smoothrocks_connector"
 	no_connector_typecache = list(/turf/closed/mineral)
-	baseturfs = /turf/open/floor/plating/asteroid/airless
+	baseturfs = /turf/open/floor/planetary/asteroid
 	initial_gas_mix = AIRLESS_ATMOS
 	opacity = TRUE
 	density = TRUE
@@ -19,7 +19,7 @@
 	base_icon_state = "smoothrocks"
 	var/smooth_icon = 'icons/turf/walls/smoothrocks.dmi'
 	var/environment_type = "asteroid"
-	var/turf/open/floor/plating/turf_type = /turf/open/floor/plating/asteroid/airless
+	var/turf/open/floor/plating/turf_type = /turf/open/floor/planetary/asteroid
 	var/obj/item/stack/ore/mineralType = null
 	var/mineralAmt = 3
 	var/last_act = 0
