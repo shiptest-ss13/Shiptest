@@ -1,7 +1,7 @@
 
 /**********************Asteroid**************************/
 
-/turf/open/floor/plating/planetary/asteroid
+/turf/open/floor/planetary/asteroid
 	name = "asteroid sand"
 	baseturfs = /turf/open/floor/plating/asteroid
 	icon = 'icons/turf/floors.dmi'
@@ -10,7 +10,3 @@
 	postdig_icon_change = TRUE
 	base_icon_state  = "asteroid"
 	initial_gas_mix = AIRLESS_ATMOS
-
-/turf/open/floor/plating/asteroid/airless
-	initial_gas_mix = AIRLESS_ATMOS
-	baseturfs = /turf/open/floor/plating/asteroid/airless
