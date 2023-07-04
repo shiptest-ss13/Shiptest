@@ -170,12 +170,13 @@
 	else
 		client.eye = card
 
-/mob/living/silicon/pai/get_status_tab_items()
-	. += ..()
+/mob/living/silicon/pai/get_stat_tab_status()
+	var/list/tab_data = ..()
 	if(!stat)
-		. += text("Emitter Integrity: [emitterhealth * (100/emittermaxhealth)]")
+		tab_data["Emitter Integrity"] = GENERATE_STAT_TEXT("[emitterhealth * (100/emittermaxhealth)]")
 	else
-		. += text("Systems nonfunctional")
+		tab_data["Systems"] = GENERATE_STAT_TEXT("nonfunctional")
+	return tab_data
 
 
 // See software.dm for Topic()

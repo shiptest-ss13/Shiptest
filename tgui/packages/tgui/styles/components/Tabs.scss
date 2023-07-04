@@ -36,7 +36,8 @@ $fg-map: colors.$fg-map !default;
   background-color: transparent;
 }
 
-.Section:not(.Section--fitted) .Tabs {
+// Child combinator does not seem to work here, but if it ever does start working, this seems to help with nonfitted section tab headers
+.Section:not(.Section--fitted) > .Tabs {
   margin: 0 -0.5em 0.5em;
 
   &:first-child {
@@ -51,7 +52,7 @@ $fg-map: colors.$fg-map !default;
 
 .Tabs--horizontal {
   margin-bottom: 0.5em;
-  padding: 0.25em 0.25em 0 0.25em;
+  padding: 0.25em 0 0.25em 0.25em;
 
   &:last-child {
     margin-bottom: 0;
@@ -81,7 +82,6 @@ $fg-map: colors.$fg-map !default;
 }
 
 .Tab--selected {
-  background-color: $tab-color-selected;
   color: $text-color-selected;
 }
 

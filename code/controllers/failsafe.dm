@@ -109,6 +109,15 @@ GLOBAL_REAL(Failsafe, /datum/controller/failsafe)
 /datum/controller/failsafe/proc/defcon_pretty()
 	return defcon
 
-/datum/controller/failsafe/stat_entry(msg)
-	msg = "Defcon: [defcon_pretty()] (Interval: [Failsafe.processing_interval] | Iteration: [Failsafe.master_iteration])"
-	return msg
+/datum/controller/failsafe/stat_entry()
+	var/list/tab_data = list()
+	tab_data["Failsafe Controller"] = list(
+		text="Defcon: [defcon_pretty()] (Interval: [Failsafe.processing_interval] | Iteration: [Failsafe.master_iteration])",
+		action = "statClickDebug",
+		params=list(
+			"targetRef" = REF(src),
+			"class"="controller",
+		),
+		type=STAT_BUTTON,
+	)
+	return tab_data

@@ -42,25 +42,27 @@ INITIALIZE_IMMEDIATE(/mob/dead)
 		onTransitZ(old_turf?.z, new_turf?.z)
 	return ..()
 
-/mob/dead/get_status_tab_items()
-	. = ..()
-	. += ""
-	. += "Game Mode: [SSticker.hide_mode ? "Secret" : "[GLOB.master_mode]"]"
+/mob/dead/get_stat_tab_status()
+	var/list/tab_data = ..()
+
+	tab_data["Game Mode"] = GENERATE_STAT_TEXT("[SSticker.hide_mode ? "Secret" : "[GLOB.master_mode]"]")
 
 	if(SSticker.HasRoundStarted())
-		return
+		return tab_data
 
 	var/time_remaining = SSticker.GetTimeLeft()
 	if(time_remaining > 0)
-		. += "Time To Start: [round(time_remaining/10)]s"
+		tab_data["Time To Start"] = GENERATE_STAT_TEXT("[round(time_remaining/10)]s")
 	else if(time_remaining == -10)
-		. += "Time To Start: DELAYED"
+		tab_data["Time To Start"] = GENERATE_STAT_TEXT("DELAYED")
 	else
-		. += "Time To Start: SOON"
+		tab_data["Time To Start"] = GENERATE_STAT_TEXT("SOON")
 
-	. += "Players: [SSticker.totalPlayers]"
+	tab_data["Players"] = GENERATE_STAT_TEXT("[SSticker.totalPlayers]")
 	if(client.holder)
-		. += "Players Ready: [SSticker.totalPlayersReady]"
+		tab_data["Players Ready"] = GENERATE_STAT_TEXT("[SSticker.totalPlayersReady]")
+	return tab_data
+
 
 /mob/dead/proc/server_hop()
 	set category = "OOC"

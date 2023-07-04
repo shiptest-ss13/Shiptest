@@ -371,10 +371,10 @@
 		return FALSE
 	return ..()
 
-/mob/living/simple_animal/get_status_tab_items()
-	. = ..()
-	. += ""
-	. += "Health: [round((health / maxHealth) * 100)]%"
+/mob/living/simple_animal/get_stat_tab_status()
+	var/list/tab_data = ..()
+	tab_data["Health"] = GENERATE_STAT_TEXT("[round((health / maxHealth) * 100)]%")
+	return tab_data
 
 /mob/living/simple_animal/proc/drop_loot()
 	if(loot.len)

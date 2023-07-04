@@ -92,6 +92,8 @@
 	. = ..()
 	update_config_movespeed()
 	update_movespeed(TRUE)
+	//Give verbs to stat
+	add_verb(verbs, TRUE)
 	become_hearing_sensitive(ORGAN_TRAIT)
 
 /**
@@ -854,34 +856,24 @@
 /mob/proc/is_muzzled()
 	return 0
 
-/// Adds this list to the output to the stat browser
-/mob/proc/get_status_tab_items()
-	. = list()
-
-/// Gets all relevant proc holders for the browser statpenl
-/mob/proc/get_proc_holders()
-	. = list()
-	if(mind)
-		. += get_spells_for_statpanel(mind.spell_list)
-	. += get_spells_for_statpanel(mob_spell_list)
-
 /**
  * Convert a list of spells into a displyable list for the statpanel
  *
  * Shows charge and other important info
  */
-/mob/proc/get_spells_for_statpanel(list/spells)
-	var/list/L = list()
+/mob/proc/get_spell_stat_data(list/spells, current_tab)
+	var/list/stat_data = list()
 	for(var/obj/effect/proc_holder/spell/S in spells)
-		if(S.can_be_cast_by(src))
+		if(S.can_be_cast_by(src) && current_tab == S.panel)
+			client.stat_update_mode = STAT_MEDIUM_UPDATE
 			switch(S.charge_type)
 				if("recharge")
-					L[++L.len] = list("[S.panel]", "[S.charge_counter/10.0]/[S.charge_max/10]", S.name, REF(S))
+					stat_data["[S.name]"] = GENERATE_STAT_TEXT("[S.charge_counter/10.0]/[S.charge_max/10]")
 				if("charges")
-					L[++L.len] = list("[S.panel]", "[S.charge_counter]/[S.charge_max]", S.name, REF(S))
+					stat_data["[S.name]"] = GENERATE_STAT_TEXT("[S.charge_counter]/[S.charge_max]")
 				if("holdervar")
-					L[++L.len] = list("[S.panel]", "[S.holder_var_type] [S.holder_var_amount]", S.name, REF(S))
-	return L
+					stat_data["[S.name]"] = GENERATE_STAT_TEXT("[S.holder_var_type] [S.holder_var_amount]")
+	return stat_data
 
 #define MOB_FACE_DIRECTION_DELAY 1
 

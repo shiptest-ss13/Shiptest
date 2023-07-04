@@ -79,6 +79,8 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	// Tgui Topic middleware
 	if(tgui_Topic(href_list))
 		return
+	if(href_list["reload_tguipanel"])
+		nuke_chat()
 	if(href_list["reload_statbrowser"])
 		src << browse(file('html/statbrowser.html'), "window=statbrowser")
 	// Log all hrefs
@@ -230,7 +232,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		holder.owner = src
 		connecting_admin = TRUE
 	else if(GLOB.deadmins[ckey])
-		add_verb(src, /client/proc/readmin)
+		add_verb(/client/proc/readmin)
 		connecting_admin = TRUE
 	if(CONFIG_GET(flag/autoadmin))
 		if(!GLOB.admin_datums[ckey])
@@ -266,7 +268,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	fps = prefs.clientfps == 0 ? 60 : prefs.clientfps //WS Edit - Client FPS Tweak
 
 	if(fexists(roundend_report_file()))
-		add_verb(src, /client/proc/show_previous_roundend_report)
+		add_verb(/client/proc/show_previous_roundend_report)
 
 	if(fexists("data/last_roundend/server_last_roundend_report.html"))
 		add_verb(src, /client/proc/show_servers_last_roundend_report)
@@ -456,7 +458,6 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 
 	update_ambience_pref()
 
-
 	//This is down here because of the browse() calls in tooltip/New()
 	if(!tooltips)
 		tooltips = new /datum/tooltip(src)
@@ -469,6 +470,12 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	view_size.setZoomMode()
 	fit_viewport()
 	Master.UpdateTickRate()
+
+	//Add the default client verbs to the TGUI window
+	add_verb(subtypesof(/client/verb), TRUE)
+
+	//Load the TGUI stat in case of TGUI subsystem not ready (startup)
+	mob.UpdateMobStat(TRUE)
 
 //////////////
 //DISCONNECT//
@@ -899,9 +906,9 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	if (interviewee)
 		return
 	if(CONFIG_GET(flag/see_own_notes))
-		add_verb(src, /client/proc/self_notes)
+		add_verb(/client/proc/self_notes)
 	if(CONFIG_GET(flag/use_exp_tracking))
-		add_verb(src, /client/proc/self_playtime)
+		add_verb(/client/proc/self_playtime)
 
 
 #undef UPLOAD_LIMIT
@@ -1077,31 +1084,6 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	if(statbrowser_ready)
 		return
 	to_chat(src, "<span class='userdanger'>Statpanel failed to load, click <a href='?src=[REF(src)];reload_statbrowser=1'>here</a> to reload the panel </span>")
-
-/**
- * Initializes dropdown menus on client
- */
-/client/proc/initialize_menus()
-	var/list/topmenus = GLOB.menulist[/datum/verbs/menu]
-	for (var/thing in topmenus)
-		var/datum/verbs/menu/topmenu = thing
-		var/topmenuname = "[topmenu]"
-		if (topmenuname == "[topmenu.type]")
-			var/list/tree = splittext(topmenuname, "/")
-			topmenuname = tree[tree.len]
-		winset(src, "[topmenu.type]", "parent=menu;name=[url_encode(topmenuname)]")
-		var/list/entries = topmenu.Generate_list(src)
-		for (var/child in entries)
-			winset(src, "[child]", "[entries[child]]")
-			if (!ispath(child, /datum/verbs/menu))
-				var/procpath/verbpath = child
-				if (verbpath.name[1] != "@")
-					new child(src)
-
-	for (var/thing in prefs.menuoptions)
-		var/datum/verbs/menu/menuitem = GLOB.menulist[thing]
-		if (menuitem)
-			menuitem.Load_checked(src)
 
 /client/proc/open_filter_editor(atom/in_atom)
 	if(holder)

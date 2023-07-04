@@ -43,7 +43,7 @@
 /mob/living/simple_animal/pet/cat/Initialize()
 	. = ..()
 	ADD_TRAIT(src, TRAIT_HOLDABLE, INNATE_TRAIT)
-	add_verb(src, /mob/living/proc/toggle_resting)
+	add_verb(/mob/living/proc/toggle_resting)
 
 /mob/living/simple_animal/pet/cat/space
 	desc = "It's a cat... in space!"

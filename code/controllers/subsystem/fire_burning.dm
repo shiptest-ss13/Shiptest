@@ -7,9 +7,8 @@ SUBSYSTEM_DEF(fire_burning)
 	var/list/currentrun = list()
 	var/list/processing = list()
 
-/datum/controller/subsystem/fire_burning/stat_entry(msg)
-	msg = "P:[length(processing)]"
-	return ..()
+/datum/controller/subsystem/fire_burning/stat_entry()
+	. = ..("P:[processing.len]")
 
 /datum/controller/subsystem/fire_burning/get_metrics()
 	. = ..()

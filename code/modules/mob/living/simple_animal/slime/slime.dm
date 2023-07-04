@@ -203,21 +203,21 @@
 /mob/living/simple_animal/slime/Process_Spacemove(movement_dir = 0)
 	return 2
 
-/mob/living/simple_animal/slime/get_status_tab_items()
-	. = ..()
+/mob/living/simple_animal/slime/get_stat_tab_status()
+	var/list/tab_data = list()
 	if(!docile)
-		. += "Nutrition: [nutrition]/[get_max_nutrition()]"
+		tab_data["Nutrition"] = GENERATE_STAT_TEXT("[nutrition]/[get_max_nutrition()]")
 	if(amount_grown >= SLIME_EVOLUTION_THRESHOLD)
 		if(is_adult)
-			. += "You can reproduce!"
+			tab_data["Slime Status"] = GENERATE_STAT_TEXT("You can reproduce!")
 		else
-			. += "You can evolve!"
+			tab_data["Slime Status"] = GENERATE_STAT_TEXT("You can evolve!")
 
-	switch(stat)
-		if(HARD_CRIT, UNCONSCIOUS)
-			. += "You are knocked out by high levels of BZ!"
-		else
-			. += "Power Level: [powerlevel]"
+	if(stat == UNCONSCIOUS)
+		tab_data["Unconscious"] = GENERATE_STAT_TEXT("You are knocked out by high levels of BZ!")
+	else
+		tab_data["Power Level"] = GENERATE_STAT_TEXT("[powerlevel]")
+	return tab_data
 
 
 /mob/living/simple_animal/slime/adjustFireLoss(amount, updating_health = TRUE, forced = FALSE)

@@ -253,18 +253,18 @@ GLOBAL_LIST_EMPTY(blob_nodes)
 /mob/camera/blob/blob_act(obj/structure/blob/B)
 	return
 
-/mob/camera/blob/get_status_tab_items()
-	. = ..()
-	if(blob_core)
-		. += "Core Health: [blob_core.obj_integrity]"
-		. += "Power Stored: [blob_points]/[max_blob_points]"
-		. += "Blobs to Win: [blobs_legit.len]/[blobwincount]"
+/mob/camera/blob/get_stat_tab_status()
+	var/list/tab_data = ..()
+	tab_data["Core Health"] = GENERATE_STAT_TEXT("[blob_core.obj_integrity]")
+	tab_data["Power Stored"] = GENERATE_STAT_TEXT("[blob_points]/[max_blob_points]")
+	tab_data["Blobs to Win"] = GENERATE_STAT_TEXT("[blobs_legit.len]/[blobwincount]")
 	if(free_strain_rerolls)
-		. += "You have [free_strain_rerolls] Free Strain Reroll\s Remaining"
+		tab_data["Strain Reroll"] = GENERATE_STAT_TEXT("You have [free_strain_rerolls] Free Strain Reroll\s Remaining")
 	if(!placed)
 		if(manualplace_min_time)
-			. +=  "Time Before Manual Placement: [max(round((manualplace_min_time - world.time)*0.1, 0.1), 0)]"
-		. += "Time Before Automatic Placement: [max(round((autoplace_max_time - world.time)*0.1, 0.1), 0)]"
+			tab_data["Time Before Manual Placement"] = GENERATE_STAT_TEXT("[max(round((manualplace_min_time - world.time)*0.1, 0.1), 0)]")
+		tab_data["Time Before Automatic Placement"] = GENERATE_STAT_TEXT("[max(round((autoplace_max_time - world.time)*0.1, 0.1), 0)]")
+	return tab_data
 
 /mob/camera/blob/Move(NewLoc, Dir = 0)
 	if(placed)

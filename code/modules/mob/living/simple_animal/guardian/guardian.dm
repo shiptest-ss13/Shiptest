@@ -208,17 +208,18 @@ GLOBAL_LIST_EMPTY(parasites) //all currently existing/living guardians
 		qdel(src)
 	snapback()
 
-/mob/living/simple_animal/hostile/guardian/get_status_tab_items()
-	. += ..()
+/mob/living/simple_animal/hostile/guardian/get_stat_tab_status()
+	var/list/tab_data = ..()
 	if(summoner)
 		var/resulthealth
 		if(iscarbon(summoner))
 			resulthealth = round((abs(HEALTH_THRESHOLD_DEAD - summoner.health) / abs(HEALTH_THRESHOLD_DEAD - summoner.maxHealth)) * 100)
 		else
 			resulthealth = round((summoner.health / summoner.maxHealth) * 100, 0.5)
-		. += "Summoner Health: [resulthealth]%"
+		tab_data["Summoner Health"] = GENERATE_STAT_TEXT("[resulthealth]%")
 	if(cooldown >= world.time)
-		. += "Manifest/Recall Cooldown Remaining: [DisplayTimeText(cooldown - world.time)]"
+		tab_data["Manifest/Recall Cooldown Remaining"] = GENERATE_STAT_TEXT("[DisplayTimeText(cooldown - world.time)]")
+	return tab_data
 
 /mob/living/simple_animal/hostile/guardian/Move() //Returns to summoner if they move out of range
 	. = ..()
@@ -497,13 +498,13 @@ GLOBAL_LIST_EMPTY(parasites) //all currently existing/living guardians
 						to_chat(src, "<span class='holoparasite'><font color=\"[G.guardiancolor]\"><b>[G.real_name]</b></font> has taken shape!</span>")
 				guardians -= G
 				if(!guardians.len)
-					remove_verb(src, /mob/living/proc/guardian_reset)
+					remove_verb(/mob/living/proc/guardian_reset)
 			else
 				to_chat(src, "<span class='holoparasite'>There were no ghosts willing to take control of <font color=\"[G.guardiancolor]\"><b>[G.real_name]</b></font>. Looks like you're stuck with it for now.</span>")
 		else
 			to_chat(src, "<span class='holoparasite'>You decide not to reset [guardians.len > 1 ? "any of your guardians":"your guardian"].</span>")
 	else
-		remove_verb(src, /mob/living/proc/guardian_reset)
+		remove_verb(/mob/living/proc/guardian_reset)
 
 ////////parasite tracking/finding procs
 
@@ -640,9 +641,9 @@ GLOBAL_LIST_EMPTY(parasites) //all currently existing/living guardians
 		if("slime")
 			to_chat(user, "[G.slime_fluff_string]")
 			to_chat(user, "<span class='holoparasite'><b>[G.real_name]</b> was created using slime science!</span>")
-	add_verb(user, list(/mob/living/proc/guardian_comm, \
-						/mob/living/proc/guardian_recall, \
-						/mob/living/proc/guardian_reset))
+	add_verb(list(/mob/living/proc/guardian_comm, \
+				/mob/living/proc/guardian_recall, \
+				/mob/living/proc/guardian_reset))
 	G?.client.init_verbs()
 
 /obj/item/guardiancreator/choose

@@ -1,6 +1,6 @@
 /mob/living/carbon/human/Initialize()
-	add_verb(src, /mob/living/proc/mob_sleep)
-	add_verb(src, /mob/living/proc/toggle_resting)
+	add_verb(/mob/living/proc/mob_sleep)
+	add_verb(/mob/living/proc/lay_down)
 
 	icon_state = ""		//Remove the inherent human icon that is visible on the map editor. We're rendering ourselves limb by limb, having it still be there results in a bug where the basic human icon appears below as south in all directions and generally looks nasty.
 
@@ -56,72 +56,78 @@
 	//...and display them.
 	add_to_all_human_data_huds()
 
-/mob/living/carbon/human/get_status_tab_items()
-	. = ..()
-	. += "Intent: [a_intent]"
-	. += "Move Mode: [m_intent]"
+
+/mob/living/carbon/human/get_stat_tabs()
+	var/list/tabs = ..()
+	if(istype(wear_suit, /obj/item/clothing/suit/space/space_ninja))
+		tabs.Insert(1, "SpiderOS")
+	return tabs
+
+//Ninja Code
+/mob/living/carbon/human/get_stat(selected_tab)
+	if(selected_tab == "SpiderOS")
+		var/list/tab_data = list()
+		var/obj/item/clothing/suit/space/space_ninja/SN = wear_suit
+		if(!SN)
+			return
+		tab_data["SpiderOS Status"] = GENERATE_STAT_TEXT("[SN.s_initialized ? "Initialized" : "Disabled"]")
+		tab_data["Current Time"] = GENERATE_STAT_TEXT("[station_time_timestamp()]")
+		tab_data["divider_spideros"] = GENERATE_STAT_DIVIDER
+		if(SN.s_initialized)
+			//Suit gear
+			tab_data["Energy Charge"] = GENERATE_STAT_TEXT("[round(SN.cell.charge/100)]%")
+			tab_data["Smoke Bombs"] = GENERATE_STAT_TEXT("[SN.s_bombs]")
+			//Ninja status
+			tab_data["Fingerprints"] = GENERATE_STAT_TEXT("[rustg_hash_string(RUSTG_HASH_MD5, dna.uni_identity)]")
+			tab_data["Unique Identity"] = GENERATE_STAT_TEXT("[dna.unique_enzymes]")
+			tab_data["Overall Status"] = GENERATE_STAT_TEXT("[stat > 1 ? "dead" : "[health]% healthy"]")
+			tab_data["Nutrition Status"] = GENERATE_STAT_TEXT("[nutrition]")
+			tab_data["Oxygen Loss"] = GENERATE_STAT_TEXT("[getOxyLoss()]")
+			tab_data["Toxin Levels"] = GENERATE_STAT_TEXT("[getToxLoss()]")
+			tab_data["Burn Severity"] = GENERATE_STAT_TEXT("[getFireLoss()]")
+			tab_data["Brute Trauma"] = GENERATE_STAT_TEXT("[getBruteLoss()]")
+			tab_data["Radiation Levels"] = GENERATE_STAT_TEXT("[radiation] rad")
+			tab_data["Body Temperature"] = GENERATE_STAT_TEXT("[bodytemperature-T0C] degrees C ([bodytemperature*1.8-459.67] degrees F)")
+
+			//Diseases
+			if(diseases.len)
+				tab_data["DivSpiderOs2"] = GENERATE_STAT_DIVIDER
+				tab_data["Viruses"] = GENERATE_STAT_TEXT("")
+				for(var/thing in diseases)
+					var/datum/disease/D = thing
+					tab_data["* [D.name]"] = GENERATE_STAT_TEXT("Type: [D.spread_text], Stage: [D.stage]/[D.max_stages], Possible Cure: [D.cure_text]")
+		return tab_data
+	return ..()
+
+/mob/living/carbon/human/get_stat_tab_status()
+	var/list/tab_data = ..()
+
+	tab_data["Intent"] = GENERATE_STAT_TEXT("[a_intent]")
+	tab_data["Move Mode"] = GENERATE_STAT_TEXT("[m_intent]")
 	if (internal)
 		if (!internal.air_contents)
 			qdel(internal)
 		else
-			. += ""
-			. += "Internal Atmosphere Info: [internal.name]"
-			. += "Tank Pressure: [internal.air_contents.return_pressure()]"
-			. += "Distribution Pressure: [internal.distribute_pressure]"
-	/*WS begin - no cells in suits
-	if(istype(wear_suit, /obj/item/clothing/suit/space))
-		var/obj/item/clothing/suit/space/S = wear_suit
-		. += "Thermal Regulator: [S.thermal_on ? "on" : "off"]"
-		. += "Cell Charge: [S.cell ? "[round(S.cell.percent(), 0.1)]%" : "!invalid!"]"
-	*/
-	var/mob/living/simple_animal/borer/B = has_brain_worms()		//WS Begin - Borers
-	if(B && B.controlling)
-		. += "Borer Body Health: [B.health]"
-		. += "Chemicals: [B.chemicals]"								//WS End
-
+			tab_data["Internal Atmosphere Info"] = GENERATE_STAT_TEXT("[internal.name]")
+			tab_data["Tank Pressure"] = GENERATE_STAT_TEXT("[internal.air_contents.return_pressure()]")
+			tab_data["Distribution Pressure"] = GENERATE_STAT_TEXT("[internal.distribute_pressure]")
+	var/mob/living/simple_animal/borer/borer = has_brain_worms()
+	if(borer && borer.controlling)
+		tab_data["Borer Health:"] = GENERATE_STAT_TEXT("[borer.health]")
+		tab_date["Borer Chemicals:"] = GENERATE_STAT_TEXT("[borer.chemicals]")
 	if(mind)
 		var/datum/antagonist/changeling/changeling = mind.has_antag_datum(/datum/antagonist/changeling)
 		if(changeling)
-			. += ""
-			. += "Chemical Storage: [changeling.chem_charges]/[changeling.chem_storage]"
-			. += "Absorbed DNA: [changeling.absorbedcount]"
-
-		//WS Begin - Display Ethereal Charge
+			tab_data["Chemical Storage"] = GENERATE_STAT_TEXT("[changeling.chem_charges]/[changeling.chem_storage]")
+			tab_data["Absorbed DNA"] = GENERATE_STAT_TEXT("[changeling.absorbedcount]")
+		var/datum/antagonist/hivemind/hivemind = mind.has_antag_datum(/datum/antagonist/hivemind)
 		if(istype(src))
 			var/datum/species/ethereal/eth_species = src.dna?.species
 			if(istype(eth_species))
 				var/obj/item/organ/stomach/ethereal/stomach = src.getorganslot(ORGAN_SLOT_STOMACH)
-				if(istype(stomach))
-					. += "Crystal Charge: [round((stomach.crystal_charge / ETHEREAL_CHARGE_SCALING_MULTIPLIER), 0.1)]%"
-		//WS End
-
-	//NINJACODE
-	if(istype(wear_suit, /obj/item/clothing/suit/space/space_ninja)) //Only display if actually a ninja.
-		var/obj/item/clothing/suit/space/space_ninja/SN = wear_suit
-		. += "SpiderOS Status: [SN.s_initialized ? "Initialized" : "Disabled"]"
-		. += "Current Time: [station_time_timestamp()]"
-		if(SN.s_initialized)
-			//Suit gear
-			. += "Energy Charge: [round(SN.cell.charge/100)]%"
-			. += "Smoke Bombs: \Roman [SN.s_bombs]"
-			//Ninja status
-			. += "Fingerprints: [md5(dna.uni_identity)]"
-			. += "Unique Identity: [dna.unique_enzymes]"
-			. += "Overall Status: [stat > 1 ? "dead" : "[health]% healthy"]"
-			. += "Nutrition Status: [nutrition]"
-			. += "Oxygen Loss: [getOxyLoss()]"
-			. += "Toxin Levels: [getToxLoss()]"
-			. += "Burn Severity: [getFireLoss()]"
-			. += "Brute Trauma: [getBruteLoss()]"
-			. += "Radiation Levels: [radiation] rad"
-			. += "Body Temperature: [bodytemperature-T0C] degrees C ([bodytemperature*1.8-459.67] degrees F)"
-
-			//Diseases
-			if(length(diseases))
-				. += "Viruses:"
-				for(var/thing in diseases)
-					var/datum/disease/D = thing
-					. += "* [D.name], Type: [D.spread_text], Stage: [D.stage]/[D.max_stages], Possible Cure: [D.cure_text]"
+					if(istype(stomach))
+					tab_data["Crystal Charge:"] = GENERATE_STAT_TEXT("[round((stomach.crystal_charge / ETHEREAL_CHARGE_SCALING_MULTIPLIER), 0.1)]%")
+	return tab_data
 
 
 /mob/living/carbon/human/show_inv(mob/user)

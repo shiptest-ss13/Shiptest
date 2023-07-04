@@ -95,6 +95,7 @@ SUBSYSTEM_DEF(air)
 	msg += "DF:[max_deferred_airs]|"
 	msg += "GA:[get_amt_gas_mixes()]|"
 	msg += "MG:[get_max_gas_mixes()]"
+	..(msg)
 	return ..()
 
 /datum/controller/subsystem/air/Initialize(timeofday)

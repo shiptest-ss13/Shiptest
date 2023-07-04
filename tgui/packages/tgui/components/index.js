@@ -33,6 +33,7 @@ export { Modal } from './Modal';
 export { NoticeBox } from './NoticeBox';
 export { NumberInput } from './NumberInput';
 export { ProgressBar } from './ProgressBar';
+export { ScrollableBox } from './ScrollableBox';
 export { Popper } from './Popper';
 export { RestrictedInput } from './RestrictedInput';
 export { RoundGauge } from './RoundGauge';

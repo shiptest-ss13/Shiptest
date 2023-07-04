@@ -28,8 +28,8 @@
 	melee_damage_upper = 3
 
 /mob/living/carbon/monkey/Initialize(mapload, cubespawned=FALSE, mob/spawner)
-	add_verb(src, /mob/living/proc/mob_sleep)
-	add_verb(src, /mob/living/proc/toggle_resting)
+	add_verb(/mob/living/proc/mob_sleep)
+	add_verb(/mob/living/proc/lay_down)
 
 	if(unique_name) //used to exclude pun pun
 		gender = pick(MALE, FEMALE)
@@ -80,7 +80,6 @@
 	if(amount)
 		add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/monkey_reagent_speedmod, TRUE, amount)
 
-
 /mob/living/carbon/monkey/updatehealth()
 	. = ..()
 	var/slow = 0
@@ -97,24 +96,22 @@
 		slow += ((283.222 - bodytemperature) / 10) * 1.75
 		add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/monkey_temperature_speedmod, TRUE, slow)
 
-/mob/living/carbon/monkey/get_status_tab_items()
-	. = ..()
-	. += "Intent: [a_intent]"
-	. += "Move Mode: [m_intent]"
+/mob/living/carbon/monkey/get_stat_tab_status()
+	var/list/tab_data = ..()
+	tab_data["Intent"] = GENERATE_STAT_TEXT("[a_intent]")
+	tab_data["Move Mode"] = GENERATE_STAT_TEXT("[m_intent]")
 	if(client && mind)
 		var/datum/antagonist/changeling/changeling = mind.has_antag_datum(/datum/antagonist/changeling)
 		if(changeling)
-			. += ""
-			. += "Chemical Storage: [changeling.chem_charges]/[changeling.chem_storage]"
-			. += "Absorbed DNA: [changeling.absorbedcount]"
-
+			tab_data["Chemical Storage"] = GENERATE_STAT_TEXT("[changeling.chem_charges]/[changeling.chem_storage]")
+			tab_data["Absorbed DNA"] = GENERATE_STAT_TEXT("[changeling.absorbedcount]")
+	return tab_data
 
 /mob/living/carbon/monkey/verb/removeinternal()
 	set name = "Remove Internals"
 	set category = "IC"
 	internal = null
 	return
-
 
 /mob/living/carbon/monkey/IsAdvancedToolUser()//Unless its monkey mode monkeys can't use advanced tools
 	if(mind && is_monkey(mind))

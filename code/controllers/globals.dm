@@ -25,9 +25,18 @@ GLOBAL_REAL(GLOB, /datum/controller/global_vars)
 	SHOULD_CALL_PARENT(0)
 	return QDEL_HINT_IWILLGC
 
-/datum/controller/global_vars/stat_entry(msg)
-	msg = "Edit"
-	return msg
+/datum/controller/global_vars/stat_entry()
+	var/list/tab_data = list()
+	tab_data["Globals"] = list(
+		text="Edit",
+		action = "statClickDebug",
+		params=list(
+			"targetRef" = REF(src),
+			"class"="controller",
+		),
+		type=STAT_BUTTON,
+	)
+	return tab_data
 
 /datum/controller/global_vars/vv_edit_var(var_name, var_value)
 	if(gvars_datum_protected_varlist[var_name])

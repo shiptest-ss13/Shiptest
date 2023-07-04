@@ -173,7 +173,7 @@
 	to_chat(world, "<BR><BR><BR><span class='big bold'>The round has ended.</span>")
 	SSredbot.send_discord_message("ooc", "**The round has ended.**")
 	log_game("The round has ended.")
-
+	SSstat.send_global_alert("Round Over", "The round has ended, the game will restart soon.")
 	for(var/I in round_end_events)
 		var/datum/callback/cb = I
 		cb.InvokeAsync()

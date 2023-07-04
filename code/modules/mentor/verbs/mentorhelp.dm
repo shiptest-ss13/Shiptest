@@ -23,8 +23,9 @@
 	to_chat(src, "<span class='mentornotice'>PM to-<b>Mentors</b>: [msg]</span>")
 
 	//spam prevention, 60 second delay
-	remove_verb(src, /client/verb/mentorhelp)
-	addtimer(CALLBACK(GLOBAL_PROC, .proc/add_verb, src, /client/verb/mentorhelp), 1 MINUTES, TIMER_STOPPABLE)
+	remove_verb(/client/verb/mentorhelp)
+	spawn(300)
+		add_verb(/client/verb/mentorhelp)	
 
 /proc/get_mentor_counts()
 	. = list("total" = 0, "afk" = 0, "present" = 0)

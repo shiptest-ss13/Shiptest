@@ -9,10 +9,9 @@ SUBSYSTEM_DEF(npcpool)
 	var/failed_fires
 	var/has_screamed
 
-/datum/controller/subsystem/npcpool/stat_entry(msg)
+/datum/controller/subsystem/npcpool/stat_entry()
 	var/list/activelist = GLOB.simple_animals[AI_ON]
-	msg = "NPCS:[length(activelist)][has_screamed ? "| !!NULL SAFETY TRIPPED!!" : null]"
-	return ..()
+	. = ..("NPCS:[activelist.len]")
 
 /datum/controller/subsystem/npcpool/fire(resumed = FALSE)
 	++failed_fires

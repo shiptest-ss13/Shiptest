@@ -17,7 +17,7 @@
 
 /atom/movable/lighting_object/Initialize(mapload)
 	. = ..()
-	verbs.Cut()
+	remove_verb(verbs)
 	// There used to be code here to set the color to LIGHTING_BASE_MATRIX, but it was redundant
 	// and it ended up increasing init times slightly. It didn't matter one bit, since our starting
 	// icon_state is "transparent", which is pure white even with null color.

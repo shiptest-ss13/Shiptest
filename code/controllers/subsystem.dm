@@ -226,13 +226,30 @@
 	log_world(msg)
 	return time
 
+
+//hook for printing stats to the "MC" statuspanel for admins to see performance and related stats etc.
 /datum/controller/subsystem/stat_entry(msg)
-	if(can_fire && !(SS_NO_FIRE & flags) && init_stage <= Master.init_stage_completed)
-		var/f_space = "\u2007" //Figure space for visual alignment
-		msg = "[add_leading(round(cost,1),4,f_space)]ms|[add_leading(round(tick_usage,1),3,f_space)]%([add_leading(round(tick_overrun,1),3,f_space)]%)|[round(ticks,0.1)]\t[msg]"
+	var/list/tab_data = list()
+
+	if(can_fire && !(SS_NO_FIRE & flags))
+		msg = "[round(cost,1)]ms|[round(tick_usage,1)]%([round(tick_overrun,1)]%)|[round(ticks,0.1)]\t[msg]"
 	else
 		msg = "OFFLINE\t[msg]"
-	return msg
+
+	var/title = name
+	if (can_fire)
+		title = "\[[state_letter()]][title]"
+
+	tab_data["[title]"] = list(
+		text="[msg]",
+		action = "statClickDebug",
+		params=list(
+			"targetRef" = REF(src),
+			"class"="subsystem",
+		),
+		type=STAT_BUTTON,
+	)
+	return tab_data
 
 /datum/controller/subsystem/proc/state_letter()
 	switch (state)
