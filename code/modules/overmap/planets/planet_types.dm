@@ -14,7 +14,7 @@
 	name = "lava planet"
 	desc = "A very weak energy signal originating from a planet with lots of seismic and volcanic activity."
 	planet = DYNAMIC_WORLD_LAVA
-	icon_state = "globe"
+	icon_state = "globe_2"
 	color = COLOR_ORANGE
 	mapgen = /datum/map_generator/planet_generator/lava
 	default_baseturf = /turf/open/floor/plating/asteroid/basalt/lava
@@ -25,7 +25,7 @@
 	name = "frozen planet"
 	desc = "A very weak energy signal originating from a planet with traces of water and extremely low temperatures."
 	planet = DYNAMIC_WORLD_ICE
-	icon_state = "globe"
+	icon_state = "globe_2"
 	color = COLOR_BLUE_LIGHT
 	mapgen = /datum/map_generator/planet_generator/snow
 	default_baseturf = /turf/open/floor/plating/asteroid/snow/icemoon
@@ -36,7 +36,7 @@
 	name = "jungle planet"
 	desc = "A very weak energy signal originating from a planet teeming with life."
 	planet = DYNAMIC_WORLD_JUNGLE
-	icon_state = "globe"
+	icon_state = "globe_2"
 	color = COLOR_LIME
 	mapgen = /datum/map_generator/planet_generator/jungle
 	default_baseturf = /turf/open/floor/plating/dirt/jungle
@@ -47,7 +47,7 @@
 	name = "rock planet"
 	desc = "A very weak energy signal originating from a iron rich and rocky planet."
 	planet = DYNAMIC_WORLD_ROCKPLANET
-	icon_state = "globe"
+	icon_state = "globe_2"
 	color = "#bd1313"
 	mapgen = /datum/map_generator/planet_generator/rock
 	default_baseturf = /turf/open/floor/plating/asteroid
@@ -58,7 +58,7 @@
 	name = "sand planet"
 	desc = "A very weak energy signal originating from a planet with many traces of silica."
 	planet = DYNAMIC_WORLD_SAND
-	icon_state = "globe"
+	icon_state = "globe_2"
 	color = COLOR_GRAY
 	mapgen = /datum/map_generator/planet_generator/sand
 	default_baseturf = /turf/open/floor/plating/asteroid/whitesands
@@ -116,7 +116,7 @@
 	name = "waste disposal planet"
 	desc = "A very weak energy signal originating from a planet marked as waste disposal."
 	planet = DYNAMIC_WORLD_WASTEPLANET
-	icon_state = "globe"
+	icon_state = "globe_2"
 	color = "#a9883e"
 	mapgen = /datum/map_generator/planet_generator/waste
 	default_baseturf = /turf/open/floor/plating/asteroid/wasteplanet

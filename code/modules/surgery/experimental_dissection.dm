@@ -54,10 +54,10 @@
 		var/mob/living/carbon/human/H = target
 		if(H?.dna?.species)
 			if(isabductor(H))
-				cost = (BASE_HUMAN_REWARD*3)
+				cost = (BASE_HUMAN_REWARD*2)
 			else if(isgolem(H) || iszombie(H) || isshadow(H) || isandroid(H))
-				cost = (BASE_HUMAN_REWARD*3)
-			else if(isjellyperson(H) || ispodperson(H) || issquidperson(H) || isalien(H))
+				cost = (BASE_HUMAN_REWARD*2.5)
+			else if(isjellyperson(H) || ispodperson(H) || isalien(H))
 				cost = (BASE_HUMAN_REWARD*3)
 			else if(isskeleton(H))
 				cost = (BASE_HUMAN_REWARD * 0.5)

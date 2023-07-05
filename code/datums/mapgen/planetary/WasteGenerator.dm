@@ -133,6 +133,7 @@
 		/obj/effect/radiation/waste/intense = 10,
 		/obj/structure/geyser/random = 1,
 		/obj/effect/survey_point = 10
+		/obj/effect/spawner/lootdrop/anomaly/waste = 1
 	)
 
 	mob_spawn_list = list(
@@ -316,6 +317,7 @@
 		/obj/effect/radiation/waste/intense = 10,
 		/obj/structure/geyser/random = 1,
 		/obj/effect/survey_point = 10
+		/obj/effect/spawner/lootdrop/anomaly/waste/cave = 1
 	)
 	mob_spawn_list = list(
 		/mob/living/simple_animal/hostile/hivebot/strong/rockplanet = 70,
@@ -326,6 +328,7 @@
 		/mob/living/simple_animal/hostile/abandoned_minebot = 15,
 		/mob/living/simple_animal/bot/floorbot/rockplanet = 15,
 	)
+
 	flora_spawn_chance = 30
 	feature_spawn_chance = 4
 	mob_spawn_chance = 5

@@ -88,6 +88,8 @@
 		/obj/structure/geyser/random = 1,
 		/obj/structure/elite_tumor = 2,
 		/obj/effect/survey_point = 4
+		/obj/effect/spawner/lootdrop/anomaly/rock = 1,
+		/obj/effect/spawner/lootdrop/anomaly/big = 0.1 //get out of here stalker
 	)
 
 	flora_spawn_chance = 5
@@ -109,7 +111,9 @@
 	)
 
 /datum/biome/rock/icecap
-	open_turf_types = list(/turf/open/floor/plating/asteroid/snow/lit/rockplanet = 1, /turf/open/floor/plating/asteroid/snow/lit/rockplanet = 5)
+	open_turf_types = list(
+		/turf/open/floor/plating/asteroid/snow/lit/rockplanet = 1,
+		/turf/open/floor/plating/asteroid/snow/lit/rockplanet = 5)
 	flora_spawn_chance = 1
 	mob_spawn_chance = 2
 
@@ -142,12 +146,14 @@
 		/obj/structure/flora/ash/fern = 2,
 		/obj/structure/flora/ash/puce = 1,
 	)
-	feature_spawn_chance = 0.3
+	feature_spawn_chance = 0.5
 	feature_spawn_list = list(
 		/obj/structure/geyser/random = 1,
 		/obj/structure/elite_tumor = 2,
 		/obj/structure/spawner/ice_moon/rockplanet = 4,
 		/obj/effect/survey_point = 4
+		/obj/structure/spawner/ice_moon/rockplanet = 4,
+		/obj/effect/spawner/lootdrop/anomaly/rock/cave = 1,
 	)
 	mob_spawn_chance = 6
 	mob_spawn_list = list(

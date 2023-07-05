@@ -171,14 +171,10 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/science/robotics)
-"cl" = (
-/obj/machinery/porta_turret/centcom_shuttle/ballistic{
-	dir = 5;
-	name = "ship turret";
-	on = 0
-	},
+"cj" = (
+/obj/machinery/porta_turret/ship/ballistic,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/science/robotics)
+/area/ship/engineering/atmospherics)
 "cF" = (
 /obj/structure/table/reinforced{
 	color = "#c1b6a5"
@@ -235,6 +231,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/science/robotics)
+"cJ" = (
+/obj/machinery/porta_turret/ship/ballistic,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/security)
 "db" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/glass{
@@ -792,22 +792,6 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/science/robotics)
-"iM" = (
-/obj/machinery/porta_turret/centcom_shuttle/ballistic{
-	dir = 8;
-	name = "ship turret";
-	on = 0
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/engineering/atmospherics)
-"jl" = (
-/obj/machinery/porta_turret/centcom_shuttle/ballistic{
-	dir = 6;
-	name = "ship turret";
-	on = 0
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/security)
 "jp" = (
 /obj/effect/turf_decal/techfloor,
 /obj/effect/turf_decal/techfloor/hole,
@@ -827,27 +811,6 @@
 /obj/effect/turf_decal/industrial/loading,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
-/area/ship/cargo)
-"jK" = (
-/obj/effect/turf_decal/industrial/outline/yellow,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/cobweb,
-/obj/machinery/light_switch{
-	pixel_x = -9;
-	pixel_y = 21
-	},
-/obj/structure/closet/crate/science,
-/obj/item/storage/box/stockparts/t2{
-	pixel_x = -5;
-	pixel_y = 2
-	},
-/obj/effect/spawner/lootdrop/maintenance/three,
-/obj/item/clothing/glasses/science{
-	pixel_x = -2;
-	pixel_y = -6
-	},
-/obj/machinery/firealarm/directional/north,
-/turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "jR" = (
 /obj/structure/railing{
@@ -2981,6 +2944,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
+"Fw" = (
+/obj/machinery/porta_turret/ship/ballistic,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/engineering/electrical)
 "Fx" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
@@ -3796,6 +3763,10 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
+"OK" = (
+/obj/machinery/porta_turret/ship/ballistic,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/science/robotics)
 "OP" = (
 /obj/effect/turf_decal/techfloor/orange,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3907,6 +3878,27 @@
 "Qf" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/hallway/central)
+"Qg" = (
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/cobweb,
+/obj/machinery/light_switch{
+	pixel_x = -9;
+	pixel_y = 21
+	},
+/obj/structure/closet/crate/science,
+/obj/item/storage/box/stockparts/t2{
+	pixel_x = -5;
+	pixel_y = 2
+	},
+/obj/effect/spawner/lootdrop/maintenance/three,
+/obj/item/clothing/glasses/science{
+	pixel_x = -2;
+	pixel_y = -6
+	},
+/obj/machinery/firealarm/directional/north,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/cargo)
 "Qr" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/science/robotics)
@@ -4149,14 +4141,6 @@
 	},
 /obj/effect/decal/cleanable/robot_debris,
 /turf/open/floor/plasteel/tech,
-/area/ship/engineering/electrical)
-"SQ" = (
-/obj/machinery/porta_turret/centcom_shuttle/ballistic{
-	dir = 8;
-	name = "ship turret";
-	on = 0
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering/electrical)
 "Tu" = (
 /obj/effect/turf_decal/techfloor{
@@ -4837,11 +4821,11 @@ zQ
 zQ
 zQ
 zQ
-iM
+cj
 xV
 xV
 El
-jK
+Qg
 wK
 lc
 jp
@@ -4849,7 +4833,7 @@ MS
 El
 Xs
 Xs
-SQ
+Fw
 zQ
 zQ
 zQ
@@ -5409,7 +5393,7 @@ zQ
 (27,1,1) = {"
 zQ
 zQ
-cl
+OK
 Qr
 Qr
 qT
@@ -5427,7 +5411,7 @@ TU
 lX
 TU
 TU
-jl
+cJ
 zQ
 zQ
 "}

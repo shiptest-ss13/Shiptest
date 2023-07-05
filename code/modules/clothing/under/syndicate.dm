@@ -43,7 +43,7 @@
 	icon_state = "tactifool"
 	item_state = "bl_suit"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
-	supports_variations = DIGITIGRADE_VARIATION | KEPORI_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION | KEPORI_VARIATION
 
 /obj/item/clothing/under/syndicate/tacticool/skirt
 	name = "tacticool skirtleneck"
@@ -52,7 +52,7 @@
 	item_state = "bl_suit"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
 	can_adjust = FALSE
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION | KEPORI_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | KEPORI_VARIATION
 
 /obj/item/clothing/under/syndicate/sniper
 	name = "Tactical turtleneck suit"
@@ -249,7 +249,7 @@
 	name = "inteq artificer overalls"
 	desc = "A black set of overalls atop a standard issue turtleneck, for the IRMG's support division Artificers."
 	icon_state = "inteqeng"
-	supports_variations = KEPORI_VARIATION | DIGITIGRADE_VARIATION
+	supports_variations = KEPORI_VARIATION | VOX_VARIATION | DIGITIGRADE_VARIATION
 
 /obj/item/clothing/under/syndicate/inteq/skirt/artificer
 	name = "inteq artificer overall skirt"
@@ -261,7 +261,7 @@
 	name = "inteq corpsman turtleneck"
 	desc = "A sterile white turtleneck with tactical cargo pants, it is emblazoned with the lettering 'IRMG' on the shoulder. For the IRMG's support division Corpsmen."
 	icon_state = "inteqmed"
-	supports_variations = KEPORI_VARIATION | DIGITIGRADE_VARIATION
+	supports_variations = KEPORI_VARIATION | VOX_VARIATION | DIGITIGRADE_VARIATION
 
 /obj/item/clothing/under/syndicate/inteq/skirt/corpsman
 	name = "inteq corpsman skirtleneck"
@@ -275,11 +275,9 @@
 	icon_state = "inteqmaid"
 	item_state = "inteqmaid"
 	can_adjust = FALSE
-	supports_variations = KEPORI_VARIATION | DIGITIGRADE_VARIATION_NO_NEW_ICON
+	supports_variations = KEPORI_VARIATION | VOX_VARIATION | DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/under/syndicate/inteq/skirt/maid/Initialize()
 	. = ..()
 	var/obj/item/clothing/accessory/maidapron/inteq/A = new (src)
 	attach_accessory(A)
-
-
