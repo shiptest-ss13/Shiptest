@@ -34,17 +34,6 @@
 		qdel(src)
 	return TRUE
 
-/obj/structure/salvageable/default_unfasten_wrench(mob/living/user, obj/item/I, time = 20)
-	. = ..()
-	var/obj/frame = frame_type
-	if(. == SUCCESSFUL_UNFASTEN)
-		frame.anchored = anchored
-
-/obj/structure/salvageable/wrench_act(mob/living/user, obj/item/I)
-	..()
-	default_unfasten_wrench(user, I)
-	return TRUE
-
 
 //Types themself, use them, but not the parent object
 
