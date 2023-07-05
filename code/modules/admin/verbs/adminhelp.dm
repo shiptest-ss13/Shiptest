@@ -216,6 +216,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	if(is_bwoink)
 		add_interaction("<font color='blue'>[key_name_admin(usr)] PM'd [linked_reply_name()]</font>")
 		message_admins("<font color='blue'>Ticket [ticket_href("#[id]")] created</font>")
+		claimed_by = usr.key
 	else
 		message_no_recipient(msg)
 
@@ -231,6 +232,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 
 /datum/admin_help/Destroy()
 	remove_active()
+	QDEL_NULL(statclick)
 	GLOB.ahelp_tickets.closed_tickets -= src
 	GLOB.ahelp_tickets.resolved_tickets -= src
 	return ..()
