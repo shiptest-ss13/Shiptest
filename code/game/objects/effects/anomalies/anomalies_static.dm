@@ -32,7 +32,7 @@
 	for(var/mob/living/carbon/looking in range(effectrange, src))
 		playsound(src, 'sound/effects/walkietalkie.ogg', 100)
 		if (!HAS_TRAIT(looking, TRAIT_MINDSHIELD) && looking.stat != DEAD || !looking.research_scanner && looking.stat != DEAD)
-			looking.adjustOrganLoss(ORGAN_SLOT_BRAIN, 4, 200)
+			looking.adjustOrganLoss(ORGAN_SLOT_BRAIN, 10, 200)
 			playsound(src, 'sound/effects/stall.ogg', 100)
 			if(looking.getOrganLoss(ORGAN_SLOT_BRAIN) >= 150 && looking.stat != DEAD)
 				if(prob(20))

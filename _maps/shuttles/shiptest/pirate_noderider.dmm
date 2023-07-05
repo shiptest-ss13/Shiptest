@@ -536,11 +536,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/obj/machinery/porta_turret/centcom_shuttle{
-	dir = 1;
-	pixel_y = -32;
-	density = 0
-	},
+/obj/machinery/porta_turret/ship,
 /turf/open/floor/engine/hull,
 /area/ship/bridge)
 "hK" = (
@@ -789,10 +785,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/porta_turret/centcom_shuttle{
-	pixel_y = 32;
-	density = 0
-	},
+/obj/machinery/porta_turret/ship,
 /turf/open/floor/engine/hull,
 /area/ship/bridge)
 "mf" = (
@@ -866,12 +859,6 @@
 	dir = 1
 	},
 /area/ship/engineering)
-"mS" = (
-/obj/machinery/porta_turret/centcom_shuttle{
-	dir = 1
-	},
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
 "mT" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1331,10 +1318,7 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/obj/machinery/porta_turret/centcom_shuttle{
-	pixel_y = 32;
-	density = 0
-	},
+/obj/machinery/porta_turret/ship,
 /turf/open/floor/engine/hull,
 /area/ship/bridge)
 "tU" = (
@@ -1716,17 +1700,6 @@
 "Am" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew)
-"An" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/porta_turret/centcom_shuttle{
-	dir = 1;
-	pixel_y = -32;
-	density = 0
-	},
-/turf/open/floor/engine/hull,
-/area/ship/bridge)
 "Av" = (
 /obj/structure/cable{
 	icon_state = "6-8"
@@ -2232,10 +2205,7 @@
 /area/ship/cargo)
 "Hj" = (
 /obj/effect/turf_decal/spline/fancy/opaque/black,
-/obj/machinery/porta_turret/centcom_shuttle{
-	pixel_y = 32;
-	density = 0
-	},
+/obj/machinery/porta_turret/ship,
 /turf/open/floor/plating/airless,
 /area/ship/bridge)
 "Hx" = (
@@ -2449,12 +2419,6 @@
 /obj/structure/reagent_dispensers,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
-"KI" = (
-/obj/machinery/porta_turret/centcom_shuttle{
-	dir = 4
-	},
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
 "KM" = (
 /obj/structure/cable{
 	icon_state = "4-10"
@@ -2952,11 +2916,7 @@
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 1
 	},
-/obj/machinery/porta_turret/centcom_shuttle{
-	dir = 1;
-	pixel_y = -32;
-	density = 0
-	},
+/obj/machinery/porta_turret/ship,
 /turf/open/floor/plating/airless,
 /area/ship/bridge)
 "UY" = (
@@ -2989,7 +2949,7 @@
 /turf/open/floor/plating/airless,
 /area/ship/external)
 "VC" = (
-/obj/machinery/porta_turret/centcom_shuttle,
+/obj/machinery/porta_turret/ship,
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
 "VF" = (
@@ -3585,7 +3545,7 @@ by
 by
 by
 by
-An
+lU
 wq
 ym
 MU
@@ -3989,7 +3949,7 @@ by
 by
 by
 ef
-mS
+VC
 Kc
 Jp
 EH
@@ -4109,13 +4069,13 @@ qc
 Th
 Kc
 by
-KI
+VC
 by
 oJ
 Ne
 oJ
 by
-KI
+VC
 by
 pm
 bl
@@ -4199,7 +4159,7 @@ by
 by
 by
 by
-KI
+VC
 by
 by
 by

@@ -35,6 +35,8 @@
 		/obj/item/wormhole_jaunter = 3,
 		/obj/item/kinetic_crusher = 1,
 		/obj/item/gun/energy/kinetic_accelerator = 3,
+		/obj/item/mining_scanner = 5,
+		/obj/item/t_scanner/adv_mining_scanner = 2,
 		/obj/item/resonator = 3,
 		/obj/item/extraction_pack = 3,
 		/obj/item/lazarus_injector = 1,
