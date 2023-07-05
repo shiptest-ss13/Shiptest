@@ -27,11 +27,6 @@
 	//If you have the use_age_restriction_for_jobs config option enabled and the database set up, this option will add a requirement for players to be at least minimal_player_age days old. (meaning they first signed in at least that many days before.)
 	var/minimal_player_age = 0
 
-	var/exp_requirements = 0
-
-	var/exp_type = ""
-	var/exp_type_department = ""
-
 	/// A link to the relevant wiki related to the job. Ex: "Space_law" would link to wiki.blah/Space_law
 	var/wiki_page = ""
 
