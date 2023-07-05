@@ -941,7 +941,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "fJ" = (
-/obj/machinery/porta_turret/centcom_shuttle{
+/obj/machinery/porta_turret/ship{
 	dir = 9
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -1677,9 +1677,7 @@
 /turf/open/floor/wood,
 /area/ship/crew)
 "kn" = (
-/obj/machinery/porta_turret/centcom_shuttle{
-	dir = 10
-	},
+/obj/machinery/porta_turret/ship,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/bridge)
 "ko" = (
@@ -3379,6 +3377,12 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/fore)
+"sR" = (
+/obj/machinery/porta_turret/ship{
+	dir = 8
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/bridge)
 "sV" = (
 /obj/effect/turf_decal/spline/fancy/opaque/black,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -6267,6 +6271,9 @@
 "Ih" = (
 /obj/structure/table/reinforced,
 /obj/item/radio/intercom/directional/south,
+/obj/machinery/turretid{
+	pixel_y = 3
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "In" = (
@@ -8021,7 +8028,7 @@
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/dorm)
 "Sc" = (
-/obj/machinery/porta_turret/centcom_shuttle{
+/obj/machinery/porta_turret/ship{
 	dir = 6
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -8920,7 +8927,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/science)
 "WV" = (
-/obj/machinery/porta_turret/centcom_shuttle{
+/obj/machinery/porta_turret/ship{
 	dir = 5
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -9423,6 +9430,12 @@
 /obj/machinery/firealarm/directional/east,
 /turf/open/floor/wood,
 /area/ship/hallway/fore)
+"Zp" = (
+/obj/machinery/porta_turret/ship{
+	dir = 10
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/bridge)
 "Zt" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -9463,7 +9476,7 @@ IZ
 IZ
 We
 We
-fJ
+sR
 We
 We
 Hm
@@ -9479,7 +9492,7 @@ We
 cy
 We
 We
-kn
+sR
 We
 We
 IZ
@@ -9990,7 +10003,7 @@ We
 Rk
 Rk
 Rk
-kn
+Zp
 We
 We
 We
@@ -10582,7 +10595,7 @@ rO
 OP
 OP
 OP
-Sc
+kn
 We
 "}
 (28,1,1) = {"
