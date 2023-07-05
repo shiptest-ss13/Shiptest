@@ -107,7 +107,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 					message_admins("Ticket #[AH.id] had a null statclick, this message will only be shown once.")
 					AH.error_screamed = TRUE
 
-			L[++L.len] = list("#[AH.id]. [AH.initiator_key_name]:", "[AH.statclick.update()]", REF(AH))
+			L[++L.len] = list("#[AH.id]. [AH.initiator_key_name] (Claimed by [AH.claimed_by || "nobody"]):", "[AH.statclick.update()]", REF(AH))
 		else
 			++num_disconnected
 
@@ -359,6 +359,19 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	log_admin_private(msg)
 	return TRUE
 
+/datum/admin_help/proc/unclaim(key_name = key_name_admin(usr))
+	if(state != AHELP_ACTIVE)
+		return
+	if(claimed_by != usr.key)
+		return
+	add_interaction(span_grey("Unclaimed by [key_name]."))
+	claimed_by = null
+	SSblackbox.record_feedback("tally", "ahelp_stats", 1, "unclaimed")
+	var/msg = "Ticket [ticket_href("#[id]")] unclaimed by [key_name]."
+	message_admins(msg)
+	SSblackbox.log_ahelp(id, "Unclaimed", "Unclaimed by [usr.key]", null, usr.ckey)
+	log_admin_private(msg)
+
 //Mark open ticket as closed/meme
 /datum/admin_help/proc/close(key_name = key_name_admin(usr), silent = FALSE)
 	if(state != AHELP_ACTIVE)
@@ -501,7 +514,10 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	if(!claim())
 		return
 	switch(action)
-		//claim is done by default, so no need to add a branch
+		if("claim")
+			if(user.key != claimed_by)
+				return
+			unclaim()
 		if("ticket")
 			ticket_panel()
 		if("retitle")
