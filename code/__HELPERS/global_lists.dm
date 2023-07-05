@@ -84,7 +84,9 @@
 	//Default Jobs
 	for(var/path in subtypesof(/datum/job))
 		var/datum/job/new_job = new path()
-		new_job.register()
+		GLOB.occupations += new_job
+		GLOB.name_occupations[new_job.name] = new_job
+		GLOB.type_occupations[path] = new_job
 
 	// Keybindings
 	init_keybindings()

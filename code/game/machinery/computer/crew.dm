@@ -66,22 +66,23 @@ GLOBAL_DATUM_INIT(crewmonitor, /datum/crewmonitor, new)
 		return data_by_z["[z]"]
 
 	var/list/results = list()
-	var/obj/item/clothing/under/U
-	var/obj/item/card/id/I
-	var/turf/pos
-	var/ijob = JOB_DISPLAY_ORDER_DEFAULT
-	var/name = "Unknown"
-	var/assignment
-	var/oxydam
-	var/toxdam
-	var/burndam
-	var/brutedam
-	var/area
-	var/pos_x
-	var/pos_y
-	var/life_status
 
 	for(var/i in GLOB.human_list)
+		var/obj/item/clothing/under/U
+		var/obj/item/card/id/I
+		var/turf/pos
+		var/ijob = JOB_DISPLAY_ORDER_DEFAULT
+		var/name = "Unknown"
+		var/assignment
+		var/oxydam
+		var/toxdam
+		var/burndam
+		var/brutedam
+		var/area
+		var/pos_x
+		var/pos_y
+		var/life_status
+
 		var/mob/living/carbon/human/H = i
 		var/nanite_sensors = FALSE
 		if(H in SSnanites.nanite_monitored_mobs)
