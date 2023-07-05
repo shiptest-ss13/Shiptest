@@ -181,8 +181,7 @@
 
 /turf/open/temperature_expose()
 	if(prob(IGNITE_TURF_CHANCE))
-		var/turf/my_turf = loc
-		my_turf.IgniteTurf(rand(IGNITE_TURF_LOW_POWER,IGNITE_TURF_HIGH_POWER))
+		IgniteTurf(rand(IGNITE_TURF_LOW_POWER,IGNITE_TURF_HIGH_POWER))
 	return ..()
 
 /turf/open/proc/freon_gas_act()
