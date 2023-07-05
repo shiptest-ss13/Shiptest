@@ -82,7 +82,7 @@
 				type = MESSAGE_TYPE_ADMINPM,
 				html = "<span class='danger'><b>Message not sent:</b></span><br>[msg]",
 				confidential = TRUE)
-			AH.AddInteraction("<b>No client found, message not sent:</b><br>[msg]")
+			AH.add_interaction("<b>No client found, message not sent:</b><br>[msg]")
 			return
 	cmd_admin_pm(whom, msg)
 
@@ -169,10 +169,10 @@
 						html = "<span class='danger'><b>Message not sent:</b></span><br>[msg]",
 						confidential = TRUE)
 					if(recipient_ticket)
-						recipient_ticket.AddInteraction("<b>No client found, message not sent:</b><br>[msg]")
+						recipient_ticket.add_interaction("<b>No client found, message not sent:</b><br>[msg]")
 					return
 				else
-					current_ticket.MessageNoRecipient(msg)
+					current_ticket.message_no_recipient(msg)
 					return
 
 
@@ -226,7 +226,7 @@
 				admin_ticket_log(src, interaction_message)
 				if(recipient != src)	//reeee
 					admin_ticket_log(recipient, interaction_message)
-				SSblackbox.LogAhelp(current_ticket.id, "Reply", msg, recipient.ckey, src.ckey)
+				SSblackbox.log_ahelp(current_ticket.id, "Reply", msg, recipient.ckey, src.ckey)
 			else		//recipient is an admin but sender is not
 				var/replymsg = "Reply PM from-<b>[key_name(src, recipient, 1)]</b>: <span class='linkify'>[keywordparsedmsg]</span>"
 				admin_ticket_log(src, "<font color='red'>[replymsg]</font>")
@@ -238,7 +238,7 @@
 					type = MESSAGE_TYPE_ADMINPM,
 					html = "<span class='notice'>PM to-<b>Admins</b>: <span class='linkify'>[msg]</span></span>",
 					confidential = TRUE)
-				SSblackbox.LogAhelp(current_ticket.id, "Reply", msg, recipient.ckey, src.ckey)
+				SSblackbox.log_ahelp(current_ticket.id, "Reply", msg, recipient.ckey, src.ckey)
 
 			//play the receiving admin the adminhelp sound (if they have them enabled)
 			if(recipient.prefs.toggles & SOUND_ADMINHELP)
@@ -250,7 +250,7 @@
 				if(!recipient.current_ticket)
 					new /datum/admin_help(msg, recipient, TRUE)
 					already_logged = TRUE
-					SSblackbox.LogAhelp(recipient.current_ticket.id, "Ticket Opened", msg, recipient.ckey, src.ckey)
+					SSblackbox.log_ahelp(recipient.current_ticket.id, "Ticket Opened", msg, recipient.ckey, src.ckey)
 
 				to_chat(recipient,
 					type = MESSAGE_TYPE_ADMINPM,
@@ -272,7 +272,7 @@
 				admin_ticket_log(recipient, "<font color='purple'>PM From [key_name_admin(src)]: [keywordparsedmsg]</font>")
 
 				if(!already_logged) //Reply to an existing ticket
-					SSblackbox.LogAhelp(recipient.current_ticket.id, "Reply", msg, recipient.ckey, src.ckey)
+					SSblackbox.log_ahelp(recipient.current_ticket.id, "Reply", msg, recipient.ckey, src.ckey)
 
 				//always play non-admin recipients the adminhelp sound
 				SEND_SOUND(recipient, sound('sound/effects/adminhelp.ogg'))
@@ -321,7 +321,7 @@
 	target = ckey(target)
 	var/client/C = GLOB.directory[target]
 
-	var/datum/admin_help/ticket = C ? C.current_ticket : GLOB.ahelp_tickets.CKey2ActiveTicket(target)
+	var/datum/admin_help/ticket = C ? C.current_ticket : GLOB.ahelp_tickets.ckey2active_ticket(target)
 	var/compliant_msg = trim(lowertext(msg))
 	var/tgs_tagged = "[sender](TGS/External)"
 	var/list/splits = splittext(compliant_msg, " ")
@@ -331,23 +331,23 @@
 		switch(splits[2])
 			if("close")
 				if(ticket)
-					ticket.Close(tgs_tagged)
+					ticket.close(tgs_tagged)
 					return "Ticket #[ticket.id] successfully closed"
 			if("resolve")
 				if(ticket)
-					ticket.Resolve(tgs_tagged)
+					ticket.resolve(tgs_tagged)
 					return "Ticket #[ticket.id] successfully resolved"
 			if("icissue")
 				if(ticket)
-					ticket.ICIssue(tgs_tagged)
+					ticket.ic_issue(tgs_tagged)
 					return "Ticket #[ticket.id] successfully marked as IC issue"
 			if("skill")
 				if(ticket)
-					ticket.SkillIssue(tgs_tagged)
+					ticket.skill_issue(tgs_tagged)
 					return "Ticket #[ticket.id] successfully marked as skill issue"
 			if("reject")
 				if(ticket)
-					ticket.Reject(tgs_tagged)
+					ticket.reject(tgs_tagged)
 					return "Ticket #[ticket.id] successfully rejected"
 			if("reopen")
 				if(ticket)
@@ -357,15 +357,15 @@
 					fail = text2num(splits[3])
 				if(isnull(fail))
 					return "Error: No/Invalid ticket id specified. [TGS_AHELP_USAGE]"
-				var/datum/admin_help/AH = GLOB.ahelp_tickets.TicketByID(fail)
+				var/datum/admin_help/AH = GLOB.ahelp_tickets.ticket_by_id(fail)
 				if(!AH)
 					return "Error: Ticket #[fail] not found"
 				if(AH.initiator_ckey != target)
 					return "Error: Ticket #[fail] belongs to [AH.initiator_ckey]"
-				AH.Reopen()
+				AH.reopen()
 				return "Ticket #[ticket.id] successfully reopened"
 			if("list")
-				var/list/tickets = GLOB.ahelp_tickets.TicketsByCKey(target)
+				var/list/tickets = GLOB.ahelp_tickets.tickets_by_ckey(target)
 				if(!tickets.len)
 					return "None"
 				. = ""
