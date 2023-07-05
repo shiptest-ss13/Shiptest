@@ -56,6 +56,9 @@
 /datum/overmap/event/meteor/Initialize(position, ...)
 	. = ..()
 	token.icon_state = "meteor[rand(1, 4)]"
+	token.color = "#a08444"
+	token.light_color = "#a08444"
+	token.update_icon()
 
 /datum/overmap/event/meteor/apply_effect()
 	for(var/datum/overmap/ship/controlled/Ship in get_nearby_overmap_objects())
@@ -101,6 +104,9 @@
 /datum/overmap/event/emp/Initialize(position, ...)
 	. = ..()
 	token.icon_state = "ion[rand(1, 4)]"
+	token.color = "#7cb4d4"
+	token.light_color = "#7cb4d4"
+	token.update_icon()
 
 /datum/overmap/event/emp/affect_ship(datum/overmap/ship/controlled/S)
 	var/area/source_area = pick(S.shuttle_port.shuttle_areas)
@@ -138,6 +144,9 @@
 /datum/overmap/event/electric/Initialize(position, ...)
 	. = ..()
 	token.icon_state = "electrical[rand(1, 4)]"
+	token.color = "#e8e85c"
+	token.light_color = "#e8e85c"
+	token.update_icon()
 
 /datum/overmap/event/electric/affect_ship(datum/overmap/ship/controlled/S)
 	var/datum/virtual_level/ship_vlevel = S.shuttle_port.get_virtual_level()
@@ -172,6 +181,9 @@
 /datum/overmap/event/nebula/Initialize(position, ...)
 	. = ..()
 	token.opacity = TRUE
+	token.color = "#c053f3"
+	token.light_color = "#c053f3"
+	token.update_icon()
 
 /datum/overmap/event/wormhole
 	name = "wormhole"
@@ -192,6 +204,9 @@
 		other_wormhole = _other_wormhole
 	if(!other_wormhole)
 		other_wormhole = new(null, src) //Create a new wormhole at a random location
+	token.color = adjust_colors()
+	token.light_color = adjust_colors()
+	token.update_icon()
 
 /datum/overmap/event/wormhole/affect_ship(datum/overmap/ship/controlled/S)
 	if(!other_wormhole)
@@ -212,6 +227,22 @@
 	S.overmap_move(other_wormhole.x, other_wormhole.y)
 	S.overmap_step(S.get_heading())
 
+	token.color = adjust_colors()
+	token.light_color = adjust_colors()
+
+/datum/overmap/event/wormhole/proc/adjust_colors()
+	switch(stability)
+		if(1)
+			return "#753214"
+		if(2)
+			return "#642f19"
+		if(3)
+			return"#654650"
+		if(4)
+			return"#5c5d8b"
+		if(5)
+			return"#6d80c7"
+
 //Carp "meteors" - throws carp at the ship
 
 /datum/overmap/event/meteor/carp
@@ -230,6 +261,10 @@
 /datum/overmap/event/meteor/carp/Initialize(position, ...)
 	. = ..()
 	token.icon_state = "carp[rand(1, 4)]"
+	token.color = "#7b1ca8"
+	token.light_color = "#7b1ca8"
+	token.update_icon()
+
 
 /datum/overmap/event/meteor/carp/minor
 	name = "carp migration (minor)"
@@ -250,6 +285,7 @@
 	)
 
 // dust clouds throw dust if you go Way Fast
+
 /datum/overmap/event/meteor/dust
 	name = "dust cloud"
 	desc = "A cloud of spaceborne dust. Relatively harmless, unless you're travelling at relative speeds"
@@ -265,6 +301,9 @@
 /datum/overmap/event/meteor/dust/Initialize(position, ...)
 	. = ..()
 	token.icon_state = "dust[rand(1, 4)]"
+	token.color = "#506469" //we should make these defines
+	token.light_color = "#506469"
+	token.update_icon()
 
 /datum/overmap/event/anomaly
 	name = "anomaly field"
@@ -277,6 +316,9 @@
 /datum/overmap/event/anomaly/Initialize(position, ...)
 	. = ..()
 	token.icon_state = "anomaly[rand(1, 4)]"
+	token.color = "#c46a24"
+	token.light_color = "#c46a24"
+	token.update_icon()
 
 /datum/overmap/event/anomaly/affect_ship(datum/overmap/ship/controlled/S)
 	var/area/source_area = pick(S.shuttle_port.shuttle_areas)
@@ -285,7 +327,6 @@
 	for(var/mob/M as anything in GLOB.player_list)
 		if(S.shuttle_port.is_in_shuttle_bounds(M))
 			M.playsound_local(S.shuttle_port, 'sound/effects/bamf.ogg', 100)
-
 
 GLOBAL_LIST_INIT(overmap_event_pick_list, list(
 	/datum/overmap/event/wormhole = 10,

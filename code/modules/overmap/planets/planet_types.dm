@@ -16,7 +16,7 @@
 	name = "lava planet"
 	desc = "A planet rife with seismic and volcanic activity. High temperatures and dangerous xenofauna render it dangerous for the unprepared."
 	planet = DYNAMIC_WORLD_LAVA
-	icon_state = "globe"
+	icon_state = "globe_2"
 	color = COLOR_ORANGE
 	mapgen = /datum/map_generator/planet_generator/lava
 	default_baseturf = /turf/open/floor/plating/asteroid/basalt/lava
@@ -29,7 +29,7 @@
 	name = "frozen planet"
 	desc = "A frozen planet covered in thick snow, thicker ice, and dangerous predators."
 	planet = DYNAMIC_WORLD_ICE
-	icon_state = "globe"
+	icon_state = "globe_2"
 	color = COLOR_BLUE_LIGHT
 	mapgen = /datum/map_generator/planet_generator/snow
 	default_baseturf = /turf/open/floor/plating/asteroid/snow/icemoon
@@ -41,7 +41,7 @@
 	name = "jungle planet"
 	desc = "A densely forested world, filled with vines, animals, and underbrush. Surprisingly habitable with a machete."
 	planet = DYNAMIC_WORLD_JUNGLE
-	icon_state = "globe"
+	icon_state = "globe_2"
 	color = COLOR_LIME
 	mapgen = /datum/map_generator/planet_generator/jungle
 	default_baseturf = /turf/open/floor/plating/dirt/jungle
@@ -53,7 +53,7 @@
 	name = "rock planet"
 	desc = "A rocky red world in the midst of terraforming. While some plants have taken hold, it is widely hostile to life."
 	planet = DYNAMIC_WORLD_ROCKPLANET
-	icon_state = "globe"
+	icon_state = "globe_2"
 	color = "#bd1313"
 	mapgen = /datum/map_generator/planet_generator/rock
 	default_baseturf = /turf/open/floor/plating/asteroid
@@ -65,7 +65,7 @@
 	name = "sand planet"
 	desc = "A formerly vibrant world, turned to sand by the ravages of the ICW. The survivors of it are long mad by now."
 	planet = DYNAMIC_WORLD_SAND
-	icon_state = "globe"
+	icon_state = "globe_2"
 	color = COLOR_GRAY
 	mapgen = /datum/map_generator/planet_generator/sand
 	default_baseturf = /turf/open/floor/plating/asteroid/whitesands
@@ -127,7 +127,7 @@
 	name = "waste disposal planet"
 	desc = "A highly oxygenated world, coated in garbage, radiation, and rust."
 	planet = DYNAMIC_WORLD_WASTEPLANET
-	icon_state = "globe"
+	icon_state = "globe_2"
 	color = "#a9883e"
 	mapgen = /datum/map_generator/planet_generator/waste
 	default_baseturf = /turf/open/floor/plating/asteroid/wasteplanet

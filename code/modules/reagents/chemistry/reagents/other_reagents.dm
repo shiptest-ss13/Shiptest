@@ -577,8 +577,8 @@
 						/datum/species/moth,
 						/datum/species/pod,
 						/datum/species/jelly,
-						/datum/species/abductor,
-						/datum/species/squid)
+						/datum/species/abductor
+	)
 	process_flags = ORGANIC | SYNTHETIC
 
 /datum/reagent/mutationtoxin/lizard
@@ -665,13 +665,6 @@
 	description = "An integrated positronic toxin."
 	color = "#5EFF3B" //RGB: 94, 255, 59
 	race = /datum/species/ipc
-	process_flags = ORGANIC | SYNTHETIC
-
-/datum/reagent/mutationtoxin/squid
-	name = "Squid Mutation Toxin"
-	description = "A salty toxin."
-	color = "#5EFF3B" //RGB: 94, 255, 59
-	race = /datum/species/squid
 	process_flags = ORGANIC | SYNTHETIC
 
 /datum/reagent/mutationtoxin/kepi //crying

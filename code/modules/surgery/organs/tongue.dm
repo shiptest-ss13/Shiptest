@@ -309,25 +309,6 @@
 			new_message += message[i]
 	speech_args[SPEECH_MESSAGE] = new_message
 
-/obj/item/organ/tongue/squid
-	name = "squid tongue"
-	desc = "A smaller tentacle used to synthesize speech."
-	icon_state = "tonguesquid"
-	var/static/list/languages_possible_squid = typecacheof(list(
-		/datum/language/rylethian,
-		/datum/language/common,
-		/datum/language/xenocommon,
-		/datum/language/aphasia,
-		/datum/language/narsie,
-		/datum/language/monkey,
-		/datum/language/shadowtongue,
-		/datum/language/ratvar
-		))
-
-/obj/item/organ/tongue/squid/Initialize(mapload)
-	. = ..()
-	languages_possible = languages_possible_squid
-
 /obj/item/organ/tongue/ethereal
 	name = "electric discharger"
 	desc = "A sophisticated ethereal organ, capable of synthesising speech via electrical discharge."

@@ -150,6 +150,7 @@
 
 	if(!preserve_level)
 		token.desc += " It may not still be here if you leave it."
+		token.update_icon()
 
 /datum/overmap/dynamic/proc/gen_planet_name()
 	. = ""
