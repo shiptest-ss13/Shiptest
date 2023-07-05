@@ -29,7 +29,7 @@
 		var/ahelp_ref = href_list["ahelp"]
 		var/datum/admin_help/AH = locate(ahelp_ref)
 		if(AH)
-			AH.Action(usr, href_list["ahelp_action"])
+			AH.action(usr, href_list["ahelp_action"])
 		else
 			to_chat(usr, "Ticket [ahelp_ref] has been deleted!", confidential = TRUE)
 
