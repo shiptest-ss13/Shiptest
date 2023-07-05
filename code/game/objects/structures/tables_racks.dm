@@ -579,7 +579,7 @@
 	name = "operating table"
 	desc = "Used for advanced medical procedures."
 	icon = 'icons/obj/surgery_table.dmi'
-	icon_state = "table1"
+	icon_state = "surgery_table"
 	buildstack = /obj/item/stack/sheet/mineral/silver
 	smoothing_flags = NONE
 	smoothing_groups = null
