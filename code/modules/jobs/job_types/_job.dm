@@ -33,6 +33,14 @@
 	if(new_name)
 		name = new_name
 		outfit = new_outfit
+		register()
+
+/datum/job/proc/register()
+	GLOB.occupations += src
+	if(name in GLOB.name_occupations)
+		return
+
+	GLOB.name_occupations[name] = src
 
 //Only override this proc
 //H is usually a human unless an /equip override transformed it
@@ -253,9 +261,9 @@
 	if(visualsOnly)
 		return
 
-	var/datum/job/J = SSjob.GetJobType(jobtype)
+	var/datum/job/J = GLOB.type_occupations[jobtype]
 	if(!J)
-		J = SSjob.GetJob(H.job)
+		J = GLOB.name_occupations[H.job]
 
 	var/obj/item/card/id/C = H.wear_id
 	if(istype(C))

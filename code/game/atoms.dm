@@ -1635,3 +1635,8 @@
 		else
 			//We inline a MAPTEXT() here, because there's no good way to statically add to a string like this
 			active_hud.screentip_text.maptext = "<span class='maptext' style='text-align: center; font-size: 32px; color: [user.client.prefs.screentip_color]'>[name]</span>"
+
+///Called whenever a player is spawned on the same turf as this atom.
+/atom/proc/join_player_here(mob/M)
+	// By default, just place the mob on the same turf as the marker or whatever.
+	M.forceMove(get_turf(src))

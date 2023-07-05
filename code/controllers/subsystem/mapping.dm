@@ -199,7 +199,7 @@ SUBSYSTEM_DEF(mapping)
 			var/value = job_slot_list[job]
 			var/slots
 			if(isnum(value))
-				job_slot = SSjob.GetJob(job)
+				job_slot = GLOB.name_occupations[job]
 				slots = value
 			else if(islist(value))
 				var/datum/outfit/job_outfit = text2path(value["outfit"])
@@ -207,6 +207,7 @@ SUBSYSTEM_DEF(mapping)
 					stack_trace("Invalid job outfit! [value["outfit"]] on [S.name]'s config! Defaulting to assistant clothing.")
 					job_outfit = /datum/outfit/job/assistant
 				job_slot = new /datum/job(job, job_outfit)
+				job_slot.display_order = length(S.job_slots)
 				job_slot.wiki_page = value["wiki_page"]
 				job_slot.officer = value["officer"]
 				slots = value["slots"]
