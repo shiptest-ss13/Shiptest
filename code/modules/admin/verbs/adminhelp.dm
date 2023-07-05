@@ -197,7 +197,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	id = ++ticket_counter
 	opened_at = world.time
 
-	name = "\improper [copytext_char(msg, 1, 100)]"
+	name = copytext_char(msg, 1, 100)
 
 	initiator = C
 	initiator_ckey = initiator.ckey
@@ -254,18 +254,19 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 		ref_src = "[REF(src)]"
 	. = ADMIN_FULLMONTY_NONAME(initiator.mob)
 	if(state == AHELP_ACTIVE)
-		. += closure_links(ref_src)
+		. += ticket_actions(ref_src)
 
 //private
-/datum/admin_help/proc/closure_links(ref_src)
+/datum/admin_help/proc/ticket_actions(ref_src)
 	if(!ref_src)
 		ref_src = "[REF(src)]"
-	. = " ([ticket_href("CLAIM", ref_src, "claim")])"
+	. = "<br />"
 	. += " ([ticket_href("REJT", ref_src, "reject")])"
-	. += " ([ticket_href("ICISS", ref_src, "icissue")])"
+	. += " ([ticket_href("IC", ref_src, "icissue")])"
 	. += " ([ticket_href("SKILL", ref_src, "skillissue")])"
 	. += " ([ticket_href("CLOSE", ref_src, "close")])"
 	. += " ([ticket_href("RSLVE", ref_src, "resolve")])"
+	. += " ([ticket_href("CLAIM", ref_src, "claim")])"
 
 //private
 /datum/admin_help/proc/linked_reply_name(ref_src)
@@ -352,7 +353,10 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 		return FALSE
 	if(claimed_by && claimed_by != usr.key && alert(usr, "Ticket #[id] already claimed by [claimed_by]. Override?", "Adminhelp", "Yes", "No") != "Yes")
 		return FALSE
+	if(claimed_by == usr.key)
+		return TRUE
 	add_interaction(span_grey("Claimed by [key_name]."))
+	to_chat(initiator, span_adminhelp("Your ticket has been claimed by an admin. Expect a response shortly."), confidential = TRUE)
 	claimed_by = usr.key
 	SSblackbox.record_feedback("tally", "ahelp_stats", 1, "claimed")
 	var/msg = "Ticket [ticket_href("#[id]")] claimed by [key_name]."
@@ -470,9 +474,9 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 
 //Show the ticket panel
 /datum/admin_help/proc/ticket_panel()
-	var/list/dat = list("<html><head><meta http-equiv='Content-Type' content='text/html; charset=UTF-8'><title>Ticket #[id]</title></head>")
+	var/list/dat = list()
 	var/ref_src = "[REF(src)]"
-	dat += "<h4>Admin Help Ticket #[id]: [linked_reply_name(ref_src)]</h4>"
+	dat += "<h4>Admin Help Ticket #[id]: [linked_reply_name(ref_src)] (Claimed by [claimed_by || "nobody"])</h4>"
 	dat += "<b>State: "
 	switch(state)
 		if(AHELP_ACTIVE)
@@ -491,19 +495,21 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 		dat += "<br>Closed at: [gameTimestamp(wtime = closed_at)] (Approx [DisplayTimeText(world.time - closed_at)] ago)"
 	dat += "<br><br>"
 	if(initiator)
-		dat += "<b>Actions:</b> [full_monty(ref_src)]<br>"
+		dat += "<b>Actions:</b><br>[full_monty(ref_src)]<br>"
 	else
-		dat += "<b>DISCONNECTED</b>[FOURSPACES][closure_links(ref_src)]<br>"
+		dat += "<b>DISCONNECTED</b>[ticket_actions(ref_src)]<br>"
 	dat += "<br><b>Log:</b><br><br>"
 	for(var/I in _interactions)
 		dat += "[I]<br>"
 
-	usr << browse(dat.Join(), "window=ahelp[id];size=620x480")
+	var/datum/browser/popup = new(usr, "ahelp[id]", "Ticket #[id]", 620, 480)
+	popup.set_content(dat.Join())
+	popup.open()
 
 /datum/admin_help/proc/retitle()
 	var/new_title = input(usr, "Enter a title for the ticket", "Rename Ticket", name) as text|null
 	if(new_title)
-		name = "\improper [new_title]"
+		name = new_title
 		//not saying the original name cause it could be a long ass message
 		var/msg = "Ticket [ticket_href("#[id]")] titled [name] by [key_name_admin(usr)]"
 		message_admins(msg)
@@ -513,13 +519,12 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 //Forwarded action from admin/Topic
 /datum/admin_help/proc/action(mob/user, action)
 	testing("Ahelp action: [action]")
-	if(!claim())
-		return
 	switch(action)
 		if("claim")
-			if(user.key != claimed_by)
+			if(user.key == claimed_by)
+				unclaim()
 				return
-			unclaim()
+			claim()
 		if("ticket")
 			ticket_panel()
 		if("retitle")
@@ -527,6 +532,8 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 		if("reject")
 			reject()
 		if("reply")
+			if(!claim())
+				return
 			user.client.cmd_ahelp_reply(initiator)
 		if("icissue")
 			ic_issue()
