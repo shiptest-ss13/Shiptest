@@ -78,9 +78,9 @@
 
 	if(length_char(.) != desired_format)
 		if(desired_format == 6 && length_char(.) == 3) //doing this quickly rather than elegantly
-			var/red = oldvalue[1]
-			var/green = oldvalue[2]
-			var/blue = oldvalue[3]
+			var/red = .[1]
+			var/green = .[2]
+			var/blue = .[3]
 			return crunch + "[red][red][green][green][blue][blue]"
 		if(default)
 			return default
