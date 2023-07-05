@@ -197,7 +197,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	id = ++ticket_counter
 	opened_at = world.time
 
-	name = copytext_char(msg, 1, 100)
+	name = "\improper [copytext_char(msg, 1, 100)]"
 
 	initiator = C
 	initiator_ckey = initiator.ckey
@@ -503,7 +503,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 /datum/admin_help/proc/retitle()
 	var/new_title = input(usr, "Enter a title for the ticket", "Rename Ticket", name) as text|null
 	if(new_title)
-		name = new_title
+		name = "\improper [new_title]"
 		//not saying the original name cause it could be a long ass message
 		var/msg = "Ticket [ticket_href("#[id]")] titled [name] by [key_name_admin(usr)]"
 		message_admins(msg)
