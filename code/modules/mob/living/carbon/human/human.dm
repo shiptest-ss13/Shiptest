@@ -1428,9 +1428,6 @@
 /mob/living/carbon/human/species/shadow
 	race = /datum/species/shadow
 
-/mob/living/carbon/human/species/squid
-	race = /datum/species/squid
-
 /mob/living/carbon/human/species/shadow/nightmare
 	race = /datum/species/shadow/nightmare
 
@@ -1457,9 +1454,6 @@
 
 /mob/living/carbon/human/species/ipc
 	race = /datum/species/ipc
-
-/mob/living/carbon/human/species/squid
-	race = /datum/species/squid
 
 /mob/living/carbon/human/species/lizard/ashwalker/kobold
 	race = /datum/species/lizard/ashwalker/kobold
