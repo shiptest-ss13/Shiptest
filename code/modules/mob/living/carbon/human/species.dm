@@ -233,7 +233,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/obj/item/bodypart/species_robotic_digi_l_leg = /obj/item/bodypart/leg/left/robot/surplus/lizard/digitigrade
 	var/obj/item/bodypart/species_robotic_digi_r_leg = /obj/item/bodypart/leg/right/robot/surplus/lizard/digitigrade
 
-	var/obj/item/organ/brain/robotic_brain = /obj/item/organ/brain/mmi_holder
 	var/obj/item/organ/heart/robotic_heart = /obj/item/organ/heart/cybernetic
 	var/obj/item/organ/lungs/robotic_lungs = /obj/item/organ/lungs/cybernetic
 	var/obj/item/organ/eyes/robotic_eyes = /obj/item/organ/eyes/robotic
@@ -331,7 +330,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 /datum/species/proc/regenerate_organs(mob/living/carbon/C, datum/species/old_species,replace_current=TRUE, list/excluded_zones, robotic = FALSE)
 	//what should be put in if there is no mutantorgan (brains handled seperately)
 	var/list/slot_mutantorgans = list( \
-		ORGAN_SLOT_BRAIN = robotic ? robotic_brain : mutantbrain, \
+		ORGAN_SLOT_BRAIN = mutantbrain, \
 		ORGAN_SLOT_HEART = robotic ? robotic_heart : mutantheart, \
 		ORGAN_SLOT_LUNGS = robotic ? robotic_lungs : mutantlungs, \
 		ORGAN_SLOT_APPENDIX = robotic ? robotic_appendix : mutantappendix, \
