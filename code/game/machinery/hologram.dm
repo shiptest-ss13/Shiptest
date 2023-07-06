@@ -524,7 +524,7 @@ For the other part of the code, check silicon say.dm. Particularly robot talk.*/
 		var/transfered = FALSE
 		if(!validate_location(new_turf))
 			if(!transfer_to_nearby_pad(new_turf,user))
-				clear_holo(user)
+				holo.HC.eye.setLoc(get_turf(src))
 				return FALSE
 			else
 				transfered = TRUE
@@ -668,6 +668,11 @@ For the other part of the code, check silicon say.dm. Particularly robot talk.*/
 /obj/machinery/holopad/proc/record_clear()
 	if(disk && disk.record)
 		QDEL_NULL(disk.record)
+
+/obj/machinery/holopad/onShuttleMove(turf/newT, turf/oldT, list/movement_force, move_dir, obj/docking_port/stationary/old_dock, obj/docking_port/mobile/moving_dock, list/obj/docking_port/mobile/towed_shuttles)
+	. = ..()
+	for(var/datum/holocall/holocall in holo_calls)
+		holocall.eye.setLoc(newT, TRUE)
 
 /obj/effect/overlay/holo_pad_hologram
 	initial_language_holder = /datum/language_holder/universal
