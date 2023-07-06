@@ -194,8 +194,8 @@
 	feature_spawn_list = list(
 		/obj/item/pickaxe/rusted = 1,
 		/obj/structure/spawner/burrow/jungle_planet = 1,
+		/obj/effect/survey_point = 1,
 		/obj/effect/spawner/lootdrop/anomaly/jungle = 1
-		/obj/effect/survey_point = 1
 	)
 
 /datum/biome/cave/jungle/dirt

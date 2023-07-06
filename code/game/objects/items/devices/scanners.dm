@@ -449,10 +449,6 @@ GENE SCANNER
 	var/cooldown_time = 250
 	var/accuracy // 0 is the best accuracy.
 
-/obj/item/analyzer/examine(mob/user)
-	. = ..()
-	. += "<span class='notice'>Alt-click [src] to activate the barometer function.</span>"
-
 /obj/item/analyzer/attack_self(mob/user)
 	add_fingerprint(user)
 
@@ -475,12 +471,9 @@ GENE SCANNER
 		var/n2_concentration = environment.get_moles(GAS_N2)/total_moles
 		var/co2_concentration = environment.get_moles(GAS_CO2)/total_moles
 		var/plasma_concentration = environment.get_moles(GAS_PLASMA)/total_moles
-
-		//WS Start -- Atmos Analyzer Reformat (Issue #419)
 		to_chat(user, "<span class='boldnotice'>Results of analysis.</span>")
 		to_chat(user, "<span class='info'>Pressure: [round(pressure,0.01)] kPa</span>")
 		to_chat(user, "<span class='info'>Temperature: [round(environment.return_temperature()-T0C, 0.01)] &deg;C ([round(environment.return_temperature(), 0.01)] K)</span>")
-		//WS End
 
 		if(abs(n2_concentration - N2STANDARD) < 20)
 			to_chat(user, "<span class='info'>Nitrogen: [round(n2_concentration*100, 0.01)] % ([round(environment.get_moles(GAS_N2), 0.01)] mol)</span>")
@@ -508,68 +501,6 @@ GENE SCANNER
 			var/gas_concentration = environment.get_moles(id)/total_moles
 			to_chat(user, "<span class='alert'>[GLOB.gas_data.names[id]]: [round(gas_concentration*100, 0.01)] % ([round(environment.get_moles(id), 0.01)] mol)</span>")
 
-/obj/item/analyzer/AltClick(mob/user) //Barometer output for measuring when the next storm happens
-	..()
-
-	if(user.canUseTopic(src, BE_CLOSE))
-		if(cooldown)
-			to_chat(user, "<span class='warning'>[src]'s barometer function is preparing itself.</span>")
-			return
-
-		var/turf/T = get_turf(user)
-		if(!T)
-			return
-
-		var/datum/weather_controller/weather_controller = SSmapping.get_map_zone_weather_controller(T)
-		playsound(src, 'sound/effects/pop.ogg', 100)
-		var/area/user_area = T.loc
-		var/datum/weather/ongoing_weather = null
-
-		if(!user_area.outdoors)
-			to_chat(user, "<span class='warning'>[src]'s barometer function won't work indoors!</span>")
-			return
-
-		if(weather_controller.current_weathers)
-			for(var/datum/weather/W as anything in weather_controller.current_weathers)
-				if(W.barometer_predictable && W.my_controller.mapzone.is_in_bounds(T) && W.area_type == user_area.type && !(W.stage == END_STAGE))
-					ongoing_weather = W
-					break
-
-		if(ongoing_weather)
-			if((ongoing_weather.stage == MAIN_STAGE) || (ongoing_weather.stage == WIND_DOWN_STAGE))
-				to_chat(user, "<span class='warning'>[src]'s barometer function can't trace anything while the storm is [ongoing_weather.stage == MAIN_STAGE ? "already here!" : "winding down."]</span>")
-				return
-
-			if(ongoing_weather.aesthetic)
-				to_chat(user, "<span class='warning'>[src]'s barometer function says that the next storm will breeze on by.</span>")
-		else
-			var/next_hit = weather_controller.next_weather
-			var/fixed = next_hit - world.time
-			if(fixed <= 0)
-				to_chat(user, "<span class='warning'>[src]'s barometer function was unable to trace any weather patterns.</span>")
-			else
-				to_chat(user, "<span class='warning'>[src]'s barometer function says a storm will land in approximately [butchertime(fixed)].</span>")
-		cooldown = TRUE
-		addtimer(CALLBACK(src, TYPE_PROC_REF(/obj/item/analyzer, ping)), cooldown_time)
-
-/obj/item/analyzer/proc/ping()
-	if(isliving(loc))
-		var/mob/living/L = loc
-		to_chat(L, "<span class='notice'>[src]'s barometer function is ready!</span>")
-	playsound(src, 'sound/machines/click.ogg', 100)
-	cooldown = FALSE
-
-/obj/item/analyzer/proc/butchertime(amount)
-	if(!amount)
-		return
-	if(accuracy)
-		var/inaccurate = round(accuracy*(1/3))
-		if(prob(50))
-			amount -= inaccurate
-		if(prob(50))
-			amount += inaccurate
-	return DisplayTimeText(max(1,amount))
-
 /proc/atmosanalyzer_scan(mob/user, atom/target, silent=FALSE)
 	var/mixture = target.return_analyzable_air()
 	if(!mixture)
@@ -594,12 +525,10 @@ GENE SCANNER
 		var/cached_scan_results = air_contents.analyzer_results
 
 		if(total_moles > 0)
-			//WS Start -- Atmos Analyzer Reformat (Issue #419)
 			render_list += "<span class='notice'>Moles: [round(total_moles, 0.01)] mol</span>\
 							\n<span class='notice'>Volume: [volume] L</span>\
 							\n<span class='notice'>Pressure: [round(pressure,0.01)] kPa</span>\
 							\n<span class='notice'>Temperature: [round(temperature - T0C,0.01)] &deg;C ([round(temperature, 0.01)] K)</span>"
-			//WS End
 
 			for(var/id in air_contents.get_gases())
 				var/gas_concentration = air_contents.get_moles(id)/total_moles

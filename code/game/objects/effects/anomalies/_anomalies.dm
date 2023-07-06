@@ -131,13 +131,22 @@
 
 
 /obj/effect/anomaly/attackby(obj/item/weapon, mob/user, params)
-	if(weapon.tool_behaviour == TOOL_ANALYZER && aSignal)
+	if(istype(weapon, /obj/item/attachment/survey_scanner) && aSignal) //I'm sure there's a better way to do this.
+		to_chat(user, span_notice("You analyze [src]."))
+		to_chat(user, span_notice("[src]'s primary field is fluctuating along frequency [format_frequency(aSignal.frequency)], code [aSignal.code]."))
+		if(bSignal)
+			to_chat(user, span_notice("A second field is fluctuating along [format_frequency(bSignal.frequency)], code [bSignal.code]. It is highly unstable." ))
+		return TRUE
+	else if(weapon.tool_behaviour == TOOL_ANALYZER && aSignal)
 		to_chat(user, span_notice("You start analyzing [src]."))
 		if(do_after(user, 20, src, hidden = TRUE))
 			to_chat(user, span_notice("[src]'s primary field is fluctuating along frequency [format_frequency(aSignal.frequency)], code [aSignal.code]."))
 			if(bSignal)
 				to_chat(user, span_notice("A second field is fluctuating along [format_frequency(bSignal.frequency)], code [bSignal.code]. It is highly unstable." ))
 		return TRUE
+
+
+
 
 	return ..()
 
