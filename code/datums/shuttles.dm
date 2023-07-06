@@ -20,6 +20,11 @@
 	var/prefix = "SV"
 	var/unique_ship_access = FALSE
 
+	// Coefficients regulating the amount of necessary Living playtime to spawn this ship or join as an officer.
+	// When a player attempts to spawn a ship via the join menu, officer time requirements are ignored even if the "captain" job is an officer.
+	var/spawn_time_coeff = 1
+	var/officer_time_coeff = 1
+
 	var/static/list/outfits
 
 /datum/map_template/shuttle/proc/prerequisites_met()
@@ -182,7 +187,6 @@
 
 /datum/map_template/shuttle/ui_static_data(mob/user)
 	. = list()
-
 	if(!outfits)
 		outfits = list()
 		for(var/datum/outfit/outfit as anything in subtypesof(/datum/outfit))
@@ -197,6 +201,8 @@
 	.["templateTags"] = tags
 	.["templateCategory"] = category
 	.["templateLimit"] = limit
+	.["templateSpawnCoeff"] = spawn_time_coeff
+	.["templateOfficerCoeff"] = officer_time_coeff
 	.["templateEnabled"] = enabled
 
 	.["templateJobs"] = list()
@@ -213,7 +219,6 @@
 	. = ..()
 	if(.)
 		return
-
 
 	switch(action)
 		if("setTemplateName")
@@ -246,6 +251,14 @@
 			return TRUE
 		if("setTemplateLimit")
 			limit = params["new_template_limit"]
+			update_static_data(usr, ui)
+			return TRUE
+		if("setSpawnCoeff")
+			spawn_time_coeff = params["new_spawn_coeff"]
+			update_static_data(usr, ui)
+			return TRUE
+		if("setOfficerCoeff")
+			officer_time_coeff = params["new_officer_coeff"]
 			update_static_data(usr, ui)
 			return TRUE
 		if("toggleTemplateEnabled")

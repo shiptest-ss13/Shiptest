@@ -362,6 +362,7 @@
 	icon_state = "katana"
 	item_state = "katana"
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
+	supports_variations = VOX_VARIATION
 
 /obj/item/nullrod/claymore/multiverse
 	name = "extradimensional blade"

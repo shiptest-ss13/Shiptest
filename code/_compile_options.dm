@@ -33,6 +33,10 @@
 #endif							//	1 to use the default behaviour;
 								//	2 for preloading absolutely everything;
 
+/// If this is uncommented, Autowiki will generate edits and shut down the server.
+/// Prefer the autowiki build target instead.
+// #define AUTOWIKI
+
 //Log the full sendmaps profile on 514.1556+, any earlier and we get bugs or it not existing
 #if DM_VERSION >= 514 && DM_BUILD >= 1556
 #define SENDMAPS_PROFILE

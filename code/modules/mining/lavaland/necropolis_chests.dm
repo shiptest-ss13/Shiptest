@@ -258,6 +258,7 @@
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
 	lace_time = 35 SECONDS//nike shoelace art joke
 	slowdown = -0.2
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/under/drip/equipped(mob/user, slot)
 	. = ..()
@@ -989,6 +990,7 @@
 	recoil = 1
 	cell_type = /obj/item/stock_parts/cell/gun
 	ammo_type = list(/obj/item/ammo_casing/energy/spur)
+	supports_variations = VOX_VARIATION
 	var/chargesound
 
 /obj/item/gun/energy/spur/examine(mob/user)
