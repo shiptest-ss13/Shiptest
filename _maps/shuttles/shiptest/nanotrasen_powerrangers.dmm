@@ -23,6 +23,7 @@
 	pixel_y = 13;
 	layer = 4.2
 	},
+/obj/item/radio/intercom/directional/east,
 /turf/open/floor/wood,
 /area/ship/engineering)
 "ah" = (
@@ -104,6 +105,7 @@
 /obj/machinery/portable_atmospherics/canister/air,
 /obj/machinery/light/dim/directional/north,
 /obj/effect/turf_decal/industrial/warning,
+/obj/item/radio/intercom/directional/east,
 /turf/open/floor/plasteel/tech,
 /area/ship/storage)
 "aO" = (
@@ -691,6 +693,7 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 8
 	},
+/obj/item/radio/intercom/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "hf" = (
@@ -719,6 +722,7 @@
 /obj/structure/chair/sofa{
 	dir = 1
 	},
+/obj/item/radio/intercom/directional/south,
 /turf/open/floor/carpet/lone,
 /area/ship/crew)
 "hx" = (
@@ -883,6 +887,7 @@
 /area/ship/bridge)
 "iH" = (
 /obj/structure/bed,
+/obj/item/bedsheet/grey,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "iI" = (
@@ -1010,6 +1015,7 @@
 	icon_state = "1-10"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/item/radio/intercom/directional/east,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "jC" = (
@@ -1202,6 +1208,7 @@
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/corner{
 	dir = 4
 	},
+/obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/port)
 "lv" = (
@@ -1305,6 +1312,7 @@
 /obj/item/storage/backpack/satchel/cap,
 /obj/item/storage/backpack/captain,
 /obj/item/storage/backpack/duffelbag/captain,
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/wood,
 /area/ship/bridge)
 "mw" = (
@@ -1473,6 +1481,7 @@
 /turf/open/floor/plastic,
 /area/ship/crew/toilet)
 "oQ" = (
+/obj/item/radio/intercom/directional/west,
 /turf/open/floor/wood,
 /area/ship/medical)
 "pa" = (
@@ -1578,6 +1587,7 @@
 /obj/machinery/camera/autoname{
 	dir = 8
 	},
+/obj/item/radio/intercom/directional/south,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "qe" = (
@@ -1763,6 +1773,7 @@
 /obj/structure/table/wood,
 /obj/machinery/light/dim/directional/south,
 /obj/effect/turf_decal/siding/red/end,
+/obj/item/toy/plush/spider,
 /turf/open/floor/mineral/plastitanium/red/brig,
 /area/ship/security)
 "sU" = (
@@ -1801,6 +1812,7 @@
 	icon_state = "1-2"
 	},
 /obj/effect/turf_decal/corner/opaque/ntblue/mono,
+/obj/item/radio/intercom/directional/east,
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/central)
 "tg" = (
@@ -1833,6 +1845,7 @@
 /area/ship/engineering)
 "tq" = (
 /obj/structure/bed,
+/obj/item/bedsheet/medical,
 /turf/open/floor/wood,
 /area/ship/medical)
 "tK" = (
@@ -1915,6 +1928,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/opaque/ntblue/half,
+/obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/port)
 "uH" = (
@@ -2235,6 +2249,7 @@
 /obj/effect/turf_decal/corner/opaque/ntblue/half{
 	dir = 1
 	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/starboard)
 "yA" = (
@@ -2831,6 +2846,7 @@
 "GE" = (
 /obj/effect/turf_decal/corner/opaque/blue/diagonal,
 /obj/structure/bed,
+/obj/item/bedsheet/medical,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "GN" = (
@@ -3151,7 +3167,6 @@
 /area/ship/hallway/port)
 "LQ" = (
 /obj/structure/bed,
-/obj/item/bedsheet/ce,
 /obj/machinery/button/door{
 	dir = 8;
 	pixel_y = 6;
@@ -3160,6 +3175,7 @@
 	name = "Privacy Shutters"
 	},
 /obj/machinery/firealarm/directional/south,
+/obj/item/bedsheet/orange,
 /turf/open/floor/wood,
 /area/ship/engineering)
 "LU" = (
@@ -3627,6 +3643,7 @@
 /obj/effect/turf_decal/trimline/opaque/ntblue/filled/line{
 	dir = 1
 	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/port)
 "RA" = (
@@ -3745,11 +3762,11 @@
 /obj/machinery/computer/telecomms/server{
 	dir = 8
 	},
-/obj/machinery/light/dim/directional/south,
 /obj/effect/turf_decal/corner/opaque/ntblue/border,
 /obj/effect/turf_decal/corner/opaque/ntblue/border{
 	dir = 1
 	},
+/obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "Tz" = (
@@ -3963,6 +3980,8 @@
 /area/ship/bridge)
 "Wj" = (
 /obj/structure/bed,
+/obj/item/radio/intercom/directional/south,
+/obj/item/bedsheet/red,
 /turf/open/floor/wood,
 /area/ship/security)
 "Wr" = (
@@ -4222,14 +4241,14 @@
 	},
 /area/ship/medical)
 "YM" = (
-/obj/machinery/computer/camera_advanced{
-	dir = 8
-	},
 /obj/machinery/light/dim/directional/north,
 /obj/effect/turf_decal/corner/opaque/ntblue/border{
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/opaque/ntblue/border,
+/obj/machinery/computer/security{
+	dir = 8
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "YW" = (
@@ -4240,6 +4259,7 @@
 /obj/machinery/camera/autoname{
 	dir = 4
 	},
+/obj/item/radio/intercom/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "Zk" = (
