@@ -53,6 +53,9 @@
 /datum/overmap/event/meteor/Initialize(position, ...)
 	. = ..()
 	token.icon_state = "meteor[rand(1, 4)]"
+	token.color = "#a08444"
+	token.light_color = "#a08444"
+	token.update_icon()
 
 /datum/overmap/event/meteor/affect_ship(datum/overmap/ship/controlled/S)
 	spawn_meteor(meteor_types, S.shuttle_port.get_virtual_level(), 0)
@@ -90,6 +93,9 @@
 /datum/overmap/event/emp/Initialize(position, ...)
 	. = ..()
 	token.icon_state = "ion[rand(1, 4)]"
+	token.color = "#7cb4d4"
+	token.light_color = "#7cb4d4"
+	token.update_icon()
 
 /datum/overmap/event/emp/affect_ship(datum/overmap/ship/controlled/S)
 	var/area/source_area = pick(S.shuttle_port.shuttle_areas)
@@ -124,6 +130,9 @@
 /datum/overmap/event/electric/Initialize(position, ...)
 	. = ..()
 	token.icon_state = "electrical[rand(1, 4)]"
+	token.color = "#e8e85c"
+	token.light_color = "#e8e85c"
+	token.update_icon()
 
 /datum/overmap/event/electric/affect_ship(datum/overmap/ship/controlled/S)
 	var/datum/virtual_level/ship_vlevel = S.shuttle_port.get_virtual_level()
@@ -157,6 +166,9 @@
 /datum/overmap/event/nebula/Initialize(position, ...)
 	. = ..()
 	token.opacity = TRUE
+	token.color = "#c053f3"
+	token.light_color = "#c053f3"
+	token.update_icon()
 
 /datum/overmap/event/wormhole
 	name = "wormhole"
@@ -176,6 +188,9 @@
 		other_wormhole = _other_wormhole
 	if(!other_wormhole)
 		other_wormhole = new(null, src) //Create a new wormhole at a random location
+	token.color = adjust_colors()
+	token.light_color = adjust_colors()
+	token.update_icon()
 
 /datum/overmap/event/wormhole/affect_ship(datum/overmap/ship/controlled/S)
 	if(!other_wormhole)
@@ -195,6 +210,22 @@
 
 	S.overmap_move(other_wormhole.x, other_wormhole.y)
 	S.overmap_step(S.get_heading())
+
+	token.color = adjust_colors()
+	token.light_color = adjust_colors()
+
+/datum/overmap/event/wormhole/proc/adjust_colors()
+	switch(stability)
+		if(1)
+			return "#753214"
+		if(2)
+			return "#642f19"
+		if(3)
+			return"#654650"
+		if(4)
+			return"#5c5d8b"
+		if(5)
+			return"#6d80c7"
 
 GLOBAL_LIST_INIT(overmap_event_pick_list, list(
 	/datum/overmap/event/wormhole = 10,
