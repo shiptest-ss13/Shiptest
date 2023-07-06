@@ -22,7 +22,8 @@
 	var/hack_wire
 	var/disable_wire
 	var/shock_wire
-	var/obj/item/disk/design_disk/d_disk    //Stores the design disk.
+	//Stores the design disk.
+	var/obj/item/disk/design_disk/d_disk
 
 	var/busy = FALSE
 
@@ -352,15 +353,15 @@
 		for(var/i=1, i<=multiplier, i++)
 			var/obj/item/new_item = new being_built.build_path(A)
 			new_item.autolathe_crafted(src)
-			d_disk.used_charges += 1
-			d_disk.check_charges()
+			if(locate(being_built.type) in d_disk.blueprints)
+				d_disk.used_charges += 1
+				d_disk.check_charges()
 			if(length(picked_materials))
 				new_item.set_custom_materials(picked_materials, 1 / multiplier) //Ensure we get the non multiplied amount
 				for(var/x in picked_materials)
 					var/datum/material/M = x
 					if(!istype(M, /datum/material/glass) && !istype(M, /datum/material/iron))
 						user.client.give_award(/datum/award/achievement/misc/getting_an_upgrade, user)
-
 
 	icon_state = "autolathe"
 	busy = FALSE

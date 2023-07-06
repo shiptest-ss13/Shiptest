@@ -7,13 +7,14 @@
 	color = "#8b70ff"
 	illustration = "design"
 	custom_materials = list(
-		/datum/material/iron = 300,
-		/datum/material/glass = 100)
-	var/list/blueprints = list()
-	var/max_blueprints = 1
-	var/max_charges = 0 //Max amount of prints a disk is allowed
-	var/used_charges = 0   //Number of prints the disk has made
-	var/modifiable = TRUE //If the disk can have designs added/removed
+							/datum/material/iron = 300,
+							/datum/material/glass = 100,
+							)
+	var/list/blueprints = list()	//List of blueprints downloaded to the disk
+	var/max_blueprints = 1			//Max amount of blueprints a disk can have
+	var/max_charges = 0				//Max amount of prints a disk is allowed
+	var/used_charges = 0			//Number of prints the disk has made
+	var/modifiable = TRUE			//If the disk can have designs added/removed
 
 /obj/item/disk/design_disk/Initialize()
 	. = ..()
@@ -76,11 +77,15 @@
 		/datum/material/gold = 100,
 		/datum/material/bluespace = 50)
 
-//CUSTOM DISKS
+/// Limited use design disks
+/obj/item/disk/design_disk/limited //basetype, don't use this
+	name = "Limited Design Disk"
+	color = "#333333"
+	desc = "A disk with limited charges"
+	max_charges = 10		//Default for limited disks is 10 charges.
+	modifiable = FALSE		//Limited disks aren't able to be modified
 
-//FIREARMS - LIMITED USE
-
-/obj/item/disk/design_disk/firearm/disposable_gun
+/obj/item/disk/design_disk/limited/disposable_gun
 	name = "design disk - disposable guns"
 	desc = "A design disk containing designs for a cheap and disposable gun."
 	illustration = "gun"
@@ -88,11 +93,11 @@
 	max_charges = 5
 	modifiable = FALSE
 
-/obj/item/disk/design_disk/firearm/disposable_gun/Initialize()
+/obj/item/disk/design_disk/limited/disposable_gun/Initialize()
 	. = ..()
 	blueprints[1] = new /datum/design/disposable_gun/
 
-/*
+//fix these
 /obj/item/disk/design_disk/ammo_38_hunting
 	name = "Design Disk - .38 Hunting Ammo"
 	desc = "A design disk containing the pattern for a refill ammo box for Winchester rifles and Detective Specials."
@@ -129,7 +134,9 @@
 	. = ..()
 	blueprints[1] = new /datum/design/cmm_ripley_upgrade
 	blueprints[2] = new /datum/design/cmm_durand_upgrade
-*/
+
+/// Disks with custom blueprints 
+
 /// MEDICAL DESIGN DISKS
 
 /obj/item/disk/design_disk/medical/ //Medical parent type

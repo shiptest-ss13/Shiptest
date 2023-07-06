@@ -524,14 +524,6 @@
 	build_path = /obj/item/reagent_containers/glass/beaker/large
 	category = list("initial", "Medical", "Medical Designs")
 
-/datum/design/pillbottle
-	name = "Pill Bottle"
-	id = "pillbottle"
-	build_type = AUTOLATHE
-	materials = list(/datum/material/plastic = 20, /datum/material/glass = 100)
-	build_path = /obj/item/storage/pill_bottle
-	category = list("initial", "Medical", "Medical Designs")
-
 /datum/design/chem_jug
 	name = "Chemical Jug"
 	id = "chem_jug"
