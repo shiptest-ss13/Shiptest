@@ -112,7 +112,7 @@
 	)
 	feature_spawn_chance = 0.1
 	feature_spawn_list = list(
-		/obj/effect/survey_point = 50
+		/obj/effect/survey_point = 50,
 		/obj/effect/spawner/lootdrop/anomaly/ice = 12,
 		/obj/effect/spawner/lootdrop/anomaly/big = 1,
 		/obj/structure/spawner/ice_moon/demonic_portal/low_threat = 25,
@@ -209,7 +209,7 @@
 	)
 	feature_spawn_chance = 0.3
 	feature_spawn_list = list(
-		/obj/effect/survey_point = 5
+		/obj/effect/survey_point = 5,
 		/obj/effect/spawner/lootdrop/anomaly/ice = 1,
 		/obj/effect/spawner/lootdrop/anomaly/big = 0.01,
 		/obj/structure/spawner/ice_moon/demonic_portal/low_threat = 3,
@@ -263,7 +263,7 @@
 	)
 	feature_spawn_chance = 0.2
 	feature_spawn_list = list(
-		/obj/effect/survey_point = 4
+		/obj/effect/survey_point = 4,
 		/obj/structure/spawner/ice_moon/demonic_portal/low_threat = 3,
 		/obj/structure/spawner/ice_moon/demonic_portal/medium_threat = 5,
 		/obj/structure/spawner/ice_moon/demonic_portal/high_threat = 0.6,
@@ -314,7 +314,8 @@
 		/obj/structure/flora/ash/stem_shroom = 1,
 	)
 	feature_spawn_chance = 0.2
-		/obj/effect/survey_point = 4
+	feature_spawn_list = list(
+		/obj/effect/survey_point = 4,
 		/obj/structure/spawner/ice_moon/demonic_portal/low_threat = 3,
 		/obj/structure/spawner/ice_moon/demonic_portal/medium_threat = 5,
 		/obj/structure/spawner/ice_moon/demonic_portal/high_threat = 0.6,
@@ -322,6 +323,7 @@
 		/obj/structure/spawner/ice_moon = 3,
 		/obj/structure/spawner/ice_moon/polarbear = 3,
 		/obj/effect/spawner/lootdrop/anomaly/ice/cave = 1
+	)
 
 /datum/biome/cave/volcanic/lava
 	open_turf_types = list(

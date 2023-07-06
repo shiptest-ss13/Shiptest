@@ -162,7 +162,7 @@
 	feature_spawn_list = list(
 		/obj/structure/flora/tree/dead/barren = 1,
 		/obj/structure/flora/tree/dead/tall/grey = 1,
-		/obj/effect/survey_point = 0.5
+		/obj/effect/survey_point = 0.5,
 		/obj/effect/spawner/lootdrop/anomaly/lava = 0.1
 	)
 

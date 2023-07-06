@@ -87,7 +87,7 @@
 	feature_spawn_list = list(
 		/obj/structure/geyser/random = 1,
 		/obj/structure/elite_tumor = 2,
-		/obj/effect/survey_point = 4
+		/obj/effect/survey_point = 4,
 		/obj/effect/spawner/lootdrop/anomaly/rock = 1,
 		/obj/effect/spawner/lootdrop/anomaly/big = 0.1 //get out of here stalker
 	)
@@ -151,7 +151,7 @@
 		/obj/structure/geyser/random = 1,
 		/obj/structure/elite_tumor = 2,
 		/obj/structure/spawner/ice_moon/rockplanet = 4,
-		/obj/effect/survey_point = 4
+		/obj/effect/survey_point = 4,
 		/obj/structure/spawner/ice_moon/rockplanet = 4,
 		/obj/effect/spawner/lootdrop/anomaly/rock/cave = 1,
 	)

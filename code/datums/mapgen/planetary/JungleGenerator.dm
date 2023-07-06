@@ -194,7 +194,7 @@
 	feature_spawn_list = list(
 		/obj/item/pickaxe/rusted = 1,
 		/obj/structure/spawner/ice_moon = 1,
-		/obj/effect/survey_point = 1
+		/obj/effect/survey_point = 1,
 		/obj/effect/spawner/lootdrop/anomaly/jungle = 1
 	)
 
