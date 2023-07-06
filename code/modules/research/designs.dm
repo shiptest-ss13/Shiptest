@@ -20,23 +20,38 @@ other types of metals and chemistry for reagents).
 //DESIGNS ARE GLOBAL. DO NOT CREATE OR DESTROY THEM AT RUNTIME OUTSIDE OF INIT, JUST REFERENCE THEM TO WHATEVER YOU'RE DOING! //why are you yelling?
 //DO NOT REFERENCE OUTSIDE OF SSRESEARCH. USE THE PROCS IN SSRESEARCH TO OBTAIN A REFERENCE.
 
-/datum/design						//Datum for object designs, used in construction
-	var/name = "Name"					//Name of the created object.
-	var/desc = "Desc"					//Description of the created object.
-	var/id = DESIGN_ID_IGNORE						//ID of the created object for easy refernece. Alphanumeric, lower-case, no symbols
-	var/build_type = null				//Flag as to what kind machine the design is built in. See defines.
-	var/list/materials = list()			//List of materials. Format: "id" = amount.
-	var/construction_time				//Amount of time required for building the object
-	var/build_path = null				//The file path of the object that gets created
-	var/list/make_reagents = list()			//Reagents produced. Format: "id" = amount. Currently only supported by the biogenerator.
-	var/list/category = null 			//Primarily used for Mech Fabricators, but can be used for anything
-	var/list/reagents_list = list()			//List of reagents. Format: "id" = amount.
+/datum/design //Datum for object designs, used in construction
+	/// Name of the created object
+	var/name = "Name"
+	/// Description of the created object
+	var/desc = null
+	/// The ID of the design. Used for quick reference. Alphanumeric, lower-case, no symbols
+	var/id = DESIGN_ID_IGNORE
+	/// Bitflags indicating what machines this design is compatable with. ([IMPRINTER]|[AWAY_IMPRINTER]|[PROTOLATHE]|[AWAY_LATHE]|[AUTOLATHE]|[MECHFAB]|[BIOGENERATOR]|[LIMBGROWER]|[SMELTER])
+	var/build_type = null
+	/// List of materials required to create one unit of the product. Format is (typepath or caregory) -> amount
+	var/list/materials = list()
+	/// The amount of time required to create one unit of the product
+	var/construction_time
+	/// The typepath of the object produced by this design
+	var/build_path = null
+	/// List of reagents produced by this design. Currently only supported by the biogenerator
+	var/list/make_reagents = list()
+	/// What category this design falls under. Used for sorting in production machines, mostly the mechfab
+	var/list/category = null
+	/// List of reagents required to create one unit of the product
+	var/list/reagents_list = list()
+	/// The maximum number of units of whatever is produced by this can be produced in one go
 	var/maxstack = 1
-	var/lathe_time_factor = 1			//How many times faster than normal is this to build on the protolathe
-	var/dangerous_construction = FALSE	//notify and log for admin investigations if this is printed.
-	var/departmental_flags = ALL			//bitflags for deplathes.
+	/// How many times faster than normal is this to build on the protolathe
+	var/lathe_time_factor = 1
+	/// Notify and log for admin investigations if this is printed
+	var/dangerous_construction = FALSE
+	/// Bitflags for deplathes.
+	var/departmental_flags = ALL
 	var/list/datum/techweb_node/unlocked_by = list()
-	var/research_icon					//Replaces the item icon in the research console
+	/// Replaces the item icon in the research console
+	var/research_icon
 	var/research_icon_state
 	var/icon_cache
 
@@ -63,6 +78,13 @@ other types of metals and chemistry for reagents).
 	var/datum/asset/spritesheet/sheet = get_asset_datum(/datum/asset/spritesheet/research_designs)
 	sheet.send(user)
 	return sheet.icon_tag(id)
+
+/// Returns the description of the design
+/datum/design/proc/get_description()
+	var/obj/object_build_item_path = build_path
+
+	return isnull(desc) ? initial(object_build_item_path.desc) : desc
+
 
 ////////////////////////////////////////
 //Disks for transporting design datums//
