@@ -10,7 +10,7 @@ SUBSYSTEM_DEF(lag_switch)
 	/// List of bools corresponding to code/__DEFINES/lag_switch.dm
 	var/static/list/measures[MEASURES_AMOUNT]
 	/// List of measures that toggle automatically
-	var/list/auto_measures = list(DISABLE_GHOST_ZOOM_TRAY, DISABLE_RUNECHAT, DISABLE_USR_ICON2HTML, DISABLE_PARALLAX, DISABLE_FOOTSTEPS)
+	var/list/auto_measures = list(DISABLE_GHOST_ZOOM_TRAY, DISABLE_RUNECHAT, DISABLE_USR_ICON2HTML, DISABLE_PARALLAX, DISABLE_FOOTSTEPS, DISABLE_PLANETDEL)
 	/// Timer ID for the automatic veto period
 	var/veto_timer_id
 	/// Cooldown between say verb uses when slowmode is enabled
@@ -119,11 +119,21 @@ SUBSYSTEM_DEF(lag_switch)
 
 			for (var/mob/mob as anything in GLOB.mob_list)
 				mob.hud_used?.update_parallax_pref()
-		if (DISABLE_FOOTSTEPS)
+		if(DISABLE_FOOTSTEPS)
 			if (state)
 				to_chat(world, span_boldannounce("Footstep sounds have been disabled for performance concerns."))
 			else
 				to_chat(world, span_boldannounce("Footstep sounds have been re-enabled."))
+		if(DISABLE_PLANETDEL)
+			if (state)
+				to_chat(world, span_boldannounce("Planet deletion and regeneration has been disabled for performance concerns."))
+			else
+				to_chat(world, span_boldannounce("Planet deletion has been re-enabled."))
+		if(DISABLE_PLANETGEN)
+			if (state)
+				to_chat(world, span_boldannounce("Planet generation has been disabled for performance concerns. You can still dock at already-generated planets."))
+			else
+				to_chat(world, span_boldannounce("Planet generation has been re-enabled."))
 
 	return TRUE
 

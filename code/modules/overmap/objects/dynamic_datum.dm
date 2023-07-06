@@ -88,8 +88,8 @@
 	if(preserve_level)
 		return
 
-	if(length(mapzone?.get_mind_mobs()))
-		return //Dont fuck over stranded people? tbh this shouldn't be called on this condition, instead of bandaiding it inside
+	if(length(mapzone?.get_mind_mobs()) || SSlag_switch.measures[DISABLE_PLANETDEL])
+		return //Dont fuck over stranded people
 
 	log_shuttle("[src] [REF(src)] UNLOAD")
 	var/list/results = SSovermap.get_unused_overmap_square()
@@ -158,6 +158,8 @@
  * * visiting shuttle - The docking port of the shuttle visiting the level.
  */
 /datum/overmap/dynamic/proc/load_level()
+	if(SSlag_switch.measures[DISABLE_PLANETGEN] && !(HAS_TRAIT(usr, TRAIT_BYPASS_MEASURES)))
+		return FALSE
 	if(mapzone)
 		return TRUE
 	log_shuttle("[src] [REF(src)] LEVEL_INIT")

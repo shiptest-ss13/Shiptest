@@ -1001,6 +1001,8 @@
 	dat += "Slowmode Cooldown (toggle On/Off below): <a href='?_src_=holder;[HrefToken()];change_lag_switch_option=SLOWCOOL'><b>[SSlag_switch.slowmode_cooldown/10] seconds</b></a><br/>"
 	dat += "<br/><b>SET ALL MEASURES: <a href='?_src_=holder;[HrefToken()];change_lag_switch=ALL_ON'>ON</a> | <a href='?_src_=holder;[HrefToken()];change_lag_switch=ALL_OFF'>OFF</a></b><br/>"
 	dat += "<br/>Disable ghosts zoom and t-ray verbs (except staff): <a href='?_src_=holder;[HrefToken()];change_lag_switch=[DISABLE_GHOST_ZOOM_TRAY]'><b>[SSlag_switch.measures[DISABLE_GHOST_ZOOM_TRAY] ? "On" : "Off"]</b></a><br/>"
+	dat += "Disable planet deletion: <a href='?_src_=holder;[HrefToken()];change_lag_switch=[DISABLE_PLANETDEL]'><b>[SSlag_switch.measures[DISABLE_PLANETDEL] ? "On" : "Off"]</b></a><br/>"
+	dat += "Disable <b>ALL</b> planet GENERATION: <a href='?_src_=holder;[HrefToken()];change_lag_switch=[DISABLE_PLANETGEN]'><b>[SSlag_switch.measures[DISABLE_PLANETGEN] ? "On" : "Off"]</b></a><br/>"
 	dat += "Disable late joining: <a href='?_src_=holder;[HrefToken()];change_lag_switch=[DISABLE_NON_OBSJOBS]'><b>[SSlag_switch.measures[DISABLE_NON_OBSJOBS] ? "On" : "Off"]</b></a><br/>"
 	dat += "<br/>============! MAD GHOSTS ZONE !============<br/>"
 	dat += "Disable deadmob keyLoop (except staff, informs dchat): <a href='?_src_=holder;[HrefToken()];change_lag_switch=[DISABLE_DEAD_KEYLOOP]'><b>[SSlag_switch.measures[DISABLE_DEAD_KEYLOOP] ? "On" : "Off"]</b></a><br/>"

@@ -73,7 +73,7 @@
 /datum/component/footstep/proc/play_simplestep()
 	SIGNAL_HANDLER
 
-	if (SHOULD_DISABLE_FOOTSTEPS(source))
+	if (SHOULD_DISABLE_FOOTSTEPS(parent))
 		return
 
 	var/turf/open/T = prepare_step()
@@ -99,7 +99,7 @@
 /datum/component/footstep/proc/play_humanstep()
 	SIGNAL_HANDLER
 
-	if (SHOULD_DISABLE_FOOTSTEPS(source))
+	if (SHOULD_DISABLE_FOOTSTEPS(parent))
 		return
 
 	var/turf/open/T = prepare_step()

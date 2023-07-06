@@ -16,5 +16,9 @@
 #define DISABLE_PARALLAX 7
 /// Disables footsteps, TRAIT_BYPASS_MEASURES exempted
 #define DISABLE_FOOTSTEPS 8
+/// Disables planet deletion
+#define DISABLE_PLANETDEL 9
+/// Disables ALL new planet generation, TRAIT_BYPASS_MEASURES exempted
+#define DISABLE_PLANETGEN 10
 
-#define MEASURES_AMOUNT 8 // The total number of switches defined above
+#define MEASURES_AMOUNT 10 // The total number of switches defined above
