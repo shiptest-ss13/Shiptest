@@ -1,5 +1,48 @@
 //Disks for transporting design datums to be used in autolathes.
 
+/*Available illustrations - use with illustration var on disks.
+	nt_old				Nanotrasen logo, single N
+	nt					Nanotrasen logo, NT
+	nt_n				Nanotrasen logo, modern N
+	dna_words			text, DNA
+	nuke_useless		some squiggles
+	nuke_useless_alt	triangle thing?
+	syndicate			Syndicate S
+	generic				3 horizontal lines
+	solgov				small solgov circle logo
+	solgov_old			terragov, TG
+	rd_major			2px dithered line
+	beaker				Chemistry beaker
+	sci					text, SCI
+	med					text, MED
+	sec					text, SEC
+	cargo				text, CAR
+	engineering			text, ENG
+	service				text, SER
+	civilian			text, CIV
+	liberator			text, LIB
+	bepis				text, BEP
+	sword				Small sword graphic
+	sword_thin			Thin small sword graphic
+	sus					amogus
+	moth				little moth face
+	shiptest			text, ST
+	poyo				little face
+	accel				PKA small icon
+	target				box with a smaller box inside
+	ammo				small bullet icon
+	cybersun			Cybersun logo
+	gun					small gun icon
+	holo				Holopad design, animated
+	dna					DNA disk design, animated
+	o2					text, o2
+	hammer				its a hammer
+	depleted			This is used for limited disks with no charges left
+	nuke_retro			old nukedisk, alternating lines like a sine wave
+	nuke_new			sine wave, more detailed
+	nanite				black and green lines, animated
+	design				default, animated scrolling design
+*/
 /obj/item/disk/design_disk
 	name = "Component Design Disk"
 	desc = "A disk for storing device design data for construction in lathes."
@@ -14,7 +57,7 @@
 	var/max_blueprints = 1			//Max amount of blueprints a disk can have
 	var/max_charges = 0				//Max amount of prints a disk is allowed
 	var/used_charges = 0			//Number of prints the disk has made
-	var/modifiable = TRUE			//If the disk can have designs added/removed
+	var/modifiable = FALSE			//If the disk can have designs added/removed
 
 /obj/item/disk/design_disk/Initialize()
 	. = ..()
@@ -49,6 +92,7 @@
 	color = "#bed876"
 	desc = "A disk for storing device design data for construction in lathes. This one has a little bit of extra storage space."
 	max_blueprints = 3
+	modifiable = TRUE
 	custom_materials = list(
 		/datum/material/iron = 300,
 		/datum/material/glass = 100,
@@ -59,6 +103,7 @@
 	color = "#c25454"
 	desc = "A disk for storing device design data for construction in lathes. This one has more extra storage space."
 	max_blueprints = 5
+	modifiable = TRUE
 	custom_materials = list(
 		/datum/material/iron = 300,
 		/datum/material/glass = 100,
@@ -70,6 +115,7 @@
 	color = "#333333"
 	desc = "A disk for storing device design data for construction in lathes. This one has absurd amounts of extra storage space."
 	max_blueprints = 10
+	modifiable = TRUE
 	custom_materials = list(
 		/datum/material/iron = 300,
 		/datum/material/glass = 100,
@@ -83,7 +129,6 @@
 	color = "#333333"
 	desc = "A disk with limited charges"
 	max_charges = 10		//Default for limited disks is 10 charges.
-	modifiable = FALSE		//Limited disks aren't able to be modified
 
 /obj/item/disk/design_disk/limited/disposable_gun
 	name = "design disk - disposable guns"
@@ -91,51 +136,12 @@
 	illustration = "gun"
 	max_blueprints = 1
 	max_charges = 5
-	modifiable = FALSE
 
 /obj/item/disk/design_disk/limited/disposable_gun/Initialize()
 	. = ..()
 	blueprints[1] = new /datum/design/disposable_gun/
 
-//fix these
-/obj/item/disk/design_disk/ammo_38_hunting
-	name = "Design Disk - .38 Hunting Ammo"
-	desc = "A design disk containing the pattern for a refill ammo box for Winchester rifles and Detective Specials."
-	illustration = "ammo"
-
-/obj/item/disk/design_disk/ammo_38_hunting/Initialize()
-	. = ..()
-	var/datum/design/c38_hunting/M = new
-	blueprints[1] = M
-
-/obj/item/disk/design_disk/ammo_c10mm
-	name = "Design Disk - 10mm Ammo"
-	desc = "A design disk containing the pattern for a refill box of standard 10mm ammo, used in Stechkin pistols."
-
-/obj/item/disk/design_disk/ammo_c10mm/Initialize()
-	. = ..()
-	blueprints[1] = new /datum/design/c10mm
-
-/obj/item/disk/design_disk/ammo_n762
-	name = "Design Disk - 7.62x38mmR Ammo"
-	desc = "A design disk containing the pattern for an ammo holder of 7.62x38mmR ammo, used in Nagant revolvers. It's a wonder anybody still makes these."
-
-/obj/item/disk/design_disk/ammo_n762/Initialize()
-	. = ..()
-	blueprints[1] = new /datum/design/n762
-
-/obj/item/disk/design_disk/cmm_mechs
-	name = "design disk - CMM mecha modifications"
-	desc = "A design disk containing specifications for CMM-custom mecha conversions."
-	color = "#57b8f0"
-	max_blueprints = 3
-
-/obj/item/disk/design_disk/cmm_mechs/Initialize()
-	. = ..()
-	blueprints[1] = new /datum/design/cmm_ripley_upgrade
-	blueprints[2] = new /datum/design/cmm_durand_upgrade
-
-/// Disks with custom blueprints 
+/// Disks with custom blueprints
 
 /// MEDICAL DESIGN DISKS
 
@@ -145,7 +151,6 @@
 	color = "#57b8f0"
 	illustration = "med"
 	max_blueprints = 4
-	modifiable = FALSE
 
 /obj/item/disk/design_disk/medical/Initialize()
 	. = ..()
@@ -242,7 +247,6 @@
 	color = "#bf4de2"
 	illustration = "sci"
 	max_blueprints = 5
-	modifiable = FALSE
 
 /obj/item/disk/design_disk/science/Initialize()
 	. = ..()
@@ -267,3 +271,14 @@
 	blueprints[5] = new /datum/design/robotic_stomach
 	blueprints[6] = new /datum/design/robotic_ears
 	blueprints[7] = new /datum/design/power_cord
+
+/obj/item/disk/design_disk/cmm_mechs
+	name = "design disk - CMM mecha modifications"
+	desc = "A design disk containing specifications for CMM-custom mecha conversions."
+	color = "#57b8f0"
+	max_blueprints = 3
+
+/obj/item/disk/design_disk/cmm_mechs/Initialize()
+	. = ..()
+	blueprints[1] = new /datum/design/cmm_ripley_upgrade
+	blueprints[2] = new /datum/design/cmm_durand_upgrade
