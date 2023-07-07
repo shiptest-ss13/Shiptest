@@ -1,0 +1,41 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Valor-Class Field Care Vessel",
+	"prefix": "IRMV",
+	"description": "The Valor is the dedicated medical vessel of the Inteq fleet, suitable for treatment both for Inteq combat casualties, or paid treatment of outsiders.",
+	"tags": ["Medical"],
+	"namelists": [
+		"MYTHOLOGICAL",
+		"BEASTS",
+		"NATURAL_AGGRESSIVE",
+		"INTEQ"
+	],
+	"map_short_name": "Valor-class",
+	"map_path": "_maps/shuttles/shiptest/inteq_valor.dmm",
+	"limit": 1,
+	"job_slots": {
+		"Vanguard": {
+			"outfit": "/datum/outfit/job/captain/inteq",
+			"officer": true,
+			"slots": 1
+		},
+		"Honorable Corpsman": {
+			"outfit": "/datum/outfit/job/paramedic/inteq",
+			"officer": true,
+			"slots": 1
+		},
+		"Corpsman": {
+			"outfit": "/datum/outfit/job/paramedic/inteq",
+			"slots": 3
+		},
+		"Enforcer": {
+			"outfit": "/datum/outfit/job/security/inteq",
+			"slots": 2
+		},
+		"Recruit": {
+			"outfit": "/datum/outfit/job/assistant/inteq",
+			"slots": 2
+		}
+	},
+	"enabled": true
+}
