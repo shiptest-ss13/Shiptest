@@ -19,12 +19,12 @@
 
 	var/static/list/allowed_states = list(
 		"steel", "dark", "white", "freezer", "tile_full", "cargo_one_full",
-		"kafel_full", "steel_monofloor", "monotile", "grid", "ridged", "stairs",
+		"kafel_full", "monotile", "grid", "ridged", "stairs",
 		"stairs-l", "stairs-m", "stairs-r", "stairs-old", "stairs-t", "stairs-b"
 	)
 
 	var/static/list/floor_four_dirs = list(
-		"steel_monofloor", "stairs","stairs-l", "stairs-m", "stairs-r",
+		"stairs","stairs-l", "stairs-m", "stairs-r",
 		"stairs-old", "stairs-t", "stairs-b"
 	)
 

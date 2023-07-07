@@ -3,20 +3,21 @@ name: Compile changelogs
 on:
   schedule:
   - cron: "0 0 * * *"
+  workflow_dispatch:
 
 jobs:
   compile:
     name: "Compile changelogs"
     runs-on: ubuntu-20.04
     steps:
-      - name: "Check for ACTION_ENABLER secret and pass true to output if it exists to be checked by later steps"
+      - name: "Check for ACTION_ENABLER secret and pass it to output if it exists to be checked by later steps"
         id: value_holder
         env:
           ENABLER_SECRET: ${{ secrets.CHANGELOG_ENABLER }}
         run: |
           unset SECRET_EXISTS
           if [ -n "$ENABLER_SECRET" ]; then SECRET_EXISTS=true ; fi
-          echo "::set-output name=ACTIONS_ENABLED::$SECRET_EXISTS"
+          echo "ACTIONS_ENABLED=$SECRET_EXISTS" >> $GITHUB_OUTPUT
       - name: "Setup python"
         if: steps.value_holder.outputs.ACTIONS_ENABLED
         uses: actions/setup-python@v4
@@ -33,6 +34,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 25
+          persist-credentials: false
       - name: "Compile"
         if: steps.value_holder.outputs.ACTIONS_ENABLED
         run: |
@@ -49,4 +51,4 @@ jobs:
         if: steps.value_holder.outputs.ACTIONS_ENABLED
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{ secrets.CHANGELOG_TOKEN }}
+          github_token: ${{ secrets.CHANGELOG_TOKEN || secrets.GITHUB_TOKEN }}

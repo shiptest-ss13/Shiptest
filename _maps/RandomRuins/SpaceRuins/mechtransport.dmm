@@ -12,6 +12,10 @@
 "d" = (
 /turf/closed/wall/mineral/titanium,
 /area/ruin/space/has_grav/powered/mechtransport)
+"e" = (
+/obj/machinery/power/terminal,
+/turf/closed/wall/mineral/titanium/overspace,
+/area/ruin/space/has_grav/powered/mechtransport)
 "f" = (
 /obj/structure/closet/crate/secure/loot,
 /obj/effect/decal/cleanable/cobweb,
@@ -57,6 +61,13 @@
 	dir = 1
 	},
 /turf/open/floor/mineral/titanium/blue,
+/area/ruin/space/has_grav/powered/mechtransport)
+"o" = (
+/obj/machinery/power/smes/shuttle/micro/precharged,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/closed/wall/mineral/titanium/overspace,
 /area/ruin/space/has_grav/powered/mechtransport)
 "p" = (
 /obj/machinery/door/airlock/hatch{
@@ -139,7 +150,7 @@
 /area/ruin/space/has_grav/powered/mechtransport)
 "I" = (
 /obj/structure/lattice,
-/turf/template_noop,
+/turf/open/space,
 /area/ruin/space/has_grav/powered/mechtransport)
 "J" = (
 /obj/machinery/computer/mecha{
@@ -172,7 +183,7 @@
 /area/ruin/space/has_grav/powered/mechtransport)
 "P" = (
 /obj/item/stack/sheet/metal,
-/turf/template_noop,
+/turf/open/space,
 /area/ruin/space/has_grav/powered/mechtransport)
 "Q" = (
 /obj/structure/mecha_wreckage/gygax,
@@ -188,15 +199,27 @@
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/powered/mechtransport)
 "T" = (
-/turf/template_noop,
+/turf/open/space,
 /area/ruin/space/has_grav/powered/mechtransport)
 "V" = (
 /obj/item/stack/rods,
-/turf/template_noop,
+/turf/open/space,
+/area/ruin/space/has_grav/powered/mechtransport)
+"W" = (
+/obj/machinery/power/smes/shuttle/micro/precharged,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/closed/wall/mineral/titanium,
 /area/ruin/space/has_grav/powered/mechtransport)
 "X" = (
-/obj/structure/shuttle/engine/propulsion,
-/turf/template_noop,
+/obj/machinery/power/shuttle/engine/electric,
+/obj/structure/cable,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/powered/mechtransport)
+"Y" = (
+/obj/machinery/power/terminal,
+/turf/closed/wall/mineral/titanium,
 /area/ruin/space/has_grav/powered/mechtransport)
 
 (1,1,1) = {"
@@ -314,8 +337,8 @@ y
 w
 w
 Q
-d
-b
+Y
+o
 X
 "}
 (8,1,1) = {"
@@ -331,8 +354,8 @@ w
 B
 y
 s
-d
-d
+Y
+W
 X
 "}
 (9,1,1) = {"
@@ -348,7 +371,7 @@ D
 D
 D
 d
-b
-b
+e
+o
 X
 "}
