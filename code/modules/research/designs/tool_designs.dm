@@ -16,10 +16,10 @@
 	name = "Hand Drill"
 	desc = "A small electric hand drill with an interchangeable screwdriver and bolt bit"
 	id = "handdrill"
-	build_type = PROTOLATHE
+	build_type = PROTOLATHE | AUTOLATHE
 	materials = list(/datum/material/iron = 3500, /datum/material/silver = 1500, /datum/material/titanium = 2500)
 	build_path = /obj/item/screwdriver/power
-	category = list("Tool Designs")
+	category = list("Tool Designs", "Imported")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/jawsoflife
@@ -27,19 +27,19 @@
 	desc = "A small, compact Jaws of Life with an interchangeable pry jaws and cutting jaws"
 	id = "jawsoflife" // added one more requirment since the Jaws of Life are a bit OP
 	build_path = /obj/item/crowbar/power
-	build_type = PROTOLATHE
+	build_type = PROTOLATHE | AUTOLATHE
 	materials = list(/datum/material/iron = 4500, /datum/material/silver = 2500, /datum/material/titanium = 3500)
-	category = list("Tool Designs")
+	category = list("Tool Designs", "Imported")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/exwelder
 	name = "Experimental Welding Tool"
 	desc = "An experimental welder capable of self-fuel generation."
 	id = "exwelder"
-	build_type = PROTOLATHE
+	build_type = PROTOLATHE | AUTOLATHE
 	materials = list(/datum/material/iron = 1000, /datum/material/glass = 500, /datum/material/plasma = 1500, /datum/material/uranium = 200)
 	build_path = /obj/item/weldingtool/experimental
-	category = list("Tool Designs")
+	category = list("Tool Designs", "Imported")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/rpd
@@ -49,18 +49,17 @@
 	materials = list(/datum/material/iron = 75000, /datum/material/glass = 37500)
 	build_path = /obj/item/pipe_dispenser
 	category = list("Tool Designs")
-	departmental_flags =  DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_CARGO | DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_CARGO | DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/rcd_loaded
 	name = "Rapid Construction Device"
 	desc = "A tool that can construct and deconstruct walls, airlocks and floors on the fly."
 	id = "rcd_loaded"
-	build_type = PROTOLATHE
+	build_type = PROTOLATHE | AUTOLATHE
 	materials = list(/datum/material/iron = 60000, /datum/material/glass = 5000)  // costs more than what it did in the autolathe, this one comes loaded.
 	build_path = /obj/item/construction/rcd/loaded
-	category = list("Tool Designs")
-	departmental_flags =  DEPARTMENTAL_FLAG_ENGINEERING
-
+	category = list("Tool Designs", "Imported")
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/rcd_upgrade/frames
 	name = "RCD frames designs upgrade"

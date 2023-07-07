@@ -318,8 +318,6 @@
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
-//Shiptest edit - standard ammunition
-
 /datum/design/buckshot_shell
 	name = "Buckshot Shell"
 	id = "buckshot_shell"
@@ -364,8 +362,6 @@
 	build_path = /obj/item/ammo_box/c556mmHITP
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
-
-// WS edit - not so free rubbershot
 
 /datum/design/rubbershot9mm
 	name = "Rubbershot 9mm ammo box"

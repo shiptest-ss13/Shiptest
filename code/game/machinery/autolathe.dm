@@ -50,7 +50,7 @@
 							)
 
 /obj/machinery/autolathe/Initialize()
-	AddComponent(/datum/component/material_container,list(/datum/material/iron, /datum/material/glass, /datum/material/plastic, /datum/material/silver, /datum/material/gold, /datum/material/plasma, /datum/material/uranium, /datum/material/titanium), 0, TRUE, null, null, CALLBACK(src, .proc/AfterMaterialInsert))
+	AddComponent(/datum/component/material_container,list(/datum/material/iron, /datum/material/glass, /datum/material/plastic, /datum/material/silver, /datum/material/gold, /datum/material/plasma, /datum/material/uranium, /datum/material/titanium, /datum/material/diamond, /datum/material/bluespace), 0, TRUE, null, null, CALLBACK(src, .proc/AfterMaterialInsert))
 	. = ..()
 
 	wires = new /datum/wires/autolathe(src)
