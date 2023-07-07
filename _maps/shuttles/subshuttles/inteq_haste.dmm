@@ -10,7 +10,8 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/power/shieldwallgen/atmos{
-	id = "haste_door"
+	id = "haste_door";
+	anchored = 1
 	},
 /turf/open/floor/engine/hull,
 /area/ship/bridge)
@@ -39,7 +40,14 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
+/obj/item/defibrillator/loaded{
+	pixel_x = -4
+	},
 /turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"C" = (
+/obj/machinery/light/directional/south,
+/turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
 "D" = (
 /obj/machinery/power/terminal{
@@ -77,6 +85,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "J" = (
@@ -85,6 +94,12 @@
 	},
 /obj/structure/cable{
 	icon_state = "4-10"
+	},
+/obj/docking_port/mobile{
+	dir = 8;
+	name = "ambulance dock";
+	port_direction = 2;
+	preferred_direction = 8
 	},
 /turf/open/floor/engine/hull/interior,
 /area/ship/bridge)
@@ -135,7 +150,8 @@
 	},
 /obj/machinery/power/shieldwallgen/atmos{
 	dir = 1;
-	id = "haste_door"
+	id = "haste_door";
+	anchored = 1
 	},
 /turf/open/floor/engine/hull,
 /area/ship/bridge)
@@ -178,7 +194,7 @@ a
 a
 s
 I
-a
+C
 "}
 (4,1,1) = {"
 Y

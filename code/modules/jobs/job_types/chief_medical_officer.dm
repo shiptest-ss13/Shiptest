@@ -105,3 +105,18 @@
 	satchel = /obj/item/storage/backpack/satchel/chem
 	courierbag = /obj/item/storage/backpack/messenger/chem
 	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/storage/bag/chemistry=1)
+
+/datum/outfit/job/cmo/inteq
+	name = "IRMG Honorable Corpsman (Inteq)"
+
+	belt = /obj/item/storage/belt/medical/webbing/paramedic
+	ears = /obj/item/radio/headset/inteq/captain
+	uniform = /obj/item/clothing/under/syndicate/inteq/corpsman
+	alt_uniform = /obj/item/clothing/under/syndicate/inteq/skirt/corpsman
+	shoes = /obj/item/clothing/shoes/combat
+	suit = /obj/item/clothing/suit/hooded/coat/inteq
+	alt_suit = /obj/item/clothing/suit/armor/inteq/corpsman
+	dcoat = /obj/item/clothing/suit/armor/hos/inteq
+	r_pocket = /obj/item/pda/medical
+
+	chameleon_extras = null

@@ -400,3 +400,8 @@
 	file_name = "independent_sugarcube"
 	name = "Sugarcube Transport"
 	prefix = "ISV"
+
+/datum/map_template/shuttle/subshuttles/haste
+	file_name = "inteq_haste"
+	name = "Haste Ambulance"
+	prefix = "IRMV"

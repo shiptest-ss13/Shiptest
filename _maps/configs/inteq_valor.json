@@ -6,8 +6,7 @@
 	"tags": ["Medical"],
 	"namelists": [
 		"MYTHOLOGICAL",
-		"BEASTS",
-		"NATURAL_AGGRESSIVE",
+		"NATURAL",
 		"INTEQ"
 	],
 	"map_short_name": "Valor-class",
@@ -20,7 +19,7 @@
 			"slots": 1
 		},
 		"Honorable Corpsman": {
-			"outfit": "/datum/outfit/job/paramedic/inteq",
+			"outfit": "/datum/outfit/job/cmo/inteq",
 			"officer": true,
 			"slots": 1
 		},
@@ -29,7 +28,7 @@
 			"slots": 3
 		},
 		"Enforcer": {
-			"outfit": "/datum/outfit/job/security/inteq",
+			"outfit": "/datum/outfit/job/security/inteq/naked",
 			"slots": 2
 		},
 		"Recruit": {
