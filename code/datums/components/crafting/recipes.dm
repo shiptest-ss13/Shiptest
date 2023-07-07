@@ -1144,6 +1144,7 @@
 	reqs = list(/datum/reagent/consumable/ice = 25,
 	/obj/item/stack/sheet/metal = 2)
 	category = CAT_MISC
+
 /datum/crafting_recipe/mothplush
 	name = "Moth Plushie"
 	result = /obj/item/toy/plush/moth

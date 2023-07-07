@@ -12,6 +12,7 @@
 
 /turf/open/water/tar/waste
 	baseturfs = /turf/open/floor/plating/asteroid/wasteplanet
+	planetary_atmos = TRUE
 	initial_gas_mix = WASTEPLANET_DEFAULT_ATMOS
 
 /turf/open/floor/plating/wasteplanet
@@ -20,6 +21,16 @@
 
 /turf/open/floor/plating/rust/wasteplanet
 	baseturfs = /turf/open/floor/plating/asteroid/wasteplanet
+	planetary_atmos = TRUE
+	initial_gas_mix = WASTEPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/plating/wasteplanet/MakeSlippery(wet_setting, min_wet_time, wet_time_to_add, max_wet_time, permanent)
+	return
+
+/turf/open/floor/plating/wasteplanet/rust
+	name = "rusted plating"
+	desc = "Corrupted steel."
+	icon_state = "plating_rust"
 
 /turf/open/floor/wood/waste
 	initial_gas_mix = WASTEPLANET_DEFAULT_ATMOS
@@ -55,6 +66,7 @@
 	light_color = LIGHT_COLOR_FLARE
 
 /turf/open/floor/plating/rust/wasteplanet/lit
+/turf/open/floor/plating/wasteplanet/rust/lit
 	light_range = 2
 	light_power = 0.2
 	light_color = LIGHT_COLOR_FLARE
