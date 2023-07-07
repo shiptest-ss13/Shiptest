@@ -11,17 +11,26 @@
 	var/starting_node = FALSE	//Whether it's available without any research.
 	var/list/prereq_ids = list()
 	var/list/design_ids = list()
-	var/list/unlock_ids = list()			//CALCULATED FROM OTHER NODE'S PREREQUISITES. Assoc list id = TRUE.
-	var/list/boost_item_paths = list()		//Associative list, path = list(point type = point_value).
-	var/autounlock_by_boost = TRUE			//boosting this will autounlock this node.
-	var/export_price = 0					//Cargo export price.
-	var/list/research_costs = list()					//Point cost to research. type = amount
-	var/category = "Misc"				//Category
+	/// CALCULATED FROM OTHER NODE'S PREREQUISITIES. Associated list id = TRUE
+	var/list/unlock_ids = list()
+	/// Associative list, path = list(point type = point_value)
+	var/list/boost_item_paths = list()
+	/// Boosting this will autounlock this node
+	var/autounlock_by_boost = TRUE
+	/// Cargo export price.
+	var/export_price = 0
+	/// The points cost to research the node, type = amount
+	var/list/research_costs = list()
+	/// The category of the node
+	var/category = "Misc"
+	/// Whether or not this node should show on the wiki
+	var/show_on_wiki = TRUE
 
 /datum/techweb_node/error_node
 	id = "ERROR"
 	display_name = "ERROR"
 	description = "This usually means something in the database has corrupted. If it doesn't go away automatically, inform Central Command for their techs to fix it ASAP(tm)"
+	show_on_wiki = FALSE
 
 /datum/techweb_node/proc/Initialize()
 	//Make lists associative for lookup

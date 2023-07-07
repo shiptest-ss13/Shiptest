@@ -1,6 +1,6 @@
 /obj/item/clothing/shoes/sneakers
 	dying_key = DYE_REGISTRY_SNEAKERS
-	supports_variations = DIGITIGRADE_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
 
 /obj/item/clothing/shoes/sneakers/black
 	name = "black shoes"
@@ -46,7 +46,7 @@
 
 /obj/item/clothing/shoes/sneakers/rainbow
 	name = "rainbow shoes"
-	desc = "Very gay shoes."
+	desc = "Very colorful shoes."
 	icon_state = "rain_bow"
 
 /obj/item/clothing/shoes/sneakers/orange

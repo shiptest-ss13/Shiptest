@@ -189,6 +189,8 @@ SUBSYSTEM_DEF(mapping)
 			S.unique_ship_access = data[ "unique_ship_access" ]
 		if(istext(data["description"]))
 			S.description = data["description"]
+		if(islist(data["tags"]))
+			S.tags = data["tags"]
 
 		S.job_slots = list()
 		var/list/job_slot_list = data["job_slots"]
@@ -206,7 +208,6 @@ SUBSYSTEM_DEF(mapping)
 					job_outfit = /datum/outfit/job/assistant
 				job_slot = new /datum/job(job, job_outfit)
 				job_slot.wiki_page = value["wiki_page"]
-				job_slot.exp_requirements = value["exp_requirements"]
 				job_slot.officer = value["officer"]
 				slots = value["slots"]
 
@@ -215,14 +216,20 @@ SUBSYSTEM_DEF(mapping)
 				continue
 
 			S.job_slots[job_slot] = slots
+		if(isnum(data["limit"]))
+			S.limit = data["limit"]
+		if(isnum(data["spawn_time_coeff"]))
+			S.spawn_time_coeff = data["spawn_time_coeff"]
+		if(isnum(data["officer_time_coeff"]))
+			S.officer_time_coeff = data["officer_time_coeff"]
+
 		if(isnum(data["enabled"]) && data["enabled"])
 			S.enabled = TRUE
 			ship_purchase_list[S.name] = S
-		if(isnum(data["limit"]))
-			S.limit = data["limit"]
-		shuttle_templates[S.file_name] = S
 		if(isnum(data["roundstart"]) && data["roundstart"])
 			maplist[S.name] = S
+
+		shuttle_templates[S.file_name] = S
 #undef CHECK_STRING_EXISTS
 #undef CHECK_LIST_EXISTS
 
@@ -251,7 +258,9 @@ SUBSYSTEM_DEF(mapping)
 /// Creates basic physical levels so we dont have to do that during runtime every time, nothing bad will happen if this wont run, as allocation will handle adding new levels
 /datum/controller/subsystem/mapping/proc/init_reserved_levels()
 	add_new_zlevel("Free Allocation Level", allocation_type = ALLOCATION_FREE)
+	CHECK_TICK
 	add_new_zlevel("Quadrant Allocation Level", allocation_type = ALLOCATION_QUADRANT)
+	CHECK_TICK
 
 /datum/controller/subsystem/mapping/proc/preloadHolodeckTemplates()
 	for(var/item in subtypesof(/datum/map_template/holodeck))

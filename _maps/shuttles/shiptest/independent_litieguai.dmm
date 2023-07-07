@@ -225,21 +225,8 @@
 "fn" = (
 /obj/machinery/firealarm/directional/west,
 /obj/machinery/airalarm/directional/south,
-/obj/structure/closet/crate/freezer/surplus_limbs{
-	name = "organ freezer"
-	},
-/obj/item/organ/stomach,
-/obj/item/organ/stomach,
-/obj/item/organ/lungs,
-/obj/item/organ/liver,
-/obj/item/organ/liver,
-/obj/item/organ/eyes,
-/obj/item/organ/eyes,
-/obj/item/organ/heart,
-/obj/item/organ/heart,
-/obj/item/organ/ears,
-/obj/item/organ/ears,
 /obj/effect/turf_decal/industrial/hatch/red,
+/obj/structure/closet/crate/freezer/surplus_limbs/organs,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/medical)
 "fp" = (
@@ -366,7 +353,7 @@
 	dir = 4
 	},
 /obj/machinery/airalarm/directional/south,
-/turf/open/floor/plasteel/showroomfloor,
+/turf/open/floor/plasteel/freezer,
 /area/ship/crew/toilet)
 "iP" = (
 /obj/machinery/power/smes/engineering{
@@ -741,7 +728,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/turf/open/floor/plasteel/showroomfloor,
+/turf/open/floor/plasteel/freezer,
 /area/ship/crew/toilet)
 "pK" = (
 /obj/structure/table/reinforced,
@@ -778,7 +765,7 @@
 	pixel_x = 25
 	},
 /obj/machinery/firealarm/directional/north,
-/turf/open/floor/plasteel/showroomfloor,
+/turf/open/floor/plasteel/freezer,
 /area/ship/crew/toilet)
 "qQ" = (
 /obj/effect/turf_decal/trimline/opaque/red/filled/warning{
@@ -1897,7 +1884,7 @@
 	},
 /obj/machinery/door/window/survival_pod,
 /obj/structure/curtain,
-/turf/open/floor/plasteel/showroomfloor,
+/turf/open/floor/plasteel/freezer,
 /area/ship/crew/toilet)
 "Qp" = (
 /obj/machinery/vending/snack/random,
@@ -2094,7 +2081,7 @@
 	},
 /obj/machinery/door/window/survival_pod,
 /obj/item/soap,
-/turf/open/floor/plasteel/showroomfloor,
+/turf/open/floor/plasteel/freezer,
 /area/ship/crew/toilet)
 "SR" = (
 /obj/machinery/airalarm/directional/north,
@@ -2346,7 +2333,7 @@
 /obj/structure/sign/poster/official/cleanliness{
 	pixel_y = -32
 	},
-/turf/open/floor/plasteel/showroomfloor,
+/turf/open/floor/plasteel/freezer,
 /area/ship/crew/toilet)
 "Wc" = (
 /obj/machinery/door/airlock/command{

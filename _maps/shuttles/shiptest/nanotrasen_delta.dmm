@@ -73,27 +73,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
-"aw" = (
-/obj/effect/turf_decal/floordetail/edgedrain{
-	dir = 4
-	},
-/obj/effect/turf_decal/industrial/loading{
-	dir = 8
-	},
-/obj/effect/turf_decal/corner/opaque/brown{
-	dir = 1
-	},
-/obj/machinery/mineral/processing_unit_console{
-	machinedir = 6;
-	pixel_y = 26
-	},
-/obj/machinery/conveyor_switch/oneway{
-	id = "1984";
-	pixel_x = 5;
-	pixel_y = -10
-	},
-/turf/open/floor/plasteel,
-/area/ship/cargo)
 "ax" = (
 /turf/closed/wall/mineral/titanium,
 /area/ship/cargo)
@@ -1353,6 +1332,17 @@
 /obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/plasteel/white,
 /area/ship/science/robotics)
+"mf" = (
+/obj/effect/turf_decal/borderfloor,
+/obj/machinery/door/airlock{
+	name = "Janitorial Closet"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/hallway/port)
 "mt" = (
 /obj/structure/sign/departments/medbay/alt,
 /turf/closed/wall/mineral/titanium/nodiagonal,
@@ -1437,17 +1427,6 @@
 /obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/engineering)
-"op" = (
-/obj/effect/turf_decal/floordetail/edgedrain,
-/obj/machinery/door/airlock{
-	name = "Restroom"
-	},
-/obj/machinery/door/firedoor/border_only,
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/hallway/port)
 "oq" = (
 /obj/machinery/light/small/built/directional/south,
 /obj/structure/cable{
@@ -2207,6 +2186,10 @@
 /obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/plasteel/dark,
 /area/ship/science/robotics)
+"HC" = (
+/obj/machinery/porta_turret/ship/weak,
+/turf/closed/wall/mineral/titanium,
+/area/ship/bridge)
 "HJ" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/science/robotics)
@@ -2261,6 +2244,17 @@
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
+"Jf" = (
+/obj/effect/turf_decal/borderfloor,
+/obj/machinery/door/airlock{
+	name = "Restroom"
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/hallway/port)
 "Jj" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2422,17 +2416,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/science/robotics)
-"Nm" = (
-/obj/effect/turf_decal/floordetail/edgedrain,
-/obj/machinery/door/airlock{
-	name = "Janitorial Closet"
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
-/obj/machinery/door/firedoor/border_only,
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/hallway/port)
 "NF" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2529,6 +2512,27 @@
 "Rq" = (
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/plasteel/patterned,
+/area/ship/cargo)
+"Sr" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/loading{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 1
+	},
+/obj/machinery/mineral/processing_unit_console{
+	machinedir = 6;
+	pixel_y = 26
+	},
+/obj/machinery/conveyor_switch/oneway{
+	id = "1984";
+	pixel_x = 5;
+	pixel_y = -10
+	},
+/turf/open/floor/plasteel,
 /area/ship/cargo)
 "SE" = (
 /obj/effect/turf_decal/corner/opaque/blue,
@@ -2817,12 +2821,6 @@
 /obj/machinery/light/small/built/directional/south,
 /turf/open/floor/plating,
 /area/ship/engineering)
-"ZY" = (
-/obj/machinery/porta_turret/centcom_shuttle/weak{
-	dir = 4
-	},
-/turf/closed/wall/mineral/titanium,
-/area/ship/bridge)
 
 (1,1,1) = {"
 aa
@@ -2946,7 +2944,7 @@ aa
 "}
 (7,1,1) = {"
 aa
-ZY
+HC
 ai
 ai
 AW
@@ -2962,13 +2960,13 @@ cP
 AW
 ai
 ai
-ZY
+HC
 "}
 (8,1,1) = {"
 aa
 ae
 al
-Nm
+mf
 aR
 Jj
 bD
@@ -3028,7 +3026,7 @@ SN
 aa
 ae
 CP
-op
+Jf
 qt
 ae
 bF
@@ -3247,7 +3245,7 @@ Mc
 (22,1,1) = {"
 aa
 ab
-aw
+Sr
 jk
 rs
 de
@@ -3346,23 +3344,23 @@ HJ
 "}
 (27,1,1) = {"
 aa
-ZY
+HC
 ab
 aK
 qe
 bd
 ab
-ZY
+HC
 aa
 aa
 aa
-ZY
+HC
 HJ
 DS
 TK
 QR
 HJ
-ZY
+HC
 "}
 (28,1,1) = {"
 aa

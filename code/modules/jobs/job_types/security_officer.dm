@@ -4,8 +4,6 @@
 	total_positions = 5 //Handled in /datum/controller/occupations/proc/setup_officer_positions()
 	spawn_positions = 5 //Handled in /datum/controller/occupations/proc/setup_officer_positions()
 	minimal_player_age = 7
-	exp_requirements = 300
-	exp_type = EXP_TYPE_CREW
 	wiki_page = "Space_Law" //WS Edit - Wikilinks/Warning
 
 	outfit = /datum/outfit/job/security
@@ -196,6 +194,22 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 
 	courierbag = /obj/item/storage/backpack/messenger/inteq
 	backpack_contents = list(/obj/item/melee/baton/loaded=1, /obj/item/ammo_box/magazine/co9mm=1, /obj/item/gun_voucher=1,/obj/item/pda/security)
+
+/datum/outfit/job/security/inteq/beluga
+	name = "IRMG Enforcer (Beluga)"
+
+	head = /obj/item/clothing/head/beret/sec/inteq
+	suit = null
+	belt = null
+	mask = null
+	uniform = /obj/item/clothing/under/syndicate/inteq
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security/inteq
+	shoes = /obj/item/clothing/shoes/sneakers/black
+	glasses = null
+	gloves = /obj/item/clothing/gloves/color/evening
+
+	courierbag = /obj/item/storage/backpack/messenger/inteq
+	backpack_contents = list(/obj/item/pda/security)
 
 /datum/outfit/job/security/inteq/naked
 	name = "IRMG Enforcer (Inteq) (Naked)"

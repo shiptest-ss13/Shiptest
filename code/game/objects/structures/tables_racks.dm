@@ -578,14 +578,14 @@
 /obj/structure/table/optable
 	name = "operating table"
 	desc = "Used for advanced medical procedures."
-	icon = 'goon/icons/obj/surgery.dmi'
-	icon_state = "table1"
+	icon = 'icons/obj/surgery_table.dmi'
+	icon_state = "surgery_table"
 	buildstack = /obj/item/stack/sheet/mineral/silver
 	smoothing_flags = NONE
 	smoothing_groups = null
 	canSmoothWith = null
 	can_buckle = 1
-	buckle_lying = NO_BUCKLE_LYING
+	buckle_lying = 90 //I don't see why you wouldn't be lying down while buckled to it
 	buckle_requires_restraints = FALSE
 	can_flip = FALSE
 	var/mob/living/carbon/human/patient = null
