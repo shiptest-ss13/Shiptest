@@ -404,7 +404,7 @@ SUBSYSTEM_DEF(shuttle)
 		L["file_name"] = S.file_name
 		L["category"] = S.category
 		L["description"] = S.description
-		L["admin_notes"] = S.admin_notes
+		L["tags"] = S.tags
 
 		templates[S.category]["templates"] += list(L)
 

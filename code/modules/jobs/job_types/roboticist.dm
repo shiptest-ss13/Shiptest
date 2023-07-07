@@ -2,8 +2,6 @@
 	name = "Roboticist"
 	total_positions = 2
 	spawn_positions = 2
-	exp_requirements = 60
-	exp_type = EXP_TYPE_CREW
 	wiki_page = "Guide_to_Robotics" //WS Edit - Wikilinks/Warning
 
 	outfit = /datum/outfit/job/roboticist

@@ -75,9 +75,8 @@
 	// Every node has a parent pipeline and an air associated with it, but we need to accomdate for edge cases like init dir cache building...
 	if(parents[i])
 		nullifyPipenet(parents[i])
-	if(airs[i])
-		QDEL_NULL(airs[i])
-	..()
+	airs[i] = null
+	return ..()
 
 /obj/machinery/atmospherics/components/on_construction()
 	..()
@@ -100,25 +99,22 @@
 /obj/machinery/atmospherics/components/proc/nullifyPipenet(datum/pipeline/reference)
 	if(!reference)
 		CRASH("nullifyPipenet(null) called by [type] on [COORD(src)]")
-	for (var/i in 1 to parents.len)
-		if (parents[i] == reference)
-			reference.other_airs -= airs[i] // Disconnects from the pipeline side
-			parents[i] = null // Disconnects from the machinery side.
-
+	var/i = parents.Find(reference)
+	reference.other_airs -= airs[i]
 	reference.other_atmosmch -= src
-
-	/**
-	*  We explicitly qdel pipeline when this particular pipeline
-	*  is projected to have no member and cause GC problems.
-	*  We have to do this because components don't qdel pipelines
-	*  while pipes must and will happily wreck and rebuild everything
-	*	again every time they are qdeleted.
+	/*
+	We explicitly qdel pipeline when this particular pipeline
+	is projected to have no member and cause GC problems.
+	We have to do this because components don't qdel pipelines
+	while pipes must and will happily wreck and rebuild
+	everything again every time they are qdeleted.
 	*/
-
 	if(!length(reference.other_atmosmch) && !length(reference.members))
 		if(QDESTROYING(reference))
-			CRASH("nullifyPipenet() called on qdeleting [reference]")
+			parents[i] = null
+			CRASH("nullifyPipenet() called on qdeleting [reference] indexed on parents\[[i]\]")
 		qdel(reference)
+	parents[i] = null
 
 /obj/machinery/atmospherics/components/returnPipenetAirs(datum/pipeline/reference)
 	var/list/returned_air = list()
