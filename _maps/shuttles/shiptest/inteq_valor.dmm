@@ -1348,6 +1348,9 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
 /turf/open/floor/carpet/black,
 /area/ship/crew/dorm)
 "mI" = (
@@ -2050,6 +2053,9 @@
 /area/ship/crew)
 "tz" = (
 /obj/structure/catwalk/over/plated_catwalk,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/cryo)
 "tH" = (
@@ -3579,6 +3585,9 @@
 /obj/effect/turf_decal/borderfloor{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/cryo)
 "Km" = (
@@ -3776,6 +3785,12 @@
 /area/ship/cargo)
 "Mq" = (
 /obj/structure/table,
+/turf/open/floor/carpet/black,
+/area/ship/crew/dorm)
+"Mt" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
 /turf/open/floor/carpet/black,
 /area/ship/crew/dorm)
 "ME" = (
@@ -5923,7 +5938,7 @@ Td
 Um
 RA
 mH
-hS
+Mt
 FF
 Um
 Td
