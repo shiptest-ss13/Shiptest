@@ -1,9 +1,5 @@
-/datum/job/captain/nt/lp_lieutenant
-	outfit = /datum/outfit/job/captain/nt/lp_lieutenant
-
 /datum/outfit/job/captain/nt/lp_lieutenant
 	name = "LP Lieutenant"
-	jobtype = /datum/job/captain/nt/lp_lieutenant
 
 	implants = list(/obj/item/implant/mindshield)
 	ears = /obj/item/radio/headset/nanotrasen/alt/captain
@@ -21,12 +17,8 @@
 	courierbag = /obj/item/storage/backpack/messenger/com
 
 
-/datum/job/officer/lp
-	outfit = /datum/outfit/job/security/lp
-
 /datum/outfit/job/security/lp
 	name = "LP Security Specialist"
-	jobtype = /datum/job/officer/lp
 
 	implants = list(/obj/item/implant/mindshield)
 	ears = /obj/item/radio/headset/nanotrasen/alt/captain
@@ -44,12 +36,8 @@
 	courierbag = /obj/item/storage/backpack/messenger/sec
 
 
-/datum/job/engineer/lp
-	outfit = /datum/outfit/job/engineer/lp
-
 /datum/outfit/job/engineer/lp
 	name = "LP Engineering Specialist"
-	jobtype = /datum/job/engineer/lp
 
 	implants = list(/obj/item/implant/mindshield)
 	ears = /obj/item/radio/headset/nanotrasen/alt/captain
@@ -67,12 +55,8 @@
 	courierbag = /obj/item/storage/backpack/messenger/engi
 
 
-/datum/job/doctor/lp
-	outfit = /datum/outfit/job/doctor/lp
-
 /datum/outfit/job/doctor/lp
 	name = "LP Medical specialist"
-	jobtype = /datum/job/doctor/lp
 
 	implants = list(/obj/item/implant/mindshield)
 	ears = /obj/item/radio/headset/nanotrasen/alt/captain
