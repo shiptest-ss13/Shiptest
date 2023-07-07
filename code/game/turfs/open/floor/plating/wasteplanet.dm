@@ -21,6 +21,32 @@
 /turf/open/floor/plating/rust/wasteplanet
 	baseturfs = /turf/open/floor/plating/asteroid/wasteplanet
 
+/turf/open/floor/wood/waste
+	initial_gas_mix = WASTEPLANET_DEFAULT_ATMOS
+	planetary_atmos = TRUE
+
+/turf/open/indestructible/hierophant/waste
+	initial_gas_mix = WASTEPLANET_DEFAULT_ATMOS
+	planetary_atmos = TRUE
+
+/turf/open/indestructible/hierophant/two/waste
+	initial_gas_mix = WASTEPLANET_DEFAULT_ATMOS
+	planetary_atmos = TRUE
+	light_color = LIGHT_COLOR_FLARE
+
+/turf/open/water/waste
+	initial_gas_mix = WASTEPLANET_DEFAULT_ATMOS
+	planetary_atmos = TRUE
+
+/turf/open/floor/plating/grass/wasteplanet
+	icon_state = "junglegrass"
+	initial_gas_mix = WASTEPLANET_DEFAULT_ATMOS
+	planetary_atmos = TRUE
+
+/turf/open/floor/plating/dirt/old/waste
+	initial_gas_mix = WASTEPLANET_DEFAULT_ATMOS
+	planetary_atmos = TRUE
+
 //open turfs then open lits.
 
 /turf/open/floor/plating/wasteplanet/lit
@@ -41,46 +67,19 @@
 /turf/open/water/tar/waste/lit
 	light_range = 2
 	light_power = 0.2
-	light_color = LIGHT_COLOR_LAVA
-
-/turf/open/water/waste
-	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
-	planetary_atmos = TRUE
+	light_color = LIGHT_COLOR_FLARE
 
 /turf/open/water/waste/lit
 	light_range = 2
 	light_power = 0.2
-	light_color = LIGHT_COLOR_LAVA
-
-/turf/open/floor/plating/dirt/old/waste
-	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
-	planetary_atmos = TRUE
+	light_color = LIGHT_COLOR_FLARE
 
 /turf/open/floor/plating/dirt/old/waste/lit
 	light_range = 2
 	light_power = 0.2
-	light_color = LIGHT_COLOR_LAVA
-
-/turf/open/floor/plating/grass/wasteplanet
-	icon_state = "junglegrass"
-	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
-	planetary_atmos = TRUE
+	light_color = LIGHT_COLOR_FLARE
 
 /turf/open/floor/plating/grass/wasteplanet/lit
 	light_range = 2
 	light_power = 0.2
-	light_color = LIGHT_COLOR_LAVA
-
-/turf/open/floor/wood/waste
-	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
-	planetary_atmos = TRUE
-
-/turf/open/indestructible/hierophant/waste
-	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
-	planetary_atmos = TRUE
-
-/turf/open/indestructible/hierophant/two/waste
-	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
-	planetary_atmos = TRUE
 	light_color = LIGHT_COLOR_FLARE
-
