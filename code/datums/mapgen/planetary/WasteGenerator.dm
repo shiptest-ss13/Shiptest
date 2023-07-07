@@ -89,7 +89,6 @@
 /datum/biome/waste
 	open_turf_types = list(
 		/turf/open/floor/plating/asteroid/wasteplanet/lit = 80,
-		/turf/open/floor/plating/rust/wasteplanet/lit = 15,
 		/turf/open/floor/plating/wasteplanet/rust/lit = 15,
 		/turf/open/floor/plating/wasteplanet/lit = 5
 	)
