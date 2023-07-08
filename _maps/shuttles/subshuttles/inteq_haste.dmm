@@ -3,15 +3,16 @@
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
 "f" = (
-/obj/machinery/door/poddoor/shutters{
-	dir = 4
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
 /obj/machinery/power/shieldwallgen/atmos{
-	id = "haste_door";
+	id = "haste_holo";
 	anchored = 1
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 8;
+	id = "haste_door"
 	},
 /turf/open/floor/engine/hull,
 /area/ship/bridge)
@@ -44,10 +45,6 @@
 	pixel_x = -4
 	},
 /turf/open/floor/plasteel/tech,
-/area/ship/bridge)
-"C" = (
-/obj/machinery/light/directional/south,
-/turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
 "D" = (
 /obj/machinery/power/terminal{
@@ -133,25 +130,28 @@
 	},
 /obj/machinery/button/shieldwallgen{
 	pixel_y = 22;
-	pixel_x = 9
+	pixel_x = 9;
+	id = "haste_holo"
 	},
 /obj/machinery/button/door{
 	pixel_x = -2;
-	pixel_y = 23
+	pixel_y = 23;
+	id = "haste_door"
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "R" = (
-/obj/machinery/door/poddoor/shutters{
-	dir = 4
-	},
 /obj/structure/cable{
 	icon_state = "5-8"
 	},
 /obj/machinery/power/shieldwallgen/atmos{
 	dir = 1;
-	id = "haste_door";
+	id = "haste_holo";
 	anchored = 1
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 8;
+	id = "haste_door"
 	},
 /turf/open/floor/engine/hull,
 /area/ship/bridge)
@@ -194,7 +194,7 @@ a
 a
 s
 I
-C
+a
 "}
 (4,1,1) = {"
 Y
