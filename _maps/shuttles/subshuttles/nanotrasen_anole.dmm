@@ -125,11 +125,10 @@
 /turf/open/floor/engine/hull,
 /area/ship/shuttle)
 "jk" = (
-/obj/machinery/porta_turret/centcom_shuttle/weak{
-	dir = 4;
+/obj/machinery/porta_turret/ship/weak{
 	name = "Sharplite Mining Turret";
-	shot_delay = 7.5;
-	desc = "An old Sharplite laser turret model developed for securing fauna-infested areas. Heavy use and much foundering renders this turret noticably inefficient, but it's still capable of packing a punch."
+	desc = "An old Sharplite laser turret model developed for securing fauna-infested areas. Heavy use and much foundering renders this turret noticably inefficient, but it's still capable of packing a punch.";
+	shot_delay = 7.5
 	},
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/shuttle)
@@ -138,13 +137,10 @@
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
-/obj/machinery/turretid{
-	icon_state = "control_kill";
-	lethal = 1;
+/obj/machinery/turretid/lethal{
 	locked = 0;
-	name = "Mining Turret control panel";
-	pixel_x = -28;
-	req_access = null
+	req_access = null;
+	pixel_x = -28
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/shuttle)
@@ -365,11 +361,10 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/shuttle)
 "yD" = (
-/obj/machinery/porta_turret/centcom_shuttle/weak{
-	dir = 4;
+/obj/machinery/porta_turret/ship/weak{
 	name = "Sharplite Mining Turret";
-	shot_delay = 7.5;
-	desc = "An old Sharplite laser turret model developed for securing fauna-infested areas. Heavy use and much foundering renders this turret noticably inefficient, but it's still capable of packing a punch."
+	desc = "An old Sharplite laser turret model developed for securing fauna-infested areas. Heavy use and much foundering renders this turret noticably inefficient, but it's still capable of packing a punch.";
+	shot_delay = 7.5
 	},
 /turf/closed/wall/mineral/titanium,
 /area/ship/shuttle)
@@ -546,7 +541,7 @@
 	dir = 4;
 	req_access_txt = "31"
 	},
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/dark,
 /area/ship/shuttle)
 "LU" = (
 /obj/structure/chair/comfy/shuttle{
@@ -619,7 +614,7 @@
 /obj/machinery/door/airlock/grunge{
 	dir = 4
 	},
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/dark,
 /area/ship/shuttle)
 "Og" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
