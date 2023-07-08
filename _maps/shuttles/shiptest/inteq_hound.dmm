@@ -357,6 +357,15 @@
 "ih" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/maintenance/port)
+"iw" = (
+/obj/machinery/button/door{
+	id = "hound_windows";
+	name = "Window Lockdown";
+	pixel_x = -6;
+	pixel_y = 25
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/bridge)
 "jb" = (
 /obj/structure/table,
 /obj/effect/turf_decal/corner/opaque/yellow,
@@ -1298,7 +1307,6 @@
 /obj/machinery/modular_computer/console/preset/command{
 	dir = 8
 	},
-/obj/item/radio/intercom/wideband/directional/south,
 /obj/item/radio/intercom/directional/south,
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 8
@@ -1525,8 +1533,8 @@
 /obj/machinery/button/door{
 	id = "hound_windows";
 	name = "Window Lockdown";
-	pixel_x = -6;
-	pixel_y = 25
+	pixel_x = -10;
+	pixel_y = 22
 	},
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 4
@@ -1536,6 +1544,10 @@
 	},
 /obj/effect/turf_decal/steeldecal/steel_decals_central4,
 /obj/machinery/computer/cargo/express,
+/obj/item/radio/intercom/wideband/directional/north{
+	pixel_y = 25;
+	pixel_x = 6
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "HZ" = (
@@ -2867,7 +2879,7 @@ pe
 HV
 KK
 BQ
-pe
+iw
 ib
 ib
 ib
