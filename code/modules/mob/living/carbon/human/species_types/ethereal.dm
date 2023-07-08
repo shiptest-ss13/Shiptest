@@ -256,7 +256,7 @@
 			if(new_etherealcolor)
 				var/temp_hsv = RGBtoHSV(new_etherealcolor)
 				if(ReadHSV(temp_hsv)[3] >= ReadHSV("#505050")[3]) // elzu colors should be bright ok??
-					default_color = "#" + sanitize_hexcolor(new_etherealcolor, 6)
+					default_color = sanitize_hexcolor(new_etherealcolor, 6, TRUE)
 					current_color = health_adjusted_color(H, default_color)
 					spec_updatehealth(H)
 					H.visible_message("<span class='notice'>[H] modulates \his EM frequency to [new_etherealcolor].</span>")

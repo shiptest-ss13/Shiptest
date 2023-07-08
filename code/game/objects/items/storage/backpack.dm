@@ -26,6 +26,7 @@
 	max_integrity = 300
 	greyscale_icon_state = "backpack"
 	greyscale_colors = list(list(13, 17), list(12, 17), list(12, 21))
+	supports_variations = VOX_VARIATION
 
 /obj/item/storage/backpack/ComponentInitialize()
 	. = ..()
@@ -232,6 +233,7 @@
 	item_state = "satchel-norm"
 	greyscale_icon_state = "satchel"
 	greyscale_colors = list(list(11, 12), list(17, 18), list(10, 11))
+	supports_variations = VOX_VARIATION
 
 /obj/item/storage/backpack/satchel/leather
 	name = "leather satchel"

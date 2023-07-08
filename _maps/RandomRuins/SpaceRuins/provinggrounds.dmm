@@ -252,7 +252,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicircle/halls)
 "ho" = (
-/obj/machinery/blackbox_recorder,
+/obj/structure/salvageable/server,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/space/has_grav/syndicircle/research)
 "ht" = (
@@ -403,7 +403,9 @@
 "le" = (
 /obj/structure/barricade/wooden/snowed,
 /obj/effect/turf_decal/snow,
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/airlock/hatch{
+	dir = 8
+	},
 /obj/structure/fans/tiny/invisible,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/syndicircle/winter)
@@ -685,7 +687,7 @@
 /area/ruin/space/has_grav/syndicircle/research)
 "tG" = (
 /obj/effect/turf_decal/ntlogo,
-/obj/machinery/nuclearbomb/selfdestruct,
+/obj/machinery/nuclearbomb/beer,
 /turf/open/floor/mineral/titanium/white,
 /area/ruin/space/has_grav/syndicircle/research)
 "tN" = (
@@ -892,6 +894,10 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/syndicircle/training)
+"yG" = (
+/obj/structure/frame/machine,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ruin/space/has_grav/syndicircle/research)
 "yO" = (
 /obj/structure/flora/rock/pile,
 /obj/effect/decal/cleanable/dirt,
@@ -979,12 +985,11 @@
 /turf/open/floor/plating/asteroid/snow/atmosphere,
 /area/ruin/space/has_grav/syndicircle/winter)
 "AV" = (
-/obj/structure/table/reinforced,
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/item/blackbox,
+/obj/machinery/blackbox_recorder,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicircle/halls)
 "Bc" = (
@@ -1212,9 +1217,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/mob/living/simple_animal/hostile/syndicate/civilian{
-	name = "Syndicate Researcher"
-	},
+/mob/living/simple_animal/hostile/syndicate,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicircle/halls)
 "Fv" = (
@@ -1229,13 +1232,15 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicircle/halls)
-"FH" = (
-/obj/machinery/power/terminal,
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/turf/open/floor/mineral/plastitanium,
+"FG" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/firstaid/regular,
+/turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/syndicircle/halls)
+"FH" = (
+/obj/effect/decal/cleanable/robot_debris,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ruin/space/has_grav/syndicircle/research)
 "FM" = (
 /mob/living/simple_animal/hostile/syndicate/civilian{
 	name = "Syndicate Researcher"
@@ -1346,6 +1351,7 @@
 /obj/machinery/power/smes/magical{
 	name = "power storage unit"
 	},
+/obj/structure/cable,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicircle/halls)
 "Je" = (
@@ -1445,6 +1451,11 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicircle/halls)
+"Li" = (
+/obj/effect/decal/cleanable/robot_debris,
+/obj/structure/frame/machine,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ruin/space/has_grav/syndicircle/research)
 "Lt" = (
 /obj/machinery/light/directional/south,
 /obj/effect/decal/cleanable/dirt,
@@ -1591,6 +1602,10 @@
 /obj/machinery/light/directional/south,
 /turf/open/floor/plating/dirt/jungle/wasteland,
 /area/ruin/space/has_grav/syndicircle/training)
+"Rj" = (
+/mob/living/simple_animal/hostile/syndicate,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/syndicircle/halls)
 "Rs" = (
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/grille,
@@ -1733,6 +1748,10 @@
 /area/ruin/space/has_grav/syndicircle/training)
 "Ua" = (
 /obj/machinery/light/directional/south,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/space/has_grav/syndicircle/halls)
+"UA" = (
+/mob/living/simple_animal/hostile/syndicate,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/syndicircle/halls)
 "UI" = (
@@ -2658,7 +2677,7 @@ MW
 Ox
 pT
 JP
-du
+UA
 ay
 ay
 pT
@@ -2681,7 +2700,7 @@ pT
 pT
 ay
 ay
-du
+UA
 uc
 Rs
 kK
@@ -3344,7 +3363,7 @@ ap
 am
 AV
 Dm
-FH
+Bj
 IY
 ap
 ap
@@ -3388,7 +3407,7 @@ ay
 ay
 CA
 tq
-eH
+FG
 wU
 ap
 au
@@ -3446,7 +3465,7 @@ am
 DG
 HC
 ap
-FM
+Rj
 Mr
 am
 am
@@ -3487,7 +3506,7 @@ Bx
 kc
 bV
 qV
-ho
+Li
 vg
 ho
 vg
@@ -3533,15 +3552,15 @@ bf
 cC
 ff
 ho
-ho
-bV
+yG
+FH
 oV
 rf
 ho
 vx
 xd
 zm
-ho
+bV
 ho
 am
 Jx
@@ -3582,9 +3601,9 @@ pT
 bf
 cQ
 fI
-ho
+FH
 jA
-bV
+ho
 bV
 ru
 tz
@@ -3633,7 +3652,7 @@ ba
 dd
 bV
 ho
-ho
+yG
 lX
 mc
 rV
@@ -3641,7 +3660,7 @@ tE
 vB
 xs
 rf
-ho
+Li
 ho
 bS
 Dm
@@ -3741,8 +3760,8 @@ tG
 vE
 xE
 rf
-ho
-ho
+bV
+yG
 fe
 GW
 ay
@@ -3890,7 +3909,7 @@ sI
 tZ
 wp
 bV
-bV
+FH
 bV
 kc
 lv
@@ -3940,7 +3959,7 @@ bV
 lX
 ws
 ho
-ho
+bV
 Aj
 Ej
 am
@@ -3989,8 +4008,8 @@ dd
 sX
 fO
 ws
-ho
-ho
+FH
+yG
 ho
 bV
 fe
@@ -4032,7 +4051,7 @@ pT
 pT
 ay
 ay
-du
+UA
 fZ
 pT
 ba
@@ -4058,7 +4077,7 @@ Wx
 NV
 pT
 GP
-du
+UA
 ay
 du
 pT

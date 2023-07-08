@@ -138,7 +138,9 @@
 			for(var/gasid in air.get_gases())
 				gasdata.Add(list(list(
 				"name"= GLOB.gas_data.names[gasid],
-				"amount" = round(100*air.get_moles(gasid)/air.total_moles(),0.01))))
+				"amount" = round(100*air.get_moles(gasid)/air.total_moles(),0.01),
+				"id" = gasid
+				)))
 
 		else
 			for(var/gasid in air.get_gases())

@@ -19,6 +19,7 @@
 /obj/effect/turf_decal/ntspaceworks_big/seven{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "bZ" = (
@@ -45,6 +46,11 @@
 	},
 /obj/effect/landmark/observer_start,
 /turf/open/floor/plasteel/mono,
+/area/ship/hallway/central)
+"cF" = (
+/obj/effect/turf_decal/corner/opaque/yellow/border,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "cG" = (
 /obj/machinery/advanced_airlock_controller{
@@ -104,6 +110,7 @@
 /obj/effect/turf_decal/corner/opaque/blue/border{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/central)
 "fs" = (
@@ -113,6 +120,7 @@
 /obj/effect/turf_decal/corner/opaque/purple{
 	dir = 10
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
 /area/ship/science)
 "fI" = (
@@ -175,7 +183,7 @@
 /obj/effect/turf_decal/ntspaceworks_big/two{
 	dir = 8
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/rust,
 /area/ship/maintenance/aft)
 "hh" = (
 /obj/effect/spawner/structure/window/reinforced/shutters,
@@ -227,6 +235,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/central)
 "jr" = (
@@ -256,13 +265,14 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/rust,
 /area/ship/maintenance/aft)
 "jM" = (
 /obj/machinery/atmospherics/components/binary/pump{
 	dir = 8;
 	name = "engine fuel pump"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "jW" = (
@@ -411,7 +421,7 @@
 	name = "research equipment"
 	},
 /obj/machinery/light/directional/north,
-/obj/item/radio/intercom/wideband/directional/north,
+/obj/item/radio/intercom/wideband/directional/west,
 /turf/open/floor/plasteel,
 /area/ship/bridge)
 "rf" = (
@@ -458,7 +468,8 @@
 /obj/item/construction/rcd/arcd,
 /obj/item/stack/sheet/plasteel/fifty,
 /obj/item/construction/rcd/combat,
-/turf/open/floor/plating,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating/rust,
 /area/ship/maintenance/aft)
 "uE" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
@@ -481,6 +492,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
 /area/ship/science)
 "vO" = (
@@ -605,7 +617,8 @@
 /obj/effect/turf_decal/number/two{
 	dir = 8
 	},
-/turf/open/floor/plating,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating/rust,
 /area/ship/maintenance/aft)
 "Ay" = (
 /obj/structure/cable{
@@ -691,6 +704,7 @@
 /obj/effect/turf_decal/corner/opaque/blue/border{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "Gf" = (
@@ -796,6 +810,16 @@
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
+"JU" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ship/maintenance/aft)
 "JZ" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -901,7 +925,8 @@
 /obj/effect/turf_decal/ntspaceworks_big/eight{
 	dir = 8
 	},
-/turf/open/floor/plating,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating/rust,
 /area/ship/maintenance/aft)
 "Na" = (
 /obj/machinery/atmospherics/components/binary/pump{
@@ -910,7 +935,7 @@
 /obj/effect/turf_decal/ntspaceworks_big/one{
 	dir = 8
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/rust,
 /area/ship/maintenance/aft)
 "NN" = (
 /obj/structure/frame/computer{
@@ -1036,6 +1061,7 @@
 /obj/effect/turf_decal/ntspaceworks_big/four{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "UC" = (
@@ -1253,7 +1279,7 @@ VB
 Ob
 ZB
 Ob
-VA
+JU
 jM
 VA
 Ob
@@ -1426,7 +1452,7 @@ qi
 mV
 BJ
 im
-uL
+cF
 zu
 TP
 cH
