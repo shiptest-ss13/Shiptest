@@ -444,6 +444,15 @@
 /obj/item/clothing/head/helmet/space/inteq,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
+"eg" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ship/storage)
 "ei" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -1505,6 +1514,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "nZ" = (
@@ -1594,9 +1606,6 @@
 /obj/machinery/door/airlock/public{
 	dir = 4;
 	name = "Meeting Room"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/crew/canteen)
@@ -2670,6 +2679,9 @@
 	dir = 1
 	},
 /obj/machinery/door/firedoor/border_only,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/storage)
 "zL" = (
@@ -4227,6 +4239,9 @@
 	dir = 8
 	},
 /obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/storage)
 "PU" = (
@@ -4934,9 +4949,6 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/crew/canteen)
 "XU" = (
@@ -5623,7 +5635,7 @@ yy
 bh
 nX
 zK
-Yt
+eg
 Yt
 Yt
 Vg
