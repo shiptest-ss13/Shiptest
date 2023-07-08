@@ -650,3 +650,15 @@
 	required_reagents = list(/datum/reagent/consumable/ethanol/vodka = 3, /datum/reagent/calcium = 1, /datum/reagent/consumable/lemonjuice = 1)
 	required_container = /obj/item/reagent_containers/food/drinks/breakawayflask
 	mix_sound ='sound/machines/defib_zap.ogg'
+
+/datum/chemical_reaction/hearth_wine
+	results = list(/datum/reagent/consumable/ethanol/hearth_wine = 5)
+	required_reagents = list(/datum/reagent/consumable/ethanol/hcider = 3, /datum/reagent/consumable/pyre_elementum = 1, /datum/reagent/fuel = 1)
+	required_container = /obj/item/reagent_containers/food/drinks/breakawayflask
+	mix_sound ='sound/items/welder.ogg'
+
+/datum/chemical_reaction/force_wine
+	results = list(/datum/reagent/consumable/ethanol/force_wine = 5)
+	required_reagents = list(/datum/reagent/consumable/ethanol/tequila = 3, /datum/reagent/calcium = 1, /datum/reagent/consumable/spacemountainwind = 1)
+	required_container = /obj/item/reagent_containers/food/drinks/breakawayflask
+	mix_sound ='sound/magic/forcewall.ogg'

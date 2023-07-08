@@ -71,9 +71,11 @@
 /datum/reagent/consumable/ethanol/shock_wine/on_mob_metabolize(mob/living/M)
 	..()
 	M.add_movespeed_modifier(/datum/movespeed_modifier/reagent/shock_wine)
+	to_chat(M, "<span class='notice'>You feel faster the lightning!</span>")
 
 /datum/reagent/consumable/ethanol/shock_wine/on_mob_end_metabolize(mob/living/M)
 	M.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/shock_wine)
+	to_chat(M, "<span class='notice'>You slow to a crawl...</span>")
 	..()
 
 /datum/reagent/consumable/ethanol/shock_wine/expose_mob(mob/living/M, method=TOUCH, reac_volume)
@@ -130,9 +132,62 @@
 
 /datum/reagent/consumable/ethanol/force_wine/expose_turf(turf/T, reac_volume)
 	var/turf/otherT
+	reac_volume = reac_volume * 4
+	new /obj/effect/forcefield/resin(T, reac_volume)
 	for(var/direction in GLOB.cardinals)
-		if(reac_volume < 10)
-			break
-		reac_volume -= 10
 		otherT = get_step(T, direction)
-		new /obj/effect/forcefield(otherT)
+		new /obj/effect/forcefield/resin(otherT, reac_volume)
+
+/datum/reagent/consumable/ethanol/prism_wine
+	name = "Prism Wine"
+	description = "A glittering brew utilized by members of the Saint-Roumain Militia, mixed to provide defense against the blasts and burns of foes and fauna alike. Softens targets against your own burns when thrown."
+	color = "#add8e6"
+	boozepwr = 70
+	taste_description = "the reflective quality of meditation"
+	glass_name = "Prism Wine"
+	glass_desc = "A glittering brew utilized by members of the Saint-Roumain Militia, mixed to provide defense against the blasts and burns of foes and fauna alike. Softens targets against your own burns when thrown."
+
+/datum/reagent/consumable/ethanol/prism_wine/on_mob_metabolize(mob/living/carbon/human/M)
+	M.physiology.burn_mod *= 0.5
+	M.visible_message("<span class='warning'>[M] seems to shimmer with power!</span>")
+	M.throw_alert("breakawayflask", /atom/movable/screen/alert/prism_wine_drink)
+
+/datum/reagent/consumable/ethanol/prism_wine/on_mob_end_metabolize(mob/living/carbon/human/M)
+	M.physiology.burn_mod = initial(M.physiology.burn_mod)
+	M.visible_message("<span class='warning'>[M] has returned to normal!</span>")
+	M.clear_alert("breakawayflask")
+
+/datum/reagent/consumable/ethanol/prism_wine/expose_mob(mob/living/M, method=TOUCH, reac_volume)
+	if(method == TOUCH)
+		if(ishuman(M))
+			var/mob/living/carbon/human/the_human = M
+			the_human.physiology.burn_mod *= 2
+			the_human.visible_message("<span class='warning'>[the_human] seemed weakend!</span>")
+			the_human.throw_alert("breakawayflask", /atom/movable/screen/alert/prism_wine_throw)
+			spawn(reac_volume SECONDS)
+				the_human.physiology.burn_mod = initial(the_human.physiology.burn_mod)
+				the_human.visible_message("<span class='warning'>[the_human] has returned to normal!</span>")
+				the_human.clear_alert("breakawayflask")
+
+
+/* Use in a diffrent wine
+/datum/reagent/consumable/ethanol/prism_wine/on_mob_metabolize(mob/living/L)
+	if(ishuman(L))
+		var/mob/living/carbon/human/the_human = L
+		for(var/obj/item/spear/thespear in the_human.contents)
+			mighty_spear = thespear
+			mighty_spear.block_chance += 50
+			to_chat(the_human, "<span class='notice'>[thespear] appears polished, although you don't recall polishing it.</span>")
+			return TRUE
+
+/datum/reagent/consumable/ethanol/prism_wine/on_mob_life(mob/living/L)
+	..()
+	if(mighty_spear && !(mighty_spear in L.contents)) //If you had a spear and lose it, you lose the reagent as well. Otherwise this is just a normal drink.
+		L.reagents.del_reagent(/datum/reagent/consumable/ethanol/prism_wine)
+
+/datum/reagent/consumable/ethanol/prism_wine/on_mob_end_metabolize(mob/living/L)
+	if(mighty_spear)
+		mighty_spear.block_chance -= 50
+		to_chat(L,"<span class='notice'>You notice [mighty_spear] looks worn again. Weird.</span>")
+	..()
+*/

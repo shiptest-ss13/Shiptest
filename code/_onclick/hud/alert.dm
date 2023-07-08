@@ -738,6 +738,17 @@ so as to remain in compliance with the most up-to-date laws."
 	C.changeNext_move(CLICK_CD_RESIST)
 	C.shoes.handle_tying(C)
 
+//TRICKWINES
+/atom/movable/screen/alert/prism_wine_drink
+	name = "Prism Wine Armor"
+	desc = "You seem resistant to bruises and burns."
+	icon_state = "breakaway_flask"
+
+/atom/movable/screen/alert/prism_wine_throw
+	name = "Prism Wine Weakness"
+	desc = "You seem weak to bruises and burns."
+	icon_state = "breakaway_flask"
+
 // PRIVATE = only edit, use, or override these if you're editing the system as a whole
 
 // Re-render all alerts - also called in /datum/hud/show_hud() because it's needed there
