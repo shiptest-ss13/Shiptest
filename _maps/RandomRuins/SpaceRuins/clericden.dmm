@@ -36,6 +36,7 @@
 /area/ruin/unpowered/no_grav)
 "bb" = (
 /obj/item/storage/book/bible,
+/obj/effect/turf_decal/siding/wood,
 /turf/open/floor/carpet/airless,
 /area/ruin/unpowered/no_grav)
 "bq" = (
@@ -52,10 +53,25 @@
 "bI" = (
 /obj/effect/decal/cleanable/crayon,
 /obj/effect/decal/cleanable/blood/old,
-/turf/open/floor/plasteel/dark/airless,
+/obj/effect/mob_spawn/human/corpse/charredskeleton{
+	burn_damage = 0
+	},
+/turf/open/floor/plasteel/cult/airless,
+/area/ruin/unpowered/no_grav)
+"cG" = (
+/obj/effect/decal/cleanable/blood/old,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/cult/airless,
 /area/ruin/unpowered/no_grav)
 "cH" = (
 /obj/structure/window/reinforced/survival_pod,
+/turf/open/floor/wood/airless,
+/area/ruin/unpowered/no_grav)
+"dn" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
 /turf/open/floor/wood/airless,
 /area/ruin/unpowered/no_grav)
 "dp" = (
@@ -75,6 +91,9 @@
 /area/ruin/unpowered/no_grav)
 "dW" = (
 /obj/item/chair/wood,
+/obj/effect/turf_decal/siding/wood{
+	dir = 10
+	},
 /turf/open/floor/carpet/airless,
 /area/ruin/unpowered/no_grav)
 "dZ" = (
@@ -124,6 +143,9 @@
 	pixel_x = -7;
 	pixel_y = 1
 	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
 /turf/open/floor/wood/airless,
 /area/ruin/unpowered/no_grav)
 "fx" = (
@@ -140,7 +162,10 @@
 "fV" = (
 /obj/effect/decal/remains/human,
 /obj/item/coin/gold,
-/mob/living/simple_animal/hostile/asteroid/basilisk,
+/mob/living/simple_animal/hostile/asteroid/basilisk{
+	name = "Leonard";
+	desc = "A territorial beast, covered in a thick shell that absorbs energy. Its stare causes victims to freeze from the inside. This one seems to be wearing a small tag labeled 'Leonard'."
+	},
 /turf/open/floor/plating/asteroid/airless,
 /area/ruin/unpowered/no_grav)
 "gd" = (
@@ -148,6 +173,21 @@
 /obj/structure/constructshell,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark/airless,
+/area/ruin/unpowered/no_grav)
+"gh" = (
+/obj/structure/bed,
+/obj/item/bedsheet/black,
+/obj/structure/curtain/cloth/fancy,
+/obj/effect/mob_spawn/human/corpse/charredskeleton{
+	burn_damage = 0
+	},
+/turf/open/floor/wood/airless,
+/area/ruin/unpowered/no_grav)
+"gz" = (
+/obj/structure/chair/pew/right{
+	dir = 4
+	},
+/turf/open/floor/plasteel/cult/airless,
 /area/ruin/unpowered/no_grav)
 "gN" = (
 /obj/structure/closet/wardrobe/chaplain_black,
@@ -166,6 +206,7 @@
 "hs" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/small/broken/directional/east,
+/obj/effect/turf_decal/siding/wood,
 /turf/open/floor/wood/airless,
 /area/ruin/unpowered/no_grav)
 "hw" = (
@@ -193,6 +234,10 @@
 "jh" = (
 /turf/open/floor/plating/asteroid/airless,
 /area/ruin/unpowered/no_grav)
+"jj" = (
+/obj/structure/window/reinforced/survival_pod,
+/turf/open/floor/plasteel/cult/airless,
+/area/ruin/unpowered/no_grav)
 "jy" = (
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plasteel/dark/airless,
@@ -218,6 +263,7 @@
 	pixel_x = -7;
 	pixel_y = 1
 	},
+/obj/effect/turf_decal/siding/wood,
 /turf/open/floor/carpet/airless,
 /area/ruin/unpowered/no_grav)
 "kB" = (
@@ -230,6 +276,15 @@
 "kD" = (
 /obj/effect/decal/cleanable/blood/gibs/core,
 /turf/open/floor/carpet/airless,
+/area/ruin/unpowered/no_grav)
+"kR" = (
+/obj/structure/bed,
+/obj/item/bedsheet/black,
+/obj/structure/curtain/cloth/fancy,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/turf/open/floor/wood/airless,
 /area/ruin/unpowered/no_grav)
 "kT" = (
 /obj/effect/decal/cleanable/blood/drip,
@@ -357,9 +412,20 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/unpowered/no_grav)
+"rS" = (
+/obj/structure/fluff/paper/stack{
+	dir = 6
+	},
+/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/carpet/airless,
+/area/ruin/unpowered/no_grav)
 "sy" = (
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/wood/airless,
+/area/ruin/unpowered/no_grav)
+"sK" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/cult/airless,
 /area/ruin/unpowered/no_grav)
 "sR" = (
 /obj/effect/decal/cleanable/blood/gibs/old,
@@ -375,9 +441,19 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/unpowered/no_grav)
+"uM" = (
+/obj/effect/decal/cleanable/blood/drip,
+/turf/open/floor/plasteel/cult/airless,
+/area/ruin/unpowered/no_grav)
 "vb" = (
 /obj/effect/turf_decal/corner_techfloor_grid/diagonal,
 /turf/open/floor/plasteel/dark/airless,
+/area/ruin/unpowered/no_grav)
+"vc" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/carpet/airless,
 /area/ruin/unpowered/no_grav)
 "vP" = (
 /obj/structure/table/wood,
@@ -414,8 +490,32 @@
 /obj/effect/decal/cleanable/blood/gibs/core,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/unpowered/no_grav)
+"yf" = (
+/obj/structure/bed,
+/obj/item/bedsheet/black,
+/obj/structure/curtain/cloth/fancy,
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/obj/effect/mob_spawn/human/corpse/charredskeleton{
+	burn_damage = 0
+	},
+/turf/open/floor/wood/airless,
+/area/ruin/unpowered/no_grav)
 "yJ" = (
 /obj/machinery/light/small/broken/directional/west,
+/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/wood/airless,
+/area/ruin/unpowered/no_grav)
+"yS" = (
+/obj/item/clothing/suit/armor/riot/chaplain/studentuni,
+/turf/open/floor/plasteel/cult/airless,
+/area/ruin/unpowered/no_grav)
+"zI" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
 /turf/open/floor/wood/airless,
 /area/ruin/unpowered/no_grav)
 "zP" = (
@@ -575,7 +675,10 @@
 /area/ruin/unpowered/no_grav)
 "Gt" = (
 /obj/effect/decal/cleanable/crayon,
-/turf/open/floor/plasteel/dark/airless,
+/turf/open/floor/plasteel/cult/airless,
+/area/ruin/unpowered/no_grav)
+"GB" = (
+/turf/open/floor/plasteel/cult/airless,
 /area/ruin/unpowered/no_grav)
 "GD" = (
 /obj/effect/decal/cleanable/blood/splatter,
@@ -587,6 +690,12 @@
 	dir = 1
 	},
 /turf/open/floor/carpet/airless,
+/area/ruin/unpowered/no_grav)
+"Ht" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/turf/open/floor/wood/airless,
 /area/ruin/unpowered/no_grav)
 "HH" = (
 /obj/structure/table/wood,
@@ -621,14 +730,14 @@
 /area/ruin/unpowered/no_grav)
 "Ja" = (
 /obj/structure/destructible/cult/tome,
-/turf/open/floor/plasteel/dark/airless,
+/turf/open/floor/plasteel/cult/airless,
 /area/ruin/unpowered/no_grav)
 "Jl" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/blood/gibs/core,
-/turf/open/floor/plasteel/dark/airless,
+/turf/open/floor/plasteel/cult/airless,
 /area/ruin/unpowered/no_grav)
 "Jx" = (
 /obj/item/chair/wood,
@@ -686,6 +795,12 @@
 "Mj" = (
 /turf/open/floor/carpet/royalblack/airless,
 /area/ruin/unpowered/no_grav)
+"Mz" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/wood/airless,
+/area/ruin/unpowered/no_grav)
 "MQ" = (
 /obj/structure/table/wood/reinforced,
 /obj/item/clothing/head/helmet/chaplain,
@@ -741,17 +856,25 @@
 /area/ruin/unpowered/no_grav)
 "NQ" = (
 /obj/effect/decal/cleanable/crayon,
-/turf/open/floor/wood/airless,
+/obj/effect/mob_spawn/human/corpse/charredskeleton{
+	burn_damage = 0
+	},
+/turf/open/floor/plasteel/cult/airless,
 /area/ruin/unpowered/no_grav)
 "NR" = (
 /obj/structure/fluff/paper/stack{
 	dir = 5
 	},
+/obj/effect/turf_decal/siding/wood,
 /turf/open/floor/carpet/airless,
 /area/ruin/unpowered/no_grav)
 "Og" = (
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/carpet/airless,
+/area/ruin/unpowered/no_grav)
+"OD" = (
+/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/wood/airless,
 /area/ruin/unpowered/no_grav)
 "OM" = (
 /obj/structure/rack,
@@ -800,6 +923,10 @@
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/unpowered/no_grav)
+"PV" = (
+/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/carpet/airless,
+/area/ruin/unpowered/no_grav)
 "Qk" = (
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -819,13 +946,29 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
 	},
-/turf/open/floor/plasteel/dark/airless,
+/turf/open/floor/plasteel/cult/airless,
 /area/ruin/unpowered/no_grav)
 "QJ" = (
 /obj/structure/table/wood,
 /obj/item/spacecash/bundle/c100,
 /obj/item/flashlight/lamp/green,
+/obj/effect/turf_decal/siding/wood,
 /turf/open/floor/carpet/airless,
+/area/ruin/unpowered/no_grav)
+"QO" = (
+/obj/structure/bed,
+/obj/item/bedsheet/black,
+/obj/structure/curtain/cloth/fancy,
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/wood/airless,
+/area/ruin/unpowered/no_grav)
+"Re" = (
+/obj/structure/chair/pew{
+	dir = 4
+	},
+/turf/open/floor/plasteel/cult/airless,
 /area/ruin/unpowered/no_grav)
 "RG" = (
 /obj/effect/decal/cleanable/blood/old,
@@ -833,6 +976,11 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark/airless,
+/area/ruin/unpowered/no_grav)
+"RI" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/carpet/airless,
 /area/ruin/unpowered/no_grav)
 "RL" = (
 /obj/structure/window/reinforced/survival_pod{
@@ -854,6 +1002,12 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark/airless,
+/area/ruin/unpowered/no_grav)
+"Tm" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 9
+	},
+/turf/open/floor/wood/airless,
 /area/ruin/unpowered/no_grav)
 "Tx" = (
 /obj/structure/fluff/paper/stack{
@@ -903,6 +1057,20 @@
 /mob/living/simple_animal/hostile/construct/proteon/hostile,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/unpowered/no_grav)
+"UY" = (
+/mob/living/simple_animal/hostile/construct/proteon/hostile,
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/turf/open/floor/carpet/airless,
+/area/ruin/unpowered/no_grav)
+"Vc" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/siding/wood{
+	dir = 5
+	},
+/turf/open/floor/wood/airless,
+/area/ruin/unpowered/no_grav)
 "VI" = (
 /obj/effect/turf_decal/corner_techfloor_grid{
 	dir = 1
@@ -932,6 +1100,7 @@
 "Wj" = (
 /obj/effect/decal/cleanable/shreds,
 /obj/item/clothing/suit/armor/riot/chaplain/adept,
+/obj/effect/rune/apocalypse,
 /turf/open/floor/carpet/airless,
 /area/ruin/unpowered/no_grav)
 "Wo" = (
@@ -941,7 +1110,7 @@
 "Wz" = (
 /obj/item/stack/sheet/mineral/wood,
 /obj/item/stack/sheet/mineral/wood,
-/turf/open/floor/plasteel/dark/airless,
+/turf/open/floor/plasteel/cult/airless,
 /area/ruin/unpowered/no_grav)
 "WJ" = (
 /obj/structure/window/reinforced/survival_pod{
@@ -1072,7 +1241,7 @@ CA
 CA
 dW
 fv
-np
+zI
 dp
 dp
 dp
@@ -1106,7 +1275,7 @@ QJ
 MV
 Wi
 tn
-mx
+kR
 dp
 CA
 Do
@@ -1138,8 +1307,8 @@ kp
 Jx
 rk
 cH
-Wi
-mx
+Ht
+gh
 CA
 CA
 Do
@@ -1166,13 +1335,13 @@ jL
 Fz
 Sj
 Kj
-Pk
+RI
 Wi
 Wi
 Gc
-np
-Wi
-mx
+Vc
+Mz
+QO
 CA
 Do
 lX
@@ -1198,7 +1367,7 @@ VN
 qx
 Fo
 Hi
-qx
+PV
 IO
 Wi
 hB
@@ -1269,7 +1438,7 @@ HH
 Il
 Md
 Wi
-Wi
+OD
 pT
 lX
 lX
@@ -1294,7 +1463,7 @@ hX
 Sj
 Cb
 Sj
-AF
+rS
 np
 Wi
 vP
@@ -1326,9 +1495,9 @@ dp
 CA
 CA
 Sj
-qx
+PV
 Wi
-Wi
+GB
 Wi
 RL
 Wi
@@ -1357,14 +1526,14 @@ NB
 OM
 dp
 CA
-qx
-Kj
-NQ
+vc
+UY
+Gt
 np
-cH
-Wi
-np
-mx
+jj
+Tm
+zI
+yf
 dp
 aR
 lX
@@ -1391,10 +1560,10 @@ hl
 CA
 lY
 IO
-sy
-Wi
+uM
+yS
 cH
-np
+dn
 mx
 dp
 dp
@@ -1422,11 +1591,11 @@ qx
 Qk
 Np
 sy
-Wi
+GB
 Wi
 NQ
 cH
-mx
+kR
 CA
 CA
 aR
@@ -1453,9 +1622,9 @@ IN
 nz
 IN
 of
-Wi
+GB
 kk
-np
+sK
 Wi
 CA
 CA
@@ -1573,7 +1742,7 @@ aR
 dp
 Ui
 VP
-NB
+GB
 kB
 qx
 ax
@@ -1606,7 +1775,7 @@ dp
 bq
 Gt
 bI
-eo
+sK
 Wo
 Pk
 ab
@@ -1639,7 +1808,7 @@ Gt
 Ja
 DZ
 zP
-qx
+GB
 GD
 ab
 Cz
@@ -1733,8 +1902,8 @@ jh
 CA
 FT
 Ql
-dZ
-dw
+gz
+Re
 XQ
 qI
 re
@@ -1797,8 +1966,8 @@ aR
 CA
 CA
 kY
-DQ
-NB
+cG
+GB
 Dq
 AP
 IG
