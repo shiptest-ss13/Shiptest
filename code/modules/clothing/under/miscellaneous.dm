@@ -192,7 +192,7 @@
 	righthand_file = 'icons/mob/inhands/patient_righthand.dmi'
 	icon_state = "gownwhite"
 	item_state = "gownwhite"
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
+	supports_variations = VOX_VARIATION | KEPORI_VARIATION
 	can_adjust = FALSE
 
 /obj/item/clothing/under/misc/gown/green
@@ -219,3 +219,4 @@
 	righthand_file = 'icons/mob/inhands/patient_righthand.dmi'
 	icon_state = "whiteslippers"
 	item_state = "whiteslippers"
+	supports_variations = VOX_VARIATION
