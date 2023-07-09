@@ -28,18 +28,18 @@ SUBSYSTEM_DEF(input)
 
 	default_macro_sets = list(
 		"default" = list( //Locked Any. Reduced tab support. [Hotkey]
-			"Tab" = "\".winset \\\"input.focus=true?map.focus=true input.background-color=[COLOR_INPUT_DISABLED]:input.focus=true input.background-color=[COLOR_INPUT_ENABLED]\\\"\"",
+			"Tab" = "\".winset \\\"input.focus=true ? map.focus=true : input.focus=true\\\"\"",
 			"Back" = "\".winset \\\"input.text=\\\"\\\"\\\"\"", // This makes it so backspace can remove default inputs
 			"Any" = "\"KeyDown \[\[*\]\]\"",
 			"Any+UP" = "\"KeyUp \[\[*\]\]\"",
 			"Escape" = "Reset-Held-Keys",
 			),
 		"old_default" = list( //Unlocked Bar. Respects oldmode_keys whitelist. Full tab support. [Default]
-			"Tab" = "\".winset \\\"mainwindow.macro=old_hotkeys map.focus=true input.background-color=[COLOR_INPUT_DISABLED]\\\"\"",
+			"Tab" = "\".winset \\\"mainwindow.macro=old_hotkeys map.focus=true\\\"\"",
 			"Ctrl+Escape" = "Reset-Held-Keys", //Small concession for the safety net.
 			),
 		"old_hotkeys" = list( //Unlocked Any. Supports clean switch back to unlocked. [Default]
-			"Tab" = "\".winset \\\"mainwindow.macro=old_default input.focus=true input.background-color=[COLOR_INPUT_ENABLED]\\\"\"",
+			"Tab" = "\".winset \\\"mainwindow.macro=old_default input.focus=true\\\"\"",
 			"Back" = "\".winset \\\"input.text=\\\"\\\"\\\"\"", // This makes it so backspace can remove default inputs
 			"Any" = "\"KeyDown \[\[*\]\]\"",
 			"Any+UP" = "\"KeyUp \[\[*\]\]\"",

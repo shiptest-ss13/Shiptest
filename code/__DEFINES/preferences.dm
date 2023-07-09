@@ -72,6 +72,7 @@
 #define SEC_DEPT_SUPPLY "Supply"
 
 // Playtime tracking system, see jobs_exp.dm
+// Due to changes to job experience requirements, many of these are effectively unused.
 #define EXP_TYPE_LIVING "Living"
 #define EXP_TYPE_CREW "Crew"
 #define EXP_TYPE_COMMAND "Command"
@@ -94,7 +95,7 @@
 #define SCREENTIP_BIG 1
 
 //Flags in the players table in the db
-#define DB_FLAG_EXEMPT 1
+#define DB_FLAG_EXEMPT (1<<0)
 
 #define DEFAULT_CYBORG_NAME "Default Cyborg Name"
 
