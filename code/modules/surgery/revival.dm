@@ -31,8 +31,8 @@
 		/obj/item/shockpaddles = 100,	//this is useful for reviving simepeople.
 		/obj/item/melee/baton = 33,		//i hate this a lot
 		/obj/item/gun/energy = 20,		//should be tasers only
-		/obj/item/inducer = 15)			//there's no reason to use a defib with this chance being high - so keep it low.
-	time = 4 SECONDS
+		/obj/item/inducer = 20)			//why not
+	time = 3 SECONDS
 	success_sound = 'sound/magic/lightningbolt.ogg'
 	failure_sound = 'sound/machines/defib_zap.ogg'
 	repeatable = TRUE
@@ -44,6 +44,11 @@
 		var/obj/item/shockpaddles/S = tool
 		if((S.req_defib && !S.defib.powered) || !S.wielded || S.cooldown || S.busy)
 			to_chat(user, "<span class='warning'>You need to wield both paddles, and [S.defib] must be powered!</span>")
+			return FALSE
+	if(istype(tool, /obj/item/melee/baton))
+		var/obj/item/melee/baton/B = tool
+		if(!B.turned_on)
+			to_chat(user, "<span class='warning'>[B] needs to be active!</span>")
 			return FALSE
 	if(istype(tool, /obj/item/gun/energy))
 		var/obj/item/gun/energy/E = tool
