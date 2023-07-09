@@ -5,9 +5,9 @@
 	implements = list(
 		TOOL_SCALPEL = 100,
 		/obj/item/melee/transforming/energy/sword = 40,
-		/obj/item/kitchen/knife = 20,
-		/obj/item/shard = 15,
-		/obj/item = 10) // 10% success with any sharp item. (why)
+		/obj/item/kitchen/knife = 40,
+		/obj/item/shard = 25,
+		/obj/item = 15) //any sharp item
 	time = 1.6 SECONDS
 	preop_sound = 'sound/surgery/scalpel1.ogg'
 	success_sound = 'sound/surgery/scalpel2.ogg'
@@ -33,6 +33,14 @@
 			H.bleed_rate += 3
 	return ..()
 
+/datum/surgery_step/incise/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
+	if(ishuman(target))
+		var/mob/living/carbon/human/H = target
+		display_results(user, target, "<span class='warning'>You screw up, cutting too deeply!</span>",
+			"<span class='warning'>[user] screws up, causing blood to spurt out of [H]'s [parse_zone(target_zone)]</span>",
+			"<span class='warning'>[user] screws up, causing blood to spurt out of [H]'s [parse_zone(target_zone)]</span>")
+		target.apply_damage(15, BRUTE, "[target_zone]")
+
 /datum/surgery_step/incise/nobleed //silly friendly!
 	experience_given = 1 //safer so not as much XP
 
@@ -50,9 +58,9 @@
 	name = "clamp bleeders"
 	implements = list(
 		TOOL_HEMOSTAT = 100,
-		TOOL_WIRECUTTER = 30,
-		/obj/item/stack/packageWrap = 15,
-		/obj/item/stack/cable_coil = 10)
+		TOOL_WIRECUTTER = 40,
+		/obj/item/stack/packageWrap = 20, //that would seriously hurt
+		/obj/item/stack/cable_coil = 20)
 	time = 2.4 SECONDS
 	preop_sound = 'sound/surgery/hemostat1.ogg'
 
@@ -69,13 +77,20 @@
 		H.bleed_rate = max((H.bleed_rate - 3), 0)
 	return ..()
 
+/datum/surgery_step/clamp_bleeders/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
+	if(ishuman(target))
+		var/mob/living/carbon/human/H = target
+		display_results(user, target, "<span class='warning'>You screw up, letting go of a vein!</span>",
+			"<span class='warning'>[user] screws up, causing blood to spurt out of [H]'s [parse_zone(target_zone)]</span>",
+			"<span class='warning'>[user] screws up, causing blood to spurt out of [H]'s [parse_zone(target_zone)]</span>")
+		target.apply_damage(15, BRUTE, "[target_zone]")
+
 //retract skin
 /datum/surgery_step/retract_skin
 	name = "retract skin"
 	implements = list(
 		TOOL_RETRACTOR = 100,
-		TOOL_SCREWDRIVER = 20,
-		TOOL_WIRECUTTER = 15,
+		TOOL_SCREWDRIVER = 40,
 		/obj/item/stack/rods = 10)
 	time = 2.4 SECONDS
 	preop_sound = 'sound/surgery/retractor1.ogg'
@@ -86,7 +101,13 @@
 		"<span class='notice'>[user] begins to retract the skin in [target]'s [parse_zone(target_zone)].</span>",
 		"<span class='notice'>[user] begins to retract the skin in [target]'s [parse_zone(target_zone)].</span>")
 
-
+/datum/surgery_step/retract_skin/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
+	if(ishuman(target))
+		var/mob/living/carbon/human/H = target
+		display_results(user, target, "<span class='warning'>You screw up, losing grip on the tissue!</span>",
+			"<span class='warning'>[user] screws up, causing blood to spurt out of [H]'s [parse_zone(target_zone)]</span>",
+			"<span class='warning'>[user] screws up, causing blood to spurt out of [H]'s [parse_zone(target_zone)]</span>")
+		target.apply_damage(10, BRUTE, "[target_zone]")
 
 //close incision
 /datum/surgery_step/close
@@ -113,23 +134,21 @@
 
 /datum/surgery_step/close/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results)
 	if(locate(/datum/surgery_step/saw) in surgery.steps)
-		target.heal_bodypart_damage(45,0)
+		target.heal_bodypart_damage(15,0)
 	if (ishuman(target))
 		var/mob/living/carbon/human/H = target
 		H.bleed_rate = max((H.bleed_rate - 3), 0)
 	return ..()
-
-
 
 //saw bone
 /datum/surgery_step/saw
 	name = "saw bone"
 	implements = list(
 		TOOL_SAW = 100,
+		/obj/item/fireaxe = 50,
 		/obj/item/melee/arm_blade = 40,
-		/obj/item/fireaxe = 30,
-		/obj/item/hatchet = 25,
-		/obj/item/kitchen/knife/butcher = 10,
+		/obj/item/hatchet = 40,
+		/obj/item/kitchen/knife/butcher = 33,
 		/obj/item = 10) //10% success (sort of) with any sharp item with a force>=10
 	time = 5.4 SECONDS
 	preop_sound = list(
@@ -153,18 +172,28 @@
 	return TRUE
 
 /datum/surgery_step/saw/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results)
-	target.apply_damage(50, BRUTE, "[target_zone]")
+	target.apply_damage(20, BRUTE, "[target_zone]")
 	display_results(user, target, "<span class='notice'>You saw [target]'s [parse_zone(target_zone)] open.</span>",
 		"<span class='notice'>[user] saws [target]'s [parse_zone(target_zone)] open!</span>",
 		"<span class='notice'>[user] saws [target]'s [parse_zone(target_zone)] open!</span>")
 	return ..()
+
+/datum/surgery_step/saw/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
+	if(ishuman(target))
+		var/mob/living/carbon/human/H = target
+		var/obj/item/bodypart/affected = target.get_bodypart(check_zone(target_zone))
+		display_results(user, target, "<span class='warning'>You screw up, breaking the bone!</span>",
+			"<span class='warning'>[user] screws up, causing blood to spurt out of [H]'s [parse_zone(target_zone)]</span>",
+			"<span class='warning'>[user] screws up, causing blood to spurt out of [H]'s [parse_zone(target_zone)]</span>")
+		affected.break_bone()
+		target.apply_damage(25, BRUTE, "[target_zone]")
 
 //drill bone
 /datum/surgery_step/drill
 	name = "drill bone"
 	implements = list(
 		TOOL_DRILL = 100,
-		/obj/item/screwdriver/power = 30,
+		/obj/item/screwdriver/power = 45,
 		/obj/item/pickaxe/drill = 25,
 		TOOL_SCREWDRIVER = 20,
 		/obj/item/kitchen/spoon = 4.13) //i made this as awful as possible.

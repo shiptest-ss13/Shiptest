@@ -29,9 +29,9 @@
 	name = "shock brain"
 	implements = list(
 		/obj/item/shockpaddles = 100,	//this is useful for reviving simepeople.
-		/obj/item/melee/baton = 33,		//i hate this a lot
-		/obj/item/gun/energy = 20,		//should be tasers only
-		/obj/item/inducer = 20)			//why not
+		/obj/item/melee/baton = 40,		//i hate this a lot
+		/obj/item/gun/energy = 30,		//should be tasers only
+		/obj/item/inducer = 30)			//why not
 	time = 3 SECONDS
 	success_sound = 'sound/magic/lightningbolt.ogg'
 	failure_sound = 'sound/machines/defib_zap.ogg'
@@ -90,5 +90,5 @@
 		"<span class='notice'>[user] send a powerful shock to [target]'s brain with [tool], but [target.p_they()] doesn't react.</span>",
 		"<span class='notice'>[user] send a powerful shock to [target]'s brain with [tool], but [target.p_they()] doesn't react.</span>")
 	playsound(get_turf(target), 'sound/magic/lightningbolt.ogg', 50, TRUE)
-	target.adjustOrganLoss(ORGAN_SLOT_BRAIN, 15, 180)
+	target.adjustOrganLoss(ORGAN_SLOT_BRAIN, 20, 180)
 	return FALSE

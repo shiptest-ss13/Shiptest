@@ -17,15 +17,14 @@
 			return TRUE
 	return FALSE
 
-
 //an incision but with greater bleed, and a 90% base success chance
 /datum/surgery_step/incise_heart
 	name = "incise heart"
 	implements = list(
 		TOOL_SCALPEL = 90,
-		/obj/item/shard = 30,// it's at LEAST a little smaller than a knife or an ENERGY SWORD
-		/obj/item/melee/transforming/energy/sword = 15,
-		/obj/item/kitchen/knife = 15)// heart surgery with a god damn knife.
+		/obj/item/kitchen/knife = 15,
+		/obj/item/shard = 25,// it's at LEAST a little smaller than a knife or an ENERGY SWORD
+		/obj/item/kitchen/knife = 15)
 	time = 1.6 SECONDS
 	preop_sound = 'sound/surgery/scalpel1.ogg'
 	success_sound = 'sound/surgery/scalpel2.ogg'
@@ -44,7 +43,7 @@
 				"<span class='notice'>Blood pools around the incision in [H]'s heart.</span>",
 				"")
 			H.bleed_rate += 10
-			H.adjustBruteLoss(10)
+			target.apply_damage(15, BRUTE, "[target_zone]")
 	return ..()
 
 /datum/surgery_step/incise_heart/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
@@ -55,7 +54,7 @@
 			"<span class='warning'>[user] screws up, causing blood to spurt out of [H]'s chest!</span>")
 		H.bleed_rate += 20
 		H.adjustOrganLoss(ORGAN_SLOT_HEART, 10)
-		H.adjustBruteLoss(10)
+		target.apply_damage(15, BRUTE, "[target_zone]")
 
 //grafts a coronary bypass onto the individual's heart, success chance is 90% base again
 /datum/surgery_step/coronary_bypass
