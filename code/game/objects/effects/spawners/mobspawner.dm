@@ -73,10 +73,7 @@
 
 /obj/effect/spawner/lootdrop/chicken/jungle/flock
 	loot = list(
-		/obj/effect/spawner/lootdrop/chicken/jungle
+		/mob/living/simple_animal/hostile/retaliate/chicken
 	)
 	lootcount = 7
 	lootdoubles = TRUE
-
-/obj/effect/spawner/lootdrop/chicken/jungle/flock/New()
-	lootcount = rand(5, 10)

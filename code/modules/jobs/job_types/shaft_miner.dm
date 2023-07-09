@@ -184,3 +184,14 @@
 	head = /obj/item/clothing/head/hardhat/orange
 	suit = /obj/item/clothing/suit/toggle/industrial
 	suit_store = /obj/item/tank/internals/emergency_oxygen/double
+
+/datum/outfit/job/miner/hazard/minutemen
+	name = "Industrial Miner (Minutemen)"
+	gloves = /obj/item/clothing/gloves/color/black
+	shoes = /obj/item/clothing/shoes/combat
+	backpack_contents = list(
+		/obj/item/flashlight/seclite=1,
+		/obj/item/stack/marker_beacon/ten=1,
+		/obj/item/weldingtool=1
+		)
+
