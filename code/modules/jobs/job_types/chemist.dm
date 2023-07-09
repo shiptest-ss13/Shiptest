@@ -56,7 +56,6 @@
 	name = "Chemist (Junior Chemist)"
 
 	glasses = null
-	uniform = /obj/item/clothing/under/rank/medical/chemist/junior_chemist
 	alt_uniform = null
 	suit = null
 	alt_suit = null
