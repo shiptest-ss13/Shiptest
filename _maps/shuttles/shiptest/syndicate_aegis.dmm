@@ -243,6 +243,7 @@
 	name = "Psychologists Locker";
 	pixel_y = 28
 	},
+/obj/item/gun/syringe/syndicate,
 /turf/open/floor/carpet/red,
 /area/ship/crew/office)
 "bx" = (
@@ -1242,7 +1243,7 @@
 	icon_state = "2-8"
 	},
 /obj/effect/turf_decal/siding/wood{
-	dir = 10
+	dir = 8
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
@@ -1322,6 +1323,9 @@
 	dir = 5
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/poster/contraband/syndicate{
+	pixel_x = 32
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm)
 "kO" = (
@@ -1350,6 +1354,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/sign/poster/contraband/syndiemoth{
 	pixel_x = 32
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/canteen)
@@ -2437,10 +2444,6 @@
 	pixel_x = 3;
 	pixel_y = 5
 	},
-/obj/item/storage/belt/utility{
-	pixel_x = 3;
-	pixel_y = 5
-	},
 /obj/item/storage/belt/utility/syndicate,
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/suit/hooded/wintercoat/engineering,
@@ -2464,6 +2467,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+/obj/item/tank/internals/emergency_oxygen/engi,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "wC" = (
@@ -2946,6 +2950,10 @@
 /obj/machinery/door/window/brigdoor/northright{
 	dir = 2;
 	name = "Secure Med Storage"
+	},
+/obj/item/storage/box/syringes{
+	pixel_y = 2;
+	pixel_x = 3
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
@@ -3703,9 +3711,6 @@
 /obj/effect/turf_decal/trimline/opaque/blue/filled/shrink_ccw{
 	dir = 4
 	},
-/obj/structure/sign/warning/nosmoking{
-	pixel_x = 30
-	},
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "JI" = (
@@ -3945,10 +3950,6 @@
 	pixel_x = 3;
 	pixel_y = 5
 	},
-/obj/item/storage/belt/utility{
-	pixel_x = 3;
-	pixel_y = 5
-	},
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/suit/hooded/wintercoat/engineering,
 /obj/item/clothing/under/rank/engineering/atmospheric_technician/life_support_specialist,
@@ -3970,6 +3971,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+/obj/item/tank/internals/emergency_oxygen/engi,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Ll" = (
@@ -4047,13 +4049,16 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "Mc" = (
-/obj/machinery/computer/operating{
-	dir = 8
-	},
 /obj/effect/turf_decal/trimline/opaque/blue/filled/line{
 	dir = 4
 	},
+/obj/machinery/computer/operating{
+	dir = 8
+	},
 /obj/machinery/light/directional/east,
+/obj/structure/sign/warning/nosmoking{
+	pixel_x = 33
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "Mv" = (
