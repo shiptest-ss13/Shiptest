@@ -30,11 +30,20 @@
 		},
 		"High-Class Passenger": {
 			"outfit": "/datum/outfit/job/lawyer/passenger",
-			"slots" : 4
+			"slots": 4
 		},
-		"Bartender": 1,
-		"Janitor": 1,
-		"Assistant": 2
+		"Bartender": {
+			"outfit": "/datum/outfit/job/bartender",
+			"slots": 1
+		},
+		"Janitor": {
+			"outfit": "/datum/outfit/job/janitor",
+			"slots": 1
+		},
+		"Assistant": {
+			"outfit": "/datum/outfit/job/assistant",
+			"slots": 2
+		}
 	},
 	"enabled": true
 }
