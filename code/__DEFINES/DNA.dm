@@ -55,10 +55,7 @@
 #define SPIDER_WEB /datum/mutation/human/webbing
 #define MARTYRDOM /datum/mutation/human/martyrdom
 #define HARS /datum/mutation/human/headless
-
-// WS Edit Start - Dwarves
 #define DORFISM /datum/mutation/human/dorfism
-// WS Edit End - Dwarves
 
 #define UI_CHANGED "ui changed"
 #define UE_CHANGED "ue changed"
@@ -135,7 +132,7 @@
 #define NOHUSK 22 // Can't be husked.
 #define NOMOUTH 23
 #define NOSOCKS 24 // You cannot wear sock
-#define NO_BONES 25 //WS Edit - Breakable Bones
+#define NO_BONES 25 // You don't have bones to break
 
 //organ slots
 #define ORGAN_SLOT_BRAIN "brain"

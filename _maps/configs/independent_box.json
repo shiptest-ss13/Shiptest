@@ -12,13 +12,22 @@
 	],
 	"prefix": "ISV",
 	"job_slots": {
-		"Chief Medical Officer": 1,
+		"Chief Medical Officer": {
+			"outfit": "/datum/outfit/job/cmo",
+			"slots": 1
+		},
 		"Medical Doctor": {
 			"outfit": "/datum/outfit/job/doctor",
 			"slots": 3
 		},
-		"Paramedic": 2,
-		"Assistant": 3
+		"Paramedic": {
+			"outfit": "/datum/outfit/job/paramedic",
+			"slots": 2
+		},
+		"Assistant": {
+			"outfit": "/datum/outfit/job/assistant",
+			"slots": 3
+		}
 	},
 	"enabled": true
 }
