@@ -96,7 +96,7 @@
 	name = "High Pantyhose"
 	icon_state = "pantyhose"
 
-//Pride Socks
+//Pride Socks todo:finish the damn sprites and digi variants. ugh
 
 /datum/sprite_accessory/socks/lesbian
 	name = "Thigh-High (Lesbian)"
