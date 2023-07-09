@@ -49,6 +49,9 @@
 	icon_state = "0-8"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "1-9"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "as" = (
@@ -471,9 +474,6 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/storage)
 "ei" = (
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -1193,9 +1193,6 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/medical)
 "lD" = (
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
 /obj/structure/sign/warning/nosmoking/burnt{
 	pixel_y = -32
 	},
@@ -1768,12 +1765,12 @@
 /obj/machinery/power/terminal{
 	dir = 8
 	},
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
 /obj/machinery/light/directional/north,
 /obj/effect/turf_decal/corner_techfloor_gray{
 	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-6"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -1801,6 +1798,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "2-10"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -1921,9 +1921,6 @@
 "rX" = (
 /obj/structure/sign/poster/contraband/inteq_gec{
 	pixel_y = 32
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
@@ -2345,15 +2342,12 @@
 /area/ship/crew/toilet)
 "wc" = (
 /obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/obj/structure/cable{
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "2-6"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "wj" = (
@@ -3536,13 +3530,13 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/storage/eva)
 "HA" = (
+/obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
 /obj/structure/cable{
-	icon_state = "1-2"
+	icon_state = "1-10"
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "HB" = (
@@ -4388,11 +4382,11 @@
 /obj/machinery/power/terminal{
 	dir = 8
 	},
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
 /obj/effect/turf_decal/corner_techfloor_gray{
 	dir = 6
+	},
+/obj/structure/cable{
+	icon_state = "0-5"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -4788,10 +4782,10 @@
 	dir = 8
 	},
 /obj/machinery/light/directional/south,
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "0-5"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "Ug" = (
@@ -4990,11 +4984,11 @@
 /obj/machinery/power/terminal{
 	dir = 8
 	},
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
 /obj/effect/turf_decal/corner_techfloor_gray{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-5"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -5054,10 +5048,13 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "2-9"
+	},
+/obj/structure/cable{
+	icon_state = "2-10"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "WC" = (
@@ -5290,11 +5287,11 @@
 /obj/machinery/power/terminal{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/corner_techfloor_gray/diagonal,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/corner_techfloor_gray/diagonal,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "YL" = (
@@ -5396,10 +5393,10 @@
 	charge = 1e+006
 	},
 /obj/effect/turf_decal/borderfloorblack/full,
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "ZZ" = (
