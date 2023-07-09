@@ -12,7 +12,10 @@
 	"map_path": "_maps/shuttles/shiptest/independent_junker.dmm",
 	"limit": 1,
 	"job_slots": {
-		"Assistant": 4
+		"Assistant": {
+			"outfit": "/datum/outfit/job/assistant",
+			"slots": 4
+		}
 	},
 	"enabled": true
 }
