@@ -11,7 +11,10 @@
 		"NATURAL_AGGRESSIVE"
 	],
 	"job_slots": {
-		"Captain": 1,
+		"Captain": {
+			"outfit": "/datum/outfit/job/captain",
+			"slots": 1
+		},
 		"Chief Medical Officer": {
 			"outfit": "/datum/outfit/job/cmo/medicaldirector",
 			"officer": true,
