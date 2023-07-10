@@ -159,6 +159,10 @@
 
 /datum/reagent/consumable/ethanol/prism_wine/expose_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(method == TOUCH)
+		if(isanimal(M))
+		var/armorval
+		armorval = M.armor.getRating
+		//M.getarmor = armor.setRating(energy = 0)
 		if(ishuman(M))
 			var/mob/living/carbon/human/the_human = M
 			the_human.physiology.burn_mod *= 2
@@ -168,7 +172,6 @@
 				the_human.physiology.burn_mod = initial(the_human.physiology.burn_mod)
 				the_human.visible_message("<span class='warning'>[the_human] has returned to normal!</span>")
 				the_human.clear_alert("breakawayflask")
-
 
 /* Use in a diffrent wine
 /datum/reagent/consumable/ethanol/prism_wine/on_mob_metabolize(mob/living/L)

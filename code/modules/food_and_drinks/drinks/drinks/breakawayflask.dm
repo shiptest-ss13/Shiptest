@@ -56,9 +56,14 @@
 /obj/item/reagent_containers/food/drinks/breakawayflask/vintagehearth
 	name = "Vintange Saint-Roumain Hearthwine"
 	desc = "Supposedly one of the first bottles of hearthwine made"
-	list_reagents = list(/datum/reagent/consumable/ethanol/hearth_wine = 45, /datum/reagent/uranium = 5)
+	list_reagents = list(/datum/reagent/consumable/ethanol/hearth_wine = 45, /datum/reagent/fuel/oil = 5)
 
 /obj/item/reagent_containers/food/drinks/breakawayflask/vintageforce
-	name = "Vintange Saint-Roumain forcehwine"
+	name = "Vintange Saint-Roumain Forcewine"
 	desc = "Supposedly one of the first bottles of forcewine made"
 	list_reagents = list(/datum/reagent/consumable/ethanol/force_wine = 45, /datum/reagent/uranium = 5)
+
+/obj/item/reagent_containers/food/drinks/breakawayflask/vintageforce
+	name = "Vintange Saint-Roumain Prismwine"
+	desc = "Supposedly one of the first bottles of forcewine made"
+	list_reagents = list(/datum/reagent/consumable/ethanol/Prism_wine = 45, /datum/reagent/toxin/plasma = 5)

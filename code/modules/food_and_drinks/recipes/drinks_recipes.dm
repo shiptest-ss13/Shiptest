@@ -662,3 +662,9 @@
 	required_reagents = list(/datum/reagent/consumable/ethanol/tequila = 3, /datum/reagent/calcium = 1, /datum/reagent/consumable/spacemountainwind = 1)
 	required_container = /obj/item/reagent_containers/food/drinks/breakawayflask
 	mix_sound ='sound/magic/forcewall.ogg'
+
+/datum/chemical_reaction/prism_wine
+	results = list(/datum/reagent/consumable/ethanol/prism_wine = 5)
+	required_reagents = list(/datum/reagent/consumable/ethanol/gin = 3, /datum/reagent/toxin/plasma = 1, /datum/reagent/consumable/tinlux = 1)
+	required_container = /obj/item/reagent_containers/food/drinks/breakawayflask
+	mix_sound ='sound/weapons/laser.ogg'
