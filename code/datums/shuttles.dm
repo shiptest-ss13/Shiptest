@@ -373,10 +373,6 @@
 /datum/map_template/shuttle/subshuttles
 	category = "subshuttles"
 
-/datum/map_template/shuttle/subshuttles/zetes_delivery_pod
-	file_name = "nanotrasen_zetes"
-	name = "Zetes Delivery Pod"
-	prefix = "NTSV"
 
 /datum/map_template/shuttle/subshuttles/pill
 	file_name = "independent_pill"
@@ -401,7 +397,14 @@
 /datum/map_template/shuttle/subshuttles/kunai
 	file_name = "independent_kunai"
 	name = "Kunai Dropship"
-	prefix = "SV"
+	prefix = "ISV"
+	name_categories = list("WEAPONS")
+
+/datum/map_template/shuttle/subshuttles/zetes_delivery_pod
+	file_name = "nanotrasen_zetes"
+	name = "Zetes Delivery Pod"
+	prefix = "NTSV"
+	name_categories = list("NANOTRASE")
 
 /datum/map_template/shuttle/subshuttles/sugarcube
 	file_name = "independent_sugarcube"
