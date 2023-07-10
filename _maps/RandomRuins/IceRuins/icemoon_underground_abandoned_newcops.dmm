@@ -2,7 +2,8 @@
 "aF" = (
 /obj/machinery/door/airlock/centcom{
 	name = "Dormitories";
-	req_access_txt = "150"
+	req_access_txt = "150";
+	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
@@ -22,6 +23,12 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"bV" = (
+/obj/machinery/door/airlock/external{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ruin/powered)
 "ch" = (
@@ -53,6 +60,15 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"cu" = (
+/obj/machinery/door/airlock/centcom{
+	name = "Dormitories";
+	req_access_txt = "150";
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood,
 /area/ruin/powered)
 "dm" = (
 /obj/structure/table,
@@ -237,9 +253,7 @@
 "ke" = (
 /obj/structure/table/wood,
 /obj/item/storage/box/syndie_kit/sleepytime,
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/wood,
 /area/ruin/powered)
 "kj" = (
@@ -282,7 +296,7 @@
 /area/ruin/powered)
 "lN" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/light_construct,
+/obj/structure/light_construct/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered)
 "mc" = (
@@ -417,6 +431,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
 /area/ruin/powered)
+"tJ" = (
+/obj/machinery/door/poddoor/shuttledock{
+	dir = 4
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/plating,
+/area/ruin/powered)
 "tP" = (
 /obj/effect/turf_decal/corner/transparent/bar,
 /obj/effect/turf_decal/corner/transparent/bar{
@@ -491,7 +512,9 @@
 /turf/open/floor/plating/airless,
 /area/ruin/powered)
 "xn" = (
-/obj/machinery/door/airlock/external,
+/obj/machinery/door/airlock/external{
+	dir = 4
+	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ruin/powered)
@@ -678,9 +701,8 @@
 /turf/open/floor/plasteel,
 /area/ruin/powered)
 "EV" = (
-/obj/machinery/light/small{
-	brightness = 3;
-	dir = 8
+/obj/machinery/light/small/directional/west{
+	brightness = 3
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/freezer,
@@ -741,9 +763,7 @@
 /obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ruin/powered)
@@ -802,9 +822,7 @@
 /area/ruin/powered)
 "Kx" = (
 /obj/item/soap/syndie,
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/machinery/light/small/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ruin/powered)
@@ -837,12 +855,14 @@
 /turf/open/floor/wood,
 /area/ruin/powered)
 "Lq" = (
-/obj/machinery/door/poddoor/shuttledock,
 /obj/structure/fans/tiny,
+/obj/machinery/door/poddoor/shuttledock{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ruin/powered)
 "Lt" = (
-/obj/structure/light_construct,
+/obj/structure/light_construct/directional/south,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood{
 	icon_state = "wood-broken"
@@ -883,7 +903,8 @@
 "PH" = (
 /obj/machinery/door/airlock/centcom{
 	name = "Dormitories";
-	req_access_txt = "150"
+	req_access_txt = "150";
+	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -917,7 +938,8 @@
 "Rj" = (
 /obj/machinery/door/poddoor/shutters{
 	id = "abandonednewcopshuttle";
-	name = "Shuttle Dock"
+	name = "Shuttle Dock";
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ruin/powered)
@@ -929,7 +951,8 @@
 "Rx" = (
 /obj/machinery/door/airlock/centcom{
 	name = "Dormitories";
-	req_access_txt = "150"
+	req_access_txt = "150";
+	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood{
@@ -946,18 +969,14 @@
 /area/ruin/powered)
 "Ss" = (
 /obj/effect/turf_decal/industrial/warning,
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ruin/powered)
 "SN" = (
 /obj/structure/table/wood,
 /obj/item/storage/box/syndie_kit/sleepytime,
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/wood{
 	icon_state = "wood-broken6"
 	},
@@ -994,7 +1013,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ruin/powered)
@@ -1020,9 +1039,7 @@
 /obj/item/tank/internals/emergency_oxygen/engi,
 /obj/item/clothing/suit/hooded/wintercoat,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered)
 "Wt" = (
@@ -1042,7 +1059,9 @@
 	},
 /area/ruin/powered)
 "WM" = (
-/obj/machinery/door/airlock/external,
+/obj/machinery/door/airlock/external{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ruin/powered)
 "WV" = (
@@ -1067,9 +1086,7 @@
 /obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
-/obj/structure/light_construct{
-	dir = 4
-	},
+/obj/structure/light_construct/directional/east,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ruin/powered)
@@ -1078,14 +1095,15 @@
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/icemoon/underground/explored)
 "XN" = (
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ruin/powered)
 "YJ" = (
 /obj/machinery/door/airlock/centcom{
 	name = "Restroom";
-	req_access_txt = "150"
+	req_access_txt = "150";
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/ruin/powered)
@@ -1097,9 +1115,7 @@
 /area/ruin/powered)
 "YU" = (
 /obj/structure/mecha_wreckage/mauler,
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/plating{
 	icon_state = "platingdmg1"
 	},
@@ -1122,7 +1138,8 @@
 "ZL" = (
 /obj/machinery/door/airlock/centcom{
 	name = "EVA Equipment";
-	req_access_txt = "150"
+	req_access_txt = "150";
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ruin/powered)
@@ -1131,7 +1148,7 @@
 /obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ruin/powered)
@@ -1550,7 +1567,7 @@ rG
 rG
 rG
 Fr
-WM
+bV
 Fr
 rG
 rG
@@ -2062,7 +2079,7 @@ Wt
 LP
 Wt
 Fr
-WM
+bV
 Fr
 Wt
 Wt
@@ -2239,7 +2256,7 @@ LP
 bH
 Cd
 zL
-aF
+cu
 zL
 Rx
 vV
@@ -2398,7 +2415,7 @@ fa
 vV
 vV
 vV
-Lq
+tJ
 Lq
 Lq
 Lq

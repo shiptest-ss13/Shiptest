@@ -27,9 +27,9 @@
 /turf/open/floor/wood,
 /area/ruin/unpowered)
 "g" = (
-/obj/structure/mineral_door/wood,
 /obj/item/grown/bananapeel,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/airlock/wood,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/ruin/unpowered)
 "h" = (
@@ -188,7 +188,9 @@
 /turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/ruin/unpowered)
 "L" = (
-/obj/structure/mineral_door/wood,
+/obj/machinery/door/airlock/wood{
+	dir = 8
+	},
 /turf/open/floor/wood,
 /area/ruin/unpowered)
 "M" = (

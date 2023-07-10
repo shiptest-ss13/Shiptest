@@ -3,8 +3,6 @@
 	total_positions = 1
 	spawn_positions = 1
 	minimal_player_age = 7
-	exp_requirements = 300
-	exp_type = EXP_TYPE_CREW
 	wiki_page = "Guide_to_Medicine" //WS Edit - Wikilinks/Warning
 
 	outfit = /datum/outfit/job/brig_phys
@@ -50,3 +48,38 @@
 	suit = /obj/item/clothing/suit/toggle/labcoat/brig_phys
 	l_pocket = /obj/item/reagent_containers/syringe
 	alt_suit = null
+
+/datum/outfit/job/brig_phys/syndicate/sbc
+	name = "Medic (Twinkleshine)"
+
+	gloves = /obj/item/clothing/gloves/color/latex/nitrile/evil
+	uniform = /obj/item/clothing/under/rank/medical/doctor/red
+	alt_uniform = /obj/item/clothing/under/syndicate/cybersun
+	glasses = /obj/item/clothing/glasses/hud/health
+	belt = /obj/item/storage/belt/medical
+	back = /obj/item/storage/backpack/duffelbag/syndie/med
+	shoes = /obj/item/clothing/shoes/combat
+	suit = /obj/item/clothing/suit/longcoat/roboblack
+	alt_suit = /obj/item/clothing/suit/toggle/labcoat
+	suit_store =  null
+	ears = /obj/item/radio/headset/syndicate
+	mask = /obj/item/clothing/mask/chameleon
+	id = /obj/item/card/id/syndicate_command/crew_id/med
+	implants = list(/obj/item/implant/weapons_auth)
+	backpack_contents = list(/obj/item/pda/brig_phys)
+
+	backpack = /obj/item/storage/backpack/security
+	satchel = /obj/item/storage/backpack/satchel/sec
+	duffelbag = /obj/item/storage/backpack/duffelbag/syndie/med
+	courierbag = /obj/item/storage/backpack/messenger/sec
+
+	box = /obj/item/storage/box/survival/syndie
+
+/datum/outfit/job/brig_phys/syndicate/sbc/post_equip(mob/living/carbon/human/H)
+	H.faction |= list("PlayerSyndicate")
+
+	var/obj/item/card/id/I = H.wear_id
+	I.registered_name = pick(GLOB.twinkle_names) + "-" + num2text(rand(6, 8)) // squidquest real
+	I.assignment = "Medic"
+	I.access |= list(ACCESS_SYNDICATE)
+	I.update_label()

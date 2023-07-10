@@ -134,7 +134,6 @@
 #define ui_ai_track_with_camera "SOUTH:6,WEST+2"
 #define ui_ai_camera_light "SOUTH:6,WEST+3"
 #define ui_ai_crew_monitor "SOUTH:6,WEST+4"
-#define ui_ai_crew_manifest "SOUTH:6,WEST+5"
 #define ui_ai_alerts "SOUTH:6,WEST+6"
 #define ui_ai_announcement "SOUTH:6,WEST+7"
 #define ui_ai_shuttle "SOUTH:6,WEST+8"
@@ -155,19 +154,18 @@
 #define ui_pai_light "SOUTH:6,WEST+4"
 #define ui_pai_newscaster "SOUTH:6,WEST+5"
 #define ui_pai_host_monitor "SOUTH:6,WEST+6"
-#define ui_pai_crew_manifest "SOUTH:6,WEST+7"
 #define ui_pai_state_laws "SOUTH:6,WEST+8"
 #define ui_pai_pda_send "SOUTH:6,WEST+9"
 #define ui_pai_pda_log "SOUTH:6,WEST+10"
 #define ui_pai_take_picture "SOUTH:6,WEST+12"
 #define ui_pai_view_images "SOUTH:6,WEST+13"
 
-/* Ghosts - REPLACED BY WS _defines.dm
-#define ui_ghost_jumptomob "SOUTH:6,CENTER-2:24"
-#define ui_ghost_orbit "SOUTH:6,CENTER-1:24"
-#define ui_ghost_reenter_corpse "SOUTH:6,CENTER:24"
-#define ui_ghost_teleport "SOUTH:6,CENTER+1:24"
-#define ui_ghost_pai "SOUTH: 6, CENTER+2:24"
-EndWS*/
+//Ghosts
+#define ui_ghost_jumptomob "SOUTH:6,CENTER-3:24"
+#define ui_ghost_orbit "SOUTH:6,CENTER-2:24"
+#define ui_ghost_reenter_corpse "SOUTH:6,CENTER-1:24"
+#define ui_ghost_teleport "SOUTH:6,CENTER:24"
+#define ui_ghost_pai "SOUTH: 6,CENTER+1:24"
+#define ui_ghost_spawner_menu "SOUTH:6,CENTER+2:24"
 
 #define ui_wanted_lvl "NORTH,11"

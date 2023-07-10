@@ -43,9 +43,7 @@
 /turf/open/floor/plasteel/airless,
 /area/ship/crew)
 "bg" = (
-/obj/machinery/airalarm/all_access{
-	pixel_y = 25
-	},
+/obj/machinery/airalarm/directional/north,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 1
 	},
@@ -75,7 +73,7 @@
 /turf/open/floor/plasteel/airless,
 /area/ship/crew)
 "bI" = (
-/obj/machinery/light/small,
+/obj/machinery/light/small/directional/south,
 /obj/effect/turf_decal/box/white/corners,
 /obj/machinery/button/door{
 	id = "caravantrade1_cargo";
@@ -98,7 +96,7 @@
 /obj/structure/sink{
 	pixel_y = 25
 	},
-/obj/machinery/light/small,
+/obj/machinery/light/small/directional/south,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/showroomfloor{
@@ -126,7 +124,7 @@
 /obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 4
 	},
-/obj/machinery/power/apc/auto_name/south,
+/obj/machinery/power/apc/auto_name/directional/south,
 /obj/machinery/power/terminal,
 /obj/structure/cable{
 	icon_state = "0-4"
@@ -319,9 +317,7 @@
 /turf/open/floor/plating/airless,
 /area/ship/engineering/engine)
 "lM" = (
-/obj/machinery/light/small{
-	dir = 8
-	},
+/obj/machinery/light/small/directional/west,
 /obj/structure/sign/warning/vacuum{
 	pixel_x = 32
 	},
@@ -341,13 +337,8 @@
 /turf/closed/wall/mineral/titanium,
 /area/ship/cargo)
 "mw" = (
-/obj/machinery/light/small{
-	dir = 8
-	},
-/obj/machinery/firealarm{
-	dir = 8;
-	pixel_x = -25
-	},
+/obj/machinery/light/small/directional/west,
+/obj/machinery/firealarm/directional/east,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/rack,
 /obj/item/storage/toolbox/emergency,
@@ -361,7 +352,7 @@
 /obj/effect/turf_decal/corner/opaque/blue{
 	dir = 8
 	},
-/obj/machinery/power/apc/auto_name/south,
+/obj/machinery/power/apc/auto_name/directional/south,
 /obj/machinery/power/terminal,
 /obj/structure/cable,
 /turf/open/floor/plasteel/dark{
@@ -421,7 +412,7 @@
 /turf/open/floor/plasteel/dark/airless,
 /area/ship/cargo)
 "pR" = (
-/obj/machinery/light/small,
+/obj/machinery/light/small/directional/south,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -457,10 +448,7 @@
 	},
 /area/ship/bridge)
 "qM" = (
-/obj/machinery/airalarm/all_access{
-	dir = 4;
-	pixel_x = -25
-	},
+/obj/machinery/airalarm/directional/west,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood,
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
@@ -470,7 +458,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/apc/auto_name/directional/north,
 /obj/machinery/power/terminal{
 	dir = 1
 	},
@@ -495,9 +483,7 @@
 /turf/open/floor/plasteel/airless,
 /area/ship/crew)
 "sf" = (
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /obj/structure/table,
 /obj/item/stack/packageWrap,
 /obj/item/crowbar,
@@ -505,9 +491,7 @@
 	pixel_x = 1;
 	pixel_y = 5
 	},
-/obj/machinery/airalarm/all_access{
-	pixel_y = 25
-	},
+/obj/machinery/airalarm/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/airless,
 /area/ship/cargo)
@@ -528,9 +512,7 @@
 "ss" = (
 /obj/structure/rack,
 /obj/item/storage/belt/utility,
-/obj/structure/extinguisher_cabinet{
-	pixel_y = 29
-	},
+/obj/structure/extinguisher_cabinet/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/airless,
@@ -569,14 +551,11 @@
 	},
 /area/ship/cargo)
 "uA" = (
-/obj/machinery/light/small,
+/obj/machinery/light/small/directional/south,
 /obj/structure/bed,
 /obj/item/bedsheet,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/airalarm/all_access{
-	dir = 8;
-	pixel_x = 25
-	},
+/obj/machinery/airalarm/directional/east,
 /obj/machinery/button/door{
 	id = "caravantrade1_cabin1";
 	name = "Cabin Bolt Control";
@@ -872,13 +851,8 @@
 	},
 /area/ship/bridge)
 "EQ" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = 25
-	},
+/obj/machinery/light/small/directional/east,
+/obj/machinery/firealarm/directional/west,
 /obj/effect/decal/cleanable/blood,
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 8
@@ -932,9 +906,7 @@
 /turf/template_noop,
 /area/ship/cargo)
 "GJ" = (
-/obj/machinery/firealarm{
-	pixel_y = 25
-	},
+/obj/machinery/firealarm/directional/north,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 1
 	},
@@ -953,12 +925,8 @@
 /turf/open/floor/plasteel/airless,
 /area/ship/crew)
 "Ib" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
-/obj/machinery/airalarm/all_access{
-	pixel_y = 25
-	},
+/obj/machinery/light/small/directional/north,
+/obj/machinery/airalarm/directional/north,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
@@ -968,9 +936,7 @@
 /turf/open/floor/plasteel/airless,
 /area/ship/bridge)
 "Ja" = (
-/obj/machinery/light/small{
-	dir = 8
-	},
+/obj/machinery/light/small/directional/west,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/rack,
 /obj/item/storage/firstaid/regular,
@@ -1064,7 +1030,7 @@
 /turf/open/floor/plasteel/airless,
 /area/ship/cargo)
 "Mb" = (
-/obj/machinery/light/small,
+/obj/machinery/light/small/directional/south,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -1176,14 +1142,11 @@
 /turf/open/floor/plasteel/dark/airless,
 /area/ship/cargo)
 "PM" = (
-/obj/machinery/light/small,
+/obj/machinery/light/small/directional/south,
 /obj/structure/bed,
 /obj/item/bedsheet,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/airalarm/all_access{
-	dir = 8;
-	pixel_x = 25
-	},
+/obj/machinery/airalarm/directional/east,
 /obj/machinery/button/door{
 	id = "caravantrade1_cabin2";
 	name = "Cabin Bolt Control";
@@ -1218,12 +1181,10 @@
 /turf/open/floor/plasteel/airless,
 /area/ship/cargo)
 "Qs" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
+/obj/machinery/light/small/directional/east,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/machinery/power/apc/auto_name/east,
+/obj/machinery/power/apc/auto_name/directional/east,
 /obj/machinery/power/terminal{
 	dir = 4
 	},
@@ -1250,9 +1211,7 @@
 "QY" = (
 /obj/structure/table,
 /obj/machinery/cell_charger,
-/obj/machinery/firealarm{
-	pixel_y = 25
-	},
+/obj/machinery/firealarm/directional/north,
 /obj/item/stack/cable_coil/yellow{
 	pixel_x = 12;
 	pixel_y = 4
@@ -1326,10 +1285,7 @@
 /turf/open/floor/plating/airless,
 /area/ship/cargo)
 "UW" = (
-/obj/machinery/airalarm/all_access{
-	dir = 8;
-	pixel_x = 25
-	},
+/obj/machinery/airalarm/directional/east,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1423,10 +1379,7 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/cargo)
 "WU" = (
-/obj/machinery/airalarm/all_access{
-	dir = 4;
-	pixel_x = -25
-	},
+/obj/machinery/airalarm/directional/west,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/effect/mob_spawn/human/corpse/cargo_tech,

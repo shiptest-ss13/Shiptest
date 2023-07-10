@@ -57,15 +57,6 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ship/construction)
-"fJ" = (
-/obj/machinery/power/apc/auto_name/east{
-	cell_type = /obj/item/stock_parts/cell/high/plus
-	},
-/obj/structure/cable/yellow{
-	icon_state = "0-8"
-	},
-/turf/open/floor/plating/airless,
-/area/ship/external)
 "gL" = (
 /obj/item/floor_painter{
 	pixel_x = 5;
@@ -193,35 +184,16 @@
 	},
 /turf/open/floor/plating,
 /area/ship/construction)
-"uC" = (
-/obj/structure/railing,
-/obj/effect/turf_decal/industrial/warning/corner,
-/turf/open/floor/plating/airless,
-/area/ship/construction)
-"uG" = (
+"uq" = (
 /obj/machinery/cryopod{
 	dir = 4
 	},
-/obj/machinery/computer/cryopod{
-	dir = 4;
-	pixel_x = -24
-	},
+/obj/machinery/computer/cryopod/directional/west,
 /turf/open/floor/plating,
 /area/ship/construction)
-"uR" = (
-/obj/structure/railing{
-	dir = 8
-	},
-/obj/effect/turf_decal/industrial/warning/corner{
-	dir = 1
-	},
-/obj/machinery/power/apc/auto_name/east{
-	cell_type = /obj/item/stock_parts/cell/high/plus
-	},
-/obj/structure/cable/yellow{
-	icon_state = "0-8"
-	},
-/obj/item/stock_parts/cell/high,
+"uC" = (
+/obj/structure/railing,
+/obj/effect/turf_decal/industrial/warning/corner,
 /turf/open/floor/plating/airless,
 /area/ship/construction)
 "vo" = (
@@ -244,6 +216,13 @@
 	name = "wood and carpeting crate"
 	},
 /turf/open/floor/plating/airless,
+/area/ship/construction)
+"vs" = (
+/obj/item/toy/crayon/spraycan/infinite{
+	name = "stencil tool"
+	},
+/obj/effect/landmark/observer_start,
+/turf/open/floor/plating,
 /area/ship/construction)
 "vt" = (
 /obj/item/tank/internals/oxygen/yellow,
@@ -367,12 +346,6 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ship/construction)
-"Hf" = (
-/obj/item/toy/crayon/spraycan/infinite{
-	name = "stencil tool"
-	},
-/turf/open/floor/plating,
-/area/ship/construction)
 "HK" = (
 /obj/machinery/portable_atmospherics/canister/air,
 /obj/effect/turf_decal/box/corners{
@@ -461,8 +434,8 @@
 	},
 /obj/item/pickaxe,
 /obj/item/pickaxe,
-/obj/item/pinpointer/deepcore,
-/obj/item/pinpointer/deepcore,
+/obj/item/mining_scanner,
+/obj/item/mining_scanner,
 /obj/structure/closet/crate{
 	name = "Mining Equipment"
 	},
@@ -525,6 +498,15 @@
 /obj/structure/girder,
 /turf/open/floor/plating/airless,
 /area/ship/construction)
+"RZ" = (
+/obj/machinery/power/apc/auto_name/directional/east{
+	cell_type = /obj/item/stock_parts/cell/high/plus
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "SA" = (
 /turf/template_noop,
 /area/template_noop)
@@ -549,6 +531,22 @@
 /obj/item/circuitboard/machine/rdserver,
 /obj/item/circuitboard/computer/rdconsole,
 /obj/item/research_notes/loot/genius,
+/turf/open/floor/plating/airless,
+/area/ship/construction)
+"SN" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 1
+	},
+/obj/machinery/power/apc/auto_name/directional/east{
+	cell_type = /obj/item/stock_parts/cell/high/plus
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/obj/item/stock_parts/cell/high,
 /turf/open/floor/plating/airless,
 /area/ship/construction)
 "Tc" = (
@@ -646,7 +644,7 @@ ND
 ND
 ND
 ND
-fJ
+RZ
 SA
 "}
 (3,1,1) = {"
@@ -740,7 +738,7 @@ rj
 Pd
 fF
 nv
-uR
+SN
 Pd
 qM
 ND
@@ -773,7 +771,7 @@ SA
 gL
 HP
 Fj
-uG
+uq
 Fj
 Vu
 nq
@@ -841,7 +839,7 @@ nx
 dz
 MA
 ev
-Hf
+vs
 ev
 MA
 MO

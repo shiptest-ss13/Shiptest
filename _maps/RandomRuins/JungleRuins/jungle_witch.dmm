@@ -46,14 +46,24 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/powered)
+"iS" = (
+/obj/machinery/door/airlock/wood,
+/turf/open/floor/wood,
+/area/ruin/powered)
 "jh" = (
 /obj/item/toy/crayon/white,
 /obj/effect/decal/cleanable/blood/gibs/limb,
 /turf/open/floor/wood,
 /area/ruin/powered)
 "jF" = (
-/obj/structure/mineral_door/wood,
 /obj/item/restraints/legcuffs/beartrap/energy,
+/obj/machinery/door/airlock/wood,
+/turf/open/floor/wood,
+/area/ruin/powered)
+"kc" = (
+/obj/machinery/door/airlock/wood{
+	dir = 4
+	},
 /turf/open/floor/wood,
 /area/ruin/powered)
 "lG" = (
@@ -119,9 +129,7 @@
 /area/ruin/powered)
 "se" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light/small{
-	dir = 4
-	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/wood,
 /area/ruin/powered)
 "sP" = (
@@ -203,7 +211,7 @@
 /area/ruin/unpowered)
 "Dr" = (
 /obj/effect/decal/cleanable/generic,
-/obj/machinery/light/dim,
+/obj/machinery/light/dim/directional/south,
 /turf/open/floor/wood,
 /area/ruin/powered)
 "DP" = (
@@ -278,9 +286,7 @@
 /area/ruin/unpowered)
 "Uy" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light/dim{
-	dir = 8
-	},
+/obj/machinery/light/dim/directional/west,
 /turf/open/floor/wood,
 /area/ruin/powered)
 "WI" = (
@@ -360,8 +366,8 @@ Xl
 wI
 Eq
 Eq
-WI
-WI
+kc
+kc
 Eq
 Eq
 Eq
@@ -434,7 +440,7 @@ Kc
 Kc
 Kc
 Kc
-WI
+iS
 YZ
 ER
 YZ

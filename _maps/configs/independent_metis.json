@@ -2,7 +2,13 @@
 	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
 	"map_name": "Metis-class Experimental Extrasolar Pathfinder",
 	"map_short_name": "Metis-class",
+	"description": "The elderly Metis-class is effectively a mobile research barge, a large and ungainly hunk of titanium outfitted with a wide variety of scientific facilities and equipment. While the specifics of any given Metis are subject to extreme variance, common features include AI facilities, xenobiological research chambers, and robotics equipment. Due to the dangerous and often tenuously-legal research typically pursued on the Frontier as well as tight budgets and low safety investment common to independent research teams, the Metis-class has earned a reputation for disaster, and abandoned Metises overrun with xenofauna or rogue machines are a disturbingly common sight in some parts of the Frontier.",
+	"tags": ["Science", "Robotics", "Survival Challenge"],
 	"map_path": "_maps/shuttles/shiptest/independent_metis.dmm",
+	"prefix": "ISV",
+	"namelists": [
+		"SPACE"
+	],
 	"limit": 2,
 	"job_slots": {
 		"Extraterrestrial Exploratory Project Supervisor": {
