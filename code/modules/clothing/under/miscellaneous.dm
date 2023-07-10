@@ -219,4 +219,3 @@
 	righthand_file = 'icons/mob/inhands/patient_righthand.dmi'
 	icon_state = "whiteslippers"
 	item_state = "whiteslippers"
-	supports_variations = VOX_VARIATION
