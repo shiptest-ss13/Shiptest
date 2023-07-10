@@ -10,9 +10,18 @@
 		"MYTHOLOGICAL"
 	],
 	"job_slots": {
-		"Chaplain": 1,
-		"Curator": 1,
-		"Station Engineer": 1,
+		"Chaplain": {
+			"outfit": "/datum/outfit/job/chaplain",
+			"slots": 1
+		},
+		"Curator": {
+			"outfit": "/datum/outfit/job/curator",
+			"slots": 1
+		},
+		"Station Engineer": {
+			"outfit": "/datum/outfit/job/engineer",
+			"slots": 1
+		},
 		"Acolyte": {
 			"outfit": "/datum/outfit/job/assistant/intern",
 			"slots": 6

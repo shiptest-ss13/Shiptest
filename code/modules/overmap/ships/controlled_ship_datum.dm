@@ -1,6 +1,3 @@
-///Name of the file used for ship name random selection
-#define SHIP_NAMES_FILE "ship_names.json"
-
 /**
  * # Simulated overmap ship
  *
@@ -65,12 +62,6 @@
 	var/list/job_slots = list(new /datum/job/captain() = 1, new /datum/job/assistant() = 5)
 	///Time that next job slot change can occur
 	COOLDOWN_DECLARE(job_slot_adjustment_cooldown)
-
-
-
-
-
-
 
 /datum/overmap/ship/controlled/Rename(new_name, force = FALSE)
 	var/oldname = name

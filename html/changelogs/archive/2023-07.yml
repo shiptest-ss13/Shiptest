@@ -24,3 +24,91 @@
   - bugfix: 'Ship limits have been fixed: Many ships can only be spawned a finite
       number of times per round.'
   - admin: Admins may now disable join menu ship spawning.
+2023-07-03:
+  thgvr:
+  - bugfix: Mining vendors have scanners again
+2023-07-04:
+  retlaw34:
+  - rscadd: You now have 20 character slots!
+2023-07-05:
+  BarteG44:
+  - rscadd: Added chemical crates
+  - rscadd: Added chemical jugs
+  - balance: moved the chem dispenser to applied bluespace research
+  MemedHams:
+  - rscadd: Gives holofields a glow up.
+  - tweak: Adjusts holofield layering so the emitters are visible.
+2023-07-06:
+  Bjarl:
+  - balance: Static anomalies now deal more brain damage.
+  - balance: heartbeat anomalies now apply radiation burns to better telegraph their
+      hazard.
+  - rscadd: Most turrets now have a stun projectile
+  - rscadd: Turrets can now be repaired with a welder, and will report how damaged
+      they are when examined.
+  - rscdel: laser tag turrets. Rest in piss bozo.
+  - rscdel: Dwarves, Squidpeople
+  BogCreature:
+  - bugfix: The modcomp arcade minigame now properly gives gaming XP
+  'Imaginos, Memed Hams ':
+  - soundadd: Borrows nsv's firealarm noise.
+  - soundadd: Borrows tg's printer noise.
+  - rscadd: Ports TG's Cannabis sprites.
+  - rscadd: Ports the old codersprite solars (I think they came from bay?)
+  - rscdel: The entire goon folder.
+  MarkSuckerberg:
+  - bugfix: Turffires should work again.
+  - tweak: Makes overmap movement and vox thermoregulators higher priority processing
+      targets
+  - rscadd: Colours in character creation are no longer crunched into three hex digits,
+      allowing for 16773120 new colours to use for mutcolour, haircolour, etcetera.
+  MothBlocks, MarkSuckerberg:
+  - rscadd: The rest of the autowiki system, as well as the vending machine and tech
+      node
+  Pawn, retlaw34:
+  - rscadd: Overmap consoles now have updated firmware, and as such have new sprites.
+  SapphicOverload:
+  - tweak: reinforced floors can no longer ignited by hotspots
+  ZephyrTFA:
+  - admin: Overmap Token Manager, use it.
+  goober3:
+  - tweak: Salvageable computers are now deconstructed into retro computer frames.
+  - tweak: Broken machinery can now be unwrenched.
+  - tweak: Destructive analyzers deconstruction messages have been tweaked to better
+      indicate laser intensity.
+  meemofcourse:
+  - tweak: Updated brain trauma messages
+  phoaly:
+  - tweak: tweaks the Hunter Montagne job outfit and job datum
+  - bugfix: 'Fixes #2101'
+  thgvr:
+  - bugfix: removes surgery table cloaking device
+2023-07-07:
+  FlufflesTheDog:
+  - bugfix: Independent Litieguai's organ freezer now properly freezes the provided
+      organs
+  SapphicOverload:
+  - tweak: skeletons and plasmamen no longer husk, because they don't have flesh
+  - bugfix: fixed skeletons not having bones
+2023-07-08:
+  Hibou48888:
+  - bugfix: big mortars now check the correct container for fullness before refusing
+      to fill said container
+  thgvr:
+  - rscadd: fucky wucky admin button
+2023-07-10:
+  Bjarl:
+  - bugfix: Turrets properly report their integrity now
+  - bugfix: Assorted floating wall mounts and other oddities have been fixed, please
+      continue to report any you see.
+  MarkSuckerberg:
+  - bugfix: The wiki verb now works again
+  PositiveEntropy:
+  - imageadd: The Rack, Dresser and Holopad have been redone and updated!
+  SapphicOverload:
+  - tweak: tritium burn rate is based on oxygen-fuel ratio instead of being binary
+      fast/slow
+  - bugfix: fixed tritium fires breaking conservation of mass and consuming too much
+      oxygen
+  phoaly:
+  - bugfix: Fixes improperly declared outfits in ship jsons

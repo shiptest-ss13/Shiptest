@@ -219,7 +219,7 @@ GLOBAL_LIST_EMPTY(alldepartments)
 //Prevents copypasta for evil faxes
 /obj/machinery/photocopier/faxmachine/proc/handle_animation()
 	flick(print_anim, src)
-	playsound(loc, 'goon/sound/machinery/printer_dotmatrix.ogg', 50, 1)
+	playsound(loc, 'sound/machines/printer.ogg', 50, 1)
 
 /obj/machinery/photocopier/faxmachine/proc/handle_copying(obj/item/incoming)
 	use_power(active_power_usage)
