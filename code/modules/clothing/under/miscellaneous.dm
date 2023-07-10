@@ -210,12 +210,3 @@
 	icon_state = "gownpink"
 	icon_state = "gownpink"
 
-/obj/item/clothing/shoes/slippers
-	name = "patient slippers"
-	desc = "A white pair of easy slip on and off slippers. There are extra treads on the bottom."
-	icon = 'icons/obj/clothing/patient.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/patient.dmi'
-	lefthand_file = 'icons/mob/inhands/patient_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/patient_righthand.dmi'
-	icon_state = "whiteslippers"
-	item_state = "whiteslippers"
