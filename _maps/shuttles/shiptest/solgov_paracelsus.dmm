@@ -209,11 +209,16 @@
 /area/ship/crew/canteen)
 "cj" = (
 /obj/machinery/power/shieldwallgen/atmos{
-	id = "solgovfield"
+	id = "solgovfield";
+	anchored = 1;
+	locked = 1
 	},
 /obj/machinery/door/poddoor{
 	dir = 4;
 	id = "sg_par_door"
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
@@ -391,11 +396,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/maintenance/port)
 "eq" = (
-/obj/machinery/door/airlock/medical/glass{
-	name = "Surgery";
-	dir = 1;
-	req_one_access = list(5,45)
-	},
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -405,6 +405,10 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/door/airlock/medical{
+	name = "Chemistry";
+	req_one_access = list(5,69)
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/medical/surgery)
 "et" = (
@@ -940,12 +944,12 @@
 /obj/item/paper_bin{
 	pixel_x = -5
 	},
-/obj/item/pen/solgov{
-	pixel_x = -5
-	},
 /obj/item/reagent_containers/food/drinks/mug/coco{
 	pixel_x = 7;
 	pixel_y = 5
+	},
+/obj/item/pen/fountain/solgov{
+	pixel_x = -5
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
@@ -977,6 +981,9 @@
 /area/ship/crew/crewthree)
 "kM" = (
 /obj/effect/turf_decal/solgov/all/center_left,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "kO" = (
@@ -1139,6 +1146,15 @@
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
+"mG" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/plasteel/mono,
+/area/ship/cargo)
 "mH" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/drinks/mug/coco{
@@ -1186,6 +1202,10 @@
 /obj/item/radio/intercom/directional/west,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/hallway/starboard)
+"oo" = (
+/obj/machinery/smartfridge/organ,
+/turf/closed/wall/mineral/titanium,
+/area/ship/medical/surgery)
 "op" = (
 /obj/structure/closet/emcloset/wall{
 	dir = 8;
@@ -1217,9 +1237,8 @@
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/door/airlock/medical/glass{
+/obj/machinery/door/airlock/medical{
 	name = "Surgery";
-	dir = 1;
 	req_one_access = list(5,45)
 	},
 /turf/open/floor/plasteel/dark,
@@ -1526,19 +1545,29 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
-/obj/structure/closet/secure_closet/engineering_personal,
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
 /obj/machinery/airalarm/directional/north,
+/obj/structure/closet/secure_closet{
+	icon_state = "eng_secure";
+	name = "engineer's locker";
+	req_access = list(11)
+	},
+/obj/item/clothing/gloves/combat,
+/obj/item/clothing/head/hardhat/solgov,
+/obj/item/clothing/under/solgov/formal,
+/obj/item/storage/toolbox/mechanical,
+/obj/item/clothing/accessory/armband/engine,
+/obj/item/clothing/glasses/welding,
+/obj/item/clothing/suit/hazardvest/solgov,
+/obj/item/clothing/shoes/workboots,
+/obj/item/folder/solgov,
+/obj/item/clipboard,
+/obj/item/pen/solgov,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/maintenance/port)
 "re" = (
-/obj/machinery/door/airlock/medical/glass{
-	name = "Chemistry";
-	dir = 1;
-	req_one_access = list(5,69)
-	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
@@ -1554,6 +1583,10 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/door/airlock/medical{
+	name = "Surgery";
+	req_one_access = list(5,45)
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "rw" = (
@@ -1806,13 +1839,16 @@
 /area/ship/crew)
 "vi" = (
 /obj/effect/turf_decal/solgov/all/center_right,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "vj" = (
@@ -1933,6 +1969,10 @@
 	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/maintenance/starboard)
+"wD" = (
+/obj/machinery/smartfridge/chemistry,
+/turf/closed/wall/mineral/titanium,
+/area/ship/medical)
 "wE" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -2028,6 +2068,12 @@
 /obj/structure/railing/wood,
 /turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
+"xt" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/mono,
+/area/ship/cargo)
 "xw" = (
 /obj/effect/turf_decal/solgov/all/bottom_right,
 /obj/structure/cable{
@@ -2497,6 +2543,9 @@
 /area/ship/hallway/starboard)
 "Cn" = (
 /obj/effect/turf_decal/solgov/all/center,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "Co" = (
@@ -2561,7 +2610,8 @@
 	pixel_y = -23;
 	pixel_x = -4;
 	dir = 1;
-	id = "sg_par_door"
+	id = "sg_par_door";
+	name = "Cargo Blast Door Control"
 	},
 /obj/machinery/button/shieldwallgen{
 	dir = 1;
@@ -2571,6 +2621,9 @@
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
@@ -2964,9 +3017,6 @@
 /obj/effect/turf_decal/siding/wideplating/dark/corner{
 	dir = 8
 	},
-/obj/machinery/smartfridge/organ{
-	pixel_y = -32
-	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical/surgery)
 "IB" = (
@@ -3037,6 +3087,7 @@
 	req_access_txt = "20"
 	},
 /obj/item/fish_feed,
+/obj/item/pen/fountain/solgov,
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/crewthree)
 "IZ" = (
@@ -3188,11 +3239,16 @@
 "Kt" = (
 /obj/machinery/power/shieldwallgen/atmos{
 	dir = 1;
-	id = "solgovfield"
+	id = "solgovfield";
+	locked = 1;
+	anchored = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
 	},
 /obj/machinery/door/poddoor{
 	dir = 4;
-	id = "sg_par_engine"
+	id = "sg_par_door"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
@@ -3444,15 +3500,6 @@
 	dir = 9
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/wall{
-	dir = 4;
-	pixel_y = 0;
-	pixel_x = -28
-	},
-/obj/item/clothing/suit/solgov/jacket,
-/obj/item/clothing/suit/solgov/jacket,
-/obj/item/clothing/head/soft/solgov,
-/obj/item/clothing/head/soft/solgov,
 /turf/open/floor/plasteel/white,
 /area/ship/medical/surgery)
 "MP" = (
@@ -3716,7 +3763,8 @@
 /obj/machinery/button/door{
 	pixel_y = 24;
 	pixel_x = -4;
-	id = "sg_par_door"
+	id = "sg_par_door";
+	name = "Cargo Blast Door Control"
 	},
 /obj/machinery/button/shieldwallgen{
 	pixel_x = 5;
@@ -3725,6 +3773,9 @@
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
@@ -3846,7 +3897,8 @@
 	pixel_y = -23;
 	pixel_x = -4;
 	dir = 1;
-	id = "sg_par_engine"
+	id = "sg_par_engine";
+	name = "Engine Blast Door Control"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/power/terminal{
@@ -3972,6 +4024,12 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/maintenance/starboard)
+"Sm" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plasteel/mono,
+/area/ship/cargo)
 "Sp" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 1
@@ -3979,7 +4037,8 @@
 /obj/machinery/button/door{
 	pixel_y = 24;
 	pixel_x = -4;
-	id = "sg_par_engine"
+	id = "sg_par_engine";
+	name = "Engine Blast Door Control"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/power/terminal{
@@ -4196,6 +4255,9 @@
 /obj/structure/rack,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/stack/sheet/mineral/plasma/twenty,
+/obj/item/wrench,
+/obj/item/stack/sheet/metal/five,
+/obj/item/stack/sheet/glass/five,
 /turf/open/floor/plasteel/dark,
 /area/ship/maintenance/port)
 "Vw" = (
@@ -4514,6 +4576,13 @@
 	},
 /obj/machinery/power/apc/auto_name/directional/east,
 /turf/open/floor/plasteel,
+/area/ship/cargo)
+"Yi" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "Yl" = (
 /obj/machinery/door/airlock/atmos{
@@ -4893,9 +4962,9 @@ iZ
 wI
 ym
 VW
-kR
-kR
-vR
+Sm
+mG
+Yi
 ys
 ym
 wI
@@ -4926,7 +4995,7 @@ wI
 ym
 Ai
 vR
-kR
+xt
 kR
 Ni
 ym
@@ -5428,7 +5497,7 @@ wI
 wr
 wr
 wr
-wr
+wD
 wr
 cb
 qe
@@ -5592,7 +5661,7 @@ UO
 ow
 WG
 Iz
-jr
+oo
 jr
 wI
 wI
