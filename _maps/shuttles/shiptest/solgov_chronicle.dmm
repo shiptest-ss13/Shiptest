@@ -175,7 +175,7 @@
 /area/ship/cargo)
 "bs" = (
 /obj/machinery/telecomms/broadcaster/preset_left{
-	network = "Most Serene Solar Commnet";
+	network = "SolNet";
 	pixel_y = 0
 	},
 /obj/machinery/door/window/brigdoor/northright{
@@ -1149,8 +1149,8 @@
 /area/ship/bridge)
 "kz" = (
 /obj/machinery/telecomms/hub{
-	autolinkers = list("solgov","broadcasterA","receiverA","solgovPDA");
-	network = "Most Serene Solar Commnet";
+	autolinkers = list("solgov","broadcasterA","receiverA","solgovPDA","SolHub");
+	network = "SolNet";
 	id = "Solgov Hub"
 	},
 /obj/structure/window/reinforced{
@@ -1541,8 +1541,8 @@
 	req_one_access = list(61,11)
 	},
 /obj/machinery/telecomms/bus{
-	id = "Bussy The Bus Mainframe";
-	network = "Most Serene Solar Commnet";
+	id = "bus mainframe";
+	network = "SolNet";
 	autolinkers = list("processor7","solgov")
 	},
 /turf/open/floor/circuit,
@@ -1780,7 +1780,7 @@
 "sa" = (
 /obj/machinery/computer/telecomms/monitor/solgov{
 	dir = 1;
-	network = "Most Serene Solar Commnet"
+	network = "SolNet"
 	},
 /obj/structure/railing,
 /turf/open/floor/plasteel/tech,
@@ -1980,7 +1980,7 @@
 /obj/machinery/telecomms/message_server{
 	pixel_y = 0;
 	autolinkers = list("solgovPDA");
-	network = "Most Serene Solar Commnet";
+	network = "SolNet";
 	calibrating = 0
 	},
 /obj/machinery/light/small/directional/east,
@@ -2770,8 +2770,9 @@
 "AV" = (
 /obj/machinery/telecomms/processor{
 	autolinkers = list("processor7");
-	network = "Most Serene Solar Commnet";
-	pixel_y = 0
+	network = "SolNet";
+	pixel_y = 0;
+	id = "Processor"
 	},
 /obj/structure/window/reinforced,
 /obj/machinery/door/window/brigdoor/westleft{
@@ -3484,7 +3485,7 @@
 "IH" = (
 /obj/machinery/telecomms/server/presets/solgov{
 	autolinkers = list("solgov","sproingle");
-	network = "Most Serene Solar Commnet";
+	network = "SolNet";
 	pixel_y = 0
 	},
 /obj/machinery/door/window/brigdoor/northleft{
@@ -3567,7 +3568,7 @@
 "JH" = (
 /obj/machinery/computer/telecomms/server/solgov{
 	dir = 1;
-	network = "Most Serene Solar Commnet"
+	network = "SolNet"
 	},
 /obj/structure/railing{
 	dir = 10
@@ -4457,8 +4458,9 @@
 /area/ship/crew/dorm)
 "SJ" = (
 /obj/machinery/telecomms/receiver/preset_left{
-	network = "Most Serene Solar Commnet";
-	pixel_y = 0
+	network = "SolNet";
+	pixel_y = 0;
+	id = "Receiver"
 	},
 /obj/structure/window/reinforced{
 	dir = 1
