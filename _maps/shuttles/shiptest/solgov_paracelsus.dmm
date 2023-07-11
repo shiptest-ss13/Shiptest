@@ -409,6 +409,7 @@
 	name = "Chemistry";
 	req_one_access = list(5,69)
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/dark,
 /area/ship/medical/surgery)
 "et" = (
@@ -973,6 +974,9 @@
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -2025,6 +2029,9 @@
 	pixel_x = 8;
 	pixel_y = 8
 	},
+/obj/item/wrench/medical{
+	pixel_y = 5
+	},
 /obj/item/reagent_containers/glass/bottle{
 	list_reagents = list(/datum/reagent/medicine/rezadone=30);
 	name = "rezadone bottle";
@@ -2339,6 +2346,13 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/firealarm/directional/south,
+/obj/machinery/button/door{
+	dir = 1;
+	id = "sg_par_center";
+	name = "Shutter Control";
+	pixel_x = -11;
+	pixel_y = -20
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical/surgery)
 "Ai" = (
@@ -3914,6 +3928,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/wood,
 /area/ship/hallway/starboard)
 "Rv" = (
@@ -4703,16 +4718,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/machinery/power/apc/auto_name/directional/west{
-	pixel_y = -7
-	},
-/obj/machinery/button/door{
-	dir = 4;
-	id = "sg_par_center";
-	name = "Shutter Control";
-	pixel_x = -20;
-	pixel_y = 7
-	},
+/obj/machinery/power/apc/auto_name/directional/west,
 /turf/open/floor/plasteel/white,
 /area/ship/medical/surgery)
 "ZB" = (
