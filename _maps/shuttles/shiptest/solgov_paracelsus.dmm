@@ -669,7 +669,8 @@
 	name = "bolt control";
 	pixel_x = 20;
 	pixel_y = -5;
-	specialfunctions = 3
+	specialfunctions = 4;
+	normaldoorcontrol = 1
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical/surgery)
@@ -1262,7 +1263,8 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/door/airlock/medical{
 	name = "Surgery";
-	id_tag = "sg_par_surgery_two"
+	id_tag = "sg_par_surgery_two";
+	req_one_access = list(5,69)
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/medical/surgery)
@@ -3481,7 +3483,8 @@
 	name = "bolt control";
 	pixel_x = -20;
 	pixel_y = -6;
-	specialfunctions = 3
+	specialfunctions = 4;
+	normaldoorcontrol = 1
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -3735,7 +3738,8 @@
 	name = "bolt control";
 	pixel_x = -20;
 	pixel_y = -5;
-	specialfunctions = 3
+	specialfunctions = 4;
+	normaldoorcontrol = 1
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical/surgery)
@@ -4777,7 +4781,8 @@
 	id = "sg_par_bolt";
 	name = "captain door bolt control";
 	pixel_x = 6;
-	specialfunctions = 3
+	specialfunctions = 4;
+	normaldoorcontrol = 1
 	},
 /turf/open/floor/wood/yew,
 /area/ship/crew/crewthree)
