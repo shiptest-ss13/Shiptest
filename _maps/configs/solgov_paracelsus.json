@@ -1,0 +1,43 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Paracelsus-class Medicinal Cruiser",
+	"prefix": "SGSV",
+	"namelists": [
+		"SOLGOV",
+		"SPACE",
+		"BRITISH_NAVY",
+		"NATURAL"
+	],
+	"map_short_name": "Paracelsus-class",
+	"map_path": "_maps/shuttles/shiptest/solgov_paracelsus.dmm",
+	"limit": 1,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/solgov/bureaucrat",
+			"officer": true,
+			"slots": 1
+		},
+		"Bureaucrat": {
+			"outfit": "/datum/outfit/job/solgov/overseer",
+			"officer": true,
+			"slots": 1
+		},
+		"Medical Doctor": {
+			"outfit": "/datum/outfit/job/solgov/doctor",
+			"slots": 3
+		},
+		"Ship Engineer": {
+			"outfit": "/datum/outfit/job/solgov/engineer",
+			"slots": 1
+		},
+		"Field Engineer": {
+			"outfit": "/datum/outfit/job/solgov/miner",
+			"slots": 1
+		},
+		"Scribe": {
+			"outfit": "/datum/outfit/job/solgov/assistant",
+			"slots" : 3
+		}
+	},
+	"enabled": true
+}
