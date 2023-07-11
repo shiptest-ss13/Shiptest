@@ -1545,11 +1545,6 @@
 /area/ship/crew/cryo)
 "qM" = (
 /obj/structure/table/wood,
-/obj/machinery/computer/med_data/laptop{
-	dir = 8;
-	pixel_x = 4;
-	pixel_y = 7
-	},
 /turf/open/floor/wood/yew,
 /area/ship/crew/crewthree)
 "qV" = (
@@ -2774,7 +2769,9 @@
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
 "Eh" = (
-/obj/item/bedsheet/double/solgov,
+/obj/item/bedsheet/double/solgov{
+	dir = 8
+	},
 /obj/structure/bed/double{
 	dir = 1
 	},
@@ -4767,8 +4764,8 @@
 "YK" = (
 /obj/structure/table/wood,
 /obj/item/desk_flag/solgov{
-	pixel_x = 1;
-	pixel_y = 4
+	pixel_x = 8;
+	pixel_y = -8
 	},
 /obj/machinery/button/door{
 	pixel_y = 24;
@@ -4783,6 +4780,11 @@
 	pixel_x = 6;
 	specialfunctions = 4;
 	normaldoorcontrol = 1
+	},
+/obj/machinery/computer/med_data/laptop{
+	dir = 8;
+	pixel_x = 4;
+	pixel_y = 7
 	},
 /turf/open/floor/wood/yew,
 /area/ship/crew/crewthree)
