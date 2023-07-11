@@ -3,7 +3,12 @@
 	"map_name": "Radio Broadcasting Ship",
 	"map_short_name": "Radio-class",
 	"map_path": "_maps/shuttles/shiptest/radio_funny.dmm",
+	"description": "Whether through divine intervention or hellish creation by the hands of sapient-kind, reports of this “ship” plague some sectors more than others. The Radio Broadcasting Ship is an anomalous thing in its own right. It is  a “ship” equipped with nothing but radios and reality warping engines. There exist many reports of this vessel being totally destroyed and showing back up in a sector just hours later. The only thing you can do about these vessels is pray the pilot doesn’t have bad taste.",
+	"tags": ["Specialist"],
 	"job_slots": {
-		"Assistant": 6
+		"Assistant": {
+			"outfit": "/datum/outfit/job/assistant",
+			"slots": 6
+		}
 	}
 }

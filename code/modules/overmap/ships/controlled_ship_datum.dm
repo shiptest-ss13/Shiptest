@@ -1,6 +1,3 @@
-///Name of the file used for ship name random selection
-#define SHIP_NAMES_FILE "ship_names.json"
-
 /**
  * # Simulated overmap ship
  *
@@ -65,12 +62,6 @@
 	var/list/job_slots = list(new /datum/job/captain() = 1, new /datum/job/assistant() = 5)
 	///Time that next job slot change can occur
 	COOLDOWN_DECLARE(job_slot_adjustment_cooldown)
-
-
-
-
-
-
 
 /datum/overmap/ship/controlled/Rename(new_name, force = FALSE)
 	var/oldname = name
@@ -189,9 +180,6 @@
 		Dock(E)
 
 /datum/overmap/ship/controlled/burn_engines(percentage = 100, deltatime)
-	if(docked_to || docking)
-		CRASH("[src] burned engines while docking or docked!")
-
 	var/thrust_used = 0 //The amount of thrust that the engines will provide with one burn
 	refresh_engines()
 	calculate_avg_fuel()

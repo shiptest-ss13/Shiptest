@@ -786,7 +786,8 @@
 "fY" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/airlock/hatch{
-	name = "Bathroom"
+	name = "Bathroom";
+	dir = 4
 	},
 /obj/effect/turf_decal/techfloor/hole/right,
 /obj/effect/turf_decal/techfloor/hole,
@@ -2717,6 +2718,7 @@
 	},
 /obj/item/clothing/under/rank/civilian/janitor/custodian/skirt,
 /obj/item/clothing/under/rank/civilian/janitor/custodian,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/carpet/red,
 /area/ship/crew/janitor)
 "zM" = (
@@ -2936,6 +2938,7 @@
 "CG" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/janitor)
 "CM" = (
@@ -4291,7 +4294,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
 	},
-/obj/machinery/light/small/directional/south,
 /obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/janitor)
@@ -4962,16 +4964,16 @@
 /area/ship/engineering)
 "WC" = (
 /obj/structure/chair/sofa/left,
-/obj/item/radio/intercom/directional/north{
-	pixel_x = 4;
-	pixel_y = 24
-	},
 /obj/machinery/light_switch{
 	pixel_x = -10;
 	pixel_y = 26
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
+	},
+/obj/item/radio/intercom/directional/north{
+	pixel_y = 31;
+	pixel_x = 5
 	},
 /turf/open/floor/carpet/red,
 /area/ship/crew/canteen)
@@ -5257,7 +5259,7 @@
 	id = "cargo_ageis";
 	name = "cargobay doors";
 	pixel_x = 6;
-	pixel_y = 27
+	pixel_y = 22
 	},
 /obj/effect/decal/cleanable/glass,
 /obj/effect/turf_decal/corner_techfloor_grid/diagonal,
@@ -5265,7 +5267,7 @@
 /obj/machinery/button/shieldwallgen{
 	id = "aegis_holo";
 	pixel_x = -6;
-	pixel_y = 26
+	pixel_y = 21
 	},
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
@@ -6460,6 +6462,40 @@ TS
 TS
 TS
 aL
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+"}
+(33,1,1) = {"
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
 wk
 wk
 wk

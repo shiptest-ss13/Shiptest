@@ -5,6 +5,7 @@
 	item_state = "syndicate"
 	desc = "An advanced, lightweight space helmet made of durable composites. Almost matches integrated hardsuit helmets for protection. Almost."
 	armor = list("melee" = 30, "bullet" = 15, "laser" = 15, "energy" = 40, "bomb" = 20, "bio" = 100, "rad" = 30, "fire" = 75, "acid" = 75)
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/suit/space/syndicate
 	name = "red space suit"

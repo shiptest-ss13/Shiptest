@@ -149,23 +149,15 @@
 	cached_results["fire"] = 0
 	var/turf/open/location = isturf(holder) ? holder : null
 
-	var/burned_fuel = 0
-	if(air.get_moles(GAS_O2) < air.get_moles(GAS_TRITIUM))
-		burned_fuel = air.get_moles(GAS_O2)/TRITIUM_BURN_OXY_FACTOR
+	var/burned_fuel = max(min(air.get_moles(GAS_TRITIUM), air.get_moles(GAS_O2) / TRITIUM_BURN_OXY_FACTOR), 0) / TRITIUM_BURN_TRIT_FACTOR
+	if(burned_fuel > 0)
 		air.adjust_moles(GAS_TRITIUM, -burned_fuel)
-	else
-		burned_fuel = air.get_moles(GAS_TRITIUM)*TRITIUM_BURN_TRIT_FACTOR
-		air.adjust_moles(GAS_TRITIUM, -air.get_moles(GAS_TRITIUM)/TRITIUM_BURN_TRIT_FACTOR)
-		air.adjust_moles(GAS_O2,-air.get_moles(GAS_TRITIUM))
-
-	if(burned_fuel)
+		air.adjust_moles(GAS_O2, -burned_fuel / 2)
+		air.adjust_moles(GAS_H2O, burned_fuel)
 		energy_released += (FIRE_HYDROGEN_ENERGY_RELEASED * burned_fuel)
+		cached_results["fire"] += burned_fuel
 		if(location && prob(10) && burned_fuel > TRITIUM_MINIMUM_RADIATION_ENERGY) //woah there let's not crash the server
 			radiation_pulse(location, energy_released/TRITIUM_BURN_RADIOACTIVITY_FACTOR)
-
-		air.adjust_moles(GAS_H2O, burned_fuel/TRITIUM_BURN_OXY_FACTOR)
-
-		cached_results["fire"] += burned_fuel
 
 	if(energy_released > 0)
 		var/new_heat_capacity = air.heat_capacity()

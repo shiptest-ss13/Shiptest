@@ -65,7 +65,8 @@ GLOBAL_LIST_INIT(nonhuman_positions, list(
 	"Cyborg",
 	ROLE_PAI))
 
-// job categories for rendering the late join menu
+// Job categories for rendering the late join menu.
+// Currently unused.
 GLOBAL_LIST_INIT(position_categories, list(
 	EXP_TYPE_COMMAND = list("jobs" = command_positions, "color" = "#ccccff"),
 	EXP_TYPE_ENGINEERING = list("jobs" = engineering_positions, "color" = "#ffeeaa"),
@@ -77,6 +78,8 @@ GLOBAL_LIST_INIT(position_categories, list(
 	EXP_TYPE_SECURITY = list("jobs" = security_positions, "color" = "#ffdddd")
 ))
 
+// Previously used to lookup the cumulative amount of time spent in a department.
+// Currently unused.
 GLOBAL_LIST_INIT(exp_jobsmap, list(
 	EXP_TYPE_CREW = list("titles" = command_positions | engineering_positions | medical_positions | science_positions | supply_positions | security_positions | service_positions | list("AI","Cyborg")), // crew positions
 	EXP_TYPE_COMMAND = list("titles" = command_positions),
@@ -89,12 +92,15 @@ GLOBAL_LIST_INIT(exp_jobsmap, list(
 	EXP_TYPE_SERVICE = list("titles" = service_positions)
 ))
 
+// Special, unusual cases for experience tracking.
+// Occasionally used by some gamemode code.
 GLOBAL_LIST_INIT(exp_specialmap, list(
 	EXP_TYPE_LIVING = list(), // all living mobs
 	EXP_TYPE_ANTAG = list(),
 	EXP_TYPE_SPECIAL = list("Lifebringer","Ash Walker","Exile","Servant Golem","Free Golem","Hermit","Translocated Vet","Escaped Prisoner","Hotel Staff","SuperFriend","Space Syndicate","Ancient Crew","Space Doctor","Space Bartender","Beach Bum","Skeleton","Zombie","Space Bar Patron","Lavaland Syndicate","Ghost Role"), // Ghost roles
 	EXP_TYPE_GHOST = list() // dead people, observers
 ))
+
 GLOBAL_PROTECT(exp_jobsmap)
 GLOBAL_PROTECT(exp_specialmap)
 

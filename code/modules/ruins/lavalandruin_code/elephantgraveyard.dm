@@ -104,11 +104,12 @@
 //***Grave mounds.
 /obj/structure/closet/crate/grave
 	name = "burial mound"
-	desc = "An marked patch of soil, showing signs of a burial long ago. You wouldn't disturb a grave... right?"
+	desc = "A marked patch of soil, adorned with a wooden cross"
 	icon_state = "grave"
 	dense_when_open = TRUE
 	material_drop = /obj/item/stack/ore/glass/basalt
 	material_drop_amount = 5
+	opened = TRUE
 	anchorable = FALSE
 	anchored = TRUE
 	locked = TRUE
@@ -117,31 +118,20 @@
 	var/lead_tomb = FALSE
 	var/first_open = FALSE
 
-/obj/structure/closet/crate/grave/PopulateContents()  //GRAVEROBBING IS NOW A FEATURE
-	..()
-	new /obj/effect/decal/remains/human/grave(src)
-	switch(rand(1,7))
-		if(1)
-			new /obj/item/coin/gold(src)
-			new /obj/item/storage/wallet(src)
-		if(2)
-			new /obj/item/clothing/glasses/meson(src)
-		if(3)
-			new /obj/item/coin/silver(src)
-			new /obj/item/shovel/spade(src)
-		if(4)
-			new /obj/item/storage/book/bible/booze(src)
-		if(5)
-			new /obj/item/clothing/neck/stethoscope(src)
-			new	/obj/item/scalpel(src)
-			new /obj/item/hemostat(src)
-
-		if(6)
-			new /obj/item/reagent_containers/glass/beaker(src)
-			new /obj/item/clothing/glasses/science(src)
-		if(7)
-			new /obj/item/clothing/glasses/sunglasses(src)
-			new /obj/item/clothing/mask/cigarette/rollie(src)
+/obj/structure/closet/crate/grave/attackby(obj/item/W, mob/user, params)
+	.=..()
+	if(istype(W, /obj/item/screwdriver))
+		if(!user.is_literate())
+			to_chat(user, "<span class='notice'>You scratch illegibly on [src]!</span>")
+			return
+		var/t = stripped_input(user, "What would you like the inscription to be?", name, null, 53)
+		if(user.get_active_held_item() != W)
+			return
+		if(!user.canUseTopic(src, BE_CLOSE))
+			return
+		if(t)
+			desc = "[t]"
+		return
 
 /obj/structure/closet/crate/grave/open(mob/living/user, obj/item/S, force = FALSE)
 	if(!opened)
@@ -190,14 +180,50 @@
 	dump_contents()
 	return
 
-/obj/structure/closet/crate/grave/lead_researcher
+/obj/structure/closet/crate/grave/stone
+	name = "burial mound"
+	desc = "A marked patch of soil, adorned with a sandstone slab"
+	icon_state = "grave_lead"
+
+/obj/structure/closet/crate/grave/loot
+	name = "burial mound"
+	desc = "A marked patch of soil, showing signs of a burial long ago. You wouldn't disturb a grave... right?"
+	opened = FALSE
+
+/obj/structure/closet/crate/grave/loot/PopulateContents()  //GRAVEROBBING IS NOW A FEATURE
+	..()
+	new /obj/effect/decal/remains/human/grave(src)
+	switch(rand(1,7))
+		if(1)
+			new /obj/item/coin/gold(src)
+			new /obj/item/storage/wallet(src)
+		if(2)
+			new /obj/item/clothing/glasses/meson(src)
+		if(3)
+			new /obj/item/coin/silver(src)
+			new /obj/item/shovel/spade(src)
+		if(4)
+			new /obj/item/storage/book/bible/booze(src)
+		if(5)
+			new /obj/item/clothing/neck/stethoscope(src)
+			new	/obj/item/scalpel(src)
+			new /obj/item/hemostat(src)
+
+		if(6)
+			new /obj/item/reagent_containers/glass/beaker(src)
+			new /obj/item/clothing/glasses/science(src)
+		if(7)
+			new /obj/item/clothing/glasses/sunglasses(src)
+			new /obj/item/clothing/mask/cigarette/rollie(src)
+
+/obj/structure/closet/crate/grave/loot/lead_researcher
 	name = "ominous burial mound"
 	desc = "Even in a place filled to the brim with graves, this one shows a level of preperation and planning that fills you with dread."
 	icon_state = "grave_lead"
 	lead_tomb = TRUE
 	first_open = TRUE
 
-/obj/structure/closet/crate/grave/lead_researcher/PopulateContents()  //ADVANCED GRAVEROBBING
+/obj/structure/closet/crate/grave/loot/lead_researcher/PopulateContents()  //ADVANCED GRAVEROBBING
 	..()
 	new /obj/effect/decal/cleanable/blood/gibs/old(src)
 	new /obj/item/book/granter/crafting_recipe/boneyard_notes(src)

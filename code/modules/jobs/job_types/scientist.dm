@@ -2,8 +2,6 @@
 	name = "Scientist"
 	total_positions = 5
 	spawn_positions = 3
-	exp_requirements = 60
-	exp_type = EXP_TYPE_CREW
 	wiki_page = "Scientist" //WS Edit - Wikilinks/Warning
 
 	outfit = /datum/outfit/job/scientist
@@ -82,3 +80,9 @@
 	alt_suit = /obj/item/clothing/suit/toggle/labcoat/science
 	dcoat = null
 	neck = /obj/item/clothing/neck/tie/purple
+
+/datum/outfit/job/scientist/minutemen
+	name = "Scientist (Minutemen)"
+
+	uniform = /obj/item/clothing/under/rank/security/officer/minutemen
+	backpack = /obj/item/storage/backpack/security/cmm
