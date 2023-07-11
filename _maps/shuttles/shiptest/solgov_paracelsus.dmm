@@ -924,6 +924,12 @@
 /obj/structure/sign/solgov_seal{
 	pixel_y = -3
 	},
+/obj/docking_port/mobile{
+	dir = 4;
+	launch_status = 0;
+	preferred_direction = 4;
+	port_direction = 2
+	},
 /turf/closed/wall/mineral/titanium,
 /area/ship/external/dark)
 "kC" = (
@@ -3011,7 +3017,6 @@
 /turf/open/floor/wood,
 /area/ship/crew/office)
 "IX" = (
-/obj/structure/closet/secure_closet/captains,
 /obj/item/clothing/head/solgov/captain,
 /obj/item/clothing/suit/armor/vest/bulletproof/solgov/captain,
 /obj/item/clothing/under/solgov/formal/captain,
@@ -3026,6 +3031,12 @@
 /obj/item/folder/solgov,
 /obj/item/folder/solgov/red,
 /obj/item/folder/solgov/red,
+/obj/structure/closet/secure_closet{
+	icon_state = "cap";
+	name = "\proper captain's locker";
+	req_access_txt = "20"
+	},
+/obj/item/fish_feed,
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/crewthree)
 "IZ" = (
