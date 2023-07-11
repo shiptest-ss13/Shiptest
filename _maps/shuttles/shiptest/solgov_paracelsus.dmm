@@ -1816,6 +1816,10 @@
 	color = "#792f27"
 	},
 /obj/machinery/light/directional/south,
+/obj/machinery/telecomms/relay{
+	network = "SolNet";
+	autolinkers = list("SolHub")
+	},
 /turf/open/floor/wood/mahogany,
 /area/ship/bridge)
 "uJ" = (
