@@ -8,7 +8,7 @@
 	canhear_range = 2
 	dog_fashion = null
 	unscrewed = FALSE
-	var/obj/item/wallframe/wallframe = /obj/item/wallframe/intercom //WS edit - Wideband Radio
+	var/obj/item/wallframe/wallframe = /obj/item/wallframe/intercom
 
 MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom, 31)
 
@@ -143,6 +143,18 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom, 31)
 	pixel_shift = 31
 	inverse = FALSE
 	custom_materials = list(/datum/material/iron = 75, /datum/material/glass = 25)
+
+//table Normal Intercoms
+
+/obj/item/radio/intercom/table
+	icon_state = "intercom-table"
+	wallframe = /obj/item/wallframe/intercom/table
+
+/obj/item/wallframe/intercom/table
+	icon_state = "intercom-table"
+	result_path = /obj/item/radio/intercom/table
+	pixel_shift = 0
+
 
 //wideband radio
 /obj/item/radio/intercom/wideband
