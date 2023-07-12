@@ -80,9 +80,34 @@
 /datum/emote/living/carbon/human/hiss/get_sound(mob/living/user)
 	if(!ishuman(user))
 		return
-	var/mob/living/carbon/human/H = user
-	if (islizard(H))
+	if(islizard(user))
 		return 'sound/voice/lizard/hiss.ogg'
+
+/datum/emote/living/carbon/human/squeal
+	key = "squeal"
+	key_third_person = "squeals"
+	message = "squeals!"
+	emote_type = EMOTE_AUDIBLE
+	vary = TRUE
+
+/datum/emote/living/carbon/human/thump/get_sound(mob/living/user)
+	if(!ishuman(user))
+		return
+	if(islizard(user))
+		return 'sound/voice/lizard/squeal.ogg' //This is from Bay
+
+/datum/emote/living/carbon/human/tailthump
+	key = "thump"
+	key_third_person = "thumps their tail"
+	message = "thumps their tail!"
+	emote_type = EMOTE_AUDIBLE
+	vary = TRUE
+
+/datum/emote/living/carbon/human/thump/get_sound(mob/living/user)
+	if(!ishuman(user))
+		return
+	if(islizard(user))
+		return 'sound/voice/lizard/tailthump.ogg' //https://freesound.org/people/TylerAM/sounds/389665/
 
 /datum/emote/living/carbon/human/weh
 	key = "weh"
@@ -94,8 +119,7 @@
 /datum/emote/living/carbon/human/weh/get_sound(mob/living/user)
 	if(!ishuman(user))
 		return
-	var/mob/living/carbon/human/H = user
-	if (islizard(H))
+	if(ishumanbasic(user))
 		return 'sound/voice/lizard/weh.ogg'
 
 /datum/emote/living/carbon/human/pale
@@ -198,8 +222,6 @@
 	if(isturf(loc))
 		var/turf/T = loc
 		T.Entered(src)
-
-//Ayy lmao
 
 // Robotic Tongue emotes. Beep!
 
