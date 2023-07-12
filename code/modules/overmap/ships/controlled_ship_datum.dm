@@ -21,7 +21,7 @@
 	///The map template the shuttle was spawned from, if it was indeed created from a template. CAN BE NULL (ex. custom-built ships).
 	var/datum/map_template/shuttle/source_template
 	///Whether objects on the ship require an ID with ship access granted
-	var/unique_ship_access = FALSE
+	var/unique_ship_access = TRUE
 
 	/// The shipkey for this ship
 	var/obj/item/key/ship/shipkey
@@ -96,8 +96,8 @@
 				qdel(src) // Can't return INITIALIZE_HINT_QDEL here since this isn't ACTUAL initialisation. Considering changing the name of the proc.
 				return
 			refresh_engines()
+		ship_account = new(name, source_template.starting_funds)
 
-	ship_account = new(name, source_template.starting_funds)
 #ifdef UNIT_TESTS
 	Rename("[source_template]")
 #else
