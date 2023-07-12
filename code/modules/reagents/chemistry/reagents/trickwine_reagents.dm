@@ -159,10 +159,9 @@
 
 /datum/reagent/consumable/ethanol/prism_wine/expose_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(method == TOUCH)
-		if(isanimal(M))
-		var/armorval
-		armorval = M.armor.getRating
-		//M.getarmor = armor.setRating(energy = 0)
+		if(istype(M, /mob/living/simple_animal/hostile/asteroid))
+			var/mob/living/simple_animal/hostile/asteroid/the_animal = M
+			the_animal.armor.modifyRating(energy = -100)
 		if(ishuman(M))
 			var/mob/living/carbon/human/the_human = M
 			the_human.physiology.burn_mod *= 2
