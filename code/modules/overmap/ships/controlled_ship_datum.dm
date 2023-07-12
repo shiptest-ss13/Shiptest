@@ -97,7 +97,7 @@
 				return
 			refresh_engines()
 
-	ship_account = new(name, 2000)
+	ship_account = new(name, source_template.starting_funds)
 #ifdef UNIT_TESTS
 	Rename("[source_template]")
 #else
