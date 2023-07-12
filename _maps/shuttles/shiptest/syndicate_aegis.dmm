@@ -84,10 +84,6 @@
 	name = "Produce Production Locker";
 	pixel_y = 30
 	},
-/obj/item/clothing/head/peaceflower{
-	pixel_x = 6;
-	pixel_y = 8
-	},
 /obj/item/storage/box/disks_plantgene,
 /obj/item/clothing/gloves/botanic_leather,
 /obj/item/circuitboard/machine/hydroponics,
@@ -153,7 +149,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
 	},
-/obj/item/codespeak_manual/unlimited,
+/obj/item/codespeak_manual,
 /obj/item/flashlight/lamp{
 	pixel_x = -4;
 	pixel_y = 7
@@ -1317,9 +1313,6 @@
 	},
 /obj/item/clothing/gloves/combat,
 /obj/item/clothing/shoes/combat,
-/obj/item/ammo_box/magazine/m10mm,
-/obj/item/ammo_box/magazine/m10mm,
-/obj/item/gun/ballistic/automatic/pistol,
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
 	},
@@ -1389,9 +1382,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/sign/warning/vacuum{
 	pixel_x = -30
-	},
-/obj/structure/cable/yellow{
-	icon_state = "1-4"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
@@ -1672,6 +1662,14 @@
 	pixel_x = 8;
 	pixel_y = 1
 	},
+/obj/machinery/button/door{
+	pixel_x = -6;
+	pixel_y = 6;
+	name = "bridge lock";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	id = "aegis"
+	},
 /turf/open/floor/carpet/red,
 /area/ship/bridge)
 "nY" = (
@@ -1877,7 +1875,8 @@
 /area/ship/engineering)
 "qf" = (
 /obj/machinery/door/airlock/hatch{
-	name = "Psychology Office"
+	name = "Psychology Office";
+	id_tag = "psyc"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -1991,13 +1990,6 @@
 	},
 /obj/structure/table/reinforced{
 	color = "#994000"
-	},
-/obj/structure/railing{
-	dir = 9
-	},
-/obj/item/flashlight/lamp{
-	pixel_x = -8;
-	pixel_y = 13
 	},
 /obj/item/trash/can{
 	pixel_x = 12;
@@ -2415,8 +2407,6 @@
 	},
 /obj/item/clothing/gloves/combat,
 /obj/item/clothing/shoes/combat,
-/obj/item/kitchen/knife/combat/survival,
-/obj/item/kitchen/knife/combat/survival,
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
 	},
@@ -2674,7 +2664,8 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/hatch{
-	name = "Bridge"
+	name = "Bridge";
+	id_tag = "aegis"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -2712,6 +2703,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
+	},
+/obj/machinery/smartfridge/chemistry/preloaded{
+	density = 0;
+	pixel_x = 32
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
@@ -2754,7 +2749,6 @@
 	pixel_x = 30
 	},
 /obj/item/clothing/gloves/combat/maid,
-/obj/item/clothing/gloves/tackler/combat/insulated,
 /obj/structure/table/wood,
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
@@ -2999,13 +2993,6 @@
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
-"CP" = (
-/obj/effect/turf_decal/trimline/opaque/bottlegreen/filled/line{
-	dir = 1
-	},
-/obj/machinery/vending/hydronutrients,
-/turf/open/floor/plasteel/tech,
-/area/ship/crew/hydroponics)
 "CW" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
@@ -3518,6 +3505,12 @@
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/button/door{
+	pixel_x = -28;
+	specialfunctions = 4;
+	id = "psyc";
+	normaldoorcontrol = 1
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/office)
 "GZ" = (
@@ -3778,10 +3771,10 @@
 "Kt" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/corner_techfloor_grid/diagonal,
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
 /obj/item/radio/intercom/directional/west,
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Ku" = (
@@ -4152,7 +4145,7 @@
 /obj/effect/turf_decal/corner_techfloor_grid/diagonal,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/yellow{
-	icon_state = "4-8"
+	icon_state = "1-4"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
@@ -4648,7 +4641,6 @@
 /obj/structure/sign/warning/chemdiamond{
 	pixel_x = 30
 	},
-/obj/item/circuitboard/machine/smartfridge,
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
 "Tw" = (
@@ -4741,6 +4733,9 @@
 /obj/effect/turf_decal/corner_techfloor_grid/diagonal{
 	dir = 4
 	},
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Uo" = (
@@ -4756,7 +4751,15 @@
 /area/ship/crew/hydroponics)
 "Us" = (
 /obj/machinery/light/directional/south,
-/obj/item/kirbyplants/random,
+/obj/item/gun/ballistic/automatic/pistol,
+/obj/item/ammo_box/magazine/m10mm,
+/obj/item/ammo_box/magazine/m10mm,
+/obj/item/kitchen/knife/combat/survival,
+/obj/item/kitchen/knife/combat/survival,
+/obj/structure/closet/secure_closet/wall{
+	dir = 8;
+	pixel_x = 32
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/bridge)
 "Uu" = (
@@ -5788,7 +5791,7 @@ zv
 Jg
 VF
 KS
-CP
+YA
 YX
 aQ
 It
