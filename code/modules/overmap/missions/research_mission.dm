@@ -81,6 +81,7 @@
 			It must be powered to collect the data."
 	value = 2000
 	weight = 4
+	num_wanted = 3
 	objective_type = /datum/overmap/event/meteor/carp
 
 /datum/mission/research/dust
