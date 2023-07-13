@@ -254,7 +254,7 @@
 	chain_rate = 4
 	safe_speed = 2
 	meteor_types = list(
-		/obj/effect/meteor/carp=8,
+		/obj/effect/meteor/carp=16,
 		/obj/effect/meteor/carp/big=1, //numbers I pulled out of my ass
 	)
 
@@ -272,6 +272,10 @@
 	chance_to_affect = 5
 	spread_chance = 25
 	chain_rate = 4
+	meteor_types = list(
+		/obj/effect/meteor/carp=8
+	)
+
 
 /datum/overmap/event/meteor/carp/major
 	name = "carp migration (major)"
