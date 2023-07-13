@@ -70,7 +70,7 @@
 	else if(islizard(H))
 		return pick('sound/voice/lizard/lizard_scream_1.ogg', 'sound/voice/lizard/lizard_scream_2.ogg', 'sound/voice/lizard/lizard_scream_3.ogg', 'sound/voice/lizard/lizard_scream_4.ogg')
 
-/datum/emote/living/carbon/human/hiss
+/datum/emote/living/carbon/human/hiss //lizard
 	key = "hiss"
 	key_third_person = "hisses"
 	message = "hisses!"
@@ -83,7 +83,7 @@
 	if(islizard(user))
 		return 'sound/voice/lizard/hiss.ogg'
 
-/datum/emote/living/carbon/human/squeal
+/datum/emote/living/carbon/human/squeal //lizard
 	key = "squeal"
 	key_third_person = "squeals"
 	message = "squeals!"
@@ -96,7 +96,7 @@
 	if(islizard(user))
 		return 'sound/voice/lizard/squeal.ogg' //This is from Bay
 
-/datum/emote/living/carbon/human/tailthump
+/datum/emote/living/carbon/human/tailthump //lizard
 	key = "thump"
 	key_third_person = "thumps their tail"
 	message = "thumps their tail!"
@@ -109,14 +109,18 @@
 	if(islizard(user))
 		return 'sound/voice/lizard/tailthump.ogg' //https://freesound.org/people/TylerAM/sounds/389665/
 
-/datum/emote/living/carbon/human/weh
+/datum/emote/living/carbon/human/weh //lizard
 	key = "weh"
 	key_third_person = "lets out a weh"
 	message = "lets out a weh!"
 	emote_type = EMOTE_AUDIBLE
 	vary = TRUE
-	mob_type_allowed_typecache = list(/mob/living/carbon)
-	sound = 'sound/voice/lizard/weh.ogg'
+
+/datum/emote/living/carbon/human/weh/get_sound(mob/living/user)
+	if(!ishuman(user))
+		return
+	if(islizard(user))
+		return 'sound/voice/lizard/weh.ogg'
 
 /datum/emote/living/carbon/human/pale
 	key = "pale"
