@@ -248,7 +248,7 @@
 		)
 
 /obj/item/reagent_containers/food/condiment/pack/update_icon()
-	return
+	return ..()
 
 /obj/item/reagent_containers/food/condiment/pack/attack(mob/M, mob/user, def_zone) //Can't feed these to people directly.
 	return

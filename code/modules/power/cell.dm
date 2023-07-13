@@ -437,6 +437,7 @@
 		add_overlay("[initial(icon_state)]-o2")
 	else
 		add_overlay("[initial(icon_state)]-o1")
+	return ..()
 
 /obj/item/stock_parts/cell/gun/upgraded
 	name = "upgraded weapon power cell"

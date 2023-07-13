@@ -27,13 +27,13 @@
 		update_icon()
 		playsound(src, 'sound/weapons/handcuffs.ogg', 30, TRUE, -3)
 
-/obj/item/assembly/mousetrap/update_icon()
-	if(armed)
-		icon_state = "mousetraparmed"
-	else
-		icon_state = "mousetrap"
-	if(holder)
-		holder.update_icon()
+/obj/item/assembly/mousetrap/update_icon_state()
+	icon_state = "mousetrap[armed ? "armed" : ""]"
+	return ..()
+
+/obj/item/assembly/mousetrap/update_icon(updates=ALL)
+	. = ..()
+	holder?.update_icon(updates)
 
 /obj/item/assembly/mousetrap/proc/triggered(mob/target, type = "feet")
 	if(!armed)

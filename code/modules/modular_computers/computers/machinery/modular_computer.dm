@@ -73,6 +73,7 @@
 	if(cpu && cpu.obj_integrity <= cpu.integrity_failure * cpu.max_integrity)
 		add_overlay("bsod")
 		add_overlay("broken")
+	return ..()
 
 /obj/machinery/modular_computer/AltClick(mob/user)
 	if(cpu)

@@ -39,6 +39,7 @@
 		icon_state = "gondolapod_open"
 	else
 		icon_state = "gondolapod"
+	return ..()
 
 /mob/living/simple_animal/pet/gondola/gondolapod/verb/deliver()
 	set name = "Release Contents"

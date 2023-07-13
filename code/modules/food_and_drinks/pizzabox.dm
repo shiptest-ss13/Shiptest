@@ -85,6 +85,7 @@
 			var/mutable_appearance/tag_overlay = mutable_appearance(icon, "pizzabox_tag")
 			tag_overlay.pixel_y = boxes.len * 3
 			add_overlay(tag_overlay)
+	return ..()
 
 /obj/item/pizzabox/worn_overlays(isinhands, icon_file)
 	. = list()

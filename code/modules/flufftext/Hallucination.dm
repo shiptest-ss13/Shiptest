@@ -132,6 +132,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	px = new_px
 	py = new_py
 	Show()
+	return ..()
 
 /obj/effect/hallucination/simple/Moved(atom/OldLoc, Dir)
 	. = ..()

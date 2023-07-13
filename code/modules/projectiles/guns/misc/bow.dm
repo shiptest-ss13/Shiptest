@@ -17,12 +17,9 @@
 	bolt_type = BOLT_TYPE_NO_BOLT
 	var/drawn = FALSE
 
-/obj/item/gun/ballistic/bow/update_icon()
+/obj/item/gun/ballistic/bow/update_icon_state()
 	. = ..()
-	if(!chambered)
-		icon_state = "[initial(icon_state)]"
-	else
-		icon_state = "[initial(icon_state)]_[drawn]"
+	icon_state = chambered ? "bow_[drawn]" : "bow"
 
 /obj/item/gun/ballistic/bow/chamber_round(keep_bullet = FALSE, spin_cylinder, replace_new_round)
 	if(chambered || !magazine)

@@ -120,6 +120,7 @@
 	else
 		icon_state = "[initial(icon_state)]"
 		item_state = "[initial(item_state)]"
+	return ..()
 
 /obj/item/wrench/syndie
 	name = "suspicious-looking wrench"

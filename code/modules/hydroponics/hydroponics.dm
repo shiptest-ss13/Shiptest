@@ -296,7 +296,7 @@
 		else
 			set_light(0)
 
-	return
+	return ..()
 
 /obj/machinery/hydroponics/proc/update_icon_plant()
 	var/mutable_appearance/plant_overlay = mutable_appearance(myseed.growing_icon, layer = OBJ_LAYER + 0.01)

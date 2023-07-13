@@ -69,8 +69,10 @@
 /obj/item/energyhalberd/update_icon_state()
 	if(wielded)
 		icon_state = "halberd[halberd_color]"
+		return ..()
 	else
 		icon_state = "halberd"
+		return ..()
 
 /obj/item/energyhalberd/suicide_act(mob/living/carbon/user)
 	if(wielded)

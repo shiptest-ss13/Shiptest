@@ -29,6 +29,7 @@ GLOBAL_LIST_EMPTY(req_console_ckey_departments)
 	desc = "A console intended to send requests between different vessels and settlements in a local region."
 	icon = 'icons/obj/terminals.dmi'
 	icon_state = "req_comp0"
+	base_icon_state = "req_comp"
 	var/department = "Unknown" //The list of all departments on the station (Determined from this variable on each unit) Set this to the same thing if you want several consoles in one department
 	var/list/messages = list() //List of all messages
 	var/departmentType = 0 //bitflag
@@ -77,28 +78,32 @@ GLOBAL_LIST_EMPTY(req_console_ckey_departments)
 		dir_amount = 8\
 	)
 
-/obj/machinery/requests_console/update_icon_state()
+/obj/machinery/requests_console/update_appearance(updates=ALL)
+	. = ..()
 	if(machine_stat & NOPOWER)
 		set_light(0)
-	else
-		set_light(1.4,0.7,"#34D352")//green light
+		return
+	set_light(1.4,0.7,"#34D352")//green light
+
+/obj/machinery/requests_console/update_icon_state()
 	if(open)
-		if(!hackState)
-			icon_state="req_comp_open"
-		else
-			icon_state="req_comp_rewired"
-	else if(machine_stat & NOPOWER)
-		if(icon_state != "req_comp_off")
-			icon_state = "req_comp_off"
-	else
-		if(emergency || (newmessagepriority == REQ_EXTREME_MESSAGE_PRIORITY))
-			icon_state = "req_comp3"
-		else if(newmessagepriority == REQ_HIGH_MESSAGE_PRIORITY)
-			icon_state = "req_comp2"
-		else if(newmessagepriority == REQ_NORMAL_MESSAGE_PRIORITY)
-			icon_state = "req_comp1"
-		else
-			icon_state = "req_comp0"
+		icon_state="[base_icon_state]_[hackState ? "rewired" : "open"]"
+		return ..()
+	if(machine_stat & NOPOWER)
+		icon_state = "[base_icon_state]_off"
+		return ..()
+
+	if(emergency || (newmessagepriority == REQ_EXTREME_MESSAGE_PRIORITY))
+		icon_state = "[base_icon_state]3"
+		return ..()
+	if(newmessagepriority == REQ_HIGH_MESSAGE_PRIORITY)
+		icon_state = "[base_icon_state]2"
+		return ..()
+	if(newmessagepriority == REQ_NORMAL_MESSAGE_PRIORITY)
+		icon_state = "[base_icon_state]1"
+		return ..()
+	icon_state = "[base_icon_state]0"
+	return ..()
 
 /obj/machinery/requests_console/Initialize()
 	. = ..()

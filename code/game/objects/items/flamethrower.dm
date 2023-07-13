@@ -60,6 +60,7 @@
 
 /obj/item/flamethrower/update_icon_state()
 	item_state = "flamethrower_[lit]"
+	return ..()
 
 /obj/item/flamethrower/update_overlays()
 	. = ..()
@@ -277,6 +278,7 @@
 
 /obj/item/flamethrower/full/update_icon_state()
 	item_state = "prebuilt_flamethrower_[lit]"
+	return ..()
 
 /obj/item/flamethrower/full/tank
 	create_with_tank = TRUE

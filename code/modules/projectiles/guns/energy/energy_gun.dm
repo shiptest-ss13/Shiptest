@@ -155,14 +155,14 @@
 	. = ..()
 	if(reactor_overloaded)
 		. += "[icon_state]_fail_3"
-	else
-		switch(fail_tick)
-			if(0)
-				. += "[icon_state]_fail_0"
-			if(1 to 150)
-				. += "[icon_state]_fail_1"
-			if(151 to INFINITY)
-				. += "[icon_state]_fail_2"
+		return
+	switch(fail_tick)
+		if(0)
+			. += "[icon_state]_fail_0"
+		if(1 to 150)
+			. += "[icon_state]_fail_1"
+		if(151 to INFINITY)
+			. += "[icon_state]_fail_2"
 
 /obj/item/gun/energy/e_gun/rdgun
 	name = "research director's PDW"

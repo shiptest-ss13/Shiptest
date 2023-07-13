@@ -44,6 +44,7 @@
 
 /obj/machinery/gravity_generator/update_icon_state()
 	icon_state = "[get_status()]_[sprite_number]"
+	return ..()
 
 /obj/machinery/gravity_generator/proc/get_status()
 	return "off"

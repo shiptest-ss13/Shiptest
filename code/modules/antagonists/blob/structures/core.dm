@@ -21,24 +21,27 @@
 		update_icon()
 	. = ..()
 
-/obj/structure/blob/core/scannerreport()
-	return "Directs the blob's expansion, gradually expands, and sustains nearby blob spores and blobbernauts."
-
-/obj/structure/blob/core/update_icon()
-	cut_overlays()
-	color = null
-	var/mutable_appearance/blob_overlay = mutable_appearance('icons/mob/blob.dmi', "blob")
-	if(overmind)
-		blob_overlay.color = overmind.blobstrain.color
-	add_overlay(blob_overlay)
-	add_overlay(mutable_appearance('icons/mob/blob.dmi', "blob_core_overlay"))
-
-/obj/structure/blob/core/Destroy()
+/obj/structure/blob/special/core/Destroy()
 	GLOB.blob_cores -= src
 	if(overmind)
 		overmind.blob_core = null
-	overmind = null
+		overmind = null
 	STOP_PROCESSING(SSobj, src)
+	return ..()
+
+/obj/structure/blob/core/scannerreport()
+	return "Directs the blob's expansion, gradually expands, and sustains nearby blob spores and blobbernauts."
+
+/obj/structure/blob/special/core/update_overlays()
+	. = ..()
+	var/mutable_appearance/blob_overlay = mutable_appearance('icons/mob/blob.dmi', "blob")
+	if(overmind)
+		blob_overlay.color = overmind.blobstrain.color
+	. += blob_overlay
+	. += mutable_appearance('icons/mob/blob.dmi', "blob_core_overlay")
+
+/obj/structure/blob/special/core/update_icon()
+	color = null
 	GLOB.poi_list -= src
 	return ..()
 

@@ -221,19 +221,14 @@
 			flick("door_closing", src)
 
 /obj/machinery/door/firedoor/update_icon_state()
-	if(density)
-		icon_state = "door_closed"
-	else
-		icon_state = "door_open"
+	. = ..()
+	icon_state = "[base_icon_state]_[density ? "closed" : "open"]"
 
 /obj/machinery/door/firedoor/update_overlays()
 	. = ..()
 	if(!welded)
 		return
-	if(density)
-		. += "welded"
-	else
-		. += "welded_open"
+	. += density ? "welded" : "welded_open"
 
 /obj/machinery/door/firedoor/open()
 	playsound(loc, door_open_sound, 90, TRUE)
@@ -489,6 +484,7 @@
 	desc = "A partially completed firelock."
 	icon = 'icons/obj/doors/doorfire.dmi'
 	icon_state = "frame1"
+	base_icon_state = "frame"
 	anchored = FALSE
 	density = TRUE
 	var/constructionStep = CONSTRUCTION_NOCIRCUIT
@@ -510,7 +506,8 @@
 			. += "<span class='notice'>There are no <i>firelock electronics</i> in the frame. The frame could be <b>cut</b> apart.</span>"
 
 /obj/structure/firelock_frame/update_icon_state()
-	icon_state = "frame[constructionStep]"
+	icon_state = "[base_icon_state][constructionStep]"
+	return ..()
 
 /obj/structure/firelock_frame/attackby(obj/item/C, mob/user)
 	switch(constructionStep)
@@ -773,7 +770,7 @@
 	icon_state = "door_frame"
 
 /obj/structure/firelock_frame/window/update_icon()
-	return
+	return ..()
 
 
 #undef CONSTRUCTION_COMPLETE

@@ -272,6 +272,7 @@
 			icon_state = "4"
 		if(AI_READY_CORE)
 			icon_state = "ai-empty"
+	return ..()
 
 /obj/structure/AIcore/deconstruct(disassembled = TRUE)
 	if(state == GLASS_CORE)

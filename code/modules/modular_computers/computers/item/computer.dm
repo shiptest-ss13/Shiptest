@@ -161,6 +161,7 @@
 		icon_state = icon_state_unpowered
 	else
 		icon_state = icon_state_powered
+	return ..()
 
 /obj/item/modular_computer/update_overlays()
 	. = ..()

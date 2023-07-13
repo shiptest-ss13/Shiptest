@@ -14,6 +14,9 @@
 	light_color = COLOR_WHITE
 	light_power = FLASH_LIGHT_POWER
 	light_on = FALSE
+	/// Whether we currently have the flashing overlay.
+	var/flashing = FALSE
+	/// The overlay we use for flashing.
 	var/flashing_overlay = "flash-f"
 	var/times_used = 0 //Number of times it's been used.
 	var/burnt_out = FALSE     //Is the flash burnt out?
@@ -34,18 +37,22 @@
 	attack(user,user)
 	return FIRELOSS
 
-/obj/item/assembly/flash/update_icon(flash = FALSE)
-	cut_overlays()
-	attached_overlays = list()
-	if(burnt_out)
-		add_overlay("flashburnt")
-		attached_overlays += "flashburnt"
+/obj/item/assembly/flash/update_icon(updates=ALL, flash = FALSE)
+	flashing = flash
+	. = ..()
 	if(flash)
-		add_overlay(flashing_overlay)
-		attached_overlays += flashing_overlay
 		addtimer(CALLBACK(src, /atom/.proc/update_icon), 5)
-	if(holder)
-		holder.update_icon()
+	holder?.update_icon(updates)
+
+/obj/item/assembly/flash/update_overlays()
+	attached_overlays = list()
+	. = ..()
+	if(burnt_out)
+		. += "flashburnt"
+		attached_overlays += "flashburnt"
+	if(flashing)
+		. += flashing_overlay
+		attached_overlays += flashing_overlay
 
 /obj/item/assembly/flash/proc/clown_check(mob/living/carbon/human/user)
 	if(HAS_TRAIT(user, TRAIT_CLUMSY) && prob(50))
@@ -105,7 +112,7 @@
 	addtimer(CALLBACK(src, .proc/flash_end), FLASH_LIGHT_DURATION, TIMER_OVERRIDE|TIMER_UNIQUE)
 	times_used++
 	flash_recharge()
-	update_icon(TRUE)
+	update_icon(ALL, TRUE)
 	if(user && !clown_check(user))
 		return FALSE
 	return TRUE
@@ -156,7 +163,7 @@
 	else if(issilicon(M))
 		var/mob/living/silicon/robot/R = M
 		log_combat(user, R, "flashed", src)
-		update_icon(1)
+		update_icon(ALL, TRUE)
 		R.Paralyze(rand(80,120))
 		var/diff = 5 * CONFUSION_STACK_MAX_MULTIPLIER - M.confused
 		R.confused += min(5, diff)
@@ -253,7 +260,7 @@
 	overheat = TRUE
 	addtimer(CALLBACK(src, .proc/cooldown), flashcd)
 	playsound(src, 'sound/weapons/flash.ogg', 100, TRUE)
-	update_icon(1)
+	update_icon(ALL, TRUE)
 	return TRUE
 
 

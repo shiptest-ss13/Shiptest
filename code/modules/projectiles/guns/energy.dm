@@ -203,7 +203,7 @@
 
 /obj/item/gun/energy/update_icon_state()
 	if(initial(item_state))
-		return
+		return ..()
 	var/ratio = get_charge_ratio()
 	var/new_item_state = ""
 	new_item_state = initial(icon_state)
@@ -212,6 +212,7 @@
 		new_item_state += "[shot.select_name]"
 	new_item_state += "[ratio]"
 	item_state = new_item_state
+	return ..()
 
 /obj/item/gun/energy/update_overlays()
 	. = ..()

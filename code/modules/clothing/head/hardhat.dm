@@ -55,6 +55,7 @@
 	else
 		icon_state = "[initial(icon_state)]"
 		item_state = "[initial(icon_state)]"
+	return ..()
 
 /obj/item/clothing/head/hardhat/proc/turn_on(mob/user)
 	set_light_on(TRUE)

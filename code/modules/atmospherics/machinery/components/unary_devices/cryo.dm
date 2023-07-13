@@ -102,7 +102,7 @@
 		beaker = null
 
 /obj/machinery/atmospherics/components/unary/cryo_cell/update_icon()
-
+	. = ..()
 	cut_overlays()
 
 	if(panel_open)

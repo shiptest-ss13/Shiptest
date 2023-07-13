@@ -269,6 +269,7 @@
 /atom/movable/screen/robot/lamp
 	name = "headlamp"
 	icon_state = "lamp_off"
+	base_icon_state = "lamp"
 	var/mob/living/silicon/robot/robot
 
 /atom/movable/screen/robot/lamp/Click()
@@ -278,11 +279,9 @@
 	robot?.toggle_headlamp()
 	update_icon()
 
-/atom/movable/screen/robot/lamp/update_icon()
-	if(robot?.lamp_enabled)
-		icon_state = "lamp_on"
-	else
-		icon_state = "lamp_off"
+/atom/movable/screen/robot/lamp/update_icon_state()
+	icon_state = "[base_icon_state]_[robot?.lamp_enabled ? "on" : "off"]"
+	return ..()
 
 /atom/movable/screen/robot/modPC
 	name = "Modular Interface"

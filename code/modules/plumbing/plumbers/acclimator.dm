@@ -61,6 +61,7 @@
 			icon_state += "_cold"
 		if(HEATING)
 			icon_state += "_hot"
+	return ..()
 
 /obj/machinery/plumbing/acclimator/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)

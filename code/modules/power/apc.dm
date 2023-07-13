@@ -286,7 +286,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 						// 2 if we need to update the overlays
 	if(!update)
 		icon_update_needed = FALSE
-		return
+		return ..()
 
 	if(update & 1) // Updating the icon state
 		if(update_state & UPSTATE_ALLGOOD)
@@ -320,12 +320,12 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 	if(!cell) //it always peeved me that abandoned ships always had the apc lights on. this should fix it
 		icon_update_needed = FALSE
 		set_light(0)
-		return
+		return ..()
 
 	if(cell.charge <= 0)
 		icon_update_needed = FALSE
 		set_light(0)
-		return
+		return ..()
 
 	if(update & 2)
 		SSvis_overlays.remove_vis_overlay(src, managed_vis_overlays)
@@ -359,6 +359,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 		set_light(0)
 
 	icon_update_needed = FALSE
+	return ..()
 
 /obj/machinery/power/apc/proc/check_updates()
 	var/last_update_state = update_state

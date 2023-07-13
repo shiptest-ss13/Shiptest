@@ -59,18 +59,17 @@
 /obj/machinery/firealarm/update_icon_state()
 	if(panel_open)
 		icon_state = "fire_b[buildstage]"
-		return
+		return ..()
 
 	if(machine_stat & BROKEN)
 		icon_state = "firex"
-		return
+		return ..()
 
 	icon_state = "fire0"
+	return ..()
 
 /obj/machinery/firealarm/update_overlays()
 	. = ..()
-	SSvis_overlays.remove_vis_overlay(src, managed_vis_overlays)
-
 	if(machine_stat & NOPOWER)
 		return
 

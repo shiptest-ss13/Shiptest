@@ -331,6 +331,7 @@
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/update_icon_state()
 	icon_state = "hardsuit[on]-[hardsuit_type]"
+	return ..()
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/Initialize()
 	. = ..()
@@ -995,6 +996,7 @@
 	else
 		icon_state = "[initial(icon_state)]"
 		item_state = "[initial(icon_state)]"
+	return ..()
 
 /obj/item/clothing/head/helmet/space/light/proc/turn_on(mob/user)
 	set_light_on(TRUE)
@@ -1118,6 +1120,7 @@
 
 /obj/item/clothing/head/helmet/space/pilot/update_icon_state()
 	icon_state = "space-pilot-[skin][up]"
+	return ..()
 
 /obj/item/clothing/head/helmet/space/pilot/New()
 	..()

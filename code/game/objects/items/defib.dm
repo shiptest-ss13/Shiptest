@@ -391,6 +391,7 @@
 	item_state = icon_state
 	if(cooldown)
 		icon_state = "[base_icon_state][wielded]_cooldown"
+	return ..()
 
 /obj/item/shockpaddles/dropped(mob/user)
 	if(!req_defib)

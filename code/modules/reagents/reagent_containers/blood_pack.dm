@@ -22,10 +22,11 @@
 			blood_type = B.data["blood_type"]
 		else
 			blood_type = null
-	update_pack_name()
+	update_name()
 	update_icon()
 
-/obj/item/reagent_containers/blood/proc/update_pack_name()
+/obj/item/reagent_containers/blood/update_name(updates)
+	. = ..()
 	if(!labelled)
 		if(blood_type)
 			name = "blood pack[blood_type ? " - [unique_blood ? blood_type : blood_type.name]" : null]"
@@ -88,6 +89,6 @@
 			name = "blood pack - [t]"
 		else
 			labelled = 0
-			update_pack_name()
+			update_name()
 	else
 		return ..()

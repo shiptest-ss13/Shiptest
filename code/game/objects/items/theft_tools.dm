@@ -229,6 +229,7 @@
 		icon_state = "supermatter_tongs_loaded"
 	else
 		icon_state = "supermatter_tongs"
+	return ..()
 
 /obj/item/hemostat/supermatter/afterattack(atom/O, mob/user, proximity)
 	. = ..()

@@ -6,6 +6,7 @@
 	desc = "An IV drip with an advanced infusion pump that can both drain blood into and inject liquids from attached containers. Blood packs are processed at an accelerated rate. Alt-Click to change the transfer rate."
 	icon = 'icons/obj/iv_drip.dmi'
 	icon_state = "iv_drip"
+	base_icon_state = "iv_drip"
 	anchored = FALSE
 	mouse_drag_pointer = MOUSE_ACTIVE_POINTER
 	var/mob/living/carbon/attached
@@ -28,15 +29,10 @@
 
 /obj/machinery/iv_drip/update_icon_state()
 	if(attached)
-		if(mode)
-			icon_state = "injecting"
-		else
-			icon_state = "donating"
+		icon_state = "[base_icon_state]_[mode ? "injecting" : "donating"]"
 	else
-		if(mode)
-			icon_state = "injectidle"
-		else
-			icon_state = "donateidle"
+		icon_state = "[base_icon_state]_[mode ? "injecting" : "donating"]"
+	return ..()
 
 /obj/machinery/iv_drip/update_overlays()
 	. = ..()
@@ -237,6 +233,7 @@
 	name = "saline drip"
 	desc = "An all-you-can-drip saline canister designed to supply a hospital without running out, with a scary looking pump rigged to inject saline into containers, but filling people directly might be a bad idea."
 	icon_state = "saline"
+	base_icon_state = "saline"
 	density = TRUE
 
 /obj/machinery/iv_drip/saline/Initialize(mapload)

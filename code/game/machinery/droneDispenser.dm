@@ -211,6 +211,9 @@
 		icon_state = icon_creating
 	else
 		icon_state = icon_on
+	return ..()
+
+//	icon_state = "["icon"]_[(mode == DRONE_RECHARGING) ? "recharging"]"
 
 /obj/machinery/droneDispenser/attackby(obj/item/I, mob/living/user)
 	if(I.tool_behaviour == TOOL_CROWBAR)

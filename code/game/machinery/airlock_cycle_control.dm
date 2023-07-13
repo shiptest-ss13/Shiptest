@@ -158,7 +158,7 @@
 /obj/machinery/advanced_airlock_controller/update_icon(use_hash = FALSE)
 	var/turf/location = get_turf(src)
 	if(!location)
-		return
+		return ..()
 	var/pressure = 0
 	if(location)
 		var/datum/gas_mixture/environment = location.return_air()
@@ -169,7 +169,7 @@
 
 	var/new_overlays_hash = "[pressure_bars]-[cyclestate]-[buildstage]-[panel_open]-[machine_stat]-[shorted]-[locked]-\ref[vis_target]"
 	if(use_hash && new_overlays_hash == overlays_hash)
-		return
+		return ..()
 	overlays_hash = new_overlays_hash
 
 	cut_overlays()
@@ -181,12 +181,12 @@
 				icon_state = "aac_b2"
 			if(BUILD_NO_CIRCUIT)
 				icon_state = "aac_b1"
-		return
+		return ..()
 
 	icon_state = "aac"
 
 	if((machine_stat & (NOPOWER|BROKEN)) || shorted)
-		return
+		return ..()
 
 	var/is_exterior_pressure = (cyclestate == AIRLOCK_CYCLESTATE_OUTCLOSING || cyclestate == AIRLOCK_CYCLESTATE_OUTOPENING || cyclestate == AIRLOCK_CYCLESTATE_OUTOPEN)
 	add_overlay("aac_[is_exterior_pressure ? "ext" : "int"]p_[pressure_bars]")
@@ -208,6 +208,7 @@
 		var/mutable_appearance/M = mutable_appearance(icon, "hologram-line", ABOVE_LIGHTING_LAYER, ABOVE_LIGHTING_PLANE)
 		M.transform = TR
 		add_overlay(M)
+	return ..()
 
 /obj/machinery/advanced_airlock_controller/proc/reset(wire)
 	switch(wire)

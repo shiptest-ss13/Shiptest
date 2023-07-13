@@ -254,7 +254,7 @@
 		vowbroken = TRUE
 		mood_message = pick(vowbroken_message)
 
-	update_plush_desc()
+	update_desc()
 
 /obj/item/toy/plush/proc/scorned_by(obj/item/toy/plush/Outmoded)
 	scorned_by.Add(Outmoded)
@@ -268,7 +268,7 @@
 	lover.cheer_up()
 
 	mood_message = pick(love_message)
-	update_plush_desc()
+	update_desc()
 
 	if(partner)	//who?
 		partner = null	//more like who cares
@@ -285,7 +285,7 @@
 	partner.heal_memories()
 
 	mood_message = pick(partner_message)
-	update_plush_desc()
+	update_desc()
 
 /obj/item/toy/plush/proc/plop(obj/item/toy/plush/Daddy)
 	if(partner != Daddy)
@@ -310,12 +310,12 @@
 	young = TRUE
 	name = "[Mama] Jr"	//Icelandic naming convention pending
 	normal_desc = "[src] is a little baby of [maternal_parent] and [paternal_parent]!"	//original desc won't be used so the child can have moods
-	update_plush_desc()
+	update_desc()
 
 	Mama.mood_message = pick(Mama.parent_message)
-	Mama.update_plush_desc()
+	Mama.update_desc()
 	Dada.mood_message = pick(Dada.parent_message)
-	Dada.update_plush_desc()
+	Dada.update_desc()
 
 /obj/item/toy/plush/proc/bad_news(obj/item/toy/plush/Deceased)	//cotton to cotton, sawdust to sawdust
 	var/is_that_letter_for_me = FALSE
@@ -354,7 +354,7 @@
 	if(is_that_letter_for_me)
 		heartbroken = TRUE
 		mood_message = pick(heartbroken_message)
-		update_plush_desc()
+		update_desc()
 
 /obj/item/toy/plush/proc/cheer_up()	//it'll be all right
 	if(!heartbroken)
@@ -366,7 +366,7 @@
 
 	if(mood_message in heartbroken_message)
 		mood_message = null
-	update_plush_desc()
+	update_desc()
 
 /obj/item/toy/plush/proc/heal_memories()	//time fixes all wounds
 	if(!vowbroken)
@@ -375,8 +375,9 @@
 			mood_message = null
 	cheer_up()
 
-/obj/item/toy/plush/proc/update_plush_desc()
+/obj/item/toy/plush/update_desc()
 	desc = normal_desc
+	. = ..()
 	if(mood_message)
 		desc += mood_message
 

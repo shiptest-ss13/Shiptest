@@ -21,10 +21,8 @@
 	return ..()
 
 /obj/item/swapper/update_icon_state()
-	if(linked_swapper)
-		icon_state = "swapper-linked"
-	else
-		icon_state = "swapper"
+	icon_state = "swapper[linked_swapper ? "-linked" : null]"
+	return ..()
 
 /obj/item/swapper/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/swapper))

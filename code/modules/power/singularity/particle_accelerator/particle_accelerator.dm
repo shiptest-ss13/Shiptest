@@ -144,6 +144,7 @@
 				icon_state="[reference]p[strength]"
 			else
 				icon_state="[reference]c"
+	return ..()
 
 /obj/structure/particle_accelerator/proc/update_state()
 	if(master)

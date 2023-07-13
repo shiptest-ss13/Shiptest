@@ -656,7 +656,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
 				icon_state = "alarm_b2"
 			if(0)
 				icon_state = "alarm_b1"
-		return
+		return ..()
 
 	icon_state = "alarm"
 	return ..()

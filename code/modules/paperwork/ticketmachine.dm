@@ -125,6 +125,7 @@
 		if(100)
 			icon_state = "ticketmachine_0"
 	handle_maptext()
+	return ..()
 
 /obj/machinery/ticket_machine/proc/handle_maptext()
 	switch(ticket_number) //This is here to handle maptext offsets so that the numbers align.

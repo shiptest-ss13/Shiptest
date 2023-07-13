@@ -107,6 +107,7 @@
 		icon_state = "medibot2"
 	else
 		icon_state = "medibot1"
+	return ..()
 
 /mob/living/simple_animal/bot/medbot/Initialize(mapload, new_skin)
 	. = ..()

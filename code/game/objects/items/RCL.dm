@@ -116,7 +116,7 @@
 	if(!loaded)
 		icon_state = "rcl-0"
 		item_state = "rcl-0"
-		return
+		return ..()
 	switch(loaded.amount)
 		if(61 to INFINITY)
 			icon_state = "rcl-30"
@@ -130,6 +130,7 @@
 		else
 			icon_state = "rcl-0"
 			item_state = "rcl-0"
+	return ..()
 
 /obj/item/rcl/proc/is_empty(mob/user, loud = 1)
 	update_icon()
@@ -335,7 +336,7 @@
 	if(!loaded)
 		icon_state = "rclg-0"
 		item_state = "rclg-0"
-		return
+		return ..()
 	switch(loaded.amount)
 		if(1 to INFINITY)
 			icon_state = "rclg-1"
@@ -343,3 +344,4 @@
 		else
 			icon_state = "rclg-1"
 			item_state = "rclg-1"
+	return ..()

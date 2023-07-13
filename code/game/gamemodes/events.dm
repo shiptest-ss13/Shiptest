@@ -35,7 +35,7 @@
 		if(!C.cell || (z_level && C.virtual_z() != z_level))
 			continue
 		C.cell.charge = C.cell.maxcharge
-		C.failure_timer = 0
+		COOLDOWN_RESET(C, failure_timer)
 	for(var/obj/machinery/power/smes/S in GLOB.machines)
 		if(z_level && S.virtual_z() != z_level)
 			continue

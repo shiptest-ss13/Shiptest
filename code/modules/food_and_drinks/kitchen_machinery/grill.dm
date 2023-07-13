@@ -24,7 +24,7 @@
 		icon_state = "grill_on"
 	else
 		icon_state = "grill_open"
-
+	return ..()
 /obj/machinery/grill/attackby(obj/item/I, mob/user)
 	if(istype(I, /obj/item/stack/sheet/mineral/coal) || istype(I, /obj/item/stack/sheet/mineral/wood))
 		var/obj/item/stack/S = I
@@ -161,6 +161,7 @@
 		icon_state = "catgrill_on"
 	else
 		icon_state = "catgrill_open"
+	return ..()
 
 /obj/machinery/grill/cat/proc/owoify()
 	var/static/regex/owo = new("r|l", "g")

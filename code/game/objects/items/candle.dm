@@ -21,6 +21,7 @@
 
 /obj/item/candle/update_icon_state()
 	icon_state = "candle[(wax > 400) ? ((wax > 750) ? 1 : 2) : 3][lit ? "_lit" : ""]"
+	return ..()
 
 /obj/item/candle/attackby(obj/item/W, mob/user, params)
 	var/msg = W.ignition_effect(src, user)
@@ -121,5 +122,6 @@
 /obj/item/candle/tribal_torch/update_icon()
 	icon_state = "torch[lit ? "_lit" : "_unlit"]"
 	item_state = "torch[lit ? "-on" : ""]"
+	return ..()
 
 #undef CANDLE_LUMINOSITY

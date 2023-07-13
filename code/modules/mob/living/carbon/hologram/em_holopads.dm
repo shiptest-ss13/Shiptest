@@ -32,6 +32,7 @@
 		icon_state = "holopad1"
 	else
 		icon_state = "holopad3"
+	return ..()
 
 /obj/machinery/holopad/emergency/attack_ghost(mob/dead/observer/user)
 	if(!SSticker.HasRoundStarted() || !loc || !em_starting || em)

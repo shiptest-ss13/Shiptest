@@ -60,7 +60,7 @@
 		item_state = "[initial(item_state)]1"
 	else
 		item_state = "[initial(item_state)]"
-
+	return ..()
 
 /obj/item/weldingtool/update_overlays()
 	. = ..()

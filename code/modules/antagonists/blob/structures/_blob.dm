@@ -72,6 +72,7 @@
 	return !atmosblock
 
 /obj/structure/blob/update_icon() //Updates color based on overmind color if we have an overmind.
+	. = ..()
 	if(overmind)
 		add_atom_colour(overmind.blobstrain.color, FIXED_COLOUR_PRIORITY)
 	else
@@ -334,20 +335,27 @@
 		return "Currently weak to brute damage."
 	return "N/A"
 
-/obj/structure/blob/normal/update_icon()
-	..()
+/obj/structure/blob/normal/update_name()
+	. = ..()
+	name = "[(obj_integrity <= 15) ? "fragile " : (overmind ? null : "dead ")][initial(name)]"
+
+/obj/structure/blob/normal/update_desc()
+	. = ..()
 	if(obj_integrity <= 15)
-		icon_state = "blob_damaged"
-		name = "fragile blob"
 		desc = "A thin lattice of slightly twitching tendrils."
+	else if(overmind)
+		desc = "A thick wall of writhing tendrils."
+	else
+		desc = "A thick wall of lifeless tendrils."
+
+/obj/structure/blob/normal/update_icon_state()
+	icon_state = "blob[(obj_integrity <= 15) ? "_damaged" : null]"
+
+	/// - [] TODO: Move this elsewhere
+	if(obj_integrity <= 15)
 		brute_resist = 0.5
 	else if (overmind)
-		icon_state = "blob"
-		name = "blob"
-		desc = "A thick wall of writhing tendrils."
 		brute_resist = 0.25
 	else
-		icon_state = "blob"
-		name = "dead blob"
-		desc = "A thick wall of lifeless tendrils."
 		brute_resist = 0.25
+	return ..()

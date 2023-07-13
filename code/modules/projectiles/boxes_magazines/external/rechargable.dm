@@ -9,6 +9,7 @@
 /obj/item/ammo_box/magazine/recharge/update_icon()
 	desc = "[initial(desc)] It has [stored_ammo.len] shot\s left."
 	icon_state = "oldrifle-[round(ammo_count(),4)]"
+	return ..()
 
 /obj/item/ammo_box/magazine/recharge/attack_self() //No popping out the "bullets"
 	return

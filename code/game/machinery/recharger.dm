@@ -2,6 +2,7 @@
 	name = "recharger"
 	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "recharger"
+	base_icon_state = "recharger"
 	desc = "A charging dock for energy based weaponry."
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 4
@@ -160,21 +161,28 @@
 			if(B.cell)
 				B.cell.charge = 0
 
+
+/obj/machinery/recharger/update_appearance(updates)
+	. = ..()
+	if((machine_stat & (NOPOWER|BROKEN)) || panel_open || !anchored)
+		luminosity = 0
+		return
+	luminosity = 1
+
 /obj/machinery/recharger/update_overlays()
 	. = ..()
-	SSvis_overlays.remove_vis_overlay(src, managed_vis_overlays)
-	luminosity = 0
 	if(machine_stat & (NOPOWER|BROKEN) || !anchored || panel_open)
 		return
 
 	luminosity = 1
-	if (charging)
-		if(using_power)
-			SSvis_overlays.add_vis_overlay(src, icon, "recharger-charging", layer, plane, dir, alpha)
-			SSvis_overlays.add_vis_overlay(src, icon, "recharger-charging", EMISSIVE_LAYER, EMISSIVE_PLANE, dir, alpha)
-		else
-			SSvis_overlays.add_vis_overlay(src, icon, "recharger-full", layer, plane, dir, alpha)
-			SSvis_overlays.add_vis_overlay(src, icon, "recharger-full", EMISSIVE_LAYER, EMISSIVE_PLANE, dir, alpha)
-	else
-		SSvis_overlays.add_vis_overlay(src, icon, "recharger-empty", layer, plane, dir, alpha)
-		SSvis_overlays.add_vis_overlay(src, icon, "recharger-empty", EMISSIVE_LAYER, EMISSIVE_PLANE, dir, alpha)
+	if(!charging)
+		SSvis_overlays.add_vis_overlay(src, icon, "[base_icon_state]-empty", layer, plane, dir, alpha)
+		SSvis_overlays.add_vis_overlay(src, icon, "[base_icon_state]-empty", EMISSIVE_LAYER, EMISSIVE_PLANE, dir, alpha)
+		return
+	if(using_power)
+		SSvis_overlays.add_vis_overlay(src, icon, "[base_icon_state]-charging", layer, plane, dir, alpha)
+		SSvis_overlays.add_vis_overlay(src, icon, "[base_icon_state]-charging", EMISSIVE_LAYER, EMISSIVE_PLANE, dir, alpha)
+		return
+
+	SSvis_overlays.add_vis_overlay(src, icon, "[base_icon_state]-full", layer, plane, dir, alpha)
+	SSvis_overlays.add_vis_overlay(src, icon, "[base_icon_state]-full", EMISSIVE_LAYER, EMISSIVE_PLANE, dir, alpha)

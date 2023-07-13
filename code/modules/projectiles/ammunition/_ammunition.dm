@@ -59,6 +59,7 @@
 
 /obj/item/ammo_casing/update_icon_state()
 	icon_state = "[initial(icon_state)][BB ? (bullet_skin ? "-[bullet_skin]" : "") : "-empty"]"
+	return ..()
 
 /obj/item/ammo_casing/update_icon()
 	. = ..()

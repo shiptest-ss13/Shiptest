@@ -21,9 +21,11 @@
 
 /obj/item/storage/belt/update_overlays()
 	. = ..()
-	if(content_overlays)
-		for(var/obj/item/I in contents)
-			. += I.get_belt_overlay()
+	if(!content_overlays)
+		return
+	for(var/obj/item/I in contents)
+		. += I.get_belt_overlay()
+
 
 /obj/item/storage/belt/Initialize()
 	. = ..()
@@ -785,6 +787,7 @@
 	if(contents.len)
 		icon_state += "-sabre"
 		item_state += "-sabre"
+	return ..()
 
 /obj/item/storage/belt/sabre/PopulateContents()
 	new /obj/item/melee/sabre(src)

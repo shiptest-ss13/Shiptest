@@ -54,10 +54,8 @@
 	return ..()
 
 /obj/machinery/jukebox/update_icon_state()
-	if(active)
-		icon_state = "[initial(icon_state)]-active"
-	else
-		icon_state = "[initial(icon_state)]"
+	icon_state = "[initial(icon_state)]-[active ? "active" : null]"
+	return ..()
 
 /obj/machinery/jukebox/ui_status(mob/user)
 	if(!anchored)

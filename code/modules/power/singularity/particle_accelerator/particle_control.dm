@@ -74,6 +74,7 @@
 					icon_state = "control_boxw"
 				else
 					icon_state = "control_boxc"
+	return ..()
 
 /obj/machinery/particle_accelerator/control_box/proc/strength_change()
 	for(var/CP in connected_parts)

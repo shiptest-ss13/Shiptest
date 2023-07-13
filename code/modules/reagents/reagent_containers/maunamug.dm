@@ -3,6 +3,7 @@
 	desc = "A drink served in a classy mug. Now with built-in heating!"
 	icon = 'icons/obj/mauna_mug.dmi'
 	icon_state = "maunamug"
+	base_icon_state = "maunamug"
 	spillable = TRUE
 	reagent_flags = OPENCONTAINER
 	fill_icon_state = "maunafilling"
@@ -94,19 +95,19 @@
 		return TRUE
 	return ..()
 
-/obj/item/reagent_containers/glass/maunamug/update_icon()
-	..()
+/obj/item/reagent_containers/glass/maunamug/update_icon_state()
 	if(open)
-		if(cell)
-			icon_state = "maunamug_bat"
-		else
-			icon_state = "maunamug_no_bat"
-	else if(on)
-		icon_state = "maunamug_on"
-	else
-		icon_state = "maunamug"
-	if(reagents.total_volume && reagents.chem_temp >= 400)
-		var/intensity = (reagents.chem_temp - 400) * 1 / 600 //Get the opacity of the incandescent overlay. Ranging from 400 to 1000
-		var/mutable_appearance/mug_glow = mutable_appearance(icon, "maunamug_incand")
-		mug_glow.alpha = 255 * intensity
-		add_overlay(mug_glow)
+		icon_state = "[base_icon_state][cell ? null : "_no"]_bat"
+		return ..()
+	icon_state = "[base_icon_state][on ? "_on" : null]"
+	return ..()
+
+/obj/item/reagent_containers/glass/maunamug/update_overlays()
+	. = ..()
+	if(!reagents.total_volume || reagents.chem_temp < 400)
+		return
+
+	var/intensity = (reagents.chem_temp - 400) * 1 / 600 //Get the opacity of the incandescent overlay. Ranging from 400 to 1000
+	var/mutable_appearance/mug_glow = mutable_appearance(icon, "maunamug_incand")
+	mug_glow.alpha = 255 * intensity
+	. += mug_glow

@@ -100,6 +100,7 @@
 	else
 		//running
 		icon_state = initial(icon_state)+ (state_open ? "_open" : "")
+	return ..()
 
 /obj/machinery/public_nanite_chamber/update_overlays()
 	. = ..()

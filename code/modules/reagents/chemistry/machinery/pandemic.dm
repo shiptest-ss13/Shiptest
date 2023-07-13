@@ -7,6 +7,7 @@
 	density = TRUE
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "pandemic0"
+	base_icon_state = "pandemic"
 	use_power = TRUE
 	idle_power_usage = 20
 	resistance_flags = ACID_PROOF
@@ -128,10 +129,8 @@
 	playsound(src, 'sound/machines/ping.ogg', 30, TRUE)
 
 /obj/machinery/computer/pandemic/update_icon_state()
-	if(machine_stat & BROKEN)
-		icon_state = (beaker ? "pandemic1_b" : "pandemic0_b")
-	else
-		icon_state = "pandemic[(beaker) ? "1" : "0"][powered() ? "" : "_nopower"]"
+	icon_state = "[base_icon_state][beaker ? 1 : 0][(machine_stat & BROKEN) ? "_b" : (powered() ? null : "_nopower")]"
+	return ..()
 
 /obj/machinery/computer/pandemic/update_overlays()
 	. = ..()

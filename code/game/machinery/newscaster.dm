@@ -185,6 +185,7 @@ GLOBAL_LIST_EMPTY(allCasters)
 	desc = "A standard Nanotrasen brand newsfeed handler. All the news you absolutely have no use for, in one place!"
 	icon = 'icons/obj/terminals.dmi'
 	icon_state = "newscaster"
+	base_icon_state = "newscaster"
 	verb_say = "beeps"
 	verb_ask = "beeps"
 	verb_exclaim = "beeps"
@@ -242,21 +243,21 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/newscaster/security_unit, 30)
 	. = ..()
 	SSvis_overlays.remove_vis_overlay(src, managed_vis_overlays)
 	if(machine_stat & BROKEN)
-		SSvis_overlays.add_vis_overlay(src, icon, "newscaster_broken", layer, plane, dir)
+		SSvis_overlays.add_vis_overlay(src, icon, "[base_icon_state]_broken", layer, plane, dir)
 		return
 
 	if(machine_stat & NOPOWER)
 		return
 
 	if(GLOB.news_network.wanted_issue.active)
-		SSvis_overlays.add_vis_overlay(src, icon, "newscaster_wanted", layer, plane, dir)
-		SSvis_overlays.add_vis_overlay(src, icon, "newscaster_wanted", layer, EMISSIVE_PLANE, dir)
+		SSvis_overlays.add_vis_overlay(src, icon, "[base_icon_state]_wanted", layer, plane, dir)
+		SSvis_overlays.add_vis_overlay(src, icon, "[base_icon_state]_wanted", layer, EMISSIVE_PLANE, dir)
 	else if(alert)
-		SSvis_overlays.add_vis_overlay(src, icon, "newscaster_alert", layer, plane, dir)
-		SSvis_overlays.add_vis_overlay(src, icon, "newscaster_alert", layer, EMISSIVE_PLANE, dir)
+		SSvis_overlays.add_vis_overlay(src, icon, "[base_icon_state]_alert", layer, plane, dir)
+		SSvis_overlays.add_vis_overlay(src, icon, "[base_icon_state]_alert", layer, EMISSIVE_PLANE, dir)
 	else
-		SSvis_overlays.add_vis_overlay(src, icon, "newscaster_normal", layer, plane, dir)
-		SSvis_overlays.add_vis_overlay(src, icon, "newscaster_normal", layer, EMISSIVE_PLANE, dir)
+		SSvis_overlays.add_vis_overlay(src, icon, "[base_icon_state]_normal", layer, plane, dir)
+		SSvis_overlays.add_vis_overlay(src, icon, "[base_icon_state]_normal", layer, EMISSIVE_PLANE, dir)
 
 
 /obj/machinery/newscaster/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, attack_dir)

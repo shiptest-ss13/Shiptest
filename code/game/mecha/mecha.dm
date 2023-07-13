@@ -151,6 +151,8 @@
 /obj/mecha/update_icon_state()
 	if(silicon_pilot && silicon_icon_state)
 		icon_state = silicon_icon_state
+		return ..()
+	return ..()
 
 /obj/mecha/get_cell()
 	return cell

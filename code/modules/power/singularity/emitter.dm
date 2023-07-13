@@ -139,6 +139,7 @@
 		icon_state = avail(active_power_usage) ? icon_state_on : icon_state_underpowered
 	else
 		icon_state = initial(icon_state)
+	return ..()
 
 /obj/machinery/power/emitter/interact(mob/user)
 	add_fingerprint(user)

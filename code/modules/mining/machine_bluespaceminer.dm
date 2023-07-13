@@ -41,6 +41,7 @@
 		icon_state = (active) ? "bsm_on" : "bsm_idle"
 	else
 		icon_state = "bsm_off"
+	return ..()
 
 /obj/machinery/power/bluespace_miner/RefreshParts()
 	var/M_C = 0 //mining_chance

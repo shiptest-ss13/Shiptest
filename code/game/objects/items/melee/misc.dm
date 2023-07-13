@@ -905,6 +905,7 @@
 		else
 			icon_state += "-blade"
 		item_state += "-sabre"
+	return ..()
 
 /obj/item/storage/belt/weebstick/PopulateContents()
 	//Time to generate names now that we have the sword

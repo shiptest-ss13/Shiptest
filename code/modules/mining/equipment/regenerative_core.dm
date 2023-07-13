@@ -143,6 +143,7 @@
 
 /obj/item/organ/regenerative_core/update_icon_state()
 	icon_state = inert ? "legion_soul_inert" : "legion_soul"
+	return ..()
 
 /obj/item/organ/regenerative_core/update_overlays()
 	. = ..()
@@ -193,3 +194,4 @@
 	icon_state = inert ? "crystal_heart_inert" : "crystal_heart"
 	if(preserved)
 		icon_state = "crystal_heart_preserved"
+	return ..()

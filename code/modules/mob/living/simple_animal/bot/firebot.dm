@@ -316,7 +316,7 @@
 		icon_state = "firebots1"
 	else
 		icon_state = "firebot1"
-
+	return ..()
 
 /mob/living/simple_animal/bot/firebot/explode()
 	on = FALSE

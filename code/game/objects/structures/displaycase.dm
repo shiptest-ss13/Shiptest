@@ -98,7 +98,7 @@
 		S.Scale(17,17)
 		I.Blend(S,ICON_UNDERLAY,8,8)
 	src.icon = I
-	return
+	return ..()
 
 /obj/structure/displaycase/attackby(obj/item/W, mob/user, params)
 	if(W.GetID() && !broken && openable)
@@ -396,7 +396,7 @@
 		S.Scale(17,17)
 		I.Blend(S,ICON_UNDERLAY,8,12)
 	src.icon = I
-	return
+	return ..()
 
 /obj/structure/displaycase/forsale/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)

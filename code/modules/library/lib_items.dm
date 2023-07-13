@@ -168,13 +168,13 @@
 /obj/structure/bookcase/update_icon_state()
 	if(state == BOOKCASE_UNANCHORED)
 		icon_state = "bookempty"
-		return
+		return ..()
 
 	var/amount = contents.len
 	if(load_random_books)
 		amount += books_to_load
 	icon_state = "book-[clamp(amount, 0, 5)]"
-
+	return ..()
 
 /obj/structure/bookcase/manuals/engineering
 	name = "engineering manuals bookcase"

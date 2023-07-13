@@ -346,11 +346,15 @@
 	pressure_charging = TRUE
 	update_icon()
 
+/obj/machinery/disposal/bin/update_appearance(updates)
+	. = ..()
+	if((machine_stat & (BROKEN|NOPOWER)) || panel_open)
+		luminosity = 0
+		return
+	luminosity = 1
+
 /obj/machinery/disposal/bin/update_overlays()
 	. = ..()
-
-	SSvis_overlays.remove_vis_overlay(src, managed_vis_overlays)
-	luminosity = 0
 
 	if(machine_stat & BROKEN)
 		return
@@ -363,7 +367,6 @@
 	if(machine_stat & NOPOWER || panel_open)
 		return
 
-	luminosity = 1
 	//check for items in disposal - occupied light
 	if(contents.len > 0)
 		. += "dispover-full"

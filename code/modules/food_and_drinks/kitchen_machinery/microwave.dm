@@ -90,16 +90,22 @@
 /obj/machinery/microwave/update_icon_state()
 	if(broken)
 		icon_state = "mwb"
+		return ..()
 	else if(dirty_anim_playing)
 		icon_state = "mwbloody1"
+		return ..()
 	else if(dirty == 100)
 		icon_state = "mwbloody"
+		return ..()
 	else if(operating)
 		icon_state = "mw1"
+		return ..()
 	else if(panel_open)
 		icon_state = "mw-o"
+		return ..()
 	else
 		icon_state = "mw"
+		return ..()
 
 /obj/machinery/microwave/attackby(obj/item/O, mob/user, params)
 	if(operating)

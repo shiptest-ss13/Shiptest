@@ -76,6 +76,7 @@
 
 /obj/structure/toilet/update_icon_state()
 	icon_state = "toilet[open][cistern]"
+	return ..()
 
 /obj/structure/toilet/deconstruct()
 	if(!(flags_1 & NODECONSTRUCT_1))
@@ -436,20 +437,20 @@
 
 /obj/structure/curtain/proc/toggle()
 	open = !open
-	update_icon()
-
-/obj/structure/curtain/update_icon()
-	if(!open)
-		icon_state = "[icon_type]-closed"
+	if(open)
+		layer = SIGN_LAYER
+		density = FALSE
+		set_opacity(FALSE)
+	else
 		layer = WALL_OBJ_LAYER
-		open = FALSE
 		if(opaque_closed)
 			set_opacity(TRUE)
-	else
-		icon_state = "[icon_type]-open"
-		layer = SIGN_LAYER
-		open = TRUE
-		set_opacity(FALSE)
+
+	update_appearance()
+
+/obj/structure/curtain/update_icon_state()
+	icon_state = "[icon_type]-[open ? "open" : "closed"]"
+	return ..()
 
 /obj/structure/curtain/attackby(obj/item/W, mob/user)
 	if (istype(W, /obj/item/toy/crayon))

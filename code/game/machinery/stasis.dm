@@ -4,6 +4,7 @@
 	desc = "A not so comfortable looking bed with some nozzles at the top and bottom. It will keep someone in stasis."
 	icon = 'icons/obj/machines/stasis.dmi'
 	icon_state = "stasis"
+	base_icon_state = "stasis"
 	density = FALSE
 	can_buckle = TRUE
 	buckle_lying = 90
@@ -68,30 +69,32 @@
 
 /obj/machinery/stasis/update_icon_state()
 	if(machine_stat & BROKEN)
-		icon_state = "stasis_broken"
-		return
+		icon_state = "[base_icon_state]_broken"
+		return ..()
 	if(panel_open || machine_stat & MAINT)
-		icon_state = "stasis_maintenance"
-		return
-	icon_state = "stasis"
+		icon_state = "[base_icon_state]_maintenance"
+		return ..()
+	icon_state = base_icon_state
+	return ..()
 
 /obj/machinery/stasis/update_overlays()
 	. = ..()
+	if(!mattress_state)
+		return
 	var/_running = stasis_running()
-	var/list/overlays_to_remove = managed_vis_overlays
+	if(!mattress_on)
+		mattress_on = SSvis_overlays.add_vis_overlay(src, icon, mattress_state, BELOW_OBJ_LAYER, plane, dir, alpha = 0, unique = TRUE)
+	else
+		vis_contents += mattress_on
+		if(managed_vis_overlays)
+			managed_vis_overlays += mattress_on
+		else
+			managed_vis_overlays = list(mattress_on)
 
-	if(mattress_state)
-		if(!mattress_on || !managed_vis_overlays)
-			mattress_on = SSvis_overlays.add_vis_overlay(src, icon, mattress_state, layer, plane, dir, alpha = 0, unique = TRUE)
-
-		if(mattress_on.alpha ? !_running : _running) //check the inverse of _running compared to truthy alpha, to see if they differ
-			var/new_alpha = _running ? 255 : 0
-			var/easing_direction = _running ? EASE_OUT : EASE_IN
-			animate(mattress_on, alpha = new_alpha, time = 50, easing = CUBIC_EASING|easing_direction)
-
-		overlays_to_remove = managed_vis_overlays - mattress_on
-
-	SSvis_overlays.remove_vis_overlay(src, overlays_to_remove)
+	if(mattress_on.alpha ? !_running : _running) //check the inverse of _running compared to truthy alpha, to see if they differ
+		var/new_alpha = _running ? 255 : 0
+		var/easing_direction = _running ? EASE_OUT : EASE_IN
+		animate(mattress_on, alpha = new_alpha, time = 50, easing = CUBIC_EASING|easing_direction)
 
 /obj/machinery/stasis/obj_break(damage_flag)
 	. = ..()

@@ -38,8 +38,7 @@
 			log_combat(user, AI, "carded", src)
 	update_icon() //Whatever happened, update the card's state (icon, name) to match.
 
-/obj/item/aicard/update_icon()
-	cut_overlays()
+/obj/item/aicard/update_icon_state()
 	if(AI)
 		name = "[initial(name)] - [AI.name]"
 		if(AI.stat == DEAD)
@@ -52,6 +51,7 @@
 	else
 		name = initial(name)
 		icon_state = initial(icon_state)
+	return ..()
 
 /obj/item/aicard/ui_state(mob/user)
 	return GLOB.hands_state

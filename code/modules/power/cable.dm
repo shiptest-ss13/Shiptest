@@ -131,7 +131,7 @@ GLOBAL_LIST_INIT(cable_colors, list(
 	icon_state = "[d1]-[d2]"
 	color = null
 	add_atom_colour(cable_color, FIXED_COLOUR_PRIORITY)
-
+	return ..()
 
 /obj/structure/cable/proc/handlecable(obj/item/W, mob/user, params)
 	var/turf/T = get_turf(src)
@@ -562,6 +562,7 @@ GLOBAL_LIST_INIT(cable_coil_recipes, list(new/datum/stack_recipe("cable restrain
 	name = "cable [amount < 3 ? "piece" : "coil"]"
 	color = null
 	add_atom_colour(cable_color, FIXED_COLOUR_PRIORITY)
+	return ..()
 
 /obj/item/stack/cable_coil/attack_hand(mob/user)
 	. = ..()
