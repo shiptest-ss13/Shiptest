@@ -90,7 +90,7 @@
 	emote_type = EMOTE_AUDIBLE
 	vary = TRUE
 
-/datum/emote/living/carbon/human/thump/get_sound(mob/living/user)
+/datum/emote/living/carbon/human/squeal/get_sound(mob/living/user)
 	if(!ishuman(user))
 		return
 	if(islizard(user))
@@ -103,7 +103,7 @@
 	emote_type = EMOTE_AUDIBLE
 	vary = TRUE
 
-/datum/emote/living/carbon/human/thump/get_sound(mob/living/user)
+/datum/emote/living/carbon/human/tailthump/get_sound(mob/living/user)
 	if(!ishuman(user))
 		return
 	if(islizard(user))
@@ -115,12 +115,8 @@
 	message = "lets out a weh!"
 	emote_type = EMOTE_AUDIBLE
 	vary = TRUE
-
-/datum/emote/living/carbon/human/weh/get_sound(mob/living/user)
-	if(!ishuman(user))
-		return
-	if(ishumanbasic(user))
-		return 'sound/voice/lizard/weh.ogg'
+	mob_type_allowed_typecache = list(/mob/living/carbon)
+	sound = 'sound/voice/lizard/weh.ogg'
 
 /datum/emote/living/carbon/human/pale
 	key = "pale"
