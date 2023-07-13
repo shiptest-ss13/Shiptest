@@ -18,7 +18,7 @@
 	var/list/job_slots = list()
 	var/list/name_categories = list("GENERAL")
 	var/prefix = "ISV"
-	var/unique_ship_access = TRUE
+	var/unique_ship_access = FALSE
 
 	//how much money the ship starts with
 	var/starting_funds
