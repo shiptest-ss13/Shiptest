@@ -5,6 +5,7 @@
 	var/obj/item/stock_parts/cell/cell
 	var/cell_type = /obj/item/stock_parts/cell/gun
 	var/charge_sections = 3
+	var/empty_battery_sound = FALSE // play empty alarm if no battery
 
 	var/shaded_charge = FALSE //if this gun uses a stateful charge bar for more detail
 	var/automatic_charge_overlays = TRUE	//Do we handle overlays with base update_icon()?
@@ -44,7 +45,8 @@
 
 /obj/item/gun/ballistic/automatic/powered/shoot_live_shot(mob/living/user, pointblank = FALSE, mob/pbtarget, message = 1, stam_cost = 0)
 	var/obj/item/ammo_casing/caseless/gauss/shot = chambered
-	cell.use(shot.energy_cost)
+	if(shot?.energy_cost)
+		cell.use(shot.energy_cost)
 	return ..()
 
 /obj/item/gun/ballistic/automatic/powered/get_cell()
