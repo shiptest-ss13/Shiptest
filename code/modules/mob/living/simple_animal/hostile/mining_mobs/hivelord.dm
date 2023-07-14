@@ -1045,6 +1045,6 @@
 					/obj/item/reagent_containers/food/drinks/breakawayflask/vintageice,
 					/obj/item/reagent_containers/food/drinks/breakawayflask/vintageshock,
 					/obj/item/reagent_containers/food/drinks/breakawayflask/vintagehearth,
-					/obj/item/reagent_containers/food/drinks/breakawayflask/vintageforce
+					/obj/item/reagent_containers/food/drinks/breakawayflask/vintageforce,
 					/obj/item/reagent_containers/food/drinks/breakawayflask/vintageprism,) = 2)
 	. = ..()
