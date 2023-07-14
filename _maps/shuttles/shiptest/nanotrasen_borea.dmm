@@ -1798,6 +1798,7 @@
 "fa" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/closet/crate/medical,
+/obj/item/storage/firstaid/medical,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "fb" = (
@@ -2512,7 +2513,25 @@
 /turf/open/floor/grass,
 /area/ship/crew/hydroponics)
 "gB" = (
-/obj/machinery/vending/hydroseeds,
+/obj/structure/closet/crate/hydroponics,
+/obj/item/seeds/tobacco,
+/obj/item/seeds/tobacco,
+/obj/item/seeds/tobacco,
+/obj/item/seeds/tobacco,
+/obj/item/seeds/soya,
+/obj/item/seeds/soya,
+/obj/item/seeds/soya,
+/obj/item/seeds/soya,
+/obj/item/seeds/cotton,
+/obj/item/seeds/cotton,
+/obj/item/seeds/cotton,
+/obj/item/seeds/cotton,
+/obj/item/seeds/chanter,
+/obj/item/seeds/chanter,
+/obj/item/seeds/chanter,
+/obj/item/seeds/plump,
+/obj/item/seeds/plump,
+/obj/item/seeds/plump,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/hydroponics)
 "gD" = (
@@ -5868,6 +5887,15 @@
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/plating,
 /area/ship/engineering)
+"HN" = (
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/structure/closet/crate/medical,
+/obj/item/storage/firstaid/o2,
+/obj/item/storage/firstaid/regular,
+/obj/item/storage/firstaid/toxin,
+/obj/item/storage/firstaid/toxin,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/cargo)
 "HP" = (
 /obj/structure/rack,
 /obj/structure/window/reinforced/tinted{
@@ -6512,6 +6540,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/closet/crate/science,
+/obj/effect/spawner/lootdrop/maintenance/six,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "NF" = (
@@ -6905,6 +6934,9 @@
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/closet/crate/science,
 /obj/machinery/light/directional/north,
+/obj/effect/spawner/lootdrop/maintenance/six,
+/obj/item/relic,
+/obj/item/relic,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "RZ" = (
@@ -9345,7 +9377,7 @@ AI
 AI
 dF
 eQ
-fa
+HN
 fb
 tv
 IJ
