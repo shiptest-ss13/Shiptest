@@ -60,7 +60,7 @@
 //Start body feathers
 
 /datum/sprite_accessory/kepori_body_feathers
-	color_src = FACEHAIR
+	color_src = MUTCOLORS_SECONDARY
 	icon = 'icons/mob/kepori_parts.dmi'
 
 /datum/sprite_accessory/kepori_body_feathers/none
@@ -89,7 +89,7 @@
 //Start tail feathers
 
 /datum/sprite_accessory/kepori_tail_feathers
-	color_src = FACEHAIR
+	color_src = MUTCOLORS_SECONDARY
 	icon = 'icons/mob/kepori_parts.dmi'
 
 /datum/sprite_accessory/kepori_tail_feathers/none

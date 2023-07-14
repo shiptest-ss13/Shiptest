@@ -12,11 +12,26 @@
 	"prefix": "ISV",
 	"limit": 1,
 	"job_slots": {
-		"Captain": 1,
-		"Scientist": 1,
-		"Station Engineer": 1,
-		"Shaft Miner": 1,
-		"Assistant": 3
+		"Captain": {
+			"outfit": "/datum/outfit/job/captain",
+			"slots": 1
+		},
+		"Scientist": {
+			"outfit": "/datum/outfit/job/scientist",
+			"slots": 1
+		},
+		"Station Engineer": {
+			"outfit": "/datum/outfit/job/engineer",
+			"slots": 1
+		},
+		"Shaft Miner": {
+			"outfit": "/datum/outfit/job/miner",
+			"slots": 1
+		},
+		"Assistant": {
+			"outfit": "/datum/outfit/job/assistant",
+			"slots": 3
+		}
 	},
 	"enabled": false
 }

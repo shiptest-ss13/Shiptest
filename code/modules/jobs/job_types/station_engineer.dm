@@ -98,7 +98,7 @@
 	shoes = /obj/item/clothing/shoes/laceup
 	head = /obj/item/clothing/head/hardhat
 	neck = /obj/item/clothing/neck/tie/orange
-	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1, /obj/item/storage/belt/utility/full/engi=1)
+	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1)
 
 /datum/outfit/job/engineer/telecomsspecialist
 	name = "Station Engineer (Telecommunications Specialist)"

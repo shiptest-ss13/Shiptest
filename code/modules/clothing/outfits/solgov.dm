@@ -39,7 +39,7 @@
 	id = /obj/item/card/id/gold
 	belt = /obj/item/pda/captain
 	gloves = /obj/item/clothing/gloves/combat
-	ears = /obj/item/radio/headset/solgov
+	ears = /obj/item/radio/headset/solgov/alt/captain
 	uniform =  /obj/item/clothing/under/solgov/formal/captain
 	suit = /obj/item/clothing/suit/armor/vest/bulletproof/solgov/captain
 	shoes = /obj/item/clothing/shoes/laceup
@@ -62,7 +62,7 @@
 	id = /obj/item/card/id/solgov
 	uniform = /obj/item/clothing/under/solgov
 	suit = /obj/item/clothing/suit/armor/vest/bulletproof/solgov
-	ears = /obj/item/radio/headset/solgov
+	ears = /obj/item/radio/headset/solgov/alt
 	gloves = /obj/item/clothing/gloves/combat
 	head = /obj/item/clothing/head/solgov/sonnensoldner
 	r_pocket = /obj/item/gun/ballistic/automatic/pistol/solgov
@@ -89,7 +89,7 @@
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat
 	gloves = /obj/item/clothing/gloves/color/white
 	shoes = /obj/item/clothing/shoes/laceup
-	ears = /obj/item/radio/headset/solgov
+	ears = /obj/item/radio/headset/solgov/captain
 	glasses = /obj/item/clothing/glasses/sunglasses
 	belt = /obj/item/pda/solgov
 
@@ -105,7 +105,7 @@
 
 	id = /obj/item/card/id/solgov
 	belt = /obj/item/pda/heads/head_of_personnel
-	ears = /obj/item/radio/headset/solgov
+	ears = /obj/item/radio/headset/solgov/captain
 	uniform = /obj/item/clothing/under/solgov/formal
 	head = /obj/item/clothing/head/solgov
 	neck = /obj/item/clothing/neck/cloak/overseer

@@ -4,6 +4,9 @@
 
 /datum/sprite_accessory/body_markings
 	icon = 'icons/mob/mutant_bodyparts.dmi'
+	color_src = MUTCOLORS_SECONDARY
+	body_zone = BODY_ZONE_CHEST
+	synthetic_icon_state = "none"
 
 /datum/sprite_accessory/body_markings/none
 	name = "None"
@@ -12,25 +15,28 @@
 /datum/sprite_accessory/body_markings/dtiger
 	name = "Dark Tiger Body"
 	icon_state = "dtiger"
-	gender_specific = 1
+	gender_specific = TRUE
 
 /datum/sprite_accessory/body_markings/ltiger
 	name = "Light Tiger Body"
 	icon_state = "ltiger"
-	gender_specific = 1
+	gender_specific = TRUE
 
 /datum/sprite_accessory/body_markings/lbelly
 	name = "Light Belly"
 	icon_state = "lbelly"
-	gender_specific = 1
+	gender_specific = TRUE
 
 //Start tails
 
 /datum/sprite_accessory/tails
 	icon = 'icons/mob/mutant_bodyparts.dmi'
+	body_zone = BODY_ZONE_CHEST
+	synthetic_icon_state = "synth"
 
 /datum/sprite_accessory/tails_animated
 	icon = 'icons/mob/mutant_bodyparts.dmi'
+	body_zone = BODY_ZONE_CHEST
 
 /datum/sprite_accessory/tails/lizard/smooth
 	name = "Smooth"
@@ -67,15 +73,19 @@
 /datum/sprite_accessory/tails/lizard/large
 	name = "Large"
 	icon_state = "large"
+	synthetic_icon_state = "large" //fight me
 
 /datum/sprite_accessory/tails_animated/lizard/large
 	name = "Large"
 	icon_state = "large"
+	synthetic_icon_state = "large"
 
 //Start Snouts
 
 /datum/sprite_accessory/snouts
 	icon = 'icons/mob/mutant_bodyparts.dmi'
+	body_zone = BODY_ZONE_HEAD
+	synthetic_icon_state = "none"
 
 /datum/sprite_accessory/snouts/sharp
 	name = "Sharp"
@@ -97,6 +107,9 @@
 
 /datum/sprite_accessory/horns
 	icon = 'icons/mob/mutant_bodyparts.dmi'
+	color_src = HAIR
+	body_zone = BODY_ZONE_HEAD
+	synthetic_color_src = MUTCOLORS_SECONDARY
 
 /datum/sprite_accessory/horns/none
 	name = "None"
@@ -105,18 +118,22 @@
 /datum/sprite_accessory/horns/simple
 	name = "Simple"
 	icon_state = "simple"
+	synthetic_icon_state = "simple_synth"
 
 /datum/sprite_accessory/horns/short
 	name = "Short"
 	icon_state = "short"
+	synthetic_icon_state = "short_synth"
 
 /datum/sprite_accessory/horns/curled
 	name = "Curled"
 	icon_state = "curled"
+	synthetic_icon_state = "curled_synth"
 
 /datum/sprite_accessory/horns/ram
 	name = "Ram"
 	icon_state = "ram"
+	synthetic_icon_state = "ram_synth"
 
 /datum/sprite_accessory/horns/angler
 	name = "Angeler"

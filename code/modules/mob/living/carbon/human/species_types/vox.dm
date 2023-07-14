@@ -27,7 +27,7 @@
 	bodytemp_cold_divisor = VOX_BODYTEMP_COLD_DIVISOR
 	bodytemp_autorecovery_min = VOX_BODYTEMP_AUTORECOVERY_MIN
 
-	unique_prosthesis = TRUE
+	bodytype = BODYTYPE_VOX
 
 	species_chest = /obj/item/bodypart/chest/vox
 	species_head = /obj/item/bodypart/head/vox
@@ -35,6 +35,13 @@
 	species_r_arm = /obj/item/bodypart/r_arm/vox
 	species_l_leg = /obj/item/bodypart/leg/left/vox
 	species_r_leg = /obj/item/bodypart/leg/right/vox
+
+	species_robotic_chest = /obj/item/bodypart/chest/robot/vox
+	species_robotic_head = /obj/item/bodypart/head/robot/vox
+	species_robotic_l_arm = /obj/item/bodypart/l_arm/robot/surplus/vox
+	species_robotic_r_arm = /obj/item/bodypart/r_arm/robot/surplus/vox
+	species_robotic_l_leg = /obj/item/bodypart/leg/left/robot/surplus/vox
+	species_robotic_r_leg = /obj/item/bodypart/leg/right/robot/surplus/vox
 
 	var/datum/action/innate/tail_hold/tail_action
 

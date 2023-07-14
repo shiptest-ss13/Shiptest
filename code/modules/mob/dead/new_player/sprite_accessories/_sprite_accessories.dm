@@ -61,6 +61,9 @@
 	var/image_alpha = 255		//The alpha for the accessory to use.
 	var/dimension_x = 32
 	var/dimension_y = 32
+	var/body_zone = BODY_ZONE_CHEST	//!The body zone this accessory affects
+	var/synthetic_icon_state	//!The icon_state to use when the bodypart it's attached to is synthetic
+	var/synthetic_color_src		//!The color src to use instead of the normal src when synthetic, leave blank to use the normal src
 
 //Squids AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA whyyyy
 /datum/sprite_accessory/squid_face
