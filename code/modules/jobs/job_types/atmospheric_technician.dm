@@ -63,7 +63,7 @@
 	alt_suit = /obj/item/clothing/suit/hazardvest
 	neck = /obj/item/clothing/neck/tie/light_blue
 
-	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1, /obj/item/storage/belt/utility/atmostech=1)
+	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1)
 
 //Shiptest
 /datum/outfit/job/atmos/gec
