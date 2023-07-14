@@ -26,7 +26,7 @@ GLOBAL_LIST_EMPTY(outpost_landmarks)
 /obj/effect/landmark/outpost/hangar_numbers/proc/write_number(num)
 	num = round(num)
 	var/low_digit = num % 10
-	var/high_digit = (num - low_digit) / 10
+	var/high_digit = ((num - low_digit) / 10) % 10
 
 	var/low_type = get_number_decal(low_digit, EAST)
 	var/high_type = get_number_decal(high_digit, WEST)

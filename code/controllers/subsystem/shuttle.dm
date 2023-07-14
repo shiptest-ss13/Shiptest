@@ -455,7 +455,6 @@ SUBSYSTEM_DEF(shuttle)
 					if("Random Overmap Square")
 						ship_loc = null // null location causes overmap to just get a random square
 					if("Outpost")
-						// DEBUG: test
 						if(length(SSovermap.outposts) > 1)
 							var/temp_loc = input(user, "Select outpost to spawn at") as null|anything in SSovermap.outposts
 							if(!temp_loc)

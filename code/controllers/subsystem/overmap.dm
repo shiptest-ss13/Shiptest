@@ -189,18 +189,23 @@ SUBSYSTEM_DEF(overmap)
 /datum/controller/subsystem/overmap/proc/spawn_outpost()
 	var/list/location = get_unused_overmap_square_in_radius(rand(3, round(size/5)))
 
-	// DEBUG: test
 	var/datum/overmap/outpost/found_type
 	if(fexists(OUTPOST_OVERRIDE_FILEPATH))
-		var/datum/overmap/outpost/potential_type = text2path(file2text(OUTPOST_OVERRIDE_FILEPATH))
-		if(!potential_type || !ispath(found_type, /datum/overmap/outpost))
+		var/file_text = trim_right(file2text(OUTPOST_OVERRIDE_FILEPATH)) // trim_right because there's often a trailing newline
+		var/datum/overmap/outpost/potential_type = text2path(file_text)
+		if(!potential_type || !ispath(potential_type, /datum/overmap/outpost))
 			stack_trace("SSovermap found an outpost override file at [OUTPOST_OVERRIDE_FILEPATH], but was unable to find the outpost type [potential_type]!")
 		else
 			found_type = potential_type
 		fdel(OUTPOST_OVERRIDE_FILEPATH) // don't want it to affect 2 rounds in a row.
 
 	if(!found_type)
-		found_type = pick(subtypesof(/datum/overmap/outpost)) // eventually this should be filtered somehow if outposts that aren't intended to be hubs are added
+		var/list/possible_types = subtypesof(/datum/overmap/outpost)
+		for(var/datum/overmap/outpost/outpost_type as anything in possible_types)
+			if(!initial(outpost_type.main_template))
+				possible_types -= outpost_type
+		found_type = pick(possible_types)
+
 	new found_type(location)
 	return
 
@@ -221,7 +226,7 @@ SUBSYSTEM_DEF(overmap)
  * Spawns a controlled ship with the passed template at the template's preferred spawn location.
  * Inteded for ship purchases, etc.
  */
-/datum/controller/subsystem/overmap/proc/spawn_ship_at_start(var/datum/map_template/shuttle/template)
+/datum/controller/subsystem/overmap/proc/spawn_ship_at_start(datum/map_template/shuttle/template)
 	var/ship_loc
 	if(template.space_spawn)
 		ship_loc = null

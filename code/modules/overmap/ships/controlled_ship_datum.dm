@@ -103,10 +103,9 @@
 			if(!shuttle_port) //Loading failed, if the shuttle is supposed to be created, we need to delete ourselves.
 				qdel(src) // Can't return INITIALIZE_HINT_QDEL here since this isn't ACTUAL initialisation. Considering changing the name of the proc.
 				return
-			// DEBUG: consider making this behavior NATIVE to New(). unsure
 			if(istype(position, /datum/overmap))
 				docked_to = null // Dock() complains if you're already docked to something when you Dock, even on force
-				Dock(position, TRUE) // DEBUG: this causes a runtime error due to both /datum/overmap/Initialize() and /datum/overmap/complete_dock() calling RegisterSignal(a, COMSIG_OVERMAP_MOVED, .proc/on_docked_to_moved)
+				Dock(position, TRUE)
 
 			refresh_engines()
 
@@ -297,7 +296,10 @@
 		UnregisterSignal(owner_mob, COMSIG_MOB_LOGOUT)
 		UnregisterSignal(owner_mob, COMSIG_MOB_GO_INACTIVE)
 		// testing trace because i am afraid
-		if(owner_mob.mind != owner_mind) // minds should never be changed without a key change and associated logout signal
+		if(owner_mob.mind && owner_mob.mind != owner_mind)
+			// moving minds means moving keys; if this trips, a mind moved without a key move for us to pick up on
+			// when transferring mind from one body to another, source mob's mind is set to null before the transfer. thus the null check
+			// i'm going to be honest i don't have a fucking clue if this code works. mind code is hell
 			stack_trace("[src]'s owner mob [owner_mob] (mind [owner_mob.mind], player [owner_mob.mind.key]) silently changed its mind from [owner_mind] (player [owner_mind.key])!")
 		owner_act.Remove(owner_mob)
 

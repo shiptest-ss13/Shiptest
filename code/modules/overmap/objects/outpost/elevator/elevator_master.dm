@@ -1,8 +1,6 @@
 #define ELEVATOR_IDLE "elevator_idle"
 #define ELEVATOR_BUSY "elevator_busy"
 
-// DEBUG: redo documentation
-
 // Multi-z "above" and "below" are based on the assumption of equally-sized virtual reserves.
 // However, outpost hangars may be differently-sized. Thus, we have to manually handle movement up and down.
 
@@ -10,38 +8,52 @@
 // "But wait," you might ask, "wouldn't it be easier to just follow the latest call or movement command?"
 // Yes, but it wouldn't lead to funny elevator moments like trying to pack into an already stuffed elevator.
 /datum/elevator_master
-	var/list/platforms
+	/// The list of elevator platforms to be moved by the elevator master. This is the part of the elevator that players and items are moved by.
+	var/list/obj/structure/elevator_platform/platforms
 
 	/// amount of time spent between floors while moving
-	var/floor_move_time = 5 SECONDS
+	var/floor_move_time = 3 SECONDS
 	/// amount of time spent on a floor after arriving but before opening doors
 	var/door_open_time = 2 SECONDS
 	/// amount of time spent between opening doors and closing them
-	var/floor_idle_time = 8 SECONDS
+	var/floor_idle_time = 7 SECONDS
 
+	/// List of floor datums that the elevator may move between.
 	var/list/datum/floor/floor_list = list()
 
+	/// The index into the floor list at which the
 	var/cur_index = 1
+	/// The direction the elevator is looking for future stops in. This enables the elevator to skip a floor with an order to go DOWN when it is heading UP.
+	/// Value is either the dir UP or the dir DOWN, for simplicity.
 	var/seeking_dir = DOWN
+	/// The elevator's current state. The elevator clears all pending calls / destinations through a chain of procs linked by timers:
+	/// check_move() -> move_elevator() -> arrive_on_floor() -> optionally, cycle_doors() -> check_move().
+	/// Occasionally, cycle_doors() will be the entry point instead. During this chain, cur_state is ELEVATOR_BUSY. Otherwise,
+	/// the elevator is in ELEVATOR_IDLE, and may be activated if a new call or destination is registered.
 	var/cur_state = ELEVATOR_IDLE
 
-	/// If floor_offset is a positive integer, the status display and elevator buttons will
-	/// act as though the first floor_offset floors exist, but are inaccessible.
-	/// For example, if floor_offset is 2, floor 1 will appear as though it is floor 3.
-	/// This only affects player-facing displays, and has no impact on internal data structures.
-	var/floor_offset = 0
+	/// Player-facing floor numbers are offset by this value. Thus, with the default floor_offset as -1, the first floor
+	/// will show as floor "0", the second as floor "1", and so on. This only affects player-facing displays:
+	/// floor_list and cur_index behave exactly the same regardless of this value.
+	var/floor_offset = -1
+	/// If this variable is a positive integer, the status display and elevator buttons will act as though the first
+	/// fake_floors floors exist, but are inaccessible. For example, with a floor_offset of -1 and a fake_floors of 2,
+	/// the floor controls will display 2 unreachable floors at the bottom of the panel with values "0" and "1".
+	/// This only affects player-facing displays: floor_list and cur_index behave exactly the same regardless of this value.
+	var/fake_floors = 0
 
-	// button for the elevator car
+	/// The button machine used by the elevator "car" to control its destination floor.
 	var/obj/machinery/elevator_floor_button/button
-	// display for the elevator car
+	/// The button machine used by the elevator "car" to display its current floor, heading direction, and to play sounds from.
 	var/obj/machinery/status_display/elevator/display
 
 
 /datum/elevator_master/New(obj/structure/elevator_platform)
 	. = ..()
 
-	// elevator masters are only instanced by elevator platforms after their spawn
-	// when they are, it's a sign that a flood-fill is needed
+	// elevator masters are only instanced by elevator platforms in their Initialize() if they have none and cannot find any on adjacent tiles.
+	// thus, the first platform in a "blob" of platforms to initialize creates an elevator master, which adopts that platform and all
+	// other platforms in the blob.
 	for(var/plat in get_platform_blob(elevator_platform))
 		add_platform(plat)
 
@@ -55,6 +67,11 @@
 		display.master = null
 	. = ..()
 
+/*
+	Elevator platform management
+*/
+
+/// Adds an elevator platform to the list of linked platforms.
 /datum/elevator_master/proc/add_platform(obj/structure/elevator_platform/new_platform)
 	if(new_platform in platforms)
 		return
@@ -62,6 +79,7 @@
 	LAZYADD(platforms, new_platform)
 	// we don't need to hook qdeletion here; they remove themselves via remove_platform in their Destroy()
 
+/// Removes an elevator platform from the list of linked platforms.
 /datum/elevator_master/proc/remove_platform(obj/structure/elevator_platform/old_platform)
 	if(!(old_platform in platforms))
 		return
@@ -90,51 +108,95 @@
 
 	return checked_platforms
 
-/// Adds a floor to the elevator's floor list. Default behavior is to append the floor.
-/// Index passed should not exceed the floor list's current length.
-/datum/elevator_master/proc/add_floor(turf/anchor, obj/machinery/elevator_call_button/button, list/obj/machinery/door/doors, index = 0)
-	// if we're adding to the middle of the floor list, we may have to update the current index
-	// 0 appends to the END of the list, hence the check if index is nonzero
-	if(index != 0 && index <= cur_index)
-		cur_index++
+/*
+	Movement chain entrypoints
+*/
+// Both of these procs update the elevator's internal floor list with either a call or a destination,
+// registered on a floor. If the elevator is idle, they serve as the entrypoint into the check_move() movement chain,
+// calling either cycle_doors() or check_move() to send the elevator on its way.
+// While this chain is active, the elevator's cur_state is ELEVATOR_BUSY; it will only return to ELEVATOR_IDLE
+// once the chain is complete, which only occurs if it has no outstanding destinations or calls.
 
-	var/datum/floor/new_floor = new(src, anchor, button, doors)
-	floor_list.Insert(index, new_floor)
+/datum/elevator_master/proc/add_call_on_floor(datum/floor/floor, call_dir)
+	// there used to be a check here that returned if there was already a call in this direction on this floor.
+	// however, this resulted in the elevator occasionally getting stuck if left in an invalid state.
 
-/// Removes a floor from the elevator's floor list. If the floor is equal to the elevator's current floor, fails and returns FALSE.
-/// Otherwise, the floor is removed, the current floor's number is updated if necessary, and returns TRUE.
-/datum/elevator_master/proc/remove_floor(index)
-	if(index == cur_index)
-		return FALSE
+	// Elevator is idle (not currently trying to clear all its calls), and thus we can either start it moving or open the doors.
+	if(cur_state == ELEVATOR_IDLE)
+		// both paths begin the movement chain
+		if(floor_list[cur_index] == floor)
+			// no need to change the color of the button; just open the doors
+			cycle_doors()
+		else
+			// it's on another floor, but idle, so get it moving
+			floor.calls |= call_dir
+			floor.button?.update_icon()
+			check_move()
+		return
+	// since the elevator is busy, we do not want to start a new chain
+	floor.calls |= call_dir
+	floor.button?.update_icon()
 
-	if(index < cur_index)
-		cur_index--
+/datum/elevator_master/proc/set_dest_on_floor(datum/floor/floor)
+	// Elevator is idle (not currently trying to clear all its calls), and thus we can either start it moving or open the doors.
+	if(cur_state == ELEVATOR_IDLE)
+		// both paths begin the movement chain
+		if(floor_list[cur_index] == floor)
+			cycle_doors()
+		else
+			// it's on another floor, but idle, so get it moving
+			floor.is_dest = TRUE
+			check_move()
+		return
+	// since the elevator is busy, we do not want to start a new chain
+	if(floor_list[cur_index] != floor)
+		floor.is_dest = TRUE
 
-	qdel(floor_list[index])
-	floor_list.Cut(index, index+1)
-	return TRUE
+/*
+	Movement chain procs
+*/
 
-/// Given an elevator landmark and list of elevator machine landmarks, creates a floor by calling add_floor and qdeletes the passed landmarks after pulling the objects they mark.
-/datum/elevator_master/proc/add_floor_landmarks(obj/effect/landmark/outpost/elevator/anchor, list/obj/effect/landmark/outpost/elevator_machine/machine_marks)
-	var/turf/anchor_turf = anchor.loc
-	var/obj/machinery/elevator_call_button/button
-	var/obj/machinery/door/doors = list()
+// This is what "starts" the elevator moving to another floor; it will recursively call itself through:
+// check_move() -> move_elevator() -> arrive_on_floor() -> optionally, cycle_doors() -> check_move(),
+// during which it will be ELEVATOR_BUSY, until it has cleared all of the pending calls and destinations,
+// thus returning to ELEVATOR_IDLE. Occasionally, cycle_doors() is used as the entry point instead; the chain is the same.
+/datum/elevator_master/proc/check_move()
+	// Technically, this could be set just above the move_elevator timer, as otherwise it will become busy shortly.
+	// However, setting it here makes it clearer that this is the beginning of a chain that will only complete when next_move == NONE.
+	cur_state = ELEVATOR_BUSY
 
-	for(var/obj/effect/landmark/outpost/elevator_machine/mach_mark as anything in machine_marks)
-		if(!button)
-			button = locate() in mach_mark.loc
-		var/obj/machinery/door/a_door = locate() in mach_mark.loc
-		if(a_door)
-			doors += a_door
-		qdel(mach_mark)
-	qdel(anchor)
+	var/flip_dir = REVERSE_DIR(seeking_dir)
+	var/next_move = NONE
+	if(check_floors_in_dir(cur_index, seeking_dir))
+		next_move = seeking_dir
+	else if(check_floors_in_dir(cur_index, flip_dir))
+		next_move = flip_dir
 
-	return add_floor(anchor_turf, button, doors)
+	if(next_move != NONE)
+		// sets in motion a chain of procs that will, after a bit, call check_move() again.
+		addtimer(CALLBACK(src, .proc/move_elevator, next_move), floor_move_time)
+		return
 
+	// This is the only way the elevator may become idle: if it does not find anywhere to go on check_move().
+	cur_state = ELEVATOR_IDLE
+
+// Returns TRUE if there is a floor in the given direction after the current one which should be visited while travelling that direction.
+// That is, the floor is set as a destination, or has a call in the direction being moved in, or both. This is used to prevent, for instance,
+// a call to head DOWN being visited while the elevator is fulfilling a request to move UP to a higher floor.
+/datum/elevator_master/proc/check_floors_in_dir(start_index, check_dir)
+	var/step = (check_dir == DOWN ? -1 : 1)
+	// looks for floors in the direction passed, starting at the first floor in that direction from the passed start_index
+	for(var/i = start_index + step, i >= 1 && i <= length(floor_list), i += step)
+		var/datum/floor/i_floor = floor_list[i]
+		if(i_floor.is_dest || i_floor.calls)
+			return TRUE
+	return FALSE
+
+// Moves the elevator platforms either UP or DOWN, and updates the seeking_dir in that direction.
+// Calls arrive_on_floor(), continuing the chain; the two are separated for easier readability.
 /datum/elevator_master/proc/move_elevator(going)
 	// DOWN moves towards the first floor, UP moves towards the last.
 	var/new_index = cur_index + (going == DOWN ? -1 : 1)
-	// DEBUG: this check should be present in outer layers as well
 	if(new_index < 1 || new_index > length(floor_list))
 		return
 	var/turf/cur_anchor = floor_list[cur_index].anchor
@@ -151,15 +213,6 @@
 
 	arrive_on_floor()
 
-/datum/elevator_master/proc/check_floors_in_dir(start_index, check_dir)
-	var/step = (check_dir == DOWN ? -1 : 1)
-	// looks for floors in the direction passed, starting at the first floor in that direction from the passed start_index
-	for(var/i = start_index + step, i >= 1 && i <= length(floor_list), i += step)
-		var/datum/floor/i_floor = floor_list[i]
-		if(i_floor.is_dest || i_floor.calls)
-			return TRUE
-	return FALSE
-
 /datum/elevator_master/proc/arrive_on_floor()
 	var/datum/floor/cur_floor = floor_list[cur_index]
 
@@ -172,8 +225,7 @@
 		seeking_dir = REVERSE_DIR(seeking_dir)
 
 	if(display)
-		// DEBUG: inadequate for correct sync on landing, i.e. it will say it is going UP when it lands on a floor without a queued direction
-		display.set_message("[cur_index+floor_offset]", seeking_dir == UP ? "UP" : "DOWN")
+		display.set_message("[cur_index + fake_floors + floor_offset]", seeking_dir == UP ? "UP" : "DOWN")
 		display.update()
 		if(open_on_floor)
 			playsound(
@@ -186,17 +238,17 @@
 			// quieter
 			playsound(display, 'sound/misc/compiler-stage1.ogg', 75, FALSE)
 
-	// cycle_doors() eventually collapses down to check_move().
+	// These continue the movement chain.
+	// cycle_doors() eventually invokes check_move() via timers.
 	if(open_on_floor)
 		cycle_doors()
 	else
 		check_move()
 
-
+// Typically, this is called by a check_move() recursive chain to stop on a floor. However, it may also be called when a user
+// presses the call button on a floor on which the elevator is currently present. Thus, cur_state is set to ELEVATOR_BUSY
+// so that the elevator is correctly busy until it finishes its chain.
 /datum/elevator_master/proc/cycle_doors()
-	if(cur_state != ELEVATOR_IDLE) // sanity check. if the elevator is doing ANYTHING, don't open doors.
-		return
-
 	cur_state = ELEVATOR_BUSY
 	var/datum/floor/cur_floor = floor_list[cur_index]
 	cur_floor.is_dest = FALSE
@@ -205,52 +257,8 @@
 
 	addtimer(CALLBACK(src, .proc/open_doors, cur_floor), door_open_time)
 	addtimer(CALLBACK(src, .proc/close_doors, cur_floor), door_open_time+floor_idle_time)
-	// check_move starts a chain that ultimately ends with us back in ELEVATOR_IDLE
-	addtimer(CALLBACK(src, .proc/check_   move), door_open_time+floor_idle_time+(1 SECONDS))
-
-/datum/elevator_master/proc/check_move()
-	var/flip_dir = REVERSE_DIR(seeking_dir)
-	var/next_move = NONE
-	if(check_floors_in_dir(cur_index, seeking_dir))
-		next_move = seeking_dir
-	else if(check_floors_in_dir(cur_index, flip_dir))
-		next_move = flip_dir
-	if(next_move != NONE)
-		cur_state = ELEVATOR_BUSY
-		addtimer(CALLBACK(src, .proc/move_elevator, next_move), floor_move_time)
-	else
-		cur_state = ELEVATOR_IDLE
-
-/datum/elevator_master/proc/add_call_on_floor(datum/floor/floor, call_dir)
-	// there used to be a check here that returned if there was already a call in this direction on this floor.
-	// however, this resulted in the elevator occasionally getting stuck if left in an invalid state.
-
-	// elevator is just sitting somewhere, not moving or performing a door cycle
-	if(cur_state == ELEVATOR_IDLE)
-		// both of these change the state away from ELEVATOR_IDLE
-		if(floor_list[cur_index] == floor)
-			cycle_doors()
-			// no need to change the color of the button
-		else
-			floor.calls |= call_dir
-			floor.button?.update_icon()
-			check_move()
-	else
-		floor.calls |= call_dir
-		floor.button?.update_icon()
-
-/datum/elevator_master/proc/set_dest_on_floor(datum/floor/floor)
-	// elevator is not moving / cycling doors
-	if(cur_state == ELEVATOR_IDLE)
-		// ensures a state change
-		if(floor_list[cur_index] == floor)
-			cycle_doors()
-		else
-			floor.is_dest = TRUE
-			check_move()
-		return
-	if(floor_list[cur_index] != floor)
-		floor.is_dest = TRUE
+	// Continue the check_move() chain.
+	addtimer(CALLBACK(src, .proc/check_move), door_open_time+floor_idle_time+(1 SECONDS))
 
 /datum/elevator_master/proc/open_doors(datum/floor/d_floor)
 	for(var/obj/machinery/door/fl_door as anything in d_floor.doors)
@@ -269,14 +277,58 @@
 		// bolts can be lowered without power, or a cut wire (since if wire is cut they're automatically down)
 		fl_door.lock()
 
+/*
+	Floor-management procs
+*/
 
+/// Given an elevator landmark and list of elevator machine landmarks, creates a floor by calling add_floor and qdeletes the passed landmarks after pulling the objects they mark.
+/datum/elevator_master/proc/add_floor_landmarks(obj/effect/landmark/outpost/elevator/anchor, list/obj/effect/landmark/outpost/elevator_machine/machine_marks)
+	var/turf/anchor_turf = anchor.loc
+	var/obj/machinery/elevator_call_button/button
+	var/obj/machinery/door/doors = list()
+
+	for(var/obj/effect/landmark/outpost/elevator_machine/mach_mark as anything in machine_marks)
+		if(!button)
+			button = locate() in mach_mark.loc
+		var/obj/machinery/door/a_door = locate() in mach_mark.loc
+		if(a_door)
+			doors += a_door
+		qdel(mach_mark)
+	qdel(anchor)
+
+	add_floor(anchor_turf, button, doors)
+	return
+
+/// Adds a floor to the elevator's floor list. Default behavior is to append the floor.
+/// Index passed should not exceed the floor list's current length.
+/datum/elevator_master/proc/add_floor(turf/anchor, obj/machinery/elevator_call_button/button, list/obj/machinery/door/doors, index = 0)
+	// if we're adding to the middle of the floor list, we may have to update the current index
+	// 0 appends to the END of the list, hence the check if index is nonzero
+	if(index != 0 && index <= cur_index)
+		cur_index++
+
+	var/datum/floor/new_floor = new(src, anchor, button, doors)
+	floor_list.Insert(index, new_floor)
+
+/// Removes a floor from the elevator's floor list. If the floor is equal to the elevator's current floor, fails and returns FALSE.
+/// Otherwise, the floor is removed, the current floor's number is updated if necessary, and returns TRUE.
+/// Currently unused.
+/datum/elevator_master/proc/remove_floor(index)
+	if(index == cur_index)
+		return FALSE
+
+	if(index < cur_index)
+		cur_index--
+
+	qdel(floor_list[index])
+	floor_list.Cut(index, index+1)
+	return TRUE
 
 /*
 	Floor data structure
 */
 
-/// Pretty much just a datastructure collating floor information.
-/// Keeping a reference to master makes the ref situation easier.
+/// Keeping a reference to master makes cleanup easier.
 /datum/floor
 	var/datum/elevator_master/master
 

@@ -88,21 +88,21 @@
 	else
 		destination = going
 	// has to happen before anything is moved, obviously
-	// DEBUG: test, ensure logging is adequate
+	// currently unused.
 	if(do_crush)
 		for(var/mob/living/crushed in destination.contents)
 			crushed.visible_message("<span class='danger'>[src] crushes [crushed]!</span>", \
 						"<span class='userdanger'>You are crushed by [src]!</span>")
 
 			log_game("[src] ([REF(src)]) crushed [key_name(crushed)] at [AREACOORD(src)], user [usr].")
-			message_admins("[src] crushed [ADMINLOOKUPFLW(crushed)] at [ADMIN_VERBOSEJMP(crushed)]!")
+			message_admins("[src] crushed [ADMIN_LOOKUPFLW(crushed)] at [ADMIN_VERBOSEJMP(crushed)]!")
 
 			crushed.gib(FALSE,FALSE,FALSE)//the nicest kind of gibbing, keeping everything intact.
 
 	// checks in AddItemOnPlat / RemoveItemOnPlat ensure no duplicates are added to lift_load
 	forceMove(destination)
 	for(var/atom/movable/thing as anything in things2move)
-		if(!thing) // if we let the nulls stick around they fuck EVERYTHING
+		if(QDELETED(thing)) // if we let nulls stick around they fuck EVERYTHING
 			lift_load -= thing
 			continue
 		thing.forceMove(destination)

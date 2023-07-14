@@ -83,8 +83,6 @@
 	max_integrity = 200 // sturdy
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
 
-	// DEBUG: actually, this should probably be 0-power? i don't really want it clogging up SSmachines even more
-	processing_flags = START_PROCESSING_ON_INIT // DEBUG: unnecessary; added so that can be set to 0-power successfully
 	power_channel = AREA_USAGE_ENVIRON // same as airlocks
 
 	var/datum/elevator_master/master
@@ -126,18 +124,18 @@
 	var/list/floors = list()
 	data["floors"] = floors
 
-	// DEBUG: test
 	// "fake" floors, used to give the appearance of inaccessible levels
-	for(var/i = 1, i <= master.floor_offset, i++)
+	// currently unused
+	for(var/i = 1, i <= master.fake_floors, i++)
 		floors += list(list(
-			num = i,
+			num = i + master.floor_offset,
 			is_dest = FALSE,
 			ref = null,
 		))
 
 	for(var/i = 1, i <= length(master.floor_list), i++)
 		floors += list(list(
-			num = i+floor_offset,
+			num = i + master.fake_floors + master.floor_offset,
 			is_dest = master.floor_list[i].is_dest,
 			ref = REF(master.floor_list[i]),
 		))
@@ -170,8 +168,10 @@
 /obj/machinery/status_display/elevator
 	name = "elevator display"
 	desc = "An elevator's status screen, displaying movement direction and current floor."
+	// no breaking
+	armor = list("melee" = 100, "bullet" = 100, "laser" = 100, "energy" = 100, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
+	max_integrity = 200 // sturdy
 
-	// you can vandalize and break these. you monster
 	power_channel = AREA_USAGE_ENVIRON // same as airlocks
 
 	var/datum/elevator_master/master

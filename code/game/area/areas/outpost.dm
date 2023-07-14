@@ -1,7 +1,5 @@
 // Outpost areas. Generally fairly similar to ship ones, but need to be kept separate due to their not having a corresponding docking port.
 
-
-// DEBUG: set ambient noises
 /area/outpost
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 	has_gravity = STANDARD_GRAVITY
@@ -196,7 +194,7 @@
 	name = "External"
 	icon_state = "space_near"
 	always_unpowered = TRUE
-	dynamic_lighting = DYNAMIC_LIGHTING_IFSTARLIGHT
+	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 	ambientsounds = SPACE
 	sound_environment = SOUND_AREA_SPACE
 

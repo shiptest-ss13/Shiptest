@@ -44,11 +44,15 @@ const ElevatorButtonsContent = (props, context) => {
           <Button.Checkbox
             diabled={floor.ref === null}
             checked={floor.is_dest}
-            content={floor.num}
             onClick={() => act('set_dest', {
               ref: floor.ref,
-            })}
-          />
+            })}>
+            {(floor.ref === null && (
+              <s>{floor.num}</s>
+            )) || (
+              floor.num
+            )}
+          </Button.Checkbox>
         </Table.Cell>
         ))}
       </Table.Row>
@@ -59,11 +63,15 @@ const ElevatorButtonsContent = (props, context) => {
           <Button.Checkbox
             diasbled={floors[0].ref === null}
             checked={floors[0].is_dest}
-            content={"★1"}
             onClick={() => act('set_dest', {
               ref: floors[0].ref,
-            })}
-          />
+            })}>
+            {(floors[0].ref === null && (
+              <s>{"★" + floors[0].num}</s>
+            )) || (
+              "★" + floors[0].num
+            )}
+          </Button.Checkbox>
         </Table.Cell>
         )}
         <Table.Cell>

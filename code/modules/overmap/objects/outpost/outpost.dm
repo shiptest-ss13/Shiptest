@@ -1,29 +1,3 @@
-// DEBUG: make this a hackmd document for outpost creation
-// specify skin X in code/__DEFINES/overmap.dm, make it's included in the list
-// multiple outposts to a skin is allowed
-// map datums should be in code/modules/overmap/objects/outpost/map_template/skin_X.dm
-// map files themselves in _maps/outpost/outpost_X.dmm, _maps/outpost/elevators/elevator_X.dmm, _maps/outpost/hangars/hangar_X_YxZ.dmm
-
-// hangars must have one and only one elevator shaft w/ landmark
-// outpost map should be 121x121 exactly -- technically (QUADRANT_MAP_SIZE - 2 * QUADRANT_SIZE_BORDER)^2
-
-// elevator landmark should be placed where bottom-left of elevator template should be placed, on hangars AND outposts. this is crucial to correct anchor alignment
-// elevator template MUST contain an /obj/machinery/elevator_floor_button, on the same turf as a platform, to be functional
-// elevator template MAY contain an /obj/machinery/status_display/elevator, on the same turf as a platform. this plays the sound effects
-
-// elevator SHAFTS on outpost+hangar maps MUST have a /obj/machinery/elevator_floor_button, accessible from outside, to be functional -- marked with landmark?
-// elevator SHAFTS on outpost+hangar maps MAY contain one or more /obj/machinery/door on the outside marked with door landmarks, with CORRECT var/shaft
-
-// in elevator SHAFT, can place decals on tiles that elevator appears under? not sure. test
-
-// if outpost has tcomms, docking messages will be posted. modularize? (what did i mean by modularize?)
-
-// specify that landmarks mark TURFS, and from there get their contents, not mark objs directly
-
-// specify that ships can add space_spawn to their JSON to spawn in space instead of at outposts. add an example to the example json. test that this works
-
-
-// DEBUG: documentation
 /datum/overmap/outpost
 	name = "outpost"
 	char_rep = "T"
@@ -34,38 +8,39 @@
 	var/datum/map_template/outpost/main_template = null
 
 	var/datum/map_template/outpost/elevator_template = null
-	// DEBUG: document, move into test outposts?
-	// some notes:
-	// It is STRONGLY RECOMMENDED that templates are listed here in ascending order of size.
-	// Hangar templates are found by iterating through the list and taking the first that is large enough;
-	// if the list is not sorted, then docking ships may request hangars that are larger than necessary.
-	// The dimension lists control the width and height (IN THAT ORDER) of the docking port that is instanced when
-	// the hangar is loaded. The map should be built to handle a docking port of this size without undesired behavior.
-	var/list/datum/map_template/outpost/hangar_templates = list(
-		/datum/map_template/outpost/hangar_test_20x20 = list(20, 20),
-		/datum/map_template/outpost/hangar_test_40x20 = list(40, 20),
-		/datum/map_template/outpost/hangar_test_40x40 = list(40, 40),
-		/datum/map_template/outpost/hangar_test_56x20 = list(56, 20),
-		/datum/map_template/outpost/hangar_test_56x40 = list(56, 40)
+	/// List of hangar templates. This list should contain hangar templates sufficient for any ship to dock within one,
+	/// allowing it to dock with the outpost. This list is sorted on outpost initialization, in ascending order,
+	/// first of width and then of height. When a ship requires a hangar, the outpost will iterate through this list until
+	/// it finds a hangar large enough to fit the ship. Because of this, combining wide hangars (with a greater width than height)
+	/// and tall hangars (with a greater height than width) in the list is discouraged; it is possible that a large hangar will "hide" a
+	/// smaller one by appearing earlier in the sorted list.
+	var/list/datum/map_template/outpost/hangar/hangar_templates = list(
+		/datum/map_template/outpost/hangar/test_20x20,
+		/datum/map_template/outpost/hangar/test_40x20,
+		/datum/map_template/outpost/hangar/test_40x40,
+		/datum/map_template/outpost/hangar/test_56x20,
+		/datum/map_template/outpost/hangar/test_56x40
 	)
 	// NOTE: "planetary" outposts should use baseturf specification and possibly different ztrait sun type, for both hangars and main level.
-	var/list/mainlevel_ztraits = list(
+	var/list/main_level_ztraits = list(
 		ZTRAIT_STATION = TRUE,
 		ZTRAIT_SUN_TYPE = AZIMUTH
 	)
 	var/list/hangar_ztraits = list(
-		ZTRAIT_SUN_TYPE = AZIMUTH
+		ZTRAIT_SUN_TYPE = STATIC_EXPOSED
 	)
-	var/max_missions = 15
 
 	/// The mapzone used by the outpost level and hangars. Using a single mapzone means networked radio messages.
 	var/datum/map_zone/mapzone
 	var/list/datum/hangar_shaft/shaft_datums = list()
-	// A list keeping track of the docks that're currently being landed at. Helps to prevent SGTs,
-	// as at time of writing there's no protection against a ship docking with a port that's already being docked to.
+	/// A list keeping track of the docks that're currently being landed at. Helps to prevent SGTs,
+	/// as at time of writing there's no protection against a ship docking with a port that's already being docked to.
 	var/list/landing_in_progress_docks = list() // TODO: generalize this approach to prevent simultaneous-dock ship-overlap SGTs
 
-	/// List of missions that can be accepted at this outpost.
+	/// The maximum number of missions that may be offered by the outpost at one time.
+	/// Missions which have been accepted do not count against this limit.
+	var/max_missions = 15
+	/// List of missions that can be accepted at this outpost. Missions which have been accepted are removed from this list.
 	var/list/datum/mission/missions
 
 /datum/overmap/outpost/Initialize(position, ...)
@@ -74,11 +49,9 @@
 	main_template = SSmapping.outpost_templates[main_template]
 	elevator_template = SSmapping.outpost_templates[elevator_template]
 
-	var/list/old_template_list = hangar_templates
-	hangar_templates = list()
-	for(var/h_template_type in old_template_list)
-		var/h_template = SSmapping.outpost_templates[h_template_type]
-		hangar_templates[h_template] = old_template_list[h_template_type]
+	for(var/i in 1 to hangar_templates.len)
+		hangar_templates[i] = SSmapping.outpost_templates[hangar_templates[i]]
+	sortTim(hangar_templates, /proc/cmp_hangarsize_asc)
 
 	SSovermap.outposts += src
 	mapzone = SSmapping.create_map_zone("[name]")
@@ -86,7 +59,7 @@
 	if(main_template)
 		load_main_level()
 	else
-		shaft_datums += new("A", null)
+		shaft_datums += new /datum/hangar_shaft("A", null)
 
 	// doing this after the main level is loaded means that the outpost areas are all renamed for us
 	Rename(gen_outpost_name())
@@ -94,15 +67,13 @@
 	fill_missions()
 	addtimer(CALLBACK(src, .proc/fill_missions), 10 MINUTES, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
 
-// DEBUG: consider more detailed cleanup behavior. cleanup hangars (and their datums)? delete main level? lots of weird questions
 /datum/overmap/outpost/Destroy(...)
-	// cleanup our data structures
+	// cleanup our data structures. behavior here is currently relatively restrained; may be made more expansive in the future
 	for(var/list/datum/hangar_shaft/h_shaft as anything in shaft_datums)
 		qdel(h_shaft)
 		shaft_datums -= h_shaft
 
 	SSovermap.outposts -= src
-
 	. = ..()
 
 /datum/overmap/outpost/get_jump_to_turf()
@@ -120,7 +91,7 @@
 	. = ..()
 	if(!.)
 		return
-	var/list/hangar_vlevels = mapzone.virtual_levels
+	var/list/hangar_vlevels = mapzone.virtual_levels.Copy()
 	mapzone.name = name
 
 	if(main_template)
@@ -180,7 +151,7 @@
 
 	var/datum/virtual_level/vlevel = SSmapping.create_virtual_level(
 		name,
-		mainlevel_ztraits,
+		main_level_ztraits,
 		mapzone,
 		QUADRANT_MAP_SIZE,
 		QUADRANT_MAP_SIZE,
@@ -228,12 +199,10 @@
 		// give the elevator a first floor
 		plat.master_datum.add_floor_landmarks(anchor_landmark, shaft_li - anchor_landmark)
 
-
 /datum/overmap/outpost/pre_docked(datum/overmap/ship/controlled/dock_requester)
 	var/obj/docking_port/stationary/h_dock
 	var/datum/map_template/outpost/h_template = get_hangar_template(dock_requester.shuttle_port)
-	// DEBUG: correctly propagate docking ticket errors upwards to inform user what the fuck is going on, instead of just returning false
-	if(!h_template || !shaft_datums)
+	if(!h_template || !length(shaft_datums))
 		return FALSE
 
 	h_dock = ensure_hangar(h_template)
@@ -261,55 +230,77 @@
 	// You might think "but wait, can't we just keep one speaker around instead of instancing it for each fucking radio message?"
 	// You'd think so, but you can't. It gets deleted after sending the radio message. Because GOD FORBID you send a message over radio
 	// without creating a fucking ATOM first to give it a rubber fucking stamp.
+	// Using the token for the virtual speaker gives the message an appropriate name.
 	var/atom/movable/virtualspeaker/v_speaker = new(null, token, null)
 	var/datum/signal/subspace/vocal/signal = new(
-		dock_requester.shuttle_port.docked,
+		dock_requester.shuttle_port.docked, // source: controls the physical space the message originates from. the docking port is in the mapzone so we use it
 		FREQ_COMMON, // frequency: Common
 		v_speaker, // speaker: a weird dummy atom not used for much of import but which will cause runtimes if omitted or improperly initialized.
 		/datum/language/common, // language: Common
 		"[dock_requester.name] confirmed touchdown at [dock_requester.shuttle_port.docked].", // the message itself
 		list(SPAN_ROBOT), // message font
-		list(MODE_CUSTOM_SAY_EMOTE = "coldly states") // custom say verb
+		list(MODE_CUSTOM_SAY_EMOTE = "coldly states") // custom say verb, consistent with robots
 	)
 	signal.send_to_receivers()
-
 	return
+
+/datum/overmap/outpost/post_undocked(datum/overmap/ship/controlled/dock_requester)
+	// just get an arbitrary hangar dock. for the message source. at this point,
+	// we don't have enough information to know which hangar the ship was docked to.
+	// however, so long as the speaker is an atom on a virtual_level in the right mapzone, we should be good.
+	// since they were just docked, we'll definitely find A hangar, even if it's the wrong one
+	var/obj/message_src
+	for(var/datum/hangar_shaft/shaft as anything in shaft_datums)
+		if(length(shaft.hangar_docks))
+			message_src = shaft.hangar_docks[1]
+			break
+
+	// Prepare and send a radio message about the undock over Common, in Common.
+	// See outpost post_docked() for some notes on what we're doing here.
+	var/atom/movable/virtualspeaker/v_speaker = new(null, token, null)
+	var/datum/signal/subspace/vocal/signal = new(
+		message_src,
+		FREQ_COMMON,
+		v_speaker,
+		/datum/language/common,
+		"[dock_requester.name] has departed from [src].",
+		list(SPAN_ROBOT),
+		list(MODE_CUSTOM_SAY_EMOTE = "coldly states")
+	)
+	signal.send_to_receivers()
 
 /datum/overmap/outpost/proc/get_hangar_template(obj/docking_port/mobile/request_port)
 	RETURN_TYPE(/datum/map_template/outpost)
 	var/list/request_size = list(request_port.width, request_port.height)
 
-	for(var/datum/map_template/outpost/hangar_template as anything in hangar_templates)
-		var/list/hangar_size = hangar_templates[hangar_template]
+	for(var/datum/map_template/outpost/hangar/hangar_template as anything in hangar_templates)
 		if( \
-			(request_size[1] <= hangar_size[1] && request_size[2] <= hangar_size[2]) || \
-			(request_size[1] <= hangar_size[2] && request_size[2] <= hangar_size[1]) \
+			(request_size[1] <= hangar_template.dock_width && request_size[2] <= hangar_template.dock_height) || \
+			(request_size[1] <= hangar_template.dock_height && request_size[2] <= hangar_template.dock_width) \
 		)
 			return hangar_template
 	return null // this is implicit, but i want to be clear that intended behavior here is to return null. it's not necessarily an error
 
-/datum/overmap/outpost/proc/ensure_hangar(datum/map_template/outpost/h_template)
+/datum/overmap/outpost/proc/ensure_hangar(datum/map_template/outpost/hangar/h_template)
 	RETURN_TYPE(/obj/docking_port/stationary)
 	for(var/datum/hangar_shaft/h_shaft as anything in shaft_datums)
 		for(var/obj/docking_port/stationary/h_dock as anything in h_shaft.hangar_docks)
-			var/list/h_template_size = hangar_templates[h_template]
 			// a dock/undock cycle may leave the stationary port w/ flipped width and height,
 			// due to adjust_dock_to_shuttle(). so we need to check both orderings of the list.
 			if( \
 				!(h_dock in landing_in_progress_docks) && !h_dock.docked && \
 				( \
-					(h_dock.width == h_template_size[1] && h_dock.height == h_template_size[2]) || \
-					(h_dock.height == h_template_size[1] && h_dock.width == h_template_size[2]) \
+					(h_dock.width == h_template.dock_width && h_dock.height == h_template.dock_height) || \
+					(h_dock.width == h_template.dock_height && h_dock.height == h_template.dock_width) \
 				) \
 			)
 				return h_dock
 
 	// we didn't find a valid hangar, so we have to make one
 	var/datum/hangar_shaft/chosen_shaft = pick(shaft_datums)
-
 	return make_hangar(h_template, chosen_shaft)
 
-/datum/overmap/outpost/proc/make_hangar(datum/map_template/outpost/h_template, datum/hangar_shaft/shaft)
+/datum/overmap/outpost/proc/make_hangar(datum/map_template/outpost/hangar/h_template, datum/hangar_shaft/shaft)
 	RETURN_TYPE(/obj/docking_port/stationary)
 
 	if(!(h_template in hangar_templates))
@@ -341,8 +332,8 @@
 
 	var/obj/docking_port/stationary/h_dock = new(dock_turf)
 	h_dock.dir = NORTH
-	h_dock.width = hangar_templates[h_template][1]
-	h_dock.height = hangar_templates[h_template][2]
+	h_dock.width = h_template.dock_width
+	h_dock.height = h_template.dock_height
 	shaft.hangar_docks += h_dock
 
 	// important not to CHECK_TICK after this point, so that the number is guaranteed to be correct
@@ -368,18 +359,22 @@
 		var/list/obj/effect/landmark/outpost/elevator_machine/mach_marks = list()
 
 		for(var/obj/effect/landmark/outpost/mark as anything in GLOB.outpost_landmarks)
-			if(!vlevel.is_in_bounds(ele_mark))
+			if(!vlevel.is_in_bounds(mark))
 				continue
 
 			if(!anchor_mark && istype(mark, /obj/effect/landmark/outpost/elevator))
-				anchor_mark = ele_mark
+				anchor_mark = mark
 			else if(istype(mark, /obj/effect/landmark/outpost/elevator_machine))
-				mach_marks += mach_mark
+				mach_marks += mark
 
 		shaft.shaft_elevator.add_floor_landmarks(anchor_mark, mach_marks)
 	return h_dock
 
-/// Rudimentary data structure used by outposts to sort their hangars.
+/*
+	Hangar shafts
+*/
+
+/// Rudimentary data structure used by outposts to organize their hangars.
 /datum/hangar_shaft
 	var/name
 
