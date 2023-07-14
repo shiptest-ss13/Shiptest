@@ -10,8 +10,8 @@
 	breakaway_flask_icon_state = "baflaskashwine"
 
 /datum/reagent/consumable/ethanol/ash_wine/on_mob_life(mob/living/M)
-	var/high_message = pick("you feel far more devoted to the cause", "you feel like you should go on a hunt")
-	var/cleanse_message = pick("divine light purifies you", "you are purged of foul spirts")
+	var/high_message = pick("You feel far more devoted to the cause", "You feel like you should go on a hunt")
+	var/cleanse_message = pick("Divine light purifies you", "You are purged of foul spirts")
 	//needs to get updated anytime someone adds a srm job
 	var/static/list/increased_toxin_loss = list("Hunter Montagne", "Hunter Doctor", "Hunter", "Shadow")
 	if(prob(10))
@@ -28,6 +28,7 @@
 	if(method == TOUCH)
 		if(!iscarbon(M))
 			reac_volume = reac_volume * 2
+			M.Paralyze(reac_volume)
 		M.Jitter(3 * reac_volume)
 		M.Dizzy(2 * reac_volume)
 		M.set_drugginess(3 * reac_volume)
@@ -44,7 +45,7 @@
 	breakaway_flask_icon_state = "baflaskicewine"
 
 /datum/reagent/consumable/ethanol/ice_wine/on_mob_life(mob/living/M)
-	M.adjust_bodytemperature(-10 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal())
+	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal())
 	M.adjustFireLoss(-1)
 	..()
 	. = 1
@@ -97,7 +98,7 @@
 	glass_desc = "Fiery brew utilized by members of the Saint-Roumain Militia, engineered to cauterize wounds in the field. Goes out in a blaze of glory when thrown."
 
 /datum/reagent/consumable/ethanol/hearth_wine/on_mob_life(mob/living/M)
-	M.adjust_bodytemperature(-10 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal())
+	M.adjust_bodytemperature(5 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal())
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		H.bleed_rate = max(H.bleed_rate - 0.25, 0)
@@ -111,7 +112,14 @@
 	var/turf/T = get_turf(M)
 	T.IgniteTurf(reac_volume)
 	new /obj/effect/hotspot(T)
-	T.hotspot_expose((reac_volume*20),(reac_volume*2))
+	T.hotspot_expose((reac_volume*10),(reac_volume*1))
+	var/turf/otherT
+	for(var/direction in GLOB.cardinals)
+		reac_volume = reac_volume / 10
+		otherT = get_step(T, direction)
+		otherT.IgniteTurf(reac_volume)
+		new /obj/effect/hotspot(otherT)
+		otherT.hotspot_expose((reac_volume*10),(reac_volume*1))
 
 /datum/reagent/consumable/ethanol/force_wine
 	name = "Force Wine"
@@ -124,13 +132,18 @@
 
 /datum/reagent/consumable/ethanol/force_wine/on_mob_metabolize(mob/living/M)
 	..()
-	ADD_TRAIT(M, TRAIT_ANTIMAGIC, type)
+	ADD_TRAIT(M, TRAIT_ANTIMAGIC, "trickwine")
+	ADD_TRAIT(M, TRAIT_MINDSHIELD, "trickwine")
+	M.visible_message("<span class='warning'>[M] glows a dim grey aura</span>")
 
 /datum/reagent/consumable/ethanol/force_wine/on_mob_end_metabolize(mob/living/M)
-	REMOVE_TRAIT(M, TRAIT_ANTIMAGIC, type)
+	M.visible_message("<span class='warning'>[M]'s aura fades away </span>")
+	REMOVE_TRAIT(M, TRAIT_ANTIMAGIC, "trickwine")
+	REMOVE_TRAIT(M, TRAIT_MINDSHIELD, "trickwine")
 	..()
 
-/datum/reagent/consumable/ethanol/force_wine/expose_turf(turf/T, reac_volume)
+/datum/reagent/consumable/ethanol/force_wine/expose_mob(mob/living/M, method=TOUCH, reac_volume)
+	var/turf/T = get_turf(M)
 	var/turf/otherT
 	reac_volume = reac_volume * 4
 	new /obj/effect/forcefield/resin(T, reac_volume)
@@ -161,7 +174,9 @@
 	if(method == TOUCH)
 		if(istype(M, /mob/living/simple_animal/hostile/asteroid))
 			var/mob/living/simple_animal/hostile/asteroid/the_animal = M
-			the_animal.armor.modifyRating(energy = -100)
+			the_animal.armor.modifyRating(energy = -50)
+			spawn(reac_volume SECONDS)
+			the_animal.armor.modifyRating(energy = 50)
 		if(ishuman(M))
 			var/mob/living/carbon/human/the_human = M
 			the_human.physiology.burn_mod *= 2
