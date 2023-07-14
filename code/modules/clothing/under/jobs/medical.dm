@@ -50,7 +50,7 @@
 /obj/item/clothing/under/rank/medical/virologist/skirt
 	name = "virologist's jumpskirt"
 	desc = "It's made of a special fiber that gives special protection against biohazards. It has a virologist rank stripe on it."
-	icon_state = "virologywhite_skirt"
+	icon_state = "virology_skirt"
 	item_state = "w_suit"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
@@ -79,16 +79,25 @@
 	name = "medical scrubs"
 	desc = "It's made of a special fiber that provides minor protection against biohazards. This one is in baby blue."
 	icon_state = "scrubsblue"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/rank/medical/doctor/green
 	name = "medical scrubs"
 	desc = "It's made of a special fiber that provides minor protection against biohazards. This one is in dark green."
 	icon_state = "scrubsgreen"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/rank/medical/doctor/purple
 	name = "medical scrubs"
 	desc = "It's made of a special fiber that provides minor protection against biohazards. This one is in deep purple."
 	icon_state = "scrubspurple"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/rank/medical/doctor/red
+	name = "medical scrubs"
+	desc = "It's made of a special fiber that provides minor protection against biohazards. This one is in dark red."
+	icon_state = "scrubsred"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/rank/medical/doctor/skirt
 	name = "medical doctor's jumpskirt"
