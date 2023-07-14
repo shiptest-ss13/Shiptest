@@ -21,7 +21,7 @@
 	///The map template the shuttle was spawned from, if it was indeed created from a template. CAN BE NULL (ex. custom-built ships).
 	var/datum/map_template/shuttle/source_template
 	///Whether objects on the ship require an ID with ship access granted
-	var/unique_ship_access = TRUE
+	var/unique_ship_access = FALSE
 
 	/// The shipkey for this ship
 	var/obj/item/key/ship/shipkey

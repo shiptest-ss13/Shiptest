@@ -21,7 +21,7 @@
 	var/unique_ship_access = FALSE
 
 	//how much money the ship starts with
-	var/starting_funds
+	var/starting_funds = 2000
 
 	// Coefficients regulating the amount of necessary Living playtime to spawn this ship or join as an officer.
 	// When a player attempts to spawn a ship via the join menu, officer time requirements are ignored even if the "captain" job is an officer.
