@@ -74,7 +74,7 @@
 /turf/open/floor/carpet/black,
 /area/ship/crew/dorm)
 "aS" = (
-/turf/closed/wall/mineral/plastitanium,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/storage)
 "aU" = (
 /obj/structure/catwalk/over/plated_catwalk,
@@ -904,6 +904,9 @@
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
+"iu" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/storage/eva)
 "ix" = (
 /obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 9
@@ -1478,6 +1481,9 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/janitor)
+"nk" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/bridge)
 "ns" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
@@ -1580,7 +1586,7 @@
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/toilet)
 "oa" = (
-/turf/closed/wall/mineral/plastitanium,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew)
 "og" = (
 /obj/effect/turf_decal/box/corners{
@@ -1800,7 +1806,7 @@
 	icon_state = "2-4"
 	},
 /obj/structure/cable{
-	icon_state = "2-10"
+	icon_state = "4-10"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -2171,6 +2177,9 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/port)
+"tZ" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/crew/office)
 "ua" = (
 /obj/effect/turf_decal/siding/thinplating/corner,
 /obj/effect/turf_decal/siding/thinplating/corner{
@@ -2270,6 +2279,9 @@
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
+"uY" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/crew/janitor)
 "vi" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/warning{
 	dir = 8
@@ -3195,15 +3207,8 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/hallway/port)
 "DT" = (
-/obj/docking_port/stationary{
-	dwidth = 15;
-	height = 15;
-	width = 30;
-	dir = 4;
-	name = "valor airlock dock"
-	},
-/turf/open/space/basic,
-/area/space)
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/hallway/central)
 "DU" = (
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
@@ -3335,8 +3340,8 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "EY" = (
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/cargo)
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/crew/cryo)
 "Fa" = (
 /obj/effect/turf_decal/box/corners{
 	dir = 8
@@ -3571,6 +3576,9 @@
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
+"HK" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/crew/canteen)
 "HL" = (
 /obj/structure/reagent_dispensers/beerkeg,
 /turf/open/floor/plasteel/patterned/cargo_one,
@@ -4228,6 +4236,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plating,
 /area/ship/hallway/port)
+"NO" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/crew/toilet)
 "NT" = (
 /obj/structure/table,
 /obj/item/storage/toolbox/electrical{
@@ -4835,7 +4846,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "Um" = (
-/turf/closed/wall/mineral/plastitanium,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew/dorm)
 "Ur" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/warning{
@@ -4907,8 +4918,8 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
 "Vg" = (
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/medical)
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/hallway/starboard)
 "Vp" = (
 /obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 1
@@ -5260,7 +5271,7 @@
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/toilet)
 "Yr" = (
-/turf/closed/wall/mineral/plastitanium,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/medical/surgery)
 "Yt" = (
 /obj/effect/turf_decal/borderfloor{
@@ -5382,6 +5393,9 @@
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/storage)
+"Zu" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/security)
 "ZF" = (
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 8
@@ -5443,7 +5457,7 @@ MK
 ey
 "}
 (2,1,1) = {"
-zh
+cu
 Zd
 gm
 Zd
@@ -5473,10 +5487,10 @@ AD
 Af
 nd
 Af
-ey
+AD
 "}
 (3,1,1) = {"
-zh
+cu
 pL
 wS
 Pb
@@ -5487,7 +5501,7 @@ Td
 Td
 Td
 Td
-EY
+xj
 Ug
 JC
 JC
@@ -5495,21 +5509,21 @@ JC
 JC
 JC
 ml
-EY
+xj
 Td
 Td
 Td
 Td
 Td
-ey
+AD
 GA
 VY
 YF
 Uf
-ey
+AD
 "}
 (4,1,1) = {"
-zh
+cu
 rX
 Wv
 wc
@@ -5519,7 +5533,7 @@ Td
 Td
 Td
 Td
-EY
+xj
 xj
 qG
 OY
@@ -5529,20 +5543,20 @@ Cb
 Cb
 xz
 xj
-EY
+xj
 Td
 Td
 Td
 Td
-ey
+AD
 pU
 ei
 HA
 lD
-ey
+AD
 "}
 (5,1,1) = {"
-zh
+cu
 WQ
 Dl
 ZG
@@ -5552,7 +5566,7 @@ Td
 Td
 Td
 Td
-EY
+xj
 og
 FI
 Ij
@@ -5562,20 +5576,20 @@ OM
 UO
 Kz
 Rz
-EY
+xj
 Td
 Td
 Td
 Td
-ey
+AD
 Dj
 Uz
 SX
 Dw
-ey
+AD
 "}
 (6,1,1) = {"
-zh
+cu
 zh
 zh
 zh
@@ -5585,7 +5599,7 @@ Td
 Td
 Td
 Td
-EY
+xj
 rL
 iI
 zX
@@ -5595,20 +5609,20 @@ OM
 OM
 Ea
 rL
-EY
+xj
 Td
 Td
 Td
 Td
-ey
+AD
 ko
-ey
-ey
-ey
-ey
+AD
+AD
+AD
+AD
 "}
 (7,1,1) = {"
-Rh
+Zu
 sy
 BL
 Rh
@@ -5618,7 +5632,7 @@ qL
 Td
 Td
 Td
-EY
+xj
 sZ
 iI
 zX
@@ -5628,11 +5642,11 @@ OM
 OM
 Ea
 kL
-EY
+xj
 Td
 Td
 Td
-Vg
+LI
 LI
 ns
 qR
@@ -5641,7 +5655,7 @@ zD
 Yr
 "}
 (8,1,1) = {"
-Rh
+Zu
 ew
 yN
 yT
@@ -5651,7 +5665,7 @@ vX
 Td
 Td
 Td
-EY
+xj
 GF
 iI
 zX
@@ -5661,7 +5675,7 @@ OM
 OM
 Ea
 rL
-EY
+xj
 Td
 Td
 Td
@@ -5674,7 +5688,7 @@ eD
 Yr
 "}
 (9,1,1) = {"
-Rh
+Zu
 kK
 LR
 MS
@@ -5684,7 +5698,7 @@ NM
 Mw
 Td
 Td
-EY
+xj
 Ch
 nh
 Mx
@@ -5694,7 +5708,7 @@ OM
 OM
 Ea
 fG
-EY
+xj
 Td
 Td
 Td
@@ -5707,7 +5721,7 @@ AE
 Yr
 "}
 (10,1,1) = {"
-Rh
+Zu
 Vp
 rY
 CT
@@ -5717,7 +5731,7 @@ HC
 DU
 DU
 DU
-qL
+HC
 Zf
 oz
 kH
@@ -5727,11 +5741,11 @@ OM
 OM
 Kz
 rL
-Vg
+LI
 jL
 jL
 jL
-Vg
+LI
 PL
 bJ
 Yr
@@ -5740,7 +5754,7 @@ Yr
 Yr
 "}
 (11,1,1) = {"
-Rh
+Zu
 Rh
 Rh
 Rh
@@ -5773,17 +5787,17 @@ eU
 Yr
 "}
 (12,1,1) = {"
-oO
+tZ
 BC
 jN
 lN
 Hg
 zs
 HC
-qL
-qL
-qL
-qL
+HC
+HC
+HC
+HC
 tj
 JS
 jj
@@ -5793,11 +5807,11 @@ Kn
 dQ
 Fa
 Ft
-Vg
-Vg
-Vg
-Vg
-Vg
+LI
+LI
+LI
+LI
+LI
 su
 rO
 qR
@@ -5806,17 +5820,17 @@ bI
 Yr
 "}
 (13,1,1) = {"
-oO
+tZ
 Xx
 Gm
 Wd
 cI
 tS
-qL
+HC
 MR
 fN
 fN
-Nh
+iu
 gh
 te
 fe
@@ -5830,7 +5844,7 @@ aS
 Zr
 Re
 OK
-Vg
+LI
 EE
 oy
 qR
@@ -5839,17 +5853,17 @@ LJ
 Yr
 "}
 (14,1,1) = {"
-oO
+tZ
 mG
 Qo
-oO
+tZ
 An
 Sd
-qL
+HC
 Oj
 XU
 Fu
-Nh
+iu
 tj
 Jd
 qA
@@ -5863,8 +5877,8 @@ aS
 PS
 MN
 cE
-Vg
-Vg
+LI
+LI
 dN
 Yr
 Yr
@@ -5872,13 +5886,13 @@ Yr
 Yr
 "}
 (15,1,1) = {"
-oO
+tZ
 fO
 PJ
-oO
+tZ
 Qc
 AP
-qL
+HC
 bx
 ss
 Sh
@@ -5896,22 +5910,22 @@ zK
 eg
 Yt
 Yt
-Vg
+LI
 zS
 pt
 vn
 DG
 lv
-Vg
+LI
 "}
 (16,1,1) = {"
-oO
+tZ
 bv
 wL
 ME
 iN
 xl
-qL
+HC
 OR
 gq
 LL
@@ -5929,46 +5943,46 @@ aS
 Yx
 Io
 mt
-Vg
+LI
 vI
 Ye
 mw
 mw
 HB
-Vg
+LI
 "}
 (17,1,1) = {"
 oO
-oO
-oO
-oO
+tZ
+tZ
+tZ
 VD
 oa
-Tw
-Tw
-Tw
-Tw
-Tw
-Tw
-Tw
-Tw
+DT
+DT
+DT
+DT
+DT
+DT
+DT
+DT
 NE
-Tw
+DT
 nz
+DT
 Tw
 Tw
-Tw
-Tw
-Tw
-Tw
-Tw
-Tw
+DT
+DT
+DT
+DT
+DT
 Xg
 Uj
 dl
 Jn
-Vg
-Vg
+LI
+LI
 "}
 (18,1,1) = {"
 Td
@@ -5977,11 +5991,11 @@ Ie
 EK
 ty
 dp
-Tw
+DT
 kW
 dr
 kW
-Tw
+DT
 fE
 sJ
 xH
@@ -6043,7 +6057,7 @@ aa
 mI
 gn
 qZ
-Tw
+DT
 cW
 cW
 cW
@@ -6066,7 +6080,7 @@ zA
 mx
 gl
 sc
-Vg
+LI
 Td
 "}
 (21,1,1) = {"
@@ -6076,11 +6090,11 @@ nU
 uA
 Pk
 Ei
-Tw
+DT
 YL
 YL
 YL
-Tw
+DT
 mZ
 Yd
 hN
@@ -6094,12 +6108,12 @@ Tw
 YL
 YL
 YL
-Tw
-Vg
+DT
+LI
 zE
-Vg
-Vg
-Vg
+LI
+LI
+LI
 Td
 "}
 (22,1,1) = {"
@@ -6113,26 +6127,26 @@ Um
 Td
 Td
 Td
-ka
-ka
+HK
+HK
 ka
 ka
 XT
-ka
+HK
 pa
-ka
-ka
-ka
-ka
+HK
+HK
+HK
+HK
 Td
 Td
 Td
-Vg
+LI
 AV
 ap
 NI
 Dx
-Vg
+LI
 Td
 "}
 (23,1,1) = {"
@@ -6146,7 +6160,7 @@ Um
 Td
 Td
 Td
-ka
+HK
 dM
 Cr
 wA
@@ -6156,16 +6170,16 @@ pO
 cj
 QO
 lI
-ka
+HK
 Td
 Td
 Td
-Vg
+LI
 xJ
 xp
 Fs
 xs
-Vg
+LI
 Td
 "}
 (24,1,1) = {"
@@ -6179,7 +6193,7 @@ rc
 Ct
 Td
 Td
-ka
+HK
 OT
 Av
 VB
@@ -6189,7 +6203,7 @@ Us
 Tu
 ET
 Go
-ka
+HK
 Td
 Td
 Ct
@@ -6212,7 +6226,7 @@ rc
 Ct
 Ct
 Td
-ka
+HK
 IM
 Oh
 Bh
@@ -6222,7 +6236,7 @@ EL
 Qk
 Xi
 dk
-ka
+HK
 Td
 Ct
 Ct
@@ -6245,7 +6259,7 @@ rc
 Ct
 Ct
 Ct
-ka
+HK
 ah
 mj
 IN
@@ -6255,16 +6269,16 @@ oL
 IN
 wV
 yb
-ka
+HK
 Ct
 Ct
 Ct
-Vg
+LI
 EM
 IA
 Xw
 OC
-Vg
+LI
 Td
 "}
 (27,1,1) = {"
@@ -6278,7 +6292,7 @@ Um
 Td
 Ct
 Ct
-ka
+HK
 KV
 mz
 IN
@@ -6288,30 +6302,30 @@ El
 un
 Xi
 Km
-ka
+HK
 Ct
 Ct
 Td
-Vg
+LI
 pd
 xI
 sz
 vx
-Vg
+LI
 Td
 "}
 (28,1,1) = {"
 Td
-PU
-PU
-PU
+EY
+EY
+EY
 Ki
-PU
-PU
+EY
+EY
 Td
 Td
 Ct
-ka
+HK
 Jh
 Av
 Av
@@ -6321,30 +6335,30 @@ EL
 IQ
 ET
 TS
-ka
+HK
 Ct
 Td
 Td
-Vg
+LI
 QE
 mp
 xy
 LI
-Vg
+LI
 Td
 "}
 (29,1,1) = {"
 Td
 Td
-PU
+EY
 pA
 tz
 hw
-PU
+EY
 Td
 Td
 Td
-ka
+HK
 Gd
 cZ
 xb
@@ -6354,81 +6368,81 @@ EA
 xb
 Jt
 Ur
-ka
+HK
 Td
 Td
 Td
-bB
-bB
+Vg
+Vg
 DL
-bB
-bB
+Vg
+Vg
 Td
 Td
 "}
 (30,1,1) = {"
 Td
 Td
-PU
+EY
 wD
 Dm
 vK
-PU
+EY
 Td
 Td
-pu
-pu
+uY
+uY
 dI
-jS
-jS
-jS
+nk
+nk
+nk
 em
-jS
-jS
-jS
+nk
+nk
+nk
 Yn
-qE
-qE
+NO
+NO
 Td
 Td
-bB
+Vg
 Xu
 qW
 VT
-bB
+Vg
 Td
 Td
 "}
 (31,1,1) = {"
 Td
 Td
-PU
+EY
 HN
 jR
 fa
-PU
+EY
 Td
 Td
-pu
+uY
 Nn
 ni
-jS
+nk
 AG
 ze
 ND
 Nu
 kv
-jS
+nk
 nZ
 HQ
-qE
+NO
 Td
 Td
-bB
+Vg
 oC
 md
 Yu
-bB
+Vg
 Td
 Td
 "}
@@ -6436,31 +6450,31 @@ Td
 Td
 Td
 PU
-PU
-PU
-PU
+EY
+EY
+EY
 PU
 Td
 Td
-pu
+uY
 AO
 QQ
-jS
+nk
 bS
 Am
 KY
 Kh
 fQ
-jS
+nk
 wa
 Rj
-qE
+NO
 Td
 Td
 bB
-bB
+Vg
 gZ
-bB
+Vg
 bB
 Td
 Td
@@ -6476,23 +6490,23 @@ Td
 Td
 Td
 pu
-pu
+uY
 tk
-jS
+nk
 lW
 HT
 ej
 CV
 zr
-jS
+nk
 qQ
+NO
 qE
-qE
 Td
 Td
 Td
 Td
-DT
+Td
 Td
 Td
 Td
@@ -6510,15 +6524,15 @@ Td
 Td
 Td
 pu
-pu
-jS
+uY
+nk
 sM
 Ab
 DD
 eM
 Ko
-jS
-qE
+nk
+NO
 qE
 Td
 Td
@@ -6545,11 +6559,11 @@ Td
 Td
 Td
 jS
-jS
+nk
 zi
 OE
 fK
-jS
+nk
 jS
 Td
 Td
