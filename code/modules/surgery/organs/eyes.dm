@@ -145,6 +145,9 @@
 	status = ORGAN_ROBOTIC
 	organ_flags = ORGAN_SYNTHETIC
 
+/obj/item/organ/eyes/robotic/lizard
+	eye_icon_state = "eyes_synth"
+
 /obj/item/organ/eyes/robotic/emp_act(severity)
 	. = ..()
 	if(!owner || . & EMP_PROTECT_SELF)

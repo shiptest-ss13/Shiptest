@@ -132,7 +132,8 @@
 #define NOHUSK 22 // Can't be husked.
 #define NOMOUTH 23
 #define NOSOCKS 24 // You cannot wear sock
-#define NO_BONES 25 // You don't have bones to break
+#define NO_BONES 25 //! You don't have any bones for breaking
+#define MUTCOLORS_SECONDARY 26 //! A second mutant colour for other things
 
 //organ slots
 #define ORGAN_SLOT_BRAIN "brain"
