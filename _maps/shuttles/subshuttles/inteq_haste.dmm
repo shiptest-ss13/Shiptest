@@ -16,6 +16,12 @@
 	},
 /turf/open/floor/engine/hull,
 /area/ship/bridge)
+"i" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/bridge)
 "s" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 8
@@ -59,15 +65,18 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "F" = (
-/obj/machinery/power/smes/shuttle{
-	dir = 1
-	},
 /obj/structure/window/reinforced,
 /obj/structure/window/reinforced{
 	dir = 8
 	},
 /obj/structure/window/reinforced{
 	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -156,13 +165,15 @@
 /obj/machinery/power/shuttle/engine/electric{
 	dir = 8
 	},
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
 /turf/open/floor/engine/hull/interior,
 /area/ship/bridge)
 "W" = (
 /turf/open/floor/engine/hull/interior,
 /area/ship/bridge)
 "Y" = (
-/obj/machinery/power/smes/shuttle,
 /obj/structure/window/reinforced{
 	dir = 1
 	},
@@ -172,6 +183,10 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/smes/shuttle/precharged,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 
@@ -200,10 +215,10 @@ M
 F
 "}
 (5,1,1) = {"
-a
+i
 f
 R
-a
+i
 "}
 (6,1,1) = {"
 T
