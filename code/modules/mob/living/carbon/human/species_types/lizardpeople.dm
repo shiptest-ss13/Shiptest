@@ -3,7 +3,7 @@
 	name = "\improper Sarathi"
 	id = SPECIES_LIZARD
 	default_color = "00FF00"
-	species_traits = list(MUTCOLORS,EYECOLOR,LIPS,SCLERA,EMOTE_OVERLAY)
+	species_traits = list(MUTCOLORS,EYECOLOR,LIPS,SCLERA,EMOTE_OVERLAY,MUTCOLORS_SECONDARY)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_REPTILE
 	mutant_bodyparts = list("tail_lizard", "snout", "spines", "horns", "frills", "body_markings", "legs")
 	mutanttongue = /obj/item/organ/tongue/lizard
@@ -35,6 +35,16 @@
 	species_r_arm = /obj/item/bodypart/r_arm/lizard
 	species_l_leg = /obj/item/bodypart/leg/left/lizard
 	species_r_leg = /obj/item/bodypart/leg/right/lizard
+
+	species_robotic_chest = /obj/item/bodypart/chest/robot/lizard
+	species_robotic_head = /obj/item/bodypart/head/robot/lizard
+	species_robotic_l_arm = /obj/item/bodypart/l_arm/robot/surplus/lizard
+	species_robotic_r_arm = /obj/item/bodypart/r_arm/robot/surplus/lizard
+	species_robotic_l_leg = /obj/item/bodypart/leg/left/robot/surplus/lizard
+	species_robotic_r_leg = /obj/item/bodypart/leg/right/robot/surplus/lizard
+
+	robotic_eyes = /obj/item/organ/eyes/robotic/lizard
+
 	// Lizards are coldblooded and can stand a greater temperature range than humans
 	bodytemp_heat_damage_limit = HUMAN_BODYTEMP_HEAT_DAMAGE_LIMIT + 20 // This puts lizards 10 above lavaland max heat for ash lizards.
 	bodytemp_cold_damage_limit = HUMAN_BODYTEMP_COLD_DAMAGE_LIMIT - 10
