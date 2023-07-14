@@ -1,10 +1,4 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"am" = (
-/obj/effect/spawner/lootdrop/whitesands/survivor,
-/turf/open/floor/plating/asteroid/whitesands/dried{
-	light_range = 2
-	},
-/area/whitesands/surface/outdoors)
 "aq" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood{
@@ -48,7 +42,7 @@
 	},
 /area/whitesands/surface/outdoors)
 "bO" = (
-/obj/structure/closet/crate/grave,
+/obj/structure/closet/crate/grave/loot,
 /obj/item/ammo_casing/shotgun/meteorslug,
 /turf/open/floor/plating/asteroid/whitesands{
 	light_range = 2
@@ -86,6 +80,13 @@
 /area/whitesands/surface/outdoors)
 "eo" = (
 /obj/structure/barricade/sandbags,
+/turf/open/floor/plating/asteroid/whitesands/dried{
+	light_range = 2
+	},
+/area/whitesands/surface/outdoors)
+"eq" = (
+/obj/item/spear,
+/obj/effect/mob_spawn/human/corpse/damaged/whitesands/survivor,
 /turf/open/floor/plating/asteroid/whitesands/dried{
 	light_range = 2
 	},
@@ -180,6 +181,12 @@
 "gF" = (
 /turf/template_noop,
 /area/template_noop)
+"gL" = (
+/obj/structure/chair/stool/bar,
+/obj/machinery/light/directional/south,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood,
+/area/whitesands/surface/outdoors)
 "hr" = (
 /obj/structure/chair/stool/bar,
 /turf/open/floor/wood{
@@ -204,7 +211,7 @@
 	},
 /area/whitesands/surface/outdoors)
 "ig" = (
-/obj/structure/closet/crate/grave,
+/obj/structure/closet/crate/grave/loot,
 /turf/open/floor/plating/asteroid/whitesands{
 	light_range = 2
 	},
@@ -310,12 +317,6 @@
 "lG" = (
 /obj/structure/flora/ash/cap_shroom,
 /turf/open/floor/plating/asteroid/whitesands/dried{
-	light_range = 2
-	},
-/area/whitesands/surface/outdoors)
-"lH" = (
-/obj/effect/spawner/lootdrop/whitesands/survivor,
-/turf/open/floor/plating/asteroid/whitesands{
 	light_range = 2
 	},
 /area/whitesands/surface/outdoors)
@@ -472,15 +473,6 @@
 /turf/open/floor/plating/asteroid/whitesands/grass{
 	light_range = 2
 	},
-/area/whitesands/surface/outdoors)
-"rv" = (
-/obj/structure/table/wood,
-/obj/machinery/light,
-/obj/item/clothing/mask/cigarette/cigar/havana{
-	pixel_x = 1;
-	pixel_y = 4
-	},
-/turf/open/floor/wood,
 /area/whitesands/surface/outdoors)
 "rx" = (
 /obj/effect/decal/cleanable/dirt,
@@ -695,11 +687,6 @@
 /obj/item/seeds/wheat,
 /obj/item/seeds/watermelon,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"yV" = (
-/obj/machinery/light,
-/obj/structure/chair/stool/bar,
 /turf/open/floor/wood,
 /area/whitesands/surface/outdoors)
 "yZ" = (
@@ -1049,12 +1036,6 @@
 	},
 /turf/open/floor/concrete,
 /area/whitesands/surface/outdoors)
-"Ml" = (
-/obj/structure/chair/stool/bar,
-/obj/machinery/light,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
 "MS" = (
 /mob/living/simple_animal/hostile/asteroid/whitesands/survivor,
 /turf/open/floor/plating/asteroid/whitesands{
@@ -1101,13 +1082,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood{
 	icon_state = "wood-broken5"
-	},
-/area/whitesands/surface/outdoors)
-"Pk" = (
-/obj/item/spear,
-/obj/effect/mob_spawn/human/corpse/whitesands/survivor,
-/turf/open/floor/plating/asteroid/whitesands/dried{
-	light_range = 2
 	},
 /area/whitesands/surface/outdoors)
 "Px" = (
@@ -1181,6 +1155,22 @@
 	light_range = 2
 	},
 /area/whitesands/surface/outdoors)
+"SK" = (
+/obj/machinery/light/directional/south,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood{
+	icon_state = "wood-broken7"
+	},
+/area/whitesands/surface/outdoors)
+"SV" = (
+/obj/structure/table/wood,
+/obj/machinery/light/directional/south,
+/obj/item/clothing/mask/cigarette/cigar/havana{
+	pixel_x = 1;
+	pixel_y = 4
+	},
+/turf/open/floor/wood,
+/area/whitesands/surface/outdoors)
 "Td" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood{
@@ -1232,12 +1222,10 @@
 "VF" = (
 /turf/closed/wall/mineral/wood,
 /area/whitesands/surface/outdoors)
-"VM" = (
-/obj/machinery/light,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood{
-	icon_state = "wood-broken7"
-	},
+"VT" = (
+/obj/machinery/light/directional/south,
+/obj/structure/chair/stool/bar,
+/turf/open/floor/wood,
 /area/whitesands/surface/outdoors)
 "Wd" = (
 /obj/structure/closet/crate/bin,
@@ -1721,7 +1709,7 @@ kO
 Yj
 Yj
 mV
-Yj
+kO
 Yj
 Yj
 Yj
@@ -1846,7 +1834,7 @@ Yj
 Yj
 Yj
 Yj
-lH
+Yj
 Ld
 Yj
 Yj
@@ -2027,7 +2015,7 @@ Yj
 Yj
 Yj
 Yj
-lH
+Yj
 kK
 Ld
 Yj
@@ -2951,7 +2939,7 @@ Yj
 Yj
 Sy
 vL
-Pk
+eq
 Ld
 Hc
 rx
@@ -3716,7 +3704,7 @@ Yj
 yt
 oL
 cI
-rv
+SV
 VF
 gy
 xr
@@ -3968,7 +3956,7 @@ zh
 nE
 GG
 ZG
-Ml
+gL
 VF
 Yj
 Yj
@@ -4082,7 +4070,7 @@ iQ
 AW
 ki
 Px
-VM
+SK
 Hb
 RY
 hL
@@ -4212,7 +4200,7 @@ MX
 xB
 Lj
 UO
-yV
+VT
 VF
 Ld
 Yj
@@ -4484,7 +4472,7 @@ Ld
 Zg
 MS
 Ld
-am
+Ld
 Ld
 Yj
 sJ
@@ -4665,7 +4653,7 @@ Yj
 Ld
 AI
 Ld
-am
+Ld
 Vr
 Ld
 Yj

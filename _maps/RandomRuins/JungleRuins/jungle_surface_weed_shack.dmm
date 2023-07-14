@@ -223,7 +223,7 @@
 	},
 /area/ruin/unpowered)
 "qI" = (
-/obj/structure/mineral_door/wood,
+/obj/machinery/door/airlock/wood,
 /turf/open/floor/wood,
 /area/ruin/unpowered)
 "rl" = (
@@ -417,7 +417,7 @@
 /obj/machinery/power/terminal{
 	dir = 1
 	},
-/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/apc/auto_name/directional/north,
 /obj/item/trash/cheesie,
 /obj/item/cigbutt/roach,
 /turf/open/floor/wood,
@@ -466,9 +466,11 @@
 /turf/open/floor/wood,
 /area/ruin/unpowered)
 "Pv" = (
-/obj/structure/mineral_door/wood,
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/wood{
+	dir = 4
 	},
 /turf/open/floor/wood,
 /area/ruin/unpowered)
@@ -484,10 +486,10 @@
 /turf/open/floor/wood,
 /area/ruin/unpowered)
 "Qt" = (
-/obj/structure/mineral_door/wood,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/door/airlock/wood,
 /turf/open/floor/wood,
 /area/ruin/unpowered)
 "QQ" = (

@@ -43,6 +43,7 @@ GLOBAL_PROTECT(admin_verbs_admin)
 	/datum/admins/proc/toggleooclocal,	/*toggles looc on/off for everyone*/
 	/datum/admins/proc/toggleoocdead,	/*toggles ooc on/off for everyone who is dead*/
 	/datum/admins/proc/toggleenter,		/*toggles whether people can join the current game*/
+	/client/proc/toggle_ship_spawn, /* toggles players spawning ships via the join menu / shuttle creators */
 	/datum/admins/proc/announce,		/*priority announce something to all clients.*/
 	/datum/admins/proc/set_admin_notice, /*announcement all clients see when joining the server.*/
 	/client/proc/admin_ghost,			/*allows us to ghost/reenter body at will*/
@@ -75,6 +76,7 @@ GLOBAL_PROTECT(admin_verbs_admin)
 	/client/proc/toggleprayers,
 	/client/proc/toggle_prayer_sound,
 	/client/proc/toggleadminhelpsound,
+	/client/proc/overmap_datum_token_manager,
 	/datum/admins/proc/open_borgopanel,
 	/client/proc/investigate_show,		/*various admintools for investigation. Such as a singulo grief-log*/
 	)
@@ -187,6 +189,7 @@ GLOBAL_PROTECT(admin_verbs_debug)
 	/client/proc/map_template_load,
 	/client/proc/map_template_upload,
 	/client/proc/jump_to_ruin,
+	/client/proc/fucky_wucky,
 	/client/proc/view_runtimes,
 	/client/proc/pump_random_event,
 	/client/proc/reload_configuration,

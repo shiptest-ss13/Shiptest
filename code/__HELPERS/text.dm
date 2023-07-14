@@ -332,12 +332,21 @@ GLOBAL_LIST_INIT(binary, list("0","1"))
 /proc/random_short_color()
 	return random_string(3, GLOB.hex_characters)
 
+/proc/short_color_from_seed(seed)
+	return num2text(seed % 4095, 1, 16)
+
 /proc/random_color()
 	return random_string(6, GLOB.hex_characters)
 
 /proc/random_short_color_natural()	//For use in natural haircolors.
 	var red = num2text(rand(0,255), 1, 16)
 	var green = num2text(rand(0,128), 1, 16)	//Conversion to hex
+	var blue = "00"
+	return red + green + blue
+
+/proc/short_color_natural_from_seed(seed)
+	var red = num2text(seed % 255, 1, 16)
+	var green = num2text(seed % 128, 1, 16)	//Conversion to hex
 	var blue = "00"
 	return red + green + blue
 
@@ -848,6 +857,11 @@ GLOBAL_LIST_INIT(binary, list("0","1"))
 	var/start = findtext(text, ">")
 	var/end = findtext(text, "<", 2)
 	return strip_html(copytext_char(text, start, min(start + limit, end)))
+
+/// Removes all non-alphanumerics from the text, keep in mind this can lead to id conflicts
+/proc/sanitize_css_class_name(name)
+	var/static/regex/regex = new(@"[^a-zA-Z0-9]","g")
+	return replacetext(name, regex, "")
 
 /proc/shuffletext(string)
 	. = ""

@@ -24,6 +24,7 @@
 	idle_power_usage = 50
 	circuit = /obj/item/circuitboard/computer/slot_machine
 	light_color = LIGHT_COLOR_BROWN
+	unique_icon = TRUE
 	var/money = 3000 //How much money it has CONSUMED
 	var/plays = 0
 	var/working = 0

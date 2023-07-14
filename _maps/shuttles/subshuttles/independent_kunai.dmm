@@ -1,0 +1,625 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"aa" = (
+/obj/machinery/telecomms/allinone{
+	id = "Comm Server";
+	network = "KunaiComms"
+	},
+/obj/item/paper/crumpled{
+	info = "USE THE MULTITOOL TO FILTER YOUR RADIO FREQUENCY"
+	},
+/obj/item/multitool,
+/obj/effect/turf_decal/techfloor{
+	dir = 5
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/bridge)
+"ab" = (
+/obj/machinery/computer/helm{
+	dir = 8
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 6
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/bridge)
+"ac" = (
+/obj/docking_port/mobile{
+	dir = 4;
+	name = "hunter shuttle";
+	port_direction = 2;
+	preferred_direction = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "Interpolship";
+	name = "Bay Shutters";
+	dir = 4
+	},
+/turf/open/floor/plasteel/rockvault,
+/area/ship/storage)
+"ae" = (
+/obj/machinery/button/door{
+	id = "Interpolship";
+	pixel_y = 26
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/machinery/button/shieldwallgen{
+	pixel_y = 25;
+	pixel_x = 10;
+	id = "polshield"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/storage)
+"af" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/storage)
+"ah" = (
+/obj/machinery/power/terminal{
+	dir = 4
+	},
+/obj/machinery/power/port_gen/pacman,
+/obj/effect/turf_decal/box,
+/obj/item/stack/sheet/mineral/plasma/fifty,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/engine/hull/interior,
+/area/ship/storage)
+"aj" = (
+/obj/structure/closet/crate/eva,
+/obj/effect/turf_decal/box,
+/obj/machinery/light/directional/east,
+/obj/item/storage/toolbox/mechanical,
+/obj/item/storage/toolbox/electrical,
+/turf/open/floor/engine/hull/interior,
+/area/ship/storage)
+"ak" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/turf/open/floor/engine/hull/interior,
+/area/ship/storage)
+"al" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/caution{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/thinplating/dark/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/thinplating/dark/corner,
+/turf/open/floor/plasteel/dark,
+/area/ship/storage)
+"bz" = (
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/button/door{
+	dir = 4;
+	pixel_y = -8;
+	pixel_x = -25;
+	name = "window shutters";
+	id = "polwindow"
+	},
+/obj/machinery/button/door{
+	dir = 4;
+	pixel_y = 7;
+	pixel_x = -25;
+	name = "engine shutters";
+	id = "polengine"
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 9
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"bA" = (
+/obj/structure/cable,
+/obj/machinery/door/poddoor/shutters{
+	id = "Interpolship";
+	name = "Bay Shutters";
+	dir = 4
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	id = "polshield";
+	dir = 1
+	},
+/turf/open/floor/plasteel/rockvault,
+/area/ship/storage)
+"bG" = (
+/obj/effect/turf_decal/box,
+/turf/open/floor/engine/hull/interior,
+/area/ship/storage)
+"bY" = (
+/obj/structure/chair/comfy/shuttle,
+/turf/open/floor/engine/hull/interior,
+/area/ship/storage)
+"cF" = (
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/grille,
+/obj/machinery/door/poddoor{
+	id = "polwindow";
+	name = "Blast Shield";
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"fa" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/effect/turf_decal/industrial/caution{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/storage)
+"gi" = (
+/obj/structure/table,
+/obj/machinery/light/floor,
+/obj/item/radio/intercom/directional{
+	pixel_y = 2;
+	dir = 4;
+	pixel_x = 16
+	},
+/obj/item/radio/intercom/directional{
+	pixel_y = 2;
+	dir = 4;
+	pixel_x = 4
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"gs" = (
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/grille,
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external)
+"gA" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/storage)
+"hB" = (
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 4
+	},
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external)
+"hJ" = (
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/grille,
+/obj/machinery/door/poddoor{
+	id = "polwindow";
+	name = "Blast Shield"
+	},
+/turf/open/floor/plating,
+/area/ship/storage)
+"iR" = (
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/cable,
+/obj/machinery/power/smes/shuttle/precharged,
+/obj/machinery/door/poddoor/shutters{
+	id = "polengine";
+	name = "Engine Shutters"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/storage)
+"ku" = (
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/cable,
+/obj/machinery/power/smes/shuttle/precharged,
+/obj/machinery/door/poddoor/shutters{
+	id = "polengine"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/bridge)
+"kL" = (
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/window/reinforced,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/grille,
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external)
+"kM" = (
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/storage)
+"lp" = (
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/smes/engineering,
+/obj/effect/turf_decal/box,
+/obj/machinery/light/directional/east,
+/turf/open/floor/engine/hull/interior,
+/area/ship/storage)
+"nP" = (
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/grille,
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external)
+"qn" = (
+/obj/machinery/power/terminal,
+/obj/structure/cable,
+/obj/item/radio/intercom/wideband/directional/west,
+/obj/effect/turf_decal/techfloor{
+	dir = 10
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"rR" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/machinery/door/airlock/command{
+	name = "Bridge";
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"te" = (
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "Interpolship";
+	name = "Bay Shutters";
+	dir = 4
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	id = "polshield"
+	},
+/turf/open/floor/plasteel/rockvault,
+/area/ship/storage)
+"wg" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/storage)
+"zS" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/obj/machinery/light/small/directional/south,
+/turf/open/floor/engine/hull/interior,
+/area/ship/storage)
+"DP" = (
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/grille,
+/obj/machinery/door/poddoor{
+	id = "polwindow";
+	name = "Blast Shield"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"DW" = (
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/window/reinforced,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "polengine"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/bridge)
+"LK" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/siding/thinplating/dark/corner,
+/obj/effect/turf_decal/siding/thinplating/dark/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/thinplating/dark/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/thinplating/dark/corner{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/storage)
+"Or" = (
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "polengine"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/storage)
+"Pq" = (
+/turf/template_noop,
+/area/template_noop)
+"PD" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/bridge)
+"Rz" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"RO" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/storage)
+"SE" = (
+/obj/structure/chair/comfy/shuttle,
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/engine/hull/interior,
+/area/ship/storage)
+"Wx" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/bridge)
+"Yv" = (
+/obj/machinery/power/terminal,
+/obj/structure/cable,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/storage)
+"ZV" = (
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/window/reinforced,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external)
+
+(1,1,1) = {"
+Pq
+wg
+te
+ac
+bA
+wg
+Pq
+"}
+(2,1,1) = {"
+Pq
+wg
+ae
+al
+af
+wg
+Pq
+"}
+(3,1,1) = {"
+Pq
+wg
+bY
+RO
+ak
+wg
+Pq
+"}
+(4,1,1) = {"
+ZV
+gA
+SE
+RO
+zS
+gA
+hB
+"}
+(5,1,1) = {"
+nP
+iR
+kM
+LK
+Yv
+Or
+gs
+"}
+(6,1,1) = {"
+Pq
+hJ
+bG
+RO
+bG
+hJ
+Pq
+"}
+(7,1,1) = {"
+Pq
+hJ
+ah
+RO
+bG
+hJ
+Pq
+"}
+(8,1,1) = {"
+Pq
+wg
+lp
+fa
+aj
+wg
+Pq
+"}
+(9,1,1) = {"
+hB
+PD
+Wx
+rR
+Wx
+PD
+ZV
+"}
+(10,1,1) = {"
+nP
+ku
+bz
+Rz
+qn
+DW
+kL
+"}
+(11,1,1) = {"
+Pq
+DP
+aa
+gi
+ab
+DP
+Pq
+"}
+(12,1,1) = {"
+Pq
+Wx
+cF
+cF
+cF
+Wx
+Pq
+"}

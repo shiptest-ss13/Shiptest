@@ -158,29 +158,21 @@
 	build_path = /obj/item/organ/ears/cat
 	category = list("initial",SPECIES_HUMAN)
 
-/datum/design/dwarf_gland
-	name = "Dwarf Gland"
-	id = "dwarfgland"
+/datum/design/fox_tail
+	name = "Fox Tail"
+	id = "foxtail"
 	build_type = LIMBGROWER
-	reagents_list = list(/datum/reagent/medicine/synthflesh = 20, /datum/reagent/consumable/ethanol = 20)
-	build_path = /obj/item/organ/dwarfgland
-	category = list("initial",SPECIES_DWARF)
+	reagents_list = list(/datum/reagent/medicine/synthflesh = 20)
+	build_path = /obj/item/organ/tail/fox
+	category = list("initial",SPECIES_HUMAN)
 
-/datum/design/dwarf_liver
-	name = "Dwarf Liver"
-	id = "dwarfliver"
+/datum/design/fox_ears
+	name = "Fox Ears"
+	id = "foxears"
 	build_type = LIMBGROWER
-	reagents_list = list(/datum/reagent/medicine/synthflesh = 20, /datum/reagent/consumable/ethanol = 20)
-	build_path = /obj/item/organ/liver/dwarf
-	category = list("initial",SPECIES_DWARF)
-
-/datum/design/dwarf_tongue
-	name = "Dwarf Tongue"
-	id = "dwarftongue"
-	build_type = LIMBGROWER
-	reagents_list = list(/datum/reagent/medicine/synthflesh = 10, /datum/reagent/consumable/ethanol = 10)
-	build_path = /obj/item/organ/tongue/dwarf
-	category = list("initial",SPECIES_DWARF)
+	reagents_list = list(/datum/reagent/medicine/synthflesh = 10)
+	build_path = /obj/item/organ/ears/fox
+	category = list("initial",SPECIES_HUMAN)
 
 /datum/design/lizard_tongue
 	name = "Lizard Tongue"

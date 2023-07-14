@@ -2,8 +2,6 @@
 	name = "Atmospheric Technician"
 	total_positions = 3
 	spawn_positions = 2
-	exp_requirements = 60
-	exp_type = EXP_TYPE_CREW
 	wiki_page = "Guide_to_Atmospherics" //WS Edit - Wikilinks/Warning
 
 	outfit = /datum/outfit/job/atmos
@@ -75,3 +73,12 @@
 	suit = /obj/item/clothing/suit/toggle/hazard
 	head = /obj/item/clothing/head/hardhat
 	id = /obj/item/card/id/syndicate_command/crew_id
+
+/datum/outfit/job/atmos/frontiersmen
+	name = "Atmospheric Technician (Frontiersmen)"
+
+	uniform = /obj/item/clothing/under/rank/security/officer/frontier
+	suit = /obj/item/clothing/suit/hooded/wintercoat/engineering/atmos
+	head = /obj/item/clothing/head/hardhat
+	ears = /obj/item/radio/headset/pirate
+	mask = /obj/item/clothing/mask/gas/atmos

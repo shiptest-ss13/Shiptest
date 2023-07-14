@@ -34,9 +34,7 @@
 /area/ruin/unpowered)
 "bI" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/machinery/light/small/directional/north,
 /obj/effect/spawner/lootdrop/glowstick,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/treasure_cove)
@@ -84,9 +82,7 @@
 /turf/open/water/beach,
 /area/ruin/unpowered)
 "dE" = (
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -160,9 +156,7 @@
 /turf/open/floor/wood,
 /area/ruin/beach/treasure_cove)
 "fI" = (
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/concrete/slab_4,
 /area/ruin/beach/treasure_cove)
 "fR" = (
@@ -218,7 +212,7 @@
 	},
 /area/ruin/unpowered)
 "ie" = (
-/obj/structure/closet/crate/grave{
+/obj/structure/closet/crate/grave/loot{
 	desc = "Here lies our great brother and infamous pirate"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -471,7 +465,7 @@
 /area/ruin/unpowered)
 "qc" = (
 /obj/effect/decal/cleanable/cobweb,
-/obj/machinery/power/apc/auto_name/west,
+/obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -503,9 +497,7 @@
 	pixel_x = 9;
 	pixel_y = 3
 	},
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/carpet/red,
 /area/ruin/beach/treasure_cove)
 "qw" = (
@@ -695,9 +687,6 @@
 	pixel_x = 7;
 	pixel_y = 4
 	},
-/obj/machinery/light{
-	dir = 1
-	},
 /turf/open/floor/wood,
 /area/ruin/beach/treasure_cove)
 "uC" = (
@@ -767,9 +756,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
 	},
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/wood,
 /area/ruin/beach/treasure_cove)
 "xb" = (
@@ -785,9 +772,7 @@
 /obj/item/storage/toolbox/mechanical{
 	pixel_y = -6
 	},
-/obj/machinery/light/small{
-	dir = 8
-	},
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/treasure_cove)
 "xg" = (
@@ -946,6 +931,14 @@
 	},
 /turf/open/water/beach,
 /area/ruin/unpowered)
+"CZ" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/directional/north,
+/turf/open/floor/wood,
+/area/ruin/beach/treasure_cove)
 "Dz" = (
 /turf/open/floor/plating/grass/beach/lit,
 /area/ruin/unpowered)
@@ -1196,9 +1189,7 @@
 /mob/living/simple_animal/parrot{
 	faction = list("pirate")
 	},
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /obj/structure/sign/poster/contraband/syndiemoth{
 	pixel_x = 30
 	},
@@ -1273,9 +1264,7 @@
 /obj/item/trash/semki,
 /obj/item/trash/energybar,
 /obj/item/weldingtool,
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/plating/dirt/jungle/lit,
 /area/ruin/beach/treasure_cove)
 "RN" = (
@@ -1408,7 +1397,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/floor/wood,
 /area/ruin/beach/treasure_cove)
 "VF" = (
@@ -1427,9 +1416,7 @@
 /obj/structure/bed{
 	icon_state = "dirty_mattress"
 	},
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /obj/structure/sign/poster/contraband/punch_shit{
 	pixel_x = 32
 	},
@@ -1464,7 +1451,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/floor/wood,
 /area/ruin/beach/treasure_cove)
 "Xw" = (
@@ -1477,7 +1464,7 @@
 /area/ruin/beach/treasure_cove)
 "XE" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
-/obj/machinery/light/small,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/treasure_cove)
 "XO" = (
@@ -2145,7 +2132,7 @@ ww
 TF
 km
 pz
-xX
+CZ
 nD
 nD
 Nk

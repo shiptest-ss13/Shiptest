@@ -517,15 +517,15 @@
 
 /obj/structure/sign/poster/contraband/inteq_nt
 	name = "Inteq Recruitment"
-	desc = "Tired of your underpaying and abusive job at Nanotrasen? Join the IRMG Artificers! You won't get bullshit from us. Retrofit spacecraft and weaponry, field test weaponry, and higher pay."
+	desc = "Tired of your underpaying and abusive job at Nanotrasen? Join the IRMG Artificers! You won't get bullshit from us. Retrofit spacecraft and weaponry, field test weaponry, and earn higher pay!"
 	icon_state = "poster-inteq_poaching_nt"
 
 /obj/structure/sign/poster/contraband/inteq_gec
 	name = "Inteq Recruitment"
-	desc = "Tired of your boring union job at the GEC? Join the IRMG Artificers! You won't get bullshit from us. Retrofit spacecraft and weaponry, field test weaponry, and higher pay."
+	desc = "Tired of your boring union job at the GEC? Join the IRMG Artificers! You won't get bullshit from us. Retrofit spacecraft and weaponry, field test weaponry, and earn higher pay!"
 	icon_state = "poster-inteq_poaching_gec"
 
-/obj/structure/sign/poster/contraband/inteq_gec
+/obj/structure/sign/poster/contraband/winchester
 	name = "Winchester"
 	desc = "A poster advertising the Hunter's Pride Winchester lever action rifle and .38 Caliber bullets."
 	icon_state = "poster_winchester"
@@ -535,6 +535,16 @@
 	desc = "Eoehoma Firearms, the galaxy's favorite laser firearm manufacturer*. \n\
 	*DEFUNCT SINCE F.S. 450"
 	icon_state = "poster-eoehoma"
+
+/obj/structure/sign/poster/contraband/cardinal_fore_aft
+	name = "Captain Cardinal Fore and Aft"
+	desc = "Captain Cardinal would like to remind you that the front of the ship is fore, and the back of the ship is aft! Easy, right?"
+	icon_state = "poster-cardinal-1"
+
+/obj/structure/sign/poster/contraband/cardinal_port_starboard
+	name = "Captain Cardinal Port and Starbird"
+	desc = "Captain Cardinal would like to remind you that the left of the ship is port, and the right of the ship is starBIRD! Get it, right?"
+	icon_state = "poster-cardinal-2"
 
 //beginning of Nanotrasen approved posters. Expect corprate propaganda and motavation. You will usually only see this on Nanotrasen ships and stations
 /obj/structure/sign/poster/official
@@ -718,8 +728,8 @@
 
 /obj/structure/sign/poster/official/miners
 	name = "Nanotrasen Mining-Exploratory Corps Recruitment"
-	desc = "A poster recruiting more miners and explorers for new Nanotrasen holdings. It tells about how advanced Nanotrasen mining equipment is and the storied history of Nanotrasen."
-	icon_state = "poster-focus"
+	desc = "A poster recruiting more miners and explorers for new Nanotrasen holdings. It tells about how advanced Nanotrasen mining equipment and how it relates to the history of Nanotrasen."
+	icon_state = "posters-minersneeded"
 
 //Retro naontrasen posters. very inspired by the early apple logos and 70s-90s tech logos. Expect to see these on ancient Nanotrasen ships and stations, collectables, or callbacks to retro NT
 /obj/structure/sign/poster/retro

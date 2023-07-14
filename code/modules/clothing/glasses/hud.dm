@@ -6,7 +6,6 @@
 	///Used for topic calls. Just because you have a HUD display doesn't mean you should be able to interact with stuff.
 	var/hud_trait = null
 
-
 /obj/item/clothing/glasses/hud/equipped(mob/living/carbon/human/user, slot)
 	..()
 	if(slot != ITEM_SLOT_EYES)
@@ -247,7 +246,6 @@
 	desc = "A snazzy looking pair of ballistic goggles with an integrated security hud. The opaque visor provides flash protection."
 	icon_state = "inteq_goggles"
 	item_state = "inteq_goggles"
-	alternate_worn_layer = HEAD_LAYER
 
 /obj/item/clothing/glasses/hud/health/prescription
 	name = "prescription health scanner HUD"

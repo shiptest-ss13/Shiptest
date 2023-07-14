@@ -24,6 +24,7 @@
 	RegisterSignal(src, COMSIG_COMPONENT_CLEAN_FACE_ACT, .proc/clean_face)
 	AddComponent(/datum/component/personal_crafting)
 	AddComponent(/datum/component/footstep, FOOTSTEP_MOB_HUMAN, 1, -6)
+	AddComponent(/datum/component/bloodysoles/feet)
 	GLOB.human_list += src
 
 /mob/living/carbon/human/proc/setup_human_dna()
@@ -1427,9 +1428,6 @@
 /mob/living/carbon/human/species/shadow
 	race = /datum/species/shadow
 
-/mob/living/carbon/human/species/squid
-	race = /datum/species/squid
-
 /mob/living/carbon/human/species/shadow/nightmare
 	race = /datum/species/shadow/nightmare
 
@@ -1456,9 +1454,6 @@
 
 /mob/living/carbon/human/species/ipc
 	race = /datum/species/ipc
-
-/mob/living/carbon/human/species/squid
-	race = /datum/species/squid
 
 /mob/living/carbon/human/species/lizard/ashwalker/kobold
 	race = /datum/species/lizard/ashwalker/kobold

@@ -1,7 +1,7 @@
 /datum/overmap/outpost
 	name = "outpost"
 	char_rep = "T"
-	token_icon_state = "station"
+	token_icon_state = "station_0"
 
 	// The map template used for the outpost. If null, there will be no central area loaded.
 	// Set to an instance of the singleton for its type in New.

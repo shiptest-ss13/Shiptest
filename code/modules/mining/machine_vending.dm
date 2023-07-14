@@ -35,9 +35,8 @@
 		/obj/item/wormhole_jaunter = 3,
 		/obj/item/kinetic_crusher = 1,
 		/obj/item/gun/energy/kinetic_accelerator = 3,
-		/obj/item/pinpointer/deepcore = 5,		// WS edit - Deepcore
-		/obj/item/pinpointer/deepcore/advanced = 2,		// WS edit - Deepcore
-		/obj/item/deepcorecapsule = 3,		// WS edit - Deepcore
+		/obj/item/mining_scanner = 5,
+		/obj/item/t_scanner/adv_mining_scanner = 2,
 		/obj/item/resonator = 3,
 		/obj/item/extraction_pack = 3,
 		/obj/item/lazarus_injector = 1,
@@ -163,9 +162,8 @@
 		/obj/item/wormhole_jaunter = 3,
 		/obj/item/kinetic_crusher = 1,
 		/obj/item/gun/energy/kinetic_accelerator = 3,
-		/obj/item/pinpointer/deepcore = 5,
-		/obj/item/pinpointer/deepcore/advanced = 2,
-		/obj/item/deepcorecapsule = 3,
+		/obj/item/mining_scanner = 5,
+		/obj/item/t_scanner/adv_mining_scanner = 2,
 		/obj/item/resonator = 3,
 		/obj/item/extraction_pack = 3,
 		/obj/item/lazarus_injector = 1,
@@ -260,7 +258,7 @@
 
 /obj/item/storage/backpack/duffelbag/mining_conscript/PopulateContents()
 	new /obj/item/clothing/glasses/meson(src)
-	new /obj/item/pinpointer/deepcore(src)
+	new /obj/item/mining_scanner(src)
 	new /obj/item/storage/bag/ore(src)
 	new /obj/item/clothing/suit/hooded/explorer(src)
 	new /obj/item/clothing/mask/gas/explorer(src)

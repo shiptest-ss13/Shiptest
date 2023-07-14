@@ -112,6 +112,9 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/ship/proc/link_to_shuttle(obj/docking_port/mobile/M)
 	mobile_port = M
 
+/area/ship/connect_to_shuttle(obj/docking_port/mobile/M)
+	link_to_shuttle(M)
+
 /area/ship/virtual_z()
 	if(mobile_port)
 		return mobile_port.virtual_z()
@@ -342,6 +345,20 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 
 /area/ship/cargo/starboard
 	name = "Starboard Cargo Bay"
+
+/// Hangars ///
+
+/area/ship/hangar
+	name = "Hangar"
+	icon_state = "shuttlered"
+	sound_environment = SOUND_AREA_LARGE_ENCLOSED
+	ambientsounds = ENGINEERING
+
+/area/ship/hangar/port
+	name = "Port Hangar"
+
+/area/ship/hangar/starboard
+	name = "Starboard Hangar"
 
 /// Hallways ///
 /area/ship/hallway

@@ -83,7 +83,9 @@
 	)
 
 /datum/biome/lavaland
-	open_turf_types = list(/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit = 1)
+	open_turf_types = list(
+		/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit = 1
+	)
 	flora_spawn_chance = 1
 	flora_spawn_list = list(
 		/obj/structure/flora/ausbushes/ywflowers/hell = 10,
@@ -93,20 +95,26 @@
 		/obj/structure/flora/ash/puce = 5,
 	)
 	feature_spawn_chance = 0.3
-	feature_spawn_list = list(/obj/structure/flora/rock/hell = 5, /obj/structure/elite_tumor = 1, /obj/structure/geyser/random = 1)
+	feature_spawn_list = list(
+		/obj/structure/flora/rock/hell = 5,
+		/obj/structure/elite_tumor = 1,
+		/obj/structure/geyser/random = 1,
+		/obj/effect/spawner/lootdrop/anomaly/lava = 0.5
+
+	)
 	mob_spawn_chance = 4
 	mob_spawn_list = list(
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/random = 50,
-		/obj/structure/spawner/lavaland/goliath = 3,
 		/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/random = 40,
-		/obj/structure/spawner/lavaland = 3,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/random = 30,
-		/obj/structure/spawner/lavaland/legion = 3,
 		/mob/living/simple_animal/hostile/asteroid/goldgrub = 10,
 		/mob/living/simple_animal/hostile/asteroid/brimdemon = 20,
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/crystal = 1,
 		/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/forgotten = 1,
-		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/crystal = 1
+		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/crystal = 1,
+		/obj/structure/spawner/lavaland/low_threat = 12,
+		/obj/structure/spawner/lavaland/medium_threat = 4,
+		/obj/structure/spawner/lavaland/high_threat = 2,
 	)
 
 /datum/biome/lavaland/forest
@@ -131,7 +139,9 @@
 	flora_spawn_chance = 65
 
 /datum/biome/lavaland/plains
-	open_turf_types = list(/turf/open/floor/plating/grass/lava/purple = 30)
+	open_turf_types = list(
+		/turf/open/floor/plating/grass/lava/purple = 30
+	)
 
 	flora_spawn_list = list(
 		/obj/structure/flora/ausbushes/fullgrass/hell = 50,
@@ -144,19 +154,28 @@
 
 /datum/biome/lavaland/plains/dense
 	flora_spawn_chance = 85
-	open_turf_types = list(/turf/open/floor/plating/grass/lava = 50)
+	open_turf_types = list(
+		/turf/open/floor/plating/grass/lava = 50
+	)
 	feature_spawn_chance = 5
 	feature_spawn_list = list(
-		/obj/structure/flora/tree/dead/barren = 1,
-		/obj/structure/flora/tree/dead/tall/grey = 1,
+		/obj/structure/flora/tree/dead/barren = 50,
+		/obj/structure/flora/tree/dead/tall/grey = 45,
+		/obj/effect/spawner/lootdrop/anomaly/lava = 5
 	)
 
 /datum/biome/lavaland/plains/dense/mixed
 	flora_spawn_chance = 50
-	open_turf_types = list(/turf/open/floor/plating/grass/lava = 50, /turf/open/floor/plating/grass/lava/purple = 45, /turf/open/floor/plating/moss = 1)
+	open_turf_types = list(
+		/turf/open/floor/plating/grass/lava = 50,
+		/turf/open/floor/plating/grass/lava/purple = 45,
+		/turf/open/floor/plating/moss = 1
+	)
 
 /datum/biome/lavaland/outback
-	open_turf_types = list(/turf/open/floor/plating/grass/lava/orange = 20)
+	open_turf_types = list(
+		/turf/open/floor/plating/grass/lava/orange = 20
+	)
 
 	flora_spawn_list = list(
 		/obj/structure/flora/ausbushes/grassybush/hell = 10,
@@ -169,7 +188,10 @@
 	flora_spawn_chance = 30
 
 /datum/biome/lavaland/lush
-	open_turf_types = list(/turf/open/floor/plating/grass/lava/purple = 20, /turf/open/floor/plating/asteroid/basalt/purple/lit = 1)
+	open_turf_types = list(
+		/turf/open/floor/plating/grass/lava/purple = 20,
+		/turf/open/floor/plating/asteroid/basalt/purple/lit = 1
+	)
 	flora_spawn_list = list(
 		/obj/structure/flora/ash/fireblossom = 3,
 		/obj/structure/flora/tree/dead/hell = 1,
@@ -197,17 +219,22 @@
 	flora_spawn_chance = 4
 
 /datum/biome/cave/lavaland
-	open_turf_types = list(/turf/open/floor/plating/asteroid/basalt/lava_land_surface = 1)
-	closed_turf_types = list(/turf/closed/mineral/random/volcanic = 1)
+	open_turf_types = list(
+		/turf/open/floor/plating/asteroid/basalt/lava_land_surface = 1
+	)
+	closed_turf_types = list(
+		/turf/closed/mineral/random/volcanic = 1
+	)
 	mob_spawn_chance = 4
 	mob_spawn_list = list(
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/random = 50,
-		/obj/structure/spawner/lavaland/goliath = 3,
 		/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/random = 40,
-		/obj/structure/spawner/lavaland = 3,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/random = 30,
-		/obj/structure/spawner/lavaland/legion = 3,
-		/mob/living/simple_animal/hostile/asteroid/goldgrub = 10
+		/mob/living/simple_animal/hostile/asteroid/goldgrub = 10,
+		/obj/structure/spawner/lavaland/low_threat = 12,
+		/obj/structure/spawner/lavaland/medium_threat = 4,
+		/obj/structure/spawner/lavaland/high_threat = 2,
+		/obj/structure/spawner/lavaland/extreme_threat = 1
 	)
 	flora_spawn_chance = 1
 	flora_spawn_list = list(
