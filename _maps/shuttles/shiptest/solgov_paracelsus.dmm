@@ -1548,6 +1548,7 @@
 /area/ship/crew/cryo)
 "qM" = (
 /obj/structure/table/wood,
+/obj/machinery/recharger,
 /turf/open/floor/wood/yew,
 /area/ship/crew/crewthree)
 "qV" = (
@@ -1698,12 +1699,14 @@
 	},
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/drinks/mug/coco{
-	pixel_x = -6
+	pixel_x = -7;
+	pixel_y = -2
 	},
 /obj/item/spacecash/bundle/mediumrand{
 	pixel_x = 5;
 	pixel_y = 8
 	},
+/obj/machinery/recharger,
 /turf/open/floor/wood/mahogany,
 /area/ship/bridge)
 "sp" = (
@@ -2066,9 +2069,14 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "wR" = (
+/obj/item/clothing/gloves/color/latex/nitrile,
 /obj/structure/table/glass,
 /obj/machinery/door/window/southleft{
 	dir = 8
+	},
+/obj/item/clothing/gloves/color/latex/nitrile{
+	pixel_x = 4;
+	pixel_y = 5
 	},
 /obj/item/reagent_containers/glass/bottle/formaldehyde{
 	pixel_x = 8;
@@ -2223,6 +2231,7 @@
 /obj/item/storage/belt/medical{
 	pixel_x = -2
 	},
+/obj/machinery/cell_charger,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical/surgery)
 "yx" = (
