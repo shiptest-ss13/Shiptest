@@ -61,12 +61,11 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/light/directional/south,
 /obj/machinery/button/door{
 	dir = 1;
 	id = "coolingshutdown";
 	name = "Shutdown Cooling";
-	pixel_y = -25
+	pixel_y = -22
 	},
 /obj/machinery/atmospherics/components/binary/pump{
 	dir = 4
@@ -2560,6 +2559,16 @@
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
+"uM" = (
+/obj/machinery/atmospherics/pipe/simple/orange/visible{
+	dir = 4
+	},
+/obj/machinery/light_switch{
+	pixel_y = 21;
+	pixel_x = 7
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "uQ" = (
 /obj/effect/turf_decal/corner/opaque/yellow/border{
 	dir = 4
@@ -3694,6 +3703,15 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/medical)
+"Gh" = (
+/obj/effect/turf_decal/industrial/warning,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/cyan/visible,
+/obj/machinery/light/directional/south,
+/turf/open/floor/engine,
+/area/ship/engineering/engine)
 "Gi" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -4241,6 +4259,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible{
 	dir = 8
 	},
+/obj/machinery/light/broken/directional/north,
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "Lz" = (
@@ -5088,11 +5107,6 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/machinery/light_switch{
-	dir = 8;
-	pixel_x = 25;
-	pixel_y = 25
-	},
 /obj/structure/catwalk/over,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
@@ -5300,7 +5314,6 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/light/broken/directional/north,
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-4"
@@ -5984,7 +5997,7 @@ MV
 sK
 AG
 Jm
-yG
+uM
 yG
 we
 sD
@@ -6143,7 +6156,7 @@ Lv
 Yj
 fD
 MP
-mA
+Gh
 IV
 fg
 fz
