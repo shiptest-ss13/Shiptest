@@ -86,7 +86,8 @@
 	token_icon_state = "station_asteroid"
 	main_template = /datum/map_template/outpost/outpost_test_2
 	elevator_template = /datum/map_template/outpost/elevator_test
-	hangar_templates = list( // Using an (incomplete) second list of hangar templates. Note that the 56x40 hangar is the first skin.
+	// Using an (incomplete) second list of hangar templates. Note that the 56x40 hangar is the first skin.
+	hangar_templates = list(
 		/datum/map_template/outpost/hangar/test_2_20x20,
 		/datum/map_template/outpost/hangar/test_2_40x20,
 		/datum/map_template/outpost/hangar/test_2_40x40,
