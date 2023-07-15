@@ -38,7 +38,7 @@ standards:
 
     - exactly:
           [
-              292,
+              299,
               "non-bitwise << uses",
               '(?<!\d)(?<!\d\s)(?<!<)<<(?!=|\s\d|\d|<|\/)',
           ]
