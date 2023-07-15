@@ -153,7 +153,7 @@
 		/obj/item/mine/pressure/explosive/rusty/live = 1,
 		/obj/item/mine/proximity/explosive/live = 1,
 	)
-	feature_spawn_chance = 0.5
+	feature_spawn_chance = 1
 	feature_spawn_list = list(
 		/obj/structure/vein = 3,
 		/obj/structure/geyser/random = 2,

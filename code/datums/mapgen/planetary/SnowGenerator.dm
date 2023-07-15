@@ -110,7 +110,7 @@
 		/mob/living/simple_animal/hostile/asteroid/ice_whelp = 10,
 		/mob/living/simple_animal/hostile/asteroid/lobstrosity = 10,
 	)
-	feature_spawn_chance = 0.1
+	feature_spawn_chance = 0.2
 	feature_spawn_list = list(
 		/obj/effect/spawner/lootdrop/anomaly/ice = 12,
 		/obj/effect/spawner/lootdrop/anomaly/big = 1,
@@ -167,7 +167,7 @@
 	open_turf_types = list(
 		/turf/open/floor/plating/asteroid/snow/lit = 1
 	)
-	feature_spawn_chance = 0.1
+	feature_spawn_chance = 0.2
 	feature_spawn_list = list(
 		/obj/structure/spawner/burrow/ice_planet = 4,
 		/obj/structure/statue/snow/snowman = 3,
@@ -212,7 +212,7 @@
 		/mob/living/simple_animal/hostile/asteroid/ice_whelp = 5,
 		/mob/living/simple_animal/hostile/asteroid/lobstrosity = 5,
 	)
-	feature_spawn_chance = 0.3
+	feature_spawn_chance = 0.6
 	feature_spawn_list = list(
 		/obj/effect/spawner/lootdrop/anomaly/ice = 100,
 		/obj/effect/spawner/lootdrop/anomaly/big = 1,
@@ -267,7 +267,7 @@
 		/mob/living/simple_animal/hostile/asteroid/ice_whelp = 5,
 		/mob/living/simple_animal/hostile/asteroid/lobstrosity = 10,
 	)
-	feature_spawn_chance = 0.2
+	feature_spawn_chance = 0.4
 	feature_spawn_list = list(
 		/obj/structure/spawner/burrow/ice_planet = 60,
 		/obj/structure/spawner/burrow/ice_planet = 40,
@@ -320,7 +320,7 @@
 		/obj/structure/flora/ash/stem_shroom = 3,
 		/obj/item/mine/pressure/explosive/fire/live = 1,
 	)
-	feature_spawn_chance = 0.2
+	feature_spawn_chance = 0.4
 	feature_spawn_list = list(
 		/obj/effect/survey_point = 4
 	)

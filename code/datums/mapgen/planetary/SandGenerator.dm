@@ -89,7 +89,7 @@
 		/obj/structure/flora/ash/cap_shroom = 4 ,
 		/obj/structure/flora/ash/stem_shroom = 4 ,
 	)
-	feature_spawn_chance = 0.1
+	feature_spawn_chance = 0.2
 	feature_spawn_list = list(
 		/obj/structure/geyser/random = 8,
 		/obj/structure/vein = 8,

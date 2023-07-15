@@ -103,7 +103,7 @@
 		/obj/effect/spawner/lootdrop/chicken/jungle/flock = 1
 		)
 
-	feature_spawn_chance = 0.1
+	feature_spawn_chance = 0.3
 	feature_spawn_list = list(
 		/obj/effect/survey_point
 	)
@@ -151,14 +151,14 @@
 	flora_spawn_chance = 20
 	mob_spawn_chance = 0.05
 	mob_spawn_list = list(/mob/living/simple_animal/hostile/poison/giant_spider/tarantula = 1)
-	feature_spawn_chance = 0.1
+	feature_spawn_chance = 0.3
 	feature_spawn_list = list(
 		/obj/effect/survey_point
 	)
 
 /datum/biome/jungle_wasteland
 	open_turf_types = list(/turf/open/floor/plating/dirt/jungle/wasteland/lit = 1)
-	feature_spawn_chance = 0.1
+	feature_spawn_chance = 0.3
 	feature_spawn_list = list(
 		/obj/effect/survey_point
 	)
@@ -190,7 +190,7 @@
 		/mob/living/simple_animal/hostile/retaliate/bat = 1,
 		/mob/living/simple_animal/hostile/retaliate/poison/snake = 1
 	)
-	feature_spawn_chance = 0.5
+	feature_spawn_chance = 1
 	feature_spawn_list = list(
 		/obj/item/pickaxe/rusted = 1,
 		/obj/structure/spawner/burrow/jungle_planet = 1,
@@ -254,7 +254,7 @@
 	mob_spawn_list = list(
 		/mob/living/simple_animal/hostile/lightgeist = 1
 	)
-	feature_spawn_chance = 1
+	feature_spawn_chance = 2
 	feature_spawn_list = list(
 		/obj/item/rod_of_asclepius = 0.1,
 		/obj/effect/survey_point = 10

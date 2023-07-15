@@ -151,7 +151,7 @@
 	)
 
 	flora_spawn_chance = 25
-	feature_spawn_chance = 0.5
+	feature_spawn_chance = 1
 	mob_spawn_chance = 2
 
 /datum/biome/waste/crater
@@ -182,7 +182,7 @@
 
 /datum/biome/waste/clearing
 	flora_spawn_chance = 20
-	feature_spawn_chance = 2
+	feature_spawn_chance = 4
 
 /datum/biome/waste/clearing/mushroom
 	flora_spawn_list = list(
@@ -336,7 +336,7 @@
 	)
 
 	flora_spawn_chance = 30
-	feature_spawn_chance = 4
+	feature_spawn_chance = 8
 	mob_spawn_chance = 5
 
 /datum/biome/cave/waste/tar_bed //tar colorings here

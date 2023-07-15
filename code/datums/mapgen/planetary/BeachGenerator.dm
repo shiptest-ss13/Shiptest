@@ -113,7 +113,7 @@
 	)
 	mob_spawn_chance = 1
 
-	feature_spawn_chance = 1
+	feature_spawn_chance = 2
 	feature_spawn_list = list(
 		/obj/effect/survey_point
 	)
@@ -140,7 +140,7 @@
 		/obj/item/toy/seashell = 1,
 	)
 	flora_spawn_chance = 5
-	feature_spawn_chance = 1
+	feature_spawn_chance = 2
 	feature_spawn_list = list(
 		/obj/effect/survey_point
 	)
@@ -164,7 +164,7 @@
 		/obj/structure/flora/ash/garden/seaweed = 1
 	)
 	flora_spawn_chance = 1
-	feature_spawn_chance = 0.1
+	feature_spawn_chance = 0.2
 	feature_spawn_list = list(
 		/obj/effect/survey_point
 	)
@@ -182,7 +182,7 @@
 		/mob/living/simple_animal/hostile/bear/cave = 5,
 		/mob/living/simple_animal/hostile/asteroid/lobstrosity/beach = 1,
 	)
-	feature_spawn_chance = 1
+	feature_spawn_chance = 2
 	feature_spawn_list = list(
 		/obj/effect/survey_point
 	)
