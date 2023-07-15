@@ -184,6 +184,9 @@
 ///from base of atom/set_opacity(): (new_opacity)
 #define COMSIG_ATOM_SET_OPACITY "atom_set_opacity"
 
+/// from base of /atom/movable/proc/on_virtual_z_change():  (new_virtual_z, old_virtual_z)
+#define COMSIG_ATOM_VIRTUAL_Z_CHANGE "atom_virtual_z_change"
+
 //from base of atom/movable/on_enter_storage(): (datum/component/storage/concrete/master_storage)
 #define COMISG_STORAGE_ENTERED "storage_entered"
 //from base of atom/movable/on_exit_storage(): (datum/component/storage/concrete/master_storage)
