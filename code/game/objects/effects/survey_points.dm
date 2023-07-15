@@ -32,14 +32,14 @@
 		scangler.active = TRUE
 
 		if(do_after(user, scangler.survey_delay, TRUE))
-			flick(icon_state + "print", src)
+			flick(icon_state + "-print", item)
 			playsound(src, 'sound/machines/whirr_beep.ogg', 20)
 			user_turf.visible_message("<span class='notice'>Data recorded and enscribed to research packet.</span>")
 			scangler.active = FALSE
 			scangler.pack.deductcharge(scangler.usecost)
 			qdel(src)
 		else
-			flick(icon_state + "-corrupted", src)
+			flick(icon_state + "-corrupted", item)
 			playsound(src, 'sound/machines/buzz-sigh.ogg', 20)
 			user_turf.visible_message("<span class='warning'>Warning: Results corrupted. Attempt scan again.</span>")
 			scangler.active = FALSE

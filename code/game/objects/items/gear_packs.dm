@@ -98,6 +98,7 @@
 		if(!M.incapacitated() && istype(over_object, /atom/movable/screen/inventory/hand))
 			var/atom/movable/screen/inventory/hand/H = over_object
 			M.putItemFromInventoryInHandIfPossible(src, H.held_index)
+
 /obj/item/gear_pack/attackby(obj/item/W, mob/user, params)
 	if(W == attachment)
 		toggle_attachment()
@@ -141,13 +142,14 @@
 	var/mob/living/carbon/user = usr
 	if(on)
 		//Detach the attachment into the user's hands
+		playsound(src, 'sound/items/handling/multitool_pickup.ogg', 100)
 		if(!usr.put_in_hands(attachment))
 			on = FALSE
 			to_chat(user, "<span class='warning'>You need a free hand to hold the [attachment]!</span>")
 			update_power()
 			return
 	else
-		//Remove from their hands and back onto the defib unit
+		//Remove from their hands and back onto the gear pack
 		remove_attachment(user)
 
 	update_power()
@@ -268,6 +270,7 @@
 /obj/item/attachment/proc/snap_back()
 	if(!pack)
 		return
+	playsound()
 	pack.on = FALSE
 	forceMove(pack)
 	pack.update_power()
