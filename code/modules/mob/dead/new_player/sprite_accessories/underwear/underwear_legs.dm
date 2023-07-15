@@ -58,7 +58,7 @@
 
 /datum/sprite_accessory/underwear/swimming
 	name = "Swimming Panties (Greyscale)"
-	icon_state = "panties_swimming"
+	icon_state = "swimming"
 
 /datum/sprite_accessory/underwear/thong
 	name = "Thong (Greyscale)"
