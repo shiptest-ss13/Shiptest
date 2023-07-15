@@ -7,16 +7,16 @@
 	lefthand_file = 'icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/backpack_righthand.dmi'
 	attachment_type = /obj/item/attachment/survey_scanner
+	slowdown = 1
 	var/survey_mult = 1
 	var/survey_delay = 4 SECONDS
-
-
 
 /obj/item/gear_pack/survey_pack/advanced //can be purchased, is Expendy.
 	name = "Advanced Survey Pack"
 	desc = "A high hech piece of scientific kit designed for thorough planetary survey"
 	icon_state = "survey-adv"
 	survey_mult = 1.5
+	slowdown = 0.8
 
 /obj/item/gear_pack/survey_pack/advanced/nt
 	name = "Nanotrasen Survey Pack"
@@ -39,7 +39,7 @@
 	desc = "A wired tool designed to work in tandem with a survey pack"
 	w_class = WEIGHT_CLASS_BULKY
 	icon = 'icons/obj/item/survey_handheld.dmi'
-	icon_state = "survey"
+	icon_state = "survey_att"
 	lefthand_file = 'icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/backpack_righthand.dmi'
 	pack = /obj/item/gear_pack/survey_pack
@@ -167,11 +167,3 @@
 				continue
 			var/gas_concentration = environment.get_moles(id)/total_moles
 			to_chat(user, "<span class='alert'>[GLOB.gas_data.names[id]]: [round(gas_concentration*100, 0.01)] % ([round(environment.get_moles(id), 0.01)] mol)</span>")
-
-
-
-//no idea what this does or if it's even used
-/obj/structure/anomaly
-	name = "Defaultic Bind"
-	desc = "The truly unexpected anomaly. Let a coder know if you see this!"
-	max_integrity = 300

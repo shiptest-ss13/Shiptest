@@ -3,14 +3,11 @@
 	desc = "A location of particular survey value."
 	icon = 'icons/effects/landmarks_static.dmi'
 	icon_state = "x"
-
-
-
 	var/research_value
 
 /obj/effect/survey_point/Initialize()
 	. = ..()
-	research_value = rand(250, 1000)
+	research_value = rand(750, 2000)
 
 /obj/effect/survey_point/examine(mob/user)
 	. = ..()
@@ -48,7 +45,20 @@
 			scangler.active = FALSE
 			return
 
-		var/obj/item/result = new /obj/item/research_notes(null, research_value, pick(list("geographic", "soil composition", "atmospheric deviation", "planetary survey, ")))
+		var/obj/item/result = new /obj/item/research_notes(null, research_value, pick(list(
+			"geographic analysis",
+			"soil composition",
+			"atmospheric deviation",
+			"planetary survey".
+			"background radiation levels",
+			"watertable readings",
+			"biohazard potential"
+			"plasma density",
+			"ore vein potential",
+			"fauna protein analysis",
+			"fern probablity index",
+			"carcinization threshold",
+		))) //I should just make this a proper list
 
 		var/obj/item/research_notes/notes = locate() in get_turf(user)
 		if(notes)

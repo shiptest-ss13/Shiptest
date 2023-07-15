@@ -91,10 +91,18 @@
 
 /datum/supply_pack/exploration/scanners
 	name = "Survey Scanner Kit"
-	desc = "Contains two state of the art survey packs, great for getting information on planetary conditions."
-	cost = 2500
+	desc = "Contains a Survey Scanner, ideal for analyzing the surface of planets."
+	cost = 1250
 	contains = list(
 		/obj/item/gear_pack/survey_pack,
-		/obj/item/gear_pack/survey_pack,
+	)
+	crate_name = "Survey Scanner Kit"
+
+/datum/supply_pack/exploration/adv_scanner
+	name = "Advanced Survey Scanner Kit"
+	desc = "Contains a state of the art Survey Scanner"
+	cost = 2000
+	contains = list(
+		/obj/item/gear_pack/survey_pack/advanced,
 	)
 	crate_name = "Survey Scanner Kit"
