@@ -47,7 +47,7 @@
 	. = ..()
 
 /obj/item/reagent_containers/food/drinks/breakawayflask/vintage
-	var/datum/reagent/largest_reagent = reagents.get_master_reagent()
+	name = = "Vintange Saint-Roumain Trickwine"
 	desc = "Supposedly one of the first bottles made"
 
 /obj/item/reagent_containers/food/drinks/breakawayflask/vintage/ashwine
