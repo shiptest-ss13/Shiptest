@@ -8,10 +8,7 @@
 		catch(var/exception/placement_error)
 			Fail("Runtime error loading ship type ([map.name]): [placement_error] on [placement_error.file]:[placement_error.line]\n[placement_error.desc]")
 
-		try
-			qdel(ship)
-		catch(var/exception/deletion_error)
-			Fail("Runtime error deleting ship type ([map.name]): [deletion_error] on [deletion_error.file]:[deletion_error.line]\n[deletion_error.desc]")
+		qdel(ship)
 	SSair.is_test_loading = FALSE
 
 	var/list/errors = atmosscan(TRUE)
