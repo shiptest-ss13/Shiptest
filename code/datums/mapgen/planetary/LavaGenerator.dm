@@ -94,7 +94,7 @@
 		/obj/structure/flora/ash/fireblossom = 1,
 		/obj/structure/flora/ash/puce = 5,
 	)
-	feature_spawn_chance = 0.3
+	feature_spawn_chance = 0.6
 	feature_spawn_list = list(
 		/obj/effect/survey_point = 3,
 		/obj/structure/flora/rock/hell = 5,
@@ -158,7 +158,7 @@
 	open_turf_types = list(
 		/turf/open/floor/plating/grass/lava = 50
 	)
-	feature_spawn_chance = 5
+	feature_spawn_chance = 10
 	feature_spawn_list = list(
 		/obj/structure/flora/tree/dead/barren = 1,
 		/obj/structure/flora/tree/dead/tall/grey = 1,
@@ -248,7 +248,7 @@
 		/obj/structure/flora/ash/fern = 2,
 		/obj/structure/flora/ash/puce = 2
 	)
-	feature_spawn_chance = 1
+	feature_spawn_chance = 2
 	feature_spawn_list = list(
 		/obj/effect/survey_point = 1
 	)
@@ -276,5 +276,5 @@
 
 /datum/biome/cave/lavaland/lava
 	open_turf_types = list(/turf/open/lava/smooth/lava_land_surface = 1)
-	feature_spawn_chance = 1
+	feature_spawn_chance = 2
 	feature_spawn_list = list(/obj/structure/flora/rock/pile/lava = 1)

@@ -110,13 +110,13 @@
 		/mob/living/simple_animal/hostile/asteroid/ice_whelp = 10,
 		/mob/living/simple_animal/hostile/asteroid/lobstrosity = 10,
 	)
-	feature_spawn_chance = 0.1
+	feature_spawn_chance = 0.2
 	feature_spawn_list = list(
 		/obj/effect/survey_point = 50,
 		/obj/effect/spawner/lootdrop/anomaly/ice = 12,
 		/obj/effect/spawner/lootdrop/anomaly/big = 1,
 		/obj/structure/spawner/ice_moon/demonic_portal/low_threat = 25,
-		/obj/structure/spawner/ice_moon/demonic_portal/medium_threat = 50,
+		/obj/structure/spawner/ice_moon/demonic_portal/medium_threat = 25,
 		/obj/structure/spawner/ice_moon/demonic_portal/high_threat = 13
 	)
 
@@ -163,7 +163,7 @@
 	open_turf_types = list(
 		/turf/open/floor/plating/asteroid/snow/lit = 1
 	)
-	feature_spawn_chance = 0.1
+	feature_spawn_chance = 0.2
 	feature_spawn_list = list(
 		/obj/structure/spawner/ice_moon = 3,
 		/obj/structure/spawner/ice_moon/polarbear = 3,
@@ -207,7 +207,7 @@
 		/mob/living/simple_animal/hostile/asteroid/ice_whelp = 5,
 		/mob/living/simple_animal/hostile/asteroid/lobstrosity = 5,
 	)
-	feature_spawn_chance = 0.3
+	feature_spawn_chance = 0.6
 	feature_spawn_list = list(
 		/obj/effect/survey_point = 5,
 		/obj/effect/spawner/lootdrop/anomaly/ice = 1,
@@ -261,7 +261,7 @@
 		/mob/living/simple_animal/hostile/asteroid/ice_whelp = 5,
 		/mob/living/simple_animal/hostile/asteroid/lobstrosity = 10,
 	)
-	feature_spawn_chance = 0.2
+	feature_spawn_chance = 0.4
 	feature_spawn_list = list(
 		/obj/effect/survey_point = 4,
 		/obj/structure/spawner/ice_moon/demonic_portal/low_threat = 3,
@@ -313,7 +313,7 @@
 		/obj/structure/flora/ash/cap_shroom = 1,
 		/obj/structure/flora/ash/stem_shroom = 1,
 	)
-	feature_spawn_chance = 0.2
+	feature_spawn_chance = 0.4
 	feature_spawn_list = list(
 		/obj/effect/survey_point = 4,
 		/obj/structure/spawner/ice_moon/demonic_portal/low_threat = 3,
