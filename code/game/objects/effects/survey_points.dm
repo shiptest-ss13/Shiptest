@@ -52,12 +52,12 @@
 			"planetary survey",
 			"background radiation levels",
 			"watertable readings",
-			"biohazard potential"
+			"biohazard potential",
 			"plasma density",
 			"ore vein potential",
 			"fauna protein analysis",
 			"fern probablity index",
-			"carcinization threshold",
+			"carcinization threshold"
 		))) //I should just make this a proper list
 
 		var/obj/item/research_notes/notes = locate() in get_turf(user)
