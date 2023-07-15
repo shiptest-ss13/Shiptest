@@ -21,9 +21,9 @@
 /obj/item/gear_pack/survey_pack/advanced/nt
 	name = "Nanotrasen Survey Pack"
 	desc = "A large, high tech piece of Nanotrasen kit, designed for mining survey."
-	icon_state = "survey-adv"
+	icon_state = "survey-nt"
 	survey_mult = 1.6
-	survey_delay = 3
+	survey_delay = 3 SECONDS
 	slowdown = 0.5
 
 /obj/item/gear_pack/survey_pack/Experimental //these should never be purchasable or manufacturable, loot only.
@@ -55,7 +55,7 @@
 	. = ..()
 	survey_mult = pack?:survey_mult
 	survey_delay = pack?:survey_delay
-	return ..()
+	return
 
 /obj/item/attachment/survey_scanner/AltClick(mob/user) //The barometer function, previously on analyzers.
 	..()

@@ -71,11 +71,11 @@
 		icon_state = "paper_words"
 		return
 	else if(value >= 100)
-		name = "notes of [origin_type]"
+		name = "notes on [origin_type]"
 		icon_state = "paperslip_words"
 		return
 	else
-		name = "fragmentary data of [origin_type]"
+		name = "fragmentary data on [origin_type]"
 		icon_state = "scrap"
 		return
 
