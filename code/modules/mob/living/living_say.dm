@@ -335,6 +335,9 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	if(stuttering)
 		message = stutter(message)
 
+	if(slurring)
+			message = slur(message)
+
 	if(cultslurring)
 		message = cultslur(message)
 
