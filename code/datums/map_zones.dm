@@ -547,10 +547,10 @@
 	return get_alive_client_mobs() + get_dead_client_mobs()
 
 /datum/virtual_level/proc/get_alive_client_mobs()
-	return SSmobs.players_by_virtual_z[z_value] || list()
+	return LAZYACCESS(SSmobs.players_by_virtual_z, "[z_value]") || list()
 
 /datum/virtual_level/proc/get_dead_client_mobs()
-	return SSmobs.dead_players_by_virtual_z[z_value] || list()
+	return LAZYACCESS(SSmobs.dead_players_by_virtual_z, "[z_value]") || list()
 
 /datum/virtual_level/proc/get_mind_mobs()
 	. = list()

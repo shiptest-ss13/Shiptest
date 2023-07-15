@@ -571,7 +571,7 @@
 /mob/living/simple_animal/hostile/proc/ListTargetsLazy(virtual_z)//Step 1, find out what we can see
 	var/static/hostile_machines = typecacheof(list(/obj/machinery/porta_turret, /obj/mecha)) //WS - add spacepod
 	. = list()
-	for (var/mob/M as anything in SSmobs.players_by_virtual_z["[virtual_z]"])
+	for (var/mob/M as anything in LAZYACCESS(SSmobs.players_by_virtual_z, "[virtual_z]"))
 		if (get_dist(M, src) < vision_range)
 			if (isturf(M.loc))
 				. += M

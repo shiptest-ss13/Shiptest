@@ -73,10 +73,10 @@ falloff_distance - Distance at which falloff begins. Sound is at peak volume (in
 
 	else
 		if(above_turf && istransparentturf(above_turf))
-			listeners += SSmobs.players_by_virtual_z["[above_turf.virtual_z]"] || list()
+			listeners += LAZYACCESS(SSmobs.players_by_virtual_z, "[above_turf.virtual_z()]") || list()
 
 		if(below_turf && istransparentturf(turf_source))
-			listeners += SSmobs.players_by_virtual_z["[below_turf.virtual_z]]"] || list()
+			listeners += LAZYACCESS(SSmobs.players_by_virtual_z, "[below_turf.virtual_z()]") || list()
 
 	for(var/P in listeners)
 		var/mob/M = P
