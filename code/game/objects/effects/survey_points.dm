@@ -49,7 +49,7 @@
 			"geographic analysis",
 			"soil composition",
 			"atmospheric deviation",
-			"planetary survey".
+			"planetary survey",
 			"background radiation levels",
 			"watertable readings",
 			"biohazard potential"
