@@ -12,7 +12,10 @@
 	"map_path": "_maps/shuttles/shiptest/independent_pillbottle.dmm",
 	"limit":1,
 	"job_slots": {
-		"Prisoner": 10
+		"Prisoner": {
+			"outfit": "/datum/outfit/job/prisoner",
+			"slots": 10
+		}
 	},
 	"enabled": false
 }
