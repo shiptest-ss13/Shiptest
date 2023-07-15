@@ -66,3 +66,4 @@
 		else if(!user.put_in_hands(result) && istype(user.get_inactive_held_item(), /obj/item/research_notes))
 			var/obj/item/research_notes/research = user.get_inactive_held_item()
 			research.merge(result)
+	return
