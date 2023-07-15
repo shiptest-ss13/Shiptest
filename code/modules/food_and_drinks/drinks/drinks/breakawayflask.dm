@@ -2,6 +2,7 @@
 	name = "breakaway flask"
 	desc = "A special flask designed to stabilize trick wines and shatter violently on contact."
 	icon_state = "breakawayflask"
+	item_state = "breakawayflask"
 	gulp_size = 25
 	amount_per_transfer_from_this = 25
 	volume = 50
@@ -14,6 +15,9 @@
 	drop_sound = 'sound/items/handling/drinkglass_drop.ogg'
 	pickup_sound =  'sound/items/handling/drinkglass_pickup.ogg'
 	custom_price = 25
+	can_have_cap = TRUE
+	cap_icon_state = "baflask_cap"
+	cap_on = TRUE
 
 /obj/item/reagent_containers/food/drinks/breakawayflask/on_reagent_change(changetype)
 	cut_overlays()
@@ -38,27 +42,31 @@
 		desc = initial(src.desc)
 		return
 
-/obj/item/reagent_containers/food/drinks/breakawayflask/vintageash
+/obj/item/reagent_containers/food/drinks/breakawayflask/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
+	spillable = TRUE
+	. = ..()
+
+/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/ashwine
 	name = "Vintange Saint-Roumain Ashwine"
 	desc = "Supposedly one of the first bottles of ashwine made"
 	list_reagents = list(/datum/reagent/consumable/ethanol/ash_wine = 45, /datum/reagent/fuel/oil = 5)
 
-/obj/item/reagent_containers/food/drinks/breakawayflask/vintageice
+/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/icewine
 	name = "Vintange Saint-Roumain Icewine"
 	desc = "Supposedly one of the first bottles of icewine made"
 	list_reagents = list(/datum/reagent/consumable/ethanol/ice_wine = 45, /datum/reagent/consumable/ice = 5)
 
-/obj/item/reagent_containers/food/drinks/breakawayflask/vintageshock
+/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/shockwine
 	name = "Vintange Saint-Roumain Shockwine"
 	desc = "Supposedly one of the first bottles of shockwine made"
 	list_reagents = list(/datum/reagent/consumable/ethanol/shock_wine = 45, /datum/reagent/uranium = 5)
 
-/obj/item/reagent_containers/food/drinks/breakawayflask/vintagehearth
+/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/hearthwine
 	name = "Vintange Saint-Roumain Hearthwine"
 	desc = "Supposedly one of the first bottles of hearthwine made"
 	list_reagents = list(/datum/reagent/consumable/ethanol/hearth_wine = 45, /datum/reagent/fuel/oil = 5)
 
-/obj/item/reagent_containers/food/drinks/breakawayflask/vintageforce
+/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/forcewine
 	name = "Vintange Saint-Roumain Forcewine"
 	desc = "Supposedly one of the first bottles of forcewine made"
 	list_reagents = list(/datum/reagent/consumable/ethanol/force_wine = 45, /datum/reagent/uranium = 5)

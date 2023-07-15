@@ -106,20 +106,21 @@
 	. = 1
 
 /datum/reagent/consumable/ethanol/hearth_wine/expose_mob(mob/living/M, method=TOUCH, reac_volume)
-	if(!iscarbon(M))
-		reac_volume = reac_volume * 2
-	M.fire_act()
-	var/turf/T = get_turf(M)
-	T.IgniteTurf(reac_volume)
-	new /obj/effect/hotspot(T)
-	T.hotspot_expose((reac_volume*10),(reac_volume*1))
-	var/turf/otherT
-	for(var/direction in GLOB.cardinals)
-		reac_volume = reac_volume / 10
-		otherT = get_step(T, direction)
-		otherT.IgniteTurf(reac_volume)
-		new /obj/effect/hotspot(otherT)
-		otherT.hotspot_expose((reac_volume*10),(reac_volume*1))
+	if(method == TOUCH)
+		if(!iscarbon(M))
+			reac_volume = reac_volume * 2
+		M.fire_act()
+		var/turf/T = get_turf(M)
+		T.IgniteTurf(reac_volume)
+		new /obj/effect/hotspot(T)
+		T.hotspot_expose((reac_volume*10),(reac_volume*1))
+		var/turf/otherT
+		for(var/direction in GLOB.cardinals)
+			reac_volume = reac_volume / 10
+			otherT = get_step(T, direction)
+			otherT.IgniteTurf(reac_volume)
+			new /obj/effect/hotspot(otherT)
+			otherT.hotspot_expose((reac_volume*10),(reac_volume*1))
 
 /datum/reagent/consumable/ethanol/force_wine
 	name = "Force Wine"
@@ -143,13 +144,14 @@
 	..()
 
 /datum/reagent/consumable/ethanol/force_wine/expose_mob(mob/living/M, method=TOUCH, reac_volume)
-	var/turf/T = get_turf(M)
-	var/turf/otherT
-	reac_volume = reac_volume * 4
-	new /obj/effect/forcefield/resin(T, reac_volume)
-	for(var/direction in GLOB.cardinals)
-		otherT = get_step(T, direction)
-		new /obj/effect/forcefield/resin(otherT, reac_volume)
+	if(method == TOUCH)
+		var/turf/T = get_turf(M)
+		var/turf/otherT
+		reac_volume = reac_volume * 4
+		new /obj/effect/forcefield/resin(T, reac_volume)
+		for(var/direction in GLOB.cardinals)
+			otherT = get_step(T, direction)
+			new /obj/effect/forcefield/resin(otherT, reac_volume)
 
 /datum/reagent/consumable/ethanol/prism_wine
 	name = "Prism Wine"
