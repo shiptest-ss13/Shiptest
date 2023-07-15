@@ -367,7 +367,7 @@
 		else
 			flags_cover &= ~(HEADCOVERSMOUTH)
 		flags_inv &= ~visor_flags_inv
-	update_icon()
+	update_appearance()
 	playsound(src.loc, 'sound/mecha/mechmove03.ogg', 50, TRUE)
 	toggle_hardsuit_mode(user)
 	user.update_inv_head()
@@ -396,7 +396,7 @@
 				linkedsuit.flags_inv &= ~(HIDEGLOVES | HIDESHOES | HIDEJUMPSUIT)
 
 		linkedsuit.icon_state = "hardsuit[on]-[hardsuit_type]"
-		linkedsuit.update_icon()
+		linkedsuit.update_appearance()
 		user.update_inv_wear_suit()
 		user.update_inv_w_uniform()
 		user.update_equipment_speed_mods()
@@ -987,7 +987,7 @@
 		turn_on(user)
 	else
 		turn_off(user)
-	update_icon()
+	update_appearance()
 
 /obj/item/clothing/head/helmet/space/light/update_icon_state()
 	if(on)
@@ -1170,7 +1170,7 @@
 		flags_cover &= ~(HEADCOVERSEYES | HEADCOVERSMOUTH)
 		flags_inv &= ~visor_flags_inv
 		cold_protection &= ~HEAD
-	update_icon()
+	update_appearance()
 	playsound(src.loc, 'sound/mecha/mechmove03.ogg', 50, TRUE)
 	user.update_inv_head()
 	if(iscarbon(user))

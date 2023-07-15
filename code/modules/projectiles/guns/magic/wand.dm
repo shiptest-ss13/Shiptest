@@ -55,7 +55,7 @@
 		to_chat(user,"<span class='danger'>[src] overloads and disintegrates.</span>")
 		qdel(src)
 		return
-	update_icon()
+	update_appearance()
 
 /obj/item/gun/magic/wand/shoot_with_empty_chamber(mob/living/user)
 	if(prob(100*WAND_WREST_CHANCE))

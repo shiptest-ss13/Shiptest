@@ -46,7 +46,7 @@
 /obj/machinery/sleeper/Initialize(mapload)
 	. = ..()
 	occupant_typecache = GLOB.typecache_living
-	update_icon()
+	update_appearance()
 	if(mapload && starting_beakers)
 		chembag = new(src)
 		for(var/beaker in starting_beakers)

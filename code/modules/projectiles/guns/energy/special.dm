@@ -304,7 +304,7 @@
 /obj/item/gun/energy/printer/commando/attack_self(mob/living/user as mob)
 	if(ammo_type.len > 1)
 		tac_fire(user)
-		update_icon()
+		update_appearance()
 
 /obj/item/gun/energy/printer/commando/proc/tac_fire(mob/living/user)
 	select++
@@ -323,7 +323,7 @@
 			to_chat(user, "<span class='notice'>You rearm your [src] with CY-SOUR nonlethal rounds, which cause stamina damage and distrupt the focus of enemies.</span>")
 	chambered = null
 	recharge_newshot(TRUE)
-	update_icon()
+	update_appearance()
 	return
 
 /obj/item/gun/energy/temperature

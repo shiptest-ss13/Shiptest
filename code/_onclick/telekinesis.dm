@@ -91,7 +91,7 @@
 
 /obj/item/tk_grab/process()
 	if(check_if_focusable(focus)) //if somebody grabs your thing, no waiting for them to put it down and hitting them again.
-		update_icon()
+		update_appearance()
 
 /obj/item/tk_grab/dropped(mob/user)
 	if(focus && user && loc != user && loc != user.loc) // drop_item() gets called when you tk-attack a table/closet with an item
@@ -119,7 +119,7 @@
 		qdel(src)
 		return
 	focus.attack_self_tk(user)
-	update_icon()
+	update_appearance()
 
 /obj/item/tk_grab/afterattack(atom/target, mob/living/carbon/user, proximity, params)//TODO: go over this
 	. = ..()
@@ -134,7 +134,7 @@
 
 	if(target == focus)
 		target.attack_self_tk(user)
-		update_icon()
+		update_appearance()
 		return
 
 
@@ -148,7 +148,7 @@
 		apply_focus_overlay()
 		focus.throw_at(target, 10, 1,user)
 	user.changeNext_move(CLICK_CD_MELEE)
-	update_icon()
+	update_appearance()
 
 /proc/tkMaxRangeCheck(mob/user, atom/target)
 	var/d = get_dist(user, target)
@@ -164,7 +164,7 @@
 	if(!check_if_focusable(target))
 		return
 	focus = target
-	update_icon()
+	update_appearance()
 	apply_focus_overlay()
 	return TRUE
 

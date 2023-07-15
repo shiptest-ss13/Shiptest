@@ -14,11 +14,11 @@
 	GLOB.blob_cores += src
 	START_PROCESSING(SSobj, src)
 	GLOB.poi_list |= src
-	update_icon() //so it atleast appears
+	update_appearance() //so it atleast appears
 	if(!placed && !overmind)
 		return INITIALIZE_HINT_QDEL
 	if(overmind)
-		update_icon()
+		update_appearance()
 	. = ..()
 
 /obj/structure/blob/special/core/Destroy()
@@ -40,7 +40,7 @@
 	. += blob_overlay
 	. += mutable_appearance('icons/mob/blob.dmi', "blob_core_overlay")
 
-/obj/structure/blob/special/core/update_icon()
+/obj/structure/blob/special/core/update_appearance()
 	color = null
 	GLOB.poi_list -= src
 	return ..()

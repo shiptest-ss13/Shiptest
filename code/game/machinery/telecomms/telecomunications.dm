@@ -128,7 +128,7 @@ GLOBAL_LIST_EMPTY(telecomms_list)
 	update_power()
 
 	// Update the icon
-	update_icon()
+	update_appearance()
 
 	if(traffic > 0)
 		traffic -= netspeed

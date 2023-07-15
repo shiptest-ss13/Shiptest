@@ -43,7 +43,7 @@
 		bomb = null
 		name = initial(name)
 		desc = initial(desc)
-	update_icon()
+	update_appearance()
 	return ..()
 
 /obj/item/gun/blastcannon/update_icon_state()
@@ -63,7 +63,7 @@
 		bomb = T
 		name = "blast cannon"
 		desc = "A makeshift device used to concentrate a bomb's blast energy to a narrow wave."
-		update_icon()
+		update_appearance()
 		return TRUE
 	return ..()
 
@@ -92,7 +92,7 @@
 	var/power = bomb? calculate_bomb() : debug_power
 	power = min(power, max_power)
 	QDEL_NULL(bomb)
-	update_icon()
+	update_appearance()
 	var/heavy = power * 0.25
 	var/medium = power * 0.5
 	var/light = power

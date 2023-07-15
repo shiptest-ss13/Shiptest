@@ -55,7 +55,7 @@
 	token.icon_state = "meteor[rand(1, 4)]"
 	token.color = "#a08444"
 	token.light_color = "#a08444"
-	token.update_icon()
+	token.update_appearance()
 
 /datum/overmap/event/meteor/affect_ship(datum/overmap/ship/controlled/S)
 	spawn_meteor(meteor_types, S.shuttle_port.get_virtual_level(), 0)
@@ -95,7 +95,7 @@
 	token.icon_state = "ion[rand(1, 4)]"
 	token.color = "#7cb4d4"
 	token.light_color = "#7cb4d4"
-	token.update_icon()
+	token.update_appearance()
 
 /datum/overmap/event/emp/affect_ship(datum/overmap/ship/controlled/S)
 	var/area/source_area = pick(S.shuttle_port.shuttle_areas)
@@ -132,7 +132,7 @@
 	token.icon_state = "electrical[rand(1, 4)]"
 	token.color = "#e8e85c"
 	token.light_color = "#e8e85c"
-	token.update_icon()
+	token.update_appearance()
 
 /datum/overmap/event/electric/affect_ship(datum/overmap/ship/controlled/S)
 	var/datum/virtual_level/ship_vlevel = S.shuttle_port.get_virtual_level()
@@ -168,7 +168,7 @@
 	token.opacity = TRUE
 	token.color = "#c053f3"
 	token.light_color = "#c053f3"
-	token.update_icon()
+	token.update_appearance()
 
 /datum/overmap/event/wormhole
 	name = "wormhole"
@@ -190,7 +190,7 @@
 		other_wormhole = new(null, src) //Create a new wormhole at a random location
 	token.color = adjust_colors()
 	token.light_color = adjust_colors()
-	token.update_icon()
+	token.update_appearance()
 
 /datum/overmap/event/wormhole/affect_ship(datum/overmap/ship/controlled/S)
 	if(!other_wormhole)

@@ -117,7 +117,7 @@
 	pixel_x = base_pixel_x + rand(-9, 9)
 	pixel_y = base_pixel_y + rand(-8, 8)
 	pixel_x = base_pixel_x + rand(-9, 9)
-	update_icon()
+	update_appearance()
 
 /obj/item/paper/update_icon_state()
 	if((info || add_info) && show_written_words)
@@ -376,7 +376,7 @@
 			stampoverlay.pixel_y = rand(-3, 2)
 			add_overlay(stampoverlay)
 			LAZYADD(stamped, icon_state)
-			update_icon()
+			update_appearance()
 		return TRUE
 	else
 		to_chat(usr, pick("You try to stamp but you miss!", "There is no where else you can stamp!"))
@@ -422,7 +422,7 @@
 					update_static_data(usr,ui)
 
 
-			update_icon()
+			update_appearance()
 			. = TRUE
 
 /obj/item/paper/ui_host(mob/user)

@@ -97,7 +97,7 @@
 		beaker = new_beaker
 	else
 		beaker = null
-	update_icon()
+	update_appearance()
 	return TRUE
 
 /obj/machinery/clonepod/ui_interact(mob/user, datum/tgui/ui)
@@ -213,7 +213,7 @@
 			INVOKE_ASYNC(src, .proc/horrifyingsound)
 			mess = TRUE
 			icon_state = "pod_g"
-			update_icon()
+			update_appearance()
 			return NONE
 	attempting = TRUE //One at a time!!
 	countdown.start()

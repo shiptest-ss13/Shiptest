@@ -100,7 +100,7 @@
 		if("ChangeBetType")
 			chosen_bet_type = params["type"]
 			. = TRUE
-	update_icon() // Not applicable to all objects.
+	update_appearance() // Not applicable to all objects.
 
 ///Handles setting ownership and the betting itself.
 /obj/machinery/roulette/attackby(obj/item/W, mob/user, params)
@@ -183,7 +183,7 @@
 	my_card.registered_account.transfer_money(player_id.registered_account, bet_amount)
 
 	playing = TRUE
-	update_icon()
+	update_appearance()
 	set_light(0)
 
 	var/rolled_number = rand(0, 36)

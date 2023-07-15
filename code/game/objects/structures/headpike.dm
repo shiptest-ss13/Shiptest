@@ -16,7 +16,7 @@
 /obj/structure/headpike/CheckParts(list/parts_list)
 	..()
 	victim = locate(/obj/item/bodypart/head) in parts_list
-	update_icon()
+	update_appearance()
 	if(bonespear)
 		spear = locate(/obj/item/spear/bonespear) in parts_list
 	else

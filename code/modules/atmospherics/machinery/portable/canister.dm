@@ -168,7 +168,7 @@
 	timing = !timing
 	if(timing)
 		valve_timer = world.time + (timer_set * 10)
-	update_icon()
+	update_appearance()
 
 /obj/machinery/portable_atmospherics/canister/proto
 	name = "prototype canister"
@@ -200,7 +200,7 @@
 		air_contents.copy_from(existing_mixture)
 	else
 		create_gas()
-	update_icon()
+	update_appearance()
 
 
 /obj/machinery/portable_atmospherics/canister/proc/create_gas()
@@ -294,7 +294,7 @@
 	if(.)
 		if(close_valve)
 			valve_open = FALSE
-			update_icon()
+			update_appearance()
 			investigate_log("Valve was <b>closed</b> by [key_name(user)].", INVESTIGATE_ATMOS)
 		else if(valve_open && holding)
 			investigate_log("[key_name(user)] started a transfer into [holding].", INVESTIGATE_ATMOS)
@@ -315,7 +315,7 @@
 		if(air_contents.release_gas_to(target_air, release_pressure) && !holding)
 			air_update_turf()
 
-	update_icon()
+	update_appearance()
 
 /obj/machinery/portable_atmospherics/canister/ui_state(mob/user)
 	return GLOB.physical_state
@@ -460,4 +460,4 @@
 					investigate_log("[key_name(usr)] removed the [holding], leaving the valve open and transferring into the <span class='boldannounce'>air</span>.", INVESTIGATE_ATMOS)
 				replace_tank(usr, FALSE)
 				. = TRUE
-	update_icon()
+	update_appearance()

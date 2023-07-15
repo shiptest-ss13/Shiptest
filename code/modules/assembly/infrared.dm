@@ -42,7 +42,7 @@
 		return FALSE //Cooldown check
 	on = !on
 	refreshBeam()
-	update_icon()
+	update_appearance()
 	return TRUE
 
 /obj/item/assembly/infra/toggle_secure()
@@ -53,7 +53,7 @@
 	else
 		QDEL_LIST(beams)
 		STOP_PROCESSING(SSobj, src)
-	update_icon()
+	update_appearance()
 	return secured
 
 /obj/item/assembly/infra/update_appearance(updates=ALL)
@@ -212,7 +212,7 @@
 			visible = !visible
 			. = TRUE
 
-	update_icon()
+	update_appearance()
 	refreshBeam()
 
 /***************************IBeam*********************************/

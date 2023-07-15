@@ -51,12 +51,12 @@
 /obj/item/storage/fancy/Exited()
 	. = ..()
 	is_open = TRUE
-	update_icon()
+	update_appearance()
 
 /obj/item/storage/fancy/Entered()
 	. = ..()
 	is_open = TRUE
-	update_icon()
+	update_appearance()
 
 #define DONUT_INBOX_SPRITE_WIDTH 3
 
@@ -83,7 +83,7 @@
 
 /obj/item/storage/fancy/donut_box/PopulateContents()
 	. = ..()
-	update_icon()
+	update_appearance()
 
 /obj/item/storage/fancy/donut_box/update_icon_state()
 	. = ..()

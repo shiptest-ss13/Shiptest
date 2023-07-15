@@ -96,7 +96,7 @@
 
 /obj/item/assembly/proc/toggle_secure()
 	secured = !secured
-	update_icon()
+	update_appearance()
 	return secured
 
 /obj/item/assembly/attackby(obj/item/W, mob/user, params)

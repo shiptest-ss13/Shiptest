@@ -48,7 +48,7 @@
 
 /turf/open/space/transit/Initialize(mapload, inherited_virtual_z)
 	. = ..()
-	update_icon()
+	update_appearance()
 	for(var/atom/movable/AM in src)
 		AM.throw_atom_into_space()
 

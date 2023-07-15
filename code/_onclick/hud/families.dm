@@ -15,7 +15,7 @@
 	var/datum/game_mode/gang/F = SSticker.mode
 	level = F.wanted_level
 	cops_arrived = F.cops_arrived
-	update_icon()
+	update_appearance()
 
 /atom/movable/screen/wanted/MouseEntered(location,control,params)
 	. = ..()

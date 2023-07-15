@@ -9,7 +9,7 @@
 
 /obj/item/stack/arcadeticket/Initialize(mapload, new_amount, merge = TRUE)
 	. = ..()
-	update_icon()
+	update_appearance()
 
 /obj/item/stack/arcadeticket/update_icon_state()
 	. = ..()

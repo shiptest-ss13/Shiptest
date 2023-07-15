@@ -34,7 +34,7 @@
 	attach(A,user)
 	attach(A2,user)
 	name = "[A.name]-[A2.name] assembly"
-	update_icon()
+	update_appearance()
 	SSblackbox.record_feedback("tally", "assembly_made", 1, "[initial(A.name)]-[initial(A2.name)]")
 
 /obj/item/assembly_holder/proc/attach(obj/item/assembly/A, mob/user)

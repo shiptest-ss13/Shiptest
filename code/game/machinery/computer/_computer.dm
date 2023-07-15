@@ -116,7 +116,7 @@
 					to_chat(user, "<span class='notice'>You disconnect the monitor.</span>")
 				newframe.state = 4
 			circuit = null
-			newframe.update_icon()
+			newframe.update_appearance()
 		for(var/obj/internal_objects in src)
 			internal_objects.forceMove(loc)
 	qdel(src)

@@ -661,7 +661,7 @@
 
 /obj/item/storage/bottles/Initialize()
 	. = ..()
-	update_icon()
+	update_appearance()
 
 /obj/item/storage/bottles/ComponentInitialize()
 	. = ..()
@@ -697,7 +697,7 @@
 		sealed = FALSE
 		S.locked = FALSE
 		new /obj/item/stack/sheet/mineral/wood(get_turf(src), 1)
-		update_icon()
+		update_appearance()
 		return TRUE
 
 /obj/item/storage/bottles/sandblast

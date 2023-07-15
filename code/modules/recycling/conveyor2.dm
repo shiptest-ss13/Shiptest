@@ -46,7 +46,7 @@ GLOBAL_LIST_EMPTY(conveyors_by_id)
 	. = ..()
 	if(.)
 		operating = TRUE
-		update_icon()
+		update_appearance()
 		begin_processing()                                              //WS Edit - Auto Conveyor Fix (Issue #331)
 
 // create a conveyor
@@ -119,7 +119,7 @@ GLOBAL_LIST_EMPTY(conveyors_by_id)
 /obj/machinery/conveyor/proc/update()
 	if(machine_stat & BROKEN || !operable || machine_stat & NOPOWER)
 		operating = FALSE
-		update_icon()
+		update_appearance()
 		return FALSE
 	return TRUE
 
@@ -248,7 +248,7 @@ GLOBAL_LIST_EMPTY(conveyors_by_id)
 	. = ..()
 	if (newid)
 		id = newid
-	update_icon()
+	update_appearance()
 	LAZYADD(GLOB.conveyors_by_id[id], src)
 	wires = new /datum/wires/conveyor(src)
 
@@ -283,7 +283,7 @@ GLOBAL_LIST_EMPTY(conveyors_by_id)
 	for(var/obj/machinery/conveyor/C in GLOB.conveyors_by_id[id])
 		C.operating = position
 		C.update_move_direction()
-		C.update_icon()
+		C.update_appearance()
 		if(C.operating)
 			C.begin_processing()
 		else
@@ -295,7 +295,7 @@ GLOBAL_LIST_EMPTY(conveyors_by_id)
 	for(var/obj/machinery/conveyor_switch/S in GLOB.conveyors_by_id[id])
 		S.invert_icon = invert_icon
 		S.position = position
-		S.update_icon()
+		S.update_appearance()
 		CHECK_TICK
 
 /// Updates the switch's `position` and `last_pos` variable. Useful so that the switch can properly cycle between the forwards, backwards and neutral positions.
@@ -319,7 +319,7 @@ GLOBAL_LIST_EMPTY(conveyors_by_id)
 	add_fingerprint(user)
 	play_click_sound("switch")
 	update_position()
-	update_icon()
+	update_appearance()
 	update_linked_conveyors()
 	update_linked_switches()
 

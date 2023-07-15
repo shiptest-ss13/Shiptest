@@ -140,7 +140,7 @@
 	if(.)
 		reagents.maximum_volume = 0 //Makes them useless afterwards
 		reagents.flags = NONE
-		update_icon()
+		update_appearance()
 
 /obj/item/reagent_containers/hypospray/medipen/attack_self(mob/user)
 	if(user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
@@ -362,13 +362,13 @@
 /obj/item/hypospray/mkii/Initialize()
 	. = ..()
 	if(!spawnwithvial)
-		update_icon()
+		update_appearance()
 		return
 	if(start_vial)
 		vial = new start_vial
-	update_icon()
+	update_appearance()
 
-/obj/item/hypospray/mkii/update_icon()
+/obj/item/hypospray/mkii/update_appearance()
 	..()
 	icon_state = "[initial(icon_state)][vial ? "" : "-e"]"
 	if(ismob(loc))
@@ -391,7 +391,7 @@
 		user.put_in_hands(V)
 		to_chat(user, "<span class='notice'>You remove [vial] from [src].</span>")
 		vial = null
-		update_icon()
+		update_appearance()
 		playsound(loc, 'sound/weapons/empty.ogg', 50, 1)
 	else
 		to_chat(user, "<span class='notice'>This hypo isn't loaded!</span>")
@@ -412,7 +412,7 @@
 			return FALSE
 		vial = V
 		user.visible_message("<span class='notice'>[user] has loaded a vial into [src].</span>","<span class='notice'>You have loaded [vial] into [src].</span>")
-		update_icon()
+		update_appearance()
 		playsound(loc, 'sound/weapons/autoguninsert.ogg', 35, 1)
 		return TRUE
 	else

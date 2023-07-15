@@ -37,7 +37,7 @@
 		var/obj/item/stack/license_plates/empty/plate = I
 		plate.use(1)
 		current_plate = new plate.type(src, 1) //Spawn a new single sheet in the machine
-		update_icon()
+		update_appearance()
 	else
 		return ..()
 
@@ -50,12 +50,12 @@
 /obj/machinery/plate_press/proc/work_press(mob/living/user)
 
 	pressing = TRUE
-	update_icon()
+	update_appearance()
 	to_chat(user, "<span class='notice'>You start pressing a new license plate!</span>")
 
 	if(!do_after(user, 40, target = src))
 		pressing = FALSE
-		update_icon()
+		update_appearance()
 		return FALSE
 
 	use_power(100)
@@ -63,6 +63,6 @@
 
 	pressing = FALSE
 	QDEL_NULL(current_plate)
-	update_icon()
+	update_appearance()
 
 	new /obj/item/stack/license_plates/filled(drop_location(), 1)

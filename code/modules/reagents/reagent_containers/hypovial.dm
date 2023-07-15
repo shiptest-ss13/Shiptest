@@ -28,13 +28,13 @@
 		icon_state = "hypovial"
 	for(var/R in comes_with)
 		reagents.add_reagent(R,comes_with[R])
-	update_icon()
+	update_appearance()
 
 
 /obj/item/reagent_containers/glass/bottle/vial/on_reagent_change()
-	update_icon()
+	update_appearance()
 
-/obj/item/reagent_containers/glass/bottle/vial/update_icon()
+/obj/item/reagent_containers/glass/bottle/vial/update_appearance()
 	cut_overlays()
 	if(reagents.total_volume)
 		var/mutable_appearance/filling = mutable_appearance('icons/obj/reagentfillings.dmi', "hypovial10")
@@ -87,7 +87,7 @@
 						"large black hypovial" = "hypoviallarge-t"
 						)
 
-/obj/item/reagent_containers/glass/bottle/vial/large/update_icon()
+/obj/item/reagent_containers/glass/bottle/vial/large/update_appearance()
 	cut_overlays()
 	if(reagents.total_volume)
 		var/mutable_appearance/filling = mutable_appearance('icons/obj/reagentfillings.dmi', "hypoviallarge10")

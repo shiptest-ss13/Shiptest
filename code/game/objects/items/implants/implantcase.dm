@@ -41,9 +41,9 @@
 			I.imp.forceMove(src)
 			imp = I.imp
 			I.imp = null
-			update_icon()
+			update_appearance()
 			reagents = imp.reagents
-			I.update_icon()
+			I.update_appearance()
 		else
 			if(imp)
 				if(I.imp)
@@ -52,8 +52,8 @@
 				I.imp = imp
 				imp = null
 				reagents = null
-				update_icon()
-			I.update_icon()
+				update_appearance()
+			I.update_appearance()
 
 	else
 		return ..()
@@ -62,7 +62,7 @@
 	. = ..()
 	if(imp_type)
 		imp = new imp_type(src)
-	update_icon()
+	update_appearance()
 	reagents = imp.reagents
 
 

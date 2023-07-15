@@ -40,7 +40,7 @@
 	P.info += "Rank: [orderer_rank]<br/>"
 	P.info += "Comment: [reason]<br/>"
 
-	P.update_icon()
+	P.update_appearance()
 	return P
 
 /datum/supply_order/proc/generateManifest(obj/structure/closet/crate/C, owner, packname) //generates-the-manifests.
@@ -63,10 +63,10 @@
 	P.info += "</ul>"
 	P.info += "<h4>Stamp below to confirm receipt of goods:</h4>"
 
-	P.update_icon()
+	P.update_appearance()
 	P.forceMove(C)
 	C.manifest = P
-	C.update_icon()
+	C.update_appearance()
 
 	return P
 

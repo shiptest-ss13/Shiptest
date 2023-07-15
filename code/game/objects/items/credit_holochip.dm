@@ -12,7 +12,7 @@
 /obj/item/holochip/Initialize(mapload, amount)
 	. = ..()
 	credits = amount
-	update_icon()
+	update_appearance()
 
 /obj/item/holochip/examine(mob/user)
 	. = ..()
@@ -79,7 +79,7 @@
 		credits -= amount
 		if(credits == 0)
 			qdel(src)
-		update_icon()
+		update_appearance()
 		return amount
 	else if(pay_anyway)
 		qdel(src)
@@ -93,7 +93,7 @@
 		var/obj/item/holochip/H = I
 		credits += H.credits
 		to_chat(user, "<span class='notice'>You insert the credits into [src].</span>")
-		update_icon()
+		update_appearance()
 		qdel(H)
 
 /obj/item/holochip/AltClick(mob/user)

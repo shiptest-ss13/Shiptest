@@ -73,7 +73,7 @@
 			if(W.tool_behaviour == TOOL_WIRECUTTER)
 				W.play_tool_sound(src, 100)
 				d_state = SUPPORT_LINES
-				update_icon()
+				update_appearance()
 				to_chat(user, "<span class='notice'>You cut the outer grille.</span>")
 				return 1
 
@@ -84,14 +84,14 @@
 					if(!istype(src, /turf/closed/wall/r_wall) || d_state != SUPPORT_LINES)
 						return 1
 					d_state = COVER
-					update_icon()
+					update_appearance()
 					to_chat(user, "<span class='notice'>You unsecure the support lines.</span>")
 				return 1
 
 			else if(W.tool_behaviour == TOOL_WIRECUTTER)
 				W.play_tool_sound(src, 100)
 				d_state = INTACT
-				update_icon()
+				update_appearance()
 				to_chat(user, "<span class='notice'>You repair the outer grille.</span>")
 				return 1
 
@@ -104,7 +104,7 @@
 					if(!istype(src, /turf/closed/wall/r_wall) || d_state != COVER)
 						return 1
 					d_state = CUT_COVER
-					update_icon()
+					update_appearance()
 					to_chat(user, "<span class='notice'>You press firmly on the cover, dislodging it.</span>")
 				return 1
 
@@ -114,7 +114,7 @@
 					if(!istype(src, /turf/closed/wall/r_wall) || d_state != COVER)
 						return 1
 					d_state = SUPPORT_LINES
-					update_icon()
+					update_appearance()
 					to_chat(user, "<span class='notice'>The support lines have been secured.</span>")
 				return 1
 
@@ -125,7 +125,7 @@
 					if(!istype(src, /turf/closed/wall/r_wall) || d_state != CUT_COVER)
 						return 1
 					d_state = ANCHOR_BOLTS
-					update_icon()
+					update_appearance()
 					to_chat(user, "<span class='notice'>You pry off the cover.</span>")
 				return 1
 
@@ -137,7 +137,7 @@
 					if(!istype(src, /turf/closed/wall/r_wall) || d_state != CUT_COVER)
 						return TRUE
 					d_state = COVER
-					update_icon()
+					update_appearance()
 					to_chat(user, "<span class='notice'>The metal cover has been welded securely to the frame.</span>")
 				return 1
 
@@ -148,7 +148,7 @@
 					if(!istype(src, /turf/closed/wall/r_wall) || d_state != ANCHOR_BOLTS)
 						return 1
 					d_state = SUPPORT_RODS
-					update_icon()
+					update_appearance()
 					to_chat(user, "<span class='notice'>You remove the bolts anchoring the support rods.</span>")
 				return 1
 
@@ -158,7 +158,7 @@
 					if(!istype(src, /turf/closed/wall/r_wall) || d_state != ANCHOR_BOLTS)
 						return 1
 					d_state = CUT_COVER
-					update_icon()
+					update_appearance()
 					to_chat(user, "<span class='notice'>The metal cover has been pried back into place.</span>")
 				return 1
 
@@ -171,7 +171,7 @@
 					if(!istype(src, /turf/closed/wall/r_wall) || d_state != SUPPORT_RODS)
 						return 1
 					d_state = SHEATH
-					update_icon()
+					update_appearance()
 					to_chat(user, "<span class='notice'>You slice through the support rods.</span>")
 				return 1
 
@@ -182,7 +182,7 @@
 					if(!istype(src, /turf/closed/wall/r_wall) || d_state != SUPPORT_RODS)
 						return 1
 					d_state = ANCHOR_BOLTS
-					update_icon()
+					update_appearance()
 					to_chat(user, "<span class='notice'>You tighten the bolts anchoring the support rods.</span>")
 				return 1
 
@@ -204,7 +204,7 @@
 					if(!istype(src, /turf/closed/wall/r_wall) || d_state != SHEATH)
 						return TRUE
 					d_state = SUPPORT_RODS
-					update_icon()
+					update_appearance()
 					to_chat(user, "<span class='notice'>You weld the support rods back together.</span>")
 				return 1
 	return 0

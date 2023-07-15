@@ -30,7 +30,7 @@
 			overmind.blobs_legit += src
 	GLOB.blobs += src //Keep track of the blob in the normal list either way
 	setDir(pick(GLOB.cardinals))
-	update_icon()
+	update_appearance()
 	if(atmosblock)
 		air_update_turf(1)
 	ConsumeTile()
@@ -93,7 +93,7 @@
 		var/obj/structure/blob/B = L
 		if(!B.overmind && !istype(B, /obj/structure/blob/core) && prob(30))
 			B.overmind = pulsing_overmind //reclaim unclaimed, non-core blobs.
-			B.update_icon()
+			B.update_appearance()
 		var/distance = get_dist(get_turf(src), get_turf(B))
 		var/expand_probablity = max(20 - distance * 8, 1)
 		if(B.Adjacent(src))
@@ -117,7 +117,7 @@
 		if(heal_timestamp <= world.time)
 			obj_integrity = min(max_integrity, obj_integrity+health_regen)
 			heal_timestamp = world.time + 20
-		update_icon()
+		update_appearance()
 		pulse_timestamp = world.time + 10
 		return 1 //we did it, we were pulsed!
 	return 0 //oh no we failed
@@ -175,7 +175,7 @@
 		if(T.Enter(B,src)) //NOW we can attempt to move into the tile
 			B.density = initial(B.density)
 			B.forceMove(T)
-			B.update_icon()
+			B.update_appearance()
 			if(B.overmind && expand_reaction)
 				B.overmind.blobstrain.expand_reaction(src, B, T, controller)
 			return B
@@ -280,7 +280,7 @@
 /obj/structure/blob/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, attack_dir)
 	. = ..()
 	if(. && obj_integrity > 0)
-		update_icon()
+		update_appearance()
 
 /obj/structure/blob/obj_destruction(damage_flag)
 	if(overmind)
@@ -292,7 +292,7 @@
 		CRASH("change_to(): invalid type for blob")
 	var/obj/structure/blob/B = new type(src.loc, controller)
 	B.creation_action()
-	B.update_icon()
+	B.update_appearance()
 	B.setDir(dir)
 	qdel(src)
 	return B

@@ -85,7 +85,7 @@
 	if(mapload && prob(3) && !start_active)
 		toggle_cam()
 	else //this is handled by toggle_camera, so no need to update it twice.
-		update_icon()
+		update_appearance()
 
 /obj/machinery/camera/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
 	for(var/i in network)
@@ -138,13 +138,13 @@
 		return
 	if(!(. & EMP_PROTECT_SELF))
 		if(prob(150/severity))
-			update_icon()
+			update_appearance()
 			network = list()
 			GLOB.cameranet.removeCamera(src)
 			set_machine_stat(machine_stat | EMPED)
 			set_light(0)
 			emped = emped+1  //Increase the number of consecutive EMP's
-			update_icon()
+			update_appearance()
 			addtimer(CALLBACK(src, .proc/post_emp_reset, emped, network), 90 SECONDS)
 			for(var/i in GLOB.player_list)
 				var/mob/M = i
@@ -161,7 +161,7 @@
 		return
 	network = previous_network
 	set_machine_stat(machine_stat & ~EMPED)
-	update_icon()
+	update_appearance()
 	if(can_use())
 		GLOB.cameranet.addCamera(src)
 	emped = 0 //Resets the consecutive EMP count
@@ -193,7 +193,7 @@
 	panel_open = !panel_open
 	to_chat(user, "<span class='notice'>You screw the camera's panel [panel_open ? "open" : "closed"].</span>")
 	I.play_tool_sound(src)
-	update_icon()
+	update_appearance()
 	return TRUE
 
 /obj/machinery/camera/crowbar_act(mob/living/user, obj/item/I)

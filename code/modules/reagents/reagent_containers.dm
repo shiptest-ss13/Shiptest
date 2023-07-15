@@ -60,7 +60,7 @@
 		cap_on = FALSE
 		spillable = TRUE
 
-	update_icon()
+	update_appearance()
 
 /obj/item/reagent_containers/examine(mob/user)
 	. = ..()
@@ -254,7 +254,7 @@
 	return ..()
 
 /obj/item/reagent_containers/on_reagent_change(changetype)
-	update_icon()
+	update_appearance()
 
 /obj/item/reagent_containers/update_overlays()
 	. = ..()

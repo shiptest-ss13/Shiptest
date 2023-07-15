@@ -325,7 +325,7 @@
 
 /obj/item/reagent_containers/glass/bowl/on_reagent_change(changetype)
 	..()
-	update_icon()
+	update_appearance()
 
 /obj/item/reagent_containers/glass/bowl/update_icon_state()
 	if(!reagents || !reagents.total_volume)

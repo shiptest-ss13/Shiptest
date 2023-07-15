@@ -206,4 +206,4 @@ GLOBAL_LIST_INIT(food_reagents, build_reagents_to_food()) //reagentid = related 
 			dat += " above [recipe.required_temp] degrees"
 	dat += "."
 	info = dat.Join("")
-	update_icon()
+	update_appearance()

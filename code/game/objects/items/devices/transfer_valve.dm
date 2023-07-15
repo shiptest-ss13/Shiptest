@@ -36,7 +36,7 @@
 			tank_two = item
 			to_chat(user, "<span class='notice'>You attach the tank to the transfer valve.</span>")
 
-		update_icon()
+		update_appearance()
 //TODO: Have this take an assemblyholder
 	else if(isassembly(item))
 		var/obj/item/assembly/A = item
@@ -52,7 +52,7 @@
 		to_chat(user, "<span class='notice'>You attach the [item] to the valve controls and secure it.</span>")
 		A.on_attach()
 		A.holder = src
-		A.toggle_secure()	//this calls update_icon(), which calls update_icon() on the holder (i.e. the bomb).
+		A.toggle_secure()	//this calls update_appearance(), which calls update_appearance() on the holder (i.e. the bomb).
 		log_bomber(user, "attached a [item.name] to a ttv -", src, null, FALSE)
 		attacher = user
 	return
@@ -174,12 +174,12 @@
 
 		merge_gases()
 		for(var/i in 1 to 6)
-			addtimer(CALLBACK(src, /atom/.proc/update_icon), 20 + (i - 1) * 10)
+			addtimer(CALLBACK(src, /atom/.proc/update_appearance), 20 + (i - 1) * 10)
 
 	else if(valve_open && tank_one && tank_two)
 		split_gases()
 		valve_open = FALSE
-		update_icon()
+		update_appearance()
 /*
 	This doesn't do anything but the timer etc. expects it to be here
 	eventually maybe have it update icon to show state (timer, prox etc.) like old bombs
@@ -237,4 +237,4 @@
 				attached_device = null
 				. = TRUE
 
-	update_icon()
+	update_appearance()

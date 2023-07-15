@@ -7,7 +7,7 @@
 	var/charge_sections = 3
 
 	var/shaded_charge = FALSE //if this gun uses a stateful charge bar for more detail
-	var/automatic_charge_overlays = TRUE	//Do we handle overlays with base update_icon()?
+	var/automatic_charge_overlays = TRUE	//Do we handle overlays with base update_appearance()?
 
 	var/internal_cell = FALSE ///if the gun's cell cannot be replaced
 	var/small_gun = FALSE ///if the gun is small and can only fit the small gun cell
@@ -22,7 +22,7 @@
 		cell = new cell_type(src)
 	else
 		cell = new(src)
-	update_icon()
+	update_appearance()
 
 /obj/item/gun/ballistic/automatic/powered/examine(mob/user)
 	. = ..()
@@ -73,7 +73,7 @@
 		cell = C
 		to_chat(user, "<span class='notice'>You load [C] into [src].</span>")
 		playsound(src, load_sound, sound_volume, load_sound_vary)
-		update_icon()
+		update_appearance()
 		return TRUE
 	else
 		to_chat(user, "<span class='warning'>You cannot seem to get [src] out of your hands!</span>")
@@ -85,9 +85,9 @@
 	var/obj/item/stock_parts/cell/gun/old_cell = cell
 	cell = null
 	user.put_in_hands(old_cell)
-	old_cell.update_icon()
+	old_cell.update_appearance()
 	to_chat(user, "<span class='notice'>You pull the cell out of \the [src].</span>")
-	update_icon()
+	update_appearance()
 
 /obj/item/gun/ballistic/automatic/powered/screwdriver_act(mob/living/user, obj/item/I)
 	if(cell && !internal_cell && !bayonet && (!gun_light || !can_flashlight))

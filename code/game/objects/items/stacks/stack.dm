@@ -72,7 +72,7 @@
 					var/list/temp = SSmaterials.rigid_stack_recipes.Copy()
 					recipes += temp
 	update_weight()
-	update_icon()
+	update_appearance()
 
 	var/static/list/loc_connections = list(
 		COMSIG_ATOM_ENTERED = .proc/on_movable_entered_occupied_turf,
@@ -334,7 +334,7 @@
 		return TRUE
 	for(var/i in mats_per_unit)
 		custom_materials[i] = amount * mats_per_unit[i]
-	update_icon()
+	update_appearance()
 	update_weight()
 	return TRUE
 
@@ -376,7 +376,7 @@
 		for(var/i in mats_per_unit)
 			custom_materials[i] = mats_per_unit[i] * src.amount
 		set_custom_materials() //Refresh
-	update_icon()
+	update_appearance()
 	update_weight()
 
 /** Checks whether this stack can merge itself into another stack.

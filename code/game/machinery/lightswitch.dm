@@ -57,10 +57,10 @@
 
 	area.lightswitch = !area.lightswitch
 	play_click_sound("button")
-	area.update_icon()
+	area.update_appearance()
 
 	for(var/obj/machinery/light_switch/L in area)
-		L.update_icon()
+		L.update_appearance()
 
 	area.power_change()
 

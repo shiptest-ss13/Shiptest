@@ -126,7 +126,7 @@ GLOBAL_LIST_EMPTY(bodycontainers) //Let them act as spawnpoints for revenants an
 		connected.setDir(dir)
 	for(var/atom/movable/AM as anything in src)
 		AM.forceMove(T)
-	update_icon()
+	update_appearance()
 
 /obj/structure/bodycontainer/proc/close()
 	playsound(src, 'sound/effects/roll.ogg', 5, TRUE)
@@ -137,7 +137,7 @@ GLOBAL_LIST_EMPTY(bodycontainers) //Let them act as spawnpoints for revenants an
 				continue
 			AM.forceMove(src)
 	recursive_organ_check(src)
-	update_icon()
+	update_appearance()
 
 /obj/structure/bodycontainer/get_remote_view_fullscreens(mob/user)
 	if(user.stat == DEAD || !(user.sight & (SEEOBJS|SEEMOBS)))
@@ -261,7 +261,7 @@ GLOBAL_LIST_EMPTY(crematoriums)
 		audible_message("<span class='hear'>You hear a roar as the crematorium activates.</span>")
 
 		locked = TRUE
-		update_icon()
+		update_appearance()
 
 		for(var/mob/living/M in conts)
 			if (M.stat != DEAD)
@@ -286,7 +286,7 @@ GLOBAL_LIST_EMPTY(crematoriums)
 
 		if(!QDELETED(src))
 			locked = FALSE
-			update_icon()
+			update_appearance()
 			playsound(src.loc, 'sound/machines/ding.ogg', 50, TRUE) //you horrible people
 
 /obj/structure/bodycontainer/crematorium/creamatorium
@@ -320,7 +320,7 @@ GLOBAL_LIST_EMPTY(crematoriums)
 /obj/structure/tray/Destroy()
 	if(connected)
 		connected.connected = null
-		connected.update_icon()
+		connected.update_appearance()
 		connected = null
 	return ..()
 

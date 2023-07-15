@@ -49,14 +49,14 @@
 
 /turf/open/floor/light/Initialize(mapload, inherited_virtual_z)
 	. = ..()
-	update_icon()
+	update_appearance()
 	if(!length(lighttile_designs))
 		populate_lighttile_designs()
 
 /turf/open/floor/light/break_tile()
 	..()
 	state = pick(LIGHTFLOOR_FLICKER, LIGHTFLOOR_BREAKING, LIGHTFLOOR_BROKEN)/// pick a broken state
-	update_icon()
+	update_appearance()
 
 /turf/open/floor/light/update_appearance(updates)
 	. = ..()
@@ -103,7 +103,7 @@
 	if(!can_modify_colour)
 		return
 	on = !on
-	update_icon()
+	update_appearance()
 
 /turf/open/floor/light/multitool_act(mob/living/user, obj/item/I)
 	. = ..()
@@ -115,7 +115,7 @@
 	if(!choice)
 		return FALSE
 	currentcolor = choice
-	update_icon()
+	update_appearance()
 
 /turf/open/floor/light/attackby(obj/item/C, mob/user, params)
 	if(..())
@@ -128,7 +128,7 @@
 		if(state && user.temporarilyRemoveItemFromInventory(C))
 			qdel(C)
 			state = LIGHTFLOOR_FINE //fixing it by bashing it with a light bulb, fun eh?
-			update_icon()
+			update_appearance()
 			to_chat(user, "<span class='notice'>You replace the light bulb.</span>")
 		else
 			to_chat(user, "<span class='notice'>The light bulb seems fine, no need to replace it.</span>")
@@ -143,7 +143,7 @@
 	if(prob(50))
 		state++
 	currentcolor = pick(coloredlights)
-	update_icon()
+	update_appearance()
 
 //Cycles through all of the colours
 /turf/open/floor/light/colour_cycle

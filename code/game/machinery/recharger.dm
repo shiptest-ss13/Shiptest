@@ -49,11 +49,11 @@
 		START_PROCESSING(SSmachines, src)
 		use_power = ACTIVE_POWER_USE
 		using_power = TRUE
-		update_icon()
+		update_appearance()
 	else
 		use_power = IDLE_POWER_USE
 		using_power = FALSE
-		update_icon()
+		update_appearance()
 
 /obj/machinery/recharger/attackby(obj/item/G, mob/user, params)
 	if(G.tool_behaviour == TOOL_WRENCH)
@@ -110,14 +110,14 @@
 
 	add_fingerprint(user)
 	if(charging)
-		charging.update_icon()
+		charging.update_appearance()
 		charging.forceMove(drop_location())
 		user.put_in_hands(charging)
 		setCharging(null)
 
 /obj/machinery/recharger/attack_tk(mob/user)
 	if(charging)
-		charging.update_icon()
+		charging.update_appearance()
 		charging.forceMove(drop_location())
 		setCharging(null)
 
@@ -133,7 +133,7 @@
 				C.give(C.chargerate * recharge_coeff)
 				use_power(250 * recharge_coeff)
 				using_power = TRUE
-			update_icon()
+			update_appearance()
 
 		if(istype(charging, /obj/item/ammo_box/magazine/recharge))
 			var/obj/item/ammo_box/magazine/recharge/R = charging
@@ -141,7 +141,7 @@
 				R.stored_ammo += new R.ammo_type(R)
 				use_power(200 * recharge_coeff)
 				using_power = TRUE
-			update_icon()
+			update_appearance()
 			return
 	else
 		return PROCESS_KILL

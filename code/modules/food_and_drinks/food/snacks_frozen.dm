@@ -229,7 +229,7 @@
 
 /obj/item/reagent_containers/food/snacks/popsicle/On_Consume(mob/living/eater)
 	. = ..()
-	update_icon()
+	update_appearance()
 
 /obj/item/popsicle_stick
 	name = "popsicle stick"

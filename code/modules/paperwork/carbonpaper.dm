@@ -6,14 +6,16 @@
 	var/iscopy = FALSE
 
 /obj/item/paper/carbon/update_icon_state()
-	if(iscopy)
-		icon_state = "cpaper"
-	else if(copied)
-		icon_state = "paper"
-	else
-		icon_state = "paper_stack"
 	if(info)
 		icon_state = "[icon_state]_words"
+		return ..()
+	if(iscopy)
+		icon_state = "cpaper"
+		return ..()
+	else if(copied)
+		icon_state = "paper"
+		return ..()
+	icon_state = "paper_stack"
 	return ..()
 
 /obj/item/paper/carbon/proc/removecopy(mob/living/user)

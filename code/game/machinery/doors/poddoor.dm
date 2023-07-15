@@ -63,7 +63,7 @@
 		assembly.state = AIRLOCK_ASSEMBLY_NEEDS_ELECTRONICS
 		assembly.created_name = name
 		assembly.update_name()
-		assembly.update_icon()
+		assembly.update_appearance()
 		assembly.welded = TRUE
 		new /obj/item/electronics/airlock(loc)
 	qdel(src)

@@ -34,7 +34,7 @@
 		if(!drawn)
 			playsound(src, 'sound/weapons/bowdraw.ogg', 75, 0)
 		drawn = !drawn
-	update_icon()
+	update_appearance()
 
 /obj/item/gun/ballistic/bow/afterattack(atom/target, mob/living/user, flag, params, passthrough = FALSE)
 	if(!chambered)
@@ -44,7 +44,7 @@
 		return
 	drawn = FALSE
 	. = ..() //fires, removing the arrow
-	update_icon()
+	update_appearance()
 
 /obj/item/gun/ballistic/bow/shoot_with_empty_chamber(mob/living/user)
 	return //so clicking sounds please

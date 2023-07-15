@@ -36,7 +36,7 @@
 	for(var/datum/disease/appendicitis/A in M.diseases)
 		A.cure()
 		inflamed = TRUE
-	update_icon()
+	update_appearance()
 	..()
 
 /obj/item/organ/appendix/Insert(mob/living/carbon/M, special = 0)

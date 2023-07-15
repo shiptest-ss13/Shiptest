@@ -114,7 +114,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 		inserted_item = new inserted_item(src)
 	else
 		inserted_item =	new /obj/item/pen(src)
-	update_icon()
+	update_appearance()
 
 /obj/item/pda/equipped(mob/user, slot)
 	. = ..()
@@ -290,7 +290,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 				if (pai)
 					if(pai.loc != src)
 						pai = null
-						update_icon()
+						update_appearance()
 					else
 						dat += "<li>[PDAIMG(status)]   <a href='byond://?src=[REF(src)];choice=pai;option=1'>pAI Device Configuration</a></li>"
 						dat += "<li>[PDAIMG(status)]   <a href='byond://?src=[REF(src)];choice=pai;option=2'>Eject pAI Device</a></li>"
@@ -440,7 +440,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 					scanmode = 0
 					cartridge.host_pda = null
 					cartridge = null
-					update_icon()
+					update_appearance()
 
 //MENU FUNCTIONS===================================
 
@@ -620,7 +620,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 	. = id
 	id = null
 	updateSelfDialog()
-	update_icon()
+	update_appearance()
 
 	if(ishuman(loc))
 		var/mob/living/carbon/human/H = loc
@@ -738,7 +738,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 
 		to_chat(L, "<span class='infoplain'>[icon2html(src)] <b>PDA message from [hrefstart][signal.data["name"]] ([signal.data["job"]])[hrefend], </b>[inbound_message] [reply]</span>")
 
-	update_icon()
+	update_appearance()
 	add_overlay(icon_alert)
 
 /obj/item/pda/proc/send_to_all(mob/living/U)
@@ -814,7 +814,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 		set_light_on(FALSE)
 	else if(light_range)
 		set_light_on(TRUE)
-	update_icon()
+	update_appearance()
 	for(var/X in actions)
 		var/datum/action/A = X
 		A.UpdateButtonIcon()
@@ -828,7 +828,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 		user.put_in_hands(inserted_item)
 		to_chat(user, "<span class='notice'>You remove [inserted_item] from [src].</span>")
 		inserted_item = null
-		update_icon()
+		update_appearance()
 	else
 		to_chat(user, "<span class='warning'>This PDA does not have a pen in it!</span>")
 
@@ -842,7 +842,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 		cartridge.host_pda = null
 		cartridge = null
 		updateSelfDialog()
-		update_icon()
+		update_appearance()
 
 //trying to insert or remove an id
 /obj/item/pda/proc/id_check(mob/user, obj/item/card/id/I)
@@ -859,7 +859,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 		if(!user.transferItemToLoc(I, src))
 			return FALSE
 		insert_id(I, user)
-		update_icon()
+		update_appearance()
 	return TRUE
 
 
@@ -887,7 +887,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 		cartridge.host_pda = src
 		to_chat(user, "<span class='notice'>You insert [cartridge] into [src].</span>")
 		updateSelfDialog()
-		update_icon()
+		update_appearance()
 
 	else if(istype(C, /obj/item/card/id))
 		var/obj/item/card/id/idcard = C
@@ -912,7 +912,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 			return
 		pai = C
 		to_chat(user, "<span class='notice'>You slot \the [C] into [src].</span>")
-		update_icon()
+		update_appearance()
 		updateUsrDialog()
 	else if(is_type_in_list(C, contained_item)) //Checks if there is a pen
 		if(inserted_item)
@@ -922,7 +922,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 				return
 			to_chat(user, "<span class='notice'>You slide \the [C] into \the [src].</span>")
 			inserted_item = C
-			update_icon()
+			update_appearance()
 	else if(istype(C, /obj/item/photo))
 		var/obj/item/photo/P = C
 		picture = P.picture

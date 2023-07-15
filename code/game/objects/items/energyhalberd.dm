@@ -191,7 +191,7 @@
 			hacked = TRUE
 			to_chat(user, "<span class='warning'>HLBRDRNBW_ENGAGE</span>")
 			halberd_color = "rainbow"
-			update_icon()
+			update_appearance()
 		else
 			to_chat(user, "<span class='warning'>It's starting to look like a triple rainbow - no, nevermind.</span>")
 	else

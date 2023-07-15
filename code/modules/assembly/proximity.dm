@@ -32,7 +32,7 @@
 		timing = !timing
 	else
 		scanning = FALSE
-	update_icon()
+	update_appearance()
 	return TRUE
 
 /obj/item/assembly/prox_sensor/on_detach()
@@ -53,7 +53,7 @@
 	else
 		START_PROCESSING(SSobj, src)
 		proximity_monitor.SetHost(loc,src)
-	update_icon()
+	update_appearance()
 	return secured
 
 /obj/item/assembly/prox_sensor/HasProximity(atom/movable/AM as mob|obj)
@@ -85,7 +85,7 @@
 		return FALSE
 	scanning = scan
 	proximity_monitor.SetRange(scanning ? sensitivity : 0)
-	update_icon()
+	update_appearance()
 
 /obj/item/assembly/prox_sensor/proc/sensitivity_change(value)
 	var/sense = min(max(sensitivity + value, 0), 5)
@@ -143,7 +143,7 @@
 				. = TRUE
 		if("time")
 			timing = !timing
-			update_icon()
+			update_appearance()
 			. = TRUE
 		if("input")
 			var/value = text2num(params["adjust"])

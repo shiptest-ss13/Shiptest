@@ -51,12 +51,12 @@
 	update_surrounding()
 
 /obj/structure/stairs/proc/update_surrounding()
-	update_icon()
+	update_appearance()
 	for(var/i in GLOB.cardinals)
 		var/turf/T = get_step(get_turf(src), i)
 		var/obj/structure/stairs/S = locate() in T
 		if(S)
-			S.update_icon()
+			S.update_appearance()
 
 /obj/structure/stairs/proc/on_exit(datum/source, atom/movable/leaving, direction)
 	SIGNAL_HANDLER

@@ -216,7 +216,7 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 					var/obj/item/storage/wallet/W = worn
 					W.front_id = id
 					id.forceMove(W)
-					W.update_icon()
+					W.update_appearance()
 			else
 				H.equip_to_slot(id,ITEM_SLOT_ID)
 
@@ -549,7 +549,7 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 			F.power = 250
 			F.warming_up = 3
 			F.start_fields()
-			F.update_icon()
+			F.update_appearance()
 
 	spawn(30)
 		for(var/obj/machinery/the_singularitygen/G in GLOB.machines)

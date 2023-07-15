@@ -2198,7 +2198,7 @@
 		else
 			P.name = "[customname]"
 		P.info = input_text
-		P.update_icon()
+		P.update_appearance()
 		P.x = rand(-2, 0)
 		P.y = rand(-1, 2)
 
@@ -2275,7 +2275,7 @@
 		P.info = tmsg
 		P.x = rand(-2, 0)
 		P.y = rand(-1, 2)
-		P.update_icon()
+		P.update_appearance()
 		fax.receivefax(P)
 		if(istype(H) && H.stat == CONSCIOUS && (istype(H.ears, /obj/item/radio/headset)))
 			to_chat(H, "<span class='notice'>Your headset pings, notifying you that a reply to your fax has arrived.</span>")
