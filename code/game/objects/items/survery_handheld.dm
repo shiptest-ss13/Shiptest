@@ -3,6 +3,7 @@
 	desc = "A large scientific kit designed for planetary survey"
 	icon = 'icons/obj/item/survey_handheld.dmi'
 	icon_state = "survey"
+	item_state = "survey"
 	lefthand_file = 'icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/backpack_righthand.dmi'
 	attachment_type = /obj/item/attachment/survey_scanner

@@ -32,7 +32,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	///Icon file for mob worn overlays.
 	var/icon/mob_overlay_icon
 	///icon state for mob worn overlays, if null the normal icon_state will be used.
-	var/mob_overlay_state //WS EDIT - Mob Overlay State
+	var/mob_overlay_state
 	///Forced mob worn layer instead of the standard preferred ssize.
 	var/alternate_worn_layer
 
