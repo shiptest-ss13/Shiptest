@@ -13,7 +13,11 @@
 	"map_id": "independent_shetland",
 	"roundstart": true,
 	"job_slots": {
-		"Captain": 1,
+		"Captain": {
+			"outfit": "/datum/outfit/job/captain",
+			"officer": true,
+			"slots": 1
+		},
 		"Lieutenant": {
 			"outfit": "/datum/outfit/job/lieutenant",
 			"officer": true,
@@ -24,13 +28,22 @@
 			"officer": true,
 			"slots": 1
 		},
-		"Medical Doctor": 1,
-		"Paramedic": 1,
+		"Medical Doctor": {
+			"outfit": "/datum/outfit/job/doctor",
+			"slots": 1
+		},
+		"Paramedic": {
+			"outfit": "/datum/outfit/job/paramedic",
+			"slots": 1
+		},
 		"Ship's Engineer": {
 			"outfit": "/datum/outfit/job/engineer",
 			"slots": 1
 		},
-		"Atmospheric Technician": 1,
+		"Atmospheric Technician": {
+			"outfit": "/datum/outfit/job/atmos",
+			"slots": 1
+		},
 		"Asteroid Miner": {
 			"outfit": "/datum/outfit/job/miner/hazard",
 			"slots": 2
@@ -39,8 +52,14 @@
 			"outfit": "/datum/outfit/job/security",
 			"slots": 1
 		},
-		"Detective": 1,
-		"Janitor": 1,
+		"Detective": {
+			"outfit": "/datum/outfit/job/detective",
+			"slots": 1
+		},
+		"Janitor": {
+			"outfit": "/datum/outfit/job/janitor",
+			"slots": 1
+		},
 		"Deckhand": {
 			"outfit": "/datum/outfit/job/assistant",
 			"slots": 5

@@ -818,7 +818,7 @@ DEFINE_BITFIELD(turret_flags, list(
 	. = ..()
 	if(in_range(user, src) || isobserver(user))
 		if(!(machine_stat & BROKEN))
-			. += "<span class='notice'>Its reports that it's integrity is currently [PERCENT(max_integrity / obj_integrity)] percent.</span>"
+			. += "<span class='notice'>Its reports that it's integrity is currently [(obj_integrity / max_integrity) * 100] percent.</span>"
 
 /obj/machinery/porta_turret/ship/weak
 	max_integrity = 120

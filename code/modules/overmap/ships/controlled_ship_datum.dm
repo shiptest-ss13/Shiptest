@@ -1,6 +1,3 @@
-///Name of the file used for ship name random selection
-#define SHIP_NAMES_FILE "ship_names.json"
-
 /**
  * # Simulated overmap ship
  *
