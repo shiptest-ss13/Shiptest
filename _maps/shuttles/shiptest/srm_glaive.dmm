@@ -208,9 +208,7 @@
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/item/book/manual/trickwines_4_brewers,
-/turf/open/floor/grass{
-	icon_state = "junglegrass"
-	},
+/turf/open/floor/grass/ship/jungle,
 /area/ship/roumain)
 "cJ" = (
 /obj/structure/cable/orange{
@@ -255,6 +253,7 @@
 "ds" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/brflowers,
+/obj/item/reagent_containers/food/drinks/breakawayflask,
 /turf/open/floor/grass/ship/jungle,
 /area/ship/roumain)
 "dt" = (
@@ -1680,7 +1679,7 @@
 /area/ship/medical)
 "At" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/reagent_containers/food/drinks/breakawayflask/vintageash,
+/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/ashwine,
 /turf/open/floor/plating{
 	icon_state = "greenerdirt"
 	},
@@ -1776,7 +1775,7 @@
 /obj/structure/railing{
 	dir = 1
 	},
-/obj/item/reagent_containers/food/drinks/breakawayflask/vintageash,
+/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/ashwine,
 /turf/open/floor/ship/dirt/dark,
 /area/ship/roumain)
 "BB" = (

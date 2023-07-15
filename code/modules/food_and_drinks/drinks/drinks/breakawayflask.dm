@@ -46,6 +46,10 @@
 	spillable = TRUE
 	. = ..()
 
+/obj/item/reagent_containers/food/drinks/breakawayflask/vintage
+	var/datum/reagent/largest_reagent = reagents.get_master_reagent()
+	desc = "Supposedly one of the first bottles made"
+
 /obj/item/reagent_containers/food/drinks/breakawayflask/vintage/ashwine
 	name = "Vintange Saint-Roumain Ashwine"
 	desc = "Supposedly one of the first bottles of ashwine made"
@@ -71,7 +75,7 @@
 	desc = "Supposedly one of the first bottles of forcewine made"
 	list_reagents = list(/datum/reagent/consumable/ethanol/force_wine = 45, /datum/reagent/uranium = 5)
 
-/obj/item/reagent_containers/food/drinks/breakawayflask/vintageprism
+/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/prismwine
 	name = "Vintange Saint-Roumain Prismwine"
 	desc = "Supposedly one of the first bottles of forcewine made"
 	list_reagents = list(/datum/reagent/consumable/ethanol/prism_wine = 45, /datum/reagent/toxin/plasma = 5)
