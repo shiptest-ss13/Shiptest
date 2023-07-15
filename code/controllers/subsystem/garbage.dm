@@ -230,12 +230,6 @@ SUBSYSTEM_DEF(garbage)
 				#endif
 				I.failures++
 
-				if (I.qdel_flags & QDEL_ITEM_SUSPENDED_FOR_LAG)
-					#ifdef REFERENCE_TRACKING
-					if(ref_searching)
-						return //ref searching intentionally cancels all further fires while running so things that hold references don't end up getting deleted, so we want to return here instead of continue
-					#endif
-					continue
 			if (GC_QUEUE_HARDDELETE)
 				HardDelete(D)
 				if (MC_TICK_CHECK)
@@ -275,12 +269,15 @@ SUBSYSTEM_DEF(garbage)
 	++totaldels
 	var/type = D.type
 	var/refID = "\ref[D]"
+	var/datum/qdel_item/I = items[type]
+
+	if (I.qdel_flags & QDEL_ITEM_SUSPENDED_FOR_LAG)
+		return
 
 	var/tick_usage = TICK_USAGE
 	del(D)
 	tick_usage = TICK_USAGE_TO_MS(tick_usage)
 
-	var/datum/qdel_item/I = items[type]
 	I.hard_deletes++
 	I.hard_delete_time += tick_usage
 	if (tick_usage > I.hard_delete_max)

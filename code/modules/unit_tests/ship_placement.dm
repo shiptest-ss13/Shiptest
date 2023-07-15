@@ -2,10 +2,16 @@
 	SSair.is_test_loading = TRUE
 	for(var/mapname as anything in SSmapping.ship_purchase_list)
 		var/datum/map_template/shuttle/map = SSmapping.ship_purchase_list[mapname]
+		var/ship
 		try
-			new /datum/overmap/ship/controlled(list("x" = 1, "y" = 1), map)
+			ship = new /datum/overmap/ship/controlled(list("x" = 1, "y" = 1), map)
 		catch(var/exception/e)
 			Fail("Runtime error loading ship type ([map.name]): [e] on [e.file]:[e.line]\n[e.desc]")
+
+		try
+			qdel(ship)
+		catch(var/exception/e)
+			Fail("Runtime error deleting ship type ([map.name]): [e] on [e.file]:[e.line]\n[e.desc]")
 	SSair.is_test_loading = FALSE
 
 	var/list/errors = atmosscan(TRUE)
