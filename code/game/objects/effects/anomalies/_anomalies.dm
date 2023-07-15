@@ -139,7 +139,7 @@
 				to_chat(user, span_notice("A second field is fluctuating along [format_frequency(bSignal.frequency)], code [bSignal.code]. It is highly unstable." ))
 			return TRUE
 		to_chat(user, span_notice("You start analyzing [src]."))
-		else if(do_after(user, 20, TRUE, src))
+		if(do_after(user, 20, TRUE, src))
 			to_chat(user, span_notice("[src]'s primary field is fluctuating along frequency [format_frequency(aSignal.frequency)], code [aSignal.code]."))
 			if(bSignal)
 				to_chat(user, span_notice("A second field is fluctuating along [format_frequency(bSignal.frequency)], code [bSignal.code]. It is highly unstable." ))
