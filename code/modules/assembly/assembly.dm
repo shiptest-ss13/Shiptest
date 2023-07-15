@@ -19,10 +19,10 @@
 	drop_sound = 'sound/items/handling/component_drop.ogg'
 	pickup_sound =  'sound/items/handling/component_pickup.ogg'
 
-	/**
-	 * Set to true if the device has different icons for each position.
-	 * This will prevent things such as visible lasers from facing the incorrect direction when transformed by assembly_holder's update_appearance()
-	 */
+
+	//Set to true if the device has different icons for each position.
+	//This will prevent things such as visible lasers from facing the incorrect direction when transformed by assembly_holder's update_appearance()
+
 	var/is_position_sensitive = FALSE
 	var/secured = TRUE
 	var/list/attached_overlays = null
