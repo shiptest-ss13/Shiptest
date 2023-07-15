@@ -39,7 +39,7 @@
 	desc = "A wired tool designed to work in tandem with a survey pack"
 	w_class = WEIGHT_CLASS_BULKY
 	icon = 'icons/obj/item/survey_handheld.dmi'
-	icon_state = "survey_att"
+	icon_state = "survey-att"
 	lefthand_file = 'icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/backpack_righthand.dmi'
 	pack = /obj/item/gear_pack/survey_pack
