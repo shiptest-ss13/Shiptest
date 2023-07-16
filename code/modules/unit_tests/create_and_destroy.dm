@@ -88,6 +88,8 @@
 	ignore += typesof(/obj/item/clothing/head/mob_holder)
 	//Needs ships
 	ignore += typesof(/obj/overmap)
+	//Needs a holopad
+	ignore += typesof(/mob/living/simple_animal/hologram)
 
 	var/list/cached_contents = spawn_at.contents.Copy()
 	var/baseturf_count = length(spawn_at.baseturfs)
