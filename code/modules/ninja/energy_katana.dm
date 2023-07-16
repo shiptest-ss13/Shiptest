@@ -96,6 +96,7 @@
 
 /obj/item/energy_katana/Destroy()
 	QDEL_NULL(spark_system)
+	QDEL_NULL(jaunt)
 	return ..()
 
 /datum/action/innate/dash/ninja
