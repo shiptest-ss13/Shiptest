@@ -469,7 +469,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 			'sound/effects/weapons/ric4.ogg',
 			'sound/effects/weapons/ric5.ogg'
 		))
-		playsound(src, rand_ricochet. 100)
+		playsound(src, rand_ricochet, 100)
 		COOLDOWN_START(src, block_cooldown, block_cooldown_time)
 		return 1
 	return 0
