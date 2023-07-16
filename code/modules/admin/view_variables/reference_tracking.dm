@@ -47,12 +47,14 @@
 		DoSearchVar(thing, "Datums -> [thing.type]", search_time = starting_time)
 	log_reftracker("Finished searching datums")
 
+#ifndef REFERENCE_DOING_IT_LIVE
 	//Warning, attempting to search clients like this will cause crashes if done on live. Watch yourself
 	for(var/client/thing) //clients
 		DoSearchVar(thing, "Clients -> [thing.type]", search_time = starting_time)
 	log_reftracker("Finished searching clients")
 
 	log_reftracker("Completed search for references to a [type].")
+#endif
 
 	if(usr?.client)
 		usr.client.running_find_references = null
