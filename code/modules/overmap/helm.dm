@@ -213,6 +213,9 @@
 	.["burnPercentage"] = current_ship.burn_percentage
 	for(var/datum/weakref/engine in current_ship.shuttle_port.engine_list)
 		var/obj/machinery/power/shuttle/engine/real_engine = engine.resolve()
+		if(!real_engine)
+			engine_list -= engine
+			continue
 		var/list/engine_data
 		if(!real_engine.thruster_active)
 			engine_data = list(
@@ -303,6 +306,9 @@
 			if("toggle_engine")
 				var/datum/weakref/engine = locate(params["engine"]) in current_ship.shuttle_port.engine_list
 				var/obj/machinery/power/shuttle/engine/real_engine = engine.resolve()
+				if(!real_engine)
+					engine_list -= engine
+					return
 				real_engine.enabled = !real_engine.enabled
 				real_engine.update_icon_state()
 				current_ship.refresh_engines()

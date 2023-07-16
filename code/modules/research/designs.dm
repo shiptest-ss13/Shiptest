@@ -104,8 +104,7 @@ other types of metals and chemistry for reagents).
 	. = ..()
 	pixel_x = base_pixel_x + rand(-5, 5)
 	pixel_y = base_pixel_y + rand(-5, 5)
-	for(var/i in 1 to max_blueprints)
-		blueprints += null
+	blueprints = new/list(max_blueprints)
 
 /obj/item/disk/design_disk/adv
 	name = "Advanced Component Design Disk"
@@ -172,7 +171,7 @@ other types of metals and chemistry for reagents).
 	name = "design disk - CMM mecha modifications"
 	desc = "A design disk containing specifications for CMM-custom mecha conversions."
 	color = "#57b8f0"
-	max_blueprints = 3
+	max_blueprints = 2
 
 /obj/item/disk/design_disk/cmm_mechs/Initialize()
 	. = ..()

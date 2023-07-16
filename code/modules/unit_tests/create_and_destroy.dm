@@ -38,6 +38,13 @@
 		/obj/effect/DPtarget,
 		//needs a derg
 		/obj/structure/carp_rift,
+		//doesn't have icons
+		/obj/item/bodypart,
+		/obj/item/bodypart/chest,
+		/obj/item/bodypart/head,
+		/obj/item/bodypart/l_arm,
+		/obj/item/bodypart/r_arm,
+		/obj/item/bodypart/leg
 	)
 	//This turf existing is an error in and of itself
 	ignore += typesof(/turf/baseturf_skipover)

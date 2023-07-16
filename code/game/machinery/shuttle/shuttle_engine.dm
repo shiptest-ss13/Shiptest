@@ -66,12 +66,12 @@
 
 /obj/machinery/power/shuttle/engine/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
 	. = ..()
-	port.engine_list |= src
+	port.engine_list |= WEAKREF(src)
 	parent_shuttle = port
 
 /obj/machinery/power/shuttle/engine/Destroy()
 	if(parent_shuttle)
-		parent_shuttle.engine_list -= src
+		parent_shuttle.engine_list -= WEAKREF(src)
 	return ..()
 
 /obj/machinery/power/shuttle/engine/on_construction()

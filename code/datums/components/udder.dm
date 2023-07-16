@@ -141,8 +141,8 @@
 	RegisterSignal(udder_mob, COMSIG_HOSTILE_ATTACKINGTARGET, .proc/on_mob_attacking)
 
 /obj/item/udder/gutlunch/Destroy()
-	. = ..()
 	UnregisterSignal(udder_mob, COMSIG_HOSTILE_ATTACKINGTARGET)
+	. = ..()
 
 /obj/item/udder/gutlunch/process(delta_time)
 	var/mob/living/simple_animal/hostile/asteroid/gutlunch/gutlunch = udder_mob

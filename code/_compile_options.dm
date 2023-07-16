@@ -1,4 +1,4 @@
-//#define TESTING //By using the testing("message") proc you can create debug-feedback for people with this
+#define TESTING //By using the testing("message") proc you can create debug-feedback for people with this
 								//uncommented, but not visible in the release version)
 
 //#define DATUMVAR_DEBUGGING_MODE //Enables the ability to cache datum vars and retrieve later for debugging which vars changed.
@@ -41,7 +41,7 @@
 #define GC_FAILURE_HARD_LOOKUP
 #endif // REFERENCE_DOING_IT_LIVE
 
-//#define UNIT_TESTS //Enables unit tests via TEST_RUN_PARAMETER
+#define UNIT_TESTS //Enables unit tests via TEST_RUN_PARAMETER
 
 #ifndef PRELOAD_RSC				//set to:
 #define PRELOAD_RSC 2			//	0 to allow using external resources or on-demand behaviour;
