@@ -10,8 +10,8 @@
 	name = "extract implant"
 	implements = list(
 		TOOL_HEMOSTAT = 100,
-		TOOL_CROWBAR = 30,
-		/obj/item/kitchen/fork = 10)
+		TOOL_CROWBAR = 40,
+		/obj/item/kitchen/fork = 33)
 	time = 6.4 SECONDS
 	success_sound = 'sound/surgery/hemostat1.ogg'
 	experience_given = MEDICAL_SKILL_MEDIUM

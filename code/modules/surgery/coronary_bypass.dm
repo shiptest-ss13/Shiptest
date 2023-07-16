@@ -22,9 +22,8 @@
 	name = "incise heart"
 	implements = list(
 		TOOL_SCALPEL = 90,
-		/obj/item/kitchen/knife = 15,
-		/obj/item/shard = 25,// it's at LEAST a little smaller than a knife or an ENERGY SWORD
-		/obj/item/kitchen/knife = 15)
+		/obj/item/kitchen/knife = 40,
+		/obj/item/shard = 33)
 	time = 1.6 SECONDS
 	preop_sound = 'sound/surgery/scalpel1.ogg'
 	success_sound = 'sound/surgery/scalpel2.ogg'
@@ -61,7 +60,7 @@
 	name = "graft coronary bypass"
 	implements = list(
 		TOOL_HEMOSTAT = 90,
-		TOOL_WIRECUTTER = 15,
+		TOOL_WIRECUTTER = 40,
 		/obj/item/stack/cable_coil = 5)
 	time = 9 SECONDS
 	preop_sound = 'sound/surgery/hemostat1.ogg'
@@ -90,6 +89,6 @@
 		display_results(user, target, "<span class='warning'>You screw up in attaching the graft, and it tears off, tearing part of the heart!</span>",
 			"<span class='warning'>[user] screws up, causing blood to spurt out of [H]'s chest profusely!</span>",
 			"<span class='warning'>[user] screws up, causing blood to spurt out of [H]'s chest profusely!</span>")
-		H.adjustOrganLoss(ORGAN_SLOT_HEART, 20)
+		H.adjustOrganLoss(ORGAN_SLOT_HEART, 30)
 		H.bleed_rate += 30
 	return FALSE

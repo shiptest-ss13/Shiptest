@@ -23,9 +23,9 @@
 	name = "remove damaged liver section"
 	implements = list(
 		TOOL_SCALPEL = 95,
-		/obj/item/melee/transforming/energy/sword = 20,
-		/obj/item/kitchen/knife = 15,
-		/obj/item/shard = 10)
+		/obj/item/melee/transforming/energy/sword = 33,
+		/obj/item/kitchen/knife = 40,
+		/obj/item/shard = 25)
 	time = 52
 	experience_given = (MEDICAL_SKILL_ORGAN_FIX*0.8) //repeatable so not as much xp
 

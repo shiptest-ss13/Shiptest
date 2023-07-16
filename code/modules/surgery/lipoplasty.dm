@@ -14,8 +14,8 @@
 	name = "cut excess fat"
 	implements = list(
 		TOOL_SAW = 100,
-		/obj/item/hatchet = 20,
-		/obj/item/kitchen/knife/butcher = 15)
+		/obj/item/hatchet = 40,
+		/obj/item/kitchen/knife/butcher = 33)
 	time = 64
 
 /datum/surgery_step/cut_fat/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
@@ -35,8 +35,7 @@
 	name = "remove loose fat"
 	implements = list(
 		TOOL_RETRACTOR = 100,
-		TOOL_SCREWDRIVER = 20,
-		TOOL_WIRECUTTER = 15)
+		TOOL_WIRECUTTER = 40)
 	time = 32
 	experience_given = 0 //scales with fat removed
 

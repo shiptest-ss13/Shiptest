@@ -16,7 +16,7 @@
 	name = "fix brain"
 	implements = list(
 		TOOL_HEMOSTAT = 85,
-		TOOL_SCREWDRIVER = 10,
+		TOOL_SCREWDRIVER = 40,
 		/obj/item/pen = 5) //don't worry, pouring some alcohol on their open brain will get that chance to 100 //will it? i don't know.
 	repeatable = TRUE
 	time = 10 SECONDS //long and complicated

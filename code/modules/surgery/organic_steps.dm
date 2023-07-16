@@ -194,8 +194,7 @@
 	implements = list(
 		TOOL_DRILL = 100,
 		/obj/item/screwdriver/power = 45,
-		/obj/item/pickaxe/drill = 25,
-		TOOL_SCREWDRIVER = 20,
+		TOOL_SCREWDRIVER = 33,
 		/obj/item/kitchen/spoon = 4.13) //i made this as awful as possible.
 	time = 30
 

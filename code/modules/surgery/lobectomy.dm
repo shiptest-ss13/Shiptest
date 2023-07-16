@@ -22,9 +22,9 @@
 	name = "excise damaged lung node"
 	implements = list(
 		TOOL_SCALPEL = 95,
-		/obj/item/melee/transforming/energy/sword = 20,
-		/obj/item/kitchen/knife = 15,
-		/obj/item/shard = 10)
+		/obj/item/melee/transforming/energy/sword = 33,
+		/obj/item/kitchen/knife = 40,
+		/obj/item/shard = 25)
 	time = 4.2 SECONDS
 	preop_sound = 'sound/surgery/scalpel1.ogg'
 	success_sound = 'sound/surgery/organ1.ogg'

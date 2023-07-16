@@ -10,7 +10,7 @@
 	name = "fix eyes"
 	implements = list(
 		TOOL_HEMOSTAT = 100,
-		TOOL_SCREWDRIVER = 15) //ow! my eyes !
+		TOOL_SCREWDRIVER = 40) //ow! my eyes !
 	time = 64
 	experience_given = (MEDICAL_SKILL_ORGAN_FIX*0.6) //repeatable and can be done at any damage
 
