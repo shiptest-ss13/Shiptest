@@ -79,7 +79,7 @@ GLOBAL_LIST_INIT(huds, list(
 	if(!M || !M.client || !A)
 		return
 	for(var/i in hud_icons)
-		M.client.images -= A.hud_list[i]
+		M.client.images -= A.hud_list?[i]
 
 /datum/atom_hud/proc/add_hud_to(mob/M)
 	if(!M)
