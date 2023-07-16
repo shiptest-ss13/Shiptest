@@ -104,7 +104,7 @@
 	sharpness = IS_SHARP
 	embedding = list("embed_chance" = 75, "impact_pain_mult" = 10)
 	armour_penetration = 35
-	block_chance = 50
+	block_chance = 20
 
 /obj/item/melee/transforming/energy/sword/transform_weapon(mob/living/user, supress_message_text)
 	. = ..()
