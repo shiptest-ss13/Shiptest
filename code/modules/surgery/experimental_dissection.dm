@@ -20,7 +20,7 @@
 
 /datum/surgery/advanced/experimental_dissection/can_start(mob/user, mob/living/target)
 	. = ..()
-	if(HAS_TRAIT_FROM(target, TRAIT_DISSECTED, "[name]"))
+	if(HAS_TRAIT(target, TRAIT_DISSECTED))
 		return FALSE
 	if(target.stat != DEAD)
 		return FALSE
@@ -69,11 +69,13 @@
 			if(isabductor(H))
 				cost = (BASE_HUMAN_REWARD*3)
 			else if(isgolem(H) || iszombie(H) || isshadow(H) || isandroid(H))
-				cost = (BASE_HUMAN_REWARD*3)
-			else if(isjellyperson(H) || ispodperson(H) || issquidperson(H) || isalien(H))
-				cost = (BASE_HUMAN_REWARD*3)
+				cost = (BASE_HUMAN_REWARD*4)
+			else if(isjellyperson(H) || ispodperson(H) || isalien(H))
+				cost = (BASE_HUMAN_REWARD*6)
 			else if(isskeleton(H))
 				cost = (BASE_HUMAN_REWARD * 0.5)
+	else if(ismegafauna(target))
+		cost = (BASE_HUMAN_REWARD * 16)
 	else
 		cost = (BASE_HUMAN_REWARD * 0.5)
 
@@ -82,7 +84,7 @@
 	//now we do math for surgeries already done (no double dipping!).
 	for(var/i in typesof(/datum/surgery/advanced/experimental_dissection))
 		var/datum/surgery/advanced/experimental_dissection/cringe = new i
-		if(HAS_TRAIT_FROM(target, TRAIT_DISSECTED, "[cringe.name]"))
+		if(HAS_TRAIT(target, TRAIT_DISSECTED))
 			multi_surgery_adjust = max(multi_surgery_adjust, cringe.value_multiplier)
 
 	//multiply by multiplier in surgery

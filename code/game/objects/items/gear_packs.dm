@@ -8,6 +8,7 @@
 	righthand_file = 'icons/mob/inhands/equipment/backpack_righthand.dmi'
 	w_class = WEIGHT_CLASS_HUGE
 	slot_flags = ITEM_SLOT_BACK
+	item_flags = SLOWS_WHILE_IN_HAND
 	max_integrity = 300
 	slowdown = 1
 	actions_types = list(/datum/action/item_action/toggle_attachment)
