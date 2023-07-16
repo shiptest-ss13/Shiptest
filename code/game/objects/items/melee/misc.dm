@@ -62,7 +62,7 @@
 	force = 15
 	throwforce = 10
 	w_class = WEIGHT_CLASS_BULKY
-	block_chance = 30
+	block_chance = 60
 	armour_penetration = 75
 	sharpness = IS_SHARP
 	attack_verb = list("slashed", "cut")
@@ -145,7 +145,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	sharpness = IS_SHARP
 	throwforce = 10
-	block_chance = 5
+	block_chance = 20
 	armour_penetration = 65
 	attack_verb = list("slashed", "stung", "prickled", "poked")
 	hitsound = 'sound/weapons/rapierhit.ogg'
@@ -679,7 +679,7 @@
 	force = 15
 	throwforce = 8
 	w_class = WEIGHT_CLASS_NORMAL
-	block_chance = 10
+	block_chance = 30
 	attack_verb = list("struck", "slashed", "mall-ninjad", "tided", "multi-shanked", "shredded")
 	custom_materials = list(/datum/material/iron = 1420)
 	sharpness = IS_SHARP

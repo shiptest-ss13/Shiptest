@@ -460,7 +460,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 /obj/item/proc/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	SEND_SIGNAL(src, COMSIG_ITEM_HIT_REACT, args)
-	if(prob(final_block_chance) && COOLDOWN_FINISHED(src, block_cooldown))
+	if((prob(final_block_chance) && COOLDOWN_FINISHED(src, block_cooldown)) || (prob(final_block_chance) && istype(src, /obj/item/shield)))
 		owner.visible_message("<span class='danger'>[owner] blocks [attack_text] with [src]!</span>")
 		var/rand_ricochet = pick(list(
 			'sound/weapons/effects/ric1.ogg',
@@ -470,7 +470,8 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 			'sound/weapons/effects/ric5.ogg'
 		))
 		playsound(src, rand_ricochet, 100)
-		COOLDOWN_START(src, block_cooldown, block_cooldown_time)
+		if(!istype(src, /obj/item/shield))
+			COOLDOWN_START(src, block_cooldown, block_cooldown_time)
 		return 1
 	return 0
 
