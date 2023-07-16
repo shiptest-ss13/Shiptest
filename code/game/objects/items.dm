@@ -463,11 +463,11 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	if(prob(final_block_chance) && COOLDOWN_FINISHED(src, block_cooldown))
 		owner.visible_message("<span class='danger'>[owner] blocks [attack_text] with [src]!</span>")
 		var/rand_ricochet = pick(list(
-			'sound/effects/weapons/ric1.ogg',
-			'sound/effects/weapons/ric2.ogg',
-			'sound/effects/weapons/ric3.ogg',
-			'sound/effects/weapons/ric4.ogg',
-			'sound/effects/weapons/ric5.ogg'
+			'sound/weapons/effects/ric1.ogg',
+			'sound/weapons/effects/ric2.ogg',
+			'sound/weapons/effects/ric3.ogg',
+			'sound/weapons/effects/ric4.ogg',
+			'sound/weapons/effects/ric5.ogg'
 		))
 		playsound(src, rand_ricochet, 100)
 		COOLDOWN_START(src, block_cooldown, block_cooldown_time)
