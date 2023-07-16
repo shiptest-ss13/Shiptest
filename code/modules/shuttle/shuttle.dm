@@ -866,6 +866,15 @@
 	else
 		. = "unknown"
 
+/obj/docking_port/mobile/proc/get_engines()
+	. = list()
+	for(var/datum/weakref/engine in engine_list)
+		var/obj/structure/shuttle/engine/real_engine = engine.resolve()
+		if(!real_engine)
+			engine_list -= engine
+			continue
+		. += real_engine
+
 /obj/docking_port/mobile/proc/hyperspace_sound(phase, list/areas)
 	var/selected_sound
 	switch(phase)
@@ -883,13 +892,7 @@
 	var/range = max(width, height)
 	var/long_range = range * 2.5
 	var/atom/distant_source
-	var/list/engines = list()
-	for(var/datum/weakref/engine in engine_list)
-		var/obj/structure/shuttle/engine/real_engine = engine.resolve()
-		if(!real_engine)
-			engine_list -= engine
-			continue
-		engines += real_engine
+	var/list/engines = get_engines()
 
 	if(engines[1])
 		distant_source = engines[1]

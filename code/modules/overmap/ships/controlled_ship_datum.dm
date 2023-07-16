@@ -183,11 +183,7 @@
 	var/thrust_used = 0 //The amount of thrust that the engines will provide with one burn
 	refresh_engines()
 	calculate_avg_fuel()
-	for(var/datum/weakref/engine in shuttle_port.engine_list)
-		var/obj/machinery/power/shuttle/engine/real_engine = engine.resolve()
-		if(!real_engine)
-			engine_list -= engine
-			continue
+	for(var/obj/machinery/power/shuttle/engine/real_engine as anything in shuttle_port.get_engines())
 		if(!real_engine.enabled)
 			continue
 		thrust_used += real_engine.burn_engine(percentage, deltatime)
@@ -202,11 +198,7 @@
  */
 /datum/overmap/ship/controlled/proc/refresh_engines()
 	var/calculated_thrust
-	for(var/datum/weakref/engine in shuttle_port.engine_list)
-		var/obj/machinery/power/shuttle/engine/real_engine = engine.resolve()
-		if(!real_engine)
-			engine_list -= engine
-			continue
+	for(var/obj/machinery/power/shuttle/engine/real_engine as anything in shuttle_port.get_engines())
 		real_engine.update_engine()
 		if(real_engine.enabled)
 			calculated_thrust += real_engine.thrust
@@ -218,11 +210,7 @@
 /datum/overmap/ship/controlled/proc/calculate_avg_fuel()
 	var/fuel_avg = 0
 	var/engine_amnt = 0
-	for(var/datum/weakref/engine in shuttle_port.engine_list)
-		var/obj/machinery/power/shuttle/engine/real_engine = engine.resolve()
-		if(!real_engine)
-			engine_list -= engine
-			continue
+	for(var/obj/machinery/power/shuttle/engine/real_engine as anything in shuttle_port.get_engines())
 		if(!real_engine.enabled)
 			continue
 		fuel_avg += real_engine.return_fuel() / real_engine.return_fuel_cap()
