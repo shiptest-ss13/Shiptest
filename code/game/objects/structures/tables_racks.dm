@@ -311,6 +311,9 @@
 
 /obj/structure/table/rolling/Moved(atom/OldLoc, Dir)
 	. = ..()
+	//Nullspaced
+	if(!loc)
+		return
 	for(var/mob/M in OldLoc.contents)//Kidnap everyone on top
 		M.forceMove(loc)
 	for(var/x in attached_items)
@@ -628,7 +631,7 @@
 /obj/structure/table/optable/proc/patient_deleted(datum/source)
 	SIGNAL_HANDLER
 	set_patient(null)
-	
+
 /obj/structure/table/optable/proc/check_eligible_patient()
 	get_patient()
 	if(!patient)

@@ -29,6 +29,15 @@
 		/obj/item/key/ship,
 		//Template
 		/obj/machinery/power/shuttle/engine/liquid,
+		//needs a template
+		/obj/effect/landmark/subship,
+		//needs a friend :(
+		/obj/effect/mob_spawn/human/demonic_friend,
+		//Needs a pod
+		/obj/effect/DPfall,
+		/obj/effect/DPtarget,
+		//needs a derg
+		/obj/structure/carp_rift,
 	)
 	//This turf existing is an error in and of itself
 	ignore += typesof(/turf/baseturf_skipover)
@@ -77,6 +86,8 @@
 	ignore += typesof(/obj/docking_port)
 	//Expects a mob to holderize, we have nothing to give
 	ignore += typesof(/obj/item/clothing/head/mob_holder)
+	//Needs ships
+	ignore += typesof(/obj/overmap)
 
 	var/list/cached_contents = spawn_at.contents.Copy()
 	var/baseturf_count = length(spawn_at.baseturfs)
