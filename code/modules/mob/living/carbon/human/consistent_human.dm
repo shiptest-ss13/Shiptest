@@ -11,6 +11,7 @@
 
 	// Mutant randomizing, doesn't affect the mob appearance unless it's the specific mutant.
 	dna.features["mcolor"] = short_color_from_seed(seed * 2)
+	dna.features["mcolor2"] = short_color_from_seed(seed * 3)
 	//AAAAAAAAAAAAAAAAAAAAAAAAAA
 	dna.features["ethcolor"] = GLOB.color_list_ethereal[GLOB.color_list_ethereal[seed % length(GLOB.color_list_ethereal) + 1]]
 	dna.features["tail_lizard"] = GLOB.tails_list_lizard[seed % length(GLOB.tails_list_lizard) + 1]
