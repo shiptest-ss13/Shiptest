@@ -1,17 +1,3 @@
-// Byond direction defines, because I want to put them somewhere.
-// #define NORTH 1
-// #define SOUTH 2
-// #define EAST 4
-// #define WEST 8
-
-#define TEXT_NORTH "[NORTH]"
-#define TEXT_SOUTH "[SOUTH]"
-#define TEXT_EAST "[EAST]"
-#define TEXT_WEST "[WEST]"
-
-/// Inverse direction, taking into account UP|DOWN if necessary.
-#define REVERSE_DIR(dir) (((dir & 85) << 1) | ((dir & 170) >> 1))
-
 //Human Overlays Indexes/////////
 #define MUTATIONS_LAYER 31 //mutations. Tk headglows, cold resistance glow, etc
 #define HANDS_UNDER_BODY_LAYER 30 //Held items that render underneath the user due to perspective
@@ -28,7 +14,7 @@
 #define GLOVES_LAYER 19
 #define SHOES_LAYER 18
 #define EARS_LAYER 17
-#define SPLINT_LAYER 16 //WS Edit - breakable bones
+#define SPLINT_LAYER 16
 #define SUIT_LAYER 15
 #define GLASSES_LAYER 14
 #define BELT_LAYER 13 //Possible make this an overlay of somethign required to wear a belt?

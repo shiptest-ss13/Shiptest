@@ -126,6 +126,18 @@
 		user.visible_message("<span class='danger'>[user]'s knife snaps into tiny pieces in their hand.</span>")
 		qdel(src)
 
+/obj/item/kitchen/knife/pizza_cutter
+	name = "pizza cutter"
+	icon_state = "pizza_cutter"
+	desc = "A knife edge bent around a circle using the power of science. Perfect for safely cutting pizza."
+	force = 1
+	w_class = WEIGHT_CLASS_SMALL
+	throwforce = 1
+	throw_range = 6
+	custom_materials = list(/datum/material/iron=4000)
+	attack_verb = list("prodded", "whiffed","rolled", "poked")
+	sharpness = IS_SHARP
+
 /obj/item/kitchen/knife/ritual
 	name = "ritual knife"
 	desc = "The unearthly energies that once powered this blade are now dormant."

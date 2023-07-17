@@ -172,6 +172,11 @@
 	pixel_x = -32
 	icon = 'icons/obj/flora/jungletreesmall.dmi'
 
+/obj/structure/flora/tree/jungle/small/Initialize()
+	. = ..()
+	if(randomize_icon) //prevents varedited trees changing
+		icon_state = "[initial(icon_state)][rand(1, 6)]"
+
 //grass
 /obj/structure/flora/grass
 	name = "grass"

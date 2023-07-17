@@ -21,13 +21,16 @@
 	icon = 'icons/obj/lighting.dmi'
 	icon_state = "tube-construct-item"
 	result_path = /obj/structure/light_construct
+	pixel_shift = 32
 	inverse = TRUE
+	inverse_pixel_shift = TRUE
 
 /obj/item/wallframe/light_fixture/small
 	name = "small light fixture frame"
 	icon_state = "bulb-construct-item"
 	result_path = /obj/structure/light_construct/small
 	custom_materials = list(/datum/material/iron=MINERAL_MATERIAL_AMOUNT)
+	pixel_shift = 28
 
 /obj/item/wallframe/light_fixture/try_build(turf/on_wall, user)
 	if(!..())
@@ -56,6 +59,8 @@
 	var/obj/item/stock_parts/cell/cell
 
 	var/cell_connectors = TRUE
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/light_construct, 32)
 
 /obj/structure/light_construct/Initialize(mapload, ndir, building)
 	. = ..()
@@ -174,6 +179,8 @@
 					if("bulb")
 						newlight = new /obj/machinery/light/small/built(loc)
 				newlight.setDir(dir)
+				newlight.pixel_x = pixel_x
+				newlight.pixel_y = pixel_y
 				transfer_fingerprints_to(newlight)
 				if(cell)
 					newlight.cell = cell
@@ -199,15 +206,14 @@
 	fixture_type = "bulb"
 	sheets_refunded = 1
 
-
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/light_construct/small, 28)
 
 // the standard tube light fixture
 /obj/machinery/light
 	name = "light fixture"
 	icon = 'icons/obj/lighting.dmi'
-	var/overlayicon = 'icons/obj/lighting_overlay.dmi'
 	var/base_state = "tube"		// base description and icon_state
-	icon_state = "tube"
+	icon_state = "tube-on"
 	desc = "A lighting fixture."
 	layer = WALL_OBJ_LAYER
 	max_integrity = 100
@@ -249,19 +255,25 @@
 	var/bulb_vacuum_colour = "#4F82FF"	// colour of the light when air alarm is set to severe
 	var/bulb_vacuum_brightness = 8
 
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light, 32)
+
 /obj/machinery/light/broken
 	status = LIGHT_BROKEN
 	icon_state = "tube-broken"
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/broken, 32)
 
 /obj/machinery/light/dim
 	nightshift_allowed = FALSE
 	bulb_colour = "#FFDDCC"
 	bulb_power = 0.8
 
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/dim, 32)
+
 // the smaller bulb light fixture
 
 /obj/machinery/light/small
-	icon_state = "bulb"
+	icon_state = "bulb-on"
 	base_state = "bulb"
 	fitting = "bulb"
 	brightness = 4
@@ -270,9 +282,13 @@
 	bulb_colour = "#FFDDBB" //Cit lighting
 	bulb_power = 0.75 //Cit lighting
 
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small, 28)
+
 /obj/machinery/light/small/broken
 	status = LIGHT_BROKEN
 	icon_state = "bulb-broken"
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/broken, 28)
 
 /obj/machinery/light/Move()
 	if(status != LIGHT_BROKEN)
@@ -283,6 +299,8 @@
 	icon_state = "tube-empty"
 	start_with_cell = FALSE
 
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/built, 32)
+
 /obj/machinery/light/built/Initialize()
 	. = ..()
 	status = LIGHT_EMPTY
@@ -291,6 +309,8 @@
 /obj/machinery/light/small/built
 	icon_state = "bulb-empty"
 	start_with_cell = FALSE
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/built, 28)
 
 /obj/machinery/light/small/built/Initialize()
 	. = ..()
@@ -355,6 +375,8 @@
 				icon_state = "[base_state]_emergency"
 			else if (A?.vacuum)
 				icon_state = "[base_state]_vacuum"
+			else if (on)
+				icon_state = "[base_state]-on"
 			else
 				icon_state = "[base_state]"
 		if(LIGHT_EMPTY)
@@ -363,18 +385,6 @@
 			icon_state = "[base_state]-burned"
 		if(LIGHT_BROKEN)
 			icon_state = "[base_state]-broken"
-
-/obj/machinery/light/update_overlays()
-	. = ..()
-	SSvis_overlays.remove_vis_overlay(src, managed_vis_overlays)
-	if(on && status == LIGHT_OK)
-		var/area/A = get_area(src)
-		if(emergency_mode || (A?.fire))
-			SSvis_overlays.add_vis_overlay(src, overlayicon, "[base_state]_emergency", layer, plane, dir)
-		else if (nightshift_enabled)
-			SSvis_overlays.add_vis_overlay(src, overlayicon, "[base_state]_nightshift", layer, plane, dir)
-		else
-			SSvis_overlays.add_vis_overlay(src, overlayicon, base_state, layer, plane, dir)
 
 // update the icon_state and luminosity of the light depending on its state
 /obj/machinery/light/proc/update(trigger = TRUE)
@@ -556,6 +566,8 @@
 				newlight = new /obj/structure/light_construct/small(src.loc)
 				newlight.icon_state = "bulb-construct-stage[cur_stage]"
 		newlight.setDir(src.dir)
+		newlight.pixel_x = pixel_x
+		newlight.pixel_y = pixel_y
 		newlight.stage = cur_stage
 		if(!disassembled)
 			newlight.obj_integrity = newlight.max_integrity * 0.5

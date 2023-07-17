@@ -151,3 +151,12 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag
 	courierbag = /obj/item/storage/backpack/messenger
 	backpack_contents = list(/obj/item/storage/firstaid/roumain=1)
+
+/datum/outfit/job/doctor/frontiersmen
+	name = "Surgeon (frontiersmen)"
+
+	uniform = /obj/item/clothing/under/rank/security/officer/frontier
+	glasses = /obj/item/clothing/glasses/hud/health/prescription
+	ears = /obj/item/radio/headset/pirate
+	r_pocket = /obj/item/kitchen/knife/combat/survival
+	backpack_contents = list(/obj/item/storage/firstaid/medical,)

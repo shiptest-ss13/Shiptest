@@ -204,10 +204,9 @@ There are several things that need to be remembered:
 
 		var/handled_by_bodytype = TRUE
 		var/icon_file
-		/*
+
 		if((dna.species.bodytype & BODYTYPE_VOX) && (I.supports_variations & VOX_VARIATION))
 			icon_file = VOX_GLOVES_PATH
-		*/
 
 		if(!(icon_exists(icon_file, RESOLVE_ICON_STATE(I))))
 			handled_by_bodytype = FALSE
@@ -236,12 +235,11 @@ There are several things that need to be remembered:
 		update_hud_glasses(I)
 		if(!(head?.flags_inv & HIDEEYES) && !(wear_mask?.flags_inv & HIDEEYES))
 			var/mutable_appearance/glasses_overlay
-			var/handled_by_bodytype
+			var/handled_by_bodytype = TRUE
 			var/icon_file
-			/*
+
 			if((dna.species.bodytype & BODYTYPE_VOX) && (I.supports_variations & VOX_VARIATION))
 				icon_file = VOX_GLASSES_PATH
-			*/
 
 			if(!(icon_exists(icon_file, RESOLVE_ICON_STATE(I))))
 				handled_by_bodytype = FALSE
@@ -272,10 +270,9 @@ There are several things that need to be remembered:
 
 		var/handled_by_bodytype = TRUE
 		var/icon_file
-		/*
+
 		if((dna.species.bodytype & BODYTYPE_VOX) && (I.supports_variations & VOX_VARIATION))
 			icon_file = VOX_EARS_PATH
-		*/
 
 		if(!(icon_exists(icon_file, RESOLVE_ICON_STATE(I))))
 			handled_by_bodytype = FALSE
@@ -308,8 +305,11 @@ There are several things that need to be remembered:
 
 		if((dna.species.bodytype & BODYTYPE_DIGITIGRADE) && (I.supports_variations & DIGITIGRADE_VARIATION))
 			var/obj/item/bodypart/leg = src.get_bodypart(BODY_ZONE_L_LEG)
-			if(leg.limb_id == "digitigrade")//Snowflakey and bad. But it makes it look consistent.
+			if(leg.bodytype & BODYTYPE_DIGITIGRADE && !leg.plantigrade_forced)
 				icon_file = DIGITIGRADE_SHOES_PATH
+
+		if((I.supports_variations & VOX_VARIATION) && (dna.species.bodytype & BODYTYPE_VOX))
+			icon_file = VOX_SHOES_PATH
 
 		if(!(icon_exists(icon_file, RESOLVE_ICON_STATE(I))))
 			handled_by_bodytype = FALSE
@@ -389,6 +389,9 @@ There are several things that need to be remembered:
 		update_hud_belt(I)
 		var/handled_by_bodytype
 		var/icon_file
+
+		if((I.supports_variations & VOX_VARIATION) && (dna.species.bodytype & BODYTYPE_VOX))
+			icon_file = VOX_BELT_PATH
 
 		if(!(icon_exists(icon_file, RESOLVE_ICON_STATE(I))))
 			handled_by_bodytype = FALSE

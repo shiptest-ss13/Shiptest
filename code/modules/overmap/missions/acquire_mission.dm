@@ -179,6 +179,84 @@
 	objective_type = /mob/living/simple_animal/bot/firebot/rockplanet
 
 /*
+		Acquire: Fishing
+*/
+
+/datum/mission/acquire/aquarium
+	name = "Fish needed for my aquarium"
+	weight = 14
+	value = 750
+	duration = 60 MINUTES
+	val_mod_range = 0.2
+	container_type = /obj/item/storage/fish_case/mission
+
+/datum/mission/acquire/aquarium/New(...)
+	objective_type = pick(/obj/item/fish/clownfish,
+						/obj/item/fish/pufferfish,
+						/obj/item/fish/cardinal,
+						/obj/item/fish/greenchromis,
+						/obj/item/fish/trout,
+						/obj/item/fish/salmon,
+						/obj/item/fish/dwarf_moonfish,
+						/obj/item/fish/gunner_jellyfish,
+						/obj/item/fish/plasmatetra,
+						/obj/item/fish/catfish,
+						/obj/item/fish/bass,
+						/obj/item/fish/armorfish,
+						/obj/item/fish/needlefish)
+	desc = "My aquarium is sorely lacking in [initial(objective_type.name)], can you please bring one to me? \
+			Don't worry about if it's alive or dead, I have methods."
+	. = ..()
+
+/datum/mission/acquire/aquarium/rare
+	name = "Rare fish needed for my aquarium!"
+	weight = 8
+	value = 1500
+	val_mod_range = 0.3
+
+/datum/mission/acquire/aquarium/rare/New(...)
+	. = ..()
+	objective_type = pick(/obj/item/fish/lanternfish,
+						/obj/item/fish/firefish,
+						/obj/item/fish/donkfish)
+	desc = "I seek to make my beloved aquarium truly spectacular, and to do this I need only the finest fish! \
+			Bring me a [initial(objective_type.name)] and I will reward you handsomely."
+
+/datum/mission/acquire/aquarium/sabatoge
+	name = "That bastard has had it good for too long!"
+	weight = 1
+	value = 3000
+	duration = 100 MINUTES
+
+/datum/mission/acquire/aquarium/sabatoge/New(...)
+	. = ..()
+	desc = "My arch-nemesis [pick("Rutherford","Baldwin","Anderson","Percival")] thinks his aquarium is so much better than mine, I'll show him! \
+			Bring me an emulsijack, and make sure it's alive!"
+	objective_type = pick(/obj/item/fish/emulsijack)
+
+/datum/mission/acquire/fish_cook
+	name = "Fish needed for my meal"
+	weight = 8
+	duration = 40 MINUTES
+	val_mod_range = 0.2
+	objective_type = /obj/item/fish
+	container_type = /obj/item/storage/fish_case/mission/big
+
+/datum/mission/acquire/fish_cook/New(...)
+	num_wanted = rand(1,3)
+	desc = "I am a chef in need of [num_wanted] fish for my latest dish. Any fish will do, just make sure they're not filleted!"
+	value = (250*num_wanted)
+	. = ..()
+
+/datum/mission/acquire/fish/alive/atom_effective_count(atom/movable/target)
+	. = ..()
+	if(!.)
+		return
+	var/mob/creature = target
+	if(creature.stat == DEAD)
+		return 0
+
+/*
 		Acquiry mission containers
 */
 
@@ -216,3 +294,16 @@
 	STR.max_combined_w_class = WEIGHT_CLASS_NORMAL
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
 	STR.max_items = 1
+
+/obj/item/storage/fish_case/mission
+	name = "fish delivery case"
+	desc = "A stasis case that keeps fish alive during transportation, or at least stops them from becoming more dead."
+
+/obj/item/storage/fish_case/mission/big
+	name = "large fish delivery case"
+	desc = "A specialized container for the delivering of large quatities of fish. Guarantees they stay fresh during delivery!."
+
+/obj/item/storage/fish_case/mission/big/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 3

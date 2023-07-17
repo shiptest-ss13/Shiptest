@@ -14,9 +14,7 @@
 	pixel_x = -25
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/machinery/light/small/directional/north,
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
 	},
@@ -25,16 +23,11 @@
 /turf/open/floor/plating,
 /area/ship/crew)
 "bo" = (
-/obj/machinery/firealarm{
-	dir = 8;
-	pixel_x = -25
-	},
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "bB" = (
-/obj/machinery/light/small{
-	dir = 8
-	},
+/obj/machinery/light/small/directional/west,
 /obj/machinery/button/door{
 	id = "caravansyndicate3_bolt_starboard";
 	name = "External Bolt Control";
@@ -223,9 +216,7 @@
 "uy" = (
 /obj/structure/table/reinforced,
 /obj/machinery/recharger,
-/obj/machinery/light/small{
-	dir = 8
-	},
+/obj/machinery/light/small/directional/west,
 /obj/effect/turf_decal/corner/opaque/red{
 	dir = 1
 	},
@@ -259,9 +250,7 @@
 /turf/open/floor/plating/airless,
 /area/ship/crew)
 "xC" = (
-/obj/machinery/light/small{
-	dir = 8
-	},
+/obj/machinery/light/small/directional/west,
 /obj/machinery/button/door{
 	id = "caravansyndicate3_bolt_port";
 	name = "External Bolt Control";
@@ -292,10 +281,7 @@
 /obj/structure/chair/comfy/shuttle{
 	dir = 1
 	},
-/obj/machinery/firealarm{
-	dir = 1;
-	pixel_y = -26
-	},
+/obj/machinery/firealarm/directional/south,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 9
@@ -313,7 +299,7 @@
 	},
 /obj/item/storage/box/syndie_kit/chameleon,
 /obj/item/crowbar/red,
-/obj/machinery/light/small,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew)
 "Dx" = (
@@ -478,9 +464,7 @@
 	},
 /obj/item/clothing/under/syndicate,
 /obj/item/clothing/glasses/night,
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew)
 "Pt" = (
@@ -520,7 +504,7 @@
 /obj/effect/turf_decal/industrial/hatch/yellow{
 	dir = 4
 	},
-/obj/machinery/light/small,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/plating,
 /area/ship/crew)
 "Rj" = (
@@ -533,9 +517,7 @@
 /obj/structure/table/reinforced,
 /obj/item/storage/toolbox/emergency,
 /obj/item/wrench,
-/obj/machinery/light/small{
-	dir = 8
-	},
+/obj/machinery/light/small/directional/west,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/corner/opaque/red{
@@ -646,10 +628,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "ZZ" = (
-/obj/machinery/firealarm{
-	dir = 8;
-	pixel_x = -25
-	},
+/obj/machinery/firealarm/directional/east,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/holopad/emergency/command,
 /turf/open/floor/plasteel/dark,

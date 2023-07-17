@@ -544,9 +544,6 @@ TURF_DECAL_COLOR_HELPER(transparent/inteqbrown, "#4b2a18", 140)
 /obj/effect/turf_decal/floordetail/pryhole
 	icon_state = "pryhole"
 
-/obj/effect/turf_decal/floordetail/edgedrain
-	icon_state = "edge"
-
 /obj/effect/turf_decal/floordetail/traction
 	icon_state = "traction"
 
@@ -593,37 +590,35 @@ TURF_DECAL_COLOR_HELPER(transparent/inteqbrown, "#4b2a18", 140)
 
 /obj/effect/turf_decal/borderfloor
 	name = "border floor"
-	icon_state = "borderfloor_white"
-	color = "#545c68"
+	icon_state = "borderfloor"
 
 /obj/effect/turf_decal/borderfloor/corner
-	icon_state = "borderfloorcorner_white"
+	icon_state = "borderfloorcorner"
 
 /obj/effect/turf_decal/borderfloor/corner2
-	icon_state = "borderfloorcorner2_white"
+	icon_state = "borderfloorcorner2"
 
 /obj/effect/turf_decal/borderfloor/full
-	icon_state = "borderfloorfull_white"
+	icon_state = "borderfloorfull"
 
 /obj/effect/turf_decal/borderfloor/cee
-	icon_state = "borderfloorcee_white"
+	icon_state = "borderfloorcee"
 
 /obj/effect/turf_decal/borderfloorblack
 	name = "border floor"
-	icon_state = "borderfloor_white"
-	color = COLOR_ALMOST_BLACK
+	icon_state = "borderfloor_black"
 
 /obj/effect/turf_decal/borderfloorblack/corner
-	icon_state = "borderfloorcorner_white"
+	icon_state = "borderfloorcorner_black"
 
 /obj/effect/turf_decal/borderfloorblack/corner2
-	icon_state = "borderfloorcorner2_white"
+	icon_state = "borderfloorcorner2_black"
 
 /obj/effect/turf_decal/borderfloorblack/full
-	icon_state = "borderfloorfull_white"
+	icon_state = "borderfloorfull_black"
 
 /obj/effect/turf_decal/borderfloorblack/cee
-	icon_state = "borderfloorcee_white"
+	icon_state = "borderfloorcee_black"
 
 /obj/effect/turf_decal/borderfloorwhite
 	name = "border floor"
@@ -728,13 +723,90 @@ TURF_DECAL_COLOR_HELPER(transparent/inteqbrown, "#4b2a18", 140)
 /obj/effect/turf_decal/rechargefloor
 	icon_state = "recharge_floor"
 
-/obj/effect/turf_decal/solgov //Credit to baystation for these sprites!
-	alpha = 230
+/obj/effect/turf_decal/solgov
 	icon = 'icons/obj/solgov_floor.dmi'
+	icon_state = "top-left"
+
+/obj/effect/turf_decal/solgov/top
+	icon_state = "top-center"
+
+/obj/effect/turf_decal/solgov/top_right
+	icon_state = "top-right"
+
+/obj/effect/turf_decal/solgov/center_left
+	icon_state = "center-left"
+
+/obj/effect/turf_decal/solgov/center
 	icon_state = "center"
 
+/obj/effect/turf_decal/solgov/center_right
+	icon_state = "center-right"
+
+/obj/effect/turf_decal/solgov/bottom_left
+	icon_state = "bottom-left"
+
+/obj/effect/turf_decal/solgov/bottom_center
+	icon_state = "bottom-center"
+
+/obj/effect/turf_decal/solgov/bottom_right
+	icon_state = "bottom-right"
+
+/obj/effect/turf_decal/solgov/wood
+	icon_state = "top-left-wood"
+
+/obj/effect/turf_decal/solgov/wood/top
+	icon_state = "top-center-wood"
+
+/obj/effect/turf_decal/solgov/wood/top_right
+	icon_state = "top-right-wood"
+
+/obj/effect/turf_decal/solgov/wood/center_left
+	icon_state = "center-left-wood"
+
+/obj/effect/turf_decal/solgov/wood/center
+	icon_state = "center-wood"
+
+/obj/effect/turf_decal/solgov/wood/center_right
+	icon_state = "center-right-wood"
+
+/obj/effect/turf_decal/solgov/wood/bottom_left
+	icon_state = "bottom-left-wood"
+
+/obj/effect/turf_decal/solgov/wood/bottom_center
+	icon_state = "bottom-center-wood"
+
+/obj/effect/turf_decal/solgov/wood/bottom_right
+	icon_state = "bottom-right-wood"
+
+/obj/effect/turf_decal/solgov/all
+	icon_state = "top-left-all"
+
+/obj/effect/turf_decal/solgov/all/top
+	icon_state = "top-center-all"
+
+/obj/effect/turf_decal/solgov/all/top_right
+	icon_state = "top-right-all"
+
+/obj/effect/turf_decal/solgov/all/center_left
+	icon_state = "center-left-all"
+
+/obj/effect/turf_decal/solgov/all/center
+	icon_state = "center-all"
+
+/obj/effect/turf_decal/solgov/all/center_right
+	icon_state = "center-right-all"
+
+/obj/effect/turf_decal/solgov/all/bottom_left
+	icon_state = "bottom-left-all"
+
+/obj/effect/turf_decal/solgov/all/bottom_center
+	icon_state = "bottom-center-all"
+
+/obj/effect/turf_decal/solgov/all/bottom_right
+	icon_state = "bottom-right-all"
+
 /obj/effect/turf_decal/road
-	name = "roal decal"
+	name = "road decal"
 	icon_state = "road"
 	alpha = 180
 
@@ -769,3 +841,254 @@ TURF_DECAL_COLOR_HELPER(transparent/inteqbrown, "#4b2a18", 140)
 
 /obj/effect/turf_decal/minutemen/middle
 	icon_state = "mm_middle"
+
+// ship manufacturers start
+
+//Miskilamo Spacefaring
+/obj/effect/turf_decal/miskilamo_small
+	name = "small miskilamo logo"
+	icon_state = "miskilamo-center"
+
+/obj/effect/turf_decal/miskilamo_small/left
+	icon_state = "miskilamo-left"
+
+/obj/effect/turf_decal/miskilamo_small/right
+	icon_state = "miskilamo-right"
+
+
+/obj/effect/turf_decal/miskilamo_big
+	name = "big miskilamo logo"
+/obj/effect/turf_decal/miskilamo_big/one
+	icon_state = "miskilamo_big-1"
+
+/obj/effect/turf_decal/miskilamo_big/two
+	icon_state = "miskilamo_big-2"
+
+/obj/effect/turf_decal/miskilamo_big/two
+	icon_state = "miskilamo_big-2"
+
+/obj/effect/turf_decal/miskilamo_big/three
+	icon_state = "miskilamo_big-3"
+
+/obj/effect/turf_decal/miskilamo_big/four
+	icon_state = "miskilamo_big-4"
+
+/obj/effect/turf_decal/miskilamo_big/five
+	icon_state = "miskilamo_big-5"
+
+/obj/effect/turf_decal/miskilamo_big/six
+	icon_state = "miskilamo_big-6"
+
+/obj/effect/turf_decal/miskilamo_big/seven
+	icon_state = "miskilamo_big-7"
+
+/obj/effect/turf_decal/miskilamo_big/eight
+	icon_state = "miskilamo_big-8"
+
+// Kasagi-Fischer Partnership
+/obj/effect/turf_decal/kfp_small
+	name = "small kfp logo"
+	icon_state = "kfp-center"
+
+/obj/effect/turf_decal/kfp_small/left
+	icon_state = "kfp-left"
+
+/obj/effect/turf_decal/kfp_small/right
+	icon_state = "kfp-right"
+
+
+/obj/effect/turf_decal/kfp_big
+	name = "big kfp logo"
+
+/obj/effect/turf_decal/kfp_big/one
+	icon_state = "kfp_big-1"
+
+/obj/effect/turf_decal/kfp_big/two
+	icon_state = "kfp_big-2"
+
+/obj/effect/turf_decal/kfp_big/two
+	icon_state = "kfp_big-2"
+
+/obj/effect/turf_decal/kfp_big/three
+	icon_state = "kfp_big-3"
+
+/obj/effect/turf_decal/kfp_big/four
+	icon_state = "kfp_big-4"
+
+/obj/effect/turf_decal/kfp_big/five
+	icon_state = "kfp_big-5"
+
+/obj/effect/turf_decal/kfp_big/six
+	icon_state = "kfp_big-6"
+
+/obj/effect/turf_decal/kfp_big/seven
+	icon_state = "kfp_big-7"
+
+/obj/effect/turf_decal/kfp_big/eight
+	icon_state = "kfp_big-8"
+
+//ISF Spacecraft
+/obj/effect/turf_decal/isf_small
+	name = "small isf logo"
+	icon_state = "isf-center"
+
+/obj/effect/turf_decal/isf_small/left
+	icon_state = "isf-left"
+
+/obj/effect/turf_decal/isf_small/right
+	icon_state = "isf-right"
+
+
+/obj/effect/turf_decal/isf_big
+	name = "big isf logo"
+
+/obj/effect/turf_decal/isf_big/one
+	icon_state = "isf_big-1"
+
+/obj/effect/turf_decal/isf_big/two
+	icon_state = "isf_big-2"
+
+/obj/effect/turf_decal/isf_big/two
+	icon_state = "isf_big-2"
+
+/obj/effect/turf_decal/isf_big/three
+	icon_state = "isf_big-3"
+
+/obj/effect/turf_decal/isf_big/four
+	icon_state = "isf_big-4"
+
+/obj/effect/turf_decal/isf_big/five
+	icon_state = "isf_big-5"
+
+/obj/effect/turf_decal/isf_big/six
+	icon_state = "isf_big-6"
+
+/obj/effect/turf_decal/isf_big/seven
+	icon_state = "isf_big-7"
+
+/obj/effect/turf_decal/isf_big/eight
+	icon_state = "isf_big-8"
+
+//Ihejirika Civilian Manufacturing
+/obj/effect/turf_decal/ihejirika_small
+	name = "small ihejirika logo"
+	icon_state = "ihejirika-center"
+
+/obj/effect/turf_decal/ihejirika_small/left
+	icon_state = "ihejirika-left"
+
+/obj/effect/turf_decal/ihejirika_small/right
+	icon_state = "ihejirika-right"
+
+
+/obj/effect/turf_decal/ihejirika_big
+	name = "big ihejirika logo"
+
+/obj/effect/turf_decal/ihejirika_big/one
+	icon_state = "ihejirika_big-1"
+
+/obj/effect/turf_decal/ihejirika_big/two
+	icon_state = "ihejirika_big-2"
+
+/obj/effect/turf_decal/ihejirika_big/two
+	icon_state = "ihejirika_big-2"
+
+/obj/effect/turf_decal/ihejirika_big/three
+	icon_state = "ihejirika_big-3"
+
+/obj/effect/turf_decal/ihejirika_big/four
+	icon_state = "ihejirika_big-4"
+
+/obj/effect/turf_decal/ihejirika_big/five
+	icon_state = "ihejirika_big-5"
+
+/obj/effect/turf_decal/ihejirika_big/six
+	icon_state = "ihejirika_big-6"
+
+/obj/effect/turf_decal/ihejirika_big/seven
+	icon_state = "ihejirika_big-7"
+
+/obj/effect/turf_decal/ihejirika_big/eight
+	icon_state = "ihejirika_big-8"
+
+//NT Spaceworks
+/obj/effect/turf_decal/ntspaceworks_small
+	name = "small ntspaceworks logo"
+	icon_state = "ntspaceworks-center"
+
+/obj/effect/turf_decal/ntspaceworks_small/left
+	icon_state = "ntspaceworks-left"
+
+/obj/effect/turf_decal/ntspaceworks_small/right
+	icon_state = "ntspaceworks-right"
+
+
+/obj/effect/turf_decal/ntspaceworks_big
+	name = "big ntspaceworks logo"
+
+/obj/effect/turf_decal/ntspaceworks_big/one
+	icon_state = "ntspaceworks_big-1"
+
+/obj/effect/turf_decal/ntspaceworks_big/two
+	icon_state = "ntspaceworks_big-2"
+
+/obj/effect/turf_decal/ntspaceworks_big/two
+	icon_state = "ntspaceworks_big-2"
+
+/obj/effect/turf_decal/ntspaceworks_big/three
+	icon_state = "ntspaceworks_big-3"
+
+/obj/effect/turf_decal/ntspaceworks_big/four
+	icon_state = "ntspaceworks_big-4"
+
+/obj/effect/turf_decal/ntspaceworks_big/five
+	icon_state = "ntspaceworks_big-5"
+
+/obj/effect/turf_decal/ntspaceworks_big/six
+	icon_state = "ntspaceworks_big-6"
+
+/obj/effect/turf_decal/ntspaceworks_big/seven
+	icon_state = "ntspaceworks_big-7"
+
+/obj/effect/turf_decal/ntspaceworks_big/eight
+	icon_state = "ntspaceworks_big-8"
+
+//Hardline Salvage and Mining
+
+/obj/effect/turf_decal/hardline_small
+	name = "small hardline logo"
+	icon_state = "hardline-center"
+
+/obj/effect/turf_decal/hardline_small/left
+	icon_state = "hardline-left"
+
+/obj/effect/turf_decal/hardline_small/right
+	icon_state = "hardline-right"
+
+
+/obj/effect/turf_decal/hardline_big
+	name = "big hardline logo"
+
+/obj/effect/turf_decal/hardline_big/one
+	icon_state = "hardline_big-1"
+
+/obj/effect/turf_decal/hardline_big/two
+	icon_state = "hardline_big-2"
+
+/obj/effect/turf_decal/hardline_big/two
+	icon_state = "hardline_big-2"
+
+/obj/effect/turf_decal/hardline_big/three
+	icon_state = "hardline_big-3"
+
+/obj/effect/turf_decal/hardline_big/four
+	icon_state = "hardline_big-4"
+
+/obj/effect/turf_decal/hardline_big/five
+	icon_state = "hardline_big-5"
+
+/obj/effect/turf_decal/hardline_big/six
+	icon_state = "hardline_big-6"
+
+/obj/effect/turf_decal/hardline_big/seven
+	icon_state = "hardline_big-7"

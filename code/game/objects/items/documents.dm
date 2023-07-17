@@ -16,6 +16,14 @@
 	desc = "\"Top Secret\" Nanotrasen documents, filled with complex diagrams and lists of names, dates and coordinates."
 	icon_state = "docs_verified"
 
+/obj/item/documents/solgov
+	desc = "\"TOP SECRET\"-level memo, listing a number of black company operatives on various space stations and worlds. Some entries have been crossed out, underlined in red, or even redacted entirely with black ink."
+	icon_state = "docs_verified"
+
+/obj/item/documents/terragov
+	desc = "\"RESTRICTED\"-level state documents listing points in space, all within five light-years of the Bezuts star system. Portions of the document are covered in unintelligible blue annotations."
+	icon_state = "docs_verified"
+
 /obj/item/documents/syndicate
 	desc = "\"Top Secret\" documents detailing sensitive Syndicate operational intelligence."
 

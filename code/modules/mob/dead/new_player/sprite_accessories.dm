@@ -47,26 +47,30 @@
 	return L
 
 /datum/sprite_accessory
-	var/icon			//the icon file the accessory is located in
-	var/icon_state		//the icon_state of the accessory
-	var/name			//the preview name of the accessory
-	var/gender = NEUTER	//Determines if the accessory will be skipped or included in random hair generations
-	var/gender_specific //Something that can be worn by either gender, but looks different on each
-	var/use_static		//determines if the accessory will be skipped by color preferences
-	var/color_src = MUTCOLORS	//Currently only used by mutantparts so don't worry about hair and stuff. This is the source that this accessory will get its color from. Default is MUTCOLOR, but can also be HAIR, FACEHAIR, EYECOLOR and 0 if none.
-	var/hasinner		//Decides if this sprite has an "inner" part, such as the fleshy parts on ears.
-	var/locked = FALSE		//Is this part locked from roundstart selection? Used for parts that apply effects
+	var/icon			//!the icon file the accessory is located in
+	var/icon_state		//!the icon_state of the accessory
+	var/name			//!the preview name of the accessory
+	var/gender = NEUTER	//!Determines if the accessory will be skipped or included in random hair generations
+	var/gender_specific	//!Something that can be worn by either gender, but looks different on each
+	var/use_static		//!determines if the accessory will be skipped by color preferences
+	var/color_src = MUTCOLORS	//!Currently only used by mutantparts so don't worry about hair and stuff. This is the source that this accessory will get its color from. Default is MUTCOLOR, but can also be HAIR, FACEHAIR, EYECOLOR and 0 if none.
+	var/hasinner		//!Decides if this sprite has an "inner" part, such as the fleshy parts on ears.
+	var/locked = FALSE		//!Is this part locked from roundstart selection? Used for parts that apply effects
 	var/dimension_x = 32
 	var/dimension_y = 32
-	var/center = FALSE	//Should we center the sprite?
-	var/limbs_id // The limbs id supplied for full-body replacing features.
-	var/image_alpha = 255 // The alpha for the accessory to use.
+	var/center = FALSE	//!Should we center the sprite?
+	var/limbs_id //!The limbs id supplied for full-body replacing features.
+	var/image_alpha = 255 //!The alpha for the accessory to use.
+	var/body_zone = BODY_ZONE_CHEST	//!The body zone this accessory affects
+	var/synthetic_icon_state	//!The icon_state to use when the bodypart it's attached to is synthetic
+	var/synthetic_color_src		//!The color src to use instead of the normal src when synthetic, leave blank to use the normal src
 
 //////////////////////
 // Hair Definitions //
 //////////////////////
 /datum/sprite_accessory/hair
 	icon = 'icons/mob/human_face.dmi'	  // default icon for all hairs
+	body_zone = BODY_ZONE_HEAD
 
 	// please make sure they're sorted alphabetically and, where needed, categorized
 	// try to capitalize the names please~
@@ -843,6 +847,7 @@
 
 /datum/sprite_accessory/hair_gradient
 	icon = 'icons/mob/hair_gradients.dmi'
+	body_zone = BODY_ZONE_HEAD
 
 /datum/sprite_accessory/hair_gradient/none
 	name = "None"
@@ -891,6 +896,7 @@
 /datum/sprite_accessory/facial_hair
 	icon = 'icons/mob/human_face.dmi'
 	gender = MALE // barf (unless you're a dorf, dorfs dig chix w/ beards :P)
+	body_zone = BODY_ZONE_HEAD
 
 // please make sure they're sorted alphabetically and categorized
 
@@ -1701,6 +1707,9 @@
 
 /datum/sprite_accessory/body_markings
 	icon = 'icons/mob/mutant_bodyparts.dmi'
+	color_src = MUTCOLORS_SECONDARY
+	body_zone = BODY_ZONE_CHEST
+	synthetic_icon_state = "none"
 
 /datum/sprite_accessory/body_markings/none
 	name = "None"
@@ -1709,23 +1718,26 @@
 /datum/sprite_accessory/body_markings/dtiger
 	name = "Dark Tiger Body"
 	icon_state = "dtiger"
-	gender_specific = 1
+	gender_specific = TRUE
 
 /datum/sprite_accessory/body_markings/ltiger
 	name = "Light Tiger Body"
 	icon_state = "ltiger"
-	gender_specific = 1
+	gender_specific = TRUE
 
 /datum/sprite_accessory/body_markings/lbelly
 	name = "Light Belly"
 	icon_state = "lbelly"
-	gender_specific = 1
+	gender_specific = TRUE
 
 /datum/sprite_accessory/tails
 	icon = 'icons/mob/mutant_bodyparts.dmi'
+	body_zone = BODY_ZONE_CHEST
+	synthetic_icon_state = "synth"
 
 /datum/sprite_accessory/tails_animated
 	icon = 'icons/mob/mutant_bodyparts.dmi'
+	body_zone = BODY_ZONE_CHEST
 
 /datum/sprite_accessory/tails/lizard/smooth
 	name = "Smooth"
@@ -1762,10 +1774,12 @@
 /datum/sprite_accessory/tails/lizard/large
 	name = "Large"
 	icon_state = "large"
+	synthetic_icon_state = "large" //fight me
 
 /datum/sprite_accessory/tails_animated/lizard/large
 	name = "Large"
 	icon_state = "large"
+	synthetic_icon_state = "large"
 
 /datum/sprite_accessory/tails/human/none
 	name = "None"
@@ -1823,6 +1837,8 @@
 
 /datum/sprite_accessory/snouts
 	icon = 'icons/mob/mutant_bodyparts.dmi'
+	body_zone = BODY_ZONE_HEAD
+	synthetic_icon_state = "none"
 
 /datum/sprite_accessory/snouts/sharp
 	name = "Sharp"
@@ -1842,6 +1858,9 @@
 
 /datum/sprite_accessory/horns
 	icon = 'icons/mob/mutant_bodyparts.dmi'
+	color_src = HAIR
+	body_zone = BODY_ZONE_HEAD
+	synthetic_color_src = MUTCOLORS_SECONDARY
 
 /datum/sprite_accessory/horns/none
 	name = "None"
@@ -1850,18 +1869,22 @@
 /datum/sprite_accessory/horns/simple
 	name = "Simple"
 	icon_state = "simple"
+	synthetic_icon_state = "simple_synth"
 
 /datum/sprite_accessory/horns/short
 	name = "Short"
 	icon_state = "short"
+	synthetic_icon_state = "short_synth"
 
 /datum/sprite_accessory/horns/curled
 	name = "Curled"
 	icon_state = "curled"
+	synthetic_icon_state = "curled_synth"
 
 /datum/sprite_accessory/horns/ram
 	name = "Ram"
 	icon_state = "ram"
+	synthetic_icon_state = "ram_synth"
 
 /datum/sprite_accessory/horns/angler
 	name = "Angeler"
@@ -2703,7 +2726,7 @@
 	icon_state = "bun"
 
 /datum/sprite_accessory/kepori_body_feathers
-	color_src = FACEHAIR
+	color_src = MUTCOLORS_SECONDARY
 	icon = 'icons/mob/kepori_parts.dmi'
 
 /datum/sprite_accessory/kepori_body_feathers/none
@@ -2730,7 +2753,7 @@
 	icon_state = "wings"
 
 /datum/sprite_accessory/kepori_tail_feathers
-	color_src = FACEHAIR
+	color_src = MUTCOLORS_SECONDARY
 	icon = 'icons/mob/kepori_parts.dmi'
 
 /datum/sprite_accessory/kepori_tail_feathers/none
@@ -2895,7 +2918,7 @@
 	name = "Ruffhawk"
 	icon_state = "ruffhawk"
 
-//Elzuosa help
+//Elzuose help
 
 /datum/sprite_accessory/elzu_horns
 	icon = 'icons/mob/ethereal_parts.dmi'

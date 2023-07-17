@@ -192,31 +192,28 @@
 	return 0
 
 /mob/living/carbon/regenerate_organs()
-	if(dna?.species)
-		dna.species.regenerate_organs(src)
-		return
+	if(!getorganslot(ORGAN_SLOT_LUNGS))
+		var/obj/item/organ/lungs/L = new()
+		L.Insert(src)
 
-	else
-		if(!getorganslot(ORGAN_SLOT_LUNGS))
-			var/obj/item/organ/lungs/L = new()
-			L.Insert(src)
+	if(!getorganslot(ORGAN_SLOT_HEART))
+		var/obj/item/organ/heart/H = new()
+		H.Insert(src)
 
-		if(!getorganslot(ORGAN_SLOT_HEART))
-			var/obj/item/organ/heart/H = new()
-			H.Insert(src)
+	if(!getorganslot(ORGAN_SLOT_TONGUE))
+		var/obj/item/organ/tongue/T = new()
+		T.Insert(src)
 
-		if(!getorganslot(ORGAN_SLOT_TONGUE))
-			var/obj/item/organ/tongue/T = new()
-			T.Insert(src)
+	if(!getorganslot(ORGAN_SLOT_EYES))
+		var/obj/item/organ/eyes/E = new()
+		E.Insert(src)
 
-		if(!getorganslot(ORGAN_SLOT_EYES))
-			var/obj/item/organ/eyes/E = new()
-			E.Insert(src)
+	if(!getorganslot(ORGAN_SLOT_EARS))
+		var/obj/item/organ/ears/ears = new()
+		ears.Insert(src)
 
-		if(!getorganslot(ORGAN_SLOT_EARS))
-			var/obj/item/organ/ears/ears = new()
-			ears.Insert(src)
-
+/mob/living/carbon/human/regenerate_organs()
+	dna.species.regenerate_organs(src, robotic = fbp)
 
 /** get_availability
  * returns whether the species should innately have this organ.

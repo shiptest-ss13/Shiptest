@@ -125,6 +125,7 @@
 		"kepori_tail_feathers" = pick(GLOB.kepori_tail_feathers_list),
 		"legs" = "Normal Legs",
 		"mcolor" = pick("FFFFFF","7F7F7F", "7FFF7F", "7F7FFF", "FF7F7F", "7FFFFF", "FF7FFF", "FFFF7F"),
+		"mcolor2" = pick("FFFFFF","7F7F7F", "7FFF7F", "7F7FFF", "FF7F7F", "7FFFFF", "FF7FFF", "FFFF7F"),
 		"moth_fluff" = pick(GLOB.moth_fluff_list),
 		"moth_markings" = pick(GLOB.moth_markings_list),
 		"moth_wings" = pick(GLOB.moth_wings_list),
@@ -659,3 +660,7 @@ GLOBAL_LIST_EMPTY(species_list)
 		else
 			. = pick(ais)
 	return .
+
+/// Gets the client of the mob, allowing for mocking of the client.
+/// You only need to use this if you know you're going to be mocking clients somewhere else.
+#define GET_CLIENT(mob) (##mob.client || ##mob.mock_client)
