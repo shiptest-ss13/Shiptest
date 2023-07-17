@@ -308,6 +308,10 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 /// Trait granted by lipstick
 #define LIPSTICK_TRAIT "lipstick_trait"
 
+// Bone breaking traits. Don't actually do anything(?)
+#define TRAIT_NOBREAK "no_break"
+#define TRAIT_ALLBREAK "all_break"
+
 // common trait sources
 #define TRAIT_GENERIC "generic"
 #define GENERIC_ITEM_TRAIT "generic_item"

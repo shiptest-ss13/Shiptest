@@ -12,18 +12,30 @@
 	],
 	"map_path": "_maps/shuttles/shiptest/independent_meta.dmm",
 	"job_slots": {
-		"Captain": 1,
-		"Quartermaster": 1,
+		"Captain": {
+			"outfit": "/datum/outfit/job/captain",
+			"slots": 1
+		},
+		"Quartermaster": {
+			"outfit": "/datum/outfit/job/quartermaster",
+			"slots": 1
+		},
 		"Medical Doctor": {
 			"outfit": "/datum/outfit/job/doctor",
 			"slots": 1
 		},
-		"Station Engineer": 1,
+		"Station Engineer": {
+			"outfit": "/datum/outfit/job/engineer",
+			"slots": 1
+		},
 		"Shaft Miner": {
 			"outfit": "/datum/outfit/job/miner",
 			"slots": 1
 		},
-		"Assistant": 3
+		"Assistant": {
+			"outfit": "/datum/outfit/job/assistant",
+			"slots": 3
+		}
 	},
 	"enabled": true
 }
