@@ -98,6 +98,7 @@ other types of metals and chemistry for reagents).
 	illustration = "design"
 	custom_materials = list(/datum/material/iron =300, /datum/material/glass =100)
 	var/list/blueprints = list()
+	var/list/starting_blueprints = list()
 	var/max_blueprints = 1
 
 /obj/item/disk/design_disk/Initialize()
@@ -160,12 +161,10 @@ other types of metals and chemistry for reagents).
 	illustration = "gun"
 	max_blueprints = 2
 
-/obj/item/disk/design_disk/disposable_gun/Initialize()
+/obj/item/disk/design_disk/adv/disposable_gun/Initialize()
 	. = ..()
-	var/datum/design/disposable_gun/G = new
-	var/datum/design/pizza_disposable_gun/P = new
-	blueprints[1] = G
-	blueprints[2] = P
+	blueprints[1] = new /datum/design/disposable_gun()
+	blueprints[2] = new /datum/design/pizza_disposable_gun()
 
 /obj/item/disk/design_disk/cmm_mechs
 	name = "design disk - CMM mecha modifications"
@@ -175,5 +174,5 @@ other types of metals and chemistry for reagents).
 
 /obj/item/disk/design_disk/cmm_mechs/Initialize()
 	. = ..()
-	blueprints[1] = new /datum/design/cmm_ripley_upgrade
-	blueprints[2] = new /datum/design/cmm_durand_upgrade
+	blueprints[1] = new /datum/design/cmm_ripley_upgrade()
+	blueprints[2] = new /datum/design/cmm_durand_upgrade()

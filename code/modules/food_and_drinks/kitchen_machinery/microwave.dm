@@ -40,6 +40,8 @@
 
 /obj/machinery/microwave/Destroy()
 	eject()
+	QDEL_NULL(soundloop)
+	QDEL_LIST(ingredients)
 	if(wires)
 		QDEL_NULL(wires)
 	. = ..()

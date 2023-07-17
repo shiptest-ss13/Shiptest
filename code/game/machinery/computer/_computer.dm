@@ -29,10 +29,6 @@
 		circuit = C
 		C.moveToNullspace()
 
-/obj/machinery/computer/Destroy()
-	QDEL_NULL(circuit)
-	return ..()
-
 /obj/machinery/computer/process()
 	if(machine_stat & (NOPOWER|BROKEN))
 		return 0

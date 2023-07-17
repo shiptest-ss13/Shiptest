@@ -7,6 +7,8 @@
 	//We'll spawn everything here
 	var/turf/spawn_at = run_loc_bottom_left
 	var/list/ignore = list(
+		//No-op
+		/turf/template_noop,
 		//Never meant to be created, errors out the ass for mobcode reasons
 		/mob/living/carbon,
 		//And another
@@ -49,6 +51,8 @@
 	//This turf existing is an error in and of itself
 	ignore += typesof(/turf/baseturf_skipover)
 	ignore += typesof(/turf/baseturf_bottom)
+	//Don't spam out baseturfs
+	ignore += typesof(/obj/effect/baseturf_helper)
 	//Needs a contractee
 	ignore += typesof(/obj/item/paper/contract)
 	//This demands a borg, so we'll let if off easy

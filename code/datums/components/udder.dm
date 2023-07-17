@@ -72,6 +72,8 @@
 	///type of reagent this udder will generate
 
 /obj/item/udder/Initialize(mapload, udder_mob, on_generate_callback, reagent_produced_typepath = /datum/reagent/consumable/milk)
+	if(!udder_mob)
+		return INITIALIZE_HINT_QDEL
 	src.udder_mob = udder_mob
 	src.on_generate_callback = on_generate_callback
 	create_reagents(size)
@@ -134,8 +136,6 @@
 	name = "\proper nutrient sac"
 
 /obj/item/udder/gutlunch/initial_conditions()
-	if(!udder_mob)
-		return
 	if(udder_mob.gender == FEMALE)
 		START_PROCESSING(SSobj, src)
 	RegisterSignal(udder_mob, COMSIG_HOSTILE_ATTACKINGTARGET, .proc/on_mob_attacking)

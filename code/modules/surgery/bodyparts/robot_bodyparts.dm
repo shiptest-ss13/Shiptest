@@ -509,8 +509,13 @@
 	static_icon = 'icons/mob/augmentation/augments_vox.dmi'
 	bodytype = BODYTYPE_VOX | BODYTYPE_ROBOTIC
 
-/obj/item/bodypart/leg/robot/vox
+/obj/item/bodypart/leg/left/robot/vox
 	name = "prosthetic vox left leg"
+	static_icon = 'icons/mob/augmentation/augments_vox.dmi'
+	bodytype = BODYTYPE_VOX | BODYTYPE_ROBOTIC
+
+/obj/item/bodypart/leg/right/robot/vox
+	name = "prosthetic vox right leg"
 	static_icon = 'icons/mob/augmentation/augments_vox.dmi'
 	bodytype = BODYTYPE_VOX | BODYTYPE_ROBOTIC
 

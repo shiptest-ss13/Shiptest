@@ -439,11 +439,11 @@
 	return update_icons()
 
 /mob/living/silicon/robot/update_icons()
+	if(QDELETED(src))
+		return
 	cut_overlays()
 	icon_state = module.cyborg_base_icon
-	//WS changes - Thanks Cit - Allows modules to use different icon files
 	icon = (module.cyborg_icon_override ? module.cyborg_icon_override : initial(icon))
-	//EndWS Changes
 	if(module.cyborg_base_icon == "robot")
 		icon = 'icons/mob/robots.dmi'
 		pixel_x = initial(pixel_x)
@@ -1147,7 +1147,7 @@
 /mob/living/silicon/robot/proc/logevent(string = "")
 	if(!string)
 		return
-	if(stat == DEAD) //Dead borgs log no longer
+	if(stat == DEAD || QDELETED(src)) //Dead borgs log no longer //Gone
 		return
 	if(!modularInterface)
 		stack_trace("Cyborg [src] ([type]) was somehow missing their integrated tablet. Please make a bug report.")

@@ -605,6 +605,9 @@
 	for(var/obj/docking_port/mobile/shuttle in all_towed_shuttles)
 		qdel(shuttle, force=TRUE)
 
+	all_towed_shuttles.Cut()
+	qdel(src, TRUE)
+
 /obj/docking_port/mobile/proc/intoTheSunset()
 	// Loop over mobs
 	for(var/t in return_turfs())

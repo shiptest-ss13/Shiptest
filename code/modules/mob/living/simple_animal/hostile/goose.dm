@@ -42,6 +42,10 @@
 	. = ..()
 	RegisterSignal(src, COMSIG_MOVABLE_MOVED, .proc/goosement)
 
+/mob/living/simple_animal/hostile/retaliate/goose/Destroy()
+	UnregisterSignal(src, COMSIG_MOVABLE_MOVED)
+	return ..()
+
 /mob/living/simple_animal/hostile/retaliate/goose/proc/goosement(atom/movable/AM, OldLoc, Dir, Forced)
 	if(stat == DEAD)
 		return
@@ -106,7 +110,6 @@
 		deadchat_plays_goose()
 
 /mob/living/simple_animal/hostile/retaliate/goose/vomit/Destroy()
-	UnregisterSignal(src, COMSIG_MOVABLE_MOVED)
 	QDEL_NULL(goosevomit)
 	return ..()
 

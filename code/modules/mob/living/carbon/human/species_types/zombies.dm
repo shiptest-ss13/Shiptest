@@ -121,7 +121,6 @@
 				BP.is_dimorphic = TRUE
 			BP.skin_tone ||= skintone
 			BP.limb_id = SPECIES_HUMAN
-			BP.should_draw_greyscale = TRUE
 			BP.name = "human [parse_zone(BP.body_zone)]"
 			BP.update_limb()
 
