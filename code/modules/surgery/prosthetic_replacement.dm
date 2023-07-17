@@ -86,7 +86,7 @@
 			"<span class='notice'>[user] successfully replaces [target]'s [parse_zone(target_zone)]!</span>")
 		return
 	else
-		var/obj/item/bodypart/L = target.newBodyPart(target_zone, FALSE, FALSE)
+		var/obj/item/bodypart/L = target.new_body_part(target_zone, FALSE, FALSE)
 		L.is_pseudopart = TRUE
 		if(!L.attach_limb(target))
 			display_results(user, target, "<span class='warning'>You fail in attaching [target]'s [parse_zone(target_zone)]! Their body has rejected [L]!</span>",

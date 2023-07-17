@@ -17,9 +17,18 @@
 			"outfit": "/datum/outfit/job/bartender",
 			"slots": 1
 		},
-		"Cook": 3,
-		"Botanist": 2,
-		"Janitor": 1,
+		"Cook": {
+			"outfit": "/datum/outfit/job/cook",
+			"slots": 3
+		},
+		"Botanist": {
+			"outfit": "/datum/outfit/job/botanist",
+			"slots": 2
+		},
+		"Janitor": {
+			"outfit": "/datum/outfit/job/janitor",
+			"slots": 1
+		},
 		"Waiter": {
 			"outfit": "/datum/outfit/job/assistant/waiter",
 			"slots": 2
