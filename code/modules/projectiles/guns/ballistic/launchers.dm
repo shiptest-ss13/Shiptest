@@ -105,4 +105,3 @@
 	icon_state = "panzerfaust"
 	item_state = "panzerfaust"
 
-
