@@ -23,6 +23,7 @@
 	name = "10mm hollow point bullet casing"
 	desc = "A 10mm hollow point bullet casing."
 	projectile_type = /obj/projectile/bullet/c10mm_hp
+	bullet_skin = "hollow"
 
 /obj/item/ammo_casing/c10mm/fire
 	name = "10mm incendiary bullet casing"
@@ -60,6 +61,7 @@
 /obj/item/ammo_casing/c9mm/hp
 	name = "9mm hollow point bullet casing"
 	desc = "A 9mm hollow point bullet casing."
+	bullet_skin = "hollow"
 	projectile_type = /obj/projectile/bullet/c9mm_hp
 
 /obj/item/ammo_casing/c9mm/inc
@@ -98,6 +100,7 @@
 /obj/item/ammo_casing/c45/hp
 	name = ".45 hollow point bullet casing"
 	desc = "A .45 hollow point bullet casing."
+	bullet_skin = "hollow"
 	projectile_type = /obj/projectile/bullet/c45_hp
 
 /obj/item/ammo_casing/c45/fire

@@ -85,7 +85,7 @@
 /datum/supply_pack/ammo/winchester_ammo
 	name = "Winchester and Detective Special .38 Ammo Boxes"
 	desc = "Contains two 30 round ammo boxes for refilling .38 weapons."
-	cost = 2500
+	cost = 1000
 	contains = list(/obj/item/ammo_box/c38_box,
 					/obj/item/ammo_box/c38_box)
 	crate_name = "ammo crate"
@@ -93,7 +93,7 @@
 /datum/supply_pack/ammo/match
 	name = ".38 Match Grade Speedloader"
 	desc = "Contains one speedloader of match grade .38 ammunition, perfect for showing off trickshots."
-	cost = 1200
+	cost = 200
 	small_item = TRUE
 	contains = list(/obj/item/ammo_box/c38/match)
 	crate_name = ".38 match crate"
@@ -101,7 +101,7 @@
 /datum/supply_pack/ammo/dumdum
 	name = ".38 DumDum Speedloader"
 	desc = "Contains one speedloader of .38 DumDum ammunition, good for embedding in soft targets."
-	cost = 1200
+	cost = 200
 	small_item = TRUE
 	contains = list(/obj/item/ammo_box/c38/dumdum)
 	crate_name = ".38 match crate"
@@ -173,9 +173,9 @@
 
 /datum/supply_pack/ammo/a762_ammo
 	name = "7.62x54mm Stripper Clip Crate"
-	desc = "Contains four 7.62x54mm stripper clips for rifles like the illestren rifle, each containing thirty rounds."
+	desc = "Contains four 7.62x54mm stripper clips for rifles like the illestren rifle, each containing five rounds."
 	contains = list(/obj/item/ammo_box/a762,
 					/obj/item/ammo_box/a762,
 					/obj/item/ammo_box/a762,
 					/obj/item/ammo_box/a762)
-	cost = 2000
+	cost = 1000

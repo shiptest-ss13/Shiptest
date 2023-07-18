@@ -28,11 +28,13 @@
 /obj/item/ammo_casing/a4570/match
 	name = ".45-70 match bullet casing"
 	desc = "A .45-70 bullet casing, manufactured to exceedingly high standards."
+	bullet_skin = "rubber"
 	projectile_type = /obj/projectile/bullet/a4570/match
 
 /obj/item/ammo_casing/a4570/hp
 	name = ".45-70 hollow point bullet casing"
 	desc = "A .45-70 hollow point bullet casing."
+	bullet_skin = "hollow"
 	projectile_type = /obj/projectile/bullet/a4570/hp
 
 /obj/item/ammo_casing/a4570/explosive
@@ -66,6 +68,7 @@
 /obj/item/ammo_casing/c38/match
 	name = ".38 match bullet casing"
 	desc = "A .38 bullet casing, manufactured to exceedingly high standards."
+	bullet_skin = "rubber"
 	projectile_type = /obj/projectile/bullet/c38/match
 
 /obj/item/ammo_casing/c38/match/bouncy
@@ -77,14 +80,17 @@
 /obj/item/ammo_casing/c38/dumdum
 	name = ".38 dum-dum bullet casing"
 	desc = "A .38 dum-dum bullet casing."
+	bullet_skin = "rubber"
 	projectile_type = /obj/projectile/bullet/c38/dumdum
 
 /obj/item/ammo_casing/c38/hotshot
 	name = ".38 hot shot bullet casing"
 	desc = "A .38 hot shot bullet casing."
+	bullet_skin = "incen"
 	projectile_type = /obj/projectile/bullet/c38/hotshot
 
 /obj/item/ammo_casing/c38/iceblox
 	name = ".38 iceblox bullet casing"
 	desc = "A .38 iceblox bullet casing."
+	bullet_skin = "surplus"
 	projectile_type = /obj/projectile/bullet/c38/iceblox

@@ -10,6 +10,7 @@
 	ammo_type = /obj/item/ammo_casing/n762
 	caliber = "762x38mm Nagant"
 	max_ammo = 7
+	instant_load = FALSE
 
 /obj/item/ammo_box/magazine/internal/cylinder/rev4570
 	name = "hunting revolver cylinder"
