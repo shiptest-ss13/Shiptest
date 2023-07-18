@@ -171,12 +171,17 @@
 		. += "<span class='info'>Alt-click to use \the [src] vox hailer.</span>"
 
 /obj/item/gun/ballistic/automatic/pistol/solgov
-	name = "\improper SolGov M9C"
-	desc = "Known formally as the M9A5C, this is a compact caseless ammo handgun made for switching to when your primary runs empty on it's mag."
-	icon_state = "solm9c"
+	name = "\improper Pistole C"
+	desc = "A favorite of the Terran Regency, but despised by the Solarian bureaucracy. Was taken out of standard service several centruries ago, and is issued in low numbers in the military. However, it is popular with civillians. Chambered in 5.56mm caseless."
+	icon_state = "pistole-c"
 	weapon_weight = WEAPON_LIGHT
 	w_class = WEIGHT_CLASS_SMALL
 	mag_type = /obj/item/ammo_box/magazine/pistol556mm
+	fire_sound = 'sound/weapons/gun/pistol/pistolec.ogg'
+
+/obj/item/gun/ballistic/automatic/pistol/solgov/old
+	desc = "A favorite of the Terran Regency, but despised by the Solarian bureaucracy. Was taken out of standard service several centruries ago, and is issued in low numbers in the military. However, it is popular with civillians. Chambered in 5.56mm caseless."
+	icon_state = "pistole-c-old"
 
 /obj/item/gun/ballistic/automatic/pistol/tec9
 	name = "\improper TEC9 machine pistol"
