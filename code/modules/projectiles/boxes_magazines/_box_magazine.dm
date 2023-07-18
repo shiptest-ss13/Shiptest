@@ -94,23 +94,27 @@
 	if(istype(A, /obj/item/ammo_box))
 		var/obj/item/ammo_box/AM = A
 		for(var/obj/item/ammo_casing/AC in AM.stored_ammo)
-			if(!((instant_load && AM.instant_load) || do_after(user, 10, target = src)))
+			message_admins("ough")
+			if(!((instant_load && AM.instant_load) || do_after_mob(user, list(AM), 1 SECONDS,)))
 				break
 			var/did_load = give_round(AC, replace_spent)
+			message_admins("ouh")
 			if(!did_load)
 				break
 			AM.stored_ammo -= AC
-			num_loaded++
 			if(!silent)
-				playsound(src, 'sound/weapons/gun/general/mag_bullet_insert.ogg', 60, TRUE)
-				A.update_icon()
-				update_icon()
+				playsound(AM, 'sound/weapons/gun/general/mag_bullet_insert.ogg', 60, TRUE) //src is nullspaced, which means internal magazines won't properly play sound, thus we use AM
+			num_loaded++
+			A.update_icon()
+			update_icon()
 
 	if(istype(A, /obj/item/ammo_casing))
 		var/obj/item/ammo_casing/AC = A
 		if(give_round(AC, replace_spent))
 			user.transferItemToLoc(AC, src, TRUE)
 			num_loaded++
+			update_icon()
+
 
 	if(num_loaded)
 		if(!silent)

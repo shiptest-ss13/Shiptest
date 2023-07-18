@@ -86,8 +86,8 @@
 /obj/item/ammo_box/magazine/gal
 	name = "\improper CM-GAL Magazine (.308)"
 	icon_state = "ebr_mag"
-	ammo_type = /obj/item/ammo_casing/a308
-	caliber = ".308"
+	ammo_type = /obj/item/ammo_casing/win308
+	caliber = ".308 Winchester"
 	max_ammo = 10
 
 /obj/item/ammo_box/magazine/gal/update_icon()

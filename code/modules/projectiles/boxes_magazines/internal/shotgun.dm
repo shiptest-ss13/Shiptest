@@ -45,17 +45,17 @@
 
 /obj/item/ammo_box/magazine/internal/shot/winchester
 	name = "winchester internal magazine"
-	ammo_type = /obj/item/ammo_casing/c38/hunting
-	caliber = "38"
+	ammo_type = /obj/item/ammo_casing/c38
+	caliber = ".38"
 	max_ammo = 7
 
 /obj/item/ammo_box/magazine/internal/shot/winchester/lethal
-	ammo_type = /obj/item/ammo_casing/c38/hunting
+	ammo_type = /obj/item/ammo_casing/c38
 
 /obj/item/ammo_box/magazine/internal/shot/contender
 	name = "contender internal magazine"
 	ammo_type = /obj/item/ammo_casing/a4570
-	caliber = "4570"
+	caliber = ".45-70"
 	max_ammo = 1
 	multiload = FALSE
 

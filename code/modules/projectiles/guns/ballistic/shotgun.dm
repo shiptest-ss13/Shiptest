@@ -421,17 +421,12 @@
 	fire_sound = 'sound/weapons/gun/rifle/shot.ogg'
 	rack_sound = 'sound/weapons/gun/rifle/winchester_cocked.ogg'
 
-/obj/item/gun/ballistic/shotgun/winchester/lethal
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/winchester/lethal
-
 /obj/item/gun/ballistic/shotgun/winchester/mk1
 	name = "Winchester MK.1"
 	desc = "A sturdy lever action rifle. This older pattern appears to be an antique, in excellent condition despite its age."
 	icon_state = "winchestermk1"
 	item_state = "winchestermk1"
 
-/obj/item/gun/ballistic/shotgun/winchester/mk1/lethal
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/winchester/lethal
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/twobore
 	name = "two-bore rifle"
