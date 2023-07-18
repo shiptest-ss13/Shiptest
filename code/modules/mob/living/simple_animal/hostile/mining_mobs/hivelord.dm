@@ -441,7 +441,7 @@
 						/obj/item/pickaxe = 8,
 						/obj/item/pickaxe/mini = 4,
 						/obj/item/pickaxe/silver = 2,
-						/obj/item/pickaxe/diamond = 1
+						/obj/item/pickaxe/diamond = 1,
 						/obj/item/gun/energy/kinetic_accelerator = 1
 						)
 					)
