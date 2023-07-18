@@ -1037,7 +1037,7 @@
 			back = /obj/item/storage/backpack/cultpack
 			backpack_contents = list()
 			if(prob(75))
-				backpack_contents += list(/obj/item/ammo_box/c38_box/hunting = 1)
+				backpack_contents += list(/obj/item/ammo_box/c38_box = 1)
 			if(prob(75))
 				backpack_contents += list(pick(/obj/item/reagent_containers/food/drinks/drinkingglass/breakawayflask/vintageash, /obj/item/reagent_containers/food/drinks/drinkingglass/breakawayflask/vintageice, /obj/item/reagent_containers/food/drinks/drinkingglass/breakawayflask/vintageshock) = 1)
 	. = ..()

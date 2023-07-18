@@ -72,68 +72,24 @@
 /obj/item/ammo_casing/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/ammo_box))
 		var/obj/item/ammo_box/box = I
-		if(!box.can_load(user))
-			return
 		if(isturf(loc))
 			var/boolets = 0
 			for(var/obj/item/ammo_casing/bullet in loc)
-				if (!istype(box, /obj/item/ammo_box/magazine) || do_after(user, 15, target = src))
-					break
-				var/did_load = box.give_round(bullet, 0)
-				if(!did_load)
-					break
-				box.stored_ammo -= bullet
-				boolets++
-				box.update_icon()
-
-/*
 				if (box.stored_ammo.len >= box.max_ammo)
 					break
 				if (bullet.BB)
 					if (box.give_round(bullet, 0))
 						boolets++
-						box.update_icon()
 				else
-					continue*/
-			if (boolets)
+					continue
+			if (boolets > 0)
 				box.update_icon()
-				to_chat(user, "<span class='notice'>You collect [boolets] cartridge\s. [box] now contains [box.stored_ammo.len] cartridge\s.</span>")
+				to_chat(user, "<span class='notice'>You collect [boolets] shell\s. [box] now contains [box.stored_ammo.len] shell\s.</span>")
 			else
 				to_chat(user, "<span class='warning'>You fail to collect anything!</span>")
 	else
 		return ..()
 
-/* TEMPORARY reloading do_after from ammo boxes
-/obj/item/ammo_box/attackby(obj/item/A, mob/user, params, silent = FALSE, replace_spent = 0)
-	var/num_loaded = 0
-	if(!can_load(user))
-		return
-	if(istype(A, /obj/item/ammo_box))
-		var/obj/item/ammo_box/AM = A
-		for(var/obj/item/ammo_casing/AC in AM.stored_ammo)
-			if(!((instant_load && AM.instant_load) || do_after(user, 10, target = src)))
-				break
-			var/did_load = give_round(AC, replace_spent)
-			if(!did_load)
-				break
-			AM.stored_ammo -= AC
-			num_loaded++
-			if(!silent)
-				playsound(src, 'sound/weapons/gun/general/mag_bullet_insert.ogg', 60, TRUE)
-				A.update_icon()
-				update_icon()
-
-	if(istype(A, /obj/item/ammo_casing))
-		var/obj/item/ammo_casing/AC = A
-		if(give_round(AC, replace_spent))
-			user.transferItemToLoc(AC, src, TRUE)
-			num_loaded++
-
-	if(num_loaded)
-		if(!silent)
-			to_chat(user, "<span class='notice'>You load [num_loaded] cartridge\s into \the [src]!</span>")
-	return num_loaded
-*/
 
 /obj/item/ammo_casing/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	bounce_away(FALSE, NONE)
