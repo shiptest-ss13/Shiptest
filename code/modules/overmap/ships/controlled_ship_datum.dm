@@ -9,6 +9,9 @@
 	token_type = /obj/overmap/rendered
 	dock_time = 10 SECONDS
 
+	/// Ship designation prefix
+	var/designation_prefix = "SS"
+
 	///Vessel estimated thrust per full burn
 	var/est_thrust
 	///Average fuel fullness percentage
@@ -63,18 +66,28 @@
 	///Time that next job slot change can occur
 	COOLDOWN_DECLARE(job_slot_adjustment_cooldown)
 
-/datum/overmap/ship/controlled/Rename(new_name, force = FALSE)
+/datum/overmap/ship/controlled/get_name(include_prefix = TRUE)
+	. = ..()
+	if(include_prefix)
+		return "[designation_prefix] [.]"
+
+/datum/overmap/ship/controlled/proc/update_name()
+	var/name = get_name()
+	shuttle_port?.name = name
+	ship_account.account_holder = name
+	shipkey?.name = "ship key ([name])"
+	for(var/area/shuttle_area as anything in shuttle_port?.shuttle_areas)
+		shuttle_area.rename_area("[name] [initial(shuttle_area.name)]")
+	token.name = name
+
+/datum/overmap/ship/controlled/rename(new_name, force = FALSE)
 	var/oldname = name
-	if(!..() || (!COOLDOWN_FINISHED(src, rename_cooldown) && !force))
+	if(!COOLDOWN_FINISHED(src, rename_cooldown) && !force)
 		return FALSE
+	..()
 	message_admins("[key_name_admin(usr)] renamed vessel '[oldname]' to '[new_name]'")
 	log_admin("[key_name(src)] has renamed vessel '[oldname]' to '[new_name]'")
-	shuttle_port?.name = new_name
-	ship_account.account_holder = new_name
-	if(shipkey)
-		shipkey.name = "ship key ([new_name])"
-	for(var/area/shuttle_area as anything in shuttle_port?.shuttle_areas)
-		shuttle_area.rename_area("[new_name] [initial(shuttle_area.name)]")
+	update_name()
 	if(!force)
 		COOLDOWN_START(src, rename_cooldown, 5 MINUTES)
 		priority_announce("The [oldname] has been renamed to the [new_name].", "Docking Announcement", sender_override = new_name, zlevel = shuttle_port.virtual_z())
@@ -99,9 +112,10 @@
 
 	ship_account = new(name, 2000)
 #ifdef UNIT_TESTS
-	Rename("[source_template]")
+	rename("[source_template]", TRUE)
 #else
-	Rename("[source_template.prefix] [pick_list_replacements(SHIP_NAMES_FILE, pick(source_template.name_categories))]", TRUE)
+	designation_prefix = source_template.prefix
+	rename("[pick_list_replacements(SHIP_NAMES_FILE, pick(source_template.name_categories))]", TRUE)
 #endif
 	SSovermap.controlled_ships += src
 
@@ -404,7 +418,7 @@
 		var/our_color = pick(key_colors)
 		add_atom_colour(key_colors[our_color], FIXED_COLOUR_PRIORITY)
 		update_icon()
-	name = "ship key ([master_ship.name])"
+	name = "ship key ([master_ship.get_name()])"
 
 /obj/item/key/ship/update_overlays()
 	. = ..()

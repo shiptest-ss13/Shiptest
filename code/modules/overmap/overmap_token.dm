@@ -16,7 +16,7 @@
 /obj/overmap/Initialize(mapload, new_parent)
 	. = ..()
 	parent = new_parent
-	name = parent.name
+	name = parent.get_name()
 	icon_state = parent.token_icon_state
 	if(render_map)	// Initialize map objects
 		map_name = "overmap_[REF(src)]_map"
@@ -81,7 +81,7 @@
 		if(NAMEOF(src, y))
 			return parent.overmap_move(parent.x, var_value)
 		if(NAMEOF(src, name))
-			parent.Rename(var_value)
+			parent.rename(var_value)
 			return TRUE
 	return ..()
 /**

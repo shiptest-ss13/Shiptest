@@ -623,14 +623,14 @@
 
 /obj/item/borg/upgrade/ship_access_chip/examine(mob/user)
 	. = ..()
-	. += "The chip has access for [ship.name] installed."
+	. += "The chip has access for [ship.get_name()] installed."
 
 /obj/item/borg/upgrade/ship_access_chip/action(mob/living/silicon/robot/robot, user = usr)
 	. = ..()
 	if(.)
 		var/obj/item/borg/upgrade/ship_access_chip/chip = locate() in robot.module
 		if(chip)
-			to_chat(user, "<span class='warning'>[robot] already has access to [ship.name]!</span>")
+			to_chat(user, "<span class='warning'>[robot] already has access to [ship.get_name()]!</span>")
 			return FALSE
 
 		chip = new(robot.module)
@@ -653,10 +653,10 @@
 	if(!istype(ai))
 		return
 	if(ai.has_ship_access(ship))
-		to_chat(user, "<span class='warning'>[ai] already has access to [ship.name]!</span>")
+		to_chat(user, "<span class='warning'>[ai] already has access to [ship.get_name()]!</span>")
 		return
 
-	to_chat(ai, "<span class='notice'>[user] has upgraded you with access to [ship.name].</span>")
+	to_chat(ai, "<span class='notice'>[user] has upgraded you with access to [ship.get_name()].</span>")
 	ai.add_ship_access(ship)
 	to_chat(user, "<span class='notice'>You upgrade [ai]. [src] is consumed in the process.</span>")
 	qdel(src)

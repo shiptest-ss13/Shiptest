@@ -24,7 +24,7 @@
 	if(isnull(from))
 		return null
 	return list(
-		"name" = from.name,
+		"name" = from.get_name(),
 		"ref" = REF(from),
 	)
 
@@ -38,7 +38,7 @@
 		var/list/datum_info = list()
 		.[datum_type] += list(datum_info)
 
-		datum_info["name"] = overmap_datum.name
+		datum_info["name"] = overmap_datum.get_name()
 		datum_info["ref"] = REF(overmap_datum)
 		datum_info["token"] = get_name_and_ref(overmap_datum.token)
 		datum_info["position"] = list(overmap_datum.x, overmap_datum.y)
@@ -81,7 +81,7 @@
 			if(isnull(target))
 				return
 			target.set_or_create_token()
-			message_admins("[key_name_admin(ui.user)] regenerated the token for [target.name] ([target.type])")
+			message_admins("[key_name_admin(ui.user)] regenerated the token for [target.get_name()] ([target.type])")
 			return TRUE
 
 		if("token-force-update")
@@ -89,5 +89,5 @@
 			if(isnull(target))
 				return
 			target.set_or_create_token(target.token)
-			message_admins("[key_name_admin(ui.user)] forced an update of the token for [target.name] ([target.type])")
+			message_admins("[key_name_admin(ui.user)] forced an update of the token for [target.get_name()] ([target.type])")
 			return TRUE

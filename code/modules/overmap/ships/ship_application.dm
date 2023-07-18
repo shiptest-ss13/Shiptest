@@ -99,7 +99,7 @@
 
 /datum/ship_application/ui_data(mob/user)
 	. = list()
-	.["ship_name"] = parent_ship.name
+	.["ship_name"] = parent_ship.get_name()
 	.["player_name"] = app_name
 
 /datum/ship_application/ui_act(action, list/params, datum/tgui/ui)

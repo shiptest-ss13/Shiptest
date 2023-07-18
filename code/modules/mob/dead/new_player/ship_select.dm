@@ -136,7 +136,7 @@
 			))
 
 		var/list/ship_data = list(
-			"name" = S.name,
+			"name" = S.get_name(),
 			"class" = S.source_template.short_name,
 			"desc" = S.source_template.description,
 			"tags" = S.source_template.tags,

@@ -348,7 +348,7 @@
 	if(length(ship_access))
 		var/list/ship_names = list()
 		for(var/datum/overmap/ship/controlled/ship in ship_access)
-			ship_names += ship.name
+			ship_names += ship.get_name()
 		msg += "The card has access to the following ships: [ship_names.Join(", ")]"
 	if(registered_account)
 		msg += "The account linked to the ID belongs to '[registered_account.account_holder]' and reports a balance of [registered_account.account_balance] cr."

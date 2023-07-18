@@ -10,7 +10,7 @@
  */
 /datum/overmap
 	/// The name of this overmap datum, propogated to the token, docking port, and areas.
-	var/name
+	VAR_PROTECTED/name
 	/// The character that represents this overmap datum on the overmap in ASCII mode.
 	var/char_rep
 
@@ -164,12 +164,15 @@
 		move_x -= magnitude
 	return overmap_move(move_x, move_y)
 
+/datum/overmap/proc/get_name()
+	return name
+
 /**
  * Proc used to rename an overmap datum and everything related to it.
  *
  * * new_name - The new name of the overmap datum.
  */
-/datum/overmap/proc/Rename(new_name, force)
+/datum/overmap/proc/rename(new_name, force)
 	new_name = sanitize_name(new_name) //sets to a falsey value if it's not a valid name
 	if(!new_name || new_name == name)
 		return

@@ -67,7 +67,7 @@
 		return // This exists to prefent Href exploits to call process_jump more than once by a client
 	message_admins("[ADMIN_LOOKUPFLW(usr)] has initiated a bluespace jump in [ADMIN_VERBOSEJMP(src)]")
 	jump_timer = addtimer(CALLBACK(src, .proc/jump_sequence, TRUE), JUMP_CHARGEUP_TIME, TIMER_STOPPABLE)
-	priority_announce("Bluespace jump calibration initialized. Calibration completion in [JUMP_CHARGEUP_TIME/600] minutes.", sender_override="[current_ship.name] Bluespace Pylon", zlevel=virtual_z())
+	priority_announce("Bluespace jump calibration initialized. Calibration completion in [JUMP_CHARGEUP_TIME/600] minutes.", sender_override="[current_ship.get_name()] Bluespace Pylon", zlevel=virtual_z())
 	calibrating = TRUE
 	return TRUE
 
@@ -81,7 +81,7 @@
 		current_ship = null
 
 /obj/machinery/computer/helm/proc/cancel_jump()
-	priority_announce("Bluespace Pylon spooling down. Jump calibration aborted.", sender_override="[current_ship.name] Bluespace Pylon", zlevel=virtual_z())
+	priority_announce("Bluespace Pylon spooling down. Jump calibration aborted.", sender_override="[current_ship.get_name()] Bluespace Pylon", zlevel=virtual_z())
 	calibrating = FALSE
 	deltimer(jump_timer)
 
@@ -92,19 +92,19 @@
 			SStgui.close_uis(src)
 		if(JUMP_STATE_CHARGING)
 			jump_state = JUMP_STATE_IONIZING
-			priority_announce("Bluespace Jump Calibration completed. Ionizing Bluespace Pylon.", sender_override="[current_ship.name] Bluespace Pylon", zlevel=virtual_z())
+			priority_announce("Bluespace Jump Calibration completed. Ionizing Bluespace Pylon.", sender_override="[current_ship.get_name()] Bluespace Pylon", zlevel=virtual_z())
 		if(JUMP_STATE_IONIZING)
 			jump_state = JUMP_STATE_FIRING
-			priority_announce("Bluespace Ionization finalized; preparing to fire Bluespace Pylon.", sender_override="[current_ship.name] Bluespace Pylon", zlevel=virtual_z())
+			priority_announce("Bluespace Ionization finalized; preparing to fire Bluespace Pylon.", sender_override="[current_ship.get_name()] Bluespace Pylon", zlevel=virtual_z())
 		if(JUMP_STATE_FIRING)
 			jump_state = JUMP_STATE_FINALIZED
-			priority_announce("Bluespace Pylon launched.", sender_override="[current_ship.name] Bluespace Pylon", sound='sound/magic/lightning_chargeup.ogg', zlevel=virtual_z())
+			priority_announce("Bluespace Pylon launched.", sender_override="[current_ship.get_name()] Bluespace Pylon", sound='sound/magic/lightning_chargeup.ogg', zlevel=virtual_z())
 			addtimer(CALLBACK(src, .proc/do_jump), 10 SECONDS)
 			return
 	addtimer(CALLBACK(src, .proc/jump_sequence, TRUE), JUMP_CHARGE_DELAY)
 
 /obj/machinery/computer/helm/proc/do_jump()
-	priority_announce("Bluespace Jump Initiated.", sender_override="[current_ship.name] Bluespace Pylon", sound='sound/magic/lightningbolt.ogg', zlevel=virtual_z())
+	priority_announce("Bluespace Jump Initiated.", sender_override="[current_ship.get_name()] Bluespace Pylon", sound='sound/magic/lightningbolt.ogg', zlevel=virtual_z())
 	current_ship.shuttle_port.intoTheSunset()
 
 /obj/machinery/computer/helm/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
@@ -194,7 +194,7 @@
 			continue
 
 		var/list/other_data = list(
-			name = object.name,
+			name = object.get_name(),
 			ref = REF(object)
 		)
 		.["otherInfo"] += list(other_data)
@@ -236,10 +236,11 @@
 	.["isViewer"] = viewer || (!allow_ai_control && issilicon(user))
 	.["mapRef"] = current_ship.token.map_name
 	.["shipInfo"] = list(
-		name = current_ship.name,
-		class = current_ship.source_template?.name,
-		mass = current_ship.shuttle_port.turf_count,
-		sensor_range = 4
+		"name" = current_ship.get_name(FALSE),
+		"class" = current_ship.source_template?.name,
+		"mass" = current_ship.shuttle_port.turf_count,
+		"sensor_range" = 4,
+		"designation_prefix" = current_ship.designation_prefix,
 	)
 	.["canFly"] = TRUE
 	.["aiUser"] = issilicon(user)
@@ -262,26 +263,44 @@
 			if(!new_name)
 				return
 			new_name = trim(new_name)
-			if (!length(new_name) || new_name == current_ship.name)
+			if (!length(new_name) || new_name == current_ship.get_name(FALSE))
 				return
 			if(!reject_bad_text(new_name, MAX_CHARTER_LEN))
 				say("Error: Replacement designation rejected by system.")
 				return
-			if(!current_ship.Rename(new_name))
+			if(!current_ship.rename(new_name))
 				say("Error: [COOLDOWN_TIMELEFT(current_ship, rename_cooldown)/10] seconds until ship designation can be changed.")
-			update_static_data(usr, ui)
+			update_static_data(ui.user, ui)
 			return
+
+		if("change_designation_ship")
+			var/new_designation = params["newPrefix"]
+			if(!new_designation)
+				return
+			if(!check_rights_for(ui.user.client, R_ADMIN))
+				to_chat(ui.user, span_warning("Only Central Command may change ship designations."))
+				return
+			if(current_ship.designation_prefix == new_designation)
+				return
+			current_ship.designation_prefix = new_designation
+			current_ship.update_name()
+			update_static_data(ui.user, ui)
+			return
+
 		if("reload_ship")
 			reload_ship()
-			update_static_data(usr, ui)
+			update_static_data(ui.user, ui)
 			return
+
 		if("reload_engines")
 			current_ship.refresh_engines()
 			return
+
 		if("toggle_ai_control")
-			if(issilicon(usr))
-				to_chat(usr, "<span class='warning'>You are unable to toggle AI controls.</span>")
+			if(issilicon(ui.user))
+				to_chat(ui.user, "<span class='warning'>You are unable to toggle AI controls.</span>")
 				return
+
 			allow_ai_control = !allow_ai_control
 			say(allow_ai_control ? "AI Control has been enabled." : "AI Control is now disabled.")
 			return
@@ -294,21 +313,24 @@
 		switch(action)
 			if("act_overmap")
 				if(SSshuttle.jump_mode > BS_JUMP_CALLED)
-					to_chat(usr, "<span class='warning'>Cannot dock due to bluespace jump preperations!</span>")
+					to_chat(ui.user, "<span class='warning'>Cannot dock due to bluespace jump preperations!</span>")
 					return
 				var/datum/overmap/to_act = locate(params["ship_to_act"]) in current_ship.get_nearby_overmap_objects(include_docked = TRUE)
 				say(current_ship.Dock(to_act))
 				return
+
 			if("toggle_engine")
 				var/obj/machinery/power/shuttle/engine/E = locate(params["engine"]) in current_ship.shuttle_port.engine_list
 				E.enabled = !E.enabled
 				E.update_icon_state()
 				current_ship.refresh_engines()
 				return
+
 			if("change_burn_percentage")
 				var/new_percentage = clamp(text2num(params["percentage"]), 1, 100)
 				current_ship.burn_percentage = new_percentage
 				return
+
 			if("change_heading")
 				var/new_direction = text2num(params["dir"])
 				if(new_direction == current_ship.burn_direction)
@@ -316,28 +338,32 @@
 					return
 				current_ship.change_heading(new_direction)
 				return
+
 			if("stop")
 				if(current_ship.burn_direction == BURN_NONE)
 					current_ship.change_heading(BURN_STOP)
 					return
 				current_ship.change_heading(BURN_NONE)
 				return
+
 			if("bluespace_jump")
 				if(calibrating)
 					cancel_jump()
 					return
 				else
-					if(tgui_alert(usr, "Do you want to bluespace jump? Your ship and everything on it will be removed from the round.", "Jump Confirmation", list("Yes", "No")) != "Yes")
+					if(tgui_alert(ui.user, "Do you want to bluespace jump? Your ship and everything on it will be removed from the round.", "Jump Confirmation", list("Yes", "No")) != "Yes")
 						return
 					calibrate_jump()
 					return
+
 			if("dock_empty")
-				current_ship.dock_in_empty_space(usr)
+				current_ship.dock_in_empty_space(ui.user)
 				return
+
 	else if(current_ship.docked_to)
 		if(action == "undock")
 			current_ship.calculate_avg_fuel()
-			if(current_ship.avg_fuel_amnt < 25 && tgui_alert(usr, "Ship only has ~[round(current_ship.avg_fuel_amnt)]% fuel remaining! Are you sure you want to undock?", name, list("Yes", "No")) != "Yes")
+			if(current_ship.avg_fuel_amnt < 25 && tgui_alert(ui.user, "Ship only has ~[round(current_ship.avg_fuel_amnt)]% fuel remaining! Are you sure you want to undock?", name, list("Yes", "No")) != "Yes")
 				return
 			current_ship.Undock()
 

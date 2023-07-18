@@ -281,7 +281,8 @@ SUBSYSTEM_DEF(shuttle)
 
 	new_shuttle.timer = to_replace.timer //Copy some vars from the old shuttle
 	new_shuttle.mode = to_replace.mode
-	new_shuttle.current_ship.Rename(to_replace.name, TRUE)
+	new_shuttle.current_ship.rename(to_replace.name, TRUE)
+	new_shuttle.current_ship.designation_prefix = to_replace.current_ship.designation_prefix
 	new_shuttle.current_ship.overmap_move(to_replace.current_ship.x, to_replace.current_ship.y) //Overmap location
 
 	if(istype(old_shuttle_location, /obj/docking_port/stationary/transit))
@@ -429,7 +430,7 @@ SUBSYSTEM_DEF(shuttle)
 
 		if(M.current_ship)
 			if(M.current_ship.docked_to)
-				L["position"] = "Docked at [M.current_ship.docked_to.name] ([M.current_ship.docked_to.x], [M.current_ship.docked_to.y])"
+				L["position"] = "Docked at [M.current_ship.docked_to.get_name()] ([M.current_ship.docked_to.x], [M.current_ship.docked_to.y])"
 			else
 				L["position"] = "Flying At ([M.current_ship.x], [M.current_ship.y])"
 		else
