@@ -52,14 +52,6 @@
 					/obj/item/ammo_box/c38_box)
 	crate_name = "ammo crate"
 
-/datum/supply_pack/ammo/winchester_hunting_ammo
-	name = "Winchester and Detective Special .38 Hunting Ammo Boxes"
-	desc = "Contains two 30 round .38 ammo boxes which deal extra damage to wildlife."
-	cost = 2000
-	contains = list(/obj/item/ammo_box/c38_box/hunting,
-					/obj/item/ammo_box/c38_box/hunting)
-	crate_name = "ammo crate"
-
 /datum/supply_pack/ammo/match
 	name = ".38 Match Grade Speedloader"
 	desc = "Contains one speedloader of match grade .38 ammunition, perfect for showing off trickshots."

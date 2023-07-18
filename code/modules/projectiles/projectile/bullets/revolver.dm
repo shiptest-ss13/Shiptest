@@ -96,16 +96,6 @@
 		var/mob/living/M = target
 		M.adjust_bodytemperature(((100-blocked)/100)*(temperature - M.bodytemperature))
 
-/obj/projectile/bullet/c38/hunting //bonus damage to simplemobs
-	name = ".38 hunting bullet"
-	damage = 15
-	var/bonus_damage = 50 // if a simplemob then do this much extra
-
-/obj/projectile/bullet/c38/hunting/on_hit(atom/target, blocked = FALSE)
-	if(istype(target, /mob/living/simple_animal/hostile/asteroid/))
-		damage += bonus_damage
-	..()
-
 // .357 (Syndie Revolver)
 
 /obj/projectile/bullet/a357
