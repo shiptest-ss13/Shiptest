@@ -272,7 +272,7 @@
 /obj/item/storage/toolbox/ammo/shotgun/PopulateContents()
 	name = "ammo can (12ga)"
 	for (var/i in 1 to 4)
-		new /obj/item/storage/box/lethalshot(src)
+		new /obj/item/ammo_box/12g(src)
 
 /obj/item/storage/toolbox/infiltrator
 	name = "insidious case"

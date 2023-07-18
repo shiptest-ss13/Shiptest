@@ -40,7 +40,7 @@
 
 /obj/item/gun/ballistic/shotgun/riot //for spawn in the armory
 	name = "riot shotgun"
-	desc = "A sturdy shotgun with a longer magazine and a fixed tactical stock designed for non-lethal riot control."
+	desc = "A sturdy shotgun with a longer magazine tube and a fixed wooden stock designed for non-lethal riot control."
 	icon_state = "riotshotgun"
 	item_state = "shotgun"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/riot
@@ -120,7 +120,7 @@
 
 /obj/item/gun/ballistic/shotgun/bulldog
 	name = "\improper Bulldog Shotgun"
-	desc = "A semi-auto, mag-fed shotgun for combat in narrow corridors, nicknamed the 'Bulldog' by boarding parties. Only compatible with specialized 8-round drum magazines."
+	desc = "A semi-automatic magazine-fed shotgun designed for combat in tight quarters, manufactured by Scarborough Arms. A historical favorite of various Syndicate factions, especially the Gorlex Marauders."
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	icon_state = "bulldog"
 	item_state = "bulldog"
@@ -214,7 +214,7 @@
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/improvised
 	name = "improvised shotgun"
-	desc = "Essentially a tube that aims shotgun shells."
+	desc = "A length of pipe and miscellaneous bits of scrap fashioned into a rudimentary single-shot shotgun."
 	icon_state = "ishotgun"
 	item_state = "ishotgun"
 	w_class = WEIGHT_CLASS_BULKY
@@ -408,7 +408,7 @@
 
 /obj/item/gun/ballistic/shotgun/winchester
 	name = "Winchester MK.2"
-	desc = "A sturdy lever action rifle. This one is a newer reproduction."
+	desc = "A sturdy lever action rifle with hand-stamped Hunter's Pride marks on the receiver. This one is a newer reproduction."
 	icon_state = "winchester"
 	item_state = "winchester"
 	icon = 'icons/obj/guns/48x32guns.dmi'
