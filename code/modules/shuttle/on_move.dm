@@ -20,8 +20,7 @@ All ShuttleMove procs go here
 	if(!(. & MOVE_TURF))
 		return
 
-	for(var/i in contents)
-		var/atom/movable/thing = i
+	for(var/atom/movable/thing as anything in contents)
 		if(ismob(thing))
 			if(isliving(thing))
 				var/mob/living/M = thing
@@ -40,12 +39,13 @@ All ShuttleMove procs go here
 
 
 		else //non-living mobs shouldn't be affected by shuttles, which is why this is an else
-			if(istype(thing, /obj/singularity) && !istype(thing, /obj/singularity/narsie)) //it's a singularity but not a god, ignore it.
+			if(!isobj(thing))
+				qdel(thing)
 				continue
-			if(!thing.anchored)
-				qdel(thing)
-			else
-				qdel(thing)
+			var/obj/object = thing
+			if(object.resistance_flags & LANDING_PROOF)
+				continue
+			qdel(thing)
 
 // Called on the old turf to move the turf data
 /turf/proc/onShuttleMove(turf/newT, list/movement_force, move_dir, shuttle_layers)

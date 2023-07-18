@@ -1,3 +1,6 @@
+/datum/unit_test/ship_placement
+	focus = TRUE
+
 /datum/unit_test/ship_placement/Run()
 	SSair.is_test_loading = TRUE
 	var/list/spawned_ships = list()

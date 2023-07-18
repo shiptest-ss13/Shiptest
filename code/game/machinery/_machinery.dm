@@ -410,6 +410,7 @@ Class Procs:
 		on_deconstruction()
 		if(circuit)
 			circuit.forceMove(loc)
+			circuit = null
 		if(length(component_parts))
 			spawn_frame(disassembled)
 			for(var/obj/item/I in component_parts)

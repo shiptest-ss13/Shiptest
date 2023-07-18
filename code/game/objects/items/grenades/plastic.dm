@@ -28,10 +28,9 @@
 	AddComponent(/datum/component/empprotection, EMP_PROTECT_WIRES)
 
 /obj/item/grenade/c4/Destroy()
-	qdel(wires)
-	wires = null
+	QDEL_NULL(wires)
 	target = null
-	..()
+	return ..()
 
 /obj/item/grenade/c4/attackby(obj/item/I, mob/user, params)
 	if(I.tool_behaviour == TOOL_SCREWDRIVER)

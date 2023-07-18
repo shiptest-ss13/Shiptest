@@ -109,13 +109,14 @@
 	SSovermap.controlled_ships -= src
 	if(!QDELETED(shuttle_port))
 		shuttle_port.current_ship = null
-		shuttle_port.intoTheSunset()
+		QDEL_NULL(shuttle_port)
 		shuttle_port = null
 	if(!QDELETED(ship_account))
 		QDEL_NULL(ship_account)
 	for(var/a_key in applications)
 		// it handles removal itself
 		qdel(applications[a_key])
+	LAZYCLEARLIST(applications)
 	// set ourselves to ownerless to unregister signals
 	set_owner_mob(null)
 	return ..()

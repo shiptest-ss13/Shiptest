@@ -27,6 +27,7 @@
 		if(QDELETED(P))
 			continue
 		SSair.add_to_rebuild_queue(P)
+	members.Cut()
 	for(var/obj/machinery/atmospherics/components/C in other_atmosmch)
 		C.nullifyPipenet(src)
 	return ..()

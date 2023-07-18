@@ -7,6 +7,8 @@
 	//We'll spawn everything here
 	var/turf/spawn_at = run_loc_bottom_left
 	var/list/ignore = list(
+		//Should never exist
+		/turf,
 		//No-op
 		/turf/template_noop,
 		//Never meant to be created, errors out the ass for mobcode reasons

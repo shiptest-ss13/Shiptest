@@ -14,8 +14,6 @@
 	var/thrust = 0
 	///I don't really know what this is but it's used a lot
 	var/thruster_active = FALSE
-	///Used to store which ship currently has this engine in their thruster list, for Destroy() reasons
-	var/obj/docking_port/mobile/parent_shuttle
 
 /**
  * Uses up a specified percentage of the fuel cost, and returns the amount of thrust if successful.
@@ -67,12 +65,6 @@
 /obj/machinery/power/shuttle/engine/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
 	. = ..()
 	port.engine_list |= WEAKREF(src)
-	parent_shuttle = port
-
-/obj/machinery/power/shuttle/engine/Destroy()
-	if(parent_shuttle)
-		parent_shuttle.engine_list -= WEAKREF(src)
-	return ..()
 
 /obj/machinery/power/shuttle/engine/on_construction()
 	. = ..()

@@ -12,9 +12,11 @@
 			SSgarbage.next_fire = world.time + world.tick_lag
 			return
 
+		#ifndef FIND_REF_NO_CHECK_TICK
 		if(!skip_alert && alert("Running this will lock everything up for about 5 minutes.  Would you like to begin the search?", "Find References", "Yes", "No") != "Yes")
 			running_find_references = null
 			return
+		#endif
 
 	//this keeps the garbage collector from failing to collect objects being searched for in here
 	SSgarbage.can_fire = FALSE

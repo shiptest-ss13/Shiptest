@@ -81,7 +81,7 @@
 		current_ship = null
 
 /obj/machinery/computer/helm/proc/cancel_jump()
-	priority_announce("Bluespace Pylon spooling down. Jump calibration aborted.", sender_override="[current_ship.name] Bluespace Pylon", zlevel=virtual_z())
+	priority_announce("Bluespace Pylon spooling down. Jump calibration aborted.", sender_override = "[current_ship.name] Bluespace Pylon", zlevel = virtual_z())
 	calibrating = FALSE
 	deltimer(jump_timer)
 
@@ -92,20 +92,20 @@
 			SStgui.close_uis(src)
 		if(JUMP_STATE_CHARGING)
 			jump_state = JUMP_STATE_IONIZING
-			priority_announce("Bluespace Jump Calibration completed. Ionizing Bluespace Pylon.", sender_override="[current_ship.name] Bluespace Pylon", zlevel=virtual_z())
+			priority_announce("Bluespace Jump Calibration completed. Ionizing Bluespace Pylon.", sender_override = "[current_ship.name] Bluespace Pylon", zlevel = virtual_z())
 		if(JUMP_STATE_IONIZING)
 			jump_state = JUMP_STATE_FIRING
-			priority_announce("Bluespace Ionization finalized; preparing to fire Bluespace Pylon.", sender_override="[current_ship.name] Bluespace Pylon", zlevel=virtual_z())
+			priority_announce("Bluespace Ionization finalized; preparing to fire Bluespace Pylon.", sender_override = "[current_ship.name] Bluespace Pylon", zlevel = virtual_z())
 		if(JUMP_STATE_FIRING)
 			jump_state = JUMP_STATE_FINALIZED
-			priority_announce("Bluespace Pylon launched.", sender_override="[current_ship.name] Bluespace Pylon", sound='sound/magic/lightning_chargeup.ogg', zlevel=virtual_z())
+			priority_announce("Bluespace Pylon launched.", sender_override = "[current_ship.name] Bluespace Pylon", sound = 'sound/magic/lightning_chargeup.ogg', zlevel = virtual_z())
 			addtimer(CALLBACK(src, .proc/do_jump), 10 SECONDS)
 			return
-	addtimer(CALLBACK(src, .proc/jump_sequence, TRUE), JUMP_CHARGE_DELAY)
+	jump_timer = addtimer(CALLBACK(src, .proc/jump_sequence, TRUE), JUMP_CHARGE_DELAY, TIMER_STOPPABLE)
 
 /obj/machinery/computer/helm/proc/do_jump()
-	priority_announce("Bluespace Jump Initiated.", sender_override="[current_ship.name] Bluespace Pylon", sound='sound/magic/lightningbolt.ogg', zlevel=virtual_z())
-	current_ship.shuttle_port.intoTheSunset()
+	priority_announce("Bluespace Jump Initiated.", sender_override = "[current_ship.name] Bluespace Pylon", sound = 'sound/magic/lightningbolt.ogg', zlevel = virtual_z())
+	qdel(current_ship)
 
 /obj/machinery/computer/helm/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
 	if(current_ship && current_ship != port.current_ship)

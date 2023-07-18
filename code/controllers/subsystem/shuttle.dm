@@ -252,7 +252,7 @@ SUBSYSTEM_DEF(shuttle)
 	var/result = new_shuttle.canDock(destination_port)
 	if((result != SHUTTLE_CAN_DOCK))
 		WARNING("Template shuttle [new_shuttle] cannot dock at [destination_port] ([result]).")
-		new_shuttle.jumpToNullSpace()
+		qdel(new_shuttle)
 		return
 	new_shuttle.initiate_docking(destination_port)
 	return new_shuttle
@@ -276,7 +276,7 @@ SUBSYSTEM_DEF(shuttle)
 
 	if((result != SHUTTLE_CAN_DOCK) && (result != SHUTTLE_SOMEONE_ELSE_DOCKED)) //Someone else /IS/ docked, the old shuttle!
 		WARNING("Template shuttle [new_shuttle] cannot dock at [old_shuttle_location] ([result]).")
-		new_shuttle.jumpToNullSpace()
+		qdel(new_shuttle)
 		return
 
 	new_shuttle.timer = to_replace.timer //Copy some vars from the old shuttle
@@ -288,7 +288,7 @@ SUBSYSTEM_DEF(shuttle)
 		to_replace.assigned_transit = null
 		new_shuttle.assigned_transit = old_shuttle_location
 
-	to_replace.jumpToNullSpace() //This will destroy the old shuttle
+	qdel(to_replace)
 	new_shuttle.initiate_docking(old_shuttle_location) //This will spawn the new shuttle
 	return new_shuttle
 
@@ -355,7 +355,7 @@ SUBSYSTEM_DEF(shuttle)
 	var/result = new_shuttle.canDock(transit_dock)
 	if((result != SHUTTLE_CAN_DOCK))
 		WARNING("Template shuttle [new_shuttle] cannot dock at [transit_dock] ([result]).")
-		new_shuttle.jumpToNullSpace()
+		qdel(src)
 		return
 
 	new_shuttle.initiate_docking(transit_dock)

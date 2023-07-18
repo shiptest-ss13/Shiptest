@@ -627,7 +627,7 @@
 /obj/item/cult_spear/Destroy()
 	if(spear_act)
 		qdel(spear_act)
-	..()
+	return ..()
 
 /obj/item/cult_spear/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	var/turf/T = get_turf(hit_atom)

@@ -20,8 +20,6 @@
 		stack_trace("Gib list dir length mismatch!")
 		return
 
-	var/obj/effect/decal/cleanable/blood/gibs/gib = null
-
 	if(sound_to_play && isnum(sound_vol))
 		playsound(src, sound_to_play, sound_vol, TRUE)
 
@@ -46,14 +44,13 @@
 		if(gibamounts[i])
 			for(var/j = 1, j<= gibamounts[i], j++)
 				var/gibType = gibtypes[i]
-				gib = new gibType(loc, diseases)
+				var/obj/effect/decal/cleanable/blood/gibs/gib = new gibType(loc, diseases)
 
 				gib.add_blood_DNA(dna_to_add)
 
 				var/list/directions = gibdirections[i]
-				if(isturf(loc))
-					if(directions.len)
-						gib.streak(directions)
+				if(isturf(loc) && length(directions) && istype(gib))
+					gib.streak(directions)
 
 	return INITIALIZE_HINT_QDEL
 
@@ -158,7 +155,7 @@
 
 /obj/effect/gibspawner/robot/bodypartless/Initialize()
 	if(!gibdirections.len)
-		gibdirections = list(list(NORTH, NORTHEAST, NORTHWEST),list(SOUTH, SOUTHEAST, SOUTHWEST),list(WEST, NORTHWEST, SOUTHWEST),list(EAST, NORTHEAST, SOUTHEAST), GLOB.alldirs)
+		gibdirections = list(list(NORTH, NORTHEAST, NORTHWEST),list(SOUTH, SOUTHEAST, SOUTHWEST),list(WEST, NORTHWEST, SOUTHWEST),list(EAST, NORTHEAST, SOUTHEAST), GLOB.alldirs, GLOB.alldirs)
 	return ..()
 
 /obj/effect/gibspawner/generic/crystal
@@ -167,5 +164,5 @@
 
 /obj/effect/gibspawner/generic/crystal/Initialize()
 	if(!gibdirections.len)
-		gibdirections = list(list(NORTH, NORTHEAST, NORTHWEST),list(SOUTH, SOUTHEAST, SOUTHWEST),list(WEST, NORTHWEST, SOUTHWEST),list(EAST, NORTHEAST, SOUTHEAST), GLOB.alldirs)
+		gibdirections = list(list(NORTH, NORTHEAST, NORTHWEST),list(SOUTH, SOUTHEAST, SOUTHWEST),list(WEST, NORTHWEST, SOUTHWEST),GLOB.alldirs)
 	return ..()

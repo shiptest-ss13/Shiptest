@@ -57,9 +57,7 @@
 	matching_designs = list()
 
 /obj/machinery/autolathe/Destroy()
-	if(d_disk) // Drops the design disk on the floor when destroyed
-		d_disk.forceMove(get_turf(src))
-		d_disk = null
+	QDEL_NULL(d_disk)
 	QDEL_NULL(wires)
 	return ..()
 

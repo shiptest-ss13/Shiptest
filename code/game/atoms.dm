@@ -247,9 +247,10 @@
 	if (length(no_connector_typecache))
 		no_connector_typecache = SSicon_smooth.get_no_connector_typecache(src.type, no_connector_typecache, connector_strict_typing)
 
-	var/area/ship/current_ship_area = get_area(src)
-	if(!mapload && istype(current_ship_area) && current_ship_area.mobile_port)
-		connect_to_shuttle(current_ship_area.mobile_port, current_ship_area.mobile_port.docked)
+	if(!mapload)
+		var/area/ship/current_ship_area = get_area(src)
+		if(istype(current_ship_area) && current_ship_area.mobile_port)
+			connect_to_shuttle(current_ship_area.mobile_port, current_ship_area.mobile_port.docked)
 
 	var/temp_list = list()
 	for(var/i in custom_materials)
@@ -1311,6 +1312,9 @@
 
 ///Connect this atom to a shuttle
 /atom/proc/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
+	return
+
+/atom/proc/disconnect_from_shuttle(obj/docking_port/mobile/port)
 	return
 
 /// Generic logging helper
