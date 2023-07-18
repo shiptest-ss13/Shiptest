@@ -104,12 +104,6 @@
 	ammo_type = /obj/item/ammo_casing/c38
 	max_ammo = 50
 
-/obj/item/ammo_box/c38_box/hunting
-	name = "ammo box (.38 hunting)"
-	desc = "A box of .38 hunting ammo. Hunting bullets are especially devastating to wildlife."
-	icon_state = "38huntingbox"
-	ammo_type = /obj/item/ammo_casing/c38/hunting
-
 /obj/item/ammo_box/a12g
 	name = "ammo box (12ga buckshot)"
 	desc = "A box of 12 gauge buckshot shells, devastating at close range."

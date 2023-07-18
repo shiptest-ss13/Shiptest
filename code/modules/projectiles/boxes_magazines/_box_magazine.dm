@@ -112,6 +112,8 @@
 		var/obj/item/ammo_casing/AC = A
 		if(give_round(AC, replace_spent))
 			user.transferItemToLoc(AC, src, TRUE)
+			if(!silent)
+				playsound(AM, 'sound/weapons/gun/general/mag_bullet_insert.ogg', 60, TRUE)
 			num_loaded++
 			update_icon()
 
