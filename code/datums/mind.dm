@@ -103,6 +103,7 @@
 		QDEL_LIST(antag_datums)
 	QDEL_NULL(language_holder)
 	set_current(null)
+	soulOwner = null
 	return ..()
 
 /datum/mind/proc/set_current(mob/new_current)
