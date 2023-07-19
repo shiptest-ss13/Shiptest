@@ -1512,9 +1512,6 @@
 /obj/machinery/atmospherics/components/unary/thermomachine/freezer/on,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
-"sx" = (
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ruin/unpowered/codelab/laboratory)
 "sz" = (
 /obj/structure/closet/crate/large{
 	anchored = 1
@@ -1686,6 +1683,10 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/visible/layer4,
 /turf/open/floor/plating/rust,
 /area/ruin/unpowered/codelab/maintenance)
+"uW" = (
+/obj/structure/ore_box,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/storage)
 "vb" = (
 /obj/structure/table,
 /obj/item/reagent_containers/glass/beaker/cryoxadone{
@@ -1705,6 +1706,13 @@
 /obj/effect/turf_decal/corner/opaque/white/mono,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
+"vg" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/wrapping,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/storage)
 "vk" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2357,7 +2365,9 @@
 /area/ruin/unpowered/codelab/subjectrooms)
 "BO" = (
 /obj/structure/table/wood,
-/obj/item/research_notes/loot/tiny,
+/obj/item/research_notes/loot/tiny{
+	name = "Notes on Xenobiology"
+	},
 /turf/open/floor/wood,
 /area/ruin/unpowered/codelab/laboratory)
 "BP" = (
@@ -2514,13 +2524,6 @@
 /obj/item/spacecash/bundle/c20,
 /turf/open/floor/wood,
 /area/ruin/unpowered/codelab/laboratory)
-"DI" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/wrapping,
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/storage)
 "DJ" = (
 /obj/structure/chair/comfy/brown{
 	dir = 8
@@ -2955,10 +2958,6 @@
 /obj/structure/fluff/paper/stack,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
-"IM" = (
-/obj/structure/ore_box,
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/codelab/storage)
 "IO" = (
 /obj/structure/fence/door{
 	open = 1
@@ -3081,6 +3080,9 @@
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/concrete/pavement/lava,
 /area/ruin/unpowered/codelab/exterior)
+"Kp" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ruin/unpowered/codelab/laboratory)
 "Kv" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
@@ -3843,7 +3845,8 @@
 	},
 /obj/item/research_notes/loot/small{
 	pixel_y = 6;
-	pixel_x = 10
+	pixel_x = 10;
+	name = "Notes on Xenobiology"
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/laboratory)
@@ -4084,7 +4087,8 @@
 /obj/item/clothing/under/suit/senior_scientist,
 /obj/item/research_notes/loot/small{
 	pixel_y = 6;
-	pixel_x = 10
+	pixel_x = 10;
+	name = "Notes on Xenobiology"
 	},
 /obj/item/disk/design_disk/adv{
 	pixel_x = -9;
@@ -5924,7 +5928,7 @@ nm
 DU
 nm
 et
-sx
+Kp
 Mv
 jK
 sA
@@ -6011,7 +6015,7 @@ zu
 Xh
 St
 aA
-DI
+vg
 zZ
 cO
 fW
@@ -6085,7 +6089,7 @@ jC
 gq
 lo
 HQ
-IM
+uW
 pf
 vG
 lM
