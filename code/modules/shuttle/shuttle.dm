@@ -30,9 +30,6 @@
 	var/obj/docking_port/docked
 
 /obj/docking_port/Destroy(force)
-	if(!force)
-		stack_trace("Shuttle not force deleted!")
-		return QDEL_HINT_LETMELIVE
 	if(docked)
 		docked.docked = null
 		docked = null
@@ -232,8 +229,6 @@
 	#endif
 
 /obj/docking_port/stationary/Destroy(force)
-	if(!force)
-		return ..()
 	SSshuttle.stationary -= src
 	owner_ship?.towed_shuttles -= docked
 	owner_ship?.docking_points -= src
@@ -263,8 +258,6 @@
 	name = "transit dock [transit_dock_counter]"
 
 /obj/docking_port/stationary/transit/Destroy(force)
-	if(!force)
-		return ..()
 	if(!QDELETED(docked))
 		log_world("A transit dock was destroyed while something was docked to it.")
 	SSshuttle.transit -= src
@@ -359,12 +352,6 @@
 	SSshuttle.mobile += src
 
 /obj/docking_port/mobile/Destroy(force)
-	if(!force)
-		return ..()
-
-	. = QDEL_HINT_LETMELIVE
-	CRASH("Ship deletion temporarily suspended.")
-
 	spawn_points.Cut()
 
 	SSshuttle.mobile -= src
