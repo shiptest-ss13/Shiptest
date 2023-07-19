@@ -337,8 +337,7 @@ SUBSYSTEM_DEF(shuttle)
 			T0.empty()
 
 		message_admins(msg)
-		WARNING(msg)
-		return
+		CRASH(msg)
 
 	new_shuttle.docking_points = stationary_ports
 	new_shuttle.current_ship = parent //for any ships that spawn on top of us
@@ -350,13 +349,13 @@ SUBSYSTEM_DEF(shuttle)
 	var/obj/docking_port/mobile/transit_dock = generate_transit_dock(new_shuttle)
 
 	if(!transit_dock)
+		qdel(src, TRUE)
 		CRASH("No dock found/could be created for shuttle ([template.name]), aborting.")
 
 	var/result = new_shuttle.canDock(transit_dock)
 	if((result != SHUTTLE_CAN_DOCK))
-		WARNING("Template shuttle [new_shuttle] cannot dock at [transit_dock] ([result]).")
 		qdel(src, TRUE)
-		return
+		CRASH("Template shuttle [new_shuttle] cannot dock at [transit_dock] ([result]).")
 
 	new_shuttle.initiate_docking(transit_dock)
 	new_shuttle.linkup(transit_dock, parent)

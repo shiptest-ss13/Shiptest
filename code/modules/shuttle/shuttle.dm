@@ -235,7 +235,8 @@
 	if(!force)
 		return ..()
 	SSshuttle.stationary -= src
-	owner_ship?.towed_shuttles -= src
+	owner_ship?.towed_shuttles -= docked
+	owner_ship?.docking_points -= src
 	return ..()
 
 /obj/docking_port/stationary/proc/load_roundstart()
@@ -360,6 +361,9 @@
 /obj/docking_port/mobile/Destroy(force)
 	if(!force)
 		return ..()
+
+	. = QDEL_HINT_LETMELIVE
+	CRASH("Ship deletion temporarily suspended.")
 
 	spawn_points.Cut()
 
