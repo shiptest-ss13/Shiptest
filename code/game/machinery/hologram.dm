@@ -525,7 +525,7 @@ For the other part of the code, check silicon say.dm. Particularly robot talk.*/
 		var/transfered = FALSE
 		if(!validate_location(new_turf))
 			if(!transfer_to_nearby_pad(new_turf,user))
-				if(HC)
+				if(holo.HC)
 					holo.HC.eye.setLoc(get_turf(src))
 					return FALSE
 				clear_holo(user)
