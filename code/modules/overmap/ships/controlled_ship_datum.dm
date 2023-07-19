@@ -109,7 +109,8 @@
 	SSovermap.controlled_ships -= src
 	if(!QDELETED(shuttle_port))
 		shuttle_port.current_ship = null
-		QDEL_NULL(shuttle_port)
+		qdel(shuttle_port, TRUE)
+		shuttle_port = null
 	if(!QDELETED(ship_account))
 		QDEL_NULL(ship_account)
 	for(var/a_key in applications)

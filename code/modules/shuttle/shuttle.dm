@@ -30,6 +30,9 @@
 	var/obj/docking_port/docked
 
 /obj/docking_port/Destroy(force)
+	if(!force)
+		stack_trace("Shuttle not force deleted!")
+		return QDEL_HINT_LETMELIVE
 	if(docked)
 		docked.docked = null
 		docked = null
@@ -229,9 +232,11 @@
 	#endif
 
 /obj/docking_port/stationary/Destroy(force)
+	if(!force)
+		return ..()
 	SSshuttle.stationary -= src
 	owner_ship?.towed_shuttles -= src
-	. = ..()
+	return ..()
 
 /obj/docking_port/stationary/proc/load_roundstart()
 	if(roundstart_template) // passed a PATH
@@ -257,6 +262,8 @@
 	name = "transit dock [transit_dock_counter]"
 
 /obj/docking_port/stationary/transit/Destroy(force)
+	if(!force)
+		return ..()
 	if(!QDELETED(docked))
 		log_world("A transit dock was destroyed while something was docked to it.")
 	SSshuttle.transit -= src
@@ -351,6 +358,9 @@
 	SSshuttle.mobile += src
 
 /obj/docking_port/mobile/Destroy(force)
+	if(!force)
+		return ..()
+
 	spawn_points.Cut()
 
 	SSshuttle.mobile -= src
@@ -361,8 +371,11 @@
 	if(!QDELETED(current_ship))
 		QDEL_NULL(current_ship)
 
-	QDEL_NULL(assigned_transit)		//don't need it where we're goin'!
-	QDEL_LIST(docking_points)
+	qdel(assigned_transit, TRUE)		//don't need it where we're goin'!
+	assigned_transit = null
+	for(var/port in docking_points)
+		qdel(port, TRUE)
+	docking_points.Cut()
 
 	//VERY important proc. Should probably get folded into this one, but oh well.
 	//Requires the shuttle areas list and the towed_shuttles list, and will clear the latter.
@@ -603,7 +616,7 @@
 				break
 
 	for(var/obj/docking_port/mobile/shuttle in all_towed_shuttles - src)
-		qdel(shuttle)
+		qdel(shuttle, TRUE)
 	towed_shuttles.Cut()
 
 /obj/docking_port/mobile/proc/create_ripples(obj/docking_port/stationary/S1, animate_time)

@@ -55,7 +55,7 @@
 		Retaliate()
 
 /mob/living/simple_animal/hostile/retaliate/goose/handle_automated_action()
-	if(moved && length(loc.contents))
+	if(moved && length(loc?.contents))
 		moved = FALSE
 		var/obj/item/E = locate() in nummies
 		if(E && E.loc == loc)
@@ -63,7 +63,7 @@
 		nummies -= E
 
 /mob/living/simple_animal/hostile/retaliate/goose/vomit/handle_automated_action()
-	if(moved && length(loc.contents))
+	if(moved && length(loc?.contents))
 		var/list/nummies = loc.contents
 		var/obj/item/E = pick(nummies)
 		if(!(E.custom_materials && E.custom_materials[SSmaterials.GetMaterialRef(/datum/material/plastic)]))
