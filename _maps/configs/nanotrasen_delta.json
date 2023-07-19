@@ -19,12 +19,18 @@
 			"officer": true,
 			"slots": 1
 		},
-		"Roboticist": 2,
+		"Roboticist": {
+			"outfit": "/datum/outfit/job/roboticist",
+			"slots": 2
+		},
 		"Engineer": {
 			"outfit": "/datum/outfit/job/engineer/nt",
 			"slots": 1
 		},
-		"Assistant": 3
+		"Assistant": {
+			"outfit": "/datum/outfit/job/assistant",
+			"slots": 3
+		}
 	},
 	"enabled": true
 }
