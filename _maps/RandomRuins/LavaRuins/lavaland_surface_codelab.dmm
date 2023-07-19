@@ -189,9 +189,7 @@
 /obj/effect/turf_decal/industrial/stand_clear{
 	dir = 4
 	},
-/turf/open/floor/concrete/pavement{
-	light_range = 1
-	},
+/turf/open/floor/concrete/pavement/lava,
 /area/ruin/unpowered/codelab/exterior)
 "cd" = (
 /obj/machinery/light/dim/directional/north,
@@ -215,9 +213,7 @@
 /obj/effect/turf_decal/box/white/corners{
 	dir = 4
 	},
-/turf/open/floor/concrete/pavement{
-	light_range = 1
-	},
+/turf/open/floor/concrete/pavement/lava,
 /area/ruin/unpowered/codelab/exterior)
 "cv" = (
 /obj/structure/fence,
@@ -530,7 +526,8 @@
 /obj/machinery/turretid{
 	pixel_x = 28;
 	req_access = null;
-	req_access_txt = "16"
+	req_access_txt = "16";
+	name = "interior turret control panel"
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
@@ -769,9 +766,7 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/reception)
 "jB" = (
-/turf/open/floor/concrete/pavement{
-	light_range = 1
-	},
+/turf/open/floor/concrete/pavement/lava,
 /area/ruin/unpowered/codelab/exterior)
 "jC" = (
 /obj/machinery/airalarm/directional/east,
@@ -1517,6 +1512,9 @@
 /obj/machinery/atmospherics/components/unary/thermomachine/freezer/on,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
+"sx" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ruin/unpowered/codelab/laboratory)
 "sz" = (
 /obj/structure/closet/crate/large{
 	anchored = 1
@@ -1766,9 +1764,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
 	dir = 5
 	},
-/turf/open/floor/concrete/pavement{
-	light_range = 1
-	},
+/turf/open/floor/concrete/pavement/lava,
 /area/ruin/unpowered/codelab/maintenance)
 "vQ" = (
 /obj/structure/flora/ausbushes/sparsegrass/hell,
@@ -1865,9 +1861,7 @@
 /area/ruin/unpowered/codelab/subjectrooms)
 "xz" = (
 /obj/effect/turf_decal/dept/science,
-/turf/open/floor/concrete/pavement{
-	light_range = 1
-	},
+/turf/open/floor/concrete/pavement/lava,
 /area/ruin/unpowered/codelab/exterior)
 "xB" = (
 /obj/structure/cable{
@@ -1977,9 +1971,7 @@
 /area/ruin/unpowered/codelab/reception)
 "yG" = (
 /obj/effect/turf_decal/box/white/corners,
-/turf/open/floor/concrete/pavement{
-	light_range = 1
-	},
+/turf/open/floor/concrete/pavement/lava,
 /area/ruin/unpowered/codelab/exterior)
 "yJ" = (
 /obj/structure/closet/crate/internals{
@@ -2320,9 +2312,7 @@
 /obj/effect/turf_decal/industrial/loading{
 	dir = 1
 	},
-/turf/open/floor/concrete/pavement{
-	light_range = 1
-	},
+/turf/open/floor/concrete/pavement/lava,
 /area/ruin/unpowered/codelab/exterior)
 "BF" = (
 /obj/machinery/power/smes/engineering,
@@ -2374,9 +2364,7 @@
 /obj/effect/turf_decal/industrial/stand_clear{
 	dir = 8
 	},
-/turf/open/floor/concrete/pavement{
-	light_range = 1
-	},
+/turf/open/floor/concrete/pavement/lava,
 /area/ruin/unpowered/codelab/exterior)
 "Cd" = (
 /turf/open/floor/plasteel/white,
@@ -2437,9 +2425,7 @@
 /obj/effect/turf_decal/box/white/corners{
 	dir = 8
 	},
-/turf/open/floor/concrete/pavement{
-	light_range = 1
-	},
+/turf/open/floor/concrete/pavement/lava,
 /area/ruin/unpowered/codelab/exterior)
 "CX" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -2528,6 +2514,13 @@
 /obj/item/spacecash/bundle/c20,
 /turf/open/floor/wood,
 /area/ruin/unpowered/codelab/laboratory)
+"DI" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/wrapping,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/storage)
 "DJ" = (
 /obj/structure/chair/comfy/brown{
 	dir = 8
@@ -2962,13 +2955,15 @@
 /obj/structure/fluff/paper/stack,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
+"IM" = (
+/obj/structure/ore_box,
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/storage)
 "IO" = (
 /obj/structure/fence/door{
 	open = 1
 	},
-/turf/open/floor/concrete/pavement{
-	light_range = 1
-	},
+/turf/open/floor/concrete/pavement/lava,
 /area/ruin/unpowered/codelab/exterior)
 "Jb" = (
 /obj/structure/flora/ausbushes/fernybush/hell,
@@ -3063,9 +3058,7 @@
 /area/ruin/unpowered/codelab/maintenance)
 "JZ" = (
 /obj/effect/turf_decal/dept/cargo,
-/turf/open/floor/concrete/pavement{
-	light_range = 1
-	},
+/turf/open/floor/concrete/pavement/lava,
 /area/ruin/unpowered/codelab/exterior)
 "Ka" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
@@ -3086,9 +3079,7 @@
 /area/ruin/unpowered/codelab/subjectrooms)
 "Kl" = (
 /obj/machinery/light/small/directional/north,
-/turf/open/floor/concrete/pavement{
-	light_range = 1
-	},
+/turf/open/floor/concrete/pavement/lava,
 /area/ruin/unpowered/codelab/exterior)
 "Kv" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -3600,9 +3591,7 @@
 /obj/effect/turf_decal/box/white/corners{
 	dir = 1
 	},
-/turf/open/floor/concrete/pavement{
-	light_range = 1
-	},
+/turf/open/floor/concrete/pavement/lava,
 /area/ruin/unpowered/codelab/exterior)
 "Sn" = (
 /obj/structure/fence,
@@ -3705,7 +3694,7 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
 "TS" = (
-/obj/machinery/porta_turret/centcom_shuttle/weak/codelab,
+/obj/machinery/porta_turret/ship/weak/codelab,
 /turf/closed/wall/mineral/titanium,
 /area/ruin/unpowered/codelab/exterior)
 "Ue" = (
@@ -3870,9 +3859,7 @@
 /area/ruin/unpowered/codelab/maintenance)
 "Ws" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4,
-/turf/open/floor/concrete/pavement{
-	light_range = 1
-	},
+/turf/open/floor/concrete/pavement/lava,
 /area/ruin/unpowered/codelab/maintenance)
 "Wt" = (
 /obj/structure/table,
@@ -3990,6 +3977,7 @@
 /obj/structure/sign/poster/official/work_for_a_future{
 	pixel_y = -32
 	},
+/obj/machinery/blackbox_recorder,
 /turf/open/floor/wood,
 /area/ruin/unpowered/codelab/laboratory)
 "Xu" = (
@@ -4130,10 +4118,13 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
 "Zb" = (
-/obj/structure/sign/nanotrasen{
-	pixel_y = 32
-	},
 /obj/structure/marker_beacon,
+/obj/machinery/turretid{
+	pixel_y = 26;
+	name = "exterior turret control panel";
+	lethal = 1;
+	icon_state = "control_kill"
+	},
 /turf/open/floor/plating/grass/lava/purple,
 /area/ruin/unpowered/codelab/exterior)
 "Zd" = (
@@ -4176,9 +4167,7 @@
 /obj/structure/fence{
 	dir = 4
 	},
-/turf/open/floor/concrete/pavement{
-	light_range = 1
-	},
+/turf/open/floor/concrete/pavement/lava,
 /area/ruin/unpowered/codelab/exterior)
 "Zs" = (
 /obj/structure/flora/tree/dead/hell,
@@ -4195,9 +4184,7 @@
 /area/ruin/unpowered/codelab/laboratory)
 "Zx" = (
 /obj/structure/marker_beacon,
-/turf/open/floor/concrete/pavement{
-	light_range = 1
-	},
+/turf/open/floor/concrete/pavement/lava,
 /area/ruin/unpowered/codelab/exterior)
 "Zy" = (
 /obj/machinery/vending/snack/teal,
@@ -5937,7 +5924,7 @@ nm
 DU
 nm
 et
-et
+sx
 Mv
 jK
 sA
@@ -6024,7 +6011,7 @@ zu
 Xh
 St
 aA
-pb
+DI
 zZ
 cO
 fW
@@ -6098,7 +6085,7 @@ jC
 gq
 lo
 HQ
-HQ
+IM
 pf
 vG
 lM
