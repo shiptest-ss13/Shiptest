@@ -110,7 +110,6 @@
 	if(!QDELETED(shuttle_port))
 		shuttle_port.current_ship = null
 		QDEL_NULL(shuttle_port)
-		shuttle_port = null
 	if(!QDELETED(ship_account))
 		QDEL_NULL(ship_account)
 	for(var/a_key in applications)
@@ -292,8 +291,10 @@
 		owner_mind = null
 		if(owner_act)
 			QDEL_NULL(owner_act)
-		// this gets automatically deleted in /datum/Destroy() if we are being destroyed
-		owner_check_timer_id = addtimer(CALLBACK(src, .proc/check_owner), 5 MINUTES, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
+		// turns out that timers don't get added to active_timers if the datum is getting qdeleted.
+		// so this timer was sitting around after deletion and clogging up runtime logs. thus, the QDELING() check. oops!
+		if(!owner_check_timer_id && !QDELING(src))
+			owner_check_timer_id = addtimer(CALLBACK(src, .proc/check_owner), 5 MINUTES, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
 		return
 
 	owner_mob = new_owner

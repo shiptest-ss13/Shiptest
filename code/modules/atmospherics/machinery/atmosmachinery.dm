@@ -158,7 +158,7 @@
 		return TRUE
 	return FALSE
 
-/obj/machinery/atmospherics/proc/pipeline_expansion()
+/obj/machinery/atmospherics/proc/pipeline_expansion(datum/pipeline/reference)
 	return nodes
 
 /obj/machinery/atmospherics/proc/SetInitDirections()
@@ -170,13 +170,13 @@
 /obj/machinery/atmospherics/proc/returnPipenet()
 	return
 
-/obj/machinery/atmospherics/proc/returnPipenetAirs()
+/obj/machinery/atmospherics/proc/returnPipenetAirs(datum/pipeline/reference)
 	return
 
-/obj/machinery/atmospherics/proc/setPipenet()
+/obj/machinery/atmospherics/proc/setPipenet(datum/pipeline/reference, obj/machinery/atmospherics/connection)
 	return
 
-/obj/machinery/atmospherics/proc/replacePipenet()
+/obj/machinery/atmospherics/proc/replacePipenet(datum/pipeline/old_pipeline, datum/pipeline/new_pipeline)
 	return
 
 /obj/machinery/atmospherics/proc/disconnect(obj/machinery/atmospherics/reference)

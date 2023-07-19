@@ -91,7 +91,7 @@
 	INVOKE_ASYNC(src, .proc/setup_grav_field)
 
 /obj/effect/anomaly/grav/high/proc/setup_grav_field()
-	grav_field = grav_field = new(src, effectrange, TRUE, 2)
+	grav_field = new(src, effectrange, TRUE, 2)
 
 /obj/effect/anomaly/grav/high/Destroy()
 	QDEL_NULL(grav_field)

@@ -30,6 +30,7 @@
 	members.Cut()
 	for(var/obj/machinery/atmospherics/components/C in other_atmosmch)
 		C.nullifyPipenet(src)
+	other_atmosmch.Cut()
 	return ..()
 
 /datum/pipeline/process()
@@ -91,6 +92,8 @@
 							possible_expansions += item
 
 							volume += item.volume
+							if(!QDELETED(item.parent))
+								qdel(item.parent)
 							item.parent = src
 
 							if(item.air_temporary)

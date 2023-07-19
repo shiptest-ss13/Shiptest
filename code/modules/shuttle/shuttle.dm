@@ -362,19 +362,20 @@
 		QDEL_NULL(current_ship)
 
 	QDEL_NULL(assigned_transit)		//don't need it where we're goin'!
-
 	QDEL_LIST(docking_points)
-	QDEL_LIST(towed_shuttles)
+
+	//VERY important proc. Should probably get folded into this one, but oh well.
+	//Requires the shuttle areas list and the towed_shuttles list, and will clear the latter.
+	jump_to_null_space()
 
 	for(var/area/ship/shuttle_area in shuttle_areas) //TODO: make a disconnect_from_shuttle() proc
 		shuttle_area.mobile_port = null
 	shuttle_areas.Cut()
 	shuttle_areas = null
 
-	underlying_turf_area = null
-
 	remove_ripples()
-	jump_to_null_space()
+
+	underlying_turf_area = null
 
 	return ..()
 
@@ -583,7 +584,7 @@
 		all_shuttle_areas += M.shuttle_areas
 
 	for(var/turf/oldT as anything in old_turfs)
-		if(!all_shuttle_areas[oldT?.loc])
+		if(!(oldT?.loc in all_shuttle_areas))
 			continue
 		var/area/old_area = oldT.loc
 		for(var/obj/docking_port/mobile/bottom_shuttle in all_towed_shuttles)
@@ -603,8 +604,7 @@
 
 	for(var/obj/docking_port/mobile/shuttle in all_towed_shuttles - src)
 		qdel(shuttle)
-
-	all_towed_shuttles.Cut()
+	towed_shuttles.Cut()
 
 /obj/docking_port/mobile/proc/create_ripples(obj/docking_port/stationary/S1, animate_time)
 	var/list/turfs = ripple_area(S1)

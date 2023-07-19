@@ -57,19 +57,20 @@
 /obj/machinery/atmospherics/components/unary/outlet_injector/process_atmos()
 	..()
 
-	injecting = 0
+	injecting = TRUE
 
-	if(!on || !is_operational)
+	if(!on || !is_operational || !isopenturf(loc))
 		return
 
 	var/datum/gas_mixture/air_contents = airs[1]
 
-	if(air_contents != null)
-		if(air_contents.return_temperature() > 0)
-			loc.assume_air_ratio(air_contents, volume_rate / air_contents.return_volume())
-			air_update_turf()
+	if(!air_contents || air_contents.return_temperature() <= 0)
+		return
 
-		update_parents()
+	loc.assume_air_ratio(air_contents, volume_rate / air_contents.return_volume())
+	air_update_turf()
+
+	update_parents()
 
 /obj/machinery/atmospherics/components/unary/outlet_injector/proc/inject()
 
@@ -78,7 +79,7 @@
 
 	var/datum/gas_mixture/air_contents = airs[1]
 
-	injecting = 1
+	injecting = TRUE
 
 	if(air_contents.return_temperature() > 0)
 		loc.assume_air_ratio(air_contents, volume_rate / air_contents.return_volume())

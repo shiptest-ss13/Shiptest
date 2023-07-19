@@ -106,7 +106,7 @@
 /obj/machinery/atmospherics/pipe/layer_manifold/setPipingLayer()
 	piping_layer = PIPING_LAYER_DEFAULT
 
-/obj/machinery/atmospherics/pipe/layer_manifold/pipeline_expansion()
+/obj/machinery/atmospherics/pipe/layer_manifold/pipeline_expansion(datum/pipeline/reference)
 	return get_all_connected_nodes()
 
 /obj/machinery/atmospherics/pipe/layer_manifold/disconnect(obj/machinery/atmospherics/reference)

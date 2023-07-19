@@ -79,8 +79,10 @@
 /obj/machinery/atmospherics/pipe/returnPipenet()
 	return parent
 
-/obj/machinery/atmospherics/pipe/setPipenet(datum/pipeline/P)
-	parent = P
+/obj/machinery/atmospherics/pipe/setPipenet(datum/pipeline/reference, obj/machinery/atmospherics/connection)
+	if(!QDELETED(parent))
+		qdel(parent)
+	parent = reference
 
 /obj/machinery/atmospherics/pipe/Destroy()
 	QDEL_NULL(parent)
