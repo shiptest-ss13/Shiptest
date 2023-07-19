@@ -472,6 +472,7 @@ For the other part of the code, check silicon say.dm. Particularly robot talk.*/
 
 /obj/machinery/holopad/proc/clear_holo(mob/living/user)
 	qdel(masters[user]) // Get rid of user's hologram
+	masters -= user
 	unset_holo(user)
 	return TRUE
 
@@ -524,7 +525,10 @@ For the other part of the code, check silicon say.dm. Particularly robot talk.*/
 		var/transfered = FALSE
 		if(!validate_location(new_turf))
 			if(!transfer_to_nearby_pad(new_turf,user))
-				holo.HC.eye.setLoc(get_turf(src))
+				if(HC)
+					holo.HC.eye.setLoc(get_turf(src))
+					return FALSE
+				clear_holo(user)
 				return FALSE
 			else
 				transfered = TRUE
