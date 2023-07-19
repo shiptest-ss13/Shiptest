@@ -327,7 +327,7 @@
 	docked_to.contents -= src
 	var/datum/overmap/old_docked_to = docked_to
 	docked_to = null
-	token.Move(OVERMAP_TOKEN_TURF(x, y))
+	token.forceMove(OVERMAP_TOKEN_TURF(x, y))
 	INVOKE_ASYNC(old_docked_to, .proc/post_undocked, src)
 	docking = FALSE
 	SEND_SIGNAL(src, COMSIG_OVERMAP_UNDOCK, old_docked_to)
