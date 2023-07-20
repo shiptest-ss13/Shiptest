@@ -50,7 +50,8 @@
 #endif
 
 // I heard that this was fixed in 1609 (not public currently), but that could be wrong, so keep an eye on this
-#if (DM_VERSION == 515 && DM_BUILD < 1609)
+// It wasn't fixed in 1609
+#if (DM_VERSION == 515)
 /// fcopy will crash on 515 linux if given a non-existant file, instead of returning 0 like on 514 linux or 515 windows
 /// var case matches documentation for fcopy.
 /world/proc/__fcopy(Src, Dst)
