@@ -956,7 +956,9 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/steeldecal/steel_decals10,
-/obj/machinery/door/airlock/engineering/glass,
+/obj/machinery/door/airlock/engineering/glass{
+	dir = 4
+	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
