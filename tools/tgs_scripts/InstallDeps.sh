@@ -12,13 +12,6 @@ has_pip3="$(command -v pip3)"
 set -e
 set -x
 
-# install cargo if needed
-if ! [ -x "$has_cargo" ]; then
-	echo "Installing rust..."
-	curl https://sh.rustup.rs -sSf | sh -s -- -y
-	. ~/.profile
-fi
-
 # apt packages, libssl needed by rust-g but not included in TGS barebones install
 if ! ( [ -x "$has_git" ] && [ -x "$has_grep" ]  && [ -x "$has_curl" ] && [ -f "/usr/lib/i386-linux-gnu/libssl.so" ] ); then
 	echo "Installing apt dependencies..."
@@ -31,6 +24,13 @@ if ! ( [ -x "$has_git" ] && [ -x "$has_grep" ]  && [ -x "$has_curl" ] && [ -f "/
 		sudo apt-get update
 		sudo apt-get install -y lib32z1 git pkg-config libssl-dev:i386 libssl-dev zlib1g-dev:i386 curl grep
 	fi
+fi
+
+# install cargo if needed
+if ! [ -x "$has_cargo" ]; then
+	echo "Installing rust..."
+	curl https://sh.rustup.rs -sSf | sh -s -- -y
+	. ~/.profile
 fi
 
 # install or update youtube-dl when not present, or if it is present with pip3,
