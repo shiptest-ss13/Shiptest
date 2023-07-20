@@ -75,6 +75,10 @@
 			genes += new /datum/plant_gene/reagent(reag_id, reagents_add[reag_id])
 		reagents_from_genes() //quality coding
 
+/obj/item/seeds/Destroy()
+	QDEL_LIST(genes)
+	return ..()
+
 /obj/item/seeds/examine(mob/user)
 	. = ..()
 	. += "<span class='notice'>Use a pen on it to rename it or change its description.</span>"
