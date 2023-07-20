@@ -83,7 +83,7 @@
 	// Uses "test" hangars.
 
 /datum/overmap/outpost/test_2
-	token_icon_state = "station_asteroid"
+	token_icon_state = "station_asteroid_0"
 	main_template = /datum/map_template/outpost/outpost_test_2
 	elevator_template = /datum/map_template/outpost/elevator_test
 	// Using an (incomplete) second list of hangar templates. Note that the 56x40 hangar is the first skin.
