@@ -344,7 +344,7 @@
 
 /obj/item/melee/classic_baton/telescopic/suicide_act(mob/user)
 	var/mob/living/carbon/human/H = user
-	var/obj/item/organ/brain/B = H.getorgan(/obj/item/organ/brain)
+	var/obj/item/organ/brain/ded_brain = H.getorgan(/obj/item/organ/brain)
 
 	user.visible_message("<span class='suicide'>[user] stuffs [src] up [user.p_their()] nose and presses the 'extend' button! It looks like [user.p_theyre()] trying to clear [user.p_their()] mind.</span>")
 	if(!on)
@@ -354,9 +354,8 @@
 		add_fingerprint(user)
 	sleep(3)
 	if (!QDELETED(H))
-		if(!QDELETED(B))
-			H.internal_organs -= B
-			qdel(B)
+		if(!QDELETED(ded_brain))
+			qdel(ded_brain)
 		new /obj/effect/gibspawner/generic(H.drop_location(), H)
 		return (BRUTELOSS)
 
