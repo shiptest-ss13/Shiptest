@@ -15,7 +15,7 @@ cd "$original_dir"
 #find out what we have (+e is important for this)
 set +e
 has_git="$(command -v git)"
-has_cargo="$(command -v ~/.cargo/bin/cargo)"
+has_rustup="$(command -v ~/.cargo/bin/rustup)"
 has_sudo="$(command -v sudo)"
 has_grep="$(command -v grep)"
 has_youtubedl="$(command -v youtube-dl)"
@@ -23,7 +23,7 @@ has_pip3="$(command -v pip3)"
 set -e
 
 # install cargo if needed
-if ! [ -x "$has_cargo" ]; then
+if ! [ -x "$has_rustup" ]; then
 	echo "Installing rust..."
 	curl https://sh.rustup.rs -sSf | sh -s -- -y
 	. ~/.profile

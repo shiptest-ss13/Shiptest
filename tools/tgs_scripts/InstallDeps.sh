@@ -3,22 +3,23 @@
 #find out what we have (+e is important for this)
 set +e
 has_git="$(command -v git)"
-has_cargo="$(command -v ~/.cargo/bin/cargo)"
+has_rustup="$(command -v ~/.cargo/bin/rustup)"
 has_sudo="$(command -v sudo)"
+has_grep="$(command -v grep)"
 has_youtubedl="$(command -v youtube-dl)"
 has_pip3="$(command -v pip3)"
 set -e
 set -x
 
 # install cargo if needed
-if ! [ -x "$has_cargo" ]; then
+if ! [ -x "$has_rustup" ]; then
 	echo "Installing rust..."
 	curl https://sh.rustup.rs -sSf | sh -s -- -y
 	. ~/.profile
 fi
 
 # apt packages, libssl needed by rust-g but not included in TGS barebones install
-if ! ( [ -x "$has_git" ] && [ -f "/usr/lib/i386-linux-gnu/libssl.so" ] ); then
+if ! ( [ -x "$has_git" ] && [ -x "$has_grep" ] && [ -f "/usr/lib/i386-linux-gnu/libssl.so" ] ); then
 	echo "Installing apt dependencies..."
 	if ! [ -x "$has_sudo" ]; then
 		dpkg --add-architecture i386
