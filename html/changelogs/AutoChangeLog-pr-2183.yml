@@ -1,0 +1,5 @@
+author: tmtmtl30
+delete-after: true
+changes:
+  - bugfix: The roundstart join menu now correctly ignores playtime restrictions if
+      USE_EXP_TRACKING is disabled or no database is found.
