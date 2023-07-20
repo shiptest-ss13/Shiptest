@@ -44,8 +44,6 @@
 		QDEL_NULL(cam_screen)
 		QDEL_NULL(cam_plane_master)
 		QDEL_NULL(cam_background)
-	for(var/obj/overmap/content as anything in contents)
-		qdel(content.parent)
 	return ..()
 
 /obj/overmap/attack_ghost(mob/user)

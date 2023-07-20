@@ -107,12 +107,19 @@
 
 /datum/overmap/ship/controlled/Destroy()
 	SSovermap.controlled_ships -= src
+	helms.Cut()
+	LAZYCLEARLIST(owner_candidates)
 	if(!QDELETED(shuttle_port))
 		shuttle_port.current_ship = null
 		qdel(shuttle_port, TRUE)
 		shuttle_port = null
 	if(!QDELETED(ship_account))
 		QDEL_NULL(ship_account)
+	if(!QDELETED(shipkey))
+		QDEL_NULL(shipkey)
+	QDEL_LIST(manifest)
+	QDEL_LIST(job_slots)
+	QDEL_NULL(owner_act)
 	for(var/a_key in applications)
 		// it handles removal itself
 		qdel(applications[a_key])
