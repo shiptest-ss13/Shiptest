@@ -4463,7 +4463,8 @@
 /obj/structure/catwalk/over,
 /obj/effect/decal/cleanable/glass,
 /obj/machinery/door/airlock/hatch{
-	name = "Engineering"
+	name = "Engineering";
+	req_access_txt = "10"
 	},
 /obj/machinery/door/firedoor,
 /turf/open/floor/plating,
