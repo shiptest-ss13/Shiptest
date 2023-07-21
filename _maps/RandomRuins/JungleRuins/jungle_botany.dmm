@@ -11,6 +11,12 @@
 /obj/structure/spacevine,
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/botanicalresearch/crew)
+"aq" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/spacevine,
+/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/plasteel/grimy,
+/area/ruin/jungle/botanicalresearch/crew)
 "aC" = (
 /obj/item/ammo_casing/c45{
 	projectile_type = null;
@@ -164,6 +170,7 @@
 "dS" = (
 /obj/structure/spacevine/dense,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/siding/wood,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/jungle/botanicalresearch/crew)
 "dU" = (
@@ -203,6 +210,9 @@
 /area/ruin/jungle/botanicalresearch/command)
 "ex" = (
 /obj/structure/spacevine/dense,
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 1
+	},
 /turf/open/floor/plasteel/grimy,
 /area/ruin/jungle/botanicalresearch/crew)
 "ez" = (
@@ -231,6 +241,9 @@
 /obj/machinery/light/small/directional/east,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine,
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 1
+	},
 /turf/open/floor/plasteel/grimy,
 /area/ruin/jungle/botanicalresearch/crew)
 "fe" = (
@@ -455,12 +468,6 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/jungle/botanicalresearch/command)
-"hk" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/spacevine/dense,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/dark,
-/area/ruin/jungle/botanicalresearch/checkpoint)
 "hl" = (
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/jungle/botanicalresearch/vault)
@@ -549,6 +556,12 @@
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plasteel/white,
 /area/ruin/jungle/botanicalresearch)
+"is" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/spacevine/dense,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/botanicalresearch/checkpoint)
 "iM" = (
 /obj/structure/fence{
 	dir = 4
@@ -701,6 +714,9 @@
 /obj/structure/spacevine/dense,
 /obj/item/stack/ore/salvage/scrapgold,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 4
+	},
 /turf/open/floor/plasteel/grimy,
 /area/ruin/jungle/botanicalresearch/crew)
 "kV" = (
@@ -912,6 +928,12 @@
 /obj/structure/flora/junglebush/b,
 /turf/open/floor/plating/grass/jungle/lit,
 /area/ruin/jungle/botanicalresearch/caves)
+"nY" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/spacevine/dense,
+/obj/effect/turf_decal/siding/wood/corner,
+/turf/open/floor/plasteel/grimy,
+/area/ruin/jungle/botanicalresearch/crew)
 "od" = (
 /obj/item/stack/rods,
 /obj/structure/spacevine/weak,
@@ -1017,6 +1039,9 @@
 /mob/living/simple_animal/hostile/venus_human_trap,
 /obj/structure/spacevine/dense,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 4
+	},
 /turf/open/floor/plasteel/grimy,
 /area/ruin/jungle/botanicalresearch/crew)
 "pt" = (
@@ -1058,6 +1083,7 @@
 /obj/machinery/light/small/directional/west,
 /obj/structure/spacevine/dense,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/siding/wood/corner,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/jungle/botanicalresearch/crew)
 "pG" = (
@@ -1129,6 +1155,9 @@
 /obj/machinery/light/small/directional/south,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine,
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 8
+	},
 /turf/open/floor/plasteel/grimy,
 /area/ruin/jungle/botanicalresearch/crew)
 "qn" = (
@@ -1595,6 +1624,12 @@
 /obj/item/stack/ore/salvage/scrapmetal/five,
 /turf/open/floor/plating/dirt/jungle/lit,
 /area/template_noop)
+"xk" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/spacevine,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/botanicalresearch/checkpoint)
 "xl" = (
 /obj/item/bedsheet/green,
 /obj/structure/bed,
@@ -1945,6 +1980,9 @@
 /obj/machinery/light/small/directional/east,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine/dense,
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 8
+	},
 /turf/open/floor/plasteel/grimy,
 /area/ruin/jungle/botanicalresearch/crew)
 "Ee" = (
@@ -2644,15 +2682,6 @@
 /obj/structure/spacevine/dense,
 /turf/open/floor/plasteel/freezer,
 /area/ruin/jungle/botanicalresearch/crew)
-"NF" = (
-/obj/machinery/light/small/directional/south,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/siding/wood{
-	dir = 6
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/wood,
-/area/ruin/jungle/botanicalresearch/crew)
 "NI" = (
 /obj/machinery/light/directional/north,
 /obj/effect/decal/cleanable/dirt,
@@ -2872,12 +2901,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ruin/jungle/botanicalresearch/engineering)
-"QR" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/spacevine,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/dark,
-/area/ruin/jungle/botanicalresearch/checkpoint)
 "QS" = (
 /obj/item/stack/cable_coil/cut/red,
 /obj/item/shard/plasma,
@@ -2990,6 +3013,15 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
 	},
+/turf/open/floor/wood,
+/area/ruin/jungle/botanicalresearch/crew)
+"Sw" = (
+/obj/machinery/light/small/directional/south,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
 /area/ruin/jungle/botanicalresearch/crew)
 "SD" = (
@@ -3228,6 +3260,14 @@
 /obj/effect/radiation,
 /turf/open/floor/plating/dirt/jungle/lit,
 /area/template_noop)
+"Wb" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/spacevine,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/turf/open/floor/plasteel/grimy,
+/area/ruin/jungle/botanicalresearch/crew)
 "Wj" = (
 /obj/machinery/hydroponics/constructable,
 /obj/effect/decal/cleanable/dirt,
@@ -3959,9 +3999,9 @@ YF
 nT
 mi
 dA
+Wb
 BH
-BH
-BH
+aq
 Gt
 Sp
 As
@@ -4085,7 +4125,7 @@ dj
 YF
 ps
 Qo
-Qo
+nY
 YF
 Lo
 xl
@@ -4145,12 +4185,12 @@ YF
 nT
 mi
 MG
-BH
+Wb
 Qo
 dS
 am
 Sp
-NF
+Sw
 YF
 hI
 YF
@@ -4908,8 +4948,8 @@ Yd
 KL
 uk
 vz
-QR
-QR
+xk
+xk
 uk
 PX
 Oq
@@ -4969,10 +5009,10 @@ hP
 qT
 KL
 ht
-hk
+is
 ht
-hk
-QR
+is
+xk
 PX
 uX
 uX
@@ -5030,7 +5070,7 @@ jq
 kV
 nf
 KL
-hk
+is
 ht
 ht
 ht
