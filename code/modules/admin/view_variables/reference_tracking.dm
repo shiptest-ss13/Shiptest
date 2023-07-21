@@ -67,10 +67,6 @@
 	SSgarbage.next_fire = world.time + world.tick_lag
 
 /datum/proc/DoSearchVar(potential_container, container_name, recursive_limit = 64, search_time = world.time)
-	#ifndef FIND_REF_NO_CHECK_TICK
-	CHECK_TICK
-	#endif
-
 	#ifdef REFERENCE_TRACKING_DEBUG
 	if(SSgarbage.should_save_refs && !found_refs)
 		found_refs = list()
@@ -102,9 +98,6 @@
 			#endif
 			if (varname == "vars" || varname == "vis_locs") //Fun fact, vis_locs don't count for references
 				continue
-			#ifndef FIND_REF_NO_CHECK_TICK
-			CHECK_TICK
-			#endif
 			var/variable = vars_list[varname]
 
 			if(variable == src)
