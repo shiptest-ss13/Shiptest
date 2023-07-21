@@ -27,7 +27,9 @@
 /turf/open/floor/wood,
 /area/ruin/whitesands/saloon)
 "aO" = (
-/obj/structure/mineral_door/wood,
+/obj/machinery/door/airlock/wood/glass{
+	dir = 4
+	},
 /turf/open/floor/wood,
 /area/ruin/whitesands/saloon)
 "aZ" = (
@@ -40,7 +42,7 @@
 /turf/open/floor/wood,
 /area/ruin/whitesands/saloon)
 "bd" = (
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood{
 	icon_state = "wood-broken7"
@@ -57,7 +59,7 @@
 /turf/open/floor/wood,
 /area/ruin/whitesands/saloon)
 "bJ" = (
-/obj/machinery/power/apc/auto_name/south,
+/obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable,
 /obj/item/shovel,
 /obj/item/shovel,
@@ -72,9 +74,7 @@
 /turf/open/floor/wood,
 /area/ruin/whitesands/saloon)
 "cf" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
+/obj/machinery/light/small/directional/east,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
 /area/ruin/whitesands/saloon)
@@ -100,9 +100,7 @@
 /area/ruin/whitesands/saloon)
 "cI" = (
 /obj/effect/turf_decal/siding/wood/corner,
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /obj/structure/sign/poster/random{
 	pixel_x = -32
 	},
@@ -111,7 +109,7 @@
 	},
 /area/ruin/whitesands/saloon)
 "da" = (
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/floor/wood,
 /area/ruin/whitesands/saloon)
 "dq" = (
@@ -120,7 +118,7 @@
 /area/ruin/whitesands/saloon)
 "dU" = (
 /obj/structure/table/wood,
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /obj/item/clothing/mask/cigarette/cigar/havana{
 	pixel_x = 1;
 	pixel_y = 4
@@ -137,13 +135,11 @@
 /obj/structure/closet/crate/bin,
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/wood,
 /area/ruin/whitesands/saloon)
 "er" = (
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/chair/stool/bar{
 	dir = 1
@@ -169,8 +165,10 @@
 /turf/open/floor/plating/asteroid/whitesands/lit,
 /area/ruin/whitesands/saloon)
 "fo" = (
-/obj/structure/mineral_door/wood,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/door/airlock/wood/glass{
 	dir = 4
 	},
 /turf/open/floor/wood,
@@ -376,6 +374,13 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/whitesands/saloon)
+"jJ" = (
+/obj/effect/mapping_helpers/airlock/locked,
+/obj/machinery/door/airlock/wood/glass{
+	dir = 4
+	},
+/turf/open/floor/wood,
+/area/ruin/whitesands/saloon)
 "ki" = (
 /turf/open/floor/plating,
 /area/ruin/whitesands/saloon)
@@ -409,9 +414,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
 	},
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/wood,
 /area/ruin/whitesands/saloon)
 "kX" = (
@@ -474,9 +477,7 @@
 /turf/open/floor/wood,
 /area/ruin/whitesands/saloon)
 "nE" = (
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood{
 	icon_state = "wood-broken7"
@@ -543,12 +544,12 @@
 /turf/open/floor/wood,
 /area/ruin/whitesands/saloon)
 "ph" = (
-/obj/structure/closet/crate/grave,
+/obj/structure/closet/crate/grave/loot,
 /obj/item/gun/ballistic/derringer/traitor,
 /turf/open/floor/plating/asteroid/whitesands/grass/lit,
 /area/ruin/whitesands/saloon)
 "pj" = (
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /obj/structure/chair/stool/bar{
 	dir = 1
 	},
@@ -580,7 +581,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/floor/wood{
 	icon_state = "wood-broken7"
 	},
@@ -589,9 +590,7 @@
 /obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4{
 	dir = 4
 	},
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/plating,
 /area/ruin/whitesands/saloon)
 "ri" = (
@@ -636,9 +635,7 @@
 "sd" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
 /area/ruin/whitesands/saloon)
@@ -680,9 +677,7 @@
 /obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4{
 	dir = 8
 	},
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/plating,
 /area/ruin/whitesands/saloon)
 "sU" = (
@@ -692,9 +687,7 @@
 /turf/open/floor/wood,
 /area/ruin/whitesands/saloon)
 "tf" = (
-/obj/machinery/light/small{
-	dir = 8
-	},
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/wood{
 	icon_state = "wood-broken7"
 	},
@@ -751,9 +744,7 @@
 /obj/structure/chair/sofa{
 	dir = 8
 	},
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
@@ -928,6 +919,14 @@
 /obj/item/storage/toolbox/mechanical,
 /turf/open/floor/wood,
 /area/ruin/whitesands/saloon)
+"BS" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/door/airlock/wood/glass,
+/turf/open/floor/wood,
+/area/ruin/whitesands/saloon)
 "Ce" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -942,9 +941,7 @@
 /area/ruin/whitesands/saloon)
 "Dd" = (
 /obj/structure/table/wood,
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/wood,
 /area/ruin/whitesands/saloon)
 "Dp" = (
@@ -969,17 +966,17 @@
 /turf/open/floor/plating/asteroid/whitesands/lit,
 /area/ruin/whitesands/saloon)
 "Dx" = (
-/obj/structure/mineral_door/wood,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 1
 	},
+/obj/machinery/door/airlock/wood/glass{
+	name = "Saloon Entry"
+	},
 /turf/open/floor/wood,
 /area/ruin/whitesands/saloon)
 "Dz" = (
-/obj/machinery/light/small{
-	dir = 8
-	},
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/wood,
 /area/ruin/whitesands/saloon)
 "DO" = (
@@ -1006,9 +1003,7 @@
 /area/ruin/whitesands/saloon)
 "Es" = (
 /obj/structure/table/wood,
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /obj/structure/sign/poster/contraband/smoke{
 	pixel_y = 32
 	},
@@ -1142,9 +1137,7 @@
 /turf/open/floor/wood,
 /area/ruin/whitesands/saloon)
 "HW" = (
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/wood,
 /area/ruin/whitesands/saloon)
 "HX" = (
@@ -1335,6 +1328,12 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/whitesands/saloon)
+"Nj" = (
+/obj/machinery/door/airlock/wood/glass{
+	name = "Saloon Entry"
+	},
+/turf/open/floor/wood,
+/area/ruin/whitesands/saloon)
 "Nn" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -1418,9 +1417,7 @@
 	},
 /area/ruin/whitesands/saloon)
 "QL" = (
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/wood,
 /area/ruin/whitesands/saloon)
 "QQ" = (
@@ -1444,9 +1441,7 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 4
 	},
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/wood,
 /area/ruin/whitesands/saloon)
 "RB" = (
@@ -1520,7 +1515,7 @@
 	},
 /area/ruin/whitesands/saloon)
 "Ux" = (
-/obj/structure/closet/crate/grave,
+/obj/structure/closet/crate/grave/loot,
 /obj/item/gun/ballistic/derringer,
 /turf/open/floor/plating/asteroid/whitesands/grass/lit,
 /area/ruin/whitesands/saloon)
@@ -1673,9 +1668,11 @@
 /turf/open/floor/wood,
 /area/ruin/whitesands/saloon)
 "YJ" = (
-/obj/structure/mineral_door/wood,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
+	},
+/obj/machinery/door/airlock/wood/glass{
+	dir = 4
 	},
 /turf/open/floor/wood,
 /area/ruin/whitesands/saloon)
@@ -2191,7 +2188,7 @@ Yj
 xs
 Px
 mx
-aO
+Nj
 eV
 LA
 gd
@@ -2255,7 +2252,7 @@ rE
 ga
 se
 MX
-aO
+Nj
 HW
 hX
 sU
@@ -2309,7 +2306,7 @@ mx
 Yo
 Eq
 Eq
-KO
+jJ
 Eq
 Eq
 Dd
@@ -2407,7 +2404,7 @@ sd
 Ce
 Jb
 kD
-Dx
+BS
 jx
 jx
 HX

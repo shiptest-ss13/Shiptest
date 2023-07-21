@@ -45,6 +45,7 @@
 	min_cold_protection_temperature = ARMOR_MIN_TEMP_PROTECT
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	resistance_flags = FIRE_PROOF | ACID_PROOF
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/suit/armor/vest/marine/medium
 	name = "medium tactical armor vest"
@@ -158,6 +159,7 @@
 	desc = "A long, commanding coat worn over a surprisingly sleek set of armor and decorated with gold embroidery. Ideal for protecting its wearer from rain, sun, dust, mutineers, pirates, bears, hordes of angry legions, and so on."
 	icon_state = "carapace_duster"
 	item_state = "duster_captain"
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/suit/armor/riot
 	name = "riot suit"
@@ -333,16 +335,17 @@
 
 /obj/item/clothing/suit/armor/hos/inteq
 	name = "inteq battle coat"
-	desc = "A luxurious brown coat with an crossweave of Kevlar and fur from genuine wolves, as protective as it is stylish."
+	desc = "A luxurious brown coat made from a crossweave of kevlar and ballistic fibre, the collar and wrist trims are made from genuine wolf fur. as protective as it is stylish."
 	icon_state = "armor_inteq_battlecoat"
 	item_state = "inteq_battlecoat"
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/suit/armor/inteq/corpsman
 	name = "inteq corpsman vest"
-	desc = "A shortened brown labcoat with an armor vest under it, for the IRMG's support division medical staff."
+	desc = "A shortened brown labcoat with an armor vest under it, for the IRMG's support division Corpsmen."
 	icon_state = "armor_inteq_labcoat"
 	item_state = "inteq_labcoat"
+	supports_variations = VOX_VARIATION
 	allowed = list(
 		/obj/item/analyzer,
 		/obj/item/stack/medical,
@@ -405,7 +408,7 @@
 	item_state = "solgov_overseer_robe"
 
 /obj/item/clothing/suit/armor/vest/bulletproof/solgov/captain
-	name = "\improper SoLGov Captain coat"
+	name = "\improper SolGov Captain coat"
 	desc = "An armored coat typically used by SolGov captains."
 	icon_state = "solgov_coat"
 	item_state = "solgov_coat"

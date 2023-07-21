@@ -1,8 +1,6 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "aE" = (
-/obj/machinery/light/broken{
-	dir = 8
-	},
+/obj/machinery/light/broken/directional/west,
 /turf/open/floor/wood,
 /area/ruin/powered)
 "bF" = (
@@ -19,9 +17,7 @@
 /area/ruin/powered)
 "dQ" = (
 /mob/living/simple_animal/hostile/rat,
-/obj/machinery/light/small/broken{
-	dir = 1
-	},
+/obj/machinery/light/small/broken/directional/north,
 /turf/open/floor/wood,
 /area/ruin/powered)
 "eE" = (
@@ -82,7 +78,7 @@
 /turf/open/floor/plating/grass/jungle/lit,
 /area/ruin/powered)
 "hD" = (
-/obj/machinery/light/small,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/wood,
 /area/ruin/powered)
 "iH" = (
@@ -129,8 +125,8 @@
 /turf/open/floor/wood,
 /area/ruin/powered)
 "lW" = (
-/obj/structure/mineral_door/wood,
 /obj/structure/barricade/wooden/crude,
+/obj/machinery/door/airlock/wood,
 /turf/open/floor/wood,
 /area/ruin/powered)
 "oD" = (
@@ -266,7 +262,7 @@
 /turf/open/floor/wood,
 /area/ruin/powered)
 "Bo" = (
-/obj/machinery/light/broken,
+/obj/machinery/light/broken/directional/south,
 /turf/open/floor/wood,
 /area/ruin/powered)
 "Bz" = (
@@ -288,6 +284,13 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/powered)
+"CR" = (
+/obj/structure/barricade/wooden/crude,
+/obj/machinery/door/airlock/wood{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/ruin/powered)
 "Dy" = (
 /obj/structure/flora/junglebush/b,
 /turf/open/floor/plating/grass/jungle/lit,
@@ -301,15 +304,13 @@
 	},
 /area/ruin/powered)
 "FT" = (
-/obj/machinery/light/small,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/wood{
 	icon_state = "wood-broken2"
 	},
 /area/ruin/powered)
 "Gz" = (
-/obj/structure/mineral_door/wood{
-	name = "Teachers Office"
-	},
+/obj/machinery/door/airlock/wood,
 /turf/open/floor/wood,
 /area/ruin/powered)
 "GE" = (
@@ -371,7 +372,7 @@
 /mob/living/simple_animal/hostile/rat{
 	dir = 1
 	},
-/obj/machinery/light/small,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/wood,
 /area/ruin/powered)
 "SI" = (
@@ -401,8 +402,10 @@
 	},
 /area/ruin/powered)
 "Ux" = (
-/obj/structure/mineral_door/wood,
 /obj/structure/barricade/wooden,
+/obj/machinery/door/airlock/wood{
+	dir = 8
+	},
 /turf/open/floor/wood,
 /area/ruin/powered)
 "Vq" = (
@@ -439,9 +442,7 @@
 	},
 /area/ruin/powered)
 "XH" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/wood,
 /area/ruin/powered)
 "Ym" = (
@@ -612,7 +613,7 @@ yu
 yu
 yu
 Ux
-lW
+CR
 yu
 lN
 fu

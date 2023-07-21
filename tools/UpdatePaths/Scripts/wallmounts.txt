@@ -1,0 +1,112 @@
+/obj/item/radio/intercom {dir=@UNSET} : /obj/item/radio/intercom/directional/north {@OLD}
+/obj/item/radio/intercom {dir=1} : /obj/item/radio/intercom/directional/south {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/item/radio/intercom {dir=2} : /obj/item/radio/intercom/directional/north {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/item/radio/intercom {dir=4} : /obj/item/radio/intercom/directional/west {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/item/radio/intercom {dir=8} : /obj/item/radio/intercom/directional/east {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+
+/obj/item/radio/intercom/wideband {dir=@UNSET} : /obj/item/radio/intercom/wideband/directional/north {@OLD;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/item/radio/intercom/wideband {dir=1} : /obj/item/radio/intercom/wideband/directional/south {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/item/radio/intercom/wideband {dir=2} : /obj/item/radio/intercom/wideband/directional/north {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/item/radio/intercom/wideband {dir=4} : /obj/item/radio/intercom/wideband/directional/west {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/item/radio/intercom/wideband {dir=8} : /obj/item/radio/intercom/wideband/directional/east {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+
+/obj/machinery/firealarm {dir=@UNSET} : /obj/machinery/firealarm/directional/north {@OLD;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/firealarm {dir=1} : /obj/machinery/firealarm/directional/south {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/firealarm {dir=2} : /obj/machinery/firealarm/directional/north {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/firealarm {dir=4} : /obj/machinery/firealarm/directional/west {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/firealarm {dir=8} : /obj/machinery/firealarm/directional/east {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+
+/obj/machinery/airalarm {dir=@UNSET} : /obj/machinery/airalarm/directional/north {@OLD;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/airalarm {dir=1} : /obj/machinery/airalarm/directional/south {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/airalarm {dir=2} : /obj/machinery/airalarm/directional/north {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/airalarm {dir=4} : /obj/machinery/airalarm/directional/west {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/airalarm {dir=8} : /obj/machinery/airalarm/directional/east {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+
+/obj/machinery/airalarm/all_access {dir=@UNSET} : /obj/machinery/airalarm/directional/north {@OLD;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/airalarm/all_access {dir=1} : /obj/machinery/airalarm/directional/south {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/airalarm/all_access {dir=2} : /obj/machinery/airalarm/directional/north {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/airalarm/all_access {dir=4} : /obj/machinery/airalarm/directional/west {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/airalarm/all_access {dir=8} : /obj/machinery/airalarm/directional/east {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+
+/obj/structure/extinguisher_cabinet {dir=@UNSET} : /obj/structure/extinguisher_cabinet/directional/north {@OLD;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/structure/extinguisher_cabinet {dir=1} : /obj/structure/extinguisher_cabinet/directional/south {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/structure/extinguisher_cabinet {dir=2} : /obj/structure/extinguisher_cabinet/directional/north {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/structure/extinguisher_cabinet {dir=4} : /obj/structure/extinguisher_cabinet/directional/west {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/structure/extinguisher_cabinet {dir=8} : /obj/structure/extinguisher_cabinet/directional/east {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+
+/obj/structure/light_construct {dir=@UNSET} : /obj/structure/light_construct/directional/south {@OLD;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/structure/light_construct {dir=1} : /obj/structure/light_construct/directional/north {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/structure/light_construct {dir=2} : /obj/structure/light_construct/directional/south {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/structure/light_construct {dir=4} : /obj/structure/light_construct/directional/east {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/structure/light_construct {dir=8} : /obj/structure/light_construct/directional/west {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+
+/obj/structure/light_construct/small {dir=@UNSET} : /obj/structure/light_construct/small/directional/south {@OLD;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/structure/light_construct/small {dir=1} : /obj/structure/light_construct/small/directional/north {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/structure/light_construct/small {dir=2} : /obj/structure/light_construct/small/directional/south {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/structure/light_construct/small {dir=4} : /obj/structure/light_construct/small/directional/east {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/structure/light_construct/small {dir=8} : /obj/structure/light_construct/small/directional/west {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+
+/obj/machinery/light {dir=@UNSET} : /obj/machinery/light/directional/south {@OLD;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/light {dir=1} : /obj/machinery/light/directional/north {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/light {dir=2} : /obj/machinery/light/directional/south {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/light {dir=4} : /obj/machinery/light/directional/east {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/light {dir=8} : /obj/machinery/light/directional/west {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+
+/obj/machinery/light/broken {dir=@UNSET} : /obj/machinery/light/broken/directional/south {@OLD;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/light/broken {dir=1} : /obj/machinery/light/broken/directional/north {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/light/broken {dir=2} : /obj/machinery/light/broken/directional/south {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/light/broken {dir=4} : /obj/machinery/light/broken/directional/east {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/light/broken {dir=8} : /obj/machinery/light/broken/directional/west {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+
+/obj/machinery/light/dim {dir=@UNSET} : /obj/machinery/light/dim/directional/south {@OLD;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/light/dim {dir=1} : /obj/machinery/light/dim/directional/north {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/light/dim {dir=2} : /obj/machinery/light/dim/directional/south {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/light/dim {dir=4} : /obj/machinery/light/dim/directional/east {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/light/dim {dir=8} : /obj/machinery/light/dim/directional/west {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+
+/obj/machinery/light/small {dir=@UNSET} : /obj/machinery/light/small/directional/south {@OLD;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/light/small {dir=1} : /obj/machinery/light/small/directional/north {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/light/small {dir=2} : /obj/machinery/light/small/directional/south {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/light/small {dir=4} : /obj/machinery/light/small/directional/east {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/light/small {dir=8} : /obj/machinery/light/small/directional/west {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+
+/obj/machinery/light/small/broken {dir=@UNSET} : /obj/machinery/light/small/broken/directional/south {@OLD;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/light/small/broken {dir=1} : /obj/machinery/light/small/broken/directional/north {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/light/small/broken {dir=2} : /obj/machinery/light/small/broken/directional/south {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/light/small/broken {dir=4} : /obj/machinery/light/small/broken/directional/east {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/light/small/broken {dir=8} : /obj/machinery/light/small/broken/directional/west {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+
+/obj/machinery/light/built {dir=@UNSET} : /obj/machinery/light/built/directional/south {@OLD;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/light/built {dir=1} : /obj/machinery/light/built/directional/north {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/light/built {dir=2} : /obj/machinery/light/built/directional/south {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/light/built {dir=4} : /obj/machinery/light/built/directional/east {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/light/built {dir=8} : /obj/machinery/light/built/directional/west {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+
+/obj/machinery/light/small/built {dir=@UNSET} : /obj/machinery/light/small/built/directional/south {@OLD;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/light/small/built {dir=1} : /obj/machinery/light/small/built/directional/north {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/light/small/built {dir=2} : /obj/machinery/light/small/built/directional/south {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/light/small/built {dir=4} : /obj/machinery/light/small/built/directional/east {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/light/small/built {dir=8} : /obj/machinery/light/small/built/directional/west {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+
+/obj/machinery/newscaster {dir=@UNSET} : /obj/machinery/newscaster/directional/north {@OLD}
+/obj/machinery/newscaster {dir=1} : /obj/machinery/newscaster/directional/south {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/newscaster {dir=2} : /obj/machinery/newscaster/directional/north {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/newscaster {dir=4} : /obj/machinery/newscaster/directional/west {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/newscaster {dir=8} : /obj/machinery/newscaster/directional/east {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+
+/obj/machinery/computer/cryopod {dir=@UNSET} : /obj/machinery/computer/cryopod/directional/north {@OLD}
+/obj/machinery/computer/cryopod {dir=1} : /obj/machinery/computer/cryopod/directional/south {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/computer/cryopod {dir=2} : /obj/machinery/computer/cryopod/directional/north {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/computer/cryopod {dir=4} : /obj/machinery/computer/cryopod/directional/west {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/computer/cryopod {dir=8} : /obj/machinery/computer/cryopod/directional/east {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+
+/obj/machinery/computer/helm/viewscreen {dir=@UNSET} : /obj/machinery/computer/helm/viewscreen/directional/north {@OLD}
+/obj/machinery/computer/helm/viewscreen {dir=1} : /obj/machinery/computer/helm/viewscreen/directional/south {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/computer/helm/viewscreen {dir=2} : /obj/machinery/computer/helm/viewscreen/directional/north {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/computer/helm/viewscreen {dir=4} : /obj/machinery/computer/helm/viewscreen/directional/west {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/computer/helm/viewscreen {dir=8} : /obj/machinery/computer/helm/viewscreen/directional/east {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+
+/obj/machinery/power/apc/auto_name/north : /obj/machinery/power/apc/auto_name/directional/north {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/power/apc/auto_name/south : /obj/machinery/power/apc/auto_name/directional/south {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/power/apc/auto_name/west : /obj/machinery/power/apc/auto_name/directional/west {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/power/apc/auto_name/east : /obj/machinery/power/apc/auto_name/directional/east {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}

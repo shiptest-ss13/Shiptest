@@ -3,8 +3,18 @@
 	"map_name": "Jupiter-Class Stormrider",
 	"map_short_name": "Jupiter-Class",
 	"prefix": "ISV",
-	"namelists": ["WEAPONS"],
+	"namelists": [
+		"INSTALLATION",
+		"PIRATES"
+	],
 	"map_path": "_maps/shuttles/shiptest/pirate_noderider.dmm",
+	"description": "The Jupiter-class Stormrider is a specialist design originating from the Silicon Elevation Council, typically used for sustained missions in the Frontier. While habitable to organic life (typically as a matter of convenience), the ship is designed with silicons in mind, and features an AI core built into its hull. Many captains have been quoted as being “frightened” (although “piss-pants scared” was the exact statement) by one suddenly appearing out of a storm, IFF loudly declaring who they were, or in worse conditions, not functioning at all. Some examples have been known to find their way into pirate hands, who leverage the ship to spring ambushes on unsuspecting traders.",
+	"tags": [
+		"Robotics",
+		"Specialist",
+		"Riot",
+		"Combat"
+	],
 	"job_slots": {
 		"Command Node": {
 			"outfit": "/datum/outfit/job/captain/aipirate",

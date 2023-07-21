@@ -20,6 +20,7 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 	density = FALSE
 	req_one_access = list(ACCESS_HEADS, ACCESS_ARMORY) //Heads of staff or the warden can go here to claim recover items from their department that people went were cryodormed with.
 
+	unique_icon = TRUE
 	/// Used for logging people entering cryosleep and important items they are carrying. Shows crew members.
 	var/list/frozen_crew = list()
 	/// Used for logging people entering cryosleep and important items they are carrying. Shows items.
@@ -27,6 +28,15 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 
 	/// Whether or not to store items from people going into cryosleep.
 	var/allow_items = TRUE
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 17)
+
+/obj/machinery/computer/cryopod/retro
+	desc = "An interface between crew and the cryogenic storage oversight systems. Currently strugggling to catch up with the modern cryogenic storage system."
+	icon_state = "wallconsole_old"
+	icon_screen = "wallconsole_old_cryo"
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 17)
 
 /obj/machinery/computer/cryopod/Initialize()
 	. = ..()
@@ -418,12 +428,46 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 	linked_ship = port
 	linked_ship.spawn_points += src
 
+/obj/machinery/cryopod/apply_effects_to_mob(mob/living/carbon/sleepyhead)
+	//it always sucks a little to get up
+	sleepyhead.set_nutrition(200)
+	sleepyhead.SetSleeping(60) //if you read this comment and feel like shitting together something to adjust elzu and IPC charge on wakeup, be my guest.
+	//but it can be worse.
+	if(prob(90))
+		sleepyhead.apply_effect(rand(3,10), EFFECT_DROWSY)
+	if(prob(75))
+		sleepyhead.blur_eyes(rand(3, 6))
+	//so much worse
+	if(prob(66))
+		sleepyhead.adjust_disgust(rand(25,35))
+	if(prob(33))
+		sleepyhead.adjust_disgust(rand(20,30))
+	if(prob(16))
+		sleepyhead.adjust_disgust(rand(10, 17))
+	//maybe you should've bought high passage.
+	if(prob(30))
+		sleepyhead.apply_damage_type(15, BURN)
+	to_chat(sleepyhead, "<span class='userdanger'>The symptoms of cryosleep set in as you awaken...")
+
+
+
 /obj/machinery/cryopod/poor
 	name = "low quality cryogenic freezer"
 	desc = "Keeps crew frozen in cryostasis until they are needed in order to cut down on supply usage. This one seems cheaply made."
 
 /obj/machinery/cryopod/poor/apply_effects_to_mob(mob/living/carbon/sleepyhead)
-	sleepyhead.SetSleeping(50)
-	sleepyhead.set_disgust(60)
-	sleepyhead.set_nutrition(160)
-	to_chat(sleepyhead, "<span class='bolddanger'>A very bad headache wakes you up from cryosleep...</span>")
+	sleepyhead.set_nutrition(200)
+	sleepyhead.SetSleeping(80)
+	if(prob(90))
+		sleepyhead.apply_effect(rand(5,15), EFFECT_DROWSY)
+	if(prob(75))
+		sleepyhead.blur_eyes(rand(6, 10))
+	if(prob(66))
+		sleepyhead.adjust_disgust(rand(35, 45)) //rand
+	if(prob(40))
+		sleepyhead.adjust_disgust(rand(15, 25))
+	if(prob(20))
+		sleepyhead.adjust_disgust(rand(5,15))
+	if(prob(30))
+		sleepyhead.apply_damage_type(30, BURN)
+	to_chat(sleepyhead, "<span class='userdanger'>The symptoms of a horrid cryosleep set in as you awaken...")

@@ -2,12 +2,34 @@
 	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
 	"map_name": "Box-class Hospital Ship",
 	"map_short_name": "Box-class",
+	"description": "An early exemplar of several modern shipbuilding techniques that have since become standard, the Box is effectively a tiny spaceborne hospital, loaded with medical equipment that can often be difficult to source in Frontier space. Unusually, Boxes come equipped with medical cryo tubes, which have become a particular rarity on the Frontier due to their delicate nature and steep upkeep costs. Boxes are often found in surprisingly good repair for their age, and they have received several upgrades over the decades that have kept them well abreast of advances in medical science.",
+	"tags": [
+		"Medical"
+	],
 	"map_path": "_maps/shuttles/shiptest/independent_box.dmm",
+	"namelists": [
+		"GENERAL",
+		"SPACE",
+		"NATURAL"
+	],
+	"prefix": "ISV",
 	"job_slots": {
-		"Chief Medical Officer": 1,
-		"Medical Doctor": 3,
-		"Paramedic": 2,
-		"Assistant": 3
+		"Chief Medical Officer": {
+			"outfit": "/datum/outfit/job/cmo",
+			"slots": 1
+		},
+		"Medical Doctor": {
+			"outfit": "/datum/outfit/job/doctor",
+			"slots": 3
+		},
+		"Paramedic": {
+			"outfit": "/datum/outfit/job/paramedic",
+			"slots": 2
+		},
+		"Assistant": {
+			"outfit": "/datum/outfit/job/assistant",
+			"slots": 3
+		}
 	},
 	"enabled": true
 }

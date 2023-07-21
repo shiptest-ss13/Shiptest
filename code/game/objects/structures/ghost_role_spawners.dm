@@ -531,7 +531,6 @@
 /datum/outfit/syndicate_empty/sbc/med
 	name = "Syndicate Battlecruiser Ship Medical Doctor"
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile/evil
-	uniform = /obj/item/clothing/under/rank/medical/doctor/red
 	glasses = /obj/item/clothing/glasses/hud/health
 	belt = /obj/item/pda/medical
 	back = /obj/item/storage/backpack/duffelbag/syndie/med
@@ -913,16 +912,6 @@
 /datum/outfit/syndicate/lost
 	name = "Syndicate Operative - Lost"
 	tc = 10
-
-/obj/effect/mob_spawn/human/lost/solgov
-	icon = 'icons/obj/machines/sleeper.dmi'
-	icon_state = "sleeper"
-	name = "old cryogenics pod"
-	desc = "A sleeper designed to put its occupant into a deep coma."
-	short_desc = "You are a SolGov Commander."
-	flavour_text = "You are being sent in to stop a treat. Your objective is- wait where the hell are you? You still have your gear but... you have no idea where you are?"
-	assignedrole = "Lost SolGov Commander"
-	outfit = /datum/outfit/solgov/commander
 
 //Slime Lab
 

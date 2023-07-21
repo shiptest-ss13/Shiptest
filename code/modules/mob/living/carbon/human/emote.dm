@@ -67,12 +67,10 @@
 			return pick('sound/voice/human/malescream_1.ogg', 'sound/voice/human/malescream_2.ogg', 'sound/voice/human/malescream_3.ogg', 'sound/voice/human/malescream_4.ogg', 'sound/voice/human/malescream_5.ogg', 'sound/voice/human/malescream_6.ogg')
 	else if(ismoth(H))
 		return 'sound/voice/moth/scream_moth.ogg'
-	else if(issquidperson(H)) //WS squids go blubbblp
-		return 'sound/voice/squid/squidscream.ogg'
 	else if(islizard(H))
 		return pick('sound/voice/lizard/lizard_scream_1.ogg', 'sound/voice/lizard/lizard_scream_2.ogg', 'sound/voice/lizard/lizard_scream_3.ogg', 'sound/voice/lizard/lizard_scream_4.ogg')
 
-/datum/emote/living/carbon/human/hiss
+/datum/emote/living/carbon/human/hiss //lizard
 	key = "hiss"
 	key_third_person = "hisses"
 	message = "hisses!"
@@ -82,11 +80,36 @@
 /datum/emote/living/carbon/human/hiss/get_sound(mob/living/user)
 	if(!ishuman(user))
 		return
-	var/mob/living/carbon/human/H = user
-	if (islizard(H))
+	if(islizard(user))
 		return 'sound/voice/lizard/hiss.ogg'
 
-/datum/emote/living/carbon/human/weh
+/datum/emote/living/carbon/human/squeal //lizard
+	key = "squeal"
+	key_third_person = "squeals"
+	message = "squeals!"
+	emote_type = EMOTE_AUDIBLE
+	vary = TRUE
+
+/datum/emote/living/carbon/human/squeal/get_sound(mob/living/user)
+	if(!ishuman(user))
+		return
+	if(islizard(user))
+		return 'sound/voice/lizard/squeal.ogg' //This is from Bay
+
+/datum/emote/living/carbon/human/tailthump //lizard
+	key = "thump"
+	key_third_person = "thumps their tail"
+	message = "thumps their tail!"
+	emote_type = EMOTE_AUDIBLE
+	vary = TRUE
+
+/datum/emote/living/carbon/human/tailthump/get_sound(mob/living/user)
+	if(!ishuman(user))
+		return
+	if(islizard(user))
+		return 'sound/voice/lizard/tailthump.ogg' //https://freesound.org/people/TylerAM/sounds/389665/
+
+/datum/emote/living/carbon/human/weh //lizard
 	key = "weh"
 	key_third_person = "lets out a weh"
 	message = "lets out a weh!"
@@ -96,8 +119,7 @@
 /datum/emote/living/carbon/human/weh/get_sound(mob/living/user)
 	if(!ishuman(user))
 		return
-	var/mob/living/carbon/human/H = user
-	if (islizard(H))
+	if(islizard(user))
 		return 'sound/voice/lizard/weh.ogg'
 
 /datum/emote/living/carbon/human/pale
@@ -200,8 +222,6 @@
 	if(isturf(loc))
 		var/turf/T = loc
 		T.Entered(src)
-
-//Ayy lmao
 
 // Robotic Tongue emotes. Beep!
 

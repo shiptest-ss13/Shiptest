@@ -407,8 +407,6 @@ Difficulty: Medium
 			new /obj/effect/mob_spawn/human/lost/assistant(get_turf(loc))
 		if(6)
 			new /obj/effect/mob_spawn/human/lost/syndicate(get_turf(loc))
-		if(7)
-			new /obj/effect/mob_spawn/human/lost/solgov(get_turf(loc))
 
 	qdel(src) //no spawning people twice
 

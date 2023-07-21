@@ -204,10 +204,9 @@ There are several things that need to be remembered:
 
 		var/handled_by_bodytype = TRUE
 		var/icon_file
-		/*
+
 		if((dna.species.bodytype & BODYTYPE_VOX) && (I.supports_variations & VOX_VARIATION))
 			icon_file = VOX_GLOVES_PATH
-		*/
 
 		if(!(icon_exists(icon_file, RESOLVE_ICON_STATE(I))))
 			handled_by_bodytype = FALSE
@@ -236,12 +235,11 @@ There are several things that need to be remembered:
 		update_hud_glasses(I)
 		if(!(head?.flags_inv & HIDEEYES) && !(wear_mask?.flags_inv & HIDEEYES))
 			var/mutable_appearance/glasses_overlay
-			var/handled_by_bodytype
+			var/handled_by_bodytype = TRUE
 			var/icon_file
-			/*
+
 			if((dna.species.bodytype & BODYTYPE_VOX) && (I.supports_variations & VOX_VARIATION))
 				icon_file = VOX_GLASSES_PATH
-			*/
 
 			if(!(icon_exists(icon_file, RESOLVE_ICON_STATE(I))))
 				handled_by_bodytype = FALSE
@@ -272,10 +270,9 @@ There are several things that need to be remembered:
 
 		var/handled_by_bodytype = TRUE
 		var/icon_file
-		/*
+
 		if((dna.species.bodytype & BODYTYPE_VOX) && (I.supports_variations & VOX_VARIATION))
 			icon_file = VOX_EARS_PATH
-		*/
 
 		if(!(icon_exists(icon_file, RESOLVE_ICON_STATE(I))))
 			handled_by_bodytype = FALSE
@@ -308,8 +305,11 @@ There are several things that need to be remembered:
 
 		if((dna.species.bodytype & BODYTYPE_DIGITIGRADE) && (I.supports_variations & DIGITIGRADE_VARIATION))
 			var/obj/item/bodypart/leg = src.get_bodypart(BODY_ZONE_L_LEG)
-			if(leg.limb_id == "digitigrade")//Snowflakey and bad. But it makes it look consistent.
+			if(leg.bodytype & BODYTYPE_DIGITIGRADE && !leg.plantigrade_forced)
 				icon_file = DIGITIGRADE_SHOES_PATH
+
+		if((I.supports_variations & VOX_VARIATION) && (dna.species.bodytype & BODYTYPE_VOX))
+			icon_file = VOX_SHOES_PATH
 
 		if(!(icon_exists(icon_file, RESOLVE_ICON_STATE(I))))
 			handled_by_bodytype = FALSE
@@ -389,6 +389,9 @@ There are several things that need to be remembered:
 		update_hud_belt(I)
 		var/handled_by_bodytype
 		var/icon_file
+
+		if((I.supports_variations & VOX_VARIATION) && (dna.species.bodytype & BODYTYPE_VOX))
+			icon_file = VOX_BELT_PATH
 
 		if(!(icon_exists(icon_file, RESOLVE_ICON_STATE(I))))
 			handled_by_bodytype = FALSE
@@ -556,12 +559,11 @@ There are several things that need to be remembered:
 		apply_overlay(LEGCUFF_LAYER)
 		throw_alert("legcuffed", /atom/movable/screen/alert/restrained/legcuffed, new_master = src.legcuffed)
 
-/proc/wear_female_version(t_color, icon, layer, type)
-	var/index = t_color
-	var/icon/female_clothing_icon = GLOB.female_clothing_icons[index]
-	if(!female_clothing_icon) 	//Create standing/laying icons if they don't exist
-		generate_female_clothing(index,t_color,icon,type)
-	return mutable_appearance(GLOB.female_clothing_icons[t_color], layer = -layer)
+/* Here lies female masking overlay,
+ * You broke almost constantly,
+ * You broke any time you were touched,
+ * You will not be missed, goodbye.
+ */
 
 /obj/item/proc/wear_species_version(file2use, state2use, layer, datum/species/mob_species)
 	if(!slot_flags) // If it's not wearable, don't try
@@ -685,13 +687,10 @@ default_icon_file: The icon file to draw states from if no other icon file is sp
 isinhands: If true then alternate_worn_icon is skipped so that default_icon_file is used,
 in this situation default_icon_file is expected to match either the lefthand_ or righthand_ file var
 
-femalueuniform: A value matching a uniform item's fitted var, if this is anything but NO_FEMALE_UNIFORM, we
-generate/load female uniform sprites matching all previously decided variables
-
 ^this female part sucks and will be fully ripped out ideally
 
 */
-/obj/item/proc/build_worn_icon(default_layer = 0, default_icon_file = null, isinhands = FALSE, femaleuniform = NO_FEMALE_UNIFORM, override_state = null, override_file = null, datum/species/mob_species = null, direction = null)
+/obj/item/proc/build_worn_icon(default_layer = 0, default_icon_file = null, isinhands = FALSE, override_state = null, override_file = null, datum/species/mob_species = null, direction = null)
 
 	// WS Edit Start - Worn Icon State
 	var/t_state
@@ -709,8 +708,6 @@ generate/load female uniform sprites matching all previously decided variables
 	var/mutable_appearance/standing
 	if(mob_species && (mob_species.species_clothing_path || ("[layer2use]" in mob_species.offset_clothing)))
 		standing = wear_species_version(file2use, t_state, layer2use, mob_species)
-	else if(femaleuniform)
-		standing = wear_female_version(t_state, file2use, layer2use, femaleuniform) //should layer2use be in sync with the adjusted value below? needs testing - shiz
 	if(!standing)
 		standing = mutable_appearance(file2use, t_state, -layer2use)
 

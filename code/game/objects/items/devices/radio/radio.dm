@@ -7,6 +7,7 @@
 	pickup_sound =  'sound/items/handling/device_pickup.ogg'
 	drop_sound = 'sound/items/handling/device_drop.ogg'
 	dog_fashion = /datum/dog_fashion/back
+	supports_variations = VOX_VARIATION
 
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT

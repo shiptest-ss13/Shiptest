@@ -254,7 +254,7 @@
 		vowbroken = TRUE
 		mood_message = pick(vowbroken_message)
 
-	update_desc()
+	update_plush_desc()
 
 /obj/item/toy/plush/proc/scorned_by(obj/item/toy/plush/Outmoded)
 	scorned_by.Add(Outmoded)
@@ -268,7 +268,7 @@
 	lover.cheer_up()
 
 	mood_message = pick(love_message)
-	update_desc()
+	update_plush_desc()
 
 	if(partner)	//who?
 		partner = null	//more like who cares
@@ -285,7 +285,7 @@
 	partner.heal_memories()
 
 	mood_message = pick(partner_message)
-	update_desc()
+	update_plush_desc()
 
 /obj/item/toy/plush/proc/plop(obj/item/toy/plush/Daddy)
 	if(partner != Daddy)
@@ -310,12 +310,12 @@
 	young = TRUE
 	name = "[Mama] Jr"	//Icelandic naming convention pending
 	normal_desc = "[src] is a little baby of [maternal_parent] and [paternal_parent]!"	//original desc won't be used so the child can have moods
-	update_desc()
+	update_plush_desc()
 
 	Mama.mood_message = pick(Mama.parent_message)
-	Mama.update_desc()
+	Mama.update_plush_desc()
 	Dada.mood_message = pick(Dada.parent_message)
-	Dada.update_desc()
+	Dada.update_plush_desc()
 
 /obj/item/toy/plush/proc/bad_news(obj/item/toy/plush/Deceased)	//cotton to cotton, sawdust to sawdust
 	var/is_that_letter_for_me = FALSE
@@ -354,7 +354,7 @@
 	if(is_that_letter_for_me)
 		heartbroken = TRUE
 		mood_message = pick(heartbroken_message)
-		update_desc()
+		update_plush_desc()
 
 /obj/item/toy/plush/proc/cheer_up()	//it'll be all right
 	if(!heartbroken)
@@ -366,7 +366,7 @@
 
 	if(mood_message in heartbroken_message)
 		mood_message = null
-	update_desc()
+	update_plush_desc()
 
 /obj/item/toy/plush/proc/heal_memories()	//time fixes all wounds
 	if(!vowbroken)
@@ -375,7 +375,7 @@
 			mood_message = null
 	cheer_up()
 
-/obj/item/toy/plush/proc/update_desc()
+/obj/item/toy/plush/proc/update_plush_desc()
 	desc = normal_desc
 	if(mood_message)
 		desc += mood_message
@@ -611,6 +611,96 @@
 ///Used to track how many people killed themselves with item/toy/plush/moth
 	var/suicide_count = 0
 
+/obj/item/toy/plush/moth/monarch
+	name = "monarch moth plushie"
+	desc = "An adorable mothperson plushy. It's an important bug!"
+	icon_state = "moffplush_monarch"
+
+/obj/item/toy/plush/moth/luna
+	name = "luna moth plushie"
+	desc = "An adorable mothperson plushy. It's a lunar bug!"
+	icon_state = "moffplush_luna"
+
+/obj/item/toy/plush/moth/atlas
+	name = "atlas moth plushie"
+	desc = "An adorable mothperson plushy. It's a wide bug!"
+	icon_state = "moffplush_atlas"
+
+/obj/item/toy/plush/moth/redish
+	name = "redish moth plushie"
+	desc = "An adorable mothperson plushy. It's a red bug!"
+	icon_state = "moffplush_redish"
+
+/obj/item/toy/plush/moth/royal
+	name = "royal moth plushie"
+	desc = "An adorable mothperson plushy. It's a royal bug!"
+	icon_state = "moffplush_royal"
+
+/obj/item/toy/plush/moth/gothic
+	name = "gothic moth plushie"
+	desc = "An adorable mothperson plushy. It's a dark bug!"
+	icon_state = "moffplush_gothic"
+
+/obj/item/toy/plush/moth/lovers
+	name = "lovers moth plushie"
+	desc = "An adorable mothperson plushy. It's a loveley bug!"
+	icon_state = "moffplush_lovers"
+
+/obj/item/toy/plush/moth/whitefly
+	name = "whitefly moth plushie"
+	desc = "An adorable mothperson plushy. It's a shy bug!"
+	icon_state = "moffplush_whitefly"
+
+/obj/item/toy/plush/moth/punished
+	name = "punished moth plushie"
+	desc = "An adorable mothperson plushy. It's a sad bug... that's quite sad actualy."
+	icon_state = "moffplush_punished"
+
+/obj/item/toy/plush/moth/firewatch
+	name = "firewatch moth plushie"
+	desc = "An adorable mothperson plushy. It's a firey bug!"
+	icon_state = "moffplush_firewatch"
+
+/obj/item/toy/plush/moth/deadhead
+	name = "deadhead moth plushie"
+	desc = "An adorable mothperson plushy. It's a silent bug!"
+	icon_state = "moffplush_deadhead"
+
+/obj/item/toy/plush/moth/poison
+	name = "poison moth plushie"
+	desc = "An adorable mothperson plushy. It's a toxic bug!"
+	icon_state = "moffplush_poison"
+
+/obj/item/toy/plush/moth/ragged
+	name = "ragged moth plushie"
+	desc = "An adorable mothperson plushy. It's a robust bug!"
+	icon_state = "moffplush_ragged"
+
+/obj/item/toy/plush/moth/snow
+	name = "snow moth plushie"
+	desc = "An adorable mothperson plushy. It's a cool bug!"
+	icon_state = "moffplush_snow"
+
+/obj/item/toy/plush/moth/clockwork
+	name = "clockwork moth plushie"
+	desc = "An adorable mothperson plushy. It's a precise bug!"
+	icon_state = "moffplush_clockwork"
+
+/obj/item/toy/plush/moth/moonfly
+	name = "moonfly moth plushie"
+	desc = "An adorable mothperson plushy. It's a nightly bug!"
+	icon_state = "moffplush_moonfly"
+
+/obj/item/toy/plush/moth/error
+	name = "error moth plushie"
+	desc = "An adorable mothperson plushy. It's a debuggable bug!"
+	icon_state = "moffplush_random"
+
+/obj/item/toy/plush/moth/rainbow
+	name = "rainbow moth plushie"
+	desc = "An adorable mothperson plushy. It's a colorfull bug!"
+	icon_state = "moffplush_rainbow"
+
 /obj/item/toy/plush/moth/suicide_act(mob/living/user)
 	user.visible_message("<span class='suicide'>[user] stares deeply into the eyes of [src] and it begins consuming [user.p_them()]!  It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	suicide_count++
@@ -685,6 +775,19 @@
 	icon_state = "plushie_knight"
 	attack_verb = list("poked")
 	should_squeak = FALSE
+
+/obj/item/toy/plush/flushed
+	name = "flushed plushie"
+	desc = "Hgrgrhrhg cute."
+	icon_state = "flushplush"
+
+/obj/item/toy/plush/blahaj
+	name = "Solarian Marine Society mascot plushie"
+	desc = "The adorable little mascot of the solarian marine society. Popular with vampires."
+	icon_state = "blahaj"
+	item_state = "blahaj"
+	lefthand_file = 'icons/mob/inhands/misc/plushes_lefthand.dmi' //todo: sort the god damn plushie inhands
+	righthand_file = 'icons/mob/inhands/misc/plushes_righthand.dmi'
 
 /obj/item/toy/plush/among
 	name = "amoung pequeño"

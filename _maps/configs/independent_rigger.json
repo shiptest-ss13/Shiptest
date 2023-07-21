@@ -2,8 +2,20 @@
 	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
 	"map_name": "Riggs-class Sloop",
 	"prefix": "SV",
-	"namelists": ["GENERAL", "SPACE", "NATURAL", "NATURAL_AGGRESSIVE"],
+	"namelists": [
+		"GENERAL",
+		"SPACE",
+		"NATURAL",
+		"NATURAL_AGGRESSIVE"
+	],
 	"map_short_name": "Riggs-class",
+	"description": "The Rigger-class is Kasagi-Fischer Partnership’s mainstay in the independent ship market. Spacious, affordable, and versatile, Riggers offer basic capabilities for everything a Frontier spacer might need in a convenient, easy-to-modify platform, and by default come equipped with a basic medbay, a small security office, atmospherics recycling and equipment to support an APLU utility mech. Thanks to this versatility, Riggers have become extremely popular among moderately-wealthy independent captains, and can be found doing everything from mining to shipping to surveying Frontier planets.",
+	"tags": [
+		"Mining",
+		"Medical",
+		"Robotics",
+		"Generalist"
+	],
 	"map_path": "_maps/shuttles/shiptest/independent_rigger.dmm",
 	"roundstart": true,
 	"limit": 2,

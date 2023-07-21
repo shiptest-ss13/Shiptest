@@ -199,8 +199,7 @@
 	anchored = FALSE
 	buildstackamount = 5
 	item_chair = null
-	icon_state = "officechair_dark"
-
+	icon_state = "officechair_gray"
 
 /obj/structure/chair/office/Moved()
 	. = ..()
@@ -210,6 +209,11 @@
 /obj/structure/chair/office/light
 	icon_state = "officechair_white"
 
+/obj/structure/chair/office/dark
+	icon_state = "officechair_dark"
+
+/obj/structure/chair/office/purple
+	icon_state = "officechair_purple"
 //Stool
 
 /obj/structure/chair/stool
@@ -372,7 +376,7 @@
 	icon_state = "chairold"
 	item_chair = null
 
-/obj/structure/chair/bronze
+/obj/structure/chair/comfy/shuttle/bronze
 	name = "brass chair"
 	desc = "A spinny chair made of bronze. It has little cogs for wheels!"
 	anchored = FALSE
@@ -382,23 +386,26 @@
 	item_chair = null
 	var/turns = 0
 
-/obj/structure/chair/bronze/Destroy()
+/obj/structure/chair/comfy/shuttle/bronze/GetArmrest()
+	return mutable_appearance('icons/obj/chairs.dmi', "brass_chair_armrest")
+
+/obj/structure/chair/comfy/shuttle/bronze/Destroy()
 	STOP_PROCESSING(SSfastprocess, src)
 	. = ..()
 
-/obj/structure/chair/bronze/process()
+/obj/structure/chair/comfy/shuttle/bronze/process()
 	setDir(turn(dir,-90))
 	playsound(src, 'sound/effects/servostep.ogg', 50, FALSE)
 	turns++
 	if(turns >= 8)
 		STOP_PROCESSING(SSfastprocess, src)
 
-/obj/structure/chair/bronze/Moved()
+/obj/structure/chair/comfy/shuttle/bronze/Moved()
 	. = ..()
 	if(has_gravity())
 		playsound(src, 'sound/machines/clockcult/integration_cog_install.ogg', 50, TRUE)
 
-/obj/structure/chair/bronze/AltClick(mob/living/user)
+/obj/structure/chair/comfy/shuttle/bronze/AltClick(mob/living/user)
 	turns = 0
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 		return

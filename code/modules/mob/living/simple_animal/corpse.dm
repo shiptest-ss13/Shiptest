@@ -232,7 +232,7 @@
 	uniform = /obj/item/clothing/under/solgov
 	suit = /obj/item/clothing/suit/armor/vest/bulletproof/solgov
 	shoes = /obj/item/clothing/shoes/jackboots
-	gloves = /obj/item/clothing/gloves/color/grey
+	gloves = /obj/item/clothing/gloves/color/black
 	ears = /obj/item/radio/headset
 	suit_store = null
 	head = /obj/item/clothing/head/solgov/sonnensoldner

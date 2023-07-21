@@ -95,10 +95,11 @@
 /obj/machinery/door/airlock/centcom{
 	aiControlDisabled = 1;
 	name = "Assault Pod";
-	req_access_txt = "150"
+	req_access_txt = "150";
+	dir = 4
 	},
 /obj/item/ammo_casing/spent,
-/turf/closed/mineral/random/whitesands,
+/turf/open/space/basic,
 /area/whitesands/surface/outdoors)
 "u" = (
 /obj/item/reagent_containers/food/drinks/waterbottle/large{
@@ -132,9 +133,7 @@
 /turf/open/floor/plating/asteroid/whitesands/lit,
 /area/whitesands/surface/outdoors)
 "D" = (
-/obj/machinery/light/broken{
-	dir = 1
-	},
+/obj/machinery/light/broken/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/mineral/plastitanium/red,
 /area/whitesands/surface/outdoors)
@@ -171,7 +170,7 @@
 /turf/open/floor/plating/asteroid/whitesands/dried/lit,
 /area/whitesands/surface/outdoors)
 "L" = (
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/floor/mineral/plastitanium/red,
 /area/whitesands/surface/outdoors)
 "O" = (

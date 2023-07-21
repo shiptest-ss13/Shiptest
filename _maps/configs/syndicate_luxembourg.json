@@ -1,11 +1,21 @@
 {
 	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
 	"prefix": "SSV",
-	"namelists": ["GENERAL", "MERCANTILE", "SPACE"],
+	"namelists": [
+		"DONK",
+		"MERCANTILE",
+		"SPACE"
+	],
 	"map_name": "Luxembourg-class Delivery Vessel",
+	"description": "A dual-purpose delivery vessel and mobile storefront, Luxembourgs make up a substantial portion of Donk! Co.’s fleet on the Frontier, where the ever-opportunistic corporation has begun to fill the gaps left behind by the collapse of Nanotrasen’s logistics network. Donk! Co. managers have a great degree of autonomy, and so any given Luxembourg will often bear substantial modifications to the sales floor and on-board cafe, the better to entice new customers in an unstable yet lucrative region of space.",
+	"tags": [
+		"Robotics",
+		"Cargo"
+	],
 	"map_short_name": "Luxembourg-class",
 	"map_path": "_maps/shuttles/shiptest/syndicate_luxembourg.dmm",
 	"limit": 1,
+	"starting_funds": 6000,
 	"job_slots": {
 		"Manager": {
 			"outfit": "/datum/outfit/job/quartermaster/donk",

@@ -2,8 +2,6 @@
 	name = "Station Engineer"
 	total_positions = 5
 	spawn_positions = 5
-	exp_requirements = 60
-	exp_type = EXP_TYPE_CREW
 	wiki_page = "Station_Engineer" //WS Edit - Wikilinks/Warning
 
 	outfit = /datum/outfit/job/engineer
@@ -100,7 +98,7 @@
 	shoes = /obj/item/clothing/shoes/laceup
 	head = /obj/item/clothing/head/hardhat
 	neck = /obj/item/clothing/neck/tie/orange
-	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1, /obj/item/storage/belt/utility/full/engi=1)
+	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1)
 
 /datum/outfit/job/engineer/telecomsspecialist
 	name = "Station Engineer (Telecommunications Specialist)"
@@ -127,14 +125,6 @@
 	uniform = /obj/item/clothing/under/syndicate/inteq/artificer
 	head = /obj/item/clothing/head/soft/inteq
 	shoes = /obj/item/clothing/shoes/combat
-
-/datum/outfit/job/engineer/solgov
-	name = "Ship Engineer (SolGov)"
-
-	uniform = /obj/item/clothing/under/solgov
-	accessory = /obj/item/clothing/accessory/armband/engine
-	head = /obj/item/clothing/head/hardhat/orange
-	suit =  /obj/item/clothing/suit/hazardvest
 
 /datum/outfit/job/engineer/pirate
 	name = "Ship's Engineer (Pirate)"
@@ -168,6 +158,7 @@
 	accessory = /obj/item/clothing/accessory/armband/engine
 	glasses = /obj/item/clothing/glasses/sunglasses
 	shoes = /obj/item/clothing/shoes/jackboots
+
 /datum/outfit/job/engineer/gec
 	name = "Station Engineer (GEC)"
 
@@ -251,3 +242,16 @@
 	gloves = /obj/item/clothing/gloves/combat
 
 	implants = list(/obj/item/implant/radio)
+
+/datum/outfit/job/engineer/independent/frontiersmen
+	name = "Carpenter (frontiersmen)"
+
+	belt = /obj/item/storage/belt/utility/full/engi
+	uniform = /obj/item/clothing/under/rank/security/officer/frontier
+	suit = /obj/item/clothing/suit/toggle/industrial
+	shoes = /obj/item/clothing/shoes/workboots
+	glasses = /obj/item/clothing/glasses/welding
+	head = /obj/item/clothing/head/helmet/space/pirate/bandana
+
+	l_pocket = /obj/item/radio
+	r_pocket = /obj/item/analyzer

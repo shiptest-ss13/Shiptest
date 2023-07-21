@@ -32,7 +32,7 @@
 			to_chat(user, "<span class='warning'>You are not capable of wearing underwear.</span>")
 			return
 
-		var/choice = input(user, "Underwear, Undershirt, or Socks?", "Changing") as null|anything in list("Underwear","Underwear Color","Undershirt","Socks")
+		var/choice = input(user, "Underwear, Undershirt, or Socks?", "Changing") as null|anything in list("Underwear", "Underwear Color", "Undershirt", "Undershirt Color", "Socks", "Socks Color")
 
 		if(!Adjacent(user))
 			return
@@ -49,10 +49,18 @@
 				var/new_undershirt = input(user, "Select your undershirt", "Changing") as null|anything in GLOB.undershirt_list
 				if(new_undershirt)
 					H.undershirt = new_undershirt
+			if("Undershirt Color")
+				var/new_undershirt_color = input(H, "Choose your undershirt color", "Undershirt Color","#"+H.undershirt_color) as color|null
+				if(new_undershirt_color)
+					H.undershirt_color = sanitize_hexcolor(new_undershirt_color)
 			if("Socks")
 				var/new_socks = input(user, "Select your socks", "Changing") as null|anything in GLOB.socks_list
 				if(new_socks)
 					H.socks= new_socks
+			if("Socks Color")
+				var/new_socks_color = input(H, "Choose your socks color", "Socks Color","#"+H.socks_color) as color|null
+				if(new_socks_color)
+					H.socks_color = sanitize_hexcolor(new_socks_color)
 
 		add_fingerprint(H)
 		H.update_body()

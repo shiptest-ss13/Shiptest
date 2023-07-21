@@ -1,6 +1,3 @@
-///Name of the file used for ship name random selection
-#define SHIP_NAMES_FILE "ship_names.json"
-
 /**
  * # Simulated overmap ship
  *
@@ -66,17 +63,12 @@
 	///Time that next job slot change can occur
 	COOLDOWN_DECLARE(job_slot_adjustment_cooldown)
 
-
-
-
-
-
-
 /datum/overmap/ship/controlled/Rename(new_name, force = FALSE)
 	var/oldname = name
 	if(!..() || (!COOLDOWN_FINISHED(src, rename_cooldown) && !force))
 		return FALSE
 	message_admins("[key_name_admin(usr)] renamed vessel '[oldname]' to '[new_name]'")
+	log_admin("[key_name(src)] has renamed vessel '[oldname]' to '[new_name]'")
 	shuttle_port?.name = new_name
 	ship_account.account_holder = new_name
 	if(shipkey)
@@ -104,8 +96,8 @@
 				qdel(src) // Can't return INITIALIZE_HINT_QDEL here since this isn't ACTUAL initialisation. Considering changing the name of the proc.
 				return
 			refresh_engines()
+		ship_account = new(name, source_template.starting_funds)
 
-	ship_account = new(name, 2000)
 #ifdef UNIT_TESTS
 	Rename("[source_template]")
 #else
@@ -188,9 +180,6 @@
 		Dock(E)
 
 /datum/overmap/ship/controlled/burn_engines(percentage = 100, deltatime)
-	if(docked_to || docking)
-		CRASH("[src] burned engines while docking or docked!")
-
 	var/thrust_used = 0 //The amount of thrust that the engines will provide with one burn
 	refresh_engines()
 	calculate_avg_fuel()
