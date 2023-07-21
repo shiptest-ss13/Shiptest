@@ -115,3 +115,31 @@
 	underlay_appearance.icon = 'icons/turf/floors.dmi'
 	underlay_appearance.icon_state = "dirt"
 	return TRUE
+
+//gas giant "chasm"
+/turf/open/chasm/gas_giant
+	name = "void"
+	desc = "The gas that makes up the gas giant. You can't see further, but you're fairly sure if you slipped in, you'd be dead."
+	icon = 'icons/turf/floors.dmi'
+	icon_state = "reebemap" //to-do. Don't use Rebee Sprite
+	layer = SPACE_LAYER
+	baseturfs = /turf/open/chasm/gas_giant
+	planetary_atmos = TRUE
+	initial_gas_mix = GAS_GIANT_ATMOS
+	color = COLOR_DARK_MODERATE_ORANGE
+	light_range = 2
+	light_power = 0.6
+	light_color = COLOR_DARK_MODERATE_ORANGE
+	smoothing_flags = NONE
+	smoothing_groups = null
+	canSmoothWith = null
+	tiled_dirt = FALSE
+
+/turf/open/chasm/gas_giant/Initialize(mapload, inherited_virtual_z)
+	. = ..()
+	icon_state = "reebegame"
+
+/turf/open/chasm/gas_giant/plasma
+	light_color = COLOR_PURPLE
+	color = COLOR_PURPLE
+	initial_gas_mix = PLASMA_GIANT_ATMOS

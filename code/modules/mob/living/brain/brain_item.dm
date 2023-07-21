@@ -11,7 +11,7 @@
 	attack_verb = list("attacked", "slapped", "whacked")
 
 	///The brain's organ variables are significantly more different than the other organs, with half the decay rate for balance reasons, and twice the maxHealth
-	decay_factor = STANDARD_ORGAN_DECAY	/ 2		//30 minutes of decaying to result in a fully damaged brain, since a fast decay rate would be unfun gameplay-wise
+	decay_factor = STANDARD_VITAL_ORGAN_DECAY
 
 	maxHealth = BRAIN_DAMAGE_DEATH
 	low_threshold = 45

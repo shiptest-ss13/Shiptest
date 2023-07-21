@@ -1484,6 +1484,7 @@
 		A.previous_assembly = previous_airlock
 		A.update_name()
 		A.update_appearance()
+		A.dir = dir
 
 		if(!disassembled)
 			if(A)

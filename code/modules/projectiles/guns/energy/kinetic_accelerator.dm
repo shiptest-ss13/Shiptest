@@ -15,8 +15,9 @@
 	can_bayonet = TRUE
 	knife_x_offset = 20
 	knife_y_offset = 12
-	internal_cell = TRUE //prevents you from giving it an OP cell - WS Edit
+	internal_cell = TRUE
 	custom_price = 750
+	w_class = WEIGHT_CLASS_BULKY
 	var/overheat_time = 16
 	var/holds_charge = FALSE
 	var/unique_frequency = FALSE // modified by KA modkits
@@ -237,6 +238,22 @@
 
 /obj/projectile/kinetic/mech
 	range = 5
+
+/obj/projectile/kinetic/mech/strike_thing(atom/target) //has no skill check for mechs
+	var/turf/target_turf = get_turf(target)
+	if(!target_turf)
+		target_turf = get_turf(src)
+	if(kinetic_gun)
+		var/list/mods = kinetic_gun.get_modkits()
+		for(var/obj/item/borg/upgrade/modkit/M in mods)
+			M.projectile_strike_predamage(src, target_turf, target, kinetic_gun)
+		for(var/obj/item/borg/upgrade/modkit/M in mods)
+			M.projectile_strike(src, target_turf, target, kinetic_gun)
+	if(ismineralturf(target_turf))
+		var/turf/closed/mineral/M = target_turf
+		M.gets_drilled(firer, TRUE)
+	var/obj/effect/temp_visual/kinetic_blast/K = new /obj/effect/temp_visual/kinetic_blast(target_turf)
+	K.color = color
 
 //Modkits
 /obj/item/borg/upgrade/modkit

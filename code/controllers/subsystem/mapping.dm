@@ -223,6 +223,9 @@ SUBSYSTEM_DEF(mapping)
 		if(isnum(data["officer_time_coeff"]))
 			S.officer_time_coeff = data["officer_time_coeff"]
 
+		if(isnum(data["starting_funds"]))
+			S.starting_funds = data["starting_funds"]
+
 		if(isnum(data["enabled"]) && data["enabled"])
 			S.enabled = TRUE
 			ship_purchase_list[S.name] = S

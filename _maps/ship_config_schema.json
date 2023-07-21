@@ -129,6 +129,14 @@
 			"maximum": 100,
 			"default": 2
 		},
+		"starting_funds":{
+			"title": "Ship Starting Funds",
+			"Type": "integer",
+			"description": "The amount of money a ship's bank account starts with",
+			"minimum": 0,
+			"maximum": 20000,
+			"default": 2000
+		},
 		"spawn_time_coeff": {
 			"title": "Required Spawn Playtime Coefficient",
 			"type": "number",
