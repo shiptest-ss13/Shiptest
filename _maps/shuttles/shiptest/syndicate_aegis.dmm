@@ -221,6 +221,7 @@
 /obj/structure/table/wood,
 /obj/item/paper_bin/carbon,
 /obj/item/clothing/under/rank/medical/psychiatrist,
+/obj/item/clothing/under/rank/medical/psychiatrist/blue,
 /obj/item/stack/sheet/mineral/wood/fifty,
 /obj/item/lighter,
 /obj/item/clothing/suit/toggle/labcoat,
@@ -304,7 +305,7 @@
 /area/ship/crew/dorm)
 "cd" = (
 /obj/structure/catwalk/over,
-/obj/effect/turf_decal/hardline_small/left,
+/obj/effect/turf_decal/isf_small/left,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "cp" = (
@@ -523,6 +524,7 @@
 /obj/item/surgicaldrill/advanced,
 /obj/item/healthanalyzer/advanced,
 /obj/item/clothing/glasses/hud/health/sunglasses,
+/obj/item/clothing/under/rank/medical/chief_medical_officer/surgeon_general,
 /obj/item/clothing/gloves/color/latex/nitrile/evil,
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/neck/stripedredscarf,
@@ -1458,7 +1460,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
-/obj/effect/turf_decal/hardline_small,
+/obj/effect/turf_decal/isf_small,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "mp" = (
@@ -2995,7 +2997,7 @@
 "CX" = (
 /obj/structure/catwalk/over,
 /obj/item/trash/popcorn,
-/obj/effect/turf_decal/hardline_small/right,
+/obj/effect/turf_decal/isf_small/right,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Df" = (
@@ -3137,6 +3139,7 @@
 	name = "syndicate medic's black longcoat"
 	},
 /obj/item/clothing/under/rank/medical/doctor/red,
+/obj/item/clothing/under/suit/senior_doctor,
 /obj/item/clothing/suit/longcoat,
 /obj/item/clothing/neck/stripedbluescarf,
 /obj/item/clothing/neck/stripedredscarf,
@@ -3715,6 +3718,7 @@
 	name = "syndicate medic's black longcoat"
 	},
 /obj/item/clothing/under/rank/medical/doctor/red,
+/obj/item/clothing/under/suit/senior_doctor,
 /obj/item/clothing/suit/longcoat,
 /obj/item/clothing/neck/stripedbluescarf,
 /obj/item/clothing/neck/stripedredscarf,
@@ -4611,8 +4615,8 @@
 /obj/item/storage/bag/chemistry,
 /obj/item/clothing/suit/longcoat/chemist,
 /obj/item/clothing/suit/toggle/labcoat/chemist,
-/obj/item/clothing/under/rank/medical/chemist,
-/obj/item/clothing/under/rank/medical/chemist/skirt,
+/obj/item/clothing/under/rank/medical/chemist/pharmacist/skirt,
+/obj/item/clothing/under/rank/medical/chemist/pharmacist,
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/gloves/color/latex,
