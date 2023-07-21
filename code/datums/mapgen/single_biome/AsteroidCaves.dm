@@ -14,7 +14,8 @@
 	/// Used so that the edges of the asteroid are space.
 	var/radius
 
-/datum/map_generator/single_biome/asteroid/generate_turfs(list/turf/turfs)
+/datum/map_generator/single_biome/asteroid/New(list/_turfs, ...)
+	. = ..()
 	var/maxx
 	var/maxy
 	var/minx
@@ -33,7 +34,6 @@
 	midx = minx + (maxx - minx) / 2
 	midy = miny + (maxy - miny) / 2
 	radius = min(maxx - minx, maxy - miny) / 2
-	return ..()
 
 /datum/map_generator/single_biome/asteroid/generate_turf(turf/gen_turf, changeturf_flags)
 	var/area/old_area = get_area(gen_turf)

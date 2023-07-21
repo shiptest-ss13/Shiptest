@@ -2,6 +2,8 @@
 #define BIOME_RANDOM_SQUARE_DRIFT 1
 
 /datum/map_generator/planet_generator
+	do_populate = TRUE
+
 	/// Higher values of this variable result in larger biomes.
 	var/perlin_zoom = 65
 
@@ -46,20 +48,21 @@
 	// temporary internal var used during planet generation to store the output of the cave-automaton
 	var/string_gen
 
-	// temporary internal lists, storing created features / mobs to speedup spawning
-	// it takes too long to look at nearby turfs, so we just store them and then
-	// iterate through the list when we want to see if there is anything nearby.
-	// yes, this does mean that creatures / features can spawn adjacent to ones mapped into ruins
-	// this is unfortunate, but mostly irrelevant
-	var/list/created_features
-	var/list/created_mobs
-
-	// Temporary associative list matching generated turfs to biomes. Used to get
+	// Associative list matching generated turfs to biomes. Used to get
 	// a turf's biome for populating it without having to recalculate (which is impossible, due to drift)
-	var/list/turf_biome_cache
+	var/list/turf_biome_cache = list()
+
+	// internal lists, storing created mobs / features to speedup spawning.
+	// it takes too long to look at nearby turfs, so we just store things we spawn and then
+	// iterate through the list when we want to check distance from the nearest mob/feature.
+	// yes, this does mean that mobs / features can spawn adjacent to ones mapped into ruins
+	// this is unfortunate, but mostly irrelevant
+	var/list/created_features = list()
+	var/list/created_mobs = list()
 
 
-/datum/map_generator/planet_generator/New(...)
+/datum/map_generator/planet_generator/New(list/_turfs, ...)
+	. = ..()
 	// initialize the perlin seeds
 	height_seed = rand(0, 50000)
 	humidity_seed = rand(0, 50000)
@@ -72,9 +75,6 @@
 	primary_area = GLOB.areas_by_type[primary_area_type] || new primary_area_type
 	cave_area = GLOB.areas_by_type[cave_area_type] || new cave_area_type
 
-	turf_biome_cache = list()
-	return ..()
-
 /datum/map_generator/planet_generator/generate_turf(turf/gen_turf, changeturf_flags)
 	var/area/A = get_area(gen_turf)
 	if(!(A.area_flags & CAVES_ALLOWED))
@@ -85,14 +85,6 @@
 	// using istype() here suuuuucks, i'm sorry.
 	var/area/used_area = istype(turf_biome, /datum/biome/cave) ? cave_area : primary_area
 	turf_biome.generate_turf(gen_turf, used_area, changeturf_flags, string_gen)
-
-/datum/map_generator/planet_generator/populate_turfs()
-	created_features = list()
-	created_mobs = list()
-	. = ..()
-	// clear the lists, so we don't get harddels
-	created_features = null
-	created_mobs = null
 
 /datum/map_generator/planet_generator/populate_turf(turf/gen_turf)
 	var/area/A = gen_turf.loc
@@ -151,7 +143,7 @@
 			if(0.80 to 1)
 				heat_level = BIOME_HOTTEST
 
-		sel_biome = SSmapping.biomes[biome_table[heat_level][humidity_level]]
+		sel_biome = SSmap_gen.biomes[biome_table[heat_level][humidity_level]]
 	else
 		switch(heat)
 			if(0 to 0.25)
@@ -163,7 +155,7 @@
 			if(0.75 to 1)
 				heat_level = BIOME_HOT_CAVE
 
-		sel_biome = SSmapping.biomes[cave_biome_table[heat_level][humidity_level]]
+		sel_biome = SSmap_gen.biomes[cave_biome_table[heat_level][humidity_level]]
 
 	turf_biome_cache[a_turf] = sel_biome
 	return sel_biome
