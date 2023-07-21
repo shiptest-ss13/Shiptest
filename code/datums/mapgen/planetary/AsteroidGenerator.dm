@@ -93,21 +93,21 @@
 /datum/biome/asteroid/carp
 	mob_spawn_list = list(
 		/mob/living/simple_animal/hostile/carp = 1
-		)
+	)
 
 /datum/biome/cave/asteroid
 	closed_turf_types =  list(
-	/turf/closed/mineral/random = 1
+		/turf/closed/mineral/random = 1
 	)
 	open_turf_types = list(
-	/turf/open/floor/plating/asteroid/airless = 1
+		/turf/open/floor/plating/asteroid/airless = 1
 	)
 
 /datum/biome/cave/asteroid/vanilla
 	flora_spawn_list = list(
-	/obj/structure/flora/ash/space/voidmelon = 1,
-	/obj/structure/flora/rock = 1,
-	/obj/structure/flora/rock/pile = 1
+		/obj/structure/flora/ash/space/voidmelon = 1,
+		/obj/structure/flora/rock = 1,
+		/obj/structure/flora/rock/pile = 1
 	)
 
 	feature_spawn_list = list(
@@ -122,7 +122,7 @@
 		/mob/living/simple_animal/hostile/asteroid/basilisk = 25,
 		/mob/living/simple_animal/hostile/asteroid/hivelord = 25,
 		/mob/living/simple_animal/hostile/asteroid/goldgrub = 10
-		)
+	)
 
 	flora_spawn_chance = 2
 	feature_spawn_chance = 1
@@ -164,7 +164,7 @@
 	mob_spawn_list = list(
 		/mob/living/simple_animal/hostile/carp = 25,
 		/mob/living/simple_animal/hostile/carp/megacarp = 30
-		)
+	)
 
 	flora_spawn_chance = 15
 	feature_spawn_chance = 10
