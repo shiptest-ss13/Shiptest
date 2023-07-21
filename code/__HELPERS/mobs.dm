@@ -23,25 +23,13 @@
 
 /proc/random_underwear(gender)
 	if(!GLOB.underwear_list.len)
-		init_sprite_accessory_subtypes(/datum/sprite_accessory/underwear, GLOB.underwear_list, GLOB.underwear_m, GLOB.underwear_f)
-	switch(gender)
-		if(MALE)
-			return pick(GLOB.underwear_m)
-		if(FEMALE)
-			return pick(GLOB.underwear_f)
-		else
-			return pick(GLOB.underwear_list)
+		init_sprite_accessory_subtypes(/datum/sprite_accessory/underwear, GLOB.underwear_list)
+	return pick(GLOB.underwear_list)
 
-/proc/random_undershirt(gender)
+/proc/random_undershirt()
 	if(!GLOB.undershirt_list.len)
-		init_sprite_accessory_subtypes(/datum/sprite_accessory/undershirt, GLOB.undershirt_list, GLOB.undershirt_m, GLOB.undershirt_f)
-	switch(gender)
-		if(MALE)
-			return pick(GLOB.undershirt_m)
-		if(FEMALE)
-			return pick(GLOB.undershirt_f)
-		else
-			return pick(GLOB.undershirt_list)
+		init_sprite_accessory_subtypes(/datum/sprite_accessory/undershirt, GLOB.undershirt_list)
+	return pick(GLOB.undershirt_list)
 
 /proc/random_socks()
 	if(!GLOB.socks_list.len)
@@ -109,7 +97,6 @@
 	return list(
 		"body_markings" = pick(GLOB.body_markings_list),
 		"body_size" = pick(GLOB.body_sizes),
-		"caps" = pick(GLOB.caps_list),
 		"ears" = "None",
 		"elzu_horns" = pick(GLOB.elzu_horns_list),
 		"ethcolor" = GLOB.color_list_ethereal[pick(GLOB.color_list_ethereal)],

@@ -37,7 +37,6 @@
 	operated_bodypart = null
 	return ..()
 
-
 /datum/surgery/proc/can_start(mob/user, mob/living/patient) //FALSE to not show in list
 	. = TRUE
 	if(replaced_by == /datum/surgery)
@@ -162,7 +161,6 @@
 // var/list/bodyparts (/mob/living/carbon/human) is the LIMBS of a Mob.
 //Surgical procedures are initiated by attempt_initiate_surgery(), which is called by sharp objects, such as scalpels.
 
-
 //TODO
 //specific steps for some surgeries (fluff text)
 //more interesting failure options
@@ -170,7 +168,6 @@
 //more surgeries!
 //add a probability modifier for the state of the surgeon- health, twitching, etc. blindness, god forbid.
 //helper for converting a zone_sel.selecting to body part (for damage)
-
 
 //RESOLVED ISSUES //"Todo" jobs that have been completed
 //combine hands/feet into the arms - Hands/feet were removed - RR
