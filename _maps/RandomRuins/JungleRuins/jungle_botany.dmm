@@ -54,12 +54,6 @@
 /obj/item/stack/ore/salvage/scrapmetal/five,
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/botanicalresearch/caves)
-"bq" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/spacevine,
-/obj/effect/turf_decal/siding/wood,
-/turf/open/floor/plasteel/grimy,
-/area/ruin/jungle/botanicalresearch/crew)
 "br" = (
 /obj/machinery/atmospherics/components/unary/tank/air,
 /obj/effect/decal/cleanable/dirt,
@@ -563,7 +557,7 @@
 	dir = 4
 	},
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/botanicalresearch/caves)
+/area/overmap_encounter/planetoid/jungle)
 "iR" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -608,7 +602,7 @@
 /area/ruin/jungle/botanicalresearch/caves)
 "jo" = (
 /turf/open/floor/plating/dirt/jungle/lit,
-/area/ruin/jungle/botanicalresearch/caves)
+/area/overmap_encounter/planetoid/jungle)
 "jp" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -660,7 +654,7 @@
 "jX" = (
 /obj/item/stack/cable_coil/cut/red,
 /turf/open/floor/plating/dirt/jungle/lit,
-/area/template_noop)
+/area/overmap_encounter/planetoid/jungle)
 "ko" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/reinforced,
@@ -743,7 +737,7 @@
 "lj" = (
 /obj/structure/flora/tree/jungle/small,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/botanicalresearch/caves)
+/area/overmap_encounter/planetoid/jungle)
 "lk" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine/dense,
@@ -760,6 +754,12 @@
 "lK" = (
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/jungle/botanicalresearch/caves)
+"lQ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/spacevine,
+/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/plasteel/grimy,
+/area/ruin/jungle/botanicalresearch/crew)
 "mc" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -881,7 +881,7 @@
 /obj/structure/fence/door,
 /obj/structure/barricade/wooden/crude,
 /turf/open/floor/plating/dirt/jungle/lit,
-/area/ruin/jungle/botanicalresearch/caves)
+/area/overmap_encounter/planetoid/jungle)
 "nL" = (
 /obj/structure/spacevine/weak,
 /obj/effect/decal/cleanable/dirt,
@@ -923,7 +923,7 @@
 "nU" = (
 /obj/structure/flora/junglebush/b,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/botanicalresearch/caves)
+/area/overmap_encounter/planetoid/jungle)
 "od" = (
 /obj/item/stack/rods,
 /obj/structure/spacevine/weak,
@@ -1098,7 +1098,7 @@
 	},
 /obj/item/stack/ore/salvage/scrapsilver,
 /turf/open/floor/plating/dirt/jungle/lit,
-/area/template_noop)
+/area/overmap_encounter/planetoid/jungle)
 "qb" = (
 /obj/machinery/button/door{
 	id = "junglebotany_secpost_exterior_window";
@@ -1242,16 +1242,16 @@
 "rV" = (
 /obj/item/stack/ore/salvage/scrapmetal,
 /turf/open/floor/plating/dirt/jungle/lit,
-/area/template_noop)
+/area/overmap_encounter/planetoid/jungle)
 "sl" = (
 /obj/item/stack/ore/salvage/scraptitanium,
 /turf/open/floor/plating/dirt/jungle/lit,
-/area/template_noop)
+/area/overmap_encounter/planetoid/jungle)
 "sp" = (
 /obj/item/stack/rods,
 /obj/item/stack/ore/salvage/scraptitanium/five,
 /turf/open/floor/plating/dirt/jungle/lit,
-/area/template_noop)
+/area/overmap_encounter/planetoid/jungle)
 "st" = (
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plating/dirt/jungle,
@@ -1475,7 +1475,7 @@
 "ui" = (
 /obj/structure/fence/corner,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/botanicalresearch/caves)
+/area/overmap_encounter/planetoid/jungle)
 "uk" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine,
@@ -1563,7 +1563,7 @@
 "wr" = (
 /obj/item/shard/plasma,
 /turf/open/floor/plating/dirt/jungle/lit,
-/area/template_noop)
+/area/overmap_encounter/planetoid/jungle)
 "wt" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 5
@@ -1613,7 +1613,7 @@
 "xf" = (
 /obj/item/stack/ore/salvage/scrapmetal/five,
 /turf/open/floor/plating/dirt/jungle/lit,
-/area/template_noop)
+/area/overmap_encounter/planetoid/jungle)
 "xl" = (
 /obj/item/bedsheet/green,
 /obj/structure/bed,
@@ -1691,7 +1691,7 @@
 	dir = 8
 	},
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/botanicalresearch/caves)
+/area/overmap_encounter/planetoid/jungle)
 "yw" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -1720,7 +1720,7 @@
 "yK" = (
 /obj/item/stack/rods,
 /turf/open/floor/plating/dirt/jungle/lit,
-/area/template_noop)
+/area/overmap_encounter/planetoid/jungle)
 "yL" = (
 /obj/structure/salvageable/computer,
 /obj/structure/cable{
@@ -1819,7 +1819,6 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
 /area/ruin/jungle/botanicalresearch/crew)
 "AC" = (
@@ -1852,7 +1851,7 @@
 "Bd" = (
 /obj/structure/fence,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/botanicalresearch/caves)
+/area/overmap_encounter/planetoid/jungle)
 "Bi" = (
 /obj/machinery/light/directional/north,
 /obj/structure/salvageable/computer,
@@ -1928,7 +1927,7 @@
 "CN" = (
 /obj/item/stack/ore/salvage/scrapuranium/five,
 /turf/open/floor/plating/dirt/jungle/lit,
-/area/template_noop)
+/area/overmap_encounter/planetoid/jungle)
 "CT" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2019,7 +2018,7 @@
 	},
 /obj/item/stack/ore/salvage/scraptitanium/five,
 /turf/open/floor/plating/dirt/jungle/lit,
-/area/template_noop)
+/area/overmap_encounter/planetoid/jungle)
 "Fa" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
@@ -2142,6 +2141,15 @@
 /obj/structure/salvageable/computer,
 /turf/open/floor/plasteel/white,
 /area/ruin/jungle/botanicalresearch)
+"Gm" = (
+/obj/machinery/light/small/directional/south,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood,
+/area/ruin/jungle/botanicalresearch/crew)
 "Gn" = (
 /obj/structure/table/reinforced,
 /turf/open/floor/plating/dirt/jungle,
@@ -2288,12 +2296,6 @@
 /obj/structure/spacevine,
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/botanicalresearch/crew)
-"Ia" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/spacevine,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/dark,
-/area/ruin/jungle/botanicalresearch/checkpoint)
 "Ib" = (
 /obj/structure/table/wood/reinforced,
 /obj/effect/decal/cleanable/dirt,
@@ -2348,6 +2350,12 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/jungle/botanicalresearch/command)
+"Jh" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/spacevine,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/botanicalresearch/checkpoint)
 "Ji" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2426,7 +2434,7 @@
 "Ki" = (
 /obj/item/stack/ore/salvage/scrapuranium,
 /turf/open/floor/plating/dirt/jungle/lit,
-/area/template_noop)
+/area/overmap_encounter/planetoid/jungle)
 "Km" = (
 /obj/structure/table/reinforced,
 /obj/item/reagent_containers/food/snacks/meat/steak/plain/human,
@@ -2453,7 +2461,7 @@
 "KM" = (
 /obj/item/stack/sheet/metal,
 /turf/open/floor/plating/dirt/jungle/lit,
-/area/template_noop)
+/area/overmap_encounter/planetoid/jungle)
 "KS" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2507,7 +2515,7 @@
 /obj/item/stack/cable_coil/cut/red,
 /obj/item/stack/ore/salvage/scrapuranium,
 /turf/open/floor/plating/dirt/jungle/lit,
-/area/template_noop)
+/area/overmap_encounter/planetoid/jungle)
 "Lo" = (
 /obj/structure/closet/secure_closet/personal/cabinet,
 /obj/effect/decal/cleanable/dirt,
@@ -2571,8 +2579,11 @@
 /turf/open/floor/plasteel/freezer,
 /area/ruin/jungle/botanicalresearch/crew)
 "Mx" = (
-/turf/open/floor/plating/grass/jungle/lit,
-/area/overmap_encounter/planetoid/jungle)
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/spacevine/dense,
+/obj/effect/turf_decal/siding/wood/corner,
+/turf/open/floor/plasteel/grimy,
+/area/ruin/jungle/botanicalresearch/crew)
 "MA" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2621,7 +2632,7 @@
 	dir = 4
 	},
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/botanicalresearch/caves)
+/area/overmap_encounter/planetoid/jungle)
 "MX" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2644,7 +2655,7 @@
 /obj/item/shard/plasma,
 /obj/structure/spacevine/weak,
 /turf/open/floor/plating/dirt/jungle/lit,
-/area/template_noop)
+/area/overmap_encounter/planetoid/jungle)
 "Nn" = (
 /obj/structure/spacevine/dense,
 /obj/machinery/power/floodlight,
@@ -2727,17 +2738,11 @@
 "Op" = (
 /obj/structure/flora/rock/jungle,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/botanicalresearch/caves)
+/area/overmap_encounter/planetoid/jungle)
 "Oq" = (
 /obj/structure/spacevine,
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/botanicalresearch/caves)
-"OA" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/spacevine/dense,
-/obj/effect/turf_decal/siding/wood/corner,
-/turf/open/floor/plasteel/grimy,
-/area/ruin/jungle/botanicalresearch/crew)
 "OB" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2784,11 +2789,19 @@
 	rad_range = 3
 	},
 /turf/open/floor/plating/dirt/jungle/lit,
-/area/template_noop)
+/area/overmap_encounter/planetoid/jungle)
+"OW" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/spacevine,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/turf/open/floor/plasteel/grimy,
+/area/ruin/jungle/botanicalresearch/crew)
 "OX" = (
 /obj/structure/flora/junglebush/c,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/botanicalresearch/caves)
+/area/overmap_encounter/planetoid/jungle)
 "Pd" = (
 /obj/structure/table/reinforced,
 /obj/structure/cable{
@@ -2835,7 +2848,7 @@
 "PR" = (
 /obj/structure/fence/cut/large,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/botanicalresearch/caves)
+/area/overmap_encounter/planetoid/jungle)
 "PX" = (
 /obj/machinery/door/poddoor{
 	id = "junglebotany_secpost_exterior"
@@ -2845,12 +2858,6 @@
 	dir = 1
 	},
 /turf/open/floor/plating,
-/area/ruin/jungle/botanicalresearch/checkpoint)
-"Qc" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/spacevine/dense,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/dark,
 /area/ruin/jungle/botanicalresearch/checkpoint)
 "Qh" = (
 /obj/structure/cable{
@@ -2986,8 +2993,11 @@
 /turf/open/floor/wood,
 /area/ruin/jungle/botanicalresearch/command)
 "Sb" = (
-/turf/open/floor/plating/dirt/jungle/lit,
-/area/template_noop)
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/spacevine/dense,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/botanicalresearch/checkpoint)
 "Sd" = (
 /obj/machinery/door/airlock/command{
 	req_access_txt = "206";
@@ -3009,7 +3019,7 @@
 	dir = 1
 	},
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/botanicalresearch/caves)
+/area/overmap_encounter/planetoid/jungle)
 "So" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/hydroponics/constructable,
@@ -3079,22 +3089,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ruin/jungle/botanicalresearch/engineering)
-"TB" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/spacevine,
-/obj/effect/turf_decal/siding/wood{
-	dir = 1
-	},
-/turf/open/floor/plasteel/grimy,
-/area/ruin/jungle/botanicalresearch/crew)
-"TC" = (
-/obj/machinery/light/small/directional/south,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/siding/wood{
-	dir = 6
-	},
-/turf/open/floor/wood,
-/area/ruin/jungle/botanicalresearch/crew)
 "TH" = (
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1
@@ -3246,7 +3240,7 @@
 /area/ruin/jungle/botanicalresearch/engineering)
 "Vw" = (
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/botanicalresearch/caves)
+/area/overmap_encounter/planetoid/jungle)
 "VD" = (
 /obj/structure/closet/crate/hydroponics,
 /obj/effect/turf_decal/box,
@@ -3274,7 +3268,7 @@
 "VW" = (
 /obj/effect/radiation,
 /turf/open/floor/plating/dirt/jungle/lit,
-/area/template_noop)
+/area/overmap_encounter/planetoid/jungle)
 "Wj" = (
 /obj/machinery/hydroponics/constructable,
 /obj/effect/decal/cleanable/dirt,
@@ -3329,7 +3323,7 @@
 	},
 /obj/effect/decal/cleanable/glass/plasma,
 /turf/open/floor/plating,
-/area/template_noop)
+/area/overmap_encounter/planetoid/jungle)
 "Xh" = (
 /obj/structure/table/wood/reinforced,
 /obj/effect/decal/cleanable/dirt,
@@ -3366,11 +3360,11 @@
 "XF" = (
 /obj/structure/flora/junglebush/large,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/botanicalresearch/caves)
+/area/overmap_encounter/planetoid/jungle)
 "XH" = (
 /obj/structure/flora/ausbushes/sunnybush,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/botanicalresearch/caves)
+/area/overmap_encounter/planetoid/jungle)
 "XO" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/effect/decal/cleanable/dirt,
@@ -3506,7 +3500,7 @@
 "Zq" = (
 /obj/structure/flora/tree/jungle,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/botanicalresearch/caves)
+/area/overmap_encounter/planetoid/jungle)
 "Zr" = (
 /obj/item/stack/cable_coil/cut/red,
 /obj/machinery/light/broken{
@@ -3992,7 +3986,7 @@ Yd
 EN
 pM
 Gs
-Sb
+jo
 Gs
 xM
 HI
@@ -4008,12 +4002,12 @@ YF
 nT
 mi
 dA
-TB
+OW
 BH
-bq
+lQ
 Gt
 Sp
-TC
+As
 YF
 YF
 YF
@@ -4055,7 +4049,7 @@ EN
 Ci
 CN
 wr
-Sb
+jo
 Gs
 Ei
 gP
@@ -4116,7 +4110,7 @@ Yd
 EN
 Zr
 Gs
-Sb
+jo
 OR
 sp
 Gs
@@ -4134,7 +4128,7 @@ dj
 YF
 ps
 Qo
-OA
+Mx
 YF
 Lo
 xl
@@ -4179,8 +4173,8 @@ EN
 sy
 Gs
 Gs
-Sb
-Sb
+jo
+jo
 KM
 sC
 EN
@@ -4194,12 +4188,12 @@ YF
 nT
 mi
 MG
-TB
+OW
 Qo
 dS
 am
 Sp
-As
+Gm
 YF
 hI
 YF
@@ -4212,9 +4206,9 @@ Iz
 dZ
 uX
 sY
-Mx
-Mx
-Mx
+Vw
+Vw
+Vw
 nf
 WE
 WE
@@ -4273,9 +4267,9 @@ Iz
 Iz
 qX
 uX
-Mx
+Vw
 sY
-Mx
+Vw
 nf
 nf
 WE
@@ -4336,7 +4330,7 @@ Iz
 qX
 uX
 nf
-Mx
+Vw
 nf
 nf
 RO
@@ -4957,8 +4951,8 @@ Yd
 KL
 uk
 vz
-Ia
-Ia
+Jh
+Jh
 uk
 PX
 Oq
@@ -5018,10 +5012,10 @@ hP
 qT
 KL
 ht
-Qc
+Sb
 ht
-Qc
-Ia
+Sb
+Jh
 PX
 uX
 uX
@@ -5079,7 +5073,7 @@ jq
 kV
 nf
 KL
-Qc
+Sb
 ht
 ht
 ht
@@ -5164,8 +5158,8 @@ WE
 WE
 WE
 VS
-Sb
-Sb
+jo
+jo
 pS
 fF
 ox
@@ -5225,9 +5219,9 @@ Ke
 WE
 WE
 xf
-Sb
+jo
 EQ
-Sb
+jo
 NT
 wt
 vq
@@ -5286,9 +5280,9 @@ Ke
 Ke
 WE
 WE
-Sb
-Sb
-Sb
+jo
+jo
+jo
 kX
 AJ
 KW
@@ -5348,9 +5342,9 @@ Ke
 Ke
 WE
 WE
-Sb
-Sb
-Sb
+jo
+jo
+jo
 EN
 EN
 EN
@@ -5546,7 +5540,7 @@ WE
 lK
 lK
 sl
-Sb
+jo
 lK
 lK
 WE
@@ -5607,7 +5601,7 @@ WE
 WE
 lK
 Ln
-Sb
+jo
 VW
 rV
 Go
