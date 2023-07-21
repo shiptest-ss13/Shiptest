@@ -109,12 +109,6 @@
 /obj/structure/spacevine/dense,
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/botanicalresearch/engineering)
-"cM" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/spacevine/dense,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/dark,
-/area/ruin/jungle/botanicalresearch/checkpoint)
 "cT" = (
 /obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/dirt,
@@ -134,12 +128,6 @@
 /turf/open/floor/wood{
 	icon_state = "wood-broken4"
 	},
-/area/ruin/jungle/botanicalresearch/crew)
-"dz" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/spacevine,
-/obj/effect/turf_decal/siding/wood,
-/turf/open/floor/plasteel/grimy,
 /area/ruin/jungle/botanicalresearch/crew)
 "dA" = (
 /obj/machinery/door/airlock{
@@ -669,6 +657,15 @@
 /obj/item/stack/cable_coil/cut/red,
 /turf/open/floor/plating/dirt/jungle/lit,
 /area/overmap_encounter/planetoid/jungle)
+"km" = (
+/obj/machinery/light/small/directional/south,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood,
+/area/ruin/jungle/botanicalresearch/crew)
 "ko" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/reinforced,
@@ -760,12 +757,6 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/jungle/botanicalresearch/checkpoint)
-"lr" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/spacevine/dense,
-/mob/living/simple_animal/hostile/venus_human_trap,
-/turf/open/floor/plasteel/grimy,
-/area/ruin/jungle/botanicalresearch/crew)
 "lH" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine,
@@ -872,15 +863,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/botanicalresearch/command)
-"nl" = (
-/obj/machinery/light/small/directional/south,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/siding/wood{
-	dir = 6
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/wood,
-/area/ruin/jungle/botanicalresearch/crew)
 "ns" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -1659,6 +1641,12 @@
 /obj/structure/flora/rock/pile/largejungle,
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/botanicalresearch/engineering)
+"xN" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/spacevine/dense,
+/mob/living/simple_animal/hostile/venus_human_trap,
+/turf/open/floor/plasteel/grimy,
+/area/ruin/jungle/botanicalresearch/crew)
 "xW" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -1857,14 +1845,6 @@
 /obj/structure/spacevine/dense,
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/botanicalresearch/engineering)
-"AE" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/spacevine,
-/obj/effect/turf_decal/siding/wood{
-	dir = 1
-	},
-/turf/open/floor/plasteel/grimy,
-/area/ruin/jungle/botanicalresearch/crew)
 "AJ" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -1952,6 +1932,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/ebony,
 /area/ruin/jungle/botanicalresearch/command)
+"CA" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/spacevine/dense,
+/obj/effect/turf_decal/siding/wood/corner,
+/obj/structure/table/wood,
+/turf/open/floor/plasteel/grimy,
+/area/ruin/jungle/botanicalresearch/crew)
 "CI" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
@@ -2150,6 +2137,12 @@
 /obj/item/seeds/cannabis,
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/botanicalresearch/caves)
+"FY" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/spacevine,
+/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/plasteel/grimy,
+/area/ruin/jungle/botanicalresearch/crew)
 "Ga" = (
 /obj/machinery/light/directional/east,
 /obj/effect/decal/cleanable/dirt,
@@ -2596,8 +2589,11 @@
 /turf/open/floor/plasteel/freezer,
 /area/ruin/jungle/botanicalresearch/crew)
 "Mx" = (
-/turf/open/floor/plating/grass/jungle/lit,
-/area/overmap_encounter/planetoid/jungle)
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/spacevine/dense,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/botanicalresearch/checkpoint)
 "MA" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2670,6 +2666,12 @@
 /obj/structure/spacevine/weak,
 /turf/open/floor/plating/dirt/jungle/lit,
 /area/overmap_encounter/planetoid/jungle)
+"Nj" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/spacevine,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/botanicalresearch/checkpoint)
 "Nn" = (
 /obj/structure/spacevine/dense,
 /obj/machinery/power/floodlight,
@@ -3001,9 +3003,11 @@
 "Sb" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/dark,
-/area/ruin/jungle/botanicalresearch/checkpoint)
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/turf/open/floor/plasteel/grimy,
+/area/ruin/jungle/botanicalresearch/crew)
 "Sd" = (
 /obj/machinery/door/airlock/command{
 	req_access_txt = "206";
@@ -3245,12 +3249,8 @@
 /turf/open/floor/plating,
 /area/ruin/jungle/botanicalresearch/engineering)
 "Vw" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/spacevine/dense,
-/obj/effect/turf_decal/siding/wood/corner,
-/obj/structure/table/wood,
-/turf/open/floor/plasteel/grimy,
-/area/ruin/jungle/botanicalresearch/crew)
+/turf/open/floor/plating/grass/jungle/lit,
+/area/overmap_encounter/planetoid/jungle)
 "VD" = (
 /obj/structure/closet/crate/hydroponics,
 /obj/effect/turf_decal/box,
@@ -3622,14 +3622,14 @@ Ke
 Ke
 Ke
 Ke
-Ke
-Ke
-Ke
-Ke
-Ke
-Ke
-Ke
-Ke
+WE
+WE
+WE
+WE
+WE
+WE
+WE
+WE
 WE
 WE
 WE
@@ -4012,9 +4012,9 @@ YF
 nT
 mi
 dA
-AE
+Sb
 BH
-dz
+FY
 Gt
 Sp
 As
@@ -4137,8 +4137,8 @@ LB
 dj
 YF
 ps
-lr
-Vw
+xN
+CA
 YF
 Lo
 xl
@@ -4198,12 +4198,12 @@ YF
 nT
 mi
 MG
-AE
+Sb
 Qo
 dS
 am
 Sp
-nl
+km
 YF
 hI
 YF
@@ -4216,9 +4216,9 @@ Iz
 dZ
 uX
 sY
-Mx
-Mx
-Mx
+Vw
+Vw
+Vw
 nf
 WE
 WE
@@ -4277,9 +4277,9 @@ Iz
 Iz
 qX
 uX
-Mx
+Vw
 sY
-Mx
+Vw
 nf
 nf
 WE
@@ -4340,7 +4340,7 @@ Iz
 qX
 uX
 nf
-Mx
+Vw
 nf
 nf
 RO
@@ -4961,8 +4961,8 @@ Yd
 KL
 uk
 vz
-Sb
-Sb
+Nj
+Nj
 uk
 PX
 Oq
@@ -4971,7 +4971,7 @@ Oq
 nf
 yF
 XF
-Mx
+Vw
 nU
 MV
 Sh
@@ -5022,10 +5022,10 @@ hP
 qT
 KL
 ht
-cM
+Mx
 ht
-cM
-Sb
+Mx
+Nj
 PX
 uX
 uX
@@ -5034,7 +5034,7 @@ Oq
 oj
 jo
 jo
-Mx
+Vw
 lj
 iM
 "}
@@ -5083,7 +5083,7 @@ jq
 kV
 nf
 KL
-cM
+Mx
 ht
 ht
 ht
@@ -5156,7 +5156,7 @@ WE
 WE
 WE
 Pl
-Mx
+Vw
 lj
 XH
 yl
