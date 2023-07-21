@@ -270,6 +270,9 @@
 /obj/item/stamp/solgov,
 /obj/item/clothing/suit/armor/solgov_trenchcoat,
 /obj/item/spacecash/bundle/loadsamoney,
+/obj/item/gun/ballistic/automatic/powered/gauss/modelh,
+/obj/item/ammo_box/magazine/modelh,
+/obj/item/ammo_box/magazine/modelh,
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/office)
 "cg" = (
@@ -2534,7 +2537,10 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 10
 	},
-/obj/structure/fluff/hedge/opaque,
+/obj/structure/table/wood,
+/obj/machinery/recharger{
+	pixel_y = 4
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "zq" = (
@@ -3356,7 +3362,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 6
 	},
-/obj/structure/fluff/hedge/opaque,
+/obj/structure/tank_dispenser/oxygen,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "Hb" = (
@@ -3701,6 +3707,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
+/obj/item/gun/ballistic/automatic/powered/gauss/claris,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "Kv" = (
@@ -4526,11 +4533,18 @@
 /turf/open/floor/plasteel/white,
 /area/ship/engineering)
 "Tr" = (
-/obj/structure/tank_dispenser/oxygen,
 /obj/effect/turf_decal/techfloor/corner,
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
+/obj/structure/closet/cabinet{
+	name = "ammunition"
+	},
+/obj/item/ammo_box/amagpellet_claris,
+/obj/item/ammo_box/magazine/pistol556mm,
+/obj/item/ammo_box/magazine/pistol556mm,
+/obj/item/ammo_box/magazine/pistol556mm,
+/obj/item/ammo_box/magazine/pistol556mm,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "TA" = (
