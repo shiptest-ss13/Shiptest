@@ -109,12 +109,12 @@
 /obj/structure/spacevine/dense,
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/botanicalresearch/engineering)
-"cC" = (
+"cM" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine/dense,
-/obj/effect/turf_decal/siding/wood/corner,
-/turf/open/floor/plasteel/grimy,
-/area/ruin/jungle/botanicalresearch/crew)
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/botanicalresearch/checkpoint)
 "cT" = (
 /obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/dirt,
@@ -125,14 +125,6 @@
 /obj/structure/flora/rock/pile/largejungle,
 /turf/closed/mineral/random/jungle,
 /area/ruin/jungle/botanicalresearch/caves)
-"cZ" = (
-/obj/machinery/light/small/directional/south,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/siding/wood{
-	dir = 6
-	},
-/turf/open/floor/wood,
-/area/ruin/jungle/botanicalresearch/crew)
 "dj" = (
 /obj/structure/closet/secure_closet/personal/cabinet,
 /obj/effect/decal/cleanable/dirt,
@@ -142,6 +134,12 @@
 /turf/open/floor/wood{
 	icon_state = "wood-broken4"
 	},
+/area/ruin/jungle/botanicalresearch/crew)
+"dz" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/spacevine,
+/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/plasteel/grimy,
 /area/ruin/jungle/botanicalresearch/crew)
 "dA" = (
 /obj/machinery/door/airlock{
@@ -223,6 +221,8 @@
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 1
 	},
+/obj/structure/table/wood,
+/obj/machinery/computer/libraryconsole,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/jungle/botanicalresearch/crew)
 "ez" = (
@@ -481,12 +481,6 @@
 "hl" = (
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/jungle/botanicalresearch/vault)
-"hq" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/spacevine/dense,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/dark,
-/area/ruin/jungle/botanicalresearch/checkpoint)
 "hs" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -766,6 +760,12 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/jungle/botanicalresearch/checkpoint)
+"lr" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/spacevine/dense,
+/mob/living/simple_animal/hostile/venus_human_trap,
+/turf/open/floor/plasteel/grimy,
+/area/ruin/jungle/botanicalresearch/crew)
 "lH" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine,
@@ -872,6 +872,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/botanicalresearch/command)
+"nl" = (
+/obj/machinery/light/small/directional/south,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood,
+/area/ruin/jungle/botanicalresearch/crew)
 "ns" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -1040,12 +1049,12 @@
 /area/ruin/jungle/botanicalresearch/crew)
 "ps" = (
 /obj/machinery/light/small/directional/north,
-/mob/living/simple_animal/hostile/venus_human_trap,
 /obj/structure/spacevine/dense,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 4
 	},
+/obj/structure/table/wood,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/jungle/botanicalresearch/crew)
 "pt" = (
@@ -1162,6 +1171,7 @@
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 8
 	},
+/obj/structure/table/wood,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/jungle/botanicalresearch/crew)
 "qn" = (
@@ -1833,7 +1843,6 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
 /area/ruin/jungle/botanicalresearch/crew)
 "AC" = (
@@ -1848,6 +1857,14 @@
 /obj/structure/spacevine/dense,
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/botanicalresearch/engineering)
+"AE" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/spacevine,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/turf/open/floor/plasteel/grimy,
+/area/ruin/jungle/botanicalresearch/crew)
 "AJ" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -2579,11 +2596,8 @@
 /turf/open/floor/plasteel/freezer,
 /area/ruin/jungle/botanicalresearch/crew)
 "Mx" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/spacevine,
-/obj/effect/turf_decal/siding/wood,
-/turf/open/floor/plasteel/grimy,
-/area/ruin/jungle/botanicalresearch/crew)
+/turf/open/floor/plating/grass/jungle/lit,
+/area/overmap_encounter/planetoid/jungle)
 "MA" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2987,11 +3001,9 @@
 "Sb" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine,
-/obj/effect/turf_decal/siding/wood{
-	dir = 1
-	},
-/turf/open/floor/plasteel/grimy,
-/area/ruin/jungle/botanicalresearch/crew)
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/botanicalresearch/checkpoint)
 "Sd" = (
 /obj/machinery/door/airlock/command{
 	req_access_txt = "206";
@@ -3233,8 +3245,12 @@
 /turf/open/floor/plating,
 /area/ruin/jungle/botanicalresearch/engineering)
 "Vw" = (
-/turf/open/floor/plating/grass/jungle/lit,
-/area/overmap_encounter/planetoid/jungle)
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/spacevine/dense,
+/obj/effect/turf_decal/siding/wood/corner,
+/obj/structure/table/wood,
+/turf/open/floor/plasteel/grimy,
+/area/ruin/jungle/botanicalresearch/crew)
 "VD" = (
 /obj/structure/closet/crate/hydroponics,
 /obj/effect/turf_decal/box,
@@ -3385,12 +3401,6 @@
 /obj/structure/spacevine,
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/botanicalresearch/caves)
-"Yj" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/spacevine,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/dark,
-/area/ruin/jungle/botanicalresearch/checkpoint)
 "Yk" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/siding/wood{
@@ -4002,12 +4012,12 @@ YF
 nT
 mi
 dA
-Sb
+AE
 BH
-Mx
+dz
 Gt
 Sp
-cZ
+As
 YF
 YF
 YF
@@ -4127,8 +4137,8 @@ LB
 dj
 YF
 ps
-Qo
-cC
+lr
+Vw
 YF
 Lo
 xl
@@ -4188,12 +4198,12 @@ YF
 nT
 mi
 MG
-Sb
+AE
 Qo
 dS
 am
 Sp
-As
+nl
 YF
 hI
 YF
@@ -4206,9 +4216,9 @@ Iz
 dZ
 uX
 sY
-Vw
-Vw
-Vw
+Mx
+Mx
+Mx
 nf
 WE
 WE
@@ -4267,9 +4277,9 @@ Iz
 Iz
 qX
 uX
-Vw
+Mx
 sY
-Vw
+Mx
 nf
 nf
 WE
@@ -4330,7 +4340,7 @@ Iz
 qX
 uX
 nf
-Vw
+Mx
 nf
 nf
 RO
@@ -4951,8 +4961,8 @@ Yd
 KL
 uk
 vz
-Yj
-Yj
+Sb
+Sb
 uk
 PX
 Oq
@@ -4961,7 +4971,7 @@ Oq
 nf
 yF
 XF
-Vw
+Mx
 nU
 MV
 Sh
@@ -5012,10 +5022,10 @@ hP
 qT
 KL
 ht
-hq
+cM
 ht
-hq
-Yj
+cM
+Sb
 PX
 uX
 uX
@@ -5024,7 +5034,7 @@ Oq
 oj
 jo
 jo
-Vw
+Mx
 lj
 iM
 "}
@@ -5073,7 +5083,7 @@ jq
 kV
 nf
 KL
-hq
+cM
 ht
 ht
 ht
@@ -5146,7 +5156,7 @@ WE
 WE
 WE
 Pl
-Vw
+Mx
 lj
 XH
 yl
