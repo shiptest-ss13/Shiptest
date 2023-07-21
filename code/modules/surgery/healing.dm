@@ -25,7 +25,9 @@
 
 /datum/surgery_step/heal
 	name = "repair body"
-	implements = list(TOOL_HEMOSTAT = 100, TOOL_SCREWDRIVER = 65, /obj/item/pen = 55)
+	implements = list(
+		TOOL_HEMOSTAT = 100,
+		TOOL_SCREWDRIVER = 40)//something else could be added here - but I would prefer not. Hemostat is not that hard to come by and SHOULD be standard for ship equipment.
 	repeatable = TRUE
 	time = 2.5 SECONDS
 	success_sound = 'sound/surgery/retractor2.ogg'
@@ -173,9 +175,6 @@
 
 /***************************COMBO***************************/
 /datum/surgery/healing/combo
-
-
-/datum/surgery/healing/combo
 	name = "Tend Wounds (Mixture, Basic)"
 	replaced_by = /datum/surgery/healing/combo/upgraded
 	requires_tech = TRUE
@@ -187,7 +186,6 @@
 	replaced_by = /datum/surgery/healing/combo/upgraded/femto
 	healing_step_type = /datum/surgery_step/heal/combo/upgraded
 	desc = "A surgical procedure that provides advanced treatment for a patient's burns and brute traumas. Heals more when the patient is severely injured."
-
 
 /datum/surgery/healing/combo/upgraded/femto //no real reason to type it like this except consistency, don't worry you're not missing anything
 	name = "Tend Wounds (Mixture, Exp.)"
