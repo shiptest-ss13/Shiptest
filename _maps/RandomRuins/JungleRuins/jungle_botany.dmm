@@ -386,7 +386,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/machinery/power/apc/auto_name/south{
+/obj/machinery/power/apc/auto_name/directional/south{
 	req_access_txt = "205";
 	start_charge = 0
 	},
@@ -891,10 +891,6 @@
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/botanicalresearch/engineering)
 "nO" = (
-/obj/machinery/power/apc/auto_name/north{
-	req_access_txt = "206";
-	start_charge = 0
-	},
 /obj/structure/cable{
 	icon_state = "0-6"
 	},
@@ -905,6 +901,10 @@
 	},
 /obj/effect/turf_decal/corner/opaque/bar{
 	dir = 1
+	},
+/obj/machinery/power/apc/auto_name/directional/north{
+	req_access_txt = "205";
+	start_charge = 0
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/botanicalresearch/command)
@@ -1019,13 +1019,13 @@
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/botanicalresearch/caves)
 "pm" = (
-/obj/machinery/power/apc/auto_name/north{
-	req_access_txt = "205";
-	start_charge = 0
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
 	icon_state = "0-4"
+	},
+/obj/machinery/power/apc/auto_name/directional/north{
+	req_access_txt = "205";
+	start_charge = 0
 	},
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/botanicalresearch/crew)
@@ -1168,12 +1168,12 @@
 	pressure_checks = 1
 	},
 /obj/structure/cable,
-/obj/machinery/power/apc/auto_name/south{
+/obj/structure/closet/l3closet/scientist,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/power/apc/auto_name/directional/south{
 	req_access_txt = "205";
 	start_charge = 0
 	},
-/obj/structure/closet/l3closet/scientist,
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/white,
 /area/ruin/jungle/botanicalresearch)
 "qC" = (
@@ -1348,7 +1348,7 @@
 "sY" = (
 /obj/structure/spacevine/dense,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/template_noop)
+/area/overmap_encounter/planetoid/jungle)
 "tg" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable{
@@ -1386,7 +1386,7 @@
 "tv" = (
 /obj/machinery/grill,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/template_noop)
+/area/overmap_encounter/planetoid/jungle)
 "tB" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine/dense,
@@ -2583,7 +2583,7 @@
 /area/ruin/jungle/botanicalresearch/crew)
 "Mx" = (
 /turf/open/floor/plating/grass/jungle/lit,
-/area/template_noop)
+/area/overmap_encounter/planetoid/jungle)
 "MA" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2803,9 +2803,6 @@
 /obj/structure/table/reinforced,
 /obj/structure/cable{
 	icon_state = "0-4"
-	},
-/obj/machinery/power/apc/auto_name/west{
-	start_charge = 0
 	},
 /obj/item/stamp{
 	pixel_x = -10
@@ -3035,10 +3032,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/botanicalresearch/engineering)
 "SK" = (
-/obj/machinery/power/apc/auto_name/north{
-	req_access_txt = "205";
-	start_charge = 0
-	},
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -3050,12 +3043,13 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine,
+/obj/machinery/power/apc/auto_name/directional/north{
+	req_access_txt = "205";
+	start_charge = 0
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/botanicalresearch/engineering)
 "SO" = (
-/obj/machinery/power/apc/auto_name/north{
-	req_access_txt = "206"
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -3065,6 +3059,9 @@
 /obj/structure/rack,
 /obj/item/storage/bag/plants/portaseeder,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/power/apc/auto_name/directional/north{
+	req_access_txt = "205"
+	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ruin/jungle/botanicalresearch/vault)
 "SY" = (
