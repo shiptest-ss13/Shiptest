@@ -341,8 +341,6 @@
  * * dock_requester - The overmap datum trying to undock from this one. Cannot be null.
  */
 /datum/overmap/proc/post_undocked(datum/overmap/ship/controlled/dock_requester)
-	SHOULD_CALL_PARENT(TRUE)
-	contents -= dock_requester
 	return
 
 /**
