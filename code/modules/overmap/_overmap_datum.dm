@@ -65,8 +65,10 @@
 /datum/overmap/Destroy(force, ...)
 	SSovermap.overmap_objects -= src
 	if(docked_to)
-		Undock(TRUE)
-	SSovermap.overmap_container[x][y] -= src
+		docked_to.post_undocked()
+		docked_to.contents -= src
+	if(isnum(x) && isnum(y))
+		SSovermap.overmap_container[x][y] -= src
 	token.parent = null
 	QDEL_NULL(token)
 	QDEL_LIST(contents)
@@ -339,6 +341,8 @@
  * * dock_requester - The overmap datum trying to undock from this one. Cannot be null.
  */
 /datum/overmap/proc/post_undocked(datum/overmap/ship/controlled/dock_requester)
+	SHOULD_CALL_PARENT(TRUE)
+	contents -= dock_requester
 	return
 
 /**

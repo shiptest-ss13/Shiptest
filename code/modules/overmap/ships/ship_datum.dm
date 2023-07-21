@@ -33,9 +33,9 @@
 		RegisterSignal(docked_to, COMSIG_OVERMAP_MOVED, .proc/on_docked_to_moved)
 
 /datum/overmap/ship/Destroy()
-	. = ..()
 	if(movement_callback_id)
 		deltimer(movement_callback_id, SSovermap_movement)
+	return ..()
 
 /datum/overmap/ship/complete_dock(datum/overmap/dock_target, datum/docking_ticket/ticket)
 	. = ..()
