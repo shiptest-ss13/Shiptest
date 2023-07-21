@@ -16,7 +16,7 @@
 /datum/supply_pack/sec_supply/trackingimp
 	name = "Tracking Implants Crate"
 	desc = "Contains four tracking implants."
-	cost = 2500
+	cost = 2000
 	contains = list(/obj/item/storage/box/trackimp)
 	crate_name = "tracking implant crate"
 
