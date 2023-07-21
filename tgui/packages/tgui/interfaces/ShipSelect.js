@@ -10,6 +10,7 @@ import {
 } from '../components';
 import { Window } from '../layouts';
 import { createSearch, decodeHtmlEntities } from 'common/string';
+import { logger } from '../logging';
 
 export const ShipSelect = (props, context) => {
   const { act, data } = useBackend(context);
@@ -17,7 +18,7 @@ export const ShipSelect = (props, context) => {
   const ships = data.ships || {};
   const templates = data.templates || [];
 
-  const [tab, setTab] = useLocalState(context, 'tab', 1);
+  const [currentTab, setCurrentTab] = useLocalState(context, 'tab', 1);
   const [selectedShip, setSelectedShip] = useLocalState(
     context,
     'selectedShip',
@@ -34,10 +35,6 @@ export const ShipSelect = (props, context) => {
     { name: 'Ship Select', tab: 1 },
     { name: 'Ship Purchase', tab: 3 },
   ]);
-  // const formatShipName = (name) => {
-  //   // replace all &#34 with "/ because the json data we get is funky otherwise
-  //   return name.replace(/&#34;/g, '"');
-  // };
   const searchFor = (searchText) =>
     createSearch(searchText, (thing) => thing.name);
 
@@ -50,25 +47,30 @@ export const ShipSelect = (props, context) => {
           {shownTabs.map((tabbing, index) => (
             <Tabs.Tab
               key={`${index}-${tabbing.name}`}
-              selected={tab === tabbing.tab}
-              onClick={() => setTab(tabbing.tab)}
+              selected={currentTab === tabbing.tab}
+              onClick={() => setCurrentTab(tabbing.tab)}
             >
               {tabbing.name}
             </Tabs.Tab>
           ))}
         </Tabs>
-        {tab === 1 && (
+        {currentTab === 1 && (
           <Section
             title="Active Ship Selection"
             buttons={
               <Button
                 content="Purchase Ship"
                 tooltip={
-                  data.purchaseBanned && 'You are banned from purchasing ships.'
+                  /* worth noting that disabled ship spawn doesn't cause the
+                  button to be disabled, as we want to let people look around */
+                  (data.purchaseBanned &&
+                    'You are banned from purchasing ships.') ||
+                  (!data.shipSpawnAllowed &&
+                    'No more ships may be spawned at this time.')
                 }
                 disabled={data.purchaseBanned}
                 onClick={() => {
-                  setTab(3);
+                  setCurrentTab(3);
                 }}
               />
             }
@@ -95,14 +97,22 @@ export const ShipSelect = (props, context) => {
                         }
                         onClick={() => {
                           setSelectedShip(ship);
-                          setTab(2);
-                          // Add a new tab to the list of shown tabs, on index 1
+                          setCurrentTab(2);
+                          const newTab = {
+                            name: 'Job Select',
+                            tab: 2,
+                          };
+                          // check if the tab already exists
+                          const tabExists = shownTabs.some(
+                            (tab) =>
+                              tab.name === newTab.name && tab.tab === newTab.tab
+                          );
+                          if (tabExists) {
+                            return;
+                          }
                           setShownTabs((tabs) => {
+                            logger.log(tabs);
                             const newTabs = [...tabs];
-                            const newTab = {
-                              name: 'Job Select',
-                              tab: 2,
-                            };
                             newTabs.splice(1, 0, newTab);
                             return newTabs;
                           });
@@ -117,7 +127,7 @@ export const ShipSelect = (props, context) => {
             </Table>
           </Section>
         )}
-        {tab === 2 && (
+        {currentTab === 2 && (
           <>
             <Section
               title={`Ship Details - ${decodeHtmlEntities(selectedShip.name)}`}
@@ -151,7 +161,7 @@ export const ShipSelect = (props, context) => {
                 <Button
                   content="Back"
                   onClick={() => {
-                    setTab(1);
+                    setCurrentTab(1);
                   }}
                 />
               }
@@ -161,12 +171,18 @@ export const ShipSelect = (props, context) => {
                   <Table.Cell collapsing>Join</Table.Cell>
                   <Table.Cell>Job Name</Table.Cell>
                   <Table.Cell>Slots</Table.Cell>
+                  <Table.Cell>Min. Playtime</Table.Cell>
                 </Table.Row>
                 {selectedShip.jobs.map((job) => (
                   <Table.Row key={job.name}>
                     <Table.Cell>
                       <Button
                         content="Select"
+                        tooltip={
+                          data.playMin < job.minTime &&
+                          'You do not have enough playtime to play this job.'
+                        }
+                        disabled={data.playMin < job.minTime}
                         onClick={() => {
                           act('join', {
                             ship: selectedShip.ref,
@@ -177,13 +193,21 @@ export const ShipSelect = (props, context) => {
                     </Table.Cell>
                     <Table.Cell>{job.name}</Table.Cell>
                     <Table.Cell>{job.slots}</Table.Cell>
+                    <Table.Cell>
+                      {(job.minTime > 0 &&
+                        (job.minTime.toString() +
+                          'm ' +
+                          (data.playMin < job.minTime && '(Unmet)') ||
+                          '(Met)')) ||
+                        '-'}
+                    </Table.Cell>
                   </Table.Row>
                 ))}
               </Table>
             </Section>
           </>
         )}
-        {tab === 3 && (
+        {currentTab === 3 && (
           <Section
             title="Ship Purchase"
             buttons={
@@ -197,7 +221,7 @@ export const ShipSelect = (props, context) => {
                 <Button
                   content="Back"
                   onClick={() => {
-                    setTab(1);
+                    setCurrentTab(1);
                   }}
                 />
               </>
@@ -207,9 +231,29 @@ export const ShipSelect = (props, context) => {
               <Collapsible
                 title={template.name}
                 key={template.name}
+                color={
+                  (!data.shipSpawnAllowed && 'average') ||
+                  ((template.curNum >= template.limit ||
+                    data.playMin < template.minTime) &&
+                    'grey') ||
+                  'default'
+                }
                 buttons={
                   <Button
                     content="Buy"
+                    tooltip={
+                      (!data.shipSpawnAllowed &&
+                        'No more ships may be spawned at this time.') ||
+                      (template.curNum >= template.limit &&
+                        'There are too many ships of this type.') ||
+                      (data.playMin < template.minTime &&
+                        'You do not have enough playtime to buy this ship.')
+                    }
+                    disabled={
+                      !data.shipSpawnAllowed ||
+                      template.curNum >= template.limit ||
+                      data.playMin < template.minTime
+                    }
                     onClick={() => {
                       act('buy', {
                         name: template.name,
@@ -226,8 +270,17 @@ export const ShipSelect = (props, context) => {
                     {(template.tags && template.tags.join(', ')) ||
                       'No Tags Set'}
                   </LabeledList.Item>
-                  <LabeledList.Item label="Crew">
+                  <LabeledList.Item label="Std. Crew">
                     {template.crewCount}
+                  </LabeledList.Item>
+                  <LabeledList.Item label="Max #">
+                    {template.limit}
+                  </LabeledList.Item>
+                  <LabeledList.Item label="Min. Playtime">
+                    {template.minTime +
+                      'm ' +
+                      ((data.playMin < template.minTime && '(Unmet)') ||
+                        '(Met)')}
                   </LabeledList.Item>
                   <LabeledList.Item label="Wiki Link">
                     <a

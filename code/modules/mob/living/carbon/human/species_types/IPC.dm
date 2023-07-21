@@ -222,7 +222,7 @@
 	H.dna.features["ipc_screen"] = saved_screen
 	H.update_body()
 
-/datum/species/ipc/replace_body(mob/living/carbon/C, datum/species/new_species)
+/datum/species/ipc/replace_body(mob/living/carbon/C, datum/species/new_species, robotic = FALSE)
 	..()
 
 	var/datum/sprite_accessory/ipc_chassis/chassis_of_choice = GLOB.ipc_chassis_list[C.dna.features["ipc_chassis"]]

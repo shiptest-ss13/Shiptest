@@ -10,9 +10,12 @@
 	name = "ferromagnetic lance"
 	icon_state = "redtrac"
 	damage = 30
-	speed = 0.4
+	armour_penetration = 0
+	speed = 0.2
 
 /obj/projectile/bullet/gauss/slug
 	name = "ferromagnetic slug"
 	icon_state = "gauss-slug"
 	damage = 50
+	armour_penetration = -50
+	speed = 0.8

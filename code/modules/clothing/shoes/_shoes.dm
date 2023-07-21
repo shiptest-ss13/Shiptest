@@ -9,6 +9,7 @@
 	slot_flags = ITEM_SLOT_FEET
 	greyscale_colors = list(list(13, 3), list(14, 2), list(12, 2))
 	greyscale_icon_state = "shoes"
+	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
 
 	permeability_coefficient = 0.5
 	slowdown = SHOES_SLOWDOWN

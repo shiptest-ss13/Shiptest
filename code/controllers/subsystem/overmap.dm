@@ -386,6 +386,20 @@ SUBSYSTEM_DEF(overmap)
 			if(D.mapzone?.is_in_bounds(source))
 				return D
 
+/// Returns TRUE if players should be allowed to create a ship by "standard" means, and FALSE otherwise.
+/datum/controller/subsystem/overmap/proc/player_ship_spawn_allowed()
+	if(!(GLOB.ship_spawn_enabled) || (get_num_cap_ships() >= CONFIG_GET(number/max_shuttle_count)))
+		return FALSE
+	return TRUE
+
+/// Returns the number of ships on the overmap that count against the spawn cap.
+/datum/controller/subsystem/overmap/proc/get_num_cap_ships()
+	var/ship_count = 0
+	for(var/datum/overmap/ship/controlled/Ship as anything in controlled_ships)
+		if(!Ship.source_template || Ship.source_template.category != "subshuttles")
+			ship_count++
+	return ship_count
+
 /datum/controller/subsystem/overmap/Recover()
 	if(istype(SSovermap.overmap_objects))
 		overmap_objects = SSovermap.overmap_objects

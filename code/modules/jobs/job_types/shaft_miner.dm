@@ -94,6 +94,13 @@
 	satchel = /obj/item/storage/backpack/satchel/tox
 	courierbag = /obj/item/storage/backpack/messenger/tox
 
+/datum/outfit/job/miner/syndicate/gorlex
+	name = "Wrecker (Gorlex Marauders)"
+
+	uniform = /obj/item/clothing/under/syndicate/gorlex
+	shoes = /obj/item/clothing/shoes/workboots
+	ears = /obj/item/radio/headset/alt
+
 /datum/outfit/job/miner/syndicate/sbc
 	name = "Miner (Twinkleshine)"
 

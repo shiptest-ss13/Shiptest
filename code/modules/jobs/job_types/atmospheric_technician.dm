@@ -2,8 +2,6 @@
 	name = "Atmospheric Technician"
 	total_positions = 3
 	spawn_positions = 2
-	exp_requirements = 60
-	exp_type = EXP_TYPE_CREW
 	wiki_page = "Guide_to_Atmospherics" //WS Edit - Wikilinks/Warning
 
 	outfit = /datum/outfit/job/atmos
@@ -65,7 +63,7 @@
 	alt_suit = /obj/item/clothing/suit/hazardvest
 	neck = /obj/item/clothing/neck/tie/light_blue
 
-	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1, /obj/item/storage/belt/utility/atmostech=1)
+	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1)
 
 //Shiptest
 /datum/outfit/job/atmos/gec
