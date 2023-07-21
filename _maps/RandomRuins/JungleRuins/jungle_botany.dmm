@@ -11,12 +11,6 @@
 /obj/structure/spacevine,
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/botanicalresearch/crew)
-"aq" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/spacevine,
-/obj/effect/turf_decal/siding/wood,
-/turf/open/floor/plasteel/grimy,
-/area/ruin/jungle/botanicalresearch/crew)
 "aC" = (
 /obj/item/ammo_casing/c45{
 	projectile_type = null;
@@ -60,6 +54,12 @@
 /obj/item/stack/ore/salvage/scrapmetal/five,
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/botanicalresearch/caves)
+"bq" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/spacevine,
+/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/plasteel/grimy,
+/area/ruin/jungle/botanicalresearch/crew)
 "br" = (
 /obj/machinery/atmospherics/components/unary/tank/air,
 /obj/effect/decal/cleanable/dirt,
@@ -87,7 +87,9 @@
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/botanicalresearch/crew)
 "bW" = (
-/obj/machinery/door/airlock/public/glass,
+/obj/machinery/door/airlock/public/glass{
+	dir = 4
+	},
 /obj/structure/spacevine/dense,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/grimy,
@@ -556,12 +558,6 @@
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plasteel/white,
 /area/ruin/jungle/botanicalresearch)
-"is" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/spacevine/dense,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/dark,
-/area/ruin/jungle/botanicalresearch/checkpoint)
 "iM" = (
 /obj/structure/fence{
 	dir = 4
@@ -928,12 +924,6 @@
 /obj/structure/flora/junglebush/b,
 /turf/open/floor/plating/grass/jungle/lit,
 /area/ruin/jungle/botanicalresearch/caves)
-"nY" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/spacevine/dense,
-/obj/effect/turf_decal/siding/wood/corner,
-/turf/open/floor/plasteel/grimy,
-/area/ruin/jungle/botanicalresearch/crew)
 "od" = (
 /obj/item/stack/rods,
 /obj/structure/spacevine/weak,
@@ -1188,10 +1178,9 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine/dense,
-/turf/open/floor/plating/rust,
+/turf/open/floor/plasteel/dark,
 /area/ruin/jungle/botanicalresearch/engineering)
 "qN" = (
 /obj/structure/table/wood/reinforced,
@@ -1473,7 +1462,8 @@
 "ue" = (
 /obj/machinery/door/airlock/engineering{
 	name = "Engineering";
-	req_access_txt = "205"
+	req_access_txt = "205";
+	dir = 4
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1530,10 +1520,9 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine,
-/turf/open/floor/plating/rust,
+/turf/open/floor/plasteel/dark,
 /area/ruin/jungle/botanicalresearch/engineering)
 "uX" = (
 /obj/structure/spacevine/dense,
@@ -1591,7 +1580,8 @@
 "wJ" = (
 /obj/machinery/door/airlock/security{
 	req_access_txt = "203";
-	name = "Security Officer's Room"
+	name = "Security Officer's Room";
+	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine/dense,
@@ -1624,12 +1614,6 @@
 /obj/item/stack/ore/salvage/scrapmetal/five,
 /turf/open/floor/plating/dirt/jungle/lit,
 /area/template_noop)
-"xk" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/spacevine,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/dark,
-/area/ruin/jungle/botanicalresearch/checkpoint)
 "xl" = (
 /obj/item/bedsheet/green,
 /obj/structure/bed,
@@ -1772,7 +1756,8 @@
 "zs" = (
 /obj/machinery/door/airlock/security{
 	req_access_txt = "203";
-	name = "Checkpoint"
+	name = "Checkpoint";
+	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/grimy,
@@ -1834,6 +1819,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
 /area/ruin/jungle/botanicalresearch/crew)
 "AC" = (
@@ -1988,7 +1974,8 @@
 "Ee" = (
 /obj/machinery/door/airlock/command{
 	req_access_txt = "206";
-	name = "Administration"
+	name = "Administration";
+	dir = 4
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2301,6 +2288,12 @@
 /obj/structure/spacevine,
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/botanicalresearch/crew)
+"Ia" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/spacevine,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/botanicalresearch/checkpoint)
 "Ib" = (
 /obj/structure/table/wood/reinforced,
 /obj/effect/decal/cleanable/dirt,
@@ -2739,6 +2732,12 @@
 /obj/structure/spacevine,
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/botanicalresearch/caves)
+"OA" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/spacevine/dense,
+/obj/effect/turf_decal/siding/wood/corner,
+/turf/open/floor/plasteel/grimy,
+/area/ruin/jungle/botanicalresearch/crew)
 "OB" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2847,6 +2846,12 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/jungle/botanicalresearch/checkpoint)
+"Qc" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/spacevine/dense,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/botanicalresearch/checkpoint)
 "Qh" = (
 /obj/structure/cable{
 	icon_state = "1-6"
@@ -2896,7 +2901,8 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/door/airlock/engineering{
 	name = "Supermatter Access";
-	req_access_txt = "205"
+	req_access_txt = "205";
+	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
@@ -2985,7 +2991,8 @@
 "Sd" = (
 /obj/machinery/door/airlock/command{
 	req_access_txt = "206";
-	name = "Administration"
+	name = "Administration";
+	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/purple,
@@ -3013,15 +3020,6 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
 	},
-/turf/open/floor/wood,
-/area/ruin/jungle/botanicalresearch/crew)
-"Sw" = (
-/obj/machinery/light/small/directional/south,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/siding/wood{
-	dir = 6
-	},
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
 /area/ruin/jungle/botanicalresearch/crew)
 "SD" = (
@@ -3081,6 +3079,22 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ruin/jungle/botanicalresearch/engineering)
+"TB" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/spacevine,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/turf/open/floor/plasteel/grimy,
+/area/ruin/jungle/botanicalresearch/crew)
+"TC" = (
+/obj/machinery/light/small/directional/south,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/turf/open/floor/wood,
+/area/ruin/jungle/botanicalresearch/crew)
 "TH" = (
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1
@@ -3244,7 +3258,8 @@
 "VR" = (
 /obj/machinery/door/airlock/engineering{
 	name = "Emitter Room";
-	req_access_txt = "205"
+	req_access_txt = "205";
+	dir = 4
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -3260,14 +3275,6 @@
 /obj/effect/radiation,
 /turf/open/floor/plating/dirt/jungle/lit,
 /area/template_noop)
-"Wb" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/spacevine,
-/obj/effect/turf_decal/siding/wood{
-	dir = 1
-	},
-/turf/open/floor/plasteel/grimy,
-/area/ruin/jungle/botanicalresearch/crew)
 "Wj" = (
 /obj/machinery/hydroponics/constructable,
 /obj/effect/decal/cleanable/dirt,
@@ -3456,7 +3463,8 @@
 "Zh" = (
 /obj/machinery/door/airlock/command{
 	req_access_txt = "206";
-	name = "Administration"
+	name = "Administration";
+	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
@@ -3468,7 +3476,8 @@
 	},
 /obj/machinery/door/airlock/engineering{
 	name = "Supermatter Access";
-	req_access_txt = "205"
+	req_access_txt = "205";
+	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
@@ -3999,12 +4008,12 @@ YF
 nT
 mi
 dA
-Wb
+TB
 BH
-aq
+bq
 Gt
 Sp
-As
+TC
 YF
 YF
 YF
@@ -4125,7 +4134,7 @@ dj
 YF
 ps
 Qo
-nY
+OA
 YF
 Lo
 xl
@@ -4185,12 +4194,12 @@ YF
 nT
 mi
 MG
-Wb
+TB
 Qo
 dS
 am
 Sp
-Sw
+As
 YF
 hI
 YF
@@ -4948,8 +4957,8 @@ Yd
 KL
 uk
 vz
-xk
-xk
+Ia
+Ia
 uk
 PX
 Oq
@@ -5009,10 +5018,10 @@ hP
 qT
 KL
 ht
-is
+Qc
 ht
-is
-xk
+Qc
+Ia
 PX
 uX
 uX
@@ -5070,7 +5079,7 @@ jq
 kV
 nf
 KL
-is
+Qc
 ht
 ht
 ht
