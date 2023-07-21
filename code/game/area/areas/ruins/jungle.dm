@@ -142,7 +142,7 @@
 	icon_state = "blue"
 
 /area/ruin/jungle/botanicalresearch/crew
-	name = "Forgotten Botanical Research Facility Crew Area"
+	name = "Forgotten Botanical Research Facility Living Space"
 	icon_state = "crew_quarters"
 
 /area/ruin/jungle/botanicalresearch/engineering

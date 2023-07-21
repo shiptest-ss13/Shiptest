@@ -242,7 +242,7 @@
 
 
 /obj/effect/mob_spawn/human/corpse/junglebotany
-	name = "Dead Botanist"
+	name = "Dead Botanical Researcher"
 	id_job = "Botanical Researcher"
 	outfit = /datum/outfit/junglebotany
 

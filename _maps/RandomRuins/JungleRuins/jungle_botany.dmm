@@ -36,6 +36,9 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/botanicalresearch/engineering)
+"aI" = (
+/turf/open/floor/plating/grass/jungle/lit,
+/area/ruin/jungle/botanicalresearch/caves)
 "aO" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/siding/wood{
@@ -329,7 +332,7 @@
 	icon_state = "0-2"
 	},
 /turf/open/floor/concrete/reinforced,
-/area/template_noop)
+/area/ruin/jungle/botanicalresearch/command)
 "gd" = (
 /obj/machinery/light_switch{
 	dir = 6;
@@ -389,7 +392,7 @@
 "gN" = (
 /obj/structure/marker_beacon,
 /turf/open/floor/concrete/pavement,
-/area/template_noop)
+/area/ruin/jungle/botanicalresearch/command)
 "gP" = (
 /obj/item/stack/rods,
 /obj/effect/decal/cleanable/dirt,
@@ -547,7 +550,7 @@
 	dir = 4
 	},
 /turf/open/floor/plating/grass/jungle/lit,
-/area/template_noop)
+/area/ruin/jungle/botanicalresearch/caves)
 "iR" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -632,7 +635,7 @@
 /area/ruin/jungle/botanicalresearch)
 "jS" = (
 /turf/open/floor/concrete/pavement,
-/area/template_noop)
+/area/ruin/jungle/botanicalresearch/command)
 "jU" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light,
@@ -655,7 +658,7 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/concrete/pavement,
-/area/template_noop)
+/area/ruin/jungle/botanicalresearch/command)
 "kt" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 6
@@ -727,7 +730,7 @@
 "lj" = (
 /obj/structure/flora/tree/jungle/small,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/template_noop)
+/area/ruin/jungle/botanicalresearch/caves)
 "lk" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine/dense,
@@ -867,7 +870,7 @@
 /obj/structure/fence/door,
 /obj/structure/barricade/wooden/crude,
 /turf/open/floor/plating/dirt/jungle/lit,
-/area/template_noop)
+/area/ruin/jungle/botanicalresearch/caves)
 "nL" = (
 /obj/structure/spacevine/weak,
 /obj/effect/decal/cleanable/dirt,
@@ -911,7 +914,7 @@
 "nU" = (
 /obj/structure/flora/junglebush/b,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/template_noop)
+/area/ruin/jungle/botanicalresearch/caves)
 "od" = (
 /obj/item/stack/rods,
 /obj/structure/spacevine/weak,
@@ -1416,9 +1419,6 @@
 "tU" = (
 /obj/structure/closet/crate/science,
 /obj/effect/turf_decal/box,
-/obj/effect/spawner/lootdrop/rnd,
-/obj/effect/spawner/lootdrop/rnd,
-/obj/effect/spawner/lootdrop/rnd,
 /obj/effect/spawner/lootdrop/salvage_laser,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/engine/hull/reinforced/interior,
@@ -1467,7 +1467,7 @@
 "ui" = (
 /obj/structure/fence/corner,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/template_noop)
+/area/ruin/jungle/botanicalresearch/caves)
 "uk" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine,
@@ -1551,10 +1551,8 @@
 	},
 /obj/structure/closet/crate/freezer,
 /obj/effect/turf_decal/box,
-/obj/item/seeds/replicapod,
-/obj/item/seeds/replicapod,
-/obj/item/seeds/replicapod,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/seeds/orange_3d,
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ruin/jungle/botanicalresearch/vault)
 "wr" = (
@@ -1664,9 +1662,9 @@
 /obj/structure/closet/crate/rcd,
 /obj/effect/turf_decal/box,
 /obj/item/storage/box/stockparts/t3,
-/obj/item/storage/box/stockparts/t3,
-/obj/item/storage/box/stockparts/t3,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/storage/box/stockparts/t2,
+/obj/item/storage/box/stockparts/t2,
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ruin/jungle/botanicalresearch/vault)
 "yc" = (
@@ -1688,7 +1686,7 @@
 	dir = 8
 	},
 /turf/open/floor/plating/grass/jungle/lit,
-/area/template_noop)
+/area/ruin/jungle/botanicalresearch/caves)
 "yw" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -1737,6 +1735,9 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/reinforced,
 /area/ruin/jungle/botanicalresearch/vault)
+"yS" = (
+/turf/open/floor/plating/dirt/jungle/lit,
+/area/ruin/jungle/botanicalresearch/caves)
 "zm" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -1849,7 +1850,7 @@
 "Bd" = (
 /obj/structure/fence,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/template_noop)
+/area/ruin/jungle/botanicalresearch/caves)
 "Bi" = (
 /obj/machinery/light{
 	dir = 1
@@ -2620,7 +2621,7 @@
 	dir = 4
 	},
 /turf/open/floor/plating/grass/jungle/lit,
-/area/template_noop)
+/area/ruin/jungle/botanicalresearch/caves)
 "MX" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2731,7 +2732,7 @@
 "Op" = (
 /obj/structure/flora/rock/jungle,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/template_noop)
+/area/ruin/jungle/botanicalresearch/caves)
 "Oq" = (
 /obj/structure/spacevine,
 /turf/open/floor/plating/dirt/jungle,
@@ -2786,7 +2787,7 @@
 "OX" = (
 /obj/structure/flora/junglebush/c,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/template_noop)
+/area/ruin/jungle/botanicalresearch/caves)
 "Pd" = (
 /obj/structure/table/reinforced,
 /obj/structure/cable{
@@ -2836,7 +2837,7 @@
 "PR" = (
 /obj/structure/fence/cut/large,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/template_noop)
+/area/ruin/jungle/botanicalresearch/caves)
 "PX" = (
 /obj/machinery/door/poddoor{
 	id = "junglebotany_secpost_exterior"
@@ -3002,7 +3003,7 @@
 	dir = 1
 	},
 /turf/open/floor/plating/grass/jungle/lit,
-/area/template_noop)
+/area/ruin/jungle/botanicalresearch/caves)
 "So" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/hydroponics/constructable,
@@ -3344,11 +3345,11 @@
 "XF" = (
 /obj/structure/flora/junglebush/large,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/template_noop)
+/area/ruin/jungle/botanicalresearch/caves)
 "XH" = (
 /obj/structure/flora/ausbushes/sunnybush,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/template_noop)
+/area/ruin/jungle/botanicalresearch/caves)
 "XO" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/effect/decal/cleanable/dirt,
@@ -3484,7 +3485,7 @@
 "Zq" = (
 /obj/structure/flora/tree/jungle,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/template_noop)
+/area/ruin/jungle/botanicalresearch/caves)
 "Zr" = (
 /obj/item/stack/cable_coil/cut/red,
 /obj/machinery/light/broken{
@@ -3949,7 +3950,7 @@ WE
 WE
 WE
 WE
-Ke
+WE
 Ke
 Ke
 Ke
@@ -4011,7 +4012,7 @@ WE
 WE
 WE
 WE
-Ke
+WE
 Ke
 Ke
 Ke
@@ -4945,7 +4946,7 @@ Oq
 nf
 yF
 XF
-Mx
+aI
 nU
 MV
 Sh
@@ -5006,9 +5007,9 @@ uX
 Oq
 Oq
 oj
-Sb
-Sb
-Mx
+yS
+yS
+aI
 lj
 iM
 "}
@@ -5069,9 +5070,9 @@ uX
 Oq
 yF
 Op
-Sb
-Sb
-Sb
+yS
+yS
+yS
 nJ
 "}
 (26,1,1) = {"
@@ -5130,7 +5131,7 @@ WE
 WE
 WE
 Pl
-Mx
+aI
 lj
 XH
 yl

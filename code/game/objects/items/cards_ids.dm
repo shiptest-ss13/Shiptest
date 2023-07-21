@@ -774,19 +774,19 @@ update_label()
 
 /obj/item/card/id/away/junglebotany
 	name = "forgotten ID card"
-	desc = "An ID card with a faint layer of blood and vines."
+	desc = "An ID card with a thin coating of blood and vines."
 	assignment = "Botanical Research Staff"
 	access = list(ACCESS_AWAY_GENERIC1)
 
 /obj/item/card/id/away/junglebotany/security
 	name = "forgotten security ID card"
-	desc = "An ID card with a faint layer of blood and vines. This one has a shield on it."
+	desc = "An ID card with a thin coating of blood and vines. This one has a shield on it."
 	assignment = "Security Officer"
 	access = list(ACCESS_AWAY_GENERIC1, ACCESS_AWAY_SEC)
 
 /obj/item/card/id/away/junglebotany/command
 	name = "forgotten command ID card"
-	desc = "An ID card with a faint layer of blood and vines. This one has a star on it."
+	desc = "An ID card with a thin coating of blood and vines. This one has a star on it."
 	assignment = "Research Director"
 	access = list(ACCESS_AWAY_GENERIC1, ACCESS_AWAY_SEC, ACCESS_AWAY_GENERIC2)
 
