@@ -331,6 +331,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
+/obj/structure/closet/firecloset,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "du" = (
@@ -994,6 +995,13 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
+"jG" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
+/obj/structure/extinguisher_cabinet/directional/south,
+/turf/open/floor/plasteel/tech,
+/area/ship/hallway/central)
 "jL" = (
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
@@ -1035,6 +1043,13 @@
 "jS" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
+"jT" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
+/obj/structure/extinguisher_cabinet/directional/north,
+/turf/open/floor/plasteel/tech,
+/area/ship/hallway/central)
 "jU" = (
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 10
@@ -1088,7 +1103,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/light/small/directional/east,
-/turf/open/floor/plasteel/tech/grid,
+/turf/open/floor/plating,
 /area/ship/hallway/port)
 "kH" = (
 /obj/effect/turf_decal/industrial/traffic,
@@ -1135,6 +1150,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
+/obj/structure/closet/emcloset,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "lc" = (
@@ -1144,7 +1160,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/turf/open/floor/plasteel/tech/grid,
+/turf/open/floor/plating,
 /area/ship/hallway/central)
 "ln" = (
 /obj/structure/dresser,
@@ -1796,6 +1812,14 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
+"qk" = (
+/obj/machinery/light/small/directional/west,
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/obj/structure/closet/emcloset,
+/turf/open/floor/plasteel/tech,
+/area/ship/hallway/central)
 "qt" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
@@ -2612,7 +2636,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/turf/open/floor/plasteel/tech/grid,
+/turf/open/floor/plating,
 /area/ship/medical)
 "yN" = (
 /obj/structure/chair/office/dark,
@@ -2998,6 +3022,16 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
+"BV" = (
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "valor_external"
+	},
+/obj/structure/closet/crate/bin,
+/turf/open/floor/plating,
+/area/ship/hallway/central)
 "Cb" = (
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 8
@@ -3042,7 +3076,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/turf/open/floor/plasteel/tech/grid,
+/turf/open/floor/plating,
 /area/ship/hallway/port)
 "CF" = (
 /obj/structure/table/optable,
@@ -3971,6 +4005,13 @@
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
+"Ls" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/obj/structure/closet/crate/bin,
+/turf/open/floor/plasteel/tech,
+/area/ship/hallway/central)
 "Lu" = (
 /turf/open/floor/plasteel/white,
 /area/ship/medical/surgery)
@@ -4370,7 +4411,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/light/small/directional/east,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/turf/open/floor/plasteel/tech/grid,
+/turf/open/floor/plating,
 /area/ship/medical)
 "OY" = (
 /obj/effect/turf_decal/industrial/traffic{
@@ -4935,6 +4976,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
+"Vy" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/obj/structure/closet/firecloset,
+/turf/open/floor/plasteel/tech,
+/area/ship/hallway/central)
 "VB" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
@@ -5748,7 +5796,7 @@ Yr
 Zu
 Rh
 Rh
-Rh
+Zu
 uB
 ua
 Wp
@@ -5983,9 +6031,9 @@ EK
 ty
 dp
 DT
-kW
-dr
-kW
+Vy
+qk
+Ls
 DT
 fE
 sJ
@@ -5999,7 +6047,7 @@ jU
 Tw
 kW
 dr
-kW
+Ls
 Tw
 fj
 Qn
@@ -6049,7 +6097,7 @@ mI
 gn
 qZ
 DT
-cW
+jT
 cW
 cW
 Tw
@@ -6065,7 +6113,7 @@ WX
 Tw
 cW
 cW
-cW
+jG
 Tw
 zA
 mx
@@ -6084,7 +6132,7 @@ Ei
 DT
 YL
 YL
-YL
+BV
 DT
 mZ
 Yd
@@ -6583,11 +6631,11 @@ Td
 Td
 Td
 Td
-jS
+nk
 HE
 HE
 HE
-jS
+nk
 Td
 Td
 Td
