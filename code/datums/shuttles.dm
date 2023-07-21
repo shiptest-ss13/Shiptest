@@ -404,7 +404,7 @@
 	file_name = "nanotrasen_zetes"
 	name = "Zetes Delivery Pod"
 	prefix = "NTSV"
-	name_categories = list("NANOTRASE")
+	name_categories = list("NANOTRASEN")
 
 /datum/map_template/shuttle/subshuttles/sugarcube
 	file_name = "independent_sugarcube"
