@@ -32,6 +32,8 @@
 #define DYNAMIC_WORLD_REEBE "reebe" //celestial bodies
 #define DYNAMIC_WORLD_ASTEROID "asteroid"
 #define DYNAMIC_WORLD_SPACERUIN "space"
+#define DYNAMIC_WORLD_GAS_GIANT "gas giant"
+#define DYNAMIC_WORLD_PLASMA_GIANT "plasma giant"
 
 /// Make sure you are adding new planet types to this, in order as seen above preferrably
 #define DYNAMIC_WORLD_LIST_ALL list(\
@@ -44,7 +46,9 @@
 	DYNAMIC_WORLD_WASTEPLANET,\
 	DYNAMIC_WORLD_REEBE,\
 	DYNAMIC_WORLD_ASTEROID,\
-	DYNAMIC_WORLD_SPACERUIN)
+	DYNAMIC_WORLD_SPACERUIN,\
+	DYNAMIC_WORLD_GAS_GIANT,\
+	DYNAMIC_WORLD_PLASMA_GIANT)
 
 //Possible ship states
 #define OVERMAP_SHIP_IDLE "idle"

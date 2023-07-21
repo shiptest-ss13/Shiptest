@@ -108,6 +108,39 @@
 	objective_type = /obj/item/strange_crystal
 
 /*
+Acquire: Anomaly
+*/
+
+/datum/mission/acquire/anomaly
+	name = "Anomaly core requested"
+	weight = 8
+	value = 3000
+	duration = 40 MINUTES
+	dur_mod_range = 0.2
+	container_type = /obj/item/storage/box/anomaly
+	objective_type = /obj/item/assembly/signaler/anomaly
+	num_wanted = 1
+
+/datum/mission/acquire/anomaly/New(...)
+	var/group = pick(list(
+		"Cybersun Industries",
+		"CMM-GOLD",
+		"Nanotrasen Anomalous Studies Division",
+		"The Naturalienwissenschaftlicher Studentenverbindungs-Verband",
+		"The Central Solarian Anomaly Research Agency",
+		"DeForest Medical R&D",
+		"A strange lizard on the outpost"
+	))
+
+	desc = "[group] has requested that a ship [pick(list("procure", "grab", "acquire", "find", "locate"))] \
+	an anomaly core for [pick(list("research", "analysis", "technical development", "closer inspection", "some reason"))]. \
+	They've offered to pay well, so we're relaying this mission to you"
+	. = ..()
+
+
+
+
+/*
 		Acquire: The Creature
 */
 
@@ -184,7 +217,7 @@
 
 /datum/mission/acquire/aquarium
 	name = "Fish needed for my aquarium"
-	weight = 14
+	weight = 6
 	value = 750
 	duration = 60 MINUTES
 	val_mod_range = 0.2
@@ -210,7 +243,7 @@
 
 /datum/mission/acquire/aquarium/rare
 	name = "Rare fish needed for my aquarium!"
-	weight = 8
+	weight = 1
 	value = 1500
 	val_mod_range = 0.3
 
@@ -236,7 +269,7 @@
 
 /datum/mission/acquire/fish_cook
 	name = "Fish needed for my meal"
-	weight = 8
+	weight = 3
 	duration = 40 MINUTES
 	val_mod_range = 0.2
 	objective_type = /obj/item/fish
@@ -307,3 +340,20 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 3
+
+/obj/item/storage/box/anomaly
+	name = "anomaly case"
+	desc = "A metallic box made to store anomaly cores. They aren't always the safest to lug around."
+	icon = 'icons/obj/nuke_tools.dmi'
+	icon_state = "core_container_sealed" //it'd be neat if I could figure out how to make this seal but that's a problem for me in 6 months
+	item_state = "tile"
+	lefthand_file = 'icons/mob/inhands/misc/tiles_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/misc/tiles_righthand.dmi'
+	foldable = null
+
+/obj/item/storage/box/anomaly/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_combined_w_class = WEIGHT_CLASS_NORMAL
+	STR.max_w_class = WEIGHT_CLASS_NORMAL
+	STR.max_items = 1

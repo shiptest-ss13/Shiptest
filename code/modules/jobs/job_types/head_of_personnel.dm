@@ -54,8 +54,6 @@
 
 /datum/outfit/job/head_of_personnel/pre_equip(mob/living/carbon/human/H)
 	..()
-	if(locate(/datum/holiday/ianbirthday) in SSevents.holidays)
-		undershirt = /datum/sprite_accessory/undershirt/ian
 
 /datum/outfit/job/head_of_personnel/nt
 	name = "First Officer (Nanotrasen)"
