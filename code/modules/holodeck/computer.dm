@@ -98,7 +98,7 @@ and clear when youre done! if you dont i will use :newspaper2: on you
 
 	// the following is necessary for power reasons
 	if(!linked)
-		log_world("No matching holodeck area found")
+		log_mapping("No matching holodeck area found")
 		qdel(src)
 		return
 	else if (!offline_program)
