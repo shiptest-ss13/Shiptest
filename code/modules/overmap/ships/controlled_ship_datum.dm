@@ -119,8 +119,9 @@
 		QDEL_NULL(shipkey)
 	QDEL_LIST(manifest)
 	job_slots.Cut()
-	QDEL_NULL(owner_act)
 	for(var/a_key in applications)
+		if(isnull(applications[a_key]))
+			continue
 		// it handles removal itself
 		qdel(applications[a_key])
 	LAZYCLEARLIST(applications)
