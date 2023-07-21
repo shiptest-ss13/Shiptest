@@ -37,10 +37,10 @@
 	/// What's actually written on the paper.
 	var/info = ""
 	/**
-	 * What's been written on the paper by things other than players.
-	 * Will be sanitized by the UI, and finally
-	 * added to info when the user edits the paper text.
-	 */
+	* What's been written on the paper by things other than players.
+	* Will be sanitized by the UI, and finally
+	* added to info when the user edits the paper text.
+	*/
 	var/list/add_info
 	/// The font color, face and the signature of the above.
 	var/list/add_info_style

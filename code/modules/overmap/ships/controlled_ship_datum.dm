@@ -59,7 +59,7 @@
 	/// Short memo of the ship shown to new joins
 	var/memo = null
 	///Assoc list of remaining open job slots (job = remaining slots)
-	var/list/job_slots = list(new /datum/job/captain() = 1, new /datum/job/assistant() = 5)
+	var/list/job_slots
 	///Time that next job slot change can occur
 	COOLDOWN_DECLARE(job_slot_adjustment_cooldown)
 
@@ -118,7 +118,7 @@
 	if(!QDELETED(shipkey))
 		QDEL_NULL(shipkey)
 	QDEL_LIST(manifest)
-	QDEL_LIST(job_slots)
+	job_slots.Cut()
 	QDEL_NULL(owner_act)
 	for(var/a_key in applications)
 		// it handles removal itself

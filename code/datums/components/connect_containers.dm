@@ -5,9 +5,9 @@
 	/// An assoc list of signal -> procpath to register to the loc this object is on.
 	var/list/connections
 	/**
-	 * The atom the component is tracking. The component will delete itself if the tracked is deleted.
-	 * Signals will also be updated whenever it moves.
-	 */
+	* The atom the component is tracking. The component will delete itself if the tracked is deleted.
+	* Signals will also be updated whenever it moves.
+	*/
 	var/atom/movable/tracked
 
 /datum/component/connect_containers/Initialize(atom/movable/tracked, list/connections)

@@ -308,7 +308,6 @@
 	category = "shiptest"
 
 /datum/map_template/shuttle/custom
-	job_slots = list(new /datum/job/assistant = 5) // There will already be a captain, probably!
 	file_name = "custom_shuttle" // Dummy
 
 /// Syndicate Infiltrator variants
