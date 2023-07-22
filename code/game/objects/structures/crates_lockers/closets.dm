@@ -151,6 +151,8 @@
 	return TRUE
 
 /obj/structure/closet/dump_contents()
+	if(!isturf(loc))
+		return
 	var/atom/L = drop_location()
 	for(var/atom/movable/AM as anything in src)
 		AM.forceMove(L)
