@@ -1240,6 +1240,10 @@
 	. = ..()
 	jump = new(src)
 
+/obj/item/clothing/suit/space/hardsuit/quixote/Destroy()
+	QDEL_NULL(jump)
+	return ..()
+
 /obj/item/clothing/suit/space/hardsuit/quixote/equipped(mob/user, slot)
 	. = ..()
 	if(slot == ITEM_SLOT_OCLOTHING)
