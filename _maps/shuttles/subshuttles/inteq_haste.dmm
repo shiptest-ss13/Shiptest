@@ -3,9 +3,6 @@
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
 "f" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
 /obj/machinery/power/shieldwallgen/atmos{
 	id = "haste_holo";
 	anchored = 1
@@ -15,15 +12,21 @@
 	id = "haste_door"
 	},
 /obj/structure/cable{
-	icon_state = "0-4"
+	icon_state = "0-8"
 	},
-/turf/open/floor/engine/hull,
-/area/ship/bridge)
-"i" = (
-/obj/structure/cable/yellow{
+/obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/closed/wall/mineral/plastitanium,
+/obj/structure/cable{
+	icon_state = "4-10"
+	},
+/obj/docking_port/mobile{
+	dir = 8;
+	name = "ambulance dock";
+	port_direction = 2;
+	preferred_direction = 8
+	},
+/turf/open/floor/engine/hull,
 /area/ship/bridge)
 "s" = (
 /obj/structure/chair/comfy/shuttle{
@@ -94,21 +97,6 @@
 /obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
-"J" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	icon_state = "4-10"
-	},
-/obj/docking_port/mobile{
-	dir = 8;
-	name = "ambulance dock";
-	port_direction = 2;
-	preferred_direction = 8
-	},
-/turf/open/floor/engine/hull/interior,
-/area/ship/bridge)
 "K" = (
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
@@ -127,6 +115,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "5-8"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -150,9 +141,6 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "R" = (
-/obj/structure/cable{
-	icon_state = "5-8"
-	},
 /obj/machinery/power/shieldwallgen/atmos{
 	dir = 1;
 	id = "haste_holo";
@@ -163,7 +151,7 @@
 	id = "haste_door"
 	},
 /obj/structure/cable{
-	icon_state = "0-4"
+	icon_state = "0-8"
 	},
 /turf/open/floor/engine/hull,
 /area/ship/bridge)
@@ -174,9 +162,6 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
 	},
-/turf/open/floor/engine/hull/interior,
-/area/ship/bridge)
-"W" = (
 /turf/open/floor/engine/hull/interior,
 /area/ship/bridge)
 "Y" = (
@@ -221,14 +206,8 @@ M
 F
 "}
 (5,1,1) = {"
-i
+T
 f
 R
-i
-"}
-(6,1,1) = {"
-T
-J
-W
 T
 "}
