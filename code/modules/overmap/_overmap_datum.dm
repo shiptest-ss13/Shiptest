@@ -43,7 +43,7 @@
 	if(!position)
 		position = SSovermap.get_unused_overmap_square(force = TRUE)
 
-	SSovermap.overmap_objects += src
+	SSovermap.overmap_objects |= src
 
 	contents = list()
 
@@ -279,7 +279,7 @@
 		SSovermap.overmap_container[x][y] -= src
 	x = null
 	y = null
-	dock_target.contents += src
+	dock_target.contents |= src
 	docked_to = dock_target
 	token.abstract_move(dock_target.token)
 
