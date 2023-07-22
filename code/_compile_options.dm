@@ -41,7 +41,7 @@
 #define GC_FAILURE_HARD_LOOKUP
 #endif // REFERENCE_DOING_IT_LIVE
 
-//#define UNIT_TESTS //Enables unit tests via TEST_RUN_PARAMETER
+#define UNIT_TESTS //Enables unit tests via TEST_RUN_PARAMETER
 
 #ifndef PRELOAD_RSC				//set to:
 #define PRELOAD_RSC 2			//	0 to allow using external resources or on-demand behaviour;

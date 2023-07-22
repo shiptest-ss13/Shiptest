@@ -54,6 +54,7 @@
 
 /datum/species/golem/random
 	name = "Random Golem"
+	id = "random golem"
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN
 	var/static/list/random_golem_types
 

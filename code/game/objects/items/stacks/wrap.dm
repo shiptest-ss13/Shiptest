@@ -5,7 +5,8 @@
  */
 
 /obj/item/stack/wrapping_paper
-	name = "wrapping paper"
+	name = "wrapping paper roll"
+	singular_name = "wrapping sheet"
 	desc = "Wrap packages with this festive paper to make gifts."
 	icon = 'icons/obj/stack_objects.dmi'
 	icon_state = "wrap_paper"
