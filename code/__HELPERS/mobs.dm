@@ -5,43 +5,31 @@
 /proc/random_eye_color()
 	switch(pick(20;"brown",20;"hazel",20;"grey",15;"blue",15;"green",1;"amber",1;"albino"))
 		if("brown")
-			return "630"
+			return "663300"
 		if("hazel")
-			return "542"
+			return "554422"
 		if("grey")
-			return pick("666","777","888","999","aaa","bbb","ccc")
+			return pick("666666","777777","888888","999999","aaaaaa","bbbbbb","cccccc")
 		if("blue")
-			return "36c"
+			return "3366cc"
 		if("green")
-			return "060"
+			return "006600"
 		if("amber")
-			return "fc0"
+			return "ffcc00"
 		if("albino")
-			return pick("c","d","e","f") + pick("0","1","2","3","4","5","6","7","8","9") + pick("0","1","2","3","4","5","6","7","8","9")
+			return pick("cc","dd","ee","ff") + pick("00","11","22","33","44","55","66","77","88","99") + pick("00","11","22","33","44","55","66","77","88","99")
 		else
-			return "000"
+			return "000000"
 
 /proc/random_underwear(gender)
 	if(!GLOB.underwear_list.len)
-		init_sprite_accessory_subtypes(/datum/sprite_accessory/underwear, GLOB.underwear_list, GLOB.underwear_m, GLOB.underwear_f)
-	switch(gender)
-		if(MALE)
-			return pick(GLOB.underwear_m)
-		if(FEMALE)
-			return pick(GLOB.underwear_f)
-		else
-			return pick(GLOB.underwear_list)
+		init_sprite_accessory_subtypes(/datum/sprite_accessory/underwear, GLOB.underwear_list)
+	return pick(GLOB.underwear_list)
 
-/proc/random_undershirt(gender)
+/proc/random_undershirt()
 	if(!GLOB.undershirt_list.len)
-		init_sprite_accessory_subtypes(/datum/sprite_accessory/undershirt, GLOB.undershirt_list, GLOB.undershirt_m, GLOB.undershirt_f)
-	switch(gender)
-		if(MALE)
-			return pick(GLOB.undershirt_m)
-		if(FEMALE)
-			return pick(GLOB.undershirt_f)
-		else
-			return pick(GLOB.undershirt_list)
+		init_sprite_accessory_subtypes(/datum/sprite_accessory/undershirt, GLOB.undershirt_list)
+	return pick(GLOB.undershirt_list)
 
 /proc/random_socks()
 	if(!GLOB.socks_list.len)
@@ -109,7 +97,6 @@
 	return list(
 		"body_markings" = pick(GLOB.body_markings_list),
 		"body_size" = pick(GLOB.body_sizes),
-		"caps" = pick(GLOB.caps_list),
 		"ears" = "None",
 		"elzu_horns" = pick(GLOB.elzu_horns_list),
 		"ethcolor" = GLOB.color_list_ethereal[pick(GLOB.color_list_ethereal)],

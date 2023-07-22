@@ -16,7 +16,7 @@
 /obj/item/clothing/under/pants/mustangjeans
 	name = "Must Hang jeans"
 	desc = "Made in the finest space jeans factory this side of Alpha Centauri."
-	icon_state = "jeansmustang"
+	icon_state = "jeans"
 	custom_price = 180
 
 /obj/item/clothing/under/pants/blackjeans
@@ -27,7 +27,7 @@
 /obj/item/clothing/under/pants/youngfolksjeans
 	name = "Young Folks jeans"
 	desc = "For those tired of boring old jeans. Relive the passion of your youth!"
-	icon_state = "jeansyoungfolks"
+	icon_state = "jeansclassic"
 
 /obj/item/clothing/under/pants/white
 	name = "white pants"
@@ -47,7 +47,7 @@
 /obj/item/clothing/under/pants/tan
 	name = "tan pants"
 	desc = "Some tan pants. You look like a white collar worker with these on."
-	icon_state = "tanpants"
+	icon_state = "khaki"
 
 /obj/item/clothing/under/pants/track
 	name = "track pants"

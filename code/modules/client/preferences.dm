@@ -68,21 +68,23 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/real_name						//our character's name
 	var/gender = MALE					//gender of character (well duh)
 	var/age = 30						//age of character
-	var/underwear = "Nude"				//underwear type
-	var/underwear_color = "000"			//underwear color
-	var/undershirt = "Nude"				//undershirt type
-	var/socks = "Nude"					//socks type
-	var/backpack = DBACKPACK				//backpack type
+	var/underwear = "Nude"				//Type of underwear
+	var/underwear_color = "000"			//Greyscale color of underwear
+	var/undershirt = "Nude"				//Type of undershirt
+	var/undershirt_color = "000"		//Greyscale color of undershirt
+	var/socks = "Nude"					//Type of socks
+	var/socks_color = "000"				//Greyscale color of socks
+	var/backpack = DBACKPACK			//Type of backpack
 	var/jumpsuit_style = PREF_SUIT		//suit/skirt
 	var/exowear = PREF_EXOWEAR			//exowear
 	var/hairstyle = "Bald"				//Hair type
 	var/hair_color = "000"				//Hair color
-	var/facial_hairstyle = "Shaved"	//Face hair type
+	var/facial_hairstyle = "Shaved"		//Face hair type
 	var/facial_hair_color = "000"		//Facial hair color
 	var/skin_tone = "caucasian1"		//Skin color
 	var/eye_color = "000"				//Eye color
 	var/datum/species/pref_species = new /datum/species/human()	//Mutant race
-	var/species_looking_at = "human" //used as a helper to keep track of in the species select thingy
+	var/species_looking_at = "human"	 //used as a helper to keep track of in the species select thingy
 	var/list/features = list(
 							"mcolor" = "FFF",
 							"mcolor2" = "FFF",
@@ -120,13 +122,37 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							"flavor_text" = "",
 							"body_size" = "Normal"
 						)
-	var/list/randomise = list(RANDOM_UNDERWEAR = TRUE, RANDOM_UNDERWEAR_COLOR = TRUE, RANDOM_UNDERSHIRT = TRUE, RANDOM_SOCKS = TRUE, RANDOM_BACKPACK = TRUE, RANDOM_JUMPSUIT_STYLE = TRUE, RANDOM_EXOWEAR_STYLE = TRUE, RANDOM_HAIRSTYLE = TRUE, RANDOM_HAIR_COLOR = TRUE, RANDOM_FACIAL_HAIRSTYLE = TRUE, RANDOM_FACIAL_HAIR_COLOR = TRUE, RANDOM_SKIN_TONE = TRUE, RANDOM_EYE_COLOR = TRUE)
-	var/list/friendlyGenders = list("Male" = "male", "Female" = "female", "Other" = "plural")
+	var/list/randomise = list(
+							RANDOM_UNDERWEAR = TRUE,
+							RANDOM_UNDERWEAR_COLOR = TRUE,
+							RANDOM_UNDERSHIRT = TRUE,
+							RANDOM_UNDERSHIRT_COLOR = TRUE,
+							RANDOM_SOCKS = TRUE,
+							RANDOM_SOCKS_COLOR = TRUE,
+							RANDOM_BACKPACK = TRUE,
+							RANDOM_JUMPSUIT_STYLE = TRUE,
+							RANDOM_EXOWEAR_STYLE = TRUE,
+							RANDOM_HAIRSTYLE = TRUE,
+							RANDOM_HAIR_COLOR = TRUE,
+							RANDOM_FACIAL_HAIRSTYLE = TRUE,
+							RANDOM_FACIAL_HAIR_COLOR = TRUE,
+							RANDOM_SKIN_TONE = TRUE,
+							RANDOM_EYE_COLOR = TRUE,
+						)
+	var/list/friendlyGenders = list(
+							"Male" = "male",
+							"Female" = "female",
+							"Other" = "plural"
+						)
+	var/list/prosthetic_limbs = list(
+							BODY_ZONE_L_ARM = PROSTHETIC_NORMAL,
+							BODY_ZONE_R_ARM = PROSTHETIC_NORMAL,
+							BODY_ZONE_L_LEG = PROSTHETIC_NORMAL,
+							BODY_ZONE_R_LEG = PROSTHETIC_NORMAL
+						)
 	var/fbp = FALSE
-	var/list/prosthetic_limbs = list(BODY_ZONE_L_ARM = PROSTHETIC_NORMAL, BODY_ZONE_R_ARM = PROSTHETIC_NORMAL, BODY_ZONE_L_LEG = PROSTHETIC_NORMAL, BODY_ZONE_R_LEG = PROSTHETIC_NORMAL)
 	var/phobia = "spiders"
 	var/list/alt_titles_preferences = list()
-
 	var/list/custom_names = list()
 	var/preferred_ai_core_display = "Blue"
 	var/prefered_security_department = SEC_DEPT_RANDOM
@@ -363,19 +389,23 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_SPECIES]'>Always Random Species: [(randomise[RANDOM_SPECIES]) ? "Yes" : "No"]</A><br>"
 
 			if(!(NO_UNDERWEAR in pref_species.species_traits))
-				dat += "<b>Underwear:</b><BR><a href ='?_src_=prefs;preference=underwear;task=input'>[underwear]</a>"
-				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_UNDERWEAR]'>[(randomise[RANDOM_UNDERWEAR]) ? "Lock" : "Unlock"]</A>"
+				dat += "<b>Underwear:</b><br><a href ='?_src_=prefs;preference=underwear;task=input'>[underwear]</a>"
+				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_UNDERWEAR]'>[(randomise[RANDOM_UNDERWEAR]) ? "Lock" : "Unlock"]</A><br>"
 
-				dat += "<br><b>Underwear Color:</b><BR><span style='border: 1px solid #161616; background-color: #[underwear_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=underwear_color;task=input'>Change</a>"
-				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_UNDERWEAR_COLOR]'>[(randomise[RANDOM_UNDERWEAR_COLOR]) ? "Lock" : "Unlock"]</A>"
+				dat += "<b>Underwear Color:</b><br><span style='border: 1px solid #161616; background-color: #[underwear_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=underwear_color;task=input'>Change</a>"
+				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_UNDERWEAR_COLOR]'>[(randomise[RANDOM_UNDERWEAR_COLOR]) ? "Lock" : "Unlock"]</A><br>"
 
-				dat += "<BR><b>Undershirt:</b><BR><a href ='?_src_=prefs;preference=undershirt;task=input'>[undershirt]</a>"
-				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_UNDERSHIRT]'>[(randomise[RANDOM_UNDERSHIRT]) ? "Lock" : "Unlock"]</A>"
+				dat += "<b>Undershirt:</b><br><a href ='?_src_=prefs;preference=undershirt;task=input'>[undershirt]</a>"
+				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_UNDERSHIRT]'>[(randomise[RANDOM_UNDERSHIRT]) ? "Lock" : "Unlock"]</A><br>"
 
+				dat += "<b>Undershirt Color:</b><br><span style='border: 1px solid #161616; background-color: #[undershirt_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=undershirt_color;task=input'>Change</a>"
+				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_UNDERSHIRT_COLOR]'>[(randomise[RANDOM_UNDERSHIRT_COLOR]) ? "Lock" : "Unlock"]</A><br>"
 
-				dat += "<br><b>Socks:</b><BR><a href ='?_src_=prefs;preference=socks;task=input'>[socks]</a>"
-				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_SOCKS]'>[(randomise[RANDOM_SOCKS]) ? "Lock" : "Unlock"]</A><BR></td>"
+				dat += "<b>Socks:</b><br><a href ='?_src_=prefs;preference=socks;task=input'>[socks]</a>"
+				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_SOCKS]'>[(randomise[RANDOM_SOCKS]) ? "Lock" : "Unlock"]</A><br>"
 
+				dat += "<b>Socks Color:</b><br><span style='border: 1px solid #161616; background-color: #[socks_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=socks_color;task=input'>Change</a>"
+				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_SOCKS_COLOR]'>[(randomise[RANDOM_SOCKS_COLOR]) ? "Lock" : "Unlock"]</A></td>"
 
 			dat += APPEARANCE_CATEGORY_COLUMN
 
@@ -1457,7 +1487,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				pref_species = new newtype()
 				//Now that we changed our species, we must verify that the mutant colour is still allowed.
 				var/temp_hsv = RGBtoHSV(features["mcolor"])
-				if(features["mcolor"] == "#000" || (!(MUTCOLORS_PARTSONLY in pref_species.species_traits) && ReadHSV(temp_hsv)[3] < ReadHSV("#191919")[3]))
+				if(text2num(features["mcolor"], 16) == 0  || (!(MUTCOLORS_PARTSONLY in pref_species.species_traits) && ReadHSV(temp_hsv)[3] < ReadHSV("#191919")[3]))
 					features["mcolor"] = pref_species.default_color
 				user << browse(null, "window=speciespick")
 				ShowChoices(user)
@@ -1544,21 +1574,25 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if("age")
 					age = rand(pref_species.species_age_min, pref_species.species_age_max)
 				if("hair")
-					hair_color = random_short_color()
+					hair_color = random_color_natural()
 				if("hairstyle")
 					hairstyle = random_hairstyle(gender)
 				if("facial")
-					facial_hair_color = random_short_color()
+					facial_hair_color = random_color_natural()
 				if("facial_hairstyle")
 					facial_hairstyle = random_facial_hairstyle(gender)
 				if("underwear")
 					underwear = random_underwear(gender)
 				if("underwear_color")
-					underwear_color = random_short_color()
+					underwear_color = random_color()
 				if("undershirt")
 					undershirt = random_undershirt(gender)
+				if("undershirt_color")
+					undershirt_color = random_short_color()
 				if("socks")
 					socks = random_socks()
+				if("socks_color")
+					socks_color = random_short_color()
 				if("eyes")
 					eye_color = random_eye_color()
 				if("s_tone")
@@ -1711,12 +1745,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				if("underwear")
 					var/new_underwear
-					if(gender == MALE)
-						new_underwear = input(user, "Choose your character's underwear:", "Character Preference")  as null|anything in GLOB.underwear_m
-					else if(gender == FEMALE)
-						new_underwear = input(user, "Choose your character's underwear:", "Character Preference")  as null|anything in GLOB.underwear_f
-					else
-						new_underwear = input(user, "Choose your character's underwear:", "Character Preference")  as null|anything in GLOB.underwear_list
+					new_underwear = input(user, "Choose your character's underwear:", "Character Preference")  as null|anything in GLOB.underwear_list
 					if(new_underwear)
 						underwear = new_underwear
 
@@ -1727,20 +1756,25 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				if("undershirt")
 					var/new_undershirt
-					if(gender == MALE)
-						new_undershirt = input(user, "Choose your character's undershirt:", "Character Preference") as null|anything in GLOB.undershirt_m
-					else if(gender == FEMALE)
-						new_undershirt = input(user, "Choose your character's undershirt:", "Character Preference") as null|anything in GLOB.undershirt_f
-					else
-						new_undershirt = input(user, "Choose your character's undershirt:", "Character Preference") as null|anything in GLOB.undershirt_list
+					new_undershirt = input(user, "Choose your character's undershirt:", "Character Preference") as null|anything in GLOB.undershirt_list
 					if(new_undershirt)
 						undershirt = new_undershirt
+
+				if("undershirt_color")
+					var/new_undershirt_color = input(user, "Choose your character's underwear color:", "Character Preference","#"+undershirt_color) as color|null
+					if(new_undershirt_color)
+						undershirt_color = sanitize_hexcolor(new_undershirt_color)
 
 				if("socks")
 					var/new_socks
 					new_socks = input(user, "Choose your character's socks:", "Character Preference") as null|anything in GLOB.socks_list
 					if(new_socks)
 						socks = new_socks
+
+				if("socks_color")
+					var/new_socks_color = input(user, "Choose your character's underwear color:", "Character Preference","#"+socks_color) as color|null
+					if(new_socks_color)
+						socks_color = sanitize_hexcolor(new_socks_color)
 
 				if("eyes")
 					var/new_eyes = input(user, "Choose your character's eye colour:", "Character Preference","#"+eye_color) as color|null
@@ -2368,7 +2402,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	character.underwear = underwear
 	character.underwear_color = underwear_color
 	character.undershirt = undershirt
+	character.undershirt_color = undershirt_color
 	character.socks = socks
+	character.socks_color = socks_color
 
 	character.backpack = backpack
 

@@ -22,7 +22,6 @@
 	var/obj/item/clothing/accessory/attached_accessory
 	var/mutable_appearance/accessory_overlay
 	var/freshly_laundered = FALSE
-
 	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/under/worn_overlays(isinhands = FALSE)
