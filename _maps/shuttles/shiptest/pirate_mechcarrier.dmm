@@ -244,10 +244,6 @@
 	pixel_y = 6;
 	dir = 8
 	},
-/obj/item/spacepod_key{
-	pixel_x = -7;
-	pixel_y = -9
-	},
 /obj/machinery/light/small/directional/east,
 /obj/machinery/airalarm/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -369,9 +365,6 @@
 /turf/open/floor/plating,
 /area/ship/crew/canteen)
 "do" = (
-/obj/structure/railing/corner{
-	dir = 4
-	},
 /obj/effect/turf_decal/industrial/loading{
 	dir = 8
 	},
@@ -391,7 +384,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/plating/catwalk_floor,
-/area/ship/crew/canteen)
+/area/ship/crew/dorm)
 "dE" = (
 /obj/effect/turf_decal/corner/opaque/yellow/half{
 	dir = 1
@@ -499,7 +492,8 @@
 	},
 /obj/machinery/door/poddoor{
 	id = "cargopirate_thrusters";
-	name = "Thruster Blast Door"
+	name = "Thruster Blast Door";
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -612,9 +606,6 @@
 	},
 /area/ship/crew/dorm)
 "fZ" = (
-/obj/item/radio/intercom/directional/north{
-	pixel_y = 23
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
@@ -624,6 +615,7 @@
 /obj/effect/turf_decal/spline/fancy/opaque/brown{
 	dir = 1
 	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "ga" = (
@@ -1063,7 +1055,6 @@
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/crew/dorm)
 "jU" = (
-/obj/machinery/light/directional/south,
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
@@ -1149,7 +1140,8 @@
 /obj/structure/window/plasma/reinforced/spawner/east,
 /obj/machinery/door/poddoor{
 	id = "cargopirate_thrusters";
-	name = "Thruster Blast Door"
+	name = "Thruster Blast Door";
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -1484,10 +1476,6 @@
 /area/ship/cargo/office)
 "pM" = (
 /obj/structure/rack,
-/obj/structure/railing{
-	dir = 1;
-	layer = 4.1
-	},
 /obj/item/storage/toolbox/electrical,
 /obj/item/storage/belt/utility/full/engi,
 /obj/item/clothing/glasses/welding{
@@ -1584,6 +1572,10 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/railing{
+	dir = 6;
+	layer = 3.1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "qN" = (
@@ -1836,6 +1828,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
+/obj/structure/railing,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "sV" = (
@@ -1858,12 +1851,12 @@
 	dir = 2
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
+/obj/item/clothing/suit/space/hardsuit/security/independent/frontier,
 /obj/structure/railing{
 	dir = 1;
-	layer = 4.1
+	layer = 2.8
 	},
 /obj/machinery/suit_storage_unit/inherit,
-/obj/item/clothing/suit/space/hardsuit/security/independent/frontier,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security)
 "tr" = (
@@ -1898,12 +1891,12 @@
 	dir = 2
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
+/obj/item/clothing/suit/space/hardsuit/mining,
 /obj/structure/railing{
 	dir = 1;
-	layer = 4.1
+	layer = 2.8
 	},
 /obj/machinery/suit_storage_unit/inherit,
-/obj/item/clothing/suit/space/hardsuit/mining,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security)
 "ub" = (
@@ -1911,12 +1904,20 @@
 	dir = 5
 	},
 /obj/item/radio/intercom/wideband/directional/east,
-/obj/machinery/light/directional/north,
 /obj/structure/plaque/static_plaque/golden/captain{
 	pixel_y = 29
 	},
 /obj/machinery/computer/cargo/express,
 /turf/open/floor/wood,
+/area/ship/bridge)
+"uj" = (
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "cargopirate_bridge";
+	name = "Blast Shutters";
+	dir = 4
+	},
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/turf/open/floor/plating,
 /area/ship/bridge)
 "uo" = (
 /obj/machinery/power/terminal{
@@ -1979,9 +1980,6 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "uS" = (
-/obj/structure/railing/corner{
-	dir = 1
-	},
 /obj/effect/turf_decal/steeldecal/steel_decals1,
 /obj/effect/turf_decal/steeldecal/steel_decals10{
 	dir = 10
@@ -2064,6 +2062,10 @@
 /obj/structure/table/reinforced{
 	color = "#c1b6a5"
 	},
+/obj/structure/railing{
+	dir = 6;
+	layer = 3.1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "vT" = (
@@ -2112,7 +2114,9 @@
 /obj/structure/railing/corner{
 	dir = 8
 	},
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/airlock/hatch{
+	dir = 4
+	},
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
@@ -2147,10 +2151,6 @@
 	},
 /area/ship/cargo)
 "wV" = (
-/obj/structure/railing{
-	dir = 8;
-	layer = 4.1
-	},
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 8
 	},
@@ -2181,6 +2181,7 @@
 	pixel_x = -5;
 	pixel_y = 2
 	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/wood,
 /area/ship/bridge)
 "xk" = (
@@ -2471,10 +2472,6 @@
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "Ao" = (
-/obj/structure/railing{
-	dir = 8;
-	layer = 4.1
-	},
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
@@ -2585,10 +2582,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/science/robotics)
 "Cx" = (
-/obj/structure/railing{
-	dir = 1;
-	layer = 4.1
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
@@ -2733,9 +2726,7 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/item/radio/intercom/directional/north{
-	pixel_y = 23
-	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/science/robotics)
 "EI" = (
@@ -2871,14 +2862,14 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "GJ" = (
-/obj/structure/railing{
-	dir = 1;
-	layer = 4.1
-	},
-/turf/open/floor/plasteel/stairs{
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "cargopirate_bridge";
+	name = "Blast Shutters";
 	dir = 4
 	},
-/area/ship/engineering)
+/turf/open/floor/plating,
+/area/ship/bridge)
 "GO" = (
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /obj/machinery/atmospherics/pipe/layer_manifold{
@@ -3016,6 +3007,7 @@
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/structure/closet/crate/radiation,
 /obj/item/stack/sheet/mineral/uranium,
+/obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "IF" = (
@@ -3062,9 +3054,6 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 5
 	},
-/obj/item/radio/intercom/directional/north{
-	pixel_y = 23
-	},
 /obj/machinery/computer/secure_data/laptop{
 	pixel_x = -35;
 	pixel_y = 1
@@ -3090,6 +3079,11 @@
 	},
 /obj/structure/table/reinforced{
 	color = "#c1b6a5"
+	},
+/obj/item/radio/intercom/directional/north,
+/obj/structure/railing{
+	dir = 4;
+	layer = 3.1
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -3160,7 +3154,6 @@
 /area/ship/bridge)
 "JN" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/extinguisher_cabinet/directional/north,
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
@@ -3168,6 +3161,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/brown,
+/obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "JU" = (
@@ -3215,10 +3209,6 @@
 /turf/open/floor/plating,
 /area/ship/cargo)
 "KK" = (
-/obj/structure/railing{
-	dir = 2;
-	layer = 4.1
-	},
 /turf/open/floor/plasteel/stairs{
 	dir = 4
 	},
@@ -3525,10 +3515,6 @@
 	},
 /area/ship/bridge)
 "Ow" = (
-/obj/structure/railing{
-	dir = 8;
-	layer = 4.1
-	},
 /obj/effect/turf_decal/techfloor,
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 8
@@ -3589,9 +3575,6 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "Pi" = (
-/obj/structure/railing/corner{
-	dir = 4
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -3603,6 +3586,7 @@
 /obj/effect/turf_decal/spline/fancy/opaque/brown{
 	dir = 1
 	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "Pm" = (
@@ -3616,7 +3600,6 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "Pv" = (
-/obj/structure/railing/corner,
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
@@ -3724,7 +3707,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/cobweb,
 /turf/open/floor/plasteel/showroomfloor,
-/area/ship/crew/canteen)
+/area/ship/crew/dorm)
 "QC" = (
 /obj/item/flashlight/lamp{
 	pixel_x = -6;
@@ -3775,9 +3758,7 @@
 /obj/structure/sign/poster/contraband/random{
 	pixel_x = -32
 	},
-/obj/item/radio/intercom/directional/north{
-	pixel_y = 23
-	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "QR" = (
@@ -3825,10 +3806,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "Rf" = (
-/obj/structure/railing{
-	dir = 1;
-	layer = 4.1
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
@@ -3871,7 +3848,8 @@
 	},
 /obj/machinery/door/poddoor{
 	id = "cargopirate_thrusters";
-	name = "Thruster Blast Door"
+	name = "Thruster Blast Door";
+	dir = 4
 	},
 /obj/machinery/door/window/eastright{
 	name = "Engine Access"
@@ -3917,6 +3895,10 @@
 	color = "#c1b6a5"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/railing{
+	dir = 4;
+	layer = 3.1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "Ss" = (
@@ -4030,10 +4012,6 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "TK" = (
-/obj/structure/railing{
-	dir = 1;
-	layer = 4.1
-	},
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 1
 	},
@@ -4091,9 +4069,6 @@
 	},
 /obj/item/kirbyplants{
 	icon_state = "plant-21"
-	},
-/obj/structure/sign/poster/contraband/rebels_unite{
-	pixel_y = 32
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/brown{
 	dir = 1
@@ -4181,7 +4156,9 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/science/robotics)
 "Vt" = (
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/airlock/hatch{
+	dir = 4
+	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/door/firedoor,
 /turf/open/floor/plasteel/showroomfloor,
@@ -4199,9 +4176,6 @@
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "VX" = (
-/obj/structure/railing/corner{
-	dir = 1
-	},
 /obj/effect/turf_decal/steeldecal/steel_decals10{
 	dir = 9
 	},
@@ -4347,10 +4321,6 @@
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "Xz" = (
-/obj/structure/railing{
-	dir = 8;
-	layer = 4.1
-	},
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 8
 	},
@@ -4616,7 +4586,7 @@ lj
 RH
 CH
 oK
-GJ
+KK
 KK
 CH
 CH
@@ -5228,10 +5198,10 @@ NS
 SD
 GV
 rX
-ka
-ka
-ka
-ka
+oy
+oy
+oy
+oy
 XG
 XG
 "}
@@ -5247,10 +5217,10 @@ La
 Vi
 er
 CD
-ka
+oy
 Qw
 dy
-ka
+oy
 XG
 XG
 "}
@@ -5389,10 +5359,10 @@ XG
 "}
 (45,1,1) = {"
 XG
-Zg
-Zg
-Zg
-Zg
+GJ
+GJ
+uj
+GJ
 XG
 XG
 XG
