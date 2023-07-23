@@ -106,6 +106,8 @@
 	SSovermap.controlled_ships += src
 
 /datum/overmap/ship/controlled/Destroy()
+	//SHOULD be called first
+	. = ..()
 	SSovermap.controlled_ships -= src
 	helms.Cut()
 	LAZYCLEARLIST(owner_candidates)
@@ -127,7 +129,6 @@
 	LAZYCLEARLIST(applications)
 	// set ourselves to ownerless to unregister signals
 	set_owner_mob(null)
-	return ..()
 
 /datum/overmap/ship/controlled/get_jump_to_turf()
 	return get_turf(shuttle_port)
