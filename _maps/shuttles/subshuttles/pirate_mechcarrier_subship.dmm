@@ -50,10 +50,8 @@
 	dir = 8;
 	layer = 4.1
 	},
-/obj/machinery/light/dim,
-/obj/structure/extinguisher_cabinet{
-	pixel_y = -29
-	},
+/obj/machinery/light/dim/directional/south,
+/obj/structure/extinguisher_cabinet/directional/north,
 /obj/structure/cable{
 	icon_state = "4-9"
 	},
@@ -78,7 +76,7 @@
 /obj/effect/turf_decal/steeldecal/steel_decals7{
 	dir = 9
 	},
-/obj/machinery/power/apc/auto_name/south,
+/obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -327,7 +325,7 @@
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 8
 	},
-/obj/machinery/light/dim,
+/obj/machinery/light/dim/directional/south,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/storage)
 "Z" = (
