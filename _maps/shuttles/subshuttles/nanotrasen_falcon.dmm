@@ -15,7 +15,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/holopad/emergency/command,
-/turf/open/floor/plasteel/patterned/dirty/lighter,
+/turf/open/floor/plasteel/patterned/brushed,
 /area/ship/storage/eva)
 "c" = (
 /obj/item/gps/computer{
@@ -29,7 +29,7 @@
 	},
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/patterned/dirty/lighter,
+/turf/open/floor/plasteel/patterned/brushed,
 /area/ship/storage/eva)
 "f" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
@@ -90,7 +90,7 @@
 /obj/machinery/camera{
 	dir = 5
 	},
-/turf/open/floor/plasteel/patterned/monofloor,
+/turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/storage/eva)
 "l" = (
 /obj/structure/chair/comfy/shuttle{
@@ -308,13 +308,18 @@
 	},
 /obj/machinery/door/poddoor{
 	id = "heron_subshuttle_engines";
-	name = "Thruster Blast Door"
+	name = "Thruster Blast Door";
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/storage/eva)
 "E" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/patterned/monofloor,
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor{
+	id = "heron_subshuttle_bridge";
+	dir = 8
+	},
+/turf/open/floor/plating,
 /area/ship/storage/eva)
 "F" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden,
@@ -325,9 +330,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plasteel/patterned/monofloor{
-	dir = 1
-	},
+/turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/storage/eva)
 "G" = (
 /obj/machinery/computer/crew/syndie{
@@ -344,7 +347,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/siding/thinplating/dark,
-/turf/open/floor/plasteel/patterned/dirty/lighter,
+/turf/open/floor/plasteel/patterned/brushed,
 /area/ship/storage/eva)
 "I" = (
 /obj/structure/chair/comfy/shuttle{
@@ -404,14 +407,12 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plasteel/patterned/dirty/lighter,
+/turf/open/floor/plasteel/patterned/brushed,
 /area/ship/storage/eva)
 "N" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/plasma,
-/turf/open/floor/plasteel/patterned/monofloor{
-	dir = 1
-	},
+/turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/storage/eva)
 "O" = (
 /obj/effect/decal/cleanable/dirt,
@@ -425,7 +426,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plasteel/patterned/monofloor,
+/turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/storage/eva)
 "P" = (
 /obj/structure/table/reinforced{
@@ -507,15 +508,11 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plasteel/patterned/monofloor{
-	dir = 1
-	},
+/turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/storage/eva)
 "X" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/patterned/monofloor{
-	dir = 1
-	},
+/turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/storage/eva)
 "Z" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -524,7 +521,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/patterned/dirty/lighter,
+/turf/open/floor/plasteel/patterned/brushed,
 /area/ship/storage/eva)
 
 (1,1,1) = {"
@@ -575,10 +572,10 @@ y
 (6,1,1) = {"
 L
 N
-E
+X
 e
 X
-E
+X
 R
 "}
 (7,1,1) = {"
@@ -638,9 +635,9 @@ g
 (13,1,1) = {"
 z
 g
-w
-w
-w
+E
+E
+E
 g
 z
 "}
