@@ -11,6 +11,10 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "minimalta_bridgedoor";
+	name = "Safety Shutter"
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/storage)
 "d" = (
@@ -174,8 +178,8 @@
 	layer = 4.1
 	},
 /obj/machinery/button/door{
-	id = "cargopirate_sub_hatch";
-	name = "Pod Door Control";
+	id = "minimalta_bridgedoor";
+	name = "Bridge Shutter";
 	pixel_y = 22
 	},
 /turf/open/floor/plasteel/tech,
