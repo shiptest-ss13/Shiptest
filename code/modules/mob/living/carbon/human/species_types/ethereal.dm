@@ -12,7 +12,7 @@
 	siemens_coeff = 0.5 //They thrive on energy
 	brutemod = 1.25 //They're weak to punches
 	attack_type = BURN //burn bish
-	exotic_blood = /datum/reagent/consumable/liquidelectricity
+	exotic_bloodtype = "E"
 	damage_overlay_type = "" //We are too cool for regular damage overlays
 	species_traits = list(DYNCOLORS, EYECOLOR, HAIR, FACEHAIR)
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN | SLIME_EXTRACT
@@ -36,8 +36,8 @@
 	species_head = /obj/item/bodypart/head/ethereal
 	species_l_arm = /obj/item/bodypart/l_arm/ethereal
 	species_r_arm = /obj/item/bodypart/r_arm/ethereal
-	species_l_leg = /obj/item/bodypart/l_leg/ethereal
-	species_r_leg = /obj/item/bodypart/r_leg/ethereal
+	species_l_leg = /obj/item/bodypart/leg/left/ethereal
+	species_r_leg = /obj/item/bodypart/leg/right/ethereal
 
 	var/current_color
 	var/EMPeffect = FALSE
@@ -77,9 +77,12 @@
 
 /datum/species/ethereal/random_name(gender,unique,lastname)
 	if(unique)
-		return random_unique_ethereal_name()
+		return random_unique_lizard_name(gender)
 
-	var/randname = ethereal_name()
+	var/randname = lizard_name(gender)
+
+	if(lastname)
+		randname += " [lastname]"
 
 	return randname
 
@@ -249,11 +252,11 @@
 			H.visible_message("<span class='danger'>[H]'s EM frequency is scrambled to a random color.</span>")
 		else
 			// select new color
-			var/new_etherealcolor = input(user, "Choose your elzuosa color:", "Character Preference",default_color) as color|null
+			var/new_etherealcolor = input(user, "Choose your Elzuose color:", "Character Preference",default_color) as color|null
 			if(new_etherealcolor)
 				var/temp_hsv = RGBtoHSV(new_etherealcolor)
 				if(ReadHSV(temp_hsv)[3] >= ReadHSV("#505050")[3]) // elzu colors should be bright ok??
-					default_color = "#" + sanitize_hexcolor(new_etherealcolor, 6)
+					default_color = sanitize_hexcolor(new_etherealcolor, 6, TRUE)
 					current_color = health_adjusted_color(H, default_color)
 					spec_updatehealth(H)
 					H.visible_message("<span class='notice'>[H] modulates \his EM frequency to [new_etherealcolor].</span>")

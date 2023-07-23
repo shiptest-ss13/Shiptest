@@ -84,7 +84,7 @@
 	desc += "<br><font size=3><b>Current Bloodthirst: [HG.bloodlust]</b></font>\
 	<br>Becomes undroppable at <b>[HIS_GRACE_FAMISHED]</b>\
 	<br>Will consume you at <b>[HIS_GRACE_CONSUME_OWNER]</b>"
-	..()
+	return ..()
 
 /datum/status_effect/his_grace/on_apply()
 	owner.log_message("gained His Grace's stun immunity", LOG_ATTACK)
@@ -397,7 +397,7 @@
 				if(!itemUser.has_hand_for_held_index(hand))
 					//If user does not have the corresponding hand anymore, give them one and return the rod to their hand
 					if(((hand % 2) == 0))
-						var/obj/item/bodypart/L = itemUser.newBodyPart(BODY_ZONE_R_ARM, FALSE, FALSE)
+						var/obj/item/bodypart/L = itemUser.new_body_part(BODY_ZONE_R_ARM, FALSE, FALSE)
 						if(L.attach_limb(itemUser))
 							itemUser.put_in_hand(newRod, hand, forced = TRUE)
 						else
@@ -405,7 +405,7 @@
 							consume_owner() //we can't regrow, abort abort
 							return
 					else
-						var/obj/item/bodypart/L = itemUser.newBodyPart(BODY_ZONE_L_ARM, FALSE, FALSE)
+						var/obj/item/bodypart/L = itemUser.new_body_part(BODY_ZONE_L_ARM, FALSE, FALSE)
 						if(L.attach_limb(itemUser))
 							itemUser.put_in_hand(newRod, hand, forced = TRUE)
 						else

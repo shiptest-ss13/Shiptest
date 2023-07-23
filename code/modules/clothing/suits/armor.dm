@@ -45,6 +45,7 @@
 	min_cold_protection_temperature = ARMOR_MIN_TEMP_PROTECT
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	resistance_flags = FIRE_PROOF | ACID_PROOF
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/suit/armor/vest/marine/medium
 	name = "medium tactical armor vest"
@@ -109,7 +110,7 @@
 /obj/item/clothing/suit/armor/vest/security/warden/alt
 	name = "warden's armored jacket"
 	desc = "A white jacket with silver rank pips and body armor strapped on top."
-	icon_state = "armor_warden_vest"
+	icon_state = "armor_warden_jacket"
 
 /obj/item/clothing/suit/armor/vest/security/warden/alt/nt
 	name = "warden's red armored jacket"
@@ -150,13 +151,15 @@
 /obj/item/clothing/suit/armor/vest/capcarapace/minutemen
 	name = "colonial minutemen general coat"
 	desc = "A very fancy coat used by generals of the Colonial Minutemen."
-	icon_state = "carapace_minuteman"
+	icon_state = "carapace_minutemen"
+	item_state = "carapace_minutemen"
 
 /obj/item/clothing/suit/armor/vest/capcarapace/duster
 	name = "captain's duster"
 	desc = "A long, commanding coat worn over a surprisingly sleek set of armor and decorated with gold embroidery. Ideal for protecting its wearer from rain, sun, dust, mutineers, pirates, bears, hordes of angry legions, and so on."
 	icon_state = "carapace_duster"
 	item_state = "duster_captain"
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/suit/armor/riot
 	name = "riot suit"
@@ -277,27 +280,27 @@
 /obj/item/clothing/suit/armor/riot/knight
 	name = "plate armour"
 	desc = "A classic suit of plate armour, highly effective at stopping melee attacks."
-	icon_state = "knight_green"
-	item_state = "knight_green"
+	icon_state = "riot_knight_green"
+	item_state = "riot_knight_green"
 	allowed = list(/obj/item/nullrod, /obj/item/claymore, /obj/item/banner, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/oxygen, /obj/item/tank/internals/plasmaman)
 
 /obj/item/clothing/suit/armor/riot/knight/yellow
-	icon_state = "knight_yellow"
-	item_state = "knight_yellow"
+	icon_state = "riot_knight_yellow"
+	item_state = "riot_knight_yellow"
 
 /obj/item/clothing/suit/armor/riot/knight/blue
-	icon_state = "knight_blue"
-	item_state = "knight_blue"
+	icon_state = "riot_knight_blue"
+	item_state = "riot_knight_blue"
 
 /obj/item/clothing/suit/armor/riot/knight/red
-	icon_state = "knight_red"
-	item_state = "knight_red"
+	icon_state = "riot_knight_red"
+	item_state = "riot_knight_red"
 
 /obj/item/clothing/suit/armor/riot/knight/greyscale
 	name = "heavy plate armour"
 	desc = "A suit of magical plate armour, able to be made from many different materials. The thick armor is far lighter than it otherwise would be."
-	icon_state = "knight_greyscale"
-	item_state = "knight_greyscale"
+	icon_state = "riot_knight_greyscale"
+	item_state = "riot_knight_greyscale"
 	material_flags = MATERIAL_ADD_PREFIX | MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS//Can change color and add prefix
 	armor = list("melee" = 45, "bullet" = 20, "laser" = 20, "energy" = 25, "bomb" = 35, "bio" = 10, "rad" = 10, "fire" = 40, "acid" = 40)
 	slowdown = 0
@@ -332,16 +335,17 @@
 
 /obj/item/clothing/suit/armor/hos/inteq
 	name = "inteq battle coat"
-	desc = "A luxurious brown coat with an crossweave of Kevlar and fur from genuine wolves, as protective as it is stylish."
+	desc = "A luxurious brown coat made from a crossweave of kevlar and ballistic fibre, the collar and wrist trims are made from genuine wolf fur. as protective as it is stylish."
 	icon_state = "armor_inteq_battlecoat"
 	item_state = "inteq_battlecoat"
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/suit/armor/inteq/corpsman
 	name = "inteq corpsman vest"
-	desc = "A shortened brown labcoat with an armor vest under it, for the IRMG's support division medical staff."
+	desc = "A shortened brown labcoat with an armor vest under it, for the IRMG's support division Corpsmen."
 	icon_state = "armor_inteq_labcoat"
 	item_state = "inteq_labcoat"
+	supports_variations = VOX_VARIATION
 	allowed = list(
 		/obj/item/analyzer,
 		/obj/item/stack/medical,
@@ -392,21 +396,26 @@
 	item_state = "blueshield"
 
 /obj/item/clothing/suit/armor/vest/bulletproof/solgov
-	name = "\improper SolGov armor vest"
-	desc = "A standard armor vest fielded for SolGov's infantry."
-	icon_state = "armor_solgov"
-	item_state = "armor_solgov"
+	name = "\improper Sonnensoldner gambison"
+	desc = "A standard armor vest fielded for SolGov's Sonnensoldners."
+	icon_state = "solgov_gambison"
+	item_state = "solgov_gambison"
+
+/obj/item/clothing/suit/armor/vest/bulletproof/solgov/overseer
+	name = "\improper SolGov Overseer robe"
+	desc = "An elaborately designed robe utilized by SolGov overseers."
+	icon_state = "solgov_overseer_robe"
+	item_state = "solgov_overseer_robe"
+
+/obj/item/clothing/suit/armor/vest/bulletproof/solgov/captain
+	name = "\improper SolGov Captain coat"
+	desc = "An armored coat typically used by SolGov captains."
+	icon_state = "solgov_coat"
+	item_state = "solgov_coat"
 
 /obj/item/clothing/suit/armor/vest/bulletproof/solgov/Initialize()
 	. = ..()
 	allowed |= list(/obj/item/gun/ballistic/automatic/assualt/swiss_cheese, /obj/item/tank)
-
-/obj/item/clothing/suit/armor/vest/bulletproof/solgov/rep
-	name = "\improper SolGov Inspector armor vest"
-	desc = "A type I armor vest emblazoned with the SolGov logo."
-	icon_state = "armor_alt_solgov"
-	item_state = "armor_alt_solgov"
-	armor = list("melee" = 35, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 
 /obj/item/clothing/suit/armor/vest/hop
 	name = "head of personnel's parade jacket"
@@ -468,7 +477,7 @@
 /obj/item/clothing/suit/armor/vest/security/warden
 	name = "warden's jacket"
 	desc = "Perfectly suited for the warden that wants to leave an impression of style on those who visit the brig."
-	icon_state = "wardenjacket"
+	icon_state = "armor_warden"
 	body_parts_covered = CHEST|ARMS
 
 /obj/item/clothing/suit/armor/vest/security/hos
@@ -480,7 +489,7 @@
 /obj/item/clothing/suit/armor/vest/security/brig_phys
 	name = "brig physician's jacket"
 	desc = "A black jacket with dark blue and silver accents, for the brig physician to prove they're a real member of security in style."
-	icon_state = "brigphysjacket"
+	icon_state = "armor_brigphysjacket"
 	body_parts_covered = CHEST|ARMS
 
 /obj/item/clothing/suit/armor/frontier

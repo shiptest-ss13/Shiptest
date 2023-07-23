@@ -32,6 +32,9 @@
 		..()
 	return //unplateable
 
+/turf/open/floor/engine/temperature_expose()
+	return //inflammable
+
 /turf/open/floor/engine/try_replace_tile(obj/item/stack/tile/T, mob/user, params)
 	return
 
@@ -124,6 +127,9 @@
 	name = "air floor"
 	initial_gas_mix = ATMOS_TANK_AIRMIX
 
+/turf/open/floor/engine/fuel
+	name = "fuel mix floor"
+	initial_gas_mix = ATMOS_TANK_FUEL
 
 
 /turf/open/floor/engine/cult

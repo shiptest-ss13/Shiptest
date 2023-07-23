@@ -86,20 +86,24 @@
 	caliber = ".45"
 	max_ammo = 24
 
+/obj/item/ammo_box/magazine/smgm45/update_icon() //This is stupid (whenever ammo is spent, it updates the icon path)
+	..()
+	icon_state = "c20r45-[round(ammo_count(),2)]"
+
 /obj/item/ammo_box/magazine/smgm45/drum
 	name = "drum magazine (.45)"
 	icon_state = "drum45"
 	max_ammo = 50
 
-/obj/item/ammo_box/magazine/smgm45/update_icon()
-	..()
-	icon_state = "c20r45-[round(ammo_count(),2)]"
+/obj/item/ammo_box/magazine/smgm45/drum/update_icon() //Causes the mag to NOT inherit the parent's update_icon oooh the misery
+	. = ..()
+	icon_state = "drum45"
 
 /obj/item/ammo_box/magazine/pistol556mm
-	name = "handgun magazine (5.56mm HITP caseless)"
+	name = "handgun magazine (5.56mm caseless)"
 	icon_state = "5.56mmHITP-12" //ok i did it
-	ammo_type = /obj/item/ammo_casing/caseless/c556mmHITP
-	caliber = "5.56mm HITP caseless"
+	ammo_type = /obj/item/ammo_casing/caseless/c556mm
+	caliber = "5.56mm caseless"
 	max_ammo = 12
 
 /obj/item/ammo_box/magazine/pistol556mm/update_icon()

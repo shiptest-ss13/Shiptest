@@ -6,7 +6,7 @@
 	slot = ORGAN_SLOT_HEART
 
 	healing_factor = STANDARD_ORGAN_HEALING
-	decay_factor = 3.5 * STANDARD_ORGAN_DECAY		//designed to fail a little under 4 minutes after death
+	decay_factor = STANDARD_VITAL_ORGAN_DECAY
 
 	low_threshold_passed = "<span class='info'>Prickles of pain appear then die out from within your chest...</span>"
 	high_threshold_passed = "<span class='warning'>Something inside your chest hurts, and the pain isn't subsiding. You notice yourself breathing far faster than before.</span>"
@@ -17,9 +17,12 @@
 	var/beating = 1
 	var/icon_base = "heart"
 	attack_verb = list("beat", "thumped")
-	var/beat = BEAT_NONE//is this mob having a heatbeat sound played? if so, which?
-	var/failed = FALSE		//to prevent constantly running failing code
-	var/operated = FALSE	//whether the heart's been operated on to fix some of its damages
+	//is this mob having a heatbeat sound played? if so, which?
+	var/beat = BEAT_NONE
+	//to prevent constantly running failing code
+	var/failed = FALSE
+	//whether the heart's been operated on to fix some of its damages
+	var/operated = FALSE
 
 /obj/item/organ/heart/update_icon_state()
 	if(beating)
@@ -202,6 +205,12 @@
 	dose_available = TRUE
 	emp_vulnerability = 20
 
+/obj/item/organ/heart/cybernetic/ipc //this sucks
+	name = "coolant pump"
+	desc = "A small pump powered by the IPC's internal systems for circulating coolant."
+	status = ORGAN_ROBOTIC
+	emp_vulnerability = 30
+
 /obj/item/organ/heart/cybernetic/emp_act(severity)
 	. = ..()
 	if(. & EMP_PROTECT_SELF)
@@ -211,7 +220,7 @@
 		owner.losebreath += 10
 		severe_cooldown = world.time + 20 SECONDS
 	if(prob(emp_vulnerability/severity))	//Chance of permanent effects
-		organ_flags = ORGAN_SYNTHETIC_EMP //Starts organ faliure - gonna need replacing soon.
+		organ_flags = ORGAN_SYNTHETIC_EMP	//Starts organ faliure - gonna need replacing soon.
 		Stop()
 		owner.visible_message("<span class='danger'>[owner] clutches at [owner.p_their()] chest as if [owner.p_their()] heart is stopping!</span>", \
 						"<span class='userdanger'>You feel a terrible pain in your chest, as if your heart has stopped!</span>")

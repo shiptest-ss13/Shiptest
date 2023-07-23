@@ -16,7 +16,6 @@
 	item_state = "bl_suit"
 	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
 	alt_covers_chest = TRUE
-	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = FALSE
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION | KEPORI_VARIATION
 
@@ -28,7 +27,7 @@
 	armor = list("melee" = 10, "bullet" = 10, "laser" = 10,"energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 10, "fire" = 50, "acid" = 40)
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	can_adjust = FALSE
-	supports_variations = KEPORI_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION | KEPORI_VARIATION
 
 /obj/item/clothing/under/syndicate/bloodred/sleepytime
 	name = "blood-red pajamas"
@@ -36,7 +35,7 @@
 	icon_state = "bloodred_pajamas"
 	item_state = "bl_suit"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
-	supports_variations = KEPORI_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION | KEPORI_VARIATION
 
 /obj/item/clothing/under/syndicate/tacticool
 	name = "tacticool turtleneck"
@@ -44,7 +43,7 @@
 	icon_state = "tactifool"
 	item_state = "bl_suit"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
-	supports_variations = KEPORI_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION | KEPORI_VARIATION
 
 /obj/item/clothing/under/syndicate/tacticool/skirt
 	name = "tacticool skirtleneck"
@@ -52,9 +51,8 @@
 	icon_state = "tactifool_skirt"
 	item_state = "bl_suit"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
-	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = FALSE
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION | KEPORI_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | KEPORI_VARIATION
 
 /obj/item/clothing/under/syndicate/sniper
 	name = "Tactical turtleneck suit"
@@ -85,7 +83,7 @@
 	desc = "With a suit lined with this many pockets, you are ready to operate."
 	icon_state = "syndicate_combat"
 	can_adjust = FALSE
-	supports_variations = KEPORI_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION | KEPORI_VARIATION
 
 /obj/item/clothing/under/syndicate/rus_army
 	name = "advanced military tracksuit"
@@ -122,7 +120,7 @@
 	icon_state = "gorlex"
 	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
 	alt_covers_chest = TRUE
-	supports_variations = KEPORI_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION | KEPORI_VARIATION
 
 /obj/item/clothing/under/syndicate/cybersun
 	name = "Cybersun coveralls"
@@ -130,7 +128,7 @@
 	icon_state = "cybersun"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 100)
 	alt_covers_chest = TRUE
-	supports_variations = KEPORI_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION | KEPORI_VARIATION
 
 /obj/item/clothing/under/syndicate/medic
 	name = "Cybersun medical jumpsuit"
@@ -145,7 +143,6 @@
 	icon_state = "cybersun_med_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
-	fitted = FEMALE_UNIFORM_TOP
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION | KEPORI_VARIATION
 
 /obj/item/clothing/under/syndicate/donk
@@ -155,14 +152,14 @@
 	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
 	body_parts_covered = CHEST|GROIN|ARMS
 	alt_covers_chest = TRUE
-	supports_variations = KEPORI_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION | KEPORI_VARIATION
 
 /obj/item/clothing/under/syndicate/donk/qm
 	name = "Donk! Co. manager uniform"
 	desc = "The standard uniform of Donk Co. managers. Direct all complaints here."
 	icon_state = "donk_qm"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-	supports_variations = KEPORI_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION | KEPORI_VARIATION
 
 /obj/item/clothing/suit/hazardvest/donk
 	name = "Donk! Co. employee vest"
@@ -227,7 +224,7 @@
 
 /obj/item/clothing/under/syndicate/inteq
 	name = "inteq turtleneck"
-	desc = "A drab brown turtleneck with black digital camo pants, it has a small 'IRMG' embroidered onto the shoulder."
+	desc = "A rich brown turtleneck with black pants, it has a small 'IRMG' embroidered onto the shoulder."
 	icon_state = "inteq"
 	item_state = "bl_suit"
 	has_sensor = HAS_SENSORS
@@ -239,7 +236,7 @@
 
 /obj/item/clothing/under/syndicate/inteq/skirt
 	name = "inteq skirtleneck"
-	desc = "A drab brown turtleneck with a free flowing black skirt, it has a small 'IRMG' embroidered onto the shoulder."
+	desc = "A rich brown turtleneck with a free flowing black skirt, it has a small 'IRMG' embroidered onto the shoulder."
 	icon_state = "inteq_skirt"
 	item_state = "bl_suit"
 	has_sensor = HAS_SENSORS
@@ -247,29 +244,28 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION | KEPORI_VARIATION
 	alt_covers_chest = TRUE
-	fitted = FEMALE_UNIFORM_TOP
 
 /obj/item/clothing/under/syndicate/inteq/artificer
 	name = "inteq artificer overalls"
-	desc = "A black set of overalls atop a standard issue turtleneck, for the IRMG's support division engineers."
+	desc = "A black set of overalls atop a standard issue turtleneck, for the IRMG's support division Artificers."
 	icon_state = "inteqeng"
-	supports_variations = KEPORI_VARIATION | DIGITIGRADE_VARIATION
+	supports_variations = KEPORI_VARIATION | VOX_VARIATION | DIGITIGRADE_VARIATION
 
 /obj/item/clothing/under/syndicate/inteq/skirt/artificer
 	name = "inteq artificer overall skirt"
-	desc = "A black set of overalls in the likeness of a skirt atop a standard issue turtleneck, for the IRMG's support division engineers."
+	desc = "A black set of overalls in the likeness of a skirt atop a standard issue turtleneck, for the IRMG's support division Artificers."
 	icon_state = "inteqeng_skirt"
 	supports_variations = KEPORI_VARIATION | DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/under/syndicate/inteq/corpsman
 	name = "inteq corpsman turtleneck"
-	desc = "A sterile white turtleneck with tactical cargo pants, it is emblazoned with the lettering 'IRMG' on the shoulder. For the IRMG's support division corpsmen."
+	desc = "A sterile white turtleneck with tactical cargo pants, it is emblazoned with the lettering 'IRMG' on the shoulder. For the IRMG's support division Corpsmen."
 	icon_state = "inteqmed"
-	supports_variations = KEPORI_VARIATION | DIGITIGRADE_VARIATION
+	supports_variations = KEPORI_VARIATION | VOX_VARIATION | DIGITIGRADE_VARIATION
 
 /obj/item/clothing/under/syndicate/inteq/skirt/corpsman
 	name = "inteq corpsman skirtleneck"
-	desc = "A sterile white turtleneck with a free flowing black skirt, it is emblazoned with the lettering 'IRMG' on the shoulder. For the IRMG's support division corpsmen."
+	desc = "A sterile white turtleneck with a free flowing black skirt, it is emblazoned with the lettering 'IRMG' on the shoulder. For the IRMG's support division Corpsmen."
 	icon_state = "inteqmed_skirt"
 	supports_variations = KEPORI_VARIATION | DIGITIGRADE_VARIATION_NO_NEW_ICON
 
@@ -279,11 +275,9 @@
 	icon_state = "inteqmaid"
 	item_state = "inteqmaid"
 	can_adjust = FALSE
-	supports_variations = KEPORI_VARIATION | DIGITIGRADE_VARIATION_NO_NEW_ICON
+	supports_variations = KEPORI_VARIATION | VOX_VARIATION | DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/under/syndicate/inteq/skirt/maid/Initialize()
 	. = ..()
 	var/obj/item/clothing/accessory/maidapron/inteq/A = new (src)
 	attach_accessory(A)
-
-

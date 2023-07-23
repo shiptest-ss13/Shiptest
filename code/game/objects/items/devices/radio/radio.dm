@@ -7,6 +7,7 @@
 	pickup_sound =  'sound/items/handling/device_pickup.ogg'
 	drop_sound = 'sound/items/handling/device_drop.ogg'
 	dog_fashion = /datum/dog_fashion/back
+	supports_variations = VOX_VARIATION
 
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT
@@ -432,3 +433,9 @@
 /obj/item/radio/off	// Station bounced radios, their only difference is spawning with the speakers off, this was made to help the lag.
 	listening = 0			// And it's nice to have a subtype too for future features.
 	dog_fashion = /datum/dog_fashion/back
+
+
+/obj/item/radio/old
+	name = "old radio"
+	icon_state = "radio"
+	desc = "An old handheld radio. You could use it, if you really wanted to."

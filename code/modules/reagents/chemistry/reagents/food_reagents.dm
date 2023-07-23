@@ -331,19 +331,6 @@
 		return
 	if(M.has_bane(BANE_SALT))
 		M.mind.disrupt_spells(-200)
-	if (issquidperson(M))
-		if(reac_volume < 5)
-			return
-		if (method == INGEST)
-			to_chat(M, "<span class='danger'>Your tongue shrivels as you taste the salt!</span>")
-			M.adjustFireLoss(reac_volume/2, TRUE)
-		else if (method == TOUCH)
-			M.adjustFireLoss(reac_volume/2, TRUE)
-			if(!M.incapacitated())
-				var/obj/item/I = M.get_active_held_item()
-				M.throw_item(get_ranged_target_turf(M, pick(GLOB.alldirs), rand(1, 3)))
-				to_chat(M, "<span class='warning'>The salt causes your arm to spasm! It burns!</span>")
-				M.log_message("threw [I] due to a Muscle Spasm", INDIVIDUAL_ATTACK_LOG)
 
 /datum/reagent/consumable/sodiumchloride/expose_turf(turf/T, reac_volume) //Creates an umbra-blocking salt pile
 	if(!istype(T))
@@ -717,10 +704,9 @@
 	color = "#eef442" // rgb: 238, 244, 66
 	taste_description = "mournful honking"
 
-
 /datum/reagent/consumable/liquidelectricity
 	name = "Liquid Electricity"
-	description = "The blood of elzuosa, and the stuff that keeps them going. Great for them, horrid for anyone else."
+	description = "A glowing, viscous substance that radiates pure energy." //this is no longer Elzousa blood
 	nutriment_factor = 5 * REAGENTS_METABOLISM
 	color = "#97ee63"
 	taste_description = "pure electricity"

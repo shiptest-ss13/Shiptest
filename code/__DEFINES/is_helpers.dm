@@ -76,10 +76,8 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 #define isvampire(A) (is_species(A,/datum/species/vampire))
 #define isdullahan(A) (is_species(A, /datum/species/dullahan))
 #define iskepori(A) (is_species(A, /datum/species/kepori))
-#define issquidperson(A) (is_species(A, /datum/species/squid))
 #define isipc(A) (is_species(A, /datum/species/ipc))
 #define isspiderperson(A) (is_species(A, /datum/species/spider))
-#define isdwarf(A) (is_species(A, /datum/species/dwarf))
 
 //more carbon mobs
 #define ismonkey(A) (istype(A, /mob/living/carbon/monkey))
@@ -186,7 +184,7 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 
 #define isclothing(A) (istype(A, /obj/item/clothing))
 
-#define iscash(A) (istype(A, /obj/item/coin) || istype(A, /obj/item/stack/spacecash) || istype(A, /obj/item/holochip))
+#define iscash(A) (istype(A, /obj/item/coin) || istype(A, /obj/item/spacecash) || istype(A, /obj/item/holochip))
 
 GLOBAL_LIST_INIT(pointed_types, typecacheof(list(
 	/obj/item/pen,
@@ -228,8 +226,6 @@ GLOBAL_LIST_INIT(glass_sheet_types, typecacheof(list(
 #define isblobmonster(O) (istype(O, /mob/living/simple_animal/hostile/blob))
 
 #define isshuttleturf(T) (length(T.baseturfs) && (/turf/baseturf_skipover/shuttle in T.baseturfs))
-
-#define isspacepod(A) (istype(A, /obj/spacepod))
 
 #define isbook(O) (is_type_in_typecache(O, GLOB.book_types))
 

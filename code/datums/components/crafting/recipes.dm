@@ -148,8 +148,8 @@
 	reqs = list(/obj/item/robot_suit = 1,
 				/obj/item/clothing/head/helmet = 1,
 				/obj/item/clothing/suit/armor/vest = 1,
-				/obj/item/bodypart/l_leg/robot = 1,
-				/obj/item/bodypart/r_leg/robot = 1,
+				/obj/item/bodypart/leg/left/robot = 1,
+				/obj/item/bodypart/leg/right/robot = 1,
 				/obj/item/stack/sheet/metal = 1,
 				/obj/item/stack/cable_coil = 1,
 				/obj/item/gun/energy/disabler = 1,
@@ -1135,4 +1135,38 @@
 	result = /obj/item/spear/crystal
 	time = 4 SECONDS
 	reqs = list(/obj/item/strange_crystal = 2)
+	category = CAT_MISC
+
+/datum/crafting_recipe/freezer
+	name = "Freezer"
+	result = /obj/structure/closet/crate/freezer
+	time = 2 SECONDS
+	reqs = list(/datum/reagent/consumable/ice = 25,
+	/obj/item/stack/sheet/metal = 2)
+	category = CAT_MISC
+
+/datum/crafting_recipe/aquarium
+	name = "Aquarium"
+	result = /obj/structure/aquarium
+	time = 10 SECONDS
+	reqs = list(/obj/item/stack/sheet/metal = 15,
+				/obj/item/stack/sheet/glass = 10,
+				/obj/item/aquarium_kit = 1)
+	category = CAT_MISC
+
+/datum/crafting_recipe/mothplush
+	name = "Moth Plushie"
+	result = /obj/item/toy/plush/moth
+	reqs = list(/obj/item/stack/sheet/animalhide/mothroach = 1,
+				/obj/item/organ/heart = 1,
+				/obj/item/stack/sheet/cotton/cloth = 3)
+	category = CAT_MISC
+
+/datum/crafting_recipe/breakawayflask
+	name = "Breakaway Flask"
+	result = /obj/item/reagent_containers/food/drinks/drinkingglass/breakawayflask
+	time = 5 SECONDS
+	reqs = list(/obj/item/stack/sheet/glass = 5,
+				/obj/item/stack/sheet/mineral/plasma = 1)
+	tools = list(TOOL_WELDER)
 	category = CAT_MISC

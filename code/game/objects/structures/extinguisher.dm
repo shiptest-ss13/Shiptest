@@ -1,8 +1,8 @@
 /obj/structure/extinguisher_cabinet
 	name = "extinguisher cabinet"
 	desc = "A small wall mounted cabinet designed to hold a fire extinguisher."
-	icon = 'icons/obj/wallmounts.dmi' //WS Edit - Better Icons
-	icon_state = "extinguisher_closed"
+	icon = 'icons/obj/wallmounts.dmi'
+	icon_state = "extinguisher"
 	anchored = TRUE
 	density = FALSE
 	max_integrity = 200
@@ -18,16 +18,16 @@
 		dir_amount = 4\
 	)
 
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/extinguisher_cabinet, 28)
+
 /obj/structure/extinguisher_cabinet/Initialize(mapload, ndir, building)
 	. = ..()
 	if(building)
 		setDir(ndir)
-		pixel_x = (dir & 3)? 0 : (dir == 4 ? -27 : 27)
-		pixel_y = (dir & 3)? (dir ==1 ? -30 : 30) : 0
 		opened = TRUE
-		icon_state = "extinguisher_empty"
 	else
 		stored_extinguisher = new /obj/item/extinguisher(src)
+	update_icon()
 
 /obj/structure/extinguisher_cabinet/examine(mob/user)
 	. = ..()
@@ -128,16 +128,17 @@
 		opened = !opened
 		update_icon()
 
-/obj/structure/extinguisher_cabinet/update_icon_state()
-	if(!opened)
-		icon_state = "extinguisher_closed"
-	else if(stored_extinguisher)
+/obj/structure/extinguisher_cabinet/update_overlays()
+	. = ..()
+	if(stored_extinguisher)
 		if(istype(stored_extinguisher, /obj/item/extinguisher/mini))
-			icon_state = "extinguisher_mini"
+			. += "extinguisher_mini"
 		else
-			icon_state = "extinguisher_full"
+			. += "extinguisher_regular"
+	if(!opened)
+		. += "extinguisher_doorclosed"
 	else
-		icon_state = "extinguisher_empty"
+		. += "extinguisher_dooropen"
 
 /obj/structure/extinguisher_cabinet/obj_break(damage_flag)
 	if(!broken && !(flags_1 & NODECONSTRUCT_1))
@@ -165,3 +166,6 @@
 	desc = "Used for building wall-mounted extinguisher cabinets."
 	icon_state = "extinguisher"
 	result_path = /obj/structure/extinguisher_cabinet
+	pixel_shift = 28
+	inverse_pixel_shift = TRUE
+	inverse = TRUE

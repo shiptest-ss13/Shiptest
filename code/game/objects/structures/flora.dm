@@ -172,6 +172,11 @@
 	pixel_x = -32
 	icon = 'icons/obj/flora/jungletreesmall.dmi'
 
+/obj/structure/flora/tree/jungle/small/Initialize()
+	. = ..()
+	if(randomize_icon) //prevents varedited trees changing
+		icon_state = "[initial(icon_state)][rand(1, 6)]"
+
 //grass
 /obj/structure/flora/grass
 	name = "grass"
@@ -185,7 +190,6 @@
 /obj/structure/flora/grass/brown/Initialize()
 	icon_state = "snowgrass[rand(1, 3)]bb"
 	. = ..()
-
 
 /obj/structure/flora/grass/green
 	icon_state = "snowgrass1gb"
@@ -214,8 +218,21 @@
 	icon_state = "snowbush[rand(1, 6)]"
 	. = ..()
 
-//newbushes
+//bushes but in a pot
+/obj/structure/flora/bigplant
+	name = "potted plant"
+	desc = "A large potted plant."
+	icon = 'icons/obj/flora/bigplant.dmi'
+	icon_state = "bigplant1"
+	anchored = FALSE
+	layer = ABOVE_MOB_LAYER
+	pixel_x = -17
 
+/obj/structure/flora/bigplant/Initialize()
+	icon_state = "bigplant[rand(1, 2)]"
+	. = ..()
+
+//newbushes
 /obj/structure/flora/ausbushes
 	name = "bush"
 	desc = "Some kind of plant."
@@ -856,14 +873,14 @@
 	icon_state = "[base_icon_state]_[rand(1,3)]"
 
 /obj/structure/flora/tree/dead/tall/grey
-	name = "ashen tree"
-	desc = "A tree carbonized by the heat of the planet."
+	name = "petrified trunk"
+	desc = "An ancient tree was carbonized in fire and ash. Only a skeleton remains."
 	icon = 'icons/obj/flora/tall_trees_dead.dmi'
 
 
 /obj/structure/flora/tree/cactus
-	name = "saguaro cactus"
-	desc = "A cacti species originating from the Sol system. Initially set up on Mars to help with terraforming, it can now be found on pretty much every planet with a similar enviroment, for one reason or another."
+	name = "maguaro cactus"
+	desc = "A hardy species of modified Saguaro cacti, originating from the Sol system. Initially planted on Mars to help prevent soil erosion, it can now be found on frigid tundras across known space."
 	icon = 'icons/obj/flora/bigtrees.dmi'
 	icon_state = "cactus"
 	density = TRUE
@@ -885,8 +902,8 @@
 	icon = 'icons/obj/flora/rocks.dmi'
 
 /obj/structure/flora/tree/dead/barren
-	name = "barren tree"
-	desc = "A tree turned purple from mutations to adapt to its environment. It seems to have done a great job!"
+	name = "petrified tree"
+	desc = "An ancient trunk, mummified by the passage of time. This one still has some purple to it."
 	color = "#846996"
 	icon = 'icons/obj/flora/barren_tree.dmi'
 
@@ -894,3 +911,48 @@
 	. = ..()
 	color = pick( "#846996", "#7b4e99", "#924fab")
 	icon_state = "barren_large"
+
+/obj/structure/flora/driftwood
+	name = "driftwood"
+	desc = "Floatsam, jetsam, all molded down in the unforgiving sea."
+	icon = 'icons/obj/flora/grass-sticks.dmi'
+	icon_state = "stick"
+	density = FALSE
+
+/obj/structure/flora/driftwood/Initialize()
+	. = ..()
+	icon_state = "[icon_state][rand(1, 4)]"
+
+/obj/structure/flora/driftlog
+	name = "driftwood log"
+	desc = "Better log this one in the database."
+	icon = 'icons/obj/flora/grass-sticks.dmi'
+	icon_state = "dry_log"
+	density = FALSE
+
+/obj/structure/flora/rock/rockplanet
+	name = "russet stone"
+	icon_state = "redrock"
+	desc = "A raised knurl of red rock."
+	mineResult = /obj/item/stack/ore/glass/rockplanet
+
+/obj/structure/flora/rock/pile/rockplanet
+	name = "russet stones"
+	desc = "A pile of rust-red rocks."
+	icon_state = "redrocks"
+	mineResult = /obj/item/stack/ore/glass/rockplanet
+
+/obj/structure/flora/grass/rockplanet
+	name = "cottongrass"
+	desc= "A variety of cold-loving prarie grass. This variety seems to thrive the frigid rockworld enviroment, so long as water can be found nearby."
+	icon = 'icons/obj/flora/grass-sticks.dmi'
+	icon_state = "tall_grass"
+
+/obj/structure/flora/grass/rockplanet/Initialize()
+	. = ..()
+	icon_state = "[icon_state]_[rand(1, 2)]"
+
+/obj/structure/flora/grass/rockplanet/dead
+	name = "dry cottongrass"
+	desc= "This patch seems to have run dry on life-giving water."
+	icon_state = "dry_grass"

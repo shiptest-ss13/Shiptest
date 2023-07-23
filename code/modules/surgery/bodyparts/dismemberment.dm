@@ -214,7 +214,7 @@
 		C.update_inv_gloves() //to remove the bloody hands overlay
 
 
-/obj/item/bodypart/r_leg/drop_limb(special)
+/obj/item/bodypart/leg/right/drop_limb(special)
 	if(owner && !special)
 		if(owner.legcuffed)
 			owner.legcuffed.forceMove(owner.drop_location()) //At this point bodypart is still in nullspace
@@ -225,7 +225,7 @@
 			owner.dropItemToGround(owner.shoes, TRUE)
 	..()
 
-/obj/item/bodypart/l_leg/drop_limb(special) //copypasta
+/obj/item/bodypart/leg/left/drop_limb(special) //copypasta
 	if(owner && !special)
 		if(owner.legcuffed)
 			owner.legcuffed.forceMove(owner.drop_location())
@@ -381,21 +381,21 @@
 /mob/living/proc/regenerate_limbs(noheal = FALSE, list/excluded_zones = list())
 	SEND_SIGNAL(src, COMSIG_LIVING_REGENERATE_LIMBS, noheal, excluded_zones)
 
-/mob/living/carbon/regenerate_limbs(noheal = FALSE, list/excluded_zones = list())
+/mob/living/carbon/regenerate_limbs(noheal = FALSE, list/excluded_zones = list(), robotic = FALSE)
 	. = ..()
 	var/list/zone_list = list(BODY_ZONE_HEAD, BODY_ZONE_CHEST, BODY_ZONE_R_ARM, BODY_ZONE_L_ARM, BODY_ZONE_R_LEG, BODY_ZONE_L_LEG)
 	if(length(excluded_zones))
 		zone_list -= excluded_zones
 	for(var/Z in zone_list)
-		. += regenerate_limb(Z, noheal)
+		. += regenerate_limb(Z, noheal, robotic)
 
-/mob/living/proc/regenerate_limb(limb_zone, noheal)
+/mob/living/proc/regenerate_limb(limb_zone, noheal, robotic = FALSE)
 	return
 
-/mob/living/carbon/regenerate_limb(limb_zone, noheal)
+/mob/living/carbon/regenerate_limb(limb_zone, noheal, robotic = FALSE)
 	var/obj/item/bodypart/L
 	if(get_bodypart(limb_zone))
 		return FALSE
-	L = newBodyPart(limb_zone, 0, 0)
+	L = new_body_part(limb_zone, robotic, FALSE)
 	L.replace_limb(src, TRUE, TRUE)
 	return 1

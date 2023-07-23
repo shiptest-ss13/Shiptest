@@ -5,14 +5,16 @@
 	density = TRUE
 	anchored = TRUE
 	var/salvageable_parts = list()
+	var/frame_type = /obj/structure/frame/machine
 
 /obj/item/stack/ore/salvage/examine(mob/user)
 	. = ..()
 	. += "You can use a crowbar to salvage this."
 
 /obj/structure/salvageable/proc/dismantle(mob/living/user)
-	var/obj/frame = new /obj/structure/frame/machine(get_turf(src))
-	frame.anchored = TRUE
+	var/obj/frame = new frame_type(get_turf(src))
+	frame.anchored = anchored
+	frame.dir = dir
 	for(var/path in salvageable_parts)
 		if(prob(salvageable_parts[path]))
 			new path (loc)
@@ -59,6 +61,7 @@
 /obj/structure/salvageable/computer
 	name = "broken computer"
 	icon_state = "computer_broken"
+	frame_type = /obj/structure/frame/computer/retro
 	salvageable_parts = list(
 		/obj/item/stack/sheet/glass/two = 80,
 		/obj/item/stack/cable_coil/cut = 90,
@@ -210,14 +213,14 @@
 		if(41 to 60)
 			visible_message("<span class='danger'>You flinch as the [src]'s laser apparatus lights up, but your tool destroys it before it activates...</span>")
 		if(61 to 79)
-			visible_message("<span class='danger'>You see a bright light from the [src] before the laser reactivates in your face!</span>")
+			visible_message("<span class='danger'>You see a dim light from the [src] before the laser reactivates in your face!</span>")
 			shoot_projectile(user, /obj/projectile/beam/scatter)
 		if(80 to 89)
 			visible_message("<span class='danger'>You see a bright light from the [src] before the laser reactivates in your face!</span>")
 			shoot_projectile(user, /obj/projectile/beam)
 		if(90 to 100)
-			visible_message("<span class='danger'>You see a bright light from the [src] before the laser reactivates in your face!</span>")
-			shoot_projectile(user, /obj/projectile/beam/laser/heavylaser)
+			visible_message("<span class='danger'>You see an intense light from the [src] before the laser reactivates in your face!</span>")
+			shoot_projectile(user, /obj/projectile/beam/laser/heavylaser) //i'd like to make this flash people. but i'm not sure how to do that. shame!
 
 /obj/structure/salvageable/destructive_analyzer/proc/shoot_projectile(mob/living/target, obj/projectile/projectile_to_shoot)
 	var/obj/projectile/projectile_being_shot = new projectile_to_shoot(get_turf(src))
@@ -269,22 +272,97 @@
 		if(1 to 45)
 			audible_message("<span class='notice'>The [src] makes a crashing sound as its salvaged.</span>")
 
-		if(46 to 50)
+		if(46 to 89)
 			playsound(src, 'sound/machines/buzz-two.ogg', 100, FALSE, FALSE)
 			audible_message("<span class='danger'>You hear a buzz from the [src] and a voice,</span>")
 			new /mob/living/simple_animal/bot/medbot/rockplanet(get_turf(src))
 
-		if(51 to 77)
+		if(95 to 100)
 			playsound(src, 'sound/machines/buzz-two.ogg', 100, FALSE, FALSE)
 			audible_message("<span class='danger'>You hear a buzz from the [src] and a voice,</span>")
 
 			new /mob/living/simple_animal/bot/firebot/rockplanet(get_turf(src))
 
-		if(77 to 100)
+		if(90 to 94)
 			playsound(src, 'sound/machines/buzz-two.ogg', 100, FALSE, FALSE)
 			audible_message("<span class='danger'>You hear as buzz from the [src] as an abandoned security bot rolls out from the [src]!!</span>")
 
 			new /mob/living/simple_animal/bot/secbot/ed209/rockplanet(get_turf(src))
+
+/obj/structure/salvageable/safe_server //i am evil and horrible and i don't deserve to touch code
+	name = "broken server"
+	icon_state = "wreck_server"
+	salvageable_parts = list(
+		/obj/item/stack/sheet/glass/two = 80,
+		/obj/item/stack/cable_coil/cut = 80,
+		/obj/item/stack/ore/salvage/scrapuranium/five = 60,
+		/obj/item/stack/ore/salvage/scrapmetal/five = 60,
+		/obj/item/stack/ore/salvage/scrapbluespace = 60,
+
+		/obj/item/research_notes/loot/tiny = 50,
+		/obj/item/research_notes/loot/medium = 20,
+		/obj/item/research_notes/loot/big = 5,
+
+		/obj/item/disk/tech_disk/major = 3,
+		/obj/item/disk/tech_disk = 20,
+		/obj/item/disk/data = 20,
+		/obj/item/disk/holodisk = 20,
+		/obj/item/disk/plantgene = 20,
+
+		/obj/item/computer_hardware/network_card = 40,
+		/obj/item/computer_hardware/network_card = 40,
+		/obj/item/computer_hardware/processor_unit = 40,
+		/obj/item/computer_hardware/processor_unit = 40,
+		/obj/item/stock_parts/subspace/amplifier = 40,
+		/obj/item/stock_parts/subspace/amplifier = 40,
+		/obj/item/stock_parts/subspace/analyzer = 40,
+		/obj/item/stock_parts/subspace/analyzer = 40,
+		/obj/item/stock_parts/subspace/ansible = 40,
+		/obj/item/stock_parts/subspace/ansible = 40,
+		/obj/item/stock_parts/subspace/transmitter = 40,
+		/obj/item/stock_parts/subspace/transmitter = 40,
+		/obj/item/stock_parts/subspace/crystal = 30,
+		/obj/item/stock_parts/subspace/crystal = 30,
+		/obj/item/computer_hardware/network_card/advanced = 20,
+	)
+
+/obj/structure/salvageable/seed
+	name = "ruined seed vendor"
+	desc = "This is where the seeds lived. Maybe you can still get some?"//megaseed voiceline reference
+	icon_state = "seeds-broken"
+	icon = 'icons/obj/vending.dmi'
+	color = "#808080"
+
+	salvageable_parts = list(
+		/obj/effect/spawner/lootdrop/seeded = 80,
+		/obj/effect/spawner/lootdrop/seeded = 80,
+		/obj/effect/spawner/lootdrop/seeded = 80,
+		/obj/effect/spawner/lootdrop/seeded = 80,
+		/obj/effect/spawner/lootdrop/seeded = 80,
+		/obj/item/seeds/random = 80,
+		/obj/item/seeds/random = 40,
+		/obj/item/seeds/random = 40,
+		/obj/item/stack/ore/salvage/scrapmetal/five = 80,
+		/obj/item/stack/cable_coil/cut = 80,
+		/obj/item/disk/plantgene = 20,
+	)
+
+/obj/structure/salvageable/seed/dismantle(mob/living/user)
+	. = ..()
+	var/danger_level = rand(1,100)
+	switch(danger_level)
+		if(1 to 50)
+			audible_message("<span class='notice'>The [src] buzzes softly as it falls apart.</span>")
+
+		if(51 to 80)
+			playsound(src, 'sound/machines/buzz-two.ogg', 100, FALSE, FALSE)
+			audible_message("<span class='danger'>As the [src] collapses, an oversized tomato lunges out from inside!</span>")
+			new /mob/living/simple_animal/hostile/killertomato(get_turf(src))
+
+		if(81 to 100)
+			playsound(src, 'sound/machines/buzz-two.ogg', 100, FALSE, FALSE)
+			audible_message("<span class='danger'>A bundle of vines unfurls from inside the [src]!</span>")
+			new /mob/living/simple_animal/hostile/venus_human_trap(get_turf(src))
 
 //scrap item, mostly for fluff
 /obj/item/stack/ore/salvage
@@ -501,8 +579,8 @@
 	loot = list(
 			/obj/item/bodypart/l_arm/robot/surplus = 1,
 			/obj/item/bodypart/r_arm/robot/surplus = 1,
-			/obj/item/bodypart/l_leg/robot/surplus = 1,
-			/obj/item/bodypart/r_leg/robot/surplus = 1,
+			/obj/item/bodypart/leg/left/robot/surplus = 1,
+			/obj/item/bodypart/leg/right/robot/surplus = 1,
 		)
 /obj/effect/spawner/lootdrop/random_gun_protolathe_lootdrop
 	loot = list(
@@ -608,7 +686,7 @@
 			/obj/item/circuitboard/computer/med_data = 5,
 		)
 
-//DESTRUCTIVE ANAL
+//DESTRUCTIVE ANAL //i'm killing you
 /obj/effect/spawner/lootdrop/destructive_anal_loot //what do people usually put in these things anayways
 	loot = list(
 			/obj/item/storage/toolbox/syndicate/empty = 650,

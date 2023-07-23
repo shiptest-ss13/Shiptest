@@ -29,12 +29,12 @@
 		var/ahelp_ref = href_list["ahelp"]
 		var/datum/admin_help/AH = locate(ahelp_ref)
 		if(AH)
-			AH.Action(href_list["ahelp_action"])
+			AH.action(usr, href_list["ahelp_action"])
 		else
 			to_chat(usr, "Ticket [ahelp_ref] has been deleted!", confidential = TRUE)
 
 	else if(href_list["ahelp_tickets"])
-		GLOB.ahelp_tickets.BrowseTickets(text2num(href_list["ahelp_tickets"]))
+		GLOB.ahelp_tickets.browse_tickets(text2num(href_list["ahelp_tickets"]))
 
 	else if(href_list["stickyban"])
 		stickyban(href_list["stickyban"],href_list)
@@ -1251,8 +1251,6 @@
 		// WS - More fun with cookies - Start
 		else if(islizard(H))
 			cookiealt = /obj/item/reagent_containers/food/snacks/nugget
-		else if(issquidperson(H))
-			cookiealt = /obj/item/reagent_containers/food/snacks/fishfingers
 		if(H.recieve_gift(cookiealt))
 			log_admin("[key_name(H)] got their [cookiealt], spawned by [key_name(src.owner)].")
 			message_admins("[key_name(H)] got their [cookiealt], spawned by [key_name(src.owner)].")
@@ -1261,6 +1259,22 @@
 			log_admin("[key_name(H)] has their hands full, so they did not receive their [initial(cookiealt.name)], spawned by [key_name(src.owner)].")
 			message_admins("[key_name(H)] has their hands full, so they did not receive their [initial(cookiealt.name)], spawned by [key_name(src.owner)].")
 		// WS - End
+
+	else if (href_list["adminpopup"])
+		if (!check_rights(R_ADMIN))
+			return
+
+		var/message = input(owner, "As well as a popup, they'll also be sent a message to reply to. What do you want that to be?", "Message") as text|null
+		if (!message)
+			to_chat(owner, span_notice("Popup cancelled."))
+			return
+
+		var/client/target = locate(href_list["adminpopup"])
+		if (!istype(target))
+			to_chat(owner, span_notice("The mob doesn't exist anymore!"))
+			return
+
+		give_admin_popup(target, owner, message)
 
 	else if(href_list["adminsmite"])
 		if(!check_rights(R_ADMIN|R_FUN))

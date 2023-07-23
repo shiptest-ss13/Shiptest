@@ -13,7 +13,7 @@
 	desc = "It's watching you suspiciously."
 
 /obj/structure/closet/crate/necropolis/tendril/PopulateContents()
-	var/loot = rand(1,31)
+	var/loot = rand(1,29)
 	switch(loot)
 		if(1)
 			new /obj/item/shared_storage/red(src)
@@ -29,7 +29,7 @@
 			new /obj/item/reagent_containers/glass/bottle/potion/flight(src)
 		if(7)
 			new /obj/item/pickaxe/diamond(src)
-			new /obj/item/pinpointer/deepcore/advanced(src)
+			new /obj/item/t_scanner/adv_mining_scanner(src)
 		if(8)
 			if(prob(50))
 				new /obj/item/disk/design_disk/modkit_disc/resonator_blast(src)
@@ -42,7 +42,7 @@
 		if(11)
 			new /obj/item/ship_in_a_bottle(src)
 		if(12)
-			new /obj/item/clothing/suit/space/hardsuit/ert/paranormal/berserker(src)
+			new /obj/item/clothing/suit/space/hardsuit/berserker(src)
 		if(13)
 			new /obj/item/borg/upgrade/modkit/lifesteal(src)
 			new /obj/item/bedsheet/cult(src)
@@ -71,24 +71,19 @@
 		if(22)
 			new /obj/item/voodoo(src)
 		if(23)
-			new /obj/item/grenade/clusterbuster/inferno(src)
-		if(24)
-			new /obj/item/reagent_containers/food/drinks/bottle/holywater/hell(src)
-			new /obj/item/clothing/suit/space/hardsuit/ert/paranormal/inquisitor(src)
-		if(25)
 			new /obj/item/book/granter/spell/summonitem(src)
-		if(26)
+		if(24)
 			new /obj/item/clothing/gloves/gauntlets(src)
-		if(27)
+		if(25)
 			new /obj/item/clothing/under/drip(src)
 			new /obj/item/clothing/shoes/drip(src)
-		if(28)
+		if(26)
 			new /obj/item/freeze_cube(src)
-		if(29)
+		if(27)
 			new /obj/item/gun/energy/spur(src)
-		if(30)
+		if(28)
 			new /obj/item/clothing/suit/armor/ascetic(src)
-		if(31)
+		if(29)
 			new /obj/item/kitchen/knife/envy(src)
 
 /obj/structure/closet/crate/necropolis/tendril/greater
@@ -96,7 +91,7 @@
 
 /obj/structure/closet/crate/necropolis/tendril/greater/PopulateContents()
 	for(var/i in 1 to 3)
-		var/loot = rand(1,31)
+		var/loot = rand(1,29)
 		switch(loot)
 			if(1)
 				new /obj/item/shared_storage/red(src)
@@ -112,7 +107,7 @@
 				new /obj/item/reagent_containers/glass/bottle/potion/flight(src)
 			if(7)
 				new /obj/item/pickaxe/diamond(src)
-				new /obj/item/pinpointer/deepcore/advanced(src)
+				new /obj/item/t_scanner/adv_mining_scanner(src)
 			if(8)
 				if(prob(50))
 					new /obj/item/disk/design_disk/modkit_disc/resonator_blast(src)
@@ -125,7 +120,7 @@
 			if(11)
 				new /obj/item/ship_in_a_bottle(src)
 			if(12)
-				new /obj/item/clothing/suit/space/hardsuit/ert/paranormal/berserker(src)
+				new /obj/item/clothing/suit/space/hardsuit/berserker(src)
 			if(13)
 				new /obj/item/borg/upgrade/modkit/lifesteal(src)
 				new /obj/item/bedsheet/cult(src)
@@ -154,24 +149,19 @@
 			if(22)
 				new /obj/item/voodoo(src)
 			if(23)
-				new /obj/item/grenade/clusterbuster/inferno(src)
-			if(24)
-				new /obj/item/reagent_containers/food/drinks/bottle/holywater/hell(src)
-				new /obj/item/clothing/suit/space/hardsuit/ert/paranormal/inquisitor(src)
-			if(25)
 				new /obj/item/book/granter/spell/summonitem(src)
-			if(26)
+			if(24)
 				new /obj/item/clothing/gloves/gauntlets(src)
-			if(27)
+			if(25)
 				new /obj/item/clothing/under/drip(src)
 				new /obj/item/clothing/shoes/drip(src)
-			if(28)
+			if(26)
 				new /obj/item/freeze_cube(src)
-			if(29)
+			if(27)
 				new /obj/item/gun/energy/spur(src)
-			if(30)
+			if(28)
 				new /obj/item/clothing/suit/armor/ascetic(src)
-			if(31)
+			if(29)
 				new /obj/item/kitchen/knife/envy(src)
 
 //KA modkit design discs
@@ -268,6 +258,7 @@
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
 	lace_time = 35 SECONDS//nike shoelace art joke
 	slowdown = -0.2
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/under/drip/equipped(mob/user, slot)
 	. = ..()
@@ -584,7 +575,7 @@
 
 /obj/projectile/hook/fire(setAngle)
 	if(firer)
-		chain = firer.Beam(src, icon_state = "chain")
+		chain = firer.Beam(src, icon_state = "chain", emissive = FALSE)
 	..()
 	//TODO: root the firer until the chain returns
 
@@ -787,13 +778,14 @@
 	name = "Flight Potion"
 	description = "Strange mutagenic compound of unknown origins."
 	reagent_state = LIQUID
+	process_flags = ORGANIC | SYNTHETIC
 	color = "#FFEBEB"
 
 /datum/reagent/flightpotion/expose_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
 	if(iscarbon(M) && M.stat != DEAD)
 		var/mob/living/carbon/C = M
 		var/holycheck = ishumanbasic(C)
-		if(reac_volume < 5 || !(holycheck || islizard(C) || (ismoth(C) && C.dna.features["moth_wings"] != "Burnt Off"))) // implying xenohumans are holy //as with all things,
+		if(reac_volume < 5 || !(holycheck || islizard(C) || isipc(C) || (ismoth(C) && C.dna.features["moth_wings"] != "Burnt Off"))) // implying xenohumans are holy //as with all things,
 			if(method == INGEST && show_message)
 				to_chat(C, "<span class='notice'><i>You feel nothing but a terrible aftertaste.</i></span>")
 			return ..()
@@ -998,6 +990,7 @@
 	recoil = 1
 	cell_type = /obj/item/stock_parts/cell/gun
 	ammo_type = list(/obj/item/ammo_casing/energy/spur)
+	supports_variations = VOX_VARIATION
 	var/chargesound
 
 /obj/item/gun/energy/spur/examine(mob/user)

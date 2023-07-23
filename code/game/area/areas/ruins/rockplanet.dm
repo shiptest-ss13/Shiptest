@@ -5,4 +5,3 @@
 
 /area/mine/rockplanet_nanotrasen
 	name = "Abandoned Mining Facility"
-

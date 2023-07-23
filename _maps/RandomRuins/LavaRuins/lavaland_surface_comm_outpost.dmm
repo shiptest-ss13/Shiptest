@@ -1,6 +1,6 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "bk" = (
-/obj/machinery/light/dim,
+/obj/machinery/light/dim/directional/south,
 /turf/open/floor/mineral/plastitanium{
 	name = "base floor"
 	},
@@ -70,17 +70,13 @@
 	},
 /area/ruin/unpowered/syndicate_outpost)
 "uM" = (
-/obj/machinery/light/dim{
-	dir = 8
-	},
+/obj/machinery/light/dim/directional/west,
 /turf/open/floor/mineral/plastitanium{
 	name = "base floor"
 	},
 /area/ruin/unpowered/syndicate_outpost)
 "xV" = (
-/obj/machinery/light/dim{
-	dir = 1
-	},
+/obj/machinery/light/dim/directional/north,
 /turf/open/floor/carpet,
 /area/ruin/unpowered/syndicate_outpost)
 "AV" = (
@@ -130,10 +126,6 @@
 	name = "base floor"
 	},
 /area/ruin/unpowered/syndicate_outpost)
-"IZ" = (
-/obj/effect/mapping_helpers/no_lava,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/ruin/unpowered/syndicate_outpost)
 "JO" = (
 /obj/machinery/door/airlock/highsecurity{
 	hackProof = 1;
@@ -158,14 +150,15 @@
 /turf/open/floor/plating,
 /area/ruin/unpowered/syndicate_outpost)
 "Mo" = (
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/airlock/hatch{
+	dir = 4
+	},
 /turf/open/floor/mineral/plastitanium/red{
 	name = "base floor"
 	},
 /area/ruin/unpowered/syndicate_outpost)
 "MK" = (
-/obj/structure/closet/crate/grave,
-/obj/effect/mapping_helpers/no_lava,
+/obj/structure/closet/crate/grave/loot,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered/syndicate_outpost)
 "NT" = (
@@ -215,9 +208,7 @@
 /turf/open/floor/carpet/black,
 /area/ruin/unpowered/syndicate_outpost)
 "To" = (
-/obj/machinery/light/dim{
-	dir = 8
-	},
+/obj/machinery/light/dim/directional/west,
 /turf/open/floor/mineral/plastitanium/red{
 	name = "base floor"
 	},
@@ -267,7 +258,7 @@
 /area/ruin/unpowered/syndicate_outpost)
 "YJ" = (
 /obj/structure/table/reinforced,
-/obj/item/radio/intercom/wideband,
+/obj/item/radio/intercom/wideband/directional/north,
 /turf/open/floor/mineral/plastitanium/red{
 	name = "base floor"
 	},
@@ -280,14 +271,14 @@
 /area/ruin/unpowered/syndicate_outpost)
 
 (1,1,1) = {"
-IZ
-IZ
-IZ
-IZ
-IZ
-IZ
-IZ
-IZ
+RV
+RV
+RV
+RV
+RV
+RV
+RV
+RV
 Wt
 Wt
 Wt
@@ -296,14 +287,14 @@ Wt
 Wt
 "}
 (2,1,1) = {"
-IZ
+RV
 ho
 ho
 ho
 JO
 ho
 ho
-IZ
+RV
 RV
 Wt
 Wt
@@ -312,7 +303,7 @@ Wt
 Wt
 "}
 (3,1,1) = {"
-IZ
+RV
 ho
 Pi
 uM
@@ -328,7 +319,7 @@ RV
 Wt
 "}
 (4,1,1) = {"
-IZ
+RV
 Lu
 NT
 Cs
@@ -344,7 +335,7 @@ RV
 RV
 "}
 (5,1,1) = {"
-IZ
+RV
 Lu
 II
 YJ
@@ -360,7 +351,7 @@ ho
 RV
 "}
 (6,1,1) = {"
-IZ
+RV
 Lu
 js
 qp
@@ -376,7 +367,7 @@ ho
 RV
 "}
 (7,1,1) = {"
-IZ
+RV
 ho
 js
 Ts
@@ -392,7 +383,7 @@ ho
 RV
 "}
 (8,1,1) = {"
-IZ
+RV
 ho
 PG
 PG
@@ -408,7 +399,7 @@ ho
 RV
 "}
 (9,1,1) = {"
-IZ
+RV
 ho
 bA
 To
@@ -433,10 +424,10 @@ js
 fa
 VY
 ho
-IZ
-IZ
-IZ
-IZ
+RV
+RV
+RV
+RV
 RV
 "}
 (11,1,1) = {"
@@ -450,9 +441,9 @@ XB
 Kw
 ho
 MK
-IZ
-IZ
-IZ
+RV
+RV
+RV
 Wt
 "}
 (12,1,1) = {"
@@ -465,10 +456,10 @@ ho
 ho
 ho
 ho
-IZ
-IZ
-IZ
-IZ
+RV
+RV
+RV
+RV
 Wt
 "}
 (13,1,1) = {"
@@ -481,9 +472,9 @@ RV
 RV
 RV
 RV
-IZ
-IZ
-IZ
+RV
+RV
+RV
 Wt
 Wt
 "}

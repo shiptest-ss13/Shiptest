@@ -49,7 +49,6 @@
 #define HIGH_SIGIL_LAYER 2.56
 
 #define BELOW_OPEN_DOOR_LAYER 2.6
-#define BLASTDOOR_LAYER 2.65
 #define OPEN_DOOR_LAYER 2.7
 #define DOOR_HELPER_LAYER 2.71 //keep this above OPEN_DOOR_LAYER
 #define PROJECTILE_HIT_THRESHHOLD_LAYER 2.75 //projectiles won't hit objects at or below this layer if possible
@@ -58,12 +57,13 @@
 #define BELOW_OBJ_LAYER 2.9
 #define LOW_ITEM_LAYER 2.95
 //#define OBJ_LAYER 3 //For easy recordkeeping; this is a byond define
-#define CLOSED_BLASTDOOR_LAYER 3.05
+#define RAILING_LAYER 3.08
 #define UNDERDOOR 3.09 //Just under a closed door
 #define CLOSED_DOOR_LAYER 3.1
 #define CLOSED_FIREDOOR_LAYER 3.11
-#define SHUTTER_LAYER 3.12 // HERE BE DRAGONS
 #define ABOVE_OBJ_LAYER 3.2
+#define BLASTDOOR_LAYER 3.21
+#define ABOVE_BLASTDOOR_LAYER 3.22
 #define ABOVE_WINDOW_LAYER 3.3
 #define SIGN_LAYER 3.4
 #define NOT_HIGH_OBJ_LAYER 3.5
@@ -71,7 +71,6 @@
 
 #define BELOW_MOB_LAYER 3.7
 #define LYING_MOB_LAYER 3.8
-#define SPACEPOD_LAYER 3.9 //WS - Spess pods
 //#define MOB_LAYER 4 //For easy recordkeeping; this is a byond define
 #define ABOVE_MOB_LAYER 4.1
 #define WALL_OBJ_LAYER 4.25
@@ -156,4 +155,7 @@
 
 #define SPLASHSCREEN_LAYER 54
 #define SPLASHSCREEN_PLANE 54
+
+#define ADMIN_POPUP_LAYER 1
+
 #define SPLASHSCREEN_RENDER_TARGET "SPLASHSCREEN_PLANE"

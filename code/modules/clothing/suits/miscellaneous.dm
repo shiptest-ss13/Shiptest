@@ -85,7 +85,7 @@
 	icon_state = "judge"
 	item_state = "judge"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-	allowed = list(/obj/item/storage/fancy/cigarettes, /obj/item/stack/spacecash)
+	allowed = list(/obj/item/storage/fancy/cigarettes, /obj/item/spacecash/bundle)
 	flags_inv = HIDEJUMPSUIT
 
 
@@ -422,6 +422,7 @@
 	item_state = "duster"
 	heat_protection = CHEST|GROIN|ARMS|LEGS
 	cold_protection = CHEST|GROIN|ARMS|LEGS
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/suit/jacket/leather/duster/command
 	name = "officer's duster"
@@ -693,6 +694,7 @@
 
 /obj/item/clothing/suit/hooded/wintercoat/security/inteq
 	name = "inteq winter coat"
+	desc = "An armored wintercoat in the colors of the IRMG, the zipper tab is the golden shield of the IRMG."
 	icon_state = "coatinteq"
 	item_state = "coatinteq"
 	hoodtype = /obj/item/clothing/head/hooded/winterhood/security/inteq

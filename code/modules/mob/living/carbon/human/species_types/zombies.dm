@@ -21,8 +21,8 @@
 	species_head = /obj/item/bodypart/head/zombie
 	species_l_arm = /obj/item/bodypart/l_arm/zombie
 	species_r_arm = /obj/item/bodypart/r_arm/zombie
-	species_l_leg = /obj/item/bodypart/l_leg/zombie
-	species_r_leg = /obj/item/bodypart/r_leg/zombie
+	species_l_leg = /obj/item/bodypart/leg/left/zombie
+	species_r_leg = /obj/item/bodypart/leg/right/zombie
 
 /datum/species/zombie/check_roundstart_eligible()
 	if(SSevents.holidays && SSevents.holidays[HALLOWEEN])
@@ -105,10 +105,10 @@
 	species_head = /obj/item/bodypart/head/zombie
 	species_l_arm = /obj/item/bodypart/l_arm/zombie
 	species_r_arm = /obj/item/bodypart/r_arm/zombie
-	species_l_leg = /obj/item/bodypart/l_leg/zombie
-	species_r_leg = /obj/item/bodypart/r_leg/zombie
+	species_l_leg = /obj/item/bodypart/leg/left/zombie
+	species_r_leg = /obj/item/bodypart/leg/right/zombie
 
-/datum/species/human/krokodil_addict/replace_body(mob/living/carbon/C, datum/species/new_species)
+/datum/species/human/krokodil_addict/replace_body(mob/living/carbon/C, datum/species/new_species, robotic = FALSE)
 	..()
 	var/skintone
 	if(ishuman(C))

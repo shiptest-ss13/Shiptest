@@ -136,7 +136,7 @@
 	var/datum/component/storage/active_storage
 	/// Active hud
 	var/datum/hud/hud_used = null
-	/// I have no idea tbh
+	/// It allows for scientific knowledge to be imparted (e.g. blob strain, if an object has research value, if it boosts a technode)
 	var/research_scanner = FALSE
 
 	/// Is the mob throw intent on
@@ -191,10 +191,6 @@
 	///List of progress bars this mob is currently seeing for actions
 	var/list/progressbars = null	//for stacking do_after bars
 
-	//WS Begin - Holy fuck work for spacepods
-	var/list/mousemove_intercept_objects
-	//WS End
-
 	///For storing what do_after's someone has, in case we want to restrict them to only one of a certain do_after at a time
 	var/list/do_afters
 
@@ -232,3 +228,6 @@
 
 	///Is the mob actively shifting?
 	var/shifting
+
+	/// Takes the four cardinal direction defines. Any atoms moving into this atom's tile will be allowed to from the added directions.
+	var/passthroughable = NONE

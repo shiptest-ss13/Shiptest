@@ -183,7 +183,12 @@
 #undef PATH_POWERCOIL
 #undef PATH_RPCOIL
 
-
+/obj/item/circuitboard/machine/tesla_ground
+	name = "Tesla Ground (Machine Board)"
+	icon_state = "engineering"
+	build_path = /obj/machinery/power/tesla_coil/tesla_ground
+	req_components = list(/obj/item/stock_parts/capacitor = 1)
+	needs_anchored = TRUE
 
 /obj/item/circuitboard/machine/cell_charger
 	name = "Cell Charger (Machine Board)"
@@ -293,6 +298,16 @@
 		/obj/item/stack/sheet/mineral/uranium = 10,
 		/obj/item/stack/sheet/mineral/plasma = 5)
 
+/obj/item/circuitboard/machine/rtg/geothermal
+	name = "Geothermal Power Tap"
+	build_path = /obj/machinery/power/rtg/geothermal
+	req_components = list(
+	/obj/item/pickaxe/drill = 1,
+	/obj/item/stack/cable_coil = 10,
+	/obj/item/stock_parts/capacitor = 2,
+	/obj/item/stock_parts/micro_laser = 1,
+	/obj/item/stock_parts/manipulator = 4)
+
 /obj/item/circuitboard/machine/scanner_gate
 	name = "Scanner Gate (Machine Board)"
 	icon_state = "engineering"
@@ -390,8 +405,20 @@
 	needs_anchored = FALSE
 
 /obj/item/circuitboard/machine/shieldwallgen/atmos
-	name = "Atmospheric Holowall Generator (Machine Board)"
+	name = "Atmospheric Holofield Generator (Machine Board)"
 	build_path = /obj/machinery/power/shieldwallgen/atmos
+
+/obj/item/circuitboard/machine/shieldwallgen/atmos/strong
+	name = "High Power Atmospheric Holofield Generator (Machine Board)"
+	build_path = /obj/machinery/power/shieldwallgen/atmos/strong
+	req_components = list(
+		/obj/item/stock_parts/manipulator/nano = 2,
+		/obj/item/stock_parts/micro_laser/high = 2,
+		/obj/item/stock_parts/capacitor/adv = 2,
+		/obj/item/stack/sheet/plasmaglass = 1,
+		/obj/item/stack/cable_coil = 5,
+	)
+
 
 /obj/item/circuitboard/machine/pipedispenser
 	name = "Pipe dispenser (Machine Board)"
@@ -668,6 +695,7 @@
 		/obj/item/stock_parts/capacitor = 1,
 		/obj/item/stock_parts/manipulator = 1,
 		/obj/item/stack/sheet/glass = 1,
+		/obj/item/stack/sheet/bluespace_crystal = 1,
 		/obj/item/stock_parts/cell = 1)
 	def_components = list(/obj/item/stock_parts/cell = /obj/item/stock_parts/cell/high)
 	needs_anchored = FALSE
@@ -1356,36 +1384,6 @@
 		/obj/item/stock_parts/scanning_module = 2,
 		/obj/item/stock_parts/micro_laser = 2)
 
-/obj/item/circuitboard/machine/deepcore/drill
-	name = "Deep Core Bluespace Drill (Machine Board)"
-	icon_state = "supply"
-	build_path = /obj/machinery/deepcore/drill
-	req_components = list(
-		/obj/item/stock_parts/micro_laser = 1,
-		/obj/item/stock_parts/manipulator = 1,
-		/obj/item/stock_parts/matter_bin = 1)
-
-/obj/item/circuitboard/machine/deepcore/hopper
-	name = "Bluespace Material Hopper (Machine Board)"
-	icon_state = "supply"
-	build_path = /obj/machinery/deepcore/hopper
-	req_components = list(
-		/obj/item/stack/ore/bluespace_crystal = 2,
-		/obj/item/stock_parts/capacitor = 2,
-		/obj/item/stock_parts/manipulator = 2,
-		/obj/item/stock_parts/matter_bin = 2)
-	def_components = list(/obj/item/stack/ore/bluespace_crystal = /obj/item/stack/ore/bluespace_crystal/artificial)
-
-/obj/item/circuitboard/machine/deepcore/hub
-	name = "Deepcore Mining Control Hub (Machine Board)"
-	icon_state = "supply"
-	build_path = /obj/machinery/deepcore/hub
-	req_components = list(
-		/obj/item/stock_parts/capacitor = 1,
-		/obj/item/stock_parts/micro_laser = 2,
-		/obj/item/stock_parts/matter_bin = 3,
-		/obj/item/stock_parts/manipulator = 2)
-
 //Misc
 /obj/item/circuitboard/machine/sheetifier
 	name = "Sheet-meister 2000 (Machine Board)"
@@ -1442,6 +1440,12 @@
 	req_components = list(/obj/item/stock_parts/capacitor = 3,
 		/obj/item/stock_parts/micro_laser = 3)
 
+/obj/item/circuitboard/machine/shuttle/engine/electric/bad
+	name = "Outdated Ion Thruster (Machine Board)"
+	build_path = /obj/machinery/power/shuttle/engine/electric/bad
+	req_components = list(/obj/item/stock_parts/capacitor = 2,
+		/obj/item/stock_parts/micro_laser = 2)
+
 /obj/item/circuitboard/machine/shuttle/engine/expulsion
 	name = "Expulsion Thruster (Machine Board)"
 	build_path = /obj/machinery/power/shuttle/engine/fueled/expulsion
@@ -1453,6 +1457,12 @@
 	build_path = /obj/machinery/power/shuttle/engine/liquid/oil
 	req_components = list(/obj/item/reagent_containers/glass/beaker = 4,
 		/obj/item/stock_parts/micro_laser = 2)
+
+/obj/item/circuitboard/machine/shuttle/engine/beer
+	name = "Beer Thruster (Machine Board)"
+	build_path = /obj/machinery/power/shuttle/engine/liquid/beer
+	req_components = list(/obj/item/reagent_containers/food/drinks/beer = 4,
+		/obj/item/stock_parts/micro_laser =  2)
 
 /obj/item/circuitboard/machine/shuttle/engine/void
 	name = "Void Thruster (Machine Board)"
@@ -1474,4 +1484,13 @@
 		/obj/item/stack/cable_coil = 5,
 		/obj/item/stock_parts/cell = 3,
 		/obj/item/stock_parts/capacitor = 1
+	)
+
+/obj/item/circuitboard/machine/shuttle/smes/micro
+	name = "Micro Electric Engine Precharger (Machine Board)"
+	build_path = /obj/machinery/power/smes/shuttle/micro
+	req_components = list(
+		/obj/item/stack/cable_coil = 5,
+		/obj/item/stock_parts/cell = 3,
+		/obj/item/stock_parts/capacitor = 2
 	)

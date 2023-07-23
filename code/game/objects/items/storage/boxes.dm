@@ -1137,7 +1137,7 @@
 	new /obj/item/reagent_containers/food/snacks/meat/slab/bear(src)
 	new /obj/item/reagent_containers/food/snacks/meat/slab/spider(src)
 	new /obj/item/reagent_containers/food/snacks/spidereggs(src)
-	new /obj/item/reagent_containers/food/snacks/carpmeat(src)
+	new /obj/item/reagent_containers/food/snacks/fishmeat/carp(src)
 	new /obj/item/reagent_containers/food/snacks/meat/slab/xeno(src)
 	new /obj/item/reagent_containers/food/snacks/meat/slab/corgi(src)
 	new /obj/item/reagent_containers/food/snacks/meatball(src)
@@ -1147,7 +1147,7 @@
 
 /obj/item/storage/box/ingredients/exotic/PopulateContents()
 	for(var/i in 1 to 2)
-		new /obj/item/reagent_containers/food/snacks/carpmeat(src)
+		new /obj/item/reagent_containers/food/snacks/fishmeat/carp(src)
 		new /obj/item/reagent_containers/food/snacks/grown/soybeans(src)
 		new /obj/item/reagent_containers/food/snacks/grown/cabbage(src)
 	new /obj/item/reagent_containers/food/snacks/grown/chili(src)
@@ -1371,6 +1371,7 @@
 		/obj/item/clothing/head/maidheadband/syndicate = 1,
 		/obj/item/clothing/under/syndicate/skirt/maid = 1,
 		/obj/item/clothing/gloves/combat/maid = 1,)
+	generate_items_inside(items_inside,src)
 
 // because i have no idea where the fuck to put this
 /obj/item/storage/box/maid
@@ -1426,7 +1427,7 @@
 		/obj/item/construction/rcd/combat/admin=1,\
 		/obj/item/pipe_dispenser=1,\
 		/obj/item/card/emag=1,\
-		/obj/item/stack/spacecash/c1000=50,\
+		/obj/item/spacecash/bundle/c10000=5,\
 		/obj/item/healthanalyzer/advanced=1,\
 		/obj/item/disk/tech_disk/debug=1,\
 		/obj/item/uplink/debug=1,\

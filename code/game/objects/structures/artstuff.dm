@@ -229,9 +229,8 @@
 	desc = "Art or \"Art\"? You decide."
 	icon = 'icons/obj/decals.dmi'
 	icon_state = "frame-empty"
-	buildable_sign = FALSE
 	var/obj/item/canvas/C
-	var/persistence_id
+	var/persistence_id = "general"
 
 /obj/structure/sign/painting/Initialize(mapload, dir, building)
 	. = ..()
@@ -242,6 +241,9 @@
 	if(building)
 		pixel_x = (dir & 3)? 0 : (dir == 4 ? -30 : 30)
 		pixel_y = (dir & 3)? (dir ==1 ? -30 : 30) : 0
+	//The painting is being loaded by the maploader and SSpersistence has already run. Load a painting ourselves.
+	if(mapload && SSpersistence.initialized)
+		load_persistent()
 
 /obj/structure/sign/painting/Destroy()
 	. = ..()
@@ -259,6 +261,12 @@
 	. = ..()
 	if(C)
 		C.ui_interact(user)
+
+/obj/structure/sign/painting/wrench_act(mob/living/user, obj/item/wrench/I)
+	if(!C)
+		return ..()
+	to_chat(user, "<span class='warning'>Remove the painting first!</span>")
+	return TRUE
 
 /obj/structure/sign/painting/wirecutter_act(mob/living/user, obj/item/I)
 	. = ..()

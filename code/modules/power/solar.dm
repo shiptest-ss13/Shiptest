@@ -4,7 +4,7 @@
 /obj/machinery/power/solar
 	name = "solar panel"
 	desc = "A solar panel. Generates electricity when in contact with sunlight."
-	icon = 'goon/icons/obj/power.dmi'
+	icon = 'icons/obj/machines/oldsolars.dmi'
 	icon_state = "sp_base"
 	density = TRUE
 	use_power = NO_POWER_USE
@@ -138,6 +138,25 @@
 /obj/machinery/power/solar/proc/occlusion_setup()
 	obscured = TRUE
 
+	var/sun_type = virtual_level_trait(ZTRAIT_SUN_TYPE)
+	if(sun_type == STATIC_OBSCURED)
+		return
+		// go straight to jail
+	if(sun_type == STATIC_EXPOSED)
+		var/turf/loc_turf = loc
+		loc_turf = loc_turf && loc_turf.above()
+		if (!loc_turf)
+			var/count = 0
+			for(var/turf/other_turf in orange(1, src))
+				count += !isgroundlessturf(other_turf)
+			if (count >= 9)
+				return
+		else if(!isopenturf(loc_turf))
+			return
+		obscured = FALSE
+		return
+		// do not continue
+
 	var/distance = OCCLUSION_DISTANCE
 	var/target_x = round(sin(SSsun.azimuth), 0.01)
 	var/target_y = round(cos(SSsun.azimuth), 0.01)
@@ -161,6 +180,11 @@
 	sunfrac = 0
 	if(obscured)
 		return 0
+
+	var/sun_type = virtual_level_trait(ZTRAIT_SUN_TYPE)
+	if (sun_type == STATIC_EXPOSED)
+		sunfrac = 1
+		return 1
 
 	var/sun_azimuth = SSsun.azimuth
 	if(azimuth_current == sun_azimuth) //just a quick optimization for the most frequent case
@@ -203,7 +227,7 @@
 /obj/item/solar_assembly
 	name = "solar panel assembly"
 	desc = "A solar panel assembly kit, allows constructions of a solar panel, or with a tracking circuit board, a solar tracker."
-	icon = 'goon/icons/obj/power.dmi'
+	icon = 'icons/obj/machines/oldsolars.dmi'
 	icon_state = "sp_base"
 	item_state = "electropack"
 	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi'
@@ -292,7 +316,7 @@
 /obj/machinery/power/solar_control
 	name = "solar panel control"
 	desc = "A controller for solar panel arrays."
-	icon = 'icons/obj/computer.dmi'
+	icon = 'icons/obj/machines/computer.dmi'
 	icon_state = "computer"
 	density = TRUE
 	use_power = IDLE_POWER_USE

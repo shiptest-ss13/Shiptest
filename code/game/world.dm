@@ -35,6 +35,7 @@ GLOBAL_VAR(restart_counter)
 	enable_debugger()
 
 	log_world("World loaded at [time_stamp()]!")
+	SSmetrics.world_init_time = REALTIMEOFDAY // Important
 
 	make_datum_references_lists()	//initialises global lists for referencing frequently used datums (so that we only ever do it once)
 
@@ -81,6 +82,10 @@ GLOBAL_VAR(restart_counter)
 
 	#ifdef UNIT_TESTS
 	HandleTestRun()
+	#endif
+
+	#ifdef AUTOWIKI
+	setup_autowiki()
 	#endif
 
 /world/proc/InitTgs()

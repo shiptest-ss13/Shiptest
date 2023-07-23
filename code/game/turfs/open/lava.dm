@@ -17,6 +17,17 @@
 	clawfootstep = FOOTSTEP_LAVA
 	heavyfootstep = FOOTSTEP_LAVA
 
+	var/particle_emitter = /obj/effect/particle_emitter/lava
+
+/turf/open/lava/Initialize(mapload)
+	. = ..()
+	particle_emitter = new /obj/effect/particle_emitter/lava(src)
+	AddElement(/datum/element/lazy_fishing_spot, FISHING_SPOT_PRESET_LAVALAND_LAVA)
+
+/turf/open/lava/Destroy()
+	. = ..()
+	QDEL_NULL(particle_emitter)
+
 /turf/open/lava/ex_act(severity, target)
 	contents_explosion(severity, target)
 
@@ -193,3 +204,20 @@
 
 /turf/open/lava/smooth/airless
 	initial_gas_mix = AIRLESS_ATMOS
+
+/particles/lava
+	width = 700
+	height = 700
+	count = 1000
+	spawning = 1
+	lifespan = 3 SECONDS
+	fade = 2 SECONDS
+	position = generator("circle", 16, 24, NORMAL_RAND)
+	drift = generator("vector", list(-0.2, -0.2), list(0.2, 0.2))
+	velocity = generator("circle", -6, 6, NORMAL_RAND)
+	friction = 0.15
+	gradient = list(0,LIGHT_COLOR_FLARE , 0.75, COLOR_ALMOST_BLACK)
+	color_change = 0.125
+
+/obj/effect/particle_emitter/lava
+	particles = new/particles/lava

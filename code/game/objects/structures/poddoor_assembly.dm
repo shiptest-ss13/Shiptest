@@ -22,7 +22,14 @@
 /obj/structure/poddoor_assembly/Initialize()
 	. = ..()
 	update_icon()
-	update_name()
+	update_door_name()
+
+/obj/structure/poddoor_assembly/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/simple_rotation, ROTATION_ALTCLICK | ROTATION_CLOCKWISE | ROTATION_COUNTERCLOCKWISE | ROTATION_VERBS, null, CALLBACK(src, .proc/can_be_rotated))
+
+/obj/structure/poddoor_assembly/proc/can_be_rotated(mob/user, rotation_type)
+	return !anchored
 
 /obj/structure/poddoor_assembly/examine(mob/user)
 	. = ..()
@@ -187,10 +194,10 @@
 				qdel(src)
 	else
 		return ..()
-	update_name()
+	update_door_name()
 	update_icon()
 
-/obj/structure/poddoor_assembly/proc/update_name()
+/obj/structure/poddoor_assembly/proc/update_door_name()
 
 	switch(state)
 		if(AIRLOCK_ASSEMBLY_NEEDS_ELECTRONICS)

@@ -2,8 +2,6 @@
 	name = "Roboticist"
 	total_positions = 2
 	spawn_positions = 2
-	exp_requirements = 60
-	exp_type = EXP_TYPE_CREW
 	wiki_page = "Guide_to_Robotics" //WS Edit - Wikilinks/Warning
 
 	outfit = /datum/outfit/job/roboticist
@@ -79,8 +77,6 @@
 	dcoat = null
 	neck = /obj/item/clothing/neck/tie/black
 
-	backpack_contents = list(/obj/item/storage/belt/utility/full=1)
-
 //Shiptest Outfits
 
 /datum/outfit/job/roboticist/technician
@@ -105,4 +101,11 @@
 	mask = /obj/item/clothing/mask/infiltrator
 	glasses = /obj/item/clothing/glasses/hud/diagnostic
 	shoes = /obj/item/clothing/shoes/workboots
+/datum/outfit/job/roboticist/technician/minutemen
+	name = "Mech Technician (Minutemen)"
+
+	uniform = /obj/item/clothing/under/rank/security/officer/minutemen
+	shoes = /obj/item/clothing/shoes/combat
+	ears = /obj/item/radio/headset/minutemen
+	suit = /obj/item/clothing/suit/toggle/labcoat/science
 

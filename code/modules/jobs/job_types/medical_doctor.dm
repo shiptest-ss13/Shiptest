@@ -35,7 +35,6 @@
 
 	chameleon_extras = /obj/item/gun/syringe
 
-//WS Edit Start - Alt-Job Titles
 /datum/outfit/job/doctor/surgeon
 	name = "Medical Doctor (Surgeon)"
 
@@ -56,7 +55,6 @@
 /datum/outfit/job/doctor/juniordoctor
 	name = "Medical Doctor (Junior Doctor)"
 
-	uniform = /obj/item/clothing/under/rank/medical/doctor/junior_doctor
 	alt_uniform = null
 	shoes = /obj/item/clothing/shoes/sneakers/blue
 	suit =  null
@@ -69,7 +67,7 @@
 /datum/outfit/job/doctor/seniordoctor
 	name = "Medical Doctor (Senior Doctor)"
 
-	uniform = /obj/item/clothing/under/suit/senior_doctor
+	uniform = /obj/item/clothing/under/rank/medical/doctor
 	alt_uniform = null
 	shoes = /obj/item/clothing/shoes/laceup
 	suit = /obj/item/clothing/suit/toggle/lawyer/medical
@@ -85,7 +83,6 @@
 	name = "Medical Doctor (Psychiatrist)"
 
 	uniform = /obj/item/clothing/under/rank/medical/psychiatrist
-	alt_uniform = /obj/item/clothing/under/rank/medical/psychiatrist/blue
 	shoes = /obj/item/clothing/shoes/laceup
 	suit =  null
 	alt_suit = null
@@ -93,7 +90,6 @@
 	suit_store = null
 
 	backpack_contents = list(/obj/item/clipboard=1, /obj/item/folder/white=1, /obj/item/taperecorder=1)
-//WS Edit End - Alt-Job Titles
 
 //Shiptest outfits
 
@@ -105,21 +101,6 @@
 	head = /obj/item/clothing/head/beret/med
 	suit = null
 	suit_store = null
-
-/datum/outfit/job/doctor/solgov
-	name = "Medical Doctor (SolGov)"
-
-	uniform = /obj/item/clothing/under/solgov
-	accessory = /obj/item/clothing/accessory/armband/medblue
-	shoes = /obj/item/clothing/shoes/sneakers/white
-	head = /obj/item/clothing/head/beret/solgov
-	suit =  /obj/item/clothing/suit/toggle/labcoat
-
-/datum/outfit/job/doctor/solgov/rebel
-	name = "Medical Doctor (Deserter)"
-
-	uniform = /obj/item/clothing/under/syndicate/camo
-	head = /obj/item/clothing/head/beret/solgov/terragov
 
 /datum/outfit/job/doctor/pirate
 	name = "Ship's Doctor (Pirate)"
@@ -166,3 +147,12 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag
 	courierbag = /obj/item/storage/backpack/messenger
 	backpack_contents = list(/obj/item/storage/firstaid/roumain=1)
+
+/datum/outfit/job/doctor/frontiersmen
+	name = "Surgeon (frontiersmen)"
+
+	uniform = /obj/item/clothing/under/rank/security/officer/frontier
+	glasses = /obj/item/clothing/glasses/hud/health/prescription
+	ears = /obj/item/radio/headset/pirate
+	r_pocket = /obj/item/kitchen/knife/combat/survival
+	backpack_contents = list(/obj/item/storage/firstaid/medical,)

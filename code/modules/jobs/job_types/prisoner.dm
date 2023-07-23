@@ -30,3 +30,10 @@
 /datum/outfit/job/prisoner/shotcaller
 	name = "Shotcaller"
 	l_pocket = /obj/item/kitchen/knife/shiv
+
+/datum/outfit/job/prisoner/longtermpatient
+	name = "Long Term Patient"
+	id = /obj/item/card/id/syndicate_command/crew_id
+	uniform = /obj/item/clothing/under/misc/pj/red
+	alt_suit = null
+	shoes = /obj/item/clothing/shoes/sandal

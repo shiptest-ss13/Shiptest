@@ -30,6 +30,7 @@
 	icon_screen = "seclaptop"
 	icon_keyboard = "laptop_key"
 	pass_flags = PASSTABLE
+	unique_icon = TRUE
 
 //Someone needs to break down the dat += into chunks instead of long ass lines.
 /obj/machinery/computer/secure_data/ui_interact(mob/user)
@@ -476,7 +477,7 @@ What a mess.*/
 				var/counter = 1
 				while(active2.fields[text("com_[]", counter)])
 					counter++
-				active2.fields[text("com_[]", counter)] = text("Made by [] ([]) on [] [], []<BR>[]", src.authenticated, src.rank, station_time_timestamp(), time2text(world.realtime, "MMM DD"), GLOB.year_integer+540, t1)
+				active2.fields[text("com_[]", counter)] = text("Made by [] ([]) on [] [], []<BR>[]", src.authenticated, src.rank, station_time_timestamp(), time2text(world.realtime, "MMM DD"), "504 FS", t1)
 
 			if("Delete Record (ALL)")
 				if(active1)

@@ -226,7 +226,7 @@
 	icon_state = "hair_vlong"
 	item_state = "pwig"
 	flags_inv = HIDEHAIR
-	color = "#000"
+	color = "#000000"
 	var/hairstyle = "Very Long Hair"
 	var/adjustablecolor = TRUE //can color be changed manually?
 
@@ -276,13 +276,13 @@
 
 /obj/item/clothing/head/wig/random/Initialize(mapload)
 	hairstyle = pick(GLOB.hairstyles_list - "Bald") //Don't want invisible wig
-	add_atom_colour("#[random_short_color()]", FIXED_COLOUR_PRIORITY)
+	add_atom_colour("#[random_color_natural()]", FIXED_COLOUR_PRIORITY)
 	. = ..()
 
 /obj/item/clothing/head/wig/natural
 	name = "natural wig"
 	desc = "A bunch of hair without a head attached. This one changes color to match the hair of the wearer. Nothing natural about that."
-	color = "#FFF"
+	color = "#FFFFFF"
 	adjustablecolor = FALSE
 	custom_price = 100
 

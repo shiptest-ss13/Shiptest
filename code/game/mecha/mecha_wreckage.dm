@@ -153,6 +153,10 @@
 				/obj/item/mecha_parts/part/ripley_left_leg,
 				/obj/item/mecha_parts/part/ripley_right_leg)
 
+/obj/structure/mecha_wreckage/ripley/cmm
+	name = "\improper Rogue wreckage"
+	icon_state = "cmmripley-broken"
+
 /obj/structure/mecha_wreckage/ripley/mkii
 	name = "\improper Ripley MK-II wreckage"
 	icon_state = "ripleymkii-broken"
@@ -195,6 +199,10 @@
 			/obj/item/mecha_parts/part/durand_right_arm,
 			/obj/item/mecha_parts/part/durand_left_leg,
 			/obj/item/mecha_parts/part/durand_right_leg)
+
+/obj/structure/mecha_wreckage/durand/cmm
+	name = "\improper Paladin wreckage"
+	icon_state = "cmmdurand-broken"
 
 /obj/structure/mecha_wreckage/phazon
 	name = "\improper Phazon wreckage"

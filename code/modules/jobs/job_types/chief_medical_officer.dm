@@ -4,9 +4,6 @@
 	total_positions = 1
 	spawn_positions = 1
 	minimal_player_age = 7
-	exp_requirements = 180
-	exp_type = EXP_TYPE_CREW
-	exp_type_department = EXP_TYPE_MEDICAL
 	officer = TRUE
 	wiki_page = "Chief_Medical_Officer"
 
@@ -59,7 +56,6 @@
 /datum/outfit/job/cmo/medicaldirector
 	name = "Chief Medical Officer (Medical Director)"
 
-	uniform = /obj/item/clothing/under/suit/cmo
 	alt_uniform = null
 	shoes = /obj/item/clothing/shoes/laceup
 	suit = /obj/item/clothing/suit/toggle/lawyer/cmo
@@ -72,7 +68,7 @@
 /datum/outfit/job/cmo/surgeongeneral
 	name = "Chief Medical Officer (Surgeon-General)"
 
-	uniform = /obj/item/clothing/under/rank/medical/chief_medical_officer/surgeon_general
+	uniform = /obj/item/clothing/under/rank/medical/chief_medical_officer
 	alt_uniform = null
 	shoes = /obj/item/clothing/shoes/laceup
 	suit = /obj/item/clothing/suit/toggle/labcoat/cmo
@@ -89,3 +85,22 @@
 	ears = /obj/item/radio/headset/syndicate/alt/captain
 	id = /obj/item/card/id/syndicate_command/captain_id
 	shoes = /obj/item/clothing/shoes/jackboots
+
+/datum/outfit/job/cmo/pharma
+	name = "Chief Pharmacist"
+
+	glasses = /obj/item/clothing/glasses/science/prescription/fake//chief pharma is this kind of person
+	neck = /obj/item/clothing/neck/tie/orange//the Horrible Tie was genuinely too hard to look at
+	l_pocket = /obj/item/reagent_containers/glass/filter
+	ears = /obj/item/radio/headset/heads/cmo
+	uniform = /obj/item/clothing/under/suit/tan
+	alt_uniform = /obj/item/clothing/under/rank/medical/doctor/green
+	shoes = /obj/item/clothing/shoes/sneakers/brown
+	suit = /obj/item/clothing/suit/toggle/suspenders/gray
+	suit_store = null
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/medical
+	l_hand = /obj/item/reagent_containers/glass/maunamug
+	backpack = /obj/item/storage/backpack/chemistry
+	satchel = /obj/item/storage/backpack/satchel/chem
+	courierbag = /obj/item/storage/backpack/messenger/chem
+	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/storage/bag/chemistry=1)

@@ -52,6 +52,12 @@ SUBSYSTEM_DEF(timer)
 	/// How many times bucket was reset
 	var/bucket_reset_count = 0
 
+/datum/controller/subsystem/timer/get_metrics()
+	. = ..()
+	var/list/cust = list()
+	cust["bucket_count"] = bucket_count
+	.["custom"] = cust
+
 /datum/controller/subsystem/timer/PreInit()
 	bucket_list.len = BUCKET_LEN
 	head_offset = world.time
