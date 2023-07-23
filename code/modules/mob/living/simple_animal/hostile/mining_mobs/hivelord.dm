@@ -396,7 +396,6 @@
 
 /obj/effect/mob_spawn/human/corpse/damaged/legioninfested/dwarf/equip(mob/living/carbon/human/H)
 	. = ..()
-	H.set_species(/datum/species/dwarf)
 	H.transform = H.transform.Scale(0.8, 1)//somehow dwarf squashing is borked when not roundstart. I hate WS code
 
 /obj/effect/mob_spawn/human/corpse/damaged/legioninfested/Initialize() //in an ideal world, these would generate, the legion would overlay over the corpse, and we'd get cool sprites
@@ -442,7 +441,8 @@
 						/obj/item/pickaxe = 8,
 						/obj/item/pickaxe/mini = 4,
 						/obj/item/pickaxe/silver = 2,
-						/obj/item/pickaxe/diamond = 1
+						/obj/item/pickaxe/diamond = 1,
+						/obj/item/gun/energy/kinetic_accelerator = 1
 						)
 					)
 				else
@@ -543,8 +543,6 @@
 							)
 						)
 					)
-				if(prob(30))
-					backpack_contents += /obj/item/gun/energy/kinetic_accelerator
 			else
 				back = /obj/item/kinetic_crusher
 		if("Oldminer")
@@ -626,12 +624,10 @@
 							)
 						)
 					)
-				if(prob(30))
-					backpack_contents += /obj/item/gun/energy/kinetic_accelerator/old
 			else
 				back = /obj/item/kinetic_crusher/old
 			if(prob(30))
-				belt = /obj/item/storage/belt/mining/alt
+				belt = /obj/item/gun/energy/kinetic_accelerator/old
 			if(prob(30))
 				r_pocket = pickweight(list(
 					/obj/item/stack/marker_beacon = 20,

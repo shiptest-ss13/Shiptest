@@ -136,7 +136,7 @@ Nothing else in the console has ID requirements.
 				return
 			else
 				playsound(src, 'sound/machines/ping.ogg', 50, 3, -1)
-				visible_message("<span class='notice'>You insert [E] into a slot on the [src], producting [E.research] points from the extract's chemical makeup!</span>")
+				visible_message("<span class='notice'>[user] inserts [E] into a slot on the [src]!</span>", "<span class='notice'>You insert [E] into a slot on the [src], producting [E.research] points from the extract's chemical makeup!</span>")
 				stored_research.add_point_list(list(TECHWEB_POINT_TYPE_GENERIC = E.research))
 				slime_already_researched[E.type] = TRUE
 				qdel(D)
@@ -155,7 +155,7 @@ Nothing else in the console has ID requirements.
 				return
 			else
 				playsound(src, 'sound/machines/ping.ogg', 50, 3, -1)
-				visible_message("<span class='notice'>You insert [E] into a slot on the [src], producting [E.research] points from the plant's genetic makeup!</span>")
+				visible_message("<span class='notice'>[user] inserts [E] into a slot on the [src]!</span>", "<span class='notice'>You insert [E] into a slot on the [src], producting [E.research] points from the plant's genetic makeup!</span>")
 				stored_research.add_point_list(list(TECHWEB_POINT_TYPE_GENERIC = E.research))
 				plant_already_researched[E.type] = TRUE
 				qdel(D)
@@ -164,6 +164,18 @@ Nothing else in the console has ID requirements.
 			visible_message("<span class='notice'>[src] buzzes and displays a message: Genetic data already researched!</span>")
 			playsound(src, 'sound/machines/buzz-sigh.ogg', 50, 3, -1)
 			return
+	if(istype(D, /obj/item/assembly/signaler/anomaly))
+
+		var/obj/item/assembly/signaler/anomaly/anomaly = D
+		if(!stored_research)
+			visible_message("Warning: No Linked Server!")
+			return
+
+		playsound(src, 'sound/machines/ping.ogg', 50, 3, -1)
+		visible_message("<span class='notice'>[user] inserts [anomaly] into a slot on the [src]!</span>", "<span class='notice'>You insert [anomaly] into a slot on the [src], producting [anomaly.research] points!</span>")
+		stored_research.add_point_list(list(TECHWEB_POINT_TYPE_GENERIC = anomaly.research))
+		qdel(anomaly)
+		return
 
 	if(istype(D, /obj/item/research_notes))
 		if(!stored_research)

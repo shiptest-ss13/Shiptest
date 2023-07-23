@@ -151,8 +151,6 @@
 						scan_species = /datum/species/spider
 					if(SCANGATE_IPC)
 						scan_species = /datum/species/ipc
-					if(SCANGATE_SQUID)
-						scan_species = /datum/species/squid
 					if(SCANGATE_ETHEREAL)
 						scan_species = /datum/species/ethereal
 					if(SCANGATE_KEPORI)

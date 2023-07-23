@@ -48,7 +48,7 @@
 	icon_state = "Sleep"
 
 /datum/preset_holoimage/montagne
-	outfit_type = /datum/outfit/job/chaplain/roumain
+	outfit_type = /datum/outfit/job/hos/roumain
 
 /obj/item/disk/holodisk/roumain
 	name = "Grand Ideology Sermon"

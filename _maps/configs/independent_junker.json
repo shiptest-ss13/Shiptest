@@ -1,0 +1,24 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Junker-class Salvaged Ship",
+	"prefix": "ISV",
+	"namelists": [
+		"GENERAL",
+		"SPACE"
+	],
+	"map_short_name": "Junker-class",
+	"description": "The Junker-class is not an official class, but rather the name for a general group of designs crafted from the ruins of old ships or stations. These ships became a common sight during the ICW, as deserters fled areas of conflict on these 'junkers', unprepared for the challenges of spacer life. They have since become a rare sight, and the few surviving crews of these ships typically bear a sense of disdain to ordinary power structures, and usually have no defined captain, or even owner, of the vessel.",
+	"tags": [
+		"Survival Challenge"
+	],
+	"starting_funds": 0,
+	"map_path": "_maps/shuttles/shiptest/independent_junker.dmm",
+	"limit": 1,
+	"job_slots": {
+		"Assistant": {
+			"outfit": "/datum/outfit/job/assistant",
+			"slots": 4
+		}
+	},
+	"enabled": true
+}

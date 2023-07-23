@@ -24,7 +24,7 @@
 	/// Our internal techweb for limbgrower designs.
 	var/datum/techweb/stored_research
 	/// All the categories of organs we can print.
-	var/list/categories = list(SPECIES_HUMAN,SPECIES_DWARF,SPECIES_LIZARD,SPECIES_MOTH,SPECIES_PLASMAMAN,SPECIES_ETHEREAL,SPECIES_RACHNID,SPECIES_KEPORI,SPECIES_VOX,"other")
+	var/list/categories = list(SPECIES_HUMAN,SPECIES_LIZARD,SPECIES_MOTH,SPECIES_PLASMAMAN,SPECIES_ETHEREAL,SPECIES_RACHNID,SPECIES_KEPORI,SPECIES_VOX,"other")
 	//yogs grower a little different because we're going to allow meats to be converted to synthflesh because hugbox
 	var/list/accepted_biomass = list(
 		/obj/item/reagent_containers/food/snacks/meat/slab/monkey = 25,
@@ -244,11 +244,7 @@
 	var/obj/item/bodypart/limb
 	limb = new buildpath(loc)
 	limb.name = "\improper synthetic [limb.bodytype & BODYTYPE_DIGITIGRADE ? "digitigrade ":""][selected_category] [limb.plaintext_zone]"
-	//super snowflake code to make digitigrade work with the rest of the limbs
-	if(limb.bodytype & BODYTYPE_DIGITIGRADE)
-		limb.limb_id = "digitigrade"
-	else
-		limb.limb_id = selected_category
+	limb.limb_id = selected_category
 	//fun override colors
 	limb.mutation_color = random_color()
 	limb.update_icon_dropped()

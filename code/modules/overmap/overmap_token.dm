@@ -34,9 +34,11 @@
 		cam_background.assigned_map = map_name
 		cam_background.del_on_map_removal = FALSE
 		update_screen()
+	update_icon()
 
 /obj/overmap/Destroy(force)
 	if(parent)
+		stack_trace("attempted to qdel a token that still has a parent")
 		return QDEL_HINT_LETMELIVE
 	if(render_map)
 		QDEL_NULL(cam_screen)

@@ -175,6 +175,24 @@
 	new /obj/item/bodypart/leg/left/robot/surplus/vox(src)
 	new /obj/item/bodypart/leg/right/robot/surplus/vox(src)
 
+/obj/structure/closet/crate/freezer/surplus_limbs/organs
+	name = "organ freezer"
+	desc = "A crate containing a variety of spare limbs and organs."
+
+/obj/structure/closet/crate/freezer/surplus_limbs/organs/PopulateContents()
+	. = ..()
+	new /obj/item/organ/stomach(src)
+	new /obj/item/organ/stomach(src)
+	new /obj/item/organ/lungs(src)
+	new /obj/item/organ/liver(src)
+	new /obj/item/organ/liver(src)
+	new /obj/item/organ/eyes(src)
+	new /obj/item/organ/eyes(src)
+	new /obj/item/organ/heart(src)
+	new /obj/item/organ/heart(src)
+	new /obj/item/organ/ears(src)
+	new /obj/item/organ/ears(src)
+
 /obj/structure/closet/crate/radiation
 	desc = "A crate with a radiation sign on it."
 	name = "radiation crate"
@@ -236,3 +254,10 @@
 	..()
 	for(var/i in 1 to 5)
 		new /obj/item/coin/silver(src)
+
+/obj/structure/closet/crate/chem
+	desc = "A small crate for the storage and transportation of chemicals."
+	name = "chemical crate"
+	icon_state = "chemcrate"
+	material_drop = /obj/item/stack/sheet/mineral/gold
+	material_drop_amount = 1

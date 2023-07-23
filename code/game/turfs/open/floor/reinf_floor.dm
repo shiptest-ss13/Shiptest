@@ -32,6 +32,9 @@
 		..()
 	return //unplateable
 
+/turf/open/floor/engine/temperature_expose()
+	return //inflammable
+
 /turf/open/floor/engine/try_replace_tile(obj/item/stack/tile/T, mob/user, params)
 	return
 

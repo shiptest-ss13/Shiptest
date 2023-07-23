@@ -225,7 +225,6 @@
 /obj/structure/table/wood,
 /obj/item/paper_bin/carbon,
 /obj/item/clothing/under/rank/medical/psychiatrist,
-/obj/item/clothing/under/rank/medical/psychiatrist/blue,
 /obj/item/stack/sheet/mineral/wood/fifty,
 /obj/item/lighter,
 /obj/item/clothing/suit/toggle/labcoat,
@@ -525,7 +524,6 @@
 /obj/item/surgicaldrill/advanced,
 /obj/item/healthanalyzer/advanced,
 /obj/item/clothing/glasses/hud/health/sunglasses,
-/obj/item/clothing/under/rank/medical/chief_medical_officer/surgeon_general,
 /obj/item/clothing/gloves/color/latex/nitrile/evil,
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/neck/stripedredscarf,
@@ -786,7 +784,8 @@
 "fY" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/airlock/hatch{
-	name = "Bathroom"
+	name = "Bathroom";
+	dir = 4
 	},
 /obj/effect/turf_decal/techfloor/hole/right,
 /obj/effect/turf_decal/techfloor/hole,
@@ -2717,6 +2716,7 @@
 	},
 /obj/item/clothing/under/rank/civilian/janitor/custodian/skirt,
 /obj/item/clothing/under/rank/civilian/janitor/custodian,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/carpet/red,
 /area/ship/crew/janitor)
 "zM" = (
@@ -2936,6 +2936,7 @@
 "CG" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/janitor)
 "CM" = (
@@ -3101,7 +3102,6 @@
 	name = "syndicate medic's black longcoat"
 	},
 /obj/item/clothing/under/rank/medical/doctor/red,
-/obj/item/clothing/under/suit/senior_doctor,
 /obj/item/clothing/suit/longcoat,
 /obj/item/clothing/neck/stripedbluescarf,
 /obj/item/clothing/neck/stripedredscarf,
@@ -3675,7 +3675,6 @@
 	name = "syndicate medic's black longcoat"
 	},
 /obj/item/clothing/under/rank/medical/doctor/red,
-/obj/item/clothing/under/suit/senior_doctor,
 /obj/item/clothing/suit/longcoat,
 /obj/item/clothing/neck/stripedbluescarf,
 /obj/item/clothing/neck/stripedredscarf,
@@ -4291,7 +4290,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
 	},
-/obj/machinery/light/small/directional/south,
 /obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/janitor)
@@ -4572,8 +4570,8 @@
 /obj/item/storage/bag/chemistry,
 /obj/item/clothing/suit/longcoat/chemist,
 /obj/item/clothing/suit/toggle/labcoat/chemist,
-/obj/item/clothing/under/rank/medical/chemist/pharmacist/skirt,
-/obj/item/clothing/under/rank/medical/chemist/pharmacist,
+/obj/item/clothing/under/rank/medical/chemist,
+/obj/item/clothing/under/rank/medical/chemist/skirt,
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/gloves/color/latex,
@@ -4962,16 +4960,16 @@
 /area/ship/engineering)
 "WC" = (
 /obj/structure/chair/sofa/left,
-/obj/item/radio/intercom/directional/north{
-	pixel_x = 4;
-	pixel_y = 24
-	},
 /obj/machinery/light_switch{
 	pixel_x = -10;
 	pixel_y = 26
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
+	},
+/obj/item/radio/intercom/directional/north{
+	pixel_y = 31;
+	pixel_x = 5
 	},
 /turf/open/floor/carpet/red,
 /area/ship/crew/canteen)
@@ -5257,7 +5255,7 @@
 	id = "cargo_ageis";
 	name = "cargobay doors";
 	pixel_x = 6;
-	pixel_y = 27
+	pixel_y = 22
 	},
 /obj/effect/decal/cleanable/glass,
 /obj/effect/turf_decal/corner_techfloor_grid/diagonal,
@@ -5265,7 +5263,7 @@
 /obj/machinery/button/shieldwallgen{
 	id = "aegis_holo";
 	pixel_x = -6;
-	pixel_y = 26
+	pixel_y = 21
 	},
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
@@ -6460,6 +6458,40 @@ TS
 TS
 TS
 aL
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+"}
+(33,1,1) = {"
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
 wk
 wk
 wk
