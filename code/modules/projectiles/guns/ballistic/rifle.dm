@@ -81,7 +81,7 @@
 		. = 1
 
 /obj/item/gun/ballistic/rifle/boltaction/solgov
-	name = "SSG-669C solarian sniper rifle"
+	name = "SSG-669C"
 	desc = "A bolt action sniper rifle used by the solarian army, beloved for its rotary design and accuracy. Chambered in 8x58mm Caseless."
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/solgov
 	icon_state = "ssg669c"
