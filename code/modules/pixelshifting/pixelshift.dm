@@ -12,21 +12,22 @@
 		pixel_y = base_pixel_y
 
 /atom/movable/proc/pixel_shift(direction)
+	var/max_shift = (!density | ismob(src)) ? MAXIMUM_PIXEL_SHIFT : PASSABLE_SHIFT_THRESHOLD
 	switch(direction)
 		if(NORTH)
-			if(pixel_y <= MAXIMUM_PIXEL_SHIFT + base_pixel_y)
+			if(pixel_y <= max_shift + base_pixel_y)
 				pixel_y++
 				is_shifted = TRUE
 		if(EAST)
-			if(pixel_x <= MAXIMUM_PIXEL_SHIFT + base_pixel_x)
+			if(pixel_x <= max_shift + base_pixel_x)
 				pixel_x++
 				is_shifted = TRUE
 		if(SOUTH)
-			if(pixel_y >= -MAXIMUM_PIXEL_SHIFT + base_pixel_y)
+			if(pixel_y >= -max_shift + base_pixel_y)
 				pixel_y--
 				is_shifted = TRUE
 		if(WEST)
-			if(pixel_x >= -MAXIMUM_PIXEL_SHIFT + base_pixel_x)
+			if(pixel_x >= -max_shift + base_pixel_x)
 				pixel_x--
 				is_shifted = TRUE
 
