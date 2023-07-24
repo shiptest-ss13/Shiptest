@@ -140,7 +140,8 @@
 
 /datum/config_entry/flag/allow_metadata	// Metadata is supported.
 
-/datum/config_entry/flag/popup_admin_pm	// adminPMs to non-admins show in a pop-up 'reply' window when set
+/// Gives the ability to send players a maptext popup.
+/datum/config_entry/flag/popup_admin_pm
 
 /datum/config_entry/number/fps
 	config_entry_value = 20

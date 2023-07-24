@@ -65,6 +65,7 @@
 		assembly.update_name()
 		assembly.update_icon()
 		assembly.welded = TRUE
+		assembly.dir = dir
 		new /obj/item/electronics/airlock(loc)
 	qdel(src)
 

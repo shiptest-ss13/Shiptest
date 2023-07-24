@@ -5,9 +5,12 @@
 	var/color_vary = 0
 
 /datum/overmap/star/Initialize(position, ...)
-	Rename(gen_star_name())
+	var/name = gen_star_name()
+	Rename(name)
+	set_station_name(name)
 	token.desc = token_desc
 	alter_token_appearance()
+
 
 /datum/overmap/star/proc/gen_star_name()
 	return "[pick(GLOB.star_names)] [pick(GLOB.greek_letters)]"
