@@ -491,6 +491,23 @@ SUBSYSTEM_DEF(shuttle)
 			owner_action.Trigger()
 			return TRUE
 
+		if("designate")
+			var/obj/docking_port/mobile/port = locate(params["id"]) in mobile
+			if(!port || !port.current_ship)
+				return
+			var/datum/overmap/ship/controlled/port_ship = port.current_ship
+			var/new_designation = input(
+				user,
+				"Enter a new designation for [port_ship].",
+				"Change Desination",
+				port_ship.designation_prefix,
+			) as text
+			if(!isnull(new_designation) || new_designation == port_ship.designation_prefix)
+				return
+			port_ship.designation_prefix = new_designation
+			port_ship.update_name()
+			return TRUE
+
 		if("vv_port")
 			var/obj/docking_port/mobile/port = locate(params["id"]) in mobile
 			if(!port)

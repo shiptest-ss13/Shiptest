@@ -273,20 +273,6 @@
 			update_static_data(ui.user, ui)
 			return
 
-		if("change_designation_ship")
-			var/new_designation = params["newPrefix"]
-			if(!new_designation)
-				return
-			if(!check_rights_for(ui.user.client, R_ADMIN))
-				to_chat(ui.user, span_warning("Only Central Command may change ship designations."))
-				return
-			if(current_ship.designation_prefix == new_designation)
-				return
-			current_ship.designation_prefix = new_designation
-			current_ship.update_name()
-			update_static_data(ui.user, ui)
-			return
-
 		if("reload_ship")
 			reload_ship()
 			update_static_data(ui.user, ui)

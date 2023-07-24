@@ -52,16 +52,7 @@ const SharedContent = (_props, context) => {
       <Section
         title={
           <>
-            <Button.Input
-              content={decodeHtmlEntities(shipInfo.designation_prefix)}
-              currentValue={shipInfo.designation_prefix}
-              disabled={isViewer}
-              onCommit={(_e, value) =>
-                act('change_designation_ship', {
-                  newPrefix: value,
-                })
-              }
-            />
+            {shipInfo.designation_prefix}
             &nbsp;
             <Button.Input
               content={decodeHtmlEntities(shipInfo.name)}

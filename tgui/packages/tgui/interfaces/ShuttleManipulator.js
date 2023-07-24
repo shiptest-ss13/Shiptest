@@ -75,6 +75,15 @@ export const ShuttleManipulatorStatus = (props, context) => {
                 }
               />
               <Button
+                content="DSG"
+                key={shuttle.id}
+                onClick={() =>
+                  act('designate', {
+                    id: shuttle.id,
+                  })
+                }
+              />
+              <Button
                 content="VV (P)"
                 key={shuttle.id}
                 onClick={() =>
