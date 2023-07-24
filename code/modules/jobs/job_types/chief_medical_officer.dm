@@ -56,7 +56,6 @@
 /datum/outfit/job/cmo/medicaldirector
 	name = "Chief Medical Officer (Medical Director)"
 
-	uniform = /obj/item/clothing/under/suit/cmo
 	alt_uniform = null
 	shoes = /obj/item/clothing/shoes/laceup
 	suit = /obj/item/clothing/suit/toggle/lawyer/cmo
@@ -69,7 +68,7 @@
 /datum/outfit/job/cmo/surgeongeneral
 	name = "Chief Medical Officer (Surgeon-General)"
 
-	uniform = /obj/item/clothing/under/rank/medical/chief_medical_officer/surgeon_general
+	uniform = /obj/item/clothing/under/rank/medical/chief_medical_officer
 	alt_uniform = null
 	shoes = /obj/item/clothing/shoes/laceup
 	suit = /obj/item/clothing/suit/toggle/labcoat/cmo

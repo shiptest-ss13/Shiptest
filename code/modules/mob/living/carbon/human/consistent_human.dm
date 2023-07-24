@@ -6,7 +6,7 @@
 	gender = list(MALE, FEMALE)[seed % 2 + 1]
 	skin_tone = GLOB.skin_tones[seed % length(GLOB.skin_tones) + 1]
 	hairstyle = GLOB.hairstyles_list[seed % length(GLOB.hairstyles_list) + 1]
-	hair_color = short_color_natural_from_seed(seed)
+	hair_color = color_natural_from_seed(seed)
 	eye_color = short_color_from_seed(seed)
 
 	// Mutant randomizing, doesn't affect the mob appearance unless it's the specific mutant.

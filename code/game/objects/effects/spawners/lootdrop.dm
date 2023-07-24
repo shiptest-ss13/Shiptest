@@ -1017,6 +1017,17 @@
 		/obj/effect/anomaly/plasmasoul/planetary,
 		/obj/effect/anomaly/melter/planetary,
 	)
+
+/obj/effect/spawner/lootdrop/anomaly/storm
+	loot = list(
+		/obj/effect/anomaly/flux,
+		/obj/effect/anomaly/pyro,
+		/obj/effect/anomaly/sparkler,
+		/obj/effect/anomaly/veins,
+		/obj/effect/anomaly/phantom,
+		/obj/effect/anomaly/melter,
+	)
+
 //wasteplanet things
 
 /obj/effect/spawner/lootdrop/waste/grille_or_trash

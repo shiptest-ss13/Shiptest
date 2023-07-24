@@ -17,7 +17,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	//Species flags currently used for species restriction on items
 	var/bodyflag = FLAG_HUMAN
 	// Default color. If mutant colors are disabled, this is the color that will be used by that race.
-	var/default_color = "#FFF"
+	var/default_color = "#FFFFFF"
 
 	var/bodytype = BODYTYPE_HUMANOID
 	///Whether or not the race has sexual characteristics (biological genders). At the moment this is only FALSE for skeletons and shadows
@@ -758,9 +758,15 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	if(!(NO_UNDERWEAR in species_traits))
 		if(H.underwear)
 			var/datum/sprite_accessory/underwear/underwear = GLOB.underwear_list[H.underwear]
-			var/mutable_appearance/underwear_overlay
 			if(underwear)
-				underwear_overlay = mutable_appearance(underwear.icon, underwear.icon_state, -BODY_LAYER)
+				var/mutable_appearance/underwear_overlay
+				var/icon_state = underwear.icon_state
+				var/icon_file = underwear.icon
+				if((H.dna.species.bodytype & BODYTYPE_KEPORI))
+					icon_file = KEPORI_UNDERWEAR_LEGS_PATH
+				if(underwear.has_digitigrade && (H.dna.species.bodytype & BODYTYPE_DIGITIGRADE))
+					icon_state += "_d"
+				underwear_overlay = mutable_appearance(icon_file, icon_state, -BODY_LAYER)
 				if(!underwear.use_static)
 					underwear_overlay.color = "#" + H.underwear_color
 				standing += underwear_overlay
@@ -768,15 +774,29 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		if(H.undershirt)
 			var/datum/sprite_accessory/undershirt/undershirt = GLOB.undershirt_list[H.undershirt]
 			if(undershirt)
-				if(H.dna.species.sexes && H.gender == FEMALE)
-					standing += wear_female_version(undershirt.icon_state, undershirt.icon, BODY_LAYER)
-				else
-					standing += mutable_appearance(undershirt.icon, undershirt.icon_state, -BODY_LAYER)
+				var/mutable_appearance/undershirt_overlay
+				var/icon_file = undershirt.icon
+				if((H.dna.species.bodytype & BODYTYPE_KEPORI))
+					icon_file = KEPORI_UNDERWEAR_TORSO_PATH
+				undershirt_overlay = mutable_appearance(icon_file, undershirt.icon_state, -BODY_LAYER)
+				if(!undershirt.use_static)
+					undershirt_overlay.color = "#" + H.undershirt_color
+				standing += undershirt_overlay
 
-		if(H.socks && H.num_legs >= 2 && !(H.dna.species.bodytype & BODYTYPE_DIGITIGRADE) && !(NOSOCKS in species_traits))
+		if(H.socks && H.num_legs >= 2 && !(NOSOCKS in species_traits))
 			var/datum/sprite_accessory/socks/socks = GLOB.socks_list[H.socks]
 			if(socks)
-				standing += mutable_appearance(socks.icon, socks.icon_state, -BODY_LAYER)
+				var/mutable_appearance/socks_overlay
+				var/icon_state = socks.icon_state
+				var/icon_file = socks.icon
+				if((H.dna.species.bodytype & BODYTYPE_DIGITIGRADE))
+					icon_state += "_d"
+				if((H.dna.species.bodytype & BODYTYPE_KEPORI))
+					icon_file = KEPORI_UNDERWEAR_SOCKS_PATH
+				socks_overlay = mutable_appearance(icon_file, icon_state, -BODY_LAYER)
+				if(!socks.use_static)
+					socks_overlay.color = "#" + H.socks_color
+				standing += socks_overlay
 
 	if(standing.len)
 		H.overlays_standing[BODY_LAYER] = standing
@@ -946,8 +966,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 					S = GLOB.moth_markings_list[H.dna.features["moth_markings"]]
 				if("squid_face")
 					S = GLOB.squid_face_list[H.dna.features["squid_face"]]
-				if("caps")
-					S = GLOB.caps_list[H.dna.features["caps"]]
 				if("ipc_screen")
 					S = GLOB.ipc_screens_list[H.dna.features["ipc_screen"]]
 				if("ipc_antenna")

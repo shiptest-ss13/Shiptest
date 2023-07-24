@@ -29,3 +29,6 @@
 
 ///KEPORI PATHS
 #define KEPORI_UNIFORM_PATH 'icons/mob/species/kepori/onmob_uniform_kepori.dmi'
+#define KEPORI_UNDERWEAR_TORSO_PATH 'icons/mob/clothing/underwear/species/underwear_torso_kepori.dmi'
+#define KEPORI_UNDERWEAR_LEGS_PATH 'icons/mob/clothing/underwear/species/underwear_legs_kepori.dmi'
+#define KEPORI_UNDERWEAR_SOCKS_PATH 'icons/mob/clothing/underwear/species/underwear_socks_kepori.dmi'

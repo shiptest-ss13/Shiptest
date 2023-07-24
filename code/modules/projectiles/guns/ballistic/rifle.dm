@@ -80,6 +80,15 @@
 		process_fire(user, user, FALSE)
 		. = 1
 
+/obj/item/gun/ballistic/rifle/boltaction/solgov
+	name = "SSG-669C"
+	desc = "A bolt action sniper rifle used by the solarian army, beloved for its rotary design and accuracy. Chambered in 8x58mm Caseless."
+	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/solgov
+	icon_state = "ssg669c"
+	item_state = "ssg669c"
+	fire_sound = 'sound/weapons/gun/rifle/ssg669c.ogg'
+	can_be_sawn_off = FALSE
+
 /obj/item/gun/ballistic/rifle/boltaction/roumain
 	name = "standard-issue 'Smile' rifle"
 	desc = "A bolt action rifle usually given to mercenary hunters of the Saint-Roumain Militia. Chambered in .300 Magnum."

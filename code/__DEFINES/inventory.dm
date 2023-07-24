@@ -83,11 +83,6 @@
 #define LEFT_HANDS 1
 #define RIGHT_HANDS 2
 
-//flags for female outfits: How much the game can safely "take off" the uniform without it looking weird
-#define NO_FEMALE_UNIFORM 0
-#define FEMALE_UNIFORM_FULL 1
-#define FEMALE_UNIFORM_TOP 2
-
 //flags for alternate styles: These are hard sprited so don't set this if you didn't put the effort in
 #define NORMAL_STYLE 0
 #define ALT_STYLE 1

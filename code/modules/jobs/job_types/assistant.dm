@@ -235,7 +235,7 @@ Assistant
 /datum/outfit/job/assistant/pharma
 	name = "Pharmacology Student"
 
-	uniform = /obj/item/clothing/under/rank/medical/chemist/junior_chemist
+	uniform = /obj/item/clothing/under/rank/medical/
 	shoes = /obj/item/clothing/shoes/sneakers/white
 	accessory = /obj/item/clothing/neck/scarf/orange
 	l_pocket = /obj/item/pda/medical

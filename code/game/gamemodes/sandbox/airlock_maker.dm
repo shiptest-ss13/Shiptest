@@ -14,6 +14,13 @@
 	if(maker)
 		maker.interact()
 
+/obj/structure/door_assembly/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/simple_rotation, ROTATION_ALTCLICK | ROTATION_CLOCKWISE | ROTATION_COUNTERCLOCKWISE | ROTATION_VERBS, null, CALLBACK(src, .proc/can_be_rotated))
+
+/obj/structure/door_assembly/proc/can_be_rotated(mob/user, rotation_type)
+	return !anchored
+
 /datum/airlock_maker
 	var/obj/structure/door_assembly/linked = null
 
