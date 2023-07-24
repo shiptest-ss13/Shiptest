@@ -1,8 +1,4 @@
 #define SHUTTLE_CREATOR_MAX_SIZE CONFIG_GET(number/max_shuttle_size)
-#define CUSTOM_SHUTTLE_LIMIT CONFIG_GET(number/max_shuttle_count)
-
-GLOBAL_VAR_INIT(custom_shuttle_count, 0)		//The amount of custom shuttles created to prevent creating hundreds
-GLOBAL_LIST_EMPTY(custom_shuttle_machines)		//Machines that require updating (Heaters, engines)
 
 /obj/item/shuttle_creator
 	name = "Rapid Shuttle Designator"
@@ -30,7 +26,7 @@ GLOBAL_LIST_EMPTY(custom_shuttle_machines)		//Machines that require updating (He
 
 /obj/item/shuttle_creator/attack_self(mob/user)
 	..()
-	if(GLOB.custom_shuttle_count > CUSTOM_SHUTTLE_LIMIT)
+	if(!SSovermap.player_ship_spawn_allowed())
 		return
 	return check_current_area(user)
 
@@ -45,7 +41,7 @@ GLOBAL_LIST_EMPTY(custom_shuttle_machines)		//Machines that require updating (He
 		if(get_area(target) != loggedOldArea)
 			to_chat(user, "<span class='warning'>Caution, airlock must be on the shuttle to function as a dock.</span>")
 			return
-		if(GLOB.custom_shuttle_count > CUSTOM_SHUTTLE_LIMIT)
+		if(!SSovermap.player_ship_spawn_allowed())
 			to_chat(user, "<span class='warning'>Shuttle limit reached, sorry.</span>")
 			return
 		if(!create_shuttle_area(user))
@@ -134,8 +130,10 @@ GLOBAL_LIST_EMPTY(custom_shuttle_machines)		//Machines that require updating (He
 	if(loggedTurfs.len == 0 || !recorded_shuttle_area)
 		to_chat(user, "<span class='warning'>Invalid shuttle, restarting bluespace systems...</span>")
 		return FALSE
+	var/static/num_customs = 0
+	num_customs++
 
-	var/obj/docking_port/mobile/port = new /obj/docking_port/mobile(get_turf(target), "custom_[GLOB.custom_shuttle_count]")
+	var/obj/docking_port/mobile/port = new /obj/docking_port/mobile(get_turf(target), "custom_[num_customs]")
 	var/obj/docking_port/stationary/stationary_port = new /obj/docking_port/stationary(get_turf(target))
 	port.callTime = 50
 	port.dir = 1	//Point away from space.
@@ -191,9 +189,8 @@ GLOBAL_LIST_EMPTY(custom_shuttle_machines)		//Machines that require updating (He
 	port.timer = 0
 
 	port.register()
-	GLOB.custom_shuttle_count++
-	message_admins("[ADMIN_LOOKUPFLW(user)] created a new shuttle with a [src] at [ADMIN_VERBOSEJMP(user)] ([GLOB.custom_shuttle_count] custom shuttles, limit is [CUSTOM_SHUTTLE_LIMIT])")
-	log_game("[key_name(user)] created a new shuttle with a [src] at [AREACOORD(user)] ([GLOB.custom_shuttle_count] custom shuttles, limit is [CUSTOM_SHUTTLE_LIMIT])")
+	message_admins("[ADMIN_LOOKUPFLW(user)] created a new shuttle with a [src] at [ADMIN_VERBOSEJMP(user)] ([num_customs] customs, [SSovermap.get_num_cap_ships()] all, limit is [CONFIG_GET(number/max_shuttle_count)])")
+	log_game("[key_name(user)] created a new shuttle with a [src] at [AREACOORD(user)] ([num_customs] customs, [SSovermap.get_num_cap_ships()] all, limit is [CONFIG_GET(number/max_shuttle_count)])")
 	return TRUE
 
 /obj/item/shuttle_creator/proc/create_shuttle_area(mob/user)

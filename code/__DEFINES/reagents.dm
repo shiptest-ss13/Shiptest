@@ -36,3 +36,34 @@
 //used by chem masters and pill presses
 #define PILL_STYLE_COUNT 22 //Update this if you add more pill icons or you die
 #define RANDOM_PILL_STYLE 22 //Dont change this one though
+
+//used for the autowiki, these reagents you should be able to aquire easily
+GLOBAL_LIST_INIT(base_reagents, list(
+	/datum/reagent/aluminium,
+	/datum/reagent/blood,
+	/datum/reagent/bromine,
+	/datum/reagent/carbon,
+	/datum/reagent/chlorine,
+	/datum/reagent/copper,
+	/datum/reagent/consumable/ethanol,
+	/datum/reagent/fluorine,
+	/datum/reagent/hydrogen,
+	/datum/reagent/iodine,
+	/datum/reagent/iron,
+	/datum/reagent/lithium,
+	/datum/reagent/mercury,
+	/datum/reagent/nitrogen,
+	/datum/reagent/oxygen,
+	/datum/reagent/phosphorus,
+	/datum/reagent/potassium,
+	/datum/reagent/uranium/radium,
+	/datum/reagent/silicon,
+	/datum/reagent/silver,
+	/datum/reagent/sodium,
+	/datum/reagent/stable_plasma,
+	/datum/reagent/consumable/sugar,
+	/datum/reagent/sulfur,
+	/datum/reagent/toxin/acid,
+	/datum/reagent/water,
+	/datum/reagent/fuel
+))

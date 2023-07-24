@@ -283,7 +283,7 @@ Versioning
 	key = new_key
 	key_type = new_key_type
 
-/datum/controller/subsystem/blackbox/proc/LogAhelp(ticket, action, message, recipient, sender)
+/datum/controller/subsystem/blackbox/proc/log_ahelp(ticket, action, message, recipient, sender)
 	if(!SSdbcore.Connect())
 		return
 

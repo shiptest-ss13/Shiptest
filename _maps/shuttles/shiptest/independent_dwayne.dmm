@@ -34,7 +34,7 @@
 	icon_state = "0-4"
 	},
 /turf/open/floor/plating/airless,
-/area/ship/external)
+/area/ship/engineering)
 "aI" = (
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 4
@@ -290,7 +290,7 @@
 	dir = 4
 	},
 /turf/open/floor/plating/airless,
-/area/ship/external)
+/area/ship/engineering)
 "gT" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
@@ -424,6 +424,9 @@
 "kb" = (
 /obj/effect/turf_decal/corner/opaque/blue{
 	dir = 4
+	},
+/obj/structure/closet/emcloset/wall{
+	pixel_y = 28
 	},
 /turf/open/floor/plasteel/white{
 	dir = 1
@@ -886,49 +889,6 @@
 "tq" = (
 /turf/closed/wall/r_wall,
 /area/ship/engineering)
-"tG" = (
-/obj/item/clothing/suit/hazardvest{
-	desc = "A high-visibility lifejacket complete with whistle and slot for oxygen tanks.";
-	name = "emergency lifejacket";
-	pixel_x = -4;
-	pixel_y = -4
-	},
-/obj/item/clothing/suit/hazardvest{
-	desc = "A high-visibility lifejacket complete with whistle and slot for oxygen tanks.";
-	name = "emergency lifejacket"
-	},
-/obj/item/clothing/suit/hazardvest{
-	desc = "A high-visibility lifejacket complete with whistle and slot for oxygen tanks.";
-	name = "emergency lifejacket";
-	pixel_x = 4;
-	pixel_y = 4
-	},
-/obj/item/clothing/head/hardhat/mining{
-	pixel_x = -4;
-	pixel_y = -4
-	},
-/obj/item/clothing/head/hardhat/mining,
-/obj/item/clothing/head/hardhat/mining{
-	pixel_x = 4;
-	pixel_y = 4
-	},
-/obj/item/gps/mining,
-/obj/item/gps/mining,
-/obj/item/gps/mining,
-/obj/item/clothing/glasses/meson/prescription,
-/obj/item/clothing/glasses/meson,
-/obj/item/clothing/glasses/meson,
-/obj/item/t_scanner/adv_mining_scanner/lesser,
-/obj/item/gun/energy/kinetic_accelerator,
-/obj/item/pickaxe/silver,
-/obj/item/pickaxe/silver,
-/obj/item/storage/bag/ore,
-/obj/item/storage/bag/ore,
-/obj/structure/closet/wall{
-	name = "equipment closet"
-	},
-/turf/closed/wall/r_wall,
-/area/ship/cargo)
 "tX" = (
 /obj/structure/ore_box,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -1090,9 +1050,6 @@
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer2,
 /turf/open/floor/plating,
 /area/ship/crew)
-"xo" = (
-/turf/closed/wall,
-/area/ship/external)
 "xr" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/preopen{
@@ -1157,10 +1114,6 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
-"zn" = (
-/obj/structure/closet/emcloset/wall,
-/turf/closed/wall,
-/area/ship/medical)
 "zq" = (
 /obj/structure/catwalk,
 /obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4{
@@ -1241,7 +1194,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/obj/effect/turf_decal/corner/opaque/blue/half{
+/obj/effect/turf_decal/corner/opaque/ntblue/half{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
@@ -1249,7 +1202,7 @@
 "Cn" = (
 /obj/structure/catwalk,
 /turf/closed/wall,
-/area/ship/external)
+/area/ship/engineering)
 "Cp" = (
 /turf/open/floor/plasteel,
 /area/ship/cargo)
@@ -1512,6 +1465,47 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/medical)
 "IZ" = (
+/obj/item/clothing/suit/hazardvest{
+	desc = "A high-visibility lifejacket complete with whistle and slot for oxygen tanks.";
+	name = "emergency lifejacket";
+	pixel_x = -4;
+	pixel_y = -4
+	},
+/obj/item/clothing/suit/hazardvest{
+	desc = "A high-visibility lifejacket complete with whistle and slot for oxygen tanks.";
+	name = "emergency lifejacket"
+	},
+/obj/item/clothing/suit/hazardvest{
+	desc = "A high-visibility lifejacket complete with whistle and slot for oxygen tanks.";
+	name = "emergency lifejacket";
+	pixel_x = 4;
+	pixel_y = 4
+	},
+/obj/item/clothing/head/hardhat/mining{
+	pixel_x = -4;
+	pixel_y = -4
+	},
+/obj/item/clothing/head/hardhat/mining,
+/obj/item/clothing/head/hardhat/mining{
+	pixel_x = 4;
+	pixel_y = 4
+	},
+/obj/item/gps/mining,
+/obj/item/gps/mining,
+/obj/item/gps/mining,
+/obj/item/clothing/glasses/meson/prescription,
+/obj/item/clothing/glasses/meson,
+/obj/item/clothing/glasses/meson,
+/obj/item/t_scanner/adv_mining_scanner/lesser,
+/obj/item/gun/energy/kinetic_accelerator,
+/obj/item/pickaxe/silver,
+/obj/item/pickaxe/silver,
+/obj/item/storage/bag/ore,
+/obj/item/storage/bag/ore,
+/obj/structure/closet/wall{
+	name = "equipment closet";
+	pixel_y = 28
+	},
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1
 	},
@@ -1796,10 +1790,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
-/obj/effect/turf_decal/corner/opaque/blue/half{
+/obj/machinery/light/directional/south,
+/obj/effect/turf_decal/corner/opaque/ntblue/half{
 	dir = 4
 	},
-/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "OW" = (
@@ -2167,7 +2161,7 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/obj/effect/turf_decal/corner/opaque/blue/half{
+/obj/effect/turf_decal/corner/opaque/ntblue/half{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
@@ -2247,9 +2241,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
-"Zp" = (
-/turf/closed/wall,
-/area/template_noop)
 "Zv" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
@@ -2355,7 +2346,7 @@ OJ
 (3,1,1) = {"
 OJ
 OJ
-xo
+mF
 gF
 aD
 Cn
@@ -2369,7 +2360,7 @@ zq
 Cn
 aD
 gF
-Zp
+mF
 OJ
 "}
 (4,1,1) = {"
@@ -2600,7 +2591,7 @@ FP
 nL
 kM
 YJ
-tG
+YJ
 IZ
 lv
 dK
@@ -2660,7 +2651,7 @@ ei
 ei
 ei
 ei
-zn
+oC
 kb
 lv
 pt

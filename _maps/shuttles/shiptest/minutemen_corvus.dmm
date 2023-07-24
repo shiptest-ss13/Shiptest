@@ -1710,11 +1710,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "Gu" = (
-/obj/machinery/porta_turret/centcom_shuttle/ballistic{
-	dir = 5;
-	name = "ship turret";
-	on = 0
-	},
+/obj/machinery/porta_turret/ship/ballistic,
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
 "Gv" = (
@@ -2132,14 +2128,6 @@
 /obj/item/clothing/suit/space/hardsuit/security/independent/minutemen,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/central)
-"Pj" = (
-/obj/machinery/porta_turret/centcom_shuttle/ballistic{
-	dir = 9;
-	name = "ship turret";
-	on = 0
-	},
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/engineering)
 "PA" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
@@ -2694,11 +2682,7 @@
 /turf/open/floor/carpet/nanoweave,
 /area/ship/hallway/central)
 "YT" = (
-/obj/machinery/porta_turret/centcom_shuttle/ballistic{
-	dir = 10;
-	name = "ship turret";
-	on = 0
-	},
+/obj/machinery/porta_turret/ship/ballistic,
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/engineering)
 "Zh" = (
@@ -2785,7 +2769,7 @@ bA
 bA
 bA
 bA
-Pj
+YT
 IX
 WY
 iJ

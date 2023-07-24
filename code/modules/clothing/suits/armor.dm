@@ -45,6 +45,7 @@
 	min_cold_protection_temperature = ARMOR_MIN_TEMP_PROTECT
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	resistance_flags = FIRE_PROOF | ACID_PROOF
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/suit/armor/vest/marine/medium
 	name = "medium tactical armor vest"
@@ -158,6 +159,7 @@
 	desc = "A long, commanding coat worn over a surprisingly sleek set of armor and decorated with gold embroidery. Ideal for protecting its wearer from rain, sun, dust, mutineers, pirates, bears, hordes of angry legions, and so on."
 	icon_state = "carapace_duster"
 	item_state = "duster_captain"
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/suit/armor/riot
 	name = "riot suit"
@@ -343,6 +345,7 @@
 	desc = "A shortened brown labcoat with an armor vest under it, for the IRMG's support division Corpsmen."
 	icon_state = "armor_inteq_labcoat"
 	item_state = "inteq_labcoat"
+	supports_variations = VOX_VARIATION
 	allowed = list(
 		/obj/item/analyzer,
 		/obj/item/stack/medical,

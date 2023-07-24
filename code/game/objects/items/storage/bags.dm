@@ -100,11 +100,10 @@
 /obj/item/storage/bag/ore
 	name = "mining satchel"
 	desc = "This little bugger can be used to store and transport ores."
-	//WS Begin - Better bag sprites
 	icon = 'icons/obj/bags.dmi'
 	icon_state = "minebag"
-	//WS end
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_POCKETS
+	supports_variations = VOX_VARIATION
 	component_type = /datum/component/storage/concrete/stack
 	var/spam_protection = FALSE //If this is TRUE, the holder won't receive any messages when they fail to pick up ore through crossing it
 	var/mob/listeningTo
@@ -172,10 +171,8 @@
 /obj/item/storage/bag/ore/holding //miners, your messiah has arrived
 	name = "mining satchel of holding"
 	desc = "A revolution in convenience, this satchel allows for huge amounts of ore storage. It's been outfitted with anti-malfunction safety measures."
-	//WS Begin - Better bag sprites
 	icon = 'icons/obj/bags.dmi'
 	icon_state = "minebagbs"
-	//WS end
 
 /obj/item/storage/bag/ore/holding/ComponentInitialize()
 	. = ..()
@@ -190,11 +187,10 @@
 
 /obj/item/storage/bag/plants
 	name = "plant bag"
-	//WS Begin - Better bag sprites
 	icon = 'icons/obj/bags.dmi'
 	icon_state = "plantbag"
-	//WS end
 	resistance_flags = FLAMMABLE
+	supports_variations = VOX_VARIATION
 
 /obj/item/storage/bag/plants/ComponentInitialize()
 	. = ..()
@@ -389,10 +385,8 @@
 
 /obj/item/storage/bag/chemistry
 	name = "chemistry bag"
-	//WS Begin - Better bag sprites
 	icon = 'icons/obj/bags.dmi'
 	icon_state = "chembag"
-	//WS end
 	desc = "A bag for storing pills, patches, and bottles."
 	resistance_flags = FLAMMABLE
 
@@ -419,10 +413,8 @@
 
 /obj/item/storage/bag/bio
 	name = "bio bag"
-	//WS Begin - Better bag sprites
 	icon = 'icons/obj/bags.dmi'
 	icon_state = "virobag"
-	//WS end
 	desc = "A bag for the safe transportation and disposal of biowaste and other biological materials."
 	resistance_flags = FLAMMABLE
 
@@ -452,10 +444,8 @@
 
 /obj/item/storage/bag/construction
 	name = "construction bag"
-	//WS Begin - Better bag sprites
 	icon = 'icons/obj/bags.dmi'
 	icon_state = "engbag"
-	//WS end
 	desc = "A bag for storing small construction components."
 	resistance_flags = FLAMMABLE
 

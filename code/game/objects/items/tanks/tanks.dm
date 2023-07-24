@@ -76,11 +76,9 @@
 	return
 
 /obj/item/tank/Destroy()
-	if(air_contents)
-		qdel(air_contents)
-
 	STOP_PROCESSING(SSobj, src)
-	. = ..()
+	air_contents = null
+	return ..()
 
 /obj/item/tank/examine(mob/user)
 	var/obj/icon = src

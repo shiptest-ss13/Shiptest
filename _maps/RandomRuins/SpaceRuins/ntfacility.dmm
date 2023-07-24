@@ -703,6 +703,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/vault,
 /area/ruin/powered)
+"qr" = (
+/obj/item/kirbyplants/random,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/corner/opaque/orange{
+	dir = 6
+	},
+/turf/open/floor/plasteel,
+/area/ruin/powered)
 "qs" = (
 /obj/machinery/door/airlock/research{
 	dir = 4
@@ -815,6 +824,14 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
+/area/ruin/powered)
+"tI" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/corner/opaque/orange{
+	dir = 6
+	},
+/turf/open/floor/plasteel,
 /area/ruin/powered)
 "tQ" = (
 /obj/effect/turf_decal/corner/opaque/blue{
@@ -1416,6 +1433,14 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered)
+"Hy" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/corner/opaque/orange{
+	dir = 9
+	},
+/turf/open/floor/plasteel,
+/area/ruin/powered)
 "HA" = (
 /obj/machinery/atmospherics/pipe/manifold/brown/visible{
 	dir = 1
@@ -1532,6 +1557,9 @@
 /obj/structure/tank_dispenser,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/corner/opaque/orange{
+	dir = 9
+	},
 /turf/open/floor/plasteel,
 /area/ruin/powered)
 "JM" = (
@@ -2213,6 +2241,14 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered)
+"ZB" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/corner/opaque/orange{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin/powered)
 "ZQ" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -2886,10 +2922,10 @@ FI
 Vj
 Xc
 dV
-dV
-dV
-dV
-dV
+ZB
+Hy
+Hy
+Hy
 JJ
 Vj
 dm
@@ -3007,13 +3043,13 @@ FI
 "}
 (20,1,1) = {"
 Vj
-Xc
-dV
-dV
-dV
-dV
-dV
-Xc
+qr
+tI
+tI
+tI
+tI
+tI
+qr
 EH
 tF
 qU

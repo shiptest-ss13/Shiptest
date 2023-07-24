@@ -23,7 +23,6 @@
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
-	change_exempt_flags = BP_BLOCK_CHANGE_SPECIES
 
 	brute_reduction = 5
 	burn_reduction = 4
@@ -49,7 +48,6 @@
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
-	change_exempt_flags = BP_BLOCK_CHANGE_SPECIES
 
 	brute_reduction = 5
 	burn_reduction = 4
@@ -75,7 +73,6 @@
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
-	change_exempt_flags = BP_BLOCK_CHANGE_SPECIES
 
 	brute_reduction = 5
 	burn_reduction = 4
@@ -101,7 +98,6 @@
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
-	change_exempt_flags = BP_BLOCK_CHANGE_SPECIES
 
 	brute_reduction = 5
 	burn_reduction = 4
@@ -126,7 +122,6 @@
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
-	change_exempt_flags = BP_BLOCK_CHANGE_SPECIES
 
 	brute_reduction = 5
 	burn_reduction = 4
@@ -232,7 +227,6 @@
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
-	change_exempt_flags = BP_BLOCK_CHANGE_SPECIES
 
 	brute_reduction = 5
 	burn_reduction = 4
@@ -355,6 +349,89 @@
 	burn_reduction = 0
 	max_damage = 20
 
+// Lizard Robotic (Synths)
+/obj/item/bodypart/chest/robot/lizard
+	name = "prosthetic lizard chest"
+	is_dimorphic = TRUE
+	icon = 'icons/mob/augmentation/augments_lizard.dmi'
+	should_draw_greyscale = TRUE
+	overlay_icon_state = TRUE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+	acceptable_bodytype = BODYTYPE_HUMANOID
+
+/obj/item/bodypart/head/robot/lizard
+	name = "prosthetic lizard head"
+	icon = 'icons/mob/augmentation/augments_lizard.dmi'
+	should_draw_greyscale = TRUE
+	overlay_icon_state = TRUE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+
+/obj/item/bodypart/l_arm/robot/lizard
+	name = "prosthetic lizard left arm"
+	icon = 'icons/mob/augmentation/augments_lizard.dmi'
+	should_draw_greyscale = TRUE
+	overlay_icon_state = TRUE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+
+/obj/item/bodypart/r_arm/robot/lizard
+	name = "prosthetic lizard right arm"
+	icon = 'icons/mob/augmentation/augments_lizard.dmi'
+	should_draw_greyscale = TRUE
+	overlay_icon_state = TRUE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+
+/obj/item/bodypart/leg/left/robot/lizard
+	name = "prosthetic lizard left leg"
+	icon = 'icons/mob/augmentation/augments_lizard.dmi'
+	should_draw_greyscale = TRUE
+	overlay_icon_state = TRUE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+
+/obj/item/bodypart/leg/left/robot/lizard
+	name = "prosthetic lizard right leg"
+	icon = 'icons/mob/augmentation/augments_lizard.dmi'
+	should_draw_greyscale = TRUE
+	overlay_icon_state = TRUE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+
+// Surplus Lizard Robotic
+/obj/item/bodypart/l_arm/robot/surplus/lizard
+	name = "surplus prosthetic lizard left arm"
+	icon = 'icons/mob/augmentation/augments_lizard.dmi'
+	should_draw_greyscale = TRUE
+	overlay_icon_state = TRUE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+
+/obj/item/bodypart/r_arm/robot/surplus/lizard
+	name = "surplus prosthetic lizard right arm"
+	icon = 'icons/mob/augmentation/augments_lizard.dmi'
+	should_draw_greyscale = TRUE
+	overlay_icon_state = TRUE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+
+/obj/item/bodypart/leg/left/robot/surplus/lizard
+	name = "surplus prosthetic lizard left leg"
+	icon = 'icons/mob/augmentation/augments_lizard.dmi'
+	should_draw_greyscale = TRUE
+	overlay_icon_state = TRUE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+
+/obj/item/bodypart/leg/right/robot/surplus/lizard
+	name = "surplus prosthetic lizard right leg"
+	icon = 'icons/mob/augmentation/augments_lizard.dmi'
+	should_draw_greyscale = TRUE
+	overlay_icon_state = TRUE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+
+/obj/item/bodypart/leg/left/robot/surplus/lizard/digitigrade
+	name = "surplus prosthetic digitigrade lizard left leg"
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_DIGITIGRADE
+
+/obj/item/bodypart/leg/right/robot/surplus/lizard/digitigrade
+	name = "surplus prosthetic digitigrade lizard right leg"
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_DIGITIGRADE
+
+//Kepori Robotic
 /obj/item/bodypart/chest/robot/kepori
 	name = "prosthetic kepori chest"
 	static_icon = 'icons/mob/augmentation/augments_kepori.dmi'
@@ -386,6 +463,7 @@
 	static_icon = 'icons/mob/augmentation/augments_kepori.dmi'
 	bodytype = BODYTYPE_KEPORI | BODYTYPE_ROBOTIC
 
+//Surplus Kepori Robotic
 /obj/item/bodypart/l_arm/robot/surplus/kepori
 	name = "surplus prosthetic kepori left arm"
 	static_icon = 'icons/mob/augmentation/augments_kepori.dmi'
@@ -406,6 +484,42 @@
 	static_icon = 'icons/mob/augmentation/augments_kepori.dmi'
 	bodytype = BODYTYPE_KEPORI | BODYTYPE_ROBOTIC
 
+
+// Vox Robotic
+/obj/item/bodypart/chest/robot/vox
+	name = "prosthetic vox chest"
+	is_dimorphic = TRUE
+	static_icon = 'icons/mob/augmentation/augments_vox.dmi'
+	bodytype = BODYTYPE_VOX | BODYTYPE_ROBOTIC
+	acceptable_bodytype = BODYTYPE_VOX
+
+/obj/item/bodypart/head/robot/vox
+	name = "prosthetic vox head"
+	is_dimorphic = TRUE
+	static_icon = 'icons/mob/augmentation/augments_vox.dmi'
+	bodytype = BODYTYPE_VOX | BODYTYPE_ROBOTIC
+
+/obj/item/bodypart/l_arm/robot/vox
+	name = "prosthetic vox left arm"
+	static_icon = 'icons/mob/augmentation/augments_vox.dmi'
+	bodytype = BODYTYPE_VOX | BODYTYPE_ROBOTIC
+
+/obj/item/bodypart/r_arm/robot/vox
+	name = "prosthetic vox right arm"
+	static_icon = 'icons/mob/augmentation/augments_vox.dmi'
+	bodytype = BODYTYPE_VOX | BODYTYPE_ROBOTIC
+
+/obj/item/bodypart/l_leg/robot/vox
+	name = "prosthetic vox left leg"
+	static_icon = 'icons/mob/augmentation/augments_vox.dmi'
+	bodytype = BODYTYPE_VOX | BODYTYPE_ROBOTIC
+
+/obj/item/bodypart/r_leg/robot/vox
+	name = "prosthetic vox right leg"
+	static_icon = 'icons/mob/augmentation/augments_vox.dmi'
+	bodytype = BODYTYPE_VOX | BODYTYPE_ROBOTIC
+
+// Surplus Vox Robotic
 /obj/item/bodypart/l_arm/robot/surplus/vox
 	name = "surplus prosthetic vox left arm"
 	static_icon = 'icons/mob/augmentation/augments_vox.dmi'

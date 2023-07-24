@@ -42,12 +42,6 @@
 /obj/machinery/holopad/emergency/command,
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
-"aV" = (
-/obj/machinery/porta_turret/centcom_shuttle{
-	dir = 9
-	},
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
 "aZ" = (
 /obj/structure/rack,
 /obj/item/reagent_containers/food/snacks/canned/beans,
@@ -1073,12 +1067,6 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
-"yJ" = (
-/obj/machinery/porta_turret/centcom_shuttle{
-	dir = 5
-	},
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
 "zH" = (
 /obj/machinery/atmospherics/components/binary/pump/on/layer4{
 	dir = 4
@@ -1103,12 +1091,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
-"zP" = (
-/obj/machinery/porta_turret/centcom_shuttle{
-	dir = 6
-	},
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
 "zY" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/structure/cable{
@@ -1166,9 +1148,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/dorm)
 "CR" = (
-/obj/machinery/porta_turret/centcom_shuttle{
-	dir = 10
-	},
+/obj/machinery/porta_turret/ship,
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
 "CU" = (
@@ -1285,9 +1265,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "GV" = (
-/obj/machinery/porta_turret/centcom_shuttle/weak{
-	dir = 4
-	},
+/obj/machinery/porta_turret/ship/weak,
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
 "Hd" = (
@@ -1767,7 +1745,7 @@
 /obj/item/storage/belt/utility/full,
 /obj/item/clothing/glasses/welding,
 /obj/item/clothing/glasses/welding,
-/obj/structure/extinguisher_cabinet/directional/north,
+/obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "UZ" = (
@@ -1960,7 +1938,7 @@
 /area/ship/engineering)
 
 (1,1,1) = {"
-aV
+CR
 YQ
 YQ
 ru
@@ -2063,7 +2041,7 @@ nO
 "}
 (7,1,1) = {"
 YQ
-yJ
+CR
 kM
 kM
 kM
@@ -2075,7 +2053,7 @@ cZ
 jj
 jj
 jj
-zP
+CR
 YQ
 "}
 (8,1,1) = {"

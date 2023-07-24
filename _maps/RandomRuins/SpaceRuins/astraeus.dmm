@@ -77,36 +77,31 @@
 "cT" = (
 /obj/structure/lattice,
 /obj/item/stack/tile/plasteel,
-/turf/template_noop,
+/turf/open/space,
 /area/space/nearstation)
 "dk" = (
 /obj/structure/lattice,
 /obj/item/stack/cable_coil/cut/red{
 	amount = 2
 	},
-/turf/template_noop,
+/turf/open/space,
 /area/space/nearstation)
 "dm" = (
 /obj/item/stack/tile/plasteel,
-/turf/template_noop,
-/area/template_noop)
+/turf/open/space,
+/area/space/nearstation)
 "do" = (
 /obj/structure/lattice,
 /obj/structure/disposalpipe/trunk{
 	dir = 8
 	},
-/turf/template_noop,
+/turf/open/space,
 /area/space/nearstation)
 "dp" = (
 /obj/item/stack/cable_coil/cut/red{
 	amount = 2
 	},
-/turf/template_noop,
-/area/template_noop)
-"dq" = (
-/obj/structure/lattice,
-/mob/living/simple_animal/hostile/carp,
-/turf/template_noop,
+/turf/open/space,
 /area/space/nearstation)
 "dx" = (
 /obj/effect/spawner/lootdrop/maintenance,
@@ -119,7 +114,7 @@
 "dY" = (
 /obj/structure/lattice,
 /obj/item/shard,
-/turf/template_noop,
+/turf/open/space,
 /area/space/nearstation)
 "eh" = (
 /obj/item/stack/sheet/metal,
@@ -135,15 +130,15 @@
 "ei" = (
 /obj/structure/lattice,
 /obj/item/stack/sheet/plasteel,
-/turf/template_noop,
+/turf/open/space,
 /area/space/nearstation)
 "eq" = (
 /obj/structure/fluff/broken_flooring{
 	dir = 4;
 	icon_state = "pile"
 	},
-/turf/template_noop,
-/area/template_noop)
+/turf/open/space,
+/area/space/nearstation)
 "es" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -200,17 +195,25 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
-/turf/template_noop,
+/turf/open/space,
 /area/ruin/space/has_grav/astraeus/bridge)
 "gR" = (
 /obj/item/stack/sheet/metal,
-/turf/template_noop,
-/area/template_noop)
+/turf/open/space,
+/area/space/nearstation)
 "gT" = (
 /turf/open/floor/plating/airless{
 	icon_state = "platingdmg2"
 	},
 /area/ruin/space/has_grav/astraeus/custodial)
+"hg" = (
+/mob/living/simple_animal/hostile/carp,
+/turf/open/space,
+/area/ruin/unpowered)
+"hh" = (
+/obj/item/shard,
+/turf/open/space,
+/area/space/nearstation)
 "ho" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -321,6 +324,10 @@
 /mob/living/simple_animal/hostile/carp,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/has_grav/astraeus/bridge)
+"iR" = (
+/obj/structure/lattice,
+/turf/open/space,
+/area/space/nearstation)
 "jd" = (
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plating/airless,
@@ -370,16 +377,13 @@
 	dir = 4;
 	icon_state = "singular"
 	},
-/turf/template_noop,
-/area/template_noop)
+/turf/open/space,
+/area/space/nearstation)
 "lo" = (
 /obj/structure/grille,
-/obj/machinery/door/poddoor/preopen,
-/turf/open/floor/plating/airless,
-/area/ruin/space/has_grav/astraeus/bridge)
-"lq" = (
-/obj/item/stack/rods,
-/obj/machinery/door/poddoor/preopen,
+/obj/machinery/door/poddoor/preopen{
+	dir = 8
+	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/astraeus/bridge)
 "ls" = (
@@ -392,7 +396,9 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/industrial/warning,
-/obj/machinery/door/poddoor/preopen,
+/obj/machinery/door/poddoor/preopen{
+	dir = 8
+	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/astraeus/munitions)
 "lx" = (
@@ -408,6 +414,13 @@
 	icon_state = "platingdmg2"
 	},
 /area/ruin/unpowered)
+"lJ" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/preopen{
+	dir = 4
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/astraeus/bridge)
 "lT" = (
 /obj/structure/rack,
 /obj/item/circuitboard/machine/space_heater,
@@ -454,7 +467,7 @@
 "mw" = (
 /obj/structure/lattice,
 /obj/item/stack/rods,
-/turf/template_noop,
+/turf/open/space,
 /area/space/nearstation)
 "mA" = (
 /turf/open/floor/plating/airless,
@@ -489,6 +502,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/astraeus/munitions)
+"nI" = (
+/obj/item/stack/sheet/metal,
+/turf/open/space,
+/area/ruin/unpowered)
 "oh" = (
 /obj/structure/frame/machine,
 /obj/effect/decal/cleanable/dirt,
@@ -535,7 +552,9 @@
 /area/ruin/space/has_grav/astraeus/munitions)
 "pL" = (
 /obj/effect/decal/cleanable/glass,
-/obj/machinery/door/poddoor/preopen,
+/obj/machinery/door/poddoor/preopen{
+	dir = 8
+	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/astraeus/bridge)
 "pT" = (
@@ -563,7 +582,7 @@
 /area/ruin/space/has_grav/astraeus/disposals)
 "qr" = (
 /obj/structure/catwalk,
-/turf/template_noop,
+/turf/open/space,
 /area/ruin/space/has_grav/astraeus/bridge)
 "qO" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
@@ -611,13 +630,23 @@
 "rk" = (
 /obj/structure/lattice,
 /obj/item/clothing/neck/stethoscope,
-/turf/template_noop,
+/turf/open/space,
 /area/space/nearstation)
+"rv" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/preopen{
+	dir = 8
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/astraeus/bridge)
 "rw" = (
 /obj/item/stack/sheet/plasteel/twenty,
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/astraeus/disposals)
+"ry" = (
+/turf/template_noop,
+/area/space/nearstation)
 "rU" = (
 /turf/open/floor/plating/airless{
 	icon_state = "platingdmg3"
@@ -665,8 +694,8 @@
 /obj/item/stack/cable_coil/cut/red{
 	amount = 2
 	},
-/turf/template_noop,
-/area/template_noop)
+/turf/open/space,
+/area/space/nearstation)
 "ti" = (
 /obj/item/stack/sheet/metal/five,
 /turf/open/floor/plating/airless,
@@ -724,7 +753,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/turf/template_noop,
+/turf/open/space,
 /area/space/nearstation)
 "vn" = (
 /obj/structure/grille/broken,
@@ -825,7 +854,7 @@
 /area/ruin/space/has_grav/astraeus/hallway)
 "wX" = (
 /obj/structure/lattice,
-/turf/template_noop,
+/turf/open/space,
 /area/ruin/unpowered)
 "xb" = (
 /obj/structure/table_frame/wood,
@@ -852,7 +881,7 @@
 	icon_state = "1-2"
 	},
 /obj/structure/catwalk,
-/turf/template_noop,
+/turf/open/space,
 /area/ruin/space/has_grav/astraeus/bridge)
 "xw" = (
 /obj/effect/decal/cleanable/blood/tracks{
@@ -885,7 +914,7 @@
 "yc" = (
 /obj/structure/lattice,
 /obj/structure/filingcabinet,
-/turf/template_noop,
+/turf/open/space,
 /area/space/nearstation)
 "yd" = (
 /obj/machinery/holopad,
@@ -921,7 +950,7 @@
 "yH" = (
 /obj/structure/lattice,
 /obj/machinery/airalarm/directional/east,
-/turf/template_noop,
+/turf/open/space,
 /area/space/nearstation)
 "yJ" = (
 /obj/machinery/conveyor{
@@ -1029,8 +1058,8 @@
 /area/ruin/space/has_grav/astraeus/custodial)
 "Cx" = (
 /mob/living/simple_animal/hostile/carp,
-/turf/template_noop,
-/area/template_noop)
+/turf/open/space,
+/area/space/nearstation)
 "CD" = (
 /obj/item/reagent_containers/glass/bucket,
 /obj/effect/decal/cleanable/dirt,
@@ -1085,8 +1114,8 @@
 /area/ruin/space/has_grav/astraeus/munitions)
 "Ee" = (
 /obj/item/stack/sheet/plasteel,
-/turf/template_noop,
-/area/template_noop)
+/turf/open/space,
+/area/space/nearstation)
 "Et" = (
 /obj/item/wrench,
 /obj/effect/turf_decal/industrial/outline/yellow,
@@ -1112,14 +1141,19 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/astraeus/dorms_med)
+"EV" = (
+/obj/structure/lattice,
+/mob/living/simple_animal/hostile/carp,
+/turf/open/space,
+/area/space/nearstation)
 "EX" = (
 /obj/structure/grille,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/astraeus/disposals)
 "Fb" = (
 /obj/item/stack/tile/carpet,
-/turf/template_noop,
-/area/template_noop)
+/turf/open/space,
+/area/space/nearstation)
 "Fp" = (
 /obj/effect/decal/remains/human,
 /turf/open/floor/plasteel/airless,
@@ -1142,8 +1176,8 @@
 /area/ruin/unpowered)
 "FL" = (
 /obj/item/chair,
-/turf/template_noop,
-/area/template_noop)
+/turf/open/space,
+/area/space/nearstation)
 "FV" = (
 /obj/item/stack/rods,
 /obj/effect/decal/cleanable/glass,
@@ -1174,6 +1208,9 @@
 	},
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/astraeus/hallway)
+"Gw" = (
+/turf/open/space,
+/area/space/nearstation)
 "GG" = (
 /obj/item/stack/sheet/glass/fifty,
 /turf/open/floor/plating/airless{
@@ -1289,7 +1326,7 @@
 /area/ruin/space/has_grav/astraeus/hallway)
 "Jk" = (
 /obj/structure/catwalk,
-/turf/template_noop,
+/turf/open/space,
 /area/ruin/space/has_grav/astraeus/munitions)
 "Jr" = (
 /obj/effect/turf_decal/corner/opaque/blue{
@@ -1393,8 +1430,8 @@
 /obj/item/shard{
 	icon_state = "medium"
 	},
-/turf/template_noop,
-/area/template_noop)
+/turf/open/space,
+/area/space/nearstation)
 "LG" = (
 /obj/structure/girder,
 /turf/open/floor/plating/airless,
@@ -1413,7 +1450,7 @@
 	icon_state = "2-4"
 	},
 /obj/structure/catwalk,
-/turf/template_noop,
+/turf/open/space,
 /area/ruin/space/has_grav/astraeus/bridge)
 "Mk" = (
 /obj/structure/girder/displaced,
@@ -1544,7 +1581,7 @@
 	icon_state = "4-8"
 	},
 /obj/structure/catwalk,
-/turf/template_noop,
+/turf/open/space,
 /area/ruin/space/has_grav/astraeus/bridge)
 "Pg" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -1574,6 +1611,13 @@
 "QZ" = (
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/astraeus/hallway)
+"Rf" = (
+/obj/structure/door_assembly/door_assembly_com{
+	anchored = 1;
+	dir = 4
+	},
+/turf/open/floor/plasteel/airless,
+/area/ruin/space/has_grav/astraeus/munitions)
 "Rh" = (
 /obj/effect/turf_decal/corner/opaque/blue/full,
 /obj/structure/table/reinforced,
@@ -1583,7 +1627,7 @@
 "Rn" = (
 /obj/structure/lattice,
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
-/turf/template_noop,
+/turf/open/space,
 /area/space/nearstation)
 "Rt" = (
 /obj/machinery/light/small/broken/directional/south,
@@ -1597,7 +1641,7 @@
 "RJ" = (
 /obj/structure/sign/warning/securearea,
 /obj/structure/catwalk,
-/turf/template_noop,
+/turf/open/space,
 /area/ruin/space/has_grav/astraeus/bridge)
 "RK" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -1798,8 +1842,8 @@
 /area/ruin/space/has_grav/astraeus/bridge)
 "Wy" = (
 /obj/item/stack/tile/wood,
-/turf/template_noop,
-/area/template_noop)
+/turf/open/space,
+/area/space/nearstation)
 "WL" = (
 /turf/closed/wall,
 /area/ruin/space/has_grav/astraeus/dorms_med)
@@ -1813,6 +1857,10 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/astraeus/dorms_med)
+"WQ" = (
+/obj/item/stack/rods,
+/turf/open/space,
+/area/space/nearstation)
 "WU" = (
 /obj/item/clothing/suit/space/hardsuit/mining,
 /turf/open/floor/plating/asteroid/airless,
@@ -1882,7 +1930,7 @@
 "Yl" = (
 /obj/structure/lattice,
 /obj/structure/cable,
-/turf/template_noop,
+/turf/open/space,
 /area/space/nearstation)
 "Yq" = (
 /obj/structure/cable{
@@ -1928,7 +1976,7 @@
 /obj/item/stack/cable_coil/cut/red{
 	amount = 2
 	},
-/turf/template_noop,
+/turf/open/space,
 /area/ruin/space/has_grav/astraeus/bridge)
 "Zk" = (
 /obj/structure/lattice,
@@ -2005,7 +2053,7 @@
 	amount = 2
 	},
 /obj/structure/catwalk,
-/turf/template_noop,
+/turf/open/space,
 /area/ruin/space/has_grav/astraeus/bridge)
 
 (1,1,1) = {"
@@ -2015,7 +2063,7 @@ ac
 ac
 ac
 ac
-YO
+WQ
 ac
 ac
 ac
@@ -2024,7 +2072,7 @@ ac
 ac
 ac
 ac
-dp
+ac
 ac
 ac
 ac
@@ -2059,9 +2107,9 @@ ac
 am
 am
 ac
-XD
-XD
-Cx
+dk
+iR
+ac
 YX
 ac
 Ee
@@ -2090,21 +2138,21 @@ ac
 dp
 ac
 ac
-YO
+WQ
 GK
 GK
-XD
-XD
-XD
+iR
+iR
+iR
 UK
-XD
-XD
+EV
+iR
 vl
 tr
 JI
 Wl
 fU
-XD
+iR
 ac
 ac
 ac
@@ -2124,16 +2172,16 @@ ac
 ac
 ac
 eq
-XD
+iR
 mA
-XD
-XD
+iR
+iR
 GS
 LG
 ls
 RN
-XD
-XD
+iR
+iR
 am
 QZ
 Gv
@@ -2217,7 +2265,7 @@ OD
 Vt
 eh
 yH
-XD
+iR
 Wy
 ac
 ac
@@ -2270,7 +2318,7 @@ ac
 (8,1,1) = {"
 ac
 dp
-XD
+iR
 TA
 ht
 nm
@@ -2291,7 +2339,7 @@ Qw
 ge
 Is
 oz
-XD
+iR
 gR
 ac
 ac
@@ -2307,7 +2355,7 @@ ac
 (9,1,1) = {"
 ac
 am
-XD
+iR
 TA
 ht
 nH
@@ -2328,9 +2376,9 @@ ac
 ge
 WM
 oE
-XD
-XD
-YO
+iR
+iR
+WQ
 FL
 Wy
 ac
@@ -2352,7 +2400,7 @@ ht
 sR
 sR
 Ns
-pw
+Rf
 sR
 xs
 Dc
@@ -2365,9 +2413,9 @@ Dc
 WL
 EO
 au
-XD
-XD
-ac
+iR
+iR
+Gw
 ac
 ac
 ac
@@ -2381,16 +2429,16 @@ ac
 (11,1,1) = {"
 am
 cT
-XD
+iR
 sR
 ht
 sR
 wv
 sR
 IA
-XD
-XD
-ac
+iR
+iR
+ry
 TW
 jI
 VX
@@ -2405,7 +2453,7 @@ uN
 xb
 sL
 Fb
-YO
+WQ
 ac
 ac
 GV
@@ -2417,8 +2465,8 @@ ac
 "}
 (12,1,1) = {"
 bv
-dq
-XD
+EV
+iR
 sR
 ht
 bo
@@ -2428,7 +2476,7 @@ ae
 xE
 Rn
 Ss
-ac
+ry
 IX
 Wd
 ty
@@ -2441,7 +2489,7 @@ Ln
 BB
 Sv
 vF
-XD
+iR
 ac
 ac
 ac
@@ -2454,7 +2502,7 @@ ac
 "}
 (13,1,1) = {"
 am
-XD
+iR
 dx
 sR
 ht
@@ -2478,7 +2526,7 @@ Ir
 OI
 vV
 Dw
-XD
+iR
 ac
 ac
 ac
@@ -2491,7 +2539,7 @@ ac
 "}
 (14,1,1) = {"
 bH
-XD
+iR
 am
 sR
 hA
@@ -2515,7 +2563,7 @@ oE
 Pd
 UU
 oE
-XD
+iR
 ac
 ac
 ac
@@ -2528,7 +2576,7 @@ ac
 "}
 (15,1,1) = {"
 am
-XD
+iR
 QZ
 sR
 ht
@@ -2552,7 +2600,7 @@ BC
 mh
 do
 yc
-XD
+iR
 ac
 ac
 ac
@@ -2565,7 +2613,7 @@ ac
 "}
 (16,1,1) = {"
 am
-XD
+iR
 dA
 sR
 ht
@@ -2587,11 +2635,11 @@ kk
 Jy
 Jy
 Jy
-XD
-YO
+iR
+WQ
 Cx
 Wy
-YO
+WQ
 ac
 ac
 Nj
@@ -2602,7 +2650,7 @@ ac
 "}
 (17,1,1) = {"
 cT
-XD
+iR
 QZ
 TA
 ht
@@ -2624,8 +2672,8 @@ Wh
 KD
 Jy
 kk
-XD
-XD
+iR
+iR
 ac
 ac
 ac
@@ -2661,8 +2709,8 @@ wl
 lx
 gJ
 ei
-XD
-XD
+iR
+iR
 ac
 ac
 ac
@@ -2675,7 +2723,7 @@ ac
 ac
 "}
 (19,1,1) = {"
-XD
+iR
 am
 tr
 TA
@@ -2698,7 +2746,7 @@ jG
 KD
 Zd
 ac
-XD
+iR
 ac
 ac
 ac
@@ -2808,8 +2856,8 @@ LH
 HE
 xW
 ZY
-Qw
-YO
+hh
+WQ
 ac
 ac
 ac
@@ -2825,7 +2873,7 @@ ac
 (23,1,1) = {"
 QZ
 am
-XD
+iR
 fo
 ih
 je
@@ -2860,9 +2908,9 @@ ac
 ac
 "}
 (24,1,1) = {"
-XD
-XD
-XD
+iR
+iR
+iR
 eE
 jd
 je
@@ -2872,15 +2920,15 @@ Le
 eE
 TA
 ho
-KD
-KD
+Jy
+lJ
 lo
-KD
-KD
-KD
-KD
+rv
+rv
+rv
+rv
 pL
-lq
+Jy
 Mf
 xu
 ZY
@@ -2899,7 +2947,7 @@ ac
 (25,1,1) = {"
 ac
 ac
-XD
+iR
 fo
 je
 pT
@@ -2912,10 +2960,10 @@ lt
 TA
 ac
 Qw
-XD
+iR
 ac
 ac
-XD
+iR
 ac
 RJ
 EG
@@ -2935,23 +2983,23 @@ ac
 "}
 (26,1,1) = {"
 ac
-XD
-XD
+iR
+iR
 fo
 je
 pU
 yJ
 Fz
-YO
+WQ
 ac
 Jk
-XD
+iR
 Jk
 ac
 ac
-XD
-XD
-XD
+iR
+iR
+iR
 dY
 ac
 qr
@@ -2972,24 +3020,24 @@ ac
 "}
 (27,1,1) = {"
 dm
-XD
+iR
 dp
 eE
 jO
 qk
 zr
 we
-XD
-XD
+iR
+iR
 Jk
 ac
 Jk
 ac
 ac
-XD
+iR
 ac
-YO
-XD
+WQ
+iR
 ac
 qr
 ac
@@ -3009,7 +3057,7 @@ ac
 "}
 (28,1,1) = {"
 ac
-XD
+iR
 dm
 eE
 kf
@@ -3023,7 +3071,7 @@ ac
 ac
 ac
 ac
-XD
+iR
 ac
 ac
 ac
@@ -3047,7 +3095,7 @@ ac
 (29,1,1) = {"
 ac
 dk
-ac
+Gw
 fu
 vC
 rw
@@ -3064,10 +3112,10 @@ ac
 ac
 ac
 ac
-YO
+WQ
 ac
 ac
-YO
+WQ
 ac
 ac
 ac
@@ -3083,14 +3131,14 @@ ac
 "}
 (30,1,1) = {"
 ac
-XD
+iR
 cT
 eE
 eE
 eE
 fo
 eE
-ac
+Gw
 ac
 ac
 ac
@@ -3135,7 +3183,7 @@ ac
 ac
 ac
 ac
-YO
+WQ
 le
 ac
 ac
@@ -3177,7 +3225,7 @@ zq
 ac
 ac
 ac
-YO
+WQ
 ac
 ac
 ac
@@ -3218,7 +3266,7 @@ zq
 ac
 ac
 ac
-YO
+WQ
 ac
 ac
 ac
@@ -3240,7 +3288,7 @@ ac
 ac
 ac
 ac
-YO
+WQ
 zq
 zq
 zq
@@ -3662,7 +3710,7 @@ ac
 ac
 ac
 ac
-Cx
+hg
 ac
 ac
 ac
@@ -3695,7 +3743,7 @@ zq
 zq
 zq
 ac
-gR
+nI
 ac
 ac
 ac

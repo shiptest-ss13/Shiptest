@@ -11,7 +11,7 @@
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
 	turns_per_move = 5
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/carpmeat = 2)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/fishmeat/carp = 2)
 	response_help_continuous = "pets"
 	response_help_simple = "pet"
 	response_disarm_continuous = "gently pushes aside"
@@ -40,7 +40,7 @@
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	minbodytemp = 0
 	maxbodytemp = 1500
-	faction = list("carp")
+	faction = list("carp", "mining")
 	movement_type = FLYING
 	pressure_resistance = 200
 	gold_core_spawnable = HOSTILE_SPAWN
@@ -138,6 +138,9 @@
 	else
 		add_dead_carp_overlay()
 	..()
+
+/mob/living/simple_animal/hostile/carp/throw_atom_into_space()
+	return
 
 /mob/living/simple_animal/hostile/carp/tamed()
 	. = ..()

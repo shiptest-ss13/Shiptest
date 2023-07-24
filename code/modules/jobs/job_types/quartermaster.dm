@@ -4,7 +4,6 @@
 	spawn_positions = 1
 	wiki_page = "Quartermaster" //WS Edit - Wikilinks/Warning
 	officer = TRUE
-	exp_type_department = EXP_TYPE_SUPPLY // This is so the jobs menu can work properly
 
 	outfit = /datum/outfit/job/quartermaster
 
