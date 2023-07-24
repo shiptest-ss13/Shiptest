@@ -205,7 +205,7 @@ GLOBAL_LIST_INIT(plasma_recipes, list ( \
 		return ..()
 
 /obj/item/stack/sheet/mineral/plasma/fire_act(exposed_temperature, exposed_volume)
-	atmos_spawn_air("plasma=[amount*10];TEMP=[exposed_temperature]")
+	atmos_spawn_air("plasma=[amount*100];TEMP=[exposed_temperature]")
 	qdel(src)
 
 /obj/item/stack/sheet/mineral/plasma/fifty
