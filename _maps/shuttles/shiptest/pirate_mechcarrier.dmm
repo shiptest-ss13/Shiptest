@@ -3431,6 +3431,10 @@
 /area/ship/engineering)
 "Nx" = (
 /obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	name = "Malta Bay";
+	port_direction = 8;
+	preferred_direction = 4;
 	dir = 2
 	},
 /obj/machinery/door/poddoor/shutters{
