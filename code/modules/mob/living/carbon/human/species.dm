@@ -847,17 +847,17 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		else if ("tail" in mutant_bodyparts)
 			bodyparts_to_add -= "waggingspines"
 
-	if("snout" in mutant_bodyparts) //Take a closer look at that snout!
+	if("face_markings" in mutant_bodyparts) //Take a closer look at that snout! //technically
 		if((H.wear_mask?.flags_inv & HIDEFACE) || (H.head?.flags_inv & HIDEFACE) || !HD)
-			bodyparts_to_add -= "snout"
-
-	if("frills" in mutant_bodyparts)
-		if(!H.dna.features["frills"] || H.dna.features["frills"] == "None" || (H.head?.flags_inv & HIDEEARS) || !HD)
-			bodyparts_to_add -= "frills"
+			bodyparts_to_add -= "face_markings"
 
 	if("horns" in mutant_bodyparts)
 		if(!H.dna.features["horns"] || H.dna.features["horns"] == "None" || H.head && (H.head.flags_inv & HIDEHAIR) || (H.wear_mask && (H.wear_mask.flags_inv & HIDEHAIR)) || !HD)
 			bodyparts_to_add -= "horns"
+
+	if("frills" in mutant_bodyparts)
+		if(!H.dna.features["frills"] || H.dna.features["frills"] == "None" || (H.head?.flags_inv & HIDEEARS) || !HD)
+			bodyparts_to_add -= "frills"
 
 	if("ears" in mutant_bodyparts)
 		if(!H.dna.features["ears"] || H.dna.features["ears"] == "None" || H.head && (H.head.flags_inv & HIDEHAIR) || (H.wear_mask && (H.wear_mask.flags_inv & HIDEHAIR)) || !HD)
@@ -942,8 +942,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 					S = GLOB.spines_list[H.dna.features["spines"]]
 				if("waggingspines")
 					S = GLOB.animated_spines_list[H.dna.features["spines"]]
-				if("snout")
-					S = GLOB.snouts_list[H.dna.features["snout"]]
+				if("face_markings")
+					S = GLOB.face_markings_list[H.dna.features["face_markings"]]
 				if("frills")
 					S = GLOB.frills_list[H.dna.features["frills"]]
 				if("horns")
