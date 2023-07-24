@@ -2,11 +2,22 @@
 	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
 	"map_name": "Halftrack-Class Merchant Vessel",
 	"prefix": "ISV",
-	"namelists": ["MERCANTILE", "WEAPONS"],
+	"namelists": [
+		"MERCANTILE",
+		"WEAPONS"
+	],
 	"map_short_name": "Halftrack-Class",
+	"description": "A rare sight in the Frontier (but a welcome one), the Halftrack-class is a heavily retrofitted variant of the Li Tieguai-class Rescue Ship, used as a mobile firearms shop by enterprising arms dealers everywhere. While initial variants of the vessel were more obviously just the Li Tieguai with the medical fixtures stripped out and replaced with gun racks and ammunition lockers, the modern iteration of the Halftrack comes complete with a firing range, an Inteq-certified security compliment and a centralized sales floor perfect for showing off the wares while keeping them safe at the same time.",
+	"tags": [
+	"Combat",
+	"Cargo"
+	],
 	"map_path": "_maps/shuttles/shiptest/independent_halftrack.dmm",
 	"job_slots": {
-		"Captain": 1,
+		"Captain": {
+			"outfit": "/datum/outfit/job/captain",
+			"slots": 1
+		},
 		"IRMG Vanguard": {
 			"outfit": "/datum/outfit/job/captain/inteq",
 			"officer": true,

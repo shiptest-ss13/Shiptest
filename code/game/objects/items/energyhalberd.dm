@@ -14,6 +14,7 @@
 	throw_speed = 3
 	throw_range = 5
 	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK
 	hitsound = "swing_hit"
 	armour_penetration = 35
 	light_system = MOVABLE_LIGHT

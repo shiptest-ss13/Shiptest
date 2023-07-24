@@ -4,7 +4,17 @@
 	"map_short_name": "Caravan-class",
 	"map_path": "_maps/shuttles/shiptest/independent_caravan.dmm",
 	"prefix": "ISV",
-	"namelists": ["GENERAL", "SPACE"],
+	"description": "The Caravan is a relatively new freighter pattern, designed around a modular pod system that enables the ship to serve in a variety of roles beyond simple transportation. These pods are designed around a quick-release mechanism that allows the main hull to bluespace jump in, detach the pods, and load a new set of empty Caravan-type pods in a matter of minutes. While impressive in theory, the lack of empty compatible cargo pods in Frontier space renders the quick-detach system useless. Additionally, the modular attachment system is prone to wear and tear, necessitating more frequent and costly maintenance than other freighters. Despite these shortcomings, the Caravan has still earned a reputation as a versatile platform for a variety of missions. The main hull features a robust power pack and respectable crew accommodations, and most examples on the Frontier carry pods loaded for mining and survey duties.",
+	"tags": [
+		"Generalist",
+		"Engineering"
+	],
+	"namelists": [
+		"GENERAL",
+		"SPACE",
+		"MYTHOLOGICAL",
+		"NATURAL"
+	],
 	"roundstart": true,
 	"job_slots": {
 		"Captain": {
@@ -28,7 +38,10 @@
 			"outfit": "/datum/outfit/job/scientist",
 			"slots": 1
 		},
-		"Assistant": 1
+		"Assistant": {
+			"outfit": "/datum/outfit/job/assistant",
+			"slots": 1
+		}
 	},
 	"enabled": true
 }

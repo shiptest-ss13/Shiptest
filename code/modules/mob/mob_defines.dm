@@ -136,7 +136,7 @@
 	var/datum/component/storage/active_storage
 	/// Active hud
 	var/datum/hud/hud_used = null
-	/// I have no idea tbh
+	/// It allows for scientific knowledge to be imparted (e.g. blob strain, if an object has research value, if it boosts a technode)
 	var/research_scanner = FALSE
 
 	/// Is the mob throw intent on

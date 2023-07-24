@@ -1,9 +1,18 @@
 {
 	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
 	"map_name": "Kilo-class Mining Ship",
-	"prefix": "SV",
-	"namelists": ["GENERAL", "SPACE", "NATURAL", "NATURAL_AGGRESSIVE"],
+	"description": "The Kilo-class is a miniscule mining ship that stretches the definition of an independently-capable spacecraft. Beginning life long ago as a series of purpose-built mining shuttles intended for use on Frontier outposts, progressive cycles of over-engineering for a longer mission duration eventually produced the lumpen, claustrophobic Kilo seen today. Once quite numerous, Kilos are still a common “barn find” on abandoned stations and forgotten storage bays, and their extreme age and poor storage conditions typically leaves them in especially poor condition. Kilo crews are often considered to be quite eccentric even by Frontier standards, and some spacers insist even a well-balanced spacer will quickly come unglued in the Kilo’s “unique” environment.",
+	"tags": [
+		"Generalist"
+	],
+	"prefix": "ISV",
+	"namelists": [
+		"GENERAL",
+		"SPACE",
+		"NATURAL"
+	],
 	"map_short_name": "Kilo-class",
+	"starting_funds": 1500,
 	"map_path": "_maps/shuttles/shiptest/independent_kilo.dmm",
 	"job_slots": {
 		"Captain": {

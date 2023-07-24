@@ -422,6 +422,7 @@
 	item_state = "duster"
 	heat_protection = CHEST|GROIN|ARMS|LEGS
 	cold_protection = CHEST|GROIN|ARMS|LEGS
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/suit/jacket/leather/duster/command
 	name = "officer's duster"

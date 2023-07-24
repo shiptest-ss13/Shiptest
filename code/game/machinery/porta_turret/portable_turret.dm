@@ -220,7 +220,6 @@ DEFINE_BITFIELD(turret_flags, list(
 		"manual_control" = manual_control,
 		"silicon_user" = FALSE,
 		"allow_manual_control" = FALSE,
-		"lasertag_turret" = istype(src, /obj/machinery/porta_turret/lasertag),
 	)
 	if(issilicon(user))
 		data["silicon_user"] = TRUE
@@ -302,6 +301,24 @@ DEFINE_BITFIELD(turret_flags, list(
 				else
 					to_chat(user, "<span class='notice'>You remove the turret but did not manage to salvage anything.</span>")
 				qdel(src)
+	if(I.tool_behaviour == TOOL_WELDER && user.a_intent == INTENT_HELP)
+		if(obj_integrity < max_integrity)
+			if(!I.tool_start_check(user, amount=0))
+				return
+
+			to_chat(user, "<span class='notice'>You begin repairing [src]...</span>")
+			if(I.use_tool(src, user, 40, volume=50))
+				obj_integrity = obj_integrity + 20
+				to_chat(user, "<span class='notice'>You repair [src].</span>")
+				if(obj_integrity > (max_integrity * integrity_failure)  && BROKEN)
+					obj_integrity = max_integrity
+					set_machine_stat(machine_stat & ~BROKEN)
+					update_icon()
+					check_should_process()
+		else
+			to_chat(user, "<span class='warning'>[src] is already in good condition!</span>")
+		return
+
 
 	else if((I.tool_behaviour == TOOL_WRENCH) && (!on))
 		if(raised)
@@ -770,70 +787,54 @@ DEFINE_BITFIELD(turret_flags, list(
 /obj/machinery/porta_turret/ai/assess_perp(mob/living/carbon/human/perp)
 	return 10 //AI turrets shoot at everything not in their faction
 
-/obj/machinery/porta_turret/aux_base
-	name = "perimeter defense turret"
-	desc = "A plasma beam turret calibrated to defend outposts against non-humanoid fauna. It is more effective when exposed to the environment."
+/obj/machinery/porta_turret/ship
 	installation = null
-	lethal_projectile = /obj/projectile/plasma/turret
-	lethal_projectile_sound = 'sound/weapons/plasma_cutter.ogg'
-	mode = TURRET_LETHAL //It would be useless in stun mode anyway
-	faction = list("neutral","silicon","turret") //Minebots, medibots, etc that should not be shot.
-
-/obj/machinery/porta_turret/aux_base/assess_perp(mob/living/carbon/human/perp)
-	return 0 //Never shoot humanoids. You are on your own if Ashwalkers or the like attack!
-
-/obj/machinery/porta_turret/aux_base/setup()
-	return
-
-/obj/machinery/porta_turret/aux_base/interact(mob/user) //Controlled solely from the base console.
-	return
-
-/obj/machinery/porta_turret/aux_base/Initialize()
-	. = ..()
-	cover.name = name
-	cover.desc = desc
-
-/obj/machinery/porta_turret/centcom_shuttle
-	installation = null
-	max_integrity = 260
+	max_integrity = 300
 	always_up = 1
-	use_power = NO_POWER_USE
+	use_power = ACTIVE_POWER_USE
+	active_power_usage = 300
 	has_cover = 0
 	scan_range = 9
-	stun_projectile = /obj/projectile/beam/laser
+	stun_projectile = /obj/projectile/beam/disabler
 	lethal_projectile = /obj/projectile/beam/laser
 	lethal_projectile_sound = 'sound/weapons/plasma_cutter.ogg'
 	stun_projectile_sound = 'sound/weapons/plasma_cutter.ogg'
 	icon_state = "syndie_off"
 	base_icon_state = "syndie"
-	faction = list("neutral","silicon","turret")
-	mode = TURRET_LETHAL
+	faction = list("neutral", "turret")
+	mode = TURRET_STUN
 
-/obj/machinery/porta_turret/centcom_shuttle/ComponentInitialize()
+/obj/machinery/porta_turret/ship/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/empprotection, EMP_PROTECT_SELF | EMP_PROTECT_WIRES)
 
-/obj/machinery/porta_turret/centcom_shuttle/assess_perp(mob/living/carbon/human/perp)
-	return 0
-
-/obj/machinery/porta_turret/centcom_shuttle/setup()
+/obj/machinery/porta_turret/ship/setup()
 	return
 
-/obj/machinery/porta_turret/centcom_shuttle/weak
+/obj/machinery/porta_turret/ship/examine(mob/user)
+	. = ..()
+	if(in_range(user, src) || isobserver(user))
+		if(!(machine_stat & BROKEN))
+			. += "<span class='notice'>Its reports that it's integrity is currently [(obj_integrity / max_integrity) * 100] percent.</span>"
+
+/obj/machinery/porta_turret/ship/weak
 	max_integrity = 120
 	integrity_failure = 0.5
 	name = "Old Laser Turret"
 	desc = "A turret built with substandard parts and run down further with age. Still capable of delivering lethal lasers to the odd space carp, but not much else."
-	stun_projectile = /obj/projectile/beam/weak/penetrator
+	stun_projectile = /obj/projectile/beam/disabler/weak
 	lethal_projectile = /obj/projectile/beam/weak/penetrator
-	faction = list("neutral","silicon","turret")
+	faction = list("neutral", "turret")
 
-/obj/machinery/porta_turret/centcom_shuttle/ballistic
-	stun_projectile = /obj/projectile/bullet
-	lethal_projectile = /obj/projectile/bullet
+/obj/machinery/porta_turret/ship/ballistic
+	stun_projectile = /obj/projectile/bullet/turret/rubber
+	lethal_projectile = /obj/projectile/bullet/turret
 	lethal_projectile_sound = 'sound/weapons/gun/smg/shot.ogg'
 	stun_projectile_sound = 'sound/weapons/gun/smg/shot.ogg'
 	desc = "A ballistic machine gun auto-turret."
+
+/obj/machinery/porta_turret/ship/solgov
+	faction = list("playerSolgov", "turret")
 
 ////////////////////////
 //Turret Control Panel//
@@ -897,6 +898,7 @@ DEFINE_BITFIELD(turret_flags, list(
 	if(issilicon(user) && !(machine_stat & BROKEN))
 		. += {"<span class='notice'>Ctrl-click [src] to [ enabled ? "disable" : "enable"] turrets.</span>
 					<span class='notice'>Alt-click [src] to set turrets to [ lethal ? "stun" : "kill"].</span>"}
+
 
 /obj/machinery/turretid/attackby(obj/item/I, mob/user, params)
 	if(machine_stat & BROKEN)
@@ -1011,6 +1013,9 @@ DEFINE_BITFIELD(turret_flags, list(
 	else
 		icon_state = "control_standby"
 
+/obj/machinery/turretid/lethal
+	lethal = TRUE
+
 /obj/item/wallframe/turret_control
 	name = "turret control frame"
 	desc = "Used for building turret control panels."
@@ -1054,82 +1059,5 @@ DEFINE_BITFIELD(turret_flags, list(
 	.["lethal_projectile"] = .["stun_projectile"]
 	.["lethal_projectile_sound"] = .["stun_projectile_sound"]
 
-
-/obj/item/gun/energy/laser/bluetag/get_turret_properties()
-	. = ..()
-	.["stun_projectile"] = /obj/projectile/beam/lasertag/bluetag
-	.["lethal_projectile"] = /obj/projectile/beam/lasertag/bluetag
-	.["base_icon_state"] = "blue"
-	.["shot_delay"] = 30
-	.["team_color"] = "blue"
-
-/obj/item/gun/energy/laser/redtag/get_turret_properties()
-	. = ..()
-	.["stun_projectile"] = /obj/projectile/beam/lasertag/redtag
-	.["lethal_projectile"] = /obj/projectile/beam/lasertag/redtag
-	.["base_icon_state"] = "red"
-	.["shot_delay"] = 30
-	.["team_color"] = "red"
-
 /obj/item/gun/energy/e_gun/turret/get_turret_properties()
 	. = ..()
-
-/obj/machinery/porta_turret/lasertag
-	req_access = list(ACCESS_MAINT_TUNNELS, ACCESS_THEATRE)
-	turret_flags = TURRET_FLAG_AUTH_WEAPONS
-	var/team_color
-
-/obj/machinery/porta_turret/lasertag/assess_perp(mob/living/carbon/human/perp)
-	. = 0
-	if(team_color == "blue")	//Lasertag turrets target the opposing team, how great is that? -Sieve
-		. = 0		//But does not target anyone else
-		if(istype(perp.wear_suit, /obj/item/clothing/suit/redtag))
-			. += 4
-		if(perp.is_holding_item_of_type(/obj/item/gun/energy/laser/redtag))
-			. += 4
-		if(istype(perp.belt, /obj/item/gun/energy/laser/redtag))
-			. += 2
-
-	if(team_color == "red")
-		. = 0
-		if(istype(perp.wear_suit, /obj/item/clothing/suit/bluetag))
-			. += 4
-		if(perp.is_holding_item_of_type(/obj/item/gun/energy/laser/bluetag))
-			. += 4
-		if(istype(perp.belt, /obj/item/gun/energy/laser/bluetag))
-			. += 2
-
-/obj/machinery/porta_turret/lasertag/setup(obj/item/gun/gun)
-	var/list/properties = ..()
-	if(properties["team_color"])
-		team_color = properties["team_color"]
-
-/obj/machinery/porta_turret/lasertag/ui_status(mob/user)
-	if(ishuman(user))
-		var/mob/living/carbon/human/H = user
-		if(team_color == "blue" && istype(H.wear_suit, /obj/item/clothing/suit/redtag))
-			return UI_CLOSE
-		if(team_color == "red" && istype(H.wear_suit, /obj/item/clothing/suit/bluetag))
-			return UI_CLOSE
-	return ..()
-
-//lasertag presets
-/obj/machinery/porta_turret/lasertag/red
-	installation = /obj/item/gun/energy/laser/redtag
-	team_color = "red"
-
-/obj/machinery/porta_turret/lasertag/blue
-	installation = /obj/item/gun/energy/laser/bluetag
-	team_color = "blue"
-
-/obj/machinery/porta_turret/lasertag/bullet_act(obj/projectile/P)
-	. = ..()
-	if(on)
-		if(team_color == "blue")
-			if(istype(P, /obj/projectile/beam/lasertag/redtag))
-				toggle_on(FALSE)
-				addtimer(CALLBACK(src, .proc/toggle_on, TRUE), 10 SECONDS)
-		else if(team_color == "red")
-			if(istype(P, /obj/projectile/beam/lasertag/bluetag))
-				toggle_on(FALSE)
-				addtimer(CALLBACK(src, .proc/toggle_on, TRUE), 10 SECONDS)

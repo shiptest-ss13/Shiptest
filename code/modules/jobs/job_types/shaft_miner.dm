@@ -55,9 +55,9 @@
 		/obj/item/flashlight/seclite=1,\
 		/obj/item/kitchen/knife/combat/survival=1,
 		/obj/item/mining_voucher=1,
-		/obj/item/pinpointer/deepcore=1,
-		/obj/item/gun/energy/kinetic_accelerator=1,\
+		/obj/item/mining_scanner=1,
 		/obj/item/stack/marker_beacon/ten=1)
+	belt = /obj/item/gun/energy/kinetic_accelerator
 
 /datum/outfit/job/miner/equipped/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -93,6 +93,13 @@
 	backpack = /obj/item/storage/backpack/science
 	satchel = /obj/item/storage/backpack/satchel/tox
 	courierbag = /obj/item/storage/backpack/messenger/tox
+
+/datum/outfit/job/miner/syndicate/gorlex
+	name = "Wrecker (Gorlex Marauders)"
+
+	uniform = /obj/item/clothing/under/syndicate/gorlex
+	shoes = /obj/item/clothing/shoes/workboots
+	ears = /obj/item/radio/headset/alt
 
 /datum/outfit/job/miner/syndicate/sbc
 	name = "Miner (Twinkleshine)"
@@ -139,8 +146,8 @@
 		/obj/item/mining_scanner=1,
 		/obj/item/reagent_containers/hypospray/medipen/survival,
 		/obj/item/reagent_containers/hypospray/medipen/survival,\
-		/obj/item/gun/energy/kinetic_accelerator/old=1,\
 		/obj/item/stack/marker_beacon/ten=1)
+	belt = /obj/item/gun/energy/kinetic_accelerator/old
 
 /datum/outfit/job/miner/righand
 	name = "Righand"
@@ -148,7 +155,7 @@
 		/obj/item/flashlight/seclite=1,
 		/obj/item/kitchen/knife/combat/survival=1,
 		/obj/item/mining_voucher=1,
-		/obj/item/pinpointer/deepcore=1,
+		/obj/item/mining_scanner=1,
 		/obj/item/wrench=1
 	)
 
@@ -184,3 +191,14 @@
 	head = /obj/item/clothing/head/hardhat/orange
 	suit = /obj/item/clothing/suit/toggle/industrial
 	suit_store = /obj/item/tank/internals/emergency_oxygen/double
+
+/datum/outfit/job/miner/hazard/minutemen
+	name = "Industrial Miner (Minutemen)"
+	gloves = /obj/item/clothing/gloves/color/black
+	shoes = /obj/item/clothing/shoes/combat
+	backpack_contents = list(
+		/obj/item/flashlight/seclite=1,
+		/obj/item/stack/marker_beacon/ten=1,
+		/obj/item/weldingtool=1
+		)
+

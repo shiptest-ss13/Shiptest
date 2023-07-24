@@ -3,13 +3,38 @@
 	"map_name": "Bubble-class Colonial Ship",
 	"map_short_name": "Bubble-class",
 	"map_path": "_maps/shuttles/shiptest/independent_bubble.dmm",
+	"description": "While the most famous colony ships were hulking, highly-advanced affairs designed to ferry hundreds-if-not-thousands of settlers to far-off worlds and create cities in a matter of months – the Kalixcian Moonlight, the Candor, the First Train to Fort Sol – the Bubble-class is designed to cater to homesteaders aiming to establish a small ranch or village out in the great vastness of space. The Bubble-class is highly compact but complete with all the necessities for colony creation – extensive R&D equipment, robust mining gear, and a small selection of personal arms for fending off hostile fauna. While the Bubble-class has been historically utilized by the Solarian Federation for colony efforts, their proprietary version has recently been phased out of operation.",
+	"tags": [
+		"Generalist",
+		"Construction"
+	],
+	"namelists": [
+		"GENERAL",
+		"SPACE"
+	],
+	"prefix": "ISV",
 	"limit": 1,
 	"job_slots": {
-		"Captain": 1,
-		"Scientist": 1,
-		"Station Engineer": 1,
-		"Shaft Miner": 1,
-		"Assistant": 3
+		"Captain": {
+			"outfit": "/datum/outfit/job/captain",
+			"slots": 1
+		},
+		"Scientist": {
+			"outfit": "/datum/outfit/job/scientist",
+			"slots": 1
+		},
+		"Station Engineer": {
+			"outfit": "/datum/outfit/job/engineer",
+			"slots": 1
+		},
+		"Shaft Miner": {
+			"outfit": "/datum/outfit/job/miner",
+			"slots": 1
+		},
+		"Assistant": {
+			"outfit": "/datum/outfit/job/assistant",
+			"slots": 3
+		}
 	},
 	"enabled": false
 }

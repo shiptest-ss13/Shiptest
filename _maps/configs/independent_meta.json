@@ -1,15 +1,44 @@
 {
 	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
 	"map_name": "Meta-class Freighter",
+	"prefix": "ISV",
 	"map_short_name": "Meta-class",
+	"description": "The Meta-class is a small freight vessel, and even before the ICW was a common sight on the Frontier as a tramp freighter, running independent contracts between the myriad outposts of the area (with, occasionally, some smuggling or mining on the side). Since the collapse of Nanotrasen’s logistics network in the Frontier region, Meta-classes operating in this capacity have exploded in popularity, and are likely to remain a very common sight wherever larger corporations such as Donk! Co. have yet to establish market dominance.",
+	"tags": [
+		"Generalist",
+		"Cargo"
+	],
+	"namelists": [
+		"GENERAL",
+		"SPACE",
+		"HISTORICAL"
+	],
 	"map_path": "_maps/shuttles/shiptest/independent_meta.dmm",
 	"job_slots": {
-		"Captain": 1,
-		"Quartermaster": 1,
-		"Medical Doctor": 1,
-		"Station Engineer": 1,
-		"Shaft Miner": 1,
-		"Assistant": 3
+		"Captain": {
+			"outfit": "/datum/outfit/job/captain",
+			"slots": 1
+		},
+		"Quartermaster": {
+			"outfit": "/datum/outfit/job/quartermaster",
+			"slots": 1
+		},
+		"Medical Doctor": {
+			"outfit": "/datum/outfit/job/doctor",
+			"slots": 1
+		},
+		"Station Engineer": {
+			"outfit": "/datum/outfit/job/engineer",
+			"slots": 1
+		},
+		"Shaft Miner": {
+			"outfit": "/datum/outfit/job/miner",
+			"slots": 1
+		},
+		"Assistant": {
+			"outfit": "/datum/outfit/job/assistant",
+			"slots": 3
+		}
 	},
 	"enabled": true
 }

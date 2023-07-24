@@ -47,7 +47,6 @@ require only minor tweaks.
 #define ZTRAIT_SNOWSTORM "Weather_Snowstorm"
 #define ZTRAIT_ASHSTORM "Weather_Ashstorm"
 #define ZTRAIT_ACIDRAIN "Weather_Acidrain"
-#define ZTRAIT_TEMPERATURE_GRADIENT "Weather_Gradient" //WS edit - Whitesands
 
 // enum - how SSsun should calculate sun exposure on this level
 #define ZTRAIT_SUN_TYPE "Sun Cycle Type"
@@ -93,7 +92,6 @@ require only minor tweaks.
 	ZTRAIT_BASETURF = /turf/open/lava/smooth/lava_land_surface)
 #define ZTRAITS_WHITESANDS list( \
 	ZTRAIT_MINING = TRUE, \
-	ZTRAIT_TEMPERATURE_GRADIENT = TRUE, \
 	ZTRAIT_SAND_RUINS = TRUE, \
 	ZTRAIT_BOMBCAP_MULTIPLIER = 2, \
 	ZTRAIT_BASETURF = /turf/open/floor/plating/asteroid/whitesands)

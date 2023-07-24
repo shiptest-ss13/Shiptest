@@ -18,6 +18,7 @@
 	var/datum/reagent/reagent_to_extract = /datum/reagent/water
 	var/extracted_reagent_visible_name = "water"
 
+/*
 /turf/open/water/attackby(obj/item/tool, mob/user, params)
 	if(!reagent_to_extract)
 		return ..()
@@ -30,6 +31,14 @@
 	container.reagents.add_reagent(reagent_to_extract, rand(5, 10))
 	user.visible_message("<span class='notice'>[user] scoops [extracted_reagent_visible_name] from the [src] with \the [container].</span>", "<span class='notice'>You scoop out [extracted_reagent_visible_name] from the [src] using \the [container].</span>")
 	return TRUE
+*/
+
+/turf/open/water/attackby(obj/item/fish, mob/user, params)
+	. = ..()
+	if(istype(fish, /obj/item/fish))
+		to_chat(user, "<span class='notice'>You toss the [fish.name] into the water.</span>")
+		playsound(fish, "sound/effects/bigsplash.ogg", 90)
+		qdel(fish)
 
 /turf/open/water/can_have_cabling()
 	return FALSE
@@ -56,11 +65,19 @@
 	light_power = 0.6
 	light_color = COLOR_VERY_LIGHT_GRAY
 
+/turf/open/water/jungle/Initialize(mapload)
+	. = ..()
+	AddElement(/datum/element/lazy_fishing_spot, FISHING_SPOT_PRESET_JUNGLE)
+
 /turf/open/water/beach
 	color = COLOR_CYAN
 	light_range = 2
 	light_power = 0.80
 	light_color = LIGHT_COLOR_BLUE
+
+/turf/open/water/beach/Initialize(mapload)
+	. = ..()
+	AddElement(/datum/element/lazy_fishing_spot, FISHING_SPOT_PRESET_BEACH)
 
 /turf/open/water/beach/deep
 	color = "#0099ff"

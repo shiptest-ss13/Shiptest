@@ -556,6 +556,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
+/obj/machinery/power/apc/auto_name/directional/west,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/cryo)
 "eh" = (
@@ -575,10 +576,7 @@
 	icon_state = "1-2"
 	},
 /obj/effect/turf_decal/corner/opaque/solgovgold{
-	dir = 8
-	},
-/obj/effect/turf_decal/corner/opaque/solgovgold{
-	dir = 1
+	dir = 9
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -785,6 +783,7 @@
 /obj/item/assembly/flash/handheld{
 	pixel_x = -5
 	},
+/obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/plasteel/white,
 /area/ship/science)
 "fJ" = (
@@ -993,10 +992,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/opaque/lightgrey{
-	dir = 8
-	},
-/obj/effect/turf_decal/corner/opaque/lightgrey{
-	dir = 1
+	dir = 9
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -1290,6 +1286,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
+/obj/machinery/power/apc/auto_name/directional/west,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "ja" = (
@@ -2995,6 +2992,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/plasteel/freezer,
 /area/ship/crew/toilet)
 "tp" = (
@@ -4618,6 +4616,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
 	},
+/obj/machinery/power/apc/auto_name/directional/east,
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
 "DE" = (
@@ -4726,6 +4725,7 @@
 /obj/item/clothing/suit/toggle/labcoat,
 /obj/item/storage/belt/medical,
 /obj/item/clothing/glasses/hud/health,
+/obj/machinery/power/apc/auto_name/directional/west,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "Ek" = (
@@ -6084,7 +6084,6 @@
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
-/obj/machinery/light/dim/directional/north,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "NH" = (
@@ -6206,6 +6205,7 @@
 	},
 /obj/structure/cable,
 /obj/item/holosign_creator/janibarrier,
+/obj/machinery/power/apc/auto_name/directional/south,
 /turf/open/floor/plasteel,
 /area/ship/crew/janitor)
 "OA" = (
@@ -6290,7 +6290,7 @@
 	sortTypes = list(7,8,15,29,30);
 	tag = "Command"
 	},
-/obj/structure/extinguisher_cabinet/directional/north,
+/obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "Pa" = (
@@ -6838,6 +6838,7 @@
 /obj/item/clothing/gloves/fingerless,
 /obj/item/megaphone/cargo,
 /obj/item/clothing/head/safety_helmet,
+/obj/machinery/power/apc/auto_name/directional/south,
 /turf/open/floor/plasteel,
 /area/ship/cargo/office)
 "SK" = (

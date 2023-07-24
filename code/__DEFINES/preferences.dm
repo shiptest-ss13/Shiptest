@@ -39,10 +39,10 @@
 #define CHAT_GHOSTRADIO (1<<9)
 #define CHAT_BANKCARD (1<<10)
 #define CHAT_GHOSTLAWS (1<<11)
-#define CHAT_LOOC (1<<12) //WS Edit
+#define CHAT_LOOC (1<<12)
 #define CHAT_LOGIN_LOGOUT (1<<13)
 
-#define TOGGLES_DEFAULT_CHAT (CHAT_OOC|CHAT_DEAD|CHAT_GHOSTEARS|CHAT_GHOSTSIGHT|CHAT_PRAYER|CHAT_RADIO|CHAT_PULLR|CHAT_GHOSTWHISPER|CHAT_GHOSTPDA|CHAT_GHOSTRADIO|CHAT_BANKCARD|CHAT_GHOSTLAWS|CHAT_LOOC|CHAT_LOGIN_LOGOUT) //WS edit
+#define TOGGLES_DEFAULT_CHAT (CHAT_OOC|CHAT_DEAD|CHAT_GHOSTEARS|CHAT_GHOSTSIGHT|CHAT_PRAYER|CHAT_RADIO|CHAT_PULLR|CHAT_GHOSTWHISPER|CHAT_GHOSTPDA|CHAT_GHOSTRADIO|CHAT_BANKCARD|CHAT_GHOSTLAWS|CHAT_LOOC|CHAT_LOGIN_LOGOUT)
 
 #define PARALLAX_INSANE -1 //for show offs
 #define PARALLAX_HIGH 0 //default.
@@ -72,6 +72,7 @@
 #define SEC_DEPT_SUPPLY "Supply"
 
 // Playtime tracking system, see jobs_exp.dm
+// Due to changes to job experience requirements, many of these are effectively unused.
 #define EXP_TYPE_LIVING "Living"
 #define EXP_TYPE_CREW "Crew"
 #define EXP_TYPE_COMMAND "Command"
@@ -94,7 +95,7 @@
 #define SCREENTIP_BIG 1
 
 //Flags in the players table in the db
-#define DB_FLAG_EXEMPT 1
+#define DB_FLAG_EXEMPT (1<<0)
 
 #define DEFAULT_CYBORG_NAME "Default Cyborg Name"
 
@@ -111,7 +112,9 @@
 #define RANDOM_UNDERWEAR "random_underwear"
 #define RANDOM_UNDERWEAR_COLOR "random_underwear_color"
 #define RANDOM_UNDERSHIRT "random_undershirt"
+#define RANDOM_UNDERSHIRT_COLOR "random_undershirt_color"
 #define RANDOM_SOCKS "random_socks"
+#define RANDOM_SOCKS_COLOR "random_socks_color"
 #define RANDOM_BACKPACK "random_backpack"
 #define RANDOM_JUMPSUIT_STYLE "random_jumpsuit_style"
 #define RANDOM_EXOWEAR_STYLE "random_jumpsuit_style"
@@ -130,4 +133,5 @@
 #define PROSTHETIC_AMPUTATED "amputated"
 #define PROSTHETIC_ROBOTIC "prosthetic"
 
-
+#define NOT_SYNTHETIC FALSE
+#define IS_SYNTHETIC TRUE

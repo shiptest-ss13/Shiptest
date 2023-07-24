@@ -10,7 +10,9 @@
 	attack_verb = list("whipped", "lashed", "disciplined")
 	max_integrity = 300
 	equip_sound = 'sound/items/equip/toolbelt_equip.ogg'
+	w_class = WEIGHT_CLASS_BULKY
 	var/content_overlays = FALSE //If this is true, the belt will gain overlays based on what it's holding
+	supports_variations = VOX_VARIATION
 	greyscale_icon_state = "belt"
 	greyscale_colors = list(list(16, 12), list(15, 11), list(13, 12))
 
@@ -153,6 +155,7 @@
 	desc = "Can hold various medical equipment."
 	icon_state = "medical"
 	item_state = "medical"
+	supports_variations = VOX_VARIATION
 
 /obj/item/storage/belt/medical/webbing
 	name = "medical webbing"
@@ -253,6 +256,7 @@
 	icon_state = "security"
 	item_state = "security"//Could likely use a better one.
 	content_overlays = TRUE
+	supports_variations = VOX_VARIATION
 
 /obj/item/storage/belt/security/ComponentInitialize()
 	. = ..()
@@ -308,6 +312,7 @@
 	item_state = "explorer1"
 	w_class = WEIGHT_CLASS_BULKY
 	custom_price = 400
+	supports_variations = VOX_VARIATION
 
 /obj/item/storage/belt/mining/ComponentInitialize()
 	. = ..()
@@ -409,6 +414,7 @@
 	icon_state = "champion"
 	item_state = "champion"
 	custom_materials = list(/datum/material/gold=400)
+	supports_variations = VOX_VARIATION
 
 /obj/item/storage/belt/champion/ComponentInitialize()
 	. = ..()
@@ -508,6 +514,7 @@
 	desc = "A tactical assault belt."
 	icon_state = "assault"
 	item_state = "assault"
+	supports_variations = VOX_VARIATION
 
 /obj/item/storage/belt/military/assault/minutemen/PopulateContents()
 	for(var/i in 1 to 6)
@@ -589,6 +596,7 @@
 	desc = "A belt used to hold most janitorial supplies."
 	icon_state = "jani"
 	item_state = "jani"
+	supports_variations = VOX_VARIATION
 
 /obj/item/storage/belt/janitor/ComponentInitialize()
 	. = ..()
@@ -742,6 +750,7 @@
 	desc = "An ornate sheath designed to hold an officer's blade."
 	icon_state = "sheath"
 	item_state = "sheath"
+	base_icon_state = "sheath"
 	w_class = WEIGHT_CLASS_BULKY
 
 /obj/item/storage/belt/sabre/ComponentInitialize()
@@ -772,8 +781,8 @@
 		to_chat(user, "<span class='warning'>[src] is empty!</span>")
 
 /obj/item/storage/belt/sabre/update_icon_state()
-	icon_state = "sheath"
-	item_state = "sheath"
+	icon_state = "[base_icon_state]"
+	item_state = "[base_icon_state]"
 	if(contents.len)
 		icon_state += "-sabre"
 		item_state += "-sabre"
@@ -782,15 +791,16 @@
 	new /obj/item/melee/sabre(src)
 	update_icon()
 
-/obj/item/storage/belt/solgov
+/obj/item/storage/belt/sabre/solgov
 	name = "solarian sabre sheath"
 	desc = "An ornate sheath designed to hold an officer's blade."
+	base_icon_state = "sheath-solgov"
 	icon_state = "sheath-solgov"
 	item_state = "sheath-solgov"
 	w_class = WEIGHT_CLASS_BULKY
 
-/obj/item/storage/belt/solgov/ComponentInitialize()
-	. = ..()
+/obj/item/storage/belt/sabre/solgov/ComponentInitialize()
+	AddComponent(component_type)
 	AddElement(/datum/element/update_icon_updates_onmob)
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 1
@@ -800,30 +810,7 @@
 		/obj/item/melee/sabre/solgov
 		))
 
-/obj/item/storage/belt/solgov/examine(mob/user)
-	. = ..()
-	if(length(contents))
-		. += "<span class='notice'>Alt-click it to quickly draw the blade.</span>"
-
-/obj/item/storage/belt/solgov/AltClick(mob/user)
-	if(!iscarbon(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
-		return
-	if(length(contents))
-		var/obj/item/I = contents[1]
-		user.visible_message("<span class='notice'>[user] takes [I] out of [src].</span>", "<span class='notice'>You take [I] out of [src].</span>")
-		user.put_in_hands(I)
-		update_icon()
-	else
-		to_chat(user, "<span class='warning'>[src] is empty!</span>")
-
-/obj/item/storage/belt/solgov/update_icon_state()
-	icon_state = "sheath-solgov"
-	item_state = "sheath-solgov"
-	if(contents.len)
-		icon_state += "-sabre"
-		item_state += "-sabre"
-
-/obj/item/storage/belt/solgov/PopulateContents()
+/obj/item/storage/belt/sabre/solgov/PopulateContents()
 	new /obj/item/melee/sabre/solgov(src)
 	update_icon()
 
@@ -832,6 +819,7 @@
 	desc = "A set of tactical webbing for operators of the IRMG, can hold security gear."
 	icon_state = "inteq_webbing"
 	item_state = "inteq_webbing"
+	supports_variations = VOX_VARIATION
 
 /obj/item/storage/belt/security/webbing/inteq/alt
 	name = "inteq drop pouch harness"
