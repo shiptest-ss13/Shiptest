@@ -17,8 +17,11 @@
 	var/short_name
 	var/list/job_slots = list()
 	var/list/name_categories = list("GENERAL")
-	var/prefix = "SV"
+	var/prefix = "ISV"
 	var/unique_ship_access = FALSE
+
+	//how much money the ship starts with
+	var/starting_funds = 2000
 
 	// Coefficients regulating the amount of necessary Living playtime to spawn this ship or join as an officer.
 	// When a player attempts to spawn a ship via the join menu, officer time requirements are ignored even if the "captain" job is an officer.
@@ -339,6 +342,7 @@
 /// Shuttles to be loaded in ruins
 /datum/map_template/shuttle/ruin
 	category = "ruin"
+	starting_funds = 0
 
 /datum/map_template/shuttle/ruin/caravan_victim
 	file_name = "ruin_caravan_victim"
@@ -371,6 +375,7 @@
 
 /datum/map_template/shuttle/subshuttles
 	category = "subshuttles"
+	starting_funds = 0
 
 /datum/map_template/shuttle/subshuttles/pill
 	file_name = "independent_pill"

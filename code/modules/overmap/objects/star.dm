@@ -5,7 +5,9 @@
 	var/color_vary = 0
 
 /datum/overmap/star/Initialize(position, ...)
-	rename(gen_star_name())
+	var/name = gen_star_name()
+	rename(name)
+	set_station_name(name)
 	token.desc = token_desc
 	alter_token_appearance()
 

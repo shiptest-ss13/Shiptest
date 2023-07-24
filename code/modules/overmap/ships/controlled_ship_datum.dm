@@ -109,8 +109,8 @@
 				qdel(src) // Can't return INITIALIZE_HINT_QDEL here since this isn't ACTUAL initialisation. Considering changing the name of the proc.
 				return
 			refresh_engines()
+		ship_account = new(name, source_template.starting_funds)
 
-	ship_account = new(name, 2000)
 #ifdef UNIT_TESTS
 	rename("[source_template]", TRUE)
 #else

@@ -41,6 +41,14 @@
 	///The X bounds of the virtual z level
 	var/vlevel_width = QUADRANT_MAP_SIZE
 
+	//controls what kind of sound we play when we land and the maptext comes up
+	var/landing_sound
+
+	var/static/list/faux_planet_types = list(
+		DYNAMIC_WORLD_ASTEROID,
+		DYNAMIC_WORLD_SPACERUIN,
+	)
+
 /datum/overmap/dynamic/Initialize(position, load_now=TRUE, ...)
 	. = ..()
 
@@ -80,9 +88,11 @@
 
 /datum/overmap/dynamic/post_docked(datum/overmap/ship/controlled/dock_requester)
 	if(planet_name)
-		for(var/mob/M as anything in GLOB.player_list)
-			if(dock_requester.shuttle_port.is_in_shuttle_bounds(M))
-				M.play_screen_text("<span class='maptext' style=font-size:24pt;text-align:center valign='top'><u>[planet_name]</u></span><br>[station_time_timestamp_fancy("hh:mm")]")
+		for(var/mob/Mob as anything in GLOB.player_list)
+			if(dock_requester.shuttle_port.is_in_shuttle_bounds(Mob))
+				Mob.play_screen_text("<span class='maptext' style=font-size:24pt;text-align:center valign='top'><u>[planet_name]</u></span><br>[station_time_timestamp_fancy("hh:mm")]")
+				playsound(Mob, landing_sound, 50)
+
 
 /datum/overmap/dynamic/post_undocked(datum/overmap/dock_requester)
 	if(preserve_level)
@@ -105,6 +115,14 @@
 
 	choose_level_type()
 
+/datum/overmap/dynamic/rename(new_name, force)
+	if(!..())
+		return FALSE
+
+	if(planet.planet in faux_planet_types)
+		token.name = "[planet_name] ([planet.name])"
+	return TRUE
+
 /**
  * Chooses a type of level for the dynamic level to use.
  */
@@ -113,10 +131,14 @@
 		probabilities = list()
 		for(var/datum/planet_type/planet_type as anything in subtypesof(/datum/planet_type))
 			probabilities[initial(planet_type.planet)] = initial(planet_type.weight)
-
 	planet = SSmapping.planet_types[force_encounter ? force_encounter : pickweightAllowZero(probabilities)]
 
-	rename(planet.name)
+	if(planet.planet in faux_planet_types)
+		planet_name = "[gen_planet_name()]"
+		rename(planet_name)
+	else
+		rename(planet.name)
+
 	token.icon_state = planet.icon_state
 	token.desc = planet.desc
 	token.color = planet.color
@@ -124,6 +146,8 @@
 	default_baseturf = planet.default_baseturf
 	mapgen = planet.mapgen
 	weather_controller_type = planet.weather_controller_type
+	landing_sound = planet.landing_sound
+	preserve_level = planet.preserve_level //it came to me while I was looking at chickens
 
 	if(vlevel_height >= 255 && vlevel_width >= 255) //little easter egg
 		planet_name = "LV-[pick(rand(11111,99999))]"
@@ -262,6 +286,13 @@
 	area_flags = HIDDEN_AREA | CAVES_ALLOWED | FLORA_ALLOWED | MOB_SPAWN_ALLOWED //allows jaunters to work
 	ambientsounds = REEBE
 
+/area/overmap_encounter/planetoid/asteroid
+	name = "\improper Asteroid Field"
+	sound_environment = SOUND_ENVIRONMENT_QUARRY
+	ambientsounds = SPACE
 
-
-
+/area/overmap_encounter/planetoid/gas_giant
+	name = "\improper Gas Giant"
+	sound_environment = SOUND_ENVIRONMENT_MOUNTAINS
+	ambientsounds = REEBE
+	has_gravity = GAS_GIANT_GRAVITY
