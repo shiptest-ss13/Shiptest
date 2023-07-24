@@ -119,7 +119,7 @@
 	if(!..())
 		return FALSE
 
-	if(planet.planet in faux_planet_types)
+	if(planet?.planet in faux_planet_types)
 		token.name = "[planet_name] ([planet.name])"
 	return TRUE
 
