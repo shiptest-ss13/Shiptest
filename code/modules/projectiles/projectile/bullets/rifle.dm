@@ -37,3 +37,8 @@
 	name = ".308 Bullet"
 	damage = 45
 	armour_penetration = 15
+
+/obj/projectile/bullet/a858
+	name = "8x58mm caseless bullet"
+	damage = 50
+	armour_penetration = 15
