@@ -5,7 +5,7 @@
 	default_color = "00FF00"
 	species_traits = list(MUTCOLORS,EYECOLOR,LIPS,SCLERA,EMOTE_OVERLAY,MUTCOLORS_SECONDARY)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_REPTILE
-	mutant_bodyparts = list("tail_lizard", "face_markings", "spines", "frills", "horns", "body_markings", "legs")
+	mutant_bodyparts = list("tail_lizard", "face_markings", "frills", "horns", "spines", "body_markings", "legs")
 	mutanttongue = /obj/item/organ/tongue/lizard
 	mutant_organs = list(/obj/item/organ/tail/lizard)
 	coldmod = 1.5
