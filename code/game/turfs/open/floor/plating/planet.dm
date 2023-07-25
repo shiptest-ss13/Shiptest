@@ -59,6 +59,8 @@ Liquid tiles should always lead to more of themselves
 	var/obj/item/stack/digResult = /obj/item/stack/ore/glass
 	//we don't want some things to be dug (Yet at least)
 	var/can_dig = TRUE
+
+	var/can_scrape = FALSE
 	/// Whether the turf has been dug or not
 	var/dug
 	/// Icon state to use when broken
@@ -87,7 +89,8 @@ Liquid tiles should always lead to more of themselves
 	light_power = light_pwr
 	update_light()
 
-	if(can_dig)
+	if(can_scrape)
+		can_dig = FALSE //sanity check, if you're scraping, you shouldn't be calling digging.
 		AddComponent(/datum/component/diggable, digResult, 2, "dig up")
 
 /// If the user can dig the turf
@@ -128,7 +131,50 @@ Liquid tiles should always lead to more of themselves
 	if(.)
 		return TRUE
 
-	if(istype(W, /obj/item/stack/rods))
+	if(W.tool_behaviour == TOOL_SHOVEL || W.tool_behaviour == TOOL_MINING)
+		if(!can_dig(user))
+			return TRUE
+
+		if(!isturf(user.loc))
+			return
+
+		balloon_alert(user, "you start digging...")
+
+		if(W.use_tool(src, user, 40, volume=50))
+			if(!can_dig(user))
+				return TRUE
+			getDug()
+			SSblackbox.record_feedback("tally", "pick_used_mining", 1, W.type)
+			return TRUE
+
+	else if(istype(W, /obj/item/storage/bag/ore))
+		for(var/obj/item/stack/ore/O in src)
+			SEND_SIGNAL(W, COMSIG_PARENT_ATTACKBY, O)
+
+	else if(istype(W, /obj/item/stack/sheet/mineral/wood) || istype(W, /obj/item/stack/sheet/mineral/sandstone))
+		if(!dug)
+			return
+		var/obj/item/stack/sheet/mineral/M = W
+		if (M.get_amount() < 5)
+			to_chat(user, "<span class='warning'>You need at least five sheets for that!</span>")
+			return
+		var/turf/dest_turf = get_turf(src)
+		if(locate(/obj/structure/closet/crate/grave) in dest_turf)
+			to_chat(user, "<span class='warning'>There is already a grave there!</span>")
+			return
+		to_chat(user, "<span class='notice'>You start piling the dirt...</span>")
+		if(do_after(user,30, target = src))
+			if(locate(/obj/structure/closet/crate/grave) in dest_turf)
+				return
+			if(istype(W, /obj/item/stack/sheet/mineral/wood))
+				new /obj/structure/closet/crate/grave(dest_turf)
+			else if(istype(W, /obj/item/stack/sheet/mineral/sandstone))
+				new /obj/structure/closet/crate/grave/stone(dest_turf)
+			M.use(5)
+			to_chat(user, "<span class='notice'>You place burial mound on [src].</span>")
+		return
+
+	else if(istype(W, /obj/item/stack/rods))
 		build_with_rods(W, user)
 		return TRUE
 	else if(istype(W, /obj/item/stack/tile/plasteel))
@@ -161,6 +207,7 @@ grass
 	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_GRASS)
 	layer = HIGH_TURF_LAYER
 	can_dig = FALSE
+	can_scrape = TRUE
 	floor_variants = FALSE
 	var/smooth_icon = 'icons/turf/floors/grass.dmi'
 
@@ -183,6 +230,8 @@ dirt
 	icon_state = "dirt"
 	tiled_dirt = FALSE
 	floor_variants = FALSE
+	can_dig = FALSE
+	can_scrape = TRUE
 
 /turf/open/floor/planetary/dirt/dark
 	icon_state = "greenerdirt"
@@ -246,7 +295,8 @@ Snow
 	bullet_sizzle = TRUE
 	bullet_bounce_sound = null
 	digResult = /obj/item/stack/sheet/mineral/snow
-
+	can_dig = FALSE
+	can_scrape = TRUE
 	floor_variants = TRUE
 
 	// footprint vars
@@ -337,6 +387,9 @@ Liquids
 
 	floor_variants = FALSE
 
+		can_dig = FALSE
+		can_scrape = FALSE
+
 	var/datum/reagent/reagent_to_extract = /datum/reagent/water
 	var/extracted_reagent_visible_name = "water"
 
@@ -397,6 +450,9 @@ Liquid hot magma
 	heavyfootstep = FOOTSTEP_LAVA
 
 	floor_variants = FALSE
+
+	can_dig = FALSE
+	can_scrape = FALSE
 
 	var/particle_emitter = /obj/effect/particle_emitter/lava
 
