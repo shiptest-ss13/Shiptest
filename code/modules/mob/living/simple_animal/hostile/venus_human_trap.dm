@@ -19,6 +19,8 @@
 	smoothing_flags = NONE
 	/// The amount of time it takes to create a venus human trap.
 	var/growth_time = 120 SECONDS
+	/// The current vines
+	var/list/vines = list()
 
 /obj/structure/alien/resin/flower_bud_enemy/Initialize()
 	. = ..()
@@ -29,8 +31,12 @@
 	anchors += locate(x+2,y-2,z)
 
 	for(var/turf/T in anchors)
-		Beam(T, "vine", maxdistance=5, beam_type=/obj/effect/ebeam/vine)
+		vines += Beam(T, "vine", maxdistance=5, beam_type=/obj/effect/ebeam/vine)
 	addtimer(CALLBACK(src, .proc/bear_fruit), growth_time)
+
+/obj/structure/alien/resin/flower_bud_enemy/Destroy()
+	QDEL_LIST(vines)
+	return ..()
 
 /**
  * Spawns a venus human trap, then qdels itself.
