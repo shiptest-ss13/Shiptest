@@ -76,12 +76,12 @@
 /datum/sprite_accessory/tails/lizard/small
 	name = "Small"
 	icon_state = "small"
-	synthetic_icon_state = "small"
+	synthetic_icon_state = "none"
 
 /datum/sprite_accessory/tails_animated/lizard/small
 	name = "Small"
 	icon_state = "small"
-	synthetic_icon_state = "small"
+	synthetic_icon_state = "none"
 
 //Start Face markings
 
@@ -123,14 +123,17 @@
 /datum/sprite_accessory/horns/broken
 	name = "Broken"
 	icon_state = "broken"
+	synthetic_icon_state = "none"
 
 /datum/sprite_accessory/horns/lightning
 	name = "Lightning"
 	icon_state = "lightning"
+	synthetic_icon_state = "none"
 
 /datum/sprite_accessory/horns/brimstone
 	name = "Brimstone"
 	icon_state = "brimstone"
+	synthetic_icon_state = "none"
 
 //old horns
 /datum/sprite_accessory/horns/simple
