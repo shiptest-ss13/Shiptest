@@ -387,8 +387,8 @@ Liquids
 
 	floor_variants = FALSE
 
-		can_dig = FALSE
-		can_scrape = FALSE
+	can_dig = FALSE
+	can_scrape = FALSE
 
 	var/datum/reagent/reagent_to_extract = /datum/reagent/water
 	var/extracted_reagent_visible_name = "water"
