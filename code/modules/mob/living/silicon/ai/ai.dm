@@ -195,11 +195,7 @@
 	GLOB.ai_list -= src
 	QDEL_NULL(eyeobj) // No AI, no Eye
 	QDEL_NULL(aiMulti)
-	QDEL_NULL(aiPDA)
-	QDEL_NULL(aicamera)
-	QDEL_NULL(builtInCamera)
 	QDEL_NULL(spark_system)
-	QDEL_NULL(laws)
 	if(robot_control)
 		QDEL_NULL(robot_control)
 	malfhack = null

@@ -90,7 +90,8 @@
 
 /datum/beam/Destroy()
 	QDEL_LIST(elements)
-	QDEL_NULL(visuals)
+	if(visuals)
+		QDEL_NULL(visuals)
 	UnregisterSignal(origin, COMSIG_MOVABLE_MOVED)
 	UnregisterSignal(target, COMSIG_MOVABLE_MOVED)
 	target = null
@@ -179,6 +180,7 @@
 	. += emissive_overlay
 
 /obj/effect/ebeam/Destroy()
+	owner?.visuals = null
 	owner = null
 	return ..()
 
