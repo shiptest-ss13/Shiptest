@@ -10,3 +10,7 @@
 	postdig_icon_change = TRUE
 	base_icon_state  = "asteroid"
 	initial_gas_mix = AIRLESS_ATMOS
+
+/turf/open/floor/planetary/ice/asteroid
+	name = "asteroid ice"
+	initial_gas_mix = AIRLESS_ATMOS

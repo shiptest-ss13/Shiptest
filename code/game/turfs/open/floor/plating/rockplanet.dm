@@ -5,6 +5,7 @@
 	baseturfs = /turf/open/floor/planetary/rockplanet
 	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
 	light_color = COLOR_ROCKPLANET_LIGHT
+	can_dig = FALSE
 
 /turf/open/floor/planetary/rockplanet/lit
 	lit = TRUE
@@ -14,6 +15,7 @@
 
 /turf/open/floor/planetary/sand/rockplanet
 	name = "iron sand"
+	desc = "gently rusting sand"
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "dry_soft"
 	base_icon_state = "dry_soft"

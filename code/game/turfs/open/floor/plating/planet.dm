@@ -1,5 +1,25 @@
 //This file holds all of our basic planetary turf stuff
 
+/* when in doubt
+
+/planetary subtypes are *hard* tiles, e.g. rock, basalt
+/planetary/dirt is dirt, a soft tile that can't be dug *yet*
+/planetary/grass is any grass tile, they have borders to them, and are pixelshifted
+/planetary/sand is a soft, sand tile
+/planetary/ice is any slippery ice tile
+/planetary/snow is any snow derivative, digging these gives snow, and they can have footprints in them
+/planetary/water is any liquid that isn't immediately harmful, and allows you to scoop things up from it.
+/planetary/lava is the base type for "Melty" things, such as lava, acid, and liquid plasma.
+
+
+baseturfs should descend from soft to hard. An example order is
+
+grass -> dirt -> rock
+
+Liquid tiles should always lead to more of themselves
+
+*/
+
 /turf/open/floor/planetary //I hate Object Oriented Programming
 	gender = PLURAL
 	name = "bedrock"
@@ -65,7 +85,7 @@
 	light_color = light_color
 	light_range = 2
 	light_power = light_pwr
-	update_light() //this could easily be a component but I'm not that advanced yet
+	update_light()
 
 	if(can_dig)
 		AddComponent(/datum/component/diggable, digResult, 2, "dig up")

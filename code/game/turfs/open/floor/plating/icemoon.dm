@@ -105,6 +105,7 @@
 	lit = TRUE
 
 //and the actual ice
+//to-do, make pickaxing ice make it break and remove the slippery
 
 /turf/open/floor/planetary/ice/iceplanet
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS

@@ -10,7 +10,7 @@
 	light_color = COLOR_BEACHPLANET_LIGHT
 
 /turf/open/floor/planetary/beach/lit
-	baseturfs = /turf/open/floor/planetary/jungle/lit
+	baseturfs = /turf/open/floor/planetary/beach/lit
 	lit = TRUE
 
 //and then moving to dirt
@@ -23,7 +23,7 @@
 
 /turf/open/floor/planetary/dirt/beach/dark
 	icon_state = "greenerdirt"
-	baseturfs = /turf/open/floor/planetary/dirt/jungle
+	baseturfs = /turf/open/floor/planetary/dirt/beach
 
 
 /turf/open/floor/planetary/dirt/jungle/lit

@@ -100,7 +100,7 @@
 		/turf/closed/mineral/random = 1
 	)
 	open_turf_types = list(
-		/turf/open/floor/plating/asteroid/airless = 1
+		/turf/open/floor/planetary/asteroid = 1
 	)
 
 /datum/biome/cave/asteroid/vanilla
@@ -130,7 +130,7 @@
 
 /datum/biome/cave/asteroid/ice
 	open_turf_types = list(
-		/turf/open/floor/plating/ice/airless = 1
+		/turf/open/floor/planetary/ice/asteroid = 1
 	)
 
 	mob_spawn_list = list(
@@ -147,7 +147,7 @@
 		/turf/closed/mineral/random = 5
 	)
 	open_turf_types = list(
-		/turf/open/floor/plating/asteroid/airless = 1
+		/turf/open/floor/planetary/asteroid = 1
 	)
 
 	flora_spawn_list = list(
