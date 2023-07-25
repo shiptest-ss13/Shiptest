@@ -53,10 +53,10 @@
 	mouse_opacity = MOUSE_OPACITY_ICON
 	desc = "A thick vine, painful to the touch."
 
-/obj/effect/ebeam/vine/Initialize()
+/obj/effect/ebeam/vine/Initialize(mapload)
 	. = ..()
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
+		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
@@ -66,7 +66,7 @@
 		var/mob/living/L = AM
 		if(!isvineimmune(L))
 			L.adjustBruteLoss(5)
-			to_chat(L, "<span class='alert'>You cut yourself on the thorny vines.</span>")
+			to_chat(L, span_alert("You cut yourself on the thorny vines."))
 
 /**
  * Venus Human Trap
@@ -151,6 +151,7 @@
 /mob/living/simple_animal/hostile/venus_human_trap/Destroy()
 	for(var/datum/beam/vine as anything in vines)
 		qdel(vine) // reference is automatically deleted by remove_vine
+	vines.Cut()
 	return ..()
 
 /**
