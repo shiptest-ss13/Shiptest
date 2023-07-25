@@ -59,7 +59,6 @@
 	name = "Paramedic (Gorlex)"
 
 	id = /obj/item/card/id/syndicate_command/crew_id
-	ears = /obj/item/radio/headset/syndicate/alt
 	uniform = /obj/item/clothing/under/syndicate/gorlex
 	alt_uniform = null
 	shoes = /obj/item/clothing/shoes/jackboots
