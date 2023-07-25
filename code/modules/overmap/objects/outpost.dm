@@ -14,6 +14,9 @@
 	Rename(gen_outpost_name())
 	fill_missions()
 	addtimer(CALLBACK(src, .proc/fill_missions), 10 MINUTES, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
+	var/station_icon_num
+	station_icon_num = rand(1,4)
+	token.icon_state = "station_[station_icon_num]"
 
 /datum/overmap/dynamic/outpost/get_jump_to_turf()
 	if(reserve_docks)

@@ -52,7 +52,7 @@
 	fire_sound = 'sound/weapons/gun/general/rocket_launch.ogg'
 	w_class = WEIGHT_CLASS_BULKY
 	can_suppress = FALSE
-	pin = /obj/item/firing_pin/implant/pindicate
+	pin = /obj/item/firing_pin
 	burst_size = 1
 	fire_delay = 0
 	casing_ejector = FALSE
@@ -97,7 +97,11 @@
 		sleep(20)
 		return OXYLOSS
 
+/obj/item/gun/ballistic/rocketlauncher/solgov
+	name = "Panzerfaust XII"
+	desc = "The standard recoiless rifle of the Solarian Confederation. Legend goes that every couple of decades, the bureaucracy changes a small part of the rifle, then bumps up the number. Chambered in rockets."
 
-
-
+	icon = 'icons/obj/guns/48x32guns.dmi'
+	icon_state = "panzerfaust"
+	item_state = "panzerfaust"
 

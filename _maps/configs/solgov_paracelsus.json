@@ -1,0 +1,45 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Paracelsus-class Medical Corvette",
+	"prefix": "SGSV",
+	"namelists": [
+		"SOLGOV",
+		"SPACE",
+		"BRITISH_NAVY",
+		"NATURAL"
+	],
+	"map_short_name": "Paracelsus-class",
+	"description": "Fulfilling its role as a medicinal powerhouse of the Solarian Navy, the Paracelsus-class is a specially designed corvette to assist solarian fleets in medical troubles, as well as supplying such vessels with medication. Scribes pursuing a medical degree often work in these ships to shadow trained medical doctors to complete their residency.",
+	"tags": ["RP Focus", "Medical", "Chemistry"],
+	"map_path": "_maps/shuttles/shiptest/solgov_paracelsus.dmm",
+	"limit": 1,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/solgov/captain",
+			"officer": true,
+			"slots": 1
+		},
+		"Bureaucrat": {
+			"outfit": "/datum/outfit/job/solgov/bureaucrat",
+			"officer": true,
+			"slots": 1
+		},
+		"Medical Doctor": {
+			"outfit": "/datum/outfit/job/solgov/doctor",
+			"slots": 3
+		},
+		"Ship Engineer": {
+			"outfit": "/datum/outfit/job/solgov/engineer",
+			"slots": 1
+		},
+		"Field Engineer": {
+			"outfit": "/datum/outfit/job/solgov/miner",
+			"slots": 1
+		},
+		"Scribe": {
+			"outfit": "/datum/outfit/job/solgov/assistant",
+			"slots" : 3
+		}
+	},
+	"enabled": true
+}

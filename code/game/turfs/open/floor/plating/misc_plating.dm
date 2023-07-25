@@ -117,14 +117,11 @@
 	icon_state = "[icon_state][rand(1, 9)]"
 	. = ..()
 
-
-/turf/open/floor/plating/ice/iceberg
-	name = "cracked ice floor"
-	desc = "A sheet of solid ice. It looks cracked, yet still slippery."
-	icon_state = "ice1"
-
 /turf/open/floor/plating/ice/icemoon
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+
+/turf/open/floor/plating/ice/airless
+	initial_gas_mix = AIRLESS_ATMOS
 
 /turf/open/floor/plating/snowed
 	name = "snowed-over plating"

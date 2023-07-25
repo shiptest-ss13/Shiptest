@@ -54,7 +54,9 @@
 	maximum_temp = 200 //still cold
 	//I had to stop myself from putting a fuck there I use it too much
 
+
 //wasteplanet
+
 /datum/atmosphere/wasteplanet
 	id = WASTEPLANET_DEFAULT_ATMOS
 
@@ -176,3 +178,45 @@
 
 	minimum_temp = 170
 	maximum_temp = 230
+
+// gas giants
+
+/datum/atmosphere/gas_giant
+	id = GAS_GIANT_ATMOS
+
+	base_gases = list(
+		GAS_N2=10,
+		GAS_NITROUS=10,
+	)
+	normal_gases = list(
+		GAS_O2=5,
+		GAS_H2O=7,
+		GAS_N2=5,
+		GAS_NITROUS=7,
+		GAS_CO2=5,
+	)
+	restricted_gases = list(
+		GAS_NITROUS=7,
+	)
+	restricted_chance = 1
+
+	minimum_pressure = WARNING_HIGH_PRESSURE + 175
+	maximum_pressure = HAZARD_HIGH_PRESSURE + 1000
+
+	minimum_temp = 30 //number i pulled out of my ass
+	maximum_temp = 120
+
+/datum/atmosphere/gas_giant/plasma
+	id = PLASMA_GIANT_ATMOS
+
+	base_gases = list(
+		GAS_PLASMA=10,
+	)
+	normal_gases = list(
+		GAS_PLASMA=10,
+		GAS_CO2=5,
+	)
+	restricted_gases = list(
+		GAS_PLASMA=0.1,
+	)
+	restricted_chance = 1

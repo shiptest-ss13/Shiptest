@@ -99,6 +99,8 @@
 
 #define STATUS_EFFECT_FAKE_VIRUS /datum/status_effect/fake_virus //gives you fluff messages for cough, sneeze, headache, etc but without an actual virus
 
+#define STATUS_EFFECT_METAB_FROZEN /datum/status_effect/metab_frozen // Affected cannot process chems
+
 /////////////
 // NEUTRAL //
 /////////////

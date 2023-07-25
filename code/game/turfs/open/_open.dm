@@ -1,3 +1,7 @@
+#define IGNITE_TURF_CHANCE 30
+#define IGNITE_TURF_LOW_POWER 8
+#define IGNITE_TURF_HIGH_POWER 22
+
 /turf/open
 	plane = FLOOR_PLANE
 
@@ -175,6 +179,11 @@
 	air.set_temperature(air.return_temperature() + temp)
 	air_update_turf()
 
+/turf/open/temperature_expose()
+	if(prob(IGNITE_TURF_CHANCE))
+		IgniteTurf(rand(IGNITE_TURF_LOW_POWER,IGNITE_TURF_HIGH_POWER))
+	return ..()
+
 /turf/open/proc/freon_gas_act()
 	for(var/obj/I in contents)
 		if(I.resistance_flags & FREEZE_PROOF)
@@ -315,3 +324,9 @@
 	playsound(src, 'sound/weapons/genhit.ogg', 50, TRUE)
 	to_chat(user, span_notice("You build a floor."))
 	PlaceOnTop(/turf/open/floor/plating, flags = CHANGETURF_INHERIT_AIR)
+
+
+
+#undef IGNITE_TURF_CHANCE
+#undef IGNITE_TURF_LOW_POWER
+#undef IGNITE_TURF_HIGH_POWER

@@ -4,10 +4,6 @@
 /obj/structure/stone_tile/slab/cracked,
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis/gold)
-"ae" = (
-/obj/structure/fluff/fokoff_sign,
-/turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis/outside)
 "al" = (
 /obj/structure/stone_tile/slab,
 /obj/structure/closet/crate/necropolis,
@@ -31,10 +27,6 @@
 	},
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis/reach)
-"aE" = (
-/obj/structure/flora/grass/both,
-/turf/open/floor/planetary/snow/iceplanet,
-/area/ruin/unpowered/icecropolis/outside)
 "aM" = (
 /obj/structure/table,
 /obj/item/circular_saw,
@@ -61,29 +53,6 @@
 /obj/item/rcd_ammo,
 /turf/open/indestructible/necropolis/air,
 /area/ruin/unpowered/icecropolis)
-"bu" = (
-/obj/structure/closet/crate,
-/obj/item/stack/marker_beacon/ten,
-/obj/item/stack/sheet/mineral/wood,
-/obj/item/stack/sheet/mineral/wood,
-/obj/item/stack/sheet/mineral/wood,
-/obj/item/stack/sheet/mineral/wood,
-/obj/item/flashlight/flare,
-/obj/item/flashlight/flare,
-/obj/item/stack/sheet/bone,
-/obj/item/stack/sheet/bone,
-/obj/item/stack/sheet/animalhide/goliath_hide,
-/obj/item/stack/sheet/animalhide/goliath_hide,
-/obj/item/stack/sheet/sinew,
-/obj/item/stack/sheet/sinew,
-/turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis/reach)
-"bz" = (
-/obj/structure/fence/corner{
-	dir = 8
-	},
-/turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis/reach)
 "bC" = (
 /turf/open/floor/plating,
 /area/ruin/unpowered/icecropolis/rusty)
@@ -116,10 +85,13 @@
 /mob/living/simple_animal/hostile/asteroid/gutlunch,
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis/gold)
-"cE" = (
-/obj/effect/mob_spawn/human/clown/corpse,
-/turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis/reach)
+"cm" = (
+/obj/structure/stone_tile/block/burnt{
+	dir = 8
+	},
+/obj/structure/bonfire/prelit,
+/turf/open/floor/planetary/snow/iceplanet,
+/area/ruin/unpowered/icecropolis/outside)
 "cF" = (
 /obj/structure/stone_tile/surrounding/cracked{
 	dir = 8
@@ -131,15 +103,30 @@
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
 /area/ruin/unpowered/icecropolis/outside)
-"cG" = (
-/obj/structure/stone_tile/surrounding/cracked{
-	dir = 4
-	},
-/obj/item/trash/can,
-/turf/open/floor/planetary/snow/iceplanet,
-/area/ruin/unpowered/icecropolis/outside)
-"df" = (
-/obj/item/trash/syndi_cakes,
+"cK" = (
+/obj/item/clothing/under/costume/roman,
+/turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis/reach)
+"cN" = (
+/obj/structure/closet/crate,
+/obj/item/stack/marker_beacon/ten,
+/obj/item/stack/sheet/mineral/wood,
+/obj/item/stack/sheet/mineral/wood,
+/obj/item/stack/sheet/mineral/wood,
+/obj/item/stack/sheet/mineral/wood,
+/obj/item/flashlight/flare,
+/obj/item/flashlight/flare,
+/obj/item/stack/sheet/bone,
+/obj/item/stack/sheet/bone,
+/obj/item/stack/sheet/animalhide/goliath_hide,
+/obj/item/stack/sheet/animalhide/goliath_hide,
+/obj/item/stack/sheet/sinew,
+/obj/item/stack/sheet/sinew,
+/turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis/reach)
+"cV" = (
+/obj/item/trash/candy,
+/obj/effect/decal/cleanable/blood/old,
 /turf/open/indestructible/necropolis/air,
 /area/ruin/unpowered/icecropolis/gold)
 "dg" = (
@@ -154,6 +141,10 @@
 /obj/effect/decal/cleanable/blood,
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis)
+"dj" = (
+/obj/item/stack/sheet/mineral/gold/twenty,
+/turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis/gold)
 "dx" = (
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion,
 /turf/open/floor/plasteel/icecropolis,
@@ -185,10 +176,6 @@
 /obj/structure/table/glass,
 /turf/open/floor/plating,
 /area/ruin/unpowered/icecropolis/rusty)
-"ea" = (
-/obj/structure/flora/rock/icy,
-/turf/open/floor/planetary/snow/iceplanet,
-/area/ruin/unpowered/icecropolis/outside)
 "eB" = (
 /obj/structure/necropolis_gate,
 /obj/structure/stone_tile/slab/cracked,
@@ -207,16 +194,6 @@
 	dir = 4
 	},
 /turf/open/lava,
-/area/ruin/unpowered/icecropolis)
-"eD" = (
-/obj/item/melee/baseball_bat/homerun,
-/turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis/reach)
-"eG" = (
-/mob/living/simple_animal/hostile/mining_drone/rockplanet{
-	faction = list("mining")
-	},
-/turf/open/indestructible/necropolis/air,
 /area/ruin/unpowered/icecropolis)
 "eH" = (
 /obj/structure/stone_tile/block/burnt{
@@ -238,21 +215,15 @@
 /mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis)
-"fh" = (
-/mob/living/simple_animal/hostile/big_legion{
-	desc = "Hidden away with his sect of heretical brethren, he festers and awaits judgement from The Priest.";
-	health = 300;
-	loot = list(/obj/item/organ/regenerative_core/legion=3,/obj/effect/mob_spawn/human/corpse/damaged/legioninfested=5,/obj/effect/mob_spawn/human/corpse/damaged/legioninfested=5,/obj/effect/mob_spawn/human/corpse/damaged/legioninfested=5,/obj/item/keycard/gatedrop/heathen);
-	maxHealth = 300;
-	name = "The Heathen"
-	},
-/turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis)
 "fi" = (
 /obj/item/trash/candy,
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion,
 /turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis)
+"fj" = (
+/obj/item/clothing/head/helmet/roman/legionnaire,
+/turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis/reach)
 "fl" = (
 /obj/structure/table/wood/reinforced,
 /obj/item/storage/box/donkpockets/donkpocketgondola,
@@ -262,10 +233,6 @@
 /obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/plating,
 /area/ruin/unpowered/icecropolis/rusty)
-"fv" = (
-/obj/effect/decal/cleanable/blood/gibs/core,
-/turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis/gold)
 "fx" = (
 /obj/structure/stone_tile,
 /obj/structure/stone_tile{
@@ -360,6 +327,16 @@
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
 /area/ruin/unpowered/icecropolis/outside)
+"go" = (
+/mob/living/simple_animal/hostile/megafauna/blood_drunk_miner/doom{
+	desc = "The Lost Prophet, destined to wander the Bloody Hallow in a death stained rut.";
+	health = 300;
+	maxHealth = 300;
+	name = "The Lost Prophet";
+	ranged_ignores_vision = 0
+	},
+/turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis)
 "gr" = (
 /obj/structure/stone_tile,
 /obj/structure/stone_tile/block{
@@ -383,18 +360,6 @@
 	},
 /turf/open/lava/smooth,
 /area/ruin/unpowered/icecropolis/reach)
-"gA" = (
-/obj/item/trash/raisins,
-/turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis/gold)
-"gF" = (
-/obj/structure/bonfire/prelit,
-/turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis/reach)
-"gM" = (
-/obj/structure/girder/bronze,
-/turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis/gold)
 "gV" = (
 /obj/structure/stone_tile/block/burnt{
 	dir = 1
@@ -407,6 +372,10 @@
 /obj/structure/closet/crate/necropolis/tendril,
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis/gold)
+"ha" = (
+/obj/effect/mob_spawn/human/clown/corpse,
+/turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis/reach)
 "hb" = (
 /mob/living/simple_animal/hostile/asteroid/basilisk/watcher/icewing,
 /turf/open/indestructible/necropolis/air,
@@ -441,10 +410,6 @@
 /obj/item/fugu_gland,
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis/gold)
-"hw" = (
-/obj/item/trash/tray,
-/turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis/gold)
 "hy" = (
 /obj/structure/stone_tile,
 /obj/structure/stone_tile/surrounding/cracked,
@@ -465,6 +430,9 @@
 /obj/structure/sign/warning/securearea,
 /turf/closed/wall/mineral/iron/icecropolis,
 /area/ruin/unpowered/icecropolis/russia)
+"io" = (
+/turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis/outside)
 "iq" = (
 /obj/structure/table,
 /obj/item/gps,
@@ -498,6 +466,10 @@
 /obj/effect/mob_spawn/human/corpse/charredskeleton,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/gold)
+"iP" = (
+/obj/item/trash/syndi_cakes,
+/turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis/gold)
 "iQ" = (
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion,
 /turf/open/indestructible/necropolis/air,
@@ -512,6 +484,32 @@
 "je" = (
 /turf/closed/mineral/random/high_chance/volcanic/icecropolis,
 /area/ruin/unpowered/icecropolis)
+"jh" = (
+/obj/structure/destructible/tribal_torch,
+/turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis)
+"jj" = (
+/mob/living/simple_animal/hostile/asteroid/elite/herald{
+	aggro_vision_range = 6;
+	desc = "This Bishop, twisted in its worship,  brought holy word to some golden city of lore.";
+	faction = list("mining");
+	health = 400;
+	loot = list(/obj/item/clothing/neck/cloak/herald_cloak,/obj/item/keycard/gatedrop/bishop);
+	loot_drop = list();
+	maxHealth = 400;
+	name = "The Bishop";
+	ranged_ignores_vision = 0
+	},
+/turf/open/floor/mineral/gold,
+/area/ruin/unpowered/icecropolis/gold)
+"jy" = (
+/obj/item/trash/can/food/beans,
+/turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis/gold)
+"jD" = (
+/obj/structure/stone_tile/surrounding/cracked,
+/turf/open/floor/planetary/snow/iceplanet,
+/area/ruin/unpowered/icecropolis/outside)
 "jK" = (
 /obj/structure/stone_tile/slab,
 /obj/structure/table/wood/fancy/royalblue,
@@ -533,10 +531,14 @@
 /obj/effect/decal/cleanable/blood,
 /turf/open/indestructible/necropolis/air,
 /area/ruin/unpowered/icecropolis)
-"kC" = (
-/obj/structure/fluff/fokoff_sign,
+"kr" = (
+/obj/structure/flora/tree/dead,
 /turf/open/floor/planetary/snow/iceplanet,
 /area/ruin/unpowered/icecropolis/outside)
+"kz" = (
+/obj/structure/reagent_dispensers/beerkeg,
+/turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis/reach)
 "kD" = (
 /obj/structure/stone_tile/slab,
 /obj/structure/chair/pew{
@@ -544,21 +546,21 @@
 	},
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis)
-"kK" = (
-/obj/structure/closet/crate/medical,
-/obj/item/reagent_containers/blood/random,
-/obj/item/reagent_containers/blood/lizard,
-/obj/item/reagent_containers/blood/lizard,
-/obj/item/stack/sheet/cotton/cloth/ten,
-/obj/item/storage/firstaid/brute,
-/obj/item/storage/firstaid/medical,
-/turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis/reach)
 "kW" = (
 /obj/structure/stone_tile/slab/cracked,
 /obj/effect/decal/cleanable/blood,
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis/reach)
+"le" = (
+/mob/living/simple_animal/hostile/big_legion{
+	desc = "Hidden away with his sect of heretical brethren, he festers and awaits judgement from The Priest.";
+	health = 300;
+	loot = list(/obj/item/organ/regenerative_core/legion=3,/obj/effect/mob_spawn/human/corpse/damaged/legioninfested=5,/obj/effect/mob_spawn/human/corpse/damaged/legioninfested=5,/obj/effect/mob_spawn/human/corpse/damaged/legioninfested=5,/obj/item/keycard/gatedrop/heathen);
+	maxHealth = 300;
+	name = "The Heathen"
+	},
+/turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis)
 "li" = (
 /turf/closed/wall/rust/icecropolis,
 /area/ruin/unpowered/icecropolis/rusty)
@@ -572,6 +574,10 @@
 /obj/effect/decal/cleanable/blood,
 /turf/open/indestructible/necropolis/air,
 /area/ruin/unpowered/icecropolis)
+"lt" = (
+/obj/item/implanter/sad_trombone,
+/turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis/reach)
 "lB" = (
 /obj/structure/table,
 /obj/item/ammo_casing/shotgun/improvised,
@@ -582,26 +588,6 @@
 /obj/item/ammo_casing/shotgun/buckshot,
 /turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/russia)
-"lH" = (
-/obj/structure/table/wood,
-/obj/item/spear/bonespear,
-/obj/item/spear/bonespear,
-/obj/item/spear/bonespear,
-/obj/item/melee/baseball_bat/bone,
-/obj/item/melee/baseball_bat/bone,
-/obj/item/melee/baseball_bat/bone,
-/obj/item/kitchen/knife/combat/bone,
-/obj/item/kitchen/knife/combat/bone,
-/obj/item/kitchen/knife/combat/bone,
-/obj/item/scythe,
-/obj/item/scythe,
-/obj/item/scythe,
-/turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis/reach)
-"mj" = (
-/obj/item/trash/boritos,
-/turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis/gold)
 "ml" = (
 /obj/structure/bed,
 /obj/item/bedsheet/random,
@@ -615,10 +601,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis)
-"mp" = (
-/obj/effect/mob_spawn/human/corpse/charredskeleton,
-/turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis/gold)
 "mu" = (
 /turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/russia)
@@ -627,6 +609,15 @@
 /obj/structure/bookcase/manuals/medical,
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis)
+"mK" = (
+/obj/item/malf_upgrade,
+/turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis/reach)
+"mO" = (
+/obj/machinery/hydroponics/soil,
+/obj/item/grown/cotton,
+/turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis/reach)
 "mT" = (
 /obj/structure/windoor_assembly{
 	dir = 4
@@ -642,6 +633,19 @@
 /obj/structure/glowshroom/single,
 /obj/item/seeds/bamboo,
 /turf/open/floor/wood/icecropolis,
+/area/ruin/unpowered/icecropolis)
+"mY" = (
+/mob/living/simple_animal/hostile/asteroid/elite/broodmother{
+	aggro_vision_range = 5;
+	desc = "The gatekeeper, a beast dedicated to guarding the wellbeing of its master.";
+	faction = list("mining");
+	health = 300;
+	loot = list(/obj/item/crusher_trophy/broodmother_tongue,/obj/item/keycard/gatedrop/gatekeeper);
+	loot_drop = list();
+	maxHealth = 200;
+	name = "The Gatekeeper"
+	},
+/turf/open/indestructible/necropolis/air,
 /area/ruin/unpowered/icecropolis)
 "mZ" = (
 /obj/structure/stone_tile/slab,
@@ -659,13 +663,10 @@
 	},
 /turf/open/lava/smooth,
 /area/ruin/unpowered/icecropolis/reach)
-"nh" = (
-/obj/structure/stone_tile/surrounding/cracked{
-	dir = 8
-	},
-/obj/item/trash/plate,
-/turf/open/floor/planetary/snow/iceplanet,
-/area/ruin/unpowered/icecropolis/outside)
+"nq" = (
+/obj/effect/decal/cleanable/blood/old,
+/turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis/gold)
 "nr" = (
 /obj/item/clothing/head/festive{
 	desc = "A festive party hat with the name 'timmy' scribbled on the front.";
@@ -708,6 +709,12 @@
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
 /area/ruin/unpowered/icecropolis/outside)
+"oh" = (
+/mob/living/simple_animal/hostile/mining_drone/rockplanet{
+	faction = list("mining")
+	},
+/turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis)
 "oj" = (
 /obj/structure/stone_tile/slab,
 /obj/structure/chair/pew,
@@ -733,16 +740,6 @@
 /obj/item/circuitboard/machine/smartfridge,
 /turf/open/floor/plasteel/icecropolis,
 /area/ruin/unpowered/icecropolis/rusty)
-"oS" = (
-/mob/living/simple_animal/hostile/asteroid/hivelord/legion/crystal{
-	color = "#880808";
-	desc = "Disfigured and distorted, this fallen deacon of The Priest attones by guarding some holy entrance.";
-	health = 100;
-	maxHealth = 100;
-	name = "The Deacon"
-	},
-/turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis/outside)
 "oT" = (
 /obj/structure/stone_tile/cracked{
 	dir = 4
@@ -762,10 +759,6 @@
 	},
 /turf/open/lava/smooth,
 /area/ruin/unpowered/icecropolis)
-"pa" = (
-/obj/structure/stone_tile/block/burnt,
-/turf/open/floor/planetary/snow/iceplanet,
-/area/ruin/unpowered/icecropolis/outside)
 "ph" = (
 /obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper,
 /turf/open/floor/wood/icecropolis,
@@ -781,15 +774,18 @@
 /obj/item/clothing/under/color/black,
 /turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/russia)
+"pC" = (
+/obj/structure/stone_tile/surrounding/cracked{
+	dir = 1
+	},
+/obj/effect/mob_spawn/human/corpse/charredskeleton,
+/turf/open/floor/planetary/snow/iceplanet,
+/area/ruin/unpowered/icecropolis/outside)
 "pE" = (
 /obj/structure/stone_tile/slab,
 /obj/projectile/bullet/reusable/arrow/bronze,
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis/reach)
-"pF" = (
-/obj/item/trash/candy,
-/turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis/gold)
 "pI" = (
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/unpowered/icecropolis)
@@ -800,6 +796,13 @@
 /obj/structure/stone_tile/cracked,
 /turf/open/lava/smooth,
 /area/ruin/unpowered/icecropolis)
+"pQ" = (
+/obj/structure/stone_tile/surrounding/cracked{
+	dir = 4
+	},
+/obj/item/trash/can,
+/turf/open/floor/planetary/snow/iceplanet,
+/area/ruin/unpowered/icecropolis/outside)
 "pT" = (
 /obj/structure/stone_tile/slab,
 /obj/structure/necropolis_gate,
@@ -811,16 +814,6 @@
 /obj/machinery/door/keycard/gates/gatekeeper,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis)
-"pV" = (
-/obj/structure/closet/crate/radiation,
-/obj/machinery/the_singularitygen,
-/obj/item/toy/plush/beeplushie,
-/obj/item/clothing/suit/hooded/bee_costume,
-/obj/item/clothing/mask/rat/bee,
-/obj/item/clothing/head/beekeeper_head,
-/obj/item/clothing/suit/beekeeper_suit,
-/turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis/reach)
 "qe" = (
 /obj/structure/stone_tile/slab/cracked,
 /obj/machinery/door/keycard/gates/bishop,
@@ -836,6 +829,10 @@
 /obj/item/bedsheet/wiz,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/gold)
+"qs" = (
+/obj/effect/sliding_puzzle/lavaland,
+/turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis)
 "qA" = (
 /obj/effect/decal/cleanable/blood/gibs/core,
 /turf/open/floor/mineral/gold,
@@ -862,6 +859,10 @@
 	},
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis/gold)
+"qS" = (
+/obj/structure/destructible/tribal_torch,
+/turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis/reach)
 "qV" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/reagent_dispensers/water_cooler{
@@ -870,11 +871,29 @@
 	},
 /turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis)
+"rb" = (
+/obj/structure/closet/crate,
+/obj/item/storage/toolbox/syndicate,
+/obj/item/weldingtool/experimental,
+/obj/item/construction/rcd/loaded,
+/obj/item/clothing/head/collectable/welding,
+/turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis/reach)
 "re" = (
 /obj/structure/stone_tile/slab/cracked,
 /obj/item/stack/sheet/mineral/gold/twenty,
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis/gold)
+"rf" = (
+/obj/structure/closet/crate/medical,
+/obj/item/reagent_containers/blood/random,
+/obj/item/reagent_containers/blood/lizard,
+/obj/item/reagent_containers/blood/lizard,
+/obj/item/stack/sheet/cotton/cloth/ten,
+/obj/item/storage/firstaid/brute,
+/obj/item/storage/firstaid/medical,
+/turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis/reach)
 "rh" = (
 /obj/structure/stone_tile{
 	dir = 1
@@ -890,34 +909,59 @@
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion,
 /turf/open/floor/plating,
 /area/ruin/unpowered/icecropolis/rusty)
+"rv" = (
+/turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis/gold)
 "rz" = (
 /obj/item/stack/tile/bronze,
 /turf/open/indestructible/necropolis/air,
 /area/ruin/unpowered/icecropolis)
+"rB" = (
+/obj/structure/statue/bone/rib{
+	color = "#880808";
+	dir = 1
+	},
+/turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis/outside)
 "rE" = (
 /obj/structure/stone_tile/slab/cracked,
 /turf/open/lava/smooth,
 /area/ruin/unpowered/icecropolis)
+"rF" = (
+/obj/structure/fluff/fokoff_sign,
+/turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis/outside)
+"rI" = (
+/obj/structure/fence/corner{
+	dir = 8
+	},
+/turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis/reach)
 "rM" = (
 /obj/machinery/door/airlock/glass_large,
 /obj/structure/barricade/wooden/crude,
 /turf/open/floor/plasteel/icecropolis,
 /area/ruin/unpowered/icecropolis/rusty)
-"rR" = (
-/obj/item/trash/semki,
-/turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis/gold)
 "rT" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/trash/candy,
 /turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis)
-"rX" = (
-/turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis/gold)
 "sa" = (
 /turf/closed/wall/mineral/iron/icecropolis,
 /area/ruin/unpowered/icecropolis/russia)
+"sq" = (
+/obj/item/clothing/head/syndicatefake,
+/turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis/reach)
+"sx" = (
+/obj/effect/mob_spawn/human/corpse/charredskeleton,
+/turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis/gold)
+"sG" = (
+/obj/item/trash/sosjerky,
+/turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis/gold)
 "sH" = (
 /obj/structure/stone_tile/center{
 	pixel_y = -16
@@ -935,6 +979,23 @@
 	},
 /turf/open/lava,
 /area/ruin/unpowered/icecropolis)
+"sK" = (
+/obj/structure/table/wood,
+/obj/item/pickaxe/improvised,
+/obj/item/pickaxe/improvised,
+/obj/item/pickaxe/improvised,
+/obj/item/pickaxe,
+/obj/item/storage/bag/ore,
+/obj/item/storage/bag/ore,
+/obj/item/storage/bag/ore,
+/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern,
+/obj/item/shovel,
+/obj/item/shovel,
+/obj/item/shovel/spoon,
+/turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis/reach)
 "sM" = (
 /obj/structure/bed/pod,
 /obj/item/bedsheet/yellow,
@@ -954,20 +1015,17 @@
 /obj/effect/decal/cleanable/blood,
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis/reach)
-"sT" = (
-/mob/living/simple_animal/hostile/megafauna/blood_drunk_miner/doom{
-	desc = "The Lost Prophet, destined to wander the Bloody Hallow in a death stained rut.";
-	health = 300;
-	maxHealth = 300;
-	name = "The Lost Prophet";
-	ranged_ignores_vision = 0
-	},
-/turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis)
-"sZ" = (
-/obj/structure/destructible/tribal_torch,
+"tc" = (
+/obj/structure/fence/door,
 /turf/open/indestructible/necropolis/air,
 /area/ruin/unpowered/icecropolis/reach)
+"tp" = (
+/obj/structure/stone_tile/surrounding/cracked{
+	dir = 8
+	},
+/obj/item/trash/plate,
+/turf/open/floor/planetary/snow/iceplanet,
+/area/ruin/unpowered/icecropolis/outside)
 "tq" = (
 /obj/structure/stone_tile/block{
 	dir = 4;
@@ -983,10 +1041,6 @@
 /obj/structure/closet/crate/necropolis/tendril,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis)
-"tx" = (
-/obj/structure/legionpike,
-/turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis)
 "tA" = (
 /turf/open/indestructible/necropolis/air,
 /area/ruin/unpowered/icecropolis)
@@ -1000,19 +1054,6 @@
 /obj/structure/mineral_door/wood,
 /turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/reach)
-"tO" = (
-/mob/living/simple_animal/hostile/asteroid/elite/broodmother{
-	aggro_vision_range = 5;
-	desc = "The gatekeeper, a beast dedicated to guarding the wellbeing of its master.";
-	faction = list("mining");
-	health = 300;
-	loot = list(/obj/item/crusher_trophy/broodmother_tongue,/obj/item/keycard/gatedrop/gatekeeper);
-	loot_drop = list();
-	maxHealth = 200;
-	name = "The Gatekeeper"
-	},
-/turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis)
 "tS" = (
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 8
@@ -1034,19 +1075,6 @@
 /obj/item/reagent_containers/food/snacks/spaghetti/pastatomato,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/gold)
-"tX" = (
-/obj/item/kitchen/knife/butcher,
-/obj/structure/closet/secure_closet/freezer/fridge,
-/obj/item/clothing/suit/apron/chef,
-/obj/item/clothing/head/chefhat,
-/obj/item/clothing/under/rank/civilian/chef/skirt,
-/obj/item/reagent_containers/food/snacks/meat/slab/goliath,
-/obj/item/reagent_containers/food/snacks/meat/slab/goliath,
-/obj/item/reagent_containers/food/snacks/meat/slab/goliath,
-/obj/item/reagent_containers/food/condiment/flour,
-/obj/item/reagent_containers/food/condiment/flour,
-/turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis/reach)
 "um" = (
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 4
@@ -1058,10 +1086,6 @@
 /obj/item/seeds/corn,
 /turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis)
-"ur" = (
-/obj/structure/legionpike,
-/turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis/outside)
 "uC" = (
 /obj/structure/stone_tile,
 /obj/structure/stone_tile{
@@ -1113,10 +1137,6 @@
 /obj/item/storage/box/disks_plantgene,
 /turf/open/floor/plasteel/icecropolis,
 /area/ruin/unpowered/icecropolis/rusty)
-"vk" = (
-/obj/item/trash/can/food/beans,
-/turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis/gold)
 "vm" = (
 /obj/structure/table/glass,
 /obj/item/stock_parts/cell/empty,
@@ -1140,6 +1160,10 @@
 /obj/item/stack/cable_coil/random/five,
 /turf/open/floor/plating,
 /area/ruin/unpowered/icecropolis/rusty)
+"vn" = (
+/obj/item/melee/baseball_bat/homerun,
+/turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis/reach)
 "vp" = (
 /obj/structure/stone_tile{
 	dir = 8
@@ -1166,6 +1190,10 @@
 /turf/open/lava{
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
+/area/ruin/unpowered/icecropolis/outside)
+"vQ" = (
+/obj/structure/flora/rock/icy,
+/turf/open/floor/planetary/snow/iceplanet,
 /area/ruin/unpowered/icecropolis/outside)
 "wa" = (
 /obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper,
@@ -1201,10 +1229,10 @@
 /obj/effect/mob_spawn/human/corpse/charredskeleton,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis,
 /area/ruin/unpowered/icecropolis/outside)
-"wy" = (
-/obj/item/shield/riot/roman,
+"wz" = (
+/obj/item/trash/raisins,
 /turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis/reach)
+/area/ruin/unpowered/icecropolis/gold)
 "wI" = (
 /obj/structure/stone_tile/slab,
 /obj/structure/table/wood/fancy/royalblue,
@@ -1234,6 +1262,16 @@
 /obj/item/slapper,
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis/gold)
+"xK" = (
+/obj/structure/closet/crate/necropolis,
+/turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis/reach)
+"yd" = (
+/obj/structure/stone_tile/block/burnt{
+	dir = 4
+	},
+/turf/open/floor/planetary/snow/iceplanet,
+/area/ruin/unpowered/icecropolis/outside)
 "yg" = (
 /mob/living/simple_animal/hostile/cult_demon{
 	aggro_vision_range = 6;
@@ -1253,10 +1291,6 @@
 	},
 /turf/open/lava/smooth,
 /area/ruin/unpowered/icecropolis/reach)
-"yl" = (
-/obj/structure/fans/tiny/invisible,
-/turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis/outside)
 "yn" = (
 /obj/structure/closet/crate/necropolis,
 /obj/item/reagent_containers/food/snacks/canned/peaches,
@@ -1318,10 +1352,6 @@
 	},
 /turf/open/lava,
 /area/ruin/unpowered/icecropolis)
-"zb" = (
-/obj/structure/fence/door,
-/turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis/reach)
 "zg" = (
 /obj/structure/stone_tile/slab/cracked,
 /obj/structure/stone_tile/slab/cracked,
@@ -1345,21 +1375,6 @@
 /obj/structure/stone_tile/block/burnt,
 /turf/open/lava/smooth,
 /area/ruin/unpowered/icecropolis)
-"zr" = (
-/obj/structure/stone_tile/slab/cracked,
-/obj/structure/table/wood/fancy/red_gold,
-/obj/item/reagent_containers/syringe{
-	desc = "A serum left behind by the fabled Goldwalkers.";
-	list_reagents = list(/datum/reagent/mutationtoxin/ash=15);
-	name = "GoldWalkers Blessing"
-	},
-/obj/item/reagent_containers/syringe{
-	desc = "A serum left behind by the fabled Goldwalkers.";
-	list_reagents = list(/datum/reagent/mutationtoxin/ash=15);
-	name = "GoldWalkers Blessing"
-	},
-/turf/open/indestructible/boss/air,
-/area/ruin/unpowered/icecropolis/gold)
 "zu" = (
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 4
@@ -1388,10 +1403,6 @@
 /obj/item/circuitboard/computer/teleporter,
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis)
-"zM" = (
-/obj/effect/decal/cleanable/blood/gibs/old,
-/turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis)
 "zN" = (
 /obj/structure/table,
 /obj/item/storage/toolbox/mechanical/old,
@@ -1399,23 +1410,48 @@
 /obj/item/multitool,
 /turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/russia)
-"zO" = (
-/obj/item/clothing/head/syndicatefake,
-/turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis/reach)
 "zR" = (
 /obj/structure/stone_tile/slab,
 /obj/structure/chair/pew/left,
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis)
+"zU" = (
+/obj/structure/flora/rock/pile/icy,
+/turf/open/floor/planetary/snow/iceplanet,
+/area/ruin/unpowered/icecropolis/outside)
+"Ac" = (
+/obj/item/trash/tray,
+/turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis/gold)
 "Ag" = (
 /obj/structure/stone_tile/slab,
 /obj/structure/destructible/tribal_torch,
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis)
-"Ao" = (
-/turf/open/floor/planetary/snow/iceplanet,
-/area/ruin/unpowered/icecropolis/outside)
+"Ah" = (
+/obj/structure/table/wood,
+/obj/item/spear/bonespear,
+/obj/item/spear/bonespear,
+/obj/item/spear/bonespear,
+/obj/item/melee/baseball_bat/bone,
+/obj/item/melee/baseball_bat/bone,
+/obj/item/melee/baseball_bat/bone,
+/obj/item/kitchen/knife/combat/bone,
+/obj/item/kitchen/knife/combat/bone,
+/obj/item/kitchen/knife/combat/bone,
+/obj/item/scythe,
+/obj/item/scythe,
+/obj/item/scythe,
+/turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis/reach)
+"At" = (
+/mob/living/simple_animal/hostile/netherworld/migo{
+	desc = "The Missionary, carrying out the will of their bishop.";
+	faction = list("mining");
+	name = "Missionary"
+	},
+/turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis/gold)
 "AP" = (
 /obj/structure/stone_tile{
 	dir = 8
@@ -1433,6 +1469,16 @@
 	},
 /turf/open/lava,
 /area/ruin/unpowered/icecropolis)
+"AV" = (
+/obj/structure/fence{
+	dir = 8
+	},
+/turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis/reach)
+"AW" = (
+/obj/structure/fence,
+/turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis/reach)
 "AX" = (
 /obj/structure/stone_tile,
 /obj/structure/stone_tile{
@@ -1443,23 +1489,29 @@
 	},
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis/reach)
-"Be" = (
-/obj/item/clothing/under/costume/roman,
+"AZ" = (
+/obj/item/trash/waffles,
+/turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis/gold)
+"Bg" = (
+/mob/living/simple_animal/hostile/asteroid/goliath/pup{
+	a_intent = "help";
+	desc = "A small goliath pup. Its tendrils have not yet fully grown. Someone, somehow, has managed to fit a large dog collar around its neck.";
+	environment_smash = 0;
+	faction = list("neutral","mining","ashwalker");
+	mob_size = 2;
+	move_force = 1000;
+	move_resist = 1000;
+	name = "Pillar";
+	pull_force = 1000
+	},
 /turf/open/indestructible/necropolis/air,
 /area/ruin/unpowered/icecropolis/reach)
-"Bi" = (
-/obj/structure/destructible/tribal_torch,
-/turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis)
 "Bk" = (
 /turf/open/chasm/lavaland{
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/rusty)
-"Bl" = (
-/obj/effect/sliding_puzzle/lavaland,
-/turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis)
 "Bs" = (
 /obj/structure/mineral_door/iron,
 /turf/open/floor/wood/icecropolis,
@@ -1475,17 +1527,12 @@
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
 /area/ruin/unpowered/icecropolis/outside)
-"BK" = (
-/obj/item/trash/candy,
-/obj/effect/decal/cleanable/blood/old,
-/turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis/gold)
-"BR" = (
+"BM" = (
 /obj/structure/barricade/wooden,
 /turf/open/indestructible/necropolis/air,
 /area/ruin/unpowered/icecropolis/outside)
-"Ch" = (
-/obj/item/stack/sheet/mineral/gold/twenty,
+"BP" = (
+/obj/item/trash/semki,
 /turf/open/indestructible/necropolis/air,
 /area/ruin/unpowered/icecropolis/gold)
 "Ci" = (
@@ -1516,12 +1563,6 @@
 /obj/item/storage/book/bible,
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis)
-"CA" = (
-/obj/structure/stone_tile/block/burnt{
-	dir = 4
-	},
-/turf/open/floor/planetary/snow/iceplanet,
-/area/ruin/unpowered/icecropolis/outside)
 "CF" = (
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 1
@@ -1532,17 +1573,6 @@
 /obj/structure/stone_tile,
 /turf/open/lava/smooth,
 /area/ruin/unpowered/icecropolis/gold)
-"CN" = (
-/obj/structure/closet/crate/necropolis,
-/turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis/reach)
-"CO" = (
-/obj/structure/stone_tile/surrounding/cracked{
-	dir = 1
-	},
-/obj/effect/mob_spawn/human/corpse/charredskeleton,
-/turf/open/floor/planetary/snow/iceplanet,
-/area/ruin/unpowered/icecropolis/outside)
 "CQ" = (
 /obj/effect/spawner/lootdrop/snowdin/dungeonmid,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
@@ -1556,6 +1586,16 @@
 	},
 /turf/open/lava/smooth,
 /area/ruin/unpowered/icecropolis)
+"De" = (
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion/crystal{
+	color = "#880808";
+	desc = "Disfigured and distorted, this fallen deacon of The Priest attones by guarding some holy entrance.";
+	health = 100;
+	maxHealth = 100;
+	name = "The Deacon"
+	},
+/turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis/outside)
 "Dh" = (
 /obj/structure/barricade/wooden,
 /turf/open/floor/wood/icecropolis,
@@ -1570,17 +1610,8 @@
 /obj/item/bedsheet/cosmos,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/gold)
-"Dq" = (
-/mob/living/simple_animal/hostile/netherworld/migo{
-	desc = "The Missionary, carrying out the will of their bishop.";
-	faction = list("mining");
-	name = "Missionary"
-	},
-/turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis/gold)
-"Ds" = (
-/obj/machinery/iv_drip,
-/obj/item/reagent_containers/food/drinks/waterbottle/large,
+"Dl" = (
+/obj/item/shield/riot/roman,
 /turf/open/indestructible/necropolis/air,
 /area/ruin/unpowered/icecropolis/reach)
 "Dt" = (
@@ -1596,10 +1627,6 @@
 /obj/effect/decal/cleanable/blood,
 /turf/open/lava/smooth,
 /area/ruin/unpowered/icecropolis)
-"Dv" = (
-/obj/item/trash/sosjerky,
-/turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis/gold)
 "DJ" = (
 /obj/item/stack/sheet/bone,
 /turf/open/indestructible/necropolis/air,
@@ -1612,26 +1639,30 @@
 /obj/effect/decal/cleanable/blood,
 /turf/open/lava/smooth,
 /area/ruin/unpowered/icecropolis)
+"DP" = (
+/obj/structure/closet/crate/radiation,
+/obj/machinery/the_singularitygen,
+/obj/item/toy/plush/beeplushie,
+/obj/item/clothing/suit/hooded/bee_costume,
+/obj/item/clothing/mask/rat/bee,
+/obj/item/clothing/head/beekeeper_head,
+/obj/item/clothing/suit/beekeeper_suit,
+/turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis/reach)
 "DR" = (
 /obj/structure/stone_tile/block/burnt{
 	dir = 4
 	},
 /turf/open/lava/smooth,
 /area/ruin/unpowered/icecropolis/reach)
-"DZ" = (
-/obj/effect/decal/cleanable/blood,
+"Ef" = (
+/obj/effect/decal/cleanable/blood/gibs/old,
 /turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis/reach)
-"Ei" = (
-/obj/structure/chair/plastic{
-	dir = 4
-	},
+/area/ruin/unpowered/icecropolis)
+"EC" = (
+/obj/item/trash/plate,
 /turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis/reach)
-"EE" = (
-/obj/structure/sink/puddle,
-/turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis/reach)
+/area/ruin/unpowered/icecropolis/gold)
 "EK" = (
 /obj/item/kitchen/knife,
 /obj/effect/decal/cleanable/dirt,
@@ -1676,6 +1707,10 @@
 /obj/machinery/door/keycard/gates/priest,
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis)
+"FB" = (
+/obj/structure/flora/rock/pile/icy,
+/turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis/outside)
 "FI" = (
 /obj/structure/closet/crate,
 /obj/item/gun/ballistic/automatic/zip_pistol,
@@ -1687,41 +1722,15 @@
 /obj/item/grenade/chem_grenade/cleaner,
 /turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/russia)
-"FK" = (
-/obj/item/spacecash/bundle/c1000,
-/obj/item/spacecash/bundle/c1000,
-/obj/item/spacecash/bundle/c1000,
-/obj/item/clothing/mask/fakemoustache/italian,
-/turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis/reach)
 "FN" = (
 /obj/item/rcd_ammo,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis)
-"FQ" = (
-/obj/structure/necropolis_gate,
-/obj/structure/necropolis_arch,
-/turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis/outside)
 "FY" = (
 /obj/structure/stone_tile/slab,
 /obj/effect/decal/remains/human,
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis)
-"Gc" = (
-/mob/living/simple_animal/hostile/asteroid/elite/herald{
-	aggro_vision_range = 6;
-	desc = "This Bishop, twisted in its worship,  brought holy word to some golden city of lore.";
-	faction = list("mining");
-	health = 400;
-	loot = list(/obj/item/clothing/neck/cloak/herald_cloak,/obj/item/keycard/gatedrop/bishop);
-	loot_drop = list();
-	maxHealth = 400;
-	name = "The Bishop";
-	ranged_ignores_vision = 0
-	},
-/turf/open/floor/mineral/gold,
-/area/ruin/unpowered/icecropolis/gold)
 "Gf" = (
 /obj/structure/table/wood/reinforced,
 /obj/item/reagent_containers/glass/bottle/nutrient/ez,
@@ -1743,10 +1752,10 @@
 /obj/item/reagent_containers/glass/bottle/nutrient/ez,
 /turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/reach)
-"Gr" = (
-/obj/item/implanter/sad_trombone,
+"Gg" = (
+/obj/effect/decal/cleanable/blood/gibs/old,
 /turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis/reach)
+/area/ruin/unpowered/icecropolis/gold)
 "Gt" = (
 /obj/structure/necropolis_gate,
 /obj/structure/stone_tile/slab,
@@ -1793,6 +1802,17 @@
 /obj/structure/mineral_door/wood,
 /turf/open/floor/plating,
 /area/ruin/unpowered/icecropolis/rusty)
+"Hg" = (
+/obj/effect/mob_spawn/human/corpse/charredskeleton,
+/turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis)
+"Hi" = (
+/obj/structure/stone_tile/slab,
+/obj/structure/chair/comfy/shuttle/bronze{
+	dir = 8
+	},
+/turf/open/indestructible/boss/air,
+/area/ruin/unpowered/icecropolis)
 "Hk" = (
 /obj/structure/stone_tile,
 /obj/structure/stone_tile/block{
@@ -1813,12 +1833,16 @@
 	},
 /turf/open/lava,
 /area/ruin/unpowered/icecropolis)
-"Hq" = (
+"Hm" = (
+/obj/effect/decal/cleanable/blood/gibs/core,
+/turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis/gold)
+"Ht" = (
 /obj/item/stack/tile/bronze,
 /turf/open/indestructible/necropolis/air,
 /area/ruin/unpowered/icecropolis/gold)
-"Hw" = (
-/obj/structure/fence,
+"Hy" = (
+/obj/structure/ore_box,
 /turf/open/indestructible/necropolis/air,
 /area/ruin/unpowered/icecropolis/reach)
 "Hz" = (
@@ -1834,10 +1858,6 @@
 "HC" = (
 /obj/structure/stone_tile/block/burnt,
 /turf/open/lava/smooth,
-/area/ruin/unpowered/icecropolis/reach)
-"HN" = (
-/obj/item/malf_upgrade,
-/turf/open/indestructible/necropolis/air,
 /area/ruin/unpowered/icecropolis/reach)
 "HO" = (
 /obj/structure/sink{
@@ -1888,21 +1908,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis)
-"Ir" = (
-/obj/item/trash/plate,
-/turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis/gold)
-"IC" = (
-/obj/structure/flora/rock/pile/icy,
-/turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis/outside)
-"IE" = (
-/obj/item/trash/waffles,
-/turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis/gold)
 "IX" = (
 /obj/structure/stone_tile/slab/cracked,
 /turf/open/lava/smooth,
+/area/ruin/unpowered/icecropolis/gold)
+"Js" = (
+/obj/item/trash/candy,
+/turf/open/indestructible/necropolis/air,
 /area/ruin/unpowered/icecropolis/gold)
 "Jz" = (
 /obj/structure/stone_tile/block/burnt,
@@ -1916,10 +1928,6 @@
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
 /area/ruin/unpowered/icecropolis/outside)
-"JB" = (
-/mob/living/simple_animal/hostile/asteroid/gutlunch,
-/turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis/reach)
 "JF" = (
 /obj/structure/stone_tile/block{
 	dir = 8;
@@ -1931,6 +1939,10 @@
 	},
 /turf/open/lava,
 /area/ruin/unpowered/icecropolis)
+"JO" = (
+/obj/structure/stone_tile/block/burnt,
+/turf/open/floor/planetary/snow/iceplanet,
+/area/ruin/unpowered/icecropolis/outside)
 "JU" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/storage/pill_bottle/trophazole,
@@ -1945,8 +1957,8 @@
 /obj/item/gun/magic/hook,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis)
-"Kn" = (
-/obj/structure/reagent_dispensers/beerkeg,
+"Kb" = (
+/mob/living/simple_animal/hostile/asteroid/gutlunch,
 /turf/open/indestructible/necropolis/air,
 /area/ruin/unpowered/icecropolis/reach)
 "Kq" = (
@@ -1962,6 +1974,9 @@
 /obj/structure/stone_tile/cracked,
 /turf/open/lava/smooth,
 /area/ruin/unpowered/icecropolis)
+"Ks" = (
+/turf/open/floor/planetary/snow/iceplanet,
+/area/ruin/unpowered/icecropolis/outside)
 "KA" = (
 /obj/structure/stone_tile,
 /obj/structure/stone_tile{
@@ -1973,6 +1988,10 @@
 /obj/effect/decal/remains/human,
 /turf/open/lava/smooth,
 /area/ruin/unpowered/icecropolis)
+"KM" = (
+/obj/structure/flora/grass/both,
+/turf/open/floor/planetary/snow/iceplanet,
+/area/ruin/unpowered/icecropolis/outside)
 "KN" = (
 /obj/structure/table,
 /obj/machinery/light/floor,
@@ -1996,10 +2015,6 @@
 	},
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis)
-"KW" = (
-/obj/item/trash/can,
-/turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis/gold)
 "KX" = (
 /obj/structure/girder/bronze,
 /turf/open/indestructible/necropolis/air,
@@ -2011,24 +2026,6 @@
 	},
 /turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/russia)
-"Lp" = (
-/obj/structure/fluff/fokoff_sign,
-/turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis)
-"Ls" = (
-/mob/living/simple_animal/hostile/asteroid/goliath/pup{
-	a_intent = "help";
-	desc = "A small goliath pup. Its tendrils have not yet fully grown. Someone, somehow, has managed to fit a large dog collar around its neck.";
-	environment_smash = 0;
-	faction = list("neutral","mining","ashwalker");
-	mob_size = 2;
-	move_force = 1000;
-	move_resist = 1000;
-	name = "Pillar";
-	pull_force = 1000
-	},
-/turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis/reach)
 "Lt" = (
 /obj/effect/mob_spawn/human/corpse/frontier/ranged/officer,
 /turf/open/floor/wood/icecropolis,
@@ -2036,8 +2033,10 @@
 "Lx" = (
 /turf/open/floor/mineral/gold,
 /area/ruin/unpowered/icecropolis/gold)
-"LA" = (
-/obj/structure/stone_tile/surrounding/cracked,
+"Lz" = (
+/obj/structure/stone_tile/block/burnt{
+	dir = 1
+	},
 /turf/open/floor/planetary/snow/iceplanet,
 /area/ruin/unpowered/icecropolis/outside)
 "LH" = (
@@ -2046,13 +2045,6 @@
 /obj/item/shield/adamantineshield,
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis/gold)
-"LL" = (
-/obj/structure/stone_tile/block/burnt{
-	dir = 8
-	},
-/obj/structure/bonfire/prelit,
-/turf/open/floor/planetary/snow/iceplanet,
-/area/ruin/unpowered/icecropolis/outside)
 "LM" = (
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 4
@@ -2065,13 +2057,6 @@
 	},
 /turf/open/lava/smooth,
 /area/ruin/unpowered/icecropolis/gold)
-"LQ" = (
-/obj/structure/stone_tile/slab,
-/obj/structure/chair/bronze{
-	dir = 8
-	},
-/turf/open/indestructible/boss/air,
-/area/ruin/unpowered/icecropolis)
 "LT" = (
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/mineral/gold,
@@ -2083,15 +2068,32 @@
 /obj/structure/barricade/wooden/crude,
 /turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/russia)
-"Mc" = (
-/obj/machinery/hydroponics/soil,
-/obj/item/grown/cotton,
-/turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis/reach)
 "Mf" = (
 /obj/machinery/light/floor,
 /turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/russia)
+"Mg" = (
+/obj/structure/stone_tile/block{
+	dir = 1
+	},
+/obj/structure/stone_tile,
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/blood/footprints,
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion{
+	color = "#880808";
+	desc = "Disfigured and distorted, this disciple of The Priest fell to temptation before shutting themselves away with their idol.";
+	health = 200;
+	loot = list(/obj/item/organ/regenerative_core/legion,/obj/item/keycard/gatedrop/disciple);
+	maxHealth = 200;
+	melee_damage_lower = 20;
+	melee_damage_type = "burn";
+	melee_damage_upper = 20;
+	name = "The Disciple"
+	},
+/turf/open/lava/smooth,
+/area/ruin/unpowered/icecropolis)
 "Mh" = (
 /obj/structure/stone_tile/block{
 	dir = 8;
@@ -2102,11 +2104,31 @@
 	},
 /turf/open/lava,
 /area/ruin/unpowered/icecropolis)
+"Mp" = (
+/obj/structure/stone_tile/slab/cracked,
+/obj/structure/table/wood/fancy/red_gold,
+/obj/item/reagent_containers/syringe{
+	desc = "A serum left behind by the fabled Goldwalkers.";
+	list_reagents = list(/datum/reagent/mutationtoxin/ash=15);
+	name = "GoldWalkers Blessing"
+	},
+/obj/item/reagent_containers/syringe{
+	desc = "A serum left behind by the fabled Goldwalkers.";
+	list_reagents = list(/datum/reagent/mutationtoxin/ash=15);
+	name = "GoldWalkers Blessing"
+	},
+/turf/open/indestructible/boss/air,
+/area/ruin/unpowered/icecropolis/gold)
 "Mw" = (
 /obj/structure/stone_tile/slab/cracked,
 /obj/item/skub,
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis/gold)
+"MC" = (
+/obj/machinery/iv_drip,
+/obj/item/reagent_containers/food/drinks/waterbottle/large,
+/turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis/reach)
 "MK" = (
 /obj/item/stack/sheet/mineral/gold/twenty,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
@@ -2128,15 +2150,17 @@
 	},
 /turf/open/lava/smooth,
 /area/ruin/unpowered/icecropolis)
-"MU" = (
-/obj/effect/decal/cleanable/blood/old,
-/turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis/gold)
 "MY" = (
 /obj/structure/stone_tile/slab/cracked,
 /obj/effect/decal/cleanable/blood/gibs/core,
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis/gold)
+"Nc" = (
+/obj/structure/statue/bone/rib{
+	color = "#880808"
+	},
+/turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis/outside)
 "Ne" = (
 /obj/structure/stone_tile/slab,
 /obj/structure/displaycase/noalert{
@@ -2144,10 +2168,11 @@
 	},
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis)
-"Nq" = (
-/obj/effect/decal/cleanable/blood/gibs/old,
+"Nl" = (
+/obj/structure/necropolis_gate,
+/obj/structure/necropolis_arch,
 /turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis/gold)
+/area/ruin/unpowered/icecropolis/outside)
 "NK" = (
 /obj/structure/bed/dogbed,
 /turf/open/floor/wood/icecropolis,
@@ -2158,6 +2183,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis)
+"NP" = (
+/obj/structure/fans/tiny/invisible,
+/turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis/outside)
 "NS" = (
 /obj/structure/stone_tile/surrounding/cracked{
 	dir = 8
@@ -2186,38 +2215,20 @@
 /obj/item/clothing/suit/armor/heavy/adamantine,
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis/gold)
-"Os" = (
-/obj/structure/chair/bronze{
-	dir = 8
-	},
-/turf/open/floor/wood/icecropolis,
-/area/ruin/unpowered/icecropolis/reach)
-"OB" = (
-/obj/effect/decal/cleanable/blood/old,
-/mob/living/simple_animal/hostile/netherworld/migo{
-	desc = "The Missionary, carrying out the will of their bishop.";
-	faction = list("mining");
-	name = "Missionary"
-	},
+"Oz" = (
+/obj/item/trash/boritos,
 /turf/open/indestructible/necropolis/air,
 /area/ruin/unpowered/icecropolis/gold)
-"OG" = (
-/obj/structure/flora/rock/pile/icy,
-/turf/open/floor/planetary/snow/iceplanet,
-/area/ruin/unpowered/icecropolis/outside)
 "OP" = (
 /obj/structure/stone_tile/slab,
 /obj/structure/closet/crate/necropolis,
 /obj/effect/spawner/lootdrop/snowdin/dungeonmid,
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis)
-"OX" = (
-/obj/structure/statue/bone/rib{
-	color = "#880808";
-	dir = 1
-	},
+"OS" = (
+/obj/structure/girder/bronze,
 /turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis/outside)
+/area/ruin/unpowered/icecropolis/gold)
 "OY" = (
 /obj/structure/stone_tile{
 	dir = 4
@@ -2231,19 +2242,6 @@
 /obj/effect/decal/cleanable/blood/gibs/old,
 /turf/open/floor/mineral/gold,
 /area/ruin/unpowered/icecropolis/gold)
-"Ph" = (
-/obj/structure/stone_tile/surrounding/burnt,
-/mob/living/simple_animal/hostile/asteroid/elite/legionnaire{
-	desc = "Captain of the Holy Guard, a title few can hold without faulter.";
-	faction = list("mining");
-	health = 300;
-	loot = list(/obj/item/crusher_trophy/legionnaire_spine,/obj/item/keycard/gatedrop/guard);
-	loot_drop = list();
-	maxHealth = 300;
-	name = "Captain of the Holy Guard"
-	},
-/turf/open/lava/smooth,
-/area/ruin/unpowered/icecropolis)
 "Pl" = (
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 1
@@ -2261,6 +2259,10 @@
 "Pn" = (
 /obj/structure/reagent_dispensers/watertank/high,
 /turf/open/floor/wood/icecropolis,
+/area/ruin/unpowered/icecropolis/reach)
+"Pv" = (
+/obj/structure/sink/puddle,
+/turf/open/indestructible/necropolis/air,
 /area/ruin/unpowered/icecropolis/reach)
 "Pw" = (
 /obj/structure/stone_tile/slab,
@@ -2294,29 +2296,23 @@
 	},
 /turf/open/lava/smooth,
 /area/ruin/unpowered/icecropolis)
-"PP" = (
-/obj/structure/stone_tile/block/burnt{
-	dir = 1
-	},
+"PU" = (
+/obj/structure/fluff/fokoff_sign,
 /turf/open/floor/planetary/snow/iceplanet,
 /area/ruin/unpowered/icecropolis/outside)
 "PV" = (
 /obj/item/guardiancreator/choose,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis)
-"PW" = (
-/obj/structure/flora/tree/dead,
-/turf/open/floor/planetary/snow/iceplanet,
-/area/ruin/unpowered/icecropolis/outside)
-"PX" = (
-/obj/structure/stone_tile/slab/cracked,
-/obj/item/trash/sosjerky,
-/turf/open/floor/planetary/snow/iceplanet,
-/area/ruin/unpowered/icecropolis/outside)
 "PZ" = (
 /obj/effect/decal/cleanable/blood/gibs/core,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/gold)
+"Qd" = (
+/obj/structure/stone_tile/slab/cracked,
+/obj/item/trash/sosjerky,
+/turf/open/floor/planetary/snow/iceplanet,
+/area/ruin/unpowered/icecropolis/outside)
 "Qe" = (
 /obj/item/reagent_containers/glass/bottle/nutrient/ez,
 /obj/item/reagent_containers/glass/bottle/nutrient/ez,
@@ -2425,6 +2421,10 @@
 /obj/structure/mineral_door/iron,
 /turf/open/indestructible/necropolis/air,
 /area/ruin/unpowered/icecropolis)
+"Sr" = (
+/obj/structure/fluff/fokoff_sign,
+/turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis)
 "St" = (
 /obj/structure/stone_tile/block/burnt{
 	dir = 8
@@ -2449,6 +2449,16 @@
 	},
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis/reach)
+"Sz" = (
+/obj/structure/chair/comfy/shuttle/bronze{
+	dir = 8
+	},
+/turf/open/floor/wood/icecropolis,
+/area/ruin/unpowered/icecropolis/reach)
+"SF" = (
+/obj/structure/legionpike,
+/turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis)
 "SG" = (
 /obj/structure/stone_tile,
 /obj/structure/stone_tile/block{
@@ -2466,6 +2476,10 @@
 /obj/effect/decal/cleanable/blood/gibs/old,
 /turf/closed/indestructible/riveted/boss,
 /area/ruin/unpowered/icecropolis/gold)
+"SK" = (
+/obj/machinery/hydroponics/soil,
+/turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis/reach)
 "SN" = (
 /obj/structure/table/wood/reinforced,
 /obj/item/reagent_containers/glass/bucket/wooden,
@@ -2482,12 +2496,19 @@
 /obj/item/cultivator/rake,
 /turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/reach)
-"SY" = (
-/obj/structure/fence{
-	dir = 8
+"SW" = (
+/obj/structure/legionpike,
+/turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis/outside)
+"Tc" = (
+/obj/effect/decal/cleanable/blood/old,
+/mob/living/simple_animal/hostile/netherworld/migo{
+	desc = "The Missionary, carrying out the will of their bishop.";
+	faction = list("mining");
+	name = "Missionary"
 	},
 /turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis/reach)
+/area/ruin/unpowered/icecropolis/gold)
 "Te" = (
 /obj/structure/stone_tile/slab,
 /obj/structure/closet/cabinet{
@@ -2524,10 +2545,6 @@
 /obj/structure/mineral_door/wood,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/reach)
-"TC" = (
-/obj/item/clothing/head/helmet/roman/legionnaire,
-/turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis/reach)
 "TK" = (
 /obj/structure/closet/crate,
 /obj/item/gun/ballistic/revolver/nagant,
@@ -2542,6 +2559,16 @@
 	},
 /turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/russia)
+"TN" = (
+/obj/structure/bonfire/prelit,
+/turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis/reach)
+"TO" = (
+/obj/structure/chair/plastic{
+	dir = 4
+	},
+/turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis/reach)
 "TP" = (
 /obj/item/circuitboard/machine/hydroponics,
 /turf/open/floor/plasteel/icecropolis,
@@ -2552,23 +2579,6 @@
 /obj/item/stack/sheet/mineral/gold/twenty,
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis/gold)
-"Un" = (
-/obj/structure/table/wood,
-/obj/item/pickaxe/improvised,
-/obj/item/pickaxe/improvised,
-/obj/item/pickaxe/improvised,
-/obj/item/pickaxe,
-/obj/item/storage/bag/ore,
-/obj/item/storage/bag/ore,
-/obj/item/storage/bag/ore,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/shovel,
-/obj/item/shovel,
-/obj/item/shovel/spoon,
-/turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis/reach)
 "Ur" = (
 /obj/structure/fluff/broken_flooring,
 /turf/open/floor/plating,
@@ -2628,16 +2638,16 @@
 /mob/living/simple_animal/hostile/asteroid/gutlunch,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/gold)
+"VB" = (
+/obj/effect/decal/cleanable/blood,
+/turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis/reach)
 "VU" = (
 /obj/structure/stone_tile/slab,
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis)
 "VV" = (
 /turf/closed/indestructible/necropolis,
-/area/ruin/unpowered/icecropolis)
-"VX" = (
-/obj/effect/mob_spawn/human/corpse/charredskeleton,
-/turf/open/indestructible/necropolis/air,
 /area/ruin/unpowered/icecropolis)
 "We" = (
 /obj/structure/stone_tile/surrounding_tile,
@@ -2651,6 +2661,19 @@
 /obj/structure/necropolis_gate,
 /turf/open/indestructible/necropolis/air,
 /area/ruin/unpowered/icecropolis)
+"Wj" = (
+/obj/item/kitchen/knife/butcher,
+/obj/structure/closet/secure_closet/freezer/fridge,
+/obj/item/clothing/suit/apron/chef,
+/obj/item/clothing/head/chefhat,
+/obj/item/clothing/under/rank/civilian/chef/skirt,
+/obj/item/reagent_containers/food/snacks/meat/slab/goliath,
+/obj/item/reagent_containers/food/snacks/meat/slab/goliath,
+/obj/item/reagent_containers/food/snacks/meat/slab/goliath,
+/obj/item/reagent_containers/food/condiment/flour,
+/obj/item/reagent_containers/food/condiment/flour,
+/turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis/reach)
 "Wo" = (
 /obj/structure/stone_tile/slab,
 /obj/structure/bookcase/manuals,
@@ -2665,19 +2688,14 @@
 /obj/item/storage/bag/plants/portaseeder,
 /turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/reach)
-"Wz" = (
-/obj/structure/statue/bone/rib{
-	color = "#880808"
-	},
+"Wv" = (
+/obj/item/trash/can,
 /turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis/outside)
+/area/ruin/unpowered/icecropolis/gold)
 "WN" = (
 /obj/structure/stone_tile/block,
 /turf/open/lava,
 /area/ruin/unpowered/icecropolis)
-"WO" = (
-/turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis/outside)
 "WS" = (
 /obj/structure/stone_tile/slab,
 /obj/item/statuebust/hippocratic,
@@ -2715,10 +2733,6 @@
 /obj/item/seeds/coffee,
 /turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis)
-"Xm" = (
-/obj/structure/ore_box,
-/turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis/reach)
 "Xn" = (
 /obj/structure/stone_tile/slab,
 /obj/structure/bookcase/manuals/research_and_development,
@@ -2745,6 +2759,13 @@
 	},
 /turf/open/lava/smooth,
 /area/ruin/unpowered/icecropolis)
+"Xq" = (
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/clothing/mask/fakemoustache/italian,
+/turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis/reach)
 "Xr" = (
 /obj/structure/stone_tile/block{
 	dir = 4
@@ -2797,6 +2818,19 @@
 /obj/structure/table/wood/fancy/royalblue,
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis)
+"XQ" = (
+/obj/structure/stone_tile/surrounding/burnt,
+/mob/living/simple_animal/hostile/asteroid/elite/legionnaire{
+	desc = "Captain of the Holy Guard, a title few can hold without faulter.";
+	faction = list("mining");
+	health = 300;
+	loot = list(/obj/item/crusher_trophy/legionnaire_spine,/obj/item/keycard/gatedrop/guard);
+	loot_drop = list();
+	maxHealth = 300;
+	name = "Captain of the Holy Guard"
+	},
+/turf/open/lava/smooth,
+/area/ruin/unpowered/icecropolis)
 "XV" = (
 /obj/effect/spawner/lootdrop/snowdin/dungeonmid,
 /turf/open/indestructible/necropolis/air,
@@ -2843,14 +2877,6 @@
 /obj/item/gps,
 /turf/open/floor/plating,
 /area/ruin/unpowered/icecropolis)
-"YD" = (
-/obj/structure/closet/crate,
-/obj/item/storage/toolbox/syndicate,
-/obj/item/weldingtool/experimental,
-/obj/item/construction/rcd/loaded,
-/obj/item/clothing/head/collectable/welding,
-/turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis/reach)
 "YF" = (
 /obj/machinery/door/keycard/gates/guard,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
@@ -2860,6 +2886,10 @@
 /obj/item/bedsheet/red,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/gold)
+"YU" = (
+/obj/structure/table/optable,
+/turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis/reach)
 "YV" = (
 /obj/structure/toilet,
 /obj/item/clothing/head/collectable/welding,
@@ -2902,28 +2932,6 @@
 /obj/item/circuitboard/machine/biogenerator,
 /turf/open/floor/plating,
 /area/ruin/unpowered/icecropolis/rusty)
-"Zk" = (
-/obj/structure/stone_tile/block{
-	dir = 1
-	},
-/obj/structure/stone_tile,
-/obj/structure/stone_tile{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/blood/footprints,
-/mob/living/simple_animal/hostile/asteroid/hivelord/legion{
-	color = "#880808";
-	desc = "Disfigured and distorted, this disciple of The Priest fell to temptation before shutting themselves away with their idol.";
-	health = 200;
-	loot = list(/obj/item/organ/regenerative_core/legion,/obj/item/keycard/gatedrop/disciple);
-	maxHealth = 200;
-	melee_damage_lower = 20;
-	melee_damage_type = "burn";
-	melee_damage_upper = 20;
-	name = "The Disciple"
-	},
-/turf/open/lava/smooth,
-/area/ruin/unpowered/icecropolis)
 "Zw" = (
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/gold)
@@ -2932,10 +2940,6 @@
 /obj/machinery/door/keycard/gates/disciple,
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis)
-"ZA" = (
-/obj/machinery/hydroponics/soil,
-/turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis/reach)
 "ZE" = (
 /obj/structure/mineral_door/gold,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
@@ -2967,10 +2971,6 @@
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/gold)
-"ZW" = (
-/obj/structure/table/optable,
-/turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis/reach)
 
 (1,1,1) = {"
 Za
@@ -3167,9 +3167,9 @@ Za
 Za
 Za
 Za
-CO
-CA
-cG
+pC
+yd
+pQ
 Za
 Za
 Za
@@ -3177,34 +3177,34 @@ Za
 Za
 Za
 Za
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
 Za
 Za
 Za
@@ -3229,9 +3229,9 @@ Za
 Za
 Za
 Za
-pa
-PX
-PP
+JO
+Qd
+Lz
 Za
 Za
 Za
@@ -3239,7 +3239,7 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 fE
 fE
@@ -3266,8 +3266,8 @@ fE
 fE
 fE
 fE
-Ao
-Ao
+Ks
+Ks
 Za
 Za
 Za
@@ -3291,17 +3291,17 @@ Za
 Za
 Za
 Za
-nh
-LL
-LA
+tp
+cm
+jD
 Za
 Za
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
 fE
 jV
 jV
@@ -3329,8 +3329,8 @@ jV
 jV
 fE
 fE
-Ao
-Ao
+Ks
+Ks
 Za
 Za
 Za
@@ -3353,12 +3353,12 @@ Za
 Za
 Za
 Za
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
 fE
 fE
 fE
@@ -3392,7 +3392,7 @@ jV
 jV
 fE
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -3415,12 +3415,12 @@ Za
 Za
 Za
 Za
-Ao
-Ao
-Ao
-Ao
-PW
-Ao
+Ks
+Ks
+Ks
+Ks
+kr
+Ks
 fE
 jV
 jV
@@ -3436,7 +3436,7 @@ VV
 VV
 VV
 VV
-Bi
+jh
 tA
 tA
 tA
@@ -3444,7 +3444,7 @@ tA
 tA
 tA
 tA
-Bi
+jh
 VV
 VV
 VV
@@ -3454,7 +3454,7 @@ Qf
 jV
 jV
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -3477,12 +3477,12 @@ Za
 Za
 Za
 Za
-Ao
-Ao
-ea
-Ao
-Ao
-Ao
+Ks
+Ks
+vQ
+Ks
+Ks
+Ks
 fE
 jV
 je
@@ -3502,7 +3502,7 @@ VU
 tA
 tA
 tA
-Bi
+jh
 tA
 tA
 tA
@@ -3516,7 +3516,7 @@ Qf
 Qf
 jV
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -3535,16 +3535,16 @@ Za
 Za
 Za
 Za
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
 fE
 jV
 je
@@ -3578,7 +3578,7 @@ Qf
 Qf
 jV
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -3597,7 +3597,7 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 fE
 fE
@@ -3640,7 +3640,7 @@ jV
 jV
 jV
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -3659,7 +3659,7 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 jV
@@ -3675,7 +3675,7 @@ je
 EU
 tA
 tA
-sT
+go
 tA
 tA
 VV
@@ -3684,7 +3684,7 @@ VV
 VV
 VV
 VV
-Bi
+jh
 tA
 tA
 yN
@@ -3692,7 +3692,7 @@ JF
 eC
 tA
 tA
-Bi
+jh
 VV
 VV
 VV
@@ -3702,7 +3702,7 @@ jV
 fE
 fE
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -3721,24 +3721,24 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 Mw
 bU
 Zb
 ZM
-gM
-fv
-rX
-rX
+OS
+Hm
+rv
+rv
 ZM
 je
 je
 tA
-eG
+oh
 tA
-eG
+oh
 tA
 VV
 Qf
@@ -3762,9 +3762,9 @@ tA
 fN
 jV
 fE
-Ao
-Ao
-Ao
+Ks
+Ks
+Ks
 Za
 Za
 Za
@@ -3783,17 +3783,17 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 MY
 Zb
 Ff
 ZM
-rX
-rX
-Dv
-mp
+rv
+rv
+sG
+sx
 ZM
 nE
 nE
@@ -3820,11 +3820,11 @@ VU
 Di
 Pw
 tA
-Bi
+jh
 jV
 jV
-Ao
-Ao
+Ks
+Ks
 Za
 Za
 Za
@@ -3845,17 +3845,17 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 ZU
 ZU
 ZU
 ZM
-rX
-vk
-rX
-gA
+rv
+jy
+rv
+wz
 ZM
 nE
 je
@@ -3875,7 +3875,7 @@ tA
 tA
 tA
 VU
-Bi
+jh
 tA
 tA
 VU
@@ -3884,8 +3884,8 @@ VU
 tA
 tA
 jV
-Ao
-Ao
+Ks
+Ks
 Za
 Za
 Za
@@ -3907,17 +3907,17 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 ZU
 ZU
 ZU
 ab
-rX
-Dq
-rX
-rX
+rv
+At
+rv
+rv
 ZM
 nE
 nE
@@ -3935,7 +3935,7 @@ tA
 tA
 tA
 tA
-Bi
+jh
 VU
 tA
 tA
@@ -3947,8 +3947,8 @@ tA
 tA
 jV
 fE
-Ao
-Ao
+Ks
+Ks
 Za
 Za
 Za
@@ -3969,17 +3969,17 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 ZU
 ZU
 ZU
 ZM
-rX
-rX
-rX
-KW
+rv
+rv
+rv
+Wv
 ZM
 je
 nE
@@ -3991,7 +3991,7 @@ tA
 tA
 je
 VV
-Bi
+jh
 tA
 tA
 VU
@@ -4010,7 +4010,7 @@ tA
 jV
 fE
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -4031,17 +4031,17 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 Ff
 zg
 Zb
 ZM
-rX
-rR
-rX
-rX
+rv
+BP
+rv
+rv
 ZM
 je
 nE
@@ -4057,22 +4057,22 @@ Te
 VU
 VU
 VU
-Bi
+jh
 tA
 tA
 tA
 tA
 tA
 tA
-Bi
+jh
 VU
 VU
 VU
-Bi
+jh
 jV
 jV
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -4093,17 +4093,17 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 re
 Zb
 bU
 ZM
-rX
-rR
-Ch
-Nq
+rv
+BP
+dj
+Gg
 ZM
 je
 nE
@@ -4134,9 +4134,9 @@ VU
 wP
 jV
 fE
-Ao
-Ao
-Ao
+Ks
+Ks
+Ks
 Za
 Za
 Za
@@ -4155,17 +4155,17 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 ZM
 SH
 ZM
 ZM
-rX
-rR
-rX
-fv
+rv
+BP
+rv
+Hm
 ZM
 je
 nE
@@ -4198,7 +4198,7 @@ jV
 fE
 fE
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -4217,17 +4217,17 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
-Ch
-rX
-MU
-rX
-MU
-KW
-mp
-rX
+dj
+rv
+nq
+rv
+nq
+Wv
+sx
+rv
 ZM
 ZM
 ZM
@@ -4239,9 +4239,9 @@ je
 nE
 nE
 VV
-LQ
+Hi
 XN
-LQ
+Hi
 VU
 Gt
 tA
@@ -4260,7 +4260,7 @@ jV
 jV
 jV
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -4279,20 +4279,20 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
-rX
-rX
-mj
-rR
-rX
-rX
-rX
-Dq
-BK
-rX
-Hq
+rv
+rv
+Oz
+BP
+rv
+rv
+rv
+At
+cV
+rv
+Ht
 ZM
 je
 EU
@@ -4322,7 +4322,7 @@ VV
 KX
 jV
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -4341,20 +4341,20 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 ZM
 ZM
 ZM
 ZM
-Nq
-df
-rX
-pF
-rX
-rX
-rX
+Gg
+iP
+rv
+Js
+rv
+rv
+rv
 ZM
 je
 tA
@@ -4384,7 +4384,7 @@ VV
 nE
 jV
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -4403,20 +4403,20 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
-zr
+Mp
 re
 qQ
 ZM
-rX
-rX
-fv
-rX
-rX
-hw
-rX
+rv
+rv
+Hm
+rv
+rv
+Ac
+rv
 ZM
 nE
 nE
@@ -4446,7 +4446,7 @@ VV
 nE
 jV
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -4465,20 +4465,20 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 LH
 WT
 Uj
 ZM
-rX
+rv
 Lx
-Gc
+jj
 LT
 Lx
 Lx
-MU
+nq
 ZM
 je
 nE
@@ -4491,13 +4491,13 @@ nE
 jV
 nE
 nE
-Lp
+Sr
 EU
 EU
 EU
 EU
 EU
-Lp
+Sr
 tA
 tA
 tA
@@ -4508,7 +4508,7 @@ tA
 tA
 jV
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -4527,20 +4527,20 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 Om
 Ol
 Zb
 qe
-MU
+nq
 qA
 nC
 IX
 CF
 Lx
-rX
+rv
 ZM
 je
 nE
@@ -4570,7 +4570,7 @@ sa
 tA
 jV
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -4589,20 +4589,20 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 hu
 re
 Zb
 ZM
-rX
+rv
 Lx
 ZF
 IX
 Rn
 Lx
-rX
+rv
 ZM
 je
 je
@@ -4632,7 +4632,7 @@ fz
 tA
 jV
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -4651,20 +4651,20 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 xx
 gX
 WT
 ZM
-Dq
+At
 Lx
 IX
 IX
 IX
 Lx
-rX
+rv
 ZM
 je
 nE
@@ -4694,7 +4694,7 @@ Mf
 tA
 jV
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -4713,20 +4713,20 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 ZM
 ZM
 ZM
 ZM
-rX
+rv
 Lx
 ZF
 Ra
 Rn
 Lx
-rX
+rv
 ZM
 ZM
 nE
@@ -4756,7 +4756,7 @@ sa
 tA
 jV
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -4775,21 +4775,21 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 Tn
 tW
 Dk
 ZM
-rX
+rv
 Lx
 IX
 IX
 IX
 Pa
-rX
-rX
+rv
+rv
 ZM
 nE
 je
@@ -4818,7 +4818,7 @@ tA
 tA
 jV
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -4837,21 +4837,21 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 YJ
 Vx
 Zw
 ZM
-rX
+rv
 Lx
 ZF
 IX
 Rn
 Lx
-rX
-rX
+rv
+rv
 ZE
 je
 nE
@@ -4880,7 +4880,7 @@ tA
 Xw
 jV
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -4899,21 +4899,21 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 iO
 PZ
 Qi
 ZE
-fv
+Hm
 Lx
 GF
 IX
 LM
 Lx
-rX
-Ir
+rv
+EC
 ZE
 je
 nE
@@ -4942,7 +4942,7 @@ tA
 tA
 jV
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -4961,21 +4961,21 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 sM
 vE
 Zw
 ZE
-rX
+rv
 Lx
 Lx
 Lx
 Lx
 Lx
-rR
-rX
+BP
+rv
 ZE
 je
 nE
@@ -5004,10 +5004,10 @@ tA
 tA
 jV
 fE
-Ao
-Ao
-Ao
-Ao
+Ks
+Ks
+Ks
+Ks
 Za
 Za
 Za
@@ -5023,21 +5023,21 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 Rs
 MK
 Zd
 ZM
-rX
-rX
-Dv
-Nq
-rX
-rX
-rX
-rX
+rv
+rv
+sG
+Gg
+rv
+rv
+rv
+rv
 ZM
 je
 nE
@@ -5066,12 +5066,12 @@ tA
 tA
 jV
 fE
-Ao
-Ao
-PW
-Ao
-Ao
-Ao
+Ks
+Ks
+kr
+Ks
+Ks
+Ks
 Za
 Za
 Za
@@ -5085,17 +5085,17 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 ln
 yn
 ql
 ZM
-gM
-IE
-rX
-OB
+OS
+AZ
+rv
+Tc
 ZM
 ZM
 ZM
@@ -5128,13 +5128,13 @@ tA
 pI
 jV
 fE
-Ao
-Ao
-Ao
-Ao
-aE
-Ao
-Ao
+Ks
+Ks
+Ks
+Ks
+KM
+Ks
+Ks
 Za
 Za
 Za
@@ -5147,7 +5147,7 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 ZM
@@ -5190,14 +5190,14 @@ tA
 pI
 jV
 fE
-Ao
-ea
-Ao
-Ao
-Ao
-Ao
-OG
-Ao
+Ks
+vQ
+Ks
+Ks
+Ks
+Ks
+zU
+Ks
 Za
 Za
 Za
@@ -5209,7 +5209,7 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 nE
@@ -5254,13 +5254,13 @@ jV
 vv
 vv
 vv
-WO
-WO
-WO
-Ao
-Ao
-Ao
-Ao
+io
+io
+io
+Ks
+Ks
+Ks
+Ks
 Za
 Za
 Za
@@ -5271,7 +5271,7 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 nE
@@ -5306,24 +5306,24 @@ jV
 jV
 jV
 jV
-ur
-ur
-ur
-ur
-ur
-ur
-ur
-ur
-ur
+SW
+SW
+SW
+SW
+SW
+SW
+SW
+SW
+SW
 vv
 ws
 St
 op
-WO
-Ao
-Ao
-Ao
-Ao
+io
+Ks
+Ks
+Ks
+Ks
 Za
 Za
 Za
@@ -5333,7 +5333,7 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 nE
@@ -5368,26 +5368,26 @@ nE
 nE
 nE
 jV
-WO
-WO
-WO
-WO
-WO
-WO
-WO
-WO
-WO
+io
+io
+io
+io
+io
+io
+io
+io
+io
 vv
 og
 vP
 Jz
-WO
-WO
-WO
-Ao
-Ao
-Ao
-Ao
+io
+io
+io
+Ks
+Ks
+Ks
+Ks
 Za
 "}
 (40,1,1) = {"
@@ -5395,7 +5395,7 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 nE
@@ -5430,34 +5430,34 @@ nE
 nE
 nE
 jV
-WO
-OX
-WO
-WO
-OX
-WO
-WO
-OX
-WO
+io
+rB
+io
+io
+rB
+io
+io
+rB
+io
 vv
 cF
 gn
 BJ
-WO
-WO
-WO
-WO
-Ao
-Ao
-kC
-Ao
+io
+io
+io
+io
+Ks
+Ks
+PU
+Ks
 "}
 (41,1,1) = {"
 Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 je
@@ -5492,34 +5492,34 @@ tA
 tA
 tA
 jV
-WO
-WO
-WO
-WO
-WO
-WO
-WO
-WO
-yl
+io
+io
+io
+io
+io
+io
+io
+io
+NP
 vv
-BR
-BR
-WO
-WO
-WO
-ae
-WO
-WO
-WO
-Ao
-Ao
+BM
+BM
+io
+io
+io
+rF
+io
+io
+io
+Ks
+Ks
 "}
 (42,1,1) = {"
 Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 je
@@ -5554,34 +5554,34 @@ tA
 EU
 jV
 jV
-WO
-WO
-WO
-WO
-WO
-WO
-WO
-WO
-WO
+io
+io
+io
+io
+io
+io
+io
+io
+io
 vv
-WO
-BR
-WO
-WO
-WO
-WO
-WO
-IC
-WO
-WO
-Ao
+io
+BM
+io
+io
+io
+io
+io
+FB
+io
+io
+Ks
 "}
 (43,1,1) = {"
 Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 je
@@ -5616,34 +5616,34 @@ tA
 EU
 tA
 Wi
-WO
-WO
-WO
-oS
-WO
-WO
-WO
-WO
-WO
-FQ
-WO
-BR
-WO
-WO
-WO
-WO
-WO
-WO
-WO
-WO
-WO
+io
+io
+io
+De
+io
+io
+io
+io
+io
+Nl
+io
+BM
+io
+io
+io
+io
+io
+io
+io
+io
+io
 "}
 (44,1,1) = {"
 Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 je
@@ -5678,34 +5678,34 @@ tA
 EU
 jV
 jV
-WO
-WO
-WO
-WO
-WO
-WO
-WO
-WO
-WO
+io
+io
+io
+io
+io
+io
+io
+io
+io
 vv
-WO
-BR
-WO
-IC
-WO
-WO
-WO
-WO
-WO
-WO
-WO
+io
+BM
+io
+FB
+io
+io
+io
+io
+io
+io
+io
 "}
 (45,1,1) = {"
 Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 je
@@ -5713,7 +5713,7 @@ jV
 tA
 tA
 tA
-zM
+Ef
 tA
 tA
 jV
@@ -5740,34 +5740,34 @@ tA
 tA
 tA
 jV
-WO
-WO
-WO
-WO
-WO
-WO
-WO
-WO
-yl
+io
+io
+io
+io
+io
+io
+io
+io
+NP
 vv
-BR
-BR
-WO
-ae
-WO
-WO
-WO
-WO
-Ao
-Ao
-Ao
+BM
+BM
+io
+rF
+io
+io
+io
+io
+Ks
+Ks
+Ks
 "}
 (46,1,1) = {"
 Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 je
@@ -5775,7 +5775,7 @@ jV
 DJ
 tA
 tA
-VX
+Hg
 tA
 DJ
 jV
@@ -5802,34 +5802,34 @@ nE
 tA
 tA
 jV
-WO
-Wz
-WO
-WO
-Wz
-WO
-WO
-Wz
-WO
+io
+Nc
+io
+io
+Nc
+io
+io
+Nc
+io
 vv
 ws
 St
 op
-WO
-WO
-WO
-Ao
-kC
-Ao
-Ao
-Ao
+io
+io
+io
+Ks
+PU
+Ks
+Ks
+Ks
 "}
 (47,1,1) = {"
 Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 je
@@ -5864,25 +5864,25 @@ nE
 tA
 nE
 jV
-WO
-WO
-WO
-WO
-WO
-WO
-WO
-WO
-WO
+io
+io
+io
+io
+io
+io
+io
+io
+io
 vv
 og
 vP
 Jz
-WO
-WO
-WO
-Ao
-Ao
-Ao
+io
+io
+io
+Ks
+Ks
+Ks
 Za
 Za
 "}
@@ -5891,14 +5891,14 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 jV
 jV
 XV
 pU
-tO
+mY
 tA
 ob
 tv
@@ -5926,24 +5926,24 @@ nE
 nE
 nE
 jV
-ur
-ur
-ur
-ur
-ur
-ur
-ur
-ur
-ur
+SW
+SW
+SW
+SW
+SW
+SW
+SW
+SW
+SW
 vv
 cF
 gn
 BJ
-WO
-WO
-WO
-ea
-Ao
+io
+io
+io
+vQ
+Ks
 Za
 Za
 Za
@@ -5953,7 +5953,7 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 nE
@@ -5998,13 +5998,13 @@ jV
 vv
 vv
 vv
-WO
-WO
-WO
-Ao
-Ao
-Ao
-Ao
+io
+io
+io
+Ks
+Ks
+Ks
+Ks
 Za
 Za
 Za
@@ -6015,15 +6015,15 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 nE
 jV
 tA
-VX
+Hg
 tA
-zM
+Ef
 tA
 HW
 jV
@@ -6058,14 +6058,14 @@ Il
 Wt
 jV
 fE
-Ao
-Ao
-Ao
-Ao
-Ao
-OG
-Ao
-Ao
+Ks
+Ks
+Ks
+Ks
+Ks
+zU
+Ks
+Ks
 Za
 Za
 Za
@@ -6077,7 +6077,7 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 nE
@@ -6120,12 +6120,12 @@ Kq
 Il
 jV
 fE
-Ao
-Ao
-Ao
-Ao
-PW
-Ao
+Ks
+Ks
+Ks
+Ks
+kr
+Ks
 Za
 Za
 Za
@@ -6139,7 +6139,7 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 nE
@@ -6182,9 +6182,9 @@ aV
 Il
 jV
 fE
-Ao
-aE
-Ao
+Ks
+KM
+Ks
 Za
 Za
 Za
@@ -6201,7 +6201,7 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 nE
@@ -6244,9 +6244,9 @@ rE
 FN
 jV
 fE
-Ao
-Ao
-Ao
+Ks
+Ks
+Ks
 Za
 Za
 Za
@@ -6263,7 +6263,7 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 nE
@@ -6299,16 +6299,16 @@ Il
 Il
 Il
 Il
-Ph
+XQ
 Il
 Il
 Il
 Il
 jV
 fE
-Ao
-Ao
-Ao
+Ks
+Ks
+Ks
 Za
 Za
 Za
@@ -6325,7 +6325,7 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 nE
@@ -6368,7 +6368,7 @@ rE
 Il
 jV
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -6387,7 +6387,7 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 nE
@@ -6430,7 +6430,7 @@ aV
 Il
 jV
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -6449,7 +6449,7 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 nE
@@ -6492,11 +6492,11 @@ oT
 Il
 jV
 fE
-Ao
-Ao
-Ao
-Ao
-Ao
+Ks
+Ks
+Ks
+Ks
+Ks
 Za
 Za
 Za
@@ -6511,7 +6511,7 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 nE
@@ -6558,7 +6558,7 @@ fE
 fE
 fE
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -6573,7 +6573,7 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 jV
@@ -6620,9 +6620,9 @@ jV
 jV
 jV
 fE
-Ao
-Ao
-Ao
+Ks
+Ks
+Ks
 Za
 Za
 Za
@@ -6635,7 +6635,7 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 nE
@@ -6684,7 +6684,7 @@ jV
 fE
 fE
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -6697,7 +6697,7 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 nE
@@ -6746,7 +6746,7 @@ jV
 jV
 jV
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -6759,7 +6759,7 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 nE
@@ -6808,9 +6808,9 @@ nE
 nE
 jV
 fE
-Ao
-Ao
-Ao
+Ks
+Ks
+Ks
 Za
 Za
 Za
@@ -6821,7 +6821,7 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 nE
@@ -6872,7 +6872,7 @@ jV
 fE
 fE
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -6883,7 +6883,7 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 nE
@@ -6934,7 +6934,7 @@ jV
 jV
 jV
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -6945,7 +6945,7 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 nE
@@ -6996,7 +6996,7 @@ nE
 nE
 jV
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -7007,7 +7007,7 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 nE
@@ -7058,7 +7058,7 @@ nE
 nE
 jV
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -7069,7 +7069,7 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 nE
@@ -7120,7 +7120,7 @@ nE
 nE
 jV
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -7131,7 +7131,7 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 nE
@@ -7182,7 +7182,7 @@ nE
 nE
 jV
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -7193,7 +7193,7 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 nE
@@ -7220,7 +7220,7 @@ jV
 Vq
 Xp
 DN
-Zk
+Mg
 qh
 pT
 lr
@@ -7244,7 +7244,7 @@ nE
 nE
 jV
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -7255,7 +7255,7 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 je
@@ -7306,7 +7306,7 @@ nE
 nE
 jV
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -7317,7 +7317,7 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 je
@@ -7368,7 +7368,7 @@ nE
 nE
 jV
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -7379,7 +7379,7 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 nE
@@ -7430,7 +7430,7 @@ nE
 nE
 jV
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -7441,7 +7441,7 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 nE
@@ -7492,7 +7492,7 @@ nE
 nE
 jV
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -7503,7 +7503,7 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 nE
@@ -7554,7 +7554,7 @@ Il
 nE
 jV
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -7565,7 +7565,7 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 nE
@@ -7616,7 +7616,7 @@ Il
 nE
 jV
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -7627,7 +7627,7 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 nE
@@ -7678,7 +7678,7 @@ tA
 nE
 jV
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -7689,7 +7689,7 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 nE
@@ -7740,7 +7740,7 @@ nE
 nE
 jV
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -7751,7 +7751,7 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 nE
@@ -7802,7 +7802,7 @@ nE
 nE
 jV
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -7813,7 +7813,7 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 jV
@@ -7854,7 +7854,7 @@ nE
 tA
 tA
 tA
-Bi
+jh
 tA
 tA
 nE
@@ -7864,7 +7864,7 @@ je
 nE
 jV
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -7875,7 +7875,7 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 fE
 fE
@@ -7926,7 +7926,7 @@ nE
 nE
 jV
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -7937,9 +7937,9 @@ Za
 Za
 Za
 Za
-Ao
-Ao
-Ao
+Ks
+Ks
+Ks
 fE
 jV
 nE
@@ -7977,18 +7977,18 @@ nE
 tA
 tA
 tA
-tx
+SF
 tA
 tA
 tA
-tx
+SF
 tA
 nE
 nE
 nE
 jV
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -8001,7 +8001,7 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 nE
@@ -8050,7 +8050,7 @@ iV
 iV
 iV
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -8063,7 +8063,7 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 nE
@@ -8097,22 +8097,22 @@ je
 nE
 nE
 iV
-EE
+Pv
 Fj
-gF
+TN
 Fj
 Fj
 Fj
 Xo
 Fj
-sZ
+qS
 hT
 Pn
 SN
 Wu
 iV
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -8125,7 +8125,7 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 nE
@@ -8174,7 +8174,7 @@ br
 br
 iV
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -8187,7 +8187,7 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 nE
@@ -8221,9 +8221,9 @@ fE
 fE
 fE
 iV
-Mc
+mO
 Fj
-ZA
+SK
 Fj
 Fj
 Xo
@@ -8236,7 +8236,7 @@ br
 br
 iV
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -8249,7 +8249,7 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 nE
@@ -8283,9 +8283,9 @@ iV
 iV
 ww
 iV
-ZA
+SK
 Fj
-ZA
+SK
 Fj
 Fj
 Xo
@@ -8298,7 +8298,7 @@ WW
 RQ
 iV
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -8311,7 +8311,7 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 nE
@@ -8336,31 +8336,31 @@ nE
 jV
 fE
 iV
-YD
+rb
 Fj
 Fj
-kK
-Ds
-ZW
+rf
+MC
+YU
 iV
 tB
 iV
-ZA
+SK
 Fj
-ZA
+SK
 Fj
 Xo
 Xo
 Fj
-bz
-Hw
+rI
+AW
 iV
 hT
 iV
 iV
 iV
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -8373,7 +8373,7 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 nE
@@ -8399,7 +8399,7 @@ jV
 fE
 iV
 Fj
-cE
+ha
 Fj
 Fj
 Fj
@@ -8407,14 +8407,14 @@ Fj
 iV
 iV
 iV
-ZA
+SK
 Fj
-ZA
+SK
 Fj
-DZ
+VB
 Xo
 Fj
-SY
+AV
 Fj
 Fj
 Fj
@@ -8422,7 +8422,7 @@ iV
 fE
 fE
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -8435,7 +8435,7 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 nE
@@ -8461,13 +8461,13 @@ jV
 fE
 iV
 Fj
-Gr
+lt
 Fj
-eD
+vn
 Fj
 Fj
 hT
-sZ
+qS
 Fj
 Fj
 Fj
@@ -8475,16 +8475,16 @@ Fj
 Fj
 Fj
 Xo
-sZ
-SY
+qS
+AV
 Fj
 Fj
 Fj
 iV
 fE
-Ao
-Ao
-Ao
+Ks
+Ks
+Ks
 Za
 Za
 Za
@@ -8497,7 +8497,7 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 nE
@@ -8525,9 +8525,9 @@ iV
 Fj
 Fj
 Fj
-TC
+fj
 Fj
-sZ
+qS
 hT
 Fj
 Xo
@@ -8538,13 +8538,13 @@ Xo
 Xo
 Xo
 Fj
-SY
+AV
 Fj
 Fj
 Fj
 iV
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -8559,7 +8559,7 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 jV
@@ -8584,10 +8584,10 @@ nE
 jV
 fE
 iV
-bu
+cN
 Fj
-Be
-wy
+cK
+Dl
 Fj
 Fj
 To
@@ -8600,13 +8600,13 @@ DR
 zo
 Xo
 Fj
-SY
+AV
 Fj
-JB
+Kb
 Fj
 iV
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -8621,7 +8621,7 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 Ka
@@ -8648,7 +8648,7 @@ fE
 iV
 Fj
 Fj
-zO
+sq
 Fj
 Fj
 Fj
@@ -8662,13 +8662,13 @@ iH
 gV
 Xo
 Xo
-zb
+tc
 Fj
 Fj
 Fj
 iV
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -8683,7 +8683,7 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 jV
@@ -8710,9 +8710,9 @@ fE
 iV
 Fj
 Fj
-pV
+DP
 Fj
-tX
+Wj
 Fj
 hT
 Fj
@@ -8724,13 +8724,13 @@ Tf
 Tf
 Xo
 Fj
-SY
+AV
 Fj
-JB
+Kb
 Fj
 iV
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -8745,12 +8745,12 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 tA
 tA
-fh
+le
 tA
 Ux
 nE
@@ -8786,13 +8786,13 @@ We
 gV
 Xo
 Fj
-SY
+AV
 Fj
 Fj
 Fj
 iV
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -8807,7 +8807,7 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 tA
@@ -8825,21 +8825,21 @@ tA
 nE
 Fq
 tA
-Bl
+qs
 tA
 tA
 nE
 jV
 fE
 iV
-HN
+mK
 iV
 pE
 Xh
 QN
 Tf
 iV
-sZ
+qS
 Xo
 tS
 XA
@@ -8854,7 +8854,7 @@ iV
 hT
 iV
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -8869,7 +8869,7 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 jV
@@ -8894,7 +8894,7 @@ nE
 jV
 fE
 iV
-Kn
+kz
 iV
 Sy
 Sy
@@ -8916,7 +8916,7 @@ Fj
 bO
 iV
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -8931,7 +8931,7 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 XV
@@ -8956,7 +8956,7 @@ nE
 jV
 fE
 iV
-FK
+Xq
 iV
 Vk
 ge
@@ -8966,10 +8966,10 @@ iV
 Fj
 Xo
 Fj
-DZ
+VB
 WV
 Fj
-Ls
+Bg
 Xo
 WV
 To
@@ -8978,7 +8978,7 @@ Fj
 NK
 iV
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -8993,7 +8993,7 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 jV
 jV
@@ -9032,7 +9032,7 @@ Fj
 WV
 Fj
 Fj
-sZ
+qS
 Fj
 iV
 NU
@@ -9040,7 +9040,7 @@ br
 wO
 iV
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -9055,7 +9055,7 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 fE
 fE
@@ -9097,12 +9097,12 @@ iV
 iV
 Fj
 iV
-Ei
+TO
 Fj
 br
 iV
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -9117,13 +9117,13 @@ Za
 Za
 Za
 Za
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
 fE
 jV
 jV
@@ -9149,22 +9149,22 @@ hf
 uC
 gr
 iV
-sZ
+qS
 Fj
 iV
 Fj
 br
 Fj
-Un
+sK
 iV
 Fj
 hT
 ZH
 Fj
-CN
+xK
 iV
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -9185,7 +9185,7 @@ Za
 Za
 Za
 Za
-Ao
+Ks
 fE
 fE
 fE
@@ -9214,19 +9214,19 @@ iV
 Fj
 Fj
 hT
-lH
+Ah
 fR
-Xm
-Xm
+Hy
+Hy
 hT
 Fj
 iV
-Os
+Sz
 Fj
 Gx
 iV
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -9247,24 +9247,24 @@ Za
 Za
 Za
 Za
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
 fE
 fE
 iV
@@ -9288,7 +9288,7 @@ iV
 iV
 iV
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -9326,8 +9326,8 @@ Za
 Za
 Za
 Za
-Ao
-Ao
+Ks
+Ks
 fE
 fE
 fE
@@ -9350,7 +9350,7 @@ fE
 fE
 fE
 fE
-Ao
+Ks
 Za
 Za
 Za
@@ -9389,30 +9389,30 @@ Za
 Za
 Za
 Za
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
-Ao
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
 Za
 Za
 Za
