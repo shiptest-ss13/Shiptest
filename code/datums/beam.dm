@@ -163,8 +163,6 @@
 
 		segment.pixel_x = origin_px + Pixel_x
 		segment.pixel_y = origin_py + Pixel_y
-		//This var might hold onto references, and we might be qdeleted during the check_tick... so yeah.
-		segment = null
 		CHECK_TICK
 
 /obj/effect/ebeam
@@ -182,7 +180,7 @@
 	. += emissive_overlay
 
 /obj/effect/ebeam/Destroy()
-	owner?.visuals = null
+	owner?.elements -= src
 	owner = null
 	return ..()
 
