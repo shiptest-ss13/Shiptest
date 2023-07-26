@@ -131,6 +131,9 @@
 /obj/effect/turf_decal/steeldecal/steel_decals9{
 	dir = 8
 	},
+/obj/effect/landmark/subship{
+	subship_template = /datum/map_template/shuttle/subshuttles/pirate_mechcarrier_subship
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo/office)
 "bo" = (
@@ -4067,16 +4070,6 @@
 /obj/effect/turf_decal/spline/fancy/opaque/brown,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
-"Uu" = (
-/obj/docking_port/stationary{
-	roundstart_template = "/datum/map_template/shuttle/subshuttles/minimalta";
-	dwidth = 3;
-	height = 5;
-	width = 11;
-	dir = 2
-	},
-/turf/open/floor/engine/hull/interior,
-/area/ship/cargo/office)
 "UE" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -4946,7 +4939,7 @@ NR
 or
 Ve
 nh
-Uu
+KW
 KW
 KW
 KW

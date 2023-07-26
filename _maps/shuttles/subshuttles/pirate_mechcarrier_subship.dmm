@@ -5,15 +5,17 @@
 "c" = (
 /obj/machinery/door/airlock/hatch,
 /obj/machinery/door/firedoor,
-/obj/docking_port/mobile{
-	dir = 2
-	},
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "minimalta_bridgedoor";
 	name = "Safety Shutter"
+	},
+/obj/docking_port/mobile{
+	dir = 2;
+	port_direction = 8;
+	preferred_direction = 4
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/storage)
