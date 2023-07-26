@@ -10,7 +10,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/spawner/structure)
 /obj/effect/spawner/structure
 	name = "map structure spawner"
 	//Just so stuff doesn't leak out while it's initializing
-	CanAtmosPass = FALSE
+	CanAtmosPass = ATMOS_PASS_NO
 	var/list/spawn_list
 
 /obj/effect/spawner/structure/Initialize()
