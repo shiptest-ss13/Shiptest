@@ -405,3 +405,8 @@
 	file_name = "independent_sugarcube"
 	name = "Sugarcube Transport"
 	prefix = "ISV"
+
+/datum/map_template/shuttle/subshuttles/Galley
+	file_name = "pirate_mechcarrier_subship"
+	name = "Galley Dropship"
+	prefix = "ISV"
