@@ -245,12 +245,11 @@
 /turf/open/floor/plasteel/grimy,
 /area/ruin/jungle/botanicalresearch/crew)
 "fe" = (
-/obj/machinery/light/small/directional/south,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/salvageable/autolathe,
-/obj/item/seeds/wheat/meat,
-/turf/open/floor/plasteel/white,
-/area/ruin/jungle/botanicalresearch)
+/obj/machinery/hydroponics{
+	anchored = 0
+	},
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin/jungle/botanicalresearch/caves)
 "ff" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -303,6 +302,11 @@
 /obj/structure/spacevine/weak,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
+/area/ruin/jungle/botanicalresearch/engineering)
+"fL" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/salvageable/circuit_imprinter,
+/turf/open/floor/plasteel/dark,
 /area/ruin/jungle/botanicalresearch/engineering)
 "fP" = (
 /obj/structure/cable{
@@ -757,6 +761,11 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/jungle/botanicalresearch/checkpoint)
+"lE" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/botanicalresearch)
 "lH" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine,
@@ -1436,6 +1445,7 @@
 /obj/effect/turf_decal/box,
 /obj/effect/spawner/lootdrop/salvage_laser,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/tool_engie_proto,
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ruin/jungle/botanicalresearch/vault)
 "tY" = (
@@ -1566,6 +1576,11 @@
 /obj/item/seeds/orange_3d,
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ruin/jungle/botanicalresearch/vault)
+"vZ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/salvageable/computer,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/botanicalresearch/engineering)
 "wr" = (
 /obj/item/shard/plasma,
 /turf/open/floor/plating/dirt/jungle/lit,
@@ -1976,6 +1991,12 @@
 /obj/structure/spacevine,
 /turf/open/floor/plating,
 /area/ruin/jungle/botanicalresearch/engineering)
+"DX" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/hydroponics/constructable,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/botanicalresearch)
 "Ec" = (
 /obj/machinery/light_switch{
 	dir = 6;
@@ -3030,6 +3051,14 @@
 	},
 /turf/open/floor/plating/grass/jungle/lit,
 /area/overmap_encounter/planetoid/jungle)
+"Sm" = (
+/obj/machinery/light/small/directional/south,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/salvageable/computer{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/botanicalresearch)
 "So" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/hydroponics/constructable,
@@ -3248,6 +3277,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ruin/jungle/botanicalresearch/engineering)
+"Vm" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/salvageable/computer{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/botanicalresearch)
 "Vw" = (
 /turf/open/floor/plating/grass/jungle/lit,
 /area/overmap_encounter/planetoid/jungle)
@@ -3259,6 +3295,11 @@
 /obj/machinery/light/directional/east,
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ruin/jungle/botanicalresearch/vault)
+"VH" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/salvageable/protolathe,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/botanicalresearch/engineering)
 "VR" = (
 /obj/machinery/door/airlock/engineering{
 	name = "Emitter Room";
@@ -3334,6 +3375,11 @@
 /obj/effect/decal/cleanable/glass/plasma,
 /turf/open/floor/plating,
 /area/overmap_encounter/planetoid/jungle)
+"Xe" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/seeds/wheat/meat,
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/botanicalresearch)
 "Xh" = (
 /obj/structure/table/wood/reinforced,
 /obj/effect/decal/cleanable/dirt,
@@ -3818,8 +3864,8 @@ WE
 WE
 WE
 WE
-WE
-WE
+nf
+nf
 WE
 WE
 WE
@@ -3879,10 +3925,10 @@ EN
 EN
 EN
 WE
-WE
-WE
-WE
-WE
+nf
+nf
+nf
+nf
 WE
 YF
 YF
@@ -3941,10 +3987,10 @@ MQ
 hS
 EN
 WE
-WE
-WE
-WE
-WE
+nf
+nf
+nf
+fe
 WE
 YF
 Ur
@@ -4003,10 +4049,10 @@ HI
 gm
 EN
 WE
-WE
-WE
-WE
-WE
+fe
+nf
+nf
+nf
 WE
 YF
 nT
@@ -4065,10 +4111,10 @@ Ei
 gP
 EN
 WE
-WE
-WE
-WE
-WE
+nf
+fe
+nf
+nf
 WE
 YF
 YF
@@ -4128,9 +4174,9 @@ SY
 EN
 WE
 WE
-WE
-WE
-WE
+nf
+nf
+nf
 WE
 YF
 LB
@@ -4190,9 +4236,9 @@ sC
 EN
 WE
 WE
-WE
-WE
-WE
+nf
+nf
+nf
 WE
 YF
 nT
@@ -4254,7 +4300,7 @@ WE
 WE
 WE
 WE
-WE
+nf
 WE
 YF
 YF
@@ -4316,7 +4362,7 @@ WE
 WE
 WE
 WE
-WE
+nf
 WE
 WE
 WE
@@ -4378,7 +4424,7 @@ EN
 EN
 EN
 EN
-WE
+nf
 cX
 aF
 nf
@@ -4424,7 +4470,7 @@ WE
 WE
 WE
 EN
-CI
+fL
 CI
 eR
 py
@@ -4486,7 +4532,7 @@ WE
 WE
 WE
 EN
-CI
+vZ
 CI
 Vj
 CI
@@ -4548,7 +4594,7 @@ WE
 WE
 WE
 EN
-CI
+VH
 ns
 MA
 py
@@ -5684,15 +5730,15 @@ WE
 rs
 uX
 WE
-WE
-WE
+qz
+qz
 qz
 qz
 xW
 qz
 qz
-WE
-WE
+qz
+qz
 WE
 WE
 WE
@@ -5745,17 +5791,17 @@ aP
 uX
 rs
 WE
-WE
-WE
 qz
 qz
 Gl
+jW
+jW
 OQ
-fe
+jW
+jW
+Sm
 qz
 qz
-WE
-WE
 WE
 WE
 WE
@@ -5807,17 +5853,17 @@ pg
 pg
 Zl
 WE
-WE
-WE
 qz
 So
 jW
+jW
+Vm
 OQ
+Vm
+jW
 jW
 So
 qz
-WE
-WE
 WE
 WE
 WE
@@ -5869,17 +5915,17 @@ WE
 WE
 WE
 WE
-WE
-WE
 qz
 So
 YG
+jW
+So
 OQ
+So
+Xe
 jW
 So
 qz
-WE
-WE
 WE
 WE
 WE
@@ -5931,17 +5977,17 @@ WE
 WE
 WE
 WE
-WE
-WE
 qz
 Wj
 jW
+jW
+So
 OQ
+So
+jW
 jW
 pt
 qz
-WE
-WE
 WE
 WE
 WE
@@ -5993,17 +6039,17 @@ uX
 WE
 WE
 WE
-WE
-WE
 qz
 ci
 jW
+jW
+So
 OQ
+So
+jW
 il
 Wj
 qz
-WE
-WE
 WE
 WE
 WE
@@ -6055,17 +6101,17 @@ WE
 WE
 WE
 WE
-WE
-WE
 qz
 os
 zx
+lE
+DX
 Uq
+DX
+lE
 Wt
 Wj
 qz
-WE
-WE
 WE
 WE
 WE
@@ -6117,17 +6163,17 @@ WE
 WE
 WE
 WE
-WE
-WE
 qz
 UG
+jW
+jW
+jW
+jW
 jW
 jW
 YG
 Wj
 qz
-WE
-WE
 WE
 WE
 WE
@@ -6179,8 +6225,6 @@ WE
 WE
 WE
 WE
-WE
-WE
 qz
 qz
 qz
@@ -6188,8 +6232,10 @@ qz
 qz
 qz
 qz
-WE
-WE
+qz
+qz
+qz
+qz
 WE
 WE
 WE
