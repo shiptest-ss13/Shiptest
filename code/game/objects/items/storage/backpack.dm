@@ -356,9 +356,6 @@
 		var/ctype = pick(contraband)
 		new ctype(src)
 
-/obj/item/storage/backpack/satchel/flat/with_drip/PopulateContents()
-	new /obj/item/clothing/under/drip(src)
-
 /obj/item/storage/backpack/satchel/flat/with_tools/PopulateContents()
 	new /obj/item/stack/tile/plasteel(src)
 	new /obj/item/crowbar(src)

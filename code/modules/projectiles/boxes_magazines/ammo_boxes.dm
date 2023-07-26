@@ -267,6 +267,14 @@
 	max_ammo = 5
 	multiple_sprites = AMMO_BOX_PER_BULLET
 
+/obj/item/ammo_box/a858
+	name = "stripper clip (8x58mm)"
+	desc = "A rifle-cartrige stripper clip for the SSG-669C."
+	icon_state = "762"
+	ammo_type = /obj/item/ammo_casing/caseless/a858
+	max_ammo = 5
+	multiple_sprites = AMMO_BOX_PER_BULLET
+
 /obj/item/ammo_box/n762
 	name = "ammo box (7.62x38mmR)"
 	icon_state = "n762box"
