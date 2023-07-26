@@ -7,7 +7,7 @@
 
 /obj/effect/survey_point/Initialize()
 	. = ..()
-	research_value = rand(750, 2000)
+	research_value = rand(750, 1500)
 
 /obj/effect/survey_point/examine(mob/user)
 	. = ..()
