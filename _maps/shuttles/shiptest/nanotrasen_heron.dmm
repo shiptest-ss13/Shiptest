@@ -86,6 +86,16 @@
 /obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
+"ak" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/blue/line{
+	dir = 1
+	},
+/obj/structure/extinguisher_cabinet/directional/north,
+/turf/open/floor/plasteel,
+/area/ship/hallway/aft)
 "am" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -370,16 +380,6 @@
 /obj/effect/spawner/structure/window/shuttle,
 /turf/open/floor/plating,
 /area/ship/science/robotics)
-"bB" = (
-/obj/effect/turf_decal/siding/thinplating{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/opaque/blue/line{
-	dir = 1
-	},
-/obj/structure/extinguisher_cabinet/directional/north,
-/turf/open/floor/plasteel,
-/area/ship/hallway/aft)
 "bC" = (
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 4
@@ -4193,19 +4193,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/fore)
-"pr" = (
-/obj/effect/turf_decal/siding/thinplating{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/opaque/blue/line{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/orange/hidden{
-	dir = 4
-	},
-/obj/structure/extinguisher_cabinet/directional/north,
-/turf/open/floor/plasteel,
-/area/ship/hallway/fore)
 "pt" = (
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 1
@@ -4731,6 +4718,19 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
+"rP" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/blue/line{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 4
+	},
+/obj/structure/extinguisher_cabinet/directional/north,
+/turf/open/floor/plasteel,
+/area/ship/hallway/fore)
 "rR" = (
 /obj/structure/table/wood/reinforced,
 /obj/item/storage/fancy/cigarettes/cigars/havana{
@@ -6457,15 +6457,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/science/robotics)
-"xD" = (
-/obj/effect/turf_decal/siding/thinplating,
-/obj/effect/turf_decal/trimline/opaque/blue/line,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 1
-	},
-/obj/structure/extinguisher_cabinet/directional/south,
-/turf/open/floor/plasteel,
-/area/ship/hallway/fore)
 "xE" = (
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/plating,
@@ -8716,6 +8707,15 @@
 /obj/effect/turf_decal/trimline/opaque/red/line,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
+"Gk" = (
+/obj/effect/turf_decal/siding/thinplating,
+/obj/effect/turf_decal/trimline/opaque/blue/line,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1
+	},
+/obj/structure/extinguisher_cabinet/directional/south,
+/turf/open/floor/plasteel,
+/area/ship/hallway/fore)
 "Gl" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -12589,7 +12589,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
 "VN" = (
-/obj/machinery/atmospherics/components/unary/outlet_injector{
+/obj/machinery/atmospherics/components/unary/outlet_injector/on{
 	dir = 4
 	},
 /turf/open/floor/plating,
@@ -14417,7 +14417,7 @@ po
 Lf
 in
 lK
-bB
+ak
 zF
 Ek
 XH
@@ -14927,7 +14927,7 @@ Tv
 Ef
 EK
 uQ
-pr
+rP
 ZD
 Ah
 El
@@ -14959,7 +14959,7 @@ Hi
 zX
 JA
 tg
-xD
+Gk
 uQ
 yU
 ja
