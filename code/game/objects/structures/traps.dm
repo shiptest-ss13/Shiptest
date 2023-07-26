@@ -133,6 +133,9 @@
 	var/turf/our_turf = get_turf(src)
 	if(!our_turf)
 		return
+	if(!stored_item)
+		qdel(src)
+		return
 	stored_item.forceMove(get_turf(src))
 	forceMove(stored_item)
 	if(caught)
