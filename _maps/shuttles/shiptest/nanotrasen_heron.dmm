@@ -296,7 +296,9 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo/office)
 "bd" = (
-/obj/machinery/mecha_part_fabricator,
+/obj/machinery/mecha_part_fabricator{
+	dir = 1
+	},
 /obj/structure/railing{
 	dir = 8;
 	layer = 4.1
@@ -991,7 +993,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/camera{
-	dir = 10
+	dir = 5
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/engineering)
@@ -4166,7 +4168,9 @@
 	network = "nt_commnet"
 	},
 /obj/item/radio/intercom/directional/east,
-/turf/open/floor/circuit/telecomms,
+/turf/open/floor/circuit/telecomms{
+	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
+	},
 /area/ship/engineering/communications)
 "pq" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
@@ -5004,7 +5008,7 @@
 /area/ship/engineering)
 "sF" = (
 /obj/machinery/mecha_part_fabricator{
-	dir = 8
+	dir = 1
 	},
 /obj/machinery/light/small/directional/south,
 /obj/structure/grille/broken,
@@ -5627,7 +5631,7 @@
 	dir = 8
 	},
 /obj/machinery/camera{
-	dir = 10
+	dir = 5
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/atmospherics)
@@ -7111,9 +7115,7 @@
 /obj/machinery/photocopier{
 	pixel_y = 3
 	},
-/obj/machinery/camera{
-	dir = 9
-	},
+/obj/machinery/camera,
 /obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
@@ -8640,12 +8642,9 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/machinery/camera{
-	dir = 9
-	},
 /obj/item/radio/intercom/directional/north,
 /obj/machinery/camera{
-	dir = 9
+	dir = 6
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/central)
@@ -9776,7 +9775,9 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/power/apc/auto_name/directional/east,
-/turf/open/floor/circuit/telecomms,
+/turf/open/floor/circuit/telecomms{
+	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
+	},
 /area/ship/engineering/communications)
 "Lh" = (
 /obj/machinery/button/door{
