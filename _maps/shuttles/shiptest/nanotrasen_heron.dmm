@@ -370,6 +370,16 @@
 /obj/effect/spawner/structure/window/shuttle,
 /turf/open/floor/plating,
 /area/ship/science/robotics)
+"bB" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/blue/line{
+	dir = 1
+	},
+/obj/structure/extinguisher_cabinet/directional/north,
+/turf/open/floor/plasteel,
+/area/ship/hallway/aft)
 "bC" = (
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 4
@@ -997,16 +1007,6 @@
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/engineering)
-"ee" = (
-/obj/effect/turf_decal/siding/thinplating{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/opaque/blue/line{
-	dir = 1
-	},
-/obj/structure/extinguisher_cabinet/directional/north,
-/turf/open/floor/plasteel,
-/area/ship/hallway/aft)
 "ef" = (
 /obj/machinery/door/poddoor{
 	id = "heron_innercargo";
@@ -1272,7 +1272,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/electrical)
 "fe" = (
-/obj/machinery/atmospherics/components/unary/outlet_injector{
+/obj/machinery/atmospherics/components/unary/outlet_injector/on{
 	dir = 1
 	},
 /turf/open/floor/engine/air,
@@ -4193,6 +4193,19 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/fore)
+"pr" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/blue/line{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 4
+	},
+/obj/structure/extinguisher_cabinet/directional/north,
+/turf/open/floor/plasteel,
+/area/ship/hallway/fore)
 "pt" = (
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 1
@@ -6444,6 +6457,15 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/science/robotics)
+"xD" = (
+/obj/effect/turf_decal/siding/thinplating,
+/obj/effect/turf_decal/trimline/opaque/blue/line,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1
+	},
+/obj/structure/extinguisher_cabinet/directional/south,
+/turf/open/floor/plasteel,
+/area/ship/hallway/fore)
 "xE" = (
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/plating,
@@ -7522,7 +7544,7 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/science/robotics)
 "Cd" = (
-/obj/machinery/atmospherics/components/unary/outlet_injector,
+/obj/machinery/atmospherics/components/unary/outlet_injector/on,
 /turf/open/floor/engine/o2,
 /area/ship/engineering/atmospherics)
 "Ck" = (
@@ -8621,19 +8643,6 @@
 /obj/machinery/light/dim/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/science/ai_chamber)
-"Gd" = (
-/obj/effect/turf_decal/siding/thinplating{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/opaque/blue/line{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/orange/hidden{
-	dir = 4
-	},
-/obj/structure/extinguisher_cabinet/directional/north,
-/turf/open/floor/plasteel,
-/area/ship/hallway/fore)
 "Ge" = (
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 1
@@ -10556,7 +10565,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/electrical)
 "NI" = (
-/obj/machinery/atmospherics/components/unary/outlet_injector,
+/obj/machinery/atmospherics/components/unary/outlet_injector/on,
 /turf/open/floor/engine/plasma,
 /area/ship/engineering/atmospherics)
 "NK" = (
@@ -10974,15 +10983,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
-"PD" = (
-/obj/effect/turf_decal/siding/thinplating,
-/obj/effect/turf_decal/trimline/opaque/blue/line,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 1
-	},
-/obj/structure/extinguisher_cabinet/directional/south,
-/turf/open/floor/plasteel,
-/area/ship/hallway/fore)
 "PI" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
@@ -13009,7 +13009,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/atmospherics)
 "Xo" = (
-/obj/machinery/atmospherics/components/unary/outlet_injector{
+/obj/machinery/atmospherics/components/unary/outlet_injector/on{
 	dir = 1
 	},
 /turf/open/floor/engine/n2,
@@ -14417,7 +14417,7 @@ po
 Lf
 in
 lK
-ee
+bB
 zF
 Ek
 XH
@@ -14927,7 +14927,7 @@ Tv
 Ef
 EK
 uQ
-Gd
+pr
 ZD
 Ah
 El
@@ -14959,7 +14959,7 @@ Hi
 zX
 JA
 tg
-PD
+xD
 uQ
 yU
 ja
