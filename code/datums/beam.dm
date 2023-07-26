@@ -164,6 +164,7 @@
 		segment.pixel_x = origin_px + Pixel_x
 		segment.pixel_y = origin_py + Pixel_y
 		//This var might hold onto references, and we might be qdeleted during the check_tick... so yeah.
+		//It doesn't really matter, because this whole proc counts as a ref for src, but still.
 		segment = null
 		CHECK_TICK
 
@@ -182,7 +183,6 @@
 	. += emissive_overlay
 
 /obj/effect/ebeam/Destroy()
-	owner?.elements -= src
 	owner = null
 	return ..()
 
