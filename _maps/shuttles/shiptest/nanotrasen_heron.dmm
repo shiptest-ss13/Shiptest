@@ -717,6 +717,19 @@
 	},
 /turf/open/floor/plating/catwalk_floor,
 /area/ship/science/robotics)
+"cM" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/blue/line{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 4
+	},
+/obj/structure/extinguisher_cabinet/directional/north,
+/turf/open/floor/plasteel,
+/area/ship/hallway/fore)
 "cO" = (
 /obj/machinery/door/poddoor{
 	id = "heron_outercargo";
@@ -3644,7 +3657,7 @@
 	dir = 8
 	},
 /obj/machinery/meter/atmos/layer2,
-/obj/structure/extinguisher_cabinet/directional/north,
+/obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/atmospherics)
 "nw" = (
@@ -7527,6 +7540,16 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/communications)
+"Cp" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/blue/line{
+	dir = 1
+	},
+/obj/structure/extinguisher_cabinet/directional/north,
+/turf/open/floor/plasteel,
+/area/ship/hallway/aft)
 "Cs" = (
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 4
@@ -12061,6 +12084,15 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/atmospherics)
+"Ua" = (
+/obj/effect/turf_decal/siding/thinplating,
+/obj/effect/turf_decal/trimline/opaque/blue/line,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1
+	},
+/obj/structure/extinguisher_cabinet/directional/south,
+/turf/open/floor/plasteel,
+/area/ship/hallway/fore)
 "Ub" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/bridge)
@@ -14384,7 +14416,7 @@ po
 Lf
 in
 lK
-FP
+Cp
 zF
 Ek
 XH
@@ -14894,7 +14926,7 @@ Tv
 Ef
 EK
 uQ
-dM
+cM
 ZD
 Ah
 El
@@ -14926,7 +14958,7 @@ Hi
 zX
 JA
 tg
-TO
+Ua
 uQ
 yU
 ja
