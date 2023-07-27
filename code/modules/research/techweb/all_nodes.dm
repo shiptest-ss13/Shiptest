@@ -9,7 +9,7 @@
 	description = "NT default research technologies."
 	design_ids = list(
 		// Basic Parts
-		"basic_matter_bin", "basic_cell", "basic_scanning", "basic_capacitor", "basic_micro_laser", "micro_mani", "w-recycler"
+		"basic_matter_bin", "basic_cell", "basic_scanning", "basic_capacitor", "basic_micro_laser", "micro_mani", "w-recycler",
 		// Cargo Stuff
 		"c-reader", "desttagger", "salestagger", "handlabel", "packagewrap",
 		// Research Stuff
