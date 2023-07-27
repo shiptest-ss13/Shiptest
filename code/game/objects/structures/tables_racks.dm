@@ -587,7 +587,7 @@
 	smoothing_flags = NONE
 	smoothing_groups = null
 	canSmoothWith = null
-	can_buckle = 1
+	can_buckle = TRUE
 	buckle_lying = 90 //I don't see why you wouldn't be lying down while buckled to it
 	buckle_requires_restraints = FALSE
 	can_flip = FALSE
@@ -616,7 +616,7 @@
 /obj/structure/table/optable/proc/get_patient()
 	var/mob/living/carbon/M = locate(/mob/living/carbon) in loc
 	if(M)
-		if(M.resting)
+		if(M.resting || M.buckled == src)
 			set_patient(M)
 	else
 		set_patient(null)
