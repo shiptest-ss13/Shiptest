@@ -45,6 +45,8 @@
 		/obj/item/reagent_containers/food/condiment,
 		/obj/item/storage,
 		/obj/item/smallDelivery,
+		)
+	)
 	var/datum/looping_sound/deep_fryer/fry_loop
 
 /obj/machinery/deepfryer/Initialize()
