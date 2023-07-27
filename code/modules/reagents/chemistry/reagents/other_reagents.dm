@@ -131,7 +131,7 @@
 
 /datum/reagent/water
 	name = "Water"
-	description = "An ubiquitous chemical substance that is composed of hydrogen and oxygen."
+	description = "A ubiquitous chemical substance that is composed of hydrogen and oxygen."
 	color = "#AAAAAA77" // rgb: 170, 170, 170, 77 (alpha)
 	taste_description = "water"
 	var/cooling_temperature = 2
@@ -298,13 +298,31 @@
 
 /datum/reagent/water/hollowwater
 	name = "Hollow Water"
-	description = "An ubiquitous chemical substance that is composed of hydrogen and oxygen, but it looks kinda hollow."
+	description = "A ubiquitous chemical substance that is composed of hydrogen and oxygen. Looks hollow"
 	color = "#88878777"
 	taste_description = "emptyiness"
 
+/datum/reagent/water/dirty
+	name = "Dirty Water"
+	description = "Water scooped from an unpotable source. Treatable by boiling."
+	color = "#908982"
+	taste_description = "swamp"
+	glass_icon_state = "icedcoffeeglass" //mmm yumy iced coffee
+	glass_name = "glass of water"
+	glass_desc = "The father of all refre- Ew. It's full of bacteria."
+	shot_glass_icon_state = "shotglassbrown"
+
+/datum/reagent/water/dirty/on_mob_life(mob/living/carbon/M)
+	M.adjustToxLoss(0.5, 0)
+	M.hallucination += 2
+	M.jitteriness += 1
+	M.disgust += 1
+	..()
+	return TRUE
+
 /datum/reagent/hydrogen_peroxide
 	name = "Hydrogen peroxide"
-	description = "An ubiquitous chemical substance that is composed of hydrogen and oxygen and oxygen." //intended intended
+	description = "A ubiquitous chemical substance that is composed of hydrogen and oxygen and oxygen." //intended intended
 	color = "#AAAAAA77" // rgb: 170, 170, 170, 77 (alpha)
 	taste_description = "burning water"
 	var/cooling_temperature = 2

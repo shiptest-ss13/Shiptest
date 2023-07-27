@@ -8,14 +8,14 @@
 	planetary_atmos = TRUE
 	slowdown = 1
 	bullet_sizzle = TRUE
-	bullet_bounce_sound = null //needs a splashing sound one day.
+	bullet_bounce_sound = null //needs a splashing sound one day. //ShizCalev, 5 years ago.
 
 	footstep = FOOTSTEP_WATER
 	barefootstep = FOOTSTEP_WATER
 	clawfootstep = FOOTSTEP_WATER
 	heavyfootstep = FOOTSTEP_WATER
 
-	var/datum/reagent/reagent_to_extract = /datum/reagent/water
+	var/datum/reagent/reagent_to_extract = /datum/reagent/water/dirty
 	var/extracted_reagent_visible_name = "water"
 
 
@@ -23,7 +23,7 @@
 	if(!reagent_to_extract)
 		return ..()
 	var/obj/item/reagent_containers/glass/container = tool
-	if(!istype(tool, /obj/item/reagent_containers))
+	if(!istype(tool, /obj/item/reagent_containers/glass))
 		return ..()
 	if(container.reagents.total_volume >= container.volume)
 		to_chat(user, "<span class='danger'>[container] is full.</span>")

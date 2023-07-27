@@ -154,6 +154,11 @@
 	results = list(/datum/reagent/mulligan = 1)
 	required_reagents = list(/datum/reagent/mutationtoxin/jelly = 1, /datum/reagent/toxin/mutagen = 1)
 
+/datum/chemical_reaction/water_treatment
+	results = list(/datum/reagent/water = 1)
+	required_reagents = list(/datum/reagent/water/dirty = 1)
+	required_temp = 372
+
 
 ////////////////////////////////// VIROLOGY //////////////////////////////////////////
 
