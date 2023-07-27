@@ -21,7 +21,7 @@
 	/// List of floor datums that the elevator may move between.
 	var/list/datum/floor/floor_list = list()
 
-	/// The index into the floor list at which the
+	/// The index into the floor list at which the current floor datum resides. Numbers displayed to players are modified by floor_offset and fake_floors.
 	var/cur_index = 1
 	/// The direction the elevator is looking for future stops in. This enables the elevator to skip a floor with an order to go DOWN when it is heading UP.
 	/// Value is either the dir UP or the dir DOWN, for simplicity.
