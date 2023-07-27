@@ -31,4 +31,4 @@
 	name = "Elf"
 	icon_state = "elf"
 	hasinner = FALSE
-	color_src = MUTCOLORS
+	color_src = SKINCOLORS
