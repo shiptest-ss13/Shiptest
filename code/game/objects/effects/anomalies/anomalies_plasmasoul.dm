@@ -15,12 +15,12 @@
 		return
 
 	COOLDOWN_START(src, pulse_cooldown, pulse_delay)
-	for(var/mob/living/Mob in range(effectrange,src))
-		if(iscarbon(Mob))
-			var/mob/living/carbon/carbon = Mob
-			carbon.reagents?.add_reagent(/datum/reagent/toxin/plasma, reagent_amount)
-			to_chat(Mob, span_warning("Your blood feels thick.."))
-			playsound(Mob, 'sound/effects/bubbles.ogg', 50)
+	for(var/mob/living/mob in range(effectrange,src))
+		if(iscarbon(mob))
+			var/mob/living/carbon/target = mob
+			target.reagents?.add_reagent(/datum/reagent/toxin/plasma, reagent_amount)
+			to_chat(mob, span_warning("Your blood feels thick.."))
+			playsound(mob, 'sound/effects/bubbles.ogg', 50)
 
 
 	if(!COOLDOWN_FINISHED(src, pulse_secondary_cooldown))
