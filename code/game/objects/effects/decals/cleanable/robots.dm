@@ -52,10 +52,6 @@
 	bloodiness = BLOOD_AMOUNT_PER_DECAL
 	beauty = -100
 
-/obj/effect/decal/cleanable/oil/Initialize()
-	. = ..()
-	locname = "[loc] [loc.loc] [json_encode(loc.contents)]"
-
 /obj/effect/decal/cleanable/oil/attackby(obj/item/I, mob/living/user)
 	var/attacked_by_hot_thing = I.get_temperature()
 	if(attacked_by_hot_thing)
