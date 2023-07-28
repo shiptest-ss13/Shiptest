@@ -12,6 +12,9 @@ SUBSYSTEM_DEF(overmap)
 	var/list/overmap_objects
 	///List of all simulated ships. All ships in this list are fully initialized.
 	var/list/controlled_ships
+	///List of spawned outposts. The default spawn location is the first index.
+	var/list/outposts
+
 	///List of all events
 	var/list/events
 
@@ -41,6 +44,7 @@ SUBSYSTEM_DEF(overmap)
 /datum/controller/subsystem/overmap/Initialize(start_timeofday)
 	overmap_objects = list()
 	controlled_ships = list()
+	outposts = list()
 	events = list()
 
 	generator_type = CONFIG_GET(string/overmap_generator_type)
@@ -183,15 +187,33 @@ SUBSYSTEM_DEF(overmap)
  * Creates a single outpost somewhere near the center of the system.
  */
 /datum/controller/subsystem/overmap/proc/spawn_outpost()
-	var/list/S = get_unused_overmap_square_in_radius(rand(3, round(size/5)))
-	new /datum/overmap/dynamic/outpost(S)
+	var/list/location = get_unused_overmap_square_in_radius(rand(3, round(size/5)))
+
+	var/datum/overmap/outpost/found_type
+	if(fexists(OUTPOST_OVERRIDE_FILEPATH))
+		var/file_text = trim_right(file2text(OUTPOST_OVERRIDE_FILEPATH)) // trim_right because there's often a trailing newline
+		var/datum/overmap/outpost/potential_type = text2path(file_text)
+		if(!potential_type || !ispath(potential_type, /datum/overmap/outpost))
+			stack_trace("SSovermap found an outpost override file at [OUTPOST_OVERRIDE_FILEPATH], but was unable to find the outpost type [potential_type]!")
+		else
+			found_type = potential_type
+		fdel(OUTPOST_OVERRIDE_FILEPATH) // don't want it to affect 2 rounds in a row.
+
+	if(!found_type)
+		var/list/possible_types = subtypesof(/datum/overmap/outpost)
+		for(var/datum/overmap/outpost/outpost_type as anything in possible_types)
+			if(!initial(outpost_type.main_template))
+				possible_types -= outpost_type
+		found_type = pick(possible_types)
+
+	new found_type(location)
 	return
 
 /datum/controller/subsystem/overmap/proc/spawn_initial_ships()
 #ifndef UNIT_TESTS
 	var/datum/map_template/shuttle/selected_template = SSmapping.maplist[pick(SSmapping.maplist)]
 	INIT_ANNOUNCE("Loading [selected_template.name]...")
-	new /datum/overmap/ship/controlled(null, selected_template)
+	spawn_ship_at_start(selected_template)
 	if(SSdbcore.Connect())
 		var/datum/DBQuery/query_round_map_name = SSdbcore.NewQuery({"
 			UPDATE [format_table_name("round")] SET map_name = :map_name WHERE id = :round_id
@@ -199,6 +221,19 @@ SUBSYSTEM_DEF(overmap)
 		query_round_map_name.Execute()
 		qdel(query_round_map_name)
 #endif
+
+/**
+ * Spawns a controlled ship with the passed template at the template's preferred spawn location.
+ * Inteded for ship purchases, etc.
+ */
+/datum/controller/subsystem/overmap/proc/spawn_ship_at_start(datum/map_template/shuttle/template)
+	var/ship_loc
+	if(template.space_spawn)
+		ship_loc = null
+	else
+		ship_loc = SSovermap.outposts[1]
+
+	return new /datum/overmap/ship/controlled(ship_loc, template)
 
 /**
  * Creates an overmap object for each ruin level, making them accessible.
@@ -405,6 +440,8 @@ SUBSYSTEM_DEF(overmap)
 		overmap_objects = SSovermap.overmap_objects
 	if(istype(SSovermap.controlled_ships))
 		controlled_ships = SSovermap.controlled_ships
+	if(istype(SSovermap.outposts))
+		outposts = SSovermap.outposts
 	if(istype(SSovermap.events))
 		events = SSovermap.events
 	if(istype(SSovermap.radius_positions))
