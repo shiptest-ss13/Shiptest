@@ -118,8 +118,6 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 	if (smoothing_flags & (SMOOTH_CORNERS|SMOOTH_BITMASK))
 		QUEUE_SMOOTH(src)
 
-	visibilityChanged()
-
 	for(var/atom/movable/content as anything in src)
 		Entered(content, null)
 
@@ -190,7 +188,6 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 		for(var/A in B.contents)
 			qdel(A)
 		return
-	visibilityChanged()
 	QDEL_LIST(blueprint_data)
 	flags_1 &= ~INITIALIZED_1
 	requires_activation = FALSE
