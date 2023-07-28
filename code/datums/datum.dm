@@ -51,6 +51,7 @@
 	var/list/found_refs
 	#endif
 #endif
+	var/locname //TODO: KILL
 
 #ifdef DATUMVAR_DEBUGGING_MODE
 	var/list/cached_vars
