@@ -314,7 +314,6 @@
 
 /datum/reagent/water/dirty/on_mob_life(mob/living/carbon/M)
 	M.adjustToxLoss(0.5, 0)
-	M.hallucination += 2
 	M.jitteriness += 1
 	M.disgust += 1
 	..()
