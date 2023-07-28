@@ -33,3 +33,6 @@
 			// keeps ships ready for the next test, and stops us from loading 50 duplicate hangars
 			if(cur_ship.docked_to)
 				cur_ship.Undock(TRUE)
+
+	for(var/datum/overmap/ship/controlled/deleting_ship as anything in SSovermap.controlled_ships)
+		qdel(deleting_ship)
