@@ -354,7 +354,7 @@
 	var/sound/alert_sound = sound('sound/effects/alert.ogg')
 	for(var/i in GLOB.mob_list)
 		var/mob/M = i
-		if(M.virtual_z() != virtual_z() && !(virtual_level_trait(ZTRAITS_STATION) && M.virtual_level_trait(ZTRAITS_STATION)))
+		if(M.virtual_z() != virtual_z() && !(virtual_level_trait(ZTRAIT_STATION) && M.virtual_level_trait(ZTRAIT_STATION)))
 			continue
 		M.update_gravity(M.mob_has_gravity())
 		if(M.client)
