@@ -105,6 +105,9 @@
 	ignore += typesof(/obj/overmap)
 	//Needs a holopad
 	ignore += typesof(/mob/living/simple_animal/hologram)
+	//Needs an elevator
+	ignore += typesof(/obj/machinery/status_display/elevator)
+	ignore += typesof(/obj/machinery/elevator_floor_button)
 
 	var/list/cached_contents = spawn_at.contents.Copy()
 	var/original_turf_type = spawn_at.type
