@@ -28,11 +28,10 @@
 
 	var/static/list/loc_connections = list(
 		COMSIG_ATOM_ENTERED = .proc/on_entered,
-		COMSIG_ATOM_EXITED = .proc/on_uncrossed,
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
-	addtimer(CALLBACK(src, /datum.proc/_AddComponent, list(/datum/component/beauty, beauty)), 0)
+	AddElement(/datum/element/beauty, beauty)
 
 	SSblackbox.record_feedback("tally", "station_mess_created", 1, name)
 
@@ -79,10 +78,6 @@
 	if(reagents)
 		reagents.expose_temperature(exposed_temperature)
 	..()
-
-/obj/effect/decal/cleanable/proc/on_uncrossed(datum/source, atom/movable/O)
-	SIGNAL_HANDLER
-	return
 
 //Add "bloodiness" of this blood's type, to the human's shoes
 //This is on /cleanable because fuck this ancient mess
