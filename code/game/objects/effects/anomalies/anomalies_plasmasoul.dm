@@ -33,12 +33,12 @@
 
 /obj/effect/anomaly/plasmasoul/Bumped(atom/movable/AM)
 	var/turf/open/spot = locate(rand(src.x-effectrange, src.x+effectrange), rand(src.y-effectrange, src.y+effectrange), src.z)
-	for(var/mob/living/Mob in range(effectrange,src))
-		if(iscarbon(Mob))
-			var/mob/living/carbon/carbon = Mob
-			carbon.reagents?.add_reagent(/datum/reagent/toxin/plasma, reagent_amount)
-			to_chat(Mob, span_warning("Your blood feels thick.."))
-			playsound(Mob, 'sound/effects/bubbles.ogg', 50)
+	for(var/mob/living/mob in range(effectrange,src))
+		if(iscarbon(mob))
+			var/mob/living/carbon/target = mob
+			target.reagents?.add_reagent(/datum/reagent/toxin/plasma, reagent_amount)
+			to_chat(mob, span_warning("Your blood feels thick.."))
+			playsound(mob, 'sound/effects/bubbles.ogg', 50)
 	if(istype(spot))
 		spot.atmos_spawn_air("plasma=300;TEMP=200")
 
