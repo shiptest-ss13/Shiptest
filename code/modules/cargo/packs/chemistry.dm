@@ -129,3 +129,28 @@
 	cost = 1000
 	contains = list(/obj/item/reagent_containers/glass/chem_jug/radium)
 	crate_name = "bulk radium crate"
+
+/datum/supply_pack/chemistry/water_recycler
+	name = "Plumbing Supplies"
+	desc = "Contains two water recyclers and a set of ducts. Plumbing constructor not included!"
+	cost = 500
+	contains = list(/obj/item/storage/box/plumbing)
+	crate_name = "plumbing supplies crate"
+
+/datum/supply_pack/chemistry/input_gate
+	name = "Input Gate"
+	desc = "An input gate for use in plumbing."
+	cost = 500
+	contains = list(/obj/machinery/plumbing/input)
+
+/datum/supply_pack/chemistry/output_gate
+	name = "Output Gate"
+	desc = "An output gate for use in plumbing."
+	cost = 500
+	contains = list(/obj/machinery/plumbing/output)
+
+/datum/supply_pack/chemistry/chemical_tank
+	name = "Chemical Tank"
+	desc = "A chemical tank for use in plumbing."
+	cost = 500
+	contains = list(/obj/machinery/plumbing/tank)

@@ -147,9 +147,9 @@
 	if(isliving(A))
 		check_heat(A)
 
-	if(iscarbon(A))
+/*	if(iscarbon(A))
 		var/mob/living/carbon/C = A
-		C.mothdust -= 10;
+		C.mothdust -= 10;*/ //moth dust washing was causing a crash, for whatever reason. now you'll be dusty forever, sorry
 
 /obj/machinery/shower/process(delta_time)
 	if(on && reagents.total_volume)
