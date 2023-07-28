@@ -11,6 +11,15 @@
 	bullet_skin = "rubber"
 	projectile_type = /obj/projectile/bullet/a762_enchanted
 
+// 8x58mm Caseless (SSG-669C)
+
+/obj/item/ammo_casing/caseless/a858
+	name = "8x58mm caseless round"
+	desc = "a 8x58mm caseless round."
+	icon_state = "caseless"
+	caliber = "a858"
+	projectile_type = /obj/projectile/bullet/a858
+
 // .300 Magnum (Smile Rifle)
 
 /obj/item/ammo_casing/a300

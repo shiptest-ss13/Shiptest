@@ -75,8 +75,7 @@
 		if(24)
 			new /obj/item/clothing/gloves/gauntlets(src)
 		if(25)
-			new /obj/item/clothing/under/drip(src)
-			new /obj/item/clothing/shoes/drip(src)
+			new /obj/item/toy/plush/blahaj(src)
 		if(26)
 			new /obj/item/freeze_cube(src)
 		if(27)
@@ -153,8 +152,7 @@
 			if(24)
 				new /obj/item/clothing/gloves/gauntlets(src)
 			if(25)
-				new /obj/item/clothing/under/drip(src)
-				new /obj/item/clothing/shoes/drip(src)
+				new /obj/item/toy/plush/blahaj(src)
 			if(26)
 				new /obj/item/freeze_cube(src)
 			if(27)
@@ -227,58 +225,6 @@
 	build_path = /obj/item/borg/upgrade/modkit/bounty
 
 //Spooky special loot
-
-//drip
-/obj/item/clothing/under/drip
-	name = "incredibly fashionable outfit"
-	desc = "Why don't you go test some shi-"
-	icon = 'icons/obj/clothing/under/suits.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/under/suits.dmi'
-	mob_overlay_state = "drippy"
-	icon_state = "drippy"
-	item_state = "drippy"
-	armor = list("melee" = 10, "bullet" = 10, "laser" = 10,"energy" = 10, "bomb" = 10, "bio" = 10, "rad" = 10, "fire" = 100, "acid" = 100)
-	resistance_flags = FIRE_PROOF | ACID_PROOF | LAVA_PROOF//the unbreakable fashion
-	can_adjust = FALSE
-
-/obj/item/clothing/shoes/drip
-	name = "fashionable shoes"
-	desc = "Expensive-looking designer sneakers. Loud, ostentatious, agressively attractive. The elaborate design on the sole could probably give you some decent traction."
-	icon = 'icons/obj/clothing/shoes.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/feet.dmi'
-	mob_overlay_state = "dripshoes"
-	icon_state = "dripshoes"
-	item_state = "dripshoes"
-	clothing_flags = NOSLIP_ICE | NOSLIP
-	armor = list("melee" = 25, "bullet" = 25, "laser" = 25, "energy" = 25, "bomb" = 50, "bio" = 10, "rad" = 0, "fire" = 100, "acid" = 100)
-	resistance_flags = FIRE_PROOF | ACID_PROOF | LAVA_PROOF
-	strip_delay = 40
-	resistance_flags = NONE
-	permeability_coefficient = 0.05 //Thick soles, and covers the ankle
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
-	lace_time = 35 SECONDS//nike shoelace art joke
-	slowdown = -0.2
-	supports_variations = VOX_VARIATION
-
-/obj/item/clothing/under/drip/equipped(mob/user, slot)
-	. = ..()
-	if(slot == ITEM_SLOT_ICLOTHING)
-		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "drippy", /datum/mood_event/drippy)
-
-/obj/item/clothing/under/drip/dropped(mob/user)
-	. = ..()
-	SEND_SIGNAL(user, COMSIG_CLEAR_MOOD_EVENT, "drippy")
-
-/obj/item/clothing/shoes/drip/equipped(mob/user, slot)
-	. = ..()
-	if(slot == ITEM_SLOT_FEET)
-		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "dripjordan", /datum/mood_event/dripjordan)
-		SEND_SIGNAL(user, COMSIG_CLEAR_MOOD_EVENT, "nojordans")
-
-/obj/item/clothing/shoes/drip/dropped(mob/user)
-	. = ..()
-	SEND_SIGNAL(user, COMSIG_CLEAR_MOOD_EVENT, "dripjordan")
-	SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "nojordans", /datum/mood_event/nojordans)
 
 //Rod of Asclepius
 /obj/item/rod_of_asclepius
