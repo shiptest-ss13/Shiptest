@@ -1061,7 +1061,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 				if(S.center)
 					inner_accessory_overlay = center_image(inner_accessory_overlay, S.dimension_x, S.dimension_y)
-
+				inner_accessory_overlay.color = "#[H.dna.features["mcolor2"]]"
 				standing += inner_accessory_overlay
 
 		H.overlays_standing[layer] = standing.Copy()
@@ -1070,7 +1070,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	H.apply_overlay(BODY_BEHIND_LAYER)
 	H.apply_overlay(BODY_ADJ_LAYER)
 	H.apply_overlay(BODY_FRONT_LAYER)
-
 
 //This exists so sprite accessories can still be per-layer without having to include that layer's
 //number in their sprite name, which causes issues when those numbers change.
@@ -1082,7 +1081,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			return "ADJ"
 		if(BODY_FRONT_LAYER)
 			return "FRONT"
-
 
 /datum/species/proc/spec_life(mob/living/carbon/human/H)
 	if(HAS_TRAIT(H, TRAIT_NOBREATH))
