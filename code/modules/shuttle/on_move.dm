@@ -79,11 +79,19 @@ All ShuttleMove procs go here
 	//Dealing with the turf we left behind
 	oldT.TransferComponents(src)
 	SEND_SIGNAL(oldT, COMSIG_TURF_AFTER_SHUTTLE_MOVE, src) //Mostly for decals
+
+	if(rotation)
+		shuttleRotate(rotation) //see shuttle_rotate.dm
+
 	//find the boundary between the shuttle that left and what remains
-	var/area/ship/A = loc
-	var/obj/docking_port/mobile/top_shuttle = A?.mobile_port
-	var/shuttle_layers = -1*A.get_missing_shuttles(src)
-	for(var/index in 1 to all_towed_shuttles.len)
+	var/area/ship/ship_area = loc
+	if(!istype(ship_area))
+		return TRUE
+
+	//Only run this code if it's a ship area
+	var/obj/docking_port/mobile/top_shuttle = ship_area.mobile_port
+	var/shuttle_layers = -1 * ship_area.get_missing_shuttles(src)
+	for(var/index in 1 to length(all_towed_shuttles))
 		var/obj/docking_port/mobile/M = all_towed_shuttles[index]
 		if(!M.underlying_turf_area[src])
 			continue
@@ -102,9 +110,6 @@ All ShuttleMove procs go here
 
 	if(BT_index != length(baseturfs))
 		oldT.ScrapeAway(baseturfs.len - BT_index, CHANGETURF_FORCEOP)
-
-	if(rotation)
-		shuttleRotate(rotation) //see shuttle_rotate.dm
 
 	return TRUE
 
@@ -140,9 +145,6 @@ All ShuttleMove procs go here
 // Called on atoms after everything has been moved
 /atom/movable/proc/afterShuttleMove(turf/oldT, list/movement_force, shuttle_dir, shuttle_preferred_direction, move_dir, rotation)
 	SHOULD_CALL_PARENT(TRUE)
-	if(QDELETED(src))
-		CRASH("Movable qdeleted on shuttle move!")
-
 	var/turf/newT = get_turf(src)
 	if (newT.z != oldT.z)
 		onTransitZ(oldT.z, newT.z)
