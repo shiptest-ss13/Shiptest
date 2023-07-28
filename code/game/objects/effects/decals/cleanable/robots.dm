@@ -51,15 +51,10 @@
 	blood_state = BLOOD_STATE_OIL
 	bloodiness = BLOOD_AMOUNT_PER_DECAL
 	beauty = -100
-	var/shuttle_name
-
-/obj/effect/decal/cleanable/oil/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
-	. = ..()
-	locname = "[port.current_ship.name] (est location: [check_shuttle_offset()])"
 
 /obj/effect/decal/cleanable/oil/Initialize()
 	. = ..()
-	reagents.add_reagent(/datum/reagent/fuel/oil, 30)
+	locname = "[loc] [loc.loc] [json_encode(loc.contents)]"
 
 /obj/effect/decal/cleanable/oil/attackby(obj/item/I, mob/living/user)
 	var/attacked_by_hot_thing = I.get_temperature()
