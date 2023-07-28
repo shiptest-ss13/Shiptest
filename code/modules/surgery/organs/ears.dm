@@ -175,7 +175,7 @@
 /obj/item/organ/ears/elf/Insert(mob/living/carbon/human/ear_owner, special = 0, drop_if_replaced = TRUE)
 	..()
 	if(istype(ear_owner))
-		color = ear_owner.skin_tone
+		color = skintone2hex(ear_owner.skin_tone)
 		ear_owner.dna.species.mutant_bodyparts |= "ears"
 		ear_owner.dna.features["ears"] = "Elf"
 		ear_owner.update_body()
