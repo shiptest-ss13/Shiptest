@@ -343,18 +343,24 @@
  *	Water reaction to a mob
  */
 
-/datum/reagent/hydrogen_peroxide/expose_mob(mob/living/M, method=TOUCH, reac_volume)//Splashing people with h2o2 can burn them !
-	if(!istype(M))
-		return
-	if(method == TOUCH)
-		M.adjustFireLoss(1, 0) // burns
-	..()
-
 /datum/reagent/hydrogen_peroxide/expose_mob(mob/living/carbon/C, method=TOUCH, reac_volume)
 	if(method in list(TOUCH, VAPOR, PATCH))
 		for(var/s in C.surgeries)
 			var/datum/surgery/S = s
-			S.speed_modifier = max(0.1, S.speed_modifier)
+			S.speed_modifier = max(0.2, S.speed_modifier)
+	if(method == INGEST)
+		var/exposed = TRUE
+		if(exposed)
+			C.adjustFireLoss(1, 0)
+
+		if(HAS_TRAIT(C, TRAIT_NOBREATH))
+			exposed = FALSE
+
+		if(exposed)
+			C.adjustOxyLoss(1, 0)
+			C.losebreath += 0.5
+		if(prob(20))
+			C.emote("gasp")
 	..()
 
 /datum/reagent/fuel/unholywater		//if you somehow managed to extract this from someone, dont splash it on yourself and have a smoke
