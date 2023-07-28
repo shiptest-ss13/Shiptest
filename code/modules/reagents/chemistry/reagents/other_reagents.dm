@@ -347,7 +347,14 @@
 	if(!istype(M))
 		return
 	if(method == TOUCH)
-		M.adjustFireLoss(2, 0) // burns
+		M.adjustFireLoss(1, 0) // burns
+	..()
+
+/datum/reagent/hydrogen_peroxide/expose_mob(mob/living/carbon/C, method=TOUCH, reac_volume)
+	if(method in list(TOUCH, VAPOR, PATCH))
+		for(var/s in C.surgeries)
+			var/datum/surgery/S = s
+			S.speed_modifier = max(0.1, S.speed_modifier)
 	..()
 
 /datum/reagent/fuel/unholywater		//if you somehow managed to extract this from someone, dont splash it on yourself and have a smoke
