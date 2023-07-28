@@ -79,6 +79,8 @@
 		T.add_blueprints(src)
 
 /obj/Destroy(force=FALSE)
+	var/area/current_area = get_area(src)
+	locname = "[current_area?.name] (est location: [check_shuttle_offset()])"
 	if(!ismachinery(src))
 		STOP_PROCESSING(SSobj, src) // TODO: Have a processing bitflag to reduce on unnecessary loops through the processing lists
 	SStgui.close_uis(src)

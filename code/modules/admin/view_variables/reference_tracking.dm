@@ -24,7 +24,7 @@
 	if(usr?.client)
 		usr.client.running_find_references = type
 
-	log_reftracker("Beginning search for references to a [type].")
+	log_reftracker("Beginning search for references to a [type] (in [locname]).")
 
 	var/starting_time = world.time
 
