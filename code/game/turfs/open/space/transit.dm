@@ -32,6 +32,8 @@
 		AM.throw_atom_into_space()
 
 /atom/proc/throw_atom_into_space()
+	if(flags_1 & INITIALIZED_1)
+		return
 	qdel(src)
 
 /obj/throw_atom_into_space()
