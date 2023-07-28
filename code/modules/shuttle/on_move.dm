@@ -291,22 +291,6 @@ All ShuttleMove procs go here
 		// atmosinit() calls update_icon(), so we don't need to call it
 		update_icon()
 
-/obj/machinery/navbeacon/beforeShuttleMove(turf/newT, rotation, move_mode, obj/docking_port/mobile/moving_dock)
-	. = ..()
-	GLOB.navbeacons["[z]"] -= src
-	GLOB.deliverybeacons -= src
-
-/obj/machinery/navbeacon/afterShuttleMove(turf/oldT, list/movement_force, shuttle_dir, shuttle_preferred_direction, move_dir, rotation)
-	. = ..()
-
-	if(codes["patrol"])
-		if(!GLOB.navbeacons["[z]"])
-			GLOB.navbeacons["[z]"] = list()
-		GLOB.navbeacons["[z]"] += src //Register with the patrol list!
-	if(codes["delivery"])
-		GLOB.deliverybeacons += src
-		GLOB.deliverybeacontags += location
-
 /************************************Item move procs************************************/
 
 /obj/item/storage/pod/afterShuttleMove(turf/oldT, list/movement_force, shuttle_dir, shuttle_preferred_direction, move_dir, rotation)

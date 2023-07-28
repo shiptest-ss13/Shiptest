@@ -45,10 +45,8 @@
 	return ..()
 
 /obj/machinery/navbeacon/onTransitZ(old_z, new_z)
-	if (GLOB.navbeacons["[old_z]"])
-		GLOB.navbeacons["[old_z]"] -= src
-	if (GLOB.navbeacons["[new_z]"])
-		GLOB.navbeacons["[new_z]"] += src
+	LAZYREMOVE(GLOB.navbeacons["[old_z]"], src)
+	LAZYADD(GLOB.navbeacons["[new_z]"], src)
 	..()
 
 // set the transponder codes assoc list from codes_txt
@@ -70,8 +68,7 @@
 			codes[e] = "1"
 
 /obj/machinery/navbeacon/proc/glob_lists_deregister()
-	if (GLOB.navbeacons["[z]"])
-		GLOB.navbeacons["[z]"] -= src //Remove from beacon list, if in one.
+	LAZYREMOVE(GLOB.navbeacons["[z]"], src)
 	GLOB.deliverybeacons -= src
 	GLOB.deliverybeacontags -= location
 	GLOB.wayfindingbeacons -= src
@@ -82,9 +79,7 @@
 	if(!codes)
 		return
 	if(codes["patrol"])
-		if(!GLOB.navbeacons["[z]"])
-			GLOB.navbeacons["[z]"] = list()
-		GLOB.navbeacons["[z]"] += src //Register with the patrol list!
+		LAZYADD(GLOB.navbeacons["[z]"], src)
 	if(codes["delivery"])
 		GLOB.deliverybeacons += src
 		GLOB.deliverybeacontags += location
