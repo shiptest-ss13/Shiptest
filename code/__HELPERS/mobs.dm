@@ -250,7 +250,6 @@ GLOBAL_LIST_EMPTY(species_list)
 
 	if(target && INTERACTING_WITH(user, target))
 		to_chat(user, "<span class='warning'>You're already interacting with [target]!</span>")
-		message_admins("fuck")
 		return
 
 	var/user_loc = user.loc
@@ -258,7 +257,6 @@ GLOBAL_LIST_EMPTY(species_list)
 	var/drifting = FALSE
 	if(!user.Process_Spacemove(0) && user.inertia_dir)
 		drifting = TRUE
-	message_admins("fucs")
 
 	var/target_loc = target.loc
 
