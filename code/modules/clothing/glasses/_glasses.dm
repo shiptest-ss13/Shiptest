@@ -95,34 +95,6 @@
 	sharpness = IS_SHARP
 	custom_price = 500
 
-/obj/item/clothing/glasses/science
-	name = "science goggles"
-	desc = "A pair of snazzy goggles used to protect against chemical spills. Fitted with an analyzer for scanning items and reagents."
-	icon_state = "scigoggles"
-	item_state = "glasses"
-	clothing_flags = SCAN_REAGENTS //You can see reagents while wearing science goggles
-	actions_types = list(/datum/action/item_action/toggle_research_scanner)
-	glass_colour_type = /datum/client_colour/glass_colour/purple
-	resistance_flags = ACID_PROOF
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 100)
-	custom_price = 250
-	supports_variations = VOX_VARIATION
-
-/obj/item/clothing/glasses/science/item_action_slot_check(slot)
-	if(slot == ITEM_SLOT_EYES)
-		return 1
-
-/obj/item/clothing/glasses/science/prescription
-	name = "prescription science goggles"
-	desc = "A pair of prescription glasses fitted with an analyzer for scanning items and reagents. "
-	icon_state = "prescriptionpurple"
-	vision_correction = 1
-
-/obj/item/clothing/glasses/science/prescription/fake
-	name = "science glasses"
-	desc = "A pair of glasses fitted with an analyzer for scanning items and reagents. Someone seems to have popped out the perscription lenses... "
-	vision_correction = 0
-
 /obj/item/clothing/glasses/night
 	name = "night vision goggles"
 	desc = "You can totally see in the dark now!"
@@ -594,6 +566,7 @@
 			H.add_hud_to(user)
 		ADD_TRAIT(user, TRAIT_MEDICAL_HUD, GLASSES_TRAIT)
 		ADD_TRAIT(user, TRAIT_SECURITY_HUD, GLASSES_TRAIT)
+		ADD_TRAIT(user, TRAIT_SCIENCE_HUD, GLASSES_TRAIT)
 
 /obj/item/clothing/glasses/debug/dropped(mob/user)
 	. = ..()

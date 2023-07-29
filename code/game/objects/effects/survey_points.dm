@@ -2,12 +2,18 @@
 	name = "Survey Point"
 	desc = "A location of particular survey value."
 	icon = 'icons/effects/landmarks_static.dmi'
-	icon_state = "x"
+	icon_state = "generic_event"
+	hud_possible = list(SCIENCE_HUD)
 	var/research_value
 
 /obj/effect/survey_point/Initialize()
 	. = ..()
 	research_value = rand(750, 1500)
+
+	prepare_huds()
+	for(var/datum/atom_hud/data/science/sci_hud in GLOB.huds)
+		sci_hud.add_to_hud(src)
+	sci_hud_set_value()
 
 /obj/effect/survey_point/examine(mob/user)
 	. = ..()
@@ -67,3 +73,9 @@
 			var/obj/item/research_notes/research = user.get_inactive_held_item()
 			research.merge(result)
 	return
+
+
+/obj/effect/survey_point/Destroy()
+	for(var/datum/atom_hud/data/diagnostic/diag_hud in GLOB.huds)
+		diag_hud.remove_from_hud(src)
+	. = ..()

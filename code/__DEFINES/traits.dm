@@ -244,6 +244,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_MEDICAL_HUD "med_hud"
 #define TRAIT_SECURITY_HUD "sec_hud"
 #define TRAIT_DIAGNOSTIC_HUD "diag_hud" //for something granting you a diagnostic hud
+#define TRAIT_SCIENCE_HUD "sci_hud" //for science huds
 #define TRAIT_MEDIBOTCOMINGTHROUGH "medbot" //Is a medbot healing you
 #define TRAIT_PASSTABLE "passtable"
 #define TRAIT_NOFLASH "noflash" //Makes you immune to flashes
