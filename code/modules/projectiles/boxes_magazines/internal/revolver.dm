@@ -8,7 +8,7 @@
 /obj/item/ammo_box/magazine/internal/cylinder/rev762
 	name = "\improper Nagant revolver cylinder"
 	ammo_type = /obj/item/ammo_casing/n762
-	caliber = "762x38mm Nagant"
+	caliber = "7.62x38mmR"
 	max_ammo = 7
 	instant_load = FALSE
 
