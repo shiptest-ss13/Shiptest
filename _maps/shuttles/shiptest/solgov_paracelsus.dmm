@@ -34,7 +34,7 @@
 	dir = 1
 	},
 /obj/machinery/space_heater,
-/obj/effect/turf_decal/box,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/maintenance/starboard)
 "aF" = (
@@ -108,6 +108,8 @@
 /obj/item/reagent_containers/glass/chem_jug/radium,
 /obj/item/reagent_containers/glass/chem_jug/chlorine,
 /obj/item/reagent_containers/glass/chem_jug/iodine,
+/obj/item/reagent_scanner,
+/obj/item/clothing/glasses/science,
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/ship/medical)
 "bp" = (
@@ -137,6 +139,13 @@
 	},
 /obj/item/storage/box/masks{
 	pixel_y = 6
+	},
+/obj/item/reagent_containers/glass/beaker/cryoxadone{
+	pixel_x = 15;
+	pixel_y = 2
+	},
+/obj/item/reagent_containers/glass/beaker/cryoxadone{
+	pixel_x = 13
 	},
 /obj/item/reagent_containers/spray/cleaner{
 	pixel_x = -4
@@ -480,6 +489,16 @@
 /obj/item/radio/intercom/directional/north,
 /turf/open/floor/wood/ebony,
 /area/ship/hallway/starboard)
+"fp" = (
+/obj/machinery/button/door{
+	dir = 4;
+	id = "sg_par_cargo3";
+	name = "blast door control";
+	pixel_x = -20;
+	pixel_y = 7
+	},
+/turf/open/floor/plasteel/mono,
+/area/ship/cargo)
 "fr" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 1
@@ -617,6 +636,10 @@
 	},
 /obj/machinery/atmospherics/pipe/layer_manifold{
 	dir = 4
+	},
+/obj/machinery/door/poddoor{
+	id = "sg_par_cargo3";
+	dir = 8
 	},
 /turf/open/floor/plasteel,
 /area/ship/external/dark)
@@ -902,10 +925,10 @@
 	dir = 1
 	},
 /obj/machinery/suit_storage_unit/solgov,
-/obj/effect/turf_decal/box,
 /obj/structure/window/reinforced{
 	dir = 4
 	},
+/obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "jK" = (
@@ -1482,7 +1505,7 @@
 	},
 /obj/machinery/light/directional/north,
 /obj/machinery/space_heater,
-/obj/effect/turf_decal/box,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/maintenance/starboard)
 "py" = (
@@ -1734,8 +1757,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/door/airlock/medical{
-	name = "Morgue";
-	req_one_access = list(5,45)
+	name = "Chemistry";
+	req_one_access = list(5,45);
+	id_tag = "sg_par_chem_bolt"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
@@ -2296,7 +2320,7 @@
 	dir = 4
 	},
 /obj/structure/tank_dispenser/oxygen,
-/obj/effect/turf_decal/box,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "wR" = (
@@ -2456,7 +2480,7 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/effect/turf_decal/box,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "yw" = (
@@ -2502,7 +2526,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/structure/closet/crate,
+/obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo/office)
 "yX" = (
@@ -2655,11 +2679,11 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/suit_storage_unit/solgov,
-/obj/effect/turf_decal/box,
 /obj/structure/window/reinforced{
 	dir = 4
 	},
 /obj/machinery/light/directional/north,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "As" = (
@@ -2736,6 +2760,8 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/portable_atmospherics/scrubber,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/maintenance/starboard)
 "Bs" = (
@@ -3041,6 +3067,8 @@
 "Er" = (
 /obj/effect/turf_decal/techfloor,
 /obj/item/radio/intercom/directional/south,
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/portable_atmospherics/pump,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/maintenance/starboard)
 "Es" = (
@@ -3383,7 +3411,7 @@
 	dir = 9
 	},
 /obj/machinery/portable_atmospherics/canister/oxygen,
-/obj/effect/turf_decal/box,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/maintenance/starboard)
 "Ip" = (
@@ -3982,8 +4010,8 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/effect/turf_decal/box,
 /obj/machinery/light/directional/south,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "NB" = (
@@ -4148,6 +4176,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
+/obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo/office)
 "OZ" = (
@@ -4290,6 +4319,10 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/door/poddoor{
+	id = "sg_par_cargo3";
 	dir = 8
 	},
 /turf/open/floor/plasteel,
@@ -4666,7 +4699,7 @@
 /obj/machinery/door/airlock/engineering{
 	dir = 4;
 	name = "Engineering";
-	req_one_access = list(10)
+	req_one_access = list(10,48)
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
@@ -4898,13 +4931,13 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/suit_storage_unit/solgov,
-/obj/effect/turf_decal/box,
 /obj/structure/window/reinforced{
 	dir = 4
 	},
 /obj/structure/sign/poster/solgov/random{
 	pixel_y = 30
 	},
+/obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "Wf" = (
@@ -5376,9 +5409,8 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/door/airlock/medical{
-	name = "Chemistry";
-	req_one_access = list(5,45);
-	id_tag = "sg_par_chem_bolt"
+	name = "Morgue";
+	req_one_access = list(5,45)
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/port)
@@ -5603,7 +5635,7 @@ wI
 ym
 VW
 Yi
-kR
+fp
 Yi
 ys
 ym
