@@ -140,5 +140,5 @@
 	new /obj/item/storage/box/syringes/variety(src)
 	new /obj/item/storage/box/beakers/variety(src)
 	new /obj/item/clothing/head/beret/chem(src) //WS edit - Berets
-	new /obj/item/clothing/glasses/hud/science/prescription(src) //WS Edit - Prescription HUDs
+	new /obj/item/clothing/glasses/science/prescription(src) //WS Edit - Prescription HUDs
 	new /obj/item/clothing/glasses/science(src)

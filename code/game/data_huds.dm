@@ -60,9 +60,6 @@
 /datum/atom_hud/data/diagnostic/advanced
 	hud_icons = list(DIAG_HUD, DIAG_STAT_HUD, DIAG_BATT_HUD, DIAG_MECH_HUD, DIAG_BOT_HUD, DIAG_CIRCUIT_HUD, DIAG_TRACK_HUD, DIAG_AIRLOCK_HUD, DIAG_NANITE_FULL_HUD, DIAG_LAUNCHPAD_HUD, DIAG_PATH_HUD)
 
-/datum/atom_hud/data/science
-	hud_icons = list(SCIENCE_HUD)
-
 /datum/atom_hud/data/bot_path
 	hud_icons = list(DIAG_PATH_HUD)
 
@@ -81,8 +78,6 @@
 		for(var/V in GLOB.aiEyes)
 			var/mob/camera/aiEye/E = V
 			E.update_ai_detect_hud()
-
-/datum/atom_hud/data/science
 
 /* MED/SEC/DIAG HUD HOOKS */
 
@@ -472,20 +467,3 @@ Diagnostic HUDs!
 		holder.icon_state = "electrified"
 	else
 		holder.icon_state = ""
-
-
-/*~~~~~~~~
-	Survey Points
-	~~~~~~~*/
-
-/obj/effect/survey_point/proc/sci_hud_set_value()
-	var/image/holder = hud_list[SCIENCE_HUD]
-	holder.icon = 'icons/effects/landmarks_static.dmi'
-	if(research_value <= 500)
-		holder.icon_state = "x"
-	else if(research_value <= 1000)
-		holder.icon_state = "x2"
-	else if (research_value <= 1500)
-		holder.icon_state = "x3"
-	else
-		holder.icon_state = "x"

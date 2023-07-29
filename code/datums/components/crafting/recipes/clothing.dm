@@ -147,7 +147,7 @@
 
 /datum/crafting_recipe/scienceglasses
 	name = "Science Prescription Glasses"
-	result = /obj/item/clothing/glasses/hud/science/prescription
+	result = /obj/item/clothing/glasses/science/prescription
 	time = 20
 	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
 	reqs = list(

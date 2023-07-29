@@ -28,7 +28,6 @@
 
 /obj/item/gear_pack/Initialize()
 	. = ..()
-	drag_slowdown = slowdown
 	attachment = new attachment_type(src)
 	cell = new(src)
 	update_power()

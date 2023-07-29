@@ -284,11 +284,11 @@
 			glasses_type = /obj/item/clothing/glasses/hud/security/prescription
 		//Science
 		if("Research Director")
-			glasses_type = /obj/item/clothing/glasses/hud/science/prescription
+			glasses_type = /obj/item/clothing/glasses/science/prescription
 		if("Scientist")
-			glasses_type = /obj/item/clothing/glasses/hud/science/prescription
+			glasses_type = /obj/item/clothing/glasses/science/prescription
 		if("Chemist")
-			glasses_type = /obj/item/clothing/glasses/hud/science/prescription
+			glasses_type = /obj/item/clothing/glasses/science/prescription
 		//Health
 		if("Chief Medical Officer")
 			glasses_type = /obj/item/clothing/glasses/hud/health/prescription
