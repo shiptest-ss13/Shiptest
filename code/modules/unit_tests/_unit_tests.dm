@@ -88,6 +88,7 @@
 #include "reagent_names.dm"
 #include "reagent_recipe_collisions.dm"
 #include "resist.dm"
+#include "ruin_placement.dm"
 #include "say.dm"
 #include "serving_tray.dm"
 #include "ship_outpost_placement.dm"
