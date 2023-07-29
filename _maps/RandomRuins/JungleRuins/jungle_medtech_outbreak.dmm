@@ -92,7 +92,7 @@
 	dir = 10
 	},
 /obj/item/paper/pamphlet{
-	info = "<center><h1> Welcome at MedTech Ltd.!</h1></center><hr><p>MedTech is a professional chemical and pharmaceutical manufacturing company with a leading position in the galactinc market.</p><p>Our goal is to provide all relevant medical and industrial chemicals to every customer in the galaxy within a short time, and at a affordable price. We achieve this goal by diversifying our manufacturing sites across the all frontiers and by sourcing all raw materials locally.</p><center><p><b>Special orders are avalible now!</b></p><p>Buy our products or visit one of our manufacturing plants today!</p></center><hr></p><sub>MedTech Ltd. takes no liability for any misuse or side effects of their products including diarrhea, dizziness, heart issues (palpitations, irregular heartbeats), death, and all other forms of possible pre- and post-mortem agony.</sub></p>";
+	default_raw_text = "<center><h1> Welcome at MedTech Ltd.!</h1></center><hr><p>MedTech is a professional chemical and pharmaceutical manufacturing company with a leading position in the galactinc market.</p><p>Our goal is to provide all relevant medical and industrial chemicals to every customer in the galaxy within a short time, and at a affordable price. We achieve this goal by diversifying our manufacturing sites across the all frontiers and by sourcing all raw materials locally.</p><center><p><b>Special orders are avalible now!</b></p><p>Buy our products or visit one of our manufacturing plants today!</p></center><hr></p><sub>MedTech Ltd. takes no liability for any misuse or side effects of their products including diarrhea, dizziness, heart issues (palpitations, irregular heartbeats), death, and all other forms of possible pre- and post-mortem agony.</sub></p>";
 	name = "MedTech flyer";
 	pixel_x = 6;
 	pixel_y = 3
@@ -362,7 +362,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/paper/crumpled/bloody{
 	desc = "written hastly on a blood stained peace of paper.";
-	info = "They breached all the doors, I am the last one, its over for me..";
+	default_raw_text = "They breached all the doors, I am the last one, its over for me..";
 	name = "MedTech chmist's last note";
 	pixel_x = 15;
 	pixel_y = 1
@@ -379,7 +379,7 @@
 "hF" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/paper{
-	info = "<h1>Export expectations</h1><p>By the end of the month facility No.475-24 is expected to provide the following amounts of medicine to be ready for export:</p><ol><li>300u of Perfluorodecalin</li><li>270u of Thializid</li><li>50 Burnpatches</li><li>65 Synthflesh patches</li><li>275u of atropine</li></ol><p>Production is to be proceeded with imidiately.</p>";
+	default_raw_text = "<h1>Export expectations</h1><p>By the end of the month facility No.475-24 is expected to provide the following amounts of medicine to be ready for export:</p><ol><li>300u of Perfluorodecalin</li><li>270u of Thializid</li><li>50 Burnpatches</li><li>65 Synthflesh patches</li><li>275u of atropine</li></ol><p>Production is to be proceeded with imidiately.</p>";
 	name = "Export orders";
 	pixel_x = 4;
 	pixel_y = 5
@@ -1502,7 +1502,7 @@
 /obj/effect/decal/cleanable/blood/bubblegum,
 /obj/item/paper/crumpled/fluff{
 	desc = "Written as with a dying hand..";
-	info = "I bolted down my door to keep them out for w while, one of them got me in the arm. I hope the response unit will arrive soon...";
+	default_raw_text = "I bolted down my door to keep them out for w while, one of them got me in the arm. I hope the response unit will arrive soon...";
 	name = "Hastly scribbled note"
 	},
 /turf/open/floor/wood,
@@ -1676,7 +1676,7 @@
 	},
 /obj/item/paper/crumpled/bloody{
 	desc = "written hastly on a blood stained peace of paper.";
-	info = "Hilbert welded himself in maintainance from the inside. Perhaps a death from starvation is better than the fate that awaits us when the doors bust...";
+	default_raw_text = "Hilbert welded himself in maintainance from the inside. Perhaps a death from starvation is better than the fate that awaits us when the doors bust...";
 	name = "Office clerks last note";
 	pixel_x = -13;
 	pixel_y = -6
@@ -2860,7 +2860,7 @@
 /obj/effect/decal/cleanable/blood/bubblegum,
 /obj/item/paper/crumpled/bloody{
 	desc = "This is probably a document you were not supposed to see";
-	info = "<center><h1 style='background-color:red;'>TOP SECRET - EYES ONLY!</h1></center><h2 align='center'>Pricing reqest</h2><p>The Syndicate is interested to place an order for several hundred units of a chemical known as romerol. Hereby a request is placed to set a pricetag for such an order.</p><p>A small sample of the regent in question has been attached for testing purposes.</p><p>The contents of this document is to be treated highly confidential, any suspicion that informatin cantained in this letter has been forwarded will be met with recogninzing MedTech Ltd. as a enemy side of the conflict by The Syndicate.</p></p>We are lookig forward for a reply that will ensure our long-term cooperation.</p><br></p>Death to Nanotrasen!</p><p style = 'font-family:serif'><i><b>The Syndicate</b></i></p><center><h1 style='background-color:red;'>TOP SECRET - EYES ONLY!</h1></center>";
+	default_raw_text = "<center><h1 style='background-color:red;'>TOP SECRET - EYES ONLY!</h1></center><h2 align='center'>Pricing reqest</h2><p>The Syndicate is interested to place an order for several hundred units of a chemical known as romerol. Hereby a request is placed to set a pricetag for such an order.</p><p>A small sample of the regent in question has been attached for testing purposes.</p><p>The contents of this document is to be treated highly confidential, any suspicion that informatin cantained in this letter has been forwarded will be met with recogninzing MedTech Ltd. as a enemy side of the conflict by The Syndicate.</p></p>We are lookig forward for a reply that will ensure our long-term cooperation.</p><br></p>Death to Nanotrasen!</p><p style = 'font-family:serif'><i><b>The Syndicate</b></i></p><center><h1 style='background-color:red;'>TOP SECRET - EYES ONLY!</h1></center>";
 	name = "Top Secret Syndicate Romerol price request"
 	},
 /turf/open/floor/carpet/blue,
@@ -3093,7 +3093,7 @@
 	dir = 10
 	},
 /obj/item/paper/pamphlet{
-	info = "<center><h1> Welcome at MedTech Ltd.!</h1></center><hr><p>MedTech is a professional chemical and pharmaceutical manufacturing company with a leading position in the galactinc market.</p><p>Our goal is to provide all relevant medical and industrial chemicals to every customer in the galaxy within a short time, and at a affordable price. We achieve this goal by diversifying our manufacturing sites across the all frontiers and by sourcing all raw materials locally.</p><center><p><b>Special orders are avalible now!</b></p><p>Buy our products or visit one of our manufacturing plants today!</p></center><hr></p><sub>MedTech Ltd. takes no liability for any misuse or side effects of their products including diarrhea, dizziness, heart issues (palpitations, irregular heartbeats), death, and all other forms of possible pre- and post-mortem agony.</sub></p>";
+	default_raw_text = "<center><h1> Welcome at MedTech Ltd.!</h1></center><hr><p>MedTech is a professional chemical and pharmaceutical manufacturing company with a leading position in the galactinc market.</p><p>Our goal is to provide all relevant medical and industrial chemicals to every customer in the galaxy within a short time, and at a affordable price. We achieve this goal by diversifying our manufacturing sites across the all frontiers and by sourcing all raw materials locally.</p><center><p><b>Special orders are avalible now!</b></p><p>Buy our products or visit one of our manufacturing plants today!</p></center><hr></p><sub>MedTech Ltd. takes no liability for any misuse or side effects of their products including diarrhea, dizziness, heart issues (palpitations, irregular heartbeats), death, and all other forms of possible pre- and post-mortem agony.</sub></p>";
 	name = "MedTech flyer";
 	pixel_x = -5;
 	pixel_y = 3

@@ -171,7 +171,7 @@ GLOBAL_LIST_EMPTY(alldepartments)
 /obj/machinery/photocopier/faxmachine/proc/sendfax(destination, mob/sender)
 	if(machine_stat & (BROKEN|NOPOWER))
 		return
-	if(!length(paper_copy?.info)) //doesn't get called if there's no paper inserted
+	if(!paper_copy.get_total_length()) //doesn't get called if there's no paper inserted
 		visible_message("<span class='notice'>[src] beeps, \"The supplied paper is blank. Aborting.\"</span>")
 		return FALSE
 
@@ -278,7 +278,7 @@ GLOBAL_LIST_EMPTY(alldepartments)
 	var/msg = "<span class='boldnotice'><font color='[font_colour]'>[faxname]: </font> [ADMIN_LOOKUP(sender)] | REPLY: [ADMIN_CENTCOM_REPLY(sender)] [ADMIN_FAX(sender, src, faxtype, sent)] [ADMIN_SM(sender)] | REJECT: (<A HREF='?_src_=holder;[HrefToken(TRUE)];FaxReplyTemplate=[REF(sender)];originfax=[REF(src)]'>TEMPLATE</A>) [ADMIN_SMITE(sender)]</span>: Receiving '[sent.name]' via secure connection... <a href='?_src_=holder;[HrefToken(TRUE)];AdminFaxView=[REF(sent)]'>view message</a>"
 	if(istype(sent, /obj/item/paper))
 		var/obj/item/paper/paper = sent
-		SSredbot.send_discord_message("admin", "New [faxname]  ([paper.name]) Sent by [sender]: [strip_booktext(paper.info, 30)]")
+		SSredbot.send_discord_message("admin", "New [faxname]  ([paper.name]) Sent by [sender]: [strip_booktext(paper.raw_text_inputs, 30)]")
 	else
 		SSredbot.send_discord_message("admin", "New [faxname] ([sent.name]) Sent by [sender].")
 	message_admins(msg)

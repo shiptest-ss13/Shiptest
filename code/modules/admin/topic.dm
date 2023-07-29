@@ -2213,8 +2213,8 @@
 			P.name = "[sendername]- [customname]"
 		else
 			P.name = "[customname]"
-		P.info = input_text
-		P.update_icon()
+		P.add_raw_text(input_text)
+		P.update_appearance()
 		P.x = rand(-2, 0)
 		P.y = rand(-1, 2)
 
@@ -2288,7 +2288,7 @@
 		else
 			return
 		tmsg += "</font>"
-		P.info = tmsg
+		P.add_raw_text(tmsg)
 		P.x = rand(-2, 0)
 		P.y = rand(-1, 2)
 		P.update_icon()

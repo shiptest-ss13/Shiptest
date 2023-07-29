@@ -396,7 +396,7 @@
 	dir = 8
 	},
 /obj/item/paper/crumpled{
-	info = "A mix of 67/33 ratio of oxygen (node 1) and plasma (node 2) works very well, even at 500 kPa."
+	default_raw_text = "A mix of 67/33 ratio of oxygen (node 1) and plasma (node 2) works very well, even at 500 kPa."
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -1680,7 +1680,7 @@
 /obj/item/weldingtool,
 /obj/item/weldingtool,
 /obj/item/paper{
-	info = "The igniter in the chamber does not work very well. I suggest throwing lit welders down the disposal chute over there to ignite the chamber.";
+	default_raw_text = "The igniter in the chamber does not work very well. I suggest throwing lit welders down the disposal chute over there to ignite the chamber.";
 	pixel_x = -6
 	},
 /obj/machinery/button/door/incinerator_vent_atmos_aux{
