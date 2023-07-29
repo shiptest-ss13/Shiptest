@@ -131,3 +131,9 @@
 	id = "medtech-facility"
 	description = "A MedTech pharmaceutical manufacturing plant where something went terribly wrong."
 	suffix = "jungle_medtech_outbreak.dmm"
+
+/datum/map_template/ruin/jungle/library
+	name = "Abandoned Library"
+	id = "abandoned-library"
+	description = "A forgotten library, with a few angry monkeys."
+	suffix = "jungle_abandoned_library.dmm"
