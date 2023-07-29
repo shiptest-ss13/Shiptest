@@ -146,7 +146,7 @@ All ShuttleMove procs go here
 /atom/movable/proc/afterShuttleMove(turf/oldT, list/movement_force, shuttle_dir, shuttle_preferred_direction, move_dir, rotation)
 	SHOULD_CALL_PARENT(TRUE)
 	var/turf/newT = get_turf(src)
-	if (newT.z != oldT.z)
+	if (newT?.z != oldT.z)
 		onTransitZ(oldT.z, newT.z)
 
 	if(light)
