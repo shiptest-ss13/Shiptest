@@ -351,6 +351,9 @@
 
 /mob/living/simple_animal/hostile/proc/AttackingTarget()
 	SEND_SIGNAL(src, COMSIG_HOSTILE_ATTACKINGTARGET, target)
+	//Target can be removed by the signal's effects
+	if(QDELETED(target))
+		return
 	in_melee = TRUE
 	return target.attack_animal(src)
 

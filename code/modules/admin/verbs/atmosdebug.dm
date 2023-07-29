@@ -1,4 +1,4 @@
-#define ANNOTATE_OBJECT(object) testing ? "[get_area(object)] (estimated location: [json_encode(object.check_shuttle_offset())])" : ADMIN_VERBOSEJMP(object)
+#define ANNOTATE_OBJECT(object) testing ? "[get_area(object)] (estimated location: [json_encode(object.check_shuttle_offset() || object.get_relative_location())])" : ADMIN_VERBOSEJMP(object)
 
 /atom/proc/check_shuttle_offset()
 	if(!SSshuttle.initialized)

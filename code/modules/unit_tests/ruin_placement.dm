@@ -1,6 +1,3 @@
-/datum/unit_test/ruin_placement
-	focus = TRUE
-
 /datum/unit_test/ruin_placement/Run()
 	SSair.is_test_loading = TRUE
 	var/datum/map_zone/mapzone = SSmapping.create_map_zone("Ruin Testing Zone")
@@ -15,19 +12,18 @@
 				ruin.width,
 				ruin.height
 			)
-			vlevel.fill_in(planet_type.default_baseturf)
 
-			try
-				ruin.load(vlevel.get_unreserved_bottom_left_turf())
-			catch(var/exception/e)
-				TEST_FAIL("Runtime error loading ruin type ([ruin.name]): [e] on [e.file]:[e.line]\n[e.desc]")
+			ruin.load(vlevel.get_unreserved_bottom_left_turf())
+
+			var/list/errors = atmosscan(TRUE)
+			errors += powerdebug(TRUE)
+
+			for(var/error in errors)
+				Fail("in [ruin_name]: [error]", ruin.mappath, 1)
+
+			vlevel.clear_reservation()
+			qdel(vlevel)
 
 	SSair.is_test_loading = FALSE
-
-	var/list/errors = atmosscan(TRUE)
-	errors += powerdebug(TRUE)
-
-	for(var/error in errors)
-		TEST_FAIL("[error]")
 
 	qdel(mapzone)
