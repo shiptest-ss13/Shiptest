@@ -90,7 +90,11 @@
 		/obj/structure/flora/ash/stem_shroom = 4 ,
 	)
 	feature_spawn_chance = 0.1
-	feature_spawn_list = list(/obj/structure/geyser/random = 1, /obj/structure/elite_tumor = 2)
+	feature_spawn_list = list(
+		/obj/structure/geyser/random = 8,
+		/obj/structure/elite_tumor = 4,
+		/obj/effect/spawner/lootdrop/anomaly/sand = 1,
+	)
 	mob_spawn_chance = 4
 	mob_spawn_list = list(
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/random = 50,
@@ -100,7 +104,13 @@
 	)
 
 /datum/biome/sand/wasteland
-	open_turf_types = list(/turf/open/floor/plating/asteroid/whitesands/lit = 50, /turf/open/floor/plating/asteroid/whitesands/dried/lit = 40, /turf/closed/mineral/random/whitesands = 20, /turf/closed/wall/mineral/titanium/survival/pod = 1, /turf/closed/wall/rust = 1)
+	open_turf_types = list(
+		/turf/open/floor/plating/asteroid/whitesands/lit = 50,
+		/turf/open/floor/plating/asteroid/whitesands/dried/lit = 40,
+		/turf/closed/mineral/random/whitesands = 20,
+		/turf/closed/wall/mineral/titanium/survival/pod = 1,
+		/turf/closed/wall/rust = 1
+	)
 	flora_spawn_chance = 20
 	flora_spawn_list = list(
 		/obj/structure/flora/ash/leaf_shroom = 4,
@@ -170,7 +180,10 @@
 
 /datum/biome/cave/sand
 	closed_turf_types = list(/turf/closed/mineral/random/whitesands = 1)
-	open_turf_types = list(/turf/open/floor/plating/asteroid/whitesands = 5, /turf/open/floor/plating/asteroid/whitesands/dried = 1)
+	open_turf_types = list(
+		/turf/open/floor/plating/asteroid/whitesands = 5,
+		/turf/open/floor/plating/asteroid/whitesands/dried = 1
+	)
 	flora_spawn_chance = 4
 	flora_spawn_list = list(
 		/obj/structure/flora/rock = 4,
@@ -178,7 +191,11 @@
 		/obj/structure/flora/ash/fern = 2,
 		/obj/structure/flora/ash/puce = 1,
 	)
-	feature_spawn_list = list(/obj/structure/geyser/random = 1, /obj/structure/elite_tumor = 2)
+	feature_spawn_list = list(
+		/obj/structure/geyser/random = 4,
+		/obj/structure/elite_tumor = 4,
+		/obj/effect/spawner/lootdrop/anomaly/sand/cave = 1
+	)
 	mob_spawn_chance = 4
 	mob_spawn_list = list(
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/random = 50,

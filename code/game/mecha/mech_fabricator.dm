@@ -34,7 +34,7 @@
 								"Exosuit Equipment",
 								"Exosuit Ammunition",
 								"Cyborg Upgrade Modules",
-								"IPC components",
+								"IPC Components",
 								"Misc"
 								)
 

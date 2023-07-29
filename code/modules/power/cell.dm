@@ -462,13 +462,9 @@
 	charge = 0
 	update_icon()
 
-/obj/item/stock_parts/cell/gun/SolGov
+/obj/item/stock_parts/cell/gun/solgov
 	name = "SolGov power cell"
-	icon = 'icons/obj/power.dmi'
-	icon_state = "g-cell"
-	maxcharge = 8000
-	custom_materials = list(/datum/material/glass=60)
-	chargerate = 2000
+	icon_state = "g-sg-cell"
 
 /obj/item/stock_parts/cell/gun/large
 	name = "extra-large weapon power cell"

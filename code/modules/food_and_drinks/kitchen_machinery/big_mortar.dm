@@ -70,7 +70,7 @@
 				to_chat(user, "<span class='warning'>[target] is empty.</span>")
 				return COMPONENT_NO_AFTERATTACK
 
-			if(reagents.holder_full())
+			if(attacking_item.reagents.holder_full())
 				to_chat(user, "<span class='warning'>[attacking_item] is full.</span>")
 				return COMPONENT_NO_AFTERATTACK
 

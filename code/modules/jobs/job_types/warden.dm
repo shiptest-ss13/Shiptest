@@ -4,8 +4,6 @@
 	total_positions = 1
 	spawn_positions = 1
 	minimal_player_age = 7
-	exp_requirements = 300
-	exp_type = EXP_TYPE_CREW
 	officer = TRUE
 	wiki_page = "Space_Law" //WS Edit - Wikilinks/Warning
 
@@ -118,7 +116,7 @@
 	name = "Lieutenant (Twinkleshine)"
 	uniform = /obj/item/clothing/under/syndicate/aclf
 	head = /obj/item/clothing/head/HoS/beret/syndicate
-	ears = /obj/item/radio/headset/syndicate/alt/leader
+	ears = /obj/item/radio/headset/syndicate/alt
 	mask = /obj/item/clothing/mask/chameleon
 	gloves = /obj/item/clothing/gloves/combat
 	l_pocket = /obj/item/gun/ballistic/automatic/pistol

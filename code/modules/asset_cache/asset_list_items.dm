@@ -110,6 +110,10 @@
 		"stamp-solgov" = 'icons/stamp_icons/large_stamp-solgov.png'
 	)
 
+/datum/asset/simple/fuckywucky
+	assets = list(
+		"fuckywucky.png" = 'html/fuckywucky.png'
+	)
 
 /datum/asset/simple/IRV
 	assets = list(

@@ -4,12 +4,8 @@
 	total_positions = 1
 	spawn_positions = 1
 	minimal_player_age = 14
-	exp_requirements = 300
 	officer = TRUE
 	wiki_page = "Head_of_Security" //WS Edit - Wikilinks/Warning
-
-	exp_type = EXP_TYPE_CREW
-	exp_type_department = EXP_TYPE_SECURITY
 
 	outfit = /datum/outfit/job/hos
 	mind_traits = list(TRAIT_LAW_ENFORCEMENT_METABOLISM)
@@ -96,3 +92,38 @@
 	gloves = /obj/item/clothing/gloves/combat
 	backpack_contents = list(/obj/item/melee/baton/loaded=1)
 	suit_store = null
+
+/datum/outfit/job/hos/roumain
+	jobtype = /datum/job/hos/roumain
+	name = "Hunter Montagne (Saint-Roumain Militia)"
+	ears = /obj/item/radio/headset/headset_com
+	uniform = /obj/item/clothing/under/suit/roumain
+	alt_uniform = null
+	shoes = /obj/item/clothing/shoes/workboots/mining
+	suit = /obj/item/clothing/suit/armor/hos/roumain/montagne
+	alt_suit = null
+	dcoat = null
+	head = /obj/item/clothing/head/HoS/cowboy/montagne
+	gloves = null
+	id = /obj/item/card/id/silver
+	belt = null
+	glasses = null
+	suit_store = null
+	r_pocket = null
+	l_pocket = null
+	duffelbag = /obj/item/storage/backpack/cultpack
+	courierbag = /obj/item/storage/backpack/cultpack
+	backpack = /obj/item/storage/backpack/cultpack
+	satchel = /obj/item/storage/backpack/cultpack
+	box = null
+	implants = null
+	chameleon_extras = null
+	backpack_contents = list(
+		/obj/item/book/manual/srmlore,
+		/obj/item/stamp/chap = 1,
+		/obj/item/melee/classic_baton/telescopic=1
+		)
+
+/datum/job/hos/roumain
+	outfit = /datum/outfit/job/hos/roumain
+	mind_traits = null
