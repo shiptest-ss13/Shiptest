@@ -89,7 +89,7 @@
 /datum/outfit/job/cmo/pharma
 	name = "Chief Pharmacist"
 
-	glasses = /obj/item/clothing/glasses/science/prescription/fake//chief pharma is this kind of person
+	glasses = /obj/item/clothing/glasses/hud/science/prescription/fake//chief pharma is this kind of person
 	neck = /obj/item/clothing/neck/tie/orange//the Horrible Tie was genuinely too hard to look at
 	l_pocket = /obj/item/reagent_containers/glass/filter
 	ears = /obj/item/radio/headset/heads/cmo
