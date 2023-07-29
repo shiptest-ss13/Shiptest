@@ -26,7 +26,9 @@
 	*/
 	var/emptying = FALSE
 
-/obj/machinery/plumbing/acclimator/Initialize(mapload, bolt)
+/obj/machinery/plumbing/acclimator/bolted
+
+/obj/machinery/plumbing/acclimator/bolted/Initialize(mapload, bolt)
 	. = ..()
 	AddComponent(/datum/component/plumbing/acclimator, bolt)
 

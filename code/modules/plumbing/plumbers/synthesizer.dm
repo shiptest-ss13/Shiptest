@@ -46,7 +46,10 @@
 		/datum/reagent/fuel,
 	)
 
-/obj/machinery/plumbing/synthesizer/Initialize(mapload, bolt)
+
+/obj/machinery/plumbing/synthesizer/bolted
+
+/obj/machinery/plumbing/synthesizer/bolted/Initialize(mapload, bolt)
 	. = ..()
 	AddComponent(/datum/component/plumbing/simple_supply, bolt)
 

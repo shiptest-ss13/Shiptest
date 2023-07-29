@@ -67,7 +67,9 @@
 	rcd_cost = 5
 	rcd_delay = 5
 
-/obj/machinery/plumbing/input/Initialize(mapload, bolt)
+/obj/machinery/plumbing/input/bolted
+
+/obj/machinery/plumbing/input/bolted/Initialize(mapload, bolt)
 	. = ..()
 	AddComponent(/datum/component/plumbing/simple_supply, bolt)
 
@@ -80,7 +82,9 @@
 	rcd_cost = 5
 	rcd_delay = 5
 
-/obj/machinery/plumbing/output/Initialize(mapload, bolt)
+/obj/machinery/plumbing/output/bolted
+
+/obj/machinery/plumbing/output/bolted/Initialize(mapload, bolt)
 	. = ..()
 	AddComponent(/datum/component/plumbing/simple_demand, bolt)
 
@@ -92,6 +96,8 @@
 	rcd_cost = 25
 	rcd_delay = 20
 
-/obj/machinery/plumbing/tank/Initialize(mapload, bolt)
+/obj/machinery/plumbing/tank/bolted
+
+/obj/machinery/plumbing/tank/bolted/Initialize(mapload, bolt)
 	. = ..()
 	AddComponent(/datum/component/plumbing/tank, bolt)

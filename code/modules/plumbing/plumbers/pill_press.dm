@@ -28,6 +28,8 @@
 	///max amount of pills allowed on our tile before we start storing them instead
 	var/max_floor_products = 10
 
+/obj/machinery/plumbing/pill_press/bolted
+
 /obj/machinery/plumbing/pill_press/examine(mob/user)
 	. = ..()
 	. += "<span class='notice'>The [name] currently has [stored_products.len] stored. There needs to be less than [max_floor_products] on the floor to continue dispensing.</span>"

@@ -21,7 +21,9 @@
 	///volume of our internal buffer
 	var/volume = 200
 
-/obj/machinery/plumbing/liquid_pump/Initialize(mapload, bolt)
+/obj/machinery/plumbing/liquid_pump/bolted
+
+/obj/machinery/plumbing/liquid_pump/bolted/Initialize(mapload, bolt)
 	. = ..()
 	AddComponent(/datum/component/plumbing/simple_supply, bolt)
 
