@@ -13,7 +13,8 @@
 	name = "\improper Medibot"
 	desc = "A little medical robot. He looks somewhat underwhelmed."
 	icon = 'icons/mob/aibots.dmi'
-	icon_state = "medibot0"
+	icon_state = "medibot"
+	base_icon_state = "medibot"
 	density = FALSE
 	anchored = FALSE
 	health = 20
