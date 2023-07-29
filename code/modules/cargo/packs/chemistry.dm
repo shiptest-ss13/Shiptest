@@ -140,17 +140,37 @@
 /datum/supply_pack/chemistry/input_gate
 	name = "Input Gate"
 	desc = "An input gate for use in plumbing."
-	cost = 500
+	cost = 250
 	contains = list(/obj/machinery/plumbing/input)
 
 /datum/supply_pack/chemistry/output_gate
 	name = "Output Gate"
 	desc = "An output gate for use in plumbing."
-	cost = 500
+	cost = 250
 	contains = list(/obj/machinery/plumbing/output)
 
 /datum/supply_pack/chemistry/chemical_tank
 	name = "Chemical Tank"
 	desc = "A chemical tank for use in plumbing."
-	cost = 500
+	cost = 250
 	contains = list(/obj/machinery/plumbing/tank)
+
+/datum/supply_pack/chemistry/pill_press
+	name = "Pill Press"
+	desc = "A pill press for use in plumbing."
+	cost = 250
+	contains = list(/obj/machinery/plumbing/pill_press)
+
+/datum/supply_pack/chemistry/chemical_acclimator
+	name = "Chemical Acclimator"
+	desc = "A chemical acclimator for use in plumbing. Heats and cools chemicals."
+	cost = 250
+	contains = list(/obj/machinery/plumbing/acclimator)
+
+/datum/supply_pack/chemistry/liquid_pump
+	name = "Liquid Pump"
+	desc = "A liquid pump for use in plumbing. Install over geysers to harvest their contents after activating them with a plunger."
+	cost = 250
+	contains = list(/obj/machinery/plumbing/liquid_pump)
+
+
