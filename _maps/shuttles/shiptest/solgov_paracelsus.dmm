@@ -642,7 +642,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel,
-/area/ship/external/dark)
+/area/ship/cargo)
 "gX" = (
 /obj/structure/dresser,
 /obj/item/toy/plush/blahaj,
@@ -996,7 +996,7 @@
 	port_direction = 2
 	},
 /turf/closed/wall/mineral/titanium,
-/area/ship/external/dark)
+/area/ship/cargo)
 "kC" = (
 /obj/effect/turf_decal/corner/opaque/solgovblue{
 	dir = 9
@@ -1623,7 +1623,7 @@
 	pixel_y = 4
 	},
 /turf/closed/wall/mineral/titanium,
-/area/ship/external/dark)
+/area/ship/cargo)
 "qs" = (
 /obj/item/kirbyplants/random,
 /obj/effect/turf_decal/siding/wood,
@@ -2045,7 +2045,7 @@
 	dir = 4
 	},
 /turf/closed/wall/mineral/titanium,
-/area/ship/external/dark)
+/area/ship/cargo)
 "va" = (
 /obj/machinery/door/airlock{
 	name = "Cryogenic Storage"
@@ -3938,9 +3938,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/port)
-"MA" = (
-/turf/closed/wall/mineral/titanium,
-/area/ship/external/dark)
 "ME" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/closet/crate,
@@ -5297,6 +5294,13 @@
 	},
 /turf/open/floor/wood,
 /area/ship/hallway/starboard)
+"YD" = (
+/obj/machinery/advanced_airlock_controller{
+	pixel_x = -25;
+	pixel_y = 2
+	},
+/turf/open/floor/plasteel/mono,
+/area/ship/cargo)
 "YJ" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/shuttle,
@@ -5539,7 +5543,7 @@ wI
 wI
 qp
 uO
-MA
+ym
 gV
 kw
 wI
@@ -5571,7 +5575,7 @@ wI
 wI
 ym
 dj
-kR
+YD
 Kt
 ym
 wI
