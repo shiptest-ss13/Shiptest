@@ -78,3 +78,6 @@
 // Burn direction defines
 #define BURN_NONE 0
 #define BURN_STOP -1
+
+// The filepath used to store the admin-controlled next round outpost map override.
+#define OUTPOST_OVERRIDE_FILEPATH "data/outpost_override.json"

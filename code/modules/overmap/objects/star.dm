@@ -136,7 +136,7 @@
 
 /datum/overmap/star/binary
 	token_icon_state = "binaryswoosh"
-	token_desc = "Two stars, each locked the other's orbit. These systems form at stellar birth, and may persist long after one or both stars die."
+	token_desc = "Two stars, each locked in the other's orbit. These systems form at stellar birth, and may persist long after one or both stars die."
 	color_vary = 0.75
 
 /datum/overmap/star/binary/gen_star_name()
