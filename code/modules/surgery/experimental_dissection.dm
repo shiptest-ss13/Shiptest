@@ -124,6 +124,7 @@
 	name = "Experimental Dissection"
 	value_multiplier = 2
 	requires_tech = TRUE
+	replaced_by = null
 
 #undef BASE_HUMAN_REWARD
 #undef EXPDIS_FAIL_MSG
