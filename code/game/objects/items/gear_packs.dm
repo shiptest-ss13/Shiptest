@@ -11,6 +11,7 @@
 	item_flags = SLOWS_WHILE_IN_HAND
 	max_integrity = 300
 	slowdown = 1
+	drag_slowdown = 1
 	actions_types = list(/datum/action/item_action/toggle_attachment)
 	max_integrity = 200
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 30)
@@ -28,6 +29,7 @@
 
 /obj/item/gear_pack/Initialize()
 	. = ..()
+	drag_slowdown = slowdown
 	attachment = new attachment_type(src)
 	cell = new(src)
 	update_power()
