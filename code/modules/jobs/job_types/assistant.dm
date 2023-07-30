@@ -155,7 +155,7 @@ Assistant
 	shoes = /obj/item/clothing/shoes/combat
 	gloves = /obj/item/clothing/gloves/combat
 	ears = /obj/item/radio/headset/syndicate/alt
-	mask = /obj/item/clothing/mask/gas/syndicate/vc
+	mask = /obj/item/clothing/mask/gas/syndicate/voicechanger
 	r_pocket = /obj/item/kitchen/knife/combat/survival
 	back = /obj/item/storage/backpack
 	implants = list(/obj/item/implant/weapons_auth)
