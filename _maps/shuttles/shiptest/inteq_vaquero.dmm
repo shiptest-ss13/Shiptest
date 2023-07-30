@@ -778,7 +778,6 @@
 /obj/machinery/suit_storage_unit/inherit,
 /obj/item/clothing/suit/space/inteq,
 /obj/item/clothing/head/helmet/space/inteq,
-/obj/item/tank/jetpack/carbondioxide,
 /obj/effect/turf_decal/siding/thinplating/dark,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
@@ -902,7 +901,6 @@
 /obj/machinery/suit_storage_unit/inherit,
 /obj/item/clothing/suit/space/inteq,
 /obj/item/clothing/head/helmet/space/inteq,
-/obj/item/tank/jetpack/carbondioxide,
 /obj/machinery/airalarm/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/siding/thinplating/dark,
@@ -1038,6 +1036,11 @@
 	},
 /obj/machinery/power/terminal{
 	dir = 8
+	},
+/obj/item/stack/sheet/mineral/plasma/twenty,
+/obj/structure/closet/crate{
+	icon_state = "radiation";
+	name = "fuel crate"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -1515,13 +1518,12 @@
 	},
 /obj/structure/cable/yellow,
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/closet/crate{
-	icon_state = "radiation";
-	name = "fuel crate"
-	},
-/obj/item/stack/sheet/mineral/plasma/twenty,
 /obj/item/radio/intercom/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/suit_storage_unit/inherit,
+/obj/item/clothing/suit/space/inteq,
+/obj/item/clothing/head/helmet/space/inteq,
+/obj/item/tank/jetpack/carbondioxide,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "zO" = (
@@ -2850,7 +2852,6 @@
 /obj/machinery/suit_storage_unit/inherit,
 /obj/item/clothing/suit/space/inteq,
 /obj/item/clothing/head/helmet/space/inteq,
-/obj/item/tank/jetpack/carbondioxide,
 /obj/machinery/light/directional/north,
 /obj/effect/turf_decal/siding/thinplating/dark,
 /turf/open/floor/plasteel/tech,
@@ -3010,7 +3011,7 @@
 "Xb" = (
 /obj/machinery/door/airlock/command/glass{
 	name = "Bridge";
-	req_access_txt = "19"
+	req_access_txt = list(19, 3)
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
