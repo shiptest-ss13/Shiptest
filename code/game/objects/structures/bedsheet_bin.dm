@@ -365,7 +365,7 @@ LINEN BINS
 
 /obj/item/bedsheet/random/Initialize()
 	..()
-	var/type = pick(typesof(/obj/item/bedsheet) - /obj/item/bedsheet/random)
+	var/type = pick(typesof(/obj/item/bedsheet) - (typesof(/obj/item/bedsheet/double) + /obj/item/bedsheet/random))
 	new type(loc)
 	return INITIALIZE_HINT_QDEL
 
@@ -390,11 +390,7 @@ LINEN BINS
 				/obj/item/bedsheet/brown,
 				/obj/item/bedsheet/black))
 		if("Special")
-			type = pick(list(/obj/item/bedsheet/patriot,
-				/obj/item/bedsheet/rainbow,
-				/obj/item/bedsheet/ian,
-				/obj/item/bedsheet/cosmos,
-				/obj/item/bedsheet/nanotrasen))
+			type = /obj/item/bedsheet/rainbow
 	new type(loc)
 	return INITIALIZE_HINT_QDEL
 
