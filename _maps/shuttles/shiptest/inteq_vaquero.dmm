@@ -2845,6 +2845,10 @@
 	},
 /turf/open/floor/plating,
 /area/ship/crew/office)
+"SS" = (
+/obj/structure/closet/crate,
+/turf/open/floor/plasteel/patterned,
+/area/ship/cargo)
 "SW" = (
 /obj/structure/sign/warning/docking{
 	pixel_x = -9;
@@ -3042,6 +3046,22 @@
 /obj/effect/turf_decal/box/corners{
 	dir = 4
 	},
+/obj/structure/closet/crate,
+/obj/item/target/syndicate{
+	pixel_x = -5;
+	pixel_y = 10
+	},
+/obj/item/target{
+	pixel_y = 5
+	},
+/obj/item/target/alien{
+	pixel_x = 5
+	},
+/obj/item/clothing/ears/earmuffs{
+	pixel_x = 5;
+	pixel_y = 5
+	},
+/obj/item/clothing/ears/earmuffs,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "Xb" = (
@@ -3719,7 +3739,7 @@ Tn
 mR
 GI
 LQ
-vN
+SS
 Tc
 fC
 BT
