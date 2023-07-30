@@ -21,7 +21,7 @@ type FaxManagerData = {
 type FaxInfo = {
   fax_name: string;
   fax_id: string;
-  syndicate_network: boolean;
+  frontier_network: boolean;
 };
 
 type AdditionalFaxesList = {
@@ -72,7 +72,7 @@ export const FaxManager = (props, context) => {
             <Button
               key={fax.fax_id}
               title={fax.fax_name}
-              color={fax.syndicate_network ? 'red' : 'blue'}
+              color={fax.frontier_network ? 'red' : 'blue'}
               onClick={() => {
                 setSelectedFaxId(fax.fax_id);
                 setSelectedFaxName(fax.fax_name);

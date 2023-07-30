@@ -23,7 +23,7 @@
 	/// Defines a list of accesses whose owners can open a connection with the additional faxes.
 	var/static/access_additional_faxes_required = list(ACCESS_HEADS, ACCESS_LAWYER, ACCESS_SECURITY)
 	/// Necessary to hide syndicate faxes from the general list. Doesn't mean he's EMAGGED!
-	var/syndicate_network = FALSE
+	var/frontier_network = FALSE
 	/// True if the fax machine should be visible to other fax machines in general.
 	var/visible_to_network = TRUE
 	/// If true we will eject faxes at speed rather than sedately place them into a tray.
@@ -61,6 +61,14 @@
 		fax_name = "Unregistered fax " + fax_id
 	wires = new /datum/wires/fax(src)
 
+/obj/machinery/fax/hacked
+	set_obj_flags = "EMAGGED"
+	allow_exotic_faxes = TRUE
+	access_additional_faxes = TRUE
+
+/obj/machinery/fax/frontiersmen
+	frontier_network = TRUE
+
 /obj/machinery/fax/Destroy()
 	QDEL_NULL(loaded_item_ref)
 	QDEL_NULL(wires)
@@ -92,7 +100,7 @@
 
 /***
  * Emag the device if the panel is open.
- * Emag does not bring you into the syndicate network, but makes it visible to you.
+ * Emag does not bring you into the frontier network, but makes it visible to you.
  */
 /obj/machinery/fax/emag_act(mob/user)
 	if(!panel_open && !allow_exotic_faxes)
@@ -100,7 +108,7 @@
 		return TRUE
 	if(!(obj_flags & EMAGGED))
 		obj_flags |= EMAGGED
-		to_chat(user, "<span class='warning'>An image appears on [src] screen for a moment with Ian in the cap of a Syndicate officer.</span>")
+		to_chat(user, "<span class='warning'>The screen of the [src] flickers!</span>")
 
 /obj/machinery/fax/wrench_act(mob/living/user, obj/item/tool)
 	. = ..()
@@ -128,7 +136,7 @@
 	if(new_fax_name != fax_name)
 		if(fax_name_exist(new_fax_name))
 			// Being able to set the same name as another fax machine will give a lot of gimmicks for the traitor.
-			if(syndicate_network != TRUE && obj_flags != EMAGGED)
+			if(frontier_network != TRUE && obj_flags != EMAGGED)
 				to_chat(user, "<span class='warning'>There is already a fax machine with this name on the network.</span>")
 				return
 		user.log_message("renamed [fax_name] (fax machine) to [new_fax_name]", LOG_GAME)
@@ -229,7 +237,7 @@
 /obj/machinery/fax/ui_static_data(mob/user)
 	var/list/data = list()
 	data["additional_faxes_list"] = GLOB.additional_faxes_list
-	data["syndicate_faxes_list"] = GLOB.syndicate_faxes_list
+	data["frontier_faxes_list"] = GLOB.frontier_faxes_list
 	return data
 
 /obj/machinery/fax/ui_data(mob/user)
@@ -243,8 +251,8 @@
 		fax_data["fax_id"] = fax.fax_id
 		fax_data["visible"] = fax.visible_to_network
 		fax_data["has_paper"] = !!fax.loaded_item_ref?.resolve()
-		// Hacked doesn't mean on the syndicate network.
-		fax_data["syndicate_network"] = fax.syndicate_network
+		// Hacked doesn't mean on the frontier network.
+		fax_data["frontier_network"] = fax.frontier_network
 		data["faxes"] += list(fax_data)
 
 	// Own data
@@ -254,7 +262,7 @@
 	data["access_additional_faxes"] = access_additional_faxes
 	data["сan_switch_access"] = access_additional_faxes_check(user)
 	// In this case, we don't care if the fax is hacked or in the syndicate's network. The main thing is to check the visibility of other faxes.
-	data["syndicate_network"] = (syndicate_network || (obj_flags & EMAGGED))
+	data["frontier_network"] = (frontier_network || (obj_flags & EMAGGED))
 	data["has_paper"] = !!loaded_item_ref?.resolve()
 	data["fax_history"] = fax_history
 	return data

@@ -12,8 +12,8 @@ type FaxData = {
   сan_switch_access: boolean;
   additional_faxes_list: AdditionalFaxesList[];
   visible: boolean;
-  syndicate_network: boolean;
-  syndicate_faxes_list: AdditionalFaxesList[];
+  frontier_network: boolean;
+  frontier_faxes_list: AdditionalFaxesList[];
   fax_history: FaxHistory[];
 };
 
@@ -22,7 +22,7 @@ type FaxInfo = {
   fax_id: string;
   visible: boolean;
   has_paper: boolean;
-  syndicate_network: boolean;
+  frontier_network: boolean;
 };
 
 type AdditionalFaxesList = {
@@ -41,11 +41,11 @@ export const Fax = (props, context) => {
   const { data } = useBackend<FaxData>(context);
   const faxes = data.faxes
     ? sortBy((sortFax: FaxInfo) => sortFax.fax_name)(
-        data.syndicate_network
+        data.frontier_network
           ? data.faxes.filter((filterFax: FaxInfo) => filterFax.visible)
           : data.faxes.filter(
               (filterFax: FaxInfo) =>
-                filterFax.visible && !filterFax.syndicate_network
+                filterFax.visible && !filterFax.frontier_network
             )
       )
     : [];
@@ -111,8 +111,8 @@ export const Fax = (props, context) => {
                   {fax.fax_name}
                 </Button>
               ))}
-            {!!data.syndicate_network &&
-              data.syndicate_faxes_list.map((fax: AdditionalFaxesList) => (
+            {!!data.frontier_network &&
+              data.frontier_faxes_list.map((fax: AdditionalFaxesList) => (
                 <Button
                   key={fax.fax_name}
                   title={fax.fax_name}
@@ -133,7 +133,7 @@ export const Fax = (props, context) => {
                 key={fax.fax_id}
                 title={fax.fax_name}
                 disabled={!data.has_paper}
-                color={fax.syndicate_network ? 'red' : 'blue'}
+                color={fax.frontier_network ? 'red' : 'blue'}
                 onClick={() =>
                   act('send', {
                     id: fax.fax_id,

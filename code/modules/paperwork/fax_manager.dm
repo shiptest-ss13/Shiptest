@@ -28,7 +28,7 @@ GLOBAL_DATUM_INIT(fax_manager, /datum/fax_manager, new)
 /datum/fax_manager/ui_static_data(mob/user)
 	var/list/data = list()
 	//Record additional faxes on a separate list
-	data["additional_faxes"] = GLOB.additional_faxes_list + GLOB.syndicate_faxes_list
+	data["additional_faxes"] = GLOB.additional_faxes_list + GLOB.frontier_faxes_list
 	return data
 
 /datum/fax_manager/ui_data(mob/user)
@@ -38,7 +38,7 @@ GLOBAL_DATUM_INIT(fax_manager, /datum/fax_manager, new)
 		var/list/fax_data = list()
 		fax_data["fax_name"] = fax.fax_name
 		fax_data["fax_id"] = fax.fax_id
-		fax_data["syndicate_network"] = fax.syndicate_network
+		fax_data["frontier_network"] = fax.frontier_network
 		data["faxes"] += list(fax_data)
 	for(var/list/requested in requests)
 		var/list/request = list()
@@ -71,7 +71,7 @@ GLOBAL_DATUM_INIT(fax_manager, /datum/fax_manager, new)
 			for(var/obj/machinery/fax/fax in GLOB.machines)
 				if(fax.fax_id == params["fax_id"])
 					// admin_datum.ADMIN_FLW(fax)
-					log_admin("IOU a properly coded fax manager :)")
+					message_admins("IOU a properly coded fax manager :)")
 					return TRUE
 		if("read_message")
 			var/list/request = get_request(params["id_message"])
@@ -81,7 +81,7 @@ GLOBAL_DATUM_INIT(fax_manager, /datum/fax_manager, new)
 		if("flw")
 			// var/list/request = get_request(params["id_message"])
 			// admin_datum.ADMIN_FLW(request["sender"])
-			log_admin("IOU a properly coded fax manager :)")
+			message_admins("IOU a properly coded fax manager :)")
 			return TRUE
 		if("pp")
 			var/list/request = get_request(params["id_message"])
