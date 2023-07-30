@@ -56,7 +56,7 @@ GLOBAL_DATUM_INIT(fax_manager, /datum/fax_manager, new)
 	. = ..()
 	if(.)
 		return
-	// var/datum/admins/admin_datum = GLOB.admin_datums[usr.ckey]
+	var/datum/admins/admin_datum = GLOB.admin_datums[usr.ckey]
 
 	switch(action)
 		if("send")
@@ -70,8 +70,7 @@ GLOBAL_DATUM_INIT(fax_manager, /datum/fax_manager, new)
 		if("flw_fax")
 			for(var/obj/machinery/fax/fax in GLOB.machines)
 				if(fax.fax_id == params["fax_id"])
-					// admin_datum.ADMIN_FLW(fax)
-					message_admins("IOU a properly coded fax manager :)")
+					admin_datum.admin_follow(fax)
 					return TRUE
 		if("read_message")
 			var/list/request = get_request(params["id_message"])
@@ -79,9 +78,8 @@ GLOBAL_DATUM_INIT(fax_manager, /datum/fax_manager, new)
 			paper.ui_interact(usr)
 			return TRUE
 		if("flw")
-			// var/list/request = get_request(params["id_message"])
-			// admin_datum.ADMIN_FLW(request["sender"])
-			message_admins("IOU a properly coded fax manager :)")
+			var/list/request = get_request(params["id_message"])
+			admin_datum.admin_follow(request["sender"])
 			return TRUE
 		if("pp")
 			var/list/request = get_request(params["id_message"])

@@ -1,5 +1,5 @@
 /obj/machinery/fax
-	name = "Fax Machine"
+	name = "\improper fax machine"
 	desc = "Bluespace technologies on the application of bureaucracy."
 	icon = 'icons/obj/fax.dmi'
 	icon_state = "fax"
