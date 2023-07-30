@@ -138,10 +138,10 @@
 	icon_state = "engineering"
 	build_path = /obj/machinery/computer/monitor/secret
 
-/obj/item/circuitboard/computer/sat_control
-	name = "Satellite Network Control (Computer Board)"
+/obj/item/circuitboard/computer/meteor_shield
+	name = "Meteor Defense Grid Control (Computer Board)"
 	icon_state = "engineering"
-	build_path = /obj/machinery/computer/sat_control
+	build_path = /obj/machinery/computer/meteor_shield
 
 /obj/item/circuitboard/computer/solar_control
 	name = "Solar Control (Computer Board)"  //name fixed 250810
