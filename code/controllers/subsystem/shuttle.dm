@@ -324,8 +324,8 @@ SUBSYSTEM_DEF(shuttle)
 		for(var/obj/docking_port/P in T)
 			if(istype(P, /obj/docking_port/mobile))
 				if(new_shuttle)
+					stack_trace("Map warning: Shuttle Template [template.mappath] has multiple mobile docking ports.")
 					qdel(P, TRUE)
-					log_world("Map warning: Shuttle Template [template.mappath] has multiple mobile docking ports.")
 				else
 					new_shuttle = P
 			if(istype(P, /obj/docking_port/stationary))

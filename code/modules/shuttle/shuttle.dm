@@ -371,7 +371,9 @@
 	assigned_transit = null
 	for(var/port in docking_points)
 		qdel(port, TRUE)
-	docking_points.Cut()
+	//This is only null checked for the very snowflakey reason that it might be deleted before it's loaded properly.
+	//See the middle of /datum/controller/subsystem/shuttle/proc/load_template() for an example.
+	docking_points?.Cut()
 
 	//VERY important proc. Should probably get folded into this one, but oh well.
 	//Requires the shuttle areas list and the towed_shuttles list, and will clear the latter.
