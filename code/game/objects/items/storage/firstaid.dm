@@ -150,10 +150,6 @@
 	user.visible_message("<span class='suicide'>[user] begins rubbing \the [src] against [user.p_them()]self! It looks like [user.p_theyre()] trying to start a fire!</span>")
 	return FIRELOSS
 
-/obj/item/storage/firstaid/fire/Initialize(mapload)
-	. = ..()
-	icon_state = pick("ointment","firefirstaid")
-
 /obj/item/storage/firstaid/fire/PopulateContents()
 	if(empty)
 		return
@@ -175,10 +171,6 @@
 /obj/item/storage/firstaid/toxin/suicide_act(mob/living/carbon/user)
 	user.visible_message("<span class='suicide'>[user] begins licking the lead paint off \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	return TOXLOSS
-
-/obj/item/storage/firstaid/toxin/Initialize(mapload)
-	. = ..()
-	icon_state = pick("antitoxin","antitoxfirstaid","antitoxfirstaid2")
 
 /obj/item/storage/firstaid/toxin/PopulateContents()
 	if(empty)
@@ -203,10 +195,6 @@
 	user.visible_message("<span class='suicide'>[user] begins hitting [user.p_their()] neck with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	return OXYLOSS
 
-/obj/item/storage/firstaid/o2/Initialize(mapload)
-	. = ..()
-	icon_state = pick("o2","o2second")
-
 /obj/item/storage/firstaid/o2/PopulateContents()
 	if(empty)
 		return
@@ -230,9 +218,6 @@
 	user.visible_message("<span class='suicide'>[user] begins beating [user.p_them()]self over the head with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	return BRUTELOSS
 
-/obj/item/storage/firstaid/brute/Initialize(mapload)
-	. = ..()
-	icon_state = pick("brute","brute2")
 
 /obj/item/storage/firstaid/brute/PopulateContents()
 	if(empty)
@@ -299,13 +284,15 @@
 
 	var/obj/item/bot_assembly/medbot/A = new
 	if(istype(src, /obj/item/storage/firstaid/fire))
-		A.set_skin("ointment")
+		A.set_skin("medibot_burn")
 	else if(istype(src, /obj/item/storage/firstaid/toxin))
-		A.set_skin("tox")
+		A.set_skin("medibot_toxin")
 	else if(istype(src, /obj/item/storage/firstaid/o2))
-		A.set_skin("o2")
+		A.set_skin("medibot_o2")
 	else if(istype(src, /obj/item/storage/firstaid/brute))
-		A.set_skin("brute")
+		A.set_skin("medibot_brute")
+	else if(istype(src, /obj/item/storage/firstaid/tactical))
+		A.set_skin("medibot_bezerk")
 	user.put_in_hands(A)
 	to_chat(user, "<span class='notice'>You add [S] to [src].</span>")
 	A.robot_arm = S.type
