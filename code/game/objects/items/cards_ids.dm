@@ -581,6 +581,11 @@ update_label()
 	access = list(ACCESS_SYNDICATE, ACCESS_ROBOTICS, ACCESS_ARMORY, ACCESS_SYNDICATE_LEADER)
 	uses_overlays = FALSE
 
+/obj/item/card/id/patient //Aegis ID
+	assignment = "Long Term Patient"
+	uses_overlays = FALSE
+	access = list(ACCESS_SYNDICATE)
+
 /obj/item/card/id/captains_spare
 	desc = "The spare ID of the High Lord himself."
 	icon_state = "gold"

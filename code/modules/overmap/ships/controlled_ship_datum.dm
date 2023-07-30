@@ -95,6 +95,10 @@
 			if(!shuttle_port) //Loading failed, if the shuttle is supposed to be created, we need to delete ourselves.
 				qdel(src) // Can't return INITIALIZE_HINT_QDEL here since this isn't ACTUAL initialisation. Considering changing the name of the proc.
 				return
+			if(istype(position, /datum/overmap))
+				docked_to = null // Dock() complains if you're already docked to something when you Dock, even on force
+				Dock(position, TRUE)
+
 			refresh_engines()
 		ship_account = new(name, source_template.starting_funds)
 
@@ -280,7 +284,10 @@
 		UnregisterSignal(owner_mob, COMSIG_MOB_LOGOUT)
 		UnregisterSignal(owner_mob, COMSIG_MOB_GO_INACTIVE)
 		// testing trace because i am afraid
-		if(owner_mob.mind != owner_mind) // minds should never be changed without a key change and associated logout signal
+		if(owner_mob.mind && owner_mob.mind != owner_mind)
+			// moving minds means moving keys; if this trips, a mind moved without a key move for us to pick up on
+			// when transferring mind from one body to another, source mob's mind is set to null before the transfer. thus the null check
+			// i'm going to be honest i don't have a fucking clue if this code works. mind code is hell
 			stack_trace("[src]'s owner mob [owner_mob] (mind [owner_mob.mind], player [owner_mob.mind.key]) silently changed its mind from [owner_mind] (player [owner_mind.key])!")
 		owner_act.Remove(owner_mob)
 
@@ -289,14 +296,17 @@
 		owner_mind = null
 		if(owner_act)
 			QDEL_NULL(owner_act)
-		// this gets automatically deleted in /datum/Destroy() if we are being destroyed
-		owner_check_timer_id = addtimer(CALLBACK(src, .proc/check_owner), 5 MINUTES, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
+		// turns out that timers don't get added to active_timers if the datum is getting qdeleted.
+		// so this timer was sitting around after deletion and clogging up runtime logs. thus, the QDELING() check. oops!
+		if(!owner_check_timer_id && !QDELING(src))
+			owner_check_timer_id = addtimer(CALLBACK(src, .proc/check_owner), 5 MINUTES, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
 		return
 
 	owner_mob = new_owner
 	owner_mind = owner_mob.mind
 	if(owner_check_timer_id) // we know we have an owner since we didn't return up there
 		deltimer(owner_check_timer_id)
+		owner_check_timer_id = null
 
 	// testing trace
 	// not 100% sure this is needed

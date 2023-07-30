@@ -215,6 +215,12 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 	if(GLOB.areas_by_type[type] == src)
 		GLOB.areas_by_type[type] = null
 	STOP_PROCESSING(SSobj, src)
+	// this isn't necessarily stable, because an area's "z" value
+	// may change during gameplay if new turfs get added to it.
+	// but if it IS on that z-level, we should remove it
+	var/list/z_areas = SSmapping.areas_in_z["[z]"]
+	if(z_areas)
+		z_areas.Remove(src)
 	return ..()
 
 /**

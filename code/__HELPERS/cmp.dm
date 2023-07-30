@@ -136,3 +136,9 @@ GLOBAL_VAR_INIT(cmp_field, "name")
 
 /proc/cmp_pdajob_asc(obj/item/pda/A, obj/item/pda/B)
 	return sorttext(B.ownjob, A.ownjob)
+
+// Effectively sorts first ascending by dock width, then ascending by dock height.
+/proc/cmp_hangarsize_asc(datum/map_template/outpost/hangar/A, datum/map_template/outpost/hangar/B)
+	if(A.dock_width == B.dock_width)
+		return A.dock_height - B.dock_height
+	return A.dock_width - B.dock_width
