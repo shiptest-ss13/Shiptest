@@ -807,7 +807,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/structure/closet/crate/freezer/surplus_limbs,
+/obj/structure/closet/crate/freezer/surplus_limbs/organs,
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo/office)
 "is" = (
@@ -1855,11 +1855,11 @@
 	pixel_x = -7;
 	pixel_y = -2
 	},
-/obj/item/spacecash/bundle/mediumrand{
+/obj/machinery/recharger,
+/obj/item/spacecash/bundle/loadsamoney{
 	pixel_x = 5;
 	pixel_y = 8
 	},
-/obj/machinery/recharger,
 /turf/open/floor/wood/mahogany,
 /area/ship/bridge)
 "sp" = (
@@ -3254,6 +3254,13 @@
 /obj/structure/table/wood,
 /obj/machinery/airalarm/directional/north,
 /obj/machinery/reagentgrinder,
+/obj/item/reagent_containers/food/condiment/saltshaker{
+	pixel_x = -17
+	},
+/obj/item/reagent_containers/food/condiment/peppermill{
+	pixel_x = -10;
+	pixel_y = 6
+	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
 "FL" = (
@@ -3494,6 +3501,9 @@
 /obj/structure/table/wood,
 /obj/machinery/microwave{
 	pixel_y = 5
+	},
+/obj/structure/sign/poster/solgov/random{
+	pixel_y = 30
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
@@ -4444,6 +4454,9 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/airalarm/directional/east,
 /obj/structure/chair/wood,
+/obj/structure/sign/poster/solgov/random{
+	pixel_y = 30
+	},
 /turf/open/floor/wood/ebony,
 /area/ship/hallway/starboard)
 "Rs" = (
