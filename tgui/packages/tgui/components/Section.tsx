@@ -4,46 +4,44 @@
  * @license MIT
  */
 
-import { BoxProps, computeBoxClassName, computeBoxProps } from './Box';
-import { Component, InfernoNode, RefObject, createRef } from 'inferno';
-import { addScrollableNode, removeScrollableNode } from '../events';
 import { canRender, classes } from 'common/react';
+import { Component, createRef, RefObject } from 'inferno';
+import { addScrollableNode, removeScrollableNode } from '../events';
+import { BoxProps, computeBoxClassName, computeBoxProps } from './Box';
+import type { Inferno } from 'inferno';
 
-export type SectionProps = BoxProps & {
+interface SectionProps extends BoxProps {
   className?: string;
-  title?: InfernoNode;
-  buttons?: InfernoNode;
+  title?: string;
+  buttons?: Inferno.InfernoNode;
   fill?: boolean;
   fitted?: boolean;
   scrollable?: boolean;
-  scrollableHorizontal?: boolean;
   /** @deprecated This property no longer works, please remove it. */
-  level?: never;
+  level?: boolean;
   /** @deprecated Please use `scrollable` property */
-  overflowY?: never;
+  overflowY?: any;
   /** @member Allows external control of scrolling. */
   scrollableRef?: RefObject<HTMLDivElement>;
   /** @member Callback function for the `scroll` event */
   onScroll?: (this: GlobalEventHandlers, ev: Event) => any;
-};
+}
 
 export class Section extends Component<SectionProps> {
   scrollableRef: RefObject<HTMLDivElement>;
   scrollable: boolean;
   onScroll?: (this: GlobalEventHandlers, ev: Event) => any;
-  scrollableHorizontal: boolean;
 
   constructor(props) {
     super(props);
     this.scrollableRef = props.scrollableRef || createRef();
     this.scrollable = props.scrollable;
     this.onScroll = props.onScroll;
-    this.scrollableHorizontal = props.scrollableHorizontal;
   }
 
   componentDidMount() {
-    if (this.scrollable || this.scrollableHorizontal) {
-      addScrollableNode(this.scrollableRef.current as HTMLElement);
+    if (this.scrollable) {
+      addScrollableNode(this.scrollableRef.current);
       if (this.onScroll && this.scrollableRef.current) {
         this.scrollableRef.current.onscroll = this.onScroll;
       }
@@ -51,8 +49,8 @@ export class Section extends Component<SectionProps> {
   }
 
   componentWillUnmount() {
-    if (this.scrollable || this.scrollableHorizontal) {
-      removeScrollableNode(this.scrollableRef.current as HTMLElement);
+    if (this.scrollable) {
+      removeScrollableNode(this.scrollableRef.current);
     }
   }
 
@@ -63,10 +61,9 @@ export class Section extends Component<SectionProps> {
       buttons,
       fill,
       fitted,
+      independent,
       scrollable,
-      scrollableHorizontal,
       children,
-      onScroll,
       ...rest
     } = this.props;
     const hasTitle = canRender(title) || canRender(buttons);
@@ -78,7 +75,7 @@ export class Section extends Component<SectionProps> {
           fill && 'Section--fill',
           fitted && 'Section--fitted',
           scrollable && 'Section--scrollable',
-          scrollableHorizontal && 'Section--scrollableHorizontal',
+          independent && 'Section--independent',
           className,
           computeBoxClassName(rest),
         ])}
@@ -91,11 +88,7 @@ export class Section extends Component<SectionProps> {
           </div>
         )}
         <div className="Section__rest">
-          <div
-            ref={this.scrollableRef}
-            onScroll={onScroll}
-            className="Section__content"
-          >
+          <div ref={this.scrollableRef} className="Section__content">
             {children}
           </div>
         </div>
