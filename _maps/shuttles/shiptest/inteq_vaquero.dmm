@@ -246,7 +246,7 @@
 /obj/structure/closet/secure_closet{
 	icon_state = "armory";
 	name = "weapons locker";
-	req_access_txt = "1"
+	req_access_txt = "3"
 	},
 /obj/machinery/light/small/directional/north,
 /obj/item/ammo_box/magazine/co9mm{
@@ -1320,7 +1320,8 @@
 /area/ship/cargo)
 "wU" = (
 /obj/machinery/door/airlock/maintenance_hatch{
-	name = "Starboard Engines"
+	name = "Starboard Engines";
+	req_access_txt = "12"
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2169,9 +2170,9 @@
 "HN" = (
 /obj/structure/closet/secure_closet/wall{
 	icon_door = "med_wall";
-	locked = 0;
 	name = "medical locker";
-	pixel_y = 28
+	pixel_y = 28;
+	req_access_txt = "5"
 	},
 /obj/item/storage/firstaid/regular{
 	pixel_x = 6;
@@ -2534,7 +2535,8 @@
 /area/ship/security)
 "NV" = (
 /obj/machinery/door/airlock/maintenance_hatch{
-	name = "Port Engines"
+	name = "Port Engines";
+	req_access_txt = "12"
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2569,7 +2571,7 @@
 	dir = 4;
 	id_tag = "colossus_armory";
 	name = "Armory";
-	req_access_txt = "1"
+	req_access_txt = "3"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
