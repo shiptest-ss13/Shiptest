@@ -311,6 +311,8 @@
 	overlays_file = 'icons/obj/doors/airlocks/shuttle/old_overlays.dmi'
 	normal_integrity = 400
 	has_hatch = FALSE
+	smoothing_groups = list(SMOOTH_GROUP_AIRLOCK,SMOOTH_GROUP_TITANIUM_WALLS_EXTERIOR)
+
 
 /obj/machinery/door/airlock/titanium/glass
 	normal_integrity = 350
