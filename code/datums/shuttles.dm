@@ -408,3 +408,8 @@
 	file_name = "independent_sugarcube"
 	name = "Sugarcube Transport"
 	prefix = "ISV"
+
+/datum/map_template/shuttle/subshuttles/rock
+	file_name = "independent_rock"
+	name = "Rock Shuttle"
+	prefix = "NTS"
