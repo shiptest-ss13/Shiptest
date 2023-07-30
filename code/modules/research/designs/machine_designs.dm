@@ -653,6 +653,14 @@
 	build_path = /obj/item/circuitboard/machine/shieldwallgen/atmos
 	category = list("Misc. Machinery")
 
+/datum/design/board/fax
+	name = "Machine Design (Fax Machine)"
+	desc = "The circuit board for a fax machine."
+	id = "fax"
+	build_path = /obj/item/circuitboard/machine/fax
+	category = list ("Misc. Machinery")
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_SERVICE
+
 ///////////////////////////////////////////
 //////////////Shuttle Boards///////////////
 ///////////////////////////////////////////

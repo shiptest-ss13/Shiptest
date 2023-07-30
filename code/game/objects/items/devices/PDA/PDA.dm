@@ -985,7 +985,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 		if(!PP.get_total_length())
 			to_chat(user, "<span class='warning'>Unable to scan! Paper is blank.</span>")
 			return
-		notehtml = PP.raw_text_inputs
+		notehtml = PP.get_raw_text()
 		note = replacetext(notehtml, "<BR>", "\[br\]")
 		note = replacetext(note, "<li>", "\[*\]")
 		note = replacetext(note, "<ul>", "\[list\]")
