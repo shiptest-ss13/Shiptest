@@ -45,10 +45,32 @@
 	var/color_mode = PHOTO_COLOR
 	/// Indicates whether the printer is currently busy copying or not.
 	var/busy = FALSE
+	/// Variable needed to determine the selected category of forms on Photocopier.js
+	var/category
 
 /obj/machinery/photocopier/Initialize()
 	. = ..()
 	toner_cartridge = new(src)
+
+/obj/machinery/photocopier/handle_atom_del(atom/deleting_atom)
+	if(deleting_atom == paper_copy)
+		paper_copy = null
+	if(deleting_atom == photo_copy)
+		photo_copy = null
+	if(deleting_atom == document_copy)
+		document_copy = null
+	if(deleting_atom == ass)
+		ass = null
+	if(deleting_atom == toner_cartridge)
+		toner_cartridge = null
+	return ..()
+
+/obj/machinery/photocopier/Destroy()
+	QDEL_NULL(paper_copy)
+	QDEL_NULL(photo_copy)
+	QDEL_NULL(toner_cartridge)
+	ass = null //the mob isn't actually contained and just referenced, no need to delete it.
+	return ..()
 
 /obj/machinery/photocopier/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
@@ -60,6 +82,18 @@
 	var/list/data = list()
 	data["has_item"] = !copier_empty()
 	data["num_copies"] = num_copies
+
+	try
+		var/list/blanks = json_decode(file2text("config/blanks.json"))
+		if (blanks != null)
+			data["blanks"] = blanks
+			data["category"] = category
+			data["forms_exist"] = TRUE
+		else
+			data["forms_exist"] = FALSE
+	catch()
+		data["forms_exist"] = FALSE
+
 
 	if(photo_copy)
 		data["is_photo"] = TRUE
@@ -165,6 +199,27 @@
 		if("set_copies")
 			num_copies = clamp(text2num(params["num_copies"]), 1, MAX_COPIES_AT_ONCE)
 			return TRUE
+		// Changes the forms displayed on Photocopier.js when you switch categories
+		if("choose_category")
+			category = params["category"]
+			return TRUE
+		// Called when you press print blank
+		if("print_blank")
+			if(busy)
+				to_chat(usr, span_warning("[src] is currently busy copying something. Please wait until it is finished."))
+				return FALSE
+			if (toner_cartridge.charges - PAPER_TONER_USE < 0)
+				to_chat(usr, span_warning("There is not enough toner in [src] to print the form, please replace the cartridge."))
+				return FALSE
+			do_copy_loop(CALLBACK(src, .proc/make_blank_print), usr)
+			var/obj/item/paper/printblank = new /obj/item/paper (loc)
+			var/printname = params["name"]
+			var/list/printinfo
+			for(var/infoline as anything in params["info"])
+				printinfo += infoline
+			printblank.name = printname
+			printblank.add_raw_text(printinfo)
+			return printblank
 
 /**
  * Determines if the photocopier has enough toner to create `num_copies` amount of copies of the currently inserted item.
@@ -277,6 +332,12 @@
 	toner_cartridge.charges -= DOCUMENT_TONER_USE
 
 	return copied_doc
+
+/**
+ * The procedure is called when printing a blank to write off toner consumption.
+ */
+/obj/machinery/photocopier/proc/make_blank_print()
+	toner_cartridge.charges -= PAPER_TONER_USE
 
 /**
  * Handles the copying of an ass photo.

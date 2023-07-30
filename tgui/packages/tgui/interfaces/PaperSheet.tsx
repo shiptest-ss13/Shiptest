@@ -112,6 +112,8 @@ const fieldRegex: RegExp = /\[((?:_+))\]/gi;
 // Handles the ghost stamp when attempting to stamp paper sheets.
 class PaperSheetStamper extends Component<PaperSheetStamperProps> {
   style: null;
+  // It works on TG for almost 4 months as of November 2022, so it's probably fine.
+  // eslint-disable-next-line react/state-in-constructor
   state: PaperSheetStamperState = { x: 0, y: 0, rotation: 0, yOffset: 0 };
   scrollableRef: RefObject<HTMLDivElement>;
 
@@ -243,7 +245,7 @@ class PaperSheetStamper extends Component<PaperSheetStamperProps> {
 }
 
 // Creates a full stamp div to render the given stamp to the preview.
-export const Stamp = (props, context): InfernoElement<HTMLDivElement> => {
+export const Stamp = (props, context) => {
   const { activeStamp, sprite, x, y, rotation, opacity, yOffset = 0 } = props;
   const stamp_transform = {
     'left': x + 'px',
@@ -822,7 +824,7 @@ export class PreviewView extends Component<PreviewViewProps> {
     let input = document.createElement('input');
     input.setAttribute('type', 'text');
 
-    input.style.fontSize = field.is_signature ? '30px' : `${fontSize}px`;
+    input.style.fontSize = field.is_signature ? '12px' : `${fontSize}px`;
     input.style.fontFamily = fieldData.font || font;
     input.style.fontStyle = field.is_signature ? 'italic' : 'normal';
     input.style.fontWeight = 'bold';
