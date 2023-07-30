@@ -135,10 +135,6 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	var/list/list_reagents = list(/datum/reagent/drug/nicotine = 15)
 	var/lung_harm = 0.1 //How bad it is for you
 
-/obj/item/clothing/mask/cigarette/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is huffing [src] as quickly as [user.p_they()] can! It looks like [user.p_theyre()] trying to give [user.p_them()]self cancer.</span>")
-	return (TOXLOSS|OXYLOSS)
-
 /obj/item/clothing/mask/cigarette/Initialize()
 	. = ..()
 	create_reagents(chem_volume, INJECTABLE | NO_REACT)
@@ -605,15 +601,6 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		return
 	set_lit(FALSE)
 
-/obj/item/lighter/suicide_act(mob/living/carbon/user)
-	if (lit)
-		user.visible_message("<span class='suicide'>[user] begins holding \the [src]'s flame up to [user.p_their()] face! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-		playsound(src, 'sound/items/welder.ogg', 50, TRUE)
-		return FIRELOSS
-	else
-		user.visible_message("<span class='suicide'>[user] begins whacking [user.p_them()]self with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-		return BRUTELOSS
-
 /obj/item/lighter/update_overlays()
 	. = ..()
 	. += create_lighter_overlay()
@@ -857,11 +844,6 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	var/super = 0 //for the fattest vapes dude.
 	var/vapecolor //What color the vape should be. If this is not filled out it will automatically be set on Initialize() - WS edit - Lightable e-cigarettes
 	var/overlayname = "vape" //Used to decide what overlay sprites to use - WS edit - Lightable e-cigarettes
-
-/obj/item/clothing/mask/vape/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is puffin hard on dat vape, [user.p_they()] trying to join the vape life on a whole notha plane!</span>")//it doesn't give you cancer, it is cancer
-	return (TOXLOSS|OXYLOSS)
-
 
 /obj/item/clothing/mask/vape/Initialize(mapload, param_color)
 	. = ..()

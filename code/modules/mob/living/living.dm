@@ -643,7 +643,6 @@
 	if(stat == DEAD && can_be_revived()) //in some cases you can't revive (e.g. no brain)
 		remove_from_dead_mob_list()
 		add_to_alive_mob_list()
-		set_suicide(FALSE)
 		set_stat(UNCONSCIOUS) //the mob starts unconscious,
 		updatehealth() //then we check if the mob should wake up.
 		update_sight()

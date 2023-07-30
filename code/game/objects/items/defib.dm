@@ -379,13 +379,6 @@
 	busy = FALSE
 	update_icon()
 
-/obj/item/shockpaddles/suicide_act(mob/user)
-	user.visible_message("<span class='danger'>[user] is putting the live paddles on [user.p_their()] chest! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	if(req_defib)
-		defib.deductcharge(revivecost)
-	playsound(src, 'sound/machines/defib_zap.ogg', 50, TRUE, -1)
-	return (OXYLOSS)
-
 /obj/item/shockpaddles/update_icon_state()
 	icon_state = "[base_icon_state][wielded]"
 	item_state = icon_state
@@ -572,9 +565,8 @@
 				shock_touching(30, H)
 				var/failed
 
-				if (H.suiciding)
-					failed = "<span class='warning'>[req_defib ? "[defib]" : "[src]"] buzzes: Resuscitation failed - Recovery of patient impossible. Further attempts futile.</span>"
-				else if (H.hellbound)
+
+				if (H.hellbound)
 					failed = "<span class='warning'>[req_defib ? "[defib]" : "[src]"] buzzes: Resuscitation failed - Patient's soul appears to be on another plane of existence. Further attempts futile.</span>"
 				else if (!heart)
 					failed = "<span class='warning'>[req_defib ? "[defib]" : "[src]"] buzzes: Resuscitation failed - Patient's heart is missing.</span>"
@@ -587,8 +579,6 @@
 					if(BR)
 						if(BR.organ_flags & ORGAN_FAILING)
 							failed = "<span class='warning'>[req_defib ? "[defib]" : "[src]"] buzzes: Resuscitation failed - Patient's brain is too damaged, repair and try again. </span>"
-						if(BR.suicided || BR.brainmob?.suiciding)
-							failed = "<span class='warning'>[req_defib ? "[defib]" : "[src]"] buzzes: Resuscitation failed - No intelligence pattern can be detected in patient's brain. Further attempts futile.</span>"
 					else
 						failed = "<span class='warning'>[req_defib ? "[defib]" : "[src]"] buzzes: Resuscitation failed - Patient's brain is missing. Further attempts futile.</span>"
 
