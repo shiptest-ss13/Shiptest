@@ -249,11 +249,11 @@ GLOBAL_VAR(restart_counter)
 
 	TgsReboot()
 
-	#ifdef UNIT_TESTS
+#ifdef UNIT_TESTS
 	FinishTestRun()
 	return
-	#endif
 
+#else
 	if(TgsAvailable())
 		var/do_hard_reboot
 		// check the hard reboot counter
@@ -279,6 +279,8 @@ GLOBAL_VAR(restart_counter)
 	shutdown_logging() // Past this point, no logging procs can be used, at risk of data loss.
 	AUXTOOLS_SHUTDOWN(AUXMOS)
 	..()
+
+#endif //ifdef UNIT_TESTS
 
 /world/Del()
 	shutdown_logging() // makes sure the thread is closed before end, else we terminate

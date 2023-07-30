@@ -55,12 +55,13 @@
 /datum/overmap/dynamic/Destroy()
 	for(var/obj/docking_port/stationary/dock as anything in reserve_docks)
 		reserve_docks -= dock
-		qdel(dock, TRUE)
+		qdel(dock)
+	ruin_turfs = null
+	. = ..()
+	//This NEEDS to be last so any docked ships get deleted properly
 	if(mapzone)
 		mapzone.clear_reservation()
 		QDEL_NULL(mapzone)
-	ruin_turfs = null
-	return ..()
 
 /datum/overmap/dynamic/get_jump_to_turf()
 	if(reserve_docks)
@@ -102,7 +103,7 @@
 
 	for(var/obj/docking_port/stationary/dock as anything in reserve_docks)
 		reserve_docks -= dock
-		qdel(dock, TRUE)
+		qdel(dock)
 	reserve_docks = null
 	if(mapzone)
 		mapzone.clear_reservation()

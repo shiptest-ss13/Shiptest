@@ -352,15 +352,20 @@
 	SSshuttle.mobile += src
 
 /obj/docking_port/mobile/Destroy(force)
+	if(SSticker.IsRoundInProgress())
+		message_admins("Shuttle [src] deleted at [ADMIN_VERBOSEJMP(src)]")
+		log_game("Shuttle [src] deleted at [AREACOORD(src)]")
+
+	if(!QDELETED(current_ship))
+		stack_trace("Ship attempted deletion while current ship still exists! Aborting!")
+		return QDEL_HINT_LETMELIVE
+
 	spawn_points.Cut()
 
 	SSshuttle.mobile -= src
 
 	destination = null
 	previous = null
-
-	if(!QDELETED(current_ship))
-		QDEL_NULL(current_ship)
 
 	qdel(assigned_transit, TRUE)		//don't need it where we're goin'!
 	assigned_transit = null

@@ -1,5 +1,3 @@
-/datum/unit_test/ruin_placement
-	focus = TRUE
 /datum/unit_test/ruin_placement/Run()
 	SSair.is_test_loading = TRUE
 	var/datum/map_zone/mapzone = SSmapping.create_map_zone("Ruin Testing Zone")
