@@ -430,11 +430,7 @@
 	var/list/turf/block_turfs = get_block()
 
 	for(var/turf/turf as anything in block_turfs)
-		// don't waste time trying to qdelete the lighting object
-		for(var/datum/thing in (turf.contents - turf.lighting_object))
-			qdel(thing)
-			// DO NOT CHECK_TICK HERE. IT CAN CAUSE ITEMS TO GET LEFT BEHIND
-			// THIS IS REALLY IMPORTANT FOR CONSISTENCY. SORRY ABOUT THE LAG SPIKE
+		turf.empty()
 
 	for(var/turf/turf as anything in block_turfs)
 		// Reset turf

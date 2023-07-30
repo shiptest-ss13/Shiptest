@@ -13,7 +13,7 @@
 	errors += powerdebug(TRUE)
 
 	for(var/error in errors)
-		TEST_FAIL("[error]")
+		TEST_FAIL("Mapping error: [error]")
 
 	for(var/outpost_type in subtypesof(/datum/overmap/outpost))
 		var/datum/overmap/outpost/test_outpost = new outpost_type()

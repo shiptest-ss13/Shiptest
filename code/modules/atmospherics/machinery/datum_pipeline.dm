@@ -82,13 +82,11 @@
 						if(!members.Find(item))
 
 							if(item.parent)
-								stack_trace("Item added to a pipenet while still having one. (pipes leading to the same spot stacking in one turf, a.k.a. doubled pipes). This is a mapping issue that MUST be fixed. Use the atmosdebug verb to find where it is.")
+								CRASH("Item added to a pipenet while still having one. (pipes leading to the same spot stacking in one turf, a.k.a. doubled pipes). This is a mapping issue that MUST be fixed. Use the atmosdebug verb to find where it is.")
 							members += item
 							possible_expansions += item
 
 							volume += item.volume
-							if(!QDELETED(item.parent))
-								qdel(item.parent)
 							item.parent = src
 
 							if(item.air_temporary)

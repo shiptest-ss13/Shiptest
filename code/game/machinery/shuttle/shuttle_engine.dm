@@ -40,6 +40,8 @@
  * All functions should return if the parent function returns false.
  */
 /obj/machinery/power/shuttle/engine/proc/update_engine()
+	if(!(flags_1 & INITIALIZED_1))
+		return FALSE
 	thruster_active = TRUE
 	if(panel_open)
 		thruster_active = FALSE

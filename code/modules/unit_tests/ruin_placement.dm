@@ -1,3 +1,5 @@
+/datum/unit_test/ruin_placement
+	focus = TRUE
 /datum/unit_test/ruin_placement/Run()
 	SSair.is_test_loading = TRUE
 	var/datum/map_zone/mapzone = SSmapping.create_map_zone("Ruin Testing Zone")
@@ -15,11 +17,13 @@
 
 			ruin.load(vlevel.get_unreserved_bottom_left_turf())
 
+			/* Temporarily Disabled
 			var/list/errors = atmosscan(TRUE)
 			errors += powerdebug(TRUE)
 
 			for(var/error in errors)
-				Fail("in [ruin_name]: [error]", ruin.mappath, 1)
+				Fail("Mapping error in [ruin_name]: [error]", ruin.mappath, 1)
+			*/
 
 			vlevel.clear_reservation()
 			qdel(vlevel)

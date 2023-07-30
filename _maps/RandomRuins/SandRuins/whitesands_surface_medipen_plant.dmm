@@ -216,12 +216,10 @@
 	icon_state = "small"
 	},
 /obj/item/shard,
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden{
-	dir = 8
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 8
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/plating,
 /area/whitesands/surface/outdoors)
 "fJ" = (
@@ -230,9 +228,6 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 8
 	},
 /turf/open/floor/plasteel,
@@ -297,6 +292,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/plasteel/dark,
 /area/whitesands/surface/outdoors)
 "hC" = (
@@ -517,6 +513,7 @@
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/plasteel/dark,
 /area/whitesands/surface/outdoors)
 "nQ" = (
@@ -715,9 +712,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 8
-	},
 /turf/open/floor/plating{
 	icon_state = "platingdmg1"
 	},
@@ -742,7 +736,6 @@
 /area/whitesands/surface/outdoors)
 "uc" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/plasteel/dark,
 /area/whitesands/surface/outdoors)
 "uu" = (
@@ -782,6 +775,12 @@
 	dir = 8
 	},
 /turf/open/floor/plating,
+/area/whitesands/surface/outdoors)
+"vq" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 9
+	},
+/turf/open/floor/plasteel/white,
 /area/whitesands/surface/outdoors)
 "vB" = (
 /obj/structure/chair{
@@ -1060,6 +1059,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 8
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/plasteel/dark,
 /area/whitesands/surface/outdoors)
 "FO" = (
@@ -1133,6 +1133,14 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
+/area/whitesands/surface/outdoors)
+"Iz" = (
+/obj/effect/spawner/structure/window,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 8
+	},
+/turf/open/floor/plating,
 /area/whitesands/surface/outdoors)
 "IA" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -1279,16 +1287,16 @@
 /turf/open/floor/plating/asteroid/whitesands,
 /area/whitesands/surface/outdoors)
 "Nd" = (
-/obj/structure/table,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/turf_decal/corner/transparent/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/transparent/neutral{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/turf/open/floor/plasteel/dark,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
 /area/whitesands/surface/outdoors)
 "OB" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1371,9 +1379,6 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 8
-	},
 /turf/open/floor/plating,
 /area/whitesands/surface/outdoors)
 "Qc" = (
@@ -1404,9 +1409,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 8
-	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden,
 /turf/open/floor/plasteel/dark,
 /area/whitesands/surface/outdoors)
 "QP" = (
@@ -1480,8 +1483,10 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/whitesands/surface/outdoors)
 "Tb" = (
@@ -1492,7 +1497,7 @@
 "Tc" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 8
+	dir = 6
 	},
 /turf/open/floor/plasteel/white,
 /area/whitesands/surface/outdoors)
@@ -1523,7 +1528,6 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/plasteel/dark,
 /area/whitesands/surface/outdoors)
 "UH" = (
@@ -1622,6 +1626,15 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/plasteel/dark,
+/area/whitesands/surface/outdoors)
+"Xn" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 8
+	},
+/turf/open/floor/plating{
+	icon_state = "platingdmg3"
+	},
 /area/whitesands/surface/outdoors)
 "XG" = (
 /obj/effect/decal/cleanable/dirt,
@@ -2063,7 +2076,7 @@ ku
 Jb
 kF
 sE
-sE
+gS
 nF
 hq
 FM
@@ -2073,7 +2086,7 @@ hY
 kk
 Qq
 fG
-xd
+Qq
 mh
 Hp
 AO
@@ -2094,8 +2107,8 @@ Nb
 dZ
 bu
 sE
-gS
-Nd
+sE
+KU
 uc
 Ud
 SL
@@ -2104,7 +2117,7 @@ qs
 Wa
 Qk
 fJ
-eI
+Xn
 zk
 rN
 iP
@@ -2135,7 +2148,7 @@ sz
 Rs
 Lj
 sT
-SE
+Nd
 kS
 SE
 SE
@@ -2166,7 +2179,7 @@ hY
 en
 Bn
 Qa
-rf
+Iz
 yc
 rf
 rf
@@ -2197,7 +2210,7 @@ hn
 ir
 ad
 Tc
-ad
+vq
 zk
 ad
 oH
