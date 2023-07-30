@@ -60,11 +60,14 @@
 /turf/open/floor/plasteel/stairs,
 /area/ship/cargo)
 "bi" = (
-/obj/machinery/portable_atmospherics/scrubber,
-/obj/machinery/atmospherics/components/unary/portables_connector/visible/layer4{
+/obj/item/radio/intercom/directional/south,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
-/obj/item/radio/intercom/directional/south,
+/obj/machinery/suit_storage_unit/inherit,
+/obj/item/clothing/suit/space/inteq,
+/obj/item/clothing/head/helmet/space/inteq,
+/obj/item/tank/jetpack/carbondioxide,
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/starboard)
 "bn" = (
@@ -222,18 +225,6 @@
 /area/ship/crew/cryo)
 "eL" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/ammo_box/magazine/co9mm{
-	pixel_x = 5
-	},
-/obj/item/ammo_box/magazine/co9mm{
-	pixel_x = -5
-	},
-/obj/item/ammo_box/magazine/co9mm{
-	pixel_x = 5
-	},
-/obj/item/ammo_box/magazine/co9mm{
-	pixel_x = -5
-	},
 /obj/effect/turf_decal/trimline/opaque/yellow/line{
 	dir = 1
 	},
@@ -246,14 +237,29 @@
 	req_access_txt = "3"
 	},
 /obj/machinery/light/small/directional/north,
+/obj/item/ammo_box/magazine/m12g/small{
+	pixel_x = -5;
+	pixel_y = -5
+	},
+/obj/item/ammo_box/magazine/m12g/small{
+	pixel_x = 5
+	},
 /obj/item/ammo_box/magazine/co9mm{
 	pixel_x = 5
 	},
 /obj/item/ammo_box/magazine/co9mm{
 	pixel_x = -5
 	},
-/obj/item/gun/ballistic/automatic/pistol/commander/inteq{
-	pixel_y = 5
+/obj/item/ammo_box/magazine/co9mm{
+	pixel_x = 5
+	},
+/obj/item/ammo_box/magazine/co9mm{
+	pixel_x = -5
+	},
+/obj/item/gun/ballistic/shotgun/bulldog/inteq{
+	pixel_x = -4;
+	pixel_y = 5;
+	spawnwithmagazine = 0
 	},
 /obj/item/gun/ballistic/automatic/pistol/commander/inteq,
 /obj/item/gun/ballistic/automatic/pistol/commander/inteq{
@@ -365,12 +371,12 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "gl" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 4
-	},
 /obj/machinery/light/small/directional/south,
-/obj/structure/reagent_dispensers/fueltank,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/components/unary/portables_connector/visible/layer4{
+	dir = 1
+	},
+/obj/machinery/portable_atmospherics/scrubber,
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/starboard)
 "gp" = (
@@ -651,11 +657,12 @@
 	dir = 4;
 	name = "Air to Distro"
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 6
-	},
 /obj/effect/turf_decal/hardline_small,
 /obj/machinery/light/small/directional/north,
+/obj/machinery/atmospherics/components/binary/pump/layer4{
+	dir = 4;
+	name = "Input to Waste"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/starboard)
 "jB" = (
@@ -822,9 +829,6 @@
 /obj/machinery/portable_atmospherics/pump,
 /obj/machinery/atmospherics/components/unary/portables_connector/visible/layer2{
 	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 9
 	},
 /obj/structure/sign/warning/nosmoking/circle{
 	pixel_y = -23
@@ -1043,11 +1047,6 @@
 	},
 /obj/machinery/power/terminal{
 	dir = 8
-	},
-/obj/item/stack/sheet/mineral/plasma/twenty,
-/obj/structure/closet/crate{
-	icon_state = "radiation";
-	name = "fuel crate"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -1532,10 +1531,11 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/item/radio/intercom/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/suit_storage_unit/inherit,
-/obj/item/clothing/suit/space/inteq,
-/obj/item/clothing/head/helmet/space/inteq,
-/obj/item/tank/jetpack/carbondioxide,
+/obj/structure/closet/crate{
+	icon_state = "radiation";
+	name = "fuel crate"
+	},
+/obj/item/stack/sheet/mineral/plasma/twenty,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "zO" = (
@@ -1756,7 +1756,8 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
@@ -2142,6 +2143,10 @@
 /obj/machinery/firealarm/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/starboard)
 "Hn" = (
@@ -2275,17 +2280,13 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/components/binary/pump/layer4{
-	dir = 1;
-	name = "Input to Waste"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
 /obj/effect/turf_decal/number/zero,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/starboard)
 "IY" = (
@@ -2333,6 +2334,9 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/cobweb,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/starboard)
 "JC" = (
@@ -2343,14 +2347,11 @@
 	dir = 1;
 	name = "Input to Air"
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 6
-	},
 /obj/effect/turf_decal/number/five,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/starboard)
 "JL" = (
@@ -2701,7 +2702,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office)
 "PD" = (
-/obj/structure/table/optable,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
@@ -2718,6 +2718,7 @@
 /obj/effect/turf_decal/steeldecal/steel_decals10{
 	dir = 6
 	},
+/obj/structure/bed,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/medical)
 "Qy" = (
@@ -2845,10 +2846,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/crew/office)
-"SS" = (
-/obj/structure/closet/crate,
-/turf/open/floor/plasteel/patterned,
-/area/ship/cargo)
 "SW" = (
 /obj/structure/sign/warning/docking{
 	pixel_x = -9;
@@ -3739,7 +3736,7 @@ Tn
 mR
 GI
 LQ
-SS
+vN
 Tc
 fC
 BT
