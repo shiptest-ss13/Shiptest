@@ -675,6 +675,9 @@
 	pixel_x = -6
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "jE" = (
@@ -1459,10 +1462,12 @@
 /area/ship/hallway/central)
 "zg" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
 /obj/machinery/door/poddoor/shutters{
 	dir = 4;
-	id = "vaquero_bridge";
-	name = "window shutters"
+	id = "vaquero_bridge"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -1546,6 +1551,9 @@
 	pixel_y = 22
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "zP" = (
@@ -2467,6 +2475,12 @@
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "Ms" = (
@@ -2865,6 +2879,12 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "TQ" = (
@@ -2882,6 +2902,12 @@
 	pixel_x = -16
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "Uf" = (
