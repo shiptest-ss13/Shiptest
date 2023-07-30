@@ -178,6 +178,30 @@
 	)
 	crate_name = "Shuttle in a Box"
 
+/datum/supply_pack/machinery/meteor_shield
+	name = "Meteor Shield Kit"
+	desc = "Contains a control circuit, and four meteor defense turrets. Ideal for the adventerous captain."
+	cost = 3500
+	contains = list(
+		/obj/machinery/meteor_shield/cargo,
+		/obj/machinery/meteor_shield/cargo,
+		/obj/machinery/meteor_shield/cargo,
+		/obj/machinery/meteor_shield/cargo,
+		/obj/item/circuitboard/computer/meteor_shield
+	)
+
+/datum/supply_pack/machinery/meteor_shield
+	name = "Meteor Shield Expansion Kit"
+	desc = "Contains four meteor defense turrets. Ideal for expanding existing PD grids."
+	cost = 2500
+	contains = list(
+		/obj/machinery/meteor_shield/cargo,
+		/obj/machinery/meteor_shield/cargo,
+		/obj/machinery/meteor_shield/cargo,
+		/obj/machinery/meteor_shield/cargo,
+	)
+
+
 /*
 		Power generation machines
 */
