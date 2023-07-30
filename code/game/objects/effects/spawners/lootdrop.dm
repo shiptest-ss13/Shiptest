@@ -1241,3 +1241,8 @@
 		4
 	))
 	return ..()
+
+/obj/effect/spawner/lootdrop/ration
+	loot = list (
+	/obj/item/storage/ration/vegan_chili = 1
+	)

@@ -407,7 +407,7 @@
 
 /obj/item/reagent_containers/food/snacks/stuffedlegion
 	name = "stuffed legion"
-	desc = "The former skull of a damned human, filled with goliath meat. It has a decorative lava pool made of ketchup and hotsauce."
+	desc = "The former skull of a damned human, filled with goliath meat. It has a decorative lava pool made of  p and hotsauce."
 	icon_state = "stuffed_legion"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 3, /datum/reagent/consumable/capsaicin = 1, /datum/reagent/medicine/tricordrazine = 5)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/nutriment/vitamin = 5, /datum/reagent/consumable/capsaicin = 2, /datum/reagent/medicine/tricordrazine = 10)
@@ -761,3 +761,70 @@
 	filling_color = "#ECA735"
 	tastes = list("fried corn" = 1)
 	foodtype = JUNKFOOD | FRIED
+
+/obj/item/reagent_containers/food/snacks/ration
+	name = "Rationed Air"
+	desc = "If you ever wondered where air came from..."
+	list_reagents = list(/datum/reagent/oxygen = 6, /datum/reagent/nitrogen = 24)
+	icon_state = "peachcan"
+	in_container = TRUE
+	reagent_flags = NONE
+	spillable = FALSE
+	w_class = WEIGHT_CLASS_SMALL
+	volume = 30
+
+/obj/item/reagent_containers/food/snacks/ration/proc/open_ration(mob/user)
+	to_chat(user, "<span class='notice'>You tear open \the [src].</span>")
+	playsound(user.loc, 'sound/effects/rip3.ogg', 50)
+	reagents.flags |= OPENCONTAINER
+	spillable = TRUE
+
+/obj/item/reagent_containers/food/snacks/ration/attack_self(mob/user)
+	if(!is_drainable())
+		open_ration(user)
+		icon_state = "[icon_state]_open"
+	return ..()
+
+/obj/item/reagent_containers/food/snacks/ration/attack(mob/living/M, mob/user, def_zone)
+	if (!is_drainable())
+		to_chat(user, "<span class='warning'> The [src] is sealed shut!</span>")
+		return 0
+	return ..()
+
+/obj/item/reagent_containers/food/snacks/ration/vegan_chili
+	name = "vegan chili"
+	icon_state = "beans"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 10)
+	filling_color = "#B22222"
+	tastes = list("beans" = 1)
+	foodtype = VEGETABLES
+
+/obj/item/reagent_containers/food/snacks/ration/cheese_spread
+	name = "cheese spread"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
+	foodtype = DAIRY
+
+/obj/item/reagent_containers/food/snacks/ration/vegan_crackers
+	name = "vegan crackers"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
+	foodtype = VEGETABLES
+
+/obj/item/reagent_containers/food/snacks/ration/cornbread
+	name = "corn bread"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	foodtype = VEGETABLES | GRAIN
+
+/obj/item/reagent_containers/food/snacks/ration/pizza_crackers
+	name = "pepperoni pizza cheese filled crackers"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	foodtype = MEAT | DAIRY | GRAIN | JUNKFOOD
+
+/obj/item/reagent_containers/food/snacks/ration/grape_powder
+	name = "grape beverage powder, carb-fortified"
+	list_reagents = list(/datum/reagent/consumable/sugar = 10, /datum/reagent/consumable/grapejuice = 5)
+	foodtype = SUGAR
+
+/obj/item/reagent_containers/food/snacks/ration/beverage_bag
+	name = "hot beverage bag"
+	list_reagents = list(/datum/reagent/water = 30)
+
