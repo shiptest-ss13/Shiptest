@@ -63,7 +63,7 @@
 	suit_store =  null
 	head = null
 	ears = /obj/item/radio/headset/syndicate
-	mask = /obj/item/clothing/mask/gas/syndicate/vc
+	mask = /obj/item/clothing/mask/gas/syndicate/voicechanger
 	id = /obj/item/card/id/syndicate_command/crew_id/med
 	implants = list(/obj/item/implant/weapons_auth)
 	backpack_contents = list(/obj/item/pda/brig_phys)

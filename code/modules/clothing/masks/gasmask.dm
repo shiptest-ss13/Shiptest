@@ -71,7 +71,7 @@
 	icon_state = "syndicate"
 	strip_delay = 60
 
-/obj/item/clothing/mask/gas/syndicate/vc
+/obj/item/clothing/mask/gas/syndicate/voicechanger
 	var/voice_change = 1
 
 /obj/item/clothing/mask/gas/clown_hat
