@@ -330,23 +330,23 @@ GLOBAL_LIST_INIT(binary, list("0","1"))
 		. += string
 
 /proc/random_short_color()
-	return random_string(3, GLOB.hex_characters)
+	return num2text(rand(0, 4095), 3, 16)
 
 /proc/short_color_from_seed(seed)
-	return num2text(seed % 4095, 1, 16)
+	return num2text(seed % 4095, 3, 16)
 
 /proc/random_color()
-	return random_string(6, GLOB.hex_characters)
+	return num2text(rand(0, 16777215), 6, 16)
 
-/proc/random_short_color_natural()	//For use in natural haircolors.
-	var red = num2text(rand(0,255), 1, 16)
-	var green = num2text(rand(0,128), 1, 16)	//Conversion to hex
+/proc/random_color_natural()	//For use in natural haircolors.
+	var red = num2text(rand(0,255), 2, 16)
+	var green = num2text(rand(0,128), 2, 16)	//Conversion to hex
 	var blue = "00"
 	return red + green + blue
 
-/proc/short_color_natural_from_seed(seed)
-	var red = num2text(seed % 255, 1, 16)
-	var green = num2text(seed % 128, 1, 16)	//Conversion to hex
+/proc/color_natural_from_seed(seed)
+	var red = num2text(seed % 255, 2, 16)
+	var green = num2text(seed % 128, 2, 16)	//Conversion to hex
 	var blue = "00"
 	return red + green + blue
 

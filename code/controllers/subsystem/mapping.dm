@@ -23,6 +23,8 @@ SUBSYSTEM_DEF(mapping)
 	var/list/shuttle_templates = list()
 	var/list/shelter_templates = list()
 	var/list/holodeck_templates = list()
+	// List mapping TYPES of outpost map templates to instances of their singletons.
+	var/list/outpost_templates = list()
 
 	var/list/areas_in_z = list()
 
@@ -81,9 +83,17 @@ SUBSYSTEM_DEF(mapping)
 /datum/controller/subsystem/mapping/Recover()
 	flags |= SS_NO_INIT
 	initialized = SSmapping.initialized
+
 	map_templates = SSmapping.map_templates
+
 	ruins_templates = SSmapping.ruins_templates
-	ruin_types_list = SSmapping.ruins_templates
+	ruin_types_list = SSmapping.ruin_types_list
+
+	shuttle_templates = SSmapping.shuttle_templates
+	shelter_templates = SSmapping.shelter_templates
+	holodeck_templates = SSmapping.holodeck_templates
+
+	outpost_templates = SSmapping.outpost_templates
 
 	z_list = SSmapping.z_list
 
@@ -105,6 +115,7 @@ SUBSYSTEM_DEF(mapping)
 	load_ship_templates()
 	preloadShelterTemplates()
 	preloadHolodeckTemplates()
+	preloadOutpostTemplates()
 
 /datum/controller/subsystem/mapping/proc/preloadRuinTemplates()
 	for(var/datum/planet_type/type as anything in subtypesof(/datum/planet_type))
@@ -223,11 +234,16 @@ SUBSYSTEM_DEF(mapping)
 		if(isnum(data["officer_time_coeff"]))
 			S.officer_time_coeff = data["officer_time_coeff"]
 
+		if(isnum(data["starting_funds"]))
+			S.starting_funds = data["starting_funds"]
+
 		if(isnum(data["enabled"]) && data["enabled"])
 			S.enabled = TRUE
 			ship_purchase_list[S.name] = S
 		if(isnum(data["roundstart"]) && data["roundstart"])
 			maplist[S.name] = S
+		if(isnum(data["space_spawn"]) && data["space_spawn"])
+			S.space_spawn = TRUE
 
 		shuttle_templates[S.file_name] = S
 #undef CHECK_STRING_EXISTS
@@ -271,6 +287,12 @@ SUBSYSTEM_DEF(mapping)
 
 		holodeck_templates[holo_template.template_id] = holo_template
 		map_templates[holo_template.template_id] = holo_template
+
+/datum/controller/subsystem/mapping/proc/preloadOutpostTemplates()
+	for(var/datum/map_template/outpost/outpost_type as anything in subtypesof(/datum/map_template/outpost))
+		var/datum/map_template/outpost/outpost_template = new outpost_type()
+		outpost_templates[outpost_template.type] = outpost_template
+		map_templates[outpost_template.name] = outpost_template
 
 //////////////////
 // RESERVATIONS //
