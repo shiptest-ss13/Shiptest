@@ -404,7 +404,7 @@ SUBSYSTEM_DEF(shuttle)
 		L["file_name"] = S.file_name
 		L["category"] = S.category
 		L["description"] = S.description
-		L["admin_notes"] = S.admin_notes
+		L["tags"] = S.tags
 
 		templates[S.category]["templates"] += list(L)
 
@@ -454,8 +454,36 @@ SUBSYSTEM_DEF(shuttle)
 		if("select_template")
 			if(S)
 				. = TRUE
-				// If successful, returns the mobile docking port
-				var/datum/overmap/ship/controlled/new_ship = new(null, S)
+				var/choice = tgui_input_list(
+					user,
+					"Select a location for the new ship.",
+					"Ship Location",
+					list("Random Overmap Square", "Outpost", "Specific Overmap Square")
+				)
+				var/ship_loc
+				var/datum/overmap/ship/controlled/new_ship
+
+				switch(choice)
+					if(null)
+						return
+					if("Random Overmap Square")
+						ship_loc = null // null location causes overmap to just get a random square
+					if("Outpost")
+						if(length(SSovermap.outposts) > 1)
+							var/temp_loc = input(user, "Select outpost to spawn at") as null|anything in SSovermap.outposts
+							if(!temp_loc)
+								message_admins("Invalid spawn location.")
+								return
+							ship_loc = temp_loc
+						else
+							ship_loc = SSovermap.outposts[1]
+					if("Specific Overmap Square")
+						var/loc_x = input(user, "X overmap coordinate:") as num
+						var/loc_y = input(user, "Y overmap coordinate:") as num
+						ship_loc = list("x" = loc_x, "y" = loc_y)
+
+				if(!new_ship)
+					new_ship = new(ship_loc, S)
 				if(new_ship?.shuttle_port)
 					user.forceMove(new_ship.get_jump_to_turf())
 					message_admins("[key_name_admin(user)] loaded [new_ship] ([S]) with the shuttle manipulator.")

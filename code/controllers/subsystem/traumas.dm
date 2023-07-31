@@ -180,8 +180,7 @@ SUBSYSTEM_DEF(traumas)
 		"robots" = typecacheof(list(/datum/species/android, /datum/species/ipc)),
 		"the supernatural" = typecacheof(list(/datum/species/golem/runic)),
 		"aliens" = typecacheof(list(
-			/datum/species/abductor, /datum/species/jelly, /datum/species/pod,
-			/datum/species/shadow, /datum/species/squid)),
+			/datum/species/abductor, /datum/species/jelly, /datum/species/pod)),
 		"spiders" = typecacheof(list(/datum/species/spider))
 	)
 

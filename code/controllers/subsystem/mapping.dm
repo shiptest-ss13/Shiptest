@@ -23,6 +23,8 @@ SUBSYSTEM_DEF(mapping)
 	var/list/shuttle_templates = list()
 	var/list/shelter_templates = list()
 	var/list/holodeck_templates = list()
+	// List mapping TYPES of outpost map templates to instances of their singletons.
+	var/list/outpost_templates = list()
 
 	var/list/areas_in_z = list()
 
@@ -81,9 +83,17 @@ SUBSYSTEM_DEF(mapping)
 /datum/controller/subsystem/mapping/Recover()
 	flags |= SS_NO_INIT
 	initialized = SSmapping.initialized
+
 	map_templates = SSmapping.map_templates
+
 	ruins_templates = SSmapping.ruins_templates
-	ruin_types_list = SSmapping.ruins_templates
+	ruin_types_list = SSmapping.ruin_types_list
+
+	shuttle_templates = SSmapping.shuttle_templates
+	shelter_templates = SSmapping.shelter_templates
+	holodeck_templates = SSmapping.holodeck_templates
+
+	outpost_templates = SSmapping.outpost_templates
 
 	z_list = SSmapping.z_list
 
@@ -105,6 +115,7 @@ SUBSYSTEM_DEF(mapping)
 	load_ship_templates()
 	preloadShelterTemplates()
 	preloadHolodeckTemplates()
+	preloadOutpostTemplates()
 
 /datum/controller/subsystem/mapping/proc/preloadRuinTemplates()
 	for(var/datum/planet_type/type as anything in subtypesof(/datum/planet_type))
@@ -189,6 +200,8 @@ SUBSYSTEM_DEF(mapping)
 			S.unique_ship_access = data[ "unique_ship_access" ]
 		if(istext(data["description"]))
 			S.description = data["description"]
+		if(islist(data["tags"]))
+			S.tags = data["tags"]
 
 		S.job_slots = list()
 		var/list/job_slot_list = data["job_slots"]
@@ -206,7 +219,6 @@ SUBSYSTEM_DEF(mapping)
 					job_outfit = /datum/outfit/job/assistant
 				job_slot = new /datum/job(job, job_outfit)
 				job_slot.wiki_page = value["wiki_page"]
-				job_slot.exp_requirements = value["exp_requirements"]
 				job_slot.officer = value["officer"]
 				slots = value["slots"]
 
@@ -215,14 +227,25 @@ SUBSYSTEM_DEF(mapping)
 				continue
 
 			S.job_slots[job_slot] = slots
+		if(isnum(data["limit"]))
+			S.limit = data["limit"]
+		if(isnum(data["spawn_time_coeff"]))
+			S.spawn_time_coeff = data["spawn_time_coeff"]
+		if(isnum(data["officer_time_coeff"]))
+			S.officer_time_coeff = data["officer_time_coeff"]
+
+		if(isnum(data["starting_funds"]))
+			S.starting_funds = data["starting_funds"]
+
 		if(isnum(data["enabled"]) && data["enabled"])
 			S.enabled = TRUE
 			ship_purchase_list[S.name] = S
-		if(isnum(data["limit"]))
-			S.limit = data["limit"]
-		shuttle_templates[S.file_name] = S
 		if(isnum(data["roundstart"]) && data["roundstart"])
 			maplist[S.name] = S
+		if(isnum(data["space_spawn"]) && data["space_spawn"])
+			S.space_spawn = TRUE
+
+		shuttle_templates[S.file_name] = S
 #undef CHECK_STRING_EXISTS
 #undef CHECK_LIST_EXISTS
 
@@ -251,7 +274,9 @@ SUBSYSTEM_DEF(mapping)
 /// Creates basic physical levels so we dont have to do that during runtime every time, nothing bad will happen if this wont run, as allocation will handle adding new levels
 /datum/controller/subsystem/mapping/proc/init_reserved_levels()
 	add_new_zlevel("Free Allocation Level", allocation_type = ALLOCATION_FREE)
+	CHECK_TICK
 	add_new_zlevel("Quadrant Allocation Level", allocation_type = ALLOCATION_QUADRANT)
+	CHECK_TICK
 
 /datum/controller/subsystem/mapping/proc/preloadHolodeckTemplates()
 	for(var/item in subtypesof(/datum/map_template/holodeck))
@@ -262,6 +287,12 @@ SUBSYSTEM_DEF(mapping)
 
 		holodeck_templates[holo_template.template_id] = holo_template
 		map_templates[holo_template.template_id] = holo_template
+
+/datum/controller/subsystem/mapping/proc/preloadOutpostTemplates()
+	for(var/datum/map_template/outpost/outpost_type as anything in subtypesof(/datum/map_template/outpost))
+		var/datum/map_template/outpost/outpost_template = new outpost_type()
+		outpost_templates[outpost_template.type] = outpost_template
+		map_templates[outpost_template.name] = outpost_template
 
 //////////////////
 // RESERVATIONS //

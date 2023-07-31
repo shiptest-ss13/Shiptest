@@ -55,10 +55,7 @@
 #define SPIDER_WEB /datum/mutation/human/webbing
 #define MARTYRDOM /datum/mutation/human/martyrdom
 #define HARS /datum/mutation/human/headless
-
-// WS Edit Start - Dwarves
 #define DORFISM /datum/mutation/human/dorfism
-// WS Edit End - Dwarves
 
 #define UI_CHANGED "ui changed"
 #define UE_CHANGED "ue changed"
@@ -135,7 +132,8 @@
 #define NOHUSK 22 // Can't be husked.
 #define NOMOUTH 23
 #define NOSOCKS 24 // You cannot wear sock
-#define NO_BONES 25 //WS Edit - Breakable Bones
+#define NO_BONES 25 //! You don't have any bones for breaking
+#define MUTCOLORS_SECONDARY 26 //! A second mutant colour for other things
 
 //organ slots
 #define ORGAN_SLOT_BRAIN "brain"
@@ -167,8 +165,10 @@
 //organ defines
 #define STANDARD_ORGAN_THRESHOLD 100
 #define STANDARD_ORGAN_HEALING 0.001
-/// designed to fail organs when left to decay for ~15 minutes
-#define STANDARD_ORGAN_DECAY 0.00222
+//Organs fail in around ~30 minutes
+#define STANDARD_ORGAN_DECAY 0.00111
+//Vital organs (brain, heart) fail in around ~45 minutes
+#define STANDARD_VITAL_ORGAN_DECAY 0.00074
 
 //used for the can_chromosome var on mutations
 #define CHROMOSOME_NEVER 0

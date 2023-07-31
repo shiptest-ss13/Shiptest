@@ -30,7 +30,12 @@
 
 /datum/surgery_step/dissection
 	name = "dissection"
-	implements = list(/obj/item/scalpel/augment = 75, /obj/item/scalpel/advanced = 60, TOOL_SCALPEL = 45, /obj/item/kitchen/knife = 20, /obj/item/shard = 10)// special tools not only cut down time but also improve probability
+	implements = list(
+		/obj/item/scalpel/augment = 75,
+		/obj/item/scalpel/advanced = 60,
+		TOOL_SCALPEL = 45,
+		/obj/item/kitchen/knife = 30,
+		/obj/item/shard = 10)// special tools not only cut down time but also improve probability
 	time = 125
 	silicons_obey_prob = TRUE
 	repeatable = TRUE
@@ -57,7 +62,7 @@
 				cost = (BASE_HUMAN_REWARD*24)
 			else if(isgolem(H) || iszombie(H) || isshadow(H) || isandroid(H))
 				cost = (BASE_HUMAN_REWARD*20)
-			else if(isjellyperson(H) || ispodperson(H) || issquidperson(H) || isalien(H))
+			else if(isjellyperson(H) || ispodperson(H) || isalien(H))
 				cost = (BASE_HUMAN_REWARD*14)
 			else if(isskeleton(H))
 				cost = (BASE_HUMAN_REWARD * 0.5)

@@ -2,8 +2,6 @@
 	name = "Station Engineer"
 	total_positions = 5
 	spawn_positions = 5
-	exp_requirements = 60
-	exp_type = EXP_TYPE_CREW
 	wiki_page = "Station_Engineer" //WS Edit - Wikilinks/Warning
 
 	outfit = /datum/outfit/job/engineer
@@ -100,7 +98,7 @@
 	shoes = /obj/item/clothing/shoes/laceup
 	head = /obj/item/clothing/head/hardhat
 	neck = /obj/item/clothing/neck/tie/orange
-	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1, /obj/item/storage/belt/utility/full/engi=1)
+	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1)
 
 /datum/outfit/job/engineer/telecomsspecialist
 	name = "Station Engineer (Telecommunications Specialist)"
@@ -155,7 +153,6 @@
 	name = "Ship Technician (Engineer)"
 
 	id = /obj/item/card/id/syndicate_command/crew_id
-	ears = /obj/item/radio/headset/syndicate/alt
 	uniform = /obj/item/clothing/under/syndicate/aclfgrunt
 	accessory = /obj/item/clothing/accessory/armband/engine
 	glasses = /obj/item/clothing/glasses/sunglasses
@@ -167,7 +164,6 @@
 	uniform = /obj/item/clothing/under/syndicate/gec
 	suit = /obj/item/clothing/suit/toggle/hazard
 	head = /obj/item/clothing/head/hardhat
-	ears = /obj/item/radio/headset/syndicate/alt
 	id = /obj/item/card/id/syndicate_command/crew_id
 
 /datum/outfit/job/engineer/syndicate/gorlex

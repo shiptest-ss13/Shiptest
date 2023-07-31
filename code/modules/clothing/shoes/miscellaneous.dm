@@ -13,7 +13,6 @@
 	lefthand_file = 'icons/mob/inhands/equipment/security_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/security_righthand.dmi'
 	armor = list("melee" = 25, "bullet" = 25, "laser" = 25, "energy" = 25, "bomb" = 50, "bio" = 10, "rad" = 0, "fire" = 70, "acid" = 50)
-	supports_variations = DIGITIGRADE_VARIATION
 	strip_delay = 40
 	resistance_flags = NONE
 	permeability_coefficient = 0.05 //Thick soles, and covers the ankle
@@ -54,6 +53,12 @@
 	equip_delay_other = 50
 	permeability_coefficient = 0.9
 	can_be_tied = FALSE
+
+/obj/item/clothing/shoes/sandal/slippers
+	name = "patient slippers"
+	desc = "A white pair of easy slip on and off slippers. There are extra treads on the bottom."
+	icon_state = "whiteslippers"
+	item_state = "whiteslippers"
 
 /obj/item/clothing/shoes/sandal/marisa
 	desc = "A pair of magic black shoes."
@@ -150,7 +155,6 @@
 	permeability_coefficient = 0.05 //Thick soles, and covers the ankle
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
 	can_be_tied = FALSE
-	supports_variations = DIGITIGRADE_VARIATION
 	greyscale_icon_state = "boots"
 
 /obj/item/clothing/shoes/jackboots/fast
@@ -168,7 +172,6 @@
 	max_heat_protection_temperature = SHOES_MAX_TEMP_PROTECT
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
 	lace_time = 8 SECONDS
-	supports_variations = DIGITIGRADE_VARIATION
 	greyscale_icon_state = "boots"
 
 /obj/item/clothing/shoes/workboots
@@ -183,7 +186,6 @@
 	equip_delay_other = 40
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
 	lace_time = 8 SECONDS
-	supports_variations = DIGITIGRADE_VARIATION
 	greyscale_icon_state = "boots"
 
 /obj/item/clothing/shoes/winterboots/ice_boots

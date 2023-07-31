@@ -698,7 +698,7 @@
 
 /obj/item/toy/plush/moth/rainbow
 	name = "rainbow moth plushie"
-	desc = "An adorable mothperson plushy. It's a colorfull bug!"
+	desc = "An adorable mothperson plushy. It's a colorful bug!"
 	icon_state = "moffplush_rainbow"
 
 /obj/item/toy/plush/moth/suicide_act(mob/living/user)
@@ -780,6 +780,14 @@
 	name = "flushed plushie"
 	desc = "Hgrgrhrhg cute."
 	icon_state = "flushplush"
+
+/obj/item/toy/plush/blahaj
+	name = "Solarian Marine Society mascot plushie"
+	desc = "The adorable little mascot of the solarian marine society. Popular with vampires."
+	icon_state = "blahaj"
+	item_state = "blahaj"
+	lefthand_file = 'icons/mob/inhands/misc/plushes_lefthand.dmi' //todo: sort the god damn plushie inhands
+	righthand_file = 'icons/mob/inhands/misc/plushes_righthand.dmi'
 
 /obj/item/toy/plush/among
 	name = "amoung pequeño"

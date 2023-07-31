@@ -69,18 +69,19 @@ ENABLE_LOCALHOST_RANK
 #USE_ACCOUNT_AGE_FOR_JOBS
 
 ## Unhash this to track player playtime in the database. Requires database to be enabled.
+## Playtime requirements for ship spawning and job selection is ignored unless this is enabled.
 #USE_EXP_TRACKING
-## Unhash this to enable playtime requirements for head jobs.
-#USE_EXP_RESTRICTIONS_HEADS
-## Unhash this to override head jobs' playtime requirements with this number of hours.
-## Leave this commented out to use the values defined in the job datums. Values in the datums are stored as minutes.
-#USE_EXP_RESTRICTIONS_HEADS_HOURS 3
-## Unhash this to change head jobs' playtime requirements so that they're based on department playtime, rather than crew playtime.
-#USE_EXP_RESTRICTIONS_HEADS_DEPARTMENT
-## Unhash this to enable playtime requirements for certain non-head jobs, like Engineer and Scientist.
-#USE_EXP_RESTRICTIONS_OTHER
-## Allows admins to bypass job playtime requirements.
+## Allows admins to bypass job and ship playtime requirements.
 #USE_EXP_RESTRICTIONS_ADMIN_BYPASS
+
+## The "base" minimum number of minutes as living to spawn a ship from the join menu.
+## Ships may have differing true values depending on the template's coefficient, defined in JSON.
+## The ship spawn playtime restriction is the ONLY restriction that applies for ship spawning.
+SHIP_SPAWN_BASE_EXP_MIN 600
+## The "base" minimum number of minutes as living to spawn into an officer job.
+## Ships may have differing true values depending on the template's coefficient, defined in JSON.
+## Once the ship has been spawned, this restriction will apply for any officer job being joined on a ship.
+OFFICER_JOIN_BASE_EXP_MIN 300
 
 ## log OOC channel
 LOG_OOC
@@ -308,9 +309,9 @@ CHECK_RANDOMIZER
 ## Uncomment this to forbid admins from possessing the singularity.
 #FORBID_SINGULO_POSSESSION
 
-## Uncomment to show a popup 'reply to' window to every non-admin that receives an adminPM.
-## The intention is to make adminPMs more visible. (although I fnd popups annoying so this defaults to off)
-#POPUP_ADMIN_PM
+## Uncomment to give admins the ability to send a maptext popup to players.
+## Only fires when an admin requests it, not every ahelp.
+POPUP_ADMIN_PM
 
 ## Uncomment to allow special 'Easter-egg' events on special holidays such as seasonal holidays and stuff like 'Talk Like a Pirate Day' :3 YAARRR
 ALLOW_HOLIDAYS
@@ -570,8 +571,12 @@ AUTO_PROFILE
 ## THIS CONFIG DOES NOT OVERRIDE THE NORESPAWN FLAG
 RESPAWN_TIMER 600
 
-## Custom shuttle spam prevention. Changine these numbers allows you to change the maxsize and amount of custom shuttles.
+## If the number of controlled non-subshuttle ships in existence is greater than this number,
+## the shuttle creator and roundstart menu will stop new ships from being created.
+## If this is undesired, just set this to an arbitrarily high value.
 MAX_SHUTTLE_COUNT 20
+
+## Limits the maximum size in tiles of a custom shuttle.
 MAX_SHUTTLE_SIZE 300
 
 ### ALL SETTINGS FOR SSmetrics ###

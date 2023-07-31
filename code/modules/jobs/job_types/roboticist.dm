@@ -2,8 +2,6 @@
 	name = "Roboticist"
 	total_positions = 2
 	spawn_positions = 2
-	exp_requirements = 60
-	exp_type = EXP_TYPE_CREW
 	wiki_page = "Guide_to_Robotics" //WS Edit - Wikilinks/Warning
 
 	outfit = /datum/outfit/job/roboticist
@@ -78,8 +76,6 @@
 	alt_suit = /obj/item/clothing/suit/toggle/labcoat
 	dcoat = null
 	neck = /obj/item/clothing/neck/tie/black
-
-	backpack_contents = list(/obj/item/storage/belt/utility/full=1)
 
 //Shiptest Outfits
 

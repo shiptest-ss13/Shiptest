@@ -1,0 +1,57 @@
+	{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Vela-Class Industrial Cruiser",
+	"prefix": "CMGSV",
+	"namelists": ["GENERAL", "MYTHOLOGICAL", "BEASTS"],
+	"description": "The Vela-Class is the designation for a series of semi-modular industrial cruisers created by the Colonial Minutemen in the early 440s. While the original design was created almost exclusively for extracting minerals from asteroid belts, modern examples tend to take on a multi-mission role, with the most common configuration being a mech hanger, and research pod. The ship itself often sees long deployments that encourage modification, leading to Velas taking on a personality as their crews leave their mark.",
+	"tags": [
+		"Robotics",
+		"Construction",
+		"Science"
+	],
+	"map_short_name": "Vela-Class",
+	"starting_funds": 1000,
+	"map_path": "_maps/shuttles/shiptest/minutemen_vela.dmm",
+	"limit": 1,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/captain/minutemen",
+			"officer": true,
+			"slots": 1
+		},
+		"Foreman": {
+			"outfit": "/datum/outfit/job/ce/minutemen",
+			"officer": true,
+			"slots": 1
+		},
+		"Bridge Officer": {
+			"outfit": "/datum/outfit/job/head_of_personnel/minutemen",
+			"slots": 1
+		},
+		"Mech Pilot": {
+			"outfit": "/datum/outfit/job/miner/hazard/minutemen",
+			"slots": 4
+		},
+		"Mech Technician": {
+			"outfit": "/datum/outfit/job/roboticist/technician/minutemen",
+			"slots": 2
+		},
+		"Engineer": {
+			"outfit": "/datum/outfit/job/engineer/minutemen",
+			"slots": 2
+		},
+		"Minuteman": {
+			"outfit": "/datum/outfit/job/security/minutemen",
+			"slots": 2
+		},
+		"Scientist": {
+			"outfit": "/datum/outfit/job/scientist/minutemen",
+			"slots": 2
+		},
+		"Cadet": {
+			"outfit": "/datum/outfit/job/assistant/minutemen",
+			"slots": 1
+		}
+	},
+	"enabled": true
+}

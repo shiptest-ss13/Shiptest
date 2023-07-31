@@ -1,10 +1,10 @@
 /datum/map_template/shuttle
 	name = "Base Shuttle Template"
-	var/category
+	var/category = "Basic"
 	var/file_name
 
 	var/description
-	var/admin_notes
+	var/list/tags
 
 	var/list/movement_force // If set, overrides default movement_force on shuttle
 
@@ -17,8 +17,19 @@
 	var/short_name
 	var/list/job_slots = list()
 	var/list/name_categories = list("GENERAL")
-	var/prefix = "SV"
+	var/prefix = "ISV"
 	var/unique_ship_access = FALSE
+	/// Set by config JSON. If true, the template's ships' "default" spawn location (when bought by a player or loaded at roundstart)
+	/// will be in the middle of space, instead of at an outpost.
+	var/space_spawn = FALSE
+
+	//how much money the ship starts with
+	var/starting_funds = 2000
+
+	// Coefficients regulating the amount of necessary Living playtime to spawn this ship or join as an officer.
+	// When a player attempts to spawn a ship via the join menu, officer time requirements are ignored even if the "captain" job is an officer.
+	var/spawn_time_coeff = 1
+	var/officer_time_coeff = 1
 
 	var/static/list/outfits
 
@@ -182,7 +193,6 @@
 
 /datum/map_template/shuttle/ui_static_data(mob/user)
 	. = list()
-
 	if(!outfits)
 		outfits = list()
 		for(var/datum/outfit/outfit as anything in subtypesof(/datum/outfit))
@@ -194,8 +204,11 @@
 	.["templateName"] = name
 	.["templateShortName"] = short_name
 	.["templateDescription"] = description
+	.["templateTags"] = tags
 	.["templateCategory"] = category
 	.["templateLimit"] = limit
+	.["templateSpawnCoeff"] = spawn_time_coeff
+	.["templateOfficerCoeff"] = officer_time_coeff
 	.["templateEnabled"] = enabled
 
 	.["templateJobs"] = list()
@@ -213,7 +226,6 @@
 	if(.)
 		return
 
-
 	switch(action)
 		if("setTemplateName")
 			name = params["new_template_name"]
@@ -227,12 +239,32 @@
 			description = params["new_template_description"]
 			update_static_data(usr, ui)
 			return TRUE
+		if("addTemplateTags")
+			if(!tags)
+				tags = list()
+			if(!(params["new_template_tags"] in tags))
+				tags.Add(params["new_template_tags"])
+			update_static_data(usr, ui)
+			return TRUE
+		if("removeTemplateTags")
+			if(params["new_template_tags"] in tags)
+				tags.Remove(params["new_template_tags"])
+			update_static_data(usr, ui)
+			return TRUE
 		if("setTemplateCategory")
 			category = params["new_template_category"]
 			update_static_data(usr, ui)
 			return TRUE
 		if("setTemplateLimit")
 			limit = params["new_template_limit"]
+			update_static_data(usr, ui)
+			return TRUE
+		if("setSpawnCoeff")
+			spawn_time_coeff = params["new_spawn_coeff"]
+			update_static_data(usr, ui)
+			return TRUE
+		if("setOfficerCoeff")
+			officer_time_coeff = params["new_officer_coeff"]
 			update_static_data(usr, ui)
 			return TRUE
 		if("toggleTemplateEnabled")
@@ -313,6 +345,7 @@
 /// Shuttles to be loaded in ruins
 /datum/map_template/shuttle/ruin
 	category = "ruin"
+	starting_funds = 0
 
 /datum/map_template/shuttle/ruin/caravan_victim
 	file_name = "ruin_caravan_victim"
@@ -345,6 +378,7 @@
 
 /datum/map_template/shuttle/subshuttles
 	category = "subshuttles"
+	starting_funds = 0
 
 /datum/map_template/shuttle/subshuttles/pill
 	file_name = "independent_pill"

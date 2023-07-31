@@ -43,6 +43,7 @@
 /obj/item/organ/tail/lizard
 	name = "\improper Sarathi tail"
 	desc = "A severed Sarathi's tail. Can't they regrow these...?"
+	icon_state = "severedlizard"
 	color = "#116611"
 	tail_type = "Smooth"
 	var/spines = "None"
@@ -112,6 +113,7 @@
 /obj/item/organ/tail/fox
 	name = "fox tail"
 	desc = "A severed fox tail. Sad."
+	icon_state = "severedfox"
 	tail_type = "Fox"
 
 /obj/item/organ/tail/fox/Insert(mob/living/carbon/human/H, special = 0, drop_if_replaced = TRUE)

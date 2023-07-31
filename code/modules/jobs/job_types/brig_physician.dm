@@ -3,8 +3,6 @@
 	total_positions = 1
 	spawn_positions = 1
 	minimal_player_age = 7
-	exp_requirements = 300
-	exp_type = EXP_TYPE_CREW
 	wiki_page = "Guide_to_Medicine" //WS Edit - Wikilinks/Warning
 
 	outfit = /datum/outfit/job/brig_phys
@@ -23,7 +21,6 @@
 	belt = /obj/item/pda/brig_phys
 	ears = /obj/item/radio/headset/headset_medsec/alt
 	uniform = /obj/item/clothing/under/rank/security/brig_phys
-	alt_uniform = /obj/item/clothing/under/rank/medical/doctor/red
 	shoes = /obj/item/clothing/shoes/sneakers/white
 	glasses = /obj/item/clothing/glasses/hud/health/sunglasses
 	suit = /obj/item/clothing/suit/toggle/labcoat/brig_phys
@@ -55,7 +52,6 @@
 	name = "Medic (Twinkleshine)"
 
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile/evil
-	uniform = /obj/item/clothing/under/rank/medical/doctor/red
 	alt_uniform = /obj/item/clothing/under/syndicate/cybersun
 	glasses = /obj/item/clothing/glasses/hud/health
 	belt = /obj/item/storage/belt/medical

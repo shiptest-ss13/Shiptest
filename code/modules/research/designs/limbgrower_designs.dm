@@ -39,7 +39,7 @@
 	id = "digi_l_leg"
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 25)
-	build_path = /obj/item/bodypart/leg/left/digitigrade
+	build_path = /obj/item/bodypart/leg/left/lizard/digitigrade
 	category = list("initial",SPECIES_LIZARD)
 
 /datum/design/digitigrade/rightleg
@@ -47,7 +47,7 @@
 	id = "digi_r_leg"
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 25)
-	build_path = /obj/item/bodypart/leg/right/digitigrade
+	build_path = /obj/item/bodypart/leg/right/lizard/digitigrade
 	category = list("initial",SPECIES_LIZARD)
 
 //Non-limb limb designs
@@ -173,30 +173,6 @@
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 10)
 	build_path = /obj/item/organ/ears/fox
 	category = list("initial",SPECIES_HUMAN)
-
-/datum/design/dwarf_gland
-	name = "Dwarf Gland"
-	id = "dwarfgland"
-	build_type = LIMBGROWER
-	reagents_list = list(/datum/reagent/medicine/synthflesh = 20, /datum/reagent/consumable/ethanol = 20)
-	build_path = /obj/item/organ/dwarfgland
-	category = list("initial",SPECIES_DWARF)
-
-/datum/design/dwarf_liver
-	name = "Dwarf Liver"
-	id = "dwarfliver"
-	build_type = LIMBGROWER
-	reagents_list = list(/datum/reagent/medicine/synthflesh = 20, /datum/reagent/consumable/ethanol = 20)
-	build_path = /obj/item/organ/liver/dwarf
-	category = list("initial",SPECIES_DWARF)
-
-/datum/design/dwarf_tongue
-	name = "Dwarf Tongue"
-	id = "dwarftongue"
-	build_type = LIMBGROWER
-	reagents_list = list(/datum/reagent/medicine/synthflesh = 10, /datum/reagent/consumable/ethanol = 10)
-	build_path = /obj/item/organ/tongue/dwarf
-	category = list("initial",SPECIES_DWARF)
 
 /datum/design/lizard_tongue
 	name = "Lizard Tongue"
