@@ -438,5 +438,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /// External Areas ///
 /area/ship/external
 	name = "External"
-	dynamic_lighting = DYNAMIC_LIGHTING_IFSTARLIGHT
 	icon_state = "space_near"
+	dynamic_lighting = DYNAMIC_LIGHTING_IFSTARLIGHT
+	ambientsounds = SPACE
+	sound_environment = SOUND_AREA_SPACE

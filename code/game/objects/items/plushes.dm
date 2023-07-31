@@ -698,7 +698,7 @@
 
 /obj/item/toy/plush/moth/rainbow
 	name = "rainbow moth plushie"
-	desc = "An adorable mothperson plushy. It's a colorfull bug!"
+	desc = "An adorable mothperson plushy. It's a colorful bug!"
 	icon_state = "moffplush_rainbow"
 
 /obj/item/toy/plush/moth/suicide_act(mob/living/user)
