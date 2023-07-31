@@ -55,8 +55,6 @@
 	backpack = /obj/item/storage/backpack/ert/medical
 	belt = /obj/item/storage/belt/medical/webbing/paramedic
 
-
-
 /datum/outfit/job/paramedic/inteq
 	name = "IRMG Corpsman (Inteq)"
 
