@@ -60,12 +60,12 @@
 		M.apply_status_effect(/datum/status_effect/ice_block_talisman, (0.1 * reac_volume) SECONDS)
 
 /datum/reagent/consumable/ethanol/shock_wine
-	name = "Shock Wine"
+	name = "Shockwine"
 	description = "A stimulating brew utilized by members of the Saint-Roumain Militia, created to allow trackers to keep up with highly mobile prey. Known to have a shocking effect when thrown"
 	color = "#00008b"
 	boozepwr = 70
 	taste_description = "the adrenaline of the chase"
-	glass_name = "Shock Wine"
+	glass_name = "Shockwine"
 	glass_desc = "A stimulating brew utilized by members of the Saint-Roumain Militia, created to allow trackers to keep up with highly mobile prey. Known to have a shocking effect when thrown"
 	breakaway_flask_icon_state = "baflaskshockwine"
 
@@ -89,13 +89,14 @@
 		playsound(M, 'sound/machines/defib_zap.ogg', 100, TRUE)
 
 /datum/reagent/consumable/ethanol/hearth_wine
-	name = "Hearth Wine"
+	name = "Hearthwine"
 	description = "A fiery brew utilized by members of the Saint-Roumain Militia, engineered to cauterize wounds in the field. Goes out in a blaze of glory when thrown."
 	color = "#ff8c00"
 	boozepwr = 70
 	taste_description = "the heat of battle"
-	glass_name = "Hearth Wine"
+	glass_name = "Hearthwine"
 	glass_desc = "Fiery brew utilized by members of the Saint-Roumain Militia, engineered to cauterize wounds in the field. Goes out in a blaze of glory when thrown."
+	breakaway_flask_icon_state = "baflaskhearthwine"
 
 /datum/reagent/consumable/ethanol/hearth_wine/on_mob_life(mob/living/M)
 	M.adjust_bodytemperature(5 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal())
@@ -123,13 +124,14 @@
 			otherT.hotspot_expose((reac_volume*10),(reac_volume*1))
 
 /datum/reagent/consumable/ethanol/force_wine
-	name = "Force Wine"
+	name = "Forcewine"
 	description = "A fortifying brew utilized by members of the Saint-Roumain Militia, created to protect against the esoteric. Known to act defensively when thrown."
 	color = "#8b008b"
 	boozepwr = 70
 	taste_description = "the strength of your convictions"
-	glass_name = "Force Wine"
+	glass_name = "Forcewine"
 	glass_desc = "A fortifying brew utilized by members of the Saint-Roumain Militia, created to protect against the esoteric. Known to act defensively when thrown."
+	breakaway_flask_icon_state = "baflaskforcewine"
 
 /datum/reagent/consumable/ethanol/force_wine/on_mob_metabolize(mob/living/M)
 	..()
@@ -154,13 +156,14 @@
 			new /obj/effect/forcefield/resin(otherT, reac_volume)
 
 /datum/reagent/consumable/ethanol/prism_wine
-	name = "Prism Wine"
+	name = "Prismwine"
 	description = "A glittering brew utilized by members of the Saint-Roumain Militia, mixed to provide defense against the blasts and burns of foes and fauna alike. Softens targets against your own burns when thrown."
 	color = "#add8e6"
 	boozepwr = 70
 	taste_description = "the reflective quality of meditation"
-	glass_name = "Prism Wine"
+	glass_name = "Prismwine"
 	glass_desc = "A glittering brew utilized by members of the Saint-Roumain Militia, mixed to provide defense against the blasts and burns of foes and fauna alike. Softens targets against your own burns when thrown."
+	breakaway_flask_icon_state = "baflaskprismwine"
 
 /datum/reagent/consumable/ethanol/prism_wine/on_mob_metabolize(mob/living/carbon/human/M)
 	M.physiology.burn_mod *= 0.5
@@ -188,25 +191,3 @@
 				the_human.physiology.burn_mod = initial(the_human.physiology.burn_mod)
 				the_human.visible_message("<span class='warning'>[the_human] has returned to normal!</span>")
 				the_human.clear_alert("breakawayflask")
-
-/* Use in a diffrent wine
-/datum/reagent/consumable/ethanol/prism_wine/on_mob_metabolize(mob/living/L)
-	if(ishuman(L))
-		var/mob/living/carbon/human/the_human = L
-		for(var/obj/item/spear/thespear in the_human.contents)
-			mighty_spear = thespear
-			mighty_spear.block_chance += 50
-			to_chat(the_human, "<span class='notice'>[thespear] appears polished, although you don't recall polishing it.</span>")
-			return TRUE
-
-/datum/reagent/consumable/ethanol/prism_wine/on_mob_life(mob/living/L)
-	..()
-	if(mighty_spear && !(mighty_spear in L.contents)) //If you had a spear and lose it, you lose the reagent as well. Otherwise this is just a normal drink.
-		L.reagents.del_reagent(/datum/reagent/consumable/ethanol/prism_wine)
-
-/datum/reagent/consumable/ethanol/prism_wine/on_mob_end_metabolize(mob/living/L)
-	if(mighty_spear)
-		mighty_spear.block_chance -= 50
-		to_chat(L,"<span class='notice'>You notice [mighty_spear] looks worn again. Weird.</span>")
-	..()
-*/
