@@ -155,7 +155,7 @@
 			if(airlock.density && (cyclestate == AIRLOCK_CYCLESTATE_CLOSED || (airlocks[A] == EXTERIOR_AIRLOCK && cyclestate == AIRLOCK_CYCLESTATE_INOPEN) || (airlocks[A] == INTERIOR_AIRLOCK && cyclestate == AIRLOCK_CYCLESTATE_OUTOPEN)))
 				airlock.bolt()
 
-/obj/machinery/advanced_airlock_controller/update_icon(use_hash = FALSE)
+/obj/machinery/advanced_airlock_controller/update_icon(updates=ALL, use_hash = FALSE)
 	var/turf/location = get_turf(src)
 	if(!location)
 		return ..()
@@ -317,12 +317,12 @@
 
 /obj/machinery/advanced_airlock_controller/process_atmos()
 	if((machine_stat & (NOPOWER|BROKEN)) || shorted)
-		update_icon(TRUE)
+		update_icon(ALL, TRUE)
 		return
 
 	var/turf/location = get_turf(src)
 	if(!location)
-		update_icon(TRUE)
+		update_icon(ALL, TRUE)
 		return
 	var/pressure = 0
 	if(location)
@@ -455,7 +455,7 @@
 				var/obj/machinery/atmospherics/components/unary/vent_pump/vent = V
 				vent.on = FALSE
 				vent.update_appearance()
-	update_icon(TRUE)
+	update_icon(ALL, TRUE)
 
 /obj/machinery/advanced_airlock_controller/attackby(obj/item/W, mob/user, params)
 	switch(buildstage)
@@ -758,7 +758,7 @@
 			depressurization_margin = clamp(text2num(params["pressure"]), 0.15, 40)
 		if("skip_delay")
 			skip_delay = clamp(text2num(params["skip_delay"]), 0, 1200)
-	update_icon(TRUE)
+	update_icon(ALL, TRUE)
 
 /obj/machinery/advanced_airlock_controller/proc/request_from_door(airlock)
 	var/role = airlocks[airlock]
