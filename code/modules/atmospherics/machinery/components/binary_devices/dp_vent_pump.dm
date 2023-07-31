@@ -291,10 +291,6 @@
 	id_tag = INCINERATOR_ATMOS_DP_VENTPUMP
 	frequency = FREQ_AIRLOCK_CONTROL
 
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/incinerator_syndicatelava
-	id_tag = INCINERATOR_SYNDICATELAVA_DP_VENTPUMP
-	frequency = FREQ_AIRLOCK_CONTROL
-
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2
 	piping_layer = 2
 	icon_state = "dpvent_map-2"
