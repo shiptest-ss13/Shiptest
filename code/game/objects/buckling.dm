@@ -21,6 +21,15 @@
 			if(user_unbuckle_mob(buckled_mobs[1],user))
 				return 1
 
+	// Unpixelshifting part
+	if(user.shifting)
+		if(ismob(src))
+			return ..()
+		if(!src.anchored)
+			src.unpixel_shift()
+			return TRUE
+
+
 //literally just the above extension of attack_hand(), but for silicons instead (with an adjacency check, since attack_robot() being called doesn't mean that you're adjacent to something)
 /atom/movable/attack_robot(mob/living/user)
 	. = ..()

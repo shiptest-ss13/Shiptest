@@ -1,6 +1,8 @@
 #define MAXIMUM_PIXEL_SHIFT 16
 #define PASSABLE_SHIFT_THRESHOLD 8
 
+// Unpixelshifting keybind is handeled in game/object/buckling.dm to avoid having multiple definition of /atom/mobable/attack_hand(mod/living/user)
+
 /atom/movable
 	// Is the atom shifted ?
 	var/is_shifted = FALSE
@@ -67,17 +69,6 @@
 	if(!istype(mover, /obj/projectile) && !mover.throwing && passthroughable & get_dir(src, border_dir))
 		return TRUE
 	return ..()
-
-// Slap things back in place
-/obj/item/slapper/afterattack(atom/target, mob/user, proximity)
-	if (!proximity)
-		return
-	if (ismob(target))
-		return
-	if (istype(target, /atom/movable))
-		var/atom/movable/M = target
-		if(!M.anchored)
-			M.unpixel_shift()
 
 #undef MAXIMUM_PIXEL_SHIFT
 #undef PASSABLE_SHIFT_THRESHOLD
