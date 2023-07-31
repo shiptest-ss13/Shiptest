@@ -53,8 +53,8 @@
 	uniform = /obj/item/clothing/under/rank/engineering/atmospheric_technician/life_support_specialist
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1, /obj/item/storage/box/survival=2)
 
-/datum/outfit/job/atmos/chadmos                //WS Edit - Give Chadmos Sr. Uniform
-	name = "Atmospheric Technician (Chadmos)"  //WS Edit - Give Chadmos Sr. Uniform
+/datum/outfit/job/atmos/chadmos
+	name = "Atmospheric Technician (Chadmos)"
 
 	belt = null
 	uniform = /obj/item/clothing/under/suit/senior_atmos
@@ -65,14 +65,6 @@
 
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1)
 
-//Shiptest
-/datum/outfit/job/atmos/gec
-	name = "Atmospheric Technician (GEC)"
-
-	uniform = /obj/item/clothing/under/syndicate/gec/atmos_tech
-	suit = /obj/item/clothing/suit/toggle/hazard
-	head = /obj/item/clothing/head/hardhat
-	id = /obj/item/card/id/syndicate_command/crew_id
 
 /datum/outfit/job/atmos/frontiersmen
 	name = "Atmospheric Technician (Frontiersmen)"

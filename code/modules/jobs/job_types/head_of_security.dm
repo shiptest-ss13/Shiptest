@@ -63,16 +63,6 @@
 	suit_store = /obj/item/tank/internals/oxygen
 	backpack_contents = list(/obj/item/melee/baton/loaded=1, /obj/item/gun/energy/e_gun=1, /obj/item/ammo_box/magazine/co9mm=1) //WS edit - free lethals
 
-/datum/outfit/job/hos/syndicate
-	name = "Sergeant (Syndicate)"
-
-	ears = /obj/item/radio/headset/syndicate/alt
-	uniform = /obj/item/clothing/under/syndicate/combat
-	head = /obj/item/clothing/head/warden
-	suit = /obj/item/clothing/suit/armor/vest/syndie
-	id = /obj/item/card/id/syndicate_command/crew_id
-	backpack_contents = list(/obj/item/melee/baton/loaded=1, /obj/item/storage/box/survival/syndie=1)
-
 /datum/outfit/job/hos/nanotrasen
 	name = "Head of Security (Nanotrasen)"
 
