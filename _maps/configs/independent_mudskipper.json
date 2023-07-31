@@ -1,0 +1,34 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Mudskipper-class Salvage Runner",
+	"map_short_name": "Mudskipper-class",
+	"prefix": "ISV",
+	"description": "description pending. slap me if you're reading this",
+	"tags": [
+		"Combat",
+		"Engineering",
+		"Specialist"
+	],
+	"namelists": [
+		"MERCANTILE",
+		"SPACE"
+	],
+	"map_path": "_maps/shuttles/shiptest/independent_mudskipper.dmm",
+	"roundstart": true,
+	"job_slots": {
+		"Salvage Leader": {
+			"outfit": "/datum/outfit/job/captain",
+			"officer": true,
+			"slots": 1
+		},
+		"Salvage Technician": {
+			"outfit": "/datum/outfit/job/engineer/maintenancetechnician",
+			"slots": 1
+		},
+		"Salvagee": {
+			"outfit": "/datum/outfit/job/assistant/engineeringspecialist",
+			"slots": 2
+		}
+	},
+	"enabled": true
+}
