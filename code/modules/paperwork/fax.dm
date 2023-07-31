@@ -177,7 +177,7 @@
 // Switches access to the "legal" administrator's fax list. Access to the "illegal" is switched by hacking.
 /obj/machinery/fax/proc/access_additional_faxes_toggle()
 	access_additional_faxes = !access_additional_faxes
-	say("The channel of communication with CentCom is [access_additional_faxes ? "open" : "close"].")
+	say("Bluespace channel communication [access_additional_faxes ? "opened" : "closed"].")
 
 /**
  * Attempts to clean out a jammed machine using a passed item.
