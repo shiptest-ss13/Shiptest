@@ -15,9 +15,9 @@ export class TextArea extends Component {
   constructor(props, context) {
     super(props, context);
     this.textareaRef = props.innerRef || createRef();
-    this.fillerRef = createRef();
     this.state = {
       editing: false,
+      scrolledAmount: 0,
     };
     const { dontUseTabForIndent = false } = props;
     this.handleOnInput = (e) => {
@@ -100,6 +100,9 @@ export class TextArea extends Component {
             '\t' +
             value.substring(selectionEnd);
           e.target.selectionEnd = selectionStart + 1;
+          if (onInput) {
+            onInput(e, e.target.value);
+          }
         }
       }
     };
@@ -119,6 +122,15 @@ export class TextArea extends Component {
         }
       }
     };
+    this.handleScroll = (e) => {
+      const { displayedValue } = this.props;
+      const input = this.textareaRef.current;
+      if (displayedValue && input) {
+        this.setState({
+          scrolledAmount: input.scrollTop,
+        });
+      }
+    };
   }
 
   componentDidMount() {
@@ -130,6 +142,7 @@ export class TextArea extends Component {
     if (this.props.autoFocus || this.props.autoSelect) {
       setTimeout(() => {
         input.focus();
+
         if (this.props.autoSelect) {
           input.select();
         }
@@ -169,26 +182,43 @@ export class TextArea extends Component {
       placeholder,
       scrollbar,
       noborder,
+      displayedValue,
       ...boxProps
     } = this.props;
     // Box props
-    const { className, fluid, ...rest } = boxProps;
+    const { className, fluid, nowrap, ...rest } = boxProps;
+    const { scrolledAmount } = this.state;
     return (
       <Box
         className={classes([
           'TextArea',
-          fluid && 'TextArea--fluid',
           fluid && 'TextArea--fluid',
           noborder && 'TextArea--noborder',
           className,
         ])}
         {...rest}
       >
+        {!!displayedValue && (
+          <Box position="absolute" width="100%" height="100%" overflow="hidden">
+            <div
+              className={classes([
+                'TextArea__textarea',
+                'TextArea__textarea_custom',
+              ])}
+              style={{
+                'transform': `translateY(-${scrolledAmount}px)`,
+              }}
+            >
+              {displayedValue}
+            </div>
+          </Box>
+        )}
         <textarea
           ref={this.textareaRef}
           className={classes([
             'TextArea__textarea',
             scrollbar && 'TextArea__textarea--scrollable',
+            nowrap && 'TextArea__nowrap',
           ])}
           placeholder={placeholder}
           onChange={this.handleOnChange}
@@ -197,7 +227,11 @@ export class TextArea extends Component {
           onInput={this.handleOnInput}
           onFocus={this.handleFocus}
           onBlur={this.handleBlur}
+          onScroll={this.handleScroll}
           maxLength={maxLength}
+          style={{
+            'color': displayedValue ? 'rgba(0, 0, 0, 0)' : 'inherit',
+          }}
         />
       </Box>
     );
