@@ -15,9 +15,10 @@
 	active_power_usage = 1000
 	var/id
 	var/active = TRUE
-	var/kill_range = 5
-	var/fire_delay = 10 SECONDS
+	var/kill_range = 6
+	var/fire_delay = 7 SECONDS
 	COOLDOWN_DECLARE(fire_timer)
+	var/charging = TRUE
 
 /obj/machinery/meteor_shield/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
 	id = "[REF(port)][id]"
@@ -66,10 +67,13 @@
 		. = TRUE
 
 /obj/machinery/meteor_shield/proc/toggle(mob/user)
+	if(!anchored)
+		if(user)
+			to_chat(user, "<span class='warning'>You can only activate [src] while it's secured!.</span>")
+
 	if(user)
 		to_chat(user, "<span class='notice'>You [active ? "deactivate": "activate"] [src].</span>")
-		active = !active
-
+	set_anchored(!anchored)
 
 /obj/machinery/meteor_shield/update_icon_state()
 	icon_state = active ? "syndie_lethal" : "syndie_off"
@@ -82,6 +86,8 @@
 	if(!active)
 		return
 	if(COOLDOWN_FINISHED(src, fire_timer))
+		if(charging = TRUE)
+			charging = FALSE
 		for(var/obj/effect/meteor/M in GLOB.meteor_list)
 			if(M.virtual_z() != virtual_z())
 				continue
@@ -90,9 +96,10 @@
 			if(!(obj_flags & EMAGGED) && los(M))
 				Beam(get_turf(M),icon_state="sat_beam",time=5,maxdistance=kill_range)
 				dir = get_dir(src, M)
-				explosion(M, 0,0,1,7,TRUE,FALSE,4,FALSE,TRUE)
+				explosion(M, 0,0,1,5,TRUE,FALSE,3,FALSE,TRUE)
 				qdel(M)
 				COOLDOWN_START(src, fire_timer, fire_delay)
+				charging = TRUE
 
 /obj/machinery/meteor_shield/cargo
 	anchored = FALSE
@@ -133,6 +140,7 @@
 		data["satellites"] += list(list(
 			"id" = S.id,
 			"active" = S.active,
+			"Ready To Fire" = !S.charging
 		))
 	data["notice"] = notice
 
