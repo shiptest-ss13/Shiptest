@@ -43,6 +43,7 @@
 		/obj/item/reagent_containers/food/snacks/breadslice,
 		/obj/item/reagent_containers/food/snacks/donkpocket,
 		/obj/item/reagent_containers/food/snacks/cookie,
+		/obj/item/reagent_containers/food/snacks/salami
 		/obj/item/reagent_containers/food/snacks/sugarcookie,
 		/obj/item/reagent_containers/food/snacks/oatmealcookie,
 		/obj/item/reagent_containers/food/snacks/raisincookie,
