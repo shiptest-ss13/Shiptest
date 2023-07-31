@@ -56,10 +56,22 @@
 
 /obj/machinery/fax/Initialize(mapload)
 	. = ..()
+	var/area/area
+	var/area/A = loc.loc
+	var/areastring = null
+
+	if(areastring)
+		area = get_area_instance_from_text(areastring)
+		if(!area)
+			area = A
+			stack_trace("Bad areastring path for [src], [areastring]")
+	else if(isarea(A) && areastring == null)
+		area = A
+
 	if(!fax_id)
 		fax_id = SSnetworks.make_address()
 	if(!fax_name)
-		fax_name = "Unregistered fax " + fax_id
+		fax_name = "\improper [get_area_name(area, TRUE)] " + fax_id
 	wires = new /datum/wires/fax(src)
 
 /obj/machinery/fax/hacked
@@ -141,7 +153,7 @@
 				to_chat(user, "<span class='warning'>There is already a fax machine with this name on the network.</span>")
 				return
 		user.log_message("renamed [fax_name] (fax machine) to [new_fax_name]", LOG_GAME)
-		fax_name = new_fax_name
+		fax_name = "\improper [new_fax_name] " + fax_id
 	return
 
 /obj/machinery/fax/attackby(obj/item/item, mob/user, params)
