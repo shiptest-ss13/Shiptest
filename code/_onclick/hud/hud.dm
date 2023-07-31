@@ -113,7 +113,6 @@ GLOBAL_LIST_INIT(available_ui_styles, list(
 
 	healths = null
 	healthdoll = null
-	wanted_lvl = null
 	internals = null
 	lingchemdisplay = null
 	devilsouldisplay = null

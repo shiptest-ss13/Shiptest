@@ -330,10 +330,6 @@
 	file_name = "pirate_default"
 	name = "pirate ship (Default)"
 
-/// Fugitive hunter ship templates
-/datum/map_template/shuttle/hunter
-	category = "misc"
-
 /datum/map_template/shuttle/hunter/russian
 	file_name = "hunter_russian"
 	name = "Russian Cargo Ship"

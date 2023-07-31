@@ -224,23 +224,6 @@
 		return
 	thermal_overload()
 
-/obj/item/clothing/glasses/hud/spacecop
-	name = "police aviators"
-	desc = "For thinking you look cool while brutalizing protestors and minorities."
-	icon_state = "bigsunglasses"
-	hud_type = ANTAG_HUD_GANGSTER
-	darkness_view = 1
-	flash_protect = FLASH_PROTECTION_FLASH
-	tint = 1
-	glass_colour_type = /datum/client_colour/glass_colour/gray
-
-
-/obj/item/clothing/glasses/hud/spacecop/hidden // for the undercover cop
-	name = "sunglasses"
-	desc = "These sunglasses are special, and let you view potential criminals."
-	icon_state = "sun"
-	item_state = "sunglasses"
-
 /obj/item/clothing/glasses/hud/security/sunglasses/inteq
 	name = "inteq ballistic HUD"
 	desc = "A snazzy looking pair of ballistic goggles with an integrated security hud. The opaque visor provides flash protection."

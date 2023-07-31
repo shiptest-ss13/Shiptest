@@ -332,14 +332,6 @@
 	else if(drawing in graffiti|oriented)
 		temp = "graffiti"
 
-	var/gang_mode
-	if(user.mind)
-		gang_mode = user.mind.has_antag_datum(/datum/antagonist/gang)
-
-	if(gang_mode && (!can_claim_for_gang(user, target)))
-		return
-
-
 	var/graf_rot
 	if(drawing in oriented)
 		switch(user.dir)
@@ -371,7 +363,7 @@
 	if(paint_mode == PAINT_LARGE_HORIZONTAL)
 		wait_time *= 3
 
-	if(gang_mode || !instant)
+	if(!instant)
 		if(!do_after(user, 50, target = target))
 			return
 
@@ -383,34 +375,28 @@
 
 	if(actually_paints)
 		var/obj/effect/decal/cleanable/crayon/C
-		if(gang_mode)
-			if(!can_claim_for_gang(user, target))
-				return
-			tag_for_gang(user, target, gang_mode)
-			affected_turfs += target
-		else
-			switch(paint_mode)
-				if(PAINT_NORMAL)
-					C = new(target, paint_color, drawing, temp, graf_rot)
-					C.pixel_x = clickx
-					C.pixel_y = clicky
+		switch(paint_mode)
+			if(PAINT_NORMAL)
+				C = new(target, paint_color, drawing, temp, graf_rot)
+				C.pixel_x = clickx
+				C.pixel_y = clicky
+				affected_turfs += target
+			if(PAINT_LARGE_HORIZONTAL)
+				var/turf/left = locate(target.x-1,target.y,target.z)
+				var/turf/right = locate(target.x+1,target.y,target.z)
+				if(isValidSurface(left) && isValidSurface(right))
+					C = new(left, paint_color, drawing, temp, graf_rot, PAINT_LARGE_HORIZONTAL_ICON)
+					affected_turfs += left
+					affected_turfs += right
 					affected_turfs += target
-				if(PAINT_LARGE_HORIZONTAL)
-					var/turf/left = locate(target.x-1,target.y,target.z)
-					var/turf/right = locate(target.x+1,target.y,target.z)
-					if(isValidSurface(left) && isValidSurface(right))
-						C = new(left, paint_color, drawing, temp, graf_rot, PAINT_LARGE_HORIZONTAL_ICON)
-						affected_turfs += left
-						affected_turfs += right
-						affected_turfs += target
-					else
-						to_chat(user, "<span class='warning'>There isn't enough space to paint!</span>")
-						return
-			C.add_hiddenprint(user)
-			if(istagger)
-				C.AddComponent(/datum/component/art, GOOD_ART)
-			else
-				C.AddComponent(/datum/component/art, BAD_ART)
+				else
+					to_chat(user, "<span class='warning'>There isn't enough space to paint!</span>")
+					return
+		C.add_hiddenprint(user)
+		if(istagger)
+			C.AddComponent(/datum/component/art, GOOD_ART)
+		else
+			C.AddComponent(/datum/component/art, BAD_ART)
 
 	if(!instant)
 		to_chat(user, "<span class='notice'>You finish drawing \the [temp].</span>")
@@ -453,45 +439,6 @@
 	else
 		..()
 
-/obj/item/toy/crayon/proc/can_claim_for_gang(mob/user, atom/target)
-	var/area/A = get_area(target)
-	if(!A)
-		to_chat(user, "<span class='warning'>[A] is unsuitable for tagging.</span>")
-		return FALSE
-
-	var/spraying_over = FALSE
-	for(var/obj/effect/decal/cleanable/crayon/gang/G in target)
-		spraying_over = TRUE
-
-	for(var/obj/machinery/power/apc in target)
-		to_chat(user, "<span class='warning'>You can't tag an APC.</span>")
-		return FALSE
-
-	var/occupying_gang = territory_claimed(A, user)
-	if(occupying_gang && !spraying_over)
-		to_chat(user, "<span class='danger'>[A] has already been tagged by a gang! You must find and spray over the old tag first!</span>")
-		return FALSE
-
-	// stolen from oldgang lmao
-	return TRUE
-
-/obj/item/toy/crayon/proc/tag_for_gang(mob/user, atom/target, datum/antagonist/gang/user_gang)
-	for(var/obj/effect/decal/cleanable/crayon/old_marking in target)
-		qdel(old_marking)
-
-	var/area/territory = get_area(target)
-
-	var/obj/effect/decal/cleanable/crayon/gang/tag = new /obj/effect/decal/cleanable/crayon/gang(target)
-	tag.my_gang = user_gang.my_gang
-	tag.icon_state = "[user_gang.gang_id]_tag"
-	tag.name = "[tag.my_gang.name] gang tag"
-	tag.desc = "Looks like someone's claimed this area for [tag.my_gang.name]."
-	to_chat(user, "<span class='notice'>You tagged [territory] for [tag.my_gang.name]!</span>")
-
-/obj/item/toy/crayon/proc/territory_claimed(area/territory, mob/user)
-	for(var/obj/effect/decal/cleanable/crayon/gang/G in GLOB.gang_tags)
-		if(get_area(G) == territory)
-			return TRUE
 
 /obj/item/toy/crayon/red
 	icon_state = "crayonred"
@@ -730,7 +677,7 @@
 
 		return
 
-	if(isobj(target) && !istype(target, /obj/effect/decal/cleanable/crayon/gang))
+	if(isobj(target))
 		if(actually_paints)
 			if(color_hex2num(paint_color) < 350 && !istype(target, /obj/structure/window) && !istype(target, /obj/effect/decal/cleanable/crayon)) //Colors too dark are rejected
 				to_chat(usr, "<span class='warning'>A color that dark on an object like this? Surely not...</span>")
