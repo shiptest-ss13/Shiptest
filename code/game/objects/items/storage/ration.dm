@@ -17,9 +17,8 @@
 /obj/item/storage/ration/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 6
-	STR.set_holdable(list(/obj/item/reagent_containers/food/snacks/ration))
-	STR.use_sound = 'sound/items/storage/briefcase.ogg'
+	STR.max_items = 7
+	STR.set_holdable(list(/obj/item/reagent_containers/food))
 	STR.locked = TRUE
 	STR.locked_flavor = "sealed closed"
 
@@ -41,11 +40,11 @@
 /obj/item/storage/ration/vegan_chili/PopulateContents()
 	var/static/items_inside = list(
 		/obj/item/reagent_containers/food/snacks/ration/vegan_chili = 1,
-		/obj/item/reagent_containers/food/snacks/ration/cheese_spread = 1,
+		/obj/item/reagent_containers/food/condiment/pack/cheese_spread = 1,
 		/obj/item/reagent_containers/food/snacks/ration/vegan_crackers = 1,
 		/obj/item/reagent_containers/food/snacks/ration/cornbread = 1,
 		/obj/item/reagent_containers/food/snacks/ration/pizza_crackers = 1,
-		/obj/item/reagent_containers/food/snacks/ration/grape_powder = 1,
+		/obj/item/reagent_containers/food/condiment/pack/grape_powder = 1,
 		/obj/item/reagent_containers/food/snacks/ration/beverage_bag = 1
 		)
 	generate_items_inside(items_inside,src)

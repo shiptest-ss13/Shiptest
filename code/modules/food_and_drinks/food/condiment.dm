@@ -260,10 +260,6 @@
 
 	//You can tear the bag open above food to put the condiments on it, obviously.
 	if(istype(target, /obj/item/reagent_containers/food/snacks))
-		if(!reagents.total_volume)
-			to_chat(user, "<span class='warning'>You tear open [src], but there's nothing in it.</span>")
-			qdel(src)
-			return
 		if(target.reagents.total_volume >= target.reagents.maximum_volume)
 			to_chat(user, "<span class='warning'>You tear open [src], but [target] is stacked so high that it just drips off!</span>" )
 			qdel(src)
@@ -309,6 +305,15 @@
 	originalname = "bbq sauce"
 	list_reagents = list(/datum/reagent/consumable/bbqsauce = 10)
 
+/obj/item/reagent_containers/food/condiment/pack/cheese_spread
+	name = "cheese spread pack"
+	originalname = "cheese spread"
+	list_reagents = list(/datum/reagent/consumable/cheese_spread = 5)
+
+/obj/item/reagent_containers/food/condiment/pack/grape_powder
+	name = "grape beverage powder, carb-fortified pack"
+	originalname = "grape beverage powder"
+	list_reagents = list(/datum/reagent/consumable/sugar = 10, /datum/reagent/consumable/grapejuice = 5)
 
 /obj/item/reagent_containers/food/condiment/ketchup
 	name = "ketchup bottle"

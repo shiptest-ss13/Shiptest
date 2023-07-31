@@ -758,3 +758,37 @@
 	desc = "A dangerous fusion of flavors!"
 	icon_state = "plasma"
 	list_reagents = list(/datum/reagent/medicine/molten_bubbles/plasma = 50)
+
+/obj/item/reagent_containers/food/drinks/ration
+	name = "Rationed Air"
+	desc = "If you ever wondered where air came from..."
+	list_reagents = list(/datum/reagent/oxygen = 6, /datum/reagent/nitrogen = 24)
+	icon_state = "peachcan"
+	in_container = TRUE
+	reagent_flags = NONE
+	spillable = FALSE
+	w_class = WEIGHT_CLASS_SMALL
+	volume = 50
+
+/obj/item/reagent_containers/food/drinks/ration/proc/open_ration(mob/user)
+	to_chat(user, "<span class='notice'>You tear open \the [src].</span>")
+	playsound(user.loc, 'sound/effects/rip3.ogg', 50)
+	reagents.flags |= OPENCONTAINER
+	spillable = TRUE
+
+/obj/item/reagent_containers/food/drinks/ration/attack_self(mob/user)
+	if(!is_drainable())
+		open_ration(user)
+		icon_state = "[icon_state]_open"
+	return ..()
+
+/obj/item/reagent_containers/food/drinks/ration/attack(mob/living/M, mob/user, def_zone)
+	if (!is_drainable())
+		to_chat(user, "<span class='warning'> The [src] is sealed shut!</span>")
+		return 0
+	return ..()
+
+/obj/item/reagent_containers/food/snacks/ration/beverage_bag
+	name = "hot beverage bag"
+	list_reagents = list(/datum/reagent/water = 30)
+

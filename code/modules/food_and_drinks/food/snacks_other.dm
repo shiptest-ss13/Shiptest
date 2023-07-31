@@ -771,7 +771,7 @@
 	reagent_flags = NONE
 	spillable = FALSE
 	w_class = WEIGHT_CLASS_SMALL
-	volume = 30
+	volume = 50
 
 /obj/item/reagent_containers/food/snacks/ration/proc/open_ration(mob/user)
 	to_chat(user, "<span class='notice'>You tear open \the [src].</span>")
@@ -793,38 +793,31 @@
 
 /obj/item/reagent_containers/food/snacks/ration/vegan_chili
 	name = "vegan chili"
+	desc = "I cant believe its not meat!"
 	icon_state = "beans"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 10)
 	filling_color = "#B22222"
 	tastes = list("beans" = 1)
 	foodtype = VEGETABLES
 
-/obj/item/reagent_containers/food/snacks/ration/cheese_spread
-	name = "cheese spread"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
-	foodtype = DAIRY
-
 /obj/item/reagent_containers/food/snacks/ration/vegan_crackers
 	name = "vegan crackers"
+	desc = "I cant believe its not wheat!"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
+	filling_color = "#B22222"
+	tastes = list("cracker" = 1)
 	foodtype = VEGETABLES
 
 /obj/item/reagent_containers/food/snacks/ration/cornbread
 	name = "corn bread"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	filling_color = "#B22222"
+	tastes = list("corn" = 1)
 	foodtype = VEGETABLES | GRAIN
 
 /obj/item/reagent_containers/food/snacks/ration/pizza_crackers
 	name = "pepperoni pizza cheese filled crackers"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	filling_color = "#B22222"
+	tastes = list("pizza" = 3, "pepperoni" = 1, "cheese" = 1)
 	foodtype = MEAT | DAIRY | GRAIN | JUNKFOOD
-
-/obj/item/reagent_containers/food/snacks/ration/grape_powder
-	name = "grape beverage powder, carb-fortified"
-	list_reagents = list(/datum/reagent/consumable/sugar = 10, /datum/reagent/consumable/grapejuice = 5)
-	foodtype = SUGAR
-
-/obj/item/reagent_containers/food/snacks/ration/beverage_bag
-	name = "hot beverage bag"
-	list_reagents = list(/datum/reagent/water = 30)
-
