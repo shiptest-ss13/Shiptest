@@ -399,7 +399,7 @@ LINEN BINS
 	name = "random dorms double bedsheet"
 	desc = "If you're reading this description ingame, something has gone wrong! Honk!"
 
-/obj/item/bedsheet/dorms/Initialize()
+/obj/item/bedsheet/dorms/double/Initialize()
 	..()
 	var/type = pickweight(list("Colors" = 80, "Special" = 20))
 	switch(type)
