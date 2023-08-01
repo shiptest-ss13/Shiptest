@@ -1,4 +1,4 @@
-#define ANNOTATE_OBJECT(object) testing ? "[object.loc.loc.name] (estimated location: [json_encode(object.check_shuttle_offset() || object.get_relative_location())])" : ADMIN_VERBOSEJMP(object)
+#define ANNOTATE_OBJECT(object) testing ? "[object.loc.loc.name] (estimated location: [json_encode(object.get_relative_location())])" : ADMIN_VERBOSEJMP(object)
 
 /atom/proc/check_shuttle_offset()
 	if(!SSshuttle.initialized)
@@ -28,13 +28,26 @@
 	var/list/results = atmosscan()
 	to_chat(src, "[results.Join("\n")]", confidential = TRUE)
 
-/proc/atmosscan(testing = FALSE)
+/proc/atmosscan(testing = FALSE, critical_only = FALSE)
 	var/list/results = list()
+	var/static/list/blacklist = typecacheof(list(/obj/machinery/atmospherics/pipe/layer_manifold, /obj/machinery/atmospherics/pipe/heat_exchanging))
 
 	for(var/obj/machinery/atmospherics/pipe in SSair.atmos_machinery + SSair.atmos_air_machinery)
-		if(pipe.z && (!length(pipe.nodes) || (null in pipe.nodes)))
+		if(blacklist[pipe.type])
+			continue
+		if(pipe.z && (!length(pipe.nodes) || (null in pipe.nodes)) && !critical_only)
 			results += "Unconnected [pipe.name] located at [ANNOTATE_OBJECT(pipe)]"
 		for(var/obj/machinery/atmospherics/other_pipe in get_turf(pipe))
+			if(blacklist[other_pipe.type])
+				continue
+			if(other_pipe != pipe && other_pipe.piping_layer == pipe.piping_layer && (other_pipe.initialize_directions & pipe.initialize_directions))
+				results += "Doubled [pipe.name] located at [ANNOTATE_OBJECT(pipe)]"
+
+	//HE pipes are tested separately
+	for(var/obj/machinery/atmospherics/pipe/heat_exchanging/pipe in SSair.atmos_air_machinery)
+		if(pipe.z && (!length(pipe.nodes) || (null in pipe.nodes)) && !critical_only)
+			results += "Unconnected [pipe.name] located at [ANNOTATE_OBJECT(pipe)]"
+		for(var/obj/machinery/atmospherics/pipe/heat_exchanging/other_pipe in get_turf(pipe))
 			if(other_pipe != pipe && other_pipe.piping_layer == pipe.piping_layer && (other_pipe.initialize_directions & pipe.initialize_directions))
 				results += "Doubled [pipe.name] located at [ANNOTATE_OBJECT(pipe)]"
 

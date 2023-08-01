@@ -76,6 +76,8 @@
 	if(parents[i])
 		nullifyPipenet(parents[i])
 	airs[i] = null
+	if(!QDELETED(src))
+		airs[i] = new /datum/gas_mixture(200)
 	return ..()
 
 /obj/machinery/atmospherics/components/on_construction()

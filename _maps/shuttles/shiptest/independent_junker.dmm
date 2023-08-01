@@ -2259,7 +2259,7 @@
 /turf/closed/wall/r_wall,
 /area/ship/bridge)
 "QN" = (
-/obj/machinery/atmospherics/pipe/layer_manifold{
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
 /turf/closed/wall/mineral/titanium/survival/nodiagonal,
@@ -2581,8 +2581,8 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 8
+/obj/machinery/atmospherics/pipe/layer_manifold{
+	dir = 4
 	},
 /turf/closed/wall/mineral/titanium/survival/nodiagonal,
 /area/ship/storage/eva)

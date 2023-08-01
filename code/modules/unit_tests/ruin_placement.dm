@@ -15,13 +15,11 @@
 
 			ruin.load(vlevel.get_unreserved_bottom_left_turf())
 
-			/* Temporarily Disabled
-			var/list/errors = atmosscan(TRUE)
-			errors += powerdebug(TRUE)
+			var/list/errors = atmosscan(TRUE, TRUE)
+			//errors += powerdebug(TRUE)
 
 			for(var/error in errors)
 				Fail("Mapping error in [ruin_name]: [error]", ruin.mappath, 1)
-			*/
 
 			vlevel.clear_reservation()
 			qdel(vlevel)
@@ -29,3 +27,30 @@
 	SSair.is_test_loading = FALSE
 
 	qdel(mapzone)
+
+/* Slow, and usually unecessary
+/datum/unit_test/direct_tmpl_placement/Run()
+	SSair.is_test_loading = TRUE
+	var/datum/map_zone/mapzone = SSmapping.create_map_zone("Template Testing Zone")
+	for(var/ship_name as anything in SSmapping.map_templates)
+		var/datum/map_template/template = SSmapping.map_templates[ship_name]
+		var/datum/virtual_level/vlevel = SSmapping.create_virtual_level(
+			template.name,
+			list(),
+			mapzone,
+			template.width,
+			template.height
+		)
+
+		template.load(vlevel.get_unreserved_bottom_left_turf())
+
+		var/list/errors = atmosscan(TRUE)
+		//errors += powerdebug(TRUE)
+
+		for(var/error in errors)
+			Fail("Mapping error in [ship_name]: [error]", template.mappath, 1)
+
+		vlevel.clear_reservation()
+		qdel(vlevel)
+	SSair.is_test_loading = FALSE
+*/

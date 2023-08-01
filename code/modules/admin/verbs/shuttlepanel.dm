@@ -37,7 +37,10 @@
 		if("Delete Shuttle")
 			if(alert(user, "Really delete [name]?", "Delete Shuttle", "Cancel", "Really!") != "Really!")
 				return
-			qdel(src, TRUE)
+			if(QDELETED(current_ship))
+				qdel(src)
+			else
+				qdel(current_ship)
 			message_admins("\[SHUTTLE]: [key_name_admin(user)] has deleted [name].")
 
 		else

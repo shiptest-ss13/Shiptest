@@ -108,6 +108,8 @@
 			continue
 
 		for(var/obj/docking_port/mobile/port in place)
+			if(my_port)
+				CRASH("[src] loaded with multiple docking ports!")
 			my_port = port
 			if(register)
 				port.register()
@@ -134,6 +136,9 @@
 					port.height = width
 					port.dwidth = port_y_offset - 1
 					port.dheight = width - port_x_offset
+
+	if(!my_port)
+		CRASH("Shuttle template loaded without a mobile port!")
 
 	for(var/turf/shuttle_turf in turfs)
 		//Set up underlying_turf_area and update relevent towed_shuttles
@@ -309,17 +314,6 @@
 /// Shiptest-specific main maps. Do not make subtypes! Make a json in /_maps/configs/ instead.
 /datum/map_template/shuttle/shiptest
 	category = "shiptest"
-
-/datum/map_template/shuttle/custom
-	file_name = "custom_shuttle" // Dummy
-
-/// Syndicate Infiltrator variants
-/datum/map_template/shuttle/infiltrator
-	category = "misc"
-
-/datum/map_template/shuttle/infiltrator/advanced
-	file_name = "infiltrator_advanced"
-	name = "advanced syndicate infiltrator"
 
 /// Pirate ship templates
 /datum/map_template/shuttle/pirate

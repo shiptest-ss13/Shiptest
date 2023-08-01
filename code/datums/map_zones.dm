@@ -429,8 +429,17 @@
 
 	var/list/turf/block_turfs = get_block()
 
+	var/static/list/ignored_atoms = typecacheof(list(/mob/dead, /atom/movable/lighting_object))
 	for(var/turf/turf as anything in block_turfs)
-		turf.empty()
+		// don't waste time trying to qdelete the lighting object
+		for(var/atom/movable/thing as anything in turf.contents)
+			//There's a dedicated macro for checking in a typecache, but it has unecessary checks
+			//And this needs to be fast
+			if(ignored_atoms[thing.type])
+				continue
+			qdel(thing)
+			// DO NOT CHECK_TICK HERE. IT CAN CAUSE ITEMS TO GET LEFT BEHIND
+			// THIS IS REALLY IMPORTANT FOR CONSISTENCY. SORRY ABOUT THE LAG SPIKE
 
 	for(var/turf/turf as anything in block_turfs)
 		// Reset turf

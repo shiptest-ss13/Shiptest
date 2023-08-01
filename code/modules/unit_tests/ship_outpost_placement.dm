@@ -9,11 +9,6 @@
 			TEST_FAIL("Runtime error loading ship type ([map.name]): [e] on [e.file]:[e.line]\n[e.desc]")
 	SSair.is_test_loading = FALSE
 
-	var/list/errors = atmosscan(TRUE)
-	errors += powerdebug(TRUE)
-
-	for(var/error in errors)
-		TEST_FAIL("Mapping error: [error]")
 
 	for(var/outpost_type in subtypesof(/datum/overmap/outpost))
 		var/datum/overmap/outpost/test_outpost = new outpost_type()
@@ -33,6 +28,12 @@
 			// keeps ships ready for the next test, and stops us from loading 50 duplicate hangars
 			if(cur_ship.docked_to)
 				cur_ship.Undock(TRUE)
+
+	var/list/errors = atmosscan(TRUE)
+	errors += powerdebug(TRUE)
+
+	for(var/error in errors)
+		TEST_FAIL("Mapping error: [error]")
 
 	for(var/datum/overmap/ship/controlled/deleting_ship as anything in SSovermap.controlled_ships)
 		qdel(deleting_ship)
