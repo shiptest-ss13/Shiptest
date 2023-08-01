@@ -72,31 +72,33 @@
 	if(!air)
 		air = new
 	var/list/possible_expansions = list(base)
-	while(possible_expansions.len>0)
+	while(length(possible_expansions.len))
 		for(var/obj/machinery/atmospherics/borderline in possible_expansions)
 			var/list/result = borderline.pipeline_expansion(src)
-			if(result?.len > 0)
-				for(var/obj/machinery/atmospherics/P in result)
-					if(istype(P, /obj/machinery/atmospherics/pipe))
-						var/obj/machinery/atmospherics/pipe/item = P
-						if(!members.Find(item))
+			if(!result?.len)
+				continue
+			for(var/obj/machinery/atmospherics/P in result)
+				if(istype(P, /obj/machinery/atmospherics/pipe))
+					var/obj/machinery/atmospherics/pipe/item = P
+					if(item in members)
+						continue
 
-							if(item.parent)
-								message_admins("Doubled atmosmachine found at [ADMIN_VERBOSEJMP(item)]! Report this to mappers if it's been loaded from a map file!")
-								log_mapping("Doubled atmosmachine found at [AREACOORD(item)] with other contents: [json_encode(item.loc.contents)]")
-								CRASH("Item added to a pipenet while still having one. (pipes leading to the same spot stacking in one turf, a.k.a. doubled pipes). This is a mapping issue that MUST be fixed. Use the atmosdebug verb to find where it is.")
-							members += item
-							possible_expansions += item
+					if(item.parent)
+						message_admins("Doubled atmosmachine found at [ADMIN_VERBOSEJMP(item)]! Report this to mappers if it's been loaded from a map file!")
+						log_mapping("Doubled atmosmachine found at [AREACOORD(item)] with other contents: [json_encode(item.loc.contents)]")
+						CRASH("Item added to a pipenet while still having one. (pipes leading to the same spot stacking in one turf, a.k.a. doubled pipes). This is a mapping issue that MUST be fixed. Use the atmosdebug verb to find where it is.")
+					members += item
+					possible_expansions += item
 
-							volume += item.volume
-							item.parent = src
+					volume += item.volume
+					item.parent = src
 
-							if(item.air_temporary)
-								air.merge(item.air_temporary)
-								item.air_temporary = null
-					else
-						P.setPipenet(src, borderline)
-						addMachineryMember(P)
+					if(item.air_temporary)
+						air.merge(item.air_temporary)
+						item.air_temporary = null
+				else
+					P.setPipenet(src, borderline)
+					addMachineryMember(P)
 
 			possible_expansions -= borderline
 
