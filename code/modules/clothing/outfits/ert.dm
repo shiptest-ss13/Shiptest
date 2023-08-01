@@ -353,22 +353,6 @@
 	r_hand = /obj/item/megaphone
 	head = /obj/item/clothing/head/intern
 
-/datum/outfit/centcom/ert/janitor/party
-	name = "ERP Cleaning Service"
-
-	uniform = /obj/item/clothing/under/misc/overalls
-	mask = /obj/item/clothing/mask/bandana/blue
-	suit = /obj/item/clothing/suit/apron
-	glasses = /obj/item/clothing/glasses/meson
-	belt = /obj/item/storage/belt/janitor/full
-	r_pocket = /obj/item/grenade/chem_grenade/cleaner
-	l_pocket = /obj/item/grenade/chem_grenade/cleaner
-	l_hand = /obj/item/storage/bag/trash
-	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
-		/obj/item/storage/box/lights/mixed=1,\
-		/obj/item/mop/advanced=1,\
-		/obj/item/reagent_containers/glass/bucket=1)
-
 /datum/outfit/centcom/ert/security/party
 	name = "ERP Bouncer"
 
@@ -380,7 +364,6 @@
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
 		/obj/item/clothing/head/helmet/police=1,\
 		/obj/item/storage/box/handcuffs=1)
-
 
 /datum/outfit/centcom/ert/engineer/party
 	name = "ERP Constructor"

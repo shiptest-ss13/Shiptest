@@ -28,16 +28,6 @@
 		l_pocket = /obj/item/gun/ballistic/revolver
 		r_pocket = /obj/item/ammo_box/a357
 
-/datum/outfit/job/janitor/custodian
-	name = "Janitor (Custodian)"
-
-	uniform = /obj/item/clothing/under/rank/civilian/janitor/custodian
-
-/datum/outfit/job/janitor/sanitationtechnician
-	name = "Janitor (Sanitation Technician)"
-
-	uniform = /obj/item/clothing/under/rank/civilian/janitor/sanitation_tech
-
 /datum/outfit/job/janitor/maid
 	name = "Maid"
 	uniform = /obj/item/clothing/under/rank/civilian/janitor/maid

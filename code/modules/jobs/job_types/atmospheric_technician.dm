@@ -42,30 +42,6 @@
 	suit_store = /obj/item/tank/internals/oxygen
 	internals_slot = ITEM_SLOT_SUITSTORE
 
-/datum/outfit/job/atmos/firefighter
-	name = "Atmospheric Technician (Firefighter)"
-	uniform = /obj/item/clothing/under/rank/engineering/atmospheric_technician/firefighter
-	head = /obj/item/clothing/head/hardhat/red
-	l_hand = /obj/item/extinguisher
-
-/datum/outfit/job/atmos/lifesupportspecialist
-	name = "Atmospheric Technician (Life Support Specialist)"
-	uniform = /obj/item/clothing/under/rank/engineering/atmospheric_technician/life_support_specialist
-	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1, /obj/item/storage/box/survival=2)
-
-/datum/outfit/job/atmos/chadmos                //WS Edit - Give Chadmos Sr. Uniform
-	name = "Atmospheric Technician (Chadmos)"  //WS Edit - Give Chadmos Sr. Uniform
-
-	belt = null
-	uniform = /obj/item/clothing/under/suit/senior_atmos
-	alt_uniform = null
-	suit = /obj/item/clothing/suit/toggle/lawyer/atmos
-	alt_suit = /obj/item/clothing/suit/hazardvest
-	neck = /obj/item/clothing/neck/tie/light_blue
-
-	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1)
-
-//Shiptest
 /datum/outfit/job/atmos/gec
 	name = "Atmospheric Technician (GEC)"
 
