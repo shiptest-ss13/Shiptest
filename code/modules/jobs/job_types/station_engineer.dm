@@ -214,12 +214,18 @@
 
 	head = null
 	backpack = /obj/item/storage/backpack
-	satchel = /obj/item/storage/backpack/satchel/
+	satchel = /obj/item/storage/backpack/satchel
 	duffelbag = /obj/item/storage/backpack/duffelbag
 	courierbag = /obj/item/storage/backpack/messenger
 	l_pocket = /obj/item/radio
 	r_pocket = /obj/item/analyzer
 	glasses = /obj/item/clothing/glasses/welding
+
+/datum/outfit/job/engineer/independent/ship_engineer/salvage
+	belt = NULL
+	r_pocket = NULL
+	glasses = NULL
+
 
 /datum/outfit/job/engineer/syndicate/cybersun
 	name = "Engineer (Cybersun)"

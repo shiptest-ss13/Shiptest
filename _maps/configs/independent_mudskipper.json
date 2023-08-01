@@ -15,6 +15,7 @@
 	],
 	"map_path": "_maps/shuttles/shiptest/independent_mudskipper.dmm",
 	"roundstart": true,
+	"limit": 2,
 	"job_slots": {
 		"Salvage Leader": {
 			"outfit": "/datum/outfit/job/captain",
@@ -22,11 +23,11 @@
 			"slots": 1
 		},
 		"Salvage Technician": {
-			"outfit": "/datum/outfit/job/engineer/maintenancetechnician",
+			"outfit": "/datum/outfit/job/engineer/gloved",
 			"slots": 1
 		},
 		"Salvagee": {
-			"outfit": "/datum/outfit/job/assistant/engineeringspecialist",
+			"outfit": "/datum/outfit/job/engineer/independent/ship_engineer/salvage",
 			"slots": 2
 		}
 	},
