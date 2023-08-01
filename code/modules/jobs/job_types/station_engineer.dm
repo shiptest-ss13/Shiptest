@@ -222,9 +222,9 @@
 	glasses = /obj/item/clothing/glasses/welding
 
 /datum/outfit/job/engineer/independent/ship_engineer/salvage
-	belt = NULL
-	r_pocket = NULL
-	glasses = NULL
+	belt = null
+	r_pocket = null
+	glasses = null
 
 
 /datum/outfit/job/engineer/syndicate/cybersun

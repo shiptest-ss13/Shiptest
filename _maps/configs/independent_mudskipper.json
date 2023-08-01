@@ -3,7 +3,7 @@
 	"map_name": "Mudskipper-class Salvage Runner",
 	"map_short_name": "Mudskipper-class",
 	"prefix": "ISV",
-	"description": "description pending. slap me if you're reading this",
+	"description": "One of the cheapest (and yet, inexplicably popular) offerings from Miskilamo Spacefaring, the Mudskipper-class is a vessel purpose-built for enterprising scrappers and looters looking to salvage bombed-out ruins and harvest boatloads of ore. Featuring a diverse set of multipurpose rooms, a charitable supply of EVA/ruin raiding equipment, and a set of anti-radiation gear for dealing with industrial accidents, the Mudskipper-class just keeps on chuggin’!",
 	"tags": [
 		"Combat",
 		"Engineering",
@@ -22,13 +22,13 @@
 			"officer": true,
 			"slots": 1
 		},
-		"Salvage Technician": {
-			"outfit": "/datum/outfit/job/engineer/gloved",
-			"slots": 1
-		},
 		"Salvagee": {
 			"outfit": "/datum/outfit/job/engineer/independent/ship_engineer/salvage",
 			"slots": 2
+		},
+		"Salvage Technician": {
+			"outfit": "/datum/outfit/job/engineer/gloved",
+			"slots": 1
 		}
 	},
 	"enabled": true
