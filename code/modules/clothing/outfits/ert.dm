@@ -353,58 +353,6 @@
 	r_hand = /obj/item/megaphone
 	head = /obj/item/clothing/head/intern
 
-/datum/outfit/centcom/ert/security/party
-	name = "ERP Bouncer"
-
-	uniform = /obj/item/clothing/under/misc/bouncer
-	suit = /obj/item/clothing/suit/armor/vest
-	belt = /obj/item/melee/classic_baton/telescopic
-	l_pocket = /obj/item/assembly/flash
-	r_pocket = /obj/item/storage/wallet
-	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
-		/obj/item/clothing/head/helmet/police=1,\
-		/obj/item/storage/box/handcuffs=1)
-
-/datum/outfit/centcom/ert/engineer/party
-	name = "ERP Constructor"
-
-	uniform = /obj/item/clothing/under/rank/engineering/engineer/hazard
-	mask = /obj/item/clothing/mask/gas/atmos
-	head = /obj/item/clothing/head/hardhat/weldhat
-	suit = /obj/item/clothing/suit/hazardvest
-	r_hand = /obj/item/areaeditor/blueprints
-	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
-		/obj/item/stack/sheet/metal/fifty=1,\
-		/obj/item/stack/sheet/glass/fifty=1,\
-		/obj/item/stack/sheet/plasteel/twenty=1,\
-		/obj/item/etherealballdeployer=1,\
-		/obj/item/stack/light_w=30,\
-		/obj/item/construction/rcd/loaded=1)
-
-/datum/outfit/centcom/ert/clown/party
-	name = "ERP Comedian"
-
-	uniform = /obj/item/clothing/under/rank/civilian/clown
-	head = /obj/item/clothing/head/chameleon
-	suit = /obj/item/clothing/suit/chameleon
-	glasses = /obj/item/clothing/glasses/chameleon
-	backpack_contents = list(/obj/item/storage/box/hug/survival=1,\
-		/obj/item/shield/energy/bananium=1,\
-		/obj/item/instrument/piano_synth=1)
-
-/datum/outfit/centcom/ert/commander/party
-	name = "ERP Coordinator"
-
-	uniform = /obj/item/clothing/under/misc/coordinator
-	head = /obj/item/clothing/head/coordinator
-	suit = /obj/item/clothing/suit/coordinator
-	belt = /obj/item/storage/belt/sabre
-	r_hand = /obj/item/toy/balloon
-	l_pocket = /obj/item/kitchen/knife
-	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
-		/obj/item/storage/box/fireworks=3,\
-		/obj/item/reagent_containers/food/snacks/store/cake/birthday=1)
-
 /datum/outfit/centcom/ert/marine
 	name = "Marine Commander"
 
