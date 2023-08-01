@@ -65,7 +65,7 @@
 	Rename(gen_outpost_name())
 
 	fill_missions()
-	addtimer(CALLBACK(src, .proc/fill_missions), 10 MINUTES, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
+	addtimer(CALLBACK(src, PROC_REF(fill_missions)), 10 MINUTES, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
 
 /datum/overmap/outpost/Destroy(...)
 	// cleanup our data structures. behavior here is currently relatively restrained; may be made more expansive in the future
