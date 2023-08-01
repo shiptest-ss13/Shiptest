@@ -7,11 +7,11 @@ type FaxData = {
   faxes: FaxInfo[];
   fax_id: string;
   fax_name: string;
+  visible: boolean;
   has_paper: string;
   access_additional_faxes: boolean;
   сan_switch_access: boolean;
   additional_faxes_list: AdditionalFaxesList[];
-  visible: boolean;
   frontier_network: boolean;
   frontier_faxes_list: AdditionalFaxesList[];
   fax_history: FaxHistory[];
@@ -89,62 +89,66 @@ export const Fax = (props, context) => {
               disabled={!data.сan_switch_access}
               tooltip="Manage access to the expanded fax list."
             >
-              {data.access_additional_faxes ? 'Unlogin' : 'Login'}
+              {data.access_additional_faxes ? 'Logout' : 'Login'}
             </Button>
           }
         >
-          <Box mt={0.4}>
-            {!!data.access_additional_faxes &&
-              data.additional_faxes_list.map((fax: AdditionalFaxesList) => (
+          {faxes.length !== 0 ? (
+            <Box mt={0.4}>
+              {!!data.access_additional_faxes &&
+                data.additional_faxes_list.map((fax: AdditionalFaxesList) => (
+                  <Button
+                    key={fax.fax_name}
+                    title={fax.fax_name}
+                    disabled={!data.has_paper}
+                    backgroundColor={fax.button_color}
+                    onClick={() =>
+                      act('send_to_additional_fax', {
+                        name: fax.fax_name,
+                        color: fax.button_color,
+                      })
+                    }
+                  >
+                    {fax.fax_name}
+                  </Button>
+                ))}
+              {!!data.frontier_network &&
+                data.frontier_faxes_list.map((fax: AdditionalFaxesList) => (
+                  <Button
+                    key={fax.fax_name}
+                    title={fax.fax_name}
+                    disabled={!data.has_paper}
+                    backgroundColor={fax.button_color}
+                    onClick={() =>
+                      act('send_to_additional_fax', {
+                        name: fax.fax_name,
+                        color: fax.button_color,
+                      })
+                    }
+                  >
+                    {fax.fax_name}
+                  </Button>
+                ))}
+              {faxes.map((fax: FaxInfo) => (
                 <Button
-                  key={fax.fax_name}
+                  key={fax.fax_id}
                   title={fax.fax_name}
                   disabled={!data.has_paper}
-                  backgroundColor={fax.button_color}
+                  color={fax.frontier_network ? 'red' : 'blue'}
                   onClick={() =>
-                    act('send_to_additional_fax', {
+                    act('send', {
+                      id: fax.fax_id,
                       name: fax.fax_name,
-                      color: fax.button_color,
                     })
                   }
                 >
                   {fax.fax_name}
                 </Button>
               ))}
-            {!!data.frontier_network &&
-              data.frontier_faxes_list.map((fax: AdditionalFaxesList) => (
-                <Button
-                  key={fax.fax_name}
-                  title={fax.fax_name}
-                  disabled={!data.has_paper}
-                  backgroundColor={fax.button_color}
-                  onClick={() =>
-                    act('send_to_additional_fax', {
-                      name: fax.fax_name,
-                      color: fax.button_color,
-                    })
-                  }
-                >
-                  {fax.fax_name}
-                </Button>
-              ))}
-            {faxes.map((fax: FaxInfo) => (
-              <Button
-                key={fax.fax_id}
-                title={fax.fax_name}
-                disabled={!data.has_paper}
-                color={fax.frontier_network ? 'red' : 'blue'}
-                onClick={() =>
-                  act('send', {
-                    id: fax.fax_id,
-                    name: fax.fax_name,
-                  })
-                }
-              >
-                {fax.fax_name}
-              </Button>
-            ))}
-          </Box>
+            </Box>
+          ) : (
+            "The fax couldn't detect any other faxes on the network."
+          )}
         </Section>
         <Section
           title="History"
