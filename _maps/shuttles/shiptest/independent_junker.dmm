@@ -2092,7 +2092,7 @@
 	dir = 8
 	},
 /turf/open/floor/engine/hull,
-/area/template_noop)
+/area/ship/external)
 "MW" = (
 /obj/docking_port/stationary{
 	dwidth = 15;
@@ -2259,7 +2259,7 @@
 /turf/closed/wall/r_wall,
 /area/ship/bridge)
 "QN" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+/obj/machinery/atmospherics/pipe/layer_manifold{
 	dir = 4
 	},
 /turf/closed/wall/mineral/titanium/survival/nodiagonal,
@@ -2581,7 +2581,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/layer_manifold{
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
 /turf/closed/wall/mineral/titanium/survival/nodiagonal,

@@ -1,5 +1,4 @@
 /datum/unit_test/ruin_placement/Run()
-	SSair.is_test_loading = TRUE
 	var/datum/map_zone/mapzone = SSmapping.create_map_zone("Ruin Testing Zone")
 	for(var/planet_name as anything in SSmapping.planet_types)
 		var/datum/planet_type/planet_type = SSmapping.planet_types[planet_name]
@@ -23,8 +22,6 @@
 
 			vlevel.clear_reservation()
 			qdel(vlevel)
-
-	SSair.is_test_loading = FALSE
 
 	qdel(mapzone)
 

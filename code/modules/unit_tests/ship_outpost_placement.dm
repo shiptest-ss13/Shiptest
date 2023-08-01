@@ -1,5 +1,4 @@
 /datum/unit_test/ship_outpost_placement/Run()
-	SSair.is_test_loading = TRUE
 	for(var/mapname as anything in SSmapping.ship_purchase_list)
 		var/datum/map_template/shuttle/map = SSmapping.ship_purchase_list[mapname]
 		try
@@ -7,8 +6,6 @@
 			new /datum/overmap/ship/controlled(list("x" = 1, "y" = 1), map)
 		catch(var/exception/e)
 			TEST_FAIL("Runtime error loading ship type ([map.name]): [e] on [e.file]:[e.line]\n[e.desc]")
-	SSair.is_test_loading = FALSE
-
 
 	for(var/outpost_type in subtypesof(/datum/overmap/outpost))
 		var/datum/overmap/outpost/test_outpost = new outpost_type()

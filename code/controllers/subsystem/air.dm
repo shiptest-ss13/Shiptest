@@ -76,8 +76,6 @@ SUBSYSTEM_DEF(air)
 	var/excited_group_pressure_goal = 1
 
 
-	var/is_test_loading = FALSE
-
 /datum/controller/subsystem/air/stat_entry(msg)
 	msg += "C:{"
 	msg += "HP:[round(cost_highpressure,1)]|"
@@ -168,8 +166,7 @@ SUBSYSTEM_DEF(air)
 	// This is only machinery like filters, mixers that don't interact with air
 	if(currentpart == SSAIR_ATMOSMACHINERY)
 		timer = TICK_USAGE_REAL
-		if(!is_test_loading)
-			process_atmos_machinery(resumed)
+		process_atmos_machinery(resumed)
 		cost_atmos_machinery = MC_AVERAGE(cost_atmos_machinery, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
 		if(state != SS_RUNNING)
 			return
@@ -206,8 +203,7 @@ SUBSYSTEM_DEF(air)
 		currentpart = SSAIR_ATMOSMACHINERY_AIR
 	if(currentpart == SSAIR_ATMOSMACHINERY_AIR)
 		timer = TICK_USAGE_REAL
-		if(!is_test_loading)
-			process_atmos_air_machinery(resumed)
+		process_atmos_air_machinery(resumed)
 		cost_atmos_machinery = MC_AVERAGE(cost_atmos_machinery, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
 		if(state != SS_RUNNING)
 			return
