@@ -68,7 +68,7 @@
 
 /obj/machinery/atmospherics/Initialize(mapload)
 	if(init_processing)
-		SSair.start_processing_machine(src)
+		SSair.start_processing_machine(src, mapload)
 	return ..()
 
 /obj/machinery/atmospherics/Destroy()

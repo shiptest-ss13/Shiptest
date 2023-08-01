@@ -10,7 +10,7 @@
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 8
 	},
-/obj/item/pipe/binary{
+/obj/machinery/atmospherics/pipe/simple/general{
 	dir = 10
 	},
 /turf/open/floor/plating{
@@ -58,9 +58,6 @@
 "de" = (
 /obj/effect/turf_decal/steeldecal/steel_decals_central2{
 	pixel_y = 2
-	},
-/obj/item/pipe/binary{
-	dir = 9
 	},
 /turf/open/floor/plasteel/dark,
 /area/hangar)
@@ -180,7 +177,7 @@
 	},
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/pipe/binary,
+/obj/machinery/atmospherics/pipe/simple/general,
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
 	},
@@ -222,7 +219,7 @@
 /area/hangar)
 "gX" = (
 /obj/structure/catwalk/over/plated_catwalk,
-/obj/item/pipe/binary{
+/obj/machinery/atmospherics/pipe/simple/general{
 	dir = 5
 	},
 /turf/open/floor/plating{
@@ -259,7 +256,7 @@
 /obj/machinery/door/airlock/maintenance_hatch{
 	req_access_txt = "109"
 	},
-/obj/item/pipe/binary,
+/obj/machinery/atmospherics/pipe/simple/general,
 /turf/open/floor/plating,
 /area/hangar)
 "jc" = (
@@ -324,7 +321,7 @@
 	},
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/effect/decal/cleanable/blood/old,
-/obj/item/pipe/binary,
+/obj/machinery/atmospherics/pipe/simple/general,
 /turf/open/floor/plating,
 /area/hangar)
 "kA" = (
@@ -444,9 +441,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/steeldecal/steel_decals_central2{
 	pixel_y = 2
-	},
-/obj/item/pipe/binary{
-	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/hangar)
@@ -678,7 +672,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
-/obj/item/pipe/binary,
+/obj/machinery/atmospherics/pipe/simple/general,
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
 	},
@@ -833,7 +827,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 10
 	},
-/obj/item/pipe/binary{
+/obj/machinery/atmospherics/pipe/simple/general{
 	dir = 4
 	},
 /turf/open/floor/plating{
@@ -1202,6 +1196,9 @@
 "NV" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/general{
+	dir = 4
+	},
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
 	},
@@ -1213,6 +1210,9 @@
 /area/hangar)
 "Os" = (
 /obj/structure/catwalk/over/plated_catwalk,
+/obj/machinery/atmospherics/pipe/simple/general{
+	dir = 6
+	},
 /turf/open/floor/plating{
 	icon_state = "platingdmg3"
 	},
@@ -1268,13 +1268,18 @@
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/glass,
-/obj/item/pipe/binary,
+/obj/machinery/atmospherics/pipe/simple/general{
+	dir = 9
+	},
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
 	},
 /area/hangar)
 "Qk" = (
 /obj/structure/catwalk/over/plated_catwalk,
+/obj/machinery/atmospherics/pipe/simple/general{
+	dir = 4
+	},
 /turf/open/floor/plating{
 	icon_state = "platingdmg2"
 	},
@@ -1469,6 +1474,13 @@
 "Xg" = (
 /turf/open/floor/plasteel/tech,
 /area/hangar)
+"Xw" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/machinery/atmospherics/pipe/simple/general{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/hangar)
 "XA" = (
 /obj/effect/decal/fakelattice{
 	color = "#808080"
@@ -1527,7 +1539,7 @@
 	pixel_y = 2
 	},
 /obj/machinery/atmospherics/components/unary/passive_vent{
-	dir = 4
+	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/hangar)
@@ -1882,7 +1894,7 @@ iZ
 GX
 Lb
 Ug
-dU
+Xw
 pB
 cF
 uq

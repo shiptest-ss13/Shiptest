@@ -4979,11 +4979,10 @@
 /area/ship/crew/chapel)
 "Sa" = (
 /obj/structure/window/reinforced/spawner/west,
-/obj/machinery/atmospherics/components/unary/vent_pump/high_volume/siphon/atmos/air_output{
-	dir = 8;
-	piping_layer = 2
-	},
 /obj/effect/turf_decal/corner/opaque/lightgrey/mono,
+/obj/machinery/atmospherics/components/unary/vent_pump/high_volume/siphon/atmos/air_output{
+	dir = 8
+	},
 /turf/open/floor/engine/air,
 /area/ship/engineering/atmospherics)
 "Sb" = (

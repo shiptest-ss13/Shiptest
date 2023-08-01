@@ -49,4 +49,4 @@
 
 /atom/proc/get_relative_location()
 	var/datum/virtual_level/vlevel = get_virtual_level()
-	return vlevel.get_relative_coords(src)
+	return vlevel?.get_relative_coords(src)
