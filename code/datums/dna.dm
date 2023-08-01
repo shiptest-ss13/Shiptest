@@ -320,7 +320,7 @@
 			stored_dna.species = mrace //not calling any species update procs since we're a brain, not a monkey/human
 
 
-/mob/living/carbon/set_species(datum/species/mrace, icon_update = TRUE, pref_load = FALSE)
+/mob/living/carbon/set_species(datum/species/mrace, icon_update = TRUE, pref_load = FALSE, robotic = FALSE)
 	if(mrace && has_dna())
 		var/datum/species/new_race
 		if(ispath(mrace))
@@ -345,14 +345,15 @@
 		quirks_to_remove -= quirks_resolved
 		for(var/quirk_type in quirks_to_remove)
 			remove_quirk(quirk_type)
-		dna.species.on_species_gain(src, old_species, pref_load)
+		dna.species.on_species_gain(src, old_species, pref_load, robotic)
 		if(ishuman(src))
 			qdel(language_holder)
 			var/species_holder = initial(mrace.species_language_holder)
 			language_holder = new species_holder(src)
 		update_atom_languages()
 
-/mob/living/carbon/human/set_species(datum/species/mrace, icon_update = TRUE, pref_load = FALSE)
+/mob/living/carbon/human/set_species(datum/species/mrace, icon_update = TRUE, pref_load = FALSE, robotic = FALSE)
+	robotic ||= fbp
 	..()
 	if(icon_update)
 		update_hair()

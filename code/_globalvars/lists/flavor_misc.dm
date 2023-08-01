@@ -9,12 +9,8 @@ GLOBAL_LIST_EMPTY(facial_hairstyles_female_list)	//stores only hair names
 GLOBAL_LIST_EMPTY(hair_gradients_list) //stores /datum/sprite_accessory/hair_gradient indexed by name
 	//Underwear
 GLOBAL_LIST_EMPTY(underwear_list)		//stores /datum/sprite_accessory/underwear indexed by name
-GLOBAL_LIST_EMPTY(underwear_m)	//stores only underwear name
-GLOBAL_LIST_EMPTY(underwear_f)	//stores only underwear name
 	//Undershirts
 GLOBAL_LIST_EMPTY(undershirt_list) 	//stores /datum/sprite_accessory/undershirt indexed by name
-GLOBAL_LIST_EMPTY(undershirt_m)	 //stores only undershirt name
-GLOBAL_LIST_EMPTY(undershirt_f)	 //stores only undershirt name
 	//Socks
 GLOBAL_LIST_EMPTY(socks_list)		//stores /datum/sprite_accessory/socks indexed by name
 	//Body Sizes
@@ -40,7 +36,6 @@ GLOBAL_LIST_EMPTY(r_wings_list)
 GLOBAL_LIST_EMPTY(moth_wings_list)
 GLOBAL_LIST_EMPTY(moth_fluff_list)
 GLOBAL_LIST_EMPTY(moth_markings_list)
-GLOBAL_LIST_EMPTY(caps_list)
 GLOBAL_LIST_EMPTY(squid_face_list)
 GLOBAL_LIST_EMPTY(ipc_screens_list)
 GLOBAL_LIST_EMPTY(ipc_antennas_list)

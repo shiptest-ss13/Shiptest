@@ -30,10 +30,6 @@ GLOBAL_LIST_INIT(glass_recipes, list ( \
 	point_value = 1
 	tableVariant = /obj/structure/table/glass
 
-/obj/item/stack/sheet/glass/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins to slice [user.p_their()] neck with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return BRUTELOSS
-
 /obj/item/stack/sheet/glass/cyborg
 	custom_materials = null
 	is_cyborg = 1
@@ -285,12 +281,6 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 	var/icon_prefix
 	var/obj/item/stack/sheet/weld_material = /obj/item/stack/sheet/glass
 	embedding = list("embed_chance" = 65)
-
-
-/obj/item/shard/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is slitting [user.p_their()] [pick("wrists", "throat")] with the shard of glass! It looks like [user.p_theyre()] trying to commit suicide.</span>")
-	return (BRUTELOSS)
-
 
 /obj/item/shard/Initialize()
 	. = ..()

@@ -32,6 +32,8 @@
 
 /obj/structure/window/examine(mob/user)
 	. = ..()
+	if(flags_1 & NODECONSTRUCT_1)
+		return
 	if(reinf)
 		if(anchored && state == WINDOW_SCREWED_TO_FRAME)
 			. += "<span class='notice'>The window is <b>screwed</b> to the frame.</span>"
@@ -392,6 +394,9 @@
 //this is shitcode but all of construction is shitcode and needs a refactor, it works for now
 //If you find this like 4 years later and construction still hasn't been refactored, I'm so sorry for this
 /obj/structure/window/reinforced/attackby(obj/item/I, mob/living/user, params)
+	if(flags_1 & NODECONSTRUCT_1)
+		return ..()
+
 	switch(state)
 		if(RWINDOW_SECURE)
 			if(I.tool_behaviour == TOOL_WELDER && user.a_intent == INTENT_HARM)
@@ -435,6 +440,7 @@
 					state = WINDOW_OUT_OF_FRAME
 					set_anchored(FALSE)
 				return
+
 	return ..()
 
 /obj/structure/window/proc/cool_bolts()
@@ -444,6 +450,9 @@
 
 /obj/structure/window/reinforced/examine(mob/user)
 	. = ..()
+	if(flags_1 & NODECONSTRUCT_1)
+		return
+
 	switch(state)
 		if(RWINDOW_SECURE)
 			. += "<span class='notice'>It's been screwed in with one way screws, you'd need to <b>heat them</b> to have any chance of backing them out.</span>"

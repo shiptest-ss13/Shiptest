@@ -100,10 +100,10 @@
 	icon_state = "drum45"
 
 /obj/item/ammo_box/magazine/pistol556mm
-	name = "handgun magazine (5.56mm HITP caseless)"
+	name = "handgun magazine (5.56mm caseless)"
 	icon_state = "5.56mmHITP-12" //ok i did it
-	ammo_type = /obj/item/ammo_casing/caseless/c556mmHITP
-	caliber = "5.56mm HITP caseless"
+	ammo_type = /obj/item/ammo_casing/caseless/c556mm
+	caliber = "5.56mm caseless"
 	max_ammo = 12
 
 /obj/item/ammo_box/magazine/pistol556mm/update_icon()

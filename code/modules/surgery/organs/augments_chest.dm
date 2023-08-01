@@ -66,7 +66,7 @@
 				to_chat(owner, "<span class='notice'>Your reviver implant shuts down and starts recharging. It will be ready again in [DisplayTimeText(revive_cost)].</span>")
 		return
 
-	if(!COOLDOWN_FINISHED(src, reviver_cooldown) || owner.suiciding)
+	if(!COOLDOWN_FINISHED(src, reviver_cooldown))
 		return
 
 	switch(owner.stat)

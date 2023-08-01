@@ -3,7 +3,7 @@
 	desc = "We require data on the behavior of electrical storms in the system for an ongoing study. \
 			Please anchor the attached sensor array to your ship and fly it through the storms.\
 			It must be powered to collect the data. "
-	value = 1500 // base value, before adding bonus for number of things to fly through
+	value = 3000 // base value, before adding bonus for number of things to fly through
 	duration = 30 MINUTES
 	weight = 8
 
@@ -62,6 +62,7 @@
 	desc = "We require data on the behavior of ion storms in the system for an ongoing study. \
 			Please anchor the attached sensor array to your ship and fly it through the storms. \
 			It must be powered to collect the data."
+	value = 3500
 	objective_type = /datum/overmap/event/emp
 
 /datum/mission/research/meteor
@@ -69,9 +70,28 @@
 	desc = "We require data on the behavior of asteroid fields in the system for an ongoing study. \
 			Please anchor the attached sensor array to your ship and fly it through the fields. \
 			It must be powered to collect the data."
-	value = 2000
+	value = 4000
 	weight = 4
 	objective_type = /datum/overmap/event/meteor
+
+/datum/mission/research/carp
+	name = "Carp migration research mission"
+	desc = "We require data on the migration patterns of space carp for an ongoing study. \
+			Please anchor the attached sensor array to your ship and fly it through the fields. \
+			It must be powered to collect the data."
+	value = 2000
+	weight = 4
+	num_wanted = 3
+	objective_type = /datum/overmap/event/meteor/carp
+
+/datum/mission/research/dust
+	name = "dust research mission"
+	desc = "We require data on the density of space dust for updated navcharts. \
+			Please anchor the attached sensor array to your ship and fly it through the fields. \
+			It must be powered to collect the data."
+	value = 1000
+	weight = 4
+	objective_type = /datum/overmap/event/meteor/dust
 
 /*
 		Research mission scanning machine

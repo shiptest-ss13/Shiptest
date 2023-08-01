@@ -282,7 +282,6 @@ GLOBAL_LIST_INIT(ore_probability, list(
 				new /mob/living/simple_animal/hostile/netherworld(loc)
 				new /mob/living/simple_animal/hostile/netherworld/blankbody(loc)
 			if(prob(5))
-				new /obj/item/his_grace(loc)//trust me, it's not worth the trouble.
 				new /mob/living/simple_animal/hostile/netherworld/migo(loc)
 				new /mob/living/simple_animal/hostile/netherworld/blankbody(loc)
 				new /mob/living/simple_animal/hostile/netherworld/migo(loc)

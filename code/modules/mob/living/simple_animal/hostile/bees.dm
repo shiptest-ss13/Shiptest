@@ -306,7 +306,7 @@
 	QDEL_NULL(queen)
 	return ..()
 
-/mob/living/simple_animal/hostile/poison/bees/consider_wakeup()
+/mob/living/simple_animal/hostile/poison/bees/check_should_sleep()
 	if (beehome && loc == beehome) // If bees are chilling in their nest, they're not actively looking for targets
 		idle = min(100, ++idle)
 		if(idle >= BEE_IDLE_ROAMING && prob(BEE_PROB_GOROAM))

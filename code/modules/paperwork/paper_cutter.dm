@@ -17,23 +17,6 @@
 	storedcutter = new /obj/item/hatchet/cutterblade(src)
 	update_icon()
 
-
-/obj/item/papercutter/suicide_act(mob/user)
-	if(storedcutter)
-		user.visible_message("<span class='suicide'>[user] is beheading [user.p_them()]self with [src.name]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-		if(iscarbon(user))
-			var/mob/living/carbon/C = user
-			var/obj/item/bodypart/BP = C.get_bodypart(BODY_ZONE_HEAD)
-			if(BP)
-				BP.drop_limb()
-				playsound(loc, "desceration" ,50, TRUE, -1)
-		return (BRUTELOSS)
-	else
-		user.visible_message("<span class='suicide'>[user] repeatedly bashes [src.name] against [user.p_their()] head! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-		playsound(loc, 'sound/items/gavel.ogg', 50, TRUE, -1)
-		return (BRUTELOSS)
-
-
 /obj/item/papercutter/update_icon_state()
 	icon_state = (storedcutter ? "[initial(icon_state)]-cutter" : "[initial(icon_state)]")
 

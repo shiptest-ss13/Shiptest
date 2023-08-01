@@ -687,6 +687,7 @@
 	name = "Egnine shutter";
 	pixel_y = 28
 	},
+/obj/machinery/light/small/broken/directional/south,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "cJ" = (
@@ -1647,15 +1648,15 @@
 	dir = 1;
 	id = "whiteship_windows";
 	name = "Windows Blast Door Control";
-	pixel_x = -5;
-	pixel_y = -27
+	pixel_x = -7;
+	pixel_y = -22
 	},
 /obj/machinery/button/door{
 	dir = 1;
 	id = "whiteship_bridge";
 	name = "Bridge Blast Door Control";
 	pixel_x = 5;
-	pixel_y = -27
+	pixel_y = -22
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
@@ -1665,13 +1666,13 @@
 	id = "emergencybay_blastdoors";
 	name = "Emergency Bay Blastdoors";
 	pixel_x = 5;
-	pixel_y = -40
+	pixel_y = -33
 	},
 /obj/machinery/button/shieldwallgen{
 	dir = 1;
 	id = "box_cargo";
 	pixel_x = -5;
-	pixel_y = -38
+	pixel_y = -31
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/nanoweave/blue,
@@ -1775,13 +1776,10 @@
 /obj/effect/turf_decal/corner/opaque/blue{
 	dir = 4
 	},
-/obj/structure/sign/poster/official/mini_energy_gun{
-	pixel_y = -32
-	},
 /obj/machinery/computer/cargo/express{
 	dir = 1
 	},
-/obj/machinery/firealarm/directional/west,
+/obj/machinery/firealarm/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "vE" = (
@@ -1960,7 +1958,6 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "yA" = (
-/obj/machinery/light/small/directional/south,
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 4
 	},
@@ -1972,7 +1969,7 @@
 	dir = 8
 	},
 /obj/machinery/advanced_airlock_controller{
-	pixel_y = -28
+	pixel_y = -20
 	},
 /obj/effect/turf_decal/arrows,
 /turf/open/floor/plating,
@@ -1994,6 +1991,7 @@
 	name = "Egnine shutter";
 	pixel_y = -28
 	},
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "yN" = (
@@ -2057,9 +2055,8 @@
 	layer = 2.35
 	},
 /obj/machinery/advanced_airlock_controller{
-	pixel_y = 28
+	pixel_y = 24
 	},
-/obj/machinery/light/small/broken/directional/north,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "AL" = (
@@ -2166,7 +2163,6 @@
 /obj/item/clothing/accessory/armband/medblue,
 /obj/item/clothing/accessory/armband/med,
 /obj/item/clothing/accessory/armband/med,
-/obj/item/clothing/under/rank/medical/psychiatrist/blue,
 /obj/item/clothing/accessory/pocketprotector,
 /obj/item/clothing/accessory/pocketprotector,
 /obj/item/clothing/accessory/pocketprotector,
@@ -2504,7 +2500,7 @@
 	pixel_x = -32
 	},
 /obj/item/storage/box/pillbottles,
-/obj/item/clothing/under/rank/medical/chemist/pharmacist,
+/obj/item/clothing/under/rank/medical/chemist/,
 /obj/item/clothing/suit/longcoat/chemist,
 /obj/item/reagent_containers/dropper,
 /obj/item/clothing/head/beret/chem,

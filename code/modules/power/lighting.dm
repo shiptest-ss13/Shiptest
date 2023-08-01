@@ -830,15 +830,6 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/built, 28)
 	var/rigged = FALSE		// true if rigged to explode
 	var/brightness = 2 //how much light it gives off
 
-/obj/item/light/suicide_act(mob/living/carbon/user)
-	if (status == LIGHT_BROKEN)
-		user.visible_message("<span class='suicide'>[user] begins to stab [user.p_them()]self with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-		return BRUTELOSS
-	else
-		user.visible_message("<span class='suicide'>[user] begins to eat \the [src]! It looks like [user.p_theyre()] not very bright!</span>")
-		shatter()
-		return BRUTELOSS
-
 /obj/item/light/tube
 	name = "light tube"
 	desc = "A replacement light tube."

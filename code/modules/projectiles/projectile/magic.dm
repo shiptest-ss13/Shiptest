@@ -24,7 +24,7 @@
 				if(L.hellbound && L.stat == DEAD)
 					return BULLET_ACT_BLOCK
 				if(L.revive(full_heal = TRUE, admin_revive = TRUE))
-					L.grab_ghost(force = TRUE) // even suicides
+					L.grab_ghost(force = TRUE)
 					to_chat(L, "<span class='notice'>You rise with a start, you're undead!!!</span>")
 				else if(L.stat != DEAD)
 					to_chat(L, "<span class='notice'>You feel great!</span>")

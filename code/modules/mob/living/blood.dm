@@ -202,8 +202,6 @@
 		else if(last_mind)
 			blood_data["ckey"] = ckey(last_mind.key)
 
-		if(!suiciding)
-			blood_data["cloneable"] = 1
 		blood_data["blood_type"] = dna.blood_type
 		blood_data["gender"] = gender
 		blood_data["real_name"] = real_name

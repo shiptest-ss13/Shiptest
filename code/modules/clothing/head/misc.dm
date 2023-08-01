@@ -225,16 +225,6 @@
 	icon_state = "fedora_beige"
 	item_state = "fedora_beige"
 
-/obj/item/clothing/head/fedora/suicide_act(mob/user)
-	if(user.gender == FEMALE)
-		return 0
-	var/mob/living/carbon/human/H = user
-	user.visible_message("<span class='suicide'>[user] is donning [src]! It looks like [user.p_theyre()] trying to be nice to girls.</span>")
-	user.say("M'lady.", forced = "fedora suicide")
-	sleep(10)
-	H.facial_hairstyle = "Neckbeard"
-	return(BRUTELOSS)
-
 /obj/item/clothing/head/sombrero
 	name = "sombrero"
 	icon_state = "sombrero"

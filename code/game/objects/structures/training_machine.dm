@@ -329,7 +329,7 @@
 /**
  * Device that simply counts the number of times you've hit a mob or target with. Looks like a toolbox but isn't.
  *
- * Also has a 'Lap' function for keeping track of hits made at a certain point. Also, looks kinda like his grace for laughs and pranks.
+ * Also has a 'Lap' function for keeping track of hits made at a certain point.
  */
 /obj/item/training_toolbox
 	name = "Training Toolbox"

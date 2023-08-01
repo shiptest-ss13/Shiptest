@@ -102,14 +102,6 @@
 
 	return TRUE
 
-/obj/item/tank/jetpack/suicide_act(mob/user)
-	if (istype(user, /mob/living/carbon/human/))
-		var/mob/living/carbon/human/H = user
-		H.say("WHAT THE FUCK IS CARBON DIOXIDE?")
-		H.visible_message("<span class='suicide'>[user] is suffocating [user.p_them()]self with [src]! It looks like [user.p_they()] didn't read what that jetpack says!</span>")
-		return (OXYLOSS)
-	else
-		..()
 
 /obj/item/tank/jetpack/improvised
 	name = "improvised jetpack"

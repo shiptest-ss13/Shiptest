@@ -2599,7 +2599,7 @@
 /area/ship/engineering/engine)
 "AF" = (
 /obj/structure/bed,
-/obj/item/bedsheet/random,
+/obj/item/bedsheet/dorms,
 /obj/structure/curtain/bounty,
 /obj/machinery/firealarm/directional/south,
 /turf/open/floor/wood,
@@ -3939,7 +3939,8 @@
 	height = 26;
 	launch_status = 0;
 	port_direction = 8;
-	width = 48
+	width = 48;
+	preferred_direction = 4
 	},
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /turf/open/floor/plasteel/patterned/ridged,
@@ -4466,7 +4467,7 @@
 /area/ship/hallway/starboard)
 "SU" = (
 /obj/structure/bed,
-/obj/item/bedsheet/random,
+/obj/item/bedsheet/dorms,
 /obj/structure/curtain/bounty,
 /turf/open/floor/wood,
 /area/ship/crew/dorm)

@@ -1,10 +1,6 @@
 /obj/item/restraints
 	breakouttime = 600
 
-/obj/item/restraints/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] is strangling [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return(OXYLOSS)
-
 /obj/item/restraints/Destroy()
 	if(iscarbon(loc))
 		var/mob/living/carbon/M = loc
@@ -250,11 +246,6 @@
 
 /obj/item/restraints/legcuffs/beartrap/update_icon_state()
 	icon_state = "[initial(icon_state)][armed]"
-
-/obj/item/restraints/legcuffs/beartrap/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is sticking [user.p_their()] head in the [src.name]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	playsound(loc, 'sound/weapons/bladeslice.ogg', 50, TRUE, -1)
-	return (BRUTELOSS)
 
 /obj/item/restraints/legcuffs/beartrap/attack_self(mob/user)
 	. = ..()

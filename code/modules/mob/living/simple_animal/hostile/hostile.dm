@@ -171,8 +171,6 @@
 	GiveTarget(Target)
 	return Target //We now have a target
 
-
-
 /mob/living/simple_animal/hostile/proc/PossibleThreats()
 	. = list()
 	for(var/atom/A as anything in ListTargets())
@@ -554,28 +552,26 @@
 		value = initial(search_objects)
 	search_objects = value
 
-/mob/living/simple_animal/hostile/consider_wakeup()
+/mob/living/simple_animal/hostile/check_should_sleep()
 	..()
+	if(AIStatus == AI_Z_OFF)
+		return
+
 	var/list/tlist
 	var/turf/T = get_turf(src)
-
 	if (!T)
 		return
 
-	if (!length(SSmobs.clients_by_zlevel[T.z])) // It's fine to use .len here but doesn't compile on 511
-		toggle_ai(AI_Z_OFF)
-		return
-
-	tlist = ListTargetsLazy(T.z)
-
+	var/my_virt = virtual_z()
+	tlist = ListTargetsLazy(my_virt)
 	if(AIStatus == AI_IDLE && FindTarget(tlist, 1))
 		FindTarget() //Try again with full effort
 		toggle_ai(AI_ON)
 
-/mob/living/simple_animal/hostile/proc/ListTargetsLazy(_Z)//Step 1, find out what we can see
+/mob/living/simple_animal/hostile/proc/ListTargetsLazy(virtual_z)//Step 1, find out what we can see
 	var/static/hostile_machines = typecacheof(list(/obj/machinery/porta_turret, /obj/mecha)) //WS - add spacepod
 	. = list()
-	for (var/mob/M as anything in SSmobs.clients_by_zlevel[_Z])
+	for (var/mob/M as anything in LAZYACCESS(SSmobs.players_by_virtual_z, "[virtual_z]"))
 		if (get_dist(M, src) < vision_range)
 			if (isturf(M.loc))
 				. += M

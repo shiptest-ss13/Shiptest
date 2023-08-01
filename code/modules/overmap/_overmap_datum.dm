@@ -43,6 +43,8 @@
 	if(!position)
 		position = SSovermap.get_unused_overmap_square(force = TRUE)
 
+	SSovermap.overmap_objects |= src
+
 	contents = list()
 
 	if(islist(position))
@@ -55,8 +57,6 @@
 		docked_to = docked_object
 
 	set_or_create_token()
-	SSovermap.overmap_objects += src
-
 	if(!char_rep && name)
 		char_rep = name[1]
 
@@ -172,7 +172,7 @@
 /datum/overmap/proc/Rename(new_name, force)
 	new_name = sanitize_name(new_name) //sets to a falsey value if it's not a valid name
 	if(!new_name || new_name == name)
-		return
+		return FALSE
 	name = new_name
 	token.name = new_name
 	return TRUE
@@ -275,10 +275,11 @@
  */
 /datum/overmap/proc/complete_dock(datum/overmap/dock_target, datum/docking_ticket/ticket)
 	SHOULD_CALL_PARENT(TRUE)
-	SSovermap.overmap_container[x][y] -= src
+	if(isnum(x) && isnum(y))
+		SSovermap.overmap_container[x][y] -= src
 	x = null
 	y = null
-	dock_target.contents += src
+	dock_target.contents |= src
 	docked_to = dock_target
 	token.abstract_move(dock_target.token)
 

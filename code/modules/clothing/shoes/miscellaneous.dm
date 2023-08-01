@@ -54,6 +54,12 @@
 	permeability_coefficient = 0.9
 	can_be_tied = FALSE
 
+/obj/item/clothing/shoes/sandal/slippers
+	name = "patient slippers"
+	desc = "A white pair of easy slip on and off slippers. There are extra treads on the bottom."
+	icon_state = "whiteslippers"
+	item_state = "whiteslippers"
+
 /obj/item/clothing/shoes/sandal/marisa
 	desc = "A pair of magic black shoes."
 	name = "magic shoes"

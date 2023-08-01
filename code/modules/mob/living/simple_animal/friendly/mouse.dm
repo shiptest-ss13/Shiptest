@@ -10,13 +10,10 @@ GLOBAL_LIST_INIT(mouse_comestible, typecacheof(list(
 		/obj/item/grown/sunflower,
 		/obj/item/cigbutt
 	)))
-GLOBAL_VAR_INIT(food_for_next_mouse, 0)
-
 GLOBAL_VAR_INIT(mouse_food_eaten, 0)
 GLOBAL_VAR_INIT(mouse_spawned, 0)
 GLOBAL_VAR_INIT(mouse_killed, 0)
 
-#define FOODPERMOUSE 35
 //WS Edit
 
 /mob/living/simple_animal/mouse
@@ -58,6 +55,7 @@ GLOBAL_VAR_INIT(mouse_killed, 0)
 
 /mob/living/simple_animal/mouse/Initialize()
 	. = ..()
+	GLOB.mouse_spawned += 1
 	ADD_TRAIT(src, TRAIT_HOLDABLE, INNATE_TRAIT)
 	AddComponent(/datum/component/squeak, list('sound/effects/mousesqueek.ogg'=1), 100, extrarange = SHORT_RANGE_SOUND_EXTRARANGE) //as quiet as a mouse or whatever
 	if(!body_color)
@@ -189,23 +187,11 @@ GLOBAL_VAR_INIT(mouse_killed, 0)
 	if(istype(A, /obj/item/reagent_containers/food) && !(locate(/obj/structure/table) in get_turf(A)))
 		return TRUE
 
-/mob/living/simple_animal/mouse/proc/regen_health(amt = 5)
-	var/overheal = max(health + amt - maxHealth, 0)
-	adjustHealth(-amt)
-	GLOB.food_for_next_mouse += overheal
-	var/mice = FLOOR(GLOB.food_for_next_mouse / FOODPERMOUSE, 1)
-	if(!mice)
-		return
-
-	GLOB.mouse_spawned += mice
-	GLOB.food_for_next_mouse = max(GLOB.food_for_next_mouse - FOODPERMOUSE * mice, 0)
-	SSminor_mapping.trigger_migration(mice)
-
 /mob/living/simple_animal/mouse/proc/cheese_up()
 	if(cheesed)
 		return
 	cheesed = TRUE
-	regen_health(15)
+	adjustHealth(-15)
 	resize = 2
 	update_transform()
 	add_movespeed_modifier(/datum/movespeed_modifier/mouse_cheese)
@@ -224,7 +210,7 @@ GLOBAL_VAR_INIT(mouse_killed, 0)
 	to_chat(src, "<span class='userdanger'>A feeling of sadness comes over you as the effects of the cheese wears off. You. Must. Get. More.</span>")
 
 /atom/proc/mouse_eat(mob/living/simple_animal/mouse/M)
-	M.regen_health()
+	M.adjustHealth(-5)
 	qdel(src)
 
 /obj/item/reagent_containers/food/snacks/cheesewedge/mouse_eat(mob/living/simple_animal/mouse/M)

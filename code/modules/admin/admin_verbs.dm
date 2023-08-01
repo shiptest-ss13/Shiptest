@@ -146,6 +146,7 @@ GLOBAL_PROTECT(admin_verbs_server)
 	/client/proc/cmd_admin_delete,		/*delete an instance/object/mob/etc*/
 	/client/proc/cmd_debug_del_all,
 	/client/proc/toggle_random_events,
+	/client/proc/set_next_outpost,
 	/client/proc/panicbunker,
 	/client/proc/toggle_interviews,
 	/client/proc/toggle_hub,
@@ -188,6 +189,7 @@ GLOBAL_PROTECT(admin_verbs_debug)
 	/client/proc/map_template_load,
 	/client/proc/map_template_upload,
 	/client/proc/jump_to_ruin,
+	/client/proc/fucky_wucky,
 	/client/proc/view_runtimes,
 	/client/proc/pump_random_event,
 	/client/proc/reload_configuration,
@@ -203,6 +205,7 @@ GLOBAL_PROTECT(admin_verbs_debug)
 	/datum/admins/proc/create_or_modify_area,
 	/datum/admins/proc/fixcorruption,
 	/datum/admins/proc/open_shuttlepanel, /* Opens shuttle manipulator UI */
+	/client/proc/spawn_outpost, /* Allows admins to spawn a new outpost. */
 	/datum/admins/proc/open_borgopanel,
 	/datum/admins/proc/overmap_view, /* Opens HTML overmap viewer UI */
 	/client/proc/toggle_AI_interact, /*toggle admin ability to interact with machines as an AI*/

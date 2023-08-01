@@ -265,11 +265,6 @@
 	var/break_chance = 5 //Likely hood of smashing the chair.
 	var/obj/structure/chair/origin_type = /obj/structure/chair
 
-/obj/item/chair/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins hitting [user.p_them()]self with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	playsound(src,hitsound,50,TRUE)
-	return BRUTELOSS
-
 /obj/item/chair/narsie_act()
 	var/obj/item/chair/wood/W = new/obj/item/chair/wood(get_turf(src))
 	W.setDir(dir)
@@ -376,7 +371,7 @@
 	icon_state = "chairold"
 	item_chair = null
 
-/obj/structure/chair/bronze
+/obj/structure/chair/comfy/shuttle/bronze
 	name = "brass chair"
 	desc = "A spinny chair made of bronze. It has little cogs for wheels!"
 	anchored = FALSE
@@ -386,23 +381,26 @@
 	item_chair = null
 	var/turns = 0
 
-/obj/structure/chair/bronze/Destroy()
+/obj/structure/chair/comfy/shuttle/bronze/GetArmrest()
+	return mutable_appearance('icons/obj/chairs.dmi', "brass_chair_armrest")
+
+/obj/structure/chair/comfy/shuttle/bronze/Destroy()
 	STOP_PROCESSING(SSfastprocess, src)
 	. = ..()
 
-/obj/structure/chair/bronze/process()
+/obj/structure/chair/comfy/shuttle/bronze/process()
 	setDir(turn(dir,-90))
 	playsound(src, 'sound/effects/servostep.ogg', 50, FALSE)
 	turns++
 	if(turns >= 8)
 		STOP_PROCESSING(SSfastprocess, src)
 
-/obj/structure/chair/bronze/Moved()
+/obj/structure/chair/comfy/shuttle/bronze/Moved()
 	. = ..()
 	if(has_gravity())
 		playsound(src, 'sound/machines/clockcult/integration_cog_install.ogg', 50, TRUE)
 
-/obj/structure/chair/bronze/AltClick(mob/living/user)
+/obj/structure/chair/comfy/shuttle/bronze/AltClick(mob/living/user)
 	turns = 0
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 		return

@@ -531,7 +531,6 @@
 /datum/outfit/syndicate_empty/sbc/med
 	name = "Syndicate Battlecruiser Ship Medical Doctor"
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile/evil
-	uniform = /obj/item/clothing/under/rank/medical/doctor/red
 	glasses = /obj/item/clothing/glasses/hud/health
 	belt = /obj/item/pda/medical
 	back = /obj/item/storage/backpack/duffelbag/syndie/med

@@ -205,49 +205,6 @@
 	if(wants_to_battle)
 		wants_to_battle = FALSE
 		to_chat(user, "<span class='notice'>You get the feeling they don't want to battle.</span>")
-/**
- * Starts a battle, toy mech vs player. Player... doesn't win.
- */
-/obj/item/toy/prize/suicide_act(mob/living/carbon/user)
-	if(in_combat)
-		to_chat(user, "<span class='notice'>[src] is in battle, let it finish first.</span>")
-		return
-
-	user.visible_message("<span class='suicide'>[user] begins a fight [user.p_they()] can't win with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-
-	in_combat = TRUE
-	sleep(1.5 SECONDS)
-	for(var/i in 1 to 4)
-		switch(i)
-			if(1, 3)
-				SpinAnimation(5, 0)
-				playsound(src, 'sound/mecha/mechstep.ogg', 30, TRUE)
-				user.adjustBruteLoss(25)
-				user.adjustStaminaLoss(50)
-			if(2)
-				user.SpinAnimation(5, 0)
-				playsound(user, 'sound/weapons/smash.ogg', 20, TRUE)
-				combat_health-- //we scratched it!
-			if(4)
-				say(special_attack_cry + "!!")
-				user.adjustStaminaLoss(25)
-
-		if(!combat_sleep(1 SECONDS, null, user))
-			say("PATHETIC.")
-			combat_health = max_combat_health
-			in_combat = FALSE
-			return SHAME
-
-	sleep(0.5 SECONDS)
-	user.adjustBruteLoss(450)
-
-	in_combat = FALSE
-	say("AN EASY WIN. MY POWER INCREASES.") // steal a soul, become swole
-	add_atom_colour(rgb(255, 115, 115), ADMIN_COLOUR_PRIORITY)
-	max_combat_health = round(max_combat_health*1.5 + 0.1)
-	combat_health = max_combat_health
-	wins++
-	return BRUTELOSS
 
 /obj/item/toy/prize/examine()
 	. = ..()
