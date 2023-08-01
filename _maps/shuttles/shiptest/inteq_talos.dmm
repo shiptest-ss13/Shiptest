@@ -1183,11 +1183,11 @@
 	icon_state = "2-4"
 	},
 /obj/structure/railing,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /obj/structure/catwalk/over,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "hQ" = (
@@ -3142,9 +3142,6 @@
 	},
 /obj/structure/cable,
 /obj/structure/railing/corner,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 6
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
 	dir = 5
 	},
@@ -4963,6 +4960,9 @@
 	pixel_x = 6;
 	pixel_y = 4
 	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "Fx" = (
@@ -5666,8 +5666,8 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
 	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 1
+/obj/machinery/atmospherics/components/unary/portables_connector/visible{
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
@@ -6406,6 +6406,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/dark/visible/layer1{
 	dir = 5
+	},
+/obj/machinery/atmospherics/components/unary/portables_connector/visible{
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
