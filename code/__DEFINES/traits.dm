@@ -379,7 +379,6 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define CHRONO_GUN_TRAIT "chrono-gun"
 #define REVERSE_BEAR_TRAP_TRAIT "reverse-bear-trap"
 #define CURSED_MASK_TRAIT "cursed-mask"
-#define HIS_GRACE_TRAIT "his-grace"
 #define HAND_REPLACEMENT_TRAIT "magic-hand"
 #define HOT_POTATO_TRAIT "hot-potato"
 #define ABDUCTOR_VEST_TRAIT "abductor-vest"
