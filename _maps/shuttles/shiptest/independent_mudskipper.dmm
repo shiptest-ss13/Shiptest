@@ -55,6 +55,9 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
 "ar" = (
@@ -324,11 +327,11 @@
 	icon_state = "floor4"
 	},
 /obj/structure/closet/crate/secure{
-	name = "scavenging supplies"
+	name = "scavenging supplies";
+	desc = "A secure crate. This one is particularly large.";
+	storage_capacity = 40
 	},
-/obj/item/reagent_containers/glass/bottle/thermite,
-/obj/item/reagent_containers/glass/bottle/thermite,
-/obj/item/reagent_containers/glass/bottle/thermite,
+/obj/item/reagent_containers/glass/chem_jug/thermite,
 /obj/item/door_seal,
 /obj/item/door_seal,
 /obj/item/storage/toolbox/mechanical,
@@ -336,6 +339,10 @@
 /obj/item/storage/firstaid/regular,
 /obj/item/grenade/chem_grenade/metalfoam,
 /obj/item/grenade/chem_grenade/metalfoam,
+/obj/item/storage/box/beakers,
+/obj/item/lighter/greyscale,
+/obj/item/bodybag,
+/obj/item/bodybag,
 /obj/item/reagent_containers/pill/patch/styptic,
 /obj/item/reagent_containers/pill/patch/silver_sulf,
 /obj/item/circular_saw,
@@ -458,6 +465,9 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/dim/directional/west{
 	bulb_power = 0.4
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
@@ -935,12 +945,12 @@
 	},
 /obj/structure/reagent_dispensers/fueltank,
 /obj/effect/turf_decal/industrial/hatch/yellow,
-/obj/structure/sign/warning/nosmoking/circle{
-	pixel_y = 26;
-	pixel_x = 4
-	},
 /obj/structure/railing{
 	dir = 8
+	},
+/obj/structure/sign/warning/nosmoking/burnt{
+	pixel_x = 7;
+	pixel_y = 28
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
@@ -1015,7 +1025,6 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering/engine)
 "xk" = (
-/obj/item/kirbyplants/random,
 /obj/effect/turf_decal/techfloor,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 1
@@ -1025,6 +1034,9 @@
 	dir = 8;
 	pixel_x = 25;
 	pixel_y = 5
+	},
+/obj/item/kirbyplants{
+	icon_state = "plant-14"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
@@ -1072,12 +1084,14 @@
 /area/ship/engineering/engine)
 "yg" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/kirbyplants/random,
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
 /obj/structure/extinguisher_cabinet/directional/west{
 	pixel_y = -5
+	},
+/obj/item/kirbyplants{
+	icon_state = "plant-22"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/aft)
@@ -1108,12 +1122,16 @@
 /turf/open/floor/plasteel/grimy,
 /area/ship/hallway/aft)
 "yY" = (
-/obj/machinery/atmospherics/components/unary/tank/toxins{
-	dir = 1
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/dim/directional/west{
 	bulb_power = 0.4
+	},
+/obj/machinery/atmospherics/components/unary/portables_connector{
+	dir = 1
+	},
+/obj/machinery/portable_atmospherics/canister/toxins,
+/obj/effect/turf_decal/techfloor{
+	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
@@ -1279,6 +1297,8 @@
 "CG" = (
 /obj/machinery/suit_storage_unit/industrial,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/clothing/suit/space/eva,
+/obj/item/clothing/head/helmet/space/eva,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/aft)
 "Dj" = (
@@ -1332,12 +1352,14 @@
 /turf/open/floor/plating,
 /area/ship/hallway/central)
 "DS" = (
-/obj/structure/fluff/hedge,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
 /obj/machinery/light/dim/directional/north,
+/obj/item/kirbyplants{
+	icon_state = "plant-21"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "Ed" = (
@@ -1598,8 +1620,6 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
@@ -1611,7 +1631,6 @@
 /obj/machinery/firealarm/directional/west{
 	pixel_y = 4
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light_switch{
 	dir = 4;
 	pixel_x = -22;
@@ -1870,6 +1889,9 @@
 	icon_state = "0-4"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
 "Rc" = (
@@ -1885,7 +1907,8 @@
 	name = "Window Shutters"
 	},
 /obj/machinery/light/small/directional/west{
-	pixel_y = -6
+	pixel_y = -6;
+	bulb_power = 0.6
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -1960,7 +1983,8 @@
 /obj/structure/filingcabinet/double,
 /obj/item/folder,
 /obj/machinery/light/small/directional/west{
-	pixel_y = 6
+	pixel_y = 6;
+	bulb_power = 0.6
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -2143,6 +2167,9 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
 "Vy" = (
