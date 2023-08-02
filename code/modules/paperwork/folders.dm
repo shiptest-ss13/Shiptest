@@ -7,10 +7,6 @@
 	pressure_resistance = 2
 	resistance_flags = FLAMMABLE
 
-/obj/item/folder/suicide_act(mob/living/user)
-	user.visible_message("<span class='suicide'>[user] begins filing an imaginary death warrant! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return OXYLOSS
-
 /obj/item/folder/blue
 	desc = "A blue folder."
 	icon_state = "folder_blue"

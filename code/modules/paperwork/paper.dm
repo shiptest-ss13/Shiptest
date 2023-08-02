@@ -143,10 +143,6 @@
 		name = "paper[(n_name ? text("- '[n_name]'") : null)]"
 	add_fingerprint(usr)
 
-/obj/item/paper/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] scratches a grid on [user.p_their()] wrist with the paper! It looks like [user.p_theyre()] trying to commit sudoku..."))
-	return (BRUTELOSS)
-
 /obj/item/paper/proc/clearpaper()
 	setText("", update_icon = FALSE)
 	stamps = null

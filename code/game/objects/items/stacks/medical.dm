@@ -133,10 +133,6 @@
 		return heal_carbon(M, user, heal_brute, 0)
 	to_chat(user, "<span class='warning'>You can't heal [M] with the \the [src]!</span>")
 
-/obj/item/stack/medical/bruise_pack/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is bludgeoning [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return (BRUTELOSS)
-
 /obj/item/stack/medical/gauze
 	name = "medical gauze"
 	desc = "A roll of elastic cloth that is extremely effective at stopping bleeding, but does not heal wounds."
@@ -177,10 +173,6 @@
 	else
 		return ..()
 
-/obj/item/stack/medical/gauze/suicide_act(mob/living/user)
-	user.visible_message("<span class='suicide'>[user] begins tightening \the [src] around [user.p_their()] neck! It looks like [user.p_they()] forgot how to use medical supplies!</span>")
-	return OXYLOSS
-
 /obj/item/stack/medical/gauze/improvised
 	name = "improvised gauze"
 	singular_name = "improvised gauze"
@@ -212,10 +204,6 @@
 	if(iscarbon(M))
 		return heal_carbon(M, user, 0, heal_burn)
 	to_chat(user, "<span class='warning'>You can't heal [M] with the \the [src]!</span>")
-
-/obj/item/stack/medical/ointment/suicide_act(mob/living/user)
-	user.visible_message("<span class='suicide'>[user] is squeezing \the [src] into [user.p_their()] mouth! [user.p_do(TRUE)]n't [user.p_they()] know that stuff is toxic?</span>")
-	return TOXLOSS
 
 /obj/item/stack/medical/suture
 	name = "suture"

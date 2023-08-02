@@ -192,9 +192,4 @@
 	focus_overlay.plane = ABOVE_HUD_PLANE
 	. += focus_overlay
 
-/obj/item/tk_grab/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is using [user.p_their()] telekinesis to choke [user.p_them()]self! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return (OXYLOSS)
-
-
 #undef TK_MAXRANGE
