@@ -343,6 +343,7 @@
 /obj/item/lighter/greyscale,
 /obj/item/bodybag,
 /obj/item/bodybag,
+/obj/item/pickaxe/mini,
 /obj/item/reagent_containers/pill/patch/styptic,
 /obj/item/reagent_containers/pill/patch/silver_sulf,
 /obj/item/circular_saw,
@@ -464,7 +465,7 @@
 /obj/machinery/airalarm/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/dim/directional/west{
-	bulb_power = 0.4
+	bulb_power = 0.5
 	},
 /obj/effect/turf_decal/techfloor{
 	dir = 8
@@ -959,7 +960,8 @@
 /area/ship/cargo)
 "uW" = (
 /obj/machinery/door/airlock/grunge{
-	name = "Bridge"
+	name = "Bridge";
+	req_one_access_txt = "7"
 	},
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/turf_decal/industrial/warning{
@@ -1127,7 +1129,7 @@
 "yY" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/dim/directional/west{
-	bulb_power = 0.4
+	bulb_power = 0.5
 	},
 /obj/machinery/atmospherics/components/unary/portables_connector{
 	dir = 1
