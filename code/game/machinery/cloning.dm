@@ -200,14 +200,10 @@
 		if(!QDELETED(clonemind.current))
 			if(clonemind.current.stat != DEAD)	//mind is associated with a non-dead body
 				return NONE
-			if(clonemind.current.suiciding) // Mind is associated with a body that is suiciding.
-				return NONE
 		if(!clonemind.active)
 			// get_ghost() will fail if they're unable to reenter their body
 			var/mob/dead/observer/G = clonemind.get_ghost()
 			if(!G)
-				return NONE
-			if(G.suiciding) // The ghost came from a body that is suiciding.
 				return NONE
 		if(clonemind.damnation_type) //Can't clone the damned.
 			INVOKE_ASYNC(src, .proc/horrifyingsound)
@@ -277,7 +273,6 @@
 
 		H.set_cloned_appearance()
 
-		H.set_suicide(FALSE)
 	attempting = FALSE
 	return CLONING_SUCCESS
 
@@ -292,7 +287,7 @@
 			connected_message("Clone Ejected: Not enough material.")
 			if(internal_radio)
 				SPEAK("The cloning of [mob_occupant.real_name] has been ended prematurely due to insufficient material.")
-		if(mob_occupant && (mob_occupant.stat == DEAD) || (mob_occupant.suiciding) || mob_occupant.hellbound)  //Autoeject corpses and suiciding dudes.
+		if(mob_occupant && (mob_occupant.stat == DEAD) ||  mob_occupant.hellbound)  //Autoeject corpses.
 			connected_message("Clone Rejected: Deceased.")
 			if(internal_radio)
 				SPEAK("The cloning of [mob_occupant.real_name] has been \
