@@ -40,7 +40,7 @@ jobs:
         run: |
           sudo dpkg --add-architecture i386
           sudo apt update || true
-          sudo apt install -o APT::Immediate-Configure=false libssl:i386
+          sudo apt install -o APT::Immediate-Configure=false libssl-dev:i386
           bash tools/ci/install_rust_g.sh
       - name: Install auxmos
         run: |
