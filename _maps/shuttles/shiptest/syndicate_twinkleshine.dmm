@@ -4651,21 +4651,6 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
-/obj/structure/table/wood,
-/obj/item/paper_bin/carbon,
-/obj/item/pen/edagger,
-/obj/item/storage/secure/safe/intel{
-	pixel_x = -30;
-	dir = 8
-	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/crew/dorm/dormtwo)
 "Cl" = (
@@ -7445,6 +7430,11 @@
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered{
 	dir = 1
+	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -20;
+	pixel_y = 12
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
