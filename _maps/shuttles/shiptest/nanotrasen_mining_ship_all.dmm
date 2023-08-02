@@ -62,6 +62,10 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "mining_ship_engines"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "bl" = (
@@ -120,22 +124,20 @@
 "cf" = (
 /obj/structure/bed,
 /obj/item/bedsheet/brown,
-/obj/structure/bed{
-	pixel_y = 11
-	},
-/obj/item/bedsheet/brown{
-	pixel_y = 11
-	},
 /obj/item/radio/intercom/directional/west,
 /obj/structure/curtain/bounty,
 /turf/open/floor/wood/walnut,
 /area/ship/crew)
 "dr" = (
+/obj/structure/cable/yellow,
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
 	},
-/obj/machinery/power/solar,
 /obj/effect/turf_decal/solarpanel,
+/obj/machinery/power/solar,
 /turf/open/floor/plating/airless,
 /area/ship/external)
 "dK" = (
@@ -314,6 +316,10 @@
 /obj/machinery/door/window/northleft{
 	dir = 4;
 	name = "Engine Access"
+	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "mining_ship_engines"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -598,6 +604,16 @@
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
+"oL" = (
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/obj/effect/turf_decal/solarpanel,
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "oR" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -899,6 +915,10 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "mining_ship_engines"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "vj" = (
@@ -1141,6 +1161,18 @@
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/starboard)
+"BI" = (
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/obj/structure/cable/yellow,
+/obj/effect/turf_decal/solarpanel,
+/obj/machinery/power/solar,
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "BV" = (
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
@@ -1148,11 +1180,8 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
 	},
-/obj/structure/cable/yellow{
-	icon_state = "0-8"
-	},
-/obj/machinery/power/solar,
 /obj/effect/turf_decal/solarpanel,
+/obj/machinery/power/solar,
 /turf/open/floor/plating/airless,
 /area/ship/external)
 "Cn" = (
@@ -1177,6 +1206,10 @@
 	dir = 4;
 	name = "Engine Access"
 	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "mining_ship_engines"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "CP" = (
@@ -1191,8 +1224,8 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
 	},
-/obj/machinery/power/solar,
 /obj/effect/turf_decal/solarpanel,
+/obj/machinery/power/solar,
 /turf/open/floor/plating/airless,
 /area/ship/external)
 "Df" = (
@@ -1565,12 +1598,6 @@
 "MG" = (
 /obj/structure/bed,
 /obj/item/bedsheet/brown,
-/obj/structure/bed{
-	pixel_y = 11
-	},
-/obj/item/bedsheet/brown{
-	pixel_y = 11
-	},
 /obj/structure/curtain/bounty,
 /obj/machinery/airalarm/directional/west,
 /obj/machinery/light/directional/north,
@@ -1619,11 +1646,8 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
 	},
-/obj/structure/cable/yellow{
-	icon_state = "0-8"
-	},
-/obj/machinery/power/tracker,
 /obj/effect/turf_decal/solarpanel,
+/obj/machinery/power/tracker,
 /turf/open/floor/plating/airless,
 /area/ship/external)
 "OJ" = (
@@ -1650,8 +1674,8 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
 	},
-/obj/machinery/power/solar,
 /obj/effect/turf_decal/solarpanel,
+/obj/machinery/power/solar,
 /turf/open/floor/plating/airless,
 /area/ship/external)
 "Pl" = (
@@ -1695,6 +1719,18 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
+"Qc" = (
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/obj/structure/cable/yellow,
+/obj/effect/turf_decal/solarpanel,
+/obj/machinery/power/solar,
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "Qe" = (
 /obj/machinery/shower{
 	dir = 1
@@ -1735,6 +1771,18 @@
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/port)
+"Rf" = (
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/structure/cable/yellow,
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/obj/effect/turf_decal/solarpanel,
+/obj/machinery/power/solar,
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "Rg" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -1791,6 +1839,18 @@
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
+"RV" = (
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/obj/structure/cable/yellow,
+/obj/effect/turf_decal/solarpanel,
+/obj/machinery/power/solar,
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "Sa" = (
 /obj/structure/table/reinforced,
 /obj/item/paper_bin,
@@ -1963,6 +2023,11 @@
 /obj/machinery/atmospherics/pipe/simple/orange/visible,
 /obj/machinery/suit_storage_unit/independent/mining/eva,
 /obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/machinery/button/door{
+	dir = 4;
+	id = "mining_ship_engines";
+	pixel_x = -20
+	},
 /turf/open/floor/plasteel,
 /area/ship/engineering)
 "WL" = (
@@ -2693,14 +2758,14 @@ ZV
 LZ
 LZ
 LZ
-FS
+oL
 OJ
 "}
 (28,1,1) = {"
 OJ
 OJ
 wv
-FS
+Rf
 OO
 OF
 Lh
@@ -2712,7 +2777,7 @@ yt
 Lh
 BV
 CX
-FS
+Qc
 Sd
 OJ
 "}
@@ -2721,8 +2786,8 @@ OJ
 OJ
 OJ
 wv
+BI
 dr
-OO
 UU
 JU
 iy
@@ -2730,7 +2795,7 @@ Hd
 UZ
 yZ
 UU
-BV
+RV
 dr
 Sd
 OJ
