@@ -436,13 +436,10 @@ SUBSYSTEM_DEF(overmap)
 	return ship_count
 
 /datum/controller/subsystem/overmap/Recover()
-	if(istype(SSovermap.overmap_objects))
-		overmap_objects = SSovermap.overmap_objects
-	if(istype(SSovermap.controlled_ships))
-		controlled_ships = SSovermap.controlled_ships
-	if(istype(SSovermap.outposts))
-		outposts = SSovermap.outposts
-	if(istype(SSovermap.events))
-		events = SSovermap.events
-	if(istype(SSovermap.radius_positions))
-		radius_positions = SSovermap.radius_positions
+	overmap_objects = SSovermap.overmap_objects
+	controlled_ships = SSovermap.controlled_ships
+	events = SSovermap.events
+	outposts = SSovermap.outposts
+	radius_positions = SSovermap.radius_positions
+	overmap_vlevel = SSovermap.overmap_vlevel
+	overmap_container = SSovermap.overmap_container

@@ -76,7 +76,6 @@
 		return
 	recalculate_directional_opacity()
 
-
 /atom/movable/Moved(atom/OldLoc, Dir)
 	. = ..()
 	var/datum/light_source/L

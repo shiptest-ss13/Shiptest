@@ -33,10 +33,6 @@ GENE SCANNER
 	drop_sound = 'sound/items/handling/device_drop.ogg'
 	custom_materials = list(/datum/material/iron=150)
 
-/obj/item/t_scanner/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins to emit terahertz-rays into [user.p_their()] brain with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return TOXLOSS
-
 /obj/item/t_scanner/proc/toggle_on()
 	on = !on
 	icon_state = copytext_char(icon_state, 1, -1) + "[on]"
@@ -104,10 +100,6 @@ GENE SCANNER
 	var/healthmodeinhand = "analyzer"
 	var/reagentmodeinhand = "reagentanalyzer-1"
 	custom_price = 300
-
-/obj/item/healthanalyzer/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins to analyze [user.p_them()]self with [src]! The display shows that [user.p_theyre()] dead!</span>")
-	return BRUTELOSS
 
 /obj/item/healthanalyzer/attack_self(mob/user)
 	playsound(get_turf(user), 'sound/machines/click.ogg', 50, TRUE)
@@ -460,10 +452,6 @@ GENE SCANNER
 /obj/item/analyzer/examine(mob/user)
 	. = ..()
 	. += "<span class='notice'>Alt-click [src] to activate the barometer function.</span>"
-
-/obj/item/analyzer/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins to analyze [user.p_them()]self with [src]! The display shows that [user.p_theyre()] dead!</span>")
-	return BRUTELOSS
 
 /obj/item/analyzer/attack_self(mob/user)
 	add_fingerprint(user)

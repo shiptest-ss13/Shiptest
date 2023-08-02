@@ -26,10 +26,6 @@
 	var/picked = pick(special_die)
 	new picked(src)
 
-/obj/item/storage/pill_bottle/dice/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is gambling with death! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return (OXYLOSS)
-
 /obj/item/storage/pill_bottle/dice/hazard
 
 /obj/item/storage/pill_bottle/dice/hazard/PopulateContents()
@@ -63,10 +59,6 @@
 	if(!result)
 		result = roll(sides)
 	update_icon()
-
-/obj/item/dice/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is gambling with death! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return (OXYLOSS)
 
 /obj/item/dice/d1
 	name = "d1"

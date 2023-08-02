@@ -93,15 +93,27 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 	var/list/_subsystems = list()
 	subsystems = _subsystems
 	if (Master != src)
-		if (istype(Master))
+		if (istype(Master)) //If there is an existing MC take over his stuff and delete it
 			Recover()
 			qdel(Master)
+			Master = src
 		else
+			//Code used for first master on game boot or if existing master got deleted
+			Master = src
 			var/list/subsytem_types = subtypesof(/datum/controller/subsystem)
 			sortTim(subsytem_types, /proc/cmp_subsystem_init)
+			//Find any abandoned subsystem from the previous master (if there was any)
+			var/list/existing_subsystems = list()
+			for(var/global_var in global.vars)
+				if (istype(global.vars[global_var], /datum/controller/subsystem))
+					existing_subsystems += global.vars[global_var]
+			//Either init a new SS or if an existing one was found use that
 			for(var/I in subsytem_types)
-				_subsystems += new I
-		Master = src
+				var/datum/controller/subsystem/existing_subsystem = locate(I) in existing_subsystems
+				if (istype(existing_subsystem))
+					_subsystems += existing_subsystem
+				else
+					_subsystems += new I
 
 	if(!GLOB)
 		new /datum/controller/global_vars
@@ -132,7 +144,8 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 	var/delay = 50 * ++Master.restart_count
 	Master.restart_timeout = world.time + delay
 	Master.restart_clear = world.time + (delay * 2)
-	Master.processing = FALSE //stop ticking this one
+	if (Master) //Can only do this if master hasn't been deleted
+		Master.processing = FALSE //stop ticking this one
 	try
 		new/datum/controller/master()
 	catch
@@ -178,8 +191,8 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 		current_runlevel = Master.current_runlevel
 		StartProcessing(10)
 	else
-		to_chat(world, "<span class='boldannounce'>The Master Controller is having some issues, we will need to re-initialize EVERYTHING</span>")
-		Initialize(20, TRUE)
+		to_chat(world, span_boldannounce("The Master Controller is having some issues, we will need to re-initialize EVERYTHING"))
+		Initialize(20, TRUE, FALSE)
 
 
 // Please don't stuff random bullshit here,

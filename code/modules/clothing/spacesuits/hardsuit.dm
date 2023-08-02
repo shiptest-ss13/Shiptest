@@ -1210,6 +1210,7 @@
 	armor = list("melee" = 50, "bullet" = 45, "laser" = 40, "energy" = 30, "bomb" = 60, "bio" = 100, "rad" = 60, "fire" = 90, "acid" = 75) //intentionally the fucking strong, this is master chief-tier armor //is this really what you call the strong?? is this the best solgov has to offer??????
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/solgov
 	slowdown = 0
+	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/head/helmet/space/hardsuit/quixote
 	name = "\improper Quixote mobility hardsuit helmet"

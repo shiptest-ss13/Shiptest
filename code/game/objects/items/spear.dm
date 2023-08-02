@@ -31,10 +31,6 @@
 /obj/item/spear/update_icon_state()
 	icon_state = "[icon_prefix]0"
 
-/obj/item/spear/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins to sword-swallow \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return BRUTELOSS
-
 /obj/item/spear/CheckParts(list/parts_list)
 	var/obj/item/shard/tip = locate() in parts_list
 	if (istype(tip, /obj/item/shard/plasma))
@@ -98,15 +94,6 @@
 		set_explosive(G)
 		qdel(lancePart)
 	..()
-
-/obj/item/spear/explosive/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins to sword-swallow \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	user.say("[war_cry]", forced="spear warcry")
-	explosive.forceMove(user)
-	explosive.prime()
-	user.gib()
-	qdel(src)
-	return BRUTELOSS
 
 /obj/item/spear/explosive/examine(mob/user)
 	. = ..()

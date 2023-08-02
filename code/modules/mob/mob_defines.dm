@@ -197,8 +197,7 @@
 	///Allows a datum to intercept all click calls this mob is the source of
 	var/datum/click_intercept
 
-	///THe z level this mob is currently registered in
-	var/registered_z = null
+	var/registered_virtual_z
 
 	var/memory_throttle_time = 0
 

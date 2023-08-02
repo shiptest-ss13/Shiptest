@@ -23,14 +23,38 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered)
-"bm" = (
-/obj/structure/table/reinforced,
-/obj/machinery/button/door{
-	id = "cryocontainshutter";
-	name = "Window Shutter Control";
-	pixel_x = 8;
-	pixel_y = -4
+"ar" = (
+/obj/item/stack/ore/salvage/scraptitanium,
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/unpowered)
+"aK" = (
+/obj/item/stack/ore/salvage/scrapgold,
+/obj/effect/turf_decal/corner/opaque/purple/border{
+	dir = 1
 	},
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/unpowered)
+"aM" = (
+/obj/structure/fluff/paper/stack{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/opaque/purple/border{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/unpowered)
+"aO" = (
+/obj/item/stack/ore/salvage/scrapmetal,
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/unpowered)
+"ba" = (
+/obj/structure/sign/directions/science{
+	pixel_y = 25
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/unpowered)
+"bm" = (
+/obj/effect/decal/cleanable/greenglow,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/unpowered)
 "bp" = (
@@ -38,35 +62,57 @@
 	icon_state = "platingdmg1"
 	},
 /area/ruin/unpowered)
+"bt" = (
+/obj/structure/fluff/paper/stack{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/purple/border{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/unpowered)
 "bK" = (
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered)
 "bW" = (
-/obj/structure/table/reinforced,
-/obj/machinery/button{
-	name = "Explosive Decoupler Control";
-	pixel_x = 8;
-	pixel_y = -4
-	},
-/obj/machinery/button/door{
-	id = "cryocontainmentlockdown";
-	name = "Containment Lockdown Control";
-	pixel_x = -8;
-	pixel_y = -4
+/obj/effect/decal/cleanable/chem_pile,
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/unpowered)
+"ca" = (
+/obj/item/stack/ore/salvage/scrapplasma,
+/obj/effect/turf_decal/corner/opaque/purple/border{
+	dir = 5
 	},
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/unpowered)
 "cy" = (
 /turf/closed/wall/r_wall,
 /area/ruin/unpowered)
+"cB" = (
+/obj/structure/table_frame,
+/obj/item/stock_parts/cell/hyper/empty,
+/obj/effect/turf_decal/corner/opaque/purple/border{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/robot_debris/old,
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/unpowered)
+"cV" = (
+/obj/structure/table/reinforced,
+/obj/structure/window/reinforced/survival_pod{
+	dir = 1
+	},
+/obj/item/circuitboard/machine/bepis,
+/turf/open/floor/plasteel/white/airless,
+/area/ruin/unpowered)
 "dt" = (
 /obj/machinery/door/airlock/security{
-	dir = 4
+	dir = 8
 	},
 /obj/machinery/door/poddoor{
 	id = "cryocontainmentlockdown";
-	dir = 4
+	dir = 8
 	},
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 8
@@ -79,18 +125,34 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered)
+"dw" = (
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/unpowered)
+"dT" = (
+/obj/effect/turf_decal/siding/purple,
+/turf/open/floor/plasteel/white/airless,
+/area/ruin/unpowered)
+"eI" = (
+/obj/machinery/vending/plasmaresearch,
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/unpowered)
 "eN" = (
 /obj/effect/decal/cleanable/blood/gibs,
 /obj/machinery/atmospherics/components/unary/vent_pump/layer2,
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered)
+"eS" = (
+/obj/item/shard,
+/obj/item/stack/rods,
+/turf/template_noop,
+/area/template_noop)
 "eT" = (
 /obj/effect/decal/cleanable/blood/gibs/down,
 /obj/effect/decal/cleanable/blood/gibs,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 8
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plasteel/white/airless,
 /area/ruin/unpowered)
 "eU" = (
 /obj/effect/decal/cleanable/blood/tracks,
@@ -98,6 +160,11 @@
 	dir = 4
 	},
 /turf/open/floor/plating/airless,
+/area/ruin/unpowered)
+"eX" = (
+/obj/item/stack/ore/titanium,
+/obj/item/stack/ore/titanium,
+/turf/open/floor/plating/asteroid/airless,
 /area/ruin/unpowered)
 "eZ" = (
 /obj/machinery/atmospherics/pipe/simple/general{
@@ -110,6 +177,21 @@
 	icon_state = "2-8"
 	},
 /turf/open/floor/plating/airless,
+/area/ruin/unpowered)
+"fo" = (
+/obj/structure/sign/departments/chemistry,
+/turf/closed/wall/r_wall,
+/area/ruin/unpowered)
+"fx" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/box/stockparts/t3,
+/obj/machinery/door/window/survival_pod{
+	dir = 4
+	},
+/obj/structure/window/reinforced/survival_pod{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white/airless,
 /area/ruin/unpowered)
 "fE" = (
 /obj/structure/cable{
@@ -126,6 +208,12 @@
 	},
 /obj/structure/cable{
 	icon_state = "1-4"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/unpowered)
+"fN" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
 	},
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered)
@@ -146,25 +234,70 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered)
+"ge" = (
+/obj/structure/sign/directions/science{
+	pixel_y = 25
+	},
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/unpowered)
 "gm" = (
-/obj/item/clothing/suit/toggle/labcoat,
-/turf/open/floor/plating/airless,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/siding/purple{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white/airless,
+/area/ruin/unpowered)
+"gz" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/siding/purple,
+/turf/open/floor/plasteel/white/airless,
 /area/ruin/unpowered)
 "gC" = (
-/obj/machinery/atmospherics/pipe/simple/general{
-	dir = 5
+/obj/machinery/door/poddoor{
+	id = "cryocontainmentlockdown";
+	dir = 8
 	},
-/mob/living/simple_animal/hostile/carp,
-/turf/open/floor/plasteel/white/airless,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/plating/airless,
 /area/ruin/unpowered)
 "gG" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/layer2,
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered)
+"gJ" = (
+/obj/item/stack/ore/salvage/scrapuranium,
+/obj/structure/salvageable/protolathe,
+/obj/machinery/light/dim/directional/south,
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/unpowered)
+"gO" = (
+/obj/item/stock_parts/capacitor,
+/turf/open/floor/plating/airless{
+	icon_state = "platingdmg3"
+	},
+/area/ruin/unpowered)
 "ha" = (
 /obj/structure/table/reinforced,
 /obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/white/airless,
+/area/ruin/unpowered)
+"hl" = (
+/obj/item/stack/ore/salvage/scrapmetal,
+/obj/structure/fluff/paper/stack{
+	dir = 6
+	},
+/obj/effect/turf_decal/corner/opaque/purple/border{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark/airless,
 /area/ruin/unpowered)
 "hw" = (
 /obj/machinery/atmospherics/components/unary/thermomachine/freezer{
@@ -172,9 +305,13 @@
 	},
 /turf/open/floor/plasteel/white/airless,
 /area/ruin/unpowered)
+"hE" = (
+/obj/item/stack/ore/salvage/scrapgold,
+/obj/machinery/light/broken/directional/south,
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/unpowered)
 "ih" = (
 /obj/effect/decal/cleanable/blood/gibs/limb,
-/obj/machinery/light/built/directional/south,
 /obj/item/light/tube/broken,
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -185,6 +322,12 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/machinery/light/built/directional/south,
+/turf/open/floor/plating/airless,
+/area/ruin/unpowered)
+"iA" = (
+/obj/effect/mine/stun,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered)
 "jd" = (
@@ -192,9 +335,12 @@
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered)
 "jq" = (
-/obj/structure/lattice,
-/turf/open/space,
-/area/space)
+/turf/closed/mineral,
+/area/ruin/unpowered)
+"jx" = (
+/obj/effect/decal/cleanable/robot_debris/old,
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/unpowered)
 "jN" = (
 /obj/effect/decal/cleanable/blood,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -205,6 +351,15 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered)
+"jP" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/obj/structure/fluff/paper/stack{
+	dir = 6
+	},
+/turf/open/floor/plasteel/white/airless,
+/area/ruin/unpowered)
 "kl" = (
 /obj/machinery/computer{
 	desc = "A computer long since rendered non-functional due to lack of maintenance. Spitting out error messages.";
@@ -213,7 +368,8 @@
 	},
 /obj/item/paper{
 	name = "console log";
-	text = "SPECIMIN BREACH, ACTIVATING LOCKDOWN PRTOCOLS, ACTIVATING EXPLOSIVE DECOUPLE CHARGES."
+	text = "SPECIMIN BREACH, ACTIVATING LOCKDOWN PRTOCOLS, ACTIVATING EXPLOSIVE DECOUPLE CHARGES.";
+	info = "SPECIMEN BREACHED FROM CRYO CELL, ACTIVATING LOCKDOWN PRTOCOLS, ACTIVATING DECOUPLING CHARGES. THE SPECIMEN MUST NOT GET TO THE MAIN STATION. RECONTAIN AT ALL COSTS."
 	},
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/unpowered)
@@ -222,18 +378,58 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plasteel/white/airless,
 /area/ruin/unpowered)
 "kH" = (
-/obj/item/scalpel,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plasteel/white/airless,
+/area/ruin/unpowered)
+"kI" = (
+/obj/structure/fluff/paper/stack{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/chem_pile,
+/obj/effect/turf_decal/corner/opaque/orange/border{
+	dir = 10
+	},
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/unpowered)
+"kT" = (
+/obj/effect/spawner/lootdrop/beaker_loot_spawner,
+/turf/open/floor/plating/airless{
+	icon_state = "platingdmg2"
+	},
+/area/ruin/unpowered)
+"kU" = (
+/obj/effect/mob_spawn/human/corpse/damaged{
+	outfit = /datum/outfit/job/scientist
+	},
+/obj/effect/decal/cleanable/blood,
+/obj/effect/turf_decal/corner/opaque/purple/border{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark/airless,
 /area/ruin/unpowered)
 "kW" = (
 /obj/structure/table_frame,
 /obj/item/shard,
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered)
+"lk" = (
+/obj/structure/salvageable/computer{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/unpowered)
+"lR" = (
+/obj/structure/sign/warning/chemdiamond,
+/turf/closed/wall/r_wall/rust,
+/area/ruin/unpowered)
+"mM" = (
+/obj/structure/lattice,
+/obj/item/stack/ore/salvage/scraptitanium,
+/turf/template_noop,
+/area/template_noop)
 "nh" = (
 /obj/machinery/smartfridge/organ,
 /turf/open/floor/plasteel/white/airless,
@@ -252,17 +448,32 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered)
-"nY" = (
-/obj/machinery/atmospherics/pipe/simple/general{
-	dir = 4
+"nN" = (
+/obj/structure/salvageable/destructive_analyzer,
+/turf/open/floor/plating/airless{
+	icon_state = "platingdmg2"
 	},
-/turf/open/floor/plasteel/white/airless,
+/area/ruin/unpowered)
+"nY" = (
+/obj/effect/turf_decal/corner/opaque/orange/border,
+/obj/structure/table_frame,
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/unpowered)
+"ow" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/item/storage/backpack/duffelbag/med/surgery,
+/turf/open/floor/plating/airless,
 /area/ruin/unpowered)
 "oD" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 5
+/obj/structure/lattice,
+/obj/item/stack/cable_coil/cut/red,
+/turf/template_noop,
+/area/template_noop)
+"oY" = (
+/obj/structure/fluff/paper/stack{
+	dir = 9
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plasteel/dark/airless,
 /area/ruin/unpowered)
 "qa" = (
 /obj/machinery/atmospherics/pipe/simple/general,
@@ -270,11 +481,11 @@
 /area/ruin/unpowered)
 "qf" = (
 /obj/machinery/door/airlock/public/glass{
-	dir = 4
+	dir = 8
 	},
 /obj/machinery/door/poddoor{
 	id = "cryocontainmentlockdown";
-	dir = 4
+	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -287,7 +498,8 @@
 	},
 /obj/machinery/power/apc/away{
 	pixel_x = -25;
-	start_charge = 0
+	start_charge = 0;
+	dir = 8
 	},
 /obj/item/ammo_casing/spent{
 	pixel_x = -9;
@@ -304,6 +516,11 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered)
+"qy" = (
+/obj/structure/lattice,
+/obj/item/stack/rods,
+/turf/template_noop,
+/area/template_noop)
 "qC" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
@@ -315,28 +532,22 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered)
+"sc" = (
+/obj/effect/decal/cleanable/chem_pile,
+/obj/effect/turf_decal/corner/opaque/orange/border,
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/unpowered)
+"sD" = (
+/obj/item/stack/ore/salvage/scraptitanium,
+/turf/template_noop,
+/area/template_noop)
 "sJ" = (
 /obj/item/reagent_containers/syringe,
 /turf/open/floor/plasteel/white/airless,
 /area/ruin/unpowered)
 "tm" = (
-/obj/structure/door_assembly/door_assembly_research{
-	dir = 4
-	},
-/obj/machinery/door/poddoor{
-	id = "cryocontainmentlockdown";
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/turf/open/floor/plating/airless,
+/obj/item/stack/ore/salvage/scrapsilver,
+/turf/open/floor/plasteel/dark/airless,
 /area/ruin/unpowered)
 "tn" = (
 /obj/structure/table/reinforced,
@@ -354,10 +565,36 @@
 /obj/structure/grille,
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered)
+"tx" = (
+/obj/structure/table/reinforced,
+/obj/machinery/button{
+	name = "Explosive Decoupler Control";
+	pixel_x = 8;
+	pixel_y = -4
+	},
+/obj/machinery/button/door{
+	id = "cryocontainmentlockdown";
+	name = "Containment Lockdown Control";
+	pixel_x = -8;
+	pixel_y = -4
+	},
+/obj/item/megaphone/command,
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/unpowered)
+"tD" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/directional/east,
+/obj/effect/turf_decal/siding/purple{
+	dir = 5
+	},
+/obj/machinery/aug_manipulator,
+/turf/open/floor/plasteel/white/airless,
+/area/ruin/unpowered)
 "uc" = (
-/obj/item/shard,
-/obj/structure/grille/broken,
-/turf/open/floor/plating/airless,
+/obj/structure/table/reinforced,
+/obj/item/clothing/accessory/medal/plasma/nobel_science,
+/obj/machinery/door/window/survival_pod,
+/turf/open/floor/plasteel/white/airless,
 /area/ruin/unpowered)
 "un" = (
 /obj/machinery/door/poddoor/shutters/preopen{
@@ -370,36 +607,95 @@
 "ve" = (
 /obj/structure/table/greyscale,
 /obj/item/storage/fancy/cigarettes/cigpack_carp,
-/obj/machinery/light/small/directional/west,
 /obj/machinery/atmospherics/components/unary/vent_pump/layer2{
 	dir = 8
 	},
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/plating/airless,
+/area/ruin/unpowered)
+"vj" = (
+/obj/structure/table/glass,
+/obj/item/toy/figure/chemist,
+/obj/effect/turf_decal/corner/opaque/orange/border{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/unpowered)
+"vp" = (
+/obj/item/shard,
+/turf/template_noop,
+/area/template_noop)
+"vO" = (
+/obj/structure/table/reinforced,
+/obj/item/gun/energy/laser/hitscanpistol,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/door/window/survival_pod{
+	dir = 4
+	},
+/obj/structure/window/reinforced/survival_pod,
+/turf/open/floor/plasteel/white/airless,
+/area/ruin/unpowered)
+"vU" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/siding/purple{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white/airless,
+/area/ruin/unpowered)
+"wj" = (
+/obj/machinery/computer/pandemic,
+/turf/open/floor/plasteel/dark/airless,
 /area/ruin/unpowered)
 "wr" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/layer4,
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered)
+"wM" = (
+/obj/effect/turf_decal/corner/opaque/purple/border{
+	dir = 1
+	},
+/obj/effect/decal/remains/robot,
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/unpowered)
+"wQ" = (
+/obj/structure/fluff/paper/stack{
+	pixel_x = -7;
+	pixel_y = 1
+	},
+/obj/structure/salvageable/circuit_imprinter,
+/obj/machinery/light/dim/directional/south,
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/unpowered)
 "xB" = (
-/mob/living/simple_animal/hostile/carp,
-/turf/open/space,
-/area/space)
+/obj/structure/table/reinforced,
+/obj/structure/window/reinforced/survival_pod,
+/obj/item/clothing/neck/cloak/rd,
+/turf/open/floor/plasteel/white/airless,
+/area/ruin/unpowered)
+"xD" = (
+/obj/structure/table/chem,
+/obj/item/reagent_containers/glass/beaker/sulphuric,
+/obj/effect/spawner/lootdrop/beaker_loot_spawner,
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/unpowered)
+"xL" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/siding/purple{
+	dir = 9
+	},
+/turf/open/floor/plasteel/white/airless,
+/area/ruin/unpowered)
 "ye" = (
-/obj/machinery/light/directional/north,
-/obj/structure/chair/greyscale{
-	dir = 8
-	},
-/obj/effect/mob_spawn/human/corpse/damaged,
-/obj/effect/decal/cleanable/blood,
-/obj/machinery/atmospherics/components/unary/vent_pump/layer2{
-	dir = 4
-	},
+/obj/structure/closet/wardrobe/chemistry_white,
+/obj/machinery/light/broken/directional/west,
+/obj/effect/turf_decal/corner/opaque/orange/border,
+/obj/item/stock_parts/scanning_module/phasic,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/unpowered)
 "yM" = (
-/obj/item/stack/rods,
-/turf/open/space,
-/area/space)
+/obj/item/stack/ore/salvage/scrapmetal,
+/turf/template_noop,
+/area/template_noop)
 "zI" = (
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/decal/cleanable/blood/footprints{
@@ -419,14 +715,33 @@
 /obj/item/shard,
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered)
+"Be" = (
+/obj/structure/table_frame,
+/obj/item/stack/ore/salvage/scrapsilver,
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/unpowered)
 "Bl" = (
-/obj/structure/girder/displaced,
-/turf/open/space,
-/area/space)
+/obj/structure/salvageable/computer{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/unpowered)
+"BB" = (
+/obj/machinery/blackbox_recorder,
+/obj/machinery/light/directional/east,
+/obj/effect/turf_decal/siding/purple{
+	dir = 6
+	},
+/turf/open/floor/plasteel/white/airless,
+/area/ruin/unpowered)
 "BV" = (
 /turf/open/floor/plating/airless{
 	icon_state = "platingdmg2"
 	},
+/area/ruin/unpowered)
+"Cd" = (
+/obj/structure/sign/departments/science,
+/turf/closed/wall/r_wall,
 /area/ruin/unpowered)
 "Cq" = (
 /turf/closed/wall/r_wall/rust,
@@ -439,33 +754,57 @@
 /area/ruin/unpowered)
 "CD" = (
 /obj/effect/decal/cleanable/blood/tracks,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plasteel/white/airless,
 /area/ruin/unpowered)
 "CI" = (
-/mob/living/simple_animal/hostile/carp,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/turf/open/floor/plating/airless,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/white/airless,
+/area/ruin/unpowered)
+"CL" = (
+/obj/structure/table/chem,
+/obj/item/reagent_containers/glass/beaker/large/styptic,
+/obj/item/stock_parts/micro_laser/high,
+/turf/open/floor/plasteel/dark/airless,
 /area/ruin/unpowered)
 "DL" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plasteel/white/airless,
+/area/ruin/unpowered)
+"DX" = (
+/obj/effect/turf_decal/trimline/opaque/purple/end,
+/turf/open/floor/plasteel/dark/airless,
 /area/ruin/unpowered)
 "Ej" = (
-/obj/item/shard,
-/obj/item/stack/rods,
-/turf/open/space,
-/area/space)
+/obj/structure/table/reinforced,
+/obj/item/research_notes/loot/big,
+/obj/machinery/door/window/survival_pod,
+/turf/open/floor/plasteel/white/airless,
+/area/ruin/unpowered)
+"Ey" = (
+/obj/item/stack/ore/uranium,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/unpowered)
+"EE" = (
+/obj/effect/turf_decal/siding/purple{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white/airless,
+/area/ruin/unpowered)
 "EH" = (
 /obj/machinery/atmospherics/pipe/simple/general,
-/obj/structure/door_assembly/door_assembly_vault,
 /obj/machinery/door/poddoor/preopen{
 	id = "cryocontainmentblastdoors"
 	},
+/obj/structure/door_assembly/door_assembly_hatch{
+	anchored = 1
+	},
 /turf/open/floor/engine/airless,
+/area/ruin/unpowered)
+"ET" = (
+/obj/effect/mine/stun,
+/turf/open/floor/plating/airless,
 /area/ruin/unpowered)
 "Fb" = (
 /obj/structure/table/reinforced,
@@ -482,10 +821,25 @@
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered)
+"FK" = (
+/obj/structure/fluff/paper/stack{
+	pixel_x = -7;
+	pixel_y = 1
+	},
+/obj/effect/decal/remains/robot,
+/obj/item/bodypart/l_arm/robot,
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/unpowered)
 "FW" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/unpowered)
+"FX" = (
+/obj/structure/fluff/paper/stack{
+	dir = 8
 	},
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered)
@@ -506,14 +860,49 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered)
+"Gn" = (
+/obj/effect/decal/cleanable/blood,
+/obj/item/bodypart/r_arm/robot,
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/unpowered)
+"Gp" = (
+/obj/structure/lattice,
+/obj/item/stack/ore/salvage/scrapmetal,
+/turf/template_noop,
+/area/template_noop)
+"Gw" = (
+/obj/structure/girder/reinforced,
+/turf/open/floor/plating/airless,
+/area/ruin/unpowered)
+"GP" = (
+/obj/structure/table/reinforced,
+/obj/structure/window/reinforced/survival_pod{
+	dir = 1
+	},
+/obj/item/circuitboard/aicore,
+/turf/open/floor/plasteel/white/airless,
+/area/ruin/unpowered)
 "GV" = (
 /turf/open/floor/plating/airless{
 	icon_state = "platingdmg3"
 	},
 /area/ruin/unpowered)
+"Hm" = (
+/obj/item/stack/ore/silver,
+/obj/item/stack/ore/silver,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/unpowered)
 "Hn" = (
-/obj/machinery/light/broken/directional/north,
+/obj/machinery/light/directional/north,
+/obj/effect/turf_decal/dept/science,
 /turf/open/floor/engine/airless,
+/area/ruin/unpowered)
+"Hu" = (
+/obj/structure/salvageable/computer{
+	dir = 8
+	},
+/obj/machinery/light/broken/directional/east,
+/turf/open/floor/plasteel/dark/airless,
 /area/ruin/unpowered)
 "Hy" = (
 /obj/structure/cable{
@@ -526,9 +915,64 @@
 	icon_state = "platingdmg3"
 	},
 /area/ruin/unpowered)
+"HE" = (
+/obj/structure/table/reinforced,
+/obj/item/circuitboard/computer/cloning,
+/obj/machinery/door/window/survival_pod{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white/airless,
+/area/ruin/unpowered)
 "HS" = (
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/plating/airless,
+/area/ruin/unpowered)
+"Ic" = (
+/obj/machinery/atmospherics/pipe/simple/general{
+	dir = 5
+	},
+/obj/structure/fluff/paper/stack{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white/airless,
+/area/ruin/unpowered)
+"Iw" = (
+/obj/effect/decal/cleanable/blood/footprints{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/mob/living/simple_animal/hostile/carp,
+/turf/open/floor/plating/airless,
+/area/ruin/unpowered)
+"Ix" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/siding/purple{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white/airless,
+/area/ruin/unpowered)
+"IR" = (
+/obj/structure/table/reinforced,
+/obj/machinery/button/door{
+	id = "cryocontainshutter";
+	name = "Window Shutter Control";
+	pixel_x = 8;
+	pixel_y = -4
+	},
+/obj/item/gun/ballistic/automatic/pistol/commander/no_mag,
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/unpowered)
+"IX" = (
+/turf/template_noop,
+/area/template_noop)
+"Jd" = (
+/obj/structure/showcase/horrific_experiment,
+/turf/open/floor/engine/airless,
 /area/ruin/unpowered)
 "Ji" = (
 /obj/structure/grille/broken,
@@ -539,25 +983,41 @@
 "Jj" = (
 /turf/open/floor/engine/airless,
 /area/ruin/unpowered)
+"JX" = (
+/obj/effect/decal/cleanable/chem_pile,
+/obj/effect/turf_decal/corner/opaque/orange/border{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/unpowered)
 "KY" = (
-/turf/open/space,
-/area/space)
+/obj/structure/lattice,
+/turf/template_noop,
+/area/template_noop)
 "KZ" = (
 /obj/structure/grille/broken,
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered)
+"Lw" = (
+/obj/structure/table/glass,
+/obj/item/book/manual/wiki/chemistry,
+/obj/effect/turf_decal/corner/opaque/orange/border,
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/unpowered)
+"Lx" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating/airless,
+/area/ruin/unpowered)
+"LH" = (
+/obj/structure/grille/broken,
+/obj/item/stack/rods,
+/turf/open/floor/plating/airless,
+/area/ruin/unpowered)
 "LP" = (
-/mob/living/simple_animal/hostile/carp,
-/obj/effect/decal/cleanable/blood/footprints{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+/obj/structure/fluff/paper/stack{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plasteel/dark/airless,
 /area/ruin/unpowered)
 "LY" = (
 /obj/structure/chair/stool,
@@ -567,8 +1027,17 @@
 /obj/effect/decal/remains/human,
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered)
+"Mb" = (
+/obj/machinery/atmospherics/pipe/simple/general{
+	dir = 4
+	},
+/mob/living/simple_animal/hostile/carp,
+/turf/open/floor/plasteel/white/airless,
+/area/ruin/unpowered)
 "Mf" = (
-/obj/effect/mob_spawn/human/corpse/damaged,
+/obj/effect/mob_spawn/human/corpse/damaged{
+	outfit = /datum/outfit/job/scientist
+	},
 /obj/effect/decal/cleanable/blood,
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -577,6 +1046,33 @@
 	icon_state = "2-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plating/airless,
+/area/ruin/unpowered)
+"Mp" = (
+/obj/structure/table/glass,
+/obj/item/storage/bag/chemistry,
+/obj/effect/turf_decal/corner/opaque/orange/border,
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/unpowered)
+"Mw" = (
+/mob/living/simple_animal/hostile/carp,
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/unpowered)
+"Mz" = (
+/obj/structure/fluff/paper/stack{
+	pixel_x = -7;
+	pixel_y = 1
+	},
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/unpowered)
+"MK" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/fluff/paper/stack{
+	dir = 4
+	},
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered)
 "Na" = (
@@ -592,22 +1088,60 @@
 	},
 /turf/closed/wall/r_wall,
 /area/ruin/unpowered)
+"OD" = (
+/obj/structure/table/glass,
+/obj/item/clothing/head/beret/chem,
+/obj/effect/turf_decal/corner/opaque/orange/border,
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/unpowered)
+"OG" = (
+/obj/item/stack/ore/salvage/scrapuranium,
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/unpowered)
 "OH" = (
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered)
+"OI" = (
+/obj/item/stack/ore/silver,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/unpowered)
+"OM" = (
+/obj/effect/turf_decal/corner/opaque/purple/bordercorner{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/unpowered)
 "Pg" = (
-/obj/effect/mob_spawn/human/corpse/damaged,
-/turf/open/space,
-/area/space)
+/obj/effect/spawner/lootdrop/beaker_loot_spawner,
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/unpowered)
 "Po" = (
 /obj/effect/decal/cleanable/blood/splatter,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered)
+"Pu" = (
+/obj/structure/fluff/paper/stack{
+	dir = 6
+	},
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/unpowered)
+"Py" = (
+/obj/structure/table/glass,
+/obj/effect/turf_decal/corner/opaque/orange/border{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/unpowered)
 "PD" = (
 /obj/effect/decal/cleanable/blood/splatter,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plating/airless,
+/area/ruin/unpowered)
+"PL" = (
+/obj/effect/decal/cleanable/greenglow,
+/obj/machinery/light/directional/east,
+/turf/open/floor/plasteel/dark/airless,
 /area/ruin/unpowered)
 "PN" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -638,6 +1172,11 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered)
+"QP" = (
+/obj/machinery/chem_master,
+/obj/machinery/light/dim/directional/north,
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/unpowered)
 "QV" = (
 /obj/effect/decal/cleanable/blood/gibs/body,
 /obj/structure/cable{
@@ -645,57 +1184,113 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered)
-"Rj" = (
-/obj/structure/cable{
-	icon_state = "4-8"
+"Rd" = (
+/obj/effect/mob_spawn/human/corpse/damaged{
+	outfit = /datum/outfit/job/scientist/xenobiologist
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/turf/open/floor/plating/airless,
+/obj/effect/decal/cleanable/vomit/old,
+/turf/open/floor/plasteel/dark/airless,
 /area/ruin/unpowered)
+"Rj" = (
+/mob/living/simple_animal/hostile/carp,
+/turf/template_noop,
+/area/template_noop)
 "Ro" = (
-/obj/structure/lattice,
-/obj/item/stack/cable_coil/cut/red,
-/turf/open/space,
-/area/space)
+/obj/item/banner/science,
+/obj/machinery/light/directional/west,
+/turf/open/floor/plasteel/white/airless,
+/area/ruin/unpowered)
+"Ru" = (
+/obj/structure/fluff/paper/stack{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/orange/border{
+	dir = 6
+	},
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/unpowered)
+"Rx" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/siding/purple{
+	dir = 10
+	},
+/turf/open/floor/plasteel/white/airless,
+/area/ruin/unpowered)
+"RJ" = (
+/obj/item/stack/ore/salvage/scrapplasma,
+/obj/machinery/light/broken/directional/west,
+/obj/effect/turf_decal/corner/opaque/purple/border{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/unpowered)
+"RK" = (
+/obj/structure/girder/displaced,
+/turf/template_noop,
+/area/template_noop)
+"RX" = (
+/obj/structure/salvageable/computer{
+	dir = 1
+	},
+/turf/open/floor/plating/airless{
+	icon_state = "platingdmg3"
+	},
+/area/ruin/unpowered)
 "RZ" = (
 /obj/effect/gibspawner/human,
 /obj/item/clothing/suit/toggle/labcoat,
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered)
+"Sj" = (
+/obj/structure/fluff/paper/stack{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/unpowered)
 "Sk" = (
-/obj/machinery/light/broken/directional/south,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/machinery/light/directional/south,
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered)
-"Tr" = (
+"Sp" = (
+/obj/structure/lattice,
+/obj/item/stack/cable_coil/cut/red,
+/obj/item/stack/ore/salvage/scraptitanium,
+/turf/template_noop,
+/area/template_noop)
+"Ta" = (
 /obj/item/shard,
-/turf/open/space,
-/area/space)
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/unpowered)
+"Tq" = (
+/obj/effect/decal/cleanable/greenglow,
+/obj/structure/salvageable/autolathe,
+/turf/open/floor/plating/airless{
+	icon_state = "platingdmg3"
+	},
+/area/ruin/unpowered)
+"Tr" = (
+/obj/effect/mapping_helpers/airlock/locked,
+/obj/machinery/door/airlock/hatch{
+	dir = 8
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/unpowered)
 "TF" = (
 /obj/effect/decal/cleanable/blood/splatter,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plasteel/white/airless,
 /area/ruin/unpowered)
 "TG" = (
-/mob/living/simple_animal/hostile/carp,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/turf/open/floor/plating/airless,
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/plasteel/dark/airless,
 /area/ruin/unpowered)
 "TL" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plasteel/dark/airless,
 /area/ruin/unpowered)
 "TU" = (
 /obj/item/shard,
@@ -704,6 +1299,24 @@
 	dir = 4
 	},
 /turf/open/floor/plating/airless,
+/area/ruin/unpowered)
+"Ue" = (
+/obj/structure/chair/greyscale{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/blood,
+/obj/machinery/atmospherics/components/unary/vent_pump/layer2{
+	dir = 4
+	},
+/obj/effect/mob_spawn/human/corpse/nanotrasensoldier,
+/obj/machinery/light/directional/north,
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/unpowered)
+"Ul" = (
+/obj/structure/table/reinforced,
+/obj/structure/window/reinforced/survival_pod,
+/obj/item/clothing/glasses/science,
+/turf/open/floor/plasteel/white/airless,
 /area/ruin/unpowered)
 "UL" = (
 /obj/machinery/atmospherics/pipe/manifold{
@@ -714,6 +1327,21 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered)
+"UO" = (
+/obj/effect/turf_decal/siding/purple{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white/airless,
+/area/ruin/unpowered)
+"UT" = (
+/obj/machinery/chem_heater,
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/unpowered)
+"VG" = (
+/mob/living/simple_animal/hostile/carp,
+/obj/structure/lattice,
+/turf/template_noop,
+/area/template_noop)
 "Wm" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -723,6 +1351,16 @@
 	dir = 4
 	},
 /turf/open/floor/plating/airless,
+/area/ruin/unpowered)
+"Wz" = (
+/obj/item/stack/ore/titanium,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/unpowered)
+"WF" = (
+/obj/effect/turf_decal/corner/opaque/purple/border{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark/airless,
 /area/ruin/unpowered)
 "WR" = (
 /obj/structure/grille,
@@ -735,10 +1373,13 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered)
+"WS" = (
+/obj/structure/table/chem,
+/obj/item/reagent_containers/glass/beaker/large/silver_sulfadiazine,
+/obj/machinery/light/dim/directional/north,
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/unpowered)
 "Xn" = (
-/obj/machinery/light/broken/directional/west{
-	icon_state = "tube-broken"
-	},
 /obj/item/ammo_casing/spent{
 	dir = 8;
 	pixel_x = -1;
@@ -758,7 +1399,16 @@
 	dir = 1;
 	pixel_x = -10
 	},
+/obj/machinery/light/broken/directional/west,
 /turf/open/floor/plating/airless,
+/area/ruin/unpowered)
+"Xq" = (
+/obj/machinery/light/broken/directional/south,
+/obj/effect/turf_decal/rechargefloor,
+/obj/structure/sign/departments/science{
+	pixel_x = 32
+	},
+/turf/open/floor/plasteel/dark/airless,
 /area/ruin/unpowered)
 "Xs" = (
 /obj/structure/table/reinforced,
@@ -771,8 +1421,19 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered)
+"XF" = (
+/obj/item/stack/ore/titanium,
+/turf/closed/mineral,
+/area/ruin/unpowered)
+"Yc" = (
+/mob/living/simple_animal/hostile/carp/megacarp,
+/obj/machinery/light/floor,
+/obj/effect/turf_decal/trimline/opaque/orange/end{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/unpowered)
 "Ye" = (
-/obj/machinery/light/broken/directional/south,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -782,7 +1443,12 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/machinery/light/broken/directional/south,
 /turf/open/floor/plating/airless,
+/area/ruin/unpowered)
+"YC" = (
+/obj/machinery/door/airlock/science/glass,
+/turf/open/floor/plasteel/dark/airless,
 /area/ruin/unpowered)
 "Zx" = (
 /obj/machinery/atmospherics/components/unary/cryo_cell{
@@ -791,263 +1457,419 @@
 /turf/open/floor/engine/airless,
 /area/ruin/unpowered)
 "Zz" = (
-/obj/effect/mob_spawn/human/corpse/damaged,
+/obj/effect/mob_spawn/human/corpse/damaged{
+	outfit = /datum/outfit/job/scientist
+	},
 /obj/effect/decal/cleanable/blood,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered)
+"ZF" = (
+/obj/structure/table/reinforced,
+/obj/item/circuitboard/computer/crew,
+/obj/machinery/door/window/survival_pod{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white/airless,
+/area/ruin/unpowered)
 
 (1,1,1) = {"
+IX
+IX
+IX
+IX
+IX
+IX
+IX
+IX
+IX
+IX
+IX
+IX
+IX
 KY
-KY
-KY
-KY
-KY
-KY
-KY
-KY
-KY
-KY
-KY
-jq
-KY
-KY
-KY
-KY
-KY
-KY
+IX
+IX
+IX
+IX
+IX
+KZ
+ts
+KZ
+KZ
+ts
+KZ
+LH
+ts
+IX
+IX
+IX
 "}
 (2,1,1) = {"
+IX
+IX
+IX
+IX
+IX
+IX
+IX
+IX
+IX
+IX
+IX
+IX
+IX
+IX
+IX
+IX
+IX
 KY
+IX
+IX
+qy
+IX
+IX
+IX
+yM
 KY
-KY
-KY
-KY
-KY
-KY
-KY
-KY
-KY
-KY
-KY
-KY
-KY
-KY
-jq
-KY
-KY
+IX
+IX
+IX
+IX
 "}
 (3,1,1) = {"
+IX
+IX
+IX
+XF
+Wz
+IX
+IX
+IX
+IX
+IX
+IX
+IX
+IX
+IX
 KY
-KY
-KY
-KY
-KY
-KY
-KY
-KY
-KY
-KY
-KY
-KY
-jq
-KY
-KY
-KY
-KY
-KY
+IX
+IX
+IX
+IX
+Cq
+Cq
+Cq
+cy
+cy
+cy
+Cq
+Gw
+IX
+KZ
+IX
 "}
 (4,1,1) = {"
+IX
+IX
+Wz
+jq
+jq
+dw
+Hm
+IX
+IX
+IX
+IX
+IX
+IX
+IX
+Sp
 KY
 KY
-KY
-KY
-KY
-KY
-KY
-KY
-KY
-KY
-KY
-KY
+RK
+IX
+cy
+cy
 Ro
-jq
-jq
-Bl
+fx
+vO
+Ro
+cy
+Cq
 KY
-KY
+ts
+IX
 "}
 (5,1,1) = {"
-KY
-KY
-KY
-KY
-KY
-KY
-KY
-KY
-xB
-KY
-KY
-KY
-KY
+IX
+IX
+jq
+jq
+jq
+Ey
+jq
+jq
+IX
+IX
+Rj
+IX
+IX
+IX
+sD
 BV
-Ro
-Ej
-KY
-KY
+oD
+eS
+IX
+cy
+xB
+xL
+vU
+EE
+Rx
+GP
+cy
+IX
+ts
+IX
 "}
 (6,1,1) = {"
-KY
-KY
-KY
-KY
-KY
-KY
-KY
-KY
-KY
-KY
-KY
-KY
+IX
+IX
+IX
+OI
 jq
+jq
+jq
+jq
+dw
+IX
+IX
+IX
+IX
+IX
+KY
 bp
-xB
+VG
 KY
-KY
-KY
+Gp
+cy
+uc
+UO
+CI
+QC
+gz
+ZF
+cy
+IX
+KZ
+IX
 "}
 (7,1,1) = {"
-KY
-KY
-KY
-KY
-KY
-KY
-KY
-KY
-KY
-KY
-KY
-Tr
+IX
+IX
+IX
+IX
+jq
+eX
+jq
+Ey
+jq
+IX
+IX
+IX
+IX
+vp
 Cq
 GV
 Cq
-jq
-KZ
-KY
+IX
+IX
+Cq
+Ej
+Ix
+QC
+CI
+dT
+HE
+Cq
+IX
+ts
+IX
 "}
 (8,1,1) = {"
-KY
-KY
-KY
-KY
-KY
-KY
-KY
-KY
-KY
-KY
-KY
-KY
+IX
+IX
+IX
+IX
+IX
+jq
+jq
+jq
+jq
+IX
+IX
+IX
+yM
+IX
 Ji
 Cs
 Ax
-yM
-KZ
-KY
+IX
+IX
+Cq
+Ul
+UO
+CI
+QC
+gz
+cV
+Cq
+IX
+LH
+IX
 "}
 (9,1,1) = {"
-KY
-KY
-KY
-KY
-KY
-KY
-KY
-KY
-KY
-KY
-KY
-KY
+IX
+IX
+IX
+IX
+IX
+IX
+IX
+IX
+IX
+IX
+sD
+IX
+IX
+IX
 Ax
 GV
 Fq
+IX
+IX
+Cq
+Cd
+tD
+gm
+gm
+BB
+cy
+Cq
 KY
-uc
-KY
+ts
+IX
 "}
 (10,1,1) = {"
-KY
-KY
-xB
-KY
-KY
-KY
-KY
+IX
+IX
+IX
+IX
+Rj
+IX
+IX
+IX
+IX
 ts
 ts
 KZ
 KZ
-Tr
+vp
 Fq
 Hy
 qC
+mM
 KY
-KY
-KY
+Cq
+cy
+cy
+Tr
+Tr
+Cq
+cy
+Cq
+IX
+ts
+IX
 "}
 (11,1,1) = {"
+IX
+IX
+IX
+IX
+IX
+IX
+IX
+IX
+IX
+yM
 KY
-KY
-KY
-KY
-KY
-KY
-KY
-KY
-jq
-KY
-KY
-KY
+IX
+yM
+IX
 qC
 al
 qC
+IX
+IX
 KY
+IX
+Cq
+ET
+iA
+cy
+IX
 KY
-KY
+yM
+IX
+IX
 "}
 (12,1,1) = {"
-KY
-KY
-KY
-KY
-KY
-KY
-KY
-KY
+IX
+IX
+IX
+IX
+IX
+IX
+IX
+IX
+IX
+IX
 Cq
 Cq
 Cq
 cy
 cy
-tm
+gC
 cy
+IX
+Rj
 KY
-ts
+IX
+Cq
+Lx
+OH
+cy
+IX
 KY
+IX
+IX
+IX
 "}
 (13,1,1) = {"
-KY
-KY
-KY
-KY
-KY
-KY
-KY
-KY
+IX
+IX
+IX
+yM
+IX
+sD
+IX
+IX
+yM
+yM
 Cq
 kl
 Fb
@@ -1055,57 +1877,93 @@ un
 wr
 Wm
 cy
-KY
-ts
-KY
-"}
-(14,1,1) = {"
-KZ
-KZ
-ts
-ts
-ts
-ts
-ts
+IX
+IX
 KY
 cy
-ye
-bm
+cy
+Tr
+Tr
+cy
+cy
+KY
+IX
+IX
+LH
+"}
+(14,1,1) = {"
+IX
+IX
+KZ
+KZ
+ts
+ts
+ts
+ts
+ts
+IX
+cy
+Ue
+IR
 un
 OH
 Ye
 Cq
-jq
-ts
+yM
+IX
+Cq
+fo
+ye
+bm
+TL
+RJ
+cy
+Cq
 KY
+qy
+KZ
 "}
 (15,1,1) = {"
+IX
+IX
 KZ
+yM
+IX
 KY
+sD
+IX
 KY
-jq
-KY
-KY
-jq
-KY
+IX
 cy
 Gj
-bW
+tx
 un
 gG
 nt
 Cq
 KY
+cy
+Cq
+xD
+kT
+bW
+TG
+cB
+wj
+cy
+Cq
+IX
 ts
-KY
 "}
 (16,1,1) = {"
+IX
+IX
 ts
-KY
-KY
-jq
-KY
-KY
+yM
+IX
+Gp
+IX
+IX
 cy
 cy
 cy
@@ -1113,15 +1971,27 @@ dt
 cy
 Cq
 Cq
-tm
+gC
 Cq
 KY
-KZ
-KY
+Cq
+CL
+OG
+sc
+bW
+BV
+kU
+tm
+RX
+Cq
+IX
+IX
 "}
 (17,1,1) = {"
+IX
+IX
 ts
-jq
+KY
 cy
 Cq
 Cq
@@ -1133,15 +2003,27 @@ zI
 Xn
 qk
 OH
-TG
+al
 Cq
-jq
-KZ
-KY
+IX
+Cq
+WS
+Pg
+gO
+Mw
+TL
+WF
+Gn
+hE
+Cq
+yM
+IX
 "}
 (18,1,1) = {"
+IX
+IX
 ts
-KY
+IX
 cy
 cy
 cy
@@ -1149,22 +2031,34 @@ cy
 cy
 ha
 HS
-LP
+Iw
 QH
 Mf
 FW
 ih
 cy
-KY
-ts
-KY
+Cq
+cy
+Tq
+JX
+Ru
+TG
+aO
+ca
+OM
+Be
+cy
+cy
+IX
 "}
 (19,1,1) = {"
+IX
+IX
 ts
-KY
+IX
 cy
 Cq
-Jj
+Jd
 Jj
 WR
 Xs
@@ -1175,13 +2069,25 @@ DL
 OH
 TF
 cy
-KY
-ts
-KY
+ba
+TL
+OH
+TL
+GV
+GV
+TL
+GV
+wM
+LP
+nN
+cy
+IX
 "}
 (20,1,1) = {"
+IX
+IX
 ts
-jq
+KY
 cy
 Cq
 Hn
@@ -1190,18 +2096,30 @@ WR
 fL
 eN
 gd
-TL
-Rj
+ow
+MK
 eT
 km
+YC
+TL
+GV
+Ta
+ar
+Pu
+TL
+TL
+Mz
+WF
+jx
+gJ
 cy
-jq
-KZ
-KY
+IX
 "}
 (21,1,1) = {"
+IX
+IX
 KZ
-KY
+IX
 cy
 Cq
 Zx
@@ -1213,15 +2131,27 @@ fE
 fY
 QV
 TF
-gm
+QC
+YC
+TL
+TL
 GV
+TL
+TL
+Yc
+DX
+TL
+WF
+TL
 Bl
-KZ
-xB
+cy
+IX
 "}
 (22,1,1) = {"
+IX
+IX
 ts
-KY
+IX
 cy
 Cq
 Hn
@@ -1234,54 +2164,90 @@ kW
 bK
 eU
 CD
+YC
+TL
+LP
+OH
+aO
+Sj
+TL
+TL
+TL
+bt
 BV
-KY
-KZ
-Pg
+wQ
+cy
+IX
 "}
 (23,1,1) = {"
+IX
+IX
 ts
-jq
+KY
 Cq
 Cq
-Jj
+Jd
 Jj
 WR
 UL
-gC
+Ic
 PN
 PD
 kH
 TU
-oD
+jP
 Cq
-jq
-KZ
-KY
+ge
+BV
+bm
+TL
+bW
+Ta
+Sj
+ar
+WF
+FK
+eI
+cy
+IX
 "}
 (24,1,1) = {"
+IX
+IX
 ts
-KY
+IX
 Cq
 Cq
 Cq
 Cq
 cy
 Na
-nY
+Mb
 sJ
 QC
 jd
 ra
 Sk
 Cq
-KY
-KZ
-KY
+cy
+cy
+vj
+Py
+GV
+kI
+TL
+Mw
+aK
+oY
+cy
+Cq
+IX
 "}
 (25,1,1) = {"
+IX
+IX
 ts
-KY
+IX
 cy
 Cq
 Cq
@@ -1293,19 +2259,31 @@ nh
 Fk
 nl
 Qi
-CI
+fN
 Cq
-KY
-ts
-KY
+IX
+lR
+aO
+TG
+bW
+Lw
+Mz
+oY
+WF
+RX
+Cq
+IX
+IX
 "}
 (26,1,1) = {"
+IX
+IX
 KZ
-jq
-jq
-jq
-jq
-jq
+KY
+KY
+KY
+Gp
+KY
 cy
 cy
 Cq
@@ -1315,33 +2293,57 @@ Cq
 NM
 qf
 cy
-jq
-ts
 KY
+Cq
+QP
+Rd
+TG
+nY
+LP
+BV
+hl
+Xq
+Cq
+IX
+IX
 "}
 (27,1,1) = {"
+IX
+IX
 KZ
+IX
+IX
+Rj
+IX
+IX
+IX
 KY
-KY
-KY
-KY
-KY
-KY
-jq
-KY
-KY
-KY
+IX
+yM
+IX
 qC
 ve
 LY
 qC
-KY
-KZ
-KY
+Gp
+Cq
+cy
+UT
+BV
+Mp
+FX
+TL
+aM
+cy
+cy
+IX
+ts
 "}
 (28,1,1) = {"
-KY
-KY
+IX
+IX
+IX
+IX
 KZ
 ts
 ts
@@ -1350,12 +2352,86 @@ ts
 ts
 ts
 KZ
+yM
+qC
+qC
+qC
+qC
+IX
+IX
+cy
+cy
+PL
+OD
+lk
+Hu
+cy
+cy
+qy
+Gp
+LH
+"}
+(29,1,1) = {"
+IX
+IX
+IX
+IX
+IX
+IX
+IX
+IX
+IX
+IX
+IX
+IX
+IX
+yM
+IX
+IX
+IX
+IX
+IX
 KY
-qC
-qC
-qC
-qC
+Cq
+Cq
+cy
+Cq
+Cq
+cy
 KY
-KZ
+IX
+IX
+ts
+"}
+(30,1,1) = {"
+IX
+IX
+IX
+IX
+IX
+IX
+IX
+IX
+IX
+IX
+IX
+IX
+IX
+IX
+IX
+IX
+IX
+IX
+IX
 KY
+IX
+IX
+IX
+IX
+IX
+IX
+KY
+IX
+IX
+IX
 "}

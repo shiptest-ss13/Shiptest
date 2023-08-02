@@ -133,9 +133,6 @@
 /atom/movable/lighting_object/blob_act()
 	return
 
-/atom/movable/lighting_object/onTransitZ()
-	return
-
 /atom/movable/lighting_object/wash(clean_types)
 	return
 

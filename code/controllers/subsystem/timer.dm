@@ -342,7 +342,7 @@ SUBSYSTEM_DEF(timer)
 
 
 /datum/controller/subsystem/timer/Recover()
-	// Find the current timer sub-subsystem in global and recover its buckets etc
+	//Find the current timer sub-subsystem in global and recover its buckets etc
 	var/datum/controller/subsystem/timer/timerSS = null
 	for(var/global_var in global.vars)
 		if (istype(global.vars[global_var],src.type))
