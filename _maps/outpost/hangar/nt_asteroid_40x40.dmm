@@ -4,14 +4,17 @@
 	req_access_txt = "109"
 	},
 /obj/item/pipe/binary,
-/turf/open/floor/concrete/slab_3,
+/turf/open/floor/concrete/slab_3{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "ah" = (
 /obj/effect/decal/cleanable/robot_debris{
 	pixel_x = 12
 	},
 /turf/open/floor/plasteel{
-	color = "#808080"
+	color = "#808080";
+	planetary_atmos = 1
 	},
 /area/hangar)
 "ar" = (
@@ -20,7 +23,9 @@
 	pixel_x = 5;
 	pixel_y = 9
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "az" = (
 /obj/machinery/vending/coffee{
@@ -37,7 +42,9 @@
 	pixel_y = 21;
 	pixel_x = 6
 	},
-/turf/open/floor/concrete/slab_3,
+/turf/open/floor/concrete/slab_3{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "aF" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/arrow_cw{
@@ -51,7 +58,8 @@
 /obj/structure/girder,
 /obj/structure/grille/broken,
 /turf/open/floor/plating{
-	icon_state = "platingdmg1"
+	icon_state = "platingdmg1";
+	planetary_atmos = 1
 	},
 /area/hangar)
 "aL" = (
@@ -63,7 +71,8 @@
 	},
 /obj/machinery/light/directional/east,
 /turf/open/floor/plasteel{
-	color = "#808080"
+	color = "#808080";
+	planetary_atmos = 1
 	},
 /area/hangar)
 "bt" = (
@@ -71,12 +80,15 @@
 /obj/effect/turf_decal/box/corners{
 	dir = 8
 	},
-/turf/open/floor/plating/rust,
+/turf/open/floor/plating/rust{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "cg" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel{
-	color = "#808080"
+	color = "#808080";
+	planetary_atmos = 1
 	},
 /area/hangar)
 "cm" = (
@@ -89,7 +101,9 @@
 /obj/structure/marker_beacon{
 	picked_color = "Teal"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "dd" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -103,7 +117,8 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel{
-	color = "#808080"
+	color = "#808080";
+	planetary_atmos = 1
 	},
 /area/hangar)
 "fn" = (
@@ -126,7 +141,8 @@
 	pixel_y = 1
 	},
 /turf/open/floor/plating{
-	icon_state = "foam_plating"
+	icon_state = "foam_plating";
+	planetary_atmos = 1
 	},
 /area/hangar)
 "fR" = (
@@ -188,7 +204,8 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel{
-	color = "#808080"
+	color = "#808080";
+	planetary_atmos = 1
 	},
 /area/hangar)
 "jk" = (
@@ -213,10 +230,14 @@
 "kJ" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/effect/landmark/outpost/hangar_numbers,
-/turf/open/floor/concrete/slab_3,
+/turf/open/floor/concrete/slab_3{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "kV" = (
-/turf/open/floor/plasteel/patterned/cargo_one,
+/turf/open/floor/plasteel/patterned/cargo_one{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "la" = (
 /obj/structure/railing{
@@ -228,7 +249,9 @@
 /area/hangar)
 "ln" = (
 /obj/effect/turf_decal/siding/wood,
-/turf/open/floor/concrete/slab_3,
+/turf/open/floor/concrete/slab_3{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "lJ" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/warning,
@@ -241,7 +264,9 @@
 	},
 /obj/machinery/light/directional/north,
 /obj/effect/decal/cleanable/glass,
-/turf/open/floor/plasteel/patterned/cargo_one,
+/turf/open/floor/plasteel/patterned/cargo_one{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "lP" = (
 /obj/structure/railing{
@@ -275,7 +300,9 @@
 /area/hangar)
 "nN" = (
 /obj/structure/closet/crate,
-/turf/open/floor/plating,
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "of" = (
 /obj/effect/turf_decal/siding/wood{
@@ -292,7 +319,9 @@
 	},
 /obj/machinery/light/floor/hangar,
 /obj/item/radio/intercom/directional/east,
-/turf/open/floor/concrete/slab_3,
+/turf/open/floor/concrete/slab_3{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "oi" = (
 /obj/item/stack/ore/salvage/scrapsilver{
@@ -303,7 +332,9 @@
 	dir = 2;
 	layer = 4.1
 	},
-/turf/open/floor/plasteel/tech/techmaint,
+/turf/open/floor/plasteel/tech/techmaint{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "oj" = (
 /turf/open/floor/plasteel/tech,
@@ -333,7 +364,9 @@
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/item/stack/ore/salvage/scraptitanium/five,
 /obj/machinery/light/directional/north,
-/turf/open/floor/plating,
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "pO" = (
 /obj/structure/grille,
@@ -345,7 +378,9 @@
 	dir = 2;
 	layer = 4.1
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "qn" = (
 /obj/structure/chair{
@@ -355,7 +390,9 @@
 	dir = 8
 	},
 /obj/structure/extinguisher_cabinet/directional/north,
-/turf/open/floor/concrete/reinforced,
+/turf/open/floor/concrete/reinforced{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "qq" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/corner{
@@ -384,7 +421,8 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel{
-	color = "#808080"
+	color = "#808080";
+	planetary_atmos = 1
 	},
 /area/hangar)
 "rp" = (
@@ -399,7 +437,9 @@
 /area/hangar)
 "rF" = (
 /obj/structure/easel,
-/turf/open/floor/plasteel/patterned/cargo_one,
+/turf/open/floor/plasteel/patterned/cargo_one{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "sc" = (
 /obj/effect/turf_decal/industrial/warning,
@@ -409,17 +449,22 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel{
-	color = "#808080"
+	color = "#808080";
+	planetary_atmos = 1
 	},
 /area/hangar)
 "sn" = (
 /obj/effect/decal/cleanable/oil,
-/turf/open/floor/plating/rust,
+/turf/open/floor/plating/rust{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "sp" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/structure/frame/machine,
-/turf/open/floor/plating,
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "sW" = (
 /obj/structure/sign/departments/cargo{
@@ -435,27 +480,32 @@
 "ue" = (
 /obj/machinery/door/airlock,
 /obj/effect/landmark/outpost/elevator_machine,
-/turf/open/floor/plasteel{
-	color = "#808080"
-	},
+/obj/structure/lattice/catwalk,
+/turf/open/floor/engine,
 /area/hangar)
 "ui" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/concrete/slab_3,
+/turf/open/floor/concrete/slab_3{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "vW" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/patterned/cargo_one,
+/turf/open/floor/plasteel/patterned/cargo_one{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "wj" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/concrete/slab_3,
+/turf/open/floor/concrete/slab_3{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "wH" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/arrow_ccw{
@@ -469,11 +519,14 @@
 	},
 /obj/effect/turf_decal/industrial/caution,
 /turf/open/floor/plasteel{
-	color = "#808080"
+	color = "#808080";
+	planetary_atmos = 1
 	},
 /area/hangar)
 "xj" = (
-/turf/open/floor/plasteel/elevatorshaft,
+/turf/open/floor/plasteel/elevatorshaft{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "xk" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/arrow_cw{
@@ -488,7 +541,9 @@
 	pixel_y = 32
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/rust,
+/turf/open/floor/plating/rust{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "xN" = (
 /obj/effect/turf_decal/industrial/warning,
@@ -497,7 +552,8 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel{
-	color = "#808080"
+	color = "#808080";
+	planetary_atmos = 1
 	},
 /area/hangar)
 "xR" = (
@@ -507,12 +563,15 @@
 	pixel_x = 11
 	},
 /turf/open/floor/plating{
-	icon_state = "panelscorched"
+	icon_state = "panelscorched";
+	planetary_atmos = 1
 	},
 /area/hangar)
 "xU" = (
 /obj/effect/decal/cleanable/garbage,
-/turf/open/floor/plating,
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "xX" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -536,7 +595,9 @@
 "yV" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/machinery/light/directional/east,
-/turf/open/floor/plating/rust,
+/turf/open/floor/plating/rust{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "zd" = (
 /obj/machinery/light/floor/hangar,
@@ -555,19 +616,24 @@
 	dir = 2;
 	layer = 4.1
 	},
-/turf/open/floor/plasteel/tech/techmaint,
+/turf/open/floor/plasteel/tech/techmaint{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "Ak" = (
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plasteel{
-	color = "#808080"
+	color = "#808080";
+	planetary_atmos = 1
 	},
 /area/hangar)
 "Ar" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
-/turf/open/floor/concrete/slab_3,
+/turf/open/floor/concrete/slab_3{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "AO" = (
 /obj/machinery/light/directional/south,
@@ -576,7 +642,9 @@
 "Be" = (
 /obj/effect/turf_decal/siding/wood/corner,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/concrete/slab_3,
+/turf/open/floor/concrete/slab_3{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "BE" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/warning{
@@ -589,7 +657,9 @@
 	dir = 4
 	},
 /obj/structure/closet/crate,
-/turf/open/floor/plasteel/patterned/cargo_one,
+/turf/open/floor/plasteel/patterned/cargo_one{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "BZ" = (
 /obj/effect/turf_decal/siding/wood{
@@ -597,14 +667,18 @@
 	},
 /obj/effect/turf_decal/siding/wood,
 /obj/structure/closet/crate/bin,
-/turf/open/floor/concrete/tiles,
+/turf/open/floor/concrete/tiles{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "Cl" = (
 /obj/structure/reagent_dispensers/fueltank,
 /obj/structure/sign/warning/nosmoking{
 	pixel_y = 32
 	},
-/turf/open/floor/plasteel/patterned/cargo_one,
+/turf/open/floor/plasteel/patterned/cargo_one{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "Cy" = (
 /obj/effect/turf_decal/siding/wood{
@@ -627,7 +701,9 @@
 	pixel_y = 4;
 	pixel_x = -7
 	},
-/turf/open/floor/concrete/reinforced,
+/turf/open/floor/concrete/reinforced{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "CV" = (
 /obj/structure/bed{
@@ -635,22 +711,29 @@
 	},
 /obj/structure/catwalk/over,
 /turf/open/floor/plating{
-	icon_state = "panelscorched"
+	icon_state = "panelscorched";
+	planetary_atmos = 1
 	},
 /area/hangar)
 "De" = (
 /obj/effect/landmark/outpost/hangar_dock,
-/turf/open/floor/plating,
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "Dm" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/item/trash/boritos,
-/turf/open/floor/plating,
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "DA" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/oil/streak,
-/turf/open/floor/plasteel/patterned/cargo_one,
+/turf/open/floor/plasteel/patterned/cargo_one{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "DK" = (
 /turf/closed/mineral/random/snow,
@@ -660,7 +743,8 @@
 /obj/structure/closet/crate,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /turf/open/floor/plating{
-	icon_state = "platingdmg1"
+	icon_state = "platingdmg1";
+	planetary_atmos = 1
 	},
 /area/hangar)
 "DS" = (
@@ -675,7 +759,8 @@
 /obj/effect/turf_decal/industrial/caution,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel{
-	color = "#808080"
+	color = "#808080";
+	planetary_atmos = 1
 	},
 /area/hangar)
 "Et" = (
@@ -717,7 +802,8 @@
 	},
 /obj/item/radio/intercom/directional/east,
 /turf/open/floor/plasteel{
-	color = "#808080"
+	color = "#808080";
+	planetary_atmos = 1
 	},
 /area/hangar)
 "Fl" = (
@@ -736,7 +822,9 @@
 /obj/structure/railing/corner{
 	dir = 8
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "FI" = (
 /obj/effect/turf_decal/siding/wood{
@@ -749,7 +837,9 @@
 	dir = 8
 	},
 /obj/item/pipe/binary,
-/turf/open/floor/concrete/slab_3,
+/turf/open/floor/concrete/slab_3{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "FY" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/arrow_ccw,
@@ -761,7 +851,8 @@
 	dir = 1
 	},
 /turf/open/floor/plating{
-	icon_state = "foam_plating"
+	icon_state = "foam_plating";
+	planetary_atmos = 1
 	},
 /area/hangar)
 "Gm" = (
@@ -779,7 +870,9 @@
 	dir = 4
 	},
 /obj/item/pipe/binary,
-/turf/open/floor/concrete/slab_3,
+/turf/open/floor/concrete/slab_3{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "Hg" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/arrow_cw{
@@ -799,14 +892,17 @@
 	dir = 9
 	},
 /turf/open/floor/plasteel{
-	color = "#808080"
+	color = "#808080";
+	planetary_atmos = 1
 	},
 /area/hangar)
 "HW" = (
 /obj/effect/turf_decal/box/corners{
 	dir = 8
 	},
-/turf/open/floor/plasteel/patterned/cargo_one,
+/turf/open/floor/plasteel/patterned/cargo_one{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "HY" = (
 /turf/open/floor/plating/asteroid/icerock/smooth,
@@ -840,7 +936,8 @@
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/structure/firelock_frame,
 /turf/open/floor/plating{
-	icon_state = "panelscorched"
+	icon_state = "panelscorched";
+	planetary_atmos = 1
 	},
 /area/hangar)
 "Kf" = (
@@ -848,7 +945,9 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
-/turf/open/floor/concrete/reinforced,
+/turf/open/floor/concrete/reinforced{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "Km" = (
 /turf/open/floor/plating/asteroid/icerock/cracked,
@@ -873,7 +972,9 @@
 /obj/machinery/light/directional/south,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old,
-/turf/open/floor/plasteel/patterned/cargo_one,
+/turf/open/floor/plasteel/patterned/cargo_one{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "Lq" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -883,12 +984,15 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel{
-	color = "#808080"
+	color = "#808080";
+	planetary_atmos = 1
 	},
 /area/hangar)
 "Lr" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/rust,
+/turf/open/floor/plating/rust{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "LE" = (
 /obj/effect/decal/cleanable/oil,
@@ -902,7 +1006,9 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/concrete/slab_3,
+/turf/open/floor/concrete/slab_3{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "Mg" = (
 /obj/structure/girder/displaced,
@@ -926,7 +1032,9 @@
 	pixel_y = 32
 	},
 /obj/machinery/light/directional/east,
-/turf/open/floor/concrete/reinforced,
+/turf/open/floor/concrete/reinforced{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "Nq" = (
 /obj/structure/chair/sofa/left{
@@ -936,11 +1044,15 @@
 	dir = 1
 	},
 /obj/machinery/light/directional/south,
-/turf/open/floor/concrete/reinforced,
+/turf/open/floor/concrete/reinforced{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "NL" = (
 /obj/effect/landmark/outpost/elevator,
-/turf/open/floor/plasteel/elevatorshaft,
+/turf/open/floor/plasteel/elevatorshaft{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "Og" = (
 /obj/effect/turf_decal/siding/wood{
@@ -956,11 +1068,15 @@
 	pixel_x = -7;
 	pixel_y = -2
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "OG" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/poddoor/shutters/indestructible/preopen,
+/obj/machinery/door/poddoor/shutters/indestructible/preopen{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/hangar)
 "OI" = (
@@ -972,7 +1088,9 @@
 "Ph" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/concrete/slab_3,
+/turf/open/floor/concrete/slab_3{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "Po" = (
 /obj/item/flashlight/lantern{
@@ -985,14 +1103,17 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel{
-	color = "#808080"
+	color = "#808080";
+	planetary_atmos = 1
 	},
 /area/hangar)
 "PL" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 4
 	},
-/turf/open/floor/concrete/slab_3,
+/turf/open/floor/concrete/slab_3{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "Qb" = (
 /obj/structure/flora/rock/icy,
@@ -1004,11 +1125,14 @@
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plating{
-	icon_state = "panelscorched"
+	icon_state = "panelscorched";
+	planetary_atmos = 1
 	},
 /area/hangar)
 "QV" = (
-/turf/open/floor/plasteel/tech/techmaint,
+/turf/open/floor/plasteel/tech/techmaint{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "RA" = (
 /obj/structure/railing{
@@ -1025,7 +1149,9 @@
 /turf/open/water/beach/deep,
 /area/hangar)
 "RB" = (
-/obj/machinery/door/poddoor/shutters/indestructible/preopen,
+/obj/machinery/door/poddoor/shutters/indestructible/preopen{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/hangar)
 "Sf" = (
@@ -1040,13 +1166,17 @@
 	},
 /obj/structure/grille/broken,
 /obj/structure/girder/reinforced,
-/turf/open/floor/plating,
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "Sg" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
 	},
-/turf/open/floor/concrete/slab_3,
+/turf/open/floor/concrete/slab_3{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "So" = (
 /obj/structure/flora/rock/icy{
@@ -1060,7 +1190,9 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/siding/wood,
-/turf/open/floor/concrete/tiles,
+/turf/open/floor/concrete/tiles{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "Th" = (
 /obj/structure/fence/corner{
@@ -1075,7 +1207,8 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel{
-	color = "#808080"
+	color = "#808080";
+	planetary_atmos = 1
 	},
 /area/hangar)
 "Tw" = (
@@ -1096,7 +1229,9 @@
 	pixel_x = 7;
 	pixel_y = -9
 	},
-/turf/open/floor/plasteel/tech/techmaint,
+/turf/open/floor/plasteel/tech/techmaint{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "Uc" = (
 /obj/structure/catwalk/over/plated_catwalk,
@@ -1106,7 +1241,8 @@
 	},
 /obj/structure/grille,
 /turf/open/floor/plating{
-	icon_state = "platingdmg2"
+	icon_state = "platingdmg2";
+	planetary_atmos = 1
 	},
 /area/hangar)
 "UB" = (
@@ -1126,7 +1262,8 @@
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel{
-	color = "#808080"
+	color = "#808080";
+	planetary_atmos = 1
 	},
 /area/hangar)
 "Vc" = (
@@ -1155,7 +1292,9 @@
 /obj/machinery/atmospherics/components/unary/passive_vent{
 	dir = 1
 	},
-/turf/open/floor/concrete/slab_3,
+/turf/open/floor/concrete/slab_3{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "Vj" = (
 /obj/structure/fence{
@@ -1172,14 +1311,18 @@
 	dir = 2;
 	layer = 4.1
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "Vq" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/machinery/atmospherics/components/unary/tank/air{
 	volume = 10000000
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "Vz" = (
 /obj/structure/sign/poster/contraband/random{
@@ -1187,7 +1330,8 @@
 	},
 /obj/machinery/light/directional/east,
 /turf/open/floor/plating{
-	icon_state = "foam_plating"
+	icon_state = "foam_plating";
+	planetary_atmos = 1
 	},
 /area/hangar)
 "VS" = (
@@ -1197,25 +1341,33 @@
 	dir = 10
 	},
 /turf/open/floor/plasteel{
-	color = "#808080"
+	color = "#808080";
+	planetary_atmos = 1
 	},
 /area/hangar)
 "VZ" = (
-/turf/open/floor/plating,
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "Wc" = (
 /obj/structure/catwalk/over/plated_catwalk,
-/turf/open/floor/plating,
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "Wp" = (
 /turf/open/floor/plasteel{
-	color = "#808080"
+	color = "#808080";
+	planetary_atmos = 1
 	},
 /area/hangar)
 "Xt" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/machinery/atmospherics/components/binary/pump/on,
-/turf/open/floor/plating,
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "Xx" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/arrow_cw{
@@ -1255,7 +1407,9 @@
 	dir = 1
 	},
 /obj/item/radio/intercom/directional/east,
-/turf/open/floor/concrete/reinforced,
+/turf/open/floor/concrete/reinforced{
+	planetary_atmos = 1
+	},
 /area/hangar)
 
 (1,1,1) = {"
