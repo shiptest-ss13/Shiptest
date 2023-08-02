@@ -82,6 +82,13 @@
 	light_color = COLOR_RED_LIGHT
 	duration = 3
 
+/obj/effect/temp_visual/dir_setting/firing_effect/gauss
+//gauss doesn't have a muzzle flash
+	light_system = null
+	light_range = 0
+	light_power = 0
+	light_color = null
+
 /obj/effect/temp_visual/dir_setting/firing_effect/magic
 	icon_state = "shieldsparkles"
 	duration = 3
