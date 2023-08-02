@@ -402,7 +402,7 @@
 /area/outpost/hallway/central)
 "dX" = (
 /obj/machinery/door/poddoor/ert,
-/turf/open/floor/plasteel/tech/grid,
+/turf/closed/indestructible/reinforced,
 /area/outpost/operations)
 "dY" = (
 /obj/structure/window/reinforced{
@@ -1918,7 +1918,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/poddoor/ert,
-/turf/open/floor/plasteel/tech/grid,
+/turf/closed/indestructible/reinforced,
 /area/outpost/operations)
 "ry" = (
 /obj/effect/turf_decal/siding/thinplating{
@@ -2614,7 +2614,7 @@
 	normaldoorcontrol = 1
 	},
 /obj/machinery/door/airlock{
-	id_tag = "ob2";
+	id_tag = "ob1";
 	name = "Stall 1";
 	dir = 4
 	},
@@ -4325,7 +4325,7 @@
 /obj/machinery/door/airlock/grunge{
 	req_access_txt = "109"
 	},
-/turf/open/floor/plasteel/tech/grid,
+/turf/closed/indestructible/reinforced,
 /area/outpost/operations)
 "Lu" = (
 /turf/open/floor/wood,
