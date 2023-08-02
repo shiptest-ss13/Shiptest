@@ -234,7 +234,7 @@
 
 	return ..()
 
-/datum/overmap/ship/controlled/proc/set_grav_level(var/gravity_level)
+/datum/overmap/ship/controlled/proc/set_grav_level(gravity_level)
 	for(var/area/shuttle_area as anything in shuttle_port.shuttle_areas)
 		shuttle_area.has_gravity=gravity_level
 
