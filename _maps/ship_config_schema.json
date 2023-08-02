@@ -156,6 +156,12 @@
 			"type": "boolean",
 			"description": "Whether or not this ship can be selected by players. Will still be admin-spawnable if not.",
 			"default": false
+		},
+		"space_spawn": {
+			"title": "Spawns in space",
+			"type": "boolean",
+			"description": "Whether this ship will spawn in space or at the outpost. If true, the ship will be placed randomly in space upon being spawned by the join menu.",
+			"default": false
 		}
 	},
 

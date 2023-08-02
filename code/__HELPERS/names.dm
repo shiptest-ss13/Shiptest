@@ -19,6 +19,14 @@
 	var/third_syllables = list("ca", "ce", "ci", "fa", "fe", "fi", "la", "le", "li", "ma", "me", "mi", "na", "ne", "ni", "ra", "re", "ri", "sa", "se", "si", "sha", "she", "shi", "ta", "te", "ti")
 	return "[pick(first_syllables)][pick(second_syllables)][pick(third_syllables)]"
 
+/proc/vox_name()
+	. = ""
+	var/static/list/syllables = list("ti", "ti", "ti", "hi", "hi", "ki", "ki", "ki", "ki", "ya", "ta", "ha", "ka", "ya", "chi", "cha", "kah", \
+		"skre", "ahk", "ehk", "rawk", "kra", "ki", "ii", "kri", "ka")
+	for(var/x = rand(3,8) to 0 step -1)
+		. += pick(syllables)
+	. = capitalize(.)
+
 GLOBAL_VAR(command_name)
 /proc/command_name()
 	if (GLOB.command_name)
