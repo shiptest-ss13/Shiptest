@@ -856,11 +856,13 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	var/ab = FALSE
 	var/list/modifiers = params2list(params)
 
+	var/button_clicked = LAZYACCESS(modifiers, "button")
+
 	var/dragged = LAZYACCESS(modifiers, DRAG)
-	if(dragged && !LAZYACCESS(modifiers, dragged)) //I don't know what's going on here, but I don't trust it
+	if(dragged && button_clicked != dragged)
 		return
 
-	if (object && object == middragatom && LAZYACCESS(modifiers, LEFT_CLICK))
+	if (object && object == middragatom && button_clicked == LEFT_CLICK)
 		ab = max(0, 5 SECONDS-(world.time-middragtime)*0.1)
 
 	var/mcl = CONFIG_GET(number/minute_click_limit)
