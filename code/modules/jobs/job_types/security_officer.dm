@@ -255,7 +255,7 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	name = "Operative (Twinkleshine)"
 	uniform = /obj/item/clothing/under/syndicate/combat
 	ears = /obj/item/radio/headset/syndicate/alt
-	mask = /obj/item/clothing/mask/chameleon
+	mask = /obj/item/clothing/mask/gas/syndicate/voicechanger
 	gloves = /obj/item/clothing/gloves/combat
 	shoes = /obj/item/clothing/shoes/combat
 	l_pocket = /obj/item/gun/ballistic/automatic/pistol
