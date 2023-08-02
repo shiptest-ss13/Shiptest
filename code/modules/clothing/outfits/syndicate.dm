@@ -12,7 +12,7 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag/syndie
 	courierbag = /obj/item/storage/backpack/messenger/sec
 
-/datum/outfit/job/solgov/post_equip(mob/living/carbon/human/H, visualsOnly)
+/datum/outfit/job/syndicate/post_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()
 	if(visualsOnly)
 		return
