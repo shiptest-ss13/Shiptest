@@ -1934,6 +1934,11 @@
 /area/ship/maintenance/starboard)
 "te" = (
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -19;
+	pixel_y = -5
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo/office)
 "tf" = (
@@ -3444,7 +3449,7 @@
 	dir = 4
 	},
 /obj/machinery/light_switch{
-	pixel_x = 11;
+	pixel_x = 8;
 	pixel_y = 22
 	},
 /turf/open/floor/plasteel/dark,
