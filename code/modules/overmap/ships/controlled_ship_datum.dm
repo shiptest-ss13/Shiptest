@@ -141,6 +141,8 @@
 	shuttle_port.play_engine_sound(ticket.target_port, shuttle_port.landing_sound)
 
 /datum/overmap/ship/controlled/complete_dock(datum/overmap/dock_target, datum/docking_ticket/ticket)
+	var/area/docking_area = get_area(ticket.target_port)
+	set_grav_level(docking_area.has_gravity)
 	shuttle_port.initiate_docking(ticket.target_port)
 	. = ..()
 	log_shuttle("[src] [REF(src)] COMPLETE DOCK: FINISHED DOCKING TO [dock_target] AT [ticket.target_port]")
@@ -163,6 +165,7 @@
 	dock_time = dock_time_temp // Set it back to the original value if it was changed
 
 /datum/overmap/ship/controlled/complete_undock()
+	set_grav_level(0) // Later do transit specific gravity stuff.
 	shuttle_port.initiate_docking(shuttle_port.assigned_transit)
 	log_shuttle("[src] [REF(src)] COMPLETE UNDOCK: FINISHED UNDOCK FROM [docked_to]")
 	return ..()
@@ -230,6 +233,10 @@
 		adjust_speed(clamp(-speed_x, max_speed * -0.001, max_speed * 0.001), clamp(-speed_y, max_speed * -0.001, max_speed * 0.001))
 
 	return ..()
+
+/datum/overmap/ship/controlled/proc/set_grav_level(var/gravity_level)
+	for(var/area/shuttle_area as anything in shuttle_port.shuttle_areas)
+		shuttle_area.has_gravity=gravity_level
 
 /**
  * Connects a new shuttle port to the ship datum. Should be used very shortly after the ship is created, if at all.
