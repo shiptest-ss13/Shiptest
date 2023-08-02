@@ -32,11 +32,20 @@
 					/obj/item/gun/ballistic/automatic/pistol)
 
 /datum/supply_pack/gun/revolver
-	name = "Revolver crate"
+	name = "Scarbourgh Revolver crate"
 	desc = "Contains two concealable Scarbourgh revolvers, chambered in .357."
 	cost = 2500
 	contains = list(/obj/item/gun/ballistic/revolver,
 					/obj/item/gun/ballistic/revolver)
+
+/datum/supply_pack/gun/38revolver
+	name = "Scarbourgh Revolver crate"
+	desc = "Contains two concealable Solarian revolvers, chambered in .38."
+	cost = 2000
+	contains = list(/obj/item/gun/ballistic/revolver/detective,
+					/obj/item/gun/ballistic/revolver/detective)
+
+
 
 /*
 		Energy
@@ -94,13 +103,13 @@
 /datum/supply_pack/gun/winchester
 	name = "Winchester Lever Action Rifle Crate"
 	desc = "Contains three antiquated lever action rifles intended for hunting wildlife. Chambered in .38 rounds."
-	cost = 2000
+	cost = 1500
 	contains = list(/obj/item/gun/ballistic/shotgun/winchester,
 					/obj/item/gun/ballistic/shotgun/winchester,
 					/obj/item/gun/ballistic/shotgun/winchester)
 	crate_name = "rifle crate"
 
-/datum/supply_pack/gun/winchester
+/datum/supply_pack/gun/illestren
 	name = "Illestren Rifle Crate"
 	desc = "Contains three expertly made bolt action rifles intended for hunting wildlife. Chambered in 7.62x54 rounds."
 	cost = 4000
