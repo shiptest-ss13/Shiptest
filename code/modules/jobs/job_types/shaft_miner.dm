@@ -94,8 +94,6 @@
 	satchel = /obj/item/storage/backpack/satchel/tox
 	courierbag = /obj/item/storage/backpack/messenger/tox
 
-
-
 /datum/outfit/job/miner/old
 	name = "Shaft Miner (Legacy)"
 	suit = /obj/item/clothing/suit/hooded/explorer/old

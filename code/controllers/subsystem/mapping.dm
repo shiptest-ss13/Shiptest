@@ -37,7 +37,6 @@ SUBSYSTEM_DEF(mapping)
 	var/station_start  // should only be used for maploading-related tasks
 	var/space_levels_so_far = 0
 	var/list/datum/space_level/z_list
-	var/datum/space_level/empty_space
 
 	/// List of all map zones
 	var/list/map_zones = list()
@@ -88,6 +87,7 @@ SUBSYSTEM_DEF(mapping)
 
 	ruins_templates = SSmapping.ruins_templates
 	ruin_types_list = SSmapping.ruin_types_list
+	ruin_types_probabilities = SSmapping.ruin_types_probabilities
 
 	shuttle_templates = SSmapping.shuttle_templates
 	shelter_templates = SSmapping.shelter_templates
@@ -95,6 +95,19 @@ SUBSYSTEM_DEF(mapping)
 
 	outpost_templates = SSmapping.outpost_templates
 
+	shuttle_templates = SSmapping.shuttle_templates
+	shelter_templates = SSmapping.shelter_templates
+	holodeck_templates = SSmapping.holodeck_templates
+
+	areas_in_z = SSmapping.areas_in_z
+	map_zones = SSmapping.map_zones
+	biomes = SSmapping.biomes
+	planet_types = SSmapping.planet_types
+
+	maplist = SSmapping.maplist
+	ship_purchase_list = SSmapping.ship_purchase_list
+
+	virtual_z_translation = SSmapping.virtual_z_translation
 	z_list = SSmapping.z_list
 
 #define INIT_ANNOUNCE(X) to_chat(world, "<span class='boldannounce'>[X]</span>"); log_world(X)

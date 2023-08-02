@@ -149,8 +149,6 @@
 	suit = /obj/item/clothing/suit/toggle/hazard
 	alt_suit = /obj/item/clothing/suit/hazardvest
 
-
-
 /datum/outfit/job/engineer/independent/ship_engineer
 	name = "Ship Engineer (Independent)"
 

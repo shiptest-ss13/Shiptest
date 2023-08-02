@@ -33,7 +33,6 @@
 		W.registered_age = AGE_MINOR
 		to_chat(H, "<span class='notice'>You're not technically old enough to access or serve alcohol, but your ID has been discreetly modified to display your age as [AGE_MINOR]. Try to keep that a secret!</span>")
 
-
 /datum/outfit/job/bartender/pharma
 	name = "Mixologist"
 

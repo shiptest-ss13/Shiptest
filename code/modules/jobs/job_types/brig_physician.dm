@@ -47,4 +47,3 @@
 	suit = /obj/item/clothing/suit/toggle/labcoat/brig_phys
 	l_pocket = /obj/item/reagent_containers/syringe
 	alt_suit = null
-
