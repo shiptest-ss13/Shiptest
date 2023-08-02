@@ -11,15 +11,6 @@
 #define STAMINA "stamina"
 #define BRAIN "brain"
 
-//bitflag damage defines used for suicide_act
-#define BRUTELOSS (1<<0)
-#define FIRELOSS (1<<1)
-#define TOXLOSS (1<<2)
-#define OXYLOSS (1<<3)
-#define SHAME (1<<4)
-#define MANUAL_SUICIDE (1<<5)	//suicide_act will do the actual killing.
-#define MANUAL_SUICIDE_NONLETHAL (1<<6) //when the suicide is conditionally lethal
-
 #define EFFECT_STUN "stun"
 #define EFFECT_KNOCKDOWN "knockdown"
 #define EFFECT_UNCONSCIOUS "unconscious"
@@ -193,17 +184,6 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 #define IS_BLUNT 0
 #define IS_SHARP 1
 #define IS_SHARP_ACCURATE 2
-
-//His Grace.
-#define HIS_GRACE_SATIATED 0 //He hungers not. If bloodthirst is set to this, His Grace is asleep.
-#define HIS_GRACE_PECKISH 20 //Slightly hungry.
-#define HIS_GRACE_HUNGRY 60 //Getting closer. Increases damage up to a minimum of 20.
-#define HIS_GRACE_FAMISHED 100 //Dangerous. Increases damage up to a minimum of 25 and cannot be dropped.
-#define HIS_GRACE_STARVING 120 //Incredibly close to breaking loose. Increases damage up to a minimum of 30.
-#define HIS_GRACE_CONSUME_OWNER 140 //His Grace consumes His owner at this point and becomes aggressive.
-#define HIS_GRACE_FALL_ASLEEP 160 //If it reaches this point, He falls asleep and resets.
-
-#define HIS_GRACE_FORCE_BONUS 4 //How much force is gained per kill.
 
 #define EXPLODE_NONE 0 //Don't even ask me why we need this.
 #define EXPLODE_DEVASTATE 1
