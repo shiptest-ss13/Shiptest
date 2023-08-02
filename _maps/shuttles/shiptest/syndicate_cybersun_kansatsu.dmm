@@ -131,6 +131,9 @@
 /obj/effect/turf_decal/trimline/opaque/bar/filled/warning{
 	dir = 4
 	},
+/obj/machinery/light_switch{
+	pixel_y = 22
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/engineering)
 "cZ" = (
@@ -351,6 +354,10 @@
 /obj/machinery/camera/autoname{
 	dir = 8
 	},
+/obj/machinery/light_switch{
+	pixel_y = 23;
+	pixel_x = -12
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "iL" = (
@@ -567,6 +574,9 @@
 /obj/effect/turf_decal/trimline/opaque/bar/filled/warning{
 	dir = 8
 	},
+/obj/machinery/light_switch{
+	pixel_y = 22
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/central)
 "nO" = (
@@ -722,6 +732,10 @@
 	},
 /obj/machinery/door/window{
 	dir = 4
+	},
+/obj/machinery/light_switch{
+	pixel_y = 22;
+	pixel_x = -11
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office)
@@ -943,6 +957,11 @@
 	pixel_x = -9;
 	pixel_y = -3
 	},
+/obj/machinery/light_switch{
+	pixel_x = -20;
+	pixel_y = 12;
+	dir = 4
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "xf" = (
@@ -1089,6 +1108,11 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light_switch{
+	pixel_y = -20;
+	dir = 1;
+	pixel_x = 6
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "zY" = (
@@ -1145,6 +1169,10 @@
 	icon_state = "0-8"
 	},
 /obj/item/radio/intercom/directional/north,
+/obj/machinery/light_switch{
+	pixel_y = 23;
+	pixel_x = -12
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/dorm)
 "CR" = (

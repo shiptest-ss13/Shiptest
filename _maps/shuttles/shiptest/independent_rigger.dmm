@@ -1020,6 +1020,11 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 20;
+	pixel_y = 0
+	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/office)
 "mW" = (
@@ -1397,6 +1402,11 @@
 /obj/item/clothing/suit/space/engineer,
 /obj/item/clothing/head/helmet/space/light/engineer,
 /obj/item/clothing/mask/breath,
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 20;
+	pixel_y = 11
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "rZ" = (
@@ -1736,6 +1746,11 @@
 /obj/machinery/airalarm/directional/south,
 /obj/structure/closet/emcloset,
 /obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -20;
+	pixel_y = 12
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/central)
 "vN" = (
@@ -2262,6 +2277,11 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -20;
+	pixel_y = 12
+	},
 /turf/open/floor/plating,
 /area/ship/construction)
 "Ax" = (
@@ -2400,6 +2420,11 @@
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable{
 	icon_state = "0-4"
+	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -20;
+	pixel_y = 12
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -3016,6 +3041,11 @@
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable{
 	icon_state = "0-8"
+	},
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 20;
+	pixel_y = 11
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -4400,6 +4430,11 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/effect/turf_decal/corner/opaque/blue/border{
 	dir = 8
+	},
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 20;
+	pixel_y = 11
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)

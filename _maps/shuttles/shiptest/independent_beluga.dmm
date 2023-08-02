@@ -198,6 +198,11 @@
 	specialfunctions = 4;
 	normaldoorcontrol = 1
 	},
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_y = -10;
+	pixel_x = 20
+	},
 /turf/open/floor/wood,
 /area/ship/crew)
 "ck" = (
@@ -232,6 +237,11 @@
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
+	},
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_y = 11;
+	pixel_x = 19
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
@@ -609,6 +619,11 @@
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
+	},
+/obj/machinery/light_switch{
+	pixel_y = 10;
+	dir = 8;
+	pixel_x = 20
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/crew/library)
@@ -1952,6 +1967,11 @@
 "rJ" = (
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable/yellow,
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -20;
+	pixel_y = 13
+	},
 /turf/open/floor/carpet/nanoweave/purple,
 /area/ship/crew)
 "rQ" = (
@@ -2345,6 +2365,11 @@
 /obj/item/trash/waffles,
 /obj/item/trash/candy,
 /obj/item/trash/semki,
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -20;
+	pixel_y = 0
+	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/hallway/central)
 "vR" = (
@@ -2378,6 +2403,10 @@
 /obj/item/reagent_containers/food/snacks/meat/rawcutlet/chicken{
 	pixel_x = 1;
 	pixel_y = 3
+	},
+/obj/machinery/light_switch{
+	pixel_y = 22;
+	pixel_x = -12
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
@@ -2646,6 +2675,11 @@
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable/yellow{
 	icon_state = "0-1"
+	},
+/obj/machinery/light_switch{
+	pixel_y = 10;
+	dir = 8;
+	pixel_x = 20
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
@@ -3145,6 +3179,11 @@
 	},
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
+	},
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_y = 11;
+	pixel_x = 19
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)

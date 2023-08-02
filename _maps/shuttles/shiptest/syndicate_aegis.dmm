@@ -251,7 +251,6 @@
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm)
 "bC" = (
-/obj/machinery/light/directional/west,
 /obj/machinery/vending/coffee,
 /obj/effect/turf_decal/box,
 /turf/open/floor/mineral/plastitanium/red,
@@ -287,6 +286,10 @@
 /obj/effect/turf_decal/box,
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
+	},
+/obj/machinery/light_switch{
+	pixel_y = 23;
+	pixel_x = 11
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/hallway/central)
@@ -376,6 +379,9 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+/obj/machinery/light_switch{
+	pixel_y = 22
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/office)
 "cO" = (
@@ -392,7 +398,6 @@
 	dir = 1
 	},
 /obj/machinery/firealarm/directional/north,
-/obj/machinery/light/directional/north,
 /obj/effect/turf_decal/trimline/opaque/black/line{
 	dir = 1
 	},
@@ -632,6 +637,7 @@
 /obj/machinery/airalarm/directional/north,
 /obj/machinery/vending/snack/random,
 /obj/effect/turf_decal/box,
+/obj/machinery/light/directional/west,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/hallway/central)
 "ff" = (
@@ -657,6 +663,9 @@
 /obj/structure/bedsheetbin,
 /obj/item/storage/box/maid{
 	pixel_x = 6
+	},
+/obj/machinery/light_switch{
+	pixel_y = 22
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/janitor)
@@ -1008,6 +1017,10 @@
 	dir = 4
 	},
 /obj/machinery/computer/cryopod/directional/west,
+/obj/machinery/light_switch{
+	pixel_x = 11;
+	pixel_y = 23
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm)
 "hz" = (
@@ -1337,6 +1350,9 @@
 /obj/structure/curtain/cloth/grey,
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
+	},
+/obj/machinery/light_switch{
+	pixel_y = 22
 	},
 /turf/open/floor/carpet/red,
 /area/ship/crew/janitor)
@@ -2752,6 +2768,22 @@
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/carpet/red,
 /area/ship/crew/janitor)
+"zK" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/black/line{
+	dir = 1
+	},
+/obj/machinery/light/directional/north,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ship/hallway/central)
 "zM" = (
 /obj/structure/cable{
 	icon_state = "5-9"
@@ -3191,6 +3223,10 @@
 	icon_state = "0-2"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/light_switch{
+	pixel_y = 23;
+	pixel_x = 11
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen/kitchen)
 "EJ" = (
@@ -3499,10 +3535,12 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/button/door{
-	pixel_x = -28;
+	pixel_x = -22;
 	specialfunctions = 4;
 	id = "psyc";
-	normaldoorcontrol = 1
+	normaldoorcontrol = 1;
+	dir = 4;
+	pixel_y = 0
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/office)
@@ -4690,6 +4728,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/machinery/light_switch{
+	pixel_y = 22
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Ul" = (
@@ -4792,6 +4833,11 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
+	},
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = 12;
+	pixel_y = -16
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/bridge)
@@ -5004,7 +5050,7 @@
 "WC" = (
 /obj/machinery/light_switch{
 	pixel_x = -10;
-	pixel_y = 26
+	pixel_y = 23
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
@@ -5320,6 +5366,10 @@
 /obj/effect/spawner/lootdrop/maintenance/three,
 /obj/effect/turf_decal/corner_techfloor_grid/diagonal{
 	dir = 4
+	},
+/obj/machinery/light_switch{
+	pixel_y = 23;
+	pixel_x = 11
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
@@ -6152,7 +6202,7 @@ wk
 wk
 wk
 zv
-Gc
+zK
 VF
 VT
 VT

@@ -1271,8 +1271,19 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/orange/visible,
 /obj/structure/catwalk/over,
+/obj/machinery/light_switch{
+	pixel_x = 19;
+	dir = 8;
+	pixel_y = 11
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
+"jS" = (
+/obj/machinery/porta_turret/ship/weak{
+	dir = 9
+	},
+/turf/closed/wall/mineral/titanium,
+/area/ship/bridge)
 "kn" = (
 /obj/machinery/light/small/built/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1427,6 +1438,12 @@
 /obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/engineering)
+"op" = (
+/obj/machinery/porta_turret/ship/weak{
+	dir = 4
+	},
+/turf/closed/wall/mineral/titanium,
+/area/ship/bridge)
 "oq" = (
 /obj/machinery/light/small/built/directional/south,
 /obj/structure/cable{
@@ -2187,7 +2204,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/science/robotics)
 "HC" = (
-/obj/machinery/porta_turret/ship/weak,
+/obj/machinery/porta_turret/ship/weak{
+	dir = 10
+	},
 /turf/closed/wall/mineral/titanium,
 /area/ship/bridge)
 "HJ" = (
@@ -2944,7 +2963,7 @@ aa
 "}
 (7,1,1) = {"
 aa
-HC
+jS
 ai
 ai
 AW
@@ -3344,23 +3363,23 @@ HJ
 "}
 (27,1,1) = {"
 aa
-HC
+op
 ab
 aK
 qe
 bd
 ab
-HC
+op
 aa
 aa
 aa
-HC
+op
 HJ
 DS
 TK
 QR
 HJ
-HC
+op
 "}
 (28,1,1) = {"
 aa
