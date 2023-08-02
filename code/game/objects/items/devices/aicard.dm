@@ -21,10 +21,6 @@
 	desc = "A spoOoOoky upgrade to the intelliCard."
 	icon_state = "aispook"
 
-/obj/item/aicard/suicide_act(mob/living/user)
-	user.visible_message("<span class='suicide'>[user] is trying to upload [user.p_them()]self into [src]! That's not going to work out well!</span>")
-	return BRUTELOSS
-
 /obj/item/aicard/afterattack(atom/target, mob/user, proximity)
 	. = ..()
 	if(!proximity || !target)

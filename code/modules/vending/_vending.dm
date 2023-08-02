@@ -926,9 +926,6 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 /obj/machinery/vending/proc/canLoadItem(obj/item/I, mob/user)
 	return FALSE
 
-/obj/machinery/vending/onTransitZ()
-	return
-
 /obj/machinery/vending/custom
 	name = "Custom Vendor"
 	icon_state = "robotics"
