@@ -776,6 +776,7 @@
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 8
 	},
+/obj/structure/extinguisher_cabinet/directional/east,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/electrical)
 "de" = (
@@ -1137,6 +1138,7 @@
 /area/ship/engineering/electrical)
 "eG" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/extinguisher_cabinet/directional/east,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/engineering)
 "eI" = (
@@ -1383,10 +1385,10 @@
 	pixel_x = -3;
 	pixel_y = -8
 	},
-/obj/structure/extinguisher_cabinet/directional/west,
 /obj/structure/sign/warning/incident{
 	pixel_y = 32
 	},
+/obj/structure/extinguisher_cabinet/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "fE" = (
@@ -7178,6 +7180,7 @@
 /obj/machinery/atmospherics/pipe/simple/green/visible{
 	dir = 6
 	},
+/obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/electrical)
 "Ay" = (
@@ -10836,6 +10839,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/structure/extinguisher_cabinet/directional/east,
 /turf/open/floor/plasteel,
 /area/ship/maintenance/central)
 "OT" = (
@@ -12029,13 +12033,11 @@
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo)
 "TO" = (
-/obj/effect/turf_decal/siding/thinplating,
-/obj/effect/turf_decal/trimline/opaque/blue/line,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 1
-	},
-/turf/open/floor/plasteel,
-/area/ship/hallway/fore)
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/extinguisher_cabinet/directional/south,
+/turf/open/floor/plating,
+/area/ship/security/dock)
 "TR" = (
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 8
@@ -15349,7 +15351,7 @@ rd
 Fk
 OK
 dQ
-TO
+Gk
 np
 np
 np
@@ -15638,7 +15640,7 @@ sc
 sc
 sc
 Sw
-Sw
+TO
 vp
 Mm
 Mm
