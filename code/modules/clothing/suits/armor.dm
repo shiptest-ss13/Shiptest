@@ -400,18 +400,21 @@
 	desc = "A standard armor vest fielded for SolGov's Sonnensoldners."
 	icon_state = "solgov_gambison"
 	item_state = "solgov_gambison"
+	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/suit/armor/vest/bulletproof/solgov/overseer
 	name = "\improper SolGov Overseer robe"
 	desc = "An elaborately designed robe utilized by SolGov overseers."
 	icon_state = "solgov_overseer_robe"
 	item_state = "solgov_overseer_robe"
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/suit/armor/vest/bulletproof/solgov/captain
 	name = "\improper SolGov Captain coat"
 	desc = "An armored coat typically used by SolGov captains."
 	icon_state = "solgov_coat"
 	item_state = "solgov_coat"
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/suit/armor/vest/bulletproof/solgov/Initialize()
 	. = ..()
@@ -457,6 +460,7 @@
 	armor = list("melee" = 25, "bullet" = 10, "laser" = 25, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	cold_protection = CHEST|LEGS|ARMS
 	heat_protection = CHEST|LEGS|ARMS
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 //JACKETS
 /obj/item/clothing/suit/armor/vest/security

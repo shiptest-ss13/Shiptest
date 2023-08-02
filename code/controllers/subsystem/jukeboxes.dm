@@ -43,6 +43,11 @@ SUBSYSTEM_DEF(jukeboxes)
 		M.playsound_local(M, null, 100, channel = youvegotafreejukebox[2], S = song_to_init)
 	return activejukeboxes.len
 
+/datum/controller/subsystem/jukeboxes/Recover()
+	songs = SSjukeboxes.songs
+	activejukeboxes = SSjukeboxes.activejukeboxes
+	freejukeboxchannels = SSjukeboxes.freejukeboxchannels
+
 /datum/controller/subsystem/jukeboxes/proc/removejukebox(IDtoremove)
 	if(islist(activejukeboxes[IDtoremove]))
 		var/jukechannel = activejukeboxes[IDtoremove][2]

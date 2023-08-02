@@ -8,6 +8,7 @@
 	armor = list("melee" = 10, "fire" = 30, "acid" = 30)
 	strip_delay = 50
 	can_adjust = FALSE
+	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/under/solgov/terragov
 	name = "\improper TerraGov tunic"
