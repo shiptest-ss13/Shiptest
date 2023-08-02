@@ -548,16 +548,10 @@
 	return get_alive_client_mobs() + get_dead_client_mobs()
 
 /datum/virtual_level/proc/get_alive_client_mobs()
-	. = list()
-	for(var/mob/Mob as anything in SSmobs.clients_by_zlevel[z_value])
-		if(is_in_bounds(Mob))
-			. += Mob
+	return LAZYACCESS(SSmobs.players_by_virtual_z, "[z_value]") || list()
 
 /datum/virtual_level/proc/get_dead_client_mobs()
-	. = list()
-	for(var/mob/Mob as anything in SSmobs.dead_players_by_zlevel[z_value])
-		if(is_in_bounds(Mob))
-			. += Mob
+	return LAZYACCESS(SSmobs.dead_players_by_virtual_z, "[z_value]") || list()
 
 /datum/virtual_level/proc/get_mind_mobs()
 	. = list()
