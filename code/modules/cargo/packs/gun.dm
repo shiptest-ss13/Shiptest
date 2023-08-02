@@ -38,8 +38,8 @@
 	contains = list(/obj/item/gun/ballistic/revolver,
 					/obj/item/gun/ballistic/revolver)
 
-/datum/supply_pack/gun/38revolver
-	name = "Scarbourgh Revolver crate"
+/datum/supply_pack/gun/detrevolver
+	name = "Revolver crate"
 	desc = "Contains two concealable Solarian revolvers, chambered in .38."
 	cost = 2000
 	contains = list(/obj/item/gun/ballistic/revolver/detective,
