@@ -57,6 +57,10 @@
 /obj/effect/temp_visual/dir_setting/firing_effect
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "firing_effect"
+	light_system = MOVABLE_LIGHT
+	light_range = 2
+	light_power = 0.4
+	light_color = COLOR_VERY_SOFT_YELLOW
 	duration = 2
 
 /obj/effect/temp_visual/dir_setting/firing_effect/setDir(newdir)
@@ -75,6 +79,7 @@
 
 /obj/effect/temp_visual/dir_setting/firing_effect/energy
 	icon_state = "firing_effect_energy"
+	light_color = COLOR_RED_LIGHT
 	duration = 3
 
 /obj/effect/temp_visual/dir_setting/firing_effect/magic
