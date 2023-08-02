@@ -24,7 +24,7 @@
 			"slots": 1
 		},
 		"Pilot": {
-			"outfit": "/datum/outfit/job/cargo_tech/pilot/heron",
+			"outfit": "/datum/outfit/job/head_of_personnel/pilot/heron",
 			"officer": true,
 			"slots": 2
 		},
@@ -34,7 +34,7 @@
 		},
 		"ERT Officer":{
 			"outfit": "/datum/outfit/job/security/nanotrasen/ert",
-			"slots": 4
+			"slots": 2
 		},
 		"ERT Medical Officer":{
 			"outfit": "/datum/outfit/job/security/nanotrasen/ert/med",
@@ -61,10 +61,6 @@
 			"outfit":"/datum/outfit/job/roboticist/mechatronicengineer",
 			"slots": 1
 		},
-		"Paramedic":{
-			"outfit": "/datum/outfit/job/paramedic",
-			"slots": 1
-		},
 		"Medical Doctor":{
 			"outfit": "/datum/outfit/job/doctor",
 			"slots": 1
@@ -75,7 +71,7 @@
 		"Cargo Technician": 1,
 		"Cook": 1,
 		"Janitor": 1,
-		"Assistant": 3
+		"Assistant": 2
 	},
 	"enabled": false
 }

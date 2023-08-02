@@ -142,3 +142,11 @@
 	glasses = /obj/item/clothing/glasses/sunglasses
 	suit = /obj/item/clothing/suit/armor/vest/bulletproof/frontier
 
+/datum/outfit/job/head_of_personnel/pilot/heron
+	name = "pilot"
+
+	uniform = /obj/item/clothing/under/rank/security/officer/military
+	suit = /obj/item/clothing/suit/jacket/leather/duster
+	glasses = /obj/item/clothing/glasses/hud/spacecop
+	accessory = /obj/item/clothing/accessory/holster
+	head = /obj/item/clothing/head/beret/lt
