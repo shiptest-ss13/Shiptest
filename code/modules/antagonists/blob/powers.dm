@@ -254,12 +254,13 @@
 		to_chat(src, "<span class='notice'>Gained [B.point_return] resources from removing \the [B].</span>")
 	qdel(B)
 
-/mob/camera/blob/verb/expand_blob_power()
-	set category = "Blob"
-	set name = "Expand/Attack Blob ([BLOB_SPREAD_COST])"
-	set desc = "Attempts to create a new blob in this tile. If the tile isn't clear, instead attacks it, damaging mobs and objects and refunding [BLOB_ATTACK_REFUND] points."
-	var/turf/T = get_turf(src)
-	expand_blob(T)
+// commented out to fix errors with non-constant name/desc. Do we even need this code?
+// /mob/camera/blob/verb/expand_blob_power()
+// 	set category = "Blob"
+// 	set name = "Expand/Attack Blob ([BLOB_SPREAD_COST])"
+// 	set desc = "Attempts to create a new blob in this tile. If the tile isn't clear, instead attacks it, damaging mobs and objects and refunding [BLOB_ATTACK_REFUND] points."
+// 	var/turf/T = get_turf(src)
+// 	expand_blob(T)
 
 /mob/camera/blob/proc/expand_blob(turf/T)
 	if(world.time < last_attack)
