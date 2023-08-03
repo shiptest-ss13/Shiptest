@@ -64,11 +64,13 @@ GLOBAL_VAR_INIT(normal_looc_colour, "#6699CC")
 		if(!M.client)
 			continue
 		var/client/C = M.client
+
+		//Handled before admins so that they see this if they're in range anyways
+		if(C.prefs.chat_on_map)
+			M.create_chat_message(mob, null, "\[LOOC: [raw_msg]\]", null, LOOC_MESSAGE)
+
 		if(C in GLOB.admins)
 			continue //they are handled after that
-
-		if(isobserver(M))
-			continue
 
 		if(key in C.prefs.ignoring)
 			continue
