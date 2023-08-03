@@ -40,8 +40,15 @@
 	opening = TRUE
 	update_icon()
 	if(!density)
-		var/srcturf = get_turf(src)
+		var/turf/srcturf = get_turf(src)
 		for(var/mob/living/obstacle in srcturf) //Stop people from using this as a shield
+			opening = FALSE
+			return
+		for(var/obj/structure/structure in srcturf)
+			if(structure != src)
+				opening = FALSE
+				return
+		for(var/obj/machinery/machine in srcturf)
 			opening = FALSE
 			return
 	addtimer(CALLBACK(src, /obj/structure/falsewall/proc/toggle_open), 5)
