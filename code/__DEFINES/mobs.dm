@@ -400,10 +400,14 @@
 #define SLEEP_CHECK_DEATH(X) sleep(X); if(QDELETED(src) || stat == DEAD) return;
 #define INTERACTING_WITH(X, Y) (Y in X.do_afters)
 
+// recent examine defines
+/// How long it takes for an examined atom to be removed from recent_examines. Should be the max of the below time windows
+#define RECENT_EXAMINE_MAX_WINDOW 2 SECONDS
 /// If you examine the same atom twice in this timeframe, we call examine_more() instead of examine()
 #define EXAMINE_MORE_TIME 1 SECONDS
 /// How far away you can be to make eye contact with someone while examining
 #define EYE_CONTACT_RANGE 5
+
 
 #define SILENCE_RANGED_MESSAGE (1<<0)
 

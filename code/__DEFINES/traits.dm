@@ -304,6 +304,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_BALD "bald"
 #define TRAIT_BADTOUCH "bad_touch"
 #define TRAIT_ANXIOUS "anxious"
+#define TRAIT_PAIN_INSENSITIVITY "pain_insensitivity"
 
 /// Trait granted by lipstick
 #define LIPSTICK_TRAIT "lipstick_trait"

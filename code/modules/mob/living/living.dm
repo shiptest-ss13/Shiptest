@@ -1214,15 +1214,16 @@
 	return FALSE
 
 /mob/living/proc/ExtinguishMob()
-	if(on_fire)
-		on_fire = 0
-		fire_stacks = 0
-		for(var/obj/effect/dummy/lighting_obj/moblight/fire/F in src)
-			qdel(F)
-		clear_alert("fire")
-		SEND_SIGNAL(src, COMSIG_CLEAR_MOOD_EVENT, "on_fire")
-		SEND_SIGNAL(src, COMSIG_LIVING_EXTINGUISHED, src)
-		update_fire()
+	if(!on_fire)
+		return
+	on_fire = 0
+	fire_stacks = min(0, fire_stacks)
+	for(var/obj/effect/dummy/lighting_obj/moblight/fire/F in src)
+		qdel(F)
+	clear_alert("fire")
+	SEND_SIGNAL(src, COMSIG_CLEAR_MOOD_EVENT, "on_fire")
+	SEND_SIGNAL(src, COMSIG_LIVING_EXTINGUISHED, src)
+	update_fire()
 
 /mob/living/proc/adjust_fire_stacks(add_fire_stacks) //Adjusting the amount of fire_stacks we have on person
 	fire_stacks = clamp(fire_stacks + add_fire_stacks, -20, 20)

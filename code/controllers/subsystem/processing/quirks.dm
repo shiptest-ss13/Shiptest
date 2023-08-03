@@ -24,6 +24,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 							list("Ananas Affinity","Ananas Aversion"), \
 							list("Alcohol Tolerance","Light Drinker"), \
 							list("Clown Fan","Mime Fan"), \
+							list("Pain Insensitivity", "Self-Aware"),
 							list("Bad Touch", "Friendly"))
 	for(var/client/client in GLOB.clients)
 		client?.prefs.check_quirk_compatibility()

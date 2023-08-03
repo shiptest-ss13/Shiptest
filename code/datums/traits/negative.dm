@@ -650,3 +650,30 @@
 		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "bad_touch", /datum/mood_event/very_bad_touch)
 	else
 		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "bad_touch", /datum/mood_event/bad_touch)
+
+/datum/quirk/pain_insensitivity
+	name = "Pain Insensitivity"
+	desc = "You've never been able to tell how your body is feeling, no matter how hurt you've been."
+	value = -1
+	mood_quirk = TRUE
+	mob_traits = list(TRAIT_PAIN_INSENSITIVITY)
+	gain_text = "<span class='danger'>Sensations hide from your mind.</span>"
+	lose_text = "<span class='notice'>Feeling returns to your body.</span>"
+	medical_record_text = "Patient's mind is unable to register pain. Recommend keeping close eye."
+	human_only = TRUE
+
+/datum/quirk/pain_insensitivity/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.set_screwyhud(SCREWYHUD_HEALTHY)
+	..()
+
+/datum/quirk/pain_insensitivit/on_process()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.set_screwyhud(SCREWYHUD_HEALTHY) //just in case of hallucinations
+	H.adjustStaminaLoss(-2) //you can go a little longer, but it's not brain damage.
+	..()
+
+/datum/quirk/pain_insensitivit/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.set_screwyhud(SCREWYHUD_NONE)
+	..()
