@@ -142,7 +142,7 @@
 		for(var/datum/paper_field/text as anything in new_paper.raw_field_input_data)
 			text.field_data.colour = new_color
 
-
+	new_paper.input_field_count = input_field_count
 	new_paper.raw_stamp_data = copy_raw_stamps()
 	new_paper.stamp_cache = stamp_cache?.Copy()
 	new_paper.update_icon_state()
@@ -397,6 +397,7 @@
 			add_stamp(writing_stats["stamp_class"], rand(0, 400), rand(0, 500), rand(0, 360), writing_stats["stamp_icon_state"])
 			user.visible_message(span_notice("[user] blindly stamps [src] with \the [attacking_item]!"))
 			to_chat(user, span_notice("You stamp [src] with \the [attacking_item] the best you can!"))
+			playsound(src, 'sound/items/handling/standard_stamp.ogg', 50, vary = TRUE)
 		else
 			to_chat(user, span_notice("You ready your stamp over the paper! "))
 			ui_interact(user)
@@ -531,9 +532,9 @@
 
 			add_stamp(stamp_class, stamp_x, stamp_y, stamp_rotation, stamp_icon_state)
 			user.visible_message(span_notice("[user] stamps [src] with \the [holding.name]!"), span_notice("You stamp [src] with \the [holding.name]!"))
-
+			playsound(src, 'sound/items/handling/standard_stamp.ogg', 50, vary = TRUE)
 			update_appearance()
-			update_static_data(user, ui)
+			update_static_data_for_all_viewers()
 			return TRUE
 		if("add_text")
 			var/paper_input = params["text"]
@@ -579,7 +580,7 @@
 			log_paper("[key_name(user)] wrote to [name]: \"[paper_input]\"")
 			to_chat(user, "You have added to your paper masterpiece!");
 
-			update_static_data(user, ui)
+			update_static_data_for_all_viewers()
 			update_appearance()
 			return TRUE
 		if("fill_input_field")
@@ -620,7 +621,7 @@
 				if(!add_field_input(field_key, field_text, writing_implement_data["font"], writing_implement_data["color"], writing_implement_data["use_bold"], user.real_name))
 					log_paper("[key_name(user)] tried to write to field [field_key] when it already has data, with the following text: [field_text]")
 
-			update_static_data(user, ui)
+			update_static_data_for_all_viewers()
 			return TRUE
 
 /obj/item/paper/proc/get_input_field_count(raw_text)
