@@ -102,3 +102,8 @@
 	display_name = "face with tears of joy mask"
 	path = /obj/item/clothing/mask/joy
 	slot = ITEM_SLOT_MASK
+
+/datum/gear/accessory/syndiemask
+	display_name = "Syndicate gas mask"
+	path = /obj/item/clothing/mask/gas/syndicate
+	slot = ITEM_SLOT_MASK
