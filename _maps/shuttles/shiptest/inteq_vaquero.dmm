@@ -3078,7 +3078,7 @@
 "Xb" = (
 /obj/machinery/door/airlock/command/glass{
 	name = "Bridge";
-	req_access_txt = list(19, 3)
+	req_one_access = list(19, 3)
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
