@@ -8,11 +8,6 @@
 	drop_sound = 'sound/items/handling/component_drop.ogg'
 	pickup_sound =  'sound/items/handling/component_pickup.ogg'
 
-/obj/item/assembly/igniter/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] is trying to ignite [user.p_them()]self with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	user.IgniteMob()
-	return FIRELOSS
-
 /obj/item/assembly/igniter/Initialize()
 	. = ..()
 	sparks = new

@@ -253,15 +253,6 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	if(sharpness) //give sharp objects butchering functionality, for consistency
 		AddComponent(/datum/component/butchering, 80 * toolspeed)
 
-/**Makes cool stuff happen when you suicide with an item
- *
- *Outputs a creative message and then return the damagetype done
- * Arguments:
- * * user: The mob that is suiciding
- */
-/obj/item/proc/suicide_act(mob/user)
-	return
-
 /obj/item/verb/move_to_top()
 	set name = "Move To Top"
 	set category = "Object"
