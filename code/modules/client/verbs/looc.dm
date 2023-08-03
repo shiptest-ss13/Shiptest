@@ -80,9 +80,9 @@ GLOBAL_VAR_INIT(normal_looc_colour, "#6699CC")
 			continue
 
 		if(GLOB.LOOC_COLOR)
-			to_chat(C, "<font color='[GLOB.LOOC_COLOR]'><b><span class='prefix'>LOOC:</span> <EM>[src.mob.name]:</EM> <span class='message'>[msg]</span></b></font>")
+			to_chat(C, "<span class='loocplain'><font color='[GLOB.LOOC_COLOR]'><b><span class='prefix'>LOOC:</span> <EM>[src.mob.name]:</EM> <span class='message'>[msg]</span></b></font></span>", MESSAGE_TYPE_LOOC)
 		else
-			to_chat(C, "<span class='looc'><span class='prefix'>LOOC:</span> <EM>[src.mob.name]:</EM> <span class='message'>[msg]</span></span>")
+			to_chat(C, "<span class='looc'><span class='prefix'>LOOC:</span> <EM>[src.mob.name]:</EM> <span class='message'>[msg]</span></span>", MESSAGE_TYPE_LOOC)
 
 	for(var/client/C in GLOB.admins)
 		if(key in C.prefs.ignoring)
@@ -98,9 +98,9 @@ GLOBAL_VAR_INIT(normal_looc_colour, "#6699CC")
 		if (C.mob in heard)
 			prefix = "LOOC"
 		if(GLOB.LOOC_COLOR)
-			to_chat(C, "<font color='[GLOB.LOOC_COLOR]'><b>[ADMIN_FLW(usr)] <span class='prefix'>[prefix]:</span> <EM>[src.key]/[src.mob.name]:</EM> <span class='message'>[msg]</span></b></font>")
+			to_chat(C, "<span class='loocplain'><font color='[GLOB.LOOC_COLOR]'><b>[ADMIN_FLW(usr)] <span class='prefix'>[prefix]:</span> <EM>[src.key]/[src.mob.name]:</EM> <span class='message'>[msg]</span></b></font></span>", MESSAGE_TYPE_LOOC)
 		else
-			to_chat(C, "<span class='looc'>[ADMIN_FLW(usr)] <span class='prefix'>[prefix]:</span> <EM>[src.key]/[src.mob.name]:</EM> <span class='message'>[msg]</span></span>")
+			to_chat(C, "<span class='looc'>[ADMIN_FLW(usr)] <span class='prefix'>[prefix]:</span> <EM>[src.key]/[src.mob.name]:</EM> <span class='message'>[msg]</span></span>", MESSAGE_TYPE_LOOC)
 
 /proc/toggle_looc(toggle = null)
 	if(toggle == null)
