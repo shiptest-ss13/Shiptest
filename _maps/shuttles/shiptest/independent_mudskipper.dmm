@@ -347,6 +347,18 @@
 /obj/item/reagent_containers/pill/patch/styptic,
 /obj/item/reagent_containers/pill/patch/silver_sulf,
 /obj/item/circular_saw,
+/obj/item/gps/mining{
+	gpstag = "SCAV1"
+	},
+/obj/item/gps/mining{
+	gpstag = "SCAV2"
+	},
+/obj/item/gps/mining{
+	gpstag = "SCAV3"
+	},
+/obj/item/gps/mining{
+	gpstag = "SCAV4"
+	},
 /obj/item/multitool,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
@@ -1501,6 +1513,7 @@
 	},
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/cryo)
 "GW" = (
@@ -1655,7 +1668,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/cryo)
 "Lw" = (
-/obj/machinery/airalarm/directional/south,
 /obj/machinery/firealarm/directional/west{
 	pixel_y = 4
 	},
@@ -1668,6 +1680,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 1
 	},
+/obj/machinery/computer/cryopod/retro/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/cryo)
 "LV" = (
@@ -1979,7 +1992,8 @@
 /area/ship/maintenance)
 "Rv" = (
 /obj/item/gps/mining{
-	pixel_y = 6
+	pixel_y = 6;
+	gpstag = "SCAV0"
 	},
 /obj/item/clipboard{
 	pixel_x = 5;
