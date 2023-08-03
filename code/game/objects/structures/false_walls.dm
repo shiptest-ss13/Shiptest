@@ -45,7 +45,7 @@
 			opening = FALSE
 			return
 		for(var/obj/structure/structure in srcturf)
-			if(structure != src)
+			if(structure != src | structure != istype(structure, /obj/structure/cable))
 				opening = FALSE
 				return
 		for(var/obj/machinery/machine in srcturf)
