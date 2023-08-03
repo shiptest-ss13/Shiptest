@@ -1905,8 +1905,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		// Apply more damage based on how cold you are
 
 		var/bodytemp = H.bodytemperature
-		var/tempmin = bodytemp_cold_damage_limit
-
 		if(bodytemp < 120)
 			H.throw_alert("temp", /atom/movable/screen/alert/cold, 3)
 			H.apply_damage(COLD_DAMAGE_LEVEL_3 * coldmod * H.physiology.cold_mod, BURN)
