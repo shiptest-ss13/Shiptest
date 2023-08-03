@@ -2,7 +2,7 @@
 cd /D "%~dp0"
 set TG_BOOTSTRAP_CACHE=%cd%
 IF NOT %1 == "" (
-	rem TGS4: we are passed the game directory on the command line
+	rem TGS4+: we are passed the game directory on the command line
 	cd %1
 ) ELSE IF EXIST "..\Game\B\shiptest.dmb" (
 	rem TGS3: Game/B/shiptest.dmb exists, so build in Game/A
