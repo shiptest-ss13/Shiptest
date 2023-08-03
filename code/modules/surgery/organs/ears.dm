@@ -168,8 +168,6 @@
 
 /obj/item/organ/ears/elf
 	name = "elf ears"
-	icon = 'icons/obj/clothing/hats.dmi'
-	icon_state = "elf"
 	damage_multiplier = 1.5
 
 /obj/item/organ/ears/elf/Insert(mob/living/carbon/human/ear_owner, special = 0, drop_if_replaced = TRUE)
@@ -183,8 +181,7 @@
 /obj/item/organ/ears/elf/Remove(mob/living/carbon/human/ear_owner,  special = 0)
 	..()
 	if(istype(ear_owner))
-		color = ear_owner.hair_color
-		color = ear_owner.skin_tone
+		color = skintone2hex(ear_owner.skin_tone)
 		ear_owner.dna.features["ears"] = "None"
 		ear_owner.dna.species.mutant_bodyparts -= "ears"
 		ear_owner.update_body()
