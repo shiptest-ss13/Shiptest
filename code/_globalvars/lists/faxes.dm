@@ -22,3 +22,5 @@ GLOBAL_LIST_INIT(additional_faxes_list, list(
 GLOBAL_LIST_INIT(frontier_faxes_list, list(
 	list("fax_name" = "Frontiersmen Communications Outpost", "button_color" = "#70654C")
 ))
+
+GLOBAL_LIST_EMPTY(fax_machines) //list of all fax machines

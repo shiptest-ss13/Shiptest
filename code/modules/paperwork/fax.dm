@@ -71,7 +71,7 @@
 	if(!fax_id)
 		fax_id = SSnetworks.make_address()
 	if(!fax_name)
-		fax_name = "\improper [get_area_name(area, TRUE)] " + fax_id
+		fax_name = "Unregistered Fax Machine " + fax_id
 	wires = new /datum/wires/fax(src)
 
 /obj/machinery/fax/hacked
@@ -153,7 +153,7 @@
 				to_chat(user, "<span class='warning'>There is already a fax machine with this name on the network.</span>")
 				return
 		user.log_message("renamed [fax_name] (fax machine) to [new_fax_name]", LOG_GAME)
-		fax_name = "\improper [new_fax_name] " + fax_id
+		fax_name = new_fax_name
 	return
 
 /obj/machinery/fax/attackby(obj/item/item, mob/user, params)
@@ -256,8 +256,10 @@
 /obj/machinery/fax/ui_data(mob/user)
 	var/list/data = list()
 	//Record a list of all existing faxes.
-	for(var/obj/machinery/fax/fax in GLOB.machines)
+	for(var/obj/machinery/fax/fax as anything in GLOB.fax_machines)
 		if(fax.fax_id == fax_id) //skip yourself
+			continue
+		if(!fax.visible_to_network) //skip invisible fax machines
 			continue
 		var/list/fax_data = list()
 		fax_data["fax_name"] = fax.fax_name
@@ -347,8 +349,10 @@
  * * id - The network ID of the fax machine you want to send the item to.
  */
 /obj/machinery/fax/proc/send(obj/item/loaded, id)
-	for(var/obj/machinery/fax/fax in GLOB.machines)
+	for(var/obj/machinery/fax/fax as anything in GLOB.fax_machines)
 		if(fax.fax_id != id)
+			continue
+		if(!fax.visible_to_network) //skip fax machines meant to be invisible
 			continue
 		if(fax.jammed)
 			do_sparks(5, TRUE, src)
@@ -489,7 +493,7 @@
  * * new_fax_name - The text of the name to be checked for a match.
  */
 /obj/machinery/fax/proc/fax_name_exist(new_fax_name)
-	for(var/obj/machinery/fax/fax in GLOB.machines)
+	for(var/obj/machinery/fax/fax as anything in GLOB.fax_machines)
 		if (fax.fax_name == new_fax_name)
 			return TRUE
 	return FALSE
