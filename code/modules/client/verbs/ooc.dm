@@ -97,17 +97,6 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 		GLOB.ooc_allowed = !GLOB.ooc_allowed
 	to_chat(world, "<B>The OOC channel has been globally [GLOB.ooc_allowed ? "enabled" : "disabled"].</B>")
 
-//BeginWS Edit
-/proc/toggle_looc(toggle = null)
-	if(toggle != null)
-		if(toggle != GLOB.looc_allowed)
-			GLOB.looc_allowed = toggle
-		else
-			return
-	else
-		GLOB.looc_allowed = !GLOB.looc_allowed
-//EndWS Edit
-
 /proc/toggle_dooc(toggle = null)
 	if(toggle != null)
 		if(toggle != GLOB.dooc_allowed)
@@ -153,8 +142,8 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 		if(!is_content_unlocked())
 			return
 
-		prefs.ooccolor = initial(prefs.ooccolor)
-		prefs.save_preferences()
+	prefs.ooccolor = initial(prefs.ooccolor)
+	prefs.save_preferences()
 
 //Checks admin notice
 /client/verb/admin_notice()
