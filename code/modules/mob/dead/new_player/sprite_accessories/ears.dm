@@ -26,3 +26,9 @@
 	icon_state = "fox"
 	hasinner = 1
 	color_src = HAIR
+
+/datum/sprite_accessory/ears/elf
+	name = "Elf"
+	icon_state = "elf"
+	hasinner = FALSE
+	color_src = SKINCOLORS
