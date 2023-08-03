@@ -296,6 +296,17 @@ TOGGLE_CHECKBOX(/datum/verbs/menu/settings, listen_looc)()
 	return C.prefs.chat_toggles & CHAT_LOOC
 //EndWS Edit
 
+TOGGLE_CHECKBOX(/datum/verbs/menu/Settings, chat_ghostckey)()
+	set name = "Show/Hide ckey in deadchat"
+	set category = "Preferences"
+	set desc = "Toggle if players will see your ckey in deadchat"
+	usr.client.prefs.chat_toggles ^= CHAT_GHOSTCKEY
+	usr.client.prefs.save_preferences()
+	to_chat(usr, "Your ckey is [(usr.client.prefs.chat_toggles & CHAT_GHOSTCKEY) ? "now" : "no longer"] visible in deadchat.")
+	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Toggle ckey in Deadchat", "[usr.client.prefs.toggles & CHAT_GHOSTCKEY ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+/datum/verbs/menu/Settings/chat_ghostckey/Get_checked(client/C)
+	return C.prefs.chat_toggles & CHAT_GHOSTCKEY
+
 TOGGLE_CHECKBOX(/datum/verbs/menu/Settings, listen_bank_card)()
 	set name = "Show/Hide Income Updates"
 	set category = "Preferences"
