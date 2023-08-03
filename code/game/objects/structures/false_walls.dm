@@ -49,8 +49,9 @@
 				opening = FALSE
 				return
 		for(var/obj/machinery/machine in srcturf)
-			opening = FALSE
-			return
+			if(machine != istype(machine, /obj/machinery/atmospherics))
+				opening = FALSE
+				return
 	addtimer(CALLBACK(src, /obj/structure/falsewall/proc/toggle_open), 5)
 
 /obj/structure/falsewall/proc/toggle_open()
