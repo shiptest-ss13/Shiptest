@@ -94,14 +94,6 @@
 		/obj/item/clothing/under/costume/owl,
 		/obj/item/clothing/mask/gas/owl_mask)
 
-/obj/effect/spawner/bundle/costume/griffin
-	name = "griffin costume spawner"
-	items = list(
-		/obj/item/clothing/suit/toggle/owlwings/griffinwings,
-		/obj/item/clothing/shoes/griffin,
-		/obj/item/clothing/under/costume/griffin,
-		/obj/item/clothing/head/griffin)
-
 /obj/effect/spawner/bundle/costume/waiter
 	name = "waiter costume spawner"
 	items = list(
