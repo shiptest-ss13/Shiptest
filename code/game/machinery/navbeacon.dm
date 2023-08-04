@@ -68,7 +68,7 @@
 			codes[e] = "1"
 
 /obj/machinery/navbeacon/proc/glob_lists_deregister()
-	LAZYREMOVE(GLOB.navbeacons["[z]"], src)
+	LAZYREMOVE(GLOB.navbeacons["[virtual_z()]"], src)
 	GLOB.deliverybeacons -= src
 	GLOB.deliverybeacontags -= location
 	GLOB.wayfindingbeacons -= src
@@ -79,7 +79,7 @@
 	if(!codes)
 		return
 	if(codes["patrol"])
-		LAZYADD(GLOB.navbeacons["[z]"], src)
+		LAZYADD(GLOB.navbeacons["[virtual_z()]"], src)
 	if(codes["delivery"])
 		GLOB.deliverybeacons += src
 		GLOB.deliverybeacontags += location

@@ -168,6 +168,9 @@
 		nest.spawned_mobs -= src
 		nest = null
 
+	if(access_card)
+		QDEL_NULL(access_card)
+
 	return ..()
 
 /mob/living/simple_animal/attackby(obj/item/O, mob/user, params)
@@ -656,4 +659,5 @@
 /mob/living/simple_animal/on_virtual_z_change(new_virtual_z, previous_virtual_z)
 	. = ..()
 	toggle_ai(initial(AIStatus))
+	LAZYREMOVEASSOC(SSidlenpcpool.idle_mobs_by_virtual_level, previous_virtual_z, src)
 	check_should_sleep()

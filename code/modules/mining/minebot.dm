@@ -69,6 +69,7 @@
 
 
 /mob/living/simple_animal/hostile/mining_drone/Destroy()
+	QDEL_NULL(stored_gun)
 	for (var/datum/action/innate/minedrone/action in actions)
 		qdel(action)
 	return ..()

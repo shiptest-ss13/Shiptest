@@ -72,6 +72,7 @@
 	fire_delay = shot.delay
 
 /obj/item/gun/energy/Destroy()
+	QDEL_LIST(ammo_type)
 	if (cell)
 		QDEL_NULL(cell)
 	STOP_PROCESSING(SSobj, src)
