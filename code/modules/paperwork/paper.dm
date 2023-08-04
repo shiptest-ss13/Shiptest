@@ -485,8 +485,7 @@
 		// use the clipboard's pen, if applicable.
 		if(!istype(holding, /obj/item/stamp) && clipboard.haspen)
 			holding = clipboard.haspen
-	if(!isobserver(user))
-		data["held_item_details"] = holding?.get_writing_implement_details()
+	data["held_item_details"] = istype(holding) ? holding.get_writing_implement_details() : null
 
 
 	// If the paper is on an unwritable noticeboard, clear the held item details so it's read-only.

@@ -56,22 +56,11 @@
 
 /obj/machinery/fax/Initialize(mapload)
 	. = ..()
-	var/area/area
-	var/area/A = loc.loc
-	var/areastring = null
-
-	if(areastring)
-		area = get_area_instance_from_text(areastring)
-		if(!area)
-			area = A
-			stack_trace("Bad areastring path for [src], [areastring]")
-	else if(isarea(A) && areastring == null)
-		area = A
-
+	GLOB.fax_machines += src
 	if(!fax_id)
 		fax_id = SSnetworks.make_address()
-	if(!fax_name)
-		fax_name = "Unregistered Fax Machine " + fax_id
+	if(fax_name == initial(fax_name))
+		fax_name = "[get_area_name(src)] Fax Machine"
 	wires = new /datum/wires/fax(src)
 
 /obj/machinery/fax/hacked
