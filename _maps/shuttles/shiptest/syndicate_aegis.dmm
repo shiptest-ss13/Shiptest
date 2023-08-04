@@ -1719,6 +1719,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
 	},
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/mineral/plastitanium/red{
 	icon_state = "plastitanium"
 	},
@@ -3558,6 +3559,10 @@
 	name = "Cheri"
 	},
 /obj/item/toy/cattoy,
+/obj/machinery/power/apc/auto_name/directional/west,
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/bridge)
 "HV" = (
@@ -4173,7 +4178,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
-/obj/machinery/airalarm/directional/south,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/walnut,
 /area/ship/bridge)
@@ -4797,12 +4801,11 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
 "UI" = (
-/obj/machinery/power/apc/auto_name/directional/south,
-/obj/structure/cable/yellow{
-	icon_state = "0-4"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/bridge)
@@ -5954,7 +5957,7 @@ hR
 FY
 nK
 UI
-uM
+gW
 tW
 uo
 Gx
@@ -6022,7 +6025,7 @@ hR
 Lc
 aJ
 NB
-uM
+gW
 hA
 te
 GZ
