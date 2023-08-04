@@ -88,8 +88,9 @@
 				mytray.mutateweed()
 			if(1 to 32)
 				mytray.mutatepest(user)
-			else if(prob(20))
-				mytray.visible_message("<span class='warning'>Nothing happens...</span>")
+			else
+				if(prob(20))
+					mytray.visible_message("<span class='warning'>Nothing happens...</span>")
 
 /datum/reagent/medicine/adminordrazine/quantum_heal
 	name = "Quantum Medicine"
@@ -174,26 +175,34 @@
 	taste_description = "spicy jelly"
 
 /datum/reagent/medicine/pyroxadone/on_mob_life(mob/living/carbon/M)
-	if(M.bodytemperature > M.dna.species.bodytemp_heat_damage_limit)
-		var/power = 0
-		switch(M.bodytemperature)
-			if(M.dna.species.bodytemp_heat_damage_limit to 400)
-				power = 2
-			if(400 to 460)
-				power = 3
-			else
-				power = 5
-		if(M.on_fire)
-			power *= 2
+	. = ..()
 
-		M.adjustOxyLoss(-2 * power, 0)
-		M.adjustBruteLoss(-power, 0)
-		M.adjustFireLoss(-1.5 * power, 0)
-		M.adjustToxLoss(-power, 0, TRUE)
-		M.adjustCloneLoss(-power, 0)
-		REMOVE_TRAIT(M, TRAIT_DISFIGURED, TRAIT_GENERIC)
-		. = 1
-	..()
+	var/bodytemp = M.bodytemperature
+	var/heatlimit = M.dna.species.bodytemp_heat_damage_limit
+
+	if(bodytemp < heatlimit)
+		return .
+
+	var/power = 0
+
+	if(bodytemp < 400)
+		power = 2
+
+	else if(bodytemp < 460)
+		power = 3
+
+	else
+		power = 5
+
+	if(M.on_fire)
+		power *= 2
+
+	M.adjustOxyLoss(-2 * power, 0)
+	M.adjustBruteLoss(-power, 0)
+	M.adjustFireLoss(-1.5 * power, 0)
+	M.adjustToxLoss(-power, 0, TRUE)
+	M.adjustCloneLoss(-power, 0)
+	REMOVE_TRAIT(M, TRAIT_DISFIGURED, TRAIT_GENERIC)
 
 /datum/reagent/medicine/rezadone
 	name = "Rezadone"

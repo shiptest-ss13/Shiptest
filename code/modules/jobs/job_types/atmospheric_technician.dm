@@ -65,7 +65,6 @@
 
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1)
 
-
 /datum/outfit/job/atmos/frontiersmen
 	name = "Atmospheric Technician (Frontiersmen)"
 
