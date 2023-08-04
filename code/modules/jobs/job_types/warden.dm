@@ -66,7 +66,7 @@
 	accessory = /obj/item/clothing/accessory/armband
 	head = /obj/item/clothing/head/cowboy/sec/minutemen
 	suit = /obj/item/clothing/suit/armor/vest/bulletproof
-	belt = /obj/item/storage/belt/military
+	belt = /obj/item/storage/belt/military/minutemen
 	shoes = /obj/item/clothing/shoes/combat
 
 	l_pocket = /obj/item/flashlight/seclite
