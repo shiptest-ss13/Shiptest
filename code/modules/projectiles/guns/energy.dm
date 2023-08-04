@@ -80,8 +80,6 @@
 	return ..()
 
 /obj/item/gun/energy/handle_atom_del(atom/A)
-	if(QDELETED(src))
-		return ..()
 	if(A == cell)
 		cell = null
 		update_icon()
@@ -219,7 +217,7 @@
 
 /obj/item/gun/energy/update_overlays()
 	. = ..()
-	if(!automatic_charge_overlays)
+	if(!automatic_charge_overlays || QDELETED(src))
 		return
 	// Every time I see code this "flexible", a kitten fucking dies
 	var/overlay_icon_state = "[icon_state]_charge"

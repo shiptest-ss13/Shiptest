@@ -409,7 +409,6 @@ SUBSYSTEM_DEF(air)
 			if(item in net.members)
 				continue
 			if(item.parent)
-				message_admins("Doubled atmosmachine found at [ADMIN_VERBOSEJMP(item)]! Report this to mappers if it's been loaded from a map file!")
 				log_mapping("Doubled atmosmachine found at [AREACOORD(item)] with other contents: [json_encode(item.loc.contents)]")
 				stack_trace("Item added to a pipenet while still having one. (pipes leading to the same spot stacking in one turf, a.k.a. doubled pipes). This is a mapping issue that MUST be fixed. Use the atmosdebug verb to find where it is.")
 

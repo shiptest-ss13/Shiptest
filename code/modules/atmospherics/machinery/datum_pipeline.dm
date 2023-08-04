@@ -89,7 +89,6 @@
 					continue
 
 				if(item.parent)
-					message_admins("Doubled atmosmachine found at [ADMIN_VERBOSEJMP(item)]! Report this to mappers if it's been loaded from a map file!")
 					log_mapping("Doubled atmosmachine found at [AREACOORD(item)] with other contents: [json_encode(item.loc.contents)]")
 					CRASH("Item added to a pipenet while still having one. (pipes leading to the same spot stacking in one turf, a.k.a. doubled pipes). This is a mapping issue that MUST be fixed. Use the atmosdebug verb to find where it is.")
 
@@ -112,7 +111,7 @@
 	var/list/returned_airs = C.returnPipenetAirs(src)
 	if (!length(returned_airs) || (null in returned_airs))
 		stack_trace("addMachineryMember: Nonexistent (empty list) or null machinery gasmix added to pipeline datum from [C] \
-		which is of type [C.type]. Nearby: ([C.x], [C.y], [C.z])")
+		which is of type [C.type]. QDELETED: [QDELETED(C) ? "true" : "false"].")
 	other_airs |= returned_airs
 
 /datum/pipeline/proc/addMember(obj/machinery/atmospherics/A, obj/machinery/atmospherics/N)
