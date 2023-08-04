@@ -73,7 +73,7 @@
 	if(!air)
 		air = new
 	var/list/possible_expansions = list(base)
-	while(length(possible_expansions.len))
+	while(length(possible_expansions))
 		for(var/obj/machinery/atmospherics/borderline in possible_expansions)
 			var/list/result = borderline.pipeline_expansion(src)
 			if(!length(result))
