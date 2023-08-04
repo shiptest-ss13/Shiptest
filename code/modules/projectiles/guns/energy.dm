@@ -72,13 +72,16 @@
 	fire_delay = shot.delay
 
 /obj/item/gun/energy/Destroy()
-	QDEL_LIST(ammo_type)
+	if(length(ammo_type))
+		QDEL_LIST(ammo_type)
 	if (cell)
 		QDEL_NULL(cell)
 	STOP_PROCESSING(SSobj, src)
 	return ..()
 
 /obj/item/gun/energy/handle_atom_del(atom/A)
+	if(QDELETED(src))
+		return ..()
 	if(A == cell)
 		cell = null
 		update_icon()
