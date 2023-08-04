@@ -438,7 +438,7 @@
 	icon_state = "cmmwebbing"
 	item_state = "cmmwebbing"
 
-/obj/item/storage/belt/military/minutemen/PopulateContents()
+/obj/item/storage/belt/military/minutemen/loaded/PopulateContents()
 	for(var/i in 1 to 7)
 		new /obj/item/ammo_box/magazine/p16(src)
 
