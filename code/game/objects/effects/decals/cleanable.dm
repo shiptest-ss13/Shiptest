@@ -89,6 +89,8 @@
 
 /obj/effect/decal/cleanable/wash(clean_types)
 	..()
+	if(!(flags_1 & INITIALIZED_1))
+		return FALSE
 	qdel(src)
 	return TRUE
 

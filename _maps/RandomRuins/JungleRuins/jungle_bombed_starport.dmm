@@ -1,4 +1,32 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"aa" = (
+/obj/structure/spider/stickyweb,
+/obj/machinery/light/broken/directional/south,
+/mob/living/simple_animal/hostile/poison/giant_spider/nurse,
+/turf/open/floor/plasteel,
+/area/ruin/jungle/starport)
+"ab" = (
+/obj/structure/spider/cocoon,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 10
+	},
+/mob/living/simple_animal/hostile/poison/giant_spider/hunter/viper,
+/turf/open/floor/plating,
+/area/ruin/jungle/starport)
+"ac" = (
+/obj/structure{
+	desc = "A formerly deadly laser cannon, now stuck rusting on a fightercraft.";
+	dir = 8;
+	icon = 'icons/obj/turrets.dmi';
+	icon_state = "syndie_off";
+	name = "defunct laser cannon";
+	pixel_x = 26
+	},
+/mob/living/simple_animal/hostile/poison/giant_spider/hunter,
+/turf/open/floor/concrete/slab_1{
+	light_range = 2
+	},
+/area/ruin/jungle/starport)
 "ad" = (
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/tree/jungle{
@@ -1002,9 +1030,7 @@
 	},
 /area/ruin/jungle/starport)
 "hq" = (
-/obj/structure/railing{
-	dir = 2
-	},
+/obj/structure/railing,
 /obj/effect/decal/cleanable/oil,
 /turf/open/floor/concrete/slab_1{
 	light_range = 2
@@ -1474,8 +1500,7 @@
 /area/ruin/jungle/starport)
 "kE" = (
 /obj/machinery/door/airlock/glass{
-	dir = 4;
-	pixel_y = 0
+	dir = 4
 	},
 /obj/structure/barricade/wooden/crude,
 /turf/open/floor/plating/rust,
@@ -1517,6 +1542,12 @@
 	icon_state = "wasteland2"
 	},
 /area/ruin/jungle/starport)
+"kR" = (
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/jungle/starport/plasma)
 "kS" = (
 /obj/structure/rack,
 /obj/item/storage/box/lights/mixed,
@@ -2465,6 +2496,12 @@
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ruin/jungle/starport)
+"rx" = (
+/obj/structure/bed/pod,
+/obj/structure/curtain,
+/obj/machinery/light/directional/south,
+/turf/open/floor/plasteel/grimy,
+/area/ruin/jungle/starport)
 "ry" = (
 /obj/structure/railing,
 /obj/structure/railing{
@@ -2587,9 +2624,7 @@
 /turf/open/floor/wood,
 /area/ruin/jungle/starport)
 "si" = (
-/obj/structure/railing{
-	dir = 2
-	},
+/obj/structure/railing,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
@@ -2606,15 +2641,6 @@
 /obj/effect/decal/cleanable/glass,
 /obj/effect/decal/cleanable/shreds,
 /turf/open/floor/plating/dirt/jungle{
-	light_range = 2
-	},
-/area/ruin/jungle/starport)
-"su" = (
-/obj/structure/railing{
-	dir = 2
-	},
-/obj/structure/spacevine,
-/turf/open/floor/concrete/slab_1{
 	light_range = 2
 	},
 /area/ruin/jungle/starport)
@@ -3127,20 +3153,6 @@
 /obj/effect/decal/cleanable/ash/large,
 /turf/open/floor/plating/dirt/jungle/wasteland{
 	icon_state = "wasteland2"
-	},
-/area/ruin/jungle/starport)
-"vB" = (
-/mob/living/simple_animal/hostile/poison/giant_spider/hunter,
-/obj/structure{
-	desc = "A formerly deadly laser cannon, now stuck rusting on a fightercraft.";
-	dir = 8;
-	icon = 'icons/obj/turrets.dmi';
-	icon_state = "syndie_off";
-	name = "defunct laser cannon";
-	pixel_x = 26
-	},
-/turf/open/floor/concrete/slab_1{
-	light_range = 2
 	},
 /area/ruin/jungle/starport)
 "vD" = (
@@ -4117,7 +4129,6 @@
 /area/ruin/jungle/starport)
 "CW" = (
 /obj/item/radio/intercom/directional/south,
-/obj/machinery/light/broken/directional/south,
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/starport)
 "CZ" = (
@@ -5211,7 +5222,6 @@
 	pixel_y = 24
 	},
 /obj/item/stack/sheet/metal,
-/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel,
 /area/ruin/jungle/starport)
 "JT" = (
@@ -5292,6 +5302,13 @@
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
 	},
+/area/ruin/jungle/starport)
+"KH" = (
+/obj/structure/spider/stickyweb,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/rust,
 /area/ruin/jungle/starport)
 "KJ" = (
 /obj/effect/turf_decal/borderfloor{
@@ -5514,7 +5531,6 @@
 "Mh" = (
 /obj/structure/table,
 /obj/item/radio/intercom/directional/south,
-/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/jungle/starport)
 "Mi" = (
@@ -5771,14 +5787,6 @@
 /mob/living/simple_animal/hostile/poison/giant_spider/nurse/midwife,
 /turf/open/floor/plasteel,
 /area/ruin/jungle/starport)
-"Op" = (
-/mob/living/simple_animal/hostile/poison/giant_spider/hunter/viper,
-/obj/structure/spider/cocoon,
-/obj/machinery/atmospherics/pipe/simple/orange/hidden{
-	dir = 10
-	},
-/turf/open/floor/plating,
-/area/ruin/jungle/starport)
 "Ou" = (
 /obj/structure/table,
 /obj/structure/spider/stickyweb,
@@ -5790,9 +5798,7 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/jungle/starport/tower)
 "Oz" = (
-/obj/effect/turf_decal/industrial/traffic/corner{
-	dir = 2
-	},
+/obj/effect/turf_decal/industrial/traffic/corner,
 /turf/open/floor/concrete{
 	light_range = 2
 	},
@@ -5915,6 +5921,12 @@
 /obj/structure/chair,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/jungle/starport/tower)
+"PB" = (
+/obj/structure/bed/pod,
+/obj/structure/curtain,
+/obj/machinery/light/broken/directional/north,
+/turf/open/floor/plasteel/grimy,
+/area/ruin/jungle/starport)
 "PC" = (
 /obj/machinery/portable_atmospherics/canister/toxins,
 /obj/structure/window/plasma/reinforced{
@@ -6068,6 +6080,9 @@
 /area/ruin/jungle/starport)
 "Qs" = (
 /obj/machinery/light/directional/north,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 10
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/jungle/starport/plasma)
 "Qv" = (
@@ -6458,15 +6473,6 @@
 /turf/open/floor/plating/dirt/dark{
 	name = "beaten path";
 	desc = "Upon closer examination, it's dirt, compacted down by much walking";
-	light_range = 2
-	},
-/area/ruin/jungle/starport)
-"SN" = (
-/obj/structure/railing{
-	dir = 2
-	},
-/obj/structure/spacevine,
-/turf/open/floor/plating/dirt/jungle{
 	light_range = 2
 	},
 /area/ruin/jungle/starport)
@@ -7358,7 +7364,6 @@
 /obj/item/radio/intercom/directional/north{
 	pixel_y = 24
 	},
-/obj/machinery/light/broken/directional/north,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/jungle/starport)
 "Yp" = (
@@ -7565,6 +7570,11 @@
 /turf/open/floor/concrete{
 	light_range = 2
 	},
+/area/ruin/jungle/starport)
+"ZQ" = (
+/obj/structure/spider/stickyweb,
+/obj/machinery/light/directional/north,
+/turf/open/floor/plasteel,
 /area/ruin/jungle/starport)
 "ZT" = (
 /obj/structure/window/plasma/reinforced/plastitanium,
@@ -8985,7 +8995,7 @@ XM
 cC
 zi
 QE
-Op
+ab
 Dm
 IL
 rm
@@ -11067,7 +11077,7 @@ kf
 Xq
 iE
 QE
-vB
+ac
 Su
 OJ
 Tf
@@ -11397,7 +11407,7 @@ QE
 iH
 gt
 xt
-su
+Bp
 XW
 Mr
 XM
@@ -11540,7 +11550,7 @@ ma
 Hj
 XM
 TM
-SN
+mK
 Tf
 XM
 cC
@@ -11617,7 +11627,7 @@ Am
 Xu
 XM
 TM
-SN
+mK
 RM
 eP
 Eb
@@ -11983,11 +11993,11 @@ UE
 UE
 UE
 Lo
-PJ
-PJ
+kR
+kR
 hE
-PJ
-PJ
+kR
+kR
 Ft
 wi
 Tf
@@ -13673,12 +13683,12 @@ UE
 UE
 UE
 Wo
-wB
+ZQ
 Ic
 Xz
 Xz
 rJ
-mv
+aa
 Bx
 yH
 qh
@@ -13831,7 +13841,7 @@ Hs
 lo
 cO
 ra
-AQ
+KH
 cO
 qt
 kI
@@ -14135,12 +14145,12 @@ UE
 UE
 UE
 Wo
-SS
+PB
 Mr
 kl
 rv
 Se
-SS
+rx
 Wo
 yH
 wg

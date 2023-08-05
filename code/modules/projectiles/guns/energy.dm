@@ -73,7 +73,8 @@
 	if (cell)
 		QDEL_NULL(cell)
 	STOP_PROCESSING(SSobj, src)
-	return ..()
+	. = ..()
+	ammo_type.Cut()
 
 /obj/item/gun/energy/handle_atom_del(atom/A)
 	if(A == cell)
