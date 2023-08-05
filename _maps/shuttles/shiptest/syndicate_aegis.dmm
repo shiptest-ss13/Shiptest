@@ -277,18 +277,6 @@
 	dir = 4;
 	pixel_y = 0
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/button/door{
-	id = "psyc";
-	normaldoorcontrol = 1;
-	pixel_x = -28;
-	specialfunctions = 4
-	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/office)
 "bD" = (
@@ -2288,17 +2276,6 @@
 /obj/item/radio/intercom/directional/north{
 	pixel_y = 31;
 	pixel_x = 5
-	},
-/obj/machinery/light_switch{
-	pixel_x = -10;
-	pixel_y = 26
-	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 4
-	},
-/obj/item/radio/intercom/directional/north{
-	pixel_x = 5;
-	pixel_y = 31
 	},
 /turf/open/floor/carpet/red,
 /area/ship/crew/canteen)
