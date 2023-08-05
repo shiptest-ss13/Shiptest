@@ -58,21 +58,27 @@ export const ShipSelect = (props, context) => {
           <Section
             title="Active Ship Selection"
             buttons={
-              <Button
-                content="Purchase Ship"
-                tooltip={
-                  /* worth noting that disabled ship spawn doesn't cause the
+              <>
+                <Button
+                  content="Purchase Ship"
+                  tooltip={
+                    /* worth noting that disabled ship spawn doesn't cause the
                   button to be disabled, as we want to let people look around */
-                  (data.purchaseBanned &&
-                    'You are banned from purchasing ships.') ||
-                  (!data.shipSpawnAllowed &&
-                    'No more ships may be spawned at this time.')
-                }
-                disabled={data.purchaseBanned}
-                onClick={() => {
-                  setCurrentTab(3);
-                }}
-              />
+                    (data.purchaseBanned &&
+                      'You are banned from purchasing ships.') ||
+                    (!data.shipSpawnAllowed &&
+                      'No more ships may be spawned at this time.')
+                  }
+                  disabled={data.purchaseBanned}
+                  onClick={() => {
+                    setCurrentTab(3);
+                  }}
+                />
+                <Button
+                  content="?"
+                  tooltip={"Hover over a ship's name to see its faction."}
+                />
+              </>
             }
           >
             <Table>
