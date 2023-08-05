@@ -50,7 +50,7 @@
 	/// variable that determines where the photocopier borrows blanks from. default indie
 	var/form_config = "strings/blanks/indie_blanks.json"
 /obj/machinery/photocopier/nt
-	form_config = "strings//blanks/nt_blanks.json"
+	form_config = "strings/blanks/nt_blanks.json"
 /obj/machinery/photocopier/syndicate
 	form_config = "strings/blanks/syndicate_blanks.json"
 /obj/machinery/photocopier/inteq

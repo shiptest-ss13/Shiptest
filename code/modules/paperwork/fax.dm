@@ -144,7 +144,7 @@
 				return
 		user.log_message("renamed [fax_name] (fax machine) to [new_fax_name]", LOG_GAME)
 		fax_name = new_fax_name
-	return
+	return TRUE
 
 /obj/machinery/fax/attackby(obj/item/item, mob/user, params)
 	if(jammed && clear_jam(item, user))
@@ -391,7 +391,7 @@
  * * sender_name - The sender's name, which will be displayed in the message and recorded in the history of operations.
  */
 /obj/machinery/fax/proc/receive(obj/item/loaded, sender_name)
-	playsound(src, 'sound/items/poster_being_created.ogg', 50, FALSE)
+	playsound(src, 'sound/items/poster_being_created.ogg', 20, FALSE)
 	INVOKE_ASYNC(src, PROC_REF(animate_object_travel), loaded, "fax_receive", find_overlay_state(loaded, "receive"))
 	say("Received correspondence from [sender_name].")
 	history_add("Receive", sender_name)
