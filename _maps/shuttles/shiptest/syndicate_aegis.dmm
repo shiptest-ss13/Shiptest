@@ -774,8 +774,8 @@
 "fY" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/airlock/hatch{
-	name = "Bathroom";
-	dir = 4
+	dir = 4;
+	name = "Bathroom"
 	},
 /obj/effect/turf_decal/techfloor/hole/right,
 /obj/effect/turf_decal/techfloor/hole,
@@ -1673,12 +1673,19 @@
 	pixel_y = 1
 	},
 /obj/machinery/button/door{
+	id = "aegis_bridge";
+	name = "Door Bolt Control";
+	normaldoorcontrol = 1;
 	pixel_x = -6;
 	pixel_y = 6;
-	name = "bridge lock";
+	specialfunctions = 4
+	},
+/obj/machinery/button/door{
+	id = "aegis_bridge";
+	name = "Door Control";
 	normaldoorcontrol = 1;
-	specialfunctions = 4;
-	id = "aegis"
+	pixel_x = 6;
+	pixel_y = 6
 	},
 /turf/open/floor/carpet/red,
 /area/ship/bridge)
@@ -1712,6 +1719,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
 	},
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/mineral/plastitanium/red{
 	icon_state = "plastitanium"
 	},
@@ -1883,8 +1891,8 @@
 /area/ship/engineering)
 "qf" = (
 /obj/machinery/door/airlock/hatch{
-	name = "Psychology Office";
-	id_tag = "psyc"
+	id_tag = "psyc";
+	name = "Psychology Office"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -2023,8 +2031,8 @@
 /obj/item/clothing/mask/surgical,
 /obj/item/clothing/mask/breath/medical,
 /obj/item/storage/box/bodybags{
-	pixel_y = 3;
-	pixel_x = 8
+	pixel_x = 8;
+	pixel_y = 3
 	},
 /obj/item/tank/internals/anesthetic,
 /obj/effect/turf_decal/trimline/opaque/blue/filled/line,
@@ -2162,8 +2170,8 @@
 /obj/machinery/button/door{
 	id = "engine";
 	name = "Engine shutter control";
-	pixel_y = 22;
-	pixel_x = 9
+	pixel_x = 9;
+	pixel_y = 22
 	},
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -2654,8 +2662,12 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/hatch{
+	id_tag = "aegis_bridge";
 	name = "Bridge";
-	id_tag = "aegis"
+	req_access_txt = "19"
+	},
+/obj/effect/mapping_helpers/airlock/unres{
+	dir = 1
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -2936,8 +2948,8 @@
 	name = "Secure Med Storage"
 	},
 /obj/item/storage/box/syringes{
-	pixel_y = 2;
-	pixel_x = 3
+	pixel_x = 3;
+	pixel_y = 2
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
@@ -3160,10 +3172,10 @@
 /area/ship/crew/canteen)
 "Ew" = (
 /obj/docking_port/stationary{
+	dir = 8;
 	dwidth = 7;
-	width = 15;
 	height = 15;
-	dir = 8
+	width = 15
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -3429,10 +3441,10 @@
 	},
 /obj/docking_port/mobile{
 	can_move_docking_ports = 1;
-	launch_status = 0;
-	port_direction = 4;
+	dheight = 2;
 	dir = 8;
-	dheight = 2
+	launch_status = 0;
+	port_direction = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
@@ -3493,10 +3505,10 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/button/door{
-	pixel_x = -28;
-	specialfunctions = 4;
 	id = "psyc";
-	normaldoorcontrol = 1
+	normaldoorcontrol = 1;
+	pixel_x = -28;
+	specialfunctions = 4
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/office)
@@ -3541,6 +3553,10 @@
 	name = "Cheri"
 	},
 /obj/item/toy/cattoy,
+/obj/machinery/power/apc/auto_name/directional/west,
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/bridge)
 "HV" = (
@@ -4152,7 +4168,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
-/obj/machinery/airalarm/directional/south,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/walnut,
 /area/ship/bridge)
@@ -4776,12 +4791,11 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
 "UI" = (
-/obj/machinery/power/apc/auto_name/directional/south,
-/obj/structure/cable/yellow{
-	icon_state = "0-4"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/bridge)
@@ -5000,8 +5014,8 @@
 	dir = 4
 	},
 /obj/item/radio/intercom/directional/north{
-	pixel_y = 31;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = 31
 	},
 /turf/open/floor/carpet/red,
 /area/ship/crew/canteen)
@@ -5933,7 +5947,7 @@ hR
 FY
 nK
 UI
-uM
+gW
 tW
 uo
 Gx
@@ -6001,7 +6015,7 @@ hR
 Lc
 aJ
 NB
-uM
+gW
 hA
 te
 GZ
