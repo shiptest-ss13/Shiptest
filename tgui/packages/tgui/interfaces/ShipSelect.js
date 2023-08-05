@@ -83,6 +83,7 @@ export const ShipSelect = (props, context) => {
               </Table.Row>
               {Object.values(ships).map((ship) => {
                 const shipName = decodeHtmlEntities(ship.name);
+                const shipFaction = ship.faction;
                 return (
                   <Table.Row key={shipName}>
                     <Table.Cell>
@@ -119,7 +120,7 @@ export const ShipSelect = (props, context) => {
                         }}
                       />
                     </Table.Cell>
-                    <Table.Cell>{shipName}</Table.Cell>
+                    <Table.Cell title={shipFaction}>{shipName}</Table.Cell>
                     <Table.Cell>{ship.class}</Table.Cell>
                   </Table.Row>
                 );
@@ -135,6 +136,9 @@ export const ShipSelect = (props, context) => {
               <LabeledList>
                 <LabeledList.Item label="Ship Class">
                   {selectedShip.class}
+                </LabeledList.Item>
+                <LabeledList.Item label="Ship Faction">
+                  {selectedShip.faction}
                 </LabeledList.Item>
                 <LabeledList.Item label="Ship Join Status">
                   {selectedShip.joinMode}
