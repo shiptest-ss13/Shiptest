@@ -185,7 +185,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
-/obj/structure/sign/poster/random{
+/obj/structure/sign/poster/contraband/random{
 	pixel_y = -32
 	},
 /turf/open/floor/plasteel,
@@ -216,13 +216,6 @@
 /obj/item/circuitboard/machine/paystand,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/outpost/vacant_rooms)
-"ct" = (
-/obj/effect/turf_decal/corner/opaque/green{
-	dir = 9
-	},
-/obj/structure/extinguisher_cabinet/directional/north,
-/turf/open/floor/plasteel,
-/area/outpost/hallway/central)
 "cx" = (
 /obj/item/kirbyplants/random,
 /turf/open/floor/plasteel,
@@ -423,7 +416,7 @@
 /turf/open/floor/wood,
 /area/outpost/crew)
 "ed" = (
-/obj/structure/sign/poster/random{
+/obj/structure/sign/poster/contraband/random{
 	pixel_y = 32
 	},
 /obj/item/kirbyplants/random,
@@ -521,7 +514,7 @@
 	dir = 4
 	},
 /obj/machinery/vending/coffee,
-/obj/structure/sign/poster/random{
+/obj/structure/sign/poster/contraband/random{
 	pixel_x = -32
 	},
 /turf/open/floor/plasteel,
@@ -781,7 +774,7 @@
 /area/outpost/crew)
 "ho" = (
 /obj/structure/table,
-/obj/structure/extinguisher_cabinet/directional/north,
+/obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/outpost/vacant_rooms)
 "hv" = (
@@ -964,14 +957,6 @@
 /turf/open/floor/wood,
 /area/outpost/crew)
 "jh" = (
-/obj/machinery/button/door{
-	id = "ob2";
-	name = "door lock";
-	pixel_x = 10;
-	pixel_y = 23;
-	specialfunctions = 4;
-	normaldoorcontrol = 1
-	},
 /obj/machinery/door/airlock{
 	id_tag = "ob2";
 	name = "Stall 2";
@@ -1097,11 +1082,12 @@
 /turf/open/floor/plasteel,
 /area/outpost/hallway/central)
 "kC" = (
-/obj/structure/window/reinforced/fulltile,
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "outsmall2"
+	id = "outsmall2";
+	dir = 4
 	},
+/obj/structure/window/reinforced/fulltile/indestructable,
 /turf/open/floor/plating,
 /area/outpost/crew)
 "kF" = (
@@ -1160,6 +1146,14 @@
 /obj/effect/turf_decal/box/corners,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/outpost/vacant_rooms)
+"kS" = (
+/obj/structure/table/wood,
+/obj/machinery/light/floor{
+	bulb_colour = "#FFDDBB";
+	bulb_power = 0.3
+	},
+/turf/open/floor/carpet,
+/area/outpost/crew)
 "kW" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
@@ -1525,7 +1519,9 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 8
+	},
 /turf/open/floor/plasteel/grimy,
 /area/outpost/crew/dorm)
 "ob" = (
@@ -1819,6 +1815,15 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/outpost/cargo)
+"qe" = (
+/obj/structure/table/wood,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/floor{
+	bulb_colour = "#FFDDBB";
+	bulb_power = 0.3
+	},
+/turf/open/floor/carpet,
+/area/outpost/crew)
 "qi" = (
 /obj/effect/turf_decal/box/corners,
 /obj/structure/closet/crate,
@@ -2136,7 +2141,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
 	},
-/obj/structure/sign/poster/random{
+/obj/structure/sign/poster/contraband/random{
 	pixel_x = 32
 	},
 /turf/open/floor/plasteel,
@@ -2473,7 +2478,7 @@
 	},
 /obj/machinery/newscaster/directional/west,
 /obj/item/radio/intercom/directional/north{
-	pixel_y = 23
+	pixel_y = 32
 	},
 /turf/open/floor/plasteel,
 /area/outpost/crew/dorm)
@@ -2605,14 +2610,6 @@
 /turf/open/floor/plasteel,
 /area/outpost/hallway/central)
 "xA" = (
-/obj/machinery/button/door{
-	id = "ob1";
-	name = "door lock";
-	pixel_x = 10;
-	pixel_y = 23;
-	specialfunctions = 4;
-	normaldoorcontrol = 1
-	},
 /obj/machinery/door/airlock{
 	id_tag = "ob1";
 	name = "Stall 1";
@@ -2875,7 +2872,7 @@
 /obj/effect/turf_decal/corner/opaque/green{
 	dir = 5
 	},
-/obj/structure/sign/poster/random{
+/obj/structure/sign/poster/contraband/random{
 	pixel_y = 32
 	},
 /obj/machinery/vending/cigarette,
@@ -2927,7 +2924,7 @@
 /turf/open/floor/wood,
 /area/outpost/crew)
 "Aw" = (
-/obj/structure/sign/poster/random{
+/obj/structure/sign/poster/contraband/random{
 	pixel_x = -32
 	},
 /turf/open/floor/plasteel,
@@ -3314,7 +3311,7 @@
 	name = "window shutters"
 	},
 /obj/item/radio/intercom/directional/north{
-	pixel_y = 22;
+	pixel_y = 32;
 	pixel_x = -5
 	},
 /turf/open/floor/wood,
@@ -4030,11 +4027,11 @@
 /turf/open/floor/plasteel,
 /area/outpost/crew/dorm)
 "IZ" = (
-/obj/structure/window/reinforced/fulltile,
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "outsmall1"
 	},
+/obj/structure/window/reinforced/fulltile/indestructable,
 /turf/open/floor/plating,
 /area/outpost/crew)
 "Jh" = (
@@ -4072,7 +4069,7 @@
 /turf/open/floor/plasteel/tech,
 /area/outpost/cargo)
 "Jp" = (
-/obj/structure/sign/poster/random{
+/obj/structure/sign/poster/contraband/random{
 	pixel_y = -32
 	},
 /obj/item/kirbyplants/random,
@@ -4569,7 +4566,7 @@
 	dir = 8
 	},
 /obj/item/radio/intercom/directional/north{
-	pixel_y = 23
+	pixel_y = 32
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/outpost/vacant_rooms)
@@ -4813,7 +4810,7 @@
 "PI" = (
 /obj/machinery/airalarm/directional/east,
 /obj/item/radio/intercom/directional/north{
-	pixel_y = 24
+	pixel_y = 32
 	},
 /turf/open/floor/plasteel,
 /area/outpost/vacant_rooms)
@@ -4928,6 +4925,14 @@
 	},
 /obj/machinery/light/small/directional/east,
 /obj/machinery/newscaster/directional/south,
+/obj/machinery/button/door{
+	id = "ob2";
+	name = "door lock";
+	pixel_x = -22;
+	pixel_y = 23;
+	specialfunctions = 4;
+	normaldoorcontrol = 1
+	},
 /turf/open/floor/plasteel/patterned,
 /area/outpost/crew/dorm)
 "QI" = (
@@ -5302,6 +5307,22 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
 /area/outpost/hallway/central)
+"Vw" = (
+/obj/structure/toilet{
+	dir = 8
+	},
+/obj/machinery/light/small/directional/east,
+/obj/machinery/newscaster/directional/south,
+/obj/machinery/button/door{
+	id = "ob1";
+	name = "door lock";
+	pixel_x = -22;
+	pixel_y = 23;
+	specialfunctions = 4;
+	normaldoorcontrol = 1
+	},
+/turf/open/floor/plasteel/patterned,
+/area/outpost/crew/dorm)
 "Vy" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
@@ -5328,7 +5349,7 @@
 	dir = 5
 	},
 /obj/item/radio/intercom/directional/north{
-	pixel_y = 23
+	pixel_y = 32
 	},
 /turf/open/floor/carpet/royalblack,
 /area/outpost/vacant_rooms)
@@ -9534,8 +9555,8 @@ Or
 Or
 DH
 ov
-tr
-tr
+qe
+qe
 bT
 jD
 Or
@@ -10633,7 +10654,7 @@ mC
 mC
 mC
 IZ
-ml
+kS
 Qk
 Zt
 PV
@@ -13335,7 +13356,7 @@ HU
 yu
 mL
 eg
-ct
+Eg
 ms
 Jh
 QT
@@ -13941,7 +13962,7 @@ mC
 mC
 mC
 nU
-QG
+Vw
 nU
 QG
 wL
