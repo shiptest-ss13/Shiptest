@@ -241,9 +241,12 @@ GLOBAL_LIST_INIT(ship_faction_to_prefixes, list(
 	"Syndicate" = list(
 		"SEV",
 		"SSV",
+	),
+	"SolGov" = list(
 		"SGSV",
+	),
+	"Saint-Roumain Militia" = list(
 		"SRSV",
-		"STSV",
 	),
 	"Independent" = list(
 		"SV",
