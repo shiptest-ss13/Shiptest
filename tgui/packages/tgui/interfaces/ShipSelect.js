@@ -282,6 +282,9 @@ export const ShipSelect = (props, context) => {
                       ((data.playMin < template.minTime && '(Unmet)') ||
                         '(Met)')}
                   </LabeledList.Item>
+                  <LabeledList.Item label="Ship Prefix">
+                    {template.prefix}
+                  </LabeledList.Item>
                   <LabeledList.Item label="Wiki Link">
                     <a
                       href={'https://shiptest.net/wiki/' + template.name}
