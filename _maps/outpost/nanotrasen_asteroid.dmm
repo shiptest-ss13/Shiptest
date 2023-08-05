@@ -2998,10 +2998,6 @@
 /obj/item/radio/intercom/directional/south,
 /turf/open/floor/grass,
 /area/outpost/crew/lounge)
-"li" = (
-/obj/effect/turf_decal/number/seven,
-/turf/open/floor/plasteel/elevatorshaft,
-/area/outpost/vacant_rooms)
 "lq" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -3613,6 +3609,7 @@
 /turf/open/floor/wood,
 /area/outpost/vacant_rooms/office)
 "nn" = (
+/obj/structure/elevator_platform,
 /turf/open/floor/plasteel/elevatorshaft,
 /area/outpost/vacant_rooms)
 "no" = (
@@ -6342,6 +6339,7 @@
 /turf/open/floor/plasteel/dark,
 /area/outpost/security)
 "wq" = (
+/obj/structure/elevator_platform,
 /turf/open/floor/plasteel/elevatorshaft,
 /area/outpost/crew/library)
 "wt" = (
@@ -7427,6 +7425,7 @@
 /turf/open/floor/engine,
 /area/outpost/crew/cryo)
 "Ab" = (
+/obj/structure/elevator_platform,
 /turf/open/floor/plasteel/elevatorshaft,
 /area/outpost/cargo)
 "Ac" = (
@@ -9015,10 +9014,6 @@
 	},
 /turf/open/floor/carpet/green,
 /area/outpost/hallway/aft)
-"FB" = (
-/obj/effect/turf_decal/number/nine,
-/turf/open/floor/plasteel/elevatorshaft,
-/area/outpost/crew/library)
 "FC" = (
 /obj/machinery/light/directional/west,
 /turf/open/floor/plasteel,
@@ -9132,10 +9127,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/security)
-"Gg" = (
-/obj/effect/turf_decal/number/eight,
-/turf/open/floor/plasteel/elevatorshaft,
-/area/outpost/cargo)
 "Gh" = (
 /obj/machinery/door/airlock/maintenance_hatch{
 	req_access_txt = "109"
@@ -9772,8 +9763,7 @@
 	overlays_file = 'icons/obj/doors/airlocks/external/overlays.dmi';
 	assemblytype = /obj/structure/door_assembly/door_assembly_ext;
 	doorClose = 'sound/machines/airlocks/external/airlock_ext_close.ogg';
-	doorOpen = 'sound/machines/airlocks/external/airlock_ext_open.ogg';
-	name = "external airlock"
+	doorOpen = 'sound/machines/airlocks/external/airlock_ext_open.ogg'
 	},
 /turf/open/floor/plating,
 /area/outpost/maintenance/aft)
@@ -10726,8 +10716,7 @@
 	assemblytype = /obj/structure/door_assembly/door_assembly_mhatch;
 	icon = 'icons/obj/doors/airlocks/hatch/maintenance.dmi';
 	overlays_file = 'icons/obj/doors/airlocks/hatch/overlays.dmi';
-	req_access_txt = "101";
-	name = "secure maintenance hatch"
+	req_access_txt = "101"
 	},
 /turf/open/floor/plating,
 /area/outpost/engineering/atmospherics)
@@ -22410,7 +22399,7 @@ AE
 AE
 QT
 nn
-li
+nn
 nn
 QT
 Wc
@@ -24274,7 +24263,7 @@ ki
 rD
 Mt
 Ab
-Gg
+Ab
 Ab
 ZK
 Zf
@@ -24898,7 +24887,7 @@ iL
 xw
 Nr
 wq
-FB
+wq
 wq
 Nr
 Zp
