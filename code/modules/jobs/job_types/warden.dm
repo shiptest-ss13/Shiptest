@@ -66,7 +66,7 @@
 	accessory = /obj/item/clothing/accessory/armband
 	head = /obj/item/clothing/head/cowboy/sec/minutemen
 	suit = /obj/item/clothing/suit/armor/vest/bulletproof
-	belt = /obj/item/storage/belt/military
+	belt = /obj/item/storage/belt/military/minutemen
 	shoes = /obj/item/clothing/shoes/combat
 
 	l_pocket = /obj/item/flashlight/seclite
@@ -80,7 +80,7 @@
 	name = "Field Commander (Colonial Minutemen) (Armed)"
 
 	suit_store = /obj/item/gun/ballistic/automatic/assualt/p16/minutemen
-	belt = /obj/item/storage/belt/military/minutemen
+	belt = /obj/item/storage/belt/military/minutemen/loaded
 
 	backpack_contents = list(/obj/item/melee/classic_baton=1, /obj/item/gun/ballistic/automatic/pistol/commander=1, /obj/item/restraints/handcuffs=1, /obj/item/gun/energy/e_gun/advtaser=1)
 
