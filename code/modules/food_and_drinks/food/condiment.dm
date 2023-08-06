@@ -308,13 +308,22 @@
 /obj/item/reagent_containers/food/condiment/pack/cheese_spread
 	name = "cheese spread pack"
 	originalname = "cheese spread"
-	list_reagents = list(/datum/reagent/consumable/cheese_spread = 5)
+	list_reagents = list(/datum/reagent/consumable/cheese_spread = 8)
+
+/obj/item/reagent_containers/food/condiment/pack/hot_cheese_spread
+	name = "jalapeno cheddar cheese spread pack"
+	originalname = "jalapeno cheddar cheese spread"
+	list_reagents = list(/datum/reagent/consumable/cheese_spread = 5 , /datum/reagent/consumable/capsaicin = 3)
 
 /obj/item/reagent_containers/food/condiment/pack/grape_powder
 	name = "grape beverage powder, carb-fortified pack"
 	originalname = "grape beverage powder"
-	list_reagents = list(/datum/reagent/consumable/sugar = 10, /datum/reagent/consumable/grapejuice = 5)
+	list_reagents = list(/datum/reagent/consumable/sugar = 5, /datum/reagent/consumable/grapejuice = 5)
 
+/obj/item/reagent_containers/food/condiment/pack/chocolate_protein_powder
+	name = "chocolate hazelnut protein drink powder pack"
+	originalname = "chocolate hazelnut protein drink powder"
+	list_reagents = list(/datum/reagent/consumable/sugar = 5,/datum/reagent/consumable/eggyolk = 5)
 /obj/item/reagent_containers/food/condiment/ketchup
 	name = "ketchup bottle"
 	desc = "You feel more american already"

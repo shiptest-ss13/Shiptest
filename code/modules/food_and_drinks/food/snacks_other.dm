@@ -764,7 +764,7 @@
 
 /obj/item/reagent_containers/food/snacks/ration
 	name = "Rationed Air"
-	desc = "If you ever wondered where air came from..."
+	desc = "standerd issue ration"
 	list_reagents = list(/datum/reagent/oxygen = 6, /datum/reagent/nitrogen = 24)
 	icon_state = "peachcan"
 	in_container = TRUE
@@ -797,27 +797,49 @@
 	icon_state = "beans"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 10)
 	filling_color = "#B22222"
-	tastes = list("beans" = 1)
+	tastes = list("beans" = 1, "off" = 1)
 	foodtype = VEGETABLES
 
 /obj/item/reagent_containers/food/snacks/ration/vegan_crackers
 	name = "vegan crackers"
 	desc = "I cant believe its not wheat!"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
-	filling_color = "#B22222"
+	filling_color = "#9ED41B"
 	tastes = list("cracker" = 1)
 	foodtype = VEGETABLES
 
 /obj/item/reagent_containers/food/snacks/ration/cornbread
 	name = "corn bread"
+	desc = "Deliciously crumbly cornbread."
 	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
-	filling_color = "#B22222"
+	filling_color = "#DDB63B"
 	tastes = list("corn" = 1)
 	foodtype = VEGETABLES | GRAIN
 
 /obj/item/reagent_containers/food/snacks/ration/pizza_crackers
 	name = "pepperoni pizza cheese filled crackers"
+	desc = "Overflowing with cheesy goodness."
 	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
-	filling_color = "#B22222"
+	filling_color = "#b82121"
 	tastes = list("pizza" = 3, "pepperoni" = 1, "cheese" = 1)
-	foodtype = MEAT | DAIRY | GRAIN | JUNKFOOD
+	foodtype = MEAT | GRAIN | JUNKFOOD | DAIRY
+
+/obj/item/reagent_containers/food/snacks/ration/shredded_beef
+	name = "Shredded Beef in Barbecue Sauce"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 10)
+	foodtype = MEAT | SUGAR
+
+/obj/item/reagent_containers/food/snacks/ration/fruit_puree
+	name = "Apple, Strawberry, and Carrot Fruit Puree Squeeze"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/sugar = 3)
+	foodtype = VEGETABLES | FRUIT | SUGAR
+
+/obj/item/reagent_containers/food/snacks/ration/jerky_wrap
+	name = "Jerky Wraps"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	foodtype = MEAT
+
+/obj/item/reagent_containers/food/snacks/ration/cinnamon_bun
+	name = "Cinnamon Bun"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/sugar = 3)
+	foodtype = GRAIN | SUGAR

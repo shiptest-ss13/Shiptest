@@ -650,3 +650,7 @@
 	required_reagents = list(/datum/reagent/consumable/ethanol/vodka = 3, /datum/reagent/calcium = 1, /datum/reagent/consumable/lemonjuice = 1)
 	required_container = /obj/item/reagent_containers/food/drinks/drinkingglass/breakawayflask
 	mix_sound ='sound/machines/defib_zap.ogg'
+
+/datum/chemical_reaction/hot_grape_necter
+	results = list(/datum/reagent/consumable/hot_grape_necter = 6)
+	required_reagents = list(/datum/reagent/waterpowder = 6, /datum/reagent/consumable/sugar = 1, /datum/reagent/consumable/grapejuice = 1)

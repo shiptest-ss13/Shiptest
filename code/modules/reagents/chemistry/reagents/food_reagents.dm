@@ -857,3 +857,13 @@
 	nutriment_factor = 2 * REAGENTS_METABOLISM
 	taste_mult = 2
 	taste_description = "cheese"
+
+/datum/reagent/waterpowder
+	name = "Instant Water Powder"
+	description = "Activates into steaming hot water"
+
+/datum/reagent/consumable/hot_grape_necter
+	name = "Hot Grape Nector"
+	taste_mult = 2
+	nutriment_factor = 1 * REAGENTS_METABOLISM
+	taste_description = "grape"

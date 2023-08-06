@@ -1,6 +1,6 @@
 /obj/item/storage/ration
 	name = "empty ration pack"
-	desc = "No food..."
+	desc = "standerd issue ration"
 	icon = 'icons/obj/food/food.dmi'
 	icon_state = "peachcan"
 	item_state = "syringe_kit"
@@ -45,7 +45,21 @@
 		/obj/item/reagent_containers/food/snacks/ration/cornbread = 1,
 		/obj/item/reagent_containers/food/snacks/ration/pizza_crackers = 1,
 		/obj/item/reagent_containers/food/condiment/pack/grape_powder = 1,
-		/obj/item/reagent_containers/food/snacks/ration/beverage_bag = 1
+		/obj/item/reagent_containers/food/drinks/ration/beverage_bag = 1
 		)
 	generate_items_inside(items_inside,src)
 
+/obj/item/storage/ration/shredded_beef
+	name = "shredded beef in barbecue sauce ration"
+
+/obj/item/storage/ration/shredded_beef/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/reagent_containers/food/snacks/ration/shredded_beef = 1,
+		/obj/item/reagent_containers/food/condiment/pack/hot_cheese_spread = 1,
+		/obj/item/reagent_containers/food/snacks/ration/fruit_puree = 1,
+		/obj/item/reagent_containers/food/snacks/ration/jerky_wrap = 1,
+		/obj/item/reagent_containers/food/snacks/ration/cinnamon_bun = 1,
+		/obj/item/reagent_containers/food/condiment/pack/chocolate_protein_powder = 1,
+		/obj/item/reagent_containers/food/drinks/ration/beverage_bag = 1
+		)
+	generate_items_inside(items_inside,src)
