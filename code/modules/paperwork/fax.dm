@@ -368,6 +368,7 @@
 /obj/machinery/fax/proc/send_to_additional_faxes(obj/item/loaded, mob/sender, receiver_name, receiver_color)
 	GLOB.fax_manager.receive_request(sender, src, receiver_name, loaded, receiver_color)
 	playback_sending(loaded, receiver_name)
+	log_fax(loaded, "ADDITIONAL", receiver_name)
 	return TRUE
 
 /**

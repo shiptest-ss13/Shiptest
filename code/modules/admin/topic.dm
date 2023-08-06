@@ -2173,6 +2173,11 @@
 			return
 		GLOB.interviews.ui_interact(usr)
 
+	else if(href_list["open_fax_manager"])
+		if(!check_rights(R_ADMIN))
+			return
+		usr.client.fax_manager()
+
 /datum/admins/proc/HandleCMode()
 	if(!check_rights(R_ADMIN))
 		return

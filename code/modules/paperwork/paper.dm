@@ -476,6 +476,8 @@
 
 /obj/item/paper/ui_data(mob/user)
 	var/list/data = list()
+	if(!isliving(user))
+		return data
 
 	var/obj/item/holding = user.get_active_held_item()
 	// Use a clipboard's pen, if applicable
