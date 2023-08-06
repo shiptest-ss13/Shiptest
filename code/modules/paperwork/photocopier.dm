@@ -47,18 +47,6 @@
 	var/busy = FALSE
 	/// Variable needed to determine the selected category of forms on Photocopier.js
 	var/category
-	/// variable that determines where the photocopier borrows blanks from. default indie
-	var/form_config = "strings/blanks/indie_blanks.json"
-/obj/machinery/photocopier/nt
-	form_config = "strings/blanks/nt_blanks.json"
-/obj/machinery/photocopier/syndicate
-	form_config = "strings/blanks/syndicate_blanks.json"
-/obj/machinery/photocopier/inteq
-	form_config = "strings/blanks/inteq_blanks.json"
-/obj/machinery/photocopier/solgov
-	form_config = "strings/blanks/solgov_blanks.json"
-/obj/machinery/photocopier/cmm
-	form_config = "strings/blanks/cmm_blanks.json"
 
 /obj/machinery/photocopier/Initialize()
 	. = ..()
@@ -96,7 +84,7 @@
 	data["num_copies"] = num_copies
 
 	try
-		var/list/blanks = json_decode(file2text(form_config))
+		var/list/blanks = json_decode(file2text("strings/blanks/nt_blanks.json"))
 		if (blanks != null)
 			data["blanks"] = blanks
 			data["category"] = category
