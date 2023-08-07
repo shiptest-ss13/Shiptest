@@ -792,8 +792,8 @@
 	return ..()
 
 /obj/item/reagent_containers/food/snacks/ration/vegan_chili
-	name = "vegan chili"
-	desc = "I cant believe its not meat!"
+	name = "Vegan Chili with Beans"
+	desc = "A hearty and flavorful vegan chili made with beans. It's so delicious, you won't believe it's not meat!"
 	icon_state = "beans"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 10)
 	filling_color = "#B22222"
@@ -801,28 +801,28 @@
 	foodtype = VEGETABLES
 
 /obj/item/reagent_containers/food/snacks/ration/vegan_crackers
-	name = "vegan crackers"
-	desc = "I cant believe its not wheat!"
+	name = "Vegetable 'Crackers'"
+	desc = "Delicious vegetable-based crackers that are the perfect crunchy and nutritious snack."
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
 	filling_color = "#9ED41B"
 	tastes = list("cracker" = 1)
 	foodtype = VEGETABLES
 
 /obj/item/reagent_containers/food/snacks/ration/cornbread
-	name = "corn bread"
-	desc = "Deliciously crumbly cornbread."
+	name = "Cornbread"
+	desc = "Deliciously crumbly cornbread, a delightful blend of sweet and savory flavors."
 	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
 	filling_color = "#DDB63B"
 	tastes = list("corn" = 1)
 	foodtype = VEGETABLES | GRAIN
 
 /obj/item/reagent_containers/food/snacks/ration/pizza_crackers
-	name = "pepperoni pizza cheese filled crackers"
-	desc = "Overflowing with cheesy goodness."
+	name = "Pepperoni Pizza Cheese Filled Crackers"
+	desc = "Irresistible cheese-filled crackers with a savory pepperoni pizza flavor. A delicious and addictive snack."
 	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
 	filling_color = "#b82121"
 	tastes = list("pizza" = 3, "pepperoni" = 1, "cheese" = 1)
-	foodtype = MEAT | GRAIN | JUNKFOOD | DAIRY
+	foodtype = MEAT | DAIRY | GRAIN | JUNKFOOD
 
 /obj/item/reagent_containers/food/snacks/ration/shredded_beef
 	name = "Shredded Beef in Barbecue Sauce"
@@ -857,113 +857,113 @@
 	foodtype = GRAIN | SUGAR
 
 /obj/item/reagent_containers/food/snacks/ration/pork_spaghetti
-	name = "Pork Spaghetti"
-	desc = "A savory dish of pork-infused spaghetti."
-	list_reagents = list(/datum/reagent/consumable/nutriment = 10)
-	filling_color = "#800000"
-	tastes = list("pork" = 2, "spaghetti" = 3)
-	foodtype = MEAT | GRAIN
+	name = "Spaghetti with Pork and Sauce"
+	desc = "A hearty dish of spaghetti with tender pork and a savory sauce. A filling and delicious meal to satisfy your hunger."
+	list_reagents = list(/datum/reagent/consumable/nutriment = 8)
+	filling_color = "#b82121"
+	tastes = list("pork" = 1, "spaghetti" = 1, "sauce" = 1)
+	foodtype = MEAT | GRAIN | VEGETABLES
 
 /obj/item/reagent_containers/food/snacks/ration/toaster_pastry
-	name = "Toaster Pastry"
-	desc = "A sweet, frosted toaster pastry."
+	name = "Chocolate Chip Toaster Pastry"
+	desc = "A delicious chocolate chip toaster pastry, perfect for a quick breakfast or a tasty snack. Indulge in the delightful blend of chocolate and pastry."
 	list_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/sugar = 5)
-	filling_color = "#FF69B4"
-	tastes = list("sweet" = 2, "pastry" = 2)
-	foodtype = GRAIN | SUGAR
+	filling_color = "#b82121"
+	tastes = list("chocolate" = 1, "pastry" = 1, "sweet" = 1)
+	foodtype = SUGAR | GRAIN | JUNKFOOD | BREAKFAST
 
 /obj/item/reagent_containers/food/snacks/ration/bread_sticks
-	name = "Bread Sticks"
-	desc = "Crunchy breadsticks perfect for dipping."
-	list_reagents = list(/datum/reagent/consumable/nutriment = 4)
-	filling_color = "#CD853F"
-	tastes = list("bread" = 2)
+	name = "Seasoned Bread Sticks"
+	desc = "Crunchy and flavorful seasoned bread sticks, a delightful accompaniment to your meal or a satisfying snack on their own."
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	filling_color = "#b82121"
+	tastes = list("bread" = 1, "seasoned" = 1)
 	foodtype = GRAIN
 
 /obj/item/reagent_containers/food/snacks/ration/dried_raisins
 	name = "Dried Raisins"
-	desc = "A handful of chewy dried raisins."
-	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/sugar = 5)
-	filling_color = "#8B0000"
-	tastes = list("raisin" = 3, "sweet" = 1)
+	desc = "Sweet and chewy dried raisins, a natural and healthy snack option. Packed with natural sugars and nutrients for a burst of energy."
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/sugar = 3)
+	filling_color = "#b82121"
+	tastes = list("raisins" = 1, "sweet" = 1)
 	foodtype = FRUIT | SUGAR
 
 /obj/item/reagent_containers/food/snacks/ration/fried_fish
-	name = "Fried Fish"
-	desc = "Crispy fried fish fillets."
-	list_reagents = list(/datum/reagent/consumable/nutriment = 8)
-	filling_color = "#FFD700"
-	tastes = list("fish" = 2, "fried" = 2)
-	foodtype = MEAT
+	name = "Fried Fish Chunks"
+	desc = "Crispy and delicious fried fish chunks, perfect for seafood lovers. Satisfy your cravings with this delightful fried treat."
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	filling_color = "#b82121"
+	tastes = list("fish" = 1, "fried" = 1)
+	foodtype = FRIED | SEAFOOD
 
 /obj/item/reagent_containers/food/snacks/ration/energy_bar
-	name = "Energy Bar"
-	desc = "A power-packed energy bar for quick snacking."
-	list_reagents = list(/datum/reagent/consumable/nutriment = 8, /datum/reagent/consumable/sugar = 4)
-	filling_color = "#00CED1"
-	tastes = list("nutty" = 2, "sweet" = 1)
-	foodtype = GRAIN | SUGAR
+	name = "Quik-Energy Bar, Apple-Cinnamon"
+	desc = "A power-packed quik-energy bar infused with the flavors of apple and cinnamon. Ideal for a quick energy boost on the go."
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	filling_color = "#b82121"
+	tastes = list("apple" = 1, "cinnamon" = 1, "bar" = 1)
+	foodtype = FRUIT | GRAIN
 
 /obj/item/reagent_containers/food/snacks/ration/tortilla
-	name = "Tortilla"
-	desc = "A soft and versatile tortilla."
-	list_reagents = list(/datum/reagent/consumable/nutriment = 4)
-	filling_color = "#F0E68C"
-	tastes = list("tortilla" = 2)
+	name = "Tortillas"
+	desc = "Soft and pliable tortillas, a versatile staple that complements various fillings and flavors. A great choice for a quick and satisfying meal."
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	filling_color = "#b82121"
+	tastes = list("tortilla" = 1)
 	foodtype = GRAIN
 
-/obj/item/reagent_containers/food/snacks/ration/corn_kernels
-	name = "Corn Kernels"
-	desc = "Delicious and buttery corn kernels."
-	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
-	filling_color = "#FFA500"
-	tastes = list("corn" = 2, "buttery" = 1)
-	foodtype = VEGETABLES | GRAIN
+/obj/item/reagent_containers/food/snacks/ration/corn_kernals
+	name = "Toasted Corn Kernels, Barbecue"
+	desc = "Toasted corn kernels with a savory barbecue flavor. A crunchy and flavorful snack to enjoy anytime."
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/sugar = 3)
+	filling_color = "#b82121"
+	tastes = list("corn" = 1, "barbecue" = 1)
+	foodtype = SUGAR | VEGETABLES | JUNKFOOD
 
 /obj/item/reagent_containers/food/snacks/ration/beef_sticks
-	name = "Beef Sticks"
-	desc = "Savory beef sticks for a quick protein boost."
-	list_reagents = list(/datum/reagent/consumable/nutriment = 6)
-	filling_color = "#A0522D"
-	tastes = list("beef" = 3)
-	foodtype = MEAT
+	name = "Teriyaki Beef Sticks"
+	desc = "Savory teriyaki-flavored beef sticks, a protein-packed snack that satisfies your taste buds. Ideal for meat lovers."
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	filling_color = "#b82121"
+	tastes = list("beef" = 1, "teriyaki" = 1)
+	foodtype = MEAT | SUGAR
 
 /obj/item/reagent_containers/food/snacks/ration/beef_strips
-	name = "Beef Strips"
-	desc = "Thin strips of seasoned beef."
-	list_reagents = list(/datum/reagent/consumable/nutriment = 7)
-	filling_color = "#8B4513"
-	tastes = list("beef" = 3, "seasoned" = 1)
-	foodtype = MEAT
+	name = "Beef Strips in Tomato Sauce"
+	desc = "Tender beef strips cooked in a rich tomato sauce, creating a delightful and comforting combination. A hearty and delicious meal to enjoy."
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	filling_color = "#b82121"
+	tastes = list("beef" = 1, "tomato" = 1)
+	foodtype = MEAT | VEGETABLES
 
 /obj/item/reagent_containers/food/snacks/ration/chocolate_pudding
 	name = "Chocolate Pudding"
-	desc = "Creamy and indulgent chocolate pudding."
-	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/sugar = 6)
-	filling_color = "#8B008B"
-	tastes = list("chocolate" = 3, "sweet" = 2)
-	foodtype = SUGAR
+	desc = "Creamy and decadent chocolate pudding, a delightful dessert to indulge your sweet tooth."
+	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/sugar = 3)
+	filling_color = "#b82121"
+	tastes = list("chocolate" = 3, "pudding" = 1, "sweet" = 1)
+	foodtype = SUGAR | JUNKFOOD
 
 /obj/item/reagent_containers/food/snacks/ration/wheat_bread
-	name = "Wheat Bread"
-	desc = "A hearty slice of wheat bread."
-	list_reagents = list(/datum/reagent/consumable/nutriment = 6)
-	filling_color = "#DAA520"
-	tastes = list("bread" = 3, "wheat" = 2)
+	name = "White Wheat Snack Bread"
+	desc = "Soft and fluffy white wheat snack bread, a versatile snack or accompaniment to your meals. Enjoy the wholesome goodness of wheat."
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	filling_color = "#b82121"
+	tastes = list("wheat" = 1, "bread" = 1)
 	foodtype = GRAIN
 
 /obj/item/reagent_containers/food/snacks/ration/blackberry_preserves
 	name = "Blackberry Preserves"
-	desc = "Sweet blackberry preserves for spreading on toast."
-	list_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/sugar = 7)
-	filling_color = "#4B0082"
-	tastes = list("blackberry" = 3, "sweet" = 2)
-	foodtype = FRUIT | SUGAR
+	desc = "Sweet and tangy blackberry preserves, perfect for spreading on toast or pairing with your favorite snacks."
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/sugar = 3)
+	filling_color = "#b82121"
+	tastes = list("blackberry" = 1, "sweet" = 1)
+	foodtype = FRUIT
 
 /obj/item/reagent_containers/food/snacks/ration/candy_rings
-	name = "Candy Rings"
-	desc = "Colorful and fruity candy rings."
-	list_reagents = list(/datum/reagent/consumable/sugar = 10)
-	filling_color = "#FF1493"
-	tastes = list("candy" = 4, "sweet" = 3, "fruity" = 2)
-	foodtype = SUGAR
+	name = "Peppermint Candy Rings"
+	desc = "Colorful and refreshing peppermint candy rings, a sweet and delightful treat that brings a burst of coolness to your taste buds."
+	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/sugar = 3)
+	filling_color = "#b82121"
+	tastes = list("peppermint" = 3, "sweet" = 1)
+	foodtype = SUGAR | JUNKFOOD
