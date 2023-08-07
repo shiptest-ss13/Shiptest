@@ -34,7 +34,6 @@
 
 /area/ruin/wasteplanet/wasteplanet_radiation/main
 	name = "Abandoned Waste Site"
-	requires_power = TRUE
 	icon_state = "green"
 
 /area/ruin/wasteplanet/wasteplanet_radiation/maint
