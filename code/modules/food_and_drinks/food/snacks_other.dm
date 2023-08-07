@@ -894,7 +894,7 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
 	filling_color = "#b82121"
 	tastes = list("fish" = 1, "fried" = 1)
-	foodtype = FRIED | SEAFOOD
+	foodtype = FRIED
 
 /obj/item/reagent_containers/food/snacks/ration/energy_bar
 	name = "Quik-Energy Bar, Apple-Cinnamon"
@@ -912,7 +912,7 @@
 	tastes = list("tortilla" = 1)
 	foodtype = GRAIN
 
-/obj/item/reagent_containers/food/snacks/ration/corn_kernals
+/obj/item/reagent_containers/food/snacks/ration/corn_kernels
 	name = "Toasted Corn Kernels, Barbecue"
 	desc = "Toasted corn kernels with a savory barbecue flavor. A crunchy and flavorful snack to enjoy anytime."
 	list_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/sugar = 3)
