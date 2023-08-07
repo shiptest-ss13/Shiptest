@@ -82,6 +82,7 @@
 /obj/item/stack/sheet/mineral/plasma/five,
 /obj/structure/closet/crate/engineering,
 /obj/effect/turf_decal/industrial/warning/full,
+/obj/machinery/light/small/broken/directional/south,
 /turf/open/floor/pod/dark,
 /area/ship/bridge)
 "h" = (
@@ -350,8 +351,8 @@
 "S" = (
 /obj/docking_port/mobile{
 	dir = 2;
-	preferred_direction = 8;
-	port_direction = 4;
+	preferred_direction = 4;
+	port_direction = 8;
 	dwidth = 5
 	},
 /obj/effect/turf_decal/trimline/opaque/solgovgold/warning{
