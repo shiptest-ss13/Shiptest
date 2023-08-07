@@ -58,7 +58,7 @@
 	force = 15
 	throwforce = 10
 	w_class = WEIGHT_CLASS_BULKY
-	block_chance = 50
+	block_chance = 60
 	armour_penetration = 75
 	sharpness = IS_SHARP
 	attack_verb = list("slashed", "cut")
@@ -581,7 +581,6 @@
 	force = 14
 	w_class = WEIGHT_CLASS_BULKY
 	throwforce = 8
-	block_chance = 10
 	armour_penetration = 50
 	attack_verb = list("smacked", "struck", "cracked", "beaten")
 	var/overlay_state = "mace_handle"
@@ -673,7 +672,7 @@
 	throw_speed = 4
 	throw_range = 5
 	throwforce = 12
-	block_chance = 40
+	block_chance = 20
 	armour_penetration = 50
 	hitsound = 'sound/weapons/anime_slash.ogg'
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "diced", "cut")

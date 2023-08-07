@@ -39,11 +39,6 @@
 	icon_state = "redcoat"
 	desc = "<i>'I guess it's a redhead.'</i>"
 
-/obj/item/clothing/head/mailman
-	name = "mailman's hat"
-	icon_state = "mailman"
-	desc = "<i>'Right-on-time'</i> mail service head wear."
-
 /obj/item/clothing/head/plaguedoctorhat
 	name = "plague doctor's hat"
 	desc = "These were once used by plague doctors. They're pretty much useless."
@@ -185,14 +180,6 @@
 	clothing_flags = SNUG_FIT
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 
-/obj/item/clothing/head/griffin
-	name = "griffon head"
-	desc = "Why not 'eagle head'? Who knows."
-	icon_state = "griffinhat"
-	item_state = "griffinhat"
-	clothing_flags = SNUG_FIT
-	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
-
 /obj/item/clothing/head/bearpelt
 	name = "bear pelt hat"
 	desc = "Fuzzy."
@@ -224,6 +211,12 @@
 	name = "beige fedora"
 	icon_state = "fedora_beige"
 	item_state = "fedora_beige"
+
+/obj/item/clothing/head/fedora/solgov
+	name = "solarian hat"
+	icon_state = "hat_solgov"
+	item_state = "hat_solgov"
+	desc = "A slick blue hat used by both solarian civilians and physicists."
 
 /obj/item/clothing/head/sombrero
 	name = "sombrero"

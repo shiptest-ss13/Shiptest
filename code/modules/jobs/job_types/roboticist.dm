@@ -2,7 +2,7 @@
 	name = "Roboticist"
 	total_positions = 2
 	spawn_positions = 2
-	wiki_page = "Guide_to_Robotics" //WS Edit - Wikilinks/Warning
+	wiki_page = "Guide_to_Robotics"
 
 	outfit = /datum/outfit/job/roboticist
 
@@ -20,78 +20,15 @@
 	l_pocket = /obj/item/pda/roboticist
 	ears = /obj/item/radio/headset/headset_sci
 	uniform = /obj/item/clothing/under/rank/rnd/roboticist
-	alt_uniform = /obj/item/clothing/under/rank/rnd/scientist //WS Edit - Alt Uniforms
 	suit = /obj/item/clothing/suit/toggle/labcoat
 	alt_suit = /obj/item/clothing/suit/toggle/suspenders/gray
-	dcoat = /obj/item/clothing/suit/hooded/wintercoat/science //WS Edit - Alt Uniforms
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/science
 
 	backpack = /obj/item/storage/backpack/science
 	satchel = /obj/item/storage/backpack/satchel/tox
 	courierbag = /obj/item/storage/backpack/messenger/tox
 
 	pda_slot = ITEM_SLOT_LPOCKET
-
-//Alt jobs
-
-/datum/outfit/job/roboticist/biomechanicalengineer
-	name = "Roboticist (Biomechanical Engineer)"
-
-	uniform = /obj/item/clothing/under/rank/rnd/roboticist/biomech_engineer
-	alt_uniform = null
-	suit = null
-	alt_suit = null
-
-	pda_slot = ITEM_SLOT_LPOCKET
-
-/datum/outfit/job/roboticist/mechatronicengineer
-	name = "Roboticist (Mechatronic Engineer)"
-
-	uniform = /obj/item/clothing/under/rank/rnd/roboticist/mech_engineer
-	alt_uniform = null
-	suit = /obj/item/clothing/suit/toggle/labcoat
-	alt_suit = null
-	dcoat = /obj/item/clothing/suit/hooded/wintercoat/science
-
-/datum/outfit/job/roboticist/engineer
-	name = "Roboticist (Engine Technician)"
-
-	belt = /obj/item/storage/belt/utility/full/engi
-	l_pocket = /obj/item/pda/toxins
-	alt_uniform = /obj/item/clothing/under/rank/rnd/roboticist/mech_engineer
-	suit = /obj/item/clothing/suit/toggle/hazard
-	alt_suit = /obj/item/clothing/suit/toggle/labcoat/science
-	shoes = /obj/item/clothing/shoes/workboots
-	head = /obj/item/clothing/head/hardhat
-	r_pocket = /obj/item/t_scanner
-
-	box = /obj/item/storage/box/survival/engineer
-
-/datum/outfit/job/roboticist/seniorroboticist
-	name = "Roboticist (Senior Roboticist)"
-
-	uniform = /obj/item/clothing/under/suit/senior_roboticist
-	alt_uniform = null
-	shoes = /obj/item/clothing/shoes/laceup
-	suit = null
-	alt_suit = /obj/item/clothing/suit/toggle/labcoat
-	dcoat = null
-	neck = /obj/item/clothing/neck/tie/black
-
-//Shiptest Outfits
-
-/datum/outfit/job/roboticist/technician
-	name = "Mech Technician (Industrial)"
-	uniform = /obj/item/clothing/under/rank/rnd/roboticist/mech_engineer
-	alt_uniform = null
-	shoes = /obj/item/clothing/shoes/workboots
-	suit = /obj/item/clothing/suit/apron/overalls
-	alt_suit = /obj/item/clothing/suit/hazardvest
-	ears = /obj/item/radio/headset/headset_rob
-
-	backpack = /obj/item/storage/backpack/industrial
-	satchel = /obj/item/storage/backpack/satchel/eng
-	duffelbag = /obj/item/storage/backpack/duffelbag/engineering
-	courierbag = /obj/item/storage/backpack/messenger/engi
 
 /datum/outfit/job/roboticist/technician/minutemen
 	name = "Mech Technician (Minutemen)"

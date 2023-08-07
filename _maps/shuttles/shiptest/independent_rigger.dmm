@@ -134,30 +134,6 @@
 "bC" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew)
-"bF" = (
-/obj/machinery/door/window/eastright{
-	name = "Robotics";
-	req_access_txt = "47"
-	},
-/obj/effect/turf_decal/corner/opaque/purple/border{
-	dir = 4
-	},
-/obj/effect/turf_decal/techfloor{
-	dir = 8
-	},
-/obj/structure/closet/wall{
-	icon_door = "white_wall";
-	name = "science closet";
-	pixel_y = 28
-	},
-/obj/item/storage/backpack/satchel/eng,
-/obj/item/clothing/shoes/workboots,
-/obj/item/clothing/under/rank/rnd/roboticist/mech_engineer,
-/obj/item/clothing/suit/apron/overalls,
-/obj/item/clothing/gloves/color/black,
-/obj/item/clothing/head/welding,
-/turf/open/floor/plasteel/tech,
-/area/ship/hallway/central)
 "bL" = (
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
@@ -1643,6 +1619,12 @@
 /obj/machinery/atmospherics/pipe/simple/yellow/visible/layer4,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
+"uE" = (
+/obj/structure/bed,
+/obj/item/bedsheet/random,
+/obj/structure/curtain/bounty,
+/turf/open/floor/plasteel/grimy,
+/area/ship/crew)
 "uI" = (
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
@@ -2287,28 +2269,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
-"AC" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/structure/closet/emcloset/wall{
-	pixel_y = 28
-	},
-/obj/structure/catwalk/over,
-/turf/open/floor/plating,
-/area/ship/engineering)
-"AH" = (
-/obj/structure/bed,
-/obj/item/bedsheet/random,
-/obj/structure/curtain/bounty,
-/turf/open/floor/plasteel/grimy,
-/area/ship/crew)
 "AQ" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2864,15 +2824,6 @@
 /obj/machinery/atmospherics/components/unary/portables_connector/layer4,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
-"Hn" = (
-/obj/structure/bed,
-/obj/item/bedsheet/random,
-/obj/structure/curtain/bounty,
-/obj/structure/sign/poster/contraband/random{
-	pixel_x = -32
-	},
-/turf/open/floor/plasteel/grimy,
-/area/ship/crew)
 "Ht" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -3197,6 +3148,22 @@
 /obj/item/clothing/mask/cigarette/pipe/cobpipe,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
+"LX" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/closet/emcloset/wall{
+	pixel_y = 28
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
+/area/ship/engineering)
 "Md" = (
 /obj/machinery/power/terminal,
 /obj/structure/cable,
@@ -3308,6 +3275,30 @@
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
+"Oh" = (
+/obj/machinery/door/window/eastright{
+	name = "Robotics";
+	req_access_txt = "47"
+	},
+/obj/effect/turf_decal/corner/opaque/purple/border{
+	dir = 4
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
+/obj/structure/closet/wall{
+	icon_door = "white_wall";
+	name = "science closet";
+	pixel_y = 28
+	},
+/obj/item/storage/backpack/satchel/eng,
+/obj/item/clothing/shoes/workboots,
+/obj/item/clothing/under/rank/rnd/roboticist,
+/obj/item/clothing/suit/apron/overalls,
+/obj/item/clothing/gloves/color/black,
+/obj/item/clothing/head/welding,
+/turf/open/floor/plasteel/tech,
+/area/ship/hallway/central)
 "Or" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 1;
@@ -3810,6 +3801,15 @@
 "Tq" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/engineering)
+"Tv" = (
+/obj/structure/bed,
+/obj/item/bedsheet/random,
+/obj/structure/curtain/bounty,
+/obj/structure/sign/poster/contraband/random{
+	pixel_x = -32
+	},
+/turf/open/floor/plasteel/grimy,
+/area/ship/crew)
 "TF" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -4496,9 +4496,9 @@ bC
 FO
 cc
 Ce
-Hn
-AH
-AH
+Tv
+uE
+uE
 Ry
 gc
 Fu
@@ -4954,7 +4954,7 @@ fh
 lx
 tx
 Tq
-AC
+LX
 cR
 CG
 jx
@@ -5014,7 +5014,7 @@ iC
 iC
 WE
 WE
-bF
+Oh
 vN
 UW
 cv

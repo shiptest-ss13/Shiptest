@@ -290,20 +290,6 @@
 	else
 		to_chat(user, "<span class='warning'>Something prevents you from dashing forward!</span>")
 
-/obj/item/clothing/shoes/singery
-	name = "yellow performer's boots"
-	desc = "These boots were made for dancing."
-	icon_state = "ysing"
-	equip_delay_other = 50
-	greyscale_icon_state = "boots"
-
-/obj/item/clothing/shoes/singerb
-	name = "blue performer's boots"
-	desc = "These boots were made for dancing."
-	icon_state = "bsing"
-	equip_delay_other = 50
-	greyscale_icon_state = "boots"
-
 /obj/item/clothing/shoes/bronze
 	name = "bronze boots"
 	desc = "A giant, clunky pair of shoes crudely made out of bronze. Why would anyone wear these?"
