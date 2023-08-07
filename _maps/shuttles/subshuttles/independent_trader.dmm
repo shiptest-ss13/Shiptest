@@ -85,7 +85,7 @@
 	},
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/airlock/freezer{
-	name = "shuttle airlock";
+	name = "Shuttle Airlock";
 	id_tag = "pdjdr"
 	},
 /obj/effect/mapping_helpers/airlock/locked,
@@ -106,10 +106,6 @@
 /turf/closed/wall/mineral/titanium,
 /area/ship/bridge)
 "r" = (
-/obj/machinery/door/airlock/freezer{
-	name = "shuttle airlock";
-	id_tag = "pdjdr"
-	},
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -119,6 +115,10 @@
 	dir = 1
 	},
 /obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/airlock/freezer{
+	name = "Shuttle Airlock";
+	id_tag = "pdjdr"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "t" = (
