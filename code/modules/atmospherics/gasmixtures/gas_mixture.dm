@@ -300,15 +300,12 @@ we use a hook instead
 	parse_gas_string(model.initial_gas_mix)
 	return 1
 
-// Newer versions of auxmos (2.0+) have a function, __auxtools_parse_gas_string,
-// that circumvents the slowdown caused by params2list(). Once auxmos is updated,
-// this proc should be changed to a simple wrapper.
-// SSair should be updated accordingly to return a string instead of a gas mix as before.
+/datum/gas_mixture/proc/__auxtools_parse_gas_string(gas_string)
+
 /datum/gas_mixture/parse_gas_string(gas_string)
-	// params2list() is surprisingly expensive, so we have SSair cache it.
-	var/datum/gas_mixture/string_mixture = SSair.get_gas_string_mix(gas_string)
-	copy_from(string_mixture)
-	return 1
+	gas_string = SSair.preprocess_gas_string(gas_string)
+
+	return __auxtools_parse_gas_string(gas_string)
 
 /datum/gas_mixture/proc/set_analyzer_results(instability)
 	if(!analyzer_results)

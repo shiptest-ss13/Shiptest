@@ -14,7 +14,8 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 		qdel(thing, force=TRUE)
 
 	if(turf_type)
-		ChangeTurf(turf_type, baseturf_type, flags)
+		var/turf/newT = ChangeTurf(turf_type, baseturf_type, flags)
+		newT.ImmediateCalculateAdjacentTurfs()
 
 /turf/proc/copyTurf(turf/T, copy_air, flags)
 	if(T.type != type)

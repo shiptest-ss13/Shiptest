@@ -37,6 +37,7 @@
 	. = ..()
 	air_update_turf(1)
 	CalculateAffectingAreas()
+	UpdateAdjacencyFlags()
 
 /obj/machinery/door/firedoor/examine(mob/user)
 	. = ..()
@@ -55,6 +56,22 @@
 	for(var/I in affecting_areas)
 		var/area/A = I
 		LAZYADD(A.firedoors, src)
+
+/obj/machinery/door/firedoor/proc/UpdateAdjacencyFlags()
+	var/turf/our_turf = get_turf(src)
+	if(flags_1 & ON_BORDER_1)
+		for(var/turf/open/other_turf as anything in our_turf.atmos_adjacent_turfs)
+			if(get_dir(loc, other_turf) == dir)
+				if(other_turf in our_turf.atmos_adjacent_turfs)
+					our_turf.atmos_adjacent_turfs[other_turf] |= ATMOS_ADJACENT_FIRELOCK
+				if(our_turf in other_turf.atmos_adjacent_turfs)
+					other_turf.atmos_adjacent_turfs[our_turf] |= ATMOS_ADJACENT_FIRELOCK
+	else
+		for(var/turf/open/other_turf as anything in our_turf.atmos_adjacent_turfs)
+			if(other_turf in our_turf.atmos_adjacent_turfs)
+				our_turf.atmos_adjacent_turfs[other_turf] |= ATMOS_ADJACENT_FIRELOCK
+			if(our_turf in other_turf.atmos_adjacent_turfs)
+				other_turf.atmos_adjacent_turfs[our_turf] |= ATMOS_ADJACENT_FIRELOCK
 
 /obj/machinery/door/firedoor/closed
 	icon_state = "door_closed"

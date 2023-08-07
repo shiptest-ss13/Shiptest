@@ -24,7 +24,7 @@ export SPACEMAN_DMM_VERSION=suite-1.7.1
 export PYTHON_VERSION=3.7.9
 
 #auxmos repository
-export AUXMOS_REPO=https://github.com/shiptest-ss13/auxmos
+export AUXMOS_REPO=https://github.com/Putnam3145/auxmos
 
 #auxmos version
-export AUXMOS_VERSION=v1.2.6
+export AUXMOS_VERSION=v2.2.1
