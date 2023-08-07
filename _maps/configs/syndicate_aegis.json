@@ -10,9 +10,10 @@
 		"RP Focus"
 	],
 	"map_id": "syndicate_aegis",
+	"limit": 1,
 	"namelists": [
 		"SUNS",
-		"CYBERSUN",
+		"SPACE",
 		"GENERAL"
 	],
 	"job_slots": {
@@ -48,7 +49,7 @@
 		},
 
 		"Long Term Patient": {
-			"outfit": "/datum/outfit/job/prisoner/longtermpatient",
+			"outfit": "/datum/outfit/job/prisoner/syndicatepatient",
 			"slots": 2
 		}
 	},

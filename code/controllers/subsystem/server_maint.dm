@@ -39,14 +39,10 @@ SUBSYSTEM_DEF(server_maint)
 					log_world("Found a null in alive_mob_list!")
 				cleanup_ticker++
 			if (15)
-				if(listclearnulls(GLOB.suicided_mob_list))
-					log_world("Found a null in suicided_mob_list!")
-				cleanup_ticker++
-			if (20)
 				if(listclearnulls(GLOB.dead_mob_list))
 					log_world("Found a null in dead_mob_list!")
 				cleanup_ticker++
-			if (25)
+			if (20)
 				cleanup_ticker = 0
 			else
 				cleanup_ticker++

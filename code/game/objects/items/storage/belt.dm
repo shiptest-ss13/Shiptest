@@ -16,10 +16,6 @@
 	greyscale_icon_state = "belt"
 	greyscale_colors = list(list(16, 12), list(15, 11), list(13, 12))
 
-/obj/item/storage/belt/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins belting [user.p_them()]self with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return BRUTELOSS
-
 /obj/item/storage/belt/update_overlays()
 	. = ..()
 	if(content_overlays)
@@ -436,7 +432,13 @@
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_w_class = WEIGHT_CLASS_SMALL
 
-/obj/item/storage/belt/military/minutemen/PopulateContents()
+/obj/item/storage/belt/military/minutemen
+	name = "minutemen tactical webbing"
+	desc = "A set of tactical webbing worn by the Colonial Minutemen of the frontier."
+	icon_state = "cmmwebbing"
+	item_state = "cmmwebbing"
+
+/obj/item/storage/belt/military/minutemen/loaded/PopulateContents()
 	for(var/i in 1 to 7)
 		new /obj/item/ammo_box/magazine/p16(src)
 

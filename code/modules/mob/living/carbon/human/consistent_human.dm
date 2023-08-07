@@ -6,7 +6,7 @@
 	gender = list(MALE, FEMALE)[seed % 2 + 1]
 	skin_tone = GLOB.skin_tones[seed % length(GLOB.skin_tones) + 1]
 	hairstyle = GLOB.hairstyles_list[seed % length(GLOB.hairstyles_list) + 1]
-	hair_color = short_color_natural_from_seed(seed)
+	hair_color = color_natural_from_seed(seed)
 	eye_color = short_color_from_seed(seed)
 
 	// Mutant randomizing, doesn't affect the mob appearance unless it's the specific mutant.
@@ -15,7 +15,7 @@
 	//AAAAAAAAAAAAAAAAAAAAAAAAAA
 	dna.features["ethcolor"] = GLOB.color_list_ethereal[GLOB.color_list_ethereal[seed % length(GLOB.color_list_ethereal) + 1]]
 	dna.features["tail_lizard"] = GLOB.tails_list_lizard[seed % length(GLOB.tails_list_lizard) + 1]
-	dna.features["snout"] = GLOB.snouts_list[seed % length(GLOB.snouts_list) + 1]
+	dna.features["face_markings"] = GLOB.face_markings_list[seed % length(GLOB.face_markings_list) + 1]
 	dna.features["horns"] = GLOB.horns_list[seed % length(GLOB.horns_list) + 1]
 	dna.features["frills"] = GLOB.frills_list[seed % length(GLOB.frills_list) + 1]
 	dna.features["spines"] = GLOB.spines_list[seed % length(GLOB.spines_list) + 1]

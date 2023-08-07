@@ -527,9 +527,11 @@
 //Called after a successful Move(). By this point, we've already moved
 /atom/movable/proc/Moved(atom/OldLoc, Dir, Forced = FALSE, list/old_locs)
 	SHOULD_CALL_PARENT(TRUE)
+
 	if (!inertia_moving)
 		inertia_next_move = world.time + inertia_move_delay
 		newtonian_move(Dir)
+
 	if (length(client_mobs_in_contents))
 		update_parallax_contents()
 
@@ -540,10 +542,38 @@
 		stack_trace("move_stacks is negative in Moved()!")
 		move_stacks = 0 //setting it to 0 so that we dont get every movable with negative move_stacks runtiming on every movement
 
+	var/previous_virtual_z = OldLoc?.virtual_z() || 0
+	var/current_virtual_z = virtual_z()
+	if(current_virtual_z && current_virtual_z != previous_virtual_z)
+		on_virtual_z_change(current_virtual_z, previous_virtual_z)
+
 	SEND_SIGNAL(src, COMSIG_MOVABLE_MOVED, OldLoc, Dir, Forced, old_locs)
 
 	return TRUE
 
+/atom/movable/proc/on_virtual_z_change(new_virtual_z, previous_virtual_z)
+	SHOULD_NOT_SLEEP(TRUE)
+	SHOULD_CALL_PARENT(TRUE)
+	SEND_SIGNAL(src, COMSIG_ATOM_VIRTUAL_Z_CHANGE, new_virtual_z, previous_virtual_z)
+
+/mob/living/on_virtual_z_change(new_virtual_z, previous_virtual_z)
+	. = ..()
+	if(!client)
+		return
+	if(previous_virtual_z)
+		LAZYREMOVEASSOC(SSmobs.players_by_virtual_z, "[previous_virtual_z]", src)
+	if(new_virtual_z)
+		LAZYADDASSOC(SSmobs.players_by_virtual_z, "[new_virtual_z]", src)
+		SSidlenpcpool.try_wakeup_virtual_z(new_virtual_z)
+
+/mob/dead/on_virtual_z_change(new_virtual_z, previous_virtual_z)
+	. = ..()
+	if(!client)
+		return
+	if(previous_virtual_z)
+		LAZYREMOVEASSOC(SSmobs.dead_players_by_virtual_z, "[previous_virtual_z]", src)
+	if(new_virtual_z)
+		LAZYADDASSOC(SSmobs.dead_players_by_virtual_z, "[new_virtual_z]", src)
 
 // Make sure you know what you're doing if you call this, this is intended to only be called by byond directly.
 // You probably want CanPass()
@@ -649,7 +679,7 @@
 			var/old_z = (oldturf ? oldturf.z : null)
 			var/dest_z = (destturf ? destturf.z : null)
 			if (old_z != dest_z)
-				onTransitZ(old_z, dest_z)
+				on_z_change(old_z, dest_z)
 			destination.Entered(src, oldloc)
 			if(destarea && old_area != destarea)
 				destarea.Entered(src, old_area)
@@ -668,11 +698,10 @@
 
 	Moved(oldloc, NONE, TRUE)
 
-/atom/movable/proc/onTransitZ(old_z,new_z)
+/atom/movable/proc/on_z_change(old_z, new_z)
 	SEND_SIGNAL(src, COMSIG_MOVABLE_Z_CHANGED, old_z, new_z)
-	for (var/atom/movable/AM as anything in src) // Notify contents of Z-transition. This can be overridden IF we know the items contents do not care.
-		AM.onTransitZ(old_z,new_z)
-
+	for (var/atom/movable/AM as anything in src)
+		AM.on_z_change(old_z, new_z)
 
 ///Proc to modify the movement_type and hook behavior associated with it changing.
 /atom/movable/proc/setMovetype(newval)
@@ -680,7 +709,6 @@
 		return
 	. = movement_type
 	movement_type = newval
-
 
 /**
  * Called whenever an object moves and by mobs when they attempt to move themselves through space

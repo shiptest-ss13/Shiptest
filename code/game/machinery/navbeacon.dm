@@ -44,11 +44,9 @@
 	glob_lists_deregister()
 	return ..()
 
-/obj/machinery/navbeacon/onTransitZ(old_z, new_z)
-	if (GLOB.navbeacons["[old_z]"])
-		GLOB.navbeacons["[old_z]"] -= src
-	if (GLOB.navbeacons["[new_z]"])
-		GLOB.navbeacons["[new_z]"] += src
+/obj/machinery/navbeacon/on_virtual_z_change(new_virtual_z, previous_virtual_z)
+	LAZYADDASSOC(GLOB.navbeacons, "[new_virtual_z]", src)
+	LAZYREMOVEASSOC(GLOB.navbeacons, "[previous_virtual_z]", src)
 	..()
 
 // set the transponder codes assoc list from codes_txt
