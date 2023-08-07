@@ -9,6 +9,12 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
+/obj/machinery/button/shieldwallgen{
+	dir = 8;
+	pixel_x = 20;
+	pixel_y = 0;
+	id = "pdjs"
+	},
 /turf/open/floor/pod/light,
 /area/ship/bridge)
 "c" = (
@@ -23,6 +29,13 @@
 	},
 /obj/effect/turf_decal/trimline/opaque/solgovgold/warning,
 /obj/effect/turf_decal/road/line/opaque/black,
+/obj/machinery/power/shieldwallgen/atmos{
+	dir = 4;
+	id = "pdjs"
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "d" = (
@@ -52,6 +65,9 @@
 /obj/effect/turf_decal/steeldecal/steel_decals3{
 	dir = 6
 	},
+/obj/structure/cable{
+	icon_state = "5-10"
+	},
 /turf/open/floor/pod,
 /area/ship/bridge)
 "f" = (
@@ -78,6 +94,15 @@
 /obj/structure/rack,
 /obj/item/storage/toolbox/mechanical/old,
 /turf/open/floor/pod,
+/area/ship/bridge)
+"i" = (
+/obj/machinery/button/shieldwallgen{
+	dir = 1;
+	pixel_x = 12;
+	pixel_y = 12;
+	id = "pdjs"
+	},
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/bridge)
 "j" = (
 /obj/structure/cable{
@@ -117,7 +142,7 @@
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/airlock/freezer{
 	name = "Shuttle Airlock";
-	id_tag = "pdjdr"
+	id_tag = "balls"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -158,12 +183,22 @@
 /obj/effect/turf_decal/steeldecal/steel_decals7{
 	dir = 9
 	},
+/obj/structure/cable{
+	icon_state = "4-5"
+	},
 /turf/open/floor/pod/dark,
 /area/ship/bridge)
 "v" = (
 /obj/machinery/power/smes,
 /obj/structure/cable,
 /obj/machinery/light/small/broken/directional/south,
+/obj/machinery/button/door{
+	dir = 4;
+	pixel_y = 10;
+	pixel_x = -22;
+	id = "pjbe";
+	name = "shutter control"
+	},
 /turf/open/floor/pod,
 /area/ship/bridge)
 "w" = (
@@ -187,7 +222,7 @@
 	pixel_y = 9;
 	pixel_x = -23;
 	specialfunctions = 3;
-	id = "pdjdr";
+	id = "balls";
 	name = "door lock";
 	dir = 4;
 	normaldoorcontrol = 1
@@ -231,6 +266,9 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
+/obj/structure/cable{
+	icon_state = "1-10"
+	},
 /turf/open/floor/pod/light,
 /area/ship/bridge)
 "N" = (
@@ -260,6 +298,13 @@
 	},
 /obj/effect/turf_decal/trimline/opaque/solgovgold/warning,
 /obj/effect/turf_decal/road/line/opaque/black,
+/obj/machinery/power/shieldwallgen/atmos{
+	dir = 8;
+	id = "pdjs"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "Q" = (
@@ -317,6 +362,12 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "pjt"
 	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "T" = (
@@ -330,6 +381,9 @@
 /obj/effect/turf_decal/steeldecal/steel_decals3,
 /obj/effect/turf_decal/steeldecal/steel_decals3{
 	dir = 6
+	},
+/obj/structure/cable{
+	icon_state = "8-9"
 	},
 /turf/open/floor/pod,
 /area/ship/bridge)
@@ -423,7 +477,7 @@ G
 G
 "}
 (3,1,1) = {"
-a
+i
 a
 V
 u
