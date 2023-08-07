@@ -42,6 +42,5 @@
 	icon_state = "engine"
 
 /area/ruin/wasteplanet/wasteplanet_radiation/containment
-	requires_power = TRUE
 	name = "Abandoned Waste Containment Vault"
 	icon_state = "disposal"
