@@ -37,7 +37,6 @@
 	icon_state = "green"
 
 /area/ruin/wasteplanet/wasteplanet_radiation/maint
-	requires_power = TRUE
 	name = "Abandoned Maintenance Area"
 	icon_state = "engine"
 
