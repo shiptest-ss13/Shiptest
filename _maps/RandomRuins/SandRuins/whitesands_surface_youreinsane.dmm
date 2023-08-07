@@ -1,323 +1,83 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"aa" = (
+"a" = (
 /turf/template_noop,
 /area/template_noop)
-"ab" = (
+"b" = (
 /turf/open/floor/plating{
 	icon_state = "panelscorched";
 	initial_gas_mix = "ws_atmos"
 	},
-/area/whitesands/surface/outdoors)
-"ac" = (
+/area/ruin/unpowered)
+"c" = (
 /obj/effect/spawner/structure/window/plasma/reinforced,
 /turf/open/floor/plating{
 	initial_gas_mix = "ws_atmos"
 	},
-/area/whitesands/surface/outdoors)
-"ad" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating{
-	icon_state = "panelscorched";
-	initial_gas_mix = "ws_atmos"
-	},
 /area/ruin/unpowered)
-"ae" = (
-/turf/open/floor/plating{
-	icon_state = "panelscorched";
-	initial_gas_mix = "ws_atmos"
-	},
-/area/ruin/unpowered)
-"af" = (
+"f" = (
 /turf/open/floor/plating/asteroid/whitesands,
-/area/whitesands/surface/outdoors)
-"ag" = (
+/area/ruin/unpowered)
+"g" = (
 /obj/effect/turf_decal/industrial/outline/yellow{
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
-/area/whitesands/surface/outdoors)
-"ah" = (
-/obj/machinery/door/airlock/engineering/glass/critical{
-	heat_proof = 1;
-	name = "Supermatter Chamber";
-	req_access_txt = "10";
-	dir = 4
-	},
-/turf/open/floor/plating{
-	icon_state = "platingdmg2";
-	initial_gas_mix = "ws_atmos"
-	},
 /area/ruin/unpowered)
-"ai" = (
+"i" = (
 /obj/effect/decal/cleanable/greenglow,
 /obj/item/disk/plantgene,
 /turf/open/floor/plating{
 	icon_state = "platingdmg2";
 	initial_gas_mix = "ws_atmos"
 	},
-/area/whitesands/surface/outdoors)
-"aj" = (
+/area/ruin/unpowered)
+"j" = (
 /obj/machinery/atmospherics/pipe/simple/general/visible{
 	dir = 10
 	},
 /turf/closed/wall/r_wall,
-/area/whitesands/surface/outdoors)
-"ak" = (
+/area/ruin/unpowered)
+"k" = (
 /obj/structure/window/plasma/reinforced,
 /obj/machinery/power/rad_collector/anchored,
 /obj/machinery/atmospherics/pipe/simple/general/visible{
 	dir = 10
 	},
 /turf/open/floor/plating/asteroid/whitesands,
-/area/whitesands/surface/outdoors)
-"al" = (
-/obj/structure/girder,
-/turf/open/floor/plating{
-	initial_gas_mix = "ws_atmos"
-	},
 /area/ruin/unpowered)
-"am" = (
-/obj/machinery/door/airlock/engineering/glass/critical{
-	heat_proof = 1;
-	name = "Supermatter Chamber";
-	req_access_txt = "10";
-	dir = 4
-	},
-/turf/open/floor/engine,
-/area/ruin/unpowered)
-"an" = (
+"n" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating{
 	icon_state = "panelscorched";
 	initial_gas_mix = "ws_atmos"
 	},
-/area/whitesands/surface/outdoors)
-"ao" = (
-/obj/machinery/atmospherics/pipe/simple/general/visible{
-	dir = 10
-	},
-/turf/closed/wall/r_wall,
 /area/ruin/unpowered)
-"ap" = (
-/obj/effect/turf_decal/industrial/outline/yellow{
-	dir = 1
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/unpowered)
-"aq" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/engine,
-/area/ruin/unpowered)
-"ar" = (
+"r" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/engine,
-/area/whitesands/surface/outdoors)
-"as" = (
+/area/ruin/unpowered)
+"s" = (
 /obj/effect/turf_decal/industrial/outline/yellow{
 	dir = 1
 	},
 /obj/machinery/portable_atmospherics/canister/nitrogen,
 /turf/open/floor/plasteel/dark,
-/area/whitesands/surface/outdoors)
-"at" = (
+/area/ruin/unpowered)
+"t" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on,
 /turf/open/floor/engine,
-/area/whitesands/surface/outdoors)
-"au" = (
+/area/ruin/unpowered)
+"u" = (
 /obj/machinery/atmospherics/pipe/simple/general/visible{
 	dir = 9
 	},
 /turf/closed/wall/r_wall,
-/area/whitesands/surface/outdoors)
-"av" = (
-/obj/structure/window/plasma/reinforced{
-	dir = 1
-	},
-/obj/machinery/power/rad_collector/anchored,
-/obj/machinery/atmospherics/pipe/manifold/general/visible,
-/turf/open/floor/plating{
-	icon_state = "platingdmg1";
-	initial_gas_mix = "ws_atmos"
-	},
 /area/ruin/unpowered)
-"aw" = (
-/turf/closed/wall/r_wall,
-/area/whitesands/surface/outdoors)
-"ax" = (
-/obj/effect/mob_spawn/human/engineer{
-	gender = "female";
-	mob_species = null
-	},
-/obj/item/clothing/suit/radiation,
-/obj/item/clothing/head/radiation{
-	pixel_x = -1;
-	pixel_y = 9
-	},
-/obj/item/geiger_counter,
-/turf/open/floor/engine,
-/area/whitesands/surface/outdoors)
-"ay" = (
-/turf/open/floor/plating/asteroid/whitesands,
-/area/ruin/unpowered)
-"az" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating{
-	initial_gas_mix = "ws_atmos"
-	},
-/area/whitesands/surface/outdoors)
-"aA" = (
-/obj/effect/turf_decal/industrial/hatch/yellow,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark,
-/area/ruin/unpowered)
-"aB" = (
-/obj/effect/turf_decal/industrial/hatch/yellow,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark,
-/area/whitesands/surface/outdoors)
-"aC" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/engine,
-/area/whitesands/surface/outdoors)
-"aD" = (
-/obj/machinery/atmospherics/components/binary/pump{
-	dir = 8
-	},
-/turf/open/floor/plating{
-	icon_state = "platingdmg2";
-	initial_gas_mix = "ws_atmos"
-	},
-/area/ruin/unpowered)
-"aE" = (
-/obj/effect/decal/cleanable/greenglow,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating{
-	initial_gas_mix = "ws_atmos"
-	},
-/area/whitesands/surface/outdoors)
-"aF" = (
-/obj/structure/window/plasma/reinforced{
-	dir = 1
-	},
-/obj/structure/frame/machine,
-/obj/machinery/atmospherics/pipe/simple/general/visible{
-	dir = 9
-	},
-/turf/open/floor/plating{
-	icon_state = "platingdmg2";
-	initial_gas_mix = "ws_atmos"
-	},
-/area/ruin/unpowered)
-"aG" = (
-/obj/machinery/atmospherics/components/binary/pump{
-	dir = 8
-	},
-/turf/open/floor/plating{
-	icon_state = "platingdmg2";
-	initial_gas_mix = "ws_atmos"
-	},
-/area/whitesands/surface/outdoors)
-"aH" = (
-/obj/structure/girder/displaced,
-/turf/open/floor/plating{
-	initial_gas_mix = "ws_atmos"
-	},
-/area/whitesands/surface/outdoors)
-"aI" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/engine,
-/area/whitesands/surface/outdoors)
-"aJ" = (
-/obj/structure/window/plasma/reinforced{
-	dir = 1
-	},
-/obj/structure/frame/machine,
-/obj/machinery/atmospherics/pipe/simple/general/visible{
-	dir = 9
-	},
-/obj/machinery/atmospherics/pipe/simple/general/visible{
-	dir = 9
-	},
-/turf/open/floor/plating{
-	icon_state = "platingdmg2";
-	initial_gas_mix = "ws_atmos"
-	},
-/area/whitesands/surface/outdoors)
-"aK" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/engine,
-/area/ruin/unpowered)
-"aL" = (
-/obj/structure/window/plasma/reinforced{
-	dir = 1
-	},
-/obj/machinery/power/rad_collector/anchored,
-/obj/machinery/atmospherics/pipe/manifold/general/visible,
-/turf/open/floor/plating{
-	icon_state = "platingdmg1";
-	initial_gas_mix = "ws_atmos"
-	},
-/area/whitesands/surface/outdoors)
-"aM" = (
-/obj/structure/girder/displaced,
-/turf/open/floor/plating{
-	initial_gas_mix = "ws_atmos"
-	},
-/area/ruin/unpowered)
-"aN" = (
+"w" = (
 /turf/closed/wall/r_wall,
 /area/ruin/unpowered)
-"aO" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on,
-/turf/open/floor/engine,
-/area/ruin/unpowered)
-"aP" = (
-/obj/structure/window/plasma/reinforced{
-	dir = 1
-	},
-/obj/structure/frame/machine,
-/obj/machinery/atmospherics/pipe/manifold/general/visible,
-/turf/open/floor/engine,
-/area/ruin/unpowered)
-"aQ" = (
-/obj/machinery/atmospherics/pipe/simple/general/visible{
-	dir = 6
-	},
-/obj/structure/girder,
-/turf/open/floor/plating{
-	initial_gas_mix = "ws_atmos"
-	},
-/area/whitesands/surface/outdoors)
-"aR" = (
-/obj/structure/window/plasma/reinforced,
-/obj/machinery/power/rad_collector/anchored,
-/obj/machinery/atmospherics/pipe/manifold/general/visible{
-	dir = 1
-	},
-/turf/open/floor/plating{
-	icon_state = "platingdmg2";
-	initial_gas_mix = "ws_atmos"
-	},
-/area/whitesands/surface/outdoors)
-"aS" = (
-/turf/open/floor/plating{
-	initial_gas_mix = "ws_atmos"
-	},
-/area/whitesands/surface/outdoors)
-"aT" = (
-/obj/structure/window/plasma/reinforced{
-	dir = 1
-	},
-/obj/structure/frame/machine,
-/obj/machinery/atmospherics/pipe/manifold/general/visible,
-/turf/open/floor/engine,
-/area/whitesands/surface/outdoors)
-"aU" = (
+"x" = (
 /obj/effect/mob_spawn/human/engineer{
 	gender = "female";
 	mob_species = null
@@ -330,62 +90,78 @@
 /obj/item/geiger_counter,
 /turf/open/floor/engine,
 /area/ruin/unpowered)
-"aV" = (
+"z" = (
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating{
-	icon_state = "platingdmg1";
 	initial_gas_mix = "ws_atmos"
 	},
-/area/whitesands/surface/outdoors)
-"aW" = (
-/obj/machinery/door/airlock/engineering/glass/critical{
-	heat_proof = 1;
-	name = "Supermatter Chamber";
-	req_access_txt = "10";
-	dir = 4
+/area/ruin/unpowered)
+"B" = (
+/obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ruin/unpowered)
+"C" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/engine,
+/area/ruin/unpowered)
+"E" = (
+/obj/effect/decal/cleanable/greenglow,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating{
+	initial_gas_mix = "ws_atmos"
+	},
+/area/ruin/unpowered)
+"G" = (
+/obj/machinery/atmospherics/components/binary/pump{
+	dir = 8
 	},
 /turf/open/floor/plating{
 	icon_state = "platingdmg2";
 	initial_gas_mix = "ws_atmos"
 	},
-/area/whitesands/surface/outdoors)
-"aX" = (
-/obj/structure/girder,
+/area/ruin/unpowered)
+"H" = (
+/obj/structure/girder/displaced,
 /turf/open/floor/plating{
 	initial_gas_mix = "ws_atmos"
 	},
-/area/whitesands/surface/outdoors)
-"aY" = (
-/obj/machinery/door/airlock/engineering/glass/critical{
-	heat_proof = 1;
-	name = "Supermatter Chamber";
-	req_access_txt = "10";
-	dir = 4
+/area/ruin/unpowered)
+"I" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on{
+	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/engine,
-/area/whitesands/surface/outdoors)
-"aZ" = (
-/obj/structure/window/plasma/reinforced,
-/obj/structure/frame/machine,
-/obj/machinery/atmospherics/pipe/manifold/general/visible{
+/area/ruin/unpowered)
+"J" = (
+/obj/structure/window/plasma/reinforced{
 	dir = 1
+	},
+/obj/structure/frame/machine,
+/obj/machinery/atmospherics/pipe/simple/general/visible{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/general/visible{
+	dir = 9
 	},
 /turf/open/floor/plating{
-	icon_state = "platingdmg1";
+	icon_state = "platingdmg2";
 	initial_gas_mix = "ws_atmos"
 	},
-/area/whitesands/surface/outdoors)
-"en" = (
-/obj/structure/window/plasma/reinforced,
-/obj/structure/frame/machine,
-/obj/machinery/atmospherics/pipe/manifold/general/visible{
+/area/ruin/unpowered)
+"L" = (
+/obj/structure/window/plasma/reinforced{
 	dir = 1
 	},
+/obj/machinery/power/rad_collector/anchored,
+/obj/machinery/atmospherics/pipe/manifold/general/visible,
 /turf/open/floor/plating{
 	icon_state = "platingdmg1";
 	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
-"iq" = (
+"Q" = (
 /obj/machinery/atmospherics/pipe/simple/general/visible{
 	dir = 6
 	},
@@ -394,67 +170,7 @@
 	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
-"iX" = (
-/turf/open/floor/plating{
-	initial_gas_mix = "ws_atmos"
-	},
-/area/ruin/unpowered)
-"tt" = (
-/obj/structure/window/plasma/reinforced,
-/obj/machinery/power/rad_collector/anchored,
-/obj/machinery/atmospherics/pipe/simple/general/visible{
-	dir = 10
-	},
-/turf/open/floor/plating/asteroid/whitesands,
-/area/ruin/unpowered)
-"uB" = (
-/obj/effect/spawner/structure/window/plasma/reinforced,
-/turf/open/floor/plating{
-	initial_gas_mix = "ws_atmos"
-	},
-/area/ruin/unpowered)
-"uW" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/engine,
-/area/ruin/unpowered)
-"yJ" = (
-/obj/effect/turf_decal/industrial/outline/yellow{
-	dir = 1
-	},
-/obj/machinery/portable_atmospherics/canister/nitrogen,
-/turf/open/floor/plasteel/dark,
-/area/ruin/unpowered)
-"zg" = (
-/obj/effect/decal/cleanable/greenglow,
-/obj/item/disk/plantgene,
-/turf/open/floor/plating{
-	icon_state = "platingdmg2";
-	initial_gas_mix = "ws_atmos"
-	},
-/area/ruin/unpowered)
-"zi" = (
-/obj/effect/decal/cleanable/greenglow,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating{
-	initial_gas_mix = "ws_atmos"
-	},
-/area/ruin/unpowered)
-"OV" = (
-/turf/open/floor/plating{
-	icon_state = "platingdmg1";
-	initial_gas_mix = "ws_atmos"
-	},
-/area/ruin/unpowered)
-"SY" = (
-/obj/machinery/atmospherics/pipe/simple/general/visible{
-	dir = 9
-	},
-/turf/closed/wall/r_wall,
-/area/ruin/unpowered)
-"UQ" = (
+"R" = (
 /obj/structure/window/plasma/reinforced,
 /obj/machinery/power/rad_collector/anchored,
 /obj/machinery/atmospherics/pipe/manifold/general/visible{
@@ -465,87 +181,138 @@
 	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
-"Zv" = (
-/obj/effect/decal/cleanable/dirt,
+"S" = (
 /turf/open/floor/plating{
+	initial_gas_mix = "ws_atmos"
+	},
+/area/ruin/unpowered)
+"T" = (
+/obj/structure/window/plasma/reinforced{
+	dir = 1
+	},
+/obj/structure/frame/machine,
+/obj/machinery/atmospherics/pipe/manifold/general/visible,
+/turf/open/floor/engine,
+/area/ruin/unpowered)
+"V" = (
+/turf/open/floor/plating{
+	icon_state = "platingdmg1";
+	initial_gas_mix = "ws_atmos"
+	},
+/area/ruin/unpowered)
+"W" = (
+/obj/machinery/door/airlock/engineering/glass/critical{
+	heat_proof = 1;
+	name = "Supermatter Chamber";
+	req_access_txt = "10";
+	dir = 4
+	},
+/turf/open/floor/plating{
+	icon_state = "platingdmg2";
+	initial_gas_mix = "ws_atmos"
+	},
+/area/ruin/unpowered)
+"X" = (
+/obj/structure/girder,
+/turf/open/floor/plating{
+	initial_gas_mix = "ws_atmos"
+	},
+/area/ruin/unpowered)
+"Y" = (
+/obj/machinery/door/airlock/engineering/glass/critical{
+	heat_proof = 1;
+	name = "Supermatter Chamber";
+	req_access_txt = "10";
+	dir = 4
+	},
+/turf/open/floor/engine,
+/area/ruin/unpowered)
+"Z" = (
+/obj/structure/window/plasma/reinforced,
+/obj/structure/frame/machine,
+/obj/machinery/atmospherics/pipe/manifold/general/visible{
+	dir = 1
+	},
+/turf/open/floor/plating{
+	icon_state = "platingdmg1";
 	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 
 (1,1,1) = {"
-aa
-Zv
-al
-aN
-ah
-aN
-aM
-aA
-aa
+a
+z
+X
+w
+W
+w
+H
+B
+a
 "}
 (2,1,1) = {"
-yJ
-Zv
-aN
-Zv
-aU
-aD
-aN
-ap
-aa
+s
+z
+w
+z
+x
+G
+w
+g
+a
 "}
 (3,1,1) = {"
-aN
-al
-iq
-SY
-am
-ao
-aN
-aN
-aN
+w
+X
+Q
+u
+Y
+j
+w
+w
+w
 "}
 (4,1,1) = {"
-aa
-OV
-UQ
-uW
-zg
-aK
-av
-ay
-aa
+a
+V
+R
+I
+i
+r
+L
+f
+a
 "}
 (5,1,1) = {"
-aa
-Zv
-en
-uW
-zi
-aK
-aP
-ad
-ae
+a
+z
+Z
+I
+E
+r
+T
+n
+b
 "}
 (6,1,1) = {"
-iX
-iX
-tt
-uW
-aq
-aO
-aF
-aq
-aa
+S
+S
+k
+I
+C
+t
+J
+C
+a
 "}
 (7,1,1) = {"
-al
-aN
-aN
-aN
-uB
-aN
-aN
-al
-aN
+X
+w
+w
+w
+c
+w
+w
+X
+w
 "}
