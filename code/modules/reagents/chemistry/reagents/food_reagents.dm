@@ -867,3 +867,32 @@
 	taste_mult = 2
 	nutriment_factor = 1 * REAGENTS_METABOLISM
 	taste_description = "grape"
+
+/datum/reagent/consumable/chocolate_protien_drink
+	name = "Chocolate Hazelnut Protein Drink"
+	taste_mult = 2
+	nutriment_factor = 1 * REAGENTS_METABOLISM
+	taste_description = "chocoalte and hazelnut"
+
+/datum/reagent/consumable/hot_lemonade
+	name = "Hot Lemonade"
+	taste_mult = 2
+	nutriment_factor = 1 * REAGENTS_METABOLISM
+	taste_description = "lemon"
+
+/datum/reagent/consumable/fruit_punch
+	name = "Fruit Punch"
+	taste_mult = 2
+	nutriment_factor = 1 * REAGENTS_METABOLISM
+	taste_description = "fruit punch"
+
+/datum/reagent/consumable/tropical_smoothie
+	name = "Tropical Smoothie"
+	taste_mult = 2
+	nutriment_factor = 1 * REAGENTS_METABOLISM
+	taste_description = "tropical blend"
+
+/datum/reagent/consumable/peanut_butter
+	name = "Peanut Butter"
+	nutriment_factor = 1 * REAGENTS_METABOLISM
+	taste_description = "peanut"

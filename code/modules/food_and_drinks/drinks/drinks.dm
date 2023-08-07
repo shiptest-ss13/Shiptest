@@ -763,6 +763,7 @@
 	name = "Rationed Air"
 	desc = "If you ever wondered where air came from..."
 	list_reagents = list(/datum/reagent/oxygen = 6, /datum/reagent/nitrogen = 24)
+	icon = 'icons/obj/food/food.dmi'
 	icon_state = "peachcan"
 	in_container = TRUE
 	reagent_flags = NONE

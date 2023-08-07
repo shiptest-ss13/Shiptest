@@ -1244,5 +1244,9 @@
 
 /obj/effect/spawner/lootdrop/ration
 	loot = list (
-	/obj/item/storage/ration/vegan_chili = 1
+	/obj/item/storage/ration/vegan_chili = 1,
+	/obj/item/storage/ration/shredded_beef = 1,
+	/obj/item/storage/ration/pork_spaghetti = 1,
+	/obj/item/storage/ration/fried_fish = 1,
+	/obj/item/storage/ration/beef_strips = 1
 	)

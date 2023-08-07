@@ -315,6 +315,11 @@
 	originalname = "jalapeno cheddar cheese spread"
 	list_reagents = list(/datum/reagent/consumable/cheese_spread = 5 , /datum/reagent/consumable/capsaicin = 3)
 
+/obj/item/reagent_containers/food/condiment/pack/peanut_butter
+	name = "peanut butter pack"
+	originalname = "peanut butter"
+	list_reagents = list(/datum/reagent/consumable/peanut_butter = 10)
+
 /obj/item/reagent_containers/food/condiment/pack/grape_powder
 	name = "grape beverage powder, carb-fortified pack"
 	originalname = "grape beverage powder"
@@ -323,7 +328,23 @@
 /obj/item/reagent_containers/food/condiment/pack/chocolate_protein_powder
 	name = "chocolate hazelnut protein drink powder pack"
 	originalname = "chocolate hazelnut protein drink powder"
-	list_reagents = list(/datum/reagent/consumable/sugar = 5,/datum/reagent/consumable/eggyolk = 5)
+	list_reagents = list(/datum/reagent/consumable/coco = 5, /datum/reagent/consumable/eggyolk = 5)
+
+/obj/item/reagent_containers/food/condiment/pack/lemonade_powder
+	name = "lemonade drink powder pack"
+	originalname = "lemonade drink powder"
+	list_reagents = list(/datum/reagent/consumable/sugar = 5, /datum/reagent/consumable/lemonjuice = 5)
+
+/obj/item/reagent_containers/food/condiment/pack/fruit_powder
+	name = "fruit punch beverage powder, carb-electrolyte pack"
+	originalname = "fruit punch beverage powder, carb-electrolyte"
+	list_reagents = list(/datum/reagent/consumable/sugar = 5, /datum/reagent/consumable/applejuice = 2, /datum/reagent/consumable/orangejuice = 2)
+
+/obj/item/reagent_containers/food/condiment/pack/fruit_smoothie_powder
+	name = "tropical blend fruit and vegetable smoothie powder pack"
+	originalname = "tropical blend fruit and vegetable moothie powder"
+	list_reagents = list(/datum/reagent/consumable/sugar = 3, /datum/reagent/consumable/applejuice = 2, /datum/reagent/consumable/orangejuice = 2, /datum/reagent/consumable/eggyolk = 3, )
+
 /obj/item/reagent_containers/food/condiment/ketchup
 	name = "ketchup bottle"
 	desc = "You feel more american already"
