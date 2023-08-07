@@ -29,3 +29,20 @@
 /area/ruin/wasteplanet/abandoned_mechbay/engineering
 	name = "Abandoned Mechbay Engineering"
 	icon_state = "engine"
+
+//Abandoned Waste Site
+
+/area/ruin/wasteplanet/wasteplanet_radiation/main
+	name = "Abandoned Waste Site"
+	requires_power = TRUE
+	icon_state = "green"
+
+/area/ruin/wasteplanet/wasteplanet_radiation/maint
+	requires_power = TRUE
+	name = "Abandoned Maintenance Area"
+	icon_state = "engine"
+
+/area/ruin/wasteplanet/wasteplanet_radiation/containment
+	requires_power = TRUE
+	name = "Abandoned Waste Containment Vault"
+	icon_state = "disposal"
