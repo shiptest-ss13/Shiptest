@@ -170,6 +170,8 @@
 	else
 		airlock.abandoned = TRUE
 
+
+//needs to do its thing before spawn_rivers() is called
 INITIALIZE_IMMEDIATE(/obj/effect/mapping_helpers/no_lava)
 
 /obj/effect/mapping_helpers/no_lava
