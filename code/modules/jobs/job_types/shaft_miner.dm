@@ -56,7 +56,7 @@
 		/obj/item/kitchen/knife/combat/survival=1,
 		/obj/item/mining_voucher=1,
 		/obj/item/mining_scanner=1,
-		/obj/item/stack/marker_beacon/ten=1)
+		/obj/item/stack/marker_beacon/default/ten=1)
 	belt = /obj/item/gun/energy/kinetic_accelerator
 
 /datum/outfit/job/miner/equipped/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -146,7 +146,7 @@
 		/obj/item/mining_scanner=1,
 		/obj/item/reagent_containers/hypospray/medipen/survival,
 		/obj/item/reagent_containers/hypospray/medipen/survival,\
-		/obj/item/stack/marker_beacon/ten=1)
+		/obj/item/stack/marker_beacon/default/ten=1)
 	belt = /obj/item/gun/energy/kinetic_accelerator/old
 
 /datum/outfit/job/miner/righand
@@ -198,7 +198,7 @@
 	shoes = /obj/item/clothing/shoes/combat
 	backpack_contents = list(
 		/obj/item/flashlight/seclite=1,
-		/obj/item/stack/marker_beacon/ten=1,
+		/obj/item/stack/marker_beacon/default/ten=1,
 		/obj/item/weldingtool=1
 		)
 

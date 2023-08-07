@@ -239,3 +239,33 @@
 	back = /obj/item/storage/backpack
 	id = /obj/item/card/id/solgov
 	backpack_contents = null
+
+//inteq
+
+/obj/effect/mob_spawn/human/corpse/inteq
+	name = "Avery Inteq"
+
+/obj/effect/mob_spawn/human/corpse/inteq/recruit
+	name = "IRMG Recruit"
+	id_job = "Recruit"
+	outfit = /datum/outfit/job/assistant/inteq
+
+/obj/effect/mob_spawn/human/corpse/inteq/medic
+	name = "IRMG Corpsman"
+	id_job = "Corpsman"
+	outfit = /datum/outfit/job/paramedic/inteq
+
+/obj/effect/mob_spawn/human/corpse/inteq/enforcer
+	name = "IRMG Enforcer"
+	id_job = "Enforcer"
+	outfit = /datum/outfit/job/security/inteq
+
+/obj/effect/mob_spawn/human/corpse/inteq/vanguard
+	name = "IRMG Vanguard"
+	id_job = "Vanguard"
+	outfit = /datum/outfit/job/captain/inteq
+
+/obj/effect/mob_spawn/human/corpse/inteq/artificer
+	name = "IRMG Artificer"
+	id_job = "Artificer"
+	outfit = /datum/outfit/job/engineer/inteq

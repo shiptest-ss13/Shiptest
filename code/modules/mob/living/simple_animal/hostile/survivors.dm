@@ -208,7 +208,7 @@
 	if(prob(70))
 		backpack_contents += pickweight(list( //these could stand to be expanded, right now they're just mildly modified miner ones, and I don't know how to plus that up.
 			/obj/item/soap = 10,
-			/obj/item/stack/marker_beacon/ten = 15,
+			/obj/item/stack/marker_beacon/default/ten = 15,
 			/obj/item/mining_scanner = 5,
 			/obj/item/extinguisher/mini = 10,
 			/obj/item/kitchen/knife/combat = 5,
@@ -224,7 +224,7 @@
 	if(prob(70))
 		backpack_contents += pickweight(list(
 			/obj/item/stack/sheet/animalhide/goliath_hide = 20,
-			/obj/item/stack/marker_beacon/ten = 10,
+			/obj/item/stack/marker_beacon/default/ten = 10,
 			/obj/item/mining_scanner = 20,
 			/obj/item/extinguisher/mini = 10,
 			/obj/item/kitchen/knife/combat/survival = 10,
@@ -236,7 +236,7 @@
 	if(prob(70))
 		backpack_contents += pickweight(list(
 			/obj/item/stack/sheet/animalhide/goliath_hide = 5,
-			/obj/item/stack/marker_beacon/ten = 5,
+			/obj/item/stack/marker_beacon/default/ten = 5,
 			/obj/item/mining_scanner = 5,
 			/obj/item/extinguisher/mini = 10,
 			/obj/item/kitchen/knife/combat/survival = 12,
