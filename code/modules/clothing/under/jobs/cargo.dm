@@ -1,6 +1,7 @@
 /obj/item/clothing/under/rank/cargo
 	icon = 'icons/obj/clothing/under/cargo.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/under/cargo.dmi'
+	supports_variations = KEPORI_VARIATION
 
 /obj/item/clothing/under/rank/cargo/qm
 	name = "quartermaster's jumpsuit"
@@ -15,7 +16,7 @@
 	item_state = "lb_suit"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION | KEPORI_VARIATION
 
 /obj/item/clothing/under/rank/cargo/tech
 	name = "cargo technician's jumpsuit"
@@ -23,7 +24,7 @@
 	icon_state = "cargotech"
 	item_state = "lb_suit"
 	body_parts_covered = CHEST|GROIN|ARMS
-	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION | KEPORI_VARIATION
 	alt_covers_chest = TRUE
 
 /obj/item/clothing/under/rank/cargo/tech/skirt
@@ -32,7 +33,7 @@
 	icon_state = "cargo_skirt"
 	item_state = "lb_suit"
 	body_parts_covered = CHEST|GROIN|ARMS
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION | KEPORI_VARIATION
 	can_adjust = FALSE
 
 /obj/item/clothing/under/rank/cargo/miner
@@ -42,6 +43,7 @@
 	item_state = "miner"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 0)
 	resistance_flags = NONE
+	supports_variations = KEPORI_VARIATION
 
 /obj/item/clothing/under/rank/cargo/miner/lavaland
 	desc = "A light uniform for operating in hazardous environments, manufactured en-masse by EXOCON for the profitable frontier prospector market. Adventurous khaki jeans included."
@@ -49,14 +51,14 @@
 	icon_state = "explorer"
 	item_state = "explorer"
 	can_adjust = TRUE
-	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION | KEPORI_VARIATION
 
 /obj/item/clothing/under/rank/cargo/miner/hazard
 	desc = "A thick jumpsuit with reflective stripes for hazardous, low-visibility environments. It's coated in a thick layer of asteroid dust."
 	name = "asteroid miner's jumpsuit"
 	icon_state = "hazard"
 	item_state = "hazard"
-	supports_variations = DIGITIGRADE_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION | KEPORI_VARIATION
 
 /obj/item/clothing/under/rank/cargo/miner/lavaland/old
 	icon_state = "explorerold"
