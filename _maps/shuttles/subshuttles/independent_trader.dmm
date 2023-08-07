@@ -1,12 +1,16 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "a" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
-/area/space)
+/area/ship/bridge)
 "b" = (
 /obj/structure/table/wood,
 /obj/machinery/paystand,
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/pod/light,
-/area/space)
+/area/ship/bridge)
 "c" = (
 /obj/machinery/door/poddoor/shutters{
 	id = "pjt"
@@ -20,7 +24,7 @@
 /obj/effect/turf_decal/trimline/opaque/solgovgold/warning,
 /obj/effect/turf_decal/road/line/opaque/black,
 /turf/open/floor/plasteel/tech,
-/area/space)
+/area/ship/bridge)
 "d" = (
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 4
@@ -33,21 +37,48 @@
 	id = "pjbe";
 	dir = 4
 	},
+/obj/effect/turf_decal/techfloor/orange{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/grid,
-/area/space)
+/area/ship/bridge)
+"e" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/steeldecal/steel_decals3,
+/obj/effect/turf_decal/steeldecal/steel_decals3{
+	dir = 6
+	},
+/turf/open/floor/pod,
+/area/ship/bridge)
 "f" = (
+/obj/structure/closet/crate,
+/obj/item/gun/ballistic/rifle/boltaction,
+/obj/item/gun/ballistic/rifle/boltaction,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/industrial/warning/full,
+/turf/open/floor/pod/dark,
+/area/ship/bridge)
+"g" = (
 /obj/item/stack/sheet/mineral/plasma/five,
 /obj/structure/closet/crate/engineering,
-/turf/open/floor/pod/light,
-/area/space)
+/obj/effect/turf_decal/industrial/warning/full,
+/turf/open/floor/pod/dark,
+/area/ship/bridge)
 "h" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/power/terminal{
 	dir = 8
 	},
 /obj/structure/cable,
+/obj/structure/extinguisher_cabinet/directional/south,
+/obj/structure/rack,
+/obj/item/storage/toolbox/mechanical/old,
 /turf/open/floor/pod,
-/area/space)
+/area/ship/bridge)
 "j" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -58,25 +89,55 @@
 	id_tag = "pdjdr"
 	},
 /obj/effect/mapping_helpers/airlock/locked,
-/turf/open/floor/pod/light,
-/area/space)
-"m" = (
-/obj/structure/chair/comfy/shuttle{
+/obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
+/obj/machinery/door/firedoor/border_only,
+/turf/open/floor/pod/light,
+/area/ship/bridge)
+"m" = (
 /turf/open/floor/pod,
-/area/space)
+/area/ship/bridge)
+"n" = (
+/turf/open/floor/carpet,
+/area/ship/bridge)
 "q" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/closed/wall/mineral/titanium,
-/area/space)
-"s" = (
-/obj/structure/closet/crate,
-/obj/item/gun/ballistic/rifle/boltaction,
-/obj/item/gun/ballistic/rifle/boltaction,
-/obj/machinery/light/small/broken/directional/south,
-/turf/open/floor/pod/light,
-/area/space)
+/area/ship/bridge)
+"r" = (
+/obj/machinery/door/airlock/freezer{
+	name = "shuttle airlock";
+	id_tag = "pdjdr"
+	},
+/obj/effect/turf_decal/industrial/warning,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/mapping_helpers/airlock/locked,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"t" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 4
+	},
+/obj/structure/window/reinforced/spawner/west,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/effect/turf_decal/techfloor/orange{
+	dir = 4
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "pjbe";
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/bridge)
 "u" = (
 /obj/machinery/power/terminal{
 	dir = 8
@@ -90,40 +151,71 @@
 /obj/structure/chair/comfy/shuttle{
 	dir = 4
 	},
-/turf/open/floor/pod/light,
-/area/space)
+/obj/effect/turf_decal/box/red,
+/obj/effect/turf_decal/steeldecal/steel_decals_central7{
+	dir = 1
+	},
+/obj/effect/turf_decal/steeldecal/steel_decals7{
+	dir = 9
+	},
+/turf/open/floor/pod/dark,
+/area/ship/bridge)
 "v" = (
 /obj/machinery/power/smes,
 /obj/structure/cable,
 /obj/machinery/light/small/broken/directional/south,
 /turf/open/floor/pod,
-/area/space)
+/area/ship/bridge)
 "w" = (
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/modular_computer/console/preset/command{
 	dir = 8
 	},
-/turf/open/floor/pod,
-/area/space)
+/obj/machinery/firealarm/directional/north,
+/obj/effect/turf_decal/box/red,
+/turf/open/floor/pod/dark,
+/area/ship/bridge)
 "E" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet,
-/area/space)
+/area/ship/bridge)
 "F" = (
-/obj/machinery/computer/helm/retro,
-/obj/machinery/light/small/broken/directional/north,
-/turf/open/space/basic,
-/area/space)
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/button/door{
+	pixel_y = 9;
+	pixel_x = -23;
+	specialfunctions = 3;
+	id = "pdjdr";
+	name = "door lock";
+	dir = 4;
+	normaldoorcontrol = 1
+	},
+/obj/machinery/light/small/broken/directional/east,
+/obj/effect/turf_decal/industrial/stand_clear,
+/turf/open/floor/pod,
+/area/ship/bridge)
 "G" = (
 /turf/closed/wall/mineral/titanium,
-/area/space)
+/area/ship/bridge)
 "H" = (
 /obj/machinery/smartfridge{
 	density = 0;
 	pixel_y = -32
 	},
+/obj/structure/cable{
+	icon_state = "4-9"
+	},
+/obj/effect/turf_decal/steeldecal/steel_decals3{
+	dir = 1
+	},
+/obj/effect/turf_decal/steeldecal/steel_decals3{
+	dir = 10
+	},
+/obj/item/multitool,
 /turf/open/floor/pod,
-/area/space)
+/area/ship/bridge)
 "J" = (
 /obj/machinery/power/shuttle/engine/electric{
 	dir = 4
@@ -132,11 +224,25 @@
 	icon_state = "0-4"
 	},
 /turf/open/floor/plating/rust,
-/area/space)
+/area/ship/bridge)
 "L" = (
 /obj/structure/table/wood,
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/pod/light,
-/area/space)
+/area/ship/bridge)
+"N" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/steeldecal/steel_decals3{
+	dir = 4
+	},
+/obj/effect/turf_decal/steeldecal/steel_decals3{
+	dir = 5
+	},
+/turf/open/floor/pod,
+/area/ship/bridge)
 "O" = (
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
@@ -144,7 +250,7 @@
 	dir = 4
 	},
 /turf/open/floor/pod/light,
-/area/space)
+/area/ship/bridge)
 "P" = (
 /obj/machinery/door/poddoor/shutters{
 	id = "pjt"
@@ -155,15 +261,53 @@
 /obj/effect/turf_decal/trimline/opaque/solgovgold/warning,
 /obj/effect/turf_decal/road/line/opaque/black,
 /turf/open/floor/plasteel/tech,
-/area/space)
+/area/ship/bridge)
+"Q" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/steeldecal/steel_decals9,
+/obj/machinery/computer/helm/retro{
+	dir = 8
+	},
+/obj/machinery/button/door{
+	pixel_y = -22;
+	pixel_x = -9;
+	name = "bridge window";
+	id = "pjb";
+	dir = 1
+	},
+/obj/machinery/light/small/broken/directional/south,
+/obj/effect/turf_decal/box/red,
+/turf/open/floor/pod/dark,
+/area/ship/bridge)
 "R" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/power/apc/auto_name/directional/south,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/effect/turf_decal/steeldecal/steel_decals7{
+	dir = 4
+	},
+/obj/effect/turf_decal/steeldecal/steel_decals7,
+/obj/effect/turf_decal/steeldecal/steel_decals_central7{
+	dir = 4;
+	pixel_x = -2
+	},
+/obj/effect/turf_decal/steeldecal/steel_decals3{
+	dir = 1
+	},
+/obj/effect/turf_decal/steeldecal/steel_decals3{
+	dir = 10
+	},
+/obj/structure/rack,
 /turf/open/floor/pod,
-/area/space)
+/area/ship/bridge)
 "S" = (
 /obj/docking_port/mobile{
 	dir = 2;
 	preferred_direction = 8;
-	port_direction = 4
+	port_direction = 4;
+	dwidth = 5
 	},
 /obj/effect/turf_decal/trimline/opaque/solgovgold/warning{
 	dir = 1
@@ -174,14 +318,43 @@
 	id = "pjt"
 	},
 /turf/open/floor/plasteel/tech,
-/area/space)
+/area/ship/bridge)
 "T" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/structure/cable{
+	icon_state = "6-9"
+	},
+/obj/effect/turf_decal/steeldecal/steel_decals3,
+/obj/effect/turf_decal/steeldecal/steel_decals3{
+	dir = 6
+	},
 /turf/open/floor/pod,
-/area/space)
+/area/ship/bridge)
+"U" = (
+/obj/effect/turf_decal/steeldecal/steel_decals3{
+	dir = 4
+	},
+/obj/effect/turf_decal/steeldecal/steel_decals3{
+	dir = 5
+	},
+/obj/machinery/button/door{
+	pixel_y = 22;
+	pixel_x = -6;
+	id = "pjt";
+	name = "main door shutters"
+	},
+/obj/machinery/button/door{
+	pixel_y = 22;
+	pixel_x = 5;
+	name = "bridge window";
+	id = "pjb"
+	},
+/obj/item/storage/wallet/random,
+/turf/open/floor/pod,
+/area/ship/bridge)
 "V" = (
 /obj/effect/decal/cleanable/cobweb,
 /obj/machinery/power/terminal{
@@ -197,14 +370,38 @@
 	pixel_y = 24;
 	pixel_x = 6;
 	specialfunctions = 3;
-	id = "pdjdr"
+	id = "pdjdr";
+	name = "door lock";
+	normaldoorcontrol = 1
 	},
-/turf/open/floor/pod/light,
-/area/space)
+/obj/effect/turf_decal/box/red,
+/obj/effect/turf_decal/steeldecal/steel_decals_central7{
+	dir = 1
+	},
+/obj/effect/turf_decal/steeldecal/steel_decals7{
+	dir = 9
+	},
+/obj/structure/cable{
+	icon_state = "2-6"
+	},
+/turf/open/floor/pod/dark,
+/area/ship/bridge)
+"W" = (
+/obj/structure/chair/office{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/carpet,
+/area/ship/bridge)
 "Y" = (
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
 /turf/open/floor/pod,
-/area/space)
+/area/ship/bridge)
 "Z" = (
 /turf/template_noop,
 /area/template_noop)
@@ -220,7 +417,7 @@ G
 (2,1,1) = {"
 q
 G
-d
+t
 d
 G
 G
@@ -236,7 +433,7 @@ a
 (4,1,1) = {"
 c
 j
-T
+e
 T
 h
 a
@@ -244,7 +441,7 @@ a
 (5,1,1) = {"
 S
 L
-E
+W
 E
 H
 a
@@ -252,7 +449,7 @@ a
 (6,1,1) = {"
 P
 b
-E
+n
 E
 R
 a
@@ -260,13 +457,13 @@ a
 (7,1,1) = {"
 a
 a
-R
-R
-R
+U
+N
+g
 a
 "}
 (8,1,1) = {"
-G
+r
 F
 m
 Y
@@ -277,15 +474,15 @@ a
 G
 a
 w
-R
-s
+Q
 a
+G
 "}
 (10,1,1) = {"
 Z
 G
 O
 O
-a
-a
+G
+Z
 "}
