@@ -881,7 +881,7 @@
 /area/ship/engineering)
 "fd" = (
 /obj/structure/table/wood/reinforced,
-/obj/item/storage/box/donkpockets/donkpocketteriyaki{
+/obj/effect/spawner/lootdrop/ration{
 	pixel_x = 5;
 	pixel_y = 5
 	},
@@ -913,7 +913,7 @@
 	pixel_x = -5;
 	pixel_y = -7
 	},
-/obj/item/storage/box/donkpockets{
+/obj/effect/spawner/lootdrop/ration{
 	pixel_x = 6;
 	pixel_y = 11
 	},
@@ -4933,7 +4933,7 @@
 /area/ship/crew/canteen)
 "Dh" = (
 /obj/structure/table/wood,
-/obj/effect/spawner/lootdrop/donkpockets,
+/obj/effect/spawner/lootdrop/ration,
 /turf/open/floor/plasteel,
 /area/ship/security/prison)
 "Dm" = (
@@ -8572,7 +8572,7 @@
 /area/ship/engineering/atmospherics)
 "XY" = (
 /obj/structure/table/wood,
-/obj/effect/spawner/lootdrop/donkpockets,
+/obj/effect/spawner/lootdrop/ration,
 /obj/effect/turf_decal/spline/plain/opaque/blue,
 /turf/open/floor/plasteel,
 /area/ship/security/prison)
