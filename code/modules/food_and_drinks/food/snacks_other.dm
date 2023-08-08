@@ -778,6 +778,7 @@
 	playsound(user.loc, 'sound/effects/rip3.ogg', 50)
 	reagents.flags |= OPENCONTAINER
 	spillable = TRUE
+	desc += "\nIt's been opened."
 
 /obj/item/reagent_containers/food/snacks/ration/attack_self(mob/user)
 	if(!is_drainable())

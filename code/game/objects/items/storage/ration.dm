@@ -26,7 +26,7 @@
 	to_chat(user, "<span class='notice'>You tear open \the [src].</span>")
 	playsound(user.loc, 'sound/effects/rip3.ogg', 50)
 	SEND_SIGNAL(src, COMSIG_TRY_STORAGE_SET_LOCKSTATE, FALSE)
-	desc += " Let's get this out onto a tray."
+	desc += "\nIt's been opened. Let's get this out onto a tray."
 
 /obj/item/storage/ration/attack_self(mob/user)
 	var/locked = SEND_SIGNAL(src, COMSIG_IS_STORAGE_LOCKED)
@@ -103,7 +103,7 @@
 /obj/item/storage/ration/beef_strips
 	name = "beef strips in tomato sauce ration"
 	desc = "Savor the deliciousness of tender beef strips in a flavorful tomato sauce with this ration. Enjoy a chocolate pudding, white wheat snack bread, blackberry preserves, and peppermint candy rings as delightful accompaniments."
-	
+
 /obj/item/storage/ration/beef_strips/PopulateContents()
 	var/static/items_inside = list(
 		/obj/item/reagent_containers/food/snacks/ration/beef_strips = 1,
