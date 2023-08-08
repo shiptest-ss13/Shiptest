@@ -75,6 +75,7 @@
 /mob/living/simple_animal/hostile/Destroy()
 	//We can't use losetarget here because fucking cursed blobs override it to do nothing the motherfuckers
 	GiveTarget(null)
+	walk(src, 0)
 	return ..()
 
 /mob/living/simple_animal/hostile/Life()
