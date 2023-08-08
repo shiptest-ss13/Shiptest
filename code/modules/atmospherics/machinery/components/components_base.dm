@@ -136,6 +136,9 @@
 
 /obj/machinery/atmospherics/components/setPipenet(datum/pipeline/reference, obj/machinery/atmospherics/connection)
 	var/connection_index = nodes.Find(connection)
+	if(!connection_index)
+		message_admins("Doubled pipe found at [ADMIN_VERBOSEJMP(connection)]! Please report to mappers.") //This will cascade into even more errors. Sorry!
+		CRASH("Doubled pipe found, causing an error in setPipenet")
 	var/list/datum/pipeline/to_replace = parents[connection_index]
 	//Some references to clean up if it isn't empty
 	if(to_replace)

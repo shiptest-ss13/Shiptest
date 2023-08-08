@@ -122,6 +122,18 @@
 		/mob/living/simple_animal/parrot/proc/perch_mob_player))
 
 
+/mob/living/simple_animal/parrot/Destroy()
+	walk(src, 0)
+	if(ears)
+		QDEL_NULL(ears)
+	if(held_item)
+		QDEL_NULL(held_item)
+
+	set_perch(null)
+	set_interest(null)
+
+	return ..()
+
 /mob/living/simple_animal/parrot/examine(mob/user)
 	. = ..()
 	if(stat)
