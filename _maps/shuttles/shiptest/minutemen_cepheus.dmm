@@ -483,6 +483,10 @@
 	pixel_y = 11
 	},
 /obj/machinery/light/small/directional/south,
+/obj/machinery/advanced_airlock_controller{
+	pixel_y = 10;
+	pixel_x = -25
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
 "fJ" = (
@@ -1102,14 +1106,14 @@
 	dir = 1
 	},
 /obj/structure/rack,
-/obj/item/circuitboard/machine/circuit_imprinter{
-	pixel_y = -6
-	},
 /obj/item/circuitboard/machine/rdserver,
 /obj/item/circuitboard/computer/rdconsole{
 	pixel_y = 7
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/circuitboard/machine/circuit_imprinter/department/basic{
+	pixel_y = -10
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/science/robotics)
 "mK" = (
@@ -1440,6 +1444,9 @@
 	},
 /obj/structure/sign/poster/official/moth/hardhats{
 	pixel_x = 32
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/science/robotics)
@@ -1897,7 +1904,7 @@
 /obj/structure/sign/poster/contraband/twelve_gauge{
 	pixel_y = 32
 	},
-/obj/item/gun/ballistic/shotgun/bulldog/minutemen,
+/obj/item/gun/ballistic/shotgun/riot,
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
 "tX" = (
@@ -2039,9 +2046,6 @@
 	},
 /obj/machinery/firealarm/directional/south,
 /obj/item/radio/intercom/directional/south,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 5
-	},
 /turf/open/floor/plasteel/dark,
 /area/ship/science/robotics)
 "vQ" = (
@@ -2132,14 +2136,13 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/science/robotics)
 "wC" = (
-/obj/machinery/rnd/production/circuit_imprinter/department/science,
 /obj/structure/sign/poster/contraband/free_drone{
 	pixel_y = -32
 	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 8
-	},
 /obj/machinery/airalarm/directional/east,
+/obj/structure/frame/machine{
+	anchored = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/science/robotics)
 "wF" = (
@@ -3637,9 +3640,6 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "Nr" = (
-/obj/machinery/advanced_airlock_controller{
-	pixel_y = 26
-	},
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer4{
 	dir = 4
 	},
@@ -3987,9 +3987,6 @@
 /obj/machinery/light/directional/west{
 	light_color = "#e8eaff"
 	},
-/obj/structure/sign/poster/official/obey{
-	pixel_x = -31
-	},
 /obj/structure/sign/departments/security{
 	pixel_y = -32
 	},
@@ -4084,11 +4081,11 @@
 	pixel_x = 3;
 	pixel_y = -3
 	},
-/obj/item/storage/box/lethalshot{
-	pixel_x = 4;
-	pixel_y = -7
-	},
 /obj/item/ammo_box/magazine/cm15_mag,
+/obj/item/storage/box/rubbershot{
+	pixel_x = 3;
+	pixel_y = -3
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security)
 "RN" = (
@@ -4123,7 +4120,6 @@
 /obj/item/gps/mining,
 /obj/item/pickaxe,
 /obj/item/pickaxe,
-/obj/item/circuitboard/machine/ore_redemption,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "SE" = (
@@ -4180,7 +4176,9 @@
 	name = "tactical swivel chair"
 	},
 /obj/effect/decal/cleanable/vomit/old,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/science/robotics)
 "Tz" = (
