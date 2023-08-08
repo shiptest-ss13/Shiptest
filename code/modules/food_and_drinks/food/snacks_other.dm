@@ -808,6 +808,10 @@
 	tastes = list("cracker" = 1)
 	foodtype = VEGETABLES
 
+/obj/item/reagent_containers/food/snacks/ration/vegan_crackers/open_ration(mob/user)
+	.=..()
+	to_chat(user, "<span class='notice'>\the [src] makes a nice hiss.</span>")
+
 /obj/item/reagent_containers/food/snacks/ration/cornbread
 	name = "Cornbread"
 	desc = "Deliciously crumbly cornbread, a delightful blend of sweet and savory flavors."
