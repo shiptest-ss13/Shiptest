@@ -861,9 +861,10 @@
 /datum/reagent/waterpowder
 	name = "Instant Water Powder"
 	description = "Activates into steaming hot water"
+	reagent_state = SOLID
 
-/datum/reagent/consumable/hot_grape_necter
-	name = "Hot Grape Nector"
+/datum/reagent/consumable/hot_grape_nectar
+	name = "Hot Grape Nectar"
 	taste_mult = 2
 	nutriment_factor = 1 * REAGENTS_METABOLISM
 	taste_description = "grape"

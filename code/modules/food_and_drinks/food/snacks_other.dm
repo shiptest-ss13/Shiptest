@@ -906,7 +906,7 @@
 	desc = "A power-packed quik-energy bar infused with the flavors of apple and cinnamon. Ideal for a quick energy boost on the go."
 	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
 	filling_color = "#b82121"
-	tastes = list("apple" = 1, "cinnamon" = 1, "bar" = 1)
+	tastes = list("apple" = 1, "cinnamon" = 1)
 	foodtype = FRUIT | GRAIN
 
 /obj/item/reagent_containers/food/snacks/ration/tortilla
