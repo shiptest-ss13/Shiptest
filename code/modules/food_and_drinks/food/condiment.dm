@@ -343,7 +343,7 @@
 /obj/item/reagent_containers/food/condiment/pack/fruit_smoothie_powder
 	name = "tropical blend fruit and vegetable smoothie powder pack"
 	originalname = "tropical blend fruit and vegetable moothie powder"
-	list_reagents = list(/datum/reagent/consumable/pineapplejuice = 3, /datum/reagent/consumable/orangejuice = 3, /datum/reagent/consumable/eggyolk = 3, )
+	list_reagents = list(/datum/reagent/consumable/pineapplejuice = 3, /datum/reagent/consumable/orangejuice = 3, /datum/reagent/consumable/eggyolk = 3)
 
 /obj/item/reagent_containers/food/condiment/ketchup
 	name = "ketchup bottle"
