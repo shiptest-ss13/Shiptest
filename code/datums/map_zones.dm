@@ -32,8 +32,7 @@
 /datum/map_zone/Destroy()
 	SSmapping.map_zones -= src
 	QDEL_NULL(weather_controller)
-	for(var/datum/virtual_level/vlevel as anything in virtual_levels)
-		qdel(vlevel)
+	QDEL_LIST(virtual_levels)
 	return ..()
 
 /// Clears all of what's inside the virtual levels managed by the mapzone.
@@ -411,10 +410,18 @@
 	for(var/dir in crosslinked)
 		if(crosslinked[dir]) //Because it could be linking with itself
 			unlink(dir)
-	var/datum/space_level/level = SSmapping.z_list[z_value]
-	level.virtual_levels -= src
+	parent_level.virtual_levels -= src
+	parent_level = null
+	LAZYCLEARLIST(SSidlenpcpool.idle_mobs_by_virtual_level["[id]"])
+	SSidlenpcpool.idle_mobs_by_virtual_level["[id]"] = null
 	SSmapping.virtual_z_translation -= "[id]"
 	parent_map_zone.remove_virtual_level(src)
+	if(up_linkage)
+		up_linkage.down_linkage = null
+		up_linkage = null
+	if(down_linkage)
+		down_linkage.up_linkage = null
+		down_linkage = null
 	return ..()
 
 /datum/virtual_level/proc/mark_turfs()
@@ -448,6 +455,7 @@
 		var/area/old_area = get_area(turf)
 		space_area.contents += turf
 		turf.change_area(old_area, space_area)
+		turf.virtual_z = 0
 		CHECK_TICK
 
 	for(var/turf/turf as anything in block_turfs)
