@@ -765,7 +765,7 @@
 	slot_flags = ITEM_SLOT_BACK
 	throwforce = 5
 	throw_speed = 4
-	block_chance = 30
+	block_chance = 20
 	custom_materials = list(/datum/material/titanium=5000, /datum/material/iron=2075)
 	hitsound = 'sound/weapons/blade1.ogg'
 	attack_verb = list("sliced", "bisected", "diced", "chopped", "filleted")

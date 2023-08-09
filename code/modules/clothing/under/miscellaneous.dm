@@ -21,25 +21,6 @@
 	item_state = "ek"
 	can_adjust = FALSE
 
-/obj/item/clothing/under/misc/mailman
-	name = "mailman's jumpsuit"
-	desc = "<i>'Special delivery!'</i>"
-	icon_state = "mailman"
-	item_state = "b_suit"
-
-/obj/item/clothing/under/misc/psyche
-	name = "psychedelic jumpsuit"
-	desc = "Groovy!"
-	icon_state = "psyche"
-	item_state = "p_suit"
-
-/obj/item/clothing/under/misc/vice_officer
-	name = "vice officer's jumpsuit"
-	desc = "It's the standard issue pretty-boy outfit, as seen on Holo-Vision."
-	icon_state = "vice"
-	item_state = "gy_suit"
-	can_adjust = FALSE
-
 /obj/item/clothing/under/misc/adminsuit
 	name = "administrative cybernetic jumpsuit"
 	icon = 'icons/obj/clothing/under/syndicate.dmi'
@@ -58,22 +39,6 @@
 	can_adjust = FALSE
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	cuttable = FALSE
-
-/obj/item/clothing/under/misc/burial
-	name = "burial garments"
-	desc = "Traditional burial garments from the early 22nd century."
-	icon_state = "burial"
-	item_state = "burial"
-	can_adjust = FALSE
-	has_sensor = NO_SENSORS
-
-/obj/item/clothing/under/misc/overalls
-	name = "laborer's overalls"
-	desc = "A set of durable overalls for getting the job done."
-	icon_state = "overalls"
-	item_state = "lb_suit"
-	can_adjust = FALSE
-	custom_price = 60
 
 /obj/item/clothing/under/misc/assistantformal
 	name = "assistant's formal uniform"
@@ -147,14 +112,6 @@
 	can_adjust = FALSE
 	armor = list("melee" = 10, "laser" = 10, "fire" = 40, "acid" = 10, "bomb" = 5)
 	cuttable = FALSE
-
-/obj/item/clothing/under/misc/bouncer
-	name = "bouncer uniform"
-	desc = "A uniform made from a little bit more resistant fibers, makes you seem like a cool guy."
-	icon_state = "bouncer"
-	item_state = "bouncer"
-	can_adjust = FALSE
-	armor = list("melee" = 5, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 30)
 
 /obj/item/clothing/under/misc/coordinator
 	name = "coordinator jumpsuit"

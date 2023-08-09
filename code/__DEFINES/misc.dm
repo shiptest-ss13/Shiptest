@@ -4,7 +4,7 @@
 #define BODY_BEHIND_LAYER 29 //certain mutantrace features (tail when looking south) that must appear behind the body parts
 #define BODYPARTS_LOW_LAYER 28 //Layer for bodyparts that should appear behind every other bodypart - Mostly, legs when facing WEST or EAST
 #define BODYPARTS_LAYER 27 //Initially "AUGMENTS", this was repurposed to be a catch-all bodyparts flag
-#define BODY_ADJ_LAYER 26 //certain mutantrace features (snout, body markings) that must appear above the body parts
+#define BODY_ADJ_LAYER 26 //certain mutantrace features (face markings, body markings) that must appear above the body parts
 #define BODY_LAYER 25 //underwear, undershirts, socks, eyes, lips(makeup)
 #define FRONT_MUTATIONS_LAYER 24 //mutations that should appear above body, body_adj and bodyparts layer (e.g. laser eyes)
 #define DAMAGE_LAYER 23 //damage indicators (cuts and burns)

@@ -93,7 +93,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							"ethcolor" = "9c3030",
 							"tail_lizard" = "Smooth",
 							"tail_human" = "None",
-							"snout" = "Round",
+							"face_markings" = "None",
 							"horns" = "None",
 							"ears" = "None",
 							"wings" = "None",
@@ -487,13 +487,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "</td>"
 					mutant_category = 0
 
-			if("snout" in pref_species.default_features)
+			if("face_markings" in pref_species.default_features)
 				if(!mutant_category)
 					dat += APPEARANCE_CATEGORY_COLUMN
 
-				dat += "<h3>Snout</h3>"
+				dat += "<h3>Face Marking</h3>"
 
-				dat += "<a href='?_src_=prefs;preference=snout;task=input'>[features["snout"]]</a><BR>"
+				dat += "<a href='?_src_=prefs;preference=face_markings;task=input'>[features["face_markings"]]</a><BR>"
 
 				mutant_category++
 				if(mutant_category >= MAX_MUTANT_ROWS)
@@ -1830,11 +1830,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(new_tail)
 						features["tail_human"] = new_tail
 
-				if("snout")
-					var/new_snout
-					new_snout = input(user, "Choose your character's snout:", "Character Preference") as null|anything in GLOB.snouts_list
-					if(new_snout)
-						features["snout"] = new_snout
+				if("face_markings")
+					var/new_face_markings
+					new_face_markings = input(user, "Choose your character's face markings:", "Character Preference") as null|anything in GLOB.face_markings_list
+					if(new_face_markings)
+						features["face_markings"] = new_face_markings
 
 				if("horns")
 					var/new_horns
