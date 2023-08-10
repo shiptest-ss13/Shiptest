@@ -241,6 +241,9 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	courierbag = /obj/item/storage/backpack/messenger
 	backpack_contents = null
 
+/datum/outfit/job/security/roumain/post_equip(mob/living/carbon/human/H)
+	H.faction |= list("roumain")
+
 /datum/outfit/job/security/syndicate/gorlex
 	name = "Syndicate Battlecruiser Assault Operative"
 	uniform = /obj/item/clothing/under/syndicate

@@ -6,6 +6,7 @@
 	desc = "yummy"
 	icon = 'icons/obj/drinks.dmi'
 	icon_state = null
+	w_class = WEIGHT_CLASS_SMALL
 	lefthand_file = 'icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/food_righthand.dmi'
 	pickup_sound =  'sound/items/handling/bottle_pickup.ogg'

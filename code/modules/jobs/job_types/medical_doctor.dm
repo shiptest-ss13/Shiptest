@@ -147,6 +147,9 @@
 	courierbag = /obj/item/storage/backpack/messenger
 	backpack_contents = list(/obj/item/storage/firstaid/roumain=1)
 
+/datum/outfit/job/doctor/roumain/post_equip(mob/living/carbon/human/H)
+	H.faction |= list("roumain")
+
 /datum/outfit/job/doctor/frontiersmen
 	name = "Surgeon (frontiersmen)"
 

@@ -11,13 +11,11 @@
 
 /datum/reagent/consumable/ethanol/ash_wine/on_mob_life(mob/living/M)
 	var/high_message = pick("You feel far more devoted to the cause", "You feel like you should go on a hunt")
-	var/cleanse_message = pick("Divine light purifies you", "You are purged of foul spirts")
-	//needs to get updated anytime someone adds a srm job
-	var/static/list/increased_toxin_loss = list("Hunter Montagne", "Hunter Doctor", "Hunter", "Shadow")
+	var/cleanse_message = pick("Divine light purifies you.", "You are purged of foul spirts.")
 	if(prob(10))
 		M.set_drugginess(10)
 		to_chat(M, "<span class='notice'>[high_message]</span>")
-	if(M.mind && (M.mind.assigned_role in increased_toxin_loss))
+	if(M.faction && "roumain" in M.faction)
 		M.adjustToxLoss(-2)
 		if(prob(10))
 			to_chat(M, "<span class='notice'>[cleanse_message]</span>")
@@ -57,7 +55,7 @@
 		M.adjust_bodytemperature((-20*reac_volume) * TEMPERATURE_DAMAGE_COEFFICIENT)
 		M.Paralyze(reac_volume)
 		walk(M, 0) //stops them mid pathing even if they're stunimmunee
-		M.apply_status_effect(/datum/status_effect/ice_block_talisman, (0.1 * reac_volume) SECONDS)
+		M.apply_status_effect(/datum/status_effect/ice_block_talisman,reac_volume)
 
 /datum/reagent/consumable/ethanol/shock_wine
 	name = "Shockwine"
@@ -117,11 +115,11 @@
 		T.hotspot_expose((reac_volume*10),(reac_volume*1))
 		var/turf/otherT
 		for(var/direction in GLOB.cardinals)
-			reac_volume = reac_volume / 10
+			reac_volume = reac_volume - 10
 			otherT = get_step(T, direction)
 			otherT.IgniteTurf(reac_volume)
 			new /obj/effect/hotspot(otherT)
-			otherT.hotspot_expose((reac_volume*10),(reac_volume*1))
+			otherT.hotspot_expose(reac_volume*10,reac_volume*1)
 
 /datum/reagent/consumable/ethanol/force_wine
 	name = "Forcewine"

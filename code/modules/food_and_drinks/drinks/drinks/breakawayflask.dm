@@ -6,7 +6,7 @@
 	gulp_size = 25
 	amount_per_transfer_from_this = 25
 	volume = 50
-	throwforce = 20
+	throwforce = 10
 	custom_materials = list(/datum/material/glass=2500, /datum/material/plasma=500)
 	max_integrity = 20
 	spillable = TRUE
