@@ -41,7 +41,16 @@
 		if(!user.transferItemToLoc(I, src))
 			return
 		bottle = I
-		to_chat(user, "<span class='notice'>You add [I] into the dispenser slot.</span>")
+		to_chat(user, "<span class='notice'>You add [I] into the output slot.</span>")
+
+/obj/machinery/hand_press/AltClick(mob/living/user)
+	. = ..()
+	if(!can_interact(user) || !user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
+		return
+	if(beaker)
+		replace_beaker(user)
+	else if (bottle)
+		replace_bottle(user)
 
 /obj/machinery/hand_press/proc/replace_beaker(mob/living/user, obj/item/reagent_containers/new_beaker)
 	if(!user || !can_interact(user))
@@ -54,5 +63,19 @@
 		beaker = null
 	if(new_beaker)
 		beaker = new_beaker
+	update_icon()
+	return TRUE
+
+/obj/machinery/hand_press/proc/replace_bottle(mob/living/user, obj/item/storage/pill_bottle/new_bottle)
+	if(!user || !can_interact(user))
+		return FALSE
+	if(bottle)
+		if(Adjacent(src, user) && !issiliconoradminghost(user))
+			user.put_in_hands(bottle)
+		else
+			bottle.forceMove(get_turf(src))
+		bottle = null
+	if(new_bottle)
+		bottle = new_bottle
 	update_icon()
 	return TRUE
