@@ -114,7 +114,6 @@
 GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 	/obj/item/gun)))
 
-
 //Combat object defines
 
 //Embedded objects

@@ -410,7 +410,7 @@
 
 	new /obj/machinery/roulette(toLaunch)
 
-	new /obj/effect/DPtarget(drop_location(), toLaunch)
+	new /obj/effect/pod_landingzone(drop_location(), toLaunch)
 	qdel(src)
 
 #undef ROULETTE_SINGLES_PAYOUT
