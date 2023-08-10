@@ -71,6 +71,8 @@
 	lifetime = 80
 	amount = 0 //no spread
 	slippery_foam = FALSE
+	color = "#A6FAFF55"
+
 
 /obj/effect/particle_effect/foam/antirad/process()
 	..()
@@ -78,15 +80,16 @@
 	var/turf/open/T = get_turf(src)
 	var/obj/effect/radiation/rads = (locate(/obj/effect/radiation) in T)
 	if(rads && istype(T))
-		qdel(rads)
+		rads.rad_power = rads.rad_power * rand(0.8, 0.95)
+		if (rads.rad_power <= RAD_BACKGROUND_RADIATION)
+			qdel(rads)
+	for(var/obj/things in get_turf(src))
+		things.wash(CLEAN_RAD)
 
 /obj/effect/particle_effect/foam/antirad/kill_foam()
 	STOP_PROCESSING(SSfastprocess, src)
 	flick("[icon_state]-disolve", src)
 	QDEL_IN(src, 5)
-
-/obj/effect/particle_effect/foam/antirad/foam_mob(mob/living/L)
-	for()
 
 /obj/effect/particle_effect/foam/metal
 	name = "aluminium foam"
