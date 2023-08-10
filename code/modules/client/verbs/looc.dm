@@ -65,13 +65,6 @@ GLOBAL_VAR_INIT(normal_looc_colour, "#6699CC")
 			continue
 		var/client/C = M.client
 
-		//Handled before admins so that they see this if they're in range anyways
-		if(C.prefs.chat_on_map && mob.invisibility <= M.see_invisible)
-			M.create_chat_message(mob, null, "\[LOOC: [raw_msg]\]", null, LOOC_MESSAGE)
-
-		if(C in GLOB.admins)
-			continue //they are handled after that
-
 		if(key in C.prefs.ignoring)
 			continue
 
@@ -80,6 +73,13 @@ GLOBAL_VAR_INIT(normal_looc_colour, "#6699CC")
 
 		if(!(C.prefs.chat_toggles & CHAT_LOOC))
 			continue
+
+		//Handled before admins so that they see this if they're in range anyways
+		if(C.prefs.chat_on_map && mob.invisibility <= M.see_invisible)
+			M.create_chat_message(mob, null, "\[LOOC: [raw_msg]\]", null, LOOC_MESSAGE)
+
+		if(C in GLOB.admins)
+			continue //handled in the next loop
 
 		if(GLOB.LOOC_COLOR)
 			to_chat(C, "<span class='loocplain'><font color='[GLOB.LOOC_COLOR]'><b><span class='prefix'>LOOC:</span> <EM>[src.mob.name]:</EM> <span class='message'>[msg]</span></b></font></span>", MESSAGE_TYPE_LOOC)
