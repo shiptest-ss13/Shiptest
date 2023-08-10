@@ -43,3 +43,17 @@
 			return
 		bottle = I
 		to_chat(user, "<span class='notice'>You add [I] into the dispenser slot.</span>")
+
+/obj/machinery/hand_press/proc/replace_beaker(mob/living/user, obj/item/reagent_containers/new_beaker)
+	if(!user || !can_interact(user))
+		return FALSE
+	if(beaker)
+		if(Adjacent(src, user) && !issiliconoradminghost(user))
+			user.put_in_hands(beaker)
+		else
+			beaker.forceMove(get_turf(src))
+		beaker = null
+	if(new_beaker)
+		beaker = new_beaker
+	update_icon()
+	return TRUE
