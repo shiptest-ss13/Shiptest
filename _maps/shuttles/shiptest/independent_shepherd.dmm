@@ -1158,6 +1158,10 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/machinery/light_switch{
+	pixel_y = 23;
+	pixel_x = 11
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
 "jz" = (
@@ -2520,6 +2524,10 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/machinery/light_switch{
+	pixel_y = 23;
+	pixel_x = 11
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "wy" = (
@@ -3387,6 +3395,10 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/power/apc/auto_name/directional/north,
+/obj/machinery/light_switch{
+	pixel_x = 11;
+	pixel_y = 23
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "EE" = (
@@ -3487,6 +3499,10 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/power/apc/auto_name/directional/north,
+/obj/machinery/light_switch{
+	pixel_y = 23;
+	pixel_x = 11
+	},
 /turf/open/floor/wood,
 /area/ship/crew/hydroponics)
 "FQ" = (
@@ -3794,6 +3810,11 @@
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable{
 	icon_state = "0-2"
+	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_y = 12;
+	pixel_x = -20
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/bridge)
@@ -5149,10 +5170,6 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/siding/wood,
-/obj/machinery/light_switch{
-	pixel_x = -4;
-	pixel_y = 26
-	},
 /turf/open/floor/wood,
 /area/ship/crew/dorm)
 "SX" = (
@@ -5436,6 +5453,13 @@
 	},
 /turf/open/floor/wood,
 /area/ship/crew/library)
+"Vr" = (
+/obj/machinery/light_switch{
+	pixel_x = 6;
+	pixel_y = 23
+	},
+/turf/closed/wall/r_wall,
+/area/ship/engineering/atmospherics)
 "Vu" = (
 /obj/structure/chair/pew/left,
 /obj/effect/turf_decal/siding/wood{
@@ -5585,6 +5609,11 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/power/apc/auto_name/directional/east,
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_y = 11;
+	pixel_x = 19
+	},
 /turf/open/floor/wood,
 /area/ship/hallway/fore)
 "WB" = (
@@ -6739,7 +6768,7 @@ xj
 (21,1,1) = {"
 xj
 xj
-Uf
+Vr
 Ez
 jS
 QI

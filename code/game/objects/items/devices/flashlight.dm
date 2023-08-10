@@ -227,7 +227,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	flags_1 = CONDUCT_1
 	custom_materials = null
-	on = TRUE
+	on = FALSE
 	light_color = "#FFDDBB" //Cit lighting
 	light_power = 0.8 //Cit lighting
 
