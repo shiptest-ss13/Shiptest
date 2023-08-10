@@ -498,8 +498,6 @@ There are several things that need to be remembered:
 		overlays_standing[FACEMASK_LAYER] = mask_overlay
 
 	apply_overlay(FACEMASK_LAYER)
-	update_mutant_bodyparts() //e.g. upgate needed because mask now hides lizard snout
-
 
 /mob/living/carbon/human/update_inv_neck()
 	remove_overlay(NECK_LAYER)

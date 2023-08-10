@@ -55,62 +55,6 @@
 	uniform = /obj/item/clothing/under/rank/engineering/engineer/nt
 	head = /obj/item/clothing/head/hardhat
 
-/datum/outfit/job/engineer/electrician
-	name = "Station Engineer (Electrician)"
-
-	l_hand = /obj/item/storage/toolbox/electrical
-	gloves = /obj/item/clothing/gloves/color/grey
-	uniform = /obj/item/clothing/under/rank/engineering/engineer/electrician
-	alt_uniform = null
-	head = /obj/item/clothing/head/hardhat/orange
-
-/datum/outfit/job/engineer/enginetechnician
-	name = "Station Engineer (Engine Technician)"
-
-	uniform = /obj/item/clothing/under/rank/engineering/engineer/hazard
-	r_pocket = /obj/item/geiger_counter
-
-/datum/outfit/job/engineer/maintenancetechnician
-	name = "Station Engineer (Maintenance Technician)"
-
-	uniform = /obj/item/clothing/under/rank/engineering/engineer/maintenance_tech
-	alt_uniform = null
-	suit = /obj/item/clothing/suit/hazardvest
-	accessory = /obj/item/clothing/accessory/armband/engine
-	r_pocket = /obj/item/stack/cable_coil
-
-/datum/outfit/job/engineer/juniorengineer
-	name = "Station Engineer (Junior Engineer)"
-
-	uniform = /obj/item/clothing/under/rank/engineering/engineer/junior
-	alt_uniform = null
-	head = /obj/item/clothing/head/hardhat/orange
-
-/datum/outfit/job/engineer/seniorengineer
-	name = "Station Engineer (Senior Engineer)"
-
-	belt = null
-	uniform = /obj/item/clothing/under/suit/senior_engineer
-	alt_uniform = null
-	suit = /obj/item/clothing/suit/toggle/lawyer/orange
-	alt_suit = /obj/item/clothing/suit/hazardvest
-	dcoat = null
-	shoes = /obj/item/clothing/shoes/laceup
-	head = /obj/item/clothing/head/hardhat
-	neck = /obj/item/clothing/neck/tie/orange
-	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1)
-
-/datum/outfit/job/engineer/telecomsspecialist
-	name = "Station Engineer (Telecommunications Specialist)"
-
-	uniform = /obj/item/clothing/under/rank/engineering/engineer/telecomm_specialist
-	alt_uniform = null
-	head = /obj/item/clothing/head/hardhat/dblue
-
-//WS Edit End - Alt-Job Titles
-
-//Shiptest Outfits
-
 /datum/outfit/job/engineer/minutemen
 	name = "Mechanic (Colonial Minutemen)"
 
@@ -131,13 +75,6 @@
 
 	uniform = /obj/item/clothing/under/costume/sailor
 	head = /obj/item/clothing/head/bandana
-	shoes = /obj/item/clothing/shoes/jackboots
-
-/datum/outfit/job/engineer/corporate
-	name = "Ship's Engineer (Corporate)"
-
-	uniform = /obj/item/clothing/under/rank/engineering/engineer/maintenance_tech
-	glasses = /obj/item/clothing/glasses/sunglasses
 	shoes = /obj/item/clothing/shoes/jackboots
 
 /datum/outfit/job/engineer/hazard
@@ -183,7 +120,7 @@
 	head = /obj/item/clothing/head/hardhat/orange
 	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
 	ears = /obj/item/radio/headset/syndicate
-	mask = /obj/item/clothing/mask/chameleon
+	mask = /obj/item/clothing/mask/gas/syndicate/voicechanger
 	back = /obj/item/storage/backpack/industrial
 	belt = /obj/item/storage/belt/utility/syndicate
 	shoes = /obj/item/clothing/shoes/combat

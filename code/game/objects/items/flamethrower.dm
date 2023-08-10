@@ -296,7 +296,7 @@
 
 ///FLAMETHROWER PROJECTILE
 /obj/projectile/flamethrower
-	name = "\the flames"
+	name = "\proper flames"
 	damage = 0
 	speed = 1
 	hitsound = ""
