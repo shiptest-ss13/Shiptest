@@ -246,7 +246,7 @@
 	icon_state = "rockwall_icemoon-0"
 	base_icon_state = "rockwall_icemoon"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
-	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS)
+	canSmoothWith = list(SMOOTH_GROUP_MINERAL_WALLS)
 	environment_type = "snow_cavern"
 	turf_type = /turf/open/floor/plating/asteroid/icerock
 	baseturfs = /turf/open/floor/plating/asteroid/icerock
@@ -770,7 +770,7 @@
 	icon_state = "jungle_wall-0"
 	base_icon_state = "jungle_wall"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
-	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS)
+	canSmoothWith = list(SMOOTH_GROUP_MINERAL_WALLS)
 	turf_type = /turf/open/floor/plating/dirt/jungle
 	baseturfs = /turf/open/floor/plating/dirt/jungle
 	mineralSpawnChanceList = list(/obj/item/stack/ore/uranium = 8, /obj/item/stack/ore/diamond = 8, /obj/item/stack/ore/gold = 10,
@@ -778,6 +778,8 @@
 		/obj/item/stack/ore/bluespace_crystal = 5)
 
 /turf/closed/mineral/random/beach
+	name = "coastal marl"
+	desc = "Water eats away at the shoreline, forming rippling scars in softening grey."
 	baseturfs = /turf/open/floor/plating/asteroid/sand/dense
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 
