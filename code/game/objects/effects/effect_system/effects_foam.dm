@@ -48,13 +48,11 @@
 
 /obj/effect/particle_effect/foam/firefighting/kill_foam()
 	STOP_PROCESSING(SSfastprocess, src)
-
 	if(absorbed_plasma)
 		var/obj/effect/decal/cleanable/plasma/P = (locate(/obj/effect/decal/cleanable/plasma) in get_turf(src))
 		if(!P)
 			P = new(loc)
 		P.reagents.add_reagent(/datum/reagent/stable_plasma, absorbed_plasma)
-
 	flick("[icon_state]-disolve", src)
 	QDEL_IN(src, 5)
 
@@ -66,6 +64,29 @@
 
 /obj/effect/particle_effect/foam/firefighting/temperature_expose(datum/gas_mixture/air, exposed_temperature, exposed_volume)
 	return
+
+
+/obj/effect/particle_effect/foam/antirad
+	name = "antiradiation foam"
+	lifetime = 80
+	amount = 0 //no spread
+	slippery_foam = FALSE
+
+/obj/effect/particle_effect/foam/antirad/process()
+	..()
+
+	var/turf/open/T = get_turf(src)
+	var/obj/effect/radiation/rads = (locate(/obj/effect/radiation) in T)
+	if(rads && istype(T))
+		qdel(rads)
+
+/obj/effect/particle_effect/foam/antirad/kill_foam()
+	STOP_PROCESSING(SSfastprocess, src)
+	flick("[icon_state]-disolve", src)
+	QDEL_IN(src, 5)
+
+/obj/effect/particle_effect/foam/antirad/foam_mob(mob/living/L)
+	for()
 
 /obj/effect/particle_effect/foam/metal
 	name = "aluminium foam"
