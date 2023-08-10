@@ -279,6 +279,12 @@
 	list_reagents = list(/datum/reagent/drug/pumpup = 15)
 	icon_state = "maintenance"
 
+/obj/item/reagent_containers/hypospray/medipen/anti_rad
+	name = "emergency anti-radiation applicator"
+	desc = "A dangerous looking applicator with a decal of a radiation warning crossed out."
+	volume = 15
+	amount_per_transfer_from_this = 15
+	list_reagents = list(/datum/reagent/medicine/anti_rad = 15)
 
 /obj/item/reagent_containers/hypospray/medipen/bonefixingjuice
 	name = "rejuvenating agent injector"
