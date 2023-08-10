@@ -779,7 +779,7 @@
 
 /turf/closed/mineral/random/beach
 	name = "coastal marl"
-	desc = "Water eats away at the shoreline, forming rippling scars in softening grey."
+	desc = "Water eats away at the shoreline, forming rippling scars in softening stone."
 	baseturfs = /turf/open/floor/plating/asteroid/sand/dense
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 
