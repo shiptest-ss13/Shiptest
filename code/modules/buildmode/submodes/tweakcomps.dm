@@ -32,5 +32,3 @@
 	object.RefreshParts()
 
 	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Machine Upgrade", "[rating]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
-
-			
