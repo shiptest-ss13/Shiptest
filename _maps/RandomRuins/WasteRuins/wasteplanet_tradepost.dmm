@@ -500,7 +500,7 @@
 /area/ruin/wasteplanet/tradepost/center)
 "gI" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/spawner/wasteplanet/hivebot/high_threat,
+/obj/structure/spawner/wasteplanet/hivebot/low_threat,
 /turf/open/floor/pod,
 /area/ruin/wasteplanet/tradepost/center)
 "gP" = (
@@ -2053,10 +2053,6 @@
 	},
 /turf/open/floor/pod/light,
 /area/ruin/wasteplanet/tradepost)
-"yh" = (
-/mob/living/simple_animal/hostile/hivebot/wasteplanet/strong,
-/turf/open/floor/concrete/pavement/wasteplanet/lit,
-/area/overmap_encounter/planetoid/wasteplanet/explored)
 "yt" = (
 /obj/effect/decal/cleanable/oil/streak{
 	icon_state = "streak2"
@@ -2098,7 +2094,6 @@
 "zn" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable,
-/obj/structure/spawner/wasteplanet/hivebot/high_threat,
 /turf/open/floor/plating/wasteplanet/rust,
 /area/overmap_encounter/planetoid/cave/explored)
 "zo" = (
@@ -2534,7 +2529,7 @@
 	icon_state = "0-5"
 	},
 /obj/effect/turf_decal/industrial/warning/full,
-/obj/structure/spawner/wasteplanet/hivebot/extreme_threat,
+/obj/structure/spawner/wasteplanet/hivebot/low_threat,
 /turf/open/floor/plating/wasteplanet/rust,
 /area/overmap_encounter/planetoid/cave/explored)
 "El" = (
@@ -5006,7 +5001,7 @@ Ml
 em
 iq
 iq
-yh
+Wg
 zY
 em
 Ud
