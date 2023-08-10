@@ -16,15 +16,6 @@ Completed Suits
 	)
 	crate_name= "APLU MK-I crate"
 
-/datum/supply_pack/mech/clarke
-	name = "Surplus Clarke"
-	desc = "A powerful mining mech, long past it's sell-by date."
-	cost = 8000
-	contains = list(
-		/obj/mecha/working/clarke
-	)
-	crate_name = "Clarke crate"
-
 /*
 Build Your Own Suit
 */
@@ -89,7 +80,7 @@ Build Your Own Suit
 	contains = list(
 		/obj/item/mecha_parts/chassis/durand,
 		/obj/item/mecha_parts/part/durand_head,
-		/obj/item/mecha_parts/part/durand_torst,
+		/obj/item/mecha_parts/part/durand_torso,
 		/obj/item/mecha_parts/part/durand_left_arm,
 		/obj/item/mecha_parts/part/durand_right_arm,
 		/obj/item/mecha_parts/part/durand_left_leg,
