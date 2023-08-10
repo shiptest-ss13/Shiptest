@@ -183,7 +183,7 @@
 
 		//Detect any ships in this location we can dock to
 		if(istype(object))
-			for(var/obj/docking_port/stationary/docking_port in object.shuttle_port.docking_points)
+			for(var/obj/docking_port/stationary/docking_port as anything in object.shuttle_port.docking_points)
 				if(current_ship.shuttle_port.check_dock(docking_port, silent = TRUE))
 					available_dock = TRUE
 					break
