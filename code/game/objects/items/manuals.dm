@@ -242,7 +242,7 @@
 /obj/item/book/manual/trickwines_4_brewers
 	name = "Trickwines for brewers"
 	icon_state = "book2"
-	author = "Baxter Baxter"
+	author = "Bridget Saint-Baskett"
 	title = "Trickwines for brewers"
 	dat = {"<html>
 			<head>
@@ -305,9 +305,7 @@
 			Some of these can be a bit situatinal but its always nice to have a few in your bag for emergecys.<br>
 			As a bonus, most of the other factions have no clue how to make these so you can sell them for a fair chunk of cash.<br>
 
-
-			<br>Baxter Baxter, Senior Brewer<br>
-			P.S.: please stop asking how the uranium got into those flasks.
+			<br>Bridget Saint-Baskett, Senior Brewer<br>
 
 			</body>
 			</html>"}

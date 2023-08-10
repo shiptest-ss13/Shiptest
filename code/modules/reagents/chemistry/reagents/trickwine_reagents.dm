@@ -25,8 +25,10 @@
 /datum/reagent/consumable/ethanol/ash_wine/expose_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(method == TOUCH)
 		if(!iscarbon(M))
-			reac_volume = reac_volume * 2
-			M.Paralyze(reac_volume)
+			var/mob/living/simple_animal/hostile/hostile_target = M
+			var/hostile_ai_status = hostile_target.AIStatus
+			hostile_target.AIStatus = AI_OFF
+			addtimer(VARSET_CALLBACK(hostile_target, AIStatus, hostile_ai_status),reac_volume)
 		M.Jitter(3 * reac_volume)
 		M.Dizzy(2 * reac_volume)
 		M.set_drugginess(3 * reac_volume)
@@ -115,7 +117,6 @@
 		T.hotspot_expose((reac_volume*10),(reac_volume*1))
 		var/turf/otherT
 		for(var/direction in GLOB.cardinals)
-			reac_volume = reac_volume - 10
 			otherT = get_step(T, direction)
 			otherT.IgniteTurf(reac_volume)
 			new /obj/effect/hotspot(otherT)
@@ -145,13 +146,14 @@
 
 /datum/reagent/consumable/ethanol/force_wine/expose_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(method == TOUCH)
+		if(!iscarbon(M))
+			reac_volume = reac_volume * 2
 		var/turf/T = get_turf(M)
 		var/turf/otherT
-		reac_volume = reac_volume * 4
-		new /obj/effect/forcefield/resin(T, reac_volume)
+		new /obj/effect/forcefield/resin(T, reac_volume * 4)
 		for(var/direction in GLOB.cardinals)
 			otherT = get_step(T, direction)
-			new /obj/effect/forcefield/resin(otherT, reac_volume)
+			new /obj/effect/forcefield/resin(otherT, reac_volume * 4)
 
 /datum/reagent/consumable/ethanol/prism_wine
 	name = "Prismwine"
@@ -182,10 +184,11 @@
 			the_animal.armor.modifyRating(energy = 50)
 		if(ishuman(M))
 			var/mob/living/carbon/human/the_human = M
-			the_human.physiology.burn_mod *= 2
-			the_human.visible_message("<span class='warning'>[the_human] seemed weakend!</span>")
-			the_human.throw_alert("breakawayflask", /atom/movable/screen/alert/prism_wine_throw)
-			spawn(reac_volume SECONDS)
-				the_human.physiology.burn_mod = initial(the_human.physiology.burn_mod)
-				the_human.visible_message("<span class='warning'>[the_human] has returned to normal!</span>")
-				the_human.clear_alert("breakawayflask")
+			if(the_human.physiology.burn_mod <= 2)
+				the_human.physiology.burn_mod *= 2
+				the_human.visible_message("<span class='warning'>[the_human] seemed weakend!</span>")
+				the_human.throw_alert("breakawayflask", /atom/movable/screen/alert/prism_wine_throw)
+				spawn(reac_volume SECONDS)
+					the_human.physiology.burn_mod *= 0.5
+					the_human.visible_message("<span class='warning'>[the_human] has returned to normal!</span>")
+					the_human.clear_alert("breakawayflask")

@@ -521,7 +521,7 @@
 	. = ..()
 	icon_state = "[initial(icon_state)][rand(1,3)]"
 
-// Special tree used in chapel ship
+// Special tree used in chapel and srm ship
 /obj/structure/flora/tree/chapel
 	name = "sacred oak tree"
 	icon = 'icons/obj/flora/chapeltree.dmi'
