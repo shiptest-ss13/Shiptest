@@ -54,3 +54,4 @@ GLOBAL_LIST_INIT(podstyles, list(\
 	list(POD_SHAPE_OTHER, FALSE,		FALSE,	FALSE,			FALSE,		RUBBLE_NONE,	"\improper S.T.E.A.L.T.H. pod MKVII", "A supply pod that, under normal circumstances, is completely invisible to conventional methods of detection. How are you even seeing this?"),\
 	list(POD_SHAPE_OTHER, "gondola",	FALSE,	FALSE,			FALSE,		RUBBLE_NONE,	"gondola",	"The silent walker. This one seems to be part of a delivery agency."),\
 	list(POD_SHAPE_OTHER, FALSE,		FALSE,	FALSE,			FALSE,		RUBBLE_NONE,	FALSE,	FALSE,	"rl_click", "give_po")\
+))

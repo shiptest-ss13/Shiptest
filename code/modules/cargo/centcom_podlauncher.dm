@@ -21,7 +21,6 @@
 	set desc = "Configure and launch a CentCom supplypod full of whatever your heart desires!"
 	set category = "Admin.Events"
 	new /datum/centcom_podlauncher(usr)//create the datum
-	plaunch.ui_interact(usr)//datum has a tgui component, here we open the window
 
 //Variables declared to change how items in the launch bay are picked and launched. (Almost) all of these are changed in the ui_act proc
 //Some effect groups are choices, while other are booleans. This is because some effects can stack, while others dont (ex: you can stack explosion and quiet, but you cant stack ordered launch and random launch)
@@ -34,7 +33,6 @@
 	var/customDropoff = FALSE
 	var/picking_dropoff_turf = FALSE
 	var/launchClone = FALSE //If true, then we don't actually launch the thing in the bay. Instead we call duplicateObject() and send the result
-	var/launchRandomItem = FALSE //If true, lauches a single random item instead of everything on a turf.
 	var/launchChoice = LAUNCH_RANDOM //Determines if we launch all at once (0) , in order (1), or at random(2)
 	var/launchRandomItem = FALSE //If true, lauches a single random item instead of everything on a turf.
 	var/explosionChoice = 0 //Determines if there is no explosion (0), custom explosion (1), or just do a maxcap (2)
@@ -287,7 +285,7 @@
 				boomInput.Add(input("Enter the [expNames[i]] range of the explosion. WARNING: This ignores the bomb cap!", "[expNames[i]] Range",  0) as null|num)
 				if (isnull(boomInput[i]))
 					return
-				if (!isnum_safe(boomInput[i])) //If the user doesn't input a number, set that specific explosion value to zero
+				if (!isnum(boomInput[i])) //If the user doesn't input a number, set that specific explosion value to zero
 					alert(usr, "That wasn't a number! Value set to default (zero) instead.")
 					boomInput = 0
 			explosionChoice = 1
@@ -309,7 +307,7 @@
 			var/damageInput = input("Enter the amount of brute damage dealt by getting hit","How much damage to deal",  0) as null|num
 			if (isnull(damageInput))
 				return
-			if (!isnum_safe(damageInput)) //Sanitize the input for damage to deal.s
+			if (!isnum(damageInput)) //Sanitize the input for damage to deal.s
 				alert(usr, "That wasn't a number! Value set to default (zero) instead.")
 				damageInput = 0
 			damageChoice = 1
@@ -545,8 +543,8 @@
 		return
 	if (!forceClear && (launcherActivated || picking_dropoff_turf)) //If the launching param is true, we give the user new mouse icons.
 		if(launcherActivated)
-			holder.mouse_up_icon = 'icons/effects/supplypod_target.dmi' //Icon for when mouse is released
-			holder.mouse_down_icon = 'icons/effects/supplypod_down_target.dmi' //Icon for when mouse is pressed
+			holder.mouse_up_icon = 'icons/effects/mouse_pointers/supplypod_target.dmi' //Icon for when mouse is released
+			holder.mouse_down_icon = 'icons/effects/mouse_pointers/supplypod_down_target.dmi' //Icon for when mouse is pressed
 		else if(picking_dropoff_turf)
 			holder.mouse_up_icon = 'icons/effects/supplypod_pickturf.dmi' //Icon for when mouse is released
 			holder.mouse_down_icon = 'icons/effects/supplypod_pickturf_down.dmi' //Icon for when mouse is pressed

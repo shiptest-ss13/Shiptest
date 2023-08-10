@@ -92,6 +92,21 @@
 	var/turf/picked_turf = pick(GLOB.holdingfacility)
 	reverse_dropoff_coords = list(picked_turf.x, picked_turf.y, picked_turf.z)
 
+/obj/structure/closet/supplypod/proc/setStyle(chosenStyle) //Used to give the sprite an icon state, name, and description.
+	style = chosenStyle
+	var/base = GLOB.podstyles[chosenStyle][POD_BASE] //GLOB.podstyles is a 2D array we treat as a dictionary. The style represents the verticle index, with the icon state, name, and desc being stored in the horizontal indexes of the 2D array.
+	icon_state = base
+	decal = GLOB.podstyles[chosenStyle][POD_DECAL]
+	rubble_type = GLOB.podstyles[chosenStyle][POD_RUBBLE_TYPE]
+	if (!adminNamed && !specialised) //We dont want to name it ourselves if it has been specifically named by an admin using the centcom_podlauncher datum
+		name = GLOB.podstyles[chosenStyle][POD_NAME]
+		desc = GLOB.podstyles[chosenStyle][POD_DESC]
+	if (GLOB.podstyles[chosenStyle][POD_DOOR])
+		door = "[base]_door"
+	else
+		door = FALSE
+	update_icon()
+
 /obj/structure/closet/supplypod/proc/SetReverseIcon()
 	fin_mask = "bottomfin"
 	if (GLOB.podstyles[style][POD_SHAPE] == POD_SHAPE_NORML)
@@ -107,13 +122,6 @@
 	pixel_x = initial(pixel_x)
 	transform = matrix()
 	update_icon()
-
-/obj/structure/closet/supplypod/proc/SetReverseIcon()
-	fin_mask = "bottomfin"
-	if (POD_STYLES[style][POD_SHAPE] == POD_SHAPE_NORML)
-		icon_state = POD_STYLES[style][POD_BASE] + "_reverse"
-	pixel_x = initial(pixel_x) 
-	transform = matrix()
 
 /obj/structure/closet/supplypod/update_overlays()
 	. = ..()
@@ -293,7 +301,9 @@
 		if(!stay_after_drop) // Departing should be handled manually
 			addtimer(CALLBACK(src, .proc/startExitSequence, holder), delays[POD_LEAVING]*(4/5)) //Finish up the pod's duties after a certain amount of time
 
-/obj/structure/closet/supplypod/proc/depart(atom/movable/holder)
+/obj/structure/closet/supplypod/proc/startExitSequence(atom/movable/holder)
+	if (leavingSound)
+		playsound(get_turf(holder), leavingSound, soundVolume, FALSE, FALSE)
 	if (reversing) //If we're reversing, we call the close proc. This sends the pod back up to centcom
 		close(holder)
 	else if (bluespace) //If we're a bluespace pod, then delete ourselves (along with our holder, if a seperate holder exists)
@@ -384,13 +394,11 @@
 	return TRUE
 
 /obj/structure/closet/supplypod/proc/preReturn(atom/movable/holder)
-	if (leavingSound)
-		playsound(get_turf(holder), leavingSound, soundVolume, FALSE, FALSE)
 	deleteRubble()
-	animate(holder, alpha = 0, time = 8, easing = QUAD_EASING|EASE_IN, flags = ANIMATION_PARALLEL) 
+	animate(holder, alpha = 0, time = 8, easing = QUAD_EASING|EASE_IN, flags = ANIMATION_PARALLEL)
 	animate(holder, pixel_z = 400, time = 10, easing = QUAD_EASING|EASE_IN, flags = ANIMATION_PARALLEL) //Animate our rising pod
 
-	addtimer(CALLBACK(src, .proc/handleReturningClose, holder), 15) //Finish up the pod's duties after a certain amount of time
+	addtimer(CALLBACK(src, .proc/handleReturnAfterDeparting, holder), 15) //Finish up the pod's duties after a certain amount of time
 
 /obj/structure/closet/supplypod/setOpened() //Proc exists here, as well as in any atom that can assume the role of a "holder" of a supplypod. Check the open_pod() proc for more details
 	opened = TRUE
