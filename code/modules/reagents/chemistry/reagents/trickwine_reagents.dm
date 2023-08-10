@@ -125,7 +125,7 @@
 /datum/reagent/consumable/ethanol/force_wine
 	name = "Forcewine"
 	description = "A fortifying brew utilized by members of the Saint-Roumain Militia, created to protect against the esoteric. Known to act defensively when thrown."
-	color = "#8b008b"
+	color = "#8b009b"
 	boozepwr = 70
 	taste_description = "the strength of your convictions"
 	glass_name = "Forcewine"
