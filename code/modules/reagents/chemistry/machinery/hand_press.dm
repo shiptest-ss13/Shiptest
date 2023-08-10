@@ -1,5 +1,5 @@
 /obj/machinery/hand_press
-	name = "Pill Press"
+	name = "\improper Pill Press"
 	desc = "A press operated by hand to produce pills in a variety of forms."
 	icon = 'icons/obj/kitchen.dmi'
 	icon_state = "juicer1"
@@ -21,7 +21,6 @@
 	beaker = new /obj/item/reagent_containers/glass/beaker/large(src)
 
 /obj/machinery/hand_press/attackby(obj/item/I, mob/living/user, params)
-	. = ..()
 	if(default_unfasten_wrench(user, I))
 		return
 	//shamelessly yoinked from reagentgrinder.dm
