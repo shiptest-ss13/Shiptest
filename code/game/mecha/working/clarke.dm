@@ -1,4 +1,3 @@
-/*WS Edit - Removes Clarke
 ///Lavaproof, fireproof, fast mech with low armor and higher energy consumption, cannot strafe and has an internal ore box.
 /obj/mecha/working/clarke
 	desc = "Combining man and machine for a better, stronger engineer. Can even resist lava!"
@@ -98,5 +97,3 @@
 
 /obj/item/mecha_parts/mecha_equipment/orebox_manager/get_equip_info()
 	return "[..()] [hostmech?.box ? "<a href='?src=[REF(src)];mode=0'>Unload Cargo</a>" : "Error"]"
-
-WS End */
