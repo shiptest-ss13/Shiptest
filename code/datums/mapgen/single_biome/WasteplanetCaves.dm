@@ -11,7 +11,7 @@
 	open_turf_types = list(/turf/open/floor/plating/asteroid/wasteplanet = 50,
 						/turf/open/floor/plating/rust/wasteplanet = 10,
 						/turf/open/floor/plating/wasteplanet = 5)
-	closed_turf_types =  list(/turf/closed/mineral/random/asteroid/wasteplanet = 45,
+	closed_turf_types =  list(/turf/closed/mineral/random/wasteplanet = 45,
 							/turf/closed/wall/rust = 10,)
 
 	flora_spawn_list = list(
