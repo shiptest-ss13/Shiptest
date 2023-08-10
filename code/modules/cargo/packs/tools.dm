@@ -63,7 +63,7 @@
 /datum/supply_pack/tools/jackhammers
 	name = "Jackhammer Crate"
 	desc = "Contains two jackhammers, ideal for breaking rocks and breaking hull."
-	cost = 2000
+	cost = 3500
 	contains = list(
 		/obj/item/pickaxe/drill/jackhammer,
 		/obj/item/pickaxe/drill/jackhammer,
