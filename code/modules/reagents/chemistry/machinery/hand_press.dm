@@ -30,7 +30,7 @@
 		to_chat(user, "<span class='notice'>There's no container in [src]!.</span>")
 		return FALSE
 	if(beaker.reagents.total_volume == 0)
-		to_chat(user, "<span class='notice'>The [beaker] is empty!")
+		to_chat(user, "<span class='warning'>The [beaker] is empty!")
 		return FALSE
 	if(do_after(user, press_time, target = src))
 		var/obj/item/reagent_containers/pill/P
@@ -58,7 +58,7 @@
 		to_chat(user, "<span class='notice'>You add [B] to [src].</span>")
 		update_icon()
 		return TRUE //no afterattack
-	//combine with a shameless yoink from chem_master.dm
+	//another shameless yoink from chem_master.dm
 	else if(istype(I, /obj/item/storage/pill_bottle))
 		if(bottle)
 			to_chat(user, "<span class='warning'>A pill bottle is already loaded into [src]!</span>")
