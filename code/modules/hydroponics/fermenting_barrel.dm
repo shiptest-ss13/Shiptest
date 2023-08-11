@@ -81,6 +81,6 @@
 	time = 50
 	category = CAT_PRIMAL
 
-obj/structure/fermenting_barrel/distiller
+/obj/structure/fermenting_barrel/distiller
 	name = "Distiller"
 	desc = "Host to a special culture of bacteria native to Illestern"
