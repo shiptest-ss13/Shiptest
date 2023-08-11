@@ -88,27 +88,21 @@
 /obj/machinery/chem_press/proc/handle_container(mob/living/user, obj/item/new_container)
 	if(!user || !can_interact(user))
 		return FALSE
+	if(beaker)
+		if(Adjacent(src, user) && !issiliconoradminghost(user))
+			user.put_in_hands(beaker)
+		else
+			beaker.forceMove(get_turf(src))
+		beaker = null
 	if(istype(new_container, /obj/item/reagent_containers))
-		if(beaker)
-			if(Adjacent(src, user) && !issiliconoradminghost(user))
-				user.put_in_hands(beaker)
-			else
-				beaker.forceMove(get_turf(src))
-			beaker = null
-		if(new_container)
-			beaker = new_container
-		update_icon()
-		return TRUE
-	else if(istype(new_container, /obj/item/storage/pill_bottle))
-		if(bottle)
-			if(Adjacent(src, user) && !issiliconoradminghost(user))
-				user.put_in_hands(bottle)
-			else
-				bottle.forceMove(get_turf(src))
-			bottle = null
-		if(new_container)
-			bottle = new_container
-		update_icon()
-		return TRUE
-	else
-		return FALSE
+		beaker = new_container
+	if(bottle)
+		if(Adjacent(src, user) && !issiliconoradminghost(user))
+			user.put_in_hands(bottle)
+		else
+			bottle.forceMove(get_turf(src))
+		bottle = null
+	if(istype(new_container, /obj/item/storage/pill_bottle))
+		bottle = new_container
+	update_icon()
+	return TRUE
