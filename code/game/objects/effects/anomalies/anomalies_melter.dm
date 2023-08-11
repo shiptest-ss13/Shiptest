@@ -20,7 +20,7 @@
 			I.acid_act(20, 20)
 			I.update_icon()
 	for (var/obj/item/melt in range(effectrange, src))
-		if(mistype(melt, /obj/item/assembly/signaler/anomaly))
+		if(istype(melt, /obj/item/assembly/signaler/anomaly))
 			return
 		melt.acid_act(20, 10)
 		melt.update_icon()
