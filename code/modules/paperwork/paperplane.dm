@@ -52,22 +52,10 @@
 	internalPaper = null
 	return ..()
 
-/obj/item/paperplane/suicide_act(mob/living/user)
-	var/obj/item/organ/eyes/eyes = user.getorganslot(ORGAN_SLOT_EYES)
-	user.Stun(200)
-	user.visible_message("<span class='suicide'>[user] jams [src] in [user.p_their()] nose. It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	user.adjust_blurriness(6)
-	if(eyes)
-		eyes.applyOrganDamage(rand(6,8))
-	sleep(10)
-	return (BRUTELOSS)
-
 /obj/item/paperplane/update_overlays()
 	. = ..()
-	var/list/stamped = internalPaper.stamped
-	if(stamped)
-		for(var/S in stamped)
-			. += "paperplane_[S]"
+	for(var/stamp in internalPaper.stamp_cache)
+		. += "paperplane_[stamp]"
 
 /obj/item/paperplane/attack_self(mob/user)
 	to_chat(user, "<span class='notice'>You unfold [src].</span>")
@@ -126,7 +114,7 @@
 		return
 	if(istype(src, /obj/item/paper/carbon))
 		var/obj/item/paper/carbon/Carbon = src
-		if(!Carbon.iscopy && !Carbon.copied)
+		if(!Carbon.copied)
 			to_chat(user, "<span class='notice'>Take off the carbon copy first.</span>")
 			return
 	to_chat(user, "<span class='notice'>You fold [src] into the shape of a plane!</span>")

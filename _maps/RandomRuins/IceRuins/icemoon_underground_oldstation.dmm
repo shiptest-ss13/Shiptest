@@ -5,7 +5,7 @@
 "ab" = (
 /mob/living/simple_animal/hostile/asteroid/wolf,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/underground/unexplored)
+/area/overmap_encounter/planetoid/ice/explored)
 "ad" = (
 /turf/closed/wall/r_wall,
 /area/ruin/space/has_grav/ancientstation/deltaai)
@@ -312,7 +312,7 @@
 /area/ruin/space/has_grav/ancientstation)
 "bd" = (
 /turf/template_noop,
-/area/icemoon/underground/unexplored)
+/area/space)
 "be" = (
 /obj/structure/window/reinforced/spawner/north,
 /obj/structure/window/reinforced/spawner/west,
@@ -320,7 +320,7 @@
 /area/ruin/space/has_grav/ancientstation/deltaai)
 "bf" = (
 /turf/open/floor/plating/icemoon,
-/area/icemoon/underground/unexplored)
+/area/overmap_encounter/planetoid/ice/explored)
 "bg" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/corner/opaque/blue{
@@ -765,7 +765,7 @@
 "cs" = (
 /obj/item/stack/rods,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/underground/unexplored)
+/area/overmap_encounter/planetoid/ice/explored)
 "ct" = (
 /obj/structure/sign/poster/official/science,
 /turf/closed/wall,
@@ -1071,7 +1071,7 @@
 "dF" = (
 /obj/structure/lattice,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/underground/unexplored)
+/area/overmap_encounter/planetoid/ice/explored)
 "dG" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -1651,7 +1651,7 @@
 /turf/open/floor/plating/icemoon{
 	icon_state = "platingdmg1"
 	},
-/area/icemoon/underground/unexplored)
+/area/overmap_encounter/planetoid/ice/explored)
 "fg" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/corner/opaque/yellow{
@@ -2202,7 +2202,7 @@
 "gY" = (
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/underground/unexplored)
+/area/overmap_encounter/planetoid/ice/explored)
 "gZ" = (
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt,
@@ -3898,7 +3898,7 @@
 /area/ruin/space/has_grav/ancientstation/atmo)
 "lg" = (
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/underground/unexplored)
+/area/overmap_encounter/planetoid/ice/explored)
 "li" = (
 /obj/effect/spawner/structure/window/hollow/reinforced/end{
 	dir = 8
@@ -4054,14 +4054,14 @@
 /turf/open/floor/plating/icemoon{
 	icon_state = "platingdmg2"
 	},
-/area/icemoon/underground/unexplored)
+/area/overmap_encounter/planetoid/ice/explored)
 "lI" = (
 /obj/item/stack/rods,
 /obj/structure/window/reinforced,
 /turf/open/floor/plating/icemoon{
 	icon_state = "platingdmg2"
 	},
-/area/icemoon/underground/unexplored)
+/area/overmap_encounter/planetoid/ice/explored)
 "lJ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/clothing/suit/space/nasavoid/old,
@@ -4242,7 +4242,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/defibrillator,
 /obj/item/paper/fluff/ruins/oldstation/protosleep{
-	info = "<b>*Prototype Sleeper*</b><br><br>We have deliverted the lastest in medical technology to the medical bay for your use."
+	default_raw_text = "<b>*Prototype Sleeper*</b><br><br>We have deliverted the lastest in medical technology to the medical bay for your use."
 	},
 /obj/machinery/power/apc{
 	dir = 1;
@@ -5152,7 +5152,7 @@
 "oR" = (
 /obj/item/shard,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/underground/unexplored)
+/area/overmap_encounter/planetoid/ice/explored)
 "oS" = (
 /obj/effect/decal/cleanable/glass,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
@@ -5225,7 +5225,7 @@
 	icon_state = "small"
 	},
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/underground/unexplored)
+/area/overmap_encounter/planetoid/ice/explored)
 "pf" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -5437,7 +5437,7 @@
 "qR" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/mineral/random/snow,
-/area/icemoon/underground/unexplored)
+/area/overmap_encounter/planetoid/cave/explored)
 "qS" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/firedoor,
@@ -5575,7 +5575,7 @@
 /obj/structure/lattice,
 /obj/item/stack/rods,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/underground/unexplored)
+/area/overmap_encounter/planetoid/ice/explored)
 "te" = (
 /obj/machinery/door/airlock/maintenance_hatch{
 	dir = 4
@@ -5942,9 +5942,6 @@
 /obj/item/clothing/suit/armor/vest/old,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/sec)
-"we" = (
-/turf/closed/mineral/random/snow,
-/area/ruin/space/has_grav/ancientstation)
 "wf" = (
 /obj/structure/catwalk,
 /obj/structure/cable{
@@ -6080,7 +6077,7 @@
 /area/ruin/space/has_grav/ancientstation/deltacorridor)
 "xT" = (
 /turf/closed/mineral/random/snow,
-/area/icemoon/underground/unexplored)
+/area/overmap_encounter/planetoid/cave/explored)
 "xY" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/directional/west,
@@ -7577,7 +7574,7 @@
 	dir = 8
 	},
 /turf/open/floor/plating/icemoon,
-/area/ruin/space/has_grav/ancientstation/atmo)
+/area/overmap_encounter/planetoid/ice/explored)
 "Mh" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/directional/west,
@@ -7914,9 +7911,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/sec)
-"Pp" = (
-/turf/open/floor/plating/asteroid/snow/icemoon,
-/area/template_noop)
 "Pt" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/power/rad_collector,
@@ -8075,7 +8069,7 @@
 	icon_state = "small"
 	},
 /turf/open/floor/plating/icemoon,
-/area/icemoon/underground/unexplored)
+/area/overmap_encounter/planetoid/ice/explored)
 "QZ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
@@ -8144,6 +8138,9 @@
 /obj/structure/table,
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/ancientstation/proto)
+"RT" = (
+/turf/open/floor/plating/icemoon,
+/area/space)
 "RX" = (
 /obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
@@ -8237,7 +8234,7 @@
 /obj/item/stack/rods,
 /obj/structure/lattice,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/underground/unexplored)
+/area/overmap_encounter/planetoid/ice/explored)
 "Tf" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -8457,7 +8454,7 @@
 /obj/machinery/light/directional/east,
 /obj/structure/table/reinforced,
 /obj/item/paper/fluff/ruins/oldstation/protosing{
-	info = "fucking uhhh tesla                                    -I'll finish this later, Professor Fiddler";
+	default_raw_text = "fucking uhhh tesla                                    -I'll finish this later, Professor Fiddler";
 	name = "Tesla Generator"
 	},
 /turf/open/floor/plasteel/white,
@@ -8502,7 +8499,7 @@
 /turf/open/floor/plating/icemoon{
 	icon_state = "platingdmg3"
 	},
-/area/icemoon/underground/unexplored)
+/area/overmap_encounter/planetoid/ice/explored)
 "Wi" = (
 /obj/machinery/door/airlock/science{
 	dir = 8
@@ -9029,7 +9026,7 @@ aa
 aa
 aa
 gY
-UZ
+xT
 md
 ch
 ch
@@ -9176,9 +9173,9 @@ aa
 aa
 aa
 aa
-UZ
-UZ
-UZ
+xT
+xT
+xT
 ch
 zJ
 mV
@@ -10289,7 +10286,7 @@ lg
 lg
 lg
 lg
-Pp
+lg
 lg
 "}
 (31,1,1) = {"
@@ -10338,7 +10335,7 @@ lg
 lg
 lg
 lg
-Pp
+lg
 aa
 "}
 (32,1,1) = {"
@@ -10726,7 +10723,7 @@ kO
 bN
 lr
 pm
-we
+xT
 xT
 xT
 xT
@@ -10774,8 +10771,8 @@ bN
 bN
 bN
 pl
-we
-we
+xT
+xT
 xT
 xT
 xT
@@ -10824,7 +10821,7 @@ kP
 bT
 kp
 pj
-we
+xT
 xT
 xT
 xT
@@ -11237,8 +11234,8 @@ lg
 lg
 lg
 xT
-we
-we
+xT
+xT
 bN
 Go
 eJ
@@ -11286,8 +11283,8 @@ lg
 lg
 xT
 xT
-we
-we
+xT
+xT
 bN
 bN
 eJ
@@ -11335,8 +11332,8 @@ cs
 gY
 xT
 xT
-we
-we
+xT
+xT
 ci
 bL
 eJ
@@ -11541,7 +11538,7 @@ lg
 lg
 lg
 dF
-bf
+RT
 dF
 lg
 lg
@@ -11590,7 +11587,7 @@ lg
 lg
 lg
 dF
-bf
+RT
 dF
 dF
 dF
@@ -11639,7 +11636,7 @@ xT
 lg
 lg
 dF
-bf
+RT
 dF
 lg
 lg
@@ -11688,7 +11685,7 @@ xT
 xT
 lg
 dF
-bf
+RT
 dF
 lg
 lg

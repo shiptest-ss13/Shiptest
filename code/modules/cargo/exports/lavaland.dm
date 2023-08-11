@@ -42,8 +42,7 @@
 						/obj/item/freeze_cube,
 						/obj/item/clothing/gloves/gauntlets,
 						/obj/item/necromantic_stone/lava,
-						/obj/item/clothing/under/drip,
-						/obj/item/clothing/shoes/drip)
+						)
 
 //Megafauna loot, except for ash drakes and legion
 
@@ -57,7 +56,8 @@
 						/obj/item/mayhem,
 						/obj/item/blood_contract,
 						/obj/item/guardiancreator/miner/choose,//this is basically the most valulable mining loot so good luck getting a miner to part ways
-						/obj/item/gun/magic/staff/spellblade)
+						/obj/item/gun/magic/staff/spellblade,
+						)
 
 /datum/export/lavaland/trophycommon
 	cost = 1500

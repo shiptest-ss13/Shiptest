@@ -83,7 +83,8 @@ GLOBAL_LIST_INIT(marker_beacon_colors, sortList(list(
 
 /obj/structure/marker_beacon/Initialize(mapload, set_color)
 	. = ..()
-	picked_color = set_color
+	if(set_color)
+		picked_color = set_color
 	update_icon()
 
 /obj/structure/marker_beacon/deconstruct(disassembled = TRUE)

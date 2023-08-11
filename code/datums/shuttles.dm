@@ -19,6 +19,9 @@
 	var/list/name_categories = list("GENERAL")
 	var/prefix = "ISV"
 	var/unique_ship_access = FALSE
+	/// Set by config JSON. If true, the template's ships' "default" spawn location (when bought by a player or loaded at roundstart)
+	/// will be in the middle of space, instead of at an outpost.
+	var/space_spawn = FALSE
 
 	//how much money the ship starts with
 	var/starting_funds = 2000

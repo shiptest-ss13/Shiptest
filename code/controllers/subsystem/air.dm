@@ -264,6 +264,19 @@ SUBSYSTEM_DEF(air)
 	*/
 	currentpart = SSAIR_PIPENETS
 
+/datum/controller/subsystem/air/Recover()
+	hotspots = SSair.hotspots
+	networks = SSair.networks
+	rebuild_queue = SSair.rebuild_queue
+	expansion_queue = SSair.expansion_queue
+	atmos_machinery = SSair.atmos_machinery
+	atmos_air_machinery = SSair.atmos_air_machinery
+	pipe_init_dirs_cache = SSair.pipe_init_dirs_cache
+	gas_reactions = SSair.gas_reactions
+	high_pressure_delta = SSair.high_pressure_delta
+	currentrun = SSair.currentrun
+	deferred_airs = SSair.deferred_airs
+	string_mixes = SSair.string_mixes
 
 /**
  * Adds a given machine to the processing system for SSAIR_ATMOSMACHINERY processing.

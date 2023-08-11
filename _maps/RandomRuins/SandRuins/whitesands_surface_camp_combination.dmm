@@ -1,397 +1,161 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "aq" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood{
-	icon_state = "wood-broken5"
+/obj/structure/table/wood,
+/obj/item/reagent_containers/glass/bucket,
+/obj/item/reagent_containers/spray/weedspray{
+	pixel_x = 7
 	},
-/area/whitesands/surface/outdoors)
-"aG" = (
-/obj/structure/flora/ash/fern,
-/turf/open/floor/plating/asteroid/whitesands/grass{
-	light_range = 2
-	},
-/area/whitesands/surface/outdoors)
-"aK" = (
-/obj/structure/fence/cut/large,
-/turf/open/floor/plating/asteroid/whitesands/dried{
-	light_range = 2
-	},
-/area/whitesands/surface/outdoors)
-"aL" = (
-/obj/structure/girder/reinforced,
-/turf/open/floor/plating/asteroid/whitesands{
-	light_range = 2
-	},
-/area/whitesands/surface/outdoors)
-"aO" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/item/chair/stool/bar,
-/turf/open/floor/wood{
-	icon_state = "wood-broken5"
-	},
-/area/whitesands/surface/outdoors)
-"aZ" = (
-/obj/structure/chair/wood,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"bn" = (
-/obj/structure/flora/tree/tall/whitesands,
+/area/ruin)
+"aG" = (
+/obj/structure/fence{
+	dir = 8
+	},
+/obj/structure/fence{
+	dir = 8
+	},
 /turf/open/floor/plating/asteroid/whitesands/grass/dead{
 	light_range = 2
 	},
-/area/whitesands/surface/outdoors)
-"bO" = (
-/obj/structure/closet/crate/grave/loot,
-/obj/item/ammo_casing/shotgun/meteorslug,
+/area/overmap_encounter/planetoid/sand/explored)
+"aK" = (
+/obj/structure/table/wood/poker,
+/obj/item/chair/stool/bar,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood,
+/area/ruin)
+"aL" = (
+/obj/structure/flora/ash/puce,
 /turf/open/floor/plating/asteroid/whitesands{
 	light_range = 2
 	},
-/area/whitesands/surface/outdoors)
-"cI" = (
-/obj/structure/chair/wood,
-/turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"cX" = (
-/obj/effect/mob_spawn/human/corpse/charredskeleton,
-/obj/item/multitool/old,
+/area/overmap_encounter/planetoid/sand/explored)
+"aO" = (
+/obj/machinery/hydroponics/soil,
+/obj/item/shovel,
 /turf/open/floor/plating/asteroid/whitesands/dried{
 	light_range = 2
 	},
-/area/whitesands/surface/outdoors)
+/area/overmap_encounter/planetoid/sand/explored)
+"aZ" = (
+/obj/structure/flora/ash/cacti,
+/turf/open/floor/plating/asteroid/whitesands{
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/sand/explored)
+"bn" = (
+/obj/effect/spawner/structure/window,
+/turf/open/floor/plating,
+/area/ruin)
+"bO" = (
+/obj/structure/fence/post,
+/turf/open/floor/plating/asteroid/whitesands/dried{
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/sand/explored)
+"cI" = (
+/obj/item/clothing/glasses/thermal/eyepatch,
+/obj/effect/mob_spawn/human/corpse/charredskeleton,
+/turf/open/floor/plating/asteroid/whitesands{
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/sand/explored)
+"cX" = (
+/obj/structure/flora/ash/stem_shroom,
+/turf/open/floor/plating/asteroid/whitesands/dried{
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/sand/explored)
 "da" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/item/ammo_casing/a357,
-/turf/open/floor/wood{
-	icon_state = "wood-broken7"
-	},
-/area/whitesands/surface/outdoors)
+/obj/item/ammo_casing/shotgun/buckshot,
+/turf/open/floor/wood,
+/area/ruin)
 "dp" = (
-/obj/structure/fence/corner,
-/turf/open/floor/plating/asteroid/whitesands/grass/dead{
-	light_range = 2
-	},
-/area/whitesands/surface/outdoors)
+/obj/structure/reagent_dispensers/beerkeg,
+/turf/open/floor/wood,
+/area/ruin)
 "dv" = (
-/obj/effect/spawner/lootdrop/tool_engie_sydnie,
-/turf/open/floor/plating/asteroid/whitesands{
-	light_range = 2
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "floor3-old"
 	},
-/area/whitesands/surface/outdoors)
+/turf/open/floor/concrete,
+/area/ruin)
 "eo" = (
 /obj/structure/barricade/sandbags,
 /turf/open/floor/plating/asteroid/whitesands/dried{
 	light_range = 2
 	},
-/area/whitesands/surface/outdoors)
+/area/overmap_encounter/planetoid/sand/explored)
 "eq" = (
-/obj/item/spear,
-/obj/effect/mob_spawn/human/corpse/damaged/whitesands/survivor,
+/mob/living/simple_animal/hostile/asteroid/whitesands/survivor,
+/turf/open/floor/plating/asteroid/whitesands{
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/sand/explored)
+"er" = (
+/turf/open/floor/wood,
+/area/ruin)
+"eJ" = (
+/obj/machinery/door/window/northleft,
+/obj/item/circuitboard/machine/seed_extractor,
+/obj/structure/frame/machine,
+/obj/item/stack/cable_coil/cut/red,
+/turf/open/floor/wood,
+/area/ruin)
+"eP" = (
+/obj/machinery/hydroponics/soil,
+/turf/open/floor/concrete,
+/area/ruin)
+"eV" = (
+/obj/machinery/chem_dispenser/drinks/beer,
+/obj/structure/table/wood,
+/turf/open/floor/wood,
+/area/ruin)
+"fb" = (
+/obj/structure/flora/ash/cap_shroom,
+/obj/effect/spawner/lootdrop/maintenance,
+/turf/open/floor/plating/asteroid/whitesands{
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/sand/explored)
+"fe" = (
+/obj/effect/mob_spawn/human/corpse/damaged,
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "floor2-old"
+	},
 /turf/open/floor/plating/asteroid/whitesands/dried{
 	light_range = 2
 	},
-/area/whitesands/surface/outdoors)
-"er" = (
-/obj/structure/mineral_door/wood,
-/turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"eJ" = (
-/obj/structure/mineral_door/wood,
-/obj/effect/decal/cleanable/blood/old,
-/turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"eP" = (
-/turf/open/floor/concrete,
-/area/whitesands/surface/outdoors)
-"eV" = (
-/obj/effect/decal/cleanable/blood/old,
-/turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"fb" = (
-/obj/structure/closet/wardrobe/botanist,
-/turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"fe" = (
-/mob/living/simple_animal/hostile/asteroid/goliath/beast{
+/area/overmap_encounter/planetoid/sand/explored)
+"fn" = (
+/obj/structure/fence/door/opened,
+/turf/open/floor/plating/asteroid/whitesands/grass/dead{
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/sand/explored)
+"fJ" = (
+/obj/structure/fence/post{
 	dir = 1
 	},
-/turf/open/floor/plating/asteroid/whitesands/grass/dead{
+/turf/open/floor/plating/asteroid/whitesands{
 	light_range = 2
 	},
-/area/whitesands/surface/outdoors)
-"fn" = (
-/mob/living/simple_animal/hostile/asteroid/whitesands/ranged/gunslinger{
-	dir = 4;
-	faction = list("adobe")
-	},
-/turf/open/floor/concrete,
-/area/whitesands/surface/outdoors)
-"fJ" = (
-/obj/structure/table,
-/obj/item/reagent_containers/food/drinks/bottle/sarsaparilla,
-/turf/open/floor/concrete,
-/area/whitesands/surface/outdoors)
+/area/overmap_encounter/planetoid/sand/explored)
 "fM" = (
-/obj/item/ammo_casing/shotgun/buckshot,
-/obj/item/ammo_casing/shotgun/buckshot{
-	pixel_x = 5;
-	pixel_y = -3
-	},
-/obj/structure/destructible/tribal_torch/lit,
-/turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"fN" = (
-/obj/structure/table/wood/poker,
-/obj/item/chair/stool/bar,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"fO" = (
-/obj/structure/chair/plastic{
-	dir = 4
-	},
-/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
-	dir = 4;
-	faction = list("adobe")
-	},
-/turf/open/floor/plating/asteroid/whitesands/dried{
-	light_range = 2
-	},
-/area/whitesands/surface/outdoors)
-"gd" = (
-/obj/structure/closet/crate/bin,
-/obj/effect/spawner/lootdrop/maintenance,
-/obj/item/chair/stool/bar,
-/turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"gy" = (
-/obj/structure/chair/stool,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"gB" = (
-/obj/machinery/chem_master/condimaster,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"gC" = (
-/obj/structure/chair/stool/bar,
-/turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"gF" = (
-/turf/template_noop,
-/area/template_noop)
-"gL" = (
-/obj/structure/chair/stool/bar,
-/obj/machinery/light/directional/south,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"hr" = (
-/obj/structure/chair/stool/bar,
-/turf/open/floor/wood{
-	icon_state = "wood-broken5"
-	},
-/area/whitesands/surface/outdoors)
-"hK" = (
-/obj/effect/spawner/lootdrop/maintenance,
-/turf/open/floor/plating/asteroid/whitesands{
-	light_range = 2
-	},
-/area/whitesands/surface/outdoors)
-"hL" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood/old,
-/mob/living/simple_animal/hostile/asteroid/whitesands/ranged/hunter{
-	faction = list("saloon");
-	name = "Whitesands Bartender"
-	},
-/turf/open/floor/wood{
-	icon_state = "wood-broken5"
-	},
-/area/whitesands/surface/outdoors)
-"ig" = (
-/obj/structure/closet/crate/grave/loot,
-/turf/open/floor/plating/asteroid/whitesands{
-	light_range = 2
-	},
-/area/whitesands/surface/outdoors)
-"ii" = (
-/obj/structure/closet/crate/radiation,
-/obj/item/toy/plush/lizardplushie{
-	name = "Does-the-Dew";
-	pixel_x = 6;
-	desc = "An adorable stuffed toy that resembles a lizard. This one seems to enjoy slurpees in a double gulp cup!"
-	},
-/obj/item/reagent_containers/food/drinks/colocup{
-	pixel_x = -9;
-	list_reagents = list(/datum/reagent/toxin/leadacetate=5,/datum/reagent/toxin/acid/fluacid=5,/datum/reagent/toxin/acid/nitracid=5,/datum/reagent/drug/methamphetamine=5)
-	},
-/turf/open/floor/plating/asteroid/whitesands{
-	light_range = 2
-	},
-/area/whitesands/surface/outdoors)
-"iK" = (
-/obj/structure/flora/ash/cacti,
-/turf/open/floor/plating/asteroid/whitesands/dried{
-	light_range = 2
-	},
-/area/whitesands/surface/outdoors)
-"iL" = (
-/turf/open/floor/plating/asteroid/snow/lit/whitesands,
-/area/whitesands/surface/outdoors)
-"iQ" = (
-/turf/open/floor/plating/asteroid/whitesands/grass/dead{
-	light_range = 2
-	},
-/area/whitesands/surface/outdoors)
-"js" = (
-/obj/structure/sign/poster/official/high_class_martini,
-/turf/closed/wall/mineral/wood,
-/area/whitesands/surface/outdoors)
-"jx" = (
-/obj/structure/table/wood/poker,
-/turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"jz" = (
-/obj/item/stack/sheet/mineral/plasma/twenty,
-/obj/structure/table,
-/turf/open/floor/concrete,
-/area/whitesands/surface/outdoors)
-"ki" = (
+/obj/machinery/chem_dispenser/drinks,
 /obj/structure/table/wood,
-/obj/item/spacecash/bundle/c500{
-	pixel_x = 3;
-	pixel_y = 3
-	},
 /turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"km" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/structure/window,
-/turf/open/floor/plating,
-/area/whitesands/surface/outdoors)
-"ko" = (
+/area/ruin)
+"fN" = (
 /obj/structure/table/wood/poker,
 /obj/item/reagent_containers/food/drinks/beer,
 /turf/open/floor/wood{
 	icon_state = "wood-broken5"
 	},
-/area/whitesands/surface/outdoors)
-"kD" = (
-/obj/effect/decal/cleanable/blood/old,
-/turf/open/floor/wood{
-	icon_state = "wood-broken7"
-	},
-/area/whitesands/surface/outdoors)
-"kK" = (
-/obj/structure/bonfire/prelit,
-/turf/open/floor/plating/asteroid/whitesands/dried{
-	light_range = 2
-	},
-/area/whitesands/surface/outdoors)
-"kO" = (
-/turf/closed/mineral/random/whitesands,
-/area/whitesands/surface/outdoors)
-"kP" = (
-/obj/item/trash/can{
-	pixel_y = -6
-	},
-/turf/open/floor/plating/asteroid/whitesands/dried{
-	light_range = 2
-	},
-/area/whitesands/surface/outdoors)
-"lb" = (
-/obj/structure/chair/plastic{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/remains/human,
-/obj/effect/decal/cleanable/blood/old,
-/turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"lc" = (
-/obj/machinery/hydroponics/soil,
-/turf/open/floor/concrete,
-/area/whitesands/surface/outdoors)
-"lG" = (
-/obj/structure/flora/ash/cap_shroom,
-/turf/open/floor/plating/asteroid/whitesands/dried{
-	light_range = 2
-	},
-/area/whitesands/surface/outdoors)
-"lJ" = (
-/obj/machinery/hydroponics/soil,
-/obj/item/cultivator/rake,
-/turf/open/floor/plating/asteroid/whitesands/dried{
-	light_range = 2
-	},
-/area/whitesands/surface/outdoors)
-"mr" = (
-/obj/structure/chair/stool/bar,
-/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
-	dir = 8;
-	faction = list("saloon")
-	},
-/turf/open/floor/wood{
-	icon_state = "wood-broken5"
-	},
-/area/whitesands/surface/outdoors)
-"ms" = (
-/obj/structure/reagent_dispensers/watertank/high,
-/turf/open/floor/plating/asteroid/whitesands/dried{
-	light_range = 2
-	},
-/area/whitesands/surface/outdoors)
-"mv" = (
-/obj/structure/flora/ash/puce,
-/turf/open/floor/plating/asteroid/whitesands/dried{
-	light_range = 2
-	},
-/area/whitesands/surface/outdoors)
-"mx" = (
-/obj/structure/reagent_dispensers/beerkeg,
-/turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"mV" = (
-/obj/effect/mob_spawn/human/corpse/charredskeleton,
-/turf/open/floor/plating/asteroid/whitesands{
-	light_range = 2
-	},
-/area/whitesands/surface/outdoors)
-"nx" = (
-/obj/effect/decal/cleanable/blood/old{
-	icon_state = "floor3-old"
-	},
-/turf/open/floor/concrete,
-/area/whitesands/surface/outdoors)
-"nE" = (
-/obj/structure/chair/stool/bar,
-/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
-	dir = 1;
-	faction = list("saloon")
-	},
-/turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"nK" = (
-/obj/structure/flora/ash/cap_shroom,
-/obj/effect/spawner/lootdrop/maintenance,
-/turf/open/floor/plating/asteroid/whitesands{
-	light_range = 2
-	},
-/area/whitesands/surface/outdoors)
-"nN" = (
-/obj/structure/fence{
-	dir = 8
-	},
-/obj/structure/fence{
-	dir = 8
-	},
-/turf/open/floor/plating/asteroid/whitesands/grass/dead{
-	light_range = 2
-	},
-/area/whitesands/surface/outdoors)
-"nV" = (
+/area/ruin)
+"fO" = (
 /obj/structure/chair/plastic,
 /mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
 	faction = list("adobe")
@@ -399,112 +163,253 @@
 /turf/open/floor/plating/asteroid/whitesands{
 	light_range = 2
 	},
-/area/whitesands/surface/outdoors)
-"nW" = (
-/obj/structure/destructible/tribal_torch/lit,
-/turf/open/floor/plating/asteroid/whitesands{
-	light_range = 2
-	},
-/area/whitesands/surface/outdoors)
-"nZ" = (
-/obj/structure/table/wood/poker,
-/obj/item/toy/cards/deck/syndicate,
+/area/overmap_encounter/planetoid/sand/explored)
+"gd" = (
+/obj/item/stack/sheet/mineral/gold/five,
+/obj/structure/table,
+/turf/open/floor/concrete,
+/area/ruin)
+"gy" = (
+/obj/structure/mineral_door/wood,
 /turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"ox" = (
-/obj/structure/fence/door/opened,
-/turf/open/floor/plating/asteroid/whitesands/grass/dead{
-	light_range = 2
+/area/ruin)
+"gB" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood{
+	icon_state = "wood-broken6"
 	},
-/area/whitesands/surface/outdoors)
-"oA" = (
-/obj/structure/bonfire/prelit,
-/turf/open/floor/plating/asteroid/whitesands{
-	light_range = 2
-	},
-/area/whitesands/surface/outdoors)
-"oB" = (
+/area/ruin)
+"gC" = (
 /obj/structure/table/wood,
-/obj/item/reagent_containers/food/drinks/bottle/absinthe,
 /turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"oL" = (
+/area/ruin)
+"gF" = (
+/turf/template_noop,
+/area/template_noop)
+"gL" = (
+/obj/structure/chair/stool/bar,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood,
+/area/ruin)
+"hr" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/ammo_casing/a357,
 /turf/open/floor/wood{
 	icon_state = "wood-broken7"
 	},
-/area/whitesands/surface/outdoors)
-"pC" = (
-/turf/open/acid/whitesands,
-/area/whitesands/surface/outdoors)
-"pJ" = (
-/obj/structure/fence/cut/medium,
-/turf/open/floor/plating/asteroid/whitesands/dried{
+/area/ruin)
+"hK" = (
+/obj/structure/girder/reinforced,
+/turf/open/floor/plating/asteroid/whitesands{
 	light_range = 2
 	},
-/area/whitesands/surface/outdoors)
-"pK" = (
-/obj/structure/fence,
-/turf/open/floor/plating/asteroid/whitesands/dried{
+/area/overmap_encounter/planetoid/sand/explored)
+"hL" = (
+/obj/effect/decal/cleanable/blood/old,
+/turf/open/floor/wood,
+/area/ruin)
+"ig" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/ruin)
+"ii" = (
+/obj/item/ammo_box/aac_300blk_stripper,
+/turf/open/floor/wood,
+/area/ruin)
+"iK" = (
+/turf/open/floor/plating/asteroid/whitesands/grass/dead{
 	light_range = 2
 	},
-/area/whitesands/surface/outdoors)
-"ql" = (
-/turf/closed/wall/rust,
-/area/whitesands/surface/outdoors)
-"qx" = (
-/obj/machinery/hydroponics/soil,
-/obj/item/shovel,
-/turf/open/floor/plating/asteroid/whitesands/dried{
+/area/overmap_encounter/planetoid/sand/explored)
+"iL" = (
+/obj/structure/statue/snow/snowman,
+/obj/item/kitchen/knife/shiv/carrot,
+/turf/open/floor/plating/asteroid/snow/lit/whitesands,
+/area/overmap_encounter/planetoid/sand/explored)
+"iQ" = (
+/obj/structure/flora/ash/fern,
+/turf/open/floor/plating/asteroid/whitesands/grass/dead{
 	light_range = 2
 	},
-/area/whitesands/surface/outdoors)
-"qB" = (
+/area/overmap_encounter/planetoid/sand/explored)
+"js" = (
+/obj/machinery/light/directional/south,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood{
+	icon_state = "wood-broken7"
+	},
+/area/ruin)
+"jx" = (
+/obj/structure/table/wood/poker,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood{
+	icon_state = "wood-broken5"
+	},
+/area/ruin)
+"jz" = (
+/obj/machinery/chem_master/condimaster{
+	desc = "Used to mix booze. You can see a Coondimaster label lazily covered up.";
+	name = "Hoochmaster 2000"
+	},
+/turf/open/floor/wood,
+/area/ruin)
+"ki" = (
 /obj/item/shard{
 	icon_state = "tiny"
 	},
 /obj/item/shard,
+/obj/item/shard,
+/turf/open/floor/plating,
+/area/ruin)
+"km" = (
+/obj/structure/girder/reinforced,
+/turf/open/floor/plating/asteroid/whitesands/dried{
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/sand/explored)
+"ko" = (
+/obj/structure/closet/crate/bin,
+/obj/effect/spawner/lootdrop/maintenance,
+/obj/item/chair/stool/bar,
+/turf/open/floor/wood,
+/area/ruin)
+"kD" = (
+/obj/item/shard{
+	icon_state = "tiny"
+	},
+/obj/item/shard{
+	icon_state = "medium"
+	},
+/obj/item/shard,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/ruin)
+"kK" = (
+/turf/open/floor/plating/asteroid/whitesands{
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/sand/explored)
+"kO" = (
+/obj/effect/spawner/lootdrop/maintenance,
+/turf/open/floor/plating/asteroid/whitesands{
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/sand/explored)
+"kP" = (
+/obj/structure/bonfire/prelit,
+/turf/open/floor/plating/asteroid/whitesands{
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/sand/explored)
+"lb" = (
+/obj/machinery/hydroponics/soil,
+/turf/open/floor/plating/asteroid/whitesands/grass/dead{
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/sand/explored)
+"lc" = (
+/obj/structure/falsewall/sandstone,
+/turf/open/floor/plating/asteroid/whitesands/dried{
+	light_range = 2
+	},
+/area/ruin)
+"lG" = (
+/obj/structure/flora/ash/stem_shroom,
+/turf/open/floor/plating/asteroid/whitesands{
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/sand/explored)
+"lJ" = (
+/obj/structure/fence/corner,
+/turf/open/floor/plating/asteroid/whitesands/grass/dead{
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/sand/explored)
+"mr" = (
+/obj/structure/fence/cut/large{
+	dir = 8
+	},
+/turf/open/floor/plating/asteroid/whitesands/dried{
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/sand/explored)
+"ms" = (
+/obj/item/shard{
+	icon_state = "tiny"
+	},
 /obj/item/shard{
 	icon_state = "small"
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
-/area/whitesands/surface/outdoors)
-"qU" = (
-/turf/open/floor/plating/asteroid/whitesands/grass{
-	light_range = 2
-	},
-/area/whitesands/surface/outdoors)
-"rx" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood{
-	icon_state = "wood-broken6"
-	},
-/area/whitesands/surface/outdoors)
-"sc" = (
-/obj/machinery/hydroponics/soil,
-/turf/open/floor/plating/asteroid/whitesands/grass/dead{
-	light_range = 2
-	},
-/area/whitesands/surface/outdoors)
-"sw" = (
-/obj/effect/spawner/lootdrop/armory_contraband/metastation,
+/area/ruin)
+"mv" = (
 /turf/open/floor/plating/asteroid/whitesands/dried{
 	light_range = 2
 	},
-/area/whitesands/surface/outdoors)
-"sy" = (
-/obj/structure/flora/ash/stem_shroom,
+/area/overmap_encounter/planetoid/sand/explored)
+"mx" = (
+/obj/structure/sign/poster/official/high_class_martini,
+/turf/closed/wall/mineral/wood,
+/area/ruin)
+"mV" = (
+/obj/effect/mob_spawn/human/corpse/charredskeleton,
+/obj/item/multitool/old,
+/turf/open/floor/plating/asteroid/whitesands/dried{
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/sand/explored)
+"nx" = (
+/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
+	dir = 4;
+	faction = list("adobe")
+	},
+/turf/open/floor/plating/asteroid/whitesands/dried{
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/sand/explored)
+"nE" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/drinks/bottle/absinthe,
+/turf/open/floor/wood,
+/area/ruin)
+"nK" = (
+/obj/structure/closet/crate/grave/loot,
 /turf/open/floor/plating/asteroid/whitesands{
 	light_range = 2
 	},
-/area/whitesands/surface/outdoors)
-"sD" = (
-/obj/structure/fence/post,
+/area/overmap_encounter/planetoid/sand/explored)
+"nN" = (
+/obj/structure/fence,
+/turf/open/floor/plating/asteroid/whitesands/grass/dead{
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/sand/explored)
+"nV" = (
+/obj/structure/fence/corner{
+	dir = 8
+	},
 /turf/open/floor/plating/asteroid/whitesands/dried{
 	light_range = 2
 	},
-/area/whitesands/surface/outdoors)
-"sG" = (
+/area/overmap_encounter/planetoid/sand/explored)
+"nW" = (
+/obj/machinery/biogenerator,
+/obj/machinery/door/window/northleft,
+/turf/open/floor/wood,
+/area/ruin)
+"nZ" = (
+/obj/structure/table,
+/obj/item/clothing/glasses/meson/gar,
+/turf/open/floor/concrete,
+/area/ruin)
+"ox" = (
+/obj/structure/flora/ash/cacti,
+/turf/open/floor/plating/asteroid/whitesands/dried{
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/sand/explored)
+"oA" = (
 /obj/item/cigbutt{
 	pixel_x = -3;
 	pixel_y = -1
@@ -516,150 +421,471 @@
 /turf/open/floor/plating/asteroid/whitesands{
 	light_range = 2
 	},
-/area/whitesands/surface/outdoors)
-"sJ" = (
-/obj/structure/flora/rock,
-/turf/open/floor/plating/asteroid/whitesands{
-	light_range = 2
+/area/overmap_encounter/planetoid/sand/explored)
+"oB" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/blood/old,
+/mob/living/simple_animal/hostile/asteroid/whitesands/ranged/hunter{
+	faction = list("saloon");
+	name = "Whitesands Bartender"
 	},
-/area/whitesands/surface/outdoors)
-"tq" = (
+/turf/open/floor/wood{
+	icon_state = "wood-broken5"
+	},
+/area/ruin)
+"oL" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/drinks/bottle/sarsaparilla,
 /turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"tM" = (
-/obj/effect/mob_spawn/human/corpse/damaged,
-/obj/effect/decal/cleanable/blood/old{
-	icon_state = "floor2-old"
-	},
+/area/ruin)
+"pC" = (
+/obj/structure/flora/rock,
 /turf/open/floor/plating/asteroid/whitesands/dried{
 	light_range = 2
 	},
-/area/whitesands/surface/outdoors)
-"tQ" = (
-/obj/machinery/chem_dispenser/drinks,
-/obj/structure/table/wood,
-/turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"ue" = (
-/obj/structure/table,
-/obj/item/gun/ballistic/automatic/pistol/m1911,
+/area/overmap_encounter/planetoid/sand/explored)
+"pJ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/structure/window,
+/turf/open/floor/plating,
+/area/ruin)
+"pK" = (
+/obj/structure/barricade/sandbags,
 /turf/open/floor/concrete,
-/area/whitesands/surface/outdoors)
-"uf" = (
+/area/ruin)
+"ql" = (
+/turf/closed/mineral/random/whitesands,
+/area/overmap_encounter/planetoid/sand/explored)
+"qx" = (
 /obj/structure/bed/roller{
 	color = "#4B5320"
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried{
 	light_range = 2
 	},
-/area/whitesands/surface/outdoors)
-"ui" = (
-/obj/structure/flora/ash/cacti,
-/turf/open/floor/plating/asteroid/whitesands{
-	light_range = 2
-	},
-/area/whitesands/surface/outdoors)
-"uw" = (
-/obj/item/clothing/head/cowboy{
-	pixel_x = -17
-	},
-/obj/effect/decal/remains/human,
-/obj/item/clothing/mask/gas/clown_hat,
-/obj/effect/decal/cleanable/blood/old,
-/obj/item/ammo_casing/a357{
-	pixel_x = 9;
-	pixel_y = 5
-	},
-/obj/item/gun/ballistic/derringer{
-	pixel_y = -13
-	},
+/area/overmap_encounter/planetoid/sand/explored)
+"qB" = (
+/obj/structure/chair/stool/bar,
+/turf/open/floor/wood,
+/area/ruin)
+"qU" = (
 /turf/open/floor/plating/asteroid/whitesands/grass{
 	light_range = 2
 	},
-/area/whitesands/surface/outdoors)
-"uV" = (
-/obj/structure/barricade/sandbags,
+/area/overmap_encounter/planetoid/sand/explored)
+"rx" = (
+/obj/structure/chair/plastic{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood{
+	icon_state = "wood-broken5"
+	},
+/area/ruin)
+"sc" = (
+/obj/structure/fence,
 /turf/open/floor/plating/asteroid/whitesands{
 	light_range = 2
 	},
-/area/whitesands/surface/outdoors)
+/area/overmap_encounter/planetoid/sand/explored)
+"sw" = (
+/obj/structure/chair/stool/bar,
+/obj/machinery/light/directional/south,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood,
+/area/ruin)
+"sy" = (
+/obj/structure/flora/rock,
+/turf/open/floor/plating/asteroid/whitesands{
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/sand/explored)
+"sD" = (
+/obj/structure/fence{
+	dir = 8
+	},
+/turf/open/floor/plating/asteroid/whitesands{
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/sand/explored)
+"sG" = (
+/obj/structure/table/wood,
+/obj/machinery/light/directional/south,
+/obj/item/clothing/mask/cigarette/cigar/havana{
+	pixel_x = 1;
+	pixel_y = 4
+	},
+/turf/open/floor/wood,
+/area/ruin)
+"sJ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/barricade/wooden,
+/turf/open/floor/plating,
+/area/ruin)
+"tq" = (
+/obj/item/ammo_casing/shotgun/buckshot,
+/obj/item/ammo_casing/shotgun/buckshot{
+	pixel_x = 5;
+	pixel_y = -3
+	},
+/obj/structure/destructible/tribal_torch/lit,
+/turf/open/floor/wood,
+/area/ruin)
+"tM" = (
+/turf/closed/wall/mineral/sandstone,
+/area/ruin)
+"tQ" = (
+/obj/structure/sign/poster/contraband/smoke,
+/turf/closed/wall/mineral/wood,
+/area/ruin)
+"ue" = (
+/obj/structure/closet/cabinet,
+/obj/item/storage/box/rubbershot{
+	pixel_x = -5;
+	pixel_y = 5
+	},
+/obj/item/gun/ballistic/shotgun/doublebarrel,
+/turf/open/floor/wood,
+/area/ruin)
+"uf" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/storage/bottles/sandblast,
+/turf/open/floor/wood,
+/area/ruin)
+"ui" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/chair/stool/bar,
+/turf/open/floor/wood{
+	icon_state = "wood-broken5"
+	},
+/area/ruin)
+"uw" = (
+/obj/structure/destructible/tribal_torch/lit,
+/turf/open/floor/concrete,
+/area/ruin)
+"uV" = (
+/mob/living/simple_animal/hostile/asteroid/goliath/beast,
+/turf/open/floor/plating/asteroid/whitesands/dried{
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/sand/explored)
 "vh" = (
 /obj/machinery/hydroponics/soil,
 /turf/open/floor/plating/asteroid/whitesands{
 	light_range = 2
 	},
-/area/whitesands/surface/outdoors)
+/area/overmap_encounter/planetoid/sand/explored)
 "vz" = (
-/obj/item/stack/sheet/mineral/gold/five,
-/obj/structure/table,
-/turf/open/floor/concrete,
-/area/whitesands/surface/outdoors)
+/obj/item/shard{
+	icon_state = "tiny"
+	},
+/obj/item/shard{
+	icon_state = "small"
+	},
+/obj/item/shard{
+	icon_state = "medium"
+	},
+/turf/open/floor/plating,
+/area/ruin)
 "vL" = (
-/mob/living/simple_animal/hostile/asteroid/goliath/beast,
+/obj/structure/reagent_dispensers/watertank,
+/turf/open/floor/concrete,
+/area/ruin)
+"we" = (
+/mob/living/simple_animal/hostile/asteroid/whitesands/survivor,
 /turf/open/floor/plating/asteroid/whitesands/dried{
 	light_range = 2
 	},
-/area/whitesands/surface/outdoors)
-"we" = (
+/area/overmap_encounter/planetoid/sand/explored)
+"wU" = (
+/obj/structure/barricade/wooden,
+/turf/open/floor/plating,
+/area/ruin)
+"wX" = (
+/turf/closed/wall/mineral/wood,
+/area/ruin)
+"xg" = (
+/obj/structure/table/wood,
+/obj/item/chair/stool/bar,
+/turf/open/floor/wood,
+/area/ruin)
+"xr" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/stool/bar,
+/turf/open/floor/wood,
+/area/ruin)
+"xB" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/chair/stool/bar,
+/turf/open/floor/wood,
+/area/ruin)
+"yb" = (
+/obj/effect/mob_spawn/human/corpse/charredskeleton,
+/turf/open/floor/plating/asteroid/whitesands{
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/sand/explored)
+"yc" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood{
+	icon_state = "wood-broken7"
+	},
+/area/ruin)
+"yh" = (
+/obj/machinery/hydroponics/soil,
+/obj/item/cultivator/rake,
+/turf/open/floor/plating/asteroid/whitesands/dried{
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/sand/explored)
+"ym" = (
+/obj/structure/tank_dispenser/oxygen,
+/turf/open/floor/concrete,
+/area/ruin)
+"yt" = (
+/obj/machinery/vending/classicbeats,
+/turf/open/floor/wood,
+/area/ruin)
+"yy" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/destructible/tribal_torch/lit,
+/turf/open/floor/wood,
+/area/ruin)
+"yZ" = (
+/obj/item/spear,
+/obj/effect/mob_spawn/human/corpse/damaged/whitesands/survivor,
+/turf/open/floor/plating/asteroid/whitesands/dried{
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/sand/explored)
+"zh" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/blood/old,
+/turf/open/floor/wood,
+/area/ruin)
+"zj" = (
+/obj/structure/table/wood,
+/obj/machinery/reagentgrinder,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood,
+/area/ruin)
+"zw" = (
 /obj/structure/fence{
 	dir = 8
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried{
 	light_range = 2
 	},
-/area/whitesands/surface/outdoors)
-"wU" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/item/stack/sheet/mineral/wood,
-/obj/structure/destructible/tribal_torch/lit,
-/turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"wX" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/destructible/tribal_torch/lit,
-/turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"xg" = (
-/obj/structure/table,
-/obj/item/gun/ballistic/automatic/smg/aks74u,
-/obj/item/ammo_box/magazine/aks74u,
-/turf/open/floor/concrete,
-/area/whitesands/surface/outdoors)
-"xr" = (
-/turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"xB" = (
-/turf/open/floor/wood{
-	icon_state = "wood-broken5"
-	},
-/area/whitesands/surface/outdoors)
-"yb" = (
-/obj/structure/musician/piano,
-/turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"yc" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/barricade/wooden,
-/turf/open/floor/plating,
-/area/whitesands/surface/outdoors)
-"yh" = (
-/obj/structure/sign/poster/official/no_erp,
-/turf/closed/wall/mineral/wood,
-/area/whitesands/surface/outdoors)
-"ym" = (
+/area/overmap_encounter/planetoid/sand/explored)
+"zB" = (
 /mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
 	dir = 1;
 	faction = list("adobe")
 	},
 /turf/open/floor/concrete,
-/area/whitesands/surface/outdoors)
-"yt" = (
-/obj/structure/barricade/wooden,
-/turf/open/floor/plating,
-/area/whitesands/surface/outdoors)
-"yy" = (
+/area/ruin)
+"AC" = (
+/mob/living/simple_animal/hostile/asteroid/whitesands/ranged/gunslinger{
+	dir = 4;
+	faction = list("adobe")
+	},
+/turf/open/floor/concrete,
+/area/ruin)
+"AH" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/drinks/bottle/sarsaparilla,
+/turf/open/floor/wood{
+	icon_state = "wood-broken5"
+	},
+/area/ruin)
+"AI" = (
+/obj/structure/bed,
+/obj/item/bedsheet/dorms,
+/turf/open/floor/wood,
+/area/ruin)
+"AR" = (
+/mob/living/simple_animal/hostile/asteroid/whitesands/ranged/hunter,
+/turf/open/floor/plating/asteroid/whitesands{
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/sand/explored)
+"AW" = (
+/obj/structure/table/wood,
+/obj/item/candle/infinite,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood,
+/area/ruin)
+"Bp" = (
+/obj/machinery/vending/cigarette,
+/turf/open/floor/wood{
+	icon_state = "wood-broken5"
+	},
+/area/ruin)
+"Bw" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood,
+/area/ruin)
+"BI" = (
+/obj/structure/closet/wardrobe/botanist,
+/turf/open/floor/wood,
+/area/ruin)
+"Ca" = (
+/turf/open/floor/plating/asteroid/snow/lit/whitesands,
+/area/overmap_encounter/planetoid/sand/explored)
+"CB" = (
+/obj/machinery/light/directional/south,
+/obj/structure/chair/stool/bar,
+/turf/open/floor/wood,
+/area/ruin)
+"Dd" = (
+/obj/structure/table/wood/poker,
+/obj/item/reagent_containers/food/drinks/bottle/grappa,
+/turf/open/floor/wood,
+/area/ruin)
+"Df" = (
+/obj/structure/table,
+/obj/item/gun/ballistic/rifle/boltaction/polymer,
+/turf/open/floor/concrete,
+/area/ruin)
+"Di" = (
+/obj/structure/destructible/tribal_torch/lit,
+/turf/open/floor/plating/asteroid/whitesands{
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/sand/explored)
+"Dl" = (
+/turf/open/floor/concrete,
+/area/ruin)
+"DA" = (
+/obj/structure/flora/ash/fern,
+/turf/open/floor/plating/asteroid/whitesands/grass{
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/sand/explored)
+"DO" = (
+/obj/item/stack/sheet/mineral/titanium/fifty,
+/obj/structure/table,
+/turf/open/floor/concrete,
+/area/ruin)
+"DP" = (
+/obj/structure/sign/poster/contraband/random,
+/turf/closed/wall/mineral/wood,
+/area/ruin)
+"DT" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/blood/old,
+/obj/item/clothing/head/collectable/tophat{
+	pixel_y = 7
+	},
+/obj/effect/decal/remains/human,
+/turf/open/floor/wood,
+/area/ruin)
+"Ed" = (
+/obj/item/chair/stool/bar,
+/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
+	dir = 1;
+	faction = list("saloon")
+	},
+/turf/open/floor/wood,
+/area/ruin)
+"Ef" = (
+/mob/living/simple_animal/hostile/asteroid/whitesands/ranged/hunter{
+	dir = 4;
+	faction = list("adobe")
+	},
+/turf/open/floor/concrete,
+/area/ruin)
+"El" = (
+/obj/structure/table/wood,
+/obj/machinery/reagentgrinder,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood{
+	icon_state = "wood-broken5"
+	},
+/area/ruin)
+"Eq" = (
+/obj/item/chair/stool/bar,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood,
+/area/ruin)
+"Fu" = (
+/obj/structure/closet/cabinet,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/reagent_containers/glass/bottle/morphine,
+/obj/item/reagent_containers/syringe,
+/turf/open/floor/wood,
+/area/ruin)
+"FC" = (
+/obj/structure/barricade/sandbags,
+/turf/open/floor/plating/asteroid/whitesands{
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/sand/explored)
+"FD" = (
+/obj/structure/chair/plastic{
+	dir = 8
+	},
+/turf/open/floor/plating/asteroid/whitesands/dried{
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/sand/explored)
+"FN" = (
+/obj/structure/sign/poster/random,
+/turf/closed/wall/mineral/wood,
+/area/ruin)
+"Gd" = (
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "floor5-old"
+	},
+/turf/open/floor/concrete,
+/area/ruin)
+"GC" = (
+/obj/structure/closet/crate/grave/loot,
+/obj/item/ammo_casing/shotgun/meteorslug,
+/turf/open/floor/plating/asteroid/whitesands{
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/sand/explored)
+"GG" = (
+/obj/effect/decal/cleanable/blood/old,
+/turf/open/floor/concrete,
+/area/ruin)
+"GJ" = (
+/obj/structure/table,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/tank/internals/emergency_oxygen/double,
+/turf/open/floor/concrete,
+/area/ruin)
+"Hb" = (
+/obj/structure/table/wood,
+/obj/item/spacecash/bundle/c500{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/turf/open/floor/wood,
+/area/ruin)
+"Hc" = (
+/obj/structure/table/wood,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood{
+	icon_state = "wood-broken5"
+	},
+/area/ruin)
+"Hi" = (
+/obj/item/reagent_containers/food/drinks/bottle/sarsaparilla,
+/turf/open/floor/plating/asteroid/whitesands/dried{
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/sand/explored)
+"Hn" = (
+/obj/structure/closet/secure_closet/hydroponics,
+/obj/item/circuitboard/machine/plantgenes,
+/obj/item/gun/ballistic/rifle/boltaction/polymer,
+/turf/open/floor/wood,
+/area/ruin)
+"HP" = (
 /obj/structure/closet/crate/hydroponics,
 /obj/item/seeds/apple,
 /obj/item/seeds/banana,
@@ -688,59 +914,63 @@
 /obj/item/seeds/watermelon,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"yZ" = (
-/obj/structure/closet/cabinet,
-/obj/item/storage/bag/money,
-/turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"zh" = (
-/obj/structure/table/wood,
-/turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"zj" = (
-/obj/machinery/biogenerator,
-/obj/machinery/door/window/northleft,
-/turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"zw" = (
-/obj/effect/spawner/lootdrop/maintenance,
+/area/ruin)
+"HX" = (
+/obj/effect/spawner/lootdrop/armory_contraband/metastation,
 /turf/open/floor/plating/asteroid/whitesands/dried{
 	light_range = 2
 	},
-/area/whitesands/surface/outdoors)
-"zB" = (
-/obj/structure/falsewall/sandstone,
-/turf/open/floor/plating/asteroid/whitesands/dried{
-	light_range = 2
-	},
-/area/whitesands/surface/outdoors)
-"AC" = (
-/turf/closed/wall/mineral/sandstone,
-/area/whitesands/surface/outdoors)
-"AH" = (
-/obj/structure/table/wood,
-/obj/machinery/reagentgrinder,
+/area/overmap_encounter/planetoid/sand/explored)
+"Ig" = (
+/obj/structure/table,
+/obj/item/gun/ballistic/automatic/pistol/m1911,
+/turf/open/floor/concrete,
+/area/ruin)
+"Io" = (
+/obj/structure/chair/wood,
 /obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood,
+/area/ruin)
+"Ir" = (
+/obj/structure/sign/poster/official/cohiba_robusto_ad,
+/turf/closed/wall/mineral/wood,
+/area/ruin)
+"IR" = (
+/obj/structure/chair/plastic{
+	dir = 4
+	},
+/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
+	dir = 4;
+	faction = list("adobe")
+	},
+/turf/open/floor/plating/asteroid/whitesands/dried{
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/sand/explored)
+"Ji" = (
+/obj/effect/decal/cleanable/blood/old,
+/turf/open/floor/wood{
+	icon_state = "wood-broken7"
+	},
+/area/ruin)
+"Jq" = (
 /turf/open/floor/wood{
 	icon_state = "wood-broken5"
 	},
-/area/whitesands/surface/outdoors)
-"AI" = (
-/mob/living/simple_animal/hostile/asteroid/whitesands/survivor,
+/area/ruin)
+"Jx" = (
+/obj/structure/bonfire/prelit,
 /turf/open/floor/plating/asteroid/whitesands/dried{
 	light_range = 2
 	},
-/area/whitesands/surface/outdoors)
-"AR" = (
-/obj/structure/sign/departments/botany,
-/turf/closed/wall/mineral/wood,
-/area/whitesands/surface/outdoors)
-"AW" = (
-/obj/structure/sign/poster/official/cohiba_robusto_ad,
-/turf/closed/wall/mineral/wood,
-/area/whitesands/surface/outdoors)
-"Bp" = (
+/area/overmap_encounter/planetoid/sand/explored)
+"JE" = (
+/obj/effect/spawner/lootdrop/tool_engie_sydnie,
+/turf/open/floor/plating/asteroid/whitesands{
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/sand/explored)
+"JI" = (
 /obj/item/shard{
 	icon_state = "tiny"
 	},
@@ -752,168 +982,93 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
-/area/whitesands/surface/outdoors)
-"Bw" = (
-/obj/item/shard{
-	icon_state = "tiny"
-	},
-/obj/item/shard{
-	icon_state = "medium"
-	},
-/obj/item/shard,
-/turf/open/floor/plating,
-/area/whitesands/surface/outdoors)
-"BI" = (
-/obj/structure/fence/corner{
-	dir = 8
-	},
+/area/ruin)
+"JJ" = (
+/obj/structure/destructible/tribal_torch/lit,
+/turf/open/floor/wood,
+/area/ruin)
+"KH" = (
+/obj/structure/reagent_dispensers/watertank/high,
 /turf/open/floor/plating/asteroid/whitesands/dried{
 	light_range = 2
 	},
-/area/whitesands/surface/outdoors)
-"Ca" = (
-/obj/structure/statue/snow/snowman,
-/obj/item/kitchen/knife/shiv/carrot,
-/turf/open/floor/plating/asteroid/snow/lit/whitesands,
-/area/whitesands/surface/outdoors)
-"CB" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood/old,
-/obj/item/clothing/head/collectable/tophat{
-	pixel_y = 7
-	},
-/obj/effect/decal/remains/human,
-/turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"Dd" = (
-/obj/item/clothing/glasses/thermal/eyepatch,
-/obj/effect/mob_spawn/human/corpse/charredskeleton,
-/turf/open/floor/plating/asteroid/whitesands{
-	light_range = 2
-	},
-/area/whitesands/surface/outdoors)
-"Df" = (
-/obj/structure/reagent_dispensers/watertank,
-/turf/open/floor/concrete,
-/area/whitesands/surface/outdoors)
-"Di" = (
-/mob/living/simple_animal/hostile/asteroid/whitesands/ranged/hunter,
-/turf/open/floor/plating/asteroid/whitesands{
-	light_range = 2
-	},
-/area/whitesands/surface/outdoors)
-"Dl" = (
-/obj/structure/mineral_door/sandstone,
-/turf/open/floor/concrete,
-/area/whitesands/surface/outdoors)
-"DA" = (
-/obj/structure/chair/plastic{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood{
-	icon_state = "wood-broken5"
-	},
-/area/whitesands/surface/outdoors)
-"DO" = (
-/obj/item/chair/stool/bar,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"DP" = (
-/obj/structure/flora/ash/stem_shroom,
-/turf/open/floor/plating/asteroid/whitesands/dried{
-	light_range = 2
-	},
-/area/whitesands/surface/outdoors)
-"DT" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood/old,
-/turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"Ed" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/item/ammo_casing/shotgun/buckshot,
-/turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"Ef" = (
-/obj/structure/barricade/sandbags,
-/turf/open/floor/concrete,
-/area/whitesands/surface/outdoors)
-"El" = (
-/obj/item/stack/sheet/mineral/uranium/five,
+/area/overmap_encounter/planetoid/sand/explored)
+"KJ" = (
 /obj/structure/table,
+/obj/item/gun/ballistic/automatic/smg/aks74u,
+/obj/item/ammo_box/magazine/aks74u,
 /turf/open/floor/concrete,
-/area/whitesands/surface/outdoors)
-"Eq" = (
-/obj/structure/table/wood/poker,
-/obj/item/reagent_containers/food/drinks/bottle/grappa,
-/turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"Fu" = (
-/obj/structure/girder/reinforced,
+/area/ruin)
+"Ld" = (
+/obj/structure/flora/ash/puce,
 /turf/open/floor/plating/asteroid/whitesands/dried{
 	light_range = 2
 	},
-/area/whitesands/surface/outdoors)
-"FC" = (
-/obj/effect/spawner/structure/window,
-/turf/open/floor/plating,
-/area/whitesands/surface/outdoors)
-"FD" = (
-/obj/structure/chair/plastic{
-	dir = 8
+/area/overmap_encounter/planetoid/sand/explored)
+"Lj" = (
+/obj/item/trash/can{
+	pixel_y = -6
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried{
 	light_range = 2
 	},
-/area/whitesands/surface/outdoors)
-"FN" = (
-/obj/machinery/vending/cigarette,
-/turf/open/floor/wood{
-	icon_state = "wood-broken5"
-	},
-/area/whitesands/surface/outdoors)
-"Gd" = (
+/area/overmap_encounter/planetoid/sand/explored)
+"LA" = (
+/obj/structure/chair/stool/bar,
 /obj/effect/decal/cleanable/blood/old,
-/turf/open/floor/concrete,
-/area/whitesands/surface/outdoors)
-"GC" = (
-/obj/structure/flora/ash/fern,
+/turf/open/floor/wood,
+/area/ruin)
+"LB" = (
+/obj/structure/flora/tree/tall/whitesands,
 /turf/open/floor/plating/asteroid/whitesands/grass/dead{
 	light_range = 2
 	},
-/area/whitesands/surface/outdoors)
-"GG" = (
-/obj/structure/chair/stool/bar,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"GJ" = (
-/obj/structure/closet/cabinet,
-/obj/item/storage/box/rubbershot{
-	pixel_x = -5;
+/area/overmap_encounter/planetoid/sand/explored)
+"MS" = (
+/obj/item/clothing/head/cowboy{
+	pixel_x = -17
+	},
+/obj/effect/decal/remains/human,
+/obj/item/clothing/mask/gas/clown_hat,
+/obj/effect/decal/cleanable/blood/old,
+/obj/item/ammo_casing/a357{
+	pixel_x = 9;
 	pixel_y = 5
 	},
-/obj/item/gun/ballistic/shotgun/doublebarrel,
+/obj/item/gun/ballistic/derringer{
+	pixel_y = -13
+	},
+/turf/open/floor/plating/asteroid/whitesands/grass{
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/sand/explored)
+"MX" = (
+/obj/structure/closet/crate/radiation,
+/obj/item/toy/plush/lizardplushie{
+	name = "Does-the-Dew";
+	pixel_x = 6;
+	desc = "An adorable stuffed toy that resembles a lizard. This one seems to enjoy slurpees in a double gulp cup!"
+	},
+/obj/item/reagent_containers/food/drinks/colocup{
+	pixel_x = -9;
+	list_reagents = list(/datum/reagent/toxin/leadacetate=5,/datum/reagent/toxin/acid/fluacid=5,/datum/reagent/toxin/acid/nitracid=5,/datum/reagent/drug/methamphetamine=5)
+	},
+/turf/open/floor/plating/asteroid/whitesands{
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/sand/explored)
+"Ng" = (
+/obj/structure/table/wood/poker,
 /turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"Hb" = (
-/obj/structure/sign/poster/contraband/smoke,
-/turf/closed/wall/mineral/wood,
-/area/whitesands/surface/outdoors)
-"Hc" = (
-/obj/item/shard{
-	icon_state = "tiny"
-	},
-/obj/item/shard{
-	icon_state = "medium"
-	},
-/obj/item/shard,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
-/area/whitesands/surface/outdoors)
-"Hi" = (
+/area/ruin)
+"Nn" = (
+/obj/structure/chair/wood,
+/turf/open/floor/wood,
+/area/ruin)
+"Ok" = (
+/turf/open/acid/whitesands,
+/area/overmap_encounter/planetoid/sand/explored)
+"Ov" = (
 /obj/item/clothing/head/cowboy{
 	pixel_x = 13
 	},
@@ -931,138 +1086,127 @@
 /turf/open/floor/plating/asteroid/whitesands/grass{
 	light_range = 2
 	},
-/area/whitesands/surface/outdoors)
-"Hn" = (
-/obj/item/ammo_box/aac_300blk_stripper,
+/area/overmap_encounter/planetoid/sand/explored)
+"OZ" = (
+/turf/closed/wall/rust,
+/area/overmap_encounter/planetoid/sand/explored)
+"Pi" = (
+/turf/open/floor/wood{
+	icon_state = "wood-broken7"
+	},
+/area/ruin)
+"Px" = (
+/obj/structure/closet/cabinet,
+/obj/item/storage/bag/money,
 /turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"HP" = (
+/area/ruin)
+"PX" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/stack/sheet/mineral/wood,
+/obj/structure/destructible/tribal_torch/lit,
+/turf/open/floor/wood,
+/area/ruin)
+"Qs" = (
+/obj/structure/flora/ash/tall_shroom,
+/turf/open/floor/plating/asteroid/whitesands{
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/sand/explored)
+"QD" = (
+/obj/item/stack/sheet/mineral/wood,
+/obj/item/stack/sheet/mineral/wood,
+/turf/open/floor/wood{
+	icon_state = "wood-broken5"
+	},
+/area/ruin)
+"QQ" = (
+/obj/structure/chair/stool,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood,
+/area/ruin)
+"Ra" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood{
+	icon_state = "wood-broken5"
+	},
+/area/ruin)
+"Re" = (
+/obj/machinery/chem_master/condimaster,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood,
+/area/ruin)
+"RC" = (
 /obj/structure/table/wood,
 /obj/item/gun/energy/floragun,
 /obj/item/storage/bag/plants/portaseeder,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"HX" = (
+/area/ruin)
+"RY" = (
+/obj/structure/mineral_door/wood,
+/obj/effect/decal/cleanable/blood/old,
+/turf/open/floor/wood,
+/area/ruin)
+"Sq" = (
 /obj/structure/table/wood/poker,
-/obj/item/toy/cards/deck,
+/obj/item/toy/cards/deck/syndicate,
 /turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"Ig" = (
-/obj/structure/destructible/tribal_torch/lit,
-/turf/open/floor/concrete,
-/area/whitesands/surface/outdoors)
-"Io" = (
-/obj/structure/table/wood,
-/obj/item/candle/infinite,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"Ir" = (
-/obj/machinery/chem_master/condimaster{
-	desc = "Used to mix booze. You can see a Coondimaster label lazily covered up.";
-	name = "Hoochmaster 2000"
-	},
-/turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"IR" = (
-/obj/structure/table/wood,
-/obj/machinery/reagentgrinder,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"Ji" = (
-/obj/item/shard{
-	icon_state = "tiny"
-	},
-/obj/item/shard,
-/obj/item/shard,
-/turf/open/floor/plating,
-/area/whitesands/surface/outdoors)
-"Jq" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/item/chair/stool/bar,
-/turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"Jx" = (
-/turf/open/floor/plating,
-/area/whitesands/surface/outdoors)
-"JE" = (
-/turf/closed/wall/mineral/titanium/survival/pod,
-/area/whitesands/surface/outdoors)
-"JI" = (
-/obj/structure/fence,
-/turf/open/floor/plating/asteroid/whitesands/grass/dead{
-	light_range = 2
-	},
-/area/whitesands/surface/outdoors)
-"JJ" = (
-/obj/machinery/door/window/northleft,
-/obj/item/circuitboard/machine/seed_extractor,
-/obj/structure/frame/machine,
-/obj/item/stack/cable_coil/cut/red,
-/turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"KH" = (
-/obj/structure/fence,
-/turf/open/floor/plating/asteroid/whitesands{
-	light_range = 2
-	},
-/area/whitesands/surface/outdoors)
-"KJ" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/item/storage/bottles/sandblast,
-/turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"Ld" = (
+/area/ruin)
+"Sy" = (
+/obj/structure/flora/ash/cap_shroom,
 /turf/open/floor/plating/asteroid/whitesands/dried{
 	light_range = 2
 	},
-/area/whitesands/surface/outdoors)
-"Lj" = (
-/obj/structure/chair/stool/bar,
-/obj/effect/decal/cleanable/blood/old,
-/turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"LA" = (
+/area/overmap_encounter/planetoid/sand/explored)
+"SK" = (
+/obj/structure/fence,
+/turf/open/floor/plating/asteroid/whitesands/dried{
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/sand/explored)
+"SV" = (
+/obj/effect/spawner/lootdrop/maintenance,
+/turf/open/floor/plating/asteroid/whitesands/dried{
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/sand/explored)
+"Td" = (
+/obj/structure/table/wood,
+/obj/item/watertank,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/chair/stool/bar,
-/turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"LB" = (
+/turf/open/floor/wood{
+	icon_state = "wood-broken7"
+	},
+/area/ruin)
+"Tk" = (
+/obj/structure/sign/poster/contraband/gec,
+/turf/closed/wall/mineral/sandstone,
+/area/ruin)
+"Tl" = (
+/obj/structure/table,
+/obj/item/ammo_box/aac_300blk_stripper,
+/obj/item/ammo_box/aac_300blk_stripper,
+/turf/open/floor/concrete,
+/area/ruin)
+"TH" = (
 /mob/living/simple_animal/hostile/asteroid/whitesands/ranged/hunter{
-	dir = 4;
 	faction = list("adobe")
 	},
 /turf/open/floor/concrete,
-/area/whitesands/surface/outdoors)
-"MS" = (
-/mob/living/simple_animal/hostile/asteroid/whitesands/survivor,
-/turf/open/floor/plating/asteroid/whitesands{
-	light_range = 2
-	},
-/area/whitesands/surface/outdoors)
-"MX" = (
-/obj/structure/table/wood,
+/area/ruin)
+"UO" = (
 /obj/item/chair/stool/bar,
 /turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"Ng" = (
-/obj/structure/destructible/tribal_torch/lit,
-/turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"Nn" = (
-/obj/structure/table/wood,
-/obj/item/candle/infinite,
-/turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"Ok" = (
-/obj/structure/flora/ash/tall_shroom,
-/turf/open/floor/plating/asteroid/whitesands/dried{
-	light_range = 2
+/area/ruin)
+"UT" = (
+/obj/structure/chair/stool/bar,
+/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
+	dir = 1;
+	faction = list("saloon")
 	},
-/area/whitesands/surface/outdoors)
-"Ov" = (
+/turf/open/floor/wood,
+/area/ruin)
+"Vq" = (
 /obj/structure/chair/stool/bar,
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
@@ -1070,312 +1214,202 @@
 	faction = list("saloon")
 	},
 /turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"OZ" = (
-/obj/structure/flora/ash/puce,
-/turf/open/floor/plating/asteroid/whitesands{
-	light_range = 2
-	},
-/area/whitesands/surface/outdoors)
-"Pi" = (
-/obj/structure/table/wood/poker,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood{
-	icon_state = "wood-broken5"
-	},
-/area/whitesands/surface/outdoors)
-"Px" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"PX" = (
-/obj/item/stack/sheet/mineral/wood,
-/obj/item/stack/sheet/mineral/wood,
-/turf/open/floor/wood{
-	icon_state = "wood-broken5"
-	},
-/area/whitesands/surface/outdoors)
-"Qs" = (
-/obj/structure/flora/ash/cap_shroom,
-/turf/open/floor/plating/asteroid/whitesands{
-	light_range = 2
-	},
-/area/whitesands/surface/outdoors)
-"QD" = (
-/obj/structure/closet/secure_closet/hydroponics,
-/obj/item/circuitboard/machine/plantgenes,
-/obj/item/gun/ballistic/rifle/boltaction/polymer,
-/turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"QQ" = (
-/obj/machinery/vending/classicbeats,
-/turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"Ra" = (
-/obj/item/shard{
-	icon_state = "tiny"
-	},
-/obj/item/shard{
-	icon_state = "small"
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
-/area/whitesands/surface/outdoors)
-"Re" = (
-/obj/structure/table/wood,
-/obj/item/watertank,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood{
-	icon_state = "wood-broken7"
-	},
-/area/whitesands/surface/outdoors)
-"RC" = (
-/obj/structure/table/wood,
-/obj/item/reagent_containers/glass/bucket,
-/obj/item/reagent_containers/spray/weedspray{
-	pixel_x = 7
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"RY" = (
-/obj/machinery/chem_dispenser/drinks/beer,
-/obj/structure/table/wood,
-/turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"Sq" = (
-/mob/living/simple_animal/hostile/asteroid/whitesands/ranged/hunter{
-	faction = list("adobe")
-	},
-/turf/open/floor/concrete,
-/area/whitesands/surface/outdoors)
-"Sy" = (
-/obj/structure/flora/rock,
+/area/ruin)
+"Vr" = (
+/obj/structure/fence/cut/large,
 /turf/open/floor/plating/asteroid/whitesands/dried{
 	light_range = 2
 	},
-/area/whitesands/surface/outdoors)
-"SK" = (
-/obj/machinery/light/directional/south,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood{
-	icon_state = "wood-broken7"
-	},
-/area/whitesands/surface/outdoors)
-"SV" = (
+/area/overmap_encounter/planetoid/sand/explored)
+"VF" = (
 /obj/structure/table/wood,
-/obj/machinery/light/directional/south,
-/obj/item/clothing/mask/cigarette/cigar/havana{
-	pixel_x = 1;
-	pixel_y = 4
-	},
+/obj/item/candle/infinite,
 /turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"Td" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood{
-	icon_state = "wood-broken7"
-	},
-/area/whitesands/surface/outdoors)
-"Tk" = (
-/obj/structure/closet/cabinet,
-/obj/effect/decal/cleanable/dirt,
-/obj/item/reagent_containers/glass/bottle/morphine,
-/obj/item/reagent_containers/syringe,
-/turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"Tl" = (
-/obj/structure/sign/poster/contraband/gec,
-/turf/closed/wall/mineral/sandstone,
-/area/whitesands/surface/outdoors)
-"TH" = (
-/obj/structure/table,
-/obj/item/ammo_box/aac_300blk_stripper,
-/obj/item/ammo_box/aac_300blk_stripper,
-/turf/open/floor/concrete,
-/area/whitesands/surface/outdoors)
-"UO" = (
-/obj/structure/table/wood,
-/obj/item/reagent_containers/food/drinks/bottle/sarsaparilla,
-/turf/open/floor/wood{
-	icon_state = "wood-broken5"
-	},
-/area/whitesands/surface/outdoors)
-"UT" = (
-/obj/structure/sign/poster/contraband/random,
-/turf/closed/wall/mineral/wood,
-/area/whitesands/surface/outdoors)
-"Vq" = (
-/obj/structure/fence{
+/area/ruin)
+"VT" = (
+/obj/structure/chair/plastic{
 	dir = 8
 	},
-/turf/open/floor/plating/asteroid/whitesands{
-	light_range = 2
-	},
-/area/whitesands/surface/outdoors)
-"Vr" = (
-/obj/item/reagent_containers/food/drinks/bottle/sarsaparilla,
-/turf/open/floor/plating/asteroid/whitesands/dried{
-	light_range = 2
-	},
-/area/whitesands/surface/outdoors)
-"VF" = (
-/turf/closed/wall/mineral/wood,
-/area/whitesands/surface/outdoors)
-"VT" = (
-/obj/machinery/light/directional/south,
-/obj/structure/chair/stool/bar,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/remains/human,
+/obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
+/area/ruin)
 "Wd" = (
-/obj/structure/closet/crate/bin,
-/obj/effect/spawner/lootdrop/maintenance,
-/turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"Wo" = (
-/obj/structure/destructible/tribal_torch/lit,
-/turf/open/floor/wood{
-	icon_state = "wood-broken7"
-	},
-/area/whitesands/surface/outdoors)
-"Ws" = (
-/obj/item/stack/sheet/mineral/titanium/fifty,
-/obj/structure/table,
-/turf/open/floor/concrete,
-/area/whitesands/surface/outdoors)
-"Wx" = (
-/obj/structure/table,
-/obj/item/radio,
-/obj/item/radio,
-/obj/item/radio,
-/obj/item/tank/internals/emergency_oxygen/double,
-/turf/open/floor/concrete,
-/area/whitesands/surface/outdoors)
-"WD" = (
-/obj/structure/table,
-/obj/item/gun/ballistic/rifle/boltaction/polymer,
-/turf/open/floor/concrete,
-/area/whitesands/surface/outdoors)
-"WS" = (
-/obj/structure/table,
-/obj/item/trash/can,
-/obj/item/ammo_box/c45/surplus,
-/turf/open/floor/concrete,
-/area/whitesands/surface/outdoors)
-"Xa" = (
 /obj/item/shard{
 	icon_state = "tiny"
-	},
-/obj/item/shard{
-	icon_state = "small"
 	},
 /obj/item/shard{
 	icon_state = "medium"
 	},
+/obj/item/shard,
 /turf/open/floor/plating,
-/area/whitesands/surface/outdoors)
-"Xb" = (
-/obj/item/chair/stool/bar,
-/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
-	dir = 1;
-	faction = list("saloon")
-	},
-/turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"Xs" = (
-/obj/structure/fence/cut/large{
-	dir = 8
-	},
+/area/ruin)
+"Wo" = (
+/obj/structure/fence/cut/medium,
 /turf/open/floor/plating/asteroid/whitesands/dried{
 	light_range = 2
 	},
-/area/whitesands/surface/outdoors)
-"XB" = (
-/obj/structure/flora/ash/tall_shroom,
-/turf/open/floor/plating/asteroid/whitesands{
-	light_range = 2
+/area/overmap_encounter/planetoid/sand/explored)
+"Ws" = (
+/obj/structure/chair/stool/bar,
+/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
+	dir = 8;
+	faction = list("saloon")
 	},
-/area/whitesands/surface/outdoors)
-"XF" = (
-/obj/structure/bed,
-/obj/item/bedsheet/dorms,
-/turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"XP" = (
-/obj/structure/tank_dispenser/oxygen,
-/turf/open/floor/concrete,
-/area/whitesands/surface/outdoors)
-"XS" = (
-/obj/structure/sign/poster/random,
+/turf/open/floor/wood{
+	icon_state = "wood-broken5"
+	},
+/area/ruin)
+"Wx" = (
+/obj/structure/sign/departments/botany,
 /turf/closed/wall/mineral/wood,
-/area/whitesands/surface/outdoors)
-"Yj" = (
-/turf/open/floor/plating/asteroid/whitesands{
-	light_range = 2
-	},
-/area/whitesands/surface/outdoors)
-"Yo" = (
-/obj/effect/decal/cleanable/dirt,
+/area/ruin)
+"WD" = (
 /turf/open/floor/plating,
-/area/whitesands/surface/outdoors)
-"YI" = (
-/obj/structure/fence/post{
-	dir = 1
-	},
-/turf/open/floor/plating/asteroid/whitesands{
-	light_range = 2
-	},
-/area/whitesands/surface/outdoors)
-"YJ" = (
-/obj/item/chair/stool/bar,
+/area/ruin)
+"WS" = (
+/obj/structure/mineral_door/sandstone,
+/turf/open/floor/concrete,
+/area/ruin)
+"Xa" = (
+/obj/structure/closet/crate/bin,
+/obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"YM" = (
+/area/ruin)
+"Xb" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/glass/rag,
 /turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
-"Za" = (
+/area/ruin)
+"Xs" = (
 /obj/machinery/hydroponics/soil,
 /turf/open/floor/plating/asteroid/whitesands/dried{
 	light_range = 2
 	},
-/area/whitesands/surface/outdoors)
+/area/overmap_encounter/planetoid/sand/explored)
+"XB" = (
+/obj/structure/flora/ash/cap_shroom,
+/turf/open/floor/plating/asteroid/whitesands{
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/sand/explored)
+"XF" = (
+/obj/structure/table,
+/obj/item/reagent_containers/food/drinks/bottle/sarsaparilla,
+/turf/open/floor/concrete,
+/area/ruin)
+"XP" = (
+/obj/structure/table,
+/obj/item/trash/can,
+/obj/item/ammo_box/c45/surplus,
+/turf/open/floor/concrete,
+/area/ruin)
+"XS" = (
+/obj/structure/chair/stool/bar,
+/turf/open/floor/wood{
+	icon_state = "wood-broken5"
+	},
+/area/ruin)
+"Yj" = (
+/turf/closed/wall/mineral/titanium/survival/pod,
+/area/overmap_encounter/planetoid/sand/explored)
+"Yo" = (
+/obj/structure/sign/poster/official/no_erp,
+/turf/closed/wall/mineral/wood,
+/area/ruin)
+"YI" = (
+/obj/item/shard{
+	icon_state = "tiny"
+	},
+/obj/item/shard,
+/obj/item/shard{
+	icon_state = "small"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/ruin)
+"YJ" = (
+/obj/structure/table/wood/poker,
+/obj/item/toy/cards/deck,
+/turf/open/floor/wood,
+/area/ruin)
+"YM" = (
+/obj/structure/destructible/tribal_torch/lit,
+/turf/open/floor/wood{
+	icon_state = "wood-broken7"
+	},
+/area/ruin)
+"Za" = (
+/mob/living/simple_animal/hostile/asteroid/goliath/beast{
+	dir = 1
+	},
+/turf/open/floor/plating/asteroid/whitesands/grass/dead{
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/sand/explored)
 "Zg" = (
 /obj/structure/chair/plastic,
 /turf/open/floor/plating/asteroid/whitesands{
 	light_range = 2
 	},
-/area/whitesands/surface/outdoors)
+/area/overmap_encounter/planetoid/sand/explored)
 "Zr" = (
-/obj/effect/decal/cleanable/blood/old{
-	icon_state = "floor5-old"
-	},
-/turf/open/floor/concrete,
-/area/whitesands/surface/outdoors)
+/obj/structure/musician/piano,
+/turf/open/floor/wood,
+/area/ruin)
 "Zy" = (
-/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
-	dir = 4;
-	faction = list("adobe")
-	},
+/obj/structure/flora/ash/tall_shroom,
 /turf/open/floor/plating/asteroid/whitesands/dried{
 	light_range = 2
 	},
-/area/whitesands/surface/outdoors)
+/area/overmap_encounter/planetoid/sand/explored)
 "ZG" = (
-/obj/structure/table/wood,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood{
-	icon_state = "wood-broken5"
-	},
-/area/whitesands/surface/outdoors)
-"ZH" = (
+/obj/item/stack/sheet/mineral/uranium/five,
 /obj/structure/table,
-/obj/item/clothing/glasses/meson/gar,
 /turf/open/floor/concrete,
-/area/whitesands/surface/outdoors)
+/area/ruin)
+"ZH" = (
+/obj/item/stack/sheet/mineral/plasma/twenty,
+/obj/structure/table,
+/turf/open/floor/concrete,
+/area/ruin)
 
 (1,1,1) = {"
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+gF
+gF
+gF
+gF
+gF
+gF
+gF
+gF
+gF
+gF
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
 gF
 gF
 gF
@@ -1387,3508 +1421,3300 @@ gF
 gF
 gF
 gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
 gF
 gF
 gF
 "}
 (2,1,1) = {"
-gF
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-gF
-gF
-gF
+kK
+XB
+kK
+kK
+kK
+kK
+Ca
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+lG
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+XB
+kK
+kK
+mv
+mv
+kK
+kK
 gF
 "}
 (3,1,1) = {"
-gF
-Yj
-Qs
-Yj
-Yj
-Yj
-Yj
-iL
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-sy
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Qs
-Yj
-Yj
-Ld
-Ld
-Yj
-Yj
-gF
+kK
+kK
+kK
+kK
+Ca
+Ca
+Ca
+Ca
+kK
+kK
+lG
+kK
+kK
+OZ
+kK
+hK
+kK
+kO
+ql
+kK
+XB
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+mv
+kK
+kK
+lG
+kK
+kK
+mv
+mv
+kK
+kK
+kK
+kK
+iK
+kK
+kK
+iQ
+iK
+mv
+iK
+iK
+kK
 gF
 "}
 (4,1,1) = {"
 gF
-Yj
-Yj
-Yj
-Yj
-iL
-iL
-iL
-iL
-Yj
-Yj
-sy
-Yj
-Yj
-ql
-Yj
+kK
+kK
+Ca
+Ca
+Ca
+Ca
+Ca
+Ca
+kK
+kK
+kK
 aL
-Yj
-hK
-kO
-Yj
-Qs
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Ld
-Yj
-Yj
-sy
-Yj
-Yj
-Ld
-Ld
-Yj
-Yj
-Yj
-Yj
-iQ
-Yj
-Yj
-GC
-iQ
-Ld
-iQ
-iQ
-Yj
-gF
+kK
+ql
+ql
+ql
+ql
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+lG
+kK
+kK
+kK
+lG
+kK
+kK
+mv
+mv
+mv
+mv
+kK
+kK
+mv
+mv
+mv
+Sy
+mv
+mv
+mv
+mv
+iK
+iK
+kK
+iK
+iK
+iK
+iK
+mv
+kK
 gF
 "}
 (5,1,1) = {"
 gF
-gF
-Yj
-Yj
+kK
+kK
+Ca
+Ca
 iL
-iL
-iL
-iL
-iL
-iL
-Yj
-Yj
-Yj
-OZ
-Yj
+Ca
+Ca
+Ca
+kK
+kK
+kK
+kK
 kO
-kO
-kO
-kO
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-sy
-Yj
-Yj
-Yj
-sy
-Yj
-Yj
-Ld
-Ld
-Ld
-Ld
-Yj
-Yj
-Ld
-Ld
-Ld
-lG
-Ld
-Ld
-Ld
-Ld
-iQ
-iQ
-Yj
-iQ
-iQ
-iQ
-iQ
-Ld
-Yj
-gF
+kK
+mv
+kK
+ql
+kK
+ql
+ql
+kK
+kK
+ql
+kK
+kK
+yb
+ql
+kK
+kK
+kK
+kK
+kK
+mv
+kK
+mv
+mv
+pC
+mv
+mv
+mv
+mv
+kK
+kK
+kK
+mv
+mv
+mv
+iK
+iK
+LB
+iK
+iK
+iK
+mv
+kK
 gF
 "}
 (6,1,1) = {"
 gF
-gF
-Yj
-Yj
-iL
-iL
+kK
 Ca
-iL
-iL
-iL
+Ca
+Ca
+Ca
+Ca
+kK
+mv
+kK
+kK
+kK
+ql
 Yj
+mv
+ql
+kK
+SV
+kK
+kK
+ql
 Yj
-Yj
-Yj
-hK
-Yj
-Ld
-Yj
+mv
 kO
-Yj
-kO
-kO
-Yj
-Yj
-kO
-Yj
-Yj
-mV
-kO
-Yj
-Yj
-Yj
-Yj
-Yj
-Ld
-Yj
-Ld
-Ld
+kK
+kK
+mv
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+mv
+mv
 Sy
-Ld
-Ld
-Ld
-Ld
-Yj
-Yj
-Yj
-Ld
-Ld
-Ld
+mv
+mv
+mv
+kK
+Zy
+mv
+mv
+mv
+mv
+mv
+iK
+iK
+iK
+iK
+iK
 iQ
-iQ
-bn
-iQ
-iQ
-iQ
-Ld
-Yj
-gF
+iK
+iK
+kK
 gF
 "}
 (7,1,1) = {"
 gF
-gF
-Yj
-iL
-iL
-iL
-iL
-iL
-Yj
-Ld
-Yj
-Yj
-Yj
+kK
+Ca
+kK
+Ca
+Ca
+Ca
+Ca
+mv
+mv
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+ql
+ql
+ql
 kO
-JE
-Ld
+kK
+ql
+mv
+mv
+mv
+kK
+kK
+kK
+kK
+kK
+mv
+kK
+kK
+mv
+mv
+mv
+mv
+mv
+mv
+mv
+mv
+kK
 kO
-Yj
-zw
-Yj
-Yj
-kO
-JE
-Ld
-hK
-Yj
-Yj
-Ld
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Ld
-Ld
-lG
-Ld
-Ld
-Ld
-Yj
-Ok
-Ld
-Ld
-Ld
-Ld
-Ld
+mv
+mv
+iK
 iQ
-iQ
-iQ
-iQ
-iQ
-GC
-iQ
-iQ
-Yj
-gF
+iK
+iK
+iK
+iK
+iK
+iK
+mv
+kK
 gF
 "}
 (8,1,1) = {"
 gF
-gF
-Yj
-iL
-Yj
-iL
-iL
-iL
-iL
+kK
+kK
+Ca
+Ca
+mv
+mv
+kK
+mv
+kK
+kK
+Qs
+mv
+SV
+ql
+XB
+sy
+mv
+kK
+OZ
+mv
 Ld
-Ld
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-kO
-kO
-kO
-hK
-Yj
-kO
-Ld
-Ld
-Ld
-Yj
-Yj
-Yj
-Yj
-Yj
-Ld
-Yj
-Yj
-Ld
-Ld
-Ld
-Ld
-Ld
-Ld
-Ld
-Ld
-Yj
-hK
-Ld
-Ld
+kK
+mv
+sy
+mv
+kK
+AR
+kK
+eq
+mv
+mv
+kK
+kK
+mv
+kK
+mv
+mv
+kK
+kK
+SV
+mv
+mv
+ql
+mv
+kK
+iK
+mv
+iK
+iK
+iK
+iK
+LB
+iK
 iQ
-GC
-iQ
-iQ
-iQ
-iQ
-iQ
-iQ
-Ld
-Yj
-gF
+kK
 gF
 "}
 (9,1,1) = {"
 gF
-gF
-Yj
-Yj
-iL
-iL
-Ld
-Ld
-Yj
-Ld
-Yj
-Yj
-XB
-Ld
-zw
-kO
-Qs
-sJ
-Ld
-Yj
-ql
-Ld
+kK
+kK
+Ca
+kK
+kK
 mv
-Yj
-Ld
-sJ
-Ld
-Yj
+mv
+mv
+mv
+mv
+mv
+mv
+kK
+ql
+kK
+mv
+mv
+ql
+mv
+ql
+ql
+kK
+kK
+mv
+mv
 Di
-Yj
-MS
-Ld
-Ld
-Yj
-Yj
-Ld
-Yj
-Ld
-Ld
-Yj
-Yj
-zw
-Ld
-Ld
-kO
-Ld
-Yj
-iQ
-Ld
-iQ
-iQ
-iQ
-iQ
-bn
-iQ
-GC
-Yj
-gF
+kK
+kK
+mV
+mv
+mv
+kK
+kK
+mv
+kK
+mv
+kK
+mv
+kK
+mv
+ql
+mv
+OZ
+mv
+mv
+iK
+iK
+mv
+mv
+iK
+iK
+iK
+iK
+iK
+lG
 gF
 "}
 (10,1,1) = {"
 gF
-gF
-Yj
-Yj
-iL
-Yj
-Yj
-Ld
-Ld
-Ld
-Ld
-Ld
-Ld
-Ld
-Yj
-kO
-Yj
-Ld
-Ld
-kO
-Ld
-kO
-kO
-Yj
-Yj
-Ld
-Ld
-nW
-Yj
-Yj
-cX
-Ld
-Ld
-Yj
-Yj
-Ld
-Yj
-Ld
-Yj
-Ld
-Yj
-Ld
-kO
-Ld
-ql
-Ld
-Ld
-iQ
-iQ
-Ld
-Ld
-iQ
-iQ
-iQ
-iQ
-iQ
+kK
+kK
+kK
 sy
-gF
+kK
+kK
+kK
+mv
+mv
+kK
+mv
+mv
+mv
+mv
+kK
+kK
+kK
+kK
+kO
+ql
+kK
+kK
+ql
+kK
+kK
+kK
+kK
+kK
+Jx
+mv
+kK
+kK
+kK
+mv
+kK
+kO
+mv
+mv
+kK
+ql
+mv
+kO
+mv
+mv
+mv
+mv
+mv
+kK
+kK
+iQ
+iK
+kK
+iK
+kK
+kK
 gF
 "}
 (11,1,1) = {"
 gF
-gF
-Yj
-Yj
-Yj
-sJ
-Yj
-Yj
-Yj
-Ld
-Ld
-Yj
-Ld
-Ld
-Ld
-Ld
-Yj
-Yj
-Yj
-Yj
-hK
-kO
-Yj
-Yj
-kO
-Yj
-Yj
-Yj
-Yj
-Yj
 kK
-Ld
-Yj
-Yj
-Yj
-Ld
-Yj
-hK
-Ld
-Ld
-Yj
-kO
-Ld
-hK
-Ld
-Ld
-Ld
-Ld
-Ld
-Yj
-Yj
-GC
-iQ
-Yj
-iQ
-Yj
-Yj
-gF
-gF
+kK
+kK
+kK
+kK
+mv
+mv
+kK
+Sy
+kK
+mv
+mv
+kK
+kK
+kK
+Qs
+kK
+lG
+kK
+ql
+ql
+kK
+kK
+fb
+kK
+kK
+qx
+kK
+kK
+kK
+kK
+kK
+kK
+mv
+mv
+mv
+mv
+ql
+mv
+mv
+kK
+mv
+ql
+mv
+Sy
+kK
+kK
+kK
+kK
+kK
+iK
+iK
+iK
+kK
+kK
+kK
 "}
 (12,1,1) = {"
 gF
-gF
-Yj
-Yj
-Yj
-Yj
-Yj
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+mv
+mv
+kK
+mv
+mv
+mv
+kK
+kK
+kK
+mv
+kK
+kK
+kK
+ql
+hK
+mv
+mv
+mv
+kK
+kK
+AR
+mv
+mv
+kK
+kK
+kK
+ql
+mv
+mv
 Ld
-Ld
+mv
 Yj
-lG
-Yj
-Ld
-Ld
-Yj
-Yj
-Yj
-XB
-Yj
-sy
-Yj
-kO
-kO
-Yj
-Yj
-nK
-Yj
-Yj
-uf
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Ld
-Ld
-Ld
-Ld
-kO
-Ld
-Ld
-Yj
-Ld
-kO
-Ld
-lG
-Yj
-Yj
-Yj
-Yj
-Yj
-iQ
-iQ
-iQ
-Yj
-Yj
-Yj
-gF
+ql
+mv
+kK
+kK
+Qs
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
 "}
 (13,1,1) = {"
 gF
-gF
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Ld
-Ld
-Yj
-Ld
-Ld
-Ld
-Yj
-Yj
-Yj
-Ld
-Yj
-Yj
-Yj
-kO
+kK
+kK
 aL
-Ld
-Ld
-Ld
-Yj
-Yj
-Di
-Ld
-Ld
-Yj
-Yj
-Yj
-kO
-Ld
-Ld
+kK
+kK
+Qs
+kK
+kK
+kK
+kK
+kK
+kK
 mv
-Ld
-JE
+fe
+mv
+mv
+kK
+km
+mv
+aL
 kO
+ql
+ql
+kK
+kK
+aL
+kK
+kK
+kK
+kK
+kK
+mv
+kK
+OZ
+kK
+mv
+Yj
+ql
+mv
+kK
+mv
+ql
+hK
+kK
+kK
+kK
+kK
+kK
+kK
+mv
+mv
+mv
+kK
 Ld
-Yj
-Yj
-XB
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-gF
+kK
+kK
 "}
 (14,1,1) = {"
 gF
-gF
-Yj
-Yj
-OZ
-Yj
-Yj
-XB
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Ld
+kK
+kK
+kK
+kK
 tM
-Ld
-Ld
-Yj
-Fu
-Ld
-OZ
-hK
-kO
-kO
-Yj
-Yj
-OZ
-Yj
-Yj
-Yj
-Yj
-Yj
-Ld
-Yj
-ql
-Yj
-Ld
-JE
-kO
-Ld
-Yj
-Ld
-kO
-aL
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Ld
-Ld
-Ld
-Yj
+tM
+tM
+tM
+tM
+tM
+tM
+tM
+tM
+tM
+tM
 mv
-Yj
-Yj
-gF
+kK
+kK
+mv
+mv
+kK
+kK
+ql
+kK
+kK
+kK
+kK
+lG
+kK
+kK
+kK
+kK
+kO
+kK
+kK
+kK
+ql
+kK
+kO
+ql
+ql
+ql
+kK
+kK
+kK
+kK
+kK
+cX
+mv
+kK
+kK
+pC
+mv
+kK
+kK
+XB
 "}
 (15,1,1) = {"
 gF
-gF
-Yj
-Yj
-Yj
-Yj
-AC
-AC
-AC
-AC
-AC
-AC
-AC
-AC
-AC
-AC
-AC
-Ld
-Yj
-Yj
-Ld
-Ld
-Yj
-Yj
-kO
-Yj
-Yj
-Yj
-Yj
+kK
+kK
+kK
+kK
+tM
+gd
+nZ
+tM
+GJ
+uw
+XF
+tM
+Dl
+uw
+tM
+mv
+kK
+mv
+kK
+ql
+kK
+ql
+kK
+OZ
+lG
+kK
 sy
-Yj
-Yj
-Yj
-Yj
+kK
+kK
+kK
+kK
 hK
-Yj
-Yj
-Yj
-kO
-Yj
-hK
-kO
-kO
-kO
-Yj
-Yj
-Yj
-Yj
-Yj
-DP
-Ld
-Yj
-Yj
-Sy
-Ld
-Yj
-Yj
-Qs
-gF
+kK
+sy
+ql
+kK
+mv
+kK
+ql
+kK
+aL
+kK
+kK
+iQ
+LB
+kK
+kK
+mv
+mv
+mv
+mv
+mv
+mv
+kK
+kK
+kK
 "}
 (16,1,1) = {"
-gF
-gF
-Yj
-Yj
-Yj
-Yj
-AC
-vz
+kK
+kK
+kK
+kK
+kK
+tM
 ZH
-AC
-Wx
+Dl
+tM
 Ig
-fJ
+Dl
+Dl
+WS
+Dl
 AC
-eP
-Ig
-AC
-Ld
-Yj
-Ld
-Yj
-kO
-Yj
-kO
-Yj
+tM
+mv
+kK
+mv
+kK
+SV
 ql
-sy
-Yj
-sJ
-Yj
-Yj
-Yj
-Yj
+kK
+kK
+kO
+lG
+kK
+kK
+kK
+kK
+kO
 aL
-Yj
-sJ
+kK
+ql
+HX
+ql
 kO
-Yj
-Ld
-Yj
-kO
-Yj
-OZ
-Yj
-Yj
-GC
-bn
-Yj
-Yj
-Ld
-Ld
-Ld
-Ld
-Ld
-Ld
-Yj
-Yj
-Yj
-gF
+mv
+kK
+kK
+kK
+kK
+kK
+iK
+iK
+iK
+iQ
+mv
+mv
+mv
+mv
+mv
+mv
+mv
+cX
+kK
+kK
 "}
 (17,1,1) = {"
-gF
-Yj
-Yj
-Yj
-Yj
-Yj
-AC
-jz
-eP
-AC
-ue
-eP
-eP
+kK
+kK
+kK
+kK
+kK
+tM
+ZG
+zB
+tM
+XP
 Dl
-eP
-fn
-AC
-Ld
+Dl
+Tk
+Dl
+pK
+tM
+mv
+kK
+mv
+mv
+mv
+kK
+kK
+ql
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+mv
+ql
+kK
 Yj
-Ld
-Yj
-zw
-kO
-Yj
-Yj
-hK
-sy
-Yj
-Yj
-Yj
-Yj
-hK
-OZ
-Yj
-kO
-sw
-kO
-hK
-Ld
-Yj
-Yj
-Yj
-Yj
-Yj
+mv
+kK
+ql
+kK
+kK
+kK
+LB
+iK
 iQ
-iQ
-iQ
-GC
-Ld
-Ld
-Ld
-Ld
-Ld
-Ld
-Ld
-DP
-Yj
-Yj
-gF
+iK
+iK
+kK
+kK
+mv
+kK
+mv
+mv
+kK
+kK
+kK
+kK
+kK
 "}
 (18,1,1) = {"
-gF
-Yj
-Yj
-Yj
-Yj
-Yj
-AC
-El
+kK
+kK
+lG
+sy
+kK
+tM
 ym
-AC
+Dl
 WS
-eP
-eP
+Dl
+Dl
 Tl
-eP
+tM
 Ef
-AC
-Ld
-Yj
-Ld
-Ld
-Ld
-Yj
-Yj
+Dl
+tM
+mv
+Zy
+mv
+mv
+kK
+ql
 kO
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Ld
-kO
-Yj
-JE
-Ld
-Yj
-kO
-Yj
-Yj
-Yj
-bn
-iQ
-GC
-iQ
-iQ
-Yj
-Yj
-Ld
-Yj
-Ld
-Ld
-Yj
-Yj
-Yj
-Yj
-Yj
-gF
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+ql
+mv
+ql
+mv
+mv
+ql
+mv
+mv
+OZ
+kK
+kK
+iK
+iK
+iK
+LB
+kK
+kK
+kK
+kK
+kK
+ox
+mv
+mv
+kK
+kK
+kK
+sy
 "}
 (19,1,1) = {"
-gF
-Yj
-Yj
-sy
-sJ
-Yj
-AC
-XP
-eP
+kK
+kK
+kK
+kK
+kK
+tM
+DO
 Dl
-eP
+tM
 eP
 TH
-AC
-LB
-eP
-AC
-Ld
-Ok
-Ld
-Ld
-Yj
-kO
-hK
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-kO
-Ld
-kO
-Ld
-Ld
-kO
-Ld
-Ld
+vL
+tM
+pK
+Dl
+tM
+mv
+mv
+kK
+mv
 ql
-Yj
-Yj
-iQ
-iQ
-iQ
-bn
-Yj
-Yj
-Yj
-Yj
-Yj
 iK
+kK
+kK
+kK
+kK
+sy
+kK
+kK
+OZ
+kK
+kK
+mv
 Ld
-Ld
-Yj
-Yj
-Yj
-sJ
+kK
+kO
+ql
+kK
+kK
+iK
+LB
+iQ
+iK
+kK
+iQ
+kK
+kK
+aZ
+kK
+kK
+mv
+kK
+kK
+kK
+Qs
+kK
 gF
 "}
 (20,1,1) = {"
-gF
-Yj
-Yj
-Yj
-Yj
-Yj
-AC
-Ws
-eP
-AC
+kK
+kK
+kK
+kK
+kK
+tM
+KJ
+uw
 lc
-Sq
-Df
-AC
-Ef
 eP
-AC
-Ld
-Ld
-Yj
-Ld
-kO
-iQ
-Yj
-Yj
-Yj
-Yj
-sJ
-Yj
-Yj
-ql
-Yj
-Yj
-Ld
+Df
+vL
+tM
+Dl
+GG
+tM
 mv
+mv
+kK
+kK
+iK
+iK
+kK
+kK
+kK
+kK
+mv
+mv
+kK
+kK
+kK
+ql
+kK
+ql
+kK
 Yj
-hK
-kO
-Yj
-Yj
-iQ
-bn
-GC
-iQ
-Yj
-GC
-Yj
-Yj
-ui
-Yj
-Yj
-Ld
-Yj
-Yj
-Yj
-XB
-Yj
-gF
+kK
+kK
+kK
+iK
+iK
+kK
+iK
+iK
+LB
+kK
+kK
+kK
+kK
+kK
+mv
+mv
+mv
+mv
+kK
+kK
 gF
 "}
 (21,1,1) = {"
-gF
-Yj
-Yj
-Yj
-Yj
-Yj
-AC
-xg
-Ig
-zB
-lc
-WD
-Df
-AC
-eP
+kK
+XB
+kK
+kK
+kK
+tM
+tM
+tM
+tM
+tM
+tM
+tM
+tM
 Gd
-AC
-Ld
-Ld
-Yj
-Yj
+dv
+tM
+mv
+kK
+kK
+mv
+iK
+kK
+kK
 iQ
-iQ
-Yj
-Yj
-Yj
-Yj
-Ld
-Ld
-Yj
-Yj
-Yj
-kO
-Yj
-kO
-Yj
-JE
-Yj
-Yj
-Yj
-iQ
-iQ
-Yj
-iQ
-iQ
+iK
+mv
+kK
+mv
+kK
+SV
+kK
+ql
+kK
+kK
+kK
+ql
+kK
+kK
+mv
+wX
+pJ
+wX
+wX
 bn
-Yj
-Yj
-Yj
-Yj
-Yj
-Ld
-Ld
-Ld
-Ld
-Yj
-Yj
-gF
+wX
+fJ
+sc
+Vr
+Wo
+SK
+nN
+SK
+nV
+kK
+kK
+kK
 gF
 "}
 (22,1,1) = {"
-gF
-Yj
+kK
+kK
+kK
+kK
+kK
+kK
 Qs
-Yj
-Yj
-Yj
-AC
-AC
-AC
-AC
-AC
-AC
-AC
-AC
-Zr
-nx
-AC
-Ld
-Yj
-Yj
-Ld
+mv
+mv
+mv
+IR
+Lj
+tM
+tM
+WS
+tM
+mv
+mv
+kK
+mv
 iQ
+kK
+iK
+iK
+kK
+kK
+mv
+mv
+mv
+kK
+ql
 Yj
-Yj
-GC
-iQ
-Ld
-Yj
-Ld
-Yj
-zw
-Yj
+kK
+kK
 kO
-Yj
-Yj
-Yj
-kO
-Yj
-Yj
-Ld
-VF
-km
-VF
-VF
-FC
-VF
+kK
+kK
+mv
+kK
+wX
+Bw
+rx
+Bw
+yc
 YI
 KH
-aK
-pJ
-pK
-JI
-pK
-BI
-Yj
-Yj
-Yj
-gF
+mv
+iK
+iK
+iK
+iK
+iK
+mr
+kK
+kK
+kK
 gF
 "}
 (23,1,1) = {"
-gF
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-XB
-Ld
-Ld
-Ld
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
 fO
 kP
-AC
-AC
-Dl
-AC
-Ld
-Ld
-Yj
-Ld
-GC
-Yj
-iQ
-iQ
-Yj
-Yj
-Ld
-Ld
-Ld
-Yj
-kO
-JE
-Yj
-Yj
-hK
-Yj
-Yj
-Ld
-Yj
-VF
-Px
-DA
-Px
+mv
+mv
+mv
+mv
+nx
+mv
+mv
+kK
+mv
+iK
+iK
+iK
+iK
+kK
+kK
+mv
+mv
+kK
+kK
+ql
+kK
+kK
+kK
+kK
+kK
+mv
+mv
+kK
+pJ
+Ra
+El
 Td
-qB
+Bw
 ms
-Ld
-iQ
-iQ
-iQ
-iQ
-iQ
+mv
+yh
 Xs
-Yj
-Yj
-Yj
-gF
+lb
+lb
+lb
+iK
+sD
+kK
+kK
+XB
 gF
 "}
 (24,1,1) = {"
-gF
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-nV
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+FC
+kK
 oA
-Ld
-Ld
-Ld
-Ld
+kK
+mv
+eo
+mv
 Zy
-Ld
-Ld
-Yj
-Ld
-iQ
-iQ
-iQ
-iQ
-Yj
-Yj
-Ld
-Ld
-Yj
-Yj
+mv
+mv
+mv
+iK
+iK
+kK
+iK
+LB
+iK
+iK
+iK
+kK
+kK
+mv
+ql
+kK
 kO
-Yj
-Yj
-Yj
-Yj
-Yj
-Ld
-Ld
-Yj
-km
-aq
-AH
+kO
+kK
+kK
+cX
+mv
+kK
+mv
+kD
+Bw
 Re
-Px
+RC
 Ra
-Ld
-lJ
-Za
-sc
-sc
-sc
-iQ
-Vq
-Yj
-Yj
-Qs
-gF
+wX
+iK
+iK
+iK
+iK
+ox
+iK
+mv
+sD
+kK
+kK
+kK
 gF
 "}
 (25,1,1) = {"
-gF
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-uV
-Yj
-sG
-Yj
-Ld
+kK
+kK
+kK
+Zy
+kK
+kK
+kK
+FC
+kK
+kK
+kK
 eo
-Ld
-Ok
-Ld
-Ld
-Ld
+eo
+mv
+km
+mv
+mv
+kK
+iK
+iK
+kK
+iK
+iK
+kK
+kK
 iQ
-iQ
-Yj
-iQ
-bn
-iQ
-iQ
-iQ
-Yj
-Yj
-Ld
-kO
-Yj
-hK
-hK
-Yj
-Yj
-DP
-Ld
-Yj
-Ld
-Hc
-Px
+kK
+kK
+aZ
+kK
+Qs
+kK
+kK
+kK
+kK
+pC
+uV
+yZ
+mv
+kD
 gB
 HP
 aq
-VF
-iQ
-iQ
-iQ
-iQ
+Bw
+eJ
 iK
-iQ
-Ld
-Vq
-Yj
-Yj
-Yj
-gF
+aO
+lb
+Xs
+Xs
+lb
+kK
+sD
+kK
+kK
+kK
 gF
 "}
 (26,1,1) = {"
 gF
-Yj
-Yj
-Yj
-Ok
-Yj
-Yj
-Yj
-uV
-Yj
-Yj
-Yj
-eo
-eo
-Ld
-Fu
-Ld
-Ld
-Yj
-iQ
-iQ
-Yj
-iQ
-iQ
-Yj
-Yj
-GC
-Yj
-Yj
-ui
-Yj
+kK
+mv
+mv
+kK
 XB
-Yj
-Yj
-Yj
-Yj
-Sy
-vL
-eq
-Ld
-Hc
-rx
-yy
-RC
-Px
-JJ
+kK
+kK
+kK
+kK
+kK
+kK
+mv
+kK
+kK
+kK
+kK
+kK
+mv
 iQ
-qx
-sc
-Za
-Za
-sc
-Yj
-Vq
-Yj
-Yj
-Yj
-gF
+kK
+iK
+kK
+kK
+kK
+iK
+mv
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+mv
+mv
+mv
+mv
+kK
+wX
+yy
+Ra
+VT
+yc
+nW
+ox
+iK
+ox
+kK
+mv
+iK
+iK
+sD
+kK
+kK
+kK
 gF
 "}
 (27,1,1) = {"
 gF
-gF
-Yj
-Ld
-Ld
-Yj
-Qs
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Ld
-Yj
-Yj
-Yj
-Yj
-Yj
-Ld
-GC
-Yj
-iQ
-Yj
-Yj
-Yj
-iQ
-Ld
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Ld
-Ld
-Ld
-Ld
-Yj
-VF
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kO
+mv
+mv
+kK
+Ok
+mv
+kO
+kK
+kK
+kK
+iK
+iK
+kK
+mv
+mv
+mv
+kK
+kK
+kK
+iK
+iK
+iK
+kK
+kK
+mv
+kK
+mv
+kK
 wX
-aq
+wX
+wX
+wX
+Bw
+wX
+iK
 lb
-Td
-zj
+Xs
+Xs
+Xs
+vh
 iK
-iQ
-iK
-Yj
-Ld
-iQ
-iQ
-Vq
-Yj
-Yj
-Yj
-gF
+zw
+kK
+mv
+mv
 gF
 "}
 (28,1,1) = {"
 gF
-gF
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-hK
-Ld
-Ld
-Yj
-pC
-Ld
-hK
-Yj
-Yj
-Yj
+kK
+kK
+kK
+kK
+kK
+kK
+aL
+kO
+kK
+ql
+kK
+ql
+kK
+Ok
+kK
+ql
+ql
+kK
+sy
+kK
+mv
+mv
+mv
+mv
+kK
+kK
+kK
+iK
+kK
+iK
 iQ
-iQ
-Yj
-Ld
-Ld
-Ld
-Yj
-Yj
-Yj
-iQ
-iQ
-iQ
-Yj
-Yj
-Ld
-Yj
-Ld
-Yj
-VF
-VF
-VF
-VF
-Px
-VF
-iQ
-sc
+iK
+kK
+kK
+mv
+mv
+kK
+kK
+wX
+BI
+ii
+wX
+gB
+Wx
+iK
+mv
+iK
 Za
-Za
-Za
-vh
-iQ
-we
-Yj
-Ld
-Ld
-gF
+mv
+ox
+iK
+zw
+kK
+mv
+mv
 gF
 "}
 (29,1,1) = {"
 gF
-gF
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-OZ
-hK
-Yj
-kO
-Yj
-kO
-Yj
+kK
+kK
+sy
+kK
+mv
+ql
+kK
+ql
+ql
+ql
+kK
+ql
+kK
+ql
+mv
+mv
+Ok
+kK
+ql
+ql
+mv
+mv
+mv
 pC
-Yj
-kO
-kO
-Yj
-sJ
-Yj
-Ld
-Ld
-Ld
-Ld
-Yj
-Yj
-Yj
-iQ
-Yj
-iQ
-GC
-iQ
-Yj
-Yj
-Ld
-Ld
-Yj
-Yj
-VF
-fb
-Hn
-VF
-rx
-AR
-iQ
-Ld
-iQ
-fe
-Ld
+mv
+mv
+kK
 iK
-iQ
-we
-Yj
-Ld
-Ld
-gF
+iK
+iK
+iK
+iK
+kK
+mv
+kK
+mv
+lG
+kK
+wX
+Hn
+er
+gy
+Bw
+gy
+iK
+iK
+iK
+iK
+iK
+iK
+mv
+fn
+mv
+mv
+cX
 gF
 "}
 (30,1,1) = {"
 gF
-gF
-Yj
-Yj
-sJ
-Yj
-Ld
+kK
+kK
+kK
+kK
+ql
+ql
+ql
+ql
+ql
+kK
+Ok
+kK
+ql
 kO
-Yj
-kO
-kO
-kO
-Yj
-kO
-Yj
-kO
-Ld
-Ld
-pC
-Yj
-kO
-kO
-Ld
-Ld
-Ld
-Sy
-Ld
-Ld
-Yj
-iQ
-iQ
-iQ
-iQ
-iQ
-Yj
-Ld
-Yj
-Ld
-sy
-Yj
-VF
-QD
-xr
+Ok
+kK
+mv
+ql
+ql
+kK
+mv
+mv
+kK
+mv
+mv
+mv
+kK
+iK
+iK
+LB
+iK
+iK
+kK
+mv
+kK
+Zy
+kK
+kK
+wX
+AI
 er
-Px
-er
-iQ
-iQ
-iQ
-iQ
-iQ
-iQ
-Ld
+wX
+Ra
+wX
+iK
+lb
+Xs
+lb
+lb
+lb
 ox
-Ld
-Ld
-DP
-gF
+aG
+mv
+mv
+kK
 gF
 "}
 (31,1,1) = {"
 gF
-gF
-Yj
-Yj
-Yj
-Yj
+lG
+kK
+kK
+SV
+ql
 kO
-kO
-kO
-kO
-kO
-Yj
-pC
-Yj
-kO
-hK
-pC
-Yj
-Ld
-kO
-kO
-Yj
-Ld
-Ld
-Yj
-Ld
-Ld
-Ld
-Yj
-iQ
-iQ
-bn
-iQ
-iQ
-Yj
-Ld
-Yj
-Ok
-Yj
-Yj
-VF
-XF
-xr
-VF
-aq
-VF
-iQ
-sc
-Za
-sc
-sc
-sc
+ql
+ql
+ql
+cI
+kK
+kK
+ql
+kK
+ql
+ql
+ql
+ql
+aL
+mv
+mv
+mv
+mv
+mv
+mv
+mv
+kK
+kK
 iK
+iK
+iK
+iK
+iK
+mv
+mv
+mv
+kK
+kK
+wX
+wX
+wX
+wX
+pJ
+wX
+bO
+SK
+sc
+sc
+sc
 nN
-Ld
-Ld
-Yj
-gF
+nN
+lJ
+mv
+mv
+kK
 gF
 "}
 (32,1,1) = {"
 gF
-gF
-sy
-Yj
-Yj
-zw
+kK
+kK
+mv
+ql
+kK
+ql
+ql
+kK
+Ok
+kK
+kK
+Ok
+mv
+Ok
+mv
+kK
+kK
 kO
-hK
-kO
-kO
-kO
-Dd
-Yj
-Yj
-kO
-Yj
-kO
-kO
-kO
-kO
-OZ
-Ld
-Ld
-Ld
-Ld
-Ld
-Ld
-Ld
-Yj
-Yj
+kK
+pC
+mv
+mv
+mv
+kK
+mv
+mv
+kK
+kK
+iK
+iK
+iK
+iK
 iQ
-iQ
-iQ
-iQ
-iQ
-Ld
-Ld
-Ld
-Yj
-Yj
-VF
-VF
-VF
-VF
-km
-VF
-sD
-pK
-KH
-KH
-KH
-JI
-JI
-dp
-Ld
-Ld
-Yj
-gF
+kK
+mv
+mv
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+mv
+mv
+kK
 gF
 "}
 (33,1,1) = {"
 gF
-gF
-Yj
-Yj
-Ld
-kO
-Yj
-kO
-kO
-Yj
-pC
-Yj
-Yj
-pC
-Ld
-pC
-Ld
-Yj
-Yj
-hK
-Yj
-Sy
-Ld
-Ld
-Ld
-Yj
-Ld
-Ld
-Yj
-Yj
+kK
+kK
+mv
+ql
+ql
+ql
+kK
+lG
+kK
+ql
+ql
+kK
+ql
+mv
+mv
+Ok
+kK
+kK
+kK
+mv
+mv
+kK
+aZ
+kK
+mv
+mv
+mv
+kK
 iQ
-iQ
-iQ
-iQ
-GC
-Yj
-Ld
-Ld
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Ld
-Ld
-Yj
-gF
+iK
+iK
+iK
+iK
+iK
+kK
+kK
+kK
+kK
+lG
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+lG
+kK
+kK
+kK
+kK
+kK
+mv
+kK
 gF
 "}
 (34,1,1) = {"
 gF
-gF
-Yj
-Yj
-Ld
+kK
+kK
+ql
+kK
+aL
+kK
+kK
+Qs
 kO
-kO
-kO
-Yj
+kK
+mv
+mv
+mv
+Sy
+mv
+kK
+kK
+kK
+kK
+mv
+mv
+mv
+mv
+cX
+mv
+mv
+aL
+kK
+kK
+kK
+iK
+iK
+iK
+iK
+iQ
+iK
+kK
+kK
+kK
+kK
 sy
-Yj
-kO
-kO
-Yj
-kO
-Ld
-Ld
-pC
-Yj
-Yj
-Yj
-Ld
-Ld
-Yj
-ui
-Yj
-Ld
-Ld
-Ld
-Yj
-GC
-iQ
-iQ
-iQ
-iQ
-iQ
-Yj
-Yj
-Yj
-Yj
-sy
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-sy
-Yj
-Yj
-Yj
-Yj
-Yj
-Ld
-Yj
-gF
-gF
+XB
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+aL
+kK
+kK
+mv
+kK
+kK
 "}
 (35,1,1) = {"
 gF
-gF
-Yj
-Yj
+kK
+kK
+ql
+ql
+kK
 kO
-Yj
-OZ
-Yj
-Yj
-XB
-hK
-Yj
-Ld
-Ld
-Ld
-lG
-Ld
-Yj
-Yj
-Yj
-Yj
-Ld
-Ld
-Ld
-Ld
-DP
-Ld
-Ld
-OZ
-Yj
-Yj
-Yj
-iQ
-iQ
-iQ
-iQ
-GC
-iQ
-Yj
-Yj
-Yj
-Yj
-sJ
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+mv
+mv
+kK
+kK
+DA
+kK
+kK
+kK
+kK
+kK
+kK
 Qs
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-OZ
-Yj
-Yj
-Ld
-Yj
-Yj
-gF
+kK
+kK
+kK
+iK
+kK
+iK
+iK
+XB
+kK
+kK
+kK
+kK
+kO
+kK
+kK
+mv
+kK
+kK
+kK
+kK
+XB
+kK
+kK
+kK
+mv
+kK
+kK
 "}
 (36,1,1) = {"
 gF
-gF
+kK
+kK
+kK
+kK
+kK
+wX
+ig
+wX
+wU
+wX
+wX
+wU
+wU
+vz
+bn
+FN
+wX
+wX
+mv
+kK
+qU
+qU
+qU
+kK
+kK
+Ca
+kK
+kK
+kK
+mv
+kK
+mv
+kK
+mv
+kK
+kK
+kK
+aL
+kK
 Yj
-Yj
-kO
-kO
-Yj
-hK
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Ld
-Ld
-Yj
-Yj
-aG
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-XB
-Yj
-Yj
-Yj
-iQ
-Yj
-iQ
-iQ
-Qs
-Yj
-Yj
-Yj
-Yj
-hK
-Yj
-Yj
-Ld
-Yj
-Yj
-Yj
-Yj
-Qs
-Yj
-Yj
-Yj
-Ld
-Yj
-Yj
-gF
+ql
+ql
+ql
+mv
+mv
+mv
+kK
+kK
+kK
+kK
+kK
+mv
+sy
+kK
+kK
+kK
 "}
 (37,1,1) = {"
 gF
-gF
-Yj
-Yj
-Yj
-Yj
-Yj
-VF
+kK
+iK
+iQ
+kK
+kK
 Yo
+AI
+yy
 VF
-yt
-VF
-VF
-yt
+wX
+Zr
 yt
 Xa
-FC
+er
 XS
-VF
-VF
-Ld
-Yj
+er
+JJ
+wU
+mv
 qU
+MS
 qU
-qU
-Yj
-Yj
-iL
-Yj
-Yj
-Yj
-Ld
-Yj
-Ld
-Yj
-Ld
-Yj
-Yj
-Yj
+kK
+kK
+Ca
+Ca
+kK
+kK
+kK
+kK
+mv
+mv
+mv
+kK
+kK
+kK
 OZ
-Yj
-JE
-kO
-kO
-kO
-Ld
-Ld
-Ld
-Yj
-Yj
-Yj
-Yj
-Yj
-Ld
-sJ
-Yj
-Yj
-Yj
-gF
-"}
-(38,1,1) = {"
-gF
-gF
-Yj
-iQ
-GC
-Yj
-Yj
-yh
-XF
-wX
-Nn
-VF
-yb
-QQ
-Wd
-xr
-hr
-xr
-Ng
-yt
-Ld
-qU
-uw
-qU
-Yj
-Yj
-iL
-iL
-Yj
-Yj
-Yj
-Yj
-Ld
-Ld
-Ld
-Yj
-Yj
-Yj
 ql
-kO
-Yj
+kK
+ql
+Ld
+mv
+ql
+kK
 kO
 mv
-Ld
+mv
+kK
+kK
+kK
+kK
+kK
+sy
+kK
+kK
+kK
+"}
+(38,1,1) = {"
+kK
+kK
+iK
+iQ
+iK
+kK
+wU
+Pi
+Nn
+sG
+wX
+QQ
+er
+Jq
+hr
+Dd
+Ng
+UO
+bn
+kK
+kK
+qU
+qU
+Ca
+Ca
+Ca
+Ca
+Ca
+kK
+kK
+kK
+mv
+kK
+mv
+kK
+kK
+kK
+kK
+ql
 kO
-Yj
-hK
-Ld
-Ld
-Yj
-Yj
-Yj
-Yj
-Yj
-sJ
-Yj
-Yj
-Yj
-gF
+mv
+mv
+SV
+kK
+OZ
+mv
+mv
+Zy
+Qs
+kK
+sy
+kK
+kK
+kK
+kK
+mv
+sy
 "}
 (39,1,1) = {"
-gF
-Yj
-Yj
-iQ
-GC
-iQ
-Yj
-yt
-oL
-cI
-SV
-VF
+kK
+kK
+kK
+iK
+iK
+kK
+ig
+Jq
+Bw
+Jq
 gy
-xr
+er
 xB
 da
 Eq
 jx
 YJ
-FC
-Yj
-Yj
+Jq
+ki
+kK
+kK
+kK
 qU
-qU
-iL
-iL
-iL
-iL
-iL
-Yj
-Yj
-Yj
-Ld
-Yj
-Ld
-Yj
-Yj
-Yj
-Yj
-kO
+kK
+Ca
+Ca
+Ca
+Ca
+Ca
+kK
+kK
+mv
+kK
+mv
+kK
 hK
-Ld
-Ld
-zw
-Yj
+kK
+kK
+mv
+mv
+mv
 ql
-Ld
-Ld
+kK
+mv
+mv
+mv
+kK
+mv
+kK
 Ok
+Ok
+Ok
+kK
 XB
-Yj
-sJ
-Yj
-Yj
-Yj
-Yj
-Ld
-sJ
-gF
+kK
+mv
+kK
 "}
 (40,1,1) = {"
-gF
-Yj
-Yj
-Yj
-iQ
-iQ
-Yj
-Yo
-xB
+kK
+kK
+kK
+iK
+iK
+kK
+WD
 Px
-xB
-er
-xr
-Jq
-Ed
-DO
 Pi
-HX
-xB
+er
+wX
+qB
+er
+UO
+Pi
+Bw
+Vq
 Ji
-Yj
-Yj
-Yj
-qU
-Yj
-iL
-iL
-iL
-iL
-iL
-Yj
-Yj
-Ld
-Yj
-Ld
-Yj
-aL
-Yj
-Yj
-Ld
-Ld
-Ld
+Wd
+kK
+kK
+kK
+kK
+kK
+kK
+Ca
+Ca
+Ca
+Ca
+Ca
+mv
+kK
+mv
+kK
+mv
+kK
 kO
-Yj
-Ld
-Ld
-Ld
-Yj
-Ld
-Yj
-pC
-pC
-pC
-Yj
-Qs
-Yj
-Ld
-Yj
-gF
+ql
+kK
+ql
+mv
+mv
+mv
+mv
+mv
+mv
+kK
+Ok
+Ok
+Ok
+Ok
+Ok
+Ok
+Ok
+mv
+mv
+kK
 "}
 (41,1,1) = {"
-gF
-Yj
-Yj
-Yj
-iQ
-iQ
-Yj
-Jx
-yZ
-oL
-xr
-VF
-gC
-xr
-YJ
-oL
-Px
-Ov
-kD
+kK
+sy
+kK
+iK
+iK
+kK
+wX
 Bw
+Bw
+wX
+wX
+gC
+gC
+oL
+gL
+Bw
+gL
+Bw
+wU
+kK
+kK
+kK
+kK
+kK
+Ca
+Ca
+Ca
+Ca
+Ca
+kK
+kK
+kK
+kK
+kK
+kK
+ql
+kK
+ql
+kK
+kK
 Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-iL
-iL
-iL
-iL
-iL
-Ld
-Yj
-Ld
-Yj
-Ld
-Yj
-hK
-kO
-Yj
-kO
-Ld
-Ld
-Ld
-Ld
-Ld
-Ld
-Yj
+kK
+mv
+kK
+mv
+mv
 pC
+Ok
+kK
+mv
+kK
+kK
+kK
+Ok
 pC
-pC
-pC
-pC
-pC
-pC
-Ld
-Ld
-Yj
-gF
+kK
+kK
 "}
 (42,1,1) = {"
-gF
-Yj
-sJ
-Yj
-iQ
-iQ
-Yj
-VF
-Px
-Px
-VF
-VF
-zh
-zh
+kK
+kK
+kK
+kK
+iK
+iK
+wX
+ue
+Bw
+er
+wU
+dp
 tq
-GG
-Px
-GG
-Px
-yt
+gC
+UT
+gL
+Hc
+sw
+wX
+kK
+kK
+kK
+lG
+kK
+kK
+kK
+Ca
+kK
+kK
+kK
+kK
+kK
 Yj
-Yj
-Yj
-Yj
-Yj
-iL
-iL
-iL
-iL
-iL
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-kO
-Yj
-kO
-Yj
-Yj
-JE
-Yj
-Ld
-Yj
-Ld
-Ld
-Sy
-pC
-Yj
-Ld
-Yj
-Yj
-Yj
-pC
-Sy
-Yj
-Yj
-gF
+sy
+kK
+kK
+XB
+kK
+sy
+kK
+SV
+kK
+mv
+mv
+mv
+mv
+Ok
+kK
+kK
+Ok
+Ok
+Ok
+Zy
+Ok
+Ok
+mv
+kK
 "}
 (43,1,1) = {"
 gF
-Yj
-Yj
-Yj
-Yj
-iQ
-iQ
-VF
-GJ
-Px
-xr
-yt
+kK
+kK
+mv
+iK
+iK
+wX
+jz
+Bw
+uf
 mx
 fM
-zh
+hL
 nE
-GG
-ZG
+qB
+da
 gL
-VF
-Yj
-Yj
-Yj
-sy
-Yj
-Yj
-Yj
-iL
-Yj
-Yj
-Yj
-Yj
-Yj
+Bw
+gy
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+mv
+mv
+hK
+lG
+kK
+kO
+ql
 JE
-sJ
-Yj
-Yj
-Qs
-Yj
-sJ
-Yj
-zw
-Yj
-Ld
-Ld
-Ld
-Ld
-pC
-Yj
-Yj
-pC
-pC
-pC
+OZ
+kK
+kK
+ql
+kK
+mv
+kK
+kK
+mv
+Sy
+mv
 Ok
-pC
-pC
-Ld
-Yj
-gF
+mv
+Ok
+Ok
+Ok
+Ok
+kK
+mv
+Ok
+mv
+kK
 "}
 (44,1,1) = {"
 gF
-gF
-Yj
-Yj
-Ld
+kK
+kK
+mv
 iQ
-iQ
-VF
+iK
 Ir
-Px
-KJ
+Hb
+Bw
 js
 tQ
 eV
 oB
 gC
 Ed
-GG
-Px
-er
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Ld
-Ld
-aL
-sy
-Yj
-hK
-kO
-dv
+Ra
+Bw
+Ra
+gy
+kK
+Qs
+kK
+kK
+kK
+kK
+kK
+mv
+mv
+mv
+mv
+kK
+kK
+kK
+kK
 ql
-Yj
-Yj
-kO
-Yj
-Ld
-Yj
-Yj
-Ld
-lG
-Ld
-pC
-Ld
-pC
-pC
-pC
-pC
-Yj
-Ld
-pC
-Ld
-Yj
-gF
+kK
+kK
+kK
+kK
+kK
+kK
+mv
+mv
+mv
+kK
+kK
+kK
+mv
+Ok
+Ok
+MX
+Ok
+Ok
+mv
+Ok
+mv
+kK
 "}
 (45,1,1) = {"
 gF
-gF
-Yj
-Yj
-Ld
-GC
-iQ
-AW
-ki
-Px
-SK
-Hb
+kK
+kK
+Sy
+iK
+iK
+wX
+zj
+zh
+zh
 RY
 hL
 zh
 Xb
-aq
-Px
-aq
+UO
 er
-Yj
-XB
-Yj
-Yj
-Yj
-Yj
-Yj
-Ld
-Ld
-Ld
-Ld
-Yj
-Yj
-Yj
-Yj
-kO
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Ld
-Ld
-Ld
-Yj
-Yj
-Yj
-Ld
-pC
-pC
-ii
-pC
-pC
-Ld
-pC
-Ld
-Yj
-gF
+xr
+Bw
+gy
+kK
+kK
+kK
+kK
+kK
+kK
+mv
+mv
+kK
+kK
+mv
+ql
+kK
+kK
+kK
+kK
+aL
+ql
+kK
+kK
+kK
+kK
+mv
+mv
+kK
+kK
+Ok
+kK
+Ok
+Ok
+Ok
+kK
+Ok
+Ok
+mv
+Ok
+kK
+kK
 "}
 (46,1,1) = {"
 gF
-gF
-Yj
-Yj
+kK
 lG
-iQ
-iQ
-VF
-IR
+mv
+iK
+iK
+wX
+Bw
 DT
-DT
-eJ
-eV
-DT
+Bw
+wX
+Xa
 YM
-YJ
-xr
+xg
+Jq
 LA
-Px
-er
+AH
+CB
+wX
+mv
+kK
+kK
+mv
+kK
+mv
+Sy
+mv
+mv
+mv
+aL
+ql
+kK
+ql
+ql
 Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Ld
-Ld
-Yj
-Yj
-Ld
+mv
+kK
 kO
-Yj
-Yj
-Yj
-Yj
-OZ
-kO
-Yj
-Yj
-Yj
-Yj
-Ld
-Ld
-Yj
-Yj
-pC
-Yj
-pC
-pC
-pC
-Yj
-pC
-pC
-Ld
-pC
-Yj
-Yj
-gF
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+Ok
+Qs
+kK
+Ok
+mv
+mv
+Ok
+mv
+kK
 "}
 (47,1,1) = {"
 gF
-gF
-Yj
-sy
-Ld
-iQ
-iQ
-VF
-Px
-CB
-Px
-VF
-Wd
-Wo
-MX
-xB
-Lj
+kK
+kK
+mv
+kK
+iK
+wX
+wX
+wX
+wX
+wX
+gC
+oL
+gC
+er
 UO
-VT
-VF
-Ld
-Yj
-Yj
-Ld
-Yj
-Ld
-lG
-Ld
-Ld
-Ld
+qB
+JJ
+wX
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+mv
+mv
+mv
+ql
 OZ
 kO
-Yj
-kO
-kO
-JE
-Ld
-Yj
-hK
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-pC
+kK
+kK
+kK
+kK
+km
+kK
+kK
+kK
+kK
 XB
-Yj
-pC
-Ld
-Ld
-pC
-Ld
-Yj
+kK
+kK
+Ok
+kK
+Ok
+kK
+Ok
+kK
+Ok
+Ok
+kK
+Ok
+Ok
+mv
 gF
 "}
 (48,1,1) = {"
 gF
-gF
-Yj
-Yj
-Ld
-Yj
+kK
+kK
+mv
+kK
 iQ
-VF
-VF
-VF
-VF
-VF
-zh
-tq
-zh
-xr
-YJ
-gC
-Ng
-VF
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Ld
-Ld
-Ld
-kO
+DP
+AI
+Bw
+AW
+sJ
+qB
+Ws
+qB
+xB
+Jq
+Bw
+Bw
+bn
+kK
+qU
+kK
+kK
+kK
+kK
+pC
+mv
+kK
+SV
 ql
-hK
-Yj
-Yj
-Yj
-Yj
-Fu
-Yj
-Yj
-Yj
-Yj
-Qs
-Yj
-Yj
-pC
-Yj
-pC
-Yj
-pC
-Yj
-pC
-pC
-Yj
-pC
-pC
-Ld
-gF
+kK
+ql
+kK
+kK
+mv
+kK
+mv
+kK
+kK
+XB
+kK
+kK
+kK
+kK
+mv
+mv
+kK
+kK
+Ok
+kK
+mv
+mv
+mv
+Ok
+mv
+kK
 gF
 "}
 (49,1,1) = {"
 gF
-gF
-Yj
-Yj
-Ld
-Yj
+kK
+kK
+kK
 GC
-UT
-XF
-Px
+iK
+wX
+Bw
 Io
-yc
 gC
-mr
-gC
+sJ
+er
+Bw
 Jq
-xB
-Px
-Px
-FC
-Yj
+Bw
+Ng
+aK
+er
+YI
+kK
+kK
 qU
-Yj
-Yj
-Yj
-Yj
-Sy
-Ld
-Yj
-zw
-kO
-Yj
-kO
-Yj
-Yj
-Ld
-Yj
-Ld
-Yj
-Yj
+qU
+kK
+kK
+mv
+mv
+mv
+mv
+XB
+kK
+kK
+kK
+mv
+mv
+mv
+mv
+kK
 Qs
-Yj
-Yj
-Yj
-Yj
-Ld
-Ld
-Yj
-Yj
-pC
-Yj
-Ld
-Ld
-Ld
-pC
-Ld
-Yj
-gF
+kK
+sy
+mv
+mv
+mv
+mv
+kK
+kK
+kK
+Ok
+Ok
+kK
+Ok
+Ok
+Ok
+kK
+kK
 gF
 "}
 (50,1,1) = {"
 gF
-gF
-Yj
-Yj
-Yj
-bO
-iQ
-VF
-Px
-aZ
-zh
+kK
+kK
+kK
+kK
+kK
+ig
 yc
-xr
-Px
-xB
-Px
-jx
+Bw
+yc
+gy
+er
+er
+QD
+er
 fN
-xr
+Sq
 qB
-Yj
-Yj
+JI
+mv
+kK
+Ov
+kK
 qU
-qU
-Yj
-Yj
-Ld
-Ld
-Ld
-Ld
-Qs
-Yj
-Yj
-Yj
-Ld
-Ld
-Ld
-Ld
-Yj
-XB
-Yj
-sJ
-Ld
-Ld
-Ld
-Ld
-Yj
-Yj
-Yj
-pC
-pC
-Yj
-pC
-pC
-pC
-Yj
-Yj
-gF
+mv
+kK
+mv
+kK
+mv
+kK
+kK
+kK
+kK
+mv
+mv
+kK
+mv
+kK
+kK
+kK
+kK
+mv
+Zg
+eq
+mv
+mv
+mv
+kK
+sy
+Ok
+Ok
+Ok
+kK
+kK
+kK
+kK
 gF
 "}
 (51,1,1) = {"
 gF
-gF
-Yj
-Yj
-Yj
-Yj
-Yj
-Yo
-Td
-Px
-Td
-er
-xr
-xr
+kK
+kK
+kK
+GC
+kK
+wX
+Fu
+Bw
+yy
+wX
+ui
 PX
 xr
 ko
-nZ
-gC
+er
+UO
 Bp
-Ld
-Yj
-Hi
-Yj
+wX
+mv
 qU
-Ld
-Yj
-Ld
-Yj
-Ld
-Yj
-Yj
-Yj
-Yj
-Ld
-Ld
-Yj
-Ld
-Yj
-Yj
-Yj
-Yj
-Ld
-Zg
-MS
-Ld
-Ld
-Ld
-Yj
-sJ
-pC
-pC
-pC
-Yj
-Yj
-Yj
-Yj
-gF
+kK
+qU
+qU
+mv
+mv
+mv
+kK
+mv
+Ca
+Ca
+kK
+mv
+mv
+Sy
+kK
+mv
+kK
+kK
+kK
+mv
+mv
+kK
+kP
+kK
+kK
+mv
+mv
+kK
+kK
+kK
+kK
+XB
+kK
+Ca
+Ca
 gF
 "}
 (52,1,1) = {"
 gF
-gF
-Yj
-Yj
-Yj
-bO
-Yj
-VF
-Tk
-Px
+kK
+kK
+kK
+mv
+kK
 wX
-VF
-aO
+wX
+wX
+wX
+wX
 wU
-LA
-gd
-xr
-YJ
+wX
 FN
-VF
-Ld
-qU
-Yj
-qU
-qU
-Ld
-Ld
-Ld
-Yj
-Ld
-iL
-iL
-Yj
-Ld
-Ld
+bn
+bn
+FN
+wX
+wX
+mv
+kK
+kK
+DA
+mv
+mv
+kK
+kK
+Ca
+Ca
+Ca
+Ca
+kK
+mv
+mv
+mv
+mv
+kK
+kK
 lG
-Yj
-Ld
-Yj
-Yj
-Yj
-Ld
-Ld
-Yj
-oA
-Yj
-Yj
-Ld
-Ld
-Yj
-Yj
-Yj
-Yj
-Qs
-Yj
-iL
-iL
-gF
+kK
+kK
+mv
+kK
+mv
+FD
+AR
+kK
+kK
+kK
+lG
+kK
+kK
+kK
+Ca
+Ca
+kK
 gF
 "}
 (53,1,1) = {"
 gF
-gF
-Yj
-Yj
-Yj
-Ld
-Yj
-VF
-VF
-VF
-VF
-VF
-yt
-VF
-XS
-FC
-FC
-XS
-VF
-VF
-Ld
-Yj
-Yj
-aG
-Ld
-Ld
-Yj
-Yj
-iL
-iL
-iL
-iL
-Yj
-Ld
-Ld
-Ld
-Ld
-Yj
-Yj
-sy
-Yj
-Yj
-Ld
-Yj
-Ld
-FD
-Di
-Yj
-Yj
-Yj
-sy
-Yj
-Yj
-Yj
-iL
-iL
-Yj
-gF
+kK
+mv
+kK
+mv
+mv
+kK
+kK
+kK
+kK
+mv
+mv
+kK
+kK
+mv
+mv
+mv
+kK
+kK
+kK
+kK
+kK
+kK
+mv
+kK
+kK
+Ca
+Ca
+Ca
+Ca
+Ca
+mv
+mv
+kK
+kK
+mv
+kK
+kK
+kK
+kK
+mv
+we
+mv
+mv
+Hi
+mv
+kK
+kK
+kK
+kK
+kK
+Ca
+Ca
+Ca
+kK
+kK
 gF
 "}
 (54,1,1) = {"
 gF
-gF
-Yj
-Ld
-Yj
-Ld
-Ld
-Yj
-Yj
-Yj
-Yj
-Ld
-Ld
-Yj
-Yj
-Ld
-Ld
-Ld
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Ld
-Yj
-Yj
-iL
-iL
-iL
-iL
-iL
-Ld
-Ld
-Yj
-Yj
-Ld
-Yj
-Yj
-Yj
-Yj
-Ld
-AI
-Ld
-Ld
-Vr
-Ld
-Yj
-Yj
-Yj
-Yj
-Yj
-iL
-iL
-iL
-Yj
-Yj
-gF
-gF
+kK
+kK
+mv
+kK
+mv
+mv
+kK
+mv
+mv
+kK
+kK
+lG
+kK
+mv
+kK
+mv
+mv
+kK
+kK
+kK
+kK
+kK
+mv
+kK
+Ca
+Ca
+Ca
+Ca
+Ca
+kK
+kK
+kK
+kK
+kK
+mv
+mv
+kK
+kK
+kK
+kK
+mv
+kK
+mv
+mv
+mv
+XB
+kK
+kK
+kK
+Ca
+Ca
+Ca
+Ca
+Ca
+kK
+kK
 "}
 (55,1,1) = {"
 gF
-gF
-Yj
-Yj
-Ld
-Yj
-Ld
-Ld
-Yj
-Ld
-Ld
-Yj
-Yj
+kK
+kK
+mv
+mv
+mv
+Sy
+kK
+mv
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+mv
+kK
+kK
+lG
+kK
+Ca
+Ca
+Ca
+kK
+lG
+lG
+kK
+kK
+kK
+kK
+kK
+kK
+XB
+kK
+kK
+mv
+nK
+kK
+kK
+kK
 sy
-Yj
-Ld
-Yj
-Ld
-Ld
-Yj
-Yj
-Yj
-Yj
-Yj
-Ld
-Yj
-iL
-iL
-iL
-iL
-iL
-Yj
-Yj
-Yj
-Yj
-Yj
-Ld
-Ld
-Yj
-Yj
-Yj
-Yj
-Ld
-Yj
-Ld
-Ld
-Ld
 Qs
-Yj
-Yj
-Yj
-iL
-iL
-iL
-iL
-iL
-Yj
-Yj
-gF
+kK
+Ca
+Ca
+kK
+Ca
+Ca
+kK
+sy
+kK
 "}
 (56,1,1) = {"
 gF
-gF
-Yj
-Yj
-Ld
-Ld
-Ld
-lG
-Yj
-Ld
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Ld
-Yj
-Yj
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
 sy
-Yj
-iL
-iL
-iL
-Yj
-sy
-sy
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Qs
-Yj
-Yj
-Ld
-ig
-Yj
-Yj
-Yj
-sJ
+kK
+kK
+kK
+kK
+kK
+kK
+kK
 XB
-Yj
-iL
-iL
-Yj
-iL
-iL
-Yj
-sJ
-Yj
-gF
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+Ca
+kK
+kK
+sy
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+kK
+Ca
+Ca
+Ca
+kK
 "}
 (57,1,1) = {"
 gF
 gF
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-sJ
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
+kK
+kK
+kK
+kK
+kK
+gF
+gF
+gF
+gF
+gF
+gF
+kK
+kK
+kK
+kK
+kK
+gF
+gF
+gF
+gF
+gF
+gF
+kK
+kK
+kK
+kK
 Qs
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-iL
-Yj
-Yj
-sJ
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-iL
-iL
-iL
-Yj
-gF
-"}
-(58,1,1) = {"
-gF
-gF
-gF
-Yj
-Yj
-Yj
-Yj
-Yj
-gF
-gF
-gF
-gF
-gF
-gF
-Yj
-Yj
-Yj
-Yj
-Yj
-gF
-gF
-gF
-gF
-gF
-gF
-Yj
-Yj
-Yj
-Yj
+kK
+kK
+kK
 XB
-Yj
-Yj
-Yj
-Qs
-Yj
-Yj
+kK
+kK
 gF
 gF
 gF
@@ -4907,70 +4733,8 @@ gF
 gF
 gF
 gF
-Yj
-Yj
-Yj
-Yj
-gF
-"}
-(59,1,1) = {"
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
-gF
+kK
+kK
+kK
+kK
 "}

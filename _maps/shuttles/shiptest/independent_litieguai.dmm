@@ -285,7 +285,7 @@
 /area/ship/storage)
 "hF" = (
 /obj/structure/table/reinforced,
-/obj/machinery/photocopier/faxmachine/longrange,
+/obj/machinery/fax,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "hH" = (
@@ -305,6 +305,11 @@
 /obj/structure/cable,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
+	},
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = -12;
+	pixel_y = -16
 	},
 /turf/open/floor/vault,
 /area/ship/storage)
@@ -703,6 +708,11 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = -12;
+	pixel_y = -16
+	},
 /turf/open/floor/plasteel/freezer,
 /area/ship/crew/toilet)
 "pK" = (
@@ -782,6 +792,11 @@
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable{
 	icon_state = "0-8"
+	},
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = -12;
+	pixel_y = -16
 	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/bridge)
@@ -1010,6 +1025,11 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 20;
+	pixel_y = 14
+	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/aft)
 "vn" = (
@@ -1055,6 +1075,11 @@
 	icon_state = "0-2"
 	},
 /obj/item/storage/toolbox/electrical,
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 20;
+	pixel_y = 14
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "wD" = (
@@ -1095,6 +1120,11 @@
 	},
 /obj/effect/turf_decal/number/zero{
 	dir = 4
+	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_y = 10;
+	pixel_x = -20
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -1928,6 +1958,11 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_y = 10;
+	pixel_x = -20
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew)
 "QY" = (
@@ -2526,6 +2561,11 @@
 	dir = 1
 	},
 /obj/structure/extinguisher_cabinet/directional/west,
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_y = 10;
+	pixel_x = -20
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "YM" = (

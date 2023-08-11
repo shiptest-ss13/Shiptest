@@ -5,7 +5,7 @@
 	network = "KunaiComms"
 	},
 /obj/item/paper/crumpled{
-	info = "USE THE MULTITOOL TO FILTER YOUR RADIO FREQUENCY"
+	default_raw_text = "USE THE MULTITOOL TO FILTER YOUR RADIO FREQUENCY"
 	},
 /obj/item/multitool,
 /obj/effect/turf_decal/techfloor{
@@ -315,6 +315,9 @@
 /obj/machinery/power/smes/engineering,
 /obj/effect/turf_decal/box,
 /obj/machinery/light/directional/east,
+/obj/machinery/light_switch{
+	pixel_y = 22
+	},
 /turf/open/floor/engine/hull/interior,
 /area/ship/storage)
 "nP" = (
@@ -336,6 +339,11 @@
 /obj/item/radio/intercom/wideband/directional/west,
 /obj/effect/turf_decal/techfloor{
 	dir = 10
+	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -22;
+	pixel_y = 13
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)

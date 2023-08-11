@@ -71,3 +71,12 @@
 		return
 	if(!(machine_stat & (BROKEN|NOPOWER)))
 		power_change()
+
+/obj/item/wallframe/light_switch
+	name = "lightswitch frame"
+	desc = "A ready-to-go light switch. Just slap it on a wall!"
+	icon_state = "button"
+	result_path = /obj/machinery/light_switch
+	pixel_shift = 24
+	inverse = FALSE
+	custom_materials = list(/datum/material/iron = 75)

@@ -8,6 +8,7 @@
 	icon = 'icons/mob/species/lizard/bodyparts.dmi'
 	uses_mutcolor = TRUE
 	limb_id = SPECIES_LIZARD
+	is_dimorphic = FALSE
 
 /obj/item/bodypart/l_arm/lizard
 	icon = 'icons/mob/species/lizard/bodyparts.dmi'

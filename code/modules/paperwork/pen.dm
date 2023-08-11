@@ -29,10 +29,6 @@
 	var/font = PEN_FONT
 	embedding = list()
 
-/obj/item/pen/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is scribbling numbers all over [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to commit sudoku...</span>")
-	return(BRUTELOSS)
-
 /obj/item/pen/blue
 	desc = "It's a normal blue ink pen."
 	icon_state = "pen_blue"
@@ -168,6 +164,14 @@
 			O.desc = input
 			to_chat(user, "<span class='notice'>You have successfully changed \the [O.name]'s description.</span>")
 
+/obj/item/pen/get_writing_implement_details()
+	return list(
+		interaction_mode = MODE_WRITING,
+		font = font,
+		color = colour,
+		use_bold = FALSE,
+	)
+
 /*
  * Sleepypens
  */
@@ -205,14 +209,6 @@
 
 /obj/item/pen/edagger/get_sharpness()
 	return on * sharpness
-
-/obj/item/pen/edagger/suicide_act(mob/user)
-	. = BRUTELOSS
-	if(on)
-		user.visible_message("<span class='suicide'>[user] forcefully rams the pen into their mouth!</span>")
-	else
-		user.visible_message("<span class='suicide'>[user] is holding a pen up to their mouth! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-		attack_self(user)
 
 /obj/item/pen/edagger/attack_self(mob/living/user)
 	if(on)
