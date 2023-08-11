@@ -287,7 +287,7 @@
 		return
 
 	var/mob/living/carbon/victim = M
-	if((method == TOUCH || method == SMOKE) || method == VAPOR)
+	if((method == TOUCH || method == SMOKE) || method == VAPOR)	//Test Commit
 		var/pepper_proof = victim.is_pepper_proof()
 
 		//check for protection
