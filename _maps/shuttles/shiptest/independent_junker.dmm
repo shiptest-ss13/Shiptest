@@ -1876,6 +1876,11 @@
 	pixel_y = 2;
 	pixel_x = 12
 	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_y = 12;
+	pixel_x = -20
+	},
 /turf/open/floor/pod/light,
 /area/ship/maintenance/aft)
 "Ix" = (
@@ -1995,6 +2000,11 @@
 /obj/effect/mob_spawn/human/corpse/charredskeleton,
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable,
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_y = 12;
+	pixel_x = -20
+	},
 /turf/open/floor/plating/rust,
 /area/ship/engineering/electrical)
 "JQ" = (
@@ -2253,6 +2263,11 @@
 	},
 /mob/living/simple_animal/hostile/cockroach/glockroach,
 /obj/effect/spawner/lootdrop/maintenance,
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 20;
+	pixel_y = 14
+	},
 /turf/open/floor/pod/light,
 /area/ship/maintenance/aft)
 "QM" = (
@@ -2680,6 +2695,11 @@
 /obj/structure/cable,
 /obj/structure/cable{
 	icon_state = "1-8"
+	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_y = 12;
+	pixel_x = -20
 	},
 /turf/open/floor/pod/dark,
 /area/ship/crew/office)

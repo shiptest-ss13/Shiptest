@@ -32,6 +32,7 @@
 	desc = "A Type I armored vest that provides decent protection against most types of damage."
 	icon_state = "armor_alt"
 	item_state = "armoralt"
+	supports_variations = KEPORI_VARIATION
 
 /obj/item/clothing/suit/armor/vest/marine
 	name = "light tactical armor vest"
@@ -338,7 +339,7 @@
 	desc = "A luxurious brown coat made from a crossweave of kevlar and ballistic fibre, the collar and wrist trims are made from genuine wolf fur. as protective as it is stylish."
 	icon_state = "armor_inteq_battlecoat"
 	item_state = "inteq_battlecoat"
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION | KEPORI_VARIATION
 
 /obj/item/clothing/suit/armor/inteq/corpsman
 	name = "inteq corpsman vest"

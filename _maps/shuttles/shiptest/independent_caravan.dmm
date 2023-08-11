@@ -735,6 +735,11 @@
 /obj/structure/railing{
 	dir = 9
 	},
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 20;
+	pixel_y = -12
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/central)
 "nm" = (
@@ -1955,6 +1960,10 @@
 	icon_state = "0-4"
 	},
 /obj/structure/frame/machine,
+/obj/machinery/light_switch{
+	pixel_x = 11;
+	pixel_y = 23
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/science)
 "JN" = (
@@ -2183,10 +2192,6 @@
 	dir = 1
 	},
 /obj/machinery/light/directional/north,
-/obj/machinery/light_switch{
-	pixel_x = 25;
-	pixel_y = 25
-	},
 /obj/machinery/computer/operating,
 /turf/open/floor/plasteel/white,
 /area/ship/science)
@@ -2551,10 +2556,20 @@
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable,
 /obj/structure/reagent_dispensers/watertank,
+/obj/machinery/light_switch{
+	pixel_y = 11;
+	dir = 8;
+	pixel_x = 20
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "Ux" = (
 /obj/machinery/firealarm/directional/south,
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = 11;
+	pixel_y = -18
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "UB" = (
@@ -2901,10 +2916,6 @@
 	dir = 1
 	},
 /obj/machinery/light/directional/north,
-/obj/machinery/light_switch{
-	pixel_x = -25;
-	pixel_y = 25
-	},
 /obj/machinery/computer/rdconsole,
 /turf/open/floor/plasteel/white,
 /area/ship/science)
