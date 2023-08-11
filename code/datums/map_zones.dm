@@ -412,7 +412,6 @@
 			unlink(dir)
 	parent_level.virtual_levels -= src
 	parent_level = null
-	LAZYCLEARLIST(SSidlenpcpool.idle_mobs_by_virtual_level["[id]"])
 	SSidlenpcpool.idle_mobs_by_virtual_level["[id]"] = null
 	SSmapping.virtual_z_translation -= "[id]"
 	parent_map_zone.remove_virtual_level(src)
