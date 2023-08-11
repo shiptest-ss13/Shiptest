@@ -991,22 +991,6 @@
     tastes = list("lemon" = 1, "cake" = 1)
     foodtype = SUGAR
 
-/obj/item/reagent_containers/food/snacks/ration/vegetable_crackers
-    name = "vegetable crackers"
-    desc = "Crisp and savory crackers loaded with a variety of dehydrated vegetables, offering a satisfying crunch."
-    list_reagents = list(/datum/reagent/consumable/nutriment = 5)
-    filling_color = "#006600"
-    tastes = list("vegetable" = 1, "crackers" = 1)
-    foodtype = GRAIN
-
-/obj/item/reagent_containers/food/snacks/ration/teriyaki_beef_sticks
-    name = "teriyaki beef sticks"
-    desc = "Tender beef sticks marinated in a flavorful teriyaki sauce, providing a tasty and protein-rich snack."
-    list_reagents = list(/datum/reagent/consumable/nutriment = 5)
-    filling_color = "#b8711b"
-    tastes = list("teriyaki" = 1, "beef" = 1)
-    foodtype = MEAT
-
 /obj/item/reagent_containers/food/snacks/ration/cherry_snackers
     name = "cherry snackers"
     desc = "Juicy and plump cherries, perfectly preserved and packed for a delightful and refreshing snack."
@@ -1016,6 +1000,7 @@
     foodtype = FRUIT
 
 //
+
 /obj/item/reagent_containers/food/snacks/ration/chicken_wings_hot_sauce
     name = "chicken wings with hot sauce"
     desc = "Crispy and flavorful chicken wings tossed in a spicy hot sauce, delivering a bold and satisfying taste."
@@ -1082,16 +1067,6 @@
     tastes = list("sour" = 1, "gummy" = 1)
     foodtype = SUGAR
 
-/obj/item/reagent_containers/food/snacks/ration/white_snack_bread
-    name = "white snack bread"
-    desc = "Soft and fluffy white bread, perfect for making sandwiches or enjoying as a quick and simple snack."
-    list_reagents = list(/datum/reagent/consumable/nutriment = 5)
-    filling_color = "#ffffff"
-    tastes = list("bread" = 1)
-    foodtype = GRAIN
-
-//
-
 /obj/item/reagent_containers/food/snacks/ration/lemon_pepper_chicken
     name = "lemon pepper chicken"
     desc = "Tender chicken seasoned with zesty lemon and fragrant pepper, offering a flavorful and satisfying dish."
@@ -1152,7 +1127,7 @@
 
 /obj/item/reagent_containers/food/snacks/ration/channeler_meat_candy
     name = "channeler meat candy"
-    desc = "An otherworldly treat made from channeler meat, offering an unusual and captivating flavor experience."
+    desc = "A traditional meat-candy from the Antechannel League on Kalixcis, offering an unusual and captivating flavor experience."
     list_reagents = list(/datum/reagent/consumable/nutriment = 5)
     filling_color = "#9933ff"
     tastes = list("channeler meat" = 1, "candy" = 1)
@@ -1439,14 +1414,6 @@
     filling_color = "#ff3300"
     tastes = list("apples" = 1, "spiced sauce" = 1)
     foodtype = FRUIT
-
-/obj/item/reagent_containers/food/snacks/ration/vegetable_crackers
-    name = "vegetable crackers"
-    desc = "Crunchy crackers with an assortment of savory vegetable flavors, providing a wholesome and satisfying snack."
-    list_reagents = list(/datum/reagent/consumable/nutriment = 5)
-    filling_color = "#33cc33"
-    tastes = list("vegetable" = 1, "crackers" = 1)
-    foodtype = GRAIN | VEGETABLES
 
 /obj/item/reagent_containers/food/snacks/ration/oatmeal_cookie
     name = "oatmeal cookie"
