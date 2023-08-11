@@ -417,7 +417,7 @@
 	},
 /obj/structure/frame/machine,
 /obj/item/paper{
-	info = "Missing protolathe. Lost in transit."
+	default_raw_text = "Missing protolathe. Lost in transit."
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/science)
@@ -1002,7 +1002,7 @@
 /obj/item/weldingtool,
 /obj/item/weldingtool,
 /obj/item/paper{
-	info = "The igniter in the chamber does not work very well. I suggest throwing lit welders down the disposal chute over there to ignite the chamber."
+	default_raw_text = "The igniter in the chamber does not work very well. I suggest throwing lit welders down the disposal chute over there to ignite the chamber."
 	},
 /obj/effect/turf_decal/trimline/opaque/red/line{
 	dir = 6
@@ -2618,7 +2618,7 @@
 	},
 /obj/machinery/light/directional/east,
 /obj/item/paper/crumpled{
-	info = "A mix of 67/33 ratio of oxygen (node 1) and plasma (node 2) works very well, even at 500 kPa."
+	default_raw_text = "A mix of 67/33 ratio of oxygen (node 1) and plasma (node 2) works very well, even at 500 kPa."
 	},
 /obj/effect/turf_decal/trimline/opaque/blue/line{
 	dir = 1

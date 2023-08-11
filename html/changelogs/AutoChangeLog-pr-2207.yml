@@ -1,7 +1,0 @@
-author: Mothblocks, Ryll-Ryll, ported by Erika
-delete-after: true
-changes:
-  - rscadd: CPR will now automatically repeat, but you can no longer do it multiple
-      times at once.
-  - bugfix: The INTERACTING_WITH macro now tracks all kinds of do_after
-  - code_imp: Users can only queue one do_after per target at a time
