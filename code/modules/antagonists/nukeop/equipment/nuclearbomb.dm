@@ -682,20 +682,6 @@ This is here to make the tiles around the station mininuke change when it's arme
 		GLOB.poi_list -= src
 	. = ..()
 
-/obj/item/disk/nuclear/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is going delta! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	playsound(src, 'sound/machines/alarm.ogg', 50, -1, TRUE)
-	for(var/i in 1 to 100)
-		addtimer(CALLBACK(user, /atom/proc/add_atom_colour, (i % 2)? "#00FF00" : "#FF0000", ADMIN_COLOUR_PRIORITY), i)
-	addtimer(CALLBACK(src, .proc/manual_suicide, user), 101)
-	return MANUAL_SUICIDE
-
-/obj/item/disk/nuclear/proc/manual_suicide(mob/living/user)
-	user.remove_atom_colour(ADMIN_COLOUR_PRIORITY)
-	user.visible_message("<span class='suicide'>[user] is destroyed by the nuclear blast!</span>")
-	user.adjustOxyLoss(200)
-	user.death(0)
-
 /obj/item/disk/nuclear/fake
 	fake = TRUE
 

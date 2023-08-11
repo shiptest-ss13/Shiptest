@@ -140,7 +140,8 @@
 
 /datum/config_entry/flag/allow_metadata	// Metadata is supported.
 
-/datum/config_entry/flag/popup_admin_pm	// adminPMs to non-admins show in a pop-up 'reply' window when set
+/// Gives the ability to send players a maptext popup.
+/datum/config_entry/flag/popup_admin_pm
 
 /datum/config_entry/number/fps
 	config_entry_value = 20
@@ -522,15 +523,6 @@
 
 /datum/config_entry/flag/picture_logging_camera
 
-
-/datum/config_entry/flag/reopen_roundstart_suicide_roles
-
-/datum/config_entry/flag/reopen_roundstart_suicide_roles_command_positions
-
-/datum/config_entry/number/reopen_roundstart_suicide_roles_delay
-	min_val = 30
-
-/datum/config_entry/flag/reopen_roundstart_suicide_roles_command_report
 
 /datum/config_entry/flag/auto_profile
 

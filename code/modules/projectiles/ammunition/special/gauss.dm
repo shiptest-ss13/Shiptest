@@ -19,8 +19,8 @@
 /obj/item/ammo_casing/caseless/gauss/slug
 	name = "ferromagnetic slug"
 	desc = "A large metal slug."
-	caliber = "lance"
+	caliber = "slug"
 	icon_state = "gauss-slug"
 	projectile_type = /obj/projectile/bullet/gauss/slug
 	auto_rotate = TRUE
-	energy_cost = 800
+	energy_cost = 700

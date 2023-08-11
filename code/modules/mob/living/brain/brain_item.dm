@@ -11,13 +11,12 @@
 	attack_verb = list("attacked", "slapped", "whacked")
 
 	///The brain's organ variables are significantly more different than the other organs, with half the decay rate for balance reasons, and twice the maxHealth
-	decay_factor = STANDARD_ORGAN_DECAY	/ 2		//30 minutes of decaying to result in a fully damaged brain, since a fast decay rate would be unfun gameplay-wise
+	decay_factor = STANDARD_VITAL_ORGAN_DECAY
 
 	maxHealth = BRAIN_DAMAGE_DEATH
 	low_threshold = 45
 	high_threshold = 120
 
-	var/suicided = FALSE
 	var/mob/living/brain/brainmob = null
 	var/decoy_override = FALSE	//if it's a fake brain with no brainmob assigned. Feedback messages will be faked as if it does have a brainmob. See changelings & dullahans.
 	//two variables necessary for calculating whether we get a brain trauma or not
@@ -86,7 +85,6 @@
 	brainmob.name = L.real_name
 	brainmob.real_name = L.real_name
 	brainmob.timeofhostdeath = L.timeofdeath
-	brainmob.suiciding = suicided
 	if(L.has_dna())
 		var/mob/living/carbon/C = L
 		if(!brainmob.stored_dna)
@@ -135,9 +133,6 @@
 
 /obj/item/organ/brain/examine(mob/user)
 	. = ..()
-	if(suicided)
-		. += "<span class='info'>It's started turning slightly grey. They must not have been able to handle the stress of it all.</span>"
-		return
 	if((brainmob && (brainmob.client || brainmob.get_ghost())) || decoy_override)
 		if(organ_flags & ORGAN_FAILING)
 			. += "<span class='info'>It seems to still have a bit of energy within it, but it's rather damaged... You may be able to restore it with some <b>mannitol</b>.</span>"

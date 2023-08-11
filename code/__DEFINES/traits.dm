@@ -310,6 +310,10 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 /// Trait granted by lipstick
 #define LIPSTICK_TRAIT "lipstick_trait"
 
+// Bone breaking traits. Don't actually do anything(?)
+#define TRAIT_NOBREAK "no_break"
+#define TRAIT_ALLBREAK "all_break"
+
 // common trait sources
 #define TRAIT_GENERIC "generic"
 #define GENERIC_ITEM_TRAIT "generic_item"
@@ -377,10 +381,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define CHRONO_GUN_TRAIT "chrono-gun"
 #define REVERSE_BEAR_TRAP_TRAIT "reverse-bear-trap"
 #define CURSED_MASK_TRAIT "cursed-mask"
-#define HIS_GRACE_TRAIT "his-grace"
 #define HAND_REPLACEMENT_TRAIT "magic-hand"
 #define HOT_POTATO_TRAIT "hot-potato"
-#define SABRE_SUICIDE_TRAIT "sabre-suicide"
 #define ABDUCTOR_VEST_TRAIT "abductor-vest"
 #define CAPTURE_THE_FLAG_TRAIT "capture-the-flag"
 #define EYE_OF_GOD_TRAIT "eye-of-god"

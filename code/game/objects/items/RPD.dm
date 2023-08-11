@@ -239,12 +239,6 @@ GLOBAL_LIST_INIT(transit_tube_recipes, list(
 /obj/item/pipe_dispenser/attack_self(mob/user)
 	ui_interact(user)
 
-/obj/item/pipe_dispenser/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] points the end of the RPD down [user.p_their()] throat and presses a button! It looks like [user.p_theyre()] trying to commit suicide...</span>")
-	playsound(get_turf(user), 'sound/machines/click.ogg', 50, TRUE)
-	playsound(get_turf(user), 'sound/items/deconstruct.ogg', 50, TRUE)
-	return(BRUTELOSS)
-
 /obj/item/pipe_dispenser/ui_assets(mob/user)
 	return list(
 		get_asset_datum(/datum/asset/spritesheet/pipes),

@@ -27,7 +27,13 @@
 
 /datum/surgery_step/heal/mechanic
 	name = "repair components"
-	implements = list(TOOL_WELDER = 100, TOOL_CAUTERY = 60, /obj/item/melee/transforming/energy = 40, /obj/item/gun/energy/laser = 20, TOOL_WIRECUTTER = 100, TOOL_HEMOSTAT = 60, TOOL_RETRACTOR = 60)
+	implements = list(TOOL_WELDER = 100,
+				TOOL_WIRECUTTER = 100,
+				TOOL_CAUTERY = 60,
+				TOOL_HEMOSTAT = 60,
+				TOOL_RETRACTOR = 60,
+				/obj/item/melee/transforming/energy = 40,
+				/obj/item/gun/energy/laser = 20)
 	time = 2 SECONDS
 	missinghpbonus = 10
 

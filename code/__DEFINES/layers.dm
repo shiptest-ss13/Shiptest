@@ -130,11 +130,6 @@
 #define CAMERA_STATIC_LAYER 19
 #define CAMERA_STATIC_RENDER_TARGET "CAMERA_STATIC_PLANE"
 
-#define RUNECHAT_PLANE 20
-
-/// Plane for balloon text (text that fades up)
-#define BALLOON_CHAT_PLANE 21
-
 //HUD layer defines
 
 #define FULLSCREEN_PLANE 31
@@ -146,6 +141,14 @@
 #define CURSE_LAYER 31.5
 #define FULLSCREEN_RENDER_TARGET "FULLSCREEN_PLANE"
 
+// Runechat Interlude
+#define RUNECHAT_PLANE 32
+
+// Plane for balloon text (text that fades up)
+#define BALLOON_CHAT_PLANE 33
+
+//HUD layer defines part two
+
 #define HUD_PLANE 42
 #define HUD_LAYER 42
 #define HUD_RENDER_TARGET "HUD_PLANE"
@@ -155,4 +158,7 @@
 
 #define SPLASHSCREEN_LAYER 54
 #define SPLASHSCREEN_PLANE 54
+
+#define ADMIN_POPUP_LAYER 1
+
 #define SPLASHSCREEN_RENDER_TARGET "SPLASHSCREEN_PLANE"

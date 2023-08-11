@@ -9,7 +9,7 @@
 	slot_flags = ITEM_SLOT_FEET
 	greyscale_colors = list(list(13, 3), list(14, 2), list(12, 2))
 	greyscale_icon_state = "shoes"
-	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION | KEPORI_VARIATION
 
 	permeability_coefficient = 0.5
 	slowdown = SHOES_SLOWDOWN
@@ -25,24 +25,6 @@
 	var/lace_time = 5 SECONDS
 	///any alerts we have active
 	var/atom/movable/screen/alert/our_alert
-
-/obj/item/clothing/shoes/suicide_act(mob/living/carbon/user)
-	if(rand(2)>1)
-		user.visible_message("<span class='suicide'>[user] begins tying \the [src] up waaay too tightly! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-		var/obj/item/bodypart/l_leg = user.get_bodypart(BODY_ZONE_L_LEG)
-		var/obj/item/bodypart/r_leg = user.get_bodypart(BODY_ZONE_R_LEG)
-		if(l_leg)
-			l_leg.dismember()
-		if(r_leg)
-			r_leg.dismember()
-		playsound(user, "desceration", 50, TRUE, -1)
-		return BRUTELOSS
-	else//didnt realize this suicide act existed (was in miscellaneous.dm) and didnt want to remove it, so made it a 50/50 chance. Why not!
-		user.visible_message("<span class='suicide'>[user] is bashing [user.p_their()] own head in with [src]! Ain't that a kick in the head?</span>")
-		for(var/i = 0, i < 3, i++)
-			sleep(3)
-			playsound(user, 'sound/weapons/genhit2.ogg', 50, TRUE)
-		return(BRUTELOSS)
 
 /obj/item/clothing/shoes/worn_overlays(isinhands = FALSE)
 	. = list()
@@ -150,9 +132,6 @@
 		return
 
 	if(user == loc && tied != SHOES_TIED) // if they're our own shoes, go tie-wards
-		if(INTERACTING_WITH(user, our_guy))
-			to_chat(user, "<span class='warning'>You're already interacting with [src]!</span>")
-			return
 		user.visible_message("<span class='notice'>[user] begins [tied ? "unknotting" : "tying"] the laces of [user.p_their()] [src.name].</span>", "<span class='notice'>You begin [tied ? "unknotting" : "tying"] the laces of your [src.name]...</span>")
 
 		if(do_after(user, lace_time, needhand=TRUE, target=our_guy, extra_checks=CALLBACK(src, .proc/still_shoed, our_guy)))
@@ -169,9 +148,6 @@
 			return
 		if(tied == SHOES_KNOTTED)
 			to_chat(user, "<span class='warning'>The laces on [loc]'s [src.name] are already a hopelessly tangled mess!</span>")
-			return
-		if(INTERACTING_WITH(user, our_guy))
-			to_chat(user, "<span class='warning'>You're already interacting with [src]!</span>")
 			return
 
 		var/mod_time = lace_time
@@ -253,10 +229,6 @@
 
 /obj/item/clothing/shoes/attack_self(mob/user)
 	. = ..()
-
-	if(INTERACTING_WITH(user, src))
-		to_chat(user, "<span class='warning'>You're already interacting with [src]!</span>")
-		return
 
 	to_chat(user, "<span class='notice'>You begin [tied ? "untying" : "tying"] the laces on [src]...</span>")
 

@@ -5,7 +5,8 @@
 
 /datum/surgery_step/insert_pill
 	name = "insert pill"
-	implements = list(/obj/item/reagent_containers/pill = 100)
+	implements = list(
+		/obj/item/reagent_containers/pill = 100)
 	time = 16
 	experience_given = (MEDICAL_SKILL_MEDIUM*0.4) //quick to do
 

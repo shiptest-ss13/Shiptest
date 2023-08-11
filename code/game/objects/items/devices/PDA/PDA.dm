@@ -83,14 +83,6 @@ GLOBAL_LIST_EMPTY(PDAs)
 
 	var/underline_flag = TRUE //flag for underline
 
-/obj/item/pda/suicide_act(mob/living/carbon/user)
-	var/deathMessage = msg_input(user)
-	if (!deathMessage)
-		deathMessage = "i ded"
-	user.visible_message("<span class='suicide'>[user] is sending a message to the Grim Reaper! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	tnote += "<i><b>&rarr; To The Grim Reaper:</b></i><br>[deathMessage]<br>"//records a message in their PDA as being sent to the grim reaper
-	return BRUTELOSS
-
 /obj/item/pda/examine(mob/user)
 	. = ..()
 	if(!id && !inserted_item)
@@ -982,10 +974,10 @@ GLOBAL_LIST_EMPTY(PDAs)
 
 	if(!scanmode && istype(A, /obj/item/paper) && owner)
 		var/obj/item/paper/PP = A
-		if(!PP.info)
+		if(!PP.get_total_length())
 			to_chat(user, "<span class='warning'>Unable to scan! Paper is blank.</span>")
 			return
-		notehtml = PP.info
+		notehtml = PP.get_raw_text()
 		note = replacetext(notehtml, "<BR>", "\[br\]")
 		note = replacetext(note, "<li>", "\[*\]")
 		note = replacetext(note, "<ul>", "\[list\]")
