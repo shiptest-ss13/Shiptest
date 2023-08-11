@@ -1,6 +1,6 @@
 /obj/item/clothing/shoes/sneakers
 	dying_key = DYE_REGISTRY_SNEAKERS
-	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION | KEPORI_VARIATION
 
 /obj/item/clothing/shoes/sneakers/black
 	name = "black shoes"

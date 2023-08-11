@@ -1,4 +1,11 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ac" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/wood,
+/area/ship/crew/dorm)
 "ad" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -205,6 +212,17 @@
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
+"bY" = (
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/machinery/light_switch{
+	pixel_y = 23;
+	pixel_x = 11
+	},
+/turf/open/floor/wood,
+/area/ship/crew/hydroponics)
 "cd" = (
 /obj/structure/chair/pew/right,
 /obj/effect/turf_decal/siding/wood{
@@ -1152,14 +1170,6 @@
 /obj/machinery/light/directional/east,
 /turf/open/floor/wood,
 /area/ship/hallway/fore)
-"jw" = (
-/obj/effect/turf_decal/borderfloorblack,
-/obj/machinery/power/apc/auto_name/directional/north,
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/crew/dorm)
 "jz" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/chair/wood{
@@ -2031,6 +2041,17 @@
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/ship/dirt/dark,
 /area/ship/crew/hydroponics)
+"rQ" = (
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/machinery/light_switch{
+	pixel_x = 11;
+	pixel_y = 23
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/atmospherics)
 "rR" = (
 /obj/structure/railing/wood{
 	dir = 8
@@ -2127,6 +2148,14 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/wood,
 /area/ship/hallway/starboard)
+"sC" = (
+/obj/structure/window/reinforced/spawner/west,
+/obj/effect/turf_decal/corner/opaque/lightgrey/mono,
+/obj/machinery/atmospherics/components/unary/vent_pump/high_volume/siphon/atmos/air_output{
+	dir = 8
+	},
+/turf/open/floor/engine/air,
+/area/ship/engineering/atmospherics)
 "sH" = (
 /obj/structure/closet/wall{
 	dir = 1;
@@ -2512,16 +2541,6 @@
 /obj/item/kirbyplants/random,
 /turf/open/floor/wood,
 /area/ship/hallway/starboard)
-"ww" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/power/apc/auto_name/directional/north,
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/turf/open/floor/plating,
-/area/ship/engineering/electrical)
 "wy" = (
 /obj/effect/turf_decal/weather/dirt,
 /turf/open/floor/ship/dirt/dark,
@@ -3382,13 +3401,6 @@
 	},
 /turf/open/floor/wood,
 /area/ship/hallway/port)
-"Ez" = (
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/obj/machinery/power/apc/auto_name/directional/north,
-/turf/open/floor/plating,
-/area/ship/engineering/atmospherics)
 "EE" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/weather/dirt{
@@ -3426,6 +3438,13 @@
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/chapel)
+"Fd" = (
+/obj/machinery/light_switch{
+	pixel_x = 6;
+	pixel_y = 23
+	},
+/turf/closed/wall/r_wall,
+/area/ship/engineering/atmospherics)
 "Fk" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -3482,13 +3501,6 @@
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/wood,
 /area/ship/hallway/starboard)
-"FM" = (
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/obj/machinery/power/apc/auto_name/directional/north,
-/turf/open/floor/wood,
-/area/ship/crew/hydroponics)
 "FQ" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -3786,17 +3798,6 @@
 	},
 /turf/open/floor/wood,
 /area/ship/hallway/port)
-"IK" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521";
-	dir = 9
-	},
-/obj/machinery/power/apc/auto_name/directional/west,
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/turf/open/floor/wood/ebony,
-/area/ship/bridge)
 "IQ" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/photocopier,
@@ -4977,14 +4978,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/crew/chapel)
-"Sa" = (
-/obj/structure/window/reinforced/spawner/west,
-/obj/effect/turf_decal/corner/opaque/lightgrey/mono,
-/obj/machinery/atmospherics/components/unary/vent_pump/high_volume/siphon/atmos/air_output{
-	dir = 8
-	},
-/turf/open/floor/engine/air,
-/area/ship/engineering/atmospherics)
 "Sb" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#332521";
@@ -5098,6 +5091,18 @@
 /obj/machinery/light/directional/east,
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/crew/chapel/office)
+"Sx" = (
+/obj/effect/turf_decal/borderfloorblack,
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/light_switch{
+	pixel_y = 23;
+	pixel_x = 11
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/crew/dorm)
 "SE" = (
 /obj/machinery/cryopod{
 	dir = 4
@@ -5143,17 +5148,6 @@
 /obj/item/flashlight/lantern,
 /turf/open/floor/ship/dirt/dark,
 /area/ship/crew/hydroponics)
-"SS" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 1
-	},
-/obj/effect/turf_decal/siding/wood,
-/obj/machinery/light_switch{
-	pixel_x = -4;
-	pixel_y = 26
-	},
-/turf/open/floor/wood,
-/area/ship/crew/dorm)
 "SX" = (
 /obj/machinery/atmospherics/pipe/simple/cyan/visible{
 	dir = 4
@@ -5236,6 +5230,21 @@
 	},
 /turf/open/floor/wood,
 /area/ship/hallway/starboard)
+"TV" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/power/apc/auto_name/directional/east,
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_y = 11;
+	pixel_x = 19
+	},
+/turf/open/floor/wood,
+/area/ship/hallway/fore)
 "TX" = (
 /obj/structure/railing/corner/wood{
 	dir = 8
@@ -5540,6 +5549,22 @@
 	},
 /turf/open/floor/carpet/red_gold,
 /area/ship/crew/chapel)
+"Wo" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#332521";
+	dir = 9
+	},
+/obj/machinery/power/apc/auto_name/directional/west,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_y = 12;
+	pixel_x = -20
+	},
+/turf/open/floor/wood/ebony,
+/area/ship/bridge)
 "Wp" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
@@ -5576,16 +5601,6 @@
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/wood,
 /area/ship/crew/dorm)
-"Wz" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/obj/machinery/power/apc/auto_name/directional/east,
-/turf/open/floor/wood,
-/area/ship/hallway/fore)
 "WB" = (
 /obj/machinery/atmospherics/pipe/layer_manifold/visible{
 	dir = 4
@@ -5842,6 +5857,20 @@
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/dorm/dormtwo)
+"YV" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/light_switch{
+	pixel_y = 23;
+	pixel_x = 11
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/electrical)
 "Za" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -6529,7 +6558,7 @@ FL
 kc
 kc
 YK
-ww
+YV
 uS
 uS
 zP
@@ -6728,7 +6757,7 @@ hM
 Fq
 FL
 mB
-jw
+Sx
 xg
 pW
 Ix
@@ -6738,8 +6767,8 @@ xj
 (21,1,1) = {"
 xj
 xj
-Uf
-Ez
+Fd
+rQ
 jS
 QI
 ii
@@ -6780,7 +6809,7 @@ xj
 xj
 Uf
 Gi
-Sa
+sC
 uq
 ti
 dM
@@ -6864,7 +6893,7 @@ Qv
 Qv
 Qv
 dM
-FM
+bY
 Uj
 OZ
 Mj
@@ -6888,7 +6917,7 @@ oL
 Xg
 zL
 mB
-SS
+ac
 nW
 xc
 Dy
@@ -7200,7 +7229,7 @@ wW
 If
 qx
 jo
-Wz
+TV
 Dp
 Xd
 pE
@@ -7271,7 +7300,7 @@ QB
 cK
 sH
 pO
-IK
+Wo
 sk
 cY
 bb

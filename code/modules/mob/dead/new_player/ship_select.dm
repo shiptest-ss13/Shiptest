@@ -137,6 +137,7 @@
 
 		var/list/ship_data = list(
 			"name" = S.name,
+			"faction" = ship_prefix_to_faction(S.source_template.prefix),
 			"class" = S.source_template.short_name,
 			"desc" = S.source_template.description,
 			"tags" = S.source_template.tags,
@@ -156,6 +157,7 @@
 			continue
 		var/list/ship_data = list(
 			"name" = T.name,
+			"faction" = ship_prefix_to_faction(T.prefix),
 			"desc" = T.description,
 			"tags" = T.tags,
 			"crewCount" = length(T.job_slots),
