@@ -48,19 +48,17 @@
 	if(default_unfasten_wrench(user, I))
 		return
 	else if (istype(I, /obj/item/reagent_containers) && !(I.item_flags & ABSTRACT) && I.is_open_container())
-		var/obj/item/reagent_containers/B = I
 		. = TRUE //no afterattack
-		if(!user.transferItemToLoc(B, src))
-			return
-		handle_container(user, B)
-		to_chat(user, "<span class='notice'>You add [B] to [src].</span>")
-		return TRUE //no afterattack
-	else if(istype(I, /obj/item/storage/pill_bottle))
-		var/obj/item/storage/B = I
 		if(!user.transferItemToLoc(I, src))
 			return
-		handle_container(user, B)
-		to_chat(user, "<span class='notice'>You add [I] into the output slot.</span>")
+		handle_container(user, I)
+		to_chat(user, "<span class='notice'>You add [I] to the input slot [src].</span>")
+		return TRUE //no afterattack
+	else if(istype(I, /obj/item/storage/pill_bottle))
+		if(!user.transferItemToLoc(I, src))
+			return
+		handle_container(user, I)
+		to_chat(user, "<span class='notice'>You add [I] into the output slot of [src].</span>")
 		return TRUE
 	else if(I.tool_behaviour == TOOL_SCREWDRIVER)
 		if(user.a_intent == INTENT_HELP)
@@ -79,29 +77,39 @@
 	return ..()
 
 /obj/machinery/chem_press/AltClick(mob/living/user)
-	. = ..()
 	if(!can_interact(user) || !user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
 		return
 	if(beaker || bottle)
 		handle_container(user)
+		return
+	else
+		return ..()
 
 /obj/machinery/chem_press/proc/handle_container(mob/living/user, obj/item/new_container)
 	if(!user || !can_interact(user))
 		return FALSE
 	if(beaker)
-		if(Adjacent(src, user) && !issiliconoradminghost(user))
-			user.put_in_hands(beaker)
-		else
-			beaker.forceMove(get_turf(src))
-		beaker = null
+		if(istype(new_container, /obj/item/reagent_containers) || !new_container)
+			if(Adjacent(src, user) && !issiliconoradminghost(user))
+				user.put_in_hands(beaker)
+			else
+				beaker.forceMove(get_turf(src))
+			beaker = null
+			if(!new_container)
+				update_icon()
+				return TRUE
 	if(istype(new_container, /obj/item/reagent_containers))
 		beaker = new_container
 	if(bottle)
-		if(Adjacent(src, user) && !issiliconoradminghost(user))
-			user.put_in_hands(bottle)
-		else
-			bottle.forceMove(get_turf(src))
-		bottle = null
+		if(istype(new_container, /obj/item/storage/pill_bottle) || !new_container)
+			if(Adjacent(src, user) && !issiliconoradminghost(user))
+				user.put_in_hands(bottle)
+			else
+				bottle.forceMove(get_turf(src))
+			bottle = null
+			if(!new_container)
+				update_icon()
+				return TRUE
 	if(istype(new_container, /obj/item/storage/pill_bottle))
 		bottle = new_container
 	update_icon()
