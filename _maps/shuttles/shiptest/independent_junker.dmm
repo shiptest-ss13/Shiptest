@@ -98,16 +98,6 @@
 /obj/item/cutting_board,
 /turf/open/floor/plastic,
 /area/ship/crew/canteen/kitchen)
-"aX" = (
-/obj/structure/cable{
-	icon_state = "6-10"
-	},
-/obj/machinery/computer/helm/retro,
-/obj/item/paper/construction{
-	info = "Yeah, just so you know, I left the fuel and air pumps OFF when I dropped this thing of for you, you're gonna have to go outside and turn em on to start up the engines<br><br>The pumps are outside on the tank things to the left and right on the back of the ship, there's also one in each engine room you'll need to get going."
-	},
-/turf/open/floor/plating,
-/area/ship/bridge)
 "bc" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -217,6 +207,15 @@
 	icon_state = "wood-broken3"
 	},
 /area/ship/maintenance/starboard)
+"cX" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/closed/wall/mineral/titanium/survival/nodiagonal,
+/area/ship/storage/eva)
 "dm" = (
 /turf/closed/wall/mineral/titanium/survival,
 /area/ship/cargo)
@@ -238,22 +237,6 @@
 /obj/structure/sign/poster/contraband/tools,
 /turf/closed/wall/mineral/titanium/survival/nodiagonal,
 /area/ship/storage)
-"eC" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/blood/footprints,
-/obj/effect/mob_spawn/human/corpse/charredskeleton,
-/obj/machinery/power/apc/auto_name/directional/west,
-/obj/structure/cable,
-/obj/machinery/light_switch{
-	dir = 4;
-	pixel_y = 12;
-	pixel_x = -20
-	},
-/turf/open/floor/plating/rust,
-/area/ship/engineering/electrical)
 "eF" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/pod/dark,
@@ -371,17 +354,6 @@
 /obj/structure/girder/reinforced,
 /turf/open/floor/plating,
 /area/ship/bridge)
-"gh" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/industrial/warning/dust,
-/obj/machinery/airalarm/directional/east,
-/obj/item/paper/construction{
-	info = "<center><h1>Airlock Instructions</h1></center><br><center>Because none of you numbnuts can remember them</center><br><br>1: Bolt the door behind you so you dont bump into it and lose all our air.<br>     Bolt is the LEFT BUTTON<br>2: Go to the air alarm, set it to siphon<br>3: When at least most of the gas is out, turn OFF siphon<br>4: You can now open the shutters<br>     I shouldnt have to tell you this, but theyre the RIGHT button<br><br><h2>To go back IN</h2><br>1: Close the shutters behind you<br>2: Set the air alarm to SIPHON again<br>3: When all of the dangerous gas is out, set the air alarm to FILL<br>3: Once the pressure is at least 50 kpa, you can set the air alarm back to normal, and unbolt the door<br><br>I still can't fucking believe I have to write this."
-	},
-/turf/open/floor/plating{
-	icon_state = "platingdmg1"
-	},
-/area/ship/cargo)
 "go" = (
 /obj/machinery/atmospherics/pipe/simple/purple/hidden,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
@@ -530,25 +502,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ship/construction)
-"ih" = (
-/obj/machinery/atmospherics/pipe/manifold/purple/hidden{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/photocopier,
-/obj/machinery/power/apc/auto_name/directional/west,
-/obj/structure/cable,
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/obj/machinery/light_switch{
-	dir = 4;
-	pixel_y = 12;
-	pixel_x = -20
-	},
-/turf/open/floor/pod/dark,
-/area/ship/crew/office)
 "ip" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 1
@@ -858,30 +811,6 @@
 /obj/structure/window/fulltile,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
-"nZ" = (
-/obj/machinery/atmospherics/pipe/simple/purple/hidden{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/item/seeds/tobacco{
-	pixel_y = -11;
-	pixel_x = 11
-	},
-/obj/item/trash/pistachios{
-	pixel_y = -6;
-	pixel_x = 5
-	},
-/obj/item/trash/chips{
-	pixel_y = 2;
-	pixel_x = 12
-	},
-/obj/machinery/light_switch{
-	dir = 4;
-	pixel_y = 12;
-	pixel_x = -20
-	},
-/turf/open/floor/pod/light,
-/area/ship/maintenance/aft)
 "oj" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1447,6 +1376,16 @@
 	},
 /turf/open/floor/pod/dark,
 /area/ship/crew/canteen)
+"yf" = (
+/obj/structure/cable{
+	icon_state = "6-10"
+	},
+/obj/machinery/computer/helm/retro,
+/obj/item/paper/construction{
+	default_raw_text = "Yeah, just so you know, I left the fuel and air pumps OFF when I dropped this thing of for you, you're gonna have to go outside and turn em on to start up the engines<br><br>The pumps are outside on the tank things to the left and right on the back of the ship, there's also one in each engine room you'll need to get going."
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
 "yp" = (
 /turf/closed/wall/rust,
 /area/ship/engineering/electrical)
@@ -1692,15 +1631,6 @@
 	icon_state = "platingdmg3"
 	},
 /area/ship/maintenance/port)
-"Dl" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/turf/closed/wall/mineral/titanium/survival/nodiagonal,
-/area/ship/storage/eva)
 "DE" = (
 /obj/structure/sign/warning/testchamber,
 /turf/closed/wall/mineral/titanium/survival,
@@ -1927,6 +1857,30 @@
 /obj/effect/decal/cleanable/vomit,
 /turf/open/floor/pod/dark,
 /area/ship/crew/canteen)
+"Iu" = (
+/obj/machinery/atmospherics/pipe/simple/purple/hidden{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/seeds/tobacco{
+	pixel_y = -11;
+	pixel_x = 11
+	},
+/obj/item/trash/pistachios{
+	pixel_y = -6;
+	pixel_x = 5
+	},
+/obj/item/trash/chips{
+	pixel_y = 2;
+	pixel_x = 12
+	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_y = 12;
+	pixel_x = -20
+	},
+/turf/open/floor/pod/light,
+/area/ship/maintenance/aft)
 "Ix" = (
 /obj/machinery/atmospherics/components/unary/heat_exchanger{
 	dir = 4
@@ -2035,6 +1989,22 @@
 /obj/machinery/light/dim/directional/east,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
+"JP" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/blood/footprints,
+/obj/effect/mob_spawn/human/corpse/charredskeleton,
+/obj/machinery/power/apc/auto_name/directional/west,
+/obj/structure/cable,
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_y = 12;
+	pixel_x = -20
+	},
+/turf/open/floor/plating/rust,
+/area/ship/engineering/electrical)
 "JQ" = (
 /turf/closed/wall/mineral/titanium/survival,
 /area/ship/maintenance/aft)
@@ -2125,6 +2095,17 @@
 /obj/structure/barricade/wooden/crude,
 /turf/open/floor/plating,
 /area/ship/crew/canteen/kitchen)
+"Mz" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/industrial/warning/dust,
+/obj/machinery/airalarm/directional/east,
+/obj/item/paper/construction{
+	default_raw_text = "<center><h1>Airlock Instructions</h1></center><br><center>Because none of you numbnuts can remember them</center><br><br>1: Bolt the door behind you so you dont bump into it and lose all our air.<br>     Bolt is the LEFT BUTTON<br>2: Go to the air alarm, set it to siphon<br>3: When at least most of the gas is out, turn OFF siphon<br>4: You can now open the shutters<br>     I shouldnt have to tell you this, but theyre the RIGHT button<br><br><h2>To go back IN</h2><br>1: Close the shutters behind you<br>2: Set the air alarm to SIPHON again<br>3: When all of the dangerous gas is out, set the air alarm to FILL<br>3: Once the pressure is at least 50 kpa, you can set the air alarm back to normal, and unbolt the door<br><br>I still can't fucking believe I have to write this."
+	},
+/turf/open/floor/plating{
+	icon_state = "platingdmg1"
+	},
+/area/ship/cargo)
 "MW" = (
 /obj/docking_port/stationary{
 	dwidth = 15;
@@ -2173,40 +2154,6 @@
 	},
 /turf/open/floor/pod/dark,
 /area/ship/maintenance/starboard)
-"Og" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/item/stack/cable_coil/cut/red{
-	pixel_x = -15;
-	pixel_y = -8
-	},
-/obj/item/paper/crumpled{
-	pixel_y = 4;
-	pixel_x = -23;
-	info = "Attempt 301. Longitudinal traction was applied to the upper protruding flesh appendage. Muffled screaming (possibly Jeff?) was observed. Spontaneous amputation occurred and the screaming ceased. Duct tape applied.<br><br>Results: Reployer remains unfunctioning."
-	},
-/obj/item/paper/crumpled{
-	pixel_y = -12;
-	pixel_x = -3;
-	info = "Attempt 1180. Salt circle was established with regular rituals. 30mL of blood was dripped directly onto the reployer, and chanting begun 1 minute after the beginning of the attempt. Despite using only lighting from tallow candles, soapbucket scrying was ineffective in troubleshooting the problem.<br><br>Results: Reployer remains unfunctioning."
-	},
-/obj/effect/decal/cleanable/greenglow/filled,
-/obj/item/screwdriver/old{
-	pixel_y = -2;
-	pixel_x = -15
-	},
-/obj/effect/decal/cleanable/blood,
-/obj/machinery/light/small/directional/east,
-/obj/item/trash/candle{
-	pixel_y = 17;
-	pixel_x = -10
-	},
-/obj/item/trash/candle{
-	pixel_y = 17;
-	pixel_x = 10
-	},
-/obj/structure/salvageable/protolathe/reployer,
-/turf/open/floor/pod/dark,
-/area/ship/crew/office)
 "Ol" = (
 /turf/closed/wall/mineral/titanium/survival/nodiagonal,
 /area/ship/crew/canteen)
@@ -2279,6 +2226,19 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/plastic,
 /area/ship/crew/canteen/kitchen)
+"QE" = (
+/obj/machinery/atmospherics/pipe/simple/purple/hidden{
+	dir = 1
+	},
+/mob/living/simple_animal/hostile/cockroach/glockroach,
+/obj/effect/spawner/lootdrop/maintenance,
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 20;
+	pixel_y = 14
+	},
+/turf/open/floor/pod/light,
+/area/ship/maintenance/aft)
 "QM" = (
 /turf/closed/wall/r_wall,
 /area/ship/bridge)
@@ -2352,19 +2312,6 @@
 "RQ" = (
 /turf/closed/wall/mineral/titanium/survival/nodiagonal,
 /area/ship/maintenance/central)
-"RT" = (
-/obj/machinery/atmospherics/pipe/simple/purple/hidden{
-	dir = 1
-	},
-/mob/living/simple_animal/hostile/cockroach/glockroach,
-/obj/effect/spawner/lootdrop/maintenance,
-/obj/machinery/light_switch{
-	dir = 8;
-	pixel_x = 20;
-	pixel_y = 14
-	},
-/turf/open/floor/pod/light,
-/area/ship/maintenance/aft)
 "RU" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
@@ -2407,12 +2354,6 @@
 	},
 /turf/closed/wall/mineral/titanium/survival/nodiagonal,
 /area/ship/crew/office)
-"Ug" = (
-/obj/machinery/atmospherics/components/unary/relief_valve/atmos/atmos_waste{
-	dir = 8
-	},
-/turf/open/floor/engine/hull,
-/area/ship/external)
 "Uo" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
@@ -2483,6 +2424,40 @@
 /obj/effect/decal/cleanable/blood/footprints,
 /turf/open/floor/plating/rust,
 /area/ship/maintenance/starboard)
+"VR" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/stack/cable_coil/cut/red{
+	pixel_x = -15;
+	pixel_y = -8
+	},
+/obj/item/paper/crumpled{
+	pixel_y = 4;
+	pixel_x = -23;
+	default_raw_text = "Attempt 301. Longitudinal traction was applied to the upper protruding flesh appendage. Muffled screaming (possibly Jeff?) was observed. Spontaneous amputation occurred and the screaming ceased. Duct tape applied.<br><br>Results: Reployer remains unfunctioning."
+	},
+/obj/item/paper/crumpled{
+	pixel_y = -12;
+	pixel_x = -3;
+	default_raw_text = "Attempt 1180. Salt circle was established with regular rituals. 30mL of blood was dripped directly onto the reployer, and chanting begun 1 minute after the beginning of the attempt. Despite using only lighting from tallow candles, soapbucket scrying was ineffective in troubleshooting the problem.<br><br>Results: Reployer remains unfunctioning."
+	},
+/obj/effect/decal/cleanable/greenglow/filled,
+/obj/item/screwdriver/old{
+	pixel_y = -2;
+	pixel_x = -15
+	},
+/obj/effect/decal/cleanable/blood,
+/obj/machinery/light/small/directional/east,
+/obj/item/trash/candle{
+	pixel_y = 17;
+	pixel_x = -10
+	},
+/obj/item/trash/candle{
+	pixel_y = 17;
+	pixel_x = 10
+	},
+/obj/structure/salvageable/protolathe/reployer,
+/turf/open/floor/pod/dark,
+/area/ship/crew/office)
 "VY" = (
 /obj/machinery/atmospherics/pipe/simple/purple/hidden,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -2599,6 +2574,12 @@
 	},
 /turf/closed/wall/mineral/wood,
 /area/ship/maintenance/central)
+"Xu" = (
+/obj/machinery/atmospherics/components/unary/relief_valve/atmos/atmos_waste{
+	dir = 8
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external)
 "XF" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -2701,6 +2682,25 @@
 "YK" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/salvageable/autolathe,
+/turf/open/floor/pod/dark,
+/area/ship/crew/office)
+"YO" = (
+/obj/machinery/atmospherics/pipe/manifold/purple/hidden{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/photocopier,
+/obj/machinery/power/apc/auto_name/directional/west,
+/obj/structure/cable,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_y = 12;
+	pixel_x = -20
+	},
 /turf/open/floor/pod/dark,
 /area/ship/crew/office)
 "YS" = (
@@ -3009,7 +3009,7 @@ RQ
 vu
 sv
 pG
-ih
+YO
 WC
 JS
 ET
@@ -3042,7 +3042,7 @@ Go
 Je
 sB
 wt
-nZ
+Iu
 xr
 PE
 "}
@@ -3067,7 +3067,7 @@ bF
 bt
 HB
 YK
-Og
+VR
 JQ
 xx
 sh
@@ -3180,7 +3180,7 @@ By
 mN
 qR
 Ye
-gh
+Mz
 Yr
 BZ
 BZ
@@ -3266,13 +3266,13 @@ go
 md
 sK
 RU
-RT
+QE
 xr
 PE
 "}
 (19,1,1) = {"
 YB
-aX
+yf
 PR
 yD
 EG
@@ -3288,7 +3288,7 @@ ay
 Wh
 Eb
 GI
-Dl
+cX
 zz
 tB
 EZ
@@ -3335,7 +3335,7 @@ vO
 rO
 JG
 VM
-eC
+JP
 is
 cQ
 ep
@@ -3344,7 +3344,7 @@ IR
 hq
 ZK
 vd
-Ug
+Xu
 BZ
 Jn
 BZ

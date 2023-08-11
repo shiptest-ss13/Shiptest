@@ -45,6 +45,9 @@
 	///Proximity monitor associated with this atom, for motion sensitive cameras.
 	var/datum/proximity_monitor/proximity_monitor
 
+	/// A copy of the last paper object that was shown to this camera.
+	var/obj/item/paper/last_shown_paper
+
 /obj/machinery/camera/preset/toxins //Bomb test site in space
 	name = "Hardened Bomb-Test Camera"
 	desc = "A specially-reinforced camera with a long lasting battery, used to monitor the bomb testing site. An external light is attached to the top."
@@ -115,6 +118,7 @@
 		if(bug.current == src)
 			bug.current = null
 		bug = null
+	QDEL_NULL(last_shown_paper)
 	return ..()
 
 /obj/machinery/camera/examine(mob/user)
@@ -269,74 +273,87 @@
 
 	return TRUE
 
-/obj/machinery/camera/attackby(obj/item/I, mob/living/user, params)
+/obj/machinery/camera/attackby(obj/item/attacking_item, mob/living/user, params)
 	// UPGRADES
 	if(panel_open)
-		if(I.tool_behaviour == TOOL_ANALYZER)
+		if(attacking_item.tool_behaviour == TOOL_ANALYZER)
 			if(!isXRay(TRUE)) //don't reveal it was already upgraded if was done via MALF AI Upgrade Camera Network ability
-				if(!user.temporarilyRemoveItemFromInventory(I))
+				if(!user.temporarilyRemoveItemFromInventory(attacking_item))
 					return
 				upgradeXRay(FALSE, TRUE)
-				to_chat(user, "<span class='notice'>You attach [I] into [assembly]'s inner circuits.</span>")
-				qdel(I)
+				to_chat(user, "<span class='notice'>You attach [attacking_item] into [assembly]'s inner circuits.</span>")
+				qdel(attacking_item)
 			else
 				to_chat(user, "<span class='warning'>[src] already has that upgrade!</span>")
 			return
 
-		else if(istype(I, /obj/item/stack/sheet/mineral/plasma))
+		else if(istype(attacking_item, /obj/item/stack/sheet/mineral/plasma))
 			if(!isEmpProof(TRUE)) //don't reveal it was already upgraded if was done via MALF AI Upgrade Camera Network ability
-				if(I.use_tool(src, user, 0, amount=1))
+				if(attacking_item.use_tool(src, user, 0, amount=1))
 					upgradeEmpProof(FALSE, TRUE)
-					to_chat(user, "<span class='notice'>You attach [I] into [assembly]'s inner circuits.</span>")
+					to_chat(user, "<span class='notice'>You attach [attacking_item] into [assembly]'s inner circuits.</span>")
 			else
 				to_chat(user, "<span class='warning'>[src] already has that upgrade!</span>")
 			return
 
-		else if(istype(I, /obj/item/assembly/prox_sensor))
+		else if(istype(attacking_item, /obj/item/assembly/prox_sensor))
 			if(!isMotion())
-				if(!user.temporarilyRemoveItemFromInventory(I))
+				if(!user.temporarilyRemoveItemFromInventory(attacking_item))
 					return
 				upgradeMotion()
-				to_chat(user, "<span class='notice'>You attach [I] into [assembly]'s inner circuits.</span>")
-				qdel(I)
+				to_chat(user, "<span class='notice'>You attach [attacking_item] into [assembly]'s inner circuits.</span>")
+				qdel(attacking_item)
 			else
 				to_chat(user, "<span class='warning'>[src] already has that upgrade!</span>")
 			return
 
 	// OTHER
-	if((istype(I, /obj/item/paper) || istype(I, /obj/item/pda)) && isliving(user))
-		var/mob/living/U = user
-		var/obj/item/paper/X = null
-		var/obj/item/pda/P = null
+	if(istype(attacking_item, /obj/item/paper) && isliving(user))
+		// Grab the paper, sanitise the name as we're about to just throw it into chat wrapped in HTML tags.
+		var/obj/item/paper/paper = attacking_item
 
-		var/itemname = ""
-		var/info = ""
-		if(istype(I, /obj/item/paper))
-			X = I
-			itemname = X.name
-			info = X.info
-		else
-			P = I
-			itemname = P.name
-			info = P.notehtml
-		to_chat(U, "<span class='notice'>You hold \the [itemname] up to the camera...</span>")
-		U.changeNext_move(CLICK_CD_MELEE)
-		for(var/mob/O in GLOB.player_list)
-			if(isAI(O))
-				var/mob/living/silicon/ai/AI = O
-				if(AI.control_disabled || (AI.stat == DEAD))
-					return
-				if(U.name == "Unknown")
-					to_chat(AI, "<span class='name'>[U]</span> holds <a href='?_src_=usr;show_paper=1;'>\a [itemname]</a> up to one of your cameras ...")
+		// Make a complete copy of the paper, store a ref to it locally on the camera.
+		last_shown_paper = paper.copy(paper.type, null);
+
+		// Then sanitise the name because we're putting it directly in chat later.
+		var/item_name = sanitize(last_shown_paper.name)
+
+		// Start the process of holding it up to the camera.
+		to_chat(user, span_notice("You hold \the [item_name] up to the camera..."))
+		user.log_talk(item_name, LOG_GAME, log_globally=TRUE, tag="Pressed to camera")
+		user.changeNext_move(CLICK_CD_MELEE)
+
+		// And make a weakref we can throw around to all potential viewers.
+		last_shown_paper.camera_holder = WEAKREF(src)
+
+		// Iterate over all living mobs and check if anyone is elibile to view the paper.
+		// This is backwards, but cameras don't store a list of people that are looking through them,
+		// and we'll have to iterate this list anyway so we can use it to pull out AIs too.
+		for(var/mob/potential_viewer in GLOB.player_list)
+			// All AIs view through cameras, so we need to check them regardless.
+			if(isAI(potential_viewer))
+				var/mob/living/silicon/ai/ai = potential_viewer
+				if(ai.control_disabled || (ai.stat == DEAD))
+					continue
+
+				log_paper("[key_name(user)] held [last_shown_paper] up to [src], requesting [key_name(ai)] read it.")
+
+				if(user.name == "Unknown")
+					to_chat(ai, "[span_name(user)] holds <a href='?_src_=usr;show_paper_note=[REF(last_shown_paper)];'>\a [item_name]</a> up to one of your cameras ...")
 				else
-					to_chat(AI, "<b><a href='?src=[REF(AI)];track=[html_encode(U.name)]'>[U]</a></b> holds <a href='?_src_=usr;show_paper=1;'>\a [itemname]</a> up to one of your cameras ...")
-				AI.last_paper_seen = "<HTML><HEAD><TITLE>[itemname]</TITLE></HEAD><BODY><TT>[info]</TT></BODY></HTML>"
-			else if (O.client.eye == src)
-				to_chat(O, "<span class='name'>[U]</span> holds \a [itemname] up to one of the cameras ...")
-				O << browse(text("<HTML><HEAD><TITLE>[]</TITLE></HEAD><BODY><TT>[]</TT></BODY></HTML>", itemname, info), text("window=[]", itemname))
+					to_chat(ai, "<b><a href='?src=[REF(ai)];track=[html_encode(user.name)]'>[user]</a></b> holds <a href='?_src_=usr;show_paper_note=[REF(last_shown_paper)];'>\a [item_name]</a> up to one of your cameras ...")
+				continue
+
+			// If it's not an AI, eye if the client's eye is set to the camera. I wonder if this even works anymore with tgui camera apps and stuff?
+			if (potential_viewer.client?.eye == src)
+				log_paper("[key_name(user)] held [last_shown_paper] up to [src], and [key_name(potential_viewer)] may read it.")
+				to_chat(potential_viewer, "[span_name(user)] holds <a href='?_src_=usr;show_paper_note=[REF(last_shown_paper)];'>\a [item_name]</a> up to your camera...")
 		return
 
-	else if(istype(I, /obj/item/camera_bug))
+	if(istype(attacking_item, /obj/item/camera_bug))
+		return
+
+	else if(istype(attacking_item, /obj/item/camera_bug))
 		if(!can_use())
 			to_chat(user, "<span class='notice'>Camera non-functional.</span>")
 			return
@@ -346,12 +363,12 @@
 			bug = null
 		else
 			to_chat(user, "<span class='notice'>Camera bugged.</span>")
-			bug = I
+			bug = attacking_item
 			bug.bugged_cameras[src.c_tag] = src
 		return
 
-	else if(istype(I, /obj/item/pai_cable))
-		var/obj/item/pai_cable/cable = I
+	else if(istype(attacking_item, /obj/item/pai_cable))
+		var/obj/item/pai_cable/cable = attacking_item
 		cable.plugin(src, user)
 		return
 

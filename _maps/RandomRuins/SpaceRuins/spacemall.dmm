@@ -1311,16 +1311,6 @@
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shop)
-"eT" = (
-/obj/structure/rack,
-/obj/effect/turf_decal/corner/transparent/black/diagonal,
-/obj/item/paper{
-	name = "Cheap Kalixcian Phrasebook";
-	info = "Rsku suok sz zalo - My sugarcube is full of eels."
-	},
-/obj/effect/decal/cleanable/cobweb/cobweb2,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/spacemall/shop)
 "eU" = (
 /obj/structure/mirror{
 	pixel_y = -30
@@ -1507,36 +1497,6 @@
 /obj/machinery/food_cart,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall)
-"fw" = (
-/obj/item/clothing/under/costume/skeleton{
-	pixel_y = -3
-	},
-/obj/item/clothing/under/costume/skeleton{
-	pixel_y = -3
-	},
-/obj/item/clothing/under/costume/skeleton{
-	pixel_y = -3
-	},
-/obj/item/clothing/under/costume/gondola{
-	pixel_y = 5
-	},
-/obj/item/clothing/under/costume/gondola{
-	pixel_y = 5
-	},
-/obj/item/clothing/under/costume/gondola{
-	pixel_y = 5
-	},
-/obj/effect/turf_decal/box/white,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/kitchenspike{
-	name = "clothing rack";
-	can_buckle = 0;
-	desc = "A spike for collecting CLOTHING from PEOPLE."
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/spacemall/shop)
 "fy" = (
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plasteel,
@@ -2168,6 +2128,16 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/shop2)
+"ii" = (
+/obj/effect/decal/cleanable/blood/gibs/body,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/spacemall/maint)
 "im" = (
 /obj/effect/turf_decal/corner/transparent/red/diagonal,
 /obj/structure/disposalpipe/junction/yjunction{
@@ -2843,6 +2813,24 @@
 /obj/machinery/light/dim/directional/north,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall)
+"kC" = (
+/obj/structure/rack,
+/obj/item/clothing/head/goatpelt,
+/obj/item/clothing/head/hardhat/reindeer,
+/obj/item/clothing/head/collectable/chef,
+/obj/item/clothing/head/collectable/HoP,
+/obj/item/clothing/head/collectable/rabbitears,
+/obj/item/clothing/head/helmet/chaplain,
+/obj/item/clothing/neck/cloak/trans,
+/obj/item/clothing/neck/cloak/cap,
+/obj/item/clothing/head/helmet/chaplain/witchunter_hat,
+/obj/item/clothing/neck/beads,
+/obj/item/clothing/neck/necklace/dope,
+/obj/item/clothing/neck/stripedredscarf,
+/obj/item/clothing/neck/stripedgreenscarf,
+/obj/item/clothing/neck/stripedbluescarf,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/spacemall/shop)
 "kD" = (
 /obj/structure/railing/wood{
 	dir = 8
@@ -3021,6 +3009,15 @@
 /obj/structure/table,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall)
+"lw" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/spacemall/maint)
 "lx" = (
 /obj/effect/turf_decal/corner/transparent/black/diagonal,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
@@ -4761,15 +4758,6 @@
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
-"rK" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/spacemall/maint)
 "rM" = (
 /obj/effect/turf_decal/corner/transparent/solgovgold{
 	dir = 6
@@ -5182,6 +5170,21 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/dorms)
+"tj" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 2
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/spacemall/maint)
 "tl" = (
 /obj/structure/rack,
 /obj/structure/window/reinforced/spawner,
@@ -5737,21 +5740,6 @@
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
-"vc" = (
-/obj/machinery/door/airlock/maintenance_hatch{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 4
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/spacemall/maint)
 "vd" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 4
@@ -6220,6 +6208,22 @@
 /obj/effect/turf_decal/box/white,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shop)
+"xh" = (
+/obj/effect/turf_decal/corner/opaque/blue/half,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/space/has_grav/spacemall/shop2)
 "xo" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/siding/thinplating/dark,
@@ -6564,24 +6568,6 @@
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shuttle)
-"yE" = (
-/obj/structure/rack,
-/obj/item/clothing/head/goatpelt,
-/obj/item/clothing/head/hardhat/reindeer,
-/obj/item/clothing/head/collectable/chef,
-/obj/item/clothing/head/collectable/HoP,
-/obj/item/clothing/head/collectable/rabbitears,
-/obj/item/clothing/head/helmet/chaplain,
-/obj/item/clothing/neck/cloak/trans,
-/obj/item/clothing/neck/cloak/cap,
-/obj/item/clothing/head/helmet/chaplain/witchunter_hat,
-/obj/item/clothing/neck/beads,
-/obj/item/clothing/neck/necklace/dope,
-/obj/item/clothing/neck/stripedredscarf,
-/obj/item/clothing/neck/stripedgreenscarf,
-/obj/item/clothing/neck/stripedbluescarf,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/spacemall/shop)
 "yF" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -7694,22 +7680,6 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/spacemall/dorms)
-"CS" = (
-/obj/effect/turf_decal/corner/opaque/blue/half,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 4
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 8
-	},
-/turf/open/floor/plasteel/white,
-/area/ruin/space/has_grav/spacemall/shop2)
 "CW" = (
 /obj/effect/turf_decal/corner/opaque/blue/diagonal,
 /obj/structure/cable{
@@ -8514,36 +8484,6 @@
 /obj/structure/spider/stickyweb,
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/spacemall/maint)
-"FA" = (
-/obj/item/clothing/under/misc/durathread{
-	pixel_y = -4
-	},
-/obj/item/clothing/under/misc/durathread{
-	pixel_y = -4
-	},
-/obj/item/clothing/under/misc/durathread{
-	pixel_y = -4
-	},
-/obj/item/clothing/under/pants/blackjeans{
-	pixel_y = 5
-	},
-/obj/item/clothing/under/pants/blackjeans{
-	pixel_y = 5
-	},
-/obj/item/clothing/under/pants/blackjeans{
-	pixel_y = 5
-	},
-/obj/effect/turf_decal/box/white,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/kitchenspike{
-	name = "clothing rack";
-	can_buckle = 0;
-	desc = "A spike for collecting CLOTHING from PEOPLE."
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/spacemall/shop)
 "FC" = (
 /obj/machinery/computer/secure_data/laptop{
 	dir = 1
@@ -8711,19 +8651,6 @@
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall)
-"Gl" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 9
-	},
-/obj/structure/catwalk/over/plated_catwalk,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/spacemall/maint)
 "Go" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -8996,6 +8923,36 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/spacemall/maint)
+"Hp" = (
+/obj/item/clothing/under/misc/durathread{
+	pixel_y = -4
+	},
+/obj/item/clothing/under/misc/durathread{
+	pixel_y = -4
+	},
+/obj/item/clothing/under/misc/durathread{
+	pixel_y = -4
+	},
+/obj/item/clothing/under/pants/blackjeans{
+	pixel_y = 5
+	},
+/obj/item/clothing/under/pants/blackjeans{
+	pixel_y = 5
+	},
+/obj/item/clothing/under/pants/blackjeans{
+	pixel_y = 5
+	},
+/obj/effect/turf_decal/box/white,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/kitchenspike{
+	name = "clothing rack";
+	can_buckle = 0;
+	desc = "A spike for collecting CLOTHING from PEOPLE."
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/spacemall/shop)
 "Hq" = (
 /obj/structure/disposaloutlet{
 	dir = 4
@@ -9012,6 +8969,16 @@
 /obj/effect/turf_decal/corner/transparent/green/diagonal,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/spacemall)
+"Ht" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/spacemall/shop)
 "Hv" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/indestructable,
@@ -9196,6 +9163,16 @@
 	name = "bathroom floor"
 	},
 /area/ruin/space/has_grav/spacemall)
+"Im" = (
+/obj/structure/rack,
+/obj/effect/turf_decal/corner/transparent/black/diagonal,
+/obj/item/paper{
+	name = "Cheap Kalixcian Phrasebook";
+	default_raw_text = "Rsku suok sz zalo - My sugarcube is full of eels."
+	},
+/obj/effect/decal/cleanable/cobweb/cobweb2,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/spacemall/shop)
 "In" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -9519,16 +9496,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shop)
-"JR" = (
-/obj/effect/decal/cleanable/blood/gibs/body,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/spacemall/maint)
 "JS" = (
 /obj/structure/sign/poster/contraband/the_griffin{
 	pixel_x = 32
@@ -9719,6 +9686,19 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/spacemall)
+"KJ" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 9
+	},
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/spacemall/maint)
 "KL" = (
 /obj/effect/turf_decal/corner/transparent/blue{
 	dir = 4
@@ -10312,8 +10292,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall)
 "ME" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/window/reinforced{
+/obj/machinery/door/window{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
@@ -11623,6 +11602,21 @@
 /obj/effect/decal/cleanable/vomit/old,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall)
+"Rj" = (
+/obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/spacemall/maint)
 "Rk" = (
 /obj/machinery/door/airlock/external/glass,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
@@ -11877,6 +11871,22 @@
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
+"Ss" = (
+/obj/structure/chair/stool/bar,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wideplating/dark{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/spacemall)
 "St" = (
 /obj/effect/turf_decal/corner/opaque/blue/three_quarters{
 	dir = 8
@@ -12046,6 +12056,36 @@
 /obj/structure/barricade/wooden,
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/spacemall/dorms)
+"Ti" = (
+/obj/item/clothing/under/costume/skeleton{
+	pixel_y = -3
+	},
+/obj/item/clothing/under/costume/skeleton{
+	pixel_y = -3
+	},
+/obj/item/clothing/under/costume/skeleton{
+	pixel_y = -3
+	},
+/obj/item/clothing/under/costume/gondola{
+	pixel_y = 5
+	},
+/obj/item/clothing/under/costume/gondola{
+	pixel_y = 5
+	},
+/obj/item/clothing/under/costume/gondola{
+	pixel_y = 5
+	},
+/obj/effect/turf_decal/box/white,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/kitchenspike{
+	name = "clothing rack";
+	can_buckle = 0;
+	desc = "A spike for collecting CLOTHING from PEOPLE."
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/spacemall/shop)
 "Tl" = (
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -12901,22 +12941,6 @@
 /obj/effect/turf_decal/corner/transparent/green/diagonal,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/spacemall/dorms)
-"Wq" = (
-/obj/structure/chair/stool/bar,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 4
-	},
-/obj/effect/turf_decal/siding/wideplating/dark{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/spacemall)
 "Wr" = (
 /obj/effect/turf_decal/corner/opaque/blue/diagonal,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
@@ -13263,15 +13287,6 @@
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/spacemall/maint)
-"XZ" = (
-/obj/machinery/door/window{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/spacemall/shop)
 "Yc" = (
 /obj/machinery/door/airlock/glass_large,
 /obj/effect/turf_decal/industrial/warning,
@@ -13588,21 +13603,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/dorms)
-"Zp" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 4
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 2
-	},
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/spacemall/maint)
 "Zq" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/mop,
@@ -15598,7 +15598,7 @@ pe
 SF
 GZ
 QE
-yE
+kC
 zM
 oo
 uB
@@ -15751,7 +15751,7 @@ Wa
 LH
 HO
 hA
-fw
+Ti
 Qy
 Lx
 Ad
@@ -15801,7 +15801,7 @@ Va
 Rd
 kn
 Pu
-FA
+Hp
 Qy
 Dc
 Ad
@@ -16001,7 +16001,7 @@ QS
 fi
 YP
 zY
-Zp
+tj
 zY
 ED
 fl
@@ -16190,7 +16190,7 @@ Ge
 HY
 Yo
 PB
-Gl
+KJ
 Hn
 Pq
 ki
@@ -16297,11 +16297,11 @@ QL
 Vy
 Yo
 wE
-JR
+ii
 pe
 he
 td
-ME
+Ht
 VW
 hQ
 RH
@@ -16347,11 +16347,11 @@ xZ
 Vy
 Yo
 sL
-rK
+lw
 pe
 xY
 Sm
-XZ
+ME
 LY
 Ac
 pe
@@ -16369,7 +16369,7 @@ vS
 Wr
 xp
 TZ
-CS
+xh
 Yo
 ZS
 Wb
@@ -16856,7 +16856,7 @@ nM
 iT
 pe
 UW
-Wq
+Ss
 kv
 pU
 XD
@@ -17397,7 +17397,7 @@ cD
 In
 Yo
 Yo
-vc
+Rj
 pe
 pe
 pe
@@ -17650,7 +17650,7 @@ mt
 ps
 Wd
 pe
-eT
+Im
 TX
 LS
 Qf
