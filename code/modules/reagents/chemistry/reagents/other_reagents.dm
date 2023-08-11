@@ -2537,7 +2537,7 @@
 	description = "A tried and tested foam, used for decontaminating nuclear disasters."
 	reagent_state = LIQUID
 	color = "#A6FAFF55"
-	taste_description = "the inside of a fire extinguisher"
+	taste_description = "bitter, foamy awfulness."
 
 /datum/reagent/anti_radiation_foam/expose_turf(turf/open/T, reac_volume)
 	if (!istype(T))
@@ -2554,7 +2554,14 @@
 	O.wash(CLEAN_RAD)
 
 /datum/reagent/anti_radiation_foam/expose_mob(mob/living/M, method=TOUCH, reac_volume)
-	if(method in list(TOUCH))
+	if(method in list(TOUCH, VAPOR))
 		M.radiation = M.radiation - rand(max(M.radiation * 0.95, M.radiation)) //get the hose
 		M.ExtinguishMob()
 	..()
+
+
+/datum/reagent/anti_radiation_foam/on_mob_life(mob/living/carbon/M)
+	M.adjustToxLoss(0.5, 200)
+	M.adjust_disgust(4)
+	..()
+	. = 1

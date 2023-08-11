@@ -59,6 +59,8 @@
 	tank_volume = 500
 
 /obj/structure/reagent_dispensers/foamtank/antirad
+	name = "anti-radiation foam tank"
+	desc = "A tank full of decontamination foam"
 	reagent_id = /datum/reagent/anti_radiation_foam
 	tank_volume = 1000
 

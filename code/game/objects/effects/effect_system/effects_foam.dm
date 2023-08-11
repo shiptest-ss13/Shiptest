@@ -82,9 +82,10 @@
 	if(rads && istype(T))
 		rads.rad_power = rads.rad_power * rand(0.8, 0.95)
 		if (rads.rad_power <= RAD_BACKGROUND_RADIATION)
+			new /obj/effect/decal/cleanable/greenglow/filled(loc)
 			qdel(rads)
 	for(var/obj/things in get_turf(src))
-		things.wash(CLEAN_RAD)
+		things.wash(CLEAN_TYPE_RADIATION)
 
 /obj/effect/particle_effect/foam/antirad/kill_foam()
 	STOP_PROCESSING(SSfastprocess, src)

@@ -88,9 +88,8 @@
 
 /obj/effect/decal/cleanable/wash(clean_types)
 	..()
-	if(!(flags_1 & INITIALIZED_1))
-		return FALSE
-	qdel(src)
+	if(clean_types in list(CLEAN_WASH, CLEAN_SCRUB))
+		qdel(src)
 	return TRUE
 
 /obj/effect/decal/cleanable/proc/can_bloodcrawl_in()
