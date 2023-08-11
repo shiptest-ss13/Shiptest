@@ -790,7 +790,7 @@
 	return ..()
 
 /obj/item/reagent_containers/food/drinks/ration/beverage_bag
-	name = "hot beverage bag"
-	desc = "mix with beverage powders for a enjoyable drink"
-	list_reagents = list(/datum/reagent/waterpowder = 30)
+	name = "lukewarm beverage bag"
+	desc = "Simply mix flavor bags in and drink"
+	list_reagents = list(/datum/reagent/water = 30)
 
