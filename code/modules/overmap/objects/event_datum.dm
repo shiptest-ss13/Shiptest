@@ -109,14 +109,13 @@
 	token.update_icon()
 
 /datum/overmap/event/emp/affect_ship()
-	for(var/datum/overmap/ship/controlled/Ship in get_nearby_overmap_objects())
-		var/area/source_area = pick(Ship.shuttle_port.shuttle_areas)
-		source_area.set_fire_alarm_effect()
-		var/source_object = pick(source_area.contents)
-		empulse(get_turf(source_object), round(rand(strength / 2, strength)), rand(strength, strength * 2))
-		for(var/mob/M as anything in GLOB.player_list)
-			if(Ship.shuttle_port.is_in_shuttle_bounds(M))
-				M.playsound_local(Ship.shuttle_port, 'sound/weapons/ionrifle.ogg', strength)
+	var/area/source_area = pick(Ship.shuttle_port.shuttle_areas)
+	source_area.set_fire_alarm_effect()
+	var/source_object = pick(source_area.contents)
+	empulse(get_turf(source_object), round(rand(strength / 2, strength)), rand(strength, strength * 2))
+	for(var/mob/M as anything in GLOB.player_list)
+		if(Ship.shuttle_port.is_in_shuttle_bounds(M))
+			M.playsound_local(Ship.shuttle_port, 'sound/weapons/ionrifle.ogg', strength)
 
 /datum/overmap/event/emp/minor
 	name = "ion storm (minor)"
@@ -150,13 +149,12 @@
 	token.update_icon()
 
 /datum/overmap/event/electric/affect_ship()
-	for(var/datum/overmap/ship/controlled/Ship in get_nearby_overmap_objects())
-		var/datum/virtual_level/ship_vlevel = Ship.shuttle_port.get_virtual_level()
-		var/turf/source = ship_vlevel.get_side_turf(pick(GLOB.cardinals))
-		tesla_zap(source, 10, TESLA_DEFAULT_POWER, zap_flag)
-		for(var/mob/M as anything in GLOB.player_list)
-			if(Ship.shuttle_port.is_in_shuttle_bounds(M))
-				M.playsound_local(source, 'sound/magic/lightningshock.ogg', rand(min_damage / 10, max_damage / 10))
+	var/datum/virtual_level/ship_vlevel = Ship.shuttle_port.get_virtual_level()
+	var/turf/source = ship_vlevel.get_side_turf(pick(GLOB.cardinals))
+	tesla_zap(source, 10, TESLA_DEFAULT_POWER, zap_flag)
+	for(var/mob/M as anything in GLOB.player_list)
+		if(Ship.shuttle_port.is_in_shuttle_bounds(M))
+			M.playsound_local(source, 'sound/magic/lightningshock.ogg', rand(min_damage / 10, max_damage / 10))
 
 /datum/overmap/event/electric/minor
 	name = "electrical storm (minor)"
