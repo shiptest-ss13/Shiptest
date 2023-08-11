@@ -1221,6 +1221,25 @@
 		return
 	return TRUE
 
+/mob/proc/can_write(obj/item/writing_instrument)
+	if(!istype(writing_instrument))
+		to_chat(src, span_warning("You can't write with the [writing_instrument]!"))
+		return FALSE
+
+	if(!is_literate())
+		to_chat(src, span_warning("You try to write, but don't know how to spell anything!"))
+		return FALSE
+
+	var/pen_info = writing_instrument.get_writing_implement_details()
+	if(!pen_info || (pen_info["interaction_mode"] != MODE_WRITING))
+		to_chat(src, span_warning("You can't write with the [writing_instrument]!"))
+		return FALSE
+
+	if(has_gravity())
+		return TRUE
+
+	return TRUE
+
 ///Can this mob hold items
 /mob/proc/can_hold_items()
 	return FALSE
