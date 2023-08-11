@@ -41,8 +41,8 @@
 	small_item = TRUE
 	contains = list(/obj/item/storage/firstaid/toxin)
 
-/datum/supply_pack/medical/firstaidtoxins_single
-	name = "Toxin Treatment Kit Single-Pack"
+/datum/supply_pack/medical/firstaid_rad_single
+	name = "Radiation Treatment Kit Single-Pack"
 	desc = "Contains one first aid kit focused on reducing the damage done by radiation."
 	cost = 1000
 	small_item = TRUE
