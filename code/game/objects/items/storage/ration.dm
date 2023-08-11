@@ -80,6 +80,7 @@
 		/obj/item/reagent_containers/food/condiment/pack/cheese_spread = 1,
 		/obj/item/reagent_containers/food/condiment/pack/lemonade_powder = 1,
 		/obj/item/reagent_containers/food/drinks/ration/beverage_bag = 1
+
 		)
 	generate_items_inside(items_inside,src)
 
@@ -116,3 +117,212 @@
 		/obj/item/reagent_containers/food/drinks/ration/beverage_bag = 1
 		)
 	generate_items_inside(items_inside,src)
+
+/*
+====================================================================================
+
+
+		Waiting for quality review before implementing new variables
+
+						Try not to ring the Dinkster
+====================================================================================
+
+/obj/item/storage/ration/chili_macaroni
+    name = "Chili and Macaroni Ration"
+    desc = "Indulge in the comforting combination of chili and macaroni in this flavorful ration. Satisfy your taste buds with a mix of sweet and savory treats."
+
+/obj/item/storage/ration/chili_macaroni/PopulateContents()
+    var/static/items_inside = list(
+        /obj/item/reagent_containers/food/snacks/ration/chili_macaroni = 1,
+        /obj/item/reagent_containers/food/snacks/ration/lemon_poppy_seed_pound_cake = 1,
+        /obj/item/reagent_containers/food/snacks/ration/vegetable_crackers = 1,
+        /obj/item/reagent_containers/food/snacks/ration/teriyaki_beef_sticks = 1,
+        /obj/item/reagent_containers/food/snacks/ration/cherry_snackers = 1,
+		/obj/item/reagent_containers/food/condiment/pack/jalapeno_cheddar_cheese_spread = 1,
+        /obj/item/reagent_containers/food/condiment/ration/orange_beverage_powder = 1,
+		/obj/item/reagent_containers/food/drinks/ration/beverage_bag = 1
+    )
+    generate_items_inside(items_inside, src)
+
+/obj/item/storage/ration/chicken_wings_hot_sauce
+    name = "Chicken Wings in Hot Sauce Ration"
+    desc = "Experience the bold and spicy flavors of chicken wings drenched in hot sauce. This ration also includes a mix of delightful snacks for a well-rounded meal."
+
+/obj/item/storage/ration/chicken_wings_hot_sauce/PopulateContents()
+    var/static/items_inside = list(
+        /obj/item/reagent_containers/food/snacks/ration/chicken_wings_hot_sauce = 1,
+        /obj/item/reagent_containers/food/snacks/ration/garlic_mashed_potatoes = 1,
+        /obj/item/reagent_containers/food/snacks/ration/mint_chocolate_snack_cake = 1,
+        /obj/item/reagent_containers/food/snacks/ration/strawberry_preserves = 1,
+        /obj/item/reagent_containers/food/condiment/pack/peanut_butter = 1,
+        /obj/item/reagent_containers/food/condiment/ration/cherry_high_energy_beverage_powder = 1,
+		/obj/item/reagent_containers/food/drinks/ration/beverage_bag = 1
+    )
+    generate_items_inside(items_inside, src)
+
+/obj/item/storage/ration/fish_stew
+    name = "Fish Stew Ration"
+    desc = "Dive into the depths of flavor with this fish stew ration. Enjoy a hearty blend of seafood and vegetables, complemented by a selection of tasty accompaniments."
+
+/obj/item/storage/ration/fish_stew/PopulateContents()
+    var/static/items_inside = list(
+        /obj/item/reagent_containers/food/snacks/ration/fish_stew = 1,
+        /obj/item/reagent_containers/food/snacks/ration/soup_crackers = 1,
+        /obj/item/reagent_containers/food/snacks/ration/griddled_mushrooms_chili = 1,
+        /obj/item/reagent_containers/food/snacks/ration/sour_gummy_worms = 1,
+		/obj/item/reagent_containers/food/snacks/ration/white_wheat_snack_bread = 1,
+        /obj/item/reagent_containers/food/condiment/pack/garlic_parmesan_cheese_spread = 1,
+        /obj/item/reagent_containers/food/condiment/ration/freeze_dried_coffee_orange = 1,
+		/obj/item/reagent_containers/food/drinks/ration/beverage_bag = 1
+    )
+    generate_items_inside(items_inside, src)
+
+/obj/item/storage/ration/lemon_pepper_chicken
+    name = "Lemon Pepper Chicken Ration"
+    desc = "A tasty Lemon Pepper Chicken ration that combines the flavors of fruit and meat. Perfect for a satisfying meal."
+
+/obj/item/storage/ration/lemon_pepper_chicken/PopulateContents()
+    var/static/items_inside = list(
+        /obj/item/reagent_containers/food/snacks/ration/lemon_pepper_chicken = 1,
+        /obj/item/reagent_containers/food/snacks/ration/jellied_eels = 1,
+        /obj/item/reagent_containers/food/snacks/ration/pretzel_sticks_honey_mustard = 1,
+        /obj/item/reagent_containers/food/snacks/ration/blue_raspberry_hard_candies = 1,
+        /obj/item/reagent_containers/food/snacks/ration/peanut_cranberry_trail_mix = 1,
+        /obj/item/reagent_containers/food/condiment/ration/freeze_dried_coffee_chocolate = 1,
+		/obj/item/reagent_containers/food/drinks/ration/beverage_bag = 1
+    )
+    generate_items_inside(items_inside, src)
+
+/obj/item/storage/ration/sausage_peppers_onions
+    name = "Sausage, Peppers and Onions Ration"
+    desc = "Indulge in the delightful combination of juicy sausage, peppers, and onions in this hearty ration."
+
+/obj/item/storage/ration/sausage_peppers_onions/PopulateContents()
+    var/static/items_inside = list(
+        /obj/item/reagent_containers/food/snacks/ration/sausage_peppers_onions = 1,
+        /obj/item/reagent_containers/food/snacks/ration/white_wheat_sandwich_bread = 1,
+        /obj/item/reagent_containers/food/snacks/ration/channeler_meat_candy = 1,
+        /obj/item/reagent_containers/food/snacks/ration/baked_cheddar_cheese_chips = 1,
+        /obj/item/reagent_containers/food/snacks/ration/chocolate_orange_snack_cake = 1,
+        /obj/item/reagent_containers/food/condiment/ration/pan_genezan_vodka_ration = 1,
+		/obj/item/reagent_containers/food/drinks/ration/beverage_bag = 1
+    )
+    generate_items_inside(items_inside, src)
+
+/obj/item/storage/ration/pork_dumplings_chili_sauce
+    name = "Pork Dumplings in Chili Sauce Ration"
+    desc = "Savor the rich flavors of pork dumplings in a spicy chili sauce, accompanied by a variety of complementary snacks."
+
+/obj/item/storage/ration/pork_dumplings_chili_sauce/PopulateContents()
+    var/static/items_inside = list(
+        /obj/item/reagent_containers/food/snacks/ration/pork_dumplings_chili_sauce = 1,
+        /obj/item/reagent_containers/food/snacks/ration/fried_potato_curls = 1,
+        /obj/item/reagent_containers/food/snacks/ration/pretzel_sticks_honey_mustard = 1,
+        /obj/item/reagent_containers/food/snacks/ration/rationers_guild_chocolate_bar = 1,
+        /obj/item/reagent_containers/food/snacks/ration/pick_me_up_energy_gum = 1,
+        /obj/item/reagent_containers/food/condiment/ration/freeze_dried_coffee_hazelnut_powder = 1,
+		/obj/item/reagent_containers/food/drinks/ration/beverage_bag = 1
+    )
+    generate_items_inside(items_inside, src)
+
+/obj/item/storage/ration/battered_fish_sticks
+    name = "Battered Fish Sticks Ration"
+    desc = "Enjoy the crispy goodness of battered fish sticks, along with a selection of sides and a delectable dessert."
+
+/obj/item/storage/ration/battered_fish_sticks/PopulateContents()
+    var/static/items_inside = list(
+        /obj/item/reagent_containers/food/snacks/ration/battered_fish_sticks = 1,
+        /obj/item/reagent_containers/food/snacks/ration/stewed_asparagus_butter = 1,
+        /obj/item/reagent_containers/food/snacks/ration/fried_potato_curls = 1,
+        /obj/item/reagent_containers/food/snacks/ration/chocolate_orange_snack_cake = 1,
+        /obj/item/reagent_containers/food/snacks/ration/apple_slices = 1,
+        /obj/item/reagent_containers/food/condiment/ration/pineapple_fruit_beverage_base = 1,
+		/obj/item/reagent_containers/food/drinks/ration/beverage_bag = 1
+    )
+    generate_items_inside(items_inside, src)
+
+/obj/item/storage/ration/assorted_salted_offal
+    name = "Assorted Salted Offal Ration"
+    desc = "An adventurous choice, this ration offers an assortment of salted offal, providing a unique culinary experience."
+
+
+/obj/item/storage/ration/assorted_salted_offal/PopulateContents()
+    var/static/items_inside = list(
+        /obj/item/reagent_containers/food/snacks/ration/assorted_salted_offal = 1,
+        /obj/item/reagent_containers/food/snacks/ration/bone_broth_tuna_rice = 1,
+        /obj/item/reagent_containers/food/snacks/ration/trail_crackers = 1,
+        /obj/item/reagent_containers/food/snacks/ration/quik_energy_bar_banana_lemon_lime = 1,
+        /obj/item/reagent_containers/food/snacks/ration/candied_pineapple_chunks = 1,
+        /obj/item/reagent_containers/food/condiment/ration/pan_genezan_vodka_ration = 1,
+		/obj/item/reagent_containers/food/drinks/ration/beverage_bag = 1
+    )
+    generate_items_inside(items_inside, src)
+
+/obj/item/storage/ration/maple_pork_sausage_patty
+    name = "Maple Pork Sausage Patty Ration"
+    desc = "Start your day with a satisfying breakfast featuring a maple-infused pork sausage patty and a variety of treats."
+
+/obj/item/storage/ration/maple_pork_sausage_patty/PopulateContents()
+    var/static/items_inside = list(
+        /obj/item/reagent_containers/food/snacks/ration/maple_pork_sausage_patty = 1,
+        /obj/item/reagent_containers/food/snacks/ration/hash_brown_potatoes_bacon_peppers_onions = 1,
+        /obj/item/reagent_containers/food/snacks/ration/granola_milk_blueberries = 1,
+        /obj/item/reagent_containers/food/snacks/ration/maple_muffin_top_trans_fat_free = 1,
+        /obj/item/reagent_containers/food/snacks/ration/smoked_almonds = 1,
+        /obj/item/reagent_containers/food/condiment/ration/maple_syrup = 1,
+		/obj/item/reagent_containers/food/condiment/ration/grape_beverage_powder_carb_electrolyte = 1,
+		/obj/item/reagent_containers/food/drinks/ration/beverage_bag = 1
+    )
+    generate_items_inside(items_inside, src)
+
+/obj/item/storage/ration/jalapeno_pepper_jack_beef_patty
+    name = "Jalapeno Pepper Jack Beef Patty Ration"
+    desc = "Experience a flavorful fusion of jalapeno, pepper jack cheese, and beef in this grilled beef patty ration."
+
+/obj/item/storage/ration/jalapeno_pepper_jack_beef_patty/PopulateContents()
+    var/static/items_inside = list(
+        /obj/item/reagent_containers/food/snacks/ration/jalapeno_pepper_jack_beef_patty = 1,
+        /obj/item/reagent_containers/food/snacks/ration/au_gratin_potatoes = 1,
+        /obj/item/reagent_containers/food/snacks/ration/chocolate_chunk_oatmeal_cookie = 1,
+        /obj/item/reagent_containers/food/snacks/ration/jerky_wraps = 1,
+        /obj/item/reagent_containers/food/snacks/ration/peanut_candies = 1,
+		/obj/item/reagent_containers/food/condiment/ration/bacon_cheddar_cheese_spread = 1,
+        /obj/item/reagent_containers/food/condiment/ration/orange_beverage_base_sugar_free = 1,
+		/obj/item/reagent_containers/food/drinks/ration/beverage_bag = 1
+    )
+    generate_items_inside(items_inside, src)
+
+/obj/item/storage/ration/beef_goulash
+    name = "Beef Goulash Ration"
+    desc = "Delight in the rich flavors of beef goulash, accompanied by a selection of sides and a sweet treat."
+
+/obj/item/storage/ration/beef_goulash/PopulateContents()
+    var/static/items_inside = list(
+        /obj/item/reagent_containers/food/snacks/ration/beef_goulash = 1,
+        /obj/item/reagent_containers/food/snacks/ration/applesauce_carb_enhanced = 1,
+        /obj/item/reagent_containers/food/snacks/ration/strawberry_preserves = 1,
+        /obj/item/reagent_containers/food/snacks/ration/whole_wheat_bread_mini_loaf = 1,
+        /obj/item/reagent_containers/food/snacks/ration/patriotic_sugar_cookies = 1,
+		/obj/item/reagent_containers/food/condiment/ration/chunky_peanut_butter = 1,
+        /obj/item/reagent_containers/food/condiment/ration/orange_beverage_powder_carb_fortified = 1,
+		/obj/item/reagent_containers/food/drinks/ration/beverage_bag = 1
+    )
+    generate_items_inside(items_inside, src)
+
+/obj/item/storage/ration/pepperoni_pizza_slice
+    name = "Pepperoni Pizza Slice Ration"
+    desc = "Indulge in the classic taste of pepperoni pizza with this ration, complete with sides and a refreshing beverage."
+
+/obj/item/storage/ration/pepperoni_pizza_slice/PopulateContents()
+    var/static/items_inside = list(
+        /obj/item/reagent_containers/food/snacks/ration/pepperoni_pizza_slice = 1,
+        /obj/item/reagent_containers/food/snacks/ration/apples_in_spiced_sauce = 1,
+        /obj/item/reagent_containers/food/snacks/ration/vegetable_crackers = 1,
+        /obj/item/reagent_containers/food/snacks/ration/oatmeal_cookie = 1,
+        /obj/item/reagent_containers/food/snacks/ration/chocolate_protein_drink_powder = 1,
+		/obj/item/reagent_containers/food/condiment/ration/jalapeno_cheddar_cheese_spread = 1,
+        /obj/item/reagent_containers/food/condiment/ration/lemonade_sugar_free_beverage_base = 1,
+		/obj/item/reagent_containers/food/drinks/ration/beverage_bag = 1
+    )
+    generate_items_inside(items_inside, src)
+*/
