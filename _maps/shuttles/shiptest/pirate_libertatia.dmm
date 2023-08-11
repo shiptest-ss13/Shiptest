@@ -156,6 +156,11 @@
 /obj/item/gun/energy/e_gun/mini{
 	name = "first mate's derringer"
 	},
+/obj/machinery/light_switch{
+	pixel_y = 12;
+	pixel_x = 20;
+	dir = 8
+	},
 /turf/open/floor/pod/light,
 /area/ship/bridge)
 "fq" = (
@@ -310,6 +315,10 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/landmark/start/security_officer,
+/obj/machinery/light_switch{
+	pixel_y = 23;
+	pixel_x = -12
+	},
 /turf/open/floor/pod/light,
 /area/ship/security)
 "nC" = (
@@ -557,9 +566,6 @@
 	dir = 8
 	},
 /obj/machinery/autolathe,
-/obj/machinery/status_display/shuttle{
-	pixel_y = -32
-	},
 /obj/machinery/light/small/directional/south,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 10
@@ -717,8 +723,8 @@
 /obj/machinery/microwave{
 	pixel_y = 5
 	},
-/obj/machinery/status_display/shuttle{
-	pixel_y = 32
+/obj/machinery/light_switch{
+	pixel_y = 20
 	},
 /turf/open/floor/pod/light,
 /area/ship/crew)
@@ -1150,6 +1156,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/machinery/light_switch{
+	pixel_y = 20
+	},
 /turf/open/floor/pod/light,
 /area/ship/cargo)
 "Hw" = (
@@ -1465,6 +1474,9 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
+/obj/machinery/light_switch{
+	pixel_y = 20
+	},
 /turf/open/floor/plating,
 /area/ship/hallway/port)
 "QO" = (
@@ -1672,6 +1684,9 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
+	},
+/obj/machinery/light_switch{
+	pixel_y = 20
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/starboard)

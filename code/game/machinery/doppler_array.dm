@@ -98,18 +98,18 @@
 	if(record)
 		name = "paper - [record.name]"
 
-		info += {"<h2>[record.name]</h2>
+		add_raw_text ({"<h2>[record.name]</h2>
 		<ul><li>Timestamp: [record.timestamp]</li>
 		<li>Coordinates: [record.coordinates]</li>
 		<li>Displacement: [record.displacement] seconds</li>
 		<li>Epicenter Radius: [record.factual_radius["epicenter_radius"]]</li>
 		<li>Outer Radius: [record.factual_radius["outer_radius"]]</li>
-		<li>Shockwave Radius: [record.factual_radius["shockwave_radius"]]</li></ul>"}
+		<li>Shockwave Radius: [record.factual_radius["shockwave_radius"]]</li></ul>"})
 
 		if(length(record.theory_radius))
-			info += {"<ul><li>Theoretical Epicenter Radius: [record.theory_radius["epicenter_radius"]]</li>
+			add_raw_text({"<ul><li>Theoretical Epicenter Radius: [record.theory_radius["epicenter_radius"]]</li>
 			<li>Theoretical Outer Radius: [record.theory_radius["outer_radius"]]</li>
-			<li>Theoretical Shockwave Radius: [record.theory_radius["shockwave_radius"]]</li></ul>"}
+			<li>Theoretical Shockwave Radius: [record.theory_radius["shockwave_radius"]]</li></ul>"})
 
 		update_appearance()
 

@@ -315,6 +315,9 @@
 	pixel_x = -28;
 	req_access_txt = "41"
 	},
+/obj/machinery/light_switch{
+	pixel_y = 22
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering)
 "fv" = (
@@ -521,6 +524,9 @@
 /obj/structure/table,
 /obj/item/radio/intercom/wideband/table{
 	dir = 4
+	},
+/obj/machinery/light_switch{
+	pixel_y = 22
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
@@ -978,7 +984,7 @@
 	},
 /obj/item/paper{
 	desc = "A piece of paper depicting a extremely pissed up upper manager";
-	info = "YOU ARENT SUPPOSED TO BE MINING, HEAR ME!?!! YOU'RE SUPPOSED TO BE SELLING SHIT TO THE CONSUMERS YOU HEAR!! AS PUNISHMENT FOR THE LAST SHIFT, I HAVE REMOVED ALLL OF YOUR MINING TOOLS!! NOW GET BACK TO WORK!!";
+	default_raw_text = "YOU ARENT SUPPOSED TO BE MINING, HEAR ME!?!! YOU'RE SUPPOSED TO BE SELLING SHIT TO THE CONSUMERS YOU HEAR!! AS PUNISHMENT FOR THE LAST SHIFT, I HAVE REMOVED ALLL OF YOUR MINING TOOLS!! NOW GET BACK TO WORK!!";
 	name = "angry letter from upper management"
 	},
 /obj/machinery/door/firedoor,
@@ -1365,6 +1371,11 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -19;
+	pixel_y = 12
+	},
 /turf/open/floor/carpet/red_gold,
 /area/ship/crew/dorm)
 "BX" = (
@@ -1725,6 +1736,11 @@
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable,
 /obj/effect/turf_decal/siding/blue,
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 20;
+	pixel_y = 11
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "Je" = (
@@ -1826,6 +1842,10 @@
 /obj/structure/curtain,
 /obj/effect/turf_decal/steeldecal/steel_decals10{
 	dir = 8
+	},
+/obj/machinery/light_switch{
+	pixel_y = 23;
+	pixel_x = 11
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/dorm)
@@ -2287,6 +2307,11 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = 11;
+	pixel_y = -16
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
 "Ty" = (
@@ -2654,7 +2679,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/item/paper{
 	desc = "A piece of paper depicting a extremely pissed up upper manager";
-	info = "YOU DAMNNED FOOLS! YOU ARENT SUPPOSED TO USE YOUR STOCK, YOU'RE SUPPOSED TO SELL THEM!! WE AREN'T WASTING MY MONEY ARE WE!?! NOW GET BACK TO WORK!!!";
+	default_raw_text = "YOU DAMNNED FOOLS! YOU ARENT SUPPOSED TO USE YOUR STOCK, YOU'RE SUPPOSED TO SELL THEM!! WE AREN'T WASTING MY MONEY ARE WE!?! NOW GET BACK TO WORK!!!";
 	name = "angry letter from upper management"
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
@@ -2683,6 +2708,10 @@
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-2"
+	},
+/obj/machinery/light_switch{
+	pixel_y = 23;
+	pixel_x = 11
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)

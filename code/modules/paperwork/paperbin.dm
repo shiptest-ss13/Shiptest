@@ -77,21 +77,22 @@
 		total_paper--
 		update_appearance()
 		// If there's any custom paper on the stack, use that instead of creating a new paper.
-		var/obj/item/paper/P
+		var/obj/item/paper/paper
 		if(papers.len > 0)
-			P = papers[papers.len]
-			papers.Remove(P)
+			paper = papers[papers.len]
+			papers.Remove(paper)
 		else
-			P = new papertype(src)
+			paper = new papertype(src)
 			if(SSevents.holidays && SSevents.holidays[APRIL_FOOLS])
 				if(prob(30))
-					P.info = "<font face=\"[CRAYON_FONT]\" color=\"red\"><b>HONK HONK HONK HONK HONK HONK HONK<br>HOOOOOOOOOOOOOOOOOOOOOONK<br>APRIL FOOLS</b></font>"
-					P.AddComponent(/datum/component/honkspam)
+					paper.add_raw_text("<font face=\"[CRAYON_FONT]\" color=\"red\"><b>HONK HONK HONK HONK HONK HONK HONK<br>HOOOOOOOOOOOOOOOOOOOOOONK<br>APRIL FOOLS</b></font>")
+					paper.AddComponent(/datum/component/honkspam)
+					paper.update_appearance()
 
-		P.add_fingerprint(user)
-		P.forceMove(user.loc)
-		user.put_in_hands(P)
-		to_chat(user, "<span class='notice'>You take [P] out of \the [src].</span>")
+		paper.add_fingerprint(user)
+		paper.forceMove(user.loc)
+		user.put_in_hands(paper)
+		to_chat(user, "<span class='notice'>You take [paper] out of \the [src].</span>")
 	else
 		to_chat(user, "<span class='warning'>[src] is empty!</span>")
 	add_fingerprint(user)

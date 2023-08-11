@@ -54,10 +54,8 @@
 
 /obj/item/paperplane/update_overlays()
 	. = ..()
-	var/list/stamped = internalPaper.stamped
-	if(stamped)
-		for(var/S in stamped)
-			. += "paperplane_[S]"
+	for(var/stamp in internalPaper.stamp_cache)
+		. += "paperplane_[stamp]"
 
 /obj/item/paperplane/attack_self(mob/user)
 	to_chat(user, "<span class='notice'>You unfold [src].</span>")
@@ -116,7 +114,7 @@
 		return
 	if(istype(src, /obj/item/paper/carbon))
 		var/obj/item/paper/carbon/Carbon = src
-		if(!Carbon.iscopy && !Carbon.copied)
+		if(!Carbon.copied)
 			to_chat(user, "<span class='notice'>Take off the carbon copy first.</span>")
 			return
 	to_chat(user, "<span class='notice'>You fold [src] into the shape of a plane!</span>")
