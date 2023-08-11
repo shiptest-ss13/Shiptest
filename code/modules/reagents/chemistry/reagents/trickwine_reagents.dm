@@ -15,7 +15,7 @@
 	if(prob(10))
 		M.set_drugginess(10)
 		to_chat(M, "<span class='notice'>[high_message]</span>")
-	if(M.faction && "roumain" in M.faction)
+	if(M.faction && ("roumain" in M.faction))
 		M.adjustToxLoss(-2)
 		if(prob(10))
 			to_chat(M, "<span class='notice'>[cleanse_message]</span>")
