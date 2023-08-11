@@ -108,7 +108,7 @@
 	token.light_color = "#7cb4d4"
 	token.update_icon()
 
-/datum/overmap/event/emp/affect_ship()
+/datum/overmap/event/emp/affect_ship(datum/overmap/ship/controlled/Ship)
 	var/area/source_area = pick(Ship.shuttle_port.shuttle_areas)
 	source_area.set_fire_alarm_effect()
 	var/source_object = pick(source_area.contents)
@@ -148,7 +148,7 @@
 	token.light_color = "#e8e85c"
 	token.update_icon()
 
-/datum/overmap/event/electric/affect_ship()
+/datum/overmap/event/electric/affect_ship(datum/overmap/ship/controlled/Ship)
 	var/datum/virtual_level/ship_vlevel = Ship.shuttle_port.get_virtual_level()
 	var/turf/source = ship_vlevel.get_side_turf(pick(GLOB.cardinals))
 	tesla_zap(source, 10, TESLA_DEFAULT_POWER, zap_flag)
@@ -208,24 +208,24 @@
 	token.light_color = adjust_colors()
 	token.update_icon()
 
-/datum/overmap/event/wormhole/affect_ship(datum/overmap/ship/controlled/S)
+/datum/overmap/event/wormhole/affect_ship(datum/overmap/ship/controlled/Ship)
 	if(!other_wormhole)
 		qdel(src)
 	if(--stability <= 0)
 		var/list/results = SSovermap.get_unused_overmap_square()
-		S.overmap_move(results["x"], results["y"])
+		Ship.overmap_move(results["x"], results["y"])
 		QDEL_NULL(other_wormhole)
 		for(var/MN in GLOB.player_list)
 			var/mob/M = MN
-			if(S.shuttle_port.is_in_shuttle_bounds(M))
-				M.playsound_local(S.shuttle_port, 'sound/effects/explosionfar.ogg', 100)
+			if(Ship.shuttle_port.is_in_shuttle_bounds(M))
+				M.playsound_local(Ship.shuttle_port, 'sound/effects/explosionfar.ogg', 100)
 				shake_camera(M, 10, 10)
 
 		return qdel(src)
 	other_wormhole.stability = stability
 
-	S.overmap_move(other_wormhole.x, other_wormhole.y)
-	S.overmap_step(S.get_heading())
+	Ship.overmap_move(other_wormhole.x, other_wormhole.y)
+	Ship.overmap_step(Ship.get_heading())
 
 	token.color = adjust_colors()
 	token.light_color = adjust_colors()
@@ -324,13 +324,13 @@
 	token.light_color = "#c46a24"
 	token.update_icon()
 
-/datum/overmap/event/anomaly/affect_ship(datum/overmap/ship/controlled/S)
-	var/area/source_area = pick(S.shuttle_port.shuttle_areas)
+/datum/overmap/event/anomaly/affect_ship(datum/overmap/ship/controlled/Ship)
+	var/area/source_area = pick(Ship.shuttle_port.shuttle_areas)
 	var/source_object = pick(source_area.contents)
 	new /obj/effect/spawner/lootdrop/anomaly/storm(get_turf(source_object))
 	for(var/mob/M as anything in GLOB.player_list)
-		if(S.shuttle_port.is_in_shuttle_bounds(M))
-			M.playsound_local(S.shuttle_port, 'sound/effects/bamf.ogg', 100)
+		if(Ship.shuttle_port.is_in_shuttle_bounds(M))
+			M.playsound_local(Ship.shuttle_port, 'sound/effects/bamf.ogg', 100)
 
 GLOBAL_LIST_INIT(overmap_event_pick_list, list(
 	/datum/overmap/event/wormhole = 10,
