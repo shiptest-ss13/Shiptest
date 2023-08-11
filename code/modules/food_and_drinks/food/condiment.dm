@@ -375,3 +375,6 @@
 	icon_state = "oliveoil"
 	list_reagents = list(/datum/reagent/consumable/cornoil = 50)
 
+//New condiments
+
+
