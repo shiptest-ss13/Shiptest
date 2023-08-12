@@ -50,7 +50,7 @@
 	pixel_y = 10
 	},
 /obj/item/paper/natural{
-	info = "<center><h1>Potato battery build instructions</h1></center><p>Did you know that the simplest way to obtain renewable energy sources is to simply grow them in your garden? Everything you need are just easily avalible household items. <br>With that said we introduce: the potato battery!<br>Follow the instructions below to build one of your own:</p><ol><li>Grow a average sized potato</li><li>Attach 5 pieces of cable coil</li><li>Your potato battery is ready for use</li></ol><p> Remember to be always cautious around electricity! </p></p><span style = 'font-family:Segoe Script'><p>SURGEONS NOTE:<br>The maximum charge of the battery is proportional to the potency of the grown potato.Remember that the defibrillator requires a cell with a rating of minimum 1000kJ,  not every potato will be good enough for it.<br>Perhaps some plant traits would affect the cell capacity as well?</p> </span>";
+	default_raw_text = "<center><h1>Potato battery build instructions</h1></center><p>Did you know that the simplest way to obtain renewable energy sources is to simply grow them in your garden? Everything you need are just easily avalible household items. <br>With that said we introduce: the potato battery!<br>Follow the instructions below to build one of your own:</p><ol><li>Grow a average sized potato</li><li>Attach 5 pieces of cable coil</li><li>Your potato battery is ready for use</li></ol><p> Remember to be always cautious around electricity! </p></p><span style = 'font-family:Segoe Script'><p>SURGEONS NOTE:<br>The maximum charge of the battery is proportional to the potency of the grown potato.Remember that the defibrillator requires a cell with a rating of minimum 1000kJ,  not every potato will be good enough for it.<br>Perhaps some plant traits would affect the cell capacity as well?</p> </span>";
 	name = "Potato battery build instructions";
 	pixel_x = -4;
 	pixel_y = 5
@@ -930,7 +930,7 @@
 /area/ship/cargo)
 "wa" = (
 /obj/structure/table/glass,
-/obj/machinery/photocopier/faxmachine/longrange,
+/obj/machinery/fax,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 8
 	},

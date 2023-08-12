@@ -61,7 +61,7 @@
 
 	folded = !folded
 	playsound(src.loc, 'sound/weapons/empty.ogg', 100, 1)
-	update_icon()
+	update_appearance()
 
 /obj/item/gun/ballistic/automatic/assualt/ak47/nt/update_overlays()
 	. = ..()
@@ -165,6 +165,6 @@
 			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd Matter.</span>")
 
 	playsound(user, 'sound/weapons/empty.ogg', 100, TRUE)
-	update_icon()
+	update_appearance()
 	for(var/datum/action/action as anything in actions)
 		action.UpdateButtonIcon()

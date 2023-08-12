@@ -54,6 +54,13 @@
 	permeability_coefficient = 0.9
 	can_be_tied = FALSE
 
+/obj/item/clothing/shoes/sandal/slippers
+	name = "patient slippers"
+	desc = "A white pair of easy slip on and off slippers. There are extra treads on the bottom."
+	icon_state = "whiteslippers"
+	item_state = "whiteslippers"
+	supports_variations = DIGITIGRADE_VARIATION
+
 /obj/item/clothing/shoes/sandal/marisa
 	desc = "A pair of magic black shoes."
 	name = "magic shoes"
@@ -283,20 +290,6 @@
 		recharging_time = world.time + recharging_rate
 	else
 		to_chat(user, "<span class='warning'>Something prevents you from dashing forward!</span>")
-
-/obj/item/clothing/shoes/singery
-	name = "yellow performer's boots"
-	desc = "These boots were made for dancing."
-	icon_state = "ysing"
-	equip_delay_other = 50
-	greyscale_icon_state = "boots"
-
-/obj/item/clothing/shoes/singerb
-	name = "blue performer's boots"
-	desc = "These boots were made for dancing."
-	icon_state = "bsing"
-	equip_delay_other = 50
-	greyscale_icon_state = "boots"
 
 /obj/item/clothing/shoes/bronze
 	name = "bronze boots"

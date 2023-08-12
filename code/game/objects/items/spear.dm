@@ -30,10 +30,7 @@
 
 /obj/item/spear/update_icon_state()
 	icon_state = "[icon_prefix]0"
-
-/obj/item/spear/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins to sword-swallow \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return BRUTELOSS
+	return ..()
 
 /obj/item/spear/CheckParts(list/parts_list)
 	var/obj/item/shard/tip = locate() in parts_list
@@ -41,12 +38,15 @@
 		throwforce = 21
 		icon_prefix = "spearplasma"
 		AddComponent(/datum/component/two_handed, force_unwielded=11, force_wielded=19, icon_wielded="[icon_prefix]1")
-	update_icon()
+	update_appearance()
 	qdel(tip)
 	..()
 
 /obj/item/spear/explosive
 	name = "explosive lance"
+	icon_state = "spearbomb0"
+	base_icon_state = "spearbomb"
+	icon_prefix = "spearbomb"
 	var/obj/item/grenade/explosive = null
 	var/wielded = FALSE // track wielded status on item
 
@@ -58,7 +58,7 @@
 
 /obj/item/spear/explosive/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded=10, force_wielded=18, icon_wielded="spearbomb1")
+	AddComponent(/datum/component/two_handed, force_unwielded=10, force_wielded=18, icon_wielded="[icon_prefix]1")
 
 /// triggered on wield of two handed item
 /obj/item/spear/explosive/proc/on_wield(obj/item/source, mob/user)
@@ -71,9 +71,6 @@
 	SIGNAL_HANDLER
 
 	wielded = FALSE
-
-/obj/item/spear/explosive/update_icon_state()
-	icon_state = "spearbomb0"
 
 /obj/item/spear/explosive/proc/set_explosive(obj/item/grenade/G)
 	if(explosive)
@@ -98,15 +95,6 @@
 		set_explosive(G)
 		qdel(lancePart)
 	..()
-
-/obj/item/spear/explosive/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins to sword-swallow \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	user.say("[war_cry]", forced="spear warcry")
-	explosive.forceMove(user)
-	explosive.prime()
-	user.gib()
-	qdel(src)
-	return BRUTELOSS
 
 /obj/item/spear/explosive/examine(mob/user)
 	. = ..()
@@ -162,6 +150,8 @@
 /obj/item/spear/bonespear	//Blatant imitation of spear, but made out of bone. Not valid for explosive modification.
 	icon_state = "bone_spear0"
 	name = "bone spear"
+	base_icon_state = "bone_spear0"
+	icon_prefix = "bone_spear"
 	desc = "A haphazardly-constructed yet still deadly weapon. The pinnacle of modern technology."
 	icon = 'icons/obj/items_and_weapons.dmi'
 	lefthand_file = 'icons/mob/inhands/weapons/polearms_lefthand.dmi'
@@ -173,11 +163,7 @@
 
 /obj/item/spear/bonespear/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded=12, force_wielded=20, icon_wielded="bone_spear1")
-
-/obj/item/spear/bonespear/update_icon_state()
-	icon_state = "bone_spear0"
-
+	AddComponent(/datum/component/two_handed, force_unwielded=12, force_wielded=20, icon_wielded="[icon_prefix]1")
 /obj/item/spear/dragonspear//version of the bone spear crafted from the trophy dropped by the Ash Drake. High damage, high ap, burns.
 	name = "dragonslayer's spear"
 	desc = "A bone spear crafted from the leading spine of a fully-grown drake, razor-sharp and hotter then magma. Wielded by the deranged, pyromaniacs, and champions of lavaland."
@@ -191,6 +177,8 @@
 	armour_penetration = 30
 	embedding = list("impact_pain_mult" = 5)
 	icon_prefix = "dragonspear"
+	base_icon_state = "dragonspear0"
+	icon_state = "dragonspear0"
 	var/list/nemesis_factions = list("mining", "boss")
 	var/faction_bonus_force = 25
 	attack_verb = list("seared", "braided", "impaled", "smote", "gored")
@@ -220,10 +208,6 @@
 	. = ..()
 	AddComponent(/datum/component/two_handed, force_unwielded=20, force_wielded=25, icon_wielded="[icon_prefix]1")
 	AddComponent(/datum/component/butchering, 60, 150)
-	icon_state = "[icon_prefix]0"
-
-/obj/item/spear/dragonspear/update_icon_state()
-	icon_state = "[icon_prefix]0"
 
 /obj/item/spear/dragonspear/attack(atom/target, blocked = FALSE)
 	if(iscarbon(target))
@@ -243,6 +227,8 @@
 	name = "crystal spear"
 	desc = "While more 'sharp stick' than spear, this thing is extremely dangerous neverless. Crafted out of the mysterous crystals, it can hit for very high damage, although it will break with repeated use."
 	icon = 'icons/obj/items_and_weapons.dmi'
+	base_icon_state = "crystal_spear"
+	icon_prefix = "crystal_spear"
 	lefthand_file = 'icons/mob/inhands/weapons/polearms_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/polearms_righthand.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
@@ -254,10 +240,7 @@
 
 /obj/item/spear/crystal/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded=12, force_wielded=30, icon_wielded="crystal_spear1") //4 hit crit
-
-/obj/item/spear/crystal/update_icon_state()
-	icon_state = "crystal_spear0"
+	AddComponent(/datum/component/two_handed, force_unwielded=12, force_wielded=30, icon_wielded="[icon_prefix]1") //4 hit crit
 
 /obj/item/spear/crystal/examine(mob/user)
 	. = ..()

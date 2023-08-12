@@ -173,11 +173,12 @@
 
 /obj/item/clothing/head/kitty/visual_equipped(mob/living/carbon/human/user, slot)
 	if(ishuman(user) && slot == ITEM_SLOT_HEAD)
-		update_icon(user)
+		update_icon(ALL, user)
 		user.update_inv_head() //Color might have been changed by update_icon.
 	..()
 
-/obj/item/clothing/head/kitty/update_icon(mob/living/carbon/human/user)
+/obj/item/clothing/head/kitty/update_icon(updates=ALL, mob/living/carbon/human/user)
+	. = ..()
 	if(ishuman(user))
 		add_atom_colour("#[user.hair_color]", FIXED_COLOUR_PRIORITY)
 
@@ -232,7 +233,7 @@
 
 /obj/item/clothing/head/wig/Initialize(mapload)
 	. = ..()
-	update_icon()
+	update_appearance()
 
 /obj/item/clothing/head/wig/update_icon_state()
 	var/datum/sprite_accessory/S = GLOB.hairstyles_list[hairstyle]
@@ -242,6 +243,7 @@
 	else
 		icon = S.icon
 		icon_state = S.icon_state
+	return ..()
 
 /obj/item/clothing/head/wig/worn_overlays(isinhands = FALSE, file2use)
 	. = list()
@@ -264,7 +266,7 @@
 		user.visible_message("<span class='notice'>[user] changes \the [src]'s hairstyle to [new_style].</span>", "<span class='notice'>You change \the [src]'s hairstyle to [new_style].</span>")
 	if(newcolor && newcolor != color) // only update if necessary
 		add_atom_colour(newcolor, FIXED_COLOUR_PRIORITY)
-	update_icon()
+	update_appearance()
 
 /obj/item/clothing/head/wig/afterattack(mob/living/carbon/human/target, mob/user)
 	. = ..()
@@ -272,7 +274,7 @@
 		to_chat(user, "<span class='notice'>You adjust the [src] to look just like [target.name]'s [target.hairstyle].</span>")
 		add_atom_colour("#[target.hair_color]", FIXED_COLOUR_PRIORITY)
 		hairstyle = target.hairstyle
-		update_icon()
+		update_appearance()
 
 /obj/item/clothing/head/wig/random/Initialize(mapload)
 	hairstyle = pick(GLOB.hairstyles_list - "Bald") //Don't want invisible wig
@@ -295,30 +297,8 @@
 	if(ishuman(user) && slot == ITEM_SLOT_HEAD)
 		if (color != "#[user.hair_color]") // only update if necessary
 			add_atom_colour("#[user.hair_color]", FIXED_COLOUR_PRIORITY)
-			update_icon()
+			update_appearance()
 		user.update_inv_head()
-
-/obj/item/clothing/head/wig/suicide_act(mob/living/user)
-	if (ishumanbasic(user) ||  isvampire(user))		// (Semi)non degenerates
-		user.visible_message("<span class='suicide'>[user] strangles [user.p_their()] neck with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-		return OXYLOSS
-	if (iszombie(user))		// No oxy damage
-		user.visible_message("<span class='suicide'>[user] strangles [user.p_their()] neck with \the [src], but nothing happens!</span>")
-		return SHAME
-	if (isdullahan(user))		// You tried
-		user.visible_message("<span class='suicide'>[user] tries to strangle [user.p_their()] neck with \the [src], but they don't have a neck! It looks like [user.p_theyre()] an idiot! </span>")
-		return SHAME
-	else				// Anyone left shouldn't have hair at all, and therefore vanishes in a blinding flash of light, leaving their items behind
-		user.visible_message("<span class='suicide'>[user] is stitching \the [src] to [user.p_their()] head! It looks like [user.p_theyre()] trying to have hair!</span>")
-		for(var/obj/item/W in user)
-			user.dropItemToGround(W)
-		var/turf/T = get_turf(src)
-		for(var/mob/living/carbon/C in viewers(T, null))
-			C.flash_act()
-		new /obj/effect/dummy/lighting_obj (get_turf(src), LIGHT_COLOR_HOLY_MAGIC, 10, 4, 4)
-		playsound(src, 'sound/magic/blind.ogg', 100, TRUE)
-		qdel(user)
-		return MANUAL_SUICIDE
 
 /obj/item/clothing/head/bronze
 	name = "bronze hat"

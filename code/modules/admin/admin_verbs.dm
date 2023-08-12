@@ -119,7 +119,7 @@ GLOBAL_LIST_INIT(admin_verbs_fun, list(
 	/client/proc/polymorph_all,
 	/client/proc/show_tip,
 	/client/proc/smite,
-	/client/proc/fax_panel,
+	/client/proc/fax_manager,
 	/client/proc/spawn_ruin,
 	))
 GLOBAL_PROTECT(admin_verbs_fun)
@@ -146,6 +146,7 @@ GLOBAL_PROTECT(admin_verbs_server)
 	/client/proc/cmd_admin_delete,		/*delete an instance/object/mob/etc*/
 	/client/proc/cmd_debug_del_all,
 	/client/proc/toggle_random_events,
+	/client/proc/set_next_outpost,
 	/client/proc/panicbunker,
 	/client/proc/toggle_interviews,
 	/client/proc/toggle_hub,
@@ -204,6 +205,7 @@ GLOBAL_PROTECT(admin_verbs_debug)
 	/datum/admins/proc/create_or_modify_area,
 	/datum/admins/proc/fixcorruption,
 	/datum/admins/proc/open_shuttlepanel, /* Opens shuttle manipulator UI */
+	/client/proc/spawn_outpost, /* Allows admins to spawn a new outpost. */
 	/datum/admins/proc/open_borgopanel,
 	/datum/admins/proc/overmap_view, /* Opens HTML overmap viewer UI */
 	/client/proc/toggle_AI_interact, /*toggle admin ability to interact with machines as an AI*/
@@ -281,7 +283,7 @@ GLOBAL_LIST_INIT(admin_verbs_hideable, list(
 	/client/proc/cmd_display_del_log,
 	/client/proc/toggle_combo_hud,
 	/client/proc/debug_huds,
-	/client/proc/fax_panel
+	/client/proc/fax_manager
 	))
 GLOBAL_PROTECT(admin_verbs_hideable)
 

@@ -2,16 +2,14 @@
 	name = "rifle magazine (10mm)"
 	desc = "A well-worn magazine fitted for surplus rifles, designed to chamber 10mm."
 	icon_state = "75-8"
+	base_icon_state = "75"
 	ammo_type = /obj/item/ammo_casing/c10mm
 	caliber = "10mm"
 	max_ammo = 10
 
-/obj/item/ammo_box/magazine/m10mm/rifle/update_icon()
-	..()
-	if(ammo_count())
-		icon_state = "75-8"
-	else
-		icon_state = "75-0"
+/obj/item/ammo_box/magazine/m10mm/rifle/update_icon_state()
+	. = ..()
+	icon_state = "[base_icon_state]-[ammo_count() ? "8" : "0"]"
 
 /obj/item/ammo_box/magazine/m556
 	name = "toploader magazine (5.56x45mm)"
@@ -26,14 +24,15 @@
 	name = "\improper SolGov AR magazine (4.73x33mm caseless)"
 	desc = "A rather large magazine designed to chamber 4.73x33mm caseless."
 	icon_state = "47x33mm-50"
+	base_icon_state = "47x33mm"
 	ammo_type = /obj/item/ammo_casing/caseless/c47x33mm
 	caliber = "4.73x33mm caseless"
 	max_ammo = 50 //brrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr
 	w_class = WEIGHT_CLASS_NORMAL
 
-/obj/item/ammo_box/magazine/rifle47x33mm/update_icon()
-	..()
-	icon_state = "47x33mm-[round(ammo_count(),5)]"
+/obj/item/ammo_box/magazine/rifle47x33mm/update_icon_state()
+	. = ..()
+	icon_state = "[base_icon_state]-[round(ammo_count(),5)]"
 
 /obj/item/ammo_box/magazine/aks74u
 	name = "\improper assault rifle Magazine (5.45x39mm)"
@@ -43,7 +42,7 @@
 	caliber = "5.45x39mm"
 	max_ammo = 30
 
-/obj/item/ammo_box/magazine/aks74u/update_icon()
+/obj/item/ammo_box/magazine/aks74u/update_icon_state()
 	. = ..()
 	icon_state = "ak47_mag-[!!ammo_count()]"
 
@@ -55,7 +54,7 @@
 	caliber = "4.6x30mm"
 	max_ammo = 30
 
-/obj/item/ammo_box/magazine/aknt/update_icon()
+/obj/item/ammo_box/magazine/aknt/update_icon_state()
 	. = ..()
 	icon_state = "ak47_mag-[!!ammo_count()]"
 
@@ -67,7 +66,7 @@
 	caliber = "7.62x39mm"
 	max_ammo = 20
 
-/obj/item/ammo_box/magazine/ak47/update_icon()
+/obj/item/ammo_box/magazine/ak47/update_icon_state()
 	. = ..()
 	icon_state = "ak47_mag-[!!ammo_count()]"
 
@@ -79,7 +78,7 @@
 	caliber = ".308 Winchester"
 	max_ammo = 10
 
-/obj/item/ammo_box/magazine/ebr/update_icon()
+/obj/item/ammo_box/magazine/ebr/update_icon_state()
 	. = ..()
 	icon_state = "ebr_mag-[!!ammo_count()]"
 
@@ -90,7 +89,7 @@
 	caliber = ".308 Winchester"
 	max_ammo = 10
 
-/obj/item/ammo_box/magazine/gal/update_icon()
+/obj/item/ammo_box/magazine/gal/update_icon_state()
 	. = ..()
 	icon_state = "galmag-[!!ammo_count()]"
 
@@ -102,7 +101,7 @@
 	caliber = "5.56x45mm"
 	max_ammo = 30
 
-/obj/item/ammo_box/magazine/p16/update_icon()
+/obj/item/ammo_box/magazine/p16/update_icon_state()
 	. = ..()
 	icon_state = "p16_mag-[!!ammo_count()]"
 
@@ -113,7 +112,7 @@
 	caliber = "a556"
 	max_ammo = 30
 
-/obj/item/ammo_box/magazine/swiss/update_icon()
+/obj/item/ammo_box/magazine/swiss/update_icon_state()
 	. = ..()
 	icon_state = "swissmag-[!!ammo_count()]"
 

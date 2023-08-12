@@ -35,7 +35,7 @@ SUBSYSTEM_DEF(acid)
 
 		if(O.acid_level && O.acid_processing())
 		else
-			O.update_icon()
+			O.update_appearance()
 			processing -= O
 
 		if (MC_TICK_CHECK)

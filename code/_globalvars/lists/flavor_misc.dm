@@ -19,7 +19,7 @@ GLOBAL_LIST_INIT(body_sizes, list("Normal" = BODY_SIZE_NORMAL, "Short" = BODY_SI
 GLOBAL_LIST_EMPTY(body_markings_list)
 GLOBAL_LIST_EMPTY(tails_list_lizard)
 GLOBAL_LIST_EMPTY(animated_tails_list_lizard)
-GLOBAL_LIST_EMPTY(snouts_list)
+GLOBAL_LIST_EMPTY(face_markings_list)
 GLOBAL_LIST_EMPTY(horns_list)
 GLOBAL_LIST_EMPTY(frills_list)
 GLOBAL_LIST_EMPTY(spines_list)

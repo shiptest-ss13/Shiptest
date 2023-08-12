@@ -27,11 +27,11 @@
 "ci" = (
 /obj/structure/stone_tile/slab/cracked,
 /turf/open/floor/grass/snow/basalt,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/ice/explored)
 "ct" = (
 /obj/structure/stone_tile/cracked,
 /turf/open/floor/grass/snow/basalt,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/ice/explored)
 "cA" = (
 /obj/structure/stone_tile/surrounding_tile/cracked{
 	dir = 1
@@ -41,7 +41,7 @@
 	dir = 4
 	},
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/ice/explored)
 "dK" = (
 /obj/item/spacecash/bundle/c1000,
 /turf/open/floor/mineral/gold,
@@ -54,7 +54,7 @@
 	dir = 4
 	},
 /turf/open/floor/grass/snow/basalt,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/ice/explored)
 "dV" = (
 /obj/structure/stone_tile/slab,
 /turf/open/indestructible/boss,
@@ -67,7 +67,7 @@
 	dir = 10
 	},
 /turf/open/floor/grass/snow/basalt,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/ice/explored)
 "ex" = (
 /obj/structure/stone_tile/surrounding_tile/cracked{
 	dir = 1
@@ -76,7 +76,7 @@
 	dir = 8
 	},
 /turf/open/floor/grass/snow/basalt,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/ice/explored)
 "eS" = (
 /obj/structure/grille/indestructable,
 /turf/open/floor/plasteel/rockvault/sandstone,
@@ -95,10 +95,10 @@
 	},
 /obj/structure/stone_tile/center,
 /turf/open/floor/grass/snow/basalt,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/ice/explored)
 "fY" = (
 /turf/open/floor/grass/snow/basalt,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/ice/explored)
 "gC" = (
 /obj/item/storage/bag/quiver/empty,
 /turf/open/floor/mineral/gold,
@@ -113,26 +113,21 @@
 /area/ruin)
 "ie" = (
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/ice/explored)
 "if" = (
 /obj/structure/flora/rock/icy,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/surface/outdoors)
-"ih" = (
-/obj/item/coin/gold,
-/obj/item/spacecash/bundle/c1000,
-/turf/open/floor/mineral/gold,
-/area/icemoon/underground/explored)
+/area/overmap_encounter/planetoid/ice/explored)
 "iu" = (
 /obj/structure/stone_tile/surrounding_tile/cracked{
 	dir = 8
 	},
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/ice/explored)
 "iT" = (
 /obj/structure/stone_tile/slab,
 /mob/living/simple_animal/hostile/megafauna/dragon/icemoon{
-	loot = list(/obj/structure/closet/crate/necropolis/dragon, /obj/item/keycard/gatedrop/drakelair)
+	loot = list(/obj/structure/closet/crate/necropolis/dragon,/obj/item/keycard/gatedrop/drakelair)
 	},
 /turf/open/indestructible/boss,
 /area/ruin)
@@ -149,7 +144,7 @@
 	dir = 6
 	},
 /turf/open/floor/grass/snow/basalt,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/ice/explored)
 "jQ" = (
 /obj/structure/stone_tile/surrounding_tile/cracked{
 	dir = 8
@@ -161,11 +156,11 @@
 	dir = 1
 	},
 /turf/open/floor/grass/snow/basalt,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/ice/explored)
 "ka" = (
 /obj/structure/flora/grass/brown,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/ice/explored)
 "kd" = (
 /obj/item/coin/gold,
 /obj/item/ammo_casing/caseless/arrow/ash,
@@ -187,14 +182,14 @@
 "li" = (
 /obj/structure/stone_tile/slab,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/ice/explored)
 "mx" = (
 /obj/structure/stone_tile/block/cracked{
 	dir = 8
 	},
 /obj/structure/stone_tile/cracked,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/ice/explored)
 "nD" = (
 /turf/closed/indestructible/riveted/uranium{
 	base_icon_state = "iron_wall";
@@ -207,7 +202,7 @@
 	dir = 1
 	},
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/ice/explored)
 "rX" = (
 /turf/closed/indestructible/riveted/uranium{
 	base_icon_state = "iron_wall";
@@ -223,7 +218,7 @@
 	dir = 4
 	},
 /turf/open/floor/grass/snow/basalt,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/ice/explored)
 "sm" = (
 /obj/structure/stone_tile/slab/cracked,
 /obj/structure/fans/tiny/invisible,
@@ -244,14 +239,14 @@
 	dir = 8
 	},
 /turf/open/floor/grass/snow/basalt,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/ice/explored)
 "tD" = (
 /turf/template_noop,
 /area/template_noop)
 "tI" = (
 /obj/structure/flora/tree/dead,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/ice/explored)
 "uu" = (
 /turf/open/floor/plasteel/rockvault/sandstone,
 /area/ruin/powered)
@@ -275,7 +270,7 @@
 	dir = 4
 	},
 /turf/open/floor/grass/snow/basalt,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/ice/explored)
 "wl" = (
 /obj/item/clothing/suit/armor/vest/capcarapace,
 /turf/open/floor/mineral/gold,
@@ -299,7 +294,7 @@
 /area/ruin/powered)
 "wX" = (
 /turf/closed/indestructible/rock/snow/ice/ore,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/cave/explored)
 "xo" = (
 /obj/structure/stone_tile/slab,
 /obj/structure/fans/tiny/invisible,
@@ -342,7 +337,7 @@
 	icon = 'icons/turf/mining.dmi';
 	icon_state = "icerock"
 	},
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/cave/explored)
 "yL" = (
 /obj/structure/stone_tile/block/cracked{
 	dir = 9
@@ -351,11 +346,11 @@
 	dir = 8
 	},
 /turf/open/floor/grass/snow/basalt,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/ice/explored)
 "Ai" = (
 /obj/structure/stone_tile/cracked,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/ice/explored)
 "Ax" = (
 /obj/item/stack/sheet/mineral/gold/five,
 /turf/open/floor/mineral/gold,
@@ -370,7 +365,7 @@
 	},
 /obj/structure/stone_tile/surrounding_tile/cracked,
 /turf/open/floor/grass/snow/basalt,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/ice/explored)
 "CN" = (
 /obj/structure/stone_tile/cracked{
 	dir = 1
@@ -379,23 +374,23 @@
 	dir = 8
 	},
 /turf/open/floor/grass/snow/basalt,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/ice/explored)
 "CS" = (
 /obj/structure/stone_tile/cracked{
 	dir = 8
 	},
 /turf/open/floor/grass/snow/basalt,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/ice/explored)
 "Dz" = (
 /obj/structure/stone_tile/block/cracked{
 	dir = 8
 	},
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/ice/explored)
 "DL" = (
 /obj/structure/flora/rock/pile/icy,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/ice/explored)
 "DM" = (
 /obj/item/coin/gold,
 /obj/item/stack/sheet/mineral/gold/five,
@@ -411,7 +406,7 @@
 "FA" = (
 /obj/structure/flora/grass/both,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/ice/explored)
 "FF" = (
 /obj/structure/bed/pod,
 /obj/item/flashlight/flare/torch,
@@ -420,7 +415,7 @@
 /area/ruin/powered)
 "Gb" = (
 /turf/closed/mineral/snowmountain/cavern/icemoon,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/cave/explored)
 "Gh" = (
 /obj/effect/decal/remains/human{
 	desc = "Some human remains, the only thing that could burn remains to a crisp like this is a plasmafire, or a dragon..."
@@ -433,7 +428,7 @@
 	pixel_x = 20
 	},
 /turf/open/floor/grass/snow/basalt,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/ice/explored)
 "Gv" = (
 /obj/machinery/door/keycard/gates/drakelair{
 	color = "#EFC51D"
@@ -446,13 +441,13 @@
 	},
 /obj/structure/stone_tile/cracked,
 /turf/open/floor/grass/snow/basalt,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/ice/explored)
 "HL" = (
 /obj/structure/stone_tile/cracked{
 	dir = 1
 	},
 /turf/open/floor/grass/snow/basalt,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/ice/explored)
 "IB" = (
 /obj/structure/stone_tile/block/cracked{
 	dir = 1
@@ -463,7 +458,7 @@
 "JL" = (
 /obj/structure/flora/grass/green,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/ice/explored)
 "JS" = (
 /obj/item/stack/sheet/mineral/diamond,
 /turf/open/floor/mineral/gold,
@@ -480,11 +475,11 @@
 	dir = 8
 	},
 /turf/open/floor/grass/snow/basalt,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/ice/explored)
 "Li" = (
 /obj/structure/fluff/drake_statue,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/ice/explored)
 "MA" = (
 /obj/structure/stone_tile/cracked,
 /obj/structure/stone_tile/cracked{
@@ -509,7 +504,7 @@
 	},
 /obj/structure/stone_tile/center,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/ice/explored)
 "OF" = (
 /obj/structure/flora/ash/fireblossom,
 /obj/structure/stone_tile/cracked{
@@ -519,7 +514,7 @@
 	dir = 8
 	},
 /turf/open/floor/grass/snow/basalt,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/ice/explored)
 "Pt" = (
 /obj/machinery/button/door{
 	id = "ashdrake_cell1";
@@ -532,7 +527,7 @@
 	dir = 5
 	},
 /turf/open/floor/grass/snow/basalt,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/ice/explored)
 "QM" = (
 /obj/item/coin/gold,
 /turf/open/floor/mineral/gold,
@@ -540,13 +535,13 @@
 "Sj" = (
 /obj/structure/stone_tile/center,
 /turf/open/floor/grass/snow/basalt,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/ice/explored)
 "SI" = (
 /obj/structure/stone_tile/block/cracked{
 	dir = 6
 	},
 /turf/open/floor/grass/snow/basalt,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/ice/explored)
 "Tf" = (
 /obj/item/coin/gold,
 /obj/item/borg/upgrade/modkit/cooldown,
@@ -559,11 +554,11 @@
 	},
 /obj/structure/stone_tile/surrounding_tile/cracked,
 /turf/open/floor/grass/snow/basalt,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/ice/explored)
 "VO" = (
 /obj/structure/stone_tile/slab,
 /turf/open/floor/grass/snow/basalt,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/ice/explored)
 "Wb" = (
 /obj/effect/gibspawner,
 /obj/item/clothing/head/crown,
@@ -574,7 +569,7 @@
 	dir = 4
 	},
 /turf/open/floor/grass/snow/basalt,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/ice/explored)
 "WN" = (
 /obj/machinery/door/airlock/gold/glass,
 /turf/open/floor/plasteel/rockvault/sandstone,
@@ -602,7 +597,7 @@
 	dir = 4
 	},
 /turf/open/floor/grass/snow/basalt,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/ice/explored)
 "XG" = (
 /obj/machinery/door/poddoor/gates/indestructible{
 	id = "ashdrake_cell2"
@@ -618,7 +613,7 @@
 	dir = 4
 	},
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/ice/explored)
 "YQ" = (
 /obj/machinery/button/door{
 	id = "ashdrake_cell2";
@@ -638,13 +633,13 @@
 	dir = 1
 	},
 /turf/open/floor/grass/snow/basalt,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/ice/explored)
 "Zl" = (
 /obj/structure/stone_tile/block/cracked{
 	dir = 1
 	},
 /turf/open/floor/grass/snow/basalt,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/ice/explored)
 "Zp" = (
 /obj/item/gun/ballistic/bow,
 /turf/open/floor/mineral/gold,
@@ -660,7 +655,7 @@
 	dir = 4
 	},
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/ice/explored)
 
 (1,1,1) = {"
 tD
@@ -1022,7 +1017,7 @@ wX
 nD
 Fw
 Fw
-ih
+eU
 Ax
 QM
 EF
@@ -1057,8 +1052,8 @@ Fw
 QM
 EF
 nD
-rX
-rX
+nD
+nD
 rX
 rX
 rX

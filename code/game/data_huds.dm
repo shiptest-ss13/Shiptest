@@ -194,10 +194,8 @@ Medical HUD! Basic mode needs suit sensors on.
 			holder.icon_state = "huddefib"
 		else
 			holder.icon_state = "huddead"
-	//WS Begin - Borers
 	else if(has_brain_worms() && B != null && B.controlling)
 		holder.icon_state = "hudbrainworm"
-	//WS end
 	else
 		switch(virus_threat)
 			if(DISEASE_SEVERITY_BIOHAZARD)
