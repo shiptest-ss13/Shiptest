@@ -1,6 +1,7 @@
 /////////////////////////////////////////////////////////////
-////////// MOJAVE SUN WORLD ICON ELEMENT DIRECTORY //////////
+////////// WORLD ICON ELEMENT DIRECTORY //////////
 /////////////////////////////////////////////////////////////
+//PORTED FROM MOJAVE SUN//
 
 // Slap onto something to give it a world icon that differs from the inventory one (allows for realistically sized objects and all that) //
 // To fix 25/06/2021 : Blood Decals, Mutable Overlays and other baked in bitch ass overlays that need to be remade when the icon changes //
