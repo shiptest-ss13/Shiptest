@@ -29,7 +29,7 @@ GLOBAL_LIST_INIT(marker_beacon_colors, sortList(list(
 
 /obj/item/stack/marker_beacon/Initialize(mapload)
 	. = ..()
-	update_icon()
+	update_appearance()
 
 /obj/item/stack/marker_beacon/examine(mob/user)
 	. = ..()
@@ -38,6 +38,7 @@ GLOBAL_LIST_INIT(marker_beacon_colors, sortList(list(
 
 /obj/item/stack/marker_beacon/update_icon_state()
 	icon_state = "[initial(icon_state)][lowertext(picked_color)]"
+	return ..()
 
 /obj/item/stack/marker_beacon/attack_self(mob/user)
 	if(!isturf(user.loc))
@@ -60,7 +61,7 @@ GLOBAL_LIST_INIT(marker_beacon_colors, sortList(list(
 		return
 	if(input_color)
 		picked_color = input_color
-		update_icon()
+		update_appearance()
 
 /obj/structure/marker_beacon
 	name = "marker beacon"
@@ -81,24 +82,31 @@ GLOBAL_LIST_INIT(marker_beacon_colors, sortList(list(
 	. = ..()
 	if(set_color)
 		picked_color = set_color
-	update_icon()
+	update_appearance()
 
 /obj/structure/marker_beacon/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1))
+
 		var/obj/item/stack/marker_beacon/marker = new(loc)
 		marker.picked_color = picked_color
-		marker.update_icon()
+		marker.update_appearance()
+
 	qdel(src)
 
 /obj/structure/marker_beacon/examine(mob/user)
 	. = ..()
 	. += "<span class='notice'>Alt-click to select a color. Current color is [picked_color].</span>"
 
-/obj/structure/marker_beacon/update_icon()
+/obj/structure/marker_beacon/update_appearance(updates)
 	while(!picked_color || !GLOB.marker_beacon_colors[picked_color])
 		picked_color = pick(GLOB.marker_beacon_colors)
-	icon_state = "[initial(icon_state)][lowertext(picked_color)]-on"
+
+	. = ..()
 	set_light(light_range, light_power, GLOB.marker_beacon_colors[picked_color])
+
+/obj/structure/marker_beacon/update_icon_state()
+	icon_state = "[initial(icon_state)][lowertext(picked_color)]-on"
+	return ..()
 
 /obj/structure/marker_beacon/attack_hand(mob/living/user)
 	. = ..()
@@ -106,9 +114,10 @@ GLOBAL_LIST_INIT(marker_beacon_colors, sortList(list(
 		return
 	to_chat(user, "<span class='notice'>You start picking [src] up...</span>")
 	if(do_after(user, remove_speed, target = src))
+
 		var/obj/item/stack/marker_beacon/marker = new stack_type(loc)
 		marker.picked_color = picked_color
-		marker.update_icon()
+		marker.update_appearance()
 		transfer_fingerprints_to(marker)
 		if(user.put_in_hands(marker, TRUE)) //delete the beacon if it fails
 			playsound(src, 'sound/items/deconstruct.ogg', 50, TRUE)
@@ -145,7 +154,7 @@ GLOBAL_LIST_INIT(marker_beacon_colors, sortList(list(
 		return
 	if(input_color)
 		picked_color = input_color
-		update_icon()
+		update_appearance()
 
 //default beacons
 
@@ -193,3 +202,4 @@ GLOBAL_LIST_INIT(marker_beacon_colors, sortList(list(
 	desc = "Prism-brand path illumination device. It is anchored in place and glowing steadily. This one has a reinforced casing"
 	resistance_flags = 100
 	stack_type = /obj/item/stack/marker_beacon/acidproof
+

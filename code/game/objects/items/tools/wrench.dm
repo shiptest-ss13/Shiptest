@@ -83,7 +83,7 @@
 		hitsound = 'sound/weapons/blade1.ogg'
 		playsound(user, 'sound/weapons/saberon.ogg', 5, TRUE)
 		to_chat(user, "<span class='warning'>[src] is now active. Woe onto your enemies!</span>")
-	update_icon()
+	update_appearance()
 
 /obj/item/wrench/combat/update_icon_state()
 	if(on)
@@ -92,6 +92,7 @@
 	else
 		icon_state = "[initial(icon_state)]"
 		item_state = "[initial(item_state)]"
+	return ..()
 
 /obj/item/wrench/syndie
 	name = "suspicious-looking wrench"

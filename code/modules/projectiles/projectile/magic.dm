@@ -417,7 +417,7 @@
 		for(var/atom/movable/AM in contents)
 			locker_temp_instance.insert(AM)
 		locker_temp_instance.welded = weld
-		locker_temp_instance.update_icon()
+		locker_temp_instance.update_appearance()
 	created = TRUE
 	return ..()
 
@@ -444,7 +444,7 @@
 	if(!welded)
 		return
 	icon_state = magic_icon
-	update_icon()
+	update_appearance()
 
 /obj/structure/closet/decay/after_weld(weld_state)
 	if(weld_state)
@@ -464,7 +464,7 @@
 
 /obj/structure/closet/decay/proc/unmagify()
 	icon_state = weakened_icon
-	update_icon()
+	update_appearance()
 	addtimer(CALLBACK(src, .proc/decay), 15 SECONDS)
 	icon_welded = "welded"
 
@@ -555,7 +555,7 @@
 		for(var/obj/effect/proc_holder/spell/spell in L.mind.spell_list)
 			spell.charge_counter = spell.charge_max
 			spell.recharging = FALSE
-			spell.update_icon()
+			spell.update_appearance()
 
 /obj/projectile/magic/fortify
 	name = "bolt of light"
@@ -580,7 +580,7 @@
 		for(var/obj/effect/proc_holder/spell/spell in L.mind.spell_list)
 			spell.charge_counter = spell.charge_max
 			spell.recharging = FALSE
-			spell.update_icon()
+			spell.update_appearance()
 
 /obj/projectile/magic/wipe
 	name = "bolt of possession"

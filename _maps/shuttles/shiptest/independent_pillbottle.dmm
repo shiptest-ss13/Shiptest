@@ -256,6 +256,11 @@
 	icon_state = "1-6"
 	},
 /obj/machinery/power/apc/auto_name/directional/west,
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -20;
+	pixel_y = 12
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "fi" = (
@@ -765,9 +770,6 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
-"mx" = (
-/turf/closed/wall,
-/area/ship/crew/toilet)
 "mF" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -894,7 +896,7 @@
 	pixel_y = -32
 	},
 /turf/open/floor/plastic,
-/area/ship/crew/toilet)
+/area/ship/hallway/central)
 "oR" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
@@ -946,6 +948,10 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/power/apc/auto_name/directional/north,
+/obj/machinery/light_switch{
+	pixel_y = 22;
+	pixel_x = -12
+	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "pF" = (
@@ -1101,6 +1107,11 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/power/apc/auto_name/directional/west,
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -20;
+	pixel_y = 12
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew/dorm)
 "sK" = (
@@ -1121,6 +1132,11 @@
 	desc = "A dish full of mashed pills for your bowl."
 	},
 /obj/effect/turf_decal/corner/opaque/white/full,
+/obj/machinery/light_switch{
+	pixel_y = 22;
+	pixel_x = -12
+	},
+/obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/plasteel,
 /area/ship/crew)
 "sO" = (
@@ -1311,6 +1327,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/reagent_dispensers/water_cooler,
+/obj/machinery/light/directional/west,
 /turf/open/floor/plasteel,
 /area/ship/hallway/fore)
 "vX" = (
@@ -1410,7 +1427,7 @@
 /obj/item/bikehorn/rubberducky,
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/plastic,
-/area/ship/crew/toilet)
+/area/ship/hallway/central)
 "wK" = (
 /obj/structure/reagent_dispensers/beerkeg,
 /turf/open/floor/plating/airless,
@@ -2159,7 +2176,7 @@
 	name = "Restroom"
 	},
 /turf/open/floor/plasteel/tech,
-/area/ship/crew/toilet)
+/area/ship/hallway/central)
 "Mf" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -2189,6 +2206,11 @@
 "MQ" = (
 /obj/structure/cable,
 /obj/machinery/power/apc/auto_name/directional/west,
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -20;
+	pixel_y = 12
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "Nc" = (
@@ -2204,7 +2226,6 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light/directional/west,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table,
 /obj/item/toy/crayon/spraycan,
@@ -2673,6 +2694,11 @@
 	dir = 4
 	},
 /obj/machinery/power/apc/auto_name/directional/south,
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = -12;
+	pixel_y = -16
+	},
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
 "TM" = (
@@ -3338,9 +3364,9 @@ Or
 Uy
 IG
 NP
-mx
-mx
-mx
+Uy
+Uy
+Uy
 Oz
 "}
 (10,1,1) = {"
@@ -3361,9 +3387,9 @@ cr
 Uy
 SR
 fL
-mx
+Uy
 wH
-mx
+Uy
 Oz
 "}
 (11,1,1) = {"
@@ -3386,7 +3412,7 @@ Ri
 rJ
 LU
 oM
-mx
+Uy
 Oz
 "}
 (12,1,1) = {"

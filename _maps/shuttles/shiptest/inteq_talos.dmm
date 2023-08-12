@@ -799,7 +799,7 @@
 	pixel_y = -32
 	},
 /obj/item/paper/fluff{
-	info = "Artificer team: The AAC is finicky and has a habit of malfunctioning over time. If this happens, remember how to reset it. Swipe your ID card on the control unit and make sure all settings are correct. One airlock should be set to internal, one to external. Once this is done, cycle the airlock to re-enable automatic mode and lift any stuck bolts. If you aren't an artificer, don't mess with it. You shouldn't have access anyway."
+	default_raw_text = "Artificer team: The AAC is finicky and has a habit of malfunctioning over time. If this happens, remember how to reset it. Swipe your ID card on the control unit and make sure all settings are correct. One airlock should be set to internal, one to external. Once this is done, cycle the airlock to re-enable automatic mode and lift any stuck bolts. If you aren't an artificer, don't mess with it. You shouldn't have access anyway."
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
@@ -1584,6 +1584,11 @@
 	dir = 8
 	},
 /obj/item/clothing/glasses/meson,
+/obj/machinery/light_switch{
+	pixel_x = 20;
+	dir = 8;
+	pixel_y = 11
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "jZ" = (
@@ -2621,6 +2626,11 @@
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 4
 	},
+/obj/machinery/light_switch{
+	pixel_x = 19;
+	dir = 8;
+	pixel_y = 11
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
 "qo" = (
@@ -2699,6 +2709,32 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
+"qF" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/trimline/opaque/yellow/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/machinery/light_switch{
+	pixel_y = 23;
+	pixel_x = -12
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plasteel/patterned/grid,
+/area/ship/hallway/port)
 "qM" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
@@ -2739,6 +2775,11 @@
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/dark/visible/layer1{
 	dir = 9
+	},
+/obj/machinery/light_switch{
+	pixel_x = 20;
+	dir = 8;
+	pixel_y = 11
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
@@ -4472,6 +4513,12 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engine)
+"Bd" = (
+/obj/machinery/porta_turret/ship/weak{
+	dir = 9
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/bridge)
 "Bh" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -5151,6 +5198,12 @@
 	},
 /turf/open/floor/circuit/telecomms/mainframe,
 /area/ship/engineering/communications)
+"GA" = (
+/obj/machinery/porta_turret/ship/weak{
+	dir = 5
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/bridge)
 "GG" = (
 /obj/machinery/light/small/directional/west,
 /obj/structure/cable{
@@ -5943,6 +5996,10 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/machinery/light_switch{
+	pixel_y = 23;
+	pixel_x = -12
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "My" = (
@@ -6198,7 +6255,7 @@
 /area/ship/security)
 "ON" = (
 /obj/structure/table/reinforced,
-/obj/machinery/photocopier/faxmachine/longrange,
+/obj/machinery/fax,
 /obj/machinery/button/door{
 	id = "talos_bridge";
 	name = "Bridge Shutters";
@@ -6271,7 +6328,9 @@
 /turf/open/floor/plating/airless,
 /area/ship/maintenance/starboard)
 "Pw" = (
-/obj/machinery/porta_turret/ship/weak,
+/obj/machinery/porta_turret/ship/weak{
+	dir = 10
+	},
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
 "Py" = (
@@ -7382,6 +7441,12 @@
 	},
 /turf/open/floor/carpet/orange,
 /area/ship/bridge)
+"Xa" = (
+/obj/machinery/porta_turret/ship/weak{
+	dir = 6
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/bridge)
 "Xg" = (
 /turf/open/floor/carpet/black,
 /area/ship/crew/dorm)
@@ -7871,7 +7936,7 @@ sw
 "}
 (5,1,1) = {"
 sw
-Pw
+Bd
 sV
 sV
 sV
@@ -8075,7 +8140,7 @@ vp
 "}
 (11,1,1) = {"
 sw
-Pw
+GA
 sV
 sV
 sW
@@ -8104,7 +8169,7 @@ sc
 jW
 ao
 ao
-Pw
+Xa
 MV
 "}
 (12,1,1) = {"
@@ -8590,7 +8655,7 @@ sw
 sw
 sw
 lC
-Ks
+qF
 Zj
 mX
 pL
@@ -8825,7 +8890,7 @@ sw
 sw
 sw
 sw
-Pw
+GA
 yp
 jj
 Gl
@@ -8850,7 +8915,7 @@ as
 QR
 WG
 mK
-Pw
+Xa
 sw
 sw
 sw
@@ -9440,7 +9505,7 @@ sw
 sw
 sw
 sw
-Pw
+GA
 Pp
 fN
 Pp
@@ -9459,7 +9524,7 @@ Gq
 If
 YZ
 fK
-Pw
+Xa
 sw
 sw
 sw
