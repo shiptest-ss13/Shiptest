@@ -230,7 +230,19 @@
 /turf/closed/indestructible/fakedoor
 	name = "CentCom Access"
 	icon = 'icons/obj/doors/airlocks/centcom/centcom.dmi'
-	icon_state = "fake_door"
+	icon_state = "fakedoor"
+
+/turf/closed/indestructible/fakedoor/external
+	name = "External Airlock"
+	desc = "Looks like it's been remotely sealed. Good luck getting through this."
+	icon = 'icons/obj/doors/airlocks/external/external.dmi'
+	icon_state = "fakedoor"
+
+/turf/closed/indestructible/fakedoor/blast
+	name = "Sealed Blast Door"
+	desc = "Nothing short of a miracle will get this open."
+	icon = 'icons/obj/doors/blastdoor.dmi'
+	icon_state = "closed"
 
 /turf/closed/indestructible/rock
 	name = "dense rock"

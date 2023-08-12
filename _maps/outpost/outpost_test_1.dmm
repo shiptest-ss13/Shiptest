@@ -647,12 +647,12 @@
 	},
 /obj/structure/window/reinforced,
 /obj/item/clipboard{
-	pixel_y = -3;
-	pixel_x = -3
+	pixel_x = -3;
+	pixel_y = -3
 	},
 /obj/item/pen{
-	pixel_y = -4;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = -4
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/outpost/cargo)
@@ -788,8 +788,8 @@
 "hv" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/sign/poster/official/random{
-	pixel_y = -32;
-	pixel_x = 32
+	pixel_x = 32;
+	pixel_y = -32
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/cargo)
@@ -1644,8 +1644,8 @@
 	icon_state = "2-8"
 	},
 /obj/machinery/atmospherics/components/unary/tank/air{
-	volume = 10000000;
-	piping_layer = 2
+	piping_layer = 2;
+	volume = 10000000
 	},
 /turf/open/floor/plasteel,
 /area/outpost/crew/dorm)
@@ -1675,10 +1675,10 @@
 /obj/machinery/button/door{
 	id = "ob2";
 	name = "door lock";
+	normaldoorcontrol = 1;
 	pixel_x = 10;
 	pixel_y = 23;
-	specialfunctions = 4;
-	normaldoorcontrol = 1
+	specialfunctions = 4
 	},
 /obj/machinery/door/airlock{
 	id_tag = "ob2";
@@ -1858,10 +1858,10 @@
 /obj/machinery/button/door{
 	id = "ob1";
 	name = "door lock";
+	normaldoorcontrol = 1;
 	pixel_x = 10;
 	pixel_y = 23;
-	specialfunctions = 4;
-	normaldoorcontrol = 1
+	specialfunctions = 4
 	},
 /obj/machinery/door/airlock{
 	id_tag = "ob1";
@@ -1890,11 +1890,7 @@
 /turf/open/floor/wood,
 /area/outpost/crew)
 "ru" = (
-/turf/closed/indestructible/reinforced{
-	icon = 'icons/obj/doors/blastdoor.dmi';
-	icon_state = "closed";
-	name = "hardened blast door"
-	},
+/turf/closed/indestructible/fakedoor/blast,
 /area/outpost/hallway/central)
 "ry" = (
 /obj/effect/turf_decal/siding/thinplating{
@@ -2410,12 +2406,12 @@
 "wr" = (
 /obj/structure/table,
 /obj/item/paper_bin{
-	pixel_y = 6;
-	pixel_x = 6
+	pixel_x = 6;
+	pixel_y = 6
 	},
 /obj/item/paper_bin/carbon{
-	pixel_y = 1;
-	pixel_x = -8
+	pixel_x = -8;
+	pixel_y = 1
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/outpost/cargo)
@@ -2616,10 +2612,10 @@
 	},
 /obj/machinery/button/door{
 	dir = 4;
-	pixel_y = 7;
-	pixel_x = -38;
 	id = "outsmall1";
-	name = "window shutters"
+	name = "window shutters";
+	pixel_x = -38;
+	pixel_y = 7
 	},
 /obj/item/radio/intercom/directional/west,
 /turf/open/floor/carpet,
@@ -2628,9 +2624,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/closed/indestructible/reinforced{
-	icon = 'icons/obj/doors/blastdoor.dmi';
-	icon_state = "closed";
+/turf/closed/indestructible/fakedoor/blast{
 	name = "hardened blast door"
 	},
 /area/outpost/hallway/central)
@@ -2727,9 +2721,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/turf/closed/indestructible/reinforced{
-	icon = 'icons/obj/doors/airlocks/hatch/centcom.dmi';
-	icon_state = "closed";
+/turf/closed/indestructible/fakedoor{
 	name = "airlock"
 	},
 /area/outpost/crew/dorm)
@@ -3281,14 +3273,14 @@
 /area/outpost/crew)
 "DH" = (
 /obj/machinery/button/door{
-	pixel_y = 36;
-	pixel_x = -9;
 	id = "outsmall2";
-	name = "window shutters"
+	name = "window shutters";
+	pixel_x = -9;
+	pixel_y = 36
 	},
 /obj/item/radio/intercom/directional/north{
-	pixel_y = 22;
-	pixel_x = -5
+	pixel_x = -5;
+	pixel_y = 22
 	},
 /turf/open/floor/wood,
 /area/outpost/crew)
@@ -3720,8 +3712,8 @@
 	dir = 4
 	},
 /obj/structure/sign/poster/official/random{
-	pixel_y = 32;
-	pixel_x = -33
+	pixel_x = -33;
+	pixel_y = 32
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/cargo)
@@ -4696,15 +4688,15 @@
 	dir = 8
 	},
 /obj/item/paper_bin{
-	pixel_y = 3;
-	pixel_x = 2
+	pixel_x = 2;
+	pixel_y = 3
 	},
 /obj/structure/noticeboard{
 	pixel_y = 28
 	},
 /obj/item/pen{
-	pixel_y = 4;
-	pixel_x = 2
+	pixel_x = 2;
+	pixel_y = 4
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/outpost/cargo)
@@ -5293,10 +5285,10 @@
 /obj/machinery/button/door{
 	id = "ob3";
 	name = "door lock";
+	normaldoorcontrol = 1;
 	pixel_x = -8;
 	pixel_y = 24;
-	specialfunctions = 4;
-	normaldoorcontrol = 1
+	specialfunctions = 4
 	},
 /obj/structure/toilet{
 	dir = 8
@@ -5502,13 +5494,13 @@
 /area/outpost/cargo)
 "YB" = (
 /obj/machinery/button/door{
+	dir = 8;
 	id = "ob4";
 	name = "door lock";
+	normaldoorcontrol = 1;
 	pixel_x = 25;
 	pixel_y = -6;
-	dir = 8;
-	specialfunctions = 4;
-	normaldoorcontrol = 1
+	specialfunctions = 4
 	},
 /obj/structure/sink{
 	dir = 4;
