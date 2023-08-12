@@ -19,8 +19,8 @@
 	var/pill_style = 9
 	var/list/possible_styles = list(7,8,9,10,11,12)
 	var/list/style_colors = list("7" = "yellow",
-								 "8" = "blue",
-								 "9" = "white",
+								"8" = "blue",
+								"9" = "white",
 								"10" = "violet",
 								"11" = "green",
 								"12" = "red")
