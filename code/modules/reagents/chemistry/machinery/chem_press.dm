@@ -2,23 +2,34 @@
 	name = "\improper pill press"
 	desc = "A press operated by hand to produce pills in a variety of forms."
 	icon = 'icons/obj/kitchen.dmi'
-	icon_state = "juicer1"
+	icon_state = "juicer0"
 	pass_flags = PASSTABLE
+	use_power = FALSE
 	layer = BELOW_OBJ_LAYER
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	var/obj/item/reagent_containers/beaker = null
 	var/obj/item/storage/pill_bottle/bottle = null
+	var/image/beaker_overlay
+	var/image/bottle_overlay
 	var/min_volume = 5
 	var/max_volume = 30
 	var/current_volume = 10
 	var/list/possible_volumes = list(5,10,15,20,25,30)
 	var/press_time = 15
-	var/pill_style = 1
-	var/pill_name = null
+	var/pill_style = 9
+	var/list/possible_styles = list(7,8,9,10,11,12)
+	var/list/style_colors = list("7" = "yellow",
+								 "8" = "blue",
+								 "9" = "white",
+								"10" = "violet",
+								"11" = "green",
+								"12" = "red")
 
 /obj/machinery/chem_press/Initialize()
 	. = ..()
 	beaker = new /obj/item/reagent_containers/glass/beaker/large(src)
+	beaker_overlay = image(icon = 'icons/obj/chemical.dmi', icon_state = "beakerlarge")
+	bottle_overlay = image(icon = 'icons/obj/chemical.dmi', icon_state = "pill_canister")
 
 /obj/machinery/chem_press/attack_hand(mob/user)
 	. = ..()
@@ -73,7 +84,16 @@
 					to_chat(user, "<span class='notice'>You adjust the press to produce [current_volume]u pills.</span>")
 					return
 		if(user.a_intent == INTENT_DISARM)
-			return
+			var/i=0
+			for(var/A in possible_styles)
+				i++
+				if(A == pill_style)
+					if(i<possible_styles.len)
+						pill_style = possible_styles[i+1]
+					else
+						pill_style = possible_styles[1]
+					to_chat(user, "<span class='notice'>You adjust the press to produce [style_colors["[pill_style]"]] pills.</span>")
+					return
 	return ..()
 
 /obj/machinery/chem_press/AltClick(mob/living/user)
@@ -114,3 +134,10 @@
 		bottle = new_container
 	update_icon()
 	return TRUE
+
+/obj/machinery/chem_press/update_overlays()
+	. = ..()
+	if(beaker)
+		. += beaker_overlay
+	if(bottle)
+		. += bottle_overlay
