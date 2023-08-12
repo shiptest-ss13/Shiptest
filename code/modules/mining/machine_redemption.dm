@@ -346,11 +346,10 @@
 	..()
 
 /obj/machinery/mineral/ore_redemption/update_icon_state()
-	// WS Start - Directional ORM Sprites
 	if (panel_open)
 		icon_state = "[initial(icon_state)]-open"
-	// WS End - Directional ORM Sprites
 	if(powered())
 		icon_state = initial(icon_state)
 	else
 		icon_state = "[initial(icon_state)]-off"
+	return ..()

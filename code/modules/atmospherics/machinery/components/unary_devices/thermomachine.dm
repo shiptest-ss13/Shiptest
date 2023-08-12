@@ -41,17 +41,20 @@
 		B += M.rating
 	heat_capacity = 5000 * ((B - 1) ** 2)
 
-/obj/machinery/atmospherics/components/unary/thermomachine/update_icon()
-	cut_overlays()
+/obj/machinery/atmospherics/components/unary/thermomachine/update_icon_state()
 
 	if(panel_open)
 		icon_state = icon_state_open
-	else if(on && is_operational)
+		return ..()
+	if(on && is_operational)
 		icon_state = icon_state_on
-	else
-		icon_state = icon_state_off
+		return ..()
+	icon_state = icon_state_off
+	return ..()
 
-	add_overlay(getpipeimage(icon, "pipe", dir, , piping_layer))
+/obj/machinery/atmospherics/components/unary/thermomachine/update_overlays()
+	. = ..()
+	. += getpipeimage(icon, "pipe", dir, , piping_layer)
 
 /obj/machinery/atmospherics/components/unary/thermomachine/update_icon_nopipes()
 	cut_overlays()
@@ -170,7 +173,7 @@
 				target_temperature = clamp(target, min_temperature, max_temperature)
 				investigate_log("was set to [target_temperature] K by [key_name(usr)]", INVESTIGATE_ATMOS)
 
-	update_icon()
+	update_appearance()
 
 //WS Edit - Update from Cit's Thermomachine - PR #8800, adds additional info to ctrl and alt clicks - BFAT
 
@@ -181,7 +184,7 @@
 		return
 	on = !on
 	investigate_log("was turned [on ? "on" : "off"] by [key_name(user)]", INVESTIGATE_ATMOS)
-	update_icon()
+	update_appearance()
 	investigate_log("was turned [on ? "on" : "off"] by [key_name(usr)]", INVESTIGATE_ATMOS)
 	message_admins("[src.name] was turned [on ? "on" : "off"] [ADMIN_LOOKUPFLW(usr)] at [ADMIN_COORDJMP(T)], [A]")
 

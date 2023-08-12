@@ -154,6 +154,8 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	var/toolspeed = 1
 
 	var/block_chance = 0
+	var/block_cooldown_time = 1 SECONDS
+	COOLDOWN_DECLARE(block_cooldown)
 	var/hit_reaction_chance = 0 //If you want to have something unrelated to blocking/armour piercing etc. Maybe not needed, but trying to think ahead/allow more freedom
 	///In tiles, how far this weapon can reach; 1 for adjacent, which is default
 	var/reach = 1
@@ -252,15 +254,6 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 	if(sharpness) //give sharp objects butchering functionality, for consistency
 		AddComponent(/datum/component/butchering, 80 * toolspeed)
-
-/**Makes cool stuff happen when you suicide with an item
- *
- *Outputs a creative message and then return the damagetype done
- * Arguments:
- * * user: The mob that is suiciding
- */
-/obj/item/proc/suicide_act(mob/user)
-	return
 
 /obj/item/verb/move_to_top()
 	set name = "Move To Top"
@@ -458,8 +451,18 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 /obj/item/proc/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	SEND_SIGNAL(src, COMSIG_ITEM_HIT_REACT, args)
-	if(prob(final_block_chance))
+	if((prob(final_block_chance) && COOLDOWN_FINISHED(src, block_cooldown)) || (prob(final_block_chance) && istype(src, /obj/item/shield)))
 		owner.visible_message("<span class='danger'>[owner] blocks [attack_text] with [src]!</span>")
+		var/rand_ricochet = pick(list(
+			'sound/weapons/effects/ric1.ogg',
+			'sound/weapons/effects/ric2.ogg',
+			'sound/weapons/effects/ric3.ogg',
+			'sound/weapons/effects/ric4.ogg',
+			'sound/weapons/effects/ric5.ogg'
+		))
+		playsound(src, rand_ricochet, 100)
+		if(!istype(src, /obj/item/shield))
+			COOLDOWN_START(src, block_cooldown, block_cooldown_time)
 		return 1
 	return 0
 
@@ -1100,3 +1103,10 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 /obj/item/proc/on_offer_taken(mob/living/carbon/offerer, mob/living/carbon/taker)
 	if(SEND_SIGNAL(src, COMSIG_ITEM_OFFER_TAKEN, offerer, taker) & COMPONENT_OFFER_INTERRUPT)
 		return TRUE
+
+/**
+ * Returns null if this object cannot be used to interact with physical writing mediums such as paper.
+ * Returns a list of key attributes for this object interacting with paper otherwise.
+ */
+/obj/item/proc/get_writing_implement_details()
+	return null

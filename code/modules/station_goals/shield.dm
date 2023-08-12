@@ -86,7 +86,7 @@
 	if(!active)
 		return
 	if(COOLDOWN_FINISHED(src, fire_timer))
-		if(charging = TRUE)
+		if(charging == TRUE)
 			charging = FALSE
 		for(var/obj/effect/meteor/M in GLOB.meteor_list)
 			if(M.virtual_z() != virtual_z())

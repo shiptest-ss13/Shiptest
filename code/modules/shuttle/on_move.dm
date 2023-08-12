@@ -140,17 +140,11 @@ All ShuttleMove procs go here
 // Called on atoms after everything has been moved
 /atom/movable/proc/afterShuttleMove(turf/oldT, list/movement_force, shuttle_dir, shuttle_preferred_direction, move_dir, rotation)
 	SHOULD_CALL_PARENT(TRUE)
-	var/turf/newT = get_turf(src)
-	if (newT.z != oldT.z)
-		onTransitZ(oldT.z, newT.z)
-
 	if(light)
 		update_light()
 	if(rotation)
 		shuttleRotate(rotation)
-
 	update_parallax_contents()
-
 	return TRUE
 
 /atom/movable/proc/lateShuttleMove(turf/oldT, list/movement_force, move_dir)
@@ -285,8 +279,8 @@ All ShuttleMove procs go here
 				A.addMember(src)
 		SSair.add_to_rebuild_queue(src)
 	else
-		// atmosinit() calls update_icon(), so we don't need to call it
-		update_icon()
+		// atmosinit() calls update_appearance(), so we don't need to call it
+		update_appearance()
 
 /obj/machinery/navbeacon/beforeShuttleMove(turf/newT, rotation, move_mode, obj/docking_port/mobile/moving_dock)
 	. = ..()

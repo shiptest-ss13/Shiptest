@@ -759,14 +759,14 @@
 /obj/structure/cloth_pile/proc/revive(full_heal = FALSE, admin_revive = FALSE)
 	if(QDELETED(src) || QDELETED(cloth_golem)) //QDELETED also checks for null, so if no cloth golem is set this won't runtime
 		return
-	if(cloth_golem.suiciding || cloth_golem.hellbound)
+	if(cloth_golem.hellbound)
 		QDEL_NULL(cloth_golem)
 		return
 
 	invisibility = INVISIBILITY_MAXIMUM //disappear before the animation
 	new /obj/effect/temp_visual/mummy_animation(get_turf(src))
 	if(cloth_golem.revive(full_heal = TRUE, admin_revive = TRUE))
-		cloth_golem.grab_ghost() //won't pull if it's a suicide
+		cloth_golem.grab_ghost()
 	sleep(20)
 	cloth_golem.forceMove(get_turf(src))
 	cloth_golem.visible_message("<span class='danger'>[src] rises and reforms into [cloth_golem]!</span>","<span class='userdanger'>You reform into yourself!</span>")

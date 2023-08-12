@@ -28,6 +28,7 @@
 #define LAZYADDASSOCLIST(L, K, V) if(!L) { L = list(); } L[K] += list(V);
 #define LAZYREMOVEASSOC(L, K, V) if(L) { if(L[K]) { L[K] -= V; if(!length(L[K])) L -= K; } if(!length(L)) L = null; }
 #define LAZYACCESSASSOC(L, I, K) L ? L[I] ? L[I][K] ? L[I][K] : null : null : null
+#define LAZYNULL(L) L = null
 #define QDEL_LAZYLIST(L) for(var/I in L) qdel(I); L = null;
 /// ORs two lazylists together without inserting errant nulls, returning a new list and not modifying the existing lists.
 #define LAZY_LISTS_OR(left_list, right_list)\

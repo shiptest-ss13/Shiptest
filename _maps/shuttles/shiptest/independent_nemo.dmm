@@ -259,6 +259,10 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
+/obj/machinery/light_switch{
+	pixel_x = -13;
+	pixel_y = 23
+	},
 /turf/open/floor/wood,
 /area/ship/crew/library)
 "dt" = (
@@ -413,7 +417,7 @@
 	},
 /obj/structure/frame/machine,
 /obj/item/paper{
-	info = "Missing protolathe. Lost in transit."
+	default_raw_text = "Missing protolathe. Lost in transit."
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/science)
@@ -590,6 +594,10 @@
 /obj/effect/turf_decal/siding/brown{
 	dir = 5
 	},
+/obj/machinery/light_switch{
+	pixel_x = -13;
+	pixel_y = 23
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "gO" = (
@@ -736,6 +744,11 @@
 	},
 /obj/effect/turf_decal/siding/green{
 	dir = 1
+	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -20;
+	pixel_y = 12
 	},
 /turf/open/floor/wood,
 /area/ship/crew/dorm)
@@ -989,7 +1002,7 @@
 /obj/item/weldingtool,
 /obj/item/weldingtool,
 /obj/item/paper{
-	info = "The igniter in the chamber does not work very well. I suggest throwing lit welders down the disposal chute over there to ignite the chamber."
+	default_raw_text = "The igniter in the chamber does not work very well. I suggest throwing lit welders down the disposal chute over there to ignite the chamber."
 	},
 /obj/effect/turf_decal/trimline/opaque/red/line{
 	dir = 6
@@ -1145,6 +1158,11 @@
 /obj/structure/cable,
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/machinery/portable_atmospherics/pump,
+/obj/machinery/light_switch{
+	pixel_x = 22;
+	pixel_y = -12;
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "mS" = (
@@ -1448,6 +1466,11 @@
 /obj/item/stock_parts/cell/high/plus,
 /obj/item/circuitboard/machine/thermomachine,
 /obj/item/circuitboard/machine/thermomachine,
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 20;
+	pixel_y = 12
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/electrical)
 "se" = (
@@ -1484,6 +1507,10 @@
 	},
 /obj/machinery/light/directional/west,
 /obj/item/bodybag/bluespace,
+/obj/machinery/light_switch{
+	pixel_x = -13;
+	pixel_y = 23
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "tQ" = (
@@ -1655,6 +1682,10 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
+/obj/machinery/light_switch{
+	pixel_x = -13;
+	pixel_y = 23
+	},
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
 "wr" = (
@@ -1724,6 +1755,10 @@
 	},
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/tank_dispenser/oxygen,
+/obj/machinery/light_switch{
+	pixel_x = -13;
+	pixel_y = 23
+	},
 /turf/open/floor/pod,
 /area/ship/hallway/central)
 "xE" = (
@@ -1839,6 +1874,11 @@
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/item/poster/random_contraband,
 /obj/effect/turf_decal/number/zero{
+	dir = 8
+	},
+/obj/machinery/light_switch{
+	pixel_x = 22;
+	pixel_y = -12;
 	dir = 8
 	},
 /turf/open/floor/plating,
@@ -2344,6 +2384,7 @@
 /obj/effect/turf_decal/siding/brown{
 	dir = 10
 	},
+/obj/machinery/firealarm/directional/west,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "Jz" = (
@@ -2403,7 +2444,6 @@
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "KH" = (
-/obj/machinery/firealarm/directional/north,
 /obj/machinery/light/directional/north,
 /obj/machinery/suit_storage_unit/mining,
 /obj/effect/turf_decal/siding/brown{
@@ -2578,7 +2618,7 @@
 	},
 /obj/machinery/light/directional/east,
 /obj/item/paper/crumpled{
-	info = "A mix of 67/33 ratio of oxygen (node 1) and plasma (node 2) works very well, even at 500 kPa."
+	default_raw_text = "A mix of 67/33 ratio of oxygen (node 1) and plasma (node 2) works very well, even at 500 kPa."
 	},
 /obj/effect/turf_decal/trimline/opaque/blue/line{
 	dir = 1
@@ -3342,6 +3382,10 @@
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
 	dir = 8
 	},
+/obj/machinery/light_switch{
+	pixel_x = -13;
+	pixel_y = 23
+	},
 /turf/open/floor/carpet/black,
 /area/ship/bridge)
 "Xi" = (
@@ -3366,6 +3410,10 @@
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-8"
+	},
+/obj/machinery/light_switch{
+	pixel_x = -13;
+	pixel_y = 23
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/science)

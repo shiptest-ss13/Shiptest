@@ -413,7 +413,7 @@
 		icon_state = "shipkey_plasticbod"
 		var/our_color = pick(key_colors)
 		add_atom_colour(key_colors[our_color], FIXED_COLOUR_PRIORITY)
-		update_icon()
+		update_appearance()
 	name = "ship key ([master_ship.name])"
 
 /obj/item/key/ship/update_overlays()
@@ -435,7 +435,3 @@
 
 	master_ship.attempt_key_usage(user, src, src) // hello I am a helm console I promise
 	return TRUE
-
-/obj/item/key/ship/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is stabbing [src] into [user.p_their()] [pick("temple", "heart")] and turns it off. It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return(OXYLOSS)
