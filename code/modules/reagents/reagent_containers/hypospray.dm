@@ -286,7 +286,7 @@
 	amount_per_transfer_from_this = 15
 	list_reagents = list(/datum/reagent/drug/pumpup = 15)
 	icon_state = "maintenance"
-  base_icon_state = "maintenance"
+	base_icon_state = "maintenance"
 
 /obj/item/reagent_containers/hypospray/medipen/anti_rad
 	name = "emergency anti-radiation applicator"
