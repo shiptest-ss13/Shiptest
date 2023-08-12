@@ -213,7 +213,7 @@
 	autolinkers = list("hub","processor4","bus");
 	network = "nt_commnet";
 	id = "Nanotrasen Communications Bus";
-	freq_listening = list(1353 1447, 1459)
+	freq_listening = list(1353,1447,1459)
 	},
 /turf/open/floor/circuit/telecomms{
 	initial_gas_mix = "TEMP=2.7"
@@ -563,12 +563,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
-"fI" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
-/turf/template_noop,
-/area/template_noop)
 "fU" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1975,7 +1969,7 @@
 "ux" = (
 /obj/machinery/light/dim/directional/south,
 /obj/machinery/telecomms/relay{
-	freq_listening = list(1353 1447, 1459);
+	freq_listening = list(1353,1447,1459);
 	id = "Nanotrasen Relay";
 	name = "Nanotrasen relay";
 	network = "nt_commnet"
@@ -2177,7 +2171,7 @@
 "wf" = (
 /obj/machinery/telecomms/receiver/preset_right{
 	autolinkers = list("receiverB","hub");
-	freq_listening = list(1353 1447, 1459);
+	freq_listening = list(1353,1447,1459);
 	network = "nt_commnet"
 	},
 /turf/open/floor/circuit/telecomms{
@@ -4407,7 +4401,7 @@
 /obj/machinery/telecomms/server/presets/nanotrasen{
 	autolinkers = list("nanotrasen","hub");
 	network = "nt_commnet";
-	freq_listening = list(1353 1447, 1459)
+	freq_listening = list(1353,1447,1459)
 	},
 /obj/item/disk/holodisk/lp/stations,
 /turf/open/floor/circuit/telecomms{
@@ -6062,7 +6056,7 @@ zW
 zW
 zW
 zW
-fI
+zW
 zW
 zW
 zW
