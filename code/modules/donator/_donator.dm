@@ -290,7 +290,7 @@ GLOBAL_PROTECT(donators)
 
 			reward.icon = initial(reward.icon)
 			reward.icon_state = reskin_target
-			reward.update_icon()
+			reward.update_appearance()
 			return TRUE
 
 		if(REWARD_CONV)
