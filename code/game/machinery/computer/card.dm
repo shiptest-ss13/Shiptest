@@ -605,12 +605,12 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 			if (!(printing))
 				printing = 1
 				sleep(50)
-				var/obj/item/paper/P = new /obj/item/paper(loc)
+				var/obj/item/paper/printed_paper = new /obj/item/paper(loc)
 				var/t1 = "<B>Crew Manifest:</B><BR>"
 				for(var/datum/data/record/t in sortRecord(GLOB.data_core.general))
 					t1 += t.fields["name"] + " - " + t.fields["rank"] + "<br>"
-				P.info = t1
-				P.name = "paper- 'Crew Manifest'"
+				printed_paper.add_raw_text(t1)
+				printed_paper.name = "paper- 'Crew Manifest'"
 				printing = null
 				playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, FALSE)
 	if (inserted_modify_id)

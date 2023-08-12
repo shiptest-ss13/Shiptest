@@ -44,7 +44,7 @@
 /obj/item/organ/regenerative_core/proc/preserved(implanted = 0)
 	inert = FALSE
 	preserved = TRUE
-	update_icon()
+	update_appearance()
 	desc = "All that remains of a hivelord. It is preserved, allowing you to use it to heal completely without danger of decay."
 	if(implanted)
 		SSblackbox.record_feedback("nested tally", "hivelord_core", 1, list("[type]", "implanted"))
@@ -56,7 +56,7 @@
 	name = "decayed regenerative core"
 	desc = "All that remains of a hivelord. It has decayed, and is completely useless."
 	SSblackbox.record_feedback("nested tally", "hivelord_core", 1, list("[type]", "inert"))
-	update_icon()
+	update_appearance()
 
 /obj/item/organ/regenerative_core/ui_action_click()
 	if(inert)
@@ -139,10 +139,11 @@
 
 /obj/item/organ/regenerative_core/legion/Initialize()
 	. = ..()
-	update_icon()
+	update_appearance()
 
 /obj/item/organ/regenerative_core/update_icon_state()
 	icon_state = inert ? "legion_soul_inert" : "legion_soul"
+	return ..()
 
 /obj/item/organ/regenerative_core/update_overlays()
 	. = ..()
@@ -193,3 +194,4 @@
 	icon_state = inert ? "crystal_heart_inert" : "crystal_heart"
 	if(preserved)
 		icon_state = "crystal_heart_preserved"
+	return ..()

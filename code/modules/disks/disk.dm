@@ -32,7 +32,7 @@
 		add_atom_colour(random_disk_colors[our_color], FIXED_COLOUR_PRIORITY)
 	else
 		add_atom_colour(color, FIXED_COLOUR_PRIORITY)
-	update_icon()
+	update_appearance()
 	update_overlays()
 
 /obj/item/disk/update_overlays()

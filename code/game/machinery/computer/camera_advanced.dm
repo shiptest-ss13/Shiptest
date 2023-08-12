@@ -168,6 +168,7 @@
 	name = "Inactive Camera Eye"
 	ai_detector_visible = FALSE
 	var/sprint = 10
+	var/max_sprint = 50
 	var/cooldown = 0
 	var/acceleration = 1
 	var/mob/living/eye_user = null
@@ -216,7 +217,6 @@
 
 /mob/camera/aiEye/remote/relaymove(mob/living/user, direction)
 	var/initial = initial(sprint)
-	var/max_sprint = 50
 
 	if(cooldown && cooldown < world.timeofday) // 3 seconds
 		sprint = initial
@@ -226,7 +226,7 @@
 		if(step)
 			setLoc(step)
 
-	cooldown = world.timeofday + 5
+	cooldown = world.timeofday + 3 SECONDS
 	if(acceleration)
 		sprint = min(sprint + 0.5, max_sprint)
 	else

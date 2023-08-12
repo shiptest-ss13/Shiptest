@@ -45,3 +45,95 @@
   - bugfix: Midway boxers look normal on plantigrade legs again
   - rscadd: Suit sprites from TG
   - rscdel: Alt job uniforms
+2023-08-05:
+  PositiveEntropy:
+  - imageadd: The Colonial Minutemen had a visual revision, now looking more professional!
+  RunKittenzRComing:
+  - rscadd: new moon fly wing sprite
+  - rscadd: new shading for all wing sprites
+  - rscadd: new new moon fly wing sprite
+  retlaw34:
+  - rscadd: resprites SRM gear
+  thgvr:
+  - rscadd: Some new lizard horns
+  - rscadd: Some new lizard frills
+  - rscadd: Lizard facial markings
+  - rscadd: Lizard Light Belly is now better
+2023-08-06:
+  Apogee-dev:
+  - tweak: Added access restrictions to the bridge on the Aegis
+  goober3:
+  - rscadd: the nt asteroid outpost now has a 56x40 hangar.
+  - bugfix: outpost hangars should no longer depressurize upon ship docking.
+  - bugfix: outpost wallmounts and doors have been fixed. please report any floating
+      extinguishers & hovering intercoms.
+  - bugfix: the independent outpost should stay powered forever.
+  thgvr:
+  - balance: Grav anomalies no longer spawn in rock planet caves
+2023-08-08:
+  Bjarl:
+  - code_imp: Ruin areas have been touched, please report any odd happenings
+  HometownFunky:
+  - imageadd: added some kepori variations to cargo themed jumpsuits
+2023-08-09:
+  goober3:
+  - rscdel: the hotline miami ruin has been removed from beach planets.
+2023-08-10:
+  thgvr:
+  - rscadd: Digi sprites for patient slippers and laceup shoes
+2023-08-11:
+  Bjarl:
+  - rscdel: cloak storage
+  - rscdel: You can no longer print circuit imprinters at circuit imprinters.
+  - rscadd: Lights will now start off on your ship. Find the light switches and turn
+      them on. It's good for the environment at least.
+  Botanics, Ebin-halcyon:
+  - imageadd: Kepori have had some specific items uniquely resprited for them, this
+      includes, basic shoes, combat boots, jackboots, underwear and more. Along with
+      some inteq specific gear.
+  MarkSuckerberg:
+  - tweak: Ships will stop increasing speed whenever the last person stops looking
+      at a helm console.
+  - tweak: Holocalls now persist even if the target ship docks or the hologram leaves
+      the projection area.
+  Mothblocks, Ryll-Ryll, ported by Erika:
+  - rscadd: CPR will now automatically repeat, but you can no longer do it multiple
+      times at once.
+  - bugfix: The INTERACTING_WITH macro now tracks all kinds of do_after
+  - code_imp: Users can only queue one do_after per target at a time
+  PositiveEntropy:
+  - imageadd: Redoes the cowboy and warden hats!
+  Skies-Of-Blue:
+  - tweak: IPCs can now select an age between one and three hundred
+2023-08-12:
+  ? Bobbanz1, Timberpoes, SteelSlayer, twilightwanderer, ShizCalev, timothymtorres,
+    Imaginos16, dragomagol, Jacquerel, Mothblocks, ThePotato97, LemonInTheDark, ported
+    by MeeMOfCourse
+  : - refactor: Paper code has been completely refactored.
+    - bugfix: Fixes signatures not working at all. Signatures now only work when %s
+        or %sign is put into an [___] input field.
+    - bugfix: Input fields are now fixed and also work again.
+    - bugfix: Fixes markdown paragraphing not working in paper code.
+    - tweak: You can insert any type of toner cartridge into photocopiers, and regardless
+        of the currently inserted toner's charge level.
+    - tweak: Toner cartridges can be ejected from photocopiers at any time
+    - rscadd: Added a system of forms and the ability to print them
+    - bugfix: Hints in bureaucracy forms
+    - rscadd: Added new VOID stamp
+    - tweak: switches old oracle fax machine with tg's fax machine system
+    - bugfix: Fixes faxes playing the "fax_contain" animation and makes it actually
+        use the "fax_receive" animation when receiving.
+    - imageadd: Resprites fax machines!
+    - admin: fax messages and book printings are now logged in paper.log
+    - admin: renaming fax machines is logged in game log
+    - rscadd: You can now send photos or trading cards through the fax machine.
+    - rscadd: You can now hack the wires of a fax machine to have it throw items harder
+        or accept additional flat input items such as material sheets, ID cards, and
+        pizza slices.
+    - rscadd: Ability to send and receive administrator fax messages.
+    - admin: Panel for easy viewing and sending messages to faxes.
+    - bugfix: Fixes a crash of TGUI fax panel when there is no fax in the network
+    - bugfix: Fixes a crash of the Fax Manager panel when there is no fax machines
+        in the network.
+    - bugfix: You can no longer remove the toner cartridge from a printer while it's
+        busy printing.

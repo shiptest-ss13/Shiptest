@@ -222,14 +222,14 @@
 
 /obj/item/reagent_containers/food/snacks/popsicle/update_overlays()
 	. = ..()
-	if(bitecount)
-		. += "[initial(overlay_state)]_[min(bitecount, 3)]"
-	else
+	if(!bitecount)
 		. += initial(overlay_state)
+		return
+	. += "[initial(overlay_state)]_[min(bitecount, 3)]"
 
 /obj/item/reagent_containers/food/snacks/popsicle/On_Consume(mob/living/eater)
 	. = ..()
-	update_icon()
+	update_appearance()
 
 /obj/item/popsicle_stick
 	name = "popsicle stick"
