@@ -465,6 +465,7 @@
 /obj/item/reagent_containers/glass/bowl/mushroom_bowl/update_icon_state()
 	if(!reagents || !reagents.total_volume)
 		icon_state = "mushroom_bowl"
+	return ..()
 
 /obj/item/reagent_containers/glass/bowl/mushroom_bowl/attackby(obj/item/I,mob/user, params)
 	if(istype(I, /obj/item/reagent_containers/food/snacks))

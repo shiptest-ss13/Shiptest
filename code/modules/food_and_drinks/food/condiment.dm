@@ -40,7 +40,7 @@
 	. = ..()
 	possible_states = typelist("possible_states", possible_states)
 
-	update_icon()
+	update_appearance()
 
 /obj/item/reagent_containers/food/condiment/update_icon()
 	cut_overlays()
@@ -120,7 +120,7 @@
 		playsound(src, 'sound/items/glass_transfer.ogg', 50, 1)
 
 /obj/item/reagent_containers/food/condiment/on_reagent_change(changetype)
-	update_icon()
+	update_appearance()
 
 /obj/item/reagent_containers/food/condiment/enzyme
 	name = "universal enzyme"
@@ -235,7 +235,8 @@
 		)
 
 /obj/item/reagent_containers/food/condiment/pack/update_icon()
-	return
+	SHOULD_CALL_PARENT(FALSE)
+	return ..()
 
 /obj/item/reagent_containers/food/condiment/pack/attack(mob/M, mob/user, def_zone) //Can't feed these to people directly.
 	return

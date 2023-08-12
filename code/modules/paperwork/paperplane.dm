@@ -30,7 +30,7 @@
 		newPaper.forceMove(src)
 	else
 		internalPaper = new(src)
-	update_icon()
+	update_appearance()
 
 /obj/item/paperplane/handle_atom_del(atom/A)
 	if(A == internalPaper)
@@ -54,10 +54,8 @@
 
 /obj/item/paperplane/update_overlays()
 	. = ..()
-	var/list/stamped = internalPaper.stamped
-	if(stamped)
-		for(var/S in stamped)
-			. += "paperplane_[S]"
+	for(var/stamp in internalPaper.stamp_cache)
+		. += "paperplane_[stamp]"
 
 /obj/item/paperplane/attack_self(mob/user)
 	to_chat(user, "<span class='notice'>You unfold [src].</span>")
@@ -76,7 +74,7 @@
 
 	else if(istype(P, /obj/item/stamp)) 	//we don't randomize stamps on a paperplane
 		internalPaper.attackby(P, user) //spoofed attack to update internal paper.
-		update_icon()
+		update_appearance()
 		add_fingerprint(user)
 		return
 
@@ -116,7 +114,7 @@
 		return
 	if(istype(src, /obj/item/paper/carbon))
 		var/obj/item/paper/carbon/Carbon = src
-		if(!Carbon.iscopy && !Carbon.copied)
+		if(!Carbon.copied)
 			to_chat(user, "<span class='notice'>Take off the carbon copy first.</span>")
 			return
 	to_chat(user, "<span class='notice'>You fold [src] into the shape of a plane!</span>")
