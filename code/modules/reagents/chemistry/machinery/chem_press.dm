@@ -38,7 +38,7 @@
 	if(!beaker)
 		to_chat(user, "<span class='notice'>There's no container in [src]!.</span>")
 		return FALSE
-	if(beaker.reagents.total_volume == 0)
+	if(!beaker.reagents.total_volume)
 		to_chat(user, "<span class='warning'>[beaker] is empty!")
 		return FALSE
 	if(do_after(user, press_time, target = src))
