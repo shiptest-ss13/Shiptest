@@ -210,9 +210,6 @@
 /obj/structure/flora/ausbushes/stalkybush,
 /turf/open/floor/plating/beach/water,
 /area/ruin/powered/beach)
-"bW" = (
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors/explored)
 "cd" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -416,6 +413,9 @@
 /obj/structure/fluff/beach_umbrella/engine,
 /turf/open/floor/plating/beach/sand,
 /area/ruin/powered/beach)
+"iC" = (
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/overmap_encounter/planetoid/cave/explored)
 "jc" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/pill/morphine,
@@ -452,6 +452,9 @@
 /obj/structure/fluff/beach_umbrella/cap,
 /turf/open/floor/plating/beach/sand,
 /area/ruin/powered/beach)
+"kq" = (
+/turf/closed/mineral/random/volcanic,
+/area/overmap_encounter/planetoid/cave/explored)
 "li" = (
 /obj/machinery/door/airlock/sandstone{
 	name = "Bar Access";
@@ -620,7 +623,7 @@
 "sZ" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors/explored)
+/area/overmap_encounter/planetoid/cave/explored)
 "ta" = (
 /obj/structure/curtain,
 /turf/open/floor/plasteel/white,
@@ -833,9 +836,6 @@
 "Bn" = (
 /turf/open/floor/carpet/blue,
 /area/ruin/powered/beach)
-"Bp" = (
-/turf/closed/mineral/random/volcanic,
-/area/lavaland/surface/outdoors/explored)
 "Br" = (
 /obj/item/melee/skateboard/hoverboard,
 /mob/living/simple_animal/chicken{
@@ -1559,23 +1559,20 @@
 	},
 /turf/open/floor/plating/beach/sand,
 /area/ruin/powered/beach)
-"ZS" = (
-/turf/closed/mineral/random/volcanic,
-/area/template_noop)
 
 (1,1,1) = {"
 aa
 aa
 aa
 aa
-Bp
-Bp
-Bp
-Bp
-bW
-bW
-bW
-Bp
+kq
+kq
+kq
+kq
+iC
+iC
+iC
+kq
 aa
 aa
 aa
@@ -1592,8 +1589,8 @@ BE
 BE
 BE
 yc
-Bp
-Bp
+kq
+kq
 "}
 (2,1,1) = {"
 aa
@@ -1625,7 +1622,7 @@ jW
 aF
 Fr
 yc
-Bp
+kq
 "}
 (3,1,1) = {"
 aa
@@ -1657,7 +1654,7 @@ Eq
 ct
 hS
 cd
-Bp
+kq
 "}
 (4,1,1) = {"
 aa
@@ -1689,7 +1686,7 @@ CK
 IJ
 Bg
 CU
-Bp
+kq
 "}
 (5,1,1) = {"
 aa
@@ -1721,7 +1718,7 @@ aP
 Wd
 aj
 MZ
-Bp
+kq
 "}
 (6,1,1) = {"
 aa
@@ -1753,7 +1750,7 @@ EF
 EF
 Vr
 MZ
-Bp
+kq
 "}
 (7,1,1) = {"
 aa
@@ -1785,7 +1782,7 @@ uz
 uz
 lq
 MZ
-Bp
+kq
 "}
 (8,1,1) = {"
 aa
@@ -1817,7 +1814,7 @@ uz
 uz
 PN
 MZ
-Bp
+kq
 "}
 (9,1,1) = {"
 aa
@@ -1849,7 +1846,7 @@ uz
 uz
 lq
 MZ
-Bp
+kq
 "}
 (10,1,1) = {"
 aa
@@ -1948,7 +1945,7 @@ xS
 MZ
 "}
 (13,1,1) = {"
-Bp
+kq
 Fr
 yc
 ar
@@ -1980,8 +1977,8 @@ xS
 MZ
 "}
 (14,1,1) = {"
-Bp
-bW
+kq
+iC
 MZ
 Yo
 ar
@@ -2012,7 +2009,7 @@ xS
 MZ
 "}
 (15,1,1) = {"
-Bp
+kq
 sZ
 cd
 ar
@@ -2044,8 +2041,8 @@ vn
 MZ
 "}
 (16,1,1) = {"
-Bp
-bW
+kq
+iC
 MZ
 dX
 Dn
@@ -2076,8 +2073,8 @@ xS
 MZ
 "}
 (17,1,1) = {"
-Bp
-bW
+kq
+iC
 MZ
 Fo
 ar
@@ -2108,7 +2105,7 @@ xS
 MZ
 "}
 (18,1,1) = {"
-Bp
+kq
 Zi
 Mf
 ap
@@ -2264,8 +2261,8 @@ AE
 AE
 qf
 MZ
-Bp
-Bp
+kq
+kq
 "}
 (23,1,1) = {"
 aa
@@ -2297,7 +2294,7 @@ wY
 bD
 Fr
 yc
-Bp
+kq
 "}
 (24,1,1) = {"
 aa
@@ -2489,7 +2486,7 @@ BE
 Ir
 BE
 Mf
-Bp
+kq
 "}
 (30,1,1) = {"
 aa
@@ -2499,7 +2496,7 @@ BE
 BE
 BE
 Mf
-ZS
+kq
 Fr
 BE
 BE
@@ -2514,12 +2511,12 @@ Mf
 aj
 aj
 aj
-Bp
-Bp
-Bp
-Bp
-Bp
-Bp
-Bp
-Bp
+kq
+kq
+kq
+kq
+kq
+kq
+kq
+kq
 "}

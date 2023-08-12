@@ -40,7 +40,7 @@
 
 /obj/item/paper/fluff/mimir/treasure
 	name = "Bluejack's Note"
-	info = "To whomever finds this note, \
+	default_raw_text = "To whomever finds this note, \
 	I've left behind some things behind that may help your endeavors. The first of them, \
 	a bag found where the condemned swirl spirits in a whirlpool. The second, a bag \
 	found under my seat of chance and uncanny luck. The third and final bag can be found \
@@ -49,9 +49,9 @@
 
 /obj/item/paper/fluff/mimir/jacket
 	name = "Warden's Secret"
-	info = "A warden's seat is their place of rest. Look under where your ass rests best."
+	default_raw_text = "A warden's seat is their place of rest. Look under where your ass rests best."
 
 /obj/item/paper/fluff/mimir/recycler
 	name = "TURN ON THE RECYCLER!!!"
-	info = "IMPORTANT!!!! TURN ON THE AIR RECYCLER IN THIS ROOM!!! JUST TURN ON AND MAX\
+	default_raw_text = "IMPORTANT!!!! TURN ON THE AIR RECYCLER IN THIS ROOM!!! JUST TURN ON AND MAX\
 	ALL THE ATMOS IN THIS ROOM!!!!!!!!"

@@ -18,16 +18,16 @@
 		for(var/X in meltee.get_equipped_items())
 			var/obj/item/I = X
 			I.acid_act(20, 20)
-			I.update_icon()
+			I.update_appearance()
 	for (var/obj/item/melt in range(effectrange, src))
 		melt.acid_act(20, 10)
-		melt.update_icon()
+		melt.update_appearance()
 
 /obj/effect/anomaly/melter/Bumped(atom/movable/AM)
 	if(isobj(AM))
 		var/obj/acid = AM
 		acid.acid_act(100,20)
-		acid.update_icon()
+		acid.update_appearance()
 
 
 /obj/effect/anomaly/melter/detonate()
@@ -35,10 +35,10 @@
 		for(var/X in meltee.get_equipped_items())
 			var/obj/item/I = X
 			I.acid_act(200, 20)
-			I.update_icon()
+			I.update_appearance()
 	for(var/obj/item in range(effectrange, src))
 		item.acid_act(100,20)
-		item.update_icon()
+		item.update_appearance()
 	. = ..()
 
 

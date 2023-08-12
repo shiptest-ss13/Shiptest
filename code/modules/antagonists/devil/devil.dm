@@ -412,11 +412,11 @@ GLOBAL_LIST_INIT(devil_suffix, list(" the Red", " the Soulless", " the Master", 
 		if(BANISH_FUNERAL_GARB)
 			if(ishuman(body))
 				var/mob/living/carbon/human/H = body
-				if(H.w_uniform && istype(H.w_uniform, /obj/item/clothing/under/misc/burial))
+				if(H.w_uniform && istype(H.w_uniform, /obj/item/clothing/under/suit/white_on_white))
 					return 1
 				return 0
 			else
-				for(var/obj/item/clothing/under/misc/burial/B in range(0,body))
+				for(var/obj/item/clothing/under/suit/white_on_white/B in range(0,body))
 					if(B.loc == get_turf(B)) //Make sure it's not in someone's inventory or something.
 						return 1
 				return 0
