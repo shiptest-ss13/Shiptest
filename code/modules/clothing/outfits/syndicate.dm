@@ -592,7 +592,7 @@
 	jobtype = /datum/job/prisoner
 
 	id = /obj/item/card/id/patient
-	uniform = /obj/item/clothing/under/misc/gown
+	uniform = /obj/item/clothing/under/rank/medical/gown
 	alt_suit = null
 	shoes = /obj/item/clothing/shoes/sandal/slippers
 
