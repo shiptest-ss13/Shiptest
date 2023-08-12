@@ -1337,7 +1337,7 @@
 	req_ship_access = 1;
 	req_access_txt = "1";
 	id = "ranger_brig";
-	name = "holding cell door"
+	name = "Holding Cell Door"
 	},
 /turf/open/floor/mineral/plastitanium/red/brig,
 /area/ship/security)
@@ -1615,7 +1615,6 @@
 	dir = 1
 	},
 /obj/machinery/door/firedoor/border_only,
-/obj/effect/turf_decal/corner/opaque/red/full,
 /obj/effect/turf_decal/corner/opaque/red/full,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
@@ -2456,7 +2455,6 @@
 /obj/structure/cable{
 	icon_state = "1-5"
 	},
-/obj/machinery/door/airlock/public/glass,
 /obj/machinery/door/airlock/public/glass,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
