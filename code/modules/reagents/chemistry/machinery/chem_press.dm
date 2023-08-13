@@ -1,8 +1,8 @@
 /obj/machinery/chem_press
 	name = "\improper pill press"
 	desc = "A press operated by hand to produce pills in a variety of forms."
-	icon = 'icons/obj/kitchen.dmi'
-	icon_state = "juicer0"
+	icon = 'icons/obj/chemical.dmi'
+	icon_state = "press"
 	pass_flags = PASSTABLE
 	use_power = FALSE
 	layer = BELOW_OBJ_LAYER
@@ -28,8 +28,8 @@
 /obj/machinery/chem_press/Initialize()
 	. = ..()
 	beaker = new /obj/item/reagent_containers/glass/beaker/large(src)
-	beaker_overlay = image(icon = 'icons/obj/chemical.dmi', icon_state = "beakerlarge")
-	bottle_overlay = image(icon = 'icons/obj/chemical.dmi', icon_state = "pill_canister")
+	beaker_overlay = image(icon = 'icons/obj/chemical.dmi', icon_state = "press_beaker")
+	bottle_overlay = image(icon = 'icons/obj/chemical.dmi', icon_state = "press_bottle")
 
 /obj/machinery/chem_press/attack_hand(mob/user)
 	. = ..()
