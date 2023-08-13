@@ -70,7 +70,7 @@
 	if(!islist(verb_or_list_to_remove))
 		verbs_list += verb_or_list_to_remove
 		if(verb_or_list_to_remove in GLOB.client_verbs_required)
-			CRASH("attempted to remove verb ([element_or_list]) that is required for the client to function")
+			CRASH("attempted to remove verb ([verb_or_list_to_remove]) that is required for the client to function")
 	else
 		var/list/verb_listref = verb_or_list_to_remove
 		var/list/elements_to_process = verb_listref.Copy()

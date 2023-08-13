@@ -9,6 +9,20 @@
 
 /turf/closed/Initialize(mapload, inherited_virtual_z)
 	. = ..()
+	check_crush_machinery(mapload)
+
+/turf/closed/proc/check_crush_machinery(from_mapload)
+	if(!density)
+		return
+
+	var/crushed_any = FALSE
+	for(var/obj/machinery/crushed in src)
+		crushed.deconstruct(FALSE)
+		crushed.visible_message("[crushed] is crushed by [src]!")
+		crushed_any = TRUE
+
+	if(from_mapload && crushed_any)
+		stack_trace("mapped in machinery in wall at [loc_name(src)]")
 
 /turf/closed/AfterChange()
 	. = ..()

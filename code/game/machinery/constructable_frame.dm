@@ -176,6 +176,16 @@
 				return
 
 			if(P.tool_behaviour == TOOL_SCREWDRIVER)
+				var/turf/my_turf = get_turf(src)
+				for(var/obj/machinery/door/door in my_turf)
+					balloon_alert(user, "can't build here!")
+					return
+
+				for(var/atom/other_atom in my_turf.contents - src)
+					if(other_atom.density)
+						balloon_alert(user, "no space!")
+						return
+
 				var/component_check = 1
 				for(var/R in req_components)
 					if(req_components[R] > 0)
