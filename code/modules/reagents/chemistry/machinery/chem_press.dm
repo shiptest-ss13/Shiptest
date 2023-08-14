@@ -1,7 +1,6 @@
 /obj/machinery/chem_press
 	name = "\improper pill press"
-	desc = "A press operated by hand to produce pills in a variety of forms. \n
-			"
+	desc = "A press operated by hand to produce pills in a variety of forms."
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "press"
 	pass_flags = PASSTABLE
@@ -32,6 +31,11 @@
 	beaker_overlay = image(icon = 'icons/obj/chemical.dmi', icon_state = "press_beaker")
 	bottle_overlay = image(icon = 'icons/obj/chemical.dmi', icon_state = "press_bottle")
 
+/obj/machinery/chem_press/examine(mob/user)
+	. = ..()
+	. += "<span class='notice'>There's a <b>small screw</b> that can <b>help</b> to adjust the pill size.</span>"
+	. += "<span class='notice'>There's a small dial you could <b>push</b> with a <b>screwdriver</b> to adjust the pill color.</span>"
+
 /obj/machinery/chem_press/attack_hand(mob/user)
 	. = ..()
 	if(.)
@@ -44,6 +48,7 @@
 		return FALSE
 	if(do_after(user, press_time, target = src))
 		var/obj/item/reagent_containers/pill/P
+		// Check if there is a bottle that isn't full, then place a pill in the bottle. Otherwise, drop it on my tile.
 		if(bottle && bottle.contents.len < bottle.GetComponent(/datum/component/storage).max_items)
 			P = new/obj/item/reagent_containers/pill(bottle)
 		else
@@ -106,10 +111,16 @@
 	else
 		return ..()
 
+/*
+This proc attempts to swap a container in the machine
+or, if there is no container to swap with, eject the existing
+container into the user's hands.
+*/
 /obj/machinery/chem_press/proc/handle_container(mob/living/user, obj/item/new_container)
 	if(!user || !can_interact(user))
 		return FALSE
 	if(beaker)
+		// If the container to handle is a beaker, try to swap it with the existing beaker.
 		if(istype(new_container, /obj/item/reagent_containers) || !new_container)
 			if(Adjacent(src, user) && !issiliconoradminghost(user))
 				user.put_in_hands(beaker)
@@ -122,6 +133,7 @@
 	if(istype(new_container, /obj/item/reagent_containers))
 		beaker = new_container
 	if(bottle)
+		// If the container to handle is a bottle, try to swap it with the existing bottle.
 		if(istype(new_container, /obj/item/storage/pill_bottle) || !new_container)
 			if(Adjacent(src, user) && !issiliconoradminghost(user))
 				user.put_in_hands(bottle)
