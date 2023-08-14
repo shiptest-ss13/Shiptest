@@ -16,7 +16,7 @@
 	var/current_volume = 10
 	var/list/possible_volumes = list(5,10,15,20,25,30)
 	var/press_time = 15
-	var/pill_style = 9
+	var/pill_style = 9 // White pills
 	var/list/possible_styles = list(7,8,9,10,11,12)
 	var/list/style_colors = list("7" = "yellow",
 								"8" = "blue",
