@@ -1,6 +1,7 @@
 /obj/machinery/chem_press
 	name = "\improper pill press"
-	desc = "A press operated by hand to produce pills in a variety of forms."
+	desc = "A press operated by hand to produce pills in a variety of forms. \n
+			"
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "press"
 	pass_flags = PASSTABLE
@@ -36,7 +37,7 @@
 	if(.)
 		return
 	if(!beaker)
-		to_chat(user, "<span class='notice'>There's no container in [src]!.</span>")
+		to_chat(user, "<span class='warning'>There's no container in [src]!.</span>")
 		return FALSE
 	if(!beaker.reagents.total_volume)
 		to_chat(user, "<span class='warning'>[beaker] is empty!")
