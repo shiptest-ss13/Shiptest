@@ -77,8 +77,8 @@
 	id = /obj/item/card/id/lpengie
 	belt = /obj/item/pda/engineering
 	gloves = /obj/item/clothing/gloves/color/yellow
-	uniform = /obj/item/clothing/under/rank/engineering/engineer/maintenance_tech/lp
-	alt_uniform = /obj/item/clothing/under/rank/engineering/engineer/maintenance_tech/skirt/lp
+	uniform = /obj/item/clothing/under/rank/engineering/engineer/lp
+	alt_uniform = /obj/item/clothing/under/rank/engineering/engineer/skirt/lp
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/engineering
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/beret/eng

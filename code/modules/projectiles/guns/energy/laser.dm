@@ -8,6 +8,7 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/lasergun)
 	ammo_x_offset = 1
 	shaded_charge = TRUE
+	supports_variations = VOX_VARIATION
 
 /obj/item/gun/energy/laser/sharplite
 	name = "SL L-404 laser gun"

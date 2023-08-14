@@ -4,7 +4,6 @@
 	spawn_positions = 1
 	wiki_page = "Quartermaster" //WS Edit - Wikilinks/Warning
 	officer = TRUE
-	exp_type_department = EXP_TYPE_SUPPLY // This is so the jobs menu can work properly
 
 	outfit = /datum/outfit/job/quartermaster
 
@@ -30,20 +29,6 @@
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/cargo=1)
 
 	chameleon_extras = /obj/item/stamp/qm
-
-/datum/outfit/job/quartermaster/supplychief
-	name = "Quartermaster (Supply Chief)"
-	jobtype = /datum/job/qm
-
-	uniform = /obj/item/clothing/under/suit/qm
-	alt_uniform = null
-	suit = /obj/item/clothing/suit/toggle/lawyer/brown
-	alt_suit = null
-	shoes = /obj/item/clothing/shoes/laceup
-	l_hand = null
-	neck = /obj/item/clothing/neck/tie/brown
-	head = /obj/item/clothing/head/supply_chief
-	backpack_contents = list(/obj/item/modular_computer/tablet/preset/cargo=1, /obj/item/clipboard=1)
 
 /datum/outfit/job/quartermaster/western
 	name = "Foreman (Western)"

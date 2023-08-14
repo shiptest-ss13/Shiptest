@@ -481,8 +481,6 @@ GLOBAL_LIST_EMPTY(objectives)
 	for(var/datum/mind/M in owners)
 		if(considered_alive(M))
 			return FALSE
-		if(M.current?.suiciding) //killing yourself ISN'T glorious.
-			return FALSE
 	return TRUE
 
 /datum/objective/nuclear

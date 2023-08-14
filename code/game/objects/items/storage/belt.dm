@@ -10,13 +10,11 @@
 	attack_verb = list("whipped", "lashed", "disciplined")
 	max_integrity = 300
 	equip_sound = 'sound/items/equip/toolbelt_equip.ogg'
+	w_class = WEIGHT_CLASS_BULKY
 	var/content_overlays = FALSE //If this is true, the belt will gain overlays based on what it's holding
+	supports_variations = VOX_VARIATION
 	greyscale_icon_state = "belt"
 	greyscale_colors = list(list(16, 12), list(15, 11), list(13, 12))
-
-/obj/item/storage/belt/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins belting [user.p_them()]self with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return BRUTELOSS
 
 /obj/item/storage/belt/update_overlays()
 	. = ..()
@@ -153,6 +151,7 @@
 	desc = "Can hold various medical equipment."
 	icon_state = "medical"
 	item_state = "medical"
+	supports_variations = VOX_VARIATION
 
 /obj/item/storage/belt/medical/webbing
 	name = "medical webbing"
@@ -253,6 +252,7 @@
 	icon_state = "security"
 	item_state = "security"//Could likely use a better one.
 	content_overlays = TRUE
+	supports_variations = VOX_VARIATION
 
 /obj/item/storage/belt/security/ComponentInitialize()
 	. = ..()
@@ -308,6 +308,7 @@
 	item_state = "explorer1"
 	w_class = WEIGHT_CLASS_BULKY
 	custom_price = 400
+	supports_variations = VOX_VARIATION
 
 /obj/item/storage/belt/mining/ComponentInitialize()
 	. = ..()
@@ -409,6 +410,7 @@
 	icon_state = "champion"
 	item_state = "champion"
 	custom_materials = list(/datum/material/gold=400)
+	supports_variations = VOX_VARIATION
 
 /obj/item/storage/belt/champion/ComponentInitialize()
 	. = ..()
@@ -430,7 +432,13 @@
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_w_class = WEIGHT_CLASS_SMALL
 
-/obj/item/storage/belt/military/minutemen/PopulateContents()
+/obj/item/storage/belt/military/minutemen
+	name = "minutemen tactical webbing"
+	desc = "A set of tactical webbing worn by the Colonial Minutemen of the frontier."
+	icon_state = "cmmwebbing"
+	item_state = "cmmwebbing"
+
+/obj/item/storage/belt/military/minutemen/loaded/PopulateContents()
 	for(var/i in 1 to 7)
 		new /obj/item/ammo_box/magazine/p16(src)
 
@@ -508,6 +516,7 @@
 	desc = "A tactical assault belt."
 	icon_state = "assault"
 	item_state = "assault"
+	supports_variations = VOX_VARIATION
 
 /obj/item/storage/belt/military/assault/minutemen/PopulateContents()
 	for(var/i in 1 to 6)
@@ -589,6 +598,7 @@
 	desc = "A belt used to hold most janitorial supplies."
 	icon_state = "jani"
 	item_state = "jani"
+	supports_variations = VOX_VARIATION
 
 /obj/item/storage/belt/janitor/ComponentInitialize()
 	. = ..()
@@ -811,6 +821,7 @@
 	desc = "A set of tactical webbing for operators of the IRMG, can hold security gear."
 	icon_state = "inteq_webbing"
 	item_state = "inteq_webbing"
+	supports_variations = VOX_VARIATION
 
 /obj/item/storage/belt/security/webbing/inteq/alt
 	name = "inteq drop pouch harness"

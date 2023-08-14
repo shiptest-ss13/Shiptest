@@ -159,16 +159,14 @@
 
 /mob/living/simple_animal/Destroy()
 	GLOB.simple_animals[AIStatus] -= src
+
+	LAZYREMOVEASSOC(SSidlenpcpool.idle_mobs_by_virtual_level, "[virtual_z()]", src)
 	if (SSnpcpool.state == SS_PAUSED && LAZYLEN(SSnpcpool.currentrun))
 		SSnpcpool.currentrun -= src
 
 	if(nest)
 		nest.spawned_mobs -= src
 		nest = null
-
-	var/turf/T = get_turf(src)
-	if (T && AIStatus == AI_Z_OFF)
-		SSidlenpcpool.idle_mobs_by_zlevel[T.z] -= src
 
 	return ..()
 
@@ -622,22 +620,31 @@
 /mob/living/simple_animal/proc/toggle_ai(togglestatus)
 	if(!can_have_ai && (togglestatus != AI_OFF))
 		return
-	if (AIStatus != togglestatus)
-		if (togglestatus > 0 && togglestatus < 5)
-			if (togglestatus == AI_Z_OFF || AIStatus == AI_Z_OFF)
-				var/turf/T = get_turf(src)
-				if (AIStatus == AI_Z_OFF)
-					SSidlenpcpool.idle_mobs_by_zlevel[T.z] -= src
-				else
-					SSidlenpcpool.idle_mobs_by_zlevel[T.z] += src
-			GLOB.simple_animals[AIStatus] -= src
-			GLOB.simple_animals[togglestatus] += src
-			AIStatus = togglestatus
-		else
-			stack_trace("Something attempted to set simple animals AI to an invalid state: [togglestatus]")
+	if(AIStatus == togglestatus)
+		return
 
-/mob/living/simple_animal/proc/consider_wakeup()
+	var/virt_z = "[virtual_z()]"
+	switch(togglestatus)
+		if(AI_Z_OFF)
+			LAZYADDASSOC(SSidlenpcpool.idle_mobs_by_virtual_level, virt_z, src)
+
+		else
+			LAZYREMOVEASSOC(SSidlenpcpool.idle_mobs_by_virtual_level, virt_z, src)
+
+	GLOB.simple_animals[AIStatus] -= src
+	GLOB.simple_animals[togglestatus] += list(src)
+	AIStatus = togglestatus
+
+/mob/living/simple_animal/proc/check_should_sleep()
 	if (pulledby || shouldwakeup)
+		toggle_ai(AI_ON)
+		return
+
+	var/virt_z = "[virtual_z()]"
+	var/players_on_virtual_z = LAZYACCESS(SSmobs.players_by_virtual_z, virt_z)
+	if(!length(players_on_virtual_z))
+		toggle_ai(AI_Z_OFF)
+	else if(AIStatus == AI_Z_OFF)
 		toggle_ai(AI_ON)
 
 /mob/living/simple_animal/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
@@ -646,9 +653,7 @@
 		if(AIStatus == AI_IDLE)
 			toggle_ai(AI_ON)
 
-
-/mob/living/simple_animal/onTransitZ(old_z, new_z)
-	..()
-	if (AIStatus == AI_Z_OFF)
-		SSidlenpcpool.idle_mobs_by_zlevel[old_z] -= src
-		toggle_ai(initial(AIStatus))
+/mob/living/simple_animal/on_virtual_z_change(new_virtual_z, previous_virtual_z)
+	. = ..()
+	toggle_ai(initial(AIStatus))
+	check_should_sleep()

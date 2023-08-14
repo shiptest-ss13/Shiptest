@@ -133,6 +133,10 @@
 /obj/effect/turf_decal/ntspaceworks_big/five{
 	dir = 8
 	},
+/obj/machinery/light_switch{
+	pixel_x = 8;
+	pixel_y = 23
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "fS" = (
@@ -222,6 +226,11 @@
 /obj/effect/turf_decal/corner/opaque/yellow/border,
 /obj/effect/turf_decal/corner/opaque/blue/border{
 	dir = 4
+	},
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = 11;
+	pixel_y = -20
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
@@ -359,6 +368,10 @@
 /obj/structure/window/reinforced/spawner/east,
 /obj/structure/frame/machine,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
+/obj/machinery/light_switch{
+	pixel_x = 8;
+	pixel_y = 23
+	},
 /turf/open/floor/plasteel,
 /area/ship/science)
 "nH" = (
@@ -459,6 +472,11 @@
 	},
 /obj/effect/turf_decal/corner/opaque/blue/three_quarters,
 /obj/machinery/firealarm/directional/south,
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = 11;
+	pixel_y = -20
+	},
 /turf/open/floor/plasteel,
 /area/ship/bridge)
 "uw" = (
@@ -1001,6 +1019,11 @@
 	dir = 6
 	},
 /obj/machinery/suit_storage_unit/independent/mining,
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 20;
+	pixel_y = 11
+	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "Ss" = (
@@ -1171,6 +1194,10 @@
 	icon_state = "2-8"
 	},
 /obj/machinery/firealarm/directional/north,
+/obj/machinery/light_switch{
+	pixel_x = 10;
+	pixel_y = 23
+	},
 /turf/open/floor/plasteel,
 /area/ship/engineering)
 "Yi" = (

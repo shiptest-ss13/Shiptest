@@ -107,7 +107,7 @@
 /obj/machinery/computer/cargo/express/ui_interact(mob/living/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
-		ui = new(user, src, "OutpostComms", name)
+		ui = new(user, src, "OutpostCommunications", name)
 		ui.open()
 		if(!charge_account)
 			reconnect()
@@ -118,8 +118,11 @@
 
 	// not a big fan of get_containing_shuttle
 	var/obj/docking_port/mobile/D = SSshuttle.get_containing_shuttle(src)
-	var/datum/overmap/ship/controlled/ship = D.current_ship
-	var/outpost_docked = istype(ship.docked_to, /datum/overmap/dynamic/outpost)
+	var/datum/overmap/ship/controlled/ship
+	var/outpost_docked = FALSE
+	if(D)
+		ship = D.current_ship
+		outpost_docked = istype(ship.docked_to, /datum/overmap/outpost)
 
 	data["onShip"] = !isnull(ship)
 	data["numMissions"] = ship ? LAZYLEN(ship.missions) : 0
@@ -127,7 +130,7 @@
 	data["outpostDocked"] = outpost_docked
 	data["points"] = charge_account ? charge_account.account_balance : 0
 	data["siliconUser"] = user.has_unlimited_silicon_privilege && check_ship_ai_access(user)
-	data["beaconzone"] = beacon ? get_area(beacon) : ""//where is the beacon located? outputs in the tgui
+	data["beaconZone"] = beacon ? get_area(beacon) : ""//where is the beacon located? outputs in the tgui
 	data["usingBeacon"] = use_beacon //is the mode set to deliver to the beacon or the cargobay?
 	data["canBeacon"] = !use_beacon || canBeacon //is the mode set to beacon delivery, and is the beacon in a valid location?
 	data["canBuyBeacon"] = charge_account ? (cooldown <= 0 && charge_account.account_balance >= BEACON_COST) : FALSE
@@ -157,10 +160,10 @@
 	if(ship)
 		for(var/datum/mission/M as anything in ship.missions)
 			data["shipMissions"] += list(M.get_tgui_info())
-	if(outpost_docked)
-		var/datum/overmap/dynamic/outpost/out = ship.docked_to
-		for(var/datum/mission/M as anything in out.missions)
-			data["outpostMissions"] += list(M.get_tgui_info())
+		if(outpost_docked)
+			var/datum/overmap/outpost/out = ship.docked_to
+			for(var/datum/mission/M as anything in out.missions)
+				data["outpostMissions"] += list(M.get_tgui_info())
 
 	return data
 
@@ -205,7 +208,7 @@
 			var/datum/supply_pack/pack = SSshuttle.supply_packs[text2path(params["id"])]
 			if( \
 				!pack || !charge_account?.has_money(pack.cost) || !istype(current_area) || \
-				!istype(current_area.mobile_port.current_ship.docked_to, /datum/overmap/dynamic/outpost) \
+				!istype(current_area.mobile_port.current_ship.docked_to, /datum/overmap/outpost) \
 			)
 				return
 
@@ -249,7 +252,7 @@
 			var/datum/mission/mission = locate(params["ref"])
 			var/obj/docking_port/mobile/D = SSshuttle.get_containing_shuttle(src)
 			var/datum/overmap/ship/controlled/ship = D.current_ship
-			var/datum/overmap/dynamic/outpost/outpost = ship.docked_to
+			var/datum/overmap/outpost/outpost = ship.docked_to
 			if(!istype(outpost) || mission.source_outpost != outpost) // important to check these to prevent href fuckery
 				return
 			if(!mission.accepted)

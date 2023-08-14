@@ -7,7 +7,7 @@
 // 7.62 (Nagant Rifle)
 
 /obj/projectile/bullet/a762
-	name = "7.62x54mm bullet" // WS Edit - Whitesands
+	name = "7.62x54mm bullet"
 	damage = 60
 
 /obj/projectile/bullet/a300
@@ -36,4 +36,9 @@
 /obj/projectile/bullet/a308
 	name = ".308 Bullet"
 	damage = 45
+	armour_penetration = 15
+
+/obj/projectile/bullet/a858
+	name = "8x58mm caseless bullet"
+	damage = 50
 	armour_penetration = 15

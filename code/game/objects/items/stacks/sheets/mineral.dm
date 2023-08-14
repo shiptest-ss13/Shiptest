@@ -181,10 +181,6 @@ GLOBAL_LIST_INIT(uranium_recipes, list ( \
 	material_type = /datum/material/plasma
 	walltype = /turf/closed/wall/mineral/plasma
 
-/obj/item/stack/sheet/mineral/plasma/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins licking \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return TOXLOSS//dont you kids know that stuff is toxic?
-
 GLOBAL_LIST_INIT(plasma_recipes, list ( \
 	new/datum/stack_recipe("plasma door", /obj/structure/mineral_door/transparent/plasma, 10, one_per_turf = 1, on_floor = 1), \
 	new/datum/stack_recipe("plasma tile", /obj/item/stack/tile/mineral/plasma, 1, 4, 20), \
@@ -236,6 +232,7 @@ GLOBAL_LIST_INIT(plasma_recipes, list ( \
 GLOBAL_LIST_INIT(gold_recipes, list ( \
 	new/datum/stack_recipe("mortar", /obj/item/reagent_containers/glass/mortar/gold, 3), \
 	new/datum/stack_recipe("golden door", /obj/structure/mineral_door/gold, 10, one_per_turf = 1, on_floor = 1), \
+	new/datum/stack_recipe("chemical crate", /obj/structure/closet/crate/chem, 1, time = 15, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("gold tile", /obj/item/stack/tile/mineral/gold, 1, 4, 20), \
 	new/datum/stack_recipe("blank plaque", /obj/item/plaque, 1), \
 	new/datum/stack_recipe("HoS Statue", /obj/structure/statue/gold/hos, 5, one_per_turf = 1, on_floor = 1), \

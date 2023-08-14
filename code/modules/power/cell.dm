@@ -102,10 +102,6 @@
 	else
 		. += "The charge meter reads [round(src.percent())]%."
 
-/obj/item/stock_parts/cell/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is licking the electrodes of [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return (FIRELOSS)
-
 /obj/item/stock_parts/cell/on_reagent_change(changetype)
 	rigged = !isnull(reagents.has_reagent(/datum/reagent/toxin/plasma, 5)) //has_reagent returns the reagent datum
 	..()
@@ -462,13 +458,9 @@
 	charge = 0
 	update_icon()
 
-/obj/item/stock_parts/cell/gun/SolGov
+/obj/item/stock_parts/cell/gun/solgov
 	name = "SolGov power cell"
-	icon = 'icons/obj/power.dmi'
-	icon_state = "g-cell"
-	maxcharge = 8000
-	custom_materials = list(/datum/material/glass=60)
-	chargerate = 2000
+	icon_state = "g-sg-cell"
 
 /obj/item/stock_parts/cell/gun/large
 	name = "extra-large weapon power cell"

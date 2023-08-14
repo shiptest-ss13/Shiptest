@@ -650,6 +650,11 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/plumbing/input,
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_y = 12;
+	pixel_x = -20
+	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/medical)
 "il" = (
@@ -769,6 +774,11 @@
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
+	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_y = 12;
+	pixel_x = -20
 	},
 /turf/open/floor/concrete/slab_4,
 /area/ship/crew/canteen)
@@ -984,6 +994,11 @@
 	dir = 10
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/light_switch{
+	pixel_x = 20;
+	dir = 8;
+	pixel_y = 12
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/toilet)
 "mO" = (
@@ -1178,6 +1193,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
+	},
+/obj/machinery/light_switch{
+	pixel_x = 11;
+	pixel_y = 23
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew)
@@ -1553,6 +1572,11 @@
 	pixel_y = -23;
 	dir = 1
 	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -20;
+	pixel_y = 12
+	},
 /turf/open/floor/carpet/blue,
 /area/ship/bridge)
 "wD" = (
@@ -1758,6 +1782,11 @@
 	},
 /obj/effect/turf_decal/corner/opaque/blue/border{
 	dir = 4
+	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_y = 12;
+	pixel_x = -20
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/cargo)
@@ -2190,6 +2219,11 @@
 	gpstag = "PHARM2"
 	},
 /obj/effect/turf_decal/siding/thinplating,
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 20;
+	pixel_y = -12
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security)
 "He" = (
@@ -2654,16 +2688,12 @@
 /obj/item/clothing/suit/longcoat/chemist,
 /obj/item/clothing/under/rank/medical/chemist,
 /obj/item/clothing/under/rank/medical/chemist,
-/obj/item/clothing/under/rank/medical/chemist/pharmacist,
-/obj/item/clothing/under/rank/medical/chemist/pharmacist,
-/obj/item/clothing/under/rank/medical/chemist/pharmacist/skirt,
-/obj/item/clothing/under/rank/medical/chemist/pharmacist/skirt,
-/obj/item/clothing/under/rank/medical/chemist/pharmacologist,
-/obj/item/clothing/under/rank/medical/chemist/pharmacologist,
-/obj/item/clothing/under/rank/medical/chemist/pharmacologist/skirt,
-/obj/item/clothing/under/rank/medical/chemist/pharmacologist/skirt,
-/obj/item/clothing/under/suit/senior_chemist,
-/obj/item/clothing/under/suit/senior_chemist/skirt,
+/obj/item/clothing/under/rank/medical/chemist,
+/obj/item/clothing/under/rank/medical/chemist,
+/obj/item/clothing/under/rank/medical/chemist/skirt,
+/obj/item/clothing/under/rank/medical/chemist/skirt,
+/obj/item/clothing/under/rank/medical/chemist/skirt,
+/obj/item/clothing/under/rank/medical/chemist/skirt,
 /obj/item/clothing/shoes/sneakers/orange,
 /obj/item/clothing/shoes/sneakers/orange,
 /obj/item/clothing/shoes/sneakers/orange,
@@ -3045,6 +3075,11 @@
 	color = "#543C30";
 	dir = 1
 	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_y = 12;
+	pixel_x = -20
+	},
 /turf/open/floor/concrete/tiles,
 /area/ship/crew/hydroponics)
 "VY" = (
@@ -3260,6 +3295,11 @@
 	},
 /obj/structure/catwalk/over,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = 11;
+	pixel_y = -16
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Yw" = (

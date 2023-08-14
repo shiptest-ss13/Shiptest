@@ -412,9 +412,6 @@
 	var/obj/item/organ/alien/plasmavessel/vessel = getorgan(/obj/item/organ/alien/plasmavessel)
 	if(vessel)
 		. += "Plasma Stored: [vessel.storedPlasma]/[vessel.max_plasma]"
-	var/obj/item/organ/dwarfgland/dwarfgland = getorgan(/obj/item/organ/dwarfgland)		// BeginWS Edit - Dwarf Alcohol Gland
-	if(dwarfgland)
-		. += "Alcohol Stored: [dwarfgland.stored_alcohol]/[dwarfgland.max_alcohol]"		// EndWS Edit
 	if(locate(/obj/item/assembly/health) in src)
 		. += "Health: [health]"
 
@@ -825,7 +822,6 @@
 		if(D.severity != DISEASE_SEVERITY_POSITIVE)
 			D.cure(FALSE)
 	if(admin_revive)
-		suiciding = FALSE
 		regenerate_limbs()
 		regenerate_organs()
 		set_handcuffed(null)
@@ -848,14 +844,14 @@
 
 /mob/living/carbon/proc/can_defib()
 	var/obj/item/organ/heart = getorgan(/obj/item/organ/heart)
-	if(suiciding || hellbound || HAS_TRAIT(src, TRAIT_HUSK))
+	if (hellbound || HAS_TRAIT(src, TRAIT_HUSK))
 		return
 	if((getBruteLoss() >= MAX_REVIVE_BRUTE_DAMAGE) || (getFireLoss() >= MAX_REVIVE_FIRE_DAMAGE))
 		return
 	if(!heart || (heart.organ_flags & ORGAN_FAILING))
 		return
 	var/obj/item/organ/brain/BR = getorgan(/obj/item/organ/brain)
-	if(QDELETED(BR) || (BR.organ_flags & ORGAN_FAILING) || BR.suicided)
+	if(QDELETED(BR) || (BR.organ_flags & ORGAN_FAILING))
 		return
 	return TRUE
 
