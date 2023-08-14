@@ -245,5 +245,3 @@
 /mob/living/carbon/proc/charge(datum/source, amount, repairs)
 	if(nutrition < NUTRITION_LEVEL_WELL_FED)
 		adjust_nutrition(amount / 10) // The original amount is capacitor_rating*100
-	if(repairs)
-		heal_bodypart_damage(repairs, repairs - 1)
