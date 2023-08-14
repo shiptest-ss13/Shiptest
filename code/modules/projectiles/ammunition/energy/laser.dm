@@ -6,6 +6,10 @@
 	projectile_type = /obj/projectile/beam/laser/eoehoma
 	fire_sound = 'sound/weapons/gun/laser/e-fire.ogg'
 
+/obj/item/ammo_casing/energy/laser/eoehoma/e50
+	projectile_type = /obj/projectile/beam/emitter/hitscan/e50
+	fire_sound = 'sound/weapons/gun/laser/heavy_laser.ogg'
+
 /obj/item/ammo_casing/energy/lasergun
 	projectile_type = /obj/projectile/beam/laser
 	e_cost = 830
@@ -57,8 +61,8 @@
 /obj/item/ammo_casing/energy/laser/pulse
 	projectile_type = /obj/projectile/beam/pulse
 	e_cost = 2000
-	select_name = "DESTROY"
-	fire_sound = 'sound/weapons/pulse.ogg'
+	select_name = "Destroy"
+	fire_sound = 'sound/weapons/gun/laser/heavy_laser.ogg'
 
 /obj/item/ammo_casing/energy/laser/bluetag
 	projectile_type = /obj/projectile/beam/lasertag/bluetag

@@ -10,10 +10,6 @@
 	shaded_charge = TRUE
 	supports_variations = VOX_VARIATION
 
-/obj/item/gun/energy/laser/sharplite
-	name = "SL L-404 laser gun"
-	desc = "A standard mass produced Nanotrasen energy gun."
-
 /obj/item/gun/energy/laser/practice
 	name = "practice laser gun"
 	desc = "A modified version of the L-204 laser gun, this one fires less concentrated energy bolts designed for target practice."
@@ -206,3 +202,20 @@
 	w_class = WEIGHT_CLASS_SMALL
 	ammo_type = list(/obj/item/ammo_casing/energy/lasergun/eoehoma)
 	manufacturer = MANUFACTURER_EOEHOMA
+
+/obj/item/gun/energy/laser/e50
+	name = "E-50 energy emitter"
+	desc = "A heavy and extremely powerful laser. Sets fires and kick ass, however uses a massive amount of energy per shot and is generally awkard to fire with."
+
+	icon = 'icons/obj/guns/48x32guns.dmi'
+	icon_state = "e50"
+
+	big_gun = TRUE //haha gun go brr
+	cell_type = /obj/item/stock_parts/cell/gun/large
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/eoehoma/e50)
+
+	shaded_charge = TRUE
+	ammo_x_offset = 3
+	charge_sections = 2
+
+

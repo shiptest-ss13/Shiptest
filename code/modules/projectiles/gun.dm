@@ -4,10 +4,11 @@
 
 #define MANUFACTURER_NONE null
 #define MANUFACTURER_SHARPLITE "the Sharplite Defense logo"
+#define MANUFACTURER_SHARPLITE_NEW "the Nanotrasen-Sharplite logo"
 #define MANUFACTURER_HUNTERSPRIDE "the Hunter's Pride Arms and Ammunition logo"
 #define MANUFACTURER_SOLARARMORIES "the Solarbundswaffenkammer emblem"
 #define MANUFACTURER_SCARBOROUGH "the Scarborough Arms logo"
-#define MANUFACTURER_EOEHOMA "the Eoehoma Firearms log"
+#define MANUFACTURER_EOEHOMA "the Eoehoma Firearms emblem"
 #define MANUFACTURER_URSA "the Major Ursa's Reserve logo"
 #define MANUFACTURER_BRAZIL "an green flag with a blue circle and a yellow diamond around it"
 

@@ -1,6 +1,6 @@
 /obj/item/gun/energy/pulse
 	name = "pulse rifle"
-	desc = "A heavy-duty, multifaceted energy rifle with three modes. Preferred by front-line combat personnel."
+	desc = "A heavy-duty, expensive, multifaceted energy rifle with three modes. The standard for specialist Nanotrasen security."
 	icon_state = "pulse"
 	item_state = null
 	w_class = WEIGHT_CLASS_BULKY
@@ -8,7 +8,7 @@
 	modifystate = TRUE
 	flags_1 =  CONDUCT_1
 	slot_flags = ITEM_SLOT_BACK
-	ammo_type = list(/obj/item/ammo_casing/energy/laser/pulse, /obj/item/ammo_casing/energy/electrode, /obj/item/ammo_casing/energy/laser)
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/pulse, /obj/item/ammo_casing/energy/laser)
 	internal_cell = TRUE //prevents you from giving it an OP cell - WS Edit
 	cell_type = "/obj/item/stock_parts/cell/pulse"
 
@@ -33,13 +33,13 @@
 	. = ..()
 
 /obj/item/gun/energy/pulse/loyalpin
-	pin = /obj/item/firing_pin/implant/mindshield
+	pin = /obj/item/firing_pin
 
 /obj/item/gun/energy/pulse/carbine
 	name = "pulse carbine"
-	desc = "A compact variant of the pulse rifle with less firepower but easier storage."
-	w_class = WEIGHT_CLASS_NORMAL
-	slot_flags = ITEM_SLOT_BELT
+	desc = "The standard issue rifle of the Nanotrasen Ground Security Forces. Most have been mothballed into storage following the ICW."
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK
 	icon_state = "pulse_carbine"
 	item_state = null
 	internal_cell = FALSE

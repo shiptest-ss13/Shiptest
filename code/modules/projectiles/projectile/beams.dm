@@ -114,7 +114,7 @@
 /obj/projectile/beam/pulse
 	name = "pulse"
 	icon_state = "u_laser"
-	damage = 50
+	damage = 40
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
 	light_color = LIGHT_COLOR_BLUE
 	tracer_type = /obj/effect/projectile/tracer/pulse
@@ -123,11 +123,6 @@
 
 /obj/projectile/beam/pulse/on_hit(atom/target, blocked = FALSE)
 	. = ..()
-	if (!QDELETED(target) && (isturf(target) || istype(target, /obj/structure/)))
-		if(isobj(target))
-			SSexplosions.medobj += target
-		else
-			SSexplosions.medturf += target
 	var/turf/targets_turf = target.loc
 	if(!isopenturf(targets_turf))
 		return
@@ -153,7 +148,7 @@
 /obj/projectile/beam/emitter
 	name = "emitter beam"
 	icon_state = "emitter"
-	damage = 30
+	damage = 60 //osha violation waiting to happen
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/green_laser
 	light_color = LIGHT_COLOR_GREEN
 
@@ -250,3 +245,10 @@
 	muzzle_type = /obj/effect/projectile/muzzle/laser/emitter
 	impact_type = /obj/effect/projectile/impact/laser/emitter
 	impact_effect_type = null
+
+/obj/projectile/beam/emitter/hitscan/e50/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	var/turf/targets_turf = target.loc
+	if(!isopenturf(targets_turf))
+		return
+	targets_turf.IgniteTurf(rand(8,22), "green")
