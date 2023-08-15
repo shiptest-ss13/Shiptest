@@ -2,6 +2,15 @@
 "a" = (
 /turf/open/space/basic,
 /area/space)
+"b" = (
+/turf/open/floor/plasteel/stairs/wood,
+/area/space)
+"c" = (
+/obj/structure/railing/corner/wood{
+	dir = 1
+	},
+/turf/open/floor/wood,
+/area/space)
 "e" = (
 /obj/structure/railing,
 /turf/open/floor/plasteel/stairs{
@@ -9,9 +18,6 @@
 	},
 /area/space)
 "f" = (
-/obj/structure/railing{
-	dir = 4
-	},
 /turf/open/floor/plasteel/stairs{
 	dir = 1
 	},
@@ -19,11 +25,17 @@
 "g" = (
 /turf/closed/wall/mineral/titanium,
 /area/space)
-"h" = (
-/obj/structure/railing/corner{
-	dir = 4
+"i" = (
+/obj/structure/railing{
+	dir = 10
 	},
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/patterned,
+/area/space)
+"j" = (
+/obj/machinery/door/airlock/solgov{
+	name = "Bridge"
+	},
+/turf/open/floor/plasteel/mono/dark,
 /area/space)
 "n" = (
 /obj/structure/window/reinforced/fulltile/shuttle,
@@ -49,13 +61,39 @@
 /obj/structure/railing,
 /turf/open/floor/plasteel,
 /area/space)
+"y" = (
+/turf/open/floor/plasteel/mono/dark,
+/area/space)
+"z" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
+/area/space)
 "A" = (
 /turf/open/floor/plating,
 /area/space)
-"H" = (
-/obj/structure/railing{
+"B" = (
+/turf/open/floor/plasteel/stairs/wood{
 	dir = 1
 	},
+/area/space)
+"E" = (
+/obj/structure/railing/corner/wood{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/space)
+"F" = (
+/obj/structure/railing/corner{
+	dir = 8;
+	pixel_x = -4
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/space)
+"G" = (
+/obj/structure/railing,
+/turf/open/floor/plasteel/patterned,
+/area/space)
+"H" = (
 /turf/open/floor/plasteel/stairs{
 	dir = 8
 	},
@@ -66,16 +104,38 @@
 "J" = (
 /turf/open/floor/wood/walnut,
 /area/space)
-"O" = (
-/obj/structure/railing{
-	dir = 1
+"L" = (
+/obj/structure/railing/wood{
+	dir = 8
 	},
-/turf/open/floor/plasteel,
+/turf/closed/wall/mineral/titanium,
+/area/space)
+"M" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/open/floor/plasteel/patterned,
 /area/space)
 "P" = (
 /turf/open/floor/plasteel,
 /area/space)
 "R" = (
+/turf/open/floor/wood,
+/area/space)
+"S" = (
+/obj/structure/railing/wood{
+	dir = 4
+	},
+/turf/closed/wall/mineral/titanium,
+/area/space)
+"T" = (
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/open/floor/plasteel/patterned,
+/area/space)
+"V" = (
+/obj/structure/railing/corner/wood,
 /turf/open/floor/wood,
 /area/space)
 "W" = (
@@ -85,10 +145,20 @@
 /turf/open/floor/plasteel/stairs,
 /area/space)
 "X" = (
-/obj/structure/railing/corner{
-	dir = 2
-	},
+/obj/structure/railing/corner,
 /turf/open/floor/plasteel,
+/area/space)
+"Y" = (
+/obj/structure/railing/corner/wood{
+	dir = 4
+	},
+/turf/open/floor/wood,
+/area/space)
+"Z" = (
+/obj/structure/railing{
+	dir = 6
+	},
+/turf/open/floor/plasteel/patterned,
 /area/space)
 
 (1,1,1) = {"
@@ -315,7 +385,7 @@ p
 v
 f
 f
-h
+P
 g
 g
 g
@@ -352,9 +422,9 @@ p
 p
 p
 v
-v
-v
-O
+M
+i
+P
 g
 P
 P
@@ -392,7 +462,7 @@ p
 p
 p
 p
-v
+G
 H
 g
 P
@@ -431,7 +501,7 @@ p
 p
 p
 p
-v
+G
 H
 g
 P
@@ -470,7 +540,7 @@ p
 p
 p
 p
-v
+G
 H
 g
 P
@@ -509,7 +579,7 @@ p
 p
 p
 p
-v
+G
 H
 g
 P
@@ -548,8 +618,8 @@ p
 p
 p
 p
-v
-O
+G
+P
 g
 P
 P
@@ -560,7 +630,7 @@ P
 g
 "}
 (13,1,1) = {"
-a
+y
 a
 a
 a
@@ -587,8 +657,8 @@ p
 p
 p
 p
-v
-O
+G
+P
 g
 P
 P
@@ -626,7 +696,7 @@ p
 p
 p
 p
-v
+G
 H
 g
 P
@@ -665,7 +735,7 @@ p
 p
 p
 p
-v
+G
 H
 g
 P
@@ -704,7 +774,7 @@ p
 p
 p
 p
-v
+G
 H
 g
 P
@@ -731,19 +801,19 @@ P
 P
 g
 e
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
+T
+T
+T
+T
+T
+T
+T
+T
+T
+T
+T
+T
+Z
 H
 g
 P
@@ -769,21 +839,21 @@ P
 P
 P
 g
-P
-g
-g
-g
-g
-g
-g
-g
-g
-g
-g
-g
-g
-g
-P
+F
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+y
 g
 P
 P
@@ -808,21 +878,21 @@ g
 g
 g
 g
+y
 g
 g
-R
-R
-R
-R
-R
-g
-R
-R
-R
-R
-R
 g
 g
+g
+g
+g
+g
+g
+g
+g
+g
+g
+y
 g
 g
 g
@@ -1005,17 +1075,17 @@ R
 R
 R
 g
+R
+R
+R
+R
+R
 g
-g
-g
-g
-g
-g
-g
-g
-g
-g
-g
+R
+R
+R
+R
+R
 g
 R
 R
@@ -1044,17 +1114,17 @@ R
 R
 R
 g
-R
-R
-R
-R
-R
-R
-R
-R
-R
-R
-R
+g
+g
+g
+g
+g
+g
+g
+g
+g
+g
+g
 g
 R
 R
@@ -1122,6 +1192,8 @@ R
 R
 R
 g
+S
+Y
 R
 R
 R
@@ -1129,10 +1201,8 @@ R
 R
 R
 R
-R
-R
-R
-R
+V
+S
 g
 R
 R
@@ -1160,7 +1230,8 @@ R
 R
 R
 R
-g
+j
+b
 R
 R
 R
@@ -1170,9 +1241,8 @@ R
 R
 R
 R
-R
-R
-g
+B
+j
 R
 R
 R
@@ -1199,7 +1269,8 @@ R
 R
 R
 R
-g
+j
+b
 R
 R
 R
@@ -1209,9 +1280,8 @@ R
 R
 R
 R
-R
-R
-g
+B
+j
 R
 R
 R
@@ -1239,7 +1309,8 @@ R
 R
 R
 g
-g
+L
+c
 R
 R
 R
@@ -1247,9 +1318,8 @@ R
 R
 R
 R
-R
-R
-g
+E
+L
 g
 R
 R
@@ -1278,17 +1348,17 @@ R
 R
 R
 g
-g
-g
-g
-g
-g
-g
-g
-g
-g
-g
-g
+R
+R
+R
+R
+R
+R
+R
+R
+R
+R
+R
 g
 R
 R
@@ -1317,17 +1387,17 @@ R
 R
 g
 g
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+g
+g
+R
+R
+R
+R
+R
+R
+R
+g
+g
 g
 g
 R
@@ -1357,15 +1427,15 @@ g
 g
 a
 a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+g
+g
+g
+g
+g
+g
+g
+g
+g
 a
 a
 g
