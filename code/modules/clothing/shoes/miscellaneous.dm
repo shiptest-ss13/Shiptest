@@ -59,6 +59,7 @@
 	desc = "A white pair of easy slip on and off slippers. There are extra treads on the bottom."
 	icon_state = "whiteslippers"
 	item_state = "whiteslippers"
+	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/shoes/sandal/marisa
 	desc = "A pair of magic black shoes."

@@ -39,6 +39,7 @@
 		icon_state = "gondolapod_open"
 	else
 		icon_state = "gondolapod"
+	return ..()
 
 /mob/living/simple_animal/pet/gondola/gondolapod/verb/deliver()
 	set name = "Release Contents"
@@ -65,12 +66,12 @@
 
 /mob/living/simple_animal/pet/gondola/gondolapod/proc/setOpened()
 	opened = TRUE
-	update_icon()
+	update_appearance()
 	addtimer(CALLBACK(src, .proc/setClosed), 50)
 
 /mob/living/simple_animal/pet/gondola/gondolapod/proc/setClosed()
 	opened = FALSE
-	update_icon()
+	update_appearance()
 
 /mob/living/simple_animal/pet/gondola/gondolapod/death()
 	qdel(linked_pod) //Will cause the open() proc for the linked supplypod to be called with the "broken" parameter set to true, meaning that it will dump its contents on death
