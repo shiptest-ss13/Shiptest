@@ -357,7 +357,7 @@
 /obj/structure/headpike,
 /obj/effect/decal/cleanable/generic,
 /turf/open/floor/plating/asteroid/wasteplanet,
-/area/overmap_encounter/planetoid/rockplanet/explored)
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "dv" = (
 /obj/structure/reagent_dispensers/water_cooler,
 /turf/open/floor/plating/rust,
@@ -401,7 +401,7 @@
 /area/ruin/powered)
 "dT" = (
 /obj/structure/table/wood,
-/obj/machinery/photocopier/faxmachine,
+/obj/machinery/fax,
 /turf/open/floor/plating,
 /area/ruin/powered)
 "dU" = (
@@ -752,7 +752,7 @@
 "gW" = (
 /obj/structure/table/wood,
 /obj/item/paper/crumpled{
-	info = "Please leave money and pawned items on this table. Thank you! -R";
+	default_raw_text = "Please leave money and pawned items on this table. Thank you! -R";
 	pixel_x = 5;
 	pixel_y = 4
 	},
@@ -1195,7 +1195,7 @@
 "ll" = (
 /obj/structure/headpike,
 /turf/open/floor/plating/asteroid/wasteplanet,
-/area/overmap_encounter/planetoid/rockplanet/explored)
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "lp" = (
 /obj/effect/decal/cleanable/blood/old,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -1664,7 +1664,7 @@
 "oW" = (
 /obj/structure/flora/rock,
 /turf/open/floor/plating/asteroid/wasteplanet,
-/area/overmap_encounter/planetoid/rockplanet/explored)
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "oX" = (
 /obj/structure/sign/poster/contraband/pgf,
 /turf/closed/wall/rust,
@@ -2027,7 +2027,7 @@
 "sB" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/paper/crumpled{
-	info = "You know you want to do it. Give in to your pyromaniacal urges. DO IT."
+	default_raw_text = "You know you want to do it. Give in to your pyromaniacal urges. DO IT."
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
@@ -2142,7 +2142,7 @@
 "tR" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/asteroid/wasteplanet,
-/area/overmap_encounter/planetoid/rockplanet/explored)
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "tT" = (
 /obj/machinery/door/airlock/maintenance{
 	name = "The Barracks"
@@ -2747,7 +2747,7 @@
 "zG" = (
 /obj/item/gun/ballistic/automatic/pistol/commander,
 /turf/open/floor/plating/asteroid/wasteplanet,
-/area/overmap_encounter/planetoid/rockplanet/explored)
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "zK" = (
 /turf/closed/indestructible/reinforced,
 /area/ruin/powered)
@@ -3410,7 +3410,7 @@
 	},
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plating/asteroid/wasteplanet,
-/area/overmap_encounter/planetoid/rockplanet/explored)
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "Fl" = (
 /obj/effect/decal/cleanable/robot_debris,
 /mob/living/simple_animal/hostile/rat{
@@ -3666,7 +3666,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/asteroid/wasteplanet,
-/area/overmap_encounter/planetoid/rockplanet/explored)
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "In" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
@@ -3717,7 +3717,7 @@
 /area/ruin/powered)
 "IA" = (
 /turf/open/floor/plating/asteroid/wasteplanet,
-/area/overmap_encounter/planetoid/rockplanet/explored)
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "IB" = (
 /obj/item/storage/fancy/cigarettes/cigpack_robustgold,
 /turf/open/floor/plating,
@@ -3732,7 +3732,7 @@
 "IG" = (
 /obj/structure/table,
 /obj/item/paper/crumpled{
-	info = "Everything on a table or in a container is altogether 100 credits or an item of equivalent value."
+	default_raw_text = "Everything on a table or in a container is altogether 100 credits or an item of equivalent value."
 	},
 /turf/open/floor/plating,
 /area/ruin/powered)
@@ -4076,7 +4076,7 @@
 /obj/effect/decal/cleanable/vomit/old,
 /obj/effect/decal/cleanable/blood/old,
 /obj/item/paper/crumpled/bloody{
-	info = "this place is hell. im done. meet me there, guys.";
+	default_raw_text = "this place is hell. im done. meet me there, guys.";
 	pixel_x = -8;
 	pixel_y = 6
 	},
@@ -4726,7 +4726,7 @@
 /obj/structure/headpike,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/asteroid/wasteplanet,
-/area/overmap_encounter/planetoid/rockplanet/explored)
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "SC" = (
 /obj/machinery/door/airlock/maintenance{
 	dir = 4

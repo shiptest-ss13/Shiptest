@@ -97,7 +97,7 @@
 		beaker = new_beaker
 	else
 		beaker = null
-	update_icon()
+	update_appearance()
 	return TRUE
 
 /obj/machinery/clonepod/ui_interact(mob/user, datum/tgui/ui)
@@ -209,7 +209,7 @@
 			INVOKE_ASYNC(src, .proc/horrifyingsound)
 			mess = TRUE
 			icon_state = "pod_g"
-			update_icon()
+			update_appearance()
 			return NONE
 	attempting = TRUE //One at a time!!
 	countdown.start()
@@ -591,7 +591,7 @@
 
 /obj/item/paper/guides/jobs/medical/cloning
 	name = "paper - 'H-87 Cloning Apparatus Manual"
-	info = {"<h4>Getting Started</h4>
+	default_raw_text = {"<h4>Getting Started</h4>
 	Congratulations, you have has purchased the H-87 industrial cloning device!<br>
 	Using the H-87 is almost as simple as brain surgery! Simply insert the target humanoid into the scanning chamber and select the scan option to create a new profile!<br>
 	<b>That's all there is to it!</b><br>

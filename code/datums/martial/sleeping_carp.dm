@@ -181,6 +181,7 @@
 	attack_verb = list("smashed", "slammed", "whacked", "thwacked")
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "bostaff0"
+	base_icon_state = "bostaff"
 	lefthand_file = 'icons/mob/inhands/weapons/staves_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/staves_righthand.dmi'
 	block_chance = 50
@@ -193,7 +194,7 @@
 
 /obj/item/staff/bostaff/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded=10, force_wielded=24, icon_wielded="bostaff1")
+	AddComponent(/datum/component/two_handed, force_unwielded=10, force_wielded=24, icon_wielded="[base_icon_state]1")
 
 /// triggered on wield of two handed item
 /obj/item/staff/bostaff/proc/on_wield(obj/item/source, mob/user)
@@ -208,7 +209,8 @@
 	wielded = FALSE
 
 /obj/item/staff/bostaff/update_icon_state()
-	icon_state = "bostaff0"
+	icon_state = "[base_icon_state]0"
+	return ..()
 
 /obj/item/staff/bostaff/attack(mob/target, mob/living/user)
 	add_fingerprint(user)

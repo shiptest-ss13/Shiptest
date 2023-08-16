@@ -776,6 +776,11 @@
 /obj/structure/cable/green{
 	icon_state = "2-9"
 	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -20;
+	pixel_y = 12
+	},
 /turf/open/floor/plasteel/stairs{
 	dir = 1
 	},
@@ -796,7 +801,9 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/dorm)
 "hv" = (
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/airlock/hatch{
+	dir = 4
+	},
 /obj/structure/fans/tiny,
 /obj/machinery/atmospherics/pipe/simple/general/visible/layer2{
 	dir = 4
@@ -1094,6 +1101,13 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/canteen)
+"kq" = (
+/obj/machinery/light_switch{
+	pixel_x = -10;
+	pixel_y = 23
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/atmospherics)
 "kt" = (
 /obj/machinery/atmospherics/pipe/simple/general/visible/layer2{
 	dir = 4
@@ -1908,6 +1922,7 @@
 	},
 /obj/machinery/computer/atmos_control/tank/toxin_tank,
 /obj/machinery/light/directional/east,
+/obj/machinery/door/airlock/hatch,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "tZ" = (
@@ -2283,6 +2298,10 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/spline/plain/opaque/yellow,
+/obj/machinery/light_switch{
+	pixel_x = 11;
+	pixel_y = 23
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/dorm)
 "xA" = (
@@ -2691,6 +2710,10 @@
 /obj/structure/cable/green{
 	icon_state = "2-8"
 	},
+/obj/machinery/light_switch{
+	pixel_x = 11;
+	pixel_y = 23
+	},
 /turf/open/floor/plating/airless,
 /area/ship/hallway)
 "AL" = (
@@ -2764,6 +2787,10 @@
 	},
 /obj/effect/turf_decal/spline/fancy/wood{
 	dir = 4
+	},
+/obj/machinery/light_switch{
+	pixel_x = 11;
+	pixel_y = 23
 	},
 /turf/open/floor/wood/mahogany,
 /area/ship/crew/canteen)
@@ -3147,6 +3174,10 @@
 /obj/structure/cable/green{
 	icon_state = "0-8"
 	},
+/obj/machinery/light_switch{
+	pixel_x = 11;
+	pixel_y = 23
+	},
 /turf/open/floor/plasteel/stairs{
 	dir = 8
 	},
@@ -3186,6 +3217,10 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/opaque/brown/bordercorner,
+/obj/machinery/light_switch{
+	pixel_x = 11;
+	pixel_y = 23
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "FZ" = (
@@ -3651,7 +3686,7 @@
 "Ju" = (
 /obj/structure/table/wood,
 /obj/machinery/light/directional/east,
-/obj/machinery/photocopier/faxmachine{
+/obj/machinery/fax{
 	pixel_y = -5
 	},
 /obj/effect/turf_decal/corner/opaque/yellow/border{
@@ -4259,6 +4294,10 @@
 	pixel_x = 26;
 	pixel_y = 5
 	},
+/obj/machinery/light_switch{
+	pixel_x = -13;
+	pixel_y = 23
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Qw" = (
@@ -4774,6 +4813,11 @@
 /obj/effect/turf_decal/industrial/radiation,
 /obj/effect/turf_decal/industrial/radiation{
 	dir = 1
+	},
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = -12;
+	pixel_y = -16
 	},
 /turf/open/floor/mineral/titanium,
 /area/ship/storage)
@@ -5954,8 +5998,8 @@ Zg
 Zg
 oK
 HW
-eZ
-eZ
+Zg
+Zg
 Vt
 tt
 tt
@@ -6030,12 +6074,12 @@ Cw
 od
 Gv
 QQ
-eZ
-eZ
-eZ
-eZ
-eZ
-eZ
+Zg
+Zg
+Zg
+Zg
+Zg
+Zg
 VA
 sL
 ag
@@ -6075,7 +6119,7 @@ hR
 hR
 hR
 hR
-eZ
+Zg
 vj
 QQ
 OD
@@ -6088,12 +6132,12 @@ Cw
 Lt
 jL
 QQ
-eZ
-eZ
-eZ
-eZ
-eZ
-eZ
+Zg
+Zg
+Zg
+Zg
+Zg
+Zg
 VA
 cO
 pp
@@ -6147,9 +6191,9 @@ sd
 QQ
 QQ
 pz
-eZ
-eZ
-eZ
+Zg
+Zg
+Zg
 ZF
 VA
 VA
@@ -6261,8 +6305,8 @@ Dt
 zL
 vv
 IW
-eZ
-eZ
+Zg
+Zg
 Zc
 iL
 Zm
@@ -6309,7 +6353,7 @@ Ua
 CP
 hR
 zl
-eZ
+Zg
 Tr
 bT
 bT
@@ -6423,7 +6467,7 @@ hR
 hR
 dm
 hR
-eZ
+Zg
 Hi
 Xn
 CB
@@ -6538,11 +6582,11 @@ hJ
 Vz
 Vz
 fZ
-eZ
-eZ
+Zg
+Zg
 Dw
 bT
-CB
+kq
 dR
 ph
 gv
@@ -6612,10 +6656,10 @@ CJ
 bT
 nG
 Xn
-eZ
-eZ
-eZ
-eZ
+Zg
+Zg
+Zg
+Zg
 VA
 tg
 ag
@@ -6671,9 +6715,9 @@ bT
 ei
 ei
 ei
-eZ
-eZ
-eZ
+Zg
+Zg
+Zg
 VA
 cF
 ag
@@ -6730,8 +6774,8 @@ mP
 LZ
 ei
 IR
-eZ
-eZ
+Zg
+Zg
 VA
 xW
 Sp

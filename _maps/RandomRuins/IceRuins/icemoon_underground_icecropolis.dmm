@@ -7,7 +7,7 @@
 "ae" = (
 /obj/structure/fluff/fokoff_sign,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis,
-/area/ruin/unpowered/icecropolis/outside)
+/area/overmap_encounter/planetoid/ice/explored)
 "al" = (
 /obj/structure/stone_tile/slab,
 /obj/structure/closet/crate/necropolis,
@@ -34,7 +34,7 @@
 "aE" = (
 /obj/structure/flora/grass/both,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/ruin/unpowered/icecropolis/outside)
+/area/overmap_encounter/planetoid/ice/explored)
 "aM" = (
 /obj/structure/table,
 /obj/item/circular_saw,
@@ -130,14 +130,14 @@
 /turf/open/lava{
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
-/area/ruin/unpowered/icecropolis/outside)
+/area/overmap_encounter/planetoid/ice/explored)
 "cG" = (
 /obj/structure/stone_tile/surrounding/cracked{
 	dir = 4
 	},
 /obj/item/trash/can,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/ruin/unpowered/icecropolis/outside)
+/area/overmap_encounter/planetoid/ice/explored)
 "df" = (
 /obj/item/trash/syndi_cakes,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
@@ -188,7 +188,7 @@
 "ea" = (
 /obj/structure/flora/rock/icy,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/ruin/unpowered/icecropolis/outside)
+/area/overmap_encounter/planetoid/ice/explored)
 "eB" = (
 /obj/structure/necropolis_gate,
 /obj/structure/stone_tile/slab/cracked,
@@ -242,7 +242,7 @@
 /mob/living/simple_animal/hostile/big_legion{
 	desc = "Hidden away with his sect of heretical brethren, he festers and awaits judgement from The Priest.";
 	health = 300;
-	loot = list(/obj/item/organ/regenerative_core/legion = 3, /obj/effect/mob_spawn/human/corpse/damaged/legioninfested = 5, /obj/effect/mob_spawn/human/corpse/damaged/legioninfested = 5, /obj/effect/mob_spawn/human/corpse/damaged/legioninfested = 5, /obj/item/keycard/gatedrop/heathen);
+	loot = list(/obj/item/organ/regenerative_core/legion=3,/obj/effect/mob_spawn/human/corpse/damaged/legioninfested=5,/obj/effect/mob_spawn/human/corpse/damaged/legioninfested=5,/obj/effect/mob_spawn/human/corpse/damaged/legioninfested=5,/obj/item/keycard/gatedrop/heathen);
 	maxHealth = 300;
 	name = "The Heathen"
 	},
@@ -290,7 +290,7 @@
 /turf/open/lava{
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
-/area/ruin/unpowered/icecropolis/outside)
+/area/overmap_encounter/planetoid/ice/explored)
 "fK" = (
 /obj/structure/cable/blue{
 	icon_state = "0-4"
@@ -355,7 +355,7 @@
 /turf/open/lava{
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
-/area/ruin/unpowered/icecropolis/outside)
+/area/overmap_encounter/planetoid/ice/explored)
 "gr" = (
 /obj/structure/stone_tile,
 /obj/structure/stone_tile/block{
@@ -535,7 +535,7 @@
 "kC" = (
 /obj/structure/fluff/fokoff_sign,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/ruin/unpowered/icecropolis/outside)
+/area/overmap_encounter/planetoid/ice/explored)
 "kD" = (
 /obj/structure/stone_tile/slab,
 /obj/structure/chair/pew{
@@ -672,7 +672,7 @@
 	},
 /obj/item/trash/plate,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/ruin/unpowered/icecropolis/outside)
+/area/overmap_encounter/planetoid/ice/explored)
 "nr" = (
 /obj/item/clothing/head/festive{
 	desc = "A festive party hat with the name 'timmy' scribbled on the front.";
@@ -714,7 +714,7 @@
 /turf/open/lava{
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
-/area/ruin/unpowered/icecropolis/outside)
+/area/overmap_encounter/planetoid/ice/explored)
 "oj" = (
 /obj/structure/stone_tile/slab,
 /obj/structure/chair/pew,
@@ -730,7 +730,7 @@
 /turf/open/lava{
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
-/area/ruin/unpowered/icecropolis/outside)
+/area/overmap_encounter/planetoid/ice/explored)
 "oJ" = (
 /obj/structure/stone_tile/slab,
 /obj/structure/bookcase/random/reference,
@@ -772,7 +772,7 @@
 "pa" = (
 /obj/structure/stone_tile/block/burnt,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/ruin/unpowered/icecropolis/outside)
+/area/overmap_encounter/planetoid/ice/explored)
 "ph" = (
 /obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper,
 /turf/open/floor/wood/icecropolis,
@@ -991,7 +991,7 @@
 /obj/item/gun/magic/wand/nothing,
 /obj/item/implanter/adrenalin,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis,
-/area/ruin/unpowered/icecropolis/outside)
+/area/overmap_encounter/planetoid/ice/explored)
 "tE" = (
 /obj/structure/mineral_door/wood,
 /turf/open/floor/wood/icecropolis,
@@ -1002,7 +1002,7 @@
 	desc = "The gatekeeper, a beast dedicated to guarding the wellbeing of its master.";
 	faction = list("mining");
 	health = 300;
-	loot = list(/obj/item/crusher_trophy/broodmother_tongue, /obj/item/keycard/gatedrop/gatekeeper);
+	loot = list(/obj/item/crusher_trophy/broodmother_tongue,/obj/item/keycard/gatedrop/gatekeeper);
 	loot_drop = list();
 	maxHealth = 200;
 	name = "The Gatekeeper"
@@ -1162,7 +1162,7 @@
 /turf/open/lava{
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
-/area/ruin/unpowered/icecropolis/outside)
+/area/overmap_encounter/planetoid/ice/explored)
 "wa" = (
 /obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper,
 /obj/structure/toilet,
@@ -1187,7 +1187,7 @@
 /turf/open/lava{
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
-/area/ruin/unpowered/icecropolis/outside)
+/area/overmap_encounter/planetoid/ice/explored)
 "wt" = (
 /obj/structure/stone_tile/slab,
 /obj/effect/decal/cleanable/blood/gibs/old,
@@ -1196,7 +1196,7 @@
 "ww" = (
 /obj/effect/mob_spawn/human/corpse/charredskeleton,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis,
-/area/ruin/unpowered/icecropolis/outside)
+/area/overmap_encounter/planetoid/ice/explored)
 "wy" = (
 /obj/item/shield/riot/roman,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
@@ -1346,12 +1346,12 @@
 /obj/structure/table/wood/fancy/red_gold,
 /obj/item/reagent_containers/syringe{
 	desc = "A serum left behind by the fabled Goldwalkers.";
-	list_reagents = list(/datum/reagent/mutationtoxin/ash = 15);
+	list_reagents = list(/datum/reagent/mutationtoxin/ash=15);
 	name = "GoldWalkers Blessing"
 	},
 /obj/item/reagent_containers/syringe{
 	desc = "A serum left behind by the fabled Goldwalkers.";
-	list_reagents = list(/datum/reagent/mutationtoxin/ash = 15);
+	list_reagents = list(/datum/reagent/mutationtoxin/ash=15);
 	name = "GoldWalkers Blessing"
 	},
 /turf/open/indestructible/boss/air,
@@ -1411,7 +1411,7 @@
 /area/ruin/unpowered/icecropolis)
 "Ao" = (
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/ruin/unpowered/icecropolis/outside)
+/area/overmap_encounter/planetoid/ice/explored)
 "AP" = (
 /obj/structure/stone_tile{
 	dir = 8
@@ -1470,7 +1470,7 @@
 /turf/open/lava{
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
-/area/ruin/unpowered/icecropolis/outside)
+/area/overmap_encounter/planetoid/ice/explored)
 "BK" = (
 /obj/item/trash/candy,
 /obj/effect/decal/cleanable/blood/old,
@@ -1479,7 +1479,7 @@
 "BR" = (
 /obj/structure/barricade/wooden,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis,
-/area/ruin/unpowered/icecropolis/outside)
+/area/overmap_encounter/planetoid/ice/explored)
 "Ci" = (
 /obj/structure/barricade/wooden/crude,
 /turf/open/floor/plating,
@@ -1513,7 +1513,7 @@
 	dir = 4
 	},
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/ruin/unpowered/icecropolis/outside)
+/area/overmap_encounter/planetoid/ice/explored)
 "CF" = (
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 1
@@ -1534,7 +1534,7 @@
 	},
 /obj/effect/mob_spawn/human/corpse/charredskeleton,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/ruin/unpowered/icecropolis/outside)
+/area/overmap_encounter/planetoid/ice/explored)
 "CQ" = (
 /obj/effect/spawner/lootdrop/snowdin/dungeonmid,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
@@ -1709,7 +1709,7 @@
 	desc = "This Bishop, twisted in its worship,  brought holy word to some golden city of lore.";
 	faction = list("mining");
 	health = 400;
-	loot = list(/obj/item/clothing/neck/cloak/herald_cloak, /obj/item/keycard/gatedrop/bishop);
+	loot = list(/obj/item/clothing/neck/cloak/herald_cloak,/obj/item/keycard/gatedrop/bishop);
 	loot_drop = list();
 	maxHealth = 400;
 	name = "The Bishop";
@@ -1890,7 +1890,7 @@
 "IC" = (
 /obj/structure/flora/rock/pile/icy,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis,
-/area/ruin/unpowered/icecropolis/outside)
+/area/overmap_encounter/planetoid/ice/explored)
 "IE" = (
 /obj/item/trash/waffles,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
@@ -1910,7 +1910,7 @@
 /turf/open/lava{
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
-/area/ruin/unpowered/icecropolis/outside)
+/area/overmap_encounter/planetoid/ice/explored)
 "JB" = (
 /mob/living/simple_animal/hostile/asteroid/gutlunch,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
@@ -2034,7 +2034,7 @@
 "LA" = (
 /obj/structure/stone_tile/surrounding/cracked,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/ruin/unpowered/icecropolis/outside)
+/area/overmap_encounter/planetoid/ice/explored)
 "LH" = (
 /obj/structure/stone_tile/slab/cracked,
 /obj/structure/table/wood/fancy/red_gold,
@@ -2047,7 +2047,7 @@
 	},
 /obj/structure/bonfire/prelit,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/ruin/unpowered/icecropolis/outside)
+/area/overmap_encounter/planetoid/ice/explored)
 "LM" = (
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 4
@@ -2183,6 +2183,9 @@
 	},
 /turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/reach)
+"Ov" = (
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis,
+/area/overmap_encounter/planetoid/ice/explored)
 "OB" = (
 /obj/effect/decal/cleanable/blood/old,
 /mob/living/simple_animal/hostile/netherworld/migo{
@@ -2195,7 +2198,7 @@
 "OG" = (
 /obj/structure/flora/rock/pile/icy,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/ruin/unpowered/icecropolis/outside)
+/area/overmap_encounter/planetoid/ice/explored)
 "OP" = (
 /obj/structure/stone_tile/slab,
 /obj/structure/closet/crate/necropolis,
@@ -2228,7 +2231,7 @@
 	desc = "Captain of the Holy Guard, a title few can hold without faulter.";
 	faction = list("mining");
 	health = 300;
-	loot = list(/obj/item/crusher_trophy/legionnaire_spine, /obj/item/keycard/gatedrop/guard);
+	loot = list(/obj/item/crusher_trophy/legionnaire_spine,/obj/item/keycard/gatedrop/guard);
 	loot_drop = list();
 	maxHealth = 300;
 	name = "Captain of the Holy Guard"
@@ -2290,7 +2293,7 @@
 	dir = 1
 	},
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/ruin/unpowered/icecropolis/outside)
+/area/overmap_encounter/planetoid/ice/explored)
 "PV" = (
 /obj/item/guardiancreator/choose,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
@@ -2298,12 +2301,12 @@
 "PW" = (
 /obj/structure/flora/tree/dead,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/ruin/unpowered/icecropolis/outside)
+/area/overmap_encounter/planetoid/ice/explored)
 "PX" = (
 /obj/structure/stone_tile/slab/cracked,
 /obj/item/trash/sosjerky,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/ruin/unpowered/icecropolis/outside)
+/area/overmap_encounter/planetoid/ice/explored)
 "PZ" = (
 /obj/effect/decal/cleanable/blood/gibs/core,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
@@ -2427,7 +2430,7 @@
 /turf/open/lava{
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
-/area/ruin/unpowered/icecropolis/outside)
+/area/overmap_encounter/planetoid/ice/explored)
 "Sy" = (
 /obj/structure/stone_tile{
 	dir = 4
@@ -2906,7 +2909,7 @@
 	color = "#880808";
 	desc = "Disfigured and distorted, this disciple of The Priest fell to temptation before shutting themselves away with their idol.";
 	health = 200;
-	loot = list(/obj/item/organ/regenerative_core/legion, /obj/item/keycard/gatedrop/disciple);
+	loot = list(/obj/item/organ/regenerative_core/legion,/obj/item/keycard/gatedrop/disciple);
 	maxHealth = 200;
 	melee_damage_lower = 20;
 	melee_damage_type = "burn";
@@ -5248,9 +5251,9 @@ jV
 vv
 vv
 vv
-WO
-WO
-WO
+Ov
+Ov
+Ov
 Ao
 Ao
 Ao
@@ -5313,7 +5316,7 @@ vv
 ws
 St
 op
-WO
+Ov
 Ao
 Ao
 Ao
@@ -5375,9 +5378,9 @@ vv
 og
 vP
 Jz
-WO
-WO
-WO
+Ov
+Ov
+Ov
 Ao
 Ao
 Ao
@@ -5437,10 +5440,10 @@ vv
 cF
 gn
 BJ
-WO
-WO
-WO
-WO
+Ov
+Ov
+Ov
+Ov
 Ao
 Ao
 kC
@@ -5498,13 +5501,13 @@ yl
 vv
 BR
 BR
-WO
-WO
-WO
+Ov
+Ov
+Ov
 ae
-WO
-WO
-WO
+Ov
+Ov
+Ov
 Ao
 Ao
 "}
@@ -5558,16 +5561,16 @@ WO
 WO
 WO
 vv
-WO
+Ov
 BR
-WO
-WO
-WO
-WO
-WO
+Ov
+Ov
+Ov
+Ov
+Ov
 IC
-WO
-WO
+Ov
+Ov
 Ao
 "}
 (43,1,1) = {"
@@ -5620,17 +5623,17 @@ Eu
 WO
 WO
 FQ
-WO
+Ov
 BR
-WO
-WO
-WO
-WO
-WO
-WO
-WO
-WO
-WO
+Ov
+Ov
+Ov
+Ov
+Ov
+Ov
+Ov
+Ov
+Ov
 "}
 (44,1,1) = {"
 Za
@@ -5682,17 +5685,17 @@ WO
 WO
 WO
 vv
-WO
+Ov
 BR
-WO
+Ov
 IC
-WO
-WO
-WO
-WO
-WO
-WO
-WO
+Ov
+Ov
+Ov
+Ov
+Ov
+Ov
+Ov
 "}
 (45,1,1) = {"
 Za
@@ -5746,12 +5749,12 @@ yl
 vv
 BR
 BR
-WO
+Ov
 ae
-WO
-WO
-WO
-WO
+Ov
+Ov
+Ov
+Ov
 Ao
 Ao
 Ao
@@ -5809,9 +5812,9 @@ vv
 ws
 St
 op
-WO
-WO
-WO
+Ov
+Ov
+Ov
 Ao
 kC
 Ao
@@ -5871,9 +5874,9 @@ vv
 og
 vP
 Jz
-WO
-WO
-WO
+Ov
+Ov
+Ov
 Ao
 Ao
 Ao
@@ -5933,9 +5936,9 @@ vv
 cF
 gn
 BJ
-WO
-WO
-WO
+Ov
+Ov
+Ov
 ea
 Ao
 Za
@@ -5992,9 +5995,9 @@ jV
 vv
 vv
 vv
-WO
-WO
-WO
+Ov
+Ov
+Ov
 Ao
 Ao
 Ao

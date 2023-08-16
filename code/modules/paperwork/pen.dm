@@ -164,6 +164,14 @@
 			O.desc = input
 			to_chat(user, "<span class='notice'>You have successfully changed \the [O.name]'s description.</span>")
 
+/obj/item/pen/get_writing_implement_details()
+	return list(
+		interaction_mode = MODE_WRITING,
+		font = font,
+		color = colour,
+		use_bold = FALSE,
+	)
+
 /*
  * Sleepypens
  */
@@ -226,7 +234,7 @@
 		playsound(user, 'sound/weapons/saberon.ogg', 5, TRUE)
 		to_chat(user, "<span class='warning'>[src] is now active.</span>")
 	updateEmbedding()
-	update_icon()
+	update_appearance()
 
 /obj/item/pen/edagger/update_icon_state()
 	if(on)
@@ -238,6 +246,7 @@
 		item_state = initial(item_state)
 		lefthand_file = initial(lefthand_file)
 		righthand_file = initial(righthand_file)
+	return ..()
 
 /obj/item/pen/survival
 	name = "survival pen"

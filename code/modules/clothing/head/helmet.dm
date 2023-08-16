@@ -47,7 +47,7 @@
 	if(A == attached_light)
 		set_attached_light(null)
 		update_helmlight()
-		update_icon()
+		update_appearance()
 		QDEL_NULL(action_light)
 		qdel(A)
 	return ..()
@@ -105,7 +105,7 @@
 				return
 			to_chat(user, "<span class='notice'>You click [attaching_seclite] into place on [src].</span>")
 			set_attached_light(attaching_seclite)
-			update_icon()
+			update_appearance()
 			update_helmlight()
 			action_light = new(src)
 			if(loc == user)
@@ -125,7 +125,7 @@
 		var/obj/item/flashlight/removed_light = set_attached_light(null)
 		update_helmlight()
 		removed_light.update_brightness(user)
-		update_icon()
+		update_appearance()
 		user.update_inv_head()
 		QDEL_NULL(action_light)
 		return TRUE
@@ -150,7 +150,7 @@
 
 /obj/item/clothing/head/helmet/proc/update_helmlight()
 	if(attached_light)
-		update_icon()
+		update_appearance()
 
 	for(var/datum/action/action as anything in actions)
 		action.UpdateButtonIcon()
@@ -229,7 +229,7 @@
 /obj/item/clothing/head/helmet/marine/Initialize(mapload)
 	set_attached_light(new /obj/item/flashlight/seclite)
 	update_helmlight()
-	update_icon()
+	update_appearance()
 	. = ..()
 
 /obj/item/clothing/head/helmet/marine/security
