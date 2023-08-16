@@ -83,4 +83,11 @@
 
 /obj/structure/fermenting_barrel/distiller
 	name = "Distiller"
-	desc = "Host to a special culture of bacteria native to Illestern"
+	icon_state = "distiller"
+	desc = "A repurposed barrel and keg host to a special culture of bacteria native to Illestren"
+
+/obj/structure/fermenting_barrel/update_icon_state()
+	if(open)
+		icon_state = "distiller_open"
+	else
+		icon_state = "distiller"

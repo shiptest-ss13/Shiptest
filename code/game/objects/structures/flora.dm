@@ -521,7 +521,7 @@
 	. = ..()
 	icon_state = "[initial(icon_state)][rand(1,3)]"
 
-// Special tree used in chapel and srm ship
+// Special tree used in chapel ship
 /obj/structure/flora/tree/chapel
 	name = "sacred oak tree"
 	icon = 'icons/obj/flora/chapeltree.dmi'
@@ -695,6 +695,10 @@
 				SEND_SIGNAL(L, COMSIG_ADD_MOOD_EVENT, "treekarma", /datum/mood_event/worse_tree, name)
 			else if (luck == 1)
 				adjustKarma(10)
+
+/obj/structure/flora/tree/chapel/srm
+	name = "Montagne's Oak"
+	desc = "A sturdy oak tree imported directly from the homeworld of the Montagne who runs the ship it resides on. It is planted in soil from the same place."
 
 /datum/mood_event/good_tree
 	description = "<span class='nicegreen'>I feel closer to my soul.</span>\n"
