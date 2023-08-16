@@ -72,11 +72,6 @@
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/hallway/aft)
-"as" = (
-/obj/structure/catwalk,
-/obj/machinery/light/small/directional/north,
-/turf/open/floor/engine/airless,
-/area/ship/external/dark)
 "bS" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
@@ -162,10 +157,12 @@
 /obj/item/analyzer{
 	pixel_y = 3
 	},
-/obj/machinery/light_switch{
+/obj/machinery/button/door{
 	dir = 8;
 	pixel_x = 22;
-	pixel_y = 15
+	pixel_y = 15;
+	id = "mudskipper_engine";
+	name = "Engine Shutters"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engine)
@@ -410,7 +407,7 @@
 	dir = 4
 	},
 /turf/open/floor/engine/hull/reinforced,
-/area/ship/external/dark)
+/area/ship/cargo)
 "ic" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/oil{
@@ -468,6 +465,7 @@
 /obj/structure/extinguisher_cabinet/directional/west{
 	pixel_y = -5
 	},
+/obj/machinery/light/dim/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "kX" = (
@@ -489,7 +487,7 @@
 	dir = 4
 	},
 /turf/open/floor/engine/hull/reinforced,
-/area/ship/external/dark)
+/area/ship/cargo)
 "lj" = (
 /obj/machinery/power/shuttle/engine/fueled/plasma{
 	dir = 4
@@ -609,12 +607,8 @@
 /obj/machinery/light/small/directional/north{
 	pixel_x = 6
 	},
-/obj/machinery/light_switch{
-	dir = 8;
-	pixel_x = 22;
-	pixel_y = -8
-	},
 /obj/machinery/computer/helm/viewscreen/computer,
+/obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "nR" = (
@@ -802,7 +796,11 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
-/obj/machinery/airalarm/directional/east,
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 22;
+	pixel_y = -3
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "rO" = (
@@ -1110,6 +1108,11 @@
 /obj/item/kirbyplants{
 	icon_state = "plant-22"
 	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -22;
+	pixel_y = 6
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/aft)
 "yv" = (
@@ -1217,12 +1220,10 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/obj/machinery/button/door{
+/obj/machinery/light_switch{
 	dir = 8;
 	pixel_x = 22;
-	pixel_y = -14;
-	id = "mudskipper_engine";
-	name = "Engine Shutters"
+	pixel_y = -14
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -1377,9 +1378,12 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
-/obj/machinery/light/dim/directional/north,
 /obj/item/kirbyplants{
 	icon_state = "plant-21"
+	},
+/obj/machinery/light_switch{
+	pixel_y = 23;
+	pixel_x = -3
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
@@ -1782,7 +1786,7 @@
 	},
 /obj/machinery/light/floor,
 /turf/open/floor/engine/hull/reinforced,
-/area/ship/external/dark)
+/area/ship/cargo)
 "NJ" = (
 /obj/effect/turf_decal/box,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
@@ -2629,7 +2633,7 @@ OB
 JN
 CG
 Qp
-as
+IU
 cs
 cs
 "}
