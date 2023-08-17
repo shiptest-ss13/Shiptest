@@ -718,6 +718,8 @@
 
 /obj/structure/flora/tree/srm
 	name = "Montagne's Oak"
+	icon = 'icons/obj/flora/chapeltree.dmi'
+	icon_state = "churchtree"
 	desc = "A sturdy oak tree imported directly from the homeworld of the Montagne who runs the ship it resides on. It is planted in soil from the same place."
 	pixel_x = -16
 	max_integrity = 200
@@ -726,8 +728,7 @@
 	var/lastcycle = 0
 	//Determines the health gained/lost when feeding the tree this chem
 	var/list/healthchems = list(
-		/datum/reagent/ethanol/trickwine = 0.5,
-		/datum/reagent/ethanol/trickwine/ash_wine = 0.8,
+		/datum/reagent/consumable/ethanol/ash_wine = 0.8,
 		/datum/reagent/water = 0.1,
 		/datum/reagent/plantnutriment = 0.2,
 		/datum/reagent/medicine/earthsblood = 1,
@@ -756,21 +757,25 @@
 
 /obj/structure/flora/tree/srm/Initialize()
 	START_PROCESSING(SSobj, src)
-	create_reagents(300, DRAINABLE | AMOUNT_VISIBLE)
+	create_reagents(300, DRAINABLE | OPENCONTAINER)
 	. = ..()
 
 /obj/structure/flora/tree/srm/process()
-	if(world.time > (lastcycle + 200))
-		if(reagents)
+	if(world.time > (lastcycle + 100))
+		if(reagents.total_volume > 0)
+			visible_message("<span class='green'>1.</span>")
 			var/gainedhealth
 			for(var/datum/reagent/R in healthchems)
+				visible_message("<span class='green'>2.</span>")
 				if(reagents.has_reagent(R, 1))
+					visible_message("<span class='green'>3.</span>")
 					gainedhealth += reagents.get_reagent_amount(R) * healthchems[R]
 					health += gainedhealth
 					reagents.remove_reagent(R, reagents.get_reagent_amount(R))
 		if(health > 0)
 			reagents.add_reagent(/datum/reagent/srm_bacteria, health)
 			health = 0
+			playsound(src, 'sound/effects/bubbles.ogg', 50, TRUE)
 		//Clean up the air a bit
 		if(isopenturf(loc))
 			var/turf/open/T = src.loc
