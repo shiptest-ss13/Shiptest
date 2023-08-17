@@ -11,14 +11,12 @@
 	var/obj/item/storage/pill_bottle/bottle = null
 	var/image/beaker_overlay
 	var/image/bottle_overlay
-	var/min_volume = 5
-	var/max_volume = 30
 	var/current_volume = 10
-	var/list/possible_volumes = list(5,10,15,20,25,30)
+	var/list/possible_volumes = list(5,10,15,20,25,30) // Usually the max would be 50, but ghetto should be worse.
 	var/press_time = 15
 	var/pill_style = 9 // White pills
-	var/list/possible_styles = list(7,8,9,10,11,12)
-	var/list/style_colors = list("7" = "yellow",
+	var/list/possible_styles = list(7,8,9,10,11,12) // These values only encompass the 'tablet' shaped pills.
+	var/list/style_colors = list("7" = "yellow", // This list is exclusively used for the text description.
 								"8" = "blue",
 								"9" = "white",
 								"10" = "violet",
@@ -60,7 +58,7 @@
 	return TRUE
 
 /obj/machinery/chem_press/attackby(obj/item/I, mob/living/user, params)
-	if(user.a_intent == INTENT_HARM)
+	if(user.a_intent == INTENT_HARM) // Hit the machine if we're on harm intent.
 		return ..()
 	if(default_unfasten_wrench(user, I))
 		return
@@ -105,11 +103,11 @@
 /obj/machinery/chem_press/AltClick(mob/living/user)
 	if(!can_interact(user) || !user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
 		return
-	if(beaker || bottle)
+	if(beaker || bottle) // If there's a container in the machine, eject it.
 		handle_container(user)
 		return
 	else
-		return ..()
+		return ..() // Having ..() run only if all else fails prevents AltClick from showing the turf's contents when not wanted.
 
 /*
 This proc attempts to swap a container in the machine
