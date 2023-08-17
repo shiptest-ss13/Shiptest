@@ -7,10 +7,6 @@
 	pressure_resistance = 2
 	resistance_flags = FLAMMABLE
 
-/obj/item/folder/suicide_act(mob/living/user)
-	user.visible_message("<span class='suicide'>[user] begins filing an imaginary death warrant! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return OXYLOSS
-
 /obj/item/folder/blue
 	desc = "A blue folder."
 	icon_state = "folder_blue"
@@ -48,7 +44,7 @@
 		if(!user.transferItemToLoc(W, src))
 			return
 		to_chat(user, "<span class='notice'>You put [W] into [src].</span>")
-		update_icon()
+		update_appearance()
 	else if(istype(W, /obj/item/pen))
 		if(!user.is_literate())
 			to_chat(user, "<span class='notice'>You scribble illegibly on the cover of [src]!</span>")
@@ -93,7 +89,7 @@
 
 		//Update everything
 		attack_self(usr)
-		update_icon()
+		update_appearance()
 
 /obj/item/folder/documents
 	name = "folder- 'TOP SECRET'"
@@ -102,7 +98,7 @@
 /obj/item/folder/documents/Initialize()
 	. = ..()
 	new /obj/item/documents/nanotrasen(src)
-	update_icon()
+	update_appearance()
 
 /obj/item/folder/syndicate
 	icon_state = "folder_syndie"
@@ -115,7 +111,7 @@
 /obj/item/folder/syndicate/red/Initialize()
 	. = ..()
 	new /obj/item/documents/syndicate/red(src)
-	update_icon()
+	update_appearance()
 
 /obj/item/folder/syndicate/blue
 	icon_state = "folder_sblue"
@@ -123,12 +119,12 @@
 /obj/item/folder/syndicate/blue/Initialize()
 	. = ..()
 	new /obj/item/documents/syndicate/blue(src)
-	update_icon()
+	update_appearance()
 
 /obj/item/folder/syndicate/mining/Initialize()
 	. = ..()
 	new /obj/item/documents/syndicate/mining(src)
-	update_icon()
+	update_appearance()
 
 /obj/item/folder/solgov/red
 	desc = "A blue folder with a SolGov seal."
@@ -137,7 +133,7 @@
 /obj/item/folder/solgov/red/Initialize()
 	. = ..()
 	new /obj/item/documents/solgov(src)
-	update_icon()
+	update_appearance()
 
 
 /obj/item/folder/terragov/red
@@ -147,4 +143,4 @@
 /obj/item/folder/terragov/red/Initialize()
 	. = ..()
 	new /obj/item/documents/terragov(src)
-	update_icon()
+	update_appearance()

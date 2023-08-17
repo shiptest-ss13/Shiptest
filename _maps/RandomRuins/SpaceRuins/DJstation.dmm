@@ -179,15 +179,15 @@
 /area/ruin/space/djstation)
 "aH" = (
 /obj/structure/table,
-/obj/item/radio/intercom/directional/east{
-	freerange = 1;
-	name = "Pirate Radio Listening Channel"
-	},
 /obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/opaque/white{
 	dir = 2
+	},
+/obj/item/radio/intercom/table{
+	dir = 8;
+	freerange = 1
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/djstation)
@@ -263,28 +263,14 @@
 /area/ruin/space/djstation)
 "aQ" = (
 /obj/structure/table,
-/obj/item/radio/intercom/directional/east{
-	broadcasting = 1;
-	freerange = 1;
-	listening = 0;
-	name = "Pirate Radio Broadcast Channel"
-	},
 /obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/opaque/white{
 	dir = 2
 	},
-/turf/open/floor/plasteel,
-/area/ruin/space/djstation)
-"aR" = (
-/obj/structure/table,
-/obj/item/paper/fluff/ruins/djstation,
-/obj/effect/turf_decal/corner/opaque/white{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/opaque/white{
-	dir = 2
+/obj/item/radio/intercom/table{
+	freerange = 1
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/djstation)
@@ -440,6 +426,17 @@
 	icon_state = "0-2"
 	},
 /turf/open/floor/plating,
+/area/ruin/space/djstation)
+"lU" = (
+/obj/structure/table,
+/obj/effect/turf_decal/corner/opaque/white{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/white{
+	dir = 2
+	},
+/obj/item/paper/fluff/ruins/djstation,
+/turf/open/floor/plasteel,
 /area/ruin/space/djstation)
 "nM" = (
 /obj/item/storage/box/lights/mixed,
@@ -724,8 +721,8 @@ ah
 af
 ax
 aw
-aH
-aR
+lU
+aQ
 aw
 bc
 bh

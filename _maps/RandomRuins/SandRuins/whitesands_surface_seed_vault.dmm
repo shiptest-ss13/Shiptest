@@ -1,10 +1,10 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "aa" = (
 /turf/closed/mineral/random/whitesands,
-/area/whitesands/surface/outdoors)
+/area/overmap_encounter/planetoid/cave/explored)
 "ab" = (
 /turf/open/floor/plating/asteroid/whitesands/dried,
-/area/whitesands/surface/outdoors)
+/area/overmap_encounter/planetoid/cave/explored)
 "ac" = (
 /turf/closed/wall/r_wall,
 /area/ruin/powered/seedvault)
@@ -368,7 +368,7 @@
 "bx" = (
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating/asteroid/whitesands/dried,
-/area/whitesands/surface/outdoors)
+/area/overmap_encounter/planetoid/cave/explored)
 "by" = (
 /obj/structure/disposalpipe/segment{
 	dir = 6
@@ -446,7 +446,7 @@
 /area/ruin/powered/seedvault)
 "nX" = (
 /turf/open/floor/plating/asteroid/whitesands,
-/area/whitesands/surface/outdoors)
+/area/overmap_encounter/planetoid/sand/explored)
 "oR" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 10
@@ -466,6 +466,9 @@
 /obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/freezer,
 /area/ruin/powered/seedvault)
+"rf" = (
+/turf/closed/mineral/random/whitesands,
+/area/overmap_encounter/planetoid/sand/explored)
 "sv" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/vault,
@@ -552,6 +555,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/vault,
 /area/ruin/powered/seedvault)
+"Mm" = (
+/turf/open/floor/plating/asteroid/whitesands,
+/area/overmap_encounter/planetoid/cave/explored)
 "Mn" = (
 /obj/machinery/light/directional/east,
 /obj/structure/reagent_dispensers/watertank/high,
@@ -754,8 +760,8 @@ ab
 aa
 aa
 aa
-nX
-nX
+Mm
+Mm
 nX
 "}
 (4,1,1) = {"
@@ -773,10 +779,10 @@ ab
 ab
 ab
 ab
-nX
-nX
-nX
-nX
+Mm
+Mm
+Mm
+Mm
 aa
 aa
 "}
@@ -1130,5 +1136,5 @@ aa
 aa
 ab
 nX
-aa
+rf
 "}

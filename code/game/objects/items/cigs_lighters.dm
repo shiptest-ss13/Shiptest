@@ -50,7 +50,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		desc = "A [initial(name)]. This one is lit."
 		attack_verb = list("burnt","singed")
 		START_PROCESSING(SSobj, src)
-		update_icon()
+		update_appearance()
 
 /obj/item/match/proc/matchburnout()
 	if(lit)
@@ -134,10 +134,6 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	var/smoke_all = FALSE /// Should we smoke all of the chems in the cig before it runs out. Splits each puff to take a portion of the overall chems so by the end you'll always have consumed all of the chems inside.
 	var/list/list_reagents = list(/datum/reagent/drug/nicotine = 15)
 	var/lung_harm = 0.1 //How bad it is for you
-
-/obj/item/clothing/mask/cigarette/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is huffing [src] as quickly as [user.p_they()] can! It looks like [user.p_theyre()] trying to give [user.p_them()]self cancer.</span>")
-	return (TOXLOSS|OXYLOSS)
 
 /obj/item/clothing/mask/cigarette/Initialize()
 	. = ..()
@@ -598,21 +594,12 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	. = ..()
 	if(!overlay_state)
 		overlay_state = pick(overlay_list)
-	update_icon()
+	update_appearance()
 
 /obj/item/lighter/cyborg_unequip(mob/user)
 	if(!lit)
 		return
 	set_lit(FALSE)
-
-/obj/item/lighter/suicide_act(mob/living/carbon/user)
-	if (lit)
-		user.visible_message("<span class='suicide'>[user] begins holding \the [src]'s flame up to [user.p_their()] face! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-		playsound(src, 'sound/items/welder.ogg', 50, TRUE)
-		return FIRELOSS
-	else
-		user.visible_message("<span class='suicide'>[user] begins whacking [user.p_them()]self with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-		return BRUTELOSS
 
 /obj/item/lighter/update_overlays()
 	. = ..()
@@ -620,6 +607,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 /obj/item/lighter/update_icon_state()
 	icon_state = "[initial(icon_state)][lit ? "-on" : ""]"
+	return ..()
 
 /obj/item/lighter/proc/create_lighter_overlay()
 	return mutable_appearance(icon, "lighter_overlay_[overlay_state][lit ? "-on" : ""]")
@@ -642,7 +630,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		force = 0
 		attack_verb = null //human_defense.dm takes care of it
 	set_light_on(lit)
-	update_icon()
+	update_appearance()
 
 /obj/item/lighter/extinguish()
 	set_lit(FALSE)
@@ -745,7 +733,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	. = ..()
 	if(!lighter_color)
 		lighter_color = pick(color_list)
-	update_icon()
+	update_appearance()
 
 /obj/item/lighter/greyscale/create_lighter_overlay()
 	var/mutable_appearance/lighter_overlay = ..()
@@ -857,11 +845,6 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	var/super = 0 //for the fattest vapes dude.
 	var/vapecolor //What color the vape should be. If this is not filled out it will automatically be set on Initialize() - WS edit - Lightable e-cigarettes
 	var/overlayname = "vape" //Used to decide what overlay sprites to use - WS edit - Lightable e-cigarettes
-
-/obj/item/clothing/mask/vape/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is puffin hard on dat vape, [user.p_they()] trying to join the vape life on a whole notha plane!</span>")//it doesn't give you cancer, it is cancer
-	return (TOXLOSS|OXYLOSS)
-
 
 /obj/item/clothing/mask/vape/Initialize(mapload, param_color)
 	. = ..()
