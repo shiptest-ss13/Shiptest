@@ -25,10 +25,6 @@
 	hitsound = 'sound/weapons/chainhit.ogg'
 	custom_materials = list(/datum/material/iron = 1000)
 
-/obj/item/melee/chainofcommand/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is strangling [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return (OXYLOSS)
-
 /obj/item/melee/synthetic_arm_blade
 	name = "synthetic arm blade"
 	desc = "A grotesque blade that on closer inspection seems to be made out of synthetic flesh, it still feels like it would hurt very badly as a weapon."
@@ -62,7 +58,7 @@
 	force = 15
 	throwforce = 10
 	w_class = WEIGHT_CLASS_BULKY
-	block_chance = 50
+	block_chance = 60
 	armour_penetration = 75
 	sharpness = IS_SHARP
 	attack_verb = list("slashed", "cut")
@@ -82,49 +78,6 @@
 	var/obj/item/storage/belt/sabre/B = S.real_location()
 	if(istype(B))
 		playsound(B, 'sound/items/sheath.ogg', 25, TRUE)
-
-/obj/item/melee/sabre/suicide_act(mob/living/user)
-	user.visible_message("<span class='suicide'>[user] is trying to cut off all [user.p_their()] limbs with [src]! it looks like [user.p_theyre()] trying to commit suicide!</span>")
-	var/i = 0
-	ADD_TRAIT(src, TRAIT_NODROP, SABRE_SUICIDE_TRAIT)
-	if(iscarbon(user))
-		var/mob/living/carbon/Cuser = user
-		var/obj/item/bodypart/holding_bodypart = Cuser.get_holding_bodypart_of_item(src)
-		var/list/limbs_to_dismember
-		var/list/arms = list()
-		var/list/legs = list()
-		var/obj/item/bodypart/bodypart
-
-		for(bodypart in Cuser.bodyparts)
-			if(bodypart == holding_bodypart)
-				continue
-			if(bodypart.body_part & ARMS)
-				arms += bodypart
-			else if (bodypart.body_part & LEGS)
-				legs += bodypart
-
-		limbs_to_dismember = arms + legs
-		if(holding_bodypart)
-			limbs_to_dismember += holding_bodypart
-
-		var/speedbase = abs((4 SECONDS) / limbs_to_dismember.len)
-		for(bodypart in limbs_to_dismember)
-			i++
-			addtimer(CALLBACK(src, .proc/suicide_dismember, user, bodypart), speedbase * i)
-	addtimer(CALLBACK(src, .proc/manual_suicide, user), (5 SECONDS) * i)
-	return MANUAL_SUICIDE
-
-/obj/item/melee/sabre/proc/suicide_dismember(mob/living/user, obj/item/bodypart/affecting)
-	if(!QDELETED(affecting) && affecting.dismemberable && affecting.owner == user && !QDELETED(user))
-		playsound(user, hitsound, 25, TRUE)
-		affecting.dismember(BRUTE)
-		user.adjustBruteLoss(20)
-
-/obj/item/melee/sabre/proc/manual_suicide(mob/living/user, originally_nodropped)
-	if(!QDELETED(user))
-		user.adjustBruteLoss(200)
-		user.death(FALSE)
-	REMOVE_TRAIT(src, TRAIT_NODROP, SABRE_SUICIDE_TRAIT)
 
 /obj/item/melee/sabre/solgov
 	name = "solarian sabre"
@@ -158,11 +111,6 @@
 	if(iscarbon(target))
 		var/mob/living/carbon/H = target
 		H.reagents.add_reagent(/datum/reagent/toxin, 4)
-
-/obj/item/melee/beesword/suicide_act(mob/living/user)
-	user.visible_message("<span class='suicide'>[user] is stabbing [user.p_them()]self in the throat with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	playsound(get_turf(src), hitsound, 75, TRUE, -1)
-	return TOXLOSS
 
 /obj/item/melee/classic_baton
 	name = "police baton"
@@ -342,24 +290,6 @@
 	force_off = 0
 	weight_class_on = WEIGHT_CLASS_BULKY
 
-/obj/item/melee/classic_baton/telescopic/suicide_act(mob/user)
-	var/mob/living/carbon/human/H = user
-	var/obj/item/organ/brain/B = H.getorgan(/obj/item/organ/brain)
-
-	user.visible_message("<span class='suicide'>[user] stuffs [src] up [user.p_their()] nose and presses the 'extend' button! It looks like [user.p_theyre()] trying to clear [user.p_their()] mind.</span>")
-	if(!on)
-		src.attack_self(user)
-	else
-		playsound(src, on_sound, 50, TRUE)
-		add_fingerprint(user)
-	sleep(3)
-	if (!QDELETED(H))
-		if(!QDELETED(B))
-			H.internal_organs -= B
-			qdel(B)
-		new /obj/effect/gibspawner/generic(H.drop_location(), H)
-		return (BRUTELOSS)
-
 /obj/item/melee/classic_baton/telescopic/attack_self(mob/user)
 	on = !on
 	var/list/desc = get_on_description()
@@ -487,10 +417,6 @@
 	consume_everything(P)
 	return BULLET_ACT_HIT
 
-/obj/item/melee/supermatter_sword/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] touches [src]'s blade. It looks like [user.p_theyre()] tired of waiting for the radiation to kill [user.p_them()]!</span>")
-	user.dropItemToGround(src, TRUE)
-	shard.Bumped(user)
 
 /obj/item/melee/supermatter_sword/proc/consume_everything(target)
 	if(isnull(target))
@@ -579,14 +505,14 @@
 			held_sausage = target
 		else
 			to_chat(user, "<span class='warning'>[target] doesn't seem to want to get on [src]!</span>")
-	update_icon()
+	update_appearance()
 
 /obj/item/melee/roastingstick/attack_hand(mob/user)
 	..()
 	if (held_sausage)
 		user.put_in_hands(held_sausage)
 		held_sausage = null
-	update_icon()
+	update_appearance()
 
 /obj/item/melee/roastingstick/update_overlays()
 	. = ..()
@@ -608,7 +534,7 @@
 /obj/item/melee/roastingstick/handle_atom_del(atom/target)
 	if (target == held_sausage)
 		held_sausage = null
-		update_icon()
+		update_appearance()
 
 /obj/item/melee/roastingstick/afterattack(atom/target, mob/user, proximity)
 	. = ..()
@@ -639,7 +565,7 @@
 	held_sausage.add_atom_colour(rgb(103,63,24), FIXED_COLOUR_PRIORITY)
 	held_sausage.name = "[target.name]-roasted [held_sausage.name]"
 	held_sausage.desc = "[held_sausage.desc] It has been cooked to perfection on \a [target]."
-	update_icon()
+	update_appearance()
 
 /obj/item/melee/cleric_mace
 	name = "cleric mace"
@@ -655,7 +581,6 @@
 	force = 14
 	w_class = WEIGHT_CLASS_BULKY
 	throwforce = 8
-	block_chance = 10
 	armour_penetration = 50
 	attack_verb = list("smacked", "struck", "cracked", "beaten")
 	var/overlay_state = "mace_handle"
@@ -716,13 +641,6 @@
 		final_block_chance = 1 //Still not like your Japaniese animes though.
 	return ..()
 
-/obj/item/melee/greykingsword/suicide_act(mob/user)
-	if (istype(user, /mob/living/carbon/human/))
-		var/mob/living/carbon/human/H = user
-		H.say("Master forgive me, but I will have to go all out... Just this once")
-	user.visible_message("<span class='suicide'>[user] is cutting [user.p_them()]self on [user.p_their()] own edge!")
-	return (BRUTELOSS) //appropriate
-
 /obj/item/kitchen/knife/letter_opener
 	name = "letter opener"
 	icon = 'icons/obj/items_and_weapons.dmi'
@@ -754,7 +672,7 @@
 	throw_speed = 4
 	throw_range = 5
 	throwforce = 12
-	block_chance = 40
+	block_chance = 20
 	armour_penetration = 50
 	hitsound = 'sound/weapons/anime_slash.ogg'
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "diced", "cut")
@@ -777,13 +695,6 @@
 	var/obj/item/storage/belt/weebstick/B = S.real_location()
 	if(istype(B))
 		playsound(B, 'sound/items/sheath.ogg', 25, TRUE)
-
-/obj/item/melee/weebstick/suicide_act(mob/user)
-	if(prob(50))
-		user.visible_message("<span class='suicide'>[user] carves deep into [user.p_their()] torso! It looks like [user.p_theyre()] trying to commit seppuku...</span>")
-	else
-		user.visible_message("<span class='suicide'>[user] carves a grid into [user.p_their()] chest! It looks like [user.p_theyre()] trying to commit sudoku...</span>")
-	return (BRUTELOSS)
 
 /obj/item/storage/belt/weebstick
 	name = "nanoforged blade sheath"
@@ -825,7 +736,7 @@
 		playsound(user, dash_sound, 25, TRUE)
 		user.visible_message("<span class='notice'>[user] swiftly draws \the [I].</span>", "<span class='notice'>You draw \the [I].</span>")
 		user.put_in_hands(I)
-		update_icon()
+		update_appearance()
 	else
 		to_chat(user, "<span class='warning'>[src] is empty!</span>")
 
@@ -839,13 +750,13 @@
 			playsound(user, 'sound/items/sheath.ogg', 25, TRUE)
 			to_chat(user, "<span class='notice'>You return your stance.</span>")
 			primed = FALSE
-			update_icon()
+			update_appearance()
 		else
 			CP.locked = TRUE //Prevents normal removal of the blade while primed
 			playsound(user, 'sound/items/unsheath.ogg', 25, TRUE)
 			user.visible_message("<span class='warning'>[user] grips the blade within [src] and primes to attack.</span>", "<span class='warning'>You take an opening stance...</span>", "<span class='warning'>You hear a weapon being drawn...</span>")
 			primed = TRUE
-			update_icon()
+			update_appearance()
 	else
 		to_chat(user, "<span class='warning'>[src] is empty!</span>")
 
@@ -861,7 +772,7 @@
 		var/datum/component/storage/CP = GetComponent(/datum/component/storage)
 		CP.locked = FALSE
 		primed = FALSE
-		update_icon()
+		update_appearance()
 		primed_attack(A, user)
 		if(CanReach(A, I))
 			I.melee_attack_chain(user, A, params)
@@ -905,6 +816,7 @@
 		else
 			icon_state += "-blade"
 		item_state += "-sabre"
+	return ..()
 
 /obj/item/storage/belt/weebstick/PopulateContents()
 	//Time to generate names now that we have the sword
@@ -913,4 +825,4 @@
 	var/obj/item/melee/weebstick/sword = new /obj/item/melee/weebstick(src)
 	sword.name = "[n_title] blade of clan [n_name]"
 	name = "[n_title] scabbard of clan [n_name]"
-	update_icon()
+	update_appearance()

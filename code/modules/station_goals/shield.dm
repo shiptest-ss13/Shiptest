@@ -82,6 +82,7 @@
 	desc = ""
 	icon = 'icons/obj/machines/satellite.dmi'
 	icon_state = "sat_inactive"
+	base_icon_state = "sat"
 	anchored = FALSE
 	density = TRUE
 	use_power = FALSE
@@ -108,7 +109,7 @@
 	else
 		end_processing()
 		animate(src, pixel_y = 0, time = 10)
-	update_icon()
+	update_appearance()
 
 /obj/machinery/satellite/proc/toggle(mob/user)
 	if(!active && !isinspace())
@@ -120,7 +121,8 @@
 	set_anchored(!anchored)
 
 /obj/machinery/satellite/update_icon_state()
-	icon_state = active ? "sat_active" : "sat_inactive"
+	icon_state = "[base_icon_state]_[active ? "active" : "inactive"]"
+	return ..()
 
 /obj/machinery/satellite/multitool_act(mob/living/user, obj/item/I)
 	..()

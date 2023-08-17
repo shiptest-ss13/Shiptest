@@ -26,21 +26,14 @@ INITIALIZE_IMMEDIATE(/mob/dead)
 /mob/dead/canUseStorage()
 	return FALSE
 
-/mob/dead/dust(just_ash, drop_items, force)	//ghosts can't be vaporised.
+/mob/dead/dust(just_ash, drop_items, force)
 	return
 
-/mob/dead/gib()		//ghosts can't be gibbed.
+/mob/dead/gib()
 	return
 
-/mob/dead/ConveyorMove()	//lol
+/mob/dead/ConveyorMove()
 	return
-
-/mob/dead/abstract_move(atom/destination)
-	var/turf/old_turf = get_turf(src)
-	var/turf/new_turf = get_turf(destination)
-	if (old_turf?.z != new_turf?.z)
-		onTransitZ(old_turf?.z, new_turf?.z)
-	return ..()
 
 /mob/dead/get_status_tab_items()
 	. = ..()
@@ -103,32 +96,15 @@ INITIALIZE_IMMEDIATE(/mob/dead)
 
 	C << link("[addr]?server_hop=[key]")
 
-/mob/dead/proc/update_z(new_z) // 1+ to register, null to unregister
-	if (registered_z != new_z)
-		if (registered_z)
-			SSmobs.dead_players_by_zlevel[registered_z] -= src
-		if (client)
-			if (new_z)
-				SSmobs.dead_players_by_zlevel[new_z] += src
-			registered_z = new_z
-		else
-			registered_z = null
-
-/mob/dead/Login()
-	. = ..()
-	if(!. || !client)
-		return FALSE
-	var/turf/T = get_turf(src)
-	if (isturf(T))
-		update_z(T.z)
-
 /mob/dead/auto_deadmin_on_login()
 	return
 
-/mob/dead/Logout()
-	update_z(null)
-	return ..()
+/mob/dead/Login()
+	. = ..()
+	if(!client)
+		return
+	LAZYADDASSOC(SSmobs.dead_players_by_virtual_z, "[virtual_z()]", src)
 
-/mob/dead/onTransitZ(old_z,new_z)
-	..()
-	update_z(new_z)
+/mob/dead/Logout()
+	. = ..()
+	LAZYREMOVEASSOC(SSmobs.dead_players_by_virtual_z, "[virtual_z()]", src)

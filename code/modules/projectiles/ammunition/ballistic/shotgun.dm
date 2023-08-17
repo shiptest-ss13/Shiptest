@@ -11,6 +11,7 @@
 
 /obj/item/ammo_casing/shotgun/update_icon_state()
 	icon_state = "[initial(icon_state)][BB ? "" : "-spent"]"
+	return ..()
 
 /obj/item/ammo_casing/shotgun/buckshot
 	name = "buckshot shell"

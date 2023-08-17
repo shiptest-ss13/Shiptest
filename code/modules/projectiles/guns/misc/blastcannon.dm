@@ -2,8 +2,8 @@
 	name = "pipe gun"
 	desc = "A pipe welded onto a gun stock, with a mechanical trigger. The pipe has an opening near the top, and there seems to be a spring loaded wheel in the hole."
 	icon_state = "empty_blastcannon"
-	var/icon_state_loaded = "loaded_blastcannon"
 	item_state = "blastcannon_empty"
+	base_icon_state = "blastcannon"
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 10
 	fire_sound = 'sound/weapons/blastcannon.ogg'
@@ -43,14 +43,12 @@
 		bomb = null
 		name = initial(name)
 		desc = initial(desc)
-	update_icon()
+	update_appearance()
 	return ..()
 
 /obj/item/gun/blastcannon/update_icon_state()
-	if(bomb)
-		icon_state = icon_state_loaded
-	else
-		icon_state = initial(icon_state)
+	icon_state = "[bomb ? "loaded" : "empty"]_[base_icon_state]"
+	return ..()
 
 /obj/item/gun/blastcannon/attackby(obj/O, mob/user)
 	if(istype(O, /obj/item/transfer_valve))
@@ -65,7 +63,7 @@
 		bomb = T
 		name = "blast cannon"
 		desc = "A makeshift device used to concentrate a bomb's blast energy to a narrow wave."
-		update_icon()
+		update_appearance()
 		return TRUE
 	return ..()
 
@@ -94,7 +92,7 @@
 	var/power = bomb? calculate_bomb() : debug_power
 	power = min(power, max_power)
 	QDEL_NULL(bomb)
-	update_icon()
+	update_appearance()
 	var/heavy = power * 0.25
 	var/medium = power * 0.5
 	var/light = power

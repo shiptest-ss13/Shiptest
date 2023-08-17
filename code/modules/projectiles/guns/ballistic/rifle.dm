@@ -27,7 +27,7 @@
 		playsound(src, rack_sound, rack_sound_volume, rack_sound_vary)
 		process_chamber(FALSE, FALSE, FALSE)
 		bolt_locked = TRUE
-		update_icon()
+		update_appearance()
 		return
 	drop_bolt(user)
 

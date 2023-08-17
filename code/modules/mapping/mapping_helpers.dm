@@ -170,8 +170,6 @@
 	else
 		airlock.abandoned = TRUE
 
-
-//needs to do its thing before spawn_rivers() is called
 INITIALIZE_IMMEDIATE(/obj/effect/mapping_helpers/no_lava)
 
 /obj/effect/mapping_helpers/no_lava
@@ -248,7 +246,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/mapping_helpers/no_lava)
 			else
 				var/obj/item/organ/O = part
 				O.organ_flags |= ORGAN_FROZEN
-		j.update_icon()
+		j.update_appearance()
 	qdel(src)
 
 
@@ -371,16 +369,16 @@ INITIALIZE_IMMEDIATE(/obj/effect/mapping_helpers/no_lava)
 		var/obj/machinery/door/airlock/found_airlock = locate(/obj/machinery/door/airlock) in turf
 		if(note_path)
 			found_airlock.note = note_path
-			found_airlock.update_icon()
+			found_airlock.update_appearance()
 			qdel(src)
 		if(note_info)
 			var/obj/item/paper/paper = new /obj/item/paper(src)
 			if(note_name)
 				paper.name = note_name
-			paper.info = "[note_info]"
-			found_airlock.note = paper
+			paper.add_raw_text("[note_info]")
+			paper.update_appearance()
 			paper.forceMove(found_airlock)
-			found_airlock.update_icon()
+			found_airlock.update_appearance()
 			qdel(src)
 		log_mapping("[src] at [x],[y] had no note_path or note_info, cannot place paper note.")
 		qdel(src)

@@ -54,7 +54,7 @@
 /obj/item/fishing_rod/proc/consume_bait()
 	if(bait)
 		QDEL_NULL(bait)
-		update_icon()
+		update_appearance()
 
 /obj/item/fishing_rod/attack_self(mob/user)
 	if(currently_hooked_item)
@@ -303,7 +303,7 @@
 	// Trying to remove the item
 	if(!new_item && current_item)
 		user.put_in_hands(current_item)
-		update_icon()
+		update_appearance()
 		return
 	// Trying to insert item into empty slot
 	if(new_item && !current_item)
@@ -317,7 +317,7 @@
 					hook = new_item
 				if(ROD_SLOT_LINE)
 					line = new_item
-			update_icon()
+			update_appearance()
 	/// Trying to swap item
 	if(new_item && current_item)
 		if(!slot_check(new_item,slot))
@@ -331,7 +331,7 @@
 				if(ROD_SLOT_LINE)
 					line = new_item
 		user.put_in_hands(current_item)
-		update_icon()
+		update_appearance()
 
 
 /obj/item/fishing_rod/Exited(atom/movable/gone, direction)
@@ -361,7 +361,7 @@
 	. = ..()
 	var/obj/item/reagent_containers/food/snacks/bait/doughball/synthetic/infinite_supply_of_bait = new(src)
 	bait = infinite_supply_of_bait
-	update_icon()
+	update_appearance()
 
 /obj/item/fishing_rod/tech/consume_bait()
 	return
