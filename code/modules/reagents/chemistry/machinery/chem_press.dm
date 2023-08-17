@@ -1,5 +1,5 @@
 /obj/machinery/chem_press
-	name = "\improper pill press"
+	name = "pill press"
 	desc = "A press operated by hand to produce pills in a variety of forms."
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "press"
