@@ -4,7 +4,7 @@
 #define BODY_BEHIND_LAYER 29 //certain mutantrace features (tail when looking south) that must appear behind the body parts
 #define BODYPARTS_LOW_LAYER 28 //Layer for bodyparts that should appear behind every other bodypart - Mostly, legs when facing WEST or EAST
 #define BODYPARTS_LAYER 27 //Initially "AUGMENTS", this was repurposed to be a catch-all bodyparts flag
-#define BODY_ADJ_LAYER 26 //certain mutantrace features (snout, body markings) that must appear above the body parts
+#define BODY_ADJ_LAYER 26 //certain mutantrace features (face markings, body markings) that must appear above the body parts
 #define BODY_LAYER 25 //underwear, undershirts, socks, eyes, lips(makeup)
 #define FRONT_MUTATIONS_LAYER 24 //mutations that should appear above body, body_adj and bodyparts layer (e.g. laser eyes)
 #define DAMAGE_LAYER 23 //damage indicators (cuts and burns)
@@ -73,18 +73,6 @@
 #define GAME_STATE_SETTING_UP 2
 #define GAME_STATE_PLAYING 3
 #define GAME_STATE_FINISHED 4
-
-//FONTS:
-// Used by Paper and PhotoCopier (and PaperBin once a year).
-// Used by PDA's Notekeeper.
-// Used by NewsCaster and NewsPaper.
-// Used by Modular Computers
-#define PEN_FONT "Verdana"
-#define FOUNTAIN_PEN_FONT "Segoe Script"
-#define CRAYON_FONT "Comic Sans MS"
-#define PRINTER_FONT "Times New Roman"
-#define SIGNFONT "Times New Roman"
-#define CHARCOAL_FONT "Candara"
 
 #define RESIZE_DEFAULT_SIZE 1
 
@@ -203,13 +191,6 @@ GLOBAL_LIST_INIT(ghost_accs_options, list(GHOST_ACCS_NONE, GHOST_ACCS_DIR, GHOST
 
 GLOBAL_LIST_INIT(ghost_others_options, list(GHOST_OTHERS_SIMPLE, GHOST_OTHERS_DEFAULT_SPRITE, GHOST_OTHERS_THEIR_SETTING)) //Same as ghost_accs_options.
 
-//pda fonts
-#define MONO "Monospaced"
-#define VT "VT323"
-#define ORBITRON "Orbitron"
-#define SHARE "Share Tech Mono"
-
-GLOBAL_LIST_INIT(pda_styles, sortList(list(MONO, VT, ORBITRON, SHARE)))
 
 /////////////////////////////////////
 // atom.appearence_flags shortcuts //

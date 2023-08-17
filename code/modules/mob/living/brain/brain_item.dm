@@ -17,7 +17,6 @@
 	low_threshold = 45
 	high_threshold = 120
 
-	var/suicided = FALSE
 	var/mob/living/brain/brainmob = null
 	var/decoy_override = FALSE	//if it's a fake brain with no brainmob assigned. Feedback messages will be faked as if it does have a brainmob. See changelings & dullahans.
 	//two variables necessary for calculating whether we get a brain trauma or not
@@ -86,7 +85,6 @@
 	brainmob.name = L.real_name
 	brainmob.real_name = L.real_name
 	brainmob.timeofhostdeath = L.timeofdeath
-	brainmob.suiciding = suicided
 	if(L.has_dna())
 		var/mob/living/carbon/C = L
 		if(!brainmob.stored_dna)
@@ -135,9 +133,6 @@
 
 /obj/item/organ/brain/examine(mob/user)
 	. = ..()
-	if(suicided)
-		. += "<span class='info'>It's started turning slightly grey. They must not have been able to handle the stress of it all.</span>"
-		return
 	if((brainmob && (brainmob.client || brainmob.get_ghost())) || decoy_override)
 		if(organ_flags & ORGAN_FAILING)
 			. += "<span class='info'>It seems to still have a bit of energy within it, but it's rather damaged... You may be able to restore it with some <b>mannitol</b>.</span>"
@@ -288,7 +283,7 @@
 	brainmob.set_stat(CONSCIOUS) //mmis are conscious
 	brainmob.remove_from_dead_mob_list()
 	brainmob.add_to_alive_mob_list() //mmis are technically alive I guess?
-	stored_mmi.update_icon() //update it because the brain is alive now
+	stored_mmi.update_appearance() //update it because the brain is alive now
 	brainmob.reset_perspective() //resets perspective to the mmi
 	brainmob = null //clears the brainmob var so it doesn't get deleted when the holder is destroyed
 

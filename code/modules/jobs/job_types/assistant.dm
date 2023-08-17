@@ -150,14 +150,14 @@ Assistant
 /datum/outfit/job/assistant/syndicate/sbc
 	name = "Deck Assistant (Twinkleshine)"
 
-	uniform = /obj/item/clothing/under/syndicate/intern
+	uniform = /obj/item/clothing/under/syndicate
+	alt_uniform = /obj/item/clothing/under/syndicate/intern
 	shoes = /obj/item/clothing/shoes/combat
 	gloves = /obj/item/clothing/gloves/combat
 	ears = /obj/item/radio/headset/syndicate/alt
-	mask = /obj/item/clothing/mask/chameleon
+	mask = /obj/item/clothing/mask/gas/syndicate/voicechanger
 	r_pocket = /obj/item/kitchen/knife/combat/survival
 	back = /obj/item/storage/backpack
-	belt = /obj/item/storage/belt/military/assault
 	implants = list(/obj/item/implant/weapons_auth)
 	id = /obj/item/card/id/syndicate_command/crew_id
 

@@ -365,7 +365,7 @@ LINEN BINS
 
 /obj/item/bedsheet/random/Initialize()
 	..()
-	var/type = pick(typesof(/obj/item/bedsheet) - /obj/item/bedsheet/random)
+	var/type = pick(typesof(/obj/item/bedsheet) - (typesof(/obj/item/bedsheet/double) + /obj/item/bedsheet/random))
 	new type(loc)
 	return INITIALIZE_HINT_QDEL
 
@@ -390,11 +390,32 @@ LINEN BINS
 				/obj/item/bedsheet/brown,
 				/obj/item/bedsheet/black))
 		if("Special")
-			type = pick(list(/obj/item/bedsheet/patriot,
-				/obj/item/bedsheet/rainbow,
-				/obj/item/bedsheet/ian,
-				/obj/item/bedsheet/cosmos,
-				/obj/item/bedsheet/nanotrasen))
+			type = /obj/item/bedsheet/rainbow
+	new type(loc)
+	return INITIALIZE_HINT_QDEL
+
+/obj/item/bedsheet/dorms/double
+	icon_state = "double_sheetrainbow"
+	name = "random dorms double bedsheet"
+	desc = "If you're reading this description ingame, something has gone wrong! Honk!"
+
+/obj/item/bedsheet/dorms/double/Initialize()
+	..()
+	var/type = pickweight(list("Colors" = 80, "Special" = 20))
+	switch(type)
+		if("Colors")
+			type = pick(list(/obj/item/bedsheet/double,
+				/obj/item/bedsheet/double/blue,
+				/obj/item/bedsheet/double/green,
+				/obj/item/bedsheet/double/grey,
+				/obj/item/bedsheet/double/orange,
+				/obj/item/bedsheet/double/purple,
+				/obj/item/bedsheet/double/red,
+				/obj/item/bedsheet/double/yellow,
+				/obj/item/bedsheet/double/brown,
+				/obj/item/bedsheet/double/black))
+		if("Special")
+			type = /obj/item/bedsheet/double/rainbow
 	new type(loc)
 	return INITIALIZE_HINT_QDEL
 
@@ -434,11 +455,12 @@ LINEN BINS
 			icon_state = "linenbin-half"
 		else
 			icon_state = "linenbin-full"
+	return ..()
 
 /obj/structure/bedsheetbin/fire_act(exposed_temperature, exposed_volume)
 	if(amount)
 		amount = 0
-		update_icon()
+		update_appearance()
 	..()
 
 /obj/structure/bedsheetbin/attackby(obj/item/I, mob/user, params)
@@ -448,7 +470,7 @@ LINEN BINS
 		sheets.Add(I)
 		amount++
 		to_chat(user, "<span class='notice'>You put [I] in [src].</span>")
-		update_icon()
+		update_appearance()
 
 	else if(default_unfasten_wrench(user, I, 5))
 		return
@@ -497,7 +519,7 @@ LINEN BINS
 		B.forceMove(drop_location())
 		user.put_in_hands(B)
 		to_chat(user, "<span class='notice'>You take [B] out of [src].</span>")
-		update_icon()
+		update_appearance()
 
 		if(hidden)
 			hidden.forceMove(drop_location())
@@ -520,7 +542,7 @@ LINEN BINS
 
 		B.forceMove(drop_location())
 		to_chat(user, "<span class='notice'>You telekinetically remove [B] from [src].</span>")
-		update_icon()
+		update_appearance()
 
 		if(hidden)
 			hidden.forceMove(drop_location())

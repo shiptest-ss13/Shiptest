@@ -58,7 +58,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 /datum/reagent/consumable/ethanol/expose_obj(obj/O, reac_volume)
 	if(istype(O, /obj/item/paper))
 		var/obj/item/paper/paperaffected = O
-		paperaffected.clearpaper()
+		paperaffected.clear_paper()
 		to_chat(usr, "<span class='notice'>[paperaffected]'s ink washes away.</span>")
 	if(istype(O, /obj/item/book))
 		if(reac_volume >= 5)
@@ -1954,11 +1954,13 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_name = "glass of [name]"
 	glass_desc = description
 	for(var/taste in tastes)
-		switch(tastes[taste])
-			if(minimum_percent*2 to INFINITY)
-				primary_tastes += taste
-			if(minimum_percent to minimum_percent*2)
-				secondary_tastes += taste
+		var/taste_percent = tastes[taste]
+		if(taste_percent < minimum_percent)
+			continue
+		if(taste_percent > (minimum_percent * 2))
+			primary_tastes += taste
+			continue
+		secondary_tastes += taste
 
 	var/minimum_name_percent = 0.35
 	name = ""
