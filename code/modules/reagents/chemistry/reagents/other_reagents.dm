@@ -2784,3 +2784,7 @@
 	description = "Fur obtained from griding up a polar bears hide"
 	reagent_state = SOLID
 	color = "#eeeeee" // rgb: 238, 238, 238
+
+/datum/reagent/srm_bacteria
+	name = "Illestren Bacteria"
+	description = "Bacteria native to the srm home planet"

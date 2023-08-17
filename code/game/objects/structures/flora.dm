@@ -696,10 +696,6 @@
 			else if (luck == 1)
 				adjustKarma(10)
 
-/obj/structure/flora/tree/chapel/srm
-	name = "Montagne's Oak"
-	desc = "A sturdy oak tree imported directly from the homeworld of the Montagne who runs the ship it resides on. It is planted in soil from the same place."
-
 /datum/mood_event/good_tree
 	description = "<span class='nicegreen'>I feel closer to my soul.</span>\n"
 	mood_change = 3
@@ -719,6 +715,72 @@
 	description = "<span class='warning'>It's like a root is digging into my heart.</span>\n"
 	mood_change = -6
 	timeout = 5 MINUTES
+
+/obj/structure/flora/tree/srm
+	name = "Montagne's Oak"
+	desc = "A sturdy oak tree imported directly from the homeworld of the Montagne who runs the ship it resides on. It is planted in soil from the same place."
+	pixel_x = -16
+	max_integrity = 200
+	bound_height = 64
+	var/health = 0
+	var/lastcycle = 0
+	//Determines the health gained/lost when feeding the tree this chem
+	var/list/healthchems = list(
+		/datum/reagent/ethanol/trickwine = 0.5,
+		/datum/reagent/ethanol/trickwine/ash_wine = 0.8,
+		/datum/reagent/water = 0.1,
+		/datum/reagent/plantnutriment = 0.2,
+		/datum/reagent/medicine/earthsblood = 1,
+		/datum/reagent/water/holywater = 0.8,
+		/datum/reagent/medicine/cryoxadone = 0.3,
+		/datum/reagent/ammonia = 0.4,
+		/datum/reagent/saltpetre = 0.5,
+		/datum/reagent/ash = 0.2,
+		/datum/reagent/diethylamine = 0.5,
+		/datum/reagent/consumable/nutriment = 0.1,
+		/datum/reagent/consumable/virus_food = 0.1,
+		/datum/reagent/blood = -0.1,
+		/datum/reagent/consumable/ethanol = -0.1,
+		/datum/reagent/toxin = -0.2,
+		/datum/reagent/fluorine = -0.3,
+		/datum/reagent/chlorine = -0.3,
+		/datum/reagent/toxin/acid = -0.3,
+		/datum/reagent/toxin/acid/fluacid = -0.4,
+		/datum/reagent/toxin/plantbgone = -0.5,
+		/datum/reagent/napalm = -0.6,
+		/datum/reagent/hellwater = -1,
+		/datum/reagent/liquidgibs = -0.2,
+		/datum/reagent/consumable/ethanol/demonsblood = -0.8,
+		/datum/reagent/medicine/soulus = -0.2
+	)
+
+/obj/structure/flora/tree/srm/Initialize()
+	START_PROCESSING(SSobj, src)
+	create_reagents(300, DRAINABLE | AMOUNT_VISIBLE)
+	. = ..()
+
+/obj/structure/flora/tree/srm/process()
+	if(world.time > (lastcycle + 200))
+		if(reagents)
+			var/gainedhealth
+			for(var/datum/reagent/R in healthchems)
+				if(reagents.has_reagent(R, 1))
+					gainedhealth += reagents.get_reagent_amount(R) * healthchems[R]
+					health += gainedhealth
+					reagents.remove_reagent(R, reagents.get_reagent_amount(R))
+		if(health > 0)
+			reagents.add_reagent(/datum/reagent/srm_bacteria, health)
+			health = 0
+		//Clean up the air a bit
+		if(isopenturf(loc))
+			var/turf/open/T = src.loc
+			if(T.air)
+				var/co2 = T.air.get_moles(GAS_CO2)
+				if(co2 > 0 && prob(50))
+					var/amt = min(co2, 10)
+					T.air.adjust_moles(GAS_CO2, -amt)
+					T.atmos_spawn_air("o2=[amt];TEMP=293.15")
+		lastcycle = world.time
 
 /obj/structure/flora/firebush
 	name = "flaming bush"
