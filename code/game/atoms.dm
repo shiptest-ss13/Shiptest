@@ -1367,6 +1367,12 @@
 			log_shuttle(log_text)
 		if(LOG_RADIO_EMOTE)
 			log_radio_emote(log_text)
+		if(LOG_MSAY)
+			log_mentor(log_text)
+		if(LOG_LOOC)
+			log_looc(log_text)
+		if(LOG_SUBTLER)
+			log_subtler(log_text)
 		else
 			stack_trace("Invalid individual logging type: [message_type]. Defaulting to [LOG_GAME] (LOG_GAME).")
 			log_game(log_text)
