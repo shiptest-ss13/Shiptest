@@ -3,6 +3,7 @@
 	desc = "A special flask designed to stabilize trick wines and shatter violently on contact."
 	icon_state = "breakawayflask"
 	item_state = "breakawayflask"
+	w_class = WEIGHT_CLASS_SMALL
 	gulp_size = 25
 	amount_per_transfer_from_this = 25
 	volume = 50

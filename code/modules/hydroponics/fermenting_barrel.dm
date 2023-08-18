@@ -92,6 +92,7 @@
 		icon_state = "distiller_open"
 	else
 		icon_state = "distiller"
+	return ..()
 
 /datum/crafting_recipe/distiller
 	name = "Wooden Barrel"
