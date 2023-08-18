@@ -22,8 +22,9 @@
 	for (var/obj/item/melt in range(effectrange, src))
 		if(istype(melt, /obj/item/assembly/signaler/anomaly))
 			return
-		melt.acid_act(20, 10)
-		melt.update_icon()
+		else
+			melt.acid_act(20, 10)
+			melt.update_icon()
 
 /obj/effect/anomaly/melter/Bumped(atom/movable/AM)
 	if(isobj(AM))
