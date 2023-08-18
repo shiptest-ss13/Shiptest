@@ -1,10 +1,6 @@
 /obj/item/restraints
 	breakouttime = 600
 
-/obj/item/restraints/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] is strangling [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return(OXYLOSS)
-
 /obj/item/restraints/Destroy()
 	if(iscarbon(loc))
 		var/mob/living/carbon/M = loc
@@ -126,9 +122,9 @@
 	cable_color = param_color || cable_color || pick(cable_colors)
 	if(cable_colors[cable_color])
 		cable_color = cable_colors[cable_color]
-	update_icon()
+	update_appearance()
 
-/obj/item/restraints/handcuffs/cable/update_icon()
+/obj/item/restraints/handcuffs/cable/update_appearance()
 	color = null
 	add_atom_colour(cable_color, FIXED_COLOUR_PRIORITY)
 */
@@ -241,7 +237,7 @@
 
 /obj/item/restraints/legcuffs/beartrap/Initialize()
 	. = ..()
-	update_icon()
+	update_appearance()
 
 	var/static/list/loc_connections = list(
 		COMSIG_ATOM_ENTERED = .proc/on_entered,
@@ -250,23 +246,19 @@
 
 /obj/item/restraints/legcuffs/beartrap/update_icon_state()
 	icon_state = "[initial(icon_state)][armed]"
-
-/obj/item/restraints/legcuffs/beartrap/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is sticking [user.p_their()] head in the [src.name]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	playsound(loc, 'sound/weapons/bladeslice.ogg', 50, TRUE, -1)
-	return (BRUTELOSS)
+	return ..()
 
 /obj/item/restraints/legcuffs/beartrap/attack_self(mob/user)
 	. = ..()
 	if(!ishuman(user) || user.stat != CONSCIOUS || HAS_TRAIT(user, TRAIT_HANDS_BLOCKED))
 		return
 	armed = !armed
-	update_icon()
+	update_appearance()
 	to_chat(user, "<span class='notice'>[src] is now [armed ? "armed" : "disarmed"]</span>")
 
 /obj/item/restraints/legcuffs/beartrap/proc/close_trap()
 	armed = FALSE
-	update_icon()
+	update_appearance()
 	playsound(src, 'sound/effects/snap.ogg', 50, TRUE)
 
 /obj/item/restraints/legcuffs/beartrap/proc/on_entered(datum/source, AM as mob|obj)

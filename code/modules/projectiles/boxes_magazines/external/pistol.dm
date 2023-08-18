@@ -35,6 +35,7 @@
 	name = "pistol magazine (.45)"
 	desc = "A single stack M1911 reproduction magazine, faithfully designed to chamber .45."
 	icon_state = "45-8"
+	base_icon_state = "45"
 	ammo_type = /obj/item/ammo_casing/c45
 	caliber = ".45"
 	max_ammo = 8
@@ -59,17 +60,15 @@
 	desc = "A single stack M1911 reproduction magazine, faithfully designed to chamber .45. Loaded with less-lethal rubber rounds which disable targets without causing serious damage."
 	ammo_type = /obj/item/ammo_casing/c45/rubbershot
 
-/obj/item/ammo_box/magazine/m45/update_icon()
-	..()
-	if (ammo_count() >= 8)
-		icon_state = "45-8"
-	else
-		icon_state = "45-[ammo_count()]"
+/obj/item/ammo_box/magazine/m45/update_icon_state()
+	. = ..()
+	icon_state = "[base_icon_state]-[min(ammo_count(), 8)]"
 
-/obj/item/ammo_box/magazine/co9mm //WS edit begin - commander
+/obj/item/ammo_box/magazine/co9mm
 	name = "pistol magazine (9mm)"
 	desc = "A single stack M1911 reproduction magazine, modified to chamber 9mm."
 	icon_state = "co9mm-10"
+	base_icon_state = "co9mm"
 	ammo_type = /obj/item/ammo_casing/c9mm
 	caliber = "9mm"
 	max_ammo = 10
@@ -94,24 +93,22 @@
 	desc = "A single stack M1911 reproduction magazine, modified to chamber 9mm. Loaded with less-lethal rubber rounds which disable targets without causing serious damage."
 	ammo_type = /obj/item/ammo_casing/c9mm/rubbershot
 
-/obj/item/ammo_box/magazine/co9mm/update_icon()
-	..()
-	if (ammo_count() == 1)
-		icon_state = "co9mm-1"
-	else
-		icon_state = "co9mm-[round(ammo_count(),2)]"
+/obj/item/ammo_box/magazine/co9mm/update_icon_state()
+	. = ..()
+	icon_state = "[base_icon_state]-[ammo_count() == 1 ? 1 : round(ammo_count(),2)]"
 
 /obj/item/ammo_box/magazine/pistolm9mm
 	name = "large pistol magazine (9mm)"
 	desc = "A double stack pistol magazine, designed to chamber 9mm."
 	icon_state = "9x19p-8"
+	base_icon_state = "9x19p"
 	ammo_type = /obj/item/ammo_casing/c9mm
 	caliber = "9mm"
 	max_ammo = 15
 
-/obj/item/ammo_box/magazine/pistolm9mm/update_icon()
-	..()
-	icon_state = "9x19p-[ammo_count() ? "8" : "0"]"
+/obj/item/ammo_box/magazine/pistolm9mm/update_icon_state()
+	. = ..()
+	icon_state = "[base_icon_state]-[ammo_count() ? "8" : "0"]"
 
 /obj/item/ammo_box/magazine/m50
 	name = "handgun magazine (.50ae)"

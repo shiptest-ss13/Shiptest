@@ -182,11 +182,11 @@
 /area/ruin/unpowered)
 "ut" = (
 /turf/open/floor/plating/asteroid/wasteplanet,
-/area/overmap_encounter/planetoid/rockplanet/explored)
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "uM" = (
 /obj/effect/decal/fakelattice,
 /turf/open/floor/plating/asteroid/wasteplanet,
-/area/ruin/unpowered)
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "vc" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -205,7 +205,7 @@
 /turf/open/floor/plating{
 	icon_state = "platingdmg2"
 	},
-/area/ruin/unpowered)
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "wG" = (
 /obj/structure/girder,
 /obj/structure/girder,
@@ -293,6 +293,11 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered)
+"EU" = (
+/turf/open/floor/plating{
+	icon_state = "panelscorched"
+	},
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "Fq" = (
 /obj/item/electronics/apc,
 /turf/open/floor/plating{
@@ -373,6 +378,11 @@
 	icon_state = "panelscorched"
 	},
 /area/ruin/unpowered)
+"Qz" = (
+/turf/open/floor/plating{
+	icon_state = "platingdmg1"
+	},
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "QS" = (
 /obj/structure/chair/comfy/teal,
 /obj/machinery/airalarm/directional/north,
@@ -533,8 +543,8 @@ uM
 uM
 uM
 wq
-jX
-sQ
+Qz
+EU
 uM
 uM
 ut

@@ -15,7 +15,7 @@
 	//AAAAAAAAAAAAAAAAAAAAAAAAAA
 	dna.features["ethcolor"] = GLOB.color_list_ethereal[GLOB.color_list_ethereal[seed % length(GLOB.color_list_ethereal) + 1]]
 	dna.features["tail_lizard"] = GLOB.tails_list_lizard[seed % length(GLOB.tails_list_lizard) + 1]
-	dna.features["snout"] = GLOB.snouts_list[seed % length(GLOB.snouts_list) + 1]
+	dna.features["face_markings"] = GLOB.face_markings_list[seed % length(GLOB.face_markings_list) + 1]
 	dna.features["horns"] = GLOB.horns_list[seed % length(GLOB.horns_list) + 1]
 	dna.features["frills"] = GLOB.frills_list[seed % length(GLOB.frills_list) + 1]
 	dna.features["spines"] = GLOB.spines_list[seed % length(GLOB.spines_list) + 1]

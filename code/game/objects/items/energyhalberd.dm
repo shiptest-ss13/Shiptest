@@ -69,32 +69,10 @@
 /obj/item/energyhalberd/update_icon_state()
 	if(wielded)
 		icon_state = "halberd[halberd_color]"
+		return ..()
 	else
 		icon_state = "halberd"
-
-/obj/item/energyhalberd/suicide_act(mob/living/carbon/user)
-	if(wielded)
-		user.visible_message("<span class='suicide'>[user] begins spinning way too fast! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-
-		var/obj/item/bodypart/head/myhead = user.get_bodypart(BODY_ZONE_HEAD)//stole from chainsaw code
-		var/obj/item/organ/brain/B = user.getorganslot(ORGAN_SLOT_BRAIN)
-		B.organ_flags &= ~ORGAN_VITAL	//this cant possibly be a good idea
-		var/randdir
-		for(var/i in 1 to 24)//like a headless chicken!
-			if(user.is_holding(src))
-				randdir = pick(GLOB.alldirs)
-				user.Move(get_step(user, randdir),randdir)
-				user.emote("spin")
-				if (i == 3 && myhead)
-					myhead.drop_limb()
-				sleep(3)
-			else
-				user.visible_message("<span class='suicide'>[user] panics and starts choking to death!</span>")
-				return OXYLOSS
-
-	else
-		user.visible_message("<span class='suicide'>[user] begins beating [user.p_them()]self to death with \the [src]'s handle! It probably would've been cooler if [user.p_they()] turned it on first!</span>")
-	return BRUTELOSS
+		return ..()
 
 /obj/item/energyhalberd/Initialize()
 	. = ..()
@@ -189,7 +167,7 @@
 			hacked = TRUE
 			to_chat(user, "<span class='warning'>HLBRDRNBW_ENGAGE</span>")
 			halberd_color = "rainbow"
-			update_icon()
+			update_appearance()
 		else
 			to_chat(user, "<span class='warning'>It's starting to look like a triple rainbow - no, nevermind.</span>")
 	else

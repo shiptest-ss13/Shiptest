@@ -23,11 +23,11 @@
 	name = "LP Lieutenant's Jumpsuit"
 	desc = "The ERT ran out of outfits to give to the LP, so they gave them station spares. This one belongs to the LP Lieutenant."
 
-/obj/item/clothing/under/rank/engineering/engineer/maintenance_tech/lp
+/obj/item/clothing/under/rank/engineering/engineer/lp
 	name = "LP Engineering Specialist's Jumpsuit"
 	desc = "The ERT ran out of outfits to give to the LP, so they gave them station spares. This one belongs to the LP Engineering Specialist."
 
-/obj/item/clothing/under/rank/engineering/engineer/maintenance_tech/skirt/lp
+/obj/item/clothing/under/rank/engineering/engineer/skirt/lp
 	name = "LP Engineering Specialist's Jumpskirt"
 	desc = "A standard Jumpskirt belonging to the Engineering Specialist of the Loss Previention team."
 

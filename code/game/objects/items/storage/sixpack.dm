@@ -9,16 +9,13 @@
 	custom_materials = list(/datum/material/plastic = 1200)
 	max_integrity = 500
 
-/obj/item/storage/cans/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins popping open a final cold one with the boys! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return BRUTELOSS
-
 /obj/item/storage/cans/update_icon_state()
 	icon_state = "[initial(icon_state)][contents.len]"
+	return ..()
 
 /obj/item/storage/cans/Initialize()
 	. = ..()
-	update_icon()
+	update_appearance()
 
 /obj/item/storage/cans/ComponentInitialize()
 	. = ..()

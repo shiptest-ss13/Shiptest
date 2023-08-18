@@ -102,4 +102,4 @@
 			if(.)
 				close_pressure = clamp(pressure, 0, open_pressure)
 				investigate_log("close pressure was set to [close_pressure] kPa by [key_name(usr)]", INVESTIGATE_ATMOS)
-	update_icon()
+	update_appearance()

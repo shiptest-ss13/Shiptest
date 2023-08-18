@@ -127,7 +127,7 @@
 		set_is_operational(FALSE)
 		STOP_PROCESSING(SSmachines, src)
 		use_power = NO_POWER_USE
-	power_change() // calls update_icon(), makes sure we're powered
+	power_change() // calls update_appearance(), makes sure we're powered
 
 /obj/machinery/mission_scanner/update_icon_state()
 	. = ..()

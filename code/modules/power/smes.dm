@@ -64,7 +64,7 @@
 		obj_break()
 		return
 	terminal.master = src
-	update_icon()
+	update_appearance()
 
 /obj/machinery/power/smes/RefreshParts()
 	var/IO = 0
@@ -89,7 +89,7 @@
 /obj/machinery/power/smes/attackby(obj/item/I, mob/user, params)
 	//opening using screwdriver
 	if(default_deconstruction_screwdriver(user, icon_state, icon_state, I))
-		update_icon()
+		update_appearance()
 		return
 
 	//changing direction using wrench
@@ -106,7 +106,7 @@
 			to_chat(user, "<span class='alert'>No power terminal found.</span>")
 			return
 		set_machine_stat(machine_stat & ~BROKEN)
-		update_icon()
+		update_appearance()
 		return
 
 	//building and linking a terminal
@@ -321,7 +321,7 @@
 
 	// only update icon if state changed
 	if(last_disp != chargedisplay() || last_chrg != inputting || last_onln != outputting)
-		update_icon()
+		update_appearance()
 
 
 
@@ -351,7 +351,7 @@
 	output_used -= excess
 
 	if(clev != chargedisplay()) //if needed updates the icons overlay
-		update_icon()
+		update_appearance()
 	return
 
 
@@ -389,13 +389,13 @@
 		if("tryinput")
 			input_attempt = !input_attempt
 			log_smes(usr)
-			update_icon()
+			update_appearance()
 			. = TRUE
 		if("tryoutput")
 			if(!is_emped)
 				output_attempt = !output_attempt
 				log_smes(usr)
-				update_icon()
+				update_appearance()
 			. = TRUE
 		if("input")
 			var/target = params["target"]
@@ -453,14 +453,14 @@
 	charge -= 1e6/severity
 	if (charge < 0)
 		charge = 0
-	update_icon()
+	update_appearance()
 	log_smes()
 
 /obj/machinery/power/smes/proc/emp_end(previous_output)
 	is_emped = FALSE
 	output_attempt = previous_output
 	outputting = output_attempt
-	update_icon()
+	update_appearance()
 	log_smes()
 
 /obj/machinery/power/smes/engineering

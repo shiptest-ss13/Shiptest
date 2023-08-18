@@ -1320,6 +1320,11 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = -12;
+	pixel_y = -17
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew/office)
 "op" = (
@@ -1584,6 +1589,11 @@
 /obj/structure/cable,
 /obj/structure/sign/poster/official/moth/hardhats{
 	pixel_x = 32
+	},
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = -12;
+	pixel_y = -16
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
@@ -2786,9 +2796,7 @@
 /obj/structure/table/reinforced{
 	color = "#c1b6a5"
 	},
-/obj/machinery/photocopier/faxmachine/longrange{
-	department = "Internal Affairs"
-	},
+/obj/machinery/fax,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "BQ" = (
@@ -3640,6 +3648,10 @@
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-4"
+	},
+/obj/machinery/light_switch{
+	pixel_x = -13;
+	pixel_y = 22
 	},
 /turf/open/floor/wood,
 /area/ship/crew)
@@ -4946,6 +4958,11 @@
 	},
 /obj/machinery/camera/autoname{
 	dir = 8
+	},
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = -12;
+	pixel_y = -17
 	},
 /turf/open/floor/plasteel/dark{
 	icon_state = "grid"
