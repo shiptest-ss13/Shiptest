@@ -1,4 +1,13 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"aF" = (
+/obj/docking_port/stationary{
+	dir = 8;
+	dwidth = 8;
+	height = 15;
+	width = 30
+	},
+/turf/template_noop,
+/area/template_noop)
 "aL" = (
 /obj/machinery/power/smes/engineering{
 	charge = 1e+006
@@ -20,15 +29,6 @@
 /obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/storage)
-"bl" = (
-/obj/docking_port/stationary{
-	width = 30;
-	height = 15;
-	dwidth = 15;
-	dir = 2
-	},
-/turf/template_noop,
-/area/template_noop)
 "bu" = (
 /obj/machinery/door/airlock/medical{
 	dir = 4;
@@ -358,6 +358,15 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
+"jX" = (
+/obj/machinery/stasis,
+/obj/effect/turf_decal/industrial/outline/red,
+/obj/machinery/smartfridge/organ{
+	density = 0;
+	pixel_y = 32
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/medical)
 "kC" = (
 /obj/machinery/door/window/brigdoor/southleft{
 	req_access_txt = "5"
@@ -537,31 +546,30 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
-"mG" = (
-/obj/machinery/firealarm/directional/north,
-/obj/structure/sign/warning/gasmask{
-	pixel_x = -32
+"mK" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "2-4"
 	},
-/obj/item/stack/marker_beacon/default/thirty,
-/obj/item/stack/marker_beacon/default/thirty,
-/obj/item/stack/marker_beacon/default/thirty,
-/obj/item/stack/marker_beacon/default/thirty,
-/obj/structure/rack,
-/obj/item/pickaxe/emergency{
-	desc = "For extracting yourself from rough landings, and getting to the even rougher ones";
-	name = "Medical Retrieval Tool"
+/obj/structure/cable{
+	icon_state = "1-4"
 	},
-/obj/item/pickaxe/emergency{
-	desc = "For extracting yourself from rough landings, and getting to the even rougher ones";
-	name = "Medical Retrieval Tool"
+/obj/effect/turf_decal/trimline/opaque/red/filled/line{
+	dir = 8
 	},
-/obj/item/pickaxe/emergency{
-	desc = "For extracting yourself from rough landings, and getting to the even rougher ones";
-	name = "Medical Retrieval Tool"
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
 	},
-/obj/effect/turf_decal/industrial/outline/red,
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/storage)
+/obj/structure/extinguisher_cabinet/directional/west,
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -20;
+	pixel_y = 10
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/medical)
 "mO" = (
 /obj/machinery/computer/med_data,
 /turf/open/floor/plasteel/dark,
@@ -752,6 +760,21 @@
 /obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel/freezer,
 /area/ship/crew/toilet)
+"qe" = (
+/obj/machinery/power/apc/auto_name/directional/west,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/effect/turf_decal/number/zero{
+	dir = 4
+	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -20;
+	pixel_y = 10
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
 "qQ" = (
 /obj/effect/turf_decal/trimline/opaque/red/filled/warning{
 	dir = 8
@@ -984,6 +1007,21 @@
 /obj/effect/turf_decal/industrial/hatch/red,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
+"uM" = (
+/obj/effect/landmark/start/paramedic,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/power/apc/auto_name/directional/west,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -20;
+	pixel_y = 10
+	},
+/turf/open/floor/plasteel,
+/area/ship/crew)
 "uN" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -1113,21 +1151,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/aft)
-"yi" = (
-/obj/machinery/power/apc/auto_name/directional/west,
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/obj/effect/turf_decal/number/zero{
-	dir = 4
-	},
-/obj/machinery/light_switch{
-	dir = 4;
-	pixel_y = 10;
-	pixel_x = -20
-	},
-/turf/open/floor/plating,
-/area/ship/maintenance/starboard)
 "zg" = (
 /obj/machinery/light/directional/north,
 /obj/structure/sign/warning/nosmoking{
@@ -1278,17 +1301,6 @@
 	},
 /turf/open/floor/engine,
 /area/ship/hallway/aft)
-"Cr" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/effect/turf_decal/trimline/opaque/red/filled/line{
-	dir = 8
-	},
-/turf/open/floor/plasteel/white,
-/area/ship/hallway/fore)
 "CX" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
@@ -1394,6 +1406,22 @@
 /obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
+"Gn" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/trimline/opaque/red/filled/line{
+	dir = 8
+	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -20;
+	pixel_y = 10
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/hallway/fore)
 "Go" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -1417,6 +1445,15 @@
 /obj/item/storage/bag/trash,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
+"GO" = (
+/obj/docking_port/stationary{
+	dir = 2;
+	dwidth = 15;
+	height = 15;
+	width = 30
+	},
+/turf/template_noop,
+/area/template_noop)
 "GP" = (
 /obj/machinery/door/airlock/maintenance_hatch{
 	dir = 4;
@@ -1669,15 +1706,6 @@
 	},
 /turf/open/floor/vault,
 /area/ship/storage)
-"Ml" = (
-/obj/docking_port/stationary{
-	dwidth = 8;
-	width = 30;
-	height = 15;
-	dir = 8
-	},
-/turf/template_noop,
-/area/template_noop)
 "Mx" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
@@ -1950,21 +1978,6 @@
 	},
 /turf/open/floor/engine,
 /area/ship/storage)
-"QU" = (
-/obj/effect/landmark/start/paramedic,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/power/apc/auto_name/directional/west,
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/obj/machinery/light_switch{
-	dir = 4;
-	pixel_y = 10;
-	pixel_x = -20
-	},
-/turf/open/floor/plasteel,
-/area/ship/crew)
 "QY" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
@@ -2068,15 +2081,6 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/storage)
-"Sy" = (
-/obj/machinery/stasis,
-/obj/effect/turf_decal/industrial/outline/red,
-/obj/machinery/smartfridge/organ{
-	pixel_y = 32;
-	density = 0
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/medical)
 "SH" = (
 /obj/machinery/light/directional/east,
 /obj/effect/turf_decal/industrial/outline/red,
@@ -2374,6 +2378,31 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
+"Wg" = (
+/obj/machinery/firealarm/directional/north,
+/obj/structure/sign/warning/gasmask{
+	pixel_x = -32
+	},
+/obj/item/stack/marker_beacon/default/thirty,
+/obj/item/stack/marker_beacon/default/thirty,
+/obj/item/stack/marker_beacon/default/thirty,
+/obj/item/stack/marker_beacon/default/thirty,
+/obj/structure/rack,
+/obj/item/pickaxe/emergency{
+	desc = "For extracting yourself from rough landings, and getting to the even rougher ones";
+	name = "Medical Retrieval Tool"
+	},
+/obj/item/pickaxe/emergency{
+	desc = "For extracting yourself from rough landings, and getting to the even rougher ones";
+	name = "Medical Retrieval Tool"
+	},
+/obj/item/pickaxe/emergency{
+	desc = "For extracting yourself from rough landings, and getting to the even rougher ones";
+	name = "Medical Retrieval Tool"
+	},
+/obj/effect/turf_decal/industrial/outline/red,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/storage)
 "Wm" = (
 /obj/effect/turf_decal/trimline/opaque/red/filled/warning{
 	dir = 8
@@ -2544,30 +2573,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/aft)
-"YK" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/obj/effect/turf_decal/trimline/opaque/red/filled/line{
-	dir = 8
-	},
-/obj/machinery/door/firedoor/border_only,
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
-/obj/structure/extinguisher_cabinet/directional/west,
-/obj/machinery/light_switch{
-	dir = 4;
-	pixel_y = 10;
-	pixel_x = -20
-	},
-/turf/open/floor/plasteel/white,
-/area/ship/medical)
 "YM" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/medical)
@@ -2606,7 +2611,7 @@ UG
 UG
 UG
 UG
-Ml
+aF
 UG
 UG
 UG
@@ -2664,7 +2669,7 @@ UG
 UG
 UG
 OK
-mG
+Wg
 Ln
 hv
 Sx
@@ -2819,7 +2824,7 @@ Ko
 QE
 SH
 OK
-Sy
+jX
 uo
 hQ
 HF
@@ -2877,14 +2882,14 @@ Pr
 BK
 Aj
 sM
-Cr
+Gn
 vn
 qQ
 Rs
 ru
 Wm
 qQ
-YK
+mK
 RW
 dH
 uq
@@ -2894,7 +2899,7 @@ Bl
 Bl
 rh
 BN
-bl
+GO
 "}
 (11,1,1) = {"
 bX
@@ -2965,7 +2970,7 @@ Nn
 UX
 kC
 Ki
-QU
+uM
 UR
 tO
 Ev
@@ -3097,7 +3102,7 @@ UG
 UO
 Gs
 Ps
-yi
+qe
 nl
 Xb
 Mx
