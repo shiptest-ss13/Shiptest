@@ -5,7 +5,7 @@
 	desc = "A 12 gauge lead slug."
 	icon = 'icons/obj/ammo_shotshells.dmi'
 	icon_state = "slug"
-	caliber = "shotgun"
+	caliber = "12ga"
 	custom_materials = list(/datum/material/iron=4000)
 	projectile_type = /obj/projectile/bullet/shotgun_slug
 
@@ -18,7 +18,7 @@
 	desc = "A 12 gauge buckshot shell."
 	icon_state = "buckshot"
 	projectile_type = /obj/projectile/bullet/pellet/shotgun_buckshot
-	pellets = 6
+	pellets = 8
 	variance = 25
 
 /obj/item/ammo_casing/shotgun/beanbag
@@ -33,7 +33,7 @@
 	desc = "A shotgun casing filled with densely-packed rubber balls, used to incapacitate crowds from a distance."
 	icon_state = "rubber"
 	projectile_type = /obj/projectile/bullet/pellet/shotgun_rubbershot
-	pellets = 6
+	pellets = 8
 	variance = 25
 	custom_materials = list(/datum/material/iron=4000)
 

@@ -49,7 +49,7 @@
 
 /obj/item/gun/ballistic/automatic/sniper_rifle
 	name = "sniper rifle"
-	desc = "A long ranged weapon that does significant damage. No, you can't quickscope."
+	desc = "An anti-materiel rifle chambered in .50 BMG, partnered with an effective optics package that grants it much greater range than most rifles. Its prodigious bulk requires both hands and some time to aim."
 	icon_state = "sniper"
 	item_state = "sniper"
 	fire_sound = 'sound/weapons/gun/sniper/shot.ogg'
@@ -73,7 +73,7 @@
 
 /obj/item/gun/ballistic/automatic/sniper_rifle/syndicate
 	name = "syndicate sniper rifle"
-	desc = "An illegally modified .50 cal sniper rifle with suppression compatibility. Quickscoping still doesn't work."
+	desc = "A heavily modified .50 caliber anti-materiel rifle capable of accepting a suppressor. Its prodigious bulk requires both hands and some time to aim."
 	can_suppress = TRUE
 	can_unsuppress = TRUE
 	pin = /obj/item/firing_pin/implant/pindicate
@@ -82,7 +82,7 @@
 
 /obj/item/gun/ballistic/automatic/surplus
 	name = "Surplus Rifle"
-	desc = "One of countless obsolete ballistic rifles that still sees use as a cheap deterrent. Uses 10mm ammo and its bulky frame prevents one-hand firing."
+	desc = "One of countless cheap, obsolete rifles found throughout the frontier, chambered in 10mm. While bulky and easily defeated by even mild armor, they are effective deterrents against wildlife and are still powerful enough to put up some fight against pirates and other boarders."
 	icon_state = "surplus"
 	item_state = "moistnugget"
 	weapon_weight = WEAPON_HEAVY
@@ -113,7 +113,7 @@
 
 /obj/item/gun/ballistic/automatic/ebr
 	name = "\improper M514 EBR"
-	desc = "A cheap, reliable rifle often found in the hands of low-ranking Syndicate personnel. It's known for rather high stopping power and mild armor-piercing capabilities. Chambered in .308."
+	desc = "A reliable, high-powered battle rifle often found in the hands of Syndicate personnel and remnants, chambered in .308 Winchester. It's known for rather high stopping power and mild armor-piercing capabilities."
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	lefthand_file = 'icons/mob/inhands/weapons/64x_guns_left.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/64x_guns_right.dmi'
@@ -151,7 +151,7 @@
 
 /obj/item/gun/ballistic/automatic/zip_pistol
 	name = "makeshift pistol"
-	desc = "A makeshift pistol. It's a miracle it even works."
+	desc = "A makeshift zip gun cobbled together from various scrap bits and chambered in 9mm. It's a miracle it even works."
 	icon_state = "ZipPistol"
 	item_state = "ZipPistol"
 	mag_type = /obj/item/ammo_box/magazine/zip_ammo_9mm

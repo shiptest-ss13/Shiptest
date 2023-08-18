@@ -4,7 +4,7 @@
 	desc = "A mysterious anomaly. Everburning green flames with a horrid sizzle, melting what's near"
 	effectrange = 2
 	pulse_delay = 10 SECONDS
-	aSignal = /obj/item/assembly/signaler/anomaly/pyro
+	aSignal = /obj/item/assembly/signaler/anomaly/melter
 
 /obj/effect/anomaly/melter/anomalyEffect(seconds_per_tick)
 	..()
@@ -20,8 +20,13 @@
 			I.acid_act(20, 20)
 			I.update_appearance()
 	for (var/obj/item/melt in range(effectrange, src))
-		melt.acid_act(20, 10)
-		melt.update_appearance()
+
+		if(istype(melt, /obj/item/assembly/signaler/anomaly))
+			return
+		else
+			melt.acid_act(20, 10)
+			melt.update_icon()
+
 
 /obj/effect/anomaly/melter/Bumped(atom/movable/AM)
 	if(isobj(AM))

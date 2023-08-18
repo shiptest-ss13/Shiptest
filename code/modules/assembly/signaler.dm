@@ -254,6 +254,13 @@
 	name = "\improper static anomaly core"
 	desc = "The neutralized core of a static anomaly. Your head hurts just staring at it"
 
+/obj/item/assembly/signaler/anomaly/melter
+	name = "\improper melter anomaly core"
+	desc = "The neutralized core of a melter anomaly. It sizzles and crackles. It'd probably be valuable for research."
+	icon_state = "pyro core"
+
+
+
 /obj/item/assembly/signaler/anomaly/attack_self()
 	return
 
