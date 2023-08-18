@@ -72,7 +72,7 @@
 					var/list/temp = SSmaterials.rigid_stack_recipes.Copy()
 					recipes += temp
 	update_weight()
-	update_icon()
+	update_appearance()
 
 	var/static/list/loc_connections = list(
 		COMSIG_ATOM_ENTERED = .proc/on_movable_entered_occupied_turf,
@@ -93,13 +93,15 @@
 
 /obj/item/stack/update_icon_state()
 	if(novariants)
-		return
+		return ..()
 	if(amount <= (max_amount * (1/3)))
 		icon_state = initial(icon_state)
-	else if (amount <= (max_amount * (2/3)))
+		return ..()
+	if (amount <= (max_amount * (2/3)))
 		icon_state = "[initial(icon_state)]_2"
-	else
-		icon_state = "[initial(icon_state)]_3"
+		return ..()
+	icon_state = "[initial(icon_state)]_3"
+	return ..()
 
 /obj/item/stack/examine(mob/user)
 	. = ..()
@@ -332,7 +334,7 @@
 		return TRUE
 	for(var/i in mats_per_unit)
 		custom_materials[i] = amount * mats_per_unit[i]
-	update_icon()
+	update_appearance()
 	update_weight()
 	return TRUE
 
@@ -374,7 +376,7 @@
 		for(var/i in mats_per_unit)
 			custom_materials[i] = mats_per_unit[i] * src.amount
 		set_custom_materials() //Refresh
-	update_icon()
+	update_appearance()
 	update_weight()
 
 /** Checks whether this stack can merge itself into another stack.

@@ -21,7 +21,7 @@
 
 /obj/structure/poddoor_assembly/Initialize()
 	. = ..()
-	update_icon()
+	update_appearance()
 	update_door_name()
 
 /obj/structure/poddoor_assembly/ComponentInitialize()
@@ -190,12 +190,12 @@
 					door.name = base_name
 				door.assemblytype = previous_assembly
 				electronics.forceMove(door)
-				door.update_icon()
+				door.update_appearance()
 				qdel(src)
 	else
 		return ..()
 	update_door_name()
-	update_icon()
+	update_appearance()
 
 /obj/structure/poddoor_assembly/proc/update_door_name()
 

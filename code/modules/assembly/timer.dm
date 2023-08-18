@@ -29,7 +29,7 @@
 	if(!..())
 		return FALSE//Cooldown check
 	timing = !timing
-	update_icon()
+	update_appearance()
 	return TRUE
 
 /obj/item/assembly/timer/toggle_secure()
@@ -39,7 +39,7 @@
 	else
 		timing = FALSE
 		STOP_PROCESSING(SSobj, src)
-	update_icon()
+	update_appearance()
 	return secured
 
 /obj/item/assembly/timer/proc/timer_end()
@@ -51,7 +51,7 @@
 		hearing_mob.playsound_local(get_turf(src), 'sound/machines/triple_beep.ogg', ASSEMBLY_BEEP_VOLUME, TRUE)
 	if(loop)
 		timing = TRUE
-	update_icon()
+	update_appearance()
 
 /obj/item/assembly/timer/process()
 	if(!timing)
@@ -62,14 +62,16 @@
 		timer_end()
 		time = saved_time
 
-/obj/item/assembly/timer/update_icon()
-	cut_overlays()
+/obj/item/assembly/timer/update_appearance()
+	. = ..()
+	holder?.update_appearance()
+
+/obj/item/assembly/timer/update_overlays()
+	. = ..()
 	attached_overlays = list()
 	if(timing)
-		add_overlay("timer_timing")
+		. += "timer_timing"
 		attached_overlays += "timer_timing"
-	if(holder)
-		holder.update_icon()
 
 /obj/item/assembly/timer/ui_status(mob/user)
 	if(is_secured(user))
@@ -100,7 +102,7 @@
 			timing = !timing
 			if(timing && istype(holder, /obj/item/transfer_valve))
 				log_bomber(usr, "activated a", src, "attachment on [holder]")
-			update_icon()
+			update_appearance()
 			. = TRUE
 		if("repeat")
 			loop = !loop
