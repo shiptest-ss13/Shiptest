@@ -283,7 +283,7 @@
 	brainmob.set_stat(CONSCIOUS) //mmis are conscious
 	brainmob.remove_from_dead_mob_list()
 	brainmob.add_to_alive_mob_list() //mmis are technically alive I guess?
-	stored_mmi.update_icon() //update it because the brain is alive now
+	stored_mmi.update_appearance() //update it because the brain is alive now
 	brainmob.reset_perspective() //resets perspective to the mmi
 	brainmob = null //clears the brainmob var so it doesn't get deleted when the holder is destroyed
 

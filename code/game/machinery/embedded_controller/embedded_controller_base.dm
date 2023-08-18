@@ -65,7 +65,7 @@
 	if(program)
 		program.process()
 
-	update_icon()
+	update_appearance()
 	src.updateDialog()
 
 /obj/machinery/embedded_controller/radio

@@ -3,6 +3,7 @@
 	name = "tank transfer valve"
 	icon_state = "valve_1"
 	item_state = "ttv"
+	base_icon_state = "valve"
 	lefthand_file = 'icons/mob/inhands/weapons/bombs_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/bombs_righthand.dmi'
 	desc = "Regulates the transfer of air between two tanks."
@@ -35,7 +36,7 @@
 			tank_two = item
 			to_chat(user, "<span class='notice'>You attach the tank to the transfer valve.</span>")
 
-		update_icon()
+		update_appearance()
 //TODO: Have this take an assemblyholder
 	else if(isassembly(item))
 		var/obj/item/assembly/A = item
@@ -51,7 +52,7 @@
 		to_chat(user, "<span class='notice'>You attach the [item] to the valve controls and secure it.</span>")
 		A.on_attach()
 		A.holder = src
-		A.toggle_secure()	//this calls update_icon(), which calls update_icon() on the holder (i.e. the bomb).
+		A.toggle_secure()	//this calls update_appearance(), which calls update_appearance() on the holder (i.e. the bomb).
 		log_bomber(user, "attached a [item.name] to a ttv -", src, null, FALSE)
 		attacher = user
 	return
@@ -88,30 +89,33 @@
 /obj/item/transfer_valve/proc/toggle_off()
 	toggle = TRUE
 
-/obj/item/transfer_valve/update_icon()
-	cut_overlays()
+/obj/item/transfer_valve/update_icon_state()
+	icon_state = "[base_icon_state][(!tank_one && !tank_two && !attached_device) ? "_1" : null]"
+	return ..()
 
-	if(!tank_one && !tank_two && !attached_device)
-		icon_state = "valve_1"
-		return
-	icon_state = "valve"
-
+/obj/item/transfer_valve/update_overlays()
+	. = ..()
 	if(tank_one)
-		add_overlay("[tank_one.icon_state]")
-	if(tank_two)
+		. += "[tank_one.icon_state]"
+
+	if(!tank_two)
+		underlays = null
+	else
 		var/mutable_appearance/J = mutable_appearance(icon, icon_state = "[tank_two.icon_state]")
 		var/matrix/T = matrix()
 		T.Translate(-13, 0)
 		J.transform = T
 		underlays = list(J)
-	else
-		underlays = null
-	if(attached_device)
-		add_overlay("device")
-		if(istype(attached_device, /obj/item/assembly/infra))
-			var/obj/item/assembly/infra/sensor = attached_device
-			if(sensor.on && sensor.visible)
-				add_overlay("proxy_beam")
+
+	if(!attached_device)
+		return
+
+	. += "device"
+	if(!istype(attached_device, /obj/item/assembly/infra))
+		return
+	var/obj/item/assembly/infra/sensor = attached_device
+	if(sensor.on && sensor.visible)
+		. += "proxy_beam"
 
 /obj/item/transfer_valve/proc/merge_gases(datum/gas_mixture/target, change_volume = TRUE)
 	var/target_self = FALSE
@@ -170,12 +174,12 @@
 
 		merge_gases()
 		for(var/i in 1 to 6)
-			addtimer(CALLBACK(src, /atom/.proc/update_icon), 20 + (i - 1) * 10)
+			addtimer(CALLBACK(src, /atom/.proc/update_appearance), 20 + (i - 1) * 10)
 
 	else if(valve_open && tank_one && tank_two)
 		split_gases()
 		valve_open = FALSE
-		update_icon()
+		update_appearance()
 /*
 	This doesn't do anything but the timer etc. expects it to be here
 	eventually maybe have it update icon to show state (timer, prox etc.) like old bombs
@@ -233,4 +237,4 @@
 				attached_device = null
 				. = TRUE
 
-	update_icon()
+	update_appearance()

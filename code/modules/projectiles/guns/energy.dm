@@ -10,7 +10,7 @@
 	var/list/ammo_type = list(/obj/item/ammo_casing/energy)
 	var/select = 1 //The state of the select fire switch. Determines from the ammo_type list what kind of shot is fired next.
 	var/can_charge = TRUE //Can it be charged in a recharger?
-	var/automatic_charge_overlays = TRUE	//Do we handle overlays with base update_icon()?
+	var/automatic_charge_overlays = TRUE	//Do we handle overlays with base update_appearance()?
 	var/charge_sections = 4
 	ammo_x_offset = 2
 	var/shaded_charge = FALSE //if this gun uses a stateful charge bar for more detail
@@ -38,7 +38,7 @@
 		cell.use(round(cell.charge / severity))
 		chambered = null //we empty the chamber
 		recharge_newshot() //and try to charge a new shot
-		update_icon()
+		update_appearance()
 
 /obj/item/gun/energy/get_cell()
 	return cell
@@ -55,7 +55,7 @@
 	recharge_newshot(TRUE)
 	if(selfcharge)
 		START_PROCESSING(SSobj, src)
-	update_icon()
+	update_appearance()
 
 /obj/item/gun/energy/ComponentInitialize()
 	. = ..()
@@ -80,7 +80,7 @@
 /obj/item/gun/energy/handle_atom_del(atom/A)
 	if(A == cell)
 		cell = null
-		update_icon()
+		update_appearance()
 	return ..()
 
 /obj/item/gun/energy/process()
@@ -92,12 +92,12 @@
 		cell.give(1000) //WS Edit - Egun energy cells
 		if(!chambered) //if empty chamber we try to charge a new shot
 			recharge_newshot(TRUE)
-		update_icon()
+		update_appearance()
 
 /obj/item/gun/energy/attack_self(mob/living/user as mob)
 	if(ammo_type.len > 1)
 		select_fire(user)
-		update_icon()
+		update_appearance()
 
 /obj/item/gun/energy/attackby(obj/item/A, mob/user, params)
 	if (!internal_cell && istype(A, /obj/item/stock_parts/cell/gun))
@@ -117,7 +117,7 @@
 		cell = C
 		to_chat(user, "<span class='notice'>You load the [C] into \the [src].</span>")
 		playsound(src, load_sound, sound_volume, load_sound_vary)
-		update_icon()
+		update_appearance()
 		return TRUE
 	else
 		to_chat(user, "<span class='warning'>You cannot seem to get \the [src] out of your hands!</span>")
@@ -133,9 +133,9 @@
 		to_chat(user, "<span class='warning'>You dropped the old cell, but the new one doesn't fit. How embarassing.</span>")*/
 	cell = null
 	user.put_in_hands(old_cell)
-	old_cell.update_icon()
+	old_cell.update_appearance()
 	to_chat(user, "<span class='notice'>You pull the cell out of \the [src].</span>")
-	update_icon()
+	update_appearance()
 
 /obj/item/gun/energy/screwdriver_act(mob/living/user, obj/item/I)
 	if(cell && !internal_cell && !bayonet && (!gun_light || !can_flashlight))
@@ -198,12 +198,12 @@
 		to_chat(user, "<span class='notice'>[src] is now set to [shot.select_name].</span>")
 	chambered = null
 	recharge_newshot(TRUE)
-	update_icon()
+	update_appearance()
 	return
 
 /obj/item/gun/energy/update_icon_state()
 	if(initial(item_state))
-		return
+		return ..()
 	var/ratio = get_charge_ratio()
 	var/new_item_state = ""
 	new_item_state = initial(icon_state)
@@ -212,6 +212,7 @@
 		new_item_state += "[shot.select_name]"
 	new_item_state += "[ratio]"
 	item_state = new_item_state
+	return ..()
 
 /obj/item/gun/energy/update_overlays()
 	. = ..()
