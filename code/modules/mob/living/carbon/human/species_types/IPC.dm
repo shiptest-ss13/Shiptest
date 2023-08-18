@@ -73,7 +73,7 @@
 			mutantbrain = /obj/item/organ/brain/mmi_holder
 		else
 			mutantbrain = /obj/item/organ/brain/mmi_holder/posibrain
-		C.RegisterSignal(C, COMSIG_PROCESS_BORGCHARGER_OCCUPANT, /mob/living/carbon/proc/charge)
+		C.RegisterSignal(C, COMSIG_PROCESS_BORGCHARGER_OCCUPANT, TYPE_PROC_REF(/mob/living/carbon, charge))
 	return ..()
 
 /datum/species/ipc/on_species_loss(mob/living/carbon/C)
