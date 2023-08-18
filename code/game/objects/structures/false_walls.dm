@@ -41,17 +41,14 @@
 	update_icon()
 	if(!density)
 		var/turf/srcturf = get_turf(src)
-		for(var/mob/living/obstacle in srcturf) //Stop people from using this as a shield
+		if(locate(/mob/living) in srcturf) //Stop people from using this as a shield
 			opening = FALSE
 			return
-		for(var/obj/structure/structure in srcturf)
-			if(structure != src | structure != istype(structure, /obj/structure/cable))
-				opening = FALSE
-				return
-		for(var/obj/machinery/machine in srcturf)
-			if(machine != istype(machine, /obj/machinery/atmospherics))
-				opening = FALSE
-				return
+		for(var/atom/blocker as anything in srcturf)
+			if(!blocker.density) //Doesn't block
+				continue
+			opening = FALSE
+			return
 	addtimer(CALLBACK(src, /obj/structure/falsewall/proc/toggle_open), 5)
 
 /obj/structure/falsewall/proc/toggle_open()
