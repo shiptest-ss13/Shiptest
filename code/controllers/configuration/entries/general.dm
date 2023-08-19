@@ -520,15 +520,6 @@
 /datum/config_entry/flag/picture_logging_camera
 
 
-/datum/config_entry/flag/reopen_roundstart_suicide_roles
-
-/datum/config_entry/flag/reopen_roundstart_suicide_roles_command_positions
-
-/datum/config_entry/number/reopen_roundstart_suicide_roles_delay
-	min_val = 30
-
-/datum/config_entry/flag/reopen_roundstart_suicide_roles_command_report
-
 /datum/config_entry/flag/auto_profile
 
 //BeginWS Edit

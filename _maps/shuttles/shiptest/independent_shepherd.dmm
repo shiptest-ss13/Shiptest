@@ -51,7 +51,7 @@
 "at" = (
 /obj/item/paper/natural{
 	icon_state = "paper_words";
-	info = "<h1>Trappist Recipe</h1><br>By Pater Noster<hr><br><b>Servings:</b> 2 <b>Prep Time:</b> 10 mins <b>Cook Time:</b> 1-2 hrs <b>Difficulty:</b> Easy<br>Trappist beer is a rich and pleasant beer traditionally brewed by monks.<br><h2>  Ingredients </h2><br>Ale: <br>Ale! The core of any good drink. Easily obtainable by fermenting oats in a barrel for a while. This will be the basis of our brew, giving it it's fruity taste and color! <br>Holy water:<br>This is what a makes a trappist a trappist and not a trapisst, the religion! Real easy to get if you are reading this where you are supposed to be reading this! If the chaplain can't bothered it's also easily harvestable from holymelons as long as you bother to separate it. <br>Sugar: <br>Sugar is what's gonna make it all come together sweetening the brew and mixing well with the ale from earlier. It's easy to obtain from grinding sugarcanes. Feel free to add liberally.<br><h2>  Preparation </h2><br>1. Mix the ale and holy water together.<br>2. Add some sugar to the mix as you keep stirring it for 1 minute. <br>3. At this point you're free to just use it as is! But feel free to experiment by adding new flavours and really making it your own! <br><h2>  Closing statement</h2><br> And that's it! Hopefully this guide has been somewhat helpful. A final tip I have is to drink it with bread and cheese, really finishes of the package.";
+	default_raw_text = "<h1>Trappist Recipe</h1><br>By Pater Noster<hr><br><b>Servings:</b> 2 <b>Prep Time:</b> 10 mins <b>Cook Time:</b> 1-2 hrs <b>Difficulty:</b> Easy<br>Trappist beer is a rich and pleasant beer traditionally brewed by monks.<br><h2>  Ingredients </h2><br>Ale: <br>Ale! The core of any good drink. Easily obtainable by fermenting oats in a barrel for a while. This will be the basis of our brew, giving it it's fruity taste and color! <br>Holy water:<br>This is what a makes a trappist a trappist and not a trapisst, the religion! Real easy to get if you are reading this where you are supposed to be reading this! If the chaplain can't bothered it's also easily harvestable from holymelons as long as you bother to separate it. <br>Sugar: <br>Sugar is what's gonna make it all come together sweetening the brew and mixing well with the ale from earlier. It's easy to obtain from grinding sugarcanes. Feel free to add liberally.<br><h2>  Preparation </h2><br>1. Mix the ale and holy water together.<br>2. Add some sugar to the mix as you keep stirring it for 1 minute. <br>3. At this point you're free to just use it as is! But feel free to experiment by adding new flavours and really making it your own! <br><h2>  Closing statement</h2><br> And that's it! Hopefully this guide has been somewhat helpful. A final tip I have is to drink it with bread and cheese, really finishes of the package.";
 	name = "paper - Trappist Recipe";
 	pixel_x = 2;
 	pixel_y = 4
@@ -1157,6 +1157,10 @@
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-8"
+	},
+/obj/machinery/light_switch{
+	pixel_y = 23;
+	pixel_x = 11
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
@@ -2520,6 +2524,10 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/machinery/light_switch{
+	pixel_y = 23;
+	pixel_x = 11
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "wy" = (
@@ -3387,6 +3395,10 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/power/apc/auto_name/directional/north,
+/obj/machinery/light_switch{
+	pixel_x = 11;
+	pixel_y = 23
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "EE" = (
@@ -3487,6 +3499,10 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/power/apc/auto_name/directional/north,
+/obj/machinery/light_switch{
+	pixel_y = 23;
+	pixel_x = 11
+	},
 /turf/open/floor/wood,
 /area/ship/crew/hydroponics)
 "FQ" = (
@@ -3794,6 +3810,11 @@
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable{
 	icon_state = "0-2"
+	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_y = 12;
+	pixel_x = -20
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/bridge)
@@ -5149,10 +5170,6 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/siding/wood,
-/obj/machinery/light_switch{
-	pixel_x = -4;
-	pixel_y = 26
-	},
 /turf/open/floor/wood,
 /area/ship/crew/dorm)
 "SX" = (
@@ -5436,6 +5453,13 @@
 	},
 /turf/open/floor/wood,
 /area/ship/crew/library)
+"Vr" = (
+/obj/machinery/light_switch{
+	pixel_x = 6;
+	pixel_y = 23
+	},
+/turf/closed/wall/r_wall,
+/area/ship/engineering/atmospherics)
 "Vu" = (
 /obj/structure/chair/pew/left,
 /obj/effect/turf_decal/siding/wood{
@@ -5585,6 +5609,11 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/power/apc/auto_name/directional/east,
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_y = 11;
+	pixel_x = 19
+	},
 /turf/open/floor/wood,
 /area/ship/hallway/fore)
 "WB" = (
@@ -6739,7 +6768,7 @@ xj
 (21,1,1) = {"
 xj
 xj
-Uf
+Vr
 Ez
 jS
 QI

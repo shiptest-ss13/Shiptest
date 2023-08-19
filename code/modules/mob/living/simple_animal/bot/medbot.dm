@@ -13,12 +13,10 @@
 	name = "\improper Medibot"
 	desc = "A little medical robot. He looks somewhat underwhelmed."
 	icon = 'icons/mob/aibots.dmi'
-
 	icon_state = "medibot"
 	base_icon_state = "medibot"
 	var/base_screen_state = "medibot"
 	var/stationary_suffix = null //for icon states
-
 	density = FALSE
 	anchored = FALSE
 	health = 20
@@ -137,7 +135,7 @@
 	qdel(J)
 	if(new_skin)
 		base_icon_state = new_skin
-	update_icon()
+	update_appearance()
 
 /mob/living/simple_animal/bot/medbot/Destroy()
 	linked_techweb = null
@@ -150,14 +148,14 @@
 	oldloc = null
 	last_found = world.time
 	declare_cooldown = 0
-	update_icon()
+	update_appearance()
 
 /mob/living/simple_animal/bot/medbot/proc/soft_reset() //Allows the medibot to still actively perform its medical duties without being completely halted as a hard reset does.
 	path = list()
 	patient = null
 	mode = BOT_IDLE
 	last_found = world.time
-	update_icon()
+	update_appearance()
 
 /mob/living/simple_animal/bot/medbot/set_custom_texts()
 
@@ -213,7 +211,7 @@
 	else if(href_list["stationary"])
 		stationary_mode = !stationary_mode
 		path = list()
-		update_icon()
+		update_appearance()
 
 	else if(href_list["hptech"])
 		if(!linked_techweb)
@@ -398,7 +396,7 @@
 	if(patient && (get_dist(src,patient) <= 1) && !tending) //Patient is next to us, begin treatment!
 		if(mode != BOT_HEALING)
 			mode = BOT_HEALING
-			update_icon()
+			update_appearance()
 			frustration = 0
 			medicate_patient(patient)
 		return
@@ -458,9 +456,6 @@
 	if(!(loc == C.loc) && !(isturf(C.loc) && isturf(loc)))
 		return FALSE
 
-	if(C.suiciding)
-		return FALSE //Kevorkian school of robotic medical assistants.
-
 	if(emagged == 2) //Everyone needs our medicine. (Our medicine is toxins)
 		return TRUE
 
@@ -492,9 +487,6 @@
 		return TRUE
 
 /mob/living/simple_animal/bot/medbot/attack_hand(mob/living/carbon/human/H)
-	if(INTERACTING_WITH(H, src))
-		to_chat(H, "<span class='warning'>You're already interacting with [src].</span>")
-		return
 
 	if(H.a_intent == INTENT_DISARM && mode != BOT_TIPPED)
 		H.visible_message("<span class='danger'>[H] begins tipping over [src].</span>", "<span class='warning'>You begin tipping over [src]...</span>")
@@ -521,9 +513,9 @@
 		var/mob/living/carbon/C = A
 		patient = C
 		mode = BOT_HEALING
-		update_icon()
+		update_appearance()
 		medicate_patient(C)
-		update_icon()
+		update_appearance()
 	else
 		..()
 
@@ -603,7 +595,7 @@
 			else
 				tending = FALSE
 
-			update_icon()
+			update_appearance()
 			if(!tending)
 				visible_message("[src] places its tools back into itself.")
 				soft_reset()

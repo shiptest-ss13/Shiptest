@@ -19,7 +19,6 @@
 	belt = /obj/item/pda/janitor
 	ears = /obj/item/radio/headset/headset_srv
 	uniform = /obj/item/clothing/under/rank/civilian/janitor
-	alt_uniform = /obj/item/clothing/under/rank/civilian/janitor/maid //WS Edit - Alt Uniforms
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1)
 
 /datum/outfit/job/janitor/pre_equip(mob/living/carbon/human/H, visualsOnly)
@@ -27,16 +26,6 @@
 	if(GARBAGEDAY in SSevents.holidays)
 		l_pocket = /obj/item/gun/ballistic/revolver
 		r_pocket = /obj/item/ammo_box/a357
-
-/datum/outfit/job/janitor/custodian
-	name = "Janitor (Custodian)"
-
-	uniform = /obj/item/clothing/under/rank/civilian/janitor/custodian
-
-/datum/outfit/job/janitor/sanitationtechnician
-	name = "Janitor (Sanitation Technician)"
-
-	uniform = /obj/item/clothing/under/rank/civilian/janitor/sanitation_tech
 
 /datum/outfit/job/janitor/maid
 	name = "Maid"

@@ -279,7 +279,7 @@
 	)
 
 	closed_turf_types =  list(
-		/turf/closed/mineral/random/asteroid/wasteplanet = 40,
+		/turf/closed/mineral/random/wasteplanet = 40,
 		/turf/closed/wall/r_wall = 1,
 		/turf/closed/wall/r_wall/rust = 3,
 		/turf/closed/wall = 2,
