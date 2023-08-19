@@ -100,15 +100,12 @@
 	declare_crit = 0
 	heal_amount = 5
 
-/mob/living/simple_animal/bot/medbot/update_icon(flick_state)
+/mob/living/simple_animal/bot/medbot/update_icon()
 	cut_overlays()
 	var/mutable_appearance/screen_overlay = mutable_appearance(icon, null)
 	var/mutable_appearance/screen_overlay_2 = mutable_appearance(icon, null)
 	if(stationary_mode)//we add the stationary_suffix to the screen state name, if not dont add anythiung
 		stationary_suffix = "_stationary"
-
-	if(flick_state)
-		flick(flick_state,screen_overlay)
 
 	icon_state = "[base_icon_state]"
 	screen_overlay.icon_state = null
@@ -277,6 +274,7 @@
 			var/message = pick(messagevoice)
 			speak(message)
 			playsound(src, messagevoice[message], 50, FALSE)
+			flick_overlay_static("[base_screen_state][stationary_suffix]_notice", src, 2 SECONDS)
 			last_newpatient_speak = world.time
 		return H
 	else
@@ -549,7 +547,7 @@
 		speak(message)
 		playsound(src, messagevoice[message], 50)
 		oldpatient = patient
-		update_icon("[base_screen_state][stationary_suffix]_death")
+		flick_overlay_static("[base_screen_state][stationary_suffix]_death", src, 6 SECONDS)
 		soft_reset()
 		return
 
@@ -576,7 +574,7 @@
 			var/message = pick(messagevoice)
 			speak(message)
 			playsound(src, messagevoice[message], 50)
-			update_icon("[base_screen_state][stationary_suffix]_patched")
+			flick_overlay_static("[base_screen_state][stationary_suffix]_patched", src, 2 SECONDS)
 			bot_reset()
 			tending = FALSE
 		else if(patient)
