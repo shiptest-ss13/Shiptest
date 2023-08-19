@@ -99,6 +99,7 @@
 	heal_amount = 5
 
 /mob/living/simple_animal/bot/medbot/update_icon()
+	. = ..()
 	cut_overlays()
 	var/mutable_appearance/screen_overlay = mutable_appearance(icon, null)
 	var/mutable_appearance/screen_overlay_2 = mutable_appearance(icon, null)
