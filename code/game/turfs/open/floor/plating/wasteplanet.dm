@@ -65,7 +65,6 @@
 	light_power = 0.2
 	light_color = LIGHT_COLOR_FLARE
 
-/turf/open/floor/plating/rust/wasteplanet/lit
 /turf/open/floor/plating/wasteplanet/rust/lit
 	light_range = 2
 	light_power = 0.2
