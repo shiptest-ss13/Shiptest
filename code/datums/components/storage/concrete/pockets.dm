@@ -29,11 +29,6 @@
 	quickdraw = FALSE
 	silent = FALSE
 
-/datum/component/storage/concrete/pockets/exo/cloak
-	max_items = 1
-	max_w_class = WEIGHT_CLASS_NORMAL
-	quickdraw = TRUE
-
 /datum/component/storage/concrete/pockets/exo/large
 	max_items = 3
 

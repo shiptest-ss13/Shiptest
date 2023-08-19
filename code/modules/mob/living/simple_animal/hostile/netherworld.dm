@@ -154,7 +154,7 @@
 
 /mob/living/simple_animal/hostile/netherworld/blankbody
 	name = "blank body"
-	desc = "This looks human enough, but its flesh has an ashy texture, and it's face is featureless save an eerie smile."
+	desc = "This looks human enough, but its flesh has an ashy texture, and its face is featureless save an eerie smile."
 	icon_state = "blank-body"
 	icon_living = "blank-body"
 	icon_dead = "blank-dead"

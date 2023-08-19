@@ -32,7 +32,7 @@
 		game_active = FALSE
 		program_icon_state = "arcade_off"
 		if(istype(computer))
-			computer.update_icon()
+			computer.update_appearance()
 		ticket_count += 1
 		usr?.mind?.adjust_experience(/datum/skill/gaming, 50)
 		sleep(10)
@@ -42,7 +42,7 @@
 		game_active = FALSE
 		program_icon_state = "arcade_off"
 		if(istype(computer))
-			computer.update_icon()
+			computer.update_appearance()
 		usr?.mind?.adjust_experience(/datum/skill/gaming, 10)
 		sleep(10)
 
@@ -172,4 +172,4 @@
 			boss_id = rand(1,6)
 			pause_state = FALSE
 			if(istype(computer))
-				computer.update_icon()
+				computer.update_appearance()

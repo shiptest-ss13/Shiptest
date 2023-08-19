@@ -54,10 +54,8 @@
 	return ..()
 
 /obj/machinery/jukebox/update_icon_state()
-	if(active)
-		icon_state = "[initial(icon_state)]-active"
-	else
-		icon_state = "[initial(icon_state)]"
+	icon_state = "[initial(icon_state)]-[active ? "active" : null]"
+	return ..()
 
 /obj/machinery/jukebox/ui_status(mob/user)
 	if(!anchored)
@@ -68,7 +66,7 @@
 		user.playsound_local(src, 'sound/misc/compiler-failure.ogg', 25, TRUE)
 		return UI_CLOSE
 	if(!SSjukeboxes.songs.len && !isobserver(user)) //WS Edit Cit #7367
-		to_chat(user,"<span class='warning'>Error: No music tracks have been authorized for your station. Petition Central Command to resolve this issue.</span>")
+		to_chat(user,"<span class='warning'>Error: No music tracks have been authorized for this sector. Petition the local authority to resolve this issue.</span>")
 		playsound(src, 'sound/misc/compiler-failure.ogg', 25, TRUE)
 		return UI_CLOSE
 	return ..()
@@ -155,7 +153,7 @@
 	var/jukeboxslottotake = SSjukeboxes.addjukebox(src, selection, 2) //WS Edit Cit #7367 & #7458
 	if(jukeboxslottotake)
 		active = TRUE
-		update_icon()
+		update_appearance()
 		START_PROCESSING(SSobj, src)
 		stop = world.time + selection.song_length
 		return TRUE
@@ -453,7 +451,7 @@
 		active = FALSE
 		dance_over()
 		playsound(src,'sound/machines/terminal_off.ogg',50,TRUE)
-		update_icon()
+		update_appearance()
 		stop = world.time + 100
 
 /obj/machinery/jukebox/disco/process()
