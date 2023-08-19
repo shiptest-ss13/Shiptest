@@ -34,7 +34,7 @@
 		cam_background.assigned_map = map_name
 		cam_background.del_on_map_removal = FALSE
 		update_screen()
-	update_icon()
+	update_appearance()
 
 /obj/overmap/Destroy(force)
 	if(parent)

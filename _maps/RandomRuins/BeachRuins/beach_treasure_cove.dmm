@@ -19,23 +19,19 @@
 /turf/open/floor/wood,
 /area/ruin/beach/treasure_cove)
 "ay" = (
-/obj/structure/barricade/wooden,
-/obj/structure/barricade/wooden/crude,
-/turf/open/floor/plating/dirt/jungle,
-/area/overmap_encounter/planetoid/cave/explored)
+/obj/structure/flora/tree/palm,
+/turf/open/floor/plating/beach/sand{
+	light_range = 2
+	},
+/area/ruin/unpowered)
 "aY" = (
-/obj/structure/flora/ausbushes/reedbush{
-	pixel_x = -11;
-	pixel_y = 7
-	},
+/obj/structure/flora/ausbushes/reedbush,
 /turf/open/water/beach,
-/area/overmap_encounter/planetoid/cave/explored)
+/area/ruin/unpowered)
 "bB" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 8
-	},
+/obj/structure/flora/rock/beach,
 /turf/open/water/beach,
-/area/overmap_encounter/planetoid/cave/explored)
+/area/ruin/unpowered)
 "bI" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/light/small/directional/north,
@@ -43,20 +39,23 @@
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/treasure_cove)
 "bN" = (
-/obj/effect/turf_decal/weather/sand{
-	dir = 6
-	},
+/obj/effect/turf_decal/weather/sand,
 /turf/open/water/beach,
-/area/overmap_encounter/planetoid/beachplanet/explored)
+/area/ruin/unpowered)
 "bP" = (
 /obj/item/chair/wood,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/ruin/beach/treasure_cove)
 "bQ" = (
-/obj/structure/flora/junglebush,
+/obj/structure/railing/wood{
+	layer = 3.1;
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/spawner/lootdrop/glowstick,
 /turf/open/floor/plating/dirt/jungle,
-/area/overmap_encounter/planetoid/cave/explored)
+/area/ruin/unpowered)
 "cJ" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/ore_box,
@@ -66,14 +65,22 @@
 /turf/open/floor/plating/dirt/jungle/lit,
 /area/ruin/beach/treasure_cove)
 "cU" = (
-/turf/open/floor/plating/dirt/jungle,
-/area/overmap_encounter/planetoid/cave/explored)
-"db" = (
-/obj/effect/overlay/palmtree_l,
-/turf/open/floor/plating/beach/sand{
-	light_range = 2
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
 	},
-/area/overmap_encounter/planetoid/beachplanet/explored)
+/turf/open/floor/plasteel/stairs{
+	barefootstep = "woodbarefoot";
+	color = "#A47449";
+	dir = 4;
+	footstep = "wood"
+	},
+/area/ruin/unpowered)
+"db" = (
+/obj/effect/turf_decal/weather/sand{
+	dir = 5
+	},
+/turf/open/water/beach,
+/area/ruin/unpowered)
 "dE" = (
 /obj/machinery/light/directional/east,
 /obj/structure/cable{
@@ -85,15 +92,15 @@
 /turf/closed/mineral/random/beach,
 /area/ruin/beach/treasure_cove)
 "dO" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
+/obj/structure/flora/rock{
+	pixel_x = 13
 	},
-/obj/structure/flora/rock/pile/largejungle{
-	pixel_x = -10;
-	pixel_y = 3
-	},
-/turf/open/water/beach,
-/area/overmap_encounter/planetoid/cave/explored)
+/obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/structure/spacevine,
+/obj/structure/spacevine/dense,
+/obj/structure/punji_sticks,
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin/unpowered)
 "dV" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 8
@@ -102,17 +109,9 @@
 /turf/open/floor/wood,
 /area/ruin/beach/treasure_cove)
 "el" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 9
-	},
-/obj/structure/flora/ausbushes/stalkybush{
-	pixel_y = 11;
-	pixel_x = 19
-	},
-/obj/structure/spacevine,
-/obj/structure/spacevine/dense,
-/turf/open/water/beach,
-/area/overmap_encounter/planetoid/cave/explored)
+/obj/structure/flora/ausbushes/fernybush,
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin/unpowered)
 "eI" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood{
@@ -135,10 +134,16 @@
 	},
 /area/ruin/beach/treasure_cove)
 "fu" = (
-/turf/open/floor/plating/beach/sand{
-	light_range = 2
+/obj/structure/flora/ausbushes/reedbush{
+	pixel_x = -6;
+	pixel_y = 5
 	},
-/area/overmap_encounter/planetoid/cave/explored)
+/obj/structure/flora/ausbushes/reedbush{
+	pixel_x = 10;
+	pixel_y = 16
+	},
+/turf/open/water/beach,
+/area/ruin/unpowered)
 "fE" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
@@ -155,14 +160,12 @@
 /turf/open/floor/concrete/slab_4,
 /area/ruin/beach/treasure_cove)
 "fR" = (
-/obj/structure/railing/wood{
-	layer = 3.1;
-	dir = 8
+/obj/structure/flora/rock/pile/largejungle{
+	pixel_x = -25;
+	pixel_y = -9
 	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/spawner/lootdrop/glowstick,
-/turf/open/floor/plating/dirt/jungle,
-/area/overmap_encounter/planetoid/cave/explored)
+/turf/closed/mineral/random/beach,
+/area/ruin/unpowered)
 "fU" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 4
@@ -172,11 +175,16 @@
 /turf/open/floor/wood,
 /area/ruin/beach/treasure_cove)
 "gh" = (
-/obj/structure/flora/tree/palm,
-/turf/open/floor/plating/beach/sand{
-	light_range = 2
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
 	},
-/area/overmap_encounter/planetoid/beachplanet/explored)
+/obj/vehicle/ridden/lavaboat{
+	dir = 8;
+	name = "boat";
+	desc = "A boat used for traversing water. Thats right."
+	},
+/turf/open/water/beach/deep,
+/area/ruin/unpowered)
 "hm" = (
 /turf/open/floor/plasteel/stairs{
 	barefootstep = "woodbarefoot";
@@ -185,18 +193,11 @@
 	},
 /area/ruin/beach/treasure_cove)
 "ht" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 9
+/obj/effect/overlay/palmtree_r,
+/turf/open/floor/plating/beach/sand{
+	light_range = 2
 	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 10
-	},
-/obj/structure/railing/wood{
-	layer = 3.1;
-	dir = 8
-	},
-/turf/open/water/beach,
-/area/overmap_encounter/planetoid/cave/explored)
+/area/ruin/unpowered)
 "hJ" = (
 /obj/effect/turf_decal/industrial/traffic,
 /obj/effect/turf_decal/industrial/traffic{
@@ -206,34 +207,33 @@
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/treasure_cove)
 "hS" = (
-/obj/effect/turf_decal/weather/sand{
-	dir = 10
+/turf/open/floor/plating/beach/sand{
+	light_range = 2
 	},
-/turf/open/water/beach,
-/area/overmap_encounter/planetoid/beachplanet/explored)
+/area/ruin/unpowered)
 "ie" = (
-/obj/structure/flora/ausbushes/reedbush{
-	pixel_x = -6;
-	pixel_y = 5
+/obj/structure/closet/crate/grave/loot{
+	desc = "Here lies our great brother and infamous pirate"
 	},
-/obj/structure/flora/ausbushes/reedbush{
-	pixel_x = 10;
-	pixel_y = 16
-	},
-/turf/open/water/beach,
-/area/overmap_encounter/planetoid/cave/explored)
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin/unpowered)
 "ii" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
 	},
 /turf/open/water/beach,
-/area/overmap_encounter/planetoid/cave/explored)
+/area/ruin/unpowered)
 "il" = (
-/obj/structure/flora/ausbushes/sunnybush{
-	pixel_x = -5
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
 	},
-/turf/open/floor/plating/grass/beach/lit,
-/area/overmap_encounter/planetoid/cave/explored)
+/obj/structure/flora/rock/pile/largejungle{
+	pixel_x = -25;
+	pixel_y = -9
+	},
+/turf/open/water/beach,
+/area/ruin/unpowered)
 "jb" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
@@ -255,12 +255,8 @@
 /turf/open/floor/carpet/red,
 /area/ruin/beach/treasure_cove)
 "jf" = (
-/obj/structure/flora/rock/pile/largejungle{
-	pixel_x = -25;
-	pixel_y = -9
-	},
-/turf/closed/mineral/random/beach,
-/area/overmap_encounter/planetoid/cave/explored)
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin/unpowered)
 "jq" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
@@ -285,11 +281,10 @@
 	},
 /area/ruin/beach/treasure_cove)
 "jT" = (
-/obj/effect/turf_decal/weather/sand{
-	dir = 5
-	},
-/turf/open/water/beach,
-/area/overmap_encounter/planetoid/beachplanet/explored)
+/obj/structure/barricade/wooden,
+/obj/structure/barricade/wooden/crude,
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin/unpowered)
 "jV" = (
 /obj/structure/flora/grass/jungle/b{
 	pixel_x = -8;
@@ -298,21 +293,17 @@
 /turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/ruin/beach/treasure_cove)
 "jZ" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 4
-	},
-/obj/vehicle/ridden/lavaboat{
-	dir = 8;
-	name = "boat";
-	desc = "A boat used for traversing water. Thats right."
+/obj/effect/turf_decal/weather/sand{
+	dir = 10
 	},
 /turf/open/water/beach,
-/area/overmap_encounter/planetoid/cave/explored)
+/area/ruin/unpowered)
 "kl" = (
+/obj/effect/overlay/palmtree_l,
 /turf/open/floor/plating/beach/sand{
 	light_range = 2
 	},
-/area/overmap_encounter/planetoid/beachplanet/explored)
+/area/ruin/unpowered)
 "km" = (
 /mob/living/simple_animal/hostile/cockroach,
 /turf/open/floor/wood{
@@ -328,37 +319,31 @@
 /turf/open/floor/plating,
 /area/ruin/beach/treasure_cove)
 "kK" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 4
+/obj/structure/fluff/fokoff_sign{
+	pixel_x = -13
 	},
-/turf/open/water/beach/deep,
-/area/overmap_encounter/planetoid/cave/explored)
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin/unpowered)
 "le" = (
 /obj/effect/turf_decal/siding/wood,
 /turf/open/water/beach,
-/area/overmap_encounter/planetoid/cave/explored)
+/area/ruin/unpowered)
 "lt" = (
-/obj/structure/flora/rock/jungle{
-	pixel_x = -5;
-	pixel_y = 8
-	},
-/turf/open/floor/plating/dirt/jungle,
-/area/overmap_encounter/planetoid/cave/explored)
+/turf/closed/mineral/random/beach,
+/area/ruin/unpowered)
 "lL" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /mob/living/simple_animal/hostile/cockroach,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/ruin/beach/treasure_cove)
 "mG" = (
-/obj/structure/flora/rock{
-	pixel_x = 13
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
 	},
-/obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/structure/spacevine,
 /obj/structure/spacevine/dense,
-/obj/structure/punji_sticks,
-/turf/open/floor/plating/dirt/jungle,
-/area/overmap_encounter/planetoid/cave/explored)
+/turf/open/water/beach,
+/area/ruin/unpowered)
 "mK" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/closet/crate/secure/loot,
@@ -389,12 +374,13 @@
 /turf/open/floor/wood,
 /area/ruin/beach/treasure_cove)
 "nR" = (
-/obj/structure/flora/grass/jungle{
-	pixel_x = -12
+/obj/structure/flora/junglebush,
+/obj/structure/railing/wood{
+	layer = 3.1;
+	dir = 8
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/dirt/jungle,
-/area/overmap_encounter/planetoid/cave/explored)
+/area/ruin/unpowered)
 "on" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -422,13 +408,9 @@
 /turf/open/floor/concrete/slab_3,
 /area/ruin/beach/treasure_cove)
 "oE" = (
-/obj/structure/destructible/tribal_torch/lit{
-	pixel_x = 12
-	},
-/obj/structure/spacevine,
-/obj/structure/punji_sticks,
-/turf/open/floor/plating/dirt/jungle,
-/area/overmap_encounter/planetoid/cave/explored)
+/obj/structure/flora/rock/beach,
+/turf/open/water/beach/deep,
+/area/ruin/unpowered)
 "oO" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
@@ -439,9 +421,18 @@
 /turf/open/floor/wood,
 /area/ruin/beach/treasure_cove)
 "oR" = (
-/mob/living/simple_animal/beachcarp/bass,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 9
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 10
+	},
+/obj/structure/railing/wood{
+	layer = 3.1;
+	dir = 8
+	},
 /turf/open/water/beach,
-/area/overmap_encounter/planetoid/beachplanet/explored)
+/area/ruin/unpowered)
 "oS" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -462,25 +453,16 @@
 /turf/closed/wall/concrete,
 /area/ruin/beach/treasure_cove)
 "pT" = (
-/obj/structure/flora/ausbushes/grassybush,
+/obj/effect/overlay/palmtree_r,
 /turf/open/floor/plating/grass/beach/lit,
-/area/overmap_encounter/planetoid/cave/explored)
+/area/ruin/unpowered)
 "pU" = (
-/obj/structure/flora/junglebush/large{
-	pixel_x = -22;
-	pixel_y = -3
-	},
 /obj/structure/flora/grass/jungle{
-	pixel_x = 2;
-	pixel_y = -15
+	pixel_x = -12
 	},
-/obj/structure/destructible/tribal_torch/lit{
-	pixel_x = 16;
-	pixel_y = 6
-	},
-/mob/living/simple_animal/hostile/rat,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/dirt/jungle,
-/area/overmap_encounter/planetoid/cave/explored)
+/area/ruin/unpowered)
 "qc" = (
 /obj/effect/decal/cleanable/cobweb,
 /obj/machinery/power/apc/auto_name/directional/west,
@@ -492,9 +474,12 @@
 	},
 /area/ruin/beach/treasure_cove)
 "qf" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
 /obj/structure/spacevine,
 /turf/open/water/beach,
-/area/overmap_encounter/planetoid/cave/explored)
+/area/ruin/unpowered)
 "qr" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
@@ -517,10 +502,10 @@
 /area/ruin/beach/treasure_cove)
 "qw" = (
 /obj/effect/turf_decal/weather/dirt{
-	dir = 5
+	dir = 9
 	},
 /turf/open/water/beach,
-/area/overmap_encounter/planetoid/cave/explored)
+/area/ruin/unpowered)
 "qN" = (
 /obj/item/storage/box/zipties{
 	pixel_y = 7;
@@ -562,12 +547,11 @@
 /turf/open/floor/wood,
 /area/ruin/beach/treasure_cove)
 "rA" = (
-/obj/structure/flora/ausbushes/fullgrass{
-	pixel_x = 13;
-	pixel_y = 6
+/mob/living/simple_animal/beachcarp/trout{
+	dir = 4
 	},
-/turf/open/floor/plating/grass/beach/lit,
-/area/overmap_encounter/planetoid/cave/explored)
+/turf/open/water/beach,
+/area/ruin/unpowered)
 "rK" = (
 /obj/structure/chair/wood{
 	dir = 8
@@ -628,23 +612,29 @@
 /turf/open/floor/plating,
 /area/ruin/beach/treasure_cove)
 "td" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
 /turf/open/water/beach,
-/area/overmap_encounter/planetoid/cave/explored)
+/area/ruin/unpowered)
 "tm" = (
 /obj/structure/barricade/wooden,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/ruin/beach/treasure_cove)
 "tx" = (
 /obj/structure/flora/ausbushes/stalkybush{
+	pixel_x = -12;
+	pixel_y = 10
+	},
+/obj/structure/flora/ausbushes/stalkybush{
+	pixel_y = -6
+	},
+/obj/structure/flora/ausbushes/stalkybush{
 	pixel_x = 10;
 	pixel_y = 1
 	},
-/obj/structure/flora/ausbushes/stalkybush{
-	pixel_y = -7;
-	pixel_x = -5
-	},
 /turf/open/water/beach,
-/area/overmap_encounter/planetoid/cave/explored)
+/area/ruin/unpowered)
 "tA" = (
 /obj/structure/barricade/wooden,
 /obj/structure/barricade/wooden/crude,
@@ -655,13 +645,11 @@
 	dir = 1
 	},
 /turf/open/water/beach,
-/area/overmap_encounter/planetoid/cave/explored)
+/area/ruin/unpowered)
 "tH" = (
-/obj/effect/turf_decal/weather/sand{
-	dir = 4
-	},
+/mob/living/simple_animal/beachcarp/bass,
 /turf/open/water/beach,
-/area/overmap_encounter/planetoid/beachplanet/explored)
+/area/ruin/unpowered)
 "tS" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -678,11 +666,11 @@
 /obj/structure/table/reinforced{
 	color = "#c1b6a5"
 	},
-/obj/item/ammo_box/c38_box/hunting{
+/obj/item/ammo_box/c38_box{
 	pixel_x = 10;
 	pixel_y = 8
 	},
-/obj/item/ammo_box/c38_box/hunting{
+/obj/item/ammo_box/c38_box{
 	pixel_x = 10
 	},
 /obj/structure/sign/poster/contraband/energy_swords{
@@ -702,11 +690,14 @@
 /turf/open/floor/wood,
 /area/ruin/beach/treasure_cove)
 "uC" = (
-/obj/effect/turf_decal/weather/sand{
+/obj/effect/turf_decal/weather/dirt{
 	dir = 9
 	},
-/turf/open/water/beach,
-/area/overmap_encounter/planetoid/beachplanet/explored)
+/obj/effect/turf_decal/weather/dirt{
+	dir = 5
+	},
+/turf/open/floor/plating/dirt/jungle/wasteland,
+/area/ruin/unpowered)
 "uI" = (
 /obj/structure/railing/wood{
 	layer = 3.1
@@ -730,14 +721,9 @@
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/treasure_cove)
 "vo" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 9
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 5
-	},
-/turf/open/floor/plating/dirt/jungle/wasteland,
-/area/overmap_encounter/planetoid/cave/explored)
+/obj/structure/flora/rock/pile,
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin/unpowered)
 "vW" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -761,12 +747,11 @@
 	},
 /area/ruin/beach/treasure_cove)
 "wS" = (
-/obj/structure/closet/crate/grave/loot{
-	desc = "Here lies our great brother and infamous pirate"
+/obj/effect/turf_decal/weather/dirt{
+	dir = 5
 	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating/dirt/jungle,
-/area/overmap_encounter/planetoid/cave/explored)
+/turf/open/water/beach,
+/area/ruin/unpowered)
 "xa" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
@@ -791,15 +776,15 @@
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/treasure_cove)
 "xg" = (
-/turf/open/water/beach/deep,
-/area/overmap_encounter/planetoid/beachplanet/explored)
+/mob/living/simple_animal/beachcarp/perch,
+/turf/open/water/beach,
+/area/ruin/unpowered)
 "xm" = (
-/obj/structure/flora/rock/jungle{
-	pixel_x = 11;
-	pixel_y = -20
+/obj/structure/flora/ausbushes/sunnybush{
+	pixel_x = -5
 	},
-/turf/closed/mineral/random/beach,
-/area/overmap_encounter/planetoid/cave/explored)
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/unpowered)
 "xU" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
@@ -849,22 +834,25 @@
 	},
 /area/ruin/beach/treasure_cove)
 "yX" = (
-/obj/structure/closet/crate/goldcrate,
+/obj/structure/flora/ausbushes/fullgrass{
+	pixel_y = -7;
+	pixel_x = 1
+	},
 /turf/open/floor/plating/dirt/jungle,
-/area/overmap_encounter/planetoid/cave/explored)
+/area/ruin/unpowered)
 "zh" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
 	},
 /area/ruin/beach/treasure_cove)
-"zy" = (
-/obj/structure/barricade/wooden,
-/turf/open/floor/plating/dirt/jungle/dark/lit,
-/area/overmap_encounter/planetoid/cave/explored)
 "zW" = (
-/turf/open/water/beach/deep,
-/area/overmap_encounter/planetoid/cave/explored)
+/obj/structure/flora/ausbushes/reedbush{
+	pixel_x = -11;
+	pixel_y = 7
+	},
+/turf/open/water/beach,
+/area/ruin/unpowered)
 "Ab" = (
 /obj/item/storage/bag/money/vault{
 	pixel_x = 4
@@ -883,24 +871,18 @@
 /area/ruin/beach/treasure_cove)
 "Ad" = (
 /obj/effect/turf_decal/weather/dirt{
-	dir = 4
+	dir = 10
 	},
 /turf/open/water/beach,
-/area/overmap_encounter/planetoid/beachplanet/explored)
+/area/ruin/unpowered)
 "An" = (
-/obj/structure/flora/ausbushes/fullgrass{
-	pixel_y = -7;
-	pixel_x = 1
-	},
+/obj/structure/closet/crate/goldcrate,
 /turf/open/floor/plating/dirt/jungle,
-/area/overmap_encounter/planetoid/cave/explored)
+/area/ruin/unpowered)
 "At" = (
-/obj/structure/destructible/tribal_torch/lit{
-	pixel_x = -8;
-	pixel_y = 11
-	},
-/turf/open/floor/plating/dirt/jungle,
-/area/overmap_encounter/planetoid/cave/explored)
+/obj/structure/flora/ausbushes/grassybush,
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/unpowered)
 "Au" = (
 /turf/open/floor/wood/walnut,
 /area/ruin/beach/treasure_cove)
@@ -910,15 +892,32 @@
 /turf/open/floor/wood/walnut,
 /area/ruin/beach/treasure_cove)
 "BN" = (
-/turf/closed/mineral/random/beach,
-/area/overmap_encounter/planetoid/cave/explored)
+/obj/effect/turf_decal/weather/dirt{
+	dir = 5
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 6
+	},
+/obj/structure/destructible/tribal_torch/lit{
+	pixel_x = 12
+	},
+/turf/open/floor/plating/dirt/jungle/wasteland,
+/area/ruin/unpowered)
 "BT" = (
 /turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/ruin/beach/treasure_cove)
 "Cg" = (
-/obj/structure/flora/ausbushes/stalkybush,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 9
+	},
+/obj/structure/flora/ausbushes/stalkybush{
+	pixel_y = 11;
+	pixel_x = 19
+	},
+/obj/structure/spacevine,
+/obj/structure/spacevine/dense,
 /turf/open/water/beach,
-/area/overmap_encounter/planetoid/cave/explored)
+/area/ruin/unpowered)
 "Cz" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 4
@@ -927,14 +926,11 @@
 /turf/open/floor/wood,
 /area/ruin/beach/treasure_cove)
 "CB" = (
-/obj/structure/flora/rock/jungle{
-	pixel_x = 11;
-	pixel_y = -20
+/obj/effect/turf_decal/weather/sand{
+	dir = 6
 	},
-/obj/structure/flora/ausbushes/ppflowers,
-/mob/living/simple_animal/hostile/rat,
-/turf/open/floor/plating/dirt/jungle,
-/area/overmap_encounter/planetoid/cave/explored)
+/turf/open/water/beach,
+/area/ruin/unpowered)
 "CZ" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -943,13 +939,9 @@
 /obj/machinery/light/directional/north,
 /turf/open/floor/wood,
 /area/ruin/beach/treasure_cove)
-"Dp" = (
-/obj/structure/flora/ausbushes/reedbush,
-/turf/open/water/beach,
-/area/overmap_encounter/planetoid/cave/explored)
 "Dz" = (
 /turf/open/floor/plating/grass/beach/lit,
-/area/overmap_encounter/planetoid/cave/explored)
+/area/ruin/unpowered)
 "DC" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
@@ -957,28 +949,22 @@
 /turf/open/floor/wood,
 /area/ruin/beach/treasure_cove)
 "DY" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
-	},
-/turf/open/water/beach,
-/area/overmap_encounter/planetoid/cave/explored)
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin/unpowered)
 "Ez" = (
 /turf/open/floor/carpet/red,
 /area/ruin/beach/treasure_cove)
 "EB" = (
-/obj/structure/flora/ausbushes/stalkybush{
-	pixel_x = -12;
-	pixel_y = 10
-	},
 /obj/structure/flora/ausbushes/stalkybush,
 /turf/open/water/beach,
-/area/overmap_encounter/planetoid/cave/explored)
+/area/ruin/unpowered)
 "EE" = (
-/mob/living/simple_animal/crab,
-/turf/open/floor/plating/beach/sand{
-	light_range = 2
+/obj/effect/turf_decal/weather/sand{
+	dir = 4
 	},
-/area/overmap_encounter/planetoid/beachplanet/explored)
+/turf/open/water/beach,
+/area/ruin/unpowered)
 "EF" = (
 /obj/structure/chair/wood{
 	dir = 8
@@ -992,14 +978,6 @@
 /mob/living/simple_animal/hostile/pirate/melee,
 /turf/open/floor/plating/dirt/jungle/lit,
 /area/ruin/beach/treasure_cove)
-"Fb" = (
-/obj/structure/flora/junglebush,
-/obj/structure/railing/wood{
-	layer = 3.1;
-	dir = 8
-	},
-/turf/open/floor/plating/dirt/jungle,
-/area/overmap_encounter/planetoid/cave/explored)
 "Gm" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/structure/bed{
@@ -1009,13 +987,9 @@
 /turf/open/floor/wood/walnut,
 /area/ruin/beach/treasure_cove)
 "GC" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
-	},
 /obj/structure/spacevine,
-/obj/structure/spacevine/dense,
 /turf/open/water/beach,
-/area/overmap_encounter/planetoid/cave/explored)
+/area/ruin/unpowered)
 "Hf" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -1026,11 +1000,11 @@
 	},
 /area/ruin/beach/treasure_cove)
 "HP" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 9
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
 	},
-/turf/open/water/beach,
-/area/overmap_encounter/planetoid/cave/explored)
+/turf/open/water/beach/deep,
+/area/ruin/unpowered)
 "Iv" = (
 /turf/template_noop,
 /area/template_noop)
@@ -1044,9 +1018,13 @@
 	},
 /area/ruin/beach/treasure_cove)
 "Jd" = (
-/obj/effect/overlay/palmtree_r,
-/turf/open/floor/plating/grass/beach/lit,
-/area/overmap_encounter/planetoid/cave/explored)
+/obj/structure/flora/grass/jungle,
+/obj/structure/railing/wood{
+	layer = 3.1;
+	dir = 8
+	},
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin/unpowered)
 "Je" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/structure/curtain/bounty,
@@ -1054,28 +1032,32 @@
 /turf/open/floor/wood,
 /area/ruin/beach/treasure_cove)
 "Jh" = (
-/obj/structure/flora/rock/beach,
-/turf/open/water/beach/deep,
-/area/overmap_encounter/planetoid/beachplanet/explored)
-"Jm" = (
 /obj/structure/destructible/tribal_torch{
 	pixel_x = 9;
 	pixel_y = 2
 	},
 /turf/open/floor/plating/dirt/jungle,
-/area/overmap_encounter/planetoid/beachplanet/explored)
+/area/ruin/unpowered)
+"Jm" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
+/turf/open/water/beach,
+/area/ruin/unpowered)
 "JM" = (
 /obj/effect/turf_decal/weather/dirt{
-	dir = 5
+	dir = 10
 	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 6
+/obj/structure/flora/tree/jungle/small{
+	pixel_x = -36
 	},
-/obj/structure/destructible/tribal_torch/lit{
-	pixel_x = 12
+/obj/structure/flora/grass/jungle{
+	pixel_x = 2;
+	pixel_y = -15
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/dirt/jungle/wasteland,
-/area/overmap_encounter/planetoid/cave/explored)
+/area/ruin/unpowered)
 "JQ" = (
 /obj/machinery/autolathe/hacked,
 /obj/item/stack/sheet/metal/twenty{
@@ -1099,30 +1081,25 @@
 /turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/ruin/beach/treasure_cove)
 "Ku" = (
-/obj/structure/flora/ausbushes/fernybush,
+/obj/structure/destructible/tribal_torch/lit{
+	pixel_x = -8;
+	pixel_y = 11
+	},
 /turf/open/floor/plating/dirt/jungle,
-/area/overmap_encounter/planetoid/cave/explored)
+/area/ruin/unpowered)
 "KO" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 10
-	},
-/obj/structure/flora/tree/jungle/small{
-	pixel_x = -36
-	},
-/obj/structure/flora/grass/jungle{
-	pixel_x = 2;
-	pixel_y = -15
-	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating/dirt/jungle/wasteland,
-/area/overmap_encounter/planetoid/cave/explored)
+/obj/effect/decal/cleanable/greenglow,
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin/unpowered)
 "Le" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
+/obj/structure/destructible/tribal_torch/lit{
+	pixel_x = 12
 	},
 /obj/structure/spacevine,
-/turf/open/water/beach,
-/area/overmap_encounter/planetoid/cave/explored)
+/obj/structure/punji_sticks,
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin/unpowered)
 "Lt" = (
 /obj/structure/table/wood/reinforced,
 /obj/item/flashlight/lantern{
@@ -1159,30 +1136,26 @@
 	},
 /area/ruin/beach/treasure_cove)
 "MI" = (
-/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/flora/junglebush,
 /turf/open/floor/plating/dirt/jungle,
-/area/overmap_encounter/planetoid/cave/explored)
+/area/ruin/unpowered)
 "Nk" = (
 /obj/effect/turf_decal/siding/wood/corner,
 /turf/open/floor/wood,
 /area/ruin/beach/treasure_cove)
 "Nu" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
+/obj/structure/flora/ausbushes/fullgrass{
+	pixel_x = 13;
+	pixel_y = 6
 	},
-/turf/open/floor/plasteel/stairs{
-	barefootstep = "woodbarefoot";
-	color = "#A47449";
-	dir = 4;
-	footstep = "wood"
-	},
-/area/overmap_encounter/planetoid/cave/explored)
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/unpowered)
 "NX" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 5
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
 	},
 /turf/open/water/beach,
-/area/overmap_encounter/planetoid/beachplanet/explored)
+/area/ruin/unpowered)
 "Oi" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -1230,19 +1203,22 @@
 /turf/open/floor/wood,
 /area/ruin/beach/treasure_cove)
 "Pt" = (
-/obj/structure/flora/rock/pile,
-/turf/open/floor/plating/dirt/jungle,
-/area/overmap_encounter/planetoid/cave/explored)
+/obj/structure/flora/rock/jungle{
+	pixel_x = 11;
+	pixel_y = -20
+	},
+/turf/closed/mineral/random/beach,
+/area/ruin/unpowered)
 "Pw" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
 	},
 /obj/structure/flora/rock/pile/largejungle{
-	pixel_x = -25;
-	pixel_y = -9
+	pixel_x = -10;
+	pixel_y = 3
 	},
 /turf/open/water/beach,
-/area/overmap_encounter/planetoid/cave/explored)
+/area/ruin/unpowered)
 "Qh" = (
 /obj/structure/bonfire/prelit,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1250,16 +1226,14 @@
 /turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/ruin/beach/treasure_cove)
 "QJ" = (
-/mob/living/simple_animal/beachcarp/trout{
-	dir = 4
-	},
-/turf/open/water/beach,
-/area/overmap_encounter/planetoid/beachplanet/explored)
+/obj/structure/barricade/wooden,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
+/area/ruin/unpowered)
 "Rn" = (
 /obj/structure/spacevine,
 /obj/structure/spacevine/dense,
 /turf/open/water/beach,
-/area/overmap_encounter/planetoid/cave/explored)
+/area/ruin/unpowered)
 "Rv" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -1298,10 +1272,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
 /area/ruin/beach/treasure_cove)
-"Sk" = (
-/obj/structure/flora/rock/beach,
-/turf/open/water/beach,
-/area/overmap_encounter/planetoid/beachplanet/explored)
 "Sm" = (
 /obj/machinery/suit_storage_unit/inherit,
 /obj/effect/turf_decal/industrial/outline/yellow,
@@ -1309,24 +1279,24 @@
 /turf/open/floor/concrete/slab_2,
 /area/ruin/beach/treasure_cove)
 "St" = (
-/obj/structure/flora/grass/jungle,
-/obj/structure/railing/wood{
-	layer = 3.1;
-	dir = 8
+/obj/structure/flora/junglebush/large{
+	pixel_x = -22;
+	pixel_y = -3
 	},
+/obj/structure/flora/grass/jungle{
+	pixel_x = 2;
+	pixel_y = -15
+	},
+/obj/structure/destructible/tribal_torch/lit{
+	pixel_x = 16;
+	pixel_y = 6
+	},
+/mob/living/simple_animal/hostile/rat,
 /turf/open/floor/plating/dirt/jungle,
-/area/overmap_encounter/planetoid/cave/explored)
+/area/ruin/unpowered)
 "SD" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 4
-	},
-/obj/vehicle/ridden/lavaboat{
-	dir = 8;
-	name = "boat";
-	desc = "A boat used for traversing water. Thats right."
-	},
 /turf/open/water/beach/deep,
-/area/overmap_encounter/planetoid/cave/explored)
+/area/ruin/unpowered)
 "SQ" = (
 /obj/structure/chair/wood{
 	dir = 8
@@ -1343,21 +1313,20 @@
 	pixel_x = -12;
 	pixel_y = 10
 	},
-/obj/structure/flora/ausbushes/stalkybush{
-	pixel_y = -6
-	},
+/obj/structure/flora/ausbushes/stalkybush,
+/turf/open/water/beach,
+/area/ruin/unpowered)
+"Th" = (
 /obj/structure/flora/ausbushes/stalkybush{
 	pixel_x = 10;
 	pixel_y = 1
 	},
-/turf/open/water/beach,
-/area/overmap_encounter/planetoid/cave/explored)
-"Th" = (
-/obj/structure/fluff/fokoff_sign{
-	pixel_x = -13
+/obj/structure/flora/ausbushes/stalkybush{
+	pixel_y = -7;
+	pixel_x = -5
 	},
-/turf/open/floor/plating/dirt/jungle,
-/area/overmap_encounter/planetoid/beachplanet/explored)
+/turf/open/water/beach,
+/area/ruin/unpowered)
 "Ty" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1388,11 +1357,10 @@
 	dir = 1
 	},
 /turf/open/water/beach,
-/area/overmap_encounter/planetoid/beachplanet/explored)
+/area/ruin/unpowered)
 "TN" = (
-/obj/effect/turf_decal/weather/sand,
 /turf/open/water/beach,
-/area/overmap_encounter/planetoid/beachplanet/explored)
+/area/ruin/unpowered)
 "TV" = (
 /obj/effect/turf_decal/industrial/loading{
 	dir = 4
@@ -1406,8 +1374,11 @@
 /turf/open/floor/wood,
 /area/ruin/beach/treasure_cove)
 "UY" = (
+/obj/effect/turf_decal/weather/sand{
+	dir = 8
+	},
 /turf/open/water/beach,
-/area/overmap_encounter/planetoid/beachplanet/explored)
+/area/ruin/unpowered)
 "Vc" = (
 /obj/structure/railing/wood{
 	layer = 3.1
@@ -1430,11 +1401,11 @@
 /turf/open/floor/wood,
 /area/ruin/beach/treasure_cove)
 "VF" = (
-/obj/effect/overlay/palmtree_r,
-/turf/open/floor/plating/beach/sand{
-	light_range = 2
+/obj/effect/turf_decal/weather/sand{
+	dir = 9
 	},
-/area/overmap_encounter/planetoid/beachplanet/explored)
+/turf/open/water/beach,
+/area/ruin/unpowered)
 "VT" = (
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/wood/walnut{
@@ -1471,11 +1442,11 @@
 /turf/open/floor/plating/rust,
 /area/ruin/beach/treasure_cove)
 "WX" = (
-/obj/effect/turf_decal/weather/sand{
-	dir = 8
+/mob/living/simple_animal/crab,
+/turf/open/floor/plating/beach/sand{
+	light_range = 2
 	},
-/turf/open/water/beach,
-/area/overmap_encounter/planetoid/beachplanet/explored)
+/area/ruin/unpowered)
 "Xp" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
@@ -1497,20 +1468,32 @@
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/treasure_cove)
 "XO" = (
-/mob/living/simple_animal/beachcarp/perch,
-/turf/open/water/beach,
-/area/overmap_encounter/planetoid/beachplanet/explored)
-"YH" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 10
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/vehicle/ridden/lavaboat{
+	dir = 8;
+	name = "boat";
+	desc = "A boat used for traversing water. Thats right."
 	},
 /turf/open/water/beach,
-/area/overmap_encounter/planetoid/cave/explored)
-"YL" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/greenglow,
+/area/ruin/unpowered)
+"YH" = (
+/obj/structure/flora/rock/jungle{
+	pixel_x = 11;
+	pixel_y = -20
+	},
+/obj/structure/flora/ausbushes/ppflowers,
+/mob/living/simple_animal/hostile/rat,
 /turf/open/floor/plating/dirt/jungle,
-/area/overmap_encounter/planetoid/cave/explored)
+/area/ruin/unpowered)
+"YL" = (
+/obj/structure/flora/rock/jungle{
+	pixel_x = -5;
+	pixel_y = 8
+	},
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin/unpowered)
 "Zd" = (
 /obj/effect/decal/cleanable/blood/old{
 	pixel_x = -12;
@@ -1564,31 +1547,31 @@ Iv
 Iv
 Iv
 Iv
-BN
-BN
-BN
-BN
-BN
-BN
-kl
-kl
-kl
-kl
-kl
-kl
-db
-kl
-kl
-kl
-kl
-kl
-kl
-kl
-kl
-kl
-kl
-kl
-kl
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
 Iv
 Iv
 Iv
@@ -1603,38 +1586,38 @@ Iv
 Iv
 Iv
 Iv
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+lt
+lt
+lt
+lt
+lt
+lt
+hS
+hS
+hS
+hS
+hS
+hS
 kl
-kl
-kl
-kl
-kl
-kl
-kl
-kl
-kl
-kl
-kl
-kl
-kl
-kl
-kl
-kl
-kl
-kl
-kl
+hS
+hS
+hS
+hS
+hS
+hS
+hS
+hS
+hS
+hS
+hS
+hS
+Iv
 Iv
 Iv
 "}
@@ -1645,41 +1628,41 @@ Iv
 Iv
 Iv
 Iv
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-WX
-WX
-WX
-WX
-WX
-WX
-WX
-WX
-WX
-WX
-WX
+Iv
+Iv
+Iv
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
 hS
-kl
-kl
-kl
-kl
-db
-kl
-kl
+hS
+hS
+hS
+hS
+hS
+hS
+hS
+hS
+hS
+hS
+hS
+hS
+hS
+hS
+hS
+hS
+hS
+hS
 Iv
 Iv
 "}
@@ -1690,22 +1673,22 @@ Iv
 Iv
 Iv
 Iv
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
 UY
 UY
 UY
@@ -1717,15 +1700,15 @@ UY
 UY
 UY
 UY
-UY
-WX
-WX
+jZ
+hS
+hS
+hS
 hS
 kl
-kl
-kl
-kl
-kl
+hS
+hS
+Iv
 Iv
 "}
 (5,1,1) = {"
@@ -1734,44 +1717,44 @@ Iv
 Iv
 Iv
 Iv
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
+Iv
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+TN
+TN
+TN
+TN
+TN
+TN
+TN
+TN
+TN
+TN
+TN
+TN
 UY
-tH
-tH
-tH
-tH
 UY
-UY
-UY
-UY
-UY
+jZ
 hS
-kl
-kl
-kl
-kl
-kl
+hS
+hS
+hS
+hS
+Iv
 "}
 (6,1,1) = {"
 Iv
@@ -1779,60 +1762,105 @@ Iv
 Iv
 Iv
 Iv
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-pz
-pz
-pz
-pz
-pz
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-kl
-kl
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+TN
 EE
-kl
-jT
-tH
-UY
-UY
-UY
-UY
+EE
+EE
+EE
+TN
+TN
+TN
+TN
+TN
+jZ
 hS
-kl
-kl
-kl
-kl
+hS
+hS
+hS
+hS
 "}
 (7,1,1) = {"
 Iv
 Iv
 Iv
 Iv
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
+Iv
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+pz
+pz
+pz
+pz
+pz
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+hS
+hS
+WX
+hS
+db
+EE
+TN
+TN
+TN
+TN
+jZ
+hS
+hS
+hS
+hS
+"}
+(8,1,1) = {"
+Iv
+Iv
+Iv
+Iv
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
 pz
 pz
 Ry
@@ -1840,40 +1868,40 @@ xb
 Ry
 pz
 pz
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-kl
-kl
-kl
-kl
-kl
-jT
-UY
-UY
-UY
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+hS
+hS
+hS
+hS
+hS
+db
 TN
-kl
-kl
-kl
-kl
+TN
+TN
+bN
+hS
+hS
+hS
+hS
 "}
-(8,1,1) = {"
+(9,1,1) = {"
 Iv
 Iv
 Iv
 Iv
-BN
-BN
-BN
-BN
-BN
-BN
+lt
+lt
+lt
+lt
+lt
+lt
 pz
 pz
 pz
@@ -1885,38 +1913,38 @@ mN
 hJ
 ac
 pz
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+hS
+hS
+hS
 kl
-kl
-kl
-db
-kl
-kl
+hS
+hS
 TJ
-Sk
-UY
+bB
 TN
-kl
-kl
-kl
-kl
+bN
+hS
+hS
+hS
+hS
 "}
-(9,1,1) = {"
+(10,1,1) = {"
 Iv
 Iv
 Iv
 Iv
-BN
-BN
-BN
-BN
+lt
+lt
+lt
+lt
 pz
 pz
 pz
@@ -1930,37 +1958,37 @@ Zn
 Ry
 fg
 pz
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-kl
-kl
-kl
-EE
-kl
-kl
-TJ
-UY
-UY
-UY
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
 hS
-kl
-kl
-kl
+hS
+hS
+WX
+hS
+hS
+TJ
+TN
+TN
+TN
+jZ
+hS
+hS
+hS
 "}
-(10,1,1) = {"
+(11,1,1) = {"
 Iv
 Iv
 Iv
-BN
-BN
-BN
-BN
+lt
+lt
+lt
+lt
 pz
 pz
 JQ
@@ -1975,37 +2003,37 @@ Ty
 Ry
 XE
 pz
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-kl
-kl
-kl
-kl
-uC
-WX
-UY
-UY
-UY
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+hS
+hS
+hS
+hS
+VF
 UY
 TN
-kl
-kl
-kl
+TN
+TN
+TN
+bN
+hS
+hS
+hS
 "}
-(11,1,1) = {"
+(12,1,1) = {"
 Iv
 Iv
 Iv
-BN
-BN
-BN
-BN
+lt
+lt
+lt
+lt
 pz
 qc
 zh
@@ -2020,37 +2048,37 @@ TV
 vb
 TV
 dG
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-kl
-kl
-uC
-UY
-UY
-UY
-UY
-UY
-oR
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+hS
+hS
+VF
 TN
-kl
-kl
-kl
+TN
+TN
+TN
+TN
+tH
+bN
+hS
+hS
+hS
 "}
-(12,1,1) = {"
+(13,1,1) = {"
 Iv
 Iv
 Iv
-BN
-BN
-BN
-BN
+lt
+lt
+lt
+lt
 pz
 Wh
 ft
@@ -2065,37 +2093,37 @@ oO
 ap
 DC
 DC
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-WX
-UY
-UY
-BN
-BN
-UY
-UY
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
 UY
 TN
-kl
-kl
-kl
+TN
+lt
+lt
+TN
+TN
+TN
+bN
+hS
+hS
+hS
 "}
-(13,1,1) = {"
+(14,1,1) = {"
 Iv
 Iv
 Iv
-BN
-BN
-BN
-BN
+lt
+lt
+lt
+lt
 pz
 yT
 sQ
@@ -2110,37 +2138,37 @@ nD
 Nk
 oS
 Vx
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-UY
-UY
-UY
-UY
-BN
-UY
-UY
-UY
-UY
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+TN
+TN
+TN
+TN
+lt
+TN
+TN
+TN
+TN
+jZ
 hS
-kl
-kl
+hS
 "}
-(14,1,1) = {"
+(15,1,1) = {"
 Iv
 Iv
 Iv
-BN
-BN
-BN
-BN
+lt
+lt
+lt
+lt
 pz
 tb
 dE
@@ -2153,39 +2181,39 @@ uz
 Cz
 nD
 nj
-td
-Dp
-td
-YH
-CB
-At
-BN
-BN
-BN
-BN
-UY
-UY
-UY
-UY
-UY
-UY
-oR
-UY
-tH
-UY
-UY
 TN
-kl
-kl
+aY
+TN
+Ad
+YH
+Ku
+lt
+lt
+lt
+lt
+TN
+TN
+TN
+TN
+TN
+TN
+tH
+TN
+EE
+TN
+TN
+bN
+hS
+hS
 "}
-(15,1,1) = {"
+(16,1,1) = {"
 Iv
 Iv
 Iv
-BN
-BN
-BN
-BN
+lt
+lt
+lt
+lt
 pz
 pz
 pz
@@ -2198,41 +2226,41 @@ cR
 Hf
 Nk
 uU
-td
-aY
-zW
-td
-YH
-Ku
-oE
-el
-UY
-UY
-UY
-UY
-UY
-UY
-UY
-UY
-UY
-bN
-kl
-TJ
-UY
 TN
-kl
-kl
+zW
+SD
+TN
+Ad
+el
+Le
+Cg
+TN
+TN
+TN
+TN
+TN
+TN
+TN
+TN
+TN
+CB
+hS
+TJ
+TN
+bN
+hS
+hS
 "}
-(16,1,1) = {"
+(17,1,1) = {"
 Iv
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
 pz
 qr
 jb
@@ -2242,42 +2270,42 @@ sC
 Qh
 xX
 nj
-td
-td
-zW
-zW
-zW
-td
-Le
-Le
-Cg
-UY
-UY
-UY
-xg
-xg
-xg
-XO
-UY
 TN
-kl
-BN
-BN
-UY
 TN
-kl
-kl
+SD
+SD
+SD
+TN
+qf
+qf
+EB
+TN
+TN
+TN
+SD
+SD
+SD
+xg
+TN
+bN
+hS
+lt
+lt
+TN
+bN
+hS
+hS
 "}
-(17,1,1) = {"
-BN
-BN
+(18,1,1) = {"
+lt
+lt
 Dz
-BN
-BN
-BN
-BN
-BN
-BN
+lt
+lt
+lt
+lt
+lt
+lt
 pz
 vW
 SQ
@@ -2287,42 +2315,42 @@ jV
 EU
 xX
 nj
-td
-td
-zW
-zW
-zW
-zW
-qf
-qf
-EB
-UY
-xg
-xg
-xg
-xg
-xg
-xg
-UY
-UY
-WX
-BN
-UY
-UY
 TN
-kl
-kl
+TN
+SD
+SD
+SD
+SD
+GC
+GC
+Te
+TN
+SD
+SD
+SD
+SD
+SD
+SD
+TN
+TN
+UY
+lt
+TN
+TN
+bN
+hS
+hS
 "}
-(18,1,1) = {"
-BN
+(19,1,1) = {"
+lt
 Dz
-rA
-BN
-BN
-BN
-BN
-BN
-BN
+Nu
+lt
+lt
+lt
+lt
+lt
+lt
 pz
 on
 Ez
@@ -2332,42 +2360,42 @@ DC
 DC
 IQ
 nj
-td
-td
-zW
-SD
-kK
-jZ
-td
-qf
-Te
-UY
-xg
-xg
-xg
-xg
-xg
-xg
-xg
-UY
-UY
-UY
-UY
-UY
 TN
-kl
-kl
+TN
+SD
+gh
+HP
+XO
+TN
+GC
+tx
+TN
+SD
+SD
+SD
+SD
+SD
+SD
+SD
+TN
+TN
+TN
+TN
+TN
+bN
+hS
+hS
 "}
-(19,1,1) = {"
-BN
-Jd
+(20,1,1) = {"
+lt
+pT
 Dz
-BN
-BN
-BN
-BN
-BN
-BN
+lt
+lt
+lt
+lt
+lt
+lt
 pz
 Oi
 jF
@@ -2377,42 +2405,42 @@ Kj
 Kj
 fU
 nj
-qw
-EB
+wS
+Te
 le
 ZO
 rp
 Uf
 tD
 Rn
-tx
-UY
-UY
-xg
-Jh
-xg
-xg
-xg
-UY
-UY
-UY
-UY
-UY
-UY
+Th
 TN
-kl
-kl
+TN
+SD
+oE
+SD
+SD
+SD
+TN
+TN
+TN
+TN
+TN
+TN
+bN
+hS
+hS
 "}
-(20,1,1) = {"
-BN
-pT
+(21,1,1) = {"
+lt
+At
 Dz
 Dz
-BN
-BN
-BN
-BN
-BN
+lt
+lt
+lt
+lt
+lt
 pz
 OG
 TI
@@ -2422,42 +2450,42 @@ Kn
 bP
 Rv
 RN
-An
-qw
+yX
+wS
 le
 Oq
 Zd
 nf
 tD
 Rn
-qf
-UY
-UY
-UY
-UY
-UY
-xg
-UY
-UY
-UY
-UY
-UY
-UY
-UY
+GC
 TN
-kl
-kl
+TN
+TN
+TN
+TN
+SD
+TN
+TN
+TN
+TN
+TN
+TN
+TN
+bN
+hS
+hS
 "}
-(21,1,1) = {"
-BN
-BN
-il
+(22,1,1) = {"
+lt
+lt
+xm
 Dz
-BN
-BN
-BN
-BN
-BN
+lt
+lt
+lt
+lt
+lt
 pz
 pz
 Zz
@@ -2468,42 +2496,42 @@ Lt
 xX
 dV
 yD
-Ku
-qw
-bB
+el
+wS
+NX
 Xw
-bB
-td
-Rn
-GC
-Ad
-Ad
-UY
-UY
-UY
-UY
-UY
-QJ
-UY
-UY
-UY
-UY
-oR
+NX
 TN
-kl
-kl
+Rn
+mG
+Jm
+Jm
+TN
+TN
+TN
+TN
+TN
+rA
+TN
+TN
+TN
+TN
+tH
+bN
+hS
+hS
 "}
-(22,1,1) = {"
+(23,1,1) = {"
 Iv
-BN
-BN
-fu
-fu
-BN
-BN
-BN
-BN
-BN
+lt
+lt
+hS
+hS
+lt
+lt
+lt
+lt
+lt
 pz
 re
 Au
@@ -2518,37 +2546,37 @@ DC
 OI
 jq
 Xp
-BN
-BN
-mG
-Jm
-Th
-NX
-UY
-UY
-UY
-UY
-UY
-UY
-BN
-BN
-UY
-UY
+lt
+lt
+dO
+Jh
+kK
+wS
 TN
-kl
-kl
+TN
+TN
+TN
+TN
+TN
+lt
+lt
+TN
+TN
+bN
+hS
+hS
 "}
-(23,1,1) = {"
+(24,1,1) = {"
 Iv
-BN
-BN
-kl
-kl
-BN
-BN
-BN
-BN
-BN
+lt
+lt
+hS
+hS
+lt
+lt
+lt
+lt
+lt
 pz
 sl
 VX
@@ -2563,426 +2591,381 @@ RF
 RF
 Kj
 RF
-BN
-BN
-BN
-BN
-BN
-BN
-UY
-UY
-UY
-UY
-UY
-BN
-BN
-UY
-UY
-UY
+lt
+lt
+lt
+lt
+lt
+lt
 TN
-kl
-kl
-"}
-(24,1,1) = {"
-Iv
-BN
-kl
-kl
-kl
-BN
-BN
-BN
-BN
-BN
-pz
-pz
-pz
-pz
-zy
-BN
-BN
-BN
-ht
-St
-Nu
-Fb
-fR
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-UY
-UY
-UY
-UY
-UY
-UY
-UY
-UY
-UY
+TN
+TN
+TN
+TN
+lt
+lt
+TN
+TN
+TN
 bN
-kl
-kl
+hS
+hS
 "}
 (25,1,1) = {"
 Iv
-Iv
-kl
-kl
-kl
-EE
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-HP
-td
-YH
+lt
+hS
+hS
+hS
+lt
+lt
+lt
+lt
+lt
+pz
+pz
+pz
+pz
+QJ
+lt
+lt
+lt
+oR
+Jd
 cU
 nR
 bQ
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-UY
-UY
-UY
-UY
-UY
-UY
-UY
-UY
-UY
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
 TN
-kl
-kl
-kl
+TN
+TN
+TN
+TN
+TN
+TN
+TN
+TN
+CB
+hS
+hS
 "}
 (26,1,1) = {"
 Iv
 Iv
-kl
-kl
-uC
+hS
+hS
+hS
 WX
-WX
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-xm
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
 lt
 qw
-ie
-td
-YH
+TN
+Ad
+jf
 pU
 MI
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-UY
-oR
-UY
-UY
-UY
-UY
-UY
-UY
-UY
+lt
+lt
+lt
+lt
+lt
+lt
+lt
 TN
-EE
-kl
-kl
+TN
+TN
+TN
+TN
+TN
+TN
+TN
+TN
+bN
+hS
+hS
+hS
 "}
 (27,1,1) = {"
 Iv
 Iv
-kl
+hS
+hS
 VF
-TJ
 UY
 UY
-UY
-BN
-BN
-BN
-BN
-BN
-BN
-BN
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
 Pt
 YL
 wS
-ii
-td
-td
+fu
+TN
+Ad
+St
 DY
-DY
-BN
-yX
-BN
-BN
-BN
-BN
-UY
-UY
-UY
-UY
-UY
-UY
-UY
-UY
-UY
-UY
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+TN
+tH
+TN
+TN
+TN
+TN
+TN
+TN
+TN
 bN
-kl
-kl
-Iv
+WX
+hS
+hS
 "}
 (28,1,1) = {"
 Iv
 Iv
-kl
-kl
-TJ
-UY
-UY
-UY
 hS
-kl
-BN
-BN
-BN
-BN
-BN
+ht
+TJ
+TN
+TN
+TN
+lt
+lt
+lt
+lt
+lt
+lt
+lt
 vo
 KO
-cU
+ie
 ii
+TN
+TN
 td
 td
-td
-td
-ay
-cU
-BN
-BN
-BN
-BN
-UY
-UY
-UY
-UY
-UY
-Sk
-UY
-UY
-UY
-bN
-kl
-kl
-kl
+lt
+An
+lt
+lt
+lt
+lt
+TN
+TN
+TN
+TN
+TN
+TN
+TN
+TN
+TN
+TN
+CB
+hS
+hS
 Iv
 "}
 (29,1,1) = {"
 Iv
 Iv
-kl
-kl
-jT
-UY
-UY
-UY
+hS
+hS
+TJ
 TN
-EE
-kl
-BN
-BN
-BN
-BN
-BN
+TN
+TN
+jZ
+hS
+lt
+lt
+lt
+lt
+lt
+uC
 JM
-cU
+jf
 ii
-td
-td
-td
-td
-BN
-BN
-BN
-BN
-BN
-UY
-UY
-UY
-UY
-UY
-UY
-UY
-UY
-UY
-bN
-kl
-kl
-kl
-kl
+TN
+TN
+TN
+TN
+jT
+jf
+lt
+lt
+lt
+lt
+TN
+TN
+TN
+TN
+TN
+bB
+TN
+TN
+TN
+CB
+hS
+hS
+hS
 Iv
 "}
 (30,1,1) = {"
 Iv
 Iv
-kl
-kl
-kl
-jT
-tH
-UY
-UY
-WX
-WX
-UY
-BN
-BN
-BN
-BN
-BN
-cU
-dO
-td
-td
-td
-BN
-BN
-BN
-BN
-BN
-UY
-UY
-UY
-UY
-UY
-UY
-UY
-UY
-tH
+hS
+hS
+db
+TN
+TN
+TN
 bN
-kl
-kl
-kl
-Iv
-Iv
+WX
+hS
+lt
+lt
+lt
+lt
+lt
+BN
+jf
+ii
+TN
+TN
+TN
+TN
+lt
+lt
+lt
+lt
+lt
+TN
+TN
+TN
+TN
+TN
+TN
+TN
+TN
+TN
+CB
+hS
+hS
+hS
+hS
 Iv
 "}
 (31,1,1) = {"
 Iv
 Iv
-BN
-kl
-kl
-kl
+hS
+hS
+hS
+db
 EE
-TJ
+TN
+TN
 UY
 UY
-UY
-UY
-UY
-BN
-BN
-BN
-BN
+TN
+lt
+lt
+lt
+lt
+lt
 jf
 Pw
-td
-td
-BN
-BN
-BN
-BN
-UY
-UY
-UY
-UY
-UY
-tH
-tH
-tH
-tH
-bN
-kl
-kl
-kl
-kl
-Iv
+TN
+TN
+TN
+lt
+lt
+lt
+lt
+lt
+TN
+TN
+TN
+TN
+TN
+TN
+TN
+TN
+EE
+CB
+hS
+hS
+hS
 Iv
 Iv
 Iv
 "}
 (32,1,1) = {"
 Iv
-BN
-BN
-BN
-kl
-kl
-kl
-jT
-UY
-UY
-UY
-UY
-UY
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-tH
-tH
-tH
-tH
-bN
-kl
-kl
-kl
-kl
-kl
-kl
-kl
-kl
 Iv
+lt
+hS
+hS
+hS
+WX
+TJ
+TN
+TN
+TN
+TN
+TN
+lt
+lt
+lt
+lt
+fR
+il
+TN
+TN
+lt
+lt
+lt
+lt
+TN
+TN
+TN
+TN
+TN
+EE
+EE
+EE
+EE
+CB
+hS
+hS
+hS
+hS
 Iv
 Iv
 Iv
@@ -2990,43 +2973,43 @@ Iv
 "}
 (33,1,1) = {"
 Iv
-Iv
-Iv
-Iv
-Iv
-kl
-kl
-kl
-jT
-tH
-UY
-UY
-UY
-UY
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-kl
-kl
-kl
-kl
-kl
-kl
-gh
-kl
-kl
-kl
-kl
-kl
-kl
-Iv
+lt
+lt
+lt
+hS
+hS
+hS
+db
+TN
+TN
+TN
+TN
+TN
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+EE
+EE
+EE
+EE
+CB
+hS
+hS
+hS
+hS
+hS
+hS
+hS
+hS
 Iv
 Iv
 Iv
@@ -3038,39 +3021,39 @@ Iv
 Iv
 Iv
 Iv
-BN
-BN
-kl
-kl
-kl
-kl
-jT
-tH
-tH
-bN
-kl
-BN
-BN
-BN
-BN
-BN
-BN
-BN
-kl
-kl
-kl
-kl
-kl
-kl
-kl
-kl
-kl
-kl
-kl
 Iv
-Iv
-Iv
-Iv
+hS
+hS
+hS
+db
+EE
+TN
+TN
+TN
+TN
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+hS
+hS
+hS
+hS
+hS
+hS
+ay
+hS
+hS
+hS
+hS
+hS
+hS
 Iv
 Iv
 Iv
@@ -3082,36 +3065,36 @@ Iv
 Iv
 Iv
 Iv
-BN
-BN
-BN
-BN
-kl
-kl
-kl
+Iv
+lt
+lt
+hS
+hS
+hS
+hS
 db
-kl
-kl
-kl
-kl
-kl
-kl
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
+EE
+EE
+CB
+hS
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+hS
+hS
+hS
+hS
+hS
+hS
+hS
+hS
+hS
+hS
+hS
 Iv
 Iv
 Iv
@@ -3127,18 +3110,63 @@ Iv
 Iv
 Iv
 Iv
+lt
+lt
+lt
+lt
+hS
+hS
+hS
+kl
+hS
+hS
+hS
+hS
+hS
+hS
 Iv
 Iv
 Iv
 Iv
 Iv
-kl
-kl
-kl
-kl
-kl
-kl
-kl
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+"}
+(37,1,1) = {"
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+hS
+hS
+hS
+hS
+hS
+hS
+hS
 Iv
 Iv
 Iv

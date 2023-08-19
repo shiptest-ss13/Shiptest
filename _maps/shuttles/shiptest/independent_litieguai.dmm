@@ -22,10 +22,10 @@
 /area/ship/storage)
 "bl" = (
 /obj/docking_port/stationary{
-	width = 30;
-	height = 15;
+	dir = 2;
 	dwidth = 15;
-	dir = 2
+	height = 15;
+	width = 30
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -1123,8 +1123,8 @@
 	},
 /obj/machinery/light_switch{
 	dir = 4;
-	pixel_y = 10;
-	pixel_x = -20
+	pixel_x = -20;
+	pixel_y = 10
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -1286,6 +1286,11 @@
 	},
 /obj/effect/turf_decal/trimline/opaque/red/filled/line{
 	dir = 8
+	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -20;
+	pixel_y = 10
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/fore)
@@ -1671,10 +1676,10 @@
 /area/ship/storage)
 "Ml" = (
 /obj/docking_port/stationary{
+	dir = 8;
 	dwidth = 8;
-	width = 30;
 	height = 15;
-	dir = 8
+	width = 30
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -1960,8 +1965,8 @@
 	},
 /obj/machinery/light_switch{
 	dir = 4;
-	pixel_y = 10;
-	pixel_x = -20
+	pixel_x = -20;
+	pixel_y = 10
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew)
@@ -2072,8 +2077,8 @@
 /obj/machinery/stasis,
 /obj/effect/turf_decal/industrial/outline/red,
 /obj/machinery/smartfridge/organ{
-	pixel_y = 32;
-	density = 0
+	density = 0;
+	pixel_y = 32
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
@@ -2563,8 +2568,8 @@
 /obj/structure/extinguisher_cabinet/directional/west,
 /obj/machinery/light_switch{
 	dir = 4;
-	pixel_y = 10;
-	pixel_x = -20
+	pixel_x = -20;
+	pixel_y = 10
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
