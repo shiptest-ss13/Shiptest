@@ -33,6 +33,10 @@
 	. = ..()
 	. += "<span class='notice'>There's a <b>small screw</b> that can <b>help</b> to adjust the pill size.</span>"
 	. += "<span class='notice'>There's a small dial you could <b>push</b> with a <b>screwdriver</b> to adjust the pill color.</span>"
+	if(!bottle)
+		. += "<span class='notice'>The <b>pill bottle</b> slot is empty.</span>"
+	if(!beaker)
+		. += "<span class='notice>The <b>beaker</b> slot is empty.</span>"
 
 /obj/machinery/chem_press/attack_hand(mob/user)
 	. = ..()
