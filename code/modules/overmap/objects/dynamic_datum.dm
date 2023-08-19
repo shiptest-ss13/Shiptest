@@ -152,7 +152,7 @@
 
 	if(!preserve_level)
 		token.desc += " It may not still be here if you leave it."
-		token.update_icon()
+		token.update_appearance()
 
 /datum/overmap/dynamic/proc/gen_planet_name()
 	. = ""
@@ -233,31 +233,48 @@
 	ambientsounds = SPOOKY
 	allow_weather = FALSE
 
+/area/overmap_encounter/planetoid/cave/explored
+	area_flags = VALID_TERRITORY
+
+//exploreds are for ruins
+
 /area/overmap_encounter/planetoid/lava
 	name = "\improper Volcanic Planetoid"
 	ambientsounds = MINING
+
+/area/overmap_encounter/planetoid/lava/explored
+	area_flags = VALID_TERRITORY
 
 /area/overmap_encounter/planetoid/ice
 	name = "\improper Frozen Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_CAVE
 	ambientsounds = SPOOKY
 
+/area/overmap_encounter/planetoid/ice/explored
+	area_flags = VALID_TERRITORY
+
 /area/overmap_encounter/planetoid/sand
 	name = "\improper Sandy Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_QUARRY
 	ambientsounds = MINING
+
+/area/overmap_encounter/planetoid/sand/explored
+	area_flags = VALID_TERRITORY
 
 /area/overmap_encounter/planetoid/jungle
 	name = "\improper Jungle Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_FOREST
 	ambientsounds = AWAY_MISSION
 
+/area/overmap_encounter/planetoid/jungle/explored
+	area_flags = VALID_TERRITORY
+
 /area/overmap_encounter/planetoid/rockplanet
 	name = "\improper Rocky Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_QUARRY
 	ambientsounds = AWAY_MISSION
 
-/area/overmap_encounter/planetoid/rockplanet/explored//for use in ruins
+/area/overmap_encounter/planetoid/rockplanet/explored
 	area_flags = VALID_TERRITORY
 
 /area/overmap_encounter/planetoid/beachplanet
@@ -265,10 +282,16 @@
 	sound_environment = SOUND_ENVIRONMENT_FOREST
 	ambientsounds = BEACH
 
+/area/overmap_encounter/planetoid/beachplanet/explored
+	area_flags = VALID_TERRITORY
+
 /area/overmap_encounter/planetoid/wasteplanet
 	name = "\improper Waste Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_HANGAR
 	ambientsounds = MAINTENANCE
+
+/area/overmap_encounter/planetoid/wasteplanet/explored
+	area_flags = VALID_TERRITORY
 
 /area/overmap_encounter/planetoid/reebe
 	name = "\improper Yellow Space"

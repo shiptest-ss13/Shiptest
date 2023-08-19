@@ -13,9 +13,9 @@
 		// Cargo Stuff
 		"c-reader", "desttagger", "salestagger", "handlabel", "packagewrap",
 		// Research Stuff
-		"destructive_analyzer", "circuit_imprinter", "experimentor", "rdconsole", "bepis", "rdserver", "design_disk", "tech_disk", "mechfab",
+		"destructive_analyzer", "experimentor", "rdconsole", "bepis", "rdserver", "design_disk", "tech_disk", "mechfab",
 		// Miscellaneous Stufff
-		"paystand", "space_heater", "bucket", "plastic_knife", "plastic_fork", "plastic_spoon",
+		"paystand", "space_heater", "bucket", "plastic_knife", "plastic_fork", "plastic_spoon", "fax",
 		// Security Stuff
 		"sec_rshot", "sec_beanbag_slug", "sec_slug", "sec_Islug", "sec_dart", 	"sec_38", "buckshot_shell", "beanbag_slug", "rubber_shot",
 		//Handgun Ammo (Security)

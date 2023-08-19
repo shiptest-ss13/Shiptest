@@ -58,21 +58,27 @@ export const ShipSelect = (props, context) => {
           <Section
             title="Active Ship Selection"
             buttons={
-              <Button
-                content="Purchase Ship"
-                tooltip={
-                  /* worth noting that disabled ship spawn doesn't cause the
+              <>
+                <Button
+                  content="Purchase Ship"
+                  tooltip={
+                    /* worth noting that disabled ship spawn doesn't cause the
                   button to be disabled, as we want to let people look around */
-                  (data.purchaseBanned &&
-                    'You are banned from purchasing ships.') ||
-                  (!data.shipSpawnAllowed &&
-                    'No more ships may be spawned at this time.')
-                }
-                disabled={data.purchaseBanned}
-                onClick={() => {
-                  setCurrentTab(3);
-                }}
-              />
+                    (data.purchaseBanned &&
+                      'You are banned from purchasing ships.') ||
+                    (!data.shipSpawnAllowed &&
+                      'No more ships may be spawned at this time.')
+                  }
+                  disabled={data.purchaseBanned}
+                  onClick={() => {
+                    setCurrentTab(3);
+                  }}
+                />
+                <Button
+                  content="?"
+                  tooltip={"Hover over a ship's name to see its faction."}
+                />
+              </>
             }
           >
             <Table>
@@ -83,6 +89,7 @@ export const ShipSelect = (props, context) => {
               </Table.Row>
               {Object.values(ships).map((ship) => {
                 const shipName = decodeHtmlEntities(ship.name);
+                const shipFaction = ship.faction;
                 return (
                   <Table.Row key={shipName}>
                     <Table.Cell>
@@ -119,7 +126,7 @@ export const ShipSelect = (props, context) => {
                         }}
                       />
                     </Table.Cell>
-                    <Table.Cell>{shipName}</Table.Cell>
+                    <Table.Cell title={shipFaction}>{shipName}</Table.Cell>
                     <Table.Cell>{ship.class}</Table.Cell>
                   </Table.Row>
                 );
@@ -135,6 +142,9 @@ export const ShipSelect = (props, context) => {
               <LabeledList>
                 <LabeledList.Item label="Ship Class">
                   {selectedShip.class}
+                </LabeledList.Item>
+                <LabeledList.Item label="Ship Faction">
+                  {selectedShip.faction}
                 </LabeledList.Item>
                 <LabeledList.Item label="Ship Join Status">
                   {selectedShip.joinMode}
@@ -265,6 +275,9 @@ export const ShipSelect = (props, context) => {
                 <LabeledList>
                   <LabeledList.Item label="Description">
                     {template.desc || 'No Description'}
+                  </LabeledList.Item>
+                  <LabeledList.Item label="Ship Faction">
+                    {template.faction}
                   </LabeledList.Item>
                   <LabeledList.Item label="Ship Tags">
                     {(template.tags && template.tags.join(', ')) ||

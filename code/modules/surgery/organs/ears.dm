@@ -166,6 +166,26 @@
 		ear_owner.dna.species.mutant_bodyparts -= "ears"
 		ear_owner.update_body()
 
+/obj/item/organ/ears/elf
+	name = "elf ears"
+	damage_multiplier = 1.5
+
+/obj/item/organ/ears/elf/Insert(mob/living/carbon/human/ear_owner, special = 0, drop_if_replaced = TRUE)
+	..()
+	if(istype(ear_owner))
+		color = skintone2hex(ear_owner.skin_tone)
+		ear_owner.dna.species.mutant_bodyparts |= "ears"
+		ear_owner.dna.features["ears"] = "Elf"
+		ear_owner.update_body()
+
+/obj/item/organ/ears/elf/Remove(mob/living/carbon/human/ear_owner,  special = 0)
+	..()
+	if(istype(ear_owner))
+		color = skintone2hex(ear_owner.skin_tone)
+		ear_owner.dna.features["ears"] = "None"
+		ear_owner.dna.species.mutant_bodyparts -= "ears"
+		ear_owner.update_body()
+
 /obj/item/organ/ears/bronze
 	name = "tin ears"
 	desc = "The robust ears of a bronze golem. "

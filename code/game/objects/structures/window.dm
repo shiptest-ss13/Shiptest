@@ -322,28 +322,26 @@
 
 //This proc is used to update the icons of nearby windows.
 /obj/structure/window/proc/update_nearby_icons()
-	update_icon()
+	update_appearance()
 	if(smoothing_flags & (SMOOTH_CORNERS|SMOOTH_BITMASK))
 		QUEUE_SMOOTH_NEIGHBORS(src)
 
 //merges adjacent full-tile windows into one
 /obj/structure/window/update_overlays()
 	. = ..()
-	if(!QDELETED(src))
-		if(!fulltile)
-			return
+	if(QDELETED(src) || !fulltile)
+		return
 
-		var/ratio = obj_integrity / max_integrity
-		ratio = CEILING(ratio*4, 1) * 25
+	if(smoothing_flags & (SMOOTH_CORNERS|SMOOTH_BITMASK))
+		QUEUE_SMOOTH(src)
 
-		if(smoothing_flags & (SMOOTH_CORNERS|SMOOTH_BITMASK))
-			QUEUE_SMOOTH(src)
-
-		cut_overlay(crack_overlay)
-		if(ratio > 75)
-			return
-		crack_overlay = mutable_appearance('icons/obj/structures.dmi', "damage[ratio]", -(layer+0.1))
-		. += crack_overlay
+	var/ratio = obj_integrity / max_integrity
+	ratio = CEILING(ratio*4, 1) * 25
+	cut_overlay(crack_overlay)
+	if(ratio > 75)
+		return
+	crack_overlay = mutable_appearance('icons/obj/structures.dmi', "damage[ratio]", -(layer+0.1))
+	. += crack_overlay
 
 /obj/structure/window/temperature_expose(datum/gas_mixture/air, exposed_temperature, exposed_volume)
 
@@ -769,7 +767,7 @@
 
 /obj/structure/window/paperframe/Initialize()
 	. = ..()
-	update_icon()
+	update_appearance()
 
 /obj/structure/window/paperframe/examine(mob/user)
 	. = ..()
@@ -791,24 +789,25 @@
 		user.visible_message("<span class='notice'>[user] knocks on [src].</span>")
 		playsound(src, "pageturn", 50, TRUE)
 	else
-		take_damage(4,BRUTE,"melee", 0)
+		take_damage(4, BRUTE, "melee", 0)
 		playsound(src, hitsound, 50, TRUE)
 		if(!QDELETED(src))
 			user.visible_message("<span class='danger'>[user] tears a hole in [src].</span>")
-			update_icon()
+			update_appearance()
+
+/obj/structure/window/paperframe/update_appearance(updates)
+	. = ..()
+	set_opacity(obj_integrity >= max_integrity)
+
 
 /obj/structure/window/paperframe/update_icon()
-	if(obj_integrity < max_integrity)
-		cut_overlay(paper)
-		add_overlay(torn)
-		set_opacity(FALSE)
-	else
-		cut_overlay(torn)
-		add_overlay(paper)
-		set_opacity(TRUE)
+	. = ..()
 	if(smoothing_flags & (SMOOTH_CORNERS|SMOOTH_BITMASK))
 		QUEUE_SMOOTH(src)
 
+/obj/structure/window/paperframe/update_overlays()
+	. = ..()
+	. += (obj_integrity < max_integrity) ? torn : paper
 
 /obj/structure/window/paperframe/attackby(obj/item/W, mob/user)
 	if(W.get_temperature())
@@ -823,10 +822,10 @@
 			qdel(W)
 			user.visible_message("<span class='notice'>[user] patches some of the holes in \the [src].</span>")
 			if(obj_integrity == max_integrity)
-				update_icon()
+				update_appearance()
 			return
 	..()
-	update_icon()
+	update_appearance()
 
 /obj/structure/window/bronze
 	name = "brass window"

@@ -93,7 +93,7 @@
 
 /obj/machinery/shieldgen/proc/shields_up()
 	active = TRUE
-	update_icon()
+	update_appearance()
 	move_resist = INFINITY
 
 	for(var/turf/target_tile in range(shield_range, src))
@@ -104,7 +104,7 @@
 /obj/machinery/shieldgen/proc/shields_down()
 	active = FALSE
 	move_resist = initial(move_resist)
-	update_icon()
+	update_appearance()
 	QDEL_LIST(deployed_shields)
 
 /obj/machinery/shieldgen/process()
@@ -164,7 +164,7 @@
 			obj_integrity = max_integrity
 			set_machine_stat(machine_stat & ~BROKEN)
 			to_chat(user, "<span class='notice'>You repair \the [src].</span>")
-			update_icon()
+			update_appearance()
 
 	else if(W.tool_behaviour == TOOL_WRENCH)
 		if(locked)
@@ -204,10 +204,8 @@
 	to_chat(user, "<span class='warning'>You short out the access controller.</span>")
 
 /obj/machinery/shieldgen/update_icon_state()
-	if(active)
-		icon_state = (machine_stat & BROKEN) ? "shieldonbr":"shieldon"
-	else
-		icon_state = (machine_stat & BROKEN) ? "shieldoffbr":"shieldoff"
+	icon_state = "shield[active ? "on" : "off"][(machine_stat & BROKEN) ? "br" : null]"
+	return ..()
 
 #define ACTIVE_SETUPFIELDS 1
 #define ACTIVE_HASFIELDS 2
@@ -287,13 +285,14 @@
 	else
 		for(var/direction in GLOB.cardinals)
 			cleanup_field(direction)
-	update_icon()
+	update_appearance()
 
 /obj/machinery/power/shieldwallgen/update_icon_state()
 	if(active)
 		icon_state = initial(icon_state) + "_on"
 	else
 		icon_state = initial(icon_state)
+	return ..()
 
 /obj/machinery/power/shieldwallgen/update_overlays()
 	. = ..()
@@ -361,7 +360,7 @@
 //	update_cable_icons_on_turf(T) - Removed because smartwire Revert
 //WS Begin - Smartwire Revert
 	var/obj/structure/cable/cable = locate(/obj/structure/cable) in turf
-	cable.update_icon()
+	cable.update_appearance()
 //WS End - Smartwire Revert
 	if(. == SUCCESSFUL_UNFASTEN && anchored)
 		connect_to_network()
@@ -369,7 +368,7 @@
 
 /obj/machinery/power/shieldwallgen/attackby(obj/item/item, mob/user, params)
 	if(default_deconstruction_screwdriver(user, icon_state, icon_state, item))
-		update_icon()
+		update_appearance()
 		updateUsrDialog()
 		return TRUE
 

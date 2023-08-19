@@ -98,7 +98,7 @@
 /obj/item/clothing/head/helmet/space/hostile_environment/Initialize()
 	. = ..()
 	AddComponent(/datum/component/spraycan_paintable)
-	update_icon()
+	update_appearance()
 
 /obj/item/clothing/head/helmet/space/hostile_environment/update_overlays()
 	. = ..()

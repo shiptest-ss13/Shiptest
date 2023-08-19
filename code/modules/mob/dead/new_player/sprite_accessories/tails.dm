@@ -9,11 +9,13 @@
 	icon_state = "none"
 
 /datum/sprite_accessory/tails/human/cat
+	icon = 'icons/mob/species/misc/cat.dmi'
 	name = "Cat"
 	icon_state = "cat"
 	color_src = HAIR
 
 /datum/sprite_accessory/tails_animated/human/cat
+	icon = 'icons/mob/species/misc/cat.dmi'
 	name = "Cat"
 	icon_state = "cat"
 	color_src = HAIR

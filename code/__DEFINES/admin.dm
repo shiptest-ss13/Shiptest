@@ -67,7 +67,6 @@
 #define ADMIN_COORDJMP(src) "[src ? "[COORD(src)] [ADMIN_JMP(src)]" : "nonexistent location"]"
 #define ADMIN_VERBOSEJMP(src) "[src ? "[AREACOORD(src)] [ADMIN_JMP(src)]" : "nonexistent location"]"
 #define ADMIN_INDIVIDUALLOG(user) "(<a href='?_src_=holder;[HrefToken(TRUE)];individuallog=[REF(user)]'>LOGS</a>)"
-#define ADMIN_FAX(user, fax, faxtype, sent) "(<a href='?_src_=holder;[HrefToken(TRUE)];AdminFaxCreate=[REF(user)];originfax=[REF(fax)];faxtype=[faxtype];replyto=[REF(sent)]'>FAX</a>)"
 
 #define ADMIN_PUNISHMENT_BREAK_BONES "Break all bones"
 #define ADMIN_PUNISHMENT_LIGHTNING "Lightning bolt"
