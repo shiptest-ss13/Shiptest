@@ -43,7 +43,6 @@
 	return front_nodes + back_nodes + nodes
 
 /obj/machinery/atmospherics/pipe/layer_manifold/update_layer()
-	cut_overlays()
 	layer = initial(layer) + (PIPING_LAYER_MAX * PIPING_LAYER_LCHANGE)	//This is above everything else.
 
 /obj/machinery/atmospherics/pipe/layer_manifold/update_overlays()
