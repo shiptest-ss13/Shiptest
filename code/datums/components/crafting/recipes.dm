@@ -1170,3 +1170,17 @@
 				/obj/item/stack/sheet/mineral/plasma = 1)
 	tools = list(TOOL_WELDER)
 	category = CAT_MISC
+
+/datum/crafting_recipe/fermenting_barrel
+	name = "Wooden Barrel"
+	result = /obj/structure/fermenting_barrel
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 8)
+	time = 50
+	category = CAT_PRIMAL
+
+/datum/crafting_recipe/distiller
+	name = "Wooden Barrel"
+	result = /obj/structure/fermenting_barrel/distiller
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 8, /datum/reagent/srm_bacteria = 30)
+	time = 50
+	category = CAT_PRIMAL

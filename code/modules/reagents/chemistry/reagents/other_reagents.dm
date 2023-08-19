@@ -2787,4 +2787,10 @@
 
 /datum/reagent/srm_bacteria
 	name = "Illestren Bacteria"
-	description = "Bacteria native to the srm home planet"
+	description = "Bacteria native to the Saint-Roumain Militia home planet."
+	color = "#5a4f42"
+	taste_description = "vomit inducing"
+
+/datum/reagent/srm_bacteria/on_mob_life(mob/living/carbon/M)
+	if(prob(10))
+		M.vomit()

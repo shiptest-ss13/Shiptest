@@ -75,13 +75,6 @@
 		icon_state = "barrel"
 	return ..()
 
-/datum/crafting_recipe/fermenting_barrel
-	name = "Wooden Barrel"
-	result = /obj/structure/fermenting_barrel
-	reqs = list(/obj/item/stack/sheet/mineral/wood = 8)
-	time = 50
-	category = CAT_PRIMAL
-
 /obj/structure/fermenting_barrel/distiller
 	name = "Distiller"
 	icon_state = "distiller"
@@ -93,10 +86,3 @@
 	else
 		icon_state = "distiller"
 	return ..()
-
-/datum/crafting_recipe/distiller
-	name = "Wooden Barrel"
-	result = /obj/structure/fermenting_barrel/distiller
-	reqs = list(/obj/item/stack/sheet/mineral/wood = 8, /datum/reagent/srm_bacteria = 30)
-	time = 50
-	category = CAT_PRIMAL

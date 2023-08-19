@@ -720,7 +720,7 @@
 	name = "Montagne's Oak"
 	icon = 'icons/obj/flora/chapeltree.dmi'
 	icon_state = "churchtree"
-	desc = "A sturdy oak tree imported directly from the homeworld of the Montagne who runs the ship it resides on. It is planted in soil from the same place."
+	desc = "A sturdy oak tree imported directly from Illestren the homeworld of the Saint-Roumain Militia. The soil was carfuly transfered from the same place it was planted. A apple tree branch has been grafted onto it"
 	pixel_x = -16
 	max_integrity = 200
 	bound_height = 64
@@ -763,19 +763,22 @@
 /obj/structure/flora/tree/srm/process()
 	if(world.time > (lastcycle + 100))
 		if(reagents.total_volume > 0)
-			visible_message("<span class='green'>1.</span>")
+			visible_message("<span class='green'>has reagent.</span>")
 			var/gainedhealth = 0
 			for(var/reagent in healthchems)
-				visible_message("<span class='green'>2.</span>")
+				visible_message("<span class='green'>for loop.</span>")
 				if(reagents.has_reagent(reagent, 1))
-					visible_message("<span class='green'>3.</span>")
+					visible_message("<span class='green'>has healthchem.</span>")
 					gainedhealth += reagents.get_reagent_amount(reagent) * healthchems[reagent]
 					health += gainedhealth
 					reagents.remove_reagent(reagent, reagents.get_reagent_amount(reagent))
-		if(health > 0)
-			reagents.add_reagent(/datum/reagent/srm_bacteria, health)
-			health = 0
-			playsound(src, 'sound/effects/bubbles.ogg', 50, TRUE)
+		if(health > 10)
+			if(prob(25))
+				var/obj/item/reagent_containers/food/snacks/grown/apple/apple = new
+				apple.name = "Illestern" + initial(src.name)
+				apple.reagents.add_reagent(/datum/reagent/srm_bacteria, 10)
+				visible_message("<span class='green'> An [apple] falls from the tree.</span>")
+				health -= 10
 		//Clean up the air a bit
 		if(isopenturf(loc))
 			var/turf/open/T = src.loc

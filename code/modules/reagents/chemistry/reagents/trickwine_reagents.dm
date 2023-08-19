@@ -168,12 +168,10 @@
 /datum/reagent/consumable/ethanol/prism_wine/on_mob_metabolize(mob/living/carbon/human/M)
 	M.physiology.burn_mod *= 0.5
 	M.visible_message("<span class='warning'>[M] seems to shimmer with power!</span>")
-	M.throw_alert("breakawayflask", /atom/movable/screen/alert/prism_wine_drink)
 
 /datum/reagent/consumable/ethanol/prism_wine/on_mob_end_metabolize(mob/living/carbon/human/M)
 	M.physiology.burn_mod = initial(M.physiology.burn_mod)
 	M.visible_message("<span class='warning'>[M] has returned to normal!</span>")
-	M.clear_alert("breakawayflask")
 
 /datum/reagent/consumable/ethanol/prism_wine/expose_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(method == TOUCH)
@@ -187,8 +185,6 @@
 			if(the_human.physiology.burn_mod <= 2)
 				the_human.physiology.burn_mod *= 2
 				the_human.visible_message("<span class='warning'>[the_human] seemed weakend!</span>")
-				the_human.throw_alert("breakawayflask", /atom/movable/screen/alert/prism_wine_throw)
 				spawn(reac_volume SECONDS)
 					the_human.physiology.burn_mod *= 0.5
 					the_human.visible_message("<span class='warning'>[the_human] has returned to normal!</span>")
-					the_human.clear_alert("breakawayflask")
