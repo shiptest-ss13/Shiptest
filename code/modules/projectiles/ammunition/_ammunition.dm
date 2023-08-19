@@ -91,6 +91,7 @@
 	else
 		return ..()
 
+
 /obj/item/ammo_casing/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	bounce_away(FALSE, NONE)
 	. = ..()

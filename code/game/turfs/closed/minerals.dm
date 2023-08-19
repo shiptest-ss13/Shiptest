@@ -246,7 +246,7 @@
 	icon_state = "rockwall_icemoon-0"
 	base_icon_state = "rockwall_icemoon"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
-	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS)
+	canSmoothWith = list(SMOOTH_GROUP_MINERAL_WALLS)
 	environment_type = "snow_cavern"
 	turf_type = /turf/open/floor/plating/asteroid/icerock
 	baseturfs = /turf/open/floor/plating/asteroid/icerock
@@ -770,7 +770,7 @@
 	icon_state = "jungle_wall-0"
 	base_icon_state = "jungle_wall"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
-	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS)
+	canSmoothWith = list(SMOOTH_GROUP_MINERAL_WALLS)
 	turf_type = /turf/open/floor/plating/dirt/jungle
 	baseturfs = /turf/open/floor/plating/dirt/jungle
 	mineralSpawnChanceList = list(/obj/item/stack/ore/uranium = 8, /obj/item/stack/ore/diamond = 8, /obj/item/stack/ore/gold = 10,
@@ -778,10 +778,12 @@
 		/obj/item/stack/ore/bluespace_crystal = 5)
 
 /turf/closed/mineral/random/beach
+	name = "coastal marl"
+	desc = "Water eats away at the shoreline, forming rippling scars in softening stone."
 	baseturfs = /turf/open/floor/plating/asteroid/sand/dense
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 
-/turf/closed/mineral/random/asteroid/rockplanet
+/turf/closed/mineral/random/rockplanet
 	name = "hematite"
 	desc = "Iron grit rusts softly, bringing forth a crimson hue."
 	icon = 'icons/turf/mining.dmi'
@@ -802,7 +804,7 @@
 	smooth_icon = 'icons/turf/walls/red_wall.dmi'
 	base_icon_state = "red_wall"
 
-/turf/closed/mineral/random/asteroid/wasteplanet
+/turf/closed/mineral/random/wasteplanet
 	name = "polluted rock"
 	desc = "Whatever once held sway, the poison is all that remains."
 	icon = 'icons/turf/walls/wasteplanet.dmi'

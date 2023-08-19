@@ -8,6 +8,7 @@
 /*
  * First Aid Kits
  */
+
 /obj/item/storage/firstaid
 	name = "first-aid kit"
 	desc = "It's an emergency medical kit for those serious boo-boos."
@@ -177,6 +178,28 @@
 		/obj/item/reagent_containers/syringe/thializid = 3,
 		/obj/item/storage/pill_bottle/potassiodide = 1,
 		/obj/item/reagent_containers/hypospray/medipen/penacid = 1,
+	)
+	generate_items_inside(items_inside,src)
+
+/obj/item/storage/firstaid/radiation
+	name = "radiation treatment kit"
+	desc = "Used to treat severe radiation poisoning."
+	icon_state = "antitoxin"
+	item_state = "firstaid-toxin"
+	damagetype_healed = TOX
+
+/obj/item/storage/firstaid/radiation/Initialize(mapload)
+	. = ..()
+	icon_state = pick("antitoxin","antitoxfirstaid","antitoxfirstaid2")
+
+/obj/item/storage/firstaid/radiation/PopulateContents()
+	if(empty)
+		return
+	var/static/items_inside = list(
+		/obj/item/healthanalyzer = 1,
+		/obj/item/storage/pill_bottle/potassiodide = 2,
+		/obj/item/reagent_containers/hypospray/medipen/penacid = 2,
+		/obj/item/reagent_containers/hypospray/medipen/anti_rad = 4
 	)
 	generate_items_inside(items_inside,src)
 
