@@ -21,7 +21,6 @@
 	belt = /obj/item/pda/brig_phys
 	ears = /obj/item/radio/headset/headset_medsec/alt
 	uniform = /obj/item/clothing/under/rank/security/brig_phys
-	alt_uniform = /obj/item/clothing/under/rank/medical/doctor/red
 	shoes = /obj/item/clothing/shoes/sneakers/white
 	glasses = /obj/item/clothing/glasses/hud/health/sunglasses
 	suit = /obj/item/clothing/suit/toggle/labcoat/brig_phys
@@ -52,8 +51,8 @@
 /datum/outfit/job/brig_phys/syndicate/sbc
 	name = "Medic (Twinkleshine)"
 
-	gloves = /obj/item/clothing/gloves/color/latex/nitrile/evil
 	uniform = /obj/item/clothing/under/rank/medical/doctor/red
+	gloves = /obj/item/clothing/gloves/color/latex/nitrile/evil
 	alt_uniform = /obj/item/clothing/under/syndicate/cybersun
 	glasses = /obj/item/clothing/glasses/hud/health
 	belt = /obj/item/storage/belt/medical
@@ -62,8 +61,9 @@
 	suit = /obj/item/clothing/suit/longcoat/roboblack
 	alt_suit = /obj/item/clothing/suit/toggle/labcoat
 	suit_store =  null
+	head = null
 	ears = /obj/item/radio/headset/syndicate
-	mask = /obj/item/clothing/mask/chameleon
+	mask = /obj/item/clothing/mask/gas/syndicate/voicechanger
 	id = /obj/item/card/id/syndicate_command/crew_id/med
 	implants = list(/obj/item/implant/weapons_auth)
 	backpack_contents = list(/obj/item/pda/brig_phys)

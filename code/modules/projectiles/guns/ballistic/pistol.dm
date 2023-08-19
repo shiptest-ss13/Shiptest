@@ -1,6 +1,6 @@
 /obj/item/gun/ballistic/automatic/pistol
 	name = "stechkin pistol"
-	desc = "A small, easily concealable 10mm handgun. Has a threaded barrel for suppressors."
+	desc = "A small, easily concealable 10mm handgun, bearing Scarborough Arms stamps. Has a threaded barrel for suppressors."
 	icon_state = "pistol"
 	w_class = WEIGHT_CLASS_SMALL
 	mag_type = /obj/item/ammo_box/magazine/m10mm
@@ -36,8 +36,7 @@
 
 /obj/item/gun/ballistic/automatic/pistol/m1911
 	name = "\improper M1911"
-	desc = "A classic .45 handgun with a small magazine capacity."
-
+	desc = "A classic .45 handgun with a small magazine capacity. An engraving on the slide marks it as a product of Hunter's Pride."
 	icon_state = "m1911"
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/m45
@@ -52,7 +51,7 @@
 
 /obj/item/gun/ballistic/automatic/pistol/deagle
 	name = "\improper Desert Eagle"
-	desc = "A robust .50 AE handgun."
+	desc = "An oversized handgun chambered in .50 AE. A true hand cannon."
 	icon_state = "deagle"
 	force = 14
 	mag_type = /obj/item/ammo_box/magazine/m50
@@ -75,7 +74,7 @@
 
 /obj/item/gun/ballistic/automatic/pistol/APS
 	name = "stechkin APS pistol"
-	desc = "The original Russian version of a widely used Syndicate sidearm. Uses 9mm ammo."
+	desc = "A relative of the more common 10mm Stechkin, converted into a burst-fire machine pistol. Uses 9mm ammo."
 	icon_state = "aps"
 	w_class = WEIGHT_CLASS_SMALL
 	mag_type = /obj/item/ammo_box/magazine/pistolm9mm
@@ -185,7 +184,7 @@
 
 /obj/item/gun/ballistic/automatic/pistol/tec9
 	name = "\improper TEC9 machine pistol"
-	desc = "A new take on an old classic, firing 9mm rounds at unprecedented firerates. Perfect for gatting people down, especially considering how plentiful ammo is."
+	desc = "A somewhat cheaply-made machine pistol designed to vomit forth 9mm ammunition at a truly eye-watering rate of fire."
 	icon_state = "tec9"
 	weapon_weight = WEAPON_LIGHT
 	w_class = WEIGHT_CLASS_SMALL
@@ -194,7 +193,7 @@
 
 /obj/item/gun/ballistic/automatic/pistol/disposable
 	name = "disposable gun"
-	desc = "An exceedingly flimsy gun that is extremely cheap and easy to produce. You get what you pay for."
+	desc = "An exceedingly flimsy plastic gun that is extremely cheap and easy to produce. You get what you pay for."
 	icon_state = "disposable"
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/disposable

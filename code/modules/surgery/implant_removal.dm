@@ -8,7 +8,10 @@
 //extract implant
 /datum/surgery_step/extract_implant
 	name = "extract implant"
-	implements = list(TOOL_HEMOSTAT = 100, TOOL_CROWBAR = 65, /obj/item/kitchen/fork = 35)
+	implements = list(
+		TOOL_HEMOSTAT = 100,
+		TOOL_CROWBAR = 40,
+		/obj/item/kitchen/fork = 33)
 	time = 6.4 SECONDS
 	success_sound = 'sound/surgery/hemostat1.ogg'
 	experience_given = MEDICAL_SKILL_MEDIUM
@@ -43,7 +46,7 @@
 		if(case && !case.imp)
 			case.imp = I
 			I.forceMove(case)
-			case.update_icon()
+			case.update_appearance()
 			display_results(user, target, "<span class='notice'>You place [I] into [case].</span>",
 				"<span class='notice'>[user] places [I] into [case]!</span>",
 				"<span class='notice'>[user] places it into [case]!</span>")

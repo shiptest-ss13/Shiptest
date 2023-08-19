@@ -2,7 +2,7 @@
 //Put handheld rocket launchers here if someone ever decides to make something so hilarious ~Paprika
 
 /obj/item/gun/ballistic/revolver/grenadelauncher//this is only used for underbarrel grenade launchers at the moment, but admins can still spawn it if they feel like being assholes
-	desc = "A break-operated grenade launcher."
+	desc = "A break-action, single-shot grenade launcher. A compact way to deliver a big boom."
 	name = "grenade launcher"
 	icon_state = "dshotgun_sawn"
 	item_state = "gun"
@@ -22,7 +22,7 @@
 		chamber_round()
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/cyborg
-	desc = "A 6-shot grenade launcher."
+	desc = "A heavy grenade launcher with an oversized 6-shot cylinder."
 	name = "multi grenade launcher"
 	icon = 'icons/mecha/mecha_equipment.dmi'
 	icon_state = "mecha_grenadelnchr"
@@ -72,30 +72,6 @@
 
 /obj/item/gun/ballistic/rocketlauncher/attack_self_tk(mob/user)
 	return //too difficult to remove the rocket with TK
-
-/obj/item/gun/ballistic/rocketlauncher/suicide_act(mob/living/user)
-	user.visible_message("<span class='warning'>[user] aims [src] at the ground! It looks like [user.p_theyre()] performing a sick rocket jump!</span>", \
-		"<span class='userdanger'>You aim [src] at the ground to perform a bisnasty rocket jump...</span>")
-	if(can_shoot())
-		user.notransform = TRUE
-		playsound(src, 'sound/vehicles/rocketlaunch.ogg', 80, TRUE, 5)
-		animate(user, pixel_z = 300, time = 30, easing = LINEAR_EASING)
-		sleep(70)
-		animate(user, pixel_z = 0, time = 5, easing = LINEAR_EASING)
-		sleep(5)
-		user.notransform = FALSE
-		process_fire(user, user, TRUE)
-		if(!QDELETED(user)) //if they weren't gibbed by the explosion, take care of them for good.
-			user.gib()
-		return MANUAL_SUICIDE
-	else
-		sleep(5)
-		shoot_with_empty_chamber(user)
-		sleep(20)
-		user.visible_message("<span class='warning'>[user] looks about the room realizing [user.p_theyre()] still there. [user.p_they(TRUE)] proceed to shove [src] down their throat and choke [user.p_them()]self with it!</span>", \
-			"<span class='userdanger'>You look around after realizing you're still here, then proceed to choke yourself to death with [src]!</span>")
-		sleep(20)
-		return OXYLOSS
 
 /obj/item/gun/ballistic/rocketlauncher/solgov
 	name = "Panzerfaust XII"

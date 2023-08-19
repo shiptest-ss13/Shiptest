@@ -12,12 +12,8 @@
 	slot_flags = ITEM_SLOT_BELT
 	resistance_flags = FLAMMABLE
 
-/obj/item/clipboard/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins putting [user.p_their()] head into the clip of \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return BRUTELOSS//the clipboard's clip is very strong. industrial duty. can kill a man easily.
-
 /obj/item/clipboard/Initialize()
-	update_icon()
+	update_appearance()
 	. = ..()
 
 /obj/item/clipboard/Destroy()
@@ -40,10 +36,10 @@
 			return
 		toppaper = W
 		to_chat(user, "<span class='notice'>You clip the paper onto \the [src].</span>")
-		update_icon()
+		update_appearance()
 	else if(toppaper)
 		toppaper.attackby(user.get_active_held_item(), user)
-		update_icon()
+		update_appearance()
 
 
 /obj/item/clipboard/attack_self(mob/user)
@@ -122,4 +118,4 @@
 
 		//Update everything
 		attack_self(usr)
-		update_icon()
+		update_appearance()

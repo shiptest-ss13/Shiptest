@@ -59,7 +59,7 @@
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	w_class = WEIGHT_CLASS_BULKY
 	throwforce = 25
-	block_chance = 35
+	block_chance = 65
 	armour_penetration = 50
 	sharpness = IS_SHARP
 

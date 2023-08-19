@@ -698,9 +698,11 @@
 	icon_state = "coatinteq"
 	item_state = "coatinteq"
 	hoodtype = /obj/item/clothing/head/hooded/winterhood/security/inteq
+	supports_variations = KEPORI_VARIATION
 
 /obj/item/clothing/head/hooded/winterhood/security/inteq
 	icon_state = "winterhood_inteq"
+	supports_variations = KEPORI_VARIATION
 
 /obj/item/clothing/suit/hooded/coat/inteq
 	name = "inteq hooded coat"

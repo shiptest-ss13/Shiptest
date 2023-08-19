@@ -178,7 +178,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 17)
 	return ..()
 
 /obj/machinery/cryopod/LateInitialize()
-	update_icon()
+	update_appearance()
 	find_control_computer()
 
 /obj/machinery/cryopod/proc/find_control_computer(urgent = FALSE)

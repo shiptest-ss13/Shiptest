@@ -134,6 +134,7 @@
 #define NOSOCKS 24 // You cannot wear sock
 #define NO_BONES 25 //! You don't have any bones for breaking
 #define MUTCOLORS_SECONDARY 26 //! A second mutant colour for other things
+#define SKINCOLORS 27 //Human skintones
 
 //organ slots
 #define ORGAN_SLOT_BRAIN "brain"
@@ -165,8 +166,10 @@
 //organ defines
 #define STANDARD_ORGAN_THRESHOLD 100
 #define STANDARD_ORGAN_HEALING 0.001
-/// designed to fail organs when left to decay for ~15 minutes
-#define STANDARD_ORGAN_DECAY 0.00222
+//Organs fail in around ~30 minutes
+#define STANDARD_ORGAN_DECAY 0.00111
+//Vital organs (brain, heart) fail in around ~45 minutes
+#define STANDARD_VITAL_ORGAN_DECAY 0.00074
 
 //used for the can_chromosome var on mutations
 #define CHROMOSOME_NEVER 0
