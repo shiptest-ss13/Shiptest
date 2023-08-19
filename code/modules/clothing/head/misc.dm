@@ -482,6 +482,15 @@
 	icon_state = "inteqheadband"
 	item_state = "inteqheadband"
 
+/obj/item/clothing/head/inteq_peaked
+	name = "inteq peaked cap"
+	desc = "A peaked cap for Vanguards with a commanding authority, emblazoned with the golden badge of the IRMG."
+	icon_state = "inteq_peaked"
+	item_state = "inteq_peaked"
+	flags_inv = 0
+	armor = list("melee" = 40, "bullet" = 30, "laser" = 25, "energy" = 35, "bomb" = 25, "bio" = 10, "rad" = 0, "fire" = 50, "acid" = 60)
+	strip_delay = 60
+
 /obj/item/clothing/head/maidheadband
 	name = "maid headband"
 	desc = "Just like from one of those chinese cartoons!"
