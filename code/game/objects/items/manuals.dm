@@ -264,12 +264,13 @@
 			The simplest way I have found of making them is crafting them with a chunk of glass, plasma, and a welder.<br>
 
 			<h2> Bacteria </h2>
-			A speical speices of bacteria native to Illestern is what allows Trickwines form.<br>
+			A speical speices of bacteria native to Illestren is what allows Trickwines form.<br>
 			Now we use a special distiller that keeps just enough bacertia alive to ferment without turning the batch sour.<br>
 			Now you should still have one on board but if you dont its fine.<br>
 			It just so happens we have trees on board our ships host to the Bacteria.<br>
 			To get enough Bacteria your going to need to feed it anything that would help a plant.<br>
 			Water, Fertilizer, Ashwine are all good options.<br>
+			Soon it will drops some apples and you can grind them for the bacteria.<br>
 			Once you have enough you can fabricate it the same way you would a normal barrel.<br>
 
 			<h2> Ashwine </h2>

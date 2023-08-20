@@ -726,33 +726,35 @@
 	bound_height = 64
 	var/health = 0
 	var/lastcycle = 0
+	//Decides where the apple gets dropped
+	var/apple_direction = SOUTH
 	//Determines the health gained/lost when feeding the tree this chem
 	var/list/healthchems = list(
-		/datum/reagent/consumable/ethanol/ash_wine = 0.08,
-		/datum/reagent/water = 0.01,
-		/datum/reagent/plantnutriment = 0.02,
-		/datum/reagent/medicine/earthsblood = 0.1,
-		/datum/reagent/water/holywater = 0.08,
-		/datum/reagent/medicine/cryoxadone = 0.03,
-		/datum/reagent/ammonia = 0.04,
-		/datum/reagent/saltpetre = 0.05,
-		/datum/reagent/ash = 0.02,
-		/datum/reagent/diethylamine = 0.05,
-		/datum/reagent/consumable/nutriment = 0.01,
-		/datum/reagent/consumable/virus_food = 0.01,
-		/datum/reagent/blood = -0.01,
-		/datum/reagent/consumable/ethanol = -0.01,
-		/datum/reagent/toxin = -0.02,
-		/datum/reagent/fluorine = -0.03,
-		/datum/reagent/chlorine = -0.03,
-		/datum/reagent/toxin/acid = -0.03,
-		/datum/reagent/toxin/acid/fluacid = -0.04,
-		/datum/reagent/toxin/plantbgone = -0.05,
-		/datum/reagent/napalm = -0.06,
-		/datum/reagent/hellwater = -0.1,
-		/datum/reagent/liquidgibs = -0.02,
-		/datum/reagent/consumable/ethanol/demonsblood = -0.08,
-		/datum/reagent/medicine/soulus = -0.02
+		/datum/reagent/consumable/ethanol/ash_wine = 0.8,
+		/datum/reagent/water = 0.1,
+		/datum/reagent/plantnutriment = 0.2,
+		/datum/reagent/medicine/earthsblood = 1,
+		/datum/reagent/water/holywater = 0.8,
+		/datum/reagent/medicine/cryoxadone = 0.3,
+		/datum/reagent/ammonia = 0.4,
+		/datum/reagent/saltpetre = 0.5,
+		/datum/reagent/ash = 0.2,
+		/datum/reagent/diethylamine = 0.5,
+		/datum/reagent/consumable/nutriment = 0.1,
+		/datum/reagent/consumable/virus_food = 0.1,
+		/datum/reagent/blood = -0.1,
+		/datum/reagent/consumable/ethanol = -0.1,
+		/datum/reagent/toxin = -0.2,
+		/datum/reagent/fluorine = -0.3,
+		/datum/reagent/chlorine = -0.3,
+		/datum/reagent/toxin/acid = -0.3,
+		/datum/reagent/toxin/acid/fluacid = -0.4,
+		/datum/reagent/toxin/plantbgone = -0.5,
+		/datum/reagent/napalm = -0.6,
+		/datum/reagent/hellwater = -1,
+		/datum/reagent/liquidgibs = -0.2,
+		/datum/reagent/consumable/ethanol/demonsblood = -0.8,
+		/datum/reagent/medicine/soulus = -0.2
 	)
 
 /obj/structure/flora/tree/srm/Initialize()
@@ -772,13 +774,14 @@
 					gainedhealth += reagents.get_reagent_amount(reagent) * healthchems[reagent]
 					health += gainedhealth
 					reagents.remove_reagent(reagent, reagents.get_reagent_amount(reagent))
-		if(health > 10)
-			if(prob(25))
-				var/obj/item/reagent_containers/food/snacks/grown/apple/apple = new
-				apple.name = "Illestern" + initial(src.name)
+			reagents.clear_reagents()
+		if(health > 25)
+			if(prob(50))
+				var/obj/item/reagent_containers/food/snacks/grown/apple/apple = new(get_step(get_turf(src), apple_direction))
+				apple.name = "Illestren  Apple"
 				apple.reagents.add_reagent(/datum/reagent/srm_bacteria, 10)
-				visible_message("<span class='green'> An [apple] falls from the tree.</span>")
-				health -= 10
+				visible_message("<span class='green'>An [apple] falls from the tree.</span>")
+				health -= 25
 		//Clean up the air a bit
 		if(isopenturf(loc))
 			var/turf/open/T = src.loc
