@@ -82,9 +82,6 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
-"ar" = (
-/turf/closed/wall/mineral/titanium,
-/area/ship/crew/toilet)
 "at" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/engineering)
@@ -758,8 +755,7 @@
 	normaldoorcontrol = 1;
 	pixel_x = 26;
 	pixel_y = -2;
-	specialfunctions = 4;
-	inertia_last_loc = s
+	specialfunctions = 4
 	},
 /obj/machinery/light_switch{
 	pixel_x = 25;
@@ -2459,6 +2455,9 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
+"Jy" = (
+/turf/closed/wall/mineral/titanium,
+/area/ship/crew/toilet)
 "JI" = (
 /obj/structure/chair/office/light{
 	dir = 1
@@ -3253,7 +3252,7 @@ cF
 XD
 ss
 cF
-ar
+Jy
 aa
 "}
 (15,1,1) = {"
