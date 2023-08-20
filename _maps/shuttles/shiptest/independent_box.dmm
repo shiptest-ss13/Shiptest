@@ -359,6 +359,25 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
+"bw" = (
+/obj/machinery/button/door{
+	dir = 8;
+	id = "boxbathroom";
+	name = "Privacy Button";
+	normaldoorcontrol = 1;
+	pixel_x = 26;
+	pixel_y = 7;
+	specialfunctions = 4
+	},
+/obj/machinery/shower{
+	dir = 1;
+	layer = 3
+	},
+/obj/structure/curtain,
+/obj/item/soap,
+/obj/machinery/door/window/northleft,
+/turf/open/floor/plasteel/patterned/grid,
+/area/ship/crew/toilet)
 "by" = (
 /obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
@@ -610,9 +629,36 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "cu" = (
-/obj/structure/closet/emcloset/anchored,
-/turf/template_noop,
-/area/template_noop)
+/obj/effect/turf_decal/spline/fancy/opaque/blue,
+/obj/structure/sink{
+	dir = 4;
+	pixel_x = -12
+	},
+/obj/structure/mirror{
+	pixel_x = -24
+	},
+/obj/structure/toilet{
+	pixel_y = 13
+	},
+/obj/machinery/light_switch{
+	pixel_x = 11;
+	pixel_y = 22
+	},
+/obj/machinery/light/small/directional/north{
+	pixel_x = -10
+	},
+/turf/open/floor/plasteel/freezer,
+/area/ship/crew/toilet)
+"cw" = (
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 6
+	},
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/plating,
+/area/ship/engineering)
 "cB" = (
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/medical)
@@ -1018,16 +1064,6 @@
 /obj/machinery/firealarm/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
-"eP" = (
-/obj/machinery/atmospherics/pipe/simple/orange/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 6
-	},
-/obj/machinery/light/small/directional/north,
-/turf/open/floor/plating,
-/area/ship/engineering)
 "eR" = (
 /obj/machinery/door/window/westright,
 /obj/effect/turf_decal/trimline/opaque/blue/warning{
@@ -1259,27 +1295,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
-"iQ" = (
-/obj/effect/turf_decal/spline/fancy/opaque/blue,
-/obj/structure/sink{
-	dir = 4;
-	pixel_x = -12
-	},
-/obj/structure/mirror{
-	pixel_x = -24
-	},
-/obj/structure/toilet{
-	pixel_y = 13
-	},
-/obj/machinery/light_switch{
-	pixel_x = 11;
-	pixel_y = 22
-	},
-/obj/machinery/light/small/directional/north{
-	pixel_x = -10
-	},
-/turf/open/floor/plasteel/freezer,
-/area/ship/crew/toilet)
 "iU" = (
 /obj/structure/closet/secure_closet/medical2,
 /turf/open/floor/plasteel/dark,
@@ -2729,25 +2744,6 @@
 /obj/structure/sign/departments/engineering,
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/medical/morgue)
-"UA" = (
-/obj/machinery/button/door{
-	dir = 8;
-	id = "boxbathroom";
-	name = "Privacy Button";
-	normaldoorcontrol = 1;
-	pixel_x = 26;
-	pixel_y = 7;
-	specialfunctions = 4
-	},
-/obj/machinery/shower{
-	dir = 1;
-	layer = 3
-	},
-/obj/structure/curtain,
-/obj/item/soap,
-/obj/machinery/door/window/northleft,
-/turf/open/floor/plasteel/patterned/grid,
-/area/ship/crew/toilet)
 "UN" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
@@ -3029,7 +3025,7 @@ at
 yI
 at
 aa
-cu
+aa
 aa
 aa
 aa
@@ -3042,7 +3038,7 @@ aa
 aa
 aa
 at
-eP
+cw
 by
 Ps
 cc
@@ -3228,8 +3224,8 @@ hQ
 al
 al
 cF
-iQ
-UA
+cu
+bw
 cF
 aa
 aa
