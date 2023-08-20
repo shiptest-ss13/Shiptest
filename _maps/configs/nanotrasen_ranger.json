@@ -1,7 +1,7 @@
 {
 	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
 	"prefix": "NTSV",
-	"map_name": "Nanotrasen Ranger-class Aid Vessel",
+	"map_name": "Ranger-class Aid Vessel",
 	"namelists": [
 		"NANOTRASEN",
 		"NATURAL_AGGRESSIVE",
@@ -18,45 +18,29 @@
 		"Generalist"
 	],
 	"starting_funds": 4000,
-	"map_path": "_maps/shuttles/shiptest/nanotrasen_powerrangers.dmm",
+	"map_path": "_maps/shuttles/shiptest/nanotrasen_ranger.dmm",
 	"limit": 1,
 	"job_slots": {
 		"LP Lieutenant": {
-			"outfit": "/datum/outfit/job/lp/lieutenant",
+			"outfit": "/datum/outfit/job/captain/nt/lp_lieutenant",
 			"officer": true,
 			"slots": 1
 		},
-		"Commissioner": {
-			"outfit": "/datum/outfit/job/lp/commissioner",
-			"slots": 1
-		},
 		"LP Engineering Specialist": {
-			"outfit": "/datum/outfit/job/lp/engineer",
+			"outfit": "/datum/outfit/job/engineer/lp",
 			"slots": 1
 		},
 		"LP Security Specialist": {
-			"outfit": "/datum/outfit/job/lp/security",
+			"outfit": "/datum/outfit/job/security/lp",
 			"slots": 1
 		},
 		"LP Medical Specialist": {
-			"outfit": "/datum/outfit/job/lp/medic",
-			"slots": 1
-		},
-		"Medical Doctor": {
 			"outfit": "/datum/outfit/job/doctor/lp",
 			"slots": 1
 		},
-		"Bartender": {
-			"outfit": "/datum/outfit/job/bartender/lp",
+		"Intern": {
+			"outfit": "/datum/outfit/job/assistant",
 			"slots": 1
-		},
-		"Researcher": {
-			"outfit": "/datum/outfit/job/scientist/lp",
-			"slots": 2
-		},
-		"Miner": {
-			"outfit": "/datum/outfit/job/miner/lp",
-			"slots": 2
 		}
 	},
 	"enabled": true
