@@ -253,3 +253,21 @@
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/eyepatch
 
 	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/pda/captain)
+
+/datum/outfit/job/captain/nt/lp_lieutenant
+	name = "LP Lieutenant"
+
+	implants = list(/obj/item/implant/mindshield)
+	ears = /obj/item/radio/headset/nanotrasen/alt/captain
+	id = /obj/item/card/id/lplieu
+	belt = /obj/item/pda/captain
+	gloves = /obj/item/clothing/gloves/color/black
+	uniform = /obj/item/clothing/under/rank/security/head_of_security/alt/lp
+	alt_uniform = /obj/item/clothing/under/rank/security/head_of_security/alt/skirt/lp
+	dcoat = /obj/item/clothing/suit/jacket
+	shoes = /obj/item/clothing/shoes/jackboots
+	head = /obj/item/clothing/head/beret/command
+
+	satchel = /obj/item/storage/backpack/satchel/cap
+	duffelbag = /obj/item/storage/backpack/duffelbag/captain
+	courierbag = /obj/item/storage/backpack/messenger/com

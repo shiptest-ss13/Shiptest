@@ -30,7 +30,7 @@
 				trophy_message = showpiece_entry["trophy_message"]
 	if(start_showpiece_type)
 		showpiece = new start_showpiece_type (src)
-	update_icon()
+	update_appearance()
 
 /obj/structure/displaycase/Destroy()
 	if(electronics)
@@ -75,7 +75,7 @@
 		broken = 1
 		new /obj/item/shard(src.loc)
 		playsound(src, "shatter", 70, TRUE)
-		update_icon()
+		update_appearance()
 		trigger_alarm()
 
 /obj/structure/displaycase/proc/trigger_alarm()
@@ -85,7 +85,7 @@
 		alarmed.burglaralert(src)
 		playsound(src, 'sound/effects/alert.ogg', 50, TRUE)
 
-/obj/structure/displaycase/update_icon()
+/obj/structure/displaycase/update_appearance()
 	var/icon/I
 	if(open)
 		I = icon('icons/obj/stationobjs.dmi',"glassbox_open")
@@ -98,7 +98,7 @@
 		S.Scale(17,17)
 		I.Blend(S,ICON_UNDERLAY,8,8)
 	src.icon = I
-	return
+	return ..()
 
 /obj/structure/displaycase/attackby(obj/item/W, mob/user, params)
 	if(W.GetID() && !broken && openable)
@@ -115,7 +115,7 @@
 			to_chat(user, "<span class='notice'>You begin repairing [src]...</span>")
 			if(W.use_tool(src, user, 40, amount=5, volume=50))
 				obj_integrity = max_integrity
-				update_icon()
+				update_appearance()
 				to_chat(user, "<span class='notice'>You repair [src].</span>")
 		else
 			to_chat(user, "<span class='warning'>[src] is already in good condition!</span>")
@@ -139,7 +139,7 @@
 		if(user.transferItemToLoc(W, src))
 			showpiece = W
 			to_chat(user, "<span class='notice'>You put [W] on display.</span>")
-			update_icon()
+			update_appearance()
 	else if(glass_fix && broken && istype(W, /obj/item/stack/sheet/glass))
 		var/obj/item/stack/sheet/glass/G = W
 		if(G.get_amount() < 2)
@@ -150,13 +150,13 @@
 			G.use(2)
 			broken = 0
 			obj_integrity = max_integrity
-			update_icon()
+			update_appearance()
 	else
 		return ..()
 
 /obj/structure/displaycase/proc/toggle_lock(mob/user)
 	open = !open
-	update_icon()
+	update_appearance()
 
 /obj/structure/displaycase/attack_paw(mob/user)
 	return attack_hand(user)
@@ -171,7 +171,7 @@
 		log_combat(user, src, "deactivates the hover field of")
 		dump()
 		src.add_fingerprint(user)
-		update_icon()
+		update_appearance()
 		return
 	else
 		//prevents remote "kicks" with TK
@@ -318,7 +318,7 @@
 		to_chat(user, "<span class='notice'>You insert [W] into the case.</span>")
 		showpiece = W
 		added_roundstart = FALSE
-		update_icon()
+		update_appearance()
 
 		placer_key = user.ckey
 
@@ -381,7 +381,7 @@
 	///We're using the same trick as paper does in order to cache the image, and only load the UI when messed with.
 	var/list/viewing_ui = list()
 
-/obj/structure/displaycase/forsale/update_icon()	//remind me to fix my shitcode later
+/obj/structure/displaycase/forsale/update_appearance()	//remind me to fix my shitcode later
 	var/icon/I
 	if(open)
 		I = icon('icons/obj/stationobjs.dmi',"laserboxb0")
@@ -396,7 +396,7 @@
 		S.Scale(17,17)
 		I.Blend(S,ICON_UNDERLAY,8,12)
 	src.icon = I
-	return
+	return ..()
 
 /obj/structure/displaycase/forsale/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
@@ -459,7 +459,7 @@
 				icon = 'icons/obj/stationobjs.dmi'
 				flick("laserbox_vend", src)
 				showpiece = null
-				update_icon()
+				update_appearance()
 				SStgui.update_uis(src)
 				return TRUE
 		if("Open")
@@ -525,7 +525,7 @@
 		if(do_after(user, 20, target = src))
 			broken = 0
 			obj_integrity = max_integrity
-			update_icon()
+			update_appearance()
 		return TRUE
 
 /obj/structure/displaycase/forsale/wrench_act(mob/living/user, obj/item/I)
@@ -565,7 +565,7 @@
 	if(!broken && !(flags_1 & NODECONSTRUCT_1))
 		broken = TRUE
 		playsound(src, "shatter", 70, TRUE)
-		update_icon()
+		update_appearance()
 		trigger_alarm() //In case it's given an alarm anyway.
 
 /obj/structure/displaycase/forsale/kitchen

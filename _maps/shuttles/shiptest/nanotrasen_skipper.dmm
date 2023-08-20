@@ -1249,7 +1249,7 @@
 	name = "Chamber Mixer"
 	},
 /obj/item/paper/crumpled{
-	info = "A mix of 67/33 ratio of oxygen (node 2) and plasma (node 1) works very well, even at 500 kPa."
+	default_raw_text = "A mix of 67/33 ratio of oxygen (node 2) and plasma (node 1) works very well, even at 500 kPa."
 	},
 /obj/structure/catwalk/over,
 /turf/open/floor/plating,
@@ -1568,9 +1568,7 @@
 /obj/effect/turf_decal/corner/transparent/grey/half{
 	dir = 8
 	},
-/obj/machinery/photocopier/faxmachine/longrange{
-	department = "Internal Affairs"
-	},
+/obj/machinery/fax,
 /obj/structure/table,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office)
@@ -5742,7 +5740,7 @@
 	},
 /obj/machinery/disposal/bin,
 /obj/item/paper{
-	info = "The igniter in the chamber does not work very well. I suggest throwing lit welders down the disposal chute over there to ignite the chamber."
+	default_raw_text = "The igniter in the chamber does not work very well. I suggest throwing lit welders down the disposal chute over there to ignite the chamber."
 	},
 /obj/item/weldingtool,
 /obj/structure/disposalpipe/trunk{

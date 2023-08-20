@@ -15,10 +15,11 @@
 /obj/item/papercutter/Initialize()
 	. = ..()
 	storedcutter = new /obj/item/hatchet/cutterblade(src)
-	update_icon()
+	update_appearance()
 
 /obj/item/papercutter/update_icon_state()
 	icon_state = (storedcutter ? "[initial(icon_state)]-cutter" : "[initial(icon_state)]")
+	return ..()
 
 /obj/item/papercutter/update_overlays()
 	. =..()
@@ -33,7 +34,7 @@
 		playsound(loc, "pageturn", 60, TRUE)
 		to_chat(user, "<span class='notice'>You place [P] in [src].</span>")
 		storedpaper = P
-		update_icon()
+		update_appearance()
 		return
 	if(istype(P, /obj/item/hatchet/cutterblade) && !storedcutter)
 		if(!user.transferItemToLoc(P, src))
@@ -41,7 +42,7 @@
 		to_chat(user, "<span class='notice'>You replace [src]'s [P].</span>")
 		P.forceMove(src)
 		storedcutter = P
-		update_icon()
+		update_appearance()
 		return
 	if(P.tool_behaviour == TOOL_SCREWDRIVER && storedcutter)
 		P.play_tool_sound(src)
@@ -63,7 +64,7 @@
 		to_chat(user, "<span class='notice'>You remove [src]'s [storedcutter].</span>")
 		user.put_in_hands(storedcutter)
 		storedcutter = null
-		update_icon()
+		update_appearance()
 
 	if(storedpaper)
 		playsound(src.loc, 'sound/weapons/slash.ogg', 50, TRUE)
@@ -72,7 +73,7 @@
 		qdel(storedpaper)
 		new /obj/item/paperslip(get_turf(src))
 		new /obj/item/paperslip(get_turf(src))
-		update_icon()
+		update_appearance()
 
 /obj/item/papercutter/MouseDrop(atom/over_object)
 	. = ..()

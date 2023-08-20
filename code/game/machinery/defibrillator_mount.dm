@@ -87,7 +87,7 @@
 		// Make sure the defib is set before processing begins.
 		defib = I
 		begin_processing()
-		update_icon()
+		update_appearance()
 		return
 	else if(defib && I == defib.paddles)
 		defib.paddles.snap_back()
@@ -100,7 +100,7 @@
 				return
 			clamps_locked = !clamps_locked
 			to_chat(user, "<span class='notice'>Clamps [clamps_locked ? "" : "dis"]engaged.</span>")
-			update_icon()
+			update_appearance()
 		else
 			to_chat(user, "<span class='warning'>Insufficient access.</span>")
 		return
@@ -123,7 +123,7 @@
 	"<span class='notice'>You override the locking clamps on [src]!</span>")
 	playsound(src, 'sound/machines/locktoggle.ogg', 50, TRUE)
 	clamps_locked = FALSE
-	update_icon()
+	update_appearance()
 	return TRUE
 
 /obj/machinery/defibrillator_mount/wrench_act(mob/living/user, obj/item/wrench/W)
@@ -159,7 +159,7 @@
 	// Make sure processing ends before the defib is nulled
 	end_processing()
 	defib = null
-	update_icon()
+	update_appearance()
 
 /obj/machinery/defibrillator_mount/charging
 	name = "PENLITE defibrillator mount"
@@ -189,7 +189,7 @@
 	if(C.charge < C.maxcharge)
 		use_power(100)
 		C.give(80)
-		update_icon()
+		update_appearance()
 
 //wallframe, for attaching the mounts easily
 /obj/item/wallframe/defib_mount

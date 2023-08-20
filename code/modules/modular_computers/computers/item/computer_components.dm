@@ -42,7 +42,7 @@
 	H.on_remove(src, user)
 	if(enabled && !use_power())
 		shutdown_computer()
-	update_icon()
+	update_appearance()
 	return TRUE
 
 

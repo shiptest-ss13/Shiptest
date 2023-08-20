@@ -268,13 +268,12 @@
 	. = ..()
 	if(amount == max_amount)	 //only seal full mesh packs
 		is_open = FALSE
-		update_icon()
+		update_appearance()
 
 /obj/item/stack/medical/mesh/update_icon_state()
-	if(!is_open)
-		icon_state = "regen_mesh_closed"
-	else
+	if(is_open)
 		return ..()
+	icon_state = "regen_mesh_closed"
 
 /obj/item/stack/medical/mesh/heal(mob/living/target, mob/user)
 	. = ..()
@@ -308,7 +307,7 @@
 	if(!is_open)
 		is_open = TRUE
 		to_chat(user, "<span class='notice'>You open the sterile mesh package.</span>")
-		update_icon()
+		update_appearance()
 		playsound(src, 'sound/items/poster_ripped.ogg', 20, TRUE)
 		return
 	. = ..()
@@ -324,10 +323,9 @@
 	grind_results = list(/datum/reagent/consumable/aloejuice = 1)
 
 /obj/item/stack/medical/mesh/advanced/update_icon_state()
-	if(!is_open)
-		icon_state = "aloe_mesh_closed"
-	else
+	if(is_open)
 		return ..()
+	icon_state = "aloe_mesh_closed"
 
 /obj/item/stack/medical/aloe
 	name = "aloe cream"

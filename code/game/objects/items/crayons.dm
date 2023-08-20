@@ -16,6 +16,14 @@
  * Crayons
  */
 
+/obj/item/toy/crayon/get_writing_implement_details()
+	return list(
+		interaction_mode = MODE_WRITING,
+		font = CRAYON_FONT,
+		color = paint_color,
+		use_bold = TRUE,
+	)
+
 /obj/item/toy/crayon
 	name = "crayon"
 	desc = "A colourful crayon. Looks tasty. Mmmm..."
@@ -156,7 +164,7 @@
 		if(has_cap)
 			is_capped = !is_capped
 			to_chat(user, "<span class='notice'>The cap on [src] is now [is_capped ? "on" : "off"].</span>")
-			update_icon()
+			update_appearance()
 
 /obj/item/toy/crayon/CtrlClick(mob/user)
 	if(can_change_colour && !isturf(loc) && user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
@@ -251,7 +259,7 @@
 			. = TRUE
 			paint_mode = PAINT_NORMAL
 			drawtype = "a"
-	update_icon()
+	update_appearance()
 
 /obj/item/toy/crayon/proc/select_colour(mob/user)
 	var/chosen_colour = input(user, "", "Choose Color", paint_color) as color|null
@@ -592,7 +600,7 @@
 	new /obj/item/toy/crayon/blue(src)
 	new /obj/item/toy/crayon/purple(src)
 	new /obj/item/toy/crayon/black(src)
-	update_icon()
+	update_appearance()
 
 /obj/item/storage/crayons/update_overlays()
 	. = ..()
@@ -654,7 +662,7 @@
 		paint_color = pick("#DA0000","#FF9300","#FFF200","#A8E61D","#00B7EF",
 		"#DA00FF")
 	refill()
-	update_icon()
+	update_appearance()
 
 
 /obj/item/toy/crayon/spraycan/examine(mob/user)
@@ -730,6 +738,7 @@
 
 /obj/item/toy/crayon/spraycan/update_icon_state()
 	icon_state = is_capped ? icon_capped : icon_uncapped
+	return ..()
 
 /obj/item/toy/crayon/spraycan/update_overlays()
 	. = ..()

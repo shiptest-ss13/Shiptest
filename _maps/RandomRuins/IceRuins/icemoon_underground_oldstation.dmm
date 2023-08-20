@@ -2,6 +2,10 @@
 "aa" = (
 /turf/template_noop,
 /area/template_noop)
+"ab" = (
+/mob/living/simple_animal/hostile/asteroid/wolf,
+/turf/open/floor/plating/asteroid/snow/icemoon,
+/area/overmap_encounter/planetoid/ice/explored)
 "ad" = (
 /turf/closed/wall/r_wall,
 /area/ruin/space/has_grav/ancientstation/deltaai)
@@ -306,11 +310,17 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/rust,
 /area/ruin/space/has_grav/ancientstation)
+"bd" = (
+/turf/template_noop,
+/area/space)
 "be" = (
 /obj/structure/window/reinforced/spawner/north,
 /obj/structure/window/reinforced/spawner/west,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/ancientstation/deltaai)
+"bf" = (
+/turf/open/floor/plating/icemoon,
+/area/overmap_encounter/planetoid/ice/explored)
 "bg" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/corner/opaque/blue{
@@ -752,6 +762,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation)
+"cs" = (
+/obj/item/stack/rods,
+/turf/open/floor/plating/asteroid/snow/icemoon,
+/area/overmap_encounter/planetoid/ice/explored)
 "ct" = (
 /obj/structure/sign/poster/official/science,
 /turf/closed/wall,
@@ -1054,6 +1068,10 @@
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
 /area/ruin/space/has_grav/ancientstation/medbay)
+"dF" = (
+/obj/structure/lattice,
+/turf/open/floor/plating/asteroid/snow/icemoon,
+/area/overmap_encounter/planetoid/ice/explored)
 "dG" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -1621,6 +1639,19 @@
 /obj/structure/cable,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/engi)
+"ff" = (
+/obj/item/stack/rods,
+/obj/item/shard{
+	icon_state = "tiny"
+	},
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/item/shard,
+/turf/open/floor/plating/icemoon{
+	icon_state = "platingdmg1"
+	},
+/area/overmap_encounter/planetoid/ice/explored)
 "fg" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/corner/opaque/yellow{
@@ -2168,6 +2199,10 @@
 /obj/structure/sign/poster/official/build,
 /turf/closed/wall,
 /area/ruin/space/has_grav/ancientstation/engi)
+"gY" = (
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow,
+/turf/open/floor/plating/asteroid/snow/icemoon,
+/area/overmap_encounter/planetoid/ice/explored)
 "gZ" = (
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt,
@@ -3841,6 +3876,9 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/atmo)
+"lg" = (
+/turf/open/floor/plating/asteroid/snow/icemoon,
+/area/overmap_encounter/planetoid/ice/explored)
 "li" = (
 /obj/effect/spawner/structure/window/hollow/reinforced/end{
 	dir = 8
@@ -3987,6 +4025,23 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/ancientstation/proto)
+"lH" = (
+/obj/item/stack/rods,
+/obj/item/shard{
+	icon_state = "tiny"
+	},
+/obj/structure/window/reinforced,
+/turf/open/floor/plating/icemoon{
+	icon_state = "platingdmg2"
+	},
+/area/overmap_encounter/planetoid/ice/explored)
+"lI" = (
+/obj/item/stack/rods,
+/obj/structure/window/reinforced,
+/turf/open/floor/plating/icemoon{
+	icon_state = "platingdmg2"
+	},
+/area/overmap_encounter/planetoid/ice/explored)
 "lJ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/clothing/suit/space/nasavoid/old,
@@ -4012,6 +4067,34 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/rnd)
+"lO" = (
+/obj/structure/table,
+/obj/item/storage/firstaid/ancient,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/defibrillator,
+/obj/item/paper/fluff/ruins/oldstation/protosleep{
+	default_raw_text = "<b>*Prototype Sleeper*</b><br><br>We have deliverted the lastest in medical technology to the medical bay for your use."
+	},
+/obj/machinery/power/apc{
+	dir = 1;
+	name = "Beta Station Medbay APC";
+	pixel_y = 23;
+	start_charge = 0
+	},
+/obj/effect/turf_decal/corner/opaque/blue,
+/obj/effect/turf_decal/corner/opaque/blue{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/opaque/blue{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plasteel/airless{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/space/has_grav/ancientstation/medbay)
 "lQ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
@@ -4161,34 +4244,6 @@
 /obj/item/pipe_dispenser,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/mining)
-"mu" = (
-/obj/structure/table,
-/obj/item/storage/firstaid/ancient,
-/obj/effect/decal/cleanable/dirt,
-/obj/item/defibrillator,
-/obj/item/paper/fluff/ruins/oldstation/protosleep{
-	info = "<b>*Prototype Sleeper*</b><br><br>We have deliverted the lastest in medical technology to the medical bay for your use."
-	},
-/obj/machinery/power/apc{
-	dir = 1;
-	name = "Beta Station Medbay APC";
-	pixel_y = 23;
-	start_charge = 0
-	},
-/obj/effect/turf_decal/corner/opaque/blue,
-/obj/effect/turf_decal/corner/opaque/blue{
-	dir = 4
-	},
-/obj/effect/turf_decal/corner/opaque/blue{
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/turf/open/floor/plasteel/airless{
-	initial_gas_mix = "ICEMOON_ATMOS"
-	},
-/area/ruin/space/has_grav/ancientstation/medbay)
 "mv" = (
 /obj/effect/spawner/structure/window/hollow/reinforced/end{
 	dir = 8
@@ -5074,6 +5129,10 @@
 /obj/structure/cable,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/ancientstation/betastorage)
+"oR" = (
+/obj/item/shard,
+/turf/open/floor/plating/asteroid/snow/icemoon,
+/area/overmap_encounter/planetoid/ice/explored)
 "oS" = (
 /obj/effect/decal/cleanable/glass,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
@@ -5141,6 +5200,12 @@
 	},
 /turf/open/floor/plating/icemoon,
 /area/ruin/space/has_grav/ancientstation/atmo)
+"pe" = (
+/obj/item/shard{
+	icon_state = "small"
+	},
+/turf/open/floor/plating/asteroid/snow/icemoon,
+/area/overmap_encounter/planetoid/ice/explored)
 "pf" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -5349,6 +5414,10 @@
 /obj/effect/spawner/structure/window/hollow/reinforced,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/ancientstation/medbay)
+"qR" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/closed/mineral/random/snow,
+/area/overmap_encounter/planetoid/cave/explored)
 "qS" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/firedoor,
@@ -5438,10 +5507,6 @@
 /obj/structure/closet/firecloset/full,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/ancientstation/deltacorridor)
-"sA" = (
-/obj/item/shard,
-/turf/open/floor/plating/asteroid/snow/icemoon,
-/area/overmap_encounter/planetoid/ice/explored)
 "sB" = (
 /obj/machinery/door/poddoor{
 	id = "proto";
@@ -5486,6 +5551,11 @@
 /obj/effect/turf_decal/snowdin_station_sign/up/seven,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation)
+"sY" = (
+/obj/structure/lattice,
+/obj/item/stack/rods,
+/turf/open/floor/plating/asteroid/snow/icemoon,
+/area/overmap_encounter/planetoid/ice/explored)
 "te" = (
 /obj/machinery/door/airlock/maintenance_hatch{
 	dir = 4
@@ -5726,6 +5796,15 @@
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
 /area/ruin/space/has_grav/ancientstation/medbay)
+"vr" = (
+/obj/machinery/light/directional/east,
+/obj/structure/table/reinforced,
+/obj/item/paper/fluff/ruins/oldstation/protosing{
+	default_raw_text = "fucking uhhh tesla                                    -I'll finish this later, Professor Fiddler";
+	name = "Tesla Generator"
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/space/has_grav/ancientstation/proto)
 "vs" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
@@ -5801,10 +5880,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/betacorridor)
-"vO" = (
-/obj/item/stack/rods,
-/turf/open/floor/plating/asteroid/snow/icemoon,
-/area/overmap_encounter/planetoid/ice/explored)
 "vU" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/airalarm/directional/east,
@@ -5966,10 +6041,6 @@
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/ancientstation)
-"xo" = (
-/mob/living/simple_animal/hostile/asteroid/wolf,
-/turf/open/floor/plating/asteroid/snow/icemoon,
-/area/overmap_encounter/planetoid/ice/explored)
 "xr" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -5993,6 +6064,9 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/deltacorridor)
+"xT" = (
+/turf/closed/mineral/random/snow,
+/area/overmap_encounter/planetoid/cave/explored)
 "xY" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/directional/west,
@@ -6041,9 +6115,6 @@
 /obj/effect/turf_decal/snowdin_station_sign/five,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation)
-"yq" = (
-/turf/open/floor/plating/icemoon,
-/area/space)
 "yx" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/reagent_dispensers/fueltank,
@@ -6425,9 +6496,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/ancientstation/proto)
-"BT" = (
-/turf/open/floor/plating/asteroid/snow/icemoon,
-/area/overmap_encounter/planetoid/ice/explored)
 "BU" = (
 /obj/machinery/door/airlock/science{
 	dir = 8
@@ -6573,19 +6641,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/deltacorridor)
-"Dj" = (
-/obj/item/stack/rods,
-/obj/item/shard{
-	icon_state = "tiny"
-	},
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/item/shard,
-/turf/open/floor/plating/icemoon{
-	icon_state = "platingdmg1"
-	},
-/area/overmap_encounter/planetoid/ice/explored)
 "Dm" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
@@ -6732,10 +6787,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/hydroponics)
-"Eh" = (
-/mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow,
-/turf/open/floor/plating/asteroid/snow/icemoon,
-/area/overmap_encounter/planetoid/ice/explored)
 "Eq" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/chair{
@@ -6892,11 +6943,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation)
-"Fw" = (
-/obj/structure/lattice,
-/obj/item/stack/rods,
-/turf/open/floor/plating/asteroid/snow/icemoon,
-/area/overmap_encounter/planetoid/ice/explored)
 "FH" = (
 /obj/structure/window/reinforced{
 	dir = 4
@@ -6974,10 +7020,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/deltacorridor)
-"Gm" = (
-/obj/structure/lattice,
-/turf/open/floor/plating/asteroid/snow/icemoon,
-/area/overmap_encounter/planetoid/ice/explored)
 "Go" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small/directional/west{
@@ -7142,9 +7184,6 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/ancientstation)
-"HL" = (
-/turf/closed/mineral/random/snow,
-/area/overmap_encounter/planetoid/cave/explored)
 "HO" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small/directional/south,
@@ -7385,19 +7424,6 @@
 /obj/machinery/portable_atmospherics/scrubber,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/ancientstation/deltacorridor)
-"KB" = (
-/turf/template_noop,
-/area/space)
-"KC" = (
-/obj/item/stack/rods,
-/obj/item/shard{
-	icon_state = "tiny"
-	},
-/obj/structure/window/reinforced,
-/turf/open/floor/plating/icemoon{
-	icon_state = "platingdmg2"
-	},
-/area/overmap_encounter/planetoid/ice/explored)
 "KM" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/snowdin_station_sign/up/six,
@@ -7409,15 +7435,6 @@
 	icon_state = "platingdmg1"
 	},
 /area/ruin/space/has_grav/ancientstation/betastorage)
-"KU" = (
-/obj/item/shard{
-	icon_state = "tiny"
-	},
-/obj/item/shard{
-	icon_state = "small"
-	},
-/turf/open/floor/plating/icemoon,
-/area/overmap_encounter/planetoid/ice/explored)
 "KX" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
@@ -7487,10 +7504,6 @@
 /obj/machinery/firealarm/directional/east,
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/ancientstation/rnd)
-"LH" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/closed/mineral/random/snow,
-/area/overmap_encounter/planetoid/cave/explored)
 "LI" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
@@ -7545,6 +7558,12 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/ancientstation/engi)
+"LY" = (
+/obj/machinery/atmospherics/components/unary/outlet_injector/on/layer2{
+	dir = 8
+	},
+/turf/open/floor/plating/icemoon,
+/area/overmap_encounter/planetoid/ice/explored)
 "Mh" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/directional/west,
@@ -7684,12 +7703,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation)
-"Ne" = (
-/obj/machinery/atmospherics/components/unary/outlet_injector/on/layer2{
-	dir = 8
-	},
-/turf/open/floor/plating/icemoon,
-/area/overmap_encounter/planetoid/ice/explored)
 "Nm" = (
 /obj/structure/catwalk,
 /obj/structure/cable{
@@ -7714,6 +7727,26 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation)
+"Nz" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/corner/opaque/red,
+/obj/effect/turf_decal/corner/opaque/red{
+	dir = 4
+	},
+/obj/structure/sign/poster/retro/lasergun{
+	pixel_x = 32
+	},
+/obj/item/gun/energy/laser/retro{
+	pixel_x = -2;
+	pixel_y = -2
+	},
+/obj/item/gun/energy/laser/retro{
+	pixel_x = 2;
+	pixel_y = 2
+	},
+/obj/structure/rack,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation/sec)
 "NC" = (
 /obj/machinery/power/smes/engineering{
 	charge = 0
@@ -8037,6 +8070,15 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation)
+"QV" = (
+/obj/item/shard{
+	icon_state = "tiny"
+	},
+/obj/item/shard{
+	icon_state = "small"
+	},
+/turf/open/floor/plating/icemoon,
+/area/overmap_encounter/planetoid/ice/explored)
 "QZ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
@@ -8105,6 +8147,9 @@
 /obj/structure/table,
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/ancientstation/proto)
+"RT" = (
+/turf/open/floor/plating/icemoon,
+/area/space)
 "RX" = (
 /obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
@@ -8194,6 +8239,11 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/deltacorridor)
+"Td" = (
+/obj/item/stack/rods,
+/obj/structure/lattice,
+/turf/open/floor/plating/asteroid/snow/icemoon,
+/area/overmap_encounter/planetoid/ice/explored)
 "Tf" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -8394,11 +8444,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation)
-"Uu" = (
-/obj/item/stack/rods,
-/obj/structure/lattice,
-/turf/open/floor/plating/asteroid/snow/icemoon,
-/area/overmap_encounter/planetoid/ice/explored)
 "UC" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/snowdin_station_sign/six,
@@ -8414,15 +8459,6 @@
 /obj/effect/spawner/lootdrop/maintenance/seven,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/hydroponics)
-"UT" = (
-/obj/machinery/light/directional/east,
-/obj/structure/table/reinforced,
-/obj/item/paper/fluff/ruins/oldstation/protosing{
-	info = "fucking uhhh tesla                                    -I'll finish this later, Professor Fiddler";
-	name = "Tesla Generator"
-	},
-/turf/open/floor/plasteel/white,
-/area/ruin/space/has_grav/ancientstation/proto)
 "UV" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -8441,30 +8477,29 @@
 "UZ" = (
 /turf/closed/mineral/random/snow,
 /area/ruin/space/has_grav/ancientstation/betacorridor)
-"Vc" = (
-/obj/item/shard{
-	icon_state = "small"
-	},
-/turf/open/floor/plating/asteroid/snow/icemoon,
-/area/overmap_encounter/planetoid/ice/explored)
 "Ve" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/ancientstation/deltacorridor)
-"Vx" = (
-/obj/item/stack/rods,
-/obj/structure/window/reinforced,
-/turf/open/floor/plating/icemoon{
-	icon_state = "platingdmg2"
-	},
-/area/overmap_encounter/planetoid/ice/explored)
 "VC" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/deltacorridor)
+"VE" = (
+/obj/item/stack/rods,
+/obj/item/shard{
+	icon_state = "tiny"
+	},
+/obj/item/shard{
+	icon_state = "medium"
+	},
+/turf/open/floor/plating/icemoon{
+	icon_state = "platingdmg3"
+	},
+/area/overmap_encounter/planetoid/ice/explored)
 "Wi" = (
 /obj/machinery/door/airlock/science{
 	dir = 8
@@ -8626,18 +8661,6 @@
 /obj/machinery/airalarm/directional/west,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/mining)
-"XF" = (
-/obj/item/stack/rods,
-/obj/item/shard{
-	icon_state = "tiny"
-	},
-/obj/item/shard{
-	icon_state = "medium"
-	},
-/turf/open/floor/plating/icemoon{
-	icon_state = "platingdmg3"
-	},
-/area/overmap_encounter/planetoid/ice/explored)
 "XJ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
@@ -8676,26 +8699,6 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/ancientstation/engi)
-"Yl" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/opaque/red,
-/obj/effect/turf_decal/corner/opaque/red{
-	dir = 4
-	},
-/obj/structure/sign/poster/retro/lasergun{
-	pixel_x = 32
-	},
-/obj/item/gun/energy/laser/retro{
-	pixel_x = -2;
-	pixel_y = -2
-	},
-/obj/item/gun/energy/laser/retro{
-	pixel_x = 2;
-	pixel_y = 2
-	},
-/obj/structure/rack,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/sec)
 "Ym" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/window/westleft,
@@ -8774,9 +8777,6 @@
 /obj/structure/particle_accelerator/fuel_chamber,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/ancientstation/deltacorridor)
-"Zv" = (
-/turf/open/floor/plating/icemoon,
-/area/overmap_encounter/planetoid/ice/explored)
 "ZB" = (
 /obj/machinery/space_heater,
 /turf/open/floor/plating,
@@ -8830,11 +8830,11 @@ aa
 aa
 aa
 aa
-BT
-BT
-BT
-BT
-BT
+lg
+lg
+lg
+lg
+lg
 aa
 aa
 aa
@@ -8848,21 +8848,21 @@ aa
 aa
 aa
 aa
-HL
-HL
-BT
-Eh
+xT
+xT
+lg
+gY
 kQ
 kQ
 kQ
 kQ
 kQ
-Eh
+gY
 kQ
 kQ
 kQ
 kQ
-BT
+lg
 aa
 aa
 aa
@@ -8878,13 +8878,13 @@ aa
 aa
 aa
 aa
-BT
-xo
-HL
-HL
-Uu
-BT
-Gm
+lg
+ab
+xT
+xT
+Td
+lg
+dF
 AK
 AK
 AK
@@ -8892,13 +8892,13 @@ bF
 lV
 AK
 AK
-BT
-BT
+lg
+lg
 aa
-HL
-HL
-HL
-HL
+xT
+xT
+xT
+xT
 ZV
 kQ
 kQ
@@ -8911,8 +8911,8 @@ kQ
 qk
 GP
 kQ
-BT
-BT
+lg
+lg
 aa
 aa
 aa
@@ -8927,10 +8927,10 @@ aa
 aa
 aa
 aa
-BT
-HL
-HL
-HL
+lg
+xT
+xT
+xT
 me
 nQ
 gO
@@ -8941,13 +8941,13 @@ oA
 oE
 PT
 AK
-BT
-BT
-HL
-HL
-HL
-HL
-HL
+lg
+lg
+xT
+xT
+xT
+xT
+xT
 ZV
 nl
 nt
@@ -8960,9 +8960,9 @@ nB
 nK
 EV
 kQ
-BT
-BT
-vO
+lg
+lg
+cs
 aa
 aa
 "}
@@ -8976,10 +8976,10 @@ aa
 aa
 aa
 aa
-BT
-HL
-HL
-LH
+lg
+xT
+xT
+qR
 ch
 bH
 hJ
@@ -8990,13 +8990,13 @@ oB
 oF
 oJ
 lW
-Fw
-Gm
-HL
-HL
-HL
-HL
-HL
+sY
+dF
+xT
+xT
+xT
+xT
+xT
 ZV
 nm
 nu
@@ -9009,9 +9009,9 @@ kW
 HA
 ng
 kQ
-vO
-xo
-HL
+cs
+ab
+xT
 aa
 aa
 "}
@@ -9025,27 +9025,27 @@ aa
 aa
 aa
 aa
-Eh
-HL
+gY
+xT
 md
 ch
 ch
 Sd
 je
 AK
-mu
+lO
 dD
 kb
 eH
 nD
 AK
-BT
-BT
-Gm
-BT
-BT
-HL
-HL
+lg
+lg
+dF
+lg
+lg
+xT
+xT
 ZV
 OM
 qS
@@ -9058,9 +9058,9 @@ le
 pp
 kQ
 kQ
-BT
-HL
-HL
+lg
+xT
+xT
 aa
 aa
 "}
@@ -9074,8 +9074,8 @@ aa
 aa
 aa
 aa
-BT
-Gm
+lg
+dF
 nQ
 me
 ch
@@ -9106,11 +9106,11 @@ Dp
 Wp
 lf
 kQ
-HL
-HL
-HL
-HL
-HL
+xT
+xT
+xT
+xT
+xT
 aa
 "}
 (7,1,1) = {"
@@ -9123,8 +9123,8 @@ aa
 aa
 aa
 aa
-BT
-BT
+lg
+lg
 nQ
 gw
 bw
@@ -9155,11 +9155,11 @@ zm
 WT
 Bc
 kQ
-HL
-HL
-HL
-HL
-HL
+xT
+xT
+xT
+xT
+xT
 aa
 "}
 (8,1,1) = {"
@@ -9173,9 +9173,9 @@ aa
 aa
 aa
 aa
-HL
-HL
-HL
+xT
+xT
+xT
 ch
 zJ
 mV
@@ -9204,10 +9204,10 @@ Zg
 pv
 uT
 kQ
-BT
-HL
-HL
-HL
+lg
+xT
+xT
+xT
 aa
 aa
 "}
@@ -9221,10 +9221,10 @@ aa
 aa
 aa
 aa
-HL
-HL
-HL
-HL
+xT
+xT
+xT
+xT
 ch
 wK
 sE
@@ -9253,9 +9253,9 @@ Hx
 pv
 Ze
 kQ
-vO
-BT
-HL
+cs
+lg
+xT
 aa
 nr
 aa
@@ -9271,9 +9271,9 @@ aa
 aa
 aa
 aa
-HL
-HL
-HL
+xT
+xT
+xT
 ch
 zJ
 ck
@@ -9287,14 +9287,14 @@ NH
 jk
 oP
 Cs
-sA
-BT
-Gm
-BT
-Gm
-Vc
-Gm
-BT
+oR
+lg
+dF
+lg
+dF
+pe
+dF
+lg
 kQ
 Tk
 Mt
@@ -9302,9 +9302,9 @@ qF
 Tk
 Mt
 kQ
-BT
-BT
-BT
+lg
+lg
+lg
 aa
 aa
 aa
@@ -9321,8 +9321,8 @@ aa
 aa
 aa
 aa
-HL
-BT
+xT
+lg
 ch
 zJ
 mS
@@ -9336,26 +9336,26 @@ YN
 nE
 nG
 bG
-BT
-BT
-Gm
-BT
-Gm
-BT
-Gm
-BT
-Gm
-BT
-BT
-Ne
-BT
-BT
-Gm
-BT
-BT
-BT
-BT
-BT
+lg
+lg
+dF
+lg
+dF
+lg
+dF
+lg
+dF
+lg
+lg
+LY
+lg
+lg
+dF
+lg
+lg
+lg
+lg
+lg
 aa
 "}
 (12,1,1) = {"
@@ -9370,8 +9370,8 @@ aa
 aa
 aa
 aa
-Gm
-vO
+dF
+cs
 ch
 mW
 mV
@@ -9385,27 +9385,27 @@ YA
 qc
 nF
 bG
-Gm
-Gm
-Zv
-Gm
-Zv
-Gm
-Zv
-BT
-BT
-BT
-BT
-Gm
-BT
-BT
-BT
-BT
-BT
-BT
-BT
-BT
-BT
+dF
+dF
+bf
+dF
+bf
+dF
+bf
+lg
+lg
+lg
+lg
+dF
+lg
+lg
+lg
+lg
+lg
+lg
+lg
+lg
+lg
 "}
 (13,1,1) = {"
 aa
@@ -9418,9 +9418,9 @@ aa
 aa
 aa
 aa
-Gm
-BT
-BT
+dF
+lg
+lg
 ch
 zv
 mV
@@ -9434,27 +9434,27 @@ bG
 bG
 bG
 bG
-BT
-BT
-Gm
-BT
-Gm
-BT
-Gm
-BT
-BT
-BT
-BT
-Gm
-BT
+lg
+lg
+dF
+lg
+dF
+lg
+dF
+lg
+lg
+lg
+lg
+dF
+lg
 Oe
 zr
 lS
-BT
+lg
 lz
 OP
 lz
-BT
+lg
 "}
 (14,1,1) = {"
 aa
@@ -9467,9 +9467,9 @@ aa
 aa
 aa
 aa
-Gm
-BT
-BT
+dF
+lg
+lg
 ch
 Ub
 dM
@@ -9478,32 +9478,32 @@ aa
 aa
 aa
 aa
-BT
-BT
-BT
-BT
-BT
-BT
-BT
-Gm
-BT
-Gm
-BT
-Gm
-BT
-BT
-BT
-BT
-Gm
-BT
+lg
+lg
+lg
+lg
+lg
+lg
+lg
+dF
+lg
+dF
+lg
+dF
+lg
+lg
+lg
+lg
+dF
+lg
 Oe
 Bh
 lz
-Gm
+dF
 lz
 wf
 lS
-BT
+lg
 "}
 (15,1,1) = {"
 aa
@@ -9516,9 +9516,9 @@ aa
 aa
 aa
 aa
-Gm
-BT
-BT
+dF
+lg
+lg
 ch
 Cq
 dM
@@ -9527,32 +9527,32 @@ aa
 aa
 aa
 aa
-BT
-BT
-BT
-BT
-BT
-BT
-BT
-Gm
-BT
-Gm
-BT
-Gm
-BT
-BT
-BT
-BT
-Gm
-BT
+lg
+lg
+lg
+lg
+lg
+lg
+lg
+dF
+lg
+dF
+lg
+dF
+lg
+lg
+lg
+lg
+dF
+lg
 lz
 CZ
 lS
-BT
+lg
 qZ
 tS
 jD
-BT
+lg
 "}
 (16,1,1) = {"
 aa
@@ -9564,10 +9564,10 @@ aa
 aa
 aa
 nr
-Gm
-BT
-BT
-BT
+dF
+lg
+lg
+lg
 bK
 mW
 mV
@@ -9577,31 +9577,31 @@ aa
 aa
 aa
 aa
-BT
-BT
-BT
-BT
-BT
-BT
-Gm
-BT
-Gm
-BT
-Gm
-BT
-BT
-BT
-BT
-Gm
-BT
-Gm
+lg
+lg
+lg
+lg
+lg
+lg
+dF
+lg
+dF
+lg
+dF
+lg
+lg
+lg
+lg
+dF
+lg
+dF
 Gq
-Gm
-BT
-Gm
+dF
+lg
+dF
 Gq
-Gm
-BT
+dF
+lg
 "}
 (17,1,1) = {"
 aa
@@ -9626,31 +9626,31 @@ aa
 aa
 aa
 aa
-BT
-BT
-BT
-BT
-BT
-BT
-Gm
-BT
-Gm
-BT
-Gm
-BT
-BT
-BT
-BT
-Gm
-BT
+lg
+lg
+lg
+lg
+lg
+lg
+dF
+lg
+dF
+lg
+dF
+lg
+lg
+lg
+lg
+dF
+lg
 lz
 dH
 lz
-BT
+lg
 Oe
 wc
 lz
-BT
+lg
 "}
 (18,1,1) = {"
 aa
@@ -9675,31 +9675,31 @@ aa
 aa
 aa
 aa
-BT
-BT
-BT
-BT
-BT
-BT
-Gm
-BT
-Gm
-BT
-Gm
-BT
-BT
-BT
-BT
-Gm
-BT
+lg
+lg
+lg
+lg
+lg
+lg
+dF
+lg
+dF
+lg
+dF
+lg
+lg
+lg
+lg
+dF
+lg
 qZ
 rG
 jD
-BT
+lg
 lz
 Gq
 lz
-BT
+lg
 "}
 (19,1,1) = {"
 aa
@@ -9724,31 +9724,31 @@ aa
 aa
 aa
 aa
-BT
-BT
-BT
-BT
-BT
-BT
-Gm
-BT
-Gm
-BT
-Gm
-BT
-BT
-BT
-BT
-Gm
-BT
+lg
+lg
+lg
+lg
+lg
+lg
+dF
+lg
+dF
+lg
+dF
+lg
+lg
+lg
+lg
+dF
+lg
 lz
 dH
 lz
-BT
+lg
 qZ
 Tw
 lz
-BT
+lg
 "}
 (20,1,1) = {"
 aa
@@ -9773,31 +9773,31 @@ aa
 aa
 aa
 aa
-BT
-BT
-BT
-BT
-BT
-BT
-Gm
-BT
-Gm
-BT
-Gm
-BT
-BT
-BT
-BT
-Gm
-BT
-Gm
+lg
+lg
+lg
+lg
+lg
+lg
+dF
+lg
+dF
+lg
+dF
+lg
+lg
+lg
+lg
+dF
+lg
+dF
 OP
-Gm
-BT
-Gm
+dF
+lg
+dF
 HQ
-Gm
-BT
+dF
+lg
 "}
 (21,1,1) = {"
 aa
@@ -9822,7 +9822,7 @@ aa
 aa
 aa
 aa
-BT
+lg
 dH
 dH
 uA
@@ -9846,7 +9846,7 @@ dH
 uA
 JG
 lz
-BT
+lg
 "}
 (22,1,1) = {"
 aa
@@ -9871,31 +9871,31 @@ aa
 aa
 aa
 aa
-BT
+lg
 OP
-BT
-BT
-BT
-BT
-Gm
-BT
-Gm
-BT
-Gm
-BT
-BT
-BT
-BT
-Gm
-BT
-Gm
+lg
+lg
+lg
+lg
+dF
+lg
+dF
+lg
+dF
+lg
+lg
+lg
+lg
+dF
+lg
+dF
 OP
-Gm
-BT
-Gm
+dF
+lg
+dF
 dH
-Gm
-BT
+dF
+lg
 "}
 (23,1,1) = {"
 aa
@@ -9920,31 +9920,31 @@ aa
 aa
 aa
 aa
-BT
+lg
 HQ
-BT
-BT
-BT
-BT
-Gm
-BT
-Gm
-BT
-Gm
-BT
-BT
-BT
-BT
-Gm
-BT
+lg
+lg
+lg
+lg
+dF
+lg
+dF
+lg
+dF
+lg
+lg
+lg
+lg
+dF
+lg
 lz
 Nm
 lS
-BT
+lg
 lz
 OP
 lz
-BT
+lg
 "}
 (24,1,1) = {"
 aa
@@ -9972,28 +9972,28 @@ aa
 fB
 DN
 fB
-BT
-BT
-BT
-Gm
-BT
-Gm
-BT
-Gm
-BT
-BT
-BT
-BT
-Gm
-BT
+lg
+lg
+lg
+dF
+lg
+dF
+lg
+dF
+lg
+lg
+lg
+lg
+dF
+lg
 lz
 HQ
 lz
-BT
+lg
 lz
 HQ
 lz
-BT
+lg
 "}
 (25,1,1) = {"
 aa
@@ -10021,28 +10021,28 @@ aa
 fC
 LI
 fC
-BT
-BT
-BT
-Gm
-BT
-Gm
-BT
-Gm
-BT
-BT
-BT
-BT
-Gm
-BT
+lg
+lg
+lg
+dF
+lg
+dF
+lg
+dF
+lg
+lg
+lg
+lg
+dF
+lg
 lz
 Rz
 jD
-BT
+lg
 lz
 Nm
 lS
-BT
+lg
 "}
 (26,1,1) = {"
 aa
@@ -10054,10 +10054,10 @@ aa
 aa
 aa
 aa
-Gm
-BT
-BT
-BT
+dF
+lg
+lg
+lg
 bK
 zJ
 mV
@@ -10070,28 +10070,28 @@ aa
 fC
 LI
 fC
-BT
-BT
-BT
-Gm
-BT
-Gm
-BT
-Gm
-BT
-BT
-BT
-BT
-Gm
-BT
-Gm
+lg
+lg
+lg
+dF
+lg
+dF
+lg
+dF
+lg
+lg
+lg
+lg
+dF
+lg
+dF
 dH
-Gm
-BT
-Gm
+dF
+lg
+dF
 HQ
-Gm
-BT
+dF
+lg
 "}
 (27,1,1) = {"
 aa
@@ -10103,10 +10103,10 @@ aa
 aa
 aa
 aa
-Gm
-BT
-BT
-BT
+dF
+lg
+lg
+lg
 ch
 zv
 mV
@@ -10123,24 +10123,24 @@ hk
 eI
 eI
 eI
-BT
-Gm
-BT
-Gm
-BT
-BT
-BT
-BT
-Gm
-BT
+lg
+dF
+lg
+dF
+lg
+lg
+lg
+lg
+dF
+lg
 lz
 OP
 lz
-BT
+lg
 lz
 HQ
 lz
-BT
+lg
 "}
 (28,1,1) = {"
 aa
@@ -10152,10 +10152,10 @@ aa
 aa
 aa
 aa
-Gm
-BT
-BT
-BT
+dF
+lg
+lg
+lg
 ch
 mW
 mS
@@ -10172,24 +10172,24 @@ hl
 WP
 id
 eI
-BT
-Gm
-BT
-Gm
-BT
-BT
-BT
-BT
-Gm
-BT
+lg
+dF
+lg
+dF
+lg
+lg
+lg
+lg
+dF
+lg
 Oe
 Gt
 lz
-Gm
+dF
 lz
 Nm
 lS
-BT
+lg
 "}
 (29,1,1) = {"
 aa
@@ -10201,10 +10201,10 @@ aa
 aa
 aa
 aa
-Gm
-BT
-BT
-BT
+dF
+lg
+lg
+lg
 ch
 mW
 mS
@@ -10227,18 +10227,18 @@ eI
 eI
 eI
 eI
-BT
-BT
-Gm
-BT
+lg
+lg
+dF
+lg
 qZ
 JG
 lz
-BT
+lg
 qZ
 xh
 lS
-BT
+lg
 "}
 (30,1,1) = {"
 aa
@@ -10250,10 +10250,10 @@ aa
 aa
 aa
 aa
-Gm
-BT
-BT
-BT
+dF
+lg
+lg
+lg
 ch
 mW
 mS
@@ -10276,18 +10276,18 @@ iU
 Ts
 gH
 eI
-BT
-BT
-Gm
-BT
-BT
-BT
-BT
-BT
-BT
-BT
-BT
-BT
+lg
+lg
+dF
+lg
+lg
+lg
+lg
+lg
+lg
+lg
+lg
+lg
 "}
 (31,1,1) = {"
 aa
@@ -10299,10 +10299,10 @@ aa
 aa
 aa
 aa
-Gm
-BT
-BT
-BT
+dF
+lg
+lg
+lg
 ch
 zJ
 mV
@@ -10325,17 +10325,17 @@ iV
 XJ
 pg
 eI
-BT
-BT
-Gm
-BT
-BT
-BT
-BT
-BT
-BT
-BT
-BT
+lg
+lg
+dF
+lg
+lg
+lg
+lg
+lg
+lg
+lg
+lg
 aa
 "}
 (32,1,1) = {"
@@ -10348,10 +10348,10 @@ aa
 aa
 aa
 aa
-Gm
-BT
-BT
-BT
+dF
+lg
+lg
+lg
 bJ
 zJ
 mV
@@ -10374,16 +10374,16 @@ iW
 jj
 ie
 eI
-BT
-BT
-Gm
-BT
-BT
-BT
-BT
-BT
-BT
-BT
+lg
+lg
+dF
+lg
+lg
+lg
+lg
+lg
+lg
+lg
 aa
 aa
 "}
@@ -10426,13 +10426,13 @@ aT
 aT
 aT
 aT
-BT
-BT
-BT
-BT
-BT
-BT
-BT
+lg
+lg
+lg
+lg
+lg
+lg
+lg
 aa
 aa
 "}
@@ -10477,11 +10477,11 @@ kC
 aT
 aT
 aT
-BT
-BT
-BT
-BT
-BT
+lg
+lg
+lg
+lg
+lg
 aa
 aa
 "}
@@ -10526,11 +10526,11 @@ KX
 KX
 jQ
 aT
-BT
-BT
-BT
-BT
-HL
+lg
+lg
+lg
+lg
+xT
 aa
 aa
 "}
@@ -10540,7 +10540,7 @@ aa
 aa
 aa
 aa
-BT
+lg
 as
 as
 as
@@ -10576,11 +10576,11 @@ kM
 aG
 aT
 aT
-BT
-BT
-HL
-HL
-HL
+lg
+lg
+xT
+xT
+xT
 aa
 "}
 (37,1,1) = {"
@@ -10588,7 +10588,7 @@ aa
 aa
 aa
 aa
-BT
+lg
 as
 as
 dW
@@ -10626,18 +10626,18 @@ kD
 mz
 aT
 aG
-BT
-HL
-HL
-HL
+lg
+xT
+xT
+xT
 aa
 "}
 (38,1,1) = {"
 aa
 aa
 aa
-BT
-BT
+lg
+lg
 aS
 aO
 bg
@@ -10675,18 +10675,18 @@ pi
 pk
 HO
 aG
-HL
-HL
-HL
-HL
-HL
+xT
+xT
+xT
+xT
+xT
 "}
 (39,1,1) = {"
 aa
 aa
-BT
-BT
-BT
+lg
+lg
+lg
 al
 at
 bi
@@ -10723,19 +10723,19 @@ kO
 bN
 lr
 pm
-HL
-HL
-HL
-HL
-HL
-HL
+xT
+xT
+xT
+xT
+xT
+xT
 "}
 (40,1,1) = {"
 aa
 aa
-BT
-BT
-BT
+lg
+lg
+lg
 am
 au
 aJ
@@ -10771,20 +10771,20 @@ bN
 bN
 bN
 pl
-HL
-HL
-HL
-HL
-HL
-HL
+xT
+xT
+xT
+xT
+xT
+xT
 aa
 "}
 (41,1,1) = {"
 aa
 aa
-BT
-BT
-Eh
+lg
+lg
+gY
 am
 av
 aK
@@ -10821,19 +10821,19 @@ kP
 bT
 kp
 pj
-HL
-HL
-HL
-HL
-HL
+xT
+xT
+xT
+xT
+xT
 aa
 "}
 (42,1,1) = {"
 aa
 aa
-BT
-BT
-BT
+lg
+lg
+lg
 am
 aw
 aL
@@ -10871,18 +10871,18 @@ pj
 bN
 po
 aT
-HL
-HL
-HL
+xT
+xT
+xT
 aa
 aa
 "}
 (43,1,1) = {"
 aa
 aa
-BT
-BT
-BT
+lg
+lg
+lg
 an
 ax
 aI
@@ -10921,7 +10921,7 @@ kp
 pk
 bL
 aa
-HL
+xT
 aa
 aa
 aa
@@ -10930,8 +10930,8 @@ aa
 aa
 aa
 aa
-BT
-BT
+lg
+lg
 aS
 bP
 ax
@@ -10980,7 +10980,7 @@ aa
 aa
 aa
 aa
-BT
+lg
 as
 as
 fP
@@ -11030,7 +11030,7 @@ aa
 aa
 aa
 aa
-BT
+lg
 as
 as
 as
@@ -11229,13 +11229,13 @@ aa
 aa
 aa
 aa
-Gm
-BT
-BT
-BT
-HL
-HL
-HL
+dF
+lg
+lg
+lg
+xT
+xT
+xT
 bN
 Go
 eJ
@@ -11255,10 +11255,10 @@ Go
 yJ
 bN
 aT
-BT
-BT
-BT
-Gm
+lg
+lg
+lg
+dF
 aa
 aa
 aa
@@ -11278,13 +11278,13 @@ aa
 aa
 aa
 aa
-Gm
-BT
-BT
-HL
-HL
-HL
-HL
+dF
+lg
+lg
+xT
+xT
+xT
+xT
 bN
 bN
 eJ
@@ -11304,12 +11304,12 @@ bN
 yJ
 bN
 aT
-BT
-BT
-BT
-Gm
-BT
-BT
+lg
+lg
+lg
+dF
+lg
+lg
 aa
 aa
 aa
@@ -11326,14 +11326,14 @@ aa
 aa
 aa
 aa
-Gm
-BT
-vO
-Eh
-HL
-HL
-HL
-HL
+dF
+lg
+cs
+gY
+xT
+xT
+xT
+xT
 ci
 bL
 eJ
@@ -11353,14 +11353,14 @@ bL
 ij
 bL
 aT
-BT
-BT
-BT
-Gm
-BT
-BT
-BT
-BT
+lg
+lg
+lg
+dF
+lg
+lg
+lg
+lg
 aa
 aa
 aa
@@ -11376,15 +11376,15 @@ aa
 aa
 aa
 nr
-BT
-Gm
-BT
+lg
+dF
+lg
 aa
-HL
-HL
-HL
-Dj
-BT
+xT
+xT
+xT
+ff
+lg
 eJ
 fd
 ew
@@ -11398,19 +11398,19 @@ OV
 il
 eJ
 eJ
-BT
+lg
 iv
-BT
-BT
-BT
-BT
-BT
-Gm
-BT
-BT
-BT
-BT
-BT
+lg
+lg
+lg
+lg
+lg
+dF
+lg
+lg
+lg
+lg
+lg
 aa
 aa
 aa
@@ -11424,17 +11424,17 @@ aa
 aa
 aa
 aa
-HL
-HL
+xT
+xT
 aa
 aa
 aa
-HL
-HL
-BT
-BT
-BT
-BT
+xT
+xT
+lg
+lg
+lg
+lg
 eJ
 ex
 eV
@@ -11443,25 +11443,25 @@ fO
 fO
 MI
 wd
-Yl
+Nz
 im
 eJ
-BT
-BT
+lg
+lg
 iv
-BT
-BT
-BT
-BT
-BT
-Gm
-BT
-BT
-BT
-BT
-BT
-BT
-xo
+lg
+lg
+lg
+lg
+lg
+dF
+lg
+lg
+lg
+lg
+lg
+lg
+ab
 aa
 aa
 "}
@@ -11472,18 +11472,18 @@ aa
 aa
 aa
 aa
-HL
-HL
-HL
-HL
+xT
+xT
+xT
+xT
 aa
 aa
 aa
-KB
-BT
-KC
-BT
-BT
+bd
+lg
+lH
+lg
+lg
 eJ
 eJ
 eJ
@@ -11495,22 +11495,22 @@ dv
 dv
 dv
 eJ
-BT
-BT
+lg
+lg
 iv
-BT
-BT
-BT
-BT
-BT
-Gm
-BT
-BT
-BT
-BT
-BT
-BT
-BT
+lg
+lg
+lg
+lg
+lg
+dF
+lg
+lg
+lg
+lg
+lg
+lg
+lg
 aa
 aa
 "}
@@ -11521,44 +11521,44 @@ aa
 aa
 aa
 aa
-HL
-HL
-HL
-HL
+xT
+xT
+xT
+xT
 aa
 aa
 aa
-KB
-BT
-BT
-BT
-BT
-BT
-BT
-BT
-BT
-Gm
-yq
-Gm
-BT
-BT
-Gm
-BT
-BT
-BT
+bd
+lg
+lg
+lg
+lg
+lg
+lg
+lg
+lg
+dF
+RT
+dF
+lg
+lg
+dF
+lg
+lg
+lg
 iO
-BT
-BT
-BT
-BT
-BT
-Gm
-BT
-BT
-BT
-HL
-BT
-BT
+lg
+lg
+lg
+lg
+lg
+dF
+lg
+lg
+lg
+xT
+lg
+lg
 aa
 aa
 aa
@@ -11570,258 +11570,258 @@ aa
 aa
 aa
 aa
-HL
-HL
-HL
+xT
+xT
+xT
 aa
 aa
 aa
 aa
-BT
-BT
-XF
-BT
-BT
-BT
-BT
-BT
-BT
-Gm
-yq
-Gm
-Gm
-Gm
-Zv
-Gm
-Gm
-Gm
+lg
+lg
+VE
+lg
+lg
+lg
+lg
+lg
+lg
+dF
+RT
+dF
+dF
+dF
+bf
+dF
+dF
+dF
 iO
-Gm
-Gm
-Gm
-Gm
-Gm
-Zv
-BT
-BT
-HL
-HL
-HL
-HL
+dF
+dF
+dF
+dF
+dF
+bf
+lg
+lg
+xT
+xT
+xT
+xT
 aa
 aa
 aa
 "}
 (58,1,1) = {"
 aa
-BT
-BT
-BT
-BT
+lg
+lg
+lg
+lg
 aa
 aa
 aa
 aa
 aa
 nr
-BT
-BT
-BT
-BT
-Vx
-BT
-BT
-HL
-HL
-BT
-BT
-Gm
-yq
-Gm
-BT
-BT
-Gm
-BT
-BT
-BT
+lg
+lg
+lg
+lg
+lI
+lg
+lg
+xT
+xT
+lg
+lg
+dF
+RT
+dF
+lg
+lg
+dF
+lg
+lg
+lg
 iO
-BT
-BT
-BT
-BT
-BT
-Gm
-BT
-BT
-HL
-HL
-HL
-HL
-HL
-HL
+lg
+lg
+lg
+lg
+lg
+dF
+lg
+lg
+xT
+xT
+xT
+xT
+xT
+xT
 aa
 "}
 (59,1,1) = {"
 aa
-xo
-BT
-BT
-BT
-BT
-BT
-Gm
-BT
-BT
-BT
-BT
-BT
-BT
-BT
-KU
-BT
-BT
-HL
-HL
-HL
-BT
-Gm
-yq
-Gm
-BT
-BT
-Gm
-BT
-BT
-BT
+ab
+lg
+lg
+lg
+lg
+lg
+dF
+lg
+lg
+lg
+lg
+lg
+lg
+lg
+QV
+lg
+lg
+xT
+xT
+xT
+lg
+dF
+RT
+dF
+lg
+lg
+dF
+lg
+lg
+lg
 iO
-BT
-BT
-BT
-BT
-BT
-Gm
-BT
-BT
-BT
-HL
-HL
-HL
-HL
-HL
+lg
+lg
+lg
+lg
+lg
+dF
+lg
+lg
+lg
+xT
+xT
+xT
+xT
+xT
 aa
 "}
 (60,1,1) = {"
 aa
-BT
-BT
-BT
-BT
-BT
-BT
-BT
-BT
-Gm
-BT
-BT
-BT
+lg
+lg
+lg
+lg
+lg
+lg
+lg
+lg
+dF
+lg
+lg
+lg
 bE
 bY
 cv
 bY
 bE
 aa
-HL
-HL
+xT
+xT
 bE
 bE
 bY
 bD
 bE
-BT
-Gm
-BT
+lg
+dF
+lg
 bE
 bY
 jp
 bY
 bE
-BT
-BT
-BT
-Gm
-BT
-BT
-BT
-HL
-HL
-HL
-HL
-HL
+lg
+lg
+lg
+dF
+lg
+lg
+lg
+xT
+xT
+xT
+xT
+xT
 aa
 "}
 (61,1,1) = {"
 aa
 aa
-BT
-BT
-BT
-BT
-vO
-BT
-BT
-BT
-BT
-BT
-BT
+lg
+lg
+lg
+lg
+cs
+lg
+lg
+lg
+lg
+lg
+lg
 bE
 bZ
 ca
 lq
 bE
 aa
-HL
+xT
 aa
 bD
 he
 nR
 Hy
 bE
-BT
-Gm
-BT
+lg
+dF
+lg
 bE
 pb
 jr
 lA
 bE
-BT
-BT
-BT
-Gm
-BT
-BT
-BT
-BT
-HL
-HL
-HL
-HL
+lg
+lg
+lg
+dF
+lg
+lg
+lg
+lg
+xT
+xT
+xT
+xT
 aa
 "}
 (62,1,1) = {"
 aa
 aa
-BT
-BT
-BT
-BT
-BT
-BT
-Gm
-BT
-BT
-BT
-BT
+lg
+lg
+lg
+lg
+lg
+lg
+dF
+lg
+lg
+lg
+lg
 bE
 Re
 cx
@@ -11835,25 +11835,25 @@ Ve
 fV
 dh
 bE
-BT
-Gm
-BT
+lg
+dF
+lg
 bD
 Ks
 jr
 lw
 bE
-BT
-BT
-BT
-Gm
-BT
-BT
-BT
-BT
-BT
-BT
-BT
+lg
+lg
+lg
+dF
+lg
+lg
+lg
+lg
+lg
+lg
+lg
 aa
 aa
 "}
@@ -11861,16 +11861,16 @@ aa
 aa
 aa
 aa
-BT
-BT
-BT
-Gm
-Gm
-BT
-BT
-vO
-BT
-BT
+lg
+lg
+lg
+dF
+dF
+lg
+lg
+cs
+lg
+lg
 bE
 ct
 FK
@@ -11892,35 +11892,35 @@ cb
 Uf
 cb
 bD
-BT
-BT
-BT
-Gm
-BT
-BT
-BT
-BT
-BT
-BT
-BT
-BT
-BT
+lg
+lg
+lg
+dF
+lg
+lg
+lg
+lg
+lg
+lg
+lg
+lg
+lg
 "}
 (64,1,1) = {"
 aa
 aa
 aa
 aa
-BT
-BT
-BT
-BT
-BT
-BT
-BT
-BT
-BT
-BT
+lg
+lg
+lg
+lg
+lg
+lg
+lg
+lg
+lg
+lg
 bE
 om
 Yc
@@ -11941,19 +11941,19 @@ GA
 As
 jJ
 bD
-BT
-BT
-BT
-Gm
-BT
-BT
-BT
-BT
-BT
-BT
-BT
-BT
-xo
+lg
+lg
+lg
+dF
+lg
+lg
+lg
+lg
+lg
+lg
+lg
+lg
+ab
 "}
 (65,1,1) = {"
 aa
@@ -11961,15 +11961,15 @@ aa
 aa
 aa
 aa
-BT
-BT
-BT
-BT
-BT
-BT
-BT
-BT
-BT
+lg
+lg
+lg
+lg
+lg
+lg
+lg
+lg
+lg
 bE
 cA
 ee
@@ -11990,16 +11990,16 @@ JT
 jw
 dG
 bD
-BT
-BT
-BT
-Gm
-BT
-BT
-BT
-BT
-BT
-BT
+lg
+lg
+lg
+dF
+lg
+lg
+lg
+lg
+lg
+lg
 aa
 aa
 aa
@@ -12017,8 +12017,8 @@ ad
 ad
 ad
 ad
-BT
-BT
+lg
+lg
 bE
 AM
 Mi
@@ -12067,7 +12067,7 @@ Co
 Co
 ad
 ad
-BT
+lg
 bE
 dG
 ca
@@ -12143,8 +12143,8 @@ jA
 rA
 sB
 jA
-Gm
-BT
+dF
+lg
 aa
 aa
 aa
@@ -12192,9 +12192,9 @@ Ds
 kv
 kv
 jA
-Gm
-Gm
-Zv
+dF
+dF
+bf
 aa
 aa
 aa
@@ -12241,8 +12241,8 @@ tf
 lF
 RS
 jA
-Gm
-BT
+dF
+lg
 aa
 aa
 aa
@@ -12290,7 +12290,7 @@ RA
 kS
 lb
 li
-BT
+lg
 aa
 aa
 aa
@@ -12339,7 +12339,7 @@ qf
 kw
 cJ
 lj
-BT
+lg
 aa
 aa
 aa
@@ -12388,7 +12388,7 @@ Pu
 kw
 RS
 jA
-Gm
+dF
 aa
 aa
 aa
@@ -12437,9 +12437,9 @@ bV
 kx
 kx
 jA
-Gm
-Gm
-Zv
+dF
+dF
+bf
 aa
 aa
 aa
@@ -12486,7 +12486,7 @@ jA
 Qt
 JM
 jA
-Gm
+dF
 aa
 aa
 aa
@@ -12530,13 +12530,13 @@ Yr
 ca
 jA
 mm
-UT
+vr
 jA
 GF
 lc
 jA
-BT
-BT
+lg
+lg
 aa
 aa
 aa
@@ -12584,9 +12584,9 @@ jA
 jA
 jA
 jA
-BT
-BT
-BT
+lg
+lg
+lg
 aa
 aa
 aa
@@ -12627,15 +12627,15 @@ nX
 ob
 ca
 bE
-BT
-BT
-BT
-BT
-Gm
-BT
-BT
-BT
-BT
+lg
+lg
+lg
+lg
+dF
+lg
+lg
+lg
+lg
 aa
 aa
 aa
@@ -12676,16 +12676,16 @@ nY
 Yh
 od
 bE
-BT
-BT
-BT
-BT
-Gm
-BT
-BT
-BT
-BT
-BT
+lg
+lg
+lg
+lg
+dF
+lg
+lg
+lg
+lg
+lg
 aa
 aa
 aa
@@ -12725,16 +12725,16 @@ bD
 tO
 bE
 bE
-BT
-BT
-BT
-BT
-Gm
-BT
-BT
-BT
-BT
-BT
+lg
+lg
+lg
+lg
+dF
+lg
+lg
+lg
+lg
+lg
 aa
 aa
 aa
@@ -12774,17 +12774,17 @@ Ve
 dh
 dh
 bE
-BT
-BT
-BT
-BT
-Gm
-BT
-BT
-BT
-BT
-xo
-BT
+lg
+lg
+lg
+lg
+dF
+lg
+lg
+lg
+lg
+ab
+lg
 aa
 aa
 "}
@@ -12823,17 +12823,17 @@ jg
 lt
 yx
 bE
-Gm
-Gm
-Gm
-Gm
-Zv
-BT
-BT
-BT
-BT
-BT
-BT
+dF
+dF
+dF
+dF
+bf
+lg
+lg
+lg
+lg
+lg
+lg
 aa
 aa
 "}
@@ -12872,13 +12872,13 @@ bE
 bE
 bE
 bE
-BT
-BT
-BT
-BT
-BT
-BT
-BT
+lg
+lg
+lg
+lg
+lg
+lg
+lg
 aa
 aa
 aa
@@ -12920,8 +12920,8 @@ bE
 aa
 aa
 aa
-BT
-BT
+lg
+lg
 aa
 aa
 aa

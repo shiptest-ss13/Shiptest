@@ -69,23 +69,23 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 			if(holder)
 				if(!holder.fakekey || C.holder)
 					if(check_rights_for(src, R_ADMIN))
-						to_chat(C, "<span class='adminooc'>[CONFIG_GET(flag/allow_admin_ooccolor) && prefs.ooccolor ? "<font color=[prefs.ooccolor]>" :"" ]<span class='prefix'>OOC:</span> <EM>[keyname][holder.fakekey ? "/([holder.fakekey])" : ""]:</EM> <span class='message linkify'>[msg]</span></span></font>")
+						to_chat(C, "<span class='adminooc'>[CONFIG_GET(flag/allow_admin_ooccolor) && prefs.ooccolor ? "<font color=[prefs.ooccolor]>" :"" ]<span class='prefix'>OOC:</span> <EM>[keyname][holder.fakekey ? "/([holder.fakekey])" : ""]:</EM> <span class='message linkify'>[msg]</span></span></font>", MESSAGE_TYPE_OOC)
 					else
-						to_chat(C, "<span class='adminobserverooc'><span class='prefix'>OOC:</span> <EM>[keyname][holder.fakekey ? "/([holder.fakekey])" : ""]:</EM> <span class='message linkify'>[msg]</span></span>")
+						to_chat(C, "<span class='adminobserverooc'><span class='prefix'>OOC:</span> <EM>[keyname][holder.fakekey ? "/([holder.fakekey])" : ""]:</EM> <span class='message linkify'>[msg]</span></span>", MESSAGE_TYPE_OOC)
 				else
 					if(GLOB.OOC_COLOR)
-						to_chat(C, "<font color='[GLOB.OOC_COLOR]'><b><span class='prefix'>OOC:</span> <EM>[holder.fakekey ? holder.fakekey : key]:</EM> <span class='message linkify'>[msg]</span></b></font>")
+						to_chat(C, "<span class='oocplain'><font color='[GLOB.OOC_COLOR]'><b><span class='prefix'>OOC:</span> <EM>[holder.fakekey ? holder.fakekey : key]:</EM> <span class='message linkify'>[msg]</span></b></font></span>", MESSAGE_TYPE_OOC)
 					else
-						to_chat(C, "<span class='ooc'><span class='prefix'>OOC:</span> <EM>[holder.fakekey ? holder.fakekey : key]:</EM> <span class='message linkify'>[msg]</span></span>")
+						to_chat(C, "<span class='ooc'><span class='prefix'>OOC:</span> <EM>[holder.fakekey ? holder.fakekey : key]:</EM> <span class='message linkify'>[msg]</span></span>", MESSAGE_TYPE_OOC)
 
 			else if(!(key in C.prefs.ignoring))
 				if(GLOB.OOC_COLOR)
 					if(check_mentor())
-						to_chat(C, "<font color='["#00b40f"]'><b><span class='prefix'>OOC:</span> <EM>[keyname]:</EM> <span class='message linkify'>[msg]</span></b></font>")
+						to_chat(C, "<span class='oocplain'><font color='["#00b40f"]'><b><span class='prefix'>OOC:</span> <EM>[keyname]:</EM> <span class='message linkify'>[msg]</span></b></font></span>", MESSAGE_TYPE_OOC)
 					else
-						to_chat(C, "<font color='[GLOB.OOC_COLOR]'><b><span class='prefix'>OOC:</span> <EM>[keyname]:</EM> <span class='message linkify'>[msg]</span></b></font>")
+						to_chat(C, "<span class='oocplain'><font color='[GLOB.OOC_COLOR]'><b><span class='prefix'>OOC:</span> <EM>[keyname]:</EM> <span class='message linkify'>[msg]</span></b></font></span>", MESSAGE_TYPE_OOC)
 				else
-					to_chat(C, "<span class='ooc'><span class='prefix'>OOC:</span> <EM>[keyname]:</EM> <span class='message linkify'>[msg]</span></span>")
+					to_chat(C, "<span class='ooc'><span class='prefix'>OOC:</span> <EM>[keyname]:</EM> <span class='message linkify'>[msg]</span></span>", MESSAGE_TYPE_OOC)
 
 /proc/toggle_ooc(toggle = null)
 	if(toggle != null) //if we're specifically en/disabling ooc
@@ -96,17 +96,6 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 	else //otherwise just toggle it
 		GLOB.ooc_allowed = !GLOB.ooc_allowed
 	to_chat(world, "<B>The OOC channel has been globally [GLOB.ooc_allowed ? "enabled" : "disabled"].</B>")
-
-//BeginWS Edit
-/proc/toggle_looc(toggle = null)
-	if(toggle != null)
-		if(toggle != GLOB.looc_allowed)
-			GLOB.looc_allowed = toggle
-		else
-			return
-	else
-		GLOB.looc_allowed = !GLOB.looc_allowed
-//EndWS Edit
 
 /proc/toggle_dooc(toggle = null)
 	if(toggle != null)
@@ -153,8 +142,8 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 		if(!is_content_unlocked())
 			return
 
-		prefs.ooccolor = initial(prefs.ooccolor)
-		prefs.save_preferences()
+	prefs.ooccolor = initial(prefs.ooccolor)
+	prefs.save_preferences()
 
 //Checks admin notice
 /client/verb/admin_notice()

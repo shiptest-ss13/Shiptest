@@ -1,0 +1,47 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"prefix": "NTSV",
+	"map_name": "Ranger-class Aid Vessel",
+	"namelists": [
+		"NANOTRASEN",
+		"NATURAL_AGGRESSIVE",
+		"WEAPONS"
+	],
+	"map_short_name": "Ranger-class",
+	"description": "A Nanotrasen rescue and aid vessel. Equipped with an AI core, moderate combat gear, and equipment fit for rescue and general aid operations. Nanotrasen often deploys these ships in lieu of a proper ERT to aid their allies in the Frontier without committing their full might. The shipowner is the Lieutenant of a Loss Prevention squad, with a Commissioner to aid with operations on the ship proper.",
+	"tags": [
+		"Combat",
+		"Riot",
+		"Robotics",
+		"Medical",
+		"Telecomms",
+		"Generalist"
+	],
+	"starting_funds": 4000,
+	"map_path": "_maps/shuttles/shiptest/nanotrasen_ranger.dmm",
+	"limit": 1,
+	"job_slots": {
+		"LP Lieutenant": {
+			"outfit": "/datum/outfit/job/captain/nt/lp_lieutenant",
+			"officer": true,
+			"slots": 1
+		},
+		"LP Engineering Specialist": {
+			"outfit": "/datum/outfit/job/engineer/lp",
+			"slots": 1
+		},
+		"LP Security Specialist": {
+			"outfit": "/datum/outfit/job/security/lp",
+			"slots": 1
+		},
+		"LP Medical Specialist": {
+			"outfit": "/datum/outfit/job/doctor/lp",
+			"slots": 1
+		},
+		"Intern": {
+			"outfit": "/datum/outfit/job/assistant",
+			"slots": 1
+		}
+	},
+	"enabled": true
+}

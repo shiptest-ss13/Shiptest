@@ -55,10 +55,13 @@
 	update_engine() //Calls this so it sets the accurate icon
 	if(panel_open)
 		icon_state = icon_state_open
+		return ..()
 	else if(thruster_active && enabled && return_fuel())
 		icon_state = icon_state_closed
+		return ..()
 	else
 		icon_state = icon_state_off
+		return ..()
 
 /obj/machinery/power/shuttle/engine/Initialize()
 	. = ..()

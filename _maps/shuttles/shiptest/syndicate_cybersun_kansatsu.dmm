@@ -175,7 +175,7 @@
 /obj/item/modular_computer/tablet/preset/advanced,
 /obj/item/modular_computer/tablet/preset/advanced,
 /obj/item/paper{
-	info = "Congratulations on your purchase of Cybersun G-1010 Long Range Communication Tables (Chat client installed seperately)"
+	default_raw_text = "Congratulations on your purchase of Cybersun G-1010 Long Range Communication Tables (Chat client installed seperately)"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
@@ -607,7 +607,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/dorm)
 "pa" = (
-/obj/machinery/photocopier/faxmachine/longrange,
+/obj/machinery/fax,
 /obj/item/toy/figure/detective{
 	name = "Intel Buddy";
 	pixel_x = 5;
@@ -1827,7 +1827,7 @@
 /obj/item/reagent_containers/pill/cyanide,
 /obj/item/reagent_containers/pill/cyanide,
 /obj/item/paper/crumpled{
-	info = "Hand this stuff out to the field agents. They'll have a blast."
+	default_raw_text = "Hand this stuff out to the field agents. They'll have a blast."
 	},
 /obj/item/clothing/mask/chameleon,
 /obj/item/card/id/syndicate/anyone,
