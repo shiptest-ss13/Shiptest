@@ -357,25 +357,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
-"bw" = (
-/obj/machinery/button/door{
-	dir = 8;
-	id = "boxbathroom";
-	name = "Privacy Button";
-	normaldoorcontrol = 1;
-	pixel_x = 26;
-	pixel_y = 7;
-	specialfunctions = 4
-	},
-/obj/machinery/shower{
-	dir = 1;
-	layer = 3
-	},
-/obj/structure/curtain,
-/obj/item/soap,
-/obj/machinery/door/window/northleft,
-/turf/open/floor/plasteel/patterned/grid,
-/area/ship/crew/toilet)
 "by" = (
 /obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
@@ -1281,25 +1262,23 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "iQ" = (
-/obj/effect/turf_decal/spline/fancy/opaque/blue,
-/obj/structure/sink{
-	dir = 4;
-	pixel_x = -12
+/obj/machinery/button/door{
+	dir = 8;
+	id = "boxbathroom";
+	name = "Privacy Button";
+	normaldoorcontrol = 1;
+	pixel_x = 26;
+	pixel_y = 7;
+	specialfunctions = 4
 	},
-/obj/structure/mirror{
-	pixel_x = -24
+/obj/machinery/shower{
+	dir = 1;
+	layer = 3
 	},
-/obj/structure/toilet{
-	pixel_y = 13
-	},
-/obj/machinery/light_switch{
-	pixel_x = 11;
-	pixel_y = 22
-	},
-/obj/machinery/light/small/directional/north{
-	pixel_x = -10
-	},
-/turf/open/floor/plasteel/freezer,
+/obj/structure/curtain,
+/obj/item/soap,
+/obj/machinery/door/window/northleft,
+/turf/open/floor/plasteel/patterned/grid,
 /area/ship/crew/toilet)
 "iU" = (
 /obj/structure/closet/secure_closet/medical2,
@@ -2754,6 +2733,27 @@
 /obj/structure/sign/departments/engineering,
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/medical/morgue)
+"UA" = (
+/obj/effect/turf_decal/spline/fancy/opaque/blue,
+/obj/structure/sink{
+	dir = 4;
+	pixel_x = -12
+	},
+/obj/structure/mirror{
+	pixel_x = -24
+	},
+/obj/structure/toilet{
+	pixel_y = 13
+	},
+/obj/machinery/light_switch{
+	pixel_x = 11;
+	pixel_y = 22
+	},
+/obj/machinery/light/small/directional/north{
+	pixel_x = -10
+	},
+/turf/open/floor/plasteel/freezer,
+/area/ship/crew/toilet)
 "UN" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
@@ -3234,8 +3234,8 @@ hQ
 al
 al
 cF
+UA
 iQ
-bw
 cF
 aa
 aa
