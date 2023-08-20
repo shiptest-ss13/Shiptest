@@ -80,7 +80,7 @@
 	light_power = 0.2
 	light_color = LIGHT_COLOR_FLARE
 
-/turf/open/water/waste/lit
+/turf/open/water/waste/lit //do not drink
 	light_range = 2
 	light_power = 0.2
 	light_color = LIGHT_COLOR_FLARE
