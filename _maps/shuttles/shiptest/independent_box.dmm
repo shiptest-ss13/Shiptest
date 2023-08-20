@@ -328,7 +328,9 @@
 /area/ship/engineering)
 "bo" = (
 /obj/structure/catwalk/over,
-/obj/item/cigbutt/roach,
+/obj/machinery/atmospherics/components/unary/outlet_injector/on{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ship/external)
 "bq" = (
@@ -357,9 +359,23 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
+"bw" = (
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/obj/machinery/light/small/directional/south,
+/turf/open/floor/plating,
+/area/ship/engineering)
 "by" = (
 /obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
+/obj/machinery/atmospherics/pipe/layer_manifold/visible,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "bz" = (
@@ -550,6 +566,7 @@
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/layer_manifold/visible,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "cd" = (
@@ -609,6 +626,27 @@
 /obj/machinery/atmospherics/pipe/layer_manifold/visible,
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/engineering)
+"cw" = (
+/obj/effect/turf_decal/spline/fancy/opaque/blue,
+/obj/structure/sink{
+	dir = 4;
+	pixel_x = -12
+	},
+/obj/structure/mirror{
+	pixel_x = -24
+	},
+/obj/structure/toilet{
+	pixel_y = 13
+	},
+/obj/machinery/light_switch{
+	pixel_x = 11;
+	pixel_y = 22
+	},
+/obj/machinery/light/small/directional/north{
+	pixel_x = -10
+	},
+/turf/open/floor/plasteel/freezer,
+/area/ship/crew/toilet)
 "cB" = (
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/medical)
@@ -671,20 +709,17 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/toilet)
 "cG" = (
+/obj/effect/spawner/lootdrop/maintenance/three,
 /obj/structure/closet/emcloset/anchored,
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 4
 	},
-/obj/effect/spawner/lootdrop/maintenance/three,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 6
-	},
+/obj/machinery/light/small/broken/directional/south,
 /obj/machinery/button/door{
 	id = "box_engine1";
 	name = "Egnine shutter";
 	pixel_y = 28
 	},
-/obj/machinery/light/small/broken/directional/south,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "cJ" = (
@@ -747,7 +782,7 @@
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/machinery/light_switch{
 	pixel_x = 19;
-	pixel_y = 10;
+	pixel_y = 12;
 	dir = 8
 	},
 /obj/structure/cable{
@@ -1021,13 +1056,10 @@
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 4
 	},
-/obj/structure/catwalk/over,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 8
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 6
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 8
-	},
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "eR" = (
@@ -1419,10 +1451,6 @@
 	icon_state = "0-4"
 	},
 /obj/item/radio/intercom/directional/west,
-/obj/machinery/light_switch{
-	pixel_x = -12;
-	pixel_y = 21
-	},
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
 "mx" = (
@@ -1667,7 +1695,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light_switch{
-	pixel_x = -12;
+	pixel_x = -13;
 	pixel_y = 21
 	},
 /turf/open/floor/carpet/nanoweave/blue,
@@ -1777,7 +1805,7 @@
 /obj/machinery/light_switch{
 	dir = 1;
 	pixel_x = 11;
-	pixel_y = -14
+	pixel_y = -16
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/medical/morgue)
@@ -2013,19 +2041,12 @@
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 5
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 5
-	},
 /obj/machinery/button/door{
 	dir = 1;
 	id = "box_engine3";
 	name = "Egnine shutter";
 	pixel_y = -28
 	},
-/obj/machinery/light/small/directional/north,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "yN" = (
@@ -2080,6 +2101,11 @@
 /obj/machinery/firealarm/directional/west,
 /obj/machinery/sleeper{
 	dir = 4
+	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -21;
+	pixel_y = -10
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
@@ -2221,18 +2247,11 @@
 /obj/item/mop,
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable,
-/obj/machinery/light_switch{
-	dir = 1;
-	pixel_x = 11;
-	pixel_y = -14
-	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Dm" = (
 /obj/structure/catwalk/over,
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
-	dir = 8
-	},
+/obj/item/cigbutt/roach,
 /obj/item/reagent_containers/food/snacks/burrito,
 /turf/open/floor/plating,
 /area/ship/external)
@@ -2253,15 +2272,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "DP" = (
-/obj/machinery/atmospherics/pipe/simple/orange/hidden{
-	dir = 4
-	},
-/obj/structure/catwalk/over,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 8
-	},
-/turf/open/floor/plating,
-/area/ship/engineering)
+/obj/structure/closet/emcloset/anchored,
+/turf/template_noop,
+/area/template_noop)
 "ED" = (
 /obj/machinery/iv_drip,
 /obj/machinery/smartfridge/organ{
@@ -2321,6 +2334,11 @@
 /obj/machinery/meter/atmos/layer2,
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/corner{
 	dir = 4
+	},
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = 10;
+	pixel_y = -19
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -2587,6 +2605,7 @@
 /obj/structure/sign/poster/official/moth/meth{
 	pixel_y = -32
 	},
+/obj/machinery/firealarm/directional/west,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/toilet)
 "OF" = (
@@ -2619,7 +2638,7 @@
 /area/ship/crew/toilet)
 "Ps" = (
 /obj/structure/catwalk/over,
-/obj/machinery/atmospherics/components/unary/outlet_injector/on{
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 8
 	},
 /obj/item/chair/plastic,
@@ -2630,8 +2649,8 @@
 /obj/structure/cable,
 /obj/machinery/light_switch{
 	dir = 1;
-	pixel_x = 11;
-	pixel_y = -14
+	pixel_x = 12;
+	pixel_y = -17
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/cargo)
@@ -2733,27 +2752,6 @@
 /obj/structure/sign/departments/engineering,
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/medical/morgue)
-"UA" = (
-/obj/effect/turf_decal/spline/fancy/opaque/blue,
-/obj/structure/sink{
-	dir = 4;
-	pixel_x = -12
-	},
-/obj/structure/mirror{
-	pixel_x = -24
-	},
-/obj/structure/toilet{
-	pixel_y = 13
-	},
-/obj/machinery/light_switch{
-	pixel_x = 11;
-	pixel_y = 22
-	},
-/obj/machinery/light/small/directional/north{
-	pixel_x = -10
-	},
-/turf/open/floor/plasteel/freezer,
-/area/ship/crew/toilet)
 "UN" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
@@ -3031,11 +3029,11 @@ at
 cG
 cu
 Dm
-cu
+at
 yI
 at
 aa
-aa
+DP
 aa
 aa
 aa
@@ -3048,11 +3046,11 @@ aa
 aa
 aa
 at
-AH
+eP
 by
 Ps
 cc
-yA
+bw
 at
 aa
 aa
@@ -3068,11 +3066,11 @@ aa
 aa
 aa
 at
-Gi
+AH
 at
 bo
 at
-lM
+yA
 at
 aa
 aa
@@ -3088,11 +3086,11 @@ aa
 aa
 aS
 at
-DP
+Gi
 at
 aa
 at
-eP
+lM
 at
 aS
 aa
@@ -3234,7 +3232,7 @@ hQ
 al
 al
 cF
-UA
+cw
 iQ
 cF
 aa
