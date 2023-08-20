@@ -926,9 +926,6 @@
 /obj/structure/chair{
 	dir = 8
 	},
-/obj/structure/sign/poster/official/soft_cap_pop_art{
-	pixel_x = 32
-	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "tW" = (
@@ -1002,7 +999,9 @@
 /obj/structure/chair{
 	dir = 8
 	},
-/obj/structure/extinguisher_cabinet/directional/east,
+/obj/structure/sign/poster/official/soft_cap_pop_art{
+	pixel_x = 32
+	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "ve" = (
@@ -1512,6 +1511,7 @@
 /obj/structure/chair{
 	dir = 4
 	},
+/obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "Je" = (
@@ -1902,6 +1902,9 @@
 "Qp" = (
 /obj/machinery/vending/snack/random,
 /obj/effect/turf_decal/trimline/opaque/red/filled/line,
+/obj/structure/sign/poster/official/cleanliness{
+	pixel_x = -32
+	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "Qq" = (
@@ -2541,9 +2544,6 @@
 /obj/machinery/light/directional/west,
 /obj/structure/chair{
 	dir = 4
-	},
-/obj/structure/sign/poster/official/cleanliness{
-	pixel_x = -32
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
