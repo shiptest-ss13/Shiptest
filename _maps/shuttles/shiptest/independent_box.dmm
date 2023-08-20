@@ -148,6 +148,7 @@
 	dir = 5
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/medical/morgue)
 "aI" = (
@@ -753,7 +754,7 @@
 "cP" = (
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/machinery/light_switch{
-	pixel_x = 20;
+	pixel_x = 19;
 	pixel_y = 10;
 	dir = 8
 	},
@@ -1314,6 +1315,7 @@
 /obj/item/stack/cable_coil/cyan{
 	amount = 5
 	},
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/toilet)
 "jk" = (
@@ -1430,7 +1432,7 @@
 /obj/item/radio/intercom/directional/west,
 /obj/machinery/light_switch{
 	pixel_x = -12;
-	pixel_y = 23
+	pixel_y = 21
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
@@ -1488,7 +1490,7 @@
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/machinery/light_switch{
 	pixel_x = -12;
-	pixel_y = 23
+	pixel_y = 21
 	},
 /turf/open/floor/wood,
 /area/ship/crew)
@@ -1676,7 +1678,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light_switch{
 	pixel_x = -12;
-	pixel_y = 23
+	pixel_y = 21
 	},
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
@@ -1785,7 +1787,7 @@
 /obj/machinery/light_switch{
 	dir = 1;
 	pixel_x = 11;
-	pixel_y = -16
+	pixel_y = -14
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/medical/morgue)
@@ -1800,7 +1802,6 @@
 /turf/open/floor/plating,
 /area/ship/crew)
 "vs" = (
-/obj/machinery/airalarm/directional/south,
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/light/small/built/directional/south,
 /obj/structure/sign/warning/biohazard{
@@ -2230,7 +2231,7 @@
 /obj/machinery/light_switch{
 	dir = 1;
 	pixel_x = 11;
-	pixel_y = -16
+	pixel_y = -14
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -2583,13 +2584,15 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
 "NT" = (
-/obj/machinery/airalarm/directional/south,
 /obj/effect/turf_decal/siding/white/corner{
 	dir = 4
 	},
 /obj/structure/table/chem,
 /obj/machinery/reagentgrinder{
 	pixel_y = 14
+	},
+/obj/structure/sign/poster/official/moth/meth{
+	pixel_y = -32
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/toilet)
@@ -2634,8 +2637,8 @@
 /obj/structure/cable,
 /obj/machinery/light_switch{
 	dir = 1;
-	pixel_x = 10;
-	pixel_y = -16
+	pixel_x = 11;
+	pixel_y = -14
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/cargo)
