@@ -358,9 +358,24 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "bw" = (
-/obj/structure/sign/poster/official/random,
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/medical)
+/obj/machinery/button/door{
+	dir = 8;
+	id = "boxbathroom";
+	name = "Privacy Button";
+	normaldoorcontrol = 1;
+	pixel_x = 26;
+	pixel_y = 7;
+	specialfunctions = 4
+	},
+/obj/machinery/shower{
+	dir = 1;
+	layer = 3
+	},
+/obj/structure/curtain,
+/obj/item/soap,
+/obj/machinery/door/window/northleft,
+/turf/open/floor/plasteel/patterned/grid,
+/area/ship/crew/toilet)
 "by" = (
 /obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
@@ -603,20 +618,16 @@
 "cr" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/atmospherics/components/unary/portables_connector/layer2,
-/obj/machinery/portable_atmospherics/canister/oxygen,
 /obj/structure/cable{
 	icon_state = "6-8"
 	},
+/obj/machinery/portable_atmospherics/canister/air,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "cu" = (
 /obj/machinery/atmospherics/pipe/layer_manifold/visible,
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/engineering)
-"cw" = (
-/obj/structure/sign/poster/random,
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/medical)
 "cB" = (
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/medical)
@@ -777,7 +788,6 @@
 /obj/structure/flora/bigplant{
 	pixel_x = -16
 	},
-/obj/machinery/airalarm/directional/north,
 /turf/open/floor/wood,
 /area/ship/crew)
 "cU" = (
@@ -957,7 +967,7 @@
 /area/ship/medical)
 "ds" = (
 /obj/machinery/suit_storage_unit/cmo,
-/obj/machinery/light/small/directional/east,
+/obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "dt" = (
@@ -1489,7 +1499,7 @@
 	},
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/machinery/light_switch{
-	pixel_x = -12;
+	pixel_x = 11;
 	pixel_y = 21
 	},
 /turf/open/floor/wood,
@@ -1610,6 +1620,7 @@
 /obj/effect/turf_decal/siding/wood,
 /obj/structure/bookcase/manuals/medical,
 /obj/effect/turf_decal/siding/wood,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/wood,
 /area/ship/crew)
 "tn" = (
@@ -2060,6 +2071,9 @@
 /obj/structure/closet/crate/freezer/surplus_limbs,
 /obj/item/reagent_containers/glass/beaker/synthflesh,
 /obj/effect/turf_decal/corner/opaque/lightgrey/diagonal,
+/obj/structure/sign/poster/official/random{
+	pixel_y = -32
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "zy" = (
@@ -2740,25 +2754,6 @@
 /obj/structure/sign/departments/engineering,
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/medical/morgue)
-"UA" = (
-/obj/machinery/button/door{
-	dir = 8;
-	id = "boxbathroom";
-	name = "Privacy Button";
-	normaldoorcontrol = 1;
-	pixel_x = 26;
-	pixel_y = 7;
-	specialfunctions = 4
-	},
-/obj/machinery/shower{
-	dir = 1;
-	layer = 3
-	},
-/obj/structure/curtain,
-/obj/item/soap,
-/obj/machinery/door/window/northleft,
-/turf/open/floor/plasteel/patterned/grid,
-/area/ship/crew/toilet)
 "UN" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
@@ -2934,6 +2929,9 @@
 	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 6
+	},
+/obj/structure/sign/poster/random{
+	pixel_y = -32
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
@@ -3237,7 +3235,7 @@ al
 al
 cF
 iQ
-UA
+bw
 cF
 aa
 aa
@@ -3470,11 +3468,11 @@ aq
 bc
 jI
 zl
-bw
+al
 gB
 fJ
 Yg
-cw
+al
 vE
 cV
 di
