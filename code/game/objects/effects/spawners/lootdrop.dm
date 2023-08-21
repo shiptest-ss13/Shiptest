@@ -1248,5 +1248,17 @@
 	/obj/item/storage/ration/shredded_beef = 1,
 	/obj/item/storage/ration/pork_spaghetti = 1,
 	/obj/item/storage/ration/fried_fish = 1,
-	/obj/item/storage/ration/beef_strips = 1
+	/obj/item/storage/ration/beef_strips = 1,
+	/obj/item/storage/ration/chili_macaroni = 1,
+	/obj/item/storage/ration/chicken_wings_hot_sauce = 1,
+	/obj/item/storage/ration/fish_stew = 1,
+	/obj/item/storage/ration/lemon_pepper_chicken = 1,
+	/obj/item/storage/ration/sausage_peppers_onions = 1,
+	/obj/item/storage/ration/pork_dumplings_chili_sauce = 1,
+	/obj/item/storage/ration/battered_fish_sticks = 1,
+	/obj/item/storage/ration/assorted_salted_offal = 1,
+	/obj/item/storage/ration/maple_pork_sausage_patty = 1,
+	/obj/item/storage/ration/jalapeno_pepper_jack_beef_patty = 1,
+	/obj/item/storage/ration/beef_goulash = 1,
+	/obj/item/storage/ration/pepperoni_pizza_slice = 1
 	)
