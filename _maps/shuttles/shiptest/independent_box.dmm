@@ -649,16 +649,6 @@
 	},
 /turf/open/floor/plasteel/freezer,
 /area/ship/crew/toilet)
-"cw" = (
-/obj/machinery/atmospherics/pipe/simple/orange/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 6
-	},
-/obj/machinery/light/small/directional/north,
-/turf/open/floor/plating,
-/area/ship/engineering)
 "cB" = (
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/medical)
@@ -2259,12 +2249,9 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 5
+	dir = 6
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 5
-	},
-/obj/machinery/light/small/directional/south,
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "ED" = (
@@ -2744,6 +2731,19 @@
 /obj/structure/sign/departments/engineering,
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/medical/morgue)
+"UA" = (
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/obj/machinery/light/small/directional/south,
+/turf/open/floor/plating,
+/area/ship/engineering)
 "UN" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
@@ -3038,11 +3038,11 @@ aa
 aa
 aa
 at
-cw
+DP
 by
 Ps
 cc
-DP
+UA
 at
 aa
 aa
