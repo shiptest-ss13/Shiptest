@@ -178,7 +178,6 @@
 	mag_type = /obj/item/ammo_box/magazine/e40
 	can_suppress = FALSE
 	actions_types = list(/datum/action/item_action/toggle_firemode)
-	select = 2 //primary is lasers
 	var/obj/item/gun/energy/laser/e40_laser_secondary/secondary
 
 	mag_display = TRUE
@@ -199,7 +198,7 @@
 		return ..()
 
 /obj/item/gun/ballistic/automatic/assualt/e40/attackby(obj/item/attack_obj, mob/user, params)
-	if(istype(attack_obj, /obj/item/stock_parts/cell/gun) ||(istype(attack_obj, /obj/item/stock_parts/cell/gun)))
+	if(istype(attack_obj, /obj/item/stock_parts/cell/gun) ||(istype(attack_obj, /obj/item/screwdriver)))
 		secondary.attack_self()
 		secondary.attackby(attack_obj, user, params)
 	else

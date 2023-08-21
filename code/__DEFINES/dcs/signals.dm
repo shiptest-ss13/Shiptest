@@ -748,4 +748,4 @@
 
 /// send when enabling/diabling an autofire component
 #define COMSIG_GUN_DISABLE_AUTOFIRE "disable_autofire"
-#define COMSIG_GUN_ENABLE_AUTOFIRE "disable_autofire"
+#define COMSIG_GUN_ENABLE_AUTOFIRE "enable_autofire"
