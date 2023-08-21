@@ -171,72 +171,84 @@
 
 /obj/item/gun/ballistic/automatic/assualt/e40
 	name = "\improper E-40 Hybrid Rifle"
-	desc = "An Assualt Rifle, best known for being having a dual bullet and laser system. Chambered in .299 eoehoma caseless, and uses energy for lasers."
+	desc = "An Assualt Rifle, best known for being having a dual ballistic and laser system. Chambered in .299 eoehoma caseless, and uses energy for lasers."
+	icon = 'icons/obj/guns/48x32guns.dmi'
 	icon_state = "e40"
 	item_state = "e40"
 	mag_type = /obj/item/ammo_box/magazine/e40
 	can_suppress = FALSE
 	actions_types = list(/datum/action/item_action/toggle_firemode)
-	var/obj/item/gun/energy/laser/e40_laser_secondary/underbarrel
+	select = 2 //primary is lasers
+	var/obj/item/gun/energy/laser/e40_laser_secondary/secondary
 
 	mag_display = TRUE
 	empty_indicator = TRUE
-	fire_sound = 'sound/weapons/gun/rifle/shot_alt.ogg'
+	fire_sound = 'sound/weapons/gun/laser/e40_bal.ogg'
 
-/obj/item/gun/ballistic/automatic/smg/m90/Initialize()
+/obj/item/gun/ballistic/automatic/assualt/e40/Initialize()
 	. = ..()
-	underbarrel = new /obj/item/gun/ballistic/revolver/grenadelauncher(src)
-	update_icon()
+	secondary = new /obj/item/gun/energy/laser/e40_laser_secondary(src)
 	AddComponent(/datum/component/automatic_fire, 0.2 SECONDS)
+	RegisterSignal(secondary, COMSIG_ATOM_UPDATE_ICON, .proc/secondary_update_icon)
+	update_appearance()
 
-/obj/item/gun/ballistic/automatic/smg/m90/unrestricted
-	pin = /obj/item/firing_pin
-
-/obj/item/gun/ballistic/automatic/smg/m90/unrestricted/Initialize()
-	. = ..()
-	underbarrel = new /obj/item/gun/ballistic/revolver/grenadelauncher/unrestricted(src)
-	update_icon()
-
-/obj/item/gun/ballistic/automatic/smg/m90/afterattack(atom/target, mob/living/user, flag, params)
+/obj/item/gun/ballistic/automatic/assualt/e40/afterattack(atom/target, mob/living/user, flag, params)
 	if(select == 2)
-		underbarrel.afterattack(target, user, flag, params)
+		secondary.afterattack(target, user, flag, params)
 	else
 		return ..()
 
-/obj/item/gun/ballistic/automatic/smg/m90/attackby(obj/item/A, mob/user, params)
-	if(istype(A, /obj/item/ammo_casing))
-		if(istype(A, underbarrel.magazine.ammo_type))
-			underbarrel.attack_self()
-			underbarrel.attackby(A, user, params)
+/obj/item/gun/ballistic/automatic/assualt/e40/attackby(obj/item/attack_obj, mob/user, params)
+	if(istype(attack_obj, /obj/item/stock_parts/cell/gun) ||(istype(attack_obj, /obj/item/stock_parts/cell/gun)))
+		secondary.attack_self()
+		secondary.attackby(attack_obj, user, params)
 	else
 		..()
 
-/obj/item/gun/ballistic/automatic/smg/m90/update_overlays()
-	. = ..()
-	switch(select)
-		if(0)
-			. += "[initial(icon_state)]_semi"
-		if(1)
-			. += "[initial(icon_state)]_burst"
-		if(2)
-			. += "[initial(icon_state)]_gren"
+/obj/item/gun/ballistic/automatic/assualt/e40/proc/secondary_update_icon()
+	update_icon()
 
-/obj/item/gun/ballistic/automatic/smg/m90/burst_select()
+/obj/item/gun/ballistic/automatic/assualt/e40/update_overlays()
+	. = ..()
+	//handle laser gunn overlays
+	if(!secondary)
+		return
+	var/ratio = secondary.get_charge_ratio()
+	if(ratio == 0)
+		. += "[icon_state]_chargeempty"
+	else
+		. += "[icon_state]_charge[ratio]"
+	if(secondary.cell)
+		. += "[icon_state]_cell"
+
+
+/obj/item/gun/ballistic/automatic/assualt/e40/burst_select()
 	var/mob/living/carbon/human/user = usr
 	switch(select)
 		if(0)
 			select = 1
-			burst_size = initial(burst_size)
-			fire_delay = initial(fire_delay)
-			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
+			to_chat(user, "<span class='notice'>You switch to full automatic ballistic.</span>")
 		if(1)
 			select = 2
-			to_chat(user, "<span class='notice'>You switch to grenades.</span>")
+			to_chat(user, "<span class='notice'>You switch to full auto laser.</span>")
+			SEND_SIGNAL(src, COMSIG_GUN_DISABLE_AUTOFIRE)
 		if(2)
-			select = 0
-			burst_size = 1
-			fire_delay = 0
-			to_chat(user, "<span class='notice'>You switch to semi-auto.</span>")
+			select = 1
+			to_chat(user, "<span class='notice'>You switch to full automatic ballistic.</span>")
+			SEND_SIGNAL(src, COMSIG_GUN_ENABLE_AUTOFIRE)
 	playsound(user, 'sound/weapons/empty.ogg', 100, TRUE)
 	update_icon()
 	return
+
+//laser
+
+/obj/item/gun/energy/laser/e40_laser_secondary
+	name = "secondary e40 laser gun"
+	desc = "The laser component of a E-40 Hybrid Rifle. You probably shouldn't see this."
+	fire_sound = 'sound/weapons/gun/laser/e40_las.ogg'
+	w_class = WEIGHT_CLASS_NORMAL
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/eoehoma/e40)
+
+/obj/item/gun/energy/laser/e40_laser_secondary/Initialize()
+	. = ..()
+	AddComponent(/datum/component/automatic_fire, 0.2 SECONDS)

@@ -6,6 +6,10 @@
 	projectile_type = /obj/projectile/beam/laser/eoehoma
 	fire_sound = 'sound/weapons/gun/laser/e-fire.ogg'
 
+/obj/item/ammo_casing/energy/laser/eoehoma/e40
+	projectile_type = /obj/projectile/beam/laser/eoehoma/e40
+	fire_sound = 'sound/weapons/gun/laser/e40_las.ogg'
+
 /obj/item/ammo_casing/energy/laser/eoehoma/e50
 	projectile_type = /obj/projectile/beam/emitter/hitscan/e50
 	fire_sound = 'sound/weapons/gun/laser/heavy_laser.ogg'
