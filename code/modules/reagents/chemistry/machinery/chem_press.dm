@@ -43,7 +43,7 @@
 	if(.)
 		return
 	if(!beaker)
-		to_chat(user, "<span class='warning'>There's no container in [src]!.</span>")
+		balloon_alert(user, "no container!")
 		return FALSE
 	if(!beaker.reagents.total_volume)
 		to_chat(user, "<span class='warning'>[beaker] is empty!</span>")
