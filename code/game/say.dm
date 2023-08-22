@@ -45,7 +45,6 @@ GLOBAL_LIST_INIT(freqcolor, list())
 /atom/movable/proc/compose_message(atom/movable/speaker, datum/language/message_language, raw_message, radio_freq, list/spans, list/message_mods = list(), face_name = FALSE)
 	//This proc uses text() because it is faster than appending strings. Thanks BYOND.
 	//Basic span
-	//var/spanpart1 = "<span class='[radio_freq ? get_radio_span(radio_freq) : "game say"]'>"
 	var/spanpart1 = "<span [get_radio_span(radio_freq)]>"
 	//Start name span.
 	var/spanpart2 = "<span class='name'>"
