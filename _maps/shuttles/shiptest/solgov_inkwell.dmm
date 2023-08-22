@@ -66,6 +66,14 @@
 	},
 /turf/open/floor/plasteel/stairs,
 /area/space)
+"dY" = (
+/obj/item/kirbyplants{
+	icon_state = "plant-17";
+	pixel_y = 3;
+	pixel_x = -10
+	},
+/turf/open/floor/wood/birch,
+/area/space)
 "ec" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -92,6 +100,14 @@
 /area/space)
 "fw" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
+/area/space)
+"fL" = (
+/obj/structure/table/wood,
+/turf/open/floor/wood/birch,
+/area/space)
+"gf" = (
+/obj/structure/fluff/hedge,
+/turf/open/floor/wood/birch,
 /area/space)
 "gn" = (
 /obj/structure/window/reinforced/fulltile/shuttle,
@@ -197,6 +213,27 @@
 	},
 /turf/open/floor/wood,
 /area/space)
+"nY" = (
+/obj/item/kirbyplants{
+	icon_state = "applebush";
+	pixel_y = 2;
+	pixel_x = -5
+	},
+/turf/open/floor/wood/birch,
+/area/space)
+"of" = (
+/obj/effect/turf_decal/siding/wood/corner,
+/turf/open/floor/wood,
+/area/space)
+"oi" = (
+/obj/structure/chair/sofa/left{
+	dir = 1
+	},
+/turf/open/floor/carpet/royalblue,
+/area/space)
+"or" = (
+/turf/open/floor/plasteel/white,
+/area/space)
 "oR" = (
 /obj/structure/chair/sofa/corner,
 /turf/open/floor/carpet/royalblue,
@@ -247,6 +284,10 @@
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/wood/birch,
 /area/space)
+"rT" = (
+/obj/machinery/vending/coffee,
+/turf/open/floor/wood/birch,
+/area/space)
 "sg" = (
 /obj/structure/grille,
 /turf/open/space/basic,
@@ -281,6 +322,12 @@
 	color = "#543C30"
 	},
 /turf/open/floor/wood/walnut,
+/area/space)
+"tt" = (
+/obj/structure/chair/wood{
+	dir = 4
+	},
+/turf/open/floor/wood/birch,
 /area/space)
 "tu" = (
 /obj/structure/table/wood,
@@ -358,6 +405,10 @@
 	},
 /turf/open/floor/wood/walnut,
 /area/space)
+"wo" = (
+/obj/structure/fluff/hedge/opaque,
+/turf/open/floor/wood/walnut,
+/area/space)
 "ws" = (
 /obj/machinery/suit_storage_unit/solgov,
 /turf/open/floor/wood/walnut,
@@ -400,6 +451,18 @@
 	},
 /obj/structure/table/wood/fancy/purple,
 /turf/open/floor/wood/maple,
+/area/space)
+"yE" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/structure/closet/secure_closet/freezer/fridge,
+/obj/item/reagent_containers/food/snacks/meat/slab,
+/obj/item/reagent_containers/food/snacks/meat/slab,
+/obj/item/reagent_containers/food/snacks/meat/slab,
+/obj/item/reagent_containers/food/snacks/meat/slab,
+/obj/item/reagent_containers/food/snacks/meat/slab,
+/turf/open/floor/wood/walnut,
 /area/space)
 "yH" = (
 /obj/structure/railing/wood,
@@ -497,6 +560,12 @@
 	},
 /turf/open/floor/wood/walnut,
 /area/space)
+"CN" = (
+/obj/structure/table/wood/fancy/blue,
+/obj/item/paper_bin,
+/obj/item/pen/solgov,
+/turf/open/floor/wood/walnut,
+/area/space)
 "CS" = (
 /obj/structure/railing/corner/wood{
 	dir = 1
@@ -573,14 +642,43 @@
 	},
 /turf/open/floor/wood,
 /area/space)
+"Ik" = (
+/obj/item/kirbyplants{
+	icon_state = "plant-11";
+	pixel_x = -12;
+	pixel_y = 19;
+	layer = 2.89
+	},
+/obj/item/kirbyplants{
+	icon_state = "plant-17";
+	pixel_y = 3;
+	pixel_x = -10
+	},
+/turf/open/floor/wood,
+/area/space)
 "Js" = (
 /obj/structure/chair/wood,
 /turf/open/floor/wood/walnut,
+/area/space)
+"JN" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 8
+	},
+/turf/open/floor/wood,
 /area/space)
 "Kg" = (
 /obj/machinery/fax,
 /obj/structure/table/wood/fancy/purple,
 /turf/open/floor/wood/maple,
+/area/space)
+"Kx" = (
+/obj/structure/chair/wood{
+	dir = 8
+	},
+/turf/open/floor/wood/birch,
 /area/space)
 "KD" = (
 /obj/effect/turf_decal/siding/wood{
@@ -601,6 +699,12 @@
 	pixel_y = 13
 	},
 /turf/open/floor/wood/maple,
+/area/space)
+"LO" = (
+/obj/structure/table/wood/fancy/blue,
+/obj/item/clipboard,
+/obj/item/folder/solgov,
+/turf/open/floor/wood/walnut,
 /area/space)
 "MW" = (
 /turf/open/floor/plasteel/stairs{
@@ -627,6 +731,19 @@
 /area/space)
 "OE" = (
 /obj/structure/table/wood/fancy/blue,
+/obj/item/desk_flag/solgov{
+	pixel_y = 12;
+	pixel_x = -8
+	},
+/obj/item/binoculars,
+/turf/open/floor/wood/walnut,
+/area/space)
+"OW" = (
+/obj/structure/closet/secure_closet/quartermaster{
+	populate = 0;
+	anchored = 1;
+	name = "\proper logistics deck officer's locker"
+	},
 /turf/open/floor/wood/walnut,
 /area/space)
 "PB" = (
@@ -697,9 +814,20 @@
 "Rf" = (
 /turf/open/space/basic,
 /area/space)
+"Ru" = (
+/obj/structure/table/wood/fancy/blue,
+/obj/machinery/computer/secure_data/laptop{
+	dir = 4
+	},
+/turf/open/floor/wood/walnut,
+/area/space)
 "Rw" = (
 /obj/structure/railing,
 /turf/open/floor/plasteel/patterned,
+/area/space)
+"Rx" = (
+/obj/structure/reagent_dispensers/water_cooler,
+/turf/open/floor/wood/birch,
 /area/space)
 "RA" = (
 /obj/structure/chair/wood{
@@ -729,6 +857,16 @@
 	dir = 4
 	},
 /turf/open/floor/wood/birch,
+/area/space)
+"Si" = (
+/obj/structure/chair/sofa/corner{
+	dir = 8
+	},
+/turf/open/floor/carpet/royalblue,
+/area/space)
+"Sk" = (
+/obj/machinery/vending/coffee,
+/turf/open/floor/wood/walnut,
 /area/space)
 "St" = (
 /obj/structure/chair/sofa/left{
@@ -822,6 +960,9 @@
 	color = "#D5A66E";
 	dir = 10
 	},
+/obj/structure/chair/office{
+	dir = 8
+	},
 /turf/open/floor/wood/birch,
 /area/space)
 "Xi" = (
@@ -859,6 +1000,13 @@
 /area/space)
 "Zf" = (
 /turf/closed/wall/mineral/titanium,
+/area/space)
+"ZA" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/wood,
 /area/space)
 
 (1,1,1) = {"
@@ -1611,18 +1759,18 @@ Rf
 Rf
 Rf
 Zf
-EX
-EX
-EX
+or
+or
+or
 Zf
 EX
-EX
+Ik
 EX
 Zf
-yB
-OE
-OE
-OE
+wo
+OW
+CN
+Ru
 OE
 Zf
 Kg
@@ -1632,7 +1780,7 @@ PB
 vK
 Zf
 mP
-mP
+dY
 mP
 yH
 uq
@@ -1650,19 +1798,19 @@ Rf
 Rf
 Rf
 Zf
-EX
-EX
-EX
+or
+or
+or
 Zf
 EX
-EX
-EX
+of
+KD
 Zf
 QH
 Fq
 pL
 WD
-OE
+LO
 Zf
 yD
 Nk
@@ -1689,13 +1837,13 @@ Rf
 Rf
 Rf
 Zf
-EX
-EX
-EX
-Zf
-EX
-EX
-EX
+or
+or
+or
+zH
+KD
+ZA
+tt
 Zf
 lB
 ze
@@ -1728,13 +1876,13 @@ Rf
 Rf
 Rf
 Zf
-EX
-EX
-EX
-zH
-EX
-EX
-EX
+or
+or
+or
+Zf
+gf
+yn
+fL
 Zf
 lB
 ze
@@ -1767,13 +1915,13 @@ Rf
 Rf
 Rf
 Zf
-EX
-EX
-EX
+or
+or
+or
 Zf
-EX
-EX
-EX
+gf
+yn
+Kx
 Zf
 aS
 ze
@@ -1806,13 +1954,13 @@ Rf
 Rf
 Rf
 Zf
-EX
-EX
-EX
+or
+or
+or
 Zf
-EX
-EX
-EX
+Zf
+VI
+Zf
 Zf
 Zf
 Zf
@@ -1829,7 +1977,7 @@ Zf
 FE
 Xi
 Nf
-yB
+Sk
 FE
 FE
 FE
@@ -1849,10 +1997,10 @@ Zf
 Zf
 Zf
 Zf
-EX
-EX
-EX
-EX
+gf
+yn
+nY
+Rx
 Zf
 Ut
 Nf
@@ -1888,10 +2036,10 @@ yB
 yB
 yB
 Zf
-EX
-EX
-EX
-EX
+rT
+JN
+uX
+uX
 zH
 EX
 jO
@@ -1927,8 +2075,8 @@ yB
 yB
 yB
 Zf
-EX
-EX
+uX
+za
 EX
 EX
 Zf
@@ -1965,11 +2113,11 @@ qc
 yB
 yB
 yB
-Zf
-EX
-EX
-EX
-EX
+zH
+KD
+KD
+KD
+KD
 Zf
 Js
 RF
@@ -2005,10 +2153,10 @@ yB
 yB
 yB
 Zf
-EX
-EX
-EX
-EX
+qw
+Rc
+Rc
+oi
 Zf
 Zf
 Zf
@@ -2043,11 +2191,11 @@ qc
 yB
 yB
 yB
-zH
-EX
-EX
-EX
-EX
+Zf
+oR
+xF
+xF
+Si
 Zf
 ym
 Tu
@@ -2142,7 +2290,7 @@ Rf
 Rf
 Rf
 Zf
-iE
+yE
 AA
 Zf
 Zf
