@@ -89,8 +89,7 @@
 						current_volume = possible_volumes[i+1]
 					else
 						current_volume = possible_volumes[1]
-		balloon_alert(user, "making [current_volume]u pills")
-					balloon_alert(user, "Pill size: [current_volume]u")
+					balloon_alert(user, "making [current_volume]u pills")
 					return
 		if(user.a_intent == INTENT_DISARM)
 			var/i=0
@@ -101,8 +100,7 @@
 						pill_style = possible_styles[i+1]
 					else
 						pill_style = possible_styles[1]
-		balloon_alert(user, "making [style_colors["[pill_style]"]] pills")
-					balloon_alert(user, "Pill color: [style_colors["[pill_style]"]]")
+					balloon_alert(user, "making [style_colors["[pill_style]"]] pills")
 					return
 	return ..()
 
