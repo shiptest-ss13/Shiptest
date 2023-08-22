@@ -161,7 +161,6 @@
 /turf/open/floor/plating,
 /area/ship/storage)
 "cV" = (
-/obj/machinery/light/directional/north,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -175,6 +174,10 @@
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/effect/turf_decal/trimline/opaque/red/filled/corner{
 	dir = 1
+	},
+/obj/machinery/light_switch{
+	pixel_y = 23;
+	pixel_x = -12
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
@@ -564,6 +567,7 @@
 /obj/structure/closet/crate/medical,
 /obj/item/bodybag,
 /obj/item/storage/firstaid/regular,
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "kM" = (
@@ -587,6 +591,7 @@
 /obj/structure/closet/crate/freezer,
 /obj/machinery/airalarm/directional/west,
 /obj/item/reagent_containers/blood/random,
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "lt" = (
@@ -1041,6 +1046,11 @@
 /obj/item/clothing/head/soft/yellow,
 /obj/structure/cable,
 /obj/machinery/power/apc/auto_name/directional/south,
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_y = -16;
+	pixel_x = -12
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
 "rM" = (
@@ -1274,6 +1284,11 @@
 	},
 /obj/effect/turf_decal/industrial/fire{
 	dir = 8
+	},
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_y = -16;
+	pixel_x = -12
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/maintenance/port)
@@ -1749,6 +1764,10 @@
 	dir = 4
 	},
 /obj/machinery/light/small/directional/north,
+/obj/machinery/light_switch{
+	pixel_y = 22;
+	pixel_x = 7
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/starboard)
 "DW" = (
@@ -1844,6 +1863,11 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_y = -16;
+	pixel_x = -12
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Fr" = (
@@ -1934,6 +1958,11 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/radio/intercom/directional/north,
+/obj/machinery/light_switch{
+	pixel_x = -20;
+	pixel_y = 12;
+	dir = 4
+	},
 /turf/open/floor/carpet/red,
 /area/ship/crew)
 "Gm" = (
@@ -2521,7 +2550,7 @@
 	pixel_x = 11;
 	pixel_y = -3
 	},
-/obj/machinery/photocopier/faxmachine/longrange,
+/obj/machinery/fax,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 1
@@ -2831,6 +2860,11 @@
 /obj/structure/cable,
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/effect/turf_decal/trimline/opaque/red/filled/corner,
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_y = -16;
+	pixel_x = -12
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "Ui" = (
@@ -3094,6 +3128,10 @@
 	pixel_y = 23;
 	req_access = null
 	},
+/obj/machinery/light_switch{
+	pixel_y = 23;
+	pixel_x = -12
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
 "XU" = (
@@ -3223,6 +3261,11 @@
 	},
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 4
+	},
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = -10;
+	pixel_y = -19
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo/office)

@@ -66,12 +66,12 @@
 	dir = 1
 	},
 /obj/machinery/light/directional/east,
-/obj/machinery/light_switch{
-	pixel_x = -8;
-	pixel_y = 22
-	},
 /obj/machinery/firealarm/directional/north{
 	pixel_x = 3
+	},
+/obj/machinery/light_switch{
+	pixel_x = -10;
+	pixel_y = 23
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
@@ -172,7 +172,9 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/science/robotics)
 "cl" = (
-/obj/machinery/porta_turret/ship/ballistic,
+/obj/machinery/porta_turret/ship/ballistic{
+	dir = 5
+	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/science/robotics)
 "cF" = (
@@ -277,6 +279,11 @@
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable{
 	icon_state = "0-4"
+	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -19;
+	pixel_y = 12
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
@@ -394,6 +401,10 @@
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-8"
+	},
+/obj/machinery/light_switch{
+	pixel_x = -12;
+	pixel_y = 23
 	},
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/dorm)
@@ -789,11 +800,15 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/science/robotics)
 "iM" = (
-/obj/machinery/porta_turret/ship/ballistic,
+/obj/machinery/porta_turret/ship/ballistic{
+	dir = 9
+	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering/atmospherics)
 "jl" = (
-/obj/machinery/porta_turret/ship/ballistic,
+/obj/machinery/porta_turret/ship/ballistic{
+	dir = 6
+	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/security)
 "jp" = (
@@ -821,8 +836,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/cobweb,
 /obj/machinery/light_switch{
-	pixel_x = -9;
-	pixel_y = 21
+	pixel_x = -10;
+	pixel_y = 23
 	},
 /obj/structure/closet/crate/science,
 /obj/item/storage/box/stockparts/t2{
@@ -1838,6 +1853,10 @@
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-2"
+	},
+/obj/machinery/light_switch{
+	pixel_y = 23;
+	pixel_x = -12
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/science/robotics)
@@ -2900,6 +2919,11 @@
 	dir = 4
 	},
 /obj/structure/cable,
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -20;
+	pixel_y = 12
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "Fm" = (
@@ -3540,6 +3564,11 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -19;
+	pixel_y = 12
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/electrical)
 "Mj" = (
@@ -3931,7 +3960,7 @@
 /obj/structure/table/reinforced{
 	color = "#c1b6a5"
 	},
-/obj/machinery/photocopier/faxmachine/longrange,
+/obj/machinery/fax,
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 8
 	},
@@ -4142,7 +4171,9 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/electrical)
 "SQ" = (
-/obj/machinery/porta_turret/ship/ballistic,
+/obj/machinery/porta_turret/ship/ballistic{
+	dir = 10
+	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering/electrical)
 "Tu" = (

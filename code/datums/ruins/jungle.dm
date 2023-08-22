@@ -10,12 +10,6 @@
 	name = "Ruined Botany Research Facility"
 	description = "A research facility of great botany discoveries. Long since abandoned, willingly or not..."
 
-/datum/map_template/ruin/jungle/solgov_crash
-	name = "Abandoned SolGov Exploration Pod"
-	id = "jungle-solgov-explorer"
-	description = "A recently abandoned standard SolGov exploration pod. It may not be powerful or resilient, but it can fly in a pinch."
-	suffix = "jungle_surface_abandonedsolgov.dmm"
-
 /datum/map_template/ruin/jungle/ai_ikea
 	name = "Space Ikea AI Shipment"
 	id = "ikea-ai"
@@ -137,3 +131,9 @@
 	id = "medtech-facility"
 	description = "A MedTech pharmaceutical manufacturing plant where something went terribly wrong."
 	suffix = "jungle_medtech_outbreak.dmm"
+
+/datum/map_template/ruin/jungle/library
+	name = "Abandoned Library"
+	id = "abandoned-library"
+	description = "A forgotten library, with a few angry monkeys."
+	suffix = "jungle_abandoned_library.dmm"

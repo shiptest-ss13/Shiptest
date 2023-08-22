@@ -50,6 +50,11 @@
 	dir = 6
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 20;
+	pixel_y = 11
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/engine)
 "az" = (
@@ -158,6 +163,10 @@
 	icon_state = "0-8"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light_switch{
+	pixel_y = 21;
+	pixel_x = -12
+	},
 /turf/open/floor/plating,
 /area/ship/bridge)
 "bw" = (
@@ -539,6 +548,11 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = 11;
+	pixel_y = -16
+	},
 /turf/open/floor/plating,
 /area/ship/hallway/central)
 "eI" = (
@@ -1177,6 +1191,10 @@
 	icon_state = "0-4"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light_switch{
+	pixel_x = 11;
+	pixel_y = 22
+	},
 /turf/open/floor/plating,
 /area/ship/crew)
 "lW" = (
@@ -1259,6 +1277,10 @@
 	icon_state = "0-8"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light_switch{
+	pixel_x = 11;
+	pixel_y = 23
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "mN" = (
@@ -1565,6 +1587,11 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
 	icon_state = "0-4"
+	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_y = 12;
+	pixel_x = -20
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
@@ -1890,6 +1917,11 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/cobweb,
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_y = 12;
+	pixel_x = -20
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "td" = (
@@ -2108,6 +2140,10 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light_switch{
+	pixel_x = 11;
+	pixel_y = 23
+	},
 /turf/open/floor/plating,
 /area/ship/cargo/starboard)
 "vz" = (
@@ -2451,9 +2487,7 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo/starboard)
 "yX" = (
-/obj/structure/sign/number/two{
-	dir = 1
-	},
+/obj/structure/sign/number/two,
 /turf/closed/wall,
 /area/ship/cargo/starboard)
 "zc" = (
@@ -3206,6 +3240,11 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = 11;
+	pixel_y = -16
+	},
 /turf/open/floor/plating,
 /area/ship/cargo/starboard)
 "GQ" = (
@@ -3386,6 +3425,11 @@
 /obj/effect/turf_decal/siding/yellow{
 	dir = 5
 	},
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 20;
+	pixel_y = 11
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/aft)
 "In" = (
@@ -3530,7 +3574,7 @@
 /area/ship/maintenance/fore)
 "JV" = (
 /obj/structure/table/reinforced,
-/obj/machinery/photocopier/faxmachine/longrange,
+/obj/machinery/fax,
 /obj/structure/sign/poster/retro/random{
 	pixel_y = 32
 	},
@@ -3557,7 +3601,9 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
 "Kc" = (
-/obj/structure/sign/number/one,
+/obj/structure/sign/number/one{
+	dir = 1
+	},
 /turf/closed/wall,
 /area/ship/cargo/port)
 "Kd" = (
@@ -4009,6 +4055,10 @@
 	},
 /obj/structure/cable{
 	icon_state = "0-2"
+	},
+/obj/machinery/light_switch{
+	pixel_x = 11;
+	pixel_y = 22
 	},
 /turf/open/floor/plating,
 /area/ship/crew/toilet)
@@ -4659,6 +4709,11 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light_switch{
+	pixel_x = 11;
+	dir = 1;
+	pixel_y = -16
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "VE" = (

@@ -948,10 +948,8 @@
 /obj/effect/spawner/lootdrop/anomaly/rock/cave
 	loot = list(
 		/obj/effect/anomaly/flux/planetary,
-		/obj/effect/anomaly/grav/planetary,
 		/obj/effect/anomaly/hallucination/planetary,
 		/obj/effect/anomaly/pyro/planetary,
-		/obj/effect/anomaly/grav/high/planetary,
 		/obj/effect/anomaly/heartbeat/planetary,
 		/obj/effect/anomaly/sparkler/planetary,
 		/obj/effect/anomaly/veins/planetary,
@@ -1017,6 +1015,17 @@
 		/obj/effect/anomaly/plasmasoul/planetary,
 		/obj/effect/anomaly/melter/planetary,
 	)
+
+/obj/effect/spawner/lootdrop/anomaly/storm
+	loot = list(
+		/obj/effect/anomaly/flux,
+		/obj/effect/anomaly/pyro,
+		/obj/effect/anomaly/sparkler,
+		/obj/effect/anomaly/veins,
+		/obj/effect/anomaly/phantom,
+		/obj/effect/anomaly/melter,
+	)
+
 //wasteplanet things
 
 /obj/effect/spawner/lootdrop/waste/grille_or_trash

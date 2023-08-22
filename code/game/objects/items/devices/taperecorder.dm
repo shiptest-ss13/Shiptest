@@ -26,7 +26,7 @@
 	. = ..()
 	if(starting_tape_type)
 		mytape = new starting_tape_type(src)
-	update_icon()
+	update_appearance()
 	become_hearing_sensitive(ROUNDSTART_TRAIT)
 
 /obj/item/taperecorder/Destroy()
@@ -44,7 +44,7 @@
 			return
 		mytape = I
 		to_chat(user, "<span class='notice'>You insert [I] into [src].</span>")
-		update_icon()
+		update_appearance()
 
 
 /obj/item/taperecorder/proc/eject(mob/user)
@@ -53,7 +53,7 @@
 		stop()
 		user.put_in_hands(mytape)
 		mytape = null
-		update_icon()
+		update_appearance()
 
 /obj/item/taperecorder/fire_act(exposed_temperature, exposed_volume)
 	mytape.ruin() //Fires destroy the tape
@@ -87,12 +87,15 @@
 /obj/item/taperecorder/update_icon_state()
 	if(!mytape)
 		icon_state = "taperecorder_empty"
-	else if(recording)
+		return ..()
+	if(recording)
 		icon_state = "taperecorder_recording"
-	else if(playing)
+		return ..()
+	if(playing)
 		icon_state = "taperecorder_playing"
-	else
-		icon_state = "taperecorder_idle"
+		return ..()
+	icon_state = "taperecorder_idle"
+	return ..()
 
 
 /obj/item/taperecorder/Hear(message, atom/movable/speaker, message_langs, raw_message, radio_freq, spans, list/message_mods = list())
@@ -117,7 +120,7 @@
 	if(mytape.used_capacity < mytape.max_capacity)
 		to_chat(usr, "<span class='notice'>Recording started.</span>")
 		recording = 1
-		update_icon()
+		update_appearance()
 		mytape.timestamp += mytape.used_capacity
 		mytape.storedinfo += "\[[time2text(mytape.used_capacity * 10,"mm:ss")]\] Recording started."
 		var/used = mytape.used_capacity	//to stop runtimes when you eject the tape
@@ -127,7 +130,7 @@
 			used++
 			sleep(10)
 		recording = 0
-		update_icon()
+		update_appearance()
 	else
 		to_chat(usr, "<span class='notice'>The tape is full.</span>")
 
@@ -149,7 +152,7 @@
 		playing = 0
 		var/turf/T = get_turf(src)
 		T.visible_message("<font color=Maroon><B>Tape Recorder</B>: Playback stopped.</font>")
-	update_icon()
+	update_appearance()
 
 
 /obj/item/taperecorder/verb/play()
@@ -166,7 +169,7 @@
 		return
 
 	playing = 1
-	update_icon()
+	update_appearance()
 	to_chat(usr, "<span class='notice'>Playing started.</span>")
 	var/used = mytape.used_capacity	//to stop runtimes when you eject the tape
 	var/max = mytape.max_capacity
@@ -191,7 +194,7 @@
 		i++
 
 	playing = 0
-	update_icon()
+	update_appearance()
 
 
 /obj/item/taperecorder/attack_self(mob/user)
@@ -218,13 +221,13 @@
 		return
 
 	to_chat(usr, "<span class='notice'>Transcript printed.</span>")
-	var/obj/item/paper/P = new /obj/item/paper(get_turf(src))
+	var/obj/item/paper/transcript_paper = new /obj/item/paper(get_turf(src))
 	var/t1 = "<B>Transcript:</B><BR><BR>"
 	for(var/i = 1, mytape.storedinfo.len >= i, i++)
 		t1 += "[mytape.storedinfo[i]]<BR>"
-	P.info = t1
-	P.name = "paper- 'Transcript'"
-	usr.put_in_hands(P)
+	transcript_paper.add_raw_text(t1)
+	transcript_paper.update_appearance()
+	usr.put_in_hands(transcript_paper)
 	canprint = FALSE
 	addtimer(VARSET_CALLBACK(src, canprint, TRUE), 30 SECONDS)
 

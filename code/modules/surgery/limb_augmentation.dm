@@ -6,10 +6,12 @@
 
 /datum/surgery_step/replace_limb
 	name = "replace limb"
-	implements = list(/obj/item/bodypart = 100, /obj/item/organ_storage = 100)
+	implements = list(
+		/obj/item/bodypart = 100,
+		/obj/item/organ_storage = 100)
 	time = 32
 	experience_given = MEDICAL_SKILL_MEDIUM
-	var/obj/item/bodypart/L = null // L because "limb"
+	var/obj/item/bodypart/L = null // L because "limb" //i hate you
 
 
 /datum/surgery_step/replace_limb/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
@@ -29,7 +31,6 @@
 			"<span class='notice'>[user] begins to augment [target]'s [parse_zone(user.zone_selected)].</span>")
 	else
 		user.visible_message("<span class='notice'>[user] looks for [target]'s [parse_zone(user.zone_selected)].</span>", "<span class='notice'>You look for [target]'s [parse_zone(user.zone_selected)]...</span>")
-
 
 //ACTUAL SURGERIES
 

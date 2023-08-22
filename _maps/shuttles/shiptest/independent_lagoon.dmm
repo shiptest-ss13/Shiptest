@@ -750,6 +750,11 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/power/apc/auto_name/directional/west,
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_y = 10;
+	pixel_x = -20
+	},
 /turf/open/floor/carpet/black,
 /area/ship/crew/office)
 "eX" = (
@@ -769,6 +774,11 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/power/apc/auto_name/directional/east,
+/obj/machinery/light_switch{
+	pixel_x = 20;
+	pixel_y = -12;
+	dir = 8
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "fd" = (
@@ -1337,6 +1347,11 @@
 /obj/structure/cable,
 /obj/effect/turf_decal/corner/opaque/white/border,
 /obj/machinery/power/apc/auto_name/directional/south,
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = -12;
+	pixel_y = -16
+	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/starboard)
 "iN" = (
@@ -1471,6 +1486,11 @@
 	},
 /obj/machinery/computer/arcade,
 /obj/machinery/power/apc/auto_name/directional/east,
+/obj/machinery/light_switch{
+	pixel_x = 20;
+	pixel_y = -12;
+	dir = 8
+	},
 /turf/open/floor/light/colour_cycle/dancefloor_b,
 /area/ship/storage)
 "jw" = (
@@ -1482,6 +1502,11 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/power/apc/auto_name/directional/east,
+/obj/machinery/light_switch{
+	pixel_x = 20;
+	pixel_y = -12;
+	dir = 8
+	},
 /turf/open/floor/carpet/black,
 /area/ship/crew/library)
 "jC" = (
@@ -1601,6 +1626,11 @@
 	dir = 8
 	},
 /obj/machinery/power/apc/auto_name/directional/east,
+/obj/machinery/light_switch{
+	pixel_x = 20;
+	pixel_y = -12;
+	dir = 8
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen/kitchen)
 "kq" = (
@@ -1645,6 +1675,10 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/power/apc/auto_name/directional/north,
+/obj/machinery/light_switch{
+	pixel_x = -13;
+	pixel_y = 23
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/toilet)
 "kA" = (
@@ -1705,6 +1739,11 @@
 	},
 /obj/machinery/photocopier,
 /obj/machinery/power/apc/auto_name/directional/east,
+/obj/machinery/light_switch{
+	pixel_x = 20;
+	pixel_y = -12;
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/port)
 "lx" = (
@@ -1880,6 +1919,11 @@
 	dir = 4
 	},
 /obj/machinery/power/apc/auto_name/directional/east,
+/obj/machinery/light_switch{
+	pixel_x = 20;
+	pixel_y = -12;
+	dir = 8
+	},
 /turf/open/floor/wood,
 /area/ship/crew/hydroponics)
 "mz" = (
@@ -2080,6 +2124,11 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /obj/effect/turf_decal/corner/opaque/white/border,
 /obj/machinery/power/apc/auto_name/directional/south,
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = -12;
+	pixel_y = -16
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew)
 "nU" = (
@@ -3466,6 +3515,11 @@
 	dir = 4
 	},
 /obj/machinery/power/apc/auto_name/directional/east,
+/obj/machinery/light_switch{
+	pixel_x = 20;
+	pixel_y = -12;
+	dir = 8
+	},
 /turf/open/floor/pod/dark,
 /area/ship/hallway/fore)
 "xo" = (
@@ -3852,9 +3906,7 @@
 /obj/effect/turf_decal/corner/opaque/white/border{
 	dir = 1
 	},
-/obj/item/radio/intercom/directional/north{
-	pixel_y = 22
-	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel,
 /area/ship/hallway/fore)
 "zW" = (
@@ -4756,10 +4808,6 @@
 /obj/item/paper_bin,
 /obj/item/pen/fountain,
 /obj/item/kitchen/knife/letter_opener,
-/obj/machinery/light_switch{
-	pixel_x = -25;
-	dir = 4
-	},
 /obj/item/pen,
 /turf/open/floor/carpet/black,
 /area/ship/crew/library)
@@ -4982,7 +5030,7 @@
 /obj/structure/table/reinforced,
 /obj/machinery/recharger,
 /obj/item/paper{
-	info = "Reminder that passengers are NOT permitted to carry weapons on board.";
+	default_raw_text = "Reminder that passengers are NOT permitted to carry weapons on board.";
 	pixel_x = 4
 	},
 /obj/machinery/computer/helm/viewscreen/directional/east,
@@ -7002,6 +7050,11 @@
 	},
 /obj/item/radio/intercom/directional/north,
 /obj/machinery/power/apc/auto_name/directional/east,
+/obj/machinery/light_switch{
+	pixel_x = 20;
+	pixel_y = -12;
+	dir = 8
+	},
 /turf/open/floor/wood,
 /area/ship/crew/chapel)
 "VR" = (
@@ -7197,6 +7250,10 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/power/apc/auto_name/directional/north,
+/obj/machinery/light_switch{
+	pixel_x = -13;
+	pixel_y = 23
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "Xa" = (
@@ -7275,6 +7332,11 @@
 	},
 /obj/item/storage/box/maid,
 /obj/machinery/airalarm/directional/west,
+/obj/machinery/light_switch{
+	pixel_x = -13;
+	pixel_y = 23
+	},
+/obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/plasteel,
 /area/ship/crew/janitor)
 "Xs" = (
@@ -7374,6 +7436,10 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/power/apc/auto_name/directional/north,
+/obj/machinery/light_switch{
+	pixel_x = -13;
+	pixel_y = 23
+	},
 /turf/open/floor/grass,
 /area/ship/hallway/central)
 "Yl" = (
@@ -7497,6 +7563,11 @@
 	dir = 4
 	},
 /obj/machinery/power/apc/auto_name/directional/east,
+/obj/machinery/light_switch{
+	pixel_x = 20;
+	pixel_y = -12;
+	dir = 8
+	},
 /turf/open/floor/wood,
 /area/ship/crew/dorm)
 "Zx" = (

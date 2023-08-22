@@ -40,7 +40,7 @@
 	. = ..()
 	possible_states = typelist("possible_states", possible_states)
 
-	update_icon()
+	update_appearance()
 
 /obj/item/reagent_containers/food/condiment/update_icon()
 	cut_overlays()
@@ -63,10 +63,6 @@
 		icon_state = icon_empty
 
 	. = ..()
-
-/obj/item/reagent_containers/food/condiment/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] is trying to eat the entire [src]! It looks like [user.p_they()] forgot how food works!</span>")
-	return OXYLOSS
 
 /obj/item/reagent_containers/food/condiment/attack(mob/M, mob/user, def_zone)
 
@@ -124,7 +120,7 @@
 		playsound(src, 'sound/items/glass_transfer.ogg', 50, 1)
 
 /obj/item/reagent_containers/food/condiment/on_reagent_change(changetype)
-	update_icon()
+	update_appearance()
 
 /obj/item/reagent_containers/food/condiment/enzyme
 	name = "universal enzyme"
@@ -148,15 +144,6 @@
 	amount_per_transfer_from_this = 1
 	volume = 20
 	list_reagents = list(/datum/reagent/consumable/sodiumchloride = 20)
-
-/obj/item/reagent_containers/food/condiment/saltshaker/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] begins to swap forms with the salt shaker! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	var/newname = "[name]"
-	name = "[user.name]"
-	user.name = newname
-	user.real_name = newname
-	desc = "Salt. From dead crew, presumably."
-	return (TOXLOSS)
 
 /obj/item/reagent_containers/food/condiment/saltshaker/afterattack(obj/target, mob/living/user, proximity)
 	. = ..()
@@ -248,7 +235,8 @@
 		)
 
 /obj/item/reagent_containers/food/condiment/pack/update_icon()
-	return
+	SHOULD_CALL_PARENT(FALSE)
+	return ..()
 
 /obj/item/reagent_containers/food/condiment/pack/attack(mob/M, mob/user, def_zone) //Can't feed these to people directly.
 	return

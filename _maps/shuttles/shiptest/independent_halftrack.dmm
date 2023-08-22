@@ -271,7 +271,7 @@
 /area/ship/security/range)
 "hF" = (
 /obj/structure/table/reinforced,
-/obj/machinery/photocopier/faxmachine/longrange,
+/obj/machinery/fax,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "hH" = (
@@ -283,6 +283,11 @@
 /obj/structure/cable,
 /obj/effect/turf_decal/trimline/opaque/red/filled/line{
 	dir = 8
+	},
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = 11;
+	pixel_y = -16
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/range)
@@ -705,6 +710,11 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = 11;
+	pixel_y = -16
+	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/bridge)
 "se" = (
@@ -924,6 +934,10 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/light/small/directional/north,
+/obj/machinery/light_switch{
+	pixel_y = 21;
+	pixel_x = 8
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "vG" = (
@@ -1136,6 +1150,7 @@
 /obj/structure/rack,
 /obj/item/gun/energy/laser/scatter,
 /obj/item/gun/energy/laser/scatter,
+/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "DU" = (
@@ -1157,6 +1172,10 @@
 "EA" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/machinery/photocopier,
+/obj/machinery/light_switch{
+	pixel_y = 21;
+	pixel_x = 8
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/aft)
 "EW" = (
@@ -1170,6 +1189,10 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/light/small/directional/north,
+/obj/machinery/light_switch{
+	pixel_y = 21;
+	pixel_x = 8
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "Fx" = (
@@ -1407,11 +1430,15 @@
 /area/ship/maintenance/port)
 "KR" = (
 /obj/machinery/airalarm/directional/east,
-/obj/machinery/light/directional/east,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
 /obj/machinery/power/apc/auto_name/directional/south,
+/obj/machinery/light_switch{
+	pixel_x = 11;
+	dir = 1;
+	pixel_y = -16
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "Lh" = (
@@ -1489,6 +1516,11 @@
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable{
 	icon_state = "0-4"
+	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -20;
+	pixel_y = 12
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
@@ -1713,6 +1745,11 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_y = 12;
+	pixel_x = -20
+	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew)
 "QY" = (
@@ -1812,6 +1849,11 @@
 	},
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/machinery/airalarm/directional/north,
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_y = 12;
+	pixel_x = -20
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/storage)
 "SR" = (

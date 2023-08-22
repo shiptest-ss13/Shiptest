@@ -436,6 +436,11 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
+/obj/machinery/light_switch{
+	pixel_x = 20;
+	dir = 8;
+	pixel_y = 0
+	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "dm" = (
@@ -2438,6 +2443,10 @@
 	icon_state = "2-8"
 	},
 /obj/machinery/camera/autoname,
+/obj/machinery/light_switch{
+	pixel_x = 11;
+	pixel_y = 23
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/engineering)
 "pT" = (
@@ -2949,9 +2958,7 @@
 /area/ship/science)
 "tc" = (
 /obj/structure/table/reinforced,
-/obj/machinery/photocopier/faxmachine/longrange{
-	department = "Internal Affairs"
-	},
+/obj/machinery/fax,
 /obj/effect/turf_decal/corner/opaque/ntblue,
 /obj/effect/turf_decal/corner/opaque/ntblue{
 	dir = 4
@@ -3426,7 +3433,7 @@
 	dir = 1
 	},
 /obj/machinery/light_switch{
-	pixel_x = -5;
+	pixel_x = -11;
 	pixel_y = 24
 	},
 /turf/open/floor/plasteel/dark,
@@ -3671,6 +3678,13 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
+"xE" = (
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_y = -16
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/science/ai_chamber)
 "xF" = (
 /obj/effect/turf_decal/corner/opaque/green{
 	dir = 4
@@ -4283,6 +4297,11 @@
 /obj/structure/disposalpipe/segment,
 /obj/structure/closet/emcloset/anchored,
 /obj/machinery/firealarm/directional/west,
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -20;
+	pixel_y = 10
+	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "Bp" = (
@@ -4617,6 +4636,11 @@
 	dir = 5
 	},
 /obj/machinery/power/apc/auto_name/directional/east,
+/obj/machinery/light_switch{
+	pixel_x = 20;
+	dir = 8;
+	pixel_y = 11
+	},
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
 "DE" = (
@@ -4726,6 +4750,11 @@
 /obj/item/storage/belt/medical,
 /obj/item/clothing/glasses/hud/health,
 /obj/machinery/power/apc/auto_name/directional/west,
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -19;
+	pixel_y = 12
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "Ek" = (
@@ -6839,6 +6868,11 @@
 /obj/item/megaphone/cargo,
 /obj/item/clothing/head/safety_helmet,
 /obj/machinery/power/apc/auto_name/directional/south,
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = -8;
+	pixel_y = -16
+	},
 /turf/open/floor/plasteel,
 /area/ship/cargo/office)
 "SK" = (
@@ -8266,7 +8300,7 @@ ui
 cI
 cI
 yC
-cI
+xE
 VV
 hj
 vD

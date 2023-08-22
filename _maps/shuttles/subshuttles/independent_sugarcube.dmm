@@ -50,6 +50,9 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/machinery/light_switch{
+	pixel_y = 22
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "h" = (
@@ -71,6 +74,10 @@
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-2"
+	},
+/obj/machinery/light_switch{
+	pixel_y = 23;
+	pixel_x = -13
 	},
 /turf/open/floor/plating,
 /area/ship/storage)
