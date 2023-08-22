@@ -144,7 +144,7 @@ export const Radio = (props, context) => {
         {!!chatlog && (
           <Section
             title="Voice Log"
-            height="350px"
+            height="400px"
             width="460px"
             overflowY="scroll"
           >
