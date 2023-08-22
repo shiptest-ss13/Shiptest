@@ -132,7 +132,7 @@ container into the user's hands.
 				beaker.forceMove(get_turf(src))
 			beaker = null
 			if(!new_container)
-				update_icon()
+				update_appearance()
 				return TRUE
 	if(istype(new_container, /obj/item/reagent_containers))
 		beaker = new_container
@@ -145,11 +145,11 @@ container into the user's hands.
 				bottle.forceMove(get_turf(src))
 			bottle = null
 			if(!new_container)
-				update_icon()
+				update_appearance()
 				return TRUE
 	if(istype(new_container, /obj/item/storage/pill_bottle))
 		bottle = new_container
-	update_icon()
+	update_appearance()
 	return TRUE
 
 /obj/machinery/chem_press/update_overlays()
