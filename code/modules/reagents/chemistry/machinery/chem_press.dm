@@ -46,7 +46,7 @@
 		balloon_alert(user, "no container!")
 		return FALSE
 	if(!beaker.reagents.total_volume)
-		to_chat(user, "<span class='warning'>[beaker] is empty!</span>")
+		balloon_alert(user, "[beaker] is empty!")
 		return FALSE
 	if(do_after(user, press_time, target = src))
 		var/obj/item/reagent_containers/pill/pill
@@ -71,13 +71,13 @@
 		if(!user.transferItemToLoc(item, src))
 			return
 		handle_container(user, item)
-		to_chat(user, "<span class='notice'>You add [item] to the input slot [src].</span>")
+		balloon_alert(user, "added [item] to input")
 		return TRUE //no afterattack
 	else if(istype(item, /obj/item/storage/pill_bottle))
 		if(!user.transferItemToLoc(item, src))
 			return
 		handle_container(user, item)
-		to_chat(user, "<span class='notice'>You add [item] into the output slot of [src].</span>")
+		balloon_alert(user, "added [item] to output")
 		return TRUE
 	else if(item.tool_behaviour == TOOL_SCREWDRIVER)
 		if(user.a_intent == INTENT_HELP)
