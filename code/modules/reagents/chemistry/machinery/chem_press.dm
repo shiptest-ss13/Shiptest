@@ -58,7 +58,7 @@
 		pill.name = "pill"
 		pill.icon_state = "pill[pill_style]"
 		beaker.reagents.trans_to(pill, current_volume, transfered_by = user)
-		to_chat(user, "<span class='notice'>You finish pressing a pill.</span>")
+		balloon_alert(user, "finished pressing")
 	return TRUE
 
 /obj/machinery/chem_press/attackby(obj/item/item, mob/living/user, params)
