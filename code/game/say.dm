@@ -136,20 +136,20 @@ GLOBAL_LIST_INIT(freqcolor, list())
 		return "makes a strange sound."
 
 /proc/get_radio_span(freq)
-	if(!freq)
+	if(!freq) // If there's no freq attached to the message, then it's not for a radio.
 		return "class='game say'"
 	var/returntext = GLOB.freqtospan["[freq]"]
-	if(returntext)
+	if(returntext) // If we find a pre-defined span for the freq, use that instead.
 		return "class='[returntext]'"
-	else if(freq != FREQ_COMMON)
+	else if(freq != FREQ_COMMON) // We don't want to change the color of Common.
 		var/returncolor = GLOB.freqcolor["[freq]"]
-		if(returncolor)
-			return "style='color:#[returncolor]' class='radio'"
-		else
-			returncolor = random_color()
+		if(returncolor) // If we've already picked a color for this channel, don't do it again.
+			return "style='color:[returncolor]' class='radio'"
+		else // If we haven't picked a color for this channel, pick one now.
+			returncolor = pick("#E91E63", "#C2185B", "#9C27B0", "#5727B0", "#272AB0")
 			GLOB.freqcolor["[freq]"] = returncolor
-			return "style='color:#[returncolor]' class='radio'"
-	else
+			return "style='color:[returncolor]' class='radio'"
+	else // This should only handle Common
 		return "class='radio'"
 
 /proc/get_radio_name(freq)
