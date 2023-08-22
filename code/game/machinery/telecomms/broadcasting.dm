@@ -181,6 +181,16 @@
 			radio.last_chatter_time = world.time
 	//WS edit end
 
+	for(var/obj/item/radio/wideband in radios)
+		if(wideband.frequency == FREQ_WIDEBAND)
+			var/name = data["name"]
+			var/list/log_details = list()
+			log_details["name"] = "[name]▸"
+			log_details["message"] = "\"[html_decode(message)]\""
+			log_details["time"] = station_time_timestamp()
+			wideband.loglist += list(log_details)
+			wideband.log_trim()
+
 	// From the list of radios, find all mobs who can hear those.
 	var/list/receive = get_mobs_in_radio_ranges(radios)
 
