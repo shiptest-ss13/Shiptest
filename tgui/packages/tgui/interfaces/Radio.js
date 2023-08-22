@@ -1,7 +1,15 @@
 import { map } from 'common/collections';
 import { toFixed } from 'common/math';
 import { useBackend } from '../backend';
-import { Box, Button, LabeledList, NumberInput, Section, Divider, Table } from '../components';
+import {
+  Box,
+  Button,
+  LabeledList,
+  NumberInput,
+  Section,
+  Divider,
+  Table,
+} from '../components';
 import { RADIO_CHANNELS } from '../constants';
 import { Window } from '../layouts';
 
@@ -134,8 +142,13 @@ export const Radio = (props, context) => {
           </LabeledList>
         </Section>
         {!!chatlog && (
-          <Section title="Voice Log" height="350px" width="460px" overflowY="scroll" >
-            <Table >
+          <Section
+            title="Voice Log"
+            height="350px"
+            width="460px"
+            overflowY="scroll"
+          >
+            <Table>
               <Table.Row header>
                 <Table.Cell>Timestamp</Table.Cell>
                 <Table.Cell>Transcript</Table.Cell>
@@ -144,8 +157,10 @@ export const Radio = (props, context) => {
               {chatloglist.map((log) => (
                 <Table.Row key={log.message} className="candystripe">
                   <Table.Cell>{log.time}</Table.Cell>
-                  <Table bold color="blue">{log.name}</Table>
-                  <Table >{log.message}</Table>
+                  <Table bold color="blue">
+                    {log.name}
+                  </Table>
+                  <Table>{log.message}</Table>
                 </Table.Row>
               ))}
             </Table>
