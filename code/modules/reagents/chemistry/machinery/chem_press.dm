@@ -49,37 +49,37 @@
 		to_chat(user, "<span class='warning'>[beaker] is empty!</span>")
 		return FALSE
 	if(do_after(user, press_time, target = src))
-		var/obj/item/reagent_containers/pill/P
+		var/obj/item/reagent_containers/pill/pill
 		// Check if there is a bottle that isn't full, then place a pill in the bottle. Otherwise, drop it on my tile.
 		if(bottle && bottle.contents.len < bottle.GetComponent(/datum/component/storage).max_items)
-			P = new/obj/item/reagent_containers/pill(bottle)
+			pill = new/obj/item/reagent_containers/pill(bottle)
 		else
-			P = new/obj/item/reagent_containers/pill(drop_location())
-		P.name = "pill"
-		P.icon_state = "pill[pill_style]"
-		beaker.reagents.trans_to(P, current_volume, transfered_by = user)
+			pill = new/obj/item/reagent_containers/pill(drop_location())
+		pill.name = "pill"
+		pill.icon_state = "pill[pill_style]"
+		beaker.reagents.trans_to(pill, current_volume, transfered_by = user)
 		to_chat(user, "<span class='notice'>You finish pressing a pill.</span>")
 	return TRUE
 
-/obj/machinery/chem_press/attackby(obj/item/I, mob/living/user, params)
+/obj/machinery/chem_press/attackby(obj/item/item, mob/living/user, params)
 	if(user.a_intent == INTENT_HARM) // Hit the machine if we're on harm intent.
 		return ..()
-	if(default_unfasten_wrench(user, I))
+	if(default_unfasten_wrench(user, item))
 		return
-	else if (istype(I, /obj/item/reagent_containers) && !(I.item_flags & ABSTRACT) && I.is_open_container())
+	else if (istype(item, /obj/item/reagent_containers) && !(item.item_flags & ABSTRACT) && item.is_open_container())
 		. = TRUE //no afterattack
-		if(!user.transferItemToLoc(I, src))
+		if(!user.transferItemToLoc(item, src))
 			return
-		handle_container(user, I)
-		to_chat(user, "<span class='notice'>You add [I] to the input slot [src].</span>")
+		handle_container(user, item)
+		to_chat(user, "<span class='notice'>You add [item] to the input slot [src].</span>")
 		return TRUE //no afterattack
-	else if(istype(I, /obj/item/storage/pill_bottle))
-		if(!user.transferItemToLoc(I, src))
+	else if(istype(item, /obj/item/storage/pill_bottle))
+		if(!user.transferItemToLoc(item, src))
 			return
-		handle_container(user, I)
-		to_chat(user, "<span class='notice'>You add [I] into the output slot of [src].</span>")
+		handle_container(user, item)
+		to_chat(user, "<span class='notice'>You add [item] into the output slot of [src].</span>")
 		return TRUE
-	else if(I.tool_behaviour == TOOL_SCREWDRIVER)
+	else if(item.tool_behaviour == TOOL_SCREWDRIVER)
 		if(user.a_intent == INTENT_HELP)
 			var/i=0
 			for(var/A in possible_volumes)
