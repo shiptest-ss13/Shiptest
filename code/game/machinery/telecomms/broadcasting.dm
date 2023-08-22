@@ -188,7 +188,7 @@
 			log_details["name"] = "[name]▸"
 			log_details["message"] = "\"[html_decode(message)]\""
 			log_details["time"] = station_time_timestamp()
-			wideband.loglist += list(log_details)
+			wideband.loglist.Insert(1, list(log_details))
 			wideband.log_trim()
 
 	// From the list of radios, find all mobs who can hear those.

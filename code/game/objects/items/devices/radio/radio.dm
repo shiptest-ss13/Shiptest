@@ -379,7 +379,7 @@
 /obj/item/radio/proc/log_trim()
 	if(loglist.len <= 50)
 		return
-	loglist = loglist.Copy(loglist.len-50 ,0)
+	loglist.Cut(51)
 
 ///////////////////////////////
 //////////Borg Radios//////////
