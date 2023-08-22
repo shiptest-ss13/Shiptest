@@ -181,6 +181,7 @@
 			radio.last_chatter_time = world.time
 	//WS edit end
 
+//for all the widebands that heard the message, log it in their voice log
 	for(var/obj/item/radio/wideband in radios)
 		if(wideband.frequency == FREQ_WIDEBAND)
 			var/name = data["name"]
