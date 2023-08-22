@@ -89,7 +89,7 @@
 						current_volume = possible_volumes[i+1]
 					else
 						current_volume = possible_volumes[1]
-					to_chat(user, "<span class='notice'>You adjust the press to produce [current_volume]u pills.</span>")
+		balloon_alert(user, "making [current_volume]u pills")
 					balloon_alert(user, "Pill size: [current_volume]u")
 					return
 		if(user.a_intent == INTENT_DISARM)
@@ -101,7 +101,7 @@
 						pill_style = possible_styles[i+1]
 					else
 						pill_style = possible_styles[1]
-					to_chat(user, "<span class='notice'>You adjust the press to produce [style_colors["[pill_style]"]] pills.</span>")
+		balloon_alert(user, "making [style_colors["[pill_style]"]] pills")
 					balloon_alert(user, "Pill color: [style_colors["[pill_style]"]]")
 					return
 	return ..()
