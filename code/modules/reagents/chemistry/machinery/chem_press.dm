@@ -36,7 +36,7 @@
 	if(!bottle)
 		. += "<span class='notice'>The <b>pill bottle</b> slot is empty.</span>"
 	if(!beaker)
-		. += "<span class='notice>The <b>beaker</b> slot is empty.</span>"
+		. += "<span class='notice'>The <b>beaker</b> slot is empty.</span>"
 
 /obj/machinery/chem_press/attack_hand(mob/user)
 	. = ..()
@@ -46,7 +46,7 @@
 		to_chat(user, "<span class='warning'>There's no container in [src]!.</span>")
 		return FALSE
 	if(!beaker.reagents.total_volume)
-		to_chat(user, "<span class='warning'>[beaker] is empty!")
+		to_chat(user, "<span class='warning'>[beaker] is empty!</span>")
 		return FALSE
 	if(do_after(user, press_time, target = src))
 		var/obj/item/reagent_containers/pill/P
@@ -90,6 +90,7 @@
 					else
 						current_volume = possible_volumes[1]
 					to_chat(user, "<span class='notice'>You adjust the press to produce [current_volume]u pills.</span>")
+					balloon_alert(user, "Pill size: [current_volume]u")
 					return
 		if(user.a_intent == INTENT_DISARM)
 			var/i=0
@@ -101,6 +102,7 @@
 					else
 						pill_style = possible_styles[1]
 					to_chat(user, "<span class='notice'>You adjust the press to produce [style_colors["[pill_style]"]] pills.</span>")
+					balloon_alert(user, "Pill color: [style_colors["[pill_style]"]]")
 					return
 	return ..()
 
