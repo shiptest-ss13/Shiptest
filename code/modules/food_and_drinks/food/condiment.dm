@@ -333,7 +333,7 @@
 /obj/item/reagent_containers/food/condiment/pack/lemonade_powder
 	name = "lemonade drink powder pack"
 	originalname = "lemonade drink powder"
-	list_reagents = list(/datum/reagent/consumable/sugar = 5, /datum/reagent/consumable/lemonjuice = 5)
+	list_reagents = list(/datum/reagent/consumable/eggyolk = 5, /datum/reagent/consumable/lemonjuice = 5)
 
 /obj/item/reagent_containers/food/condiment/pack/fruit_powder
 	name = "fruit punch beverage powder, carb-electrolyte pack"

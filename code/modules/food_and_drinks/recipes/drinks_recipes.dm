@@ -661,7 +661,7 @@
 
 /datum/chemical_reaction/hot_lemonade
 	results = list(/datum/reagent/consumable/hot_lemonade = 6)
-	required_reagents = list(/datum/reagent/water = 6, /datum/reagent/consumable/sugar = 1, /datum/reagent/consumable/lemonjuice = 1)
+	required_reagents = list(/datum/reagent/water = 6, /datum/reagent/consumable/eggyolk = 1, /datum/reagent/consumable/lemonjuice = 1)
 
 /datum/chemical_reaction/fruit_punch
 	results = list(/datum/reagent/consumable/fruit_punch = 6)
