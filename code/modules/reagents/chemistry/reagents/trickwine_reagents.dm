@@ -114,7 +114,7 @@
 		var/turf/T = get_turf(M)
 		T.IgniteTurf(reac_volume)
 		new /obj/effect/hotspot(T)
-		T.hotspot_expose((reac_volume*10),(reac_volume*1))
+		T.hotspot_expose(reac_volume*10,reac_volume*1)
 		var/turf/otherT
 		for(var/direction in GLOB.cardinals)
 			otherT = get_step(T, direction)
@@ -166,12 +166,14 @@
 	breakaway_flask_icon_state = "baflaskprismwine"
 
 /datum/reagent/consumable/ethanol/prism_wine/on_mob_metabolize(mob/living/carbon/human/M)
-	M.physiology.burn_mod *= 0.5
-	M.visible_message("<span class='warning'>[M] seems to shimmer with power!</span>")
+	if(M.physiology.burn_mod <= inital(M.physiology.burn_mod))
+		M.physiology.burn_mod *= 0.5
+		M.visible_message("<span class='warning'>[M] seems to shimmer with power!</span>")
 
 /datum/reagent/consumable/ethanol/prism_wine/on_mob_end_metabolize(mob/living/carbon/human/M)
-	M.physiology.burn_mod = initial(M.physiology.burn_mod)
-	M.visible_message("<span class='warning'>[M] has returned to normal!</span>")
+	if(M.physiology.burn_mod > inital(M.physiology.burn_mod))
+		M.physiology.burn_mod *= 2
+		M.visible_message("<span class='warning'>[M] has returned to normal!</span>")
 
 /datum/reagent/consumable/ethanol/prism_wine/expose_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(method == TOUCH)
