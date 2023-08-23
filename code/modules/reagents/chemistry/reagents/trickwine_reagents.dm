@@ -166,12 +166,12 @@
 	breakaway_flask_icon_state = "baflaskprismwine"
 
 /datum/reagent/consumable/ethanol/prism_wine/on_mob_metabolize(mob/living/carbon/human/M)
-	if(M.physiology.burn_mod <= inital(M.physiology.burn_mod))
+	if(M.physiology.burn_mod <= initial(M.physiology.burn_mod))
 		M.physiology.burn_mod *= 0.5
 		M.visible_message("<span class='warning'>[M] seems to shimmer with power!</span>")
 
 /datum/reagent/consumable/ethanol/prism_wine/on_mob_end_metabolize(mob/living/carbon/human/M)
-	if(M.physiology.burn_mod > inital(M.physiology.burn_mod))
+	if(M.physiology.burn_mod > initial(M.physiology.burn_mod))
 		M.physiology.burn_mod *= 2
 		M.visible_message("<span class='warning'>[M] has returned to normal!</span>")
 
