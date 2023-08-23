@@ -264,12 +264,13 @@
 			The simplest way I have found of making them is crafting them with a chunk of glass, plasma, and a welder.<br>
 
 			<h2> Bacteria </h2>
-			A speical speices of bacteria native to Illestern is what allows Trickwines form.<br>
+			A speical speices of bacteria native to Illestren is what allows Trickwines form.<br>
 			Now we use a special distiller that keeps just enough bacertia alive to ferment without turning the batch sour.<br>
 			Now you should still have one on board but if you dont its fine.<br>
 			It just so happens we have trees on board our ships host to the Bacteria.<br>
 			To get enough Bacteria your going to need to feed it anything that would help a plant.<br>
 			Water, Fertilizer, Ashwine are all good options.<br>
+			Soon it will drops some apples and you can grind them for the bacteria.<br>
 			Once you have enough you can fabricate it the same way you would a normal barrel.<br>
 
 			<h2> Ashwine </h2>
@@ -393,10 +394,6 @@
 	title = "Space Law"
 	page_link = "Space_Law"
 
-/obj/item/book/manual/wiki/security_space_law/suicide_act(mob/living/user)
-	user.visible_message("<span class='suicide'>[user] pretends to read \the [src] intently... then promptly dies of laughter!</span>")
-	return OXYLOSS
-
 /obj/item/book/manual/wiki/infections
 	name = "Infections - Making your own pandemic!"
 	icon_state = "bookInfections"
@@ -502,27 +499,6 @@
 	author = "Cuban Pete"
 	title = "Toxins or: How I Learned to Stop Worrying and Love the Maxcap"
 	page_link = "Guide_to_toxins"
-
-/obj/item/book/manual/wiki/toxins/suicide_act(mob/user)
-	var/mob/living/carbon/human/H = user
-	user.visible_message("<span class='suicide'>[user] starts dancing to the Rhumba Beat! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	playsound(loc, 'sound/effects/spray.ogg', 10, TRUE, -3)
-	if (!QDELETED(H))
-		H.emote("spin")
-		sleep(20)
-		for(var/obj/item/W in H)
-			H.dropItemToGround(W)
-			if(prob(50))
-				step(W, pick(GLOB.alldirs))
-		ADD_TRAIT(H, TRAIT_DISFIGURED, TRAIT_GENERIC)
-		H.bleed_rate = 5
-		H.gib_animation()
-		sleep(3)
-		H.adjustBruteLoss(1000) //to make the body super-bloody
-		H.spawn_gibs()
-		H.spill_organs()
-		H.spread_bodyparts()
-	return (BRUTELOSS)
 
 /obj/item/book/manual/wiki/plumbing
 	name = "Chemical Factories Without Narcotics"
