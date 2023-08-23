@@ -716,7 +716,6 @@
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 4
 	},
-/obj/machinery/light/small/broken/directional/south,
 /obj/machinery/button/door{
 	id = "box_engine1";
 	name = "Egnine shutter";
@@ -1037,7 +1036,6 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "ei" = (
-/obj/machinery/light/small/directional/east,
 /obj/machinery/cryopod,
 /obj/effect/turf_decal/box/white,
 /obj/machinery/computer/cryopod/retro/directional/north,
@@ -1183,7 +1181,6 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/directional/west,
 /obj/structure/closet/firecloset/wall{
 	dir = 4;
 	pixel_x = -32
@@ -1423,7 +1420,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/item/radio/intercom/directional/west,
+/obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
 "mx" = (
@@ -1605,13 +1602,13 @@
 /area/ship/crew)
 "tn" = (
 /obj/machinery/vending/wardrobe/medi_wardrobe,
-/obj/machinery/firealarm/directional/north,
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "tw" = (
@@ -1819,7 +1816,7 @@
 /area/ship/bridge)
 "vE" = (
 /obj/structure/dresser,
-/obj/machinery/light/small/directional/north,
+/obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel,
 /area/ship/crew)
 "vX" = (
@@ -2080,6 +2077,10 @@
 	pixel_x = -21;
 	pixel_y = -10
 	},
+/obj/item/radio/intercom/directional/west{
+	pixel_x = -41;
+	pixel_y = -3
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
 "AH" = (
@@ -2251,7 +2252,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 6
 	},
-/obj/machinery/light/small/directional/north,
+/obj/machinery/light/small/broken/directional/north,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "ED" = (

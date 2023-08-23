@@ -75,7 +75,6 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/industrial/hatch/red,
-/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "cn" = (
@@ -331,6 +330,9 @@
 	dir = 4
 	},
 /obj/machinery/airalarm/directional/south,
+/obj/structure/sign/poster/official/cleanliness{
+	pixel_x = -32
+	},
 /turf/open/floor/plasteel/freezer,
 /area/ship/crew/toilet)
 "iP" = (
@@ -1383,7 +1385,6 @@
 /obj/item/lighter{
 	pixel_x = -8
 	},
-/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "Go" = (
@@ -1593,7 +1594,6 @@
 /obj/item/clothing/glasses/science,
 /obj/item/reagent_containers/glass/beaker/large,
 /obj/item/reagent_containers/glass/beaker/large,
-/obj/machinery/airalarm/directional/east,
 /obj/structure/closet/wall/white/chem{
 	dir = 1;
 	name = "Chemistry Locker";
@@ -1601,6 +1601,7 @@
 	},
 /obj/item/storage/backpack/satchel/chem,
 /obj/item/clothing/head/beret/chem,
+/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "KW" = (
@@ -2339,9 +2340,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
-	},
-/obj/structure/sign/poster/official/cleanliness{
-	pixel_y = -32
 	},
 /turf/open/floor/plasteel/freezer,
 /area/ship/crew/toilet)
