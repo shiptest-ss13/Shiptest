@@ -316,3 +316,12 @@
 		/obj/item/reagent_containers/food/drinks/ration/beverage_bag = 1
 	)
 	generate_items_inside(items_inside, src)
+
+/obj/item/storage/ration/calamari_red_sauce
+	name = "Blackened Calamari in Red Sauce"
+
+/obj/item/storage/ration/macaroni_tomato_sauce
+	name = "Elbow Macaroni in Tomato Sauce"
+
+/obj/item/storage/ration/cheese_pizza_slice
+	name = "Cheese Pizza Slice"

@@ -28,7 +28,23 @@
 		return 0
 	return ..()
 
-/obj/item/reagent_containers/food/snacks/ration/vegan_chili
+/obj/item/reagent_containers/food/snacks/ration/entree
+	icon_state = "ration_main"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 6)
+
+/obj/item/reagent_containers/food/snacks/ration/side
+	icon_state = "ration_side"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 4)
+
+/obj/item/reagent_containers/food/snacks/ration/snack
+	icon_state = "ration_snack"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/sugar = 3)
+
+/obj/item/reagent_containers/food/snacks/ration/bar
+	icon_state = "ration_bar"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/sugar = 2)
+
+/obj/item/reagent_containers/food/snacks/ration/entree/vegan_chili
 	name = "vegan chili with beans"
 	desc = "A hearty and flavorful vegan chili made with beans. It's so delicious, you won't believe it's not meat!"
 	icon_state = "beans"
@@ -63,7 +79,7 @@
 	tastes = list("pizza" = 3, "pepperoni" = 1, "cheese" = 1)
 	foodtype = MEAT | DAIRY | GRAIN | JUNKFOOD
 
-/obj/item/reagent_containers/food/snacks/ration/shredded_beef
+/obj/item/reagent_containers/food/snacks/ration/entree/shredded_beef
 	name = "shredded beef in barbecue sauce"
 	desc = "Tender, juicy shredded beef coated in smoky barbecue sauce. A savory treat that satisfies your hunger."
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6)
@@ -94,7 +110,7 @@
 	tastes = list("cinnamon" = 3, "airy" = 1, "sweet" = 1)
 	foodtype = GRAIN | SUGAR
 
-/obj/item/reagent_containers/food/snacks/ration/pork_spaghetti
+/obj/item/reagent_containers/food/snacks/ration/entree/pork_spaghetti
 	name = "spaghetti with pork and sauce"
 	desc = "A hearty dish of spaghetti with tender pork and a savory sauce. A filling and delicious meal to satisfy your hunger."
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6)
@@ -125,7 +141,7 @@
 	tastes = list("raisins" = 1, "sweet" = 1)
 	foodtype = FRUIT | SUGAR
 
-/obj/item/reagent_containers/food/snacks/ration/fried_fish
+/obj/item/reagent_containers/food/snacks/ration/entree/fried_fish
 	name = "fried fish chunks"
 	desc = "Crispy and delicious fried fish chunks, perfect for seafood lovers. Satisfy your cravings with this delightful fried treat."
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6)
@@ -162,7 +178,7 @@
 	tastes = list("beef" = 1, "teriyaki" = 1)
 	foodtype = MEAT | SUGAR
 
-/obj/item/reagent_containers/food/snacks/ration/beef_strips
+/obj/item/reagent_containers/food/snacks/ration/entree/beef_strips
 	name = "beef strips in tomato sauce"
 	desc = "Tender beef strips cooked in a rich tomato sauce, creating a delightful and comforting combination. A hearty and delicious meal to enjoy."
 	filling_color = "#644815"
@@ -200,7 +216,7 @@
 	tastes = list("peppermint" = 3, "sweet" = 1)
 	foodtype = SUGAR | JUNKFOOD
 
-/obj/item/reagent_containers/food/snacks/ration/chili_macaroni
+/obj/item/reagent_containers/food/snacks/ration/entree/chili_macaroni
 	name = "chili macaroni"
 	desc = "A comforting dish of macaroni combined with flavorful chili, providing a hearty and satisfying meal."
 	filling_color = "#994d00"
@@ -222,7 +238,7 @@
 	tastes = list("cherry" = 1)
 	foodtype = FRUIT
 
-/obj/item/reagent_containers/food/snacks/ration/chicken_wings_hot_sauce
+/obj/item/reagent_containers/food/snacks/ration/entree/chicken_wings_hot_sauce
 	name = "chicken wings with hot sauce"
 	desc = "Crispy and flavorful chicken wings tossed in a spicy hot sauce, delivering a bold and satisfying taste."
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6)
@@ -253,7 +269,7 @@
 	tastes = list("strawberry" = 1)
 	foodtype = FRUIT
 
-/obj/item/reagent_containers/food/snacks/ration/fish_stew
+/obj/item/reagent_containers/food/snacks/ration/entree/fish_stew
 	name = "fish stew"
 	desc = "A hearty fish stew featuring a rich broth and tender pieces of fish, creating a flavorful and comforting meal."
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6)
@@ -283,7 +299,7 @@
 	tastes = list("sour" = 1, "gummy" = 1)
 	foodtype = SUGAR
 
-/obj/item/reagent_containers/food/snacks/ration/lemon_pepper_chicken
+/obj/item/reagent_containers/food/snacks/ration/entree/lemon_pepper_chicken
 	name = "lemon pepper chicken"
 	desc = "Tender chicken seasoned with zesty lemon and fragrant pepper, offering a flavorful and satisfying dish."
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6)
@@ -320,7 +336,7 @@
 	tastes = list("peanut" = 1, "cranberry" = 1)
 	foodtype = FRUIT
 
-/obj/item/reagent_containers/food/snacks/ration/sausage_peppers_onions
+/obj/item/reagent_containers/food/snacks/ration/entree/sausage_peppers_onions
 	name = "sausage with peppers and onions"
 	desc = "Grilled sausage served with sautéed peppers and onions, creating a flavorful and satisfying dish."
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6)
@@ -358,7 +374,7 @@
 	tastes = list("chocolate" = 1, "orange" = 1, "cake" = 1)
 	foodtype = SUGAR
 
-/obj/item/reagent_containers/food/snacks/ration/dumplings_chili_sauce
+/obj/item/reagent_containers/food/snacks/ration/entree/dumplings_chili_sauce
 	name = "dumplings with chili sauce"
 	desc = "Delicious dumplings served with a flavorful chili sauce, providing a hearty and satisfying meal."
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6)
@@ -389,7 +405,7 @@
 	tastes = list("energy gum" = 1)
 	foodtype = SUGAR
 
-/obj/item/reagent_containers/food/snacks/ration/battered_fish_sticks
+/obj/item/reagent_containers/food/snacks/ration/entree/battered_fish_sticks
 	name = "battered fish sticks"
 	desc = "Crispy battered fish sticks, deep-fried to perfection and offering a delicious seafood snack."
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6)
@@ -426,7 +442,7 @@
 	tastes = list("apple" = 1)
 	foodtype = FRUIT
 
-/obj/item/reagent_containers/food/snacks/ration/assorted_salted_offal
+/obj/item/reagent_containers/food/snacks/ration/entree/assorted_salted_offal
 	name = "assorted salted offal"
 	desc = "A mix of various salted offal, providing a unique and flavorful snack for those with adventurous tastes."
 	filling_color = "#cc3300"
@@ -461,7 +477,7 @@
 	tastes = list("candied pineapple" = 1)
 	foodtype = SUGAR | FRUIT
 
-/obj/item/reagent_containers/food/snacks/ration/maple_pork_sausage_patty
+/obj/item/reagent_containers/food/snacks/ration/entree/maple_pork_sausage_patty
 	name = "maple pork sausage patty"
 	desc = "Juicy pork sausage patty infused with the sweetness of maple, offering a hearty and flavorful snack."
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6)
@@ -497,7 +513,7 @@
 	tastes = list("smoked almonds" = 1)
 	foodtype = FRUIT
 
-/obj/item/reagent_containers/food/snacks/ration/jalapeno_pepper_jack_beef_patty
+/obj/item/reagent_containers/food/snacks/ration/entree/jalapeno_pepper_jack_beef_patty
 	name = "jalapeno pepper jack beef patty"
 	desc = "Spicy jalapeno and pepper jack-infused beef patty, offering a bold and flavorful snack option."
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6)
@@ -535,7 +551,7 @@
 	tastes = list("peanut" = 1)
 	foodtype = SUGAR | FRUIT
 
-/obj/item/reagent_containers/food/snacks/ration/beef_goulash
+/obj/item/reagent_containers/food/snacks/ration/entree/beef_goulash
 	name = "beef goulash"
 	desc = "A hearty and flavorful beef goulash, combining tender pieces of beef with savory spices for a satisfying meal."
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6)
@@ -573,7 +589,7 @@
 	tastes = list("sugar cookies" = 1)
 	foodtype = SUGAR
 
-/obj/item/reagent_containers/food/snacks/ration/pepperoni_pizza_slice
+/obj/item/reagent_containers/food/snacks/ration/entree/pepperoni_pizza_slice
 	name = "pepperoni pizza slice"
 	desc = "A classic pepperoni pizza slice topped with melted cheese and savory pepperoni, offering a delicious snack."
 	filling_color = "#cc3300"
