@@ -1267,7 +1267,10 @@
 	/obj/item/storage/ration/battered_fish_sticks = 1,
 	/obj/item/storage/ration/assorted_salted_offal = 1,
 	/obj/item/storage/ration/maple_pork_sausage_patty = 1,
-	/obj/item/storage/ration/jalapeno_pepper_jack_beef_patty = 1,
+	/obj/item/storage/ration/pepper_jack_beef_patty = 1,
 	/obj/item/storage/ration/beef_goulash = 1,
-	/obj/item/storage/ration/pepperoni_pizza_slice = 1
+	/obj/item/storage/ration/pepperoni_pizza_slice = 1,
+	/obj/item/storage/ration/calamari_red_sauce = 1,
+	/obj/item/storage/ration/macaroni_tomato_sauce = 1,
+	/obj/item/storage/ration/cheese_pizza_slice = 1
 	)
