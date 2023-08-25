@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /datum/outfit/job/solgov
 
 /datum/outfit/job/solgov/post_equip(mob/living/carbon/human/H, visualsOnly)
@@ -207,3 +208,5 @@
 	box = /obj/item/storage/box/survival/engineer
 	pda_slot = ITEM_SLOT_LPOCKET
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1)
+=======
+>>>>>>> 78c6f5ad04 (okay getting back to this lets seee)

@@ -282,12 +282,15 @@
 /atom/movable/screen/robot/lamp/update_icon_state()
 	icon_state = "[base_icon_state]_[robot?.lamp_enabled ? "on" : "off"]"
 	return ..()
+<<<<<<< HEAD
 
 /atom/movable/screen/robot/lamp/Destroy()
 	if(robot)
 		robot.lampButton = null
 		robot = null
 	return ..()
+=======
+>>>>>>> 78c6f5ad04 (okay getting back to this lets seee)
 
 /atom/movable/screen/robot/modPC
 	name = "Modular Interface"

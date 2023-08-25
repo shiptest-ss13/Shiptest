@@ -122,8 +122,13 @@
 	name = "WT-550 Auto Rifle Exotic Ammo Crate"
 	desc = "Contains one magazine of armor-piercing and one magazine of incendiary ammunition for the WT-550 Auto Rifle. Sadly, our manufacturer discontinued the uranium-tipped bullets."
 	cost = 2500
+<<<<<<< HEAD
 	contains = list(/obj/item/ammo_box/magazine/wt550m9/ap,
 					/obj/item/ammo_box/magazine/wt550m9/inc)
+=======
+	contains = list(/obj/item/ammo_box/magazine/wt550m9/wtap,
+					/obj/item/ammo_box/magazine/wt550m9/wtic)
+>>>>>>> 78c6f5ad04 (okay getting back to this lets seee)
 
 /*
 		Rifle ammo

@@ -1,6 +1,10 @@
 // tgstation-server DMAPI
 
+<<<<<<< HEAD
 #define TGS_DMAPI_VERSION "6.5.3"
+=======
+#define TGS_DMAPI_VERSION "6.5.2"
+>>>>>>> 78c6f5ad04 (okay getting back to this lets seee)
 
 // All functions and datums outside this document are subject to change with any version and should not be relied on.
 

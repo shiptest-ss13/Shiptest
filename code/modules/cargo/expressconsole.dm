@@ -244,7 +244,11 @@
 					name = usr.real_name
 					rank = "Silicon"
 				var/datum/supply_order/SO = new(pack, name, rank, usr.ckey, "")
+<<<<<<< HEAD
 				new /obj/effect/pod_landingzone(landing_turf, podType, SO)
+=======
+				new /obj/effect/DPtarget(landing_turf, podType, SO)
+>>>>>>> 78c6f5ad04 (okay getting back to this lets seee)
 				update_appearance() // ??????????????????
 				return TRUE
 

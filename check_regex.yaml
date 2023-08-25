@@ -38,13 +38,21 @@ standards:
 
     - exactly:
           [
+<<<<<<< HEAD
               298,
+=======
+              297,
+>>>>>>> 78c6f5ad04 (okay getting back to this lets seee)
               "non-bitwise << uses",
               '(?<!\d)(?<!\d\s)(?<!<)<<(?!=|\s\d|\d|<|\/)',
           ]
     - exactly: [0, "incorrect indentations", '^(?:  +)(?!\*)']
     - exactly: [0, "superflous whitespace", '[ \t]+$']
+<<<<<<< HEAD
     - exactly: [0, "mixed indentation", '^( +\t+|\t+ +)']
+=======
+    - exactly: [8, "mixed indentation", '^( +\t+|\t+ +)']
+>>>>>>> 78c6f5ad04 (okay getting back to this lets seee)
     - exactly: [21, 'padding inside parentheses', '\(([\t ]+([^)"\n\\]*)|([^("\n]+)[\t ]+)\)']
 
     - no_more:

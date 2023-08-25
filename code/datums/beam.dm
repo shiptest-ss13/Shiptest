@@ -90,8 +90,12 @@
 
 /datum/beam/Destroy()
 	QDEL_LIST(elements)
+<<<<<<< HEAD
 	if(visuals)
 		QDEL_NULL(visuals)
+=======
+	QDEL_NULL(visuals)
+>>>>>>> 78c6f5ad04 (okay getting back to this lets seee)
 	UnregisterSignal(origin, COMSIG_MOVABLE_MOVED)
 	UnregisterSignal(target, COMSIG_MOVABLE_MOVED)
 	target = null
@@ -163,9 +167,12 @@
 
 		segment.pixel_x = origin_px + Pixel_x
 		segment.pixel_y = origin_py + Pixel_y
+<<<<<<< HEAD
 		//This var might hold onto references, and we might be qdeleted during the check_tick... so yeah.
 		//It doesn't really matter, because this whole proc counts as a ref for src, but still.
 		segment = null
+=======
+>>>>>>> 78c6f5ad04 (okay getting back to this lets seee)
 		CHECK_TICK
 
 /obj/effect/ebeam

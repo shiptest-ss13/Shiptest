@@ -435,6 +435,7 @@ SUBSYSTEM_DEF(overmap)
 			ship_count++
 	return ship_count
 
+<<<<<<< HEAD
 /datum/controller/subsystem/overmap/proc/get_manifest()
 	var/list/manifest_out = list()
 	for(var/datum/overmap/ship/controlled/ship as anything in controlled_ships)
@@ -478,6 +479,8 @@ SUBSYSTEM_DEF(overmap)
 	dat = replacetext(dat, "\t", "")
 	return dat
 
+=======
+>>>>>>> 78c6f5ad04 (okay getting back to this lets seee)
 /datum/controller/subsystem/overmap/Recover()
 	overmap_objects = SSovermap.overmap_objects
 	controlled_ships = SSovermap.controlled_ships

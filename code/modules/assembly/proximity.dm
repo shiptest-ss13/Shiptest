@@ -54,7 +54,11 @@
 		STOP_PROCESSING(SSobj, src)
 	else
 		START_PROCESSING(SSobj, src)
+<<<<<<< HEAD
 		proximity_monitor.set_host(loc,src)
+=======
+		proximity_monitor.SetHost(loc,src)
+>>>>>>> 78c6f5ad04 (okay getting back to this lets seee)
 	update_appearance()
 	return secured
 
@@ -86,7 +90,11 @@
 	if(!secured)
 		return FALSE
 	scanning = scan
+<<<<<<< HEAD
 	proximity_monitor.set_range(scanning ? sensitivity : 0)
+=======
+	proximity_monitor.SetRange(scanning ? sensitivity : 0)
+>>>>>>> 78c6f5ad04 (okay getting back to this lets seee)
 	update_appearance()
 
 /obj/item/assembly/prox_sensor/proc/sensitivity_change(value)

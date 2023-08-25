@@ -84,14 +84,22 @@
 
 /obj/effect/anomaly/grav/high
 	effectrange = 5
+<<<<<<< HEAD
 	var/datum/proximity_monitor/advanced/gravity/grav_field
+=======
+	var/grav_field
+>>>>>>> 78c6f5ad04 (okay getting back to this lets seee)
 
 /obj/effect/anomaly/grav/high/Initialize(mapload, new_lifespan)
 	. = ..()
 	INVOKE_ASYNC(src, .proc/setup_grav_field)
 
 /obj/effect/anomaly/grav/high/proc/setup_grav_field()
+<<<<<<< HEAD
 	grav_field = new(src, effectrange, TRUE, 2)
+=======
+	grav_field = make_field(/datum/proximity_monitor/advanced/gravity, list("current_range" = effectrange, "host" = src, "gravity_value" = 2))
+>>>>>>> 78c6f5ad04 (okay getting back to this lets seee)
 
 /obj/effect/anomaly/grav/high/Destroy()
 	QDEL_NULL(grav_field)

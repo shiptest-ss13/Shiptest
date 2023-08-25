@@ -547,7 +547,10 @@
 
 	return TRUE
 
+<<<<<<< HEAD
 /// Called when an atom moves to a different virtual z. Warning, it will pass z-level 0 in new_virtual_z on creation and 0 in previous_virtual_z whenever moved to nullspace
+=======
+>>>>>>> 78c6f5ad04 (okay getting back to this lets seee)
 /atom/movable/proc/on_virtual_z_change(new_virtual_z, previous_virtual_z)
 	SHOULD_NOT_SLEEP(TRUE)
 	SHOULD_CALL_PARENT(TRUE)

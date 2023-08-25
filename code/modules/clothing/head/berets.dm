@@ -238,8 +238,11 @@
 	item_state = "inteq_honorable_beret"
 	armor = list("melee" = 40, "bullet" = 50, "laser" = 50, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 90)
 
+<<<<<<< HEAD
 // Frontier
 
+=======
+>>>>>>> 78c6f5ad04 (okay getting back to this lets seee)
 /obj/item/clothing/head/beret/sec/frontier
 	name = "\improper Frontiersmen beret"
 	desc = "A scratchy olive green beret, worn by Frontiersmen who want to look good while intimidating freighter crew."

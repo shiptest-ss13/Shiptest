@@ -46,10 +46,15 @@
 	return ..()
 
 /obj/machinery/navbeacon/on_virtual_z_change(new_virtual_z, previous_virtual_z)
+<<<<<<< HEAD
 	if(previous_virtual_z)
 		LAZYREMOVEASSOC(GLOB.navbeacons, "[previous_virtual_z]", src)
 	if(new_virtual_z)
 		LAZYADDASSOC(GLOB.navbeacons, "[new_virtual_z]", src)
+=======
+	LAZYADDASSOC(GLOB.navbeacons, "[new_virtual_z]", src)
+	LAZYREMOVEASSOC(GLOB.navbeacons, "[previous_virtual_z]", src)
+>>>>>>> 78c6f5ad04 (okay getting back to this lets seee)
 	..()
 
 // set the transponder codes assoc list from codes_txt

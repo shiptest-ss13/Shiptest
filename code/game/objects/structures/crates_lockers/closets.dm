@@ -43,11 +43,14 @@
 
 /obj/structure/closet/Initialize(mapload)
 	. = ..()
+<<<<<<< HEAD
 
 	// if closed, any item at the crate's loc is put in the contents
 	if (mapload && !opened)
 		. = INITIALIZE_HINT_LATELOAD
 
+=======
+>>>>>>> 78c6f5ad04 (okay getting back to this lets seee)
 	update_appearance()
 	if(populate)
 		PopulateContents()
@@ -78,8 +81,11 @@
 
 /obj/structure/closet/update_icon()
 	. = ..()
+<<<<<<< HEAD
 	if (istype(src, /obj/structure/closet/supplypod))
 		return
+=======
+>>>>>>> 78c6f5ad04 (okay getting back to this lets seee)
 
 	layer = opened ? BELOW_OBJ_LAYER : OBJ_LAYER
 

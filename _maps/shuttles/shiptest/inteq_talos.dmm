@@ -794,6 +794,29 @@
 /obj/item/cigbutt,
 /turf/open/floor/plating/airless,
 /area/ship/maintenance/port)
+<<<<<<< HEAD
+=======
+"ft" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/obj/structure/fireaxecabinet{
+	dir = 1;
+	pixel_y = -32
+	},
+/obj/item/paper/fluff{
+	default_raw_text = "Artificer team: The AAC is finicky and has a habit of malfunctioning over time. If this happens, remember how to reset it. Swipe your ID card on the control unit and make sure all settings are correct. One airlock should be set to internal, one to external. Once this is done, cycle the airlock to re-enable automatic mode and lift any stuck bolts. If you aren't an artificer, don't mess with it. You shouldn't have access anyway."
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/engineering)
+>>>>>>> 78c6f5ad04 (okay getting back to this lets seee)
 "fC" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/trimline/opaque/yellow/warning{
@@ -2123,6 +2146,7 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
+<<<<<<< HEAD
 "ny" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2143,6 +2167,8 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
+=======
+>>>>>>> 78c6f5ad04 (okay getting back to this lets seee)
 "nz" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -5035,6 +5061,22 @@
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
+<<<<<<< HEAD
+=======
+"Fu" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/item/analyzer{
+	pixel_x = 6;
+	pixel_y = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/engineering)
+>>>>>>> 78c6f5ad04 (okay getting back to this lets seee)
 "Fx" = (
 /obj/structure/chair{
 	dir = 8
@@ -6276,6 +6318,32 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
+<<<<<<< HEAD
+=======
+"ON" = (
+/obj/structure/table/reinforced,
+/obj/machinery/fax,
+/obj/machinery/button/door{
+	id = "talos_bridge";
+	name = "Bridge Shutters";
+	pixel_x = 6;
+	pixel_y = 23
+	},
+/obj/machinery/button/door{
+	id = "talos_windows";
+	name = "Window Lockdown";
+	pixel_x = -6;
+	pixel_y = 23
+	},
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/opaque/yellow{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+>>>>>>> 78c6f5ad04 (okay getting back to this lets seee)
 "OP" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
