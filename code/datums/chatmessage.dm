@@ -256,7 +256,7 @@
 	var/static/rseed = rand(1,26)
 
 	// get hsl using the selected 6 characters of the md5 hash
-	var/hash = copytext(md5(name + "1852"), rseed, rseed + 6)
+	var/hash = copytext(md5(name + GLOB.round_id), rseed, rseed + 6)
 	var/h = hex2num(copytext(hash, 1, 3)) * (360 / 255)
 	var/s = (hex2num(copytext(hash, 3, 5)) >> 2) * ((sat_max - sat_min) / 63) + sat_min
 	var/l = (hex2num(copytext(hash, 5, 7)) >> 2) * ((lum_max - lum_min) / 63) + lum_min
