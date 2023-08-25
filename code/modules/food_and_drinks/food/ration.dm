@@ -1,6 +1,7 @@
 /obj/item/reagent_containers/food/snacks/ration
 	name = "nutriment ration"
 	desc = "standerd issue ration"
+	filling_color = "#664330"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4)
 	icon = 'icons/obj/food/ration.dmi'
 	icon_state = "ration_side"
@@ -55,7 +56,6 @@
 	name = "vegan chili with beans"
 	desc = "A hearty and flavorful vegan chili made with beans. It's so delicious, you won't believe it's not meat!"
 	icon_state = "beans"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 6)
 	filling_color = "#B22222"
 	tastes = list("beans" = 1, "off" = 1)
 	foodtype = VEGETABLES
@@ -98,7 +98,6 @@
 /obj/item/reagent_containers/food/snacks/ration/entree/chicken_wings_hot_sauce
 	name = "chicken wings with hot sauce"
 	desc = "Crispy and flavorful chicken wings tossed in a spicy hot sauce, delivering a bold and satisfying taste."
-	list_reagents = list(/datum/reagent/consumable/nutriment = 6)
 	filling_color = "#ff3300"
 	tastes = list("chicken" = 1, "hot sauce" = 1)
 	foodtype = MEAT
@@ -106,7 +105,6 @@
 /obj/item/reagent_containers/food/snacks/ration/entree/fish_stew
 	name = "fish stew"
 	desc = "A hearty fish stew featuring a rich broth and tender pieces of fish, creating a flavorful and comforting meal."
-	list_reagents = list(/datum/reagent/consumable/nutriment = 6)
 	filling_color = "#336699"
 	tastes = list("fish" = 1)
 	foodtype = MEAT
@@ -114,7 +112,6 @@
 /obj/item/reagent_containers/food/snacks/ration/entree/lemon_pepper_chicken
 	name = "lemon pepper chicken"
 	desc = "Tender chicken seasoned with zesty lemon and fragrant pepper, offering a flavorful and satisfying dish."
-	list_reagents = list(/datum/reagent/consumable/nutriment = 6)
 	filling_color = "#ffff66"
 	tastes = list("lemon" = 1, "pepper" = 1, "chicken" = 1)
 	foodtype = MEAT
@@ -122,7 +119,6 @@
 /obj/item/reagent_containers/food/snacks/ration/entree/sausage_peppers_onions
 	name = "sausage with peppers and onions"
 	desc = "Grilled sausage served with sautéed peppers and onions, creating a flavorful and satisfying dish."
-	list_reagents = list(/datum/reagent/consumable/nutriment = 6)
 	filling_color = "#cc3300"
 	tastes = list("sausage" = 1, "peppers" = 1, "onions" = 1)
 	foodtype = MEAT | VEGETABLES
@@ -130,7 +126,6 @@
 /obj/item/reagent_containers/food/snacks/ration/entree/dumplings_chili_sauce
 	name = "dumplings with chili sauce"
 	desc = "Delicious dumplings served with a flavorful chili sauce, providing a hearty and satisfying meal."
-	list_reagents = list(/datum/reagent/consumable/nutriment = 6)
 	filling_color = "#b8711b"
 	tastes = list("dumplings" = 1, "chili sauce" = 1)
 	foodtype = GRAIN | MEAT
@@ -138,7 +133,6 @@
 /obj/item/reagent_containers/food/snacks/ration/entree/battered_fish_sticks
 	name = "battered fish sticks"
 	desc = "Crispy battered fish sticks, deep-fried to perfection and offering a delicious seafood snack."
-	list_reagents = list(/datum/reagent/consumable/nutriment = 6)
 	filling_color = "#336699"
 	tastes = list("fish" = 1)
 	foodtype = MEAT
@@ -153,7 +147,6 @@
 /obj/item/reagent_containers/food/snacks/ration/entree/maple_pork_sausage_patty
 	name = "maple pork sausage patty"
 	desc = "Juicy pork sausage patty infused with the sweetness of maple, offering a hearty and flavorful snack."
-	list_reagents = list(/datum/reagent/consumable/nutriment = 6)
 	filling_color = "#b8711b"
 	tastes = list("maple" = 1, "pork sausage" = 1)
 	foodtype = MEAT
@@ -161,7 +154,6 @@
 /obj/item/reagent_containers/food/snacks/ration/entree/pepper_jack_beef_patty
 	name = "jalapeno pepper jack beef patty"
 	desc = "Spicy jalapeno and pepper jack-infused beef patty, offering a bold and flavorful snack option."
-	list_reagents = list(/datum/reagent/consumable/nutriment = 6)
 	filling_color = "#ff9900"
 	tastes = list("jalapeno" = 1, "pepper jack" = 1, "beef patty" = 1)
 	foodtype = MEAT
@@ -169,7 +161,6 @@
 /obj/item/reagent_containers/food/snacks/ration/entree/beef_goulash
 	name = "beef goulash"
 	desc = "A hearty and flavorful beef goulash, combining tender pieces of beef with savory spices for a satisfying meal."
-	list_reagents = list(/datum/reagent/consumable/nutriment = 6)
 	filling_color = "#b82121"
 	tastes = list("beef" = 1)
 	foodtype = MEAT
@@ -181,10 +172,15 @@
 	tastes = list("pepperoni" = 1, "pizza" = 1)
 	foodtype = GRAIN | DAIRY | MEAT
 
+/obj/item/reagent_containers/food/snacks/ration/entree/blackened_calamari
+
+/obj/item/reagent_containers/food/snacks/ration/entree/elbow_macaroni
+
+/obj/item/reagent_containers/food/snacks/ration/entree/cheese_pizza_slice
+
 /obj/item/reagent_containers/food/snacks/ration/side/vegan_crackers
 	name = "vegetable 'crackers'"
 	desc = "Delicious vegetable-based crackers that are the perfect crunchy and nutritious snack."
-	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
 	filling_color = "#9ED41B"
 	tastes = list("cracker" = 1)
 	foodtype = VEGETABLES
@@ -361,6 +357,18 @@
 	tastes = list("jellied eels" = 1)
 	foodtype = MEAT
 
+/obj/item/reagent_containers/food/snacks/ration/side/trail_mix_beef_jerky
+	name = "trail mix with beef jerky"
+
+/obj/item/reagent_containers/food/snacks/ration/side/crackers
+	name = "crackers"
+
+/obj/item/reagent_containers/food/snacks/ration/side/barbecue_fried_pork_rinds
+	name = "barbecue fried pork rinds"
+
+/obj/item/reagent_containers/food/snacks/ration/side/applesauce_mango_peach_puree
+	name = "applesauce with mango and peach puree"
+
 /obj/item/reagent_containers/food/snacks/ration/snack/pizza_crackers
 	name = "pepperoni pizza cheese filled crackers"
 	desc = "Irresistible cheese-filled crackers with a savory pepperoni pizza flavor. A delicious and addictive snack."
@@ -420,7 +428,6 @@
 /obj/item/reagent_containers/food/snacks/ration/snack/candy_rings
 	name = "peppermint candy rings"
 	desc = "Colorful and refreshing peppermint candy rings, a sweet and delightful treat that brings a burst of coolness to your taste buds."
-	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/sugar = 3)
 	filling_color = "#ecafaf"
 	tastes = list("peppermint" = 3, "sweet" = 1)
 	foodtype = SUGAR | JUNKFOOD
@@ -435,7 +442,6 @@
 /obj/item/reagent_containers/food/snacks/ration/snack/cherry_snackers
 	name = "cherry snackers"
 	desc = "Juicy and plump cherries, perfectly preserved and packed for a delightful and refreshing snack."
-	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/sugar = 3)
 	filling_color = "#ff0066"
 	tastes = list("cherry" = 1)
 	foodtype = FRUIT
@@ -443,7 +449,6 @@
 /obj/item/reagent_containers/food/snacks/ration/snack/mint_chocolate_snack_cake
 	name = "mint chocolate snack cake"
 	desc = "A delectable snack cake featuring the perfect blend of refreshing mint and rich chocolate flavors."
-	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/sugar = 3)
 	filling_color = "#00cc66"
 	tastes = list("mint" = 1, "chocolate" = 1, "cake" = 1)
 	foodtype = SUGAR
@@ -451,7 +456,6 @@
 /obj/item/reagent_containers/food/snacks/ration/snack/strawberry_preserves
 	name = "strawberry preserves"
 	desc = "Sweet and luscious strawberry preserves, perfect for spreading on bread or enjoying as a tasty topping."
-	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/sugar = 3)
 	filling_color = "#ff3300"
 	tastes = list("strawberry" = 1)
 	foodtype = SUGAR | FRUIT
@@ -459,7 +463,6 @@
 /obj/item/reagent_containers/food/snacks/ration/snack/sour_gummy_worms
 	name = "sour gummy worms"
 	desc = "Tangy and chewy gummy worms coated in a sour sugar blend, providing a fun and flavorful snacking experience."
-	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/sugar = 3)
 	filling_color = "#ff9900"
 	tastes = list("sour" = 1, "gummy" = 1)
 	foodtype = SUGAR
@@ -467,7 +470,6 @@
 /obj/item/reagent_containers/food/snacks/ration/snack/blue_raspberry_candies
 	name = "blue raspberry candies"
 	desc = "Sweet and vibrant blue raspberry-flavored candies, perfect for indulging your sweet tooth."
-	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/sugar = 3)
 	filling_color = "#3399ff"
 	tastes = list("blue raspberry" = 1)
 	foodtype = SUGAR
@@ -482,7 +484,6 @@
 /obj/item/reagent_containers/food/snacks/ration/snack/channeler_meat_candy
 	name = "channeler meat candy"
 	desc = "A traditional meat-candy from the Antechannel League on Kalixcis, offering an unusual and captivating flavor experience."
-	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/sugar = 3)
 	filling_color = "#9933ff"
 	tastes = list("channeler meat" = 1, "candy" = 1)
 	foodtype = MEAT | SUGAR
@@ -490,7 +491,6 @@
 /obj/item/reagent_containers/food/snacks/ration/snack/chocolate_orange_snack_cake
 	name = "chocolate orange snack cake"
 	desc = "A delightful snack cake combining rich chocolate and zesty orange flavors for a mouthwatering treat."
-	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/sugar = 3)
 	filling_color = "#ff6600"
 	tastes = list("chocolate" = 1, "orange" = 1, "cake" = 1)
 	foodtype = SUGAR
@@ -498,7 +498,6 @@
 /obj/item/reagent_containers/food/snacks/ration/snack/pick_me_up_energy_gum
 	name = "Pick-Me-Up energy gum"
 	desc = "Energy-boosting gum that provides a quick and refreshing burst of vitality when you need it the most."
-	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/sugar = 3)
 	filling_color = "#00cc66"
 	tastes = list("energy gum" = 1)
 	foodtype = SUGAR
@@ -527,7 +526,6 @@
 /obj/item/reagent_containers/food/snacks/ration/snack/chocolate_chunk_oatmeal_cookie
 	name = "chocolate chunk oatmeal cookie"
 	desc = "A scrumptious oatmeal cookie studded with rich chocolate chunks for a delightful and indulgent treat."
-	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/sugar = 3)
 	filling_color = "#663300"
 	tastes = list("chocolate" = 1, "oatmeal cookie" = 1)
 	foodtype = SUGAR | GRAIN
@@ -535,7 +533,6 @@
 /obj/item/reagent_containers/food/snacks/ration/snack/peanut_candies
 	name = "peanut candies"
 	desc = "Sweet and nutty peanut candies, providing a delightful and energy-boosting snack."
-	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/sugar = 3)
 	filling_color = "#ff9900"
 	tastes = list("peanut" = 1)
 	foodtype = SUGAR | FRUIT
@@ -543,7 +540,6 @@
 /obj/item/reagent_containers/food/snacks/ration/snack/patriotic_sugar_cookies
 	name = "patriotic sugar cookies"
 	desc = "Colorful sugar cookies with patriotic designs, providing a festive and sweet treat for special occasions."
-	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/sugar = 3)
 	filling_color = "#ffcc00"
 	tastes = list("sugar cookies" = 1)
 	foodtype = SUGAR
@@ -551,10 +547,18 @@
 /obj/item/reagent_containers/food/snacks/ration/snack/oatmeal_cookie
 	name = "oatmeal cookie"
 	desc = "A delicious oatmeal cookie, offering a wholesome and satisfying treat for any time of day."
-	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/sugar = 3)
 	filling_color = "#663300"
 	tastes = list("oatmeal cookie" = 1)
 	foodtype = SUGAR | GRAIN
+
+/obj/item/reagent_containers/food/snacks/ration/snack/dried_cranberries
+	name = "dried cranberries"
+
+/obj/item/reagent_containers/food/snacks/ration/snack/dry_roasted_peanuts
+	name = "dry roasted peanuts"
+
+/obj/item/reagent_containers/food/snacks/ration/snack/jalapeno_cashews
+	name = "jalapeno cashews"
 
 /obj/item/reagent_containers/food/snacks/ration/bar/energy_bar
 	name = "quik-energy bar, apple-cinnamon"
@@ -573,7 +577,9 @@
 /obj/item/reagent_containers/food/snacks/ration/bar/rationers_guild_chocolate_bar
 	name = "Rationer's Guild chocolate bar"
 	desc = "A chocolate bar made by the Rationer's Guild, offering a rich and indulgent treat for a quick pick-me-up."
-	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/sugar = 3)
 	filling_color = "#663300"
 	tastes = list("chocolate" = 1)
 	foodtype = SUGAR
+
+/obj/item/reagent_containers/food/snacks/ration/bar/quik_energy_bar_chocolate
+	name = "quik-energy bar chocolate"

@@ -293,45 +293,100 @@
 	originalname = "bbq sauce"
 	list_reagents = list(/datum/reagent/consumable/bbqsauce = 10)
 
-/obj/item/reagent_containers/food/condiment/pack/cheese_spread
+/obj/item/reagent_containers/food/condiment/pack/ration/cheese_spread
 	name = "cheese spread pack"
 	originalname = "cheese spread"
 	list_reagents = list(/datum/reagent/consumable/cheese_spread = 8)
 
-/obj/item/reagent_containers/food/condiment/pack/hot_cheese_spread
+/obj/item/reagent_containers/food/condiment/pack/ration/hot_cheese_spread
 	name = "jalapeno cheddar cheese spread pack"
 	originalname = "jalapeno cheddar cheese spread"
 	list_reagents = list(/datum/reagent/consumable/cheese_spread = 5 , /datum/reagent/consumable/capsaicin = 3)
 
-/obj/item/reagent_containers/food/condiment/pack/peanut_butter
+/obj/item/reagent_containers/food/condiment/pack/ration/garlic_cheese_spread
+
+/obj/item/reagent_containers/food/condiment/pack/ration/bacon_cheddar_cheese_spread
+
+/obj/item/reagent_containers/food/condiment/pack/ration/peanut_butter
 	name = "peanut butter pack"
 	originalname = "peanut butter"
+	list_reagents = list(/datum/reagent/consumable/sugar = 5, /datum/reagent/consumable/peanut_butter = 5)
+
+/obj/item/reagent_containers/food/condiment/pack/ration/chunky_peanut_butter
 	list_reagents = list(/datum/reagent/consumable/peanut_butter = 10)
 
-/obj/item/reagent_containers/food/condiment/pack/grape_powder
-	name = "grape beverage powder, carb-fortified pack"
-	originalname = "grape beverage powder"
-	list_reagents = list(/datum/reagent/consumable/sugar = 5, /datum/reagent/consumable/grapejuice = 5)
+/obj/item/reagent_containers/food/condiment/pack/ration/maple_syrup
+	list_reagents = list(/datum/reagent/consumable/sugar = 10)
 
-/obj/item/reagent_containers/food/condiment/pack/chocolate_protein_powder
+/obj/item/reagent_containers/food/condiment/pack/ration/chocolate_protein_beverage
 	name = "chocolate hazelnut protein drink powder pack"
 	originalname = "chocolate hazelnut protein drink powder"
 	list_reagents = list(/datum/reagent/consumable/coco = 5, /datum/reagent/consumable/eggyolk = 5)
 
-/obj/item/reagent_containers/food/condiment/pack/lemonade_powder
-	name = "lemonade drink powder pack"
-	originalname = "lemonade drink powder"
-	list_reagents = list(/datum/reagent/consumable/eggyolk = 5, /datum/reagent/consumable/lemonjuice = 5)
-
-/obj/item/reagent_containers/food/condiment/pack/fruit_powder
+/obj/item/reagent_containers/food/condiment/pack/ration/fruit_beverage
 	name = "fruit punch beverage powder, carb-electrolyte pack"
 	originalname = "fruit punch beverage powder, carb-electrolyte"
 	list_reagents = list(/datum/reagent/consumable/sugar = 5, /datum/reagent/consumable/applejuice = 2, /datum/reagent/consumable/orangejuice = 2)
 
-/obj/item/reagent_containers/food/condiment/pack/fruit_smoothie_powder
+/obj/item/reagent_containers/food/condiment/pack/ration/fruit_smoothie_beverage
 	name = "tropical blend fruit and vegetable smoothie powder pack"
 	originalname = "tropical blend fruit and vegetable moothie powder"
 	list_reagents = list(/datum/reagent/consumable/pineapplejuice = 3, /datum/reagent/consumable/orangejuice = 3, /datum/reagent/consumable/eggyolk = 3)
+
+/obj/item/reagent_containers/food/condiment/pack/ration/grape_beverage
+	name = "grape beverage powder, carb-fortified pack"
+	originalname = "grape beverage powder"
+	list_reagents = list(/datum/reagent/consumable/sugar = 5, /datum/reagent/consumable/grapejuice = 5)
+
+/obj/item/reagent_containers/food/condiment/pack/ration/grape_beverage_sugar_free
+	name = "sugar-free grape beverage base powder"
+	originalname = "sugar-free grape beverage base"
+	list_reagents = list(/datum/reagent/consumable/grapejuice = 10)
+
+/obj/item/reagent_containers/food/condiment/pack/ration/lemonade_beverage
+	name = "lemonade drink powder pack"
+	originalname = "lemonade drink powder"
+	list_reagents = list(/datum/reagent/consumable/sugar = 5, /datum/reagent/consumable/lemonjuice = 5)
+
+/obj/item/reagent_containers/food/condiment/pack/ration/lemonade_beverage_suger_free
+	name = "lemonade sugar-free beverage base pack"
+	originalname = "lemonade sugar-free beverage base"
+	list_reagents = list(/datum/reagent/consumable/lemonjuice = 10)
+
+/obj/item/reagent_containers/food/condiment/pack/ration/orange_beverage
+	name = "orange beverage powder, carb-fortified pack"
+	originalname = "orange beverage powder, carb-fortified"
+	list_reagents = list(/datum/reagent/consumable/sugar = 5, /datum/reagent/consumable/orangejuice = 5)
+
+/obj/item/reagent_containers/food/condiment/pack/ration/orange_beverage_sugar_free
+	name = "orange beverage base, sugar-free pack"
+	originalname = "orange beverage base, sugar-free"
+	list_reagents = list(/datum/reagent/consumable/orangejuice = 10)
+
+/obj/item/reagent_containers/food/condiment/pack/ration/cherry_beverage
+	name = "cherry high-energy beverage powder pack"
+	originalname = "cherry high-energy beverage powder"
+	list_reagents = list(/datum/reagent/consumable/sugar = 5, /datum/reagent/consumable/cherryjelly = 5)
+
+/obj/item/reagent_containers/food/condiment/pack/ration/pineapple_beverage
+	name = "pinapple fruit beverage base pack"
+	originalname = "pinapple fruit beverage base"
+	list_reagents = list(/datum/reagent/consumable/pineapplejuice = 10)
+
+/obj/item/reagent_containers/food/condiment/pack/ration/freeze_dried_coffee_orange
+	name = "freeze-dried coffee flavored with orange pack"
+	originalname = "freeze-dried coffee flavored with orange"
+	list_reagents = list(/datum/reagent/consumable/coffee = 5, /datum/reagent/consumable/orangejuice = 3)
+
+/obj/item/reagent_containers/food/condiment/pack/ration/freeze_dried_coffee_chocolate
+	name = "freeze-dried coffee flavored with chocolate pack"
+	originalname = "freeze-dried coffee flavored with chocolate"
+	list_reagents = list(/datum/reagent/consumable/coffee = 5, /datum/reagent/consumable/coco = 3)
+
+/obj/item/reagent_containers/food/condiment/pack/ration/freeze_dried_coffee_hazelnut
+	name = "freeze-dried coffee flavored with hazelnut pack"
+	originalname = "freeze-dried coffee flavored with hazelnut"
+	list_reagents = list(/datum/reagent/consumable/coffee = 5, /datum/reagent/consumable/coco = 3)
 
 /obj/item/reagent_containers/food/condiment/ketchup
 	name = "ketchup bottle"

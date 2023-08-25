@@ -1270,7 +1270,7 @@
 	/obj/item/storage/ration/pepper_jack_beef_patty = 1,
 	/obj/item/storage/ration/beef_goulash = 1,
 	/obj/item/storage/ration/pepperoni_pizza_slice = 1,
-	/obj/item/storage/ration/calamari_red_sauce = 1,
-	/obj/item/storage/ration/macaroni_tomato_sauce = 1,
+	/obj/item/storage/ration/blackened_calamari = 1,
+	/obj/item/storage/ration/elbow_macaroni = 1,
 	/obj/item/storage/ration/cheese_pizza_slice = 1
 	)

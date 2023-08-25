@@ -769,8 +769,5 @@
 		return 0
 	return ..()
 
-/obj/item/reagent_containers/food/drinks/ration/beverage_bag
-	name = "lukewarm beverage bag"
-	desc = "Simply mix flavor bags in and drink"
-	list_reagents = list(/datum/reagent/water = 30)
-
+/obj/item/reagent_containers/food/drinks/ration/pan_genezan_vodka
+	list_reagents = list(/datum/reagent/consumable/ethanol/vodka = 30)
