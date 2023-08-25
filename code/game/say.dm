@@ -146,7 +146,7 @@ GLOBAL_LIST_INIT(freqcolor, list())
 		if(returncolor) // If we've already picked a color for this channel, don't do it again.
 			return "style='color:[returncolor]' class='radio'"
 		else // If we haven't picked a color for this channel, pick one now.
-			returncolor = colorize_string("[freq]", 1, 0.55)
+			returncolor = colorize_string("[freq]", 1, 0.85)
 			GLOB.freqcolor["[freq]"] = returncolor
 			return "style='color:[returncolor]' class='radio'"
 	else // This should only handle Common.
