@@ -8618,12 +8618,6 @@
 /obj/structure/railing,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/singularitylab/cargo)
-"Gd" = (
-/obj/item/banner/engineering{
-	anchored = 1
-	},
-/turf/open/floor/engine/hull,
-/area/space/nearstation)
 "Ge" = (
 /obj/structure/flippedtable{
 	dir = 8;
@@ -11300,6 +11294,12 @@
 	icon_state = "4-8"
 	},
 /turf/open/space/basic,
+/area/space/nearstation)
+"Ql" = (
+/obj/item/banner/engineering{
+	anchored = 1
+	},
+/turf/open/floor/engine/hull,
 /area/space/nearstation)
 "Qm" = (
 /obj/structure/spacevine/dense,
@@ -18284,7 +18284,7 @@ QB
 pE
 Rs
 zP
-Gd
+Ql
 qU
 aA
 aA
@@ -18304,7 +18304,7 @@ aA
 aA
 aA
 qU
-Gd
+Ql
 zP
 yn
 pE
@@ -18987,7 +18987,7 @@ aA
 aA
 aA
 aA
-Gd
+Ql
 aA
 aA
 aA
