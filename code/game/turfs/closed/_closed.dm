@@ -246,19 +246,7 @@
 
 /turf/closed/indestructible/rock/snow
 	name = "mountainside"
-	desc = "An extremely densely-packed rock, sheeted over with centuries worth of ice and snow."
-	icon = 'icons/turf/walls.dmi'
-	icon_state = "snowrock"
-	bullet_sizzle = TRUE
-	bullet_bounce_sound = null
-
-/turf/closed/indestructible/rock/snow/ice
-	name = "iced rock"
 	desc = "Extremely densely-packed sheets of ice and rock, forged over the years of the harsh cold."
-	icon = 'icons/turf/walls.dmi'
-	icon_state = "icerock"
-
-/turf/closed/indestructible/rock/snow/ice/ore
 	icon = 'icons/turf/walls/icerock_wall.dmi'
 	icon_state = "icerock_wall-0"
 	base_icon_state = "icerock_wall"
@@ -267,8 +255,8 @@
 	canSmoothWith = list(SMOOTH_GROUP_MINERAL_WALLS)
 	pixel_x = -4
 	pixel_y = -4
-
-
+	bullet_sizzle = TRUE
+	bullet_bounce_sound = null
 /turf/closed/indestructible/paper
 	name = "thick paper wall"
 	desc = "A wall layered with impenetrable sheets of paper."
