@@ -257,6 +257,7 @@
 	pixel_y = -4
 	bullet_sizzle = TRUE
 	bullet_bounce_sound = null
+
 /turf/closed/indestructible/paper
 	name = "thick paper wall"
 	desc = "A wall layered with impenetrable sheets of paper."
