@@ -760,11 +760,9 @@
 "ce" = (
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/folder/blue{
-	pixel_x = 6;
-	pixel_y = 9
+/obj/machinery/recharger{
+	pixel_x = 5
 	},
-/obj/machinery/recharger,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel/dark,
@@ -774,17 +772,39 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/turretid{
-	icon_state = "control_kill";
-	lethal = 1;
-	locked = 0;
-	pixel_y = 28;
-	req_access = null
-	},
 /obj/effect/decal/cleanable/blood/old,
 /obj/effect/turf_decal/corner/opaque/blue{
 	dir = 4
 	},
+/obj/structure/closet/wall/blue{
+	name = "Captains Locker";
+	pixel_y = 32
+	},
+/obj/item/spacecash/bundle/c1000{
+	pixel_x = 7
+	},
+/obj/item/areaeditor/shuttle,
+/obj/item/spacecash/bundle/c1000{
+	pixel_x = 7
+	},
+/obj/item/spacecash/bundle/c1000{
+	pixel_x = 7
+	},
+/obj/item/spacecash/bundle/c1000{
+	pixel_x = 7
+	},
+/obj/item/storage/photo_album{
+	pixel_x = 14
+	},
+/obj/item/camera{
+	pixel_x = 12;
+	pixel_y = 6
+	},
+/obj/item/megaphone{
+	pixel_x = -2;
+	pixel_y = -4
+	},
+/obj/item/reagent_containers/food/drinks/bottle/champagne,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "cg" = (
@@ -800,6 +820,13 @@
 	},
 /obj/structure/frame/computer/retro{
 	dir = 8
+	},
+/obj/machinery/turretid{
+	icon_state = "control_kill";
+	lethal = 1;
+	locked = 0;
+	pixel_y = 28;
+	req_access = null
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -1047,29 +1074,14 @@
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/paper_bin{
-	pixel_x = -4
+	pixel_x = -6;
+	pixel_y = 3
 	},
 /obj/item/pen{
-	pixel_x = -4
+	pixel_x = -5
 	},
 /obj/structure/cable{
 	icon_state = "0-2"
-	},
-/obj/item/camera{
-	pixel_x = 12;
-	pixel_y = 6
-	},
-/obj/item/storage/photo_album{
-	pixel_x = 14
-	},
-/obj/item/spacecash/bundle/c1000{
-	pixel_x = 7
-	},
-/obj/item/spacecash/bundle/c1000{
-	pixel_x = 7
-	},
-/obj/item/spacecash/bundle/c1000{
-	pixel_x = 7
 	},
 /obj/machinery/light/small/built/directional/west,
 /obj/machinery/light_switch{
@@ -1077,6 +1089,14 @@
 	pixel_y = 22
 	},
 /obj/machinery/power/apc/auto_name/directional/north,
+/obj/machinery/fax{
+	pixel_x = 16;
+	pixel_y = 5
+	},
+/obj/item/folder/blue{
+	pixel_x = -6;
+	pixel_y = 5
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "cE" = (
@@ -1090,7 +1110,6 @@
 /obj/item/wrench{
 	pixel_x = -12
 	},
-/obj/item/areaeditor/shuttle,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
@@ -1268,10 +1287,6 @@
 /obj/item/radio/off{
 	pixel_x = 6;
 	pixel_y = 7
-	},
-/obj/item/megaphone{
-	pixel_x = -2;
-	pixel_y = -4
 	},
 /obj/item/radio/intercom/wideband/directional/south,
 /obj/machinery/light/small/built/directional/west,

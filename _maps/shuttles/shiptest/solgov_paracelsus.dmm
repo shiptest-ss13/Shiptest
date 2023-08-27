@@ -1002,16 +1002,7 @@
 	dir = 9
 	},
 /obj/structure/table/wood,
-/obj/item/paper_bin{
-	pixel_x = -5
-	},
-/obj/item/reagent_containers/food/drinks/mug/coco{
-	pixel_x = 7;
-	pixel_y = 5
-	},
-/obj/item/pen/fountain/solgov{
-	pixel_x = -5
-	},
+/obj/machinery/fax,
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "kF" = (
@@ -1852,13 +1843,19 @@
 	},
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/drinks/mug/coco{
-	pixel_x = -7;
+	pixel_x = 12;
 	pixel_y = -2
 	},
 /obj/machinery/recharger,
 /obj/item/spacecash/bundle/loadsamoney{
 	pixel_x = 5;
 	pixel_y = 8
+	},
+/obj/item/pen/fountain/solgov{
+	pixel_x = -5
+	},
+/obj/item/paper_bin{
+	pixel_x = -5
 	},
 /turf/open/floor/wood/mahogany,
 /area/ship/bridge)

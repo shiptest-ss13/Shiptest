@@ -575,10 +575,10 @@
 /area/ship/construction)
 "gv" = (
 /obj/structure/table,
-/obj/item/folder/syndicate/red,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
+/obj/machinery/fax,
 /turf/open/floor/carpet/red,
 /area/ship/bridge)
 "gx" = (
@@ -663,6 +663,9 @@
 /obj/item/pen,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 5
+	},
+/obj/item/folder/syndicate/red{
+	pixel_x = -9
 	},
 /turf/open/floor/carpet/red,
 /area/ship/bridge)

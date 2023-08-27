@@ -645,6 +645,7 @@
 /obj/item/paper{
 	default_raw_text = "Missing protolathe. Lost in transit."
 	},
+/obj/item/circuitboard/machine/rdserver,
 /turf/open/floor/plasteel/dark,
 /area/ship/science)
 "ih" = (
@@ -3406,9 +3407,11 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 5
 	},
-/obj/structure/frame/machine,
-/obj/item/circuitboard/machine/rdserver,
 /obj/item/radio/intercom/directional/north,
+/obj/machinery/fax{
+	pixel_y = 2
+	},
+/obj/structure/table/glass,
 /turf/open/floor/carpet/black,
 /area/ship/bridge)
 "Xi" = (

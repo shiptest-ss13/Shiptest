@@ -3132,11 +3132,14 @@
 /area/ship/security)
 "rT" = (
 /obj/machinery/camera/autoname,
-/obj/item/kirbyplants/photosynthetic,
 /obj/machinery/light_switch{
 	pixel_y = 24;
 	pixel_x = -9
 	},
+/obj/machinery/fax{
+	pixel_y = 2
+	},
+/obj/structure/table,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "rV" = (
@@ -8429,6 +8432,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
+/obj/item/kirbyplants/photosynthetic,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "WB" = (

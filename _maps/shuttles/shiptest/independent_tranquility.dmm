@@ -1614,13 +1614,13 @@
 /area/ship/crew/crewfive)
 "mv" = (
 /obj/structure/table/reinforced,
-/obj/item/radio/intercom/wideband/table{
-	dir = 1
-	},
 /obj/item/toy/plush/knight{
 	name = "The Navigator";
 	pixel_x = -9;
 	pixel_y = 5
+	},
+/obj/machinery/fax{
+	pixel_y = 2
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)

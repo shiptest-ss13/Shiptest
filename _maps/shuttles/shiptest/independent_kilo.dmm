@@ -632,6 +632,10 @@
 	pixel_x = -23;
 	id = "kiloengine"
 	},
+/obj/item/storage/toolbox/mechanical{
+	pixel_y = 6
+	},
+/obj/item/areaeditor/shuttle,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "cZ" = (
@@ -1598,7 +1602,7 @@
 	pixel_y = 4
 	},
 /obj/machinery/firealarm/directional/north,
-/obj/item/areaeditor/shuttle,
+/obj/item/spacecash/bundle/c200,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "Ew" = (
@@ -2290,10 +2294,7 @@
 "XQ" = (
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/storage/toolbox/mechanical{
-	pixel_y = 6
-	},
-/obj/item/spacecash/bundle/c200,
+/obj/machinery/fax,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "XR" = (

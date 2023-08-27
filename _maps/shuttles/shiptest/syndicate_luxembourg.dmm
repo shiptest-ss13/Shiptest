@@ -522,12 +522,12 @@
 /area/ship/hallway/central)
 "jH" = (
 /obj/structure/table,
-/obj/item/radio/intercom/wideband/table{
-	dir = 4
-	},
 /obj/machinery/light_switch{
-	pixel_y = 22
+	pixel_y = 22;
+	pixel_x = -13
 	},
+/obj/machinery/fax,
+/obj/item/radio/intercom/wideband/directional/north,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "jK" = (

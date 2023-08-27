@@ -975,10 +975,19 @@
 	},
 /obj/effect/turf_decal/corner/opaque/blue,
 /obj/structure/table,
-/obj/item/paper_bin,
+/obj/item/paper_bin{
+	pixel_x = 7;
+	pixel_y = 3
+	},
 /obj/item/folder/blue,
 /obj/item/pen/fountain/captain,
 /obj/item/stamp/captain,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
+/obj/machinery/recharger{
+	pixel_x = -6;
+	pixel_y = 2
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "dK" = (
@@ -1853,6 +1862,7 @@
 	},
 /obj/item/stack/cable_coil/red,
 /obj/machinery/firealarm/directional/south,
+/obj/item/areaeditor/shuttle,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "xL" = (
@@ -1928,10 +1938,9 @@
 	req_access = null
 	},
 /obj/structure/table,
-/obj/machinery/recharger,
-/obj/item/spacecash/bundle/c1000,
-/obj/item/spacecash/bundle/c1000,
-/obj/item/areaeditor/shuttle,
+/obj/machinery/fax{
+	pixel_y = 2
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Aw" = (

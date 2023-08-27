@@ -572,6 +572,7 @@
 	},
 /obj/machinery/airalarm/directional/west,
 /obj/effect/turf_decal/corner/opaque/blue/half,
+/obj/item/clothing/head/caphat/cowboy,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "mC" = (
@@ -1355,6 +1356,13 @@
 	},
 /obj/effect/turf_decal/corner/opaque/blue/half,
 /obj/item/radio/intercom/directional/east,
+/obj/item/areaeditor/shuttle{
+	pixel_x = -11
+	},
+/obj/item/phone{
+	pixel_x = 5;
+	pixel_y = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "He" = (
@@ -1542,18 +1550,11 @@
 	pixel_x = -18;
 	pixel_y = 8
 	},
-/obj/item/phone{
-	pixel_x = 5;
-	pixel_y = 8
-	},
-/obj/item/areaeditor/shuttle{
-	pixel_x = -11
-	},
 /obj/effect/turf_decal/corner/opaque/blue/half{
 	dir = 1
 	},
-/obj/item/clothing/head/caphat/cowboy,
 /obj/item/radio/intercom/wideband/directional/east,
+/obj/machinery/fax,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Ka" = (

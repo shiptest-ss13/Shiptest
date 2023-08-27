@@ -164,6 +164,11 @@
 	id = "mudskipper_engine";
 	name = "Engine Shutters"
 	},
+/obj/item/gps/mining{
+	pixel_y = 6;
+	gpstag = "SCAV0";
+	pixel_x = -22
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engine)
 "dN" = (
@@ -1995,21 +2000,17 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance)
 "Rv" = (
-/obj/item/gps/mining{
-	pixel_y = 6;
-	gpstag = "SCAV0"
-	},
 /obj/item/clipboard{
-	pixel_x = 5;
-	pixel_y = -12
+	pixel_x = 6;
+	pixel_y = -24
 	},
 /obj/item/reagent_containers/glass/maunamug{
-	pixel_x = -6;
-	pixel_y = -6
+	pixel_x = -9;
+	pixel_y = -23
 	},
 /obj/item/pen/fountain{
 	pixel_x = 5;
-	pixel_y = -12
+	pixel_y = -20
 	},
 /obj/structure/sign/poster/contraband/shamblers_juice{
 	pixel_y = 32
@@ -2018,6 +2019,7 @@
 /obj/structure/table/reinforced{
 	color = "#c1b6a5"
 	},
+/obj/machinery/fax,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "RR" = (
