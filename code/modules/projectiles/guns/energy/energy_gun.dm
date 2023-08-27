@@ -10,6 +10,7 @@
 	flight_x_offset = 15
 	flight_y_offset = 10
 	dual_wield_spread = 60
+	manufacturer = MANUFACTURER_SHARPLITE_NEW
 
 /obj/item/gun/energy/e_gun/mindshield
 	pin = /obj/item/firing_pin/implant/mindshield
@@ -43,10 +44,11 @@
 
 /obj/item/gun/energy/e_gun/old
 	name = "prototype energy gun"
-	desc = "NT-P:01 Prototype Energy Gun. Early stage development of a unique laser rifle that has multifaceted energy lens allowing the gun to alter the form of projectile it fires on command."
+	desc = "NT-P:01 Prototype Energy Gun. Early stage development of a unique laser rifle that has multifaceted energy lens allowing the gun to alter the form of projectile it fires on command. The project was a dud, and Nanotrasen later aquired Sharplite to suit it's laser weapon needs."
 	icon_state = "protolaser"
 	ammo_x_offset = 2
 	ammo_type = list(/obj/item/ammo_casing/energy/laser, /obj/item/ammo_casing/energy/electrode/old)
+	manufacturer = MANUFACTURER_NANOTRASEN_OLD
 
 /obj/item/gun/energy/e_gun/mini/practice_phaser
 	name = "practice phaser"
@@ -63,18 +65,21 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler/hos, /obj/item/ammo_casing/energy/laser/hos, /obj/item/ammo_casing/energy/ion/hos, /obj/item/ammo_casing/energy/electrode/hos)
 	shaded_charge = TRUE
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
+	manufacturer = MANUFACTURER_SHARPLITE_NEW
 
 /obj/item/gun/energy/e_gun/hos/brazil
 	name = "modified antique laser gun"
 	desc = "It's somehow modified to have more firemodes."
 	icon_state = "capgun_brazil_hos"
 	item_state = "hoslaser"
+	manufacturer = MANUFACTURER_SHARPLITE
 
 /obj/item/gun/energy/e_gun/hos/brazil/true
-	desc = "By using a original antique laser gun with a intact nuclear power cell, it is truly one of the finest weapons in this area of space."
+	desc = "By using a original antique laser gun with a intact nuclear power cell, it is truly one of the finest weapons in this sector."
 	icon_state = "capgun_hos"
 	item_state = "hoslaser"
 	selfcharge = 1
+	manufacturer = MANUFACTURER_SHARPLITE
 
 /obj/item/gun/energy/e_gun/dragnet
 	name = "\improper DRAGnet"
@@ -120,6 +125,7 @@
 	var/reactor_overloaded
 	var/fail_tick = 0
 	var/fail_chance = 0
+	manufacturer = MANUFACTURER_NONE
 
 /obj/item/gun/energy/e_gun/nuclear/process()
 	if(fail_tick > 0)
@@ -221,3 +227,4 @@
 	spread = 80
 	dual_wield_spread = 140
 	shaded_charge = TRUE
+	manufacturer = MANUFACTURER_EOEHOMA

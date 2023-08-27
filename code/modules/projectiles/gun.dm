@@ -9,6 +9,7 @@
 #define MANUFACTURER_SOLARARMORIES "the Solarbundswaffenkammer emblem"
 #define MANUFACTURER_SCARBOROUGH "the Scarborough Arms logo"
 #define MANUFACTURER_EOEHOMA "the Eoehoma Firearms emblem"
+#define MANUFACTURER_NANOTRASEN_OLD "the retro Nanotrasen logo"
 #define MANUFACTURER_URSA "the Major Ursa's Reserve logo"
 #define MANUFACTURER_BRAZIL "an green flag with a blue circle and a yellow diamond around it"
 

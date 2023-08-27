@@ -1,6 +1,6 @@
 /obj/item/gun/energy/pulse
 	name = "pulse rifle"
-	desc = "A heavy-duty, expensive, multifaceted energy rifle with three modes. The standard for specialist Nanotrasen security."
+	desc = "A heavy-duty, expensive, multifaceted energy rifle with three modes. The standard for heavy specialist Nanotrasen security."
 	icon_state = "pulse"
 	item_state = null
 	w_class = WEIGHT_CLASS_BULKY
@@ -11,6 +11,7 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/pulse, /obj/item/ammo_casing/energy/laser)
 	internal_cell = TRUE //prevents you from giving it an OP cell - WS Edit
 	cell_type = "/obj/item/stock_parts/cell/pulse"
+	manufacturer = MANUFACTURER_SHARPLITE_NEW
 
 /obj/item/gun/energy/pulse/emp_act(severity)
 	return
@@ -37,7 +38,8 @@
 
 /obj/item/gun/energy/pulse/carbine
 	name = "pulse carbine"
-	desc = "The standard issue rifle of the Nanotrasen Ground Security Forces. Most have been mothballed into storage following the ICW."
+	desc = "The next-generation rifle of nanotrasen, however the logistical issues of making it the standard has left it only used by specialist LP and ERT teams."
+	//desc = "The standard issue rifle of the Nanotrasen Ground Security Forces. Most have been mothballed into storage following the ICW."
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	icon_state = "pulse_carbine"

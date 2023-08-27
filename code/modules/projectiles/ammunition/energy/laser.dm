@@ -14,6 +14,7 @@
 /obj/item/ammo_casing/energy/laser/eoehoma/e50
 	projectile_type = /obj/projectile/beam/emitter/hitscan/e50
 	fire_sound = 'sound/weapons/gun/laser/heavy_laser.ogg'
+	e_cost = 12500
 
 /obj/item/ammo_casing/energy/lasergun
 	projectile_type = /obj/projectile/beam/laser

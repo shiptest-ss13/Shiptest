@@ -9,6 +9,7 @@
 	ammo_x_offset = 1
 	shaded_charge = TRUE
 	supports_variations = VOX_VARIATION
+	manufacturer = MANUFACTURER_SHARPLITE_NEW
 
 /obj/item/gun/energy/laser/practice
 	name = "practice laser gun"
@@ -22,6 +23,7 @@
 	icon_state = "retro"
 	desc = "An antiquated model of the basic lasergun, no longer used or sold by Sharplite. Nevertheless, the sheer popularity of this model makes it a somewhat common sight to this day."
 	ammo_x_offset = 3
+	manufacturer = MANUFACTURER_SHARPLITE
 
 /obj/item/gun/energy/laser/captain
 	name = "antique laser gun"
@@ -32,6 +34,7 @@
 	ammo_x_offset = 3
 	selfcharge = TRUE
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
+	manufacturer = MANUFACTURER_SHARPLITE
 
 /obj/item/gun/energy/laser/captain/brazil
 	icon_state = "capgun_brazil"
@@ -51,6 +54,7 @@
 	can_charge = FALSE
 	desc = "An energy-based laser gun that draws power from the cyborg's internal energy cell directly. So this is what freedom looks like?"
 	use_cyborg_cell = TRUE
+	manufacturer = MANUFACTURER_NONE
 
 /obj/item/gun/energy/laser/cyborg/emp_act()
 	return
@@ -59,6 +63,7 @@
 	name = "scatter laser gun"
 	desc = "A laser gun equipped with a refraction kit that spreads bolts."
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/scatter, /obj/item/ammo_casing/energy/laser)
+	manufacturer = MANUFACTURER_NONE
 
 /obj/item/gun/energy/laser/scatter/shotty
 	name = "energy shotgun"
@@ -69,6 +74,7 @@
 	shaded_charge = 0
 	pin = /obj/item/firing_pin/implant/mindshield
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler/scatter, /obj/item/ammo_casing/energy/electrode)
+	manufacturer = MANUFACTURER_NONE
 
 ///Laser Cannon
 
@@ -86,6 +92,7 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/accelerator)
 	pin = null
 	ammo_x_offset = 3
+	manufacturer = MANUFACTURER_SHARPLITE
 
 /obj/item/gun/energy/lasercannon/unrestricted
 	pin = /obj/item/firing_pin
@@ -128,6 +135,7 @@
 	pin = /obj/item/firing_pin/tag/blue
 	ammo_x_offset = 2
 	selfcharge = TRUE
+	manufacturer = MANUFACTURER_NONE
 
 /obj/item/gun/energy/laser/bluetag/hitscan
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/bluetag/hitscan)
@@ -142,6 +150,7 @@
 	pin = /obj/item/firing_pin/tag/red
 	ammo_x_offset = 2
 	selfcharge = TRUE
+	manufacturer = MANUFACTURER_NONE
 
 /obj/item/gun/energy/laser/redtag/hitscan
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/redtag/hitscan)
@@ -159,6 +168,7 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler/scatter/ultima)
 	var/obj/item/modular_computer/integratedNTOS
 	var/NTOS_type = /obj/item/modular_computer/internal
+	manufacturer = MANUFACTURER_SHARPLITE_NEW
 
 /obj/item/gun/energy/laser/iot/Initialize()
 	. = ..()
@@ -188,6 +198,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	cell_type = /obj/item/stock_parts/cell/gun/mini
 	ammo_type = list(/obj/item/ammo_casing/energy/lasergun/hitscan)
+	manufacturer = MANUFACTURER_SHARPLITE_NEW
 
 /obj/item/gun/energy/laser/hitscanpistol/examine_more(mob/user)
 	if(in_range(src, user) || isobserver(user))
@@ -210,9 +221,10 @@
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	icon_state = "e50"
 
-	big_gun = TRUE //haha gun go brr
+	big_gun = TRUE
 	cell_type = /obj/item/stock_parts/cell/gun/large
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/eoehoma/e50)
+	manufacturer = MANUFACTURER_EOEHOMA
 
 	shaded_charge = TRUE
 	ammo_x_offset = 3
