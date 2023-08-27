@@ -189,8 +189,10 @@
 	secondary = new /obj/item/gun/energy/laser/e40_laser_secondary(src)
 	AddComponent(/datum/component/automatic_fire, 0.2 SECONDS)
 	RegisterSignal(secondary, COMSIG_ATOM_UPDATE_ICON, .proc/secondary_update_icon)
+	SEND_SIGNAL(secondary, COMSIG_GUN_DISABLE_AUTOFIRE)
 	update_appearance()
 
+/*
 /obj/item/gun/ballistic/automatic/assualt/e40/equipped(mob/user)
 	. = ..()
 	SEND_SIGNAL(secondary, COMSIG_ITEM_EQUIPPED)
@@ -199,6 +201,21 @@
 /obj/item/gun/ballistic/automatic/assualt/e40/dropped(mob/user)
 	. = ..()
 	secondary.dropped(user, TRUE) // same here
+*/
+
+/obj/item/gun/ballistic/automatic/assualt/e40/do_autofire(datum/source, atom/target, mob/living/shooter, params)
+	if(select == 2)
+		secondary.do_autofire(source, target, shooter, params)
+	else
+		return ..()
+
+/obj/item/gun/ballistic/automatic/assualt/e40/process_fire(atom/target, mob/living/user, message, params, zone_override, bonus_spread)
+	. = ..()
+	if(select == 2)
+		secondary.process_fire(target, user, message, params, zone_override, bonus_spread)
+	else
+		return ..()
+
 
 /obj/item/gun/ballistic/automatic/assualt/e40/afterattack(atom/target, mob/living/user, flag, params)
 	if(select == 2)
@@ -240,10 +257,12 @@
 			select = 2
 			to_chat(user, "<span class='notice'>You switch to full auto laser.</span>")
 			SEND_SIGNAL(src, COMSIG_GUN_DISABLE_AUTOFIRE)
+			SEND_SIGNAL(secondary, COMSIG_GUN_ENABLE_AUTOFIRE)
 		if(2)
 			select = 1
 			to_chat(user, "<span class='notice'>You switch to full automatic ballistic.</span>")
 			SEND_SIGNAL(src, COMSIG_GUN_ENABLE_AUTOFIRE)
+			SEND_SIGNAL(secondary, COMSIG_GUN_DISABLE_AUTOFIRE)
 	playsound(user, 'sound/weapons/empty.ogg', 100, TRUE)
 	update_icon()
 	return

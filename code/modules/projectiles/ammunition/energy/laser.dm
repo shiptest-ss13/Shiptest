@@ -9,6 +9,7 @@
 /obj/item/ammo_casing/energy/laser/eoehoma/e40
 	projectile_type = /obj/projectile/beam/laser/eoehoma/e40
 	fire_sound = 'sound/weapons/gun/laser/e40_las.ogg'
+	delay = 2
 
 /obj/item/ammo_casing/energy/laser/eoehoma/e50
 	projectile_type = /obj/projectile/beam/emitter/hitscan/e50
