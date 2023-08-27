@@ -70,6 +70,7 @@
 	slot_flags = ITEM_SLOT_BACK
 	actions_types = list()
 	mag_display = TRUE
+	manufacturer = MANUFACTURER_SCARBOROUGH
 
 /obj/item/gun/ballistic/automatic/sniper_rifle/syndicate
 	name = "syndicate sniper rifle"
@@ -127,6 +128,7 @@
 	fire_sound = 'sound/weapons/gun/rifle/shot_alt2.ogg'
 	burst_size = 0
 	actions_types = list()
+	manufacturer = MANUFACTURER_SCARBOROUGH
 
 /obj/item/gun/ballistic/automatic/gal
 	name = "\improper CM-GAL-S"
@@ -142,6 +144,7 @@
 	fire_sound = 'sound/weapons/gun/rifle/gal.ogg'
 	burst_size = 0
 	actions_types = list()
+	manufacturer = MANUFACTURER_MINUTEMAN
 
 /obj/item/gun/ballistic/automatic/gal/inteq
 	name = "\improper SsG-04"

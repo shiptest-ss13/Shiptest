@@ -66,6 +66,7 @@
 	knife_x_offset = 27
 	knife_y_offset = 13
 	can_be_sawn_off = TRUE
+	manufacturer = MANUFACTURER_HUNTERSPRIDE
 
 /obj/item/gun/ballistic/rifle/boltaction/sawoff(mob/user)
 	. = ..()
@@ -89,6 +90,8 @@
 	fire_sound = 'sound/weapons/gun/rifle/ssg669c.ogg'
 	can_be_sawn_off = FALSE
 
+	manufacturer = MANUFACTURER_SOLARARMORIES
+
 /obj/item/gun/ballistic/rifle/boltaction/roumain
 	name = "standard-issue 'Smile' rifle"
 	desc = "A bolt action rifle usually given to mercenary hunters of the Saint-Roumain Militia. Chambered in .300 Magnum."
@@ -97,12 +100,15 @@
 	item_state = "roma"
 	can_be_sawn_off = FALSE
 
+	manufacturer = MANUFACTURER_HUNTERSPRIDE
+
 /obj/item/gun/ballistic/rifle/boltaction/enchanted
 	name = "enchanted bolt-action rifle"
 	desc = "Careful not to lose your head."
 	var/guns_left = 30
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/enchanted
 	can_be_sawn_off = FALSE
+	manufacturer = MANUFACTURER_NONE
 
 /obj/item/gun/ballistic/rifle/boltaction/enchanted/arcane_barrage
 	name = "arcane barrage"
@@ -158,3 +164,4 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/polymer
 	can_be_sawn_off = FALSE
+	manufacturer = MANUFACTURER_NONE

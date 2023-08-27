@@ -62,6 +62,7 @@
 	cartridge_wording = "rocket"
 	empty_indicator = TRUE
 	tac_reloads = FALSE
+	manufacturer = MANUFACTURER_SCARBOROUGH
 
 /obj/item/gun/ballistic/rocketlauncher/unrestricted
 	pin = /obj/item/firing_pin
@@ -80,4 +81,5 @@
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	icon_state = "panzerfaust"
 	item_state = "panzerfaust"
+	manufacturer = MANUFACTURER_SOLARARMORIES
 

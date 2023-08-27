@@ -19,6 +19,7 @@
 
 	charge_sections = 4
 	ammo_x_offset = 2
+	manufacturer = MANUFACTURER_NANOTRASEN
 
 /obj/item/gun/ballistic/automatic/powered/gauss/modelh
 	name = "Model H"
@@ -39,7 +40,7 @@
 
 	mag_display = FALSE
 	empty_indicator = FALSE
-
+	manufacturer = MANUFACTURER_SOLARARMORIES
 
 /obj/item/gun/ballistic/automatic/powered/gauss/claris
 	name = "Claris"
@@ -61,6 +62,7 @@
 
 	mag_display = FALSE
 	empty_indicator = FALSE
+	manufacturer = MANUFACTURER_SOLARARMORIES
 
 /obj/item/gun/ballistic/automatic/powered/gauss/gar
 	name = "Solar 'GAR' Assualt Rifle"
@@ -80,6 +82,7 @@
 	actions_types = list()
 
 	empty_indicator = FALSE
+	manufacturer = MANUFACTURER_SOLARARMORIES
 
 /obj/item/gun/ballistic/automatic/powered/gauss/gar/ComponentInitialize()
 	. = ..()

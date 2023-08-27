@@ -16,6 +16,7 @@
 	var/spin_delay = 10
 	var/recent_spin = 0
 	fire_delay = 7
+	manufacturer = MANUFACTURER_SCARBOROUGH
 
 /obj/item/gun/ballistic/revolver/chamber_round(spin_cylinder = TRUE)
 	if(spin_cylinder)
@@ -74,7 +75,7 @@
 		. += "It can be spun with <b>alt+click</b>"
 
 /obj/item/gun/ballistic/revolver/detective
-	name = "\improper Colt Detective Special"
+	name = "\improper Hunters Pride Detective Special"
 	desc = "A compact and ridiculously old-fashioned law enforcement firearm. Uses .38 Special rounds."
 	fire_sound = 'sound/weapons/gun/revolver/shot.ogg'
 	icon_state = "detective"
@@ -90,6 +91,7 @@
 		"The Peacemaker" = "detective_peacemaker",
 		"Black Panther" = "detective_panther"
 		)
+	manufacturer = MANUFACTURER_HUNTERSPRIDE
 
 /obj/item/gun/ballistic/revolver/detective/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
 	if(magazine.caliber != initial(magazine.caliber))
@@ -140,6 +142,7 @@
 	name = "\improper Unica 6 auto-revolver"
 	desc = "A high-powered revolver with a unique auto-reloading system. Uses .357 ammo."
 	icon_state = "mateba"
+	manufacturer = MANUFACTURER_NONE
 
 /obj/item/gun/ballistic/revolver/golden
 	name = "\improper Golden revolver"
@@ -148,12 +151,14 @@
 	fire_sound = 'sound/weapons/resonator_blast.ogg'
 	recoil = 8
 	pin = /obj/item/firing_pin
+	manufacturer = MANUFACTURER_NONE
 
 /obj/item/gun/ballistic/revolver/nagant
 	name = "\improper Nagant revolver"
 	desc = "An ancient model of revolver with notoriously poor ergonomics, chambered in 7.62x38mmR. While its unique design prevents the use of speed loaders, it is the only revolver able to use a suppressor."
 	icon_state = "nagant"
 	can_suppress = TRUE
+	manufacturer = MANUFACTURER_NONE
 
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev762
 
@@ -173,6 +178,7 @@
 	icon_state = "russianrevolver"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rus357
 	var/spun = FALSE
+	manufacturer = MANUFACTURER_NONE
 
 /obj/item/gun/ballistic/revolver/russian/do_spin()
 	. = ..()
@@ -268,8 +274,9 @@
 		user.Paralyze(80)
 
 /obj/item/gun/ballistic/revolver/srm
-	name = "SRM Standard Issue .357 Revolver"
+	name = "SRM Standard Issue .357 Revolver" //should have used the pepperbox...
 	desc = "A sturdy, powerful, and reliable revolver. Try not to find yourself on the other end."
+	manufacturer = MANUFACTURER_HUNTERSPRIDE
 
 /obj/item/gun/ballistic/revolver/pepperbox
 	name = "\improper pepperbox pistol"
@@ -278,3 +285,4 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/pepperbox
 	spread = 20
 	fire_delay = 4
+	manufacturer = MANUFACTURER_HUNTERSPRIDE

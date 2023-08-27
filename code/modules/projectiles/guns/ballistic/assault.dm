@@ -140,6 +140,7 @@
 	slot_flags = ITEM_SLOT_BACK
 	mag_type = /obj/item/ammo_box/magazine/swiss
 	actions_types = list(/datum/action/item_action/toggle_firemode)
+	manufacturer = MANUFACTURER_SOLARARMORIES
 
 /obj/item/gun/ballistic/automatic/assualt/swiss_cheese/ComponentInitialize()
 	. = ..()
@@ -183,6 +184,7 @@
 	mag_display = TRUE
 	empty_indicator = TRUE
 	fire_sound = 'sound/weapons/gun/laser/e40_bal.ogg'
+	manufacturer = MANUFACTURER_EOEHOMA
 
 /obj/item/gun/ballistic/automatic/assualt/e40/Initialize()
 	. = ..()

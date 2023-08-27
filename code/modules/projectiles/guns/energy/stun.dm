@@ -30,6 +30,7 @@
 	can_flashlight = TRUE
 	flight_x_offset = 15
 	flight_y_offset = 10
+	manufacturer = MANUFACTURER_SHARPLITE_NEW
 
 /obj/item/gun/energy/disabler/cyborg
 	name = "cyborg disabler"
@@ -41,3 +42,4 @@
 	name = "E-60"
 	desc = "A self-defense weapon that exhausts organic targets, weakening them until they collapse."
 	icon_state = "e60"
+	manufacturer = MANUFACTURER_EOEHOMA

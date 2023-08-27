@@ -26,6 +26,7 @@
 	pickup_sound =  'sound/items/handling/shotgun_pickup.ogg'
 	fire_delay = 7
 	pb_knockback = 2
+	manufacturer = MANUFACTURER_HUNTERSPRIDE
 
 /obj/item/gun/ballistic/shotgun/blow_up(mob/user)
 	. = 0
@@ -48,6 +49,9 @@
 	can_be_sawn_off  = TRUE
 
 // Automatic Shotguns//
+
+/obj/item/gun/ballistic/shotgun/automatic
+	manufacturer = MANUFACTURER_NANOTRASEN
 
 /obj/item/gun/ballistic/shotgun/automatic/shoot_live_shot(mob/living/user)
 	..()
@@ -145,7 +149,7 @@
 	internal_magazine = FALSE
 	tac_reloads = TRUE
 	pickup_sound =  'sound/items/handling/rifle_pickup.ogg'
-
+	manufacturer = MANUFACTURER_SCARBOROUGH
 
 /obj/item/gun/ballistic/shotgun/bulldog/unrestricted
 	pin = /obj/item/firing_pin
@@ -157,6 +161,7 @@
 	item_state = "bulldog-inteq"
 	mag_type = /obj/item/ammo_box/magazine/m12g
 	pin = /obj/item/firing_pin
+	manufacturer = MANUFACTURER_INTEQ
 
 /obj/item/gun/ballistic/shotgun/bulldog/minutemen
 	name = "\improper CM-15"
@@ -169,6 +174,7 @@
 	empty_alarm = FALSE
 	empty_indicator = FALSE
 	special_mags = FALSE
+	manufacturer = MANUFACTURER_MINUTEMAN
 
 /////////////////////////////
 // DOUBLE BARRELED SHOTGUN //
@@ -199,6 +205,7 @@
 	bolt_type = BOLT_TYPE_NO_BOLT
 	can_be_sawn_off  = TRUE
 	pb_knockback = 3 // it's a super shotgun!
+	manufacturer = MANUFACTURER_NONE
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/AltClick(mob/user)
 	. = ..()
@@ -383,6 +390,7 @@
 	fire_sound_volume = 50
 	rack_sound_volume = 50
 	can_be_sawn_off = FALSE
+	manufacturer = MANUFACTURER_BRAZIL
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/brazil/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
 	if(prob(0 + (magazine.ammo_count() * 10)))
@@ -453,6 +461,7 @@
 	can_be_sawn_off = FALSE
 	fire_sound_volume = 80
 	rack_sound_volume = 50
+	manufacturer = MANUFACTURER_HUNTERSPRIDE
 
 //Break-Action Rifle
 /obj/item/gun/ballistic/shotgun/contender

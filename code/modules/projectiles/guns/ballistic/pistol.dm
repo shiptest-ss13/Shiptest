@@ -25,6 +25,7 @@
 	weapon_weight = WEAPON_LIGHT
 	pickup_sound =  'sound/items/handling/gun_pickup.ogg'
 	fire_delay = 1
+	manufacturer = MANUFACTURER_SCARBOROUGH
 
 /obj/item/gun/ballistic/automatic/pistol/no_mag
 	spawnwithmagazine = FALSE
@@ -45,6 +46,7 @@
 	rack_sound = 'sound/weapons/gun/pistol/rack.ogg'
 	lock_back_sound = 'sound/weapons/gun/pistol/slide_lock.ogg'
 	bolt_drop_sound = 'sound/weapons/gun/pistol/slide_drop.ogg'
+	manufacturer = MANUFACTURER_HUNTERSPRIDE
 
 /obj/item/gun/ballistic/automatic/pistol/m1911/no_mag
 	spawnwithmagazine = FALSE
@@ -61,6 +63,7 @@
 	rack_sound = 'sound/weapons/gun/pistol/rack.ogg'
 	lock_back_sound = 'sound/weapons/gun/pistol/slide_lock.ogg'
 	bolt_drop_sound = 'sound/weapons/gun/pistol/slide_drop.ogg'
+	manufacturer = MANUFACTURER_NONE
 
 /obj/item/gun/ballistic/automatic/pistol/deagle/gold
 	desc = "A gold plated Desert Eagle folded over a million times by superior martian gunsmiths. Uses .50 AE ammo."
@@ -87,6 +90,7 @@
 	name = "flat gun"
 	desc = "A 2 dimensional gun.. what?"
 	icon_state = "flatgun"
+	manufacturer = MANUFACTURER_NONE
 
 /obj/item/gun/ballistic/automatic/pistol/stickman/pickup(mob/living/user)
 	SHOULD_CALL_PARENT(0)
@@ -106,6 +110,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/co9mm
 	can_suppress = FALSE
+	manufacturer = MANUFACTURER_NANOTRASEN
 
 /obj/item/gun/ballistic/automatic/pistol/commander/no_mag
 	spawnwithmagazine = FALSE
@@ -115,6 +120,7 @@
 	desc = "A handgun seized from Nanotrasen armories by deserting troopers and modified to IRMG's standards, with a yellow IRMG shield set into the grips. Chambered in 9mm."
 	icon_state = "commander-inteq"
 	item_state = "commander-inteq"
+	manufacturer = MANUFACTURER_INTEQ
 
 /obj/item/gun/ballistic/automatic/pistol/commander/inteq/no_mag
 	spawnwithmagazine = FALSE
@@ -177,6 +183,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	mag_type = /obj/item/ammo_box/magazine/pistol556mm
 	fire_sound = 'sound/weapons/gun/pistol/pistolec.ogg'
+	manufacturer = MANUFACTURER_SOLARARMORIES
 
 /obj/item/gun/ballistic/automatic/pistol/solgov/old
 	desc = "A favorite of the Terran Regency, but despised by the Solarian bureaucracy. Was taken out of standard service several centruries ago, and is issued in low numbers in the military. However, it is popular with civillians. Chambered in 5.56mm caseless."
@@ -200,6 +207,7 @@
 	custom_materials = list(/datum/material/plastic=2000)
 	can_suppress = FALSE
 	var/random_icon = TRUE
+	manufacturer = MANUFACTURER_NONE
 
 /obj/item/gun/ballistic/automatic/pistol/disposable/Initialize()
 	. = ..()

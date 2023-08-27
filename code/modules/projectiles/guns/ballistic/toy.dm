@@ -12,6 +12,7 @@
 	clumsy_check = 0
 	item_flags = NONE
 	casing_ejector = FALSE
+	manufacturer = MANUFACTURER_NANOTRASEN
 
 /obj/item/gun/ballistic/automatic/toy/update_overlays()
 	. = ..()
@@ -81,6 +82,7 @@
 	fire_sound = 'sound/items/syringeproj.ogg'
 	slot_flags = ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_SMALL
+	manufacturer = MANUFACTURER_DONKCO
 
 /obj/item/gun/ballistic/automatic/smg/c20r/toy //This is the syndicate variant with syndicate firing pin and riot darts.
 	name = "donksoft SMG"
@@ -91,6 +93,7 @@
 	fire_sound = 'sound/items/syringeproj.ogg'
 	casing_ejector = FALSE
 	clumsy_check = FALSE
+	manufacturer = MANUFACTURER_DONKCO
 
 /obj/item/gun/ballistic/automatic/smg/c20r/toy/unrestricted //Use this for actual toys
 	pin = /obj/item/firing_pin
@@ -112,6 +115,7 @@
 	mag_type = /obj/item/ammo_box/magazine/toy/m762/riot
 	casing_ejector = FALSE
 	clumsy_check = FALSE
+	manufacturer = MANUFACTURER_DONKCO
 
 /obj/item/gun/ballistic/automatic/hmg/l6_saw/toy/unrestricted //Use this for actual toys
 	pin = /obj/item/firing_pin
