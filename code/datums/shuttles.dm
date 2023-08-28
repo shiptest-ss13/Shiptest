@@ -381,7 +381,7 @@
 	starting_funds = 0
 
 
-/datum/map_template/shuttle/subshuttles/frontiersmen_gut
+/datum/map_template/shuttle/subshuttles/frontiersmen_gut //i need to give this a better name at some point
 	file_name = "frontiersmen_gut"
 	name = "Gut Combat Freighter"
 	prefix = "ISV"
