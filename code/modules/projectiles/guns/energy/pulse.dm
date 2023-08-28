@@ -1,6 +1,7 @@
 /obj/item/gun/energy/pulse
 	name = "pulse rifle"
 	desc = "A heavy-duty, expensive, multifaceted energy rifle with three modes. The standard for heavy specialist Nanotrasen security."
+	icon = 'icons/obj/guns/48x32guns.dmi'
 	icon_state = "pulse"
 	item_state = null
 	w_class = WEIGHT_CLASS_BULKY
@@ -10,8 +11,10 @@
 	slot_flags = ITEM_SLOT_BACK
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/pulse, /obj/item/ammo_casing/energy/laser)
 	internal_cell = TRUE //prevents you from giving it an OP cell - WS Edit
-	cell_type = "/obj/item/stock_parts/cell/pulse"
+	cell_type = /obj/item/stock_parts/cell/pulse
 	manufacturer = MANUFACTURER_SHARPLITE_NEW
+	ammo_x_offset = 2
+	charge_sections = 6
 
 /obj/item/gun/energy/pulse/emp_act(severity)
 	return
@@ -39,17 +42,19 @@
 /obj/item/gun/energy/pulse/carbine
 	name = "pulse carbine"
 	desc = "The next-generation rifle of nanotrasen, however the logistical issues of making it the standard has left it only used by specialist LP and ERT teams."
-	//desc = "The standard issue rifle of the Nanotrasen Ground Security Forces. Most have been mothballed into storage following the ICW."
+	icon = 'icons/obj/guns/energy.dmi'
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	icon_state = "pulse_carbine"
 	item_state = null
 	internal_cell = FALSE
 	big_gun = TRUE //haha gun go brr
-	cell_type = "/obj/item/stock_parts/cell/gun/large"
+	cell_type = /obj/item/stock_parts/cell/gun/large
 	can_flashlight = TRUE
 	flight_x_offset = 18
 	flight_y_offset = 12
+	ammo_x_offset = 2
+	charge_sections = 4
 
 /obj/item/gun/energy/pulse/carbine/loyalpin
 	pin = /obj/item/firing_pin/implant/mindshield
@@ -57,11 +62,14 @@
 /obj/item/gun/energy/pulse/pistol
 	name = "pulse pistol"
 	desc = "A pulse rifle in an easily concealed handgun package with low capacity."
+	icon = 'icons/obj/guns/energy.dmi'
 	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = ITEM_SLOT_BELT
 	icon_state = "pulse_pistol"
 	item_state = "gun"
-	cell_type = "/obj/item/stock_parts/cell/pulse/pistol"
+	cell_type = /obj/item/stock_parts/cell/pulse/pistol
+	ammo_x_offset = 2
+	charge_sections = 4
 
 /obj/item/gun/energy/pulse/pistol/loyalpin
 	pin = /obj/item/firing_pin/implant/mindshield
@@ -69,7 +77,7 @@
 /obj/item/gun/energy/pulse/destroyer
 	name = "pulse destroyer"
 	desc = "A heavy-duty energy rifle built for pure destruction."
-	cell_type = "/obj/item/stock_parts/cell/infinite"
+	cell_type = /obj/item/stock_parts/cell/infinite
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/pulse)
 
 /obj/item/gun/energy/pulse/destroyer/attack_self(mob/living/user)
@@ -80,4 +88,4 @@
 	desc = "A compact pulse core in a classic handgun frame for Nanotrasen officers. It's not the size of the gun, it's the size of the hole it puts through people."
 	icon_state = "m1911"
 	item_state = "gun"
-	cell_type = "/obj/item/stock_parts/cell/infinite"
+	cell_type = /obj/item/stock_parts/cell/infinite

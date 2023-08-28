@@ -28,7 +28,7 @@
 	var/allow_switch_interact = TRUE
 
 	var/projectile_type = /obj/projectile/beam/emitter/hitscan //WS - Hitscan emitters
-	var/projectile_sound = 'sound/weapons/emitter.ogg'
+	var/projectile_sound = 'sound/weapons/gun/laser/heavy_laser.ogg'
 	var/datum/effect_system/spark_spread/sparks
 
 	var/obj/item/gun/energy/gun

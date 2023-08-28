@@ -35,12 +35,22 @@
 	set_gun_light(new /obj/item/flashlight/seclite(src))
 	return ..()
 
-/obj/item/gun/energy/e_gun/stun
-	name = "tactical energy gun"
-	desc = "Military issue energy gun, is able to fire stun rounds."
+/obj/item/gun/energy/e_gun/hades
+	name = "SL AL-655 'Hades' energy rifle"
+	desc = "The standard issue rifle of the Nanotrasen Security Forces. Most have been mothballed into storage following the ICW, and aren't often issued to low ranking security divisions."
 	icon_state = "energytac"
 	ammo_x_offset = 2
-	ammo_type = list(/obj/item/ammo_casing/energy/electrode/spec, /obj/item/ammo_casing/energy/disabler, /obj/item/ammo_casing/energy/laser)
+	charge_sections = 5
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/assault, /obj/item/ammo_casing/energy/disabler)
+	cell_type = /obj/item/stock_parts/cell/gun/upgraded
+
+	weapon_weight = WEAPON_MEDIUM
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK
+
+/obj/item/gun/energy/e_gun/hades/Initialize()
+	. = ..()
+	AddComponent(/datum/component/automatic_fire, 0.2 SECONDS)
 
 /obj/item/gun/energy/e_gun/old
 	name = "prototype energy gun"
@@ -199,6 +209,10 @@
 	ammo_x_offset = 2
 	charge_sections = 3
 	weapon_weight = WEAPON_LIGHT
+
+/obj/item/gun/energy/e_gun/smg/Initialize()
+	. = ..()
+	AddComponent(/datum/component/automatic_fire, 0.2 SECONDS)
 
 /obj/item/gun/energy/e_gun/iot
 	name = "\improper E-SG 500 Second Edition"

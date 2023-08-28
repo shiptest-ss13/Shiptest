@@ -226,8 +226,10 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/eoehoma/e50)
 	manufacturer = MANUFACTURER_EOEHOMA
 
-	shaded_charge = TRUE
-	ammo_x_offset = 3
+	shaded_charge = FALSE
+	ammo_x_offset = 4
 	charge_sections = 2
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = 0
 
 

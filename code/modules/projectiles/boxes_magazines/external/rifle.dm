@@ -133,4 +133,7 @@
 	ammo_type = /obj/item/ammo_casing/caseless/c299
 	caliber = ".299 caseless"
 	max_ammo = 30
-	multiple_sprites = AMMO_BOX_FULL_EMPTY
+
+/obj/item/ammo_box/magazine/e40/update_icon_state()
+	. = ..()
+	icon_state = "e40_mag-[!!ammo_count()]"

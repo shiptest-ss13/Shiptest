@@ -218,6 +218,8 @@
 	. = ..()
 	if(!automatic_charge_overlays)
 		return
+	if(cell)
+		. += "[icon_state]_cell"
 	// Every time I see code this "flexible", a kitten fucking dies
 	var/overlay_icon_state = "[icon_state]_charge"
 	var/obj/item/ammo_casing/energy/shot = ammo_type[modifystate ? select : 1]

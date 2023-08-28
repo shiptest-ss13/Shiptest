@@ -29,7 +29,7 @@
 /obj/projectile/beam/laser/eoehoma
 	damage = 30
 
-/obj/projectile/beam/laser/eoehoma/e40
+/obj/projectile/beam/laser/assault
 	icon_state = "heavylaser"
 	damage = 25
 	armour_penetration = 20
@@ -251,7 +251,7 @@
 	impact_type = /obj/effect/projectile/impact/laser/emitter
 	impact_effect_type = null
 
-/obj/projectile/beam/emitter/hitscan/e50/on_hit(atom/target, blocked = FALSE)
+/obj/projectile/beam/emitter/hitscan/on_hit(atom/target, blocked = FALSE)
 	. = ..()
 	var/turf/targets_turf = target.loc
 	if(!isopenturf(targets_turf))
