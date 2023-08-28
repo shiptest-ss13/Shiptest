@@ -16,8 +16,8 @@
 	flags_ricochet = RICOCHET_HARD
 
 	smoothing_flags = SMOOTH_BITMASK
-	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_WALLS)
+	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_AIRLOCK)
+	canSmoothWith = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE, SMOOTH_GROUP_AIRLOCK)
 
 	///lower numbers are harder. Used to determine the probability of a hulk smashing through.
 	var/hardness = 40
@@ -29,6 +29,9 @@
 
 	var/list/dent_decals
 
+/turf/closed/wall/yesdiag
+	icon_state = "wall-255"
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS
 
 /turf/closed/wall/Initialize(mapload, inherited_virtual_z)
 	. = ..()
@@ -49,7 +52,7 @@
 	var/turf/closed/wall/wall_copy = T
 	if(LAZYLEN(dent_decals))
 		wall_copy.dent_decals = dent_decals.Copy()
-		wall_copy.update_icon()
+		wall_copy.update_appearance()
 
 /turf/closed/wall/update_overlays()
 	. = ..()
@@ -210,7 +213,7 @@
 			if(iswallturf(src) && LAZYLEN(dent_decals))
 				to_chat(user, "<span class='notice'>You fix some dents on the wall.</span>")
 				dent_decals = null
-				update_icon()
+				update_appearance()
 			return TRUE
 
 	return FALSE
@@ -313,6 +316,6 @@
 	decal.pixel_x = x
 	decal.pixel_y = y
 	LAZYADD(dent_decals, decal)
-	update_icon()
+	update_appearance()
 
 #undef MAX_DENT_DECALS

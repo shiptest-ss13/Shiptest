@@ -313,7 +313,7 @@
 
 /obj/structure/alien/egg/Initialize(mapload)
 	. = ..()
-	update_icon()
+	update_appearance()
 	if(status == GROWING || status == GROWN)
 		child = new(src)
 	if(status == GROWING)
@@ -330,6 +330,7 @@
 			icon_state = "[base_icon]"
 		if(BURST)
 			icon_state = "[base_icon]_hatched"
+	return ..()
 
 /obj/structure/alien/egg/attack_paw(mob/living/user)
 	return attack_hand(user)
@@ -362,7 +363,7 @@
 
 /obj/structure/alien/egg/proc/Grow()
 	status = GROWN
-	update_icon()
+	update_appearance()
 	proximity_monitor.SetRange(1)
 
 //drops and kills the hugger if any is remaining
@@ -370,7 +371,7 @@
 	if(status == GROWN || status == GROWING)
 		proximity_monitor.SetRange(0)
 		status = BURST
-		update_icon()
+		update_appearance()
 		flick("egg_opening", src)
 		addtimer(CALLBACK(src, .proc/finish_bursting, kill), 15)
 

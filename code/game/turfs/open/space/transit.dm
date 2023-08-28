@@ -37,8 +37,8 @@
 	if(iseffect(src))
 		return
 	if(isliving(src))
-		var/mob/living/poor_soul = src			// This may not seem like much, but if you toss someone out
-		poor_soul.apply_damage_type(50, BRUTE)	// and they go through like four tiles, they're goners
+		var/mob/living/poor_soul = src	// This may not seem like much, but if you toss someone out
+		poor_soul.apply_damage_type(25, BRUTE)	// and they go through like four tiles, they're goners
 		return
 	qdel(src)
 
@@ -48,7 +48,7 @@
 
 /turf/open/space/transit/Initialize(mapload, inherited_virtual_z)
 	. = ..()
-	update_icon()
+	update_appearance()
 	for(var/atom/movable/AM in src)
 		AM.throw_atom_into_space()
 
@@ -58,6 +58,7 @@
 
 /turf/open/space/transit/update_icon_state()
 	icon_state = "speedspace_ns_[get_transit_state(src)]"
+	return ..()
 
 /proc/get_transit_state(turf/T)
 	var/p = 9

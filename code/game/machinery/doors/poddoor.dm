@@ -5,7 +5,7 @@
 	icon_state = "closed"
 	var/id = 1
 	layer = BLASTDOOR_LAYER
-	closingLayer = CLOSED_BLASTDOOR_LAYER
+	closingLayer = BLASTDOOR_LAYER
 	sub_door = TRUE
 	explosion_block = 3
 	heat_proof = TRUE
@@ -16,6 +16,7 @@
 	damage_deflection = 70
 	poddoor = TRUE
 	assemblytype = /obj/structure/poddoor_assembly
+	smoothing_groups = list(SMOOTH_GROUP_AIRLOCK)
 	var/open_sound = 'sound/machines/airlocks/blastdoor.ogg'
 	var/close_sound = 'sound/machines/airlocks/blastdoor.ogg'
 
@@ -62,8 +63,9 @@
 		assembly.state = AIRLOCK_ASSEMBLY_NEEDS_ELECTRONICS
 		assembly.created_name = name
 		assembly.update_name()
-		assembly.update_icon()
+		assembly.update_appearance()
 		assembly.welded = TRUE
+		assembly.dir = dir
 		new /obj/item/electronics/airlock(loc)
 	qdel(src)
 
@@ -134,10 +136,8 @@
 			playsound(src, close_sound, 30, FALSE)
 
 /obj/machinery/door/poddoor/update_icon_state()
-	if(density)
-		icon_state = "closed"
-	else
-		icon_state = "open"
+	. = ..()
+	icon_state = density ? "closed" : "open"
 
 /obj/machinery/door/poddoor/try_to_activate_door(mob/user)
 	return

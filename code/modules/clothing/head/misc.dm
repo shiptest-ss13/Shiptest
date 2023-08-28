@@ -39,11 +39,6 @@
 	icon_state = "redcoat"
 	desc = "<i>'I guess it's a redhead.'</i>"
 
-/obj/item/clothing/head/mailman
-	name = "mailman's hat"
-	icon_state = "mailman"
-	desc = "<i>'Right-on-time'</i> mail service head wear."
-
 /obj/item/clothing/head/plaguedoctorhat
 	name = "plague doctor's hat"
 	desc = "These were once used by plague doctors. They're pretty much useless."
@@ -185,14 +180,6 @@
 	clothing_flags = SNUG_FIT
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 
-/obj/item/clothing/head/griffin
-	name = "griffon head"
-	desc = "Why not 'eagle head'? Who knows."
-	icon_state = "griffinhat"
-	item_state = "griffinhat"
-	clothing_flags = SNUG_FIT
-	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
-
 /obj/item/clothing/head/bearpelt
 	name = "bear pelt hat"
 	desc = "Fuzzy."
@@ -225,15 +212,11 @@
 	icon_state = "fedora_beige"
 	item_state = "fedora_beige"
 
-/obj/item/clothing/head/fedora/suicide_act(mob/user)
-	if(user.gender == FEMALE)
-		return 0
-	var/mob/living/carbon/human/H = user
-	user.visible_message("<span class='suicide'>[user] is donning [src]! It looks like [user.p_theyre()] trying to be nice to girls.</span>")
-	user.say("M'lady.", forced = "fedora suicide")
-	sleep(10)
-	H.facial_hairstyle = "Neckbeard"
-	return(BRUTELOSS)
+/obj/item/clothing/head/fedora/solgov
+	name = "solarian hat"
+	icon_state = "hat_solgov"
+	item_state = "hat_solgov"
+	desc = "A slick blue hat used by both solarian civilians and physicists."
 
 /obj/item/clothing/head/sombrero
 	name = "sombrero"
@@ -498,6 +481,15 @@
 	desc = "Tacticute."
 	icon_state = "inteqheadband"
 	item_state = "inteqheadband"
+
+/obj/item/clothing/head/inteq_peaked
+	name = "inteq peaked cap"
+	desc = "A peaked cap for Vanguards with a commanding authority, emblazoned with the golden badge of the IRMG."
+	icon_state = "inteq_peaked"
+	item_state = "inteq_peaked"
+	flags_inv = 0
+	armor = list("melee" = 40, "bullet" = 30, "laser" = 25, "energy" = 35, "bomb" = 25, "bio" = 10, "rad" = 0, "fire" = 50, "acid" = 60)
+	strip_delay = 60
 
 /obj/item/clothing/head/maidheadband
 	name = "maid headband"

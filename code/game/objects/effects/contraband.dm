@@ -139,7 +139,7 @@
 	if(ruined)
 		return
 	if(user.a_intent != INTENT_HARM)
-		to_chat(user, "<span class='danger'>You arent HARMFUL enough to rip the poster off the wall.</span>") //preventing accidental ripping posters off wall if not on harm intent
+		to_chat(user, "<span class='danger'>You aren't HARMFUL enough to rip the poster off the wall.</span>") //preventing accidental ripping posters off wall if not on harm intent
 		return
 
 	visible_message("<span class='danger'>[user] rips [src] in a single, decisive motion!</span>" )
@@ -377,7 +377,7 @@
 
 /obj/structure/sign/poster/contraband/d_day_promo
 	name = "D-Day Promo"
-	desc = "A promotional poster for some rapper. Famous for complaining about getting 'canceled' over supporting the syndicate, but in reality she was banned from almost every internet and organizion for praising the nuclear attack on Ares IV, which killed over 96% of the population of said world."
+	desc = "A promotional poster for some rapper. Famous for complaining about getting 'canceled' over supporting the Syndicate, but in reality she was banned from almost every internet and organization for praising the nuclear attack on Ares IV, responsible for the death of 96% of its population."
 	icon_state = "poster_dday" // human sprite by quin
 
 /obj/structure/sign/poster/contraband/stechkin
@@ -517,15 +517,15 @@
 
 /obj/structure/sign/poster/contraband/inteq_nt
 	name = "Inteq Recruitment"
-	desc = "Tired of your underpaying and abusive job at Nanotrasen? Join the IRMG Artificers! You won't get bullshit from us. Retrofit spacecraft and weaponry, field test weaponry, and higher pay."
+	desc = "Tired of your underpaying and abusive job at Nanotrasen? Join the IRMG Artificers! You won't get bullshit from us. Retrofit spacecraft and weaponry, field test weaponry, and earn higher pay!"
 	icon_state = "poster-inteq_poaching_nt"
 
 /obj/structure/sign/poster/contraband/inteq_gec
 	name = "Inteq Recruitment"
-	desc = "Tired of your boring union job at the GEC? Join the IRMG Artificers! You won't get bullshit from us. Retrofit spacecraft and weaponry, field test weaponry, and higher pay."
+	desc = "Tired of your boring union job at the GEC? Join the IRMG Artificers! You won't get bullshit from us. Retrofit spacecraft and weaponry, field test weaponry, and earn higher pay!"
 	icon_state = "poster-inteq_poaching_gec"
 
-/obj/structure/sign/poster/contraband/inteq_gec
+/obj/structure/sign/poster/contraband/winchester
 	name = "Winchester"
 	desc = "A poster advertising the Hunter's Pride Winchester lever action rifle and .38 Caliber bullets."
 	icon_state = "poster_winchester"
@@ -535,6 +535,16 @@
 	desc = "Eoehoma Firearms, the galaxy's favorite laser firearm manufacturer*. \n\
 	*DEFUNCT SINCE F.S. 450"
 	icon_state = "poster-eoehoma"
+
+/obj/structure/sign/poster/contraband/cardinal_fore_aft
+	name = "Captain Cardinal Fore and Aft"
+	desc = "Captain Cardinal would like to remind you that the front of the ship is fore, and the back of the ship is aft! Easy, right?"
+	icon_state = "poster-cardinal-1"
+
+/obj/structure/sign/poster/contraband/cardinal_port_starboard
+	name = "Captain Cardinal Port and Starbird"
+	desc = "Captain Cardinal would like to remind you that the left of the ship is port, and the right of the ship is starBIRD! Get it, right?"
+	icon_state = "poster-cardinal-2"
 
 //beginning of Nanotrasen approved posters. Expect corprate propaganda and motavation. You will usually only see this on Nanotrasen ships and stations
 /obj/structure/sign/poster/official
@@ -718,8 +728,8 @@
 
 /obj/structure/sign/poster/official/miners
 	name = "Nanotrasen Mining-Exploratory Corps Recruitment"
-	desc = "A poster recruiting more miners and explorers for new Nanotrasen holdings. It tells about how advanced Nanotrasen mining equipment is and the storied history of Nanotrasen."
-	icon_state = "poster-focus"
+	desc = "A poster recruiting more miners and explorers for new Nanotrasen holdings. It tells about how advanced Nanotrasen mining equipment and how it relates to the history of Nanotrasen."
+	icon_state = "posters-minersneeded"
 
 //Retro naontrasen posters. very inspired by the early apple logos and 70s-90s tech logos. Expect to see these on ancient Nanotrasen ships and stations, collectables, or callbacks to retro NT
 /obj/structure/sign/poster/retro
@@ -776,7 +786,7 @@
 
 /obj/structure/sign/poster/retro/lasergun_new
 	name = "Old Laser Gun"
-	desc = "A poster advertising a older version of the L-704, the L-204 model. It has a nice aesthetic."
+	desc = "A poster advertising an older version of the L-704, the L-204 model. It has a nice aesthetic."
 	icon_state = "poster-newl204_retro"
 
 /obj/structure/sign/poster/retro/radio
@@ -833,12 +843,12 @@
 
 /obj/structure/sign/poster/contraband/syndiemoth
 	name = "Syndie Moth - Nuclear Operation"
-	desc = "A Syndicate-commissioned poster that uses Syndie Moth(TM?) to tell the viewer to keep the nuclear authentication disk unsecured. No, we aren't doing that. It's signed by 'AspEv'."
+	desc = "A Syndicate-commissioned poster that uses Syndie Moth(TM?) to tell the viewer to keep the nuclear authentication disk unsecured. It's signed by 'AspEv'."
 	icon_state = "poster_moth_syndie"
 
 /obj/structure/sign/poster/contraband/mothpill
 	name = "Safety Pill - Methamphetamine"
-	desc = "A decommisioned poster that uses Safety Pill(TM?) to promote less-than-legal chemicals. This is one of the reasons we stopped outsourcing these posters. It's partially signed by 'AspEv'."
+	desc = "A decommisioned poster that uses Safety Pill(TM?) to promote less-than-legal chemicals. This is one of the reasons Nanotrasen stopped outsourcing their posters. It's partially signed by 'AspEv'."
 	icon_state = "poster_moth_pill"
 
 //Solgov poster pool. expect a focus on solarian based products and places. Expect these on solgov ships
@@ -920,7 +930,7 @@
 
 /obj/structure/sign/poster/solgov/nanomichi_ad
 	name = "Nanomichi Ad"
-	desc = " A poster advertising a early post-NOF solarian computer. Severly outdated, but the advert is now a pretty nifty decoration."
+	desc = " A poster advertising a early post-NOF solarian computer. Severely outdated, but the advert is now a pretty nifty decoration."
 	icon_state = "poster_nanomichi"
 
 /obj/structure/sign/poster/solgov/suns

@@ -1,3 +1,4 @@
+import { decodeHtmlEntities } from 'common/string';
 import { useBackend } from '../backend';
 import { Icon, Section, Table } from '../components';
 import { Window } from '../layouts';
@@ -14,7 +15,7 @@ export const CrewManifest = (props, context) => {
           <Section
             className={'CrewManifest--' + department}
             key={department}
-            title={department}
+            title={decodeHtmlEntities(department)}
           >
             <Table>
               {Object.entries(crew).map(([crewIndex, crewMember]) => (

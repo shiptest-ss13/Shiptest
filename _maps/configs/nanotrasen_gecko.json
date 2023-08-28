@@ -2,10 +2,20 @@
 	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
 	"map_name": "Gecko-class Salvage Runner",
 	"prefix": "NTSV",
-	"namelists": ["GENERAL", "BRITISH_NAVY", "MERCANTILE", "SPACE"],
+	"namelists": [
+		"NANOTRASEN",
+		"MERCANTILE",
+		"SPACE"
+	],
 	"map_short_name": "Gecko-class",
 	"map_path": "_maps/shuttles/shiptest/nanotrasen_gecko.dmm",
+	"description": "A bulky, robust, and exceedingly ugly salvage ship. The Gecko is nothing less than a flying brick full of redundant maintenance spaces and open-to-space salvage bays, powered by a temperamental TEG system, with a cramped crew space sandwiched in between. Due to its deeply obsolete design and the dangerous nature of salvage work, Geckos are often the final resting point for the careers of officers that have stepped on too many toes in the corporate world without doing anything outright criminal. Despite these shortcomings, Geckos offer a large amount of open space and a good supply of engineering equipment, which is all an enterprising engineer truly needs.",
+	"tags": [
+		"Mining",
+		"Engineering"
+	],
 	"limit": 2,
+	"starting_funds": 5000,
 	"job_slots": {
 		"Captain": {
 			"outfit": "/datum/outfit/job/captain/nt",

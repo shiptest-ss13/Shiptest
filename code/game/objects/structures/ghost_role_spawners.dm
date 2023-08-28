@@ -531,7 +531,6 @@
 /datum/outfit/syndicate_empty/sbc/med
 	name = "Syndicate Battlecruiser Ship Medical Doctor"
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile/evil
-	uniform = /obj/item/clothing/under/rank/medical/doctor/red
 	glasses = /obj/item/clothing/glasses/hud/health
 	belt = /obj/item/pda/medical
 	back = /obj/item/storage/backpack/duffelbag/syndie/med
@@ -914,16 +913,6 @@
 	name = "Syndicate Operative - Lost"
 	tc = 10
 
-/obj/effect/mob_spawn/human/lost/solgov
-	icon = 'icons/obj/machines/sleeper.dmi'
-	icon_state = "sleeper"
-	name = "old cryogenics pod"
-	desc = "A sleeper designed to put its occupant into a deep coma."
-	short_desc = "You are a SolGov Commander."
-	flavour_text = "You are being sent in to stop a treat. Your objective is- wait where the hell are you? You still have your gear but... you have no idea where you are?"
-	assignedrole = "Lost SolGov Commander"
-	outfit = /datum/outfit/solgov/commander
-
 //Slime Lab
 
 /obj/effect/mob_spawn/human/slime_rancher
@@ -939,7 +928,7 @@
 	flavour_text = "You and your fellows have been stationed here for more time than you've cared to track, especially since the computers have done it for you. . \
 	Keep the lab in good operating condition, breed slimes, and trade to get what you aren't able to produce yourselves. "
 	important_info = "Do not abandon the base. The place is too damn expensive to just run off from."
-	uniform = /obj/item/clothing/under/rank/rnd/scientist/xenobiologist/skirt
+	uniform = /obj/item/clothing/under/rank/rnd/scientist/skirt
 	shoes = /obj/item/clothing/shoes/sneakers/white
 	id = /obj/item/card/id/away/slime
 	assignedrole = "Slime Research Staff"

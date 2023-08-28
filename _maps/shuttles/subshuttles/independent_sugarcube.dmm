@@ -16,10 +16,9 @@
 /obj/effect/decal/cleanable/oil/slippery,
 /obj/docking_port/mobile{
 	can_move_docking_ports = 1;
-	dir = 2;
-	launch_status = 0;
+	preferred_direction = 4;
 	port_direction = 8;
-	preferred_direction = 4
+	dir = 2
 	},
 /turf/open/floor/plating,
 /area/ship/storage)
@@ -51,6 +50,9 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/machinery/light_switch{
+	pixel_y = 22
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "h" = (
@@ -69,9 +71,13 @@
 	dir = 4
 	},
 /obj/structure/window/reinforced/spawner/west,
-/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-2"
+	},
+/obj/machinery/light_switch{
+	pixel_y = 23;
+	pixel_x = -13
 	},
 /turf/open/floor/plating,
 /area/ship/storage)
@@ -88,9 +94,7 @@
 	},
 /obj/structure/window/reinforced/spawner/west,
 /obj/structure/window/reinforced/spawner/east,
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/plating,
 /area/ship/storage)
 "l" = (
@@ -99,9 +103,7 @@
 /area/ship/storage)
 "m" = (
 /obj/structure/window/reinforced/spawner/west,
-/obj/item/radio/intercom/wideband{
-	pixel_y = 26
-	},
+/obj/item/radio/intercom/wideband/directional/north,
 /obj/structure/chair/comfy/shuttle{
 	dir = 4
 	},
@@ -125,9 +127,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "p" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
+/obj/machinery/light/small/directional/east,
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
@@ -172,7 +172,7 @@
 	pixel_x = -7;
 	pixel_y = 5
 	},
-/obj/machinery/power/apc/auto_name/west,
+/obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -193,7 +193,9 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "w" = (
-/obj/machinery/door/airlock/maintenance_hatch,
+/obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4
+	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -280,7 +282,7 @@
 	},
 /obj/structure/window/reinforced/spawner/west,
 /obj/structure/window/reinforced/spawner/east,
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/floor/plating,
 /area/ship/storage)
 "H" = (

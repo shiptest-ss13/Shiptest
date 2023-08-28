@@ -99,6 +99,7 @@
 		"stamp-clown" = 'icons/stamp_icons/large_stamp-clown.png',
 		"stamp-deny" = 'icons/stamp_icons/large_stamp-deny.png',
 		"stamp-ok" = 'icons/stamp_icons/large_stamp-ok.png',
+		"stamp-void" = 'icons/stamp_icons/large_stamp-void.png',
 		"stamp-hop" = 'icons/stamp_icons/large_stamp-hop.png',
 		"stamp-cmo" = 'icons/stamp_icons/large_stamp-cmo.png',
 		"stamp-ce" = 'icons/stamp_icons/large_stamp-ce.png',
@@ -106,9 +107,18 @@
 		"stamp-rd" = 'icons/stamp_icons/large_stamp-rd.png',
 		"stamp-cap" = 'icons/stamp_icons/large_stamp-cap.png',
 		"stamp-qm" = 'icons/stamp_icons/large_stamp-qm.png',
-		"stamp-law" = 'icons/stamp_icons/large_stamp-law.png'
+		"stamp-law" = 'icons/stamp_icons/large_stamp-law.png',
+		"stamp-chap" = 'icons/stamp_icons/large_stamp-chap.png',
+		"stamp-mime" = 'icons/stamp_icons/large_stamp-mime.png',
+		"stamp-centcom" = 'icons/stamp_icons/large_stamp-centcom.png',
+		"stamp-syndicate" = 'icons/stamp_icons/large_stamp-syndicate.png',
+		"stamp-solgov" = 'icons/stamp_icons/large_stamp-solgov.png'
 	)
 
+/datum/asset/simple/fuckywucky
+	assets = list(
+		"fuckywucky.png" = 'html/fuckywucky.png'
+	)
 
 /datum/asset/simple/IRV
 	assets = list(
@@ -142,6 +152,12 @@
 	assets = list(
 		"sga.ttf" = 'html/sga.ttf'
 	)
+
+/// Override this in order to start the creation of the spritehseet.
+/// This is where all your Insert, InsertAll, etc calls should be inside.
+/datum/asset/spritesheet/proc/create_spritesheets()
+	SHOULD_CALL_PARENT(FALSE)
+	CRASH("create_spritesheets() not implemented for [type]!")
 
 /datum/asset/spritesheet/chat
 	name = "chat"
@@ -401,4 +417,24 @@
 /datum/asset/simple/pai
 	assets = list(
 		"paigrid.png" = 'html/paigrid.png'
+	)
+
+/datum/asset/spritesheet/fish
+	name = "fish"
+
+/datum/asset/spritesheet/fish/create_spritesheets()
+	for (var/path in subtypesof(/obj/item/fish))
+		var/obj/item/fish/fish_type = path
+		var/fish_icon = initial(fish_type.icon)
+		var/fish_icon_state = initial(fish_type.icon_state)
+		var/id = sanitize_css_class_name("[fish_icon][fish_icon_state]")
+		if(sprites[id]) //no dupes
+			continue
+		Insert(id, fish_icon, fish_icon_state)
+
+
+/datum/asset/simple/fishing_minigame
+	assets = list(
+		"fishing_background_default" = 'icons/ui_icons/fishing/default.png',
+		"fishing_background_lavaland" = 'icons/ui_icons/fishing/lavaland.png'
 	)

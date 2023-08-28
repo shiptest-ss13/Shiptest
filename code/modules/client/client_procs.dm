@@ -220,7 +220,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	// Instantiate tgui panel
 	tgui_panel = new(src)
 
-	GLOB.ahelp_tickets.ClientLogin(src)
+	GLOB.ahelp_tickets.client_login(src)
 	GLOB.interviews.client_login(src)
 	var/connecting_admin = FALSE //because de-admined admins connecting should be treated like admins.
 	//Admin Authorisation
@@ -489,7 +489,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	GLOB.clients -= src
 	GLOB.directory -= ckey
 	log_access("Logout: [key_name(src)]")
-	GLOB.ahelp_tickets.ClientLogout(src)
+	GLOB.ahelp_tickets.client_logout(src)
 	GLOB.interviews.client_logout(src)
 	SSserver_maint.UpdateHubStatus()
 	if(credits)
@@ -520,10 +520,15 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	QDEL_LIST_ASSOC_VAL(char_render_holders)
 	if(movingmob != null)
 		LAZYREMOVE(movingmob.client_mobs_in_contents, mob)
+		movingmob = null
+	active_mousedown_item = null
+	QDEL_NULL(view_size)
+	QDEL_NULL(void)
+	QDEL_NULL(tooltips)
 	SSambience.ambience_listening_clients -= src
 	seen_messages = null
 	Master.UpdateTickRate()
-	. = ..() //Even though we're going to be hard deleted there are still some things that want to know the destroy is happening
+	..() //Even though we're going to be hard deleted there are still some things that want to know the destroy is happening
 	return QDEL_HINT_HARDDEL_NOW
 
 /client/proc/set_client_age_from_db(connectiontopic)
@@ -885,11 +890,9 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 			return
 
 	if (prefs.hotkeys)
-		// If hotkey mode is enabled, then clicking the map will automatically
-		// unfocus the text bar. This removes the red color from the text bar
-		// so that the visual focus indicator matches reality.
-		winset(src, null, "input.background-color=[COLOR_INPUT_DISABLED]")
-
+		winset(src, null, "input.focus=false")
+	else
+		winset(src, null, "input.focus=true")
 	..()
 
 /client/proc/add_verbs_from_config()

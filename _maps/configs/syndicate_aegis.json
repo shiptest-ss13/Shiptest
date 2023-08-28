@@ -3,38 +3,55 @@
 	"map_name": "Aegis-class Long Term Care Ship",
 	"map_short_name": "Aegis-class",
 	"map_path": "_maps/shuttles/shiptest/syndicate_aegis.dmm",
+	"description": "Approximately a third of the way through the ICW, it became apparent that the Syndicate could not muster the sheer throwaway manpower that Nanotrasen could with its swaths of mercenaries and disposable personnel. Instead, the Syndicate began to adopt a much more conservative approach to maintaining personnel, by establishing an initiative to create a host of medical vessels designed to rescue and rehabilitate the fallen. While the Li Tieguai filled the rescue role, the Aegis-Class was to fill the rehabilitation role. Featuring a host of ‘quality of life’ features for long-term patients (a full bar, a hydroponics setup, and so on), an expansive medical bay and an array of comfort fixtures like couches and gardens, the Aegis is perfect for aspiring doctors or wounded patients.",
+	"tags": [
+		"Botany",
+		"Medical",
+		"RP Focus"
+	],
 	"map_id": "syndicate_aegis",
+	"limit": 1,
+	"namelists": [
+		"SUNS",
+		"SPACE",
+		"GENERAL"
+	],
 	"job_slots": {
-	"Captain": {
+		"Captain": {
 			"outfit": "/datum/outfit/job/captain/syndicate",
 			"officer": true,
 			"slots": 1
-	},
-	"Lead Doctor": {
-		"outfit": "/datum/outfit/job/cmo/syndicate/nsv",
-		"slots": 1
-	},
-	"Ship Doctor":{
-		"outfit": "/datum/outfit/job/doctor/syndicate/nsv",
-		"slots": 2
-	},
-	"Mechanic": {
-		"outfit": "/datum/outfit/job/engineer/syndicate",
-		"slots": 1
-	},
-	"Deck Service Assistant": {
-		"outfit": "/datum/outfit/job/botanist/syndicate/nsv",
-		"slots": 2
+		},
 
+		"Lead Doctor": {
+			"outfit": "/datum/outfit/job/cmo/syndicate/nsv",
+			"slots": 1
+		},
+
+		"Ship Doctor":{
+			"outfit": "/datum/outfit/job/doctor/syndicate/nsv",
+			"slots": 2
+		},
+
+		"Mechanic": {
+			"outfit": "/datum/outfit/job/engineer/syndicate",
+			"slots": 1
+		},
+
+		"Deck Service Assistant": {
+			"outfit": "/datum/outfit/job/botanist/syndicate/nsv",
+			"slots": 2
+		},
+
+		"Ship Psychologist": {
+			"outfit": "/datum/outfit/job/psychologist/syndicate/nsv",
+			"slots": 1
+		},
+
+		"Long Term Patient": {
+			"outfit": "/datum/outfit/job/prisoner/syndicatepatient",
+			"slots": 2
+		}
 	},
-	"Ship Psychologist": {
-		"outfit": "/datum/outfit/job/psychologist/syndicate/nsv",
-		"slots": 1
-	},
-	"Long Term Patient": {
-		"outfit": "/datum/outfit/job/prisoner/longtermpatient",
-		"slots": 2
-	}
-},
-"enabled": true
+	"enabled": true
 }

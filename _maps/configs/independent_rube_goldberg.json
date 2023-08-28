@@ -1,9 +1,14 @@
 {
 	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
 	"prefix": "ISV",
-	"namelists": ["GENERAL", "NATURAL", "ENGINEERING"],
+	"namelists": [
+		"GENERAL",
+		"ENGINEERING"
+	],
 	"map_name": "Rube Goldberg-class Engineering Project",
 	"map_short_name": "Rube Goldberg-class",
+	"description": "The Rube Goldberg-class Engineering Project is an experience, and a monument to insanity. Featuring a powerful supermatter engine in combination with an Escher-esque structural layout, complicated pipe and wire network, and utter disregard for basic safety procedures and common sense, this ship is a disaster waiting to happen.",
+	"tags": ["Engineering", "Construction"],
 	"map_path": "_maps/shuttles/shiptest/independent_rube_goldberg.dmm",
 	"limit": 1,
 	"job_slots": {

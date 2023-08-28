@@ -2,8 +2,15 @@
 	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
 	"map_name": "Masinyane-Class Personal Shuttle",
 	"map_short_name": "Masinyane-Class",
+	"description": "The Masinyane is the sports car of space, with the price tag to match. Staggeringly fast and equipped with top of the line gear, Masinyanes are generally found in the hands of lone pilots with far more money than sense. The Masinyane was only ever produced in very limited numbers, and a series of fraud investigations involving a complex web of production contractors and shell companies have effectively put a halt to any further production. As such, they are exceedingly rare even in the core worlds – on the Frontier, they are practically non-existent.",
+	"tags": [
+		"Generalist"
+	],
 	"prefix": "ISV",
-	"namelists": ["MYTHOLOGICAL", "NATURAL"],
+	"namelists": [
+		"MYTHOLOGICAL",
+		"NATURAL"
+	],
 	"map_path": "_maps/shuttles/shiptest/independent_masinyane.dmm",
 	"job_slots": {
 		"Private Ship Owner": {

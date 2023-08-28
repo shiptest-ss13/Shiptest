@@ -2,13 +2,28 @@
 	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
 	"map_name": "Colossus-Class Armored Frigate",
 	"prefix": "IRMV",
-	"namelists": ["MYTHOLOGICAL", "BEASTS", "NATURAL_AGGRESSIVE"],
+	"description": "The mainstay of Inteq’s mercenary fleet, the Colossus is a professionally-militarized freighter like most of Inteq’s ships, and is designed to operate independently for some time, serving IRMG’s interests and providing vital mercenary services wherever they are needed. Key features include a secure and well-stocked armory and ample crew space, as well as a spacious cargo bay, which crews often refurbish into additional recreational or training space.",
+	"tags": [
+		"Combat",
+		"Riot"
+	],
+	"namelists": [
+		"MYTHOLOGICAL",
+		"BEASTS",
+		"NATURAL_AGGRESSIVE",
+		"INTEQ"
+	],
 	"map_short_name": "Colossus-class",
 	"map_path": "_maps/shuttles/shiptest/inteq_colossus.dmm",
 	"limit": 1,
 	"job_slots": {
 		"Vanguard": {
 			"outfit": "/datum/outfit/job/captain/inteq/naked",
+			"officer": true,
+			"slots": 1
+		},
+		"Master At Arms": {
+			"outfit": "/datum/outfit/job/warden/inteq",
 			"officer": true,
 			"slots": 1
 		},

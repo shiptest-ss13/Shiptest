@@ -26,6 +26,7 @@
 	max_integrity = 300
 	greyscale_icon_state = "backpack"
 	greyscale_colors = list(list(13, 17), list(12, 17), list(12, 21))
+	supports_variations = VOX_VARIATION
 
 /obj/item/storage/backpack/ComponentInitialize()
 	. = ..()
@@ -61,14 +62,6 @@
 	STR.max_w_class = WEIGHT_CLASS_GIGANTIC
 	STR.max_combined_w_class = 35
 
-/obj/item/storage/backpack/holding/suicide_act(mob/living/user)
-	user.visible_message("<span class='suicide'>[user] is jumping into [src]! It looks like [user.p_theyre()] trying to commit suicide.</span>")
-	user.dropItemToGround(src, TRUE)
-	user.Stun(100, ignore_canstun = TRUE)
-	sleep(20)
-	playsound(src, "rustle", 50, TRUE, -5)
-	qdel(user)
-
 /obj/item/storage/backpack/santabag
 	name = "Santa's Gift Bag"
 	desc = "Space Santa uses this to deliver presents to all the nice children in space in Christmas! Wow, it's pretty big!"
@@ -85,10 +78,6 @@
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
 	STR.max_combined_w_class = 60
-
-/obj/item/storage/backpack/santabag/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] places [src] over [user.p_their()] head and pulls it tight! It looks like [user.p_they()] [user.p_are()]n't in the Christmas spirit...</span>")
-	return (OXYLOSS)
 
 /obj/item/storage/backpack/santabag/proc/regenerate_presents()
 	addtimer(CALLBACK(src, .proc/regenerate_presents), 30 SECONDS)
@@ -232,6 +221,7 @@
 	item_state = "satchel-norm"
 	greyscale_icon_state = "satchel"
 	greyscale_colors = list(list(11, 12), list(17, 18), list(10, 11))
+	supports_variations = VOX_VARIATION
 
 /obj/item/storage/backpack/satchel/leather
 	name = "leather satchel"
@@ -353,9 +343,6 @@
 	for(var/i in 1 to 2)
 		var/ctype = pick(contraband)
 		new ctype(src)
-
-/obj/item/storage/backpack/satchel/flat/with_drip/PopulateContents()
-	new /obj/item/clothing/under/drip(src)
 
 /obj/item/storage/backpack/satchel/flat/with_tools/PopulateContents()
 	new /obj/item/stack/tile/plasteel(src)

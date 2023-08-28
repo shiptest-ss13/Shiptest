@@ -118,6 +118,9 @@
 	new /obj/item/clothing/mask/gas/carp(src)
 	new /obj/item/kitchen/knife/hunting(src)
 	new /obj/item/storage/box/papersack/meat(src)
+	new /obj/item/fishing_rod(src)
+	new /obj/item/fishing_line(src)
+	new /obj/item/fishing_hook(src)
 
 /obj/item/storage/box/hero/ghostbuster
 	name = "Spectre Inspector - 1980's."
@@ -166,13 +169,6 @@
 	w_class = WEIGHT_CLASS_BULKY
 	attack_verb = list("skubbed")
 
-/obj/item/skub/suicide_act(mob/living/user)
-	user.visible_message("<span class='suicide'>[user] has declared themself as anti-skub! The skub tears them apart!</span>")
-
-	user.gib()
-	playsound(src, 'sound/items/eatfood.ogg', 50, TRUE, -1)
-	return MANUAL_SUICIDE
-
 /obj/item/virgin_mary
 	name = "\proper a picture of the virgin mary"
 	desc = "A small, cheap icon depicting the virgin mother."
@@ -219,17 +215,6 @@
 	to_chat(joe, "<span class='userdanger'>Being inducted into the mafia does not grant antagonist status.</span>")
 
 #undef NICKNAME_CAP
-
-/obj/item/virgin_mary/suicide_act(mob/living/user)
-	user.visible_message("<span class='suicide'>[user] starts saying their Hail Mary's at a terrifying pace! It looks like [user.p_theyre()] trying to enter the afterlife!</span>")
-	user.say("Hail Mary, full of grace, the Lord is with thee. Blessed are thou amongst women, and blessed is the fruit of thy womb, Jesus. Holy Mary, mother of God, pray for us sinners, now and at the hour of our death. Amen. ", forced = /obj/item/virgin_mary)
-	addtimer(CALLBACK(src, .proc/manual_suicide, user), 75)
-	addtimer(CALLBACK(user, /atom/movable/proc/say, "O my Mother, preserve me this day from mortal sin..."), 50)
-	return MANUAL_SUICIDE
-
-/obj/item/virgin_mary/proc/manual_suicide(mob/living/user)
-	user.adjustOxyLoss(200)
-	user.death(0)
 
 /obj/item/choice_beacon/ouija
 	name = "spirit board delivery beacon"

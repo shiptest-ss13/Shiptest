@@ -17,6 +17,7 @@
 	var/list/can_hold								//if this is set, only items, and their children, will fit
 	var/list/cant_hold								//if this is set, items, and their children, won't fit
 	var/list/exception_hold           //if set, these items will be the exception to the max size of object that can fit.
+	var/list/can_hold_trait							/// If set can only contain stuff with this single trait present.
 
 	var/can_hold_description
 
@@ -643,7 +644,7 @@
 			if(!stop_messages)
 				to_chat(M, "<span class='warning'>[host] cannot hold [I]!</span>")
 			return FALSE
-	if(is_type_in_typecache(I, cant_hold) || HAS_TRAIT(I, TRAIT_NO_STORAGE_INSERT)) //Items which this container can't hold.
+	if(is_type_in_typecache(I, cant_hold) || HAS_TRAIT(I, TRAIT_NO_STORAGE_INSERT) || (can_hold_trait && !HAS_TRAIT(I, can_hold_trait))) //Items which this container can't hold.
 		if(!stop_messages)
 			to_chat(M, "<span class='warning'>[host] cannot hold [I]!</span>")
 		return FALSE
@@ -712,7 +713,7 @@
 /datum/component/storage/proc/update_icon()
 	if(isobj(parent))
 		var/obj/O = parent
-		O.update_icon()
+		O.update_appearance()
 
 /datum/component/storage/proc/signal_insertion_attempt(datum/source, obj/item/I, mob/M, silent = FALSE, force = FALSE)
 	SIGNAL_HANDLER

@@ -5,8 +5,6 @@
 /area/template_noop)
 "aS" = (
 /obj/structure/rack,
-/obj/item/clothing/under/costume/singer/blue,
-/obj/item/clothing/under/costume/singer/yellow,
 /turf/open/floor/plating,
 /area/ruin/jungle/onceler/main)
 "bh" = (
@@ -112,9 +110,7 @@
 /turf/open/floor/plating,
 /area/ruin/jungle/onceler/main)
 "lb" = (
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/mineral/titanium/yellow,
 /area/ruin/jungle/onceler/main)
 "lz" = (
@@ -201,9 +197,7 @@
 /area/ruin/jungle/onceler/main)
 "wZ" = (
 /obj/effect/turf_decal/dept/mining,
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/plating,
 /area/ruin/jungle/onceler/main)
 "xT" = (
@@ -299,11 +293,6 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/jungle/onceler/main)
-"IE" = (
-/obj/structure/rack,
-/obj/item/clothing/under/rank/engineering/engineer/maintenance_tech/skirt,
-/turf/open/floor/plating,
-/area/ruin/jungle/onceler/main)
 "LW" = (
 /obj/structure/rack,
 /obj/item/clothing/under/costume/yakuza,
@@ -333,9 +322,7 @@
 /turf/open/floor/plating,
 /area/ruin/jungle/onceler/main)
 "Oh" = (
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /obj/structure/sign/poster/retro/build{
 	pixel_y = 32
 	},
@@ -383,7 +370,7 @@
 /turf/open/floor/plating/dirt/jungle,
 /area/template_noop)
 "RV" = (
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 8
 	},
@@ -414,9 +401,7 @@
 /area/ruin/jungle/onceler/main)
 "UD" = (
 /obj/effect/turf_decal/dept/mining,
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/plating,
 /area/ruin/jungle/onceler/main)
 "UJ" = (
@@ -455,7 +440,7 @@
 /turf/open/floor/plating,
 /area/ruin/jungle/onceler/main)
 "YM" = (
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/floor/plating,
 /area/ruin/jungle/onceler/main)
 "ZU" = (
@@ -954,7 +939,7 @@ bh
 Pb
 Ws
 zu
-IE
+aS
 AR
 NO
 ir

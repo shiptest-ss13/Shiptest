@@ -46,7 +46,7 @@
 		turn_on(user)
 	else
 		turn_off(user)
-	update_icon()
+	update_appearance()
 
 /obj/item/clothing/head/hardhat/update_icon_state()
 	if(on)
@@ -55,6 +55,7 @@
 	else
 		icon_state = "[initial(icon_state)]"
 		item_state = "[initial(icon_state)]"
+	return ..()
 
 /obj/item/clothing/head/hardhat/proc/turn_on(mob/user)
 	set_light_on(TRUE)
@@ -111,6 +112,11 @@
 	item_state = "hardhat_dblue"
 	dog_fashion = null
 
+/obj/item/clothing/head/hardhat/solgov
+	icon_state = "hardhat_solgov"
+	item_state = "hardhat_solgov"
+	dog_fashion = null
+
 /obj/item/clothing/head/hardhat/atmos
 	icon_state = "hardhat_atmos"
 	item_state = "hardhat_atmos"
@@ -153,7 +159,7 @@
 
 /obj/item/clothing/head/hardhat/weldhat/Initialize()
 	. = ..()
-	update_icon()
+	update_appearance()
 
 /obj/item/clothing/head/hardhat/weldhat/attack_self(mob/living/user)
 	toggle_helmet_light(user)
@@ -165,7 +171,7 @@
 /obj/item/clothing/head/hardhat/weldhat/proc/toggle_welding_screen(mob/living/user)
 	if(weldingvisortoggle(user))
 		playsound(src, 'sound/mecha/mechmove03.ogg', 50, TRUE) //Visors don't just come from nothing
-	update_icon()
+	update_appearance()
 
 /obj/item/clothing/head/hardhat/weldhat/worn_overlays(isinhands)
 	. = ..()

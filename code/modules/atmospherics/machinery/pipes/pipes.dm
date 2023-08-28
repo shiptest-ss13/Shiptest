@@ -86,7 +86,6 @@
 	QDEL_NULL(parent)
 
 	releaseAirToTurf()
-	QDEL_NULL(air_temporary)
 
 	var/turf/T = loc
 	for(var/obj/machinery/meter/meter in T)
@@ -95,6 +94,10 @@
 			meter.transfer_fingerprints_to(PM)
 			qdel(meter)
 	. = ..()
+
+/obj/machinery/atmospherics/pipe/update_icon()
+	. = ..()
+	update_layer()
 
 /obj/machinery/atmospherics/pipe/proc/update_node_icon()
 	for(var/i in 1 to device_type)
