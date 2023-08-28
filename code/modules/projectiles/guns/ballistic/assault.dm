@@ -198,17 +198,6 @@
 	SEND_SIGNAL(secondary, COMSIG_GUN_DISABLE_AUTOFIRE)
 	update_appearance()
 
-/*
-/obj/item/gun/ballistic/automatic/assualt/e40/equipped(mob/user)
-	. = ..()
-	SEND_SIGNAL(secondary, COMSIG_ITEM_EQUIPPED)
-//	secondary.equipped(user) // this looks unhinged, but the only way i can think of getting autofire to work with the secondary weapon
-
-/obj/item/gun/ballistic/automatic/assualt/e40/dropped(mob/user)
-	. = ..()
-	secondary.dropped(user, TRUE) // same here
-*/
-
 /obj/item/gun/ballistic/automatic/assualt/e40/do_autofire(datum/source, atom/target, mob/living/shooter, params)
 	if(select == 2)
 		secondary.do_autofire(source, target, shooter, params)
