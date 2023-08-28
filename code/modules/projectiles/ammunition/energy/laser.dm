@@ -70,7 +70,7 @@
 /obj/item/ammo_casing/energy/laser/pulse
 	projectile_type = /obj/projectile/beam/pulse
 	e_cost = 2000
-	select_name = "Destroy"
+	select_name = "DESTROY"
 	fire_sound = 'sound/weapons/gun/laser/heavy_laser.ogg'
 
 /obj/item/ammo_casing/energy/laser/bluetag

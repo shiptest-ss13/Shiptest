@@ -38,6 +38,7 @@
 /obj/item/gun/energy/e_gun/hades
 	name = "SL AL-655 'Hades' energy rifle"
 	desc = "The standard issue rifle of the Nanotrasen Security Forces. Most have been mothballed into storage following the ICW, and aren't often issued to low ranking security divisions."
+	icon = 'icons/obj/guns/48x32guns.dmi'
 	icon_state = "energytac"
 	ammo_x_offset = 2
 	charge_sections = 5

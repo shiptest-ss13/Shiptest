@@ -58,13 +58,13 @@
 
 	id = /obj/item/card/id/ert/security
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/sec
+	suit_store = /obj/item/gun/energy/e_gun/hades
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
 	back = /obj/item/storage/backpack/ert/security
 	belt = /obj/item/storage/belt/security/full
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
 		/obj/item/storage/box/handcuffs=1,\
-		/obj/item/gun/energy/e_gun/hades=1,\
 		/obj/item/melee/baton/loaded=1)
 
 /datum/outfit/centcom/ert/security/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
