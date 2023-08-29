@@ -32,7 +32,7 @@
 /turf/open/floor/concrete/Initialize()
 	. = ..()
 	check_harden()
-	update_icon()
+	update_appearance()
 
 /turf/open/floor/concrete/examine(mob/user)
 	. = ..()
@@ -86,7 +86,7 @@
 	var/turf/open/floor/concrete/newconc = ChangeTurf(choice, flags = CHANGETURF_INHERIT_AIR)
 	newconc.harden_lvl = old_harden
 	newconc.check_harden()
-	newconc.update_icon()
+	newconc.update_appearance()
 	return TRUE
 
 /turf/open/floor/concrete/proc/check_menu(mob/living/user)
@@ -102,7 +102,7 @@
 		return
 	if(!(entered_dirs & AM.dir))
 		entered_dirs |= AM.dir
-		update_icon()
+		update_appearance()
 
 /turf/open/floor/concrete/Exited(atom/movable/AM)
 	. = ..()
@@ -110,7 +110,7 @@
 		return
 	if(!(exited_dirs & AM.dir))
 		exited_dirs |= AM.dir
-		update_icon()
+		update_appearance()
 
 /turf/open/floor/concrete/update_icon()
 	. = ..()
@@ -161,7 +161,7 @@
 		if(old_exited_dirs & Ddir)
 			exited_dirs |= NDir
 
-	update_icon()
+	update_appearance()
 	return ..()
 
 /turf/open/floor/concrete/proc/check_harden()
@@ -173,7 +173,7 @@
 	harden_lvl = min(harden_lvl + (wait/time_to_harden), 1)
 	if(harden_lvl == 1)
 		STOP_PROCESSING(SSobj, src)
-	update_icon()
+	update_appearance()
 
 /turf/open/floor/concrete/break_tile()
 	if(harden_lvl < 0.8)
@@ -186,7 +186,7 @@
 		return
 	harden_lvl = 1 // burning while soft instantly hardens
 	STOP_PROCESSING(SSobj, src)
-	update_icon()
+	update_appearance()
 	return
 
 /turf/open/floor/concrete/try_replace_tile(obj/item/stack/tile/T, mob/user, params)

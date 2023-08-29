@@ -60,6 +60,7 @@
 
 /obj/item/flamethrower/update_icon_state()
 	item_state = "flamethrower_[lit]"
+	return ..()
 
 /obj/item/flamethrower/update_overlays()
 	. = ..()
@@ -104,7 +105,7 @@
 	else if(W.tool_behaviour == TOOL_SCREWDRIVER && igniter && !lit)
 		status = !status
 		to_chat(user, "<span class='notice'>[igniter] is now [status ? "secured" : "unsecured"]!</span>")
-		update_icon()
+		update_appearance()
 		return
 
 	else if(isigniter(W))
@@ -116,7 +117,7 @@
 		if(!user.transferItemToLoc(W, src))
 			return
 		igniter = I
-		update_icon()
+		update_appearance()
 		return
 
 	else if(istype(W, /obj/item/reagent_containers) && !(W.item_flags & ABSTRACT) && W.is_open_container())
@@ -129,7 +130,7 @@
 		if(!user.transferItemToLoc(W, src))
 			return
 		beaker = W
-		update_icon()
+		update_appearance()
 		return
 
 	else
@@ -144,7 +145,7 @@
 		user.put_in_hands(beaker)
 		beaker = null
 		to_chat(user, "<span class='notice'>You remove the fuel container from [src]!</span>")
-		update_icon()
+		update_appearance()
 
 /obj/item/flamethrower/examine(mob/user)
 	. = ..()
@@ -170,7 +171,7 @@
 		playsound(loc, deac_sound, 50, TRUE)
 		STOP_PROCESSING(SSobj,src)
 	set_light_on(lit)
-	update_icon()
+	update_appearance()
 
 /obj/item/flamethrower/CheckParts(list/parts_list)
 	..()
@@ -179,7 +180,7 @@
 	weldtool.status = FALSE
 	igniter.secured = FALSE
 	status = TRUE
-	update_icon()
+	update_appearance()
 
 #define REQUIRED_POWER_TO_FIRE_FLAMETHROWER 10
 #define FLAMETHROWER_POWER_MULTIPLIER 0.5
@@ -268,7 +269,7 @@
 		if(create_with_tank)
 			beaker = new /obj/item/reagent_containers/glass/beaker/large(src)
 			beaker.reagents.add_reagent(/datum/reagent/fuel, beaker.reagents.maximum_volume)
-		update_icon()
+		update_appearance()
 
 /obj/item/flamethrower/full
 	icon = 'icons/obj/guns/48x32guns.dmi'
@@ -277,6 +278,7 @@
 
 /obj/item/flamethrower/full/update_icon_state()
 	item_state = "prebuilt_flamethrower_[lit]"
+	return ..()
 
 /obj/item/flamethrower/full/tank
 	create_with_tank = TRUE
