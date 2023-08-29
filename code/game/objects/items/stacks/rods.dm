@@ -29,6 +29,7 @@ GLOBAL_LIST_INIT(rod_recipes, list ( \
 	hitsound = 'sound/weapons/gun/general/grenade_launch.ogg'
 	embedding = list()
 	novariants = TRUE
+	var/impact_sound = 'sound/effects/metalpipe.ogg'
 
 /obj/item/stack/rods/Initialize(mapload, new_amount, merge = TRUE)
 	. = ..()
@@ -76,6 +77,12 @@ GLOBAL_LIST_INIT(rod_recipes, list ( \
 			A.initialize_custom_food(src, S, user)
 	else
 		return ..()
+
+//when thrown on impact, rods make an audio sound
+/obj/item/stack/rods/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
+	. = ..()
+	if(isfloorturf(hit_atom))
+		playsound(get_turf(src), impact_sound, 100, TRUE)
 
 /obj/item/stack/rods/cyborg
 	custom_materials = null
