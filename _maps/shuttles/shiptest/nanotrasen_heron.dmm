@@ -3942,10 +3942,6 @@
 	dir = 1;
 	pixel_y = -28
 	},
-/obj/item/clothing/under/rank/rnd/roboticist/biomech_engineer,
-/obj/item/clothing/under/rank/rnd/roboticist/biomech_engineer/skirt,
-/obj/item/clothing/under/rank/rnd/roboticist/mech_engineer,
-/obj/item/clothing/under/rank/rnd/roboticist/mech_engineer/skirt,
 /obj/item/clothing/under/rank/rnd/roboticist,
 /obj/item/clothing/under/rank/rnd/research_director/turtleneck,
 /obj/item/clothing/under/rank/rnd/roboticist/skirt,
@@ -6275,12 +6271,10 @@
 /area/ship/engineering/atmospherics)
 "xb" = (
 /obj/structure/table/reinforced,
-/obj/machinery/photocopier/faxmachine/longrange{
-	department = "Internal Affairs"
-	},
 /obj/effect/turf_decal/techfloor{
 	dir = 5
 	},
+/obj/machinery/fax,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "xd" = (
@@ -10403,8 +10397,6 @@
 	name = "Roboticists Locker";
 	pixel_x = 28
 	},
-/obj/item/clothing/under/rank/rnd/roboticist/mech_engineer,
-/obj/item/clothing/under/rank/rnd/roboticist/mech_engineer/skirt,
 /obj/item/clothing/suit/longcoat/roboblack,
 /obj/item/clothing/suit/longcoat/robowhite,
 /obj/item/clothing/head/beret/sci,
@@ -10493,7 +10485,6 @@
 /obj/item/clothing/shoes/workboots,
 /obj/item/clothing/suit/hazardvest,
 /obj/item/clothing/under/rank/engineering/engineer/nt,
-/obj/item/clothing/under/rank/engineering/engineer/maintenance_tech/lp,
 /obj/item/clothing/glasses/meson/engine,
 /obj/item/clothing/head/welding,
 /obj/item/clothing/head/hardhat/weldhat,
@@ -13340,8 +13331,6 @@
 	name = "Janitorial Closet";
 	pixel_x = 28
 	},
-/obj/item/clothing/under/rank/civilian/janitor/custodian,
-/obj/item/clothing/under/rank/civilian/janitor/sanitation_tech,
 /obj/item/clothing/suit/longcoat/science{
 	name = "janitor longcoat"
 	},
