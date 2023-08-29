@@ -10,6 +10,8 @@
 	spillable = FALSE
 	w_class = WEIGHT_CLASS_SMALL
 	volume = 50
+	cookable = FALSE
+	cooked = FALSE
 
 /obj/item/reagent_containers/food/snacks/ration/Initialize(mapload)
 	. = ..()
@@ -36,9 +38,23 @@
 		return 0
 	return ..()
 
+/obj/item/reagent_containers/food/snacks/ration/microwave_act(obj/machinery/microwave/Heater)
+	if (cookable == FALSE)
+		. = ..()
+	else
+		name = "warm [name(init)]"
+		bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/vitamin = 2)
+		cooked = TRUE
+
+/obj/item/reagent_containers/food/snacks/ration/examine(mob/user)
+	. = ..()
+	if(cookable && !cooked)
+		. += "\nIt can be cooked in a microwave or warmed using a flameless ration heater."
+
 /obj/item/reagent_containers/food/snacks/ration/entree
 	icon_state = "ration_main"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6)
+	cookable = TRUE
 
 /obj/item/reagent_containers/food/snacks/ration/side
 	icon_state = "ration_side"
@@ -173,11 +189,25 @@
 	foodtype = GRAIN | DAIRY | MEAT
 
 /obj/item/reagent_containers/food/snacks/ration/entree/blackened_calamari
+	name = "blackened calamari"
+	desc = "Tender calamari coated in a savory blackened seasoning, creating a flavorful and satisfying seafood dish."
+	filling_color = "#336699"
+	tastes = list("calamari" = 1)
+	foodtype = MEAT
 
 /obj/item/reagent_containers/food/snacks/ration/entree/elbow_macaroni
+	name = "elbow macaroni"
+	desc = "A classic dish of elbow macaroni, offering a simple and satisfying meal."
+	filling_color = "#ffcc00"
+	tastes = list("macaroni" = 1)
+	foodtype = GRAIN
 
 /obj/item/reagent_containers/food/snacks/ration/entree/cheese_pizza_slice
-
+	name = "cheese pizza slice"
+	desc = "A classic cheese pizza slice topped with melted cheese, offering a simple and satisfying snack."
+	filling_color = "#ffcc00"
+	tastes = list("cheese" = 1, "pizza" = 1)
+	foodtype = GRAIN | DAIRY
 /obj/item/reagent_containers/food/snacks/ration/side/vegan_crackers
 	name = "vegetable 'crackers'"
 	desc = "Delicious vegetable-based crackers that are the perfect crunchy and nutritious snack."
@@ -359,15 +389,30 @@
 
 /obj/item/reagent_containers/food/snacks/ration/side/trail_mix_beef_jerky
 	name = "trail mix with beef jerky"
+	desc = "A hearty trail mix featuring a blend of nuts, seeds, and dried fruit, with savory beef jerky for a protein-packed snack."
+	filling_color = "#996633"
+	tastes = list("trail mix" = 1, "beef jerky" = 1)
+	foodtype = MEAT | FRUIT
 
 /obj/item/reagent_containers/food/snacks/ration/side/crackers
 	name = "crackers"
-
+	desc = "Crunchy and satisfying crackers, perfect for dipping into a warm bowl of soup or enjoying on their own."
+	filling_color = "#663300"
+	tastes = list("crackers" = 1)
+	foodtype = GRAIN
 /obj/item/reagent_containers/food/snacks/ration/side/barbecue_fried_pork_rinds
 	name = "barbecue fried pork rinds"
+	desc = "Crispy and flavorful fried pork rinds coated in a savory barbecue seasoning, creating a satisfying snack option."
+	filling_color = "#b82121"
+	tastes = list("pork rinds" = 1, "barbecue" = 1)
+	foodtype = MEAT
 
 /obj/item/reagent_containers/food/snacks/ration/side/applesauce_mango_peach_puree
 	name = "applesauce with mango and peach puree"
+	desc = "A delightful blend of applesauce with mango and peach puree, creating a sweet and satisfying snack option."
+	filling_color = "#ff9900"
+	tastes = list("applesauce" = 1, "mango" = 1, "peach" = 1)
+	foodtype = FRUIT | SUGAR
 
 /obj/item/reagent_containers/food/snacks/ration/snack/pizza_crackers
 	name = "pepperoni pizza cheese filled crackers"
@@ -553,12 +598,24 @@
 
 /obj/item/reagent_containers/food/snacks/ration/snack/dried_cranberries
 	name = "dried cranberries"
+	desc = "Tangy and chewy dried cranberries, a healthy and nutritious snack option."
+	filling_color = "#cc3300"
+	tastes = list("cranberries" = 1)
+	foodtype = FRUIT
 
 /obj/item/reagent_containers/food/snacks/ration/snack/dry_roasted_peanuts
 	name = "dry roasted peanuts"
+	desc = "Crunchy and flavorful dry roasted peanuts, a satisfying and protein-packed snack option."
+	filling_color = "#663300"
+	tastes = list("peanuts" = 1)
+	foodtype = FRUIT
 
 /obj/item/reagent_containers/food/snacks/ration/snack/jalapeno_cashews
 	name = "jalapeno cashews"
+	desc = "Savory cashews coated in a spicy jalapeno seasoning, creating a flavorful and satisfying snack option."
+	filling_color = "#663300"
+	tastes = list("jalapeno" = 1, "cashews" = 1)
+	foodtype = FRUIT
 
 /obj/item/reagent_containers/food/snacks/ration/bar/energy_bar
 	name = "quik-energy bar, apple-cinnamon"
@@ -583,3 +640,7 @@
 
 /obj/item/reagent_containers/food/snacks/ration/bar/quik_energy_bar_chocolate
 	name = "quik-energy bar chocolate"
+	desc = "A power-packed quik-energy bar infused with the rich flavor of chocolate. Ideal for a quick energy boost on the go."
+	filling_color = "#663300"
+	tastes = list("chocolate" = 1)
+	foodtype = SUGAR

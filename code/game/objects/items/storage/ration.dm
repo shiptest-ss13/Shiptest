@@ -35,6 +35,10 @@
 		icon_state = "[icon_state]_open"
 	return ..()
 
+//most rations will have something the heater can be used on
+/obj/item/storage/ration/PopulateContents()
+	new /obj/item/ration_heater(src)
+
 /obj/item/storage/ration/vegan_chili
 	name = "vegan chili with beans ration"
 	desc = "A complete meal package containing a hearty vegan chili with beans, complemented by vegetable crackers, savory cornbread, flavorful pizza crackers, and more. A perfect choice for plant-based nourishment."
@@ -345,5 +349,22 @@
 		/obj/item/reagent_containers/food/snacks/ration/bar/quik_energy_bar_chocolate = 1,
 		/obj/item/reagent_containers/food/condiment/pack/ration/chunky_peanut_butter = 1,
 		/obj/item/reagent_containers/food/condiment/pack/ration/grape_beverage_sugar_free = 1
+	)
+	generate_items_inside(items_inside, src)
+
+/obj/item/storage/ration/crayons
+	name = "military grade crayon ration"
+	desc = "Proven to increase kill count by atleast 1."
+
+/obj/item/storage/ration/crayons/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/toy/crayon/red = 1,
+		/obj/item/toy/crayon/orange = 1,
+		/obj/item/toy/crayon/yellow = 1,
+		/obj/item/toy/crayon/green = 1,
+		/obj/item/toy/crayon/blue = 1,
+		/obj/item/toy/crayon/purple = 1,
+		/obj/item/toy/crayon/black = 1,
+		/obj/item/toy/crayon/white = 1
 	)
 	generate_items_inside(items_inside, src)
