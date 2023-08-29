@@ -20,6 +20,7 @@ Buildable meters
 	w_class = WEIGHT_CLASS_NORMAL
 	var/piping_layer = PIPING_LAYER_DEFAULT
 	var/RPD_type
+	var/impact_sound = 'sound/effects/metalpipe.ogg'
 
 /obj/item/pipe/directional
 	RPD_type = PIPE_UNARY
@@ -56,6 +57,11 @@ Buildable meters
 	pipename = make_from.name
 	add_atom_colour(make_from.color, FIXED_COLOUR_PRIORITY)
 	pipe_type = make_from.type
+
+/obj/item/pipe/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
+	. = ..()
+	if(isfloorturf(hit_atom))
+		playsound(get_turf(src), impact_sound, 100, TRUE)
 
 /obj/item/pipe/trinary/flippable/make_from_existing(obj/machinery/atmospherics/components/trinary/make_from)
 	..()
