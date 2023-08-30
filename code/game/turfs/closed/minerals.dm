@@ -2,8 +2,8 @@
 
 /turf/closed/mineral //wall piece
 	name = "rock"
-	icon = 'icons/turf/mining.dmi'
-	icon_state = "rock"
+	icon = 'icons/turf/walls/smoothrocks.dmi'
+	icon_state = "smoothrocks-0"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER | SMOOTH_CONNECTORS
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_MINERAL_WALLS)
 	canSmoothWith = list(SMOOTH_GROUP_MINERAL_WALLS)
@@ -186,7 +186,6 @@
 			Spread_Vein(path)
 
 /turf/closed/mineral/random/high_chance
-	icon_state = "rock_highchance"
 	mineralChance = 25
 	mineralSpawnChanceList = list(
 		/obj/item/stack/ore/uranium = 35, /obj/item/stack/ore/diamond = 30, /obj/item/stack/ore/gold = 45, /obj/item/stack/ore/titanium = 45,
@@ -209,7 +208,6 @@
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 
 /turf/closed/mineral/random/low_chance
-	icon_state = "rock_lowchance"
 	mineralChance = 6
 	mineralSpawnChanceList = list(
 		/obj/item/stack/ore/uranium = 2, /obj/item/stack/ore/diamond = 1, /obj/item/stack/ore/gold = 4, /obj/item/stack/ore/titanium = 4,
@@ -220,6 +218,7 @@
 /turf/closed/mineral/random/volcanic
 	name = "basalt"
 	desc = "Eruptions stack like layer-cake, forming vast oceans of dried magma."
+	icon_state = "smoothrocks-0"
 	environment_type = "basalt"
 	turf_type = /turf/open/floor/plating/asteroid/basalt/lava_land_surface
 	baseturfs = /turf/open/floor/plating/asteroid/basalt/lava_land_surface
@@ -295,7 +294,6 @@
 		/obj/item/stack/ore/uranium = 3, /obj/item/stack/ore/diamond = 1, /obj/item/stack/ore/gold = 8, /obj/item/stack/ore/titanium = 8,
 		/obj/item/stack/ore/silver = 20, /obj/item/stack/ore/plasma = 30, /obj/item/stack/ore/iron = 95,
 		/turf/closed/mineral/gibtonite = 2)
-	icon_state = "rock_labor"
 
 
 /turf/closed/mineral/random/labormineral/volcanic
@@ -312,9 +310,7 @@
 // Subtypes for mappers placing ores manually.
 /turf/closed/mineral/random/labormineral/ice
 	name = "snowy mountainside"
-	icon = 'icons/turf/mining.dmi'
 	smooth_icon = 'icons/turf/walls/mountain_wall.dmi'
-	icon_state = "mountainrock"
 	base_icon_state = "mountain_wall"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER | SMOOTH_CONNECTORS
 	connector_icon = 'icons/turf/connectors/mountain_wall_connector.dmi'
@@ -337,7 +333,8 @@
 
 /turf/closed/mineral/iron/ice
 	environment_type = "snow_cavern"
-	icon_state = "icerock_iron"
+	icon = 'icons/turf/walls/icerock_wall.dmi'
+	icon_state = "icerock_wall-0"
 	smooth_icon = 'icons/turf/walls/icerock_wall.dmi'
 	base_icon_state = "icerock_wall"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER | SMOOTH_CONNECTORS
@@ -387,7 +384,8 @@
 
 /turf/closed/mineral/plasma/ice
 	environment_type = "snow_cavern"
-	icon_state = "icerock_plasma"
+	icon = 'icons/turf/walls/icerock_wall.dmi'
+	icon_state = "icerock_wall-0"
 	smooth_icon = 'icons/turf/walls/icerock_wall.dmi'
 	base_icon_state = "icerock_wall"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER | SMOOTH_CONNECTORS
@@ -721,6 +719,7 @@
 	name = "limestone"
 	desc = "The powdered remains of what once lived here, under the endless sea."
 	icon = 'icons/turf/walls/ws_walls.dmi'
+	icon_state = "smoothrocks-0"
 	smooth_icon = 'icons/turf/walls/ws_walls.dmi'
 	environment_type = WHITESANDS_WALL_ENV
 	turf_type = /turf/open/floor/plating/asteroid/whitesands
@@ -734,6 +733,7 @@
 
 /turf/closed/mineral/random/high_chance
 	icon = 'icons/turf/walls/ws_walls.dmi'
+	icon_state = "smoothrocks-0"
 	smooth_icon = 'icons/turf/walls/ws_walls.dmi'
 	environment_type = WHITESANDS_WALL_ENV
 	turf_type = /turf/open/floor/plating/asteroid/whitesands
@@ -786,8 +786,8 @@
 /turf/closed/mineral/random/rockplanet
 	name = "hematite"
 	desc = "Iron grit rusts softly, bringing forth a crimson hue."
-	icon = 'icons/turf/mining.dmi'
-	icon_state = "redrock"
+	icon = 'icons/turf/walls/red_wall.dmi'
+	icon_state = "red_wall-0"
 	smooth_icon = 'icons/turf/walls/red_wall.dmi'
 	base_icon_state = "red_wall"
 	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
@@ -799,8 +799,8 @@
 /turf/closed/mineral/gibtonite/rockplanet
 	name = "hematite"
 	desc = "Iron grit rusts softly, bringing forth a crimson hue."
-	icon = 'icons/turf/mining.dmi'
-	icon_state = "redrock"
+	icon = 'icons/turf/walls/red_wall.dmi'
+	icon_state = "red_wall-0"
 	smooth_icon = 'icons/turf/walls/red_wall.dmi'
 	base_icon_state = "red_wall"
 
@@ -808,7 +808,7 @@
 	name = "polluted rock"
 	desc = "Whatever once held sway, the poison is all that remains."
 	icon = 'icons/turf/walls/wasteplanet.dmi'
-	icon_state = "wasteplanet-255"
+	icon_state = "wasteplanet-0"
 	smooth_icon = 'icons/turf/walls/wasteplanet.dmi'
 	base_icon_state = "wasteplanet"
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
