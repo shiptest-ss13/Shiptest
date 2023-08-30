@@ -32,7 +32,6 @@
 	},
 /obj/item/clothing/shoes/jackboots,
 /obj/item/clothing/shoes/workboots,
-/obj/item/clothing/under/misc/bouncer,
 /obj/item/clothing/under/costume/russian_officer,
 /obj/item/clothing/gloves/combat,
 /obj/item/clothing/suit/pirate/captain,
@@ -170,10 +169,6 @@
 	name = "Roboticists Locker";
 	pixel_x = 28
 	},
-/obj/item/clothing/under/rank/rnd/roboticist/mech_engineer,
-/obj/item/clothing/under/rank/rnd/roboticist/mech_engineer/skirt,
-/obj/item/clothing/under/rank/rnd/roboticist/biomech_engineer,
-/obj/item/clothing/under/suit/senior_roboticist/skirt,
 /obj/item/clothing/suit/toggle/labcoat/science,
 /obj/item/clothing/suit/longcoat/roboblack,
 /obj/item/clothing/suit/longcoat/robowhite,
@@ -211,11 +206,6 @@
 	},
 /obj/item/storage/box/lethalshot{
 	pixel_x = -3
-	},
-/obj/item/ammo_box/c38_box/hunting,
-/obj/item/ammo_box/c38_box/hunting{
-	pixel_x = -7;
-	pixel_y = -4
 	},
 /obj/item/ammo_box/c38,
 /obj/item/ammo_box/c38{
@@ -1961,11 +1951,6 @@
 /obj/item/clothing/under/utility,
 /obj/item/clothing/under/utility/skirt,
 /obj/item/clothing/under/rank/engineering/engineer,
-/obj/item/clothing/under/rank/engineering/engineer/junior{
-	pixel_x = 3;
-	pixel_y = -4
-	},
-/obj/item/clothing/under/rank/engineering/engineer/maintenance_tech,
 /obj/item/clothing/head/hardhat/weldhat/orange{
 	pixel_x = 7;
 	pixel_y = 2
@@ -3909,9 +3894,6 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 5
 	},
-/obj/machinery/photocopier/faxmachine/longrange{
-	department = "Internal Affairs"
-	},
 /obj/structure/table/reinforced{
 	color = "#c1b6a5"
 	},
@@ -3920,6 +3902,7 @@
 	dir = 4;
 	layer = 3.1
 	},
+/obj/machinery/fax/hacked,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "Ss" = (
@@ -4070,6 +4053,14 @@
 /obj/effect/turf_decal/spline/fancy/opaque/brown,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
+"UB" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "cargopirate_bridge";
+	name = "Blast Shutters"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
 "UE" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -5196,7 +5187,7 @@ XG
 "}
 (36,1,1) = {"
 XG
-lm
+UB
 PP
 Os
 aL

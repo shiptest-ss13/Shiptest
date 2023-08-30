@@ -40,6 +40,7 @@
 	mask = /obj/item/clothing/mask/infiltrator
 	glasses = /obj/item/clothing/glasses/hud/diagnostic
 	shoes = /obj/item/clothing/shoes/workboots
+
 /datum/outfit/job/roboticist/technician/minutemen
 	name = "Mech Technician (Minutemen)"
 
