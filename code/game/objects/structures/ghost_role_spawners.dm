@@ -928,7 +928,7 @@
 	flavour_text = "You and your fellows have been stationed here for more time than you've cared to track, especially since the computers have done it for you. . \
 	Keep the lab in good operating condition, breed slimes, and trade to get what you aren't able to produce yourselves. "
 	important_info = "Do not abandon the base. The place is too damn expensive to just run off from."
-	uniform = /obj/item/clothing/under/rank/rnd/scientist/xenobiologist/skirt
+	uniform = /obj/item/clothing/under/rank/rnd/scientist/skirt
 	shoes = /obj/item/clothing/shoes/sneakers/white
 	id = /obj/item/card/id/away/slime
 	assignedrole = "Slime Research Staff"

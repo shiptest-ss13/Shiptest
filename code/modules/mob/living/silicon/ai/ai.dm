@@ -415,7 +415,13 @@
 			to_chat(src, "<span class='warning'>You aren't in your core!</span>")
 			return
 		if(M)
-			M.transfer_ai(AI_MECH_HACK, src, usr) //Called om the mech itself.
+			M.transfer_ai(AI_MECH_HACK, src, usr) //Called on the mech itself.
+	if(href_list["show_paper_note"])
+		var/obj/item/paper/paper_note = locate(href_list["show_paper_note"])
+		if(!paper_note)
+			return
+
+		paper_note.show_through_camera(usr)
 
 
 /mob/living/silicon/ai/proc/switchCamera(obj/machinery/camera/C)
@@ -898,7 +904,7 @@
 		to_chat(src, "<span class='danger'>Hack aborted. The designated APC no longer exists on the power network.</span>")
 		playsound(get_turf(src), 'sound/machines/buzz-two.ogg', 50, TRUE, ignore_walls = FALSE)
 	else if(apc.aidisabled)
-		to_chat(src, "<span class='danger'>Hack aborted. \The [apc] is no longer responding to our systems.</span>")
+		to_chat(src, "<span class='danger'>Hack aborted. [apc] is no longer responding to our systems.</span>")
 		playsound(get_turf(src), 'sound/machines/buzz-sigh.ogg', 50, TRUE, ignore_walls = FALSE)
 	else
 		malf_picker.processing_time += 10
@@ -909,8 +915,8 @@
 		apc.coverlocked = TRUE
 
 		playsound(get_turf(src), 'sound/machines/ding.ogg', 50, TRUE, ignore_walls = FALSE)
-		to_chat(src, "Hack complete. \The [apc] is now under your exclusive control.")
-		apc.update_icon()
+		to_chat(src, "Hack complete. [apc] is now under your exclusive control.")
+		apc.update_appearance()
 
 /mob/living/silicon/ai/verb/deploy_to_shell(mob/living/silicon/robot/target)
 	set category = "AI Commands"

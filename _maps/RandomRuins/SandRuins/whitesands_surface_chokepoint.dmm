@@ -2,6 +2,10 @@
 "a" = (
 /turf/template_noop,
 /area/template_noop)
+"b" = (
+/obj/structure/barricade/sandbags,
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/ruin)
 "d" = (
 /obj/structure/closet/secure_closet{
 	icon_state = "sec"
@@ -10,15 +14,15 @@
 /obj/item/ammo_box/magazine/co9mm,
 /obj/item/ammo_box/magazine/co9mm,
 /turf/open/floor/plating/asteroid/whitesands,
-/area/whitesands/surface/outdoors)
+/area/ruin)
 "e" = (
 /obj/structure/sign/poster/official/here_for_your_safety,
 /turf/closed/wall/mineral/sandstone,
-/area/whitesands/surface/outdoors)
+/area/ruin)
 "f" = (
 /obj/item/banner/security/mundane,
 /turf/open/floor/plating/asteroid/whitesands/dried,
-/area/whitesands/surface/outdoors)
+/area/overmap_encounter/planetoid/sand/explored)
 "g" = (
 /obj/structure/bed,
 /obj/item/bedsheet/hos,
@@ -28,7 +32,7 @@
 	name = "\improper NanoTrasen Stranded Security Officer"
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried,
-/area/whitesands/surface/outdoors)
+/area/ruin)
 "h" = (
 /mob/living/simple_animal/hostile/nanotrasen/ranged{
 	atmos_requirements = list("min_oxy"=5,"max_oxy"=0,"min_tox"=0,"max_tox"=0,"min_co2"=0,"max_co2"=999,"min_n2"=0,"max_n2"=0);
@@ -37,7 +41,7 @@
 	name = "\improper NanoTrasen Stranded Security Officer"
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried,
-/area/whitesands/surface/outdoors)
+/area/ruin)
 "i" = (
 /obj/structure/chair/wood{
 	dir = 8
@@ -49,27 +53,34 @@
 	name = "\improper NanoTrasen Stranded Security Officer"
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried,
-/area/whitesands/surface/outdoors)
+/area/ruin)
 "j" = (
 /obj/item/banner/security,
 /turf/open/floor/plating/asteroid/whitesands/dried,
-/area/whitesands/surface/outdoors)
+/area/ruin)
 "k" = (
 /obj/effect/mob_spawn/human/corpse/damaged/whitesands/survivor,
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/plating/asteroid/whitesands/lit,
-/area/whitesands/surface/outdoors)
+/area/overmap_encounter/planetoid/sand/explored)
+"m" = (
+/turf/open/floor/plating/asteroid/whitesands,
+/area/overmap_encounter/planetoid/sand/explored)
 "n" = (
 /obj/structure/sign/poster/official/ion_carbine,
 /turf/closed/wall/mineral/sandstone,
-/area/whitesands/surface/outdoors)
+/area/ruin)
+"o" = (
+/obj/item/banner/security/mundane,
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/ruin)
 "p" = (
 /obj/structure/sign/poster/official/safety_report,
 /turf/closed/wall/mineral/sandstone,
-/area/whitesands/surface/outdoors)
+/area/ruin)
 "q" = (
 /turf/open/floor/plating/asteroid/whitesands/lit,
-/area/whitesands/surface/outdoors)
+/area/overmap_encounter/planetoid/sand/explored)
 "r" = (
 /obj/structure/closet/cabinet,
 /obj/item/clothing/head/helmet/knight/blue,
@@ -77,10 +88,10 @@
 /obj/item/spear,
 /obj/item/shield/riot/buckler,
 /turf/open/floor/plating/asteroid/whitesands,
-/area/whitesands/surface/outdoors)
+/area/ruin)
 "u" = (
 /turf/open/floor/plating/asteroid/whitesands,
-/area/whitesands/surface/outdoors)
+/area/ruin)
 "v" = (
 /mob/living/simple_animal/hostile/nanotrasen/ranged{
 	atmos_requirements = list("min_oxy"=5,"max_oxy"=0,"min_tox"=0,"max_tox"=0,"min_co2"=0,"max_co2"=999,"min_n2"=0,"max_n2"=0);
@@ -89,26 +100,26 @@
 	name = "\improper NanoTrasen Stranded Security Officer"
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried,
-/area/whitesands/surface/outdoors)
+/area/ruin)
 "x" = (
 /obj/structure/sign/poster/contraband/space_cops,
 /turf/closed/wall/mineral/sandstone,
-/area/whitesands/surface/outdoors)
+/area/ruin)
 "z" = (
 /turf/open/floor/plating/asteroid/whitesands/dried,
-/area/whitesands/surface/outdoors)
+/area/ruin)
 "E" = (
 /obj/item/banner/security/mundane,
 /turf/open/floor/plating/asteroid/whitesands,
-/area/whitesands/surface/outdoors)
+/area/overmap_encounter/planetoid/sand/explored)
 "H" = (
 /obj/structure/sign/poster/official/report_crimes,
 /turf/closed/wall/mineral/sandstone,
-/area/whitesands/surface/outdoors)
+/area/ruin)
 "I" = (
 /obj/structure/sign/poster/contraband/twelve_gauge,
 /turf/closed/wall/mineral/sandstone,
-/area/whitesands/surface/outdoors)
+/area/ruin)
 "J" = (
 /obj/item/cigbutt,
 /obj/item/cigbutt{
@@ -116,37 +127,37 @@
 	pixel_y = -5
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried,
-/area/whitesands/surface/outdoors)
+/area/ruin)
 "K" = (
 /obj/structure/barricade/sandbags,
 /turf/open/floor/plating/asteroid/whitesands/dried,
-/area/whitesands/surface/outdoors)
+/area/overmap_encounter/planetoid/sand/explored)
 "L" = (
 /obj/structure/sign/poster/official/love_ian,
 /turf/closed/wall/mineral/sandstone,
-/area/whitesands/surface/outdoors)
+/area/ruin)
 "M" = (
 /obj/structure/mineral_door/sandstone,
 /turf/open/floor/plating/asteroid/whitesands/dried,
-/area/whitesands/surface/outdoors)
+/area/ruin)
 "N" = (
 /obj/structure/sign/poster/official/work_for_a_future,
 /turf/closed/wall/mineral/sandstone,
-/area/whitesands/surface/outdoors)
+/area/ruin)
 "P" = (
 /obj/structure/sign/poster/official/do_not_question,
 /turf/closed/wall/mineral/sandstone,
-/area/whitesands/surface/outdoors)
+/area/ruin)
 "Q" = (
 /turf/closed/mineral/random/whitesands,
-/area/whitesands/surface/outdoors)
+/area/overmap_encounter/planetoid/sand/explored)
 "S" = (
 /obj/effect/mob_spawn/human/corpse/damaged/whitesands/survivor,
 /obj/effect/decal/cleanable/blood{
 	icon_state = "floor3"
 	},
 /turf/open/floor/plating/asteroid/whitesands/lit,
-/area/whitesands/surface/outdoors)
+/area/overmap_encounter/planetoid/sand/explored)
 "T" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/drinks/bottle/whiskey{
@@ -158,23 +169,29 @@
 	pixel_y = 2
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried,
-/area/whitesands/surface/outdoors)
+/area/ruin)
 "U" = (
 /obj/structure/table/wood,
 /obj/item/holosign_creator/security,
 /turf/open/floor/plating/asteroid/whitesands/dried,
-/area/whitesands/surface/outdoors)
+/area/ruin)
+"V" = (
+/turf/closed/mineral/random/whitesands,
+/area/ruin)
 "W" = (
 /obj/structure/sign/poster/official/obey,
 /turf/closed/wall/mineral/sandstone,
-/area/whitesands/surface/outdoors)
+/area/ruin)
 "X" = (
 /turf/closed/wall/mineral/sandstone,
-/area/whitesands/surface/outdoors)
+/area/ruin)
 "Y" = (
 /obj/structure/sign/poster/official/nanotrasen_logo,
 /turf/closed/wall/mineral/sandstone,
-/area/whitesands/surface/outdoors)
+/area/ruin)
+"Z" = (
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/overmap_encounter/planetoid/sand/explored)
 
 (1,1,1) = {"
 a
@@ -213,8 +230,8 @@ q
 q
 q
 q
-z
-z
+Z
+Z
 a
 a
 a
@@ -222,8 +239,8 @@ a
 a
 "}
 (4,1,1) = {"
-Q
-f
+V
+o
 q
 k
 q
@@ -237,13 +254,13 @@ Q
 Q
 "}
 (5,1,1) = {"
-Q
-Q
-K
-K
+V
+V
+b
+b
 z
-K
-K
+b
+b
 X
 n
 H
@@ -252,8 +269,8 @@ Q
 Q
 "}
 (6,1,1) = {"
-Q
-Q
+V
+V
 z
 z
 z
@@ -267,7 +284,7 @@ Q
 Q
 "}
 (7,1,1) = {"
-Q
+V
 U
 z
 z
@@ -282,7 +299,7 @@ Q
 Q
 "}
 (8,1,1) = {"
-Q
+V
 i
 z
 z
@@ -297,8 +314,8 @@ X
 Q
 "}
 (9,1,1) = {"
-Q
-Q
+V
+V
 z
 z
 z
@@ -312,8 +329,8 @@ p
 Q
 "}
 (10,1,1) = {"
-Q
-Q
+V
+V
 J
 z
 z
@@ -327,13 +344,13 @@ P
 Q
 "}
 (11,1,1) = {"
-Q
-Q
-K
-K
+V
+V
+b
+b
 z
-K
-K
+b
+b
 X
 X
 L
@@ -342,13 +359,13 @@ X
 Q
 "}
 (12,1,1) = {"
-Q
-Q
+V
+V
 f
-u
-u
-u
-u
+m
+m
+m
+m
 E
 Q
 Q

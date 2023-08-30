@@ -227,6 +227,13 @@
 	icon_state = "inteq_beret"
 	item_state = "inteq_beret"
 
+/obj/item/clothing/head/beret/sec/hos/inteq/honorable
+	name = "honorable vanguard beret"
+	desc = "A snow white beret with an air of distinction around it, emblazoned with the golden shield of the IRMG as the badge."
+	icon_state = "inteq_honorable_beret"
+	item_state = "inteq_honorable_beret"
+	armor = list("melee" = 40, "bullet" = 50, "laser" = 50, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 90)
+
 /obj/item/clothing/head/beret/sec/frontier
 	name = "\improper Frontiersmen beret"
 	desc = "A scratchy olive green beret, worn by Frontiersmen who want to look good while intimidating freighter crew."

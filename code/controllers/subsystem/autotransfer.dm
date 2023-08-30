@@ -15,3 +15,7 @@ SUBSYSTEM_DEF(autotransfer)
 	if (world.time > targettime)
 		SSvote.initiate_vote("transfer",null, FALSE) //WS Edit - Ghost Vote Rework
 		targettime = targettime + CONFIG_GET(number/vote_autotransfer_interval)
+
+/datum/controller/subsystem/autotransfer/Recover()
+	starttime = SSautotransfer.starttime
+	targettime = SSautotransfer.targettime
