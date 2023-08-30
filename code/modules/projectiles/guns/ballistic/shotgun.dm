@@ -388,11 +388,12 @@
 	if(prob(0 + (magazine.ammo_count() * 10)))
 		if(prob(10))
 			to_chat(user, "<span class='userdanger'>Something isn't right. \the [src] doesn't fire for a brief moment. Then, the following words come to mind: \
-			Ó Pátria amada, \
-			Idolatrada, \
+			Ó Pátria amada, \n\
+			Idolatrada, \n\
 			Salve! Salve!</span>")
 
 			message_admins("A [src] misfired and exploded at [ADMIN_VERBOSEJMP(src)], which was fired by [user].") //logging
+			log_admin("A [src] misfired and exploded at [ADMIN_VERBOSEJMP(src)], which was fired by [user].")
 			user.take_bodypart_damage(0,50)
 			explosion(src, 0, 2, 4, 6, TRUE, TRUE)
 	..()
