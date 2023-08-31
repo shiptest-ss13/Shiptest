@@ -12,7 +12,7 @@
 	display_order = JOB_DISPLAY_ORDER_CHAPLAIN
 
 
-/datum/job/chaplain/after_spawn(mob/living/H, mob/M)
+/datum/outfit/job/chaplain/post_equip(mob/living/H, mob/M)
 	. = ..()
 
 	var/obj/item/storage/book/bible/booze/B = new

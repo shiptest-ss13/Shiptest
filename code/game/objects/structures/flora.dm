@@ -623,9 +623,9 @@
 
 /obj/structure/flora/tree/chapel/proc/apply_reagents(datum/reagents/S, mob/user)
 	var/gainedkarma = 0
-	for(var/datum/reagent/R in moralchems)
-		if(S.has_reagent(R, 1))
-			gainedkarma += S.get_reagent_amount(R) * moralchems[R]
+	for(var/reagent in moralchems)
+		if(S.has_reagent(reagent, 1))
+			gainedkarma += S.get_reagent_amount(reagent) * moralchems[reagent]
 	if(isliving(user))
 		var/mob/living/M = user
 		if(gainedkarma >= 0)
@@ -643,10 +643,10 @@
 	adjustKarma(gainedkarma)
 
 /obj/structure/flora/tree/chapel/proc/update_tree()
-	if(100 > karma > -100)
+	if(abs(karma) < 100)
 		name = initial(src.name)
-		icon_state = initial(src.name)
-		desc = initial(src.name)
+		icon_state = initial(src.icon_state)
+		desc = initial(src.desc)
 	else if (karma >= 100)
 		name = "hallowed oak tree"
 		icon_state = "churchtree_nice"
