@@ -1,10 +1,12 @@
 /obj/item/ammo_box/magazine/m12g
 	name = "shotgun drum magazine (12g buckshot)"
-	desc = "A drum magazine."
+	desc = "A bulky drum magazine for shotguns."
 	icon_state = "m12gb"
+	base_icon_state = "m12gb"
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
-	caliber = "shotgun"
+	caliber = "12ga"
 	max_ammo = 8
+	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/ammo_box/magazine/m12g/update_icon_state()
 	. = ..()
@@ -45,7 +47,7 @@
 	name = "CM-15 magazine (12g buckshot)"
 	icon_state = "cm15_mag"
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
-	caliber = "shotgun"
+	caliber = "12ga"
 	max_ammo = 8
 
 /obj/item/ammo_box/magazine/cm15_mag/update_icon_state()

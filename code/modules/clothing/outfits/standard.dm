@@ -462,3 +462,26 @@
 	backpack_contents = list(
 		/obj/item/gun/energy/e_gun/adv_stopping = 1
 		)
+
+/datum/outfit/job/hos/inteq_honorable
+	name = "Inteq Honorable vanguard"
+	head = /obj/item/clothing/head/beret/sec/hos/inteq/honorable
+	uniform = /obj/item/clothing/under/syndicate/inteq/honorable
+	suit = /obj/item/clothing/suit/armor/hos/inteq/honorable
+	mask = /obj/item/clothing/mask/gas/sechailer/inteq
+	gloves = /obj/item/clothing/gloves/combat
+	shoes = /obj/item/clothing/shoes/combat
+	ears = /obj/item/radio/headset/inteq/alt
+	belt = /obj/item/storage/belt/military/assault
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
+
+/datum/outfit/job/hos/inteq_honorable/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	if(visualsOnly)
+		return
+
+	var/obj/item/card/id/W = H.wear_id
+	W.access = get_all_accesses()
+	W.assignment = "Honorable Vanguard"
+	W.registered_name = H.real_name
+	W.update_label()
+	..()

@@ -42,6 +42,13 @@
 					/obj/item/stock_parts/micro_laser)
 	crate_name = "chemistry tools crate"
 
+/datum/supply_pack/chemistry/press
+	name = "Pill Press Crate"
+	desc = "Contains one standard press for making pills by hand."
+	cost = 500
+	contains = list(/obj/machinery/chem_press)
+	crate_name = "pill press crate"
+
 /*
 		Bulk materials
 */

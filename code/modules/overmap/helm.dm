@@ -418,6 +418,12 @@
 	viewer = TRUE
 	unique_icon = TRUE
 
+/obj/machinery/computer/helm/viewscreen/computer
+	name = "viewscreen console"
+	icon_state = "oldcomp"
+	icon_screen = "oldcomp_retro_rnd"
+	density = TRUE
+
 MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/helm/viewscreen, 17)
 
 #undef JUMP_STATE_OFF

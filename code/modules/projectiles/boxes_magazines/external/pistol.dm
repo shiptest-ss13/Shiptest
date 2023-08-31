@@ -66,8 +66,8 @@
 
 /obj/item/ammo_box/magazine/co9mm
 	name = "pistol magazine (9mm)"
-	desc = "A single stack M1911 reproduction magazine, modified to chamber 9mm."
-	icon_state = "co9mm-10"
+	desc = "A double-stack pistol magazine designed to chamber 9mm."
+	icon_state = "co9mm-8"
 	base_icon_state = "co9mm"
 	ammo_type = /obj/item/ammo_casing/c9mm
 	caliber = "9mm"
@@ -75,22 +75,22 @@
 
 /obj/item/ammo_box/magazine/co9mm/fire
 	name = "pistol magazine (9mm incendiary)"
-	desc = "A single stack M1911 reproduction magazine, modified to chamber 9mm. Loaded with rounds which ignite the target."
+	desc = "A double-stack pistol magazine designed to chamber 9mm. Loaded with rounds which ignite the target."
 	ammo_type = /obj/item/ammo_casing/c9mm/inc
 
 /obj/item/ammo_box/magazine/co9mm/hp
 	name = "pistol magazine (9mm HP)"
-	desc= "A single stack M1911 reproduction magazine, modified to chamber 9mm. Loaded with rounds which deal more damage, but are completely ineffective against armor."
+	desc= "A double-stack pistol magazine designed to chamber 9mm. Loaded with rounds which deal more damage, but are completely ineffective against armor."
 	ammo_type = /obj/item/ammo_casing/c9mm/hp
 
 /obj/item/ammo_box/magazine/co9mm/ap
 	name = "pistol magazine (9mm AP)"
-	desc= "A single stack M1911 reproduction magazine, modified to chamber 9mm. Loaded with rounds which penetrate armour, but are less effective against normal targets."
+	desc= "A double-stack pistol magazine designed to chamber 9mm. Loaded with rounds which penetrate armour, but are less effective against normal targets."
 	ammo_type = /obj/item/ammo_casing/c9mm/ap
 
 /obj/item/ammo_box/magazine/co9mm/rubbershot
 	name = "pistol magazine (9mm rubbershot)"
-	desc = "A single stack M1911 reproduction magazine, modified to chamber 9mm. Loaded with less-lethal rubber rounds which disable targets without causing serious damage."
+	desc = "A double-stack pistol magazine designed to chamber 9mm. Loaded with less-lethal rubber rounds which disable targets without causing serious damage."
 	ammo_type = /obj/item/ammo_casing/c9mm/rubbershot
 
 /obj/item/ammo_box/magazine/co9mm/update_icon_state()
@@ -99,7 +99,7 @@
 
 /obj/item/ammo_box/magazine/pistolm9mm
 	name = "large pistol magazine (9mm)"
-	desc = "A double stack pistol magazine, designed to chamber 9mm."
+	desc = "An extended double stack pistol magazine, designed to chamber 9mm."
 	icon_state = "9x19p-8"
 	base_icon_state = "9x19p"
 	ammo_type = /obj/item/ammo_casing/c9mm
@@ -111,11 +111,11 @@
 	icon_state = "[base_icon_state]-[ammo_count() ? "8" : "0"]"
 
 /obj/item/ammo_box/magazine/m50
-	name = "handgun magazine (.50ae)"
+	name = "handgun magazine (.50 AE)"
 	desc = "An oversized handgun magazine designed to chamber .50 AE."
 	icon_state = "50ae"
 	ammo_type = /obj/item/ammo_casing/a50AE
-	caliber = ".50"
+	caliber = ".50 AE"
 	max_ammo = 7
 	multiple_sprites = AMMO_BOX_PER_BULLET
 
@@ -126,3 +126,4 @@
 	ammo_type = /obj/item/ammo_casing/c38
 	caliber = ".38"
 	max_ammo = 3
+	w_class = WEIGHT_CLASS_TINY
