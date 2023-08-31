@@ -184,4 +184,4 @@
 
 /obj/item/clothing/head/hooded/winterhood/centcom
 	icon_state = "winterhood_centcom"
-	armor = 	armor = list("melee" = 35, "bullet" = 40, "laser" = 40, "energy" = 50, "bomb" = 35, "bio" = 10, "rad" = 10, "fire" = 10, "acid" = 60)
+	armor = list("melee" = 35, "bullet" = 40, "laser" = 40, "energy" = 50, "bomb" = 35, "bio" = 10, "rad" = 10, "fire" = 10, "acid" = 60)
