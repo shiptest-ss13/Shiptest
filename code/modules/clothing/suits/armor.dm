@@ -149,7 +149,7 @@
 	icon_state = "carapace_ntformal"
 	item_state = "capspacesuit"
 	body_parts_covered = CHEST|GROIN|ARMS
-	armor = list(MELEE = 50, BULLET = 40, LASER = 50, ENERGY = 50, BOMB = 25, BIO = 0, RAD = 0, FIRE = 100, ACID = 90, WOUND = 10)
+	armor = list("melee" = 50, "bullet" = 40, "laser" = 50, "energy" = 50, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 90)
 	togglename = "buttons"
 
 /obj/item/clothing/suit/toggle/captains_parade/Initialize()
@@ -526,7 +526,7 @@
 	icon_state = "centcom_formal"
 	item_state = "centcom"
 	body_parts_covered = CHEST|GROIN|ARMS
-	armor = list(MELEE = 35, BULLET = 40, LASER = 40, ENERGY = 50, BOMB = 35, BIO = 10, RAD = 10, FIRE = 10, ACID = 60)
+	armor = list("melee" = 35, "bullet" = 40, "laser" = 40, "energy" = 50, "bomb" = 35, "bio" = 10, "rad" = 10, "fire" = 10, "acid" = 60)
 	togglename = "buttons"
 
 /obj/item/clothing/suit/toggle/armor/vest/centcom_formal/Initialize()
@@ -539,7 +539,7 @@
 	icon_state = "hosformal"
 	item_state = "hostrench"
 	body_parts_covered = CHEST|GROIN|ARMS
-	armor = list(MELEE = 30, BULLET = 30, LASER = 30, ENERGY = 40, BOMB = 25, BIO = 0, RAD = 0, FIRE = 70, ACID = 90, WOUND = 10)
+	armor = list("melee" = 30, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 90)
 	togglename = "buttons"
 
 /obj/item/clothing/suit/toggle/armor/hos/hos_formal/Initialize()

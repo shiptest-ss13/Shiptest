@@ -14,7 +14,7 @@
 	desc = "Worn by the finest of CentCom commanders. Inside the lining of the cap, lies two faint initials."
 	item_state = "that"
 	flags_inv = 0
-	armor = list(MELEE = 30, BULLET = 15, LASER = 30, ENERGY = 40, BOMB = 25, BIO = 0, RAD = 0, FIRE = 50, ACID = 50)
+	armor = list("melee" = 30, "bullet" = 15, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	strip_delay = (8 SECONDS)
 
 /obj/item/clothing/head/spacepolice
