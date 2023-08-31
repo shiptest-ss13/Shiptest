@@ -326,7 +326,7 @@
 
 /datum/component/uplink/proc/generate_code()
 	if(istype(parent,/obj/item/pda))
-		return "[rand(100,999)] [pick(GLOB.phonetic_alphabet)]"
+		return "[random_code(3)] [pick(GLOB.phonetic_alphabet)]"
 	else if(istype(parent,/obj/item/radio))
 		return sanitize_frequency(rand(MIN_FREQ, MAX_FREQ))
 	else if(istype(parent,/obj/item/pen))

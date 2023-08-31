@@ -1167,12 +1167,18 @@ GLOBAL_REAL_VAR(list/stack_trace_storage)
 
 #define RANDOM_COLOUR (rgb(rand(0,255),rand(0,255),rand(0,255)))
 
-/proc/random_nukecode()
-	var/val = rand(0, 99999)
-	var/str = "[val]"
-	while(length(str) < 5)
-		str = "0" + str
-	. = str
+/**
+ * random code generator (only numbers)
+ * This returns a string
+ * Arguments
+ * n_length - length of the random code
+ *
+**/
+/proc/random_code(n_length = 0)
+	if(!n_length) //incase someone forgets to say how long they want the code to be
+		stack_trace("No code length forwarded as argument")
+	while(length(.) < n_length)
+		. += "[rand(0, 9)]" // we directly write into the return value (.) here
 
 /atom/proc/Shake(pixelshiftx = 15, pixelshifty = 15, duration = 250)
 	var/initialpixelx = pixel_x

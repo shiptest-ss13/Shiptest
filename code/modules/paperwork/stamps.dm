@@ -97,3 +97,16 @@
 
 /obj/item/stamp/attack_paw(mob/user)
 	return attack_hand(user)
+
+/obj/item/stamp/inteq
+	name = "Inteq rubber stamp"
+	icon_state = "stamp-inteq"
+/obj/item/stamp/inteq/vanguard
+	name = "vanguard's rubber stamp"
+	icon_state = "stamp-vanguard"
+/obj/item/stamp/inteq/masteratarms
+	name = "master-at-arms' rubber stamp"
+	icon_state = "stamp-maa"
+/obj/item/stamp/minutemen
+	name = "Colonial Minutemen rubber stamp"
+	icon_state = "stamp-cmm"

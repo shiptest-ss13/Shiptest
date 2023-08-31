@@ -60,6 +60,9 @@
 	/// state checking on if it should be shown to a viewer.
 	var/datum/weakref/camera_holder
 
+	///If TRUE, staff can read paper everywhere, but usually from requests panel.
+	var/request_state = FALSE
+
 	/// The (text for the) stamps on the paper.
 	var/list/stamps /// Positioning for the stamp in tgui
 	var/list/stamped /// Overlay info
@@ -320,7 +323,7 @@
 	// Are we on fire?  Hard to read if so
 	if(resistance_flags & ON_FIRE)
 		return UI_CLOSE
-	if(camera_holder && can_show_to_mob_through_camera(user))
+	if(camera_holder && can_show_to_mob_through_camera(user) || request_state)
 		return UI_UPDATE
 	if(!in_range(user, src) && !isobserver(user))
 		return UI_CLOSE
@@ -373,7 +376,7 @@
 		return
 
 // Handle writing items.
-	var/writing_stats = attacking_item.get_writing_implement_details()
+	var/writing_stats = istype(attacking_item) ? attacking_item.get_writing_implement_details() : null
 
 	if(!writing_stats)
 		ui_interact(user)
