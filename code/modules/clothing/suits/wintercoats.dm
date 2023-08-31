@@ -175,7 +175,7 @@
 	desc = "A luxurious winter coat woven in the bright green and gold colours of Central Command. It has a small pin in the shape of the Nanotrasen logo for a zipper."
 	icon_state = "coatcentcom"
 	item_state = "coatcentcom"
-		armor = list("melee" = 35, "bullet" = 40, "laser" = 40, "energy" = 50, "bomb" = 35, "bio" = 10, "rad" = 10, "fire" = 10, "acid" = 60)
+	armor = list("melee" = 35, "bullet" = 40, "laser" = 40, "energy" = 50, "bomb" = 35, "bio" = 10, "rad" = 10, "fire" = 10, "acid" = 60)
 	hoodtype = /obj/item/clothing/head/hooded/winterhood/centcom
 
 /obj/item/clothing/suit/hooded/wintercoat/centcom/Initialize(mapload)
