@@ -47,8 +47,9 @@
 	var/busy = FALSE
 	/// Variable needed to determine the selected category of forms on Photocopier.js
 	var/category
-	/// variable that determines where the photocopier borrows blanks from. default indie
+	/// variable that determines where the photocopier borrows blanks from. default is independent
 	var/form_config = "strings/blanks/indie_blanks.json"
+
 /obj/machinery/photocopier/nt
 	form_config = "strings/blanks/nt_blanks.json"
 /obj/machinery/photocopier/syndicate
@@ -84,6 +85,26 @@
 	ass = null //the mob isn't actually contained and just referenced, no need to delete it.
 	return ..()
 
+/obj/machinery/photocopier/handle_atom_del(atom/deleting_atom)
+	if(deleting_atom == paper_copy)
+		paper_copy = null
+	if(deleting_atom == photo_copy)
+		photo_copy = null
+	if(deleting_atom == document_copy)
+		document_copy = null
+	if(deleting_atom == ass)
+		ass = null
+	if(deleting_atom == toner_cartridge)
+		toner_cartridge = null
+	return ..()
+
+/obj/machinery/photocopier/Destroy()
+	QDEL_NULL(paper_copy)
+	QDEL_NULL(photo_copy)
+	QDEL_NULL(toner_cartridge)
+	ass = null //the mob isn't actually contained and just referenced, no need to delete it.
+	return ..()
+
 /obj/machinery/photocopier/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
@@ -96,7 +117,7 @@
 	data["num_copies"] = num_copies
 
 	try
-		var/list/blanks = json_decode(file2text(form_config))
+		var/list/blanks = json_decode(file2text("strings/blanks/nt_blanks.json"))
 		if (blanks != null)
 			data["blanks"] = blanks
 			data["category"] = category
@@ -105,7 +126,6 @@
 			data["forms_exist"] = FALSE
 	catch()
 		data["forms_exist"] = FALSE
-
 
 	if(photo_copy)
 		data["is_photo"] = TRUE

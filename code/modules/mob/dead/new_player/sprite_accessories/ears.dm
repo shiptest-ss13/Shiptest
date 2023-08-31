@@ -8,6 +8,7 @@
 	icon_state = "none"
 
 /datum/sprite_accessory/ears/cat
+	icon = 'icons/mob/species/misc/cat.dmi'
 	name = "Cat"
 	icon_state = "cat"
 	hasinner = 1

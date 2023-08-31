@@ -1174,6 +1174,11 @@
 	},
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable,
+/obj/machinery/light_switch{
+	pixel_y = 11;
+	dir = 8;
+	pixel_x = 20
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/dorm)
 "kD" = (
@@ -2187,6 +2192,16 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/atmospherics)
+"up" = (
+/obj/structure/catwalk/over/plated_catwalk/white{
+	color = "#4c535b"
+	},
+/obj/machinery/light_switch{
+	pixel_y = 22;
+	pixel_x = -12
+	},
+/turf/open/floor/plating/airless,
+/area/ship/construction)
 "ut" = (
 /obj/structure/catwalk/over/plated_catwalk/white{
 	color = "#4c535b"
@@ -2408,6 +2423,15 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
+"vF" = (
+/obj/effect/turf_decal/corner/transparent/bar/diagonal,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light_switch{
+	pixel_y = 22;
+	pixel_x = -12
+	},
+/turf/open/floor/plasteel,
+/area/ship/crew/canteen)
 "vH" = (
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/grille,
@@ -2743,6 +2767,10 @@
 	},
 /obj/structure/railing{
 	dir = 4
+	},
+/obj/machinery/light_switch{
+	pixel_y = 22;
+	pixel_x = -12
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -5269,14 +5297,14 @@
 /area/ship/construction)
 "Sr" = (
 /obj/machinery/firealarm/directional/north,
-/obj/machinery/light_switch{
-	dir = 8;
-	pixel_x = 27;
-	pixel_y = -5
-	},
 /obj/item/kirbyplants{
 	icon_state = "plant-03";
 	pixel_y = 5
+	},
+/obj/machinery/light_switch{
+	pixel_y = 11;
+	dir = 8;
+	pixel_x = 20
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
@@ -5760,6 +5788,10 @@
 /turf/open/floor/engine/o2,
 /area/ship/engineering/atmospherics)
 "VL" = (
+/obj/machinery/light_switch{
+	pixel_y = 22;
+	pixel_x = -12
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Wb" = (
@@ -6651,7 +6683,7 @@ Qs
 lL
 lL
 lL
-Os
+vF
 HW
 oF
 lL
@@ -7175,7 +7207,7 @@ Qs
 vQ
 Qs
 rg
-Ls
+up
 ia
 ia
 ia

@@ -2405,6 +2405,11 @@
 	},
 /obj/structure/cable,
 /obj/machinery/power/apc/auto_name/directional/west,
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -20;
+	pixel_y = 13
+	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "tB" = (
@@ -2958,6 +2963,11 @@
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable{
 	icon_state = "0-4"
+	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -20;
+	pixel_y = 13
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
@@ -3934,7 +3944,7 @@
 	},
 /obj/machinery/button/door/incinerator_vent_atmos_aux{
 	dir = 4;
-	pixel_x = -28;
+	pixel_x = -23;
 	pixel_y = 8
 	},
 /obj/effect/turf_decal/techfloor{
@@ -4808,7 +4818,7 @@
 /obj/machinery/light_switch{
 	dir = 1;
 	pixel_x = -10;
-	pixel_y = -25
+	pixel_y = -20
 	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -5018,6 +5028,11 @@
 	},
 /obj/machinery/light/directional/north,
 /obj/structure/railing/corner,
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -20;
+	pixel_y = 13
+	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/bridge)
 "SO" = (
@@ -5319,6 +5334,10 @@
 /obj/machinery/atmospherics/components/binary/pump{
 	dir = 8
 	},
+/obj/machinery/light_switch{
+	pixel_x = -12;
+	pixel_y = 23
+	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "UL" = (
@@ -5395,6 +5414,11 @@
 	dir = 4
 	},
 /obj/structure/extinguisher_cabinet/directional/south,
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_y = 11;
+	pixel_x = 20
+	},
 /turf/open/floor/plasteel,
 /area/ship/engineering/atmospherics)
 "Vz" = (
@@ -5452,6 +5476,11 @@
 /area/ship/engineering/engine)
 "Wg" = (
 /obj/item/kirbyplants/random,
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_y = 0;
+	pixel_x = 20
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/cryo)
 "Wr" = (
@@ -5461,6 +5490,11 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 4
+	},
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_y = 0;
+	pixel_x = 20
 	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/hallway/central)
@@ -5878,6 +5912,11 @@
 /area/ship/engineering/engine)
 "ZR" = (
 /obj/machinery/vending/coffee,
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -20;
+	pixel_y = 13
+	},
 /turf/open/floor/wood,
 /area/ship/crew/office)
 

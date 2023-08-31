@@ -344,7 +344,7 @@
 	list_reagents = list(random_reagent.type = 50)
 	. = ..()
 	desc +=  "<span class='notice'>The writing reads '[random_reagent.name]'.</span>"
-	update_icon()
+	update_appearance()
 
 /obj/item/reagent_containers/food/drinks/beer
 	name = "space beer"

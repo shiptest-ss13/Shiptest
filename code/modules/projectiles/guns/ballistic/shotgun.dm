@@ -40,7 +40,7 @@
 
 /obj/item/gun/ballistic/shotgun/riot //for spawn in the armory
 	name = "riot shotgun"
-	desc = "A sturdy shotgun with a longer magazine and a fixed tactical stock designed for non-lethal riot control."
+	desc = "A sturdy shotgun with a longer magazine tube and a fixed wooden stock designed for non-lethal riot control."
 	icon_state = "riotshotgun"
 	item_state = "shotgun"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/riot
@@ -120,7 +120,7 @@
 
 /obj/item/gun/ballistic/shotgun/bulldog
 	name = "\improper Bulldog Shotgun"
-	desc = "A semi-auto, mag-fed shotgun for combat in narrow corridors, nicknamed the 'Bulldog' by boarding parties. Only compatible with specialized 8-round drum magazines."
+	desc = "A semi-automatic magazine-fed shotgun designed for combat in tight quarters, manufactured by Scarborough Arms. A historical favorite of various Syndicate factions, especially the Gorlex Marauders."
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	icon_state = "bulldog"
 	item_state = "bulldog"
@@ -214,7 +214,7 @@
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/improvised
 	name = "improvised shotgun"
-	desc = "Essentially a tube that aims shotgun shells."
+	desc = "A length of pipe and miscellaneous bits of scrap fashioned into a rudimentary single-shot shotgun."
 	icon_state = "ishotgun"
 	item_state = "ishotgun"
 	w_class = WEIGHT_CLASS_BULKY
@@ -233,7 +233,7 @@
 			slot_flags = ITEM_SLOT_BACK
 			to_chat(user, "<span class='notice'>You tie the lengths of cable to the shotgun, making a sling.</span>")
 			slung = TRUE
-			update_icon()
+			update_appearance()
 		else
 			to_chat(user, "<span class='warning'>You need at least ten lengths of cable if you want to make a sling!</span>")
 
@@ -256,7 +256,7 @@
 	if(. && slung) //sawing off the gun removes the sling
 		new /obj/item/stack/cable_coil(get_turf(src), 10)
 		slung = 0
-		update_icon()
+		update_appearance()
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/improvised/sawn
 	name = "sawn-off improvised shotgun"
@@ -388,11 +388,12 @@
 	if(prob(0 + (magazine.ammo_count() * 10)))
 		if(prob(10))
 			to_chat(user, "<span class='userdanger'>Something isn't right. \the [src] doesn't fire for a brief moment. Then, the following words come to mind: \
-			Ó Pátria amada, \
-			Idolatrada, \
+			Ó Pátria amada, \n\
+			Idolatrada, \n\
 			Salve! Salve!</span>")
 
 			message_admins("A [src] misfired and exploded at [ADMIN_VERBOSEJMP(src)], which was fired by [user].") //logging
+			log_admin("A [src] misfired and exploded at [ADMIN_VERBOSEJMP(src)], which was fired by [user].")
 			user.take_bodypart_damage(0,50)
 			explosion(src, 0, 2, 4, 6, TRUE, TRUE)
 	..()
@@ -408,7 +409,7 @@
 
 /obj/item/gun/ballistic/shotgun/winchester
 	name = "Winchester MK.2"
-	desc = "A sturdy lever action rifle. This one is a newer reproduction."
+	desc = "A sturdy lever action rifle with hand-stamped Hunter's Pride marks on the receiver. This one is a newer reproduction."
 	icon_state = "winchester"
 	item_state = "winchester"
 	icon = 'icons/obj/guns/48x32guns.dmi'
@@ -421,17 +422,12 @@
 	fire_sound = 'sound/weapons/gun/rifle/shot.ogg'
 	rack_sound = 'sound/weapons/gun/rifle/winchester_cocked.ogg'
 
-/obj/item/gun/ballistic/shotgun/winchester/lethal
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/winchester/lethal
-
 /obj/item/gun/ballistic/shotgun/winchester/mk1
 	name = "Winchester MK.1"
 	desc = "A sturdy lever action rifle. This older pattern appears to be an antique, in excellent condition despite its age."
 	icon_state = "winchestermk1"
 	item_state = "winchestermk1"
 
-/obj/item/gun/ballistic/shotgun/winchester/mk1/lethal
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/winchester/lethal
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/twobore
 	name = "two-bore rifle"

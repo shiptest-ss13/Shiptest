@@ -323,7 +323,7 @@
 	vend_reply = "Thank you for using the JaniDrobe!"
 	products = list(/obj/item/clothing/under/rank/civilian/janitor = 2,
 					/obj/item/cartridge/janitor = 2,
-					/obj/item/clothing/head/beret/service = 2, //WS edit - berets
+					/obj/item/clothing/head/beret/service = 2,
 					/obj/item/clothing/under/rank/civilian/janitor/skirt = 2,
 					/obj/item/clothing/gloves/color/black = 2,
 					/obj/item/clothing/head/soft/purple = 2,
