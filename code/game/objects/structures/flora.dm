@@ -111,21 +111,23 @@
 	desc = "A remarkably tall tree."
 	icon_state = "pine_1"
 
-/obj/structure/flora/tree/dead/barren/Initialize()
-	. = ..()
-	icon_state = "pine_[rand(1, 2)]"
-
 /obj/structure/flora/tree/tall/whitesands
 	color = "#846996"
+	icon_state = "pine_1"
 
-/obj/structure/flora/tree/dead/barren/Initialize()
+/obj/structure/flora/tree/tall/whitesands/Initialize()
 	. = ..()
 	color = pick( "#846996", "#7b4e99", "#924fab")
+	icon_state = "pine_[rand(1, 2)]"
 
 /obj/structure/flora/tree/dead
 	icon = 'icons/obj/flora/deadtrees.dmi'
 	desc = "A dead tree. How it died, you know not."
 	icon_state = "tree_1"
+
+/obj/structure/flora/tree/dead/Initialize()
+	icon_state = "tree_[rand(1, 6)]"
+	. = ..()
 
 /obj/structure/flora/tree/palm
 	icon = 'icons/misc/beach2.dmi'
@@ -148,10 +150,6 @@
 	desc = "A true feat of strength, almost as good as last year."
 	icon_state = "anchored_rod"
 	anchored = TRUE
-
-/obj/structure/flora/tree/dead/Initialize()
-	icon_state = "tree_[rand(1, 6)]"
-	. = ..()
 
 /obj/structure/flora/tree/jungle
 	name = "tree"
@@ -427,7 +425,7 @@
 
 /obj/structure/flora/rock/Initialize()
 	. = ..()
-	icon_state = "[icon_state][rand(1,3)]"
+	icon_state = "[base_icon_state][rand(1,3)]"
 
 /obj/structure/flora/rock/attackby(obj/item/W, mob/user, params)
 	if(mineResult && (!(flags_1 & NODECONSTRUCT_1)))
@@ -882,7 +880,7 @@
 	name = "maguaro cactus"
 	desc = "A hardy species of modified Saguaro cacti, originating from the Sol system. Initially planted on Mars to help prevent soil erosion, it can now be found on frigid tundras across known space."
 	icon = 'icons/obj/flora/bigtrees.dmi'
-	icon_state = "cactus"
+	icon_state = "cactus1"
 	density = TRUE
 
 /obj/structure/flora/tree/cactus/Initialize()
@@ -906,6 +904,7 @@
 	desc = "An ancient trunk, mummified by the passage of time. This one still has some purple to it."
 	color = "#846996"
 	icon = 'icons/obj/flora/barren_tree.dmi'
+	icon_state = "barren_large"
 
 /obj/structure/flora/tree/dead/barren/Initialize()
 	. = ..()
@@ -916,12 +915,13 @@
 	name = "driftwood"
 	desc = "Floatsam, jetsam, all molded down in the unforgiving sea."
 	icon = 'icons/obj/flora/grass-sticks.dmi'
-	icon_state = "stick"
+	icon_state = "stick2"
+	base_icon_state = "stick"
 	density = FALSE
 
 /obj/structure/flora/driftwood/Initialize()
 	. = ..()
-	icon_state = "[icon_state][rand(1, 4)]"
+	icon_state = "[base_icon_state][rand(1, 4)]"
 
 /obj/structure/flora/driftlog
 	name = "driftwood log"
@@ -932,27 +932,31 @@
 
 /obj/structure/flora/rock/rockplanet
 	name = "russet stone"
-	icon_state = "redrock"
+	icon_state = "redrock1"
+	base_icon_state = "redrock"
 	desc = "A raised knurl of red rock."
 	mineResult = /obj/item/stack/ore/glass/rockplanet
 
 /obj/structure/flora/rock/pile/rockplanet
 	name = "russet stones"
 	desc = "A pile of rust-red rocks."
-	icon_state = "redrocks"
+	icon_state = "redrocks1"
+	base_icon_state = "redrocks"
 	mineResult = /obj/item/stack/ore/glass/rockplanet
 
 /obj/structure/flora/grass/rockplanet
 	name = "cottongrass"
 	desc= "A variety of cold-loving prarie grass. This variety seems to thrive the frigid rockworld enviroment, so long as water can be found nearby."
 	icon = 'icons/obj/flora/grass-sticks.dmi'
-	icon_state = "tall_grass"
+	icon_state = "tall_grass_1"
+	base_icon_state = "tall_grass"
 
 /obj/structure/flora/grass/rockplanet/Initialize()
 	. = ..()
-	icon_state = "[icon_state]_[rand(1, 2)]"
+	icon_state = "[base_icon_state]_[rand(1, 2)]"
 
 /obj/structure/flora/grass/rockplanet/dead
 	name = "dry cottongrass"
 	desc= "This patch seems to have run dry on life-giving water."
-	icon_state = "dry_grass"
+	icon_state = "dry_grass_1"
+	base_icon_state = "dry_grass"

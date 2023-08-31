@@ -151,3 +151,9 @@
 	id = "crashed_pinnance"
 	description = "A crashed shuttlecraft, looks like the pilot didn't make it."
 	suffix = "lavaland_surface_crashed_pinnance.dmm"
+
+/datum/map_template/ruin/lavaland/codelab
+	name = "Nanotrasen Genetic Research Facility"
+	id = "codelab"
+	description = "A Nanotrasen genetic research facility, abandoned and ripe for looting. Whats that goo over there?"
+	suffix = "lavaland_surface_codelab.dmm"

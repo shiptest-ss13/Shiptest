@@ -331,19 +331,6 @@
 		return
 	if(M.has_bane(BANE_SALT))
 		M.mind.disrupt_spells(-200)
-	if (issquidperson(M))
-		if(reac_volume < 5)
-			return
-		if (method == INGEST)
-			to_chat(M, "<span class='danger'>Your tongue shrivels as you taste the salt!</span>")
-			M.adjustFireLoss(reac_volume/2, TRUE)
-		else if (method == TOUCH)
-			M.adjustFireLoss(reac_volume/2, TRUE)
-			if(!M.incapacitated())
-				var/obj/item/I = M.get_active_held_item()
-				M.throw_item(get_ranged_target_turf(M, pick(GLOB.alldirs), rand(1, 3)))
-				to_chat(M, "<span class='warning'>The salt causes your arm to spasm! It burns!</span>")
-				M.log_message("threw [I] due to a Muscle Spasm", INDIVIDUAL_ATTACK_LOG)
 
 /datum/reagent/consumable/sodiumchloride/expose_turf(turf/T, reac_volume) //Creates an umbra-blocking salt pile
 	if(!istype(T))

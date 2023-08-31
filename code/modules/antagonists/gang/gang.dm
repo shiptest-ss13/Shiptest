@@ -99,7 +99,7 @@
 /datum/antagonist/gang/purple/check_gang_objective()
 	for(var/mob/M in GLOB.player_list)
 		if(M.mind.assigned_role in cop_roles)
-			if(!considered_alive(M) && !M.suiciding)
+			if(!considered_alive(M))
 				return FALSE
 	return TRUE
 
@@ -189,7 +189,7 @@
 			return FALSE
 	for(var/mob/M in GLOB.player_list)
 		if(M.mind.assigned_role == "Chaplain")
-			if(!considered_alive(M) && !M.suiciding)
+			if(!considered_alive(M))
 				return FALSE
 	return TRUE
 

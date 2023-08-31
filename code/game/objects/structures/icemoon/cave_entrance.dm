@@ -282,7 +282,6 @@ GLOBAL_LIST_INIT(ore_probability, list(
 				new /mob/living/simple_animal/hostile/netherworld(loc)
 				new /mob/living/simple_animal/hostile/netherworld/blankbody(loc)
 			if(prob(5))
-				new /obj/item/his_grace(loc)//trust me, it's not worth the trouble.
 				new /mob/living/simple_animal/hostile/netherworld/migo(loc)
 				new /mob/living/simple_animal/hostile/netherworld/blankbody(loc)
 				new /mob/living/simple_animal/hostile/netherworld/migo(loc)
@@ -752,8 +751,8 @@ GLOBAL_LIST_INIT(ore_probability, list(
 				new /obj/item/gun/magic/hook(loc)
 				new /mob/living/simple_animal/hostile/carp(loc)
 			if(prob(45))
-				new /obj/item/reagent_containers/food/snacks/carpmeat(loc)
-				new /obj/item/reagent_containers/food/snacks/carpmeat(loc)
+				new /obj/item/reagent_containers/food/snacks/fishmeat/carp(loc)
+				new /obj/item/reagent_containers/food/snacks/fishmeat/carp(loc)
 			if(prob(35))
 				new /mob/living/simple_animal/hostile/carp/megacarp(loc)
 			if(prob(25))

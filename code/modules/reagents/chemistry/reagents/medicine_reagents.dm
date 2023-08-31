@@ -88,8 +88,9 @@
 				mytray.mutateweed()
 			if(1 to 32)
 				mytray.mutatepest(user)
-			else if(prob(20))
-				mytray.visible_message("<span class='warning'>Nothing happens...</span>")
+			else
+				if(prob(20))
+					mytray.visible_message("<span class='warning'>Nothing happens...</span>")
 
 /datum/reagent/medicine/adminordrazine/quantum_heal
 	name = "Quantum Medicine"
@@ -174,26 +175,34 @@
 	taste_description = "spicy jelly"
 
 /datum/reagent/medicine/pyroxadone/on_mob_life(mob/living/carbon/M)
-	if(M.bodytemperature > M.dna.species.bodytemp_heat_damage_limit)
-		var/power = 0
-		switch(M.bodytemperature)
-			if(M.dna.species.bodytemp_heat_damage_limit to 400)
-				power = 2
-			if(400 to 460)
-				power = 3
-			else
-				power = 5
-		if(M.on_fire)
-			power *= 2
+	. = ..()
 
-		M.adjustOxyLoss(-2 * power, 0)
-		M.adjustBruteLoss(-power, 0)
-		M.adjustFireLoss(-1.5 * power, 0)
-		M.adjustToxLoss(-power, 0, TRUE)
-		M.adjustCloneLoss(-power, 0)
-		REMOVE_TRAIT(M, TRAIT_DISFIGURED, TRAIT_GENERIC)
-		. = 1
-	..()
+	var/bodytemp = M.bodytemperature
+	var/heatlimit = M.dna.species.bodytemp_heat_damage_limit
+
+	if(bodytemp < heatlimit)
+		return .
+
+	var/power = 0
+
+	if(bodytemp < 400)
+		power = 2
+
+	else if(bodytemp < 460)
+		power = 3
+
+	else
+		power = 5
+
+	if(M.on_fire)
+		power *= 2
+
+	M.adjustOxyLoss(-2 * power, 0)
+	M.adjustBruteLoss(-power, 0)
+	M.adjustFireLoss(-1.5 * power, 0)
+	M.adjustToxLoss(-power, 0, TRUE)
+	M.adjustCloneLoss(-power, 0)
+	REMOVE_TRAIT(M, TRAIT_DISFIGURED, TRAIT_GENERIC)
 
 /datum/reagent/medicine/rezadone
 	name = "Rezadone"
@@ -514,9 +523,9 @@
 	taste_description = "acid"
 
 /datum/reagent/medicine/calomel/on_mob_life(mob/living/carbon/M)
-	for(var/datum/reagent/R in M.reagents.reagent_list)				//WS Edit Begin - Actually purges all chems
+	for(var/datum/reagent/R in M.reagents.reagent_list)
 		if(R != src)
-			M.reagents.remove_reagent(R.type,3)		//WS Edit End
+			M.reagents.remove_reagent(R.type,3)
 	if(M.health > 20)
 		M.adjustToxLoss(1*REM, 0)
 		. = 1
@@ -547,6 +556,19 @@
 	for(var/datum/reagent/R in M.reagents.reagent_list)
 		if(R != src)
 			M.reagents.remove_reagent(R.type,2)
+	..()
+	. = 1
+
+/datum/reagent/medicine/anti_rad
+	name = "Emergency Radiation Purgant" //taking real names
+	description = "Rapidly purges radiation from the body."
+	reagent_state = LIQUID
+	color = "#E6FFF0"
+	metabolization_rate = 0.5 * REAGENTS_METABOLISM
+
+/datum/reagent/medicine/anti_rad/on_mob_life(mob/living/carbon/M)
+	M.radiation -= M.radiation - rand(50,150)
+	M.adjust_disgust(7*REM, 0)
 	..()
 	. = 1
 
@@ -906,7 +928,7 @@
 /datum/reagent/medicine/strange_reagent/expose_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(M.stat != DEAD)
 		return ..()
-	if(M.suiciding || M.hellbound) //they are never coming back
+	if(M.hellbound) //they are never coming back
 		M.visible_message("<span class='warning'>[M]'s body does not react...</span>")
 		return
 	if(iscarbon(M) && method != INGEST) //simplemobs can still be splashed

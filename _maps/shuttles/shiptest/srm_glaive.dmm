@@ -53,7 +53,7 @@
 /obj/item/gun/ballistic/derringer,
 /obj/structure/closet/secure_closet/shadow,
 /obj/item/lighter,
-/obj/item/ammo_box/c38_box/hunting,
+/obj/item/ammo_box/c38_box,
 /obj/item/disk/holodisk/roumain,
 /obj/item/clothing/shoes/cowboy,
 /obj/item/clothing/shoes/cowboy/black,
@@ -85,7 +85,7 @@
 /obj/item/gun/ballistic/derringer,
 /obj/structure/closet/secure_closet/medicalsrm,
 /obj/item/disk/holodisk/roumain,
-/obj/item/ammo_box/c38_box/hunting,
+/obj/item/ammo_box/c38_box,
 /obj/item/storage/firstaid/roumain,
 /obj/effect/turf_decal/corner/opaque/blue/diagonal,
 /turf/open/floor/plasteel/white,
@@ -156,7 +156,7 @@
 /obj/item/gun/ballistic/derringer,
 /obj/structure/closet/secure_closet/shadow,
 /obj/item/lighter,
-/obj/item/ammo_box/c38_box/hunting,
+/obj/item/ammo_box/c38_box,
 /obj/item/disk/holodisk/roumain,
 /obj/item/clothing/shoes/cowboy,
 /obj/item/clothing/shoes/cowboy/black,
@@ -204,6 +204,14 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage)
+"cz" = (
+/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/item/book/manual/trickwines_4_brewers,
+/turf/open/floor/grass{
+	icon_state = "junglegrass"
+	},
+/area/ship/roumain)
 "cJ" = (
 /obj/structure/cable/orange{
 	icon_state = "1-4"
@@ -899,10 +907,10 @@
 /obj/item/storage/backpack/cultpack,
 /obj/item/flashlight/lantern,
 /obj/item/kitchen/knife/combat/survival,
-/obj/item/gun/ballistic/shotgun/winchester/lethal,
+/obj/item/gun/ballistic/shotgun/winchester,
 /obj/structure/closet/secure_closet/hunter,
 /obj/item/lighter,
-/obj/item/ammo_box/c38_box/hunting,
+/obj/item/ammo_box/c38_box,
 /obj/item/disk/holodisk/roumain,
 /obj/item/clothing/shoes/cowboy/black,
 /obj/item/clothing/shoes/cowboy,
@@ -975,7 +983,7 @@
 /obj/item/borg/upgrade/modkit/indoors,
 /obj/item/gun/energy/kinetic_accelerator,
 /obj/item/storage/bag/ore,
-/obj/item/gun/ballistic/shotgun/winchester/mk1/lethal,
+/obj/item/gun/ballistic/shotgun/winchester/mk1,
 /obj/item/shovel,
 /obj/item/gps/mining,
 /obj/structure/closet/secure_closet/miningcloset,
@@ -1670,6 +1678,13 @@
 /obj/effect/turf_decal/corner/opaque/blue/diagonal,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
+"At" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/reagent_containers/food/drinks/drinkingglass/breakawayflask/vintageash,
+/turf/open/floor/plating{
+	icon_state = "greenerdirt"
+	},
+/area/ship/roumain)
 "AL" = (
 /obj/structure/cable/orange{
 	icon_state = "2-4"
@@ -1761,11 +1776,11 @@
 /obj/structure/railing{
 	dir = 1
 	},
+/obj/item/reagent_containers/food/drinks/drinkingglass/breakawayflask/vintageash,
 /turf/open/floor/ship/dirt/dark,
 /area/ship/roumain)
 "BB" = (
 /obj/structure/table/wood,
-/obj/item/book/manual/wiki/surgery,
 /obj/item/reagent_containers/food/drinks/bottle/whiskey{
 	pixel_x = 7;
 	pixel_y = 6
@@ -1774,6 +1789,12 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/corner/opaque/blue/diagonal,
+/obj/item/reagent_containers/food/drinks/bottle/absinthe,
+/obj/item/reagent_containers/food/drinks/bottle/absinthe{
+	pixel_y = 8;
+	pixel_x = -6
+	},
+/obj/item/book/manual/wiki/surgery,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "BK" = (
@@ -2620,6 +2641,12 @@
 /obj/item/seeds/lavaland/porcini,
 /obj/item/seeds/lavaland/cactus,
 /obj/item/cultivator/rake,
+/obj/item/stack/ore/glass/basalt{
+	amount = 25;
+	pixel_y = -2;
+	pixel_x = -9
+	},
+/obj/item/seeds/sunflower/moonflower,
 /turf/open/floor/ship/dirt/dark,
 /area/ship/roumain)
 "NE" = (
@@ -2812,7 +2839,6 @@
 /obj/item/circuitboard/machine/rdserver,
 /obj/item/circuitboard/machine/autolathe,
 /obj/item/disk/design_disk/ammo_n762,
-/obj/item/disk/design_disk/ammo_38_hunting,
 /obj/item/disk/design_disk/ammo_1911,
 /obj/item/circuitboard/machine/protolathe/department/ballistics,
 /obj/item/circuitboard/computer/rdconsole,
@@ -3273,10 +3299,10 @@
 /obj/item/storage/backpack/cultpack,
 /obj/item/flashlight/lantern,
 /obj/item/kitchen/knife/combat/survival,
-/obj/item/gun/ballistic/shotgun/winchester/lethal,
+/obj/item/gun/ballistic/shotgun/winchester,
 /obj/structure/closet/secure_closet/hunter,
 /obj/item/lighter,
-/obj/item/ammo_box/c38_box/hunting,
+/obj/item/ammo_box/c38_box,
 /obj/item/disk/holodisk/roumain,
 /obj/item/clothing/shoes/cowboy/black,
 /obj/item/clothing/shoes/cowboy,
@@ -3922,7 +3948,7 @@ AN
 ZV
 ko
 Lk
-aM
+cz
 YP
 ds
 aM
@@ -4114,7 +4140,7 @@ iP
 VI
 RJ
 lA
-RJ
+At
 nj
 NL
 AZ

@@ -34,6 +34,8 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 	var/glass_icon_state = null
 	/// used for shot glasses, mostly for alcohol
 	var/shot_glass_icon_state = null
+	/// used for breakaway flasks similar to glass or shotglass icon state
+	var/breakaway_flask_icon_state = null
 	/// reagent holder this belongs to
 	var/datum/reagents/holder = null
 	/// LIQUID, SOLID, GAS

@@ -283,7 +283,7 @@ Versioning
 	key = new_key
 	key_type = new_key_type
 
-/datum/controller/subsystem/blackbox/proc/LogAhelp(ticket, action, message, recipient, sender)
+/datum/controller/subsystem/blackbox/proc/log_ahelp(ticket, action, message, recipient, sender)
 	if(!SSdbcore.Connect())
 		return
 
@@ -301,7 +301,7 @@ Versioning
 		return
 	if(!L || !L.key || !L.mind)
 		return
-	if(!L.suiciding && !first_death.len)
+	if(!first_death.len)
 		first_death["name"] = "[(L.real_name == L.name) ? L.real_name : "[L.real_name] as [L.name]"]"
 		first_death["role"] = null
 		if(L.mind.assigned_role)
@@ -314,8 +314,8 @@ Versioning
 		return
 
 	var/datum/DBQuery/query_report_death = SSdbcore.NewQuery({"
-		INSERT INTO [format_table_name("death")] (pod, x_coord, y_coord, z_coord, server_ip, server_port, round_id, tod, job, special, name, byondkey, laname, lakey, bruteloss, fireloss, brainloss, oxyloss, toxloss, cloneloss, staminaloss, last_words, suicide)
-		VALUES (:pod, :x_coord, :y_coord, :z_coord, INET_ATON(:internet_address), :port, :round_id, :time, :job, :special, :name, :key, :laname, :lakey, :brute, :fire, :brain, :oxy, :tox, :clone, :stamina, :last_words, :suicide)
+		INSERT INTO [format_table_name("death")] (pod, x_coord, y_coord, z_coord, server_ip, server_port, round_id, tod, job, special, name, byondkey, laname, lakey, bruteloss, fireloss, brainloss, oxyloss, toxloss, cloneloss, staminaloss, last_words)
+		VALUES (:pod, :x_coord, :y_coord, :z_coord, INET_ATON(:internet_address), :port, :round_id, :time, :job, :special, :name, :key, :laname, :lakey, :brute, :fire, :brain, :oxy, :tox, :clone, :stamina, :last_words)
 	"}, list(
 		"name" = L.real_name,
 		"key" = L.ckey,
@@ -335,7 +335,6 @@ Versioning
 		"y_coord" = L.y,
 		"z_coord" = L.z,
 		"last_words" = L.last_words,
-		"suicide" = L.suiciding,
 		"internet_address" = world.internet_address || "0",
 		"port" = "[world.port]",
 		"round_id" = GLOB.round_id,

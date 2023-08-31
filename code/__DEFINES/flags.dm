@@ -48,6 +48,23 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 /// Should we use the initial icon for display? Mostly used by overlay only objects
 #define HTML_USE_INITAL_ICON_1 (1<<20)
 
+// Update flags for [/atom/proc/update_appearance]
+/// Update the atom's name
+#define UPDATE_NAME (1<<0)
+/// Update the atom's desc
+#define UPDATE_DESC (1<<1)
+/// Update the atom's icon state
+#define UPDATE_ICON_STATE (1<<2)
+/// Update the atom's overlays
+#define UPDATE_OVERLAYS (1<<3)
+/// Update the atom's greyscaling
+#define UPDATE_GREYSCALE (1<<4)
+/// Update the atom's smoothing. (More accurately, queue it for an update)
+#define UPDATE_SMOOTHING (1<<5)
+/// Update the atom's icon
+#define UPDATE_ICON (UPDATE_ICON_STATE|UPDATE_OVERLAYS)
+
+
 //turf-only flags
 #define NOJAUNT_1 (1<<0)
 /// If a turf can be made dirty at roundstart. This is also used in areas.
@@ -81,10 +98,8 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 #define HIDDEN_AREA (1<<6)
 /// If false, loading multiple maps with this area type will create multiple instances.
 #define UNIQUE_AREA (1<<7)
-/// If people are allowed to suicide in it. Mostly for OOC stuff like minigames
-#define BLOCK_SUICIDE (1<<8)
 /// Can the Xenobio management console transverse this area by default?
-#define XENOBIOLOGY_COMPATIBLE (1<<9)
+#define XENOBIOLOGY_COMPATIBLE (1<<8)
 
 /*
 	These defines are used specifically with the atom/pass_flags bitmask
@@ -135,6 +150,7 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 
 #define ZAP_DEFAULT_FLAGS ZAP_MACHINE_EXPLOSIVE | ZAP_ALLOW_DUPLICATES | ZAP_OBJ_DAMAGE | ZAP_MOB_DAMAGE | ZAP_MOB_STUN
 #define ZAP_FUSION_FLAGS ZAP_OBJ_DAMAGE | ZAP_MOB_DAMAGE | ZAP_MOB_STUN
+#define ZAP_STORM_FLAGS ZAP_OBJ_DAMAGE | ZAP_MOB_DAMAGE | ZAP_MOB_STUN
 
 #define ZAP_SUPERMATTER_FLAGS ZAP_GIVES_RESEARCH
 #define ZAP_TESLA_FLAGS ZAP_DEFAULT_FLAGS | ZAP_GIVES_RESEARCH

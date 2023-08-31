@@ -92,7 +92,7 @@
 
 /datum/chemical_reaction/imitationcarpmeat/on_reaction(datum/reagents/holder)
 	var/location = get_turf(holder.my_atom)
-	new /obj/item/reagent_containers/food/snacks/carpmeat/imitation(location)
+	new /obj/item/reagent_containers/food/snacks/fishmeat/carp/imitation(location)
 	if(holder && holder.my_atom)
 		qdel(holder.my_atom)
 

@@ -32,6 +32,8 @@
 #define DYNAMIC_WORLD_REEBE "reebe" //celestial bodies
 #define DYNAMIC_WORLD_ASTEROID "asteroid"
 #define DYNAMIC_WORLD_SPACERUIN "space"
+#define DYNAMIC_WORLD_GAS_GIANT "gas giant"
+#define DYNAMIC_WORLD_PLASMA_GIANT "plasma giant"
 
 /// Make sure you are adding new planet types to this, in order as seen above preferrably
 #define DYNAMIC_WORLD_LIST_ALL list(\
@@ -44,7 +46,9 @@
 	DYNAMIC_WORLD_WASTEPLANET,\
 	DYNAMIC_WORLD_REEBE,\
 	DYNAMIC_WORLD_ASTEROID,\
-	DYNAMIC_WORLD_SPACERUIN)
+	DYNAMIC_WORLD_SPACERUIN,\
+	DYNAMIC_WORLD_GAS_GIANT,\
+	DYNAMIC_WORLD_PLASMA_GIANT)
 
 //Possible ship states
 #define OVERMAP_SHIP_IDLE "idle"
@@ -68,6 +72,12 @@
 ///Used to get the turf on the "physical" overmap representation.
 #define OVERMAP_TOKEN_TURF(x_pos, y_pos) locate(SSovermap.overmap_vlevel.low_x + SSovermap.overmap_vlevel.reserved_margin + x_pos - 1, SSovermap.overmap_vlevel.low_y + SSovermap.overmap_vlevel.reserved_margin + y_pos - 1, SSovermap.overmap_vlevel.z_value)
 
+///Name of the file used for ship name random selection, if any new categories are added be sure to add them to the schema, too!
+#define SHIP_NAMES_FILE "ship_names.json"
+
 // Burn direction defines
 #define BURN_NONE 0
 #define BURN_STOP -1
+
+// The filepath used to store the admin-controlled next round outpost map override.
+#define OUTPOST_OVERRIDE_FILEPATH "data/outpost_override.json"

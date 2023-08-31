@@ -4,9 +4,6 @@
 	total_positions = 1
 	spawn_positions = 1
 	minimal_player_age = 7
-	exp_requirements = 180
-	exp_type = EXP_TYPE_CREW
-	exp_type_department = EXP_TYPE_ENGINEERING
 	officer = TRUE
 	wiki_page = "Chief_Engineer" //WS Edit - Wikilinks/Warning
 
@@ -75,7 +72,7 @@
 	head = /obj/item/clothing/head/hardhat/white
 	gloves = null
 	neck = /obj/item/clothing/neck/tie/green
-	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/modular_computer/tablet/preset/advanced=1, /obj/item/storage/belt/utility/chief/full=1, /obj/item/clothing/gloves/color/black=1)
+	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/modular_computer/tablet/preset/advanced=1, /obj/item/clothing/gloves/color/black=1)
 
 /datum/outfit/job/ce/gec
 	name = "Chief Engineer (GEC)"
@@ -130,3 +127,20 @@
 	gloves = /obj/item/clothing/gloves/combat
 	belt = /obj/item/storage/belt/utility/full
 
+/datum/outfit/job/ce/minutemen
+	name = "Foreman (Colonial Minutemen)"
+
+	ears = /obj/item/radio/headset/minutemen/alt
+	uniform = /obj/item/clothing/under/rank/command/minutemen
+	alt_uniform = null
+	suit = /obj/item/clothing/suit/toggle/lawyer/minutemen
+	alt_suit = null
+	gloves = /obj/item/clothing/gloves/combat
+	belt = /obj/item/storage/belt/utility/full
+	shoes = /obj/item/clothing/shoes/combat
+	head = /obj/item/clothing/head/cowboy/sec/minutemen
+	backpack = /obj/item/storage/backpack
+	backpack_contents = list(
+		/obj/item/melee/classic_baton/telescopic=1,
+		/obj/item/modular_computer/tablet/preset/advanced = 1
+	)

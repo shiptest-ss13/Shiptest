@@ -42,12 +42,6 @@
 /obj/machinery/holopad/emergency/command,
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
-"aV" = (
-/obj/machinery/porta_turret/centcom_shuttle{
-	dir = 9
-	},
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
 "aZ" = (
 /obj/structure/rack,
 /obj/item/reagent_containers/food/snacks/canned/beans,
@@ -137,6 +131,9 @@
 /obj/effect/turf_decal/trimline/opaque/bar/filled/warning{
 	dir = 4
 	},
+/obj/machinery/light_switch{
+	pixel_y = 22
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/engineering)
 "cZ" = (
@@ -178,7 +175,7 @@
 /obj/item/modular_computer/tablet/preset/advanced,
 /obj/item/modular_computer/tablet/preset/advanced,
 /obj/item/paper{
-	info = "Congratulations on your purchase of Cybersun G-1010 Long Range Communication Tables (Chat client installed seperately)"
+	default_raw_text = "Congratulations on your purchase of Cybersun G-1010 Long Range Communication Tables (Chat client installed seperately)"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
@@ -356,6 +353,10 @@
 	},
 /obj/machinery/camera/autoname{
 	dir = 8
+	},
+/obj/machinery/light_switch{
+	pixel_y = 23;
+	pixel_x = -12
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
@@ -573,6 +574,9 @@
 /obj/effect/turf_decal/trimline/opaque/bar/filled/warning{
 	dir = 8
 	},
+/obj/machinery/light_switch{
+	pixel_y = 22
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/central)
 "nO" = (
@@ -603,7 +607,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/dorm)
 "pa" = (
-/obj/machinery/photocopier/faxmachine/longrange,
+/obj/machinery/fax,
 /obj/item/toy/figure/detective{
 	name = "Intel Buddy";
 	pixel_x = 5;
@@ -728,6 +732,10 @@
 	},
 /obj/machinery/door/window{
 	dir = 4
+	},
+/obj/machinery/light_switch{
+	pixel_y = 22;
+	pixel_x = -11
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office)
@@ -949,6 +957,11 @@
 	pixel_x = -9;
 	pixel_y = -3
 	},
+/obj/machinery/light_switch{
+	pixel_x = -20;
+	pixel_y = 12;
+	dir = 4
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "xf" = (
@@ -1073,12 +1086,6 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
-"yJ" = (
-/obj/machinery/porta_turret/centcom_shuttle{
-	dir = 5
-	},
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
 "zH" = (
 /obj/machinery/atmospherics/components/binary/pump/on/layer4{
 	dir = 4
@@ -1101,14 +1108,13 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light_switch{
+	pixel_y = -20;
+	dir = 1;
+	pixel_x = 6
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
-"zP" = (
-/obj/machinery/porta_turret/centcom_shuttle{
-	dir = 6
-	},
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
 "zY" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/structure/cable{
@@ -1163,12 +1169,14 @@
 	icon_state = "0-8"
 	},
 /obj/item/radio/intercom/directional/north,
+/obj/machinery/light_switch{
+	pixel_y = 23;
+	pixel_x = -12
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/dorm)
 "CR" = (
-/obj/machinery/porta_turret/centcom_shuttle{
-	dir = 10
-	},
+/obj/machinery/porta_turret/ship,
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
 "CU" = (
@@ -1285,9 +1293,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "GV" = (
-/obj/machinery/porta_turret/centcom_shuttle/weak{
-	dir = 4
-	},
+/obj/machinery/porta_turret/ship/weak,
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
 "Hd" = (
@@ -1767,7 +1773,7 @@
 /obj/item/storage/belt/utility/full,
 /obj/item/clothing/glasses/welding,
 /obj/item/clothing/glasses/welding,
-/obj/structure/extinguisher_cabinet/directional/north,
+/obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "UZ" = (
@@ -1821,7 +1827,7 @@
 /obj/item/reagent_containers/pill/cyanide,
 /obj/item/reagent_containers/pill/cyanide,
 /obj/item/paper/crumpled{
-	info = "Hand this stuff out to the field agents. They'll have a blast."
+	default_raw_text = "Hand this stuff out to the field agents. They'll have a blast."
 	},
 /obj/item/clothing/mask/chameleon,
 /obj/item/card/id/syndicate/anyone,
@@ -1960,7 +1966,7 @@
 /area/ship/engineering)
 
 (1,1,1) = {"
-aV
+CR
 YQ
 YQ
 ru
@@ -2063,7 +2069,7 @@ nO
 "}
 (7,1,1) = {"
 YQ
-yJ
+CR
 kM
 kM
 kM
@@ -2075,7 +2081,7 @@ cZ
 jj
 jj
 jj
-zP
+CR
 YQ
 "}
 (8,1,1) = {"

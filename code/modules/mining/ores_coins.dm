@@ -288,7 +288,7 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 		GibtoniteReaction(user)
 		return
 	if(primed)
-		if(istype(I, /obj/item/mining_scanner) || istype(I, /obj/item/t_scanner/adv_mining_scanner) || istype(I, /obj/item/pinpointer/deepcore) || I.tool_behaviour == TOOL_MULTITOOL)
+		if(istype(I, /obj/item/mining_scanner) || istype(I, /obj/item/t_scanner/adv_mining_scanner) || I.tool_behaviour == TOOL_MULTITOOL)
 			primed = FALSE
 			if(det_timer)
 				deltimer(det_timer)
@@ -393,25 +393,6 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 		var/datum/material/M = i
 		value += M.value_per_unit * custom_materials[M]
 
-/obj/item/coin/suicide_act(mob/living/user)
-	user.visible_message("<span class='suicide'>[user] contemplates suicide with \the [src]!</span>")
-	if (!attack_self(user))
-		user.visible_message("<span class='suicide'>[user] couldn't flip \the [src]!</span>")
-		return SHAME
-	addtimer(CALLBACK(src, .proc/manual_suicide, user), 10)//10 = time takes for flip animation
-	return MANUAL_SUICIDE_NONLETHAL
-
-/obj/item/coin/proc/manual_suicide(mob/living/user)
-	var/index = sideslist.Find(coinflip)
-	if (index==2)//tails
-		user.visible_message("<span class='suicide'>\the [src] lands on [coinflip]! [user] promptly falls over, dead!</span>")
-		user.adjustOxyLoss(200)
-		user.death(0)
-		user.set_suicide(TRUE)
-		user.suicide_log()
-	else
-		user.visible_message("<span class='suicide'>\the [src] lands on [coinflip]! [user] keeps on living!</span>")
-
 /obj/item/coin/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/stack/cable_coil))
 		var/obj/item/stack/cable_coil/CC = W
@@ -457,7 +438,7 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 				"<span class='notice'>[user] flips [src]. It lands on [coinflip].</span>", \
 				"<span class='notice'>You flip [src]. It lands on [coinflip].</span>", \
 				"<span class='hear'>You hear the clattering of loose change.</span>")
-	return TRUE//did the coin flip? useful for suicide_act
+	return TRUE//did the coin flip?
 
 /obj/item/coin/gold
 	custom_materials = list(/datum/material/gold = 400)

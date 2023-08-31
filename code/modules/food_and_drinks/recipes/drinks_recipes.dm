@@ -633,6 +633,24 @@
 	mix_message = "You hear faint sounds of gears turning as it mixes."
 	mix_sound = 'sound/effects/clockcult_gateway_closing.ogg'
 
+/datum/chemical_reaction/ash_wine
+	results = list(/datum/reagent/consumable/ethanol/ash_wine = 5)
+	required_reagents = list(/datum/reagent/consumable/ethanol/absinthe = 3, /datum/reagent/ash = 1, /datum/reagent/drug/mushroomhallucinogen = 1)
+	required_container = /obj/item/reagent_containers/food/drinks/drinkingglass/breakawayflask
+	mix_sound ='sound/weather/ashstorm/inside/weak_end.ogg'
+
+/datum/chemical_reaction/ice_wine
+	results = list(/datum/reagent/consumable/ethanol/ice_wine = 5)
+	required_reagents = list(/datum/reagent/consumable/ethanol/sake = 3, /datum/reagent/polar_bear_fur = 1, /datum/reagent/consumable/frostoil = 1)
+	required_container = /obj/item/reagent_containers/food/drinks/drinkingglass/breakawayflask
+	mix_sound ='sound/effects/glassbr3.ogg'
+
+/datum/chemical_reaction/shock_wine
+	results = list(/datum/reagent/consumable/ethanol/shock_wine = 5)
+	required_reagents = list(/datum/reagent/consumable/ethanol/vodka = 3, /datum/reagent/calcium = 1, /datum/reagent/consumable/lemonjuice = 1)
+	required_container = /obj/item/reagent_containers/food/drinks/drinkingglass/breakawayflask
+	mix_sound ='sound/machines/defib_zap.ogg'
+
 /datum/chemical_reaction/drink/mushroom_tea
 	results = list(/datum/reagent/consumable/mushroom_tea = 5)
 	required_reagents = list(/datum/reagent/toxin/mushroom_powder = 1, /datum/reagent/water = 5)

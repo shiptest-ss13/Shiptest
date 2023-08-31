@@ -10,7 +10,7 @@
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	custom_materials = list(/datum/material/iron = 15000)
 	throwforce = 2
-	w_class = WEIGHT_CLASS_TINY
+	w_class = WEIGHT_CLASS_SMALL
 	throw_speed = 3
 	throw_range = 7
 	///list containing the actual ammo within the magazine
@@ -25,6 +25,8 @@
 	var/caliber
 	///Allows multiple bullets to be loaded in from one click of another box/magazine
 	var/multiload = TRUE
+	///Whether or not an ammo box skips the do_after process (e.g. speedloaders)
+	var/instant_load = FALSE
 	///Whether the magazine should start with nothing in it
 	var/start_empty = FALSE
 	///cost of all the bullets in the magazine/box
@@ -45,7 +47,6 @@
 	if(!start_empty)
 		for(var/i = 1, i <= max_ammo, i++)
 			stored_ammo += new ammo_type(src)
-	update_icon()
 
 ///gets a round from the magazine, if keep is TRUE the round will stay in the gun
 /obj/item/ammo_box/proc/get_round(keep = FALSE)
@@ -92,49 +93,73 @@
 	if(istype(A, /obj/item/ammo_box))
 		var/obj/item/ammo_box/AM = A
 		for(var/obj/item/ammo_casing/AC in AM.stored_ammo)
-			var/did_load = give_round(AC, replace_spent)
-			if(did_load)
-				AM.stored_ammo -= AC
-				num_loaded++
-			if(!did_load || !multiload)
+			if(!((instant_load && AM.instant_load) || do_after_mob(user, list(AM), 1 SECONDS,)))
 				break
+			var/did_load = give_round(AC, replace_spent)
+			if(!did_load)
+				break
+			AM.stored_ammo -= AC
+			if(!silent)
+				playsound(AM, 'sound/weapons/gun/general/mag_bullet_insert.ogg', 60, TRUE) //src is nullspaced, which means internal magazines won't properly play sound, thus we use AM
+			num_loaded++
+			A.update_appearance()
+			update_appearance()
+
 	if(istype(A, /obj/item/ammo_casing))
 		var/obj/item/ammo_casing/AC = A
 		if(give_round(AC, replace_spent))
 			user.transferItemToLoc(AC, src, TRUE)
+			if(!silent)
+				playsound(AC, 'sound/weapons/gun/general/mag_bullet_insert.ogg', 60, TRUE)
 			num_loaded++
+			update_appearance()
+
 
 	if(num_loaded)
 		if(!silent)
-			to_chat(user, "<span class='notice'>You load [num_loaded] shell\s into \the [src]!</span>")
-			playsound(src, 'sound/weapons/gun/general/mag_bullet_insert.ogg', 60, TRUE)
-		A.update_icon()
-		update_icon()
+			to_chat(user, "<span class='notice'>You load [num_loaded] cartridge\s into \the [src]!</span>")
 	return num_loaded
 
 /obj/item/ammo_box/attack_self(mob/user)
 	var/obj/item/ammo_casing/A = get_round()
-	if(A)
-		A.forceMove(drop_location())
-		if(!user.is_holding(src) || !user.put_in_hands(A))	//incase they're using TK
-			A.bounce_away(FALSE, NONE)
-		playsound(src, 'sound/weapons/gun/general/mag_bullet_insert.ogg', 60, TRUE)
-		to_chat(user, "<span class='notice'>You remove a round from [src]!</span>")
-		update_icon()
+	if(!A)
+		return
 
-/obj/item/ammo_box/update_icon()
-	var/shells_left = stored_ammo.len
+	A.forceMove(drop_location())
+	if(!user.is_holding(src) || !user.put_in_hands(A)) //incase they're using TK
+		A.bounce_away(FALSE, NONE)
+	playsound(src, 'sound/weapons/gun/general/mag_bullet_insert.ogg', 60, TRUE)
+	to_chat(user, "<span class='notice'>You remove a round from [src]!</span>")
+	update_ammo_count()
+
+/// Updates the materials and appearance of this ammo box
+/obj/item/ammo_box/proc/update_ammo_count()
+	update_custom_materials()
+	update_appearance()
+
+/obj/item/ammo_box/update_desc(updates)
+	. = ..()
+	var/shells_left = LAZYLEN(stored_ammo)
+	desc = "[initial(desc)] There [(shells_left == 1) ? "is" : "are"] [shells_left] shell\s left!"
+
+/obj/item/ammo_box/update_icon_state()
+	var/shells_left = LAZYLEN(stored_ammo)
 	switch(multiple_sprites)
 		if(AMMO_BOX_PER_BULLET)
 			icon_state = "[initial(icon_state)]-[shells_left]"
 		if(AMMO_BOX_FULL_EMPTY)
 			icon_state = "[initial(icon_state)]-[shells_left ? "[max_ammo]" : "0"]"
-	desc = "[initial(desc)] There [(shells_left == 1) ? "is" : "are"] [shells_left] shell\s left!"
-	for (var/material in bullet_cost)
-		var/material_amount = bullet_cost[material]
-		material_amount = (material_amount*stored_ammo.len) + base_cost[material]
-		custom_materials[material] = material_amount
-	set_custom_materials(custom_materials)//make sure we setup the correct properties again
+	return ..()
+
+/// Updates the amount of material in this ammo box according to how many bullets are left in it.
+/obj/item/ammo_box/proc/update_custom_materials()
+	var/temp_materials = custom_materials.Copy()
+	for(var/material in bullet_cost)
+		temp_materials[material] = (bullet_cost[material] * stored_ammo.len) + base_cost[material]
+	set_custom_materials(temp_materials)
+
+/obj/item/ammo_box/magazine
+	w_class = WEIGHT_CLASS_SMALL //Default magazine weight, only differs for tiny mags and drums
 
 ///Count of number of bullets in the magazine
 /obj/item/ammo_box/magazine/proc/ammo_count(countempties = TRUE)
@@ -160,4 +185,4 @@
 
 /obj/item/ammo_box/magazine/handle_atom_del(atom/A)
 	stored_ammo -= A
-	update_icon()
+	update_ammo_count()

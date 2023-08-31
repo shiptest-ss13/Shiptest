@@ -133,9 +133,16 @@
 	else if ("emote" in extra_classes)
 		var/image/r_icon = image('icons/UI_Icons/chat/chat_icons.dmi', icon_state = "emote")
 		text =  "\icon[r_icon]&nbsp;[text]"
+	else if("looc" in extra_classes)
+		var/image/r_icon = image('icons/UI_Icons/chat/chat_icons.dmi', icon_state = "looc")
+		text =  "\icon[r_icon]&nbsp;[text]"
 
-	// We dim italicized text to make it more distinguishable from regular text
-	var/tgt_color = ("italics" in extra_classes) ? target.chat_color_darkened : target.chat_color
+	var/tgt_color = target.chat_color
+	if("looc" in extra_classes)
+		tgt_color = GLOB.LOOC_COLOR || GLOB.normal_looc_colour
+	else if("italics" in extra_classes)
+		// We dim italicized text to make it more distinguishable from regular text
+		tgt_color = target.chat_color_darkened
 
 	// Approximate text height
 	var/complete_text = "<span class='center maptext [extra_classes.Join(" ")]' style='color: [tgt_color]'>[target.say_emphasis(text)]</span>"
@@ -222,6 +229,8 @@
 	// Display visual above source
 	if(runechat_flags & EMOTE_MESSAGE)
 		new /datum/chatmessage(raw_message, speaker, src, list("emote", "italics"))
+	else if(runechat_flags & LOOC_MESSAGE)
+		new /datum/chatmessage(raw_message, speaker, src, list("looc", "italics"))
 	else
 		new /datum/chatmessage(lang_treat(speaker, message_language, raw_message, spans, null, TRUE), speaker, src, spans)
 

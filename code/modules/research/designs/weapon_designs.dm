@@ -663,14 +663,6 @@
 	build_path = /obj/item/ammo_box/magazine/m45
 	category = list("Imported")
 
-/datum/design/c38_hunting
-	name = "Ammo Box (.38 hunting)"
-	id = "c38_hunting"
-	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 20000)
-	build_path = /obj/item/ammo_box/c38_box/hunting
-	category = list("Imported")
-
 /datum/design/n762
 	name = "Ammo Holder (7.62x38mmR)"
 	id = "n762"

@@ -40,7 +40,7 @@
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/bridge)
 "cS" = (
-/obj/structure/chair/bronze{
+/obj/structure/chair/comfy/shuttle/bronze{
 	dir = 1
 	},
 /turf/open/floor/carpet/nanoweave/blue,
@@ -67,7 +67,7 @@
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
 "io" = (
-/obj/structure/chair/bronze,
+/obj/structure/chair/comfy/shuttle/bronze,
 /obj/machinery/door/window{
 	dir = 1
 	},
@@ -85,6 +85,14 @@
 	pixel_y = 12
 	},
 /turf/open/floor/carpet/nanoweave/red,
+/area/ship/bridge)
+"kS" = (
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_y = 0;
+	pixel_x = 20
+	},
+/turf/open/floor/carpet/nanoweave/orange,
 /area/ship/bridge)
 "lm" = (
 /obj/machinery/atmospherics/components/unary/tank/air,
@@ -481,7 +489,7 @@ Ve
 Ve
 Yx
 Ko
-Tq
+kS
 Ob
 Ob
 Ob
