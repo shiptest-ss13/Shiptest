@@ -161,7 +161,8 @@
 		if(D & (demand_connects | supply_connects))
 			for(var/obj/machinery/duct/duct in get_step(parent, D))
 				duct.remove_connects(turn(D, 180))
-				duct.update_icon()
+				duct.neighbours.Remove(parent)
+				duct.update_appearance()
 
 ///settle wherever we are, and start behaving like a piece of plumbing
 /datum/component/plumbing/proc/enable()
@@ -245,7 +246,7 @@
 	SIGNAL_HANDLER
 
 	tile_covered = intact
-	AM.update_icon()
+	AM.update_appearance()
 
 ///has one pipe input that only takes, example is manual output pipe
 /datum/component/plumbing/simple_demand

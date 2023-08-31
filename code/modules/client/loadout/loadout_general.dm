@@ -163,8 +163,3 @@
 /datum/gear/surgical_mask
 	display_name = "surgical mask"
 	path = /obj/item/clothing/mask/surgical
-
-/datum/gear/maidbox
-	display_name = "maid outfit bundle"
-	path = /obj/item/storage/box/maid
-	description = "Contains a four-piece maid outfit inside a single box."

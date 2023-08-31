@@ -262,18 +262,19 @@
 
 /obj/item/clothing/update_overlays()
 	. = ..()
-	if(damaged_clothes)
-		var/index = "[REF(initial(icon))]-[initial(icon_state)]"
-		var/static/list/damaged_clothes_icons = list()
-		var/icon/damaged_clothes_icon = damaged_clothes_icons[index]
-		if(!damaged_clothes_icon)
-			damaged_clothes_icon = icon(initial(icon), initial(icon_state), , 1)	//we only want to apply damaged effect to the initial icon_state for each object
-			damaged_clothes_icon.Blend("#fff", ICON_ADD) 	//fills the icon_state with white (except where it's transparent)
-			damaged_clothes_icon.Blend(icon('icons/effects/item_damage.dmi', "itemdamaged"), ICON_MULTIPLY) //adds damage effect and the remaining white areas become transparant
-			damaged_clothes_icon = fcopy_rsc(damaged_clothes_icon)
-			damaged_clothes_icons[index] = damaged_clothes_icon
-		. += damaged_clothes_icon
+	if(!damaged_clothes)
+		return
 
+	var/index = "[REF(initial(icon))]-[initial(icon_state)]"
+	var/static/list/damaged_clothes_icons = list()
+	var/icon/damaged_clothes_icon = damaged_clothes_icons[index]
+	if(!damaged_clothes_icon)
+		damaged_clothes_icon = icon(initial(icon), initial(icon_state), , 1) //we only want to apply damaged effect to the initial icon_state for each object
+		damaged_clothes_icon.Blend("#fff", ICON_ADD) //fills the icon_state with white (except where it's transparent)
+		damaged_clothes_icon.Blend(icon('icons/effects/item_damage.dmi', "itemdamaged"), ICON_MULTIPLY) //adds damage effect and the remaining white areas become transparant
+		damaged_clothes_icon = fcopy_rsc(damaged_clothes_icon)
+		damaged_clothes_icons[index] = damaged_clothes_icon
+	. += damaged_clothes_icon
 /*
 * SEE_SELF  // can see self, no matter what
 * SEE_MOBS  // can see all mobs, no matter what
@@ -283,13 +284,6 @@
 *           // in a lit area (via pixel_x,y or smooth movement), can see those pixels
 * BLIND     // can't see anything
 */
-
-/proc/generate_female_clothing(index,t_color,icon,type)
-	var/icon/female_clothing_icon	= icon("icon"=icon, "icon_state"=t_color)
-	var/icon/female_s				= icon("icon"='icons/mob/clothing/under/masking_helpers.dmi', "icon_state"="[(type == FEMALE_UNIFORM_FULL) ? "female_full" : "female_top"]")
-	female_clothing_icon.Blend(female_s, ICON_MULTIPLY)
-	female_clothing_icon 			= fcopy_rsc(female_clothing_icon)
-	GLOB.female_clothing_icons[index] = female_clothing_icon
 
 /obj/item/proc/generate_species_clothing(file2use, state2use, layer, datum/species/mob_species)
 	if(!icon_exists(file2use, state2use))

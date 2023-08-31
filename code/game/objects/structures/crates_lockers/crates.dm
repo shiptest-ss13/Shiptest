@@ -23,7 +23,7 @@
 	. = ..()
 	if(icon_state == "[initial(icon_state)]open")
 		opened = TRUE
-	update_icon()
+	update_appearance()
 
 /obj/structure/closet/crate/CanAllowThrough(atom/movable/mover, turf/target)
 	. = ..()
@@ -37,6 +37,7 @@
 
 /obj/structure/closet/crate/update_icon_state()
 	icon_state = "[initial(icon_state)][opened ? "open" : ""]"
+	return ..()
 
 /obj/structure/closet/crate/closet_update_overlays(list/new_overlays)
 	. = new_overlays
@@ -57,7 +58,7 @@
 		playsound(src, 'sound/items/poster_ripped.ogg', 75, TRUE)
 		manifest.forceMove(get_turf(src))
 		manifest = null
-		update_icon()
+		update_appearance()
 
 /obj/structure/closet/crate/proc/tear_manifest(mob/user)
 	to_chat(user, "<span class='notice'>You tear the manifest off of [src].</span>")
@@ -67,7 +68,7 @@
 	if(ishuman(user))
 		user.put_in_hands(manifest)
 	manifest = null
-	update_icon()
+	update_appearance()
 
 /obj/structure/closet/crate/coffin
 	name = "coffin"
@@ -175,6 +176,24 @@
 	new /obj/item/bodypart/leg/left/robot/surplus/vox(src)
 	new /obj/item/bodypart/leg/right/robot/surplus/vox(src)
 
+/obj/structure/closet/crate/freezer/surplus_limbs/organs
+	name = "organ freezer"
+	desc = "A crate containing a variety of spare limbs and organs."
+
+/obj/structure/closet/crate/freezer/surplus_limbs/organs/PopulateContents()
+	. = ..()
+	new /obj/item/organ/stomach(src)
+	new /obj/item/organ/stomach(src)
+	new /obj/item/organ/lungs(src)
+	new /obj/item/organ/liver(src)
+	new /obj/item/organ/liver(src)
+	new /obj/item/organ/eyes(src)
+	new /obj/item/organ/eyes(src)
+	new /obj/item/organ/heart(src)
+	new /obj/item/organ/heart(src)
+	new /obj/item/organ/ears(src)
+	new /obj/item/organ/ears(src)
+
 /obj/structure/closet/crate/radiation
 	desc = "A crate with a radiation sign on it."
 	name = "radiation crate"
@@ -236,3 +255,10 @@
 	..()
 	for(var/i in 1 to 5)
 		new /obj/item/coin/silver(src)
+
+/obj/structure/closet/crate/chem
+	desc = "A small crate for the storage and transportation of chemicals."
+	name = "chemical crate"
+	icon_state = "chemcrate"
+	material_drop = /obj/item/stack/sheet/mineral/gold
+	material_drop_amount = 1

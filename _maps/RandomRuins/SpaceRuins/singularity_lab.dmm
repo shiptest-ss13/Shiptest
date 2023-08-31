@@ -1538,7 +1538,7 @@
 /area/ruin/space/has_grav/singularitylab)
 "fU" = (
 /obj/structure/table,
-/turf/closed/mineral/random/asteroid,
+/turf/closed/mineral/random,
 /area/ruin/space/has_grav)
 "fW" = (
 /obj/effect/turf_decal/siding/thinplating{
@@ -2074,7 +2074,7 @@
 "hX" = (
 /obj/structure/table,
 /obj/item/paper{
-	info = "Whatever happens. Happens."
+	default_raw_text = "Whatever happens. Happens."
 	},
 /obj/item/pen,
 /obj/item/reagent_containers/food/drinks/soda_cans/starkist{
@@ -2138,7 +2138,7 @@
 "ih" = (
 /obj/structure/table/reinforced,
 /obj/item/paper{
-	info = "They're outside now. I don't know what happened, but I've managed to secure the firing range. I can't get out. Maybe someone will stumble by and we'll be saved. God damn those engineers for insisting on not including communications equipment on station.";
+	default_raw_text = "They're outside now. I don't know what happened, but I've managed to secure the firing range. I can't get out. Maybe someone will stumble by and we'll be saved. God damn those engineers for insisting on not including communications equipment on station.";
 	pixel_y = 8
 	},
 /turf/open/floor/carpet/nanoweave/purple,
@@ -8576,9 +8576,7 @@
 /obj/effect/turf_decal/corner/opaque/beige{
 	dir = 5
 	},
-/obj/item/radio/intercom/directional/north{
-	pixel_y = 24
-	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/civvie)
 "FT" = (
@@ -9188,7 +9186,7 @@
 /obj/machinery/door/airlock{
 	name = "Private Quarters"
 	},
-/turf/closed/mineral/random/asteroid,
+/turf/closed/mineral/random,
 /area/ruin/space/has_grav)
 "Ij" = (
 /obj/effect/turf_decal/siding/thinplating{
@@ -10291,12 +10289,10 @@
 /area/ruin/space/has_grav/singularitylab)
 "MS" = (
 /obj/structure/dresser,
-/obj/item/radio/intercom/directional/north{
-	pixel_y = 24
-	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 4
 	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/singularitylab/civvie)
 "MT" = (
@@ -11408,7 +11404,7 @@
 /turf/open/floor/plating/asteroid,
 /area/ruin/space/has_grav/singularitylab)
 "QB" = (
-/turf/closed/mineral/random/asteroid,
+/turf/closed/mineral/random,
 /area/ruin/space/has_grav)
 "QC" = (
 /obj/structure/cable{

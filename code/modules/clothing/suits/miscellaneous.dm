@@ -422,6 +422,7 @@
 	item_state = "duster"
 	heat_protection = CHEST|GROIN|ARMS|LEGS
 	cold_protection = CHEST|GROIN|ARMS|LEGS
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/suit/jacket/leather/duster/command
 	name = "officer's duster"
@@ -697,9 +698,11 @@
 	icon_state = "coatinteq"
 	item_state = "coatinteq"
 	hoodtype = /obj/item/clothing/head/hooded/winterhood/security/inteq
+	supports_variations = KEPORI_VARIATION
 
 /obj/item/clothing/head/hooded/winterhood/security/inteq
 	icon_state = "winterhood_inteq"
+	supports_variations = KEPORI_VARIATION
 
 /obj/item/clothing/suit/hooded/coat/inteq
 	name = "inteq hooded coat"

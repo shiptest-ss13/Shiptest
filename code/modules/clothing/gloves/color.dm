@@ -1,5 +1,6 @@
 /obj/item/clothing/gloves/color
 	dying_key = DYE_REGISTRY_GLOVES
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/gloves/color/yellow
 	desc = "These gloves provide protection against electric shock."
@@ -228,6 +229,7 @@
 	item_state = "nitrilegloves"
 	transfer_prints = FALSE
 	carrytrait = TRAIT_QUICKER_CARRY
+	supports_variations = KEPORI_VARIATION
 
 /obj/item/clothing/gloves/color/latex/nitrile/evil
 	name = "red nitrile gloves"

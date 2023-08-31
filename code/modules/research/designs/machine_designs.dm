@@ -256,22 +256,6 @@
 	category = list("Research Machinery")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_CARGO
 
-/datum/design/board/protolathe
-	name = "Machine Design (Protolathe Board)"
-	desc = "The circuit board for a protolathe."
-	id = "protolathe"
-	build_path = /obj/item/circuitboard/machine/protolathe
-	category = list("Research Machinery")
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
-
-/datum/design/board/circuit_imprinter
-	name = "Machine Design (Circuit Imprinter Board)"
-	desc = "The circuit board for a circuit imprinter."
-	id = "circuit_imprinter"
-	build_path = /obj/item/circuitboard/machine/circuit_imprinter
-	category = list("Research Machinery")
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
-
 /datum/design/board/rdserver
 	name = "Machine Design (R&D Server Board)"
 	desc = "The circuit board for an R&D Server."
@@ -653,32 +637,13 @@
 	build_path = /obj/item/circuitboard/machine/shieldwallgen/atmos
 	category = list("Misc. Machinery")
 
-/datum/design/board/deepcore_drill
-	name = "Machine Design (Deep Core Bluespace Drill Board)"
-	desc = "The circuit board for a Deep Core Bluespace Drill."
-	id = "deepcore_drill"
-	build_type = IMPRINTER
-	build_path = /obj/item/circuitboard/machine/deepcore/drill
-	category = list("Mining Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_CARGO
-
-/datum/design/board/deepcore_hopper
-	name = "Machine Design (Bluespace Material Hopper Board)"
-	desc = "The circuit board for a Bluespace Material Hopper."
-	id = "deepcore_hopper"
-	build_type = IMPRINTER
-	build_path = /obj/item/circuitboard/machine/deepcore/hopper
-	category = list("Mining Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_CARGO
-
-/datum/design/board/deepcore_hub
-	name = "Machine Design (Deepcore Mining Control Hub Board)"
-	desc = "The circuit board for a Deepcore Mining Control Hub."
-	id = "deepcore_hub"
-	build_type = IMPRINTER
-	build_path = /obj/item/circuitboard/machine/deepcore/hub
-	category = list("Mining Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_CARGO
+/datum/design/board/fax
+	name = "Machine Design (Fax Machine)"
+	desc = "The circuit board for a fax machine."
+	id = "fax"
+	build_path = /obj/item/circuitboard/machine/fax
+	category = list ("Misc. Machinery")
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_SERVICE
 
 ///////////////////////////////////////////
 //////////////Shuttle Boards///////////////

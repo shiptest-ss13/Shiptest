@@ -19,6 +19,14 @@
 	var/third_syllables = list("ca", "ce", "ci", "fa", "fe", "fi", "la", "le", "li", "ma", "me", "mi", "na", "ne", "ni", "ra", "re", "ri", "sa", "se", "si", "sha", "she", "shi", "ta", "te", "ti")
 	return "[pick(first_syllables)][pick(second_syllables)][pick(third_syllables)]"
 
+/proc/vox_name()
+	. = ""
+	var/static/list/syllables = list("ti", "ti", "ti", "hi", "hi", "ki", "ki", "ki", "ki", "ya", "ta", "ha", "ka", "ya", "chi", "cha", "kah", \
+		"skre", "ahk", "ehk", "rawk", "kra", "ki", "ii", "kri", "ka")
+	for(var/x = rand(3,8) to 0 step -1)
+		. += pick(syllables)
+	. = capitalize(.)
+
 GLOBAL_VAR(command_name)
 /proc/command_name()
 	if (GLOB.command_name)
@@ -227,3 +235,42 @@ GLOBAL_DATUM(syndicate_code_response_regex, /regex)
 				. += "."
 			else
 				. += ", "
+
+/// List of all ship factions to their prefixes.
+GLOBAL_LIST_INIT(ship_faction_to_prefixes, list(
+	"Syndicate" = list(
+		"SEV",
+		"SSV",
+	),
+	"SolGov" = list(
+		"SGSV",
+	),
+	"Saint-Roumain Militia" = list(
+		"SRSV",
+	),
+	"Independent" = list(
+		"SV",
+		"IMV",
+		"ISV",
+	),
+	"Inteq Risk Management Group" = list(
+		"IRMV",
+	),
+	"Colonial Minutemen" = list(
+		"CMSV",
+		"CMGSV",
+	),
+	"NanoTrasen" = list(
+		"NTSV",
+	),
+))
+
+/proc/ship_prefix_to_faction(prefix)
+	for(var/faction in GLOB.ship_faction_to_prefixes)
+		if(prefix in GLOB.ship_faction_to_prefixes[faction])
+			return faction
+	var/static/list/screamed = list()
+	if(!(prefix in screamed))
+		screamed += prefix
+		stack_trace("attempted to get faction for unknown prefix [prefix]")
+	return "?!ERR!?"

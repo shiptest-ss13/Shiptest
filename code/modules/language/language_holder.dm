@@ -289,12 +289,6 @@ Key procs
 								/datum/language/slime = list(LANGUAGE_ATOM))
 	spoken_languages = list(/datum/language/slime = list(LANGUAGE_ATOM))
 
-/datum/language_holder/squid
-	understood_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
-								/datum/language/rylethian = list(LANGUAGE_ATOM))
-	spoken_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
-							/datum/language/rylethian = list(LANGUAGE_ATOM))
-
 /datum/language_holder/swarmer
 	understood_languages = list(/datum/language/swarmer = list(LANGUAGE_ATOM))
 	spoken_languages = list(/datum/language/swarmer = list(LANGUAGE_ATOM))
@@ -310,19 +304,13 @@ Key procs
 								/datum/language/machine = list(LANGUAGE_ATOM),
 								/datum/language/draconic = list(LANGUAGE_ATOM),
 								/datum/language/moffic = list(LANGUAGE_ATOM),
-								/datum/language/calcic = list(LANGUAGE_ATOM),
-								/datum/language/rylethian = list(LANGUAGE_ATOM),
-								/datum/language/spider = list(LANGUAGE_ATOM),
-								/datum/language/dwarf = list(LANGUAGE_ATOM),
 								/datum/language/teceti_unified = list(LANGUAGE_ATOM))
 	spoken_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
 							/datum/language/machine = list(LANGUAGE_ATOM),
 							/datum/language/draconic = list(LANGUAGE_ATOM),
 							/datum/language/moffic = list(LANGUAGE_ATOM),
 							/datum/language/calcic = list(LANGUAGE_ATOM),
-							/datum/language/rylethian = list(LANGUAGE_ATOM),
 							/datum/language/spider = list(LANGUAGE_ATOM),
-							/datum/language/dwarf = list(LANGUAGE_ATOM),
 							/datum/language/teceti_unified = list(LANGUAGE_ATOM))
 
 /datum/language_holder/ipc
@@ -334,10 +322,10 @@ Key procs
 /datum/language_holder/moth
 	understood_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
 								/datum/language/moffic = list(LANGUAGE_ATOM),
-								/datum/language/buzzwords = list(LANGUAGE_ATOM)) //WS Edit - Insectoid Language
+								/datum/language/buzzwords = list(LANGUAGE_ATOM))
 	spoken_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
 							/datum/language/moffic = list(LANGUAGE_ATOM),
-							/datum/language/buzzwords = list(LANGUAGE_ATOM)) //WS Edit - Insectoid Language
+							/datum/language/buzzwords = list(LANGUAGE_ATOM))
 
 /datum/language_holder/skeleton
 	understood_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
@@ -414,12 +402,6 @@ Key procs
 	spoken_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
 							/datum/language/spider = list(LANGUAGE_ATOM),
 							/datum/language/buzzwords = list(LANGUAGE_ATOM))
-
-/datum/language_holder/dwarf
-	understood_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
-								/datum/language/dwarf = list(LANGUAGE_ATOM))
-	spoken_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
-							/datum/language/dwarf = list(LANGUAGE_ATOM))
 
 /datum/language_holder/empty
 	understood_languages = list()

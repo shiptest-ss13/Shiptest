@@ -27,7 +27,7 @@
 		playsound(src, rack_sound, rack_sound_volume, rack_sound_vary)
 		process_chamber(FALSE, FALSE, FALSE)
 		bolt_locked = TRUE
-		update_icon()
+		update_appearance()
 		return
 	drop_bolt(user)
 
@@ -80,6 +80,15 @@
 		process_fire(user, user, FALSE)
 		. = 1
 
+/obj/item/gun/ballistic/rifle/boltaction/solgov
+	name = "SSG-669C"
+	desc = "A bolt action sniper rifle used by the solarian army, beloved for its rotary design and accuracy. Chambered in 8x58mm Caseless."
+	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/solgov
+	icon_state = "ssg669c"
+	item_state = "ssg669c"
+	fire_sound = 'sound/weapons/gun/rifle/ssg669c.ogg'
+	can_be_sawn_off = FALSE
+
 /obj/item/gun/ballistic/rifle/boltaction/roumain
 	name = "standard-issue 'Smile' rifle"
 	desc = "A bolt action rifle usually given to mercenary hunters of the Saint-Roumain Militia. Chambered in .300 Magnum."
@@ -89,7 +98,7 @@
 	can_be_sawn_off = FALSE
 
 /obj/item/gun/ballistic/rifle/boltaction/enchanted
-	name = "enchanted bolt action rifle"
+	name = "enchanted bolt-action rifle"
 	desc = "Careful not to lose your head."
 	var/guns_left = 30
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/enchanted
@@ -141,7 +150,7 @@
 
 /obj/item/gun/ballistic/rifle/boltaction/polymer
 	name = "polymer survivor rifle"
-	desc = "Chambered in .300 Blackout, and manufactured with cheap tools, this rifle has seen its share of part replacements, repairs, and bubba-hack-jobs to keep it serviceable."
+	desc = "A bolt-action rifle chambered in .300 Blackout, manufactured out of improvised materials and showing obvious signs of years of makeshift repairs and ill-advised modifications. Use at your own risk."
 	icon = 'icons/obj/guns/projectile.dmi'
 	icon_state = "crackhead_rifle"
 	item_state = "crackhead_rifle"

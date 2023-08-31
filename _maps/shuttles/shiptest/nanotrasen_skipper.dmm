@@ -61,12 +61,11 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/light/directional/south,
 /obj/machinery/button/door{
 	dir = 1;
 	id = "coolingshutdown";
 	name = "Shutdown Cooling";
-	pixel_y = -25
+	pixel_y = -22
 	},
 /obj/machinery/atmospherics/components/binary/pump{
 	dir = 4
@@ -1250,7 +1249,7 @@
 	name = "Chamber Mixer"
 	},
 /obj/item/paper/crumpled{
-	info = "A mix of 67/33 ratio of oxygen (node 2) and plasma (node 1) works very well, even at 500 kPa."
+	default_raw_text = "A mix of 67/33 ratio of oxygen (node 2) and plasma (node 1) works very well, even at 500 kPa."
 	},
 /obj/structure/catwalk/over,
 /turf/open/floor/plating,
@@ -1569,9 +1568,7 @@
 /obj/effect/turf_decal/corner/transparent/grey/half{
 	dir = 8
 	},
-/obj/machinery/photocopier/faxmachine/longrange{
-	department = "Internal Affairs"
-	},
+/obj/machinery/fax,
 /obj/structure/table,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office)
@@ -2408,6 +2405,11 @@
 	},
 /obj/structure/cable,
 /obj/machinery/power/apc/auto_name/directional/west,
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -20;
+	pixel_y = 13
+	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "tB" = (
@@ -2560,6 +2562,16 @@
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
+"uM" = (
+/obj/machinery/atmospherics/pipe/simple/orange/visible{
+	dir = 4
+	},
+/obj/machinery/light_switch{
+	pixel_y = 21;
+	pixel_x = 7
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "uQ" = (
 /obj/effect/turf_decal/corner/opaque/yellow/border{
 	dir = 4
@@ -2951,6 +2963,11 @@
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable{
 	icon_state = "0-4"
+	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -20;
+	pixel_y = 13
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
@@ -3694,6 +3711,15 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/medical)
+"Gh" = (
+/obj/effect/turf_decal/industrial/warning,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/cyan/visible,
+/obj/machinery/light/directional/south,
+/turf/open/floor/engine,
+/area/ship/engineering/engine)
 "Gi" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -3918,7 +3944,7 @@
 	},
 /obj/machinery/button/door/incinerator_vent_atmos_aux{
 	dir = 4;
-	pixel_x = -28;
+	pixel_x = -23;
 	pixel_y = 8
 	},
 /obj/effect/turf_decal/techfloor{
@@ -4241,6 +4267,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible{
 	dir = 8
 	},
+/obj/machinery/light/broken/directional/north,
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "Lz" = (
@@ -4791,7 +4818,7 @@
 /obj/machinery/light_switch{
 	dir = 1;
 	pixel_x = -10;
-	pixel_y = -25
+	pixel_y = -20
 	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -5001,6 +5028,11 @@
 	},
 /obj/machinery/light/directional/north,
 /obj/structure/railing/corner,
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -20;
+	pixel_y = 13
+	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/bridge)
 "SO" = (
@@ -5087,11 +5119,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 4
-	},
-/obj/machinery/light_switch{
-	dir = 8;
-	pixel_x = 25;
-	pixel_y = 25
 	},
 /obj/structure/catwalk/over,
 /turf/open/floor/plasteel/tech/techmaint,
@@ -5300,13 +5327,16 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/light/broken/directional/north,
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
 /obj/machinery/atmospherics/components/binary/pump{
 	dir = 8
+	},
+/obj/machinery/light_switch{
+	pixel_x = -12;
+	pixel_y = 23
 	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
@@ -5384,6 +5414,11 @@
 	dir = 4
 	},
 /obj/structure/extinguisher_cabinet/directional/south,
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_y = 11;
+	pixel_x = 20
+	},
 /turf/open/floor/plasteel,
 /area/ship/engineering/atmospherics)
 "Vz" = (
@@ -5441,6 +5476,11 @@
 /area/ship/engineering/engine)
 "Wg" = (
 /obj/item/kirbyplants/random,
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_y = 0;
+	pixel_x = 20
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/cryo)
 "Wr" = (
@@ -5450,6 +5490,11 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 4
+	},
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_y = 0;
+	pixel_x = 20
 	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/hallway/central)
@@ -5695,7 +5740,7 @@
 	},
 /obj/machinery/disposal/bin,
 /obj/item/paper{
-	info = "The igniter in the chamber does not work very well. I suggest throwing lit welders down the disposal chute over there to ignite the chamber."
+	default_raw_text = "The igniter in the chamber does not work very well. I suggest throwing lit welders down the disposal chute over there to ignite the chamber."
 	},
 /obj/item/weldingtool,
 /obj/structure/disposalpipe/trunk{
@@ -5867,6 +5912,11 @@
 /area/ship/engineering/engine)
 "ZR" = (
 /obj/machinery/vending/coffee,
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -20;
+	pixel_y = 13
+	},
 /turf/open/floor/wood,
 /area/ship/crew/office)
 
@@ -5984,7 +6034,7 @@ MV
 sK
 AG
 Jm
-yG
+uM
 yG
 we
 sD
@@ -6143,7 +6193,7 @@ Lv
 Yj
 fD
 MP
-mA
+Gh
 IV
 fg
 fz

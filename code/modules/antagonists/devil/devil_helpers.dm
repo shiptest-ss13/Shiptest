@@ -20,7 +20,6 @@
 						/obj/item/clothing/under/rank/medical/doctor = 1,
 						/obj/item/clothing/under/rank/security/detective = 1,
 						/obj/item/clothing/under/suit/white = 0.5,
-						/obj/item/clothing/under/misc/burial = 1
 					)
 					if(U && whiteness[U.type])
 						src.visible_message("<span class='warning'>[src] seems to have been harmed by the purity of [attacker]'s clothes.</span>", "<span class='notice'>Unsullied white clothing is disrupting your form.</span>")

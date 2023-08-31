@@ -27,7 +27,7 @@
 		ui_header = "smmon_[last_status].gif"
 		program_icon_state = "smmon_[last_status]"
 		if(istype(computer))
-			computer.update_icon()
+			computer.update_appearance()
 
 /datum/computer_file/program/supermatter_monitor/run_program(mob/living/user)
 	. = ..(user)
@@ -138,7 +138,9 @@
 			for(var/gasid in air.get_gases())
 				gasdata.Add(list(list(
 				"name"= GLOB.gas_data.names[gasid],
-				"amount" = round(100*air.get_moles(gasid)/air.total_moles(),0.01))))
+				"amount" = round(100*air.get_moles(gasid)/air.total_moles(),0.01),
+				"id" = gasid
+				)))
 
 		else
 			for(var/gasid in air.get_gases())

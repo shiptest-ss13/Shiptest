@@ -239,6 +239,58 @@
 			</body>
 			</html>"}
 
+/obj/item/book/manual/trickwines_4_brewers
+	name = "Trickwines for brewers"
+	icon_state = "book2"
+	author = "Baxter Baxter"
+	title = "Trickwines for brewers"
+	dat = {"<html>
+			<head>
+			<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+			<style>
+			h1 {font-size: 18px; margin: 15px 0px 5px;}
+			h2 {font-size: 15px; margin: 15px 0px 5px;}
+			li {margin: 2px 0px 2px 15px;}
+			ul {list-style: none; margin: 5px; padding: 0px;}
+			ol {margin: 5px; padding: 0px 15px;}
+			</style>
+			</head>
+			<body>
+			<h3>Trickwines for idiots</h3>
+			Okay, so you just joined the SRM and you want to make some brews! I'm tired of explaining all of this so I'm jotting it all down for you clowns.<br>
+			Trickwines almost all share the same effect. When you drink them, they provide a beneficial effect and when you toss them at someone it provides some sort of bad effect.
+			<h2> Breakaway flasks</h2>
+			Honestly, I love these things. I'm not a scientist so I cant exactly explain how it works but somehow when you fuse plasma into glass it makes it ultra sharp and makes it really good for cracking over fauna heads.<br>
+			The simplest way I have found of making them is crafting them with a chunk of glass, plasma, and a welder.<br>
+			I should note: trickwines don't seem to form without flasks. I think it's something to do with the plasma reacting with the mixture.<br>
+
+			<h2> Ashwine </h2>
+			It's kind of our trademark, and it's one of the simplest trickwines to make. The Montagnes love using this stuff in ceremonies as well so it should get you some good boy points.<br>
+			It's made with a ratio of 3:1:1 absinthe, mushroom hallucinogen, and ash respectively.<br>
+			Mushroom hallucinogens come from mushroom caps and you can ferment absinthe from moonflowers.<br>
+			Its a mild hallucinogenic but seems to have powerful cleansing effects on the devoted SRM.<br>
+			It can also really fuck someone up, causing their vision to go shaky and blurry which makes it difficult for them to fight.<br>
+
+			<h2> Icewine </h2>
+			This one helps stopping foes in their tracks. It's also got a nice taste.
+			Its made with 3:1:1 saké, polar bear fur, frost oil(grind chilled peppers).<br>
+			You can get polar bear fur and frost oil from grinding up polar bear hides and chilled peppers.<br>
+			It's pretty good at sealing burns and lowering your temperature quickly.<br>
+			However, it completely encases foes in ice and drops their temperature substantially.<br>
+
+			<h2> Shockwine </h2>
+			Easily my favorite, this thing is great at scorching most fauna.<br>
+			Its made with vodka, calcium, and lemon juice.<br>
+			If you did not know, vodka requires enzymes instead of the normal fermenting process.<br>
+			It's a nice upper. Great if you're trying to run away.<br>
+			This one's really flashy. Expect some severe burns on your target<br>
+
+				<br>Baxter Baxter, Senior Brewer<br>
+				P.S.: please stop asking how the uranium got into those flasks.
+
+				</body>
+				</html>"}
+
 // Wiki books that are linked to the configured wiki link.
 
 // A book that links to the wiki
@@ -313,10 +365,6 @@
 	author = "Nanotrasen"
 	title = "Space Law"
 	page_link = "Space_Law"
-
-/obj/item/book/manual/wiki/security_space_law/suicide_act(mob/living/user)
-	user.visible_message("<span class='suicide'>[user] pretends to read \the [src] intently... then promptly dies of laughter!</span>")
-	return OXYLOSS
 
 /obj/item/book/manual/wiki/infections
 	name = "Infections - Making your own pandemic!"
@@ -423,27 +471,6 @@
 	author = "Cuban Pete"
 	title = "Toxins or: How I Learned to Stop Worrying and Love the Maxcap"
 	page_link = "Guide_to_toxins"
-
-/obj/item/book/manual/wiki/toxins/suicide_act(mob/user)
-	var/mob/living/carbon/human/H = user
-	user.visible_message("<span class='suicide'>[user] starts dancing to the Rhumba Beat! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	playsound(loc, 'sound/effects/spray.ogg', 10, TRUE, -3)
-	if (!QDELETED(H))
-		H.emote("spin")
-		sleep(20)
-		for(var/obj/item/W in H)
-			H.dropItemToGround(W)
-			if(prob(50))
-				step(W, pick(GLOB.alldirs))
-		ADD_TRAIT(H, TRAIT_DISFIGURED, TRAIT_GENERIC)
-		H.bleed_rate = 5
-		H.gib_animation()
-		sleep(3)
-		H.adjustBruteLoss(1000) //to make the body super-bloody
-		H.spawn_gibs()
-		H.spill_organs()
-		H.spread_bodyparts()
-	return (BRUTELOSS)
 
 /obj/item/book/manual/wiki/plumbing
 	name = "Chemical Factories Without Narcotics"

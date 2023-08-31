@@ -15,21 +15,49 @@
 	tastes = list("fish" = 4, "batter" = 1, "hot peppers" = 1)
 	foodtype = MEAT
 
-/obj/item/reagent_containers/food/snacks/carpmeat
-	name = "carp fillet"
-	desc = "A fillet of spess carp meat."
+/obj/item/reagent_containers/food/snacks/fishmeat
+	name = "fish fillet"
+	desc = "A fillet of fish meat."
 	icon_state = "fishfillet"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/toxin/carpotoxin = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 2)
 	bitesize = 6
 	filling_color = "#FA8072"
 	tastes = list("fish" = 1)
 	foodtype = MEAT
 
-/obj/item/reagent_containers/food/snacks/carpmeat/Initialize()
+/obj/item/reagent_containers/food/snacks/fishmeat/Initialize()
 	. = ..()
 	eatverb = pick("bite","chew","gnaw","swallow","chomp")
 
-/obj/item/reagent_containers/food/snacks/carpmeat/imitation
+/obj/item/reagent_containers/food/snacks/fishmeat/moonfish
+	name = "moonfish fillet"
+	desc = "A fillet of moonfish."
+	icon_state = "moonfish_fillet"
+
+/obj/item/reagent_containers/food/snacks/fishmeat/gunner_jellyfish
+	name = "filleted gunner jellyfish"
+	desc = "A gunner jellyfish with the stingers removed. Mildly hallucinogenic."
+	icon_state = "jellyfish_fillet"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/toxin/mindbreaker = 2)
+
+/obj/item/reagent_containers/food/snacks/fishmeat/armorfish
+	name = "cleaned armorfish"
+	desc = "An armorfish with its guts and shell removed, ready for use in cooking."
+	icon_state = "armorfish_fillet"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
+
+/obj/item/reagent_containers/food/snacks/fishmeat/donkfish
+	name = "donkfillet"
+	desc = "The dreaded donkfish fillet. No sane spaceman would eat this, and it does not get better when cooked."
+	icon_state = "donkfillet"
+	list_reagents = list(/datum/reagent/yuck = 3)
+
+/obj/item/reagent_containers/food/snacks/fishmeat/carp
+	name = "carp fillet"
+	desc = "A fillet of spess carp meat."
+	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/toxin/carpotoxin = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
+
+/obj/item/reagent_containers/food/snacks/fishmeat/carp/imitation
 	name = "imitation carp fillet"
 	desc = "Almost just like the real thing, kinda."
 
@@ -253,33 +281,6 @@
 	else if (!spammer) // Visible message in case there are no fingerprints
 		visible_message("<span class='notice'>[src] fails to expand!</span>")
 	qdel(src)
-
-/obj/item/reagent_containers/food/snacks/monkeycube/suicide_act(mob/living/M)
-	M.visible_message("<span class='suicide'>[M] is putting [src] in [M.p_their()] mouth! It looks like [M.p_theyre()] trying to commit suicide!</span>")
-	var/eating_success = do_after(M, 10, TRUE, src, TRUE)
-	if(QDELETED(M)) //qdeletion: the nuclear option of self-harm
-		return SHAME
-	if(!eating_success || QDELETED(src)) //checks if src is gone or if they failed to wait for a second
-		M.visible_message("<span class='suicide'>[M] chickens out!</span>")
-		return SHAME
-	if(HAS_TRAIT(M, TRAIT_NOHUNGER)) //plasmamen don't have saliva/stomach acid
-		M.visible_message("<span class='suicide'>[M] realizes [M.p_their()] body won't activate [src]!</span>"
-		,"<span class='warning'>Your body won't activate [src]...</span>")
-		return SHAME
-	playsound(M, 'sound/items/eatfood.ogg', rand(10,50), TRUE)
-	M.temporarilyRemoveItemFromInventory(src) //removes from hands, keeps in M
-	addtimer(CALLBACK(src, .proc/finish_suicide, M), 15) //you've eaten it, you can run now
-	return MANUAL_SUICIDE
-
-/obj/item/reagent_containers/food/snacks/monkeycube/proc/finish_suicide(mob/living/M) ///internal proc called by a monkeycube's suicide_act using a timer and callback. takes as argument the mob/living who activated the suicide
-	if(QDELETED(M) || QDELETED(src))
-		return
-	if((src.loc != M)) //how the hell did you manage this
-		to_chat(M, "<span class='warning'>Something happened to [src]...</span>")
-		return
-	Expand()
-	M.visible_message("<span class='danger'>[M]'s torso bursts open as a primate emerges!</span>")
-	M.gib(null, TRUE, null, TRUE)
 
 /obj/item/reagent_containers/food/snacks/monkeycube/syndicate
 	faction = list("neutral", ROLE_SYNDICATE)
