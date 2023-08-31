@@ -203,10 +203,10 @@
 		drop_all_held_items() //can't hold things when you don't actually exist
 		dextrous = FALSE//see above comment
 	to_chat(src, "You toggle your density [density ? "on" : "off"].")
-	update_icon()
+	update_appearance()
 	update_gravity()
 
-/mob/living/simple_animal/hologram/update_icon()
+/mob/living/simple_animal/hologram/update_appearance()
 	. = ..()
 	alpha = density ? initial(alpha) : 100 //applies opacity effect if non-dense
 	color = density ? initial(color) : "#77abff" //makes the hologram slightly blue

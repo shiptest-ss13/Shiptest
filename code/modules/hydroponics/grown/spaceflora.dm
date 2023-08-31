@@ -13,7 +13,12 @@
 	harvest_message_high = "You pick a pair of void melons."
 	regrowth_time_low = 4800
 	regrowth_time_high = 7200
+	num_sprites = 1
 
+/obj/structure/flora/ash/space/voidmelon/Initialize()
+	. = ..()
+	base_icon = "melon"
+	icon_state = base_icon
 /obj/item/seeds/voidmelon
 	name = "pack of voidmelon seeds"
 	desc = "These seeds grow into voidmelon plants."

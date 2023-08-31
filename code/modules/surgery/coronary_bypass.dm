@@ -17,12 +17,13 @@
 			return TRUE
 	return FALSE
 
-
 //an incision but with greater bleed, and a 90% base success chance
 /datum/surgery_step/incise_heart
 	name = "incise heart"
-	implements = list(TOOL_SCALPEL = 90, /obj/item/melee/transforming/energy/sword = 45, /obj/item/kitchen/knife = 45,
-		/obj/item/shard = 25)
+	implements = list(
+		TOOL_SCALPEL = 90,
+		/obj/item/kitchen/knife = 40,
+		/obj/item/shard = 33)
 	time = 1.6 SECONDS
 	preop_sound = 'sound/surgery/scalpel1.ogg'
 	success_sound = 'sound/surgery/scalpel2.ogg'
@@ -41,7 +42,7 @@
 				"<span class='notice'>Blood pools around the incision in [H]'s heart.</span>",
 				"")
 			H.bleed_rate += 10
-			H.adjustBruteLoss(10)
+			target.apply_damage(15, BRUTE, "[target_zone]")
 	return ..()
 
 /datum/surgery_step/incise_heart/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
@@ -52,12 +53,15 @@
 			"<span class='warning'>[user] screws up, causing blood to spurt out of [H]'s chest!</span>")
 		H.bleed_rate += 20
 		H.adjustOrganLoss(ORGAN_SLOT_HEART, 10)
-		H.adjustBruteLoss(10)
+		target.apply_damage(15, BRUTE, "[target_zone]")
 
 //grafts a coronary bypass onto the individual's heart, success chance is 90% base again
 /datum/surgery_step/coronary_bypass
 	name = "graft coronary bypass"
-	implements = list(TOOL_HEMOSTAT = 90, TOOL_WIRECUTTER = 35, /obj/item/stack/packageWrap = 15, /obj/item/stack/cable_coil = 5)
+	implements = list(
+		TOOL_HEMOSTAT = 90,
+		TOOL_WIRECUTTER = 40,
+		/obj/item/stack/cable_coil = 5)
 	time = 9 SECONDS
 	preop_sound = 'sound/surgery/hemostat1.ogg'
 	success_sound = 'sound/surgery/hemostat1.ogg'
@@ -85,6 +89,6 @@
 		display_results(user, target, "<span class='warning'>You screw up in attaching the graft, and it tears off, tearing part of the heart!</span>",
 			"<span class='warning'>[user] screws up, causing blood to spurt out of [H]'s chest profusely!</span>",
 			"<span class='warning'>[user] screws up, causing blood to spurt out of [H]'s chest profusely!</span>")
-		H.adjustOrganLoss(ORGAN_SLOT_HEART, 20)
+		H.adjustOrganLoss(ORGAN_SLOT_HEART, 30)
 		H.bleed_rate += 30
 	return FALSE

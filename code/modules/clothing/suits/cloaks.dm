@@ -9,13 +9,9 @@
 	w_class = WEIGHT_CLASS_SMALL
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	flags_inv = HIDESUITSTORAGE
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo/cloak //WS Edit - Exowear Pockets
 	greyscale_colors = list(list(11, 15), list(12, 22), list(12, 22))
 	greyscale_icon_state = "cloak"
 
-/obj/item/clothing/neck/cloak/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is strangling [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return(OXYLOSS)
 
 /obj/item/clothing/neck/cloak/hos
 	name = "head of security's cloak"
@@ -61,6 +57,11 @@
 	name = "SolGov weibel"
 	desc = "Worn by SolGov officials. It smells faintly of bureaucracy."
 	icon_state = "solgov_weibel"
+
+/obj/item/clothing/neck/cloak/solgovcap
+	name = "SolGov captain's cloak"
+	desc = "Worn by SolGov captains. It smells faintly of bureaucracy."
+	icon_state = "solgov_cap_cloak"
 
 /obj/item/clothing/neck/cloak/trans
 	name = "vampire cloak"

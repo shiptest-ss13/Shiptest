@@ -46,7 +46,7 @@
 #include "resist.dm"
 #include "say.dm"
 #include "serving_tray.dm"
-#include "ship_placement.dm"
+#include "ship_outpost_placement.dm"
 #include "spawn_humans.dm"
 #include "species_whitelists.dm"
 #include "subsystem_init.dm"

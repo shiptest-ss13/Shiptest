@@ -51,7 +51,7 @@
 	name = "purple grass"
 	desc = "The few known flora on Whitesands are in a purplish color."
 	icon = 'icons/turf/floors/lava_grass_purple.dmi' //PLACEHOLDER ICON, YELL AT LOCAL MOTH WOMAN
-	icon_state = "grass0"
+	icon_state = "grass-0"
 	base_icon_state = "grass"
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands
 	turf_type = /turf/open/floor/plating/asteroid/whitesands/grass

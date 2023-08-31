@@ -54,7 +54,7 @@
 
 			charging = W
 			user.visible_message("<span class='notice'>[user] inserts a cell into [src].</span>", "<span class='notice'>You insert a cell into [src].</span>")
-			update_icon()
+			update_appearance()
 	else
 		if(!charging && default_deconstruction_screwdriver(user, icon_state, icon_state, W))
 			return
@@ -74,9 +74,9 @@
 	return ..()
 
 /obj/machinery/cell_charger/proc/removecell()
-	charging.update_icon()
+	charging.update_appearance()
 	charging = null
-	update_icon()
+	update_appearance()
 
 /obj/machinery/cell_charger/attack_hand(mob/user)
 	. = ..()
@@ -127,4 +127,4 @@
 	use_power(charge_rate)
 	charging.give(charge_rate)	//this is 2558, efficient batteries exist
 
-	update_icon()
+	update_appearance()

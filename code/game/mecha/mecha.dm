@@ -151,6 +151,8 @@
 /obj/mecha/update_icon_state()
 	if(silicon_pilot && silicon_icon_state)
 		icon_state = silicon_icon_state
+		return ..()
+	return ..()
 
 /obj/mecha/get_cell()
 	return cell
@@ -799,7 +801,7 @@
 	occupant = AI
 	silicon_pilot = TRUE
 	icon_state = initial(icon_state)
-	update_icon()
+	update_appearance()
 	playsound(src, 'sound/machines/windowdoor.ogg', 50, TRUE)
 	if(!internal_damage)
 		SEND_SOUND(occupant, sound('sound/mecha/nominal.ogg',volume=50))
@@ -990,7 +992,7 @@
 	B.remote_control = src
 	B.update_mouse_pointer()
 	icon_state = initial(icon_state)
-	update_icon()
+	update_appearance()
 	setDir(dir_in)
 	log_message("[M] moved in as pilot.", LOG_MECHA)
 	if(!internal_damage)
@@ -1083,7 +1085,7 @@
 				L.forceMove(mmi)
 				L.reset_perspective()
 			mmi.set_mecha(null)
-			mmi.update_icon()
+			mmi.update_appearance()
 		icon_state = initial(icon_state)+"-open"
 		setDir(dir_in)
 
