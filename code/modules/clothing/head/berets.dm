@@ -190,6 +190,8 @@
 	icon_state = "beret_com"
 	armor = list("melee" = 40, "bullet" = 20, "laser" = 10, "energy" = 10, "rad" = 10, "bio" = 5, "rad" = 5, "fire" = 5, "rad" = 30)
 
+// SolGov
+
 /obj/item/clothing/head/beret/solgov
 	name = "\improper SolGov beret"
 	desc = "A beret with SolGov's emblem emblazoned on it. Colored in SolGov blue."
@@ -215,6 +217,8 @@
 	icon_state = "beret_terragovplain"
 	item_state = "beret_terragovplain"
 
+// Inteq
+
 /obj/item/clothing/head/beret/sec/inteq
 	name = "inteq beret"
 	desc = "A comfortable looking brown beret with a badge of the golden shield of the IRMG. Denotes the wearer as part of the IRMG."
@@ -227,6 +231,9 @@
 	icon_state = "inteq_beret"
 	item_state = "inteq_beret"
 
+
+// Frontier
+
 /obj/item/clothing/head/beret/sec/frontier
 	name = "\improper Frontiersmen beret"
 	desc = "A scratchy olive green beret, worn by Frontiersmen who want to look good while intimidating freighter crew."
@@ -236,3 +243,14 @@
 	name = "\improper Frontiersmen officer beret"
 	desc = "A scratchy olive green beret emblazoned with the Frontiersmen insignia, worn by Frontiersmen who want to look good while intimidating freighter captains."
 	icon_state = "frontier_officer_beret"
+
+
+// CentCom
+
+/obj/item/clothing/head/beret/centcom_formal
+	name = "\improper CentCom Formal Beret"
+	desc = "Sometimes, a compromise between fashion and defense needs to be made. Thanks to Nanotrasen's most recent nano-fabric durability enhancements, this time, it's not the case."
+	icon_state = "beret_badge"
+	greyscale_colors = "#46b946#f2c42e"
+	armor = list(MELEE = 80, BULLET = 80, LASER = 50, ENERGY = 50, BOMB = 100, BIO = 100, FIRE = 100, ACID = 90, WOUND = 10)
+	strip_delay = 10 SECONDS
