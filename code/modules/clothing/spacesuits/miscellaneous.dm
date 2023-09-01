@@ -71,8 +71,8 @@ Contains:
 /obj/item/clothing/suit/space/officer
 	name = "CentCom officer's coat"
 	desc = "An armored, space-proof coat used in special operations."
-	icon = 'icons/obj/clothing/suits.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/suit.dmi'
+	icon = 'icons/obj/clothing/suits/armor.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suits/armor.dmi'
 	icon_state = "centcom_coat"
 	item_state = "centcom"
 	blood_overlay_type = "coat"

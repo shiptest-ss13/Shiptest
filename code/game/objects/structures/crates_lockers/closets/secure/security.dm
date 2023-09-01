@@ -24,7 +24,7 @@
 	new /obj/item/clothing/suit/armor/vest/capcarapace(src)
 	new /obj/item/clothing/head/caphat(src)
 	new /obj/item/clothing/under/rank/command/captain/parade(src)
-	new /obj/item/clothing/suit/toggle/captains_parade(src)
+	new /obj/item/clothing/suit/armor/vest/capcarapace/alt(src)
 	new /obj/item/clothing/head/caphat/parade(src)
 	new /obj/item/clothing/suit/captunic(src)
 	new /obj/item/clothing/head/crown/fancy(src)
@@ -80,7 +80,6 @@
 	..()
 	new /obj/item/storage/box/deputy(src) //WS edit - Small QoL Brig additions
 	new /obj/item/clothing/neck/cloak/hos(src)
-	new /obj/item/clothing/suit/toggle/armor/hos/hos_formal(src)
 	new /obj/item/clothing/under/rank/command(src) //WS edit - better command uniforms
 	new /obj/item/cartridge/hos(src)
 	new /obj/item/radio/headset/heads/hos/alt(src) //WS edit - Small QoL Brig additions

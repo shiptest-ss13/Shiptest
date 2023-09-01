@@ -143,19 +143,6 @@
 	desc = "A sinister looking vest of advanced armor worn over a black and red fireproof jacket. The gold collar and shoulders denote that this belongs to a high ranking syndicate officer."
 	icon_state = "carapace_syndie"
 
-/obj/item/clothing/suit/toggle/captains_parade
-	name = "captain's parade jacket"
-	desc = "For when an armoured vest isn't fashionable enough."
-	icon_state = "carapace_ntformal"
-	item_state = "capspacesuit"
-	body_parts_covered = CHEST|GROIN|ARMS
-	armor = list("melee" = 50, "bullet" = 40, "laser" = 50, "energy" = 50, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 90)
-	togglename = "buttons"
-
-/obj/item/clothing/suit/toggle/captains_parade/Initialize()
-	. = ..()
-	allowed = GLOB.security_wintercoat_allowed
-
 /obj/item/clothing/suit/armor/vest/capcarapace/minutemen
 	name = "colonial minutemen general coat"
 	desc = "A very fancy coat used by generals of the Colonial Minutemen."
@@ -530,18 +517,5 @@
 	togglename = "buttons"
 
 /obj/item/clothing/suit/toggle/armor/vest/centcom_formal/Initialize()
-	. = ..()
-	allowed = GLOB.security_wintercoat_allowed
-
-/obj/item/clothing/suit/toggle/armor/hos/hos_formal
-	name = "\improper Head of Security's parade jacket"
-	desc = "For when an armoured vest isn't fashionable enough."
-	icon_state = "hosformal"
-	item_state = "hostrench"
-	body_parts_covered = CHEST|GROIN|ARMS
-	armor = list("melee" = 30, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 90)
-	togglename = "buttons"
-
-/obj/item/clothing/suit/toggle/armor/hos/hos_formal/Initialize()
 	. = ..()
 	allowed = GLOB.security_wintercoat_allowed

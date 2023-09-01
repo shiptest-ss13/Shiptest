@@ -50,15 +50,3 @@
 	icon_state = "centcom_skirt"
 	item_state = "dg_suit"
 	body_parts_covered = CHEST|GROIN|ARMS
-
-/obj/item/clothing/under/rank/centcom/military
-	name = "tactical combat uniform"
-	desc = "A dark colored uniform worn by CentCom's conscripted military forces."
-	icon_state = "military"
-	item_state = "bl_suit"
-	armor = list("melee" = 10, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 10, "fire" = 50, "acid" = 40)
-
-/obj/item/clothing/under/rank/centcom/military/eng
-	name = "tactical engineering uniform"
-	desc = "A dark colored uniform worn by CentCom's regular military engineers."
-	icon_state = "military_eng"
