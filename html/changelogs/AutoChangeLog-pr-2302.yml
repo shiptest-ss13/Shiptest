@@ -1,0 +1,12 @@
+author: Skrem7
+delete-after: true
+changes:
+  - balance: Standard 12g box magazines are now small-sized, rather than normal
+  - spellcheck: Adjusts mag-based shotguns, lever-actions, and shotgun mag descriptions
+      to be more efficient/accurate
+  - code_imp: Changes how bulldog/mastiff magazines check for their icon to be standardized
+      with the CM-15
+  - code_imp: All ammo_boxes now update_appearance upon being initialized
+  - bugfix: Bulldog drum magazines should no longer go invisible while checking for
+      a base_icon_sprite that doesn't exist
+  - bugfix: Spent shotgun shells now have proper sprite pathing
