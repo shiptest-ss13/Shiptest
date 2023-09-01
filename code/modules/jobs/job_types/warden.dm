@@ -38,7 +38,7 @@
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	r_pocket = /obj/item/assembly/flash/handheld
 	l_pocket = /obj/item/restraints/handcuffs
-	suit_store = NULL		//WS edit - Readds tasers //SHIPTEST EDIT - removes tasers
+	suit_store = null		//WS edit - Readds tasers //SHIPTEST EDIT - removes tasers
 	backpack_contents = list(/obj/item/melee/classic_baton) //WS edit - free lethals // SHIPTEST EDIT - nope
 
 	backpack = /obj/item/storage/backpack/security
@@ -97,7 +97,7 @@
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security/inteq
 	shoes = /obj/item/clothing/shoes/combat
 	gloves = /obj/item/clothing/gloves/combat
-	suit_store = NULL
+	suit_store = null
 
 	courierbag = /obj/item/storage/backpack/messenger/inteq
 	backpack_contents = list(/obj/item/melee/classic_baton=1, /obj/item/pda/warden)
