@@ -179,18 +179,14 @@
 		if(radio.last_chatter_time + 1 SECONDS < world.time && source != radio)
 			playsound(radio, "sound/effects/radio_chatter.ogg", 20, FALSE)
 			radio.last_chatter_time = world.time
-	//WS edit end
-
-//for all the widebands that heard the message, log it in their voice log
-	for(var/obj/item/radio/wideband in radios)
-		if(wideband.frequency == FREQ_WIDEBAND)
+		if(radio.log)
 			var/name = data["name"]
 			var/list/log_details = list()
 			log_details["name"] = "[name]▸"
 			log_details["message"] = "\"[html_decode(message)]\""
 			log_details["time"] = station_time_timestamp()
-			wideband.loglist.Insert(1, list(log_details))
-			wideband.log_trim()
+			radio.loglist.Insert(1, list(log_details))
+			radio.log_trim()
 
 	// From the list of radios, find all mobs who can hear those.
 	var/list/receive = get_mobs_in_radio_ranges(radios)
