@@ -1,8 +1,8 @@
 /**
-* @file
-* @copyright 2021 bobbahbrown (https://github.com/bobbahbrown)
-* @license MIT
-*/
+ * @file
+ * @copyright 2021 bobbahbrown (https://github.com/bobbahbrown)
+ * @license MIT
+ */
 
 import { decodeHtmlEntities } from 'common/string';
 import { useBackend, useLocalState } from '../backend';
@@ -32,8 +32,8 @@ export const RequestManager = (props, context) => {
       (request) =>
         decodeHtmlEntities(request.message)
           .toLowerCase()
-          .includes(filterText)
-        || request.owner_name.toLowerCase().includes(filterText)
+          .includes(filterText) ||
+        request.owner_name.toLowerCase().includes(filterText)
     );
   }
 
@@ -52,7 +52,8 @@ export const RequestManager = (props, context) => {
               />
               <FilterPanel />
             </>
-          }>
+          }
+        >
           {displayedRequests.map((request) => (
             <div className="RequestManager__row" key={request.id}>
               <div className="RequestManager__rowContents">
@@ -84,6 +85,7 @@ const displayTypeMap = {
   'request_centcom': 'CENTCOM',
   'request_syndicate': 'SYNDICATE',
   'request_nuke': 'NUKE CODE',
+  'request_fax': 'FAX',
 };
 
 const RequestType = (props) => {
@@ -117,6 +119,9 @@ const RequestControls = (props, context) => {
           SETCODE
         </Button>
       )}
+      {request.req_type === 'request_fax' && (
+        <Button onClick={() => act('show', { id: request.id })}>SHOW</Button>
+      )}
     </div>
   );
 };
@@ -145,7 +150,8 @@ const FilterPanel = (_, context) => {
           className="RequestManager__filterPanel"
           style={{
             display: filterVisible ? 'block' : 'none',
-          }}>
+          }}
+        >
           <Table width="0">
             {Object.keys(displayTypeMap).map((type) => {
               return (
@@ -168,7 +174,8 @@ const FilterPanel = (_, context) => {
             })}
           </Table>
         </div>
-      }>
+      }
+    >
       <Button icon="cog" onClick={() => setFilterVisible(!filterVisible)}>
         Type Filter
       </Button>

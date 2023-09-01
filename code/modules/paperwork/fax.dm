@@ -310,6 +310,7 @@
 			loaded_item_ref = null
 			update_icon()
 			return TRUE
+
 		if("send")
 			var/obj/item/loaded = loaded_item_ref?.resolve()
 			if(!loaded)
@@ -320,13 +321,16 @@
 				loaded_item_ref = null
 				update_icon()
 				return TRUE
+
 		if("send_special")
 			var/obj/item/paper/fax_paper = loaded_item_ref?.resolve()
 			if(!istype(fax_paper))
 				to_chat(usr, icon2html(src.icon, usr) + "<span class='warning'>ERROR: Failed to send fax.</span>")
 				return
+
 			fax_paper.request_state = TRUE
 			fax_paper.loc = null
+
 			INVOKE_ASYNC(src, PROC_REF(animate_object_travel), fax_paper, "fax_receive", find_overlay_state(fax_paper, "send"))
 			history_add("Send", params["name"])
 
@@ -340,9 +344,11 @@
 					fax.receive(fax_paper, fax_name)
 					break
 			update_appearance()
+
 		if("history_clear")
 			history_clear()
 			return TRUE
+
 
 /**
  * Records logs of bureacratic action
