@@ -2,7 +2,6 @@
 	name = "shotgun drum magazine (12g buckshot)"
 	desc = "A bulky 8-round drum designed for Scarborough family shotguns."
 	icon_state = "m12gb"
-	base_icon_state = "m12gb"
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
 	caliber = "12ga"
 	max_ammo = 8
