@@ -129,6 +129,12 @@
 /obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 1
 	},
+/obj/machinery/button/door{
+	id = "colossus_windows";
+	name = "Window Lockdown";
+	pixel_x = -4;
+	pixel_y = 21
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "bN" = (
@@ -639,14 +645,6 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/radio/intercom/directional/north{
-	dir = 2;
-	freerange = 1;
-	freqlock = 1;
-	frequency = 1347;
-	name = "IRMG shortwave intercom";
-	pixel_y = -32
-	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "gJ" = (
@@ -861,6 +859,15 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/borderfloor,
+/obj/item/radio/intercom/directional/north{
+	dir = 4;
+	freerange = 1;
+	freqlock = 1;
+	frequency = 1347;
+	name = "IRMG shortwave intercom";
+	pixel_x = 31;
+	pixel_y = 0
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "iY" = (
@@ -1145,7 +1152,6 @@
 	dir = 4
 	},
 /obj/item/clothing/suit/space/hardsuit/security/independent/inteq,
-/obj/item/clothing/head/helmet/space/inteq,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "mY" = (
@@ -1299,7 +1305,6 @@
 	pixel_x = 32
 	},
 /obj/item/clothing/suit/space/hardsuit/security/independent/inteq,
-/obj/item/clothing/head/helmet/space/inteq,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "pa" = (
@@ -1781,13 +1786,6 @@
 /area/ship/hallway/port)
 "tI" = (
 /obj/machinery/holopad/emergency/command,
-/obj/machinery/button/door{
-	dir = 1;
-	id = "colossus_windows";
-	name = "Window Lockdown";
-	pixel_x = -4;
-	pixel_y = -21
-	},
 /turf/open/floor/carpet/orange,
 /area/ship/bridge)
 "tJ" = (
@@ -2448,7 +2446,6 @@
 	},
 /obj/machinery/airalarm/directional/west,
 /obj/item/clothing/suit/space/hardsuit/security/independent/inteq,
-/obj/item/clothing/head/helmet/space/inteq,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "BA" = (
@@ -2499,7 +2496,6 @@
 	},
 /obj/structure/closet/cardboard,
 /obj/item/radio/intercom/directional/south,
-/obj/item/storage/box/inteqmaid,
 /obj/effect/spawner/lootdrop/maintenance/seven,
 /obj/effect/turf_decal/corner_techfloor_gray{
 	dir = 4
@@ -2623,7 +2619,6 @@
 	},
 /obj/machinery/light/directional/west,
 /obj/item/clothing/suit/space/hardsuit/security/independent/inteq,
-/obj/item/clothing/head/helmet/space/inteq,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "Da" = (
