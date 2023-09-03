@@ -124,7 +124,7 @@
 
 /obj/item/gun/ballistic/shotgun/bulldog
 	name = "\improper Bulldog Shotgun"
-	desc = "A semi-automatic magazine-fed shotgun designed for combat in tight quarters, manufactured by Scarborough Arms. A historical favorite of various Syndicate factions, especially the Gorlex Marauders."
+	desc = "A semi-automatic, magazine-fed shotgun designed for combat in tight quarters, manufactured by Scarborough Arms. A historical favorite of various Syndicate factions, especially the Gorlex Marauders."
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	icon_state = "bulldog"
 	item_state = "bulldog"
@@ -156,7 +156,7 @@
 
 /obj/item/gun/ballistic/shotgun/bulldog/inteq
 	name = "\improper Mastiff Shotgun"
-	desc = "A semi-auto, mag-fed shotgun, seized from Syndicate armories by deserting troopers and modified to IRMG's standards. Only compatible with specialized 8-round drum magazines."
+	desc = "A variation of the Bulldog, seized from Syndicate armories by deserting troopers then modified to IRMG's standards."
 	icon_state = "bulldog-inteq"
 	item_state = "bulldog-inteq"
 	mag_type = /obj/item/ammo_box/magazine/m12g
@@ -165,7 +165,7 @@
 
 /obj/item/gun/ballistic/shotgun/bulldog/minutemen
 	name = "\improper CM-15"
-	desc = "Standard issue shotgun of the Colonial Minutemen. Most often used by boarding crews. Only compatible with specialized 8-round magazines."
+	desc = "A standard-issue shotgun of the Colonial Minutemen, most often used by boarding crews. Only compatible with specialized 8-round magazines."
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	mag_type = /obj/item/ammo_box/magazine/cm15_mag
 	icon_state = "cm15"
@@ -415,9 +415,10 @@
 	fire_sound_volume = 100
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/hundred
 
+//Lever-Action Rifles
 /obj/item/gun/ballistic/shotgun/winchester
 	name = "Winchester MK.2"
-	desc = "A sturdy lever action rifle with hand-stamped Hunter's Pride marks on the receiver. This one is a newer reproduction."
+	desc = "A sturdy lever-action rifle with hand-stamped Hunter's Pride marks on the receiver. Modern and sleek."
 	icon_state = "winchester"
 	item_state = "winchester"
 	icon = 'icons/obj/guns/48x32guns.dmi'
@@ -429,14 +430,16 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/winchester
 	fire_sound = 'sound/weapons/gun/rifle/shot.ogg'
 	rack_sound = 'sound/weapons/gun/rifle/winchester_cocked.ogg'
+	bolt_wording = "lever"
+	cartridge_wording = "bullet"
 
 /obj/item/gun/ballistic/shotgun/winchester/mk1
 	name = "Winchester MK.1"
-	desc = "A sturdy lever action rifle. This older pattern appears to be an antique, in excellent condition despite its age."
+	desc = "A sturdy lever-action rifle. This antique pattern appears to be in excellent condition despite its age."
 	icon_state = "winchestermk1"
 	item_state = "winchestermk1"
 
-
+//Elephant Gun
 /obj/item/gun/ballistic/shotgun/doublebarrel/twobore
 	name = "two-bore rifle"
 	desc = "Take this, elephant! If you want an intact trophy, don't aim for the head. Chambered in two-bore."
