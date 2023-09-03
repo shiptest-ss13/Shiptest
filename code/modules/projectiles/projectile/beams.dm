@@ -3,6 +3,7 @@
 	icon_state = "laser"
 	pass_flags = PASSTABLE | PASSGLASS | PASSGRILLE
 	damage = 25
+	armour_penetration = -5
 	damage_type = BURN
 	hitsound = 'sound/weapons/sear.ogg'
 	hitsound_wall = 'sound/weapons/effects/searwall.ogg'
@@ -27,7 +28,8 @@
 	impact_type = /obj/effect/projectile/impact/laser
 
 /obj/projectile/beam/laser/eoehoma
-	damage = 30
+	damage = 25
+	armour_penetration = -10
 
 /obj/projectile/beam/laser/assault
 	icon_state = "heavylaser"
