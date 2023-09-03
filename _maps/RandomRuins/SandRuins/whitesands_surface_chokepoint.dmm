@@ -6,10 +6,6 @@
 /obj/structure/barricade/sandbags,
 /turf/open/floor/plating/asteroid/whitesands/dried,
 /area/ruin)
-"c" = (
-/obj/structure/flora/rock/pile/rockplanet,
-/turf/open/floor/plating/asteroid/whitesands/dried,
-/area/ruin)
 "d" = (
 /obj/structure/closet/secure_closet{
 	icon_state = "sec"
@@ -67,10 +63,6 @@
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/plating/asteroid/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
-"l" = (
-/obj/structure/flora/rock/hell,
-/turf/open/floor/plating/asteroid/whitesands/dried,
-/area/ruin)
 "m" = (
 /turf/open/floor/plating/asteroid/whitesands,
 /area/overmap_encounter/planetoid/sand/explored)
@@ -97,10 +89,6 @@
 /obj/item/shield/riot/buckler,
 /turf/open/floor/plating/asteroid/whitesands,
 /area/ruin)
-"t" = (
-/obj/structure/flora/rock,
-/turf/open/floor/plating/asteroid/whitesands/dried,
-/area/ruin)
 "u" = (
 /turf/open/floor/plating/asteroid/whitesands,
 /area/ruin)
@@ -113,37 +101,17 @@
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried,
 /area/ruin)
-"w" = (
-/obj/structure/flora/rock/lava,
-/turf/open/floor/plating/asteroid/whitesands/dried,
-/area/ruin)
 "x" = (
 /obj/structure/sign/poster/contraband/space_cops,
 /turf/closed/wall/mineral/sandstone,
 /area/ruin)
-"y" = (
-/obj/structure/flora/rock/pile/icy,
-/turf/open/floor/plating/asteroid/whitesands/dried,
-/area/ruin)
 "z" = (
-/turf/open/floor/plating/asteroid/whitesands/dried,
-/area/ruin)
-"C" = (
-/obj/structure/flora/rock/pile/lava,
-/turf/open/floor/plating/asteroid/whitesands/dried,
-/area/ruin)
-"D" = (
-/obj/structure/flora/rock/icy,
 /turf/open/floor/plating/asteroid/whitesands/dried,
 /area/ruin)
 "E" = (
 /obj/item/banner/security/mundane,
 /turf/open/floor/plating/asteroid/whitesands,
 /area/overmap_encounter/planetoid/sand/explored)
-"G" = (
-/obj/structure/flora/rock/asteroid,
-/turf/open/floor/plating/asteroid/whitesands/dried,
-/area/ruin)
 "H" = (
 /obj/structure/sign/poster/official/report_crimes,
 /turf/closed/wall/mineral/sandstone,
@@ -158,7 +126,6 @@
 	pixel_x = 7;
 	pixel_y = -5
 	},
-/obj/structure/flora/rock/rockplanet,
 /turf/open/floor/plating/asteroid/whitesands/dried,
 /area/ruin)
 "K" = (
@@ -177,10 +144,6 @@
 /obj/structure/sign/poster/official/work_for_a_future,
 /turf/closed/wall/mineral/sandstone,
 /area/ruin)
-"O" = (
-/obj/structure/flora/rock/pile,
-/turf/open/floor/plating/asteroid/whitesands/dried,
-/area/ruin)
 "P" = (
 /obj/structure/sign/poster/official/do_not_question,
 /turf/closed/wall/mineral/sandstone,
@@ -188,10 +151,6 @@
 "Q" = (
 /turf/closed/mineral/random/whitesands,
 /area/overmap_encounter/planetoid/sand/explored)
-"R" = (
-/obj/structure/flora/rock/beach,
-/turf/open/floor/plating/asteroid/whitesands/dried,
-/area/ruin)
 "S" = (
 /obj/effect/mob_spawn/human/corpse/damaged/whitesands/survivor,
 /obj/effect/decal/cleanable/blood{
@@ -312,11 +271,11 @@ Q
 (6,1,1) = {"
 V
 V
-t
-O
+z
+z
 z
 v
-G
+z
 e
 r
 d
@@ -327,11 +286,11 @@ Q
 (7,1,1) = {"
 V
 U
-R
 z
 z
 z
-G
+z
+z
 X
 u
 z
@@ -342,11 +301,11 @@ Q
 (8,1,1) = {"
 V
 i
-D
-y
 z
 z
-l
+z
+z
+z
 M
 u
 z
@@ -357,8 +316,8 @@ Q
 (9,1,1) = {"
 V
 V
-w
-C
+z
+z
 z
 z
 z
@@ -373,7 +332,7 @@ Q
 V
 V
 J
-c
+z
 z
 z
 h
