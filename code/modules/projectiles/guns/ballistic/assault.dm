@@ -172,7 +172,7 @@
 
 /obj/item/gun/ballistic/automatic/assualt/e40
 	name = "\improper E-40 Hybrid Rifle"
-	desc = "An Assualt Rifle, best known for being having a dual ballistic and laser system. Chambered in .299 eoehoma caseless, and uses energy for lasers."
+	desc = "A Hybrid Assault Rifle, best known for being having a dual ballistic and laser system. Chambered in .229 Eoehoma caseless, and uses energy for lasers."
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	icon_state = "e40"
 	item_state = "e40"

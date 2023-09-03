@@ -29,7 +29,7 @@
 	name = "antique laser gun"
 	icon_state = "caplaser"
 	item_state = null
-	desc = "This is the SL X-00, an antique laser gun that none know how to recreate. All craftsmanship is of the highest quality. It is decorated with assistant leather and chrome. The gun menaces with spikes of energy."
+	desc = "This is the SL X-00, an antique laser gun, out of production for decades and well beyond anyone's capacity to recreate. All craftsmanship is of the highest quality. It is decorated with ashdrake leather and chrome. The gun menaces with spikes of energy. On the item is an image of a space station. The station is exploding."
 	force = 10
 	ammo_x_offset = 3
 	selfcharge = TRUE
@@ -39,7 +39,7 @@
 /obj/item/gun/energy/laser/captain/brazil
 	icon_state = "capgun_brazil"
 	item_state = "caplaser"
-	desc = "This is the SL X-00, an antique laser gun that none know how to recreate. It seems all the high quality materials it was once made of are now scratched up and torn. The automatic recharging components has been removed, and will no longer automaticly recharge."
+	desc = "This is the SL X-00, an antique laser gun, out of production for decades and well beyond anyone's capacity to recreate. It seems all the high quality materials it was once made of are now scratched up and torn. The nuclear power cell has been removed, and the gun will no longer automatically recharge."
 	selfcharge = FALSE
 
 /obj/item/gun/energy/laser/captain/scattershot
@@ -208,7 +208,7 @@
 
 /obj/item/gun/energy/laser/e10
 	name = "E-10 laser pistol"
-	desc = "A very old laser weapon. Despite the extreme age of some of these weapons, they are sometimes prefered to the mass produced Nanotrasen laser weapons."
+	desc = "A very old laser weapon. Despite the extreme age of some of these weapons, they are sometimes preferred to newer, mass-produced Nanotrasen laser weapons."
 	icon_state = "e10"
 	w_class = WEIGHT_CLASS_SMALL
 	ammo_type = list(/obj/item/ammo_casing/energy/lasergun/eoehoma)
@@ -216,7 +216,7 @@
 
 /obj/item/gun/energy/laser/e50
 	name = "E-50 energy emitter"
-	desc = "A heavy and extremely powerful laser. Sets fires and kick ass, however uses a massive amount of energy per shot and is generally awkard to fire with."
+	desc = "A heavy and extremely powerful laser. Sets targets on fire and kicks ass, but it uses a massive amount of energy per shot and is generally awkward to handle."
 
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	icon_state = "e50"

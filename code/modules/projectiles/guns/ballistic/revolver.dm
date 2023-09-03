@@ -75,7 +75,7 @@
 		. += "It can be spun with <b>alt+click</b>"
 
 /obj/item/gun/ballistic/revolver/detective
-	name = "\improper Hunters Pride Detective Special"
+	name = "\improper Hunter's Pride Detective Special"
 	desc = "A compact and ridiculously old-fashioned law enforcement firearm. Uses .38 Special rounds."
 	fire_sound = 'sound/weapons/gun/revolver/shot.ogg'
 	icon_state = "detective"

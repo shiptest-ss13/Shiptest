@@ -60,6 +60,6 @@
 // .299 Eoehoma Caseless (E-40)
 
 /obj/projectile/bullet/c299
-	name = ".299 eoehoma caseless bullet"
+	name = ".229 Eoehoma caseless bullet"
 	damage = 25
 	armour_penetration = 20
