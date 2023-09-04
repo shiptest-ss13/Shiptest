@@ -104,7 +104,7 @@
 	},
 /obj/machinery/computer/helm/retro,
 /obj/item/paper/construction{
-	info = "Yeah, just so you know, I left the fuel and air pumps OFF when I dropped this thing of for you, you're gonna have to go outside and turn em on to start up the engines<br><br>The pumps are outside on the tank things to the left and right on the back of the ship, there's also one in each engine room you'll need to get going."
+	default_raw_text = "Yeah, just so you know, I left the fuel and air pumps OFF when I dropped this thing of for you, you're gonna have to go outside and turn em on to start up the engines<br><br>The pumps are outside on the tank things to the left and right on the back of the ship, there's also one in each engine room you'll need to get going."
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -360,7 +360,7 @@
 /obj/effect/turf_decal/industrial/warning/dust,
 /obj/machinery/airalarm/directional/east,
 /obj/item/paper/construction{
-	info = "<center><h1>Airlock Instructions</h1></center><br><center>Because none of you numbnuts can remember them</center><br><br>1: Bolt the door behind you so you dont bump into it and lose all our air.<br>     Bolt is the LEFT BUTTON<br>2: Go to the air alarm, set it to siphon<br>3: When at least most of the gas is out, turn OFF siphon<br>4: You can now open the shutters<br>     I shouldnt have to tell you this, but theyre the RIGHT button<br><br><h2>To go back IN</h2><br>1: Close the shutters behind you<br>2: Set the air alarm to SIPHON again<br>3: When all of the dangerous gas is out, set the air alarm to FILL<br>3: Once the pressure is at least 50 kpa, you can set the air alarm back to normal, and unbolt the door<br><br>I still can't fucking believe I have to write this."
+	default_raw_text = "<center><h1>Airlock Instructions</h1></center><br><center>Because none of you numbnuts can remember them</center><br><br>1: Bolt the door behind you so you dont bump into it and lose all our air.<br>     Bolt is the LEFT BUTTON<br>2: Go to the air alarm, set it to siphon<br>3: When at least most of the gas is out, turn OFF siphon<br>4: You can now open the shutters<br>     I shouldnt have to tell you this, but theyre the RIGHT button<br><br><h2>To go back IN</h2><br>1: Close the shutters behind you<br>2: Set the air alarm to SIPHON again<br>3: When all of the dangerous gas is out, set the air alarm to FILL<br>3: Once the pressure is at least 50 kpa, you can set the air alarm back to normal, and unbolt the door<br><br>I still can't fucking believe I have to write this."
 	},
 /turf/open/floor/plating{
 	icon_state = "platingdmg1"
@@ -1876,6 +1876,11 @@
 	pixel_y = 2;
 	pixel_x = 12
 	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_y = 12;
+	pixel_x = -20
+	},
 /turf/open/floor/pod/light,
 /area/ship/maintenance/aft)
 "Ix" = (
@@ -1995,6 +2000,11 @@
 /obj/effect/mob_spawn/human/corpse/charredskeleton,
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable,
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_y = 12;
+	pixel_x = -20
+	},
 /turf/open/floor/plating/rust,
 /area/ship/engineering/electrical)
 "JQ" = (
@@ -2150,12 +2160,12 @@
 /obj/item/paper/crumpled{
 	pixel_y = 4;
 	pixel_x = -23;
-	info = "Attempt 301. Longitudinal traction was applied to the upper protruding flesh appendage. Muffled screaming (possibly Jeff?) was observed. Spontaneous amputation occurred and the screaming ceased. Duct tape applied.<br><br>Results: Reployer remains unfunctioning."
+	default_raw_text = "Attempt 301. Longitudinal traction was applied to the upper protruding flesh appendage. Muffled screaming (possibly Jeff?) was observed. Spontaneous amputation occurred and the screaming ceased. Duct tape applied.<br><br>Results: Reployer remains unfunctioning."
 	},
 /obj/item/paper/crumpled{
 	pixel_y = -12;
 	pixel_x = -3;
-	info = "Attempt 1180. Salt circle was established with regular rituals. 30mL of blood was dripped directly onto the reployer, and chanting begun 1 minute after the beginning of the attempt. Despite using only lighting from tallow candles, soapbucket scrying was ineffective in troubleshooting the problem.<br><br>Results: Reployer remains unfunctioning."
+	default_raw_text = "Attempt 1180. Salt circle was established with regular rituals. 30mL of blood was dripped directly onto the reployer, and chanting begun 1 minute after the beginning of the attempt. Despite using only lighting from tallow candles, soapbucket scrying was ineffective in troubleshooting the problem.<br><br>Results: Reployer remains unfunctioning."
 	},
 /obj/effect/decal/cleanable/greenglow/filled,
 /obj/item/screwdriver/old{
@@ -2253,6 +2263,11 @@
 	},
 /mob/living/simple_animal/hostile/cockroach/glockroach,
 /obj/effect/spawner/lootdrop/maintenance,
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 20;
+	pixel_y = 14
+	},
 /turf/open/floor/pod/light,
 /area/ship/maintenance/aft)
 "QM" = (
@@ -2680,6 +2695,11 @@
 /obj/structure/cable,
 /obj/structure/cable{
 	icon_state = "1-8"
+	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_y = 12;
+	pixel_x = -20
 	},
 /turf/open/floor/pod/dark,
 /area/ship/crew/office)

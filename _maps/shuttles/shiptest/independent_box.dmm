@@ -371,7 +371,7 @@
 /obj/machinery/light_switch{
 	dir = 1;
 	pixel_x = 6;
-	pixel_y = -25
+	pixel_y = -20
 	},
 /obj/structure/window/reinforced/spawner/west,
 /obj/item/kirbyplants/random,
@@ -1640,6 +1640,11 @@
 	icon_state = "0-2"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -20;
+	pixel_y = 10
+	},
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
 "ux" = (
@@ -1744,6 +1749,11 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/power/apc/auto_name/directional/south,
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = 11;
+	pixel_y = -16
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/medical/morgue)
 "vq" = (
@@ -2184,6 +2194,11 @@
 /obj/item/mop,
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable,
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = 11;
+	pixel_y = -16
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Dm" = (
@@ -2500,7 +2515,6 @@
 	pixel_x = -32
 	},
 /obj/item/storage/box/pillbottles,
-/obj/item/clothing/under/rank/medical/chemist/,
 /obj/item/clothing/suit/longcoat/chemist,
 /obj/item/reagent_containers/dropper,
 /obj/item/clothing/head/beret/chem,
@@ -2548,7 +2562,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew)
 "OF" = (
-/obj/machinery/photocopier/faxmachine,
+/obj/machinery/fax,
 /obj/structure/table/reinforced,
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel/dark,

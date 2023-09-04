@@ -3,6 +3,7 @@
 	desc = "This is my BROOMSTICK! It can be used manually or braced with two hands to sweep items as you move. It has a telescopic handle for compact storage."
 	icon = 'icons/obj/janitor.dmi'
 	icon_state = "broom0"
+	base_icon_state = "broom"
 	lefthand_file = 'icons/mob/inhands/equipment/custodial_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/custodial_righthand.dmi'
 	force = 8
@@ -21,10 +22,11 @@
 
 /obj/item/pushbroom/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded=8, force_wielded=12, icon_wielded="broom1")
+	AddComponent(/datum/component/two_handed, force_unwielded=8, force_wielded=12, icon_wielded="[base_icon_state]1")
 
 /obj/item/pushbroom/update_icon_state()
-	icon_state = "broom0"
+	icon_state = "[base_icon_state]0"
+	return ..()
 
 /// triggered on wield of two handed item
 /obj/item/pushbroom/proc/on_wield(obj/item/source, mob/user)
@@ -65,11 +67,11 @@
 			break
 	if(i > 0)
 		if (target_bin)
-			target_bin.update_icon()
+			target_bin.update_appearance()
 			to_chat(user, "<span class='notice'>You sweep the pile of garbage into [target_bin].</span>")
 		playsound(loc, 'sound/weapons/thudswoosh.ogg', 30, TRUE, -1)
 
 /obj/item/pushbroom/proc/janicart_insert(mob/user, obj/structure/janitorialcart/J) //bless you whoever fixes this copypasta
 	J.put_in_cart(src, user)
 	J.mybroom=src
-	J.update_icon()
+	J.update_appearance()

@@ -252,7 +252,6 @@
 	populate = 0;
 	anchored = 1
 	},
-/obj/item/clothing/neck/cloak/solgov,
 /obj/item/clothing/under/solgov/formal/captain,
 /obj/item/clothing/shoes/laceup,
 /obj/item/clothing/head/solgov/captain,
@@ -273,6 +272,7 @@
 /obj/item/gun/ballistic/automatic/powered/gauss/modelh,
 /obj/item/ammo_box/magazine/modelh,
 /obj/item/ammo_box/magazine/modelh,
+/obj/item/clothing/neck/cloak/solgovcap,
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/office)
 "cg" = (
@@ -296,6 +296,9 @@
 	},
 /obj/item/radio/intercom/directional/east,
 /obj/machinery/airalarm/directional/south,
+/obj/machinery/camera/autoname{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "cw" = (
@@ -771,7 +774,7 @@
 /area/ship/crew)
 "hr" = (
 /obj/structure/table/wood/fancy/purple,
-/obj/machinery/photocopier/faxmachine/longrange,
+/obj/machinery/fax,
 /obj/item/desk_flag/solgov{
 	pixel_x = 8;
 	pixel_y = 13
@@ -1011,6 +1014,9 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
 	},
+/obj/machinery/camera/autoname{
+	dir = 8
+	},
 /turf/open/floor/wood,
 /area/ship/crew/crewtwo)
 "ja" = (
@@ -1112,6 +1118,11 @@
 	},
 /obj/structure/cable{
 	icon_state = "0-4"
+	},
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = 11;
+	pixel_y = -16
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/engineering)
@@ -1265,6 +1276,9 @@
 /obj/structure/sign/warning{
 	pixel_y = 9;
 	pixel_x = -23
+	},
+/obj/machinery/camera/autoname{
+	dir = 5
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/engineering)
@@ -1527,6 +1541,9 @@
 	dir = 4
 	},
 /obj/machinery/light/small/directional/south,
+/obj/machinery/camera/autoname{
+	dir = 10
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/engineering)
 "oH" = (
@@ -1753,6 +1770,9 @@
 /area/ship/bridge)
 "rO" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 8
+	},
+/obj/machinery/camera/autoname{
 	dir = 8
 	},
 /turf/open/floor/wood,
@@ -2109,6 +2129,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/machinery/camera/autoname{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/crewtwo)
 "vr" = (
@@ -2252,6 +2275,7 @@
 	color = "#543C30"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/camera/autoname,
 /turf/open/floor/wood,
 /area/ship/bridge)
 "xu" = (
@@ -2703,6 +2727,9 @@
 /obj/item/clothing/under/solgov,
 /obj/item/clothing/under/solgov/dress,
 /obj/item/clothing/under/solgov/dress,
+/obj/machinery/camera/autoname{
+	dir = 6
+	},
 /turf/open/floor/wood,
 /area/ship/crew/dorm)
 "Ax" = (
@@ -2981,7 +3008,7 @@
 /turf/open/floor/plasteel/white,
 /area/ship/security/armory)
 "CU" = (
-/obj/machinery/photocopier/faxmachine,
+/obj/machinery/fax,
 /obj/structure/table/wood,
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/wood,
@@ -3053,6 +3080,11 @@
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable,
 /obj/structure/table/wood,
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -20;
+	pixel_y = 10
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/bridge)
 "Ef" = (
@@ -3187,6 +3219,11 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/machinery/light_switch{
+	dir = 2;
+	pixel_y = 22;
+	pixel_x = -12
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/security/armory)
 "Fh" = (
@@ -3263,6 +3300,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/machinery/camera/autoname{
+	dir = 10
+	},
 /turf/open/floor/wood,
 /area/ship/crew)
 "FX" = (
@@ -3309,6 +3349,9 @@
 	dir = 1;
 	pixel_y = -28
 	},
+/obj/machinery/camera/autoname{
+	dir = 4
+	},
 /turf/open/floor/wood,
 /area/ship/crew/crewtwo)
 "Gv" = (
@@ -3329,6 +3372,12 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/engineering)
+"GH" = (
+/obj/effect/turf_decal/corner/opaque/solgovgold{
+	dir = 6
+	},
+/turf/template_noop,
+/area/template_noop)
 "GP" = (
 /obj/machinery/door/airlock/solgov{
 	dir = 4;
@@ -3375,6 +3424,7 @@
 	},
 /obj/machinery/light/small/directional/north,
 /obj/structure/table/wood/fancy/blue,
+/obj/machinery/camera/autoname,
 /turf/open/floor/wood,
 /area/ship/bridge)
 "Hd" = (
@@ -3389,6 +3439,9 @@
 /area/ship/crew/crewtwo)
 "Ho" = (
 /obj/effect/turf_decal/techfloor,
+/obj/machinery/camera/autoname{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "Hp" = (
@@ -3537,7 +3590,7 @@
 /area/ship/security/armory)
 "Jh" = (
 /obj/structure/table/wood/fancy/blue,
-/obj/machinery/photocopier/faxmachine/longrange,
+/obj/machinery/fax,
 /obj/item/desk_flag/solgov{
 	pixel_x = -9;
 	pixel_y = 14
@@ -3569,6 +3622,9 @@
 	dir = 8
 	},
 /obj/machinery/light/small/directional/east,
+/obj/machinery/camera/autoname{
+	dir = 8
+	},
 /turf/open/floor/wood,
 /area/ship/crew)
 "JH" = (
@@ -3868,6 +3924,9 @@
 /obj/effect/turf_decal/corner/opaque/solgovblue{
 	dir = 5
 	},
+/obj/machinery/camera/autoname{
+	dir = 5
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew/dorm)
 "Mx" = (
@@ -3942,6 +4001,11 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
+	},
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = 11;
+	pixel_y = -16
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/dorm)
@@ -4022,6 +4086,9 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/industrial/outline/orange,
+/obj/machinery/camera/autoname{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engine)
 "Oo" = (
@@ -4152,6 +4219,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
 	},
+/obj/machinery/camera/autoname{
+	dir = 6
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/security/armory)
 "Pm" = (
@@ -4224,6 +4294,25 @@
 /obj/structure/table/wood/fancy/blue,
 /turf/open/floor/wood,
 /area/ship/bridge)
+"Qk" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/railing,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/camera/autoname{
+	dir = 6
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/engineering)
 "Qm" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 8
@@ -4402,6 +4491,11 @@
 	},
 /obj/structure/chair/office{
 	dir = 8
+	},
+/obj/machinery/light_switch{
+	dir = 2;
+	pixel_y = 22;
+	pixel_x = -12
 	},
 /turf/open/floor/wood,
 /area/ship/crew/crewtwo)
@@ -4640,6 +4734,9 @@
 /obj/effect/turf_decal/spline/fancy/opaque/grey{
 	dir = 4
 	},
+/obj/machinery/camera/autoname{
+	dir = 6
+	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "UB" = (
@@ -4698,6 +4795,9 @@
 	dir = 1
 	},
 /obj/machinery/light/small/directional/north,
+/obj/machinery/camera/autoname{
+	dir = 6
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "Vi" = (
@@ -4910,6 +5010,11 @@
 	icon_state = "0-4"
 	},
 /obj/effect/landmark/start/station_engineer,
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -20;
+	pixel_y = -10
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engine)
 "XA" = (
@@ -5050,6 +5155,11 @@
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/grey{
 	dir = 8
+	},
+/obj/machinery/light_switch{
+	dir = 2;
+	pixel_y = 22;
+	pixel_x = -12
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
@@ -5229,7 +5339,7 @@ pS
 pS
 KZ
 KZ
-pS
+GH
 AN
 Bz
 Wn
@@ -5483,7 +5593,7 @@ So
 tC
 cp
 So
-fT
+Qk
 um
 zM
 PY

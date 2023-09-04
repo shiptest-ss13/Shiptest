@@ -26,10 +26,26 @@
 
 /datum/supply_pack/gun/makarovs
 	name = "Stechkin pistol crate"
-	desc = "Contains two concealable soviet-era stechkin pistols, produced by the Gorlex Marauders and chambered in 10mm."
+	desc = "Contains two concealable stechkin pistols, produced by the Gorlex Marauders and chambered in 10mm."
 	cost = 2000
 	contains = list(/obj/item/gun/ballistic/automatic/pistol,
 					/obj/item/gun/ballistic/automatic/pistol)
+
+/datum/supply_pack/gun/revolver
+	name = "Scarbourgh Revolver crate"
+	desc = "Contains two concealable Scarbourgh revolvers, chambered in .357."
+	cost = 2500
+	contains = list(/obj/item/gun/ballistic/revolver,
+					/obj/item/gun/ballistic/revolver)
+
+/datum/supply_pack/gun/detrevolver
+	name = "Revolver crate"
+	desc = "Contains two concealable Solarian revolvers, chambered in .38."
+	cost = 2000
+	contains = list(/obj/item/gun/ballistic/revolver/detective,
+					/obj/item/gun/ballistic/revolver/detective)
+
+
 
 /*
 		Energy
@@ -87,10 +103,19 @@
 /datum/supply_pack/gun/winchester
 	name = "Winchester Lever Action Rifle Crate"
 	desc = "Contains three antiquated lever action rifles intended for hunting wildlife. Chambered in .38 rounds."
-	cost = 2000
+	cost = 1500
 	contains = list(/obj/item/gun/ballistic/shotgun/winchester,
 					/obj/item/gun/ballistic/shotgun/winchester,
 					/obj/item/gun/ballistic/shotgun/winchester)
+	crate_name = "rifle crate"
+
+/datum/supply_pack/gun/illestren
+	name = "Illestren Rifle Crate"
+	desc = "Contains three expertly made bolt action rifles intended for hunting wildlife. Chambered in 7.62x54 rounds."
+	cost = 4000
+	contains = list(/obj/item/gun/ballistic/rifle/boltaction,
+					/obj/item/gun/ballistic/rifle/boltaction,
+					/obj/item/gun/ballistic/rifle/boltaction)
 	crate_name = "rifle crate"
 
 /datum/supply_pack/gun/wt550
@@ -99,6 +124,22 @@
 	cost = 6000
 	contains = list(/obj/item/gun/ballistic/automatic/smg/wt550,
 					/obj/item/gun/ballistic/automatic/smg/wt550)
+	crate_name = "auto rifle crate"
+
+/datum/supply_pack/gun/p16
+	name = "P16 Assault Rifle Crate"
+	desc = "Contains two high-powered, automatic rifles chambered in 5.56mm."
+	cost = 8000
+	contains = list(/obj/item/gun/ballistic/automatic/assualt/p16,
+					/obj/item/gun/ballistic/automatic/assualt/p16)
+	crate_name = "auto rifle crate"
+
+/datum/supply_pack/gun/ak
+	name = "SVG-67 Rifle Crate"
+	desc = "Contains two high-powered, automatic rifles chambered in 7.62x39mm."
+	cost = 6000
+	contains = list(/obj/item/gun/ballistic/automatic/assualt/ak47,
+					/obj/item/gun/ballistic/automatic/assualt/ak47)
 	crate_name = "auto rifle crate"
 
 /*
@@ -112,22 +153,6 @@
 	contains = list(/obj/item/storage/box/firingpins,
 					/obj/item/storage/box/firingpins)
 	crate_name = "firing pins crate"
-
-/datum/supply_pack/gun/paywall_pins
-	name = "Paywall Firing Pins Crate"
-	desc = "Specialized firing pins with a built-in configurable paywall."
-	cost = 1500
-	contains = list(/obj/item/storage/box/firingpins/paywall,
-					/obj/item/storage/box/firingpins/paywall)
-	crate_name = "paywall firing pins crate"
-
-/datum/supply_pack/gun/clown_pin
-	name = "Hilarious Firing Pin Crate"
-	desc = "I uh... I'm not really sure what this does. Wanna buy it?"
-	cost = 1500
-	contains = list(/obj/item/firing_pin/clown)
-	crate_name = "toy crate" // It's /technically/ a toy. For the clown, at least.
-	crate_type = /obj/structure/closet/crate/wooden
 
 /datum/supply_pack/gun/lasertag_pins
 	name = "Laser Tag Firing Pins Crate"

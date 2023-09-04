@@ -212,7 +212,7 @@
 
 /obj/item/paper/fluff/bee_objectives
 	name = "Objectives of a Bee Liberation Front Operative"
-	info = "<b>Objective #1</b>. Liberate all bees on the NT transport vessel 2416/B. <b>Success!</b>  <br><b>Objective #2</b>. Escape alive. <b>Failed.</b>"
+	default_raw_text = "<b>Objective #1</b>. Liberate all bees on the NT transport vessel 2416/B. <b>Success!</b>  <br><b>Objective #2</b>. Escape alive. <b>Failed.</b>"
 
 
 
@@ -233,7 +233,7 @@
 	name = "Contractor Guide"
 
 /obj/item/paper/contractor_guide/Initialize()
-	info = {"<p>Welcome agent, congratulations on your new position as contractor. On top of your already assigned objectives,
+	default_raw_text = {"<p>Welcome agent, congratulations on your new position as contractor. On top of your already assigned objectives,
 			this kit will provide you contracts to take on for TC payments.</p>
 
 			<p>Provided within, we give your specialist contractor space suit. It's even more compact, being able to fit into a pocket, and faster than the

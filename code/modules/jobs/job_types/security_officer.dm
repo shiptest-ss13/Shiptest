@@ -311,4 +311,23 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	l_pocket = /obj/item/flashlight/seclite
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
 
+
+/datum/outfit/job/security/lp
+	name = "LP Security Specialist"
+
+	implants = list(/obj/item/implant/mindshield)
+	ears = /obj/item/radio/headset/nanotrasen/alt/captain
+	id = /obj/item/card/id/lpsec
+	belt = /obj/item/pda/security
+	gloves = /obj/item/clothing/gloves/color/black
+	uniform = /obj/item/clothing/under/rank/security/head_of_security/nt/skirt/lp
+	alt_uniform = /obj/item/clothing/under/rank/security/head_of_security/nt/lp
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security
+	shoes = /obj/item/clothing/shoes/jackboots
+	head = /obj/item/clothing/head/beret/sec
+
+	satchel = /obj/item/storage/backpack/satchel/sec
+	duffelbag = /obj/item/storage/backpack/duffelbag/sec
+	courierbag = /obj/item/storage/backpack/messenger/sec
+
 //Shiptest outfits end

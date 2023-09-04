@@ -102,26 +102,6 @@
 	crate_name = "original costume crate"
 	crate_type = /obj/structure/closet/crate/wooden
 
-/datum/supply_pack/costumes_toys/costume
-	name = "Standard Costume Crate"
-	desc = "Supply the sector's entertainers with the equipment of their trade with these hilarious costumes! Contains a full clown and mime outfit, along with a bike horn and a bottle of nothing."
-	cost = 1000
-	contains = list(/obj/item/storage/backpack/clown,
-					/obj/item/clothing/shoes/clown_shoes,
-					/obj/item/clothing/mask/gas/clown_hat,
-					/obj/item/clothing/under/rank/civilian/clown,
-					/obj/item/bikehorn,
-					/obj/item/clothing/under/rank/civilian/mime,
-					/obj/item/clothing/shoes/sneakers/black,
-					/obj/item/clothing/gloves/color/white,
-					/obj/item/clothing/mask/gas/mime,
-					/obj/item/clothing/head/frenchberet,
-					/obj/item/clothing/suit/toggle/suspenders,
-					/obj/item/reagent_containers/food/drinks/bottle/bottleofnothing,
-					/obj/item/storage/backpack/mime)
-	crate_name = "standard costume crate"
-	crate_type = /obj/structure/closet/crate/wooden
-
 /datum/supply_pack/costumes_toys/mafia
 	name = "Cosa Nostra Starter Pack"
 	desc = "This crate contains everything you need to set up your own ethnicity-based racketeering operation."
