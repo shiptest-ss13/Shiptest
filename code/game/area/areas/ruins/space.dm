@@ -353,16 +353,6 @@
 	name = "Mac Space Restaurant"
 	icon_state = "yellow"
 
-//NUCLEAR DUMP -- this ruin uses an area from power puzzle, for whatever reason. added new areas, for now.
-
-/area/ruin/space/has_grav/nucleardump
-	name = "Hallway"
-	icon_state = "hallC"
-
-/area/ruin/space/has_grav/nucleardump/supermatter
-	name = "Supermatter Chamber"
-	icon_state = "red"
-
 //POWER PUZZLE
 
 /area/ruin/space/has_grav/powerpuzzle
