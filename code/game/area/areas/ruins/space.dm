@@ -56,19 +56,6 @@
 	name = "Derelict Outpost Docked Ship"
 	icon_state = "red"
 
-//Ruin of mech transport
-
-/area/ruin/space/has_grav/powered/mechtransport
-	name = "Mech Transport"
-	icon_state = "green"
-
-
-//Ruin of gas the lizard
-
-/area/ruin/space/has_grav/gasthelizard
-	name = "Gas the lizard"
-
-
 //Ruin of Deep Storage
 
 /area/ruin/space/has_grav/deepstorage

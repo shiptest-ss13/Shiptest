@@ -25,12 +25,6 @@
 	description = "A once-bustling tradestation that handled imports and exports from nearby stations now lays eerily dormant. \
 	The last received message was a distress call from one of the on-board officers, but we had no success in making contact again."
 
-/datum/map_template/ruin/space/mech_transport
-	id = "mech-transport"
-	suffix = "mechtransport.dmm"
-	name = "CF Corsair"
-	description = "Well, when is it getting here? I have bills to pay; very well-armed clients who want their shipments as soon as possible! I don't care, just find it!"
-
 /datum/map_template/ruin/space/onehalf
 	id = "onehalf"
 	suffix = "onehalf.dmm"
