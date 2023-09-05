@@ -1,56 +1,84 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"b" = (
-/obj/structure/table/wood,
-/obj/item/borg/upgrade/ai,
-/turf/open/floor/wood,
-/area/ruin/powered)
-"e" = (
-/obj/structure/table/wood,
-/obj/item/mmi/posibrain,
-/obj/item/mmi/posibrain,
-/turf/open/floor/wood,
-/area/ruin/powered)
-"f" = (
-/obj/structure/table/wood,
-/obj/item/circuitboard/computer/borgupload,
-/obj/item/circuitboard/computer/aiupload,
-/turf/open/floor/wood,
-/area/ruin/powered)
-"g" = (
-/obj/structure/table/wood,
-/obj/item/borg/upgrade/transform/clown{
-	desc = "Allows you to to turn a cyborg into a... something.";
-	name = "borg module picker (Unknown)"
+"bA" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 10
 	},
-/obj/item/borg/upgrade/transform{
-	desc = "Allows you to to turn a cyborg into a... something.";
-	name = "borg module picker (Unknown)";
-	new_module = /obj/item/robot_module/syndicate_medical
+/turf/open/floor/plasteel/white,
+/area/ruin/powered)
+"cj" = (
+/obj/item/bodypart/leg/right/robot,
+/turf/open/floor/circuit/green,
+/area/ruin/powered)
+"cp" = (
+/obj/structure/chair/wood/wings,
+/turf/open/floor/wood,
+/area/ruin/powered)
+"cU" = (
+/obj/structure/chair/sofa{
+	dir = 1
+	},
+/turf/open/floor/carpet/black,
+/area/ruin/powered)
+"cZ" = (
+/obj/structure/railing/wood{
+	dir = 10
 	},
 /turf/open/floor/wood,
 /area/ruin/powered)
-"h" = (
-/obj/machinery/door/airlock/wood{
+"dP" = (
+/obj/structure/easel,
+/turf/open/floor/wood,
+/area/ruin/powered)
+"dR" = (
+/obj/machinery/power/apc/away{
+	pixel_y = -28
+	},
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/snacks/grown/meatwheat{
+	pixel_y = 1
+	},
+/obj/item/reagent_containers/food/snacks/grown/meatwheat{
+	pixel_x = 4;
+	pixel_y = 5
+	},
+/obj/item/reagent_containers/food/snacks/grown/meatwheat{
+	pixel_x = 4;
+	pixel_y = 5
+	},
+/obj/item/reagent_containers/food/snacks/grown/meatwheat{
+	pixel_y = -1;
+	pixel_x = -3
+	},
+/obj/item/reagent_containers/food/snacks/meat/slab,
+/obj/item/reagent_containers/food/snacks/meat/slab,
+/turf/open/floor/plasteel/white,
+/area/ruin/powered)
+"fe" = (
+/obj/effect/gibspawner/generic,
+/obj/effect/turf_decal/trimline/opaque/grey/corner{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/powered)
+"fB" = (
+/obj/structure/dresser,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/turf/open/floor/carpet/black,
+/area/ruin/powered)
+"fG" = (
+/obj/item/aiModule/core/freeformcore,
+/obj/item/stack/cable_coil,
+/turf/open/floor/circuit/green,
+/area/ruin/powered)
+"gt" = (
+/obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
 /turf/open/floor/wood,
 /area/ruin/powered)
-"k" = (
-/turf/open/floor/wood,
-/area/ruin/powered)
-"n" = (
-/obj/effect/decal/remains/robot,
-/turf/open/floor/wood,
-/area/ruin/powered)
-"p" = (
-/obj/machinery/recharge_station,
-/turf/open/floor/wood,
-/area/ruin/powered)
-"q" = (
-/obj/item/bodypart/head/robot,
-/turf/open/floor/wood,
-/area/ruin/powered)
-"r" = (
+"gw" = (
 /obj/structure/table/wood,
 /obj/item/aiModule/core/full/damaged{
 	name = "Unknown AI Core Module"
@@ -81,197 +109,927 @@
 /obj/item/aiModule/core/full/asimov{
 	name = "Unknown AI Core Module"
 	},
+/turf/open/floor/circuit/green,
+/area/ruin/powered)
+"gx" = (
+/obj/structure/fluff/hedge,
+/turf/open/floor/carpet/black,
+/area/ruin/powered)
+"gA" = (
+/obj/item/bodypart/l_arm/robot,
 /turf/open/floor/wood,
 /area/ruin/powered)
-"u" = (
-/obj/item/stock_parts/cell/hyper,
+"gF" = (
+/obj/structure/chair/sofa/corner{
+	dir = 8
+	},
+/turf/open/floor/carpet/black,
+/area/ruin/powered)
+"gT" = (
+/obj/structure/rack,
+/obj/item/pestle,
+/obj/structure/large_mortar,
 /turf/open/floor/wood,
 /area/ruin/powered)
-"w" = (
-/obj/item/wallframe/camera,
+"hc" = (
+/obj/machinery/door/airlock/wood,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 1
+	},
 /turf/open/floor/wood,
 /area/ruin/powered)
-"x" = (
-/obj/item/stack/cable_coil,
-/turf/open/floor/wood,
+"jl" = (
+/obj/structure/table/wood,
+/obj/effect/turf_decal/trimline/opaque/grey/corner{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white,
 /area/ruin/powered)
-"y" = (
+"jv" = (
+/obj/structure/chair/sofa/corner{
+	dir = 4
+	},
+/turf/open/floor/carpet/black,
+/area/ruin/powered)
+"kr" = (
+/obj/structure/chair/sofa/corner{
+	dir = 1
+	},
+/turf/open/floor/carpet/black,
+/area/ruin/powered)
+"kz" = (
+/obj/structure/chair/sofa/corner,
+/turf/open/floor/carpet/black,
+/area/ruin/powered)
+"lD" = (
 /obj/structure/table/wood,
 /obj/item/circuitboard/machine/cyborgrecharger,
 /turf/open/floor/wood,
 /area/ruin/powered)
-"z" = (
+"lL" = (
+/obj/structure/chair/sofa{
+	dir = 8
+	},
+/obj/effect/gibspawner/robot,
+/turf/open/floor/carpet/black,
+/area/ruin/powered)
+"lN" = (
 /turf/closed/wall/mineral/wood/nonmetal,
 /area/ruin/powered)
-"D" = (
-/obj/item/assembly/flash/handheld,
+"lT" = (
+/obj/structure/rack,
+/obj/item/reagent_containers/food/snacks/grown/poppy,
+/obj/item/reagent_containers/food/snacks/grown/poppy/geranium{
+	pixel_x = 11
+	},
+/obj/item/reagent_containers/food/snacks/grown/poppy/lily{
+	pixel_x = -7
+	},
 /turf/open/floor/wood,
 /area/ruin/powered)
-"F" = (
-/obj/item/robot_suit/prebuilt,
-/turf/open/floor/wood,
-/area/ruin/powered)
-"G" = (
-/obj/item/assembly/flash/handheld,
-/obj/item/stock_parts/cell/hyper,
-/turf/open/floor/wood,
-/area/ruin/powered)
-"H" = (
-/obj/item/wallframe/camera,
-/obj/item/wallframe/camera,
-/obj/item/wallframe/camera,
-/obj/item/wallframe/camera,
-/obj/item/wallframe/camera,
-/turf/open/floor/wood,
-/area/ruin/powered)
-"J" = (
-/obj/structure/AIcore/latejoin_inactive,
-/turf/open/floor/wood,
-/area/ruin/powered)
-"L" = (
-/obj/item/bodypart/leg/right/robot,
-/turf/open/floor/wood,
-/area/ruin/powered)
-"M" = (
-/obj/item/bodypart/chest/robot,
-/obj/item/wallframe/camera,
-/turf/open/floor/wood,
-/area/ruin/powered)
-"N" = (
+"nb" = (
 /obj/item/robot_suit,
 /obj/item/wallframe/camera,
 /obj/item/wallframe/camera,
-/turf/open/floor/wood,
+/turf/open/floor/circuit/green,
 /area/ruin/powered)
-"Q" = (
+"ng" = (
 /obj/item/paper{
 	default_raw_text = "Welcome to your Space Ikea Brand Full AI Kit! There are all the amenities needed to create a functional AI for your installation in this easy to use kit! Note: Warranty void if exposed to: High Humidity, High Temperatures, Grass, Mud, The Jungle. Thank you for shopping Space Ikea!"
 	},
 /turf/open/floor/wood,
 /area/ruin/powered)
-"R" = (
-/obj/item/bodypart/l_arm/robot,
+"of" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 1
+	},
 /turf/open/floor/wood,
 /area/ruin/powered)
-"S" = (
-/obj/item/wallframe/camera,
-/obj/item/wallframe/camera,
-/obj/item/wallframe/camera,
+"oj" = (
+/obj/structure/closet/wall{
+	dir = 4;
+	pixel_x = -28
+	},
+/obj/item/paper{
+	default_raw_text = "With this new Ai unit I'll be able to set it to do all of the mundane tasks I don't want to! I'll be able to just eat, sleep, and let masterpieces form at my hand! I'll be able to blow this war over no problem!"
+	},
+/obj/item/clothing/head/frenchberet,
+/obj/item/clothing/suit/apron/overalls,
+/obj/item/clothing/shoes/laceup,
+/obj/item/clothing/under/suit/charcoal,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/turf/open/floor/carpet/black,
+/area/ruin/powered)
+"ou" = (
+/obj/effect/turf_decal/trimline/opaque/grey/corner,
+/turf/open/floor/plasteel/white,
+/area/ruin/powered)
+"ox" = (
+/obj/structure/table/wood,
+/obj/item/canvas/nineteenXnineteen,
+/obj/item/canvas/nineteenXnineteen,
+/obj/item/canvas/nineteenXnineteen,
+/obj/item/canvas/nineteenXnineteen,
+/turf/open/floor/carpet/black,
+/area/ruin/powered)
+"pW" = (
+/obj/structure/bed,
+/obj/item/bedsheet/black,
+/obj/structure/curtain/bounty,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/turf/open/floor/carpet/black,
+/area/ruin/powered)
+"qc" = (
+/obj/structure/table/wood,
+/obj/item/trash/plate{
+	pixel_x = 11;
+	pixel_y = 7
+	},
+/obj/item/trash/plate{
+	pixel_y = -1
+	},
+/obj/item/trash/plate{
+	pixel_y = 7
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/powered)
+"qK" = (
+/obj/structure/table/wood,
+/obj/item/borg/upgrade/transform/clown{
+	desc = "Allows you to to turn a cyborg into a... something.";
+	name = "borg module picker (Unknown)"
+	},
+/obj/item/borg/upgrade/transform{
+	desc = "Allows you to to turn a cyborg into a... something.";
+	name = "borg module picker (Unknown)";
+	new_module = /obj/item/robot_module/syndicate_medical
+	},
 /turf/open/floor/wood,
 /area/ruin/powered)
-"U" = (
+"rh" = (
+/turf/open/floor/carpet/black,
+/area/ruin/powered)
+"rt" = (
+/obj/item/assembly/flash/handheld,
+/obj/item/stock_parts/cell/hyper,
+/turf/open/floor/circuit/green,
+/area/ruin/powered)
+"sb" = (
+/obj/effect/decal/cleanable/blood/splatter{
+	pixel_x = 1;
+	pixel_y = 4
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/ruin/powered)
+"sE" = (
 /turf/template_noop,
 /area/template_noop)
-"V" = (
-/obj/item/aiModule/core/freeformcore,
+"sX" = (
+/obj/structure/fluff/hedge,
+/turf/open/floor/wood,
+/area/ruin/powered)
+"tK" = (
+/obj/structure/chair/wood{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/grey/line{
+	dir = 10
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/powered)
+"uh" = (
+/obj/structure/closet/crate/bin,
+/turf/open/floor/plasteel/white,
+/area/ruin/powered)
+"uz" = (
 /obj/item/stack/cable_coil,
 /turf/open/floor/wood,
 /area/ruin/powered)
-"Y" = (
+"vh" = (
+/obj/item/bodypart/head/robot,
+/turf/open/floor/circuit/green,
+/area/ruin/powered)
+"vn" = (
+/obj/item/assembly/flash/handheld,
+/turf/open/floor/wood,
+/area/ruin/powered)
+"vY" = (
+/obj/structure/table/wood,
+/obj/item/circuitboard/computer/borgupload,
+/obj/item/circuitboard/computer/aiupload,
+/turf/open/floor/circuit/green,
+/area/ruin/powered)
+"wR" = (
+/obj/item/wallframe/camera,
+/obj/effect/gibspawner/robot,
+/turf/open/floor/circuit/green,
+/area/ruin/powered)
+"xe" = (
+/obj/structure/table/wood,
+/obj/item/toy/crayon/spraycan,
+/obj/item/toy/crayon/spraycan{
+	pixel_x = 5;
+	pixel_y = 8
+	},
+/obj/item/toy/crayon/spraycan{
+	pixel_x = -6;
+	pixel_y = 7
+	},
+/obj/item/toy/crayon/spraycan{
+	pixel_x = -4
+	},
+/turf/open/floor/carpet/black,
+/area/ruin/powered)
+"xG" = (
+/obj/structure/sink{
+	dir = 4;
+	pixel_x = -13;
+	pixel_y = 10
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/powered)
+"yE" = (
+/obj/effect/turf_decal/trimline/opaque/grey/line{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/powered)
+"yY" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/ruin/powered)
+"zg" = (
+/obj/item/bodypart/leg/left/robot,
+/turf/open/floor/circuit/green,
+/area/ruin/powered)
+"zj" = (
+/obj/item/stack/cable_coil,
+/turf/open/floor/circuit/green,
+/area/ruin/powered)
+"zW" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/snacks/dough,
+/obj/item/reagent_containers/food/snacks/dough{
+	pixel_x = 6;
+	pixel_y = 8
+	},
+/obj/item/reagent_containers/food/snacks/dough{
+	pixel_x = -4;
+	pixel_y = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/grey/line{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/powered)
+"Aw" = (
+/obj/item/robot_suit/prebuilt,
+/turf/open/floor/circuit/green,
+/area/ruin/powered)
+"Bl" = (
+/obj/machinery/door/airlock/wood,
+/turf/open/floor/wood,
+/area/ruin/powered)
+"BH" = (
+/obj/structure/sign/painting{
+	pixel_x = 31
+	},
+/turf/open/floor/carpet/black,
+/area/ruin/powered)
+"Cj" = (
+/turf/closed/indestructible/wood,
+/area/ruin/powered)
+"Cy" = (
+/obj/effect/decal/remains/robot,
+/obj/effect/turf_decal/trimline/opaque/grey/line{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/powered)
+"CS" = (
+/obj/structure/railing/wood{
+	dir = 6
+	},
+/turf/open/floor/wood,
+/area/ruin/powered)
+"Df" = (
+/obj/structure/table/wood,
+/obj/machinery/microwave,
+/obj/effect/turf_decal/trimline/opaque/grey/line{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/powered)
+"Dy" = (
+/obj/structure/table/wood,
+/obj/item/dice/fourdd6{
+	pixel_x = -8;
+	pixel_y = 6
+	},
+/obj/effect/holodeck_effect/cards{
+	pixel_x = 6;
+	pixel_y = 8
+	},
+/turf/open/floor/carpet/black,
+/area/ruin/powered)
+"Eq" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/snacks/store/cake/holy_cake,
+/obj/effect/turf_decal/trimline/opaque/grey/line,
+/turf/open/floor/plasteel/white,
+/area/ruin/powered)
+"Ey" = (
+/obj/structure/table/wood,
+/obj/item/borg/upgrade/ai,
+/turf/open/floor/circuit/green,
+/area/ruin/powered)
+"FA" = (
+/obj/item/stock_parts/cell/hyper,
+/turf/open/floor/circuit/green,
+/area/ruin/powered)
+"FJ" = (
+/obj/structure/table/wood,
+/obj/item/canvas/twentythreeXnineteen,
+/obj/item/canvas/twentythreeXnineteen,
+/obj/item/canvas/twentythreeXnineteen,
+/obj/item/canvas/twentythreeXnineteen,
+/turf/open/floor/carpet/black,
+/area/ruin/powered)
+"Gd" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 5
+	},
+/turf/open/floor/wood,
+/area/ruin/powered)
+"Gq" = (
+/obj/structure/AIcore/latejoin_inactive,
+/turf/open/floor/wood,
+/area/ruin/powered)
+"Ie" = (
+/obj/structure/sign/painting{
+	pixel_x = 31
+	},
+/obj/effect/decal/remains/robot,
+/turf/open/floor/carpet/black,
+/area/ruin/powered)
+"Ij" = (
+/obj/item/wallframe/camera,
+/obj/item/wallframe/camera,
+/obj/item/wallframe/camera,
+/obj/item/wallframe/camera,
+/obj/item/wallframe/camera,
+/turf/open/floor/wood,
+/area/ruin/powered)
+"Jv" = (
+/obj/structure/railing/wood{
+	dir = 4
+	},
+/obj/structure/chair/wood/wings,
+/turf/open/floor/wood,
+/area/ruin/powered)
+"LK" = (
+/obj/structure/chair/sofa{
+	dir = 4
+	},
+/turf/open/floor/carpet/black,
+/area/ruin/powered)
+"LN" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 10
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/ruin/powered)
+"Mf" = (
+/obj/item/bodypart/chest/robot,
+/obj/item/wallframe/camera,
+/turf/open/floor/wood,
+/area/ruin/powered)
+"Mh" = (
 /obj/item/bodypart/r_arm/robot,
 /turf/open/floor/wood,
 /area/ruin/powered)
-"Z" = (
-/obj/item/bodypart/leg/left/robot,
+"Nt" = (
+/obj/structure/chair/wood{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/grey/line{
+	dir = 6
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/powered)
+"Nv" = (
+/obj/item/wallframe/camera,
+/turf/open/floor/circuit/green,
+/area/ruin/powered)
+"NY" = (
+/obj/effect/turf_decal/trimline/opaque/grey/line{
+	dir = 5
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/powered)
+"Pn" = (
+/obj/structure/table/wood,
+/obj/item/paint/red{
+	pixel_x = -6
+	},
+/obj/item/paint/blue{
+	pixel_y = -4
+	},
+/obj/item/paint/yellow{
+	pixel_x = 5;
+	pixel_y = 3
+	},
+/turf/open/floor/carpet/black,
+/area/ruin/powered)
+"QK" = (
+/turf/open/floor/plasteel/stairs,
+/area/ruin/powered)
+"Rz" = (
+/obj/item/wallframe/camera,
+/obj/item/wallframe/camera,
+/obj/item/wallframe/camera,
+/turf/open/floor/circuit/green,
+/area/ruin/powered)
+"RI" = (
+/obj/effect/turf_decal/trimline/opaque/grey/line{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/powered)
+"Sn" = (
+/obj/structure/table/wood,
+/obj/item/mmi/posibrain,
+/obj/item/mmi/posibrain,
 /turf/open/floor/wood,
+/area/ruin/powered)
+"SW" = (
+/obj/structure/railing/wood,
+/turf/open/floor/wood,
+/area/ruin/powered)
+"Tc" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 5
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/ruin/powered)
+"TP" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/drinks/britcup{
+	pixel_y = -4;
+	pixel_x = -3
+	},
+/obj/item/reagent_containers/food/drinks/britcup{
+	pixel_x = 8;
+	pixel_y = 4
+	},
+/obj/item/kirbyplants{
+	icon_state = "plant-18";
+	pixel_y = 17;
+	pixel_x = -3
+	},
+/turf/open/floor/wood,
+/area/ruin/powered)
+"TU" = (
+/turf/open/floor/plasteel/white,
+/area/ruin/powered)
+"Vd" = (
+/obj/structure/table/wood,
+/obj/item/kitchen/knife,
+/obj/item/kitchen/rollingpin,
+/obj/effect/turf_decal/trimline/opaque/grey/corner{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/powered)
+"Wk" = (
+/turf/open/floor/wood,
+/area/ruin/powered)
+"Wo" = (
+/obj/effect/decal/remains/robot,
+/turf/open/floor/wood,
+/area/ruin/powered)
+"Wt" = (
+/obj/structure/table/wood,
+/obj/item/canvas/twentythreeXtwentythree,
+/obj/item/canvas/twentythreeXtwentythree,
+/obj/item/canvas/twentythreeXtwentythree,
+/obj/item/canvas/twentythreeXtwentythree,
+/turf/open/floor/carpet/black,
+/area/ruin/powered)
+"WT" = (
+/obj/machinery/recharge_station,
+/turf/open/floor/circuit/green,
+/area/ruin/powered)
+"Yg" = (
+/obj/effect/turf_decal/trimline/opaque/grey/line{
+	dir = 9
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/powered)
+"YF" = (
+/obj/item/assembly/flash/handheld,
+/turf/open/floor/circuit/green,
+/area/ruin/powered)
+"YI" = (
+/obj/structure/railing/wood{
+	dir = 8
+	},
+/obj/item/reagent_containers/glass/bucket/wooden,
+/obj/item/hatchet/wooden,
+/turf/open/floor/wood,
+/area/ruin/powered)
+"Zc" = (
+/obj/effect/decal/remains/robot,
+/turf/open/floor/circuit/green,
+/area/ruin/powered)
+"Zp" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/ruin/powered)
+"ZH" = (
+/obj/structure/chair/sofa,
+/turf/open/floor/carpet/black,
+/area/ruin/powered)
+"ZX" = (
+/obj/structure/chair/wood,
+/turf/open/floor/plasteel/white,
 /area/ruin/powered)
 
 (1,1,1) = {"
-U
-z
-h
-h
-h
-z
-U
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
 "}
 (2,1,1) = {"
-U
-z
-k
-w
-Q
-z
-U
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
 "}
 (3,1,1) = {"
-U
-z
-n
-G
-R
-z
-U
+sE
+sE
+sE
+sE
+sE
+sE
+lN
+lN
+lN
+lN
+lN
+lN
+lN
+sE
+sE
+sE
+sE
 "}
 (4,1,1) = {"
-z
-z
-p
-H
-D
-z
-z
+sE
+sE
+sE
+sE
+sE
+sE
+lN
+Cy
+tK
+TU
+qc
+xG
+lN
+lN
+sE
+sE
+sE
 "}
 (5,1,1) = {"
-z
-e
-q
-w
-S
-r
-z
+sE
+sE
+Cj
+Cj
+Cj
+Cj
+Cj
+ZX
+Eq
+ou
+Vd
+Yg
+Df
+lN
+YI
+cZ
+sE
 "}
 (6,1,1) = {"
-z
-f
-u
-J
-V
-y
-z
+sE
+sE
+Cj
+Ey
+lD
+gw
+Cj
+RI
+Nt
+fe
+jl
+yE
+dR
+lN
+lT
+SW
+sE
 "}
 (7,1,1) = {"
-z
-g
-w
-L
-n
-b
-z
+sE
+sE
+Cj
+Wo
+rt
+gA
+Cj
+uh
+TU
+TU
+bA
+NY
+zW
+lN
+gT
+SW
+sE
 "}
 (8,1,1) = {"
-z
-z
-x
-M
-D
-z
-z
+sE
+Cj
+Cj
+WT
+Ij
+YF
+Cj
+Cj
+sb
+yY
+Tc
+LN
+lN
+lN
+Wk
+SW
+sE
 "}
 (9,1,1) = {"
-U
-z
-D
-N
-Y
-z
-U
+sE
+Cj
+Sn
+vh
+Nv
+Rz
+ng
+Bl
+Wk
+dP
+sX
+Zp
+Bl
+Wk
+Wk
+QK
+sE
 "}
 (10,1,1) = {"
-U
-z
-F
-x
-Z
-z
-U
+sE
+Cj
+vY
+FA
+Gq
+fG
+Nv
+Bl
+Wk
+sX
+dP
+Gd
+hc
+of
+of
+QK
+sE
 "}
 (11,1,1) = {"
-U
-z
-z
-z
-z
-z
-U
+sE
+Cj
+qK
+wR
+cj
+Zc
+Wk
+Bl
+Wk
+dP
+sX
+Wk
+Bl
+Wk
+Wk
+QK
+sE
+"}
+(12,1,1) = {"
+sE
+Cj
+Cj
+zj
+Mf
+YF
+Cj
+Cj
+gt
+gt
+gt
+gt
+lN
+lN
+Wk
+SW
+sE
+"}
+(13,1,1) = {"
+sE
+sE
+Cj
+vn
+nb
+Mh
+Cj
+xe
+jv
+LK
+kr
+rh
+oj
+lN
+cp
+SW
+sE
+"}
+(14,1,1) = {"
+sE
+sE
+Cj
+Aw
+uz
+zg
+Cj
+Pn
+ZH
+Dy
+cU
+rh
+pW
+lN
+TP
+SW
+sE
+"}
+(15,1,1) = {"
+sE
+sE
+Cj
+Cj
+Cj
+Cj
+Cj
+Wt
+kz
+lL
+gF
+rh
+fB
+lN
+Jv
+CS
+sE
+"}
+(16,1,1) = {"
+sE
+sE
+sE
+sE
+sE
+sE
+lN
+FJ
+ox
+BH
+Ie
+gx
+lN
+lN
+sE
+sE
+sE
+"}
+(17,1,1) = {"
+sE
+sE
+sE
+sE
+sE
+sE
+lN
+lN
+lN
+lN
+lN
+lN
+lN
+sE
+sE
+sE
+sE
+"}
+(18,1,1) = {"
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+"}
+(19,1,1) = {"
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
 "}
