@@ -83,7 +83,7 @@
 	suffix = "rockplanet_saloon.dmm"
 
 /datum/map_template/ruin/rockplanet/harmfactory
-	name = "Harm factory"
+	name = "Harm Factory"
 	description = "A factory made for HARM and AGONY."
 	id = "rockplanet_harmfactory"
 	suffix = "rockplanet_harmfactory.dmm"
