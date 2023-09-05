@@ -10,12 +10,22 @@
 	spillable = FALSE
 	w_class = WEIGHT_CLASS_SMALL
 	volume = 50
-	cookable = FALSE
-	cooked = FALSE
+	var/cookable = FALSE
+	var/cooked = FALSE
 
 /obj/item/reagent_containers/food/snacks/ration/Initialize(mapload)
 	. = ..()
-	var/mutable_appearance/ration_overlay = mutable_appearance(icon, "[icon_state]_overlay")
+	update_overlays()
+
+/obj/item/reagent_containers/food/snacks/ration/update_overlays()
+	. = ..()
+	var/mutable_appearance/ration_overlay
+	if(icon_exists(icon, "[icon_state]_filling"))
+		ration_overlay = mutable_appearance(icon, "[icon_state]_filling")
+	else if(icon_exists(icon, "[initial(icon_state)]_filling"))
+		ration_overlay = mutable_appearance(icon, "[initial(icon_state)]_filling")
+	else
+		return
 	ration_overlay.color = filling_color
 	add_overlay(ration_overlay)
 
@@ -25,11 +35,12 @@
 	reagents.flags |= OPENCONTAINER
 	spillable = TRUE
 	desc += "\nIt's been opened."
+	update_overlays()
 
 /obj/item/reagent_containers/food/snacks/ration/attack_self(mob/user)
 	if(!is_drainable())
-		open_ration(user)
 		icon_state = "[icon_state]_open"
+		open_ration(user)
 	return ..()
 
 /obj/item/reagent_containers/food/snacks/ration/attack(mob/living/M, mob/user, def_zone)
@@ -42,8 +53,8 @@
 	if (cookable == FALSE)
 		. = ..()
 	else
-		name = "warm [name(init)]"
-		bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/vitamin = 2)
+		name = "warm [initial(name)]"
+		bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
 		cooked = TRUE
 
 /obj/item/reagent_containers/food/snacks/ration/examine(mob/user)
@@ -85,7 +96,7 @@
 
 /obj/item/reagent_containers/food/snacks/ration/entree/pork_spaghetti
 	name = "spaghetti with pork and sauce"
-	desc = "A hearty dish of spaghetti with tender pork and a savory sauce. A filling and delicious meal to satisfy your hunger."
+	desc = "A hearty dish of spaghetti with tender pork and a savory sauce. A ration_overlay and delicious meal to satisfy your hunger."
 	filling_color = "#b82121"
 	tastes = list("pork" = 1, "spaghetti" = 1, "sauce" = 1)
 	foodtype = MEAT | GRAIN | VEGETABLES
@@ -644,3 +655,115 @@
 	filling_color = "#663300"
 	tastes = list("chocolate" = 1)
 	foodtype = SUGAR
+
+/obj/item/reagent_containers/food/snacks/ration/condiment
+	name = "condiment bottle"
+	desc = "Just your average condiment bottle."
+	icon_state = "ration_condi"
+	volume = 10
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list()
+
+/obj/item/reagent_containers/food/snacks/ration/condiment/attack(mob/M, mob/user, def_zone) //Can't feed these to people directly.
+	return
+
+/obj/item/reagent_containers/food/snacks/ration/condiment/afterattack(obj/target, mob/user , proximity)
+	. = ..()
+	if(!proximity)
+		return
+
+	//You can tear the bag open above food to put the condiments on it, obviously.
+	if(istype(target, /obj/item/reagent_containers/food/snacks))
+		if(target.reagents.total_volume >= target.reagents.maximum_volume)
+			to_chat(user, "<span class='warning'>You tear open [src], but [target] is stacked so high that it just drips off!</span>" )
+			qdel(src)
+			return
+		else
+			to_chat(user, "<span class='notice'>You tear open [src] above [target] and the condiments drip onto it.</span>")
+			src.reagents.trans_to(target, amount_per_transfer_from_this, transfered_by = user)
+			qdel(src)
+
+
+/obj/item/reagent_containers/food/snacks/ration/condiment/cheese_spread
+	name = "cheese spread pack"
+	list_reagents = list(/datum/reagent/consumable/cheese_spread = 8)
+
+/obj/item/reagent_containers/food/snacks/ration/condiment/hot_cheese_spread
+	name = "jalapeno cheddar cheese spread pack"
+	list_reagents = list(/datum/reagent/consumable/cheese_spread = 5 , /datum/reagent/consumable/capsaicin = 3)
+
+/obj/item/reagent_containers/food/snacks/ration/condiment/garlic_cheese_spread
+	name = "garlic parmesan cheese spread pack"
+	list_reagents = list(/datum/reagent/consumable/cheese_spread = 8)
+
+/obj/item/reagent_containers/food/snacks/ration/condiment/bacon_cheddar_cheese_spread
+	name = "bacon cheddar cheese spread pack"
+	list_reagents = list(/datum/reagent/consumable/cheese_spread = 8)
+
+/obj/item/reagent_containers/food/snacks/ration/condiment/peanut_butter
+	name = "peanut butter pack"
+	list_reagents = list(/datum/reagent/consumable/sugar = 5, /datum/reagent/consumable/peanut_butter = 5)
+
+/obj/item/reagent_containers/food/snacks/ration/condiment/chunky_peanut_butter
+	name = "chunky peanut butter pack"
+	list_reagents = list(/datum/reagent/consumable/peanut_butter = 10)
+
+/obj/item/reagent_containers/food/snacks/ration/condiment/maple_syrup
+	name = "maple syrup pack"
+	list_reagents = list(/datum/reagent/consumable/sugar = 10)
+
+/obj/item/reagent_containers/food/snacks/ration/condiment/chocolate_protein_beverage
+	name = "chocolate hazelnut protein drink powder pack"
+	list_reagents = list(/datum/reagent/consumable/coco = 5, /datum/reagent/consumable/eggyolk = 5)
+
+/obj/item/reagent_containers/food/snacks/ration/condiment/fruit_beverage
+	name = "fruit punch beverage powder, carb-electrolyte pack"
+	list_reagents = list(/datum/reagent/consumable/sugar = 5, /datum/reagent/consumable/applejuice = 2, /datum/reagent/consumable/orangejuice = 2)
+
+/obj/item/reagent_containers/food/snacks/ration/condiment/fruit_smoothie_beverage
+	name = "tropical blend fruit and vegetable smoothie powder pack"
+	list_reagents = list(/datum/reagent/consumable/pineapplejuice = 3, /datum/reagent/consumable/orangejuice = 3, /datum/reagent/consumable/eggyolk = 3)
+
+/obj/item/reagent_containers/food/snacks/ration/condiment/grape_beverage
+	name = "grape beverage powder, carb-fortified pack"
+	list_reagents = list(/datum/reagent/consumable/sugar = 5, /datum/reagent/consumable/grapejuice = 5)
+
+/obj/item/reagent_containers/food/snacks/ration/condiment/grape_beverage_sugar_free
+	name = "sugar-free grape beverage base powder"
+	list_reagents = list(/datum/reagent/consumable/grapejuice = 10)
+
+/obj/item/reagent_containers/food/snacks/ration/condiment/lemonade_beverage
+	name = "lemonade drink powder pack"
+	list_reagents = list(/datum/reagent/consumable/sugar = 5, /datum/reagent/consumable/lemonjuice = 5)
+
+/obj/item/reagent_containers/food/snacks/ration/condiment/lemonade_beverage_suger_free
+	name = "lemonade sugar-free beverage base pack"
+	list_reagents = list(/datum/reagent/consumable/lemonjuice = 10)
+
+/obj/item/reagent_containers/food/snacks/ration/condiment/orange_beverage
+	name = "orange beverage powder, carb-fortified pack"
+	list_reagents = list(/datum/reagent/consumable/sugar = 5, /datum/reagent/consumable/orangejuice = 5)
+
+/obj/item/reagent_containers/food/snacks/ration/condiment/orange_beverage_sugar_free
+	name = "orange beverage base, sugar-free pack"
+	list_reagents = list(/datum/reagent/consumable/orangejuice = 10)
+
+/obj/item/reagent_containers/food/snacks/ration/condiment/cherry_beverage
+	name = "cherry high-energy beverage powder pack"
+	list_reagents = list(/datum/reagent/consumable/sugar = 5, /datum/reagent/consumable/cherryjelly = 5)
+
+/obj/item/reagent_containers/food/snacks/ration/condiment/pineapple_beverage
+	name = "pinapple fruit beverage base pack"
+	list_reagents = list(/datum/reagent/consumable/pineapplejuice = 10)
+
+/obj/item/reagent_containers/food/snacks/ration/condiment/freeze_dried_coffee_orange
+	name = "freeze-dried coffee flavored with orange pack"
+	list_reagents = list(/datum/reagent/consumable/coffee = 5, /datum/reagent/consumable/orangejuice = 3)
+
+/obj/item/reagent_containers/food/snacks/ration/condiment/freeze_dried_coffee_chocolate
+	name = "freeze-dried coffee flavored with chocolate pack"
+	list_reagents = list(/datum/reagent/consumable/coffee = 5, /datum/reagent/consumable/coco = 3)
+
+/obj/item/reagent_containers/food/snacks/ration/condiment/freeze_dried_coffee_hazelnut
+	name = "freeze-dried coffee flavored with hazelnut pack"
+	list_reagents = list(/datum/reagent/consumable/coffee = 5, /datum/reagent/consumable/coco = 3)
