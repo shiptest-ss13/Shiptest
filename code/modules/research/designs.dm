@@ -129,16 +129,6 @@ other types of metals and chemistry for reagents).
 	max_blueprints = 10
 
 //Disks with content
-/obj/item/disk/design_disk/ammo_38_hunting
-	name = "Design Disk - .38 Hunting Ammo"
-	desc = "A design disk containing the pattern for a refill ammo box for Winchester rifles and Detective Specials."
-	illustration = "ammo"
-
-/obj/item/disk/design_disk/ammo_38_hunting/Initialize()
-	. = ..()
-	var/datum/design/c38_hunting/M = new
-	blueprints[1] = M
-
 /obj/item/disk/design_disk/ammo_c10mm
 	name = "Design Disk - 10mm Ammo"
 	desc = "A design disk containing the pattern for a refill box of standard 10mm ammo, used in Stechkin pistols."

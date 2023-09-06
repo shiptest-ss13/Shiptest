@@ -98,7 +98,7 @@
 	can_be_sawn_off = FALSE
 
 /obj/item/gun/ballistic/rifle/boltaction/enchanted
-	name = "enchanted bolt action rifle"
+	name = "enchanted bolt-action rifle"
 	desc = "Careful not to lose your head."
 	var/guns_left = 30
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/enchanted
@@ -150,7 +150,7 @@
 
 /obj/item/gun/ballistic/rifle/boltaction/polymer
 	name = "polymer survivor rifle"
-	desc = "Chambered in .300 Blackout, and manufactured with cheap tools, this rifle has seen its share of part replacements, repairs, and bubba-hack-jobs to keep it serviceable."
+	desc = "A bolt-action rifle chambered in .300 Blackout, manufactured out of improvised materials and showing obvious signs of years of makeshift repairs and ill-advised modifications. Use at your own risk."
 	icon = 'icons/obj/guns/projectile.dmi'
 	icon_state = "crackhead_rifle"
 	item_state = "crackhead_rifle"

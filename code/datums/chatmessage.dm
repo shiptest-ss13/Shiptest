@@ -133,9 +133,16 @@
 	else if ("emote" in extra_classes)
 		var/image/r_icon = image('icons/UI_Icons/chat/chat_icons.dmi', icon_state = "emote")
 		text =  "\icon[r_icon]&nbsp;[text]"
+	else if("looc" in extra_classes)
+		var/image/r_icon = image('icons/UI_Icons/chat/chat_icons.dmi', icon_state = "looc")
+		text =  "\icon[r_icon]&nbsp;[text]"
 
-	// We dim italicized text to make it more distinguishable from regular text
-	var/tgt_color = ("italics" in extra_classes) ? target.chat_color_darkened : target.chat_color
+	var/tgt_color = target.chat_color
+	if("looc" in extra_classes)
+		tgt_color = GLOB.LOOC_COLOR || GLOB.normal_looc_colour
+	else if("italics" in extra_classes)
+		// We dim italicized text to make it more distinguishable from regular text
+		tgt_color = target.chat_color_darkened
 
 	// Approximate text height
 	var/complete_text = "<span class='center maptext [extra_classes.Join(" ")]' style='color: [tgt_color]'>[target.say_emphasis(text)]</span>"
@@ -222,6 +229,8 @@
 	// Display visual above source
 	if(runechat_flags & EMOTE_MESSAGE)
 		new /datum/chatmessage(raw_message, speaker, src, list("emote", "italics"))
+	else if(runechat_flags & LOOC_MESSAGE)
+		new /datum/chatmessage(raw_message, speaker, src, list("looc", "italics"))
 	else
 		new /datum/chatmessage(lang_treat(speaker, message_language, raw_message, spans, null, TRUE), speaker, src, spans)
 
@@ -242,15 +251,15 @@
  * * sat_shift - A value between 0 and 1 that will be multiplied against the saturation
  * * lum_shift - A value between 0 and 1 that will be multiplied against the luminescence
  */
-/datum/chatmessage/proc/colorize_string(name, sat_shift = 1, lum_shift = 1)
+/proc/colorize_string(name, sat_shift = 1, lum_shift = 1, sat_min = CM_COLOR_SAT_MIN, sat_max = CM_COLOR_SAT_MAX, lum_min = CM_COLOR_LUM_MIN, lum_max = CM_COLOR_LUM_MAX)
 	// seed to help randomness
 	var/static/rseed = rand(1,26)
 
 	// get hsl using the selected 6 characters of the md5 hash
 	var/hash = copytext(md5(name + GLOB.round_id), rseed, rseed + 6)
 	var/h = hex2num(copytext(hash, 1, 3)) * (360 / 255)
-	var/s = (hex2num(copytext(hash, 3, 5)) >> 2) * ((CM_COLOR_SAT_MAX - CM_COLOR_SAT_MIN) / 63) + CM_COLOR_SAT_MIN
-	var/l = (hex2num(copytext(hash, 5, 7)) >> 2) * ((CM_COLOR_LUM_MAX - CM_COLOR_LUM_MIN) / 63) + CM_COLOR_LUM_MIN
+	var/s = (hex2num(copytext(hash, 3, 5)) >> 2) * ((sat_max - sat_min) / 63) + sat_min
+	var/l = (hex2num(copytext(hash, 5, 7)) >> 2) * ((lum_max - lum_min) / 63) + lum_min
 
 	// adjust for shifts
 	s *= clamp(sat_shift, 0, 1)

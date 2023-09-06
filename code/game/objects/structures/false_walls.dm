@@ -40,8 +40,13 @@
 	opening = TRUE
 	update_appearance()
 	if(!density)
-		var/srcturf = get_turf(src)
-		for(var/mob/living/obstacle in srcturf) //Stop people from using this as a shield
+		var/turf/srcturf = get_turf(src)
+		if(locate(/mob/living) in srcturf) //Stop people from using this as a shield
+			opening = FALSE
+			return
+		for(var/atom/blocker as anything in srcturf)
+			if(!blocker.density) //Doesn't block
+				continue
 			opening = FALSE
 			return
 	addtimer(CALLBACK(src, /obj/structure/falsewall/proc/toggle_open), 5)

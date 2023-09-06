@@ -31,7 +31,7 @@
 	if(attached)
 		icon_state = "[base_icon_state]_[mode ? "injecting" : "donating"]"
 	else
-		icon_state = "[base_icon_state]_[mode ? "injecting" : "donating"]"
+		icon_state = "[base_icon_state]_[mode ? "injectidle" : "donateidle"]"
 	return ..()
 
 /obj/machinery/iv_drip/update_overlays()
