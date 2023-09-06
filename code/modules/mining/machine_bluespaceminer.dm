@@ -41,6 +41,7 @@
 		icon_state = (active) ? "bsm_on" : "bsm_idle"
 	else
 		icon_state = "bsm_off"
+	return ..()
 
 /obj/machinery/power/bluespace_miner/RefreshParts()
 	var/M_C = 0 //mining_chance
@@ -100,7 +101,7 @@
 				return TRUE
 			active = TRUE
 			to_chat(user, "<span class='notice'>You turn on the [src].</span>")
-		update_icon()
+		update_appearance()
 	else
 		to_chat(user, "<span class='warning'>[src] needs to be firmly secured to the floor first!</span>")
 		return TRUE
@@ -115,7 +116,7 @@
 	if(!anchored || (!powernet && idle_power_usage))
 		powered = FALSE
 		active = FALSE
-		update_icon()
+		update_appearance()
 		return
 	if(active)
 		var/true_power_usage = idle_power_usage * power_coeff
@@ -123,13 +124,13 @@
 			add_load(true_power_usage)
 			if(!powered)
 				powered = TRUE
-				update_icon()
+				update_appearance()
 			if(prob(mining_chance))
 				mine()
 		else
 			if(powered)
 				powered = FALSE
-				update_icon()
+				update_appearance()
 			return
 
 /obj/machinery/power/bluespace_miner/can_be_unfasten_wrench(mob/user, silent)

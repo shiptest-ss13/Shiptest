@@ -109,7 +109,7 @@
 	glasses = /obj/item/clothing/glasses/meson/night
 	gloves = /obj/item/clothing/gloves/explorer
 	ears = /obj/item/radio/headset/syndicate
-	mask = /obj/item/clothing/mask/chameleon
+	mask = /obj/item/clothing/mask/gas/syndicate/voicechanger
 	r_pocket = /obj/item/kitchen/knife/combat/survival
 	belt = /obj/item/storage/belt/mining/alt
 	implants = list(/obj/item/implant/weapons_auth)

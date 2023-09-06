@@ -5,6 +5,7 @@ GLOBAL_VAR(posibrain_notify_cooldown)
 	desc = "A cube of shining metal, four inches to a side and covered in shallow grooves."
 	icon = 'icons/obj/assemblies.dmi'
 	icon_state = "posibrain"
+	base_icon_state = "posibrain"
 	w_class = WEIGHT_CLASS_NORMAL
 	var/ask_role = "" ///Can be set to tell ghosts what the brain will be used for
 	var/next_ask ///World time tick when ghost polling will be available again
@@ -39,7 +40,7 @@ GLOBAL_VAR(posibrain_notify_cooldown)
 ///Notify ghosts that the posibrain is up for grabs
 /obj/item/mmi/posibrain/proc/ping_ghosts(msg, newlymade)
 	if(newlymade || GLOB.posibrain_notify_cooldown <= world.time)
-		notify_ghosts("[name] [msg] in [get_area(src)]! [ask_role ? "Personality requested: \[[ask_role]\]" : ""]", ghost_sound = !newlymade ? 'sound/effects/ghost2.ogg':null, notify_volume = 75, enter_link = "<a href=?src=[REF(src)];activate=1>(Click to enter)</a>", source = src, action = NOTIFY_ATTACK, flashwindow = FALSE, ignore_key = POLL_IGNORE_POSIBRAIN, notify_suiciders = FALSE)
+		notify_ghosts("[name] [msg] in [get_area(src)]! [ask_role ? "Personality requested: \[[ask_role]\]" : ""]", ghost_sound = !newlymade ? 'sound/effects/ghost2.ogg':null, notify_volume = 75, enter_link = "<a href=?src=[REF(src)];activate=1>(Click to enter)</a>", source = src, action = NOTIFY_ATTACK, flashwindow = FALSE, ignore_key = POLL_IGNORE_POSIBRAIN)
 		if(!newlymade)
 			GLOB.posibrain_notify_cooldown = world.time + askDelay
 
@@ -56,7 +57,7 @@ GLOBAL_VAR(posibrain_notify_cooldown)
 	ping_ghosts("requested", FALSE)
 	next_ask = world.time + askDelay
 	searching = TRUE
-	update_icon()
+	update_appearance()
 	addtimer(CALLBACK(src, .proc/check_success), askDelay)
 
 /obj/item/mmi/posibrain/AltClick(mob/living/user)
@@ -68,11 +69,11 @@ GLOBAL_VAR(posibrain_notify_cooldown)
 	if(input_seed)
 		to_chat(user, "<span class='notice'>You set the personality seed to \"[input_seed]\".</span>")
 		ask_role = input_seed
-		update_icon()
+		update_appearance()
 
 /obj/item/mmi/posibrain/proc/check_success()
 	searching = FALSE
-	update_icon()
+	update_appearance()
 	if(QDELETED(brainmob))
 		return
 	if(brainmob.client)
@@ -100,14 +101,9 @@ GLOBAL_VAR(posibrain_notify_cooldown)
 		return
 	if(is_occupied() || is_banned_from(user.ckey, ROLE_POSIBRAIN) || QDELETED(brainmob) || QDELETED(src) || QDELETED(user))
 		return
-	if(user.suiciding) //if they suicided, they're out forever.
-		to_chat(user, "<span class='warning'>[src] fizzles slightly. Sadly it doesn't take those who suicided!</span>")
-		return
 	var/posi_ask = alert("Become a [name]? (Warning, You can no longer be revived, and all past lives will be forgotten!)","Are you positive?","Yes","No")
 	if(posi_ask == "No" || QDELETED(src))
 		return
-	if(brainmob.suiciding) //clear suicide status if the old occupant suicided.
-		brainmob.set_suicide(FALSE)
 	transfer_personality(user)
 
 /obj/item/mmi/posibrain/transfer_identity(mob/living/carbon/C)
@@ -127,7 +123,7 @@ GLOBAL_VAR(posibrain_notify_cooldown)
 
 	brainmob.mind.remove_all_antag()
 	brainmob.mind.wipe_memory()
-	update_icon()
+	update_appearance()
 
 ///Moves the candidate from the ghost to the posibrain
 /obj/item/mmi/posibrain/proc/transfer_personality(mob/candidate)
@@ -190,12 +186,15 @@ GLOBAL_VAR(posibrain_notify_cooldown)
 
 
 /obj/item/mmi/posibrain/update_icon_state()
+	. = ..()
 	if(searching)
-		icon_state = "[initial(icon_state)]-searching"
-	else if(brainmob && brainmob.key)
-		icon_state = "[initial(icon_state)]-occupied"
-	else
-		icon_state = initial(icon_state)
+		icon_state = "[base_icon_state]-searching"
+		return
+	if(brainmob?.key)
+		icon_state = "[base_icon_state]-occupied"
+		return
+	icon_state = "[base_icon_state]"
+	return
 
 /obj/item/mmi/posibrain/add_mmi_overlay()
 	return

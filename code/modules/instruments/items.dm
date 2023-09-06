@@ -26,10 +26,6 @@
 /obj/item/instrument/proc/should_stop_playing(mob/user)
 	return user.incapacitated() || !((loc == user) || (isturf(loc) && Adjacent(user)))		// sorry, no more TK playing.
 
-/obj/item/instrument/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] begins to play 'Gloomy Sunday'! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return (BRUTELOSS)
-
 /obj/item/instrument/attack_self(mob/user)
 	if(!user.IsAdvancedToolUser())
 		to_chat(user, "<span class='warning'>You don't have the dexterity to do this!</span>")
@@ -97,14 +93,14 @@
  */
 /obj/item/instrument/piano_synth/headphones/proc/start_playing()
 	icon_state = "[initial(icon_state)]_on"
-	update_icon()
+	update_appearance()
 
 /**
  * Called by a component signal when our song stops playing.
  */
 /obj/item/instrument/piano_synth/headphones/proc/stop_playing()
 	icon_state = "[initial(icon_state)]"
-	update_icon()
+	update_appearance()
 
 /obj/item/instrument/piano_synth/headphones/spacepods
 	name = "\improper Nanotrasen space pods"

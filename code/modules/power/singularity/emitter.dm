@@ -3,6 +3,7 @@
 	desc = "A heavy-duty industrial laser, often used in containment fields and power generation."
 	icon = 'icons/obj/singularity.dmi'
 	icon_state = "emitter"
+	base_icon_state = "emitter"
 
 	anchored = FALSE
 	density = TRUE
@@ -135,10 +136,11 @@
 	return ..()
 
 /obj/machinery/power/emitter/update_icon_state()
-	if(active && powernet)
-		icon_state = avail(active_power_usage) ? icon_state_on : icon_state_underpowered
-	else
-		icon_state = initial(icon_state)
+	if(!active || !powernet)
+		icon_state = base_icon_state
+		return ..()
+	icon_state = avail(active_power_usage) ? icon_state_on : icon_state_underpowered
+	return ..()
 
 /obj/machinery/power/emitter/interact(mob/user)
 	add_fingerprint(user)
@@ -160,7 +162,7 @@
 			log_game("Emitter turned [active ? "ON" : "OFF"] by [key_name(user)] in [AREACOORD(src)]")
 			investigate_log("turned [active ? "<font color='green'>ON</font>" : "<font color='red'>OFF</font>"] by [key_name(user)] at [AREACOORD(src)]", INVESTIGATE_SINGULO)
 
-			update_icon()
+			update_appearance()
 
 		else
 			to_chat(user, "<span class='warning'>The controls are locked!</span>")
@@ -182,19 +184,19 @@
 		return
 	if(!welded || (!powernet && active_power_usage))
 		active = FALSE
-		update_icon()
+		update_appearance()
 		return
 	if(active == TRUE)
 		if(!active_power_usage || surplus() >= active_power_usage)
 			add_load(active_power_usage)
 			if(!powered)
 				powered = TRUE
-				update_icon()
+				update_appearance()
 				investigate_log("regained power and turned <font color='green'>ON</font> at [AREACOORD(src)]", INVESTIGATE_SINGULO)
 		else
 			if(powered)
 				powered = FALSE
-				update_icon()
+				update_appearance()
 				investigate_log("lost power and turned <font color='red'>OFF</font> at [AREACOORD(src)]", INVESTIGATE_SINGULO)
 				log_game("Emitter lost power in [AREACOORD(src)]")
 			return
@@ -373,6 +375,7 @@
 /obj/machinery/power/emitter/prototype
 	name = "Prototype Emitter"
 	icon = 'icons/obj/turrets.dmi'
+	base_icon_state = "protoemitter"
 	icon_state = "protoemitter"
 	icon_state_on = "protoemitter_+a"
 	icon_state_underpowered = "protoemitter_+u"

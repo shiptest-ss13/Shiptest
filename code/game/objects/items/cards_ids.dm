@@ -20,10 +20,6 @@
 
 	var/list/files = list()
 
-/obj/item/card/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins to swipe [user.p_their()] neck with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return BRUTELOSS
-
 /obj/item/card/data
 	name = "data card"
 	desc = "A plastic magstripe card for simple and speedy data storage and transfer. This one has a stripe running down the middle."
@@ -39,7 +35,7 @@
 
 /obj/item/card/data/Initialize()
 	.=..()
-	update_icon()
+	update_appearance()
 
 /obj/item/card/data/update_overlays()
 	. = ..()
@@ -387,7 +383,7 @@
 		var/obj/item/storage/wallet/powergaming = loc
 		if(powergaming.front_id == src)
 			powergaming.update_label()
-			powergaming.update_icon()
+			powergaming.update_appearance()
 
 /obj/item/card/id/proc/get_cached_flat_icon()
 	if(!cached_flat_icon)
@@ -424,7 +420,7 @@ update_label()
 /obj/item/card/id/proc/update_label()
 	var/blank = !registered_name
 	name = "[blank ? initial(name) : "[registered_name]'s ID Card"][(!assignment) ? "" : " ([assignment])"]"
-	update_icon()
+	update_appearance()
 
 /obj/item/card/id/silver
 	name = "silver identification card"
@@ -581,6 +577,11 @@ update_label()
 	access = list(ACCESS_SYNDICATE, ACCESS_ROBOTICS, ACCESS_ARMORY, ACCESS_SYNDICATE_LEADER)
 	uses_overlays = FALSE
 
+/obj/item/card/id/patient //Aegis ID
+	assignment = "Long Term Patient"
+	uses_overlays = FALSE
+	access = list(ACCESS_SYNDICATE)
+
 /obj/item/card/id/captains_spare
 	desc = "The spare ID of the High Lord himself."
 	icon_state = "gold"
@@ -601,7 +602,7 @@ update_label()
 /obj/item/card/id/captains_spare/update_label() //so it doesn't change to Captain's ID card (Captain) on a sneeze
 	if(registered_name == "Captain")
 		name = "[initial(name)][(!assignment || assignment == "Captain") ? "" : " ([assignment])"]"
-		update_icon()
+		update_appearance()
 	else
 		..()
 

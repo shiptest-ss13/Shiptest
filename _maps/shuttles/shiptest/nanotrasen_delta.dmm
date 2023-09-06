@@ -216,6 +216,22 @@
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
+"aW" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/effect/turf_decal/corner/opaque/blue{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/blue{
+	dir = 4
+	},
+/obj/structure/closet/wardrobe/robotics_black,
+/obj/item/clothing/under/rank/rnd/roboticist,
+/obj/item/clothing/under/rank/rnd/roboticist/skirt,
+/obj/item/clothing/under/rank/rnd/roboticist,
+/obj/item/clothing/under/rank/rnd/roboticist/skirt,
+/obj/structure/extinguisher_cabinet/directional/north,
+/turf/open/floor/plasteel,
+/area/ship/crew)
 "aZ" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable{
@@ -1242,7 +1258,7 @@
 /obj/item/folder/yellow,
 /obj/item/radio/intercom/directional/east,
 /obj/item/paper/fluff{
-	info = "As a reminder, older ore processing lines may come unlinked from their control terminals. In such cases simply use a multitool to restore the data link.";
+	default_raw_text = "As a reminder, older ore processing lines may come unlinked from their control terminals. In such cases simply use a multitool to restore the data link.";
 	name = "Memo - Processor Reliability"
 	},
 /obj/item/multitool{
@@ -1281,23 +1297,12 @@
 /obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/engineering)
-"jD" = (
-/obj/structure/cable{
-	icon_state = "2-8"
+"jH" = (
+/obj/machinery/porta_turret/ship/weak{
+	dir = 9
 	},
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/power/apc/auto_name/directional/east,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/atmospherics/pipe/simple/orange/visible,
-/obj/structure/catwalk/over,
-/turf/open/floor/plating,
-/area/ship/engineering)
+/turf/closed/wall/mineral/titanium,
+/area/ship/bridge)
 "kn" = (
 /obj/machinery/light/small/built/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1600,24 +1605,6 @@
 /obj/effect/turf_decal/corner/opaque/blue/bordercorner,
 /turf/open/floor/plasteel,
 /area/ship/hallway/port)
-"qC" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/effect/turf_decal/corner/opaque/blue{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/opaque/blue{
-	dir = 4
-	},
-/obj/structure/closet/wardrobe/robotics_black,
-/obj/item/clothing/under/suit/senior_roboticist,
-/obj/item/clothing/under/suit/senior_roboticist/skirt,
-/obj/item/clothing/under/rank/rnd/roboticist/biomech_engineer,
-/obj/item/clothing/under/rank/rnd/roboticist/biomech_engineer/skirt,
-/obj/item/clothing/under/rank/rnd/roboticist/mech_engineer,
-/obj/item/clothing/under/rank/rnd/roboticist/mech_engineer/skirt,
-/obj/structure/extinguisher_cabinet/directional/north,
-/turf/open/floor/plasteel,
-/area/ship/crew)
 "qY" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/effect/turf_decal/corner/opaque/brown{
@@ -1818,6 +1805,28 @@
 /obj/item/borg/upgrade/modkit/cooldown/minebot,
 /turf/open/floor/pod/dark,
 /area/ship/cargo)
+"wk" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/power/apc/auto_name/directional/east,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/orange/visible,
+/obj/structure/catwalk/over,
+/obj/machinery/light_switch{
+	pixel_x = 19;
+	dir = 8;
+	pixel_y = 11
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "ww" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/airalarm/directional/south,
@@ -2670,6 +2679,32 @@
 /obj/machinery/vending/coffee,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
+"Wf" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/machinery/camera,
+/obj/machinery/light/small/directional/north,
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/structure/table,
+/obj/item/mmi/posibrain{
+	pixel_x = 5;
+	pixel_y = 6
+	},
+/obj/item/mmi/posibrain{
+	pixel_x = 5
+	},
+/obj/item/survey_handheld{
+	pixel_x = -6
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/science/robotics)
+"WG" = (
+/obj/machinery/porta_turret/ship/weak{
+	dir = 4
+	},
+/turf/closed/wall/mineral/titanium,
+/area/ship/bridge)
 "WX" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
@@ -2785,6 +2820,12 @@
 	},
 /turf/open/floor/plating,
 /area/ship/science/robotics)
+"YZ" = (
+/obj/machinery/porta_turret/ship/weak{
+	dir = 10
+	},
+/turf/closed/wall/mineral/titanium,
+/area/ship/bridge)
 "Zi" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2913,7 +2954,7 @@ tr
 cz
 cD
 dF
-jD
+wk
 jw
 nY
 cO
@@ -2944,7 +2985,7 @@ aa
 "}
 (7,1,1) = {"
 aa
-cM
+jH
 ai
 ai
 AW
@@ -2960,7 +3001,7 @@ cP
 AW
 ai
 ai
-cM
+YZ
 "}
 (8,1,1) = {"
 aa
@@ -2996,7 +3037,7 @@ ch
 cp
 ff
 ce
-qC
+aW
 dh
 WX
 Jt
@@ -3344,23 +3385,23 @@ HJ
 "}
 (27,1,1) = {"
 aa
-cM
+WG
 ab
 aK
 qe
 bd
 ab
-cM
+WG
 aa
 aa
 aa
-cM
+WG
 HJ
 DS
 TK
 QR
 HJ
-cM
+WG
 "}
 (28,1,1) = {"
 aa

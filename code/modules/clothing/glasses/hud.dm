@@ -246,6 +246,7 @@
 	desc = "A snazzy looking pair of ballistic goggles with an integrated security hud. The opaque visor provides flash protection."
 	icon_state = "inteq_goggles"
 	item_state = "inteq_goggles"
+	supports_variations = KEPORI_VARIATION
 
 /obj/item/clothing/glasses/hud/health/prescription
 	name = "prescription health scanner HUD"
