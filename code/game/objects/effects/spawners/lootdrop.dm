@@ -1250,3 +1250,38 @@
 		4
 	))
 	return ..()
+
+//random RND imprinter/protolathe board spawners. Do not use on maps without a good reason
+/obj/effect/spawner/lootdrop/randomprotolathe
+	name = "random departmental protolathe"
+	loot = list(
+		/obj/item/circuitboard/machine/protolathe/department/cargo,
+		/obj/item/circuitboard/machine/protolathe/department/engineering,
+		/obj/item/circuitboard/machine/protolathe/department/service,
+		/obj/item/circuitboard/machine/protolathe/department/medical,
+		/obj/item/circuitboard/machine/protolathe/department/science,
+		/obj/item/circuitboard/machine/protolathe/department/security
+	)
+
+/obj/effect/spawner/lootdrop/randomimprinter
+	name = "random departmental circuit imprinter"
+	loot = list(
+		/obj/item/circuitboard/machine/circuit_imprinter/department/cargo,
+		/obj/item/circuitboard/machine/circuit_imprinter/department/engi,
+		/obj/item/circuitboard/machine/circuit_imprinter/department/civ,
+		/obj/item/circuitboard/machine/circuit_imprinter/department/med,
+		/obj/item/circuitboard/machine/circuit_imprinter/department/science,
+		/obj/item/circuitboard/machine/circuit_imprinter/department/sec
+	)
+
+/obj/effect/spawner/lootdrop/randomtechfab
+	name = "random departmental techfab"
+	loot = list(
+		/obj/item/circuitboard/machine/techfab/department/service,
+		/obj/item/circuitboard/machine/techfab/department/cargo,
+		/obj/item/circuitboard/machine/techfab/department/engineering,
+		/obj/item/circuitboard/machine/techfab/department/service,
+		/obj/item/circuitboard/machine/techfab/department/medical,
+		/obj/item/circuitboard/machine/techfab/department/science,
+		/obj/item/circuitboard/machine/techfab/department/security
+	)
