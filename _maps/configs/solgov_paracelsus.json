@@ -19,8 +19,8 @@
 			"officer": true,
 			"slots": 1
 		},
-		"Bureaucrat": {
-			"outfit": "/datum/outfit/job/solgov/bureaucrat",
+		"Overseer": {
+			"outfit": "/datum/outfit/job/solgov/overseer",
 			"officer": true,
 			"slots": 1
 		},
@@ -32,14 +32,23 @@
 			"outfit": "/datum/outfit/job/solgov/engineer",
 			"slots": 1
 		},
+		"Psychologist": {
+			"outfit": "/datum/outfit/job/solgov/psychologist",
+			"slots": 1
+		},
 		"Field Engineer": {
 			"outfit": "/datum/outfit/job/solgov/miner",
-			"slots": 1
+			"slots": 2
 		},
 		"Scribe": {
 			"outfit": "/datum/outfit/job/solgov/assistant",
 			"slots" : 3
+		},
+		"Attentive Care Patient": {
+			"outfit": "/datum/outfit/job/solgov/patient",
+			"slots" : 3
 		}
+
 	},
 	"enabled": true
 }

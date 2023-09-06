@@ -11,12 +11,6 @@
 	var/spamcheck = 0
 	var/list/voicespan = list(SPAN_COMMAND)
 
-/obj/item/megaphone/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] is uttering [user.p_their()] last words into \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	spamcheck = 0//so they dont have to worry about recharging
-	user.say("AAAAAAAAAAAARGHHHHH", forced="megaphone suicide")//he must have died while coding this
-	return OXYLOSS
-
 /obj/item/megaphone/equipped(mob/M, slot)
 	. = ..()
 	if (slot == ITEM_SLOT_HANDS)

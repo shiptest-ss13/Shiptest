@@ -16,10 +16,6 @@
 	volume = 5
 	spillable = FALSE
 
-/obj/item/reagent_containers/glass/rag/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is smothering [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return (OXYLOSS)
-
 /obj/item/reagent_containers/glass/rag/afterattack(atom/target as obj|turf|area, mob/user,proximity)
 	. = ..()
 	if(!proximity)

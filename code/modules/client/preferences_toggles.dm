@@ -283,7 +283,6 @@ TOGGLE_CHECKBOX(/datum/verbs/menu/Settings, listen_ooc)()
 /datum/verbs/menu/Settings/listen_ooc/Get_checked(client/C)
 	return C.prefs.chat_toggles & CHAT_OOC
 
-//BeginWS Edit
 TOGGLE_CHECKBOX(/datum/verbs/menu/settings, listen_looc)()
 	set name = "Show/Hide LOOC"
 	set category = "Preferences"
@@ -294,7 +293,17 @@ TOGGLE_CHECKBOX(/datum/verbs/menu/settings, listen_looc)()
 	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Toggle Seeing LOOC", "[usr.client.prefs.chat_toggles & CHAT_LOOC ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 /datum/verbs/menu/Settings/listen_looc/Get_checked(client/C)
 	return C.prefs.chat_toggles & CHAT_LOOC
-//EndWS Edit
+
+TOGGLE_CHECKBOX(/datum/verbs/menu/Settings, chat_ghostckey)()
+	set name = "Show/Hide ckey in deadchat"
+	set category = "Preferences"
+	set desc = "Toggle if players will see your ckey in deadchat"
+	usr.client.prefs.chat_toggles ^= CHAT_GHOSTCKEY
+	usr.client.prefs.save_preferences()
+	to_chat(usr, "Your ckey is [(usr.client.prefs.chat_toggles & CHAT_GHOSTCKEY) ? "now" : "no longer"] visible in deadchat.")
+	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Toggle ckey in Deadchat", "[usr.client.prefs.toggles & CHAT_GHOSTCKEY ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+/datum/verbs/menu/Settings/chat_ghostckey/Get_checked(client/C)
+	return C.prefs.chat_toggles & CHAT_GHOSTCKEY
 
 TOGGLE_CHECKBOX(/datum/verbs/menu/Settings, listen_bank_card)()
 	set name = "Show/Hide Income Updates"
@@ -323,7 +332,7 @@ GLOBAL_LIST_INIT(ghost_forms, sortList(list("ghost","ghostking","ghostian2","ske
 		prefs.save_preferences()
 		if(isobserver(mob))
 			var/mob/dead/observer/O = mob
-			O.update_icon(new_form)
+			O.update_icon(ALL, new_form)
 
 GLOBAL_LIST_INIT(ghost_orbits, list(GHOST_ORBIT_CIRCLE,GHOST_ORBIT_TRIANGLE,GHOST_ORBIT_SQUARE,GHOST_ORBIT_HEXAGON,GHOST_ORBIT_PENTAGON))
 
@@ -352,7 +361,7 @@ GLOBAL_LIST_INIT(ghost_orbits, list(GHOST_ORBIT_CIRCLE,GHOST_ORBIT_TRIANGLE,GHOS
 		prefs.save_preferences()
 		if(isobserver(mob))
 			var/mob/dead/observer/O = mob
-			O.update_icon()
+			O.update_appearance()
 
 /client/verb/pick_ghost_customization()
 	set name = "Ghost Customization"

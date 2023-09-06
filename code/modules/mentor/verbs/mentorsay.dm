@@ -13,8 +13,8 @@
 
 	msg = "<span class='[check_rights(R_ADMIN, 0) ? "mentoradmin" : "mentor"]'><span class='boldnotice'>MENTOR:</span> <EM>[key_name(usr, 0, 0)]</EM>: <span class='message'>[msg]</span></span>"
 	to_chat(GLOB.mentors,
-		type = MESSAGE_TYPE_MODCHAT,
-		html = msg,
+		msg,
+		MESSAGE_TYPE_MENTORCHAT,
 		confidential = TRUE)
 
 	SSblackbox.record_feedback("tally", "mentor_verb", 1, "Msay") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!

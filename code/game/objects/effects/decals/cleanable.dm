@@ -90,7 +90,7 @@
 	SIGNAL_HANDLER
 	if(iscarbon(AM) && blood_state && bloodiness > 40)
 		SEND_SIGNAL(AM, COMSIG_STEP_ON_BLOOD, src)
-		update_icon()
+		update_appearance()
 
 /obj/effect/decal/cleanable/wash(clean_types)
 	..()

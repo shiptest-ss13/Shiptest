@@ -226,7 +226,7 @@
 	dir = 1
 	},
 /obj/structure/table/reinforced,
-/obj/machinery/photocopier/faxmachine/longrange,
+/obj/machinery/fax,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "cM" = (
@@ -860,6 +860,11 @@
 	},
 /obj/item/stack/sheet/mineral/plasma/twenty,
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/light_switch{
+	pixel_x = 20;
+	dir = 8;
+	pixel_y = 11
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "jo" = (
@@ -1397,6 +1402,12 @@
 /obj/effect/turf_decal/techfloor,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/cryo)
+"qJ" = (
+/obj/machinery/porta_turret/ship/ballistic{
+	dir = 9
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/bridge)
 "qK" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
@@ -2149,6 +2160,12 @@
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
+"xh" = (
+/obj/machinery/porta_turret/ship/ballistic{
+	dir = 5
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/bridge)
 "xr" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/line{
 	dir = 1
@@ -2161,6 +2178,10 @@
 	icon_state = "0-2"
 	},
 /obj/effect/turf_decal/steeldecal/steel_decals_central7,
+/obj/machinery/light_switch{
+	pixel_y = 23;
+	pixel_x = 11
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
 "xx" = (
@@ -2884,6 +2905,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/small/directional/east,
 /obj/machinery/airalarm/directional/south,
+/obj/machinery/light_switch{
+	pixel_y = 23;
+	pixel_x = 11
+	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew/toilet)
 "GL" = (
@@ -2969,6 +2994,10 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/trash/sosjerky,
+/obj/machinery/light_switch{
+	pixel_y = 23;
+	pixel_x = -12
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "Hp" = (
@@ -2990,6 +3019,12 @@
 /obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
+"Hu" = (
+/obj/machinery/porta_turret/ship/ballistic{
+	dir = 6
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/bridge)
 "HD" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/cable{
@@ -3074,6 +3109,11 @@
 /obj/item/clothing/suit/space/inteq,
 /obj/item/clothing/head/helmet/space/inteq,
 /obj/machinery/suit_storage_unit/inherit,
+/obj/machinery/light_switch{
+	pixel_x = 20;
+	dir = 8;
+	pixel_y = 11
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/port)
 "Il" = (
@@ -3204,6 +3244,10 @@
 	icon_state = "0-2"
 	},
 /obj/effect/turf_decal/steeldecal/steel_decals_central7,
+/obj/machinery/light_switch{
+	pixel_y = 23;
+	pixel_x = 11
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/fore)
 "KG" = (
@@ -3242,6 +3286,12 @@
 /obj/structure/sign/number/one,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/security/armory)
+"Ll" = (
+/obj/machinery/porta_turret/ship/ballistic{
+	dir = 5
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/bridge)
 "Lm" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/item/trash/can,
@@ -3513,7 +3563,9 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "Oa" = (
-/obj/machinery/porta_turret/ship/ballistic,
+/obj/machinery/porta_turret/ship/ballistic{
+	dir = 6
+	},
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
 "Oc" = (
@@ -3651,6 +3703,11 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = 11;
+	pixel_y = -17
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "Pq" = (
@@ -3784,7 +3841,9 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
 "QZ" = (
-/obj/machinery/porta_turret/ship/ballistic,
+/obj/machinery/porta_turret/ship/ballistic{
+	dir = 10
+	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/bridge)
 "Rb" = (
@@ -4185,6 +4244,11 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light_switch{
+	pixel_x = 20;
+	dir = 8;
+	pixel_y = 11
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "Wn" = (
@@ -4720,7 +4784,7 @@ XJ
 (8,1,1) = {"
 XJ
 XJ
-Oa
+xh
 bo
 bo
 bo
@@ -4917,7 +4981,7 @@ XJ
 "}
 (17,1,1) = {"
 XJ
-QZ
+qJ
 ZB
 ZB
 ZB
@@ -5137,7 +5201,7 @@ XA
 "}
 (27,1,1) = {"
 XJ
-Oa
+xh
 hD
 hD
 hD
@@ -5314,7 +5378,7 @@ XJ
 (35,1,1) = {"
 XJ
 XJ
-QZ
+Ll
 SC
 SC
 SC
@@ -5326,10 +5390,10 @@ XJ
 XJ
 XJ
 XJ
-Oa
+xh
 xT
 xT
 xT
-QZ
+Hu
 XJ
 "}

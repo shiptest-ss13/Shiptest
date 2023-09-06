@@ -567,6 +567,7 @@ Contains:
 	armor = list("bio" = 100, "rad" = 50, "fire" = 60, "acid" = 75)
 	slowdown = 0.5
 	w_class = WEIGHT_CLASS_NORMAL
+	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/suit/space/inteq
 	name = "inteq space suit"

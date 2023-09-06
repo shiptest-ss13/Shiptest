@@ -247,7 +247,7 @@ GLOBAL_VAR_INIT(deaths_during_shift, 0)
 		var/datum/hud/H = M.hud_used
 		H.wanted_lvl.level = newlevel
 		H.wanted_lvl.cops_arrived = cops_arrived
-		H.wanted_lvl.update_icon()
+		H.wanted_lvl.update_appearance()
 
 /datum/game_mode/gang/proc/on_gain_wanted_level(newlevel)
 	var/announcement_message
