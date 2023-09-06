@@ -7,11 +7,17 @@
 /area/ruin/powered)
 "cj" = (
 /obj/item/bodypart/leg/right/robot,
+/obj/item/bodypart/leg/right/robot,
 /turf/open/floor/circuit/green,
 /area/ruin/powered)
 "cp" = (
 /obj/structure/chair/wood/wings,
 /turf/open/floor/wood,
+/area/ruin/powered)
+"ct" = (
+/obj/item/wallframe/camera,
+/mob/living/simple_animal/hostile/hivebot,
+/turf/open/floor/circuit/green,
 /area/ruin/powered)
 "cU" = (
 /obj/structure/chair/sofa{
@@ -20,10 +26,21 @@
 /turf/open/floor/carpet/black,
 /area/ruin/powered)
 "cZ" = (
-/obj/structure/railing/wood{
-	dir = 10
+/turf/open/floor/plasteel/stairs{
+	dir = 8
 	},
-/turf/open/floor/wood,
+/area/ruin/powered)
+"dv" = (
+/obj/structure/rack,
+/obj/item/chisel,
+/obj/item/chisel{
+	pixel_x = -4
+	},
+/turf/open/floor/grass,
+/area/ruin/powered)
+"dG" = (
+/obj/item/stack/sheet/mineral/sandstone/thirty,
+/turf/open/floor/grass,
 /area/ruin/powered)
 "dP" = (
 /obj/structure/easel,
@@ -117,6 +134,7 @@
 /area/ruin/powered)
 "gA" = (
 /obj/item/bodypart/l_arm/robot,
+/obj/item/bodypart/l_arm/robot,
 /turf/open/floor/wood,
 /area/ruin/powered)
 "gF" = (
@@ -187,6 +205,11 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/powered)
+"mQ" = (
+/obj/item/statuebust,
+/obj/structure/rack,
+/turf/open/floor/grass,
+/area/ruin/powered)
 "nb" = (
 /obj/item/robot_suit,
 /obj/item/wallframe/camera,
@@ -221,6 +244,12 @@
 	dir = 1
 	},
 /turf/open/floor/carpet/black,
+/area/ruin/powered)
+"os" = (
+/obj/structure/statue/sandstone/venus{
+	dir = 8
+	},
+/turf/open/floor/wood,
 /area/ruin/powered)
 "ou" = (
 /obj/effect/turf_decal/trimline/opaque/grey/corner,
@@ -259,15 +288,8 @@
 /area/ruin/powered)
 "qK" = (
 /obj/structure/table/wood,
-/obj/item/borg/upgrade/transform/clown{
-	desc = "Allows you to to turn a cyborg into a... something.";
-	name = "borg module picker (Unknown)"
-	},
-/obj/item/borg/upgrade/transform{
-	desc = "Allows you to to turn a cyborg into a... something.";
-	name = "borg module picker (Unknown)";
-	new_module = /obj/item/robot_module/syndicate_medical
-	},
+/obj/item/borg/upgrade/thrusters,
+/obj/item/borg/upgrade/selfrepair,
 /turf/open/floor/wood,
 /area/ruin/powered)
 "rh" = (
@@ -314,6 +336,7 @@
 /area/ruin/powered)
 "vh" = (
 /obj/item/bodypart/head/robot,
+/obj/item/bodypart/head/robot,
 /turf/open/floor/circuit/green,
 /area/ruin/powered)
 "vn" = (
@@ -355,6 +378,10 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/powered)
+"yo" = (
+/obj/structure/statue/sandstone/venus,
+/turf/open/floor/wood,
+/area/ruin/powered)
 "yE" = (
 /obj/effect/turf_decal/trimline/opaque/grey/line{
 	dir = 1
@@ -368,6 +395,7 @@
 /turf/open/floor/wood,
 /area/ruin/powered)
 "zg" = (
+/obj/item/bodypart/leg/left/robot,
 /obj/item/bodypart/leg/left/robot,
 /turf/open/floor/circuit/green,
 /area/ruin/powered)
@@ -397,6 +425,7 @@
 /area/ruin/powered)
 "Bl" = (
 /obj/machinery/door/airlock/wood,
+/obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/wood,
 /area/ruin/powered)
 "BH" = (
@@ -406,7 +435,7 @@
 /turf/open/floor/carpet/black,
 /area/ruin/powered)
 "Cj" = (
-/turf/closed/indestructible/wood,
+/turf/open/floor/grass,
 /area/ruin/powered)
 "Cy" = (
 /obj/effect/decal/remains/robot,
@@ -428,6 +457,10 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/white,
+/area/ruin/powered)
+"Dq" = (
+/mob/living/simple_animal/hostile/hivebot/range,
+/turf/open/floor/wood,
 /area/ruin/powered)
 "Dy" = (
 /obj/structure/table/wood,
@@ -496,6 +529,11 @@
 /obj/structure/chair/wood/wings,
 /turf/open/floor/wood,
 /area/ruin/powered)
+"JY" = (
+/obj/item/statuebust/hippocratic,
+/obj/structure/rack,
+/turf/open/floor/grass,
+/area/ruin/powered)
 "LK" = (
 /obj/structure/chair/sofa{
 	dir = 4
@@ -514,9 +552,11 @@
 "Mf" = (
 /obj/item/bodypart/chest/robot,
 /obj/item/wallframe/camera,
+/obj/item/bodypart/chest/robot,
 /turf/open/floor/wood,
 /area/ruin/powered)
 "Mh" = (
+/obj/item/bodypart/r_arm/robot,
 /obj/item/bodypart/r_arm/robot,
 /turf/open/floor/wood,
 /area/ruin/powered)
@@ -705,9 +745,9 @@ sE
 sE
 sE
 sE
-sE
-sE
-sE
+mQ
+Cj
+dG
 sE
 "}
 (3,1,1) = {"
@@ -724,9 +764,9 @@ lN
 lN
 lN
 lN
-sE
-sE
-sE
+JY
+Cj
+Cj
 sE
 "}
 (4,1,1) = {"
@@ -744,18 +784,18 @@ qc
 xG
 lN
 lN
-sE
-sE
+dv
+Cj
 sE
 "}
 (5,1,1) = {"
 sE
 sE
-Cj
-Cj
-Cj
-Cj
-Cj
+lN
+lN
+lN
+lN
+lN
 ZX
 Eq
 ou
@@ -770,11 +810,11 @@ sE
 (6,1,1) = {"
 sE
 sE
-Cj
+lN
 Ey
 lD
 gw
-Cj
+lN
 RI
 Nt
 fe
@@ -789,11 +829,11 @@ sE
 (7,1,1) = {"
 sE
 sE
-Cj
+lN
 Wo
 rt
 gA
-Cj
+lN
 uh
 TU
 TU
@@ -807,13 +847,13 @@ sE
 "}
 (8,1,1) = {"
 sE
-Cj
-Cj
+lN
+lN
 WT
 Ij
 YF
-Cj
-Cj
+lN
+lN
 sb
 yY
 Tc
@@ -826,10 +866,10 @@ sE
 "}
 (9,1,1) = {"
 sE
-Cj
+lN
 Sn
 vh
-Nv
+ct
 Rz
 ng
 Bl
@@ -837,15 +877,15 @@ Wk
 dP
 sX
 Zp
-Bl
-Wk
+lN
+yo
 Wk
 QK
 sE
 "}
 (10,1,1) = {"
 sE
-Cj
+lN
 vY
 FA
 Gq
@@ -864,32 +904,32 @@ sE
 "}
 (11,1,1) = {"
 sE
-Cj
+lN
 qK
 wR
 cj
 Zc
-Wk
+Dq
 Bl
 Wk
 dP
 sX
 Wk
-Bl
-Wk
+lN
+os
 Wk
 QK
 sE
 "}
 (12,1,1) = {"
 sE
-Cj
-Cj
+lN
+lN
 zj
 Mf
 YF
-Cj
-Cj
+lN
+lN
 gt
 gt
 gt
@@ -903,11 +943,11 @@ sE
 (13,1,1) = {"
 sE
 sE
-Cj
+lN
 vn
 nb
 Mh
-Cj
+lN
 xe
 jv
 LK
@@ -922,11 +962,11 @@ sE
 (14,1,1) = {"
 sE
 sE
-Cj
+lN
 Aw
 uz
 zg
-Cj
+lN
 Pn
 ZH
 Dy
@@ -941,11 +981,11 @@ sE
 (15,1,1) = {"
 sE
 sE
-Cj
-Cj
-Cj
-Cj
-Cj
+lN
+lN
+lN
+lN
+lN
 Wt
 kz
 lL
