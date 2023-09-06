@@ -70,8 +70,8 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/structure/spacevine/dense,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -120,15 +120,15 @@
 	},
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
 "ay" = (
 /obj/machinery/door/airlock{
-	name = "Private Quarters";
-	dir = 4
+	dir = 4;
+	name = "Private Quarters"
 	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
@@ -146,15 +146,15 @@
 /area/ruin/space/has_grav/singularitylab/civvie)
 "aA" = (
 /turf/open/space/basic,
-/area/ruin/space/has_grav/singularitylab/reactor)
+/area/space/nearstation)
 "aC" = (
 /obj/structure/flippedtable{
-	icon_state = "";
-	dir = 1
+	dir = 1;
+	icon_state = ""
 	},
 /obj/structure/flippedtable{
-	icon_state = "";
-	dir = 8
+	dir = 8;
+	icon_state = ""
 	},
 /turf/open/floor/plating/asteroid,
 /area/ruin/space/has_grav/singularitylab)
@@ -175,8 +175,8 @@
 	dir = 8
 	},
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -228,8 +228,8 @@
 /obj/structure/spacevine/dense,
 /obj/structure/flora/ausbushes/stalkybush,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -253,13 +253,13 @@
 /obj/structure/table,
 /obj/machinery/button/shieldwallgen{
 	dir = 8;
-	pixel_x = -5;
-	id = "singlabhang"
+	id = "singlabhang";
+	pixel_x = -5
 	},
 /obj/machinery/button/door{
 	dir = 8;
-	pixel_x = 8;
-	id = "singlabhangar"
+	id = "singlabhangar";
+	pixel_x = 8
 	},
 /obj/structure/sign/warning/incident{
 	pixel_x = 32
@@ -280,8 +280,8 @@
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/corner/opaque/white/full,
 /obj/item/paper_bin{
-	pixel_y = 4;
-	pixel_x = -3
+	pixel_x = -3;
+	pixel_y = 4
 	},
 /obj/item/pen{
 	pixel_x = -4;
@@ -294,8 +294,8 @@
 /area/ruin/space/has_grav/singularitylab/lab)
 "aY" = (
 /turf/closed/wall{
-	name = "structural support";
-	desc = "A huge chunk of metal holding the roof of the asteroid at bay"
+	desc = "A huge chunk of metal holding the roof of the asteroid at bay";
+	name = "structural support"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
 "aZ" = (
@@ -460,8 +460,8 @@
 	piping_layer = 4
 	},
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -505,7 +505,7 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/engine/hull,
-/area/ruin/space/has_grav/singularitylab/reactor)
+/area/space/nearstation)
 "bV" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
@@ -526,8 +526,8 @@
 "bZ" = (
 /obj/structure/spacevine/dense,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/engineering)
@@ -577,8 +577,8 @@
 	},
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -601,7 +601,7 @@
 	icon_state = "2-8"
 	},
 /turf/open/space/basic,
-/area/ruin/space/has_grav/singularitylab/reactor)
+/area/space/nearstation)
 "cm" = (
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 8
@@ -621,8 +621,8 @@
 	pixel_x = 32
 	},
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -656,8 +656,8 @@
 /area/ruin/space/has_grav/singularitylab/lab)
 "cz" = (
 /obj/machinery/door/airlock/engineering{
-	name = "Engine Control";
-	dir = 8
+	dir = 8;
+	name = "Engine Control"
 	},
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -764,8 +764,8 @@
 	},
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -831,8 +831,8 @@
 /area/ruin/space/has_grav/singularitylab/cargo)
 "dc" = (
 /obj/machinery/door/airlock/engineering{
-	name = "Engine Control";
-	dir = 4
+	dir = 4;
+	name = "Engine Control"
 	},
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -933,14 +933,14 @@
 	pixel_x = -32
 	},
 /obj/structure/spacevine/dense{
-	pixel_y = 32;
-	pixel_x = -31
+	pixel_x = -31;
+	pixel_y = 32
 	},
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -970,8 +970,8 @@
 	},
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -1045,8 +1045,8 @@
 /area/ruin/space/has_grav/singularitylab)
 "ed" = (
 /obj/machinery/door/airlock{
-	name = "Barracks";
-	dir = 4
+	dir = 4;
+	name = "Barracks"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1083,9 +1083,9 @@
 /area/ruin/space/has_grav/singularitylab/lab)
 "em" = (
 /obj/machinery/mineral/processing_unit_console{
+	machinedir = 9;
 	pixel_x = -32;
-	pixel_y = -4;
-	machinedir = 9
+	pixel_y = -4
 	},
 /obj/structure/extinguisher_cabinet/directional/north,
 /turf/open/floor/plasteel/dark,
@@ -1099,8 +1099,8 @@
 	dir = 8
 	},
 /obj/structure/flippedtable{
-	icon_state = "";
-	dir = 8
+	dir = 8;
+	icon_state = ""
 	},
 /obj/effect/turf_decal/corner/opaque/purple{
 	dir = 5
@@ -1130,8 +1130,8 @@
 	},
 /obj/structure/table/wood/fancy/green,
 /obj/structure/fluff/beach_umbrella{
-	pixel_y = 16;
-	pixel_x = -5
+	pixel_x = -5;
+	pixel_y = 16
 	},
 /obj/structure/spacevine,
 /obj/machinery/light/floor,
@@ -1158,17 +1158,17 @@
 /area/ruin/space/has_grav/singularitylab)
 "et" = (
 /obj/item/gun/energy/e_gun/smg{
-	pixel_y = 6;
-	pixel_x = 5;
-	name = "\improper Modified E-TAR SMG";
 	dry_fire_sound = 'sound/items/ding.ogg';
-	dry_fire_text = "ding"
+	dry_fire_text = "ding";
+	name = "\improper Modified E-TAR SMG";
+	pixel_x = 5;
+	pixel_y = 6
 	},
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/corner/opaque/white/full,
 /obj/item/stack/telecrystal{
-	pixel_y = -4;
-	pixel_x = -9
+	pixel_x = -9;
+	pixel_y = -4
 	},
 /obj/effect/turf_decal/corner/opaque/purple{
 	dir = 10
@@ -1315,8 +1315,8 @@
 /obj/effect/decal/cleanable/insectguts,
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -1356,7 +1356,7 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/singularitylab/reactor)
+/area/space/nearstation)
 "fn" = (
 /obj/structure/spacevine,
 /obj/structure/spacevine{
@@ -1388,8 +1388,8 @@
 	},
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -1411,8 +1411,8 @@
 /area/ruin/space/has_grav/singularitylab/civvie)
 "ft" = (
 /obj/structure/flippedtable{
-	icon_state = "";
-	dir = 8
+	dir = 8;
+	icon_state = ""
 	},
 /obj/structure/spacevine,
 /turf/open/floor/plating/dirt{
@@ -1443,8 +1443,8 @@
 "fv" = (
 /obj/structure/spacevine/dense,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -1531,14 +1531,14 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
 "fU" = (
 /obj/structure/table,
-/turf/closed/mineral/random/asteroid,
+/turf/closed/mineral/random,
 /area/ruin/space/has_grav)
 "fW" = (
 /obj/effect/turf_decal/siding/thinplating{
@@ -1685,15 +1685,15 @@
 	pixel_y = -32
 	},
 /obj/structure/spacevine/dense{
-	pixel_y = -32;
-	pixel_x = 32
+	pixel_x = 32;
+	pixel_y = -32
 	},
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -1777,17 +1777,17 @@
 /obj/effect/turf_decal/corner/opaque/white/full,
 /obj/structure/table,
 /obj/item/lighter{
-	pixel_y = 3;
-	pixel_x = -6
+	pixel_x = -6;
+	pixel_y = 3
 	},
 /obj/item/clothing/mask/cigarette,
 /obj/item/clothing/mask/cigarette{
-	pixel_y = 11;
-	pixel_x = 3
+	pixel_x = 3;
+	pixel_y = 11
 	},
 /obj/item/clothing/mask/cigarette{
-	pixel_y = 4;
-	pixel_x = 6
+	pixel_x = 6;
+	pixel_y = 4
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/lab)
@@ -1815,8 +1815,8 @@
 "gQ" = (
 /obj/machinery/hydroponics/constructable,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -1828,8 +1828,8 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -1837,8 +1837,8 @@
 /obj/structure/spacevine/dense,
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -1848,9 +1848,9 @@
 /obj/item/clothing/shoes/sneakers/white,
 /obj/effect/gibspawner,
 /obj/item/gun/energy/lasercannon/unrestricted{
-	name = "NT-LS-1013";
+	desc = "An advanced laser cannon, a laser etched inscription in the handle states 'NT-LS-1013'. The casing is made of a lightweight alloy.";
 	icon_state = "pulse";
-	desc = "An advanced laser cannon, a laser etched inscription in the handle states 'NT-LS-1013'. The casing is made of a lightweight alloy."
+	name = "NT-LS-1013"
 	},
 /turf/open/floor/plating/asteroid,
 /area/ruin/space/has_grav/singularitylab)
@@ -1881,8 +1881,8 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -1915,8 +1915,8 @@
 /area/ruin/space/has_grav/singularitylab/cargo)
 "hn" = (
 /obj/machinery/door/poddoor{
-	id = "singlabhanger";
-	dir = 4
+	dir = 4;
+	id = "singlabhanger"
 	},
 /turf/open/floor/plating/asteroid,
 /area/ruin/space/has_grav/singularitylab)
@@ -1986,8 +1986,8 @@
 	pixel_y = 32
 	},
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -1997,8 +1997,8 @@
 	pixel_y = 32
 	},
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -2078,8 +2078,8 @@
 	},
 /obj/item/pen,
 /obj/item/reagent_containers/food/drinks/soda_cans/starkist{
-	pixel_y = 4;
-	pixel_x = 10
+	pixel_x = 10;
+	pixel_y = 4
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab)
@@ -2185,8 +2185,8 @@
 	pixel_y = -32
 	},
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -2199,8 +2199,8 @@
 	},
 /obj/structure/spacevine/dense,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -2254,8 +2254,8 @@
 	},
 /mob/living/simple_animal/hostile/venus_human_trap,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -2300,8 +2300,8 @@
 /area/ruin/space/has_grav/singularitylab/civvie)
 "iL" = (
 /obj/machinery/door/airlock/external{
-	name = "Engine Access";
-	dir = 4
+	dir = 4;
+	name = "Engine Access"
 	},
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -2343,7 +2343,7 @@
 	icon_state = "0-8"
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/singularitylab/reactor)
+/area/space/nearstation)
 "iZ" = (
 /obj/structure/cable,
 /obj/structure/poddoor_assembly,
@@ -2368,9 +2368,9 @@
 "jd" = (
 /obj/effect/turf_decal/siding/yellow,
 /obj/machinery/button/door{
+	dir = 8;
 	id = "singlabcargo2";
 	name = "Blast Door Control";
-	dir = 8;
 	pixel_x = 24
 	},
 /turf/open/floor/plasteel,
@@ -2381,8 +2381,8 @@
 	pixel_x = 32
 	},
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -2432,8 +2432,8 @@
 /obj/structure/spacevine/dense,
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -2504,21 +2504,21 @@
 	pixel_x = -32
 	},
 /obj/structure/spacevine/dense{
-	pixel_y = 32;
-	pixel_x = -31
+	pixel_x = -31;
+	pixel_y = 32
 	},
 /obj/effect/decal/cleanable/cobweb,
 /turf/open/floor/engine,
 /area/ruin/space/has_grav/singularitylab)
 "jC" = (
 /obj/structure/flippedtable{
-	icon_state = "";
-	dir = 4
+	dir = 4;
+	icon_state = ""
 	},
 /obj/structure/spacevine/dense,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -2553,12 +2553,12 @@
 /area/ruin/space/has_grav/singularitylab/lab)
 "jI" = (
 /obj/structure/railing/corner{
-	pixel_y = 2;
-	pixel_x = -3
+	pixel_x = -3;
+	pixel_y = 2
 	},
 /obj/structure/railing/corner{
-	pixel_y = 23;
-	pixel_x = -3
+	pixel_x = -3;
+	pixel_y = 23
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2645,16 +2645,16 @@
 	pixel_x = 32
 	},
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
 "jT" = (
 /obj/structure/spacevine/dense,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -2676,8 +2676,8 @@
 /area/ruin/space/has_grav/singularitylab)
 "ke" = (
 /obj/machinery/door/airlock/freezer{
-	name = "Freezer";
-	dir = 4
+	dir = 4;
+	name = "Freezer"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -2689,8 +2689,8 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/door/poddoor{
-	id = "singlabhanger";
-	dir = 4
+	dir = 4;
+	id = "singlabhanger"
 	},
 /turf/open/floor/engine,
 /area/ruin/space/has_grav/singularitylab)
@@ -2710,8 +2710,8 @@
 /area/ruin/space/has_grav/singularitylab)
 "km" = (
 /obj/machinery/door/airlock/hatch{
-	name = "Server Room";
-	dir = 4
+	dir = 4;
+	name = "Server Room"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
@@ -2736,8 +2736,8 @@
 /area/ruin/space/has_grav/singularitylab)
 "ko" = (
 /obj/structure/flippedtable{
-	icon_state = "";
-	dir = 1
+	dir = 1;
+	icon_state = ""
 	},
 /obj/structure/spacevine,
 /turf/open/floor/plating/dirt{
@@ -2763,7 +2763,7 @@
 	icon_state = "2-4"
 	},
 /turf/open/floor/engine/hull,
-/area/ruin/space/has_grav/singularitylab/reactor)
+/area/space/nearstation)
 "kr" = (
 /obj/structure/cable{
 	icon_state = "5-8"
@@ -2773,8 +2773,8 @@
 	icon_state = "4-8"
 	},
 /obj/structure/flippedtable{
-	icon_state = "";
-	dir = 8
+	dir = 8;
+	icon_state = ""
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
@@ -2796,8 +2796,8 @@
 /area/ruin/space/has_grav/singularitylab/civvie)
 "kx" = (
 /obj/machinery/conveyor{
-	id = "singlabfurn";
-	dir = 8
+	dir = 8;
+	id = "singlabfurn"
 	},
 /obj/structure/railing,
 /obj/structure/railing{
@@ -2856,9 +2856,9 @@
 	},
 /obj/effect/turf_decal/techfloor/corner,
 /obj/machinery/button/door{
+	dir = 1;
 	id = "singlabcargo1";
 	name = "Blast Door Control";
-	dir = 1;
 	pixel_y = -25
 	},
 /turf/open/floor/plasteel,
@@ -2960,13 +2960,13 @@
 	pixel_y = -32
 	},
 /obj/structure/spacevine/dense{
-	pixel_y = -32;
-	pixel_x = -32
+	pixel_x = -32;
+	pixel_y = -32
 	},
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -3017,8 +3017,8 @@
 /area/ruin/space/has_grav/singularitylab/cargo)
 "lj" = (
 /obj/machinery/conveyor{
-	id = "singlabfurn";
-	dir = 8
+	dir = 8;
+	id = "singlabfurn"
 	},
 /obj/structure/railing,
 /turf/open/floor/plating,
@@ -3087,8 +3087,8 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/science{
-	name = "High Energy Applications Research Facility";
-	dir = 4
+	dir = 4;
+	name = "High Energy Applications Research Facility"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
@@ -3211,8 +3211,8 @@
 /obj/structure/table,
 /obj/item/paper,
 /obj/item/pen{
-	pixel_y = -3;
-	pixel_x = 2
+	pixel_x = 2;
+	pixel_y = -3
 	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ruin/space/has_grav/singularitylab/cargo)
@@ -3243,8 +3243,8 @@
 	},
 /obj/structure/spacevine/dense,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -3425,8 +3425,8 @@
 /area/ruin/space/has_grav/singularitylab/engineering)
 "mJ" = (
 /obj/structure/flippedtable{
-	icon_state = "";
-	dir = 8
+	dir = 8;
+	icon_state = ""
 	},
 /obj/structure/flippedtable,
 /obj/effect/turf_decal/siding/thinplating{
@@ -3452,7 +3452,7 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/engine/hull,
-/area/ruin/space/has_grav/singularitylab/reactor)
+/area/space/nearstation)
 "mP" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -3477,10 +3477,10 @@
 /obj/structure/table,
 /obj/machinery/button/door{
 	dir = 8;
-	pixel_y = 7;
-	pixel_x = -4;
 	id = "singlablast2";
-	name = "Testing Chamber Control"
+	name = "Testing Chamber Control";
+	pixel_x = -4;
+	pixel_y = 7
 	},
 /obj/effect/turf_decal/corner/opaque/white/full,
 /turf/open/floor/plasteel,
@@ -3488,8 +3488,8 @@
 "mW" = (
 /obj/machinery/conveyor_switch{
 	id = "singlabcarg";
-	pixel_y = -5;
-	pixel_x = 9
+	pixel_x = 9;
+	pixel_y = -5
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/singularitylab)
@@ -3507,8 +3507,8 @@
 "na" = (
 /obj/structure/sink{
 	dir = 4;
-	pixel_y = 4;
-	pixel_x = -14
+	pixel_x = -14;
+	pixel_y = 4
 	},
 /obj/effect/turf_decal/corner/opaque/white/full,
 /mob/living/simple_animal/hostile/zombie/kudzu{
@@ -3615,14 +3615,14 @@
 "no" = (
 /obj/structure/railing,
 /obj/machinery/conveyor_switch{
-	pixel_y = 13;
+	id = "singlabfurn";
 	pixel_x = -11;
-	id = "singlabfurn"
+	pixel_y = 13
 	},
 /obj/machinery/mineral/processing_unit_console{
+	machinedir = 9;
 	pixel_x = -32;
-	pixel_y = -4;
-	machinedir = 9
+	pixel_y = -4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/singularitylab/cargo)
@@ -3641,8 +3641,8 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/engineering)
@@ -3675,8 +3675,8 @@
 /area/ruin/space/has_grav/singularitylab/cargo)
 "nw" = (
 /obj/machinery/door/airlock{
-	name = "Private Quarters";
-	dir = 4
+	dir = 4;
+	name = "Private Quarters"
 	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
@@ -3706,8 +3706,8 @@
 	},
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -3716,14 +3716,14 @@
 	icon_state = "6-9"
 	},
 /obj/structure/flippedtable{
-	icon_state = "";
-	dir = 8
+	dir = 8;
+	icon_state = ""
 	},
 /obj/structure/spacevine/dense,
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -3761,14 +3761,14 @@
 	icon_state = "0-4"
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/singularitylab/reactor)
+/area/space/nearstation)
 "nM" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/mining{
-	name = "Cargo Bay";
-	dir = 4
+	dir = 4;
+	name = "Cargo Bay"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
@@ -3791,15 +3791,15 @@
 	},
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
 "nO" = (
 /obj/structure/sign/warning/biohazard{
-	pixel_y = 5;
-	pixel_x = 32
+	pixel_x = 32;
+	pixel_y = 5
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
@@ -3828,8 +3828,8 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -3848,8 +3848,8 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -3960,7 +3960,7 @@
 	icon_state = "2-8"
 	},
 /turf/open/space/basic,
-/area/ruin/space/has_grav/singularitylab/reactor)
+/area/space/nearstation)
 "oq" = (
 /obj/structure/table/reinforced,
 /obj/structure/window/reinforced{
@@ -3993,8 +3993,8 @@
 /obj/structure/spacevine/dense,
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -4082,8 +4082,8 @@
 /obj/structure/closet/emcloset,
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -4094,8 +4094,8 @@
 	},
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -4131,8 +4131,8 @@
 	},
 /obj/structure/table/wood/fancy/blue,
 /obj/structure/fluff/beach_umbrella{
-	pixel_y = 16;
-	pixel_x = -5
+	pixel_x = -5;
+	pixel_y = 16
 	},
 /obj/structure/spacevine,
 /obj/machinery/light/floor,
@@ -4158,7 +4158,7 @@
 	},
 /obj/item/book/manual/wiki/engineering_singulo_tesla,
 /turf/open/space/basic,
-/area/ruin/space/has_grav/singularitylab/reactor)
+/area/space/nearstation)
 "pe" = (
 /obj/machinery/light/directional/north,
 /turf/open/floor/engine,
@@ -4230,8 +4230,8 @@
 /mob/living/simple_animal/hostile/venus_human_trap,
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -4246,7 +4246,7 @@
 	icon_state = "1-4"
 	},
 /turf/open/floor/engine/hull,
-/area/ruin/space/has_grav/singularitylab/reactor)
+/area/space/nearstation)
 "px" = (
 /obj/item/tank/internals/oxygen,
 /obj/structure/spacevine,
@@ -4259,7 +4259,7 @@
 	icon_state = "0-2"
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/singularitylab/reactor)
+/area/space/nearstation)
 "pC" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/box,
@@ -4412,8 +4412,8 @@
 	},
 /obj/structure/table/wood/fancy/cyan,
 /obj/structure/fluff/beach_umbrella{
-	pixel_y = 16;
-	pixel_x = -5
+	pixel_x = -5;
+	pixel_y = 16
 	},
 /obj/structure/spacevine,
 /obj/machinery/light/floor,
@@ -4428,7 +4428,7 @@
 	icon_state = "2-8"
 	},
 /turf/open/space/basic,
-/area/ruin/space/has_grav/singularitylab/reactor)
+/area/space/nearstation)
 "qk" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
@@ -4453,8 +4453,8 @@
 	},
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -4546,8 +4546,8 @@
 /obj/structure/spacevine/dense,
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -4592,7 +4592,7 @@
 	},
 /obj/structure/lattice/catwalk,
 /turf/open/space/basic,
-/area/ruin/space/has_grav/singularitylab/reactor)
+/area/space/nearstation)
 "qZ" = (
 /obj/effect/turf_decal/techfloor,
 /obj/effect/turf_decal/techfloor{
@@ -4610,12 +4610,12 @@
 	dir = 4
 	},
 /obj/structure/railing/corner{
-	pixel_y = 2;
-	pixel_x = -3
+	pixel_x = -3;
+	pixel_y = 2
 	},
 /obj/structure/railing/corner{
-	pixel_y = 23;
-	pixel_x = -3
+	pixel_x = -3;
+	pixel_y = 23
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -4655,8 +4655,8 @@
 	},
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -4677,8 +4677,8 @@
 	},
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -4709,8 +4709,8 @@
 /area/ruin/space/has_grav/singularitylab/cargo)
 "rs" = (
 /obj/effect/decal/cleanable/blood/drip{
-	pixel_y = 2;
-	pixel_x = 2
+	pixel_x = 2;
+	pixel_y = 2
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab)
@@ -4736,8 +4736,8 @@
 /obj/machinery/atmospherics/components/unary/outlet_injector/on,
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -4759,7 +4759,7 @@
 	icon_state = "0-2"
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/singularitylab/reactor)
+/area/space/nearstation)
 "rG" = (
 /obj/effect/turf_decal/corner/opaque/white/full,
 /obj/machinery/vending/cola/pwr_game,
@@ -4840,13 +4840,13 @@
 	pixel_x = -32
 	},
 /obj/structure/spacevine/dense{
-	pixel_y = 32;
-	pixel_x = -32
+	pixel_x = -32;
+	pixel_y = 32
 	},
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -4870,8 +4870,8 @@
 	pixel_y = -32
 	},
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -4885,8 +4885,8 @@
 /obj/structure/spacevine,
 /obj/machinery/vending/wardrobe/chef_wardrobe,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -4902,8 +4902,8 @@
 	icon_state = "6-10"
 	},
 /obj/structure/flippedtable{
-	icon_state = "";
-	dir = 8
+	dir = 8;
+	icon_state = ""
 	},
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 1
@@ -4944,13 +4944,13 @@
 	pixel_x = 32
 	},
 /obj/structure/spacevine/dense{
-	pixel_y = 32;
-	pixel_x = 32
+	pixel_x = 32;
+	pixel_y = 32
 	},
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -4974,8 +4974,8 @@
 /obj/structure/spacevine,
 /obj/structure/flora/ausbushes/stalkybush,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -5003,8 +5003,8 @@
 	pixel_y = -32
 	},
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -5044,8 +5044,8 @@
 	},
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -5126,8 +5126,8 @@
 	icon_state = "5-9"
 	},
 /obj/structure/flippedtable{
-	icon_state = "";
-	dir = 8
+	dir = 8;
+	icon_state = ""
 	},
 /obj/effect/turf_decal/siding/thinplating,
 /turf/open/floor/plasteel,
@@ -5152,8 +5152,8 @@
 	},
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -5179,7 +5179,7 @@
 	icon_state = "0-9"
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/singularitylab/reactor)
+/area/space/nearstation)
 "tL" = (
 /obj/structure/cable{
 	icon_state = "5-9"
@@ -5207,8 +5207,8 @@
 /obj/structure/table,
 /obj/item/paper,
 /obj/item/pen{
-	pixel_y = 2;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = 2
 	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ruin/space/has_grav/singularitylab/cargo)
@@ -5231,8 +5231,8 @@
 /area/ruin/space/has_grav/singularitylab/lab)
 "uk" = (
 /obj/machinery/door/poddoor{
-	id = "singlabhanger";
-	dir = 4
+	dir = 4;
+	id = "singlabhanger"
 	},
 /turf/open/floor/engine,
 /area/ruin/space/has_grav/singularitylab)
@@ -5283,8 +5283,8 @@
 /mob/living/simple_animal/hostile/venus_human_trap,
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -5422,8 +5422,8 @@
 	},
 /obj/structure/spacevine/dense,
 /obj/structure/spacevine/dense{
-	pixel_y = 32;
-	pixel_x = 32
+	pixel_x = 32;
+	pixel_y = 32
 	},
 /obj/structure/spacevine/dense{
 	pixel_x = 32
@@ -5453,9 +5453,9 @@
 /obj/effect/turf_decal/box,
 /obj/machinery/light/directional/north,
 /obj/item/gun/energy/lasercannon/unrestricted{
-	name = "NT-LS-1013";
+	desc = "An advanced laser cannon, a laser etched inscription in the handle states 'NT-LS-1013'. The casing is made of a lightweight alloy.";
 	icon_state = "pulse";
-	desc = "An advanced laser cannon, a laser etched inscription in the handle states 'NT-LS-1013'. The casing is made of a lightweight alloy."
+	name = "NT-LS-1013"
 	},
 /obj/item/gun/energy/laser/iot,
 /obj/item/gun/energy/laser/iot{
@@ -5482,8 +5482,8 @@
 	},
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -5525,8 +5525,8 @@
 	},
 /obj/structure/spacevine/dense,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -5595,8 +5595,8 @@
 /area/ruin/space/has_grav/singularitylab/civvie)
 "vy" = (
 /obj/machinery/door/airlock/security{
-	name = "Front Office";
-	dir = 8
+	dir = 8;
+	name = "Front Office"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
@@ -5641,8 +5641,8 @@
 /area/ruin/space/has_grav/singularitylab/cargo)
 "vT" = (
 /obj/structure/flippedtable{
-	icon_state = "";
-	dir = 4
+	dir = 4;
+	icon_state = ""
 	},
 /obj/effect/turf_decal/siding/thinplating,
 /obj/structure/cable{
@@ -5666,13 +5666,13 @@
 	pixel_x = -32
 	},
 /obj/structure/spacevine/dense{
-	pixel_y = -32;
-	pixel_x = -32
+	pixel_x = -32;
+	pixel_y = -32
 	},
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -5691,8 +5691,8 @@
 	icon_state = "1-2"
 	},
 /obj/structure/flippedtable{
-	icon_state = "";
-	dir = 2
+	dir = 2;
+	icon_state = ""
 	},
 /turf/open/floor/carpet/nanoweave/purple,
 /area/ruin/space/has_grav/singularitylab/lab)
@@ -5710,8 +5710,8 @@
 /obj/structure/spacevine,
 /obj/machinery/vending/dinnerware,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -5806,8 +5806,8 @@
 /area/ruin/space/has_grav/singularitylab/cargo)
 "wu" = (
 /obj/machinery/door/airlock/external{
-	name = "Engine Access";
-	dir = 4
+	dir = 4;
+	name = "Engine Access"
 	},
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -5832,15 +5832,15 @@
 	pixel_x = 32
 	},
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
 "ww" = (
 /obj/machinery/field/generator/anchored,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/singularitylab/reactor)
+/area/space/nearstation)
 "wx" = (
 /obj/structure/transit_tube/curved{
 	dir = 1
@@ -5894,8 +5894,8 @@
 	},
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -5925,8 +5925,8 @@
 	pixel_y = -32
 	},
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -5949,7 +5949,7 @@
 	icon_state = "1-8"
 	},
 /turf/open/space/basic,
-/area/ruin/space/has_grav/singularitylab/reactor)
+/area/space/nearstation)
 "wW" = (
 /obj/structure/railing{
 	dir = 4;
@@ -5987,10 +5987,10 @@
 	dir = 4
 	},
 /obj/structure/chair/stool/bar{
-	name = "picnic stool";
 	dir = 8;
-	pixel_y = 4;
-	pixel_x = -10
+	name = "picnic stool";
+	pixel_x = -10;
+	pixel_y = 4
 	},
 /obj/structure/spacevine,
 /turf/open/floor/wood,
@@ -6044,13 +6044,13 @@
 	icon_state = "4-8"
 	},
 /turf/open/space/basic,
-/area/ruin/space/has_grav/singularitylab/reactor)
+/area/space/nearstation)
 "xn" = (
 /obj/structure/spacevine/dense,
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -6059,15 +6059,15 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
 "xr" = (
 /obj/machinery/door/airlock{
-	name = "Bathroom";
-	dir = 4
+	dir = 4;
+	name = "Bathroom"
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/lab)
@@ -6170,8 +6170,8 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/door/poddoor{
-	id = "singlabhanger";
-	dir = 4
+	dir = 4;
+	id = "singlabhanger"
 	},
 /turf/open/floor/engine,
 /area/ruin/space/has_grav/singularitylab)
@@ -6221,8 +6221,8 @@
 /obj/effect/decal/cleanable/blood/old,
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -6245,13 +6245,13 @@
 	pixel_y = 32
 	},
 /obj/structure/spacevine/dense{
-	pixel_y = 32;
-	pixel_x = -32
+	pixel_x = -32;
+	pixel_y = 32
 	},
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -6369,8 +6369,8 @@
 /obj/machinery/turretid,
 /obj/structure/table/reinforced,
 /obj/item/paper_bin{
-	pixel_y = -14;
-	pixel_x = 8
+	pixel_x = 8;
+	pixel_y = -14
 	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ruin/space/has_grav/singularitylab/cargo)
@@ -6397,8 +6397,8 @@
 	dir = 4
 	},
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -6547,7 +6547,7 @@
 	icon_state = "2-4"
 	},
 /turf/open/space/basic,
-/area/ruin/space/has_grav/singularitylab/reactor)
+/area/space/nearstation)
 "yZ" = (
 /obj/structure/cable{
 	icon_state = "6-9"
@@ -6574,8 +6574,8 @@
 	},
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -6661,8 +6661,8 @@
 /obj/structure/spacevine/dense,
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -6751,8 +6751,8 @@
 	zombiejob = "Assistant"
 	},
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -6765,15 +6765,15 @@
 	pixel_y = -32
 	},
 /obj/structure/spacevine/dense{
-	pixel_y = -32;
-	pixel_x = -32
+	pixel_x = -32;
+	pixel_y = -32
 	},
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -6865,7 +6865,7 @@
 /area/ruin/space/has_grav/singularitylab/engineering)
 "zP" = (
 /turf/open/floor/engine/hull,
-/area/ruin/space/has_grav/singularitylab/reactor)
+/area/space/nearstation)
 "zR" = (
 /obj/structure/spacevine/dense,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
@@ -6918,8 +6918,8 @@
 	dir = 1
 	},
 /obj/structure/flippedtable{
-	icon_state = "";
-	dir = 8
+	dir = 8;
+	icon_state = ""
 	},
 /obj/effect/turf_decal/corner/opaque/purple{
 	dir = 8
@@ -7017,8 +7017,8 @@
 /area/ruin/space/has_grav/singularitylab/lab)
 "Ay" = (
 /obj/effect/decal/cleanable/blood/drip{
-	pixel_y = 3;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = 3
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab)
@@ -7048,8 +7048,8 @@
 /area/ruin/space/has_grav/singularitylab/lab)
 "AD" = (
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -7096,8 +7096,8 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -7179,8 +7179,8 @@
 /mob/living/simple_animal/hostile/venus_human_trap,
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -7254,8 +7254,8 @@
 	name = "To Environment"
 	},
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -7268,8 +7268,8 @@
 /obj/structure/spacevine/dense,
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -7300,8 +7300,8 @@
 	},
 /obj/effect/turf_decal/siding/thinplating,
 /obj/effect/decal/cleanable/blood{
-	icon_state = "gib3";
-	dir = 4
+	dir = 4;
+	icon_state = "gib3"
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/cargo)
@@ -7324,8 +7324,8 @@
 /area/ruin/space/has_grav/singularitylab/civvie)
 "BP" = (
 /obj/machinery/door/poddoor{
-	id = "singlablas1";
-	dir = 4
+	dir = 4;
+	id = "singlablas1"
 	},
 /turf/open/floor/engine,
 /area/ruin/space/has_grav/singularitylab/lab)
@@ -7543,8 +7543,8 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -7554,7 +7554,7 @@
 	icon_state = "1-8"
 	},
 /turf/open/space/basic,
-/area/ruin/space/has_grav/singularitylab/reactor)
+/area/space/nearstation)
 "CC" = (
 /obj/structure/transit_tube/curved/flipped,
 /obj/structure/cable{
@@ -7575,8 +7575,8 @@
 "CE" = (
 /obj/structure/flippedtable,
 /obj/structure/spacevine/dense{
-	pixel_y = 32;
-	pixel_x = -31
+	pixel_x = -31;
+	pixel_y = 32
 	},
 /obj/structure/spacevine,
 /turf/open/floor/plasteel/tech/techmaint,
@@ -7614,7 +7614,7 @@
 	icon_state = "1-6"
 	},
 /turf/open/space/basic,
-/area/ruin/space/has_grav/singularitylab/reactor)
+/area/space/nearstation)
 "CL" = (
 /obj/structure/transit_tube/station/dispenser{
 	dir = 4
@@ -7623,12 +7623,12 @@
 	icon_state = "1-2"
 	},
 /obj/structure/railing/corner{
-	pixel_y = 23;
-	pixel_x = -3
+	pixel_x = -3;
+	pixel_y = 23
 	},
 /obj/structure/railing/corner{
-	pixel_y = 2;
-	pixel_x = -3
+	pixel_x = -3;
+	pixel_y = 2
 	},
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -7667,8 +7667,8 @@
 	dir = 4
 	},
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -7765,7 +7765,7 @@
 	icon_state = "4-8"
 	},
 /turf/open/space/basic,
-/area/ruin/space/has_grav/singularitylab/reactor)
+/area/space/nearstation)
 "Di" = (
 /obj/structure/spacevine,
 /turf/open/floor/plasteel,
@@ -7777,24 +7777,24 @@
 /obj/structure/spacevine/dense,
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
 "Dn" = (
 /obj/structure/flippedtable{
-	icon_state = "";
-	dir = 1
+	dir = 1;
+	icon_state = ""
 	},
 /obj/structure/flippedtable{
-	icon_state = "";
-	dir = 8
+	dir = 8;
+	icon_state = ""
 	},
 /obj/structure/spacevine/dense,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -7870,8 +7870,8 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -7968,8 +7968,8 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/science{
-	name = "High Energy Applications Research Facility";
-	dir = 4
+	dir = 4;
+	name = "High Energy Applications Research Facility"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/singularitylab/lab)
@@ -8111,8 +8111,8 @@
 /obj/structure/spacevine/dense,
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -8170,8 +8170,8 @@
 	},
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -8236,10 +8236,10 @@
 /obj/structure/table,
 /obj/machinery/button/door{
 	dir = 8;
-	pixel_y = 7;
-	pixel_x = -4;
 	id = "singlablast1";
-	name = "Testing Chamber Control"
+	name = "Testing Chamber Control";
+	pixel_x = -4;
+	pixel_y = 7
 	},
 /obj/effect/turf_decal/corner/opaque/white/full,
 /turf/open/floor/plasteel,
@@ -8307,13 +8307,13 @@
 	pixel_y = -32
 	},
 /obj/structure/spacevine/dense{
-	pixel_y = -32;
-	pixel_x = 32
+	pixel_x = 32;
+	pixel_y = -32
 	},
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -8477,7 +8477,7 @@
 "FA" = (
 /obj/item/wrench,
 /turf/open/space/basic,
-/area/ruin/space/has_grav/singularitylab/reactor)
+/area/space/nearstation)
 "FB" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "Testing Lab"
@@ -8518,8 +8518,8 @@
 	icon_state = "4-9"
 	},
 /obj/structure/flippedtable{
-	icon_state = "";
-	dir = 8
+	dir = 8;
+	icon_state = ""
 	},
 /obj/structure/spacevine,
 /turf/open/floor/plasteel/tech/techmaint,
@@ -8533,8 +8533,8 @@
 /area/ruin/space/has_grav/singularitylab/engineering)
 "FI" = (
 /turf/closed/wall{
-	name = "structural support";
-	desc = "A huge chunk of metal holding the roof of the asteroid at bay"
+	desc = "A huge chunk of metal holding the roof of the asteroid at bay";
+	name = "structural support"
 	},
 /area/ruin/space/has_grav/singularitylab)
 "FL" = (
@@ -8620,8 +8620,8 @@
 /area/ruin/space/has_grav/singularitylab/cargo)
 "Ge" = (
 /obj/structure/flippedtable{
-	icon_state = "";
-	dir = 8
+	dir = 8;
+	icon_state = ""
 	},
 /obj/structure/spacevine,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
@@ -8663,7 +8663,7 @@
 	anchored = 1
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/singularitylab/reactor)
+/area/space/nearstation)
 "Gr" = (
 /obj/structure/cable{
 	icon_state = "1-10"
@@ -8682,8 +8682,8 @@
 "Gs" = (
 /obj/structure/spacevine/dense,
 /obj/structure/spacevine/dense{
-	pixel_y = 32;
-	pixel_x = 32
+	pixel_x = 32;
+	pixel_y = 32
 	},
 /obj/structure/spacevine/dense{
 	pixel_x = 32
@@ -8694,8 +8694,8 @@
 /obj/machinery/portable_atmospherics/scrubber/huge,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -8708,8 +8708,8 @@
 	dir = 9
 	},
 /obj/structure/flippedtable{
-	icon_state = "";
-	dir = 8
+	dir = 8;
+	icon_state = ""
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
@@ -8737,8 +8737,8 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/external{
-	name = "Interior Mine";
-	dir = 4
+	dir = 4;
+	name = "Interior Mine"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/singularitylab/cargo)
@@ -8805,7 +8805,7 @@
 	icon_state = "1-4"
 	},
 /turf/open/space/basic,
-/area/ruin/space/has_grav/singularitylab/reactor)
+/area/space/nearstation)
 "GJ" = (
 /obj/effect/decal/cleanable/insectguts,
 /turf/open/floor/plating/asteroid,
@@ -8879,8 +8879,8 @@
 	},
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -8975,8 +8975,8 @@
 	},
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -8986,12 +8986,12 @@
 	pixel_y = 32
 	},
 /obj/structure/spacevine/dense{
-	pixel_y = 32;
-	pixel_x = -31
+	pixel_x = -31;
+	pixel_y = 32
 	},
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -9013,7 +9013,7 @@
 	icon_state = "1-2"
 	},
 /turf/open/space/basic,
-/area/ruin/space/has_grav/singularitylab/reactor)
+/area/space/nearstation)
 "HD" = (
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 10
@@ -9086,8 +9086,8 @@
 	pixel_x = 32
 	},
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -9107,8 +9107,8 @@
 	dir = 6
 	},
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -9144,8 +9144,8 @@
 	},
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -9181,12 +9181,12 @@
 	icon_state = "1-2"
 	},
 /turf/open/space/basic,
-/area/ruin/space/has_grav/singularitylab/reactor)
+/area/space/nearstation)
 "Ii" = (
 /obj/machinery/door/airlock{
 	name = "Private Quarters"
 	},
-/turf/closed/mineral/random/asteroid,
+/turf/closed/mineral/random,
 /area/ruin/space/has_grav)
 "Ij" = (
 /obj/effect/turf_decal/siding/thinplating{
@@ -9239,7 +9239,7 @@
 /obj/machinery/power/solar,
 /obj/structure/cable/yellow,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/singularitylab/reactor)
+/area/space/nearstation)
 "Iu" = (
 /obj/structure/transit_tube/diagonal{
 	dir = 4
@@ -9325,7 +9325,7 @@
 	icon_state = "0-2"
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/singularitylab/reactor)
+/area/space/nearstation)
 "IO" = (
 /obj/structure/railing{
 	dir = 8;
@@ -9367,7 +9367,7 @@
 /obj/machinery/power/rad_collector/anchored,
 /obj/structure/cable/yellow,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/singularitylab/reactor)
+/area/space/nearstation)
 "IW" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -9586,9 +9586,9 @@
 	pixel_y = 32
 	},
 /obj/structure/chair/office{
+	desc = "Technologically enhanced for the optimal research position.";
 	dir = 8;
-	name = "science chair";
-	desc = "Technologically enhanced for the optimal research position."
+	name = "science chair"
 	},
 /turf/open/floor/carpet/nanoweave/purple,
 /area/ruin/space/has_grav/singularitylab/lab)
@@ -9609,8 +9609,8 @@
 	zombiejob = "Assistant"
 	},
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -9666,8 +9666,8 @@
 "Kc" = (
 /obj/structure/spacevine,
 /turf/closed/wall{
-	name = "structural support";
-	desc = "A huge chunk of metal holding the roof of the asteroid at bay"
+	desc = "A huge chunk of metal holding the roof of the asteroid at bay";
+	name = "structural support"
 	},
 /area/ruin/space/has_grav/singularitylab)
 "Ke" = (
@@ -9702,12 +9702,12 @@
 /area/ruin/space/has_grav/singularitylab)
 "Kr" = (
 /obj/item/gun/energy/ionrifle/carbine{
-	pixel_y = 5;
-	pixel_x = 2;
-	name = "ion projector";
 	desc = "The Ion Projector is contained within a sleek metal case. Engraved on the handle are the letters S.H. The stock is warm to the touch";
-	selfcharge = 1;
-	dry_fire_text = "RECHARGING"
+	dry_fire_text = "RECHARGING";
+	name = "ion projector";
+	pixel_x = 2;
+	pixel_y = 5;
+	selfcharge = 1
 	},
 /obj/item/screwdriver{
 	pixel_y = -6
@@ -9779,8 +9779,8 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -9928,8 +9928,8 @@
 	pixel_x = 32
 	},
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -10149,8 +10149,8 @@
 "Mk" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -10193,7 +10193,7 @@
 	icon_state = "1-4"
 	},
 /turf/open/floor/engine/hull,
-/area/ruin/space/has_grav/singularitylab/reactor)
+/area/space/nearstation)
 "MA" = (
 /obj/effect/turf_decal/corner/opaque/white/full,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
@@ -10219,7 +10219,7 @@
 /obj/machinery/power/emitter/welded,
 /obj/structure/cable/yellow,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/singularitylab/reactor)
+/area/space/nearstation)
 "MG" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
@@ -10271,7 +10271,7 @@
 	icon_state = "0-2"
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/singularitylab/reactor)
+/area/space/nearstation)
 "MQ" = (
 /obj/structure/spacevine/dense,
 /obj/machinery/power/apc/auto_name/directional/north{
@@ -10282,8 +10282,8 @@
 	},
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -10327,8 +10327,8 @@
 /area/ruin/space/has_grav/singularitylab/reactor)
 "MW" = (
 /obj/machinery/door/airlock{
-	name = "Private Quarters";
-	dir = 8
+	dir = 8;
+	name = "Private Quarters"
 	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
@@ -10455,7 +10455,7 @@
 "Nu" = (
 /obj/structure/lattice,
 /turf/open/space/basic,
-/area/ruin/space/has_grav/singularitylab/reactor)
+/area/space/nearstation)
 "Nw" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -10473,7 +10473,7 @@
 	icon_state = "0-2"
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/singularitylab/reactor)
+/area/space/nearstation)
 "NH" = (
 /obj/effect/turf_decal/corner/opaque/white/full,
 /obj/effect/turf_decal/industrial/warning{
@@ -10503,8 +10503,8 @@
 	dir = 8
 	},
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -10537,10 +10537,10 @@
 /area/ruin/space/has_grav/singularitylab/civvie)
 "NN" = (
 /obj/structure/chair/stool/bar{
-	name = "picnic stool";
 	dir = 4;
-	pixel_y = 7;
-	pixel_x = 9
+	name = "picnic stool";
+	pixel_x = 9;
+	pixel_y = 7
 	},
 /obj/effect/turf_decal/siding/wood/end{
 	dir = 8
@@ -10562,8 +10562,8 @@
 	},
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -10586,14 +10586,14 @@
 	pixel_y = -32
 	},
 /obj/structure/spacevine/dense{
-	pixel_y = 32;
-	pixel_x = 32
+	pixel_x = 32;
+	pixel_y = 32
 	},
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -10656,8 +10656,8 @@
 "Oe" = (
 /obj/structure/sink{
 	dir = 4;
-	pixel_y = 4;
-	pixel_x = -14
+	pixel_x = -14;
+	pixel_y = 4
 	},
 /obj/structure/mirror{
 	pixel_x = -29
@@ -10687,8 +10687,8 @@
 "Ol" = (
 /obj/structure/spacevine,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -10757,8 +10757,8 @@
 /area/ruin/space/has_grav/singularitylab)
 "Oy" = (
 /turf/closed/wall{
-	name = "structural support";
-	desc = "A huge chunk of metal holding the roof of the asteroid at bay"
+	desc = "A huge chunk of metal holding the roof of the asteroid at bay";
+	name = "structural support"
 	},
 /area/ruin/space/has_grav/singularitylab/hangar)
 "Oz" = (
@@ -10832,12 +10832,12 @@
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/corner/opaque/white/full,
 /obj/machinery/recharger{
-	pixel_y = -5;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = -5
 	},
 /obj/item/reagent_containers/food/drinks/soda_cans/dr_gibb{
-	pixel_y = 2;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = 2
 	},
 /obj/effect/turf_decal/corner/opaque/purple{
 	dir = 9
@@ -10924,8 +10924,8 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -10942,8 +10942,8 @@
 /area/ruin/space/has_grav/singularitylab)
 "OZ" = (
 /obj/structure/flippedtable{
-	icon_state = "";
-	dir = 8
+	dir = 8;
+	icon_state = ""
 	},
 /obj/item/flashlight/seclite,
 /turf/open/floor/plating/asteroid,
@@ -10957,7 +10957,7 @@
 	},
 /obj/structure/lattice/catwalk,
 /turf/open/space/basic,
-/area/ruin/space/has_grav/singularitylab/reactor)
+/area/space/nearstation)
 "Pd" = (
 /obj/structure/bed,
 /obj/item/bedsheet/nanotrasen,
@@ -11013,8 +11013,8 @@
 /obj/structure/spacevine,
 /obj/structure/spacevine/dense,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -11108,8 +11108,8 @@
 	},
 /obj/structure/table/wood/fancy/purple,
 /obj/structure/fluff/beach_umbrella{
-	pixel_y = 16;
-	pixel_x = -5
+	pixel_x = -5;
+	pixel_y = 16
 	},
 /obj/machinery/jukebox/boombox,
 /obj/structure/spacevine,
@@ -11249,8 +11249,8 @@
 /obj/structure/spacevine,
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -11261,8 +11261,8 @@
 /obj/structure/spacevine/dense,
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -11275,7 +11275,7 @@
 	icon_state = "1-2"
 	},
 /turf/open/space/basic,
-/area/ruin/space/has_grav/singularitylab/reactor)
+/area/space/nearstation)
 "Qi" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
@@ -11294,23 +11294,29 @@
 	icon_state = "4-8"
 	},
 /turf/open/space/basic,
-/area/ruin/space/has_grav/singularitylab/reactor)
+/area/space/nearstation)
+"Ql" = (
+/obj/item/banner/engineering{
+	anchored = 1
+	},
+/turf/open/floor/engine/hull,
+/area/space/nearstation)
 "Qm" = (
 /obj/structure/spacevine/dense,
 /obj/structure/spacevine/dense{
 	pixel_y = 32
 	},
 /obj/structure/spacevine/dense{
-	pixel_y = 32;
-	pixel_x = -32
+	pixel_x = -32;
+	pixel_y = 32
 	},
 /obj/structure/spacevine/dense{
 	pixel_x = -32
 	},
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -11322,8 +11328,8 @@
 /obj/structure/spacevine/dense,
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -11338,8 +11344,8 @@
 /mob/living/simple_animal/hostile/venus_human_trap,
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -11355,8 +11361,8 @@
 "Qw" = (
 /obj/structure/table,
 /obj/item/clipboard{
-	pixel_y = 7;
-	pixel_x = 9
+	pixel_x = 9;
+	pixel_y = 7
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/singularitylab/engineering)
@@ -11404,7 +11410,7 @@
 /turf/open/floor/plating/asteroid,
 /area/ruin/space/has_grav/singularitylab)
 "QB" = (
-/turf/closed/mineral/random/asteroid,
+/turf/closed/mineral/random,
 /area/ruin/space/has_grav)
 "QC" = (
 /obj/structure/cable{
@@ -11425,8 +11431,8 @@
 /obj/machinery/light/directional/north,
 /obj/structure/flora/ausbushes/stalkybush,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -11455,8 +11461,8 @@
 /obj/effect/decal/cleanable/blood/old,
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -11489,8 +11495,8 @@
 	zombiejob = "Assistant"
 	},
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -11564,8 +11570,8 @@
 /obj/structure/spacevine,
 /mob/living/simple_animal/hostile/venus_human_trap,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -11701,8 +11707,8 @@
 "RN" = (
 /obj/structure/toilet{
 	dir = 4;
-	pixel_y = 6;
-	pixel_x = -6
+	pixel_x = -6;
+	pixel_y = 6
 	},
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel,
@@ -11748,8 +11754,8 @@
 	},
 /obj/machinery/portable_atmospherics/scrubber/huge,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -11763,8 +11769,8 @@
 	},
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -11805,7 +11811,7 @@
 "Sh" = (
 /obj/item/stack/cable_coil/cut/yellow,
 /turf/open/space/basic,
-/area/ruin/space/has_grav/singularitylab/reactor)
+/area/space/nearstation)
 "Si" = (
 /obj/structure/spacevine/dense,
 /obj/structure/spacevine{
@@ -11814,8 +11820,8 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -11830,8 +11836,8 @@
 "Sm" = (
 /obj/structure/toilet{
 	dir = 8;
-	pixel_y = 5;
-	pixel_x = 6
+	pixel_x = 6;
+	pixel_y = 5
 	},
 /obj/structure/window/reinforced/tinted/frosted{
 	dir = 1
@@ -11910,12 +11916,12 @@
 	dir = 4
 	},
 /obj/structure/railing/corner{
-	pixel_y = 23;
-	pixel_x = -3
+	pixel_x = -3;
+	pixel_y = 23
 	},
 /obj/structure/railing/corner{
-	pixel_y = 2;
-	pixel_x = -3
+	pixel_x = -3;
+	pixel_y = 2
 	},
 /obj/structure/transit_tube/station/dispenser/flipped{
 	dir = 8
@@ -11930,8 +11936,8 @@
 /area/ruin/space/has_grav/singularitylab)
 "SH" = (
 /obj/structure/chair/stool/bar{
-	name = "picnic stool";
 	dir = 1;
+	name = "picnic stool";
 	pixel_y = 16
 	},
 /obj/effect/turf_decal/siding/wood/end,
@@ -12018,8 +12024,8 @@
 	},
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -12049,8 +12055,8 @@
 /obj/structure/spacevine,
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -12110,8 +12116,8 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -12220,7 +12226,7 @@
 	icon_state = "0-10"
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/singularitylab/reactor)
+/area/space/nearstation)
 "TR" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -12306,10 +12312,10 @@
 /area/ruin/space/has_grav/singularitylab)
 "Uf" = (
 /obj/structure/chair/stool/bar{
-	name = "picnic stool";
 	dir = 8;
-	pixel_y = 4;
-	pixel_x = -10
+	name = "picnic stool";
+	pixel_x = -10;
+	pixel_y = 4
 	},
 /obj/effect/turf_decal/siding/wood/end{
 	dir = 4
@@ -12448,8 +12454,8 @@
 /obj/effect/decal/cleanable/blood/old,
 /obj/effect/gibspawner,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -12550,8 +12556,8 @@
 	},
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -12622,8 +12628,8 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -12634,16 +12640,16 @@
 	},
 /obj/structure/spacevine,
 /obj/item/assembly/igniter{
-	pixel_y = 3;
-	pixel_x = 7
+	pixel_x = 7;
+	pixel_y = 3
 	},
 /obj/item/assembly/igniter{
-	pixel_y = -6;
-	pixel_x = 2
+	pixel_x = 2;
+	pixel_y = -6
 	},
 /obj/item/assembly/igniter{
-	pixel_y = 3;
-	pixel_x = -7
+	pixel_x = -7;
+	pixel_y = 3
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/singularitylab/engineering)
@@ -12653,8 +12659,8 @@
 /area/ruin/space/has_grav/singularitylab/civvie)
 "VF" = (
 /obj/machinery/door/airlock/public/glass{
-	name = "Hydroponics";
-	dir = 4
+	dir = 4;
+	name = "Hydroponics"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -12813,8 +12819,8 @@
 /area/ruin/space/has_grav/singularitylab/civvie)
 "Wg" = (
 /obj/effect/decal/cleanable/blood/drip{
-	pixel_y = 11;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = 11
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab)
@@ -12850,11 +12856,11 @@
 	},
 /obj/effect/turf_decal/siding/thinplating,
 /obj/item/gun/energy/e_gun/smg{
-	pixel_y = 6;
-	pixel_x = 5;
-	name = "\improper Modified E-TAR SMG";
 	dry_fire_sound = 'sound/items/ding.ogg';
-	dry_fire_text = "ding"
+	dry_fire_text = "ding";
+	name = "\improper Modified E-TAR SMG";
+	pixel_x = 5;
+	pixel_y = 6
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab)
@@ -12899,12 +12905,12 @@
 	},
 /obj/structure/table,
 /obj/item/reagent_containers/food/drinks/soda_cans/sol_dry{
-	pixel_y = -3;
-	pixel_x = -6
+	pixel_x = -6;
+	pixel_y = -3
 	},
 /obj/item/reagent_containers/food/drinks/soda_cans/sodawater{
-	pixel_y = 8;
-	pixel_x = 8
+	pixel_x = 8;
+	pixel_y = 8
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/lab)
@@ -13047,8 +13053,8 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/mining{
-	name = "Cargo Bay";
-	dir = 4
+	dir = 4;
+	name = "Cargo Bay"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
@@ -13074,8 +13080,8 @@
 	},
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -13097,8 +13103,8 @@
 /area/ruin/space/has_grav/singularitylab)
 "Xa" = (
 /obj/machinery/door/airlock/engineering{
-	name = "Power Control";
-	dir = 8
+	dir = 8;
+	name = "Power Control"
 	},
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -13160,8 +13166,8 @@
 /area/ruin/space/has_grav/singularitylab/cargo)
 "Xn" = (
 /obj/machinery/door/airlock{
-	name = "Barracks";
-	dir = 4
+	dir = 4;
+	name = "Barracks"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -13175,8 +13181,8 @@
 /obj/machinery/hydroponics/constructable,
 /obj/structure/spacevine,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -13191,8 +13197,8 @@
 	},
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -13207,8 +13213,8 @@
 /area/ruin/space/has_grav/singularitylab/cargo)
 "Xw" = (
 /obj/structure/flippedtable{
-	icon_state = "";
-	dir = 8
+	dir = 8;
+	icon_state = ""
 	},
 /turf/open/floor/plating/asteroid,
 /area/ruin/space/has_grav/singularitylab)
@@ -13273,8 +13279,8 @@
 	},
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -13369,8 +13375,8 @@
 /area/ruin/space/has_grav/singularitylab/lab)
 "Yo" = (
 /obj/machinery/door/poddoor{
-	id = "singlablas2";
-	dir = 4
+	dir = 4;
+	id = "singlablas2"
 	},
 /turf/open/floor/engine,
 /area/ruin/space/has_grav/singularitylab/lab)
@@ -13402,8 +13408,8 @@
 	dir = 10
 	},
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -13490,9 +13496,9 @@
 "YG" = (
 /obj/structure/lattice/catwalk,
 /obj/machinery/button/door{
+	dir = 8;
 	id = "singlabcargo2";
 	name = "Blast Door Control";
-	dir = 8;
 	pixel_x = 24
 	},
 /obj/structure/spacevine,
@@ -13520,7 +13526,7 @@
 	},
 /obj/structure/lattice,
 /turf/open/space/basic,
-/area/ruin/space/has_grav/singularitylab/reactor)
+/area/space/nearstation)
 "YN" = (
 /obj/structure/table,
 /obj/item/paper_bin,
@@ -13557,18 +13563,18 @@
 /obj/effect/turf_decal/box,
 /obj/machinery/light/directional/north,
 /obj/item/gun/energy/e_gun/smg{
-	pixel_y = 6;
-	pixel_x = 5;
-	name = "\improper Modified E-TAR SMG";
 	dry_fire_sound = 'sound/items/ding.ogg';
-	dry_fire_text = "ding"
+	dry_fire_text = "ding";
+	name = "\improper Modified E-TAR SMG";
+	pixel_x = 5;
+	pixel_y = 6
 	},
 /obj/item/gun/energy/e_gun/smg{
-	pixel_y = 6;
-	pixel_x = 5;
-	name = "\improper Modified E-TAR SMG";
 	dry_fire_sound = 'sound/items/ding.ogg';
-	dry_fire_text = "ding"
+	dry_fire_text = "ding";
+	name = "\improper Modified E-TAR SMG";
+	pixel_x = 5;
+	pixel_y = 6
 	},
 /obj/item/gun/energy/laser,
 /obj/item/gun/energy/laser,
@@ -13584,8 +13590,8 @@
 /obj/structure/spacevine/dense,
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -13617,8 +13623,8 @@
 /obj/structure/table,
 /obj/item/paper_bin,
 /obj/item/pen{
-	pixel_y = 2;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = 2
 	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ruin/space/has_grav/singularitylab/cargo)
@@ -13706,8 +13712,8 @@
 /area/ruin/space/has_grav/singularitylab)
 "Zx" = (
 /turf/closed/wall{
-	name = "structural support";
-	desc = "A huge chunk of metal holding the roof of the asteroid at bay"
+	desc = "A huge chunk of metal holding the roof of the asteroid at bay";
+	name = "structural support"
 	},
 /area/ruin/space/has_grav/singularitylab/cargo)
 "Zy" = (
@@ -18278,7 +18284,7 @@ QB
 pE
 Rs
 zP
-HR
+Ql
 qU
 aA
 aA
@@ -18298,7 +18304,7 @@ aA
 aA
 aA
 qU
-HR
+Ql
 zP
 yn
 pE
@@ -18981,7 +18987,7 @@ aA
 aA
 aA
 aA
-HR
+Ql
 aA
 aA
 aA

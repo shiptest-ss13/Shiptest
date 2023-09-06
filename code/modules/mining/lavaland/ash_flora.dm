@@ -26,8 +26,12 @@
 
 /obj/structure/flora/ash/Initialize()
 	. = ..()
-	base_icon = "[icon_state][rand(1, num_sprites)]"
-	icon_state = base_icon
+	if(num_sprites == 1) //stops unnecessary randomization of harvestable flora icons with only one variation. Remember to set num_sprites on your flora!
+		base_icon = "[icon_state]"
+		icon_state = base_icon
+	else
+		base_icon = "[icon_state][rand(1, num_sprites)]" //randomizing icons like this prevents the icon of the structure from loading properly in mapping tools. Works fine ingame.
+		icon_state = base_icon
 
 /obj/structure/flora/ash/proc/harvest(user)
 	if(harvested)
@@ -163,12 +167,12 @@
 	harvest_message_high = "You pluck quite a lot of curved fruit."
 	regrowth_time_low = 2400
 	regrowth_time_high = 5500
-	num_sprites = 2
+	num_sprites = 1
 
 /obj/structure/flora/ash/fern
 	name = "cave fern"
 	desc = "A species of fern with highly fibrous leaves."
-	icon_state = "fern" //needs new sprites.
+	icon_state = "cavefern" //needs new sprites.
 	harvested_name = "cave fern stems"
 	harvested_desc = "A few cave fern stems, missing their leaves."
 	harvest = /obj/item/reagent_containers/food/snacks/grown/ash_flora/fern
@@ -199,7 +203,7 @@
 /obj/structure/flora/ash/puce
 	name = "Pucestal Growth"
 	desc = "A collection of puce colored crystal growths."
-	icon_state = "puce"
+	icon_state = "pucetal"
 	harvested_name = "Pucestal fragments"
 	harvested_desc = "A few pucestal fragments, slowly regrowing."
 	harvest = /obj/item/reagent_containers/food/snacks/grown/ash_flora/puce
@@ -217,7 +221,7 @@
 	name = "mushroom shavings"
 	desc = "Some shavings from a tall mushroom. With enough, might serve as a bowl."
 	icon = 'icons/obj/lavaland/ash_flora.dmi'
-	icon_state = "mushroom_shavings"
+	icon_state = "l_mushroom"
 	w_class = WEIGHT_CLASS_TINY
 	resistance_flags = FLAMMABLE
 	max_integrity = 100
@@ -234,28 +238,28 @@
 /obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_leaf
 	name = "mushroom leaf"
 	desc = "A leaf, from a mushroom."
-	icon_state = "mushroom_leaf"
+	icon_state = "s_mushroom"
 	seed = /obj/item/seeds/lavaland/porcini
 	wine_power = 40
 
 /obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_cap
 	name = "mushroom cap"
 	desc = "The cap of a large mushroom."
-	icon_state = "mushroom_cap"
+	icon_state = "r_mushroom"
 	seed = /obj/item/seeds/lavaland/inocybe
 	wine_power = 70
 
 /obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_stem
 	name = "mushroom stem"
 	desc = "A long mushroom stem. It's slightly glowing."
-	icon_state = "mushroom_stem"
+	icon_state = "t_mushroom"
 	seed = /obj/item/seeds/lavaland/ember
 	wine_power = 60
 
 /obj/item/reagent_containers/food/snacks/grown/ash_flora/cactus_fruit
 	name = "cactus fruit"
 	desc = "A cactus fruit covered in a thick, reddish skin. And some ash."
-	icon_state = "cactus_fruit"
+	icon_state = "cactus"
 	seed = /obj/item/seeds/lavaland/cactus
 	wine_power = 50
 

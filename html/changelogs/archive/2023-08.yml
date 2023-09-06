@@ -137,3 +137,91 @@
         in the network.
     - bugfix: You can no longer remove the toner cartridge from a printer while it's
         busy printing.
+2023-08-13:
+  MemedHams:
+  - bugfix: fixes some lighting oddities on the shetland and le tieguai
+  - tweak: adjusts some schimedberg decals
+  TemporalOroboros, Memed Hams:
+  - code_imp: ports update_appearance, update_name, and update_desc from tg, as well
+      as associated signals
+  - code_imp: a bit of base_icon_state implementation. Can you believe it's been sitting
+      in our code almost unused for like 3 years
+  - code_imp: cleans up some code formatting, mainly around custom icons and overlays
+  - code_imp: fixes the typos in COMSIG_STORAGE_EXITED and COMSIG_STORAGE_ENTERED
+2023-08-19:
+  Apogee, Erika, Imaginos:
+  - rscadd: transferring bullets from magazine to magazine now has a do_after and
+      loops.
+  - rscadd: Ammo magazines are now purchasable at the outpost
+  - rscadd: P16s, SVG-whatevers, Bolt-Action Rifles, and .357 revolvers are now available
+      for purchase at the outpost
+  - rscdel: Removed paywall and clown firing pins from purchase.
+  - balance: AP Values have been tweaked across the board (On guns at least), smaller
+      cartridges tend to penetrate less, while larger ones penetrate more.
+  - imageadd: New bullet sprites (I believe they're apogee's), and new ammo box sprites
+      by Imaginos
+  Bjarl:
+  - tweak: you can no longer close falsewalls on tiles with machines or structures
+      on them
+  - bugfix: melters should avoid melting themselves now.
+  - rscadd: The outpost will now sell you mechs.
+  - rscadd: and radiation first aid kits
+  - rscadd: and jackhammers
+  Ebin-Halcyon:
+  - imageadd: Inteq Honorable Vanguard clothing have been added for admins to play
+      with, along with a peaked cap for normal Vanguards, not yet mapped anywhere
+      yet.
+  MarkSuckerberg:
+  - rscadd: You can now configure LOOC and mentorsay in chat tabs
+  - admin: You can now change the global LOOC colour. Because, why not?
+  - admin: LOOC now shows up in the OOC tab of the logging panel for players
+  MemedHams:
+  - tweak: increases the volume of money pickup and drop noises
+  - bugfix: polishes out some weird smoothing interactions between some rock walls
+      and metal walls
+  - tweak: indestructible rock walls now have the new, smoothed sprites
+  - tweak: beach rockwalls now have a whimsical name & description, matching our other
+      rock walls.
+  - bugfix: removes the junk 'asteroid' subtype of mineral/random
+  PositiveEntropy:
+  - bugfix: The camera console in the Chronicle now works thanks to cameras being
+      added!
+  - code_imp: The Chronicle is now player-spawnable in game again. Don't abuse my
+      trust.
+  goober3:
+  - rscadd: the mudskipper-class salvage clipper, the scavenging successor to the
+      scav.
+  - rscdel: removed the scav-class
+  spockye:
+  - rscdel: Removed the Icecropolis, and the related code
+  thgvr:
+  - rscadd: Crop turtleneck undershirt
+2023-08-20:
+  Zevotech:
+  - rscadd: Nanotrasen Genetic Research Facility, a new Lavaland ruin
+  - rscadd: codelab.dm containing assets for codelab.dmm
+  retlaw34:
+  - rscadd: Various things have been resprited
+  - rscadd: Medbots have gotten a fresh new coat of paint!
+  - admin: The TRABUCO misfiring now logs to game.log
+2023-08-21:
+  Apogee-dev:
+  - rscadd: Added the IRMG Vaquero
+  Latentish:
+  - tweak: Remaps the Ranger-class
+  MemedHams:
+  - bugfix: iv drip now has a sprite again
+  - bugfix: shotgun drums now have a sprite again
+  - bugfix: blood bank now has a sprite while filled
+  - bugfix: layer manifolds now display inserted pipes properly again
+  ritorizo:
+  - rscadd: IPC can now recharge/repair at borg recharge station.
+2023-08-27:
+  GenericDM:
+  - rscadd: Adds a hand-powered pill press for ghetto chemistry.
+2023-08-30:
+  Zevotech:
+  - bugfix: flora sprites now properly work in SDMM instead of being missing textures
+  - bugfix: dead barren trees on whitesands are no longer invisible due to having
+      their icon state overridden
+  - bugfix: whitesands grass now has its sprite in SDMM thanks to a typo fix
