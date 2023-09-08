@@ -82,8 +82,8 @@
 	icon_state = "reinforced_wall-0"
 	base_icon_state = "reinforced_wall"
 	smoothing_flags = SMOOTH_BITMASK
-	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_WALLS)
+	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_AIRLOCK)
+	canSmoothWith = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE, SMOOTH_GROUP_AIRLOCK)
 
 
 /turf/closed/indestructible/riveted
@@ -230,7 +230,13 @@
 /turf/closed/indestructible/fakedoor
 	name = "CentCom Access"
 	icon = 'icons/obj/doors/airlocks/centcom/centcom.dmi'
-	icon_state = "fake_door"
+	icon_state = "fakedoor"
+	smoothing_groups = list(SMOOTH_GROUP_AIRLOCK)
+
+/turf/closed/indestructible/fakedoor/blast
+	name = "hardened blast door"
+	icon = 'icons/obj/doors/blastdoor.dmi'
+	icon_state = "closed"
 
 /turf/closed/indestructible/rock
 	name = "dense rock"
