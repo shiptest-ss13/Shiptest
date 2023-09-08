@@ -97,9 +97,9 @@ SUBTLER
 	message = "<b>[user]</b> " + "<i>[message]</i>"
 
 	if(emote_type == EMOTE_AUDIBLE)
-		user.audible_message(message=message,hearing_distance=1, ignored_mobs = GLOB.dead_mob_list)
+		user.audible_message(message = message, hearing_distance = 1)
 	else
-		user.visible_message(message=message,self_message=message,vision_distance=1, ignored_mobs = GLOB.dead_mob_list)
+		user.visible_message(message = message, self_message = message, vision_distance = 1)
 
 ///////////////// VERB CODE
 /mob/living/verb/subtler()
