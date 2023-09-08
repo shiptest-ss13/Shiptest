@@ -381,7 +381,8 @@
 ///from base of mob/swap_hand(): (obj/item)
 #define COMSIG_MOB_SWAP_HANDS "mob_swap_hands"
 	#define COMPONENT_BLOCK_SWAP (1<<0)
-
+///from base of /mob/verb/pointed: (atom/A)
+#define COMSIG_MOB_POINTED "mob_pointed"
 ///from base of mob/living/resist() (/mob/living)
 #define COMSIG_LIVING_RESIST "living_resist"
 ///from base of mob/living/look_up() (/mob/living)
