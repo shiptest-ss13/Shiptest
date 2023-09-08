@@ -1,4 +1,11 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ab" = (
+/obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4
+	},
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating,
+/area/outpost/maintenance/fore)
 "ac" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/industrial/warning{
@@ -2682,6 +2689,11 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/cargo/office)
+"ko" = (
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/item/radio/intercom/directional/north,
+/turf/open/floor/plasteel/mono/dark,
+/area/outpost/cargo)
 "kq" = (
 /obj/structure/railing{
 	dir = 1;
@@ -4206,11 +4218,6 @@
 "pU" = (
 /turf/closed/indestructible/reinforced,
 /area/outpost/engineering/atmospherics)
-"pV" = (
-/obj/effect/turf_decal/industrial/outline/yellow,
-/obj/item/radio/intercom/directional/north,
-/turf/open/floor/plasteel/mono/dark,
-/area/outpost/cargo)
 "pX" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
@@ -7335,7 +7342,6 @@
 	name = "Outpost Access";
 	dir = 4
 	},
-/turf/open/floor/plasteel/dark,
 /area/outpost/security/armory)
 "Ad" = (
 /turf/closed/mineral/random/snow,
@@ -7817,13 +7823,6 @@
 	},
 /turf/open/floor/plasteel/sepia,
 /area/outpost/vacant_rooms/office)
-"BK" = (
-/obj/machinery/door/airlock/maintenance_hatch{
-	dir = 4
-	},
-/obj/structure/catwalk/over/plated_catwalk,
-/turf/open/floor/plating,
-/area/outpost/maintenance/fore)
 "BL" = (
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 4
@@ -16830,7 +16829,7 @@ OP
 Th
 AW
 wH
-BK
+ab
 wH
 Rp
 Rp
@@ -17160,7 +17159,7 @@ Zp
 Zp
 wH
 wH
-BK
+ab
 wH
 hj
 cX
@@ -18803,7 +18802,7 @@ Ge
 fu
 GI
 Mt
-pV
+ko
 Od
 bH
 ZM
