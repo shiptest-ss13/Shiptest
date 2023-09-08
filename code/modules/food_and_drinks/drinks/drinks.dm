@@ -740,11 +740,13 @@
 	list_reagents = list(/datum/reagent/medicine/molten_bubbles/plasma = 50)
 
 /obj/item/reagent_containers/food/drinks/ration
-	name = "Rationed Air"
+	name = "empty ration pouch"
 	desc = "If you ever wondered where air came from..."
 	list_reagents = list(/datum/reagent/oxygen = 6, /datum/reagent/nitrogen = 24)
-	icon = 'icons/obj/food/food.dmi'
-	icon_state = "peachcan"
+	icon = 'icons/obj/food/ration.dmi'
+	icon_state = "ration_package"
+	drop_sound = 'sound/items/handling/cardboardbox_drop.ogg'
+	pickup_sound =  'sound/items/handling/cardboardbox_pickup.ogg'
 	in_container = TRUE
 	reagent_flags = NONE
 	spillable = FALSE
@@ -765,7 +767,7 @@
 
 /obj/item/reagent_containers/food/drinks/ration/attack(mob/living/M, mob/user, def_zone)
 	if (!is_drainable())
-		to_chat(user, "<span class='warning'> The [src] is sealed shut!</span>")
+		to_chat(user, "<span class='warning'>The [src] is sealed shut!</span>")
 		return 0
 	return ..()
 

@@ -360,7 +360,8 @@
 
 /obj/item/ration_heater
 	name = "flameless ration heater"
-	icon_state = "skub"
+	icon = 'icons/obj/food/ration.dmi'
+	icon_state = "ration_package"
 	grind_results = list(/datum/reagent/iron = 10, /datum/reagent/water = 10, /datum/reagent/consumable/sodiumchloride = 5)
 	heat = 3800
 	var/obj/item/tocook = null
@@ -378,12 +379,17 @@
 			tocook = target
 			target.add_overlay(ration_overlay)
 			addtimer(CALLBACK(src, .proc/cook), 100)
-			to_chat(user, "<span class='notice'>\The [target] rapidly begins cooking...</span>")
+			visible_message("<span class='notice'>\The [target] rapidly begins cooking...</span>")
+			playsound(src, 'sound/items/cig_light.ogg', 50, 1)
 			moveToNullspace()
 
 /obj/item/ration_heater/proc/cook()
 	var/cookturf = get_turf(tocook)
-	tocook.microwave_act()
+	tocook.visible_message("<span class='notice'>\The [tocook] is done warming up!</span>")
+	playsound(tocook, 'sound/items/cig_snuff.ogg', 50, 1)
+	if(istype(tocook, /obj/item/reagent_containers/food) || istype(tocook, /obj/item/grown))
+		tocook.cut_overlay(ration_overlay)
+		tocook.microwave_act()
 	if(uses == 0)
 		qdel()
 	else

@@ -45,13 +45,13 @@
 
 /obj/item/reagent_containers/food/snacks/ration/attack(mob/living/M, mob/user, def_zone)
 	if (!is_drainable())
-		to_chat(user, "<span class='warning'> The [src] is sealed shut!</span>")
+		to_chat(user, "<span class='warning'>The [src] is sealed shut!</span>")
 		return 0
 	return ..()
 
 /obj/item/reagent_containers/food/snacks/ration/microwave_act(obj/machinery/microwave/Heater)
 	if (cookable == FALSE)
-		. = ..()
+		..()
 	else
 		name = "warm [initial(name)]"
 		bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
@@ -60,7 +60,7 @@
 /obj/item/reagent_containers/food/snacks/ration/examine(mob/user)
 	. = ..()
 	if(cookable && !cooked)
-		. += "\nIt can be cooked in a microwave or warmed using a flameless ration heater."
+		. += "It can be cooked in a microwave or warmed using a flameless ration heater.\n"
 
 /obj/item/reagent_containers/food/snacks/ration/entree
 	icon_state = "ration_main"
@@ -82,7 +82,6 @@
 /obj/item/reagent_containers/food/snacks/ration/entree/vegan_chili
 	name = "vegan chili with beans"
 	desc = "A hearty and flavorful vegan chili made with beans. It's so delicious, you won't believe it's not meat!"
-	icon_state = "beans"
 	filling_color = "#B22222"
 	tastes = list("beans" = 1, "off" = 1)
 	foodtype = VEGETABLES
@@ -664,11 +663,11 @@
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list()
 
-/obj/item/reagent_containers/food/snacks/ration/condiment/attack(mob/M, mob/user, def_zone) //Can't feed these to people directly.
-	return
-
 /obj/item/reagent_containers/food/snacks/ration/condiment/afterattack(obj/target, mob/user , proximity)
 	. = ..()
+	if(!is_drainable())
+		to_chat(user, "<span class='warning'>The [src] is sealed shut!</span>")
+		return
 	if(!proximity)
 		return
 
@@ -682,7 +681,6 @@
 			to_chat(user, "<span class='notice'>You tear open [src] above [target] and the condiments drip onto it.</span>")
 			src.reagents.trans_to(target, amount_per_transfer_from_this, transfered_by = user)
 			qdel(src)
-
 
 /obj/item/reagent_containers/food/snacks/ration/condiment/cheese_spread
 	name = "cheese spread pack"
