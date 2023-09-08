@@ -510,3 +510,8 @@
 	desc = "You feel ashamed about what you had to do to get this hat"
 	icon_state = "cowboy"
 	item_state = "cowboy"
+
+/obj/item/clothing/head/solgov_surgery
+	name = "SolGov surgery cap"
+	desc = "It's a surgery cap utilized by solarian doctors."
+	icon_state = "solgov_surgery"
