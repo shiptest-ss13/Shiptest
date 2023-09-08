@@ -3654,7 +3654,8 @@
 "Dd" = (
 /obj/machinery/atmospherics/components/binary/pump/on{
 	name = "Nitrogen to Air";
-	dir = 8
+	dir = 8;
+	target_pressure = 1000
 	},
 /obj/machinery/atmospherics/pipe/simple/green/visible,
 /turf/open/floor/plasteel/tech,
@@ -5078,7 +5079,8 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/components/binary/pump/on{
-	name = "Oxygen to Air and Mix"
+	name = "Oxygen to Air and Mix";
+	target_pressure = 1000
 	},
 /obj/effect/turf_decal/atmos/oxygen,
 /turf/open/floor/plasteel/tech,
