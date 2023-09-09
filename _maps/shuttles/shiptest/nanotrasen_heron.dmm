@@ -1219,7 +1219,7 @@
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "heron_generalwindows";
+	id = "heron_outerbridge";
 	name = "Blast Shutters";
 	dir = 4
 	},
@@ -2628,14 +2628,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
-"ko" = (
-/obj/effect/spawner/structure/window/shuttle,
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "heron_outerbridge";
-	name = "Blast Shutters"
-	},
-/turf/open/floor/plating,
-/area/ship/bridge)
 "kp" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 9
@@ -2875,7 +2867,20 @@
 /obj/machinery/computer/security{
 	dir = 8
 	},
-/obj/machinery/light/directional/north,
+/obj/machinery/button/door{
+	id = "heron_outerbridge";
+	name = "Bridge Blast Doors";
+	pixel_y = 24;
+	req_access_txt = "3";
+	pixel_x = 6
+	},
+/obj/machinery/button/door{
+	id = "heron_generalwindows";
+	name = "Window Shutters";
+	pixel_y = 24;
+	req_access_txt = "3";
+	pixel_x = -6
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "la" = (
@@ -3416,6 +3421,11 @@
 /area/ship/security/armory)
 "mG" = (
 /obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "heron_bridgeprivacy";
+	name = "Blast Shutters";
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/bridge)
 "mI" = (
@@ -6610,6 +6620,10 @@
 	pixel_x = 7;
 	pixel_y = -21
 	},
+/obj/item/areaeditor/shuttle{
+	pixel_x = -3
+	},
+/obj/item/megaphone/command,
 /turf/open/floor/carpet/green,
 /area/ship/crew/dorm/dormtwo)
 "yc" = (
@@ -7402,6 +7416,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/techfloor,
+/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "Bo" = (
@@ -9546,6 +9561,11 @@
 	name = "Bridge";
 	dir = 4
 	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "heron_bridgeprivacy";
+	name = "Blast Shutters";
+	dir = 4
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/bridge)
 "Jp" = (
@@ -10218,6 +10238,14 @@
 "Mb" = (
 /obj/structure/railing,
 /obj/structure/closet/crate/bin,
+/obj/machinery/button/door{
+	id = "heron_bridgeprivacy";
+	name = "Privacy Shutters";
+	pixel_y = 9;
+	req_access_txt = "3";
+	pixel_x = 22;
+	dir = 8
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/bridge)
 "Me" = (
@@ -11617,6 +11645,7 @@
 	dir = 8
 	},
 /obj/machinery/light/directional/east,
+/obj/item/toy/plush/flushed,
 /turf/open/floor/carpet/green,
 /area/ship/crew/dorm/dormtwo)
 "RA" = (
@@ -15878,7 +15907,7 @@ Gt
 KK
 Sp
 Sp
-ko
+vp
 Sw
 gZ
 sc
@@ -15917,7 +15946,7 @@ wD
 xb
 SI
 Lh
-ko
+vp
 tA
 qc
 sc
@@ -16066,7 +16095,7 @@ Mm
 Mm
 ec
 eX
-Ub
+eX
 Ub
 KO
 KO
