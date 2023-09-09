@@ -83,6 +83,12 @@
 /obj/effect/decal/cleanable/oil/slippery,
 /turf/open/floor/plating,
 /area/ruin/wasteplanet/wasteplanet_radiation/containment)
+"gn" = (
+/obj/item/clothing/suit/radiation,
+/obj/effect/decal/remains/human,
+/obj/effect/decal/cleanable/blood/old,
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_radiation)
 "gr" = (
 /turf/open/floor/plating/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_radiation)
@@ -177,6 +183,10 @@
 	},
 /turf/open/floor/plating/asteroid/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_radiation)
+"mi" = (
+/obj/item/clothing/head/radiation,
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_radiation)
 "my" = (
 /obj/structure/fence,
 /turf/open/floor/plating/asteroid/wasteplanet,
@@ -201,7 +211,7 @@
 /area/ruin/wasteplanet/wasteplanet_radiation)
 "mZ" = (
 /mob/living/simple_animal/bot/secbot{
-	emagged = 1
+	hacked = 1
 	},
 /turf/open/floor/plating/asteroid/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_radiation)
@@ -290,7 +300,7 @@
 /area/ruin/wasteplanet/wasteplanet_radiation/main)
 "rI" = (
 /mob/living/simple_animal/bot/cleanbot{
-	emagged = 1
+	hacked = 1
 	},
 /turf/open/floor/plating/asteroid/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_radiation)
@@ -330,15 +340,6 @@
 "tA" = (
 /turf/open/floor/plating/rust,
 /area/ruin/wasteplanet/wasteplanet_radiation/containment)
-"tF" = (
-/obj/effect/decal/remains/human,
-/obj/effect/decal/cleanable/blood/old,
-/obj/item/clothing/suit/radiation,
-/obj/item/clothing/head/radiation{
-	pixel_y = 8
-	},
-/turf/closed/mineral/random/asteroid/wasteplanet,
-/area/ruin/wasteplanet/wasteplanet_radiation)
 "tN" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
@@ -489,9 +490,6 @@
 "BI" = (
 /obj/effect/decal/cleanable/oil/slippery,
 /turf/open/floor/plating/wasteplanet/rust,
-/area/ruin/wasteplanet/wasteplanet_radiation)
-"CM" = (
-/turf/open/water/tar/waste,
 /area/ruin/wasteplanet/wasteplanet_radiation)
 "Dd" = (
 /obj/effect/turf_decal/road/line/edge/transparent/yellow,
@@ -681,7 +679,7 @@
 /area/ruin/wasteplanet/wasteplanet_radiation)
 "Lp" = (
 /mob/living/simple_animal/bot/hygienebot{
-	emagged = 1
+	hacked = 1
 	},
 /turf/open/floor/plating/asteroid/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_radiation)
@@ -947,7 +945,7 @@
 /turf/open/floor/plating,
 /area/ruin/wasteplanet/wasteplanet_radiation/containment)
 "Xl" = (
-/turf/closed/mineral/random/asteroid/wasteplanet,
+/turf/closed/mineral/random/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_radiation)
 "XC" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -1359,8 +1357,8 @@ ty
 (10,1,1) = {"
 ty
 UR
-CM
-CM
+Xl
+Xl
 Xl
 Xl
 Xl
@@ -1395,7 +1393,7 @@ ty
 (11,1,1) = {"
 ty
 UR
-CM
+Xl
 Xl
 Xl
 Xl
@@ -1430,8 +1428,8 @@ ty
 "}
 (12,1,1) = {"
 ty
-CM
-CM
+Xl
+Xl
 Xl
 Xl
 Xl
@@ -1459,15 +1457,15 @@ UR
 UR
 UR
 uZ
-tF
+Xl
 Xl
 UR
 ty
 "}
 (13,1,1) = {"
 ty
-CM
-CM
+Xl
+Xl
 Xl
 Xl
 Xl
@@ -1502,7 +1500,7 @@ ty
 "}
 (14,1,1) = {"
 ty
-CM
+Xl
 Gl
 UR
 UR
@@ -1563,7 +1561,7 @@ Ku
 DJ
 iA
 ZJ
-UR
+mi
 Gl
 Xl
 Xl
@@ -1599,10 +1597,10 @@ Ku
 mF
 Ku
 Ku
-UR
-CM
-CM
-CM
+gn
+Xl
+Xl
+Xl
 Xl
 Xl
 UR
@@ -1635,11 +1633,11 @@ Kl
 Im
 XO
 ZJ
-CM
-CM
-CM
-CM
-CM
+Xl
+Xl
+Xl
+Xl
+Xl
 UR
 UR
 ty
@@ -1671,9 +1669,9 @@ Rv
 tN
 Yk
 ZJ
-CM
-CM
-CM
+Xl
+Xl
+Xl
 UR
 UR
 UR
@@ -2050,7 +2048,7 @@ Xl
 Xl
 Xl
 Xl
-CM
+Xl
 Gl
 UR
 UR
@@ -2084,11 +2082,11 @@ Xl
 Xl
 Xl
 Xl
-CM
-CM
-CM
-CM
-CM
+Xl
+Xl
+Xl
+Xl
+Xl
 UR
 Xl
 UR
@@ -2121,10 +2119,10 @@ Xl
 Xl
 Xl
 Xl
-CM
-CM
-CM
-CM
+Xl
+Xl
+Xl
+Xl
 Xl
 Xl
 UR
@@ -2157,10 +2155,10 @@ Xl
 Xl
 Xl
 Xl
-CM
-CM
-CM
-CM
+Xl
+Xl
+Xl
+Xl
 Xl
 Xl
 UR
@@ -2193,11 +2191,11 @@ gr
 PB
 UR
 Gl
-CM
+Xl
 ty
 ty
-CM
-CM
+Xl
+Xl
 UR
 UR
 UR
