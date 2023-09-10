@@ -21,7 +21,7 @@
 
 /obj/item/gun/ballistic/automatic/assualt/ak47/nt
 	name = "\improper NT-SVG"
-	desc = "An even cheaper version of the already-cheap SVG-67, rechambered for the lightweight 4.6x38mm PDW cartridge. The flimsy folding stock and light construction make for a highly portable rifle lacking in accuracy and stopping power."
+	desc = "An even cheaper version of the already-cheap SVG-67, rechambered for the lightweight 4.6x30mm PDW cartridge. The flimsy folding stock and light construction make for a highly portable rifle lacking in accuracy and stopping power."
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	fire_sound = 'sound/weapons/gun/rifle/shot.ogg'
 	icon_state = "ak47_nt"
