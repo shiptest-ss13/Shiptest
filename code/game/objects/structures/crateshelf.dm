@@ -11,6 +11,9 @@
 /obj/structure/crate_shelf/MouseDrop_T(obj/structure/closet/crate/crate, mob/user)
 	if(!isliving(user))
 		return
+	if(crate.opened)
+		if(!crate.close())
+			return
 	if(src.contents.len < capacity)
 		if(do_after(user, useDelay, target = crate))
 			crate.forceMove(src)
