@@ -502,6 +502,14 @@
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/ship/bridge)
+"kC" = (
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = 20;
+	pixel_y = -20
+	},
+/turf/open/floor/plasteel/mono/white,
+/area/ship/bridge)
 "kM" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
@@ -806,8 +814,8 @@
 	},
 /obj/machinery/light_switch{
 	dir = 8;
-	pixel_x = 25;
-	pixel_y = -25
+	pixel_x = 20;
+	pixel_y = -23
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1042,14 +1050,6 @@
 /obj/machinery/airalarm/directional/south,
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/patterned,
-/area/ship/crew/canteen)
-"tC" = (
-/obj/docking_port/stationary{
-	width = 15;
-	height = 15;
-	dir = 8
-	},
-/turf/closed/wall,
 /area/ship/crew/canteen)
 "tP" = (
 /obj/effect/turf_decal/corner/transparent/neutral{
@@ -2707,6 +2707,11 @@
 	dir = 1
 	},
 /obj/machinery/newscaster/directional/south,
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = 10;
+	pixel_y = -18
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "Yj" = (
@@ -2804,14 +2809,6 @@
 	},
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
-"ZQ" = (
-/obj/machinery/light_switch{
-	dir = 1;
-	pixel_x = 25;
-	pixel_y = -25
-	},
-/turf/open/floor/plasteel/mono,
-/area/ship/bridge)
 "ZY" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
@@ -3028,7 +3025,7 @@ Qm
 sU
 CP
 rt
-tC
+sU
 XQ
 sU
 sU
@@ -3349,7 +3346,7 @@ Qc
 rC
 cA
 Lj
-ZQ
+Sf
 lg
 fs
 GG
@@ -3390,7 +3387,7 @@ Lj
 bB
 Mp
 Sf
-Lj
+kC
 gV
 TD
 wO

@@ -1,0 +1,46 @@
+2023-09-01:
+  spockye:
+  - bugfix: fixed the jukebox/boombox/discomachine inactive sprite being invisisble
+2023-09-02:
+  Ebin-Halcyon:
+  - imageadd: Keporis have stolen some oversized hoodies and are now able to wear
+      them properly.
+  GenericDM:
+  - tweak: Custom radio channels no longer leak themselves
+  - tweak: Custom radio channels are assigned a random color.
+  MemedHams:
+  - bugfix: the solars on singularity station no longer runtime
+  - bugfix: a bunch of broken indestructible walls have been collapsed into one working
+      subtype
+  - tweak: adds smoothing connectors to indestructible rock walls and adds a seam
+      with normal rock walls, for clarity
+  Skrem7:
+  - balance: Standard 12g box magazines are now small-sized, rather than normal
+  - spellcheck: Adjusts mag-based shotguns, lever-actions, and shotgun mag descriptions
+      to be more efficient/accurate
+  - code_imp: Changes how bulldog/mastiff magazines check for their icon to be standardized
+      with the CM-15
+  - code_imp: All ammo_boxes now update_appearance upon being initialized
+  - bugfix: Bulldog drum magazines should no longer go invisible while checking for
+      a base_icon_sprite that doesn't exist
+  - bugfix: Spent shotgun shells now have proper sprite pathing
+  thgvr:
+  - rscdel: Clown cargo crate
+  - rscdel: Clown stuff in costume vendors
+2023-09-06:
+  Skies-Of-Blue:
+  - rscadd: pointing at something on yourself now shows the item
+  Zevotech:
+  - bugfix: Most rocks are now visible again
+  - rscadd: Most flora files now have missing texture sprites to make it easier to
+      spot when something has gone wrong.
+2023-09-09:
+  Zevotech:
+  - bugfix: fixed the icon states for junglebushes a, b, and c.
+2023-09-10:
+  GenericDM:
+  - bugfix: The SolGov surgical cap no longer turns invisible when handled.
+2023-09-11:
+  Dethstorm:
+  - rscadd: new stuff to wasteplanet_unhonorable
+  - rscadd: new areas for wasteplanet_unhonorable

@@ -3,8 +3,8 @@
 	actions_types = list()
 
 /obj/item/gun/ballistic/automatic/assualt/ak47
-	name = "\improper AK-47"
-	desc = "An old assault rifle, dating back to 20th century. It is commonly used by various bandits, pirates and colonists thanks to its reliability and ease of maintenance."
+	name = "\improper SVG-67"
+	desc = "A frontier-built assault rifle descended from a pattern of unknown provenance. Its low cost and ease of maintenance make it a popular choice among a wide variety of outlaws."
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	fire_sound = 'sound/weapons/gun/rifle/ak47.ogg'
 	icon_state = "ak47"
@@ -20,8 +20,8 @@
 	AddComponent(/datum/component/automatic_fire, 0.2 SECONDS)
 
 /obj/item/gun/ballistic/automatic/assualt/ak47/nt
-	name = "\improper NT-AK"
-	desc = "A cheap rip-off of an already cheap rifle. Comes with a foldable stock for easy storage, although accuracy is questionable when folded. Control click to toggle the stock."
+	name = "\improper NT-SVG"
+	desc = "An even cheaper version of the already-cheap SVG-67, rechambered for the lightweight 4.6x38mm PDW cartridge. The flimsy folding stock and light construction make for a highly portable rifle lacking in accuracy and stopping power."
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	fire_sound = 'sound/weapons/gun/rifle/shot.ogg'
 	icon_state = "ak47_nt"
@@ -61,7 +61,7 @@
 
 	folded = !folded
 	playsound(src.loc, 'sound/weapons/empty.ogg', 100, 1)
-	update_icon()
+	update_appearance()
 
 /obj/item/gun/ballistic/automatic/assualt/ak47/nt/update_overlays()
 	. = ..()
@@ -86,7 +86,7 @@
 
 /obj/item/gun/ballistic/automatic/assualt/p16
 	name = "\improper P-16"
-	desc = "An ancient rifle used by professional mercenaries. It is said that the P-16 and AK-47 were destined to be in combat against each other. Chambered in 5.56mm."
+	desc = "A Night of Fire-era assault rifle pattern from Sol, chambered in 5.56mm. Rediscovered by the Colonial Minutemen and now frequently reproduced. A favorite of professional mercenaries and well-heeled pirates."
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	fire_sound = 'sound/weapons/gun/rifle/m16.ogg'
 	icon_state = "p16"
@@ -103,13 +103,13 @@
 
 /obj/item/gun/ballistic/automatic/assualt/p16/minutemen
 	name = "\improper CM-16"
-	desc = "Standard issue rifle of the Colonial Minutemen. A heavily modified version of the P-16 designed to fit the standards of operative warfare."
+	desc = "An extensive modification of the P-16, now the standard-issue rifle of the Colonial Minutemen. Chambered in 5.56mm."
 	icon_state = "cm16"
 	item_state = "cm16"
 
 /obj/item/gun/ballistic/automatic/assualt/ar
 	name = "\improper NT-ARG 'Boarder'"
-	desc = "A robust assault rifle used by Nanotrasen fighting forces."
+	desc = "A burst-fire 5.56mm carbine occasionally found in the hands of Nanotrasen marines."
 	fire_sound = 'sound/weapons/gun/rifle/shot_alt2.ogg'
 	icon_state = "arg"
 	item_state = "arg"
@@ -165,6 +165,6 @@
 			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd Matter.</span>")
 
 	playsound(user, 'sound/weapons/empty.ogg', 100, TRUE)
-	update_icon()
+	update_appearance()
 	for(var/datum/action/action as anything in actions)
 		action.UpdateButtonIcon()
