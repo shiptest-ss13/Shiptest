@@ -58,7 +58,7 @@
 	. = ..()
 	if(!result)
 		result = roll(sides)
-	update_icon()
+	update_appearance()
 
 /obj/item/dice/d1
 	name = "d1"
@@ -194,7 +194,7 @@
 		comment = "NAT 20!"
 	else if(sides == 20 && result == 1)
 		comment = "Ouch, bad luck."
-	update_icon()
+	update_appearance()
 	if(initial(icon_state) == "d00")
 		result = (result - 1)*10
 	if(special_faces.len == sides)

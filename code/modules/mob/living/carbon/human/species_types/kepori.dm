@@ -2,7 +2,7 @@
 	name = "\improper Kepori"
 	id = SPECIES_KEPORI
 	default_color = "6060FF"
-	species_traits = list(MUTCOLORS, EYECOLOR, NO_UNDERWEAR, MUTCOLORS_SECONDARY)
+	species_traits = list(MUTCOLORS, EYECOLOR, MUTCOLORS_SECONDARY)
 	inherent_traits = list(TRAIT_SCOOPABLE)
 	mutant_bodyparts = list("kepori_body_feathers", "kepori_tail_feathers", "kepori_feathers")
 	default_features = list("mcolor" = "0F0", "wings" = "None", "kepori_feathers" = "Plain", "kepori_body_feathers" = "Plain", "kepori_tail_feathers" = "Fan", "body_size" = "Normal")

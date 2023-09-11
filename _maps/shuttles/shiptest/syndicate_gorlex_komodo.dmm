@@ -167,6 +167,10 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/firealarm/directional/west,
+/obj/machinery/light_switch{
+	pixel_x = -13;
+	pixel_y = 22
+	},
 /turf/open/floor/holofloor/wood,
 /area/ship/crew/dorm)
 "bs" = (
@@ -545,6 +549,11 @@
 /obj/effect/decal/cleanable/cobweb,
 /obj/item/blackbox,
 /obj/item/storage/toolbox/infiltrator,
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = -10;
+	pixel_y = -19
+	},
 /turf/open/floor/engine,
 /area/ship/bridge)
 "eX" = (
@@ -987,10 +996,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
-	},
-/obj/machinery/light_switch{
-	pixel_x = -10;
-	pixel_y = 26
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -1807,6 +1812,11 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/machinery/light_switch{
+	pixel_x = -20;
+	pixel_y = 12;
+	dir = 4
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew/canteen)
 "rv" = (
@@ -1847,6 +1857,12 @@
 /obj/machinery/firealarm/directional/west,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/hallway/central)
+"rS" = (
+/obj/machinery/porta_turret/ship/ballistic{
+	dir = 5
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/bridge)
 "sb" = (
 /obj/structure/closet/toolcloset,
 /obj/structure/railing{
@@ -1947,6 +1963,12 @@
 	name = "tactical chair"
 	},
 /turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"td" = (
+/obj/machinery/porta_turret/ship/ballistic{
+	dir = 9
+	},
+/turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
 "tf" = (
 /turf/closed/wall/mineral/plastitanium,
@@ -2199,6 +2221,11 @@
 /obj/effect/turf_decal/techfloor,
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable,
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = -12;
+	pixel_y = -16
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/maintenance/starboard)
 "vq" = (
@@ -2300,6 +2327,10 @@
 /obj/machinery/suit_storage_unit/inherit,
 /obj/item/clothing/mask/breath,
 /obj/item/clothing/suit/space/hardsuit/syndi/scarlet,
+/obj/machinery/light_switch{
+	pixel_x = -13;
+	pixel_y = 22
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
 "vT" = (
@@ -2627,6 +2658,11 @@
 /obj/effect/turf_decal/techfloor,
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable,
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = -12;
+	pixel_y = -16
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/maintenance/port)
 "As" = (
@@ -2801,6 +2837,10 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/machinery/light_switch{
+	pixel_x = -13;
+	pixel_y = 22
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "BW" = (
@@ -2809,16 +2849,16 @@
 	name = "tactical chair"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/radio/intercom/directional/north{
-	pixel_x = 4;
-	pixel_y = 24
-	},
 /obj/machinery/light_switch{
 	pixel_x = -10;
 	pixel_y = 26
 	},
 /obj/effect/turf_decal/techfloor{
 	dir = 1
+	},
+/obj/item/radio/intercom/directional/north{
+	pixel_y = 31;
+	pixel_x = 3
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/hallway/central)
@@ -3280,6 +3320,12 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
+"FY" = (
+/obj/machinery/porta_turret/ship/ballistic{
+	dir = 4
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/bridge)
 "Gl" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/railing{
@@ -4185,7 +4231,9 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/hallway/central)
 "OP" = (
-/obj/machinery/porta_turret/ship/ballistic,
+/obj/machinery/porta_turret/ship/ballistic{
+	dir = 10
+	},
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
 "OQ" = (
@@ -4260,6 +4308,10 @@
 	pixel_y = -2
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light_switch{
+	pixel_x = -13;
+	pixel_y = 22
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/hallway/aft)
 "Pv" = (
@@ -4387,6 +4439,12 @@
 /obj/structure/closet/crate/freezer/blood,
 /turf/open/floor/pod/dark,
 /area/ship/medical)
+"Rp" = (
+/obj/machinery/porta_turret/ship/ballistic{
+	dir = 6
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/bridge)
 "Rz" = (
 /obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -4943,6 +5001,10 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/machinery/light_switch{
+	pixel_x = -13;
+	pixel_y = 22
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/hallway/central)
 "WA" = (
@@ -4951,7 +5013,7 @@
 	pixel_x = -4;
 	pixel_y = 5
 	},
-/obj/machinery/photocopier/faxmachine/longrange{
+/obj/machinery/fax{
 	pixel_x = 4;
 	pixel_y = 0
 	},
@@ -5111,6 +5173,12 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/medical)
+"XE" = (
+/obj/machinery/porta_turret/ship/ballistic{
+	dir = 8
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/bridge)
 "XF" = (
 /obj/machinery/power/terminal,
 /obj/structure/cable{
@@ -5355,7 +5423,7 @@ CM
 CM
 CM
 CM
-OP
+td
 gN
 gN
 gN
@@ -5375,14 +5443,14 @@ CM
 CM
 CM
 CM
-OP
+XE
 Vk
 Vk
 Rk
 jr
 Yl
 Mb
-OP
+XE
 CM
 CM
 CM
@@ -5416,7 +5484,7 @@ Aj
 Aj
 ti
 ti
-OP
+XE
 lu
 lu
 Ep
@@ -5833,7 +5901,7 @@ uR
 lV
 sq
 hY
-OP
+Rp
 "}
 (13,1,1) = {"
 CM
@@ -6032,7 +6100,7 @@ TR
 TR
 CM
 CM
-OP
+FY
 lu
 lu
 gE
@@ -6059,7 +6127,7 @@ CM
 CM
 CM
 CM
-OP
+rS
 OQ
 OQ
 OQ
@@ -6067,7 +6135,7 @@ OQ
 OQ
 OQ
 OQ
-OP
+Rp
 CM
 CM
 CM
@@ -6079,7 +6147,7 @@ CM
 CM
 CM
 CM
-OP
+FY
 tf
 tf
 tf
@@ -6087,7 +6155,7 @@ tf
 gE
 io
 io
-OP
+FY
 CM
 CM
 CM
@@ -6095,7 +6163,7 @@ hY
 hY
 hY
 hY
-OP
+Rp
 CM
 CM
 "}

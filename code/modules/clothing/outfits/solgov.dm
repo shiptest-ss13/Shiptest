@@ -126,7 +126,7 @@
 	uniform = /obj/item/clothing/under/solgov/formal
 	accessory = /obj/item/clothing/accessory/armband/medblue
 	shoes = /obj/item/clothing/shoes/laceup
-	head = /obj/item/clothing/head/soft/solgov
+	head = /obj/item/clothing/head/solgov_surgery
 	suit =  /obj/item/clothing/suit/solgov/jacket
 	l_hand = /obj/item/storage/firstaid/medical
 
@@ -184,7 +184,7 @@
 	jobtype = /datum/job/prisoner
 
 	id = /obj/item/card/id/patient
-	uniform = /obj/item/clothing/under/medical/gown
+	uniform = /obj/item/clothing/under/rank/medical/gown
 	alt_suit = null
 	shoes = /obj/item/clothing/shoes/sandal/slippers
 
