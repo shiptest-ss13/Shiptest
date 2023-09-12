@@ -68,28 +68,42 @@ jobs:
         run: |
           pip3 install setuptools
           bash tools/ci/install_node.sh
-          bash tools/ci/install_spaceman_dmm.sh dreamchecker
           cargo install ripgrep --features pcre2
           tools/bootstrap/python -c ''
 
-      - name: Run Linters
+      - name: Give Linters A Go
+        id: linter-setup
+        run: exit 0
+      - name: Run Grep Checks
+        if: steps.linter-setup.conclusion == 'success' && !cancelled()
+        run: bash tools/ci/check_grep.sh
+      - name: Run DreamChecker
+        if: steps.linter-setup.conclusion == 'success' && !cancelled()
+        run: ~/dreamchecker 2>&1 | bash tools/ci/annotate_dm.sh
+      - name: Run Map Checks
+        if: steps.linter-setup.conclusion == 'success' && !cancelled()
         run: |
-          tools/bootstrap/python -m tools.maplint.source --github
-          tools/build/build --ci lint tgui-test
-          bash tools/ci/check_filedirs.sh shiptest.dme
-          bash tools/ci/check_changelogs.sh
-          bash tools/ci/check_misc.sh
-          bash tools/ci/check_grep.sh
-          tools/bootstrap/python -m dmi.test
           tools/bootstrap/python -m mapmerge2.dmm_test
-          ~/dreamchecker 2>&1 | bash tools/ci/annotate_dm.sh
-
-      - name: Run Check Regex
+          tools/bootstrap/python -m tools.maplint.source
+      - name: Run DMI Tests
+        if: steps.linter-setup.conclusion == 'success' && !cancelled()
+        run: tools/bootstrap/python -m dmi.test
+      - name: Check File Directories
+        if: steps.linter-setup.conclusion == 'success' && !cancelled()
+        run: bash tools/ci/check_filedirs.sh tgstation.dme
+      - name: Check Changelogs
+        if: steps.linter-setup.conclusion == 'success' && !cancelled()
+        run: bash tools/ci/check_changelogs.sh
+      - name: Check Miscellaneous Files
+        if: steps.linter-setup.conclusion == 'success' && !cancelled()
+        run: bash tools/ci/check_misc.sh
+      - name: Run TGUI Checks
+        if: steps.linter-setup.conclusion == 'success' && !cancelled()
+        run: tools/build/build --ci lint tgui-test
+      - name: Run Regex Checks
+        if: steps.linter-setup.conclusion == 'success' && !cancelled()
         run: |
           tools/bootstrap/python -m ci.check_regex --log-changes-only --github-actions
-
-      - name: Annotate Regex Matches
-        run: |
           cat check_regex_output.txt
 
       - name: Install OpenDream
@@ -107,7 +121,7 @@ jobs:
   compile_all_maps:
     name: Compile Maps
     needs: start_gate
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v3
