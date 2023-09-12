@@ -45,11 +45,18 @@
 		. += "manifest"
 
 /obj/structure/closet/crate/attack_hand(mob/user)
-	. = ..()
-	if(.)
+	if(istype(src.loc, /obj/structure/crate_shelf))
+		var/obj/structure/crate_shelf/shelf = src.loc
+		if(do_after(user, 20, target = src))
+			src.pixel_y = 0
+			src.layer = BELOW_OBJ_LAYER
+			src.forceMove(get_turf(user))
+			shelf.shelf_contents[shelf.shelf_contents.Find(src)] = null
+			shelf.handle_visuals()
 		return
 	if(manifest)
 		tear_manifest(user)
+	return ..()
 
 /obj/structure/closet/crate/open(mob/living/user, force = FALSE)
 	. = ..()

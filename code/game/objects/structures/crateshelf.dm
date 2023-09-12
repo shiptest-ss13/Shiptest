@@ -7,6 +7,11 @@
 
 	var/capacity = DEFAULT_SHELF_CAPACITY
 	var/useDelay = DEFAULT_SHELF_USE_DELAY
+	var/list/shelf_contents
+
+/obj/structure/crate_shelf/Initialize()
+	. = ..()
+	shelf_contents = new/list(capacity)
 
 /obj/structure/crate_shelf/MouseDrop_T(obj/structure/closet/crate/crate, mob/user)
 	if(!isliving(user))
@@ -14,25 +19,17 @@
 	if(crate.opened)
 		if(!crate.close())
 			return
-	if(src.contents.len < capacity)
+	var/next_free = shelf_contents.Find(null)
+	if(next_free)
 		if(do_after(user, useDelay, target = crate))
+			shelf_contents[next_free] = crate
+			var/crate_index = shelf_contents.Find(crate)
 			crate.forceMove(src)
-			crate.pixel_y = 8 * (src.contents.len - 1)
+			crate.pixel_y = 8 * (crate_index - 1)
+			crate.layer += 0.01 * (crate_index - 1)
 			handle_visuals()
 	else
 		balloon_alert(user, "shelf full!")
-	return
-
-/obj/structure/crate_shelf/attack_hand(mob/user)
-	. = ..()
-	if(.)
-		return
-	if(src.contents)
-		for(var/obj/structure/closet/crate/crate in src.contents)
-			crate.forceMove(src.loc)
-			crate.pixel_y = 0
-		handle_visuals()
-
 	return
 
 /obj/structure/crate_shelf/proc/handle_visuals()
