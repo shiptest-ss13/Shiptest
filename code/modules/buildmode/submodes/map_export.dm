@@ -7,24 +7,24 @@
 	var/save_flag = SAVE_ALL
 	var/static/is_running = FALSE
 
-/datum/buildmode_mode/export/change_settings(client/c)
+/datum/buildmode_mode/export/change_settings(client/target_client)
 	var/static/list/options = list("Object Saving" = SAVE_OBJECTS,
 									"Mob Saving" = SAVE_MOBS,
 									"Turf Saving" = SAVE_TURFS,
 									"Area Saving" = SAVE_AREAS,
 									"Space Turf Saving" = SAVE_SPACE,
 									"Object Property Saving" = SAVE_OBJECT_PROPERTIES)
-	var/what_to_change = tgui_input_list(c, "What export setting would you like to toggle?", "Map Exporter", options)
+	var/what_to_change = tgui_input_list(target_client, "What export setting would you like to toggle?", "Map Exporter", options)
 	save_flag ^= options[what_to_change]
-	to_chat(c, "<span class='notice'>[what_to_change] is now [save_flag & options[what_to_change] ? "ENABLED" : "DISABLED"].</span>")
+	to_chat(target_client, "<span class='notice'>[what_to_change] is now [save_flag & options[what_to_change] ? "ENABLED" : "DISABLED"].</span>")
 
-/datum/buildmode_mode/export/show_help(client/c)
-	to_chat(c, "<span class='notice'>***********************************************************</span>")
-	to_chat(c, "<span class='notice'>Left Mouse Button on turf/obj/mob      = Select corner</span>")
-	to_chat(c, "<span class='notice'>Right Mouse Button on buildmode button = Set export options</span>")
-	to_chat(c, "<span class='notice'>***********************************************************</span>")
+/datum/buildmode_mode/export/show_help(client/target_client)
+	to_chat(target_client, "<span class='notice'>***********************************************************</span>")
+	to_chat(target_client, "<span class='notice'>Left Mouse Button on turf/obj/mob      = Select corner</span>")
+	to_chat(target_client, "<span class='notice'>Right Mouse Button on buildmode button = Set export options</span>")
+	to_chat(target_client, "<span class='notice'>***********************************************************</span>")
 
-/datum/buildmode_mode/export/handle_selected_area(client/c, params)
+/datum/buildmode_mode/export/handle_selected_area(client/target_client, params)
 	var/list/modifiers = params2list(params)
 
 	//Ensure the selection is actually done
@@ -53,7 +53,7 @@
 	to_chat(usr, "<span class='warning'>Saving, please wait...</span>")
 	is_running = TRUE
 
-	log_admin("Build Mode: [key_name(c)] is exporting the map area from [AREACOORD(cornerA)] through [AREACOORD(cornerB)]") //I put this before the actual saving of the map because it likely won't log if it crashes the fucking server
+	log_admin("Build Mode: [key_name(target_client)] is exporting the map area from [AREACOORD(cornerA)] through [AREACOORD(cornerB)]") //I put this before the actual saving of the map because it likely won't log if it crashes the fucking server
 
 	//oversimplified for readability and understandibility
 
