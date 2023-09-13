@@ -83,7 +83,7 @@
 	lightcolor = random_color()
 	set_light(range, power, lightcolor)
 	add_atom_colour("#[lightcolor]", FIXED_COLOUR_PRIORITY)
-	update_icon()
+	update_appearance()
 	timerID = addtimer(CALLBACK(src, .proc/randomiseLightColor), 2, TIMER_STOPPABLE)
 
 /obj/item/grenade/discogrenade/subgrenade/proc/forcedance(turf/target_turf , mob/living/carbon/human/target)

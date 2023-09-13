@@ -943,7 +943,7 @@
 	. = ..()
 	. += "<span class='notice'>This weapon contains a gradual heat accelerator that increases shot power as the weapon's energy stores are depleted. Shots at low power are significantly stronger, but also have incredibly short range.</span>"
 
-/obj/item/gun/energy/spur/update_icon()
+/obj/item/gun/energy/spur/update_appearance()
 	var/maxcharge = cell.maxcharge
 	var/charge = cell.charge
 
@@ -968,7 +968,8 @@
 
 	if(chargesound != oldsound)
 		playsound(src, chargesound, 100)
-		return
+		return ..()
+	return ..()
 
 /obj/item/ammo_casing/energy/spur
 	projectile_type = /obj/projectile/bullet/spur
@@ -1660,11 +1661,12 @@
 
 /obj/item/hierophant_club/update_icon_state()
 	icon_state = item_state = "hierophant_club[timer <= world.time ? "_ready":""][(beacon && !QDELETED(beacon)) ? "":"_beacon"]"
+	return ..()
 
 /obj/item/hierophant_club/proc/prepare_icon_update()
-	update_icon()
+	update_appearance()
 	sleep(timer - world.time)
-	update_icon()
+	update_appearance()
 
 /obj/item/hierophant_club/ui_action_click(mob/user, action)
 	if(istype(action, /datum/action/item_action/toggle_unfriendly_fire)) //toggle friendly fire...
