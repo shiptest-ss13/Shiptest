@@ -4,6 +4,8 @@
 /obj/structure/crate_shelf
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "shelf_base"
+	density = TRUE
+	anchored = TRUE
 
 	var/capacity = DEFAULT_SHELF_CAPACITY
 	var/useDelay = DEFAULT_SHELF_USE_DELAY
