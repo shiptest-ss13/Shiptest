@@ -52,7 +52,6 @@ GLOBAL_LIST_INIT(duplicate_forbidden_vars,list(
 				contained_atom.flags_1 |= HOLOGRAM_1
 			if(M.circuit)
 				M.circuit.flags_1 |= HOLOGRAM_1
-	return O
 
 	if(ismob(O))	//Overlays are carried over despite disallowing them, if a fix is found remove this.
 		var/mob/M = O
