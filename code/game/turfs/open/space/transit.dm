@@ -50,7 +50,7 @@
 
 /turf/open/space/transit/Initialize(mapload, inherited_virtual_z)
 	. = ..()
-	update_icon()
+	update_appearance()
 	for(var/atom/movable/AM in src)
 		AM.throw_atom_into_space()
 
@@ -60,6 +60,7 @@
 
 /turf/open/space/transit/update_icon_state()
 	icon_state = "speedspace_ns_[get_transit_state(src)]"
+	return ..()
 
 /proc/get_transit_state(turf/T)
 	var/p = 9

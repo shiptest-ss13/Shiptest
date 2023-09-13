@@ -505,14 +505,14 @@
 			held_sausage = target
 		else
 			to_chat(user, "<span class='warning'>[target] doesn't seem to want to get on [src]!</span>")
-	update_icon()
+	update_appearance()
 
 /obj/item/melee/roastingstick/attack_hand(mob/user)
 	..()
 	if (held_sausage)
 		user.put_in_hands(held_sausage)
 		held_sausage = null
-	update_icon()
+	update_appearance()
 
 /obj/item/melee/roastingstick/update_overlays()
 	. = ..()
@@ -534,7 +534,7 @@
 /obj/item/melee/roastingstick/handle_atom_del(atom/target)
 	if (target == held_sausage)
 		held_sausage = null
-		update_icon()
+		update_appearance()
 
 /obj/item/melee/roastingstick/afterattack(atom/target, mob/user, proximity)
 	. = ..()
@@ -565,7 +565,7 @@
 	held_sausage.add_atom_colour(rgb(103,63,24), FIXED_COLOUR_PRIORITY)
 	held_sausage.name = "[target.name]-roasted [held_sausage.name]"
 	held_sausage.desc = "[held_sausage.desc] It has been cooked to perfection on \a [target]."
-	update_icon()
+	update_appearance()
 
 /obj/item/melee/cleric_mace
 	name = "cleric mace"
@@ -736,7 +736,7 @@
 		playsound(user, dash_sound, 25, TRUE)
 		user.visible_message("<span class='notice'>[user] swiftly draws \the [I].</span>", "<span class='notice'>You draw \the [I].</span>")
 		user.put_in_hands(I)
-		update_icon()
+		update_appearance()
 	else
 		to_chat(user, "<span class='warning'>[src] is empty!</span>")
 
@@ -750,13 +750,13 @@
 			playsound(user, 'sound/items/sheath.ogg', 25, TRUE)
 			to_chat(user, "<span class='notice'>You return your stance.</span>")
 			primed = FALSE
-			update_icon()
+			update_appearance()
 		else
 			CP.locked = TRUE //Prevents normal removal of the blade while primed
 			playsound(user, 'sound/items/unsheath.ogg', 25, TRUE)
 			user.visible_message("<span class='warning'>[user] grips the blade within [src] and primes to attack.</span>", "<span class='warning'>You take an opening stance...</span>", "<span class='warning'>You hear a weapon being drawn...</span>")
 			primed = TRUE
-			update_icon()
+			update_appearance()
 	else
 		to_chat(user, "<span class='warning'>[src] is empty!</span>")
 
@@ -772,7 +772,7 @@
 		var/datum/component/storage/CP = GetComponent(/datum/component/storage)
 		CP.locked = FALSE
 		primed = FALSE
-		update_icon()
+		update_appearance()
 		primed_attack(A, user)
 		if(CanReach(A, I))
 			I.melee_attack_chain(user, A, params)
@@ -816,6 +816,7 @@
 		else
 			icon_state += "-blade"
 		item_state += "-sabre"
+	return ..()
 
 /obj/item/storage/belt/weebstick/PopulateContents()
 	//Time to generate names now that we have the sword
@@ -824,4 +825,4 @@
 	var/obj/item/melee/weebstick/sword = new /obj/item/melee/weebstick(src)
 	sword.name = "[n_title] blade of clan [n_name]"
 	name = "[n_title] scabbard of clan [n_name]"
-	update_icon()
+	update_appearance()

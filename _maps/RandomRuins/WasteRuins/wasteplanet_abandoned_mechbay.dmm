@@ -18,6 +18,16 @@
 "au" = (
 /turf/closed/wall,
 /area/ruin/wasteplanet/abandoned_mechbay)
+"aw" = (
+/obj/machinery/camera/autoname{
+	dir = 8;
+	network = list("cricket")
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/stairs{
+	dir = 1
+	},
+/area/overmap_encounter/planetoid/cave/explored)
 "aE" = (
 /obj/effect/decal/cleanable/oil,
 /obj/effect/decal/cleanable/dirt,
@@ -38,6 +48,13 @@
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/wasteplanet/abandoned_mechbay/mainhall)
+"aQ" = (
+/obj/structure/railing{
+	max_integrity = 70;
+	dir = 6
+	},
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/overmap_encounter/planetoid/cave/explored)
 "aX" = (
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/wasteplanet/abandoned_mechbay/commandcontrol)
@@ -67,6 +84,14 @@
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/plating,
 /area/ruin/wasteplanet/abandoned_mechbay/mechlab)
+"bL" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/machinery/light/floor,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_1,
+/area/overmap_encounter/planetoid/cave/explored)
 "bP" = (
 /obj/effect/turf_decal/industrial/stand_clear/white{
 	dir = 1
@@ -119,6 +144,11 @@
 /obj/structure/curtain,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ruin/wasteplanet/abandoned_mechbay/crewquarters)
+"cq" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/generic,
+/turf/open/floor/concrete/slab_1,
+/area/overmap_encounter/planetoid/cave/explored)
 "cu" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -206,6 +236,13 @@
 /obj/machinery/light/broken/directional/north,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/wasteplanet/abandoned_mechbay/crewquarters)
+"dk" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_1,
+/area/overmap_encounter/planetoid/cave/explored)
 "ds" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/turf_decal/arrows{
@@ -268,19 +305,15 @@
 "dR" = (
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/wasteplanet/abandoned_mechbay/mechlab)
-"dY" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/concrete/slab_1,
-/area/overmap_encounter/planetoid/cave/explored)
 "ea" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/wasteplanet/abandoned_mechbay/engineering)
+"eb" = (
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/overmap_encounter/planetoid/cave/explored)
 "ec" = (
 /obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel/tech/techmaint,
@@ -402,12 +435,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/wasteplanet/abandoned_mechbay/bay2)
-"eT" = (
-/obj/structure/railing{
-	dir = 1
-	},
-/turf/open/floor/plating/asteroid/wasteplanet,
-/area/overmap_encounter/planetoid/cave/explored)
 "eU" = (
 /obj/effect/turf_decal/industrial/stand_clear/white,
 /obj/effect/turf_decal/industrial/warning{
@@ -624,19 +651,10 @@
 /obj/effect/decal/cleanable/greenglow,
 /turf/open/floor/mech_bay_recharge_floor,
 /area/ruin/wasteplanet/abandoned_mechbay/bay1)
-"gp" = (
-/obj/machinery/atmospherics/components/unary/passive_vent/layer2{
-	dir = 4
-	},
-/obj/effect/turf_decal/box,
+"gu" = (
+/obj/effect/turf_decal/industrial/warning,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_1,
-/area/overmap_encounter/planetoid/cave/explored)
-"gv" = (
-/obj/structure/railing/corner{
-	max_integrity = 70
-	},
-/turf/open/floor/plating/asteroid/wasteplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "gy" = (
 /obj/structure/cable{
@@ -658,6 +676,12 @@
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer4,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/wasteplanet/abandoned_mechbay/mainhall)
+"gE" = (
+/obj/effect/turf_decal/industrial/warning/corner,
+/obj/machinery/light/floor,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_1,
+/area/overmap_encounter/planetoid/cave/explored)
 "gJ" = (
 /turf/closed/wall/concrete,
 /area/ruin/wasteplanet/abandoned_mechbay/engineering)
@@ -785,11 +809,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/wasteplanet/abandoned_mechbay/bay2)
-"hG" = (
-/obj/effect/turf_decal/industrial/warning,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/concrete/slab_1,
-/area/overmap_encounter/planetoid/cave/explored)
 "hN" = (
 /obj/machinery/door/poddoor{
 	id = "baseinternal"
@@ -804,6 +823,18 @@
 	},
 /turf/open/floor/concrete/reinforced,
 /area/ruin/wasteplanet/abandoned_mechbay/mainhall)
+"hU" = (
+/obj/structure/railing{
+	max_integrity = 70
+	},
+/turf/open/floor/plating/wasteplanet,
+/area/overmap_encounter/planetoid/cave/explored)
+"ib" = (
+/obj/structure/railing/corner{
+	max_integrity = 70
+	},
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/overmap_encounter/planetoid/cave/explored)
 "ir" = (
 /obj/effect/turf_decal/trimline/transparent/neutral/filled/warning{
 	dir = 4
@@ -837,13 +868,6 @@
 /obj/machinery/light/dim/directional/east,
 /turf/open/floor/plasteel/tech,
 /area/ruin/wasteplanet/abandoned_mechbay/engineering)
-"iG" = (
-/obj/effect/turf_decal/industrial/warning/corner{
-	dir = 4
-	},
-/obj/machinery/camera/autoname,
-/turf/open/floor/concrete/slab_4,
-/area/ruin/wasteplanet/abandoned_mechbay/mainhall)
 "iR" = (
 /obj/effect/turf_decal/trimline/transparent/neutral/filled/warning{
 	dir = 8
@@ -955,8 +979,8 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/abandoned_mechbay/bay2)
-"kF" = (
-/obj/effect/mine/shrapnel/human_only,
+"kJ" = (
+/obj/structure/flora/rock/pile,
 /turf/open/floor/plating/asteroid/wasteplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "kU" = (
@@ -1163,9 +1187,13 @@
 	},
 /turf/open/floor/concrete/slab_4,
 /area/ruin/wasteplanet/abandoned_mechbay/mainhall)
-"ms" = (
-/turf/closed/mineral/random/asteroid/wasteplanet,
-/area/ruin/wasteplanet/abandoned_mechbay)
+"mx" = (
+/obj/machinery/camera/autoname{
+	dir = 10
+	},
+/obj/machinery/light/directional/south,
+/turf/open/floor/concrete/slab_1,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "mE" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/shreds,
@@ -1199,15 +1227,6 @@
 	},
 /turf/open/floor/concrete/slab_4,
 /area/ruin/wasteplanet/abandoned_mechbay/mainhall)
-"nb" = (
-/obj/machinery/light/floor,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/concrete/slab_1,
-/area/overmap_encounter/planetoid/cave/explored)
-"nc" = (
-/obj/structure/flora/rock/pile,
-/turf/open/floor/plating/asteroid/wasteplanet,
-/area/overmap_encounter/planetoid/cave/explored)
 "nd" = (
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -1218,13 +1237,6 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/wasteplanet/abandoned_mechbay/crewquarters)
-"ng" = (
-/obj/structure/railing/corner{
-	max_integrity = 70;
-	dir = 8
-	},
-/turf/open/floor/plating/asteroid/wasteplanet,
-/area/overmap_encounter/planetoid/cave/explored)
 "np" = (
 /obj/structure/rack,
 /obj/item/mecha_ammo/lmg,
@@ -1276,12 +1288,6 @@
 /obj/item/radio/intercom/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/abandoned_mechbay/bay2)
-"nS" = (
-/obj/effect/turf_decal/industrial/warning,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/concrete/slab_1,
-/area/overmap_encounter/planetoid/cave/explored)
 "oa" = (
 /obj/effect/turf_decal/trimline/transparent/neutral/filled/warning{
 	dir = 8
@@ -1289,6 +1295,12 @@
 /obj/effect/decal/cleanable/oil,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/abandoned_mechbay/bay2)
+"ok" = (
+/obj/effect/turf_decal/industrial/warning,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/generic,
+/turf/open/floor/concrete/slab_1,
+/area/overmap_encounter/planetoid/cave/explored)
 "om" = (
 /obj/effect/turf_decal/trimline/transparent/neutral/filled/warning{
 	dir = 8
@@ -1335,6 +1347,9 @@
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/wasteplanet/abandoned_mechbay/mainhall)
+"oI" = (
+/turf/closed/mineral/random/wasteplanet,
+/area/ruin/wasteplanet/abandoned_mechbay)
 "oL" = (
 /obj/effect/turf_decal/trimline/transparent/neutral/filled/warning{
 	dir = 4
@@ -1342,10 +1357,6 @@
 /obj/effect/decal/cleanable/oil,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/abandoned_mechbay/bay2)
-"oO" = (
-/obj/structure/flora/rock,
-/turf/open/floor/plating/asteroid/wasteplanet,
-/area/overmap_encounter/planetoid/cave/explored)
 "pa" = (
 /obj/structure/rack,
 /obj/machinery/light/directional/south,
@@ -1353,10 +1364,6 @@
 /obj/item/shard,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/abandoned_mechbay/bay2)
-"pd" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/concrete/slab_1,
-/area/overmap_encounter/planetoid/cave/explored)
 "po" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/effect/turf_decal/spline/fancy/opaque/grey{
@@ -1381,17 +1388,11 @@
 	},
 /turf/open/floor/concrete/slab_4,
 /area/ruin/wasteplanet/abandoned_mechbay/mainhall)
-"pI" = (
+"pG" = (
+/obj/machinery/light/floor,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_1,
-/area/overmap_encounter/planetoid/wasteplanet/explored)
-"pJ" = (
-/obj/effect/turf_decal/industrial/warning,
-/obj/effect/turf_decal/arrows{
-	pixel_y = -8;
-	dir = 1
-	},
-/turf/open/floor/concrete/slab_1,
-/area/overmap_encounter/planetoid/wasteplanet/explored)
+/area/overmap_encounter/planetoid/cave/explored)
 "pT" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -1412,6 +1413,16 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/wasteplanet/abandoned_mechbay/mainhall)
+"qb" = (
+/obj/structure/railing/corner{
+	dir = 4
+	},
+/obj/structure/railing/corner{
+	max_integrity = 70;
+	dir = 4
+	},
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/overmap_encounter/planetoid/cave/explored)
 "qf" = (
 /obj/effect/decal/cleanable/oil,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1438,6 +1449,10 @@
 /obj/item/mecha_parts/mecha_equipment/drill/diamonddrill,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/abandoned_mechbay/bay2)
+"qJ" = (
+/obj/machinery/light/small/directional/south,
+/turf/open/floor/plating/wasteplanet,
+/area/overmap_encounter/planetoid/cave/explored)
 "qN" = (
 /obj/machinery/computer/rdconsole{
 	dir = 1
@@ -1570,8 +1585,11 @@
 	},
 /turf/open/floor/concrete/slab_4,
 /area/ruin/wasteplanet/abandoned_mechbay/mainhall)
-"sk" = (
-/turf/closed/mineral/random/asteroid/wasteplanet,
+"sj" = (
+/obj/machinery/atmospherics/components/unary/passive_vent/layer4,
+/obj/effect/turf_decal/box,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_1,
 /area/overmap_encounter/planetoid/cave/explored)
 "ss" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
@@ -1710,6 +1728,9 @@
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/wasteplanet/abandoned_mechbay/mainhall)
+"tM" = (
+/turf/open/floor/plating/wasteplanet,
+/area/overmap_encounter/planetoid/cave/explored)
 "tT" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -1726,12 +1747,9 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/abandoned_mechbay/bay2)
-"um" = (
-/obj/effect/turf_decal/industrial/warning,
-/obj/machinery/light/floor,
-/obj/effect/decal/cleanable/dirt/dust,
+"tZ" = (
 /turf/open/floor/concrete/slab_1,
-/area/overmap_encounter/planetoid/cave/explored)
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "un" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
@@ -1820,11 +1838,13 @@
 	},
 /turf/open/floor/concrete/slab_4,
 /area/ruin/wasteplanet/abandoned_mechbay/mainhall)
-"va" = (
-/obj/structure/railing{
-	max_integrity = 70
+"uT" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
 	},
-/turf/open/floor/plating/asteroid/wasteplanet,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/generic,
+/turf/open/floor/concrete/slab_1,
 /area/overmap_encounter/planetoid/cave/explored)
 "vd" = (
 /turf/template_noop,
@@ -2035,6 +2055,9 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/wasteplanet/abandoned_mechbay/crewquarters)
+"xz" = (
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "xD" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
@@ -2106,6 +2129,13 @@
 /obj/machinery/power/smes,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/wasteplanet/abandoned_mechbay/engineering)
+"yy" = (
+/obj/structure/railing{
+	max_integrity = 70;
+	dir = 4
+	},
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/overmap_encounter/planetoid/cave/explored)
 "yB" = (
 /obj/effect/turf_decal/trimline/opaque/neutral/line{
 	pixel_y = 8
@@ -2209,13 +2239,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/abandoned_mechbay/bay2)
-"zZ" = (
-/obj/structure/railing{
-	max_integrity = 70;
-	dir = 6
-	},
-/turf/open/floor/plating/asteroid/wasteplanet,
-/area/overmap_encounter/planetoid/cave/explored)
 "Ad" = (
 /obj/machinery/power/smes/magical,
 /obj/structure/cable{
@@ -2232,12 +2255,6 @@
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/wasteplanet/abandoned_mechbay/bay2)
-"As" = (
-/obj/effect/turf_decal/industrial/warning,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/generic,
-/turf/open/floor/concrete/slab_1,
-/area/overmap_encounter/planetoid/cave/explored)
 "At" = (
 /obj/machinery/power/terminal,
 /obj/structure/cable,
@@ -2364,12 +2381,10 @@
 "BJ" = (
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/wasteplanet/abandoned_mechbay/bay1)
-"BL" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/stairs{
-	dir = 4
-	},
-/area/overmap_encounter/planetoid/cave/explored)
+"BN" = (
+/obj/effect/turf_decal/industrial/warning,
+/turf/open/floor/concrete/slab_1,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "BT" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
@@ -2506,6 +2521,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/abandoned_mechbay/bay1)
+"DJ" = (
+/obj/structure/railing/corner{
+	max_integrity = 70;
+	dir = 8
+	},
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/overmap_encounter/planetoid/cave/explored)
 "DM" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -2540,6 +2562,12 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/wasteplanet/abandoned_mechbay/crewquarters)
+"DR" = (
+/obj/effect/turf_decal/industrial/warning,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_1,
+/area/overmap_encounter/planetoid/cave/explored)
 "DT" = (
 /obj/effect/turf_decal/trimline/transparent/neutral/filled/warning{
 	dir = 8
@@ -2552,14 +2580,6 @@
 "DU" = (
 /turf/closed/wall/concrete,
 /area/ruin/wasteplanet/abandoned_mechbay/mechlab)
-"DX" = (
-/obj/machinery/camera/autoname{
-	dir = 10
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/concrete/slab_1,
-/area/overmap_encounter/planetoid/cave/explored)
 "DY" = (
 /obj/machinery/door/airlock/engineering{
 	name = "Mech Lab";
@@ -2583,11 +2603,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/wasteplanet/abandoned_mechbay/mechlab)
-"Eb" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/generic,
-/turf/open/floor/concrete/slab_1,
-/area/overmap_encounter/planetoid/cave/explored)
 "Ec" = (
 /obj/effect/turf_decal/trimline/transparent/neutral/filled/corner{
 	dir = 1
@@ -2657,9 +2672,6 @@
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/wasteplanet/abandoned_mechbay/mainhall)
-"Fp" = (
-/turf/closed/wall,
-/area/overmap_encounter/planetoid/cave/explored)
 "Fs" = (
 /obj/effect/turf_decal/trimline/transparent/neutral/filled/warning{
 	dir = 4
@@ -2692,9 +2704,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech,
 /area/ruin/wasteplanet/abandoned_mechbay/mechlab)
-"FH" = (
-/turf/open/floor/plating/asteroid/wasteplanet,
-/area/overmap_encounter/planetoid/cave/explored)
 "FZ" = (
 /obj/effect/turf_decal/trimline/opaque/neutral/line{
 	dir = 4
@@ -2725,10 +2734,6 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/wasteplanet/abandoned_mechbay/crewquarters)
-"Gz" = (
-/obj/machinery/light/small/directional/east,
-/turf/open/floor/plating/asteroid/wasteplanet,
-/area/overmap_encounter/planetoid/cave/explored)
 "GE" = (
 /obj/effect/turf_decal/trimline/transparent/neutral/filled/warning,
 /obj/item/shard,
@@ -2766,22 +2771,9 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/abandoned_mechbay/commandcontrol)
-"GS" = (
-/obj/machinery/camera/autoname{
-	dir = 8;
-	network = list("cricket")
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/stairs{
-	dir = 1
-	},
-/area/overmap_encounter/planetoid/cave/explored)
-"GY" = (
-/obj/machinery/camera/autoname{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/concrete/slab_1,
+"Hh" = (
+/obj/structure/flora/rock,
+/turf/open/floor/plating/asteroid/wasteplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "Hj" = (
 /obj/machinery/light/dim/directional/south,
@@ -2811,10 +2803,6 @@
 /obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/wasteplanet/abandoned_mechbay/engineering)
-"Ho" = (
-/obj/effect/turf_decal/industrial/warning,
-/turf/open/floor/concrete/slab_1,
-/area/overmap_encounter/planetoid/wasteplanet/explored)
 "Hp" = (
 /obj/effect/decal/cleanable/vomit/old,
 /obj/effect/turf_decal/arrows{
@@ -2926,16 +2914,6 @@
 /obj/machinery/portable_atmospherics/canister/nitrogen,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/wasteplanet/abandoned_mechbay/engineering)
-"Iw" = (
-/obj/structure/railing/corner{
-	dir = 4
-	},
-/obj/structure/railing/corner{
-	max_integrity = 70;
-	dir = 4
-	},
-/turf/open/floor/plating/asteroid/wasteplanet,
-/area/overmap_encounter/planetoid/cave/explored)
 "Ix" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/mecha_wreckage/gygax,
@@ -3165,19 +3143,6 @@
 	},
 /turf/open/floor/concrete/slab_4,
 /area/ruin/wasteplanet/abandoned_mechbay/mainhall)
-"KZ" = (
-/obj/machinery/camera/autoname{
-	dir = 1
-	},
-/obj/machinery/light/directional/south,
-/turf/open/floor/concrete/slab_1,
-/area/overmap_encounter/planetoid/wasteplanet/explored)
-"Lj" = (
-/obj/machinery/atmospherics/components/unary/passive_vent/layer4,
-/obj/effect/turf_decal/box,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/concrete/slab_1,
-/area/overmap_encounter/planetoid/cave/explored)
 "Lo" = (
 /obj/machinery/door/poddoor{
 	id = "baseinternal"
@@ -3290,6 +3255,10 @@
 /obj/effect/turf_decal/box,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/wasteplanet/abandoned_mechbay/mechlab)
+"Mx" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_1,
+/area/overmap_encounter/planetoid/cave/explored)
 "ME" = (
 /obj/effect/turf_decal/trimline/opaque/neutral/line{
 	pixel_y = 8
@@ -3355,6 +3324,13 @@
 /obj/machinery/door/firedoor,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/wasteplanet/abandoned_mechbay/mainhall)
+"MT" = (
+/obj/machinery/camera/autoname{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_1,
+/area/overmap_encounter/planetoid/cave/explored)
 "MX" = (
 /obj/machinery/mech_bay_recharge_port,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3368,9 +3344,6 @@
 /obj/machinery/airalarm/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/abandoned_mechbay/bay2)
-"Nj" = (
-/turf/open/floor/plating/wasteplanet,
-/area/overmap_encounter/planetoid/cave/explored)
 "Nq" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -3454,6 +3427,10 @@
 /obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/wasteplanet/abandoned_mechbay/bay1)
+"Og" = (
+/obj/effect/mine/shrapnel/human_only,
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/overmap_encounter/planetoid/cave/explored)
 "Oj" = (
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/minor/pirate_or_bandana,
@@ -3501,6 +3478,27 @@
 	},
 /turf/open/floor/concrete/slab_4,
 /area/ruin/wasteplanet/abandoned_mechbay/mainhall)
+"Pi" = (
+/obj/effect/turf_decal/industrial/warning,
+/obj/effect/turf_decal/arrows{
+	pixel_y = -8;
+	dir = 1
+	},
+/turf/open/floor/concrete/slab_1,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
+"Pj" = (
+/obj/effect/turf_decal/industrial/warning,
+/obj/machinery/light/floor,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_1,
+/area/overmap_encounter/planetoid/cave/explored)
+"Pl" = (
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 4
+	},
+/obj/machinery/camera/autoname,
+/turf/open/floor/concrete/slab_4,
+/area/ruin/wasteplanet/abandoned_mechbay/mainhall)
 "PF" = (
 /obj/effect/turf_decal/trimline/transparent/neutral/filled/warning{
 	dir = 4
@@ -3509,6 +3507,9 @@
 /obj/item/radio/intercom/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/abandoned_mechbay/bay1)
+"PK" = (
+/turf/closed/wall,
+/area/overmap_encounter/planetoid/cave/explored)
 "PN" = (
 /obj/effect/turf_decal/trimline/transparent/neutral/filled/corner{
 	dir = 8
@@ -3568,10 +3569,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/abandoned_mechbay/commandcontrol)
-"QA" = (
-/obj/machinery/light/small/directional/south,
-/turf/open/floor/plating/wasteplanet,
-/area/overmap_encounter/planetoid/cave/explored)
 "QD" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
@@ -3618,9 +3615,6 @@
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/wasteplanet/abandoned_mechbay/mainhall)
-"Rf" = (
-/turf/open/floor/plating/asteroid/wasteplanet,
-/area/overmap_encounter/planetoid/wasteplanet/explored)
 "Rg" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/turf_decal/industrial/stand_clear/white{
@@ -3753,6 +3747,12 @@
 	},
 /turf/open/floor/concrete/reinforced,
 /area/ruin/wasteplanet/abandoned_mechbay/mainhall)
+"Sr" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/stairs{
+	dir = 4
+	},
+/area/overmap_encounter/planetoid/cave/explored)
 "Su" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -3781,12 +3781,6 @@
 /obj/effect/decal/cleanable/vomit/old,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/abandoned_mechbay/mechlab)
-"SI" = (
-/obj/structure/railing{
-	max_integrity = 70
-	},
-/turf/open/floor/plating/wasteplanet,
-/area/overmap_encounter/planetoid/cave/explored)
 "SN" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -3809,6 +3803,12 @@
 /obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/wasteplanet/abandoned_mechbay/bay1)
+"Tb" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/overmap_encounter/planetoid/cave/explored)
 "Tc" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
@@ -3847,6 +3847,14 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/wasteplanet/abandoned_mechbay/crewquarters)
+"Tw" = (
+/obj/machinery/atmospherics/components/unary/passive_vent/layer2{
+	dir = 4
+	},
+/obj/effect/turf_decal/box,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_1,
+/area/overmap_encounter/planetoid/cave/explored)
 "TH" = (
 /obj/effect/turf_decal/trimline/opaque/neutral/filled/warning{
 	dir = 8
@@ -3859,14 +3867,6 @@
 	},
 /turf/open/floor/concrete/slab_4,
 /area/ruin/wasteplanet/abandoned_mechbay/mainhall)
-"TK" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 4
-	},
-/obj/machinery/light/floor,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/concrete/slab_1,
-/area/overmap_encounter/planetoid/cave/explored)
 "TL" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
@@ -3881,19 +3881,19 @@
 /obj/item/radio/intercom/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/abandoned_mechbay/bay2)
-"Uh" = (
-/obj/machinery/camera/autoname{
-	dir = 10
-	},
-/obj/machinery/light/directional/south,
-/turf/open/floor/concrete/slab_1,
-/area/overmap_encounter/planetoid/wasteplanet/explored)
 "Un" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/stairs{
 	dir = 1
 	},
 /area/ruin/wasteplanet/abandoned_mechbay/bay2)
+"Ur" = (
+/turf/closed/mineral/random/wasteplanet,
+/area/overmap_encounter/planetoid/cave/explored)
+"UH" = (
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/overmap_encounter/planetoid/cave/explored)
 "UK" = (
 /obj/effect/mapping_helpers/airlock/locked,
 /obj/machinery/door/airlock/highsecurity{
@@ -3986,10 +3986,31 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/wasteplanet/abandoned_mechbay/crewquarters)
+"Wo" = (
+/obj/machinery/camera/autoname{
+	dir = 10
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_1,
+/area/overmap_encounter/planetoid/cave/explored)
+"Wr" = (
+/obj/machinery/camera/autoname{
+	dir = 1
+	},
+/obj/machinery/light/directional/south,
+/turf/open/floor/concrete/slab_1,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "Wt" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/wasteplanet/abandoned_mechbay/mainhall)
+"Ww" = (
+/obj/structure/railing{
+	max_integrity = 70
+	},
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/overmap_encounter/planetoid/cave/explored)
 "WR" = (
 /obj/structure/chair/sofa/corner,
 /obj/effect/decal/cleanable/blood,
@@ -4044,14 +4065,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/wasteplanet/abandoned_mechbay/mechlab)
-"Xm" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/generic,
-/turf/open/floor/concrete/slab_1,
-/area/overmap_encounter/planetoid/cave/explored)
 "Xp" = (
 /obj/effect/turf_decal/trimline/opaque/neutral/line{
 	pixel_y = 8
@@ -4147,12 +4160,6 @@
 /obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/abandoned_mechbay/mechlab)
-"Yy" = (
-/obj/effect/turf_decal/industrial/warning/corner,
-/obj/machinery/light/floor,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/concrete/slab_1,
-/area/overmap_encounter/planetoid/cave/explored)
 "YC" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
@@ -4260,13 +4267,6 @@
 /obj/effect/decal/cleanable/ash/large,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/abandoned_mechbay/bay1)
-"ZA" = (
-/obj/structure/railing{
-	max_integrity = 70;
-	dir = 4
-	},
-/turf/open/floor/plating/asteroid/wasteplanet,
-/area/overmap_encounter/planetoid/cave/explored)
 "ZD" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/turf_decal/arrows{
@@ -4315,12 +4315,12 @@ vd
 vd
 vd
 vd
-sk
+Ur
 vd
-sk
-Fp
-sk
-sk
+Ur
+PK
+Ur
+Ur
 vd
 vd
 vd
@@ -4358,19 +4358,19 @@ vd
 vd
 vd
 vd
-sk
-sk
-sk
-sk
-sk
-sk
-sk
-sk
-sk
-sk
-sk
-sk
-sk
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
 vd
 vd
 vd
@@ -4406,21 +4406,21 @@ vd
 vd
 vd
 vd
-sk
-sk
-sk
-sk
-Fp
-sk
-sk
-sk
-sk
-sk
-sk
-sk
-sk
-sk
-sk
+Ur
+Ur
+Ur
+Ur
+PK
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
 vd
 vd
 vd
@@ -4454,22 +4454,22 @@ vd
 vd
 vd
 vd
-sk
-sk
-Fp
-sk
-sk
-sk
-sk
-sk
-sk
-sk
-sk
-sk
-sk
-Fp
-Fp
-sk
+Ur
+Ur
+PK
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+PK
+PK
+Ur
 vd
 vd
 vd
@@ -4502,27 +4502,27 @@ vd
 vd
 vd
 vd
-sk
-sk
-sk
-sk
-sk
-Fp
-sk
-sk
-sk
-sk
-FH
-sk
-sk
-sk
-sk
-Fp
-sk
-sk
+Ur
+Ur
+Ur
+Ur
+Ur
+PK
+Ur
+Ur
+Ur
+Ur
+eb
+Ur
+Ur
+Ur
+Ur
+PK
+Ur
+Ur
 vd
 vd
-Fp
+PK
 vd
 vd
 vd
@@ -4550,30 +4550,30 @@ vd
 vd
 vd
 vd
-sk
-sk
-Fp
-sk
-sk
-sk
-sk
-sk
-FH
-FH
-Nj
-oO
-FH
-sk
-sk
-sk
-sk
-Fp
-sk
-sk
+Ur
+Ur
+PK
+Ur
+Ur
+Ur
+Ur
+Ur
+eb
+eb
+tM
+Hh
+eb
+Ur
+Ur
+Ur
+Ur
+PK
+Ur
+Ur
 vd
-sk
-sk
-sk
+Ur
+Ur
+Ur
 vd
 vd
 vd
@@ -4598,35 +4598,35 @@ vd
 vd
 vd
 vd
-sk
-sk
-sk
-sk
-sk
-sk
-sk
-FH
-Nj
-FH
-FH
-gv
-ZA
-ZA
-ZA
-Iw
-sk
-sk
-sk
-sk
-sk
-sk
-sk
-sk
-Fp
-sk
-sk
-sk
-sk
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+eb
+tM
+eb
+eb
+ib
+yy
+yy
+yy
+qb
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+PK
+Ur
+Ur
+Ur
+Ur
 vd
 vd
 vd
@@ -4646,37 +4646,37 @@ vd
 vd
 vd
 vd
-sk
-sk
-sk
-sk
-sk
-sk
-sk
-FH
-nc
-FH
-Nj
-FH
-va
-nb
-GS
-nb
-eT
-sk
-sk
-sk
-sk
-sk
-sk
-sk
-sk
-sk
-sk
-Fp
-sk
-Fp
-sk
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+eb
+kJ
+eb
+tM
+eb
+Ww
+pG
+aw
+pG
+Tb
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+PK
+Ur
+PK
+Ur
 vd
 vd
 vd
@@ -4693,22 +4693,22 @@ vd
 vd
 vd
 vd
-sk
-sk
-sk
-sk
-sk
-sk
-sk
-sk
-FH
-FH
-Nj
-FH
-FH
-Nj
-va
-BL
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+eb
+eb
+tM
+eb
+eb
+tM
+Ww
+Sr
 KH
 LX
 dR
@@ -4720,16 +4720,16 @@ dR
 dR
 dR
 dR
-FH
-FH
-sk
-sk
-sk
-sk
+eb
+eb
+Ur
+Ur
+Ur
+Ur
 vd
 vd
 au
-ms
+oI
 vd
 vd
 vd
@@ -4742,22 +4742,22 @@ vd
 vd
 vd
 vd
-sk
-sk
-sk
-Fp
-sk
-sk
-sk
-Nj
-FH
-gv
-ZA
-ZA
-ZA
-ZA
-zZ
-pd
+Ur
+Ur
+Ur
+PK
+Ur
+Ur
+Ur
+tM
+eb
+ib
+yy
+yy
+yy
+yy
+aQ
+Mx
 dR
 ks
 dR
@@ -4770,14 +4770,14 @@ DU
 DU
 dR
 dR
-FH
-sk
-sk
-sk
-sk
-Fp
+eb
+Ur
+Ur
+Ur
+Ur
+PK
 vd
-ms
+oI
 vd
 vd
 vd
@@ -4791,22 +4791,22 @@ vd
 vd
 vd
 vd
-sk
-sk
-sk
-sk
-sk
-FH
-oO
-Nj
-FH
-SI
-Yy
-dY
-Xm
-dY
-TK
-Xm
+Ur
+Ur
+Ur
+Ur
+Ur
+eb
+Hh
+tM
+eb
+hU
+gE
+dk
+uT
+dk
+bL
+uT
 eG
 Iy
 DU
@@ -4820,15 +4820,15 @@ DU
 DU
 dR
 dR
-sk
-sk
-Fp
-sk
-sk
-sk
-sk
+Ur
+Ur
+PK
+Ur
+Ur
+Ur
+Ur
 vd
-ms
+oI
 vd
 vd
 "}
@@ -4839,23 +4839,23 @@ vd
 vd
 vd
 vd
-sk
-sk
-sk
-sk
-sk
-sk
-Nj
-FH
-Nj
-FH
-va
-nS
-pd
-Eb
-gp
-gp
-GY
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+tM
+eb
+tM
+eb
+Ww
+DR
+Mx
+cq
+Tw
+Tw
+MT
 Ib
 gZ
 DU
@@ -4870,14 +4870,14 @@ DU
 TL
 dR
 dR
-Fp
-sk
-sk
-sk
-sk
-sk
-sk
-Fp
+PK
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+PK
 vd
 vd
 "}
@@ -4887,20 +4887,20 @@ vd
 vd
 vd
 vd
-sk
-sk
-sk
-Fp
-sk
-sk
-Nj
-FH
-nc
-FH
-FH
-SI
-hG
-Eb
+Ur
+Ur
+Ur
+PK
+Ur
+Ur
+tM
+eb
+kJ
+eb
+eb
+hU
+gu
+cq
 KH
 Yt
 Yt
@@ -4920,13 +4920,13 @@ uO
 Hm
 dR
 dR
-sk
-sk
-sk
-Fp
-sk
-sk
-sk
+Ur
+Ur
+Ur
+PK
+Ur
+Ur
+Ur
 vd
 vd
 "}
@@ -4936,20 +4936,20 @@ vd
 vd
 vd
 vd
-sk
-sk
-sk
-sk
-sk
-sk
-FH
-FH
-kF
-Nj
-Nj
-va
-As
-DX
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+eb
+eb
+Og
+tM
+tM
+Ww
+ok
+Wo
 dR
 gU
 qR
@@ -4970,35 +4970,35 @@ qq
 NW
 dR
 dR
-Fp
-sk
-sk
-sk
-sk
-sk
-ms
-ms
+PK
+Ur
+Ur
+Ur
+Ur
+Ur
+oI
+oI
 "}
 (15,1,1) = {"
 vd
 vd
 vd
 vd
-sk
-sk
-sk
-Fp
-sk
-sk
-sk
-FH
-FH
-FH
-Nj
-FH
-va
-um
-Lj
+Ur
+Ur
+Ur
+PK
+Ur
+Ur
+Ur
+eb
+eb
+eb
+tM
+eb
+Ww
+Pj
+sj
 ZL
 bC
 ru
@@ -5020,11 +5020,11 @@ Kj
 Lv
 dR
 dR
-sk
-sk
-sk
-sk
-sk
+Ur
+Ur
+Ur
+Ur
+Ur
 vd
 vd
 "}
@@ -5033,19 +5033,19 @@ vd
 vd
 vd
 vd
-sk
-sk
-sk
-sk
-sk
-sk
-sk
-Nj
-FH
-FH
-FH
-FH
-ng
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+tM
+eb
+eb
+eb
+eb
+DJ
 KG
 KG
 KG
@@ -5069,12 +5069,12 @@ wq
 wq
 wq
 wq
-sk
-sk
-sk
-sk
-sk
-Fp
+Ur
+Ur
+Ur
+Ur
+Ur
+PK
 vd
 "}
 (17,1,1) = {"
@@ -5082,19 +5082,19 @@ vd
 vd
 vd
 vd
-sk
-sk
-sk
-sk
-sk
-sk
-sk
-FH
-FH
-FH
-FH
-FH
-FH
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+eb
+eb
+eb
+eb
+eb
+eb
 KG
 wD
 xp
@@ -5118,32 +5118,32 @@ QM
 lt
 wq
 wq
-sk
-Fp
-sk
-sk
-sk
-sk
+Ur
+PK
+Ur
+Ur
+Ur
+Ur
 vd
 "}
 (18,1,1) = {"
 vd
 vd
 vd
-sk
-sk
-sk
-sk
-sk
-sk
-Fp
-sk
-FH
-FH
-FH
-FH
-FH
-Nj
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+PK
+Ur
+eb
+eb
+eb
+eb
+eb
+tM
 KG
 ht
 Xy
@@ -5167,32 +5167,32 @@ kD
 fY
 wq
 wq
-sk
-sk
-sk
-sk
-sk
+Ur
+Ur
+Ur
+Ur
+Ur
 vd
 vd
 "}
 (19,1,1) = {"
 vd
 vd
-sk
-sk
-sk
-sk
-sk
-sk
-sk
-sk
-sk
-Nj
-oO
-Nj
-FH
-kF
-nc
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+tM
+Hh
+tM
+eb
+Og
+kJ
 KG
 lA
 tC
@@ -5216,9 +5216,9 @@ DN
 IY
 wq
 wq
-sk
-sk
-sk
+Ur
+Ur
+Ur
 vd
 vd
 vd
@@ -5227,21 +5227,21 @@ vd
 (20,1,1) = {"
 vd
 vd
-sk
-sk
-sk
-sk
-sk
-sk
-sk
-sk
-Nj
-FH
-FH
-FH
-FH
-FH
-FH
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+tM
+eb
+eb
+eb
+eb
+eb
+eb
 KG
 BF
 sX
@@ -5265,9 +5265,9 @@ DN
 Jf
 wq
 wq
-sk
-sk
-sk
+Ur
+Ur
+Ur
 vd
 vd
 vd
@@ -5276,21 +5276,21 @@ vd
 (21,1,1) = {"
 vd
 vd
-sk
-Fp
-sk
-sk
-sk
-sk
-sk
-Nj
-FH
-FH
-kF
-FH
-FH
-FH
-Gz
+Ur
+PK
+Ur
+Ur
+Ur
+Ur
+Ur
+tM
+eb
+eb
+Og
+eb
+eb
+eb
+UH
 KG
 bQ
 cP
@@ -5314,8 +5314,8 @@ BA
 pa
 wq
 wq
-sk
-sk
+Ur
+Ur
 vd
 vd
 vd
@@ -5323,22 +5323,22 @@ vd
 vd
 "}
 (22,1,1) = {"
-sk
-sk
-sk
-sk
-sk
-sk
-sk
-sk
-sk
-sk
-FH
-FH
-nc
-FH
-FH
-QA
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+eb
+eb
+kJ
+eb
+eb
+qJ
 KH
 KG
 VG
@@ -5363,8 +5363,8 @@ UK
 wq
 wq
 wq
-sk
-sk
+Ur
+Ur
 vd
 vd
 vd
@@ -5372,22 +5372,22 @@ vd
 vd
 "}
 (23,1,1) = {"
-sk
-sk
-sk
-sk
-sk
-Fp
-sk
-sk
-sk
-sk
-FH
-FH
-FH
-FH
-FH
-oO
+Ur
+Ur
+Ur
+Ur
+Ur
+PK
+Ur
+Ur
+Ur
+Ur
+eb
+eb
+eb
+eb
+eb
+Hh
 KG
 nA
 uD
@@ -5412,9 +5412,9 @@ HK
 sG
 Hj
 wq
-sk
-sk
-Fp
+Ur
+Ur
+PK
 vd
 vd
 vd
@@ -5422,20 +5422,20 @@ vd
 "}
 (24,1,1) = {"
 vd
-sk
-sk
-sk
-sk
-sk
-sk
-sk
-sk
-kF
-FH
-FH
-FH
-FH
-Nj
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+Og
+eb
+eb
+eb
+eb
+tM
 KG
 KG
 YJ
@@ -5461,30 +5461,30 @@ eR
 vj
 ec
 wq
-sk
-sk
-sk
-sk
-sk
+Ur
+Ur
+Ur
+Ur
+Ur
 vd
 vd
 "}
 (25,1,1) = {"
 vd
 vd
-sk
+Ur
 vd
 vd
-sk
-sk
-sk
-FH
-FH
-oO
-FH
-kF
-sk
-sk
+Ur
+Ur
+Ur
+eb
+eb
+Hh
+eb
+Og
+Ur
+Ur
 KG
 VG
 VG
@@ -5510,11 +5510,11 @@ WT
 wq
 wq
 wq
-sk
-sk
-sk
-sk
-Fp
+Ur
+Ur
+Ur
+Ur
+PK
 vd
 vd
 "}
@@ -5526,13 +5526,13 @@ vd
 vd
 vd
 vd
-sk
-Rf
-Rf
-FH
-FH
-sk
-sk
+Ur
+xz
+xz
+eb
+eb
+Ur
+Ur
 KG
 KG
 eA
@@ -5547,7 +5547,7 @@ ir
 DC
 fd
 zE
-iG
+Pl
 aM
 iU
 YX
@@ -5559,11 +5559,11 @@ Bw
 fX
 wq
 wq
-sk
-Fp
-sk
-sk
-sk
+Ur
+PK
+Ur
+Ur
+Ur
 vd
 vd
 "}
@@ -5576,11 +5576,11 @@ vd
 vd
 vd
 vd
-Rf
-sk
-sk
-sk
-sk
+xz
+Ur
+Ur
+Ur
+Ur
 KG
 KG
 VG
@@ -5608,10 +5608,10 @@ zR
 Vx
 wq
 wq
-sk
-sk
-sk
-sk
+Ur
+Ur
+Ur
+Ur
 vd
 vd
 vd
@@ -5626,9 +5626,9 @@ vd
 vd
 vd
 vd
-Fp
-sk
-sk
+PK
+Ur
+Ur
 KG
 KG
 Dk
@@ -5657,9 +5657,9 @@ Yf
 qH
 wq
 wq
-sk
-sk
-Fp
+Ur
+Ur
+PK
 vd
 vd
 vd
@@ -5676,8 +5676,8 @@ vd
 vd
 vd
 vd
-sk
-sk
+Ur
+Ur
 KG
 VG
 Om
@@ -5706,10 +5706,10 @@ hv
 tW
 wq
 wq
-sk
-sk
+Ur
+Ur
 vd
-sk
+Ur
 vd
 vd
 vd
@@ -5726,7 +5726,7 @@ vd
 vd
 vd
 vd
-sk
+Ur
 KG
 VG
 VG
@@ -5755,8 +5755,8 @@ Ec
 YP
 wq
 wq
-sk
-sk
+Ur
+Ur
 vd
 vd
 vd
@@ -5775,7 +5775,7 @@ vd
 vd
 vd
 vd
-sk
+Ur
 aX
 nF
 nF
@@ -5804,12 +5804,12 @@ wq
 wq
 wq
 wq
-sk
-sk
-sk
-sk
-sk
-sk
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
 vd
 "}
 (32,1,1) = {"
@@ -5823,8 +5823,8 @@ vd
 vd
 vd
 vd
-sk
-Fp
+Ur
+PK
 aX
 nF
 XL
@@ -5853,10 +5853,10 @@ ET
 gJ
 Im
 Im
-sk
-Fp
-sk
-sk
+Ur
+PK
+Ur
+Ur
 vd
 vd
 vd
@@ -5870,10 +5870,10 @@ vd
 vd
 vd
 vd
-sk
-sk
-Fp
-sk
+Ur
+Ur
+PK
+Ur
 aX
 nF
 JY
@@ -5901,11 +5901,11 @@ uQ
 Vk
 gJ
 Im
-sk
-sk
-sk
-sk
-Fp
+Ur
+Ur
+Ur
+Ur
+PK
 vd
 vd
 vd
@@ -5919,10 +5919,10 @@ vd
 vd
 vd
 vd
-Rf
-sk
-sk
-sk
+xz
+Ur
+Ur
+Ur
 aX
 nF
 ey
@@ -5950,11 +5950,11 @@ uQ
 Iq
 gJ
 Im
-sk
-Fp
-sk
-sk
-sk
+Ur
+PK
+Ur
+Ur
+Ur
 vd
 vd
 vd
@@ -5968,10 +5968,10 @@ vd
 vd
 vd
 vd
-Rf
-Rf
-Rf
-Uh
+xz
+xz
+xz
+mx
 Qe
 aX
 ss
@@ -5999,10 +5999,10 @@ uQ
 Iq
 gJ
 Im
-sk
-sk
-sk
-sk
+Ur
+Ur
+Ur
+Ur
 vd
 vd
 vd
@@ -6017,11 +6017,11 @@ vd
 vd
 vd
 vd
-Rf
-Rf
-Rf
-pI
-pJ
+xz
+xz
+xz
+tZ
+Pi
 Sm
 fT
 DM
@@ -6048,9 +6048,9 @@ uQ
 Hn
 gJ
 Im
-sk
-sk
-sk
+Ur
+Ur
+Ur
 vd
 vd
 vd
@@ -6066,11 +6066,11 @@ vd
 vd
 vd
 vd
-Rf
-Rf
-Rf
-pI
-Ho
+xz
+xz
+xz
+tZ
+BN
 VC
 dz
 Ym
@@ -6097,10 +6097,10 @@ Js
 CM
 gJ
 Im
-sk
-sk
-Fp
-sk
+Ur
+Ur
+PK
+Ur
 vd
 vd
 vd
@@ -6115,11 +6115,11 @@ vd
 vd
 vd
 vd
-Rf
-Rf
-Rf
-pI
-pJ
+xz
+xz
+xz
+tZ
+Pi
 hj
 ma
 wp
@@ -6146,11 +6146,11 @@ iB
 CM
 gJ
 Im
-sk
-sk
-sk
-sk
-sk
+Ur
+Ur
+Ur
+Ur
+Ur
 vd
 vd
 vd
@@ -6164,10 +6164,10 @@ vd
 vd
 vd
 vd
-Rf
-Rf
-Rf
-KZ
+xz
+xz
+xz
+Wr
 AT
 uu
 uu
@@ -6195,10 +6195,10 @@ Im
 Im
 Im
 Im
-sk
-sk
-sk
-sk
+Ur
+Ur
+Ur
+Ur
 vd
 vd
 vd
@@ -6214,39 +6214,39 @@ vd
 vd
 vd
 vd
-sk
-sk
-sk
+Ur
+Ur
+Ur
 uu
-sk
-sk
-Fp
-sk
-sk
-sk
-sk
-sk
-Fp
-sk
-sk
-sk
-sk
-sk
-sk
-sk
-sk
-sk
-sk
+Ur
+Ur
+PK
+Ur
+Ur
+Ur
+Ur
+Ur
+PK
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
 Im
 Ad
 Im
-sk
-sk
-sk
-sk
-sk
-Fp
-sk
+Ur
+Ur
+Ur
+Ur
+Ur
+PK
+Ur
 vd
 vd
 vd
@@ -6263,38 +6263,38 @@ vd
 vd
 vd
 vd
-sk
-sk
-sk
+Ur
+Ur
+Ur
 uu
-sk
-sk
-sk
-sk
-sk
-Fp
-sk
-sk
-sk
-sk
-sk
-Fp
-sk
+Ur
+Ur
+Ur
+Ur
+Ur
+PK
+Ur
+Ur
+Ur
+Ur
+Ur
+PK
+Ur
 vd
-sk
-sk
-sk
-sk
-sk
+Ur
+Ur
+Ur
+Ur
+Ur
 Im
 Im
 Im
-Fp
-sk
-sk
-sk
-sk
-sk
+PK
+Ur
+Ur
+Ur
+Ur
+Ur
 vd
 vd
 vd
@@ -6311,38 +6311,38 @@ vd
 vd
 vd
 vd
-sk
-sk
-sk
-sk
-sk
-sk
-Fp
-sk
-sk
-sk
-sk
-Fp
-sk
-sk
-sk
-sk
-sk
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+PK
+Ur
+Ur
+Ur
+Ur
+PK
+Ur
+Ur
+Ur
+Ur
+Ur
 vd
 vd
-Fp
-sk
-sk
-sk
-sk
-sk
-sk
-sk
-sk
-sk
-Fp
-sk
-sk
+PK
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+Ur
+PK
+Ur
+Ur
 vd
 vd
 vd
@@ -6366,30 +6366,30 @@ vd
 vd
 vd
 vd
-sk
+Ur
 vd
-sk
-sk
+Ur
+Ur
 vd
-sk
-sk
-sk
-Fp
+Ur
+Ur
+Ur
+PK
 vd
-sk
-sk
-vd
-vd
-vd
-Fp
-sk
+Ur
+Ur
 vd
 vd
-sk
 vd
-sk
-sk
-sk
+PK
+Ur
+vd
+vd
+Ur
+vd
+Ur
+Ur
+Ur
 vd
 vd
 vd
@@ -6416,28 +6416,28 @@ vd
 vd
 vd
 vd
-sk
+Ur
 vd
 vd
-sk
+Ur
 vd
 vd
-Fp
-sk
+PK
+Ur
 vd
 vd
-sk
+Ur
 vd
 vd
 vd
 vd
 vd
-Fp
-sk
+PK
+Ur
 vd
 vd
-Fp
-sk
+PK
+Ur
 vd
 vd
 vd
@@ -6468,7 +6468,7 @@ vd
 vd
 vd
 vd
-sk
+Ur
 vd
 vd
 vd
@@ -6487,7 +6487,7 @@ vd
 vd
 vd
 vd
-Fp
+PK
 vd
 vd
 vd

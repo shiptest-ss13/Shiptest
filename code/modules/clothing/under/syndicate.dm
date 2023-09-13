@@ -222,6 +222,9 @@
 	uplink_type = /obj/item/uplink/nuclear
 	uplink_slot = ITEM_SLOT_BELT
 
+//INTEQ
+//maybe split it into it's own file?
+
 /obj/item/clothing/under/syndicate/inteq
 	name = "inteq turtleneck"
 	desc = "A rich brown turtleneck with black pants, it has a small 'IRMG' embroidered onto the shoulder."
@@ -281,3 +284,10 @@
 	. = ..()
 	var/obj/item/clothing/accessory/maidapron/inteq/A = new (src)
 	attach_accessory(A)
+
+/obj/item/clothing/under/syndicate/inteq/honorable
+	name = "honorable vanguard turtleneck"
+	desc = "a midnight black turtleneck worn by honorable Vanguards of the IRMG."
+	icon_state = "inteq_honorable"
+	item_state = "inteq_honorable"
+	supports_variations = KEPORI_VARIATION | DIGITIGRADE_VARIATION

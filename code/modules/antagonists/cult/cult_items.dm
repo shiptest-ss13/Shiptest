@@ -384,6 +384,7 @@
 
 /obj/item/sharpener/cult/update_icon_state()
 	icon_state = "cult_sharpener[used ? "_used" : ""]"
+	return ..()
 
 /obj/item/clothing/suit/hooded/cultrobes/cult_shield
 	name = "empowered cultist armor"
@@ -585,6 +586,7 @@
 	name = "blood halberd"
 	desc = "A sickening spear composed entirely of crystallized blood."
 	icon_state = "bloodspear0"
+	base_icon_state = "occultpoleaxe"
 	lefthand_file = 'icons/mob/inhands/weapons/polearms_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/polearms_righthand.dmi'
 	slot_flags = 0
@@ -607,7 +609,7 @@
 /obj/item/cult_spear/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 100, 90)
-	AddComponent(/datum/component/two_handed, force_unwielded=17, force_wielded=24, icon_wielded="bloodspear1")
+	AddComponent(/datum/component/two_handed, force_unwielded=17, force_wielded=24, icon_wielded="[base_icon_state]1")
 
 /// triggered on wield of two handed item
 /obj/item/cult_spear/proc/on_wield(obj/item/source, mob/user)
@@ -622,7 +624,8 @@
 	wielded = FALSE
 
 /obj/item/cult_spear/update_icon_state()
-	icon_state = "bloodspear0"
+	icon_state = "[base_icon_state]0"
+	return ..()
 
 /obj/item/cult_spear/Destroy()
 	if(spear_act)

@@ -485,9 +485,10 @@ Congratulations! You are now trained for invasive xenobiology research!"}
 	if(!turned_on)
 		toggle_on(user)
 	to_chat(usr, "<span class='notice'>You switch the baton to [txt] mode.</span>")
-	update_icon()
+	update_appearance()
 
 /obj/item/melee/baton/abductor/update_icon_state()
+	. = ..()
 	switch(mode)
 		if(BATON_STUN)
 			icon_state = "wonderprodStun"
@@ -501,6 +502,7 @@ Congratulations! You are now trained for invasive xenobiology research!"}
 		if(BATON_PROBE)
 			icon_state = "wonderprodProbe"
 			item_state = "wonderprodProbe"
+	return ..()
 
 /obj/item/melee/baton/abductor/attack(mob/target, mob/living/user)
 	if(!AbductorCheck(user))

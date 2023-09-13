@@ -139,3 +139,7 @@
 	name = "chemical jug (sulfur)"
 	icon_state = "chem_jug_sulfur"
 	list_reagents = list(/datum/reagent/sulfur = 150)
+
+/obj/item/reagent_containers/glass/chem_jug/thermite
+	name = "chemical jug (thermite)"
+	list_reagents = list(/datum/reagent/thermite = 150)

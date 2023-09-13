@@ -214,7 +214,7 @@ Class Procs:
 	density = FALSE
 	if(drop)
 		dropContents()
-	update_icon()
+	update_appearance()
 	updateUsrDialog()
 
 /obj/machinery/proc/dropContents(list/subset = null)
@@ -268,7 +268,7 @@ Class Procs:
 		occupant = target
 		target.forceMove(src)
 	updateUsrDialog()
-	update_icon()
+	update_appearance()
 
 /obj/machinery/proc/auto_use_power()
 	if(!powered(power_channel))
@@ -454,7 +454,7 @@ Class Procs:
 	if(!(machine_stat & BROKEN) && !(flags_1 & NODECONSTRUCT_1))
 		set_machine_stat(machine_stat | BROKEN)
 		SEND_SIGNAL(src, COMSIG_MACHINERY_BROKEN, damage_flag)
-		update_icon()
+		update_appearance()
 		return TRUE
 
 /obj/machinery/contents_explosion(severity, target)
@@ -464,7 +464,7 @@ Class Procs:
 /obj/machinery/handle_atom_del(atom/A)
 	if(A == occupant)
 		occupant = null
-		update_icon()
+		update_appearance()
 		updateUsrDialog()
 		return ..()
 

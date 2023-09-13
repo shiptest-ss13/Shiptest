@@ -1,397 +1,2256 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"a" = (
-/turf/template_noop,
-/area/template_noop)
-"c" = (
-/obj/structure/sign/warning/radiation,
-/turf/closed/wall/r_wall,
-/area/ruin)
-"d" = (
-/obj/structure/radioactive,
-/turf/open/floor/plating/asteroid/wasteplanet,
-/area/ruin)
-"e" = (
-/obj/structure/reagent_dispensers/fueltank,
-/turf/open/floor/plating/asteroid/wasteplanet,
-/area/ruin)
-"g" = (
-/turf/open/floor/plating/asteroid/wasteplanet,
-/area/ruin)
-"i" = (
-/obj/effect/gibspawner,
-/turf/open/floor/plating/asteroid/wasteplanet,
-/area/ruin)
-"j" = (
-/obj/item/grenade/syndieminibomb,
-/obj/item/ammo_box/magazine/aknt,
-/turf/open/floor/plating/asteroid/wasteplanet,
-/area/ruin)
-"k" = (
-/obj/structure/radioactive/stack,
-/turf/open/floor/plating/asteroid/wasteplanet,
-/area/overmap_encounter/planetoid/wasteplanet/explored)
-"l" = (
-/obj/structure/table/reinforced,
-/obj/item/ammo_box/magazine/aknt{
-	pixel_x = -15;
-	pixel_y = -9
+"aF" = (
+/obj/item/clothing/head/radiation,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ruin/wasteplanet/wasteplanet_radiation/containment)
+"aP" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/ruin/wasteplanet/wasteplanet_radiation/maint)
+"bc" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/road/line/edge/transparent/yellow{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/wasteplanet/wasteplanet_radiation/main)
+"bX" = (
+/obj/effect/decal/cleanable/greenglow/filled,
+/obj/effect/dummy/lighting_obj{
+	light_color = "#80B425";
+	light_power = 2
+	},
+/turf/open/floor/plating/rust,
+/area/ruin/wasteplanet/wasteplanet_radiation/containment)
+"bZ" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/stairs/old,
+/area/ruin/wasteplanet/wasteplanet_radiation/main)
+"cd" = (
+/obj/structure/fence/corner{
+	dir = 1
 	},
 /turf/open/floor/plating/asteroid/wasteplanet,
-/area/ruin)
-"m" = (
-/obj/effect/radiation,
+/area/ruin/wasteplanet/wasteplanet_radiation)
+"cn" = (
+/obj/structure/sign/warning/radiation/rad_area{
+	pixel_x = 32
+	},
+/turf/open/floor/plating/wasteplanet/rust,
+/area/ruin/wasteplanet/wasteplanet_radiation)
+"dC" = (
+/obj/effect/decal/cleanable/blood/old,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plastic,
+/area/ruin/wasteplanet/wasteplanet_radiation/main)
+"dU" = (
+/obj/structure/salvageable/circuit_imprinter,
 /turf/open/floor/plating/asteroid/wasteplanet,
-/area/overmap_encounter/planetoid/wasteplanet/explored)
-"n" = (
-/obj/item/ammo_box/magazine/aknt,
+/area/ruin/wasteplanet/wasteplanet_radiation)
+"eD" = (
+/obj/item/clothing/suit/radiation,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ruin/wasteplanet/wasteplanet_radiation/containment)
+"eO" = (
+/turf/closed/wall/r_wall/rust/yesdiag,
+/area/ruin/wasteplanet/wasteplanet_radiation/containment)
+"eW" = (
+/obj/machinery/portable_atmospherics/canister/tritium,
+/turf/open/floor/plating/rust,
+/area/ruin/wasteplanet/wasteplanet_radiation/containment)
+"fb" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/miskilamo_big/one{
+	color = "#580818"
+	},
+/turf/open/floor/plasteel,
+/area/ruin/wasteplanet/wasteplanet_radiation/main)
+"fK" = (
+/obj/effect/decal/remains/xeno/larva,
+/obj/effect/decal/cleanable/oil/slippery,
+/turf/open/floor/plating,
+/area/ruin/wasteplanet/wasteplanet_radiation/containment)
+"gn" = (
+/obj/item/clothing/suit/radiation,
+/obj/effect/decal/remains/human,
+/obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plating/asteroid/wasteplanet,
-/area/ruin)
-"o" = (
-/obj/structure/fence/door,
+/area/ruin/wasteplanet/wasteplanet_radiation)
+"gr" = (
+/turf/open/floor/plating/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_radiation)
+"gx" = (
+/mob/living/simple_animal/hostile/hivebot/wasteplanet,
 /turf/open/floor/plating/asteroid/wasteplanet,
-/area/overmap_encounter/planetoid/wasteplanet/explored)
-"p" = (
+/area/ruin/wasteplanet/wasteplanet_radiation)
+"gM" = (
+/obj/machinery/atmospherics/pipe/layer_manifold/visible{
+	dir = 4
+	},
+/turf/closed/wall/r_wall/rust,
+/area/ruin/wasteplanet/wasteplanet_radiation/main)
+"gX" = (
+/obj/effect/decal/cleanable/shreds,
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_radiation)
+"ig" = (
+/obj/item/reagent_containers/pill/potassiodide{
+	pixel_x = 4;
+	pixel_y = -6
+	},
+/obj/structure/sink{
+	dir = 8;
+	pixel_x = 12
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plastic,
+/area/ruin/wasteplanet/wasteplanet_radiation/main)
+"iA" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
+	dir = 9
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/rust,
+/area/ruin/wasteplanet/wasteplanet_radiation/main)
+"iQ" = (
+/turf/closed/wall/r_wall,
+/area/ruin/wasteplanet/wasteplanet_radiation/maint)
+"iS" = (
+/obj/item/circuitboard/machine/rad_collector,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ruin/wasteplanet/wasteplanet_radiation/containment)
+"iT" = (
+/obj/structure/spawner/wasteplanet/hivebot/low_threat,
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_radiation)
+"jh" = (
+/obj/structure/sign/warning/radiation/rad_area{
+	pixel_y = 31
+	},
+/turf/open/floor/plating/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_radiation)
+"kd" = (
+/obj/machinery/door/airlock/public/glass{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/firedoor/heavy,
+/turf/open/floor/plastic,
+/area/ruin/wasteplanet/wasteplanet_radiation/main)
+"kq" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/kirbyplants/fullysynthetic,
+/turf/open/floor/plasteel,
+/area/ruin/wasteplanet/wasteplanet_radiation/main)
+"kS" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/isf_big/seven{
+	color = "#580818"
+	},
+/turf/open/floor/plasteel,
+/area/ruin/wasteplanet/wasteplanet_radiation/main)
+"lJ" = (
+/obj/effect/radiation/waste/intense,
+/turf/open/floor/plating/rust,
+/area/ruin/wasteplanet/wasteplanet_radiation/containment)
+"lL" = (
+/obj/structure/fence/cut/large,
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_radiation)
+"lS" = (
+/obj/structure/sign/warning/longtermwaste{
+	pixel_y = 32
+	},
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_radiation)
+"mi" = (
+/obj/item/clothing/head/radiation,
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_radiation)
+"my" = (
+/obj/structure/fence,
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_radiation)
+"mF" = (
+/obj/machinery/door/airlock/maintenance/external{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/heavy,
+/turf/open/floor/plating,
+/area/ruin/wasteplanet/wasteplanet_radiation/main)
+"mQ" = (
+/obj/machinery/power/rad_collector,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ruin/wasteplanet/wasteplanet_radiation/containment)
+"mV" = (
+/obj/structure/fence{
+	dir = 8
+	},
+/turf/open/floor/plating/wasteplanet/rust,
+/area/ruin/wasteplanet/wasteplanet_radiation)
+"mZ" = (
+/mob/living/simple_animal/bot/secbot{
+	hacked = 1
+	},
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_radiation)
+"no" = (
+/obj/machinery/vending/sovietsoda,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plastic,
+/area/ruin/wasteplanet/wasteplanet_radiation/main)
+"nN" = (
+/obj/structure/radioactive{
+	pixel_x = 7
+	},
+/turf/open/floor/plating,
+/area/ruin/wasteplanet/wasteplanet_radiation/containment)
+"oA" = (
+/obj/machinery/light/dim{
+	dir = 1;
+	pixel_y = 20
+	},
+/obj/effect/decal/cleanable/cobweb,
+/turf/open/floor/plating/rust,
+/area/ruin/wasteplanet/wasteplanet_radiation/main)
+"oF" = (
+/obj/effect/decal/cleanable/oil/slippery,
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_radiation)
+"oY" = (
+/obj/machinery/door/airlock/maintenance/glass{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/heavy,
+/turf/open/floor/plating,
+/area/ruin/wasteplanet/wasteplanet_radiation/maint)
+"ph" = (
+/obj/machinery/atmospherics/components/unary/tank/air{
+	dir = 4;
+	piping_layer = 2
+	},
+/turf/open/floor/plating/rust,
+/area/ruin/wasteplanet/wasteplanet_radiation/maint)
+"pp" = (
+/obj/machinery/power/apc/auto_name/directional/west,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/ruin/wasteplanet/wasteplanet_radiation/main)
+"pr" = (
+/obj/machinery/portable_atmospherics/canister/air,
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_radiation)
+"pZ" = (
+/obj/structure/fence/cut/medium{
+	dir = 8
+	},
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_radiation)
+"qy" = (
+/obj/structure/closet/radiation{
+	anchored = 1
+	},
+/turf/open/floor/plating,
+/area/ruin/wasteplanet/wasteplanet_radiation/containment)
+"qF" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel,
+/area/ruin/wasteplanet/wasteplanet_radiation/main)
+"rI" = (
+/mob/living/simple_animal/bot/cleanbot{
+	hacked = 1
+	},
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_radiation)
+"sh" = (
+/obj/structure/radioactive/stack{
+	pixel_y = -12
+	},
+/obj/structure/radioactive{
+	pixel_y = 6
+	},
+/turf/open/floor/plating/rust,
+/area/ruin/wasteplanet/wasteplanet_radiation/containment)
+"sw" = (
+/obj/structure/table/greyscale,
+/obj/item/reagent_containers/food/drinks/bottle/vodka{
+	pixel_x = 6;
+	pixel_y = 17
+	},
+/obj/item/storage/fancy/cigarettes/dromedaryco,
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_radiation)
+"sR" = (
+/obj/machinery/power/smes/engineering,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating,
+/area/ruin/wasteplanet/wasteplanet_radiation/maint)
+"tl" = (
+/obj/item/stack/ore/uranium,
+/obj/effect/turf_decal/industrial/warning/dust/corner,
+/turf/open/floor/plating/rust,
+/area/ruin/wasteplanet/wasteplanet_radiation/containment)
+"ty" = (
+/turf/template_noop,
+/area/template_noop)
+"tA" = (
+/turf/open/floor/plating/rust,
+/area/ruin/wasteplanet/wasteplanet_radiation/containment)
+"tN" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/ruin/wasteplanet/wasteplanet_radiation/main)
+"uf" = (
+/obj/structure/girder,
+/turf/open/floor/plating/wasteplanet/rust,
+/area/ruin/wasteplanet/wasteplanet_radiation)
+"uF" = (
+/obj/machinery/light/broken{
+	dir = 1;
+	pixel_y = 20
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/plasteel,
+/area/ruin/wasteplanet/wasteplanet_radiation/main)
+"uZ" = (
+/obj/structure/salvageable/autolathe,
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_radiation)
+"vL" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/effect/spawner/structure/window/hollow/reinforced,
+/turf/open/floor/plating/rust,
+/area/ruin/wasteplanet/wasteplanet_radiation/maint)
+"vV" = (
+/obj/item/clothing/head/helmet/r_trapper{
+	pixel_x = 1;
+	pixel_y = 7
+	},
+/obj/item/clothing/under/syndicate/soviet,
+/obj/structure/closet/radiation/empty{
+	anchored = 1
+	},
+/turf/open/floor/plating,
+/area/ruin/wasteplanet/wasteplanet_radiation/containment)
+"wn" = (
+/obj/structure/flora/ash/glowshroom,
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_radiation)
+"wG" = (
+/obj/machinery/power/rad_collector,
+/turf/open/floor/plating/rust,
+/area/ruin/wasteplanet/wasteplanet_radiation/containment)
+"wI" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small{
+	pixel_y = -24
+	},
+/turf/open/floor/plating,
+/area/ruin/wasteplanet/wasteplanet_radiation/maint)
+"xj" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/obj/machinery/firealarm/directional/north,
+/obj/effect/decal/cleanable/garbage,
+/turf/open/floor/plating/rust,
+/area/ruin/wasteplanet/wasteplanet_radiation/maint)
+"xt" = (
+/turf/closed/wall/r_wall/rust/yesdiag,
+/area/ruin/wasteplanet/wasteplanet_radiation/main)
+"yj" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel,
+/area/ruin/wasteplanet/wasteplanet_radiation/main)
+"yu" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/turf/open/floor/plating/rust,
+/area/ruin/wasteplanet/wasteplanet_radiation/main)
+"yW" = (
+/obj/effect/spawner/structure/window/hollow,
+/turf/open/floor/plating,
+/area/ruin/wasteplanet/wasteplanet_radiation/main)
+"zv" = (
+/obj/structure/mecha_wreckage/ripley/firefighter,
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_radiation)
+"zC" = (
+/turf/closed/wall/r_wall,
+/area/ruin/wasteplanet/wasteplanet_radiation)
+"zH" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/vault,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/door/firedoor/heavy,
+/turf/open/floor/plasteel/dark,
+/area/ruin/wasteplanet/wasteplanet_radiation/containment)
+"zL" = (
+/obj/effect/decal/cleanable/dirt/dust,
 /obj/item/stack/sheet/mineral/uranium/five,
-/obj/effect/mine/shrapnel,
+/turf/open/floor/plating,
+/area/ruin/wasteplanet/wasteplanet_radiation/containment)
+"Aa" = (
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/port_gen/pacman/super/not_very{
+	anchored = 1;
+	sheet_left = 1;
+	sheets = 10
+	},
+/obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/structure/sign/poster/contraband/cybersun{
+	pixel_y = 31
+	},
+/turf/open/floor/plating,
+/area/ruin/wasteplanet/wasteplanet_radiation/maint)
+"AV" = (
+/obj/effect/turf_decal/industrial/warning/dust/corner{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/radiation/waste/intense,
+/turf/open/floor/plating,
+/area/ruin/wasteplanet/wasteplanet_radiation/containment)
+"BH" = (
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/apc/auto_name/directional/north{
+	emergency_lights = 1
+	},
+/turf/open/floor/plating/rust,
+/area/ruin/wasteplanet/wasteplanet_radiation/containment)
+"BI" = (
+/obj/effect/decal/cleanable/oil/slippery,
+/turf/open/floor/plating/wasteplanet/rust,
+/area/ruin/wasteplanet/wasteplanet_radiation)
+"Dd" = (
+/obj/effect/turf_decal/road/line/edge/transparent/yellow,
+/turf/open/floor/plasteel/dark,
+/area/ruin/wasteplanet/wasteplanet_radiation/main)
+"DJ" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/visible/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/visible/layer4{
+	dir = 1
+	},
+/obj/machinery/light/small/broken{
+	dir = 1;
+	pixel_y = 16
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/ruin/wasteplanet/wasteplanet_radiation/main)
+"Er" = (
+/obj/structure/railing/modern{
+	dir = 10
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/road/line/transparent/yellow{
+	dir = 4
+	},
+/obj/effect/turf_decal/road/line/transparent/yellow,
+/obj/effect/turf_decal/road/line/transparent/yellow{
+	dir = 8
+	},
+/obj/effect/turf_decal/road/line/edge/transparent/yellow{
+	dir = 4
+	},
+/obj/effect/turf_decal/road/line/edge/transparent/yellow,
+/turf/open/floor/plasteel/dark,
+/area/ruin/wasteplanet/wasteplanet_radiation/main)
+"EF" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating/rust,
+/area/ruin/wasteplanet/wasteplanet_radiation/containment)
+"Gc" = (
+/turf/closed/wall/r_wall/rust,
+/area/ruin/wasteplanet/wasteplanet_radiation/maint)
+"Gl" = (
+/turf/open/floor/plating/wasteplanet/rust,
+/area/ruin/wasteplanet/wasteplanet_radiation)
+"Gn" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/generic,
+/turf/open/floor/plating/wasteplanet/rust,
+/area/ruin/wasteplanet/wasteplanet_radiation)
+"Hf" = (
+/turf/closed/wall/r_wall/rust,
+/area/ruin/wasteplanet/wasteplanet_radiation)
+"Hm" = (
+/obj/machinery/door/airlock/maintenance/external{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/layer_manifold/visible{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/heavy,
+/turf/open/floor/plating/rust,
+/area/ruin/wasteplanet/wasteplanet_radiation/main)
+"Hn" = (
+/obj/structure/sign/warning/radiation/rad_area{
+	pixel_y = -32
+	},
 /turf/open/floor/plating/asteroid/wasteplanet,
-/area/ruin)
-"q" = (
-/obj/structure/table/reinforced,
-/obj/item/gun/ballistic/automatic/assualt/ak47/nt,
+/area/ruin/wasteplanet/wasteplanet_radiation)
+"HJ" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/ruin/wasteplanet/wasteplanet_radiation/maint)
+"HR" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/effect/turf_decal/isf_big/three{
+	color = "#580818"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel,
+/area/ruin/wasteplanet/wasteplanet_radiation/main)
+"Im" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/turf/open/floor/plating/rust,
+/area/ruin/wasteplanet/wasteplanet_radiation/main)
+"IE" = (
+/obj/item/stack/ore/uranium,
+/obj/machinery/firealarm/directional/north,
+/turf/open/floor/plating/rust,
+/area/ruin/wasteplanet/wasteplanet_radiation/containment)
+"Jq" = (
+/obj/item/stack/ore/uranium,
+/turf/open/floor/plating/rust,
+/area/ruin/wasteplanet/wasteplanet_radiation/containment)
+"Jw" = (
+/obj/structure/girder,
+/turf/open/floor/plating/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_radiation)
+"Jy" = (
+/obj/item/chair/stool/bar{
+	pixel_x = 10;
+	pixel_y = -6
+	},
+/obj/item/reagent_containers/pill/potassiodide{
+	pixel_x = 8;
+	pixel_y = 7
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plastic,
+/area/ruin/wasteplanet/wasteplanet_radiation/main)
+"Kl" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/broken{
+	dir = 8;
+	pixel_x = -23
+	},
+/turf/open/floor/plating,
+/area/ruin/wasteplanet/wasteplanet_radiation/main)
+"Kp" = (
+/obj/structure/table,
+/obj/item/reagent_containers/food/snacks/syndicake{
+	pixel_x = 4;
+	pixel_y = 13
+	},
+/obj/item/reagent_containers/food/snacks/syndicake{
+	pixel_y = 3
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small{
+	dir = 1;
+	pixel_y = 17
+	},
+/turf/open/floor/plastic,
+/area/ruin/wasteplanet/wasteplanet_radiation/main)
+"Ku" = (
+/turf/closed/wall/r_wall/rust,
+/area/ruin/wasteplanet/wasteplanet_radiation/main)
+"KA" = (
+/obj/structure/fence,
+/turf/open/floor/plating/wasteplanet/rust,
+/area/ruin/wasteplanet/wasteplanet_radiation)
+"Ld" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ruin/wasteplanet/wasteplanet_radiation/containment)
+"Lh" = (
+/obj/machinery/advanced_airlock_controller{
+	pixel_y = 30
+	},
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 8
+	},
+/turf/open/floor/plating/rust,
+/area/ruin/wasteplanet/wasteplanet_radiation/main)
+"Ln" = (
+/obj/structure/chair/plastic{
+	dir = 1
+	},
 /turf/open/floor/plating/asteroid/wasteplanet,
-/area/ruin)
-"r" = (
-/obj/item/stack/sheet/mineral/uranium/five,
+/area/ruin/wasteplanet/wasteplanet_radiation)
+"Lp" = (
+/mob/living/simple_animal/bot/hygienebot{
+	hacked = 1
+	},
 /turf/open/floor/plating/asteroid/wasteplanet,
-/area/ruin)
-"s" = (
+/area/ruin/wasteplanet/wasteplanet_radiation)
+"Mh" = (
+/mob/living/simple_animal/hostile/hivebot/wasteplanet/ranged/rapid,
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_radiation)
+"Mq" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/ruin/wasteplanet/wasteplanet_radiation/maint)
+"MV" = (
+/obj/structure/reagent_dispensers/fueltank,
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_radiation)
+"MX" = (
+/obj/item/stack/cable_coil/cut/red,
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_radiation)
+"Na" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/wasteplanet/rust,
+/area/ruin/wasteplanet/wasteplanet_radiation)
+"Nj" = (
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 8
+	},
+/turf/open/floor/plating/rust,
+/area/ruin/wasteplanet/wasteplanet_radiation/main)
+"Nx" = (
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/machinery/atmospherics/components/binary/pump/on/layer2{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/ruin/wasteplanet/wasteplanet_radiation/maint)
+"Ny" = (
+/obj/item/stack/ore/uranium,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ruin/wasteplanet/wasteplanet_radiation/containment)
+"NG" = (
+/obj/structure/closet/crate/radiation{
+	anchored = 1
+	},
+/obj/item/nuke_core,
+/turf/open/floor/plating,
+/area/ruin/wasteplanet/wasteplanet_radiation/containment)
+"NO" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/road/line/transparent/yellow,
+/turf/open/floor/plasteel/dark,
+/area/ruin/wasteplanet/wasteplanet_radiation/main)
+"OK" = (
 /obj/structure/fence/corner{
 	dir = 10
 	},
 /turf/open/floor/plating/asteroid/wasteplanet,
-/area/overmap_encounter/planetoid/wasteplanet/explored)
-"t" = (
-/obj/item/stack/sheet/mineral/uranium/five,
-/obj/structure/radioactive/stack,
+/area/ruin/wasteplanet/wasteplanet_radiation)
+"PB" = (
+/obj/structure/reagent_dispensers/watertank/high,
 /turf/open/floor/plating/asteroid/wasteplanet,
-/area/ruin)
-"v" = (
+/area/ruin/wasteplanet/wasteplanet_radiation)
+"PV" = (
+/obj/machinery/firealarm/directional/west,
+/turf/open/floor/plating/rust,
+/area/ruin/wasteplanet/wasteplanet_radiation/main)
+"Qp" = (
+/obj/effect/radiation/waste/intense,
+/turf/open/floor/plating,
+/area/ruin/wasteplanet/wasteplanet_radiation/containment)
+"Qz" = (
+/obj/effect/decal/remains/human,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plastic,
+/area/ruin/wasteplanet/wasteplanet_radiation/main)
+"QB" = (
+/obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4{
+	dir = 8
+	},
+/turf/open/floor/plating/wasteplanet/rust,
+/area/ruin/wasteplanet/wasteplanet_radiation)
+"QU" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/radiation/waste,
+/obj/effect/turf_decal/industrial/warning/dust{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/wasteplanet/wasteplanet_radiation/main)
+"Rg" = (
+/obj/structure/flippedtable{
+	dir = 4
+	},
+/obj/item/storage/pill_bottle/potassiodide{
+	pixel_x = -5;
+	pixel_y = 6
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plastic,
+/area/ruin/wasteplanet/wasteplanet_radiation/main)
+"Rv" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/ruin/wasteplanet/wasteplanet_radiation/main)
+"Rz" = (
+/obj/structure/radioactive/waste,
+/obj/effect/decal/cleanable/greenglow/filled,
+/obj/effect/dummy/lighting_obj{
+	light_color = "#80B425";
+	light_power = 2
+	},
+/turf/open/floor/plating/rust,
+/area/ruin/wasteplanet/wasteplanet_radiation/containment)
+"RU" = (
+/obj/effect/decal/cleanable/oil,
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_radiation)
+"Sf" = (
+/turf/closed/wall/r_wall,
+/area/ruin/wasteplanet/wasteplanet_radiation/containment)
+"Sg" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/oil/streak,
+/turf/open/floor/plating/wasteplanet/rust,
+/area/ruin/wasteplanet/wasteplanet_radiation)
+"SQ" = (
+/obj/structure/sign/warning/nosmoking/burnt{
+	pixel_x = -27
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/ruin/wasteplanet/wasteplanet_radiation/main)
+"Tf" = (
+/obj/structure/radioactive{
+	pixel_x = -1;
+	pixel_y = 7
+	},
+/obj/structure/radioactive{
+	pixel_x = 8
+	},
+/obj/structure/radioactive{
+	pixel_x = 8;
+	pixel_y = 19
+	},
+/turf/open/floor/plating,
+/area/ruin/wasteplanet/wasteplanet_radiation/containment)
+"Th" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/item/storage/toolbox/mechanical,
+/turf/open/floor/plating/rust,
+/area/ruin/wasteplanet/wasteplanet_radiation/maint)
+"Tm" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/advanced_airlock_controller/internal{
+	dir = 4;
+	pixel_x = 26
+	},
+/obj/structure/sign/warning/radiation{
+	pixel_x = -32
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/wasteplanet/wasteplanet_radiation/containment)
+"TE" = (
+/obj/structure/fence,
+/obj/machinery/atmospherics/pipe/simple/scrubbers,
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_radiation)
+"UR" = (
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_radiation)
+"Va" = (
+/obj/structure/radioactive/stack,
+/turf/open/floor/plating/rust,
+/area/ruin/wasteplanet/wasteplanet_radiation/containment)
+"Vg" = (
+/turf/open/floor/plating/rust,
+/area/ruin/wasteplanet/wasteplanet_radiation/main)
+"Vn" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /obj/machinery/door/airlock/vault,
 /obj/effect/mapping_helpers/airlock/locked,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/door/firedoor/heavy,
+/turf/open/floor/plasteel/dark,
+/area/ruin/wasteplanet/wasteplanet_radiation/containment)
+"VA" = (
+/obj/structure/radioactive{
+	pixel_x = -6;
+	pixel_y = 9
+	},
+/obj/structure/radioactive{
+	pixel_x = 3;
+	pixel_y = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/wasteplanet/wasteplanet_radiation/containment)
+"VE" = (
+/turf/closed/wall/r_wall/rust/yesdiag,
+/area/ruin/wasteplanet/wasteplanet_radiation/maint)
+"VP" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/miskilamo_big/five{
+	color = "#580818"
+	},
+/turf/open/floor/plasteel,
+/area/ruin/wasteplanet/wasteplanet_radiation/main)
+"VY" = (
+/obj/machinery/portable_atmospherics/canister/nitrogen,
 /turf/open/floor/plating/asteroid/wasteplanet,
-/area/ruin/powered)
-"x" = (
-/obj/item/stack/sheet/mineral/uranium/five,
-/obj/structure/radioactive,
+/area/ruin/wasteplanet/wasteplanet_radiation)
+"Wa" = (
+/obj/structure/table,
+/obj/machinery/microwave,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plastic,
+/area/ruin/wasteplanet/wasteplanet_radiation/main)
+"WB" = (
+/obj/structure/radioactive{
+	pixel_x = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ruin/wasteplanet/wasteplanet_radiation/containment)
+"Xc" = (
+/obj/item/geiger_counter{
+	pixel_y = 1
+	},
+/obj/item/trash/syndi_cakes{
+	pixel_y = 1
+	},
+/turf/open/floor/plating/rust,
+/area/ruin/wasteplanet/wasteplanet_radiation/maint)
+"Xi" = (
+/turf/open/floor/plating,
+/area/ruin/wasteplanet/wasteplanet_radiation/containment)
+"Xl" = (
+/turf/closed/mineral/random/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_radiation)
+"XC" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/structure/cable/yellow,
+/obj/machinery/power/terminal,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/ruin/wasteplanet/wasteplanet_radiation/maint)
+"XO" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/rust,
+/area/ruin/wasteplanet/wasteplanet_radiation/main)
+"XU" = (
+/obj/structure/fence/door,
 /turf/open/floor/plating/asteroid/wasteplanet,
-/area/ruin)
-"y" = (
-/obj/structure/table/reinforced,
-/obj/item/gun/energy/e_gun/nuclear,
-/turf/open/floor/plating/asteroid/wasteplanet,
-/area/ruin)
-"z" = (
-/obj/structure/sign/warning/radiation,
+/area/ruin/wasteplanet/wasteplanet_radiation)
+"Yd" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel,
+/area/ruin/wasteplanet/wasteplanet_radiation/main)
+"Yk" = (
+/obj/item/trash/can,
+/turf/open/floor/plating/rust,
+/area/ruin/wasteplanet/wasteplanet_radiation/main)
+"Yl" = (
 /turf/closed/wall/r_wall/rust,
-/area/ruin)
-"A" = (
-/obj/item/grenade/frag,
-/obj/structure/reagent_dispensers/fueltank,
-/turf/open/floor/plating/asteroid/wasteplanet,
-/area/ruin)
-"B" = (
-/turf/closed/wall/r_wall/rust,
-/area/ruin)
-"C" = (
-/obj/item/ammo_box/magazine/aknt,
-/obj/structure/reagent_dispensers/fueltank,
-/turf/open/floor/plating/asteroid/wasteplanet,
-/area/ruin)
-"D" = (
-/obj/structure/fence,
-/turf/open/floor/plating/asteroid/wasteplanet,
-/area/overmap_encounter/planetoid/wasteplanet/explored)
-"E" = (
-/obj/effect/radiation,
-/turf/open/floor/plating/asteroid/wasteplanet,
-/area/ruin)
-"F" = (
-/turf/closed/wall/r_wall,
-/area/ruin)
-"G" = (
-/obj/item/stack/sheet/mineral/uranium/five,
-/obj/effect/gibspawner,
-/turf/open/floor/plating/asteroid/wasteplanet,
-/area/ruin)
-"H" = (
-/obj/item/grenade/stingbang,
-/turf/open/floor/plating/asteroid/wasteplanet,
-/area/ruin)
-"I" = (
-/obj/item/flashlight/lantern,
-/turf/open/floor/plating/asteroid/wasteplanet,
-/area/ruin)
-"K" = (
-/obj/effect/mine/shrapnel,
-/turf/open/floor/plating/asteroid/wasteplanet,
-/area/overmap_encounter/planetoid/wasteplanet/explored)
-"L" = (
-/obj/structure/sign/warning/radiation,
-/turf/open/floor/plating/asteroid/wasteplanet,
-/area/overmap_encounter/planetoid/wasteplanet/explored)
-"M" = (
-/turf/open/floor/plating/asteroid/wasteplanet,
-/area/overmap_encounter/planetoid/wasteplanet/explored)
-"O" = (
-/obj/structure/marker_beacon,
-/turf/open/floor/plating/asteroid/wasteplanet,
-/area/overmap_encounter/planetoid/wasteplanet/explored)
-"P" = (
-/obj/effect/gibspawner,
-/obj/structure/radioactive/waste,
-/turf/open/floor/plating/asteroid/wasteplanet,
-/area/ruin)
-"Q" = (
-/obj/structure/fence/corner,
-/turf/open/floor/plating/asteroid/wasteplanet,
-/area/overmap_encounter/planetoid/wasteplanet/explored)
-"R" = (
-/obj/effect/decal/remains/human,
-/obj/effect/decal/cleanable/blood/old,
-/obj/item/clothing/suit/radiation,
-/obj/item/clothing/head/radiation{
-	pixel_y = 8
+/area/ruin/wasteplanet/wasteplanet_radiation/containment)
+"Yp" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/industrial/warning/dust,
+/turf/open/floor/plating/rust,
+/area/ruin/wasteplanet/wasteplanet_radiation/containment)
+"YO" = (
+/obj/structure/fence/post{
+	dir = 4
 	},
 /turf/open/floor/plating/asteroid/wasteplanet,
-/area/overmap_encounter/planetoid/wasteplanet/explored)
-"S" = (
-/obj/structure/sign/warning/longtermwaste{
-	pixel_y = 32
+/area/ruin/wasteplanet/wasteplanet_radiation)
+"Zd" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plastic,
+/area/ruin/wasteplanet/wasteplanet_radiation/main)
+"Zg" = (
+/obj/structure/railing/modern{
+	dir = 6
 	},
-/obj/structure/radioactive,
-/turf/open/floor/plating/asteroid/wasteplanet,
-/area/overmap_encounter/planetoid/wasteplanet/explored)
-"U" = (
-/obj/structure/radioactive,
-/turf/open/floor/plating/asteroid/wasteplanet,
-/area/overmap_encounter/planetoid/wasteplanet/explored)
-"W" = (
+/obj/effect/turf_decal/road/line/transparent/yellow{
+	dir = 8
+	},
+/obj/effect/turf_decal/road/line/transparent/yellow,
+/obj/effect/turf_decal/road/line/transparent/yellow{
+	dir = 4
+	},
+/obj/effect/turf_decal/road/line/edge/transparent/yellow,
+/obj/effect/turf_decal/road/line/edge/transparent/yellow{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/molten_object/large,
+/turf/open/floor/plasteel/dark,
+/area/ruin/wasteplanet/wasteplanet_radiation/main)
+"ZC" = (
 /obj/structure/fence{
 	dir = 8
 	},
 /turf/open/floor/plating/asteroid/wasteplanet,
-/area/overmap_encounter/planetoid/wasteplanet/explored)
-"Z" = (
-/obj/effect/mine/shrapnel,
-/turf/open/floor/plating/asteroid/wasteplanet,
-/area/ruin)
+/area/ruin/wasteplanet/wasteplanet_radiation)
+"ZJ" = (
+/turf/closed/wall/r_wall,
+/area/ruin/wasteplanet/wasteplanet_radiation/main)
+"ZP" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ruin/wasteplanet/wasteplanet_radiation/containment)
 
 (1,1,1) = {"
-c
-B
-F
-B
-F
-F
-F
-F
-z
-a
-a
-a
-a
-a
-a
-a
-a
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
 "}
 (2,1,1) = {"
-B
-F
-B
-F
-B
-F
-B
-F
-F
-D
-D
-D
-D
-D
-D
-s
-a
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+UR
+UR
+UR
+UR
+ty
+ty
+UR
+UR
+Gl
+UR
+Gl
+Gl
+ty
+ty
+ty
 "}
 (3,1,1) = {"
-B
-B
-x
-d
-e
-i
-t
-B
-F
-M
-k
-M
-M
-U
-M
-W
-a
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+UR
+UR
+UR
+Gl
+UR
+Gl
+Gl
+UR
+UR
+UR
+Xl
+Xl
+MV
+Xl
+ty
+ty
 "}
 (4,1,1) = {"
-B
-B
-d
-G
-g
-j
-g
-F
-B
-S
-M
-M
-M
-M
-M
-W
-a
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+UR
+wn
+UR
+OK
+KA
+my
+my
+lL
+cd
+Xl
+Xl
+Xl
+Xl
+Xl
+Xl
+UR
+ty
 "}
 (5,1,1) = {"
-F
-F
-y
-n
-p
-e
-r
-B
-F
-M
-M
-M
-K
-M
-M
-W
-a
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+UR
+UR
+UR
+ZC
+UR
+UR
+UR
+gX
+ZC
+UR
+Xl
+Xl
+Xl
+Xl
+UR
+UR
+ty
 "}
 (6,1,1) = {"
-F
-B
-q
-A
-E
-g
-I
-B
-O
-M
-m
-M
-M
-M
-k
-L
-O
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+UR
+Gl
+UR
+pZ
+UR
+UR
+UR
+UR
+ZC
+UR
+Xl
+Xl
+Xl
+Xl
+UR
+UR
+ty
 "}
 (7,1,1) = {"
-B
-B
-l
-n
-i
-C
-Z
-v
-M
-M
-U
-M
-M
-M
-M
-o
-M
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+UR
+UR
+UR
+UR
+mV
+UR
+wn
+UR
+Gl
+ZC
+UR
+Xl
+Gl
+UR
+UR
+UR
+UR
+ty
 "}
 (8,1,1) = {"
-B
-F
-r
-p
-H
-g
-i
-B
-O
-M
-M
-M
-U
-M
-M
-W
-O
+ty
+ty
+ty
+UR
+ty
+ty
+ty
+ty
+ty
+UR
+UR
+ty
+ty
+ty
+ty
+ty
+UR
+Xl
+UR
+UR
+mV
+RU
+UR
+UR
+Gl
+YO
+UR
+Gl
+UR
+UR
+UR
+wn
+UR
+ty
 "}
 (9,1,1) = {"
-F
-F
-P
-g
-e
-r
-d
-B
-F
-M
-M
-M
-M
-M
-M
-W
-a
+ty
+UR
+UR
+UR
+UR
+ty
+ty
+ty
+UR
+UR
+UR
+Lp
+ty
+ty
+ty
+UR
+UR
+Xl
+UR
+UR
+mV
+UR
+UR
+UR
+Sg
+XU
+UR
+Gl
+UR
+MX
+UR
+UR
+UR
+ty
 "}
 (10,1,1) = {"
-F
-F
-F
-F
-B
-B
-F
-F
-F
-D
-D
-D
-D
-D
-D
-Q
-a
+ty
+UR
+Xl
+Xl
+Xl
+Xl
+Xl
+UR
+UR
+MX
+UR
+UR
+UR
+UR
+UR
+UR
+UR
+UR
+UR
+Gl
+Hf
+lS
+gx
+UR
+UR
+YO
+Gl
+gr
+UR
+UR
+gr
+UR
+UR
+ty
 "}
 (11,1,1) = {"
-z
-F
-F
-B
-B
-B
-B
-B
-c
-a
-a
-a
-a
-a
-R
-a
-a
+ty
+UR
+Xl
+Xl
+Xl
+Xl
+Xl
+Xl
+UR
+UR
+UR
+UR
+UR
+UR
+Gl
+Gl
+UR
+UR
+UR
+Gl
+zC
+UR
+UR
+UR
+UR
+ZC
+Gl
+Gl
+Mh
+UR
+Gl
+UR
+UR
+ty
+"}
+(12,1,1) = {"
+ty
+Xl
+Xl
+Xl
+Xl
+Xl
+Xl
+Xl
+UR
+UR
+UR
+UR
+Gl
+Gl
+Gl
+UR
+UR
+UR
+UR
+Xl
+ZJ
+xt
+Gn
+cn
+Na
+Ku
+UR
+UR
+UR
+uZ
+Xl
+Xl
+UR
+ty
+"}
+(13,1,1) = {"
+ty
+Xl
+Xl
+Xl
+Xl
+Xl
+Xl
+UR
+UR
+eO
+Yl
+Sf
+Sf
+Yl
+Yl
+Yl
+Yl
+xt
+Gl
+Xl
+Xl
+Ku
+Ku
+gM
+Hm
+Ku
+sw
+Ln
+Xl
+Xl
+Xl
+Xl
+UR
+ty
+"}
+(14,1,1) = {"
+ty
+Xl
+Gl
+UR
+UR
+UR
+UR
+UR
+eO
+Yl
+Yl
+Yl
+Sf
+Sf
+Sf
+Yl
+Yl
+Ku
+xt
+Xl
+Xl
+ZJ
+Ku
+Lh
+Nj
+ZJ
+TE
+Xl
+Xl
+Xl
+Xl
+Xl
+UR
+ty
+"}
+(15,1,1) = {"
+ty
+UR
+gr
+UR
+UR
+UR
+BI
+UR
+Sf
+Sf
+Yl
+VA
+iS
+EF
+eD
+NG
+Sf
+ZJ
+Xl
+Xl
+Xl
+Xl
+Ku
+DJ
+iA
+ZJ
+mi
+Gl
+Xl
+Xl
+Xl
+Xl
+UR
+ty
+"}
+(16,1,1) = {"
+ty
+ty
+UR
+UR
+wn
+UR
+uf
+UR
+Sf
+Yl
+sh
+bX
+Xi
+Jq
+lJ
+WB
+Yl
+Ku
+Ku
+ZJ
+ZJ
+Ku
+Ku
+mF
+Ku
+Ku
+gn
+Xl
+Xl
+Xl
+Xl
+Xl
+UR
+ty
+"}
+(17,1,1) = {"
+ty
+ty
+ty
+UR
+UR
+UR
+UR
+UR
+Sf
+Yl
+wG
+zL
+Ld
+nN
+Rz
+eO
+Yl
+Ku
+oA
+PV
+pp
+SQ
+Kl
+Im
+XO
+ZJ
+Xl
+Xl
+Xl
+Xl
+Xl
+UR
+UR
+ty
+"}
+(18,1,1) = {"
+ty
+ty
+ty
+UR
+UR
+UR
+UR
+rI
+Yl
+Yl
+Qp
+Ld
+tl
+Yl
+Yl
+Sf
+xt
+Dd
+Er
+Vg
+fb
+VP
+Rv
+tN
+Yk
+ZJ
+Xl
+Xl
+Xl
+UR
+UR
+UR
+UR
+ty
+"}
+(19,1,1) = {"
+ty
+ty
+ty
+UR
+gr
+MX
+UR
+Hn
+Yl
+Sf
+BH
+ZP
+Yp
+Vn
+Tm
+zH
+QU
+NO
+bZ
+Yd
+HR
+kS
+Yd
+qF
+Rv
+Ku
+jh
+Gl
+Gl
+UR
+wn
+UR
+ty
+ty
+"}
+(20,1,1) = {"
+ty
+ty
+UR
+UR
+UR
+MV
+UR
+UR
+Yl
+Sf
+vV
+fK
+AV
+Yl
+Sf
+Sf
+xt
+bc
+Zg
+Rv
+Rv
+yj
+yj
+yu
+kq
+ZJ
+Gl
+gr
+gr
+UR
+UR
+ty
+ty
+ty
+"}
+(21,1,1) = {"
+ty
+UR
+Xl
+UR
+UR
+UR
+wn
+UR
+Sf
+Yl
+IE
+Xi
+aF
+tA
+Ny
+eO
+Yl
+ZJ
+uF
+yj
+XO
+Gc
+iQ
+oY
+Gc
+Gc
+uZ
+Xl
+Xl
+Xl
+UR
+ty
+ty
+ty
+"}
+(22,1,1) = {"
+ty
+UR
+Xl
+UR
+UR
+UR
+UR
+UR
+Sf
+Yl
+Va
+tA
+Xi
+Qp
+Ld
+eW
+Yl
+ZJ
+yW
+kd
+yW
+Gc
+ph
+Mq
+Xc
+Gc
+Xl
+Xl
+Xl
+Xl
+UR
+UR
+ty
+ty
+"}
+(23,1,1) = {"
+ty
+Xl
+Xl
+Xl
+Xl
+Xl
+Xl
+UR
+Yl
+Yl
+Yl
+Rz
+mQ
+Tf
+qy
+Rz
+Sf
+ZJ
+no
+dC
+Zd
+Gc
+Nx
+HJ
+Th
+iQ
+UR
+Xl
+Xl
+pr
+UR
+UR
+UR
+ty
+"}
+(24,1,1) = {"
+ty
+Xl
+Xl
+Xl
+Xl
+Xl
+Xl
+UR
+eO
+Yl
+Yl
+Sf
+Sf
+Yl
+Yl
+Sf
+Sf
+Ku
+Kp
+Qz
+Jy
+iQ
+xj
+aP
+wI
+Gc
+UR
+Xl
+Xl
+Xl
+UR
+UR
+UR
+ty
+"}
+(25,1,1) = {"
+ty
+Xl
+Xl
+UR
+Xl
+Xl
+Xl
+UR
+UR
+eO
+Yl
+Yl
+Sf
+Sf
+Yl
+Yl
+Yl
+Ku
+Wa
+ig
+Rg
+iQ
+Aa
+XC
+sR
+iQ
+UR
+dU
+UR
+UR
+mZ
+UR
+UR
+ty
+"}
+(26,1,1) = {"
+ty
+Xl
+Xl
+Xl
+Xl
+UR
+UR
+UR
+dU
+UR
+UR
+UR
+Xl
+Xl
+Xl
+UR
+UR
+xt
+ZJ
+Ku
+Ku
+Gc
+Gc
+vL
+Gc
+VE
+UR
+wn
+UR
+MX
+UR
+wn
+UR
+ty
+"}
+(27,1,1) = {"
+ty
+UR
+Xl
+Xl
+Xl
+Xl
+Xl
+Xl
+UR
+UR
+UR
+Xl
+Xl
+Xl
+UR
+wn
+UR
+UR
+UR
+Xl
+Xl
+Xl
+Xl
+QB
+Xl
+UR
+UR
+UR
+UR
+UR
+UR
+UR
+UR
+ty
+"}
+(28,1,1) = {"
+ty
+Xl
+Xl
+Xl
+Xl
+Xl
+Xl
+Xl
+Xl
+Gl
+Jw
+UR
+UR
+UR
+UR
+MX
+UR
+UR
+Xl
+Xl
+Xl
+Xl
+Xl
+Xl
+Xl
+Xl
+UR
+UR
+UR
+UR
+BI
+UR
+UR
+ty
+"}
+(29,1,1) = {"
+ty
+Xl
+Xl
+Xl
+Xl
+Xl
+Xl
+Xl
+Xl
+Xl
+Gl
+UR
+UR
+UR
+UR
+Gl
+Gl
+UR
+UR
+Xl
+Xl
+Xl
+VY
+Xl
+Xl
+UR
+UR
+gr
+Gl
+Xl
+Xl
+Xl
+ty
+ty
+"}
+(30,1,1) = {"
+ty
+ty
+Xl
+Xl
+Xl
+Xl
+Xl
+Xl
+Xl
+Xl
+Xl
+Xl
+UR
+Xl
+UR
+iT
+UR
+UR
+oF
+UR
+UR
+Xl
+UR
+UR
+UR
+UR
+UR
+Gl
+Jw
+Xl
+Xl
+Xl
+ty
+ty
+"}
+(31,1,1) = {"
+ty
+ty
+Xl
+Xl
+Xl
+Xl
+Xl
+Xl
+Xl
+Xl
+Xl
+Xl
+Xl
+Xl
+UR
+UR
+UR
+UR
+UR
+UR
+UR
+uf
+UR
+UR
+UR
+UR
+UR
+UR
+UR
+Xl
+Xl
+Xl
+ty
+ty
+"}
+(32,1,1) = {"
+ty
+ty
+ty
+ty
+Xl
+Xl
+Xl
+Xl
+Xl
+Xl
+Xl
+Xl
+Xl
+Xl
+UR
+UR
+Gl
+Xl
+ty
+Xl
+UR
+wn
+UR
+gr
+Gl
+UR
+UR
+UR
+zv
+Xl
+Xl
+ty
+ty
+ty
+"}
+(33,1,1) = {"
+ty
+ty
+ty
+ty
+gr
+PB
+UR
+Gl
+Xl
+ty
+ty
+Xl
+Xl
+UR
+UR
+UR
+ty
+ty
+ty
+ty
+UR
+UR
+UR
+UR
+UR
+UR
+UR
+UR
+UR
+UR
+ty
+ty
+ty
+ty
+"}
+(34,1,1) = {"
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
 "}

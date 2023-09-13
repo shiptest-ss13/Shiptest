@@ -3,6 +3,7 @@
 	desc = "Shows the current level of hostility the space police is planning to rain down on you. Better be careful."
 	icon = 'icons/obj/gang/wanted_160x32.dmi'
 	icon_state = "wanted_0"
+	base_icon_state = "wanted"
 	screen_loc = ui_wanted_lvl
 	///Wanted level, affects the hud icon.
 	var/level
@@ -16,7 +17,7 @@
 		return
 	level = F.wanted_level
 	cops_arrived = F.cops_arrived
-	update_icon()
+	update_appearance()
 
 /atom/movable/screen/wanted/MouseEntered(location,control,params)
 	. = ..()
@@ -26,5 +27,5 @@
 	closeToolTip(usr)
 
 /atom/movable/screen/wanted/update_icon_state()
-	. = ..()
-	icon_state = "wanted_[level][cops_arrived ? "_active" : ""]"
+	icon_state = "[base_icon_state]_[level][cops_arrived ? "_active" : null]"
+	return ..()

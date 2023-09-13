@@ -284,8 +284,8 @@ All ShuttleMove procs go here
 				A.addMember(src)
 		SSair.add_to_rebuild_queue(src)
 	else
-		// atmosinit() calls update_icon(), so we don't need to call it
-		update_icon()
+		// atmosinit() calls update_appearance(), so we don't need to call it
+		update_appearance()
 
 /************************************Item move procs************************************/
 

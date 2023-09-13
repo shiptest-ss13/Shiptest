@@ -128,7 +128,7 @@
 		pixel_x = (dir & 3)? 0 : (dir == 4 ? -24 : 24)
 		pixel_y = (dir & 3)? (dir == 1 ? -24 : 24) : 0
 
-	update_icon()
+	update_appearance()
 
 /obj/machinery/advanced_airlock_controller/Destroy()
 	qdel(wires)
@@ -155,10 +155,10 @@
 			if(airlock.density && (cyclestate == AIRLOCK_CYCLESTATE_CLOSED || (airlocks[A] == EXTERIOR_AIRLOCK && cyclestate == AIRLOCK_CYCLESTATE_INOPEN) || (airlocks[A] == INTERIOR_AIRLOCK && cyclestate == AIRLOCK_CYCLESTATE_OUTOPEN)))
 				airlock.bolt()
 
-/obj/machinery/advanced_airlock_controller/update_icon(use_hash = FALSE)
+/obj/machinery/advanced_airlock_controller/update_icon(updates=ALL, use_hash = FALSE)
 	var/turf/location = get_turf(src)
 	if(!location)
-		return
+		return ..()
 	var/pressure = 0
 	if(location)
 		var/datum/gas_mixture/environment = location.return_air()
@@ -169,7 +169,7 @@
 
 	var/new_overlays_hash = "[pressure_bars]-[cyclestate]-[buildstage]-[panel_open]-[machine_stat]-[shorted]-[locked]-\ref[vis_target]"
 	if(use_hash && new_overlays_hash == overlays_hash)
-		return
+		return ..()
 	overlays_hash = new_overlays_hash
 
 	cut_overlays()
@@ -181,12 +181,12 @@
 				icon_state = "aac_b2"
 			if(BUILD_NO_CIRCUIT)
 				icon_state = "aac_b1"
-		return
+		return ..()
 
 	icon_state = "aac"
 
 	if((machine_stat & (NOPOWER|BROKEN)) || shorted)
-		return
+		return ..()
 
 	var/is_exterior_pressure = (cyclestate == AIRLOCK_CYCLESTATE_OUTCLOSING || cyclestate == AIRLOCK_CYCLESTATE_OUTOPENING || cyclestate == AIRLOCK_CYCLESTATE_OUTOPEN)
 	add_overlay("aac_[is_exterior_pressure ? "ext" : "int"]p_[pressure_bars]")
@@ -208,13 +208,14 @@
 		var/mutable_appearance/M = mutable_appearance(icon, "hologram-line", ABOVE_LIGHTING_LAYER, ABOVE_LIGHTING_PLANE)
 		M.transform = TR
 		add_overlay(M)
+	return ..()
 
 /obj/machinery/advanced_airlock_controller/proc/reset(wire)
 	switch(wire)
 		if(WIRE_POWER)
 			if(!wires.is_cut(WIRE_POWER))
 				shorted = FALSE
-				update_icon()
+				update_appearance()
 		if(WIRE_AI)
 			if(!wires.is_cut(WIRE_AI))
 				aidisabled = FALSE
@@ -316,12 +317,12 @@
 
 /obj/machinery/advanced_airlock_controller/process_atmos()
 	if((machine_stat & (NOPOWER|BROKEN)) || shorted)
-		update_icon(TRUE)
+		update_icon(ALL, TRUE)
 		return
 
 	var/turf/location = get_turf(src)
 	if(!location)
-		update_icon(TRUE)
+		update_icon(ALL, TRUE)
 		return
 	var/pressure = 0
 	if(location)
@@ -347,10 +348,10 @@
 					vent.pressure_checks = VENT_EXT_BOUND
 					vent.external_pressure_bound = interior_pressure
 					vent.on = TRUE
-					vent.update_icon()
+					vent.update_appearance()
 				else
 					vent.on = FALSE
-					vent.update_icon()
+					vent.update_appearance()
 			return
 		if(AIRLOCK_CYCLESTATE_INCLOSING)
 			for(var/airlock in airlocks)
@@ -364,10 +365,10 @@
 						vent.external_pressure_bound = 0
 						vents_valid = FALSE
 						vent.on = TRUE
-						vent.update_icon()
+						vent.update_appearance()
 					else
 						vent.on = FALSE
-						vent.update_icon()
+						vent.update_appearance()
 				if(pressure < depressurization_margin)
 					vents_valid = TRUE
 				if((doors_valid && vents_valid) || is_skipping)
@@ -385,10 +386,10 @@
 						vent.external_pressure_bound = 0
 						vents_valid = FALSE
 						vent.on = TRUE
-						vent.update_icon()
+						vent.update_appearance()
 					else
 						vent.on = FALSE
-						vent.update_icon()
+						vent.update_appearance()
 				if(pressure < depressurization_margin)
 					vents_valid = TRUE
 				if(vents_valid || is_skipping)
@@ -406,10 +407,10 @@
 					vent.external_pressure_bound = interior_pressure
 					vents_valid = FALSE
 					vent.on = TRUE
-					vent.update_icon()
+					vent.update_appearance()
 				else
 					vent.on = FALSE
-					vent.update_icon()
+					vent.update_appearance()
 			if(pressure > interior_pressure - 0.5)
 				vents_valid = TRUE
 			if(vents_valid || is_skipping)
@@ -431,10 +432,10 @@
 					vent.external_pressure_bound = exterior_pressure
 					vents_valid = FALSE
 					vent.on = TRUE
-					vent.update_icon()
+					vent.update_appearance()
 				else
 					vent.on = FALSE
-					vent.update_icon()
+					vent.update_appearance()
 			if(pressure > exterior_pressure - 0.5)
 				vents_valid = TRUE
 			if(vents_valid || is_skipping)
@@ -448,13 +449,13 @@
 			for(var/V in vents)
 				var/obj/machinery/atmospherics/components/unary/vent_pump/vent = V
 				vent.on = FALSE
-				vent.update_icon()
+				vent.update_appearance()
 		if(AIRLOCK_CYCLESTATE_OUTOPEN)
 			for(var/V in vents)
 				var/obj/machinery/atmospherics/components/unary/vent_pump/vent = V
 				vent.on = FALSE
-				vent.update_icon()
-	update_icon(TRUE)
+				vent.update_appearance()
+	update_icon(ALL, TRUE)
 
 /obj/machinery/advanced_airlock_controller/attackby(obj/item/W, mob/user, params)
 	switch(buildstage)
@@ -464,13 +465,13 @@
 				to_chat(user, "<span class='notice'>You cut the final wires.</span>")
 				new /obj/item/stack/cable_coil(loc, 5)
 				buildstage = BUILD_NO_WIRES
-				update_icon()
+				update_appearance()
 				return
 			else if(W.tool_behaviour == TOOL_SCREWDRIVER)  // Opening that up.
 				W.play_tool_sound(src)
 				panel_open = !panel_open
 				to_chat(user, "<span class='notice'>The wires have been [panel_open ? "exposed" : "unexposed"].</span>")
-				update_icon()
+				update_appearance()
 				return
 			else if(istype(W, /obj/item/card/id) || istype(W, /obj/item/pda))// trying to unlock the interface with an ID card
 				togglelock(user)
@@ -489,7 +490,7 @@
 						new /obj/item/electronics/advanced_airlock_controller(src.loc)
 						playsound(src.loc, 'sound/items/deconstruct.ogg', 50, 1)
 						buildstage = BUILD_NO_CIRCUIT
-						update_icon()
+						update_appearance()
 				return
 
 			if(istype(W, /obj/item/stack/cable_coil))
@@ -510,14 +511,14 @@
 						cut_links()
 						shorted = FALSE
 						buildstage = BUILD_COMPLETE
-						update_icon()
+						update_appearance()
 				return
 		if(BUILD_NO_CIRCUIT)
 			if(istype(W, /obj/item/electronics/advanced_airlock_controller))
 				if(user.temporarilyRemoveItemFromInventory(W))
 					to_chat(user, "<span class='notice'>You insert the circuit.</span>")
 					buildstage = BUILD_NO_WIRES
-					update_icon()
+					update_appearance()
 					qdel(W)
 				return
 
@@ -528,7 +529,7 @@
 				user.visible_message("<span class='notice'>[user] fabricates a circuit and places it into [src].</span>", \
 				"<span class='notice'>You adapt an airlock controller circuit and slot it into the assembly.</span>")
 				buildstage = BUILD_NO_WIRES
-				update_icon()
+				update_appearance()
 				return
 
 			if(W.tool_behaviour == TOOL_WRENCH)
@@ -757,7 +758,7 @@
 			depressurization_margin = clamp(text2num(params["pressure"]), 0.15, 40)
 		if("skip_delay")
 			skip_delay = clamp(text2num(params["skip_delay"]), 0, 1200)
-	update_icon(TRUE)
+	update_icon(ALL, TRUE)
 
 /obj/machinery/advanced_airlock_controller/proc/request_from_door(airlock)
 	var/role = airlocks[airlock]
@@ -800,7 +801,7 @@
 	else
 		if(src.allowed(usr) && !wires.is_cut(WIRE_IDSCAN))
 			locked = !locked
-			update_icon()
+			update_appearance()
 			to_chat(user, "<span class='notice'>You [ locked ? "lock" : "unlock"] the airlock controller interface.</span>")
 			updateUsrDialog()
 		else
@@ -809,7 +810,7 @@
 
 /obj/machinery/advanced_airlock_controller/power_change()
 	..()
-	update_icon()
+	update_appearance()
 
 /obj/machinery/advanced_airlock_controller/emag_act(mob/user)
 	if(obj_flags & EMAGGED)
@@ -820,7 +821,7 @@
 
 /obj/machinery/advanced_airlock_controller/obj_break(damage_flag)
 	..()
-	update_icon()
+	update_appearance()
 
 /obj/machinery/advanced_airlock_controller/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1))

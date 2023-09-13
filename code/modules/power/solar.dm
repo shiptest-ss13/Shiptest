@@ -135,7 +135,7 @@
 	if(azimuth_current != azimuth_target)
 		azimuth_current = azimuth_target
 		occlusion_setup()
-		update_icon()
+		update_appearance()
 		needs_to_update_solar_exposure = TRUE
 
 ///trace towards sun to see if we're in shadow
@@ -378,8 +378,8 @@
 	. += mutable_appearance(icon, icon_keyboard)
 	if(machine_stat & BROKEN)
 		. += mutable_appearance(icon, "[icon_state]_broken")
-	else
-		. += mutable_appearance(icon, icon_screen)
+		return
+	. += mutable_appearance(icon, icon_screen)
 
 /obj/machinery/power/solar_control/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
@@ -448,7 +448,7 @@
 				A.circuit = M
 				A.state = 3
 				A.set_anchored(TRUE)
-				A.update_icon()
+				A.update_appearance()
 				qdel(src)
 			else
 				to_chat(user, "<span class='notice'>You disconnect the monitor.</span>")
@@ -459,7 +459,7 @@
 				A.circuit = M
 				A.state = 4
 				A.set_anchored(TRUE)
-				A.update_icon()
+				A.update_appearance()
 				qdel(src)
 	else if(user.a_intent != INTENT_HARM && !(I.item_flags & NOBLUDGEON))
 		attack_hand(user)
