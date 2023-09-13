@@ -17,9 +17,9 @@
 	shelf_contents = new/list(capacity)
 	var/stack_layer = BELOW_OBJ_LAYER
 	var/stack_offset
-	for(var/i=0,i<capacity,i++)
-		stack_layer += 0.02 * i
-		stack_offset = i * 9
+	for(var/i=1,i<capacity,i++)
+		stack_layer += (0.02 * i) - 0.01
+		stack_offset = i * 10
 		overlays += image(icon = 'icons/obj/objects.dmi', icon_state = "shelf_stack", layer = stack_layer, pixel_y = stack_offset)
 	return
 
@@ -34,7 +34,7 @@
 		if(do_after(user, useDelay, target = crate))
 			shelf_contents[next_free] = crate
 			crate.forceMove(src)
-			crate.pixel_y = 9 * (next_free - 1)
+			crate.pixel_y = 10 * (next_free - 1)
 			crate.layer = BELOW_OBJ_LAYER + 0.02 * (next_free - 1)
 			handle_visuals()
 	else
