@@ -92,13 +92,6 @@
 	if(!report)
 		report = !CONFIG_GET(flag/no_intercept_report)
 
-	if(CONFIG_GET(flag/reopen_roundstart_suicide_roles))
-		var/delay = CONFIG_GET(number/reopen_roundstart_suicide_roles_delay)
-		if(delay)
-			delay = (delay SECONDS)
-		else
-			delay = (4 MINUTES) //default to 4 minutes if the delay isn't defined.
-
 	if(SSdbcore.Connect())
 		var/list/to_set = list()
 		var/arguments = list()

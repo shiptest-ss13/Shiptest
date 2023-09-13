@@ -145,24 +145,32 @@
 //
 // FUCK YOU AUGMENT CODE - With love, Kapu
 //Hi Kapu
-/mob/living/carbon/proc/newBodyPart(zone, robotic, fixed_icon)
+// this code was perfectly fine kapu
+/mob/living/carbon/proc/new_body_part(zone, robotic, fixed_icon, datum/species/species)
+	species ||= dna.species
 	var/obj/item/bodypart/L
 	switch(zone)
 		if(BODY_ZONE_L_ARM)
-			L = new dna.species.species_l_arm()
+			L = robotic ? new species.species_robotic_l_arm() : new species.species_l_arm()
 		if(BODY_ZONE_R_ARM)
-			L = new dna.species.species_r_arm()
+			L = robotic ? new species.species_robotic_r_arm() : new species.species_r_arm()
 		if(BODY_ZONE_HEAD)
-			L = new dna.species.species_head()
+			L = robotic ? new species.species_robotic_head() : new species.species_head()
 		if(BODY_ZONE_L_LEG)
-			L = new dna.species.species_l_leg()
+			if(species.is_digitigrade(src))
+				L = robotic ? new species.species_robotic_digi_l_leg() : new species.species_digi_l_leg()
+			else
+				L = robotic ? new species.species_robotic_l_leg() : new species.species_l_leg()
 		if(BODY_ZONE_R_LEG)
-			L = new dna.species.species_r_leg()
+			if(species.is_digitigrade(src))
+				L = robotic ? new species.species_robotic_digi_r_leg() : new species.species_digi_r_leg()
+			else
+				L = robotic ? new species.species_robotic_r_leg() : new species.species_r_leg()
 		if(BODY_ZONE_CHEST)
-			L = new dna.species.species_chest()
+			L = robotic ? new species.species_robotic_chest() : new species.species_chest()
 	. = L
 
-/mob/living/carbon/monkey/newBodyPart(zone, robotic, fixed_icon)
+/mob/living/carbon/monkey/new_body_part(zone, robotic, fixed_icon, datum/species/species)
 	var/obj/item/bodypart/L
 	switch(zone)
 		if(BODY_ZONE_L_ARM)
@@ -183,7 +191,7 @@
 			L.change_bodypart_status(BODYTYPE_ROBOTIC)
 	. = L
 
-/mob/living/carbon/alien/larva/newBodyPart(zone, robotic, fixed_icon)
+/mob/living/carbon/alien/larva/new_body_part(zone, robotic, fixed_icon, datum/species/species)
 	var/obj/item/bodypart/L
 	switch(zone)
 		if(BODY_ZONE_HEAD)
@@ -196,7 +204,7 @@
 			L.change_bodypart_status(BODYTYPE_ROBOTIC)
 	. = L
 
-/mob/living/carbon/alien/humanoid/newBodyPart(zone, robotic, fixed_icon)
+/mob/living/carbon/alien/humanoid/new_body_part(zone, robotic, fixed_icon, datum/species/species)
 	var/obj/item/bodypart/L
 	switch(zone)
 		if(BODY_ZONE_L_ARM)

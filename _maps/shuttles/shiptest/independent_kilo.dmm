@@ -869,6 +869,11 @@
 	dir = 8
 	},
 /obj/machinery/power/apc/auto_name/directional/east,
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 20;
+	pixel_y = -12
+	},
 /turf/open/floor/mineral/titanium/yellow,
 /area/ship/cargo)
 "hR" = (
@@ -1202,6 +1207,12 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen/kitchen)
+"rW" = (
+/obj/machinery/porta_turret/ship/weak{
+	dir = 4
+	},
+/turf/closed/wall/mineral/titanium,
+/area/ship/bridge)
 "sD" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/industrial/warning/corner{
@@ -1230,6 +1241,10 @@
 	dir = 4
 	},
 /obj/machinery/power/apc/auto_name/directional/north,
+/obj/machinery/light_switch{
+	pixel_x = 13;
+	pixel_y = 21
+	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew)
 "sW" = (
@@ -1470,11 +1485,6 @@
 	pixel_y = 6;
 	req_access = null
 	},
-/obj/machinery/light_switch{
-	dir = 4;
-	pixel_x = -23;
-	pixel_y = -6
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
 	},
@@ -1578,7 +1588,7 @@
 	pixel_y = 6
 	},
 /obj/item/paper/crumpled/bloody{
-	info = "We struck gold, literally. We found some good rocks out near Centurai-II rich with the stuff. Kae said he and Milos found something out while prospecting, some sort of glowing cube. It's jammed in there good, so we're anchoring until we sort this out...";
+	default_raw_text = "We struck gold, literally. We found some good rocks out near Centurai-II rich with the stuff. Kae said he and Milos found something out while prospecting, some sort of glowing cube. It's jammed in there good, so we're anchoring until we sort this out...";
 	pixel_x = 4;
 	pixel_y = 4
 	},
@@ -1963,7 +1973,9 @@
 /turf/open/floor/plating,
 /area/ship/cargo)
 "PW" = (
-/obj/machinery/porta_turret/ship/weak,
+/obj/machinery/porta_turret/ship/weak{
+	dir = 10
+	},
 /turf/closed/wall/mineral/titanium,
 /area/ship/bridge)
 "Qw" = (
@@ -2014,6 +2026,10 @@
 	dir = 9
 	},
 /obj/machinery/power/apc/auto_name/directional/north,
+/obj/machinery/light_switch{
+	pixel_x = -13;
+	pixel_y = 23
+	},
 /turf/open/floor/mineral/titanium/blue,
 /area/ship/bridge)
 "Sx" = (
@@ -2210,7 +2226,9 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "Vq" = (
-/obj/machinery/porta_turret/ship/weak,
+/obj/machinery/porta_turret/ship/weak{
+	dir = 10
+	},
 /turf/closed/wall/mineral/titanium,
 /area/ship/crew/canteen/kitchen)
 "Vx" = (
@@ -2735,12 +2753,12 @@ aa
 (24,1,1) = {"
 aa
 aa
-PW
+rW
 ac
 Qw
 qw
 ac
-PW
+rW
 aa
 aa
 aa

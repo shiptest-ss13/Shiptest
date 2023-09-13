@@ -37,8 +37,6 @@
 	jobtype = /datum/job/chemist
 
 	glasses = null
-
-	uniform = /obj/item/clothing/under/rank/medical/chemist/pharmacist
 	alt_uniform = null
 
 	backpack_contents = list(/obj/item/clothing/glasses/science=1)
@@ -47,7 +45,6 @@
 	name = "Chemist (Pharmacologist)"
 
 	glasses = null
-	uniform = /obj/item/clothing/under/rank/medical/chemist/pharmacologist
 	alt_uniform = null
 	suit = /obj/item/clothing/suit/toggle/labcoat/chemist/side
 
@@ -57,7 +54,6 @@
 	name = "Chemist (Junior Chemist)"
 
 	glasses = null
-	uniform = /obj/item/clothing/under/rank/medical/chemist/junior_chemist
 	alt_uniform = null
 	suit = null
 	alt_suit = null
@@ -68,7 +64,6 @@
 	name = "Chemist (Senior Chemist)"
 
 	glasses = null
-	uniform = /obj/item/clothing/under/suit/senior_chemist
 	alt_uniform = null
 	shoes = /obj/item/clothing/shoes/laceup
 	suit = /obj/item/clothing/suit/toggle/lawyer/orange
@@ -87,7 +82,6 @@
 	uniform = /obj/item/clothing/under/syndicate/intern
 	suit = /obj/item/clothing/suit/toggle/hazard
 	head = /obj/item/clothing/head/hardhat
-	ears = /obj/item/radio/headset/syndicate/alt
 	belt = /obj/item/storage/belt/utility/full/engi
 	id = /obj/item/card/id/syndicate_command/crew_id
 	l_pocket =/obj/item/pda/chemist
@@ -98,8 +92,6 @@
 	belt = /obj/item/storage/bag/chemistry
 	l_pocket =/obj/item/pda/chemist
 	r_pocket = /obj/item/storage/pill_bottle
-	uniform = /obj/item/clothing/under/suit/senior_chemist
-	alt_uniform = /obj/item/clothing/under/rank/medical/chemist/pharmacologist
 	suit = /obj/item/clothing/suit/longcoat/chemist
 	alt_suit = /obj/item/clothing/suit/toggle/labcoat/chemist/side
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/medical
@@ -110,8 +102,6 @@
 /datum/outfit/job/chemist/minutemen
 	name = "Chemical Scientist(minutemen)"
 
-	uniform = /obj/item/clothing/under/rank/medical/chemist/pharmacologist
-	alt_uniform = /obj/item/clothing/under/rank/medical/chemist/pharmacologist/skirt
 	suit = /obj/item/clothing/suit/toggle/labcoat/chemist
 	ears = /obj/item/radio/headset/minutemen
 

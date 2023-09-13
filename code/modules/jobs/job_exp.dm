@@ -25,9 +25,13 @@ GLOBAL_PROTECT(exp_to_update)
 	return TRUE
 
 /datum/map_template/shuttle/proc/get_req_spawn_minutes()
+	if(!CONFIG_GET(flag/use_exp_tracking) || !SSdbcore.Connect())
+		return 0
 	return spawn_time_coeff * CONFIG_GET(number/ship_spawn_base_exp_min)
 
 /datum/map_template/shuttle/proc/get_req_officer_minutes()
+	if(!CONFIG_GET(flag/use_exp_tracking) || !SSdbcore.Connect())
+		return 0
 	return officer_time_coeff * CONFIG_GET(number/officer_join_base_exp_min)
 
 /client/proc/is_playtime_restriction_eligible()

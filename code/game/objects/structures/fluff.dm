@@ -110,6 +110,7 @@
 /obj/structure/fluff/paper
 	name = "dense lining of papers"
 	desc = "A lining of paper scattered across the bottom of a wall."
+	max_integrity = 10
 	icon = 'icons/obj/fluff.dmi'
 	icon_state = "paper"
 	deconstructible = FALSE

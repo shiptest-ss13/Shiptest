@@ -223,7 +223,7 @@
 		var/obj/item/clothing/I = target
 		I.item_state = initial(picked_item.item_state)
 		I.mob_overlay_icon = initial(picked_item.mob_overlay_icon)
-		if(istype(I, /obj/item/clothing) && istype(initial(picked_item), /obj/item/clothing))
+		if(istype(I, /obj/item/clothing) && istype(picked_item, /obj/item/clothing))
 			var/obj/item/clothing/CL = I
 			var/obj/item/clothing/PCL = picked_item
 			CL.flags_cover = initial(PCL.flags_cover)
@@ -278,7 +278,7 @@
 	var/obj/item/pda/agent_pda = target
 	if(istype(agent_pda))
 		agent_pda.update_label()
-		agent_pda.update_icon()
+		agent_pda.update_appearance()
 
 /datum/action/item_action/chameleon/change/pda/apply_job_data(datum/job/job_datum)
 	..()

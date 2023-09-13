@@ -70,11 +70,12 @@
 
 /obj/structure/camera_assembly/update_icon_state()
 	icon_state = "[xray_module ? "xray" : null][initial(icon_state)]"
+	return ..()
 
 /obj/structure/camera_assembly/handle_atom_del(atom/A)
 	if(A == xray_module)
 		xray_module = null
-		update_icon()
+		update_appearance()
 		if(malf_xray_firmware_present)
 			malf_xray_firmware_active = malf_xray_firmware_present //re-enable firmware based upgrades after the part is removed.
 		if(istype(loc, /obj/machinery/camera))
@@ -110,7 +111,7 @@
 		xray_module = null
 		if(malf_xray_firmware_present)
 			malf_xray_firmware_active = malf_xray_firmware_present //re-enable firmware based upgrades after the part is removed.
-		update_icon()
+		update_appearance()
 
 	else if(I == emp_module)
 		emp_module = null
@@ -175,7 +176,7 @@
 				if(malf_xray_firmware_active)
 					malf_xray_firmware_active = FALSE //flavor reason: MALF AI Upgrade Camera Network ability's firmware is incompatible with the new part
 														//real reason: make it a normal upgrade so the finished camera's icons and examine texts are restored.
-				update_icon()
+				update_appearance()
 				return
 
 			else if(istype(W, /obj/item/assembly/prox_sensor)) //motion sensing upgrade

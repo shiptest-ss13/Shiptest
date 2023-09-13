@@ -54,8 +54,8 @@
 		/obj/item/kitchen/knife/combat/survival=1,
 		/obj/item/mining_voucher=1,
 		/obj/item/mining_scanner=1,
-		/obj/item/gun/energy/kinetic_accelerator=1,\
 		/obj/item/stack/marker_beacon/ten=1)
+	belt = /obj/item/gun/energy/kinetic_accelerator
 
 /datum/outfit/job/miner/equipped/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -92,6 +92,13 @@
 	satchel = /obj/item/storage/backpack/satchel/tox
 	courierbag = /obj/item/storage/backpack/messenger/tox
 
+/datum/outfit/job/miner/syndicate/gorlex
+	name = "Wrecker (Gorlex Marauders)"
+
+	uniform = /obj/item/clothing/under/syndicate/gorlex
+	shoes = /obj/item/clothing/shoes/workboots
+	ears = /obj/item/radio/headset/alt
+
 /datum/outfit/job/miner/syndicate/sbc
 	name = "Miner (Twinkleshine)"
 
@@ -100,7 +107,7 @@
 	glasses = /obj/item/clothing/glasses/meson/night
 	gloves = /obj/item/clothing/gloves/explorer
 	ears = /obj/item/radio/headset/syndicate
-	mask = /obj/item/clothing/mask/chameleon
+	mask = /obj/item/clothing/mask/gas/syndicate/voicechanger
 	r_pocket = /obj/item/kitchen/knife/combat/survival
 	belt = /obj/item/storage/belt/mining/alt
 	implants = list(/obj/item/implant/weapons_auth)
@@ -137,8 +144,8 @@
 		/obj/item/mining_scanner=1,
 		/obj/item/reagent_containers/hypospray/medipen/survival,
 		/obj/item/reagent_containers/hypospray/medipen/survival,\
-		/obj/item/gun/energy/kinetic_accelerator/old=1,\
 		/obj/item/stack/marker_beacon/ten=1)
+	belt = /obj/item/gun/energy/kinetic_accelerator/old
 
 /datum/outfit/job/miner/righand
 	name = "Righand"

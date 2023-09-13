@@ -8,6 +8,7 @@
 /*
  * First Aid Kits
  */
+
 /obj/item/storage/firstaid
 	name = "first-aid kit"
 	desc = "It's an emergency medical kit for those serious boo-boos."
@@ -30,10 +31,6 @@
 /obj/item/storage/firstaid/regular
 	icon_state = "firstaid"
 	desc = "A first aid kit with the ability to heal common types of injuries."
-
-/obj/item/storage/firstaid/regular/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins giving [user.p_them()]self aids with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return BRUTELOSS
 
 /obj/item/storage/firstaid/regular/PopulateContents()
 	if(empty)
@@ -146,14 +143,6 @@
 	item_state = "firstaid-ointment"
 	damagetype_healed = BURN
 
-/obj/item/storage/firstaid/fire/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins rubbing \the [src] against [user.p_them()]self! It looks like [user.p_theyre()] trying to start a fire!</span>")
-	return FIRELOSS
-
-/obj/item/storage/firstaid/fire/Initialize(mapload)
-	. = ..()
-	icon_state = pick("ointment","firefirstaid")
-
 /obj/item/storage/firstaid/fire/PopulateContents()
 	if(empty)
 		return
@@ -172,14 +161,6 @@
 	item_state = "firstaid-toxin"
 	damagetype_healed = TOX
 
-/obj/item/storage/firstaid/toxin/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins licking the lead paint off \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return TOXLOSS
-
-/obj/item/storage/firstaid/toxin/Initialize(mapload)
-	. = ..()
-	icon_state = pick("antitoxin","antitoxfirstaid","antitoxfirstaid2")
-
 /obj/item/storage/firstaid/toxin/PopulateContents()
 	if(empty)
 		return
@@ -192,20 +173,34 @@
 	)
 	generate_items_inside(items_inside,src)
 
+/obj/item/storage/firstaid/radiation
+	name = "radiation treatment kit"
+	desc = "Used to treat severe radiation poisoning."
+	icon_state = "antitoxin"
+	item_state = "firstaid-toxin"
+	damagetype_healed = TOX
+
+/obj/item/storage/firstaid/radiation/Initialize(mapload)
+	. = ..()
+	icon_state = pick("antitoxin","antitoxfirstaid","antitoxfirstaid2")
+
+/obj/item/storage/firstaid/radiation/PopulateContents()
+	if(empty)
+		return
+	var/static/items_inside = list(
+		/obj/item/healthanalyzer = 1,
+		/obj/item/storage/pill_bottle/potassiodide = 2,
+		/obj/item/reagent_containers/hypospray/medipen/penacid = 2,
+		/obj/item/reagent_containers/hypospray/medipen/anti_rad = 4
+	)
+	generate_items_inside(items_inside,src)
+
 /obj/item/storage/firstaid/o2
 	name = "oxygen deprivation treatment kit"
 	desc = "A box full of oxygen goodies."
 	icon_state = "o2"
 	item_state = "firstaid-o2"
 	damagetype_healed = OXY
-
-/obj/item/storage/firstaid/o2/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins hitting [user.p_their()] neck with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return OXYLOSS
-
-/obj/item/storage/firstaid/o2/Initialize(mapload)
-	. = ..()
-	icon_state = pick("o2","o2second")
 
 /obj/item/storage/firstaid/o2/PopulateContents()
 	if(empty)
@@ -225,14 +220,6 @@
 	item_state = "firstaid-brute"
 	damagetype_healed = BRUTE
 	custom_price = 600
-
-/obj/item/storage/firstaid/brute/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins beating [user.p_them()]self over the head with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return BRUTELOSS
-
-/obj/item/storage/firstaid/brute/Initialize(mapload)
-	. = ..()
-	icon_state = pick("brute","brute2")
 
 /obj/item/storage/firstaid/brute/PopulateContents()
 	if(empty)
@@ -299,13 +286,15 @@
 
 	var/obj/item/bot_assembly/medbot/A = new
 	if(istype(src, /obj/item/storage/firstaid/fire))
-		A.set_skin("ointment")
+		A.set_skin("medibot_burn")
 	else if(istype(src, /obj/item/storage/firstaid/toxin))
-		A.set_skin("tox")
+		A.set_skin("medibot_toxin")
 	else if(istype(src, /obj/item/storage/firstaid/o2))
-		A.set_skin("o2")
+		A.set_skin("medibot_o2")
 	else if(istype(src, /obj/item/storage/firstaid/brute))
-		A.set_skin("brute")
+		A.set_skin("medibot_brute")
+	else if(istype(src, /obj/item/storage/firstaid/tactical))
+		A.set_skin("medibot_bezerk")
 	user.put_in_hands(A)
 	to_chat(user, "<span class='notice'>You add [S] to [src].</span>")
 	A.robot_arm = S.type
@@ -334,10 +323,6 @@
 	STR.click_gather = TRUE
 	STR.set_holdable(list(/obj/item/reagent_containers/pill, /obj/item/dice))
 	STR.use_sound = 'sound/items/storage/pillbottle.ogg'
-
-/obj/item/storage/pill_bottle/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is trying to get the cap off [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return (TOXLOSS)
 
 /obj/item/storage/pill_bottle/charcoal
 	name = "bottle of charcoal pills"

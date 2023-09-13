@@ -56,8 +56,8 @@ falloff_distance - Distance at which falloff begins. Sound is at peak volume (in
 	// Looping through the player list has the added bonus of working for mobs inside containers
 	var/sound/S = sound(get_sfx(soundin))
 	var/maxdistance = SOUND_RANGE + extrarange
-	var/source_z = turf_source.z
-	var/list/listeners = SSmobs.clients_by_zlevel[source_z].Copy()
+	var/source_z = "[turf_source.virtual_z]"
+	var/list/listeners = LAZYACCESS(SSmobs.players_by_virtual_z, source_z) || list()
 
 	var/turf/above_turf = turf_source.above()
 	var/turf/below_turf = turf_source.below()
@@ -73,10 +73,10 @@ falloff_distance - Distance at which falloff begins. Sound is at peak volume (in
 
 	else
 		if(above_turf && istransparentturf(above_turf))
-			listeners += SSmobs.clients_by_zlevel[above_turf.z]
+			listeners += LAZYACCESS(SSmobs.players_by_virtual_z, "[above_turf.virtual_z()]") || list()
 
 		if(below_turf && istransparentturf(turf_source))
-			listeners += SSmobs.clients_by_zlevel[below_turf.z]
+			listeners += LAZYACCESS(SSmobs.players_by_virtual_z, "[below_turf.virtual_z()]") || list()
 
 	for(var/P in listeners)
 		var/mob/M = P
@@ -85,7 +85,8 @@ falloff_distance - Distance at which falloff begins. Sound is at peak volume (in
 			ismono = get_dist(get_turf(P), turf_source) < 2	//If adjacent, play as mono
 		if(get_dist(M, turf_source) <= maxdistance)
 			M.playsound_local(turf_source, soundin, vol, vary, frequency, falloff_exponent, channel, pressure_affected, S, maxdistance, falloff_distance, ignore_direction = ismono)
-	for(var/P in SSmobs.dead_players_by_zlevel[source_z])
+
+	for(var/P in LAZYACCESS(SSmobs.dead_players_by_virtual_z, source_z))
 		var/mob/M = P
 		var/ismono = FALSE
 		if(mono_adj)

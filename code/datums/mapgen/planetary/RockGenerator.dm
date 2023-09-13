@@ -136,7 +136,7 @@
 	)
 
 /datum/biome/cave/rock
-	closed_turf_types = list(/turf/closed/mineral/random/asteroid/rockplanet = 1)
+	closed_turf_types = list(/turf/closed/mineral/random/rockplanet = 1)
 	open_turf_types = list(/turf/open/floor/plating/asteroid/rockplanet/cracked = 1)
 	flora_spawn_chance = 4
 	flora_spawn_list = list(

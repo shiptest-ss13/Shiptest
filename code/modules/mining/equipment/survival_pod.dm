@@ -149,6 +149,7 @@
 /obj/machinery/stasis/survival_pod
 	icon = 'icons/obj/lavaland/survival_pod.dmi'
 	icon_state = "sleeper"
+	base_icon_state = "sleeper"
 	mattress_state = null
 	buckle_lying = 270
 
@@ -312,7 +313,6 @@
 						/obj/item/lava_staff,
 						/obj/item/energy_katana,
 						/obj/item/hierophant_club,
-						/obj/item/his_grace,
 						/obj/item/gun/energy/minigun,
 						/obj/item/gun/ballistic/automatic/hmg/l6_saw,
 						/obj/item/gun/magic/staff/chaos,

@@ -1,24 +1,28 @@
 /obj/projectile/bullet/shotgun_slug
 	name = "12g shotgun slug"
-	damage = 45					//WS Edit - Shotgun Nerf
+	damage = 60
+	armour_penetration = -10
 
 /obj/projectile/bullet/shotgun_beanbag
 	name = "beanbag slug"
 	damage = 5
-	stamina = 45					//WS Edit - Shotgun Nerf
-	armour_penetration = -10		//WS Edit - Shotgun Nerf
+	stamina = 45
+	armour_penetration = -10
 
 /obj/projectile/bullet/incendiary/shotgun
 	name = "incendiary slug"
 	damage = 20
+	armour_penetration = -10
 
 /obj/projectile/bullet/incendiary/shotgun/dragonsbreath
 	name = "dragonsbreath pellet"
 	damage = 5
+	armour_penetration = -35
 
 /obj/projectile/bullet/shotgun_stunslug
 	name = "stunslug"
 	damage = 5
+	armour_penetration = -10
 	paralyze = 100
 	stutter = 5
 	jitter = 20
@@ -30,7 +34,8 @@
 	name = "meteorslug"
 	icon = 'icons/obj/meteor.dmi'
 	icon_state = "dust"
-	damage = 30
+	damage = 40
+	armour_penetration = -10
 	paralyze = 15
 	knockdown = 80
 	hitsound = 'sound/effects/meteorimpact.ogg'
@@ -48,7 +53,8 @@
 
 /obj/projectile/bullet/shotgun_frag12
 	name ="frag12 slug"
-	damage = 25
+	damage = 35
+	armour_penetration = -10
 	paralyze = 50
 
 /obj/projectile/bullet/shotgun_frag12/on_hit(atom/target, blocked = FALSE)
@@ -62,17 +68,18 @@
 	///How much stamina damage is subtracted per tile?
 	var/tile_dropoff_stamina = 0.8
 
+	armour_penetration = -35
+
 /obj/projectile/bullet/pellet/shotgun_buckshot
 	name = "buckshot pellet"
 	damage = 10
-	armour_penetration = -20
+
 
 /obj/projectile/bullet/pellet/shotgun_rubbershot
 	name = "rubbershot pellet"
 	damage = 2
 	stamina = 8
-	armour_penetration = -20
-	tile_dropoff = 0.2
+	tile_dropoff = 0.2	// Keep it at 10% per tile
 
 /obj/projectile/bullet/pellet/shotgun_incapacitate
 	name = "incapacitating pellet"
@@ -90,8 +97,7 @@
 
 /obj/projectile/bullet/pellet/shotgun_improvised
 	tile_dropoff = 0.45		//Come on it does 4.5 damage don't be like that.		//WS Edit - Shotgun nerf
-	damage = 6			//WS Edit - Shotgun nerf
-	armour_penetration = -20		//WS Edit - Shotgun nerf
+	damage = 6
 
 /obj/projectile/bullet/pellet/shotgun_improvised/Initialize()
 	. = ..()
@@ -105,6 +111,7 @@
 
 /obj/projectile/bullet/scattershot
 	damage = 24
+	armour_penetration = -20
 
 /obj/projectile/bullet/pellet/shotgun_buckshot/twobore
 	name = "two-bore pellet"

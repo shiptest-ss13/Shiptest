@@ -41,6 +41,7 @@
 #define CHAT_GHOSTLAWS (1<<11)
 #define CHAT_LOOC (1<<12)
 #define CHAT_LOGIN_LOGOUT (1<<13)
+#define CHAT_GHOSTCKEY (1<<14)
 
 #define TOGGLES_DEFAULT_CHAT (CHAT_OOC|CHAT_DEAD|CHAT_GHOSTEARS|CHAT_GHOSTSIGHT|CHAT_PRAYER|CHAT_RADIO|CHAT_PULLR|CHAT_GHOSTWHISPER|CHAT_GHOSTPDA|CHAT_GHOSTRADIO|CHAT_BANKCARD|CHAT_GHOSTLAWS|CHAT_LOOC|CHAT_LOGIN_LOGOUT)
 
@@ -112,7 +113,9 @@
 #define RANDOM_UNDERWEAR "random_underwear"
 #define RANDOM_UNDERWEAR_COLOR "random_underwear_color"
 #define RANDOM_UNDERSHIRT "random_undershirt"
+#define RANDOM_UNDERSHIRT_COLOR "random_undershirt_color"
 #define RANDOM_SOCKS "random_socks"
+#define RANDOM_SOCKS_COLOR "random_socks_color"
 #define RANDOM_BACKPACK "random_backpack"
 #define RANDOM_JUMPSUIT_STYLE "random_jumpsuit_style"
 #define RANDOM_EXOWEAR_STYLE "random_jumpsuit_style"
@@ -131,4 +134,5 @@
 #define PROSTHETIC_AMPUTATED "amputated"
 #define PROSTHETIC_ROBOTIC "prosthetic"
 
-
+#define NOT_SYNTHETIC FALSE
+#define IS_SYNTHETIC TRUE
