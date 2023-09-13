@@ -22,6 +22,8 @@
 	#define COMPONENT_GLOB_BLOCK_CINEMATIC 1
 /// ingame button pressed (/obj/machinery/button/button)
 #define COMSIG_GLOB_BUTTON_PRESSED "!button_pressed"
+/// a client (re)connected, after all /client/New() checks have passed : (client/connected_client)
+#define COMSIG_GLOB_CLIENT_CONNECT "!client_connect"
 
 // signals from globally accessible objects
 /// from SSsun when the sun changes position : (azimuth)
