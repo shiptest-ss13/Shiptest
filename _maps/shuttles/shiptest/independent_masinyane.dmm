@@ -119,6 +119,9 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /obj/effect/landmark/observer_start,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "ix" = (
@@ -180,21 +183,20 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "kO" = (
-/obj/structure/fans/tiny{
-	pixel_y = -10
-	},
 /obj/effect/turf_decal/industrial/stand_clear{
 	dir = 1;
 	layer = 2.09
 	},
-/obj/machinery/button/door{
-	dir = 8;
-	id = "masinyane_blastdoors";
-	pixel_x = 23
-	},
 /obj/machinery/door/poddoor{
 	id = "masinyane_blastdoors";
 	name = "Masinyane Entrance Doors"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 8;
+	id = "masinyane_holofield"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -244,6 +246,12 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
+"nG" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
 "qu" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
@@ -325,6 +333,9 @@
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/airlock/external/glass{
 	name = "Internal Airlock"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -474,20 +485,22 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Iu" = (
-/obj/structure/fans/tiny{
-	pixel_y = -10
-	},
 /obj/effect/turf_decal/industrial/stand_clear{
 	layer = 2.09
-	},
-/obj/machinery/button/door{
-	dir = 4;
-	id = "masinyane_blastdoors";
-	pixel_x = -23
 	},
 /obj/machinery/door/poddoor{
 	id = "masinyane_blastdoors";
 	name = "Masinyane Entrance Doors"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 4;
+	id = "masinyane_holofield"
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -496,6 +509,18 @@
 	dir = 1
 	},
 /obj/structure/tank_dispenser/oxygen,
+/obj/machinery/button/door{
+	id = "masinyane_blastdoors";
+	pixel_x = -4;
+	pixel_y = 28;
+	name = "Blast Door Control"
+	},
+/obj/machinery/button/shieldwallgen{
+	pixel_x = 5;
+	pixel_y = 27;
+	name = "Holofield Control";
+	id = "masinyane_holofield"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "IQ" = (
@@ -710,6 +735,9 @@
 	dir = 1
 	},
 /obj/machinery/light/directional/west,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "Wn" = (
@@ -718,6 +746,9 @@
 "Xc" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/item/radio/intercom/directional/west,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Xe" = (
@@ -898,7 +929,7 @@ Wn
 Xq
 Iu
 Wi
-sn
+nG
 yn
 Xc
 ip

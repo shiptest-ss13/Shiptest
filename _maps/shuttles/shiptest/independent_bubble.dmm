@@ -81,11 +81,16 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "ec" = (
-/obj/structure/fans/tiny,
 /obj/effect/turf_decal/siding/thinplating,
 /obj/machinery/door/poddoor{
 	id = "bubbledoors";
 	name = "Cargo Bay Blast Door"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
@@ -174,6 +179,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
@@ -378,6 +386,9 @@
 /turf/closed/wall,
 /area/ship/science)
 "nS" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "nV" = (
@@ -418,6 +429,9 @@
 	},
 /obj/machinery/light/directional/south,
 /obj/item/storage/toolbox/mechanical,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "qq" = (
@@ -545,10 +559,19 @@
 /obj/machinery/button/door{
 	id = "bubbledoors";
 	name = "Blast Door Control";
-	pixel_x = 25
+	pixel_x = 25;
+	dir = 8;
+	pixel_y = -5
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
 /obj/machinery/suit_storage_unit/independent/mining,
+/obj/machinery/button/shieldwallgen{
+	pixel_x = 25;
+	dir = 8;
+	pixel_y = 4;
+	name = "Holofield Control";
+	id = "bubble_holofield"
+	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "wH" = (
@@ -561,7 +584,6 @@
 /turf/open/floor/plating,
 /area/ship/external)
 "wO" = (
-/obj/structure/fans/tiny,
 /obj/effect/turf_decal/siding/thinplating,
 /obj/machinery/door/poddoor{
 	id = "bubbledoors";
@@ -569,6 +591,13 @@
 	},
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 4;
+	id = "bubble_holofield"
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
@@ -806,6 +835,9 @@
 /area/ship/engineering)
 "Je" = (
 /obj/effect/landmark/start/shaft_miner,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "Js" = (
@@ -817,7 +849,6 @@
 /turf/open/floor/plating,
 /area/ship/bridge)
 "JG" = (
-/obj/structure/fans/tiny,
 /obj/effect/turf_decal/siding/thinplating,
 /obj/machinery/door/poddoor{
 	id = "bubbledoors";
@@ -825,6 +856,13 @@
 	},
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 4
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 8;
+	id = "bubble_holofield"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)

@@ -115,6 +115,19 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
+"dY" = (
+/obj/machinery/door/poddoor/shutters{
+	id = "traumalobby";
+	name = "Lobby"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/carpet/nanoweave/beige,
+/area/ship/hallway/aft)
 "ed" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/effect/turf_decal/trimline/opaque/red/warning{
@@ -133,6 +146,12 @@
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
+"es" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/carpet/nanoweave/beige,
+/area/ship/hallway/aft)
 "eG" = (
 /obj/machinery/light/directional/south,
 /obj/effect/turf_decal/trimline/opaque/red/warning{
@@ -250,10 +269,16 @@
 /turf/closed/wall/r_wall,
 /area/ship/hallway/aft)
 "gO" = (
-/obj/structure/fans/tiny,
 /obj/machinery/door/poddoor/shutters{
 	id = "traumalobby";
 	name = "Lobby"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 4;
+	id = "traumashield"
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
 	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/hallway/aft)
@@ -614,6 +639,13 @@
 	},
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/turf_decal/industrial/hatch/red,
+/obj/machinery/button/shieldwallgen{
+	dir = 1;
+	id = "traumashield";
+	name = "Lobby Holoshield";
+	pixel_x = 6;
+	pixel_y = 8
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/aft)
 "oS" = (
@@ -989,6 +1021,21 @@
 "xa" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
+	},
+/turf/open/floor/carpet/nanoweave/beige,
+/area/ship/hallway/aft)
+"xm" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
 	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/hallway/aft)
@@ -1372,6 +1419,20 @@
 	},
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
+/area/ship/hallway/aft)
+"Kf" = (
+/obj/machinery/door/poddoor/shutters{
+	id = "traumalobby";
+	name = "Lobby"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 8;
+	id = "traumashield"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/carpet/nanoweave/beige,
 /area/ship/hallway/aft)
 "Kh" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
@@ -2495,11 +2556,11 @@ RW
 dH
 uq
 ur
-go
-ur
-ur
-ur
-gO
+xm
+es
+es
+es
+dY
 BN
 "}
 (11,1,1) = {"
@@ -2529,7 +2590,7 @@ lH
 IG
 ur
 ur
-gO
+Kf
 UG
 "}
 (12,1,1) = {"

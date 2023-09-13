@@ -16,14 +16,25 @@
 /obj/machinery/door/poddoor{
 	id = "whiteship_port"
 	},
-/obj/structure/fans/tiny,
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	id = "whiteship_port_holofield";
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plating,
 /area/ship/cargo)
 "af" = (
 /obj/machinery/door/poddoor{
 	id = "whiteship_port"
 	},
-/obj/structure/fans/tiny,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
 /turf/open/floor/plating,
 /area/ship/cargo)
 "ag" = (
@@ -75,6 +86,13 @@
 	pixel_y = 5;
 	dir = 4
 	},
+/obj/machinery/button/shieldwallgen{
+	pixel_x = -25;
+	dir = 4;
+	pixel_y = -4;
+	name = "Port Holofield Control";
+	id = "whiteship_port_holofield"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "ap" = (
@@ -111,6 +129,9 @@
 /obj/effect/turf_decal/ntspaceworks_big/seven{
 	dir = 1
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "ar" = (
@@ -145,6 +166,13 @@
 	},
 /obj/effect/turf_decal/ntspaceworks_big/five{
 	dir = 1
+	},
+/obj/machinery/button/shieldwallgen{
+	pixel_x = 25;
+	dir = 8;
+	pixel_y = -4;
+	name = "Port Holofield Control";
+	id = "whiteship_port_holofield"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
@@ -1649,6 +1677,13 @@
 	pixel_y = -5;
 	dir = 4
 	},
+/obj/machinery/button/shieldwallgen{
+	pixel_x = -25;
+	dir = 4;
+	pixel_y = 4;
+	name = "Starboard Holofield Control";
+	id = "whiteship_starboard_holofield"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "dZ" = (
@@ -1668,6 +1703,13 @@
 	pixel_x = 25;
 	pixel_y = -5;
 	dir = 8
+	},
+/obj/machinery/button/shieldwallgen{
+	pixel_x = 25;
+	dir = 8;
+	pixel_y = 4;
+	name = "Starboard Holofield Control";
+	id = "whiteship_starboard_holofield"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
@@ -1734,7 +1776,13 @@
 /obj/machinery/door/poddoor{
 	id = "whiteship_starboard"
 	},
-/obj/structure/fans/tiny,
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 4;
+	id = "whiteship_starboard_holofield"
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plating,
 /area/ship/cargo)
 "ei" = (
@@ -1742,7 +1790,9 @@
 /obj/machinery/door/poddoor{
 	id = "whiteship_starboard"
 	},
-/obj/structure/fans/tiny,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating,
 /area/ship/cargo)
 "ej" = (
@@ -1915,6 +1965,13 @@
 /obj/effect/turf_decal/corner/opaque/white/diagonal,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
+"ip" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/cargo)
 "iM" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -2011,6 +2068,9 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/ntspaceworks_big/three{
 	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
@@ -2244,6 +2304,9 @@
 "tZ" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/mineral/ore_redemption,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "uk" = (
@@ -2322,6 +2385,19 @@
 /obj/effect/turf_decal/corner/transparent/neutral/full,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
+"xu" = (
+/obj/machinery/door/poddoor{
+	id = "whiteship_port"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 8;
+	id = "whiteship_port_holofield"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating,
+/area/ship/cargo)
 "xV" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable{
@@ -2334,7 +2410,23 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/transparent/neutral/full,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
 /turf/open/floor/plasteel/dark,
+/area/ship/cargo)
+"yz" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/door/poddoor{
+	id = "whiteship_starboard"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plating,
 /area/ship/cargo)
 "yS" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2466,6 +2558,20 @@
 /obj/effect/turf_decal/corner/transparent/neutral/full,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
+"EC" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/door/poddoor{
+	id = "whiteship_starboard"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 8;
+	id = "whiteship_starboard_holofield"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating,
+/area/ship/cargo)
 "Fb" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2502,6 +2608,9 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /obj/effect/turf_decal/corner/transparent/neutral/full,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "Gr" = (
@@ -2514,6 +2623,15 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
+"GH" = (
+/obj/machinery/door/poddoor{
+	id = "whiteship_starboard"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/ship/cargo)
 "HH" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
@@ -2744,6 +2862,16 @@
 	},
 /obj/effect/turf_decal/corner/transparent/neutral/full,
 /turf/open/floor/plasteel/dark,
+/area/ship/cargo)
+"PR" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/door/poddoor{
+	id = "whiteship_port"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
 /area/ship/cargo)
 "PV" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3144,7 +3272,7 @@ aa
 "}
 (10,1,1) = {"
 aa
-ae
+PR
 ve
 zC
 TQ
@@ -3180,13 +3308,13 @@ AT
 HH
 FV
 tZ
-ap
-ei
+ip
+yz
 bf
 "}
 (12,1,1) = {"
 aa
-ae
+PR
 ar
 Xs
 Lq
@@ -3202,12 +3330,12 @@ bm
 eX
 ap
 dZ
-eh
+GH
 aa
 "}
 (13,1,1) = {"
 aa
-af
+xu
 as
 hq
 Lq
@@ -3223,7 +3351,7 @@ aF
 Lq
 dM
 ea
-ei
+EC
 aa
 "}
 (14,1,1) = {"

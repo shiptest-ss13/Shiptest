@@ -15,9 +15,15 @@
 /turf/open/floor/wood,
 /area/ship/bridge)
 "ae" = (
-/obj/structure/fans/tiny,
 /obj/machinery/door/poddoor{
 	id = "cruise_entrance1"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 4;
+	id = "lagoon_holofield1"
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
 	},
 /turf/open/floor/pod/light,
 /area/ship/hallway/port)
@@ -77,14 +83,22 @@
 	port_direction = 8;
 	preferred_direction = 4
 	},
-/obj/structure/fans/tiny,
 /obj/machinery/door/poddoor{
 	id = "cruise_entrance1"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
 	},
 /turf/open/floor/pod/light,
 /area/ship/hallway/port)
 "au" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/pod/light,
 /area/ship/hallway/port)
 "az" = (
@@ -173,6 +187,13 @@
 	},
 /obj/effect/turf_decal/industrial/stand_clear,
 /obj/effect/turf_decal/corner/opaque/white/bordercorner,
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 8;
+	id = "lagoon_holofield2"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
 /turf/open/floor/pod/dark,
 /area/ship/hallway/port)
 "bc" = (
@@ -205,6 +226,9 @@
 "bh" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/pod/light,
 /area/ship/hallway/port)
@@ -478,6 +502,13 @@
 /obj/effect/turf_decal/corner/opaque/white/bordercorner{
 	dir = 8
 	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 4;
+	id = "lagoon_holofield2"
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/pod/dark,
 /area/ship/hallway/port)
 "cP" = (
@@ -563,6 +594,9 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/pod/light,
 /area/ship/hallway/port)
 "dG" = (
@@ -587,6 +621,15 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
 	},
 /turf/open/floor/pod/dark,
 /area/ship/hallway/port)
@@ -1111,6 +1154,9 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/port)
 "hs" = (
@@ -1743,6 +1789,18 @@
 	pixel_x = 20;
 	pixel_y = -12;
 	dir = 8
+	},
+/obj/machinery/button/shieldwallgen{
+	pixel_y = 23;
+	pixel_x = 6;
+	id = "lagoon_holofield2";
+	name = "Holofield 2"
+	},
+/obj/machinery/button/shieldwallgen{
+	pixel_y = 34;
+	pixel_x = 6;
+	name = "Holofield 1";
+	id = "lagoon_holofield1"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/port)
@@ -3448,6 +3506,19 @@
 /obj/item/bedsheet/black,
 /turf/open/floor/carpet/black,
 /area/ship/crew)
+"wS" = (
+/obj/machinery/door/poddoor{
+	id = "cruise_entrance1"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 8;
+	id = "lagoon_holofield1"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/pod/light,
+/area/ship/hallway/port)
 "wT" = (
 /obj/structure/window/plasma/reinforced/spawner/north,
 /obj/structure/window/plasma/reinforced/spawner/east,
@@ -5349,6 +5420,13 @@
 /obj/item/radio/intercom/directional/south,
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
+"JE" = (
+/obj/machinery/scanner_gate,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/pod/light,
+/area/ship/hallway/port)
 "JF" = (
 /obj/structure/table/wood,
 /obj/item/modular_computer/laptop/preset/civilian,
@@ -5750,13 +5828,13 @@
 "Ny" = (
 /obj/machinery/button/door{
 	id = "cruise_entrance1";
-	name = "blastdoor one";
+	name = "Door 1";
 	pixel_x = 28;
 	pixel_y = 36
 	},
 /obj/machinery/button/door{
 	id = "cruise_entrance2";
-	name = "blastdoor two";
+	name = "Door 2";
 	pixel_x = 28;
 	pixel_y = 25
 	},
@@ -6220,6 +6298,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/port)
@@ -7955,7 +8036,7 @@ sH
 (8,1,1) = {"
 wi
 at
-Fn
+JE
 au
 bh
 dF
@@ -7995,7 +8076,7 @@ sH
 "}
 (9,1,1) = {"
 ZK
-ae
+wS
 Fn
 aN
 zI
