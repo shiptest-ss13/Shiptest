@@ -47,7 +47,7 @@
 	var/loading_id = ""
 
 /area/centcom/supplypod/loading/Initialize()
-	. = ..() 
+	. = ..()
 	if(!loading_id)
 		CRASH("[type] created without a loading_id")
 	if(GLOB.supplypod_loading_bays[loading_id])
