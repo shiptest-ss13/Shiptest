@@ -47,6 +47,9 @@ standards:
     - exactly: [12, "mixed indentation", '^( +\t+|\t+ +)']
     - exactly: [21, 'padding inside parentheses', '\(([\t ]+([^)"\n\\]*)|([^("\n]+)[\t ]+)\)']
 
+    - exactly: [1, "Old-style proc references", ',? ?\.proc/(\w+)']
+    - exactly: [0, "Old-style typed proc references", ',? ?([\w/]+?)/?\.proc/(\w+)']
+
     - no_more:
           [
               34,
