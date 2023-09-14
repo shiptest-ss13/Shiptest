@@ -377,12 +377,18 @@
 		to_chat(user, "<span class='notice'>You start sliding \the [src] under the [target]...</span>")
 		if(do_after(user, 10))
 			tocook = target
+			RegisterSignal(tocook, COMSIG_PARENT_QDELETING, PROC_REF(clear_cooking))
 			target.add_overlay(ration_overlay)
 			addtimer(CALLBACK(src, .proc/cook), 100)
 			visible_message("<span class='notice'>\The [target] rapidly begins cooking...</span>")
 			playsound(src, 'sound/items/cig_light.ogg', 50, 1)
 			moveToNullspace()
 
+/obj/item/ration_heater/proc/clear_cooking(datum/source)
+	SIGNAL_HANDLER
+	UnregisterSignal(tocook, COMSIG_PARENT_QDELETING)
+	tocook.cut_overlay(ration_overlay)
+	tocook = null
 /obj/item/ration_heater/proc/cook()
 	var/cookturf = get_turf(tocook)
 	tocook.visible_message("<span class='notice'>\The [tocook] is done warming up!</span>")
