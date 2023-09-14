@@ -37,7 +37,6 @@ GLOBAL_VAR(test_log)
 	var/static/datum/map_zone/mapzone
 
 /datum/unit_test/New()
-	var/error = text2path("/obj")
 	if (isnull(mapzone))
 		var/height = 7
 		var/width = 7
