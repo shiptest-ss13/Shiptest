@@ -1516,6 +1516,11 @@
 			custom_material.on_applied(src, materials[custom_material] * multiplier * material_modifier, material_flags)
 		custom_materials[custom_material] += materials[x] * multiplier
 
+/// Returns the indice in filters of the given filter name.
+/// If it is not found, returns null.
+/atom/proc/get_filter_index(name)
+	return filter_data?.Find(name)
+
 /**
  * Returns true if this atom has gravity for the passed in turf
  *
@@ -1646,3 +1651,19 @@
 		else
 			//We inline a MAPTEXT() here, because there's no good way to statically add to a string like this
 			active_hud.screentip_text.maptext = "<span class='maptext' style='text-align: center; font-size: 32px; color: [user.client.prefs.screentip_color]'>[name]</span>"
+
+/*
+* Used to set something as 'open' if it's being used as a supplypod
+*
+* Override this if you want an atom to be usable as a supplypod.
+*/
+/atom/proc/setOpened()
+	return
+
+/*
+* Used to set something as 'closed' if it's being used as a supplypod
+*
+* Override this if you want an atom to be usable as a supplypod.
+*/
+/atom/proc/setClosed()
+	return
