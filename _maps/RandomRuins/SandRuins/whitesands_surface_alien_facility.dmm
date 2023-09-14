@@ -213,12 +213,12 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/machinery/door/airlock/hatch{
-	name = "Maintenance";
-	dir = 4
-	},
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/door/airlock/hatch{
+	name = "Maintenance";
 	dir = 4
 	},
 /turf/open/floor/plating{
@@ -695,13 +695,21 @@
 /turf/open/floor/plasteel,
 /area/ruin/whitesands/alienfacility/lobby)
 "jH" = (
-/obj/effect/spawner/structure/window/reinforced,
-/obj/machinery/door/poddoor{
-	id = "experiment";
-	name = "Experiment Containment"
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
 	},
-/turf/open/floor/plating,
-/area/ruin/whitesands/alienfacility)
+/obj/machinery/door/airlock/hatch{
+	name = "Maintenance";
+	dir = 4
+	},
+/obj/machinery/door/firedoor,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility/lobby)
 "jL" = (
 /obj/effect/turf_decal/atmos/nitrogen,
 /turf/open/floor/engine/n2,
@@ -1756,21 +1764,13 @@
 /turf/open/floor/plasteel,
 /area/ruin/whitesands/alienfacility/lobby)
 "zZ" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor{
+	id = "experiment";
+	name = "Experiment Containment"
 	},
-/obj/machinery/door/firedoor,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/door/airlock/hatch{
-	name = "Maintenance";
-	dir = 4
-	},
-/turf/open/floor/plating{
-	initial_gas_mix = "LAVALAND_ATMOS"
-	},
-/area/ruin/whitesands/alienfacility/lobby)
+/turf/open/floor/plating,
+/area/ruin/whitesands/alienfacility)
 "Ae" = (
 /obj/machinery/power/floodlight{
 	anchored = 1
@@ -3186,7 +3186,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/airlock/hatch{
-	name = "engineering"
+	name = "Engineering"
 	},
 /obj/machinery/door/firedoor,
 /turf/open/floor/plasteel,
@@ -3836,7 +3836,7 @@ tW
 xk
 Gs
 Gs
-cM
+jH
 Gs
 Gs
 Gs
@@ -3931,7 +3931,7 @@ lk
 qF
 ml
 dM
-jH
+zZ
 mE
 UM
 YQ
@@ -3945,7 +3945,7 @@ da
 Qy
 UM
 mE
-jH
+zZ
 bR
 Vw
 th
@@ -3969,7 +3969,7 @@ lk
 qF
 ml
 dM
-jH
+zZ
 mE
 UM
 YQ
@@ -3983,7 +3983,7 @@ da
 YQ
 UM
 mE
-jH
+zZ
 bR
 Vw
 th
@@ -4007,7 +4007,7 @@ qt
 Xx
 Qw
 xa
-jH
+zZ
 mE
 dK
 Qy
@@ -4021,7 +4021,7 @@ da
 YQ
 dK
 mE
-jH
+zZ
 ST
 qC
 cX
@@ -4045,7 +4045,7 @@ lk
 qF
 aY
 dM
-jH
+zZ
 mE
 UM
 YQ
@@ -4059,7 +4059,7 @@ da
 YQ
 UM
 mE
-jH
+zZ
 bR
 zD
 th
@@ -4083,7 +4083,7 @@ lk
 qF
 ml
 dM
-jH
+zZ
 mE
 UM
 YQ
@@ -4097,7 +4097,7 @@ da
 YQ
 UM
 mE
-jH
+zZ
 bR
 zD
 th
@@ -4216,7 +4216,7 @@ bR
 HI
 Gs
 Gs
-zZ
+cM
 Gs
 Gs
 Gs
