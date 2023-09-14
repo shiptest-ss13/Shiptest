@@ -410,7 +410,7 @@ SUBSYSTEM_DEF(air)
 				continue
 			if(item.parent)
 				log_mapping("Doubled atmosmachine found at [AREACOORD(item)] with other contents: [json_encode(item.loc.contents)]")
-				stack_trace("Item added to a pipenet while still having one. (pipes leading to the same spot stacking in one turf, a.k.a. doubled pipes). This is a mapping issue that MUST be fixed. Use the atmosdebug verb to find where it is.")
+				item.stack_trace("Possible doubled atmosmachine")
 
 			net.members += item
 			border += item
