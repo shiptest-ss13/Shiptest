@@ -803,7 +803,7 @@ if __name__ == "__main__":
                     #Github actions annotations
                     if args.github_actions and matching != RESULT_OK:
                         for line_no in adds:
-                            output_write("::error file=%s,line=%i,title=Check Regex::%s" % (
+                            output_write("::error file=%s,line=%i,title=Check Regex::`%s` added here, remove or update check_regex.yml" % (
                                 f,
                                 line_no,
                                 standard.message
@@ -814,7 +814,7 @@ if __name__ == "__main__":
                     #Github actions annotations
                     if args.github_actions and matching != RESULT_OK:
                         for line_no in removes:
-                            output_write("::error file=%s,line=%i,title=Check Regex::%s" % (
+                            output_write("::error file=%s,line=%i,title=Check Regex::`%s` removed here, update check_regex.yml" % (
                                 f,
                                 line_no,
                                 standard.message
