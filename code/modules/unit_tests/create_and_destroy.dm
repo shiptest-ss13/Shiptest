@@ -37,9 +37,6 @@
 		/obj/effect/landmark/subship,
 		//needs a friend :(
 		/obj/effect/mob_spawn/human/demonic_friend,
-		//Needs a pod
-		/obj/effect/DPfall,
-		/obj/effect/DPtarget,
 		//needs a derg
 		/obj/structure/carp_rift,
 		//doesn't have icons
@@ -71,6 +68,9 @@
 	ignore += typesof(/obj/item/reagent_containers/food/snacks/grown)
 	//Nothing to hallucinate if there's nothing to hallicinate
 	ignore += typesof(/obj/effect/hallucination)
+	//We don't have a pod
+	ignore += typesof(/obj/effect/pod_landingzone_effect)
+	ignore += typesof(/obj/effect/pod_landingzone)
 	//These want fried food to take on the shape of, we can't pass that in
 	ignore += typesof(/obj/item/reagent_containers/food/snacks/deepfryholder)
 	//Can't pass in a thing to glow
