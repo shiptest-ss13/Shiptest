@@ -209,6 +209,8 @@
 /obj/item/stamp/head_of_personnel{
 	pixel_x = -7
 	},
+/obj/item/folder/red,
+/obj/item/folder/blue,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/crew/crewthree)
 "bR" = (
@@ -841,6 +843,13 @@
 	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
+"fU" = (
+/obj/machinery/cryopod{
+	dir = 4
+	},
+/obj/item/radio/intercom/directional/south,
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ship/crew/cryo)
 "fW" = (
 /turf/template_noop,
 /area/template_noop)
@@ -951,13 +960,6 @@
 	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
-"gC" = (
-/obj/machinery/cryopod{
-	dir = 4
-	},
-/obj/item/radio/intercom/directional/south,
-/turf/open/floor/plasteel/telecomms_floor,
-/area/ship/crew/cryo)
 "gM" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/item/radio/intercom/directional/north,
@@ -1106,6 +1108,22 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
+"hT" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/yellow/hidden{
+	dir = 4
+	},
+/obj/item/radio/intercom/directional/north,
+/turf/open/floor/carpet/nanoweave,
+/area/ship/hallway/central)
 "hZ" = (
 /obj/item/extinguisher/advanced,
 /obj/item/clothing/glasses/meson/engine,
@@ -1312,6 +1330,7 @@
 /obj/machinery/airalarm/directional/north,
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/effect/decal/cleanable/wrapping,
+/obj/item/storage/fancy/donut_box,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo/office)
 "ji" = (
@@ -1502,6 +1521,10 @@
 	},
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/medical)
+"kO" = (
+/obj/item/radio/intercom/directional/north,
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/central)
 "kU" = (
 /turf/closed/wall,
 /area/ship/crew/toilet)
@@ -1879,10 +1902,6 @@
 	},
 /obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel/tech/grid,
-/area/ship/hallway/central)
-"od" = (
-/obj/item/radio/intercom/directional/north,
-/turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "og" = (
 /obj/machinery/door/airlock/engineering{
@@ -4756,7 +4775,6 @@
 	dir = 8
 	},
 /obj/structure/table,
-/obj/item/storage/fancy/donut_box,
 /obj/item/flashlight/lamp{
 	pixel_x = -8;
 	pixel_y = 10
@@ -4767,6 +4785,8 @@
 /obj/item/stamp{
 	pixel_x = 4
 	},
+/obj/item/folder/blue,
+/obj/item/clipboard,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo/office)
 "Np" = (
@@ -5015,13 +5035,6 @@
 	},
 /turf/open/floor/wood,
 /area/ship/crew/crewthree)
-"Qz" = (
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
-/obj/item/radio/intercom/directional/south,
-/turf/open/floor/carpet/nanoweave,
-/area/ship/hallway/central)
 "QK" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -5247,22 +5260,6 @@
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/plating,
 /area/ship/hallway/central)
-"SM" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/yellow/hidden{
-	dir = 4
-	},
-/obj/item/radio/intercom/directional/north,
-/turf/open/floor/carpet/nanoweave,
-/area/ship/hallway/central)
 "SO" = (
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew/crewtwo)
@@ -5385,6 +5382,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
 /area/ship/crew/dorm)
+"TL" = (
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/item/radio/intercom/directional/south,
+/turf/open/floor/carpet/nanoweave,
+/area/ship/hallway/central)
 "TN" = (
 /obj/machinery/atmospherics/pipe/simple/cyan/visible{
 	dir = 9
@@ -6408,7 +6412,7 @@ JS
 Bc
 Da
 Bc
-gC
+fU
 WZ
 rW
 cS
@@ -6623,7 +6627,7 @@ Zd
 DL
 Br
 xf
-od
+kO
 if
 YQ
 Vj
@@ -6721,7 +6725,7 @@ LD
 Ut
 BE
 zO
-Qz
+TL
 ji
 ji
 ji
@@ -7008,7 +7012,7 @@ wO
 WX
 eB
 jS
-SM
+hT
 cJ
 Qp
 Ve
