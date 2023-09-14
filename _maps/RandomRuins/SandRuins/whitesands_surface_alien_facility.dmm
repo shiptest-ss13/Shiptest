@@ -1,0 +1,4748 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"aa" = (
+/obj/structure/girder/reinforced,
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility)
+"ad" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 1
+	},
+/obj/machinery/firealarm/directional/west,
+/obj/effect/turf_decal/trimline/opaque/mauve/filled/line{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"al" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/spider/stickyweb,
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility)
+"aq" = (
+/obj/structure/table/wood,
+/obj/effect/spawner/lootdrop/donkpockets,
+/obj/effect/spawner/lootdrop/donkpockets,
+/obj/item/storage/box/ingredients/carnivore{
+	pixel_x = -6
+	},
+/obj/item/storage/box/ingredients/grains{
+	pixel_x = 8;
+	pixel_y = 13
+	},
+/obj/effect/turf_decal/trimline/opaque/grey/line,
+/obj/effect/spawner/lootdrop/donut/jelly,
+/turf/open/floor/plasteel/white,
+/area/ruin/whitesands/alienfacility/dorm)
+"ax" = (
+/obj/structure/alien/weeds,
+/obj/structure/table/optable,
+/obj/item/weldingtool/experimental,
+/turf/open/floor/plasteel/airless,
+/area/ruin/whitesands/alienfacility/containment)
+"ay" = (
+/obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/n2{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/orange/filled/line{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/engineering)
+"aF" = (
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/effect/turf_decal/trimline/opaque/mauve/line{
+	dir = 9
+	},
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"aN" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/trimline/opaque/mauve/line{
+	dir = 4
+	},
+/obj/structure/fluff/paper/stack{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"aR" = (
+/obj/machinery/air_sensor/atmos/oxygen_tank,
+/turf/open/floor/engine/o2,
+/area/ruin/whitesands/alienfacility/engineering)
+"aT" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"aY" = (
+/mob/living/simple_animal/hostile/syndicate/ranged,
+/obj/effect/turf_decal/trimline/opaque/mauve/filled/line{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"bh" = (
+/obj/machinery/firealarm/directional/north,
+/obj/effect/turf_decal/trimline/opaque/mauve/filled/line{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"bj" = (
+/obj/item/kirbyplants/random,
+/turf/open/floor/wood/walnut,
+/area/ruin/whitesands/alienfacility/dorm)
+"bn" = (
+/obj/machinery/door/poddoor{
+	id = "experiment";
+	name = "experiment containment";
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/layer_manifold{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/external{
+	dir = 4
+	},
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility)
+"bq" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 6
+	},
+/obj/structure/table/chem,
+/obj/effect/spawner/lootdrop/beaker_loot_spawner,
+/obj/item/stock_parts/micro_laser/high,
+/obj/item/reagent_containers/glass/bottle/random_virus{
+	pixel_x = 11
+	},
+/obj/item/reagent_containers/glass/bottle/random_virus{
+	pixel_x = 11;
+	pixel_y = 7
+	},
+/obj/effect/turf_decal/trimline/opaque/bottlegreen/line{
+	dir = 10
+	},
+/obj/item/stack/sheet/mineral/uranium/five{
+	pixel_x = -11;
+	pixel_y = 11
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/lab)
+"bs" = (
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/visible/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/table/wood,
+/obj/item/paper_bin,
+/obj/item/pen/fountain,
+/turf/open/floor/wood/walnut,
+/area/ruin/whitesands/alienfacility/lobby)
+"bu" = (
+/obj/machinery/air_sensor/atmos/nitrogen_tank,
+/turf/open/floor/engine/n2,
+/area/ruin/whitesands/alienfacility/engineering)
+"bv" = (
+/obj/effect/turf_decal/atmos/oxygen,
+/turf/open/floor/engine/o2,
+/area/ruin/whitesands/alienfacility/engineering)
+"bx" = (
+/obj/structure/alien/weeds/node,
+/turf/open/floor/plasteel/airless,
+/area/ruin/whitesands/alienfacility/containment)
+"bG" = (
+/obj/structure/showcase/horrific_experiment,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 10
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/lab)
+"bI" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/asteroid/whitesands,
+/area/ruin/whitesands/alienfacility/containment)
+"bR" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/trimline/opaque/mauve/line,
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"bS" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/table/wood,
+/turf/open/floor/wood/walnut,
+/area/ruin/whitesands/alienfacility/lobby)
+"cz" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility)
+"cH" = (
+/obj/structure/table,
+/obj/item/reagent_containers/medigel/synthflesh{
+	pixel_x = 6;
+	pixel_y = 12
+	},
+/obj/item/reagent_containers/medigel/synthflesh{
+	pixel_x = -5;
+	pixel_y = 12
+	},
+/obj/item/reagent_containers/medigel/synthflesh{
+	pixel_x = 1;
+	pixel_y = 12
+	},
+/obj/effect/turf_decal/trimline/opaque/blue/filled/line,
+/turf/open/floor/plasteel/white,
+/area/ruin/whitesands/alienfacility/lab)
+"cM" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 4
+	},
+/obj/machinery/door/airlock/hatch{
+	name = "maintenance";
+	dir = 4
+	},
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility/lobby)
+"cX" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/hatch{
+	dir = 1;
+	name = "lobby"
+	},
+/obj/machinery/door/firedoor,
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility/lobby)
+"cY" = (
+/obj/effect/turf_decal/trimline/opaque/mauve/filled/line,
+/obj/structure/fluff/paper/stack{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"cZ" = (
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/trimline/opaque/mauve/line{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"da" = (
+/obj/structure/alien/resin,
+/turf/open/space/basic,
+/area/ruin/whitesands/alienfacility/containment)
+"do" = (
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/visible/layer4{
+	dir = 2
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/chair/office,
+/mob/living/simple_animal/hostile/syndicate/melee/sword,
+/turf/open/floor/wood/walnut,
+/area/ruin/whitesands/alienfacility/lobby)
+"dw" = (
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/layer2{
+	dir = 4;
+	layer = 2.35
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/mauve/line{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"dy" = (
+/obj/structure/extinguisher_cabinet/directional/east,
+/obj/effect/turf_decal/trimline/opaque/mauve/filled/line{
+	dir = 6
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"dK" = (
+/obj/structure/fence/door,
+/turf/open/floor/plating/asteroid/whitesands,
+/area/ruin/whitesands/alienfacility/containment)
+"dM" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/trimline/opaque/mauve/line{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"dN" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/grey/line{
+	dir = 10
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/whitesands/alienfacility/dorm)
+"dT" = (
+/obj/machinery/atmospherics/pipe/simple/green/visible{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
+/area/ruin/whitesands/alienfacility/engineering)
+"ei" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/structure/chair/sofa/right{
+	dir = 1
+	},
+/turf/open/floor/carpet/blue,
+/area/ruin/whitesands/alienfacility/lobby)
+"ej" = (
+/turf/open/floor/wood/walnut,
+/area/ruin/whitesands/alienfacility/lobby)
+"ev" = (
+/obj/machinery/atmospherics/pipe/simple/green/visible{
+	dir = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/portable_atmospherics/canister/nitrogen,
+/obj/effect/turf_decal/trimline/opaque/orange/filled/line{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/engineering)
+"eB" = (
+/turf/template_noop,
+/area/space)
+"eE" = (
+/obj/machinery/power/shieldwallgen,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/ruin/whitesands/alienfacility/containment)
+"eF" = (
+/obj/structure/extinguisher_cabinet/directional/west,
+/obj/effect/turf_decal/trimline/opaque/mauve/filled/line{
+	dir = 10
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"eO" = (
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/structure/fluff/paper/stack{
+	dir = 1
+	},
+/obj/structure/sign/warning/nosmoking{
+	pixel_x = 33
+	},
+/obj/machinery/power/apc/auto_name/directional/east,
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility/lab)
+"eT" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility)
+"eY" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/mauve/line{
+	dir = 8
+	},
+/obj/effect/gibspawner/human,
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"ff" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 10
+	},
+/obj/effect/turf_decal/trimline/opaque/orange/filled/line{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/engineering)
+"fg" = (
+/obj/structure/closet/emcloset/wall{
+	dir = 4;
+	pixel_x = -32
+	},
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility)
+"fk" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/vending/cola/random,
+/turf/open/floor/wood/walnut,
+/area/ruin/whitesands/alienfacility/dorm)
+"ft" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/effect/turf_decal/trimline/opaque/mauve/filled/line{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"fv" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/spider/stickyweb,
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility)
+"fL" = (
+/obj/effect/decal/cleanable/cobweb,
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility)
+"fM" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 1
+	},
+/obj/structure/chair/sofa/left{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 10
+	},
+/turf/open/floor/carpet/blue,
+/area/ruin/whitesands/alienfacility/dorm)
+"fS" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/corner/opaque/blue,
+/obj/effect/turf_decal/corner/opaque/purple{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/machinery/conveyor,
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"fT" = (
+/obj/machinery/atmospherics/components/unary/thermomachine/freezer{
+	dir = 8
+	},
+/obj/machinery/light/directional/east,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/lab)
+"gc" = (
+/obj/machinery/atmospherics/components/unary/portables_connector/visible{
+	dir = 8
+	},
+/obj/machinery/portable_atmospherics/canister/nitrogen,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 9
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/lab)
+"gr" = (
+/obj/machinery/portable_atmospherics/canister/toxins,
+/obj/structure/sign/warning/biohazard{
+	pixel_y = -23
+	},
+/obj/effect/turf_decal/trimline/opaque/mauve/line{
+	dir = 10
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"gs" = (
+/obj/machinery/atmospherics/components/binary/pump/on{
+	name = "Nitrogen to Air"
+	},
+/obj/effect/turf_decal/trimline/opaque/orange/filled/corner{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/engineering)
+"gF" = (
+/obj/machinery/atmospherics/pipe/simple/general{
+	dir = 5
+	},
+/obj/structure/fluff/paper/stack{
+	dir = 9
+	},
+/obj/effect/turf_decal/trimline/opaque/blue/filled/line,
+/turf/open/floor/plasteel/white,
+/area/ruin/whitesands/alienfacility/lab)
+"gH" = (
+/obj/machinery/atmospherics/pipe/simple/orange/visible,
+/obj/machinery/atmospherics/pipe/simple/green/visible{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/orange/filled/line{
+	dir = 9
+	},
+/obj/machinery/portable_atmospherics/scrubber,
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/engineering)
+"gK" = (
+/obj/machinery/vending/cigarette,
+/turf/open/floor/wood/walnut,
+/area/ruin/whitesands/alienfacility/dorm)
+"gQ" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 1
+	},
+/mob/living/simple_animal/hostile/syndicate/ranged,
+/obj/effect/turf_decal/trimline/opaque/mauve/filled/line{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"gZ" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/spawner/lootdrop/beaker_loot_spawner,
+/obj/effect/mob_spawn/human/doctor,
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility/lab)
+"ht" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/effect/turf_decal/trimline/opaque/mauve/filled/line{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"hE" = (
+/obj/machinery/advanced_airlock_controller{
+	pixel_y = 28
+	},
+/obj/machinery/light/small/built/directional{
+	pixel_y = 5
+	},
+/obj/effect/turf_decal/trimline/opaque/mauve/line{
+	dir = 9
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"hI" = (
+/obj/effect/mob_spawn/human/engineer,
+/obj/effect/gibspawner/human,
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/engineering)
+"hQ" = (
+/obj/item/stack/sheet/metal,
+/obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/structure/spider/stickyweb,
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility)
+"hS" = (
+/obj/machinery/light/small/built/directional/north,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
+/area/ruin/whitesands/alienfacility/engineering)
+"hX" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/mob/living/simple_animal/hostile/syndicate/ranged,
+/obj/effect/turf_decal/trimline/opaque/mauve/filled/line{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"hZ" = (
+/obj/machinery/power/terminal,
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/ruin/whitesands/alienfacility/engineering)
+"ih" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/structure/chair/sofa/left{
+	dir = 4
+	},
+/obj/machinery/light/directional/west,
+/turf/open/floor/carpet/blue,
+/area/ruin/whitesands/alienfacility/lobby)
+"ij" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 4
+	},
+/mob/living/simple_animal/hostile/syndicate/melee,
+/turf/open/floor/carpet/blue,
+/area/ruin/whitesands/alienfacility/lobby)
+"iz" = (
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/portable_atmospherics/canister/oxygen,
+/obj/effect/turf_decal/trimline/opaque/orange/filled/line,
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/engineering)
+"iB" = (
+/obj/structure/extinguisher_cabinet/directional/east,
+/obj/effect/turf_decal/trimline/opaque/bottlegreen/filled/line{
+	dir = 6
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/lab)
+"iD" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/fluff/paper/stack{
+	dir = 9
+	},
+/obj/effect/turf_decal/trimline/opaque/mauve/filled/line{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"iQ" = (
+/obj/structure/table/chem,
+/obj/effect/spawner/lootdrop/beaker_loot_spawner{
+	pixel_y = 4;
+	pixel_x = 6
+	},
+/obj/item/reagent_containers/glass/chem_jug/oxygen{
+	pixel_x = -9;
+	pixel_y = 11
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/lab)
+"jj" = (
+/obj/machinery/atmospherics/pipe/simple/cyan/visible{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 4
+	},
+/obj/machinery/airalarm/directional/south,
+/obj/effect/turf_decal/trimline/opaque/orange/filled/line,
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/engineering)
+"jp" = (
+/obj/machinery/atmospherics/components/trinary/mixer/airmix{
+	dir = 8
+	},
+/obj/machinery/firealarm/directional/south,
+/obj/effect/turf_decal/trimline/opaque/orange/filled/line,
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/engineering)
+"jB" = (
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility/lobby)
+"jH" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor{
+	id = "experiment"s;
+	name = "experiment containment"
+	},
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility)
+"jL" = (
+/obj/effect/turf_decal/atmos/nitrogen,
+/turf/open/floor/engine/n2,
+/area/ruin/whitesands/alienfacility/engineering)
+"jP" = (
+/obj/structure/table/wood,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
+/turf/open/floor/wood/walnut,
+/area/ruin/whitesands/alienfacility/lobby)
+"jY" = (
+/obj/structure/fluff/paper/stack{
+	dir = 4
+	},
+/obj/machinery/portable_atmospherics/canister/oxygen,
+/obj/machinery/firealarm/directional/west,
+/obj/effect/turf_decal/box,
+/obj/effect/turf_decal/trimline/opaque/blue/filled/line{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/whitesands/alienfacility/lab)
+"kd" = (
+/obj/machinery/atmospherics/pipe/layer_manifold/visible,
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/engineering)
+"ke" = (
+/obj/machinery/washing_machine,
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility)
+"kf" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/ruin/whitesands/alienfacility/containment)
+"km" = (
+/turf/closed/wall/r_wall,
+/area/ruin/whitesands/alienfacility/lab)
+"kq" = (
+/obj/structure/table/wood,
+/obj/machinery/light/directional/west,
+/turf/open/floor/carpet/blue,
+/area/ruin/whitesands/alienfacility/dorm)
+"kt" = (
+/obj/structure/grille,
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility)
+"kB" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/mauve/filled/line{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"kH" = (
+/turf/closed/wall/r_wall,
+/area/ruin/whitesands/alienfacility/engineering)
+"kN" = (
+/obj/machinery/atmospherics/pipe/simple/cyan/visible,
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/engineering)
+"kT" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/effect/turf_decal/trimline/opaque/mauve/line{
+	dir = 6
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"lc" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/layer_manifold,
+/obj/machinery/door/airlock/external,
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility/lobby)
+"lk" = (
+/obj/machinery/atmospherics/pipe/simple/cyan/visible{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/orange/filled/line,
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/engineering)
+"lm" = (
+/obj/structure/table,
+/obj/effect/turf_decal/corner/opaque/blue,
+/obj/effect/turf_decal/corner/opaque/purple{
+	dir = 8
+	},
+/obj/item/soap,
+/obj/item/grenade/chem_grenade/cleaner{
+	pixel_x = 6;
+	pixel_y = 10
+	},
+/obj/item/grenade/chem_grenade/cleaner{
+	pixel_x = 11;
+	pixel_y = 12
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"lt" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/grille,
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility)
+"lv" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 4
+	},
+/obj/machinery/firealarm/directional/south,
+/obj/effect/turf_decal/trimline/opaque/mauve/filled/line,
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"lA" = (
+/obj/structure/table/wood,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 1
+	},
+/turf/open/floor/wood/walnut,
+/area/ruin/whitesands/alienfacility/lobby)
+"lD" = (
+/obj/machinery/power/shieldwallgen,
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/ruin/whitesands/alienfacility/containment)
+"mf" = (
+/mob/living/simple_animal/hostile/syndicate/melee,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility)
+"mk" = (
+/obj/structure/grille/broken,
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility)
+"ml" = (
+/obj/effect/turf_decal/trimline/opaque/mauve/filled/line{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"mz" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility)
+"mC" = (
+/obj/structure/alien/weeds,
+/mob/living/simple_animal/hostile/alien/queen,
+/turf/open/floor/plasteel/airless,
+/area/ruin/whitesands/alienfacility/containment)
+"mE" = (
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/ruin/whitesands/alienfacility/containment)
+"mL" = (
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/plasteel/freezer,
+/area/ruin/whitesands/alienfacility/dorm)
+"mR" = (
+/obj/structure/fence{
+	dir = 8
+	},
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/ruin/whitesands/alienfacility/containment)
+"mV" = (
+/obj/effect/turf_decal/trimline/opaque/orange/filled/line,
+/obj/machinery/portable_atmospherics/pump,
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/engineering)
+"mX" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor{
+	id = "experiment";
+	name = "experiment containment";
+	dir = 8
+	},
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility)
+"mY" = (
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/wood/walnut,
+/area/ruin/whitesands/alienfacility/lobby)
+"nb" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/firealarm/directional/east,
+/obj/effect/turf_decal/trimline/opaque/mauve/filled/line{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"nh" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/effect/mob_spawn/human/corpse/assistant/brainrot_infection,
+/obj/effect/turf_decal/trimline/opaque/mauve/line{
+	dir = 10
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"nm" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 1
+	},
+/obj/machinery/computer/pandemic,
+/obj/effect/turf_decal/trimline/opaque/bottlegreen/filled/line,
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/lab)
+"nr" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/external{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"ns" = (
+/obj/structure/fence/corner{
+	dir = 4
+	},
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/ruin/whitesands/alienfacility/containment)
+"nu" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/trimline/opaque/mauve/line,
+/obj/effect/gibspawner/human,
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"nH" = (
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/apc/auto_name/directional/west,
+/turf/open/floor/wood/walnut,
+/area/ruin/whitesands/alienfacility/dorm)
+"nN" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/carpet/blue,
+/area/ruin/whitesands/alienfacility/dorm)
+"nR" = (
+/obj/structure/closet/l3closet/janitor,
+/obj/effect/turf_decal/corner/opaque/blue,
+/obj/effect/turf_decal/corner/opaque/purple{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"nW" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/mob_spawn/human/doctor,
+/obj/effect/turf_decal/trimline/opaque/mauve/line{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/blood{
+	icon_state = "gib2"
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"os" = (
+/obj/structure/closet/crate/secure/engineering,
+/obj/item/pipe_dispenser,
+/obj/item/stack/sheet/mineral/plasma/five,
+/obj/effect/spawner/lootdrop/techstorage/engineering,
+/obj/effect/spawner/lootdrop/techstorage/engineering,
+/obj/effect/turf_decal/trimline/opaque/orange/filled/line{
+	dir = 6
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/engineering)
+"oT" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/mauve/filled/line{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"pf" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/structure/chair/sofa/right{
+	dir = 8
+	},
+/obj/machinery/light/directional/east,
+/turf/open/floor/carpet/blue,
+/area/ruin/whitesands/alienfacility/lobby)
+"po" = (
+/obj/machinery/atmospherics/pipe/simple/orange/visible,
+/obj/machinery/atmospherics/pipe/simple/green/visible{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/orange/filled/line{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/engineering)
+"pv" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/shutters{
+	id = "windows";
+	dir = 4
+	},
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility/lab)
+"pB" = (
+/obj/machinery/atmospherics/components/binary/pump/on{
+	name = "Air to Distro";
+	target_pressure = 1000
+	},
+/obj/machinery/atmospherics/pipe/simple/green/visible{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/orange/filled/line{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/engineering)
+"pH" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/turf/open/floor/wood/walnut,
+/area/ruin/whitesands/alienfacility/lobby)
+"pL" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility/lab)
+"pM" = (
+/obj/machinery/advanced_airlock_controller{
+	pixel_y = 28
+	},
+/obj/machinery/light/small/built/directional{
+	pixel_y = 5
+	},
+/obj/effect/turf_decal/trimline/opaque/mauve/line{
+	dir = 5
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"qt" = (
+/obj/machinery/atmospherics/pipe/simple/cyan/visible{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/trimline/opaque/orange/filled/line,
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/engineering)
+"qw" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/effect/mob_spawn/human/scientist,
+/obj/effect/turf_decal/trimline/opaque/mauve/line{
+	dir = 5
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"qB" = (
+/obj/effect/turf_decal/trimline/opaque/blue/filled/line{
+	dir = 9
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/whitesands/alienfacility/lab)
+"qC" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 10
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/trimline/opaque/mauve/filled/line,
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"qF" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/shutters{
+	id = "windows"
+	},
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility/engineering)
+"qH" = (
+/obj/effect/decal/cleanable/cobweb/cobweb2,
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility)
+"qS" = (
+/obj/structure/extinguisher_cabinet/directional/south,
+/turf/open/floor/wood/walnut,
+/area/ruin/whitesands/alienfacility/lobby)
+"qY" = (
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/fulltile,
+/obj/machinery/atmospherics/pipe/simple/orange/visible,
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility/engineering)
+"qZ" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 9
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility)
+"ro" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 4
+	},
+/turf/open/floor/wood/walnut,
+/area/ruin/whitesands/alienfacility/lobby)
+"rp" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 5
+	},
+/turf/open/floor/carpet/blue,
+/area/ruin/whitesands/alienfacility/lobby)
+"rv" = (
+/obj/structure/table,
+/obj/structure/bedsheetbin,
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility)
+"rC" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
+	},
+/obj/structure/fluff/paper/stack{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/blue/filled/line{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/whitesands/alienfacility/lab)
+"rF" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/effect/gibspawner/human,
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility)
+"rI" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/wood/walnut,
+/area/ruin/whitesands/alienfacility/lobby)
+"rJ" = (
+/obj/effect/turf_decal/trimline/opaque/mauve/filled/line,
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"rN" = (
+/obj/machinery/door/airlock/hatch{
+	name = "maintenance"
+	},
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility)
+"rR" = (
+/obj/structure/table/chem,
+/obj/item/reagent_containers/syringe/antiviral{
+	pixel_x = -8;
+	pixel_y = 7
+	},
+/obj/item/reagent_containers/syringe/oxandrolone{
+	pixel_x = -7;
+	pixel_y = 4
+	},
+/obj/item/reagent_containers/syringe/penacid{
+	pixel_x = -7
+	},
+/obj/item/reagent_containers/syringe/salacid{
+	pixel_y = -4;
+	pixel_x = -7
+	},
+/obj/effect/spawner/lootdrop/beaker_loot_spawner{
+	pixel_y = 4;
+	pixel_x = 10
+	},
+/obj/effect/turf_decal/trimline/opaque/bottlegreen/line{
+	dir = 6
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/lab)
+"rU" = (
+/obj/machinery/button/door{
+	pixel_x = -32;
+	pixel_y = 7;
+	id = "experiment";
+	name = "experiment access"
+	},
+/obj/machinery/button/door{
+	pixel_x = -32;
+	pixel_y = -3;
+	id = "windows";
+	name = "window shutters"
+	},
+/obj/structure/filingcabinet/double,
+/turf/open/floor/wood/walnut,
+/area/ruin/whitesands/alienfacility/lobby)
+"rW" = (
+/obj/structure/alien/weeds,
+/obj/structure/alien/resin,
+/turf/open/floor/plasteel/airless,
+/area/ruin/whitesands/alienfacility/containment)
+"sq" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 1
+	},
+/obj/effect/mob_spawn/human/doctor,
+/obj/effect/turf_decal/trimline/opaque/grey/line{
+	dir = 8
+	},
+/obj/effect/gibspawner/human,
+/turf/open/floor/plasteel/white,
+/area/ruin/whitesands/alienfacility/dorm)
+"sB" = (
+/obj/structure/sign/warning/biohazard{
+	pixel_y = -23
+	},
+/obj/effect/turf_decal/trimline/opaque/mauve/line{
+	dir = 6
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"sC" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility)
+"sE" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/corner/opaque/blue,
+/obj/effect/turf_decal/corner/opaque/purple{
+	dir = 8
+	},
+/obj/structure/windoor_assembly,
+/obj/machinery/conveyor_switch/oneway{
+	dir = 1;
+	pixel_x = -16
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"sI" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/mauve/filled/line{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"sK" = (
+/obj/effect/turf_decal/trimline/opaque/bottlegreen/filled/line{
+	dir = 10
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/lab)
+"sN" = (
+/mob/living/simple_animal/hostile/alien,
+/obj/structure/alien/weeds,
+/turf/open/floor/plasteel/airless,
+/area/ruin/whitesands/alienfacility/containment)
+"sP" = (
+/obj/structure/grille/broken,
+/obj/effect/spawner/lootdrop/maintenance/four,
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility)
+"th" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/shutters{
+	id = "windows"
+	},
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility/lobby)
+"tx" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
+	},
+/turf/open/floor/carpet/blue,
+/area/ruin/whitesands/alienfacility/dorm)
+"tA" = (
+/obj/effect/turf_decal/trimline/opaque/blue/line{
+	dir = 1
+	},
+/obj/machinery/computer/operating/retro{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/whitesands/alienfacility/lab)
+"tB" = (
+/obj/effect/mine/shrapnel,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plating/asteroid/whitesands,
+/area/ruin/whitesands/alienfacility/containment)
+"tN" = (
+/obj/machinery/power/port_gen/pacman,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/effect/turf_decal/industrial/outline/yellow,
+/turf/open/floor/plating,
+/area/ruin/whitesands/alienfacility/engineering)
+"tP" = (
+/obj/structure/alien/weeds,
+/obj/item/circuitboard/machine/limbgrower,
+/turf/open/floor/plasteel/airless,
+/area/ruin/whitesands/alienfacility/containment)
+"tR" = (
+/obj/structure/alien/weeds/node,
+/obj/item/circuitboard/machine/cryo_tube,
+/turf/open/floor/plasteel/airless,
+/area/ruin/whitesands/alienfacility/containment)
+"tW" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/gibspawner/human,
+/obj/effect/turf_decal/trimline/opaque/mauve/line,
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"uh" = (
+/obj/machinery/atmospherics/components/binary/pump/on{
+	dir = 8;
+	name = "Air to Holding Tank";
+	target_pressure = 1000
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 9
+	},
+/obj/machinery/light/directional/south,
+/obj/effect/turf_decal/trimline/opaque/orange/filled/line,
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/engineering)
+"um" = (
+/obj/structure/closet/crate/trashcart,
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility)
+"uq" = (
+/turf/open/floor/wood/walnut,
+/area/ruin/whitesands/alienfacility/dorm)
+"uI" = (
+/obj/machinery/atmospherics/pipe/manifold4w,
+/obj/effect/mob_spawn/human/corpse/assistant/brainrot_infection,
+/obj/effect/turf_decal/trimline/opaque/blue/line{
+	dir = 6
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/whitesands/alienfacility/lab)
+"uM" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/caution,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility)
+"uY" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 1
+	},
+/mob/living/simple_animal/hostile/syndicate/melee,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility)
+"uZ" = (
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
+/area/ruin/whitesands/alienfacility/engineering)
+"vq" = (
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility)
+"vv" = (
+/obj/structure/fluff/paper/stack{
+	dir = 1
+	},
+/obj/effect/mob_spawn/human/scientist,
+/obj/effect/turf_decal/trimline/opaque/bottlegreen/line{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/lab)
+"vx" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/machinery/light/directional/east,
+/obj/effect/turf_decal/trimline/opaque/mauve/filled/line{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"vC" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/snacks/store/bread/meat,
+/obj/item/reagent_containers/food/snacks/store/bread/creamcheese{
+	pixel_x = 4;
+	pixel_y = 9
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/whitesands/alienfacility/dorm)
+"vI" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/light/directional/south,
+/obj/effect/turf_decal/trimline/opaque/mauve/line{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"vV" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/bottlegreen/line,
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/lab)
+"wc" = (
+/obj/machinery/shower{
+	pixel_y = 18
+	},
+/obj/structure/curtain{
+	pixel_y = 4
+	},
+/obj/item/bikehorn/rubberducky,
+/turf/open/floor/plasteel/freezer,
+/area/ruin/whitesands/alienfacility/dorm)
+"wn" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 5
+	},
+/turf/open/floor/carpet/blue,
+/area/ruin/whitesands/alienfacility/lobby)
+"wy" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/vending/snack/random,
+/turf/open/floor/wood/walnut,
+/area/ruin/whitesands/alienfacility/dorm)
+"wz" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/spider/stickyweb,
+/mob/living/simple_animal/hostile/poison/giant_spider,
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility)
+"wA" = (
+/obj/structure/alien/weeds,
+/obj/item/stack/sheet/mineral/plasma/five,
+/turf/open/floor/plasteel/airless,
+/area/ruin/whitesands/alienfacility/containment)
+"wB" = (
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/visible/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/table/wood,
+/obj/item/storage/cans/sixbeer,
+/obj/effect/turf_decal/siding/wood{
+	dir = 9
+	},
+/turf/open/floor/carpet/blue,
+/area/ruin/whitesands/alienfacility/dorm)
+"wC" = (
+/obj/structure/sink{
+	dir = 4;
+	pixel_x = -12
+	},
+/turf/open/floor/plasteel/freezer,
+/area/ruin/whitesands/alienfacility/dorm)
+"wU" = (
+/obj/machinery/advanced_airlock_controller{
+	pixel_y = 28
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility/lobby)
+"xa" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/effect/turf_decal/trimline/opaque/mauve/line{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"xc" = (
+/mob/living/simple_animal/hostile/syndicate/melee/sword,
+/obj/effect/turf_decal/trimline/opaque/bottlegreen/filled/line,
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/lab)
+"xd" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 6
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/spider/stickyweb,
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility)
+"xf" = (
+/obj/structure/fence{
+	dir = 1
+	},
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/ruin/whitesands/alienfacility/containment)
+"xk" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/mauve/filled/line,
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"xl" = (
+/obj/structure/alien/weeds,
+/obj/item/retractor/advanced,
+/turf/open/floor/plasteel/airless,
+/area/ruin/whitesands/alienfacility/containment)
+"xt" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/cobweb,
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility)
+"xA" = (
+/obj/effect/mine/shrapnel,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/asteroid/whitesands,
+/area/ruin/whitesands/alienfacility/containment)
+"xC" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/mob_spawn/human/corpse/assistant/brainrot_infection,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/effect/gibspawner/human,
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility)
+"xO" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
+/area/ruin/whitesands/alienfacility/engineering)
+"yf" = (
+/obj/structure/fence/corner{
+	dir = 6
+	},
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/ruin/whitesands/alienfacility/containment)
+"yx" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/trimline/opaque/mauve/line{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"yM" = (
+/obj/machinery/power/smes/engineering,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/effect/turf_decal/industrial/outline/yellow,
+/turf/open/floor/plating,
+/area/ruin/whitesands/alienfacility/engineering)
+"yO" = (
+/obj/structure/fence{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/ruin/whitesands/alienfacility/containment)
+"yP" = (
+/obj/effect/turf_decal/trimline/opaque/orange/filled/line,
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/engineering)
+"yQ" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/grey/line{
+	dir = 9
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/whitesands/alienfacility/dorm)
+"yW" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 1
+	},
+/turf/open/floor/wood/walnut,
+/area/ruin/whitesands/alienfacility/dorm)
+"za" = (
+/obj/effect/turf_decal/trimline/opaque/blue/line{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/manifold{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/whitesands/alienfacility/lab)
+"zd" = (
+/obj/machinery/power/smes/engineering,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/effect/turf_decal/industrial/outline/yellow,
+/turf/open/floor/plating,
+/area/ruin/whitesands/alienfacility/engineering)
+"zm" = (
+/obj/machinery/door/poddoor{
+	id = "experiment";
+	name = "experiment containment";
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/layer_manifold{
+	dir = 4
+	},
+/obj/machinery/door/airlock/external{
+	dir = 4
+	},
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility)
+"zD" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/mauve/filled/line,
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"zH" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/layer2{
+	dir = 2;
+	layer = 2.35
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility/lobby)
+"zZ" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor{
+	id = "experiment";
+	name = "experiment containment"
+	},
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility)
+"Ae" = (
+/obj/machinery/power/floodlight,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating/asteroid/whitesands,
+/area/ruin/whitesands/alienfacility/containment)
+"Ao" = (
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/fulltile,
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility/engineering)
+"At" = (
+/obj/structure/alien/weeds,
+/obj/item/bodypart/head/monkey,
+/turf/open/floor/plasteel/airless,
+/area/ruin/whitesands/alienfacility/containment)
+"AP" = (
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/fulltile,
+/obj/machinery/atmospherics/pipe/simple/cyan/visible,
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility/engineering)
+"AR" = (
+/obj/machinery/atmospherics/components/unary/outlet_injector/atmos/air_input,
+/turf/open/floor/engine/air,
+/area/ruin/whitesands/alienfacility/engineering)
+"Bb" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/light/directional/north,
+/obj/effect/turf_decal/trimline/opaque/mauve/line,
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"Bi" = (
+/obj/machinery/atmospherics/components/unary/portables_connector{
+	dir = 4
+	},
+/obj/machinery/portable_atmospherics/canister,
+/obj/effect/turf_decal/trimline/opaque/orange/filled/line{
+	dir = 9
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/engineering)
+"Bj" = (
+/obj/machinery/atmospherics/pipe/simple/cyan/visible{
+	dir = 9
+	},
+/obj/effect/turf_decal/trimline/opaque/orange/filled/line,
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/engineering)
+"Bl" = (
+/obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/o2{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/orange/filled/line{
+	dir = 5
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/engineering)
+"Bs" = (
+/obj/machinery/vending/wardrobe/jani_wardrobe,
+/obj/effect/turf_decal/corner/opaque/blue,
+/obj/effect/turf_decal/corner/opaque/purple{
+	dir = 8
+	},
+/obj/structure/window/reinforced,
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"Bz" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility)
+"BH" = (
+/obj/structure/chair/sofa/left{
+	dir = 1
+	},
+/turf/open/floor/carpet/blue,
+/area/ruin/whitesands/alienfacility/lobby)
+"Ca" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/small/directional/west,
+/obj/effect/turf_decal/corner/opaque/blue,
+/obj/effect/turf_decal/corner/opaque/purple{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/machinery/conveyor,
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"Cc" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 4
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility)
+"Cf" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/ruin/whitesands/alienfacility/containment)
+"Ck" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/hatch{
+	dir = 4;
+	name = "dorms"
+	},
+/obj/machinery/door/firedoor,
+/turf/open/floor/wood/walnut,
+/area/ruin/whitesands/alienfacility/dorm)
+"CH" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/spider/stickyweb,
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility)
+"CQ" = (
+/obj/machinery/light/directional/east,
+/obj/effect/turf_decal/trimline/opaque/bottlegreen/filled/line{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/lab)
+"CS" = (
+/obj/structure/fluff/paper/stack{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/blue/filled/line{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/general{
+	dir = 6
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/whitesands/alienfacility/lab)
+"CT" = (
+/obj/effect/decal/cleanable/garbage,
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility)
+"CU" = (
+/obj/structure/table/chem,
+/obj/item/organ/heart/gland/blood{
+	pixel_x = 5
+	},
+/obj/item/organ/heart/gland/heal{
+	pixel_x = -6;
+	pixel_y = 8
+	},
+/obj/item/organ/heart/gland/slime{
+	pixel_x = -4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/lab)
+"Ds" = (
+/obj/machinery/door/airlock/hatch{
+	name = "maintenance";
+	dir = 4
+	},
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility/engineering)
+"DB" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility)
+"DO" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/small/directional/east,
+/obj/structure/spider/stickyweb,
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility)
+"DU" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/turf/open/floor/wood/walnut,
+/area/ruin/whitesands/alienfacility/lobby)
+"DZ" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/hatch{
+	dir = 4;
+	name = "surgery access"
+	},
+/obj/machinery/door/firedoor,
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility/lab)
+"Ee" = (
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/fulltile,
+/obj/machinery/atmospherics/pipe/simple/green/visible{
+	dir = 4
+	},
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility/engineering)
+"Eg" = (
+/obj/structure/grille/broken,
+/obj/effect/decal/cleanable/garbage,
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility)
+"Eu" = (
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/layer2{
+	dir = 8;
+	layer = 2.35
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/trimline/opaque/mauve/line{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"EF" = (
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/closet/crate/wooden,
+/obj/effect/turf_decal/siding/wood{
+	dir = 5
+	},
+/turf/open/floor/carpet/blue,
+/area/ruin/whitesands/alienfacility/dorm)
+"EK" = (
+/obj/structure/table,
+/obj/effect/turf_decal/corner/opaque/blue,
+/obj/effect/turf_decal/corner/opaque/purple{
+	dir = 8
+	},
+/obj/item/storage/bag/trash,
+/obj/item/storage/bag/trash{
+	pixel_x = 5;
+	pixel_y = 3
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"EO" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/blue/filled/line,
+/turf/open/floor/plasteel/white,
+/area/ruin/whitesands/alienfacility/lab)
+"ES" = (
+/obj/structure/grille/broken,
+/obj/effect/spawner/lootdrop/maintenance/three,
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility)
+"EW" = (
+/obj/machinery/atmospherics/components/unary/portables_connector/visible{
+	dir = 4
+	},
+/obj/machinery/portable_atmospherics/canister/oxygen,
+/obj/effect/turf_decal/box,
+/obj/effect/turf_decal/trimline/opaque/blue/line,
+/turf/open/floor/plasteel/white,
+/area/ruin/whitesands/alienfacility/lab)
+"Fa" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 9
+	},
+/turf/open/floor/carpet/blue,
+/area/ruin/whitesands/alienfacility/lobby)
+"Fk" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility/lab)
+"Fn" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/mauve/filled/line{
+	dir = 4
+	},
+/obj/structure/fluff/paper/stack{
+	dir = 6
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"Fo" = (
+/obj/machinery/atmospherics/pipe/simple/cyan/visible,
+/obj/machinery/atmospherics/pipe/simple/green/visible{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/orange/filled/line{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/engineering)
+"Ft" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 1
+	},
+/obj/effect/mob_spawn/human/doctor,
+/obj/effect/turf_decal/trimline/opaque/mauve/filled/line{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"Fu" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 4
+	},
+/obj/effect/gibspawner/human,
+/turf/open/floor/wood/walnut,
+/area/ruin/whitesands/alienfacility/lobby)
+"FA" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 1
+	},
+/obj/machinery/door/airlock/hatch{
+	name = "maintenance"
+	},
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility)
+"FI" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility)
+"FL" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/corner/opaque/blue,
+/obj/effect/turf_decal/corner/opaque/purple{
+	dir = 8
+	},
+/obj/machinery/recycler,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/machinery/conveyor,
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"FN" = (
+/obj/effect/turf_decal/trimline/opaque/mauve/filled/line{
+	dir = 4
+	},
+/obj/structure/fluff/paper/stack{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"FR" = (
+/obj/effect/turf_decal/trimline/opaque/bottlegreen/filled/line{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/lab)
+"FU" = (
+/mob/living/simple_animal/hostile/syndicate/melee,
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility)
+"FW" = (
+/obj/structure/chair/sofa/right{
+	dir = 1
+	},
+/turf/open/floor/carpet/blue,
+/area/ruin/whitesands/alienfacility/lobby)
+"Gh" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/carpet/blue,
+/area/ruin/whitesands/alienfacility/dorm)
+"Gp" = (
+/obj/machinery/atmospherics/components/unary/outlet_injector/atmos/atmos_waste,
+/turf/open/floor/engine,
+/area/ruin/whitesands/alienfacility/engineering)
+"Gs" = (
+/turf/closed/wall/r_wall,
+/area/ruin/whitesands/alienfacility/lobby)
+"Gy" = (
+/obj/effect/turf_decal/trimline/opaque/orange/filled/corner{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/engineering)
+"GC" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/shutters{
+	id = "windows";
+	dir = 4
+	},
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility/dorm)
+"GG" = (
+/obj/structure/closet/emcloset/wall{
+	dir = 8;
+	pixel_x = 32
+	},
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility)
+"GN" = (
+/obj/structure/alien/weeds,
+/obj/item/organ/tongue/alien,
+/turf/open/floor/plasteel/airless,
+/area/ruin/whitesands/alienfacility/containment)
+"GY" = (
+/turf/open/floor/engine,
+/area/ruin/whitesands/alienfacility/engineering)
+"Hk" = (
+/obj/machinery/atmospherics/components/binary/pump/on{
+	name = "Oxygen to Air"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/engineering)
+"Hn" = (
+/obj/structure/grille/broken,
+/obj/structure/closet/crate/trashcart/laundry,
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility)
+"Hr" = (
+/turf/open/floor/carpet/blue,
+/area/ruin/whitesands/alienfacility/dorm)
+"HI" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/mauve/filled/line,
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"HY" = (
+/obj/machinery/button/door{
+	pixel_y = 24;
+	id = "atmos_door";
+	name = "atmos waste"
+	},
+/obj/effect/turf_decal/trimline/opaque/orange/filled/line{
+	dir = 5
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/engineering)
+"Ib" = (
+/obj/machinery/atmospherics/pipe/simple/general{
+	dir = 4
+	},
+/obj/structure/fluff/paper/stack{
+	pixel_x = -7;
+	pixel_y = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/blue/line,
+/turf/open/floor/plasteel/white,
+/area/ruin/whitesands/alienfacility/lab)
+"Ii" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 1
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility)
+"In" = (
+/obj/structure/toilet{
+	dir = 8;
+	pixel_x = 4;
+	pixel_y = 16
+	},
+/turf/open/floor/plasteel/freezer,
+/area/ruin/whitesands/alienfacility/dorm)
+"Io" = (
+/obj/structure/alien/weeds,
+/obj/structure/alien/egg/burst,
+/turf/open/floor/plasteel/airless,
+/area/ruin/whitesands/alienfacility/containment)
+"Iq" = (
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plating/asteroid/whitesands,
+/area/ruin/whitesands/alienfacility/containment)
+"IP" = (
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/portable_atmospherics/canister/air,
+/obj/effect/turf_decal/trimline/opaque/orange/filled/line{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/engineering)
+"IS" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/ruin/whitesands/alienfacility/containment)
+"IX" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/oxygen_output,
+/turf/open/floor/engine/o2,
+/area/ruin/whitesands/alienfacility/engineering)
+"IY" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/fluff/paper/stack{
+	dir = 9
+	},
+/obj/effect/turf_decal/trimline/opaque/mauve/line{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"Js" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/blue/line{
+	dir = 10
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/whitesands/alienfacility/lab)
+"Jt" = (
+/obj/machinery/door/airlock/hatch{
+	dir = 1;
+	name = "bathroom"
+	},
+/turf/open/floor/plasteel/freezer,
+/area/ruin/whitesands/alienfacility/dorm)
+"Ju" = (
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/closet/crate/wooden,
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/effect/spawner/lootdrop/maintenance/four,
+/turf/open/floor/carpet/blue,
+/area/ruin/whitesands/alienfacility/dorm)
+"Jw" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/door/airlock/external,
+/turf/open/floor/wood/walnut,
+/area/ruin/whitesands/alienfacility/lobby)
+"JA" = (
+/obj/effect/turf_decal/trimline/opaque/orange/filled/line{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/engineering)
+"JC" = (
+/obj/structure/extinguisher_cabinet/directional/west,
+/obj/effect/turf_decal/trimline/opaque/mauve/filled/line{
+	dir = 9
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"JH" = (
+/turf/closed/wall/r_wall,
+/area/ruin/whitesands/alienfacility)
+"JJ" = (
+/obj/structure/alien/weeds,
+/obj/item/surgicaldrill/advanced,
+/turf/open/floor/plasteel/airless,
+/area/ruin/whitesands/alienfacility/containment)
+"JO" = (
+/obj/machinery/atmospherics/pipe/manifold/green/visible{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/orange/filled/line{
+	dir = 1
+	},
+/obj/effect/gibspawner/human,
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/engineering)
+"JQ" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/turf/open/floor/carpet/blue,
+/area/ruin/whitesands/alienfacility/dorm)
+"KC" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 1
+	},
+/obj/machinery/light/directional/east,
+/obj/effect/turf_decal/trimline/opaque/mauve/filled/line{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"KJ" = (
+/obj/structure/chair/sofa/right{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 5
+	},
+/obj/machinery/firealarm/directional/east,
+/turf/open/floor/carpet/blue,
+/area/ruin/whitesands/alienfacility/dorm)
+"KU" = (
+/obj/machinery/light/directional/west,
+/obj/effect/turf_decal/trimline/opaque/mauve/filled/line{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"Lh" = (
+/obj/effect/turf_decal/trimline/opaque/blue/filled/line,
+/obj/structure/chair/office{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/whitesands/alienfacility/lab)
+"Lj" = (
+/obj/structure/grille/broken,
+/obj/structure/spider/stickyweb,
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility)
+"Ll" = (
+/obj/machinery/atmospherics/components/unary/outlet_injector/atmos/nitrogen_input,
+/turf/open/floor/engine/n2,
+/area/ruin/whitesands/alienfacility/engineering)
+"Lr" = (
+/obj/structure/showcase/horrific_experiment,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/lab)
+"LC" = (
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/portable_atmospherics/canister/toxins,
+/obj/machinery/light/directional/south,
+/obj/effect/turf_decal/trimline/opaque/orange/filled/line,
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/engineering)
+"LM" = (
+/obj/effect/turf_decal/atmos/air,
+/obj/machinery/air_sensor/atmos/air_tank,
+/turf/open/floor/engine/air,
+/area/ruin/whitesands/alienfacility/engineering)
+"LR" = (
+/obj/effect/turf_decal/trimline/opaque/blue/line{
+	dir = 1
+	},
+/obj/structure/table/optable,
+/turf/open/floor/plasteel/white,
+/area/ruin/whitesands/alienfacility/lab)
+"Mb" = (
+/obj/structure/alien/weeds,
+/obj/item/bodypart/chest/monkey,
+/turf/open/floor/plasteel/airless,
+/area/ruin/whitesands/alienfacility/containment)
+"Mk" = (
+/obj/structure/bed/double{
+	dir = 4
+	},
+/obj/item/bedsheet/double/blue{
+	dir = 1
+	},
+/obj/structure/curtain/cloth,
+/turf/open/floor/carpet/blue,
+/area/ruin/whitesands/alienfacility/dorm)
+"Ml" = (
+/obj/structure/closet/secure_closet/medical1,
+/obj/effect/turf_decal/box,
+/obj/effect/turf_decal/trimline/opaque/bottlegreen/filled/line,
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/lab)
+"Mn" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/gibspawner/human,
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility)
+"Mr" = (
+/obj/machinery/atmospherics/pipe/simple/green/visible{
+	dir = 9
+	},
+/obj/effect/turf_decal/trimline/opaque/orange/filled/line{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/engineering)
+"MG" = (
+/obj/effect/turf_decal/trimline/opaque/mauve/filled/line{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"MH" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/table/wood,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/turf/open/floor/wood/walnut,
+/area/ruin/whitesands/alienfacility/lobby)
+"MJ" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/garbage,
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility)
+"MM" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/trimline/opaque/mauve/line{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"Nj" = (
+/obj/structure/chair/sofa/left{
+	dir = 8
+	},
+/turf/open/floor/carpet/blue,
+/area/ruin/whitesands/alienfacility/lobby)
+"NC" = (
+/obj/machinery/light/directional/north,
+/obj/effect/turf_decal/trimline/opaque/mauve/filled/line{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"NS" = (
+/mob/living/simple_animal/hostile/syndicate/ranged,
+/obj/effect/turf_decal/trimline/opaque/bottlegreen/line{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/lab)
+"NY" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 4
+	},
+/obj/machinery/door/airlock/hatch{
+	name = "maintenance";
+	dir = 4
+	},
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility/engineering)
+"Oj" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/obj/structure/chair/sofa/left{
+	dir = 1
+	},
+/turf/open/floor/carpet/blue,
+/area/ruin/whitesands/alienfacility/lobby)
+"Ot" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/wood/walnut,
+/area/ruin/whitesands/alienfacility/dorm)
+"Ow" = (
+/obj/machinery/portable_atmospherics/canister/oxygen,
+/obj/effect/turf_decal/box,
+/obj/effect/turf_decal/trimline/opaque/blue/filled/line{
+	dir = 10
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/whitesands/alienfacility/lab)
+"OK" = (
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/ruin/whitesands/alienfacility/containment)
+"OT" = (
+/obj/effect/spawner/lootdrop/grille_or_trash,
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility)
+"OZ" = (
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/lab)
+"Pg" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4
+	},
+/obj/machinery/light/directional/west,
+/turf/open/floor/wood/walnut,
+/area/ruin/whitesands/alienfacility/dorm)
+"Pk" = (
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility)
+"PG" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/nitrogen_output,
+/turf/open/floor/engine/n2,
+/area/ruin/whitesands/alienfacility/engineering)
+"PH" = (
+/obj/effect/turf_decal/trimline/opaque/bottlegreen/filled/line{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/lab)
+"PI" = (
+/obj/structure/alien/weeds,
+/obj/item/scalpel/advanced,
+/obj/effect/gibspawner/human,
+/turf/open/floor/plasteel/airless,
+/area/ruin/whitesands/alienfacility/containment)
+"PQ" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 4
+	},
+/obj/structure/fluff/paper/stack{
+	dir = 6
+	},
+/obj/effect/turf_decal/trimline/opaque/bottlegreen/line,
+/obj/structure/chair/office{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/lab)
+"Qg" = (
+/obj/structure/fence/corner{
+	dir = 8
+	},
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/ruin/whitesands/alienfacility/containment)
+"Qj" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 4
+	},
+/mob/living/simple_animal/hostile/syndicate/melee,
+/obj/effect/turf_decal/trimline/opaque/blue/line{
+	dir = 9
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/whitesands/alienfacility/lab)
+"Qw" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/trimline/opaque/mauve/filled/line{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"Qy" = (
+/obj/effect/mine/shrapnel,
+/turf/open/floor/plating/asteroid/whitesands,
+/area/ruin/whitesands/alienfacility/containment)
+"QF" = (
+/obj/structure/fence/corner{
+	dir = 1
+	},
+/turf/open/floor/plating/asteroid/whitesands,
+/area/ruin/whitesands/alienfacility/containment)
+"QH" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 1
+	},
+/obj/effect/gibspawner/human,
+/turf/open/floor/carpet/blue,
+/area/ruin/whitesands/alienfacility/lobby)
+"QU" = (
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/engineering)
+"Ra" = (
+/obj/machinery/light/directional/south,
+/obj/effect/turf_decal/trimline/opaque/mauve/filled/line,
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"Rc" = (
+/obj/effect/turf_decal/corner/opaque/blue,
+/obj/effect/turf_decal/corner/opaque/purple{
+	dir = 8
+	},
+/obj/structure/window/reinforced,
+/obj/effect/turf_decal/box,
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"Rf" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/high_volume/siphon/atmos/air_output,
+/turf/open/floor/engine/air,
+/area/ruin/whitesands/alienfacility/engineering)
+"Rk" = (
+/obj/structure/alien/weeds,
+/turf/open/floor/plasteel/airless,
+/area/ruin/whitesands/alienfacility/containment)
+"Ro" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/visible/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/effect/turf_decal/trimline/opaque/mauve/filled/line{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"RB" = (
+/obj/effect/turf_decal/trimline/opaque/blue/filled/line{
+	dir = 1
+	},
+/obj/structure/table,
+/obj/item/storage/backpack/duffelbag/med/surgery{
+	pixel_y = 12;
+	pixel_x = 6
+	},
+/obj/item/kitchen/knife/butcher,
+/turf/open/floor/plasteel/white,
+/area/ruin/whitesands/alienfacility/lab)
+"RD" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/visible/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/effect/turf_decal/trimline/opaque/mauve/filled/line{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"RJ" = (
+/obj/effect/turf_decal/trimline/opaque/mauve/filled/line{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"RV" = (
+/obj/structure/table,
+/obj/item/soap,
+/turf/open/floor/plasteel/freezer,
+/area/ruin/whitesands/alienfacility/dorm)
+"Sr" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/gibspawner/human,
+/obj/effect/turf_decal/trimline/opaque/mauve/line{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"Su" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/effect/turf_decal/trimline/opaque/mauve/filled/line{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"SH" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 1
+	},
+/obj/machinery/door/airlock/hatch{
+	name = "maintenance"
+	},
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility/dorm)
+"SK" = (
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"SL" = (
+/obj/structure/table/wood,
+/obj/item/paper_bin/bundlenatural,
+/turf/open/floor/wood/walnut,
+/area/ruin/whitesands/alienfacility/lobby)
+"ST" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/mob/living/simple_animal/hostile/syndicate/ranged,
+/obj/effect/turf_decal/trimline/opaque/mauve/line,
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"SW" = (
+/obj/effect/turf_decal/trimline/opaque/blue/filled/line{
+	dir = 1
+	},
+/obj/structure/table,
+/obj/item/reagent_containers/syringe{
+	pixel_y = 8;
+	pixel_x = -6
+	},
+/obj/item/reagent_containers/syringe/lethal/execution{
+	pixel_x = -8;
+	pixel_y = 2
+	},
+/obj/item/reagent_containers/glass/beaker/cryoxadone{
+	cap_on = 1;
+	pixel_x = 1;
+	pixel_y = 3
+	},
+/obj/item/reagent_containers/glass/beaker/cryoxadone{
+	cap_on = 1;
+	pixel_x = 6
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/whitesands/alienfacility/lab)
+"SX" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility)
+"Tm" = (
+/obj/structure/table/wood,
+/obj/machinery/microwave,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/grey/line{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/whitesands/alienfacility/dorm)
+"Tp" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/corner/opaque/blue,
+/obj/effect/turf_decal/corner/opaque/purple{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"TE" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/caution,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/spider/stickyweb,
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility)
+"TH" = (
+/obj/effect/turf_decal/trimline/opaque/orange/filled/line{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/engineering)
+"TI" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 1
+	},
+/obj/structure/table/wood,
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/carpet/blue,
+/area/ruin/whitesands/alienfacility/dorm)
+"TQ" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/trimline/opaque/mauve/line{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"TW" = (
+/obj/structure/bed/double{
+	dir = 4
+	},
+/obj/item/bedsheet/double/blue{
+	dir = 1
+	},
+/obj/structure/curtain/cloth,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/turf/open/floor/carpet/blue,
+/area/ruin/whitesands/alienfacility/dorm)
+"TX" = (
+/obj/structure/extinguisher_cabinet/directional/west,
+/obj/effect/gibspawner/human,
+/turf/open/floor/wood/walnut,
+/area/ruin/whitesands/alienfacility/dorm)
+"Ud" = (
+/obj/structure/fence{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/ruin/whitesands/alienfacility/containment)
+"Ux" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 4
+	},
+/obj/machinery/door/airlock/external{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"UM" = (
+/obj/structure/fence{
+	dir = 8
+	},
+/turf/open/floor/plating/asteroid/whitesands,
+/area/ruin/whitesands/alienfacility/containment)
+"UT" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/orange/filled/line,
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/engineering)
+"Vh" = (
+/mob/living/simple_animal/hostile/syndicate/ranged,
+/turf/open/floor/wood/walnut,
+/area/ruin/whitesands/alienfacility/dorm)
+"Vm" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 9
+	},
+/turf/open/floor/carpet/blue,
+/area/ruin/whitesands/alienfacility/lobby)
+"Vw" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/mauve/filled/line,
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"VR" = (
+/obj/machinery/firealarm/directional/north,
+/turf/open/floor/wood/walnut,
+/area/ruin/whitesands/alienfacility/lobby)
+"VY" = (
+/obj/effect/turf_decal/trimline/opaque/bottlegreen/filled/line{
+	dir = 4
+	},
+/obj/structure/fluff/paper/stack{
+	dir = 9
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/lab)
+"Wa" = (
+/turf/open/floor/plasteel/freezer,
+/area/ruin/whitesands/alienfacility/dorm)
+"We" = (
+/obj/structure/fluff/paper/stack{
+	dir = 9
+	},
+/obj/effect/turf_decal/trimline/opaque/bottlegreen/filled/line,
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/lab)
+"Wh" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet/firecloset/wall{
+	dir = 8;
+	pixel_x = 32
+	},
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility)
+"Ws" = (
+/obj/structure/chair/sofa/right{
+	dir = 4
+	},
+/turf/open/floor/carpet/blue,
+/area/ruin/whitesands/alienfacility/lobby)
+"WB" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility)
+"WJ" = (
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/visible/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility/lab)
+"WO" = (
+/obj/structure/fluff/paper/stack{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/bottlegreen/filled/line{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/lab)
+"WQ" = (
+/turf/closed/wall/r_wall,
+/area/ruin/whitesands/alienfacility/dorm)
+"WT" = (
+/obj/structure/table/wood,
+/turf/open/floor/wood/walnut,
+/area/ruin/whitesands/alienfacility/lobby)
+"Xe" = (
+/obj/machinery/light/directional/north,
+/obj/effect/turf_decal/trimline/opaque/mauve/filled/line{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/blood{
+	icon_state = "floor6"
+	},
+/obj/effect/gibspawner/human,
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"Xh" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 5
+	},
+/obj/structure/closet/crate/internals,
+/obj/effect/turf_decal/trimline/opaque/orange/filled/line{
+	dir = 10
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/engineering)
+"Xk" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet/firecloset/wall{
+	dir = 4;
+	pixel_x = -32
+	},
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility)
+"Xm" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 5
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility)
+"Xw" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 1
+	},
+/obj/structure/fluff/paper/stack{
+	dir = 9
+	},
+/obj/effect/turf_decal/trimline/opaque/blue/filled/line{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/whitesands/alienfacility/lab)
+"Xx" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/hatch{
+	name = "engineering"
+	},
+/obj/machinery/door/firedoor,
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility/engineering)
+"XP" = (
+/obj/effect/turf_decal/trimline/opaque/bottlegreen/line{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/lab)
+"XR" = (
+/obj/structure/chair/sofa{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/carpet/blue,
+/area/ruin/whitesands/alienfacility/dorm)
+"XU" = (
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/visible/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/wood/walnut,
+/area/ruin/whitesands/alienfacility/dorm)
+"Yi" = (
+/obj/structure/chair/sofa/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/turf/open/floor/carpet/blue,
+/area/ruin/whitesands/alienfacility/dorm)
+"Yj" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/spawner/lootdrop/grille_or_trash,
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility)
+"Ym" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 4
+	},
+/obj/structure/table/wood,
+/obj/item/papercutter,
+/turf/open/floor/wood/walnut,
+/area/ruin/whitesands/alienfacility/lobby)
+"Yr" = (
+/obj/machinery/power/floodlight,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plating/asteroid/whitesands,
+/area/ruin/whitesands/alienfacility/containment)
+"Yw" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/visible/layer4{
+	dir = 1
+	},
+/turf/open/floor/wood/walnut,
+/area/ruin/whitesands/alienfacility/lobby)
+"YP" = (
+/obj/structure/cable,
+/obj/machinery/power/apc/auto_name/directional/south,
+/turf/open/floor/wood/walnut,
+/area/ruin/whitesands/alienfacility/lobby)
+"YQ" = (
+/turf/open/floor/plating/asteroid/whitesands,
+/area/ruin/whitesands/alienfacility/containment)
+"YT" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/mob_spawn/human/scientist,
+/obj/effect/turf_decal/trimline/opaque/mauve/line{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"YY" = (
+/obj/structure/extinguisher_cabinet/directional/east,
+/obj/effect/turf_decal/trimline/opaque/mauve/filled/line{
+	dir = 5
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"Zi" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/wood/walnut,
+/area/ruin/whitesands/alienfacility/dorm)
+"Zn" = (
+/obj/machinery/door/poddoor/incinerator_atmos_aux{
+	name = "Atmos Waste";
+	id = "atmos_door"
+	},
+/turf/open/floor/engine,
+/area/ruin/whitesands/alienfacility/engineering)
+"Zt" = (
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/fulltile,
+/obj/machinery/atmospherics/pipe/simple/green/visible,
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility/engineering)
+"Zy" = (
+/obj/machinery/atmospherics/components/unary/outlet_injector/atmos/oxygen_input,
+/turf/open/floor/engine/o2,
+/area/ruin/whitesands/alienfacility/engineering)
+"ZC" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/mob/living/simple_animal/hostile/syndicate/ranged,
+/obj/effect/turf_decal/trimline/opaque/orange/filled/line{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/engineering)
+"ZO" = (
+/obj/effect/turf_decal/trimline/opaque/bottlegreen/line{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/lab)
+"ZR" = (
+/obj/item/kirbyplants/random,
+/turf/open/floor/wood/walnut,
+/area/ruin/whitesands/alienfacility/lobby)
+
+(1,1,1) = {"
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+WQ
+WQ
+WQ
+WQ
+WQ
+WQ
+WQ
+WQ
+WQ
+WQ
+WQ
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+"}
+(2,1,1) = {"
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+WQ
+wc
+wC
+Wa
+Jt
+nH
+uq
+TW
+kq
+Mk
+WQ
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+"}
+(3,1,1) = {"
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+WQ
+RV
+mL
+In
+WQ
+wy
+Vh
+JQ
+tx
+Hr
+WQ
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+"}
+(4,1,1) = {"
+eB
+eB
+eB
+eB
+JH
+JH
+JH
+JH
+JH
+JH
+JH
+JH
+WQ
+WQ
+WQ
+WQ
+WQ
+fk
+uq
+TW
+Gh
+Mk
+WQ
+JH
+JH
+JH
+JH
+JH
+JH
+JH
+JH
+eB
+eB
+eB
+eB
+eB
+"}
+(5,1,1) = {"
+eB
+eB
+eB
+JH
+JH
+kt
+kt
+kt
+Lj
+Lj
+mk
+kt
+WQ
+uq
+Pg
+TX
+uq
+Ot
+uq
+EF
+nN
+Ju
+WQ
+kt
+ke
+rv
+Hn
+sP
+ES
+kt
+JH
+JH
+eB
+eB
+eB
+eB
+"}
+(6,1,1) = {"
+eB
+eB
+eB
+JH
+aa
+xd
+wz
+CH
+CH
+TE
+CH
+CH
+SH
+yW
+wB
+TI
+fM
+XU
+yW
+yQ
+sq
+dN
+SH
+Ii
+WB
+WB
+uY
+WB
+Bz
+Xm
+vq
+JH
+eB
+eB
+eB
+eB
+"}
+(7,1,1) = {"
+eB
+eB
+eB
+JH
+hQ
+al
+fv
+fv
+fv
+DO
+fv
+cz
+WQ
+bj
+KJ
+XR
+Yi
+Zi
+gK
+Tm
+vC
+aq
+WQ
+qH
+GG
+Wh
+DB
+vq
+Mn
+Cc
+lt
+JH
+eB
+eB
+eB
+eB
+"}
+(8,1,1) = {"
+eB
+eB
+eB
+JH
+aa
+al
+vq
+JH
+JH
+JH
+JH
+JH
+WQ
+WQ
+WQ
+GC
+GC
+Ck
+GC
+GC
+WQ
+WQ
+WQ
+JH
+JH
+JH
+JH
+JH
+cz
+mz
+lt
+JH
+eB
+eB
+eB
+eB
+"}
+(9,1,1) = {"
+eB
+eB
+eB
+kH
+kH
+NY
+kH
+kH
+JC
+RJ
+RJ
+RJ
+KU
+ft
+ht
+ht
+ht
+RD
+oT
+gQ
+ad
+kB
+KU
+RJ
+RJ
+RJ
+eF
+JH
+cz
+mz
+Yj
+JH
+eB
+eB
+eB
+eB
+"}
+(10,1,1) = {"
+eB
+kH
+kH
+kH
+Bi
+ff
+Xh
+kH
+Xe
+aF
+TQ
+TQ
+TQ
+nW
+yx
+yx
+yx
+eY
+yx
+yx
+yx
+yx
+yx
+yx
+yx
+nh
+Ra
+JH
+eT
+mz
+OT
+JH
+eB
+eB
+eB
+eB
+"}
+(11,1,1) = {"
+kH
+kH
+Rf
+AP
+pB
+kd
+UT
+kH
+ml
+dM
+JH
+JH
+JH
+JH
+JH
+JH
+Pk
+Ux
+Pk
+JH
+JH
+JH
+JH
+JH
+JH
+bR
+rJ
+JH
+CT
+mz
+vq
+JH
+eB
+eB
+eB
+eB
+"}
+(12,1,1) = {"
+kH
+LM
+AR
+AP
+Fo
+kN
+jj
+kH
+ml
+vI
+JH
+YQ
+YQ
+Yr
+YQ
+JH
+pM
+dw
+sB
+JH
+mE
+Yr
+YQ
+YQ
+JH
+Bb
+rJ
+JH
+vq
+mz
+vq
+JH
+eB
+eB
+eB
+eB
+"}
+(13,1,1) = {"
+kH
+Ao
+Ao
+Ao
+JO
+kd
+uh
+kH
+ml
+dM
+JH
+YQ
+Qg
+Ud
+xf
+mX
+mX
+bn
+mX
+mX
+xf
+Ud
+QF
+YQ
+JH
+tW
+xk
+Gs
+Gs
+cM
+Gs
+Gs
+Gs
+eB
+eB
+eB
+"}
+(14,1,1) = {"
+kH
+bv
+IX
+qY
+po
+Hk
+jp
+kH
+ml
+dM
+JH
+eE
+yO
+kf
+bI
+bI
+bI
+tB
+bI
+bI
+bI
+IS
+yO
+lD
+JH
+bR
+Vw
+Gs
+ZR
+Fu
+ih
+Ws
+Gs
+Gs
+eB
+eB
+"}
+(15,1,1) = {"
+kH
+aR
+Zy
+Zt
+Bl
+Gy
+lk
+kH
+ml
+dM
+JH
+mE
+mR
+YQ
+Qy
+da
+da
+da
+da
+da
+Qy
+YQ
+mR
+mE
+JH
+bR
+lv
+Gs
+ej
+ro
+wn
+ij
+BH
+Gs
+eB
+eB
+"}
+(16,1,1) = {"
+kH
+Ao
+Ao
+Ao
+Ee
+JA
+lk
+qF
+ml
+dM
+zZ
+mE
+UM
+YQ
+da
+da
+sN
+PI
+GN
+da
+da
+Qy
+UM
+mE
+zZ
+bR
+Vw
+th
+WT
+Ym
+bS
+rp
+ei
+Gs
+Gs
+Gs
+"}
+(17,1,1) = {"
+kH
+tN
+hZ
+yM
+Ee
+JA
+lk
+qF
+ml
+dM
+zZ
+mE
+UM
+YQ
+da
+JJ
+Rk
+mC
+bx
+wA
+da
+YQ
+UM
+mE
+zZ
+bR
+Vw
+th
+rU
+ro
+SL
+mY
+YP
+Gs
+wU
+Gs
+"}
+(18,1,1) = {"
+kH
+hS
+xO
+uZ
+dT
+ZC
+qt
+Xx
+Qw
+xa
+zZ
+mE
+dK
+Qy
+da
+Io
+rW
+ax
+rW
+xl
+da
+YQ
+dK
+mE
+zZ
+ST
+qC
+cX
+rI
+do
+MH
+DU
+pH
+Jw
+zH
+lc
+"}
+(19,1,1) = {"
+kH
+tN
+hZ
+zd
+Ee
+JA
+lk
+qF
+aY
+dM
+zZ
+mE
+UM
+YQ
+da
+At
+tR
+rW
+tP
+Io
+da
+YQ
+UM
+mE
+jH
+bR
+zD
+th
+ej
+Yw
+jP
+ej
+qS
+Gs
+jB
+Gs
+"}
+(20,1,1) = {"
+kH
+Ao
+Ao
+Ao
+Ee
+JA
+lk
+qF
+ml
+dM
+zZ
+mE
+UM
+YQ
+da
+da
+Mb
+Rk
+sN
+da
+da
+YQ
+UM
+mE
+zZ
+bR
+zD
+th
+ej
+bs
+lA
+Vm
+Oj
+Gs
+Gs
+Gs
+"}
+(21,1,1) = {"
+kH
+jL
+PG
+qY
+gH
+gs
+Bj
+kH
+ml
+dM
+JH
+mE
+mR
+Qy
+YQ
+da
+da
+da
+da
+da
+Qy
+YQ
+UM
+mE
+JH
+bR
+zD
+Gs
+VR
+ro
+Fa
+QH
+FW
+Gs
+eB
+eB
+"}
+(22,1,1) = {"
+kH
+bu
+Ll
+Zt
+ay
+QU
+mV
+kH
+bh
+dM
+JH
+eE
+yO
+OK
+xA
+bI
+xA
+Iq
+xA
+bI
+bI
+Cf
+yO
+lD
+JH
+bR
+zD
+Gs
+ZR
+ro
+pf
+Nj
+Gs
+Gs
+eB
+eB
+"}
+(23,1,1) = {"
+kH
+Ao
+Ao
+Ao
+ev
+QU
+LC
+kH
+ml
+Sr
+JH
+mE
+ns
+Ud
+xf
+mX
+mX
+zm
+mX
+mX
+xf
+Ud
+yf
+mE
+JH
+bR
+HI
+Gs
+Gs
+cM
+Gs
+Gs
+Gs
+eB
+eB
+eB
+"}
+(24,1,1) = {"
+Zn
+GY
+Gp
+Zt
+Mr
+hI
+yP
+kH
+ml
+vI
+JH
+mE
+mE
+Ae
+YQ
+JH
+hE
+Eu
+gr
+JH
+YQ
+Ae
+YQ
+YQ
+JH
+Bb
+cY
+JH
+xt
+Cc
+cz
+JH
+eB
+eB
+eB
+eB
+"}
+(25,1,1) = {"
+kH
+kH
+GY
+Ao
+IP
+QU
+iz
+kH
+ml
+dM
+JH
+JH
+JH
+JH
+JH
+JH
+Pk
+nr
+Pk
+JH
+JH
+JH
+JH
+JH
+JH
+nu
+rJ
+JH
+cz
+Cc
+cz
+JH
+eB
+eB
+eB
+eB
+"}
+(26,1,1) = {"
+eB
+kH
+kH
+kH
+HY
+TH
+os
+kH
+NC
+qw
+MM
+MM
+MM
+aN
+MM
+MM
+MM
+cZ
+MM
+IY
+MM
+YT
+MM
+MM
+aN
+kT
+Ra
+JH
+eT
+xC
+OT
+JH
+eB
+eB
+eB
+eB
+"}
+(27,1,1) = {"
+eB
+eB
+eB
+kH
+kH
+Ds
+kH
+kH
+YY
+MG
+MG
+FN
+vx
+Su
+nb
+hX
+iD
+Ro
+Ft
+sI
+sI
+Fn
+KC
+MG
+MG
+MG
+dy
+JH
+vq
+mz
+OT
+JH
+eB
+eB
+eB
+eB
+"}
+(28,1,1) = {"
+eB
+eB
+eB
+JH
+aa
+sC
+vq
+JH
+JH
+JH
+JH
+JH
+JH
+km
+km
+pv
+pv
+DZ
+pv
+pv
+km
+km
+JH
+JH
+JH
+JH
+JH
+JH
+FU
+uM
+um
+JH
+eB
+eB
+eB
+eB
+"}
+(29,1,1) = {"
+eB
+eB
+eB
+JH
+MJ
+SX
+cz
+fS
+FL
+Ca
+Rc
+vq
+JH
+WO
+PH
+PH
+sK
+Fk
+qB
+rC
+jY
+Ow
+JH
+fL
+fg
+Xk
+FI
+cz
+cz
+mz
+mk
+JH
+eB
+eB
+eB
+eB
+"}
+(30,1,1) = {"
+eB
+eB
+eB
+JH
+aa
+sC
+mf
+sE
+aT
+SK
+Tp
+SX
+rN
+ZO
+vv
+bq
+nm
+WJ
+Xw
+Qj
+Js
+EO
+FA
+WB
+WB
+WB
+rF
+Ii
+Ii
+qZ
+kt
+JH
+eB
+eB
+eB
+eB
+"}
+(31,1,1) = {"
+eB
+eB
+eB
+JH
+JH
+kt
+kt
+nR
+EK
+lm
+Bs
+kt
+JH
+OZ
+iQ
+PQ
+xc
+pL
+RB
+tA
+EW
+cH
+JH
+kt
+kt
+kt
+mk
+mk
+kt
+Eg
+JH
+JH
+eB
+eB
+eB
+eB
+"}
+(32,1,1) = {"
+eB
+eB
+eB
+eB
+JH
+JH
+JH
+JH
+JH
+JH
+JH
+JH
+JH
+OZ
+CU
+vV
+We
+gZ
+SW
+LR
+Ib
+Lh
+JH
+JH
+JH
+JH
+JH
+JH
+JH
+JH
+JH
+eB
+eB
+eB
+eB
+eB
+"}
+(33,1,1) = {"
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+km
+XP
+NS
+rR
+Ml
+pL
+CS
+za
+uI
+gF
+km
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+"}
+(34,1,1) = {"
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+km
+VY
+CQ
+FR
+iB
+eO
+gc
+Lr
+fT
+bG
+km
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+"}
+(35,1,1) = {"
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+km
+km
+km
+km
+km
+km
+km
+km
+km
+km
+km
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+"}
