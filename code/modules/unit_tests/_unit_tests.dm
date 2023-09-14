@@ -20,6 +20,8 @@
 /// Intended to be used in the manner of `TEST_FOCUS(/datum/unit_test/math)`
 #define TEST_FOCUS(test_path) ##test_path { focus = TRUE; }
 
+text2path("test")
+
 #include "anchored_mobs.dm"
 #include "autowiki.dm"
 #include "bespoke_id.dm"
