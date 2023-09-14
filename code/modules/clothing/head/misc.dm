@@ -8,6 +8,15 @@
 	armor = list("melee" = 30, "bullet" = 15, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	strip_delay = 80
 
+/obj/item/clothing/head/centcom_cap
+	name = "\improper CentCom commander cap"
+	icon_state = "centcom_cap"
+	desc = "Worn by the finest of CentCom commanders. Inside the lining of the cap, lies two faint initials."
+	item_state = "that"
+	flags_inv = 0
+	armor = list("melee" = 30, "bullet" = 15, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
+	strip_delay = (8 SECONDS)
+
 /obj/item/clothing/head/spacepolice
 	name = "space police cap"
 	desc = "A blue cap for patrolling the daily beat."
@@ -364,7 +373,7 @@
 
 /obj/item/clothing/head/frenchberet
 	name = "french beret"
-	desc = "A quality beret, infused with the aroma of chain-smoking, wine-swilling Parisians. You feel less inclined to engage military conflict, for some reason."
+	desc = "A quality beret, infused with the aroma of chain-smoking, wine-swilling Parisians. You feel less inclined to engage in military conflict, for some reason."
 	icon_state = "beret"
 	dynamic_hair_suffix = ""
 
@@ -444,7 +453,7 @@
 
 /obj/item/clothing/head/coordinator
 	name = "coordinator cap"
-	desc = "A cap for a party ooordinator, stylish!."
+	desc = "A cap for a party coordinator, stylish!."
 	icon_state = "capcap"
 	item_state = "that"
 	armor = list("melee" = 25, "bullet" = 15, "laser" = 25, "energy" = 35, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
@@ -510,3 +519,8 @@
 	desc = "You feel ashamed about what you had to do to get this hat"
 	icon_state = "cowboy"
 	item_state = "cowboy"
+
+/obj/item/clothing/head/solgov_surgery
+	name = "SolGov surgery cap"
+	desc = "It's a surgery cap utilized by solarian doctors."
+	icon_state = "solgov_surgery"
