@@ -232,6 +232,7 @@
 	name = "maintenance";
 	dir = 4
 	},
+/obj/machinery/door/firedoor,
 /turf/open/floor/plating{
 	initial_gas_mix = "LAVALAND_ATMOS"
 	},
@@ -404,7 +405,9 @@
 /obj/structure/sign/warning/nosmoking{
 	pixel_x = 33
 	},
-/obj/machinery/power/apc/auto_name/directional/east,
+/obj/machinery/power/apc/auto_name/directional/east{
+	start_charge = 0
+	},
 /turf/open/floor/plasteel,
 /area/ruin/whitesands/alienfacility/lab)
 "eT" = (
@@ -982,6 +985,7 @@
 /obj/machinery/door/airlock/external{
 	dir = 4
 	},
+/obj/machinery/door/firedoor,
 /turf/open/floor/plasteel,
 /area/ruin/whitesands/alienfacility)
 "ns" = (
@@ -1002,7 +1006,9 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/machinery/power/apc/auto_name/directional/west,
+/obj/machinery/power/apc/auto_name/directional/west{
+	start_charge = 0
+	},
 /turf/open/floor/wood/walnut,
 /area/ruin/whitesands/alienfacility/dorm)
 "nN" = (
@@ -1036,6 +1042,7 @@
 /obj/effect/decal/cleanable/blood{
 	icon_state = "gib2"
 	},
+/obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel,
 /area/ruin/whitesands/alienfacility)
 "os" = (
@@ -1047,6 +1054,8 @@
 /obj/effect/turf_decal/trimline/opaque/orange/filled/line{
 	dir = 6
 	},
+/obj/item/storage/box/stockparts/t3,
+/obj/item/storage/box/stockparts/t3,
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/alienfacility/engineering)
 "oT" = (
@@ -1275,6 +1284,7 @@
 /obj/machinery/door/airlock/hatch{
 	name = "maintenance"
 	},
+/obj/machinery/door/firedoor,
 /turf/open/floor/plating{
 	initial_gas_mix = "LAVALAND_ATMOS"
 	},
@@ -1636,6 +1646,17 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/whitesands/alienfacility/lobby)
+"wW" = (
+/obj/machinery/atmospherics/pipe/simple/cyan/visible{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/orange/filled/line,
+/obj/machinery/power/apc/auto_name/directional/south{
+	start_charge = 0
+	},
+/obj/structure/cable,
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/engineering)
 "xa" = (
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -1733,11 +1754,13 @@
 /turf/open/floor/plasteel,
 /area/ruin/whitesands/alienfacility)
 "yM" = (
-/obj/machinery/power/smes/engineering,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
+/obj/structure/frame/machine,
+/obj/item/stack/cable_coil/random/five,
+/obj/item/circuitboard/machine/smes,
 /turf/open/floor/plating,
 /area/ruin/whitesands/alienfacility/engineering)
 "yO" = (
@@ -1783,11 +1806,13 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/whitesands/alienfacility/lab)
 "zd" = (
-/obj/machinery/power/smes/engineering,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
+/obj/structure/frame/machine,
+/obj/item/stack/cable_coil/random/five,
+/obj/item/circuitboard/machine/smes,
 /turf/open/floor/plating,
 /area/ruin/whitesands/alienfacility/engineering)
 "zm" = (
@@ -1837,7 +1862,9 @@
 	},
 /area/ruin/whitesands/alienfacility)
 "Ae" = (
-/obj/machinery/power/floodlight,
+/obj/machinery/power/floodlight{
+	anchored = 1
+	},
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -2034,6 +2061,7 @@
 	name = "maintenance";
 	dir = 4
 	},
+/obj/machinery/door/firedoor,
 /turf/open/floor/plating{
 	initial_gas_mix = "LAVALAND_ATMOS"
 	},
@@ -2234,6 +2262,7 @@
 /obj/machinery/door/airlock/hatch{
 	name = "maintenance"
 	},
+/obj/machinery/door/firedoor,
 /turf/open/floor/plating{
 	initial_gas_mix = "LAVALAND_ATMOS"
 	},
@@ -2264,6 +2293,12 @@
 	},
 /obj/structure/fluff/paper/stack{
 	dir = 1
+	},
+/obj/machinery/power/apc/auto_name/directional/east{
+	start_charge = 0
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
 	},
 /turf/open/floor/plasteel,
 /area/ruin/whitesands/alienfacility)
@@ -2301,6 +2336,9 @@
 "Gy" = (
 /obj/effect/turf_decal/trimline/opaque/orange/filled/corner{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/alienfacility/engineering)
@@ -2345,6 +2383,7 @@
 	},
 /area/ruin/whitesands/alienfacility)
 "Hr" = (
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/carpet/blue,
 /area/ruin/whitesands/alienfacility/dorm)
 "HI" = (
@@ -2481,6 +2520,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/door/airlock/external,
+/obj/machinery/door/firedoor,
 /turf/open/floor/wood/walnut,
 /area/ruin/whitesands/alienfacility/lobby)
 "JA" = (
@@ -2552,6 +2592,7 @@
 /obj/structure/chair/office{
 	dir = 4
 	},
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/white,
 /area/ruin/whitesands/alienfacility/lab)
 "Lj" = (
@@ -2697,6 +2738,7 @@
 	name = "maintenance";
 	dir = 4
 	},
+/obj/machinery/door/firedoor,
 /turf/open/floor/plating{
 	initial_gas_mix = "LAVALAND_ATMOS"
 	},
@@ -2708,6 +2750,7 @@
 /obj/structure/chair/sofa/left{
 	dir = 1
 	},
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/carpet/blue,
 /area/ruin/whitesands/alienfacility/lobby)
 "Ot" = (
@@ -2928,6 +2971,7 @@
 /obj/machinery/door/airlock/hatch{
 	name = "maintenance"
 	},
+/obj/machinery/door/firedoor,
 /turf/open/floor/plating{
 	initial_gas_mix = "LAVALAND_ATMOS"
 	},
@@ -3084,6 +3128,7 @@
 /obj/machinery/door/airlock/external{
 	dir = 4
 	},
+/obj/machinery/door/firedoor,
 /turf/open/floor/plasteel,
 /area/ruin/whitesands/alienfacility)
 "UM" = (
@@ -3106,6 +3151,18 @@
 /mob/living/simple_animal/hostile/syndicate/ranged,
 /turf/open/floor/wood/walnut,
 /area/ruin/whitesands/alienfacility/dorm)
+"Vk" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/trimline/opaque/mauve/line{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
 "Vm" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
@@ -3172,6 +3229,15 @@
 	initial_gas_mix = "LAVALAND_ATMOS"
 	},
 /area/ruin/whitesands/alienfacility)
+"WC" = (
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/power/floodlight{
+	anchored = 1
+	},
+/turf/open/floor/plating/asteroid/whitesands,
+/area/ruin/whitesands/alienfacility/containment)
 "WJ" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/visible/layer4{
 	dir = 4
@@ -3324,9 +3390,11 @@
 /turf/open/floor/wood/walnut,
 /area/ruin/whitesands/alienfacility/lobby)
 "Yr" = (
-/obj/machinery/power/floodlight,
 /obj/structure/cable{
 	icon_state = "0-4"
+	},
+/obj/machinery/power/floodlight{
+	anchored = 1
 	},
 /turf/open/floor/plating/asteroid/whitesands,
 /area/ruin/whitesands/alienfacility/containment)
@@ -3341,7 +3409,9 @@
 /area/ruin/whitesands/alienfacility/lobby)
 "YP" = (
 /obj/structure/cable,
-/obj/machinery/power/apc/auto_name/directional/south,
+/obj/machinery/power/apc/auto_name/directional/south{
+	start_charge = 0
+	},
 /turf/open/floor/wood/walnut,
 /area/ruin/whitesands/alienfacility/lobby)
 "YQ" = (
@@ -3383,6 +3453,15 @@
 	},
 /turf/open/floor/engine,
 /area/ruin/whitesands/alienfacility/engineering)
+"Zr" = (
+/obj/effect/turf_decal/trimline/opaque/orange/filled/line{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/alienfacility/engineering)
 "Zt" = (
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/fulltile,
@@ -3402,6 +3481,9 @@
 /mob/living/simple_animal/hostile/syndicate/ranged,
 /obj/effect/turf_decal/trimline/opaque/orange/filled/line{
 	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/alienfacility/engineering)
@@ -3955,7 +4037,7 @@ Zy
 Zt
 Bl
 Gy
-lk
+wW
 kH
 ml
 dM
@@ -3992,7 +4074,7 @@ Ao
 Ao
 Ao
 Ee
-JA
+Zr
 lk
 qF
 ml
@@ -4030,7 +4112,7 @@ tN
 hZ
 yM
 Ee
-JA
+Zr
 lk
 qF
 ml
@@ -4304,7 +4386,7 @@ vI
 JH
 mE
 mE
-Ae
+WC
 YQ
 JH
 hE
@@ -4378,7 +4460,7 @@ kH
 NC
 qw
 MM
-MM
+Vk
 MM
 aN
 MM

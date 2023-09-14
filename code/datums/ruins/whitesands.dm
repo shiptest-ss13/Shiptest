@@ -60,6 +60,12 @@
 	description = "Some sort of survivors, brandishing old nanotrasen security gear."
 	suffix = "whitesands_surface_chokepoint.dmm"
 
+/datum/map_template/ruin/whitesands/alienfacility
+	name = "Alien Facility"
+	id = "ws-alienfacility"
+	description = "A recently raided facility hosting something the collective galaxy considers to be too dangerous to keep alive."
+	suffix = "whitesands_surface_alien_facility.dmm"
+
 //////////OUTSIDE SETTLEMENTS/RUINS//////////
 /datum/map_template/ruin/whitesands/survivors/drugstore
 	name = "Abandoned Store"
