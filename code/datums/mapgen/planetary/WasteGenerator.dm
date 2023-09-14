@@ -96,36 +96,36 @@
 	flora_spawn_list = list(
 
 		//mech spawners
-		/obj/effect/spawner/lootdrop/waste/mechwreck = 10,
-		/obj/effect/spawner/lootdrop/waste/mechwreck/rare = 2,
+		/obj/effect/spawner/lootdrop/waste/mechwreck = 100,
+		/obj/effect/spawner/lootdrop/waste/mechwreck/rare = 20.1,
 
 		//decals and fluff structures
-		/obj/effect/spawner/lootdrop/waste/trash = 180,
-		/obj/effect/spawner/lootdrop/waste/radiation = 8,
-		/obj/effect/spawner/lootdrop/waste/radiation/more_rads = 1,
+		/obj/effect/spawner/lootdrop/waste/trash = 1800,
+		/obj/effect/spawner/lootdrop/waste/radiation = 80,
+		/obj/effect/spawner/lootdrop/waste/radiation/more_rads = 10,
 
 		//stuff you can actually use
-		/obj/effect/spawner/lootdrop/waste/girder = 60,
-		/obj/structure/reagent_dispensers/fueltank = 10,
-		/obj/structure/reagent_dispensers/watertank = 20,
-		/obj/item/stack/cable_coil/cut = 50,
-		/obj/structure/closet/crate/secure/loot = 3,
-		/obj/effect/spawner/lootdrop/waste/atmos_can = 5,
-		/obj/effect/spawner/lootdrop/waste/atmos_can/rare = 0.1,
-		/obj/effect/spawner/lootdrop/waste/salvageable = 30,
-		/obj/effect/spawner/lootdrop/waste/grille_or_trash = 20,
-		/obj/effect/spawner/lootdrop/maintenance = 20,
-		/obj/effect/spawner/lootdrop/maintenance/two = 10,
-		/obj/effect/spawner/lootdrop/maintenance/three = 5,
-		/obj/effect/spawner/lootdrop/maintenance/four = 2,
+		/obj/effect/spawner/lootdrop/waste/girder = 600,
+		/obj/structure/reagent_dispensers/fueltank = 100,
+		/obj/structure/reagent_dispensers/watertank = 200,
+		/obj/item/stack/cable_coil/cut = 500,
+		/obj/structure/closet/crate/secure/loot = 30,
+		/obj/effect/spawner/lootdrop/waste/atmos_can = 50,
+		/obj/effect/spawner/lootdrop/waste/atmos_can/rare = 1,
+		/obj/effect/spawner/lootdrop/waste/salvageable = 300,
+		/obj/effect/spawner/lootdrop/waste/grille_or_trash = 200,
+		/obj/effect/spawner/lootdrop/maintenance = 200,
+		/obj/effect/spawner/lootdrop/maintenance/two = 100,
+		/obj/effect/spawner/lootdrop/maintenance/three = 50,
+		/obj/effect/spawner/lootdrop/maintenance/four = 20,
 
 		//plants
-		/obj/structure/flora/ash/garden/waste = 7,
-		/obj/structure/flora/ash/glowshroom = 20, //more common in caves
+		/obj/structure/flora/ash/garden/waste = 70,
+		/obj/structure/flora/ash/glowshroom = 200, //more common in caves
 
 
 		//the illusive shrapnel plant
-		/obj/effect/mine/shrapnel/human_only = 1
+		/obj/effect/mine/shrapnel/human_only = 10
 	)
 
 	feature_spawn_list = list(
