@@ -394,7 +394,7 @@
 	tocook.visible_message("<span class='notice'>\The [tocook] is done warming up!</span>")
 	playsound(tocook, 'sound/items/cig_snuff.ogg', 50, 1)
 	if(istype(tocook, /obj/item/reagent_containers/food) || istype(tocook, /obj/item/grown))
-		tocook.cut_overlay(ration_overlay)
+		clear_cooking()
 		tocook.microwave_act()
 	if(uses == 0)
 		qdel()
