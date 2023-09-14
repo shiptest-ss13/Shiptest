@@ -1,6 +1,6 @@
 /obj/item/reagent_containers/food/snacks/ration
 	name = "nutriment ration"
-	desc = "standerd issue ration"
+	desc = "standard issue ration"
 	filling_color = "#664330"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4)
 	icon = 'icons/obj/food/ration.dmi'
