@@ -4,12 +4,12 @@
 /turf/open/floor/plating,
 /area/ruin/whitesands/alienfacility)
 "ad" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 1
-	},
 /obj/machinery/firealarm/directional/west,
 /obj/effect/turf_decal/trimline/opaque/mauve/filled/line{
 	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/ruin/whitesands/alienfacility)
@@ -17,12 +17,12 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 4
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/spider/stickyweb,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ruin/whitesands/alienfacility)
 "aq" = (
@@ -121,9 +121,6 @@
 /turf/open/floor/plating,
 /area/ruin/whitesands/alienfacility)
 "bq" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 6
-	},
 /obj/structure/table/chem,
 /obj/effect/spawner/lootdrop/beaker_loot_spawner,
 /obj/item/stock_parts/micro_laser/high,
@@ -141,18 +138,21 @@
 	pixel_x = -11;
 	pixel_y = 11
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/alienfacility/lab)
 "bs" = (
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/visible/layer4{
-	dir = 1
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
 /obj/structure/table/wood,
 /obj/item/paper_bin,
 /obj/item/pen/fountain,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 1
+	},
 /turf/open/floor/wood/walnut,
 /area/ruin/whitesands/alienfacility/lobby)
 "bu" = (
@@ -192,6 +192,21 @@
 /obj/structure/table/wood,
 /turf/open/floor/wood/walnut,
 /area/ruin/whitesands/alienfacility/lobby)
+"cz" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 1
+	},
+/obj/machinery/door/airlock/hatch{
+	name = "maintenance"
+	},
+/obj/machinery/door/firedoor,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility/dorm)
 "cH" = (
 /obj/structure/table,
 /obj/item/reagent_containers/medigel/synthflesh{
@@ -213,14 +228,14 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 4
-	},
 /obj/machinery/door/airlock/hatch{
 	name = "maintenance";
 	dir = 4
 	},
 /obj/machinery/door/firedoor,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/plating{
 	initial_gas_mix = "LAVALAND_ATMOS"
 	},
@@ -238,6 +253,9 @@
 	name = "lobby"
 	},
 /obj/machinery/door/firedoor,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
 /area/ruin/whitesands/alienfacility/lobby)
 "cY" = (
@@ -254,9 +272,6 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
@@ -266,6 +281,9 @@
 /obj/effect/turf_decal/trimline/opaque/mauve/line{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/ruin/whitesands/alienfacility)
 "da" = (
@@ -273,15 +291,13 @@
 /turf/open/space/basic,
 /area/ruin/whitesands/alienfacility/containment)
 "do" = (
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/visible/layer4{
-	dir = 2
-	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /obj/structure/chair/office,
 /mob/living/simple_animal/hostile/syndicate/melee/sword,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /turf/open/floor/wood/walnut,
 /area/ruin/whitesands/alienfacility/lobby)
 "dw" = (
@@ -292,10 +308,10 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+/obj/effect/turf_decal/trimline/opaque/mauve/line{
 	dir = 4
 	},
-/obj/effect/turf_decal/trimline/opaque/mauve/line{
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
 /turf/open/floor/plasteel,
@@ -322,12 +338,10 @@
 /area/ruin/whitesands/alienfacility)
 "dN" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 1
-	},
 /obj/effect/turf_decal/trimline/opaque/grey/line{
 	dir = 10
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/white,
 /area/ruin/whitesands/alienfacility/dorm)
 "dT" = (
@@ -416,24 +430,24 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 4
-	},
 /obj/effect/turf_decal/trimline/opaque/mauve/line{
 	dir = 8
 	},
 /obj/effect/gibspawner/human,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/ruin/whitesands/alienfacility)
 "ff" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 10
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
 	dir = 10
 	},
 /obj/effect/turf_decal/trimline/opaque/orange/filled/line{
 	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
+	dir = 10
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/alienfacility/engineering)
@@ -469,15 +483,13 @@
 /area/ruin/whitesands/alienfacility)
 "fM" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 1
-	},
 /obj/structure/chair/sofa/left{
 	dir = 1
 	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/carpet/blue,
 /area/ruin/whitesands/alienfacility/dorm)
 "fS" = (
@@ -557,12 +569,12 @@
 /turf/open/floor/wood/walnut,
 /area/ruin/whitesands/alienfacility/dorm)
 "gQ" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 1
-	},
 /mob/living/simple_animal/hostile/syndicate/ranged,
 /obj/effect/turf_decal/trimline/opaque/mauve/filled/line{
 	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/ruin/whitesands/alienfacility)
@@ -714,10 +726,10 @@
 /area/ruin/whitesands/alienfacility/engineering)
 "jP" = (
 /obj/structure/table/wood,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
 /turf/open/floor/wood/walnut,
@@ -826,18 +838,16 @@
 /turf/open/floor/plating,
 /area/ruin/whitesands/alienfacility)
 "lv" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 4
-	},
 /obj/machinery/firealarm/directional/south,
 /obj/effect/turf_decal/trimline/opaque/mauve/filled/line,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/ruin/whitesands/alienfacility)
 "lA" = (
 /obj/structure/table/wood,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 1
-	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/wood/walnut,
 /area/ruin/whitesands/alienfacility/lobby)
 "lD" = (
@@ -863,11 +873,11 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 4
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ruin/whitesands/alienfacility)
 "mC" = (
@@ -927,17 +937,14 @@
 /turf/open/floor/plasteel,
 /area/ruin/whitesands/alienfacility)
 "nm" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 1
-	},
 /obj/machinery/computer/pandemic,
 /obj/effect/turf_decal/trimline/opaque/bottlegreen/filled/line,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/alienfacility/lab)
 "nr" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
@@ -948,6 +955,9 @@
 	dir = 4
 	},
 /obj/machinery/door/firedoor,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/ruin/whitesands/alienfacility)
 "ns" = (
@@ -1021,11 +1031,11 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/alienfacility/engineering)
 "oT" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 1
-	},
 /obj/effect/turf_decal/trimline/opaque/mauve/filled/line{
 	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/ruin/whitesands/alienfacility)
@@ -1074,10 +1084,8 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 1
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/wood/walnut,
 /area/ruin/whitesands/alienfacility/lobby)
 "pL" = (
@@ -1128,13 +1136,13 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 10
-	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /obj/effect/turf_decal/trimline/opaque/mauve/filled/line,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
+	},
 /turf/open/floor/plasteel,
 /area/ruin/whitesands/alienfacility)
 "qF" = (
@@ -1162,11 +1170,11 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 9
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
 /turf/open/floor/plating,
 /area/ruin/whitesands/alienfacility)
 "ro" = (
@@ -1206,21 +1214,21 @@
 /area/ruin/whitesands/alienfacility/lab)
 "rF" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 1
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/effect/gibspawner/human,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/ruin/whitesands/alienfacility)
 "rI" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 1
-	},
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
 	},
 /turf/open/floor/wood/walnut,
 /area/ruin/whitesands/alienfacility/lobby)
@@ -1288,14 +1296,12 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 1
-	},
 /obj/effect/mob_spawn/human/doctor,
 /obj/effect/turf_decal/trimline/opaque/grey/line{
 	dir = 8
 	},
 /obj/effect/gibspawner/human,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/white,
 /area/ruin/whitesands/alienfacility/dorm)
 "sB" = (
@@ -1325,11 +1331,11 @@
 /turf/open/floor/plating,
 /area/ruin/whitesands/alienfacility)
 "sI" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 1
-	},
 /obj/effect/turf_decal/trimline/opaque/mauve/filled/line{
 	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/ruin/whitesands/alienfacility)
@@ -1439,22 +1445,22 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 4
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/caution,
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ruin/whitesands/alienfacility)
 "uY" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 1
-	},
 /mob/living/simple_animal/hostile/syndicate/melee,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/ruin/whitesands/alienfacility)
 "uZ" = (
@@ -1468,8 +1474,14 @@
 /turf/open/floor/plating,
 /area/ruin/whitesands/alienfacility/engineering)
 "vq" = (
-/turf/open/floor/plating,
-/area/ruin/whitesands/alienfacility)
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/wood/walnut,
+/area/ruin/whitesands/alienfacility/lobby)
 "vv" = (
 /obj/structure/fluff/paper/stack{
 	dir = 1
@@ -1539,13 +1551,13 @@
 /area/ruin/whitesands/alienfacility/dorm)
 "wz" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 1
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/spider/stickyweb,
 /mob/living/simple_animal/hostile/poison/giant_spider,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/ruin/whitesands/alienfacility)
 "wA" = (
@@ -1554,15 +1566,13 @@
 /turf/open/floor/plasteel/airless,
 /area/ruin/whitesands/alienfacility/containment)
 "wB" = (
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/visible/layer4{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/table/wood,
 /obj/item/storage/cans/sixbeer,
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/carpet/blue,
 /area/ruin/whitesands/alienfacility/dorm)
 "wC" = (
@@ -1610,11 +1620,11 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 6
-	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/spider/stickyweb,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
 /turf/open/floor/plating,
 /area/ruin/whitesands/alienfacility)
 "xf" = (
@@ -1651,13 +1661,13 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 4
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/mob_spawn/human/corpse/assistant/brainrot_infection,
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/effect/gibspawner/human,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ruin/whitesands/alienfacility)
 "xO" = (
@@ -1704,22 +1714,18 @@
 /area/ruin/whitesands/alienfacility/engineering)
 "yQ" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 1
-	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
 /obj/effect/turf_decal/trimline/opaque/grey/line{
 	dir = 9
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/white,
 /area/ruin/whitesands/alienfacility/dorm)
 "yW" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 1
-	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/wood/walnut,
 /area/ruin/whitesands/alienfacility/dorm)
 "za" = (
@@ -1770,9 +1776,7 @@
 	dir = 2;
 	layer = 2.35
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 1
-	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel,
 /area/ruin/whitesands/alienfacility/lobby)
 "zZ" = (
@@ -1856,12 +1860,12 @@
 /turf/open/floor/plating,
 /area/ruin/whitesands/alienfacility)
 "Bz" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 1
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/ruin/whitesands/alienfacility)
 "BH" = (
@@ -1887,10 +1891,10 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ruin/whitesands/alienfacility)
 "Cf" = (
@@ -1906,9 +1910,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 4
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -1917,16 +1918,19 @@
 	name = "dorms"
 	},
 /obj/machinery/door/firedoor,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/wood/walnut,
 /area/ruin/whitesands/alienfacility/dorm)
 "CH" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 1
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/spider/stickyweb,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/ruin/whitesands/alienfacility)
 "CQ" = (
@@ -1994,17 +1998,12 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 1
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/wood/walnut,
 /area/ruin/whitesands/alienfacility/lobby)
 "DZ" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
 	dir = 4
 	},
 /obj/structure/cable{
@@ -2015,6 +2014,9 @@
 	name = "surgery access"
 	},
 /obj/machinery/door/firedoor,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/ruin/whitesands/alienfacility/lab)
 "Ee" = (
@@ -2035,14 +2037,14 @@
 	dir = 8;
 	layer = 2.35
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 4
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
 /obj/effect/turf_decal/trimline/opaque/mauve/line{
 	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/ruin/whitesands/alienfacility)
@@ -2074,10 +2076,10 @@
 /area/ruin/whitesands/alienfacility)
 "EO" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+/obj/effect/turf_decal/trimline/opaque/blue/filled/line,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
 	},
-/obj/effect/turf_decal/trimline/opaque/blue/filled/line,
 /turf/open/floor/plasteel/white,
 /area/ruin/whitesands/alienfacility/lab)
 "ES" = (
@@ -2104,23 +2106,23 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 4
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/ruin/whitesands/alienfacility/lab)
 "Fn" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 1
-	},
 /obj/effect/turf_decal/trimline/opaque/mauve/filled/line{
 	dir = 4
 	},
 /obj/structure/fluff/paper/stack{
 	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/ruin/whitesands/alienfacility)
@@ -2135,12 +2137,12 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/alienfacility/engineering)
 "Ft" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 1
-	},
 /obj/effect/mob_spawn/human/doctor,
 /obj/effect/turf_decal/trimline/opaque/mauve/filled/line{
 	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/ruin/whitesands/alienfacility)
@@ -2148,21 +2150,21 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+/obj/effect/gibspawner/human,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/effect/gibspawner/human,
 /turf/open/floor/wood/walnut,
 /area/ruin/whitesands/alienfacility/lobby)
 "FA" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 1
-	},
 /obj/machinery/door/airlock/hatch{
 	name = "maintenance"
 	},
 /obj/machinery/door/firedoor,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
 /turf/open/floor/plating{
 	initial_gas_mix = "LAVALAND_ATMOS"
 	},
@@ -2307,10 +2309,10 @@
 /area/ruin/whitesands/alienfacility/lab)
 "Ii" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
 	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ruin/whitesands/alienfacility)
 "In" = (
@@ -2373,11 +2375,11 @@
 /area/ruin/whitesands/alienfacility)
 "Js" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 1
-	},
 /obj/effect/turf_decal/trimline/opaque/blue/line{
 	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/whitesands/alienfacility/lab)
@@ -2403,12 +2405,10 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 1
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/door/airlock/external,
 /obj/machinery/door/firedoor,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/wood/walnut,
 /area/ruin/whitesands/alienfacility/lobby)
 "JA" = (
@@ -2567,10 +2567,10 @@
 	icon_state = "1-2"
 	},
 /obj/structure/table/wood,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
 	},
 /turf/open/floor/wood/walnut,
@@ -2613,14 +2613,14 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 4
-	},
 /obj/machinery/door/airlock/hatch{
 	name = "maintenance";
 	dir = 4
 	},
 /obj/machinery/door/firedoor,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/plating{
 	initial_gas_mix = "LAVALAND_ATMOS"
 	},
@@ -2693,15 +2693,15 @@
 /turf/open/floor/plasteel/airless,
 /area/ruin/whitesands/alienfacility/containment)
 "PQ" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 4
-	},
 /obj/structure/fluff/paper/stack{
 	dir = 6
 	},
 /obj/effect/turf_decal/trimline/opaque/bottlegreen/line,
 /obj/structure/chair/office{
 	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/alienfacility/lab)
@@ -2712,15 +2712,15 @@
 /turf/open/floor/plating/asteroid/whitesands/dried,
 /area/ruin/whitesands/alienfacility/containment)
 "Qj" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 1
-	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 4
 	},
 /mob/living/simple_animal/hostile/syndicate/melee,
 /obj/effect/turf_decal/trimline/opaque/blue/line{
 	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/whitesands/alienfacility/lab)
@@ -2779,12 +2779,12 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/visible/layer4{
-	dir = 1
-	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/effect/turf_decal/trimline/opaque/mauve/filled/line{
 	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/ruin/whitesands/alienfacility)
@@ -2804,12 +2804,12 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/visible/layer4{
-	dir = 1
-	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/effect/turf_decal/trimline/opaque/mauve/filled/line{
 	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/ruin/whitesands/alienfacility)
@@ -2843,17 +2843,18 @@
 /area/ruin/whitesands/alienfacility)
 "SH" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 1
-	},
 /obj/machinery/door/airlock/hatch{
 	name = "maintenance"
 	},
 /obj/machinery/door/firedoor,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plating{
 	initial_gas_mix = "LAVALAND_ATMOS"
 	},
 /area/ruin/whitesands/alienfacility/dorm)
+"SK" = (
+/turf/open/floor/plating,
+/area/ruin/whitesands/alienfacility)
 "SL" = (
 /obj/structure/table/wood,
 /obj/item/paper_bin/bundlenatural,
@@ -2920,13 +2921,13 @@
 /area/ruin/whitesands/alienfacility)
 "TE" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 1
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/caution,
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/spider/stickyweb,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/ruin/whitesands/alienfacility)
 "TH" = (
@@ -2937,13 +2938,11 @@
 /area/ruin/whitesands/alienfacility/engineering)
 "TI" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 1
-	},
 /obj/structure/table/wood,
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/carpet/blue,
 /area/ruin/whitesands/alienfacility/dorm)
 "TQ" = (
@@ -2993,13 +2992,13 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 4
-	},
 /obj/machinery/door/airlock/external{
 	dir = 4
 	},
 /obj/machinery/door/firedoor,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/ruin/whitesands/alienfacility)
 "UM" = (
@@ -3009,13 +3008,13 @@
 /turf/open/floor/plating/asteroid/whitesands,
 /area/ruin/whitesands/alienfacility/containment)
 "UT" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 9
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
 	dir = 4
 	},
 /obj/effect/turf_decal/trimline/opaque/orange/filled/line,
+/obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
+	dir = 9
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/alienfacility/engineering)
 "Vh" = (
@@ -3044,10 +3043,10 @@
 /turf/open/floor/carpet/blue,
 /area/ruin/whitesands/alienfacility/lobby)
 "Vw" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+/obj/effect/turf_decal/trimline/opaque/mauve/filled/line,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/effect/turf_decal/trimline/opaque/mauve/filled/line,
 /turf/open/floor/plasteel,
 /area/ruin/whitesands/alienfacility)
 "VR" = (
@@ -3087,15 +3086,6 @@
 	},
 /turf/open/floor/carpet/blue,
 /area/ruin/whitesands/alienfacility/lobby)
-"WB" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/turf/open/floor/plating,
-/area/ruin/whitesands/alienfacility)
 "WC" = (
 /obj/structure/cable{
 	icon_state = "0-8"
@@ -3106,14 +3096,14 @@
 /turf/open/floor/plating/asteroid/whitesands,
 /area/ruin/whitesands/alienfacility/containment)
 "WJ" = (
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/visible/layer4{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/ruin/whitesands/alienfacility/lab)
@@ -3145,15 +3135,15 @@
 /turf/open/floor/plasteel,
 /area/ruin/whitesands/alienfacility)
 "Xh" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 5
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
 	dir = 5
 	},
 /obj/structure/closet/crate/internals,
 /obj/effect/turf_decal/trimline/opaque/orange/filled/line{
 	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
+	dir = 5
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/alienfacility/engineering)
@@ -3169,21 +3159,21 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ruin/whitesands/alienfacility)
 "Xw" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 1
-	},
 /obj/structure/fluff/paper/stack{
 	dir = 9
 	},
 /obj/effect/turf_decal/trimline/opaque/blue/filled/line{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
 	},
 /turf/open/floor/plasteel/white,
@@ -3214,14 +3204,14 @@
 /turf/open/floor/carpet/blue,
 /area/ruin/whitesands/alienfacility/dorm)
 "XU" = (
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/visible/layer4{
-	dir = 8
-	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 8
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 8
 	},
 /turf/open/floor/wood/walnut,
 /area/ruin/whitesands/alienfacility/dorm)
@@ -3243,11 +3233,11 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 4
-	},
 /obj/structure/table/wood,
 /obj/item/papercutter,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/wood/walnut,
 /area/ruin/whitesands/alienfacility/lobby)
 "Yr" = (
@@ -3263,7 +3253,7 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/visible/layer4{
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 1
 	},
 /turf/open/floor/wood/walnut,
@@ -3299,11 +3289,11 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 4
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
 	},
 /turf/open/floor/wood/walnut,
 /area/ruin/whitesands/alienfacility/dorm)
@@ -3570,15 +3560,15 @@ yW
 yQ
 sq
 dN
-SH
+cz
 Ii
-WB
-WB
+Bz
+Bz
 uY
-WB
+Bz
 Bz
 Xm
-vq
+SK
 JH
 eB
 eB
@@ -3613,7 +3603,7 @@ qH
 GG
 Wh
 DB
-vq
+SK
 Mn
 Cc
 lt
@@ -3630,7 +3620,7 @@ eB
 JH
 aa
 al
-vq
+SK
 JH
 JH
 JH
@@ -3768,7 +3758,7 @@ rJ
 JH
 CT
 mz
-vq
+SK
 JH
 eB
 eB
@@ -3804,9 +3794,9 @@ JH
 Bb
 rJ
 JH
-vq
+SK
 mz
-vq
+SK
 JH
 eB
 eB
@@ -3919,7 +3909,7 @@ bR
 lv
 Gs
 ej
-ro
+vq
 wn
 ij
 BH
@@ -3995,7 +3985,7 @@ bR
 Vw
 th
 rU
-ro
+vq
 SL
 mY
 YP
@@ -4374,7 +4364,7 @@ MG
 MG
 dy
 JH
-vq
+SK
 mz
 OT
 JH
@@ -4390,7 +4380,7 @@ eB
 JH
 aa
 sC
-vq
+SK
 JH
 JH
 JH
@@ -4433,7 +4423,7 @@ fS
 FL
 Ca
 Rc
-vq
+SK
 JH
 WO
 PH
@@ -4469,7 +4459,7 @@ sC
 mf
 sE
 aT
-vq
+SK
 Tp
 SX
 rN
@@ -4483,9 +4473,9 @@ Qj
 Js
 EO
 FA
-WB
-WB
-WB
+Bz
+Bz
+Bz
 rF
 Ii
 Ii
