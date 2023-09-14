@@ -358,6 +358,54 @@
 	soundloop.stop()
 	update_appearance()
 
+/obj/item/ration_heater
+	name = "flameless ration heater"
+	icon = 'icons/obj/food/ration.dmi'
+	icon_state = "ration_package"
+	grind_results = list(/datum/reagent/iron = 10, /datum/reagent/water = 10, /datum/reagent/consumable/sodiumchloride = 5)
+	heat = 3800
+	var/obj/item/tocook = null
+	var/mutable_appearance/ration_overlay
+	var/uses = 3
+
+/obj/item/ration_heater/Initialize()
+	. = ..()
+	ration_overlay = mutable_appearance(icon, icon_state, LOW_ITEM_LAYER)
+
+/obj/item/ration_heater/afterattack(atom/target, mob/user, flag)
+	if(istype(target, /obj/item/reagent_containers/food) || istype(target, /obj/item/grown))
+		to_chat(user, "<span class='notice'>You start sliding \the [src] under the [target]...</span>")
+		if(do_after(user, 10))
+			tocook = target
+			RegisterSignal(tocook, COMSIG_PARENT_QDELETING, PROC_REF(clear_cooking))
+			target.add_overlay(ration_overlay)
+			addtimer(CALLBACK(src, .proc/cook), 100)
+			visible_message("<span class='notice'>\The [target] rapidly begins cooking...</span>")
+			playsound(src, 'sound/items/cig_light.ogg', 50, 1)
+			moveToNullspace()
+
+/obj/item/ration_heater/proc/clear_cooking(datum/source)
+	SIGNAL_HANDLER
+	UnregisterSignal(tocook, COMSIG_PARENT_QDELETING)
+	tocook.cut_overlay(ration_overlay)
+	tocook = null
+/obj/item/ration_heater/proc/cook()
+	var/cookturf = get_turf(tocook)
+	tocook.visible_message("<span class='notice'>\The [tocook] is done warming up!</span>")
+	playsound(tocook, 'sound/items/cig_snuff.ogg', 50, 1)
+	if(istype(tocook, /obj/item/reagent_containers/food) || istype(tocook, /obj/item/grown))
+		clear_cooking()
+		tocook.microwave_act()
+	if(uses == 0)
+		qdel()
+	else
+		uses--
+		src.forceMove(cookturf)
+
+/obj/item/ration_heater/examine(mob/user)
+	. = ..()
+	. += "It has [uses] uses left..."
+
 #undef MICROWAVE_NORMAL
 #undef MICROWAVE_MUCK
 #undef MICROWAVE_PRE
