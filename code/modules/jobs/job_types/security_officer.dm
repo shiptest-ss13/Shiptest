@@ -87,7 +87,7 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_pocket = /obj/item/restraints/handcuffs
 	r_pocket = /obj/item/assembly/flash/handheld
-	backpack_contents = list(/obj/item/melee/baton/loaded=1, /obj/item/ammo_box/magazine/co9mm=1, /obj/item/gun_voucher=1) //WS edit - security rearming
+	backpack_contents = null //WS edit - security rearming // SHIPTEST EDIT - security re-disarming. certified whitesands moment.
 
 	backpack = /obj/item/storage/backpack/security
 	satchel = /obj/item/storage/backpack/satchel/sec
@@ -175,7 +175,7 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
 	glasses = /obj/item/clothing/glasses/hud/diagnostic
 
-	backpack_contents = list(/obj/item/melee/classic_baton=1, /obj/item/gun/ballistic/automatic/pistol/commander=1, /obj/item/restraints/handcuffs=1)
+	backpack_contents = list(/obj/item/melee/classic_baton=1, /obj/item/restraints/handcuffs=1)
 
 /datum/outfit/job/security/inteq
 	name = "IRMG Enforcer (Inteq)"
@@ -190,8 +190,10 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
 	gloves = /obj/item/clothing/gloves/combat
 
+	backpack = /obj/item/storage/backpack/messenger/inteq
+	satchel = /obj/item/storage/backpack/messenger/inteq
 	courierbag = /obj/item/storage/backpack/messenger/inteq
-	backpack_contents = list(/obj/item/melee/baton/loaded=1, /obj/item/ammo_box/magazine/co9mm=1, /obj/item/gun_voucher=1,/obj/item/pda/security)
+	backpack_contents = list(/obj/item/pda/security)
 
 /datum/outfit/job/security/inteq/beluga
 	name = "IRMG Enforcer (Beluga)"
@@ -206,6 +208,8 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	glasses = null
 	gloves = /obj/item/clothing/gloves/color/evening
 
+	backpack = /obj/item/storage/backpack/messenger/inteq
+	satchel = /obj/item/storage/backpack/messenger/inteq
 	courierbag = /obj/item/storage/backpack/messenger/inteq
 	backpack_contents = list(/obj/item/pda/security)
 
