@@ -858,11 +858,6 @@
 	taste_mult = 2
 	taste_description = "cheese"
 
-/datum/reagent/waterpowder
-	name = "Instant Water Powder"
-	description = "Activates into steaming hot water"
-	reagent_state = SOLID
-
 /datum/reagent/consumable/peanut_butter
 	name = "Peanut Butter"
 	nutriment_factor = 1 * REAGENTS_METABOLISM
