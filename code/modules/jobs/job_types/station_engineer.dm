@@ -1,7 +1,5 @@
 /datum/job/engineer
 	name = "Station Engineer"
-	total_positions = 5
-	spawn_positions = 5
 	wiki_page = "Station_Engineer" //WS Edit - Wikilinks/Warning
 
 	outfit = /datum/outfit/job/engineer

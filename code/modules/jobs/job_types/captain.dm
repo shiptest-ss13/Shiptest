@@ -1,8 +1,6 @@
 /datum/job/captain
 	name = "Captain"
 	auto_deadmin_role_flags = DEADMIN_POSITION_HEAD|DEADMIN_POSITION_SECURITY
-	total_positions = 1
-	spawn_positions = 1
 	minimal_player_age = 30
 	officer = TRUE
 	wiki_page = "Captain"
