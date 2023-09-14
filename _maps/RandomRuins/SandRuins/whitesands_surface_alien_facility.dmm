@@ -104,11 +104,6 @@
 /turf/open/floor/wood/walnut,
 /area/ruin/whitesands/alienfacility/dorm)
 "bn" = (
-/obj/machinery/door/poddoor{
-	id = "experiment";
-	name = "experiment containment";
-	dir = 8
-	},
 /obj/machinery/atmospherics/pipe/layer_manifold{
 	dir = 4
 	},
@@ -116,6 +111,11 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/external{
+	dir = 4
+	},
+/obj/machinery/door/poddoor{
+	id = "experiment";
+	name = "Experiment Containment";
 	dir = 4
 	},
 /turf/open/floor/plating,
@@ -214,7 +214,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/hatch{
-	name = "maintenance";
+	name = "Maintenance";
 	dir = 4
 	},
 /obj/machinery/door/firedoor,
@@ -232,7 +232,7 @@
 	},
 /obj/machinery/door/airlock/hatch{
 	dir = 1;
-	name = "lobby"
+	name = "Lobby"
 	},
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -697,8 +697,8 @@
 "jH" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor{
-	id = "experiment"s;
-	name = "experiment containment"
+	id = "experiment";
+	name = "Experiment Containment"
 	},
 /turf/open/floor/plating,
 /area/ruin/whitesands/alienfacility)
@@ -889,8 +889,8 @@
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor{
 	id = "experiment";
-	name = "experiment containment";
-	dir = 8
+	name = "Experiment Containment";
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ruin/whitesands/alienfacility)
@@ -1219,10 +1219,10 @@
 /turf/open/floor/plasteel,
 /area/ruin/whitesands/alienfacility)
 "rN" = (
-/obj/machinery/door/airlock/hatch{
-	name = "maintenance"
-	},
 /obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/hatch{
+	name = "Maintenance"
+	},
 /turf/open/floor/plating{
 	initial_gas_mix = "LAVALAND_ATMOS"
 	},
@@ -1724,15 +1724,15 @@
 /turf/open/floor/plating,
 /area/ruin/whitesands/alienfacility/engineering)
 "zm" = (
-/obj/machinery/door/poddoor{
-	id = "experiment";
-	name = "experiment containment";
-	dir = 8
-	},
 /obj/machinery/atmospherics/pipe/layer_manifold{
 	dir = 4
 	},
 /obj/machinery/door/airlock/external{
+	dir = 4
+	},
+/obj/machinery/door/poddoor{
+	id = "experiment";
+	name = "Experiment Containment";
 	dir = 4
 	},
 /turf/open/floor/plating,
@@ -1756,13 +1756,21 @@
 /turf/open/floor/plasteel,
 /area/ruin/whitesands/alienfacility/lobby)
 "zZ" = (
-/obj/effect/spawner/structure/window/reinforced,
-/obj/machinery/door/poddoor{
-	id = "experiment";
-	name = "experiment containment"
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
 	},
-/turf/open/floor/plating,
-/area/ruin/whitesands/alienfacility)
+/obj/machinery/door/firedoor,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/door/airlock/hatch{
+	name = "Maintenance";
+	dir = 4
+	},
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/whitesands/alienfacility/lobby)
 "Ae" = (
 /obj/machinery/power/floodlight{
 	anchored = 1
@@ -1837,11 +1845,11 @@
 /area/ruin/whitesands/alienfacility)
 "Bz" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/door/airlock/hatch{
-	name = "maintenance"
-	},
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/door/airlock/hatch{
+	name = "Maintenance"
+	},
 /turf/open/floor/plating{
 	initial_gas_mix = "LAVALAND_ATMOS"
 	},
@@ -1893,7 +1901,7 @@
 	},
 /obj/machinery/door/airlock/hatch{
 	dir = 4;
-	name = "dorms"
+	name = "Dorms"
 	},
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -1949,11 +1957,11 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/alienfacility/lab)
 "Ds" = (
+/obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/hatch{
-	name = "maintenance";
+	name = "Maintenance";
 	dir = 4
 	},
-/obj/machinery/door/firedoor,
 /turf/open/floor/plating{
 	initial_gas_mix = "LAVALAND_ATMOS"
 	},
@@ -1989,7 +1997,7 @@
 	},
 /obj/machinery/door/airlock/hatch{
 	dir = 4;
-	name = "surgery access"
+	name = "Lab Access"
 	},
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -2137,7 +2145,7 @@
 "FA" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/door/airlock/hatch{
-	name = "maintenance"
+	name = "Maintenance"
 	},
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -2364,7 +2372,7 @@
 "Jt" = (
 /obj/machinery/door/airlock/hatch{
 	dir = 1;
-	name = "bathroom"
+	name = "Bathroom"
 	},
 /turf/open/floor/plasteel/freezer,
 /area/ruin/whitesands/alienfacility/dorm)
@@ -2591,12 +2599,12 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/machinery/door/airlock/hatch{
-	name = "maintenance";
-	dir = 4
-	},
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/door/airlock/hatch{
+	name = "Maintenance";
 	dir = 4
 	},
 /turf/open/floor/plating{
@@ -2820,14 +2828,14 @@
 /turf/open/floor/plasteel,
 /area/ruin/whitesands/alienfacility)
 "SH" = (
-/obj/machinery/door/airlock/hatch{
-	name = "maintenance"
-	},
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/door/airlock/hatch{
+	name = "Maintenance"
+	},
 /turf/open/floor/plating{
 	initial_gas_mix = "LAVALAND_ATMOS"
 	},
@@ -3923,7 +3931,7 @@ lk
 qF
 ml
 dM
-zZ
+jH
 mE
 UM
 YQ
@@ -3937,7 +3945,7 @@ da
 Qy
 UM
 mE
-zZ
+jH
 bR
 Vw
 th
@@ -3961,7 +3969,7 @@ lk
 qF
 ml
 dM
-zZ
+jH
 mE
 UM
 YQ
@@ -3975,7 +3983,7 @@ da
 YQ
 UM
 mE
-zZ
+jH
 bR
 Vw
 th
@@ -3999,7 +4007,7 @@ qt
 Xx
 Qw
 xa
-zZ
+jH
 mE
 dK
 Qy
@@ -4013,7 +4021,7 @@ da
 YQ
 dK
 mE
-zZ
+jH
 ST
 qC
 cX
@@ -4037,7 +4045,7 @@ lk
 qF
 aY
 dM
-zZ
+jH
 mE
 UM
 YQ
@@ -4075,7 +4083,7 @@ lk
 qF
 ml
 dM
-zZ
+jH
 mE
 UM
 YQ
@@ -4089,7 +4097,7 @@ da
 YQ
 UM
 mE
-zZ
+jH
 bR
 zD
 th
@@ -4208,7 +4216,7 @@ bR
 HI
 Gs
 Gs
-cM
+zZ
 Gs
 Gs
 Gs
