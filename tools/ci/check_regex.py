@@ -803,11 +803,10 @@ if __name__ == "__main__":
                     #Github actions annotations
                     if args.github_actions and matching != RESULT_OK:
                         for line_no in adds:
-                            output_write("::error file=%s,line=%i,title=%s::%s" % (
+                            output_write("::error file=%s,line=%i,title=Check Regex::%s" % (
                                 f,
                                 line_no,
-                                standard.message,
-                                diff_added_content[f][line_no]
+                                standard.message
                             ), to_stdout=True, to_file=False)
                     inner_prefix = prefix
                 if len(removes):
@@ -815,11 +814,10 @@ if __name__ == "__main__":
                     #Github actions annotations
                     if args.github_actions and matching != RESULT_OK:
                         for line_no in removes:
-                            output_write("::error file=%s,line=%i,title=%s::%s" % (
+                            output_write("::error file=%s,line=%i,title=Check Regex::%s" % (
                                 f,
                                 line_no,
-                                standard.message,
-                                diff_removed_content[f][line_no]
+                                standard.message
                             ), to_stdout=True, to_file=False)
                     inner_prefix = prefix
 
