@@ -71,6 +71,8 @@
 
 /obj/structure/closet/update_icon()
 	. = ..()
+	if (istype(src, /obj/structure/closet/supplypod))
+		return
 
 	layer = opened ? BELOW_OBJ_LAYER : OBJ_LAYER
 
@@ -340,6 +342,11 @@
 			var/mob/living/L = O
 			if(!issilicon(L))
 				L.Paralyze(40)
+			if(istype(src, /obj/structure/closet/supplypod/extractionpod))
+				O.forceMove(src)
+			else
+				O.forceMove(T)
+				close()
 			O.forceMove(T)
 			close()
 	else
