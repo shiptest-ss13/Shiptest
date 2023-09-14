@@ -55,7 +55,7 @@
 	RegisterSignal(src, COMSIG_ATOM_CANREACH, .proc/canreach_react)
 
 /obj/structure/closet/LateInitialize()
-	take_contents()
+	take_contents(src)
 	return ..()
 
 /obj/structure/closet/proc/canreach_react(datum/source, list/next)
@@ -159,8 +159,8 @@
 	if(throwing)
 		throwing.finalize(FALSE)
 
-/obj/structure/closet/proc/take_contents()
-	var/atom/L = drop_location()
+/obj/structure/closet/proc/take_contents(atom/movable/holder)
+	var/atom/L = holder.drop_location()
 	for(var/atom/movable/AM in L)
 		if(istype(AM, /obj/effect))	//WS edit, closets and crates do not eat your lamp
 			continue
@@ -227,7 +227,7 @@
 /obj/structure/closet/proc/close(mob/living/user)
 	if(!opened || !can_close(user))
 		return FALSE
-	take_contents()
+	take_contents(src)
 	playsound(loc, close_sound, close_sound_volume, TRUE, -3)
 	climb_time = initial(climb_time)
 	opened = FALSE
