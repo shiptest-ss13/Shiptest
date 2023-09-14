@@ -194,23 +194,11 @@
 /area/ship/engineering/atmospherics)
 "bO" = (
 /obj/structure/table/reinforced,
-/obj/item/paper_bin{
-	pixel_x = 6;
-	pixel_y = 2
-	},
-/obj/item/pen{
-	pixel_y = 4;
-	pixel_x = 5
-	},
 /obj/item/flashlight/lamp{
 	pixel_x = -9;
 	pixel_y = 13
 	},
-/obj/item/stamp/head_of_personnel{
-	pixel_x = -7
-	},
-/obj/item/folder/red,
-/obj/item/folder/blue,
+/obj/machinery/recharger,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/crew/crewthree)
 "bR" = (
@@ -325,27 +313,26 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "dl" = (
-/obj/structure/closet/secure_closet{
-	anchored = 1;
-	can_be_unanchored = 1;
-	icon_state = "sec";
-	name = "equipment locker";
-	req_access_txt = "1"
-	},
 /obj/structure/sign/poster/official/obey{
 	pixel_x = -30
 	},
-/obj/item/melee/baton/loaded,
-/obj/item/restraints/handcuffs,
-/obj/item/restraints/handcuffs,
-/obj/item/stock_parts/cell/gun,
-/obj/item/stock_parts/cell/gun/mini,
-/obj/item/stock_parts/cell/gun/mini,
-/obj/item/ammo_box/magazine/co9mm,
-/obj/item/ammo_box/magazine/co9mm,
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
+/obj/structure/table/reinforced,
+/obj/item/paper_bin{
+	pixel_x = 6;
+	pixel_y = 2
+	},
+/obj/item/pen{
+	pixel_y = 4;
+	pixel_x = 5
+	},
+/obj/item/folder/blue,
+/obj/item/stamp/head_of_personnel{
+	pixel_x = -7
+	},
+/obj/item/folder/red,
 /turf/open/floor/wood,
 /area/ship/crew/crewthree)
 "dp" = (
@@ -893,9 +880,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
-	},
-/obj/structure/chair{
-	dir = 8
 	},
 /obj/effect/turf_decal/corner/opaque/ntblue/diagonal,
 /obj/effect/turf_decal/corner/opaque/neutral/diagonal{
@@ -1489,15 +1473,10 @@
 /area/ship/medical)
 "kL" = (
 /obj/structure/table/reinforced,
-/obj/item/reagent_containers/food/condiment/saltshaker{
-	pixel_y = 6;
-	pixel_x = -8
-	},
-/obj/item/reagent_containers/food/condiment/peppermill{
-	pixel_x = -2;
+/obj/effect/turf_decal/corner/opaque/green/mono,
+/obj/machinery/reagentgrinder{
 	pixel_y = 11
 	},
-/obj/effect/turf_decal/corner/opaque/green/mono,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen/kitchen)
 "kM" = (
@@ -2313,7 +2292,6 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
-/obj/structure/chair,
 /obj/effect/turf_decal/corner/opaque/ntblue/diagonal,
 /obj/effect/turf_decal/corner/opaque/neutral/diagonal{
 	dir = 4
@@ -2618,8 +2596,6 @@
 /turf/closed/wall/r_wall,
 /area/ship/engineering/engine)
 "um" = (
-/obj/structure/table,
-/obj/item/trash/cheesie,
 /obj/effect/turf_decal/corner/opaque/ntblue/diagonal,
 /obj/effect/turf_decal/corner/opaque/neutral/diagonal{
 	dir = 4
@@ -2636,6 +2612,9 @@
 	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1
 	},
 /turf/open/floor/wood,
 /area/ship/crew/crewthree)
@@ -2675,6 +2654,14 @@
 /obj/effect/turf_decal/corner/opaque/white/mono,
 /obj/structure/table/reinforced,
 /obj/item/kitchen/rollingpin,
+/obj/item/reagent_containers/food/condiment/peppermill{
+	pixel_x = -2;
+	pixel_y = 11
+	},
+/obj/item/reagent_containers/food/condiment/saltshaker{
+	pixel_y = 6;
+	pixel_x = -8
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen/kitchen)
 "uG" = (
@@ -2840,9 +2827,6 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen/kitchen)
 "vO" = (
-/obj/structure/chair{
-	dir = 1
-	},
 /obj/effect/turf_decal/corner/opaque/ntblue/diagonal,
 /obj/effect/turf_decal/corner/opaque/neutral/diagonal{
 	dir = 4
@@ -2850,6 +2834,8 @@
 /obj/structure/sign/poster/official/random{
 	pixel_x = -30
 	},
+/obj/structure/table,
+/obj/item/trash/cheesie,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "vP" = (
@@ -3299,6 +3285,11 @@
 /area/ship/crew/toilet)
 "zK" = (
 /obj/machinery/light/directional/east,
+/obj/structure/table,
+/obj/machinery/cell_charger,
+/obj/item/stock_parts/cell/high/empty,
+/obj/item/stock_parts/cell/high/empty,
+/obj/item/stock_parts/cell/high/empty,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
 "zM" = (
@@ -4071,6 +4062,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
+/obj/item/clipboard,
 /turf/open/floor/wood,
 /area/ship/crew/office)
 "Gs" = (
@@ -5002,6 +4994,25 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
+"PJ" = (
+/obj/structure/table/reinforced,
+/obj/effect/turf_decal/corner/opaque/neutral{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/opaque/ntblue,
+/obj/effect/turf_decal/corner/opaque/neutral/half{
+	dir = 1
+	},
+/obj/item/reagent_containers/food/condiment/saltshaker{
+	pixel_y = 6;
+	pixel_x = -8
+	},
+/obj/item/reagent_containers/food/condiment/peppermill{
+	pixel_x = -2;
+	pixel_y = 11
+	},
+/turf/open/floor/plasteel,
+/area/ship/crew/canteen/kitchen)
 "Qo" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -5069,20 +5080,12 @@
 /turf/open/floor/wood,
 /area/ship/crew/office)
 "QU" = (
-/obj/structure/table,
 /obj/effect/turf_decal/corner/opaque/ntblue/diagonal,
 /obj/effect/turf_decal/corner/opaque/neutral/diagonal{
 	dir = 4
 	},
-/obj/item/reagent_containers/food/condiment/peppermill{
-	pixel_x = -2;
-	pixel_y = 11
-	},
-/obj/item/reagent_containers/food/condiment/saltshaker{
-	pixel_y = 6;
-	pixel_x = -8
-	},
 /obj/machinery/newscaster/directional/west,
+/obj/structure/chair,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "QY" = (
@@ -5600,10 +5603,21 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen/kitchen)
 "Vq" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 1
+/obj/structure/closet/secure_closet{
+	anchored = 1;
+	can_be_unanchored = 1;
+	icon_state = "sec";
+	name = "equipment locker";
+	req_access_txt = "1"
 	},
-/obj/machinery/airalarm/directional/south,
+/obj/item/melee/baton/loaded,
+/obj/item/restraints/handcuffs,
+/obj/item/restraints/handcuffs,
+/obj/item/stock_parts/cell/gun,
+/obj/item/stock_parts/cell/gun/mini,
+/obj/item/stock_parts/cell/gun/mini,
+/obj/item/ammo_box/magazine/co9mm,
+/obj/item/ammo_box/magazine/co9mm,
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 1
 	},
@@ -6594,7 +6608,7 @@ WR
 SG
 OT
 wX
-Hd
+PJ
 Pl
 if
 UI
