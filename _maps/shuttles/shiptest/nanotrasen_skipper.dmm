@@ -328,11 +328,18 @@
 	pixel_y = 4;
 	pixel_x = 5
 	},
-/obj/item/folder/blue,
-/obj/item/stamp/head_of_personnel{
-	pixel_x = -7
+/obj/item/folder/blue{
+	pixel_x = -8;
+	pixel_y = 7
 	},
-/obj/item/folder/red,
+/obj/item/stamp/head_of_personnel{
+	pixel_x = -7;
+	pixel_y = -3
+	},
+/obj/item/folder/red{
+	pixel_x = -8;
+	pixel_y = 11
+	},
 /turf/open/floor/wood,
 /area/ship/crew/crewthree)
 "dp" = (
@@ -2876,6 +2883,7 @@
 /area/ship/bridge)
 "wd" = (
 /obj/structure/table,
+/obj/item/stack/medical/gauze,
 /obj/item/storage/firstaid/regular,
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/medical)
@@ -3795,6 +3803,10 @@
 /obj/effect/turf_decal/corner/opaque/white/mono,
 /obj/structure/extinguisher_cabinet/directional/north,
 /obj/effect/decal/cleanable/food/flour,
+/obj/structure/sink/kitchen{
+	dir = 4;
+	pixel_x = -11
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen/kitchen)
 "Eb" = (
@@ -4664,7 +4676,21 @@
 "MG" = (
 /obj/effect/turf_decal/borderfloorwhite/full,
 /obj/structure/table,
-/obj/item/stack/medical/gauze,
+/obj/item/paper_bin{
+	pixel_x = 6;
+	pixel_y = 2
+	},
+/obj/item/pen{
+	pixel_y = 4;
+	pixel_x = 5
+	},
+/obj/item/folder/blue{
+	pixel_y = 11;
+	pixel_x = -8
+	},
+/obj/item/stamp/cmo{
+	pixel_x = -7
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "MH" = (
@@ -4762,18 +4788,23 @@
 	dir = 8
 	},
 /obj/structure/table,
+/obj/item/clipboard{
+	pixel_x = 6;
+	pixel_y = 6
+	},
+/obj/item/stamp{
+	pixel_x = 10
+	},
+/obj/item/stamp/denied{
+	pixel_x = 2
+	},
 /obj/item/flashlight/lamp{
 	pixel_x = -8;
 	pixel_y = 10
 	},
-/obj/item/stamp/denied{
-	pixel_x = -4
+/obj/item/folder{
+	pixel_x = -10
 	},
-/obj/item/stamp{
-	pixel_x = 4
-	},
-/obj/item/folder/blue,
-/obj/item/clipboard,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo/office)
 "Np" = (
