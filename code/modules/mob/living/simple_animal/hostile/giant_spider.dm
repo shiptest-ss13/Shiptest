@@ -116,12 +116,12 @@
 	melee_damage_lower = 5
 	melee_damage_upper = 10
 	poison_per_bite = 3
-	var/atom/movable/cocoon_target
+	var/datum/weakref/cocoon_target_ref
 	var/fed = 0
 	var/obj/effect/proc_holder/wrap/wrap
 	var/datum/action/innate/spider/lay_eggs/lay_eggs
 	var/datum/action/innate/spider/set_directive/set_directive
-	var/static/list/consumed_mobs = list() //the tags of mobs that have been consumed by nurse spiders to lay eggs
+	var/static/list/consumed_mobs = list() //the refs of mobs that have been consumed by nurse spiders to lay eggs
 	gold_core_spawnable = NO_SPAWN
 
 /mob/living/simple_animal/hostile/poison/giant_spider/nurse/Initialize()
@@ -137,6 +137,7 @@
 	RemoveAbility(wrap)
 	QDEL_NULL(lay_eggs)
 	QDEL_NULL(set_directive)
+	QDEL_NULL(wrap)
 	return ..()
 
 //broodmothers are the queen of the spiders, can send messages to all them and web faster. That rare round where you get a queen spider and turn your 'for honor' players into 'r6siege' players will be a fun one.
@@ -258,10 +259,10 @@
 	stop_automated_movement = FALSE
 	walk(src,0)
 
-/mob/living/simple_animal/hostile/poison/giant_spider/nurse/proc/GiveUp(C)
+/mob/living/simple_animal/hostile/poison/giant_spider/nurse/proc/GiveUp(mob/living/target)
 	if(busy == MOVING_TO_TARGET)
-		if(cocoon_target == C && get_dist(src,cocoon_target) > 1)
-			cocoon_target = null
+		if(cocoon_target_ref == WEAKREF(target) && get_dist(src, target) > 1)
+			cocoon_target_ref = null
 		busy = FALSE
 		stop_automated_movement = FALSE
 
@@ -272,7 +273,7 @@
 			//first, check for potential food nearby to cocoon
 			for(var/mob/living/C in can_see)
 				if(C.stat && !istype(C, /mob/living/simple_animal/hostile/poison/giant_spider) && !C.anchored)
-					cocoon_target = C
+					cocoon_target_ref = WEAKREF(C)
 					busy = MOVING_TO_TARGET
 					Goto(C, move_to_delay)
 					//give up if we can't reach them after 10 seconds
@@ -295,14 +296,17 @@
 							continue
 
 						if(isitem(O) || isstructure(O) || ismachinery(O))
-							cocoon_target = O
+							cocoon_target_ref = WEAKREF(O)
 							busy = MOVING_TO_TARGET
 							stop_automated_movement = 1
 							Goto(O, move_to_delay)
 							//give up if we can't reach them after 10 seconds
 							addtimer(CALLBACK(src, .proc/GiveUp, O), 10 SECONDS)
 
-		else if(busy == MOVING_TO_TARGET && cocoon_target)
+		else if(busy == MOVING_TO_TARGET && cocoon_target_ref)
+			var/mob/living/cocoon_target = cocoon_target_ref.resolve()
+			if(!cocoon_target)
+				return
 			if(get_dist(src, cocoon_target) <= 1)
 				cocoon()
 
@@ -311,6 +315,7 @@
 		stop_automated_movement = FALSE
 
 /mob/living/simple_animal/hostile/poison/giant_spider/nurse/proc/cocoon()
+	var/mob/living/cocoon_target = cocoon_target_ref?.resolve()
 	if(stat != DEAD && cocoon_target && !cocoon_target.anchored)
 		if(cocoon_target == src)
 			to_chat(src, "<span class='warning'>You can't wrap yourself!</span>")
@@ -333,8 +338,8 @@
 				var/obj/structure/spider/cocoon/C = new(cocoon_target.loc)
 				if(isliving(cocoon_target))
 					var/mob/living/L = cocoon_target
-					if(L.blood_volume && (L.stat != DEAD || !consumed_mobs[L.tag])) //if they're not dead, you can consume them anyway
-						consumed_mobs[L.tag] = TRUE
+					if(L.blood_volume && (L.stat != DEAD || !consumed_mobs[REF(L)])) //if they're not dead, you can consume them anyway
+						consumed_mobs[REF(L)] = TRUE
 						fed++
 						lay_eggs.UpdateButtonIcon(TRUE)
 						visible_message("<span class='danger'>[src] sticks a proboscis into [L] and sucks a viscous substance out.</span>","<span class='notice'>You suck the nutriment out of [L], feeding you enough to lay a cluster of eggs.</span>")
@@ -395,6 +400,8 @@
 	action_icon = 'icons/mob/actions/actions_animal.dmi'
 	action_icon_state = "wrap_0"
 	action_background_icon_state = "bg_alien"
+	//Set this to false since we're our own action, for some reason
+	has_action = FALSE
 
 /obj/effect/proc_holder/wrap/Initialize()
 	. = ..()
@@ -435,7 +442,7 @@
 		var/atom/movable/target_atom = target
 		if(target_atom.anchored)
 			return
-		user.cocoon_target = target_atom
+		user.cocoon_target_ref = WEAKREF(target_atom)
 		INVOKE_ASYNC(user, /mob/living/simple_animal/hostile/poison/giant_spider/nurse/.proc/cocoon)
 		remove_ranged_ability()
 		return TRUE

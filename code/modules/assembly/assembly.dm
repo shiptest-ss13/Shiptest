@@ -42,6 +42,10 @@
 /obj/item/assembly/proc/on_entered(datum/source, atom/movable/AM)
 	SIGNAL_HANDLER
 
+/obj/item/assembly/Destroy()
+	holder = null
+	return ..()
+
 /obj/item/assembly/get_part_rating()
 	return 1
 

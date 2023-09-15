@@ -260,6 +260,7 @@ SUBSYSTEM_DEF(mapping)
 			S.space_spawn = TRUE
 
 		shuttle_templates[S.file_name] = S
+		map_templates[S.file_name] = S
 #undef CHECK_STRING_EXISTS
 #undef CHECK_LIST_EXISTS
 

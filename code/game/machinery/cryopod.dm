@@ -175,6 +175,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 17)
 
 /obj/machinery/cryopod/Destroy()
 	linked_ship?.spawn_points -= src
+	linked_ship = null
 	return ..()
 
 /obj/machinery/cryopod/LateInitialize()

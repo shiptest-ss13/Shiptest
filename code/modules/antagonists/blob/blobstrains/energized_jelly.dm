@@ -22,7 +22,7 @@
 	B.take_damage(damage, BURN, "energy")
 
 /datum/reagent/blob/energized_jelly
-	name = "Energized Jelly"
+	name = "Blob Energized Jelly"
 	taste_description = "gelatin"
 	color = "#EFD65A"
 

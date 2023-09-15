@@ -356,7 +356,7 @@
 			if("parrot")
 				M.change_mob_type(/mob/living/simple_animal/parrot , null, null, delmob)
 			if("polyparrot")
-				M.change_mob_type(/mob/living/simple_animal/parrot/Poly , null, null, delmob)
+				M.change_mob_type(/mob/living/simple_animal/parrot/Polly , null, null, delmob)
 			if("constructjuggernaut")
 				M.change_mob_type(/mob/living/simple_animal/hostile/construct/juggernaut , null, null, delmob)
 			if("constructartificer")

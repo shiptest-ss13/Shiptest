@@ -48,9 +48,13 @@
 	close_switchstates()
 	close_preview()
 	holder.player_details.post_login_callbacks -= li_cb
+	QDEL_NULL(li_cb)
 	holder = null
+	buttons.Cut()
 	QDEL_NULL(mode)
+	QDEL_NULL(modebutton)
 	QDEL_LIST(modeswitch_buttons)
+	QDEL_NULL(dirbutton)
 	QDEL_LIST(dirswitch_buttons)
 	return ..()
 
