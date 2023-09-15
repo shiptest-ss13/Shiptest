@@ -103,7 +103,7 @@ jobs:
       fail-fast: false
       matrix:
         major: [515]
-        minor: [1610, 1609]
+        minor: [1614]
     uses: ./.github/workflows/run_integration_tests.yml
     with:
       major: ${{ matrix.major }}
