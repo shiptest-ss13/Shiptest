@@ -306,9 +306,6 @@
 		new /obj/item/stack/rods(get_turf(loc), 2)
 	qdel(src)
 
-
-
-
 /obj/item/chair/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	if(attack_type == UNARMED_ATTACK && prob(hit_reaction_chance))
 		owner.visible_message("<span class='danger'>[owner] fends off [attack_text] with [src]!</span>")
@@ -326,6 +323,12 @@
 			if(C.health < C.maxHealth*0.5)
 				C.Paralyze(20)
 		smash(user)
+
+/obj/structure/chair/join_player_here(mob/M)
+	// Placing a mob in a chair will attempt to buckle it, or else fall back to default.
+	if (isliving(M) && buckle_mob(M, FALSE, FALSE))
+		return
+	..()
 
 /obj/item/chair/greyscale
 	material_flags = MATERIAL_ADD_PREFIX | MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS

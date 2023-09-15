@@ -268,7 +268,7 @@
 
 /datum/world_topic/manifest/Run(list/input)
 	. = list()
-	var/list/manifest = SSjob.get_manifest()
+	var/list/manifest = SSovermap.get_manifest()
 	for(var/department in manifest)
 		var/list/entries = manifest[department]
 		var/list/dept_entries = list()

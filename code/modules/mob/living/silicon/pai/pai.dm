@@ -90,6 +90,7 @@
 
 /mob/living/silicon/pai/Destroy()
 	QDEL_NULL(internal_instrument)
+	QDEL_NULL(laws)
 	if(cable)
 		QDEL_NULL(cable)
 	if (loc != card)

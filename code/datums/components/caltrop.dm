@@ -111,3 +111,5 @@
 /datum/component/caltrop/UnregisterFromParent()
 	if(ismovable(parent))
 		qdel(GetComponent(/datum/component/connect_loc_behalf))
+	else
+		UnregisterSignal(get_turf(parent), list(COMSIG_ATOM_ENTERED))

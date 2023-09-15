@@ -159,7 +159,7 @@
 			pellet_delta += radius * self_harm_radius_mult
 			for(var/i in 1 to radius * self_harm_radius_mult)
 				pew(body) // free shrapnel if it goes off in your hand, and it doesn't even count towards the absorbed. fun!
-		else if(!(body in bodies))
+		else if(!(LAZYISIN(bodies, body)))
 			martyrs += body // promoted from a corpse to a hero
 
 	for(var/M in martyrs)
@@ -217,7 +217,7 @@
 	P.original = target
 	P.fired_from = parent
 	P.firer = parent // don't hit ourself that would be really annoying
-	P.impacted = list(parent = TRUE) // don't hit the target we hit already with the flak
+	LAZYSET(P.impacted, parent, TRUE) // don't hit the target we hit already with the flak
 	P.suppressed = SUPPRESSED_VERY // set the projectiles to make no message so we can do our own aggregate message
 	P.preparePixelProjectile(target, parent)
 	RegisterSignal(P, COMSIG_PROJECTILE_SELF_ON_HIT, .proc/pellet_hit)
@@ -269,13 +269,13 @@
 /// Our grenade has moved, reset var/list/bodies so we're "on top" of any mobs currently on the tile
 /datum/component/pellet_cloud/proc/grenade_moved()
 	LAZYCLEARLIST(bodies)
-	for(var/mob/living/L in get_turf(parent))
-		RegisterSignal(L, COMSIG_PARENT_QDELETING, .proc/on_target_qdel, override=TRUE)
-		bodies += L
+	for(var/mob/living/new_mob in get_turf(parent))
+		RegisterSignal(new_mob, COMSIG_PARENT_QDELETING, .proc/on_target_qdel, override=TRUE)
+		LAZYADD(bodies, new_mob)
 
 /// Someone who was originally "under" the grenade has moved off the tile and is now eligible for being a martyr and "covering" it
 /datum/component/pellet_cloud/proc/grenade_uncrossed(datum/source, atom/movable/AM, direction)
-	bodies -= AM
+	LAZYREMOVE(bodies, AM)
 
 /// Our grenade or landmine or caseless shell or whatever tried deleting itself, so we intervene and nullspace it until we're done here
 /datum/component/pellet_cloud/proc/nullspace_parent()
@@ -288,5 +288,5 @@
 /datum/component/pellet_cloud/proc/on_target_qdel(atom/target)
 	UnregisterSignal(target, COMSIG_PARENT_QDELETING)
 	targets_hit -= target
-	bodies -= target
+	LAZYREMOVE(target, bodies)
 	purple_hearts -= target

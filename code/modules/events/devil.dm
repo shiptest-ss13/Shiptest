@@ -32,7 +32,7 @@
 	spawned_mobs += devil
 	message_admins("[ADMIN_LOOKUPFLW(devil)] has been made into a devil by an event.")
 	log_game("[key_name(devil)] was spawned as a devil by an event.")
-	var/datum/job/jobdatum = SSjob.GetJob("Assistant")
+	var/datum/job/jobdatum = new /datum/job/assistant()
 	devil.job = jobdatum.name
 	jobdatum.equip(devil)
 	return SUCCESSFUL_SPAWN
@@ -40,8 +40,6 @@
 
 /proc/create_event_devil(spawn_loc)
 	var/mob/living/carbon/human/new_devil = new(spawn_loc)
-	if(!spawn_loc)
-		SSjob.SendToLateJoin(new_devil)
 	var/datum/preferences/A = new() //Randomize appearance for the devil.
 	A.copy_to(new_devil)
 	new_devil.dna.update_dna_identity()
