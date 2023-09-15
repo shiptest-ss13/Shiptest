@@ -97,7 +97,7 @@
 
 		//mech spawners
 		/obj/effect/spawner/lootdrop/waste/mechwreck = 100,
-		/obj/effect/spawner/lootdrop/waste/mechwreck/rare = 20.1,
+		/obj/effect/spawner/lootdrop/waste/mechwreck/rare = 20,
 
 		//decals and fluff structures
 		/obj/effect/spawner/lootdrop/waste/trash = 1800,

@@ -7,9 +7,12 @@
 		validate_chance(biome.feature_spawn_list, "feature spawn", biome_type)
 
 /datum/unit_test/biome_lists/proc/validate_chance(list/to_check, name, biome)
-	if(!islist(to_check))
+	if(to_check && !islist(to_check))
 		TEST_FAIL("Biome [biome] has invalid [name] list")
 	for(var/type in to_check)
 		var/value = to_check[type]
+		if(!value)
+			TEST_FAIL("Biome [biome] has no [name] weight for [type]")
+			return
 		if(!isnum(value) || value < 1 || value != round(value))
 			TEST_FAIL("Biome [biome] has invalid [name] chance for [type] ([value])")
