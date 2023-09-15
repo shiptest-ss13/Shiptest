@@ -381,7 +381,7 @@
 			tocook = target
 			RegisterSignal(tocook, COMSIG_PARENT_QDELETING, PROC_REF(clear_cooking))
 			target.add_overlay(ration_overlay)
-			addtimer(CALLBACK(src, .proc/cook), 100)
+			addtimer(CALLBACK(src, PROC_REF(cook)), 100)
 			visible_message("<span class='notice'>\The [target] rapidly begins cooking...</span>")
 			playsound(src, 'sound/items/cig_light.ogg', 50, 1)
 			moveToNullspace()

@@ -297,7 +297,7 @@
 		startExitSequence(src)
 	else
 		if (reversing)
-			addtimer(CALLBACK(src, .proc/SetReverseIcon), delays[POD_LEAVING]/2) //Finish up the pod's duties after a certain amount of time
+			addtimer(CALLBACK(src, PROC_REF(SetReverseIcon)), delays[POD_LEAVING]/2) //Finish up the pod's duties after a certain amount of time
 		if(!stay_after_drop) // Departing should be handled manually
 			addtimer(CALLBACK(src, PROC_REF(startExitSequence), holder), delays[POD_LEAVING]*(4/5)) //Finish up the pod's duties after a certain amount of time
 
@@ -320,7 +320,7 @@
 	take_contents(holder)
 	playsound(holder, close_sound, soundVolume*0.75, TRUE, -3)
 	holder.setClosed()
-	addtimer(CALLBACK(src, .proc/preReturn, holder), delays[POD_LEAVING] * 0.2) //Start to leave a bit after closing for cinematic effect
+	addtimer(CALLBACK(src, PROC_REF(preReturn), holder), delays[POD_LEAVING] * 0.2) //Start to leave a bit after closing for cinematic effect
 
 /obj/structure/closet/supplypod/take_contents(atom/movable/holder)
 	var/turf/turf_underneath = holder.drop_location()
@@ -398,7 +398,7 @@
 	animate(holder, alpha = 0, time = 8, easing = QUAD_EASING|EASE_IN, flags = ANIMATION_PARALLEL)
 	animate(holder, pixel_z = 400, time = 10, easing = QUAD_EASING|EASE_IN, flags = ANIMATION_PARALLEL) //Animate our rising pod
 
-	addtimer(CALLBACK(src, .proc/handleReturnAfterDeparting, holder), 15) //Finish up the pod's duties after a certain amount of time
+	addtimer(CALLBACK(src, PROC_REF(handleReturnAfterDeparting), holder), 15) //Finish up the pod's duties after a certain amount of time
 
 /obj/structure/closet/supplypod/setOpened() //Proc exists here, as well as in any atom that can assume the role of a "holder" of a supplypod. Check the open_pod() proc for more details
 	opened = TRUE
@@ -618,7 +618,7 @@
 		smoke_part.pixel_y = abs(cos(rotation))*32 * i
 		smoke_part.filters += filter(type = "blur", size = 4)
 		var/time = (pod.delays[POD_FALLING] / length(smoke_effects))*(length(smoke_effects)-i)
-		addtimer(CALLBACK(smoke_part, /obj/effect/supplypod_smoke/.proc/drawSelf, i), time, TIMER_CLIENT_TIME) //Go onto the last step after a very short falling animation
+		addtimer(CALLBACK(smoke_part, TYPE_PROC_REF(/obj/effect/supplypod_smoke, drawSelf), i), time, TIMER_CLIENT_TIME) //Go onto the last step after a very short falling animation
 		QDEL_IN(smoke_part, pod.delays[POD_FALLING] + 35)
 
 /obj/effect/pod_landingzone/proc/drawSmoke()

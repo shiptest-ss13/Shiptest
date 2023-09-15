@@ -211,7 +211,7 @@
 			if (toner_cartridge.charges - PAPER_TONER_USE < 0)
 				to_chat(usr, span_warning("There is not enough toner in [src] to print the form, please replace the cartridge."))
 				return FALSE
-			do_copy_loop(CALLBACK(src, .proc/make_blank_print), usr)
+			do_copy_loop(CALLBACK(src, PROC_REF(make_blank_print)), usr)
 			var/obj/item/paper/printblank = new /obj/item/paper (loc)
 			var/printname = params["name"]
 			var/list/printinfo
