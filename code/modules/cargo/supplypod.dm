@@ -43,7 +43,7 @@
 	var/openingSound //Admin sound to play when the pod opens
 	var/leavingSound //Admin sound to play when the pod leaves
 	var/soundVolume = 80 //Volume to play sounds at. Ignores the cap
-	var/bay //Used specifically for the centcom_podlauncher datum. Holds the current bay the user is launching objects from. Bays are specific rooms on the centcom map.
+	var/area/bay //Used specifically for the centcom_podlauncher datum. Holds the current bay the user is launching objects from. Bays are specific rooms on the centcom map.
 	var/list/explosionSize = list(0,0,2,3)
 	var/stay_after_drop = FALSE
 	var/specialised = FALSE // It's not a general use pod for cargo/admin use
@@ -549,6 +549,9 @@
 
 /obj/effect/pod_landingzone/Initialize(mapload, podParam, single_order = null, clientman)
 	. = ..()
+	if(!podParam)
+		stack_trace("Pod landingzone created with no pod")
+		return INITIALIZE_HINT_QDEL
 	if (ispath(podParam)) //We can pass either a path for a pod (as expressconsoles do), or a reference to an instantiated pod (as the centcom_podlauncher does)
 		podParam = new podParam() //If its just a path, instantiate it
 	pod = podParam

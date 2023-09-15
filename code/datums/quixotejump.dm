@@ -6,13 +6,13 @@
 	var/charges = 3
 	var/max_charges = 3
 	var/charge_rate = 60 //3 seconds
-	var/mob/living/carbon/human/holder
+	var/datum/weakref/holder_ref
 	var/dash_sound = 'sound/magic/blink.ogg'
 	var/beam_effect = "blur"
 
 /datum/action/innate/quixotejump/Grant(mob/user)
 	. = ..()
-	holder = user
+	holder_ref = WEAKREF(user)
 
 /datum/action/innate/quixotejump/IsAvailable()
 	if(charges > 0)
@@ -21,11 +21,17 @@
 		return FALSE
 
 /datum/action/innate/quixotejump/proc/charge()
+	var/mob/living/carbon/human/holder = holder_ref.resolve()
+	if(isnull(holder))
+		return
 	charges = clamp(charges + 1, 0, max_charges)
 	holder.update_action_buttons_icon()
 	to_chat(holder, "<span class='notice'>Quixote dash mechanisms now have [charges]/[max_charges] charges.</span>")
 
 /datum/action/innate/quixotejump/Activate()
+	var/mob/living/carbon/human/holder = holder_ref.resolve()
+	if(isnull(holder))
+		return
 	if(!charges)
 		to_chat(holder, "<span class='warning'>Quixote dash mechanisms are still recharging. Please standby.</span>")
 		return

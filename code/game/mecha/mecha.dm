@@ -171,29 +171,40 @@
 	for(var/obj/item/mecha_parts/mecha_equipment/E in equipment)
 		E.detach(loc)
 		qdel(E)
-	if(cell)
-		qdel(cell)
-	if(scanmod)
-		qdel(scanmod)
-	if(capacitor)
-		qdel(capacitor)
-	if(internal_tank)
-		qdel(internal_tank)
 	if(AI)
 		AI.gib() //No wreck, no AI to recover
+		AI = null
 	STOP_PROCESSING(SSobj, src)
 	GLOB.poi_list.Remove(src)
 	equipment.Cut()
-	cell = null
-	scanmod = null
-	capacitor = null
-	internal_tank = null
+
+	for(var/datum/atom_hud/data/diagnostic/diag_hud in GLOB.huds)
+		diag_hud.remove_from_hud(src)
+
+	QDEL_NULL(cell)
+	QDEL_NULL(scanmod)
+	QDEL_NULL(capacitor)
+	QDEL_NULL(internal_tank)
+	QDEL_NULL(spark_system)
+	QDEL_NULL(smoke_system)
+	QDEL_NULL(radio)
+
+	QDEL_NULL(eject_action)
+	QDEL_NULL(internals_action)
+	QDEL_NULL(cycle_action)
+	QDEL_NULL(lights_action)
+	QDEL_NULL(stats_action)
+	QDEL_NULL(defense_action)
+	QDEL_NULL(overload_action)
+	QDEL_NULL(smoke_system)
+	QDEL_NULL(smoke_action)
+	QDEL_NULL(zoom_action)
+	QDEL_NULL(switch_damtype_action)
+	QDEL_NULL(phasing_action)
+	QDEL_NULL(strafing_action)
+
 	assume_air(cabin_air)
-	cabin_air = null
-	qdel(spark_system)
-	spark_system = null
-	qdel(smoke_system)
-	smoke_system = null
+	QDEL_NULL(cabin_air)
 
 	GLOB.mechas_list -= src //global mech list
 	return ..()

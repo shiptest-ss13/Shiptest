@@ -16,6 +16,7 @@
 	light_range = 15
 	light_color = COLOR_RED
 	gender = FEMALE
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | FREEZE_PROOF
 
 /obj/singularity/narsie/large
 	name = "Nar'Sie"

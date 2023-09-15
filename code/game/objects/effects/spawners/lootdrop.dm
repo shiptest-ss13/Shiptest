@@ -1251,6 +1251,7 @@
 	))
 	return ..()
 
+
 //random RND imprinter/protolathe board spawners. Do not use on maps without a good reason
 /obj/effect/spawner/lootdrop/randomprotolathe
 	name = "random departmental protolathe"
@@ -1261,7 +1262,7 @@
 		/obj/item/circuitboard/machine/protolathe/department/medical,
 		/obj/item/circuitboard/machine/protolathe/department/science,
 		/obj/item/circuitboard/machine/protolathe/department/security
-	)
+    )
 
 /obj/effect/spawner/lootdrop/randomimprinter
 	name = "random departmental circuit imprinter"
@@ -1272,7 +1273,7 @@
 		/obj/item/circuitboard/machine/circuit_imprinter/department/med,
 		/obj/item/circuitboard/machine/circuit_imprinter/department/science,
 		/obj/item/circuitboard/machine/circuit_imprinter/department/sec
-	)
+    )
 
 /obj/effect/spawner/lootdrop/randomtechfab
 	name = "random departmental techfab"
@@ -1284,4 +1285,29 @@
 		/obj/item/circuitboard/machine/techfab/department/medical,
 		/obj/item/circuitboard/machine/techfab/department/science,
 		/obj/item/circuitboard/machine/techfab/department/security
+    )
+   
+/obj/effect/spawner/lootdrop/ration
+	loot = list (
+	/obj/item/storage/ration/vegan_chili = 5,
+	/obj/item/storage/ration/shredded_beef = 5,
+	/obj/item/storage/ration/pork_spaghetti = 5,
+	/obj/item/storage/ration/fried_fish = 5,
+	/obj/item/storage/ration/beef_strips = 5,
+	/obj/item/storage/ration/chili_macaroni = 5,
+	/obj/item/storage/ration/chicken_wings_hot_sauce = 5,
+	/obj/item/storage/ration/fish_stew = 5,
+	/obj/item/storage/ration/lemon_pepper_chicken = 5,
+	/obj/item/storage/ration/sausage_peppers_onions = 5,
+	/obj/item/storage/ration/pork_dumplings_chili_sauce = 5,
+	/obj/item/storage/ration/battered_fish_sticks = 5,
+	/obj/item/storage/ration/assorted_salted_offal = 5,
+	/obj/item/storage/ration/maple_pork_sausage_patty = 5,
+	/obj/item/storage/ration/pepper_jack_beef_patty = 5,
+	/obj/item/storage/ration/beef_goulash = 5,
+	/obj/item/storage/ration/pepperoni_pizza_slice = 5,
+	/obj/item/storage/ration/blackened_calamari = 5,
+	/obj/item/storage/ration/elbow_macaroni = 5,
+	/obj/item/storage/ration/cheese_pizza_slice = 5,
+	/obj/item/storage/ration/crayons
 	)

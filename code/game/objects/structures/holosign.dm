@@ -85,7 +85,7 @@
 	max_integrity = 20
 	var/allow_walk = TRUE //can we pass through it on walk intent
 
-/obj/structure/holosign/barrier/CanAllowThrough(atom/movable/mover, turf/target)
+/obj/structure/holosign/barrier/CanAllowThrough(atom/movable/mover, border_dir)
 	. = ..()
 	if(.)
 		return
@@ -104,7 +104,7 @@
 	countdown_color = "#FCFF00"
 	lifespan = 2 MINUTES
 
-/obj/structure/holosign/barrier/wetsign/CanAllowThrough(atom/movable/mover, turf/target)
+/obj/structure/holosign/barrier/wetsign/CanAllowThrough(atom/movable/mover, border_dir)
 	. = ..()
 	if(iscarbon(mover))
 		var/mob/living/carbon/C = mover
@@ -164,7 +164,7 @@
 	. = ..()
 	. += "<span class='notice'>The biometric scanners are <b>[force_allaccess ? "off" : "on"]</b>.</span>"
 
-/obj/structure/holosign/barrier/medical/CanAllowThrough(atom/movable/mover, turf/target)
+/obj/structure/holosign/barrier/medical/CanAllowThrough(atom/movable/mover, border_dir)
 	. = ..()
 	if(force_allaccess)
 		return TRUE
@@ -193,7 +193,7 @@
 	return TRUE
 
 /obj/structure/holosign/barrier/medical/attack_hand(mob/living/user)
-	if(CanPass(user) && user.a_intent == INTENT_HELP)
+	if(user.a_intent == INTENT_HELP && CanPass(user, get_dir(src, user)))
 		force_allaccess = !force_allaccess
 		to_chat(user, "<span class='warning'>You [force_allaccess ? "deactivate" : "activate"] the biometric scanners.</span>") //warning spans because you can make the station sick!
 	else
