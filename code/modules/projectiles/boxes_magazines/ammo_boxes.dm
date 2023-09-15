@@ -82,7 +82,7 @@
 
 /obj/item/ammo_box/c38/match
 	name = "speed loader (.38 match)"
-	desc = "A 6-round speed loader for quickly reloading .38 special revolvers. These match rounds travel faster, perform better against armor, and can ricochet off targets.
+	desc = "A 6-round speed loader for quickly reloading .38 special revolvers. These match rounds travel faster, perform better against armor, and can ricochet off targets."
 	ammo_type = /obj/item/ammo_casing/c38/match
 
 /obj/item/ammo_box/c38/match/bouncy

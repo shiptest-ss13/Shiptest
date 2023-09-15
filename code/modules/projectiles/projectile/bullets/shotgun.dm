@@ -59,9 +59,9 @@
 
 /obj/projectile/bullet/pellet
 	///How much damage is subtracted per tile?
-	var/tile_dropoff = (damage/10) //Standard of 10% per tile
+	var/tile_dropoff = 1 //Standard of 10% per tile
 	///How much stamina damage is subtracted per tile?
-	var/tile_dropoff_stamina = (stamina/10) //As above
+	var/tile_dropoff_stamina = 1.5 //As above
 
 	armour_penetration = -35
 
@@ -72,13 +72,16 @@
 /obj/projectile/bullet/pellet/rubbershot
 	name = "rubbershot pellet"
 	damage = 2.5
+	tile_dropoff = 0.15
 	stamina = 15
 	armour_penetration = -70
 
 /obj/projectile/bullet/pellet/rubbershot/incapacitate
 	name = "incapacitating pellet"
 	damage = 1
+	tile_dropoff = 0.1
 	stamina = 6
+	tile_dropoff_stamina = 0.6
 
 /obj/projectile/bullet/pellet/Range() //10% loss per tile = max range of 10, generally
 	..()
@@ -91,6 +94,7 @@
 
 /obj/projectile/bullet/pellet/improvised
 	damage = 6
+	tile_dropoff = 0.6
 
 // Mech Scattershot
 
@@ -102,3 +106,4 @@
 	name = "two-bore pellet"
 	damage = 30
 	armour_penetration = -25
+	tile_dropoff = 3
