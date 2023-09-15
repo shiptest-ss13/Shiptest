@@ -4,7 +4,7 @@
 
 /obj/item/gun/ballistic/automatic/smg/proto
 	name = "\improper Nanotrasen Saber SMG"
-	desc = "A prototype full auto 9mm submachine gun, designated 'SABR'. Has a threaded barrel for suppressors and a folding stock."
+	desc = "A prototype full-auto 9mm submachine gun, designated 'SABR'. Has a threaded barrel for suppressors and a folding stock."
 	icon_state = "saber"
 	actions_types = list()
 	mag_type = /obj/item/ammo_box/magazine/smgm9mm
@@ -48,7 +48,6 @@
 	name = "\improper Cobra 20"
 	desc = "An older model of SMG manufactured by Scarborough Arms, a predecessor to the military C-20 series. Chambered in .45. "
 	can_bayonet = FALSE
-
 	icon_state = "cobra20"
 	item_state = "cobra20"
 
@@ -71,7 +70,7 @@
 
 /obj/item/gun/ballistic/automatic/smg/wt550
 	name = "\improper WT-550 Automatic Rifle"
-	desc = "An outdated personal defence weapon. Uses 4.6x30mm rounds and is designated the WT-550 Automatic Rifle."
+	desc = "An outdated PDW, used centuries ago by Nanotrasen security elements. Uses 4.6x30mm rounds."
 	icon_state = "wt550"
 	item_state = "arg"
 	mag_type = /obj/item/ammo_box/magazine/wt550m9
@@ -106,10 +105,10 @@
 
 /obj/item/gun/ballistic/automatic/smg/vector
 	name = "\improper Vector carbine"
-	desc = "A police carbine based off of an SMG design, with most of the complex workings removed for reliability. Chambered in 9mm."
+	desc = "A police carbine based on a pre-Night of Fire SMG design. Most of the complex workings have been removed for reliability. Chambered in 9mm."
 	icon_state = "vector"
 	item_state = "vector"
-	mag_type = /obj/item/ammo_box/magazine/smgm9mm/rubbershot //you guys remember when the autorifle was chambered in 9mm
+	mag_type = /obj/item/ammo_box/magazine/smgm9mm/rubber //you guys remember when the autorifle was chambered in 9mm
 	bolt_type = BOLT_TYPE_LOCKING
 	mag_display = TRUE
 	weapon_weight = WEAPON_LIGHT
@@ -229,7 +228,7 @@
 
 /obj/item/gun/ballistic/automatic/smg/aks74u
 	name = "\improper AKS-74U"
-	desc = "A pre-FTL era carbine, the \"curio\" status of the weapon and its extreme fire rate make it perfect for bandits, pirates and colonists on a budget."
+	desc = "A pre-FTL era carbine, known to be incredibly cheap. Its extreme fire rate make it perfect for bandits, pirates and colonists on a budget."
 	fire_sound = 'sound/weapons/gun/rifle/shot.ogg'
 	icon_state = "aks74u"
 	lefthand_file = 'icons/mob/inhands/weapons/64x_guns_left.dmi'

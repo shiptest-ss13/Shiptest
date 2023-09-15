@@ -2,7 +2,7 @@
 
 /obj/item/ammo_casing/shotgun
 	name = "shotgun slug"
-	desc = "A 12 gauge lead slug."
+	desc = "A 12-gauge lead slug."
 	icon = 'icons/obj/ammo_shotshells.dmi'
 	icon_state = "slug"
 	caliber = "12ga"
@@ -15,7 +15,7 @@
 
 /obj/item/ammo_casing/shotgun/buckshot
 	name = "buckshot shell"
-	desc = "A 12 gauge buckshot shell."
+	desc = "A 12-gauge buckshot shell."
 	icon_state = "buckshot"
 	projectile_type = /obj/projectile/bullet/pellet/shotgun_buckshot
 	pellets = 8
@@ -54,7 +54,7 @@
 
 /obj/item/ammo_casing/shotgun/incapacitate
 	name = "custom incapacitating shot"
-	desc = "A shotgun casing filled with... something. used to incapacitate targets."
+	desc = "A shotgun casing filled with... something. Used to incapacitate targets."
 	icon_state = "bounty"
 	projectile_type = /obj/projectile/bullet/pellet/shotgun_incapacitate
 	pellets = 12//double the pellets, but half the stun power of each, which makes this best for just dumping right in someone's face.
@@ -70,7 +70,7 @@
 
 /obj/item/ammo_casing/shotgun/dart
 	name = "shotgun dart"
-	desc = "A dart for use in shotguns. Can be injected with up to 30 units of any chemical."
+	desc = "A dart for use in shotguns. Can be injected with up to thirty units of any chemical."
 	icon_state = "dart"
 	projectile_type = /obj/projectile/bullet/dart
 	var/reagent_amount = 30

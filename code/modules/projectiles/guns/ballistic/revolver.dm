@@ -1,6 +1,6 @@
 /obj/item/gun/ballistic/revolver
 	name = "\improper .357 revolver"
-	desc = "A weighty magnum revolver with a Scarborough Arms logo engraved on the barrel. Uses .357 ammo." //usually used by syndicates
+	desc = "A weighty revolver with a Scarborough Arms logo engraved on the barrel. Uses .357 ammo." //usually used by syndicates
 	icon_state = "revolver"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder
 	fire_sound = 'sound/weapons/gun/revolver/shot.ogg'
@@ -75,7 +75,7 @@
 
 /obj/item/gun/ballistic/revolver/detective
 	name = "\improper Colt Detective Special"
-	desc = "A compact and ridiculously old-fashioned law enforcement firearm. Uses .38 Special rounds."
+	desc = "A compact and ridiculously old-fashioned law enforcement firearm. Uses .38 special rounds."
 	fire_sound = 'sound/weapons/gun/revolver/shot.ogg'
 	icon_state = "detective"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev38
@@ -151,7 +151,7 @@
 
 /obj/item/gun/ballistic/revolver/nagant
 	name = "\improper Nagant revolver"
-	desc = "An ancient model of revolver with notoriously poor ergonomics, chambered in 7.62x38mmR. While its unique design prevents the use of speed loaders, it is the only revolver able to use a suppressor."
+	desc = "An ancient model of revolver with notoriously poor ergonomics, chambered in 7.62x38mmR. Uniquely able to be suppressed."
 	icon_state = "nagant"
 	can_suppress = TRUE
 
@@ -160,7 +160,7 @@
 
 /obj/item/gun/ballistic/revolver/hunting
 	name = "hunting revolver"
-	desc = "A massive, long-barreled revolver designed for hunting the most dangerous game. Can only be reloaded one cartridge at a time due to its reinforced frame. Uses .45-70 ammo."
+	desc = "A massive, long-barreled revolver designed for the most dangerous game. Can only be reloaded one cartridge at a time due to its reinforced frame. Uses .45-70 ammo."
 	icon_state = "hunting"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570
 
@@ -169,7 +169,7 @@
 
 /obj/item/gun/ballistic/revolver/russian
 	name = "\improper Russian revolver"
-	desc = "A revolver for particularly lethal drinking games. Uses .357 ammo, and has a mechanism requiring you to spin the chamber before each trigger pull. The origin of its name remains a subject of intense debate. "
+	desc = "A Solarian revolver for particularly lethal drinking games. It has a mechanism requiring you to spin the chamber before each trigger pull. Uses .357 ammo."
 	icon_state = "russianrevolver"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rus357
 	var/spun = FALSE
@@ -269,11 +269,11 @@
 
 /obj/item/gun/ballistic/revolver/srm
 	name = "SRM Standard Issue .357 Revolver"
-	desc = "A sturdy, powerful, and reliable revolver. Try not to find yourself on the other end."
+	desc = "A sturdy, powerful, and reliable revolver utilized by the Saint-Roumain Militia."
 
 /obj/item/gun/ballistic/revolver/pepperbox
 	name = "\improper pepperbox pistol"
-	desc = "An archaic precursor to revolver-type firearms, this gun was rendered completely obsolete millennia ago. How did it even end up here? While fast to fire, it is extremely inaccurate. Uses .357 ammo."
+	desc = "An archaic precursor to revolver-type firearms, this gun was rendered completely obsolete millennia ago. While fast to fire, it is extremely inaccurate. Uses .357 ammo."
 	icon_state = "pepperbox"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/pepperbox
 	spread = 20

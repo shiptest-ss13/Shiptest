@@ -427,7 +427,7 @@
 
 /obj/item/clothing/suit/armor/vest/bulletproof/solgov/Initialize()
 	. = ..()
-	allowed |= list(/obj/item/gun/ballistic/automatic/assualt/swiss_cheese, /obj/item/tank)
+	allowed |= list(/obj/item/gun/ballistic/automatic/assault/swiss_cheese, /obj/item/tank)
 
 /obj/item/clothing/suit/armor/vest/hop
 	name = "head of personnel's parade jacket"
