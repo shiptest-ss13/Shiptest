@@ -1,6 +1,7 @@
 /obj/projectile/bullet/slug
 	name = "12g shotgun slug"
 	damage = 40
+	speed = 0.5
 
 /obj/projectile/bullet/slug/beanbag
 	name = "beanbag slug"
@@ -11,6 +12,7 @@
 /obj/projectile/bullet/incendiary/shotgun
 	name = "incendiary slug"
 	damage = 20
+	speed = 0.5
 
 /obj/projectile/bullet/incendiary/shotgun/dragonsbreath
 	name = "dragonsbreath pellet"
@@ -64,6 +66,7 @@
 	var/tile_dropoff_stamina = 1.5 //As above
 
 	armour_penetration = -35
+	speed = 0.5
 
 /obj/projectile/bullet/pellet/buckshot
 	name = "buckshot pellet"
