@@ -659,19 +659,19 @@ GENE SCANNER
 		if (T.slime_mutation[3] == T.slime_mutation[4])
 			if (T.slime_mutation[2] == T.slime_mutation[1])
 				to_render += "\nPossible mutation: [T.slime_mutation[3]]\
-							  \nGenetic destability: [T.mutation_chance/2] % chance of mutation on splitting"
+							\nGenetic destability: [T.mutation_chance/2] % chance of mutation on splitting"
 			else
 				to_render += "\nPossible mutations: [T.slime_mutation[1]], [T.slime_mutation[2]], [T.slime_mutation[3]] (x2)\
-							  \nGenetic destability: [T.mutation_chance] % chance of mutation on splitting"
+							\nGenetic destability: [T.mutation_chance] % chance of mutation on splitting"
 		else
 			to_render += "\nPossible mutations: [T.slime_mutation[1]], [T.slime_mutation[2]], [T.slime_mutation[3]], [T.slime_mutation[4]]\
-						  \nGenetic destability: [T.mutation_chance] % chance of mutation on splitting"
+						\nGenetic destability: [T.mutation_chance] % chance of mutation on splitting"
 	if (T.cores > 1)
 		to_render += "\nMultiple cores detected"
 	to_render += "\nGrowth progress: [T.amount_grown]/[SLIME_EVOLUTION_THRESHOLD]"
 	if(T.effectmod)
 		to_render += "\n<span class='notice'>Core mutation in progress: [T.effectmod]</span>\
-					  \n<span class='notice'>Progress in core mutation: [T.applied] / [(SLIME_EXTRACT_CROSSING_REQUIRED * T.crossbreed_modifier)]</span>"
+					\n<span class='notice'>Progress in core mutation: [T.applied] / [(SLIME_EXTRACT_CROSSING_REQUIRED * T.crossbreed_modifier)]</span>"
 	to_chat(user, examine_block(to_render))
 
 

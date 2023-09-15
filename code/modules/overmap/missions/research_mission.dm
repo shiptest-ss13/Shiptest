@@ -56,7 +56,7 @@
 	if(!over_obj || !scanner.is_operational || scanner_port?.current_ship != servant)
 		return
 	num_current++
-
+/* commented out until ion storms aren't literal torture
 /datum/mission/research/ion
 	name = "Ion storm research mission"
 	desc = "We require data on the behavior of ion storms in the system for an ongoing study. \
@@ -64,7 +64,7 @@
 			It must be powered to collect the data."
 	value = 3500
 	objective_type = /datum/overmap/event/emp
-
+*/
 /datum/mission/research/meteor
 	name = "Asteroid field research mission"
 	desc = "We require data on the behavior of asteroid fields in the system for an ongoing study. \
@@ -127,7 +127,7 @@
 		set_is_operational(FALSE)
 		STOP_PROCESSING(SSmachines, src)
 		use_power = NO_POWER_USE
-	power_change() // calls update_icon(), makes sure we're powered
+	power_change() // calls update_appearance(), makes sure we're powered
 
 /obj/machinery/mission_scanner/update_icon_state()
 	. = ..()

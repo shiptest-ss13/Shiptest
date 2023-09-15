@@ -51,12 +51,12 @@
 	update_surrounding()
 
 /obj/structure/stairs/proc/update_surrounding()
-	update_icon()
+	update_appearance()
 	for(var/i in GLOB.cardinals)
 		var/turf/T = get_step(get_turf(src), i)
 		var/obj/structure/stairs/S = locate() in T
 		if(S)
-			S.update_icon()
+			S.update_appearance()
 
 /obj/structure/stairs/proc/on_exit(datum/source, atom/movable/leaving, direction)
 	SIGNAL_HANDLER
@@ -75,10 +75,8 @@
 	return ..()
 
 /obj/structure/stairs/update_icon_state()
-	if(isTerminator())
-		icon_state = "stairs_t"
-	else
-		icon_state = "stairs"
+	icon_state = "stairs[isTerminator() ? "_t" : null]"
+	return ..()
 
 /obj/structure/stairs/proc/stair_ascend(atom/movable/AM)
 	var/turf/checking = get_step_multiz(get_turf(src), UP)

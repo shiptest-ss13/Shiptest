@@ -28,7 +28,6 @@
 
 	var/static/list/loc_connections = list(
 		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
-		COMSIG_ATOM_EXITED = PROC_REF(on_uncrossed),
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
@@ -80,20 +79,18 @@
 		reagents.expose_temperature(exposed_temperature)
 	..()
 
-/obj/effect/decal/cleanable/proc/on_uncrossed(datum/source, atom/movable/O)
-	SIGNAL_HANDLER
-	return
-
 //Add "bloodiness" of this blood's type, to the human's shoes
 //This is on /cleanable because fuck this ancient mess
 /obj/effect/decal/cleanable/proc/on_entered(datum/source, atom/movable/AM)
 	SIGNAL_HANDLER
 	if(iscarbon(AM) && blood_state && bloodiness > 40)
 		SEND_SIGNAL(AM, COMSIG_STEP_ON_BLOOD, src)
-		update_icon()
+		update_appearance()
 
 /obj/effect/decal/cleanable/wash(clean_types)
 	..()
+	if(!(flags_1 & INITIALIZED_1))
+		return FALSE
 	qdel(src)
 	return TRUE
 

@@ -23,7 +23,6 @@
 	gain_text = "<span class='danger'>You feel your vigor slowly fading away.</span>"
 	lose_text = "<span class='notice'>You feel vigorous again.</span>"
 	medical_record_text = "Patient requires regular treatment for blood loss due to low production of blood."
-	species_lock = TRAIT_SPECIES_BLACKLIST(SPECIES_IPC, SPECIES_JELLYPERSON, SPECIES_PLASMAMAN, SPECIES_VAMPIRE) // These bad boys have NOBLOOD and are roundstart available.
 
 /datum/quirk/blooddeficiency/on_process()
 	var/mob/living/carbon/human/H = quirk_holder

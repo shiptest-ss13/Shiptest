@@ -1,8 +1,6 @@
 /datum/job/captain
 	name = "Captain"
 	auto_deadmin_role_flags = DEADMIN_POSITION_HEAD|DEADMIN_POSITION_SECURITY
-	total_positions = 1
-	spawn_positions = 1
 	minimal_player_age = 30
 	officer = TRUE
 	wiki_page = "Captain"
@@ -105,7 +103,7 @@
 	gloves = /obj/item/clothing/gloves/combat
 	shoes = /obj/item/clothing/shoes/combat
 	ears = /obj/item/radio/headset/syndicate/alt/captain
-	mask = /obj/item/clothing/mask/chameleon
+	mask = /obj/item/clothing/mask/gas/syndicate/voicechanger
 	l_pocket = /obj/item/melee/transforming/energy/sword/saber/red
 	suit = /obj/item/clothing/suit/armor/vest/capcarapace/syndicate
 	suit_store = /obj/item/gun/ballistic/revolver/mateba
@@ -192,7 +190,7 @@
 	satchel = /obj/item/storage/backpack/satchel/
 	duffelbag = /obj/item/storage/backpack/duffelbag
 	courierbag = /obj/item/storage/backpack/messenger
-	backpack_contents = list(/obj/item/gun/ballistic/automatic/pistol/commander=1, /obj/item/clothing/accessory/medal/gold/captain=1, /obj/item/spacecash/bundle/c10000=1)
+	backpack_contents = list(/obj/item/clothing/accessory/medal/gold/captain=1, /obj/item/spacecash/bundle/c10000=1)
 
 /datum/outfit/job/captain/inteq
 	name = "IRMG Vanguard (Inteq)"
@@ -212,7 +210,7 @@
 	accessory = null
 
 	courierbag = /obj/item/storage/backpack/messenger/inteq
-	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/ammo_box/magazine/co9mm=1, /obj/item/pda/captain)
+	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/pda/captain)
 
 /datum/outfit/job/captain/inteq/naked
 	name = "IRMG Vanguard (Inteq) (Naked)"
@@ -253,3 +251,21 @@
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/eyepatch
 
 	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/pda/captain)
+
+/datum/outfit/job/captain/nt/lp_lieutenant
+	name = "LP Lieutenant"
+
+	implants = list(/obj/item/implant/mindshield)
+	ears = /obj/item/radio/headset/nanotrasen/alt/captain
+	id = /obj/item/card/id/lplieu
+	belt = /obj/item/pda/captain
+	gloves = /obj/item/clothing/gloves/color/black
+	uniform = /obj/item/clothing/under/rank/security/head_of_security/alt/lp
+	alt_uniform = /obj/item/clothing/under/rank/security/head_of_security/alt/skirt/lp
+	dcoat = /obj/item/clothing/suit/jacket
+	shoes = /obj/item/clothing/shoes/jackboots
+	head = /obj/item/clothing/head/beret/command
+
+	satchel = /obj/item/storage/backpack/satchel/cap
+	duffelbag = /obj/item/storage/backpack/duffelbag/captain
+	courierbag = /obj/item/storage/backpack/messenger/com

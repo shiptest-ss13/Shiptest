@@ -56,9 +56,6 @@
 /datum/antagonist/wizard/proc/send_to_lair()
 	if(!owner || !owner.current)
 		return
-	if(!GLOB.wizardstart.len)
-		SSjob.SendToLateJoin(owner.current)
-		to_chat(owner, "HOT INSERTION, GO GO GO")
 	owner.current.forceMove(pick(GLOB.wizardstart))
 
 /datum/antagonist/wizard/proc/create_objectives()

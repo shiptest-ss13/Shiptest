@@ -63,11 +63,15 @@ GLOBAL_LIST_INIT(patrons, world.file2list("[global.config.directory]/patrons.txt
 	QDEL_IN(src, CREDIT_ROLL_SPEED)
 
 /atom/movable/screen/credit/proc/add_to_clients()
-	for(var/client/C in GLOB.clients)
-		if(C.prefs.show_credits)
+	for(var/client/C as anything in GLOB.clients)
+		if(C?.prefs.show_credits)
 			C.screen += src
 
 /atom/movable/screen/credit/Destroy()
+	for(var/client/C as anything in GLOB.clients)
+		if(!C)
+			continue
+		C.screen -= src
 	screen_loc = null
 	return ..()
 

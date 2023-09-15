@@ -45,10 +45,32 @@
 	var/color_mode = PHOTO_COLOR
 	/// Indicates whether the printer is currently busy copying or not.
 	var/busy = FALSE
+	/// Variable needed to determine the selected category of forms on Photocopier.js
+	var/category
 
 /obj/machinery/photocopier/Initialize()
 	. = ..()
 	toner_cartridge = new(src)
+
+/obj/machinery/photocopier/handle_atom_del(atom/deleting_atom)
+	if(deleting_atom == paper_copy)
+		paper_copy = null
+	if(deleting_atom == photo_copy)
+		photo_copy = null
+	if(deleting_atom == document_copy)
+		document_copy = null
+	if(deleting_atom == ass)
+		ass = null
+	if(deleting_atom == toner_cartridge)
+		toner_cartridge = null
+	return ..()
+
+/obj/machinery/photocopier/Destroy()
+	QDEL_NULL(paper_copy)
+	QDEL_NULL(photo_copy)
+	QDEL_NULL(toner_cartridge)
+	ass = null //the mob isn't actually contained and just referenced, no need to delete it.
+	return ..()
 
 /obj/machinery/photocopier/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
@@ -60,6 +82,18 @@
 	var/list/data = list()
 	data["has_item"] = !copier_empty()
 	data["num_copies"] = num_copies
+
+	try
+		var/list/blanks = json_decode(file2text("strings/blanks/nt_blanks.json"))
+		if (blanks != null)
+			data["blanks"] = blanks
+			data["category"] = category
+			data["forms_exist"] = TRUE
+		else
+			data["forms_exist"] = FALSE
+	catch()
+		data["forms_exist"] = FALSE
+
 
 	if(photo_copy)
 		data["is_photo"] = TRUE
@@ -94,7 +128,7 @@
 				to_chat(usr, "<span class='warning'>[src] is currently busy copying something. Please wait until it is finished.</span>")
 				return FALSE
 			if(paper_copy)
-				if(!length(paper_copy.info))
+				if(!paper_copy.get_total_length())
 					to_chat(usr, "<span class='warning'>An error message flashes across [src]'s screen: \"The supplied paper is blank. Aborting.\"</span>")
 					return FALSE
 				// Basic paper
@@ -165,6 +199,27 @@
 		if("set_copies")
 			num_copies = clamp(text2num(params["num_copies"]), 1, MAX_COPIES_AT_ONCE)
 			return TRUE
+		// Changes the forms displayed on Photocopier.js when you switch categories
+		if("choose_category")
+			category = params["category"]
+			return TRUE
+		// Called when you press print blank
+		if("print_blank")
+			if(busy)
+				to_chat(usr, span_warning("[src] is currently busy copying something. Please wait until it is finished."))
+				return FALSE
+			if (toner_cartridge.charges - PAPER_TONER_USE < 0)
+				to_chat(usr, span_warning("There is not enough toner in [src] to print the form, please replace the cartridge."))
+				return FALSE
+			do_copy_loop(CALLBACK(src, .proc/make_blank_print), usr)
+			var/obj/item/paper/printblank = new /obj/item/paper (loc)
+			var/printname = params["name"]
+			var/list/printinfo
+			for(var/infoline as anything in params["info"])
+				printinfo += infoline
+			printblank.name = printname
+			printblank.add_raw_text(printinfo)
+			return printblank
 
 /**
  * Determines if the photocopier has enough toner to create `num_copies` amount of copies of the currently inserted item.
@@ -234,31 +289,19 @@
  *
  * Checks first if `paper_copy` exists. Since this proc is called from a timer, it's possible that it was removed.
  */
-/obj/machinery/photocopier/proc/make_paper_copy(obj/item/paper/to_copy)
-	if(!paper_copy && !to_copy)
+/obj/machinery/photocopier/proc/make_paper_copy()
+	if(!paper_copy)
 		return
-	to_copy = to_copy ? to_copy : paper_copy
-	var/obj/item/paper/copied_paper = new(loc)
+
+	var/copy_colour = toner_cartridge.charges > 10 ? COLOR_FULL_TONER_BLACK : COLOR_GRAY;
+
+	var/obj/item/paper/copied_paper = paper_copy.copy(/obj/item/paper, loc, FALSE, copy_colour)
+
 	give_pixel_offset(copied_paper)
-	if(toner_cartridge.charges > 10) // Lots of toner, make it dark.
-		copied_paper.info = "<font color = #101010>"
-	else // No toner? shitty copies for you!
-		copied_paper.info = "<font color = #808080>"
 
-	var/copied_info = to_copy.info
-	copied_info = replacetext(copied_info, "<font face=\"[PEN_FONT]\" color=", "<font face=\"[PEN_FONT]\" nocolor=")	//state of the art techniques in action
-	copied_info = replacetext(copied_info, "<font face=\"[CRAYON_FONT]\" color=", "<font face=\"[CRAYON_FONT]\" nocolor=")	//This basically just breaks the existing color tag, which we need to do because the innermost tag takes priority.
-	copied_paper.info += copied_info
-	copied_paper.info += "</font>"
-	copied_paper.name = to_copy.name
-	copied_paper.update_icon()
-	copied_paper.stamps = to_copy.stamps
-	if(to_copy.stamped)
-		copied_paper.stamped = to_copy.stamped.Copy()
-	copied_paper.copy_overlays(to_copy, TRUE)
+	copied_paper.name = paper_copy.name
+
 	toner_cartridge.charges -= PAPER_TONER_USE
-
-	return copied_paper
 
 /**
  * Handles the copying of photos, which can be printed in either color or greyscale.
@@ -289,6 +332,12 @@
 	toner_cartridge.charges -= DOCUMENT_TONER_USE
 
 	return copied_doc
+
+/**
+ * The procedure is called when printing a blank to write off toner consumption.
+ */
+/obj/machinery/photocopier/proc/make_blank_print()
+	toner_cartridge.charges -= PAPER_TONER_USE
 
 /**
  * Handles the copying of an ass photo.

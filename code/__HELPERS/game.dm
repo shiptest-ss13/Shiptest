@@ -40,12 +40,23 @@ block( \
 	if(istype(T))
 		return T
 
+///Returns a list with all the adjacent open turfs.
 /proc/get_adjacent_open_turfs(atom/center)
-	. = list(get_open_turf_in_dir(center, NORTH),
-			get_open_turf_in_dir(center, SOUTH),
-			get_open_turf_in_dir(center, EAST),
-			get_open_turf_in_dir(center, WEST))
-	listclearnulls(.)
+	var/list/hand_back = list()
+	// Inlined get_open_turf_in_dir, just to be fast
+	var/turf/open/new_turf = get_step(center, NORTH)
+	if(istype(new_turf))
+		hand_back += new_turf
+	new_turf = get_step(center, SOUTH)
+	if(istype(new_turf))
+		hand_back += new_turf
+	new_turf = get_step(center, EAST)
+	if(istype(new_turf))
+		hand_back += new_turf
+	new_turf = get_step(center, WEST)
+	if(istype(new_turf))
+		hand_back += new_turf
+	return hand_back
 
 /proc/get_adjacent_open_areas(atom/center)
 	. = list()
@@ -464,7 +475,6 @@ block( \
 
 	//First we spawn a dude.
 	var/mob/living/carbon/human/new_character = new//The mob being spawned.
-	SSjob.SendToLateJoin(new_character)
 
 	G_found.client.prefs.copy_to(new_character)
 	new_character.dna.update_dna_identity()

@@ -51,7 +51,6 @@ GLOBAL_LIST_EMPTY(dead_players_during_shift)
 	jitteriness = 0
 	if(client && !(client in GLOB.dead_players_during_shift))
 		GLOB.dead_players_during_shift += client
-		GLOB.deaths_during_shift++
 	if(ismecha(loc))
 		var/obj/mecha/M = loc
 		if(M.occupant == src)

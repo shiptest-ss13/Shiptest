@@ -32,6 +32,7 @@
 	desc = "A Type I armored vest that provides decent protection against most types of damage."
 	icon_state = "armor_alt"
 	item_state = "armoralt"
+	supports_variations = KEPORI_VARIATION
 
 /obj/item/clothing/suit/armor/vest/marine
 	name = "light tactical armor vest"
@@ -338,7 +339,15 @@
 	desc = "A luxurious brown coat made from a crossweave of kevlar and ballistic fibre, the collar and wrist trims are made from genuine wolf fur. as protective as it is stylish."
 	icon_state = "armor_inteq_battlecoat"
 	item_state = "inteq_battlecoat"
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION | KEPORI_VARIATION
+
+/obj/item/clothing/suit/armor/hos/inteq/honorable //Basically CC higherup clothing for inteq
+	name = "honorable vanguard battlecoat"
+	desc = "A sleek black coat with snow white fur trims made to order for honorable vanguards of the IRMG, It feels even tougher than the typical battlecoat."
+	icon_state = "armor_inteq_honorable_battlecoat"
+	item_state = "inteq_honorable_battlecoat"
+	armor = list("melee" = 40, "bullet" = 50, "laser" = 50, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 90)
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | KEPORI_VARIATION
 
 /obj/item/clothing/suit/armor/inteq/corpsman
 	name = "inteq corpsman vest"
@@ -503,3 +512,16 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	cold_protection = CHEST|GROIN|ARMS
 	heat_protection = CHEST|GROIN|ARMS
+
+/obj/item/clothing/suit/toggle/armor/vest/centcom_formal
+	name = "\improper CentCom formal coat"
+	desc = "A stylish coat given to CentCom Commanders. Perfect for sending ERTs to suicide missions with style!"
+	icon_state = "centcom_formal"
+	item_state = "centcom"
+	body_parts_covered = CHEST|GROIN|ARMS
+	armor = list("melee" = 35, "bullet" = 40, "laser" = 40, "energy" = 50, "bomb" = 35, "bio" = 10, "rad" = 10, "fire" = 10, "acid" = 60)
+	togglename = "buttons"
+
+/obj/item/clothing/suit/toggle/armor/vest/centcom_formal/Initialize()
+	. = ..()
+	allowed = GLOB.security_wintercoat_allowed

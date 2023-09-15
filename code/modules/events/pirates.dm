@@ -293,14 +293,6 @@
 	unit_name = "hostage"
 	export_types = list(/mob/living/carbon/human)
 
-/datum/export/pirate/ransom/find_loot()
-	var/list/head_minds = SSjob.get_living_heads()
-	var/list/head_mobs = list()
-	for(var/datum/mind/M in head_minds)
-		head_mobs += M.current
-	if(head_mobs.len)
-		return pick(head_mobs)
-
 /datum/export/pirate/ransom/get_cost(atom/movable/AM)
 	var/mob/living/carbon/human/H = AM
 	if(H.stat != CONSCIOUS || !H.mind || !H.mind.assigned_role) //mint condition only

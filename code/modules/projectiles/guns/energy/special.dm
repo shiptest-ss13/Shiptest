@@ -207,22 +207,24 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/wormhole, /obj/item/ammo_casing/energy/wormhole/orange)
 	item_state = null
 	icon_state = "wormhole_projector"
+	base_icon_state = "wormhole_projector"
 	var/obj/effect/portal/p_blue
 	var/obj/effect/portal/p_orange
 	var/atmos_link = FALSE
 
 /obj/item/gun/energy/wormhole_projector/update_icon_state()
-	icon_state = item_state = "[initial(icon_state)][select]"
+	. = ..()
+	icon_state = item_state = "[base_icon_state][select]"
 
 /obj/item/gun/energy/wormhole_projector/update_ammo_types()
 	. = ..()
 	for(var/i in 1 to ammo_type.len)
 		var/obj/item/ammo_casing/energy/wormhole/W = ammo_type[i]
 		if(istype(W))
-			W.gun = src
+			W.gun = WEAKREF(src)
 			var/obj/projectile/beam/wormhole/WH = W.BB
 			if(istype(WH))
-				WH.gun = src
+				WH.gun = WEAKREF(src)
 
 /obj/item/gun/energy/wormhole_projector/process_chamber()
 	..()
@@ -302,7 +304,7 @@
 /obj/item/gun/energy/printer/commando/attack_self(mob/living/user as mob)
 	if(ammo_type.len > 1)
 		tac_fire(user)
-		update_icon()
+		update_appearance()
 
 /obj/item/gun/energy/printer/commando/proc/tac_fire(mob/living/user)
 	select++
@@ -321,7 +323,7 @@
 			to_chat(user, "<span class='notice'>You rearm your [src] with CY-SOUR nonlethal rounds, which cause stamina damage and distrupt the focus of enemies.</span>")
 	chambered = null
 	recharge_newshot(TRUE)
-	update_icon()
+	update_appearance()
 	return
 
 /obj/item/gun/energy/temperature

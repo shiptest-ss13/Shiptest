@@ -9,7 +9,7 @@
 	icon = 'icons/obj/device.dmi'
 	icon_state = "pinonfar"
 
-	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | LANDING_PROOF | HYPERSPACE_PROOF
 	anchored = TRUE
 
 	///Common standard is for this to point -away- from the dockingport door, ie towards the ship
@@ -29,18 +29,11 @@
 	//The shuttle docked here/dock we're parked at.
 	var/obj/docking_port/docked
 
-	//these objects are indestructible
 /obj/docking_port/Destroy(force)
-	// unless you assert that you know what you're doing. Horrible things
-	// may result.
-	if(force)
-		if(docked)
-			docked.docked = null
-			docked = null
-		..()
-		. = QDEL_HINT_QUEUE
-	else
-		return QDEL_HINT_LETMELIVE
+	if(docked)
+		docked.docked = null
+		docked = null
+	return ..()
 
 /obj/docking_port/has_gravity(turf/T)
 	return FALSE
@@ -182,8 +175,12 @@
 		T.maptext = null
 	if(_color)
 		var/turf/T = locate(L[1], L[2], z)
+		if(!T)
+			return
 		T.color = "#0f0"
 		T = locate(L[3], L[4], z)
+		if(!T)
+			return
 		T.color = "#00f"
 #endif
 
@@ -232,9 +229,10 @@
 	#endif
 
 /obj/docking_port/stationary/Destroy(force)
-	if(force)
-		SSshuttle.stationary -= src
-	. = ..()
+	SSshuttle.stationary -= src
+	owner_ship?.towed_shuttles -= docked
+	owner_ship?.docking_points -= src
+	return ..()
 
 /obj/docking_port/stationary/proc/load_roundstart()
 	if(roundstart_template) // passed a PATH
@@ -259,18 +257,15 @@
 	transit_dock_counter++
 	name = "transit dock [transit_dock_counter]"
 
-/obj/docking_port/stationary/transit/Destroy(force=FALSE)
-	if(force)
-		if(docked)
-			log_world("A transit dock was destroyed while something was docked to it.")
-		SSshuttle.transit -= src
-		if(owner)
-			if(owner.assigned_transit == src)
-				owner.assigned_transit = null
-			owner = null
-		if(!QDELETED(reserved_mapzone))
-			qdel(reserved_mapzone)
-		reserved_mapzone = null
+/obj/docking_port/stationary/transit/Destroy(force)
+	if(!QDELETED(docked))
+		log_world("A transit dock was destroyed while something was docked to it.")
+	SSshuttle.transit -= src
+	if(owner?.assigned_transit == src)
+		owner.assigned_transit = null
+	owner = null
+	if(!QDELETED(reserved_mapzone))
+		QDEL_NULL(reserved_mapzone)
 	return ..()
 
 /obj/docking_port/mobile
@@ -357,22 +352,44 @@
 	SSshuttle.mobile += src
 
 /obj/docking_port/mobile/Destroy(force)
-	if(force)
-		SSshuttle.mobile -= src
-		destination = null
-		previous = null
-		if(!QDELETED(current_ship))
-			QDEL_NULL(current_ship)
-		qdel(assigned_transit, TRUE)		//don't need it where we're goin'!
-		assigned_transit = null
-		for(var/obj/docking_port/stationary/docking_point as anything in docking_points)
-			qdel(docking_point, TRUE)
-		docking_points = null
-		shuttle_areas = null //TODO: This is nowhere near enough to clear references, lol. We need an /atom/proc/disconnect_from_shuttle() proc to clear references.
-		towed_shuttles = null
-		underlying_turf_area = null
-		remove_ripples()
-	. = ..()
+	if(!QDELETED(current_ship))
+		message_admins("Shuttle [src] tried to delete at [ADMIN_VERBOSEJMP(src)], but failed!")
+		stack_trace("Ship attempted deletion while current ship still exists! Aborting!")
+		return QDEL_HINT_LETMELIVE
+
+	if(SSticker.IsRoundInProgress())
+		message_admins("Shuttle [src] deleted at [ADMIN_VERBOSEJMP(src)]")
+		log_game("Shuttle [src] deleted at [AREACOORD(src)]")
+
+	spawn_points.Cut()
+
+	SSshuttle.mobile -= src
+
+	destination = null
+	previous = null
+
+	qdel(assigned_transit, TRUE)		//don't need it where we're goin'!
+	assigned_transit = null
+	for(var/port in docking_points)
+		qdel(port, TRUE)
+	//This is only null checked for the very snowflakey reason that it might be deleted before it's loaded properly.
+	//See the middle of /datum/controller/subsystem/shuttle/proc/load_template() for an example.
+	docking_points?.Cut()
+
+	//VERY important proc. Should probably get folded into this one, but oh well.
+	//Requires the shuttle areas list and the towed_shuttles list, and will clear the latter.
+	jump_to_null_space()
+
+	for(var/area/ship/shuttle_area in shuttle_areas) //TODO: make a disconnect_from_shuttle() proc
+		shuttle_area.mobile_port = null
+	shuttle_areas.Cut()
+	shuttle_areas = null
+
+	remove_ripples()
+
+	underlying_turf_area = null
+
+	return ..()
 
 /obj/docking_port/mobile/Initialize(mapload)
 	. = ..()
@@ -564,7 +581,7 @@
 	play_engine_sound(src, launch_sound)
 
 
-/obj/docking_port/mobile/proc/jumpToNullSpace()
+/obj/docking_port/mobile/proc/jump_to_null_space()
 	// Destroys the docking port and the shuttle contents.
 	// Not in a fancy way, it just ceases.
 
@@ -578,9 +595,8 @@
 	for(var/obj/docking_port/mobile/M in all_towed_shuttles)
 		all_shuttle_areas += M.shuttle_areas
 
-	for(var/i in 1 to old_turfs.len)
-		var/turf/oldT = old_turfs[i]
-		if(!all_shuttle_areas[oldT?.loc])
+	for(var/turf/oldT as anything in old_turfs)
+		if(!(oldT?.loc in all_shuttle_areas))
 			continue
 		var/area/old_area = oldT.loc
 		for(var/obj/docking_port/mobile/bottom_shuttle in all_towed_shuttles)
@@ -598,24 +614,9 @@
 				oldT.ScrapeAway(baseturf_cache.len - k + 1)
 				break
 
-	for(var/obj/docking_port/mobile/shuttle in all_towed_shuttles)
-		qdel(shuttle, force=TRUE)
-
-/obj/docking_port/mobile/proc/intoTheSunset()
-	// Loop over mobs
-	for(var/t in return_turfs())
-		var/turf/T = t
-		for(var/mob/living/M in T.GetAllContents())
-			// If they have a mind and they're not in the brig, they escaped
-			if(M.mind && !istype(t, /turf/open/floor/mineral/plastitanium/red/brig))
-				M.mind.force_escaped = TRUE
-			// Ghostize them and put them in nullspace stasis (for stat & possession checks)
-			M.notransform = TRUE
-			M.ghostize(FALSE)
-			M.moveToNullspace()
-
-	// Now that mobs are stowed, delete the shuttle
-	jumpToNullSpace()
+	for(var/obj/docking_port/mobile/shuttle in all_towed_shuttles - src)
+		qdel(shuttle, TRUE)
+	towed_shuttles.Cut()
 
 /obj/docking_port/mobile/proc/create_ripples(obj/docking_port/stationary/S1, animate_time)
 	var/list/turfs = ripple_area(S1)
@@ -862,6 +863,15 @@
 	else
 		. = "unknown"
 
+/obj/docking_port/mobile/proc/get_engines()
+	. = list()
+	for(var/datum/weakref/engine in engine_list)
+		var/obj/structure/shuttle/engine/real_engine = engine.resolve()
+		if(!real_engine)
+			engine_list -= engine
+			continue
+		. += real_engine
+
 /obj/docking_port/mobile/proc/hyperspace_sound(phase, list/areas)
 	var/selected_sound
 	switch(phase)
@@ -879,8 +889,10 @@
 	var/range = max(width, height)
 	var/long_range = range * 2.5
 	var/atom/distant_source
-	if(engine_list[1])
-		distant_source = engine_list[1]
+	var/list/engines = get_engines()
+
+	if(engines[1])
+		distant_source = engines[1]
 	else
 		for(var/A in areas)
 			distant_source = locate(/obj/machinery/door) in A
@@ -894,11 +906,11 @@
 				M.playsound_local(distant_source, "sound/runtime/hyperspace/[selected_sound]_distance.ogg", 100)
 			else if(dist_far <= range)
 				var/source
-				if(engine_list.len == 0)
+				if(engines.len == 0)
 					source = distant_source
 				else
 					var/closest_dist = 10000
-					for(var/obj/O in engine_list)
+					for(var/obj/O in engines)
 						var/dist_near = get_dist(M, O)
 						if(dist_near < closest_dist)
 							source = O

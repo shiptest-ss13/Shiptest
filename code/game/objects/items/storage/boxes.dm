@@ -36,7 +36,7 @@
 
 /obj/item/storage/box/Initialize(mapload)
 	. = ..()
-	update_icon()
+	update_appearance()
 
 /obj/item/storage/box/ComponentInitialize()
 	. = ..()
@@ -930,6 +930,7 @@
 		icon_state = "[item_state]"
 	else
 		icon_state = "[item_state]_closed"
+	return ..()
 
 /obj/item/storage/box/papersack/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/pen))

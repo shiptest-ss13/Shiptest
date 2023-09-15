@@ -69,7 +69,8 @@
 
 /mob/living/simple_animal/hostile/asteroid/basilisk/GiveTarget(new_target)
 	if(..()) //we have a target
-		if(isliving(target) && !target.Adjacent(targets_from) && ranged_cooldown <= world.time)//No more being shot at point blank or spammed with RNG beams
+		var/atom/target_from = GET_TARGETS_FROM(src)
+		if(isliving(target) && !target.Adjacent(target_from) && ranged_cooldown <= world.time)//No more being shot at point blank or spammed with RNG beams
 			OpenFire(target)
 
 /mob/living/simple_animal/hostile/asteroid/basilisk/ex_act(severity, target)
@@ -136,9 +137,9 @@
 				audible_message("<span class='danger'>[src]'s shell violently cracks as it's armor is shattered!</span>")
 				throw_message = "bounces off of"
 				shell_snap_message = TRUE //so it doesnt repeat
-		update_icon()
+		update_appearance()
 		return TRUE
-	update_icon()
+	update_appearance()
 	return FALSE
 
 /mob/living/simple_animal/hostile/asteroid/basilisk/whitesands/CanAttack(atom/the_target)
@@ -185,7 +186,7 @@
 	..()
 	cut_overlays()
 
-/mob/living/simple_animal/hostile/asteroid/basilisk/whitesands/update_icon()
+/mob/living/simple_animal/hostile/asteroid/basilisk/whitesands/update_appearance()
 	. = ..()
 	if(stat == CONSCIOUS)
 		if(has_shell)

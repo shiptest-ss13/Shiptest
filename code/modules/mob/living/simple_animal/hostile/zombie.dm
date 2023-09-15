@@ -33,7 +33,7 @@
 	dummy_prefs.pref_species = new /datum/species/zombie
 	dummy_prefs.randomise[RANDOM_BODY] = TRUE
 	if(zombiejob)
-		var/datum/job/J = SSjob.GetJob(zombiejob)
+		var/datum/job/J = GLOB.name_occupations[zombiejob]
 		var/datum/outfit/O
 		if(J.outfit)
 			O = new J.outfit

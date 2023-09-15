@@ -28,7 +28,7 @@
 	var/last_warning
 	var/consumedSupermatter = 0 //If the singularity has eaten a supermatter shard and can go to stage six
 	var/drifting_dir = 0 // Chosen direction to drift in
-	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | FREEZE_PROOF
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | FREEZE_PROOF | LANDING_PROOF | HYPERSPACE_PROOF
 	obj_flags = CAN_BE_HIT | DANGEROUS_POSSESSION
 
 /obj/singularity/Initialize(mapload, starting_energy = 50)

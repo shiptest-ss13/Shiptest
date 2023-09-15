@@ -93,8 +93,9 @@
 				"Your armor has softened a hit to your [parse_zone(zone)]."
 			)
 			apply_damage(I.throwforce, dtype, zone, armor)
-			if(I.thrownby)
-				log_combat(I.thrownby, src, "threw and hit", I)
+			var/mob/thrown_by = I.thrownby?.resolve()
+			if(thrown_by)
+				log_combat(thrown_by, src, "threw and hit", I)
 		else
 			return 1
 	else

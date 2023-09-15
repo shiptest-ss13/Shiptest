@@ -51,7 +51,9 @@
 
 /obj/vehicle/ridden/space/speedwagon/Initialize()
 	. = ..()
-	add_overlay(image(icon, "speedwagon_cover", ABOVE_MOB_LAYER))
+	var/static/mutable_appearance/overlay
+	overlay ||= mutable_appearance(icon, "speedwagon_cover", ABOVE_MOB_LAYER)
+	add_overlay(overlay)
 	var/datum/component/riding/D = LoadComponent(/datum/component/riding)
 	D.vehicle_move_delay = 0
 	D.set_riding_offsets(1, list(TEXT_NORTH = list(-10, -4), TEXT_SOUTH = list(16, 3), TEXT_EAST = list(-4, 30), TEXT_WEST = list(4, -3)))

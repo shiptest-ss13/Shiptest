@@ -298,16 +298,6 @@
 		H.overlays_standing[HALO_LAYER] = new_halo_overlay
 		H.apply_overlay(HALO_LAYER)
 
-/datum/team/cult/proc/make_image(datum/objective/sacrifice/sac_objective)
-	var/datum/job/sacjob = SSjob.GetJob(sac_objective.target.assigned_role)
-	var/datum/preferences/sacface = sac_objective.target.current.client.prefs
-	var/icon/reshape = get_flat_human_icon(null, sacjob, sacface, list(SOUTH))
-	reshape.Shift(SOUTH, 4)
-	reshape.Shift(EAST, 1)
-	reshape.Crop(7,4,26,31)
-	reshape.Crop(-5,-3,26,30)
-	sac_objective.sac_image = reshape
-
 /datum/objective/sacrifice/find_target(dupe_search_range)
 	if(!istype(team, /datum/team/cult))
 		return
@@ -327,7 +317,6 @@
 		update_explanation_text()
 	else
 		message_admins("Cult Sacrifice: Could not find unconvertible or convertible target. WELP!")
-	C.make_image(src)
 	for(var/datum/mind/M in C.members)
 		if(M.current)
 			M.current.clear_alert("bloodsense")

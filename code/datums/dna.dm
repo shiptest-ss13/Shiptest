@@ -339,8 +339,8 @@
 		for(var/datum/quirk/quirk_instance as anything in roundstart_quirks)
 			quirks_to_remove += quirk_instance.type
 		for(var/quirk_name in quirks_resolved)
-			var/datum/quirk/quirk_instance = SSquirks.quirk_instances[quirk_name]
-			quirks_resolved += quirk_instance.type
+			var/datum/quirk/quirk_type = SSquirks.quirks[quirk_name]
+			quirks_resolved += quirk_type
 			quirks_resolved -= quirk_name
 		quirks_to_remove -= quirks_resolved
 		for(var/quirk_type in quirks_to_remove)

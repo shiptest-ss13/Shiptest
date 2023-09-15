@@ -126,7 +126,6 @@
 	icon_state = "pinpointer_way"
 	resistance_flags = NONE
 	var/owner = null
-	var/list/beacons = list()
 	var/roundstart = FALSE
 
 /obj/item/pinpointer/wayfinding/attack_self(mob/living/user)
@@ -138,8 +137,7 @@
 	if (!owner)
 		owner = user.real_name
 
-	if(beacons.len)
-		beacons.Cut()
+	var/list/beacons = list()
 	for(var/obj/machinery/navbeacon/B in GLOB.wayfindingbeacons)
 		beacons[B.codes["wayfinding"]] = B
 

@@ -88,7 +88,7 @@
 	gold_core_spawnable = NO_SPAWN
 	unique_pet = TRUE
 	var/list/family = list()//var restored from savefile, has count of each child type
-	var/list/children = list()//Actual mob instances of children
+	var/list/children = list()//Actual mob weak references of children
 	var/cats_deployed = 0
 	var/memory_saved = FALSE
 	held_state = "cat"
@@ -112,7 +112,7 @@
 /mob/living/simple_animal/pet/cat/Runtime/make_babies()
 	var/mob/baby = ..()
 	if(baby)
-		children += baby
+		children += WEAKREF(baby)
 		return baby
 
 /mob/living/simple_animal/pet/cat/Runtime/death()
@@ -139,13 +139,14 @@
 	var/list/file_data = list()
 	family = list()
 	if(!dead)
-		for(var/mob/living/simple_animal/pet/cat/kitten/C in children)
-			if(istype(C,type) || C.stat || !C.z || (C.flags_1 & HOLOGRAM_1))
+		for(var/datum/weakref/childRef in children)
+			var/mob/living/simple_animal/pet/cat/kitten/child = childRef.resolve()
+			if(istype(child, type) || child.stat || !child.z || (child.flags_1 & HOLOGRAM_1))
 				continue
-			if(C.type in family)
-				family[C.type] += 1
+			if(child.type in family)
+				family[child.type] += 1
 			else
-				family[C.type] = 1
+				family[child.type] = 1
 	file_data["family"] = family
 	fdel(json_file)
 	WRITE_FILE(json_file, json_encode(file_data))

@@ -244,8 +244,8 @@
 					name = usr.real_name
 					rank = "Silicon"
 				var/datum/supply_order/SO = new(pack, name, rank, usr.ckey, "")
-				new /obj/effect/DPtarget(landing_turf, podType, SO)
-				update_icon() // ??????????????????
+				new /obj/effect/pod_landingzone(landing_turf, podType, SO)
+				update_appearance() // ??????????????????
 				return TRUE
 
 		if("mission-act")

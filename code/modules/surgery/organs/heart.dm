@@ -2,6 +2,7 @@
 	name = "heart"
 	desc = "I feel bad for the heartless bastard who lost this."
 	icon_state = "heart-on"
+	base_icon_state = "heart"
 	zone = BODY_ZONE_CHEST
 	slot = ORGAN_SLOT_HEART
 
@@ -15,7 +16,6 @@
 
 	// Heart attack code is in code/modules/mob/living/carbon/human/life.dm
 	var/beating = 1
-	var/icon_base = "heart"
 	attack_verb = list("beat", "thumped")
 	//is this mob having a heatbeat sound played? if so, which?
 	var/beat = BEAT_NONE
@@ -25,10 +25,8 @@
 	var/operated = FALSE
 
 /obj/item/organ/heart/update_icon_state()
-	if(beating)
-		icon_state = "[icon_base]-on"
-	else
-		icon_state = "[icon_base]-off"
+	icon_state = "[base_icon_state]-[beating ? "on" : "off"]"
+	return ..()
 
 /obj/item/organ/heart/Remove(mob/living/carbon/M, special = 0)
 	..()
@@ -49,18 +47,18 @@
 
 /obj/item/organ/heart/proc/Stop()
 	beating = 0
-	update_icon()
+	update_appearance()
 	return 1
 
 /obj/item/organ/heart/proc/Restart()
 	beating = 1
-	update_icon()
+	update_appearance()
 	return 1
 
 /obj/item/organ/heart/OnEatFrom(eater, feeder)
 	. = ..()
 	beating = FALSE
-	update_icon()
+	update_appearance()
 
 /obj/item/organ/heart/on_life()
 	..()
@@ -101,7 +99,7 @@
 	name = "cursed heart"
 	desc = "A heart that, when inserted, will force you to pump it manually."
 	icon_state = "cursedheart-off"
-	icon_base = "cursedheart"
+	base_icon_state = "cursedheart"
 	decay_factor = 0
 	actions_types = list(/datum/action/item_action/hands_free/organ_action/cursed_heart)
 	var/last_pump = 0

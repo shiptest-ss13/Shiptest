@@ -673,8 +673,7 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 
 /datum/controller/master/StartLoadingMap()
 	//disallow more than one map to load at once, multithreading it will just cause race conditions
-	while(map_loading)
-		stoplag()
+	UNTIL(!map_loading)
 	for(var/S in subsystems)
 		var/datum/controller/subsystem/SS = S
 		SS.StartLoadingMap()

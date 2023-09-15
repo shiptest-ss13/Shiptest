@@ -71,6 +71,10 @@
 	var/obj/item/clothing/mask/facehugger_item/hugger_item = BecomeItem()
 	user.put_in_hands(hugger_item)
 
+/mob/living/simple_animal/hostile/facehugger/Destroy()
+	mask_facehugger?.facehugger_mob = null
+	return ..()
+
 /**
  * Attempts to have the facehugger couple with the given target.  Checks all possibilities and plays them out accordingly.
  *

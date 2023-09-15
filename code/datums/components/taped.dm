@@ -46,7 +46,7 @@
 	tape_marks.Blend(icon('icons/obj/tapes.dmi', "[taped_icon_state]_mask"), ICON_MULTIPLY)
 	taped_icon = new(tape_marks)
 	I.add_overlay(taped_icon)
-	I.update_icon()
+	I.update_appearance()
 
 /datum/component/taped/proc/tape_rip(datum/source, obj/item/attacker, mob/user)
 	var/obj/item/I = attacker

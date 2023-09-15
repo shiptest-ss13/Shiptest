@@ -18,8 +18,12 @@
 	throw_range = 7
 	drop_sound = 'sound/items/handling/component_drop.ogg'
 	pickup_sound =  'sound/items/handling/component_pickup.ogg'
-	var/is_position_sensitive = FALSE	//set to true if the device has different icons for each position.
-										//This will prevent things such as visible lasers from facing the incorrect direction when transformed by assembly_holder's update_icon()
+
+
+	//Set to true if the device has different icons for each position.
+	//This will prevent things such as visible lasers from facing the incorrect direction when transformed by assembly_holder's update_appearance()
+
+	var/is_position_sensitive = FALSE
 	var/secured = TRUE
 	var/list/attached_overlays = null
 	var/obj/item/assembly_holder/holder = null
@@ -37,6 +41,10 @@
 
 /obj/item/assembly/proc/on_entered(datum/source, atom/movable/AM)
 	SIGNAL_HANDLER
+
+/obj/item/assembly/Destroy()
+	holder = null
+	return ..()
 
 /obj/item/assembly/get_part_rating()
 	return 1
@@ -92,7 +100,7 @@
 
 /obj/item/assembly/proc/toggle_secure()
 	secured = !secured
-	update_icon()
+	update_appearance()
 	return secured
 
 /obj/item/assembly/attackby(obj/item/W, mob/user, params)

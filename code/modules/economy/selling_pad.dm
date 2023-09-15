@@ -76,7 +76,7 @@
 /obj/machinery/computer/selling_pad_control/ui_data(mob/user)
 	var/list/data = list()
 	data["points"] = sell_account.account_balance
-	data["pad"] = pad.resolve() ? TRUE : FALSE
+	data["pad"] = pad?.resolve() ? TRUE : FALSE
 	data["sending"] = sending
 	data["status_report"] = status_report
 	return data

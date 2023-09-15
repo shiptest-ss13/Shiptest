@@ -138,6 +138,8 @@ Difficulty: Hard
 /// Slams the ground around the wendigo throwing back enemies caught nearby
 /mob/living/simple_animal/hostile/megafauna/wendigo/proc/ground_slam(range, delay)
 	var/turf/orgin = get_turf(src)
+	if(!orgin)
+		return
 	var/list/all_turfs = RANGE_TURFS(range, orgin)
 	for(var/i = 0 to range)
 		for(var/turf/T in all_turfs)

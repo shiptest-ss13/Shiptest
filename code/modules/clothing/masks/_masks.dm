@@ -8,7 +8,7 @@
 	var/modifies_speech = FALSE
 	var/mask_adjusted = 0
 	var/adjusted_flags = null
-	supports_variations = VOX_VARIATION
+	supports_variations = VOX_VARIATION | KEPORI_VARIATION
 
 /obj/item/clothing/mask/attack_self(mob/user)
 	if((clothing_flags & VOICEBOX_TOGGLABLE))

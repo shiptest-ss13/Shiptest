@@ -93,7 +93,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							"ethcolor" = "9c3030",
 							"tail_lizard" = "Smooth",
 							"tail_human" = "None",
-							"snout" = "Round",
+							"face_markings" = "None",
 							"horns" = "None",
 							"ears" = "None",
 							"wings" = "None",
@@ -487,13 +487,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "</td>"
 					mutant_category = 0
 
-			if("snout" in pref_species.default_features)
+			if("face_markings" in pref_species.default_features)
 				if(!mutant_category)
 					dat += APPEARANCE_CATEGORY_COLUMN
 
-				dat += "<h3>Snout</h3>"
+				dat += "<h3>Face Marking</h3>"
 
-				dat += "<a href='?_src_=prefs;preference=snout;task=input'>[features["snout"]]</a><BR>"
+				dat += "<a href='?_src_=prefs;preference=face_markings;task=input'>[features["face_markings"]]</a><BR>"
 
 				mutant_category++
 				if(mutant_category >= MAX_MUTANT_ROWS)
@@ -1342,24 +1342,22 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 /datum/preferences/proc/check_quirk_compatibility(mob/user)
 	var/list/quirk_conflicts = list()
 	var/list/handled_conflicts = list()
-	for(var/quirk_index in SSquirks.quirk_instances)
-		var/datum/quirk/quirk_instance = SSquirks.quirk_instances[quirk_index]
-		if(!quirk_instance)
-			continue
-		if(quirk_instance.mood_quirk && CONFIG_GET(flag/disable_human_mood))
-			quirk_conflicts[quirk_instance.name] = "Mood and mood quirks are disabled."
+	for(var/quirk_name in SSquirks.quirks)
+		var/datum/quirk/quirk_type = SSquirks.quirks[quirk_name]
+		if(initial(quirk_type.mood_quirk) && CONFIG_GET(flag/disable_human_mood))
+			quirk_conflicts[quirk_name] = "Mood and mood quirks are disabled."
 			if(!handled_conflicts["mood"])
 				handle_quirk_conflict("mood", null, user)
 				handled_conflicts["mood"] = TRUE
-		if(((quirk_instance.species_lock["type"] == "allowed") && !(pref_species.id in quirk_instance.species_lock)) || (quirk_instance.species_lock["type"] == "blocked" && (pref_species.id in quirk_instance.species_lock)))
-			quirk_conflicts[quirk_instance.name] = "Quirk unavailable to species."
+		if((quirk_name in SSquirks.species_blacklist) && (pref_species.id in SSquirks.species_blacklist[quirk_name]))
+			quirk_conflicts[quirk_name] = "Quirk unavailable to species."
 			if(!handled_conflicts["species"])
 				handle_quirk_conflict("species", pref_species, user)
 				handled_conflicts["species"] = TRUE
 		for(var/blacklist in SSquirks.quirk_blacklist)
 			for(var/quirk_blacklisted in all_quirks)
-				if((quirk_blacklisted in blacklist) && !quirk_conflicts[quirk_instance.name] && (quirk_instance.name in blacklist) && !(quirk_instance.name == quirk_blacklisted))
-					quirk_conflicts[quirk_instance.name] = "Quirk is mutually exclusive with [quirk_blacklisted]."
+				if((quirk_blacklisted in blacklist) && !quirk_conflicts[quirk_name] && (quirk_name in blacklist) && !(quirk_name == quirk_blacklisted))
+					quirk_conflicts[quirk_name] = "Quirk is mutually exclusive with [quirk_blacklisted]."
 					if(!handled_conflicts["blacklist"])
 						handle_quirk_conflict("blacklist", null, user)
 						handled_conflicts["blacklist"] = TRUE
@@ -1382,24 +1380,24 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			target_species = additional_argument
 		else
 			return
-	for(var/quirk_owned in all_quirks)
-		var/datum/quirk/quirk_owned_instance = SSquirks.quirk_instances[quirk_owned]
-		balance -= quirk_owned_instance.value
+	for(var/quirk_name in all_quirks)
+		var/datum/quirk/quirk_type = SSquirks.quirks[quirk_name]
+		balance -= initial(quirk_type.value)
 		switch(change_type)
 			if("species")
-				if(((quirk_owned_instance.species_lock["type"] == "allowed") && !(target_species.id in quirk_owned_instance.species_lock)) || ((quirk_owned_instance.species_lock["type"] == "blocked") && (target_species.id in quirk_owned_instance.species_lock)))
-					all_quirks_new -= quirk_owned_instance.name
-					balance += quirk_owned_instance.value
+				if((quirk_name in SSquirks.species_blacklist) && (pref_species.id in SSquirks.species_blacklist[quirk_name]))
+					all_quirks_new -= quirk_name
+					balance += initial(quirk_type.value)
 			if("mood")
-				if(quirk_owned_instance.mood_quirk)
-					all_quirks_new -= quirk_owned_instance.name
-					balance += quirk_owned_instance.value
+				if(initial(quirk_type.mood_quirk))
+					all_quirks_new -= quirk_name
+					balance += initial(quirk_type.value)
 			if("blacklist")
 				for(var/blacklist in SSquirks.quirk_blacklist)
 					for(var/quirk_blacklisted in all_quirks_new)
-						if((quirk_blacklisted in blacklist) && (quirk_owned_instance.name in blacklist) && !(quirk_owned_instance.name == quirk_blacklisted))
-							all_quirks_new -= quirk_owned_instance.name
-							balance += quirk_owned_instance.value
+						if((quirk_blacklisted in blacklist) && (quirk_name in blacklist) && !(quirk_name == quirk_blacklisted))
+							all_quirks_new -= quirk_name
+							balance += initial(quirk_type.value)
 	if(balance < 0)
 		var/list/positive_quirks = list()
 		for(var/quirk_owned in all_quirks_new)
@@ -1830,11 +1828,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(new_tail)
 						features["tail_human"] = new_tail
 
-				if("snout")
-					var/new_snout
-					new_snout = input(user, "Choose your character's snout:", "Character Preference") as null|anything in GLOB.snouts_list
-					if(new_snout)
-						features["snout"] = new_snout
+				if("face_markings")
+					var/new_face_markings
+					new_face_markings = input(user, "Choose your character's face markings:", "Character Preference") as null|anything in GLOB.face_markings_list
+					if(new_face_markings)
+						features["face_markings"] = new_face_markings
 
 				if("horns")
 					var/new_horns

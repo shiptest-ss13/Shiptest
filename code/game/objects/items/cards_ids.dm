@@ -35,7 +35,7 @@
 
 /obj/item/card/data/Initialize()
 	.=..()
-	update_icon()
+	update_appearance()
 
 /obj/item/card/data/update_overlays()
 	. = ..()
@@ -383,7 +383,7 @@
 		var/obj/item/storage/wallet/powergaming = loc
 		if(powergaming.front_id == src)
 			powergaming.update_label()
-			powergaming.update_icon()
+			powergaming.update_appearance()
 
 /obj/item/card/id/proc/get_cached_flat_icon()
 	if(!cached_flat_icon)
@@ -420,7 +420,7 @@ update_label()
 /obj/item/card/id/proc/update_label()
 	var/blank = !registered_name
 	name = "[blank ? initial(name) : "[registered_name]'s ID Card"][(!assignment) ? "" : " ([assignment])"]"
-	update_icon()
+	update_appearance()
 
 /obj/item/card/id/silver
 	name = "silver identification card"
@@ -602,7 +602,7 @@ update_label()
 /obj/item/card/id/captains_spare/update_label() //so it doesn't change to Captain's ID card (Captain) on a sneeze
 	if(registered_name == "Captain")
 		name = "[initial(name)][(!assignment || assignment == "Captain") ? "" : " ([assignment])"]"
-		update_icon()
+		update_appearance()
 	else
 		..()
 

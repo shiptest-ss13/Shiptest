@@ -229,6 +229,7 @@
 	item_state = "nitrilegloves"
 	transfer_prints = FALSE
 	carrytrait = TRAIT_QUICKER_CARRY
+	supports_variations = KEPORI_VARIATION
 
 /obj/item/clothing/gloves/color/latex/nitrile/evil
 	name = "red nitrile gloves"

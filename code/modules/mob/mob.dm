@@ -16,13 +16,11 @@
  *
  * qdels any client colours in place on this mob
  *
- * Unsets the currently active machine
- *
- * Clears roundstart quirks list
+ * Clears any refs to the mob inside its current location
  *
  * Ghostizes the client attached to this mob
  *
- * Removes references to the mob from its former mind, and vice versa
+ * If our mind still exists, clear its current var to prevent harddels
  *
  * Parent call
  */
@@ -47,12 +45,10 @@
 	QDEL_LIST(client_colours)
 	active_storage = null
 	unset_machine()
-	ghostize()
-	if(mind)
-		mind.handle_mob_deletion(src)
-	if(istype(loc, /atom/movable))
-		var/atom/movable/movable_loc = loc
-		LAZYREMOVE(movable_loc.client_mobs_in_contents, src)
+	clear_client_in_contents() //Gotta do this here as well as Logout, since client will be null by the time it gets there, cause of that ghostize
+	ghostize() //False, since we're deleting it currently
+	if(mind?.current == src) //Let's just be safe yeah? This will occasionally be cleared, but not always. Can't do it with ghostize without changing behavior
+		mind.set_current(null)
 	return ..()
 
 
@@ -565,39 +561,6 @@
 		var/msg = "<span class='smallnotice'>[src] makes eye contact with you.</span>"
 		addtimer(CALLBACK(GLOBAL_PROC, PROC_REF(to_chat), examined_mob, msg), 3)
 
-/**
- * Point at an atom
- *
- * mob verbs are faster than object verbs. See
- * [this byond forum post](https://secure.byond.com/forum/?post=1326139&page=2#comment8198716)
- * for why this isn't atom/verb/pointed()
- *
- * note: ghosts can point, this is intended
- *
- * visible_message will handle invisibility properly
- *
- * overridden here and in /mob/dead/observer for different point span classes and sanity checks
- */
-/mob/verb/pointed(atom/A as mob|obj|turf in view())
-	set name = "Point To"
-	set category = "Object"
-
-	if(!src || !isturf(src.loc))
-		return FALSE
-	if(client && !(A in view(client.view, src)))
-		return FALSE
-	if(istype(A, /obj/effect/temp_visual/point))
-		return FALSE
-
-	var/turf/tile = get_turf(A)
-	if (!tile)
-		return FALSE
-
-	var/turf/our_tile = get_turf(src)
-	var/obj/visual = new /obj/effect/temp_visual/point(our_tile, invisibility)
-	animate(visual, pixel_x = (tile.x - our_tile.x) * world.icon_size + A.pixel_x, pixel_y = (tile.y - our_tile.y) * world.icon_size + A.pixel_y, time = 1.7, easing = EASE_OUT)
-
-	return TRUE
 
 ///Can this mob resist (default FALSE)
 /mob/proc/can_resist()
@@ -625,11 +588,11 @@
 
 ///Update the pulling hud icon
 /mob/proc/update_pull_hud_icon()
-	hud_used?.pull_icon?.update_icon()
+	hud_used?.pull_icon?.update_appearance()
 
 ///Update the resting hud icon
 /mob/proc/update_rest_hud_icon()
-	hud_used?.rest_icon?.update_icon()
+	hud_used?.rest_icon?.update_appearance()
 
 /**
  * Verb to activate the object in your held hand
@@ -1221,6 +1184,25 @@
 		return
 	return TRUE
 
+/mob/proc/can_write(obj/item/writing_instrument)
+	if(!istype(writing_instrument))
+		to_chat(src, span_warning("You can't write with the [writing_instrument]!"))
+		return FALSE
+
+	if(!is_literate())
+		to_chat(src, span_warning("You try to write, but don't know how to spell anything!"))
+		return FALSE
+
+	var/pen_info = writing_instrument.get_writing_implement_details()
+	if(!pen_info || (pen_info["interaction_mode"] != MODE_WRITING))
+		to_chat(src, span_warning("You can't write with the [writing_instrument]!"))
+		return FALSE
+
+	if(has_gravity())
+		return TRUE
+
+	return TRUE
+
 ///Can this mob hold items
 /mob/proc/can_hold_items()
 	return FALSE
@@ -1363,3 +1345,64 @@
 /// Used for typing indicator, relevant on /living level
 /mob/proc/set_typing_indicator(state)
 	return
+
+/mob/vv_edit_var(var_name, var_value)
+	switch(var_name)
+		if(NAMEOF(src, control_object))
+			var/obj/O = var_value
+			if(!istype(O) || (O.obj_flags & DANGEROUS_POSSESSION))
+				return FALSE
+		if(NAMEOF(src, machine))
+			set_machine(var_value)
+			. =  TRUE
+		if(NAMEOF(src, focus))
+			set_focus(var_value)
+			. =  TRUE
+		if(NAMEOF(src, nutrition))
+			set_nutrition(var_value)
+			. =  TRUE
+		if(NAMEOF(src, stat))
+			set_stat(var_value)
+			. =  TRUE
+		if(NAMEOF(src, dizziness))
+			set_dizziness(var_value)
+			. =  TRUE
+		if(NAMEOF(src, eye_blind))
+			set_blindness(var_value)
+			. =  TRUE
+		if(NAMEOF(src, eye_blurry))
+			set_blurriness(var_value)
+			. =  TRUE
+
+	if(!isnull(.))
+		datum_flags |= DF_VAR_EDITED
+		return
+
+	var/slowdown_edit = (var_name == NAMEOF(src, cached_multiplicative_slowdown))
+	var/diff
+	if(slowdown_edit && isnum(cached_multiplicative_slowdown) && isnum(var_value))
+		remove_movespeed_modifier(/datum/movespeed_modifier/admin_varedit)
+		diff = var_value - cached_multiplicative_slowdown
+
+	. = ..()
+
+	if(. && slowdown_edit && isnum(diff))
+		add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/admin_varedit, multiplicative_slowdown = diff)
+
+/mob/proc/set_active_storage(new_active_storage)
+	if(active_storage)
+		UnregisterSignal(active_storage, COMSIG_PARENT_QDELETING)
+	active_storage = new_active_storage
+	if(active_storage)
+		RegisterSignal(active_storage, COMSIG_PARENT_QDELETING, .proc/active_storage_deleted)
+
+/mob/proc/active_storage_deleted(datum/source)
+	SIGNAL_HANDLER
+	set_active_storage(null)
+
+///Clears the client in contents list of our current "eye". Prevents hard deletes
+/mob/proc/clear_client_in_contents()
+	if(client?.movingmob) //In the case the client was transferred to another mob and not deleted.
+		client.movingmob.client_mobs_in_contents -= src
+		UNSETEMPTY(client.movingmob.client_mobs_in_contents)
+		client.movingmob = null

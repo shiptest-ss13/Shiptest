@@ -419,6 +419,12 @@
 	var/obj/item/warp_cube/linked
 	var/teleporting = FALSE
 
+/obj/item/warp_cube/Destroy()
+	if(!QDELETED(linked))
+		qdel(linked)
+	linked =  null
+	return ..()
+
 /obj/item/warp_cube/attack_self(mob/user)
 	var/turf/current_location = get_turf(user)
 	var/area/current_area = current_location.loc
@@ -488,7 +494,7 @@
 	item_flags = NEEDS_PERMIT
 	force = 15
 	sharpness = IS_SHARP
-	block_chance = 25//A pittance, but might be worth something in a scuffle
+	block_chance = 5//A pittance, but might be worth something in a scuffle
 	hitsound = 'sound/weapons/chainhit.ogg'
 
 /obj/item/gun/magic/hook/melee_attack_chain(mob/user, atom/target, params)
@@ -943,7 +949,13 @@
 	. = ..()
 	. += "<span class='notice'>This weapon contains a gradual heat accelerator that increases shot power as the weapon's energy stores are depleted. Shots at low power are significantly stronger, but also have incredibly short range.</span>"
 
-/obj/item/gun/energy/spur/update_icon()
+/obj/item/gun/energy/spur/update_appearance()
+	if(!cell)
+		chargesound = null
+		recoil = 1
+		fire_sound = 'sound/weapons/spur_high.ogg'
+		return
+
 	var/maxcharge = cell.maxcharge
 	var/charge = cell.charge
 
@@ -968,7 +980,8 @@
 
 	if(chargesound != oldsound)
 		playsound(src, chargesound, 100)
-		return
+		return ..()
+	return ..()
 
 /obj/item/ammo_casing/energy/spur
 	projectile_type = /obj/projectile/bullet/spur
@@ -1373,7 +1386,7 @@
 	switch(random)
 		if(1)
 			to_chat(user, "<span class='danger'>Your appearance morphs to that of a very small humanoid ash dragon! You get to look like a freak without the cool abilities.</span>")
-			H.dna.features = list("mcolor" = "A02720", "tail_lizard" = "Dark Tiger", "tail_human" = "None", "snout" = "Sharp", "horns" = "Curled", "ears" = "None", "wings" = "None", "frills" = "None", "spines" = "Long", "body_markings" = "Dark Tiger Body", "legs" = "Digitigrade Legs")
+			H.dna.features = list("mcolor" = "A02720", "tail_lizard" = "Dark Tiger", "tail_human" = "None", "face_markings" = "None", "horns" = "Curled", "ears" = "None", "wings" = "None", "frills" = "None", "spines" = "Long", "body_markings" = "Dark Tiger Body", "legs" = "Digitigrade Legs")
 			H.eye_color = "fee5a3"
 			H.set_species(/datum/species/lizard)
 		if(2)
@@ -1660,11 +1673,12 @@
 
 /obj/item/hierophant_club/update_icon_state()
 	icon_state = item_state = "hierophant_club[timer <= world.time ? "_ready":""][(beacon && !QDELETED(beacon)) ? "":"_beacon"]"
+	return ..()
 
 /obj/item/hierophant_club/proc/prepare_icon_update()
-	update_icon()
+	update_appearance()
 	sleep(timer - world.time)
-	update_icon()
+	update_appearance()
 
 /obj/item/hierophant_club/ui_action_click(mob/user, action)
 	if(istype(action, /datum/action/item_action/toggle_unfriendly_fire)) //toggle friendly fire...

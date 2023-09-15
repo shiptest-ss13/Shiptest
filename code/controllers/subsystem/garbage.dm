@@ -171,18 +171,19 @@ SUBSYSTEM_DEF(garbage)
 	//Normally this isn't expensive, but the gc queue can grow to 40k items, and that gets costly/causes overrun.
 	for (var/i in 1 to length(queue))
 		var/list/L = queue[i]
-		if (length(L) < 2)
+		if (length(L) < GC_QUEUE_ITEM_INDEX_COUNT)
 			count++
 			if (MC_TICK_CHECK)
 				return
 			continue
 
-		var/GCd_at_time = L[1]
-		if(GCd_at_time > cut_off_time)
+		var/queued_at_time = L[GC_QUEUE_ITEM_QUEUE_TIME]
+		var/GCd_at_time = L[GC_QUEUE_ITEM_GCD_DESTROYED]
+		if(queued_at_time > cut_off_time)
 			break // Everything else is newer, skip them
 		count++
 
-		var/refID = L[2]
+		var/refID = L[GC_QUEUE_ITEM_REF]
 		var/datum/D
 		D = locate(refID)
 
@@ -230,12 +231,6 @@ SUBSYSTEM_DEF(garbage)
 				#endif
 				I.failures++
 
-				if (I.qdel_flags & QDEL_ITEM_SUSPENDED_FOR_LAG)
-					#ifdef REFERENCE_TRACKING
-					if(ref_searching)
-						return //ref searching intentionally cancels all further fires while running so things that hold references don't end up getting deleted, so we want to return here instead of continue
-					#endif
-					continue
 			if (GC_QUEUE_HARDDELETE)
 				HardDelete(D)
 				if (MC_TICK_CHECK)
@@ -259,28 +254,33 @@ SUBSYSTEM_DEF(garbage)
 	if (isnull(D))
 		return
 	if (level > GC_QUEUE_COUNT)
-		HardDelete(D)
+		HardDelete(D, TRUE)
 		return
-	var/gctime = world.time
-	var/refid = "\ref[D]"
+	var/queue_time = world.time
 
-	D.gc_destroyed = gctime
+	var/refid = "\ref[D]"
+	if (D.gc_destroyed <= 0)
+		D.gc_destroyed = queue_time
+
 	var/list/queue = queues[level]
 
-	queue[++queue.len] = list(gctime, refid) // not += for byond reasons
+	queue[++queue.len] = list(queue_time, refid, D.gc_destroyed) // not += for byond reasons
 
 //this is mainly to separate things profile wise.
-/datum/controller/subsystem/garbage/proc/HardDelete(datum/D)
+/datum/controller/subsystem/garbage/proc/HardDelete(datum/D, force)
 	++delslasttick
 	++totaldels
 	var/type = D.type
 	var/refID = "\ref[D]"
+	var/datum/qdel_item/I = items[type]
+
+	if (!force && I.qdel_flags & QDEL_ITEM_SUSPENDED_FOR_LAG)
+		return
 
 	var/tick_usage = TICK_USAGE
 	del(D)
 	tick_usage = TICK_USAGE_TO_MS(tick_usage)
 
-	var/datum/qdel_item/I = items[type]
 	I.hard_deletes++
 	I.hard_delete_time += tick_usage
 	if (tick_usage > I.hard_delete_max)
@@ -382,11 +382,11 @@ SUBSYSTEM_DEF(garbage)
 			if (QDEL_HINT_HARDDEL) //qdel should assume this object won't gc, and queue a hard delete
 				SSgarbage.Queue(D, GC_QUEUE_HARDDELETE)
 			if (QDEL_HINT_HARDDEL_NOW) //qdel should assume this object won't gc, and hard del it post haste.
-				SSgarbage.HardDelete(D)
+				SSgarbage.HardDelete(D, TRUE)
 			#ifdef REFERENCE_TRACKING
 			if (QDEL_HINT_FINDREFERENCE) //qdel will, if REFERENCE_TRACKING is enabled, display all references to this object, then queue the object for deletion.
 				SSgarbage.Queue(D)
-				D.find_references() //This breaks ci. Consider it insurance against somehow pring reftracking on accident
+				D.find_references()
 			if (QDEL_HINT_IFFAIL_FINDREFERENCE) //qdel will, if REFERENCE_TRACKING is enabled and the object fails to collect, display all references to this object.
 				SSgarbage.Queue(D)
 				SSgarbage.reference_find_on_fail["\ref[D]"] = TRUE

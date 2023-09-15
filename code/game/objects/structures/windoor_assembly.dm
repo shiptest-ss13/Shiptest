@@ -55,10 +55,12 @@
 
 /obj/structure/windoor_assembly/update_icon_state()
 	icon_state = "[facing]_[secure ? "secure_" : ""]windoor_assembly[state]"
+	return ..()
 
-/obj/structure/windoor_assembly/CanAllowThrough(atom/movable/mover, turf/target)
+/obj/structure/windoor_assembly/CanAllowThrough(atom/movable/mover, border_dir)
 	. = ..()
-	if(get_dir(loc, target) == dir) //Make sure looking at appropriate border
+
+	if(border_dir == dir)
 		return
 
 	if(istype(mover, /obj/structure/window))
@@ -317,7 +319,7 @@
 				return ..()
 
 	//Update to reflect changes(if applicable)
-	update_icon()
+	update_appearance()
 
 
 
@@ -338,7 +340,7 @@
 	return TRUE
 
 /obj/structure/windoor_assembly/proc/after_rotation(mob/user)
-	update_icon()
+	update_appearance()
 
 //Flips the windoor assembly, determines whather the door opens to the left or the right
 /obj/structure/windoor_assembly/verb/flip()
@@ -360,5 +362,5 @@
 		facing = "l"
 		to_chat(usr, "<span class='notice'>The windoor will now slide to the left.</span>")
 
-	update_icon()
+	update_appearance()
 	return

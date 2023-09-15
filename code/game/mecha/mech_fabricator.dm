@@ -12,7 +12,7 @@
 	var/time_coeff = 1
 	var/component_coeff = 1
 	var/datum/techweb/specialized/autounlocking/exofab/stored_research
-	var/sync = 0
+	var/linked_to_server = FALSE //if a server is linked to the exofab
 	var/part_set
 	var/datum/design/being_built
 	var/list/queue = list()
@@ -113,11 +113,11 @@
 	var/output
 	output += "<div class='statusDisplay'><b>Mecha Fabricator</b><br>"
 	output += "Security protocols: [(obj_flags & EMAGGED)? "<font color='red'>Disabled</font>" : "<font color='green'>Enabled</font>"]<br>"
+	output += "Linked to server: [(linked_to_server == FALSE)? "<font color='red'>Unlinked</font>" : "<font color='green'>Linked</font>"]<br>"
 	if (rmat.mat_container)
 		output += "<a href='?src=[REF(src)];screen=resources'><B>Material Amount:</B> [rmat.format_amount()]</A>"
 	else
 		output += "<font color='red'>No material storage connected, please contact the quartermaster.</font>"
-	output += "<br><a href='?src=[REF(src)];sync=1'>Sync with R&D servers</a><br>"
 	output += "<a href='?src=[REF(src)];screen=main'>Main Screen</a>"
 	output += "</div>"
 	output += "<form name='search' action='?src=[REF(src)]'>\
@@ -277,17 +277,6 @@
 		output += "<a href='?src=[REF(src)];process_queue=1'>Process queue</a> | <a href='?src=[REF(src)];clear_queue=1'>Clear queue</a>"
 	return output
 
-/obj/machinery/mecha_part_fabricator/proc/sync()
-	for(var/obj/machinery/computer/rdconsole/RDC in oview(7,src))
-		RDC.stored_research.copy_research_to(stored_research)
-		updateUsrDialog()
-		say("Successfully synchronized with R&D server.")
-		return
-
-	temp = "Unable to connect to local R&D Database.<br>Please check your connections and try again.<br><a href='?src=[REF(src)];clear_temp=1'>Return</a>"
-	updateUsrDialog()
-	return
-
 /obj/machinery/mecha_part_fabricator/proc/get_resource_cost_w_coeff(datum/design/D, datum/material/resource, roundto = 1)
 	return round(D.materials[resource]*component_coeff, roundto)
 
@@ -412,8 +401,6 @@
 	if(href_list["clear_queue"])
 		queue = list()
 		return update_queue_on_page()
-	if(href_list["sync"])
-		sync()
 	if(href_list["part_desc"])
 		var/T = href_list["part_desc"]
 		for(var/v in stored_research.researched_designs)
@@ -471,7 +458,15 @@
 	if(default_deconstruction_crowbar(W))
 		return TRUE
 
-	return ..()
+	if(istype(W, /obj/item/multitool))
+		var/obj/item/multitool/multi = W
+		if(multi.buffer && istype(multi.buffer, /obj/machinery/rnd/server) && multi.buffer != src)
+			var/obj/machinery/rnd/server/server = multi.buffer
+			stored_research = server.stored_research
+			visible_message("Linked to [server]!")
+			linked_to_server = TRUE
+	else
+		return ..()
 
 
 /obj/machinery/mecha_part_fabricator/proc/is_insertion_ready(mob/user)

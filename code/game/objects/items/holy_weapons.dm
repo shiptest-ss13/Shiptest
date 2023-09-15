@@ -287,7 +287,7 @@
 	w_class = WEIGHT_CLASS_HUGE
 	force = 5
 	slot_flags = ITEM_SLOT_BACK
-	block_chance = 50
+	block_chance = 40
 	var/shield_icon = "shield-red"
 
 /obj/item/nullrod/staff/worn_overlays(isinhands)

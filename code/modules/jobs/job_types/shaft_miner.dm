@@ -1,7 +1,5 @@
 /datum/job/mining
 	name = "Shaft Miner"
-	total_positions = 3
-	spawn_positions = 3
 	wiki_page = "Shaft_Miner" //WS Edit - Wikilinks/Warning
 
 	outfit = /datum/outfit/job/miner
@@ -29,7 +27,6 @@
 	backpack_contents = list(
 		/obj/item/flashlight/seclite=1,\
 		/obj/item/kitchen/knife/combat/survival=1,\
-		/obj/item/mining_voucher=1,\
 		/obj/item/stack/marker_beacon/ten=1)
 
 	backpack = /obj/item/storage/backpack/explorer
@@ -54,7 +51,6 @@
 	backpack_contents = list(
 		/obj/item/flashlight/seclite=1,\
 		/obj/item/kitchen/knife/combat/survival=1,
-		/obj/item/mining_voucher=1,
 		/obj/item/mining_scanner=1,
 		/obj/item/stack/marker_beacon/ten=1)
 	belt = /obj/item/gun/energy/kinetic_accelerator
@@ -109,7 +105,7 @@
 	glasses = /obj/item/clothing/glasses/meson/night
 	gloves = /obj/item/clothing/gloves/explorer
 	ears = /obj/item/radio/headset/syndicate
-	mask = /obj/item/clothing/mask/chameleon
+	mask = /obj/item/clothing/mask/gas/syndicate/voicechanger
 	r_pocket = /obj/item/kitchen/knife/combat/survival
 	belt = /obj/item/storage/belt/mining/alt
 	implants = list(/obj/item/implant/weapons_auth)
@@ -154,7 +150,6 @@
 	backpack_contents = list(
 		/obj/item/flashlight/seclite=1,
 		/obj/item/kitchen/knife/combat/survival=1,
-		/obj/item/mining_voucher=1,
 		/obj/item/mining_scanner=1,
 		/obj/item/wrench=1
 	)
@@ -163,7 +158,6 @@
 	backpack_contents = list(
 		/obj/item/flashlight/seclite=1,
 		/obj/item/kitchen/knife/combat/survival=1,
-		/obj/item/mining_voucher=1,
 		/obj/item/stack/marker_beacon/ten=1,
 		/obj/item/borg/upgrade/modkit/aoe=1
 	)

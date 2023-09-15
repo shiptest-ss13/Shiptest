@@ -734,14 +734,14 @@
 	foodtype = FRUIT | SUGAR
 
 /obj/item/reagent_containers/food/snacks/canned/peaches/maint
-	name = "Maintenance Peaches"
+	name = "maintenance peaches"
 	desc = "I have a mouth and I must eat."
 	icon_state = "peachcanmaint"
 	trash = /obj/item/trash/can/food/peaches/maint
 	tastes = list("peaches" = 1, "tin" = 7)
 
 /obj/item/reagent_containers/food/snacks/crab_rangoon
-	name = "Crab Rangoon"
+	name = "crab rangoon"
 	desc = "Has many names, like crab puffs, cheese wontons, crab dumplings? Whatever you call them, they're a fabulous blast of cream cheesy crab."
 	icon_state = "crabrangoon"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 10, /datum/reagent/consumable/nutriment/vitamin = 5)
@@ -761,3 +761,5 @@
 	filling_color = "#ECA735"
 	tastes = list("fried corn" = 1)
 	foodtype = JUNKFOOD | FRIED
+
+

@@ -385,7 +385,7 @@
 	blown_kiss.original = target
 	blown_kiss.fired_from = user
 	blown_kiss.firer = user // don't hit ourself that would be really annoying
-	blown_kiss.impacted = list(user = TRUE) // just to make sure we don't hit the wearer
+	LAZYSET(blown_kiss.impacted, user, TRUE) // just to make sure we don't hit the wearer
 	blown_kiss.preparePixelProjectile(target, user)
 	blown_kiss.fire()
 	qdel(src)
@@ -411,7 +411,7 @@
 	blown_kiss.original = taker
 	blown_kiss.fired_from = offerer
 	blown_kiss.firer = offerer // don't hit ourself that would be really annoying
-	blown_kiss.impacted = list(offerer = TRUE) // just to make sure we don't hit the wearer
+	LAZYSET(blown_kiss.impacted, offerer, TRUE) // just to make sure we don't hit the wearer
 	blown_kiss.preparePixelProjectile(taker, offerer)
 	blown_kiss.suppressed = SUPPRESSED_VERY // this also means it's a direct offer
 	blown_kiss.fire()
