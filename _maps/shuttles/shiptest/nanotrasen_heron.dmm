@@ -2864,9 +2864,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "kW" = (
-/obj/machinery/computer/security{
-	dir = 8
-	},
 /obj/machinery/button/door{
 	id = "heron_outerbridge";
 	name = "Bridge Blast Doors";
@@ -2880,6 +2877,9 @@
 	pixel_y = 24;
 	req_access_txt = "3";
 	pixel_x = -6
+	},
+/obj/machinery/computer/helm{
+	dir = 8
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
