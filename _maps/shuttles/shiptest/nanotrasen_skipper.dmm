@@ -583,25 +583,6 @@
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating/rust,
 /area/ship/crew/toilet)
-"eG" = (
-/obj/machinery/atmospherics/components/unary/shuttle/heater{
-	dir = 4
-	},
-/obj/machinery/atmospherics/components/binary/pump{
-	dir = 8;
-	name = "engine fuel pump";
-	piping_layer = 5
-	},
-/obj/structure/window/reinforced/spawner/west,
-/obj/machinery/door/poddoor{
-	dir = 4;
-	id = "enginelockdown"
-	},
-/obj/machinery/door/window/eastleft{
-	name = "Engine Access"
-	},
-/turf/open/floor/plating,
-/area/ship/engineering/atmospherics)
 "eL" = (
 /obj/machinery/door/airlock/command{
 	name = "Internal Affairs Office"
@@ -6156,7 +6137,7 @@ fW
 fW
 kz
 kz
-eG
+bG
 EE
 tf
 ZD
