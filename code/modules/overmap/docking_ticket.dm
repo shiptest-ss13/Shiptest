@@ -10,6 +10,23 @@
 
 /datum/docking_ticket/New(_target_port, _issuer, _target, _docking_error)
 	target_port = _target_port
+	if(target_port?.current_docking_ticket)
+		docking_error = "[target_port] is already being docked to!"
+		return
+	if(target_port)
+		target_port.current_docking_ticket = src
+
 	issuer = _issuer
 	target = _target
+	if(target.current_docking_ticket)
+		docking_error = "[target] is already docking!"
+		return
+	target.current_docking_ticket = src
+
 	docking_error = _docking_error
+
+/datum/docking_ticket/Destroy(force, ...)
+	target.current_docking_ticket = null
+	target_port.current_docking_ticket = null
+
+	return ..()
