@@ -55,12 +55,13 @@
 /datum/overmap/dynamic/Destroy()
 	for(var/obj/docking_port/stationary/dock as anything in reserve_docks)
 		reserve_docks -= dock
-		qdel(dock, TRUE)
+		qdel(dock)
+	ruin_turfs = null
+	. = ..()
+	//This NEEDS to be last so any docked ships get deleted properly
 	if(mapzone)
 		mapzone.clear_reservation()
 		QDEL_NULL(mapzone)
-	ruin_turfs = null
-	return ..()
 
 /datum/overmap/dynamic/get_jump_to_turf()
 	if(reserve_docks)
@@ -93,8 +94,8 @@
 	if(preserve_level)
 		return
 
-	if(length(mapzone?.get_mind_mobs()))
-		return //Dont fuck over stranded people? tbh this shouldn't be called on this condition, instead of bandaiding it inside
+	if(length(mapzone?.get_mind_mobs()) || SSlag_switch.measures[DISABLE_PLANETDEL])
+		return //Dont fuck over stranded people
 
 	log_shuttle("[src] [REF(src)] UNLOAD")
 	var/list/results = SSovermap.get_unused_overmap_square()
@@ -102,7 +103,7 @@
 
 	for(var/obj/docking_port/stationary/dock as anything in reserve_docks)
 		reserve_docks -= dock
-		qdel(dock, TRUE)
+		qdel(dock)
 	reserve_docks = null
 	if(mapzone)
 		mapzone.clear_reservation()
@@ -172,6 +173,8 @@
  * * visiting shuttle - The docking port of the shuttle visiting the level.
  */
 /datum/overmap/dynamic/proc/load_level()
+	if(SSlag_switch.measures[DISABLE_PLANETGEN] && !(HAS_TRAIT(usr, TRAIT_BYPASS_MEASURES)))
+		return FALSE
 	if(mapzone)
 		return TRUE
 	log_shuttle("[src] [REF(src)] LEVEL_INIT")
