@@ -52,7 +52,7 @@
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 	armor = list("melee" = 35, "bullet" = 35, "laser" = 20, "energy" = 40, "bomb" = 20, "bio" = 20, "rad" = 0, "fire" = 50, "acid" = 50)
-	allowed = list(	
+	allowed = list(
 					/obj/item/flashlight,
 					/obj/item/tank/internals/emergency_oxygen,
 					/obj/item/tank/internals/plasmaman,
