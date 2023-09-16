@@ -1,5 +1,5 @@
 /obj/item/gun/energy/kalix //blue
-	name = "PH KALIX GUN"
+	name = "\improper Kalixcian light beamgun"
 	desc = "PH PGF DESC"
 	icon_state = "kalixgun"
 	item_state = "kalixgun"
@@ -29,7 +29,7 @@
 	e_cost = 850
 
 /obj/item/gun/energy/kalix/pgf
-	name = "PH PGF GUN"
+	name = "\improper Gezenan light beamgun"
 	desc = "PH PGF DESC"
 	icon_state = "pgfgun"
 	item_state = "pgfgun"
@@ -53,7 +53,7 @@
 	e_cost = 1000
 
 /obj/item/gun/energy/kalix/pgf/heavy //todo: make it actually use wielded component, or some other solution for twohanding, as it really sucks right now
-	name = "PH PGF HEAVY NAME"
+	name = "\improper Gezenan heavy beamgun"
 	desc = "PH PGF HEAVY DESC"
 	icon_state = "pgfheavy"
 	item_state = "pgfheavy"
