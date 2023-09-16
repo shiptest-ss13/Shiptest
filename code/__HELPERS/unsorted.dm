@@ -32,6 +32,27 @@
 	else if(dx<0)
 		.+=360
 
+
+////Tile coordinates (x, y) to absolute coordinates (in number of pixels). Center of a tile is generally assumed to be (16,16), but can be offset.
+#define ABS_COOR(c) (((c - 1) * 32) + 16)
+#define ABS_COOR_OFFSET(c, o) (((c - 1) * 32) + o)
+
+/proc/get_angle_with_scatter(atom/start, atom/end, scatter, x_offset = 16, y_offset = 16)
+	var/end_apx
+	var/end_apy
+	if(isliving(end)) //Center mass.
+		end_apx = ABS_COOR(end.x)
+		end_apy = ABS_COOR(end.y)
+	else //Exact pixel.
+		end_apx = ABS_COOR_OFFSET(end.x, x_offset)
+		end_apy = ABS_COOR_OFFSET(end.y, y_offset)
+	scatter = ( (rand(0, min(scatter, 45))) * (prob(50) ? 1 : -1) ) //Up to 45 degrees deviation to either side.
+	. = round((90 - ATAN2(end_apx - ABS_COOR(start.x), end_apy - ABS_COOR(start.y))), 1) + scatter
+	if(. < 0)
+		. += 360
+	else if(. >= 360)
+		. -= 360
+
 /proc/Get_Pixel_Angle(y, x)//for getting the angle when animating something's pixel_x and pixel_y
 	if(!y)
 		return (x>=0)?90:270
@@ -379,16 +400,16 @@ Turf and target are separate in case you want to teleport some distance from a t
 			break
 	return turf_to_check
 
-///Returns a list of all locations (except the area) the movable is within.
-/proc/get_nested_locs(atom/movable/atom_on_location, include_turf = FALSE)
+//Returns a list of all locations (except the area) the movable is within.
+/proc/get_nested_locs(atom/movable/AM, include_turf = FALSE)
 	. = list()
-	var/atom/location = atom_on_location.loc
-	var/turf/our_turf = get_turf(atom_on_location)
-	while(location && location != our_turf)
+	var/atom/location = AM.loc
+	var/turf/turf = get_turf(AM)
+	while(location && location != turf)
 		. += location
 		location = location.loc
-	if(our_turf && include_turf) //At this point, only the turf is left, provided it exists.
-		. += our_turf
+	if(location && include_turf) //At this point, only the turf is left, provided it exists.
+		. += location
 
 // returns the turf located at the map edge in the specified direction relative to A
 // used for mass driver

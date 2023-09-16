@@ -222,7 +222,7 @@
 
 ///Shake the camera of the person viewing the mob SO REAL!
 /proc/shake_camera(mob/recoilster, duration, strength=1)
-	if(!M || !M.client || duration < 1)
+	if(!recoilster || !recoilster.client || duration < 1)
 		return
 	var/client/client_to_shake = recoilster.client
 	var/oldx = client_to_shake.pixel_x
@@ -239,7 +239,7 @@
 
 
 /proc/recoil_camera(mob/recoilster, duration, backtime_duration, strength, angle)
-	if(!M || !M.client)
+	if(!recoilster || !recoilster.client)
 		return
 	strength *= world.icon_size
 	var/client/client_to_shake = recoilster.client

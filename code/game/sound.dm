@@ -245,8 +245,12 @@ distance_multiplier - Can be used to multiply the distance at which the sound is
 				soundin = pick('sound/voice/hiss1.ogg','sound/voice/hiss2.ogg','sound/voice/hiss3.ogg','sound/voice/hiss4.ogg')
 			if ("pageturn")
 				soundin = pick('sound/effects/pageturn1.ogg', 'sound/effects/pageturn2.ogg','sound/effects/pageturn3.ogg')
-			if ("ricochet")
-				soundin = pick('sound/weapons/effects/ric1.ogg', 'sound/weapons/effects/ric2.ogg','sound/weapons/effects/ric3.ogg','sound/weapons/effects/ric4.ogg','sound/weapons/effects/ric5.ogg')
+			if ("bullet_hit")
+				soundin = pick('sound/weapons/gun/hit/bullet_impact1.ogg', 'sound/weapons/gun/hit/bullet_impact2.ogg','sound/weapons/gun/hit/bullet_impact3.ogg')
+			if ("bullet_impact")
+				soundin = pick('sound/weapons/gun/hit/bullet_ricochet1.ogg', 'sound/weapons/gun/hit/bullet_ricochet2.ogg','sound/weapons/gun/hit/bullet_ricochet3.ogg','sound/weapons/gun/hit/bullet_ricochet4.ogg','sound/weapons/gun/hit/bullet_ricochet5.ogg','sound/weapons/gun/hit/bullet_ricochet6.ogg','sound/weapons/gun/hit/bullet_ricochet7.ogg','sound/weapons/gun/hit/bullet_ricochet8.ogg')
+			if ("bullet_bounce")
+				soundin = pick('sound/weapons/gun/hit/bullet_bounce1.ogg', 'sound/weapons/gun/hit/bullet_bounce2.ogg','sound/weapons/gun/hit/bullet_bounce3.ogg','sound/weapons/gun/hit/bullet_bounce4.ogg','sound/weapons/gun/hit/bullet_bounce5.ogg')
 			if ("terminal_type")
 				soundin = pick('sound/machines/terminal_button01.ogg', 'sound/machines/terminal_button02.ogg', 'sound/machines/terminal_button03.ogg', \
 								'sound/machines/terminal_button04.ogg', 'sound/machines/terminal_button05.ogg', 'sound/machines/terminal_button06.ogg', \
