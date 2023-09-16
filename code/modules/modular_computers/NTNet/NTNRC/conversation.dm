@@ -22,6 +22,8 @@
 /datum/ntnet_conversation/Destroy()
 	if(SSnetworks.station_network)
 		SSnetworks.station_network.chat_channels.Remove(src)
+	for(var/datum/computer_file/program/chatclient/chatterbox in clients)
+		purge_client(chatterbox)
 	return ..()
 
 /datum/ntnet_conversation/proc/add_message(message, username)
@@ -38,23 +40,30 @@
 		return
 	messages = messages.Copy(messages.len-50 ,0)
 
-/datum/ntnet_conversation/proc/add_client(datum/computer_file/program/chatclient/C)
-	if(!istype(C))
+/datum/ntnet_conversation/proc/add_client(datum/computer_file/program/chatclient/new_user)
+	if(!istype(new_user))
 		return
-	clients.Add(C)
-	add_status_message("[C.username] has joined the channel.")
+	new_user.conversations |= src
+	clients.Add(new_user)
+	add_status_message("[new_user.username] has joined the channel.")
 	// No operator, so we assume the channel was empty. Assign this user as operator.
 	if(!operator)
-		changeop(C)
+		changeop(new_user)
 
-/datum/ntnet_conversation/proc/remove_client(datum/computer_file/program/chatclient/C)
-	if(!istype(C) || !(C in clients))
+//Clear all of our references to a client, used for client deletion
+/datum/ntnet_conversation/proc/purge_client(datum/computer_file/program/chatclient/forget)
+	remove_client(forget)
+	forget.conversations -= src
+
+/datum/ntnet_conversation/proc/remove_client(datum/computer_file/program/chatclient/leaving)
+	if(!istype(leaving))
 		return
-	clients.Remove(C)
-	add_status_message("[C.username] has left the channel.")
+	if(leaving in clients)
+		clients.Remove(leaving)
+		add_status_message("[leaving.username] has left the channel.")
 
 	// Channel operator left, pick new operator
-	if(C == operator)
+	if(leaving == operator)
 		operator = null
 		if(clients.len)
 			var/datum/computer_file/program/chatclient/newop = pick(clients)

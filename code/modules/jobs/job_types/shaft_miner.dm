@@ -1,7 +1,5 @@
 /datum/job/mining
 	name = "Shaft Miner"
-	total_positions = 3
-	spawn_positions = 3
 	wiki_page = "Shaft_Miner" //WS Edit - Wikilinks/Warning
 
 	outfit = /datum/outfit/job/miner

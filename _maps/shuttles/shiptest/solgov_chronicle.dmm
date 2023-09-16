@@ -175,8 +175,7 @@
 /area/ship/cargo)
 "bs" = (
 /obj/machinery/telecomms/broadcaster/preset_left{
-	network = "SolNet";
-	pixel_y = 0
+	network = "SolNet"
 	},
 /obj/machinery/door/window/brigdoor/northright{
 	dir = 2;
@@ -676,7 +675,6 @@
 /area/ship/cargo)
 "gi" = (
 /obj/effect/turf_decal/siding/wood{
-	dir = 2;
 	color = "#543C30"
 	},
 /obj/structure/railing/wood{
@@ -759,7 +757,6 @@
 "hp" = (
 /obj/structure/table/wood,
 /obj/structure/railing/wood{
-	dir = 2;
 	color = "#792f27"
 	},
 /obj/item/reagent_containers/food/snacks/grown/cabbage{
@@ -1833,7 +1830,6 @@
 /area/ship/cargo)
 "sq" = (
 /obj/effect/turf_decal/siding/wood{
-	dir = 2;
 	color = "#543C30"
 	},
 /obj/structure/cable{
@@ -1875,7 +1871,6 @@
 /area/ship/security/armory)
 "sz" = (
 /obj/effect/turf_decal/siding/wood{
-	dir = 2;
 	color = "#543C30"
 	},
 /obj/structure/railing/wood{
@@ -2001,7 +1996,6 @@
 	req_one_access = list(61,11)
 	},
 /obj/machinery/telecomms/message_server{
-	pixel_y = 0;
 	autolinkers = list("solgovPDA");
 	network = "SolNet";
 	calibrating = 0
@@ -2087,7 +2081,6 @@
 /area/ship/engineering)
 "uK" = (
 /obj/effect/turf_decal/siding/wood{
-	dir = 2;
 	color = "#543C30"
 	},
 /obj/structure/cable{
@@ -2240,7 +2233,6 @@
 /obj/item/kirbyplants{
 	icon_state = "plant-11";
 	pixel_x = 10;
-	pixel_y = 0;
 	layer = 2.89
 	},
 /obj/structure/table/wood/fancy/purple,
@@ -2571,9 +2563,6 @@
 /obj/effect/turf_decal/atmos/oxygen{
 	layer = 2.04
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/green/visible{
 	dir = 4
 	},
@@ -2581,6 +2570,9 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/techfloor/orange,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engine)
 "zs" = (
@@ -2804,7 +2796,6 @@
 /obj/machinery/telecomms/processor{
 	autolinkers = list("processor7");
 	network = "SolNet";
-	pixel_y = 0;
 	id = "Processor"
 	},
 /obj/structure/window/reinforced,
@@ -3026,7 +3017,6 @@
 /area/ship/crew/office)
 "Ds" = (
 /obj/effect/turf_decal/siding/wood{
-	dir = 2;
 	color = "#543C30"
 	},
 /obj/structure/cable{
@@ -3070,7 +3060,6 @@
 	},
 /obj/machinery/firealarm/directional/north,
 /obj/machinery/light_switch{
-	dir = 2;
 	pixel_y = 22;
 	pixel_x = -12
 	},
@@ -3220,7 +3209,6 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/light_switch{
-	dir = 2;
 	pixel_y = 22;
 	pixel_x = -12
 	},
@@ -3544,8 +3532,7 @@
 "IH" = (
 /obj/machinery/telecomms/server/presets/solgov{
 	autolinkers = list("solgov","sproingle");
-	network = "SolNet";
-	pixel_y = 0
+	network = "SolNet"
 	},
 /obj/machinery/door/window/brigdoor/northleft{
 	dir = 2;
@@ -3722,7 +3709,6 @@
 /area/ship/engineering)
 "Kc" = (
 /obj/effect/turf_decal/siding/wood{
-	dir = 2;
 	color = "#543C30"
 	},
 /obj/structure/cable{
@@ -3746,9 +3732,7 @@
 /obj/effect/turf_decal/spline/fancy/wood{
 	dir = 4
 	},
-/obj/effect/turf_decal/siding/wood/end{
-	dir = 2
-	},
+/obj/effect/turf_decal/siding/wood/end,
 /obj/structure/fluff/hedge,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/crewtwo)
@@ -4016,7 +4000,6 @@
 "Nu" = (
 /obj/structure/table/wood,
 /obj/structure/railing/wood{
-	dir = 2;
 	color = "#792f27"
 	},
 /obj/machinery/light/small/directional/west,
@@ -4117,8 +4100,7 @@
 	pixel_y = -1
 	},
 /obj/item/folder/solgov{
-	pixel_x = 4;
-	pixel_y = 0
+	pixel_x = 4
 	},
 /obj/item/pen/solgov{
 	pixel_x = 2
@@ -4493,7 +4475,6 @@
 	dir = 8
 	},
 /obj/machinery/light_switch{
-	dir = 2;
 	pixel_y = 22;
 	pixel_x = -12
 	},
@@ -4560,7 +4541,6 @@
 "SJ" = (
 /obj/machinery/telecomms/receiver/preset_left{
 	network = "SolNet";
-	pixel_y = 0;
 	id = "Receiver"
 	},
 /obj/structure/window/reinforced{
@@ -4585,8 +4565,7 @@
 	pixel_y = -1
 	},
 /obj/item/folder/solgov{
-	pixel_x = 4;
-	pixel_y = 0
+	pixel_x = 4
 	},
 /obj/item/pen/solgov{
 	pixel_x = 2
@@ -5157,7 +5136,6 @@
 	dir = 8
 	},
 /obj/machinery/light_switch{
-	dir = 2;
 	pixel_y = 22;
 	pixel_x = -12
 	},

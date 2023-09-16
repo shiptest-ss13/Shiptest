@@ -64,10 +64,41 @@
 /obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/cargo)
+"bs" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/button/door{
+	dir = 4;
+	id = "piratecargo";
+	name = "Blast Door Control";
+	pixel_x = -25;
+	pixel_y = -10
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/button/shieldwallgen{
+	dir = 4;
+	pixel_x = -25;
+	id = "piratecargo_holofield";
+	name = "Holofield Control"
+	},
+/turf/open/floor/plasteel/stairs/right,
+/area/ship/cargo)
 "bz" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/stairs,
 /area/ship/bridge)
+"bF" = (
+/obj/effect/turf_decal/industrial/warning,
+/obj/structure/cable{
+	icon_state = "4-10"
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ship/cargo)
 "bG" = (
 /obj/structure/table/reinforced,
 /obj/item/areaeditor/shuttle{
@@ -102,10 +133,22 @@
 "cF" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/external)
-"dD" = (
-/obj/effect/turf_decal/industrial/warning,
+"eg" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /obj/structure/cable{
-	icon_state = "4-10"
+	icon_state = "4-9"
+	},
+/obj/effect/decal/cleanable/oil,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "2-9"
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/cargo)
@@ -116,17 +159,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/starboard)
-"fd" = (
-/obj/docking_port/mobile{
-	launch_status = 0;
-	port_direction = 2
-	},
-/obj/machinery/door/poddoor/shutters{
-	id = "piratecargo";
-	name = "Cargo Bay"
-	},
-/turf/open/floor/engine/hull/interior,
-/area/ship/cargo)
 "fi" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/machinery/airalarm/directional/west,
@@ -168,6 +200,17 @@
 "fq" = (
 /turf/open/floor/engine/hull,
 /area/ship/external)
+"fF" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/industrial/warning,
+/obj/structure/cable{
+	icon_state = "4-5"
+	},
+/obj/structure/cable{
+	icon_state = "5-8"
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ship/cargo)
 "fG" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/security)
@@ -182,6 +225,16 @@
 "hb" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/security)
+"io" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-10"
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ship/cargo)
 "iA" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/bridge)
@@ -347,18 +400,6 @@
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security)
-"nN" = (
-/obj/machinery/door/poddoor/shutters{
-	id = "piratecargo";
-	name = "Cargo Bay"
-	},
-/obj/machinery/power/shieldwallgen/atmos/roundstart{
-	dir = 8;
-	id = "piratecargo_holofield"
-	},
-/obj/structure/cable,
-/turf/open/floor/engine/hull/interior,
-/area/ship/cargo)
 "nQ" = (
 /obj/machinery/mass_driver{
 	dir = 1;
@@ -493,17 +534,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/security)
-"rc" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/industrial/warning,
-/obj/structure/cable{
-	icon_state = "4-5"
-	},
-/obj/structure/cable{
-	icon_state = "5-8"
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/ship/cargo)
 "rd" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
@@ -738,6 +768,19 @@
 /obj/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
 /area/ship/bridge)
+"vV" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ship/cargo)
 "vW" = (
 /obj/structure/table,
 /obj/machinery/microwave{
@@ -811,6 +854,17 @@
 /obj/effect/decal/cleanable/vomit/old,
 /turf/open/floor/pod/light,
 /area/ship/crew)
+"yX" = (
+/obj/structure/table,
+/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/lootdrop/ration,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/item/radio/intercom/directional/north,
+/obj/item/lighter{
+	pixel_x = 14
+	},
+/turf/open/floor/plasteel/grimy,
+/area/ship/crew)
 "za" = (
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
@@ -872,17 +926,13 @@
 	},
 /turf/open/floor/plating,
 /area/ship/crew)
-"AL" = (
-/obj/structure/table,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
-/obj/item/radio/intercom/directional/north,
-/obj/item/lighter{
-	pixel_x = 14
+"Ay" = (
+/obj/machinery/door/poddoor/shutters{
+	id = "piratecargo";
+	name = "Cargo Bay"
 	},
-/turf/open/floor/plasteel/grimy,
-/area/ship/crew)
+/turf/open/floor/engine/hull/interior,
+/area/ship/cargo)
 "Bb" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
@@ -933,6 +983,52 @@
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/pod/light,
 /area/ship/crew)
+"BR" = (
+/obj/item/reagent_containers/food/snacks/canned/beans{
+	pixel_x = -5;
+	pixel_y = 3
+	},
+/obj/item/reagent_containers/food/snacks/canned/beans{
+	pixel_x = 2;
+	pixel_y = 3
+	},
+/obj/item/reagent_containers/food/snacks/canned/beans{
+	pixel_x = -2
+	},
+/obj/item/reagent_containers/food/drinks/waterbottle/large{
+	pixel_x = 5
+	},
+/obj/item/reagent_containers/food/drinks/waterbottle/large{
+	pixel_x = 1;
+	pixel_y = -3
+	},
+/obj/item/reagent_containers/food/drinks/waterbottle/large{
+	pixel_x = 8;
+	pixel_y = -3
+	},
+/obj/structure/closet/crate{
+	name = "food crate"
+	},
+/obj/item/storage/cans/sixbeer,
+/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/lootdrop/ration,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "5-8"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/industrial/outline/yellow,
+/turf/open/floor/mineral/plastitanium,
+/area/ship/cargo)
 "Cd" = (
 /obj/structure/cable,
 /obj/machinery/power/shuttle/engine/electric{
@@ -1005,17 +1101,24 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ship/hallway/starboard)
+"CW" = (
+/obj/machinery/light/small/directional/east,
+/obj/effect/turf_decal/industrial/stand_clear{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 6
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ship/cargo)
 "Df" = (
 /obj/structure/reagent_dispensers/watertank,
 /obj/item/radio/intercom/directional/west,
 /turf/open/floor/pod/light,
-/area/ship/cargo)
-"DB" = (
-/obj/machinery/door/poddoor/shutters{
-	id = "piratecargo";
-	name = "Cargo Bay"
-	},
-/turf/open/floor/engine/hull/interior,
 /area/ship/cargo)
 "DG" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1246,30 +1349,6 @@
 /obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/plating,
 /area/ship/hallway/port)
-"Jr" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/button/door{
-	dir = 4;
-	id = "piratecargo";
-	name = "Blast Door Control";
-	pixel_x = -25;
-	pixel_y = -10
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/button/shieldwallgen{
-	dir = 4;
-	pixel_x = -25;
-	id = "piratecargo_holofield";
-	name = "Holofield Control"
-	},
-/turf/open/floor/plasteel/stairs/right,
-/area/ship/cargo)
 "Jx" = (
 /obj/machinery/cell_charger,
 /obj/item/stock_parts/cell/high,
@@ -1290,27 +1369,21 @@
 /obj/machinery/selling_pad,
 /turf/open/floor/pod/light,
 /area/ship/cargo)
-"KS" = (
-/obj/machinery/button/door{
-	dir = 8;
-	id = "piratecargo";
-	name = "Blast Door Control";
-	pixel_x = 25;
-	pixel_y = -10
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/button/shieldwallgen{
-	dir = 8;
-	pixel_x = 25;
-	id = "piratecargo_holofield";
-	name = "Holofield Control"
-	},
-/turf/open/floor/plasteel/stairs/left,
-/area/ship/cargo)
 "KV" = (
 /obj/effect/decal/cleanable/glass,
 /obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/mineral/plastitanium,
+/area/ship/cargo)
+"KX" = (
+/obj/docking_port/mobile{
+	launch_status = 0;
+	port_direction = 2
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "piratecargo";
+	name = "Cargo Bay"
+	},
+/turf/open/floor/engine/hull/interior,
 /area/ship/cargo)
 "Le" = (
 /turf/closed/wall/mineral/plastitanium,
@@ -1457,16 +1530,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/port)
-"OO" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/industrial/warning{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "1-10"
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/ship/cargo)
 "Pf" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 8
@@ -1607,71 +1670,6 @@
 /obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/cargo)
-"Sw" = (
-/obj/item/reagent_containers/food/snacks/canned/beans{
-	pixel_x = -5;
-	pixel_y = 3
-	},
-/obj/item/reagent_containers/food/snacks/canned/beans{
-	pixel_x = 2;
-	pixel_y = 3
-	},
-/obj/item/reagent_containers/food/snacks/canned/beans{
-	pixel_x = -2
-	},
-/obj/item/reagent_containers/food/drinks/waterbottle/large{
-	pixel_x = 5
-	},
-/obj/item/reagent_containers/food/drinks/waterbottle/large{
-	pixel_x = 1;
-	pixel_y = -3
-	},
-/obj/item/reagent_containers/food/drinks/waterbottle/large{
-	pixel_x = 8;
-	pixel_y = -3
-	},
-/obj/structure/closet/crate{
-	name = "food crate"
-	},
-/obj/item/storage/cans/sixbeer,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "5-8"
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/industrial/outline/yellow,
-/turf/open/floor/mineral/plastitanium,
-/area/ship/cargo)
-"SA" = (
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "4-9"
-	},
-/obj/effect/decal/cleanable/oil,
-/obj/effect/turf_decal/industrial/warning{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "2-9"
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/ship/cargo)
 "SR" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -1708,20 +1706,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/pod/dark,
 /area/ship/cargo)
-"TP" = (
-/obj/machinery/door/poddoor/shutters{
-	id = "piratecargo";
-	name = "Cargo Bay"
-	},
-/obj/machinery/power/shieldwallgen/atmos/roundstart{
-	dir = 4;
-	id = "piratecargo_holofield"
-	},
-/obj/structure/cable{
-	icon_state = "0-5"
-	},
-/turf/open/floor/engine/hull/interior,
-/area/ship/cargo)
 "TT" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -1741,6 +1725,23 @@
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/starboard)
+"TX" = (
+/obj/machinery/button/door{
+	dir = 8;
+	id = "piratecargo";
+	name = "Blast Door Control";
+	pixel_x = 25;
+	pixel_y = -10
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/button/shieldwallgen{
+	dir = 8;
+	pixel_x = 25;
+	id = "piratecargo_holofield";
+	name = "Holofield Control"
+	},
+/turf/open/floor/plasteel/stairs/left,
+/area/ship/cargo)
 "Ut" = (
 /obj/machinery/door/airlock/maintenance_hatch{
 	dir = 4;
@@ -1874,18 +1875,19 @@
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/starboard)
-"WZ" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 1
+"WS" = (
+/obj/machinery/door/poddoor/shutters{
+	id = "piratecargo";
+	name = "Cargo Bay"
 	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/industrial/warning{
-	dir = 4
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 4;
+	id = "piratecargo_holofield"
 	},
 /obj/structure/cable{
-	icon_state = "1-2"
+	icon_state = "0-5"
 	},
-/turf/open/floor/mineral/plastitanium,
+/turf/open/floor/engine/hull/interior,
 /area/ship/cargo)
 "Xx" = (
 /obj/structure/rack,
@@ -1915,6 +1917,18 @@
 "XJ" = (
 /turf/template_noop,
 /area/template_noop)
+"Yk" = (
+/obj/machinery/door/poddoor/shutters{
+	id = "piratecargo";
+	name = "Cargo Bay"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 8;
+	id = "piratecargo_holofield"
+	},
+/obj/structure/cable,
+/turf/open/floor/engine/hull/interior,
+/area/ship/cargo)
 "YQ" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -1968,20 +1982,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ship/hallway/port)
-"ZB" = (
-/obj/machinery/light/small/directional/east,
-/obj/effect/turf_decal/industrial/stand_clear{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/industrial/warning{
-	dir = 6
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/ship/cargo)
 
 (1,1,1) = {"
 XJ
@@ -2164,7 +2164,7 @@ By
 Ec
 FF
 He
-Jr
+bs
 MC
 RX
 VO
@@ -2197,7 +2197,7 @@ Sc
 Wa
 HY
 rL
-TP
+WS
 "}
 (9,1,1) = {"
 XB
@@ -2223,8 +2223,8 @@ Nz
 Sj
 WC
 br
-dD
-fd
+bF
+KX
 "}
 (10,1,1) = {"
 XB
@@ -2240,18 +2240,18 @@ sx
 tT
 vW
 yf
-AL
+yX
 Cj
 Ey
 FF
 HU
 Ks
 NN
-Sw
+BR
 WK
 KV
-rc
-DB
+fF
+Ay
 "}
 (11,1,1) = {"
 vN
@@ -2274,11 +2274,11 @@ FF
 Id
 KD
 NS
-SA
-WZ
-OO
-ZB
-nN
+eg
+vV
+io
+CW
+Yk
 "}
 (12,1,1) = {"
 XJ
@@ -2299,7 +2299,7 @@ DG
 EH
 FF
 Ie
-KS
+TX
 Og
 SR
 Xx

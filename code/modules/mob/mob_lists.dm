@@ -22,7 +22,6 @@
 	if(client)
 		remove_from_current_living_players()
 
-
 ///Adds the mob reference to the list of all the dead mobs. If mob is cliented, it adds it to the list of all dead player-mobs.
 /mob/proc/add_to_dead_mob_list()
 	if(QDELETED(src))

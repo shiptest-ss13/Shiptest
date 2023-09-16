@@ -452,13 +452,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
-"ek" = (
-/obj/structure/closet/radiation,
-/obj/structure/cable/green{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plasteel/tech/techmaint,
-/area/ship/storage)
 "em" = (
 /obj/structure/window/reinforced/spawner,
 /obj/structure/window/reinforced/spawner{
@@ -991,6 +984,21 @@
 	},
 /turf/open/floor/engine/airless,
 /area/ship/engineering/atmospherics)
+"ja" = (
+/obj/structure/closet/crate/freezer,
+/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/lootdrop/ration,
+/obj/item/pizzabox/meat,
+/obj/item/pizzabox/vegetable,
+/obj/machinery/camera/autoname{
+	dir = 4
+	},
+/obj/effect/turf_decal/spline/fancy/wood{
+	dir = 8
+	},
+/turf/open/floor/wood/mahogany,
+/area/ship/crew/canteen)
 "jd" = (
 /obj/machinery/atmospherics/pipe/simple,
 /obj/machinery/computer/atmos_control/incinerator{
@@ -1255,15 +1263,12 @@
 /obj/effect/turf_decal/trimline/transparent/bar,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/dorm)
-"lC" = (
-/obj/machinery/door/poddoor{
-	id = "Storage Bay Blast";
-	name = "Storage Bay Doors"
-	},
+"lB" = (
+/obj/structure/closet/radiation,
 /obj/structure/cable/green{
-	icon_state = "4-8"
+	icon_state = "1-2"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/tech/techmaint,
 /area/ship/storage)
 "lX" = (
 /turf/closed/wall/mineral/titanium/survival/nodiagonal,
@@ -1579,21 +1584,6 @@
 	},
 /turf/open/floor/engine/airless,
 /area/ship/engineering/atmospherics)
-"pJ" = (
-/obj/machinery/door/poddoor{
-	id = "Storage Bay Blast";
-	name = "Storage Bay Doors"
-	},
-/obj/machinery/power/shieldwallgen/atmos/roundstart{
-	dir = 8;
-	id = "storage_holofield"
-	},
-/obj/structure/cable/green,
-/obj/structure/cable/green{
-	icon_state = "1-8"
-	},
-/turf/open/floor/plating,
-/area/ship/storage)
 "pK" = (
 /obj/machinery/atmospherics/pipe/layer_manifold/visible,
 /turf/open/floor/plasteel/tech/techmaint,
@@ -1654,6 +1644,16 @@
 /obj/effect/turf_decal/trimline/transparent/bar/filled,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/dorm)
+"ql" = (
+/obj/machinery/door/poddoor{
+	id = "Storage Bay Blast";
+	name = "Storage Bay Doors"
+	},
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/ship/storage)
 "qs" = (
 /obj/structure/table/wood/poker,
 /obj/item/toy/figure/ce,
@@ -2147,6 +2147,21 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/tech/techmaint,
+/area/ship/storage)
+"uZ" = (
+/obj/machinery/door/poddoor{
+	id = "Storage Bay Blast";
+	name = "Storage Bay Doors"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 8;
+	id = "storage_holofield"
+	},
+/obj/structure/cable/green,
+/obj/structure/cable/green{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plating,
 /area/ship/storage)
 "vb" = (
 /obj/machinery/atmospherics/pipe/simple/general/visible/layer2{
@@ -2642,20 +2657,6 @@
 /obj/structure/particle_accelerator/fuel_chamber,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/storage)
-"zy" = (
-/obj/machinery/door/poddoor{
-	id = "Storage Bay Blast";
-	name = "Storage Bay Doors"
-	},
-/obj/machinery/power/shieldwallgen/atmos/roundstart{
-	dir = 4;
-	id = "storage_holofield"
-	},
-/obj/structure/cable/green{
-	icon_state = "0-4"
-	},
-/turf/open/floor/plating,
-/area/ship/storage)
 "zB" = (
 /obj/structure/sink/kitchen{
 	dir = 8;
@@ -2884,21 +2885,6 @@
 /obj/machinery/atmospherics/pipe/simple/general/visible/layer2,
 /turf/open/floor/engine/airless,
 /area/ship/engineering/atmospherics)
-"Ck" = (
-/obj/structure/closet/crate/freezer,
-/obj/item/storage/box/donkpockets/donkpocketpizza,
-/obj/item/storage/box/donkpockets/donkpocketspicy,
-/obj/item/storage/box/donkpockets/donkpocketteriyaki,
-/obj/item/pizzabox/meat,
-/obj/item/pizzabox/vegetable,
-/obj/machinery/camera/autoname{
-	dir = 4
-	},
-/obj/effect/turf_decal/spline/fancy/wood{
-	dir = 8
-	},
-/turf/open/floor/wood/mahogany,
-/area/ship/crew/canteen)
 "Cw" = (
 /obj/structure/closet/secure_closet/atmospherics{
 	anchored = 1;
@@ -3070,6 +3056,20 @@
 /obj/structure/lattice/catwalk,
 /turf/open/floor/plating/airless,
 /area/ship/hallway)
+"DP" = (
+/obj/machinery/door/poddoor{
+	id = "Storage Bay Blast";
+	name = "Storage Bay Doors"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 4;
+	id = "storage_holofield"
+	},
+/obj/structure/cable/green{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plating,
+/area/ship/storage)
 "DQ" = (
 /obj/machinery/atmospherics/pipe/simple/general/visible/layer2{
 	dir = 10
@@ -3332,17 +3332,6 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/bridge)
-"Gs" = (
-/obj/structure/closet/crate/radiation,
-/obj/item/circuitboard/machine/rad_collector,
-/obj/item/circuitboard/machine/rad_collector,
-/obj/item/circuitboard/machine/rad_collector,
-/obj/item/circuitboard/machine/rad_collector,
-/obj/structure/cable/green{
-	icon_state = "2-8"
-	},
-/turf/open/floor/plasteel/tech/techmaint,
-/area/ship/storage)
 "Gv" = (
 /obj/machinery/vending/engivend,
 /turf/open/floor/plasteel/tech/techmaint,
@@ -3523,21 +3512,6 @@
 /obj/structure/closet/wardrobe/pjs,
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/dorm)
-"HP" = (
-/obj/structure/cable/green{
-	icon_state = "1-2"
-	},
-/obj/effect/turf_decal/industrial/radiation{
-	dir = 8
-	},
-/obj/effect/turf_decal/industrial/radiation{
-	dir = 4
-	},
-/obj/structure/cable/green{
-	icon_state = "1-4"
-	},
-/turf/open/floor/mineral/titanium,
-/area/ship/storage)
 "HT" = (
 /obj/structure/lattice/catwalk,
 /obj/machinery/atmospherics/pipe/simple/general/visible/layer2{
@@ -3906,6 +3880,21 @@
 /obj/machinery/firealarm/directional/west,
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/dorm)
+"Lh" = (
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/industrial/radiation{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/radiation{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	icon_state = "1-4"
+	},
+/turf/open/floor/mineral/titanium,
+/area/ship/storage)
 "Lk" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -3981,36 +3970,6 @@
 "LW" = (
 /obj/machinery/particle_accelerator/control_box,
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/storage)
-"LZ" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 5
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 5
-	},
-/obj/machinery/airalarm/directional/south,
-/obj/machinery/button/door{
-	dir = 4;
-	id = "Storage Bay Blast";
-	name = "Storage Bay Doors Control";
-	pixel_x = -25;
-	pixel_y = -3
-	},
-/obj/effect/turf_decal/industrial/radiation{
-	dir = 10
-	},
-/obj/effect/turf_decal/industrial/radiation/corner{
-	dir = 4
-	},
-/obj/machinery/button/shieldwallgen{
-	pixel_x = -25;
-	dir = 4;
-	pixel_y = 6;
-	name = "Storage Bay Holofield Control";
-	id = "storage_holofield"
-	},
-/turf/open/floor/mineral/titanium,
 /area/ship/storage)
 "Mb" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
@@ -4222,6 +4181,36 @@
 /obj/machinery/suit_storage_unit/atmos,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
+"On" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/obj/machinery/airalarm/directional/south,
+/obj/machinery/button/door{
+	dir = 4;
+	id = "Storage Bay Blast";
+	name = "Storage Bay Doors Control";
+	pixel_x = -25;
+	pixel_y = -3
+	},
+/obj/effect/turf_decal/industrial/radiation{
+	dir = 10
+	},
+/obj/effect/turf_decal/industrial/radiation/corner{
+	dir = 4
+	},
+/obj/machinery/button/shieldwallgen{
+	pixel_x = -25;
+	dir = 4;
+	pixel_y = 6;
+	name = "Storage Bay Holofield Control";
+	id = "storage_holofield"
+	},
+/turf/open/floor/mineral/titanium,
+/area/ship/storage)
 "Ot" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
@@ -4244,6 +4233,17 @@
 /obj/structure/closet/cabinet,
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/dorm)
+"OR" = (
+/obj/structure/closet/crate/radiation,
+/obj/item/circuitboard/machine/rad_collector,
+/obj/item/circuitboard/machine/rad_collector,
+/obj/item/circuitboard/machine/rad_collector,
+/obj/item/circuitboard/machine/rad_collector,
+/obj/structure/cable/green{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/storage)
 "OV" = (
 /obj/structure/lattice/catwalk,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -5596,7 +5596,7 @@ tM
 qz
 wP
 sb
-Ck
+ja
 tj
 tt
 tt
@@ -6830,7 +6830,7 @@ Yy
 QY
 IL
 mP
-LZ
+On
 ei
 IR
 Zg
@@ -7011,7 +7011,7 @@ ZD
 Dv
 Fj
 gM
-zy
+DP
 wg
 Zg
 Zg
@@ -7069,7 +7069,7 @@ eE
 eE
 Ss
 RF
-lC
+ql
 tZ
 Zg
 Zg
@@ -7125,9 +7125,9 @@ bB
 SY
 SY
 SY
-HP
+Lh
 bb
-lC
+ql
 wg
 Zg
 Zg
@@ -7183,9 +7183,9 @@ Ge
 fs
 fs
 fs
-Gs
-ek
-pJ
+OR
+lB
+uZ
 wg
 Zg
 Zg

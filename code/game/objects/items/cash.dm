@@ -17,7 +17,7 @@
 	grind_results = list(/datum/reagent/iron = 10)
 
 /obj/item/spacecash/Initialize(mapload, amount)
-	..()
+	. = ..()
 	if(amount)
 		value = amount
 	update_appearance()

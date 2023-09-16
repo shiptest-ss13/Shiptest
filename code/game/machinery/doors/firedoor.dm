@@ -71,6 +71,7 @@
 
 /obj/machinery/door/firedoor/Destroy()
 	remove_from_areas()
+	density = FALSE
 	air_update_turf(1)
 	affecting_areas.Cut()
 	return ..()
@@ -393,10 +394,16 @@
 		return 0 // not big enough to matter
 	return start_point.air.return_pressure() < 20 ? -1 : 1
 
-/obj/machinery/door/firedoor/border_only/CanAllowThrough(atom/movable/mover, turf/target)
+/obj/machinery/door/firedoor/border_only/CanAllowThrough(atom/movable/mover, border_dir)
 	. = ..()
-	if(!(get_dir(loc, target) == dir)) //Make sure looking at appropriate border
-		return TRUE
+
+	if(.)
+		return
+
+	if(border_dir == dir) //Make sure looking at appropriate border
+		return FALSE
+
+	return TRUE
 
 /obj/machinery/door/firedoor/border_only/proc/on_exit(datum/source, atom/movable/leaving, direction)
 	SIGNAL_HANDLER
@@ -411,10 +418,9 @@
 		return COMPONENT_ATOM_BLOCK_EXIT
 
 /obj/machinery/door/firedoor/border_only/CanAtmosPass(turf/T)
-	if(get_dir(loc, T) == dir)
-		return !density
-	else
+	if(!density)
 		return TRUE
+	return !(dir == get_dir(loc, T))
 
 /obj/machinery/door/firedoor/proc/emergency_pressure_close()
 	SHOULD_NOT_SLEEP(TRUE)
@@ -726,7 +732,7 @@
 	firelock_type = /obj/machinery/door/firedoor/border_only/closed
 	flags_1 = ON_BORDER_1
 
-/obj/machinery/door/firedoor/border_only/Initialize()
+/obj/structure/firelock_frame/border/Initialize()
 	. = ..()
 
 	var/static/list/loc_connections = list(

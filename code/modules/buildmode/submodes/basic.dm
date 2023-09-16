@@ -1,18 +1,17 @@
 /datum/buildmode_mode/basic
 	key = "basic"
 
-/datum/buildmode_mode/basic/show_help(client/c)
-	to_chat(c, "<span class='notice'>***********************************************************</span>")
-	to_chat(c, "<span class='notice'>Left Mouse Button        = Construct / Upgrade</span>")
-	to_chat(c, "<span class='notice'>Right Mouse Button       = Deconstruct / Delete / Downgrade</span>")
-	to_chat(c, "<span class='notice'>Left Mouse Button + ctrl = R-Window</span>")
-	to_chat(c, "<span class='notice'>Left Mouse Button + alt  = Airlock</span>")
-	to_chat(c, "<br>")
-	to_chat(c, "<span class='notice'>Use the button in the upper left corner to</span>")
-	to_chat(c, "<span class='notice'>change the direction of built objects.</span>")
-	to_chat(c, "<span class='notice'>***********************************************************</span>")
+/datum/buildmode_mode/basic/show_help(client/target_client)
+	to_chat(target_client, span_purple(examine_block(
+		"[span_bold("Construct / Upgrade")] -> Left Mouse Button\n\
+		[span_bold("Deconstruct / Delete / Downgrade")] -> Right Mouse Button\n\
+		[span_bold("R-Window")] -> Left Mouse Button + Ctrl\n\
+		[span_bold("Airlock")] -> Left Mouse Button + Alt \n\
+		\n\
+		Use the button in the upper left corner to change the direction of built objects."))
+	)
 
-/datum/buildmode_mode/basic/handle_click(client/c, params, obj/object)
+/datum/buildmode_mode/basic/handle_click(client/target_client, params, obj/object)
 	var/list/modifiers = params2list(params)
 
 	var/left_click = LAZYACCESS(modifiers, LEFT_CLICK)
@@ -30,10 +29,10 @@
 			T.PlaceOnTop(/turf/closed/wall)
 		else if(iswallturf(object))
 			T.PlaceOnTop(/turf/closed/wall/r_wall)
-		log_admin("Build Mode: [key_name(c)] built [T] at [AREACOORD(T)]")
+		log_admin("Build Mode: [key_name(target_client)] built [T] at [AREACOORD(T)]")
 		return
 	else if(right_click)
-		log_admin("Build Mode: [key_name(c)] deleted [object] at [AREACOORD(object)]")
+		log_admin("Build Mode: [key_name(target_client)] deleted [object] at [AREACOORD(object)]")
 		if(isturf(object))
 			var/turf/T = object
 			T.ScrapeAway(flags = CHANGETURF_INHERIT_AIR)
@@ -41,13 +40,13 @@
 			qdel(object)
 		return
 	else if(istype(object,/turf) && alt_click && left_click)
-		log_admin("Build Mode: [key_name(c)] built an airlock at [AREACOORD(object)]")
+		log_admin("Build Mode: [key_name(target_client)] built an airlock at [AREACOORD(object)]")
 		new/obj/machinery/door/airlock(get_turf(object))
 	else if(istype(object,/turf) && ctrl_click && left_click)
 		var/obj/structure/window/reinforced/window
-		if(BM.build_dir == NORTHWEST)
+		if(BM.build_dir in GLOB.diagonals)
 			window = new /obj/structure/window/reinforced/fulltile(get_turf(object))
 		else
 			window = new /obj/structure/window/reinforced(get_turf(object))
-		window.setDir(BM.build_dir)
-		log_admin("Build Mode: [key_name(c)] built a window at [AREACOORD(object)]")
+			window.setDir(BM.build_dir)
+		log_admin("Build Mode: [key_name(target_client)] built a window at [AREACOORD(object)]")

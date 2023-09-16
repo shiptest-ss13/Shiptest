@@ -19,6 +19,7 @@
 	var/datum/team/ashwalkers/ashies
 	var/last_act = 0
 	var/init_zlevel = 0		//This is my home, I refuse to settle anywhere else.
+	var/datum/linked_objective
 
 /obj/structure/lavaland/ash_walker/Initialize()
 	.=..()
@@ -26,8 +27,16 @@
 	ashies = new /datum/team/ashwalkers()
 	var/datum/objective/protect_object/objective = new
 	objective.set_target(src)
+	linked_objective = objective
 	ashies.objectives += objective
 	START_PROCESSING(SSprocessing, src)
+
+/obj/structure/lavaland/ash_walker/Destroy()
+	ashies.objectives -= linked_objective
+	ashies = null
+	QDEL_NULL(linked_objective)
+	STOP_PROCESSING(SSprocessing, src)
+	return ..()
 
 /obj/structure/lavaland/ash_walker/deconstruct(disassembled)
 	new /obj/item/assembly/signaler/anomaly (get_step(loc, pick(GLOB.alldirs)))

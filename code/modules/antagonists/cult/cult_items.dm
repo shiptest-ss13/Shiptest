@@ -135,6 +135,11 @@
 /obj/item/cult_bastard/proc/nemesis_effects(mob/living/user, mob/living/target)
 	return
 
+/obj/item/cult_bastard/Destroy()
+	QDEL_NULL(jaunt)
+	QDEL_NULL(linked_action)
+	return ..()
+
 /obj/item/cult_bastard/examine(mob/user)
 	. = ..()
 	. += "<span class='notice'>This weapon will absorb the souls of unconscious human foes.</span>"
@@ -216,7 +221,7 @@
 	phaseout = /obj/effect/temp_visual/dir_setting/cult/phase/out
 
 /datum/action/innate/dash/cult/IsAvailable()
-	if(current_charges)
+	if(iscultist(owner) && current_charges)
 		return TRUE
 	else
 		return FALSE
@@ -625,7 +630,7 @@
 /obj/item/cult_spear/Destroy()
 	if(spear_act)
 		qdel(spear_act)
-	..()
+	return ..()
 
 /obj/item/cult_spear/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	var/turf/T = get_turf(hit_atom)
