@@ -94,12 +94,8 @@
 
 
 /atom/movable/Destroy(force)
-	if(proximity_monitor)
-		QDEL_NULL(proximity_monitor)
-	if(language_holder)
-		QDEL_NULL(language_holder)
-	if(em_block)
-		QDEL_NULL(em_block)
+	QDEL_NULL(language_holder)
+	QDEL_NULL(em_block)
 
 	unbuckle_all_mobs(force = TRUE)
 
@@ -551,6 +547,7 @@
 
 	return TRUE
 
+/// Called when an atom moves to a different virtual z. Warning, it will pass z-level 0 in new_virtual_z on creation and 0 in previous_virtual_z whenever moved to nullspace
 /atom/movable/proc/on_virtual_z_change(new_virtual_z, previous_virtual_z)
 	SHOULD_NOT_SLEEP(TRUE)
 	SHOULD_CALL_PARENT(TRUE)
@@ -580,7 +577,7 @@
 /atom/movable/Cross(atom/movable/AM)
 	. = TRUE
 	SEND_SIGNAL(src, COMSIG_MOVABLE_CROSS, AM)
-	return CanPass(AM, AM.loc, TRUE)
+	return CanPass(AM, get_dir(src, AM))
 
 ///default byond proc that is deprecated for us in lieu of signals. do not call
 /atom/movable/Crossed(atom/movable/crossed_atom, oldloc)
@@ -886,13 +883,13 @@
 /atom/movable/proc/move_crushed(atom/movable/pusher, force = MOVE_FORCE_DEFAULT, direction)
 	return FALSE
 
-/atom/movable/CanAllowThrough(atom/movable/mover, turf/target)
+/atom/movable/CanAllowThrough(atom/movable/mover, border_dir)
 	. = ..()
 	if(mover in buckled_mobs)
 		return TRUE
 
 /// Returns true or false to allow src to move through the blocker, mover has final say
-/atom/movable/proc/CanPassThrough(atom/blocker, turf/target, blocker_opinion)
+/atom/movable/proc/CanPassThrough(atom/blocker, movement_dir, blocker_opinion)
 	SHOULD_CALL_PARENT(TRUE)
 	SHOULD_BE_PURE(TRUE)
 	return blocker_opinion
@@ -917,7 +914,7 @@
 			return turf
 		else
 			var/atom/movable/AM = A
-			if(!AM.CanPass(src) || AM.density)
+			if(AM.density || !AM.CanPass(src, get_dir(src, AM)))
 				if(AM.anchored)
 					return AM
 				dense_object_backup = AM

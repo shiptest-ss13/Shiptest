@@ -34,6 +34,8 @@
 	var/freqlock = FALSE  // Frequency lock to stop the user from untuning specialist radios.
 	var/use_command = FALSE  // If true, broadcasts will be large and BOLD.
 	var/command = FALSE  // If true, use_command can be toggled at will.
+	var/log = FALSE // If true, the UI will display the voice log for the frequency
+	var/list/loglist = list() //the voice log
 
 	// Encryption key handling
 	var/obj/item/encryptionkey/keyslot
@@ -140,6 +142,8 @@
 	data["useCommand"] = use_command
 	data["subspace"] = subspace_transmission
 	data["subspaceSwitchable"] = subspace_switchable
+	data["chatlog"] = log
+	data["chatloglist"] = loglist
 	data["headset"] = FALSE
 
 	return data
@@ -371,6 +375,11 @@
 	emped = FALSE
 	on = TRUE
 	return TRUE
+
+/obj/item/radio/proc/log_trim()
+	if(loglist.len <= 50)
+		return
+	loglist.Cut(51)
 
 ///////////////////////////////
 //////////Borg Radios//////////

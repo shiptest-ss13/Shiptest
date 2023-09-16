@@ -52,9 +52,6 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/machinery/atmospherics/pipe/simple/general/visible{
-	dir = 5
-	},
 /obj/machinery/atmospherics/pipe/heat_exchanging/junction/layer2,
 /obj/machinery/atmospherics/pipe/simple/general/visible/layer4,
 /obj/machinery/atmospherics/pipe/simple/general/visible,
@@ -182,10 +179,6 @@
 /obj/machinery/door/window{
 	dir = 1
 	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
-	dir = 4;
-	piping_layer = 5
-	},
 /obj/structure/window/reinforced/tinted{
 	dir = 4
 	},
@@ -206,6 +199,9 @@
 /obj/item/tank/internals/emergency_oxygen,
 /obj/item/clothing/head/helmet/space/orange,
 /obj/item/tank/internals/plasma/full,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
 
