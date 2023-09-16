@@ -1,11 +1,7 @@
 /datum/job/cyborg
 	name = "Cyborg"
 	auto_deadmin_role_flags = DEADMIN_POSITION_SILICON
-	total_positions = 0
-	spawn_positions = 1	//Nodrak
 	minimal_player_age = 21
-	exp_requirements = 120
-	exp_type = EXP_TYPE_CREW
 	wiki_page = "Cyborg" //WS Edit - Wikilinks/Warning
 
 	display_order = JOB_DISPLAY_ORDER_CYBORG

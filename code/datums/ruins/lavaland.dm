@@ -2,17 +2,11 @@
 
 /datum/map_template/ruin/lavaland
 	prefix = "_maps/RandomRuins/LavaRuins/"
+	ruin_type = RUINTYPE_LAVA
 
 /datum/map_template/ruin/lavaland/biodome
 	cost = 5
 	allow_duplicates = FALSE
-
-/datum/map_template/ruin/lavaland/biodome/beach
-	name = "Biodome Beach"
-	id = "biodome-beach"
-	description = "Seemingly plucked from a tropical destination, this beach is calm and cool, with the salty waves roaring softly in the background. \
-	Comes with a rustic wooden bar and suicidal bartender."
-	suffix = "lavaland_biodome_beach.dmm"
 
 /datum/map_template/ruin/lavaland/biodome/winter
 	name = "Biodome Winter"
@@ -20,14 +14,6 @@
 	description = "For those getaways where you want to get back to nature, but you don't want to leave the fortified military compound where you spend your days. \
 	Includes a unique(*) laser pistol display case, and the recently introduced I.C.E(tm)."
 	suffix = "lavaland_surface_biodome_winter.dmm"
-
-/datum/map_template/ruin/lavaland/syndicate_base
-	name = "Syndicate Lava Base"
-	id = "lava-base"
-	description = "A secret base researching illegal bioweapons, it is closely guarded by an elite team of syndicate agents."
-	suffix = "lavaland_surface_syndicate_base1.dmm"
-	cost = 20
-	allow_duplicates = FALSE
 
 /datum/map_template/ruin/lavaland/free_golem
 	name = "Free Golem Ship"
@@ -55,7 +41,6 @@
 	id = "hierophant"
 	description = "A strange, square chunk of metal of massive size. Inside awaits only death and many, many squares."
 	suffix = "lavaland_surface_hierophant.dmm"
-	always_place = TRUE
 	allow_duplicates = FALSE
 
 /datum/map_template/ruin/lavaland/xeno_nest
@@ -145,3 +130,15 @@
 	id = "spooky_crash"
 	description = "A spooky looking crash."
 	suffix = "lavaland_surface_SPOOKYCRASH.dmm"
+
+/datum/map_template/ruin/lavaland/crashedpinnance
+	name = "Crashed Research Pinnance"
+	id = "crashed_pinnance"
+	description = "A crashed shuttlecraft, looks like the pilot didn't make it."
+	suffix = "lavaland_surface_crashed_pinnance.dmm"
+
+/datum/map_template/ruin/lavaland/codelab
+	name = "Nanotrasen Genetic Research Facility"
+	id = "codelab"
+	description = "A Nanotrasen genetic research facility, abandoned and ripe for looting. Whats that goo over there?"
+	suffix = "lavaland_surface_codelab.dmm"

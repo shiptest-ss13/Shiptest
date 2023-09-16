@@ -203,10 +203,10 @@
 		drop_all_held_items() //can't hold things when you don't actually exist
 		dextrous = FALSE//see above comment
 	to_chat(src, "You toggle your density [density ? "on" : "off"].")
-	update_icon()
+	update_appearance()
 	update_gravity()
 
-/mob/living/simple_animal/hologram/update_icon()
+/mob/living/simple_animal/hologram/update_appearance()
 	. = ..()
 	alpha = density ? initial(alpha) : 100 //applies opacity effect if non-dense
 	color = density ? initial(color) : "#77abff" //makes the hologram slightly blue
@@ -225,7 +225,7 @@
 	var/formatted_laws = "<b>Hologram law:</b>\n"
 	formatted_laws += flavortext ? "<big><span class='warning'>[flavortext]</span></big>" : "<big>No laws set!</big>" //If flavortext set, show it, else show "No laws set!"
 	formatted_laws += "\n<span class='notice'>Emergency holograms are ghost spawns that can majorly affect the round due to their versatility. Act with common sense.</span>\n"+\
-					  "<span class='notice'>Using the role to grief or metagame against your set laws will be met with a silicon ban.</span>\n"
+					"<span class='notice'>Using the role to grief or metagame against your set laws will be met with a silicon ban.</span>\n"
 
 	var/policy = get_policy(ROLE_POSIBRAIN) //if we need something different than the use of posibrains for policy and bans, ping mark and he'll add a new define for it
 	if(policy)
@@ -284,5 +284,49 @@
 /mob/living/simple_animal/hologram/command
 	job_type = new /datum/job/head_of_personnel
 	dex_item = /obj/item/card/id/silver/hologram
+
+/mob/living/simple_animal/hologram/kitchen
+	job_type = new /datum/job/cook
+	dex_item = /obj/item/storage/box/ingredients/wildcard
+
+/mob/living/simple_animal/hologram/botany
+	job_type = new /datum/job/hydro
+	dex_item = /obj/item/storage/belt/plant/full
+
+/mob/living/simple_animal/hologram/security
+	job_type = new /datum/job/officer
+	dex_item = /obj/item/gun/energy/disabler
+
+/mob/living/simple_animal/hologram/psychologist
+	job_type = new /datum/job/psychologist
+	dex_item = /obj/item/toy/plush/lizardplushie
+
+/mob/living/simple_animal/hologram/atmos
+	job_type = new /datum/job/atmos
+	dex_item = /obj/item/storage/belt/utility/atmostech/hologram
+
+/mob/living/simple_animal/hologram/janitor
+	job_type = new /datum/job/janitor
+	dex_item = /obj/item/storage/belt/janitor/full
+
+/mob/living/simple_animal/hologram/cargo
+	job_type = new /datum/job/qm
+	dex_item = /obj/item/export_scanner
+
+/mob/living/simple_animal/hologram/clown
+	job_type = new /datum/job/clown
+	dex_item = /obj/item/reagent_containers/spray/waterflower/lube
+
+/mob/living/simple_animal/hologram/detective
+	job_type = new /datum/job/detective
+	dex_item = /obj/item/detective_scanner
+
+/mob/living/simple_animal/hologram/curator
+	job_type = new /datum/job/curator
+	dex_item = /obj/item/taperecorder
+
+/mob/living/simple_animal/hologram/assistant
+	job_type = new /datum/job/assistant
+	dex_item = /obj/item/storage/cans/sixbeer
 
 #undef HOLOGRAM_CYCLE_COLORS

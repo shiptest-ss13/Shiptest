@@ -101,6 +101,7 @@ Override makes it so the alert is not replaced until cleared by a clear_alert wi
 
 
 /atom/movable/screen/alert/MouseEntered(location,control,params)
+	. = ..()
 	if(!QDELETED(src))
 		openToolTip(usr,src,params,title = name,content = desc,theme = alerttooltipstyle)
 
@@ -656,12 +657,13 @@ so as to remain in compliance with the most up-to-date laws."
 	desc = "A body was created. You can enter it."
 	icon_state = "template"
 	timeout = 300
-	var/atom/target = null
+	var/datum/weakref/target_ref
 	var/action = NOTIFY_JUMP
 
 /atom/movable/screen/alert/notify_action/Click()
 	if(!usr || !usr.client || usr != owner)
 		return
+	var/atom/target = target_ref?.resolve()
 	if(!target)
 		return
 	var/mob/dead/observer/G = usr

@@ -28,7 +28,18 @@
 #define LAZYADDASSOCLIST(L, K, V) if(!L) { L = list(); } L[K] += list(V);
 #define LAZYREMOVEASSOC(L, K, V) if(L) { if(L[K]) { L[K] -= V; if(!length(L[K])) L -= K; } if(!length(L)) L = null; }
 #define LAZYACCESSASSOC(L, I, K) L ? L[I] ? L[I][K] ? L[I][K] : null : null : null
+#define LAZYNULL(L) L = null
 #define QDEL_LAZYLIST(L) for(var/I in L) qdel(I); L = null;
+/// ORs two lazylists together without inserting errant nulls, returning a new list and not modifying the existing lists.
+#define LAZY_LISTS_OR(left_list, right_list)\
+	(length(left_list)\
+		? length(right_list)\
+			? (left_list | right_list)\
+			: left_list.Copy()\
+		: length(right_list)\
+			? right_list.Copy()\
+			: null\
+	)
 
 /// Performs an insertion on the given lazy list with the given key and value. If the value already exists, a new one will not be made.
 #define LAZYORASSOCLIST(lazy_list, key, value) \
@@ -375,7 +386,7 @@
 		return (result + L.Copy(Li, 0))
 	return (result + R.Copy(Ri, 0))
 
-//Converts a bitfield to a list of numbers (or words if a wordlist is provided)
+///Converts a bitfield to a list of numbers (or words if a wordlist is provided)
 /proc/bitfield_to_list(bitfield = 0, list/wordlist)
 	var/list/r = list()
 	if(islist(wordlist))
@@ -627,7 +638,8 @@
 	for(var/item in l)
 		if(!first_entry)
 			. += ", "
-		if(l[item])
+		//Lists of raw numbers are handled extremely poorly in BYOND, so we need to do this
+		if(!isnum(item) && l[item])
 			. += sanitize_simple("[item] = [l[item]]", list("{"="", "}"="", "\""="", ";"="", ","=""))
 		else
 			. += sanitize_simple("[item]", list("{"="", "}"="", "\""="", ";"="", ","=""))

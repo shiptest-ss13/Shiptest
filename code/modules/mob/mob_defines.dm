@@ -136,7 +136,7 @@
 	var/datum/component/storage/active_storage
 	/// Active hud
 	var/datum/hud/hud_used = null
-	/// I have no idea tbh
+	/// It allows for scientific knowledge to be imparted (e.g. blob strain, if an object has research value, if it boosts a technode)
 	var/research_scanner = FALSE
 
 	/// Is the mob throw intent on
@@ -151,8 +151,8 @@
 	/// Can this mob enter shuttles
 	var/move_on_shuttle = 1
 
-	///The last mob/living/carbon to push/drag/grab this mob (exclusively used by slimes friend recognition)
-	var/mob/living/carbon/LAssailant = null
+	///A weakref to the last mob/living/carbon to push/drag/grab this mob (exclusively used by slimes friend recognition)
+	var/datum/weakref/LAssailant = null
 
 	/**
 	* construct spells and mime spells.
@@ -191,18 +191,13 @@
 	///List of progress bars this mob is currently seeing for actions
 	var/list/progressbars = null	//for stacking do_after bars
 
-	//WS Begin - Holy fuck work for spacepods
-	var/list/mousemove_intercept_objects
-	//WS End
-
 	///For storing what do_after's someone has, in case we want to restrict them to only one of a certain do_after at a time
 	var/list/do_afters
 
 	///Allows a datum to intercept all click calls this mob is the source of
 	var/datum/click_intercept
 
-	///THe z level this mob is currently registered in
-	var/registered_z = null
+	var/registered_virtual_z
 
 	var/memory_throttle_time = 0
 
@@ -232,3 +227,6 @@
 
 	///Is the mob actively shifting?
 	var/shifting
+
+	/// Takes the four cardinal direction defines. Any atoms moving into this atom's tile will be allowed to from the added directions.
+	var/passthroughable = NONE

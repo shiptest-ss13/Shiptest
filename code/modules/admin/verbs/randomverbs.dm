@@ -65,10 +65,18 @@
 		return
 
 	if (!sender)
-		sender = input("Who is the message from?", "Sender") as null|anything in list(RADIO_CHANNEL_CENTCOM,RADIO_CHANNEL_SYNDICATE,RADIO_CHANNEL_SOLGOV)		//WS Edit - SolGov Rep
+		sender = input("Who is the message from?", "Sender") as null|anything in list(RADIO_CHANNEL_CENTCOM, RADIO_CHANNEL_SYNDICATE, RADIO_CHANNEL_SOLGOV, RADIO_CHANNEL_INTEQ, RADIO_CHANNEL_MINUTEMEN)		//WS Edit - SolGov Rep
 		if(!sender)
 			return
-
+		switch(sender)
+			if (RADIO_CHANNEL_SYNDICATE)
+				sender = input("From what branch?", "Syndicate") as null|anything in list("Syndicate High Command", "The Anti-Corporation Liberation Front", "The Gorlex Marauders", "Donk! Corporation", "Cybersun Virtual Solutions", "The Galactic Engineer's Concordat", "The Naturalienwissenschaftlicher Studentenverbindungs-Verband")
+			if (RADIO_CHANNEL_MINUTEMEN)
+				sender = input("From what division?", "Minutemen") as null|anything in list("Colonial Minutemen Headquarters", "The Galactic Optium Labor Divison", "The Biohazard Assesment and Removal Division")
+			if (RADIO_CHANNEL_INTEQ)
+				sender = "Inteq Risk Management"
+		if(!sender)
+			return
 	message_admins("[key_name_admin(src)] has started answering [key_name_admin(H)]'s [sender] request.")
 	var/input = input("Please enter a message to reply to [key_name(H)] via their headset.","Outgoing message from [sender]", "") as text|null
 	if(!input)
@@ -77,7 +85,7 @@
 
 	log_directed_talk(mob, H, input, LOG_ADMIN, "reply")
 	message_admins("[key_name_admin(src)] replied to [key_name_admin(H)]'s [sender] message with: \"[input]\"")
-	to_chat(H, "<span class='hear'>You hear something crackle in your ears for a moment before a voice speaks. \"Please stand by for a message from [sender == RADIO_CHANNEL_SYNDICATE ? "your benefactor" : sender]. Message as follows[sender == "Syndicate" ? ", agent." : ":"] <b>[input].</b> Message ends.\"</span>", confidential = TRUE)		//WS Edit - SolGov Rep
+	to_chat(H, "<span class='hear'>You hear something crackle in your ears for a moment before a voice speaks. \"Please stand by for a message from [sender]. Message as follows: <b>[input].</b> Message ends.\"</span>", confidential = TRUE)		//WS Edit - SolGov Rep
 
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Headset Message") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
@@ -260,7 +268,7 @@
 		return 0
 
 	var/alien_caste = input(usr, "Please choose which caste to spawn.","Pick a caste",null) as null|anything in list("Queen","Praetorian","Hunter","Sentinel","Drone","Larva")
-	var/obj/effect/landmark/spawn_here = GLOB.xeno_spawn.len ? pick(GLOB.xeno_spawn) : null
+	var/obj/effect/landmark/spawn_here = pick(GLOB.xeno_spawn)
 	var/mob/living/carbon/alien/new_xeno
 	switch(alien_caste)
 		if("Queen")
@@ -277,8 +285,6 @@
 			new_xeno = new /mob/living/carbon/alien/larva(spawn_here)
 		else
 			return 0
-	if(!spawn_here)
-		SSjob.SendToLateJoin(new_xeno, FALSE)
 
 	new_xeno.ckey = ckey
 	var/msg = "<span class='notice'>[key_name_admin(usr)] has spawned [ckey] as a filthy xeno [alien_caste].</span>"
@@ -817,54 +823,58 @@
 
 	var/planet_type = tgui_input_list(usr, "What type of planet?", "Spawn Ruin", DYNAMIC_WORLD_LIST_ALL, 60 SECONDS)
 	if(!planet_type)
-		planet_type = DYNAMIC_WORLD_SPACERUIN
+		return
 
-	var/category = tgui_input_list(usr, "What type of ruin?", "Spawn Ruin", RUINTYPE_LIST_ALL + "Everything", 60 SECONDS)
-	var/datum/map_template/spawning
-	if(category)
-		var/list/select_from
-		switch(category)
-			if(RUINTYPE_ICE)
-				select_from = SSmapping.ice_ruins_templates
-			if(RUINTYPE_JUNGLE)
-				select_from = SSmapping.jungle_ruins_templates
-			if(RUINTYPE_LAVA)
-				select_from = SSmapping.lava_ruins_templates
-			if(RUINTYPE_ROCK)
-				select_from = SSmapping.rock_ruins_templates
-			if(RUINTYPE_SAND)
-				select_from = SSmapping.sand_ruins_templates
-			if(RUINTYPE_SPACE)
-				select_from = SSmapping.space_ruins_templates
-			if(RUINTYPE_YELLOW)
-				select_from = SSmapping.yellow_ruins_templates
-			if("Everything")
-				select_from = SSmapping.ruins_templates
+	var/ruintype = tgui_input_list(usr, "What type of ruin?", "Spawn Ruin", RUINTYPE_LIST_ALL, 60 SECONDS)
+	if(!ruintype)
+		if(tgui_alert(usr, "Did you mean to not have a ruin?", "Spawn Planet/Ruin", list("Yes", "No"), 10 SECONDS) != "Yes")
+			return
+
+	var/datum/map_template/ruin/ruin_target
+	if(ruintype)
+		var/list/select_from = ruintype_to_list(ruintype)
+		var/ruin_force = tgui_alert(usr, "Random Ruin or Forced?", "Spawn Planet/Ruin", list("Random", "Forced"))
+		if(!ruin_force)
+			return
+
+		switch(ruin_force)
+			if("Random")
+				//Can't use pickweight as it might be from "everything"
+				ruin_target = select_from[pick(select_from)]
 			else
-				select_from = null
+				var/selected_ruin = tgui_input_list(usr, "Which ruin?", "Spawn Ruin", select_from, 60 SECONDS)
+				if(!selected_ruin)
+					if(tgui_alert(usr, "Did you mean to not have a ruin?", "Spawn Planet/Ruin", list("Yes", "No"), 10 SECONDS) != "Yes")
+						return
+				else
+					ruin_target = select_from[selected_ruin]
 
-		if(select_from)
-			var/selected_ruin = tgui_input_list(usr, "Which ruin?", "Spawn Ruin", select_from, 60 SECONDS)
-			if(selected_ruin)
-				spawning = select_from[selected_ruin]
-				if(!istype(spawning))
-					to_chat(usr, span_boldwarning("Failed to index the given ruin, contact a coder!"))
-					spawning = null
+	var/list/position = list()
+	if(tgui_alert(usr, "Where do you want to spawn your Planet/Ruin?", "Spawn Planet/Ruin", list("Pick a location", "Random")) == "Pick a location")
+		position["x"] = input(usr, "Choose your X coordinate", "Pick a location", rand(1,SSovermap.size)) as num
+		position["y"] = input(usr, "Choose your Y coordinate", "Pick a location", rand(1,SSovermap.size)) as num
+		if(locate(/datum/overmap) in SSovermap.overmap_container[position["x"]][position["y"]] && tgui_alert(usr, "There is already an overmap object in that location! Continue anyway?","Pick a location", list("Yes","No"), 10 SECONDS) != "Yes")
+			return
+	else
+		position = SSovermap.get_unused_overmap_square()
 
-	var/datum/overmap/dynamic/encounter = new(null, FALSE)
+	message_admins("Generating a new Planet with ruin: [ruin_target], this may take some time!")
+	if(!position && tgui_alert(usr, "Failed to spawn in an empty overmap space! Continue?", "Spawn Planet/Ruin", list("Yes","No"), 10 SECONDS) != "Yes")
+		return
+	var/datum/overmap/dynamic/encounter = new(position, FALSE)
 	encounter.force_encounter = planet_type
-	encounter.template = spawning
-
-	to_chat(usr, span_big("Now generating the planet type and ruin!"))
-	encounter.load_level()
-	SSblackbox.record_feedback("tally", "adv_spawn_ruin", spawning?.name)
-
+	encounter.template = ruin_target
+	encounter.choose_level_type(FALSE)
+	if(!ruin_target)
+		encounter.ruin_type = null
 	encounter.preserve_level = TRUE
-	to_chat(usr, span_big("Click here to jump to the overmap token: " + ADMIN_JMP(encounter.token)))
-	to_chat(usr, span_big("Click here to jump to the overmap dock: " + ADMIN_JMP(encounter.reserve_docks[1])))
+	encounter.load_level()
+
+	message_admins(span_big("Click here to jump to the overmap token: " + ADMIN_JMP(encounter.token)))
+	message_admins(span_big("Click here to jump to the overmap dock: " + ADMIN_JMP(encounter.reserve_docks[1])))
 	for(var/ruin in encounter.ruin_turfs)
 		var/turf/ruin_turf = encounter.ruin_turfs[ruin]
-		to_chat(usr, span_big("Click here to jump to \"[ruin]\": " + ADMIN_JMP(ruin_turf)))
+		message_admins(span_big("Click here to jump to \"[ruin]\": " + ADMIN_JMP(ruin_turf)))
 
 /client/proc/smite(mob/living/target as mob)
 	set name = "Smite"
@@ -923,7 +933,7 @@
 						alert("ERROR: Incorrect / improper path given.")
 						return
 				new delivery(pod)
-			new /obj/effect/DPtarget(get_turf(target), pod)
+			new /obj/effect/pod_landingzone(get_turf(target), pod)
 		if(ADMIN_PUNISHMENT_SUPPLYPOD)
 			var/datum/centcom_podlauncher/plaunch  = new(usr)
 			if(!holder)

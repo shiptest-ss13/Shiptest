@@ -19,6 +19,8 @@
 	smoothing_flags = NONE
 	/// The amount of time it takes to create a venus human trap.
 	var/growth_time = 120 SECONDS
+	/// The current vines
+	var/list/vines = list()
 
 /obj/structure/alien/resin/flower_bud_enemy/Initialize()
 	. = ..()
@@ -29,9 +31,12 @@
 	anchors += locate(x+2,y-2,z)
 
 	for(var/turf/T in anchors)
-		var/datum/beam/B = Beam(T, "vine", time=INFINITY, maxdistance=5, beam_type=/obj/effect/ebeam/vine)
-		B.sleep_time = 10 //these shouldn't move, so let's slow down updates to 1 second (any slower and the deletion of the vines would be too slow)
+		vines += Beam(T, "vine", maxdistance=5, beam_type=/obj/effect/ebeam/vine)
 	addtimer(CALLBACK(src, .proc/bear_fruit), growth_time)
+
+/obj/structure/alien/resin/flower_bud_enemy/Destroy()
+	QDEL_LIST(vines)
+	return ..()
 
 /**
  * Spawns a venus human trap, then qdels itself.
@@ -48,10 +53,10 @@
 	mouse_opacity = MOUSE_OPACITY_ICON
 	desc = "A thick vine, painful to the touch."
 
-/obj/effect/ebeam/vine/Initialize()
+/obj/effect/ebeam/vine/Initialize(mapload)
 	. = ..()
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
+		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
@@ -61,7 +66,7 @@
 		var/mob/living/L = AM
 		if(!isvineimmune(L))
 			L.adjustBruteLoss(5)
-			to_chat(L, "<span class='alert'>You cut yourself on the thorny vines.</span>")
+			to_chat(L, span_alert("You cut yourself on the thorny vines."))
 
 /**
  * Venus Human Trap
@@ -125,7 +130,7 @@
 			if(O.density)
 				return
 
-	var/datum/beam/newVine = Beam(the_target, "vine", time=INFINITY, maxdistance = vine_grab_distance, beam_type=/obj/effect/ebeam/vine)
+	var/datum/beam/newVine = Beam(the_target, icon_state = "vine", maxdistance = vine_grab_distance, beam_type=/obj/effect/ebeam/vine, emissive = FALSE)
 	RegisterSignal(newVine, COMSIG_PARENT_QDELETING, .proc/remove_vine, newVine)
 	vines += newVine
 	if(isliving(the_target))
@@ -146,6 +151,7 @@
 /mob/living/simple_animal/hostile/venus_human_trap/Destroy()
 	for(var/datum/beam/vine as anything in vines)
 		qdel(vine) // reference is automatically deleted by remove_vine
+	vines.Cut()
 	return ..()
 
 /**
@@ -182,7 +188,7 @@
 			if(!AM.anchored)
 				step(AM,get_dir(AM,src))
 		if(get_dist(src,B.target) == 0)
-			B.End()
+			qdel(B)
 
 /**
  * Removes a vine from the list.
@@ -192,5 +198,8 @@
  * Arguments:
  * * datum/beam/vine - The vine to be removed from the list.
  */
-/mob/living/simple_animal/hostile/venus_human_trap/proc/remove_vine(datum/beam/vine, force)
+/mob/living/simple_animal/hostile/venus_human_trap/proc/remove_vine(datum/beam/vine)
+	SIGNAL_HANDLER
+
+	UnregisterSignal(vine, COMSIG_PARENT_QDELETING)
 	vines -= vine

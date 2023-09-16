@@ -13,9 +13,9 @@
 	layer = CATWALK_LAYER
 	baseturfs = /turf/open/floor/plating
 	footstep = FOOTSTEP_CATWALK
-	barefootstep = FOOTSTEP_CATWALK
-	clawfootstep = FOOTSTEP_CATWALK
-	heavyfootstep = FOOTSTEP_CATWALK
+	barefootstep = FOOTSTEP_HARD_BAREFOOT
+	clawfootstep = FOOTSTEP_HARD_CLAW
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	var/covered = TRUE
 
 /turf/open/floor/plating/catwalk_floor/Initialize(mapload, inherited_virtual_z)

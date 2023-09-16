@@ -72,6 +72,8 @@
 	///type of reagent this udder will generate
 
 /obj/item/udder/Initialize(mapload, udder_mob, on_generate_callback, reagent_produced_typepath = /datum/reagent/consumable/milk)
+	if(!udder_mob)
+		return INITIALIZE_HINT_QDEL
 	src.udder_mob = udder_mob
 	src.on_generate_callback = on_generate_callback
 	create_reagents(size)
@@ -82,6 +84,7 @@
 /obj/item/udder/Destroy()
 	. = ..()
 	STOP_PROCESSING(SSobj, src)
+	udder_mob = null
 
 /obj/item/udder/process(delta_time)
 	if(udder_mob.stat != DEAD)
@@ -138,8 +141,9 @@
 	RegisterSignal(udder_mob, COMSIG_HOSTILE_ATTACKINGTARGET, .proc/on_mob_attacking)
 
 /obj/item/udder/gutlunch/Destroy()
+	if(udder_mob)
+		UnregisterSignal(udder_mob, COMSIG_HOSTILE_ATTACKINGTARGET)
 	. = ..()
-	UnregisterSignal(udder_mob, COMSIG_HOSTILE_ATTACKINGTARGET)
 
 /obj/item/udder/gutlunch/process(delta_time)
 	var/mob/living/simple_animal/hostile/asteroid/gutlunch/gutlunch = udder_mob

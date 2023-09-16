@@ -28,18 +28,18 @@ SUBSYSTEM_DEF(input)
 
 	default_macro_sets = list(
 		"default" = list( //Locked Any. Reduced tab support. [Hotkey]
-			"Tab" = "\".winset \\\"input.focus=true?map.focus=true input.background-color=[COLOR_INPUT_DISABLED]:input.focus=true input.background-color=[COLOR_INPUT_ENABLED]\\\"\"",
+			"Tab" = "\".winset \\\"input.focus=true ? map.focus=true : input.focus=true\\\"\"",
 			"Back" = "\".winset \\\"input.text=\\\"\\\"\\\"\"", // This makes it so backspace can remove default inputs
 			"Any" = "\"KeyDown \[\[*\]\]\"",
 			"Any+UP" = "\"KeyUp \[\[*\]\]\"",
 			"Escape" = "Reset-Held-Keys",
 			),
 		"old_default" = list( //Unlocked Bar. Respects oldmode_keys whitelist. Full tab support. [Default]
-			"Tab" = "\".winset \\\"mainwindow.macro=old_hotkeys map.focus=true input.background-color=[COLOR_INPUT_DISABLED]\\\"\"",
+			"Tab" = "\".winset \\\"mainwindow.macro=old_hotkeys map.focus=true\\\"\"",
 			"Ctrl+Escape" = "Reset-Held-Keys", //Small concession for the safety net.
 			),
 		"old_hotkeys" = list( //Unlocked Any. Supports clean switch back to unlocked. [Default]
-			"Tab" = "\".winset \\\"mainwindow.macro=old_default input.focus=true input.background-color=[COLOR_INPUT_ENABLED]\\\"\"",
+			"Tab" = "\".winset \\\"mainwindow.macro=old_default input.focus=true\\\"\"",
 			"Back" = "\".winset \\\"input.text=\\\"\\\"\\\"\"", // This makes it so backspace can remove default inputs
 			"Any" = "\"KeyDown \[\[*\]\]\"",
 			"Any+UP" = "\"KeyUp \[\[*\]\]\"",
@@ -93,7 +93,5 @@ SUBSYSTEM_DEF(input)
 		user.set_macros()
 
 /datum/controller/subsystem/input/fire()
-	var/list/clients = GLOB.clients // Let's sing the list cache song
-	for(var/i in 1 to clients.len)
-		var/client/C = clients[i]
-		C.keyLoop()
+	for(var/mob/user as anything in GLOB.keyloop_list)
+		user.focus?.keyLoop(user.client)

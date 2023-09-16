@@ -21,8 +21,8 @@
 	species_head = /obj/item/bodypart/head/zombie
 	species_l_arm = /obj/item/bodypart/l_arm/zombie
 	species_r_arm = /obj/item/bodypart/r_arm/zombie
-	species_l_leg = /obj/item/bodypart/l_leg/zombie
-	species_r_leg = /obj/item/bodypart/r_leg/zombie
+	species_l_leg = /obj/item/bodypart/leg/left/zombie
+	species_r_leg = /obj/item/bodypart/leg/right/zombie
 
 /datum/species/zombie/check_roundstart_eligible()
 	if(SSevents.holidays && SSevents.holidays[HALLOWEEN])
@@ -105,25 +105,7 @@
 	species_head = /obj/item/bodypart/head/zombie
 	species_l_arm = /obj/item/bodypart/l_arm/zombie
 	species_r_arm = /obj/item/bodypart/r_arm/zombie
-	species_l_leg = /obj/item/bodypart/l_leg/zombie
-	species_r_leg = /obj/item/bodypart/r_leg/zombie
-
-/datum/species/human/krokodil_addict/replace_body(mob/living/carbon/C, datum/species/new_species)
-	..()
-	var/skintone
-	if(ishuman(C))
-		var/mob/living/carbon/human/H = C
-		skintone = H.skin_tone
-
-	for(var/obj/item/bodypart/BP as anything in C.bodyparts)
-		if(IS_ORGANIC_LIMB(BP))
-			if(BP.body_zone == BODY_ZONE_HEAD || BP.body_zone == BODY_ZONE_CHEST)
-				BP.is_dimorphic = TRUE
-			BP.skin_tone ||= skintone
-			BP.limb_id = SPECIES_HUMAN
-			BP.should_draw_greyscale = TRUE
-			BP.name = "human [parse_zone(BP.body_zone)]"
-			BP.update_limb()
-
+	species_l_leg = /obj/item/bodypart/leg/left/zombie
+	species_r_leg = /obj/item/bodypart/leg/right/zombie
 
 #undef REGENERATION_DELAY

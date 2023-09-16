@@ -7,12 +7,6 @@
 	earliest_start = 30 MINUTES
 	gamemode_blacklist = list("nuclear")
 
-/datum/round_event_control/pirates/preRunEvent()
-	if (!SSmapping.empty_space)
-		return EVENT_CANT_RUN
-
-	return ..()
-
 /datum/round_event/pirates
 	startWhen = 60 //2 minutes to answer
 	var/datum/comm_message/threat
@@ -67,18 +61,13 @@
 	var/list/candidates = pollGhostCandidates("Do you wish to be considered for pirate crew?", ROLE_TRAITOR)
 	shuffle_inplace(candidates)
 
-	var/datum/map_template/shuttle/pirate/default/ship = new
-	var/x = rand(TRANSITIONEDGE,world.maxx - TRANSITIONEDGE - ship.width)
-	var/y = rand(TRANSITIONEDGE,world.maxy - TRANSITIONEDGE - ship.height)
-	var/z = SSmapping.empty_space.z_value
-	var/turf/T = locate(x,y,z)
-	if(!T)
-		CRASH("Pirate event found no turf to load in")
+	var/datum/map_template/shuttle/pirate/default/template = new
+	var/datum/overmap/ship/controlled/ship = new(SSovermap.get_unused_overmap_square(), template)
 
-	if(!ship.load(T))
+	if(!ship)
 		CRASH("Loading pirate ship failed!")
 
-	for(var/turf/A in ship.get_affected_turfs(T))
+	for(var/turf/A in ship.shuttle_port.return_turfs())
 		for(var/obj/effect/mob_spawn/human/pirate/spawner in A)
 			if(candidates.len > 0)
 				var/mob/M = candidates[1]
@@ -304,14 +293,6 @@
 	unit_name = "hostage"
 	export_types = list(/mob/living/carbon/human)
 
-/datum/export/pirate/ransom/find_loot()
-	var/list/head_minds = SSjob.get_living_heads()
-	var/list/head_mobs = list()
-	for(var/datum/mind/M in head_minds)
-		head_mobs += M.current
-	if(head_mobs.len)
-		return pick(head_mobs)
-
 /datum/export/pirate/ransom/get_cost(atom/movable/AM)
 	var/mob/living/carbon/human/H = AM
 	if(H.stat != CONSCIOUS || !H.mind || !H.mind.assigned_role) //mint condition only
@@ -327,11 +308,11 @@
 /datum/export/pirate/cash
 	cost = 1
 	unit_name = "bills"
-	export_types = list(/obj/item/stack/spacecash)
+	export_types = list(/obj/item/spacecash/bundle)
 
 /datum/export/pirate/cash/get_amount(obj/O)
-	var/obj/item/stack/spacecash/C = O
-	return ..() * C.amount * C.value
+	var/obj/item/spacecash/bundle/C = O
+	return ..() * C.value
 
 /datum/export/pirate/holochip
 	cost = 1

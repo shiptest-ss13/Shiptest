@@ -256,9 +256,11 @@
 /turf/open/floor/plating/ice/iceberg/lit
 	light_range = 2
 	light_power = 1
-
 /turf/open/floor/plating/ice/icemoon
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+
+/turf/open/floor/plating/ice/airless
+	initial_gas_mix = AIRLESS_ATMOS
 
 /turf/open/floor/plating/snowed
 	name = "snowed-over plating"
@@ -345,9 +347,9 @@
 
 
 /turf/open/floor/plating/moss
-	name = "overgrown moss"
-	desc = "Overgrown moss, sprawling all over the rock below."
-	baseturfs = /turf/open/floor/plating/moss
+	name = "mossy carpet"
+	desc = "When the forests burned away and the sky grew dark, the moss learned to feed on the falling ash."
+	baseturfs = /turf/open/floor/plating/ashplanet //explosions and damage can destroy the moss
 	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
 	planetary_atmos = TRUE
 	icon_state = "moss"

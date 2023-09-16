@@ -7,6 +7,7 @@
 	pickup_sound =  'sound/items/handling/device_pickup.ogg'
 	drop_sound = 'sound/items/handling/device_drop.ogg'
 	dog_fashion = /datum/dog_fashion/back
+	supports_variations = VOX_VARIATION
 
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT
@@ -33,6 +34,8 @@
 	var/freqlock = FALSE  // Frequency lock to stop the user from untuning specialist radios.
 	var/use_command = FALSE  // If true, broadcasts will be large and BOLD.
 	var/command = FALSE  // If true, use_command can be toggled at will.
+	var/log = FALSE // If true, the UI will display the voice log for the frequency
+	var/list/loglist = list() //the voice log
 
 	// Encryption key handling
 	var/obj/item/encryptionkey/keyslot
@@ -43,10 +46,6 @@
 
 	var/const/FREQ_LISTENING = 1
 	//FREQ_BROADCASTING = 2
-
-/obj/item/radio/suicide_act(mob/living/user)
-	user.visible_message("<span class='suicide'>[user] starts bouncing [src] off [user.p_their()] head! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return BRUTELOSS
 
 /obj/item/radio/proc/set_frequency(new_frequency)
 	SEND_SIGNAL(src, COMSIG_RADIO_NEW_FREQUENCY, args)
@@ -143,6 +142,8 @@
 	data["useCommand"] = use_command
 	data["subspace"] = subspace_transmission
 	data["subspaceSwitchable"] = subspace_switchable
+	data["chatlog"] = log
+	data["chatloglist"] = loglist
 	data["headset"] = FALSE
 
 	return data
@@ -375,6 +376,11 @@
 	on = TRUE
 	return TRUE
 
+/obj/item/radio/proc/log_trim()
+	if(loglist.len <= 50)
+		return
+	loglist.Cut(51)
+
 ///////////////////////////////
 //////////Borg Radios//////////
 ///////////////////////////////
@@ -432,3 +438,9 @@
 /obj/item/radio/off	// Station bounced radios, their only difference is spawning with the speakers off, this was made to help the lag.
 	listening = 0			// And it's nice to have a subtype too for future features.
 	dog_fashion = /datum/dog_fashion/back
+
+
+/obj/item/radio/old
+	name = "old radio"
+	icon_state = "radio"
+	desc = "An old handheld radio. You could use it, if you really wanted to."

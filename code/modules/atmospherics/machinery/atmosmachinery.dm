@@ -44,6 +44,9 @@
 	///Is the thing being rebuilt by SSair or not. Prevents list blaot
 	var/rebuilding = FALSE
 
+	///If we should init and immediately start processing
+	var/init_processing = FALSE
+
 /obj/machinery/atmospherics/examine(mob/user)
 	. = ..()
 	if(is_type_in_list(src, GLOB.ventcrawl_machinery) && isliving(user))
@@ -59,10 +62,14 @@
 	nodes = new(device_type)
 	if (!armor)
 		armor = list("melee" = 25, "bullet" = 10, "laser" = 10, "energy" = 100, "bomb" = 0, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 70)
+	init_processing = process
 	..()
-	if(process)
-		SSair.start_processing_machine(src)
 	SetInitDirections()
+
+/obj/machinery/atmospherics/Initialize(mapload)
+	if(init_processing)
+		SSair.start_processing_machine(src, mapload)
+	return ..()
 
 /obj/machinery/atmospherics/Destroy()
 	for(var/i in 1 to device_type)
@@ -130,11 +137,11 @@
 			if(can_be_node(target, i))
 				nodes[i] = target
 				break
-	update_icon()
+	update_appearance()
 
 /obj/machinery/atmospherics/proc/setPipingLayer(new_layer)
 	piping_layer = (pipe_flags & PIPING_DEFAULT_LAYER_ONLY) ? PIPING_LAYER_DEFAULT : new_layer
-	update_icon()
+	update_appearance()
 
 /obj/machinery/atmospherics/proc/can_be_node(obj/machinery/atmospherics/target, iteration)
 	return connection_check(target, piping_layer)
@@ -158,7 +165,7 @@
 		return TRUE
 	return FALSE
 
-/obj/machinery/atmospherics/proc/pipeline_expansion()
+/obj/machinery/atmospherics/proc/pipeline_expansion(datum/pipeline/reference)
 	return nodes
 
 /obj/machinery/atmospherics/proc/SetInitDirections()
@@ -170,13 +177,13 @@
 /obj/machinery/atmospherics/proc/returnPipenet()
 	return
 
-/obj/machinery/atmospherics/proc/returnPipenetAirs()
+/obj/machinery/atmospherics/proc/returnPipenetAirs(datum/pipeline/reference)
 	return
 
-/obj/machinery/atmospherics/proc/setPipenet()
+/obj/machinery/atmospherics/proc/setPipenet(datum/pipeline/reference, obj/machinery/atmospherics/connection)
 	return
 
-/obj/machinery/atmospherics/proc/replacePipenet()
+/obj/machinery/atmospherics/proc/replacePipenet(datum/pipeline/old_pipeline, datum/pipeline/new_pipeline)
 	return
 
 /obj/machinery/atmospherics/proc/disconnect(obj/machinery/atmospherics/reference)
@@ -186,7 +193,7 @@
 	var/ref_position = nodes.Find(reference)
 	if(ref_position)
 		nodes[ref_position] = null
-	update_icon()
+	update_appearance()
 
 /obj/machinery/atmospherics/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/pipe)) //lets you autodrop

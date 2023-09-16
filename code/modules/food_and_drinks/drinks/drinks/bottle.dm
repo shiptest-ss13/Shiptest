@@ -310,8 +310,8 @@
 	return
 
 /obj/item/reagent_containers/food/drinks/bottle/lizardwine
-	name = "bottle of lizard wine"
-	desc = "An alcoholic beverage from Space China, made by infusing lizard tails in ethanol. Inexplicably popular among command staff."
+	name = "bottle of 'kalixcis' wine"
+	desc = "An alcoholic beverage of sarathi origin, now so widespread that knock-offs can be found everywhere. Check the label for point of origin."
 	icon_state = "lizardwine"
 	list_reagents = list(/datum/reagent/consumable/ethanol/lizardwine = 100)
 	foodtype = FRUIT | ALCOHOL
@@ -661,7 +661,7 @@
 
 /obj/item/storage/bottles/Initialize()
 	. = ..()
-	update_icon()
+	update_appearance()
 
 /obj/item/storage/bottles/ComponentInitialize()
 	. = ..()
@@ -681,6 +681,7 @@
 		icon_state = "[initial(icon_state)]_seal"
 	else
 		icon_state = "[initial(icon_state)]_[contents.len]"
+	return ..()
 
 /obj/item/storage/bottles/examine(mob/user)
 	. = ..()
@@ -696,7 +697,7 @@
 		sealed = FALSE
 		S.locked = FALSE
 		new /obj/item/stack/sheet/mineral/wood(get_turf(src), 1)
-		update_icon()
+		update_appearance()
 		return TRUE
 
 /obj/item/storage/bottles/sandblast

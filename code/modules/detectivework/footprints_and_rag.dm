@@ -16,16 +16,12 @@
 	volume = 5
 	spillable = FALSE
 
-/obj/item/reagent_containers/glass/rag/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is smothering [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return (OXYLOSS)
-
-/obj/item/reagent_containers/glass/rag/afterattack(atom/A as obj|turf|area, mob/user,proximity)
+/obj/item/reagent_containers/glass/rag/afterattack(atom/target as obj|turf|area, mob/user,proximity)
 	. = ..()
 	if(!proximity)
 		return
-	if(iscarbon(A) && A.reagents && reagents.total_volume)
-		var/mob/living/carbon/C = A
+	if(iscarbon(target) && target.reagents && reagents.total_volume)
+		var/mob/living/carbon/C = target
 		var/reagentlist = pretty_string_from_reagent_list(reagents)
 		var/log_object = "containing [reagentlist]"
 		if(user.a_intent == INTENT_HARM && !C.is_mouth_covered())
@@ -38,8 +34,11 @@
 			C.visible_message("<span class='notice'>[user] touches \the [C] with \the [src].</span>")
 			log_combat(user, C, "touched", src, log_object)
 
-	else if(istype(A) && (src in user))
-		user.visible_message("<span class='notice'>[user] starts to wipe down [A] with [src]!</span>", "<span class='notice'>You start to wipe down [A] with [src]...</span>")
-		if(do_after(user,30, target = A))
-			user.visible_message("<span class='notice'>[user] finishes wiping off [A]!</span>", "<span class='notice'>You finish wiping off [A].</span>")
-			A.wash(CLEAN_SCRUB)
+	else if(istype(target) && (src in user))
+		target.add_overlay(GLOB.cleaning_bubbles)
+		playsound(src, 'sound/misc/slip.ogg', 15, TRUE, -8)
+		user.visible_message("<span class='notice'>[user] starts to wipe down [target] with [src]!</span>", "<span class='notice'>You start to wipe down [target] with [src]...</span>")
+		if(do_after(user,30, target = target))
+			user.visible_message("<span class='notice'>[user] finishes wiping off [target]!</span>", "<span class='notice'>You finish wiping off [target].</span>")
+			target.wash(CLEAN_SCRUB)
+		target.cut_overlay(GLOB.cleaning_bubbles)

@@ -13,11 +13,6 @@
 	attack_verb = list("bashed", "battered", "judged", "whacked")
 	resistance_flags = FLAMMABLE
 
-/obj/item/gavelhammer/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] has sentenced [user.p_them()]self to death with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	playsound(loc, 'sound/items/gavel.ogg', 50, TRUE, -1)
-	return (BRUTELOSS)
-
 /obj/item/gavelblock
 	name = "gavel block"
 	desc = "Smack it with a gavel hammer when the assistants get rowdy."

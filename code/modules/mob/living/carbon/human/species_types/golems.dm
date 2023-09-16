@@ -27,8 +27,8 @@
 	species_head = /obj/item/bodypart/head/golem
 	species_l_arm = /obj/item/bodypart/l_arm/golem
 	species_r_arm = /obj/item/bodypart/r_arm/golem
-	species_l_leg = /obj/item/bodypart/l_leg/golem
-	species_r_leg = /obj/item/bodypart/r_leg/golem
+	species_l_leg = /obj/item/bodypart/leg/left/golem
+	species_r_leg = /obj/item/bodypart/leg/right/golem
 
 	fixed_mut_color = "aaa"
 	var/info_text = "As an <span class='danger'>Iron Golem</span>, you don't have any special traits."
@@ -54,6 +54,7 @@
 
 /datum/species/golem/random
 	name = "Random Golem"
+	id = "random golem"
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN
 	var/static/list/random_golem_types
 
@@ -273,8 +274,8 @@
 	species_head = /obj/item/bodypart/head/golem/alloy
 	species_l_arm = /obj/item/bodypart/l_arm/golem/alloy
 	species_r_arm = /obj/item/bodypart/r_arm/golem/alloy
-	species_l_leg = /obj/item/bodypart/l_leg/golem/alloy
-	species_r_leg = /obj/item/bodypart/r_leg/golem/alloy
+	species_l_leg = /obj/item/bodypart/leg/left/golem/alloy
+	species_r_leg = /obj/item/bodypart/leg/right/golem/alloy
 
 //Regenerates because self-repairing super-advanced alien tech
 /datum/species/golem/alloy/spec_life(mob/living/carbon/human/H)
@@ -445,7 +446,7 @@
 	var/obj/item/I
 	if(istype(AM, /obj/item))
 		I = AM
-		if(I.thrownby == H) //No throwing stuff at yourself to trigger the teleport
+		if(I.thrownby == WEAKREF(H)) //No throwing stuff at yourself to trigger the teleport
 			return 0
 		else
 			reactive_teleport(H)
@@ -530,8 +531,8 @@
 	species_head = /obj/item/bodypart/head/golem/bananium
 	species_l_arm = /obj/item/bodypart/l_arm/golem/bananium
 	species_r_arm = /obj/item/bodypart/r_arm/golem/bananium
-	species_l_leg = /obj/item/bodypart/l_leg/golem/bananium
-	species_r_leg = /obj/item/bodypart/r_leg/golem/bananium
+	species_l_leg = /obj/item/bodypart/leg/left/golem/bananium
+	species_r_leg = /obj/item/bodypart/leg/right/golem/bananium
 
 	var/last_honk = 0
 	var/honkooldown = 0
@@ -577,7 +578,7 @@
 	var/obj/item/I
 	if(istype(AM, /obj/item))
 		I = AM
-		if(I.thrownby == H) //No throwing stuff at yourself to make bananas
+		if(I.thrownby == WEAKREF(H)) //No throwing stuff at yourself to make bananas
 			return 0
 		else
 			new/obj/item/grown/bananapeel/specialpeel(get_turf(H))
@@ -621,8 +622,8 @@
 	species_head = /obj/item/bodypart/head/golem/cult
 	species_l_arm = /obj/item/bodypart/l_arm/golem/cult
 	species_r_arm = /obj/item/bodypart/r_arm/golem/cult
-	species_l_leg = /obj/item/bodypart/l_leg/golem/cult
-	species_r_leg = /obj/item/bodypart/r_leg/golem/cult
+	species_l_leg = /obj/item/bodypart/leg/left/golem/cult
+	species_r_leg = /obj/item/bodypart/leg/right/golem/cult
 
 /datum/species/golem/runic/random_name(gender,unique,lastname)
 	var/edgy_first_name = pick("Razor","Blood","Dark","Evil","Cold","Pale","Black","Silent","Chaos","Deadly","Coldsteel")
@@ -684,8 +685,8 @@
 	species_head = /obj/item/bodypart/head/golem/cloth
 	species_l_arm = /obj/item/bodypart/l_arm/golem/cloth
 	species_r_arm = /obj/item/bodypart/r_arm/golem/cloth
-	species_l_leg = /obj/item/bodypart/l_leg/golem/cloth
-	species_r_leg = /obj/item/bodypart/r_leg/golem/cloth
+	species_l_leg = /obj/item/bodypart/leg/left/golem/cloth
+	species_r_leg = /obj/item/bodypart/leg/right/golem/cloth
 
 /datum/species/golem/cloth/on_species_gain(mob/living/carbon/C, datum/species/old_species)
 	..()
@@ -759,14 +760,14 @@
 /obj/structure/cloth_pile/proc/revive(full_heal = FALSE, admin_revive = FALSE)
 	if(QDELETED(src) || QDELETED(cloth_golem)) //QDELETED also checks for null, so if no cloth golem is set this won't runtime
 		return
-	if(cloth_golem.suiciding || cloth_golem.hellbound)
+	if(cloth_golem.hellbound)
 		QDEL_NULL(cloth_golem)
 		return
 
 	invisibility = INVISIBILITY_MAXIMUM //disappear before the animation
 	new /obj/effect/temp_visual/mummy_animation(get_turf(src))
 	if(cloth_golem.revive(full_heal = TRUE, admin_revive = TRUE))
-		cloth_golem.grab_ghost() //won't pull if it's a suicide
+		cloth_golem.grab_ghost()
 	sleep(20)
 	cloth_golem.forceMove(get_turf(src))
 	cloth_golem.visible_message("<span class='danger'>[src] rises and reforms into [cloth_golem]!</span>","<span class='userdanger'>You reform into yourself!</span>")
@@ -894,8 +895,8 @@
 	species_head = /obj/item/bodypart/head/golem/cardboard
 	species_l_arm = /obj/item/bodypart/l_arm/golem/cardboard
 	species_r_arm = /obj/item/bodypart/r_arm/golem/cardboard
-	species_l_leg = /obj/item/bodypart/l_leg/golem/cardboard
-	species_r_leg = /obj/item/bodypart/r_leg/golem/cardboard
+	species_l_leg = /obj/item/bodypart/leg/left/golem/cardboard
+	species_r_leg = /obj/item/bodypart/leg/right/golem/cardboard
 
 /datum/species/golem/cardboard/spec_attacked_by(obj/item/I, mob/living/user, obj/item/bodypart/affecting, intent, mob/living/carbon/human/H)
 	. = ..()
@@ -946,8 +947,8 @@
 	species_head = /obj/item/bodypart/head/golem/durathread
 	species_l_arm = /obj/item/bodypart/l_arm/golem/durathread
 	species_r_arm = /obj/item/bodypart/r_arm/golem/durathread
-	species_l_leg = /obj/item/bodypart/l_leg/golem/durathread
-	species_r_leg = /obj/item/bodypart/r_leg/golem/durathread
+	species_l_leg = /obj/item/bodypart/leg/left/golem/durathread
+	species_r_leg = /obj/item/bodypart/leg/right/golem/durathread
 
 /datum/species/golem/durathread/spec_unarmedattacked(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	. = ..()
@@ -974,8 +975,8 @@
 	species_head = /obj/item/bodypart/head/golem/bone
 	species_l_arm = /obj/item/bodypart/l_arm/golem/bone
 	species_r_arm = /obj/item/bodypart/r_arm/golem/bone
-	species_l_leg = /obj/item/bodypart/l_leg/golem/bone
-	species_r_leg = /obj/item/bodypart/r_leg/golem/bone
+	species_l_leg = /obj/item/bodypart/leg/left/golem/bone
+	species_r_leg = /obj/item/bodypart/leg/right/golem/bone
 
 /datum/species/golem/bone/on_species_gain(mob/living/carbon/C, datum/species/old_species)
 	..()
@@ -1078,8 +1079,8 @@
 	species_head = /obj/item/bodypart/head/golem/snow
 	species_l_arm = /obj/item/bodypart/l_arm/golem/snow
 	species_r_arm = /obj/item/bodypart/r_arm/golem/snow
-	species_l_leg = /obj/item/bodypart/l_leg/golem/snow
-	species_r_leg = /obj/item/bodypart/r_leg/golem/snow
+	species_l_leg = /obj/item/bodypart/leg/left/golem/snow
+	species_r_leg = /obj/item/bodypart/leg/right/golem/snow
 
 /datum/species/golem/snow/spec_death(gibbed, mob/living/carbon/human/H)
 	H.visible_message("<span class='danger'>[H] turns into a pile of snow!</span>")

@@ -199,8 +199,7 @@
 	anchored = FALSE
 	buildstackamount = 5
 	item_chair = null
-	icon_state = "officechair_dark"
-
+	icon_state = "officechair_gray"
 
 /obj/structure/chair/office/Moved()
 	. = ..()
@@ -210,6 +209,11 @@
 /obj/structure/chair/office/light
 	icon_state = "officechair_white"
 
+/obj/structure/chair/office/dark
+	icon_state = "officechair_dark"
+
+/obj/structure/chair/office/purple
+	icon_state = "officechair_purple"
 //Stool
 
 /obj/structure/chair/stool
@@ -261,11 +265,6 @@
 	var/break_chance = 5 //Likely hood of smashing the chair.
 	var/obj/structure/chair/origin_type = /obj/structure/chair
 
-/obj/item/chair/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins hitting [user.p_them()]self with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	playsound(src,hitsound,50,TRUE)
-	return BRUTELOSS
-
 /obj/item/chair/narsie_act()
 	var/obj/item/chair/wood/W = new/obj/item/chair/wood(get_turf(src))
 	W.setDir(dir)
@@ -307,9 +306,6 @@
 		new /obj/item/stack/rods(get_turf(loc), 2)
 	qdel(src)
 
-
-
-
 /obj/item/chair/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	if(attack_type == UNARMED_ATTACK && prob(hit_reaction_chance))
 		owner.visible_message("<span class='danger'>[owner] fends off [attack_text] with [src]!</span>")
@@ -327,6 +323,12 @@
 			if(C.health < C.maxHealth*0.5)
 				C.Paralyze(20)
 		smash(user)
+
+/obj/structure/chair/join_player_here(mob/M)
+	// Placing a mob in a chair will attempt to buckle it, or else fall back to default.
+	if (isliving(M) && buckle_mob(M, FALSE, FALSE))
+		return
+	..()
 
 /obj/item/chair/greyscale
 	material_flags = MATERIAL_ADD_PREFIX | MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS
@@ -372,7 +374,7 @@
 	icon_state = "chairold"
 	item_chair = null
 
-/obj/structure/chair/bronze
+/obj/structure/chair/comfy/shuttle/bronze
 	name = "brass chair"
 	desc = "A spinny chair made of bronze. It has little cogs for wheels!"
 	anchored = FALSE
@@ -382,23 +384,26 @@
 	item_chair = null
 	var/turns = 0
 
-/obj/structure/chair/bronze/Destroy()
+/obj/structure/chair/comfy/shuttle/bronze/GetArmrest()
+	return mutable_appearance('icons/obj/chairs.dmi', "brass_chair_armrest")
+
+/obj/structure/chair/comfy/shuttle/bronze/Destroy()
 	STOP_PROCESSING(SSfastprocess, src)
 	. = ..()
 
-/obj/structure/chair/bronze/process()
+/obj/structure/chair/comfy/shuttle/bronze/process()
 	setDir(turn(dir,-90))
 	playsound(src, 'sound/effects/servostep.ogg', 50, FALSE)
 	turns++
 	if(turns >= 8)
 		STOP_PROCESSING(SSfastprocess, src)
 
-/obj/structure/chair/bronze/Moved()
+/obj/structure/chair/comfy/shuttle/bronze/Moved()
 	. = ..()
 	if(has_gravity())
 		playsound(src, 'sound/machines/clockcult/integration_cog_install.ogg', 50, TRUE)
 
-/obj/structure/chair/bronze/AltClick(mob/living/user)
+/obj/structure/chair/comfy/shuttle/bronze/AltClick(mob/living/user)
 	turns = 0
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 		return

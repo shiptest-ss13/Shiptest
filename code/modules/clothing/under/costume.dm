@@ -24,19 +24,12 @@
 	icon_state = "owl"
 	can_adjust = FALSE
 
-/obj/item/clothing/under/costume/griffin
-	name = "griffon uniform"
-	desc = "A soft brown jumpsuit with a white feather collar made of synthetic feathers and a lust for mayhem."
-	icon_state = "griffin"
-	can_adjust = FALSE
-
 /obj/item/clothing/under/costume/schoolgirl
 	name = "blue schoolgirl uniform"
 	desc = "It's just like one of my Japanese animes!"
 	icon_state = "schoolgirl"
 	item_state = "schoolgirl"
 	body_parts_covered = CHEST|GROIN|ARMS
-	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = FALSE
 
 /obj/item/clothing/under/costume/schoolgirl/red
@@ -68,20 +61,12 @@
 	item_state = "soviet"
 	can_adjust = FALSE
 
-/obj/item/clothing/under/costume/redcoat
-	name = "redcoat uniform"
-	desc = "Looks old."
-	icon_state = "redcoat"
-	item_state = "redcoat"
-	can_adjust = FALSE
-
 /obj/item/clothing/under/costume/kilt
 	name = "kilt"
 	desc = "Includes shoes and plaid."
 	icon_state = "kilt"
 	item_state = "kilt"
 	body_parts_covered = CHEST|GROIN|LEGS|FEET
-	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = FALSE
 
 /obj/item/clothing/under/costume/kilt/highlander
@@ -97,7 +82,6 @@
 	icon_state = "gladiator"
 	item_state = "gladiator"
 	body_parts_covered = CHEST|GROIN|ARMS
-	fitted = NO_FEMALE_UNIFORM
 	can_adjust = FALSE
 	resistance_flags = NONE
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
@@ -113,7 +97,6 @@
 	icon_state = "maid"
 	item_state = "maid"
 	body_parts_covered = CHEST|GROIN
-	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = FALSE
 
 /obj/item/clothing/under/costume/maid/Initialize()
@@ -128,12 +111,6 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
 
-/obj/item/clothing/under/costume/villain
-	name = "villain suit"
-	desc = "A change of wardrobe is necessary if you ever want to catch a real superhero."
-	icon_state = "villain"
-	can_adjust = FALSE
-
 /obj/item/clothing/under/costume/sailor
 	name = "sailor suit"
 	desc = "Skipper's in the wardroom drinkin gin'."
@@ -141,31 +118,12 @@
 	item_state = "b_suit"
 	can_adjust = FALSE
 
-/obj/item/clothing/under/costume/singer
-	desc = "Just looking at this makes you want to sing."
-	body_parts_covered = CHEST|GROIN|ARMS
-	alternate_worn_layer = ABOVE_SHOES_LAYER
-	can_adjust = FALSE
-
-/obj/item/clothing/under/costume/singer/yellow
-	name = "yellow performer's outfit"
-	icon_state = "ysing"
-	item_state = "ysing"
-	fitted = NO_FEMALE_UNIFORM
-
-/obj/item/clothing/under/costume/singer/blue
-	name = "blue performer's outfit"
-	icon_state = "bsing"
-	item_state = "bsing"
-	fitted = FEMALE_UNIFORM_TOP
-
 /obj/item/clothing/under/costume/mummy
 	name = "mummy wrapping"
 	desc = "Return the slab or suffer my stale references."
 	icon_state = "mummy"
 	item_state = "mummy"
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
-	fitted = NO_FEMALE_UNIFORM
 	can_adjust = FALSE
 	resistance_flags = NONE
 
@@ -175,7 +133,6 @@
 	icon_state = "scarecrow"
 	item_state = "scarecrow"
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
-	fitted = NO_FEMALE_UNIFORM
 	can_adjust = FALSE
 	resistance_flags = NONE
 
@@ -185,7 +142,6 @@
 	icon_state = "draculass"
 	item_state = "draculass"
 	body_parts_covered = CHEST|GROIN|ARMS
-	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = FALSE
 
 /obj/item/clothing/under/costume/drfreeze
@@ -200,7 +156,6 @@
 	desc = "Who beheaded the college mascot?"
 	icon_state = "lobster"
 	item_state = "lobster"
-	fitted = NO_FEMALE_UNIFORM
 	can_adjust = FALSE
 
 /obj/item/clothing/under/costume/gondola
@@ -216,7 +171,6 @@
 	icon_state = "skeleton"
 	item_state = "skeleton"
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
-	fitted = NO_FEMALE_UNIFORM
 	can_adjust = FALSE
 	resistance_flags = NONE
 
@@ -227,7 +181,6 @@
 	item_state = "red_mech_suit"
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
-	fitted = NO_FEMALE_UNIFORM
 	alternate_worn_layer = GLOVES_LAYER //covers hands but gloves can go over it. This is how these things work in my head.
 	can_adjust = FALSE
 

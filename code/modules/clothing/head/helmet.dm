@@ -47,7 +47,7 @@
 	if(A == attached_light)
 		set_attached_light(null)
 		update_helmlight()
-		update_icon()
+		update_appearance()
 		QDEL_NULL(action_light)
 		qdel(A)
 	return ..()
@@ -85,10 +85,6 @@
 				var/mob/living/carbon/C = user
 				C.head_update(src, forced = 1)
 
-			if(active_sound)
-				while(up)
-					playsound(src, "[active_sound]", 100, FALSE, 4)
-
 //LightToggle
 
 /obj/item/clothing/head/helmet/ComponentInitialize()
@@ -109,7 +105,7 @@
 				return
 			to_chat(user, "<span class='notice'>You click [attaching_seclite] into place on [src].</span>")
 			set_attached_light(attaching_seclite)
-			update_icon()
+			update_appearance()
 			update_helmlight()
 			action_light = new(src)
 			if(loc == user)
@@ -129,13 +125,13 @@
 		var/obj/item/flashlight/removed_light = set_attached_light(null)
 		update_helmlight()
 		removed_light.update_brightness(user)
-		update_icon()
+		update_appearance()
 		user.update_inv_head()
 		QDEL_NULL(action_light)
 		return TRUE
 
 /obj/item/clothing/head/helmet/proc/toggle_helmlight()
-	set name = "Toggle Helmetlight"
+	set name = "Toggle Helmet light"
 	set category = "Object"
 	set desc = "Click to toggle your helmet's attached flashlight."
 
@@ -154,7 +150,7 @@
 
 /obj/item/clothing/head/helmet/proc/update_helmlight()
 	if(attached_light)
-		update_icon()
+		update_appearance()
 
 	for(var/datum/action/action as anything in actions)
 		action.UpdateButtonIcon()
@@ -233,7 +229,7 @@
 /obj/item/clothing/head/helmet/marine/Initialize(mapload)
 	set_attached_light(new /obj/item/flashlight/seclite)
 	update_helmlight()
-	update_icon()
+	update_appearance()
 	. = ..()
 
 /obj/item/clothing/head/helmet/marine/security
@@ -293,15 +289,29 @@
 	actions_types = list(/datum/action/item_action/toggle_helmet_light)
 	can_toggle = 1
 	toggle_cooldown = 20
-	active_sound = 'sound/items/weeoo1.ogg'
+	var/datum/looping_sound/siren/weewooloop
 	dog_fashion = null
+
+/obj/item/clothing/head/helmet/justice/Initialize()
+	. = ..()
+	weewooloop = new(list(src), FALSE)
+
+/obj/item/clothing/head/helmet/justice/Destroy()
+	QDEL_NULL(weewooloop)
+	return ..()
+
+/obj/item/clothing/head/helmet/justice/attack_self(mob/user)
+	. = ..()
+	if(up)
+		weewooloop.start()
+	else
+		weewooloop.stop()
+
 
 /obj/item/clothing/head/helmet/justice/escape
 	name = "alarm helmet"
 	desc = "WEEEEOOO. WEEEEEOOO. STOP THAT MONKEY. WEEEOOOO."
 	icon_state = "justice2"
-	toggle_message = "You turn off the light on"
-	alt_toggle_message = "You turn on the light on"
 
 /obj/item/clothing/head/helmet/swat
 	name = "\improper SWAT helmet"
@@ -517,15 +527,6 @@
 	unique_reskin = null
 	armor = list("melee" = 15, "bullet" = 60, "laser" = 10, "energy" = 10, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 
-/obj/item/clothing/head/helmet/solgov
-	name = "\improper SolGov Helmet"
-	desc = "A helmet manufactured by SolGov to protect craniums. Painted in green to provide some degree of camoflauge."
-	icon_state = "helmet_terragov"
-	item_state = "helmet_terragov"
-	can_flashlight = FALSE
-	dog_fashion = null
-	armor = list("melee" = 15, "bullet" = 60, "laser" = 10, "energy" = 10, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
-
 /obj/item/clothing/head/solgov
 	name = "\improper SolGov officer's cap"
 	desc = "A blue cap worn by high-ranking officers of SolGov."
@@ -540,6 +541,24 @@
 	armor = list("melee" = 40, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 60)
 	icon_state = "cap_terragov"
 	item_state = "cap_terragov"
+
+/obj/item/clothing/head/solgov/sonnensoldner
+	name = "\improper Sonnensoldner Hat"
+	desc = "A standard-issue SolGov hat adorned with a feather, commonly used by Sonnensoldners."
+	icon_state = "sonnensoldner_hat"
+	item_state = "sonnensoldner_hat"
+	worn_y_offset = 4
+	dog_fashion = null
+	armor = list("melee" = 40, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 60)
+
+/obj/item/clothing/head/solgov/captain
+	name = "\improper SolGov bicorne hat"
+	desc = "A unique bicorne hat given to Solarian Captains on expeditionary missions."
+	icon_state = "solgov_bicorne"
+	item_state = "solgov_bicorne"
+	worn_y_offset = 2
+	dog_fashion = null
+	armor = list("melee" = 40, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 60)
 
 /obj/item/clothing/head/helmet/space/plasmaman/solgov
 	name = "\improper SolGov envirosuit helmet"

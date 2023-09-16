@@ -1,6 +1,3 @@
-///Name of the file used for ship name random selection
-#define SHIP_NAMES_FILE "ship_names.json"
-
 /**
  * # Simulated overmap ship
  *
@@ -12,14 +9,12 @@
 	token_type = /obj/overmap/rendered
 	dock_time = 10 SECONDS
 
-	///Vessel estimated thrust
+	///Vessel estimated thrust per full burn
 	var/est_thrust
 	///Average fuel fullness percentage
 	var/avg_fuel_amnt = 100
 	///Cooldown until the ship can be renamed again
 	COOLDOWN_DECLARE(rename_cooldown)
-	///Vessel approximate mass
-	var/mass
 
 	///The docking port of the linked shuttle. To add a port after creating a controlled ship datum, use [/datum/overmap/ship/controlled/proc/connect_new_shuttle_port].
 	VAR_FINAL/obj/docking_port/mobile/shuttle_port
@@ -64,21 +59,16 @@
 	/// Short memo of the ship shown to new joins
 	var/memo = null
 	///Assoc list of remaining open job slots (job = remaining slots)
-	var/list/job_slots = list(new /datum/job/captain() = 1, new /datum/job/assistant() = 5)
+	var/list/job_slots
 	///Time that next job slot change can occur
 	COOLDOWN_DECLARE(job_slot_adjustment_cooldown)
-
-
-
-
-
-
 
 /datum/overmap/ship/controlled/Rename(new_name, force = FALSE)
 	var/oldname = name
 	if(!..() || (!COOLDOWN_FINISHED(src, rename_cooldown) && !force))
 		return FALSE
 	message_admins("[key_name_admin(usr)] renamed vessel '[oldname]' to '[new_name]'")
+	log_admin("[key_name(src)] has renamed vessel '[oldname]' to '[new_name]'")
 	shuttle_port?.name = new_name
 	ship_account.account_holder = new_name
 	if(shipkey)
@@ -105,10 +95,13 @@
 			if(!shuttle_port) //Loading failed, if the shuttle is supposed to be created, we need to delete ourselves.
 				qdel(src) // Can't return INITIALIZE_HINT_QDEL here since this isn't ACTUAL initialisation. Considering changing the name of the proc.
 				return
-			calculate_mass()
-			refresh_engines()
+			if(istype(position, /datum/overmap))
+				docked_to = null // Dock() complains if you're already docked to something when you Dock, even on force
+				Dock(position, TRUE)
 
-	ship_account = new(name, 2000)
+			refresh_engines()
+		ship_account = new(name, source_template.starting_funds)
+
 #ifdef UNIT_TESTS
 	Rename("[source_template]")
 #else
@@ -117,17 +110,29 @@
 	SSovermap.controlled_ships += src
 
 /datum/overmap/ship/controlled/Destroy()
+	//SHOULD be called first
+	. = ..()
 	SSovermap.controlled_ships -= src
+	helms.Cut()
+	LAZYCLEARLIST(owner_candidates)
 	if(!QDELETED(shuttle_port))
-		shuttle_port.intoTheSunset()
+		shuttle_port.current_ship = null
+		qdel(shuttle_port, TRUE)
+		shuttle_port = null
 	if(!QDELETED(ship_account))
 		QDEL_NULL(ship_account)
+	if(!QDELETED(shipkey))
+		QDEL_NULL(shipkey)
+	QDEL_LIST(manifest)
+	job_slots.Cut()
 	for(var/a_key in applications)
+		if(isnull(applications[a_key]))
+			continue
 		// it handles removal itself
 		qdel(applications[a_key])
+	LAZYCLEARLIST(applications)
 	// set ourselves to ownerless to unregister signals
 	set_owner_mob(null)
-	return ..()
 
 /datum/overmap/ship/controlled/get_jump_to_turf()
 	return get_turf(shuttle_port)
@@ -142,7 +147,6 @@
 /datum/overmap/ship/controlled/start_dock(datum/overmap/to_dock, datum/docking_ticket/ticket)
 	log_shuttle("[src] [REF(src)] DOCKING: STARTED REQUEST FOR [to_dock] AT [ticket.target_port]")
 	refresh_engines()
-	shuttle_port.movement_force = list("KNOCKDOWN" = FLOOR(est_thrust / 50, 1), "THROW" = FLOOR(est_thrust / 500, 1))
 	priority_announce("Beginning docking procedures. Completion in [dock_time/10] seconds.", "Docking Announcement", sender_override = name, zlevel = shuttle_port.virtual_z())
 	shuttle_port.create_ripples(ticket.target_port, dock_time)
 	shuttle_port.play_engine_sound(shuttle_port, shuttle_port.landing_sound)
@@ -151,9 +155,6 @@
 /datum/overmap/ship/controlled/complete_dock(datum/overmap/dock_target, datum/docking_ticket/ticket)
 	shuttle_port.initiate_docking(ticket.target_port)
 	. = ..()
-	if(istype(dock_target, /datum/overmap/ship/controlled)) //hardcoded and bad
-		var/datum/overmap/ship/controlled/S = dock_target
-		S.shuttle_port.shuttle_areas |= shuttle_port.shuttle_areas
 	log_shuttle("[src] [REF(src)] COMPLETE DOCK: FINISHED DOCKING TO [dock_target] AT [ticket.target_port]")
 
 /datum/overmap/ship/controlled/Undock(force = FALSE)
@@ -184,11 +185,6 @@
 			return new /datum/docking_ticket(docking_port, src, dock_requester)
 	return ..()
 
-/datum/overmap/ship/controlled/post_undocked(datum/overmap/dock_requester)
-	if(istype(dock_requester, /datum/overmap/ship/controlled))
-		var/datum/overmap/ship/controlled/docker_port = dock_requester
-		shuttle_port.shuttle_areas += docker_port.shuttle_port.shuttle_areas
-
 /**
  * Docks to an empty dynamic encounter. Used for intership interaction, structural modifications, and such
  */
@@ -199,46 +195,30 @@
 	if(E) //Don't make this an else
 		Dock(E)
 
-/datum/overmap/ship/controlled/burn_engines(n_dir = null, percentage = 100)
-	if(docked_to || docking)
-		CRASH("[src] burned engines while docking or docked!")
-
+/datum/overmap/ship/controlled/burn_engines(percentage = 100, deltatime)
 	var/thrust_used = 0 //The amount of thrust that the engines will provide with one burn
 	refresh_engines()
-	if(!mass)
-		calculate_mass()
 	calculate_avg_fuel()
-	for(var/obj/machinery/power/shuttle/engine/E as anything in shuttle_port.engine_list)
-		if(!E.enabled)
+	for(var/obj/machinery/power/shuttle/engine/real_engine as anything in shuttle_port.get_engines())
+		if(!real_engine.enabled)
 			continue
-		thrust_used += E.burn_engine(percentage)
-	est_thrust = thrust_used //cheeky way of rechecking the thrust, check it every time it's used
-	thrust_used = thrust_used / max(mass * 100, 1) //do not know why this minimum check is here, but I clearly ran into an issue here before
-	if(n_dir)
-		accelerate(n_dir, thrust_used)
-	else
-		decelerate(thrust_used)
+		thrust_used += real_engine.burn_engine(percentage, deltatime)
+
+	thrust_used = thrust_used / (shuttle_port.turf_count * 100)
+	est_thrust = thrust_used / percentage * 100 //cheeky way of rechecking the thrust, check it every time it's used
+
+	return thrust_used
 
 /**
  * Just double checks all the engines on the shuttle
  */
 /datum/overmap/ship/controlled/proc/refresh_engines()
 	var/calculated_thrust
-	for(var/obj/machinery/power/shuttle/engine/E as anything in shuttle_port.engine_list)
-		E.update_engine()
-		if(E.enabled)
-			calculated_thrust += E.thrust
-	est_thrust = calculated_thrust
-
-/**
- * Calculates the mass based on the amount of turfs in the shuttle's areas
- */
-/datum/overmap/ship/controlled/proc/calculate_mass()
-	. = 0
-	var/list/areas = shuttle_port.shuttle_areas
-	for(var/shuttle_area in areas)
-		. += length(get_area_turfs(shuttle_area))
-	mass = .
+	for(var/obj/machinery/power/shuttle/engine/real_engine as anything in shuttle_port.get_engines())
+		real_engine.update_engine()
+		if(real_engine.enabled)
+			calculated_thrust += real_engine.thrust
+	est_thrust = calculated_thrust / (shuttle_port.turf_count * 100)
 
 /**
  * Calculates the average fuel fullness of all engines.
@@ -246,10 +226,10 @@
 /datum/overmap/ship/controlled/proc/calculate_avg_fuel()
 	var/fuel_avg = 0
 	var/engine_amnt = 0
-	for(var/obj/machinery/power/shuttle/engine/E as anything in shuttle_port.engine_list)
-		if(!E.enabled)
+	for(var/obj/machinery/power/shuttle/engine/real_engine as anything in shuttle_port.get_engines())
+		if(!real_engine.enabled)
 			continue
-		fuel_avg += E.return_fuel() / E.return_fuel_cap()
+		fuel_avg += real_engine.return_fuel() / real_engine.return_fuel_cap()
 		engine_amnt++
 	if(!engine_amnt || !fuel_avg)
 		avg_fuel_amnt = 0
@@ -258,7 +238,9 @@
 
 /datum/overmap/ship/controlled/tick_move()
 	if(avg_fuel_amnt < 1)
-		decelerate(max_speed / 100)
+		//Slow down a little when there's no fuel
+		adjust_speed(clamp(-speed_x, max_speed * -0.001, max_speed * 0.001), clamp(-speed_y, max_speed * -0.001, max_speed * 0.001))
+
 	return ..()
 
 /**
@@ -271,7 +253,6 @@
 	if(shuttle_port)
 		CRASH("Attempted to connect a new port to a ship that already has a port!")
 	shuttle_port = new_port
-	calculate_mass()
 	refresh_engines()
 	shuttle_port.name = name
 	for(var/area/shuttle_area as anything in shuttle_port.shuttle_areas)
@@ -303,6 +284,7 @@
 		eligible = TRUE
 	)
 	LAZYSET(owner_candidates, H.mind, mind_info)
+	H.mind.original_ship = WEAKREF(src)
 	RegisterSignal(H.mind, COMSIG_PARENT_QDELETING, .proc/crew_mind_deleting)
 	if(!owner_mob)
 		set_owner_mob(H)
@@ -315,7 +297,10 @@
 		UnregisterSignal(owner_mob, COMSIG_MOB_LOGOUT)
 		UnregisterSignal(owner_mob, COMSIG_MOB_GO_INACTIVE)
 		// testing trace because i am afraid
-		if(owner_mob.mind != owner_mind) // minds should never be changed without a key change and associated logout signal
+		if(owner_mob.mind && owner_mob.mind != owner_mind)
+			// moving minds means moving keys; if this trips, a mind moved without a key move for us to pick up on
+			// when transferring mind from one body to another, source mob's mind is set to null before the transfer. thus the null check
+			// i'm going to be honest i don't have a fucking clue if this code works. mind code is hell
 			stack_trace("[src]'s owner mob [owner_mob] (mind [owner_mob.mind], player [owner_mob.mind.key]) silently changed its mind from [owner_mind] (player [owner_mind.key])!")
 		owner_act.Remove(owner_mob)
 
@@ -324,14 +309,17 @@
 		owner_mind = null
 		if(owner_act)
 			QDEL_NULL(owner_act)
-		// this gets automatically deleted in /datum/Destroy() if we are being destroyed
-		owner_check_timer_id = addtimer(CALLBACK(src, .proc/check_owner), 5 MINUTES, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
+		// turns out that timers don't get added to active_timers if the datum is getting qdeleted.
+		// so this timer was sitting around after deletion and clogging up runtime logs. thus, the QDELING() check. oops!
+		if(!owner_check_timer_id && !QDELING(src))
+			owner_check_timer_id = addtimer(CALLBACK(src, .proc/check_owner), 5 MINUTES, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
 		return
 
 	owner_mob = new_owner
 	owner_mind = owner_mob.mind
 	if(owner_check_timer_id) // we know we have an owner since we didn't return up there
 		deltimer(owner_check_timer_id)
+		owner_check_timer_id = null
 
 	// testing trace
 	// not 100% sure this is needed
@@ -413,7 +401,7 @@
 
 /obj/item/key/ship
 	name = "ship key"
-	desc = "A key for locking and unlocking the helm of a ship, comes with a ball chain so it can be worn around the neck."
+	desc = "A key for locking and unlocking the helm of a ship, comes with a ball chain so it can be worn around the neck. Comes with a cute little shuttle-shaped keychain."
 	icon_state = "keyship"
 	var/datum/overmap/ship/controlled/master_ship
 	var/static/list/key_colors = list(
@@ -438,7 +426,7 @@
 		icon_state = "shipkey_plasticbod"
 		var/our_color = pick(key_colors)
 		add_atom_colour(key_colors[our_color], FIXED_COLOUR_PRIORITY)
-		update_icon()
+		update_appearance()
 	name = "ship key ([master_ship.name])"
 
 /obj/item/key/ship/update_overlays()
@@ -460,7 +448,3 @@
 
 	master_ship.attempt_key_usage(user, src, src) // hello I am a helm console I promise
 	return TRUE
-
-/obj/item/key/ship/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is stabbing [src] into [user.p_their()] [pick("temple", "heart")] and turns it off. It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return(OXYLOSS)

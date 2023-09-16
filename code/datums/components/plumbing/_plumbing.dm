@@ -26,7 +26,8 @@
 	reagents = AM.reagents
 	turn_connects = _turn_connects
 
-	RegisterSignal(parent, list(COMSIG_MOVABLE_MOVED,COMSIG_PARENT_PREQDELETED), .proc/disable)
+	RegisterSignal(parent, list(COMSIG_MOVABLE_MOVED), .proc/on_parent_moved)
+	RegisterSignal(parent, list(COMSIG_PARENT_PREQDELETED), .proc/disable)
 	RegisterSignal(parent, list(COMSIG_OBJ_DEFAULT_UNFASTEN_WRENCH), .proc/toggle_active)
 	RegisterSignal(parent, list(COMSIG_OBJ_HIDE), .proc/hide)
 	RegisterSignal(parent, list(COMSIG_ATOM_UPDATE_OVERLAYS), .proc/create_overlays) //called by lateinit on startup
@@ -132,6 +133,15 @@
 			I.dir = D
 		overlays += I
 
+
+/datum/component/plumbing/proc/on_parent_moved()
+	SIGNAL_HANDLER
+
+	var/atom/movable/AM = parent
+	if (!AM.anchored)
+		disable()
+
+
 ///we stop acting like a plumbing thing and disconnect if we are, so we can safely be moved and stuff
 /datum/component/plumbing/proc/disable()
 	SIGNAL_HANDLER
@@ -151,7 +161,8 @@
 		if(D & (demand_connects | supply_connects))
 			for(var/obj/machinery/duct/duct in get_step(parent, D))
 				duct.remove_connects(turn(D, 180))
-				duct.update_icon()
+				duct.neighbours.Remove(parent)
+				duct.update_appearance()
 
 ///settle wherever we are, and start behaving like a piece of plumbing
 /datum/component/plumbing/proc/enable()
@@ -235,7 +246,7 @@
 	SIGNAL_HANDLER
 
 	tile_covered = intact
-	AM.update_icon()
+	AM.update_appearance()
 
 ///has one pipe input that only takes, example is manual output pipe
 /datum/component/plumbing/simple_demand

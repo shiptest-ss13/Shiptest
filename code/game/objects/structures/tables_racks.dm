@@ -51,6 +51,7 @@
 	return "<span class='notice'>The top is <b>screwed</b> on, but the main <b>bolts</b> are also visible.</span>"
 
 /obj/structure/table/update_icon()
+	. = ..()
 	if(smoothing_flags & (SMOOTH_CORNERS|SMOOTH_BITMASK))
 		QUEUE_SMOOTH(src)
 		QUEUE_SMOOTH_NEIGHBORS(src)
@@ -97,7 +98,7 @@
 /obj/structure/table/attack_tk()
 	return FALSE
 
-/obj/structure/table/CanAllowThrough(atom/movable/mover, turf/target)
+/obj/structure/table/CanAllowThrough(atom/movable/mover, border_dir)
 	. = ..()
 	if(.)
 		return
@@ -272,6 +273,17 @@
 	material_flags = MATERIAL_ADD_PREFIX | MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS
 	buildstack = null //No buildstack, so generate from mat datums
 
+/obj/structure/table/chem
+	name = "chemistry counter"
+	desc = "A square piece of metal designed to be resistant to any chemical spill."
+	icon = 'icons/obj/smooth_structures/table_chem.dmi'
+	icon_state = "table_chem-0"
+	base_icon_state = "table_chem"
+	smoothing_groups = list(SMOOTH_GROUP_CHEM_TABLES)
+	canSmoothWith = list(SMOOTH_GROUP_CHEM_TABLES)
+	buildstack = /obj/item/stack/sheet/mineral/plastitanium
+	can_flip = FALSE
+
 ///Table on wheels
 /obj/structure/table/rolling
 	name = "Rolling table"
@@ -300,6 +312,9 @@
 
 /obj/structure/table/rolling/Moved(atom/OldLoc, Dir)
 	. = ..()
+	//Nullspaced
+	if(!loc)
+		return
 	for(var/mob/M in OldLoc.contents)//Kidnap everyone on top
 		M.forceMove(loc)
 	for(var/x in attached_items)
@@ -567,14 +582,14 @@
 /obj/structure/table/optable
 	name = "operating table"
 	desc = "Used for advanced medical procedures."
-	icon = 'goon/icons/obj/surgery.dmi'
-	icon_state = "table1"
+	icon = 'icons/obj/surgery_table.dmi'
+	icon_state = "surgery_table"
 	buildstack = /obj/item/stack/sheet/mineral/silver
 	smoothing_flags = NONE
 	smoothing_groups = null
 	canSmoothWith = null
-	can_buckle = 1
-	buckle_lying = NO_BUCKLE_LYING
+	can_buckle = TRUE
+	buckle_lying = 90 //I don't see why you wouldn't be lying down while buckled to it
 	buckle_requires_restraints = FALSE
 	can_flip = FALSE
 	var/mob/living/carbon/human/patient = null
@@ -602,10 +617,21 @@
 /obj/structure/table/optable/proc/get_patient()
 	var/mob/living/carbon/M = locate(/mob/living/carbon) in loc
 	if(M)
-		if(M.resting)
-			patient = M
+		if(M.resting || M.buckled == src)
+			set_patient(M)
 	else
-		patient = null
+		set_patient(null)
+
+/obj/structure/table/optable/proc/set_patient(new_patient)
+	if(patient)
+		UnregisterSignal(patient, COMSIG_PARENT_QDELETING)
+	patient = new_patient
+	if(patient)
+		RegisterSignal(patient, COMSIG_PARENT_QDELETING, .proc/patient_deleted)
+
+/obj/structure/table/optable/proc/patient_deleted(datum/source)
+	SIGNAL_HANDLER
+	set_patient(null)
 
 /obj/structure/table/optable/proc/check_eligible_patient()
 	get_patient()
@@ -633,7 +659,7 @@
 	. = ..()
 	. += "<span class='notice'>It's held together by a couple of <b>bolts</b>.</span>"
 
-/obj/structure/rack/CanAllowThrough(atom/movable/mover, turf/target)
+/obj/structure/rack/CanAllowThrough(atom/movable/mover, border_dir)
 	. = ..()
 	if(.)
 		return
@@ -657,7 +683,9 @@
 	if(user.a_intent == INTENT_HARM)
 		return ..()
 	if(user.transferItemToLoc(W, drop_location()))
-		return 1
+		W.pixel_x = pick(9,0,-9)
+		W.pixel_y = pick(10,1)
+		return TRUE
 
 /obj/structure/rack/attack_paw(mob/living/user)
 	attack_hand(user)

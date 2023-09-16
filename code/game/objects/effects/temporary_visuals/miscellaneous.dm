@@ -4,14 +4,17 @@
 	duration = 5
 	randomdir = FALSE
 	layer = BELOW_MOB_LAYER
+	color = COLOR_BLOOD
 	var/splatter_type = "splatter"
 
-/obj/effect/temp_visual/dir_setting/bloodsplatter/Initialize(mapload, set_dir)
+/obj/effect/temp_visual/dir_setting/bloodsplatter/Initialize(mapload, set_dir, set_color)
 	if(ISDIAGONALDIR(set_dir))
 		icon_state = "[splatter_type][pick(1, 2, 6)]"
 	else
 		icon_state = "[splatter_type][pick(3, 4, 5)]"
 	. = ..()
+	if(set_color)
+		color = set_color
 	var/target_pixel_x = 0
 	var/target_pixel_y = 0
 	switch(set_dir)
@@ -42,6 +45,7 @@
 
 /obj/effect/temp_visual/dir_setting/bloodsplatter/xenosplatter
 	splatter_type = "xsplatter"
+	color = null
 
 /obj/effect/temp_visual/dir_setting/speedbike_trail
 	name = "speedbike trails"
@@ -53,6 +57,10 @@
 /obj/effect/temp_visual/dir_setting/firing_effect
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "firing_effect"
+	light_system = MOVABLE_LIGHT
+	light_range = 2
+	light_power = 0.4
+	light_color = COLOR_VERY_SOFT_YELLOW
 	duration = 2
 
 /obj/effect/temp_visual/dir_setting/firing_effect/setDir(newdir)
@@ -71,7 +79,15 @@
 
 /obj/effect/temp_visual/dir_setting/firing_effect/energy
 	icon_state = "firing_effect_energy"
+	light_color = COLOR_RED_LIGHT
 	duration = 3
+
+/obj/effect/temp_visual/dir_setting/firing_effect/gauss
+//gauss doesn't have a muzzle flash
+	light_system = null
+	light_range = 0
+	light_power = 0
+	light_color = null
 
 /obj/effect/temp_visual/dir_setting/firing_effect/magic
 	icon_state = "shieldsparkles"
@@ -498,22 +514,26 @@
 	status = rcd_status
 	delay = rcd_delay
 	if (status == RCD_DECONSTRUCT)
-		addtimer(CALLBACK(src, /atom/.proc/update_icon), 11)
+		addtimer(CALLBACK(src, /atom/.proc/update_appearance), 1.1 SECONDS)
 		delay -= 11
 		icon_state = "rcd_end_reverse"
 	else
-		update_icon()
+		update_appearance()
 
 /obj/effect/constructing_effect/update_icon_state()
 	icon_state = "rcd"
-	if (delay < 10)
+	if(delay < 10)
 		icon_state += "_shortest"
-	else if (delay < 20)
+		return ..()
+	if (delay < 20)
 		icon_state += "_shorter"
-	else if (delay < 37)
+		return ..()
+	if (delay < 37)
 		icon_state += "_short"
-	if (status == RCD_DECONSTRUCT)
+		return ..()
+	if(status == RCD_DECONSTRUCT)
 		icon_state += "_reverse"
+	return ..()
 
 /obj/effect/constructing_effect/proc/end_animation()
 	if (status == RCD_DECONSTRUCT)

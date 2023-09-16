@@ -541,7 +541,7 @@
 	if(!override)
 		qdel(src)
 
-/obj/structure/spacevine/CanAllowThrough(atom/movable/mover, turf/target)
+/obj/structure/spacevine/CanAllowThrough(atom/movable/mover, border_dir)
 	. = ..()
 	if(isvineimmune(mover))
 		return TRUE
@@ -557,3 +557,8 @@
 	name = "dense space vines"
 	opacity = TRUE
 	icon_state = "Hvy1"
+
+/obj/structure/spacevine/weak
+	name = "weak space vines"
+	desc = "An extremely expansionistic species of vine. This one appears to be more fragile than most."
+	max_integrity = 25

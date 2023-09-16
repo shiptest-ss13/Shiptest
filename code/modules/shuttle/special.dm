@@ -10,6 +10,7 @@
 	icon = 'icons/obj/machines/magic_emitter.dmi'
 	icon_state = "wabbajack_statue"
 	icon_state_on = "wabbajack_statue_on"
+	base_icon_state = "wabbajack_statue"
 	active = FALSE
 	allow_switch_interact = FALSE
 	var/list/active_tables = list()
@@ -19,13 +20,11 @@
 	. = ..()
 	if(prob(50))
 		desc = "Oh no, not again."
-	update_icon()
+	update_appearance()
 
 /obj/machinery/power/emitter/energycannon/magical/update_icon_state()
-	if(active)
-		icon_state = icon_state_on
-	else
-		icon_state = initial(icon_state)
+	. = ..()
+	icon_state = active ? icon_state_on : initial(icon_state)
 
 /obj/machinery/power/emitter/energycannon/magical/process()
 	. = ..()
@@ -39,7 +38,7 @@
 			visible_message("<span class='revenboldnotice'>\
 				[src] closes its eyes.</span>")
 		active = FALSE
-	update_icon()
+	update_appearance()
 
 /obj/machinery/power/emitter/energycannon/magical/attackby(obj/item/W, mob/user, params)
 	return
@@ -231,7 +230,7 @@
 	var/static/list/check_times = list()
 	var/list/payees = list()
 
-/obj/machinery/scanner_gate/luxury_shuttle/CanAllowThrough(atom/movable/mover, turf/target)
+/obj/machinery/scanner_gate/luxury_shuttle/CanAllowThrough(atom/movable/mover, border_dir)
 	. = ..()
 
 	if(mover in approved_passengers)
@@ -285,10 +284,10 @@
 			break
 		payees[AM] += C.value
 		counted_money += C
-	for(var/obj/item/stack/spacecash/S in AM.GetAllContents())
+	for(var/obj/item/spacecash/bundle/S in AM.GetAllContents())
 		if(payees[AM] >= threshold)
 			break
-		payees[AM] += S.value * S.amount
+		payees[AM] += S.value
 		counted_money += S
 	for(var/obj/item/holochip/H in AM.GetAllContents())
 		if(payees[AM] >= threshold)
@@ -301,9 +300,9 @@
 		payees[AM] += C.value
 		counted_money += C
 
-	else if(payees[AM] < threshold && istype(AM.pulling, /obj/item/stack/spacecash))
-		var/obj/item/stack/spacecash/S = AM.pulling
-		payees[AM] += S.value * S.amount
+	else if(payees[AM] < threshold && istype(AM.pulling, /obj/item/spacecash/bundle))
+		var/obj/item/spacecash/bundle/S = AM.pulling
+		payees[AM] += S.value
 		counted_money += S
 
 	else if(payees[AM] < threshold && istype(AM.pulling, /obj/item/holochip))

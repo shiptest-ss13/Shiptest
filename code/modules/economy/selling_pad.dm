@@ -35,9 +35,9 @@
 
 /obj/machinery/computer/selling_pad_control/attackby(obj/item/I, mob/user)
 	var/value = 0
-	if(istype(I, /obj/item/stack/spacecash))
-		var/obj/item/stack/spacecash/C = I
-		value = C.value * C.amount
+	if(istype(I, /obj/item/spacecash/bundle))
+		var/obj/item/spacecash/bundle/C = I
+		value = C.value
 	else if(istype(I, /obj/item/holochip))
 		var/obj/item/holochip/H = I
 		value = H.credits
@@ -76,7 +76,7 @@
 /obj/machinery/computer/selling_pad_control/ui_data(mob/user)
 	var/list/data = list()
 	data["points"] = sell_account.account_balance
-	data["pad"] = pad.resolve() ? TRUE : FALSE
+	data["pad"] = pad?.resolve() ? TRUE : FALSE
 	data["sending"] = sending
 	data["status_report"] = status_report
 	return data

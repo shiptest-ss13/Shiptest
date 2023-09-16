@@ -52,7 +52,6 @@ GLOBAL_LIST_INIT(admin_verbs_debug_mapping, list(
 	/client/proc/create_mapping_job_icons,
 	/client/proc/debug_z_levels,
 	/client/proc/map_zones_info,
-	/client/proc/place_ruin,
 	/client/proc/export_map
 ))
 GLOBAL_PROTECT(admin_verbs_debug_mapping)

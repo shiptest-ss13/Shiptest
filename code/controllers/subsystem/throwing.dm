@@ -15,6 +15,11 @@ SUBSYSTEM_DEF(throwing)
 	msg = "P:[length(processing)]"
 	return ..()
 
+/datum/controller/subsystem/throwing/get_metrics()
+	. = ..()
+	var/list/cust = list()
+	cust["processing"] = length(processing)
+	.["custom"] = cust
 
 /datum/controller/subsystem/throwing/fire(resumed = 0)
 	if (!resumed)

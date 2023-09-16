@@ -67,7 +67,7 @@
 	..()
 	switch(build_step)
 		if(ASSEMBLY_FIRST_STEP, ASSEMBLY_SECOND_STEP)
-			if(istype(W, /obj/item/bodypart/l_leg/robot) || istype(W, /obj/item/bodypart/r_leg/robot))
+			if(istype(W, /obj/item/bodypart/leg/left/robot) || istype(W, /obj/item/bodypart/leg/right/robot))
 				if(!user.temporarilyRemoveItemFromInventory(W))
 					return
 				to_chat(user, "<span class='notice'>You add [W] to [src].</span>")
@@ -167,19 +167,30 @@
 
 /obj/item/bot_assembly/floorbot/Initialize()
 	. = ..()
-	update_icon()
+	update_appearance()
 
-/obj/item/bot_assembly/floorbot/update_icon()
-	..()
+/obj/item/bot_assembly/floorbot/update_name()
+	. = ..()
 	switch(build_step)
-		if(ASSEMBLY_FIRST_STEP)
-			desc = initial(desc)
+		if(ASSEMBLY_SECOND_STEP)
+			name = "incomplete floorbot assembly"
+		else
 			name = initial(name)
-			icon_state = "[toolbox_color]toolbox_tiles"
 
+/obj/item/bot_assembly/floorbot/update_desc()
+	. = ..()
+	switch(build_step)
 		if(ASSEMBLY_SECOND_STEP)
 			desc = "It's a toolbox with tiles sticking out the top and a sensor attached."
-			name = "incomplete floorbot assembly"
+		else
+			desc = initial(desc)
+
+/obj/item/bot_assembly/floorbot/update_icon_state()
+	. = ..()
+	switch(build_step)
+		if(ASSEMBLY_FIRST_STEP)
+			icon_state = "[toolbox_color]toolbox_tiles"
+		if(ASSEMBLY_SECOND_STEP)
 			icon_state = "[toolbox_color]toolbox_tiles_sensor"
 
 /obj/item/bot_assembly/floorbot/attackby(obj/item/W, mob/user, params)
@@ -192,7 +203,7 @@
 				to_chat(user, "<span class='notice'>You add [W] to [src].</span>")
 				qdel(W)
 				build_step++
-				update_icon()
+				update_appearance()
 
 		if(ASSEMBLY_SECOND_STEP)
 			if(istype(W, /obj/item/bodypart/l_arm/robot) || istype(W, /obj/item/bodypart/r_arm/robot))

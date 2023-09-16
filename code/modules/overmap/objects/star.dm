@@ -1,13 +1,16 @@
 /datum/overmap/star
-	name = "Star"
+	name = "star"
 	var/token_desc = "A star."
 	var/spectral_type = STAR_G
 	var/color_vary = 0
 
 /datum/overmap/star/Initialize(position, ...)
-	Rename(gen_star_name())
+	var/name = gen_star_name()
+	Rename(name)
+	set_station_name(name)
 	token.desc = token_desc
 	alter_token_appearance()
+
 
 /datum/overmap/star/proc/gen_star_name()
 	return "[pick(GLOB.star_names)] [pick(GLOB.greek_letters)]"
@@ -74,7 +77,7 @@
 	token.bound_width = 64
 	token.pixel_x = -16
 	token.pixel_y = -16
-	. = ..()
+	..()
 
 /datum/overmap/star/medium/blue
 	token_desc = "A young, blue, massive main-sequence star. The reactions at its core are so intense as to whip the entire star into convection waves."
@@ -108,7 +111,7 @@
 	token.bound_width = 96
 	token.pixel_x = -32
 	token.pixel_y = -32
-	. = ..()
+	..()
 
 /datum/overmap/star/giant/yellow
 	token_desc = "Like many other yellow giants, this dying star \"pulsates\" as its brightness fluctuates rhythmically."
@@ -116,7 +119,7 @@
 	color_vary = 0.25
 
 /datum/overmap/star/giant/yellow/alter_token_appearance()
-	. = ..()
+	..()
 	// adds a slight, slow flicker
 	// this took me far too long to get working right
 	var/half_duration = rand(7 SECONDS, 15 SECONDS)
@@ -133,7 +136,7 @@
 
 /datum/overmap/star/binary
 	token_icon_state = "binaryswoosh"
-	token_desc = "Two stars, each locked the other's orbit. These systems form at stellar birth, and may persist long after one or both stars die."
+	token_desc = "Two stars, each locked in the other's orbit. These systems form at stellar birth, and may persist long after one or both stars die."
 	color_vary = 0.75
 
 /datum/overmap/star/binary/gen_star_name()
@@ -166,3 +169,21 @@
 	star_2 = mutable_appearance(icon_state = "binary2")
 	star_2.color = get_rand_spectral_color(pick(spectral_types), color_vary)
 	token.add_overlay(star_2)
+
+/*
+		Special stars
+*/
+/datum/overmap/star/singularity
+	name = "black hole"
+	token_desc = "An incredibly dense astral body, so massive even light cannot escape its gravitational pull past the event horizon."
+	token_icon_state = "eventhorizon"
+
+/datum/overmap/star/singularity/alter_token_appearance()
+	var/mutable_appearance/AD = mutable_appearance(icon_state = "accretiondisk")
+	AD.color = "#f9c429"
+	token.add_overlay(AD)
+	token.icon = 'icons/misc/overmap_larger.dmi'
+	token.bound_height = 96
+	token.bound_width = 96
+	token.pixel_x = -32
+	token.pixel_y = -32

@@ -1,8 +1,12 @@
 // Icemoon Ruins
 
+//Buried Library
+
 /area/ruin/unpowered/buried_library
 	name = "Buried Library"
 	icon_state = "dk_yellow"
+
+//Bathhouse
 
 /area/ruin/powered/bathhouse
 	name = "Bath House"
@@ -10,28 +14,7 @@
 	mood_bonus = 10
 	mood_message = "<span class='nicegreen'>I wish I could stay here forever.</span>\n"
 
-/turf/closed/wall/bathhouse
-	desc = "It's cool to the touch, pleasantly so."
-	icon = 'icons/turf/shuttleold.dmi'
-	icon_state = "block"
-	base_icon_state = "block"
-	smoothing_flags = NONE
-	canSmoothWith = null
-
-// slimetesters
-
-/area/ruin/powered/slimerancher
-	name = "Slime Ranching Biodome"
-	icon_state = "dk_yellow"
-
-/area/ruin/powered/slimerancher/house
-	name = "Slime Ranching Hovel"
-
-/area/ruin/powered/slimerancher/prison
-	name = "Slime Ranching Prison"
-
-/area/ruin/powered/slimerancher/maints
-	name = "Slime Ranching Maints"
+//corporate rejects
 
 //Corporate Rejects
 
@@ -47,46 +30,34 @@
 	name = "NT Security Solutions Site Gamma Vault"
 	icon_state = "dk_yellow"
 
-//Icecropolis
-
-/area/ruin/unpowered/icecropolis
-	name = "The Bloody Hallow"
-	icon_state = "dk_yellow"
-	mood_bonus = -10
-	mood_message = "<span class='boldwarning''>I want to leave this place.</span>\n"
-
-/area/ruin/unpowered/icecropolis/reach
-	name = "Ash Walkers' Reach"
-	icon_state = "dk_yellow"
-	mood_bonus = 5
-	mood_message = "<span class='nicegreen''>At least I'm not in the caves.</span>\n"
-
-/area/ruin/unpowered/icecropolis/rusty
-	name = "Abandoned Building"
-	icon_state = "dk_yellow"
-	mood_bonus = -10
-	mood_message = "<span class='boldwarning''>I want to leave this place.</span>\n"
-
-/area/ruin/unpowered/icecropolis/russia
-	name = "Russian Military Checkpoint"
-	icon_state = "dk_yellow"
-	mood_bonus = -10
-	mood_message = "<span class='boldwarning''>I want to leave this place.</span>\n"
-
-/area/ruin/unpowered/icecropolis/gold
-	name = "The City of Gold"
-	icon_state = "dk_yellow"
-	mood_bonus = -10
-	mood_message = "<span class='boldwarning''>I want to leave this place.</span>\n"
-
-/area/ruin/unpowered/icecropolis/outside
-	name = "Ouside"
-	icon_state = "dk_yellow"
-	mood_bonus = -10
-	mood_message = "<span class='boldwarning'>I want to leave this place.</span>\n"
-
 //Hydroponics lab
 
 /area/ruin/powered/hydroponicslab
 	name = "Hydroponics Lab"
 	icon_state = "dk_yellow"
+
+//Slimelab 2022
+
+/area/ruin/powered/slimelab
+	name = "Slime Lab"
+	icon_state = "dk_yellow"
+
+/area/ruin/powered/slimelab/slimedome
+	name = "Slime Lab Biodome"
+	icon_state = "green"
+
+/area/ruin/powered/slimelab/lava
+	name = "Slime Lab Engineering"
+	icon_state = "engine"
+
+/area/ruin/powered/slimelab/lab
+	name = "Slime Lab Research"
+	icon_state = "red"
+
+/area/ruin/powered/slimelab/checkpoint
+	name = "Slimelab Reception"
+	icon_state = "security"
+
+/area/ruin/powered/slimelab/cafe
+	name = "Slime Lab Cafe"
+	icon_state = "green"

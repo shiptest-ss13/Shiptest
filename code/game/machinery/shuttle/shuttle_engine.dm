@@ -14,14 +14,12 @@
 	var/thrust = 0
 	///I don't really know what this is but it's used a lot
 	var/thruster_active = FALSE
-	///Used to store which ship currently has this engine in their thruster list, for Destroy() reasons
-	var/obj/docking_port/mobile/parent_shuttle
 
 /**
  * Uses up a specified percentage of the fuel cost, and returns the amount of thrust if successful.
  * * percentage - The percentage of total thrust that should be used
  */
-/obj/machinery/power/shuttle/engine/proc/burn_engine(percentage = 100)
+/obj/machinery/power/shuttle/engine/proc/burn_engine(percentage = 100, deltatime)
 	update_icon_state()
 	return FALSE
 
@@ -42,6 +40,8 @@
  * All functions should return if the parent function returns false.
  */
 /obj/machinery/power/shuttle/engine/proc/update_engine()
+	if(!(flags_1 & INITIALIZED_1))
+		return FALSE
 	thruster_active = TRUE
 	if(panel_open)
 		thruster_active = FALSE
@@ -55,10 +55,13 @@
 	update_engine() //Calls this so it sets the accurate icon
 	if(panel_open)
 		icon_state = icon_state_open
-	else if(thruster_active)
+		return ..()
+	else if(thruster_active && enabled && return_fuel())
 		icon_state = icon_state_closed
+		return ..()
 	else
 		icon_state = icon_state_off
+		return ..()
 
 /obj/machinery/power/shuttle/engine/Initialize()
 	. = ..()
@@ -66,13 +69,7 @@
 
 /obj/machinery/power/shuttle/engine/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
 	. = ..()
-	port.engine_list |= src
-	parent_shuttle = port
-
-/obj/machinery/power/shuttle/engine/Destroy()
-	if(parent_shuttle)
-		parent_shuttle.engine_list -= src
-	return ..()
+	port.engine_list |= WEAKREF(src)
 
 /obj/machinery/power/shuttle/engine/on_construction()
 	. = ..()

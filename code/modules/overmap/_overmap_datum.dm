@@ -43,21 +43,20 @@
 	if(!position)
 		position = SSovermap.get_unused_overmap_square(force = TRUE)
 
+	SSovermap.overmap_objects |= src
+
 	contents = list()
 
 	if(islist(position))
 		SSovermap.overmap_container[position["x"]][position["y"]] += src
 		x = position["x"]
 		y = position["y"]
-		token = new token_type(OVERMAP_TOKEN_TURF(x, y), src)
 	else if(istype(position, /datum/overmap))
 		var/datum/overmap/docked_object = position
 		docked_object.contents += src
 		docked_to = docked_object
-		token = new token_type(docked_object.token, src)
 
-	SSovermap.overmap_objects += src
-
+	set_or_create_token()
 	if(!char_rep && name)
 		char_rep = name[1]
 
@@ -66,10 +65,13 @@
 /datum/overmap/Destroy(force, ...)
 	SSovermap.overmap_objects -= src
 	if(docked_to)
-		Undock(TRUE)
-	SSovermap.overmap_container[x][y] -= src
+		docked_to.post_undocked()
+		docked_to.contents -= src
+	if(isnum(x) && isnum(y))
+		SSovermap.overmap_container[x][y] -= src
 	token.parent = null
 	QDEL_NULL(token)
+	QDEL_LIST(contents)
 	return ..()
 
 /**
@@ -80,6 +82,38 @@
 /datum/overmap/proc/Initialize(position, ...)
 	PROTECTED_PROC(TRUE)
 	return
+
+/**
+ * Used to generate a token for this datum.
+ */
+/datum/overmap/proc/set_or_create_token(obj/overmap/takeover = null)
+	// we have a token, and we're taking over another token
+	if(!isnull(token) && token != takeover)
+		token.parent = null
+		QDEL_NULL(token)
+
+	// taking over an existing token
+	if(!isnull(takeover))
+		token = takeover
+		if(!isnull(token.parent) && token.parent != src)
+			stack_trace("taking over a token with a parent, this will probably cause issues")
+			token.parent.token = null
+		token.parent = src
+		update_token_location()
+		return
+
+	// creating a new token
+	token = new token_type(null, src)
+	update_token_location()
+
+/**
+ * Updates the location of our linked token to be correct.
+ */
+/datum/overmap/proc/update_token_location()
+	if(!isnull(docked_to))
+		token.abstract_move(docked_to.token)
+		return
+	token.abstract_move(OVERMAP_TOKEN_TURF(x, y))
 
 /**
  * Called whenever you need to move an overmap datum to another position. Can be overridden to add additional movement functionality, as long as it calls the parent proc.
@@ -141,18 +175,27 @@
 /datum/overmap/proc/Rename(new_name, force)
 	new_name = sanitize_name(new_name) //sets to a falsey value if it's not a valid name
 	if(!new_name || new_name == name)
-		return
+		return FALSE
 	name = new_name
 	token.name = new_name
 	return TRUE
 
 /**
  * Returns all other overmap objects on the tile as a list. Will return an empty list if there are no other objects, or the source object is docked.
+ * Setting include_docked to TRUE will include any overmap objects docked to objects at the tile.
  */
-/datum/overmap/proc/get_nearby_overmap_objects()
+/datum/overmap/proc/get_nearby_overmap_objects(include_docked = FALSE)
 	if(docked_to)
 		return list()
-	return SSovermap.overmap_container[x][y] - src
+	. = SSovermap.overmap_container[x][y] - src
+	if(!include_docked)
+		return
+	var/dequeue_pointer = 0
+	while(dequeue_pointer++ < length(.))
+		var/datum/overmap/object = .[dequeue_pointer]
+		if(!istype(object))
+			continue
+		. |= object.contents
 
 /**
  * Returns a turf that can be jumped to by observers, admins, and such.
@@ -235,10 +278,11 @@
  */
 /datum/overmap/proc/complete_dock(datum/overmap/dock_target, datum/docking_ticket/ticket)
 	SHOULD_CALL_PARENT(TRUE)
-	SSovermap.overmap_container[x][y] -= src
+	if(isnum(x) && isnum(y))
+		SSovermap.overmap_container[x][y] -= src
 	x = null
 	y = null
-	dock_target.contents += src
+	dock_target.contents |= src
 	docked_to = dock_target
 	token.abstract_move(dock_target.token)
 
@@ -278,13 +322,16 @@
  */
 /datum/overmap/proc/complete_undock()
 	SHOULD_CALL_PARENT(TRUE)
-	SSovermap.overmap_container[docked_to.x][docked_to.y] += src
-	x = docked_to.x
-	y = docked_to.y
+	var/datum/overmap/container = docked_to
+	while(container && !container.x || !container.y)
+		container = container.docked_to
+	SSovermap.overmap_container[container.x][container.y] += src
+	x = container.x
+	y = container.y
 	docked_to.contents -= src
 	var/datum/overmap/old_docked_to = docked_to
 	docked_to = null
-	token.Move(OVERMAP_TOKEN_TURF(x, y))
+	token.forceMove(OVERMAP_TOKEN_TURF(x, y))
 	INVOKE_ASYNC(old_docked_to, .proc/post_undocked, src)
 	docking = FALSE
 	SEND_SIGNAL(src, COMSIG_OVERMAP_UNDOCK, old_docked_to)

@@ -21,17 +21,15 @@
 		transfer_blood = 0
 		return TRUE
 
-/obj/item/clothing/gloves/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>\the [src] are forcing [user]'s hands around [user.p_their()] neck! It looks like the gloves are possessed!</span>")
-	return OXYLOSS
-
 /obj/item/clothing/gloves/worn_overlays(isinhands = FALSE)
 	. = list()
 	if(!isinhands)
 		if(damaged_clothes)
 			. += mutable_appearance('icons/effects/item_damage.dmi', "damagedgloves")
 		if(HAS_BLOOD_DNA(src))
-			. += mutable_appearance('icons/effects/blood.dmi', "bloodyhands")
+			var/mutable_appearance/bloody_hands = mutable_appearance('icons/effects/blood.dmi', "bloodyhands")
+			bloody_hands.color = get_blood_dna_color(return_blood_DNA())
+			. += bloody_hands
 
 /obj/item/clothing/gloves/update_clothes_damaged_state(damaging = TRUE)
 	..()

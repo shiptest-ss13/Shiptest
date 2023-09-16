@@ -9,7 +9,7 @@
 
 /obj/vehicle/ridden/janicart/Initialize(mapload)
 	. = ..()
-	update_icon()
+	update_appearance()
 	var/datum/component/riding/D = LoadComponent(/datum/component/riding)
 	D.set_riding_offsets(RIDING_OFFSET_ALL, list(TEXT_NORTH = list(0, 4), TEXT_SOUTH = list(0, 7), TEXT_EAST = list(-12, 7), TEXT_WEST = list(12, 7)))
 
@@ -42,7 +42,7 @@
 			return
 		to_chat(user, "<span class='notice'>You hook the trashbag onto [src].</span>")
 		mybag = I
-		update_icon()
+		update_appearance()
 	else if(istype(I, /obj/item/janiupgrade))
 		if(floorbuffer)
 			to_chat(user, "<span class='warning'>[src] already has a floor buffer!</span>")
@@ -51,7 +51,7 @@
 		qdel(I)
 		to_chat(user, "<span class='notice'>You upgrade [src] with the floor buffer.</span>")
 		AddElement(/datum/element/cleaning)
-		update_icon()
+		update_appearance()
 	else if(istype(I, /obj/item/key/janitor))
 		..()
 	else if(mybag)
@@ -74,7 +74,7 @@
 		mybag.forceMove(get_turf(user))
 		user.put_in_hands(mybag)
 		mybag = null
-		update_icon()
+		update_appearance()
 
 /obj/vehicle/ridden/janicart/upgraded
 	floorbuffer = TRUE
@@ -83,8 +83,8 @@
 //For those who want to play farm simulator 503
 
 /obj/vehicle/ridden/lawnmower
-	name = "lawn mower"
-	desc = "Equipped with reliable safeties to prevent <i>accidents</i> in the workplace."
+	name = "Donk! Co. TM Deluxe Lawnmower 3003"
+	desc = "Equipped with reliable safeties to prevent <i>accidents</i> in the workplace. The safety light is <b>on</b>."
 	icon = 'icons/obj/vehicles.dmi'
 	icon_state = "lawnmower"
 	var/emagged = FALSE
@@ -100,12 +100,14 @@
 
 /obj/vehicle/ridden/lawnmower/emagged
 	emagged = TRUE
+	desc = "Equipped with reliable safeties to prevent <i>accidents</i> in the workplace. The safety light is off"
 
 /obj/vehicle/ridden/lawnmower/emag_act(mob/user)
 	if(emagged)
 		to_chat(user, "<span class='warning'>The safety mechanisms on \the [src] are already disabled!</span>")
 		return
 	to_chat(user, "<span class='warning'>You disable the safety mechanisms on \the [src].</span>")
+	desc = "Equipped with reliable safeties to prevent <i>accidents</i> in the workplace. The safety light is <b>off</b>."
 	emagged = TRUE
 
 /obj/vehicle/ridden/lawnmower/Bump(atom/A)
@@ -168,7 +170,7 @@
 		mowed = TRUE
 
 	var/obj/structure/flora/flora = locate(/obj/structure/flora) in loc
-	if(ayy_weeds)
+	if(flora)
 		if(!istype(flora, /obj/structure/flora/rock))
 			qdel(flora)
 			mowed = TRUE

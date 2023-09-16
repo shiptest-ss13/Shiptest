@@ -1,10 +1,7 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"a" = (
-/turf/closed/mineral/volcanic/lava_land_surface,
-/area/lavaland/surface/outdoors)
 "b" = (
 /turf/closed/mineral/volcanic/lava_land_surface,
-/area/ruin/powered)
+/area/overmap_encounter/planetoid/cave/explored)
 "c" = (
 /turf/closed/wall/mineral/iron,
 /area/ruin/powered)
@@ -85,7 +82,7 @@
 /area/ruin/powered)
 "s" = (
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/overmap_encounter/planetoid/lava/explored)
 "t" = (
 /turf/closed/wall/mineral/titanium/survival/pod,
 /area/ruin/powered)
@@ -110,9 +107,7 @@
 /turf/open/floor/pod/dark,
 /area/ruin/powered)
 "z" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
+/obj/machinery/light/small/directional/east,
 /obj/structure/tubes,
 /turf/open/floor/plating,
 /area/ruin/powered)
@@ -230,11 +225,11 @@ P
 P
 P
 P
-a
-a
-a
-a
-a
+b
+b
+b
+b
+b
 s
 s
 s
@@ -246,14 +241,14 @@ P
 P
 P
 P
-a
-a
-a
-a
-a
-a
-a
-a
+b
+b
+b
+b
+b
+b
+b
+b
 s
 s
 s
@@ -263,9 +258,9 @@ P
 (5,1,1) = {"
 P
 P
-a
-a
-a
+b
+b
+b
 b
 c
 b
@@ -280,9 +275,9 @@ s
 "}
 (6,1,1) = {"
 P
-a
-a
-a
+b
+b
+b
 b
 b
 L
@@ -297,10 +292,10 @@ s
 s
 "}
 (7,1,1) = {"
-a
-a
-a
-a
+b
+b
+b
+b
 b
 m
 o
@@ -315,7 +310,7 @@ s
 s
 "}
 (8,1,1) = {"
-a
+b
 b
 b
 b
@@ -333,7 +328,7 @@ s
 s
 "}
 (9,1,1) = {"
-a
+b
 b
 f
 i
@@ -351,7 +346,7 @@ s
 s
 "}
 (10,1,1) = {"
-a
+b
 b
 S
 j
@@ -369,7 +364,7 @@ s
 s
 "}
 (11,1,1) = {"
-a
+b
 c
 e
 h
@@ -387,7 +382,7 @@ s
 s
 "}
 (12,1,1) = {"
-a
+b
 b
 b
 k
@@ -396,8 +391,8 @@ b
 b
 b
 b
-a
-a
+b
+b
 P
 P
 E
@@ -405,16 +400,16 @@ H
 E
 "}
 (13,1,1) = {"
-a
-a
 b
 b
 b
 b
-a
-a
-a
-a
+b
+b
+b
+b
+b
+b
 P
 P
 P
@@ -423,15 +418,15 @@ I
 F
 "}
 (14,1,1) = {"
-a
-a
-a
-a
-a
-a
-a
-a
-a
+b
+b
+b
+b
+b
+b
+b
+b
+b
 P
 P
 P
@@ -443,8 +438,8 @@ F
 (15,1,1) = {"
 P
 P
-a
-a
+b
+b
 P
 P
 P

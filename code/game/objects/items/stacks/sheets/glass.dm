@@ -11,7 +11,8 @@
 GLOBAL_LIST_INIT(glass_recipes, list ( \
 	new/datum/stack_recipe("directional window", /obj/structure/window/unanchored, time = 0, on_floor = TRUE, window_checks = TRUE), \
 	new/datum/stack_recipe("fulltile window", /obj/structure/window/fulltile/unanchored, 2, time = 0, on_floor = TRUE, window_checks = TRUE), \
-	new/datum/stack_recipe("glass floor tile", /obj/item/stack/tile/glass, 1, 4, 20) \
+	new/datum/stack_recipe("glass floor tile", /obj/item/stack/tile/glass, 1, 4, 20), \
+	new/datum/stack_recipe("glass shard", /obj/item/shard, 1) \
 ))
 
 /obj/item/stack/sheet/glass
@@ -28,10 +29,6 @@ GLOBAL_LIST_INIT(glass_recipes, list ( \
 	material_type = /datum/material/glass
 	point_value = 1
 	tableVariant = /obj/structure/table/glass
-
-/obj/item/stack/sheet/glass/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins to slice [user.p_their()] neck with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return BRUTELOSS
 
 /obj/item/stack/sheet/glass/cyborg
 	custom_materials = null
@@ -86,7 +83,8 @@ GLOBAL_LIST_INIT(glass_recipes, list ( \
 
 GLOBAL_LIST_INIT(pglass_recipes, list ( \
 	new/datum/stack_recipe("directional window", /obj/structure/window/plasma/unanchored, time = 0, on_floor = TRUE, window_checks = TRUE), \
-	new/datum/stack_recipe("fulltile window", /obj/structure/window/plasma/fulltile/unanchored, 2, time = 0, on_floor = TRUE, window_checks = TRUE) \
+	new/datum/stack_recipe("fulltile window", /obj/structure/window/plasma/fulltile/unanchored, 2, time = 0, on_floor = TRUE, window_checks = TRUE), \
+	new/datum/stack_recipe("plasma glass shard", /obj/item/shard/plasma, 1) \
 ))
 
 /obj/item/stack/sheet/plasmaglass
@@ -101,6 +99,12 @@ GLOBAL_LIST_INIT(pglass_recipes, list ( \
 	merge_type = /obj/item/stack/sheet/plasmaglass
 	grind_results = list(/datum/reagent/silicon = 20, /datum/reagent/toxin/plasma = 10)
 	material_flags = MATERIAL_NO_EFFECTS
+
+/obj/item/stack/sheet/plasmaglass/five
+	amount = 5
+
+/obj/item/stack/sheet/plasmaglass/twenty
+	amount = 20
 
 /obj/item/stack/sheet/plasmaglass/fifty
 	amount = 50
@@ -139,7 +143,8 @@ GLOBAL_LIST_INIT(reinforced_glass_recipes, list ( \
 	null, \
 	new/datum/stack_recipe("directional reinforced window", /obj/structure/window/reinforced/unanchored, time = 0, on_floor = TRUE, window_checks = TRUE), \
 	new/datum/stack_recipe("fulltile reinforced window", /obj/structure/window/reinforced/fulltile/unanchored, 2, time = 0, on_floor = TRUE, window_checks = TRUE), \
-	new/datum/stack_recipe(" reinforced glass tile", /obj/item/stack/tile/glass/reinforced, 1, 4, 20) \
+	new/datum/stack_recipe(" reinforced glass tile", /obj/item/stack/tile/glass/reinforced, 1, 4, 20), \
+	new/datum/stack_recipe("glass shard", /obj/item/shard, 1) \
 ))
 
 
@@ -185,7 +190,8 @@ GLOBAL_LIST_INIT(reinforced_glass_recipes, list ( \
 
 GLOBAL_LIST_INIT(prglass_recipes, list ( \
 	new/datum/stack_recipe("directional reinforced window", /obj/structure/window/plasma/reinforced/unanchored, time = 0, on_floor = TRUE, window_checks = TRUE), \
-	new/datum/stack_recipe("fulltile reinforced window", /obj/structure/window/plasma/reinforced/fulltile/unanchored, 2, time = 0, on_floor = TRUE, window_checks = TRUE) \
+	new/datum/stack_recipe("fulltile reinforced window", /obj/structure/window/plasma/reinforced/fulltile/unanchored, 2, time = 0, on_floor = TRUE, window_checks = TRUE), \
+	new/datum/stack_recipe("plasma glass shard", /obj/item/shard/plasma, 1) \
 ))
 
 /obj/item/stack/sheet/plasmarglass
@@ -201,6 +207,15 @@ GLOBAL_LIST_INIT(prglass_recipes, list ( \
 	merge_type = /obj/item/stack/sheet/plasmarglass
 	grind_results = list(/datum/reagent/silicon = 20, /datum/reagent/toxin/plasma = 10, /datum/reagent/iron = 10)
 	point_value = 23
+
+/obj/item/stack/sheet/plasmarglass/five
+	amount = 5
+
+/obj/item/stack/sheet/plasmarglass/twenty
+	amount = 20
+
+/obj/item/stack/sheet/plasmarglass/fifty
+	amount = 50
 
 /obj/item/stack/sheet/plasmarglass/get_main_recipes()
 	. = ..()
@@ -266,12 +281,6 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 	var/icon_prefix
 	var/obj/item/stack/sheet/weld_material = /obj/item/stack/sheet/glass
 	embedding = list("embed_chance" = 65)
-
-
-/obj/item/shard/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is slitting [user.p_their()] [pick("wrists", "throat")] with the shard of glass! It looks like [user.p_theyre()] trying to commit suicide.</span>")
-	return (BRUTELOSS)
-
 
 /obj/item/shard/Initialize()
 	. = ..()

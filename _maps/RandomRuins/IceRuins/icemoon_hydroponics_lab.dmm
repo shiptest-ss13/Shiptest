@@ -32,9 +32,7 @@
 	pixel_y = 0
 	},
 /obj/structure/table,
-/obj/machinery/light/small{
-	dir = 4
-	},
+/obj/machinery/light/small/directional/east,
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
@@ -55,7 +53,7 @@
 /turf/open/floor/vault,
 /area/ruin/powered/hydroponicslab)
 "bg" = (
-/obj/machinery/light/dim,
+/obj/machinery/light/dim/directional/south,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table,
 /obj/item/reagent_containers/glass/bottle/nutrient/ez{
@@ -174,7 +172,9 @@
 /obj/effect/turf_decal/spline/fancy/opaque/grey{
 	dir = 1
 	},
-/obj/machinery/door/airlock/research,
+/obj/machinery/door/airlock/research{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "ed" = (
@@ -274,7 +274,7 @@
 /obj/effect/turf_decal/techfloor/corner{
 	dir = 1
 	},
-/obj/effect/turf_decal/spline/fancy/corner/opaque/lime{
+/obj/effect/turf_decal/spline/fancy/opaque/lime/corner{
 	dir = 4;
 	color = "#B7D993"
 	},
@@ -284,7 +284,7 @@
 /turf/open/floor/plating/snowed/temperatre{
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/cave/explored)
 "gC" = (
 /obj/structure/table,
 /obj/item/seeds/berry{
@@ -310,11 +310,11 @@
 /obj/effect/turf_decal/techfloor/corner{
 	dir = 1
 	},
-/obj/effect/turf_decal/spline/fancy/corner/opaque/orange{
+/obj/effect/turf_decal/spline/fancy/opaque/orange/corner{
 	dir = 8;
 	color = "#C3630C"
 	},
-/obj/effect/turf_decal/spline/fancy/corner/opaque/orange{
+/obj/effect/turf_decal/spline/fancy/opaque/orange/corner{
 	dir = 4;
 	color = "#C3630C"
 	},
@@ -326,9 +326,7 @@
 	pixel_x = 1;
 	pixel_y = -1
 	},
-/obj/machinery/light/dim{
-	dir = 1
-	},
+/obj/machinery/light/dim/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/techfloor{
@@ -370,7 +368,7 @@
 /obj/effect/turf_decal/borderfloorblack/corner{
 	dir = 4
 	},
-/obj/effect/turf_decal/spline/fancy/corner/transparent/bar{
+/obj/effect/turf_decal/spline/fancy/transparent/bar/corner{
 	dir = 1;
 	color = "#791500"
 	},
@@ -398,7 +396,7 @@
 	},
 /obj/effect/turf_decal/corner_techfloor_grid,
 /obj/effect/turf_decal/techfloor/corner,
-/obj/effect/turf_decal/spline/fancy/corner/opaque/orange{
+/obj/effect/turf_decal/spline/fancy/opaque/orange/corner{
 	color = "#C3630C"
 	},
 /turf/open/floor/plasteel/tech,
@@ -441,7 +439,7 @@
 /obj/effect/turf_decal/borderfloorblack/corner{
 	dir = 8
 	},
-/obj/effect/turf_decal/spline/fancy/corner/transparent/bar{
+/obj/effect/turf_decal/spline/fancy/transparent/bar/corner{
 	dir = 8;
 	color = "#791500"
 	},
@@ -566,13 +564,11 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "jY" = (
-/obj/machinery/light/small,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/wood/walnut,
 /area/ruin/powered/hydroponicslab)
 "kr" = (
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
@@ -611,7 +607,7 @@
 /obj/effect/turf_decal/techfloor/corner{
 	dir = 4
 	},
-/obj/effect/turf_decal/spline/fancy/corner/opaque/purple{
+/obj/effect/turf_decal/spline/fancy/opaque/purple/corner{
 	dir = 1;
 	color = "#AE8CA8"
 	},
@@ -634,9 +630,7 @@
 /area/ruin/powered/hydroponicslab)
 "lF" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/machinery/light/small/directional/north,
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 1
 	},
@@ -652,7 +646,7 @@
 /obj/effect/turf_decal/techfloor/corner{
 	dir = 8
 	},
-/obj/effect/turf_decal/spline/fancy/corner/opaque/lime{
+/obj/effect/turf_decal/spline/fancy/opaque/lime/corner{
 	dir = 8;
 	color = "#B7D993"
 	},
@@ -731,10 +725,10 @@
 /obj/effect/turf_decal/techfloor/corner{
 	dir = 8
 	},
-/obj/effect/turf_decal/spline/fancy/corner/opaque/purple{
+/obj/effect/turf_decal/spline/fancy/opaque/purple/corner{
 	color = "#AE8CA8"
 	},
-/obj/effect/turf_decal/spline/fancy/corner/opaque/purple{
+/obj/effect/turf_decal/spline/fancy/opaque/purple/corner{
 	dir = 8;
 	color = "#AE8CA8"
 	},
@@ -758,7 +752,7 @@
 /obj/effect/turf_decal/techfloor/corner{
 	dir = 4
 	},
-/obj/effect/turf_decal/spline/fancy/corner/opaque/green{
+/obj/effect/turf_decal/spline/fancy/opaque/green/corner{
 	dir = 1;
 	color = "#99BB76"
 	},
@@ -837,16 +831,14 @@
 /obj/effect/turf_decal/techfloor/corner{
 	dir = 1
 	},
-/obj/effect/turf_decal/spline/fancy/corner/opaque/orange{
+/obj/effect/turf_decal/spline/fancy/opaque/orange/corner{
 	dir = 4;
 	color = "#C3630C"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "nL" = (
-/obj/machinery/light/small{
-	dir = 8
-	},
+/obj/machinery/light/small/directional/west,
 /obj/structure/table,
 /obj/item/wrench{
 	pixel_x = -6;
@@ -864,9 +856,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "nP" = (
-/obj/machinery/light/small{
-	dir = 8
-	},
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/vault,
 /area/ruin/powered/hydroponicslab)
 "nS" = (
@@ -895,7 +885,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/corner_techfloor_grid,
 /obj/effect/turf_decal/techfloor/corner,
-/obj/effect/turf_decal/spline/fancy/corner/opaque/lime{
+/obj/effect/turf_decal/spline/fancy/opaque/lime/corner{
 	color = "#B7D993"
 	},
 /turf/open/floor/plasteel/tech,
@@ -908,7 +898,7 @@
 /obj/effect/turf_decal/techfloor/corner{
 	dir = 4
 	},
-/obj/effect/turf_decal/spline/fancy/corner/opaque/green{
+/obj/effect/turf_decal/spline/fancy/opaque/green/corner{
 	dir = 1;
 	color = "#99BB76"
 	},
@@ -976,15 +966,11 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "pL" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel/freezer,
 /area/ruin/powered/hydroponicslab)
 "pR" = (
-/obj/machinery/light/dim{
-	dir = 1
-	},
+/obj/machinery/light/dim/directional/north,
 /obj/structure/table,
 /obj/item/multitool{
 	pixel_x = 4;
@@ -1056,7 +1042,9 @@
 /turf/open/floor/vault,
 /area/ruin/powered/hydroponicslab)
 "si" = (
-/obj/machinery/door/airlock/maintenance,
+/obj/machinery/door/airlock/maintenance{
+	dir = 8
+	},
 /turf/open/floor/wood/walnut,
 /area/ruin/powered/hydroponicslab)
 "ss" = (
@@ -1104,7 +1092,7 @@
 /obj/effect/decal/cleanable/blood/drip{
 	pixel_y = -1
 	},
-/obj/machinery/light/dim,
+/obj/machinery/light/dim/directional/south,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/ammo_casing/caseless{
 	pixel_x = 6;
@@ -1157,9 +1145,7 @@
 /obj/structure/sign/warning/securearea{
 	pixel_x = -32
 	},
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/machinery/light/small/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/vault,
 /area/ruin/powered/hydroponicslab)
@@ -1172,10 +1158,10 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/techfloor/corner,
-/obj/effect/turf_decal/spline/fancy/corner/opaque/green{
+/obj/effect/turf_decal/spline/fancy/opaque/green/corner{
 	color = "#99BB76"
 	},
-/obj/effect/turf_decal/spline/fancy/corner/opaque/green{
+/obj/effect/turf_decal/spline/fancy/opaque/green/corner{
 	dir = 8;
 	color = "#99BB76"
 	},
@@ -1184,9 +1170,7 @@
 "uX" = (
 /obj/structure/table,
 /obj/item/seeds/plump/walkingmushroom,
-/obj/machinery/light/dim{
-	dir = 1
-	},
+/obj/machinery/light/dim/directional/north,
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
@@ -1205,7 +1189,9 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/grey,
-/obj/machinery/door/airlock,
+/obj/machinery/door/airlock{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "vc" = (
@@ -1264,7 +1250,9 @@
 /turf/open/floor/carpet,
 /area/ruin/powered/hydroponicslab)
 "xE" = (
-/obj/machinery/door/airlock,
+/obj/machinery/door/airlock{
+	dir = 4
+	},
 /turf/open/floor/wood/walnut,
 /area/ruin/powered/hydroponicslab)
 "xJ" = (
@@ -1289,9 +1277,7 @@
 /turf/open/floor/carpet,
 /area/ruin/powered/hydroponicslab)
 "ys" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
+/obj/machinery/light/small/directional/east,
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 4
 	},
@@ -1404,9 +1390,7 @@
 /area/ruin/powered/hydroponicslab)
 "Bc" = (
 /obj/effect/decal/cleanable/blood/splatter,
-/obj/machinery/light/small/broken{
-	dir = 1
-	},
+/obj/machinery/light/small/broken/directional/north,
 /obj/item/ammo_casing/caseless{
 	pixel_y = -1;
 	dir = 5;
@@ -1457,7 +1441,7 @@
 "CD" = (
 /obj/item/paper/crumpled/bloody/fluff/ruins/hydroponicslab,
 /turf/closed/mineral/snowmountain/icemoon,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/cave/explored)
 "CG" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/siding/wood{
@@ -1506,11 +1490,11 @@
 /area/ruin/powered/hydroponicslab)
 "DV" = (
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/cave/explored)
 "Eb" = (
 /obj/effect/turf_decal/corner_techfloor_grid,
 /obj/effect/turf_decal/techfloor/corner,
-/obj/effect/turf_decal/spline/fancy/corner/opaque/lime{
+/obj/effect/turf_decal/spline/fancy/opaque/lime/corner{
 	color = "#B7D993"
 	},
 /turf/open/floor/plasteel/tech,
@@ -1571,11 +1555,11 @@
 /obj/effect/turf_decal/techfloor/corner{
 	dir = 4
 	},
-/obj/effect/turf_decal/spline/fancy/corner/opaque/red{
+/obj/effect/turf_decal/spline/fancy/opaque/red/corner{
 	dir = 4;
 	color = "#B4696A"
 	},
-/obj/effect/turf_decal/spline/fancy/corner/opaque/red{
+/obj/effect/turf_decal/spline/fancy/opaque/red/corner{
 	dir = 1;
 	color = "#B4696A"
 	},
@@ -1665,7 +1649,9 @@
 /area/ruin/powered/hydroponicslab)
 "Ik" = (
 /obj/effect/mapping_helpers/airlock/locked,
-/obj/machinery/door/airlock/security,
+/obj/machinery/door/airlock/security{
+	dir = 4
+	},
 /turf/open/floor/wood/walnut,
 /area/ruin/powered/hydroponicslab)
 "IQ" = (
@@ -1785,11 +1771,11 @@
 /obj/effect/turf_decal/techfloor/corner{
 	dir = 4
 	},
-/obj/effect/turf_decal/spline/fancy/corner/opaque/lime{
+/obj/effect/turf_decal/spline/fancy/opaque/lime/corner{
 	dir = 4;
 	color = "#B7D993"
 	},
-/obj/effect/turf_decal/spline/fancy/corner/opaque/lime{
+/obj/effect/turf_decal/spline/fancy/opaque/lime/corner{
 	dir = 1;
 	color = "#B7D993"
 	},
@@ -1842,11 +1828,11 @@
 /obj/effect/turf_decal/techfloor/corner{
 	dir = 1
 	},
-/obj/effect/turf_decal/spline/fancy/corner/opaque/green{
+/obj/effect/turf_decal/spline/fancy/opaque/green/corner{
 	dir = 8;
 	color = "#99BB76"
 	},
-/obj/effect/turf_decal/spline/fancy/corner/opaque/green{
+/obj/effect/turf_decal/spline/fancy/opaque/green/corner{
 	dir = 4;
 	color = "#99BB76"
 	},
@@ -1872,9 +1858,7 @@
 /area/ruin/powered/hydroponicslab)
 "Nl" = (
 /obj/machinery/seed_extractor,
-/obj/machinery/light/dim{
-	dir = 1
-	},
+/obj/machinery/light/dim/directional/north,
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
@@ -1931,9 +1915,7 @@
 /area/ruin/powered/hydroponicslab)
 "Pa" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/wood/walnut,
 /area/ruin/powered/hydroponicslab)
 "Ph" = (
@@ -1963,9 +1945,7 @@
 /turf/open/floor/wood/walnut,
 /area/ruin/powered/hydroponicslab)
 "Pz" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/vault,
 /area/ruin/powered/hydroponicslab)
 "PQ" = (
@@ -2003,9 +1983,7 @@
 /turf/open/floor/wood/walnut,
 /area/ruin/powered/hydroponicslab)
 "Qu" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
+/obj/machinery/light/small/directional/east,
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
@@ -2020,9 +1998,7 @@
 /area/ruin/powered/hydroponicslab)
 "QT" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/machinery/light/small/directional/north,
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
 	},
@@ -2189,7 +2165,7 @@
 "VN" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/ausbushes/sparsegrass,
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/floor/grass,
 /area/ruin/powered/hydroponicslab)
 "We" = (
@@ -2200,7 +2176,7 @@
 /turf/open/floor/plating/snowed/temperatre{
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/cave/explored)
 "WK" = (
 /obj/item/stack/cable_coil/yellow{
 	pixel_x = 4;
@@ -2241,11 +2217,11 @@
 /obj/effect/turf_decal/techfloor/corner{
 	dir = 4
 	},
-/obj/effect/turf_decal/spline/fancy/corner/opaque/orange{
+/obj/effect/turf_decal/spline/fancy/opaque/orange/corner{
 	dir = 1;
 	color = "#C3630C"
 	},
-/obj/effect/turf_decal/spline/fancy/corner/opaque/orange{
+/obj/effect/turf_decal/spline/fancy/opaque/orange/corner{
 	color = "#C3630C"
 	},
 /turf/open/floor/plasteel/tech,
@@ -2260,7 +2236,7 @@
 /area/ruin/powered/hydroponicslab)
 "Zd" = (
 /turf/closed/mineral/snowmountain/icemoon,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/cave/explored)
 "Zm" = (
 /obj/effect/turf_decal/corner_techfloor_grid{
 	dir = 4
@@ -2270,11 +2246,11 @@
 /obj/effect/turf_decal/techfloor/corner{
 	dir = 4
 	},
-/obj/effect/turf_decal/spline/fancy/corner/opaque/purple{
+/obj/effect/turf_decal/spline/fancy/opaque/purple/corner{
 	dir = 1;
 	color = "#AE8CA8"
 	},
-/obj/effect/turf_decal/spline/fancy/corner/opaque/purple{
+/obj/effect/turf_decal/spline/fancy/opaque/purple/corner{
 	color = "#AE8CA8"
 	},
 /turf/open/floor/plasteel/tech,

@@ -20,11 +20,14 @@
 	name = "goliath broodmother"
 	desc = "An example of sexual dimorphism, this female goliath looks much different than the males of her species.  She is, however, just as dangerous, if not more."
 	gender = FEMALE
+	icon = 'icons/mob/lavaland/lavaland_elites_64.dmi'
 	icon_state = "broodmother"
 	icon_living = "broodmother"
 	icon_aggro = "broodmother"
 	icon_dead = "egg_sac"
 	icon_gib = "syndicate_gib"
+	pixel_x = -16
+	base_pixel_x = -16
 	health_doll_icon = "broodmother"
 	maxHealth = 800
 	health = 800
@@ -49,6 +52,10 @@
 
 	var/rand_tent = 0
 	var/list/mob/living/simple_animal/hostile/asteroid/elite/broodmother_child/children_list = list()
+
+/mob/living/simple_animal/hostile/asteroid/elite/broodmother/Destroy()
+	children_list.Cut()
+	return ..()
 
 /datum/action/innate/elite_attack/tentacle_patch
 	name = "Tentacle Patch"
@@ -125,11 +132,10 @@
 	for(var/i in 1 to 2)
 		if(children_list.len >= 8)
 			return
-		var/mob/living/simple_animal/hostile/asteroid/elite/broodmother_child/newchild = new /mob/living/simple_animal/hostile/asteroid/elite/broodmother_child(loc)
+		var/mob/living/simple_animal/hostile/asteroid/elite/broodmother_child/newchild = new /mob/living/simple_animal/hostile/asteroid/elite/broodmother_child(loc, src)
 		newchild.GiveTarget(target)
 		newchild.faction = faction.Copy()
 		visible_message("<span class='boldwarning'>[newchild] appears below [src]!</span>")
-		newchild.mother = src
 		children_list += newchild
 
 /mob/living/simple_animal/hostile/asteroid/elite/broodmother/proc/rage()
@@ -183,7 +189,17 @@
 	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/goliath_hide = 1)
 	deathmessage = "falls to the ground."
 	status_flags = CANPUSH
-	var/mob/living/simple_animal/hostile/asteroid/elite/broodmother/mother = null
+	var/datum/weakref/mother_ref
+
+/mob/living/simple_animal/hostile/asteroid/elite/broodmother_child/Initialize(mapload, mob/living/simple_animal/hostile/asteroid/elite/broodmother/mother)
+	. = ..()
+	mother_ref = WEAKREF(mother)
+
+/mob/living/simple_animal/hostile/asteroid/elite/broodmother_child/Destroy()
+	var/mob/living/simple_animal/hostile/asteroid/elite/broodmother/mother = mother_ref?.resolve()
+	if(mother)
+		mother.children_list -= src
+	return ..()
 
 /mob/living/simple_animal/hostile/asteroid/elite/broodmother_child/OpenFire(target)
 	ranged_cooldown = world.time + 40
@@ -196,8 +212,6 @@
 
 /mob/living/simple_animal/hostile/asteroid/elite/broodmother_child/death()
 	. = ..()
-	if(mother != null)
-		mother.children_list -= src
 	visible_message("<span class='warning'>[src] explodes!</span>")
 	explosion(get_turf(loc),0,0,0,flame_range = 3, adminlog = FALSE)
 	gib()

@@ -1,3 +1,5 @@
+GLOBAL_LIST_EMPTY(created_baseturf_lists)
+
 /turf
 	icon = 'icons/turf/floors.dmi'
 	flags_1 = CAN_BE_DIRTY_1
@@ -67,6 +69,10 @@
 	// ID of the virtual level we're in
 	var/virtual_z = 0
 
+	/// If TRUE, radiation waves will qdelete if they step forwards into this turf, and stop propagating sideways if they encounter it.
+	/// Used to stop radiation from travelling across virtual z-levels such as transit zones and planetary encounters.
+	var/rad_fullblocker = FALSE
+
 	///the holodeck can load onto this turf if TRUE
 	var/holodeck_compatible = FALSE
 
@@ -95,17 +101,22 @@
 	levelupdate()
 
 	if (length(smoothing_groups))
-		sortTim(smoothing_groups) //In case it's not properly ordered, let's avoid duplicate entries with the same values.
+		// There used to be a sort here to prevent duplicate bitflag signatures
+		// in the bitflag list cache; the cost of always timsorting every group list every time added up.
+		// The sort now only happens if the initial key isn't found. This leads to some duplicate keys.
+		// /tg/ has a better approach; a unit test to see if any atoms have mis-sorted smoothing_groups
+		// or canSmoothWith. This is a better idea than what I do, and should be done instead.
 		SET_BITFLAG_LIST(smoothing_groups)
 	if (length(canSmoothWith))
-		sortTim(canSmoothWith)
-		if(canSmoothWith[length(canSmoothWith)] > MAX_S_TURF) //If the last element is higher than the maximum turf-only value, then it must scan turf contents for smoothing targets.
+		// If the last element is higher than the maximum turf-only value, then it must scan turf contents for smoothing targets.
+		if(canSmoothWith[length(canSmoothWith)] > MAX_S_TURF)
 			smoothing_flags |= SMOOTH_OBJ
 		SET_BITFLAG_LIST(canSmoothWith)
+	if (length(no_connector_typecache))
+		no_connector_typecache = SSicon_smooth.get_no_connector_typecache(src.type, no_connector_typecache, connector_strict_typing)
+
 	if (smoothing_flags & (SMOOTH_CORNERS|SMOOTH_BITMASK))
 		QUEUE_SMOOTH(src)
-
-	visibilityChanged()
 
 	for(var/atom/movable/content as anything in src)
 		Entered(content, null)
@@ -177,7 +188,6 @@
 		for(var/A in B.contents)
 			qdel(A)
 		return
-	visibilityChanged()
 	QDEL_LIST(blueprint_data)
 	flags_1 &= ~INITIALIZED_1
 	requires_activation = FALSE
@@ -221,15 +231,14 @@
 	if(density)
 		return TRUE
 
-	for(var/atom/movable/content as anything in contents)
+	for(var/atom/movable/movable_content as anything in contents)
 		// We don't want to block ourselves or consider any ignored atoms.
-		if((content == source_atom) || (content in ignore_atoms))
+		if((movable_content == source_atom) || (movable_content in ignore_atoms))
 			continue
-
 		// If the thing is dense AND we're including mobs or the thing isn't a mob AND if there's a source atom and
 		// it cannot pass through the thing on the turf,  we consider the turf blocked.
-		if(content.density && (!exclude_mobs || !ismob(content)))
-			if(source_atom && content.CanPass(source_atom, src))
+		if(movable_content.density && (!exclude_mobs || !ismob(movable_content)))
+			if(source_atom && movable_content.CanPass(source_atom, get_dir(src, source_atom)))
 				continue
 			return TRUE
 	return FALSE
@@ -339,11 +348,11 @@
 	// By default byond will call Bump() on the first dense object in contents
 	// Here's hoping it doesn't stay like this for years before we finish conversion to step_
 	var/atom/firstbump
-	var/canPassSelf = CanPass(mover, src)
+	var/canPassSelf = CanPass(mover, get_dir(src, mover))
 	if(canPassSelf || (mover.movement_type & PHASING) || (mover.pass_flags & pass_flags_self))
 		for(var/atom/movable/thing as anything in contents)
 			if(QDELETED(mover))
-				return FALSE		//We were deleted, do not attempt to proceed with movement.
+				return FALSE //We were deleted, do not attempt to proceed with movement.
 			if(thing == mover || thing == mover.loc) // Multi tile objects and moving out of other objects
 				continue
 			if(!thing.Cross(mover))
@@ -376,7 +385,6 @@
 
 // A proc in case it needs to be recreated or badmins want to change the baseturfs
 /turf/proc/assemble_baseturfs(turf/fake_baseturf_type)
-	var/static/list/created_baseturf_lists = list()
 	var/turf/current_target
 	if(fake_baseturf_type)
 		if(length(fake_baseturf_type)) // We were given a list, just apply it and move on
@@ -393,8 +401,8 @@
 			current_target = baseturfs
 
 	// If we've made the output before we don't need to regenerate it
-	if(created_baseturf_lists[current_target])
-		var/list/premade_baseturfs = created_baseturf_lists[current_target]
+	if(GLOB.created_baseturf_lists[current_target])
+		var/list/premade_baseturfs = GLOB.created_baseturf_lists[current_target]
 		if(length(premade_baseturfs))
 			baseturfs = baseturfs_string_list(premade_baseturfs.Copy(), src)
 		else
@@ -405,7 +413,7 @@
 	//Most things only have 1 baseturf so this loop won't run in most cases
 	if(current_target == next_target)
 		baseturfs = current_target
-		created_baseturf_lists[current_target] = current_target
+		GLOB.created_baseturf_lists[current_target] = current_target
 		return current_target
 	var/list/new_baseturfs = list(current_target)
 	for(var/i=0;current_target != next_target;i++)
@@ -420,7 +428,7 @@
 		next_target = initial(current_target.baseturfs)
 
 	baseturfs = baseturfs_string_list(new_baseturfs, src)
-	created_baseturf_lists[new_baseturfs[new_baseturfs.len]] = new_baseturfs.Copy()
+	GLOB.created_baseturf_lists[new_baseturfs[new_baseturfs.len]] = new_baseturfs.Copy()
 	return new_baseturfs
 
 /turf/proc/levelupdate()
@@ -647,4 +655,14 @@
 		content.wash(clean_types)
 
 /turf/proc/IgniteTurf(power, fire_color = "red")
+	return
+
+/turf/proc/on_turf_saved()
+	// This is all we can do. I'm sorry mappers, but there's no way to get any more details.
+	var/first = TRUE
+	for(var/datum/element/decal/decal as anything in GetComponents(/datum/element/decal))
+		if(!first)
+			. += ",\n"
+		. += "[/obj/effect/turf_decal]{\n\ticon = '[decal.pic.icon]';\n\ticon_state = \"[decal.pic.icon_state]\";\n\tdir = [decal.pic.dir];\n\tcolor = \"[decal.pic.color]\"\n\t}"
+		first = FALSE
 	return

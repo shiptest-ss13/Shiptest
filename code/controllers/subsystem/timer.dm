@@ -52,6 +52,12 @@ SUBSYSTEM_DEF(timer)
 	/// How many times bucket was reset
 	var/bucket_reset_count = 0
 
+/datum/controller/subsystem/timer/get_metrics()
+	. = ..()
+	var/list/cust = list()
+	cust["bucket_count"] = bucket_count
+	.["custom"] = cust
+
 /datum/controller/subsystem/timer/PreInit()
 	bucket_list.len = BUCKET_LEN
 	head_offset = world.time
@@ -127,7 +133,9 @@ SUBSYSTEM_DEF(timer)
 		ctime_timer.spent = REALTIMEOFDAY
 		callBack.InvokeAsync()
 
-		if(ctime_timer.flags & TIMER_LOOP)
+		if(ctime_timer.flags & TIMER_LOOP) // Re-insert valid looping client timers into the client timer list.
+			if (QDELETED(ctime_timer)) // Don't re-insert timers deleted inside their callbacks.
+				continue
 			ctime_timer.spent = 0
 			ctime_timer.timeToRun = REALTIMEOFDAY + ctime_timer.wait
 			BINARY_INSERT(ctime_timer, clienttime_timers, /datum/timedevent, ctime_timer, timeToRun, COMPARE_KEY)
@@ -173,7 +181,9 @@ SUBSYSTEM_DEF(timer)
 				callBack.InvokeAsync()
 				last_invoke_tick = world.time
 
-			if (timer.flags & TIMER_LOOP) // Prepare looping timers to re-enter the queue
+			if (timer.flags & TIMER_LOOP) // Prepare valid looping timers to re-enter the queue
+				if(QDELETED(timer)) // If a loop is deleted in its callback, we need to avoid re-inserting it.
+					continue
 				timer.spent = 0
 				timer.timeToRun = world.time + timer.wait
 				timer.bucketJoin()
@@ -332,7 +342,7 @@ SUBSYSTEM_DEF(timer)
 
 
 /datum/controller/subsystem/timer/Recover()
-	// Find the current timer sub-subsystem in global and recover its buckets etc
+	//Find the current timer sub-subsystem in global and recover its buckets etc
 	var/datum/controller/subsystem/timer/timerSS = null
 	for(var/global_var in global.vars)
 		if (istype(global.vars[global_var],src.type))
@@ -578,7 +588,7 @@ SUBSYSTEM_DEF(timer)
 
 	if (callback.object != GLOBAL_PROC && QDELETED(callback.object) && !QDESTROYING(callback.object))
 		stack_trace("addtimer called with a callback assigned to a qdeleted object. In the future such timers will not \
-			be supported and may refuse to run or run with a 0 wait - proc: [callback.delegate], args: [json_encode(callback.arguments)] , usr: [callback.user.resolve()]")
+			be supported and may refuse to run or run with a 0 wait - proc: [callback.delegate], args: [json_encode(callback.arguments)] , usr: [callback.user?.resolve()]")
 
 	wait = max(CEILING(wait, world.tick_lag), world.tick_lag)
 

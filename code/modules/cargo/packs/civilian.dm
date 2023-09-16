@@ -41,31 +41,13 @@
 	crate_name = "janitorial cart crate"
 	crate_type = /obj/structure/closet/crate/large
 
-/*
-		Religious
-*/
-
-/datum/supply_pack/civilian/funeral
-	name = "Funeral Supply crate"
-	desc = "At the end of the day, someone's gonna want someone dead. Give them a proper send-off with these funeral supplies! Contains a coffin with burial garmets and flowers."
-	cost = 500
-	contains = list(/obj/item/clothing/under/misc/burial,
-					/obj/item/reagent_containers/food/snacks/grown/harebell,
-					/obj/item/reagent_containers/food/snacks/grown/poppy/geranium)
-	crate_name = "coffin"
-	crate_type = /obj/structure/closet/crate/coffin
-
-/datum/supply_pack/civilian/religious_supplies
-	name = "Religious Supplies Crate"
-	desc = "Keep your local chaplain happy and well-supplied, lest they call down judgement upon your cargo bay. Contains two bottles of holywater, bibles, and burial garmets."
-	cost = 3500	// it costs so much because the Space Church needs funding to build a cathedral
-	contains = list(/obj/item/reagent_containers/food/drinks/bottle/holywater,
-					/obj/item/reagent_containers/food/drinks/bottle/holywater,
-					/obj/item/storage/book/bible/booze,
-					/obj/item/storage/book/bible/booze,
-					/obj/item/clothing/suit/hooded/chaplain_hoodie,
-					/obj/item/clothing/suit/hooded/chaplain_hoodie)
-	crate_name = "religious supplies crate"
+/datum/supply_pack/civilian/lawnmower
+	name = "Lawnmower"
+	desc = "Removing plant from your backyard now made easy with the brand new Donk! Co. TM Deluxe Lawnmower 3003."
+	cost = 800
+	contains = list(/obj/vehicle/ridden/lawnmower)
+	crate_name = "Donk! Co. TM Deluxe Lawnmower 3003"
+	crate_type = /obj/structure/closet/crate/large
 
 /*
 		Bundles
@@ -250,3 +232,69 @@
 	cost = 35000
 	contains = list(/obj/machinery/jukebox)
 	crate_name = "Jukebox"
+
+/datum/supply_pack/civilian/fishingkit
+	name = "Fishing Starter Kit"
+	desc = "The bare necessities to get out there and catch some fish, all in one convenient box!"
+	cost = 500
+	contains = list(/obj/item/storage/toolbox/fishing,
+					/obj/item/book/fish_catalog,
+					/obj/item/reagent_containers/food/drinks/beer,
+					/obj/item/reagent_containers/food/drinks/beer)
+	crate_name = "fishing starter crate"
+	crate_type = /obj/structure/closet/crate/wooden
+
+/datum/supply_pack/civilian/fishstasis
+	name = "Fish Stasis Kit Supply Crate"
+	desc = "Contains four stasis cases meant to keep fish alive during transportation."
+	cost = 1000
+	contains = list(/obj/item/storage/fish_case,
+					/obj/item/storage/fish_case,
+					/obj/item/storage/fish_case,
+					/obj/item/storage/fish_case)
+	crate_name = "stasis case crate"
+
+/datum/supply_pack/civilian/premiumworms
+	name = "High Quality Worm Pack"
+	desc = "A selection of the system's finest worms, guaranteed to lure in only the largest of fish."
+	cost = 1000
+	contains = list(/obj/item/bait_can/worm/premium,
+					/obj/item/bait_can/worm/premium,
+					/obj/item/bait_can/worm/premium,
+					/obj/item/bait_can/worm/premium)
+	crate_name = "premium worm crate"
+
+/datum/supply_pack/civilian/masterworkpole
+	name = "Custom Made Masterwork Fishing Rod"
+	desc = "Fishing rod forged after grueling hours of labor by a master rodsmith, truly a work of fishing art. Required to catch size 2 fish."
+	cost = 5000
+	contains = list(/obj/item/fishing_rod/master)
+	crate_name = "masterwork fishing rod case"
+	crate_type = /obj/structure/closet/crate/wooden
+
+
+/datum/supply_pack/civilian/fishinghooks
+	name = "Fishing Hook Variety Pack"
+	desc = "A variety of fishing hooks to allow for more specialized fishing."
+	cost = 1000
+	contains = list(/obj/item/storage/box/fishing_hooks)
+	crate_name = "fishing hook crate"
+	crate_type = /obj/structure/closet/crate/wooden
+
+/datum/supply_pack/civilian/fishinglines
+	name = "Fishing Line Pack"
+	desc = "Contains the necessary fishing lines for catching more exotic fish."
+	cost = 1000
+	contains = list(/obj/item/storage/box/fishing_lines,
+					/obj/item/storage/box/fishing_lines) //Comes with two boxes on account of these being more necessary than the hooks
+	crate_name = "fishing line crate"
+	crate_type = /obj/structure/closet/crate/wooden
+
+/datum/supply_pack/civilian/aquarium
+	name = "Aquarium Construction Kit"
+	desc = "Why seek rare fish if not to show them off? This all-in-one aquarium kit's all you'll ever need to keep a stable population of fish onboard your ship! (Building materials not included, Aquatech Ltd. is a limited liability company and not responsible for any fish related mishaps)"
+	cost = 2000
+	contains = list(/obj/item/aquarium_kit,
+					/obj/item/storage/box/aquarium_props,
+					/obj/item/fish_feed)
+	crate_name = "aquarium kit crate"

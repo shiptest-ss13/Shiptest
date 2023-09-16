@@ -77,16 +77,6 @@
 	name = "construction site"
 	icon_state = "green"
 
-/area/ruin/jungle/paradise/mine
-	name = "Mineshaft"
-	icon_state = "yellow"
-
-/area/ruin/jungle/paradise/shuttle
-	name = "crashed escape shuttle"
-	icon_state = "dk_yellow"
-	always_unpowered = TRUE
-	ambientsounds = MAINTENANCE
-
 /area/ruin/jungle/paradise/med
 	name = "surgical medical pod"
 	icon_state = "blue"
@@ -95,12 +85,33 @@
 	name = "Paradise"
 	icon_state = "green"
 
-/area/ruin/jungle/paradise/darkmisc
-	name = "paradisedark"
-	icon_state = "garden"
-	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
-
 /area/ruin/jungle/paradise/cargo
 	name = "cargo dump"
 	icon_state = "dk_yellow"
 
+/area/ruin/jungle/roommates/shack
+	name = "clown and mime hideout"
+	icon_state = "crew_quarters"
+
+// Bombed Syndicate Starport
+/area/ruin/jungle/starport
+	name = "Bombed Air Base"
+	icon_state = "green"
+
+/area/ruin/jungle/starport/tower
+	name = "Air Base Control Tower"
+	icon_state = "bridge"
+
+/area/ruin/jungle/starport/plasma
+	name = "Air Base Fuel Stores"
+	icon_state = "red"
+
+// Syndicate fort
+
+/area/ruin/jungle/syndifort
+	name = "Syndicate Fort"
+	icon_state = "green"
+
+/area/ruin/jungle/syndifort/jerry
+	name = "Syndicate Fort Tower"
+	icon_state = "bridge"

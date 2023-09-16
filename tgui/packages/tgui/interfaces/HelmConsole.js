@@ -6,9 +6,13 @@ import {
   Section,
   ProgressBar,
   AnimatedNumber,
+  Knob,
+  LabeledControls,
+  NumberInput,
 } from '../components';
 import { Window } from '../layouts';
 import { Table } from '../components/Table';
+import { decodeHtmlEntities } from 'common/string';
 
 export const HelmConsole = (_props, context) => {
   const { data } = useBackend(context);
@@ -48,7 +52,7 @@ const SharedContent = (_props, context) => {
       <Section
         title={
           <Button.Input
-            content={shipInfo.name}
+            content={decodeHtmlEntities(shipInfo.name)}
             currentValue={shipInfo.name}
             disabled={isViewer}
             onCommit={(_e, value) =>
@@ -124,7 +128,17 @@ const SharedContent = (_props, context) => {
 // Content included on helms when they're controlling ships
 const ShipContent = (_props, context) => {
   const { act, data } = useBackend(context);
-  const { isViewer, engineInfo, shipInfo, speed, heading, eta, x, y } = data;
+  const {
+    isViewer,
+    engineInfo,
+    estThrust,
+    burnPercentage,
+    speed,
+    heading,
+    eta,
+    x,
+    y,
+  } = data;
   return (
     <>
       <Section title="Velocity">
@@ -141,9 +155,9 @@ const ShipContent = (_props, context) => {
             >
               <AnimatedNumber
                 value={speed}
-                format={(value) => Math.round(value * 10) / 10}
+                format={(value) => value.toFixed(1)}
               />
-              spM
+              Gm/s
             </ProgressBar>
           </LabeledList.Item>
           <LabeledList.Item label="Heading">
@@ -223,15 +237,13 @@ const ShipContent = (_props, context) => {
               </Table.Row>
             ))}
           <Table.Row>
-            <Table.Cell>Est burn:</Table.Cell>
+            <Table.Cell>Max thrust per second:</Table.Cell>
             <Table.Cell>
               <AnimatedNumber
-                value={
-                  600 / (1 / (shipInfo.est_thrust / (shipInfo.mass * 100)))
-                }
-                format={(value) => Math.round(value * 10) / 10}
+                value={estThrust * 500}
+                format={(value) => value.toFixed(2)}
               />
-              spM/burn
+              Gm/s²
             </Table.Cell>
           </Table.Row>
         </Table>
@@ -243,8 +255,17 @@ const ShipContent = (_props, context) => {
 // Arrow directional controls
 const ShipControlContent = (_props, context) => {
   const { act, data } = useBackend(context);
-  const { calibrating, ai_controls, ai_user } = data;
+  const {
+    calibrating,
+    aiControls,
+    aiUser,
+    burnDirection,
+    burnPercentage,
+    speed,
+    estThrust,
+  } = data;
   let flyable = !data.docking && !data.docked;
+
   //  DIRECTIONS const idea from Lyra as part of their Haven-Urist project
   const DIRECTIONS = {
     north: 1,
@@ -255,6 +276,7 @@ const ShipControlContent = (_props, context) => {
     northwest: 1 + 8,
     southeast: 2 + 4,
     southwest: 2 + 8,
+    stop: -1,
   };
   return (
     <Section
@@ -284,133 +306,182 @@ const ShipControlContent = (_props, context) => {
             onClick={() => act('bluespace_jump')}
           />
           <Button
-            tooltip={ai_controls ? 'Disable AI Control' : 'Enable AI Control'}
+            tooltip={aiControls ? 'Disable AI Control' : 'Enable AI Control'}
             tooltipPosition="left"
-            icon="lock-a"
-            color={ai_controls ? 'green' : 'red'}
-            disabled={ai_user}
+            icon={aiControls ? 'toggle-on' : 'toggle-off'}
+            color={aiControls ? 'green' : 'red'}
+            disabled={aiUser}
             onClick={() => act('toggle_ai_control')}
           />
         </>
       }
     >
-      <Table collapsing>
-        <Table.Row height={1}>
-          <Table.Cell width={1}>
-            <Button
-              icon="arrow-left"
-              iconRotation={45}
-              mb={1}
-              disabled={!flyable}
-              onClick={() =>
-                act('change_heading', {
-                  dir: DIRECTIONS.northwest,
-                })
-              }
-            />
-          </Table.Cell>
-          <Table.Cell width={1}>
-            <Button
-              icon="arrow-up"
-              mb={1}
-              disabled={!flyable}
-              onClick={() =>
-                act('change_heading', {
-                  dir: DIRECTIONS.north,
-                })
-              }
-            />
-          </Table.Cell>
-          <Table.Cell width={1}>
-            <Button
-              icon="arrow-right"
-              iconRotation={-45}
-              mb={1}
-              disabled={!flyable}
-              onClick={() =>
-                act('change_heading', {
-                  dir: DIRECTIONS.northeast,
-                })
-              }
-            />
-          </Table.Cell>
-        </Table.Row>
-        <Table.Row height={1}>
-          <Table.Cell width={1}>
-            <Button
-              icon="arrow-left"
-              mb={1}
-              disabled={!flyable}
-              onClick={() =>
-                act('change_heading', {
-                  dir: DIRECTIONS.west,
-                })
-              }
-            />
-          </Table.Cell>
-          <Table.Cell width={1}>
-            <Button
-              tooltip="Stop"
-              icon="circle"
-              mb={1}
-              disabled={!data.speed || !flyable}
-              onClick={() => act('stop')}
-            />
-          </Table.Cell>
-          <Table.Cell width={1}>
-            <Button
-              icon="arrow-right"
-              mb={1}
-              disabled={!flyable}
-              onClick={() =>
-                act('change_heading', {
-                  dir: DIRECTIONS.east,
-                })
-              }
-            />
-          </Table.Cell>
-        </Table.Row>
-        <Table.Row height={1}>
-          <Table.Cell width={1}>
-            <Button
-              icon="arrow-left"
-              iconRotation={-45}
-              mb={1}
-              disabled={!flyable}
-              onClick={() =>
-                act('change_heading', {
-                  dir: DIRECTIONS.southwest,
-                })
-              }
-            />
-          </Table.Cell>
-          <Table.Cell width={1}>
-            <Button
-              icon="arrow-down"
-              mb={1}
-              disabled={!flyable}
-              onClick={() =>
-                act('change_heading', {
-                  dir: DIRECTIONS.south,
-                })
-              }
-            />
-          </Table.Cell>
-          <Table.Cell width={1}>
-            <Button
-              icon="arrow-right"
-              iconRotation={45}
-              mb={1}
-              disabled={!flyable}
-              onClick={() =>
-                act('change_heading', {
-                  dir: DIRECTIONS.southeast,
-                })
-              }
-            />
-          </Table.Cell>
-        </Table.Row>
-      </Table>
+      <LabeledControls>
+        <LabeledControls.Item label="Direction" width={'100%'}>
+          <Table collapsing>
+            <Table.Row height={1}>
+              <Table.Cell width={1}>
+                <Button
+                  icon="arrow-left"
+                  iconRotation={45}
+                  mb={1}
+                  color={burnDirection === DIRECTIONS.northwest && 'good'}
+                  disabled={!flyable}
+                  onClick={() =>
+                    act('change_heading', {
+                      dir: DIRECTIONS.northwest,
+                    })
+                  }
+                />
+              </Table.Cell>
+              <Table.Cell width={1}>
+                <Button
+                  icon="arrow-up"
+                  mb={1}
+                  color={burnDirection === DIRECTIONS.north && 'good'}
+                  disabled={!flyable}
+                  onClick={() =>
+                    act('change_heading', {
+                      dir: DIRECTIONS.north,
+                    })
+                  }
+                />
+              </Table.Cell>
+              <Table.Cell width={1}>
+                <Button
+                  icon="arrow-right"
+                  iconRotation={-45}
+                  mb={1}
+                  color={burnDirection === DIRECTIONS.northeast && 'good'}
+                  disabled={!flyable}
+                  onClick={() =>
+                    act('change_heading', {
+                      dir: DIRECTIONS.northeast,
+                    })
+                  }
+                />
+              </Table.Cell>
+            </Table.Row>
+            <Table.Row height={1}>
+              <Table.Cell width={1}>
+                <Button
+                  icon="arrow-left"
+                  mb={1}
+                  color={burnDirection === DIRECTIONS.west && 'good'}
+                  disabled={!flyable}
+                  onClick={() =>
+                    act('change_heading', {
+                      dir: DIRECTIONS.west,
+                    })
+                  }
+                />
+              </Table.Cell>
+              <Table.Cell width={1}>
+                <Button
+                  tooltip={burnDirection === 0 ? 'Slow down' : 'Stop thrust'}
+                  icon={
+                    burnDirection === 0 || burnDirection === DIRECTIONS.stop
+                      ? 'stop'
+                      : 'pause'
+                  }
+                  mb={1}
+                  color={burnDirection === DIRECTIONS.stop && 'good'}
+                  disabled={!flyable || (burnDirection === 0 && !speed)}
+                  onClick={() => act('stop')}
+                />
+              </Table.Cell>
+              <Table.Cell width={1}>
+                <Button
+                  icon="arrow-right"
+                  mb={1}
+                  color={burnDirection === DIRECTIONS.east && 'good'}
+                  disabled={!flyable}
+                  onClick={() =>
+                    act('change_heading', {
+                      dir: DIRECTIONS.east,
+                    })
+                  }
+                />
+              </Table.Cell>
+            </Table.Row>
+            <Table.Row height={1}>
+              <Table.Cell width={1}>
+                <Button
+                  icon="arrow-left"
+                  iconRotation={-45}
+                  mb={1}
+                  color={burnDirection === DIRECTIONS.southwest && 'good'}
+                  disabled={!flyable}
+                  onClick={() =>
+                    act('change_heading', {
+                      dir: DIRECTIONS.southwest,
+                    })
+                  }
+                />
+              </Table.Cell>
+              <Table.Cell width={1}>
+                <Button
+                  icon="arrow-down"
+                  mb={1}
+                  color={burnDirection === DIRECTIONS.south && 'good'}
+                  disabled={!flyable}
+                  onClick={() =>
+                    act('change_heading', {
+                      dir: DIRECTIONS.south,
+                    })
+                  }
+                />
+              </Table.Cell>
+              <Table.Cell width={1}>
+                <Button
+                  icon="arrow-right"
+                  iconRotation={45}
+                  mb={1}
+                  color={burnDirection === DIRECTIONS.southeast && 'good'}
+                  disabled={!flyable}
+                  onClick={() =>
+                    act('change_heading', {
+                      dir: DIRECTIONS.southeast,
+                    })
+                  }
+                />
+              </Table.Cell>
+            </Table.Row>
+          </Table>
+        </LabeledControls.Item>
+        <LabeledControls.Item label="Throttle">
+          <Knob
+            value={burnPercentage}
+            minValue={1}
+            step={1}
+            maxValue={100}
+            size={2}
+            unit="%"
+            onDrag={(e, value) =>
+              act('change_burn_percentage', {
+                percentage: value,
+              })
+            }
+            animated
+          />
+          <NumberInput
+            value={(burnPercentage / 100) * estThrust * 500}
+            minValue={0.01}
+            step={0.01}
+            // 5 times a second, 60 seconds in a minute (5 * 60 = 300)
+            maxValue={estThrust * 500}
+            unit="Gm/s²"
+            onDrag={(e, value) =>
+              act('change_burn_percentage', {
+                percentage: Math.round((value / (estThrust * 500)) * 100),
+              })
+            }
+            format={(value) => value.toFixed(2)}
+            animated
+            fluid
+          />
+        </LabeledControls.Item>
+      </LabeledControls>
     </Section>
   );
 };

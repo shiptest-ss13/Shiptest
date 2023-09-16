@@ -2,14 +2,23 @@
 	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
 	"map_name": "SRM Glaive-class Hunter Vessel",
 	"prefix": "SRSV",
-	"namelists": ["MYTHOLOGICAL", "BEASTS"],
+	"namelists": [
+		"SAINT-ROUMAIN",
+		"BEASTS"
+	],
 	"map_short_name": "Glaive-class",
 	"map_path": "_maps/shuttles/shiptest/srm_glaive.dmm",
+	"description": "A standard issue vessel to the highest ranks of the Saint-Roumain Militia. While “standard”, this class of vessel is unique to the Montagne that owns it. Each ship is designed around a central garden consisting of plants, soil, and a tree from the owning Montagnes’ home planet. As a highly religious ascetic order, the SRM supplies each Glaive with supplies to farm, raise animals, and perform medicine in more “natural” ways, using herbs and plants grown in house. Alongside this, the ship has a decent amount of mining equipment, and supplies required to begin the manufacturing of SRM-pattern firearms as is standard for Hunter’s Pride. The ship is captained by a Montagne, who oversees a team of Hunters, and Shadows apprenticing them.",
+	"tags": [
+		"Mining",
+		"Combat",
+		"Specialist"
+	],
 	"map_id": "srm_glaive",
 	"limit": 1,
 	"job_slots": {
 		"Hunter Montagne": {
-			"outfit": "/datum/outfit/job/chaplain/roumain",
+			"outfit": "/datum/outfit/job/hos/roumain",
 			"officer": true,
 			"slots": 1
 		},

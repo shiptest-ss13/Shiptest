@@ -3,14 +3,14 @@
 	name = "\improper Sarathi"
 	id = SPECIES_LIZARD
 	default_color = "00FF00"
-	species_traits = list(MUTCOLORS,EYECOLOR,LIPS,SCLERA,EMOTE_OVERLAY)
+	species_traits = list(MUTCOLORS,EYECOLOR,LIPS,SCLERA,EMOTE_OVERLAY,MUTCOLORS_SECONDARY)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_REPTILE
-	mutant_bodyparts = list("tail_lizard", "snout", "spines", "horns", "frills", "body_markings", "legs")
+	mutant_bodyparts = list("tail_lizard", "face_markings", "frills", "horns", "spines", "body_markings", "legs")
 	mutanttongue = /obj/item/organ/tongue/lizard
 	mutant_organs = list(/obj/item/organ/tail/lizard)
 	coldmod = 1.5
 	heatmod = 0.67
-	default_features = list("mcolor" = "0F0", "tail_lizard" = "Smooth", "snout" = "Round", "horns" = "None", "frills" = "None", "spines" = "None", "body_markings" = "None", "legs" = "Normal Legs", "body_size" = "Normal")
+	default_features = list("mcolor" = "0F0", "tail_lizard" = "Smooth", "face_markings" = "None", "horns" = "None", "frills" = "None", "spines" = "None", "body_markings" = "None", "legs" = "Normal Legs", "body_size" = "Normal")
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN | SLIME_EXTRACT
 	attack_verb = "slash"
 	attack_sound = 'sound/weapons/slash.ogg'
@@ -26,14 +26,25 @@
 	species_language_holder = /datum/language_holder/lizard
 	digitigrade_customization = DIGITIGRADE_OPTIONAL
 	mutanteyes = /obj/item/organ/eyes/lizard
-	sclera_color = "fffec4"
+	sclera_color = "#fffec4"
+	blush_color = COLOR_BLUSH_TEAL
 
 	species_chest = /obj/item/bodypart/chest/lizard
 	species_head = /obj/item/bodypart/head/lizard
 	species_l_arm = /obj/item/bodypart/l_arm/lizard
 	species_r_arm = /obj/item/bodypart/r_arm/lizard
-	species_l_leg = /obj/item/bodypart/l_leg/lizard
-	species_r_leg = /obj/item/bodypart/r_leg/lizard
+	species_l_leg = /obj/item/bodypart/leg/left/lizard
+	species_r_leg = /obj/item/bodypart/leg/right/lizard
+
+	species_robotic_chest = /obj/item/bodypart/chest/robot/lizard
+	species_robotic_head = /obj/item/bodypart/head/robot/lizard
+	species_robotic_l_arm = /obj/item/bodypart/l_arm/robot/surplus/lizard
+	species_robotic_r_arm = /obj/item/bodypart/r_arm/robot/surplus/lizard
+	species_robotic_l_leg = /obj/item/bodypart/leg/left/robot/surplus/lizard
+	species_robotic_r_leg = /obj/item/bodypart/leg/right/robot/surplus/lizard
+
+	robotic_eyes = /obj/item/organ/eyes/robotic/lizard
+
 	// Lizards are coldblooded and can stand a greater temperature range than humans
 	bodytemp_heat_damage_limit = HUMAN_BODYTEMP_HEAT_DAMAGE_LIMIT + 20 // This puts lizards 10 above lavaland max heat for ash lizards.
 	bodytemp_cold_damage_limit = HUMAN_BODYTEMP_COLD_DAMAGE_LIMIT - 10

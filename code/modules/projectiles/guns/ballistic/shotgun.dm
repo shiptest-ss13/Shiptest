@@ -40,7 +40,7 @@
 
 /obj/item/gun/ballistic/shotgun/riot //for spawn in the armory
 	name = "riot shotgun"
-	desc = "A sturdy shotgun with a longer magazine and a fixed tactical stock designed for non-lethal riot control."
+	desc = "A sturdy shotgun with a longer magazine tube and a fixed wooden stock designed for non-lethal riot control."
 	icon_state = "riotshotgun"
 	item_state = "shotgun"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/riot
@@ -120,7 +120,7 @@
 
 /obj/item/gun/ballistic/shotgun/bulldog
 	name = "\improper Bulldog Shotgun"
-	desc = "A semi-auto, mag-fed shotgun for combat in narrow corridors, nicknamed 'Bulldog' by boarding parties. Compatible only with specialized 8-round drum magazines."
+	desc = "A semi-automatic, magazine-fed shotgun designed for combat in tight quarters, manufactured by Scarborough Arms. A historical favorite of various Syndicate factions, especially the Gorlex Marauders."
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	icon_state = "bulldog"
 	item_state = "bulldog"
@@ -146,16 +146,28 @@
 	tac_reloads = TRUE
 	pickup_sound =  'sound/items/handling/rifle_pickup.ogg'
 
-
 /obj/item/gun/ballistic/shotgun/bulldog/unrestricted
 	pin = /obj/item/firing_pin
 
 /obj/item/gun/ballistic/shotgun/bulldog/inteq
 	name = "\improper Mastiff Shotgun"
-	desc = "A semi-auto, mag-fed shotgun, seized from Syndicate armories by deserting troopers and modified to IRMG's standards. Compatible only with specialized 8-round drum magazines."
+	desc = "A variation of the Bulldog, seized from Syndicate armories by deserting troopers then modified to IRMG's standards."
 	icon_state = "bulldog-inteq"
 	item_state = "bulldog-inteq"
+	mag_type = /obj/item/ammo_box/magazine/m12g
 	pin = /obj/item/firing_pin
+
+/obj/item/gun/ballistic/shotgun/bulldog/minutemen
+	name = "\improper CM-15"
+	desc = "A standard-issue shotgun of the Colonial Minutemen, most often used by boarding crews. Only compatible with specialized 8-round magazines."
+	icon = 'icons/obj/guns/48x32guns.dmi'
+	mag_type = /obj/item/ammo_box/magazine/cm15_mag
+	icon_state = "cm15"
+	item_state = "cm15"
+	pin = /obj/item/firing_pin
+	empty_alarm = FALSE
+	empty_indicator = FALSE
+	special_mags = FALSE
 
 /////////////////////////////
 // DOUBLE BARRELED SHOTGUN //
@@ -201,7 +213,7 @@
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/improvised
 	name = "improvised shotgun"
-	desc = "Essentially a tube that aims shotgun shells."
+	desc = "A length of pipe and miscellaneous bits of scrap fashioned into a rudimentary single-shot shotgun."
 	icon_state = "ishotgun"
 	item_state = "ishotgun"
 	w_class = WEIGHT_CLASS_BULKY
@@ -220,7 +232,7 @@
 			slot_flags = ITEM_SLOT_BACK
 			to_chat(user, "<span class='notice'>You tie the lengths of cable to the shotgun, making a sling.</span>")
 			slung = TRUE
-			update_icon()
+			update_appearance()
 		else
 			to_chat(user, "<span class='warning'>You need at least ten lengths of cable if you want to make a sling!</span>")
 
@@ -243,7 +255,7 @@
 	if(. && slung) //sawing off the gun removes the sling
 		new /obj/item/stack/cable_coil(get_turf(src), 10)
 		slung = 0
-		update_icon()
+		update_appearance()
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/improvised/sawn
 	name = "sawn-off improvised shotgun"
@@ -376,11 +388,12 @@
 	if(prob(0 + (magazine.ammo_count() * 10)))
 		if(prob(10))
 			to_chat(user, "<span class='userdanger'>Something isn't right. \the [src] doesn't fire for a brief moment. Then, the following words come to mind: \
-			Ó Pátria amada, \
-			Idolatrada, \
+			Ó Pátria amada, \n\
+			Idolatrada, \n\
 			Salve! Salve!</span>")
 
 			message_admins("A [src] misfired and exploded at [ADMIN_VERBOSEJMP(src)], which was fired by [user].") //logging
+			log_admin("A [src] misfired and exploded at [ADMIN_VERBOSEJMP(src)], which was fired by [user].")
 			user.take_bodypart_damage(0,50)
 			explosion(src, 0, 2, 4, 6, TRUE, TRUE)
 	..()
@@ -394,9 +407,10 @@
 	fire_sound_volume = 100
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/hundred
 
+//Lever-Action Rifles
 /obj/item/gun/ballistic/shotgun/winchester
 	name = "Winchester MK.2"
-	desc = "A sturdy lever action rifle. This one is a newer reproduction."
+	desc = "A sturdy lever-action rifle with hand-stamped Hunter's Pride marks on the receiver. Modern and sleek."
 	icon_state = "winchester"
 	item_state = "winchester"
 	icon = 'icons/obj/guns/48x32guns.dmi'
@@ -412,16 +426,15 @@
 
 /obj/item/gun/ballistic/shotgun/winchester/lethal
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/winchester/lethal
+	cartridge_wording = "bullet"
 
 /obj/item/gun/ballistic/shotgun/winchester/mk1
 	name = "Winchester MK.1"
-	desc = "A sturdy lever action rifle. This older pattern appears to be an antique, in excellent condition despite its age."
+	desc = "A sturdy lever-action rifle. This antique pattern appears to be in excellent condition despite its age."
 	icon_state = "winchestermk1"
 	item_state = "winchestermk1"
 
-/obj/item/gun/ballistic/shotgun/winchester/mk1/lethal
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/winchester/lethal
-
+//Elephant Gun
 /obj/item/gun/ballistic/shotgun/doublebarrel/twobore
 	name = "two-bore rifle"
 	desc = "Take this, elephant! If you want an intact trophy, don't aim for the head. Chambered in two-bore."
@@ -446,3 +459,37 @@
 	can_be_sawn_off = FALSE
 	fire_sound_volume = 80
 	rack_sound_volume = 50
+
+//Break-Action Rifle
+/obj/item/gun/ballistic/shotgun/contender
+	name = "Contender"
+	desc = "A single-shot break-action rifle made by Hunter's Pride. Boasts excellent accuracy and stopping power. Uses .45-70 ammo."
+	icon_state = "contender"
+	item_state = "contender"
+	icon = 'icons/obj/guns/48x32guns.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
+	lefthand_file = 'icons/mob/inhands/weapons/64x_guns_left.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/64x_guns_right.dmi'
+	inhand_x_dimension = 32
+	inhand_y_dimension = 32
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/contender
+	fire_sound = 'sound/weapons/gun/rifle/shot.ogg'
+	can_be_sawn_off=TRUE
+	sawn_desc= "A single-shot pistol. It's hard to aim without a front sight."
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_MEDIUM
+	force = 10
+	flags_1 = CONDUCT_1
+	slot_flags = ITEM_SLOT_BACK
+	obj_flags = UNIQUE_RENAME
+	rack_sound_volume = 0
+	semi_auto = TRUE
+	bolt_type = BOLT_TYPE_NO_BOLT
+	can_be_sawn_off  = TRUE
+	pb_knockback = 3
+
+
+/obj/item/gun/ballistic/shotgun/contender/sawoff(mob/user)
+	. = ..()
+	if(.)
+		item_state = "contender_sawn"

@@ -150,7 +150,7 @@ GLOBAL_LIST_EMPTY(allCasters)
 	if(newMessage)
 		for(var/obj/machinery/newscaster/N in GLOB.allCasters)
 			N.newsAlert()
-			N.update_icon()
+			N.update_appearance()
 
 /datum/newscaster/feed_network/proc/deleteWanted()
 	wanted_issue.active = 0
@@ -159,7 +159,7 @@ GLOBAL_LIST_EMPTY(allCasters)
 	wanted_issue.scannedUser = null
 	wanted_issue.img = null
 	for(var/obj/machinery/newscaster/NEWSCASTER in GLOB.allCasters)
-		NEWSCASTER.update_icon()
+		NEWSCASTER.update_appearance()
 
 /datum/newscaster/feed_network/proc/save_photo(icon/photo)
 	var/photo_file = copytext_char(md5("\icon[photo]"), 1, 6)
@@ -176,13 +176,16 @@ GLOBAL_LIST_EMPTY(allCasters)
 	icon_state = "newscaster"
 	custom_materials = list(/datum/material/iron=14000, /datum/material/glass=8000)
 	result_path = /obj/machinery/newscaster
+	inverse_pixel_shift = TRUE
+	pixel_shift = 30
 
 
 /obj/machinery/newscaster
 	name = "newscaster"
-	desc = "A standard Nanotrasen-licensed newsfeed handler. All the news you absolutely have no use for, in one place!"
+	desc = "A standard Nanotrasen brand newsfeed handler. All the news you absolutely have no use for, in one place!"
 	icon = 'icons/obj/terminals.dmi'
-	icon_state = "newscaster_normal"
+	icon_state = "newscaster"
+	base_icon_state = "newscaster"
 	verb_say = "beeps"
 	verb_ask = "beeps"
 	verb_exclaim = "beeps"
@@ -211,9 +214,13 @@ GLOBAL_LIST_EMPTY(allCasters)
 		dir_amount = 4\
 	)
 
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/newscaster, 30)
+
 /obj/machinery/newscaster/security_unit
 	name = "security newscaster"
-	securityCaster = 1
+	securityCaster = TRUE
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/newscaster/security_unit, 30)
 
 /obj/machinery/newscaster/Initialize(mapload, ndir, building)
 	. = ..()
@@ -224,7 +231,7 @@ GLOBAL_LIST_EMPTY(allCasters)
 
 	GLOB.allCasters += src
 	unit_no = GLOB.allCasters.len
-	update_icon()
+	update_appearance()
 
 /obj/machinery/newscaster/Destroy()
 	GLOB.allCasters -= src
@@ -232,35 +239,30 @@ GLOBAL_LIST_EMPTY(allCasters)
 	picture = null
 	return ..()
 
-/obj/machinery/newscaster/update_icon_state()
-	if(machine_stat & (NOPOWER|BROKEN))
-		icon_state = "newscaster_off"
-	else
-		if(GLOB.news_network.wanted_issue.active)
-			icon_state = "newscaster_wanted"
-		else
-			icon_state = "newscaster_normal"
-
 /obj/machinery/newscaster/update_overlays()
 	. = ..()
+	SSvis_overlays.remove_vis_overlay(src, managed_vis_overlays)
+	if(machine_stat & BROKEN)
+		SSvis_overlays.add_vis_overlay(src, icon, "[base_icon_state]_broken", layer, plane, dir)
+		return
 
-	if(!(machine_stat & (NOPOWER|BROKEN)) && !GLOB.news_network.wanted_issue.active && alert)
-		. += "newscaster_alert"
+	if(machine_stat & NOPOWER)
+		return
 
-	var/hp_percent = obj_integrity * 100 /max_integrity
-	switch(hp_percent)
-		if(75 to 100)
-			return
-		if(50 to 75)
-			. += "crack1"
-		if(25 to 50)
-			. += "crack2"
-		else
-			. += "crack3"
+	if(GLOB.news_network.wanted_issue.active)
+		SSvis_overlays.add_vis_overlay(src, icon, "[base_icon_state]_wanted", layer, plane, dir)
+		SSvis_overlays.add_vis_overlay(src, icon, "[base_icon_state]_wanted", layer, EMISSIVE_PLANE, dir)
+	else if(alert)
+		SSvis_overlays.add_vis_overlay(src, icon, "[base_icon_state]_alert", layer, plane, dir)
+		SSvis_overlays.add_vis_overlay(src, icon, "[base_icon_state]_alert", layer, EMISSIVE_PLANE, dir)
+	else
+		SSvis_overlays.add_vis_overlay(src, icon, "[base_icon_state]_normal", layer, plane, dir)
+		SSvis_overlays.add_vis_overlay(src, icon, "[base_icon_state]_normal", layer, EMISSIVE_PLANE, dir)
+
 
 /obj/machinery/newscaster/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, attack_dir)
 	. = ..()
-	update_icon()
+	update_appearance()
 
 /obj/machinery/newscaster/ui_interact(mob/user)
 	. = ..()
@@ -742,7 +744,7 @@ GLOBAL_LIST_EMPTY(allCasters)
 				to_chat(user, "<span class='notice'>You repair [src].</span>")
 				obj_integrity = max_integrity
 				set_machine_stat(machine_stat & ~BROKEN)
-				update_icon()
+				update_appearance()
 		else
 			to_chat(user, "<span class='notice'>[src] does not need repairs.</span>")
 	else
@@ -846,13 +848,13 @@ GLOBAL_LIST_EMPTY(allCasters)
 
 /obj/machinery/newscaster/proc/remove_alert()
 	alert = FALSE
-	update_icon()
+	update_appearance()
 
 /obj/machinery/newscaster/proc/newsAlert(channel)
 	if(channel)
 		say("Breaking news from [channel]!")
 		alert = TRUE
-		update_icon()
+		update_appearance()
 		addtimer(CALLBACK(src,.proc/remove_alert),alert_delay,TIMER_UNIQUE|TIMER_OVERRIDE)
 		playsound(loc, 'sound/machines/twobeep_high.ogg', 75, TRUE)
 	else
@@ -881,17 +883,6 @@ GLOBAL_LIST_EMPTY(allCasters)
 	var/wantedBody
 	var/wantedPhoto
 	var/creationTime
-
-/obj/item/newspaper/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is focusing intently on [src]! It looks like [user.p_theyre()] trying to commit sudoku... until [user.p_their()] eyes light up with realization!</span>")
-	user.say(";JOURNALISM IS MY CALLING! EVERYBODY APPRECIATES UNBIASED REPORTI-GLORF", forced="newspaper suicide")
-	var/mob/living/carbon/human/H = user
-	var/obj/W = new /obj/item/reagent_containers/food/drinks/bottle/whiskey(H.loc)
-	playsound(H.loc, 'sound/items/drink.ogg', rand(10,50), TRUE)
-	W.reagents.trans_to(H, W.reagents.total_volume, transfered_by = user)
-	user.visible_message("<span class='suicide'>[user] downs the contents of [W.name] in one gulp! Shoulda stuck to sudoku!</span>")
-
-	return(TOXLOSS)
 
 /obj/item/newspaper/attack_self(mob/user)
 	if(ishuman(user))

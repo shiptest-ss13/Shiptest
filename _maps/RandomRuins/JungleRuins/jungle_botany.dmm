@@ -59,6 +59,10 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/airlock/command,
+/obj/effect/turf_decal/industrial/warning,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
 /area/ruin/powered)
 "hL" = (
@@ -67,6 +71,7 @@
 /area/ruin/powered)
 "ii" = (
 /obj/structure/closet/secure_closet/hydroponics,
+/obj/effect/turf_decal/box,
 /turf/open/floor/plasteel,
 /area/ruin/powered)
 "ik" = (
@@ -75,6 +80,7 @@
 /area/ruin/powered)
 "iG" = (
 /obj/machinery/vending/cigarette,
+/obj/effect/turf_decal/box,
 /turf/open/floor/plasteel,
 /area/ruin/powered)
 "jc" = (
@@ -91,7 +97,11 @@
 /turf/open/floor/plasteel,
 /area/ruin/powered)
 "ji" = (
-/obj/machinery/vending/hydroseeds,
+/obj/item/seeds/tomato/killer,
+/obj/item/seeds/kudzu,
+/obj/item/seeds/cannabis,
+/obj/item/seeds/random,
+/obj/structure/closet/crate/secure/hydroponics,
 /turf/open/floor/plasteel,
 /area/ruin/powered)
 "js" = (
@@ -103,7 +113,9 @@
 /turf/open/floor/plasteel,
 /area/ruin/powered)
 "jK" = (
-/obj/machinery/door/airlock/external,
+/obj/machinery/door/airlock/external{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/ruin/powered)
 "ke" = (
@@ -117,6 +129,7 @@
 /area/ruin/powered)
 "kj" = (
 /obj/machinery/vending/sovietsoda,
+/obj/effect/turf_decal/box,
 /turf/open/floor/plasteel,
 /area/ruin/powered)
 "lb" = (
@@ -135,6 +148,16 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/airlock/glass,
+/obj/effect/turf_decal/industrial/warning,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin/powered)
+"mB" = (
+/obj/machinery/door/airlock/external{
+	dir = 8
+	},
 /turf/open/floor/plasteel,
 /area/ruin/powered)
 "mN" = (
@@ -152,8 +175,8 @@
 "nJ" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/spacevine,
-/turf/open/floor/plating/grass/jungle,
-/area/ruin/powered)
+/turf/open/floor/plating/grass/jungle/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "nS" = (
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -162,7 +185,15 @@
 /turf/open/floor/plasteel,
 /area/ruin/powered)
 "oc" = (
-/obj/machinery/door/airlock/glass,
+/obj/machinery/door/airlock/glass{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
 /turf/open/floor/plasteel,
 /area/ruin/powered)
 "om" = (
@@ -228,8 +259,8 @@
 "uK" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/grass/jungle,
-/turf/open/floor/plating/grass/jungle,
-/area/ruin/powered)
+/turf/open/floor/plating/grass/jungle/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "uM" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -267,8 +298,8 @@
 /area/ruin/powered)
 "wU" = (
 /obj/structure/flora/ausbushes/grassybush,
-/turf/open/floor/plating/grass/jungle,
-/area/ruin/powered)
+/turf/open/floor/plating/grass/jungle/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "yr" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -280,7 +311,15 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/door/airlock,
+/obj/machinery/door/airlock{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/ruin/powered)
 "yR" = (
@@ -301,8 +340,8 @@
 "zm" = (
 /obj/structure/flora/grass/jungle,
 /obj/structure/spacevine,
-/turf/open/floor/plating/grass/jungle,
-/area/ruin/powered)
+/turf/open/floor/plating/grass/jungle/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "Aq" = (
 /obj/structure/table,
 /obj/item/paper_bin,
@@ -349,7 +388,15 @@
 /turf/open/floor/plasteel,
 /area/ruin/powered)
 "FG" = (
-/obj/machinery/door/airlock,
+/obj/machinery/door/airlock{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
 /turf/open/floor/plasteel,
 /area/ruin/powered)
 "FR" = (
@@ -394,8 +441,8 @@
 /area/ruin/powered)
 "HQ" = (
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/open/floor/plating/grass/jungle,
-/area/ruin/powered)
+/turf/open/floor/plating/grass/jungle/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "Ia" = (
 /obj/machinery/hydroponics/constructable,
 /obj/structure/spacevine,
@@ -449,6 +496,14 @@
 /obj/structure/glowshroom/single,
 /turf/open/floor/plasteel,
 /area/ruin/powered)
+"Mq" = (
+/obj/machinery/suit_storage_unit/standard_unit,
+/obj/effect/turf_decal/industrial/warning/corner,
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ruin/powered)
 "Nk" = (
 /obj/structure/table,
 /obj/item/reagent_containers/food/snacks/salad/jungle{
@@ -464,9 +519,18 @@
 /obj/structure/girder/reinforced,
 /turf/open/floor/plating,
 /area/ruin/powered)
+"NE" = (
+/obj/structure/grille/broken,
+/obj/structure/spacevine,
+/turf/open/floor/plating,
+/area/overmap_encounter/planetoid/jungle/explored)
 "OT" = (
 /obj/machinery/door/airlock,
 /obj/effect/decal/cleanable/blood/footprints,
+/obj/effect/turf_decal/industrial/warning,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
 /area/ruin/powered)
 "OX" = (
@@ -486,6 +550,15 @@
 /obj/structure/spacevine/dense,
 /turf/open/floor/plasteel,
 /area/ruin/powered)
+"Pz" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/powered)
 "Qa" = (
 /obj/structure/spacevine/dense,
 /turf/open/floor/plasteel,
@@ -503,7 +576,15 @@
 /turf/open/floor/plasteel,
 /area/ruin/powered)
 "Qu" = (
-/obj/structure/door_assembly/door_assembly_com,
+/obj/structure/door_assembly/door_assembly_com{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/ruin/powered)
 "QJ" = (
@@ -511,7 +592,8 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/engineering{
-	locked = 1
+	locked = 1;
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/ruin/powered)
@@ -528,8 +610,8 @@
 /area/ruin/powered)
 "Sh" = (
 /obj/structure/flora/grass/jungle,
-/turf/open/floor/plating/grass/jungle,
-/area/ruin/powered)
+/turf/open/floor/plating/grass/jungle/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "Ss" = (
 /obj/machinery/power/terminal{
 	dir = 1
@@ -557,6 +639,19 @@
 	pixel_x = 2
 	},
 /turf/closed/wall,
+/area/ruin/powered)
+"Ti" = (
+/obj/machinery/door/airlock,
+/obj/effect/turf_decal/industrial/warning,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin/powered)
+"TO" = (
+/obj/structure/salvageable/seed,
+/obj/effect/turf_decal/box,
+/turf/open/floor/plasteel,
 /area/ruin/powered)
 "TV" = (
 /obj/structure/spacevine,
@@ -619,7 +714,13 @@
 /area/ruin/powered)
 "Zq" = (
 /obj/machinery/suit_storage_unit/standard_unit,
-/turf/open/floor/plasteel,
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/powered)
 "ZO" = (
 /obj/structure/bed,
@@ -646,31 +747,31 @@ Sh
 "}
 (2,1,1) = {"
 Np
-Zq
-OX
-OX
+Mq
+Pz
+Pz
 Zq
 ZU
 aM
 Vn
 Aq
 Qc
-Pp
+NE
 nJ
 "}
 (3,1,1) = {"
 ZU
 ZU
-jK
-jK
+mB
+mB
 wD
 ZU
 OX
 fM
 TV
 Pq
-Pp
-Pp
+NE
+NE
 "}
 (4,1,1) = {"
 ZU
@@ -691,7 +792,7 @@ ZU
 gb
 Cj
 Yc
-ii
+TO
 ZU
 pt
 uM
@@ -820,7 +921,7 @@ QJ
 ZU
 ZU
 AD
-FG
+Ti
 uC
 Se
 Qc

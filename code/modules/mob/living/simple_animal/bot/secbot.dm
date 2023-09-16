@@ -78,7 +78,7 @@
 /mob/living/simple_animal/bot/secbot/Initialize()
 	. = ..()
 	weapon = new baton_type()
-	update_icon()
+	update_appearance()
 	var/datum/job/detective/J = new/datum/job/detective
 	access_card.access += J.get_access()
 	prev_access = access_card.access
@@ -91,11 +91,11 @@
 	QDEL_NULL(weapon)
 	return ..()
 
-/mob/living/simple_animal/bot/secbot/update_icon()
+/mob/living/simple_animal/bot/secbot/update_icon_state()
 	if(mode == BOT_HUNT)
 		icon_state = "[initial(icon_state)]-c"
 		return
-	..()
+	return ..()
 
 /mob/living/simple_animal/bot/secbot/turn_off()
 	..()
@@ -222,7 +222,7 @@ Auto Patrol: []"},
 			oldtarget_name = user.name
 		audible_message("<span class='danger'>[src] buzzes oddly!</span>")
 		declare_arrests = FALSE
-		update_icon()
+		update_appearance()
 
 /mob/living/simple_animal/bot/secbot/bullet_act(obj/projectile/Proj)
 	if(istype(Proj , /obj/projectile/beam)||istype(Proj, /obj/projectile/bullet))
@@ -249,8 +249,9 @@ Auto Patrol: []"},
 /mob/living/simple_animal/bot/secbot/hitby(atom/movable/AM, skipcatch = FALSE, hitpush = TRUE, blocked = FALSE, datum/thrownthing/throwingdatum)
 	if(istype(AM, /obj/item))
 		var/obj/item/I = AM
-		if(I.throwforce < src.health && I.thrownby && ishuman(I.thrownby))
-			var/mob/living/carbon/human/H = I.thrownby
+		var/mob/thrown_by = I.thrownby?.resolve()
+		if(I.throwforce < src.health && thrown_by && ishuman(thrown_by))
+			var/mob/living/carbon/human/H = thrown_by
 			retaliate(H)
 	..()
 
@@ -453,11 +454,11 @@ Auto Patrol: []"},
 		new /obj/item/assembly/prox_sensor(Tsec)
 		var/obj/item/gun/energy/disabler/G = new (Tsec)
 		G.cell.charge = 0
-		G.update_icon()
+		G.update_appearance()
 		if(prob(50))
-			new /obj/item/bodypart/l_leg/robot(Tsec)
+			new /obj/item/bodypart/leg/left/robot(Tsec)
 			if(prob(25))
-				new /obj/item/bodypart/r_leg/robot(Tsec)
+				new /obj/item/bodypart/leg/right/robot(Tsec)
 		if(prob(25))//50% chance for a helmet OR vest
 			if(prob(50))
 				new /obj/item/clothing/head/helmet(Tsec)

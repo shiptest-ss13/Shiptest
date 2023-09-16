@@ -17,7 +17,6 @@
 	maxHealth = 100
 	health = 100
 	obj_damage = 15
-	environment_smash = ENVIRONMENT_SMASH_MINERALS
 	melee_damage_lower = 7
 	melee_damage_upper = 7
 	rapid_melee = 2 // every second attack

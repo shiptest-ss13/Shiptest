@@ -44,7 +44,6 @@
 		/obj/item/storage/belt/fannypack = 3,
 		/obj/item/storage/belt/fannypack/blue = 3,
 		/obj/item/storage/belt/fannypack/red = 3,
-		/obj/item/clothing/under/misc/overalls = 2,
 		/obj/item/clothing/under/pants/jeans = 2,
 		/obj/item/clothing/under/pants/classicjeans = 2,
 		/obj/item/clothing/under/pants/camo = 2,
@@ -117,11 +116,11 @@
 		/obj/item/clothing/suit/jacket/letterman_syndie = 1,
 		/obj/item/clothing/under/costume/jabroni = 1,
 		/obj/item/clothing/suit/vapeshirt = 1,
-		/obj/item/clothing/under/costume/geisha = 1)
+		/obj/item/clothing/under/costume/geisha = 1,
+		/obj/item/clothing/under/rank/centcom/officer/replica = 1,
+		/obj/item/clothing/under/rank/centcom/officer_skirt/replica = 1)
 	premium = list(
 		/obj/item/clothing/under/suit/checkered = 1,
-		/obj/item/clothing/head/mailman = 1,
-		/obj/item/clothing/under/misc/mailman = 1,
 		/obj/item/clothing/suit/jacket/leather = 1,
 		/obj/item/clothing/suit/jacket/leather/overcoat = 1,
 		/obj/item/clothing/under/pants/mustangjeans = 1,

@@ -102,7 +102,10 @@
 	for(var/obj/item/bodypart/BP as anything in bodyparts)
 		if(BP.dmg_overlay_type)
 			if(BP.brutestate)
-				damage_overlay.add_overlay("[BP.dmg_overlay_type]_[BP.body_zone]_[BP.brutestate]0")	//we're adding icon_states of the base image as overlays
+				var/image/brute_overlay = image('icons/mob/dam_mob.dmi', "[BP.dmg_overlay_type]_[BP.body_zone]_[BP.brutestate]0")
+				if(BP.use_damage_color)
+					brute_overlay.color = BP.damage_color
+				damage_overlay.add_overlay(brute_overlay)
 			if(BP.burnstate)
 				damage_overlay.add_overlay("[BP.dmg_overlay_type]_[BP.body_zone]_0[BP.burnstate]")
 
@@ -117,7 +120,7 @@
 
 	if(client && hud_used && hud_used.inv_slots[TOBITSHIFT(ITEM_SLOT_MASK) + 1])
 		var/atom/movable/screen/inventory/inv = hud_used.inv_slots[TOBITSHIFT(ITEM_SLOT_MASK) + 1]
-		inv.update_icon()
+		inv.update_appearance()
 
 	if(wear_mask)
 		if(!(ITEM_SLOT_MASK in check_obscured_slots()))
@@ -131,7 +134,7 @@
 
 	if(client && hud_used && hud_used.inv_slots[TOBITSHIFT(ITEM_SLOT_NECK) + 1])
 		var/atom/movable/screen/inventory/inv = hud_used.inv_slots[TOBITSHIFT(ITEM_SLOT_NECK) + 1]
-		inv.update_icon()
+		inv.update_appearance()
 
 	if(wear_neck)
 		if(!(ITEM_SLOT_NECK in check_obscured_slots()))
@@ -145,7 +148,7 @@
 
 	if(client && hud_used && hud_used.inv_slots[TOBITSHIFT(ITEM_SLOT_BACK) + 1])
 		var/atom/movable/screen/inventory/inv = hud_used.inv_slots[TOBITSHIFT(ITEM_SLOT_BACK) + 1]
-		inv.update_icon()
+		inv.update_appearance()
 
 	if(back)
 		overlays_standing[BACK_LAYER] = back.build_worn_icon(default_layer = BACK_LAYER, default_icon_file = 'icons/mob/clothing/back.dmi', mob_species = dna?.species)
@@ -161,7 +164,7 @@
 
 	if(client && hud_used && hud_used.inv_slots[TOBITSHIFT(ITEM_SLOT_BACK) + 1])
 		var/atom/movable/screen/inventory/inv = hud_used.inv_slots[TOBITSHIFT(ITEM_SLOT_HEAD) + 1]
-		inv.update_icon()
+		inv.update_appearance()
 
 	if(head)
 		overlays_standing[HEAD_LAYER] = head.build_worn_icon(default_layer = HEAD_LAYER, default_icon_file = 'icons/mob/clothing/head.dmi', mob_species = dna?.species)
@@ -185,7 +188,7 @@
 		for(var/hand in hud_used.hand_slots)
 			var/atom/movable/screen/inventory/hand/H = hud_used.hand_slots[hand]
 			if(H)
-				H.update_icon()
+				H.update_appearance()
 
 //update whether our head item appears on our hud.
 /mob/living/carbon/proc/update_hud_head(obj/item/I)
@@ -222,7 +225,7 @@
 	for(var/obj/item/bodypart/BP as anything in bodyparts)
 		BP.update_limb(is_creating = update_limb_data) //Update limb actually doesn't do much, get_limb_icon is the cpu eater.
 		var/old_key = icon_render_keys?[BP.body_zone]
-		icon_render_keys[BP.body_zone] = (BP.is_husked) ? generate_husk_key(BP) : generate_icon_key(BP)
+		icon_render_keys[BP.body_zone] = (BP.is_husked) ? BP.generate_husk_key().Join() : BP.generate_icon_key().Join()
 		if(!(icon_render_keys[BP.body_zone] == old_key))
 			needs_update += BP
 
@@ -236,8 +239,6 @@
 	if(!needs_update.len && !limb_count_update)
 		return
 
-	remove_overlay(BODYPARTS_LAYER)
-
 	//GENERATE NEW LIMBS
 	var/list/new_limbs = list()
 	for(var/obj/item/bodypart/BP as anything in bodyparts)
@@ -247,6 +248,8 @@
 			limb_icon_cache[icon_render_keys[BP.body_zone]] = bp_icon
 		else
 			new_limbs += limb_icon_cache[icon_render_keys[BP.body_zone]]
+
+	remove_overlay(BODYPARTS_LAYER)
 
 	if(new_limbs.len)
 		overlays_standing[BODYPARTS_LAYER] = new_limbs
@@ -258,28 +261,80 @@
 // Limb Icon Cache 2.0 //
 /////////////////////////
 //Updated by Kapu#1178
-/*
-	Called from update_body_parts() these procs handle the limb icon cache.
-	the limb icon cache adds an icon_render_key to a human mob, it represents:
-	- Gender, if applicable
-	- The ID of the limb
-	- Draw color, if applicable
-	These procs only store limbs as to increase the number of matching icon_render_keys
-	This cache exists because drawing 6/7 icons for humans constantly is quite a waste
-	See RemieRichards on irc.rizon.net #coderbus (RIP remie :sob:)
+//TG variant port by MrSamu99#8996
+/**
+ * Called from update_body_parts() these procs handle the limb icon cache.
+ * the limb icon cache adds an icon_render_key to a human mob, it represents:
+ * - Gender, if applicable
+ * - The ID of the limb
+ * - Whether or not it's digitigrade
+ * - Draw color, if applicable
+ *
+ * These procs only store limbs as to increase the number of matching icon_render_keys
+ * This cache exists because drawing 6/7 icons for humans constantly is quite a waste
+ * See RemieRichards on irc.rizon.net #coderbus (RIP remie :sob:)
 */
-/mob/living/carbon/proc/generate_icon_key(obj/item/bodypart/BP)
-	if(BP.is_dimorphic)
-		. += "[BP.limb_gender]-"
-	. += "[BP.limb_id]"
-	. += "-[BP.body_zone]"
-	if(BP.should_draw_greyscale && BP.draw_color)
-		. += "-[BP.draw_color]"
+/obj/item/bodypart/proc/generate_icon_key()
+	RETURN_TYPE(/list)
+	. = list()
+	if(is_dimorphic)
+		. += "[limb_gender]-"
+	. += "[limb_id]"
+	. += "-[body_zone]"
+	if(bodytype & BODYTYPE_DIGITIGRADE && !plantigrade_forced)
+		. += "-digitigrade"
+	if(should_draw_greyscale && draw_color)
+		. += "-[draw_color]"
 
-/mob/living/carbon/proc/generate_husk_key(obj/item/bodypart/BP)
-	. += "[BP.husk_type]"
+	return .
+
+/obj/item/bodypart/proc/generate_husk_key()
+	RETURN_TYPE(/list)
+	. = list()
+	. += "[husk_type]"
 	. += "-husk"
-	. += "-[BP.body_zone]"
+	. += "-[body_zone]"
+	return .
+
+GLOBAL_LIST_EMPTY(masked_leg_icons_cache)
+
+/obj/item/bodypart/leg/proc/generate_masked_leg(mutable_appearance/limb_overlay, image_dir = NONE)
+	RETURN_TYPE(/list)
+	if(!limb_overlay)
+		return
+	. = list()
+
+	var/icon_cache_key = "[limb_overlay.icon]-[limb_overlay.icon_state]-[body_zone]"
+	var/icon/new_leg_icon
+	var/icon/new_leg_icon_lower
+
+	//in case we do not have a cached version of the two cropped icons for this key, we have to create it
+	if(!GLOB.masked_leg_icons_cache[icon_cache_key])
+		var/icon/leg_crop_mask = (body_zone == BODY_ZONE_R_LEG ? icon('icons/mob/leg_masks.dmi', "right_leg") : icon('icons/mob/leg_masks.dmi', "left_leg"))
+		var/icon/leg_crop_mask_lower = (body_zone == BODY_ZONE_R_LEG ? icon('icons/mob/leg_masks.dmi', "right_leg_lower") : icon('icons/mob/leg_masks.dmi', "left_leg_lower"))
+
+		new_leg_icon = icon(limb_overlay.icon, limb_overlay.icon_state)
+		new_leg_icon.Blend(leg_crop_mask, ICON_MULTIPLY)
+
+		new_leg_icon_lower = icon(limb_overlay.icon, limb_overlay.icon_state)
+		new_leg_icon_lower.Blend(leg_crop_mask_lower, ICON_MULTIPLY)
+
+		GLOB.masked_leg_icons_cache[icon_cache_key] = list(new_leg_icon, new_leg_icon_lower)
+	new_leg_icon = GLOB.masked_leg_icons_cache[icon_cache_key][1]
+	new_leg_icon_lower = GLOB.masked_leg_icons_cache[icon_cache_key][2]
+
+	//this could break layering in oddjob cases, but i'm sure it will work fine most of the time... right?
+	var/mutable_appearance/new_leg_appearance = new(limb_overlay)
+	new_leg_appearance.icon = new_leg_icon
+	new_leg_appearance.layer = -BODYPARTS_LAYER
+	new_leg_appearance.dir = image_dir //for some reason, things do not work properly otherwise
+	. += new_leg_appearance
+	var/mutable_appearance/new_leg_appearance_lower = new(limb_overlay)
+	new_leg_appearance_lower.icon = new_leg_icon_lower
+	new_leg_appearance_lower.layer = -BODYPARTS_LOW_LAYER
+	new_leg_appearance_lower.dir = image_dir
+	. += new_leg_appearance_lower
+	return .
 
 ////Extremely special handling for species with abnormal hand placement. This essentially rebuilds the hand overlay every
 ////rotation, with every direction having a unique pixel offset for in-hands.

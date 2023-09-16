@@ -1,8 +1,6 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "aE" = (
-/obj/machinery/light/broken{
-	dir = 8
-	},
+/obj/machinery/light/broken/directional/west,
 /turf/open/floor/wood,
 /area/ruin/powered)
 "bF" = (
@@ -19,9 +17,7 @@
 /area/ruin/powered)
 "dQ" = (
 /mob/living/simple_animal/hostile/rat,
-/obj/machinery/light/small/broken{
-	dir = 1
-	},
+/obj/machinery/light/small/broken/directional/north,
 /turf/open/floor/wood,
 /area/ruin/powered)
 "eE" = (
@@ -31,8 +27,8 @@
 /area/ruin/powered)
 "eG" = (
 /obj/structure/flora/tree/jungle,
-/turf/open/floor/plating/grass/jungle,
-/area/template_noop)
+/turf/open/floor/plating/grass/jungle/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "eX" = (
 /mob/living/simple_animal/hostile/rat{
 	dir = 4
@@ -79,10 +75,10 @@
 /area/ruin/powered)
 "gO" = (
 /obj/structure/barricade/wooden,
-/turf/open/floor/plating/grass/jungle,
-/area/ruin/powered)
+/turf/open/floor/plating/grass/jungle/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "hD" = (
-/obj/machinery/light/small,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/wood,
 /area/ruin/powered)
 "iH" = (
@@ -99,18 +95,18 @@
 "kn" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/seeds/corn,
-/turf/open/floor/plating/grass/jungle,
-/area/ruin/powered)
+/turf/open/floor/plating/grass/jungle/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "ky" = (
 /obj/structure/fence{
 	dir = 4
 	},
-/turf/open/floor/plating/grass/jungle,
-/area/ruin/powered)
+/turf/open/floor/plating/grass/jungle/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "kL" = (
 /obj/structure/fence/cut/medium,
-/turf/open/floor/plating/grass/jungle,
-/area/ruin/powered)
+/turf/open/floor/plating/grass/jungle/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "lN" = (
 /obj/structure/table/wood,
 /obj/item/grenade/chem_grenade/ez_clean{
@@ -129,8 +125,8 @@
 /turf/open/floor/wood,
 /area/ruin/powered)
 "lW" = (
-/obj/structure/mineral_door/wood,
 /obj/structure/barricade/wooden/crude,
+/obj/machinery/door/airlock/wood,
 /turf/open/floor/wood,
 /area/ruin/powered)
 "oD" = (
@@ -142,8 +138,8 @@
 /obj/structure/fence/corner{
 	dir = 5
 	},
-/turf/open/floor/plating/grass/jungle,
-/area/ruin/powered)
+/turf/open/floor/plating/grass/jungle/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "qp" = (
 /obj/structure/noticeboard{
 	desc = "A board with many old marks and paper scraps on it.";
@@ -179,8 +175,8 @@
 /area/ruin/powered)
 "so" = (
 /obj/structure/flora/junglebush/c,
-/turf/open/floor/plating/grass/jungle,
-/area/ruin/powered)
+/turf/open/floor/plating/grass/jungle/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "sV" = (
 /obj/structure/chair/comfy/black,
 /turf/open/floor/carpet/red,
@@ -192,16 +188,16 @@
 /area/ruin/powered)
 "tc" = (
 /obj/structure/fence,
-/turf/open/floor/plating/grass/jungle,
-/area/ruin/powered)
+/turf/open/floor/plating/grass/jungle/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "uH" = (
 /obj/structure/flora/tree/jungle/small,
-/turf/open/floor/plating/grass/jungle,
-/area/template_noop)
+/turf/open/floor/plating/grass/jungle/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "vs" = (
 /obj/structure/flora/rock,
-/turf/open/floor/plating/grass/jungle,
-/area/template_noop)
+/turf/open/floor/plating/grass/jungle/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "wq" = (
 /obj/structure/table/wood,
 /obj/item/grenade/firecracker{
@@ -219,8 +215,8 @@
 /area/ruin/powered)
 "wz" = (
 /obj/structure/floodlight_frame,
-/turf/open/floor/plating/grass/jungle,
-/area/ruin/powered)
+/turf/open/floor/plating/grass/jungle/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "wK" = (
 /obj/structure/table/wood,
 /obj/item/book/manual/wiki/grenades{
@@ -241,8 +237,8 @@
 /area/ruin/powered)
 "xQ" = (
 /obj/structure/flora/junglebush/b,
-/turf/open/floor/plating/grass/jungle,
-/area/template_noop)
+/turf/open/floor/plating/grass/jungle/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "yu" = (
 /turf/closed/wall/mineral/wood,
 /area/ruin/powered)
@@ -266,7 +262,7 @@
 /turf/open/floor/wood,
 /area/ruin/powered)
 "Bo" = (
-/obj/machinery/light/broken,
+/obj/machinery/light/broken/directional/south,
 /turf/open/floor/wood,
 /area/ruin/powered)
 "Bz" = (
@@ -288,9 +284,12 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/powered)
-"Dy" = (
-/obj/structure/flora/junglebush/b,
-/turf/open/floor/plating/grass/jungle,
+"CR" = (
+/obj/structure/barricade/wooden/crude,
+/obj/machinery/door/airlock/wood{
+	dir = 8
+	},
+/turf/open/floor/wood,
 /area/ruin/powered)
 "DU" = (
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion{
@@ -301,15 +300,13 @@
 	},
 /area/ruin/powered)
 "FT" = (
-/obj/machinery/light/small,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/wood{
 	icon_state = "wood-broken2"
 	},
 /area/ruin/powered)
 "Gz" = (
-/obj/structure/mineral_door/wood{
-	name = "Teachers Office"
-	},
+/obj/machinery/door/airlock/wood,
 /turf/open/floor/wood,
 /area/ruin/powered)
 "GE" = (
@@ -328,12 +325,12 @@
 /obj/structure/fence/cut/large{
 	dir = 4
 	},
-/turf/open/floor/plating/grass/jungle,
-/area/ruin/powered)
+/turf/open/floor/plating/grass/jungle/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "It" = (
 /obj/structure/flora/junglebush,
-/turf/open/floor/plating/grass/jungle,
-/area/template_noop)
+/turf/open/floor/plating/grass/jungle/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "Jd" = (
 /obj/effect/mob_spawn/human/corpse/charredskeleton{
 	desc = "Many die in the pursuit of science. Even more die making homebrew explosives in a random shack on some frontier planet.";
@@ -343,22 +340,19 @@
 /area/ruin/powered)
 "Je" = (
 /obj/machinery/hydroponics/soil,
-/turf/open/floor/plating/grass/jungle,
-/area/ruin/powered)
+/turf/open/floor/plating/grass/jungle/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "Na" = (
 /obj/item/reagent_containers/food/snacks/grown/corn,
-/turf/open/floor/plating/grass/jungle,
-/area/ruin/powered)
+/turf/open/floor/plating/grass/jungle/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "Oe" = (
-/turf/open/floor/plating/grass/jungle,
-/area/template_noop)
-"Qb" = (
-/turf/open/floor/plating/grass/jungle,
-/area/ruin/powered)
+/turf/open/floor/plating/grass/jungle/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "Qj" = (
 /obj/item/grown/corncob,
-/turf/open/floor/plating/grass/jungle,
-/area/ruin/powered)
+/turf/open/floor/plating/grass/jungle/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "Rc" = (
 /obj/structure/chair/plastic{
 	dir = 8
@@ -371,7 +365,7 @@
 /mob/living/simple_animal/hostile/rat{
 	dir = 1
 	},
-/obj/machinery/light/small,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/wood,
 /area/ruin/powered)
 "SI" = (
@@ -389,8 +383,8 @@
 /area/ruin/powered)
 "Tb" = (
 /obj/structure/flora/junglebush/large,
-/turf/open/floor/plating/grass/jungle,
-/area/template_noop)
+/turf/open/floor/plating/grass/jungle/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "TB" = (
 /turf/open/floor/wood,
 /area/ruin/powered)
@@ -401,8 +395,10 @@
 	},
 /area/ruin/powered)
 "Ux" = (
-/obj/structure/mineral_door/wood,
 /obj/structure/barricade/wooden,
+/obj/machinery/door/airlock/wood{
+	dir = 8
+	},
 /turf/open/floor/wood,
 /area/ruin/powered)
 "Vq" = (
@@ -424,8 +420,8 @@
 /area/ruin/powered)
 "WO" = (
 /obj/item/seeds/corn/snapcorn,
-/turf/open/floor/plating/grass/jungle,
-/area/ruin/powered)
+/turf/open/floor/plating/grass/jungle/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "WW" = (
 /obj/structure/table/wood,
 /obj/item/clothing/mask/gas/welding,
@@ -439,9 +435,7 @@
 	},
 /area/ruin/powered)
 "XH" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/wood,
 /area/ruin/powered)
 "Ym" = (
@@ -472,18 +466,18 @@
 /area/ruin/powered)
 "ZH" = (
 /mob/living/simple_animal/hostile/cockroach/glockroach,
-/turf/open/floor/plating/grass/jungle,
-/area/ruin/powered)
+/turf/open/floor/plating/grass/jungle/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "ZL" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/reagent_containers/food/snacks/grown/corn,
-/turf/open/floor/plating/grass/jungle,
-/area/ruin/powered)
+/turf/open/floor/plating/grass/jungle/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "ZX" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/grown/corncob,
-/turf/open/floor/plating/grass/jungle,
-/area/ruin/powered)
+/turf/open/floor/plating/grass/jungle/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 
 (1,1,1) = {"
 Oe
@@ -612,7 +606,7 @@ yu
 yu
 yu
 Ux
-lW
+CR
 yu
 lN
 fu
@@ -625,10 +619,10 @@ It
 Oe
 ky
 so
-Qb
+Oe
 Qj
-Qb
-Qb
+Oe
+Oe
 gO
 yu
 yu
@@ -641,13 +635,13 @@ Oe
 (10,1,1) = {"
 Tb
 ky
-Qb
+Oe
 kn
-Qb
+Oe
 ZX
-Dy
+xQ
 kn
-Qb
+Oe
 yu
 wq
 SI
@@ -658,13 +652,13 @@ Oe
 (11,1,1) = {"
 Oe
 Hr
-Qb
+Oe
 Je
 WO
 Je
 wz
 ZL
-Qb
+Oe
 yu
 iS
 TB
@@ -675,11 +669,11 @@ xQ
 (12,1,1) = {"
 Oe
 ky
-Qb
+Oe
 ZL
 Na
 Je
-Qb
+Oe
 ZX
 so
 yu
@@ -698,7 +692,7 @@ ZH
 kn
 Qj
 ZL
-Qb
+Oe
 yu
 TB
 ri

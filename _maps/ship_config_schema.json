@@ -2,6 +2,7 @@
 	"$schema": "https://json-schema.org/draft-04/schema",
 	"title": "Ship Configuration Schema",
 	"description": "A ship configuration, used for defining new ship classes.",
+	"tags": "A list of tags, used for searching ships by quality.",
 	"type": "object",
 
 	"properties": {
@@ -21,6 +22,11 @@
 			"type": "string",
 			"description": "A description of the ship class, currently only shown to admins on the shuttle manipulator, but will likely be shown to players before ship purchase in the future."
 		},
+		"tags": {
+			"title": "Ship Tags",
+			"type": "array",
+			"description": "A list of tags describing the ship's niche, converted into searchable strings."
+		},
 		"prefix": {
 			"title": "Ship Default Prefix",
 			"type": [ "null", "string" ],
@@ -39,7 +45,6 @@
 					"PIRATES",
 					"BRITISH_NAVY",
 					"MERCANTILE",
-					"REVOLUTIONARY",
 					"SPACE",
 					"NATURAL",
 					"NATURAL_AGGRESSIVE",
@@ -50,7 +55,22 @@
 					"PILLS",
 					"ENGINEERING",
 					"CRUISE",
-					"MAGICAL"
+					"MAGICAL",
+					"STORYTELLING & TROPES",
+					"NANOTRASEN",
+					"INTEQ",
+					"GORLEX",
+					"SUNS",
+					"CYBERSUN",
+					"ACLF",
+					"GEC",
+					"DONK",
+					"COLONIAL MINUTEMEN",
+					"SAINT-ROUMAIN",
+					"INSTALLATION",
+					"SOLGOV",
+					"CMM-GOLD",
+					"CMM-BARD"
 				]
 			}
 		},
@@ -109,10 +129,38 @@
 			"maximum": 100,
 			"default": 2
 		},
+		"starting_funds":{
+			"title": "Ship Starting Funds",
+			"Type": "integer",
+			"description": "The amount of money a ship's bank account starts with",
+			"minimum": 0,
+			"maximum": 20000,
+			"default": 2000
+		},
+		"spawn_time_coeff": {
+			"title": "Required Spawn Playtime Coefficient",
+			"type": "number",
+			"description": "A multiplier used, along with the config value SHIP_SPAWN_BASE_EXP_MIN, to determine the amount of time a player must have spent as Living to spawn this ship from the join menu.",
+			"minimum": 0,
+			"default": 1
+		},
+		"officer_time_coeff": {
+			"title": "Required Officer Playtime Coefficient",
+			"type": "number",
+			"description": "A multiplier used, along with the config value OFFICER_JOIN_BASE_EXP_MIN, to determine the amount of time a player must have spent as Living to spawn as an officer job on this ship AFTER it has been spawned.",
+			"minimum": 0,
+			"default": 1
+		},
 		"enabled": {
 			"title": "Selectable",
 			"type": "boolean",
 			"description": "Whether or not this ship can be selected by players. Will still be admin-spawnable if not.",
+			"default": false
+		},
+		"space_spawn": {
+			"title": "Spawns in space",
+			"type": "boolean",
+			"description": "Whether this ship will spawn in space or at the outpost. If true, the ship will be placed randomly in space upon being spawned by the join menu.",
 			"default": false
 		}
 	},

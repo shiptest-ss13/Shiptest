@@ -33,7 +33,7 @@
 
 /obj/item/paper/fluff/awaymissions/academy/console_maint
 	name = "Console Maintenance"
-	info = "We're upgrading to the latest mainframes for our consoles, the shipment should be in before spring break is over!"
+	default_raw_text = "We're upgrading to the latest mainframes for our consoles, the shipment should be in before spring break is over!"
 
 /obj/item/paper/fluff/awaymissions/academy/class/automotive
 	name = "Automotive Repair 101"
@@ -46,19 +46,19 @@
 
 /obj/item/paper/fluff/awaymissions/academy/grade/aplus
 	name = "Summoning Midterm Exam"
-	info = "Grade: A+ Educator's Notes: Excellent form."
+	default_raw_text = "Grade: A+ Educator's Notes: Excellent form."
 
 /obj/item/paper/fluff/awaymissions/academy/grade/bminus
 	name = "Summoning Midterm Exam"
-	info = "Grade: B- Educator's Notes: Keep applying yourself, you're showing improvement."
+	default_raw_text = "Grade: B- Educator's Notes: Keep applying yourself, you're showing improvement."
 
 /obj/item/paper/fluff/awaymissions/academy/grade/dminus
 	name = "Summoning Midterm Exam"
-	info = "Grade: D- Educator's Notes: SEE ME AFTER CLASS."
+	default_raw_text = "Grade: D- Educator's Notes: SEE ME AFTER CLASS."
 
 /obj/item/paper/fluff/awaymissions/academy/grade/failure
 	name = "Pyromancy Evaluation"
-	info = "Current Grade: F. Educator's Notes: No improvement shown despite multiple private lessons.  Suggest additional tutelage."
+	default_raw_text = "Current Grade: F. Educator's Notes: No improvement shown despite multiple private lessons.  Suggest additional tutelage."
 
 
 /obj/singularity/academy
@@ -290,7 +290,7 @@
 			for(var/direction in GLOB.alldirs)
 				var/turf/dirturf = get_step(Start,direction)
 				if(rand(0,1))
-					new /obj/item/stack/spacecash/c1000(dirturf)
+					new /obj/item/spacecash/bundle/c1000(dirturf)
 				else
 					var/obj/item/storage/bag/money/M = new(dirturf)
 					for(var/i in 1 to rand(5,50))
@@ -345,9 +345,15 @@
 			user.physiology.burn_mod *= 0.5
 
 		if(20)
-			//Free wizard!
-			T.visible_message("<span class='userdanger'>Magic flows out of [src] and into [user]!</span>")
-			user.mind.make_Wizard()
+			//Free wizard! //NOT ANY MORE FUCKING CHRIST
+			T.visible_message("<span class='userdanger'>Magic arches out of [src] and into ground under [user]!</span>")
+			new /obj/item/clothing/suit/wizrobe(drop_location())
+			new /obj/item/clothing/head/wizard(drop_location())
+			new /obj/item/clothing/gloves/combat/wizard(drop_location())
+			new /obj/item/clothing/suit/wizrobe/magusblue(drop_location())
+			new /obj/item/clothing/head/wizard/magus(drop_location())
+			new /obj/item/staff(drop_location())
+			new /obj/structure/mirror/magic(drop_location())
 
 /datum/outfit/butler
 	name = "Butler"

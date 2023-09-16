@@ -30,7 +30,7 @@
 /obj/item/organ/zombie_infection/Remove(mob/living/carbon/M, special = 0)
 	. = ..()
 	STOP_PROCESSING(SSobj, src)
-	if(iszombie(M) && old_species && !special)
+	if(iszombie(M) && old_species && !QDELETED(M) && !special)
 		M.set_species(old_species)
 	if(timer_id)
 		deltimer(timer_id)
@@ -52,8 +52,6 @@
 		if (prob(10))
 			to_chat(owner, "<span class='danger'>You feel sick...</span>")
 	if(timer_id)
-		return
-	if(owner.suiciding)
 		return
 	if(owner.stat != DEAD && !converts_living)
 		return

@@ -1,7 +1,8 @@
 /obj/projectile/bullet
 	name = "bullet"
-	icon_state = "bullet"
+	icon_state = "gauss"
 	damage = 60
+	speed = 0.4
 	damage_type = BRUTE
 	nodamage = FALSE
 	flag = "bullet"

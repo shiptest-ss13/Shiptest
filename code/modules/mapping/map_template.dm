@@ -21,7 +21,7 @@
 	if(path)
 		mappath = path
 	if(mappath)
-		INVOKE_ASYNC(src, .proc/preload_size, mappath, cache)
+		preload_size(mappath, cache)
 	if(rename)
 		name = rename
 
@@ -69,7 +69,7 @@
 				atmos_machines += A
 
 	SSmapping.reg_in_areas_in_z(areas)
-	if(!SSatoms.initialized)
+	if(SSatoms.initialized == INITIALIZATION_INSSATOMS)
 		return
 
 	SSatoms.InitializeAtoms(areas + turfs + atoms, returns_created_atoms ? created_atoms : null)
@@ -98,6 +98,8 @@
 		affected_turf.blocks_air = initial(affected_turf.blocks_air)
 		affected_turf.air_update_turf(TRUE)
 		affected_turf.levelupdate()
+		// placing ruins in after planet generation was causing mis-smooths. maybe there's a better fix? not sure
+		QUEUE_SMOOTH(affected_turf)
 
 /datum/map_template/proc/load_new_z()
 	var/x = round((world.maxx - width) * 0.5) + 1
@@ -147,6 +149,7 @@
 	for(var/turf/turf_to_disable as anything in border)
 		turf_to_disable.blocks_air = TRUE
 		turf_to_disable.set_sleeping(TRUE)
+		turf_to_disable.air_update_turf(TRUE)
 
 	// Accept cached maps, but don't save them automatically - we don't want
 	// ruins clogging up memory for the whole round.

@@ -32,8 +32,7 @@
 /datum/map_zone/Destroy()
 	SSmapping.map_zones -= src
 	QDEL_NULL(weather_controller)
-	for(var/datum/virtual_level/vlevel as anything in virtual_levels)
-		qdel(vlevel)
+	QDEL_LIST(virtual_levels)
 	return ..()
 
 /// Clears all of what's inside the virtual levels managed by the mapzone.
@@ -83,6 +82,7 @@
 #define MAPPING_MARGIN 5
 
 /datum/virtual_level
+	/// An admin-facing name used to identify the virtual level. May be duplicate, or changed after instancing.
 	var/name = "Sub Map Zone"
 	var/relative_id
 	var/id
@@ -142,10 +142,19 @@
 	for(var/side in 1 to 4)
 		var/turf/beginning = locate(x_pos_beginning[side], y_pos_beginning[side], z_value)
 		var/turf/ending = locate(x_pos_ending[side], y_pos_ending[side], z_value)
-		var/list/turfblock = block(beginning, ending)
-		for(var/turf/Turf as anything in turfblock)
-			Turf.ChangeTurf(/turf/closed/indestructible/edge, flags = CHANGETURF_IGNORE_AIR)
-		CHECK_TICK
+		for(var/turf/Turf as anything in block(beginning, ending))
+			Turf.ChangeTurf(/turf/closed/indestructible/edge, flags = CHANGETURF_IGNORE_AIR|CHANGETURF_DEFER_BATCH)
+			CHECK_TICK
+
+	for(var/side in 1 to 4)
+		var/turf/beginning = locate(x_pos_beginning[side], y_pos_beginning[side], z_value)
+		var/turf/ending = locate(x_pos_ending[side], y_pos_ending[side], z_value)
+		for(var/turf/Turf as anything in block(beginning, ending))
+			QUEUE_SMOOTH(Turf)
+			QUEUE_SMOOTH_NEIGHBORS(Turf)
+			for(var/turf/open/space/adj in RANGE_TURFS(1, Turf))
+				adj.check_starlight(Turf)
+			CHECK_TICK
 
 /datum/virtual_level/proc/selfloop()
 	link_with(NORTH, src)
@@ -401,10 +410,17 @@
 	for(var/dir in crosslinked)
 		if(crosslinked[dir]) //Because it could be linking with itself
 			unlink(dir)
-	var/datum/space_level/level = SSmapping.z_list[z_value]
-	level.virtual_levels -= src
+	parent_level.virtual_levels -= src
+	parent_level = null
+	SSidlenpcpool.idle_mobs_by_virtual_level["[id]"] = null
 	SSmapping.virtual_z_translation -= "[id]"
 	parent_map_zone.remove_virtual_level(src)
+	if(up_linkage)
+		up_linkage.down_linkage = null
+		up_linkage = null
+	if(down_linkage)
+		down_linkage.up_linkage = null
+		down_linkage = null
 	return ..()
 
 /datum/virtual_level/proc/mark_turfs()
@@ -416,13 +432,43 @@
 	var/datum/dummy_space_reservation/safeguard = new(low_x, low_y, high_x, high_y, z_value)
 
 	var/area/space_area = GLOB.areas_by_type[/area/space]
-	for(var/turf/turf as anything in get_block())
-		//Reset turf
-		turf.empty(RESERVED_TURF_TYPE, RESERVED_TURF_TYPE, null, TRUE)
+
+	var/list/turf/block_turfs = get_block()
+
+	var/static/list/ignored_atoms = typecacheof(list(/mob/dead, /atom/movable/lighting_object))
+	for(var/turf/turf as anything in block_turfs)
+		// don't waste time trying to qdelete the lighting object
+		for(var/atom/movable/thing as anything in turf.contents)
+			//There's a dedicated macro for checking in a typecache, but it has unecessary checks
+			//And this needs to be fast
+			if(ignored_atoms[thing.type])
+				continue
+			qdel(thing)
+			// DO NOT CHECK_TICK HERE. IT CAN CAUSE ITEMS TO GET LEFT BEHIND
+			// THIS IS REALLY IMPORTANT FOR CONSISTENCY. SORRY ABOUT THE LAG SPIKE
+
+	for(var/turf/turf as anything in block_turfs)
+		// Reset turf
+		turf.empty(RESERVED_TURF_TYPE, RESERVED_TURF_TYPE, null, CHANGETURF_IGNORE_AIR|CHANGETURF_DEFER_CHANGE|CHANGETURF_DEFER_BATCH)
 		// Reset area
 		var/area/old_area = get_area(turf)
 		space_area.contents += turf
 		turf.change_area(old_area, space_area)
+		turf.virtual_z = 0
+		CHECK_TICK
+
+	for(var/turf/turf as anything in block_turfs)
+		turf.AfterChange(CHANGETURF_IGNORE_AIR)
+
+		// we don't need to smooth anything in the reserve, because it's empty, nor do we need to check its starlight.
+		// only the sides need to do that. this saved ~4-5% of reservation clear times in testing
+		if(turf.x != low_x && turf.x != high_x && turf.y != low_y && turf.y != high_y)
+			continue
+
+		QUEUE_SMOOTH(turf)
+		QUEUE_SMOOTH_NEIGHBORS(turf)
+		for(var/turf/open/space/adj in RANGE_TURFS(1, turf))
+			adj.check_starlight(turf)
 		CHECK_TICK
 
 	qdel(safeguard)
@@ -514,16 +560,10 @@
 	return get_alive_client_mobs() + get_dead_client_mobs()
 
 /datum/virtual_level/proc/get_alive_client_mobs()
-	. = list()
-	for(var/mob/Mob as anything in SSmobs.clients_by_zlevel[z_value])
-		if(is_in_bounds(Mob))
-			. += Mob
+	return LAZYACCESS(SSmobs.players_by_virtual_z, "[z_value]") || list()
 
 /datum/virtual_level/proc/get_dead_client_mobs()
-	. = list()
-	for(var/mob/Mob as anything in SSmobs.dead_players_by_zlevel[z_value])
-		if(is_in_bounds(Mob))
-			. += Mob
+	return LAZYACCESS(SSmobs.dead_players_by_virtual_z, "[z_value]") || list()
 
 /datum/virtual_level/proc/get_mind_mobs()
 	. = list()
@@ -564,6 +604,9 @@
 	icon_state = "black"
 	layer = SPACE_LAYER
 	plane = FLOOR_PLANE
+	rad_insulation = RAD_FULL_INSULATION
+	rad_fullblocker = TRUE
+
 	var/destination_z
 	var/destination_x
 	var/destination_y

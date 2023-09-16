@@ -2,21 +2,19 @@
 	icon = 'icons/obj/clothing/under/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/under/suits.dmi'
 	can_adjust = FALSE
-	fitted = FEMALE_UNIFORM_TOP //die die die die die
 
 /obj/item/clothing/under/suit/white_on_white
 	name = "white suit"
 	desc = "A white suit, suitable for an excellent host."
-	icon_state = "scratch"
-	item_state = "scratch"
+	icon_state = "white_suit"
+	item_state = "white_suit"
 
 /obj/item/clothing/under/suit/white/skirt
 	name = "white suitskirt"
 	desc = "A white suitskirt, suitable for an excellent host."
 	icon_state = "white_suit_skirt"
-	item_state = "scratch"
+	item_state = "white_suit_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
-	fitted = FEMALE_UNIFORM_TOP
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/under/suit/sl
@@ -44,17 +42,16 @@
 /obj/item/clothing/under/suit/black
 	name = "black suit"
 	desc = "A professional looking black suit. Ready for some serious law."
-	icon_state = "blacksuit"
-	item_state = "blacksuit"
-	can_adjust = TRUE
+	icon_state = "black_suit"
+	item_state = "black_suit"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/suit/black/skirt
 	name = "black suitskirt"
 	desc = "A professional black suitskirt. Nanotrasen Investigation Bureau approved!"
-	icon_state = "blacksuit_skirt"
-	item_state = "bar_suit"
+	icon_state = "black_suit_skirt"
+	item_state = "black_suit_skirt"
 	alt_covers_chest = TRUE
-	fitted = FEMALE_UNIFORM_TOP
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/under/suit/black_really
@@ -69,7 +66,6 @@
 	icon_state = "really_black_suit_skirt"
 	item_state = "really_black_suit_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
-	fitted = FEMALE_UNIFORM_TOP
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/under/suit/black/female
@@ -90,7 +86,7 @@
 	name = "red suit"
 	desc = "A red suit and blue tie. Somewhat formal."
 	icon_state = "red_suit"
-	item_state = "r_suit"
+	item_state = "red_suit"
 
 /obj/item/clothing/under/suit/charcoal
 	name = "charcoal suit"
@@ -161,5 +157,4 @@
 	icon_state = "nicole_skirt"
 	item_state = "nicole_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
-	fitted = FEMALE_UNIFORM_TOP
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON

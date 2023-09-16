@@ -101,6 +101,9 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 
 /obj/effect/hallucination/simple/Initialize(mapload, mob/living/carbon/T)
 	. = ..()
+	if(!T)
+		stack_trace("A hallucination was created with no target")
+		return INITIALIZE_HINT_QDEL
 	target = T
 	current_image = GetImage()
 	if(target.client)
@@ -123,7 +126,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 		if(target.client)
 			target.client.images |= current_image
 
-/obj/effect/hallucination/simple/update_icon(new_state,new_icon,new_px=0,new_py=0)
+/obj/effect/hallucination/simple/update_icon(updates=ALL, new_state,new_icon,new_px=0,new_py=0)
 	image_state = new_state
 	if(new_icon)
 		image_icon = new_icon
@@ -131,6 +134,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 		image_icon = initial(image_icon)
 	px = new_px
 	py = new_py
+	. = ..()
 	Show()
 
 /obj/effect/hallucination/simple/Moved(atom/OldLoc, Dir)
@@ -659,7 +663,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 		target.playsound_local(get_turf(airlock), 'sound/machines/boltsup.ogg',30,0,3)
 	qdel(src)
 
-/obj/effect/hallucination/fake_door_lock/CanAllowThrough(atom/movable/mover, turf/_target)
+/obj/effect/hallucination/fake_door_lock/CanAllowThrough(atom/movable/mover, border_dir)
 	. = ..()
 	if(mover == target && airlock.density)
 		return FALSE
@@ -805,9 +809,9 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	//Strange audio
 	switch(sound_type)
 		if("airlock")
-			target.playsound_local(source,'sound/machines/airlock.ogg', 30, 1)
+			target.playsound_local(source,'sound/machines/airlocks/standard/open.ogg', 30, 1)
 		if("airlock pry")
-			target.playsound_local(source,'sound/machines/airlock_alien_prying.ogg', 100, 1)
+			target.playsound_local(source,'sound/machines/creaking.ogg', 100, 1)
 			sleep(50)
 			target.playsound_local(source, 'sound/machines/airlockforced.ogg', 30, 1)
 		if("console")

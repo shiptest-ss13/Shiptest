@@ -13,7 +13,7 @@
 	desc = "It's watching you suspiciously."
 
 /obj/structure/closet/crate/necropolis/tendril/PopulateContents()
-	var/loot = rand(1,31)
+	var/loot = rand(1,29)
 	switch(loot)
 		if(1)
 			new /obj/item/shared_storage/red(src)
@@ -29,7 +29,7 @@
 			new /obj/item/reagent_containers/glass/bottle/potion/flight(src)
 		if(7)
 			new /obj/item/pickaxe/diamond(src)
-			new /obj/item/pinpointer/deepcore/advanced(src)
+			new /obj/item/t_scanner/adv_mining_scanner(src)
 		if(8)
 			if(prob(50))
 				new /obj/item/disk/design_disk/modkit_disc/resonator_blast(src)
@@ -42,7 +42,7 @@
 		if(11)
 			new /obj/item/ship_in_a_bottle(src)
 		if(12)
-			new /obj/item/clothing/suit/space/hardsuit/ert/paranormal/berserker(src)
+			new /obj/item/clothing/suit/space/hardsuit/berserker(src)
 		if(13)
 			new /obj/item/borg/upgrade/modkit/lifesteal(src)
 			new /obj/item/bedsheet/cult(src)
@@ -71,24 +71,18 @@
 		if(22)
 			new /obj/item/voodoo(src)
 		if(23)
-			new /obj/item/grenade/clusterbuster/inferno(src)
-		if(24)
-			new /obj/item/reagent_containers/food/drinks/bottle/holywater/hell(src)
-			new /obj/item/clothing/suit/space/hardsuit/ert/paranormal/inquisitor(src)
-		if(25)
 			new /obj/item/book/granter/spell/summonitem(src)
-		if(26)
+		if(24)
 			new /obj/item/clothing/gloves/gauntlets(src)
-		if(27)
-			new /obj/item/clothing/under/drip(src)
-			new /obj/item/clothing/shoes/drip(src)
-		if(28)
+		if(25)
+			new /obj/item/toy/plush/blahaj(src)
+		if(26)
 			new /obj/item/freeze_cube(src)
-		if(29)
+		if(27)
 			new /obj/item/gun/energy/spur(src)
-		if(30)
+		if(28)
 			new /obj/item/clothing/suit/armor/ascetic(src)
-		if(31)
+		if(29)
 			new /obj/item/kitchen/knife/envy(src)
 
 /obj/structure/closet/crate/necropolis/tendril/greater
@@ -96,7 +90,7 @@
 
 /obj/structure/closet/crate/necropolis/tendril/greater/PopulateContents()
 	for(var/i in 1 to 3)
-		var/loot = rand(1,31)
+		var/loot = rand(1,29)
 		switch(loot)
 			if(1)
 				new /obj/item/shared_storage/red(src)
@@ -112,7 +106,7 @@
 				new /obj/item/reagent_containers/glass/bottle/potion/flight(src)
 			if(7)
 				new /obj/item/pickaxe/diamond(src)
-				new /obj/item/pinpointer/deepcore/advanced(src)
+				new /obj/item/t_scanner/adv_mining_scanner(src)
 			if(8)
 				if(prob(50))
 					new /obj/item/disk/design_disk/modkit_disc/resonator_blast(src)
@@ -125,7 +119,7 @@
 			if(11)
 				new /obj/item/ship_in_a_bottle(src)
 			if(12)
-				new /obj/item/clothing/suit/space/hardsuit/ert/paranormal/berserker(src)
+				new /obj/item/clothing/suit/space/hardsuit/berserker(src)
 			if(13)
 				new /obj/item/borg/upgrade/modkit/lifesteal(src)
 				new /obj/item/bedsheet/cult(src)
@@ -154,24 +148,18 @@
 			if(22)
 				new /obj/item/voodoo(src)
 			if(23)
-				new /obj/item/grenade/clusterbuster/inferno(src)
-			if(24)
-				new /obj/item/reagent_containers/food/drinks/bottle/holywater/hell(src)
-				new /obj/item/clothing/suit/space/hardsuit/ert/paranormal/inquisitor(src)
-			if(25)
 				new /obj/item/book/granter/spell/summonitem(src)
-			if(26)
+			if(24)
 				new /obj/item/clothing/gloves/gauntlets(src)
-			if(27)
-				new /obj/item/clothing/under/drip(src)
-				new /obj/item/clothing/shoes/drip(src)
-			if(28)
+			if(25)
+				new /obj/item/toy/plush/blahaj(src)
+			if(26)
 				new /obj/item/freeze_cube(src)
-			if(29)
+			if(27)
 				new /obj/item/gun/energy/spur(src)
-			if(30)
+			if(28)
 				new /obj/item/clothing/suit/armor/ascetic(src)
-			if(31)
+			if(29)
 				new /obj/item/kitchen/knife/envy(src)
 
 //KA modkit design discs
@@ -237,57 +225,6 @@
 	build_path = /obj/item/borg/upgrade/modkit/bounty
 
 //Spooky special loot
-
-//drip
-/obj/item/clothing/under/drip
-	name = "incredibly fashionable outfit"
-	desc = "Why don't you go test some shi-"
-	icon = 'icons/obj/clothing/under/suits.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/under/suits.dmi'
-	mob_overlay_state = "drippy"
-	icon_state = "drippy"
-	item_state = "drippy"
-	armor = list("melee" = 10, "bullet" = 10, "laser" = 10,"energy" = 10, "bomb" = 10, "bio" = 10, "rad" = 10, "fire" = 100, "acid" = 100)
-	resistance_flags = FIRE_PROOF | ACID_PROOF | LAVA_PROOF//the unbreakable fashion
-	can_adjust = FALSE
-
-/obj/item/clothing/shoes/drip
-	name = "fashionable shoes"
-	desc = "Expensive-looking designer sneakers. Loud, ostentatious, agressively attractive. The elaborate design on the sole could probably give you some decent traction."
-	icon = 'icons/obj/clothing/shoes.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/feet.dmi'
-	mob_overlay_state = "dripshoes"
-	icon_state = "dripshoes"
-	item_state = "dripshoes"
-	clothing_flags = NOSLIP_ICE | NOSLIP
-	armor = list("melee" = 25, "bullet" = 25, "laser" = 25, "energy" = 25, "bomb" = 50, "bio" = 10, "rad" = 0, "fire" = 100, "acid" = 100)
-	resistance_flags = FIRE_PROOF | ACID_PROOF | LAVA_PROOF
-	strip_delay = 40
-	resistance_flags = NONE
-	permeability_coefficient = 0.05 //Thick soles, and covers the ankle
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
-	lace_time = 35 SECONDS//nike shoelace art joke
-	slowdown = -0.2
-
-/obj/item/clothing/under/drip/equipped(mob/user, slot)
-	. = ..()
-	if(slot == ITEM_SLOT_ICLOTHING)
-		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "drippy", /datum/mood_event/drippy)
-
-/obj/item/clothing/under/drip/dropped(mob/user)
-	. = ..()
-	SEND_SIGNAL(user, COMSIG_CLEAR_MOOD_EVENT, "drippy")
-
-/obj/item/clothing/shoes/drip/equipped(mob/user, slot)
-	. = ..()
-	if(slot == ITEM_SLOT_FEET)
-		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "dripjordan", /datum/mood_event/dripjordan)
-		SEND_SIGNAL(user, COMSIG_CLEAR_MOOD_EVENT, "nojordans")
-
-/obj/item/clothing/shoes/drip/dropped(mob/user)
-	. = ..()
-	SEND_SIGNAL(user, COMSIG_CLEAR_MOOD_EVENT, "dripjordan")
-	SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "nojordans", /datum/mood_event/nojordans)
 
 //Rod of Asclepius
 /obj/item/rod_of_asclepius
@@ -482,6 +419,12 @@
 	var/obj/item/warp_cube/linked
 	var/teleporting = FALSE
 
+/obj/item/warp_cube/Destroy()
+	if(!QDELETED(linked))
+		qdel(linked)
+	linked =  null
+	return ..()
+
 /obj/item/warp_cube/attack_self(mob/user)
 	var/turf/current_location = get_turf(user)
 	var/area/current_area = current_location.loc
@@ -551,7 +494,7 @@
 	item_flags = NEEDS_PERMIT
 	force = 15
 	sharpness = IS_SHARP
-	block_chance = 25//A pittance, but might be worth something in a scuffle
+	block_chance = 5//A pittance, but might be worth something in a scuffle
 	hitsound = 'sound/weapons/chainhit.ogg'
 
 /obj/item/gun/magic/hook/melee_attack_chain(mob/user, atom/target, params)
@@ -584,7 +527,7 @@
 
 /obj/projectile/hook/fire(setAngle)
 	if(firer)
-		chain = firer.Beam(src, icon_state = "chain")
+		chain = firer.Beam(src, icon_state = "chain", emissive = FALSE)
 	..()
 	//TODO: root the firer until the chain returns
 
@@ -787,13 +730,14 @@
 	name = "Flight Potion"
 	description = "Strange mutagenic compound of unknown origins."
 	reagent_state = LIQUID
+	process_flags = ORGANIC | SYNTHETIC
 	color = "#FFEBEB"
 
 /datum/reagent/flightpotion/expose_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
 	if(iscarbon(M) && M.stat != DEAD)
 		var/mob/living/carbon/C = M
 		var/holycheck = ishumanbasic(C)
-		if(reac_volume < 5 || !(holycheck || islizard(C) || (ismoth(C) && C.dna.features["moth_wings"] != "Burnt Off"))) // implying xenohumans are holy //as with all things,
+		if(reac_volume < 5 || !(holycheck || islizard(C) || isipc(C) || (ismoth(C) && C.dna.features["moth_wings"] != "Burnt Off"))) // implying xenohumans are holy //as with all things,
 			if(method == INGEST && show_message)
 				to_chat(C, "<span class='notice'><i>You feel nothing but a terrible aftertaste.</i></span>")
 			return ..()
@@ -998,13 +942,20 @@
 	recoil = 1
 	cell_type = /obj/item/stock_parts/cell/gun
 	ammo_type = list(/obj/item/ammo_casing/energy/spur)
+	supports_variations = VOX_VARIATION
 	var/chargesound
 
 /obj/item/gun/energy/spur/examine(mob/user)
 	. = ..()
 	. += "<span class='notice'>This weapon contains a gradual heat accelerator that increases shot power as the weapon's energy stores are depleted. Shots at low power are significantly stronger, but also have incredibly short range.</span>"
 
-/obj/item/gun/energy/spur/update_icon()
+/obj/item/gun/energy/spur/update_appearance()
+	if(!cell)
+		chargesound = null
+		recoil = 1
+		fire_sound = 'sound/weapons/spur_high.ogg'
+		return
+
 	var/maxcharge = cell.maxcharge
 	var/charge = cell.charge
 
@@ -1029,7 +980,8 @@
 
 	if(chargesound != oldsound)
 		playsound(src, chargesound, 100)
-		return
+		return ..()
+	return ..()
 
 /obj/item/ammo_casing/energy/spur
 	projectile_type = /obj/projectile/bullet/spur
@@ -1254,12 +1206,6 @@
 	"Both modes will build up existing bleed effects, doing a burst of high damage if the bleed is built up high enough.\n"+\
 	"Transforming it immediately after an attack causes the next attack to come out faster.</span>"
 
-/obj/item/melee/transforming/cleaving_saw/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is [active ? "closing [src] on [user.p_their()] neck" : "opening [src] into [user.p_their()] chest"]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	transform_cooldown = 0
-	transform_weapon(user, TRUE)
-	return BRUTELOSS
-
 /obj/item/melee/transforming/cleaving_saw/transform_weapon(mob/living/user, supress_message_text)
 	if(transform_cooldown > world.time)
 		return FALSE
@@ -1440,7 +1386,7 @@
 	switch(random)
 		if(1)
 			to_chat(user, "<span class='danger'>Your appearance morphs to that of a very small humanoid ash dragon! You get to look like a freak without the cool abilities.</span>")
-			H.dna.features = list("mcolor" = "A02720", "tail_lizard" = "Dark Tiger", "tail_human" = "None", "snout" = "Sharp", "horns" = "Curled", "ears" = "None", "wings" = "None", "frills" = "None", "spines" = "Long", "body_markings" = "Dark Tiger Body", "legs" = "Digitigrade Legs")
+			H.dna.features = list("mcolor" = "A02720", "tail_lizard" = "Dark Tiger", "tail_human" = "None", "face_markings" = "None", "horns" = "Curled", "ears" = "None", "wings" = "None", "frills" = "None", "spines" = "Long", "body_markings" = "Dark Tiger Body", "legs" = "Digitigrade Legs")
 			H.eye_color = "fee5a3"
 			H.set_species(/datum/species/lizard)
 		if(2)
@@ -1682,21 +1628,6 @@
 	. = ..()
 	. += "<span class='hierophant_warning'>The[beacon ? " beacon is not currently":"re is a beacon"] attached.</span>"
 
-/obj/item/hierophant_club/suicide_act(mob/living/user)
-	say("Xverwpsgexmrk...", forced = "hierophant club suicide")
-	user.visible_message("<span class='suicide'>[user] holds [src] into the air! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	new/obj/effect/temp_visual/hierophant/telegraph(get_turf(user))
-	playsound(user,'sound/machines/airlockopen.ogg', 75, TRUE)
-	user.visible_message("<span class='hierophant_warning'>[user] fades out, leaving [user.p_their()] belongings behind!</span>")
-	for(var/obj/item/I in user)
-		if(I != src)
-			user.dropItemToGround(I)
-	for(var/turf/T in RANGE_TURFS(1, user))
-		var/obj/effect/temp_visual/hierophant/blast/B = new(T, user, TRUE)
-		B.damage = 0
-	user.dropItemToGround(src) //Drop us last, so it goes on top of their stuff
-	qdel(user)
-
 /obj/item/hierophant_club/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
 	. = ..()
 	var/turf/T = get_turf(target)
@@ -1742,11 +1673,12 @@
 
 /obj/item/hierophant_club/update_icon_state()
 	icon_state = item_state = "hierophant_club[timer <= world.time ? "_ready":""][(beacon && !QDELETED(beacon)) ? "":"_beacon"]"
+	return ..()
 
 /obj/item/hierophant_club/proc/prepare_icon_update()
-	update_icon()
+	update_appearance()
 	sleep(timer - world.time)
-	update_icon()
+	update_appearance()
 
 /obj/item/hierophant_club/ui_action_click(mob/user, action)
 	if(istype(action, /datum/action/item_action/toggle_unfriendly_fire)) //toggle friendly fire...

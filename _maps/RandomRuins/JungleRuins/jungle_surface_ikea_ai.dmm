@@ -30,7 +30,9 @@
 /turf/open/floor/wood,
 /area/ruin/powered)
 "h" = (
-/obj/structure/mineral_door/wood,
+/obj/machinery/door/airlock/wood{
+	dir = 4
+	},
 /turf/open/floor/wood,
 /area/ruin/powered)
 "k" = (
@@ -127,7 +129,7 @@
 /turf/open/floor/wood,
 /area/ruin/powered)
 "L" = (
-/obj/item/bodypart/r_leg/robot,
+/obj/item/bodypart/leg/right/robot,
 /turf/open/floor/wood,
 /area/ruin/powered)
 "M" = (
@@ -143,7 +145,7 @@
 /area/ruin/powered)
 "Q" = (
 /obj/item/paper{
-	info = "Welcome to your Space Ikea Brand Full AI Kit! There are all the amenities needed to create a functional AI for your installation in this easy to use kit! Note: Warranty void if exposed to: High Humidity, High Temperatures, Grass, Mud, The Jungle. Thank you for shopping Space Ikea!"
+	default_raw_text = "Welcome to your Space Ikea Brand Full AI Kit! There are all the amenities needed to create a functional AI for your installation in this easy to use kit! Note: Warranty void if exposed to: High Humidity, High Temperatures, Grass, Mud, The Jungle. Thank you for shopping Space Ikea!"
 	},
 /turf/open/floor/wood,
 /area/ruin/powered)
@@ -170,7 +172,7 @@
 /turf/open/floor/wood,
 /area/ruin/powered)
 "Z" = (
-/obj/item/bodypart/l_leg/robot,
+/obj/item/bodypart/leg/left/robot,
 /turf/open/floor/wood,
 /area/ruin/powered)
 

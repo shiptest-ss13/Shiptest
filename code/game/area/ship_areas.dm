@@ -77,6 +77,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	lighting_colour_bulb = "#ffe1c1"
 	area_limited_icon_smoothing = TRUE
 	sound_environment = SOUND_ENVIRONMENT_ROOM
+	lightswitch = FALSE
 	/// The mobile port attached to this area
 	var/obj/docking_port/mobile/mobile_port
 
@@ -84,15 +85,36 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	mobile_port = null
 	. = ..()
 
-/area/ship/PlaceOnTopReact(list/new_baseturfs, turf/fake_turf_type, flags)
+//Returns how many shuttles are missing a skipovers on a given turf, this usually represents how many shuttles have hull breaches on this turf. This only works if this is the actual area of T when called.
+//TODO: optimize this somehow
+/area/ship/proc/get_missing_shuttles(turf/T)
+	var/i = 0
+	var/BT_index = length(T.baseturfs)
+	var/area/ship/A
+	var/obj/docking_port/mobile/S
+	var/list/shuttle_stack = list(mobile_port) //Indexing through a list helps prevent looped directed graph errors.
+	while(i++ < shuttle_stack.len)
+		S = shuttle_stack[i]
+		A = S.underlying_turf_area[T]
+		if(istype(A) && A.mobile_port)
+			shuttle_stack |= A.mobile_port //This ensures a shuttle is only iterated through once
+		.++
+	for(BT_index in 1 to length(T.baseturfs))
+		if(ispath(T.baseturfs[BT_index], /turf/baseturf_skipover/shuttle))
+			.--
+
+/area/ship/PlaceOnTopReact(turf/T, list/new_baseturfs, turf/fake_turf_type, flags)
 	. = ..()
-	if(length(new_baseturfs) > 1 || fake_turf_type)
-		return // More complicated larger changes indicate this isn't a player
-	if(ispath(new_baseturfs[1], /turf/open/floor/plating) && !(/turf/baseturf_skipover/shuttle in new_baseturfs))
-		new_baseturfs.Insert(1, /turf/baseturf_skipover/shuttle)
+	if(!length(new_baseturfs) || !ispath(new_baseturfs[1], /turf/baseturf_skipover/shuttle) && (!ispath(new_baseturfs[1], /turf/open/floor/plating) || length(new_baseturfs) > 1 || fake_turf_type))
+		return //Only add missing baseturfs if a shuttle is landing or player made plating is being added (player made is inferred to be a new_baseturf list of 1 and no fake_turf_type)
+	for(var/i in 1 to get_missing_shuttles(T)) //Keep track of shuttles with hull breaches on this turf
+		new_baseturfs.Insert(1,/turf/baseturf_skipover/shuttle)
 
 /area/ship/proc/link_to_shuttle(obj/docking_port/mobile/M)
 	mobile_port = M
+
+/area/ship/connect_to_shuttle(obj/docking_port/mobile/M)
+	link_to_shuttle(M)
 
 /area/ship/virtual_z()
 	if(mobile_port)
@@ -130,7 +152,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 
 /area/ship/crew/cryo
 	name = "Cryopod Room"
-	icon_state = "cryopod"
+	icon_state = "cryo"
 	lighting_colour_tube = "#e3ffff"
 	lighting_colour_bulb = "#d5ffff"
 
@@ -325,6 +347,20 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/ship/cargo/starboard
 	name = "Starboard Cargo Bay"
 
+/// Hangars ///
+
+/area/ship/hangar
+	name = "Hangar"
+	icon_state = "shuttlered"
+	sound_environment = SOUND_AREA_LARGE_ENCLOSED
+	ambientsounds = ENGINEERING
+
+/area/ship/hangar/port
+	name = "Port Hangar"
+
+/area/ship/hangar/starboard
+	name = "Starboard Hangar"
+
 /// Hallways ///
 /area/ship/hallway
 	name = "Hallway"
@@ -403,5 +439,8 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /// External Areas ///
 /area/ship/external
 	name = "External"
-	dynamic_lighting = DYNAMIC_LIGHTING_IFSTARLIGHT
 	icon_state = "space_near"
+	dynamic_lighting = DYNAMIC_LIGHTING_IFSTARLIGHT
+	ambientsounds = SPACE
+	sound_environment = SOUND_AREA_SPACE
+	lightswitch = TRUE

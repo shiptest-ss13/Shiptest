@@ -13,6 +13,7 @@
 	desc = "A high fidelity testing device which unlocks the secrets of the known universe using the two most powerful substances available to man: excessive amounts of electricity and capital."
 	icon = 'icons/obj/machines/bepis.dmi'
 	icon_state = "chamber"
+	base_icon_state = "chamber"
 	density = TRUE
 	layer = ABOVE_MOB_LAYER
 	use_power = IDLE_POWER_USE
@@ -50,7 +51,7 @@
 	if(!is_operational)
 		to_chat(user, "<span class='notice'>[src] can't accept money when it's not functioning.</span>")
 		return
-	if(istype(O, /obj/item/holochip) || istype(O, /obj/item/stack/spacecash))
+	if(istype(O, /obj/item/holochip) || istype(O, /obj/item/spacecash/bundle))
 		var/deposit_value = O.get_item_credit_value()
 		banked_cash += deposit_value
 		qdel(O)
@@ -116,7 +117,7 @@
 		say("Cannot withdraw more than stored funds. Aborting.")
 	else
 		banked_cash -= withdraw_value
-		new /obj/item/holochip(src.loc, withdraw_value)
+		new /obj/item/spacecash/bundle(src.loc, withdraw_value)
 		say("Withdrawing [withdraw_value] credits from the chamber.")
 	update_icon_state()
 	return
@@ -166,20 +167,21 @@
 
 /obj/machinery/rnd/bepis/update_icon_state()
 	if(panel_open == TRUE)
-		icon_state = "chamber_open"
-		return
+		icon_state = "[base_icon_state]_open"
+		return ..()
 	if((use_power == ACTIVE_POWER_USE) && (banked_cash > 0) && (is_operational))
-		icon_state = "chamber_active_loaded"
-		return
+		icon_state = "[base_icon_state]_active_loaded"
+		return ..()
 	if (((use_power == IDLE_POWER_USE) && (banked_cash > 0)) || (banked_cash > 0) && (!is_operational))
-		icon_state = "chamber_loaded"
-		return
+		icon_state = "[base_icon_state]_loaded"
+		return ..()
 	if(use_power == ACTIVE_POWER_USE && is_operational)
-		icon_state = "chamber_active"
-		return
+		icon_state = "[base_icon_state]_active"
+		return ..()
 	if(((use_power == IDLE_POWER_USE) && (banked_cash == 0)) || (!is_operational))
-		icon_state = "chamber"
-		return
+		icon_state = base_icon_state
+		return ..()
+	return ..()
 
 /obj/machinery/rnd/bepis/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)

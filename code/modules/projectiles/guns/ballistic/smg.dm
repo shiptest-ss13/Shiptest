@@ -42,7 +42,7 @@
 
 /obj/item/gun/ballistic/automatic/smg/c20r/Initialize()
 	. = ..()
-	update_icon()
+	update_appearance()
 
 /obj/item/gun/ballistic/automatic/smg/c20r/cobra
 	name = "\improper Cobra 20"
@@ -137,7 +137,7 @@
 /obj/item/gun/ballistic/automatic/smg/m90/Initialize()
 	. = ..()
 	underbarrel = new /obj/item/gun/ballistic/revolver/grenadelauncher(src)
-	update_icon()
+	update_appearance()
 
 /obj/item/gun/ballistic/automatic/smg/m90/unrestricted
 	pin = /obj/item/firing_pin
@@ -145,7 +145,7 @@
 /obj/item/gun/ballistic/automatic/smg/m90/unrestricted/Initialize()
 	. = ..()
 	underbarrel = new /obj/item/gun/ballistic/revolver/grenadelauncher/unrestricted(src)
-	update_icon()
+	update_appearance()
 
 /obj/item/gun/ballistic/automatic/smg/m90/afterattack(atom/target, mob/living/user, flag, params)
 	if(select == 2)
@@ -188,7 +188,7 @@
 			fire_delay = 0
 			to_chat(user, "<span class='notice'>You switch to semi-auto.</span>")
 	playsound(user, 'sound/weapons/empty.ogg', 100, TRUE)
-	update_icon()
+	update_appearance()
 	return
 
 /obj/item/gun/ballistic/automatic/smg/thompson
@@ -213,6 +213,19 @@
 	name = "\improper Chicago Typewriter"
 	desc = "A gun for good fellas. Chambered in .45."
 	mag_type = /obj/item/ammo_box/magazine/smgm45/drum
+
+/obj/item/gun/ballistic/automatic/smg/cm5
+	name = "\improper CM-5"
+	desc = "The standard issue SMG of the CMM. One of the few firearm designs that were left mostly intact from the designs found on the UNSV Lichtenstein. Chambered in 9mm."
+	icon_state = "cm5"
+	item_state = "cm5"
+	mag_type = /obj/item/ammo_box/magazine/smgm9mm
+	weapon_weight = WEAPON_LIGHT
+	fire_sound = 'sound/weapons/gun/smg/smg_light.ogg'
+
+/obj/item/gun/ballistic/automatic/smg/cm5/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/automatic_fire, 0.25 SECONDS)
 
 /obj/item/gun/ballistic/automatic/smg/aks74u
 	name = "\improper AKS-74U"
