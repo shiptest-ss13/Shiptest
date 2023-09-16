@@ -284,7 +284,8 @@ GLOBAL_LIST_EMPTY(species_list)
 			drifting = FALSE
 			user_loc = user.loc
 
-		if(!ignore_loc_change && (!drifting && user.loc != user_loc) || target.loc != target_loc)
+
+		if(!ignore_loc_change && ((!drifting && user.loc != user_loc) || target.loc != target_loc))
 			. = FALSE
 			break
 

@@ -127,13 +127,13 @@
 /// triggered on wield of two handed item
 /obj/item/gun/proc/on_wield(obj/item/source, mob/user)
 	wielded = TRUE
-	do_wield(user)
+	INVOKE_ASYNC(src, .proc.do_wield, user)
 
 /obj/item/gun/proc/do_wield(mob/user)
 	user.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/gun, multiplicative_slowdown = wield_slowdown)
 	wield_time = world.time + wield_delay
 	if(wield_time > 0)
-		if(do_mob(user, user, wield_delay, TRUE, TRUE, CALLBACK(src, .proc/is_wielded), ignore_loc_change = TRUE))
+		if(do_mob(user, user, wield_delay, FALSE, TRUE, CALLBACK(src, .proc/is_wielded), ignore_loc_change = TRUE))
 			wielded_fully = TRUE
 	else
 		wielded_fully = TRUE
