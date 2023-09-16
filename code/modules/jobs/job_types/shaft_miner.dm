@@ -1,7 +1,5 @@
 /datum/job/mining
 	name = "Shaft Miner"
-	total_positions = 3
-	spawn_positions = 3
 	wiki_page = "Shaft_Miner" //WS Edit - Wikilinks/Warning
 
 	outfit = /datum/outfit/job/miner
@@ -29,7 +27,6 @@
 	backpack_contents = list(
 		/obj/item/flashlight/seclite=1,\
 		/obj/item/kitchen/knife/combat/survival=1,\
-		/obj/item/mining_voucher=1,\
 		/obj/item/stack/marker_beacon/ten=1)
 
 	backpack = /obj/item/storage/backpack/explorer
@@ -54,7 +51,6 @@
 	backpack_contents = list(
 		/obj/item/flashlight/seclite=1,\
 		/obj/item/kitchen/knife/combat/survival=1,
-		/obj/item/mining_voucher=1,
 		/obj/item/mining_scanner=1,
 		/obj/item/stack/marker_beacon/ten=1)
 	belt = /obj/item/gun/energy/kinetic_accelerator
@@ -154,7 +150,6 @@
 	backpack_contents = list(
 		/obj/item/flashlight/seclite=1,
 		/obj/item/kitchen/knife/combat/survival=1,
-		/obj/item/mining_voucher=1,
 		/obj/item/mining_scanner=1,
 		/obj/item/wrench=1
 	)
@@ -163,7 +158,6 @@
 	backpack_contents = list(
 		/obj/item/flashlight/seclite=1,
 		/obj/item/kitchen/knife/combat/survival=1,
-		/obj/item/mining_voucher=1,
 		/obj/item/stack/marker_beacon/ten=1,
 		/obj/item/borg/upgrade/modkit/aoe=1
 	)

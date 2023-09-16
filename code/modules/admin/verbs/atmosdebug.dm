@@ -1,4 +1,4 @@
-#define ANNOTATE_OBJECT(object) testing ? "[get_area(object)] (estimated location: [json_encode(object.check_shuttle_offset())])" : ADMIN_VERBOSEJMP(object)
+#define ANNOTATE_OBJECT(object) testing ? "[object.loc.loc.name] (estimated location: [json_encode(object.get_relative_location())])" : ADMIN_VERBOSEJMP(object)
 
 /atom/proc/check_shuttle_offset()
 	if(!SSshuttle.initialized)
@@ -28,31 +28,27 @@
 	var/list/results = atmosscan()
 	to_chat(src, "[results.Join("\n")]", confidential = TRUE)
 
-/proc/atmosscan(testing = FALSE)
+/proc/atmosscan(testing = FALSE, critical_only = FALSE)
 	var/list/results = list()
+	var/static/list/blacklist = typecacheof(list(/obj/machinery/atmospherics/pipe/layer_manifold, /obj/machinery/atmospherics/pipe/heat_exchanging))
 
-	//Atmos Components
-	for(var/obj/machinery/atmospherics/components/component in GLOB.machines)
-		if(!testing && component.z && (!component.nodes || !component.nodes.len || (null in component.nodes)))
-			results += "Unconnected [component.name] located at [ANNOTATE_OBJECT(component)]"
-		for(var/obj/machinery/atmospherics/components/other_component in get_turf(component))
-			if(other_component != component && other_component.piping_layer == component.piping_layer && other_component.dir == component.dir)
-				results += "Doubled [component.name] located at [ANNOTATE_OBJECT(component)]"
-
-	//Manifolds
-	for(var/obj/machinery/atmospherics/pipe/manifold/manifold in SSair.atmos_machinery)
-		if(manifold.z && (!manifold.nodes || !manifold.nodes.len || (null in manifold.nodes)))
-			results += "Unconnected [manifold.name] located at [ANNOTATE_OBJECT(manifold)]"
-		for(var/obj/machinery/atmospherics/pipe/manifold/other_manifold in get_turf(manifold))
-			if(other_manifold != manifold && other_manifold.piping_layer == manifold.piping_layer && other_manifold.dir == manifold.dir)
-				results += "Doubled [manifold.name] located at [ANNOTATE_OBJECT(manifold)]"
-
-	//Pipes
-	for(var/obj/machinery/atmospherics/pipe/simple/pipe in SSair.atmos_machinery)
-		if(pipe.z && (!pipe.nodes || !pipe.nodes.len || (null in pipe.nodes)))
+	for(var/obj/machinery/atmospherics/pipe in SSair.atmos_machinery + SSair.atmos_air_machinery)
+		if(blacklist[pipe.type])
+			continue
+		if(pipe.z && (!length(pipe.nodes) || (null in pipe.nodes)) && !critical_only)
 			results += "Unconnected [pipe.name] located at [ANNOTATE_OBJECT(pipe)]"
-		for(var/obj/machinery/atmospherics/pipe/other_pipe in get_turf(pipe))
-			if(other_pipe != pipe && other_pipe.piping_layer == pipe.piping_layer && other_pipe.dir == pipe.dir)
+		for(var/obj/machinery/atmospherics/other_pipe in get_turf(pipe))
+			if(blacklist[other_pipe.type])
+				continue
+			if(other_pipe != pipe && other_pipe.piping_layer == pipe.piping_layer && (other_pipe.initialize_directions & pipe.initialize_directions))
+				results += "Doubled [pipe.name] located at [ANNOTATE_OBJECT(pipe)]"
+
+	//HE pipes are tested separately
+	for(var/obj/machinery/atmospherics/pipe/heat_exchanging/pipe in SSair.atmos_air_machinery)
+		if(pipe.z && (!length(pipe.nodes) || (null in pipe.nodes)) && !critical_only)
+			results += "Unconnected [pipe.name] located at [ANNOTATE_OBJECT(pipe)]"
+		for(var/obj/machinery/atmospherics/pipe/heat_exchanging/other_pipe in get_turf(pipe))
+			if(other_pipe != pipe && other_pipe.piping_layer == pipe.piping_layer && (other_pipe.initialize_directions & pipe.initialize_directions))
 				results += "Doubled [pipe.name] located at [ANNOTATE_OBJECT(pipe)]"
 
 	return results
@@ -71,15 +67,16 @@
 	var/list/results = list()
 
 	for (var/datum/powernet/PN in GLOB.powernets)
-		if (!PN.nodes || !PN.nodes.len)
-			if(PN.cables && (PN.cables.len > 1))
-				var/obj/structure/cable/C = PN.cables[1]
-				results += "Powernet with no nodes! (number [PN.number]) - example cable at [ANNOTATE_OBJECT(C)]"
+		if(!length(PN.cables))
+			continue
 
-		if (!PN.cables || (PN.cables.len < 10))
-			if(PN.cables && (PN.cables.len > 1))
-				var/obj/structure/cable/C = PN.cables[1]
-				results += "Powernet with fewer than 10 cables! (number [PN.number]) - example cable at [ANNOTATE_OBJECT(C)]"
+		if (!length(PN.nodes))
+			var/obj/structure/cable/C = PN.cables[1]
+			results += "Powernet with no nodes! (number [PN.number]) - example cable at [ANNOTATE_OBJECT(C)]"
+
+		if (!length(PN.cables) < 10)
+			var/obj/structure/cable/C = PN.cables[1]
+			results += "Powernet with fewer than 10 cables! (number [PN.number]) - example cable at [ANNOTATE_OBJECT(C)]"
 
 	var/checked_list = list()
 	for(var/obj/structure/cable/specific_cable as anything in GLOB.cable_list)
