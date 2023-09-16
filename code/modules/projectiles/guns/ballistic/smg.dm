@@ -106,10 +106,21 @@
 	desc = "A lightweight submachine gun, for when you really want someone dead. Uses 9mm rounds."
 	icon_state = "uzi"
 	mag_type = /obj/item/ammo_box/magazine/uzim9mm
-	burst_size = 2
 	bolt_type = BOLT_TYPE_OPEN
 	mag_display = TRUE
-	rack_sound = 'sound/weapons/gun/pistol/slide_lock.ogg'
+
+	fire_sound = 'sound/weapons/gun/smg/uzi.ogg'
+	rack_sound = 'sound/weapons/gun/smg/uzi_cocked.ogg'
+
+	load_sound = 'sound/weapons/gun/smg/uzi_reload.ogg'
+	load_empty_sound = 'sound/weapons/gun/smg/uzi_reload.ogg'
+	eject_sound = 'sound/weapons/gun/smg/uzi_unload.ogg'
+	eject_empty_sound = 'sound/weapons/gun/smg/uzi_unload.ogg'
+
+	spread = 4
+	spread_unwielded = 8
+	wield_slowdown = 0.15
+	wield_delay = 0.2 SECONDS
 
 /obj/item/gun/ballistic/automatic/smg/mini_uzi/ComponentInitialize()
 	. = ..()
@@ -124,6 +135,7 @@
 	bolt_type = BOLT_TYPE_LOCKING
 	mag_display = TRUE
 	weapon_weight = WEAPON_LIGHT
+	fire_sound = 'sound/weapons/gun/smg/vector_fire.ogg'
 
 /obj/item/gun/ballistic/automatic/smg/vector/ComponentInitialize()
 	. = ..()
@@ -202,7 +214,7 @@
 			burst_size = 1
 			fire_delay = 0
 			to_chat(user, "<span class='notice'>You switch to semi-auto.</span>")
-	playsound(user, 'sound/weapons/empty.ogg', 100, TRUE)
+	playsound(user, 'sound/weapons/gun/general/selector.ogg', 100, TRUE)
 	update_appearance()
 	return
 

@@ -145,7 +145,7 @@
 	attached_light.update_brightness()
 	to_chat(user, "<span class='notice'>You toggle the helmet light [attached_light.on ? "on":"off"].</span>")
 
-	playsound(user, 'sound/weapons/empty.ogg', 100, TRUE)
+	playsound(user, attached_light.on ? attached_light.toggle_on_sound : attached_light.toggle_off_sound, 100, TRUE)
 	update_helmlight()
 
 /obj/item/clothing/head/helmet/proc/update_helmlight()

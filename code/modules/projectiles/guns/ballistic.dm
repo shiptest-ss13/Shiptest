@@ -364,11 +364,6 @@
 			user.visible_message("<span class='notice'>[user] spins the [src] around their finger by the trigger. That’s pretty badass.</span>")
 			playsound(src, 'sound/items/handling/ammobox_pickup.ogg', 20, FALSE)
 			return
-	if(!internal_magazine && magazine)
-		if(!magazine.ammo_count())
-			to_chat(user, "<span class='danger'>You can't just eject the magazine like a videogame! Use your other hand to unload the [src]!</span>")
-			//eject_magazine(user)
-			return
 	if(bolt_type == BOLT_TYPE_NO_BOLT)
 		chambered = null
 		var/num_unloaded = 0

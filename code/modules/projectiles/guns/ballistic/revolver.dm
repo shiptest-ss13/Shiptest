@@ -25,22 +25,23 @@
 
 
 /obj/item/gun/ballistic/revolver/attack_hand(mob/user)
-	if(loc != user)
-		return ..()
-	chambered = null
-	var/num_unloaded = 0
-	for(var/obj/item/ammo_casing/CB in get_ammo_list(FALSE, TRUE))
-		CB.forceMove(drop_location())
-		CB.bounce_away(FALSE, NONE)
-		num_unloaded++
-		SSblackbox.record_feedback("tally", "station_mess_created", 1, CB.name)
-	if (num_unloaded)
-		to_chat(user, "<span class='notice'>You unload [num_unloaded] [cartridge_wording]\s from [src].</span>")
-		playsound(user, eject_sound, eject_sound_volume, eject_sound_vary)
-		update_appearance()
+	if(loc == user && user.is_holding(src))
+		chambered = null
+		var/num_unloaded = 0
+		for(var/obj/item/ammo_casing/CB in get_ammo_list(FALSE, TRUE))
+			CB.forceMove(drop_location())
+			CB.bounce_away(FALSE, NONE)
+			num_unloaded++
+			SSblackbox.record_feedback("tally", "station_mess_created", 1, CB.name)
+		if (num_unloaded)
+			to_chat(user, "<span class='notice'>You unload [num_unloaded] [cartridge_wording]\s from [src].</span>")
+			playsound(user, eject_sound, eject_sound_volume, eject_sound_vary)
+			update_appearance()
+			return
+		else
+			return ..()
 	else
-		to_chat(user, "<span class='warning'>[src] is empty!</span>")
-	return ..()
+		return ..()
 
 
 /obj/item/gun/ballistic/revolver/unique_action(mob/living/user)
@@ -125,6 +126,8 @@
 		"The Peacemaker" = "detective_peacemaker",
 		"Black Panther" = "detective_panther"
 		)
+
+	recoil = 0 //weaker than normal revovler, no recoil
 
 /obj/item/gun/ballistic/revolver/detective/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
 	if(magazine.caliber != initial(magazine.caliber))

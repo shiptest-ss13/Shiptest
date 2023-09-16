@@ -69,10 +69,10 @@
 	rack_sound = 'sound/weapons/gun/pistol/rack.ogg'
 	lock_back_sound = 'sound/weapons/gun/pistol/slide_lock.ogg'
 	bolt_drop_sound = 'sound/weapons/gun/pistol/slide_drop.ogg'
-	load_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
-	load_empty_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
-	eject_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
-	eject_empty_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
+	load_sound = 'sound/weapons/gun/pistol/deagle_reload.ogg'
+	load_empty_sound = 'sound/weapons/gun/pistol/deagle_reload.ogg'
+	eject_sound = 'sound/weapons/gun/pistol/deagle_unload.ogg'
+	eject_empty_sound = 'sound/weapons/gun/pistol/deagle_unload.ogg'
 	fire_delay = 0.7 SECONDS
 	recoil = 1
 	recoil_unwielded = 2

@@ -196,6 +196,7 @@
 	if (shot.select_name)
 		to_chat(user, "<span class='notice'>[src] is now set to [shot.select_name].</span>")
 	chambered = null
+	playsound(user, 'sound/weapons/gun/general/selector.ogg', 100, TRUE)
 	recharge_newshot(TRUE)
 	update_appearance()
 	return

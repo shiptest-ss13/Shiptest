@@ -621,7 +621,7 @@
 	gun_light.update_brightness()
 	to_chat(user, "<span class='notice'>You toggle the gunlight [gun_light.on ? "on":"off"].</span>")
 
-	playsound(user, 'sound/weapons/empty.ogg', 100, TRUE)
+	playsound(user, gun_light.on ? gun_light.toggle_on_sound : gun_light.toggle_off_sound, 40, TRUE)
 	update_gunlight()
 
 /obj/item/gun/proc/update_gunlight()
