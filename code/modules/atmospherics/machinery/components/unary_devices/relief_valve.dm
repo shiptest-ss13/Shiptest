@@ -48,9 +48,7 @@
 		var/pressure_delta = our_pressure - environment.return_pressure()
 		var/transfer_moles = pressure_delta*200/(air_contents.return_temperature() * R_IDEAL_GAS_EQUATION)
 		if(transfer_moles > 0)
-			var/datum/gas_mixture/removed = air_contents.remove(transfer_moles)
-
-			loc.assume_air(removed)
+			loc.transfer_air(air_contents, transfer_moles)
 			air_update_turf()
 
 			update_parents()

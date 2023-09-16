@@ -1,5 +1,5 @@
 /datum/reagent/blood
-	data = list("donor"=null,"viruses"=null,"blood_DNA"=null,"blood_type"=null,"resistances"=null,"trace_chem"=null,"mind"=null,"ckey"=null,"gender"=null,"real_name"=null,"cloneable"=null,"factions"=null,"quirks"=null)
+	data = list("viruses"=null,"blood_DNA"=null,"blood_type"=null,"resistances"=null,"trace_chem"=null,"mind"=null,"ckey"=null,"gender"=null,"real_name"=null,"cloneable"=null,"factions"=null,"quirks"=null)
 	name = "Blood"
 	color = COLOR_BLOOD
 	metabolization_rate = 5 //fast rate so it disappears fast.
@@ -118,6 +118,7 @@
 		src.data |= data.Copy()
 
 /datum/reagent/vaccine/fungal_tb
+	name = "Fungal TB Vaccine"
 
 /datum/reagent/vaccine/fungal_tb/New(data)
 	. = ..()
@@ -692,7 +693,7 @@
 	taste_description = "brai...nothing in particular"
 
 /datum/reagent/mutationtoxin/goofzombie
-	name = "Zombie Mutation Toxin"
+	name = "Krokodil Zombie Mutation Toxin"
 	description = "An undead toxin... kinda..."
 	color = "#5EFF3B" //RGB: 94, 255, 59
 	race = /datum/species/human/krokodil_addict //Not the infectious kind. The days of xenobio zombie outbreaks are long past.
@@ -1097,7 +1098,7 @@
 /datum/reagent/uranium/radium/dip_object(obj/item/I, mob/user, obj/item/reagent_containers/H)
 	return FALSE
 
-/datum/reagent/radium/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
+/datum/reagent/uranium/radium/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
 	. = ..()
 	if(chems.has_reagent(type, 1))
 		mytray.adjustHealth(-round(chems.get_reagent_amount(type) * 2.5))
@@ -2242,11 +2243,12 @@
 	return ..()
 
 /datum/reagent/pax/peaceborg
-	name = "synthpax"
+	name = "Synthpax"
 	description = "A colorless liquid that suppresses violence in its subjects. Cheaper to synthesize than normal Pax, but wears off faster."
 	metabolization_rate = 1.5 * REAGENTS_METABOLISM
 
 /datum/reagent/peaceborg
+	name = "Abstract Peaceborg Reagent"
 	can_synth = FALSE
 
 /datum/reagent/peaceborg/confuse

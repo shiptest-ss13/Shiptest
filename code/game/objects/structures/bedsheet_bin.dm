@@ -266,8 +266,8 @@ LINEN BINS
 	dying_key = DYE_REGISTRY_DOUBLE_BEDSHEET
 
 /obj/item/bedsheet/double/Initialize()
-	..()
-	desc += " This one is double."
+	. = ..()
+	desc += " This one is double-sized."
 
 /obj/item/bedsheet/double/blue
 	icon_state = "double_sheetblue"

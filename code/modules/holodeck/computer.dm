@@ -89,7 +89,6 @@ and clear when youre done! if you dont i will use :newspaper2: on you
 
 /obj/machinery/computer/holodeck/LateInitialize()//from here linked is populated and the program list is generated. its also set to load the offline program
 	linked = GLOB.areas_by_type[mapped_start_area]
-	bottom_left = locate(linked.x, linked.y, src.z)
 
 	var/area/computer_area = get_area(src)
 	if(istype(computer_area, /area/holodeck))
@@ -99,7 +98,7 @@ and clear when youre done! if you dont i will use :newspaper2: on you
 
 	// the following is necessary for power reasons
 	if(!linked)
-		log_world("No matching holodeck area found")
+		log_mapping("No matching holodeck area found")
 		qdel(src)
 		return
 	else if (!offline_program)
@@ -115,6 +114,7 @@ and clear when youre done! if you dont i will use :newspaper2: on you
 		else
 			linked.power_usage = list(AREA_USAGE_LEN)
 
+	bottom_left = locate(linked.x, linked.y, z)
 	COOLDOWN_START(src, holodeck_cooldown, HOLODECK_CD)
 	generate_program_list()
 	load_program(offline_program,TRUE)

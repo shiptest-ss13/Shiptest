@@ -96,3 +96,9 @@
 	baseturfs = /turf/open/floor/plating/grass/lava/purple
 	icon = 'icons/turf/floors/lava_grass_purple.dmi'
 	smooth_icon = 'icons/turf/floors/lava_grass_purple.dmi'
+
+/turf/open/floor/concrete/pavement/lava
+	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
+	light_range = 2
+	light_power = 0.6
+	light_color = LIGHT_COLOR_FIRE
