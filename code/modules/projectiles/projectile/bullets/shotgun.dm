@@ -68,6 +68,7 @@
 	///How much stamina damage is subtracted per tile?
 	var/tile_dropoff_stamina = 0.8
 
+	icon_state = "pellet"
 	armour_penetration = -35
 
 /obj/projectile/bullet/pellet/shotgun_buckshot
