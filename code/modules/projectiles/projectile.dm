@@ -14,8 +14,16 @@
 	//The sound this plays on impact.
 	var/hitsound = 'sound/weapons/pierce.ogg'
 	var/hitsound_non_living = ""
-	var/ricochet_sound = ""
+	var/hitsound_glass
+	var/hitsound_stone
+	var/hitsound_metal
+	var/hitsound_wood
+	var/hitsound_snow
+
 	var/near_miss_sound = ""
+	var/ricochet_sound = ""
+
+
 
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	var/def_zone = ""	//Aiming at
@@ -225,11 +233,6 @@
 	if(!isliving(target))
 		if(impact_effect_type && !hitscan)
 			new impact_effect_type(target_loca, hitx, hity)
-		if(hitsound_non_living)
-			var/volume = clamp(vol_by_damage() + 20, 0, 100)
-			if(suppressed)
-				volume = 5
-			playsound(loc, hitsound_non_living, volume, TRUE, -1)
 		return BULLET_ACT_HIT
 
 	var/mob/living/L = target
@@ -524,6 +527,16 @@
 			if(can_hit_target(M, M == original, TRUE))
 				Impact(M)
 				break
+		if(!near_miss_sound)
+			return FALSE
+		if(decayedRange <= range+2)
+			return FALSE
+		for(var/mob/misser in range(1,src))
+			if(!(misser.stat <= SOFT_CRIT))
+				continue
+			misser.playsound_local(get_turf(src), near_miss_sound, 100, FALSE)
+			misser.shake_animation(damage)
+
 
 /**
  * Projectile crossed: When something enters a projectile's tile, make sure the projectile hits it if it should be hitting it.

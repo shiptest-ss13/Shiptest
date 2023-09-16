@@ -17,7 +17,7 @@
 	wield_delay = 1 SECONDS
 	spread = 0
 	spread_unwielded = 13
-	recoil = 0.3
+	recoil = 0
 	recoil_unwielded = 4
 	wield_slowdown = 0.35
 

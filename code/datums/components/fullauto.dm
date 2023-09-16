@@ -243,9 +243,8 @@
 	if(!can_shoot())
 		shoot_with_empty_chamber(shooter)
 		return FALSE
-	var/obj/item/bodypart/other_hand = shooter.has_hand_for_held_index(shooter.get_inactive_hand_index())
-	if(weapon_weight == WEAPON_HEAVY && (shooter.get_inactive_held_item() || !other_hand))
-		to_chat(shooter, "<span class='warning'>You need two hands to fire [src]!</span>")
+	if(weapon_weight == WEAPON_HEAVY && (!wielded))
+		to_chat(shooter, "<span class='warning'>You need a more secure grip to fire [src]!</span>")
 		return FALSE
 	return TRUE
 

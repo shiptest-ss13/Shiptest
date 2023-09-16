@@ -76,6 +76,8 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 	///the holodeck can load onto this turf if TRUE
 	var/holodeck_compatible = FALSE
 
+	hitsound_volume = 90
+
 /turf/vv_edit_var(var_name, new_value)
 	var/static/list/banned_edits = list("x", "y", "z")
 	if(var_name in banned_edits)
@@ -666,3 +668,7 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 		. += "[/obj/effect/turf_decal]{\n\ticon = '[decal.pic.icon]';\n\ticon_state = \"[decal.pic.icon_state]\";\n\tdir = [decal.pic.dir];\n\tcolor = \"[decal.pic.color]\"\n\t}"
 		first = FALSE
 	return
+
+/turf/bullet_act(obj/projectile/hitting_projectile)
+	. = ..()
+	bullet_hit_sfx(hitting_projectile)
