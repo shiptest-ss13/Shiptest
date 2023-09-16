@@ -1,88 +1,65 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"ag" = (
-/obj/machinery/computer/crew/syndie{
-	dir = 4
-	},
-/obj/effect/turf_decal/techfloor{
-	dir = 8
+"ai" = (
+/obj/item/wallframe/airalarm{
+	pixel_y = -7
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"am" = (
-/obj/structure/window/reinforced/spawner,
-/obj/effect/spawner/structure/window/hollow/reinforced/middle{
-	dir = 4
-	},
 /turf/open/floor/plating{
+	icon_state = "panelscorched";
 	planetary_atmos = 1
 	},
 /area/hangar)
 "au" = (
 /turf/closed/mineral/random/snow,
 /area/hangar)
-"aH" = (
-/obj/structure/grille,
-/turf/open/floor/plating{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"aM" = (
-/obj/structure/table/wood/reinforced,
-/obj/item/modular_computer/laptop/preset/civilian{
-	pixel_x = -1;
-	pixel_y = 3
-	},
-/obj/item/newspaper{
-	pixel_x = 6;
-	pixel_y = 10
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/tech{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"aN" = (
-/obj/structure/chair/comfy/black{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/tech{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"aR" = (
-/obj/structure/filingcabinet/chestdrawer,
-/obj/effect/decal/cleanable/cobweb/cobweb2,
-/turf/open/floor/plasteel/tech{
-	planetary_atmos = 1
-	},
-/area/hangar)
 "ba" = (
-/obj/effect/turf_decal/industrial/warning,
-/obj/structure/fluff/hedge{
-	icon_state = "hedge-4"
-	},
-/turf/open/floor/plasteel/tech/grid{
+/obj/effect/turf_decal/trimline/opaque/yellow/filled/arrow_cw,
+/obj/machinery/light/floor/hangar,
+/turf/open/floor/plasteel/dark{
 	planetary_atmos = 1
 	},
 /area/hangar)
-"bV" = (
-/obj/structure/railing/corner{
-	dir = 1
+"bX" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/slab_1{
+	planetary_atmos = 1
 	},
-/obj/effect/turf_decal/techfloor/corner{
-	dir = 1
+/area/hangar)
+"ck" = (
+/obj/effect/turf_decal/trimline/opaque/yellow/filled/arrow_ccw,
+/obj/machinery/light/floor/hangar,
+/turf/open/floor/plasteel/dark{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"cn" = (
+/obj/machinery/light/directional/north,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/reinforced{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"cq" = (
+/obj/structure/closet/crate,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/glass,
+/obj/effect/decal/cleanable/wrapping,
+/turf/open/floor/plating{
+	icon_state = "platingdmg1";
+	planetary_atmos = 1
+	},
+/area/hangar)
+"cO" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 9
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/tech{
+/turf/open/floor/plasteel/dark{
 	planetary_atmos = 1
 	},
 /area/hangar)
-"ca" = (
-/obj/effect/turf_decal/industrial/warning/corner{
+"cY" = (
+/obj/effect/turf_decal/trimline/opaque/yellow/filled/arrow_cw{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -90,208 +67,188 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
-"cv" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/concrete/slab_1{
+"dn" = (
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark{
 	planetary_atmos = 1
 	},
 /area/hangar)
-"dp" = (
+"dw" = (
+/obj/merge_conflict_marker{
+	name = "---Merge Conflict Marker---",
+	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
+	},
+/obj/machinery/atmospherics/pipe/simple/general{
+	dir = 4
+	},
+/turf/open/floor/plasteel/stairs{
+	dir = 4
+	},
+/area/hangar)
+"dK" = (
+/obj/machinery/door/poddoor/shutters/indestructible/preopen,
+/obj/effect/turf_decal/techfloor/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech{
 	planetary_atmos = 1
 	},
 /area/hangar)
-"du" = (
+"dN" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/effect/decal/cleanable/dirt,
+/obj/merge_conflict_marker{
+	name = "---Merge Conflict Marker---",
+	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
+	},
+/obj/structure/catwalk/over/plated_catwalk,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/general,
 /turf/open/floor/plating{
 	planetary_atmos = 1
 	},
 /area/hangar)
-"dJ" = (
-/obj/machinery/door/airlock,
-/obj/effect/landmark/outpost/elevator_machine,
-/obj/structure/lattice/catwalk,
-/turf/open/floor/engine,
-/area/hangar)
-"dL" = (
-/obj/structure/railing/wood{
-	layer = 3.1
-	},
-/obj/structure/chair{
-	dir = 1
-	},
-/obj/machinery/light/directional/east,
-/turf/open/floor/wood/walnut{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"dU" = (
-/obj/effect/turf_decal/trimline/opaque/yellow/warning{
-	dir = 8
-	},
-/turf/open/floor/plasteel/tech/grid{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"dX" = (
-/obj/effect/turf_decal/industrial/warning{
+"ed" = (
+/obj/effect/turf_decal/industrial/warning/corner{
 	dir = 4
 	},
-/turf/open/floor/grass/snow/safe{
+/obj/structure/girder/reinforced,
+/turf/open/floor/plasteel/dark{
 	planetary_atmos = 1
 	},
 /area/hangar)
-"ed" = (
+"eg" = (
+/obj/structure/chair,
+/obj/structure/sign/poster/official/enlist{
+	pixel_x = 32
+	},
+/turf/open/floor/wood/walnut{
+	icon_state = "wood-broken4";
+	planetary_atmos = 1
+	},
+/area/hangar)
+"ep" = (
+/obj/effect/turf_decal/trimline/opaque/yellow/filled/warning{
+	dir = 9
+	},
+/turf/open/floor/plasteel/tech{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"eH" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/structure/sign/poster/contraband/energy_swords{
+	pixel_y = -32
+	},
+/obj/merge_conflict_marker{
+	name = "---Merge Conflict Marker---",
+	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
+	},
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/structure/sign/poster/contraband/energy_swords{
+	pixel_y = -32
+	},
+/obj/machinery/atmospherics/pipe/simple/general{
+	dir = 4
+	},
+/turf/open/floor/plating/rust{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"eP" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/concrete/slab_1{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"fy" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/merge_conflict_marker{
+	name = "---Merge Conflict Marker---",
+	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/general{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"fB" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"fI" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/warning,
 /turf/open/floor/plasteel/dark{
 	planetary_atmos = 1
 	},
 /area/hangar)
-"ee" = (
-/obj/structure/catwalk/over/plated_catwalk,
-/obj/effect/turf_decal/industrial/warning{
-	dir = 4
-	},
-/obj/effect/turf_decal/industrial/warning{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"ei" = (
-/obj/structure/flora/grass/both{
-	pixel_x = 23;
-	pixel_y = 6
-	},
-/turf/open/floor/grass/snow/safe{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"ek" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/concrete/slab_1{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"eK" = (
-/obj/structure/catwalk/over/plated_catwalk,
-/turf/open/floor/plating{
-	icon_state = "panelscorched";
-	planetary_atmos = 1
-	},
-/area/hangar)
-"eY" = (
-/obj/structure/girder/reinforced,
-/turf/open/floor/plasteel/dark{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"fb" = (
-/turf/open/floor/grass/snow/safe{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"fl" = (
-/obj/structure/chair{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/glass,
-/turf/open/floor/wood/walnut{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"fu" = (
-/obj/machinery/vending/cigarette,
-/obj/item/radio/intercom/directional/north{
-	pixel_y = 20
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/cobweb/cobweb2,
-/obj/item/toy/plush/hornet/gay{
-	pixel_y = 23;
-	pixel_x = 7
-	},
-/obj/item/reagent_containers/food/drinks/coffee{
-	pixel_x = 1;
-	pixel_y = 19;
-	layer = 3.1
-	},
-/turf/open/floor/wood/walnut{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"fH" = (
-/obj/structure/railing{
-	layer = 3.1
-	},
-/obj/effect/turf_decal/spline/fancy/opaque/black,
-/turf/open/floor/plasteel/tech{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"fL" = (
-/obj/effect/turf_decal/industrial/traffic{
-	dir = 8
-	},
-/obj/effect/turf_decal/box/corners{
+"gr" = (
+/obj/effect/turf_decal/trimline/opaque/yellow/filled/arrow_cw{
 	dir = 1
 	},
-/obj/structure/reagent_dispensers/watertank,
-/obj/item/radio/intercom/directional/north{
-	pixel_y = 20
-	},
-/turf/open/floor/plasteel/patterned/cargo_one{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"fP" = (
-/obj/effect/turf_decal/industrial/traffic/corner,
-/obj/effect/decal/cleanable/plastic,
+/obj/machinery/light/floor/hangar,
 /turf/open/floor/plasteel/dark{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"fV" = (
-/obj/structure/girder/reinforced,
-/obj/structure/grille/broken,
-/obj/machinery/light/directional/north,
-/turf/open/floor/plating{
-	icon_state = "panelscorched";
-	planetary_atmos = 1
-	},
-/area/hangar)
-"fX" = (
-/obj/effect/turf_decal/industrial/traffic{
-	dir = 4
-	},
-/obj/effect/turf_decal/box/corners{
-	dir = 4
-	},
-/turf/open/floor/plasteel/patterned/cargo_one{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"gm" = (
-/obj/structure/girder,
-/turf/open/floor/plating{
 	planetary_atmos = 1
 	},
 /area/hangar)
 "gu" = (
 /turf/template_noop,
 /area/template_noop)
-"gM" = (
-/obj/machinery/door/airlock/maintenance_hatch{
-	req_access_txt = "109"
+"gE" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
 	},
-/obj/structure/catwalk/over/plated_catwalk,
-/obj/structure/barricade/wooden/crude,
-/turf/open/floor/plating{
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/slab_1{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"gL" = (
+/obj/machinery/door/airlock/highsecurity,
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"gO" = (
+/obj/structure/railing{
+	dir = 8;
+	layer = 4.1
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"gV" = (
+/turf/open/floor/plasteel/tech{
 	planetary_atmos = 1
 	},
 /area/hangar)
@@ -307,279 +264,13 @@
 /obj/structure/grille/indestructable,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/hangar)
-"ho" = (
-/obj/effect/turf_decal/industrial/warning/corner{
-	dir = 4
-	},
-/obj/structure/girder/reinforced,
-/turf/open/floor/plasteel/dark{
+"hh" = (
+/obj/effect/landmark/outpost/elevator,
+/turf/open/floor/plasteel/elevatorshaft{
 	planetary_atmos = 1
 	},
 /area/hangar)
-"hJ" = (
-/obj/structure/railing/wood{
-	dir = 8
-	},
-/turf/open/floor/plasteel/stairs/wood,
-/area/hangar)
-"hP" = (
-/obj/machinery/computer/cargo/express,
-/obj/item/toy/plush/knight{
-	pixel_y = 25;
-	pixel_x = 9
-	},
-/turf/open/floor/plating/catwalk_floor{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"hX" = (
-/obj/structure/marker_beacon{
-	picked_color = "Teal"
-	},
-/turf/open/floor/plating{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"ie" = (
-/turf/closed/indestructible/reinforced,
-/area/hangar)
-"it" = (
-/turf/open/floor/plasteel/dark{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"iy" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 4
-	},
-/obj/structure/sign/poster/official/moth/meth{
-	pixel_x = 32
-	},
-/obj/machinery/light/directional/east,
-/turf/open/floor/concrete/slab_1{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"iZ" = (
-/obj/item/storage/cans/sixbeer{
-	pixel_x = 3;
-	pixel_y = 2
-	},
-/obj/effect/decal/cleanable/greenglow,
-/turf/open/floor/plasteel/tech{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"jh" = (
-/obj/effect/turf_decal/trimline/opaque/yellow/filled/warning{
-	dir = 9
-	},
-/turf/open/floor/plasteel/tech{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"jI" = (
-/obj/effect/turf_decal/techfloor,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"jS" = (
-/obj/structure/flora/rock/icy,
-/turf/open/water/beach/deep,
-/area/hangar)
-"kf" = (
-/obj/effect/turf_decal/trimline/opaque/yellow/filled/arrow_ccw,
-/turf/open/floor/plasteel/dark{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"kj" = (
-/obj/effect/spawner/structure/window/hollow/reinforced/middle{
-	dir = 4
-	},
-/turf/open/floor/plating{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"kH" = (
-/obj/structure/closet/crate/trashcart/laundry,
-/obj/effect/turf_decal/industrial/hatch/yellow,
-/obj/effect/decal/cleanable/oil,
-/turf/open/floor/plasteel/patterned/cargo_one{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"kT" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 8
-	},
-/obj/effect/turf_decal/techfloor{
-	dir = 4
-	},
-/turf/open/floor/plasteel/dark{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"kV" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 4
-	},
-/turf/open/floor/concrete/slab_1{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"kY" = (
-/obj/structure/chair,
-/obj/structure/sign/poster/official/enlist{
-	pixel_x = 32
-	},
-/turf/open/floor/wood/walnut{
-	icon_state = "wood-broken4";
-	planetary_atmos = 1
-	},
-/area/hangar)
-"lC" = (
-/obj/effect/turf_decal/arrows{
-	dir = 1
-	},
-/turf/open/floor/plasteel/tech{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"lH" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/trimline/opaque/yellow/filled/warning{
-	dir = 1
-	},
-/turf/open/floor/plasteel/tech{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"lN" = (
-/obj/effect/turf_decal/box/corners{
-	dir = 1
-	},
-/obj/structure/reagent_dispensers/fueltank,
-/turf/open/floor/plasteel/patterned/cargo_one{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"mL" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 1
-	},
-/turf/open/floor/plasteel/dark{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"nb" = (
-/obj/effect/turf_decal/trimline/opaque/yellow/filled/corner{
-	dir = 8
-	},
-/obj/machinery/light/floor/hangar,
-/turf/open/floor/plasteel/dark{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"no" = (
-/obj/structure/railing{
-	layer = 3.1
-	},
-/obj/effect/turf_decal/spline/fancy/opaque/black,
-/obj/machinery/power/floodlight,
-/turf/open/floor/plasteel/tech{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"ny" = (
-/obj/effect/turf_decal/trimline/opaque/yellow/filled/arrow_cw{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"nG" = (
-/obj/structure/catwalk/over/plated_catwalk,
-/obj/machinery/light/directional/east,
-/turf/open/floor/plating{
-	icon_state = "panelscorched";
-	planetary_atmos = 1
-	},
-/area/hangar)
-"nH" = (
-/obj/effect/turf_decal/industrial/warning/corner{
-	dir = 4
-	},
-/obj/effect/turf_decal/industrial/warning{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"nQ" = (
-/obj/machinery/door/poddoor/shutters/indestructible/preopen,
-/obj/effect/turf_decal/techfloor/corner{
-	dir = 4
-	},
-/obj/effect/turf_decal/techfloor{
-	dir = 1
-	},
-/turf/open/floor/plasteel/tech{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"nZ" = (
-/obj/structure/girder/displaced,
-/obj/structure/grille/broken,
-/obj/structure/catwalk/over/plated_catwalk,
-/turf/open/floor/plating{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"oa" = (
-/obj/structure/table/wood,
-/obj/item/reagent_containers/food/drinks/beer{
-	pixel_x = 5;
-	pixel_y = 6
-	},
-/obj/item/toy/cards/deck{
-	pixel_y = 2;
-	pixel_x = -5
-	},
-/turf/open/floor/wood/walnut{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"ol" = (
-/obj/structure/table/reinforced{
-	color = "#c1b6a5"
-	},
-/obj/effect/turf_decal/techfloor{
-	dir = 4
-	},
-/obj/item/storage/fancy/donut_box{
-	pixel_y = 6
-	},
-/obj/item/storage/fancy/cigarettes{
-	pixel_x = 10
-	},
-/turf/open/floor/plasteel/dark{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"ox" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/trimline/opaque/yellow/filled/arrow_cw,
-/obj/machinery/light/floor/hangar,
-/turf/open/floor/plasteel/dark{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"oJ" = (
+"hp" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/warning{
 	dir = 4
@@ -589,35 +280,38 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
-"oL" = (
-/obj/effect/turf_decal/industrial/traffic{
-	dir = 4
-	},
+"hs" = (
+/obj/structure/catwalk/over/plated_catwalk,
 /obj/effect/decal/cleanable/dirt,
+/obj/merge_conflict_marker{
+	name = "---Merge Conflict Marker---",
+	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
+	},
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/general{
+	dir = 6
+	},
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"hJ" = (
+/obj/structure/railing/wood{
+	dir = 8
+	},
+/turf/open/floor/plasteel/stairs/wood,
+/area/hangar)
+"ie" = (
+/turf/closed/indestructible/reinforced,
+/area/hangar)
+"iw" = (
+/obj/item/banner,
 /turf/open/floor/plasteel/dark{
 	planetary_atmos = 1
 	},
 /area/hangar)
-"oZ" = (
-/obj/structure/railing/corner/wood,
-/obj/effect/turf_decal/siding/wood{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/concrete/slab_1{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"pe" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"pq" = (
+"iM" = (
 /obj/structure/railing{
 	layer = 3.1
 	},
@@ -627,302 +321,245 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
-"pu" = (
-/obj/structure/catwalk/over/plated_catwalk,
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt,
+"iV" = (
+/obj/structure/grille,
 /turf/open/floor/plating{
 	planetary_atmos = 1
 	},
 /area/hangar)
-"pG" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 1
+"jy" = (
+/obj/structure/chair{
+	dir = 4
 	},
-/obj/structure/railing{
-	dir = 1
-	},
-/turf/open/floor/plasteel/tech{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"pY" = (
-/obj/effect/turf_decal/arrows,
-/turf/open/floor/plasteel/tech{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"qf" = (
-/obj/structure/table/reinforced{
-	color = "#c1b6a5"
-	},
-/obj/item/desk_flag{
-	pixel_x = -6;
-	pixel_y = 17
-	},
-/obj/item/megaphone/sec{
-	name = "syndicate megaphone";
-	pixel_x = 1;
-	pixel_y = 4
-	},
-/obj/item/camera_bug{
-	pixel_x = -5;
-	pixel_y = -3
-	},
-/obj/effect/turf_decal/techfloor{
-	dir = 5
-	},
-/obj/machinery/light/directional/east,
-/turf/open/floor/plasteel/dark{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"qm" = (
-/turf/open/floor/plasteel/elevatorshaft{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"qD" = (
-/obj/structure/table,
-/obj/item/reagent_containers/food/drinks/mug{
-	pixel_x = 9;
-	pixel_y = -2
-	},
-/obj/item/newspaper{
-	pixel_x = -5;
-	pixel_y = -1
-	},
-/obj/item/newspaper{
-	pixel_x = -5;
-	pixel_y = 2
-	},
-/obj/machinery/jukebox/boombox{
-	pixel_y = 5
-	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/walnut{
 	planetary_atmos = 1
 	},
 /area/hangar)
-"rl" = (
-/obj/effect/turf_decal/trimline/opaque/yellow/filled/arrow_cw,
+"jF" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/trimline/opaque/yellow/filled/warning{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"jR" = (
+/obj/machinery/atmospherics/components/unary/tank/air{
+	volume = 10000000
+	},
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/machinery/light/directional/north,
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"jS" = (
+/obj/structure/flora/rock/icy,
+/turf/open/water/beach/deep,
+/area/hangar)
+"jX" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/concrete/slab_1{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"ka" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/merge_conflict_marker{
+	name = "---Merge Conflict Marker---",
+	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
+	},
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/machinery/atmospherics/pipe/simple/general{
+	dir = 4
+	},
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"kk" = (
+/obj/effect/turf_decal/trimline/opaque/yellow/filled/arrow_cw{
+	dir = 1
+	},
+/obj/machinery/light/floor/hangar,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"kD" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/slab_1{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"kG" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/slab_1{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"kU" = (
+/obj/effect/spawner/lootdrop/maintenance,
+/obj/item/stack/sheet/mineral/wood{
+	pixel_x = -6
+	},
+/obj/item/stack/sheet/mineral/wood{
+	pixel_x = 10;
+	pixel_y = 7
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/merge_conflict_marker{
+	name = "---Merge Conflict Marker---",
+	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
+	},
+/obj/effect/spawner/lootdrop/maintenance,
+/obj/item/stack/sheet/mineral/wood{
+	pixel_x = -6
+	},
+/obj/item/stack/sheet/mineral/wood{
+	pixel_x = 10;
+	pixel_y = 7
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/general,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/hangar)
+"ll" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/machinery/light/directional/north,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/merge_conflict_marker{
+	name = "---Merge Conflict Marker---",
+	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
+	},
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/machinery/light/directional/north,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/general{
+	dir = 4
+	},
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"lN" = (
+/obj/effect/turf_decal/trimline/opaque/yellow/filled/arrow_cw{
+	dir = 8
+	},
 /obj/machinery/light/floor/hangar,
 /turf/open/floor/plasteel/dark{
 	planetary_atmos = 1
 	},
 /area/hangar)
-"rA" = (
-/obj/structure/frame/computer{
-	dir = 8
-	},
-/turf/open/floor/plating{
-	icon_state = "panelscorched";
-	planetary_atmos = 1
-	},
-/area/hangar)
-"rT" = (
-/obj/machinery/light/directional/north,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/patterned/cargo_one{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"rZ" = (
-/obj/structure/catwalk/over/plated_catwalk,
-/turf/open/floor/plating{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"sp" = (
-/obj/structure/barricade/wooden,
-/turf/open/floor/plating{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"sq" = (
-/obj/effect/decal/cleanable/oil,
-/turf/open/floor/plasteel/tech{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"ss" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/trimline/opaque/yellow/filled/arrow_cw,
-/turf/open/floor/plasteel/dark{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"sS" = (
-/obj/effect/turf_decal/industrial/traffic{
-	dir = 4
-	},
-/obj/effect/turf_decal/box/corners,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/patterned/cargo_one{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"tz" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 4
-	},
-/turf/open/floor/plasteel/tech/grid{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"tJ" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/trimline/opaque/yellow/filled/warning{
-	dir = 8
-	},
-/obj/effect/turf_decal/trimline/opaque/yellow/filled/corner{
-	dir = 8
-	},
-/turf/open/floor/plasteel/tech{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"tY" = (
-/obj/effect/landmark/outpost/hangar_dock,
-/turf/open/floor/plating{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"ui" = (
-/obj/machinery/light/directional/north,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/concrete/reinforced{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"uv" = (
-/obj/effect/turf_decal/trimline/opaque/yellow/filled/arrow_cw{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"vk" = (
-/obj/structure/rack,
-/obj/item/poster/random_official{
-	pixel_x = 2;
-	pixel_y = 9
-	},
-/obj/item/poster/random_official{
-	pixel_x = -2;
-	pixel_y = 4
-	},
-/obj/item/poster/random_contraband{
-	pixel_y = 8;
-	pixel_x = -1
-	},
-/obj/item/destTagger{
-	pixel_x = -2
-	},
-/obj/effect/decal/cleanable/cobweb,
-/obj/effect/turf_decal/industrial/warning,
-/turf/open/floor/plasteel/tech/grid{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"vE" = (
-/obj/structure/catwalk/over/plated_catwalk,
-/obj/item/mop{
-	pixel_y = -8;
-	pixel_x = -13
-	},
-/obj/item/clothing/head/soft/purple,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"vF" = (
-/obj/effect/turf_decal/industrial/warning,
-/obj/structure/fluff/hedge{
-	icon_state = "hedge-8"
-	},
-/obj/machinery/light/directional/north,
-/turf/open/floor/plasteel/tech/grid{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"vO" = (
-/obj/machinery/door/poddoor/multi_tile/four_tile_ver,
-/turf/closed/indestructible/reinforced,
-/area/hangar)
-"wk" = (
-/obj/structure/flora/rock/pile/icy,
-/turf/open/water/beach/deep,
-/area/hangar)
-"wm" = (
+"mb" = (
 /mob/living/simple_animal/hostile/cockroach,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech{
 	planetary_atmos = 1
 	},
 /area/hangar)
-"wq" = (
-/obj/structure/catwalk/over/plated_catwalk,
-/obj/structure/sign/poster/contraband/energy_swords{
-	pixel_y = -32
+"mo" = (
+/obj/structure/table/wood/reinforced,
+/obj/item/table_bell{
+	pixel_x = 9;
+	pixel_y = -1
 	},
-/turf/open/floor/plating/rust{
+/obj/item/cigbutt/cigarbutt{
+	pixel_x = -5;
+	pixel_y = 10
+	},
+/obj/item/dice/d2,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/tech{
 	planetary_atmos = 1
 	},
 /area/hangar)
-"wC" = (
-/obj/structure/catwalk/over/plated_catwalk,
-/obj/item/trash/can{
-	pixel_x = -8;
-	pixel_y = -6
-	},
-/obj/item/trash/candy,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"wM" = (
-/obj/item/kirbyplants{
-	icon_state = "plant-25";
-	pixel_x = 5
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/robot_debris{
-	pixel_x = 8
-	},
-/turf/open/floor/plasteel/tech/techmaint,
-/area/hangar)
-"xu" = (
+"mq" = (
 /turf/open/floor/plasteel/stairs{
-	dir = 4
-	},
-/area/hangar)
-"xM" = (
-/obj/effect/decal/cleanable/garbage{
-	pixel_y = -7;
-	pixel_x = 6
-	},
-/obj/effect/decal/cleanable/blood/old,
-/turf/open/floor/plating{
-	icon_state = "panelscorched";
+	dir = 8;
 	planetary_atmos = 1
 	},
 /area/hangar)
-"xX" = (
-/obj/effect/turf_decal/industrial/warning/corner{
-	dir = 1
+"mN" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/structure/mopbucket,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"ns" = (
+/obj/structure/railing/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/techfloor/corner{
+	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark{
 	planetary_atmos = 1
 	},
 /area/hangar)
-"yC" = (
+"nW" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/merge_conflict_marker{
+	name = "---Merge Conflict Marker---",
+	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
+	},
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/general{
+	dir = 4
+	},
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"os" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"oJ" = (
+/obj/item/kirbyplants{
+	icon_state = "plant-09"
+	},
+/turf/open/floor/plasteel/tech{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"oK" = (
 /obj/effect/turf_decal/box/corners{
 	dir = 4
 	},
@@ -933,148 +570,38 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
-"zA" = (
-/turf/open/floor/plating/ice/smooth,
-/area/hangar)
-"zP" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
-/obj/effect/turf_decal/industrial/stand_clear,
-/turf/open/floor/plasteel/dark{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"Ag" = (
-/obj/machinery/door/airlock/maintenance_hatch{
-	req_access_txt = "109"
-	},
-/turf/open/floor/concrete/reinforced{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"Ax" = (
-/obj/structure/flora/grass/both,
-/turf/open/floor/grass/snow/safe{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"Bk" = (
-/obj/item/trash/waffles{
-	pixel_y = -3
-	},
-/obj/item/trash/sosjerky{
-	pixel_x = -4
-	},
-/obj/item/trash/raisins,
-/obj/item/trash/pistachios{
-	pixel_x = 6
-	},
-/obj/structure/closet/crate/trashcart,
-/turf/open/floor/plating{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"Bl" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/patterned/cargo_one{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"Bo" = (
+"oU" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/arrow_cw{
-	dir = 1
-	},
-/obj/machinery/light/floor/hangar,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"BK" = (
-/obj/machinery/door/poddoor/shutters/indestructible/preopen,
-/obj/effect/turf_decal/techfloor{
-	dir = 1
-	},
-/turf/open/floor/plasteel/tech{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"Ca" = (
-/obj/structure/catwalk/over/plated_catwalk,
-/obj/structure/mopbucket,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"Ck" = (
-/turf/open/floor/concrete/reinforced{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"Cw" = (
-/obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
-/obj/item/chair{
-	pixel_x = -1;
-	pixel_y = -4
+/turf/open/floor/plasteel/dark{
+	planetary_atmos = 1
 	},
-/obj/item/chair{
-	pixel_x = -1
+/area/hangar)
+"pt" = (
+/obj/structure/table/reinforced,
+/obj/item/stamp{
+	pixel_x = -8;
+	pixel_y = 8
 	},
-/obj/item/chair{
-	pixel_x = -1;
+/obj/item/stamp/denied{
+	pixel_x = -8;
 	pixel_y = 3
 	},
-/obj/effect/turf_decal/box,
-/turf/open/floor/plasteel/tech{
+/obj/item/paper_bin{
+	pixel_x = 5;
+	pixel_y = 4
+	},
+/obj/item/pen{
+	pixel_y = 4;
+	pixel_x = 5
+	},
+/obj/machinery/light/directional/north,
+/turf/open/floor/plating/catwalk_floor{
 	planetary_atmos = 1
 	},
 /area/hangar)
-"Dj" = (
-/obj/effect/spawner/lootdrop/grille_or_trash,
-/obj/structure/catwalk/over/plated_catwalk,
-/turf/open/floor/plating{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"Dm" = (
-/obj/effect/turf_decal/techfloor,
-/obj/structure/railing{
-	dir = 2;
-	layer = 4.1
-	},
-/turf/open/floor/plasteel/dark{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"DK" = (
-/obj/machinery/computer/camera_advanced{
-	dir = 4
-	},
-/obj/effect/turf_decal/techfloor{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"DU" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 8
-	},
-/obj/effect/turf_decal/techfloor{
-	dir = 4
-	},
-/obj/machinery/light/directional/east,
-/turf/open/floor/plasteel/dark{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"DY" = (
+"pu" = (
 /obj/structure/table/wood/reinforced,
 /obj/item/flashlight/lamp/green{
 	pixel_y = 13;
@@ -1108,57 +635,72 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
-"Ej" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/dirt,
+"px" = (
+/obj/effect/turf_decal/industrial/loading,
 /turf/open/floor/plasteel/dark{
 	planetary_atmos = 1
 	},
 /area/hangar)
-"ES" = (
-/obj/structure/catwalk/over/plated_catwalk,
+"py" = (
 /obj/effect/turf_decal/industrial/warning{
-	dir = 4
-	},
-/obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1
 	},
-/obj/effect/decal/cleanable/dirt,
+/obj/merge_conflict_marker{
+	name = "---Merge Conflict Marker---",
+	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/general{
+	dir = 5
+	},
+/turf/open/floor/plasteel/dark{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"pF" = (
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"pG" = (
+/obj/structure/table/reinforced{
+	color = "#c1b6a5"
+	},
+/obj/item/desk_flag{
+	pixel_x = -6;
+	pixel_y = 17
+	},
+/obj/item/megaphone/sec{
+	name = "syndicate megaphone";
+	pixel_x = 1;
+	pixel_y = 4
+	},
+/obj/item/camera_bug{
+	pixel_x = -5;
+	pixel_y = -3
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 5
+	},
+/obj/machinery/light/directional/east,
+/turf/open/floor/plasteel/dark{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"pJ" = (
 /turf/open/floor/plating{
 	planetary_atmos = 1
 	},
 /area/hangar)
-"ET" = (
-/turf/open/floor/plasteel/stairs/wood,
-/area/hangar)
-"EZ" = (
-/turf/open/floor/plating{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"Fk" = (
-/obj/item/kirbyplants{
-	icon_state = "plant-09"
-	},
-/turf/open/floor/plasteel/tech{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"Fm" = (
-/obj/structure/railing/corner/wood{
-	dir = 8
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/concrete/slab_1{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"FA" = (
+"pQ" = (
 /obj/machinery/computer/communications{
 	dir = 4
 	},
@@ -1169,163 +711,21 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
-"FO" = (
-/obj/effect/turf_decal/trimline/opaque/yellow/filled/warning{
-	dir = 1
-	},
-/turf/open/floor/plasteel/tech{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"FQ" = (
-/obj/structure/table/reinforced{
-	color = "#c1b6a5"
-	},
-/obj/machinery/fax,
-/obj/effect/turf_decal/techfloor{
-	dir = 4
-	},
-/turf/open/floor/plasteel/dark{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"Ge" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/oil/streak,
-/turf/open/floor/plasteel/dark{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"Gr" = (
-/obj/structure/catwalk/over/plated_catwalk,
-/obj/item/wallframe/light_fixture{
-	pixel_y = -5;
-	pixel_x = 5
-	},
-/turf/open/floor/plating{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"Gx" = (
-/obj/effect/turf_decal/industrial/caution{
-	pixel_y = 4
-	},
-/turf/open/floor/plasteel/dark{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"Gy" = (
-/obj/structure/railing{
-	dir = 8;
-	layer = 4.1
-	},
-/obj/effect/turf_decal/techfloor{
-	dir = 8
-	},
-/turf/open/floor/plasteel/tech{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"Gz" = (
-/obj/effect/turf_decal/trimline/opaque/yellow/filled/arrow_cw{
-	dir = 1
-	},
-/obj/machinery/light/floor/hangar,
-/turf/open/floor/plasteel/dark{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"GA" = (
-/obj/structure/table_frame/wood,
-/obj/item/trash/boritos,
-/turf/open/floor/plating{
-	icon_state = "platingdmg1";
-	planetary_atmos = 1
-	},
-/area/hangar)
-"Hq" = (
-/obj/structure/catwalk/over/plated_catwalk,
-/obj/structure/easel,
-/turf/open/floor/plating{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"HN" = (
-/obj/effect/turf_decal/industrial/traffic{
-	dir = 4
-	},
-/turf/open/floor/plasteel/dark{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"HR" = (
-/obj/structure/railing/wood{
-	dir = 4
-	},
-/turf/open/floor/plasteel/stairs/wood,
-/area/hangar)
-"Ia" = (
-/obj/structure/closet/crate,
+"pT" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/glass,
-/obj/effect/decal/cleanable/wrapping,
-/turf/open/floor/plating{
-	icon_state = "platingdmg1";
-	planetary_atmos = 1
-	},
-/area/hangar)
-"Ic" = (
-/turf/open/floor/concrete/slab_1{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"Ii" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/trimline/opaque/yellow/filled/arrow_ccw,
-/obj/machinery/light/floor/hangar,
-/turf/open/floor/plasteel/dark{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"Iy" = (
-/obj/effect/turf_decal/industrial/traffic/corner{
-	dir = 4
-	},
-/turf/open/floor/plasteel/dark{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"II" = (
-/obj/effect/turf_decal/industrial/warning,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark{
 	planetary_atmos = 1
 	},
 /area/hangar)
-"IP" = (
-/obj/structure/chair/plastic{
-	dir = 4
-	},
-/obj/structure/sign/poster/official/random{
-	pixel_y = -32
-	},
-/obj/machinery/light/directional/south,
-/turf/open/floor/plating{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"IY" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 8
-	},
+"qc" = (
+/obj/effect/turf_decal/industrial/warning/corner,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/concrete/slab_1{
+/turf/open/floor/plasteel/dark{
 	planetary_atmos = 1
 	},
 /area/hangar)
-"Jz" = (
+"qg" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 9
 	},
@@ -1335,104 +735,60 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
-"JK" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 8
+"qh" = (
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/concrete/slab_1{
-	planetary_atmos = 1
+/obj/merge_conflict_marker{
+	name = "---Merge Conflict Marker---",
+	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
 	},
-/area/hangar)
-"Kl" = (
-/obj/effect/decal/cleanable/oil,
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/general{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark{
 	planetary_atmos = 1
 	},
 /area/hangar)
-"Ku" = (
-/obj/structure/chair{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/walnut{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"KL" = (
-/obj/structure/railing{
-	layer = 3.1
-	},
-/obj/structure/catwalk/over/plated_catwalk,
-/obj/effect/turf_decal/spline/fancy/opaque/black,
-/turf/open/floor/plating{
-	icon_state = "platingdmg3";
-	planetary_atmos = 1
-	},
-/area/hangar)
-"Ld" = (
-/obj/structure/catwalk/over/plated_catwalk,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"Lj" = (
-/obj/structure/girder/displaced,
-/obj/effect/turf_decal/techfloor{
-	dir = 1
-	},
-/obj/structure/railing{
-	dir = 1
-	},
-/turf/open/floor/plasteel/tech{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"Lp" = (
-/obj/item/wallframe/airalarm{
-	pixel_y = -7
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating{
-	icon_state = "panelscorched";
-	planetary_atmos = 1
-	},
-/area/hangar)
-"LE" = (
-/obj/structure/statue/snow/snowman{
-	pixel_y = 5
-	},
-/obj/effect/turf_decal/industrial/warning{
-	dir = 4
+"qH" = (
+/obj/structure/flora/grass/both{
+	pixel_x = 23;
+	pixel_y = 6
 	},
 /turf/open/floor/grass/snow/safe{
 	planetary_atmos = 1
 	},
 /area/hangar)
-"LN" = (
-/obj/effect/turf_decal/trimline/opaque/yellow/filled/corner{
+"rt" = (
+/obj/structure/table/wood/reinforced,
+/obj/item/modular_computer/laptop/preset/civilian{
+	pixel_x = -1;
+	pixel_y = 3
+	},
+/obj/item/newspaper{
+	pixel_x = 6;
+	pixel_y = 10
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/tech{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"rJ" = (
+/obj/effect/turf_decal/trimline/opaque/yellow/filled/arrow_cw{
 	dir = 1
 	},
-/obj/machinery/light/floor/hangar,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark{
 	planetary_atmos = 1
 	},
 /area/hangar)
-"Mu" = (
-/obj/structure/railing/wood{
-	layer = 3.1
-	},
-/obj/structure/fluff/hedge{
-	icon_state = "hedge-8"
-	},
-/turf/open/floor/wood/walnut{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"Mv" = (
+"rX" = (
 /obj/machinery/vending/coffee,
 /obj/structure/extinguisher_cabinet/directional/north,
 /obj/structure/sign/poster/official/nanotrasen_logo{
@@ -1443,60 +799,456 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
-"ML" = (
-/obj/structure/railing/wood{
-	layer = 3.1
+"sA" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 8
 	},
-/obj/structure/fluff/hedge{
-	icon_state = "hedge-4"
+/obj/machinery/computer/card/minor/cmo{
+	dir = 4
 	},
-/turf/open/floor/wood/walnut{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"MW" = (
-/obj/structure/barricade/wooden,
-/turf/open/floor/plating/catwalk_floor{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"NG" = (
-/obj/effect/turf_decal/industrial/loading,
 /turf/open/floor/plasteel/dark{
 	planetary_atmos = 1
 	},
 /area/hangar)
-"NS" = (
-/obj/structure/grille/indestructable,
-/obj/structure/window/plasma/reinforced/plastitanium,
+"sG" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"sP" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/structure/sign/poster/official/moth/meth{
+	pixel_x = 32
+	},
+/obj/machinery/light/directional/east,
+/turf/open/floor/concrete/slab_1{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"sY" = (
+/obj/effect/turf_decal/industrial/warning,
+/turf/open/floor/plasteel/dark{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"sZ" = (
+/obj/machinery/door/airlock/maintenance_hatch{
+	req_access_txt = "109"
+	},
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/structure/barricade/wooden/crude,
+/obj/merge_conflict_marker{
+	name = "---Merge Conflict Marker---",
+	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
+	},
+/obj/machinery/door/airlock/maintenance_hatch{
+	req_access_txt = "109"
+	},
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/structure/barricade/wooden/crude,
+/obj/machinery/atmospherics/pipe/simple/general,
 /turf/open/floor/plating{
 	planetary_atmos = 1
 	},
 /area/hangar)
-"NU" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"OE" = (
+"te" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech{
 	planetary_atmos = 1
 	},
 /area/hangar)
-"OR" = (
-/obj/structure/chair{
-	dir = 4
+"to" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 1
 	},
-/turf/open/floor/wood/walnut{
-	icon_state = "wood-broken7";
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech{
 	planetary_atmos = 1
 	},
 /area/hangar)
-"PH" = (
+"tq" = (
+/obj/machinery/elevator_call_button{
+	pixel_y = 31;
+	pixel_x = 10
+	},
+/obj/effect/landmark/outpost/elevator_machine,
+/turf/open/floor/wood/walnut{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"tx" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/oil/streak,
+/turf/open/floor/plasteel/dark{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"tF" = (
+/obj/effect/spawner/structure/window/hollow/reinforced/middle{
+	dir = 4
+	},
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"tH" = (
+/obj/machinery/computer/cargo/express,
+/obj/item/toy/plush/knight{
+	pixel_y = 25;
+	pixel_x = 9
+	},
+/turf/open/floor/plating/catwalk_floor{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"ug" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/effect/decal/cleanable/dirt,
+/obj/merge_conflict_marker{
+	name = "---Merge Conflict Marker---",
+	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
+	},
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/general{
+	dir = 4
+	},
+/turf/open/floor/plating{
+	icon_state = "platingdmg3";
+	planetary_atmos = 1
+	},
+/area/hangar)
+"vh" = (
+/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"vk" = (
+/obj/effect/turf_decal/industrial/warning,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"vn" = (
+/obj/machinery/door/poddoor/shutters/indestructible/preopen,
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"vq" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"vt" = (
+/obj/structure/railing/corner/wood,
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/slab_1{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"vz" = (
+/obj/effect/turf_decal/industrial/caution{
+	pixel_y = 4
+	},
+/turf/open/floor/plasteel/dark{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"vG" = (
+/obj/machinery/light/floor/hangar,
+/obj/effect/turf_decal/trimline/opaque/yellow/filled/warning{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"vJ" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/item/mop{
+	pixel_y = -8;
+	pixel_x = -13
+	},
+/obj/item/clothing/head/soft/purple,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"vO" = (
+/obj/machinery/door/poddoor/multi_tile/four_tile_ver,
+/turf/closed/indestructible/reinforced,
+/area/hangar)
+"wi" = (
+/obj/structure/barricade/wooden,
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"wk" = (
+/obj/structure/flora/rock/pile/icy,
+/turf/open/water/beach/deep,
+/area/hangar)
+"wm" = (
+/obj/structure/grille/indestructable,
+/obj/structure/window/plasma/reinforced/plastitanium,
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"wo" = (
+/obj/structure/rack,
+/obj/item/poster/random_official{
+	pixel_x = 2;
+	pixel_y = 9
+	},
+/obj/item/poster/random_official{
+	pixel_x = -2;
+	pixel_y = 4
+	},
+/obj/item/poster/random_contraband{
+	pixel_y = 8;
+	pixel_x = -1
+	},
+/obj/item/destTagger{
+	pixel_x = -2
+	},
+/obj/effect/decal/cleanable/cobweb,
+/obj/effect/turf_decal/industrial/warning,
+/turf/open/floor/plasteel/tech/grid{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"xi" = (
+/obj/structure/closet/crate/trashcart/laundry,
+/obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/effect/decal/cleanable/oil,
+/turf/open/floor/plasteel/patterned/cargo_one{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"xu" = (
+/turf/open/floor/plasteel/stairs{
+	dir = 4
+	},
+/area/hangar)
+"xF" = (
+/obj/structure/girder/displaced,
+/obj/structure/grille,
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"xN" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/turf/open/floor/grass/snow/safe{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"yd" = (
+/obj/structure/railing/wood{
+	layer = 3.1
+	},
+/obj/structure/fluff/hedge{
+	icon_state = "hedge-8"
+	},
+/turf/open/floor/wood/walnut{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"yO" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/trimline/opaque/yellow/filled/arrow_ccw,
+/turf/open/floor/plasteel/dark{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"yQ" = (
+/obj/structure/barricade/wooden,
+/turf/open/floor/plating/catwalk_floor{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"zc" = (
+/turf/open/floor/concrete/reinforced{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"zr" = (
+/obj/item/trash/waffles{
+	pixel_y = -3
+	},
+/obj/item/trash/sosjerky{
+	pixel_x = -4
+	},
+/obj/item/trash/raisins,
+/obj/item/trash/pistachios{
+	pixel_x = 6
+	},
+/obj/structure/closet/crate/trashcart,
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"zs" = (
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 8
+	},
+/obj/effect/turf_decal/box/corners{
+	dir = 8
+	},
+/turf/open/floor/plasteel/patterned/cargo_one{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"zy" = (
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"zA" = (
+/turf/open/floor/plating/ice/smooth,
+/area/hangar)
+"zK" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/turf_decal/industrial/stand_clear,
+/turf/open/floor/plasteel/dark{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"zM" = (
+/obj/effect/turf_decal/trimline/opaque/yellow/filled/warning{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"zN" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/item/trash/can{
+	pixel_x = -8;
+	pixel_y = -6
+	},
+/obj/item/trash/candy,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Ao" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/item/wallframe/light_fixture{
+	pixel_y = -5;
+	pixel_x = 5
+	},
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Ap" = (
+/obj/item/storage/cans/sixbeer{
+	pixel_x = 3;
+	pixel_y = 2
+	},
+/obj/effect/decal/cleanable/greenglow,
+/turf/open/floor/plasteel/tech{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Av" = (
+/obj/effect/turf_decal/arrows{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"AD" = (
+/obj/structure/statue/snow/snowman{
+	pixel_y = 5
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/turf/open/floor/grass/snow/safe{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"AG" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/merge_conflict_marker{
+	name = "---Merge Conflict Marker---",
+	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
+	},
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/general{
+	dir = 4
+	},
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Bx" = (
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"BB" = (
+/obj/structure/table/reinforced{
+	color = "#c1b6a5"
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/obj/item/storage/fancy/donut_box{
+	pixel_y = 6
+	},
+/obj/item/storage/fancy/cigarettes{
+	pixel_x = 10
+	},
+/turf/open/floor/plasteel/dark{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"BL" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/arrow_cw{
 	dir = 8
 	},
@@ -1508,24 +1260,8 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
-"PQ" = (
-/obj/machinery/light/floor/hangar,
-/obj/effect/turf_decal/trimline/opaque/yellow/filled/warning{
-	dir = 1
-	},
-/turf/open/floor/plasteel/dark{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"Qq" = (
-/obj/effect/turf_decal/industrial/warning/corner,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"Qt" = (
-/obj/effect/turf_decal/trimline/opaque/yellow/filled/arrow_cw{
+"BU" = (
+/obj/effect/turf_decal/trimline/opaque/yellow/filled/corner{
 	dir = 8
 	},
 /obj/machinery/light/floor/hangar,
@@ -1533,38 +1269,31 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
-"Qz" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 9
+"Cd" = (
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 8
 	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"QH" = (
-/obj/structure/chair{
+/obj/effect/turf_decal/box/corners{
 	dir = 1
 	},
-/obj/effect/decal/cleanable/blood/old,
-/turf/open/floor/wood/walnut{
-	planetary_atmos = 1
+/obj/structure/reagent_dispensers/watertank,
+/obj/item/radio/intercom/directional/north{
+	pixel_y = 20
 	},
-/area/hangar)
-"QR" = (
-/obj/structure/railing/corner,
-/obj/effect/turf_decal/techfloor/corner,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"QT" = (
 /turf/open/floor/plasteel/patterned/cargo_one{
 	planetary_atmos = 1
 	},
 /area/hangar)
-"Rp" = (
+"Cf" = (
+/obj/effect/turf_decal/industrial/warning,
+/obj/structure/fluff/hedge{
+	icon_state = "hedge-4"
+	},
+/turf/open/floor/plasteel/tech/grid{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Cn" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 10
 	},
@@ -1573,191 +1302,98 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
-"RK" = (
-/obj/effect/turf_decal/trimline/opaque/yellow/filled/arrow_cw{
-	dir = 1
+"CI" = (
+/obj/structure/table/reinforced{
+	color = "#c1b6a5"
 	},
-/turf/open/floor/plasteel/dark{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"RP" = (
-/obj/structure/railing/corner{
-	dir = 8
-	},
-/obj/effect/turf_decal/techfloor/corner{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"RW" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/oil,
-/turf/open/floor/plasteel/dark{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"Sj" = (
-/obj/effect/turf_decal/trimline/opaque/yellow/filled/warning{
-	dir = 5
-	},
-/turf/open/floor/plasteel/tech{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"Sq" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/trimline/opaque/yellow/filled/arrow_ccw,
-/turf/open/floor/plasteel/dark{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"SD" = (
-/obj/structure/catwalk/over/plated_catwalk,
-/obj/machinery/light/directional/north,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"Tg" = (
-/obj/effect/landmark/outpost/elevator,
-/turf/open/floor/plasteel/elevatorshaft{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"Tq" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 8
-	},
-/turf/open/floor/concrete/slab_1{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"Tz" = (
-/obj/structure/catwalk/over/plated_catwalk,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating{
-	icon_state = "platingdmg3";
-	planetary_atmos = 1
-	},
-/area/hangar)
-"TH" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/concrete/slab_1{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"TL" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 8
-	},
-/obj/machinery/computer/card/minor/cmo{
-	dir = 4
-	},
-/turf/open/floor/plasteel/dark{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"TQ" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 6
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/directional/east,
-/turf/open/floor/plasteel/dark{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"Ua" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"Uj" = (
-/obj/machinery/light/floor/hangar,
-/turf/open/floor/plasteel/tech{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"Up" = (
-/turf/open/floor/plasteel/stairs{
-	dir = 8;
-	planetary_atmos = 1
-	},
-/area/hangar)
-"UC" = (
-/obj/machinery/door/airlock/highsecurity,
+/obj/machinery/fax,
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
-/obj/effect/turf_decal/techfloor{
-	dir = 8
-	},
 /turf/open/floor/plasteel/dark{
 	planetary_atmos = 1
 	},
 /area/hangar)
-"UT" = (
-/obj/effect/turf_decal/trimline/opaque/yellow/filled/arrow_ccw,
-/obj/machinery/light/floor/hangar,
+"CS" = (
+/turf/open/floor/grass/snow/safe{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"De" = (
+/obj/effect/turf_decal/industrial/traffic/corner,
+/obj/effect/decal/cleanable/plastic,
 /turf/open/floor/plasteel/dark{
 	planetary_atmos = 1
 	},
 /area/hangar)
-"Vt" = (
-/obj/structure/girder/displaced,
-/obj/structure/grille,
-/turf/open/floor/plating{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"VF" = (
+"Dx" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/arrow_cw,
 /turf/open/floor/plasteel/dark{
 	planetary_atmos = 1
 	},
 /area/hangar)
-"Wd" = (
-/obj/structure/table/reinforced,
-/obj/item/stamp{
-	pixel_x = -8;
-	pixel_y = 8
-	},
-/obj/item/stamp/denied{
-	pixel_x = -8;
-	pixel_y = 3
-	},
-/obj/item/paper_bin{
-	pixel_x = 5;
-	pixel_y = 4
-	},
-/obj/item/pen{
-	pixel_y = 4;
-	pixel_x = 5
-	},
+"ET" = (
+/turf/open/floor/plasteel/stairs/wood,
+/area/hangar)
+"Fm" = (
+/obj/structure/girder/reinforced,
+/obj/structure/grille/broken,
 /obj/machinery/light/directional/north,
-/turf/open/floor/plating/catwalk_floor{
+/turf/open/floor/plating{
+	icon_state = "panelscorched";
 	planetary_atmos = 1
 	},
 /area/hangar)
-"We" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
+"Fv" = (
+/obj/effect/turf_decal/techfloor,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark{
 	planetary_atmos = 1
 	},
 /area/hangar)
-"Wu" = (
+"Fw" = (
+/obj/effect/turf_decal/trimline/opaque/yellow/filled/corner{
+	dir = 1
+	},
+/obj/machinery/light/floor/hangar,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"FC" = (
+/obj/machinery/door/airlock,
+/obj/effect/landmark/outpost/elevator_machine,
+/obj/structure/lattice/catwalk,
+/turf/open/floor/engine,
+/area/hangar)
+"GA" = (
+/obj/structure/railing/corner/wood{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/slab_1{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"He" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/drinks/beer{
+	pixel_x = 5;
+	pixel_y = 6
+	},
+/obj/item/toy/cards/deck{
+	pixel_y = 2;
+	pixel_x = -5
+	},
+/turf/open/floor/wood/walnut{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Hg" = (
 /obj/effect/turf_decal/box,
 /obj/structure/railing{
 	layer = 3.1
@@ -1768,119 +1404,136 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
-"WK" = (
-/obj/effect/spawner/lootdrop/maintenance,
-/obj/item/stack/sheet/mineral/wood{
-	pixel_x = -6
-	},
-/obj/item/stack/sheet/mineral/wood{
-	pixel_x = 10;
-	pixel_y = 7
-	},
+"Hk" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/tech/techmaint,
-/area/hangar)
-"WN" = (
-/obj/machinery/atmospherics/components/unary/tank/air{
-	volume = 10000000
+/obj/effect/turf_decal/trimline/opaque/yellow/filled/arrow_ccw,
+/obj/machinery/light/floor/hangar,
+/turf/open/floor/plasteel/dark{
+	planetary_atmos = 1
 	},
-/obj/structure/catwalk/over/plated_catwalk,
-/obj/effect/turf_decal/industrial/warning{
+/area/hangar)
+"Ho" = (
+/obj/structure/chair/plastic{
 	dir = 4
 	},
-/obj/machinery/light/directional/north,
+/obj/structure/sign/poster/official/random{
+	pixel_y = -32
+	},
+/obj/machinery/light/directional/south,
 /turf/open/floor/plating{
 	planetary_atmos = 1
 	},
 /area/hangar)
-"Xq" = (
-/turf/open/water/beach/deep,
-/area/hangar)
-"Xz" = (
+"HH" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/outpost/hangar_numbers,
+/obj/effect/decal/cleanable/oil,
+/turf/open/floor/plasteel/dark{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"HP" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/trimline/opaque/yellow/filled/arrow_cw,
+/obj/machinery/light/floor/hangar,
+/turf/open/floor/plasteel/dark{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"HR" = (
+/obj/structure/railing/wood{
+	dir = 4
+	},
+/turf/open/floor/plasteel/stairs/wood,
+/area/hangar)
+"HX" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/grid{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Ia" = (
+/obj/structure/chair{
+	dir = 4
+	},
+/turf/open/floor/wood/walnut{
+	icon_state = "wood-broken7";
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Iv" = (
+/obj/structure/girder,
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Iy" = (
+/obj/effect/turf_decal/trimline/opaque/yellow/filled/arrow_cw{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"IE" = (
+/obj/structure/filingcabinet/chestdrawer,
+/obj/effect/decal/cleanable/cobweb/cobweb2,
+/turf/open/floor/plasteel/tech{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Jk" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_1{
 	planetary_atmos = 1
 	},
 /area/hangar)
-"XA" = (
-/obj/effect/turf_decal/industrial/warning,
-/turf/open/floor/plasteel/dark{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"XG" = (
-/obj/effect/turf_decal/trimline/opaque/yellow/filled/arrow_cw{
-	dir = 8
-	},
+"Jp" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"YA" = (
-/obj/item/binoculars{
-	pixel_y = 6;
-	pixel_x = -3
-	},
-/obj/structure/rack,
-/obj/item/radio{
-	pixel_y = 6;
-	pixel_x = 9
-	},
-/obj/effect/turf_decal/techfloor/corner{
-	dir = 8
-	},
-/turf/open/floor/plasteel/tech{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"YK" = (
-/obj/effect/turf_decal/trimline/opaque/yellow/warning{
-	dir = 8
-	},
-/turf/open/floor/plasteel/tech{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"YS" = (
-/obj/structure/table/wood/reinforced,
-/obj/item/table_bell{
-	pixel_x = 9;
-	pixel_y = -1
-	},
-/obj/item/cigbutt/cigarbutt{
-	pixel_x = -5;
-	pixel_y = 10
-	},
-/obj/item/dice/d2,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/tech{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"Zf" = (
-/obj/effect/turf_decal/industrial/traffic{
-	dir = 8
-	},
-/obj/effect/turf_decal/box/corners{
-	dir = 8
-	},
 /turf/open/floor/plasteel/patterned/cargo_one{
 	planetary_atmos = 1
 	},
 /area/hangar)
-"Zv" = (
-/obj/machinery/elevator_call_button{
-	pixel_y = 31;
-	pixel_x = 10
+"JF" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/effect/decal/cleanable/dirt,
+/obj/merge_conflict_marker{
+	name = "---Merge Conflict Marker---",
+	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
 	},
-/obj/effect/landmark/outpost/elevator_machine,
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/general{
+	dir = 6
+	},
+/turf/open/floor/plating{
+	icon_state = "platingdmg3";
+	planetary_atmos = 1
+	},
+/area/hangar)
+"JI" = (
+/obj/machinery/vending/cigarette,
+/obj/item/radio/intercom/directional/north{
+	pixel_y = 20
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/item/toy/plush/hornet/gay{
+	pixel_y = 23;
+	pixel_x = 7
+	},
+/obj/item/reagent_containers/food/drinks/coffee{
+	pixel_x = 1;
+	pixel_y = 19;
+	layer = 3.1
+	},
 /turf/open/floor/wood/walnut{
 	planetary_atmos = 1
 	},
 /area/hangar)
-"ZE" = (
+"KG" = (
 /obj/structure/table/reinforced,
 /obj/item/stack/packageWrap{
 	pixel_y = 7
@@ -1900,15 +1553,614 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
-"ZH" = (
+"KY" = (
+/obj/effect/turf_decal/trimline/opaque/yellow/warning{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech/grid{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Lc" = (
+/obj/structure/railing/wood{
+	layer = 3.1
+	},
+/obj/structure/fluff/hedge{
+	icon_state = "hedge-4"
+	},
+/turf/open/floor/wood/walnut{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Lm" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Ly" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/merge_conflict_marker{
+	name = "---Merge Conflict Marker---",
+	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
+	},
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/machinery/atmospherics/pipe/simple/general,
+/turf/open/floor/plating{
+	icon_state = "panelscorched";
+	planetary_atmos = 1
+	},
+/area/hangar)
+"LI" = (
+/obj/structure/railing/wood{
+	layer = 3.1
+	},
+/obj/structure/chair{
+	dir = 1
+	},
+/obj/machinery/light/directional/east,
+/turf/open/floor/wood/walnut{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"LR" = (
+/obj/effect/decal/cleanable/oil,
+/turf/open/floor/plasteel/tech{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Mt" = (
+/turf/open/floor/plasteel/elevatorshaft{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"MV" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 6
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/directional/east,
+/turf/open/floor/plasteel/dark{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Nw" = (
+/obj/machinery/computer/camera_advanced{
+	dir = 4
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"NC" = (
+/obj/structure/table,
+/obj/item/reagent_containers/food/drinks/mug{
+	pixel_x = 9;
+	pixel_y = -2
+	},
+/obj/item/newspaper{
+	pixel_x = -5;
+	pixel_y = -1
+	},
+/obj/item/newspaper{
+	pixel_x = -5;
+	pixel_y = 2
+	},
+/obj/machinery/jukebox/boombox{
+	pixel_y = 5
+	},
+/turf/open/floor/wood/walnut{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"NK" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/merge_conflict_marker{
+	name = "---Merge Conflict Marker---",
+	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
+	},
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/general,
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"NW" = (
+/obj/item/binoculars{
+	pixel_y = 6;
+	pixel_x = -3
+	},
+/obj/structure/rack,
+/obj/item/radio{
+	pixel_y = 6;
+	pixel_x = 9
+	},
+/obj/effect/turf_decal/techfloor/corner{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"NX" = (
+/obj/structure/railing{
+	layer = 3.1
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/black,
+/turf/open/floor/plasteel/tech{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Oh" = (
+/obj/effect/landmark/outpost/hangar_dock,
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"ON" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"OS" = (
+/obj/item/kirbyplants{
+	icon_state = "plant-25";
+	pixel_x = 5
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/robot_debris{
+	pixel_x = 8
+	},
+/obj/merge_conflict_marker{
+	name = "---Merge Conflict Marker---",
+	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
+	},
+/obj/item/kirbyplants{
+	icon_state = "plant-25";
+	pixel_x = 5
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/robot_debris{
+	pixel_x = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/general{
+	dir = 9
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/hangar)
+"Pv" = (
+/obj/machinery/light/floor/hangar,
+/turf/open/floor/plasteel/tech{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"PF" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/item/chair{
+	pixel_x = -1;
+	pixel_y = -4
+	},
+/obj/item/chair{
+	pixel_x = -1
+	},
+/obj/item/chair{
+	pixel_x = -1;
+	pixel_y = 3
+	},
+/obj/effect/turf_decal/box,
+/turf/open/floor/plasteel/tech{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"QA" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/machinery/light/directional/east,
+/obj/merge_conflict_marker{
+	name = "---Merge Conflict Marker---",
+	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
+	},
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/machinery/light/directional/east,
+/obj/machinery/atmospherics/pipe/simple/general,
+/turf/open/floor/plating{
+	icon_state = "panelscorched";
+	planetary_atmos = 1
+	},
+/area/hangar)
+"QB" = (
+/obj/effect/turf_decal/industrial/warning,
+/obj/structure/fluff/hedge{
+	icon_state = "hedge-8"
+	},
+/obj/machinery/light/directional/north,
+/turf/open/floor/plasteel/tech/grid{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"QC" = (
+/turf/open/floor/plasteel/dark{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"QL" = (
+/obj/structure/table_frame/wood,
+/obj/item/trash/boritos,
+/turf/open/floor/plating{
+	icon_state = "platingdmg1";
+	planetary_atmos = 1
+	},
+/area/hangar)
+"QP" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/landmark/outpost/hangar_numbers,
+/turf/open/floor/concrete/slab_1{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"QR" = (
+/obj/machinery/light/directional/north,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/patterned/cargo_one{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"QX" = (
+/obj/effect/turf_decal/arrows,
+/turf/open/floor/plasteel/tech{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"RB" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/structure/easel,
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"RH" = (
+/obj/structure/girder/displaced,
+/obj/structure/grille/broken,
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"RI" = (
+/obj/structure/railing{
+	layer = 3.1
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/black,
+/obj/machinery/power/floodlight,
+/turf/open/floor/plasteel/tech{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"RN" = (
+/obj/structure/flora/grass/both,
+/turf/open/floor/grass/snow/safe{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Se" = (
+/obj/effect/turf_decal/trimline/opaque/yellow/warning{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Sj" = (
+/obj/structure/girder/displaced,
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Sl" = (
+/obj/effect/turf_decal/industrial/traffic/corner{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Tu" = (
+/turf/open/floor/concrete/slab_1{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Tw" = (
+/obj/machinery/computer/crew/syndie{
+	dir = 4
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"TT" = (
+/obj/structure/railing/corner,
+/obj/effect/turf_decal/techfloor/corner,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"TV" = (
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 4
+	},
+/obj/effect/turf_decal/box/corners,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/patterned/cargo_one{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Uc" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/trimline/opaque/yellow/filled/warning{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/yellow/filled/corner{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Ue" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/trimline/opaque/yellow/filled/arrow_cw,
+/turf/open/floor/plasteel/dark{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Uj" = (
+/obj/machinery/door/airlock/maintenance_hatch{
+	req_access_txt = "109"
+	},
+/turf/open/floor/concrete/reinforced{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"UA" = (
+/obj/effect/turf_decal/box/corners{
+	dir = 1
+	},
+/obj/structure/reagent_dispensers/fueltank,
+/turf/open/floor/plasteel/patterned/cargo_one{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"UL" = (
+/obj/effect/decal/cleanable/garbage{
+	pixel_y = -7;
+	pixel_x = 6
+	},
+/obj/effect/decal/cleanable/blood/old,
+/turf/open/floor/plating{
+	icon_state = "panelscorched";
+	planetary_atmos = 1
+	},
+/area/hangar)
+"UN" = (
+/obj/structure/chair{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/wood/walnut{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"UV" = (
+/obj/structure/girder/reinforced,
+/turf/open/floor/plasteel/dark{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"We" = (
+/turf/open/floor/plasteel/patterned/cargo_one{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Wi" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/merge_conflict_marker{
+	name = "---Merge Conflict Marker---",
+	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
+	},
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/general{
+	dir = 9
+	},
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Wo" = (
+/obj/effect/turf_decal/techfloor,
+/obj/structure/railing{
+	dir = 2;
+	layer = 4.1
+	},
+/turf/open/floor/plasteel/dark{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Xg" = (
+/obj/structure/chair{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/blood/old,
+/turf/open/floor/wood/walnut{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Xq" = (
+/turf/open/water/beach/deep,
+/area/hangar)
+"Xs" = (
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 4
+	},
+/obj/effect/turf_decal/box/corners{
+	dir = 4
+	},
+/turf/open/floor/plasteel/patterned/cargo_one{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"XH" = (
+/obj/structure/frame/computer{
+	dir = 8
+	},
+/turf/open/floor/plating{
+	icon_state = "panelscorched";
+	planetary_atmos = 1
+	},
+/area/hangar)
+"XN" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/walnut{
 	planetary_atmos = 1
 	},
 /area/hangar)
-"ZR" = (
-/obj/item/banner,
+"XP" = (
+/obj/structure/railing/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/techfloor/corner{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/tech{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"XX" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Yi" = (
+/obj/effect/decal/cleanable/oil,
+/turf/open/floor/plasteel/dark{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Yw" = (
+/obj/structure/railing{
+	layer = 3.1
+	},
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/effect/turf_decal/spline/fancy/opaque/black,
+/obj/merge_conflict_marker{
+	name = "---Merge Conflict Marker---",
+	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
+	},
+/obj/structure/railing{
+	layer = 3.1
+	},
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/effect/turf_decal/spline/fancy/opaque/black,
+/obj/machinery/atmospherics/pipe/simple/general,
+/turf/open/floor/plating{
+	icon_state = "platingdmg3";
+	planetary_atmos = 1
+	},
+/area/hangar)
+"YK" = (
+/obj/structure/window/reinforced/spawner,
+/obj/effect/spawner/structure/window/hollow/reinforced/middle{
+	dir = 4
+	},
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Zm" = (
+/obj/effect/turf_decal/trimline/opaque/yellow/filled/arrow_ccw,
+/turf/open/floor/plasteel/dark{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Zz" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/obj/machinery/light/directional/east,
+/turf/open/floor/plasteel/dark{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"ZQ" = (
+/obj/structure/chair/comfy/black{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/tech{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"ZR" = (
+/obj/structure/marker_beacon{
+	picked_color = "Teal"
+	},
+/turf/open/floor/plating{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"ZU" = (
+/obj/effect/turf_decal/trimline/opaque/yellow/filled/warning{
+	dir = 5
+	},
+/turf/open/floor/plasteel/tech{
 	planetary_atmos = 1
 	},
 /area/hangar)
@@ -1973,26 +2225,26 @@ ie
 ie
 ie
 ie
-dU
-YK
-YK
-YK
-YK
-YK
-YK
-YK
-YK
-YK
-YK
-YK
-YK
-YK
-YK
-YK
-YK
-YK
-YK
-dU
+KY
+Se
+Se
+Se
+Se
+Se
+Se
+Se
+Se
+Se
+Se
+Se
+Se
+Se
+Se
+Se
+Se
+Se
+Se
+KY
 ie
 ie
 gu
@@ -2016,28 +2268,28 @@ au
 au
 au
 ie
-ed
-tz
-dp
-lC
-Uj
-dp
-dp
-dp
-lC
-Uj
-dp
-dp
-Uj
-pY
-dp
-dp
-dp
-Uj
-pY
-dp
-tz
-PQ
+fI
+HX
+gV
+Av
+Pv
+gV
+gV
+gV
+Av
+Pv
+gV
+gV
+Pv
+QX
+gV
+gV
+gV
+Pv
+QX
+gV
+HX
+vG
 ie
 ie
 ie
@@ -2060,28 +2312,28 @@ au
 au
 au
 au
-kf
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-tY
-RK
+Zm
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+Oh
+Iy
 au
 au
 ie
@@ -2103,29 +2355,29 @@ au
 au
 au
 au
-it
-UT
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-RK
+QC
+ck
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+Iy
 au
 au
 au
@@ -2147,30 +2399,30 @@ au
 au
 au
 au
-it
-Sq
-hX
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-hX
-RK
-Ua
+QC
+yO
+ZR
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+ZR
+Iy
+ON
 au
 au
 ie
@@ -2191,30 +2443,30 @@ au
 au
 au
 au
-it
-Sq
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-uv
-NU
+QC
+yO
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+rJ
+pT
 au
 au
 ie
@@ -2233,32 +2485,32 @@ au
 au
 au
 wk
-Lj
+Sj
 au
-ho
-Sq
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-uv
-it
+ed
+yO
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+rJ
+QC
 au
 au
 ie
@@ -2277,32 +2529,32 @@ au
 au
 jS
 Xq
-pG
-no
-We
-Sq
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-Gz
-Ua
+to
+RI
+fB
+yO
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+gr
+ON
 ie
 au
 ie
@@ -2321,32 +2573,32 @@ au
 Xq
 Xq
 Xq
-pG
-fH
-We
-Sq
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-RK
-Ua
+to
+NX
+fB
+yO
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+Iy
+ON
 au
 au
 ie
@@ -2361,36 +2613,36 @@ gu
 ie
 au
 au
-vk
-Gy
-Gy
-Gy
-bV
-fH
-We
-Ii
-hX
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-hX
-RK
-Ua
+wo
+gO
+gO
+gO
+XP
+NX
+fB
+Hk
+ZR
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+ZR
+Iy
+ON
 au
 au
 ie
@@ -2405,36 +2657,36 @@ gu
 ie
 au
 au
-ba
-sq
-Tz
-nG
-eK
-KL
-We
-Sq
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-RK
-it
+Cf
+LR
+JF
+QA
+Ly
+Yw
+py
+yO
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+Iy
+QC
 au
 au
 ie
@@ -2449,36 +2701,36 @@ ie
 ie
 ie
 ie
-vF
-iZ
-Tz
+QB
+Ap
+ug
 ie
-Up
-pq
-pe
-Sq
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-RK
-it
+mq
+iM
+fy
+yO
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+Iy
+QC
 au
 au
 ie
@@ -2489,40 +2741,40 @@ gu
 gu
 gu
 ie
-qm
-qm
-qm
+Mt
+Mt
+Mt
 ie
-ZE
-wm
-wq
+KG
+mb
+eH
 ie
-nH
-Ge
-xX
-Sq
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-Gz
-it
+pF
+tx
+qh
+yO
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+gr
+QC
 au
 au
 ie
@@ -2533,40 +2785,40 @@ gu
 gu
 gu
 ie
-qm
-qm
-qm
+Mt
+Mt
+Mt
 ie
 ie
 xu
-xu
+dw
 he
-zP
-it
-Ua
-Sq
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-RK
-it
+zK
+QC
+ON
+yO
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+Iy
+QC
 ie
 au
 ie
@@ -2577,40 +2829,40 @@ gu
 gu
 gu
 ie
-Ld
-du
-Ld
-Ld
-gM
-WK
-wM
+hs
+NK
+dN
+dN
+sZ
+kU
+OS
 he
-zP
-it
-RW
-Sq
-hX
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-hX
-RK
-Ua
+zK
+QC
+HH
+yO
+ZR
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+ZR
+Iy
+ON
 au
 au
 au
@@ -2621,40 +2873,40 @@ ie
 gu
 gu
 ie
-SD
-Jz
-Cw
+ll
+qg
+PF
 ie
 ie
-fV
-rA
+Fm
+XH
 au
 au
 au
-Ua
-Ii
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-RK
-Ua
+ON
+Hk
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+Iy
+ON
 au
 au
 au
@@ -2665,7 +2917,7 @@ ie
 gu
 gu
 ie
-du
+AG
 ie
 ie
 ie
@@ -2675,31 +2927,31 @@ au
 au
 au
 au
-NU
-Sq
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-RK
-Ua
-gm
+pT
+yO
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+Iy
+ON
+Iv
 au
 au
 au
@@ -2709,7 +2961,7 @@ ie
 gu
 ie
 ie
-rZ
+ka
 ie
 au
 au
@@ -2719,31 +2971,31 @@ au
 au
 au
 ie
-Ua
-Sq
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-RK
-it
-aH
+ON
+yO
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+Iy
+QC
+iV
 au
 au
 au
@@ -2753,7 +3005,7 @@ ie
 ie
 ie
 au
-pu
+nW
 ie
 au
 zA
@@ -2763,76 +3015,76 @@ au
 au
 au
 ie
-it
-Sq
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-Gz
-Ua
-rZ
-Bk
+QC
+yO
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+gr
+ON
+vq
+zr
 au
 au
 ie
 "}
 (21,1,1) = {"
 ie
-WN
-ee
-ES
-Ag
-Ck
-fb
+jR
+Lm
+Wi
+Uj
+zc
+CS
 zA
 au
 au
 au
 au
 ie
-it
-Sq
-hX
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-hX
-RK
-Ua
-Ca
-Lp
+QC
+yO
+ZR
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+ZR
+Iy
+ON
+mN
+ai
 au
 au
 ie
@@ -2843,40 +3095,40 @@ au
 au
 au
 ie
-ui
-fb
-Ax
-ei
+cn
+CS
+RN
+qH
 au
 au
 au
 au
-it
-Sq
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-RK
-Ua
-vE
-xM
+QC
+yO
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+Iy
+ON
+vJ
+UL
 au
 au
 ie
@@ -2888,39 +3140,39 @@ ie
 ie
 ie
 au
-LE
-dX
-dX
-dX
+AD
+xN
+xN
+xN
 au
 au
 au
-it
-Ii
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-RK
-NU
-wC
-IP
+QC
+Hk
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+Iy
+pT
+zN
+Ho
 ie
 au
 ie
@@ -2932,39 +3184,39 @@ gu
 gu
 ie
 ie
-kj
-kj
-kj
-kj
-am
+tF
+tF
+tF
+tF
+YK
 au
 au
-it
-Sq
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-uv
-Ua
-Gr
-GA
+QC
+yO
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+rJ
+ON
+Ao
+QL
 au
 au
 ie
@@ -2975,40 +3227,40 @@ gu
 gu
 gu
 ie
-Mv
-fl
-Ku
-OR
-qD
-ML
+rX
+UN
+jy
+Ia
+NC
+Lc
 au
 au
-ZR
-Sq
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-uv
-Ua
-rZ
-sp
+iw
+yO
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+rJ
+ON
+vq
+wi
 au
 au
 ie
@@ -3019,171 +3271,171 @@ ie
 ie
 ie
 ie
-Zv
-ZH
-ZH
-ZH
-QH
-Mu
-Fk
-nQ
-jh
-tJ
-hX
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-hX
-Gz
-Ua
-rZ
-Hq
+tq
+XN
+XN
+XN
+Xg
+yd
+oJ
+dK
+ep
+Uc
+ZR
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+ZR
+gr
+ON
+vq
+RB
 au
 au
 ie
 "}
 (27,1,1) = {"
 ie
-qm
-qm
-Tg
-dJ
-IY
-IY
-Tq
-IY
-JK
-Fm
+Mt
+Mt
+hh
+FC
+kG
+kG
+jX
+kG
+kD
+GA
 hJ
-BK
-lH
-OE
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-RK
-Ua
-nZ
-Vt
+vn
+jF
+te
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+Iy
+ON
+RH
+xF
 au
 au
 ie
 "}
 (28,1,1) = {"
 ie
-qm
-qm
-qm
-dJ
-Ic
-Xz
-ek
-Ic
-Ic
-cv
+Mt
+Mt
+Mt
+FC
+Tu
+QP
+Jk
+Tu
+Tu
+bX
 ET
-BK
-FO
-OE
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-uv
-it
-rZ
-Wu
+vn
+zM
+te
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+rJ
+QC
+vq
+Hg
 ie
 au
 ie
 "}
 (29,1,1) = {"
 ie
-qm
-qm
-qm
-dJ
-iy
-kV
-kV
-kV
-TH
-oZ
+Mt
+Mt
+Mt
+FC
+sP
+eP
+eP
+eP
+gE
+vt
 HR
-BK
-Sj
-oJ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-uv
-it
-Dj
+vn
+ZU
+hp
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+rJ
+QC
+vh
 au
 au
 au
@@ -3197,36 +3449,36 @@ ie
 ie
 ie
 ie
-fu
-kY
-oa
-dL
+JI
+eg
+He
+LI
 au
 au
-ZR
-ss
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-uv
-Ua
+iw
+Ue
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+rJ
+ON
 au
 au
 au
@@ -3247,30 +3499,30 @@ ie
 ie
 au
 au
-it
-ss
-hX
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-hX
-uv
-NU
+QC
+Ue
+ZR
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+ZR
+rJ
+pT
 au
 au
 au
@@ -3291,30 +3543,30 @@ ie
 ie
 au
 au
-it
-ox
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-Bo
-NU
+QC
+HP
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+kk
+pT
 au
 au
 au
@@ -3335,30 +3587,30 @@ ie
 au
 au
 au
-it
-ss
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-uv
-it
+QC
+Ue
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+rJ
+QC
 au
 au
 au
@@ -3378,31 +3630,31 @@ au
 au
 au
 au
-MW
-Ua
-VF
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-uv
-QR
+yQ
+ON
+Dx
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+rJ
+TT
 au
 au
 au
@@ -3422,31 +3674,31 @@ au
 au
 au
 ie
-hP
-Ua
-VF
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-uv
-Dm
+tH
+ON
+Dx
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+rJ
+Wo
 Xq
 au
 au
@@ -3466,31 +3718,31 @@ au
 au
 ie
 ie
-Wd
-it
-VF
-hX
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-hX
-uv
-Dm
+pt
+QC
+Dx
+ZR
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+ZR
+rJ
+Wo
 Xq
 au
 au
@@ -3509,32 +3761,32 @@ ie
 au
 au
 ie
-fL
-Zf
-Gx
-VF
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-uv
-RP
+Cd
+zs
+vz
+Dx
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+rJ
+ns
 au
 au
 au
@@ -3552,33 +3804,33 @@ gu
 ie
 au
 au
-lN
-Bl
-Ia
-NG
-rl
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-Gz
-Qq
+UA
+Jp
+cq
+px
+ba
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+gr
+qc
 ie
 au
 au
@@ -3596,33 +3848,33 @@ gu
 ie
 au
 ie
-rT
-Bl
-QT
-NG
-VF
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-RK
-XA
+QR
+Jp
+We
+px
+Dx
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+Iy
+sY
 au
 au
 au
@@ -3640,33 +3892,33 @@ gu
 ie
 au
 au
-yC
-QT
-QT
-NG
-VF
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-uv
-II
+oK
+We
+We
+px
+Dx
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+rJ
+vk
 au
 au
 au
@@ -3685,32 +3937,32 @@ ie
 au
 au
 au
-fX
-sS
-Gx
-VF
-hX
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-hX
-RK
-XA
+Xs
+TV
+vz
+Dx
+ZR
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+ZR
+Iy
+sY
 au
 au
 au
@@ -3730,31 +3982,31 @@ ie
 au
 au
 au
-kH
-it
-VF
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-RK
-ca
+xi
+QC
+Dx
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+Iy
+zy
 au
 au
 au
@@ -3775,30 +4027,30 @@ au
 au
 au
 au
-it
-VF
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-EZ
-RK
-Ua
+QC
+Dx
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+pJ
+Iy
+ON
 au
 au
 au
@@ -3819,30 +4071,30 @@ ie
 au
 au
 au
-it
-nb
-XG
-XG
-ny
-ny
-ny
-Qt
-ny
-ny
-ny
-ny
-PH
-XG
-ny
-ny
-Qt
-XG
-XG
-ny
-ny
-ny
-LN
-it
+QC
+BU
+cY
+cY
+oU
+oU
+oU
+lN
+oU
+oU
+oU
+oU
+BL
+cY
+oU
+oU
+lN
+cY
+cY
+oU
+oU
+oU
+Fw
+QC
 au
 au
 ie
@@ -3865,27 +4117,27 @@ au
 au
 ie
 au
-Kl
-Ua
-Ua
-Ua
-it
-it
-fP
-oL
-oL
-oL
-oL
-HN
-Iy
-Ua
-Ua
-it
-Ua
-Ua
-Ua
-Ua
-it
+Yi
+ON
+ON
+ON
+QC
+QC
+De
+Bx
+Bx
+Bx
+Bx
+dn
+Sl
+ON
+ON
+QC
+ON
+ON
+ON
+ON
+QC
 au
 au
 au
@@ -3917,12 +4169,12 @@ au
 au
 ie
 ie
-NS
-NS
-NS
+wm
+wm
+wm
 ie
 ie
-eY
+UV
 au
 au
 au
@@ -3960,11 +4212,11 @@ au
 au
 ie
 ie
-DK
-TL
-ag
-FA
-YA
+Nw
+sA
+Tw
+pQ
+NW
 ie
 ie
 ie
@@ -4003,16 +4255,16 @@ au
 au
 au
 ie
-aM
-aN
-Qz
-Ej
-Ej
-Rp
+rt
+ZQ
+cO
+XX
+XX
+Cn
 ie
-qm
-qm
-qm
+Mt
+Mt
+Mt
 ie
 ie
 ie
@@ -4047,16 +4299,16 @@ ie
 ie
 ie
 ie
-DY
-YS
-mL
-Ua
-Ua
-jI
+pu
+mo
+sG
+ON
+ON
+Fv
 ie
-qm
-qm
-qm
+Mt
+Mt
+Mt
 ie
 gu
 gu
@@ -4092,15 +4344,15 @@ gu
 gu
 ie
 ie
-aR
-qf
-FQ
-ol
-TQ
-UC
-kT
-DU
-kT
+IE
+pG
+CI
+BB
+MV
+gL
+os
+Zz
+os
 ie
 gu
 gu

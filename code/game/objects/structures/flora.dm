@@ -492,7 +492,7 @@
 	desc = "A wild plant that is found in jungles."
 	icon = 'icons/obj/flora/jungleflora.dmi'
 	icon_state = "busha"
-	base_icon_state = "bush"
+	base_icon_state = "busha"
 
 /obj/structure/flora/junglebush/Initialize()
 	icon_state = "[base_icon_state][rand(1, 3)]"
@@ -500,9 +500,11 @@
 
 /obj/structure/flora/junglebush/b
 	icon_state = "bushb"
+	base_icon_state = "bushb"
 
 /obj/structure/flora/junglebush/c
 	icon_state = "bushc"
+	base_icon_state = "bushc"
 
 /obj/structure/flora/junglebush/large
 	icon_state = "bush"
