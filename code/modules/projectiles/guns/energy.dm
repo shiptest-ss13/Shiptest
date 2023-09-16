@@ -20,7 +20,6 @@
 	var/use_cyborg_cell = FALSE //whether the gun's cell drains the cyborg user's cell to recharge
 	var/dead_cell = FALSE //set to true so the gun is given an empty cell
 
-	//WS Begin - Gun Cells
 	var/internal_cell = FALSE ///if the gun's cell cannot be replaced
 	var/small_gun = FALSE ///if the gun is small and can only fit the small gun cell
 	var/big_gun = FALSE ///if the gun is big and can fit the comically large gun cell
@@ -222,6 +221,12 @@
 	var/overlay_icon_state = "[icon_state]_charge"
 	var/obj/item/ammo_casing/energy/shot = ammo_type[modifystate ? select : 1]
 	var/ratio = get_charge_ratio()
+
+	if(cell)
+		. += "[icon_state]_cell"
+		if(ratio == 0)
+			. += "[icon_state]_cellempty"
+
 	if(ratio == 0)
 		if(modifystate)
 			. += "[icon_state]_[shot.select_name]"

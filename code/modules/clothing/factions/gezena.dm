@@ -1,8 +1,8 @@
 //Jumpsuits
 //thgvr TODO: Make more stuff (backpacks, headsets, doodads, part 2?) also guns lol
 /obj/item/clothing/under/gezena
-	name = "pgf navy jump"
-	desc = "PH"
+	name = "gezenan navywear"
+	desc = "Made of a slick synthetic material that is both breathable, and resistant to scale and thorn alike."
 	icon = 'icons/obj/clothing/faction/gezena/uniforms.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/gezena/uniforms.dmi'
 	icon_state = "naval"
@@ -11,22 +11,22 @@
 	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
 
 /obj/item/clothing/under/gezena/captain
-	name = "pgf captain jump"
-	desc = "PH"
+	name = "gezenan captain's navywear"
+	desc = "A refined variation of the basic navywear, sporting sleek silver trim."
 	icon_state = "captain"
 	item_state = "captain"
 
 /obj/item/clothing/under/gezena/marine
-	name = "pgf marine jump"
-	desc = "PH"
+	name = "gezenan marine fatigue"
+	desc = "Rough inside and out, these fatigues have seen their fair share."
 	icon_state = "marine"
 	item_state = "marine"
 
 //Unarmored suit
 
 /obj/item/clothing/suit/toggle/gezena
-	name = "pgf jacket PH"
-	desc = "PH"
+	name = "silkenweave jacket"
+	desc = "Refined and sturdy, emblazoned below the neck with the Federation's symbol."
 	icon = 'icons/obj/clothing/faction/gezena/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/gezena/suits.dmi'
 	icon_state = "lightcoat"
@@ -41,8 +41,8 @@
 //Armored suit
 
 /obj/item/clothing/suit/armor/gezena
-	name = "pgf longcoat"
-	desc = "PH"
+	name = "navywear coat"
+	desc = "Formal navywear, emblazoned across the back with the Gezenan sigil."
 	icon = 'icons/obj/clothing/faction/gezena/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/gezena/suits.dmi'
 	icon_state = "coat"
@@ -52,44 +52,46 @@
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 	armor = list("melee" = 35, "bullet" = 35, "laser" = 20, "energy" = 40, "bomb" = 20, "bio" = 20, "rad" = 0, "fire" = 50, "acid" = 50)
-	allowed = list(	/obj/item/flashlight,
+	allowed = list(	
+					/obj/item/flashlight,
 					/obj/item/tank/internals/emergency_oxygen,
 					/obj/item/tank/internals/plasmaman,
 					/obj/item/toy,
 					/obj/item/storage/fancy/cigarettes,
 					/obj/item/lighter,
 					/obj/item/radio,
+					/obj/item/gun/energy/kalix,
 					)
 
 /obj/item/clothing/suit/armor/gezena/engi
-	name = "pgf engineer coat"
-	desc = "PH"
+	name = "engineer navywear coat"
+	desc = "Oil and stain resistant, with orange trim signifiying the wearer doesn't mind getting their hands dirty."
 	icon_state = "engicoat"
 	item_state = "engicoat"
 
 /obj/item/clothing/suit/armor/gezena/captain
-	name = "pgf captain coat"
-	desc = "PH"
+	name = "captain's navywear coat"
+	desc = "Blood resistant, with silver trim to denote status. Lined with softer material."
 	icon_state = "captaincoat"
 	item_state = "captaincoat"
 
 /obj/item/clothing/suit/armor/gezena/marine
-	name = "pgf armor vest"
-	desc = "PH"
+	name = "\improper raksha-plating vest"
+	desc = "Raksha - a Kalixcian word for 'protection of the heart'. Sturdy and reliable."
 	icon_state = "marinevest"
 	item_state = "marinevest"
 
 /obj/item/clothing/suit/armor/gezena/marinecoat
-	name = "pgf armor vest with coat"
-	desc = "PH"
+	name = "coated Raksha-plating"
+	desc = "Less practical with the coat than without."
 	icon_state = "marinecoat"
 	item_state = "marinecoat"
 
 //Spacesuits
 
 /obj/item/clothing/suit/space/gezena
-	name = "pgf space suit"
-	desc = "PH"
+	name = "rakalla-suit"
+	desc = "Rakalla - a Kalixcian word for 'protection among the stars'. Sturdy, flexible, and reliable."
 	icon = 'icons/obj/clothing/faction/gezena/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/gezena/suits.dmi'
 	item_state = "spacesuit"
@@ -99,8 +101,8 @@
 	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/head/helmet/space/gezena
-	name = "pgf space helmet"
-	desc = "PH"
+	name = "rakalla-helm"
+	desc = "Featuring rubberized grommets fitting for any length of horn, and an internal monitor for life support."
 	icon = 'icons/obj/clothing/faction/gezena/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/gezena/head.dmi'
 	item_state = "spacehelmet"
@@ -111,7 +113,7 @@
 //Hats
 
 /obj/item/clothing/head/gezena
-	name = "PGF navy hat"
+	name = "navywear cap"
 	desc = "PH"
 	icon = 'icons/obj/clothing/faction/gezena/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/gezena/head.dmi'
@@ -120,19 +122,19 @@
 	armor = list("melee" = 10, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 
 /obj/item/clothing/head/gezena/flap
-	name = "PGF navy flap hat"
+	name = "navywear flap-hat"
 	desc = "PH"
 	icon_state = "navalflap"
 	item_state = "navalflap"
 
 /obj/item/clothing/head/gezena/marine
-	name = "PGF marine hat"
+	name = "\improper Gezenan marine cap"
 	desc = "PH"
 	icon_state = "marinehat"
 	item_state = "marinehat"
 
 /obj/item/clothing/head/gezena/marine/flap
-	name = "PGF navy flap hat"
+	name = "\improper Gezenan marine"
 	desc = "PH"
 	icon_state = "marineflap"
 	item_state = "marineflap"
@@ -150,13 +152,13 @@
 	item_state = "medicflap"
 
 /obj/item/clothing/head/gezena/captain // no captain flap yet(?)
-	name = "PGF captain hat"
+	name = "captain's navywear cap"
 	desc = "PH"
 	icon_state = "captainhat"
 	item_state = "captainhat"
 
 /obj/item/clothing/head/helmet/gezena
-	name = "pgf marine helmet"
+	name = "raksha-helm"
 	desc = "PH"
 	icon_state = "marinehelmet"
 	item_state = "marinehelmet"
@@ -164,7 +166,7 @@
 //Gloves
 
 /obj/item/clothing/gloves/gezena
-	name = "pgf navy gloves"
+	name = "navywear gloves"
 	desc = "PH"
 	icon = 'icons/obj/clothing/faction/gezena/hands.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/gezena/hands.dmi'
@@ -175,21 +177,21 @@
 	armor = list("melee" = 5, "bullet" = 5, "laser" = 5, "energy" = 5, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 
 /obj/item/clothing/gloves/gezena/marine
-	name = "pgf marine gloves"
+	name = "gezenan infantry gloves"
 	desc = "PH"
 	icon_state = "marinegloves"
 	item_state = "marinegloves"
 	armor = list("melee" = 10, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 75, "acid" = 50)
 
 /obj/item/clothing/gloves/gezena/engi
-	name = "pgf engi gloves"
+	name = "gezenan engineering gloves"
 	desc = "PH"
 	icon_state = "engigloves"
 	item_state = "engigloves"
 	siemens_coefficient = 0
 
 /obj/item/clothing/gloves/gezena/captain
-	name = "pgf captain gloves"
+	name = "captain's navywear gloves"
 	desc = "PH"
 	icon_state = "captaingloves"
 	item_state = "captaingloves"
@@ -198,7 +200,7 @@
 //Boots
 
 /obj/item/clothing/shoes/combat/gezena
-	name = "pgf duty boots"
+	name = "gezenan steel-boots"
 	desc = "PH"
 	icon_state = "pgfboots"
 	item_state = "pgfboots"
@@ -206,7 +208,7 @@
 //Belt
 
 /obj/item/storage/belt/military/gezena
-	name = "pgf drop pouches"
+	name = "infantry pouches"
 	desc = "PH"
 	icon = 'icons/obj/clothing/faction/gezena/belt.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/gezena/belt.dmi'
@@ -214,7 +216,7 @@
 	item_state = "pouches"
 
 /obj/item/storage/belt/medical/gezena
-	name = "pgf med pouches"
+	name = "infantry medical pouches"
 	desc = "PH"
 	icon = 'icons/obj/clothing/faction/gezena/belt.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/gezena/belt.dmi'
@@ -224,7 +226,7 @@
 //Capes
 
 /obj/item/clothing/neck/cloak/gezena
-	name = "pgf halfcape"
+	name = "gezenan half-cape"
 	desc = "PH."
 	icon = 'icons/obj/clothing/faction/gezena/neck.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/gezena/neck.dmi'
@@ -232,19 +234,19 @@
 	item_state = "cape"
 
 /obj/item/clothing/neck/cloak/gezena/engi
-	name = "pgf engi halfcape"
+	name = "gezenan engineer's half-cape"
 	desc = "PH."
 	icon_state = "engicape"
 	item_state = "engicape"
 
 /obj/item/clothing/neck/cloak/gezena/med
-	name = "pgf med halfcape"
+	name = "gezenan medic's half-cape"
 	desc = "PH."
 	icon_state = "medcape"
 	item_state = "medcape"
 
 /obj/item/clothing/neck/cloak/gezena/captain
-	name = "pgf captain halfcape"
+	name = "gezenan captain's half-cape"
 	desc = "PH."
 	icon_state = "captaincape"
 	item_state = "captaincape"
