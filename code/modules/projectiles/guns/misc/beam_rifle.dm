@@ -521,7 +521,7 @@
 	tracer_type = /obj/effect/projectile/tracer/tracer/aiming
 	name = "aiming beam"
 	hitsound = null
-	hitsound_wall = null
+	hitsound_non_living = null
 	nodamage = TRUE
 	damage = 0
 	constant_tracer = TRUE

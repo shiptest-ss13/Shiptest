@@ -6,16 +6,16 @@
 	mag_type = /obj/item/ammo_box/magazine/m10mm
 	can_suppress = TRUE
 	burst_size = 1
-	fire_delay = 0
+	fire_delay = 0 //spam it as fast as you can
 	actions_types = list()
 	bolt_type = BOLT_TYPE_LOCKING
 	fire_sound = 'sound/weapons/gun/pistol/shot.ogg'
 	dry_fire_sound = 'sound/weapons/gun/pistol/dry_fire.ogg'
 	suppressed_sound = 'sound/weapons/gun/pistol/shot_suppressed.ogg'
-	load_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
-	load_empty_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
-	eject_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
-	eject_empty_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
+	load_sound = 'sound/weapons/gun/pistol/mag_insert_alt.ogg'
+	load_empty_sound = 'sound/weapons/gun/pistol/mag_insert_alt.ogg'
+	eject_sound = 'sound/weapons/gun/pistol/mag_release_alt.ogg'
+	eject_empty_sound = 'sound/weapons/gun/pistol/mag_release_alt.ogg'
 	vary_fire_sound = FALSE
 	rack_sound = 'sound/weapons/gun/pistol/rack_small.ogg'
 	lock_back_sound = 'sound/weapons/gun/pistol/lock_small.ogg'
@@ -24,7 +24,10 @@
 	bolt_wording = "slide"
 	weapon_weight = WEAPON_LIGHT
 	pickup_sound =  'sound/items/handling/gun_pickup.ogg'
-	fire_delay = 1
+
+	wield_delay = 0.2 SECONDS
+	spread = -2
+	spread_unwielded = 4
 
 /obj/item/gun/ballistic/automatic/pistol/no_mag
 	spawnwithmagazine = FALSE
@@ -35,16 +38,21 @@
 	install_suppressor(S)
 
 /obj/item/gun/ballistic/automatic/pistol/m1911
-	name = "\improper M1911"
+	name = "\improper M1911A8"
 	desc = "A classic .45 handgun with a small magazine capacity. An engraving on the slide marks it as a product of Hunter's Pride."
 	icon_state = "m1911"
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/m45
 	can_suppress = FALSE
-	fire_sound = 'sound/weapons/gun/pistol/shot.ogg'
-	rack_sound = 'sound/weapons/gun/pistol/rack.ogg'
+	fire_sound = 'sound/weapons/gun/pistol/m1911.ogg'
+	rack_sound = 'sound/weapons/gun/pistol/m1911_cocked.ogg'
 	lock_back_sound = 'sound/weapons/gun/pistol/slide_lock.ogg'
 	bolt_drop_sound = 'sound/weapons/gun/pistol/slide_drop.ogg'
+	load_sound = 'sound/weapons/gun/pistol/m1911_reload.ogg'
+	load_empty_sound = 'sound/weapons/gun/pistol/m1911_reload.ogg'
+	eject_sound = 'sound/weapons/gun/pistol/m1911_unload.ogg'
+	eject_empty_sound = 'sound/weapons/gun/pistol/m1911_unload.ogg'
+	recoil = -2
 
 /obj/item/gun/ballistic/automatic/pistol/m1911/no_mag
 	spawnwithmagazine = FALSE
@@ -57,10 +65,19 @@
 	mag_type = /obj/item/ammo_box/magazine/m50
 	can_suppress = FALSE
 	mag_display = TRUE
-	fire_sound = 'sound/weapons/gun/rifle/shot_alt.ogg'
+	fire_sound = 'sound/weapons/gun/pistol/deagle.ogg'
 	rack_sound = 'sound/weapons/gun/pistol/rack.ogg'
 	lock_back_sound = 'sound/weapons/gun/pistol/slide_lock.ogg'
 	bolt_drop_sound = 'sound/weapons/gun/pistol/slide_drop.ogg'
+	load_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
+	load_empty_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
+	eject_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
+	eject_empty_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
+	fire_delay = 0.7 SECONDS
+	recoil = 1
+	recoil_unwielded = 2
+	spread = 4
+	spread_unwielded = 7
 
 /obj/item/gun/ballistic/automatic/pistol/deagle/gold
 	desc = "A gold plated Desert Eagle folded over a million times by superior martian gunsmiths. Uses .50 AE ammo."
@@ -106,6 +123,11 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/co9mm
 	can_suppress = FALSE
+	fire_sound = 'sound/weapons/gun/pistol/commander.ogg'
+	load_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
+	load_empty_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
+	eject_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
+	eject_empty_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
 
 /obj/item/gun/ballistic/automatic/pistol/commander/no_mag
 	spawnwithmagazine = FALSE
@@ -128,6 +150,10 @@
 	can_suppress = FALSE
 	var/funnysounds = TRUE
 	var/cooldown = 0
+	load_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
+	load_empty_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
+	eject_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
+	eject_empty_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
 
 /obj/item/gun/ballistic/automatic/pistol/commissar/equipped(mob/living/user, slot)
 	..()
@@ -177,6 +203,10 @@
 	w_class = WEIGHT_CLASS_SMALL
 	mag_type = /obj/item/ammo_box/magazine/pistol556mm
 	fire_sound = 'sound/weapons/gun/pistol/pistolec.ogg'
+	load_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
+	load_empty_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
+	eject_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
+	eject_empty_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
 
 /obj/item/gun/ballistic/automatic/pistol/solgov/old
 	desc = "A favorite of the Terran Regency, but despised by the Solarian bureaucracy. Was taken out of standard service several centruries ago, and is issued in low numbers in the military. However, it is popular with civillians. Chambered in 5.56mm caseless."
@@ -190,6 +220,10 @@
 	w_class = WEIGHT_CLASS_SMALL
 	mag_type = /obj/item/ammo_box/magazine/tec9
 	mag_display = TRUE
+	load_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
+	load_empty_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
+	eject_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
+	eject_empty_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
 
 /obj/item/gun/ballistic/automatic/pistol/disposable
 	name = "disposable gun"

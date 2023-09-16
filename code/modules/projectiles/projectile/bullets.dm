@@ -6,5 +6,10 @@
 	damage_type = BRUTE
 	nodamage = FALSE
 	flag = "bullet"
-	hitsound_wall = "ricochet"
+	hitsound = "bullet_hit"
+	hitsound_non_living = "bullet_impact"
+	ricochet_sound = "bullet_bounce"
 	impact_effect_type = /obj/effect/temp_visual/impact_effect
+	ricochets_max = 5 //should be enough to scare the shit out of someone
+	ricochet_chance = 25
+	ricochet_decay_damage = 0.5

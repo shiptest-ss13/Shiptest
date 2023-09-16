@@ -1,6 +1,16 @@
 /obj/item/gun/ballistic/automatic/smg
 	burst_size = 1
 	actions_types = list()
+	fire_delay = 1
+	spread = 4
+	spread_unwielded = 10
+	wield_slowdown = 0.15
+	recoil_unwielded = 0.5
+
+	load_sound = 'sound/weapons/gun/smg/smg_reload.ogg'
+	load_empty_sound = 'sound/weapons/gun/smg/smg_reload.ogg'
+	eject_sound = 'sound/weapons/gun/smg/smg_unload.ogg'
+	eject_empty_sound = 'sound/weapons/gun/smg/smg_unload.ogg'
 
 /obj/item/gun/ballistic/automatic/smg/proto
 	name = "\improper Nanotrasen Saber SMG"
@@ -14,7 +24,7 @@
 
 /obj/item/gun/ballistic/automatic/smg/proto/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.25 SECONDS)
+	AddComponent(/datum/component/automatic_fire, 0.15 SECONDS)
 
 /obj/item/gun/ballistic/automatic/smg/proto/unrestricted
 	pin = /obj/item/firing_pin
@@ -35,7 +45,7 @@
 
 /obj/item/gun/ballistic/automatic/smg/c20r/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.25 SECONDS)
+	AddComponent(/datum/component/automatic_fire, 0.15 SECONDS)
 
 /obj/item/gun/ballistic/automatic/smg/c20r/unrestricted
 	pin = /obj/item/firing_pin
@@ -67,7 +77,7 @@
 
 /obj/item/gun/ballistic/automatic/smg/inteq/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.25 SECONDS)
+	AddComponent(/datum/component/automatic_fire, 0.15 SECONDS)
 
 /obj/item/gun/ballistic/automatic/smg/wt550
 	name = "\improper WT-550 Automatic Rifle"
@@ -85,10 +95,11 @@
 	mag_display = TRUE
 	mag_display_ammo = TRUE
 	empty_indicator = TRUE
+	fire_sound = 'sound/weapons/gun/smg/smg_heavy.ogg'
 
 /obj/item/gun/ballistic/automatic/smg/wt550/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.25 SECONDS)
+	AddComponent(/datum/component/automatic_fire, 0.15 SECONDS)
 
 /obj/item/gun/ballistic/automatic/smg/mini_uzi
 	name = "\improper Type U3 Uzi"
@@ -102,7 +113,7 @@
 
 /obj/item/gun/ballistic/automatic/smg/mini_uzi/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.25 SECONDS)
+	AddComponent(/datum/component/automatic_fire, 0.1 SECONDS)
 
 /obj/item/gun/ballistic/automatic/smg/vector
 	name = "\improper Vector carbine"
@@ -116,7 +127,7 @@
 
 /obj/item/gun/ballistic/automatic/smg/vector/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.25 SECONDS)
+	AddComponent(/datum/component/automatic_fire, 0.15 SECONDS)
 
 /obj/item/gun/ballistic/automatic/smg/m90
 	name = "\improper M-90gl Carbine"
@@ -133,6 +144,10 @@
 	mag_display = TRUE
 	empty_indicator = TRUE
 	fire_sound = 'sound/weapons/gun/rifle/shot_alt.ogg'
+
+	spread = 1
+	spread_unwielded = 8
+	wield_slowdown = 0.2
 
 /obj/item/gun/ballistic/automatic/smg/m90/Initialize()
 	. = ..()
@@ -221,11 +236,11 @@
 	item_state = "cm5"
 	mag_type = /obj/item/ammo_box/magazine/smgm9mm
 	weapon_weight = WEAPON_LIGHT
-	fire_sound = 'sound/weapons/gun/smg/smg_light.ogg'
+	fire_sound = 'sound/weapons/gun/smg/smg_heavy.ogg'
 
 /obj/item/gun/ballistic/automatic/smg/cm5/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.25 SECONDS)
+	AddComponent(/datum/component/automatic_fire, 0.15 SECONDS)
 
 /obj/item/gun/ballistic/automatic/smg/aks74u
 	name = "\improper AKS-74U"

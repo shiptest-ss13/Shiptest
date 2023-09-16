@@ -1,12 +1,28 @@
 /obj/item/gun/ballistic/automatic/assualt
 	burst_size = 1
 	actions_types = list()
+	wield_delay = 0.7 SECONDS
+	fire_delay = 1
+
+	load_sound = 'sound/weapons/gun/rifle/ar_reload.ogg'
+	load_empty_sound = 'sound/weapons/gun/rifle/ar_reload.ogg'
+	eject_sound = 'sound/weapons/gun/rifle/ar_unload.ogg'
+	eject_empty_sound = 'sound/weapons/gun/rifle/ar_unload.ogg'
+
+	rack_sound = 'sound/weapons/gun/rifle/ar_cock.ogg'
 
 /obj/item/gun/ballistic/automatic/assualt/ak47
 	name = "\improper SVG-67"
 	desc = "A frontier-built assault rifle descended from a pattern of unknown provenance. Its low cost and ease of maintenance make it a popular choice among a wide variety of outlaws."
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	fire_sound = 'sound/weapons/gun/rifle/ak47.ogg'
+
+	rack_sound = 'sound/weapons/gun/rifle/ak47_cocked.ogg'
+	load_sound = 'sound/weapons/gun/rifle/ak47_reload.ogg'
+	load_empty_sound = 'sound/weapons/gun/rifle/ak47_reload.ogg'
+	eject_sound = 'sound/weapons/gun/rifle/ak47_unload.ogg'
+	eject_empty_sound = 'sound/weapons/gun/rifle/ak47_unload.ogg'
+
 	icon_state = "ak47"
 	item_state = "ak47"
 	mag_display = TRUE
@@ -14,6 +30,8 @@
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	mag_type = /obj/item/ammo_box/magazine/ak47
+	spread = 0
+	wield_delay = 0.7 SECONDS
 
 /obj/item/gun/ballistic/automatic/assualt/ak47/ComponentInitialize()
 	. = ..()
@@ -21,7 +39,7 @@
 
 /obj/item/gun/ballistic/automatic/assualt/ak47/nt
 	name = "\improper NT-SVG"
-	desc = "An even cheaper version of the already-cheap SVG-67, rechambered for the lightweight 4.6x30mm PDW cartridge. The flimsy folding stock and light construction make for a highly portable rifle lacking in accuracy and stopping power."
+	desc = "An even cheaper version of the already-cheap SVG-67, rechambered for the lightweight 4.6x38mm PDW cartridge. The flimsy folding stock and light construction make for a highly portable rifle lacking in accuracy and stopping power."
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	fire_sound = 'sound/weapons/gun/rifle/shot.ogg'
 	icon_state = "ak47_nt"
@@ -96,6 +114,13 @@
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	mag_type = /obj/item/ammo_box/magazine/p16
+	spread = 2
+	wield_delay = 0.5 SECONDS
+	rack_sound = 'sound/weapons/gun/rifle/m16_cocked.ogg'
+	load_sound = 'sound/weapons/gun/rifle/m16_reload.ogg'
+	load_empty_sound = 'sound/weapons/gun/rifle/m16_reload.ogg'
+	eject_sound = 'sound/weapons/gun/rifle/m16_unload.ogg'
+	eject_empty_sound = 'sound/weapons/gun/rifle/m16_unload.ogg'
 
 /obj/item/gun/ballistic/automatic/assualt/p16/ComponentInitialize()
 	. = ..()
@@ -140,6 +165,10 @@
 	slot_flags = ITEM_SLOT_BACK
 	mag_type = /obj/item/ammo_box/magazine/swiss
 	actions_types = list(/datum/action/item_action/toggle_firemode)
+
+	spread = 8
+	spread_unwielded = 15
+	wield_slowdown = 0.45
 
 /obj/item/gun/ballistic/automatic/assualt/swiss_cheese/ComponentInitialize()
 	. = ..()

@@ -13,7 +13,9 @@
 	generic_canpass = FALSE
 	//The sound this plays on impact.
 	var/hitsound = 'sound/weapons/pierce.ogg'
-	var/hitsound_wall = ""
+	var/hitsound_non_living = ""
+	var/ricochet_sound = ""
+	var/near_miss_sound = ""
 
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	var/def_zone = ""	//Aiming at
@@ -157,14 +159,14 @@
 	/// If true directly targeted turfs can be hit
 	var/can_hit_turfs = FALSE
 
-	var/static/list/projectile_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
-	)
-
 /obj/projectile/Initialize()
 	. = ..()
 	decayedRange = range
-	AddElement(/datum/element/connect_loc, projectile_connections)
+
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
 
 /obj/projectile/proc/Range()
 	range--
@@ -223,11 +225,11 @@
 	if(!isliving(target))
 		if(impact_effect_type && !hitscan)
 			new impact_effect_type(target_loca, hitx, hity)
-		if(isturf(target) && hitsound_wall)
+		if(hitsound_non_living)
 			var/volume = clamp(vol_by_damage() + 20, 0, 100)
 			if(suppressed)
 				volume = 5
-			playsound(loc, hitsound_wall, volume, TRUE, -1)
+			playsound(loc, hitsound_non_living, volume, TRUE, -1)
 		return BULLET_ACT_HIT
 
 	var/mob/living/L = target
@@ -264,8 +266,7 @@
 			to_chat(L, "<span class='userdanger'>You're shot by \a [src][organ_hit_text]!</span>")
 		else
 			if(hitsound)
-				var/volume = vol_by_damage()
-				playsound(src, hitsound, volume, TRUE, -1)
+				playsound(get_turf(L), hitsound, 100, TRUE, -1)
 			L.visible_message("<span class='danger'>[L] is hit by \a [src][organ_hit_text]!</span>", \
 					"<span class='userdanger'>You're hit by \a [src][organ_hit_text]!</span>", null, COMBAT_MESSAGE_RANGE)
 		L.on_hit(src)
@@ -350,6 +351,8 @@
 			range = decayedRange
 			if(hitscan)
 				store_hitscan_collision(pcache)
+			if(ricochet_sound)
+				playsound(get_turf(src), ricochet_sound, 120, TRUE, 2) //make it loud, we want to make it known when a ricochet happens. for aesthetic reasons mostly
 			return TRUE
 
 	var/distance = get_dist(T, starting) // Get the distance between the turf shot from and the mob we hit and use that for the calculations.

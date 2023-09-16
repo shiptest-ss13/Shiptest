@@ -42,7 +42,6 @@
 	var/semicd = 0						//cooldown handler
 	var/weapon_weight = WEAPON_LIGHT
 	var/dual_wield_spread = 24			//additional spread when dual wielding
-	var/spread = 0						//Spread induced by the gun itself.
 	var/randomspread = 1				//Set to 0 for shotguns. This is used for weapons that don't fire all their bullets at once.
 
 	var/projectile_damage_multiplier = 1 //Alters projectile damage multiplicatively based on this value. Use it for "better" or "worse" weapons that use the same ammo.
@@ -95,11 +94,20 @@
 	var/recoil_deviation = 22.5
 
 	///Slowdown for wielding
-	var/wield_slowdown = 0
+	var/wield_slowdown = 0.1
 	///How long between wielding and firing in tenths of seconds
 	var/wield_delay	= 0.4 SECONDS
 	///Storing value for above
 	var/wield_time = 0
+
+	///Effect for the muzzle flash of the gun.
+	var/obj/effect/muzzle_flash/muzzle_flash
+	///Icon state of the muzzle flash effect.
+	var/muzzleflash_iconstate
+	///Brightness of the muzzle flash effect.
+	var/muzzle_flash_lum = 3
+	///Color of the muzzle flash effect.
+	var/muzzle_flash_color = COLOR_VERY_SOFT_YELLOW
 
 /obj/item/gun/Initialize()
 	. = ..()
@@ -109,7 +117,12 @@
 		pin = new pin(src)
 	if(gun_light)
 		alight = new(src)
+	muzzle_flash = new(src, muzzleflash_iconstate)
 	build_zooming()
+
+/obj/item/gun/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/two_handed)
 
 /// triggered on wield of two handed item
 /obj/item/gun/proc/on_wield(obj/item/source, mob/user)
@@ -120,8 +133,8 @@
 	user.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/gun, multiplicative_slowdown = wield_slowdown)
 	wield_time = world.time + wield_delay
 	if(wield_time > 0)
-		if(do_mob(user, user, wield_delay, FALSE, TRUE, CALLBACK(src, .proc/is_wielded)))
-			wielded_fully =
+		if(do_mob(user, user, wield_delay, TRUE, TRUE, CALLBACK(src, .proc/is_wielded), ignore_loc_change = TRUE))
+			wielded_fully = TRUE
 	else
 		wielded_fully = TRUE
 
@@ -131,6 +144,7 @@
 /// triggered on unwield of two handed item
 /obj/item/gun/proc/on_unwield(obj/item/source, mob/user)
 	wielded = FALSE
+	wielded_fully = FALSE
 	user.remove_movespeed_modifier(/datum/movespeed_modifier/gun)
 
 /obj/item/gun/Destroy()
@@ -144,8 +158,8 @@
 		QDEL_NULL(chambered)
 	if(azoom)
 		QDEL_NULL(azoom)
-	if(isatom(suppressed)) //SUPPRESSED IS USED AS BOTH A TRUE/FALSE AND AS A REF, WHAT THE FUCKKKKKKKKKKKKKKKKK
-		QDEL_NULL(suppressed)
+	if(muzzle_flash)
+		QDEL_NULL(muzzle_flash)
 	return ..()
 
 /obj/item/gun/handle_atom_del(atom/A)
@@ -202,9 +216,14 @@
 
 
 /obj/item/gun/proc/shoot_live_shot(mob/living/user, pointblank = 0, atom/pbtarget = null, message = 1)
-	if(spread)
-		var/actual_angle = firing_angle + rand(-recoil_deviation, recoil_deviation) + 180
-		recoil_camera(user, total_recoil + 1, (total_recoil * recoil_backtime_multiplier)+1, total_recoil, actual_angle)
+	var/actual_angle = get_angle_with_scatter((user || get_turf(src)), pbtarget, rand(-recoil_deviation, recoil_deviation) + 180)
+	if(muzzle_flash && !muzzle_flash.applied)
+		handle_muzzle_flash(user, actual_angle)
+
+	if(wielded_fully && recoil)
+		simulate_recoil(user, recoil, actual_angle)
+	else if(!wielded_fully && recoil_unwielded)
+		simulate_recoil(user, recoil_unwielded, actual_angle)
 
 	if(suppressed)
 		playsound(user, suppressed_sound, suppressed_volume, vary_fire_sound, ignore_walls = FALSE, extrarange = SILENCED_SOUND_EXTRARANGE, falloff_distance = 0)
@@ -273,9 +292,8 @@
 	if(check_botched(user))
 		return
 
-	var/obj/item/bodypart/other_hand = user.has_hand_for_held_index(user.get_inactive_hand_index()) //returns non-disabled inactive hands
-	if(weapon_weight == WEAPON_HEAVY && (user.get_inactive_held_item() || !other_hand))
-		to_chat(user, "<span class='warning'>You need two hands to fire [src]!</span>")
+	if(weapon_weight == WEAPON_HEAVY && (!wielded))
+		to_chat(user, "<span class='warning'>You need a more secure grip to fire [src]!</span>")
 		return
 	//DUAL (or more!) WIELDING
 	var/bonus_spread = 0
@@ -371,8 +389,12 @@
 	var/sprd = 0
 	var/randomized_gun_spread = 0
 	var/rand_spr = rand()
-	if(spread)
+
+	if(wielded_fully && spread)
 		randomized_gun_spread =	rand(0,spread)
+	else if(!wielded_fully && spread_unwielded)
+		randomized_gun_spread =	rand(0,spread_unwielded)
+
 	if(HAS_TRAIT(user, TRAIT_POOR_AIM)) //nice shootin' tex
 		bonus_spread += 25
 	var/randomized_bonus_spread = rand(0, bonus_spread)
@@ -686,15 +708,110 @@
 /obj/item/gun/proc/before_firing(atom/target,mob/user)
 	return
 
-/obj/item/gun/proc/simulate_recoil(recoil_bonus = 0, firing_angle)
+/obj/item/gun/proc/simulate_recoil(mob/living/user, recoil_bonus = 0, firing_angle)
 	var/total_recoil = recoil_bonus
 
 	var/actual_angle = firing_angle + rand(-recoil_deviation, recoil_deviation) + 180
 	if(actual_angle > 360)
 		actual_angle -= 360
 	if(total_recoil > 0)
-		recoil_camera(gun_user, total_recoil + 1, (total_recoil * recoil_backtime_multiplier)+1, total_recoil, actual_angle)
+		recoil_camera(user, total_recoil + 1, (total_recoil * recoil_backtime_multiplier)+1, total_recoil, actual_angle)
 		return TRUE
+
+/obj/item/gun/proc/handle_muzzle_flash(mob/living/user, firing_angle)
+	var/atom/movable/flash_loc = user
+	var/prev_light = light_range
+	if(!light_on && (light_range <= muzzle_flash_lum))
+		set_light_range(muzzle_flash_lum)
+		set_light_color(muzzle_flash_color)
+		set_light_on(TRUE)
+		update_light()
+		addtimer(CALLBACK(src, .proc/reset_light_range, prev_light), 1 SECONDS)
+	//Offset the pixels.
+	switch(firing_angle)
+		if(0, 360)
+			muzzle_flash.pixel_x = 0
+			muzzle_flash.pixel_y = 8
+			muzzle_flash.layer = initial(muzzle_flash.layer)
+		if(1 to 44)
+			muzzle_flash.pixel_x = round(4 * ((firing_angle) / 45))
+			muzzle_flash.pixel_y = 8
+			muzzle_flash.layer = initial(muzzle_flash.layer)
+		if(45)
+			muzzle_flash.pixel_x = 8
+			muzzle_flash.pixel_y = 8
+			muzzle_flash.layer = initial(muzzle_flash.layer)
+		if(46 to 89)
+			muzzle_flash.pixel_x = 8
+			muzzle_flash.pixel_y = round(4 * ((90 - firing_angle) / 45))
+			muzzle_flash.layer = initial(muzzle_flash.layer)
+		if(90)
+			muzzle_flash.pixel_x = 8
+			muzzle_flash.pixel_y = 0
+			muzzle_flash.layer = initial(muzzle_flash.layer)
+		if(91 to 134)
+			muzzle_flash.pixel_x = 8
+			muzzle_flash.pixel_y = round(-3 * ((firing_angle - 90) / 45))
+			muzzle_flash.layer = initial(muzzle_flash.layer)
+		if(135)
+			muzzle_flash.pixel_x = 8
+			muzzle_flash.pixel_y = -6
+			muzzle_flash.layer = initial(muzzle_flash.layer)
+		if(136 to 179)
+			muzzle_flash.pixel_x = round(4 * ((180 - firing_angle) / 45))
+			muzzle_flash.pixel_y = -6
+			muzzle_flash.layer = ABOVE_MOB_LAYER
+		if(180)
+			muzzle_flash.pixel_x = 0
+			muzzle_flash.pixel_y = -6
+			muzzle_flash.layer = ABOVE_MOB_LAYER
+		if(181 to 224)
+			muzzle_flash.pixel_x = round(-6 * ((firing_angle - 180) / 45))
+			muzzle_flash.pixel_y = -6
+			muzzle_flash.layer = ABOVE_MOB_LAYER
+		if(225)
+			muzzle_flash.pixel_x = -6
+			muzzle_flash.pixel_y = -6
+			muzzle_flash.layer = initial(muzzle_flash.layer)
+		if(226 to 269)
+			muzzle_flash.pixel_x = -6
+			muzzle_flash.pixel_y = round(-6 * ((270 - firing_angle) / 45))
+			muzzle_flash.layer = initial(muzzle_flash.layer)
+		if(270)
+			muzzle_flash.pixel_x = -6
+			muzzle_flash.pixel_y = 0
+			muzzle_flash.layer = initial(muzzle_flash.layer)
+		if(271 to 314)
+			muzzle_flash.pixel_x = -6
+			muzzle_flash.pixel_y = round(8 * ((firing_angle - 270) / 45))
+			muzzle_flash.layer = initial(muzzle_flash.layer)
+		if(315)
+			muzzle_flash.pixel_x = -6
+			muzzle_flash.pixel_y = 8
+			muzzle_flash.layer = initial(muzzle_flash.layer)
+		if(316 to 359)
+			muzzle_flash.pixel_x = round(-6 * ((360 - firing_angle) / 45))
+			muzzle_flash.pixel_y = 8
+			muzzle_flash.layer = initial(muzzle_flash.layer)
+
+	muzzle_flash.transform = null
+	muzzle_flash.transform = turn(muzzle_flash.transform, firing_angle)
+	flash_loc.vis_contents += muzzle_flash
+	muzzle_flash.applied = TRUE
+
+	addtimer(CALLBACK(src, .proc/remove_muzzle_flash, flash_loc, muzzle_flash), 0.2 SECONDS)
+
+/obj/item/gun/proc/reset_light_range(lightrange)
+	set_light_range(lightrange)
+	set_light_color(initial(light_color))
+	if(lightrange <= 0)
+		set_light_on(FALSE)
+	update_light()
+
+/obj/item/gun/proc/remove_muzzle_flash(atom/movable/flash_loc, obj/effect/muzzle_flash/muzzle_flash)
+	if(!QDELETED(flash_loc))
+		flash_loc.vis_contents -= muzzle_flash
+	muzzle_flash.applied = FALSE
 
 /////////////
 // ZOOMING //

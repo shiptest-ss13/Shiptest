@@ -23,7 +23,7 @@
 	/// The sound played when this ammo is fired by an energy gun.
 	var/fire_sound = null
 	/// The visual effect that appears when the ammo is fired.
-	var/firing_effect_type = /obj/effect/temp_visual/dir_setting/firing_effect
+	var/firing_effect_type
 	/// Enables casing spinning and sizzling after being ejected from a gun.
 	var/heavy_metal = TRUE
 	/// If true, the casing's sprite will automatically be transformed in Initialize().

@@ -4,7 +4,7 @@
 	base_icon_state = "a762"
 	ammo_type = /obj/item/ammo_casing/mm712x82
 	caliber = "7.12x82mm"
-	max_ammo = 50
+	max_ammo = 100
 	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/ammo_box/magazine/mm712x82/hollow

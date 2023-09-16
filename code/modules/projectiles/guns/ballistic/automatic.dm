@@ -14,6 +14,13 @@
 	weapon_weight = WEAPON_MEDIUM
 	pickup_sound =  'sound/items/handling/rifle_pickup.ogg'
 
+	wield_delay = 1 SECONDS
+	spread = 0
+	spread_unwielded = 13
+	recoil = 0.3
+	recoil_unwielded = 4
+	wield_slowdown = 0.35
+
 /obj/item/gun/ballistic/automatic/update_overlays()
 	. = ..()
 	if(!select)
@@ -71,6 +78,13 @@
 	actions_types = list()
 	mag_display = TRUE
 
+	spread = -5
+	spread_unwielded = 20
+	recoil = 0
+	recoil_unwielded = 4
+	wield_slowdown = 1
+	wield_delay = 1.3 SECONDS
+
 /obj/item/gun/ballistic/automatic/sniper_rifle/syndicate
 	name = "syndicate sniper rifle"
 	desc = "A heavily modified .50 caliber anti-materiel rifle capable of accepting a suppressor. Its prodigious bulk requires both hands and some time to aim."
@@ -117,7 +131,6 @@
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	lefthand_file = 'icons/mob/inhands/weapons/64x_guns_left.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/64x_guns_right.dmi'
-	fire_sound = 'sound/weapons/gun/rifle/shot.ogg'
 	icon_state = "ebr"
 	item_state = "ebr"
 	mag_display = TRUE
@@ -127,6 +140,9 @@
 	fire_sound = 'sound/weapons/gun/rifle/shot_alt2.ogg'
 	burst_size = 0
 	actions_types = list()
+
+	wield_slowdown = 2
+	spread = -4
 
 /obj/item/gun/ballistic/automatic/gal
 	name = "\improper CM-GAL-S"
@@ -142,6 +158,9 @@
 	fire_sound = 'sound/weapons/gun/rifle/gal.ogg'
 	burst_size = 0
 	actions_types = list()
+
+	wield_slowdown = 2
+	spread = -4
 
 /obj/item/gun/ballistic/automatic/gal/inteq
 	name = "\improper SsG-04"

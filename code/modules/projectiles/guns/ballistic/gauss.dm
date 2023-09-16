@@ -20,6 +20,13 @@
 	charge_sections = 4
 	ammo_x_offset = 2
 
+	spread = 0
+	spread_unwielded = 25
+	recoil = 0
+	recoil_unwielded = 4
+	wield_slowdown = 0.75
+	wield_delay = 1 SECONDS
+
 /obj/item/gun/ballistic/automatic/powered/gauss/modelh
 	name = "Model H"
 	desc = "Standard issue pistol of the Solarian confederation. Its unique ability to fire slugs instead of pellets make it effective in taking down unarmored targets, but can be useless against armored ones. This also makes it drain battery very fast, be careful. Chambered in ferromagnetic slugs."
@@ -39,6 +46,11 @@
 
 	mag_display = FALSE
 	empty_indicator = FALSE
+
+	recoil = 1
+	recoil_unwielded = 2
+	spread = 3
+	spread_unwielded = 6
 
 
 /obj/item/gun/ballistic/automatic/powered/gauss/claris
@@ -80,6 +92,9 @@
 	actions_types = list()
 
 	empty_indicator = FALSE
+
+	wield_delay = 0.7 SECONDS
+	fire_delay = 1
 
 /obj/item/gun/ballistic/automatic/powered/gauss/gar/ComponentInitialize()
 	. = ..()

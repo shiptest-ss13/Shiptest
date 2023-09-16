@@ -55,5 +55,5 @@
 
 /obj/projectile/bullet/a858
 	name = "8x58mm caseless bullet"
-	damage = 30
-	armour_penetration = 40
+	damage = 50
+	armour_penetration = 15

@@ -81,11 +81,14 @@
 	var/rack_delay = 5
 	///time of the most recent rack, used for cooldown purposes
 	var/recent_rack = 0
-	///Whether the gun can be tacloaded by slapping a fresh magazine directly on it
-	var/tac_reloads = TRUE //Snowflake mechanic no more.
 	///Whether the gun can be sawn off by sawing tools
 	var/can_be_sawn_off  = FALSE
 	var/flip_cooldown = 0
+
+	///Whether the gun can be tacloaded by slapping a fresh magazine directly on it
+	var/tac_reloads = TRUE //Snowflake mechanic no more.
+	///If we have the 'snowflake mechanic,' how long should it take to reload?
+	var/tactical_reload_delay  = 1.2 SECONDS
 
 /obj/item/gun/ballistic/Initialize()
 	. = ..()
@@ -221,11 +224,16 @@
 	magazine.forceMove(drop_location())
 	var/obj/item/ammo_box/magazine/old_mag = magazine
 	if (tac_load)
-		if (insert_magazine(user, tac_load, FALSE))
-			to_chat(user, "<span class='notice'>You perform a tactical reload on \the [src].</span>")
+		if(do_after(user, tactical_reload_delay, TRUE, src))
+			if (insert_magazine(user, tac_load, FALSE))
+				to_chat(user, "<span class='notice'>You perform a tactical reload on \the [src].</span>")
+			else
+				to_chat(user, "<span class='warning'>You dropped the old [magazine_wording], but the new one doesn't fit. How embarassing.</span>")
+				magazine = null
 		else
-			to_chat(user, "<span class='warning'>You dropped the old [magazine_wording], but the new one doesn't fit. How embarassing.</span>")
-			magazine = null
+			to_chat(user, "<span class='warning'>Your reload was interupted!</span>")
+			return
+
 	else
 		magazine = null
 	user.put_in_hands(old_mag)
@@ -352,12 +360,14 @@
 				user.dropItemToGround(src, TRUE)
 				return
 			flip_cooldown = (world.time + 30)
+			SpinAnimation(7,1)
 			user.visible_message("<span class='notice'>[user] spins the [src] around their finger by the trigger. That’s pretty badass.</span>")
 			playsound(src, 'sound/items/handling/ammobox_pickup.ogg', 20, FALSE)
 			return
 	if(!internal_magazine && magazine)
 		if(!magazine.ammo_count())
-			eject_magazine(user)
+			to_chat(user, "<span class='danger'>You can't just eject the magazine like a videogame! Use your other hand to unload the [src]!</span>")
+			//eject_magazine(user)
 			return
 	if(bolt_type == BOLT_TYPE_NO_BOLT)
 		chambered = null

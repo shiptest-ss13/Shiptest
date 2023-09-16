@@ -93,7 +93,7 @@
 			recharge_newshot(TRUE)
 		update_appearance()
 
-/obj/item/gun/energy/unique_action(mob/living/user))
+/obj/item/gun/energy/unique_action(mob/living/user)
 	if(ammo_type.len > 1)
 		select_fire(user)
 		update_appearance()
@@ -268,18 +268,18 @@
 		else if(BB.nodamage || !BB.damage || BB.damage_type == STAMINA)
 			user.visible_message("<span class='danger'>[user] tries to light [user.p_their()] [A.name] with [src], but it doesn't do anything. Dumbass.</span>")
 			playsound(user, E.fire_sound, 50, TRUE)
-			playsound(user, BB.hitsound, 50, TRUE)
+			playsound(user, BB.hitsound_non_living, 50, TRUE)
 			cell.use(E.e_cost)
 			. = ""
 		else if(BB.damage_type != BURN)
 			user.visible_message("<span class='danger'>[user] tries to light [user.p_their()] [A.name] with [src], but only succeeds in utterly destroying it. Dumbass.</span>")
 			playsound(user, E.fire_sound, 50, TRUE)
-			playsound(user, BB.hitsound, 50, TRUE)
+			playsound(user, BB.hitsound_non_living, 50, TRUE)
 			cell.use(E.e_cost)
 			qdel(A)
 			. = ""
 		else
 			playsound(user, E.fire_sound, 50, TRUE)
-			playsound(user, BB.hitsound, 50, TRUE)
+			playsound(user, BB.hitsound_non_living, 50, TRUE)
 			cell.use(E.e_cost)
 			. = "<span class='danger'>[user] casually lights their [A.name] with [src]. Damn.</span>"
