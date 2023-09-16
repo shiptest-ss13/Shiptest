@@ -1,7 +1,5 @@
 /datum/job/bartender
 	name = "Bartender"
-	total_positions = 1
-	spawn_positions = 1
 	wiki_page = "Drinks" //WS Edit - Wikilinks/Warning
 
 	outfit = /datum/outfit/job/bartender
@@ -44,7 +42,7 @@
 	shoes = /obj/item/clothing/shoes/laceup
 	gloves = /obj/item/clothing/gloves/color/white
 	ears = /obj/item/radio/headset/syndicate
-	mask = /obj/item/clothing/mask/chameleon
+	mask = /obj/item/clothing/mask/gas/syndicate/voicechanger
 	belt = /obj/item/storage/belt/bandolier
 	implants = list(/obj/item/implant/weapons_auth)
 	id = /obj/item/card/id/syndicate_command/crew_id

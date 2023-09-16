@@ -155,10 +155,6 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 	. = ..()
 	. += GLOB.metal_recipes
 
-/obj/item/stack/sheet/metal/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins whacking [user.p_them()]self over the head with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return BRUTELOSS
-
 /*
  * Plasteel
  */
@@ -756,13 +752,15 @@ new /datum/stack_recipe("paper frame door", /obj/structure/mineral_door/paperfra
 	amount = 50
 
 /obj/item/stack/sheet/capitalisium
-	name = "capitalisium sheet"
+	name = "capitalisium sheets"
+	singular_name = "capitalisium sheet"
 	desc = "A source of raw capitalism, capable of bringing forth the prophesized Capitalist Golem."
 	icon_state = "sheet-capitalisium"
 	merge_type = /obj/item/stack/sheet/capitalisium
 
 /obj/item/stack/sheet/stalinium
-	name = "stalinium sheet"
+	name = "stalinium sheets"
+	singular_name = "stalinium sheet"
 	desc = "A source of raw socialism, capable of bringing forth the prophesized Soviet Golem."
 	icon_state = "sheet-stalinium"
 	merge_type = /obj/item/stack/sheet/stalinium

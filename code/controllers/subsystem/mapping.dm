@@ -37,7 +37,6 @@ SUBSYSTEM_DEF(mapping)
 	var/station_start  // should only be used for maploading-related tasks
 	var/space_levels_so_far = 0
 	var/list/datum/space_level/z_list
-	var/datum/space_level/empty_space
 
 	/// List of all map zones
 	var/list/map_zones = list()
@@ -78,7 +77,7 @@ SUBSYSTEM_DEF(mapping)
 
 	for(var/N in nuke_tiles)
 		var/turf/open/floor/circuit/C = N
-		C.update_icon()
+		C.update_appearance()
 
 /datum/controller/subsystem/mapping/Recover()
 	flags |= SS_NO_INIT
@@ -88,6 +87,7 @@ SUBSYSTEM_DEF(mapping)
 
 	ruins_templates = SSmapping.ruins_templates
 	ruin_types_list = SSmapping.ruin_types_list
+	ruin_types_probabilities = SSmapping.ruin_types_probabilities
 
 	shuttle_templates = SSmapping.shuttle_templates
 	shelter_templates = SSmapping.shelter_templates
@@ -95,6 +95,19 @@ SUBSYSTEM_DEF(mapping)
 
 	outpost_templates = SSmapping.outpost_templates
 
+	shuttle_templates = SSmapping.shuttle_templates
+	shelter_templates = SSmapping.shelter_templates
+	holodeck_templates = SSmapping.holodeck_templates
+
+	areas_in_z = SSmapping.areas_in_z
+	map_zones = SSmapping.map_zones
+	biomes = SSmapping.biomes
+	planet_types = SSmapping.planet_types
+
+	maplist = SSmapping.maplist
+	ship_purchase_list = SSmapping.ship_purchase_list
+
+	virtual_z_translation = SSmapping.virtual_z_translation
 	z_list = SSmapping.z_list
 
 #define INIT_ANNOUNCE(X) to_chat(world, "<span class='boldannounce'>[X]</span>"); log_world(X)
@@ -210,7 +223,7 @@ SUBSYSTEM_DEF(mapping)
 			var/value = job_slot_list[job]
 			var/slots
 			if(isnum(value))
-				job_slot = SSjob.GetJob(job)
+				job_slot = GLOB.name_occupations[job]
 				slots = value
 			else if(islist(value))
 				var/datum/outfit/job_outfit = text2path(value["outfit"])
@@ -218,6 +231,7 @@ SUBSYSTEM_DEF(mapping)
 					stack_trace("Invalid job outfit! [value["outfit"]] on [S.name]'s config! Defaulting to assistant clothing.")
 					job_outfit = /datum/outfit/job/assistant
 				job_slot = new /datum/job(job, job_outfit)
+				job_slot.display_order = length(S.job_slots)
 				job_slot.wiki_page = value["wiki_page"]
 				job_slot.officer = value["officer"]
 				slots = value["slots"]
@@ -246,6 +260,7 @@ SUBSYSTEM_DEF(mapping)
 			S.space_spawn = TRUE
 
 		shuttle_templates[S.file_name] = S
+		map_templates[S.file_name] = S
 #undef CHECK_STRING_EXISTS
 #undef CHECK_LIST_EXISTS
 

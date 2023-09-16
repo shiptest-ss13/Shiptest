@@ -507,6 +507,11 @@
 /obj/structure/sign/poster/official/random{
 	pixel_x = -32
 	},
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = 25;
+	pixel_y = -25
+	},
 /turf/open/floor/plasteel,
 /area/ship/storage)
 "mC" = (
@@ -627,6 +632,15 @@
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
 /area/ship/hallway/central)
+"pa" = (
+/obj/effect/turf_decal/corner/opaque/blue{
+	dir = 5
+	},
+/obj/machinery/light_switch{
+	pixel_y = 23
+	},
+/turf/open/floor/plasteel,
+/area/ship/hallway/central)
 "pl" = (
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	dir = 4;
@@ -679,6 +693,10 @@
 	},
 /obj/structure/cable{
 	icon_state = "1-4"
+	},
+/obj/machinery/light_switch{
+	pixel_x = 21;
+	pixel_y = 23
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
@@ -2590,7 +2608,7 @@ Jy
 RS
 RN
 Vb
-Zv
+pa
 Xg
 Rg
 Ji

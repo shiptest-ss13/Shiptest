@@ -33,10 +33,6 @@ GENE SCANNER
 	drop_sound = 'sound/items/handling/device_drop.ogg'
 	custom_materials = list(/datum/material/iron=150)
 
-/obj/item/t_scanner/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins to emit terahertz-rays into [user.p_their()] brain with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return TOXLOSS
-
 /obj/item/t_scanner/proc/toggle_on()
 	on = !on
 	icon_state = copytext_char(icon_state, 1, -1) + "[on]"
@@ -104,10 +100,6 @@ GENE SCANNER
 	var/healthmodeinhand = "analyzer"
 	var/reagentmodeinhand = "reagentanalyzer-1"
 	custom_price = 300
-
-/obj/item/healthanalyzer/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins to analyze [user.p_them()]self with [src]! The display shows that [user.p_theyre()] dead!</span>")
-	return BRUTELOSS
 
 /obj/item/healthanalyzer/attack_self(mob/user)
 	playsound(get_turf(user), 'sound/machines/click.ogg', 50, TRUE)
@@ -461,10 +453,6 @@ GENE SCANNER
 	. = ..()
 	. += "<span class='notice'>Alt-click [src] to activate the barometer function.</span>"
 
-/obj/item/analyzer/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins to analyze [user.p_them()]self with [src]! The display shows that [user.p_theyre()] dead!</span>")
-	return BRUTELOSS
-
 /obj/item/analyzer/attack_self(mob/user)
 	add_fingerprint(user)
 
@@ -671,19 +659,19 @@ GENE SCANNER
 		if (T.slime_mutation[3] == T.slime_mutation[4])
 			if (T.slime_mutation[2] == T.slime_mutation[1])
 				to_render += "\nPossible mutation: [T.slime_mutation[3]]\
-							  \nGenetic destability: [T.mutation_chance/2] % chance of mutation on splitting"
+							\nGenetic destability: [T.mutation_chance/2] % chance of mutation on splitting"
 			else
 				to_render += "\nPossible mutations: [T.slime_mutation[1]], [T.slime_mutation[2]], [T.slime_mutation[3]] (x2)\
-							  \nGenetic destability: [T.mutation_chance] % chance of mutation on splitting"
+							\nGenetic destability: [T.mutation_chance] % chance of mutation on splitting"
 		else
 			to_render += "\nPossible mutations: [T.slime_mutation[1]], [T.slime_mutation[2]], [T.slime_mutation[3]], [T.slime_mutation[4]]\
-						  \nGenetic destability: [T.mutation_chance] % chance of mutation on splitting"
+						\nGenetic destability: [T.mutation_chance] % chance of mutation on splitting"
 	if (T.cores > 1)
 		to_render += "\nMultiple cores detected"
 	to_render += "\nGrowth progress: [T.amount_grown]/[SLIME_EVOLUTION_THRESHOLD]"
 	if(T.effectmod)
 		to_render += "\n<span class='notice'>Core mutation in progress: [T.effectmod]</span>\
-					  \n<span class='notice'>Progress in core mutation: [T.applied] / [(SLIME_EXTRACT_CROSSING_REQUIRED * T.crossbreed_modifier)]</span>"
+					\n<span class='notice'>Progress in core mutation: [T.applied] / [(SLIME_EXTRACT_CROSSING_REQUIRED * T.crossbreed_modifier)]</span>"
 	to_chat(user, examine_block(to_render))
 
 

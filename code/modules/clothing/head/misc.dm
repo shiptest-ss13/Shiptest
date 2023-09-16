@@ -8,6 +8,15 @@
 	armor = list("melee" = 30, "bullet" = 15, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	strip_delay = 80
 
+/obj/item/clothing/head/centcom_cap
+	name = "\improper CentCom commander cap"
+	icon_state = "centcom_cap"
+	desc = "Worn by the finest of CentCom commanders. Inside the lining of the cap, lies two faint initials."
+	item_state = "that"
+	flags_inv = 0
+	armor = list("melee" = 30, "bullet" = 15, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
+	strip_delay = (8 SECONDS)
+
 /obj/item/clothing/head/spacepolice
 	name = "space police cap"
 	desc = "A blue cap for patrolling the daily beat."
@@ -38,11 +47,6 @@
 	name = "redcoat's hat"
 	icon_state = "redcoat"
 	desc = "<i>'I guess it's a redhead.'</i>"
-
-/obj/item/clothing/head/mailman
-	name = "mailman's hat"
-	icon_state = "mailman"
-	desc = "<i>'Right-on-time'</i> mail service head wear."
 
 /obj/item/clothing/head/plaguedoctorhat
 	name = "plague doctor's hat"
@@ -147,7 +151,7 @@
 	if(!ishuman(user))
 		return
 	var/mob/living/carbon/human/H = user
-	if(H.get_item_by_slot(ITEM_SLOT_HEAD) == src)
+	if(H.get_item_by_slot(ITEM_SLOT_HEAD) == src && !QDELETED(src)) //This can be called as a part of destroy
 		user.remove_language(/datum/language/piratespeak/, TRUE, TRUE, LANGUAGE_HAT)
 		to_chat(user, "<span class='boldnotice'>You can no longer speak like a pirate.</span>")
 
@@ -185,14 +189,6 @@
 	clothing_flags = SNUG_FIT
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 
-/obj/item/clothing/head/griffin
-	name = "griffon head"
-	desc = "Why not 'eagle head'? Who knows."
-	icon_state = "griffinhat"
-	item_state = "griffinhat"
-	clothing_flags = SNUG_FIT
-	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
-
 /obj/item/clothing/head/bearpelt
 	name = "bear pelt hat"
 	desc = "Fuzzy."
@@ -225,15 +221,11 @@
 	icon_state = "fedora_beige"
 	item_state = "fedora_beige"
 
-/obj/item/clothing/head/fedora/suicide_act(mob/user)
-	if(user.gender == FEMALE)
-		return 0
-	var/mob/living/carbon/human/H = user
-	user.visible_message("<span class='suicide'>[user] is donning [src]! It looks like [user.p_theyre()] trying to be nice to girls.</span>")
-	user.say("M'lady.", forced = "fedora suicide")
-	sleep(10)
-	H.facial_hairstyle = "Neckbeard"
-	return(BRUTELOSS)
+/obj/item/clothing/head/fedora/solgov
+	name = "solarian hat"
+	icon_state = "hat_solgov"
+	item_state = "hat_solgov"
+	desc = "A slick blue hat used by both solarian civilians and physicists."
 
 /obj/item/clothing/head/sombrero
 	name = "sombrero"
@@ -381,7 +373,7 @@
 
 /obj/item/clothing/head/frenchberet
 	name = "french beret"
-	desc = "A quality beret, infused with the aroma of chain-smoking, wine-swilling Parisians. You feel less inclined to engage military conflict, for some reason."
+	desc = "A quality beret, infused with the aroma of chain-smoking, wine-swilling Parisians. You feel less inclined to engage in military conflict, for some reason."
 	icon_state = "beret"
 	dynamic_hair_suffix = ""
 
@@ -461,7 +453,7 @@
 
 /obj/item/clothing/head/coordinator
 	name = "coordinator cap"
-	desc = "A cap for a party ooordinator, stylish!."
+	desc = "A cap for a party coordinator, stylish!."
 	icon_state = "capcap"
 	item_state = "that"
 	armor = list("melee" = 25, "bullet" = 15, "laser" = 25, "energy" = 35, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
@@ -499,6 +491,15 @@
 	icon_state = "inteqheadband"
 	item_state = "inteqheadband"
 
+/obj/item/clothing/head/inteq_peaked
+	name = "inteq peaked cap"
+	desc = "A peaked cap for Vanguards with a commanding authority, emblazoned with the golden badge of the IRMG."
+	icon_state = "inteq_peaked"
+	item_state = "inteq_peaked"
+	flags_inv = 0
+	armor = list("melee" = 40, "bullet" = 30, "laser" = 25, "energy" = 35, "bomb" = 25, "bio" = 10, "rad" = 0, "fire" = 50, "acid" = 60)
+	strip_delay = 60
+
 /obj/item/clothing/head/maidheadband
 	name = "maid headband"
 	desc = "Just like from one of those chinese cartoons!"
@@ -518,3 +519,8 @@
 	desc = "You feel ashamed about what you had to do to get this hat"
 	icon_state = "cowboy"
 	item_state = "cowboy"
+
+/obj/item/clothing/head/solgov_surgery
+	name = "SolGov surgery cap"
+	desc = "It's a surgery cap utilized by solarian doctors."
+	icon_state = "solgov_surgery"

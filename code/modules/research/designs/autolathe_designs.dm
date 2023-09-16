@@ -1175,6 +1175,14 @@
 	build_path = /obj/item/storage/bag/trash
 	category = list("initial","Tools","Tool Designs","Misc")
 
+/datum/design/bodybag
+	name="Body Bag"
+	id="bodybag"
+	build_type = AUTOLATHE | PROTOLATHE
+	materials = list(/datum/material/plastic = 4000)
+	build_path = /obj/item/bodybag
+	category = list("initial","Medical","Misc")
+
 /datum/design/fishing_rod_basic
 	name = "Fishing Rod"
 	id = "fishing rod"

@@ -1044,6 +1044,11 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = 25;
+	pixel_y = -25
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/storage)
 "sg" = (
@@ -2859,6 +2864,11 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 5
 	},
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 20;
+	pixel_y = 20
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "Xo" = (
@@ -2983,6 +2993,15 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
+"ZP" = (
+/obj/effect/turf_decal/corner/opaque/blue{
+	dir = 5
+	},
+/obj/machinery/light_switch{
+	pixel_y = 23
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/central)
 "ZR" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -2998,6 +3017,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
+	},
+/obj/machinery/light_switch{
+	pixel_x = 21;
+	pixel_y = 25
 	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew)
@@ -3411,7 +3434,7 @@ Ub
 gs
 MB
 oC
-Zv
+ZP
 bv
 yJ
 ul

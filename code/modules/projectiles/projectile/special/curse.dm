@@ -20,8 +20,13 @@
 	handedness = prob(50)
 	icon_state = "cursehand[handedness]"
 
+/obj/projectile/curse_hand/Destroy()
+	QDEL_NULL(arm)
+	return ..()
+
 /obj/projectile/curse_hand/update_icon_state()
 	icon_state = "[initial(icon_state)][handedness]"
+	return ..()
 
 /obj/projectile/curse_hand/fire(setAngle)
 	if(starting)

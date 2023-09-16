@@ -14,9 +14,6 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 70)
 	resistance_flags = FIRE_PROOF
 
-/obj/item/banhammer/suicide_act(mob/user)
-		user.visible_message("<span class='suicide'>[user] is hitting [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to ban [user.p_them()]self from life.</span>")
-		return (BRUTELOSS|FIRELOSS|TOXLOSS|OXYLOSS)
 /*
 oranges says: This is a meme relating to the english translation of the ss13 russian wiki page on lurkmore.
 mrdoombringer sez: and remember kids, if you try and PR a fix for this item's grammar, you are admitting that you are, indeed, a newfriend.
@@ -45,11 +42,6 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 
-/obj/item/sord/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is trying to impale [user.p_them()]self with [src]! It might be a suicide attempt if it weren't so shitty.</span>", \
-	"<span class='suicide'>You try to impale yourself with [src], but it's USELESS...</span>")
-	return SHAME
-
 /obj/item/claymore
 	name = "claymore"
 	desc = "What are you standing around staring at this for? Get to killing!"
@@ -66,7 +58,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	throwforce = 10
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
-	block_chance = 50
+	block_chance = 40
 	sharpness = IS_SHARP
 	max_integrity = 200
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 50)
@@ -75,10 +67,6 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 /obj/item/claymore/Initialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 40, 105)
-
-/obj/item/claymore/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is falling on [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return(BRUTELOSS)
 
 /obj/item/claymore/highlander //ALL COMMENTS MADE REGARDING THIS SWORD MUST BE MADE IN ALL CAPS
 	desc = "<b><i>THERE CAN BE ONLY ONE, AND IT WILL BE YOU!!!</i></b>\nActivate it in your hand to point to the nearest victim."
@@ -221,16 +209,12 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	w_class = WEIGHT_CLASS_HUGE
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
-	block_chance = 50
+	block_chance = 10
 	sharpness = IS_SHARP
 	max_integrity = 200
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 50)
 	resistance_flags = FIRE_PROOF
 	supports_variations = VOX_VARIATION
-
-/obj/item/katana/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is slitting [user.p_their()] stomach open with [src]! It looks like [user.p_theyre()] trying to commit seppuku!</span>")
-	return(BRUTELOSS)
 
 /obj/item/katana/cursed
 	name = "ominous katana"
@@ -248,9 +232,6 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	var/list/nemesis_factions = list("mining", "boss")
 	var/faction_bonus_force = 25
 
-/obj/item/katana/cursed/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is surrendering to the entity within [src]! It looks like [user.p_theyre()] trying to commit seppuku!</span>")
-	return(FIRELOSS)
 
 /obj/item/katana/cursed/examine(mob/user)
 	. = ..()
@@ -407,10 +388,6 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 		hitsound = 'sound/weapons/genhit.ogg'
 		sharpness = IS_BLUNT
 
-/obj/item/switchblade/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is slitting [user.p_their()] own throat with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return (BRUTELOSS)
-
 /obj/item/phone
 	name = "red phone"
 	desc = "Should anything ever go wrong..."
@@ -424,12 +401,6 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	attack_verb = list("called", "rang")
 	hitsound = 'sound/weapons/ring.ogg'
 
-/obj/item/phone/suicide_act(mob/user)
-	if(locate(/obj/structure/chair/stool) in user.loc)
-		user.visible_message("<span class='suicide'>[user] begins to tie a noose with [src]'s cord! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	else
-		user.visible_message("<span class='suicide'>[user] is strangling [user.p_them()]self with [src]'s cord! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return(OXYLOSS)
 
 /obj/item/cane
 	name = "cane"
@@ -489,9 +460,6 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	icon = 'icons/obj/wizard.dmi'
 	icon_state = "ectoplasm"
 
-/obj/item/ectoplasm/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is inhaling [src]! It looks like [user.p_theyre()] trying to visit the astral plane!</span>")
-	return (OXYLOSS)
 
 /obj/item/ectoplasm/angelic
 	icon = 'icons/obj/wizard.dmi'
@@ -589,15 +557,6 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	attack_verb = list("smacked", "whacked", "slammed", "smashed")
 	///The vehicle counterpart for the board
 	var/board_item_type = /obj/vehicle/ridden/scooter/skateboard
-
-/obj/item/melee/skateboard/suicide_act(mob/living/carbon/user)				//WS Edit Begin - Skateboards can take you to the afterlife
-	user.visible_message("<span class='suicide'>[user] begins attempting to preform a double kickflip! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	if(prob(3))
-		user.dust()
-		user.visible_message("<span class='suicide'>[user] succeeds! [user.p_theyre()] ascends for a moment before exploding into a fine dust!</span>") //this is very likely to cause issues in the future, yell at the coder
-		for(var/mob/living/M in get_hearers_in_view(7,user))
-			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "Rad", /datum/mood_event/dkickflip)
-	return BRUTELOSS			//WS Edit End
 
 /obj/item/melee/skateboard/attack_self(mob/user)
 	var/obj/vehicle/ridden/scooter/skateboard/S = new board_item_type(get_turf(user))//this probably has fucky interactions with telekinesis but for the record it wasnt my fault
@@ -782,12 +741,13 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 //HF blade
 /obj/item/vibro_weapon
 	icon_state = "hfrequency0"
+	base_icon_state = "hfrequency"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	name = "vibro sword"
 	desc = "A potent weapon capable of cutting through nearly anything. Wielding it in two hands will allow you to deflect gunfire."
 	armour_penetration = 100
-	block_chance = 40
+	block_chance = 30
 	force = 20
 	throwforce = 20
 	throw_speed = 4
@@ -806,7 +766,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 /obj/item/vibro_weapon/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 20, 105)
-	AddComponent(/datum/component/two_handed, force_multiplier=2, icon_wielded="hfrequency1")
+	AddComponent(/datum/component/two_handed, force_multiplier=2, icon_wielded="[base_icon_state]1")
 
 /// triggered on wield of two handed item
 /obj/item/vibro_weapon/proc/on_wield(obj/item/source, mob/user)
@@ -821,7 +781,8 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	wielded = FALSE
 
 /obj/item/vibro_weapon/update_icon_state()
-	icon_state = "hfrequency0"
+	icon_state = "[base_icon_state]0"
+	return ..()
 
 /obj/item/vibro_weapon/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	if(wielded)
@@ -844,7 +805,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	name = "legionnaire staff"
 	desc = "The remnants of a legionnaire, reconstructed around a pole of bone. The skulls it produces are loyal to the wielder, seeming to recognize them as their host body."
 	icon = 'icons/obj/guns/magic.dmi'
-	block_chance = 25
+	block_chance = 20
 	force = 20
 	throwforce = 10
 	throw_speed = 4
@@ -878,11 +839,11 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	force = 15
 	throwforce = 10
 	armour_penetration = 15
-	block_chance = 30
+
 
 /obj/item/vibro_weapon/weak
 	armour_penetration = 10
-	block_chance = 5
+	block_chance = 10
 	force = 15
 	throwforce = 20
 

@@ -17,6 +17,11 @@ GLOBAL_LIST_EMPTY(objectives)
 	if(text)
 		explanation_text = text
 
+//Apparently objectives can be qdel'd. Learn a new thing every day
+/datum/objective/Destroy()
+	GLOB.objectives -= src
+	return ..()
+
 /datum/objective/proc/get_owners() // Combine owner and team into a single list.
 	. = (team && team.members) ? team.members.Copy() : list()
 	if(owner)
@@ -480,8 +485,6 @@ GLOBAL_LIST_EMPTY(objectives)
 	var/list/datum/mind/owners = get_owners()
 	for(var/datum/mind/M in owners)
 		if(considered_alive(M))
-			return FALSE
-		if(M.current?.suiciding) //killing yourself ISN'T glorious.
 			return FALSE
 	return TRUE
 

@@ -342,7 +342,7 @@ SUBSYSTEM_DEF(timer)
 
 
 /datum/controller/subsystem/timer/Recover()
-	// Find the current timer sub-subsystem in global and recover its buckets etc
+	//Find the current timer sub-subsystem in global and recover its buckets etc
 	var/datum/controller/subsystem/timer/timerSS = null
 	for(var/global_var in global.vars)
 		if (istype(global.vars[global_var],src.type))
@@ -588,7 +588,7 @@ SUBSYSTEM_DEF(timer)
 
 	if (callback.object != GLOBAL_PROC && QDELETED(callback.object) && !QDESTROYING(callback.object))
 		stack_trace("addtimer called with a callback assigned to a qdeleted object. In the future such timers will not \
-			be supported and may refuse to run or run with a 0 wait - proc: [callback.delegate], args: [json_encode(callback.arguments)] , usr: [callback.user.resolve()]")
+			be supported and may refuse to run or run with a 0 wait - proc: [callback.delegate], args: [json_encode(callback.arguments)] , usr: [callback.user?.resolve()]")
 
 	wait = max(CEILING(wait, world.tick_lag), world.tick_lag)
 

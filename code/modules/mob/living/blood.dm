@@ -179,7 +179,6 @@
 	if(blood_id == /datum/reagent/blood) //actual blood reagent
 		var/blood_data = list()
 		//set the blood data
-		blood_data["donor"] = src
 		blood_data["viruses"] = list()
 
 		for(var/thing in diseases)
@@ -202,8 +201,6 @@
 		else if(last_mind)
 			blood_data["ckey"] = ckey(last_mind.key)
 
-		if(!suiciding)
-			blood_data["cloneable"] = 1
 		blood_data["blood_type"] = dna.blood_type
 		blood_data["gender"] = gender
 		blood_data["real_name"] = real_name
@@ -282,6 +279,8 @@
 		break
 	if(!B)
 		B = new /obj/effect/decal/cleanable/blood/splatter(T, get_static_viruses())
+	if(QDELETED(B)) //Give it up
+		return
 	B.bloodiness = min((B.bloodiness + BLOOD_AMOUNT_PER_DECAL), BLOOD_POOL_MAX)
 	B.transfer_mob_blood_dna(src) //give blood info to the blood decal.
 	if(temp_blood_DNA)

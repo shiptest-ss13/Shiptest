@@ -48,6 +48,7 @@
 
 /mob/living/simple_animal/hostile/mining_drone/Initialize()
 	. = ..()
+
 	stored_gun = new(src)
 	var/datum/action/innate/minedrone/toggle_light/toggle_light_action = new()
 	toggle_light_action.Grant(src)
@@ -68,6 +69,7 @@
 
 
 /mob/living/simple_animal/hostile/mining_drone/Destroy()
+	QDEL_NULL(stored_gun)
 	for (var/datum/action/innate/minedrone/action in actions)
 		qdel(action)
 	return ..()
@@ -140,16 +142,14 @@
 				to_chat(M, "<span class='info'>[src] has been set to attack hostile wildlife.</span>")
 		return
 
-/mob/living/simple_animal/hostile/mining_drone/CanAllowThrough(atom/movable/O)
+/mob/living/simple_animal/hostile/mining_drone/CanAllowThrough(atom/movable/mover, border_dir)
 	. = ..()
-	if(istype(O, /obj/projectile/kinetic))
-		var/obj/projectile/kinetic/K = O
-		if(K.kinetic_gun)
-			for(var/A in K.kinetic_gun.get_modkits())
-				var/obj/item/borg/upgrade/modkit/M = A
-				if(istype(M, /obj/item/borg/upgrade/modkit/minebot_passthrough))
-					return TRUE
-	if(istype(O, /obj/projectile/destabilizer))
+	if(istype(mover, /obj/projectile/kinetic))
+		var/obj/projectile/kinetic/projectile = mover
+		if(projectile.kinetic_gun)
+			if (locate(/obj/item/borg/upgrade/modkit/minebot_passthrough) in projectile.kinetic_gun.modkits)
+				return TRUE
+	else if(istype(mover, /obj/projectile/destabilizer))
 		return TRUE
 
 /mob/living/simple_animal/hostile/mining_drone/proc/SetCollectBehavior()

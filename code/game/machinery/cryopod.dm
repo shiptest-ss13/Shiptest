@@ -175,10 +175,11 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 17)
 
 /obj/machinery/cryopod/Destroy()
 	linked_ship?.spawn_points -= src
+	linked_ship = null
 	return ..()
 
 /obj/machinery/cryopod/LateInitialize()
-	update_icon()
+	update_appearance()
 	find_control_computer()
 
 /obj/machinery/cryopod/proc/find_control_computer(urgent = FALSE)
@@ -194,7 +195,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 17)
 		message_admins("Cryopod in [get_area(src)] could not find control computer!")
 		last_no_computer_message = world.time
 
-/obj/machinery/cryopod/JoinPlayerHere(mob/M, buckle)
+/obj/machinery/cryopod/join_player_here(mob/M)
 	. = ..()
 	close_machine(M, TRUE)
 

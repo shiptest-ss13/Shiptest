@@ -87,6 +87,9 @@
 ///Call qdel on the atom after intialization
 #define INITIALIZE_HINT_QDEL 2
 
+///Call qdel with a force of TRUE after initialization
+#define INITIALIZE_HINT_QDEL_FORCE 3
+
 ///type and all subtypes should always immediately call Initialize in New()
 #define INITIALIZE_IMMEDIATE(X) ##X/New(loc, ...){ \
 	..(); \
@@ -162,7 +165,6 @@
 #define FIRE_PRIORITY_PROCESS 25
 #define FIRE_PRIORITY_THROWING 25
 #define FIRE_PRIORITY_SPACEDRIFT 30
-#define FIRE_PRIORITY_FIELDS 30
 #define FIRE_PRIOTITY_SMOOTHING 35
 #define FIRE_PRIORITY_NETWORKS 40
 #define FIRE_PRIORITY_OBJ 40
