@@ -20,8 +20,7 @@ All ShuttleMove procs go here
 	if(!(. & MOVE_TURF))
 		return
 
-	for(var/i in contents)
-		var/atom/movable/thing = i
+	for(var/atom/movable/thing as anything in contents)
 		if(ismob(thing))
 			if(isliving(thing))
 				var/mob/living/M = thing
@@ -40,12 +39,13 @@ All ShuttleMove procs go here
 
 
 		else //non-living mobs shouldn't be affected by shuttles, which is why this is an else
-			if(istype(thing, /obj/singularity) && !istype(thing, /obj/singularity/narsie)) //it's a singularity but not a god, ignore it.
+			if(!isobj(thing))
+				qdel(thing)
 				continue
-			if(!thing.anchored)
-				qdel(thing)
-			else
-				qdel(thing)
+			var/obj/object = thing
+			if(object.resistance_flags & LANDING_PROOF)
+				continue
+			qdel(thing)
 
 // Called on the old turf to move the turf data
 /turf/proc/onShuttleMove(turf/newT, list/movement_force, move_dir, shuttle_layers)
@@ -79,11 +79,19 @@ All ShuttleMove procs go here
 	//Dealing with the turf we left behind
 	oldT.TransferComponents(src)
 	SEND_SIGNAL(oldT, COMSIG_TURF_AFTER_SHUTTLE_MOVE, src) //Mostly for decals
+
+	if(rotation)
+		shuttleRotate(rotation) //see shuttle_rotate.dm
+
 	//find the boundary between the shuttle that left and what remains
-	var/area/ship/A = loc
-	var/obj/docking_port/mobile/top_shuttle = A?.mobile_port
-	var/shuttle_layers = -1*A.get_missing_shuttles(src)
-	for(var/index in 1 to all_towed_shuttles.len)
+	var/area/ship/ship_area = loc
+	if(!istype(ship_area))
+		return TRUE
+
+	//Only run this code if it's a ship area
+	var/obj/docking_port/mobile/top_shuttle = ship_area.mobile_port
+	var/shuttle_layers = -1 * ship_area.get_missing_shuttles(src)
+	for(var/index in 1 to length(all_towed_shuttles))
 		var/obj/docking_port/mobile/M = all_towed_shuttles[index]
 		if(!M.underlying_turf_area[src])
 			continue
@@ -102,9 +110,6 @@ All ShuttleMove procs go here
 
 	if(BT_index != length(baseturfs))
 		oldT.ScrapeAway(baseturfs.len - BT_index, CHANGETURF_FORCEOP)
-
-	if(rotation)
-		shuttleRotate(rotation) //see shuttle_rotate.dm
 
 	return TRUE
 
@@ -282,22 +287,6 @@ All ShuttleMove procs go here
 		// atmosinit() calls update_appearance(), so we don't need to call it
 		update_appearance()
 
-/obj/machinery/navbeacon/beforeShuttleMove(turf/newT, rotation, move_mode, obj/docking_port/mobile/moving_dock)
-	. = ..()
-	GLOB.navbeacons["[z]"] -= src
-	GLOB.deliverybeacons -= src
-
-/obj/machinery/navbeacon/afterShuttleMove(turf/oldT, list/movement_force, shuttle_dir, shuttle_preferred_direction, move_dir, rotation)
-	. = ..()
-
-	if(codes["patrol"])
-		if(!GLOB.navbeacons["[z]"])
-			GLOB.navbeacons["[z]"] = list()
-		GLOB.navbeacons["[z]"] += src //Register with the patrol list!
-	if(codes["delivery"])
-		GLOB.deliverybeacons += src
-		GLOB.deliverybeacontags += location
-
 /************************************Item move procs************************************/
 
 /obj/item/storage/pod/afterShuttleMove(turf/oldT, list/movement_force, shuttle_dir, shuttle_preferred_direction, move_dir, rotation)
@@ -404,11 +393,3 @@ All ShuttleMove procs go here
 	if((!(src in moving_dock.docking_points) || !towed_shuttles[docked]) && !moving_dock.can_move_docking_ports)
 		return FALSE
 	. = ..()
-
-/obj/effect/abstract/proximity_checker/onShuttleMove(turf/newT, turf/oldT, list/movement_force, move_dir, obj/docking_port/stationary/old_dock, obj/docking_port/mobile/moving_dock, list/obj/docking_port/mobile/towed_shuttles)
-	. = ..()
-	//timer so it only happens once
-	if(!monitor)
-		qdel(src)
-		return
-	addtimer(CALLBACK(monitor, /datum/proximity_monitor/proc/SetRange, monitor.current_range, TRUE), 0, TIMER_UNIQUE)

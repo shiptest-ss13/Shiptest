@@ -1,8 +1,6 @@
 /datum/job/head_of_personnel
 	name = "Head of Personnel"
 	auto_deadmin_role_flags = DEADMIN_POSITION_HEAD
-	total_positions = 1
-	spawn_positions = 1
 	minimal_player_age = 10
 	officer = TRUE
 	wiki_page = "Head_of_Personnel" //WS Edit - Wikilinks/Warning

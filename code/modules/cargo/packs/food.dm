@@ -245,3 +245,16 @@
 					/obj/item/melee/flyswatter)
 	crate_name = "beekeeping starter crate"
 	crate_type = /obj/structure/closet/crate/hydroponics
+
+/datum/supply_pack/food/ration
+	name = "Ration Crate"
+	desc = "6 standerd issue rations."
+	cost = 2000
+	contains = list(/obj/effect/spawner/lootdrop/ration,
+					/obj/effect/spawner/lootdrop/ration,
+					/obj/effect/spawner/lootdrop/ration,
+					/obj/effect/spawner/lootdrop/ration,
+					/obj/effect/spawner/lootdrop/ration,
+					/obj/effect/spawner/lootdrop/ration)
+	crate_name = "ration crate"
+	crate_type = /obj/structure/closet/crate
