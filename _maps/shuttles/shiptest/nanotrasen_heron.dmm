@@ -32,6 +32,9 @@
 	dir = 8
 	},
 /obj/machinery/light/directional/east,
+/obj/effect/turf_decal/siding/white{
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/bridge)
 "ag" = (
@@ -393,7 +396,6 @@
 /obj/machinery/light/directional/west{
 	light_color = "#e8eaff"
 	},
-/obj/item/ammo_box/magazine/co9mm/rubbershot,
 /obj/item/ammo_box/magazine/co9mm,
 /obj/item/gun/energy/disabler{
 	pixel_y = -2;
@@ -460,9 +462,6 @@
 /turf/open/floor/plastic,
 /area/ship/crew/canteen)
 "bL" = (
-/obj/effect/turf_decal/trimline/opaque/black/line{
-	dir = 1
-	},
 /obj/structure/sign/poster/official/love_ian{
 	pixel_x = 32
 	},
@@ -4337,8 +4336,6 @@
 /obj/item/clothing/head/beret/lt,
 /obj/item/clothing/mask/bandana/skull,
 /obj/item/clothing/suit/armor/vest/marine,
-/obj/item/ammo_box/magazine/m45/rubbershot,
-/obj/item/ammo_box/magazine/m45/rubbershot,
 /obj/item/instrument/piano_synth/headphones/spacepods{
 	pixel_x = -5;
 	pixel_y = -1
@@ -4409,6 +4406,9 @@
 	pixel_x = 4
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/effect/turf_decal/siding/white{
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/bridge)
 "qy" = (
@@ -5550,7 +5550,6 @@
 	dir = 10
 	},
 /obj/structure/closet/secure_closet/security/sec,
-/obj/item/ammo_box/magazine/co9mm/rubbershot,
 /obj/item/ammo_box/magazine/co9mm,
 /obj/machinery/camera{
 	dir = 10
@@ -5687,6 +5686,9 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "un" = (
+/obj/effect/turf_decal/siding/white{
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/bridge)
 "uo" = (
@@ -5934,11 +5936,12 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/fore)
 "vp" = (
-/obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "heron_bridgeprivacy";
 	name = "Blast Shutters"
 	},
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/structure/grille,
 /turf/open/floor/plating,
 /area/ship/bridge)
 "vu" = (
@@ -6606,9 +6609,7 @@
 	},
 /obj/item/clothing/neck/cloak/cap,
 /obj/item/clothing/gloves/color/captain,
-/obj/item/clothing/suit/armor/vest/capcarapace/alt,
 /obj/item/clothing/head/caphat,
-/obj/item/clothing/suit/captunic,
 /obj/item/radio/headset/heads/captain/alt,
 /obj/item/storage/backpack/captain,
 /obj/item/clothing/under/rank/centcom/officer,
@@ -6624,6 +6625,11 @@
 	pixel_x = -3
 	},
 /obj/item/megaphone/command,
+/obj/item/clothing/suit/toggle/armor/vest/centcom_formal,
+/obj/item/clothing/under/rank/centcom/commander,
+/obj/item/clothing/under/rank/centcom/centcom_skirt,
+/obj/item/clothing/suit/hooded/wintercoat/centcom,
+/obj/item/clothing/head/beret/centcom_formal,
 /turf/open/floor/carpet/green,
 /area/ship/crew/dorm/dormtwo)
 "yc" = (
@@ -7338,6 +7344,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/effect/turf_decal/siding/white,
 /turf/open/floor/plasteel/patterned,
 /area/ship/bridge)
 "AF" = (
@@ -7627,9 +7634,6 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/maintenance/central)
 "BV" = (
-/obj/effect/turf_decal/trimline/opaque/black/line{
-	dir = 1
-	},
 /obj/item/kirbyplants{
 	icon_state = "plant-10"
 	},
@@ -8374,6 +8378,9 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/effect/turf_decal/siding/white{
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/bridge)
 "EK" = (
@@ -9066,7 +9073,6 @@
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "GZ" = (
-/obj/effect/turf_decal/trimline/opaque/black/line,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/cable{
@@ -9313,17 +9319,6 @@
 	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew/law_office)
-"Ie" = (
-/obj/effect/turf_decal/trimline/opaque/black/line{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plasteel/patterned/cargo_one,
-/area/ship/bridge)
 "Ih" = (
 /obj/effect/turf_decal/techfloor,
 /obj/machinery/light_switch{
@@ -9382,8 +9377,6 @@
 /obj/item/clothing/suit/jacket/miljacket,
 /obj/item/clothing/head/beret/lt,
 /obj/item/clothing/suit/armor/vest/marine,
-/obj/item/ammo_box/magazine/m45/rubbershot,
-/obj/item/ammo_box/magazine/m45/rubbershot,
 /obj/item/instrument/piano_synth/headphones/spacepods{
 	pixel_x = -5;
 	pixel_y = -1
@@ -10066,6 +10059,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
+/obj/effect/turf_decal/siding/white,
 /turf/open/floor/plasteel/patterned,
 /area/ship/bridge)
 "Lz" = (
@@ -10246,6 +10240,7 @@
 	pixel_x = 22;
 	dir = 8
 	},
+/obj/effect/turf_decal/siding/white,
 /turf/open/floor/plasteel/patterned,
 /area/ship/bridge)
 "Me" = (
@@ -11014,7 +11009,6 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering/communications)
 "OJ" = (
-/obj/effect/turf_decal/trimline/opaque/black/line,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/bridge)
 "OK" = (
@@ -11696,7 +11690,6 @@
 	dir = 9
 	},
 /obj/structure/closet/secure_closet/security/sec,
-/obj/item/ammo_box/magazine/co9mm/rubbershot,
 /obj/item/ammo_box/magazine/co9mm,
 /obj/item/gun/energy/disabler{
 	pixel_y = -2;
@@ -12448,7 +12441,6 @@
 	dir = 4;
 	layer = 4.1
 	},
-/obj/effect/turf_decal/trimline/opaque/black/line,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/bridge)
 "Ux" = (
@@ -12913,6 +12905,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/effect/turf_decal/siding/white,
 /turf/open/floor/plasteel/patterned,
 /area/ship/bridge)
 "Wk" = (
@@ -13127,15 +13120,6 @@
 /obj/item/ammo_box/magazine/co9mm{
 	pixel_x = -7
 	},
-/obj/item/ammo_box/magazine/co9mm/rubbershot{
-	pixel_x = 9
-	},
-/obj/item/ammo_box/magazine/co9mm/rubbershot{
-	pixel_x = 6
-	},
-/obj/item/ammo_box/magazine/co9mm/rubbershot{
-	pixel_x = 8
-	},
 /obj/item/storage/box/lethalshot{
 	pixel_y = 5
 	},
@@ -13162,6 +13146,22 @@
 /obj/item/ammo_box/magazine/smgm9mm{
 	pixel_x = 5;
 	pixel_y = 4
+	},
+/obj/item/ammo_box/c9mm{
+	pixel_x = 4;
+	pixel_y = -6
+	},
+/obj/item/ammo_box/c9mm{
+	pixel_x = 4;
+	pixel_y = 1
+	},
+/obj/item/ammo_box/c9mm{
+	pixel_x = 4;
+	pixel_y = 9
+	},
+/obj/item/ammo_box/c9mm/ap{
+	pixel_y = 17;
+	pixel_x = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
@@ -15821,7 +15821,7 @@ eT
 Ep
 ZG
 iP
-Ie
+GZ
 EJ
 Ly
 Uw
