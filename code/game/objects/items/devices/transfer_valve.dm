@@ -12,9 +12,15 @@
 	var/obj/item/tank/tank_one
 	var/obj/item/tank/tank_two
 	var/obj/item/assembly/attached_device
-	var/mob/attacher = null
+	var/datum/weakref/attacher_ref = null
 	var/valve_open = FALSE
 	var/toggle = TRUE
+
+/obj/item/transfer_valve/Destroy()
+	QDEL_NULL(tank_one)
+	QDEL_NULL(tank_two)
+	QDEL_NULL(attached_device)
+	return ..()
 
 /obj/item/transfer_valve/IsAssemblyHolder()
 	return TRUE
@@ -54,7 +60,7 @@
 		A.holder = src
 		A.toggle_secure()	//this calls update_appearance(), which calls update_appearance() on the holder (i.e. the bomb).
 		log_bomber(user, "attached a [item.name] to a ttv -", src, null, FALSE)
-		attacher = user
+		attacher_ref = WEAKREF(user)
 	return
 
 //These keep attached devices synced up, for example a TTV with a mouse trap being found in a bag so it's triggered, or moving the TTV with an infrared beam sensor to update the beam's direction.
@@ -157,6 +163,7 @@
 		var/admin_attachment_message
 		var/attachment_message
 		if(attachment)
+			var/mob/attacher = attacher_ref.resolve()
 			admin_attachment_message = " with [attachment] attached by [attacher ? ADMIN_LOOKUPFLW(attacher) : "Unknown"]"
 			attachment_message = " with [attachment] attached by [attacher ? key_name_admin(attacher) : "Unknown"]"
 

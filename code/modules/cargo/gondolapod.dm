@@ -10,9 +10,9 @@
 	response_harm_simple = "kick"
 	faction = list("gondola")
 	turns_per_move = 10
-	icon = 'icons/mob/gondolapod.dmi'
-	icon_state = "gondolapod"
-	icon_living = "gondolapod"
+	icon = 'icons/obj/supplypods.dmi'
+	icon_state = "gondola"
+	icon_living = "gondola"
 	pixel_x = -16//2x2 sprite
 	base_pixel_x = -16
 	pixel_y = -5
@@ -30,15 +30,17 @@
 	var/obj/structure/closet/supplypod/centcompod/linked_pod
 
 /mob/living/simple_animal/pet/gondola/gondolapod/Initialize(mapload, pod)
+	if(!pod)
+		stack_trace("Gondola pod created with no pod")
+		return INITIALIZE_HINT_QDEL
 	linked_pod = pod
 	name = linked_pod.name
 	. = ..()
 
-/mob/living/simple_animal/pet/gondola/gondolapod/update_icon_state()
+/mob/living/simple_animal/pet/gondola/gondolapod/update_overlays()
+	. = ..()
 	if(opened)
-		icon_state = "gondolapod_open"
-	else
-		icon_state = "gondolapod"
+		. += "[icon_state]_open"
 	return ..()
 
 /mob/living/simple_animal/pet/gondola/gondolapod/verb/deliver()
@@ -64,16 +66,16 @@
 	else
 		to_chat(src, "<span class='notice'>A closer look inside yourself reveals... nothing.</span>")
 
-/mob/living/simple_animal/pet/gondola/gondolapod/proc/setOpened()
+/mob/living/simple_animal/pet/gondola/gondolapod/setOpened()
 	opened = TRUE
 	update_appearance()
-	addtimer(CALLBACK(src, .proc/setClosed), 50)
+	addtimer(CALLBACK(src, /atom/.proc/setClosed), 50)
 
-/mob/living/simple_animal/pet/gondola/gondolapod/proc/setClosed()
+/mob/living/simple_animal/pet/gondola/gondolapod/setClosed()
 	opened = FALSE
 	update_appearance()
 
 /mob/living/simple_animal/pet/gondola/gondolapod/death()
-	qdel(linked_pod) //Will cause the open() proc for the linked supplypod to be called with the "broken" parameter set to true, meaning that it will dump its contents on death
+	QDEL_NULL(linked_pod) //Will cause the open() proc for the linked supplypod to be called with the "broken" parameter set to true, meaning that it will dump its contents on death
 	qdel(src)
 	..()

@@ -139,9 +139,10 @@ Class Procs:
 	. = ..()
 	GLOB.machines += src
 	RegisterSignal(src, COMSIG_MOVABLE_Z_CHANGED, .proc/power_change)
-	if(ispath(circuit, /obj/item/circuitboard) && (mapload || apply_default_parts))
+	if(ispath(circuit, /obj/item/circuitboard))
 		circuit = new circuit
-		circuit.apply_default_parts(src)
+		if(mapload || apply_default_parts)
+			circuit.apply_default_parts(src)
 
 	if(processing_flags & START_PROCESSING_ON_INIT)
 		begin_processing()
@@ -170,10 +171,8 @@ Class Procs:
 	GLOB.machines.Remove(src)
 	end_processing()
 	dropContents()
-	if(length(component_parts))
-		for(var/atom/A in component_parts)
-			qdel(A)
-		component_parts.Cut()
+	QDEL_NULL(circuit)
+	QDEL_LIST(component_parts)
 	return ..()
 
 /obj/machinery/proc/locate_machinery()
@@ -410,7 +409,10 @@ Class Procs:
 /obj/machinery/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1))
 		on_deconstruction()
-		if(component_parts && component_parts.len)
+		if(circuit)
+			circuit.forceMove(loc)
+			circuit = null
+		if(length(component_parts))
 			spawn_frame(disassembled)
 			for(var/obj/item/I in component_parts)
 				I.forceMove(loc)

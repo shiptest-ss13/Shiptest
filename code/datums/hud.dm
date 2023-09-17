@@ -47,16 +47,17 @@ GLOBAL_LIST_INIT(huds, list(
 
 /datum/atom_hud/Destroy()
 	for(var/v in hudusers)
-		remove_hud_from(v, TRUE)
+		remove_hud_from(v)
 	for(var/v in hudatoms)
 		remove_from_hud(v)
 	GLOB.all_huds -= src
 	return ..()
 
-/datum/atom_hud/proc/remove_hud_from(mob/M, force = FALSE)
+/datum/atom_hud/proc/remove_hud_from(mob/M, absolute = FALSE)
 	if(!M || !hudusers[M])
 		return
-	if (force || !--hudusers[M])
+	if (absolute || !--hudusers[M])
+		UnregisterSignal(M, COMSIG_PARENT_QDELETING)
 		hudusers -= M
 		if(next_time_allowed[M])
 			next_time_allowed -= M
@@ -67,7 +68,7 @@ GLOBAL_LIST_INIT(huds, list(
 				remove_from_single_hud(M, A)
 
 /datum/atom_hud/proc/remove_from_hud(atom/A)
-	if(!A || !(A in hudatoms))
+	if(!A)
 		return FALSE
 	for(var/mob/M in hudusers)
 		remove_from_single_hud(M, A)
@@ -78,13 +79,14 @@ GLOBAL_LIST_INIT(huds, list(
 	if(!M || !M.client || !A)
 		return
 	for(var/i in hud_icons)
-		M.client.images -= A.hud_list[i]
+		M.client.images -= A.hud_list?[i]
 
 /datum/atom_hud/proc/add_hud_to(mob/M)
 	if(!M)
 		return
 	if(!hudusers[M])
 		hudusers[M] = 1
+		RegisterSignal(M, COMSIG_PARENT_QDELETING, PROC_REF(unregister_mob))
 		if(next_time_allowed[M] > world.time)
 			if(!queued_to_see[M])
 				addtimer(CALLBACK(src, .proc/show_hud_images_after_cooldown, M), next_time_allowed[M] - world.time)
@@ -95,6 +97,11 @@ GLOBAL_LIST_INIT(huds, list(
 				add_to_single_hud(M, A)
 	else
 		hudusers[M]++
+
+/datum/atom_hud/proc/unregister_mob(datum/source, force)
+	SIGNAL_HANDLER
+	remove_hud_from(source, TRUE)
+	remove_from_hud(source)
 
 /datum/atom_hud/proc/hide_single_atomhud_from(hud_user,hidden_atom)
 	if(hudusers[hud_user])
@@ -135,7 +142,7 @@ GLOBAL_LIST_INIT(huds, list(
 //MOB PROCS
 /mob/proc/reload_huds()
 	for(var/datum/atom_hud/hud in GLOB.all_huds)
-		if(hud && hud.hudusers[src])
+		if(hud?.hudusers[src])
 			for(var/atom/A in hud.hudatoms)
 				hud.add_to_single_hud(src, A)
 

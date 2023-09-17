@@ -32,7 +32,7 @@
 	data["jobPlaytimes"] = list()
 	data["specialPlaytimes"] = list()
 
-	for (var/job_name in SSjob.name_occupations)
+	for (var/job_name in GLOB.name_occupations)
 		var/playtime = play_records[job_name] ? text2num(play_records[job_name]) : 0
 		data["jobPlaytimes"][job_name] = playtime
 

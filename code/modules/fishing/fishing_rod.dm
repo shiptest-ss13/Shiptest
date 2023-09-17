@@ -160,7 +160,7 @@
 		cast_projectile.original = target
 		cast_projectile.fired_from = src
 		cast_projectile.firer = user
-		cast_projectile.impacted = list(user = TRUE)
+		LAZYSET(cast_projectile.impacted, user, TRUE)
 		cast_projectile.preparePixelProjectile(target, user)
 		cast_projectile.fire()
 

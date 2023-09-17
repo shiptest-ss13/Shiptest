@@ -1,7 +1,5 @@
 /datum/job/hydro
 	name = "Botanist"
-	total_positions = 3
-	spawn_positions = 2
 	wiki_page = "Guide_to_Botany" //WS Edit - Wikilinks/Warning
 
 	outfit = /datum/outfit/job/botanist
