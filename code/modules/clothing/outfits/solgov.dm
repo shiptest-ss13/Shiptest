@@ -65,14 +65,12 @@
 	ears = /obj/item/radio/headset/solgov/alt
 	gloves = /obj/item/clothing/gloves/combat
 	head = /obj/item/clothing/head/solgov/sonnensoldner
-	r_pocket = /obj/item/gun/ballistic/automatic/pistol/solgov
-	l_pocket = /obj/item/ammo_box/magazine/pistol556mm
+	r_pocket = null
+	l_pocket = null
 	shoes = /obj/item/clothing/shoes/workboots
 	back = /obj/item/storage/backpack
 	box = /obj/item/storage/box/survival
-	backpack_contents = list(/obj/item/crowbar/power,\
-		/obj/item/melee/baton/loaded=1,\
-		/obj/item/ammo_box/magazine/pistol556mm=2)
+	backpack_contents = list(/obj/item/crowbar/power)
 
 /datum/outfit/job/solgov/representative
 	name = "Solarian Representative (SolGov)"
@@ -153,8 +151,8 @@
 	backpack_contents = list(
 		/obj/item/flashlight/seclite=1,\
 		/obj/item/kitchen/knife/combat/survival=1,\
-		/obj/item/mining_voucher=1,\
 		/obj/item/stack/marker_beacon/default/ten=1)
+
 
 	backpack = /obj/item/storage/backpack/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer

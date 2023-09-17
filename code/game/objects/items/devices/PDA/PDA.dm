@@ -364,7 +364,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 			if(41) //crew manifest
 				dat += "<h4>Crew Manifest</h4>"
 				dat += "<center>"
-				dat += SSjob.get_manifest_html()
+				dat += SSovermap.get_manifest_html()
 				dat += "</center>"
 
 			if(3)

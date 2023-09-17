@@ -30,7 +30,7 @@
 	///Some gloves, generally ones that increase mobility, may have a minimum distance to fly. Rocket gloves are especially dangerous with this, be sure you'll hit your target or have a clear background if you miss, or else!
 	var/min_distance
 	///The throwdatum we're currently dealing with, if we need it
-	var/datum/thrownthing/tackle
+	var/datum/weakref/tackle_ref
 
 /datum/component/tackler/Initialize(stamina_cost = 25, base_knockdown = 1 SECONDS, range = 4, speed = 1, skill_mod = 0, min_distance = min_distance)
 	if(!iscarbon(parent))
@@ -51,7 +51,7 @@
 /datum/component/tackler/Destroy()
 	var/mob/P = parent
 	to_chat(P, "<span class='notice'>You can no longer tackle.</span>")
-	..()
+	return ..()
 
 /datum/component/tackler/RegisterWithParent()
 	RegisterSignal(parent, COMSIG_MOB_CLICKON, .proc/checkTackle)
@@ -62,10 +62,11 @@
 	UnregisterSignal(parent, list(COMSIG_MOB_CLICKON, COMSIG_MOVABLE_IMPACT, COMSIG_MOVABLE_MOVED, COMSIG_MOVABLE_POST_THROW))
 
 ///Store the thrownthing datum for later use
-/datum/component/tackler/proc/registerTackle(mob/living/carbon/user, datum/thrownthing/TT)
+/datum/component/tackler/proc/registerTackle(mob/living/carbon/user, datum/thrownthing/tackle)
 	SIGNAL_HANDLER
 
-	tackle = TT
+	tackle_ref = WEAKREF(tackle)
+	tackle.thrower = user
 
 ///See if we can tackle or not. If we can, leap!
 /datum/component/tackler/proc/checkTackle(mob/living/carbon/user, atom/A, params)
@@ -145,7 +146,9 @@
 /datum/component/tackler/proc/sack(mob/living/carbon/user, atom/hit)
 	SIGNAL_HANDLER
 
+	var/datum/thrownthing/tackle = tackle_ref?.resolve()
 	if(!tackling || !tackle)
+		tackle = null
 		return
 
 	if(!iscarbon(hit))
@@ -422,7 +425,7 @@
 
 /datum/component/tackler/proc/resetTackle()
 	tackling = FALSE
-	QDEL_NULL(tackle)
+	QDEL_NULL(tackle_ref)
 	UnregisterSignal(parent, COMSIG_MOVABLE_MOVED)
 
 ///A special case for splatting for handling windows
@@ -508,8 +511,11 @@
 		I.throw_at(get_ranged_target_turf(I, pick(GLOB.alldirs), range = dist), range = dist, speed = sp)
 		I.visible_message("<span class='danger'>[I] goes flying[sp > 3 ? " dangerously fast" : ""]!</span>") // standard embed speed
 
+	var/datum/thrownthing/tackle = tackle_ref?.resolve()
+
 	playsound(owner, 'sound/weapons/smash.ogg', 70, TRUE)
-	tackle.finalize(hit=TRUE)
+	if(tackle)
+		tackle.finalize(hit=TRUE)
 	resetTackle()
 
 #undef MAX_TABLE_MESSES

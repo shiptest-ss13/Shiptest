@@ -59,7 +59,7 @@
 	/// Short memo of the ship shown to new joins
 	var/memo = null
 	///Assoc list of remaining open job slots (job = remaining slots)
-	var/list/job_slots = list(new /datum/job/captain() = 1, new /datum/job/assistant() = 5)
+	var/list/job_slots
 	///Time that next job slot change can occur
 	COOLDOWN_DECLARE(job_slot_adjustment_cooldown)
 
@@ -110,17 +110,29 @@
 	SSovermap.controlled_ships += src
 
 /datum/overmap/ship/controlled/Destroy()
+	//SHOULD be called first
+	. = ..()
 	SSovermap.controlled_ships -= src
+	helms.Cut()
+	LAZYCLEARLIST(owner_candidates)
 	if(!QDELETED(shuttle_port))
-		shuttle_port.intoTheSunset()
+		shuttle_port.current_ship = null
+		qdel(shuttle_port, TRUE)
+		shuttle_port = null
 	if(!QDELETED(ship_account))
 		QDEL_NULL(ship_account)
+	if(!QDELETED(shipkey))
+		QDEL_NULL(shipkey)
+	QDEL_LIST(manifest)
+	job_slots.Cut()
 	for(var/a_key in applications)
+		if(isnull(applications[a_key]))
+			continue
 		// it handles removal itself
 		qdel(applications[a_key])
+	LAZYCLEARLIST(applications)
 	// set ourselves to ownerless to unregister signals
 	set_owner_mob(null)
-	return ..()
 
 /datum/overmap/ship/controlled/get_jump_to_turf()
 	return get_turf(shuttle_port)
@@ -187,10 +199,10 @@
 	var/thrust_used = 0 //The amount of thrust that the engines will provide with one burn
 	refresh_engines()
 	calculate_avg_fuel()
-	for(var/obj/machinery/power/shuttle/engine/E as anything in shuttle_port.engine_list)
-		if(!E.enabled)
+	for(var/obj/machinery/power/shuttle/engine/real_engine as anything in shuttle_port.get_engines())
+		if(!real_engine.enabled)
 			continue
-		thrust_used += E.burn_engine(percentage, deltatime)
+		thrust_used += real_engine.burn_engine(percentage, deltatime)
 
 	thrust_used = thrust_used / (shuttle_port.turf_count * 100)
 	est_thrust = thrust_used / percentage * 100 //cheeky way of rechecking the thrust, check it every time it's used
@@ -202,10 +214,10 @@
  */
 /datum/overmap/ship/controlled/proc/refresh_engines()
 	var/calculated_thrust
-	for(var/obj/machinery/power/shuttle/engine/E as anything in shuttle_port.engine_list)
-		E.update_engine()
-		if(E.enabled)
-			calculated_thrust += E.thrust
+	for(var/obj/machinery/power/shuttle/engine/real_engine as anything in shuttle_port.get_engines())
+		real_engine.update_engine()
+		if(real_engine.enabled)
+			calculated_thrust += real_engine.thrust
 	est_thrust = calculated_thrust / (shuttle_port.turf_count * 100)
 
 /**
@@ -214,10 +226,10 @@
 /datum/overmap/ship/controlled/proc/calculate_avg_fuel()
 	var/fuel_avg = 0
 	var/engine_amnt = 0
-	for(var/obj/machinery/power/shuttle/engine/E as anything in shuttle_port.engine_list)
-		if(!E.enabled)
+	for(var/obj/machinery/power/shuttle/engine/real_engine as anything in shuttle_port.get_engines())
+		if(!real_engine.enabled)
 			continue
-		fuel_avg += E.return_fuel() / E.return_fuel_cap()
+		fuel_avg += real_engine.return_fuel() / real_engine.return_fuel_cap()
 		engine_amnt++
 	if(!engine_amnt || !fuel_avg)
 		avg_fuel_amnt = 0
@@ -272,6 +284,7 @@
 		eligible = TRUE
 	)
 	LAZYSET(owner_candidates, H.mind, mind_info)
+	H.mind.original_ship = WEAKREF(src)
 	RegisterSignal(H.mind, COMSIG_PARENT_QDELETING, .proc/crew_mind_deleting)
 	if(!owner_mob)
 		set_owner_mob(H)

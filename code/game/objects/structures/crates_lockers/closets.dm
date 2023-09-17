@@ -42,14 +42,21 @@
 
 
 /obj/structure/closet/Initialize(mapload)
-	if(mapload && !opened)		// if closed, any item at the crate's loc is put in the contents
-		addtimer(CALLBACK(src, .proc/take_contents), 0)
 	. = ..()
+
+	// if closed, any item at the crate's loc is put in the contents
+	if (mapload && !opened)
+		. = INITIALIZE_HINT_LATELOAD
+
 	update_appearance()
 	if(populate)
 		PopulateContents()
 
 	RegisterSignal(src, COMSIG_ATOM_CANREACH, .proc/canreach_react)
+
+/obj/structure/closet/LateInitialize()
+	take_contents(src)
+	return ..()
 
 /obj/structure/closet/proc/canreach_react(datum/source, list/next)
 	return COMPONENT_BLOCK_REACH //closed block, open have nothing inside.
@@ -71,6 +78,8 @@
 
 /obj/structure/closet/update_icon()
 	. = ..()
+	if (istype(src, /obj/structure/closet/supplypod))
+		return
 
 	layer = opened ? BELOW_OBJ_LAYER : OBJ_LAYER
 
@@ -109,7 +118,7 @@
 		if(HAS_TRAIT(L, TRAIT_SKITTISH))
 			. += "<span class='notice'>Ctrl-Shift-click [src] to jump inside.</span>"
 
-/obj/structure/closet/CanAllowThrough(atom/movable/mover, turf/target)
+/obj/structure/closet/CanAllowThrough(atom/movable/mover, border_dir)
 	. = ..()
 	if(wall_mounted)
 		return TRUE
@@ -140,6 +149,8 @@
 	return TRUE
 
 /obj/structure/closet/dump_contents()
+	if(!isturf(loc))
+		return
 	var/atom/L = drop_location()
 	for(var/atom/movable/AM as anything in src)
 		AM.forceMove(L)
@@ -148,8 +159,8 @@
 	if(throwing)
 		throwing.finalize(FALSE)
 
-/obj/structure/closet/proc/take_contents()
-	var/atom/L = drop_location()
+/obj/structure/closet/proc/take_contents(atom/movable/holder)
+	var/atom/L = holder.drop_location()
 	for(var/atom/movable/AM in L)
 		if(istype(AM, /obj/effect))	//WS edit, closets and crates do not eat your lamp
 			continue
@@ -216,7 +227,7 @@
 /obj/structure/closet/proc/close(mob/living/user)
 	if(!opened || !can_close(user))
 		return FALSE
-	take_contents()
+	take_contents(src)
 	playsound(loc, close_sound, close_sound_volume, TRUE, -3)
 	climb_time = initial(climb_time)
 	opened = FALSE
@@ -340,6 +351,11 @@
 			var/mob/living/L = O
 			if(!issilicon(L))
 				L.Paralyze(40)
+			if(istype(src, /obj/structure/closet/supplypod/extractionpod))
+				O.forceMove(src)
+			else
+				O.forceMove(T)
+				close()
 			O.forceMove(T)
 			close()
 	else
