@@ -1262,7 +1262,7 @@
 		/obj/item/circuitboard/machine/protolathe/department/medical,
 		/obj/item/circuitboard/machine/protolathe/department/science,
 		/obj/item/circuitboard/machine/protolathe/department/security
-    )
+	)
 
 /obj/effect/spawner/lootdrop/randomimprinter
 	name = "random departmental circuit imprinter"
@@ -1273,7 +1273,7 @@
 		/obj/item/circuitboard/machine/circuit_imprinter/department/med,
 		/obj/item/circuitboard/machine/circuit_imprinter/department/science,
 		/obj/item/circuitboard/machine/circuit_imprinter/department/sec
-    )
+	)
 
 /obj/effect/spawner/lootdrop/randomtechfab
 	name = "random departmental techfab"
@@ -1285,8 +1285,8 @@
 		/obj/item/circuitboard/machine/techfab/department/medical,
 		/obj/item/circuitboard/machine/techfab/department/science,
 		/obj/item/circuitboard/machine/techfab/department/security
-    )
-   
+	)
+
 /obj/effect/spawner/lootdrop/ration
 	loot = list (
 	/obj/item/storage/ration/vegan_chili = 5,
