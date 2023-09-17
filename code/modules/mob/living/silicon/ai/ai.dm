@@ -38,14 +38,14 @@
 	var/can_be_carded = TRUE
 	var/alarms = list("Motion"=list(), "Fire"=list(), "Atmosphere"=list(), "Power"=list(), "Camera"=list(), "Burglar"=list())
 	var/viewalerts = 0
-	var/icon/holo_icon//Default is assigned when AI is created.
+	var/icon/holo_icon //Default is assigned when AI is created.
 	var/obj/mecha/controlled_mech //For controlled_mech a mech, to determine whether to relaymove or use the AI eye.
 	var/radio_enabled = TRUE //Determins if a carded AI can speak with its built in radio or not.
 	radiomod = ";" //AIs will, by default, state their laws on the internal radio.
 	var/obj/item/multitool/aiMulti
 	var/mob/living/simple_animal/bot/Bot
 	var/tracking = FALSE //this is 1 if the AI is currently tracking somebody, but the track has not yet been completed.
-	var/datum/effect_system/spark_spread/spark_system//So they can initialize sparks whenever/N
+	var/datum/effect_system/spark_spread/spark_system //So they can initialize sparks whenever/N
 
 	//MALFUNCTION
 	var/datum/module_picker/malf_picker
@@ -106,7 +106,7 @@
 		new/obj/structure/AIcore/deactivated(loc) //New empty terminal.
 		return INITIALIZE_HINT_QDEL //Delete AI.
 
-	ADD_TRAIT(src, TRAIT_NO_TELEPORT, src)
+	ADD_TRAIT(src, TRAIT_NO_TELEPORT, AI_ANCHOR_TRAIT)
 	if(L && istype(L, /datum/ai_laws))
 		laws = L
 		laws.associate(src)
@@ -193,7 +193,11 @@
 
 /mob/living/silicon/ai/Destroy()
 	GLOB.ai_list -= src
-	qdel(eyeobj) // No AI, no Eye
+	QDEL_NULL(eyeobj) // No AI, no Eye
+	QDEL_NULL(aiMulti)
+	QDEL_NULL(spark_system)
+	if(robot_control)
+		QDEL_NULL(robot_control)
 	malfhack = null
 
 	. = ..()
@@ -335,11 +339,11 @@
 	var/is_anchored = FALSE
 	if(move_resist == MOVE_FORCE_OVERPOWERING)
 		move_resist = MOVE_FORCE_NORMAL
-		REMOVE_TRAIT(src, TRAIT_NO_TELEPORT, src)
+		REMOVE_TRAIT(src, TRAIT_NO_TELEPORT, AI_ANCHOR_TRAIT)
 	else
 		is_anchored = TRUE
 		move_resist = MOVE_FORCE_OVERPOWERING
-		ADD_TRAIT(src, TRAIT_NO_TELEPORT, src)
+		ADD_TRAIT(src, TRAIT_NO_TELEPORT, AI_ANCHOR_TRAIT)
 
 	to_chat(src, "<b>You are now [is_anchored ? "" : "un"]anchored.</b>")
 	// the message in the [] will change depending whether or not the AI is anchored
@@ -381,9 +385,11 @@
 		trackeable += track.humans + track.others
 		var/list/target = list()
 		for(var/I in trackeable)
-			var/mob/M = trackeable[I]
-			if(M.name == string)
-				target += M
+			var/datum/weakref/to_resolve = trackeable[I]
+			var/mob/to_track = to_resolve.resolve()
+			if(!to_track || to_track.name != string)
+				continue
+			target += to_track
 		if(name == string)
 			target += src
 		if(target.len)
@@ -415,7 +421,13 @@
 			to_chat(src, "<span class='warning'>You aren't in your core!</span>")
 			return
 		if(M)
-			M.transfer_ai(AI_MECH_HACK, src, usr) //Called om the mech itself.
+			M.transfer_ai(AI_MECH_HACK, src, usr) //Called on the mech itself.
+	if(href_list["show_paper_note"])
+		var/obj/item/paper/paper_note = locate(href_list["show_paper_note"])
+		if(!paper_note)
+			return
+
+		paper_note.show_through_camera(usr)
 
 
 /mob/living/silicon/ai/proc/switchCamera(obj/machinery/camera/C)
@@ -898,7 +910,7 @@
 		to_chat(src, "<span class='danger'>Hack aborted. The designated APC no longer exists on the power network.</span>")
 		playsound(get_turf(src), 'sound/machines/buzz-two.ogg', 50, TRUE, ignore_walls = FALSE)
 	else if(apc.aidisabled)
-		to_chat(src, "<span class='danger'>Hack aborted. \The [apc] is no longer responding to our systems.</span>")
+		to_chat(src, "<span class='danger'>Hack aborted. [apc] is no longer responding to our systems.</span>")
 		playsound(get_turf(src), 'sound/machines/buzz-sigh.ogg', 50, TRUE, ignore_walls = FALSE)
 	else
 		malf_picker.processing_time += 10
@@ -909,8 +921,8 @@
 		apc.coverlocked = TRUE
 
 		playsound(get_turf(src), 'sound/machines/ding.ogg', 50, TRUE, ignore_walls = FALSE)
-		to_chat(src, "Hack complete. \The [apc] is now under your exclusive control.")
-		apc.update_icon()
+		to_chat(src, "Hack complete. [apc] is now under your exclusive control.")
+		apc.update_appearance()
 
 /mob/living/silicon/ai/verb/deploy_to_shell(mob/living/silicon/robot/target)
 	set category = "AI Commands"
@@ -983,9 +995,9 @@
 	return
 
 /mob/living/silicon/ai/spawned/Initialize(mapload, datum/ai_laws/L, mob/target_ai)
-	. = ..()
 	if(!target_ai)
 		target_ai = src //cheat! just give... ourselves as the spawned AI, because that's technically correct
+	. = ..()
 
 /mob/living/silicon/ai/proc/camera_visibility(mob/camera/aiEye/moved_eye)
 	GLOB.cameranet.visibility(moved_eye, client, all_eyes, USE_STATIC_OPAQUE)

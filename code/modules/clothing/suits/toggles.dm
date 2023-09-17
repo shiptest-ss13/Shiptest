@@ -6,7 +6,7 @@
 	actions_types = list(/datum/action/item_action/toggle_hood)
 	var/obj/item/clothing/head/hooded/hood
 	var/hoodtype = /obj/item/clothing/head/hooded/winterhood //so the chaplain hoodie or other hoodies can override this
-	pocket_storage_component_path = FALSE //WS Edit - Exowear Pockets
+	pocket_storage_component_path = FALSE
 
 /obj/item/clothing/suit/hooded/Initialize()
 	. = ..()
@@ -137,10 +137,11 @@
 	. = ..()
 
 /obj/item/clothing/suit/space/hardsuit/Destroy()
-	if(helmet)
+	if(!QDELETED(helmet))
 		helmet.suit = null
 		qdel(helmet)
-	qdel(jetpack)
+		helmet = null
+	QDEL_NULL(jetpack)
 	return ..()
 
 /obj/item/clothing/head/helmet/space/hardsuit/Destroy()

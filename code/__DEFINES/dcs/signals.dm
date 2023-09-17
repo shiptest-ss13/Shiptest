@@ -22,6 +22,8 @@
 	#define COMPONENT_GLOB_BLOCK_CINEMATIC 1
 /// ingame button pressed (/obj/machinery/button/button)
 #define COMSIG_GLOB_BUTTON_PRESSED "!button_pressed"
+/// a client (re)connected, after all /client/New() checks have passed : (client/connected_client)
+#define COMSIG_GLOB_CLIENT_CONNECT "!client_connect"
 
 // signals from globally accessible objects
 /// from SSsun when the sun changes position : (azimuth)
@@ -86,11 +88,15 @@
 #define COMSIG_ATOM_UPDATE_DESC "atom_update_desc"
 ///from base of atom/update_icon(): ()
 #define COMSIG_ATOM_UPDATE_ICON "atom_update_icon"
-	#define COMSIG_ATOM_NO_UPDATE_ICON_STATE (1<<0)
-	#define COMSIG_ATOM_NO_UPDATE_OVERLAYS (1<<1)
-///from base of atom/update_overlays(): (list/new_overlays)
+	/// If returned from [COMSIG_ATOM_UPDATE_ICON] it prevents the atom from updating its icon state.
+	#define COMSIG_ATOM_NO_UPDATE_ICON_STATE UPDATE_ICON_STATE
+	/// If returned from [COMSIG_ATOM_UPDATE_ICON] it prevents the atom from updating its overlays.
+	#define COMSIG_ATOM_NO_UPDATE_OVERLAYS UPDATE_OVERLAYS
+///from base of [atom/update_icon_state]: ()
+#define COMSIG_ATOM_UPDATE_ICON_STATE "atom_update_icon_state"
+///from base of [/atom/update_overlays]: (list/new_overlays)
 #define COMSIG_ATOM_UPDATE_OVERLAYS "atom_update_overlays"
-///from base of atom/update_icon(): (signalOut, did_anything)
+///from base of [/atom/update_icon]: (signalOut, did_anything)
 #define COMSIG_ATOM_UPDATED_ICON "atom_updated_icon"
 ///from base of atom/Entered(): (atom/movable/entering, /atom)
 #define COMSIG_ATOM_ENTERED "atom_entered"
@@ -184,10 +190,13 @@
 ///from base of atom/set_opacity(): (new_opacity)
 #define COMSIG_ATOM_SET_OPACITY "atom_set_opacity"
 
+/// from base of /atom/movable/proc/on_virtual_z_change():  (new_virtual_z, old_virtual_z)
+#define COMSIG_ATOM_VIRTUAL_Z_CHANGE "atom_virtual_z_change"
+
 //from base of atom/movable/on_enter_storage(): (datum/component/storage/concrete/master_storage)
-#define COMISG_STORAGE_ENTERED "storage_entered"
+#define COMSIG_STORAGE_ENTERED "storage_entered"
 //from base of atom/movable/on_exit_storage(): (datum/component/storage/concrete/master_storage)
-#define CONSIG_STORAGE_EXITED "storage_exited"
+#define COMSIG_STORAGE_EXITED "storage_exited"
 
 ///from base of atom/expose_reagents():
 #define COMSIG_ATOM_EXPOSE_REAGENTS "atom_expose_reagents"
@@ -374,7 +383,8 @@
 ///from base of mob/swap_hand(): (obj/item)
 #define COMSIG_MOB_SWAP_HANDS "mob_swap_hands"
 	#define COMPONENT_BLOCK_SWAP (1<<0)
-
+///from base of /mob/verb/pointed: (atom/A)
+#define COMSIG_MOB_POINTED "mob_pointed"
 ///from base of mob/living/resist() (/mob/living)
 #define COMSIG_LIVING_RESIST "living_resist"
 ///from base of mob/living/look_up() (/mob/living)
@@ -524,6 +534,8 @@
 #define COMSIG_TOOL_START_USE "tool_start_use" ///from base of [/obj/item/proc/tool_start_check]: (mob/living/user)
 #define COMSIG_ITEM_DISABLE_EMBED "item_disable_embed" ///from [/obj/item/proc/disableEmbedding]:
 #define COMSIG_MINE_TRIGGERED "minegoboom" ///from [/obj/effect/mine/proc/triggermine]:
+///from [/obj/structure/closet/supplypod/proc/endlaunch]:
+#define COMSIG_SUPPLYPOD_LANDED "supplypodgoboom"
 
 ///Called when an item is being offered, from [/obj/item/proc/on_offered(mob/living/carbon/offerer)]
 #define COMSIG_ITEM_OFFERING "item_offering"
@@ -544,6 +556,13 @@
 #define COMSIG_ITEM_SPLIT_PROFIT "item_split_profits" //Called when getting the item's exact ratio for cargo's profit.
 #define COMSIG_ITEM_SPLIT_PROFIT_DRY "item_split_profits_dry" //Called when getting the item's exact ratio for cargo's profit, without selling the item.
 
+/// Admin helps
+/// From /datum/admin_help/RemoveActive().
+/// Fired when an adminhelp is made inactive either due to closing or resolving.
+#define COMSIG_ADMIN_HELP_MADE_INACTIVE "admin_help_made_inactive"
+
+/// Called when the player replies. From /client/proc/cmd_admin_pm().
+#define COMSIG_ADMIN_HELP_REPLIED "admin_help_replied"
 
 // /obj/item/clothing signals
 #define COMSIG_SHOES_STEP_ACTION "shoes_step_action" //from base of obj/item/clothing/shoes/proc/step_action(): ()

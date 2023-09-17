@@ -549,7 +549,7 @@
 		if(roles_to_ban[1] == "Server" && (!is_admin || (is_admin && applies_to_admins)))
 			qdel(C)
 	if(roles_to_ban[1] == "Server" && AH)
-		AH.Resolve()
+		AH.resolve()
 	for(var/client/i in GLOB.clients - C)
 		if(i.address == player_ip || i.computer_id == player_cid)
 			build_ban_cache(i)

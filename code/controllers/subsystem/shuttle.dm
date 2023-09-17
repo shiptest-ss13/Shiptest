@@ -182,6 +182,7 @@ SUBSYSTEM_DEF(shuttle)
 	return new_transit_dock
 
 /datum/controller/subsystem/shuttle/Recover()
+	initialized = SSshuttle.initialized
 	if (istype(SSshuttle.mobile))
 		mobile = SSshuttle.mobile
 	if (istype(SSshuttle.stationary))
@@ -192,6 +193,8 @@ SUBSYSTEM_DEF(shuttle)
 		transit_requesters = SSshuttle.transit_requesters
 	if (istype(SSshuttle.transit_request_failures))
 		transit_request_failures = SSshuttle.transit_request_failures
+	if (istype(SSshuttle.supply_packs))
+		supply_packs = SSshuttle.supply_packs
 
 	ordernum = SSshuttle.ordernum
 	lockdown = SSshuttle.lockdown
@@ -252,7 +255,7 @@ SUBSYSTEM_DEF(shuttle)
 	var/result = new_shuttle.canDock(destination_port)
 	if((result != SHUTTLE_CAN_DOCK))
 		WARNING("Template shuttle [new_shuttle] cannot dock at [destination_port] ([result]).")
-		new_shuttle.jumpToNullSpace()
+		qdel(new_shuttle, TRUE)
 		return
 	new_shuttle.initiate_docking(destination_port)
 	return new_shuttle
@@ -276,7 +279,7 @@ SUBSYSTEM_DEF(shuttle)
 
 	if((result != SHUTTLE_CAN_DOCK) && (result != SHUTTLE_SOMEONE_ELSE_DOCKED)) //Someone else /IS/ docked, the old shuttle!
 		WARNING("Template shuttle [new_shuttle] cannot dock at [old_shuttle_location] ([result]).")
-		new_shuttle.jumpToNullSpace()
+		qdel(new_shuttle, TRUE)
 		return
 
 	new_shuttle.timer = to_replace.timer //Copy some vars from the old shuttle
@@ -288,7 +291,7 @@ SUBSYSTEM_DEF(shuttle)
 		to_replace.assigned_transit = null
 		new_shuttle.assigned_transit = old_shuttle_location
 
-	to_replace.jumpToNullSpace() //This will destroy the old shuttle
+	qdel(to_replace, TRUE)
 	new_shuttle.initiate_docking(old_shuttle_location) //This will spawn the new shuttle
 	return new_shuttle
 
@@ -324,8 +327,8 @@ SUBSYSTEM_DEF(shuttle)
 		for(var/obj/docking_port/P in T)
 			if(istype(P, /obj/docking_port/mobile))
 				if(new_shuttle)
+					stack_trace("Map warning: Shuttle Template [template.mappath] has multiple mobile docking ports.")
 					qdel(P, TRUE)
-					log_world("Map warning: Shuttle Template [template.mappath] has multiple mobile docking ports.")
 				else
 					new_shuttle = P
 			if(istype(P, /obj/docking_port/stationary))
@@ -337,8 +340,7 @@ SUBSYSTEM_DEF(shuttle)
 			T0.empty()
 
 		message_admins(msg)
-		WARNING(msg)
-		return
+		CRASH(msg)
 
 	new_shuttle.docking_points = stationary_ports
 	new_shuttle.current_ship = parent //for any ships that spawn on top of us
@@ -350,13 +352,13 @@ SUBSYSTEM_DEF(shuttle)
 	var/obj/docking_port/mobile/transit_dock = generate_transit_dock(new_shuttle)
 
 	if(!transit_dock)
+		qdel(src, TRUE)
 		CRASH("No dock found/could be created for shuttle ([template.name]), aborting.")
 
 	var/result = new_shuttle.canDock(transit_dock)
 	if((result != SHUTTLE_CAN_DOCK))
-		WARNING("Template shuttle [new_shuttle] cannot dock at [transit_dock] ([result]).")
-		new_shuttle.jumpToNullSpace()
-		return
+		qdel(src, TRUE)
+		CRASH("Template shuttle [new_shuttle] cannot dock at [transit_dock] ([result]).")
 
 	new_shuttle.initiate_docking(transit_dock)
 	new_shuttle.linkup(transit_dock, parent)
@@ -454,8 +456,36 @@ SUBSYSTEM_DEF(shuttle)
 		if("select_template")
 			if(S)
 				. = TRUE
-				// If successful, returns the mobile docking port
-				var/datum/overmap/ship/controlled/new_ship = new(null, S)
+				var/choice = tgui_input_list(
+					user,
+					"Select a location for the new ship.",
+					"Ship Location",
+					list("Random Overmap Square", "Outpost", "Specific Overmap Square")
+				)
+				var/ship_loc
+				var/datum/overmap/ship/controlled/new_ship
+
+				switch(choice)
+					if(null)
+						return
+					if("Random Overmap Square")
+						ship_loc = null // null location causes overmap to just get a random square
+					if("Outpost")
+						if(length(SSovermap.outposts) > 1)
+							var/temp_loc = input(user, "Select outpost to spawn at") as null|anything in SSovermap.outposts
+							if(!temp_loc)
+								message_admins("Invalid spawn location.")
+								return
+							ship_loc = temp_loc
+						else
+							ship_loc = SSovermap.outposts[1]
+					if("Specific Overmap Square")
+						var/loc_x = input(user, "X overmap coordinate:") as num
+						var/loc_y = input(user, "Y overmap coordinate:") as num
+						ship_loc = list("x" = loc_x, "y" = loc_y)
+
+				if(!new_ship)
+					new_ship = new(ship_loc, S)
 				if(new_ship?.shuttle_port)
 					user.forceMove(new_ship.get_jump_to_turf())
 					message_admins("[key_name_admin(user)] loaded [new_ship] ([S]) with the shuttle manipulator.")

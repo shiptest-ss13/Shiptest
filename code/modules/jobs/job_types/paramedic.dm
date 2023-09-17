@@ -1,7 +1,5 @@
 /datum/job/paramedic
 	name = "Paramedic"
-	total_positions = 2
-	spawn_positions = 2
 	wiki_page = "Paramedic"
 
 	outfit = /datum/outfit/job/paramedic
@@ -59,7 +57,6 @@
 	name = "Paramedic (Gorlex)"
 
 	id = /obj/item/card/id/syndicate_command/crew_id
-	ears = /obj/item/radio/headset/syndicate/alt
 	uniform = /obj/item/clothing/under/syndicate/gorlex
 	alt_uniform = null
 	shoes = /obj/item/clothing/shoes/jackboots

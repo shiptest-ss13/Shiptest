@@ -1,8 +1,6 @@
 /datum/job/head_of_personnel
 	name = "Head of Personnel"
 	auto_deadmin_role_flags = DEADMIN_POSITION_HEAD
-	total_positions = 1
-	spawn_positions = 1
 	minimal_player_age = 10
 	officer = TRUE
 	wiki_page = "Head_of_Personnel" //WS Edit - Wikilinks/Warning
@@ -54,8 +52,6 @@
 
 /datum/outfit/job/head_of_personnel/pre_equip(mob/living/carbon/human/H)
 	..()
-	if(locate(/datum/holiday/ianbirthday) in SSevents.holidays)
-		undershirt = /datum/sprite_accessory/undershirt/ian
 
 /datum/outfit/job/head_of_personnel/nt
 	name = "First Officer (Nanotrasen)"

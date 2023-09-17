@@ -32,8 +32,6 @@ GLOBAL_VAR(restart_counter)
 	//Keep the auxtools stuff at the top
 	AUXTOOLS_CHECK(AUXMOS)
 
-	enable_debugger()
-
 	log_world("World loaded at [time_stamp()]!")
 	SSmetrics.world_init_time = REALTIMEOFDAY // Important
 
@@ -154,6 +152,9 @@ GLOBAL_VAR(restart_counter)
 	GLOB.test_log = "[GLOB.log_directory]/tests.log"
 	start_log(GLOB.test_log)
 #endif
+#ifdef REFERENCE_DOING_IT_LIVE
+	GLOB.harddel_log = "[GLOB.log_directory]/harddels.log"
+#endif
 	start_log(GLOB.world_game_log)
 	start_log(GLOB.world_attack_log)
 	start_log(GLOB.world_pda_log)
@@ -248,11 +249,11 @@ GLOBAL_VAR(restart_counter)
 
 	TgsReboot()
 
-	#ifdef UNIT_TESTS
+#ifdef UNIT_TESTS
 	FinishTestRun()
 	return
-	#endif
 
+#else
 	if(TgsAvailable())
 		var/do_hard_reboot
 		// check the hard reboot counter
@@ -279,6 +280,8 @@ GLOBAL_VAR(restart_counter)
 	AUXTOOLS_SHUTDOWN(AUXMOS)
 	..()
 
+#endif //ifdef UNIT_TESTS
+
 /world/Del()
 	shutdown_logging() // makes sure the thread is closed before end, else we terminate
 	AUXTOOLS_SHUTDOWN(AUXMOS)
@@ -291,10 +294,7 @@ GLOBAL_VAR(restart_counter)
 
 	var/list/features = list()
 
-	if(GLOB.master_mode)
-		features += GLOB.master_mode
-
-	if (!GLOB.enter_allowed)
+	if(LAZYACCESS(SSlag_switch.measures, DISABLE_NON_OBSJOBS))
 		features += "closed"
 
 	var/s = ""
@@ -355,10 +355,7 @@ GLOBAL_VAR(restart_counter)
 
 /world/proc/incrementMaxZ()
 	maxz++
-	SSmobs.MaxZChanged()
-	SSidlenpcpool.MaxZChanged()
 	world.refresh_atmos_grid()
-
 
 /world/proc/change_fps(new_value = 20)
 	if(new_value <= 0)

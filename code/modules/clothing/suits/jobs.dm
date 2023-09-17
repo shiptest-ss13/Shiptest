@@ -281,6 +281,13 @@
 	icon_state = "solgov_dress"
 	item_state = "solgov_dress"
 
+/obj/item/clothing/suit/solgov/suit
+	name = "SolGov suit"
+	desc = "A formal SolGov suit, commonly used by civilians."
+	body_parts_covered = CHEST|GROIN
+	icon_state = "solgov_suit"
+	item_state = "solgov_suit"
+
 /obj/item/clothing/suit/solgov/bureaucrat
 	name = "SolGov bureaucrat robe"
 	desc = "A set of unique SolGov robes, utilized by Solarian Bureaucrats."

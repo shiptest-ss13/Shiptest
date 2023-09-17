@@ -8,6 +8,10 @@
 		damageoverlaytemp = 0
 		update_damage_hud()
 
+	//Just don't run if we're qdeleted already
+	if(QDELETED(src))
+		return ..()
+
 	if(!IS_IN_STASIS(src))
 
 		//Reagent processing needs to come before breathing, to prevent edge cases.
@@ -15,7 +19,7 @@
 
 		. = ..()
 
-		if (QDELETED(src))
+		if(QDELETED(src))
 			return
 
 		if(.) //not dead

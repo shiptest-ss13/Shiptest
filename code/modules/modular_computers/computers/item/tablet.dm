@@ -2,9 +2,10 @@
 	name = "tablet computer"
 	icon = 'icons/obj/modular_tablet.dmi'
 	icon_state = "tablet-red"
-	icon_state_unpowered = "tablet"
-	icon_state_powered = "tablet"
+	icon_state_unpowered = "tablet-red"
+	icon_state_powered = "tablet-red"
 	icon_state_menu = "menu"
+	base_icon_state = "tablet"
 	hardware_flag = PROGRAM_TABLET
 	max_hardware_size = 1
 	w_class = WEIGHT_CLASS_SMALL
@@ -20,7 +21,8 @@
 	if(has_variants)
 		if(!finish_color)
 			finish_color = pick("red","blue","brown","green","black")
-		icon_state = icon_state_powered = icon_state_unpowered = "tablet-[finish_color]"
+		icon_state = icon_state_powered = icon_state_unpowered = "[base_icon_state]-[finish_color]"
+	return ..()
 
 /obj/item/modular_computer/tablet/syndicate_contract_uplink
 	name = "contractor tablet"
@@ -41,6 +43,8 @@
 	has_variants = FALSE
 	device_theme = "syndicate"
 	light_color = COLOR_RED
+	icon_state_powered = "tablet-syndicate"
+	icon_state_unpowered = "tablet-syndicate"
 
 /obj/item/modular_computer/tablet/nukeops/emag_act(mob/user)
 	if(!enabled)
@@ -53,6 +57,9 @@
 /obj/item/modular_computer/tablet/integrated
 	name = "modular interface"
 	icon_state = "tablet-silicon"
+	icon_state_powered = "tablet-silicon"
+	icon_state_unpowered = "tablet-silicon"
+	base_icon_state = "tablet-silicon"
 	has_light = FALSE //tablet light button actually enables/disables the borg lamp
 	comp_light_luminosity = 0
 	has_variants = FALSE
@@ -153,7 +160,8 @@
 /obj/item/modular_computer/tablet/integrated/syndicate
 	icon_state = "tablet-silicon-syndicate"
 	device_theme = "syndicate"
-
+	icon_state_powered = "tablet-silicon-syndicate"
+	icon_state_unpowered = "tablet-silicon-syndicate"
 
 /obj/item/modular_computer/tablet/integrated/syndicate/Initialize()
 	. = ..()

@@ -139,9 +139,10 @@ Class Procs:
 	. = ..()
 	GLOB.machines += src
 	RegisterSignal(src, COMSIG_MOVABLE_Z_CHANGED, .proc/power_change)
-	if(ispath(circuit, /obj/item/circuitboard) && (mapload || apply_default_parts))
+	if(ispath(circuit, /obj/item/circuitboard))
 		circuit = new circuit
-		circuit.apply_default_parts(src)
+		if(mapload || apply_default_parts)
+			circuit.apply_default_parts(src)
 
 	if(processing_flags & START_PROCESSING_ON_INIT)
 		begin_processing()
@@ -170,10 +171,8 @@ Class Procs:
 	GLOB.machines.Remove(src)
 	end_processing()
 	dropContents()
-	if(length(component_parts))
-		for(var/atom/A in component_parts)
-			qdel(A)
-		component_parts.Cut()
+	QDEL_NULL(circuit)
+	QDEL_LIST(component_parts)
 	return ..()
 
 /obj/machinery/proc/locate_machinery()
@@ -215,7 +214,7 @@ Class Procs:
 	density = FALSE
 	if(drop)
 		dropContents()
-	update_icon()
+	update_appearance()
 	updateUsrDialog()
 
 /obj/machinery/proc/dropContents(list/subset = null)
@@ -269,7 +268,7 @@ Class Procs:
 		occupant = target
 		target.forceMove(src)
 	updateUsrDialog()
-	update_icon()
+	update_appearance()
 
 /obj/machinery/proc/auto_use_power()
 	if(!powered(power_channel))
@@ -410,7 +409,10 @@ Class Procs:
 /obj/machinery/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1))
 		on_deconstruction()
-		if(component_parts && component_parts.len)
+		if(circuit)
+			circuit.forceMove(loc)
+			circuit = null
+		if(length(component_parts))
 			spawn_frame(disassembled)
 			for(var/obj/item/I in component_parts)
 				I.forceMove(loc)
@@ -452,7 +454,7 @@ Class Procs:
 	if(!(machine_stat & BROKEN) && !(flags_1 & NODECONSTRUCT_1))
 		set_machine_stat(machine_stat | BROKEN)
 		SEND_SIGNAL(src, COMSIG_MACHINERY_BROKEN, damage_flag)
-		update_icon()
+		update_appearance()
 		return TRUE
 
 /obj/machinery/contents_explosion(severity, target)
@@ -462,7 +464,7 @@ Class Procs:
 /obj/machinery/handle_atom_del(atom/A)
 	if(A == occupant)
 		occupant = null
-		update_icon()
+		update_appearance()
 		updateUsrDialog()
 		return ..()
 
