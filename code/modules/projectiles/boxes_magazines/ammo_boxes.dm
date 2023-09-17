@@ -347,7 +347,7 @@
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 	item_flags = NO_MAT_REDEMPTION
 
-/obj/item/ammo_box/c38_box
+/obj/item/ammo_box/c22lr_box
 	name = "ammo box (.22 LR)"
 	desc = "A box of standard .22 LR ammo."
 	icon_state = "22lrbox"
