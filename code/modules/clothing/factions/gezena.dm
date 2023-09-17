@@ -201,7 +201,7 @@
 
 //Boots
 
-/obj/item/clothing/shoes/combat/gezena 
+/obj/item/clothing/shoes/combat/gezena
 	name = "gezenan steel-boots"
 	desc = "PH"
 	icon = 'icons/obj/clothing/faction/gezena/feet.dmi'

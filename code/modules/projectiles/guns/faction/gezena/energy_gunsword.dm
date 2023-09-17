@@ -6,7 +6,7 @@
 	icon = 'icons/obj/guns/faction/gezena/energy.dmi'
 	lefthand_file = 'icons/obj/guns/faction/gezena/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/faction/gezena/righthand.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/faction/gezena/belt.dmi' 
+	mob_overlay_icon = 'icons/mob/clothing/faction/gezena/belt.dmi'
 	w_class = WEIGHT_CLASS_BULKY
 
 	cell_type = /obj/item/stock_parts/cell/gun/pgf
