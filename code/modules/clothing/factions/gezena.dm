@@ -76,7 +76,7 @@
 	item_state = "captaincoat"
 
 /obj/item/clothing/suit/armor/gezena/marine
-	name = "\improper raksha-plating vest"
+	name = "\improper Raksha-plating vest"
 	desc = "Raksha - a Kalixcian word for 'protection of the heart'. Sturdy and reliable."
 	icon_state = "marinevest"
 	item_state = "marinevest"
@@ -90,7 +90,7 @@
 //Spacesuits
 
 /obj/item/clothing/suit/space/gezena
-	name = "rakalla-suit"
+	name = "\improper Rakalla-suit"
 	desc = "Rakalla - a Kalixcian word for 'protection among the stars'. Sturdy, flexible, and reliable."
 	icon = 'icons/obj/clothing/faction/gezena/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/gezena/suits.dmi'
@@ -101,7 +101,7 @@
 	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/head/helmet/space/gezena
-	name = "rakalla-helm"
+	name = "\improper Rakalla-helm"
 	desc = "Featuring rubberized grommets fitting for any length of horn, and an internal monitor for life support."
 	icon = 'icons/obj/clothing/faction/gezena/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/gezena/head.dmi'
@@ -158,8 +158,10 @@
 	item_state = "captainhat"
 
 /obj/item/clothing/head/helmet/gezena
-	name = "raksha-helm"
+	name = "\improper Raksha-helm"
 	desc = "PH"
+	icon = 'icons/obj/clothing/faction/gezena/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/gezena/head.dmi'
 	icon_state = "marinehelmet"
 	item_state = "marinehelmet"
 
@@ -199,9 +201,11 @@
 
 //Boots
 
-/obj/item/clothing/shoes/combat/gezena
+/obj/item/clothing/shoes/combat/gezena 
 	name = "gezenan steel-boots"
 	desc = "PH"
+	icon = 'icons/obj/clothing/faction/gezena/feet.dmi'
+	//mob_overlay_icon = 'icons/mob/clothing/faction/gezena/belt.dmi' todo: find out why digi breaks here
 	icon_state = "pgfboots"
 	item_state = "pgfboots"
 
