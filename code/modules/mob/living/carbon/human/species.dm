@@ -851,6 +851,10 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		if((H.wear_mask?.flags_inv & HIDEFACE) || (H.head?.flags_inv & HIDEFACE) || !HD)
 			bodyparts_to_add -= "face_markings"
 
+	if("horns" in mutant_bodyparts)
+		if(!H.dna.features["horns"] || H.dna.features["horns"] == "None" || H.head && (H.head.flags_inv & HIDEHAIR) || (H.wear_mask && (H.wear_mask.flags_inv & HIDEHAIR)) || !HD)
+			bodyparts_to_add -= "horns"
+
 	if("frills" in mutant_bodyparts)
 		if(!H.dna.features["frills"] || H.dna.features["frills"] == "None" || (H.head?.flags_inv & HIDEEARS) || !HD)
 			bodyparts_to_add -= "frills"
