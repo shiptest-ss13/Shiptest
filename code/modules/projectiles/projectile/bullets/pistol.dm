@@ -5,17 +5,16 @@
 	damage = 20
 	armour_penetration = -20
 
-/obj/projectile/bullet/c9mm_surplus
+/obj/projectile/bullet/c9mm/surplus
 	name = "9mm surplus bullet"
 	damage = 15
-	armour_penetration = -20
 
-/obj/projectile/bullet/c9mm_ap
+/obj/projectile/bullet/c9mm/ap
 	name = "9mm armor-piercing bullet"
 	damage = 15
 	armour_penetration = 20
 
-/obj/projectile/bullet/c9mm_hp
+/obj/projectile/bullet/c9mm/hp
 	name = "9mm hollow point bullet"
 	damage = 40
 	armour_penetration = -50
@@ -26,30 +25,29 @@
 	armour_penetration = -20
 	fire_stacks = 2
 
-/obj/projectile/bullet/c9mm/rubbershot
+/obj/projectile/bullet/c9mm/rubber
 	name = "9mm rubber bullet"
 	damage = 5
-	armour_penetration = -50
-	stamina = 20
+	armour_penetration = -40
+	stamina = 30
 
-// 10mm (Stechkin)
+// 10mm (Stechkin & SkM-44(k))
 
 /obj/projectile/bullet/c10mm
 	name = "10mm bullet"
 	damage = 25
 	armour_penetration = -20
 
-/obj/projectile/bullet/c10mm_surplus
+/obj/projectile/bullet/c10mm/surplus
 	name = "10mm surplus bullet"
 	damage = 20
-	armour_penetration = -20
 
-/obj/projectile/bullet/c10mm_ap
+/obj/projectile/bullet/c10mm/ap
 	name = "10mm armor-piercing bullet"
 	damage = 20
 	armour_penetration = 20
 
-/obj/projectile/bullet/c10mm_hp
+/obj/projectile/bullet/c10mm/hp
 	name = "10mm hollow point bullet"
 	damage = 45
 	armour_penetration = -50
@@ -60,30 +58,29 @@
 	armour_penetration = -20
 	fire_stacks = 2
 
-/obj/projectile/bullet/c10mm/rubbershot
+/obj/projectile/bullet/c10mm/rubber
 	name = "10mm rubber bullet"
-	damage = 5
-	stamina = 20
-	armour_penetration = -20
+	damage = 7
+	stamina = 38
+	armour_penetration = -40
 
-// .45 (M1911, C20r)
+// .45 (M1911, C20r, Thompson)
 
 /obj/projectile/bullet/c45
 	name = ".45 bullet"
 	damage = 25
 	armour_penetration = -20
 
-/obj/projectile/bullet/c45_surplus
+/obj/projectile/bullet/c45/surplus
 	name = ".45 surplus bullet"
 	damage = 20
-	armour_penetration = -20
 
-/obj/projectile/bullet/c45_ap
+/obj/projectile/bullet/c45/ap
 	name = ".45 armor-piercing bullet"
 	damage = 20
 	armour_penetration = 20
 
-/obj/projectile/bullet/c45_hp
+/obj/projectile/bullet/c45/hp
 	name = ".45 hollow point bullet"
 	damage = 45
 	armour_penetration = -50
@@ -94,8 +91,8 @@
 	fire_stacks = 2
 	armour_penetration = -20
 
-/obj/projectile/bullet/c45/rubbershot
+/obj/projectile/bullet/c45/rubber
 	name = ".45 rubber bullet"
-	damage = 5
-	stamina = 20
-	armour_penetration = -20
+	damage = 7
+	stamina = 38
+	armour_penetration = -40
