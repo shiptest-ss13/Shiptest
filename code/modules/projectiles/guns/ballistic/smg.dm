@@ -234,7 +234,7 @@
 
 /obj/item/gun/ballistic/automatic/smg/thompson/Initialize()
 	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.25 SECONDS)
+	AddComponent(/datum/component/automatic_fire, 0.15 SECONDS)
 
 /obj/item/gun/ballistic/automatic/smg/thompson/drum
 	name = "\improper Chicago Typewriter"
