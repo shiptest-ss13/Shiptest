@@ -36,6 +36,8 @@
 	var/delay = 0								//Delay for energy weapons
 	var/click_cooldown_override = 0				//Override this to make your gun have a faster fire rate, in tenths of a second. 4 is the default gun cooldown.
 
+	var/list/bounce_sfx_override // if true, overrides the bouncing sfx from the turf to this one
+
 
 /obj/item/ammo_casing/spent
 	name = "spent bullet casing"
@@ -104,7 +106,10 @@
 	update_appearance()
 	SpinAnimation(10, 1)
 	var/turf/T = get_turf(src)
+	if(bounce_sfx_override)
+		addtimer(CALLBACK(GLOBAL_PROC, .proc/playsound, src, pick(bounce_sfx_override), 20, 1), bounce_delay) //Soft / non-solid turfs that shouldn't make a sound when a shell casing is ejected over them.
+		return
 	if(still_warm && T && T.bullet_sizzle)
 		addtimer(CALLBACK(GLOBAL_PROC, .proc/playsound, src, 'sound/items/welder.ogg', 20, 1), bounce_delay) //If the turf is made of water and the shell casing is still hot, make a sizzling sound when it's ejected.
 	else if(T && T.bullet_bounce_sound)
-		addtimer(CALLBACK(GLOBAL_PROC, .proc/playsound, src, T.bullet_bounce_sound, 20, 1), bounce_delay) //Soft / non-solid turfs that shouldn't make a sound when a shell casing is ejected over them.
+		addtimer(CALLBACK(GLOBAL_PROC, .proc/playsound, src, pick(T.bullet_bounce_sound), 20, 1), bounce_delay) //Soft / non-solid turfs that shouldn't make a sound when a shell casing is ejected over them.

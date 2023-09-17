@@ -12,6 +12,8 @@
 	internal_cell = TRUE //prevents you from giving it an OP cell - WS Edit
 	cell_type = "/obj/item/stock_parts/cell/pulse"
 
+	spread_unwielded = 25
+
 /obj/item/gun/energy/pulse/emp_act(severity)
 	return
 

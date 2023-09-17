@@ -142,3 +142,11 @@
 	..()
 	explosion(target, -1, 0, 1)
 	return BULLET_ACT_HIT
+
+
+/obj/projectile/bullet/c22lr
+	name = ".22LR bullet"
+	damage = 20
+	armour_penetration = -30
+	ricochet_incidence_leeway = 20
+	ricochet_chance = 45

@@ -424,8 +424,9 @@
 			return
 		process_chamber()
 		update_appearance()
-		semicd = TRUE
-		addtimer(CALLBACK(src, .proc/reset_semicd), fire_delay)
+		if(fire_delay)
+			semicd = TRUE
+			addtimer(CALLBACK(src, .proc/reset_semicd), fire_delay)
 
 	if(user)
 		user.update_inv_hands()

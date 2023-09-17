@@ -127,3 +127,12 @@
 	caliber = ".38"
 	max_ammo = 3
 	w_class = WEIGHT_CLASS_TINY
+
+/obj/item/ammo_box/magazine/m22lr
+	name = "pistol magazine (.22 LR)"
+	desc = "A single-stack handgun magazine designed to chamber .22 LR. It's rather tiny, all things considered."
+	icon_state = "pistol_22lr"
+	ammo_type = /obj/item/ammo_casing/c22lr
+	caliber = "22lr"
+	max_ammo = 10
+	w_class = WEIGHT_CLASS_TINY

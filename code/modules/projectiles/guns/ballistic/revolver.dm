@@ -330,3 +330,18 @@
 	spread_unwielded = 50
 	fire_delay = 0
 	semi_auto = TRUE
+
+/obj/item/gun/ballistic/revolver/cattleman
+	name = "\improper Cattleman"
+	desc = "A strangely ancient revolver. Despite the age, it is a favortie of fast drawing spacers and officers in various militaries, but sometimes very rarely used in small colonial police units. Uses .45 ACP."
+	fire_sound = 'sound/weapons/gun/revolver/cattleman.ogg'
+	icon = 'icons/obj/guns/48x32guns.dmi'
+	icon_state = "cattleman"
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev45
+	obj_flags = UNIQUE_RENAME
+	unique_reskin = list("Default" = "cattleman",
+		"Army" = "cattleman_army",
+		"General" = "cattleman_general"
+		)
+
+	recoil = 0 //weaker than normal revovler, no recoil

@@ -346,3 +346,21 @@
 	max_ammo = 22
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 	item_flags = NO_MAT_REDEMPTION
+
+/obj/item/ammo_box/c38_box
+	name = "ammo box (.22 LR)"
+	desc = "A box of standard .22 LR ammo."
+	icon_state = "22lrbox"
+	ammo_type = /obj/item/ammo_casing/c22lr
+	max_ammo = 75
+
+/obj/item/ammo_box/c45_speedloader
+	name = "speed loader (.45)"
+	desc = "Designed to quickly reload revolvers."
+	icon_state = "38"
+	ammo_type = /obj/item/ammo_casing/c45
+	max_ammo = 6
+	multiple_sprites = AMMO_BOX_PER_BULLET
+	custom_materials = list(/datum/material/iron = 15000)
+	w_class = WEIGHT_CLASS_TINY
+	instant_load = TRUE

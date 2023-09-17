@@ -300,3 +300,17 @@
 	desc = "The golden sheen is somewhat counterintuitive as a stealth weapon, but it looks cool. Uses .357 ammo."
 	icon_state = "derringer_gold"
 	mag_type = /obj/item/ammo_box/magazine/internal/derr357
+
+/obj/item/gun/ballistic/automatic/pistol/himehabu
+	name = "\improper SA Himehabu"
+	desc = "A very small .22 LR pistol, so small even it could fit in your boot. The long awaited successor to the Stechkin. A favorite among syndicate spies. Chambered in .22 LR."
+	icon_state = "himehabu"
+	w_class = WEIGHT_CLASS_TINY
+	mag_type = /obj/item/ammo_box/magazine/m22lr
+	can_suppress = FALSE
+	fire_sound = 'sound/weapons/gun/pistol/himehabu.ogg'
+
+	recoil = -2
+	recoil_unwielded = -2
+	spread_unwielded = 0
+	wield_slowdown = 0

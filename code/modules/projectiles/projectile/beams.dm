@@ -4,8 +4,18 @@
 	pass_flags = PASSTABLE | PASSGLASS | PASSGRILLE
 	damage = 20
 	damage_type = BURN
-	hitsound = 'sound/weapons/sear.ogg'
+
+	hitsound = 'sound/weapons/gun/hit/energy_impact1.ogg'
 	hitsound_non_living = 'sound/weapons/effects/searwall.ogg'
+	hitsound_glass = 'sound/weapons/effects/searwall.ogg'
+	hitsound_stone = 'sound/weapons/sear.ogg'
+	hitsound_metal = 'sound/weapons/effects/searwall.ogg'
+	hitsound_wood = 'sound/weapons/sear.ogg'
+	hitsound_snow = 'sound/weapons/sear.ogg'
+
+	near_miss_sound = 'sound/weapons/gun/hit/energy_miss1.ogg'
+	ricochet_sound = 'sound/weapons/gun/hit/energy_ricochet1.ogg'
+
 	flag = "laser"
 	eyeblur = 2
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/red_laser
@@ -14,7 +24,7 @@
 	light_power = 1
 	light_color = COLOR_SOFT_RED
 	ricochets_max = 50	//Honk!
-	ricochet_chance = 80
+	ricochet_chance = 90
 	reflectable = REFLECT_NORMAL
 
 /obj/projectile/beam/throw_atom_into_space()

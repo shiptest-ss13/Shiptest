@@ -33,7 +33,7 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 	var/requires_activation	//add to air processing after initialize?
 	var/changing_turf = FALSE
 
-	var/bullet_bounce_sound = 'sound/weapons/gun/general/mag_bullet_remove.ogg' //sound played when a shell casing is ejected ontop of the turf.
+	var/list/bullet_bounce_sound = list('sound/weapons/gun/general/bulletcasing_bounce1.ogg', 'sound/weapons/gun/general/bulletcasing_bounce2.ogg', 'sound/weapons/gun/general/bulletcasing_bounce3.ogg')
 	var/bullet_sizzle = FALSE //used by ammo_casing/bounce_away() to determine if the shell casing should make a sizzle sound when it's ejected over the turf
 							//IE if the turf is supposed to be water, set TRUE.
 
