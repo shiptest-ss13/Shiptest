@@ -31,13 +31,10 @@
 	. = ..()
 	soundloop = new(list(src),  FALSE)
 	update_appearance()
-<<<<<<< HEAD
 
 /obj/machinery/fat_sucker/Destroy()
 	QDEL_NULL(soundloop)
 	return ..()
-=======
->>>>>>> 78c6f5ad04 (okay getting back to this lets seee)
 
 /obj/machinery/fat_sucker/RefreshParts()
 	..()

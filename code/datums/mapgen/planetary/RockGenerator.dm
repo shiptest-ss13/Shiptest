@@ -85,17 +85,10 @@
 
 	feature_spawn_chance = 0.25
 	feature_spawn_list = list(
-<<<<<<< HEAD
 		/obj/structure/geyser/random = 80,
 		/obj/structure/elite_tumor = 40,
 		/obj/effect/spawner/lootdrop/anomaly/rock = 10,
 		/obj/effect/spawner/lootdrop/anomaly/big = 1 //get out of here stalker
-=======
-		/obj/structure/geyser/random = 8,
-		/obj/structure/elite_tumor = 4,
-		/obj/effect/spawner/lootdrop/anomaly/rock = 1,
-		/obj/effect/spawner/lootdrop/anomaly/big = 0.1 //get out of here stalker
->>>>>>> 78c6f5ad04 (okay getting back to this lets seee)
 	)
 
 	flora_spawn_chance = 5

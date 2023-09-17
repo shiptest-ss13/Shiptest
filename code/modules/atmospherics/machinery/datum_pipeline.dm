@@ -40,7 +40,6 @@
 	update = air.react(src)
 
 /datum/pipeline/proc/build_pipeline(obj/machinery/atmospherics/base)
-<<<<<<< HEAD
 	if(QDELETED(base))
 		return
 	building = TRUE
@@ -58,24 +57,6 @@
 		air = new
 	air.set_volume(volume)
 	SSair.add_to_expansion(src, base)
-=======
-	if(!QDELETED(base))
-		building = TRUE
-		var/volume = 0
-		if(istype(base, /obj/machinery/atmospherics/pipe))
-			var/obj/machinery/atmospherics/pipe/considered_pipe = base
-			volume = considered_pipe.volume
-			members += considered_pipe
-			if(considered_pipe.air_temporary)
-				air = considered_pipe.air_temporary
-				considered_pipe.air_temporary = null
-		else
-			addMachineryMember(base)
-		if(!air)
-			air = new
-		air.set_volume(volume)
-		SSair.add_to_expansion(src, base)
->>>>>>> 78c6f5ad04 (okay getting back to this lets seee)
 
 ///Has the same effect as build_pipeline(), but this doesn't queue its work, so overrun abounds. It's useful for the pregame
 /datum/pipeline/proc/build_pipeline_blocking(obj/machinery/atmospherics/base)

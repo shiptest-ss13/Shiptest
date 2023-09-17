@@ -438,7 +438,6 @@
 		"fishing_background_default" = 'icons/ui_icons/fishing/default.png',
 		"fishing_background_lavaland" = 'icons/ui_icons/fishing/lavaland.png'
 	)
-<<<<<<< HEAD
 
 /datum/asset/spritesheet/supplypods
 	name = "supplypods"
@@ -473,5 +472,3 @@
 					podIcon.Blend(icon(icon_file, glow, SOUTH), ICON_OVERLAY)
 		Insert("pod_asset[style]", podIcon)
 	return ..()
-=======
->>>>>>> 78c6f5ad04 (okay getting back to this lets seee)

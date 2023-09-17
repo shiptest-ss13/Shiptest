@@ -238,18 +238,12 @@
 	icon = 'icons/turf/walls/rock_wall.dmi'
 	icon_state = "rock_wall-0"
 	base_icon_state = "rock_wall"
-<<<<<<< HEAD
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER | SMOOTH_CONNECTORS
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_MINERAL_WALLS)
 	canSmoothWith = list(SMOOTH_GROUP_MINERAL_WALLS)
 	no_connector_typecache = list(/turf/closed/mineral, /turf/closed/indestructible/rock)
 	connector_icon = 'icons/turf/connectors/smoothrocks_connector.dmi'
 	connector_icon_state = "smoothrocks_connector"
-=======
-	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
-	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_MINERAL_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_MINERAL_WALLS)
->>>>>>> 78c6f5ad04 (okay getting back to this lets seee)
 	pixel_x = -4
 	pixel_y = -4
 

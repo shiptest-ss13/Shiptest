@@ -21,14 +21,9 @@
 		update_appearance()
 	. = ..()
 
-<<<<<<< HEAD
 /obj/structure/blob/core/Destroy()
 	GLOB.blob_cores -= src
 	GLOB.poi_list -= src
-=======
-/obj/structure/blob/special/core/Destroy()
-	GLOB.blob_cores -= src
->>>>>>> 78c6f5ad04 (okay getting back to this lets seee)
 	if(overmind)
 		overmind.blob_core = null
 		overmind = null
@@ -38,11 +33,7 @@
 /obj/structure/blob/core/scannerreport()
 	return "Directs the blob's expansion, gradually expands, and sustains nearby blob spores and blobbernauts."
 
-<<<<<<< HEAD
 /obj/structure/blob/core/update_overlays()
-=======
-/obj/structure/blob/special/core/update_overlays()
->>>>>>> 78c6f5ad04 (okay getting back to this lets seee)
 	. = ..()
 	var/mutable_appearance/blob_overlay = mutable_appearance('icons/mob/blob.dmi', "blob")
 	if(overmind)
@@ -50,14 +41,8 @@
 	. += blob_overlay
 	. += mutable_appearance('icons/mob/blob.dmi', "blob_core_overlay")
 
-<<<<<<< HEAD
 /obj/structure/blob/core/update_appearance()
 	color = null
-=======
-/obj/structure/blob/special/core/update_appearance()
-	color = null
-	GLOB.poi_list -= src
->>>>>>> 78c6f5ad04 (okay getting back to this lets seee)
 	return ..()
 
 /obj/structure/blob/core/ex_act(severity, target)

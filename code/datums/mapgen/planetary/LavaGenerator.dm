@@ -96,17 +96,10 @@
 	)
 	feature_spawn_chance = 0.3
 	feature_spawn_list = list(
-<<<<<<< HEAD
 		/obj/structure/flora/rock/hell = 10,
 		/obj/structure/elite_tumor = 2,
 		/obj/structure/geyser/random = 2,
 		/obj/effect/spawner/lootdrop/anomaly/lava = 1,
-=======
-		/obj/structure/flora/rock/hell = 5,
-		/obj/structure/elite_tumor = 1,
-		/obj/structure/geyser/random = 1,
-		/obj/effect/spawner/lootdrop/anomaly/lava = 0.5
->>>>>>> 78c6f5ad04 (okay getting back to this lets seee)
 
 	)
 	mob_spawn_chance = 4

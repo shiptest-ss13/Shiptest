@@ -155,7 +155,6 @@
 		masked_decal.Blend(door_masker, ICON_ADD)
 		. += masked_decal
 		return
-<<<<<<< HEAD
 	//If we're closed
 	if(!door) //We have no door, lets see if we have a decal. If not, theres nothing we need to do
 		if(decal)
@@ -173,14 +172,6 @@
 		. += masked_door
 	if(decal)
 		. += decal
-=======
-	style = chosenStyle
-	icon_state = POD_STYLES[chosenStyle][POD_ICON_STATE] //POD_STYLES is a 2D array we treat as a dictionary. The style represents the verticle index, with the icon state, name, and desc being stored in the horizontal indexes of the 2D array.
-	if (!adminNamed && !specialised) //We dont want to name it ourselves if it has been specifically named by an admin using the centcom_podlauncher datum
-		name = POD_STYLES[chosenStyle][POD_NAME]
-		desc = POD_STYLES[chosenStyle][POD_DESC]
-	update_appearance()
->>>>>>> 78c6f5ad04 (okay getting back to this lets seee)
 
 /obj/structure/closet/supplypod/tool_interact(obj/item/W, mob/user)
 	if(bluespace) //We dont want to worry about interacting with bluespace pods, as they are due to delete themselves soon anyways.
@@ -293,21 +284,12 @@
 			return
 	if (openingSound)
 		playsound(get_turf(holder), openingSound, soundVolume, FALSE, FALSE) //Special admin sound to play
-<<<<<<< HEAD
 	for (var/turf_type in turfs_in_cargo)
 		turf_underneath.PlaceOnTop(turf_type)
 	for (var/cargo in contents)
 		var/atom/movable/movable_cargo = cargo
 		movable_cargo.forceMove(turf_underneath)
 	if (!effectQuiet && !openingSound && style != STYLE_SEETHROUGH && !(pod_flags & FIRST_SOUNDS)) //If we aren't being quiet, play the default pod open sound
-=======
-	INVOKE_ASYNC(holder, .proc/setOpened) //Use the INVOKE_ASYNC proc to call setOpened() on whatever the holder may be, without giving the atom/movable base class a setOpened() proc definition
-	if (style == STYLE_SEETHROUGH)
-		update_appearance()
-	for (var/atom/movable/O in holder.contents) //Go through the contents of the holder
-		O.forceMove(T) //move everything from the contents of the holder to the turf of the holder
-	if (!effectQuiet && !openingSound && style != STYLE_SEETHROUGH) //If we aren't being quiet, play the default pod open sound
->>>>>>> 78c6f5ad04 (okay getting back to this lets seee)
 		playsound(get_turf(holder), open_sound, 15, TRUE, -3)
 	if (broken) //If the pod is opening because it's been destroyed, we end here
 		return
@@ -360,7 +342,6 @@
 	else
 		return FALSE
 
-<<<<<<< HEAD
 /obj/structure/closet/supplypod/insertion_allowed(atom/to_insert)
 	if(to_insert.invisibility == INVISIBILITY_ABSTRACT)
 		return FALSE
@@ -428,13 +409,6 @@
 	opened = TRUE
 	density = TRUE
 	update_icon()
-=======
-/obj/structure/closet/supplypod/proc/setOpened() //Proc exists here, as well as in any atom that can assume the role of a "holder" of a supplypod. Check the open() proc for more details
-	update_appearance()
-
-/obj/structure/closet/supplypod/proc/setClosed() //Ditto
-	update_appearance()
->>>>>>> 78c6f5ad04 (okay getting back to this lets seee)
 
 /obj/structure/closet/supplypod/setClosed() //Ditto
 	opened = FALSE
@@ -610,7 +584,6 @@
 /obj/effect/pod_landingzone/proc/playFallingSound()
 	playsound(src, pod.fallingSound, pod.soundVolume, 1, 6)
 
-<<<<<<< HEAD
 /obj/effect/pod_landingzone/proc/beginLaunch(effectCircle) //Begin the animation for the pod falling. The effectCircle param determines whether the pod gets to come in from any descent angle
 	pod.addGlow()
 	pod.update_icon()
@@ -660,29 +633,6 @@
 	pod.layer = initial(pod.layer)
 	pod.endGlow()
 	QDEL_NULL(helper)
-=======
-/obj/effect/DPtarget/proc/beginLaunch(effectCircle) //Begin the animation for the pod falling. The effectCircle param determines whether the pod gets to come in from any descent angle
-	fallingPod = new /obj/effect/DPfall(drop_location(), pod)
-	var/matrix/M = matrix(fallingPod.transform) //Create a new matrix that we can rotate
-	var/angle = effectCircle ? rand(0,360) : rand(70,110) //The angle that we can come in from
-	fallingPod.pixel_x = cos(angle)*400 //Use some ADVANCED MATHEMATICS to set the animated pod's position to somewhere on the edge of a circle with the center being the target
-	fallingPod.pixel_z = sin(angle)*400
-	var/rotation = Get_Pixel_Angle(fallingPod.pixel_z, fallingPod.pixel_x) //CUSTOM HOMEBREWED proc that is just arctan with extra steps
-	M.Turn(rotation) //Turn our matrix accordingly
-	fallingPod.transform = M //Transform the animated pod according to the matrix
-	M = matrix(pod.transform) //Make another matrix based on the pod
-	M.Turn(rotation) //Turn the matrix
-	pod.transform = M //Turn the actual pod (Won't be visible until endLaunch() proc tho)
-	animate(fallingPod, pixel_z = 0, pixel_x = -16, time = pod.fallDuration, , easing = LINEAR_EASING) //Make the pod fall! At an angle!
-	addtimer(CALLBACK(src, .proc/endLaunch), pod.fallDuration, TIMER_CLIENT_TIME) //Go onto the last step after a very short falling animation
-
-/obj/effect/DPtarget/proc/endLaunch()
-	pod.update_appearance()
-	pod.forceMove(drop_location()) //The fallingPod animation is over, now's a good time to forceMove the actual pod into position
-	QDEL_NULL(fallingPod) //Delete the falling pod effect, because at this point its animation is over. We dont use temp_visual because we want to manually delete it as soon as the pod appears
-	for (var/mob/living/M in src) //Remember earlier (initialization) when we moved mobs into the DPTarget so they wouldnt get lost in nullspace? Time to get them out
-		M.forceMove(pod)
->>>>>>> 78c6f5ad04 (okay getting back to this lets seee)
 	pod.preOpen() //Begin supplypod open procedures. Here effects like explosions, damage, and other dangerous (and potentially admin-caused, if the centcom_podlauncher datum was used) memes will take place
 	drawSmoke()
 	qdel(src) //The target's purpose is complete. It can rest easy now

@@ -32,17 +32,7 @@
 		AM.throw_atom_into_space()
 
 /atom/proc/throw_atom_into_space()
-<<<<<<< HEAD
 	if(flags_1 & INITIALIZED_1)
-=======
-	if(istype(src, /obj/docking_port))
-		return
-	if(iseffect(src))
-		return
-	if(isliving(src))
-		var/mob/living/poor_soul = src	// This may not seem like much, but if you toss someone out
-		poor_soul.apply_damage_type(25, BRUTE)	// and they go through like four tiles, they're goners
->>>>>>> 78c6f5ad04 (okay getting back to this lets seee)
 		return
 	qdel(src)
 

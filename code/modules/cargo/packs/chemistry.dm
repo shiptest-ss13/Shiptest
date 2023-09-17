@@ -42,7 +42,6 @@
 					/obj/item/stock_parts/micro_laser)
 	crate_name = "chemistry tools crate"
 
-<<<<<<< HEAD
 /datum/supply_pack/chemistry/press
 	name = "Pill Press Crate"
 	desc = "Contains one standard press for making pills by hand."
@@ -50,8 +49,6 @@
 	contains = list(/obj/machinery/chem_press)
 	crate_name = "pill press crate"
 
-=======
->>>>>>> 78c6f5ad04 (okay getting back to this lets seee)
 /*
 		Bulk materials
 */

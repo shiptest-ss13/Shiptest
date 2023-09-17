@@ -40,13 +40,7 @@
 /mob/living/simple_animal/pet/gondola/gondolapod/update_overlays()
 	. = ..()
 	if(opened)
-<<<<<<< HEAD
 		. += "[icon_state]_open"
-=======
-		icon_state = "gondolapod_open"
-	else
-		icon_state = "gondolapod"
->>>>>>> 78c6f5ad04 (okay getting back to this lets seee)
 	return ..()
 
 /mob/living/simple_animal/pet/gondola/gondolapod/verb/deliver()
@@ -75,11 +69,7 @@
 /mob/living/simple_animal/pet/gondola/gondolapod/setOpened()
 	opened = TRUE
 	update_appearance()
-<<<<<<< HEAD
 	addtimer(CALLBACK(src, /atom/.proc/setClosed), 50)
-=======
-	addtimer(CALLBACK(src, .proc/setClosed), 50)
->>>>>>> 78c6f5ad04 (okay getting back to this lets seee)
 
 /mob/living/simple_animal/pet/gondola/gondolapod/setClosed()
 	opened = FALSE

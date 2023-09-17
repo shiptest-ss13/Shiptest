@@ -77,11 +77,8 @@
 	if(parents[i])
 		nullifyPipenet(parents[i])
 	airs[i] = null
-<<<<<<< HEAD
 	if(!QDELETED(src))
 		airs[i] = new /datum/gas_mixture(200)
-=======
->>>>>>> 78c6f5ad04 (okay getting back to this lets seee)
 	return ..()
 
 /obj/machinery/atmospherics/components/on_construction()
@@ -105,7 +102,6 @@
 /obj/machinery/atmospherics/components/proc/nullifyPipenet(datum/pipeline/reference)
 	if(!reference)
 		CRASH("nullifyPipenet(null) called by [type] on [COORD(src)]")
-<<<<<<< HEAD
 
 	for (var/i in 1 to length(parents))
 		if (parents[i] == reference)
@@ -114,11 +110,6 @@
 
 	reference.other_atmosmch -= src
 
-=======
-	var/i = parents.Find(reference)
-	reference.other_airs -= airs[i]
-	reference.other_atmosmch -= src
->>>>>>> 78c6f5ad04 (okay getting back to this lets seee)
 	/*
 	We explicitly qdel pipeline when this particular pipeline
 	is projected to have no member and cause GC problems.
@@ -126,19 +117,10 @@
 	while pipes must and will happily wreck and rebuild
 	everything again every time they are qdeleted.
 	*/
-<<<<<<< HEAD
 	if(length(reference.other_atmosmch) || length(reference.members) || QDESTROYING(reference))
 		return
 
 	qdel(reference)
-=======
-	if(!length(reference.other_atmosmch) && !length(reference.members))
-		if(QDESTROYING(reference))
-			parents[i] = null
-			CRASH("nullifyPipenet() called on qdeleting [reference] indexed on parents\[[i]\]")
-		qdel(reference)
-	parents[i] = null
->>>>>>> 78c6f5ad04 (okay getting back to this lets seee)
 
 /obj/machinery/atmospherics/components/returnPipenetAirs(datum/pipeline/reference)
 	var/list/returned_air = list()

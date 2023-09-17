@@ -5,22 +5,12 @@
 	area_type = /area/overmap_encounter/planetoid/gas_giant
 
 /datum/biome/gas_giant
-<<<<<<< HEAD
 	open_turf_types = list(/turf/open/chasm/gas_giant = 1)
 
 	flora_spawn_list = null
 	feature_spawn_list = null
 	mob_spawn_list = list(
 		/mob/living/simple_animal/hostile/asteroid/basilisk/watcher = 1
-=======
-	open_turf_types = list(/turf/open/chasm/gas_giant)
-
-	flora_spawn_list = list(
-	)
-	feature_spawn_list = null
-	mob_spawn_list = list(
-		/mob/living/simple_animal/hostile/asteroid/basilisk/watcher
->>>>>>> 78c6f5ad04 (okay getting back to this lets seee)
 		//in the future, I'd like to add something like.
 		//The slylandro, or really any floating gas bag species, it'd be cool
 	)
@@ -34,21 +24,10 @@
 
 
 /datum/biome/plasma_giant
-<<<<<<< HEAD
 	open_turf_types = list(/turf/open/chasm/gas_giant/plasma = 1)
 
 	flora_spawn_list = null
 	feature_spawn_list = null
 	mob_spawn_list = list(
 		/mob/living/simple_animal/hostile/asteroid/basilisk/watcher = 1
-=======
-	open_turf_types = list(/turf/open/chasm/gas_giant/plasma)
-
-	flora_spawn_list = list(
-	)
-	feature_spawn_list = null
-	mob_spawn_list = list(
-		/mob/living/simple_animal/hostile/asteroid/basilisk/watcher
-
->>>>>>> 78c6f5ad04 (okay getting back to this lets seee)
 	)

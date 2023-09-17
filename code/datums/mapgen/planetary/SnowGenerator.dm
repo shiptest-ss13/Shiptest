@@ -207,21 +207,12 @@
 	)
 	feature_spawn_chance = 0.3
 	feature_spawn_list = list(
-<<<<<<< HEAD
 		/obj/effect/spawner/lootdrop/anomaly/ice = 100,
 		/obj/effect/spawner/lootdrop/anomaly/big = 1,
 		/obj/structure/spawner/ice_moon/demonic_portal/low_threat = 300,
 		/obj/structure/spawner/ice_moon/demonic_portal/medium_threat = 500,
 		/obj/structure/spawner/ice_moon/demonic_portal/high_threat = 50,
 		/obj/structure/spawner/ice_moon/demonic_portal/extreme_threat = 1
-=======
-		/obj/effect/spawner/lootdrop/anomaly/ice = 1,
-		/obj/effect/spawner/lootdrop/anomaly/big = 0.01,
-		/obj/structure/spawner/ice_moon/demonic_portal/low_threat = 3,
-		/obj/structure/spawner/ice_moon/demonic_portal/medium_threat = 5,
-		/obj/structure/spawner/ice_moon/demonic_portal/high_threat = 0.5,
-		/obj/structure/spawner/ice_moon/demonic_portal/extreme_threat = 0.01
->>>>>>> 78c6f5ad04 (okay getting back to this lets seee)
 	)
 
 
@@ -269,7 +260,6 @@
 	)
 	feature_spawn_chance = 0.2
 	feature_spawn_list = list(
-<<<<<<< HEAD
 		/obj/structure/spawner/ice_moon/demonic_portal/low_threat = 30,
 		/obj/structure/spawner/ice_moon/demonic_portal/medium_threat = 50,
 		/obj/structure/spawner/ice_moon/demonic_portal/high_threat = 6,
@@ -277,15 +267,6 @@
 		/obj/structure/spawner/ice_moon = 30,
 		/obj/structure/spawner/ice_moon/polarbear = 30,
 		/obj/effect/spawner/lootdrop/anomaly/ice/cave = 10
-=======
-		/obj/structure/spawner/ice_moon/demonic_portal/low_threat = 3,
-		/obj/structure/spawner/ice_moon/demonic_portal/medium_threat = 5,
-		/obj/structure/spawner/ice_moon/demonic_portal/high_threat = 0.6,
-		/obj/structure/spawner/ice_moon/demonic_portal/extreme_threat = 0.2,
-		/obj/structure/spawner/ice_moon = 3,
-		/obj/structure/spawner/ice_moon/polarbear = 3,
-		/obj/effect/spawner/lootdrop/anomaly/ice/cave = 1
->>>>>>> 78c6f5ad04 (okay getting back to this lets seee)
 	)
 
 /datum/biome/cave/snow/thawed
