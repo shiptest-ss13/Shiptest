@@ -101,6 +101,9 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 
 /obj/effect/hallucination/simple/Initialize(mapload, mob/living/carbon/T)
 	. = ..()
+	if(!T)
+		stack_trace("A hallucination was created with no target")
+		return INITIALIZE_HINT_QDEL
 	target = T
 	current_image = GetImage()
 	if(target.client)
@@ -660,7 +663,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 		target.playsound_local(get_turf(airlock), 'sound/machines/boltsup.ogg',30,0,3)
 	qdel(src)
 
-/obj/effect/hallucination/fake_door_lock/CanAllowThrough(atom/movable/mover, turf/_target)
+/obj/effect/hallucination/fake_door_lock/CanAllowThrough(atom/movable/mover, border_dir)
 	. = ..()
 	if(mover == target && airlock.density)
 		return FALSE

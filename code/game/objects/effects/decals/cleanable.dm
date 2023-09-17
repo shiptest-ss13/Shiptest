@@ -28,7 +28,6 @@
 
 	var/static/list/loc_connections = list(
 		COMSIG_ATOM_ENTERED = .proc/on_entered,
-		COMSIG_ATOM_EXITED = .proc/on_uncrossed,
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
@@ -80,10 +79,6 @@
 		reagents.expose_temperature(exposed_temperature)
 	..()
 
-/obj/effect/decal/cleanable/proc/on_uncrossed(datum/source, atom/movable/O)
-	SIGNAL_HANDLER
-	return
-
 //Add "bloodiness" of this blood's type, to the human's shoes
 //This is on /cleanable because fuck this ancient mess
 /obj/effect/decal/cleanable/proc/on_entered(datum/source, atom/movable/AM)
@@ -94,6 +89,8 @@
 
 /obj/effect/decal/cleanable/wash(clean_types)
 	..()
+	if(!(flags_1 & INITIALIZED_1))
+		return FALSE
 	qdel(src)
 	return TRUE
 

@@ -55,8 +55,6 @@
 	///overlays managed by [update_overlays][/atom/proc/update_overlays] to prevent removing overlays that weren't added by the same proc
 	var/list/managed_overlays
 
-	///Proximity monitor associated with this atom
-	var/datum/proximity_monitor/proximity_monitor
 	///Cooldown tick timer for buckle messages
 	var/buckle_message_cooldown = 0
 	///Last fingerprints to touch this atom
@@ -249,9 +247,10 @@
 	if (length(no_connector_typecache))
 		no_connector_typecache = SSicon_smooth.get_no_connector_typecache(src.type, no_connector_typecache, connector_strict_typing)
 
-	var/area/ship/current_ship_area = get_area(src)
-	if(!mapload && istype(current_ship_area) && current_ship_area.mobile_port)
-		connect_to_shuttle(current_ship_area.mobile_port, current_ship_area.mobile_port.docked)
+	if(!mapload)
+		var/area/ship/current_ship_area = get_area(src)
+		if(istype(current_ship_area) && current_ship_area.mobile_port)
+			connect_to_shuttle(current_ship_area.mobile_port, current_ship_area.mobile_port.docked)
 
 	var/temp_list = list()
 	for(var/i in custom_materials)
@@ -333,19 +332,19 @@
 	P.setAngle(new_angle_s)
 	return TRUE
 
-///Can the mover object pass this atom, while heading for the target turf
-/atom/proc/CanPass(atom/movable/mover, turf/target)
+/// Whether the mover object can avoid being blocked by this atom, while arriving from (or leaving through) the border_dir.
+/atom/proc/CanPass(atom/movable/mover, border_dir)
 	SHOULD_CALL_PARENT(TRUE)
 	SHOULD_BE_PURE(TRUE)
 	if(mover.movement_type & PHASING)
 		return TRUE
-	. = CanAllowThrough(mover, target)
+	. = CanAllowThrough(mover, border_dir)
 	// This is cheaper than calling the proc every time since most things dont override CanPassThrough
 	if(!mover.generic_canpass)
-		return mover.CanPassThrough(src, target, .)
+		return mover.CanPassThrough(src, REVERSE_DIR(border_dir), .)
 
 /// Returns true or false to allow the mover to move through src
-/atom/proc/CanAllowThrough(atom/movable/mover, turf/target)
+/atom/proc/CanAllowThrough(atom/movable/mover, border_dir)
 	SHOULD_CALL_PARENT(TRUE)
 	//SHOULD_BE_PURE(TRUE)
 	if(mover.pass_flags & pass_flags_self)
@@ -969,16 +968,6 @@
 	SEND_SIGNAL(src, COMSIG_ATOM_CONTENTS_DEL, A)
 
 /**
- * called when the turf the atom resides on is ChangeTurfed
- *
- * Default behaviour is to loop through atom contents and call their HandleTurfChange() proc
- */
-/atom/proc/HandleTurfChange(turf/T)
-	for(var/atom in src)
-		var/atom/A = atom
-		A.HandleTurfChange(T)
-
-/**
  * the vision impairment to give to the mob whose perspective is set to that atom
  *
  * (e.g. an unfocused camera giving you an impaired vision when looking through it)
@@ -1320,6 +1309,9 @@
 /atom/proc/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
 	return
 
+/atom/proc/disconnect_from_shuttle(obj/docking_port/mobile/port)
+	return
+
 /// Generic logging helper
 /atom/proc/log_message(message, message_type, color=null, log_globally=TRUE)
 	if(!log_globally)
@@ -1564,7 +1556,7 @@
 	else
 		// See if there's a gravity generator on our map zone
 		var/datum/map_zone/mapzone = T.get_map_zone()
-		if(mapzone.gravity_generators.len)
+		if(mapzone?.gravity_generators.len)
 			var/max_grav = 0
 			for(var/obj/machinery/gravity_generator/main/G as anything in mapzone.gravity_generators)
 				max_grav = max(G.setting,max_grav)
@@ -1651,3 +1643,24 @@
 		else
 			//We inline a MAPTEXT() here, because there's no good way to statically add to a string like this
 			active_hud.screentip_text.maptext = "<span class='maptext' style='text-align: center; font-size: 32px; color: [user.client.prefs.screentip_color]'>[name]</span>"
+
+///Called whenever a player is spawned on the same turf as this atom.
+/atom/proc/join_player_here(mob/M)
+	// By default, just place the mob on the same turf as the marker or whatever.
+	M.forceMove(get_turf(src))
+
+/*
+* Used to set something as 'open' if it's being used as a supplypod
+*
+* Override this if you want an atom to be usable as a supplypod.
+*/
+/atom/proc/setOpened()
+	return
+
+/*
+* Used to set something as 'closed' if it's being used as a supplypod
+*
+* Override this if you want an atom to be usable as a supplypod.
+*/
+/atom/proc/setClosed()
+	return

@@ -22,6 +22,8 @@
 	#define COMPONENT_GLOB_BLOCK_CINEMATIC 1
 /// ingame button pressed (/obj/machinery/button/button)
 #define COMSIG_GLOB_BUTTON_PRESSED "!button_pressed"
+/// a client (re)connected, after all /client/New() checks have passed : (client/connected_client)
+#define COMSIG_GLOB_CLIENT_CONNECT "!client_connect"
 
 // signals from globally accessible objects
 /// from SSsun when the sun changes position : (azimuth)
@@ -532,6 +534,8 @@
 #define COMSIG_TOOL_START_USE "tool_start_use" ///from base of [/obj/item/proc/tool_start_check]: (mob/living/user)
 #define COMSIG_ITEM_DISABLE_EMBED "item_disable_embed" ///from [/obj/item/proc/disableEmbedding]:
 #define COMSIG_MINE_TRIGGERED "minegoboom" ///from [/obj/effect/mine/proc/triggermine]:
+///from [/obj/structure/closet/supplypod/proc/endlaunch]:
+#define COMSIG_SUPPLYPOD_LANDED "supplypodgoboom"
 
 ///Called when an item is being offered, from [/obj/item/proc/on_offered(mob/living/carbon/offerer)]
 #define COMSIG_ITEM_OFFERING "item_offering"

@@ -24,6 +24,7 @@
 	return my_turf.virtual_z
 
 /atom/proc/get_virtual_level()
+	RETURN_TYPE(/datum/virtual_level)
 	return
 
 /atom/movable/get_virtual_level()
@@ -45,3 +46,7 @@
 	var/datum/virtual_level/vlevel = get_virtual_level()
 	if(vlevel)
 		return vlevel.parent_map_zone
+
+/atom/proc/get_relative_location()
+	var/datum/virtual_level/vlevel = get_virtual_level()
+	return vlevel?.get_relative_coords(src)
