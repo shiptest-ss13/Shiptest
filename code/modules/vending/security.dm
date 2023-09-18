@@ -161,7 +161,7 @@
 		)
 
 	voucher_items = list(
-		"NT-AK" = /obj/item/gun/ballistic/automatic/assualt/ak47/nt) //if im being honest, theres no point in addiing other options when this is clearly the best
+		"NT-AK" = /obj/item/gun/ballistic/automatic/assault/ak47/nt) //if im being honest, theres no point in addiing other options when this is clearly the best
 
 /obj/item/gun_voucher
 	name = "security weapon voucher"
