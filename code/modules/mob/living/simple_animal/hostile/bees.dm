@@ -10,6 +10,10 @@
 #define BEE_POLLINATE_PEST_CHANCE 33
 #define BEE_POLLINATE_POTENCY_CHANCE 50
 
+/* For when we makes bees edible lmao (NEWFOOD)
+#define BEE_FOODGROUPS RAW | MEAT | GORE /*| BUGS*/
+*/
+
 /mob/living/simple_animal/hostile/poison/bees
 	name = "bee"
 	desc = "Buzzy buzzy bee, stingy sti- Ouch!"
