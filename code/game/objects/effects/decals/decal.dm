@@ -65,12 +65,5 @@
 
 /obj/effect/turf_decal/Destroy(force)
 	SHOULD_CALL_PARENT(FALSE)
-#ifdef UNIT_TESTS
-// If we don't do this, turf decals will end up stacking up on a tile, and break the overlay limit
-// I hate it too bestie
-	if(GLOB.running_create_and_destroy)
-		var/turf/T = loc
-		T.RemoveElement(/datum/element/decal, icon, icon_state, dir, null, null, alpha, color, null, FALSE, null)
-#endif
 	moveToNullspace()
 	return QDEL_HINT_QUEUE
