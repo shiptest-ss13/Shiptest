@@ -35,6 +35,8 @@
 	custom_price = 55
 
 /obj/item/reagent_containers/food/drinks/bottle/smash(mob/living/target, mob/thrower, ranged = FALSE)
+	if(QDELING(src) || !target || !(flags_1 & INITIALIZED_1))	//Invalid loc
+		return
 	//Creates a shattering noise and replaces the bottle with a broken_bottle
 	if(bartender_check(target) && ranged)
 		return

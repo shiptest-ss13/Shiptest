@@ -98,14 +98,14 @@ other types of metals and chemistry for reagents).
 	illustration = "design"
 	custom_materials = list(/datum/material/iron =300, /datum/material/glass =100)
 	var/list/blueprints = list()
+	var/list/starting_blueprints = list()
 	var/max_blueprints = 1
 
 /obj/item/disk/design_disk/Initialize()
 	. = ..()
 	pixel_x = base_pixel_x + rand(-5, 5)
 	pixel_y = base_pixel_y + rand(-5, 5)
-	for(var/i in 1 to max_blueprints)
-		blueprints += null
+	blueprints = new/list(max_blueprints)
 
 /obj/item/disk/design_disk/adv
 	name = "Advanced Component Design Disk"
@@ -129,16 +129,6 @@ other types of metals and chemistry for reagents).
 	max_blueprints = 10
 
 //Disks with content
-/obj/item/disk/design_disk/ammo_38_hunting
-	name = "Design Disk - .38 Hunting Ammo"
-	desc = "A design disk containing the pattern for a refill ammo box for Winchester rifles and Detective Specials."
-	illustration = "ammo"
-
-/obj/item/disk/design_disk/ammo_38_hunting/Initialize()
-	. = ..()
-	var/datum/design/c38_hunting/M = new
-	blueprints[1] = M
-
 /obj/item/disk/design_disk/ammo_c10mm
 	name = "Design Disk - 10mm Ammo"
 	desc = "A design disk containing the pattern for a refill box of standard 10mm ammo, used in Stechkin pistols."
@@ -159,21 +149,20 @@ other types of metals and chemistry for reagents).
 	name = "design disk - disposable gun"
 	desc = "A design disk containing designs for a cheap and disposable gun."
 	illustration = "gun"
+	max_blueprints = 2
 
-/obj/item/disk/design_disk/disposable_gun/Initialize()
+/obj/item/disk/design_disk/adv/disposable_gun/Initialize()
 	. = ..()
-	var/datum/design/disposable_gun/G = new
-	var/datum/design/pizza_disposable_gun/P = new
-	blueprints[1] = G
-	blueprints[2] = P
+	blueprints[1] = new /datum/design/disposable_gun()
+	blueprints[2] = new /datum/design/pizza_disposable_gun()
 
 /obj/item/disk/design_disk/cmm_mechs
 	name = "design disk - CMM mecha modifications"
 	desc = "A design disk containing specifications for CMM-custom mecha conversions."
 	color = "#57b8f0"
-	max_blueprints = 3
+	max_blueprints = 2
 
 /obj/item/disk/design_disk/cmm_mechs/Initialize()
 	. = ..()
-	blueprints[1] = new /datum/design/cmm_ripley_upgrade
-	blueprints[2] = new /datum/design/cmm_durand_upgrade
+	blueprints[1] = new /datum/design/cmm_ripley_upgrade()
+	blueprints[2] = new /datum/design/cmm_durand_upgrade()

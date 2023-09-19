@@ -159,7 +159,7 @@
 	. = ..()
 	move_update_air(T)
 
-/obj/machinery/door/CanAllowThrough(atom/movable/mover, turf/target)
+/obj/machinery/door/CanAllowThrough(atom/movable/mover, border_dir)
 	. = ..()
 	if(.)
 		return
