@@ -29,6 +29,14 @@
 	item_state = "gas_cap"
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 
+/obj/item/clothing/mask/gas/atmos/centcom
+	name = "\improper CentCom gas mask"
+	desc = "Oooh, gold and green. Fancy! This should help as you sit in your office."
+	icon = 'icons/obj/clothing/masks.dmi'
+	icon_state = "gas_centcom"
+	item_state = "gas_centcom"
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+
 // **** Welding gas mask ****
 
 /obj/item/clothing/mask/gas/welding

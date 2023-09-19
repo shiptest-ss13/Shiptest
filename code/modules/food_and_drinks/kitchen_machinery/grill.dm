@@ -93,8 +93,9 @@
 	. = ..()
 
 /obj/machinery/grill/Destroy()
-	grilled_item = null
-	. = ..()
+	QDEL_NULL(grilled_item)
+	QDEL_NULL(grill_loop)
+	return ..()
 
 /obj/machinery/grill/handle_atom_del(atom/A)
 	if(A == grilled_item)

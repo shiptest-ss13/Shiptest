@@ -102,7 +102,7 @@
 		return FALSE
 	var/datum/outfit/job/O = new outfit_type()
 	var/list/outfit_types = O.get_chameleon_disguise_info()
-	var/datum/job/job_datum = SSjob.GetJobType(O.jobtype)
+	var/datum/job/job_datum = GLOB.type_occupations[O.jobtype]
 
 	for(var/V in user.chameleon_item_actions)
 		var/datum/action/item_action/chameleon/change/A = V
