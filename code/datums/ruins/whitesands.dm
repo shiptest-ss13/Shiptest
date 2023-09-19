@@ -60,6 +60,12 @@
 	description = "Some sort of survivors, brandishing old nanotrasen security gear."
 	suffix = "whitesands_surface_chokepoint.dmm"
 
+/datum/map_template/ruin/whitesands/pubbyslopcrash
+	name = "Pubby Slop Crash"
+	id = "ws-pubbyslopcrash"
+	description = "A failed attempt of the Nanotrasen nutrional replacement program"
+	suffix = "whitesands_surface_pubbyslopcrash.dmm"
+
 //////////OUTSIDE SETTLEMENTS/RUINS//////////
 /datum/map_template/ruin/whitesands/survivors/drugstore
 	name = "Abandoned Store"
