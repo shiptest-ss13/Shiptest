@@ -238,9 +238,10 @@
 /obj/structure/fluff/paper/stack{
 	dir = 6
 	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 8
+	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
 "cO" = (
@@ -424,7 +425,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/codelab/subjectrooms)
 "eY" = (
@@ -617,6 +618,13 @@
 /obj/effect/turf_decal/industrial/stand_clear,
 /turf/open/floor/plating,
 /area/ruin/unpowered/codelab/maintenance)
+"hB" = (
+/obj/effect/turf_decal/corner/opaque/white/mono,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/codelab/subjectrooms)
 "hE" = (
 /turf/closed/wall/mineral/titanium,
 /area/ruin/unpowered/codelab/reception)
@@ -5162,7 +5170,7 @@ ir
 XS
 He
 rY
-GN
+hB
 Ru
 GN
 hE

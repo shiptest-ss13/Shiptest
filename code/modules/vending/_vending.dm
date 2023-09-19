@@ -65,7 +65,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	var/vend_ready = TRUE
 	///Next world time to send a purchase message
 	var/purchase_message_cooldown
-	///Last mob to shop with us
+	///The ref of the last mob to shop with us
 	var/last_shopper
 	var/tilted = FALSE
 	var/tiltable = TRUE
@@ -804,10 +804,10 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 						D.adjust_money(price_to_use)
 						SSblackbox.record_feedback("amount", "vending_spent", price_to_use)
 						log_econ("[price_to_use] credits were inserted into [src] by [D.account_holder] to buy [R].")
-			if(last_shopper != usr || purchase_message_cooldown < world.time)
+			if(last_shopper != REF(usr) || purchase_message_cooldown < world.time)
 				say("Thank you for shopping with [src]!")
 				purchase_message_cooldown = world.time + 5 SECONDS
-				last_shopper = usr
+				last_shopper = REF(usr)
 			use_power(5)
 			if(icon_vend) //Show the vending animation if needed
 				flick(icon_vend,src)
@@ -1040,10 +1040,10 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 						S.forceMove(drop_location())
 						loaded_items--
 						use_power(5)
-						if(last_shopper != usr || purchase_message_cooldown < world.time)
+						if(last_shopper != REF(usr) || purchase_message_cooldown < world.time)
 							say("Thank you for buying local and purchasing [S]!")
 							purchase_message_cooldown = world.time + 5 SECONDS
-							last_shopper = usr
+							last_shopper = REF(usr)
 						vend_ready = TRUE
 						updateUsrDialog()
 						return

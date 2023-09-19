@@ -1,8 +1,6 @@
 /datum/job/officer
 	name = "Security Officer"
 	auto_deadmin_role_flags = DEADMIN_POSITION_SECURITY
-	total_positions = 5 //Handled in /datum/controller/occupations/proc/setup_officer_positions()
-	spawn_positions = 5 //Handled in /datum/controller/occupations/proc/setup_officer_positions()
 	minimal_player_age = 7
 	wiki_page = "Space_Law" //WS Edit - Wikilinks/Warning
 
@@ -167,7 +165,7 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 /datum/outfit/job/security/minutemen/armed
 	name = "Minuteman (Colonial Minutemen) (Armed)"
 
-	suit_store = /obj/item/gun/ballistic/automatic/assualt/p16/minutemen
+	suit_store = /obj/item/gun/ballistic/automatic/assault/p16/minutemen
 	belt = /obj/item/storage/belt/military/minutemen/loaded
 
 /datum/outfit/job/security/minutemen/mechpilot

@@ -19,16 +19,17 @@
 	if(needs_item_input && anchored)
 		register_input_turf()
 
-/// Gets the turf in the `input_dir` direction adjacent to the machine, and registers signals for ATOM_ENTERED and ATOM_CREATED. Calls the `pickup_item()` proc when it receives these signals.
+/// Gets the turf in the `input_dir` direction adjacent to the machine, and registers signals for ATOM_ENTERED. Calls the `pickup_item()` proc when it receives these signals.
+/// DO NOT ADD COMSIG_ATOM_CREATED, SINCE PICKUP_ITEM WILL QDEL THE ITEM AND QDELING AN INITIALISING THING IS STUPID
 /obj/machinery/mineral/proc/register_input_turf()
 	input_turf = get_step(src, input_dir)
 	if(input_turf) // make sure there is actually a turf
-		RegisterSignal(input_turf, list(COMSIG_ATOM_CREATED, COMSIG_ATOM_ENTERED), .proc/pickup_item)
+		RegisterSignal(input_turf, COMSIG_ATOM_ENTERED, .proc/pickup_item)
 
 /// Unregisters signals that are registered the machine's input turf, if it has one.
 /obj/machinery/mineral/proc/unregister_input_turf()
 	if(input_turf)
-		UnregisterSignal(input_turf, list(COMSIG_ATOM_ENTERED, COMSIG_ATOM_CREATED))
+		UnregisterSignal(input_turf, COMSIG_ATOM_ENTERED)
 
 /obj/machinery/mineral/Moved()
 	. = ..()
@@ -135,6 +136,8 @@
 	var/datum/material/selected_material = null
 	var/selected_alloy = null
 	var/datum/techweb/stored_research
+	///Proximity monitor associated with this atom, needed for proximity checks.
+	var/datum/proximity_monitor/proximity_monitor
 
 /obj/machinery/mineral/processing_unit/Initialize()
 	. = ..()

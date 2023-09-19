@@ -78,13 +78,6 @@
 				else
 					message_admins("[key_name_admin(usr)] tried to create changelings. Unfortunately, there were no candidates available.")
 					log_admin("[key_name(usr)] failed to create changelings.")
-			if("revs")
-				if(src.makeRevs())
-					message_admins("[key_name(usr)] started a revolution.")
-					log_admin("[key_name(usr)] started a revolution.")
-				else
-					message_admins("[key_name_admin(usr)] tried to start a revolution. Unfortunately, there were no candidates available.")
-					log_admin("[key_name(usr)] failed to start a revolution.")
 			if("cult")
 				if(src.makeCult())
 					message_admins("[key_name(usr)] started a cult.")
@@ -363,7 +356,7 @@
 			if("parrot")
 				M.change_mob_type(/mob/living/simple_animal/parrot , null, null, delmob)
 			if("polyparrot")
-				M.change_mob_type(/mob/living/simple_animal/parrot/Poly , null, null, delmob)
+				M.change_mob_type(/mob/living/simple_animal/parrot/Polly , null, null, delmob)
 			if("constructjuggernaut")
 				M.change_mob_type(/mob/living/simple_animal/hostile/construct/juggernaut , null, null, delmob)
 			if("constructartificer")
