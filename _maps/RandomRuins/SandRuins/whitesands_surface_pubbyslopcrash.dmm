@@ -103,9 +103,6 @@
 /area/ruin/whitesands/pubbycrash)
 "cp" = (
 /obj/effect/turf_decal/spline/fancy/opaque/black,
-/obj/machinery/power/apc/auto_name/directional/west{
-	start_charge = 12
-	},
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -114,7 +111,6 @@
 /area/ruin/whitesands/pubbycrash)
 "ct" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/airalarm/directional/south,
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
@@ -168,9 +164,9 @@
 /obj/machinery/button/door{
 	id = "pubbywspodsw";
 	name = "Pod Door Control";
-	pixel_x = -25
+	pixel_x = -25;
+	dir = 4
 	},
-/obj/machinery/light/directional/west,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/stack/ore/salvage/scrapmetal,
 /obj/structure/salvageable/server,
@@ -511,6 +507,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable/yellow,
+/obj/effect/spawner/lootdrop/maintenance/two,
 /turf/open/floor/plasteel/tech,
 /area/ruin/whitesands/pubbycrash)
 "kU" = (
@@ -654,7 +651,6 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ruin/whitesands/pubbycrash)
 "oo" = (
-/obj/machinery/light/directional/south,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/emcloset/wall{
 	dir = 1;
@@ -696,6 +692,13 @@
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 8
 	},
+/obj/item/stock_parts/cell/hyper{
+	pixel_x = 5;
+	pixel_y = 4
+	},
+/obj/item/stack/ore/salvage/scrapmetal/five{
+	pixel_x = -9
+	},
 /turf/open/floor/plating,
 /area/ruin/whitesands/pubbycrash)
 "pu" = (
@@ -715,6 +718,10 @@
 	},
 /obj/effect/decal/cleanable/vomit/old,
 /obj/effect/mob_spawn/human/corpse/nanotrasensoldier,
+/obj/item/storage/box/stockparts/basic{
+	pixel_x = -3;
+	pixel_y = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/whitesands/pubbycrash)
 "pA" = (
@@ -840,6 +847,7 @@
 /obj/structure/sign/poster/retro/nanotrasen_logo_70s{
 	pixel_x = -32
 	},
+/obj/effect/spawner/lootdrop/maintenance/two,
 /turf/open/floor/plating,
 /area/ruin/whitesands/pubbycrash)
 "ss" = (
@@ -1377,9 +1385,6 @@
 /area/ruin/whitesands/pubbycrash)
 "Di" = (
 /obj/structure/railing/corner,
-/obj/machinery/power/apc/auto_name/directional/west{
-	start_charge = 0
-	},
 /turf/closed/mineral/random/whitesands,
 /area/overmap_encounter/planetoid/cave/explored)
 "Dn" = (
@@ -1620,7 +1625,6 @@
 /turf/open/floor/plating,
 /area/ruin/whitesands/pubbycrash)
 "GK" = (
-/obj/machinery/light/directional/south,
 /obj/structure/closet/wall/blue{
 	dir = 1;
 	name = "Captain's locker";
@@ -1639,19 +1643,6 @@
 "Ha" = (
 /obj/structure/table,
 /obj/machinery/cell_charger,
-/obj/item/stock_parts/cell/hyper,
-/obj/item/stock_parts/cell/hyper{
-	pixel_x = 5;
-	pixel_y = 4
-	},
-/obj/item/storage/fancy/cigarettes/cigpack_shadyjims{
-	pixel_x = -7;
-	pixel_y = 6
-	},
-/obj/item/lighter{
-	pixel_x = -5;
-	pixel_y = 4
-	},
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plasteel/tech,
 /area/ruin/whitesands/pubbycrash)
@@ -1676,6 +1667,7 @@
 /obj/machinery/atmospherics/pipe/simple/orange/hidden,
 /obj/machinery/light/directional/east,
 /obj/effect/gibspawner,
+/obj/item/stack/ore/salvage/scrapmetal/five,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/whitesands/pubbycrash)
 "Hq" = (
@@ -1800,7 +1792,6 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/orange/hidden,
-/obj/machinery/light/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/whitesands/pubbycrash)
@@ -1872,6 +1863,7 @@
 /obj/effect/turf_decal/number/nine{
 	dir = 4
 	},
+/obj/item/stock_parts/cell/hyper,
 /turf/open/floor/plasteel/tech,
 /area/ruin/whitesands/pubbycrash)
 "LW" = (
@@ -1955,10 +1947,6 @@
 "Pr" = (
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/storage/box/stockparts/basic{
-	pixel_x = -3;
-	pixel_y = 4
-	},
 /obj/effect/turf_decal/industrial/warning/corner,
 /obj/effect/spawner/lootdrop/maintenance/two,
 /turf/open/floor/plasteel/tech,
@@ -2096,9 +2084,6 @@
 /obj/machinery/camera/autoname{
 	dir = 1
 	},
-/obj/machinery/power/apc/auto_name/directional/south{
-	start_charge = 5
-	},
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -2186,9 +2171,6 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/power/apc/auto_name/directional/north{
-	start_charge = 1
-	},
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -2317,7 +2299,8 @@
 /obj/machinery/button/door{
 	id = "whiteshipubbyEngines";
 	name = "Engine Lockdown Control";
-	pixel_x = -25
+	pixel_x = -25;
+	dir = 4
 	},
 /obj/structure/salvageable/destructive_analyzer,
 /turf/open/floor/plating,
@@ -2347,7 +2330,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/pubbycrash)
 "Yt" = (
-/obj/machinery/light/directional/west,
 /obj/machinery/newscaster/directional/west,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/ash/large,
@@ -2384,7 +2366,6 @@
 /obj/structure/sign/poster/official/random{
 	pixel_x = 32
 	},
-/obj/item/autosurgeon,
 /turf/open/floor/pod,
 /area/ruin/whitesands/pubbycrash)
 "YL" = (
