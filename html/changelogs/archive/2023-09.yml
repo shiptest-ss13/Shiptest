@@ -1,0 +1,83 @@
+2023-09-01:
+  spockye:
+  - bugfix: fixed the jukebox/boombox/discomachine inactive sprite being invisisble
+2023-09-02:
+  Ebin-Halcyon:
+  - imageadd: Keporis have stolen some oversized hoodies and are now able to wear
+      them properly.
+  GenericDM:
+  - tweak: Custom radio channels no longer leak themselves
+  - tweak: Custom radio channels are assigned a random color.
+  MemedHams:
+  - bugfix: the solars on singularity station no longer runtime
+  - bugfix: a bunch of broken indestructible walls have been collapsed into one working
+      subtype
+  - tweak: adds smoothing connectors to indestructible rock walls and adds a seam
+      with normal rock walls, for clarity
+  Skrem7:
+  - balance: Standard 12g box magazines are now small-sized, rather than normal
+  - spellcheck: Adjusts mag-based shotguns, lever-actions, and shotgun mag descriptions
+      to be more efficient/accurate
+  - code_imp: Changes how bulldog/mastiff magazines check for their icon to be standardized
+      with the CM-15
+  - code_imp: All ammo_boxes now update_appearance upon being initialized
+  - bugfix: Bulldog drum magazines should no longer go invisible while checking for
+      a base_icon_sprite that doesn't exist
+  - bugfix: Spent shotgun shells now have proper sprite pathing
+  thgvr:
+  - rscdel: Clown cargo crate
+  - rscdel: Clown stuff in costume vendors
+2023-09-06:
+  Skies-Of-Blue:
+  - rscadd: pointing at something on yourself now shows the item
+  Zevotech:
+  - bugfix: Most rocks are now visible again
+  - rscadd: Most flora files now have missing texture sprites to make it easier to
+      spot when something has gone wrong.
+2023-09-09:
+  Zevotech:
+  - bugfix: fixed the icon states for junglebushes a, b, and c.
+2023-09-10:
+  GenericDM:
+  - bugfix: The SolGov surgical cap no longer turns invisible when handled.
+2023-09-11:
+  Dethstorm:
+  - rscadd: new stuff to wasteplanet_unhonorable
+  - rscadd: new areas for wasteplanet_unhonorable
+2023-09-14:
+  Apogee-dev:
+  - balance: nerfed some outlier rifle cartridges for consistency
+  - rscdel: Removed guns and ammo from sec spawn outfits
+  BarteG44:
+  - rscadd: Added a voice log for the wideband
+  Bjarl:
+  - rscdel: monkey and wishgranter code
+  MarkSuckerberg:
+  - admin: Adds lag switch toggles from /tg/, ONLY use them when the lag becomes unbearable!
+  PositiveEntropy, tf-4:
+  - rscadd: Adds the CentVend inside Central Command! You're now able to vend Central
+      Command clothing items for all your commanding needs!
+  - rscadd: 'Nanotrasen has added a new outfit for Special Ops Officers to enjoy,
+      instead of a simple leather jacket: The CentCom Officer''s Coat!'
+  - rscadd: Re-adds the CentCom Official's suit, making it the default clothing option
+      for CentCom Officials! The turtlenecks have instead been made to be the standard
+      ERT uniform.
+  - imageadd: Thanks to a collaboration between the frontier sector and the core sector,
+      the parade jackets now boast new and varied apperances for all to enjoy, with
+      a new parade jacket releasing for the Head of Security!
+  - imageadd: In no short effort than the finest of tailors, the captain's hat, the
+      centcom hat, the captain's jumpsuit and the captain's carapace now have finer
+      gold trims and the finest quality leather available, making them more vibrant
+      for all!
+  - imageadd: In no short effort of our best tailors, every Central Command outfit
+      have been either redesigned or reshaded! All of them!
+  Skrem7:
+  - spellcheck: Bodies that lack ownership are no longer described as "soulless"
+  - spellcheck: typo moment in nt-svg rifle ammo type
+  Zevotech:
+  - rscadd: exosuit fabricatiors can now be connected to the RND server via multitool
+  ritorizo:
+  - rscadd: Body bags in the autolathe.
+  thgvr:
+  - admin: Improved admin build mode menu and Drop pods from tgstation
+  - rscdel: ion storms are removed
