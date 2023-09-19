@@ -42,9 +42,8 @@
 /area/ruin/whitesands/alienfacility/dorm)
 "ax" = (
 /obj/structure/alien/weeds,
-/obj/structure/table/optable,
-/obj/item/weldingtool/experimental,
-/turf/open/floor/plasteel/airless,
+/obj/item/bodypart/chest/monkey,
+/turf/open/floor/plating/asteroid/whitesands,
 /area/ruin/whitesands/alienfacility/containment)
 "ay" = (
 /obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/n2{
@@ -104,22 +103,10 @@
 /turf/open/floor/wood/walnut,
 /area/ruin/whitesands/alienfacility/dorm)
 "bn" = (
-/obj/machinery/atmospherics/pipe/layer_manifold{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/door/airlock/external{
-	dir = 4
-	},
-/obj/machinery/door/poddoor{
-	id = "experiment";
-	name = "Experiment Containment";
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/ruin/whitesands/alienfacility)
+/obj/structure/alien/weeds,
+/obj/item/circuitboard/machine/limbgrower,
+/turf/open/floor/plating/asteroid/whitesands,
+/area/ruin/whitesands/alienfacility/containment)
 "bq" = (
 /obj/structure/table/chem,
 /obj/effect/spawner/lootdrop/beaker_loot_spawner,
@@ -164,8 +151,9 @@
 /turf/open/floor/engine/o2,
 /area/ruin/whitesands/alienfacility/engineering)
 "bx" = (
-/obj/structure/alien/weeds/node,
-/turf/open/floor/plasteel/airless,
+/obj/structure/alien/weeds,
+/obj/item/stack/sheet/mineral/plasma/five,
+/turf/open/floor/plating/asteroid/whitesands,
 /area/ruin/whitesands/alienfacility/containment)
 "bG" = (
 /obj/structure/showcase/horrific_experiment,
@@ -269,8 +257,9 @@
 /turf/open/floor/plasteel,
 /area/ruin/whitesands/alienfacility)
 "da" = (
-/obj/structure/alien/resin,
-/turf/open/space/basic,
+/obj/structure/alien/weeds,
+/obj/item/surgicaldrill/advanced,
+/turf/open/floor/plating/asteroid/whitesands/dried,
 /area/ruin/whitesands/alienfacility/containment)
 "do" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
@@ -691,9 +680,24 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/alienfacility/engineering)
 "jB" = (
-/obj/machinery/light/small/directional/east,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/external{
+	dir = 4
+	},
+/obj/machinery/door/firedoor,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel,
-/area/ruin/whitesands/alienfacility/lobby)
+/area/ruin/whitesands/alienfacility)
 "jH" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -791,13 +795,9 @@
 /turf/open/floor/plasteel,
 /area/ruin/whitesands/alienfacility)
 "lc" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/layer_manifold,
-/obj/machinery/door/airlock/external,
-/turf/open/floor/plasteel,
-/area/ruin/whitesands/alienfacility/lobby)
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating/airless,
+/area/ruin/whitesands/alienfacility)
 "lk" = (
 /obj/machinery/atmospherics/pipe/simple/cyan/visible{
 	dir = 4
@@ -871,9 +871,8 @@
 /turf/open/floor/plating,
 /area/ruin/whitesands/alienfacility)
 "mC" = (
-/obj/structure/alien/weeds,
-/mob/living/simple_animal/hostile/alien/queen,
-/turf/open/floor/plasteel/airless,
+/obj/structure/alien/weeds/node,
+/turf/open/floor/plating/asteroid/whitesands,
 /area/ruin/whitesands/alienfacility/containment)
 "mE" = (
 /turf/open/floor/plating/asteroid/whitesands/dried,
@@ -894,9 +893,17 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/alienfacility/engineering)
 "mX" = (
-/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/atmospherics/pipe/layer_manifold{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/external{
+	dir = 4
+	},
 /obj/machinery/door/poddoor{
-	id = "experiment";
+	id = "aruin_experiment";
 	name = "Experiment Containment";
 	dir = 4
 	},
@@ -935,20 +942,12 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/alienfacility/lab)
 "nr" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor{
+	id = "aruin_experiment";
+	name = "Experiment Containment"
 	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/door/airlock/external{
-	dir = 4
-	},
-/obj/machinery/door/firedoor,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
+/turf/open/floor/plating,
 /area/ruin/whitesands/alienfacility)
 "ns" = (
 /obj/structure/fence/corner{
@@ -972,6 +971,18 @@
 	start_charge = 0
 	},
 /turf/open/floor/wood/walnut,
+/area/ruin/whitesands/alienfacility/dorm)
+"nL" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/table/wood,
+/obj/item/storage/cans/sixbeer,
+/obj/effect/turf_decal/siding/wood{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/carpet/blue,
 /area/ruin/whitesands/alienfacility/dorm)
 "nN" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -1007,6 +1018,23 @@
 /obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel,
 /area/ruin/whitesands/alienfacility)
+"oj" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/layer2{
+	dir = 2;
+	layer = 2.35
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
+/area/ruin/whitesands/alienfacility/lobby)
+"or" = (
+/obj/structure/alien/weeds,
+/obj/item/bodypart/head/monkey,
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/ruin/whitesands/alienfacility/containment)
 "os" = (
 /obj/structure/closet/crate/secure/engineering,
 /obj/item/pipe_dispenser,
@@ -1052,7 +1080,7 @@
 "pv" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters{
-	id = "windows";
+	id = "aruin_windows";
 	dir = 4
 	},
 /turf/open/floor/plating,
@@ -1136,12 +1164,11 @@
 /turf/open/floor/plasteel,
 /area/ruin/whitesands/alienfacility)
 "qF" = (
-/obj/effect/spawner/structure/window/reinforced,
-/obj/machinery/door/poddoor/shutters{
-	id = "windows"
-	},
-/turf/open/floor/plating,
-/area/ruin/whitesands/alienfacility/engineering)
+/obj/structure/alien/weeds,
+/obj/structure/table/optable,
+/obj/item/weldingtool/experimental,
+/turf/open/floor/plating/asteroid/whitesands,
+/area/ruin/whitesands/alienfacility/containment)
 "qH" = (
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /turf/open/floor/plating,
@@ -1262,25 +1289,13 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/alienfacility/lab)
 "rU" = (
-/obj/machinery/button/door{
-	pixel_x = -32;
-	pixel_y = 7;
-	id = "experiment";
-	name = "experiment access"
-	},
-/obj/machinery/button/door{
-	pixel_x = -32;
-	pixel_y = -3;
-	id = "windows";
-	name = "window shutters"
-	},
-/obj/structure/filingcabinet/double,
-/turf/open/floor/wood/walnut,
-/area/ruin/whitesands/alienfacility/lobby)
+/obj/effect/mine/shrapnel,
+/turf/open/floor/plating/asteroid/whitesands,
+/area/space)
 "rW" = (
 /obj/structure/alien/weeds,
-/obj/structure/alien/resin,
-/turf/open/floor/plasteel/airless,
+/obj/item/retractor/advanced,
+/turf/open/floor/plating/asteroid/whitesands,
 /area/ruin/whitesands/alienfacility/containment)
 "sq" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
@@ -1336,9 +1351,10 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/alienfacility/lab)
 "sN" = (
-/mob/living/simple_animal/hostile/alien,
 /obj/structure/alien/weeds,
-/turf/open/floor/plasteel/airless,
+/obj/item/scalpel/advanced,
+/obj/effect/gibspawner/human,
+/turf/open/floor/plating/asteroid/whitesands,
 /area/ruin/whitesands/alienfacility/containment)
 "sP" = (
 /obj/structure/grille/broken,
@@ -1346,11 +1362,20 @@
 /turf/open/floor/plating,
 /area/ruin/whitesands/alienfacility)
 "th" = (
-/obj/effect/spawner/structure/window/reinforced,
-/obj/machinery/door/poddoor/shutters{
-	id = "windows"
+/obj/machinery/button/door{
+	pixel_x = -32;
+	pixel_y = 7;
+	id = "aruin_experiment";
+	name = "experiment access"
 	},
-/turf/open/floor/plating,
+/obj/machinery/button/door{
+	pixel_x = -32;
+	pixel_y = -3;
+	id = "aruin_windows";
+	name = "window shutters"
+	},
+/obj/structure/filingcabinet/double,
+/turf/open/floor/wood/walnut,
 /area/ruin/whitesands/alienfacility/lobby)
 "tx" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
@@ -1387,13 +1412,13 @@
 /area/ruin/whitesands/alienfacility/engineering)
 "tP" = (
 /obj/structure/alien/weeds,
-/obj/item/circuitboard/machine/limbgrower,
-/turf/open/floor/plasteel/airless,
+/obj/structure/alien/egg/burst,
+/turf/open/floor/plating/asteroid/whitesands/dried,
 /area/ruin/whitesands/alienfacility/containment)
 "tR" = (
-/obj/structure/alien/weeds/node,
-/obj/item/circuitboard/machine/cryo_tube,
-/turf/open/floor/plasteel/airless,
+/obj/structure/alien/weeds,
+/obj/structure/alien/resin,
+/turf/open/floor/plating/asteroid/whitesands,
 /area/ruin/whitesands/alienfacility/containment)
 "tW" = (
 /obj/structure/cable{
@@ -1545,20 +1570,14 @@
 /turf/open/floor/plating,
 /area/ruin/whitesands/alienfacility)
 "wA" = (
-/obj/structure/alien/weeds,
-/obj/item/stack/sheet/mineral/plasma/five,
-/turf/open/floor/plasteel/airless,
+/obj/structure/alien/resin,
+/turf/open/floor/plating/asteroid/whitesands,
 /area/ruin/whitesands/alienfacility/containment)
 "wB" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/structure/table/wood,
-/obj/item/storage/cans/sixbeer,
-/obj/effect/turf_decal/siding/wood{
-	dir = 9
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/turf/open/floor/carpet/blue,
-/area/ruin/whitesands/alienfacility/dorm)
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/effect/mine/shrapnel,
+/turf/open/floor/plating/airless,
+/area/ruin/whitesands/alienfacility)
 "wC" = (
 /obj/structure/sink{
 	dir = 4;
@@ -1567,10 +1586,11 @@
 /turf/open/floor/plasteel/freezer,
 /area/ruin/whitesands/alienfacility/dorm)
 "wU" = (
-/obj/machinery/advanced_airlock_controller{
-	pixel_y = 28
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/shutters{
+	id = "aruin_windows"
 	},
-/turf/open/floor/plasteel,
+/turf/open/floor/plating,
 /area/ruin/whitesands/alienfacility/lobby)
 "wW" = (
 /obj/machinery/atmospherics/pipe/simple/cyan/visible{
@@ -1626,8 +1646,8 @@
 /area/ruin/whitesands/alienfacility)
 "xl" = (
 /obj/structure/alien/weeds,
-/obj/item/retractor/advanced,
-/turf/open/floor/plasteel/airless,
+/mob/living/simple_animal/hostile/alien/queen,
+/turf/open/floor/plating/asteroid/whitesands,
 /area/ruin/whitesands/alienfacility/containment)
 "xt" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1732,14 +1752,9 @@
 /turf/open/floor/plating,
 /area/ruin/whitesands/alienfacility/engineering)
 "zm" = (
-/obj/machinery/atmospherics/pipe/layer_manifold{
-	dir = 4
-	},
-/obj/machinery/door/airlock/external{
-	dir = 4
-	},
+/obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor{
-	id = "experiment";
+	id = "aruin_experiment";
 	name = "Experiment Containment";
 	dir = 4
 	},
@@ -1756,21 +1771,17 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/layer2{
-	dir = 2;
-	layer = 2.35
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/turf/open/floor/plasteel,
+/obj/machinery/atmospherics/pipe/layer_manifold,
+/obj/machinery/door/airlock/external,
+/turf/open/floor/plating,
 /area/ruin/whitesands/alienfacility/lobby)
 "zZ" = (
 /obj/effect/spawner/structure/window/reinforced,
-/obj/machinery/door/poddoor{
-	id = "experiment";
-	name = "Experiment Containment"
+/obj/machinery/door/poddoor/shutters{
+	id = "aruin_windows"
 	},
 /turf/open/floor/plating,
-/area/ruin/whitesands/alienfacility)
+/area/ruin/whitesands/alienfacility/engineering)
 "Ae" = (
 /obj/machinery/power/floodlight{
 	anchored = 1
@@ -1786,9 +1797,9 @@
 /turf/open/floor/plating,
 /area/ruin/whitesands/alienfacility/engineering)
 "At" = (
-/obj/structure/alien/weeds,
-/obj/item/bodypart/head/monkey,
-/turf/open/floor/plasteel/airless,
+/obj/structure/alien/weeds/node,
+/obj/item/circuitboard/machine/cryo_tube,
+/turf/open/floor/plating/asteroid/whitesands,
 /area/ruin/whitesands/alienfacility/containment)
 "AP" = (
 /obj/structure/grille,
@@ -2018,6 +2029,11 @@
 /obj/effect/decal/cleanable/garbage,
 /turf/open/floor/plating,
 /area/ruin/whitesands/alienfacility)
+"Es" = (
+/obj/machinery/light/small/directional/east,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
+/area/ruin/whitesands/alienfacility/lobby)
 "Eu" = (
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/layer2{
 	dir = 8;
@@ -2229,7 +2245,7 @@
 "GC" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters{
-	id = "windows";
+	id = "aruin_windows";
 	dir = 4
 	},
 /turf/open/floor/plating,
@@ -2242,10 +2258,8 @@
 /turf/open/floor/plating,
 /area/ruin/whitesands/alienfacility)
 "GN" = (
-/obj/structure/alien/weeds,
-/obj/item/organ/tongue/alien,
-/turf/open/floor/plasteel/airless,
-/area/ruin/whitesands/alienfacility/containment)
+/turf/open/floor/plating/asteroid/whitesands,
+/area/space)
 "GY" = (
 /turf/open/floor/engine,
 /area/ruin/whitesands/alienfacility/engineering)
@@ -2310,9 +2324,8 @@
 /turf/open/floor/plasteel/freezer,
 /area/ruin/whitesands/alienfacility/dorm)
 "Io" = (
-/obj/structure/alien/weeds,
-/obj/structure/alien/egg/burst,
-/turf/open/floor/plasteel/airless,
+/obj/structure/alien/resin,
+/turf/open/floor/plating/asteroid/whitesands/dried,
 /area/ruin/whitesands/alienfacility/containment)
 "Iq" = (
 /obj/structure/cable{
@@ -2415,8 +2428,7 @@
 /area/ruin/whitesands/alienfacility)
 "JJ" = (
 /obj/structure/alien/weeds,
-/obj/item/surgicaldrill/advanced,
-/turf/open/floor/plasteel/airless,
+/turf/open/floor/plating/asteroid/whitesands/dried,
 /area/ruin/whitesands/alienfacility/containment)
 "JO" = (
 /obj/machinery/atmospherics/pipe/manifold/green/visible{
@@ -2454,12 +2466,34 @@
 /obj/machinery/firealarm/directional/east,
 /turf/open/floor/carpet/blue,
 /area/ruin/whitesands/alienfacility/dorm)
+"KM" = (
+/obj/structure/alien/weeds,
+/obj/structure/alien/resin,
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/ruin/whitesands/alienfacility/containment)
 "KU" = (
 /obj/machinery/light/directional/west,
 /obj/effect/turf_decal/trimline/opaque/mauve/filled/line{
 	dir = 8
 	},
 /turf/open/floor/plasteel,
+/area/ruin/whitesands/alienfacility)
+"Le" = (
+/obj/machinery/atmospherics/pipe/layer_manifold{
+	dir = 4
+	},
+/obj/machinery/door/airlock/external{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/poddoor{
+	id = "aruin_experiment";
+	name = "Experiment Containment";
+	dir = 4
+	},
+/turf/open/floor/plating,
 /area/ruin/whitesands/alienfacility)
 "Lh" = (
 /obj/effect/turf_decal/trimline/opaque/blue/filled/line,
@@ -2509,8 +2543,7 @@
 /area/ruin/whitesands/alienfacility/lab)
 "Mb" = (
 /obj/structure/alien/weeds,
-/obj/item/bodypart/chest/monkey,
-/turf/open/floor/plasteel/airless,
+/turf/open/floor/plating/asteroid/whitesands,
 /area/ruin/whitesands/alienfacility/containment)
 "Mk" = (
 /obj/structure/bed/double{
@@ -2674,9 +2707,8 @@
 /area/ruin/whitesands/alienfacility/lab)
 "PI" = (
 /obj/structure/alien/weeds,
-/obj/item/scalpel/advanced,
-/obj/effect/gibspawner/human,
-/turf/open/floor/plasteel/airless,
+/obj/item/organ/tongue/alien,
+/turf/open/floor/plating/asteroid/whitesands,
 /area/ruin/whitesands/alienfacility/containment)
 "PQ" = (
 /obj/structure/fluff/paper/stack{
@@ -2758,8 +2790,9 @@
 /turf/open/floor/engine/air,
 /area/ruin/whitesands/alienfacility/engineering)
 "Rk" = (
+/mob/living/simple_animal/hostile/alien,
 /obj/structure/alien/weeds,
-/turf/open/floor/plasteel/airless,
+/turf/open/floor/plating/asteroid/whitesands/dried,
 /area/ruin/whitesands/alienfacility/containment)
 "Ro" = (
 /obj/structure/cable{
@@ -2774,6 +2807,13 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/whitesands/alienfacility)
+"Rz" = (
+/obj/machinery/advanced_airlock_controller{
+	pixel_y = 28
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
+/area/ruin/whitesands/alienfacility/lobby)
 "RB" = (
 /obj/effect/turf_decal/trimline/opaque/blue/filled/line{
 	dir = 1
@@ -3363,6 +3403,7 @@ eB
 eB
 eB
 eB
+eB
 WQ
 WQ
 WQ
@@ -3374,6 +3415,7 @@ WQ
 WQ
 WQ
 WQ
+eB
 eB
 eB
 eB
@@ -3395,9 +3437,10 @@ eB
 eB
 eB
 eB
-eB
-eB
-eB
+rU
+GN
+GN
+rU
 eB
 eB
 eB
@@ -3413,15 +3456,16 @@ kq
 Mk
 WQ
 eB
+rU
+GN
+GN
+rU
 eB
 eB
 eB
 eB
 eB
-eB
-eB
-eB
-eB
+GN
 eB
 eB
 eB
@@ -3429,7 +3473,8 @@ eB
 (3,1,1) = {"
 eB
 eB
-eB
+rU
+GN
 eB
 eB
 eB
@@ -3455,18 +3500,20 @@ eB
 eB
 eB
 eB
+GN
+GN
+rU
+GN
 eB
 eB
-eB
-eB
-eB
-eB
+rU
 eB
 eB
 "}
 (4,1,1) = {"
 eB
-eB
+GN
+GN
 eB
 eB
 JH
@@ -3499,10 +3546,12 @@ JH
 eB
 eB
 eB
+GN
 eB
 eB
 "}
 (5,1,1) = {"
+eB
 eB
 eB
 eB
@@ -3535,13 +3584,15 @@ ES
 kt
 JH
 JH
+lc
 eB
-eB
+GN
 eB
 eB
 "}
 (6,1,1) = {"
 eB
+GN
 eB
 eB
 JH
@@ -3555,7 +3606,7 @@ CH
 CH
 Bz
 yW
-wB
+nL
 TI
 fM
 XU
@@ -3573,13 +3624,15 @@ WB
 Xm
 vq
 JH
+lc
 eB
-eB
+GN
 eB
 eB
 "}
 (7,1,1) = {"
 eB
+rU
 eB
 eB
 JH
@@ -3611,15 +3664,17 @@ Mn
 Cc
 lt
 JH
+lc
 eB
-eB
+GN
 eB
 eB
 "}
 (8,1,1) = {"
+GN
 eB
 eB
-eB
+lc
 JH
 aa
 al
@@ -3649,15 +3704,17 @@ aT
 mz
 lt
 JH
+lc
 eB
-eB
+rU
 eB
 eB
 "}
 (9,1,1) = {"
 eB
 eB
-eB
+lc
+lc
 kH
 kH
 NY
@@ -3687,13 +3744,15 @@ aT
 mz
 Yj
 JH
+lc
 eB
-eB
-eB
+GN
+GN
 eB
 "}
 (10,1,1) = {"
 eB
+lc
 kH
 kH
 kH
@@ -3725,12 +3784,14 @@ eT
 mz
 OT
 JH
+lc
 eB
 eB
-eB
+GN
 eB
 "}
 (11,1,1) = {"
+lc
 kH
 kH
 Rf
@@ -3763,12 +3824,14 @@ CT
 mz
 vq
 JH
+lc
 eB
 eB
-eB
+GN
 eB
 "}
 (12,1,1) = {"
+lc
 kH
 LM
 AR
@@ -3801,12 +3864,14 @@ vq
 mz
 vq
 JH
+lc
 eB
 eB
-eB
+rU
 eB
 "}
 (13,1,1) = {"
+lc
 kH
 Ao
 Ao
@@ -3822,11 +3887,11 @@ YQ
 Qg
 Ud
 xf
+zm
+zm
 mX
-mX
-bn
-mX
-mX
+zm
+zm
 xf
 Ud
 QF
@@ -3840,11 +3905,13 @@ jH
 Gs
 Gs
 Gs
+lc
 eB
 eB
 eB
 "}
 (14,1,1) = {"
+lc
 kH
 bv
 IX
@@ -3879,10 +3946,12 @@ ih
 Ws
 Gs
 Gs
+lc
 eB
 eB
 "}
 (15,1,1) = {"
+lc
 kH
 aR
 Zy
@@ -3898,11 +3967,11 @@ mE
 mR
 YQ
 Qy
-da
-da
-da
-da
-da
+wA
+wA
+wA
+wA
+wA
 Qy
 YQ
 mR
@@ -3917,10 +3986,12 @@ wn
 ij
 BH
 Gs
-eB
+lc
+lc
 eB
 "}
 (16,1,1) = {"
+lc
 kH
 Ao
 Ao
@@ -3928,27 +3999,27 @@ Ao
 Ee
 Zr
 lk
-qF
+zZ
 ml
 dM
-zZ
+nr
 mE
 UM
 YQ
-da
-da
+wA
+wA
+Rk
 sN
 PI
-GN
-da
-da
+wA
+wA
 Qy
 UM
 mE
-zZ
+nr
 bR
 Vw
-th
+wU
 WT
 Ym
 bS
@@ -3957,8 +4028,10 @@ ei
 Gs
 Gs
 Gs
+lc
 "}
 (17,1,1) = {"
+lc
 kH
 tN
 hZ
@@ -3966,37 +4039,39 @@ yM
 Ee
 Zr
 lk
-qF
+zZ
 ml
 dM
-zZ
+nr
 mE
 UM
 YQ
+wA
 da
 JJ
-Rk
+xl
 mC
 bx
 wA
-da
 YQ
 UM
 mE
-zZ
+nr
 bR
 Vw
+wU
 th
-rU
 SK
 SL
 mY
 YP
 Gs
-wU
+Rz
 Gs
+lc
 "}
 (18,1,1) = {"
+wB
 kH
 hS
 xO
@@ -4007,21 +4082,21 @@ qt
 Xx
 Qw
 xa
-zZ
+nr
 mE
 dK
 Qy
-da
+wA
+tP
+KM
+qF
+tR
+rW
 Io
-rW
-ax
-rW
-xl
-da
 YQ
 dK
 mE
-zZ
+nr
 ST
 qC
 cX
@@ -4031,10 +4106,12 @@ MH
 DU
 pH
 Jw
+oj
 zH
 lc
 "}
 (19,1,1) = {"
+lc
 kH
 tN
 hZ
@@ -4042,37 +4119,39 @@ zd
 Ee
 JA
 lk
-qF
+zZ
 aY
 dM
-zZ
+nr
 mE
 UM
 YQ
-da
+wA
+or
 At
 tR
-rW
+bn
 tP
 Io
-da
 YQ
 UM
 mE
-zZ
+nr
 bR
 zD
-th
+wU
 ej
 Yw
 jP
 ej
 qS
 Gs
-jB
+Es
 Gs
+lc
 "}
 (20,1,1) = {"
+lc
 kH
 Ao
 Ao
@@ -4080,27 +4159,27 @@ Ao
 Ee
 JA
 lk
-qF
+zZ
 ml
 dM
-zZ
+nr
 mE
 UM
 YQ
-da
-da
+wA
+wA
+ax
 Mb
 Rk
-sN
-da
-da
+Io
+Io
 YQ
 UM
 mE
-zZ
+nr
 bR
 zD
-th
+wU
 ej
 bs
 lA
@@ -4109,8 +4188,10 @@ Oj
 Gs
 Gs
 Gs
+lc
 "}
 (21,1,1) = {"
+lc
 kH
 jL
 PG
@@ -4126,11 +4207,11 @@ mE
 mR
 Qy
 YQ
-da
-da
-da
-da
-da
+wA
+wA
+wA
+wA
+wA
 Qy
 YQ
 UM
@@ -4145,10 +4226,12 @@ Fa
 QH
 FW
 Gs
-eB
+lc
+lc
 eB
 "}
 (22,1,1) = {"
+lc
 kH
 bu
 Ll
@@ -4183,10 +4266,12 @@ pf
 Nj
 Gs
 Gs
+lc
 eB
 eB
 "}
 (23,1,1) = {"
+lc
 kH
 Ao
 Ao
@@ -4202,11 +4287,11 @@ mE
 ns
 Ud
 xf
-mX
-mX
 zm
-mX
-mX
+zm
+Le
+zm
+zm
 xf
 Ud
 yf
@@ -4220,11 +4305,13 @@ cM
 Gs
 Gs
 Gs
+lc
 eB
 eB
 eB
 "}
 (24,1,1) = {"
+lc
 Zn
 GY
 Gp
@@ -4257,12 +4344,14 @@ xt
 Cc
 aT
 JH
+lc
 eB
 eB
-eB
+rU
 eB
 "}
 (25,1,1) = {"
+lc
 kH
 kH
 GY
@@ -4280,7 +4369,7 @@ JH
 JH
 JH
 Pk
-nr
+jB
 Pk
 JH
 JH
@@ -4295,13 +4384,15 @@ aT
 Cc
 aT
 JH
+lc
 eB
 eB
-eB
+GN
 eB
 "}
 (26,1,1) = {"
 eB
+lc
 kH
 kH
 kH
@@ -4333,15 +4424,17 @@ eT
 xC
 OT
 JH
+lc
 eB
 eB
-eB
+GN
 eB
 "}
 (27,1,1) = {"
 eB
 eB
-eB
+lc
+lc
 kH
 kH
 Ds
@@ -4371,15 +4464,17 @@ vq
 mz
 OT
 JH
+lc
 eB
 eB
-eB
+GN
 eB
 "}
 (28,1,1) = {"
 eB
 eB
 eB
+lc
 JH
 aa
 sC
@@ -4409,12 +4504,14 @@ FU
 uM
 um
 JH
+lc
 eB
 eB
-eB
+rU
 eB
 "}
 (29,1,1) = {"
+GN
 eB
 eB
 eB
@@ -4447,12 +4544,14 @@ aT
 mz
 mk
 JH
+lc
 eB
-eB
+GN
 eB
 eB
 "}
 (30,1,1) = {"
+GN
 eB
 eB
 eB
@@ -4485,13 +4584,15 @@ Ii
 qZ
 kt
 JH
+lc
 eB
-eB
+GN
 eB
 eB
 "}
 (31,1,1) = {"
 eB
+GN
 eB
 eB
 JH
@@ -4523,13 +4624,15 @@ kt
 Eg
 JH
 JH
+lc
 eB
-eB
+rU
 eB
 eB
 "}
 (32,1,1) = {"
 eB
+rU
 eB
 eB
 eB
@@ -4565,17 +4668,19 @@ eB
 eB
 eB
 eB
+eB
 "}
 (33,1,1) = {"
 eB
+GN
 eB
 eB
 eB
 eB
 eB
-eB
-eB
-eB
+GN
+rU
+GN
 eB
 eB
 eB
@@ -4599,22 +4704,24 @@ eB
 eB
 eB
 eB
-eB
-eB
+GN
+GN
+GN
 eB
 eB
 "}
 (34,1,1) = {"
 eB
 eB
+GN
+GN
+rU
+GN
+GN
 eB
 eB
-eB
-eB
-eB
-eB
-eB
-eB
+GN
+GN
 eB
 eB
 km
@@ -4632,13 +4739,14 @@ eB
 eB
 eB
 eB
+GN
+rU
+GN
+GN
 eB
-eB
-eB
-eB
-eB
-eB
-eB
+GN
+rU
+GN
 eB
 eB
 "}
@@ -4655,19 +4763,21 @@ eB
 eB
 eB
 eB
-km
-km
-km
-km
-km
-km
-km
-km
-km
-km
-km
 eB
-eB
+km
+km
+km
+km
+km
+km
+km
+km
+km
+km
+km
+GN
+rU
+GN
 eB
 eB
 eB
