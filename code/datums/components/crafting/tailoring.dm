@@ -246,3 +246,23 @@
 	)
 	time = 60
 	category = CAT_CLOTHING
+
+/datum/crafting_recipe/stamped_steel_helmet_unlined
+	name = "unlined stamped plasteel helmet"
+	result = /obj/item/clothing/head/helmet/stamped_steel
+	tools = list(TOOL_WELDER) //you need to heat the helmet. there isnt the code needed yet to make you require heatproof gloves, so uhh. yea.
+	reqs = list(
+		/obj/item/stack/sheet/plasteel = 2
+	)
+	time = 100
+	category = CAT_CLOTHING
+
+/datum/crafting_recipe/stamped_steel_helmet
+	name = "lined stamped plasteel helmet"
+	result = /obj/item/clothing/head/helmet/stamped_steel/lined
+	reqs = list(
+		/obj/item/clothing/head/helmet/stamped_steel = 1
+		/obj/item/stack/sheet/leather = 2
+	)
+	time = 60
+	category = CAT_CLOTHING

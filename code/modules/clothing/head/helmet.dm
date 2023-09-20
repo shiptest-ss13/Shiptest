@@ -602,3 +602,26 @@
 	desc = "A heavily modified X11 used by the Frontiersmen pirate fleet."
 	icon_state = "x11helm_frontier"
 	unique_reskin = null
+
+/obj/item/clothing/head/helmet/stamped_steel
+	name = "unlined stamped plasteel helmet"
+	desc = "A helmet stamped from a plasteel sheet, based off ancient, pre-Night of Fire designs, frequently found among civilians. This one is missing its lining, and is very easy to knock off."
+	flags_inv = HIDEEARS
+	flags_cover = HEADCOVERSEYES
+	armor = list("melee" = 25, "bullet" = 10, "laser" = 25, "energy" = 15, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 25, "acid" = 50)
+	resistance_flags = FIRE_PROOF
+	icon_state = "helmetstamped_unlined"
+	item_state = "helmetstamped_unlined"
+	strip_delay = 15
+	dog_fashion = null
+
+/obj/item/clothing/head/helmet/stamped_steel/lined
+	name = "stamped plasteel helmet"
+	desc = "A helmet stamped from a plasteel sheet, based off ancient, pre-Night of Fire designs, frequently found among civilians."
+	flags_inv = HIDEEARS|HIDEHAIR //the liner contains the hair
+	flags_cover = HEADCOVERSEYES
+	armor = list("melee" = 25, "bullet" = 15, "laser" = 25, "energy" = 15, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 35, "acid" = 50)
+	resistance_flags = FIRE_PROOF
+	icon_state = "helmetstamped"
+	item_state = "helmetstamped"
+	strip_delay = 100
