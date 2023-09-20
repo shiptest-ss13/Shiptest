@@ -435,6 +435,49 @@ SUBSYSTEM_DEF(overmap)
 			ship_count++
 	return ship_count
 
+/datum/controller/subsystem/overmap/proc/get_manifest()
+	var/list/manifest_out = list()
+	for(var/datum/overmap/ship/controlled/ship as anything in controlled_ships)
+		if(!length(ship.manifest))
+			continue
+		manifest_out["[ship.name] ([ship.source_template.short_name])"] = list()
+		for(var/crewmember in ship.manifest)
+			var/datum/job/crewmember_job = ship.manifest[crewmember]
+			manifest_out["[ship.name] ([ship.source_template.short_name])"] += list(list(
+				"name" = crewmember,
+				"rank" = crewmember_job.name,
+				"officer" = crewmember_job.officer
+			))
+
+	return manifest_out
+
+/datum/controller/subsystem/overmap/proc/get_manifest_html(monochrome = FALSE)
+	var/list/manifest = get_manifest()
+	var/dat = {"
+	<head><style>
+		.manifest {border-collapse:collapse;}
+		.manifest td, th {border:1px solid [monochrome ? "black":"#DEF; background-color:white; color:black"]; padding:.25em}
+		.manifest th {height: 2em; [monochrome ? "border-top-width: 3px":"background-color: #48C; color:white"]}
+		.manifest tr.head th { [monochrome ? "border-top-width: 1px":"background-color: #488;"] }
+		.manifest tr.alt td {[monochrome ? "border-top-width: 2px":"background-color: #DEF"]}
+	</style></head>
+	<table class="manifest" width='350px'>
+	<tr class='head'><th>Name</th><th>Rank</th></tr>
+	"}
+	for(var/department in manifest)
+		var/list/entries = manifest[department]
+		dat += "<tr><th colspan=3>[department]</th></tr>"
+		var/even = FALSE
+		for(var/entry in entries)
+			var/list/entry_list = entry
+			dat += "<tr[even ? " class='alt'" : ""]><td>[entry_list["name"]]</td><td>[entry_list["rank"]]</td></tr>"
+			even = !even
+
+	dat += "</table>"
+	dat = replacetext(dat, "\n", "")
+	dat = replacetext(dat, "\t", "")
+	return dat
+
 /datum/controller/subsystem/overmap/Recover()
 	overmap_objects = SSovermap.overmap_objects
 	controlled_ships = SSovermap.controlled_ships

@@ -1,7 +1,5 @@
 /datum/job/paramedic
 	name = "Paramedic"
-	total_positions = 2
-	spawn_positions = 2
 	wiki_page = "Paramedic"
 
 	outfit = /datum/outfit/job/paramedic
