@@ -145,7 +145,3 @@
 /area/ruin/jungle/cavecrew/dormitories
 	name = "Cave Base dormitories"
 	icon_state = "crew_quarters"
-
-/area/ruin/jungle/cavecrew/rock
-	name = "Cave Rock"
-	icon_state = "green"
