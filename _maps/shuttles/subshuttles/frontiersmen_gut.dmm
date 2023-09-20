@@ -33,6 +33,9 @@
 /obj/structure/cable{
 	icon_state = "2-5"
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage)
 "ci" = (
@@ -51,12 +54,14 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/storage)
 "dJ" = (
-/obj/machinery/porta_turret/syndicate/pod{
-	dir = 5;
-	faction = list("frontiersman")
+/obj/machinery/porta_turret/ship/ballistic{
+	dir = 5
 	},
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ship/storage)
@@ -67,6 +72,9 @@
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage)
@@ -92,12 +100,28 @@
 	name = "Blast Shutters";
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "0-5"
+	},
 /turf/open/floor/engine/hull/interior,
+/area/ship/storage)
+"gz" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "4-10"
+	},
+/obj/structure/cable{
+	icon_state = "4-9"
+	},
+/turf/open/floor/plasteel/tech,
 /area/ship/storage)
 "gH" = (
 /obj/effect/turf_decal/techfloor,
 /obj/effect/turf_decal/spline/fancy/opaque/black,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage)
 "hl" = (
@@ -170,6 +194,9 @@
 	},
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/storage)
 "nj" = (
@@ -184,6 +211,13 @@
 /obj/item/gun/ballistic/automatic/zip_pistol,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/storage)
+"nA" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/storage)
 "ov" = (
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	id = "gut_holo"
@@ -192,6 +226,9 @@
 	id = "gut_cargo";
 	name = "Blast Shutters";
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-6"
 	},
 /turf/open/floor/engine/hull/interior,
 /area/ship/storage)
@@ -303,6 +340,7 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/light/directional/east,
+/obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/ship/storage)
 "ue" = (
@@ -352,9 +390,8 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/storage)
 "vJ" = (
-/obj/machinery/porta_turret/syndicate/pod{
-	dir = 9;
-	faction = list("frontiersman")
+/obj/machinery/porta_turret/ship/ballistic{
+	dir = 9
 	},
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ship/storage)
@@ -434,9 +471,8 @@
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/storage)
 "GQ" = (
-/obj/machinery/porta_turret/syndicate/pod{
-	dir = 5;
-	faction = list("frontiersman")
+/obj/machinery/porta_turret/ship/ballistic{
+	dir = 5
 	},
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/storage)
@@ -460,6 +496,9 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/storage)
 "JX" = (
@@ -486,8 +525,10 @@
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/storage)
 "MF" = (
-/mob/living/simple_animal/hostile/frontier/ranged/mosin/neutered,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage)
 "MG" = (
@@ -527,9 +568,8 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/storage)
 "RY" = (
-/obj/machinery/porta_turret/syndicate/pod{
-	dir = 9;
-	faction = list("frontiersman")
+/obj/machinery/porta_turret/ship/ballistic{
+	dir = 9
 	},
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/storage)
@@ -545,12 +585,12 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
+/obj/machinery/light/directional/north,
 /obj/docking_port/mobile{
 	dir = 4;
 	launch_status = 0;
 	port_direction = 8
 	},
-/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/ship/storage)
 "Uc" = (
@@ -607,6 +647,9 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage)
 "XD" = (
@@ -624,7 +667,9 @@
 /obj/structure/railing/corner{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/frontier/ranged/trooper/ak47/neutured,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/stairs{
 	dir = 1
 	},
@@ -660,7 +705,7 @@ rv
 (2,1,1) = {"
 Xf
 Tq
-UB
+gz
 aF
 Xf
 Xf
@@ -677,7 +722,7 @@ Xf
 (3,1,1) = {"
 Xf
 EP
-UB
+nA
 UA
 Ls
 nj

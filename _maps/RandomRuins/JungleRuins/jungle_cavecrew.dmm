@@ -596,7 +596,6 @@
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/storage)
 "ho" = (
-/obj/structure/fans/tiny,
 /obj/machinery/door/poddoor{
 	id = "gut_launchdoor"
 	},
@@ -705,7 +704,8 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/bed/dogbed/cayenne,
 /mob/living/simple_animal/pet/dog/corgi/puppy{
-	name = "Kiwi"
+	name = "Kiwi";
+	faction = list("neutral","frontiersman")
 	},
 /turf/open/floor/wood{
 	icon_state = "wood-broken4"
@@ -2943,7 +2943,9 @@
 /area/ship/storage)
 "Kh" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/airlock/hatch{
+	dir = 4
+	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ruin/jungle/cavecrew/hallway)
 "Kw" = (
