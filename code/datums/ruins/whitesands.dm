@@ -18,12 +18,6 @@
 	suffix = "whitesands_surface_starfurycrash.dmm"
 	allow_duplicates = FALSE
 
-/datum/map_template/ruin/whitesands/golem_hijack
-	name = "Crashed Golem Ship"
-	id = "golemcrash"
-	description = "The remains of a mysterious ship, inhabited by strange lizardpeople and golems of some sort. Who knows what happened here."
-	suffix = "whitesands_surface_golemhijack.dmm"
-
 /datum/map_template/ruin/whitesands/medipen_plant
 	name = "Abandoned Medipen Factory"
 	id = "medipenplant"
