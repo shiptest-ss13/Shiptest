@@ -41,6 +41,10 @@
 	var/glasses_overlay_file = 'icons/mob/pets.dmi'
 	var/obj/item/clothing/glasses/glasses = null //snek glasses
 
+/mob/living/simple_animal/hostile/retaliate/poison/snake/Destroy()
+	if(glasses)
+		QDEL_NULL(glasses)
+	return ..()
 
 /mob/living/simple_animal/hostile/retaliate/poison/snake/ListTargets(atom/the_target)
 	. = oview(vision_range, targets_from) //get list of things in vision range

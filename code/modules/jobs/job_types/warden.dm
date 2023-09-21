@@ -1,8 +1,6 @@
 /datum/job/warden
 	name = "Warden"
 	auto_deadmin_role_flags = DEADMIN_POSITION_SECURITY
-	total_positions = 1
-	spawn_positions = 1
 	minimal_player_age = 7
 	officer = TRUE
 	wiki_page = "Space_Law" //WS Edit - Wikilinks/Warning
@@ -38,8 +36,8 @@
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	r_pocket = /obj/item/assembly/flash/handheld
 	l_pocket = /obj/item/restraints/handcuffs
-	suit_store = /obj/item/gun/energy/e_gun/advtaser		//WS edit - Readds tasers
-	backpack_contents = list(/obj/item/melee/baton/loaded=1, /obj/item/ammo_box/magazine/co9mm=1) //WS edit - free lethals
+	suit_store = null		//WS edit - Readds tasers //SHIPTEST EDIT - removes tasers
+	backpack_contents = list(/obj/item/melee/classic_baton) //WS edit - free lethals // SHIPTEST EDIT - nope
 
 	backpack = /obj/item/storage/backpack/security
 	satchel = /obj/item/storage/backpack/satchel/sec
@@ -79,7 +77,7 @@
 /datum/outfit/job/warden/minutemen/armed
 	name = "Field Commander (Colonial Minutemen) (Armed)"
 
-	suit_store = /obj/item/gun/ballistic/automatic/assualt/p16/minutemen
+	suit_store = /obj/item/gun/ballistic/automatic/assault/p16/minutemen
 	belt = /obj/item/storage/belt/military/minutemen/loaded
 
 	backpack_contents = list(/obj/item/melee/classic_baton=1, /obj/item/gun/ballistic/automatic/pistol/commander=1, /obj/item/restraints/handcuffs=1, /obj/item/gun/energy/e_gun/advtaser=1)
@@ -97,10 +95,10 @@
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security/inteq
 	shoes = /obj/item/clothing/shoes/combat
 	gloves = /obj/item/clothing/gloves/combat
-	suit_store = /obj/item/gun/energy/disabler
+	suit_store = null
 
 	courierbag = /obj/item/storage/backpack/messenger/inteq
-	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/ammo_box/magazine/co9mm=1, /obj/item/pda/warden)
+	backpack_contents = list(/obj/item/melee/classic_baton=1, /obj/item/pda/warden)
 
 /datum/outfit/job/warden/nanotrasen
 	name = "Warden (Nanotrasen)"

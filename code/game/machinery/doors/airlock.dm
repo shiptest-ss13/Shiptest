@@ -393,6 +393,9 @@
 /obj/machinery/door/airlock/Destroy()
 	QDEL_NULL(wires)
 	QDEL_NULL(electronics)
+	if(closeOther)
+		closeOther.closeOther = null
+		closeOther = null
 	if (cyclelinkedairlock)
 		if (cyclelinkedairlock.cyclelinkedairlock == src)
 			cyclelinkedairlock.cyclelinkedairlock = null
@@ -1242,7 +1245,7 @@
 
 
 /obj/machinery/door/airlock/open(forced=0)
-	if(operating || welded || locked || seal)
+	if(operating || welded || locked || seal || !wires)
 		return FALSE
 	if(!forced)
 		if(!hasPower() || wires.is_cut(WIRE_OPEN))

@@ -1,8 +1,6 @@
 /datum/job/cmo
 	name = "Chief Medical Officer"
 	auto_deadmin_role_flags = DEADMIN_POSITION_HEAD
-	total_positions = 1
-	spawn_positions = 1
 	minimal_player_age = 7
 	officer = TRUE
 	wiki_page = "Chief_Medical_Officer"

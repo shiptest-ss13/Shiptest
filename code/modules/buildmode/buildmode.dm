@@ -15,13 +15,15 @@
 
 	// Switching management
 	var/switch_state = BM_SWITCHSTATE_NONE
-	var/switch_width = 5
+	var/switch_width = 4
 	// modeswitch UI
 	var/atom/movable/screen/buildmode/mode/modebutton
 	var/list/modeswitch_buttons = list()
 	// dirswitch UI
 	var/atom/movable/screen/buildmode/bdir/dirbutton
 	var/list/dirswitch_buttons = list()
+	/// item preview for selected item
+	var/atom/movable/screen/buildmode/preview_item/preview
 
 /datum/buildmode/New(client/c)
 	mode = new /datum/buildmode_mode/basic(src)
@@ -44,10 +46,15 @@
 
 /datum/buildmode/Destroy()
 	close_switchstates()
+	close_preview()
 	holder.player_details.post_login_callbacks -= li_cb
+	QDEL_NULL(li_cb)
 	holder = null
+	buttons.Cut()
 	QDEL_NULL(mode)
+	QDEL_NULL(modebutton)
 	QDEL_LIST(modeswitch_buttons)
+	QDEL_NULL(dirbutton)
 	QDEL_LIST(dirswitch_buttons)
 	return ..()
 
@@ -72,7 +79,7 @@
 	buttons += new /atom/movable/screen/buildmode/quit(src)
 	// build the lists of switching buttons
 	build_options_grid(subtypesof(/datum/buildmode_mode), modeswitch_buttons, /atom/movable/screen/buildmode/modeswitch)
-	build_options_grid(list(SOUTH,EAST,WEST,NORTH,NORTHWEST), dirswitch_buttons, /atom/movable/screen/buildmode/dirswitch)
+	build_options_grid(GLOB.alldirs, dirswitch_buttons, /atom/movable/screen/buildmode/dirswitch)
 
 // this creates a nice offset grid for choosing between buildmode options,
 // because going "click click click ah hell" sucks.
@@ -124,10 +131,41 @@
 	switch_state = BM_SWITCHSTATE_NONE
 	holder.screen -= dirswitch_buttons
 
+/datum/buildmode/proc/preview_selected_item(atom/typepath)
+	close_preview()
+	preview = new /atom/movable/screen/buildmode/preview_item(src)
+	preview.name = initial(typepath.name)
+
+	// Scale the preview if it's bigger than one tile
+	var/mutable_appearance/preview_overlay = new(typepath)
+	var/icon/size_check = icon(initial(typepath.icon), icon_state = initial(typepath.icon_state))
+	var/scale = 1
+	var/width = size_check.Width()
+	var/height = size_check.Height()
+	if(width > world.icon_size || height > world.icon_size)
+		if(width >= height)
+			scale = world.icon_size / width
+		else
+			scale = world.icon_size / height
+	preview_overlay.transform = preview_overlay.transform.Scale(scale)
+	preview_overlay.appearance_flags |= TILE_BOUND
+	preview_overlay.layer = FLOAT_LAYER
+	preview_overlay.plane = FLOAT_PLANE
+	preview.add_overlay(preview_overlay)
+
+	holder.screen += preview
+
+/datum/buildmode/proc/close_preview()
+	if(isnull(preview))
+		return
+	holder.screen -= preview
+	QDEL_NULL(preview)
+
 /datum/buildmode/proc/change_mode(newmode)
 	mode.exit_mode(src)
 	QDEL_NULL(mode)
 	close_switchstates()
+	close_preview()
 	mode = new newmode(src)
 	mode.enter_mode(src)
 	modebutton.update_appearance()
