@@ -168,7 +168,7 @@
 	desc = "A mix of various salted offal, providing a unique and flavorful snack for those with adventurous tastes."
 	filling_color = "#cc3300"
 	tastes = list("assorted offal" = 1)
-	foodtype = MEAT
+	foodtype = MEAT | GORE //its literally entrails
 
 /obj/item/reagent_containers/food/snacks/ration/entree/maple_pork_sausage_patty
 	name = "maple pork sausage patty"
