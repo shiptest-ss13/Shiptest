@@ -69,3 +69,16 @@
 /area/ruin/beach/treasure_cove
 	name = "Pirate Cavern"
 	icon_state = "purple"
+
+//beach_float_resort --> keeping resort open for a land based ruin
+
+/area/ruin/beach/float_resort
+	name = "Beach Resort"
+	icon_state = "yellow"
+	mood_bonus = 10
+	mood_message = "<span class='nicegreen''>Incredible! A hidden resort all to myself and my crew! </span>\n"
+	always_unpowered = FALSE
+
+/area/ruin/beach/float_resort/villa
+	name = "Resort Villa"
+	icon_state = "green"
