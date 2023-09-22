@@ -553,6 +553,17 @@
 /obj/effect/landmark/start/head_of_security,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
+"dW" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable,
+/obj/structure/railing/corner,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 5
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/engineering)
 "dZ" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -783,26 +794,6 @@
 /obj/item/cigbutt,
 /turf/open/floor/plating/airless,
 /area/ship/maintenance/port)
-"ft" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
-/obj/structure/fireaxecabinet{
-	dir = 1;
-	pixel_y = -32
-	},
-/obj/item/paper/fluff{
-	default_raw_text = "Artificer team: The AAC is finicky and has a habit of malfunctioning over time. If this happens, remember how to reset it. Swipe your ID card on the control unit and make sure all settings are correct. One airlock should be set to internal, one to external. Once this is done, cycle the airlock to re-enable automatic mode and lift any stuck bolts. If you aren't an artificer, don't mess with it. You shouldn't have access anyway."
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/engineering)
 "fC" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/trimline/opaque/yellow/warning{
@@ -1167,6 +1158,29 @@
 	},
 /turf/open/floor/plasteel/elevatorshaft,
 /area/ship/hallway/central)
+"hK" = (
+/obj/structure/table/reinforced,
+/obj/machinery/fax,
+/obj/machinery/button/door{
+	id = "talos_bridge";
+	name = "Bridge Shutters";
+	pixel_x = 6;
+	pixel_y = 23
+	},
+/obj/machinery/button/door{
+	id = "talos_windows";
+	name = "Window Lockdown";
+	pixel_x = -6;
+	pixel_y = 23
+	},
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/opaque/yellow{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
 "hL" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4{
 	dir = 4
@@ -1178,18 +1192,6 @@
 /obj/effect/decal/cleanable/oil/streak,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
-"hO" = (
-/obj/structure/cable/yellow{
-	icon_state = "2-4"
-	},
-/obj/structure/railing,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
-/obj/structure/catwalk/over,
-/turf/open/floor/plating,
-/area/ship/engineering)
 "hQ" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/box/drinkingglasses{
@@ -1248,6 +1250,18 @@
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plating/airless,
 /area/ship/maintenance/starboard)
+"im" = (
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
+/obj/machinery/atmospherics/components/unary/portables_connector/visible{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/engineering)
 "iu" = (
 /obj/machinery/door/airlock/hatch{
 	dir = 4
@@ -1299,6 +1313,22 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
+"iD" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/item/analyzer{
+	pixel_x = 6;
+	pixel_y = 4
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/engineering)
 "iE" = (
 /obj/item/storage/backpack/industrial,
 /obj/item/clothing/suit/hazardvest,
@@ -2093,6 +2123,26 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
+"ny" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/obj/structure/fireaxecabinet{
+	dir = 1;
+	pixel_y = -32
+	},
+/obj/item/paper/fluff{
+	default_raw_text = "Artificer team: The AAC is finicky and has a habit of malfunctioning over time. If this happens, remember how to reset it. Swipe your ID card on the control unit and make sure all settings are correct. One airlock should be set to internal, one to external. Once this is done, cycle the airlock to re-enable automatic mode and lift any stuck bolts. If you aren't an artificer, don't mess with it. You shouldn't have access anyway."
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/engineering)
 "nz" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2489,8 +2539,8 @@
 	name = "fridge"
 	},
 /obj/item/storage/cans/sixbeer,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/spawner/lootdrop/donkpockets,
+/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/lootdrop/ration,
 /obj/item/reagent_containers/food/snacks/popsicle/creamsicle_orange,
 /obj/item/reagent_containers/food/snacks/popsicle/creamsicle_orange,
 /obj/item/radio/intercom/directional/north,
@@ -3177,20 +3227,6 @@
 /obj/item/trash/popcorn,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/port)
-"tb" = (
-/obj/machinery/power/terminal{
-	dir = 8
-	},
-/obj/structure/cable,
-/obj/structure/railing/corner,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 6
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
-	dir = 5
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/engineering)
 "te" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/high_volume/siphon/atmos/air_output{
 	dir = 8
@@ -4999,19 +5035,6 @@
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
-"Fu" = (
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 1
-	},
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/obj/item/analyzer{
-	pixel_x = 6;
-	pixel_y = 4
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/engineering)
 "Fx" = (
 /obj/structure/chair{
 	dir = 8
@@ -5712,18 +5735,6 @@
 	dir = 4
 	},
 /area/ship/cargo)
-"KI" = (
-/obj/structure/railing{
-	dir = 4
-	},
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 4
-	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 1
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/engineering)
 "KQ" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/airlock/hatch{
@@ -6230,6 +6241,18 @@
 "OF" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering)
+"OG" = (
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/obj/structure/railing,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/obj/structure/catwalk/over,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "OK" = (
 /obj/machinery/cryopod{
 	dir = 8
@@ -6253,29 +6276,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
-"ON" = (
-/obj/structure/table/reinforced,
-/obj/machinery/fax,
-/obj/machinery/button/door{
-	id = "talos_bridge";
-	name = "Bridge Shutters";
-	pixel_x = 6;
-	pixel_y = 23
-	},
-/obj/machinery/button/door{
-	id = "talos_windows";
-	name = "Window Lockdown";
-	pixel_x = -6;
-	pixel_y = 23
-	},
-/obj/effect/turf_decal/corner/opaque/brown{
-	dir = 4
-	},
-/obj/effect/turf_decal/corner/opaque/yellow{
-	dir = 1
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/bridge)
 "OP" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -6455,19 +6455,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
-"Qt" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/components/binary/pump{
-	dir = 1;
-	name = "burn chamber input pump"
-	},
-/obj/machinery/atmospherics/pipe/simple/dark/visible/layer1{
-	dir = 5
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/engineering/engine)
 "Qu" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
@@ -7074,11 +7061,11 @@
 /obj/structure/closet/crate{
 	name = "food crate"
 	},
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
+/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/lootdrop/ration,
 /obj/item/reagent_containers/food/drinks/waterbottle/large,
 /obj/item/reagent_containers/food/drinks/waterbottle/large,
 /obj/item/reagent_containers/food/drinks/waterbottle/large,
@@ -7324,6 +7311,22 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/airless,
 /area/ship/cargo/port)
+"We" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/components/binary/pump{
+	dir = 1;
+	name = "burn chamber input pump"
+	},
+/obj/machinery/atmospherics/pipe/simple/dark/visible/layer1{
+	dir = 5
+	},
+/obj/machinery/atmospherics/components/unary/portables_connector/visible{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/engineering/engine)
 "Wf" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/cable,
@@ -7877,8 +7880,8 @@ bM
 UG
 UM
 lO
-tb
-KI
+dW
+im
 cn
 pU
 pU
@@ -7887,7 +7890,7 @@ pU
 pU
 pU
 Vk
-Qt
+We
 dl
 pm
 iA
@@ -7911,8 +7914,8 @@ OF
 jf
 ak
 Uc
-hO
-Fu
+OG
+iD
 Lo
 dw
 ge
@@ -8185,7 +8188,7 @@ Xg
 Ps
 sW
 eT
-ft
+ny
 xI
 Oq
 kD
@@ -8624,7 +8627,7 @@ lC
 wE
 qW
 mX
-ON
+hK
 qM
 cf
 Lc

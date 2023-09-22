@@ -54,7 +54,9 @@
 /obj/item/ammo_casing/Destroy()
 	. = ..()
 
-	if(!BB)
+	if(BB)
+		QDEL_NULL(BB)
+	else
 		SSblackbox.record_feedback("tally", "station_mess_destroyed", 1, name)
 
 /obj/item/ammo_casing/update_icon_state()
@@ -90,6 +92,7 @@
 				to_chat(user, "<span class='warning'>You fail to collect anything!</span>")
 	else
 		return ..()
+
 
 /obj/item/ammo_casing/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	bounce_away(FALSE, NONE)

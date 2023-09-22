@@ -136,13 +136,6 @@
 	soft_type = "paramedic"
 	dog_fashion = null
 
-/obj/item/clothing/head/soft/solgov
-	name = "SolGov surgery cap"
-	desc = "It's a surgery cap utilized by solarian doctors."
-	icon_state = "solgov_surgery"
-	soft_type = "solgov_surgery"
-	dog_fashion = null
-
 /obj/item/clothing/head/soft/cybersun
 	name = "cybersun medic cap"
 	desc = "A turquoise baseball hat emblazoned with a reflective cross. Typical of Cybersun Industries field medics."

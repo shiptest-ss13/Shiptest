@@ -1,7 +1,5 @@
 /datum/job/engineer
 	name = "Station Engineer"
-	total_positions = 5
-	spawn_positions = 5
 	wiki_page = "Station_Engineer" //WS Edit - Wikilinks/Warning
 
 	outfit = /datum/outfit/job/engineer
@@ -151,12 +149,18 @@
 
 	head = null
 	backpack = /obj/item/storage/backpack
-	satchel = /obj/item/storage/backpack/satchel/
+	satchel = /obj/item/storage/backpack/satchel
 	duffelbag = /obj/item/storage/backpack/duffelbag
 	courierbag = /obj/item/storage/backpack/messenger
 	l_pocket = /obj/item/radio
 	r_pocket = /obj/item/analyzer
 	glasses = /obj/item/clothing/glasses/welding
+
+/datum/outfit/job/engineer/independent/ship_engineer/salvage
+	belt = null
+	r_pocket = null
+	glasses = null
+
 
 /datum/outfit/job/engineer/syndicate/cybersun
 	name = "Engineer (Cybersun)"
@@ -190,3 +194,21 @@
 
 	l_pocket = /obj/item/radio
 	r_pocket = /obj/item/analyzer
+
+/datum/outfit/job/engineer/lp
+	name = "LP Engineering Specialist"
+
+	implants = list(/obj/item/implant/mindshield)
+	ears = /obj/item/radio/headset/nanotrasen/alt/captain
+	id = /obj/item/card/id/lpengie
+	belt = /obj/item/pda/engineering
+	gloves = /obj/item/clothing/gloves/color/yellow
+	uniform = /obj/item/clothing/under/rank/engineering/engineer/nt/lp
+	alt_uniform = /obj/item/clothing/under/rank/engineering/engineer/nt/skirt/lp
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/engineering
+	shoes = /obj/item/clothing/shoes/jackboots
+	head = /obj/item/clothing/head/beret/eng
+
+	satchel = /obj/item/storage/backpack/satchel/eng
+	duffelbag = /obj/item/storage/backpack/duffelbag/engineering
+	courierbag = /obj/item/storage/backpack/messenger/engi
