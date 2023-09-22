@@ -279,6 +279,8 @@
 			return pick('sound/voice/human/manlaugh1.ogg', 'sound/voice/human/manlaugh2.ogg')
 	if(ismoth(H))
 		return 'sound/voice/moth/mothlaugh.ogg'
+	if(islizard(H))
+		return 'sound/voice/lizard/lizard_laugh.ogg'
 
 /datum/emote/living/look
 	key = "look"
