@@ -772,4 +772,6 @@
 	return ..()
 
 /obj/item/reagent_containers/food/drinks/ration/pan_genezan_vodka
+	name = "Pan-Genezan vodka"
+	desc = "Vodka made from the finest potatoes."
 	list_reagents = list(/datum/reagent/consumable/ethanol/vodka = 30)
