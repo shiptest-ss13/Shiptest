@@ -1288,10 +1288,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/alienfacility/lab)
-"rU" = (
-/obj/effect/mine/shrapnel,
-/turf/open/floor/plating/asteroid/whitesands,
-/area/space)
 "rW" = (
 /obj/structure/alien/weeds,
 /obj/item/retractor/advanced,
@@ -1393,7 +1389,6 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/whitesands/alienfacility/lab)
 "tB" = (
-/obj/effect/mine/shrapnel,
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
@@ -1654,13 +1649,6 @@
 /obj/effect/decal/cleanable/cobweb,
 /turf/open/floor/plating,
 /area/ruin/whitesands/alienfacility)
-"xA" = (
-/obj/effect/mine/shrapnel,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plating/asteroid/whitesands,
-/area/ruin/whitesands/alienfacility/containment)
 "xC" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -2751,10 +2739,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/whitesands/alienfacility)
-"Qy" = (
-/obj/effect/mine/shrapnel,
-/turf/open/floor/plating/asteroid/whitesands,
-/area/ruin/whitesands/alienfacility/containment)
 "QF" = (
 /obj/structure/fence/corner{
 	dir = 1
@@ -3437,10 +3421,10 @@ eB
 eB
 eB
 eB
-rU
 GN
 GN
-rU
+GN
+GN
 eB
 eB
 eB
@@ -3456,10 +3440,10 @@ kq
 Mk
 WQ
 eB
-rU
 GN
 GN
-rU
+GN
+GN
 eB
 eB
 eB
@@ -3473,7 +3457,7 @@ eB
 (3,1,1) = {"
 eB
 eB
-rU
+GN
 GN
 eB
 eB
@@ -3502,11 +3486,11 @@ eB
 eB
 GN
 GN
-rU
+GN
 GN
 eB
 eB
-rU
+GN
 eB
 eB
 "}
@@ -3632,7 +3616,7 @@ eB
 "}
 (7,1,1) = {"
 eB
-rU
+GN
 eB
 eB
 JH
@@ -3706,7 +3690,7 @@ lt
 JH
 lc
 eB
-rU
+GN
 eB
 eB
 "}
@@ -3867,7 +3851,7 @@ JH
 lc
 eB
 eB
-rU
+GN
 eB
 "}
 (13,1,1) = {"
@@ -3966,13 +3950,13 @@ JH
 mE
 mR
 YQ
-Qy
+YQ
 wA
 wA
 wA
 wA
 wA
-Qy
+YQ
 YQ
 mR
 mE
@@ -4013,7 +3997,7 @@ sN
 PI
 wA
 wA
-Qy
+YQ
 UM
 mE
 nr
@@ -4085,7 +4069,7 @@ xa
 nr
 mE
 dK
-Qy
+YQ
 wA
 tP
 KM
@@ -4205,14 +4189,14 @@ dM
 JH
 mE
 mR
-Qy
+YQ
 YQ
 wA
 wA
 wA
 wA
 wA
-Qy
+YQ
 YQ
 UM
 mE
@@ -4246,11 +4230,11 @@ JH
 eE
 yO
 OK
-xA
 bI
-xA
+bI
+bI
 Iq
-xA
+bI
 bI
 bI
 Cf
@@ -4347,7 +4331,7 @@ JH
 lc
 eB
 eB
-rU
+GN
 eB
 "}
 (25,1,1) = {"
@@ -4507,7 +4491,7 @@ JH
 lc
 eB
 eB
-rU
+GN
 eB
 "}
 (29,1,1) = {"
@@ -4626,13 +4610,13 @@ JH
 JH
 lc
 eB
-rU
+GN
 eB
 eB
 "}
 (32,1,1) = {"
 eB
-rU
+GN
 eB
 eB
 eB
@@ -4679,7 +4663,7 @@ eB
 eB
 eB
 GN
-rU
+GN
 GN
 eB
 eB
@@ -4715,7 +4699,7 @@ eB
 eB
 GN
 GN
-rU
+GN
 GN
 GN
 eB
@@ -4740,12 +4724,12 @@ eB
 eB
 eB
 GN
-rU
+GN
 GN
 GN
 eB
 GN
-rU
+GN
 GN
 eB
 eB
@@ -4776,7 +4760,7 @@ km
 km
 km
 GN
-rU
+GN
 GN
 eB
 eB
