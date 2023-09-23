@@ -26,7 +26,9 @@
 	docking_error = _docking_error
 
 /datum/docking_ticket/Destroy(force, ...)
-	target.current_docking_ticket = null
-	target_port.current_docking_ticket = null
+	if(target)
+		target.current_docking_ticket = null
+	if(target_port)
+		target_port.current_docking_ticket = null
 
 	return ..()
