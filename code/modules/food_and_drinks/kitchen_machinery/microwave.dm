@@ -362,6 +362,7 @@
 
 /obj/item/ration_heater
 	name = "flameless ration heater"
+	desc = "A magnisium based ration heater. It can be used to heat up entrees and other food items. reaches the same temperature as a microwave with half the volume."
 	icon = 'icons/obj/food/ration.dmi'
 	icon_state = "ration_package"
 	grind_results = list(/datum/reagent/iron = 10, /datum/reagent/water = 10, /datum/reagent/consumable/sodiumchloride = 5)
@@ -391,6 +392,7 @@
 	UnregisterSignal(tocook, COMSIG_PARENT_QDELETING)
 	tocook.cut_overlay(ration_overlay)
 	tocook = null
+
 /obj/item/ration_heater/proc/cook()
 	var/cookturf = get_turf(tocook)
 	tocook.visible_message("<span class='notice'>\The [tocook] is done warming up!</span>")
@@ -407,6 +409,7 @@
 /obj/item/ration_heater/examine(mob/user)
 	. = ..()
 	. += "It has [uses] uses left..."
+	. += "<span class='notice'>Examine rations to see which ones can be microwaved.</span>"
 
 #undef MICROWAVE_NORMAL
 #undef MICROWAVE_MUCK
