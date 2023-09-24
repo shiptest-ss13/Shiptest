@@ -208,7 +208,7 @@
 /particles/lava
 	width = 700
 	height = 700
-	count = 1000
+	count = 500
 	spawning = 1
 	lifespan = 3 SECONDS
 	fade = 2 SECONDS
