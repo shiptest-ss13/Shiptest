@@ -26,11 +26,12 @@
 	return
 
 /obj/structure/crate_shelf/MouseDrop_T(obj/structure/closet/crate/crate, mob/user)
+	if(!src.Adjacent(user, mover = crate))
+		return
 	if(!isliving(user))
 		return
-	if(crate.opened)
-		if(!crate.close())
-			return
+	if(!crate.close())
+		return
 	var/next_free = shelf_contents.Find(null)
 	if(next_free)
 		if(do_after(user, useDelay, target = crate))
