@@ -30,4 +30,4 @@
 
 /obj/item/ammo_box/magazine/mm712x82/update_icon_state()
 	. = ..()
-	icon_state = "[base_icon_state]-[round(ammo_count(), 10)]"
+	icon_state = "[base_icon_state]-[round(ammo_count(), 20)]"
