@@ -35,7 +35,6 @@
 		icon_state = "[icon_state]_open"
 	return ..()
 
-
 /obj/item/storage/ration/vegan_chili
 	name = "vegan chili with beans ration"
 	desc = "A complete meal package containing a hearty vegan chili with beans, complemented by vegetable crackers, savory cornbread, flavorful pizza crackers, and more. A perfect choice for plant-based nourishment."
@@ -117,7 +116,6 @@
 		/obj/item/ration_heater = 1
 		)
 	generate_items_inside(items_inside,src)
-
 
 /obj/item/storage/ration/chili_macaroni
 	name = "chili and macaroni ration"
@@ -236,7 +234,6 @@
 /obj/item/storage/ration/assorted_salted_offal
 	name = "assorted salted offal ration"
 	desc = "An adventurous choice, this ration offers an assortment of salted offal, providing a unique culinary experience."
-
 
 /obj/item/storage/ration/assorted_salted_offal/PopulateContents()
 	var/static/items_inside = list(

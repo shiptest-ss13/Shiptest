@@ -101,7 +101,6 @@
 		return
 	if(!proximity)
 		return
-
 	//You can tear the bag open above food to put the condiments on it, obviously.
 	if(istype(target, /obj/item/reagent_containers/food/snacks))
 		if(target.reagents.total_volume >= target.reagents.maximum_volume)
@@ -136,8 +135,6 @@
 		return
 	if(!proximity)
 		return
-
-	//You can tear the bag open above food to put the condiments on it, obviously.
 	if(istype(target, /obj/item/reagent_containers))
 		if(target.reagents.total_volume >= target.reagents.maximum_volume)
 			to_chat(user, "<span class='warning'>You pour the [src] in, but [target] is too full!</span>" )
@@ -147,7 +144,6 @@
 			to_chat(user, "<span class='notice'>You pour the [src] into [target] and shake.</span>")
 			src.reagents.trans_to(target, amount_per_transfer_from_this, transfered_by = user)
 			qdel(src)
-
 
 /obj/item/reagent_containers/food/snacks/ration/entree/vegan_chili
 	name = "vegan chili with beans"
@@ -288,6 +284,7 @@
 	filling_color = "#ffcc00"
 	tastes = list("cheese" = 1, "pizza" = 1)
 	foodtype = GRAIN | DAIRY
+
 /obj/item/reagent_containers/food/snacks/ration/side/vegan_crackers
 	name = "vegetable 'crackers'"
 	desc = "Delicious vegetable-based crackers that are the perfect crunchy and nutritious snack."
@@ -394,7 +391,7 @@
 	cookable = TRUE
 
 /obj/item/reagent_containers/food/snacks/ration/side/broth_tuna_rice
-	name = "Bone broth with tuna and rice"
+	name = "bone broth with tuna and rice"
 	desc = "A warm and comforting broth with tender tuna and rice, offering a nourishing and satisfying meal."
 	filling_color = "#669999"
 	tastes = list("broth" = 1, "tuna" = 1, "rice" = 1)
@@ -486,6 +483,7 @@
 	filling_color = "#663300"
 	tastes = list("crackers" = 1)
 	foodtype = GRAIN
+
 /obj/item/reagent_containers/food/snacks/ration/side/barbecue_fried_pork_rinds
 	name = "barbecue fried pork rinds"
 	desc = "Crispy and flavorful fried pork rinds coated in a savory barbecue seasoning, creating a satisfying snack option."
