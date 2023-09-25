@@ -395,7 +395,7 @@
 
 /obj/item/ration_heater/proc/cook()
 	var/cookturf = get_turf(tocook)
-	tocook.visable_message("<span class='notice'>\the [tocook] is done warming up!</span>")
+	tocook.visable_message("<span class='notice'>\the [src] lets out a final hiss...</span>")
 	playsound(tocook, 'sound/items/cig_snuff.ogg', 50, 1)
 	if(istype(tocook, /obj/item/reagent_containers/food) || istype(tocook, /obj/item/grown))
 		tocook.visable_message("<span class='notice'>\the [tocook] is done warming up!</span>")
