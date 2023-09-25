@@ -130,16 +130,16 @@
 	name = "P16 Assault Rifle Crate"
 	desc = "Contains two high-powered, automatic rifles chambered in 5.56mm."
 	cost = 8000
-	contains = list(/obj/item/gun/ballistic/automatic/assualt/p16,
-					/obj/item/gun/ballistic/automatic/assualt/p16)
+	contains = list(/obj/item/gun/ballistic/automatic/assault/p16,
+					/obj/item/gun/ballistic/automatic/assault/p16)
 	crate_name = "auto rifle crate"
 
 /datum/supply_pack/gun/ak
 	name = "SVG-67 Rifle Crate"
 	desc = "Contains two high-powered, automatic rifles chambered in 7.62x39mm."
 	cost = 6000
-	contains = list(/obj/item/gun/ballistic/automatic/assualt/ak47,
-					/obj/item/gun/ballistic/automatic/assualt/ak47)
+	contains = list(/obj/item/gun/ballistic/automatic/assault/ak47,
+					/obj/item/gun/ballistic/automatic/assault/ak47)
 	crate_name = "auto rifle crate"
 
 /*
