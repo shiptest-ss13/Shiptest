@@ -586,6 +586,9 @@
 	dir = 1
 	},
 /obj/machinery/airalarm/directional/north,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/starboard)
 "ft" = (
@@ -1123,6 +1126,7 @@
 /obj/effect/turf_decal/spline/fancy/transparent/solgovblue/corner{
 	dir = 8
 	},
+/obj/machinery/light/floor,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "jf" = (
@@ -1589,6 +1593,14 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/cryo)
+"nb" = (
+/obj/effect/turf_decal/spline/fancy/transparent/solgovblue{
+	dir = 1
+	},
+/obj/effect/turf_decal/spline/fancy/transparent/solgovblue,
+/obj/machinery/light/floor,
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ship/cargo)
 "nf" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/effect/turf_decal/siding/wood{
@@ -1742,6 +1754,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/starboard)
 "nL" = (
@@ -1874,6 +1889,9 @@
 	dir = 5
 	},
 /obj/machinery/light/directional/south,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/starboard)
 "oH" = (
@@ -2170,7 +2188,7 @@
 	icon_state = "2-8"
 	},
 /obj/structure/cable{
-	icon_state = "1-2"
+	icon_state = "1-8"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/port)
@@ -3526,7 +3544,10 @@
 	icon_state = "1-4"
 	},
 /obj/structure/cable{
-	icon_state = "4-8"
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/port)
@@ -3614,6 +3635,18 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/starboard)
@@ -4070,6 +4103,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/starboard)
 "FH" = (
@@ -4081,6 +4117,9 @@
 	},
 /obj/effect/turf_decal/corner/opaque/solgovblue{
 	dir = 6
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/starboard)
@@ -4396,6 +4435,9 @@
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/light/directional/north,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/starboard)
 "IB" = (
@@ -4843,6 +4885,14 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/cryo)
+"Mt" = (
+/obj/effect/turf_decal/spline/fancy/transparent/solgovblue/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/spline/fancy/transparent/solgovblue/corner,
+/obj/machinery/light/floor,
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ship/cargo)
 "Mv" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/hallway/starboard)
@@ -5239,6 +5289,9 @@
 	id = "sg_par_engine";
 	name = "Engine Blast Door Control"
 	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/starboard)
 "Qx" = (
@@ -5297,6 +5350,12 @@
 "QT" = (
 /obj/machinery/atmospherics/pipe/manifold/general/visible/layer2{
 	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/starboard)
@@ -6718,7 +6777,7 @@ sh
 YC
 NA
 jE
-fi
+Mt
 Fs
 sh
 fB
@@ -6820,7 +6879,7 @@ Kt
 GN
 Kt
 eb
-YB
+nb
 Fa
 Kt
 GN
@@ -6922,7 +6981,7 @@ Nj
 WF
 Kt
 sH
-YB
+nb
 sT
 ON
 WF
