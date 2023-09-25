@@ -89,6 +89,10 @@
 /obj/structure/sign/poster/solgov/random{
 	pixel_y = 30
 	},
+/obj/structure/sign/solgov_flag{
+	dir = 8;
+	pixel_x = 28
+	},
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/dorm/dormthree)
 "br" = (
@@ -207,6 +211,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/white,
 /area/ship/cargo/office)
 "cG" = (
@@ -270,6 +275,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
 	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/white,
 /area/ship/cargo/office)
 "db" = (
@@ -948,6 +954,7 @@
 	pixel_x = 4;
 	pixel_y = -4
 	},
+/obj/machinery/newscaster/security_unit/directional/south,
 /turf/open/floor/plasteel/white,
 /area/ship/security/armory)
 "ij" = (
@@ -1073,6 +1080,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 9
 	},
+/obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/plasteel/white,
 /area/ship/cargo/office)
 "iR" = (
@@ -1279,7 +1287,7 @@
 /obj/machinery/door/airlock/engineering{
 	dir = 4;
 	name = "Electrical Room";
-	req_one_access = list(10,48)
+	req_one_access = list(10)
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering)
@@ -1337,6 +1345,17 @@
 	},
 /turf/open/floor/wood,
 /area/ship/crew/office)
+"kZ" = (
+/obj/effect/turf_decal/techfloor,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/newscaster/security_unit/directional/south,
+/turf/open/floor/plasteel/white,
+/area/ship/cargo/office)
 "lh" = (
 /obj/item/clothing/neck/stripedsolgovscarf,
 /obj/item/clothing/neck/stripedsolgovscarf,
@@ -1368,6 +1387,7 @@
 	pixel_x = 16
 	},
 /obj/item/folder/solgov,
+/obj/machinery/light/directional/south,
 /turf/open/floor/carpet/blue,
 /area/ship/crew/office)
 "lj" = (
@@ -1451,6 +1471,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 1
 	},
+/obj/machinery/newscaster/security_unit/directional/east,
 /turf/open/floor/wood/birch,
 /area/ship/crew/canteen)
 "lX" = (
@@ -1475,6 +1496,7 @@
 	pixel_y = 2;
 	pixel_x = -5
 	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/wood/birch,
 /area/ship/crew/office)
 "my" = (
@@ -1538,7 +1560,8 @@
 	},
 /obj/machinery/door/airlock/mining/glass{
 	dir = 4;
-	name = "Field Engineer Locker Room"
+	name = "Field Engineer Locker Room";
+	req_one_access = list(10,31)
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/starboard)
@@ -1762,6 +1785,11 @@
 	},
 /turf/open/floor/wood,
 /area/ship/hallway/starboard)
+"og" = (
+/obj/structure/bookcase/random,
+/obj/machinery/light/directional/west,
+/turf/open/floor/wood/walnut,
+/area/ship/crew/library)
 "oi" = (
 /turf/open/floor/wood/walnut,
 /area/ship/cargo)
@@ -1890,6 +1918,7 @@
 /obj/effect/turf_decal/corner/opaque/solgovblue{
 	dir = 10
 	},
+/obj/machinery/newscaster/security_unit/directional/south,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/cryo)
 "pr" = (
@@ -2313,7 +2342,8 @@
 	},
 /obj/machinery/door/airlock/atmos{
 	dir = 4;
-	name = "Engine Room"
+	name = "Engine Room";
+	req_one_access = list(10)
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/maintenance/starboard)
@@ -2340,6 +2370,10 @@
 /obj/structure/bed/double,
 /obj/item/bedsheet/double/solgov,
 /obj/item/toy/plush/blahaj,
+/obj/structure/sign/solgov_flag{
+	dir = 8;
+	pixel_x = 28
+	},
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/dorm/dormtwo)
 "sT" = (
@@ -2602,6 +2636,9 @@
 	dir = 1
 	},
 /obj/machinery/door/airlock/external,
+/obj/machinery/door/poddoor{
+	id = "sgi_external"
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/starboard)
 "uA" = (
@@ -2708,7 +2745,8 @@
 	},
 /obj/machinery/door/airlock/security{
 	dir = 4;
-	name = "Sonnensoldner Locker Room"
+	name = "Sonnensoldner Locker Room";
+	req_one_access = list(1,10)
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/starboard)
@@ -2863,6 +2901,16 @@
 /turf/open/floor/plating,
 /area/ship/crew/dorm/dormthree)
 "wo" = (
+/obj/item/clothing/gloves/combat,
+/obj/item/folder/solgov,
+/obj/item/folder/solgov,
+/obj/item/clothing/under/solgov/formal,
+/obj/item/pen/solgov,
+/obj/item/clothing/under/solgov/dress,
+/obj/item/stamp/solgov,
+/obj/item/clothing/suit/armor/solgov_trenchcoat,
+/obj/item/storage/backpack/satchel,
+/obj/item/kitchen/knife/letter_opener,
 /obj/structure/closet/secure_closet/quartermaster{
 	populate = 0;
 	anchored = 1;
@@ -2881,7 +2929,8 @@
 	},
 /obj/machinery/door/airlock/security{
 	dir = 1;
-	name = "Hardsuit Storage"
+	name = "Hardsuit Storage";
+	req_one_access = list(1)
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security/armory)
@@ -3099,6 +3148,7 @@
 /obj/structure/table/wood,
 /obj/item/paper_bin,
 /obj/item/pen/solgov,
+/obj/machinery/newscaster/security_unit/directional/south,
 /turf/open/floor/carpet/blue,
 /area/ship/crew/office)
 "yw" = (
@@ -3170,7 +3220,7 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
-/obj/structure/extinguisher_cabinet/directional/south,
+/obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/white,
 /area/ship/cargo/office)
 "za" = (
@@ -3244,7 +3294,8 @@
 	},
 /obj/machinery/door/airlock/mining/glass{
 	dir = 4;
-	name = "Field Engineer Locker Room"
+	name = "Field Engineer Locker Room";
+	req_one_access = list(10,31)
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
@@ -3318,7 +3369,8 @@
 	},
 /obj/machinery/door/airlock/solgov{
 	dir = 4;
-	name = "Bridge"
+	name = "Bridge";
+	req_one_access = list(20,41)
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/library)
@@ -3423,7 +3475,8 @@
 	},
 /obj/machinery/door/airlock/solgov{
 	dir = 4;
-	name = "Logistics Deck Officer's Quarters"
+	name = "Logistics Deck Officer's Quarters";
+	req_one_access = list(41)
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/dorm/dormthree)
@@ -3885,7 +3938,7 @@
 /area/ship/cargo)
 "EF" = (
 /obj/structure/chair/sofa,
-/obj/machinery/computer/helm/viewscreen/directional/north,
+/obj/machinery/light/directional/north,
 /turf/open/floor/carpet/blue,
 /area/ship/crew/canteen/kitchen)
 "ET" = (
@@ -4208,6 +4261,7 @@
 /obj/effect/turf_decal/spline/fancy/transparent/solgovblue{
 	dir = 4
 	},
+/obj/machinery/newscaster/security_unit/directional/south,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "HG" = (
@@ -4377,6 +4431,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/white,
 /area/ship/security/armory)
 "Jr" = (
@@ -4393,7 +4448,7 @@
 /area/ship/crew/cryo)
 "Js" = (
 /obj/structure/table/wood,
-/obj/machinery/computer/helm/viewscreen/directional/east,
+/obj/machinery/newscaster/security_unit/directional/east,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/library)
 "Jz" = (
@@ -4458,6 +4513,9 @@
 	dir = 1
 	},
 /obj/machinery/door/airlock/external,
+/obj/machinery/door/poddoor{
+	id = "sgi_external"
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/starboard)
 "JV" = (
@@ -4465,6 +4523,7 @@
 /obj/machinery/microwave{
 	pixel_y = 5
 	},
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen/kitchen)
 "JX" = (
@@ -4711,7 +4770,8 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/door/airlock/security{
 	dir = 1;
-	name = "Armory"
+	name = "Armory";
+	req_one_access = list(1,3)
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security/armory)
@@ -4870,6 +4930,11 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/starboard)
+"Ny" = (
+/obj/structure/fluff/hedge,
+/obj/machinery/light/directional/north,
+/turf/open/floor/wood/walnut,
+/area/ship/crew/canteen/kitchen)
 "NA" = (
 /obj/effect/turf_decal/spline/fancy/transparent/solgovblue{
 	dir = 4
@@ -5162,6 +5227,11 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/security/armory)
+"QB" = (
+/obj/structure/fluff/hedge,
+/obj/machinery/light/directional/west,
+/turf/open/floor/wood/walnut,
+/area/ship/crew/canteen/kitchen)
 "QH" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#D5A66E";
@@ -5260,7 +5330,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/obj/item/radio/intercom/directional/south,
+/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/white,
 /area/ship/cargo/office)
 "Rk" = (
@@ -5786,6 +5856,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 10
 	},
+/obj/machinery/newscaster/security_unit/directional/west,
 /turf/open/floor/plasteel/white,
 /area/ship/engineering)
 "VO" = (
@@ -6109,6 +6180,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
+/obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/white,
 /area/ship/security/armory)
 "Yc" = (
@@ -6175,6 +6247,13 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/machinery/button/door{
+	pixel_y = -23;
+	pixel_x = -8;
+	dir = 1;
+	id = "sgi_external";
+	name = "blast door control"
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/starboard)
 "YP" = (
@@ -6201,6 +6280,7 @@
 	dir = 4
 	},
 /obj/machinery/jukebox,
+/obj/machinery/light/directional/north,
 /turf/open/floor/wood/birch,
 /area/ship/crew/canteen)
 "YZ" = (
@@ -6336,7 +6416,7 @@
 /obj/machinery/door/airlock/engineering{
 	dir = 4;
 	name = "Engine Room";
-	req_one_access = list(10,48)
+	req_one_access = list(10)
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/maintenance/port)
@@ -6349,6 +6429,9 @@
 /area/ship/cargo)
 "ZY" = (
 /obj/machinery/vending/coffee,
+/obj/structure/noticeboard{
+	pixel_y = 32
+	},
 /turf/open/floor/wood/birch,
 /area/ship/crew/office)
 
@@ -6855,7 +6938,7 @@ Uz
 MW
 up
 Kd
-Tz
+kZ
 ej
 af
 BP
@@ -7263,7 +7346,7 @@ xA
 lX
 Xi
 Nf
-my
+QB
 sg
 my
 FE
@@ -7286,13 +7369,13 @@ Fo
 vL
 Ga
 oN
+og
 ET
-bs
 Ga
 vL
 yn
 bU
-my
+Ny
 my
 am
 Xi
