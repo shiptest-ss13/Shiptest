@@ -376,6 +376,7 @@
 	dir = 5
 	},
 /obj/structure/closet/crate/bin,
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/starboard)
 "dR" = (
@@ -584,6 +585,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
 	},
+/obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/starboard)
 "ft" = (
@@ -935,9 +937,6 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 6
 	},
-/obj/effect/turf_decal/corner/opaque/solgovblue{
-	dir = 1
-	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
@@ -1063,7 +1062,13 @@
 	dir = 8;
 	pixel_x = 28
 	},
-/obj/machinery/airalarm/directional/south,
+/obj/machinery/button/door{
+	pixel_y = -21;
+	pixel_x = -8;
+	dir = 1;
+	id = "sgi_captain";
+	name = "captain shutters control"
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm)
 "iL" = (
@@ -1092,6 +1097,15 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
+"ja" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/door/poddoor/shutters{
+	dir = 1;
+	id = "sgi_dorms"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
 "jc" = (
 /obj/structure/chair/wood,
 /obj/effect/turf_decal/siding/wood/end{
@@ -1189,7 +1203,6 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 9
 	},
-/obj/effect/turf_decal/corner/opaque/solgovblue,
 /turf/open/floor/plasteel/white,
 /area/ship/security/armory)
 "ke" = (
@@ -1454,6 +1467,7 @@
 /obj/item/bedsheet/solgov,
 /obj/structure/curtain/cloth,
 /obj/machinery/firealarm/directional/south,
+/obj/machinery/airalarm/directional/west,
 /turf/open/floor/carpet/blue,
 /area/ship/crew/dorm)
 "lT" = (
@@ -2270,6 +2284,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
 	},
+/obj/effect/turf_decal/corner/opaque/solgovblue{
+	dir = 5
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/security/armory)
 "sd" = (
@@ -2438,8 +2455,8 @@
 	pixel_y = -21;
 	pixel_x = -8;
 	dir = 1;
-	id = "sgi_captain";
-	name = "captain shutters control"
+	id = "sgi_dorms";
+	name = "external shutters control"
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm/dormtwo)
@@ -2539,6 +2556,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/port)
 "tY" = (
@@ -2621,6 +2639,10 @@
 	},
 /obj/item/gun/ballistic/automatic/pistol/solgov{
 	pixel_x = 4
+	},
+/obj/machinery/newscaster/security_unit/directional/north,
+/obj/effect/turf_decal/corner/opaque/solgovblue{
+	dir = 10
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/security/armory)
@@ -3263,7 +3285,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/obj/machinery/airalarm/directional/south,
+/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/port)
 "zs" = (
@@ -3406,9 +3428,6 @@
 "AC" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 10
-	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 4
 	},
 /obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/white,
@@ -3808,6 +3827,10 @@
 "DD" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/door/poddoor/shutters{
+	dir = 1;
+	id = "sgi_bridge"
+	},
 /turf/open/floor/plating,
 /area/ship/crew/dorm)
 "DE" = (
@@ -3829,6 +3852,9 @@
 /obj/effect/turf_decal/techfloor,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
+	},
+/obj/effect/turf_decal/corner/opaque/solgovblue{
+	dir = 1
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/security/armory)
@@ -4155,6 +4181,9 @@
 	dir = 1
 	},
 /obj/machinery/light/directional/north,
+/obj/effect/turf_decal/corner/opaque/solgovblue{
+	dir = 10
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/security/armory)
 "GF" = (
@@ -4366,7 +4395,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/machinery/airalarm/directional/north,
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/starboard)
 "IB" = (
@@ -4402,6 +4431,9 @@
 /obj/structure/sign/poster/solgov/random{
 	pixel_y = 30
 	},
+/obj/effect/turf_decal/corner/opaque/solgovblue{
+	dir = 10
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/security/armory)
 "IY" = (
@@ -4428,10 +4460,13 @@
 /area/ship/crew/office)
 "Jq" = (
 /obj/effect/turf_decal/techfloor,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+/obj/item/radio/intercom/directional/south,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
-/obj/item/radio/intercom/directional/south,
+/obj/effect/turf_decal/corner/opaque/solgovblue{
+	dir = 5
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/security/armory)
 "Jr" = (
@@ -4928,6 +4963,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
+/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/starboard)
 "Ny" = (
@@ -5069,10 +5105,6 @@
 /obj/item/spacecash/bundle/loadsamoney{
 	pixel_x = 5;
 	pixel_y = 8
-	},
-/obj/item/spacecash/bundle/mediumrand{
-	pixel_y = 8;
-	pixel_x = 5
 	},
 /obj/item/desk_flag/solgov{
 	pixel_y = 12;
@@ -5221,9 +5253,6 @@
 /obj/item/clothing/suit/space/hardsuit/solgov,
 /obj/effect/turf_decal/techfloor{
 	dir = 5
-	},
-/obj/effect/turf_decal/corner/opaque/solgovblue{
-	dir = 8
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/security/armory)
@@ -5421,6 +5450,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
+	},
+/obj/effect/turf_decal/corner/opaque/solgovblue{
+	dir = 5
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/security/armory)
@@ -6173,9 +6205,6 @@
 "Yb" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 10
-	},
-/obj/effect/turf_decal/corner/opaque/solgovblue{
-	dir = 4
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
@@ -7603,7 +7632,7 @@ iG
 iG
 iG
 nR
-yB
+ja
 Vl
 Vo
 ct
