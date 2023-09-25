@@ -16,7 +16,7 @@
 
 /obj/structure/crate_shelf/Initialize()
 	. = ..()
-	shelf_contents = new/list(capacity)
+	shelf_contents = new/list(capacity) // initialize our shelf's contents list, this will be used later in MouseDrop_T
 	var/stack_layer
 	var/stack_offset
 	for(var/i in 1 to (capacity - 1))
@@ -30,9 +30,9 @@
 		return
 	if(!isliving(user))
 		return
-	if(crate.opened)
+	if(crate.opened) // If the crate is open, try to close it.
 		if(!crate.close())
-			return
+			return // If we fail to close it, don't load it into the shelf.
 	var/next_free = shelf_contents.Find(null)
 	if(next_free)
 		if(do_after(user, useDelay, target = crate))
