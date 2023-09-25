@@ -413,7 +413,7 @@
 	parent_level.virtual_levels -= src
 	parent_level = null
 	LAZYREMOVE(SSmapping.virtual_z_translation, "[id]")
-	SSmapping.virtual_z_translation -= "[id]"
+	SSidlenpcpool.idle_mobs_by_virtual_level -= "[id]"
 	parent_map_zone.remove_virtual_level(src)
 	if(up_linkage)
 		up_linkage.down_linkage = null
