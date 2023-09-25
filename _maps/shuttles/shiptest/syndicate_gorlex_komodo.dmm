@@ -105,7 +105,6 @@
 /turf/open/floor/pod/dark,
 /area/ship/medical)
 "aR" = (
-/obj/item/clothing/shoes/jackboots,
 /obj/item/clothing/mask/gas/syndicate,
 /obj/effect/turf_decal/techfloor{
 	dir = 6
@@ -116,6 +115,7 @@
 	desc = "It's a basic storage unit.";
 	name = "uniform closet"
 	},
+/obj/item/clothing/shoes/combat,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/hallway/central)
 "aU" = (
@@ -267,10 +267,10 @@
 /area/ship/hallway/central)
 "cu" = (
 /obj/docking_port/stationary{
+	dir = 8;
 	dwidth = 5;
-	width = 30;
 	height = 15;
-	dir = 8
+	width = 30
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -997,6 +997,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
 	},
+/obj/item/soap/syndie,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "jp" = (
@@ -1062,15 +1063,6 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/hallway/central)
-"jE" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
-/obj/machinery/door/poddoor/shutters{
-	id = "warshipbridge";
-	name = "Blast Shutters";
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/ship/bridge)
 "jF" = (
 /obj/structure/railing/corner{
 	dir = 4
@@ -1813,9 +1805,9 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/light_switch{
+	dir = 4;
 	pixel_x = -20;
-	pixel_y = 12;
-	dir = 4
+	pixel_y = 12
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew/canteen)
@@ -2005,7 +1997,6 @@
 /obj/structure/railing{
 	dir = 8
 	},
-/obj/item/clothing/shoes/jackboots,
 /obj/item/clothing/mask/gas/syndicate,
 /obj/effect/turf_decal/techfloor,
 /obj/item/clothing/under/syndicate,
@@ -2013,6 +2004,7 @@
 	desc = "It's a basic storage unit.";
 	name = "uniform closet"
 	},
+/obj/item/clothing/shoes/combat,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/hallway/central)
 "tw" = (
@@ -2607,7 +2599,6 @@
 /obj/structure/railing{
 	dir = 4
 	},
-/obj/item/clothing/shoes/jackboots,
 /obj/item/clothing/mask/gas/syndicate,
 /obj/effect/turf_decal/techfloor,
 /obj/item/clothing/mask/balaclava,
@@ -2616,6 +2607,7 @@
 	desc = "It's a basic storage unit.";
 	name = "uniform closet"
 	},
+/obj/item/clothing/shoes/combat,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/hallway/central)
 "zV" = (
@@ -2648,9 +2640,9 @@
 "Al" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
+	dir = 8;
 	id = "warshipbridge";
-	name = "Blast Shutters";
-	dir = 8
+	name = "Blast Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -2857,8 +2849,8 @@
 	dir = 1
 	},
 /obj/item/radio/intercom/directional/north{
-	pixel_y = 31;
-	pixel_x = 3
+	pixel_x = 3;
+	pixel_y = 31
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/hallway/central)
@@ -3033,7 +3025,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
 "DO" = (
-/obj/item/clothing/shoes/jackboots,
 /obj/item/clothing/mask/gas/syndicate,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
@@ -3047,6 +3038,7 @@
 	desc = "It's a basic storage unit.";
 	name = "uniform closet"
 	},
+/obj/item/clothing/shoes/combat,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/hallway/central)
 "DQ" = (
@@ -3133,7 +3125,6 @@
 	},
 /obj/item/clothing/suit/armor/vest/capcarapace/syndicate,
 /obj/item/clothing/gloves/krav_maga/combatglovesplus,
-/obj/item/clothing/shoes/jackboots,
 /obj/item/clothing/glasses/thermal/eyepatch,
 /obj/item/clothing/head/HoS/beret/syndicate,
 /obj/item/clothing/head/HoS/syndicate,
@@ -3147,6 +3138,7 @@
 /obj/item/ammo_box/a357,
 /obj/item/ammo_box/a357,
 /obj/item/radio/headset/syndicate/alt/leader,
+/obj/item/clothing/shoes/combat,
 /turf/open/floor/carpet/black,
 /area/ship/bridge)
 "El" = (
@@ -3655,6 +3647,7 @@
 	desc = "It's a basic storage unit.";
 	name = "uniform closet"
 	},
+/obj/item/clothing/shoes/combat,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/hallway/central)
 "IE" = (
@@ -3724,7 +3717,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "Jw" = (
-/obj/item/clothing/shoes/jackboots,
 /obj/item/clothing/neck/scarf/red,
 /obj/item/clothing/mask/bandana/skull,
 /obj/item/clothing/mask/gas/syndicate,
@@ -3739,6 +3731,7 @@
 	desc = "It's a basic storage unit.";
 	name = "uniform closet"
 	},
+/obj/item/clothing/shoes/combat,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/hallway/central)
 "Jx" = (
@@ -3911,9 +3904,9 @@
 /area/ship/hallway/central)
 "Lt" = (
 /obj/machinery/door/airlock/hatch{
+	dir = 4;
 	name = "Captain's Office";
-	req_access_txt = "20";
-	dir = 4
+	req_access_txt = "20"
 	},
 /obj/machinery/door/firedoor,
 /turf/open/floor/plasteel/dark,
@@ -5598,7 +5591,7 @@ CM
 (6,1,1) = {"
 CM
 CM
-jE
+zF
 tC
 tC
 tC
@@ -5684,7 +5677,7 @@ cV
 CM
 "}
 (8,1,1) = {"
-jE
+zF
 si
 nQ
 pS
