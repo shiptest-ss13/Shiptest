@@ -383,7 +383,7 @@
 			RegisterSignal(tocook, COMSIG_PARENT_QDELETING, PROC_REF(clear_cooking))
 			target.add_overlay(ration_overlay)
 			addtimer(CALLBACK(src, .proc/cook), 100)
-			visible_message("<span class='notice'>\the [target] rapidly begins cooking...</span>")
+			target.visible_message("<span class='notice'>\The [target] rapidly begins cooking...</span>")
 			playsound(src, 'sound/items/cig_light.ogg', 50, 1)
 			moveToNullspace()
 
@@ -391,16 +391,15 @@
 	SIGNAL_HANDLER
 	UnregisterSignal(tocook, COMSIG_PARENT_QDELETING)
 	tocook.cut_overlay(ration_overlay)
-	tocook = null
 
 /obj/item/ration_heater/proc/cook()
 	var/cookturf = get_turf(tocook)
-	tocook.visible_message("<span class='notice'>\the [src] lets out a final hiss...</span>")
+	tocook.visible_message("<span class='notice'>\The [src] lets out a final hiss...</span>")
 	playsound(tocook, 'sound/items/cig_snuff.ogg', 50, 1)
 	if(istype(tocook, /obj/item/reagent_containers/food) || istype(tocook, /obj/item/grown))
-		tocook.visible_message("<span class='notice'>\the [tocook] is done warming up!</span>")
-		tocook.microwave_act()
+		tocook.visible_message("<span class='notice'>\The [tocook] is done warming up!</span>")
 		clear_cooking()
+		tocook.microwave_act()
 	if(uses == 0)
 		qdel()
 	else

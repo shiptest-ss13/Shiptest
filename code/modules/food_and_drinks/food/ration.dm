@@ -51,6 +51,8 @@
 /obj/item/reagent_containers/food/snacks/ration/microwave_act(obj/machinery/microwave/Heater)
 	if (cookable == FALSE)
 		..()
+	else if (cooked == TRUE)
+		..()
 	else
 		name = "warm [initial(name)]"
 		bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
@@ -88,24 +90,23 @@
 
 /obj/item/reagent_containers/food/snacks/ration/attack(mob/living/M, mob/user, def_zone)
 	if (!is_drainable())
-		to_chat(user, "<span class='warning'>The [src] is sealed shut!</span>")
+		to_chat(user, "<span class='warning'>[src] is sealed shut!</span>")
 		return 0
 	else
-		to_chat(user, "<span class='warning'>The [src] cant be eaten like that!</span>")
+		to_chat(user, "<span class='warning'>[src] cant be eaten like that!</span>")
 		return 0
 
 /obj/item/reagent_containers/food/snacks/ration/condiment/afterattack(obj/target, mob/user , proximity)
 	. = ..()
 	if(!is_drainable())
-		to_chat(user, "<span class='warning'>The [src] is sealed shut!</span>")
+		to_chat(user, "<span class='warning'>[src] is sealed shut!</span>")
 		return
 	if(!proximity)
 		return
 	//You can tear the bag open above food to put the condiments on it, obviously.
 	if(istype(target, /obj/item/reagent_containers/food/snacks))
 		if(target.reagents.total_volume >= target.reagents.maximum_volume)
-			to_chat(user, "<span class='warning'>You tear open [src], but [target] is stacked so high that it just drips off!</span>" )
-			qdel(src)
+			to_chat(user, "<span class='warning'>[target] is too full!</span>" )
 			return
 		else
 			to_chat(user, "<span class='notice'>You tear open [src] above [target] and the condiments drip onto it.</span>")
@@ -122,23 +123,22 @@
 
 /obj/item/reagent_containers/food/snacks/ration/attack(mob/living/M, mob/user, def_zone)
 	if (!is_drainable())
-		to_chat(user, "<span class='warning'>The [src] is sealed shut!</span>")
+		to_chat(user, "<span class='warning'>[src] is sealed shut!</span>")
 		return 0
 	else
-		to_chat(user, "<span class='warning'>The [src] cant be eaten like that!</span>")
+		to_chat(user, "<span class='warning'>[src] cant be eaten like that!</span>")
 		return 0
 
 /obj/item/reagent_containers/food/snacks/ration/pack/afterattack(obj/target, mob/user , proximity)
 	. = ..()
 	if(!is_drainable())
-		to_chat(user, "<span class='warning'>The [src] is sealed shut!</span>")
+		to_chat(user, "<span class='warning'>[src] is sealed shut!</span>")
 		return
 	if(!proximity)
 		return
 	if(istype(target, /obj/item/reagent_containers))
 		if(target.reagents.total_volume >= target.reagents.maximum_volume)
-			to_chat(user, "<span class='warning'>You pour the [src] in, but [target] is too full!</span>" )
-			qdel(src)
+			to_chat(user, "<span class='warning'>[target] is too full!</span>" )
 			return
 		else
 			to_chat(user, "<span class='notice'>You pour the [src] into [target] and shake.</span>")
