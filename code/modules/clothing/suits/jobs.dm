@@ -301,6 +301,7 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	icon_state = "solgov_overcoat"
 	item_state = "solgov_overcoat"
+	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/suit/solgov/jacket
 	name = "SolGov jacket"
