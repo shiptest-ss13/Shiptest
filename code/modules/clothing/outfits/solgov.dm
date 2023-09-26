@@ -207,3 +207,18 @@
 	box = /obj/item/storage/box/survival/engineer
 	pda_slot = ITEM_SLOT_LPOCKET
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1)
+
+/datum/outfit/job/solgov/quartermaster
+	name = "Logistics Deck Officer (SolGov)"
+	job_icon = "quartermaster"
+	jobtype = /datum/job/qm
+
+	belt = /obj/item/pda/quartermaster
+	ears = /obj/item/radio/headset/solgov/captain
+	uniform = /obj/item/clothing/under/solgov/formal
+	suit = /obj/item/clothing/suit/solgov/overcoat
+	shoes = /obj/item/clothing/shoes/laceup
+	head = /obj/item/clothing/head/flatcap/solgov
+	glasses = /obj/item/clothing/glasses/sunglasses
+	l_hand = /obj/item/clipboard
+	backpack_contents = list(/obj/item/modular_computer/tablet/preset/cargo=1)
