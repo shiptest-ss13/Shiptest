@@ -43,3 +43,14 @@
 /area/ruin/wasteplanet/wasteplanet_radiation/containment
 	name = "Abandoned Waste Containment Vault"
 	icon_state = "disposal"
+
+/area/ruin/wasteplanet/wasteplanet_ship_graveyard/main
+	name = Abandoned Salvaging Post
+
+/area/ruin/wasteplanet/wasteplanet_ship_graveyard/primary_ship
+	name = Scrapped Nanotrasen Carrier
+	icon_state = "blue"
+
+/area/ruin/wasteplanet/wasteplanet_ship_graveyard/secondary_ship
+	name = "Scrapped Syndicate Hauler"
+	icon_state = "red"
