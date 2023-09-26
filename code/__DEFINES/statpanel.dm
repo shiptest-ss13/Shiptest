@@ -11,6 +11,4 @@ GLOBAL_LIST_INIT(client_verbs_required, list(
 	/client/verb/forum,
 	/client/verb/github,
 	/client/verb/joindiscord,
-	// Admin help
-	/client/verb/adminhelp,
 ))
