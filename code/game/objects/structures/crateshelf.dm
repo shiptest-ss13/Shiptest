@@ -17,7 +17,7 @@
 
 /obj/structure/crate_shelf/Initialize()
 	. = ..()
-	shelf_contents = new/list(capacity) // initialize our shelf's contents list, this will be used later in MouseDrop_T
+	shelf_contents = new/list(capacity) // Initialize our shelf's contents list, this will be used later in MouseDrop_T
 	var/stack_layer
 	var/stack_offset
 	for(var/i in 1 to (capacity - 1))
@@ -44,17 +44,17 @@
 
 /obj/structure/crate_shelf/proc/load(obj/structure/closet/crate/crate, mob/user)
 	var/next_free = shelf_contents.Find(null) // Find the first empty slot in the shelf
-	if(next_free) //If we find an empty slot, put the crate into it
-		if(do_after(user, use_delay, target = crate))
-			shelf_contents[next_free] = crate
-			crate.forceMove(src)
-			crate.pixel_y = DEFAULT_SHELF_VERTICAL_OFFSET * (next_free - 1) //Adjust the vertical offset of the crate to look like it's on the shelf
-			crate.layer = BELOW_OBJ_LAYER + 0.02 * (next_free - 1) // Adjust the layer of the crate to look like it's in the shelf
-			handle_visuals()
-			return TRUE
-	else
+	if(!next_free) // If we don't find an empty slot, return early
 		balloon_alert(user, "shelf full!")
-	return FALSE
+		return FALSE
+	if(do_after(user, use_delay, target = crate))
+		shelf_contents[next_free] = crate // Insert a reference to the crate into the free slot
+		crate.forceMove(src) // Insert the crate into the shelf
+		crate.pixel_y = DEFAULT_SHELF_VERTICAL_OFFSET * (next_free - 1) // Adjust the vertical offset of the crate to look like it's on the shelf
+		crate.layer = BELOW_OBJ_LAYER + 0.02 * (next_free - 1) // Adjust the layer of the crate to look like it's in the shelf
+		handle_visuals()
+		return TRUE
+	return FALSE // If the do_after() is interrupted, return FALSE!
 
 /obj/structure/crate_shelf/proc/unload(obj/structure/closet/crate/crate, mob/user)
 	if(do_after(user, 20, target = crate))
