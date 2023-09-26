@@ -1,5 +1,6 @@
 /obj/item/ammo_box/magazine/gauss
 	name = "gauss magazine (ferromagnetic pellets)"
+	desc = "A 24-round magazine for the prototype gauss rifle. Ferromagnetic pellets do okay damage with significant armor penetration."
 	icon_state = "mediummagmag"
 	ammo_type = /obj/item/ammo_casing/caseless/gauss
 	caliber = "pellet"
@@ -7,7 +8,8 @@
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
 /obj/item/ammo_box/magazine/modelh
-	name = "model-h magazine (ferromagnetic slugs)"
+	name = "Model H magazine (ferromagnetic slugs)"
+	desc = "A 10-round magazine for the Model H pistol. Ferromagnetic slugs are slow, but do incredible damage with significant armor penetration."
 	icon_state = "smallmagmag"
 	ammo_type = /obj/item/ammo_casing/caseless/gauss/slug
 	caliber = "slug"
@@ -15,7 +17,8 @@
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
 /obj/item/ammo_box/magazine/gar
-	name = "gar tube magazine (ferromagnetic lances)"
+	name = "GAR tube magazine (ferromagnetic lances)"
+	desc = "A 32-round magazined for the GAR assault rifle. Ferromagnetic lances do good damage with significant armor penetration."
 	icon_state = "gar-mag"
 	ammo_type = /obj/item/ammo_casing/caseless/gauss/lance
 	caliber = "lance"

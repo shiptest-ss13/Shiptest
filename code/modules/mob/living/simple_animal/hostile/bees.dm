@@ -10,6 +10,10 @@
 #define BEE_POLLINATE_PEST_CHANCE 33
 #define BEE_POLLINATE_POTENCY_CHANCE 50
 
+/* For when we makes bees edible lmao (NEWFOOD)
+#define BEE_FOODGROUPS RAW | MEAT | GORE /*| BUGS*/
+*/
+
 /mob/living/simple_animal/hostile/poison/bees
 	name = "bee"
 	desc = "Buzzy buzzy bee, stingy sti- Ouch!"
@@ -92,7 +96,8 @@
 		return ..()
 	else
 		. = list() // The following code is only very slightly slower than just returning oview(vision_range, targets_from), but it saves us much more work down the line
-		var/list/searched_for = oview(vision_range, targets_from)
+		var/atom/target_from = GET_TARGETS_FROM(src)
+		var/list/searched_for = oview(vision_range, target_from)
 		for(var/obj/A in searched_for)
 			. += A
 		for(var/mob/A in searched_for)

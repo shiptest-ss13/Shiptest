@@ -123,31 +123,6 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 /obj/machinery/computer/card/proc/job_blacklisted(jobtitle)
 	return (jobtitle in blacklisted)
 
-//Logic check for Topic() if you can open the job
-/obj/machinery/computer/card/proc/can_open_job(datum/job/job)
-	if(job)
-		if(!job_blacklisted(job.name))
-			if((job.total_positions <= GLOB.player_list.len * (max_relative_positions / 100)))
-				var/delta = (world.time / 10) - GLOB.time_last_changed_position
-				if((change_position_cooldown < delta) || (opened_positions[job.name] < 0))
-					return JOB_ALLOWED
-				return JOB_COOLDOWN
-			return JOB_MAX_POSITIONS
-	return JOB_DENIED
-
-//Logic check for Topic() if you can close the job
-/obj/machinery/computer/card/proc/can_close_job(datum/job/job)
-	if(job)
-		if(!job_blacklisted(job.name))
-			if(job.total_positions > job.current_positions)
-				var/delta = (world.time / 10) - GLOB.time_last_changed_position
-				if((change_position_cooldown < delta) || (opened_positions[job.name] > 0))
-					return JOB_ALLOWED
-				return JOB_COOLDOWN
-			return JOB_MAX_POSITIONS
-	return JOB_DENIED
-
-
 /obj/machinery/computer/card/proc/id_insert(mob/user, obj/item/inserting_item, obj/item/target)
 	var/obj/item/card/id/card_to_insert = inserting_item
 	var/holder_item = FALSE
@@ -209,63 +184,6 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 			dat += {"[t.fields["name"]] - [t.fields["rank"]]<br>"}
 		dat += "<a href='?src=[REF(src)];choice=print'>Print</a><br><br><a href='?src=[REF(src)];choice=mode;mode_target=0'>Access ID modification console.</a><br></tt>"
 
-	else if(mode == 2)
-		// JOB MANAGEMENT
-		dat += {"<a href='?src=[REF(src)];choice=return'>Return</a>
-		<table><tr><td style='width:25%'><b>Job</b></td><td style='width:25%'><b>Slots</b></td>
-		<td style='width:25%'><b>Open job</b></td><td style='width:25%'><b>Close job</b><td style='width:25%'><b>Prioritize</b></td></td></tr>"}
-		for(var/datum/job/job in SSjob.occupations)
-			dat += "<tr>"
-			if(job.name in blacklisted)
-				continue
-			dat += {"<td>[job.name]</td>
-				<td>[job.current_positions]/[job.total_positions]</td>
-				<td>"}
-			switch(can_open_job(job))
-				if(JOB_ALLOWED)
-					if(authenticated == AUTHENTICATED_ALL)
-						dat += "<a href='?src=[REF(src)];choice=make_job_available;job=[job.name]'>Open Position</a><br>"
-					else
-						dat += "Open Position"
-				if(JOB_COOLDOWN)
-					var/time_to_wait = round(change_position_cooldown - ((world.time / 10) - GLOB.time_last_changed_position), 1)
-					var/mins = round(time_to_wait / 60)
-					var/seconds = time_to_wait - (60*mins)
-					dat += "Cooldown ongoing: [mins]:[(seconds < 10) ? "0[seconds]" : "[seconds]"]"
-				else
-					dat += "Denied"
-			dat += "</td><td>"
-			switch(can_close_job(job))
-				if(JOB_ALLOWED)
-					if(authenticated == AUTHENTICATED_ALL)
-						dat += "<a href='?src=[REF(src)];choice=make_job_unavailable;job=[job.name]'>Close Position</a>"
-					else
-						dat += "Close Position"
-				if(JOB_COOLDOWN)
-					var/time_to_wait = round(change_position_cooldown - ((world.time / 10) - GLOB.time_last_changed_position), 1)
-					var/mins = round(time_to_wait / 60)
-					var/seconds = time_to_wait - (60*mins)
-					dat += "Cooldown ongoing: [mins]:[(seconds < 10) ? "0[seconds]" : "[seconds]"]"
-				else
-					dat += "Denied"
-			dat += "</td><td>"
-			switch(job.total_positions)
-				if(0)
-					dat += "Denied"
-				else
-					if(authenticated == AUTHENTICATED_ALL)
-						if(job in SSjob.prioritized_jobs)
-							dat += "<a href='?src=[REF(src)];choice=prioritize_job;job=[job.name]'>Deprioritize</a>"
-						else
-							if(SSjob.prioritized_jobs.len < 5)
-								dat += "<a href='?src=[REF(src)];choice=prioritize_job;job=[job.name]'>Prioritize</a>"
-							else
-								dat += "Denied"
-					else
-						dat += "Prioritize"
-
-			dat += "</td></tr>"
-		dat += "</table>"
 	else
 		var/list/header = list()
 
@@ -286,7 +204,6 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 				Target: <a href='?src=[REF(src)];choice=inserted_modify_id'>Remove [target_name]</a> ||
 				Confirm Identity: <a href='?src=[REF(src)];choice=inserted_scan_id'>Remove [scan_name]</a><br>
 				<a href='?src=[REF(src)];choice=mode;mode_target=1'>Access Crew Manifest</a><br>
-				[!target_dept ? "<a href='?src=[REF(src)];choice=mode;mode_target=2'>Job Management</a><br>" : ""]
 				Unique Ship Access: [ship.unique_ship_access?"Enabled":"Disabled"] <a href='?src=[REF(src)];choice=toggle_unique_ship_access'>[ship.unique_ship_access?"Disable":"Enable"]</a><br>
 				Print Silicon Access Chip <a href='?src=[REF(src)];choice=print_silicon_access_chip'>Print</a></div>
 				<a href='?src=[REF(src)];choice=logout'>Log Out</a></div>"}
@@ -370,8 +287,6 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 		else if (!authenticated)
 			body = {"<a href='?src=[REF(src)];choice=auth'>Log In</a><br><hr>
 				<a href='?src=[REF(src)];choice=mode;mode_target=1'>Access Crew Manifest</a><br><hr>"}
-			if(!target_dept)
-				body += "<a href='?src=[REF(src)];choice=mode;mode_target=2'>Job Management</a><hr>"
 
 		dat = list("<tt>", header.Join(), body, "<br></tt>")
 	var/datum/browser/popup = new(user, "id_com", src.name, 900, 620)
@@ -544,62 +459,6 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 			//DISPLAY MAIN MENU
 			mode = 3;
 			playsound(src, "terminal_type", 25, FALSE)
-
-		if("make_job_available")
-			// MAKE ANOTHER JOB POSITION AVAILABLE FOR LATE JOINERS
-			if(authenticated && !target_dept)
-				var/edit_job_target = href_list["job"]
-				var/datum/job/j = SSjob.GetJob(edit_job_target)
-				if(!j)
-					updateUsrDialog()
-					return 0
-				if(can_open_job(j) != 1)
-					updateUsrDialog()
-					return 0
-				if(opened_positions[edit_job_target] >= 0)
-					GLOB.time_last_changed_position = world.time / 10
-				j.total_positions++
-				opened_positions[edit_job_target]++
-				playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
-
-		if("make_job_unavailable")
-			// MAKE JOB POSITION UNAVAILABLE FOR LATE JOINERS
-			if(authenticated && !target_dept)
-				var/edit_job_target = href_list["job"]
-				var/datum/job/j = SSjob.GetJob(edit_job_target)
-				if(!j)
-					updateUsrDialog()
-					return 0
-				if(can_close_job(j) != 1)
-					updateUsrDialog()
-					return 0
-				//Allow instant closing without cooldown if a position has been opened before
-				if(opened_positions[edit_job_target] <= 0)
-					GLOB.time_last_changed_position = world.time / 10
-				j.total_positions--
-				opened_positions[edit_job_target]--
-				playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, FALSE)
-
-		if ("prioritize_job")
-			// TOGGLE WHETHER JOB APPEARS AS PRIORITIZED IN THE LOBBY
-			if(authenticated && !target_dept)
-				var/priority_target = href_list["job"]
-				var/datum/job/j = SSjob.GetJob(priority_target)
-				if(!j)
-					updateUsrDialog()
-					return 0
-				var/priority = TRUE
-				if(j in SSjob.prioritized_jobs)
-					SSjob.prioritized_jobs -= j
-					priority = FALSE
-				else if(j.total_positions <= j.current_positions)
-					to_chat(usr, "<span class='notice'>[j.name] has had all positions filled. Open up more slots before prioritizing it.</span>")
-					updateUsrDialog()
-					return
-				else
-					SSjob.prioritized_jobs += j
-				to_chat(usr, "<span class='notice'>[j.name] has been successfully [priority ? "prioritized" : "unprioritized"]. Potential employees will notice your request.</span>")
-				playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
 
 		if ("print")
 			if (!(printing))

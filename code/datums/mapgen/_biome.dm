@@ -63,13 +63,13 @@
 	var/atom/spawned_mob
 
 	//FLORA SPAWNING HERE
-	if(flora_spawn_list && prob(flora_spawn_chance) && (a_flags & FLORA_ALLOWED))
+	if(length(flora_spawn_list) && prob(flora_spawn_chance) && (a_flags & FLORA_ALLOWED))
 		spawned_flora = pickweight(flora_spawn_list)
 		spawned_flora = new spawned_flora(open_turf)
 		open_turf.flags_1 |= NO_LAVA_GEN_1
 
 	//FEATURE SPAWNING HERE
-	if(feature_spawn_list && prob(feature_spawn_chance) && (a_flags & FLORA_ALLOWED)) //checks the same flag because lol dunno
+	if(length(feature_spawn_list) && prob(feature_spawn_chance) && (a_flags & FLORA_ALLOWED)) //checks the same flag because lol dunno
 		var/atom/feature_type = pickweight(feature_spawn_list)
 
 		var/can_spawn = TRUE
@@ -85,7 +85,7 @@
 			open_turf.flags_1 |= NO_LAVA_GEN_1
 
 	//MOB SPAWNING HERE
-	if(mob_spawn_list && !spawned_flora && !spawned_feature && prob(mob_spawn_chance) && (a_flags & MOB_SPAWN_ALLOWED))
+	if(length(mob_spawn_list) && !spawned_flora && !spawned_feature && prob(mob_spawn_chance) && (a_flags & MOB_SPAWN_ALLOWED))
 		var/atom/picked_mob = pickweight(mob_spawn_list)
 
 		var/can_spawn = TRUE

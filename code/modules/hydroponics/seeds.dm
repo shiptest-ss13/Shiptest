@@ -8,7 +8,7 @@
 	w_class = WEIGHT_CLASS_TINY
 	resistance_flags = FLAMMABLE
 	var/plantname = "Plants"		// Name of plant when planted.
-	var/obj/item/product						// A type path. The thing that is created when the plant is harvested.
+	var/obj/item/product			// A type path. The thing that is created when the plant is harvested.
 	var/productdesc
 	var/species = ""				// Used to update icons. Should match the name in the sprites unless all icon_* are overridden.
 
@@ -24,7 +24,7 @@
 	var/yield = 3					// Amount of growns created per harvest. If is -1, the plant/shroom/weed is never meant to be harvested.
 	var/potency = 10				// The 'power' of a plant. Generally effects the amount of reagent in a plant, also used in other ways.
 	var/growthstages = 6			// Amount of growth sprites the plant has.
-	var/instability = 5             //Chance that a plant will mutate in each stage of it's life.
+	var/instability = 5				// Chance that a plant will mutate in each stage of it's life.
 	var/rarity = 0					// How rare the plant is. Used for giving points to cargo when shipping off to CentCom.
 	var/list/mutatelist = list()	// The type of plants that this plant can mutate into.
 	var/list/genes = list()			// Plant genes are stored here, see plant_genes.dm for more info.
@@ -35,10 +35,10 @@
 	// Stronger reagents must always come first to avoid being displaced by weaker ones.
 	// Total amount of any reagent in plant is calculated by formula: 1 + round(potency * multiplier)
 
-	var/weed_rate = 1 //If the chance below passes, then this many weeds sprout during growth
-	var/weed_chance = 5 //Percentage chance per tray update to grow weeds
-	var/research = 0 //defines "discovery value", which will give a one-time point payout if a seed is given to an R&D console. Seed discovery is determined on a ship-by-ship basis.
-	var/seed_flags = MUTATE_EARLY //Determines if a plant is allowed to mutate early at 30+ instability
+	var/weed_rate = 1				// If the chance below passes, then this many weeds sprout during growth
+	var/weed_chance = 5				// Percentage chance per tray update to grow weeds
+	var/research = 0				// Defines "discovery value", which will give a one-time point payout if a seed is given to an R&D console. Seed discovery is determined on a ship-by-ship basis.
+	var/seed_flags = MUTATE_EARLY	// Determines if a plant is allowed to mutate early at 30+ instability
 
 /obj/item/seeds/Initialize(mapload, nogenes = 0)
 	. = ..()
@@ -74,6 +74,11 @@
 		for(var/reag_id in reagents_add)
 			genes += new /datum/plant_gene/reagent(reag_id, reagents_add[reag_id])
 		reagents_from_genes() //quality coding
+
+/obj/item/seeds/Destroy()
+	if(flags_1 & INITIALIZED_1)
+		QDEL_LIST(genes)
+	return ..()
 
 /obj/item/seeds/examine(mob/user)
 	. = ..()
@@ -259,7 +264,7 @@
 		var/list/data = null
 		if(rid == "blood") // Hack to make blood in plants always O-
 			data = list("blood_type" = "O-")
-		if(rid == /datum/reagent/consumable/nutriment || rid == /datum/reagent/consumable/nutriment/vitamin)
+		if(istype(T) && (rid == /datum/reagent/consumable/nutriment || rid == /datum/reagent/consumable/nutriment/vitamin))
 			// apple tastes of apple.
 			data = T.tastes
 

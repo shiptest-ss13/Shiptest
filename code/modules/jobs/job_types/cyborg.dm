@@ -1,8 +1,6 @@
 /datum/job/cyborg
 	name = "Cyborg"
 	auto_deadmin_role_flags = DEADMIN_POSITION_SILICON
-	total_positions = 0
-	spawn_positions = 1	//Nodrak
 	minimal_player_age = 21
 	wiki_page = "Cyborg" //WS Edit - Wikilinks/Warning
 

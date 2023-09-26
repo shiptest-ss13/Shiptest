@@ -225,12 +225,19 @@
 /area/ship/construction)
 "dx" = (
 /obj/structure/table,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/spawner/lootdrop/donkpockets,
+/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/lootdrop/ration,
 /obj/effect/turf_decal/corner/opaque/yellow/diagonal,
 /obj/structure/extinguisher_cabinet/directional/north,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
+"dH" = (
+/obj/structure/table/reinforced,
+/obj/machinery/firealarm/directional/west,
+/obj/machinery/fax,
+/obj/machinery/light/directional/south,
+/turf/open/floor/carpet/blue,
+/area/ship/bridge)
 "dJ" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/closet/firecloset,
@@ -947,12 +954,12 @@
 	name = "food crate"
 	},
 /obj/item/storage/cans/sixbeer,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
+/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/lootdrop/ration,
 /obj/effect/turf_decal/box/corners{
 	dir = 1
 	},
@@ -972,6 +979,22 @@
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/security)
+"mD" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/closet/emcloset/wall{
+	pixel_y = 28
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
+/area/ship/engineering)
 "mH" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
@@ -1604,13 +1627,6 @@
 /obj/item/clothing/head/hardhat/dblue,
 /turf/open/floor/plating,
 /area/ship/engineering)
-"un" = (
-/obj/structure/table/reinforced,
-/obj/machinery/firealarm/directional/west,
-/obj/machinery/fax,
-/obj/machinery/light/directional/south,
-/turf/open/floor/carpet/blue,
-/area/ship/bridge)
 "uy" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2274,31 +2290,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
-"AC" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/structure/closet/emcloset/wall{
-	pixel_y = 28
-	},
-/obj/structure/catwalk/over,
-/turf/open/floor/plating,
-/area/ship/engineering)
-"AH" = (
-/obj/structure/bed,
-/obj/item/bedsheet/dorms,
-/obj/structure/curtain/bounty,
-/turf/open/floor/plasteel/grimy,
-/area/ship/crew)
 "AQ" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2847,15 +2838,6 @@
 /obj/machinery/atmospherics/components/unary/portables_connector/layer4,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
-"Hn" = (
-/obj/structure/bed,
-/obj/item/bedsheet/dorms,
-/obj/structure/curtain/bounty,
-/obj/structure/sign/poster/contraband/random{
-	pixel_x = -32
-	},
-/turf/open/floor/plasteel/grimy,
-/area/ship/crew)
 "Ht" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2907,6 +2889,15 @@
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/plasteel/grimy,
 /area/ship/security)
+"HN" = (
+/obj/structure/bed,
+/obj/item/bedsheet/random,
+/obj/structure/curtain/bounty,
+/obj/structure/sign/poster/contraband/random{
+	pixel_x = -32
+	},
+/turf/open/floor/plasteel/grimy,
+/area/ship/crew)
 "HR" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
@@ -3287,6 +3278,12 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
+"Ne" = (
+/obj/structure/bed,
+/obj/item/bedsheet/random,
+/obj/structure/curtain/bounty,
+/turf/open/floor/plasteel/grimy,
+/area/ship/crew)
 "Nh" = (
 /obj/structure/table/reinforced,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -4147,8 +4144,8 @@
 	req_access_txt = "1"
 	},
 /obj/item/ammo_box/c38_box,
-/obj/item/ammo_box/magazine/m45/rubbershot,
-/obj/item/ammo_box/magazine/m45/rubbershot,
+/obj/item/ammo_box/magazine/m45/rubber,
+/obj/item/ammo_box/magazine/m45/rubber,
 /obj/item/ammo_box/magazine/m45,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
@@ -4534,9 +4531,9 @@ bC
 FO
 cc
 Ce
-Hn
-AH
-AH
+HN
+Ne
+Ne
 Ry
 gc
 Fu
@@ -4811,7 +4808,7 @@ pt
 JK
 cl
 ax
-un
+dH
 qd
 Vt
 QQ
@@ -4992,7 +4989,7 @@ fh
 lx
 tx
 Tq
-AC
+mD
 cR
 CG
 jx
