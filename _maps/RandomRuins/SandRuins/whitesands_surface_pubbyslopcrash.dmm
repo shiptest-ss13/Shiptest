@@ -274,15 +274,9 @@
 /area/ruin/whitesands/pubbycrash)
 "gs" = (
 /obj/effect/decal/fakelattice{
-	icon_state = "lattice-2"
+	icon_state = "lattice-8"
 	},
-/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
-	dir = 1;
-	faction = list("adobe");
-	desc = " A wild-eyed figure, wearing tattered mining equipment and boasting a malformed body, twisted by the heavy metals and high background radiation of the sandworlds. Their helmet also seems to be filled with vomit"
-	},
-/obj/effect/decal/cleanable/vomit,
-/turf/open/floor/plating/asteroid/whitesands,
+/turf/open/floor/plating/asteroid/whitesands/lit,
 /area/overmap_encounter/planetoid/sand)
 "gu" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -300,9 +294,9 @@
 /area/ruin/whitesands/pubbycrash)
 "gx" = (
 /obj/effect/decal/fakelattice{
-	icon_state = "lattice-141"
+	icon_state = "lattice-5"
 	},
-/turf/open/floor/plating/asteroid/whitesands,
+/turf/open/floor/plating/asteroid/whitesands/lit,
 /area/overmap_encounter/planetoid/sand)
 "gy" = (
 /obj/effect/turf_decal/box,
@@ -455,10 +449,8 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/whitesands/pubbycrash)
 "kp" = (
-/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
-	dir = 4
-	},
-/turf/open/floor/plating/asteroid/whitesands,
+/obj/structure/girder/displaced,
+/turf/open/floor/plating/asteroid/whitesands/lit,
 /area/overmap_encounter/planetoid/sand)
 "kA" = (
 /obj/item/reagent_containers/food/drinks/britcup{
@@ -570,12 +562,16 @@
 /turf/open/floor/plasteel,
 /area/ruin/whitesands/pubbycrash)
 "lR" = (
-/obj/structure/girder/displaced,
-/turf/open/floor/plating/asteroid/whitesands,
+/obj/effect/decal/fakelattice{
+	icon_state = "lattice-46"
+	},
+/turf/open/floor/plating/asteroid/whitesands/lit,
 /area/overmap_encounter/planetoid/sand)
 "mp" = (
-/obj/effect/gibspawner,
-/turf/open/floor/plating/asteroid/whitesands,
+/obj/effect/decal/fakelattice{
+	icon_state = "lattice-3"
+	},
+/turf/open/floor/plating/asteroid/whitesands/lit,
 /area/overmap_encounter/planetoid/sand)
 "mH" = (
 /turf/open/floor/plating,
@@ -611,9 +607,9 @@
 /area/ruin/whitesands/pubbycrash)
 "nq" = (
 /obj/effect/decal/fakelattice{
-	icon_state = "lattice-74"
+	icon_state = "lattice-55"
 	},
-/turf/open/floor/plating/asteroid/whitesands,
+/turf/open/floor/plating/asteroid/whitesands/lit,
 /area/overmap_encounter/planetoid/sand)
 "nG" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -666,10 +662,8 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/pubbycrash)
 "oO" = (
-/obj/effect/decal/fakelattice{
-	icon_state = "lattice-9"
-	},
-/turf/open/floor/plating/asteroid/whitesands,
+/obj/effect/decal/fakelattice,
+/turf/open/floor/plating/asteroid/whitesands/lit,
 /area/overmap_encounter/planetoid/sand)
 "oS" = (
 /obj/structure/cable{
@@ -793,9 +787,9 @@
 /area/ruin/whitesands/pubbycrash)
 "qN" = (
 /obj/effect/decal/fakelattice{
-	icon_state = "lattice-3"
+	icon_state = "lattice-74"
 	},
-/turf/open/floor/plating/asteroid/whitesands,
+/turf/open/floor/plating/asteroid/whitesands/lit,
 /area/overmap_encounter/planetoid/sand)
 "re" = (
 /obj/machinery/shower{
@@ -831,8 +825,16 @@
 /turf/open/floor/plasteel/grimy,
 /area/ruin/whitesands/pubbycrash)
 "sd" = (
-/obj/item/stack/ore/salvage/scraptitanium,
-/turf/open/floor/plating/asteroid/whitesands,
+/obj/effect/decal/fakelattice{
+	icon_state = "lattice-2"
+	},
+/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
+	dir = 1;
+	faction = list("adobe");
+	desc = " A wild-eyed figure, wearing tattered mining equipment and boasting a malformed body, twisted by the heavy metals and high background radiation of the sandworlds. Their helmet also seems to be filled with vomit"
+	},
+/obj/effect/decal/cleanable/vomit,
+/turf/open/floor/plating/asteroid/whitesands/lit,
 /area/overmap_encounter/planetoid/sand)
 "so" = (
 /obj/effect/turf_decal/industrial/caution,
@@ -943,9 +945,8 @@
 	},
 /area/ruin/whitesands/pubbycrash)
 "ul" = (
-/obj/item/stack/ore/salvage/scrapmetal/five,
-/obj/item/stack/ore/salvage/scraptitanium,
-/turf/open/floor/plating/asteroid/whitesands,
+/mob/living/simple_animal/hostile/asteroid/whitesands/ranged,
+/turf/open/floor/plating/asteroid/whitesands/lit,
 /area/overmap_encounter/planetoid/sand)
 "up" = (
 /obj/effect/turf_decal/box/corners{
@@ -1080,10 +1081,10 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/whitesands/pubbycrash)
 "xc" = (
-/obj/effect/decal/fakelattice{
-	icon_state = "lattice-46"
+/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
+	dir = 4
 	},
-/turf/open/floor/plating/asteroid/whitesands,
+/turf/open/floor/plating/asteroid/whitesands/lit,
 /area/overmap_encounter/planetoid/sand)
 "xo" = (
 /obj/effect/turf_decal/box/corners,
@@ -1132,9 +1133,15 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/pubbycrash)
+"ym" = (
+/obj/effect/gibspawner,
+/turf/open/floor/plating/asteroid/whitesands/lit,
+/area/overmap_encounter/planetoid/sand)
 "yt" = (
-/obj/effect/decal/fakelattice,
-/turf/open/floor/plating/asteroid/whitesands,
+/obj/effect/decal/fakelattice{
+	icon_state = "lattice-141"
+	},
+/turf/open/floor/plating/asteroid/whitesands/lit,
 /area/overmap_encounter/planetoid/sand)
 "yx" = (
 /obj/structure/railing/corner,
@@ -1362,10 +1369,8 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/pubbycrash)
 "Cw" = (
-/obj/effect/decal/fakelattice{
-	icon_state = "lattice-2"
-	},
-/turf/open/floor/plating/asteroid/whitesands,
+/obj/item/stack/ore/salvage/scraptitanium,
+/turf/open/floor/plating/asteroid/whitesands/lit,
 /area/overmap_encounter/planetoid/sand)
 "CI" = (
 /obj/effect/turf_decal/industrial/warning,
@@ -1709,10 +1714,8 @@
 /turf/closed/mineral/random/whitesands,
 /area/overmap_encounter/planetoid/cave/explored)
 "IC" = (
-/obj/effect/decal/fakelattice{
-	icon_state = "lattice-5"
-	},
-/turf/open/floor/plating/asteroid/whitesands,
+/obj/item/stack/ore/salvage/scrapmetal/five,
+/turf/open/floor/plating/asteroid/whitesands/lit,
 /area/overmap_encounter/planetoid/sand)
 "IQ" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
@@ -1725,10 +1728,9 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ruin/whitesands/pubbycrash)
 "Jz" = (
-/obj/effect/decal/fakelattice{
-	icon_state = "lattice-8"
-	},
-/turf/open/floor/plating/asteroid/whitesands,
+/obj/item/stack/ore/salvage/scrapmetal/five,
+/obj/item/stack/ore/salvage/scraptitanium,
+/turf/open/floor/plating/asteroid/whitesands/lit,
 /area/overmap_encounter/planetoid/sand)
 "JI" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2014,8 +2016,10 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/whitesands/pubbycrash)
 "Qo" = (
-/obj/item/stack/ore/salvage/scrapmetal/five,
-/turf/open/floor/plating/asteroid/whitesands,
+/obj/effect/decal/fakelattice{
+	icon_state = "lattice-9"
+	},
+/turf/open/floor/plating/asteroid/whitesands/lit,
 /area/overmap_encounter/planetoid/sand)
 "Qu" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
@@ -2229,8 +2233,7 @@
 /turf/open/floor/engine/hull,
 /area/ruin/whitesands/pubbycrash)
 "Vt" = (
-/mob/living/simple_animal/hostile/asteroid/whitesands/ranged,
-/turf/open/floor/plating/asteroid/whitesands,
+/turf/open/floor/plating/asteroid/whitesands/lit,
 /area/overmap_encounter/planetoid/sand)
 "VG" = (
 /obj/structure/sign/number/two,
@@ -2249,9 +2252,9 @@
 /area/ruin/whitesands/pubbycrash)
 "VP" = (
 /obj/effect/decal/fakelattice{
-	icon_state = "lattice-55"
+	icon_state = "lattice-2"
 	},
-/turf/open/floor/plating/asteroid/whitesands,
+/turf/open/floor/plating/asteroid/whitesands/lit,
 /area/overmap_encounter/planetoid/sand)
 "Wg" = (
 /obj/structure/frame/machine,
@@ -2443,6 +2446,7 @@ Gl
 Gl
 Gl
 Gl
+Gl
 RT
 RT
 RT
@@ -2452,8 +2456,7 @@ RT
 RT
 RT
 RT
-RT
-RT
+Gl
 Gl
 Gl
 Gl
@@ -2467,8 +2470,6 @@ Gl
 (2,1,1) = {"
 Gl
 Gl
-Gl
-Gl
 RT
 RT
 RT
@@ -2483,7 +2484,9 @@ RT
 RT
 RT
 RT
-Gl
+RT
+RT
+RT
 Gl
 Gl
 Gl
@@ -2493,8 +2496,35 @@ Gl
 "}
 (3,1,1) = {"
 Gl
+RT
+RT
+RT
+RT
+RT
+RT
+RT
+RT
+RT
+RT
+RT
+RT
+RT
+RT
+RT
+RT
+RT
+RT
+RT
 Gl
 Gl
+Gl
+Gl
+Gl
+"}
+(4,1,1) = {"
+Gl
+RT
+RT
 RT
 RT
 cN
@@ -2513,15 +2543,15 @@ RT
 RT
 RT
 RT
-bZ
+Vt
 Gl
 Gl
 Gl
 "}
-(4,1,1) = {"
+(5,1,1) = {"
 Gl
-Gl
-Gl
+RT
+RT
 RT
 RT
 cN
@@ -2540,12 +2570,12 @@ RT
 RT
 RT
 RT
-bZ
-bZ
+Vt
+Vt
 Gl
 Gl
 "}
-(5,1,1) = {"
+(6,1,1) = {"
 Gl
 Gl
 RT
@@ -2566,13 +2596,13 @@ RT
 RT
 RT
 RT
-bZ
-bZ
-bZ
+Vt
+Vt
+Vt
 Gl
 Gl
 "}
-(6,1,1) = {"
+(7,1,1) = {"
 Gl
 Gl
 RT
@@ -2593,13 +2623,13 @@ RT
 RT
 RT
 RT
-bZ
-bZ
-bZ
+Vt
+Vt
+Vt
 Gl
 Gl
 "}
-(7,1,1) = {"
+(8,1,1) = {"
 Gl
 Gl
 RT
@@ -2620,13 +2650,13 @@ RT
 RT
 RT
 RT
-bZ
-bZ
-bZ
-bZ
+Vt
+Vt
+Vt
+Vt
 Gl
 "}
-(8,1,1) = {"
+(9,1,1) = {"
 Gl
 Gl
 RT
@@ -2647,13 +2677,13 @@ RT
 RT
 RT
 RT
-bZ
-bZ
-bZ
-bZ
+Vt
+Vt
+Vt
+Vt
 Gl
 "}
-(9,1,1) = {"
+(10,1,1) = {"
 Gl
 RT
 RT
@@ -2673,14 +2703,14 @@ cN
 Zj
 RT
 RT
-bZ
-bZ
-bZ
-bZ
-bZ
-bZ
+Vt
+Vt
+Vt
+Vt
+Vt
+Vt
 "}
-(10,1,1) = {"
+(11,1,1) = {"
 RT
 RT
 RT
@@ -2700,14 +2730,14 @@ cN
 AJ
 RT
 RT
-bZ
-bZ
-bZ
-bZ
-bZ
-bZ
+Vt
+Vt
+Vt
+Vt
+Vt
+Vt
 "}
-(11,1,1) = {"
+(12,1,1) = {"
 RT
 RT
 RT
@@ -2727,14 +2757,14 @@ cN
 sA
 RT
 RT
-bZ
-bZ
-bZ
-bZ
-bZ
-bZ
+Vt
+Vt
+Vt
+Vt
+Vt
+Vt
 "}
-(12,1,1) = {"
+(13,1,1) = {"
 RT
 RT
 RT
@@ -2754,14 +2784,14 @@ ek
 BY
 RT
 RT
-bZ
-bZ
-bZ
-bZ
-bZ
-bZ
+Vt
+Vt
+Vt
+Vt
+Vt
+Vt
 "}
-(13,1,1) = {"
+(14,1,1) = {"
 RT
 RT
 RT
@@ -2781,14 +2811,14 @@ RN
 fo
 RT
 RT
-bZ
-bZ
-bZ
-bZ
-bZ
-bZ
+Vt
+Vt
+Vt
+Vt
+Vt
+Vt
 "}
-(14,1,1) = {"
+(15,1,1) = {"
 Gl
 RT
 RT
@@ -2809,13 +2839,13 @@ fo
 RT
 RT
 bZ
-bZ
-bZ
-bZ
-bZ
+Vt
+Vt
+Vt
+Vt
 Gl
 "}
-(15,1,1) = {"
+(16,1,1) = {"
 Gl
 Gl
 RT
@@ -2836,13 +2866,13 @@ fo
 RT
 RT
 bZ
-bZ
-bZ
-bZ
-bZ
+Vt
+Vt
+Vt
+Vt
 Gl
 "}
-(16,1,1) = {"
+(17,1,1) = {"
 Gl
 Gl
 RT
@@ -2863,13 +2893,13 @@ sA
 RT
 RT
 bZ
-bZ
-bZ
-bZ
-bZ
+Vt
+Vt
+Vt
+Vt
 Gl
 "}
-(17,1,1) = {"
+(18,1,1) = {"
 Gl
 Gl
 RT
@@ -2887,16 +2917,16 @@ oq
 hh
 ck
 ba
-sd
-bZ
-bZ
-bZ
-bZ
-bZ
+Cw
+Vt
+Vt
+Vt
+Vt
+Vt
 Gl
 Gl
 "}
-(18,1,1) = {"
+(19,1,1) = {"
 Gl
 Gl
 RT
@@ -2914,16 +2944,16 @@ cN
 cN
 cN
 cN
-bZ
-sd
-bZ
-bZ
-bZ
-bZ
+Vt
+Cw
+Vt
+Vt
+Vt
+Vt
 Gl
 Gl
 "}
-(19,1,1) = {"
+(20,1,1) = {"
 Gl
 Gl
 RT
@@ -2939,18 +2969,18 @@ ly
 PK
 jF
 mH
-bZ
-Qo
-bZ
-bZ
-sd
-Cw
+Vt
 IC
-bZ
+Vt
+Vt
+Cw
+VP
+gx
+Vt
 Gl
 Gl
 "}
-(20,1,1) = {"
+(21,1,1) = {"
 Gl
 Gl
 RT
@@ -2965,19 +2995,19 @@ RL
 cN
 Fq
 If
-bZ
-bZ
-lR
-sd
-bZ
+Vt
+Vt
+kp
 Cw
+Vt
 VP
-gx
+nq
+yt
 RT
 Gl
 Gl
 "}
-(21,1,1) = {"
+(22,1,1) = {"
 Gl
 RT
 RT
@@ -2991,11 +3021,11 @@ cN
 TB
 cN
 mH
-Qo
+IC
 RT
-bZ
-bZ
-bZ
+Vt
+Vt
+Vt
 cN
 cN
 cN
@@ -3004,7 +3034,7 @@ RT
 Gl
 Gl
 "}
-(22,1,1) = {"
+(23,1,1) = {"
 Gl
 RT
 RT
@@ -3017,12 +3047,12 @@ cN
 Ak
 xy
 Pu
-sd
-bZ
-RT
 Cw
-IC
-kp
+Vt
+RT
+VP
+gx
+xc
 cN
 Zk
 Ls
@@ -3031,7 +3061,7 @@ RT
 RT
 Gl
 "}
-(23,1,1) = {"
+(24,1,1) = {"
 Gl
 Gl
 RT
@@ -3044,12 +3074,12 @@ Lj
 Us
 sC
 cN
-bZ
+Vt
 RT
 RT
-Qo
-xc
-VP
+IC
+lR
+nq
 cN
 Zp
 bS
@@ -3058,7 +3088,7 @@ RT
 RT
 Gl
 "}
-(24,1,1) = {"
+(25,1,1) = {"
 Gl
 Gl
 RT
@@ -3071,10 +3101,10 @@ cN
 Ig
 nG
 cN
-bZ
+Vt
 RT
-bZ
-bZ
+Vt
+Vt
 cN
 cN
 cN
@@ -3085,7 +3115,7 @@ RT
 RT
 Gl
 "}
-(25,1,1) = {"
+(26,1,1) = {"
 Gl
 Gl
 RT
@@ -3098,10 +3128,10 @@ cN
 BD
 Ga
 cN
-Vt
+ul
+Cw
+Cw
 sd
-sd
-gs
 Eh
 hA
 yx
@@ -3112,7 +3142,7 @@ RT
 RT
 RT
 "}
-(26,1,1) = {"
+(27,1,1) = {"
 Gl
 Gl
 RT
@@ -3125,10 +3155,10 @@ cN
 cN
 Gi
 cN
-ul
-lR
-bZ
-bZ
+Jz
+kp
+Vt
+Vt
 cN
 gg
 Tg
@@ -3139,7 +3169,7 @@ RT
 RT
 RT
 "}
-(27,1,1) = {"
+(28,1,1) = {"
 Gl
 Gl
 RT
@@ -3152,42 +3182,15 @@ ss
 Og
 kU
 If
-gx
-bZ
-Qo
-bZ
+yt
+Vt
+IC
+Vt
 cN
 as
 Ik
 vO
 Xm
-iw
-RT
-RT
-RT
-"}
-(28,1,1) = {"
-Gl
-Gl
-Gl
-RT
-RT
-RT
-cN
-KB
-Qb
-hz
-cx
-uh
-yt
-qN
-IC
-bZ
-cN
-DB
-di
-TF
-uB
 iw
 RT
 RT
@@ -3200,22 +3203,22 @@ Gl
 RT
 RT
 RT
-RT
-wX
-Mr
-Dn
-lA
-If
+cN
+KB
+Qb
+hz
+cx
+uh
 oO
 mp
-Jz
-sd
+gx
+Vt
 cN
-cN
-cN
-cN
-cN
-cN
+DB
+di
+TF
+uB
+iw
 RT
 RT
 RT
@@ -3228,48 +3231,48 @@ RT
 RT
 RT
 RT
+wX
+Mr
+Dn
+lA
+If
+Qo
+ym
+gs
+Cw
+cN
+cN
+cN
+cN
+cN
+cN
+RT
+RT
+RT
+"}
+(31,1,1) = {"
+Gl
+Gl
+Gl
+RT
+RT
+RT
+RT
 RT
 RT
 RT
 RT
 cN
-Qo
-bZ
-bZ
-bZ
+IC
+Vt
+Vt
+Vt
 cN
 Yt
 mU
 cN
 cN
 AJ
-RT
-RT
-Gl
-"}
-(31,1,1) = {"
-Gl
-Gl
-RT
-RT
-RT
-RT
-RT
-RT
-RT
-RT
-RT
-RT
-bZ
-sd
-Cw
-VP
-EG
-Em
-GK
-cN
-AJ
-RT
 RT
 RT
 Gl
@@ -3284,13 +3287,40 @@ RT
 RT
 RT
 RT
-bZ
-bZ
-bZ
-lR
-Qo
-bZ
+RT
+RT
+RT
+Vt
+Cw
+VP
 nq
+EG
+Em
+GK
+cN
+AJ
+RT
+RT
+RT
+Gl
+"}
+(33,1,1) = {"
+Gl
+Gl
+RT
+RT
+RT
+RT
+RT
+RT
+RT
+Vt
+Vt
+Vt
+kp
+IC
+Vt
+qN
 cN
 Oz
 cN
@@ -3301,56 +3331,29 @@ RT
 RT
 Gl
 "}
-(33,1,1) = {"
-Gl
-Gl
-Gl
-RT
-RT
-RT
-bZ
-bZ
-bZ
-bZ
-ul
-bZ
-bZ
-bZ
-bZ
-RT
-RT
-RT
-RT
-RT
-RT
-RT
-Gl
-Gl
-Gl
-"}
 (34,1,1) = {"
 Gl
 Gl
 Gl
-Gl
-Gl
-Gl
-Gl
-bZ
-bZ
-bZ
-bZ
-bZ
-bZ
-bZ
-Gl
+RT
+RT
+RT
+Vt
+Vt
+Vt
+Vt
+Jz
+Vt
+Vt
+Vt
+Vt
 RT
 RT
 RT
 RT
 RT
 RT
-Gl
+RT
 Gl
 Gl
 Gl
@@ -3363,11 +3366,38 @@ Gl
 Gl
 Gl
 Gl
+Vt
+Vt
+Vt
+Vt
+Vt
+Vt
+Vt
 Gl
-bZ
-bZ
-bZ
-bZ
+RT
+RT
+RT
+RT
+RT
+RT
+Gl
+Gl
+Gl
+Gl
+"}
+(36,1,1) = {"
+Gl
+Gl
+Gl
+Gl
+Gl
+Gl
+Gl
+Gl
+Vt
+Vt
+Vt
+Vt
 Gl
 Gl
 Gl
