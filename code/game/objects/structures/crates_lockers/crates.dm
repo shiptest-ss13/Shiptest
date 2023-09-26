@@ -45,15 +45,10 @@
 		. += "manifest"
 
 /obj/structure/closet/crate/attack_hand(mob/user)
-	if(istype(src.loc, /obj/structure/crate_shelf))
+	if(istype(src.loc, /obj/structure/crate_shelf)) // If we're inside of a shelf, handle that first.
 		var/obj/structure/crate_shelf/shelf = src.loc
-		if(do_after(user, 20, target = src))
-			src.pixel_y = 0
-			src.layer = BELOW_OBJ_LAYER
-			src.forceMove(get_turf(user))
-			shelf.shelf_contents[shelf.shelf_contents.Find(src)] = null
-			shelf.handle_visuals()
-		return
+		shelf.unload(src, user)
+		return // Return early, we may not want to immediately open the crate.
 	if(manifest)
 		tear_manifest(user)
 	return ..()
