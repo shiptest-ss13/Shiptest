@@ -44,13 +44,18 @@
 	name = "Abandoned Waste Containment Vault"
 	icon_state = "disposal"
 
-/area/ruin/wasteplanet/wasteplanet_ship_graveyard/main
-	name = Abandoned Salvaging Post
+/area/ruin/wasteplanet/wasteplanet_graveyard
+	name = "Abandoned Scrapping Post"
+	icon_state = "disposal"
 
-/area/ruin/wasteplanet/wasteplanet_ship_graveyard/primary_ship
-	name = Scrapped Nanotrasen Carrier
+/area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship
+	name = "Scrapped Nanotrasen Carrier"
 	icon_state = "blue"
 
-/area/ruin/wasteplanet/wasteplanet_ship_graveyard/secondary_ship
-	name = "Scrapped Syndicate Hauler"
+/area/ruin/wasteplanet/wasteplanet_graveyard/syndicate_ship
+	name = "Scrapped Syndicate Haluer"
 	icon_state = "red"
+
+/area/ruin/wasteplanet/wasteplanet_graveyard/shippy
+	name = "Abandoned Dorm Ship"
+	icon_state = "green"
