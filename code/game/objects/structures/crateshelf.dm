@@ -1,6 +1,6 @@
-#define DEFAULT_SHELF_CAPACITY 3
-#define DEFAULT_SHELF_USE_DELAY 10
-#define DEFAULT_SHELF_VERTICAL_OFFSET 10
+#define DEFAULT_SHELF_CAPACITY 3 // Default capacity of the shelf
+#define DEFAULT_SHELF_USE_DELAY 10 // Default interaction delay of the shelf
+#define DEFAULT_SHELF_VERTICAL_OFFSET 10 // Vertical pixel offset of shelving-related things. Set to 10 by default due to this leaving more of the crate on-screen to be clicked.
 
 /obj/structure/crate_shelf
 	icon = 'icons/obj/objects.dmi'
@@ -57,7 +57,7 @@
 	return FALSE // If the do_after() is interrupted, return FALSE!
 
 /obj/structure/crate_shelf/proc/unload(obj/structure/closet/crate/crate, mob/user)
-	if(do_after(user, 20, target = crate))
+	if(do_after(user, use_delay, target = crate))
 		var/turf/unload_turf = get_turf(get_step(user, user.dir)) // We'll unload the crate onto the turf directly in front of the user
 		if(get_turf(src) == unload_turf)
 			return FALSE // If we're going to just drop it back onto the shelf, don't!
@@ -71,3 +71,8 @@
 		shelf_contents[shelf_contents.Find(crate)] = null // We do this instead of removing it from the list to preserve the order of the shelf
 		handle_visuals()
 		return TRUE
+
+/obj/item/rack_parts/shelf
+	name = "shelf parts"
+	desc = "Parts of a shelf."
+	construction_type = /obj/structure/crate_shelf
