@@ -45,12 +45,12 @@
 /obj/item/storage/bag/trash/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_w_class = WEIGHT_CLASS_SMALL
+	STR.max_w_class = WEIGHT_CLASS_NORMAL
 	STR.max_combined_w_class = 50
 	STR.max_items = 50
 	STR.set_holdable(null, list(/obj/item/disk/nuclear))
 	STR.limited_random_access = TRUE
-	STR.limited_random_access_stack_position = 5
+	STR.limited_random_access_stack_position = 3
 
 /obj/item/storage/bag/trash/update_icon_state()
 	switch(contents.len)
@@ -87,6 +87,7 @@
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_combined_w_class = 75
 	STR.max_items = 75
+	STR.max_w_class = WEIGHT_CLASS_BULKY
 
 /obj/item/storage/bag/trash/bluespace/cyborg
 	insertable = FALSE
