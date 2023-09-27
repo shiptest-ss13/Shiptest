@@ -190,15 +190,11 @@
 
 /obj/item/clothing/suit/hooded/wintercoat/solgov
 	name = "solgov winter coat"
-	desc = "An armored wintercoat in the colors of the IRMG, the zipper tab is the golden shield of the IRMG."
+	desc = "An environment-resistant wintercoat in the colors of the Solarian Confederation."
 	icon_state = "coatsolgov"
 	item_state = "coatsolgov"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 30, "acid" = 45)
 	hoodtype = /obj/item/clothing/head/hooded/winterhood/solgov
-
-/obj/item/clothing/suit/hooded/wintercoat/solgov/Initialize(mapload)
-	. = ..()
-	allowed += GLOB.security_wintercoat_allowed
 
 /obj/item/clothing/head/hooded/winterhood/solgov
 	icon_state = "winterhood_solgov"
