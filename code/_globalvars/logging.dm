@@ -49,6 +49,11 @@ GLOBAL_PROTECT(perf_log)
 GLOBAL_VAR(demo_log)
 GLOBAL_PROTECT(demo_log)
 
+#ifdef REFERENCE_DOING_IT_LIVE
+GLOBAL_VAR(harddel_log)
+GLOBAL_PROTECT(harddel_log)
+#endif
+
 GLOBAL_LIST_EMPTY(bombers)
 GLOBAL_PROTECT(bombers)
 GLOBAL_LIST_EMPTY(admin_log)

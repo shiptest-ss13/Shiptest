@@ -208,8 +208,6 @@
 		reagent_amount_holder += fuel_reagents[reagent]
 
 /obj/machinery/power/shuttle/engine/liquid/burn_engine(percentage = 100)
-	if(!(INITIALIZED_1 & flags_1))
-		CRASH("Attempted to fire an uninitialized liquid engine")
 	. = ..()
 	var/true_percentage = 1
 	for(var/reagent in fuel_reagents)
@@ -217,16 +215,12 @@
 	return thrust * true_percentage
 
 /obj/machinery/power/shuttle/engine/liquid/return_fuel()
-	if(!(INITIALIZED_1 & flags_1))
-		CRASH("Attempted to read the fuel value an uninitialized liquid engine")
 	var/true_percentage = INFINITY
 	for(var/reagent in fuel_reagents)
 		true_percentage = min(reagents?.get_reagent_amount(reagent) / fuel_reagents[reagent], true_percentage)
 	return reagent_amount_holder * true_percentage //Multiplies the total amount needed by the smallest percentage of any reagent in the recipe
 
 /obj/machinery/power/shuttle/engine/liquid/return_fuel_cap()
-	if(!(INITIALIZED_1 & flags_1))
-		CRASH("Attempted to read the fuel cap of an uninitialized liquid engine")
 	return reagents.maximum_volume
 
 /obj/machinery/power/shuttle/engine/liquid/oil

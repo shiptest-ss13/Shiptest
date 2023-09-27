@@ -1,7 +1,5 @@
 /datum/job/chaplain
 	name = "Chaplain"
-	total_positions = 1
-	spawn_positions = 1
 	wiki_page = "Chaplain" //WS Edit - Wikilinks/Warning
 
 	outfit = /datum/outfit/job/chaplain

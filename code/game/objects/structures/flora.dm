@@ -111,21 +111,23 @@
 	desc = "A remarkably tall tree."
 	icon_state = "pine_1"
 
-/obj/structure/flora/tree/dead/barren/Initialize()
-	. = ..()
-	icon_state = "pine_[rand(1, 2)]"
-
 /obj/structure/flora/tree/tall/whitesands
 	color = "#846996"
+	icon_state = "pine_1"
 
-/obj/structure/flora/tree/dead/barren/Initialize()
+/obj/structure/flora/tree/tall/whitesands/Initialize()
 	. = ..()
 	color = pick( "#846996", "#7b4e99", "#924fab")
+	icon_state = "pine_[rand(1, 2)]"
 
 /obj/structure/flora/tree/dead
 	icon = 'icons/obj/flora/deadtrees.dmi'
 	desc = "A dead tree. How it died, you know not."
 	icon_state = "tree_1"
+
+/obj/structure/flora/tree/dead/Initialize()
+	icon_state = "tree_[rand(1, 6)]"
+	. = ..()
 
 /obj/structure/flora/tree/palm
 	icon = 'icons/misc/beach2.dmi'
@@ -148,10 +150,6 @@
 	desc = "A true feat of strength, almost as good as last year."
 	icon_state = "anchored_rod"
 	anchored = TRUE
-
-/obj/structure/flora/tree/dead/Initialize()
-	icon_state = "tree_[rand(1, 6)]"
-	. = ..()
 
 /obj/structure/flora/tree/jungle
 	name = "tree"
@@ -417,7 +415,8 @@
 //and now these defines
 
 /obj/structure/flora/rock
-	icon_state = "basalt"
+	icon_state = "basalt1"
+	base_icon_state = "basalt"
 	desc = "A volcanic rock. Pioneers used to ride these babies for miles."
 	icon = 'icons/obj/flora/rocks.dmi'
 	resistance_flags = FIRE_PROOF
@@ -427,7 +426,7 @@
 
 /obj/structure/flora/rock/Initialize()
 	. = ..()
-	icon_state = "[icon_state][rand(1,3)]"
+	icon_state = "[base_icon_state][rand(1,3)]"
 
 /obj/structure/flora/rock/attackby(obj/item/W, mob/user, params)
 	if(mineResult && (!(flags_1 & NODECONSTRUCT_1)))
@@ -452,7 +451,8 @@
 			playsound(src.loc, 'sound/items/welder.ogg', 100, TRUE)
 
 /obj/structure/flora/rock/pile
-	icon_state = "lavarocks"
+	icon_state = "lavarocks1"
+	base_icon_state = "lavarocks"
 	desc = "A pile of rocks."
 
 //Jungle grass
@@ -474,14 +474,15 @@
 //Jungle rocks
 
 /obj/structure/flora/rock/jungle
-	icon_state = "rock"
+	icon_state = "rock1"
+	base_icon_state = "rock"
 	desc = "A pile of rocks."
 	icon = 'icons/obj/flora/jungleflora.dmi'
 	density = FALSE
 
 /obj/structure/flora/rock/jungle/Initialize()
 	. = ..()
-	icon_state = "[initial(icon_state)][rand(1,5)]"
+	icon_state = "[base_icon_state][rand(1,5)]"
 
 
 //Jungle bushes
@@ -491,16 +492,19 @@
 	desc = "A wild plant that is found in jungles."
 	icon = 'icons/obj/flora/jungleflora.dmi'
 	icon_state = "busha"
+	base_icon_state = "busha"
 
 /obj/structure/flora/junglebush/Initialize()
-	icon_state = "[icon_state][rand(1, 3)]"
+	icon_state = "[base_icon_state][rand(1, 3)]"
 	. = ..()
 
 /obj/structure/flora/junglebush/b
 	icon_state = "bushb"
+	base_icon_state = "bushb"
 
 /obj/structure/flora/junglebush/c
 	icon_state = "bushc"
+	base_icon_state = "bushc"
 
 /obj/structure/flora/junglebush/large
 	icon_state = "bush"
@@ -818,7 +822,8 @@
 	name = "lavatic rock"
 	desc = "A volcanic rock. Lava is gushing from it. "
 	icon = 'icons/obj/flora/lavarocks.dmi'
-	icon_state = "basalt"
+	icon_state = "basalt1"
+	base_icon_state = "basalt"
 	light_color = "#ab4907"
 	light_power = 3
 	light_range = 2
@@ -827,7 +832,8 @@
 	name = "rock shards"
 	desc = "Jagged shards of volcanic rock protuding from the ground."
 	icon = 'icons/obj/flora/lavarocks.dmi'
-	icon_state = "lavarocks"
+	icon_state = "lavarocks1"
+	base_icon_state = "lavarocks"
 	gender = PLURAL
 
 /obj/structure/flora/rock/asteroid
@@ -882,7 +888,7 @@
 	name = "maguaro cactus"
 	desc = "A hardy species of modified Saguaro cacti, originating from the Sol system. Initially planted on Mars to help prevent soil erosion, it can now be found on frigid tundras across known space."
 	icon = 'icons/obj/flora/bigtrees.dmi'
-	icon_state = "cactus"
+	icon_state = "cactus1"
 	density = TRUE
 
 /obj/structure/flora/tree/cactus/Initialize()
@@ -892,13 +898,15 @@
 /obj/structure/flora/rock/hell
 	name = "rock"
 	desc = "A volcanic rock, one of the few familiar things on this planet."
-	icon_state = "basalt"
+	icon_state = "basalt1"
+	base_icon_state = "basalt"
 	icon = 'icons/obj/flora/rocks.dmi'
 
 /obj/structure/flora/rock/beach
 	name = "sea stack"
 	desc = "A column of rock, formed by wave erosion."
-	icon_state = "basalt"
+	icon_state = "basalt1"
+	base_icon_state = "basalt"
 	icon = 'icons/obj/flora/rocks.dmi'
 
 /obj/structure/flora/tree/dead/barren
@@ -906,6 +914,7 @@
 	desc = "An ancient trunk, mummified by the passage of time. This one still has some purple to it."
 	color = "#846996"
 	icon = 'icons/obj/flora/barren_tree.dmi'
+	icon_state = "barren_large"
 
 /obj/structure/flora/tree/dead/barren/Initialize()
 	. = ..()
@@ -916,12 +925,13 @@
 	name = "driftwood"
 	desc = "Floatsam, jetsam, all molded down in the unforgiving sea."
 	icon = 'icons/obj/flora/grass-sticks.dmi'
-	icon_state = "stick"
+	icon_state = "stick2"
+	base_icon_state = "stick"
 	density = FALSE
 
 /obj/structure/flora/driftwood/Initialize()
 	. = ..()
-	icon_state = "[icon_state][rand(1, 4)]"
+	icon_state = "[base_icon_state][rand(1, 4)]"
 
 /obj/structure/flora/driftlog
 	name = "driftwood log"
@@ -932,27 +942,31 @@
 
 /obj/structure/flora/rock/rockplanet
 	name = "russet stone"
-	icon_state = "redrock"
+	icon_state = "redrock1"
+	base_icon_state = "redrock"
 	desc = "A raised knurl of red rock."
 	mineResult = /obj/item/stack/ore/glass/rockplanet
 
 /obj/structure/flora/rock/pile/rockplanet
 	name = "russet stones"
 	desc = "A pile of rust-red rocks."
-	icon_state = "redrocks"
+	icon_state = "redrocks1"
+	base_icon_state = "redrocks"
 	mineResult = /obj/item/stack/ore/glass/rockplanet
 
 /obj/structure/flora/grass/rockplanet
 	name = "cottongrass"
 	desc= "A variety of cold-loving prarie grass. This variety seems to thrive the frigid rockworld enviroment, so long as water can be found nearby."
 	icon = 'icons/obj/flora/grass-sticks.dmi'
-	icon_state = "tall_grass"
+	icon_state = "tall_grass_1"
+	base_icon_state = "tall_grass"
 
 /obj/structure/flora/grass/rockplanet/Initialize()
 	. = ..()
-	icon_state = "[icon_state]_[rand(1, 2)]"
+	icon_state = "[base_icon_state]_[rand(1, 2)]"
 
 /obj/structure/flora/grass/rockplanet/dead
 	name = "dry cottongrass"
 	desc= "This patch seems to have run dry on life-giving water."
-	icon_state = "dry_grass"
+	icon_state = "dry_grass_1"
+	base_icon_state = "dry_grass"

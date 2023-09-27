@@ -81,7 +81,7 @@
 		current_ship = null
 
 /obj/machinery/computer/helm/proc/cancel_jump()
-	priority_announce("Bluespace Pylon spooling down. Jump calibration aborted.", sender_override="[current_ship.name] Bluespace Pylon", zlevel=virtual_z())
+	priority_announce("Bluespace Pylon spooling down. Jump calibration aborted.", sender_override = "[current_ship.name] Bluespace Pylon", zlevel = virtual_z())
 	calibrating = FALSE
 	deltimer(jump_timer)
 
@@ -92,20 +92,20 @@
 			SStgui.close_uis(src)
 		if(JUMP_STATE_CHARGING)
 			jump_state = JUMP_STATE_IONIZING
-			priority_announce("Bluespace Jump Calibration completed. Ionizing Bluespace Pylon.", sender_override="[current_ship.name] Bluespace Pylon", zlevel=virtual_z())
+			priority_announce("Bluespace Jump Calibration completed. Ionizing Bluespace Pylon.", sender_override = "[current_ship.name] Bluespace Pylon", zlevel = virtual_z())
 		if(JUMP_STATE_IONIZING)
 			jump_state = JUMP_STATE_FIRING
-			priority_announce("Bluespace Ionization finalized; preparing to fire Bluespace Pylon.", sender_override="[current_ship.name] Bluespace Pylon", zlevel=virtual_z())
+			priority_announce("Bluespace Ionization finalized; preparing to fire Bluespace Pylon.", sender_override = "[current_ship.name] Bluespace Pylon", zlevel = virtual_z())
 		if(JUMP_STATE_FIRING)
 			jump_state = JUMP_STATE_FINALIZED
-			priority_announce("Bluespace Pylon launched.", sender_override="[current_ship.name] Bluespace Pylon", sound='sound/magic/lightning_chargeup.ogg', zlevel=virtual_z())
+			priority_announce("Bluespace Pylon launched.", sender_override = "[current_ship.name] Bluespace Pylon", sound = 'sound/magic/lightning_chargeup.ogg', zlevel = virtual_z())
 			addtimer(CALLBACK(src, .proc/do_jump), 10 SECONDS)
 			return
-	addtimer(CALLBACK(src, .proc/jump_sequence, TRUE), JUMP_CHARGE_DELAY)
+	jump_timer = addtimer(CALLBACK(src, .proc/jump_sequence, TRUE), JUMP_CHARGE_DELAY, TIMER_STOPPABLE)
 
 /obj/machinery/computer/helm/proc/do_jump()
-	priority_announce("Bluespace Jump Initiated.", sender_override="[current_ship.name] Bluespace Pylon", sound='sound/magic/lightningbolt.ogg', zlevel=virtual_z())
-	current_ship.shuttle_port.intoTheSunset()
+	priority_announce("Bluespace Jump Initiated.", sender_override = "[current_ship.name] Bluespace Pylon", sound = 'sound/magic/lightningbolt.ogg', zlevel = virtual_z())
+	qdel(current_ship)
 
 /obj/machinery/computer/helm/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
 	if(current_ship && current_ship != port.current_ship)
@@ -183,7 +183,7 @@
 
 		//Detect any ships in this location we can dock to
 		if(istype(object))
-			for(var/obj/docking_port/stationary/docking_port in object.shuttle_port.docking_points)
+			for(var/obj/docking_port/stationary/docking_port as anything in object.shuttle_port.docking_points)
 				if(current_ship.shuttle_port.check_dock(docking_port, silent = TRUE))
 					available_dock = TRUE
 					break
@@ -211,23 +211,27 @@
 	.["aiControls"] = allow_ai_control
 	.["burnDirection"] = current_ship.burn_direction
 	.["burnPercentage"] = current_ship.burn_percentage
-	for(var/obj/machinery/power/shuttle/engine/E as anything in current_ship.shuttle_port.engine_list)
+	for(var/datum/weakref/engine in current_ship.shuttle_port.engine_list)
+		var/obj/machinery/power/shuttle/engine/real_engine = engine.resolve()
+		if(!real_engine)
+			current_ship.shuttle_port.engine_list -= engine
+			continue
 		var/list/engine_data
-		if(!E.thruster_active)
+		if(!real_engine.thruster_active)
 			engine_data = list(
-				name = E.name,
+				name = real_engine.name,
 				fuel = 0,
 				maxFuel = 100,
-				enabled = E.enabled,
-				ref = REF(E)
+				enabled = real_engine.enabled,
+				ref = REF(engine)
 			)
 		else
 			engine_data = list(
-				name = E.name,
-				fuel = E.return_fuel(),
-				maxFuel = E.return_fuel_cap(),
-				enabled = E.enabled,
-				ref = REF(E)
+				name = real_engine.name,
+				fuel = real_engine.return_fuel(),
+				maxFuel = real_engine.return_fuel_cap(),
+				enabled = real_engine.enabled,
+				ref = REF(engine)
 			)
 		.["engineInfo"] += list(engine_data)
 
@@ -300,9 +304,13 @@
 				say(current_ship.Dock(to_act))
 				return
 			if("toggle_engine")
-				var/obj/machinery/power/shuttle/engine/E = locate(params["engine"]) in current_ship.shuttle_port.engine_list
-				E.enabled = !E.enabled
-				E.update_icon_state()
+				var/datum/weakref/engine = locate(params["engine"]) in current_ship.shuttle_port.engine_list
+				var/obj/machinery/power/shuttle/engine/real_engine = engine.resolve()
+				if(!real_engine)
+					current_ship.shuttle_port.engine_list -= engine
+					return
+				real_engine.enabled = !real_engine.enabled
+				real_engine.update_icon_state()
 				current_ship.refresh_engines()
 				return
 			if("change_burn_percentage")

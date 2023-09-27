@@ -43,7 +43,6 @@
 	return front_nodes + back_nodes + nodes
 
 /obj/machinery/atmospherics/pipe/layer_manifold/update_layer()
-	cut_overlays()
 	layer = initial(layer) + (PIPING_LAYER_MAX * PIPING_LAYER_LCHANGE)	//This is above everything else.
 
 /obj/machinery/atmospherics/pipe/layer_manifold/update_overlays()
@@ -107,7 +106,7 @@
 /obj/machinery/atmospherics/pipe/layer_manifold/setPipingLayer()
 	piping_layer = PIPING_LAYER_DEFAULT
 
-/obj/machinery/atmospherics/pipe/layer_manifold/pipeline_expansion()
+/obj/machinery/atmospherics/pipe/layer_manifold/pipeline_expansion(datum/pipeline/reference)
 	return get_all_connected_nodes()
 
 /obj/machinery/atmospherics/pipe/layer_manifold/disconnect(obj/machinery/atmospherics/reference)
