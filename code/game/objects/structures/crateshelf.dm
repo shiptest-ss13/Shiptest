@@ -26,6 +26,20 @@
 		overlays += image(icon = 'icons/obj/objects.dmi', icon_state = "shelf_stack", layer = stack_layer, pixel_y = stack_offset)
 	return
 
+/obj/structure/crate_shelf/Destroy()
+	var/turf/dump_turf = drop_location()
+	for(var/obj/structure/closet/crate/crate in shelf_contents)
+		crate.layer = BELOW_OBJ_LAYER // Reset the crates back to default visual state
+		crate.pixel_y = 0
+		crate.forceMove(dump_turf)
+		step_rand(crate) // Shuffle the crates around as though they've fallen down
+		crate.SpinAnimation(rand(4,7), 1)
+		if(prob(10))
+			if(crate.open()) // Break some open, cause a little chaos
+				crate.visible_message("<span class='warning'>The [crate]'s lid falls open!</span>")
+	shelf_contents.Cut()
+	return ..()
+
 /obj/structure/crate_shelf/MouseDrop_T(obj/structure/closet/crate/crate, mob/user)
 	if(!istype(crate, /obj/structure/closet/crate))
 		return
