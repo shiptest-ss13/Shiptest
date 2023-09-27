@@ -69,8 +69,11 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	///Whether or not we use stealthy audio levels for this item's attack sounds
 	var/stealthy_audio = FALSE
 
-	///How large is the object, used for stuff like whether it can fit in backpacks or not
+	/// Weight class for how much storage capacity it uses and how big it physically is meaning storages can't hold it if their maximum weight class isn't as high as it.
 	var/w_class = WEIGHT_CLASS_NORMAL
+	/// Volume override for the item, otherwise automatically calculated from w_class.
+	var/w_volume
+
 	///This is used to determine on which slots an item can fit.
 	var/slot_flags = 0
 	pass_flags = PASSTABLE
@@ -863,10 +866,14 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	. = ..()
 	remove_outline()
 
-/obj/item/MouseExited()
+/obj/item/MouseExited(location,control,params)
+	SEND_SIGNAL(src, COMSIG_ITEM_MOUSE_EXIT, location, control, params)
 	deltimer(tip_timer)//delete any in-progress timer if the mouse is moved off the item before it finishes
 	closeToolTip(usr)
 	remove_outline()
+
+/obj/item/MouseEntered(location,control,params)
+	SEND_SIGNAL(src, COMSIG_ITEM_MOUSE_ENTER, location, control, params)
 
 /obj/item/proc/apply_outline(colour = null)
 	if(!(item_flags & IN_INVENTORY || item_flags & IN_STORAGE) || QDELETED(src) || isobserver(usr))
@@ -985,6 +992,11 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 			appearance_flags &= ~NO_CLIENT_COLOR
 			dropped(M, FALSE)
 	return ..()
+
+/// Get an item's volume that it uses when being stored.
+/obj/item/proc/get_w_volume()
+	// if w_volume is 0 you fucked up.
+	return w_volume || AUTO_SCALE_VOLUME(w_class)
 
 /obj/item/proc/embedded(mob/living/carbon/human/embedded_mob)
 	return
