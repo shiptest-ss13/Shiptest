@@ -32,7 +32,7 @@
 		crate.layer = BELOW_OBJ_LAYER // Reset the crates back to default visual state
 		crate.pixel_y = 0
 		crate.forceMove(dump_turf)
-		step_rand(crate) // Shuffle the crates around as though they've fallen down
+		step(crate, pick(GLOB.alldirs)) // Shuffle the crates around as though they've fallen down
 		crate.SpinAnimation(rand(4,7), 1)
 		if(prob(10))
 			if(crate.open()) // Break some open, cause a little chaos
