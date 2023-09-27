@@ -13,7 +13,7 @@
 	if(docking_error)
 		return
 
-	if(!target_port)
+	if(!_target_port)
 		docking_error = "No target port specified!"
 		return
 	target_port = _target_port
@@ -22,12 +22,12 @@
 		return
 	target_port.current_docking_ticket = src
 
-	if(!issuer)
+	if(!_issuer)
 		docking_error = "No issuer overmap datum specified!"
 		return
 	issuer = _issuer
 
-	if(!target)
+	if(!_target)
 		docking_error = "No target overmap datum specified!"
 		return
 	target = _target
@@ -40,7 +40,9 @@
 /datum/docking_ticket/Destroy(force, ...)
 	if(target)
 		target.current_docking_ticket = null
+		target = null
 	if(target_port)
 		target_port.current_docking_ticket = null
+		target_port = null
 
 	return ..()
