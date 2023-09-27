@@ -812,8 +812,6 @@
 		if(COLLECT_ONE)
 			to_chat(user, "<span class='notice'>[parent] now picks up one item at a time.</span>")
 
-/**
-  * Gets our max volume
-  */
+//Gets our max volume
 /datum/component/storage/proc/get_max_volume()
 	return max_volume || AUTO_SCALE_STORAGE_VOLUME(max_w_class, max_combined_w_class)

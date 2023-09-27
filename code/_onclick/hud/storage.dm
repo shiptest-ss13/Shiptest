@@ -113,9 +113,8 @@
 /atom/movable/screen/storage/volumetric_box/center/proc/on_screen_objects()
 	return list(src)
 
-/**
-  * Sets the size of this box screen object and regenerates its left/right borders. This includes the actual border's size!
-  */
+
+//Sets the size of this box screen object and regenerates its left/right borders. This includes the actual border's size!
 /atom/movable/screen/storage/volumetric_box/center/proc/set_pixel_size(pixels)
 	if(pixel_size == pixels)
 		return

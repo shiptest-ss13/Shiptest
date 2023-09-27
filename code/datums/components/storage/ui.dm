@@ -1,6 +1,4 @@
-/**
-  * Generates a list of numbered_display datums for the numerical display system.
-  */
+// Generates a list of numbered_display datums for the numerical display system.
 /datum/component/storage/proc/_process_numerical_display()
 	. = list()
 	for(var/obj/item/I in accessible_items())
@@ -12,9 +10,7 @@
 			var/datum/numbered_display/ND = .[I.type]
 			ND.number++
 
-/**
-  * Orients all objects in legacy mode, and returns the objects to show to the user.
-  */
+// Orients all objects in legacy mode, and returns the objects to show to the user.
 /datum/component/storage/proc/orient2hud_legacy(mob/user, maxcolumns)
 	. = list()
 	var/list/accessible_contents = accessible_items()
@@ -75,9 +71,7 @@
 				if(cy - screen_start_y >= rows)
 					break
 
-/**
-  * Orients all objects in .. volumetric mode. Does not support numerical display!
-  */
+// Orients all objects in .. volumetric mode. Does not support numerical display!
 /datum/component/storage/proc/orient2hud_volumetric(mob/user, maxcolumns)
 	. = list()
 	var/atom/movable/screen/storage/left/ui_left
@@ -174,9 +168,8 @@
 	ui_close.screen_loc = "[screen_start_x + maxcolumns]:[screen_pixel_x],[screen_start_y]:[screen_pixel_y] to [screen_start_x + maxcolumns]:[screen_pixel_x],[screen_start_y + row - 1]:[screen_pixel_y]"
 	. += ui_close
 
-/**
-  * Shows our UI to a mob.
-  */
+
+// Shows our UI to a mob.
 /datum/component/storage/proc/ui_show(mob/M)
 	if(!M.client)
 		return FALSE
@@ -206,9 +199,7 @@
 		ui_by_mob[M] = objects
 	return TRUE
 
-/**
-  * VV hooked to ensure no lingering screen objects.
-  */
+// VV hooked to ensure no lingering screen objects.
 /datum/component/storage/vv_edit_var(var_name, var_value)
 	var/list/old
 	if(var_name == NAMEOF(src, storage_flags))
@@ -220,15 +211,11 @@
 		for(var/i in old)
 			ui_show(i)
 
-/**
-  * Proc triggered by signal to ensure logging out clients don't linger.
-  */
+// Proc triggered by signal to ensure logging out clients don't linger.
 /datum/component/storage/proc/on_logout(datum/source, client/C)
 	ui_hide(source)
 
-/**
-  * Hides our UI from a mob
-  */
+// Hides our UI from a mob
 /datum/component/storage/proc/ui_hide(mob/M)
 	if(!M.client)
 		return TRUE
@@ -241,33 +228,23 @@
 	LAZYREMOVE(is_using, M)
 	return TRUE
 
-/**
-  * Returns TRUE if we are using volumetric UI instead of box UI
-  */
+// Returns TRUE if we are using volumetric UI instead of box UI
 /datum/component/storage/proc/volumetric_ui()
 	var/atom/real_location = real_location()
 	return (storage_flags & STORAGE_LIMIT_VOLUME) && (length(real_location.contents) <= MAXIMUM_VOLUMETRIC_ITEMS) && !display_numerical_stacking
 
-/**
-  * Gets our ui_boxes, making it if it doesn't exist.
-  */
+// Gets our ui_boxes, making it if it doesn't exist.
 /datum/component/storage/proc/get_ui_boxes()
 	return new /atom/movable/screen/storage/boxes(null, src)
 
-/**
-  * Gets our ui_left, making it if it doesn't exist.
-  */
+// Gets our ui_left, making it if it doesn't exist.
 /datum/component/storage/proc/get_ui_left()
 	return new /atom/movable/screen/storage/left(null, src)
 
-/**
-  * Gets our ui_close, making it if it doesn't exist.
-  */
+// Gets our ui_close, making it if it doesn't exist.
 /datum/component/storage/proc/get_ui_close()
 	return new /atom/movable/screen/storage/close(null, src)
 
-/**
-  * Gets our ui_continuous, making it if it doesn't exist.
-  */
+// Gets our ui_continuous, making it if it doesn't exist.
 /datum/component/storage/proc/get_ui_continuous()
 	return new /atom/movable/screen/storage/continuous(null, src)
