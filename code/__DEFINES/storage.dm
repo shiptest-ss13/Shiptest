@@ -2,16 +2,16 @@
 
 // Storage limits. These can be combined (and usually are combined).
 /// Check max_items and contents.len when trying to insert
-#define STORAGE_LIMIT_MAX_ITEMS				(1<<0)
+#define STORAGE_LIMIT_MAX_ITEMS(1<<0)
 /// Check max_combined_w_class.
-#define STORAGE_LIMIT_COMBINED_W_CLASS		(1<<1)
+#define STORAGE_LIMIT_COMBINED_W_CLASS(1<<1)
 /// Use the new volume system. Will automatically force rendering to use the new volume/baystation scaling UI so this is kind of incompatible with stuff like stack storage etc etc.
-#define STORAGE_LIMIT_VOLUME				(1<<2)
+#define STORAGE_LIMIT_VOLUME(1<<2)
 /// Use max_w_class
-#define STORAGE_LIMIT_MAX_W_CLASS			(1<<3)
+#define STORAGE_LIMIT_MAX_W_CLASS(1<<3)
 
-#define STORAGE_FLAGS_LEGACY_DEFAULT		(STORAGE_LIMIT_MAX_ITEMS | STORAGE_LIMIT_COMBINED_W_CLASS | STORAGE_LIMIT_MAX_W_CLASS)
-#define STORAGE_FLAGS_VOLUME_DEFAULT		(STORAGE_LIMIT_VOLUME | STORAGE_LIMIT_MAX_W_CLASS)
+#define STORAGE_FLAGS_LEGACY_DEFAULT(STORAGE_LIMIT_MAX_ITEMS | STORAGE_LIMIT_COMBINED_W_CLASS | STORAGE_LIMIT_MAX_W_CLASS)
+#define STORAGE_FLAGS_VOLUME_DEFAULT(STORAGE_LIMIT_VOLUME | STORAGE_LIMIT_MAX_W_CLASS)
 
 // UI defines
 /// Size of volumetric box icon
@@ -29,15 +29,15 @@
 
 //ITEM INVENTORY WEIGHT, FOR w_class
 /// Usually items smaller then a human hand, ex: Playing Cards, Lighter, Scalpel, Coins/Money
-#define WEIGHT_CLASS_TINY     1
+#define WEIGHT_CLASS_TINY 1
 /// Fits within a small pocket, ex: Flashlight, Multitool, Grenades, GPS Device
-#define WEIGHT_CLASS_SMALL    2
+#define WEIGHT_CLASS_SMALL 2
 /// Fits within a small satchel, ex: Fire extinguisher, Stunbaton, Gas Mask, Metal Sheets
-#define WEIGHT_CLASS_NORMAL   3
+#define WEIGHT_CLASS_NORMAL 3
 /// Items that can be wielded or equipped, (e.g. defibrillator, backpack, space suits). (Often barely) fits inside backpacks and duffels.
-#define WEIGHT_CLASS_BULKY    4
+#define WEIGHT_CLASS_BULKY 4
 /// Usually represents objects that require two hands to operate, (e.g. shotgun, two-handed melee weapons) May fit on some inventory slots.
-#define WEIGHT_CLASS_HUGE     5
+#define WEIGHT_CLASS_HUGE 5
 /// Essentially means it cannot be picked up or placed in an inventory, ex: Mech Parts, Safe - Can not fit in Boh
 #define WEIGHT_CLASS_GIGANTIC 6
 
