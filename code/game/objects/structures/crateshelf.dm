@@ -36,7 +36,7 @@
 		crate.SpinAnimation(rand(4,7), 1)
 		if(prob(10))
 			if(crate.open()) // Break some open, cause a little chaos
-				crate.visible_message("<span class='warning'>The [crate]'s lid falls open!</span>")
+				crate.visible_message("<span class='warning'>[crate]'s lid falls open!</span>")
 	shelf_contents.Cut()
 	return ..()
 
