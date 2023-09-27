@@ -84,3 +84,4 @@
 	description = "A small encampment of nomadic survivors of the First Colony, and their descendants. By all accounts, feral and without allegance to anyone but themselves."
 	suffix = "whitesands_surface_camp_combination.dmm"
 	allow_duplicates = FALSE
+
