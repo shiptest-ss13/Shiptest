@@ -28,7 +28,7 @@
 		numbered_contents = _process_numerical_display()
 		adjusted_contents = numbered_contents.len
 
-	var/columns = limited_random_access_stack_position == 0 ? clamp(max_items, 1, maxcolumns ? maxcolumns : screen_max_columns) : limited_random_access_stack_position
+	var/columns = limited_random_access_stack_position == 0 ? clamp(max_items, 1, maxcolumns ? maxcolumns : screen_max_columns) : clamp(limited_random_access_stack_position, 1, maxcolumns ? maxcolumns : screen_max_columns)
 	var/rows = clamp(CEILING(adjusted_contents / columns, 1), 1, screen_max_rows)
 
 	// First, boxes.
