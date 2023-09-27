@@ -2,16 +2,16 @@
 
 // Storage limits. These can be combined (and usually are combined).
 /// Check max_items and contents.len when trying to insert
-#define STORAGE_LIMIT_MAX_ITEMS(1<<0)
+#define STORAGE_LIMIT_MAX_ITEMS (1<<0)
 /// Check max_combined_w_class.
-#define STORAGE_LIMIT_COMBINED_W_CLASS(1<<1)
+#define STORAGE_LIMIT_COMBINED_W_CLASS (1<<1)
 /// Use the new volume system. Will automatically force rendering to use the new volume/baystation scaling UI so this is kind of incompatible with stuff like stack storage etc etc.
-#define STORAGE_LIMIT_VOLUME(1<<2)
+#define STORAGE_LIMIT_VOLUME (1<<2)
 /// Use max_w_class
-#define STORAGE_LIMIT_MAX_W_CLASS(1<<3)
+#define STORAGE_LIMIT_MAX_W_CLASS (1<<3)
 
-#define STORAGE_FLAGS_LEGACY_DEFAULT(STORAGE_LIMIT_MAX_ITEMS | STORAGE_LIMIT_COMBINED_W_CLASS | STORAGE_LIMIT_MAX_W_CLASS)
-#define STORAGE_FLAGS_VOLUME_DEFAULT(STORAGE_LIMIT_VOLUME | STORAGE_LIMIT_MAX_W_CLASS)
+#define STORAGE_FLAGS_LEGACY_DEFAULT (STORAGE_LIMIT_MAX_ITEMS | STORAGE_LIMIT_COMBINED_W_CLASS | STORAGE_LIMIT_MAX_W_CLASS)
+#define STORAGE_FLAGS_VOLUME_DEFAULT (STORAGE_LIMIT_VOLUME | STORAGE_LIMIT_MAX_W_CLASS)
 
 // UI defines
 /// Size of volumetric box icon
