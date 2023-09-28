@@ -53,7 +53,7 @@
 	return load(crate, user)
 
 /obj/structure/crate_shelf/proc/handle_visuals()
-	vis_contents = contents
+	vis_contents = contents // It really do be that shrimple.
 	return
 
 /obj/structure/crate_shelf/proc/load(obj/structure/closet/crate/crate, mob/user)
@@ -73,12 +73,15 @@
 /obj/structure/crate_shelf/proc/unload(obj/structure/closet/crate/crate, mob/user)
 	if(do_after(user, use_delay, target = crate))
 		var/turf/unload_turf = get_turf(get_step(user, user.dir)) // We'll unload the crate onto the turf directly in front of the user.
-		if(get_turf(src) == unload_turf)
-			return FALSE // If we're going to just drop it back onto the shelf, don't!
-		if(!unload_turf.Adjacent(src))
+		if(get_turf(src) == unload_turf) // If we're going to just drop it back onto the shelf, don't!
+			balloon_alert(user, "no room!")
 			return FALSE
-		if(!unload_turf.Enter(crate, no_side_effects = TRUE))
-			return FALSE // If moving the crate from the shelf to the desired turf would bump, don't do it! Thanks Kapu1178 for the help here. - Generic DM
+		if(!unload_turf.Adjacent(src))
+			balloon_alert(user, "too far!")
+			return FALSE
+		if(!unload_turf.Enter(crate, no_side_effects = TRUE)) // If moving the crate from the shelf to the desired turf would bump, don't do it! Thanks Kapu1178 for the help here. - Generic DM
+			balloon_alert(user, "no room!")
+			return FALSE
 		crate.layer = BELOW_OBJ_LAYER // Reset the crate back to having the default layer, otherwise we might get strange interactions.
 		crate.pixel_y = 0 // Reset the crate back to having no offset, otherwise it will be floating.
 		crate.forceMove(unload_turf)
