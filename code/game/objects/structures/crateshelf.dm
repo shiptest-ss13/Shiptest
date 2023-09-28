@@ -3,6 +3,8 @@
 #define DEFAULT_SHELF_VERTICAL_OFFSET 10 // Vertical pixel offset of shelving-related things. Set to 10 by default due to this leaving more of the crate on-screen to be clicked.
 
 /obj/structure/crate_shelf
+	name = "crate shelf"
+	desc = "It's a shelf! For storing crates!"
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "shelf_base"
 	density = TRUE
@@ -40,6 +42,14 @@
 	shelf_contents.Cut()
 	return ..()
 
+/obj/structure/crate_shelf/examine(mob/user)
+	. = ..()
+	. += "<span class='notice'>There are some <b>bolts</b> holding [src] together.</span>"
+	if(contents.len)
+		. += "<span class='notice'>It contains:</span>"
+		for(var/obj/structure/closet/crate/crate in shelf_contents)
+			. += "	[icon2html(crate, user)] [crate]"
+
 /obj/structure/crate_shelf/MouseDrop_T(obj/structure/closet/crate/crate, mob/user)
 	if(!istype(crate, /obj/structure/closet/crate))
 		return FALSE // If it's not a crate, don't put it in!
@@ -50,7 +60,7 @@
 	if(crate.opened) // If the crate is open, try to close it.
 		if(!crate.close())
 			return FALSE // If we fail to close it, don't load it into the shelf.
-	return load(crate, user)
+	return load(crate, user) // Try to load the crate into the shelf.
 
 /obj/structure/crate_shelf/proc/handle_visuals()
 	vis_contents = contents // It really do be that shrimple.
@@ -71,17 +81,17 @@
 	return FALSE // If the do_after() is interrupted, return FALSE!
 
 /obj/structure/crate_shelf/proc/unload(obj/structure/closet/crate/crate, mob/user)
+	var/turf/unload_turf = get_turf(get_step(user, user.dir)) // We'll unload the crate onto the turf directly in front of the user.
+	if(get_turf(src) == unload_turf) // If we're going to just drop it back onto the shelf, don't!
+		balloon_alert(user, "no room!")
+		return FALSE
+	if(!unload_turf.Adjacent(src))
+		balloon_alert(user, "too far!")
+		return FALSE
+	if(!unload_turf.Enter(crate, no_side_effects = TRUE)) // If moving the crate from the shelf to the desired turf would bump, don't do it! Thanks Kapu1178 for the help here. - Generic DM
+		balloon_alert(user, "no room!")
+		return FALSE
 	if(do_after(user, use_delay, target = crate))
-		var/turf/unload_turf = get_turf(get_step(user, user.dir)) // We'll unload the crate onto the turf directly in front of the user.
-		if(get_turf(src) == unload_turf) // If we're going to just drop it back onto the shelf, don't!
-			balloon_alert(user, "no room!")
-			return FALSE
-		if(!unload_turf.Adjacent(src))
-			balloon_alert(user, "too far!")
-			return FALSE
-		if(!unload_turf.Enter(crate, no_side_effects = TRUE)) // If moving the crate from the shelf to the desired turf would bump, don't do it! Thanks Kapu1178 for the help here. - Generic DM
-			balloon_alert(user, "no room!")
-			return FALSE
 		crate.layer = BELOW_OBJ_LAYER // Reset the crate back to having the default layer, otherwise we might get strange interactions.
 		crate.pixel_y = 0 // Reset the crate back to having no offset, otherwise it will be floating.
 		crate.forceMove(unload_turf)
