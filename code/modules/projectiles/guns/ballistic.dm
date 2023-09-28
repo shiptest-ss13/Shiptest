@@ -238,7 +238,6 @@
 			to_chat(user, "<span class='warning'>Your reload was interupted!</span>")
 			return
 
-	else
 	user.put_in_hands(old_mag)
 	update_appearance()
 
