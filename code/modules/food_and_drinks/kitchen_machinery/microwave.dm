@@ -394,18 +394,19 @@
 	tocook = null
 
 /obj/item/ration_heater/proc/cook()
-	var/cookturf = get_turf(tocook)
-	tocook.visible_message("<span class='notice'>\The [src] lets out a final hiss...</span>")
-	playsound(tocook, 'sound/items/cig_snuff.ogg', 50, 1)
-	if(istype(tocook, /obj/item/reagent_containers/food) || istype(tocook, /obj/item/grown))
-		tocook.visible_message("<span class='notice'>\The [tocook] is done warming up!</span>")
-		tocook.microwave_act()
-		clear_cooking()
-	if(uses == 0)
-		qdel()
-	else
-		uses--
-		src.forceMove(cookturf)
+	if(!QDELETED(tocook))
+		var/cookturf = get_turf(tocook)
+		tocook.visible_message("<span class='notice'>\The [src] lets out a final hiss...</span>")
+		playsound(tocook, 'sound/items/cig_snuff.ogg', 50, 1)
+		if(istype(tocook, /obj/item/reagent_containers/food) || istype(tocook, /obj/item/grown))
+			tocook.visible_message("<span class='notice'>\The [tocook] is done warming up!</span>")
+			tocook.microwave_act()
+			clear_cooking()
+		if(uses == 0)
+			qdel()
+		else
+			uses--
+			src.forceMove(cookturf)
 
 /obj/item/ration_heater/examine(mob/user)
 	. = ..()
