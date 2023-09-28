@@ -19,7 +19,7 @@
 /// Size of EACH left/right border icon for volumetric boxes
 #define VOLUMETRIC_STORAGE_BOX_BORDER_SIZE 1
 /// Minimum pixels an item must have in volumetric scaled storage UI
-#define MINIMUM_PIXELS_PER_ITEM 16
+#define MINIMUM_PIXELS_PER_ITEM 8
 /// Maximum number of objects that will be allowed to be displayed using the volumetric display system. Arbitrary number to prevent server lockups.
 #define MAXIMUM_VOLUMETRIC_ITEMS 256
 /// How much padding to give between items
@@ -32,22 +32,22 @@
 #define WEIGHT_CLASS_TINY 1
 /// Fits within a small pocket, ex: Flashlight, Multitool, Grenades, GPS Device
 #define WEIGHT_CLASS_SMALL 2
-/// Fits within a small satchel, ex: Fire extinguisher, Stunbaton, Gas Mask, Metal Sheets
+/// Can be carried in one hand comfortably, ex: Fire extinguisher, Stunbaton, Gas Mask, Metal Sheets
 #define WEIGHT_CLASS_NORMAL 3
-/// Items that can be wielded or equipped, (e.g. defibrillator, backpack, space suits). (Often barely) fits inside backpacks and duffels.
+/// Items that can be wielded or equipped, (e.g. defibrillator, backpack, space suits). Often fits inside backpacks.
 #define WEIGHT_CLASS_BULKY 4
-/// Usually represents objects that require two hands to operate, (e.g. shotgun, two-handed melee weapons) May fit on some inventory slots.
+/// Usually represents objects that require two hands to operate, (e.g. shotgun, two-handed melee weapons) May fit on some inventory slots or huge storage objects(like duffel bags)
 #define WEIGHT_CLASS_HUGE 5
 /// Essentially means it cannot be picked up or placed in an inventory, ex: Mech Parts, Safe - Can not fit in Boh
 #define WEIGHT_CLASS_GIGANTIC 6
 
 // PLEASE KEEP ALL VOLUME DEFINES IN THIS FILE, it's going to be hell to keep track of them later.
-#define DEFAULT_VOLUME_TINY 2
-#define DEFAULT_VOLUME_SMALL 3
-#define DEFAULT_VOLUME_NORMAL 4
-#define DEFAULT_VOLUME_BULKY 8
-#define DEFAULT_VOLUME_HUGE 16
-#define DEFAULT_VOLUME_GIGANTIC 32
+#define DEFAULT_VOLUME_TINY 1
+#define DEFAULT_VOLUME_SMALL 2
+#define DEFAULT_VOLUME_NORMAL 6
+#define DEFAULT_VOLUME_BULKY 12
+#define DEFAULT_VOLUME_HUGE 24
+#define DEFAULT_VOLUME_GIGANTIC 48
 
 GLOBAL_LIST_INIT(default_weight_class_to_volume, list(
 	"[WEIGHT_CLASS_TINY]" = DEFAULT_VOLUME_TINY,
@@ -67,19 +67,20 @@ GLOBAL_LIST_INIT(default_weight_class_to_volume, list(
 
 // volume amount for items
 #define ITEM_VOLUME_DISK DEFAULT_VOLUME_TINY
-#define ITEM_VOLUME_MOB 45//just over half of a duffelbag. Prevents mob_holder stacking in volumetric
+#define ITEM_VOLUME_CONTAINER_M 12 //makes nested toolboxes & toolbelts less efficient
+#define ITEM_VOLUME_MOB 40//Just over half a duffel, prevents mob stacking
 
 // #define SAMPLE_VOLUME_AMOUNT 2
 
 // max_weight_class for storages
 //
-#define MAX_WEIGHT_CLASS_S_CONTAINER WEIGHT_CLASS_SMALL
 #define MAX_WEIGHT_CLASS_M_CONTAINER WEIGHT_CLASS_NORMAL
 #define MAX_WEIGHT_CLASS_BACKPACK WEIGHT_CLASS_BULKY
+#define MAX_WEIGHT_CLASS_DUFFEL WEIGHT_CLASS_HUGE
 
 // max_volume for storages
-#define STORAGE_VOLUME_CONTAINER_M (DEFAULT_VOLUME_NORMAL * 2)
-#define STORAGE_VOLUME_SATCHEL (DEFAULT_VOLUME_NORMAL * 6)
-#define STORAGE_VOLUME_BACKPACK (DEFAULT_VOLUME_NORMAL * 7)
-#define STORAGE_VOLUME_DUFFLEBAG (DEFAULT_VOLUME_NORMAL * 10)
-#define STORAGE_VOLUME_BAG_OF_HOLDING (DEFAULT_VOLUME_NORMAL * 20)
+#define STORAGE_VOLUME_CONTAINER_M (DEFAULT_VOLUME_NORMAL * 8) //4 small items
+#define STORAGE_VOLUME_SATCHEL (DEFAULT_VOLUME_NORMAL * 24) //4 normal items
+#define STORAGE_VOLUME_BACKPACK (DEFAULT_VOLUME_NORMAL * 36) //6 normal items, or 3 bulky items
+#define STORAGE_VOLUME_DUFFLEBAG (DEFAULT_VOLUME_NORMAL * 72) // 3 huge items, or 6 bulky items
+#define STORAGE_VOLUME_BAG_OF_HOLDING (DEFAULT_VOLUME_NORMAL 54) //1.5X backpack

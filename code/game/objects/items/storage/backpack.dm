@@ -443,11 +443,13 @@
 	item_state = "duffel"
 	slowdown = 1
 	greyscale_colors = list(list(21, 11), list(14, 19), list(15, 16))
+	w_class = WEIGHT_CLASS_HUGE
 
 /obj/item/storage/backpack/duffelbag/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_volume = STORAGE_VOLUME_DUFFLEBAG
+	STR.max_w_class = MAX_WEIGHT_CLASS_DUFFEL
 	LAZYINITLIST(STR.exception_hold) // This code allows you to fit one mob holder into a duffel bag
 	STR.exception_hold += typecacheof(/obj/item/clothing/head/mob_holder)
 
