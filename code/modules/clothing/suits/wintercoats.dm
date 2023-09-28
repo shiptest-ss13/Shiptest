@@ -185,3 +185,17 @@
 /obj/item/clothing/head/hooded/winterhood/centcom
 	icon_state = "winterhood_centcom"
 	armor = list("melee" = 35, "bullet" = 40, "laser" = 40, "energy" = 50, "bomb" = 35, "bio" = 10, "rad" = 10, "fire" = 10, "acid" = 60)
+
+// SolGov
+
+/obj/item/clothing/suit/hooded/wintercoat/solgov
+	name = "solgov winter coat"
+	desc = "An environment-resistant wintercoat in the colors of the Solarian Confederation."
+	icon_state = "coatsolgov"
+	item_state = "coatsolgov"
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 30, "acid" = 45)
+	hoodtype = /obj/item/clothing/head/hooded/winterhood/solgov
+
+/obj/item/clothing/head/hooded/winterhood/solgov
+	icon_state = "winterhood_solgov"
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 30, "acid" = 45)
