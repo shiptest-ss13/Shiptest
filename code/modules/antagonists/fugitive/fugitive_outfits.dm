@@ -152,7 +152,3 @@
 	ears = /obj/item/radio/headset
 	id = /obj/item/card/id
 	r_hand = /obj/item/storage/firstaid/regular
-
-	backpack_contents = list(
-		/obj/item/bountytrap = 4
-		)
