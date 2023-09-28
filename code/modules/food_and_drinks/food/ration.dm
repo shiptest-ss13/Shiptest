@@ -88,7 +88,7 @@
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list()
 
-/obj/item/reagent_containers/food/snacks/ration/attack(mob/living/M, mob/user, def_zone)
+/obj/item/reagent_containers/food/snacks/ration/condiment/attack(mob/living/M, mob/user, def_zone)
 	if (!is_drainable())
 		to_chat(user, "<span class='warning'>[src] is sealed shut!</span>")
 		return 0
@@ -121,7 +121,7 @@
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list()
 
-/obj/item/reagent_containers/food/snacks/ration/attack(mob/living/M, mob/user, def_zone)
+/obj/item/reagent_containers/food/snacks/ration/pack/attack(mob/living/M, mob/user, def_zone)
 	if (!is_drainable())
 		to_chat(user, "<span class='warning'>[src] is sealed shut!</span>")
 		return 0

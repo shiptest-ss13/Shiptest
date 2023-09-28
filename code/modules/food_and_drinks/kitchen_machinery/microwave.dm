@@ -391,6 +391,7 @@
 	SIGNAL_HANDLER
 	UnregisterSignal(tocook, COMSIG_PARENT_QDELETING)
 	tocook.cut_overlay(ration_overlay)
+	tocook = null
 
 /obj/item/ration_heater/proc/cook()
 	var/cookturf = get_turf(tocook)
@@ -398,8 +399,8 @@
 	playsound(tocook, 'sound/items/cig_snuff.ogg', 50, 1)
 	if(istype(tocook, /obj/item/reagent_containers/food) || istype(tocook, /obj/item/grown))
 		tocook.visible_message("<span class='notice'>\The [tocook] is done warming up!</span>")
-		clear_cooking()
 		tocook.microwave_act()
+		clear_cooking()
 	if(uses == 0)
 		qdel()
 	else
