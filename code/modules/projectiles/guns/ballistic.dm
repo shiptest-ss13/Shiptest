@@ -223,23 +223,23 @@
 		playsound(src, eject_empty_sound, eject_sound_volume, eject_sound_vary)
 	magazine.forceMove(drop_location())
 	var/obj/item/ammo_box/magazine/old_mag = magazine
+	old_mag.update_appearance()
+	magazine = null
+	if (display_message)
+		to_chat(user, "<span class='notice'>You pull the [magazine_wording] out of \the [src].</span>")
+	update_appearance()
 	if (tac_load)
 		if(do_after(user, tactical_reload_delay, TRUE, src))
 			if (insert_magazine(user, tac_load, FALSE))
 				to_chat(user, "<span class='notice'>You perform a tactical reload on \the [src].</span>")
 			else
 				to_chat(user, "<span class='warning'>You dropped the old [magazine_wording], but the new one doesn't fit. How embarassing.</span>")
-				magazine = null
 		else
 			to_chat(user, "<span class='warning'>Your reload was interupted!</span>")
 			return
 
 	else
-		magazine = null
 	user.put_in_hands(old_mag)
-	old_mag.update_appearance()
-	if (display_message)
-		to_chat(user, "<span class='notice'>You pull the [magazine_wording] out of \the [src].</span>")
 	update_appearance()
 
 /obj/item/gun/ballistic/can_shoot()

@@ -10,6 +10,7 @@
 	eject_empty_sound = 'sound/weapons/gun/rifle/ar_unload.ogg'
 
 	rack_sound = 'sound/weapons/gun/rifle/ar_cock.ogg'
+	spread_unwielded = 20
 
 /obj/item/gun/ballistic/automatic/assault/ak47
 	name = "\improper SVG-67"

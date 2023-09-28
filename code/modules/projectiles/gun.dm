@@ -219,8 +219,9 @@
 
 /obj/item/gun/proc/shoot_live_shot(mob/living/user, pointblank = 0, atom/pbtarget = null, message = 1)
 	var/actual_angle = get_angle_with_scatter((user || get_turf(src)), pbtarget, rand(-recoil_deviation, recoil_deviation) + 180)
+	var/muzzle_angle = Get_Angle(get_turf(src), pbtarget)
 	if(muzzle_flash && !muzzle_flash.applied)
-		handle_muzzle_flash(user, actual_angle)
+		handle_muzzle_flash(user, muzzle_angle)
 
 	if(wielded_fully && recoil)
 		simulate_recoil(user, recoil, actual_angle)
