@@ -2557,6 +2557,11 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/maintenance/external)
 "qM" = (
+/obj/machinery/light/floor,
+/obj/structure/sign/solgov_seal{
+	pixel_y = 0;
+	pixel_x = 28
+	},
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "qP" = (
@@ -3945,13 +3950,16 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/dorm)
 "zp" = (
-/obj/machinery/portable_atmospherics/scrubber,
 /obj/effect/turf_decal/techfloor/orange,
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
 /obj/machinery/light/directional/south,
+/obj/machinery/telecomms/relay{
+	network = "SolNet";
+	autolinkers = list("SolHub")
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/port)
 "zs" = (
