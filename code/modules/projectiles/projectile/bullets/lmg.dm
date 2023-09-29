@@ -54,18 +54,18 @@
 	damage = 20
 	armour_penetration = 20
 
-// 7.12x82mm (SAW)
+// 7.12x82mm (L6 SAW)
 
 /obj/projectile/bullet/mm712x82
 	name = "7.12x82mm bullet"
 	damage = 25
 	armour_penetration = 40
 
-/obj/projectile/bullet/mm712x82_ap
+/obj/projectile/bullet/mm712x82/ap
 	name = "7.12x82mm armor-piercing bullet"
 	armour_penetration = 75
 
-/obj/projectile/bullet/mm712x82_hp
+/obj/projectile/bullet/mm712x82/hp
 	name = "7.12x82mm hollow point bullet"
 	damage = 45
 	armour_penetration = -20
@@ -76,12 +76,11 @@
 	armour_penetration = 40
 	fire_stacks = 3
 
-/obj/projectile/bullet/mm712x82_match
+/obj/projectile/bullet/mm712x82/match
 	name = "7.12x82mm match bullet"
-	damage = 25
-	armour_penetration = 40
+	speed = 0.3
+	armour_penetration = 50
 	ricochets_max = 2
 	ricochet_chance = 60
 	ricochet_auto_aim_range = 4
 	ricochet_incidence_leeway = 35
-
