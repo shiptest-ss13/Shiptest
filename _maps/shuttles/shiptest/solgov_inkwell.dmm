@@ -98,6 +98,22 @@
 	},
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/dorm/dormthree)
+"bn" = (
+/obj/structure/fluff/hedge/opaque,
+/obj/effect/turf_decal/siding/wood{
+	color = "#543c30"
+	},
+/obj/machinery/button/door{
+	dir = 8;
+	id = "sgi_captain";
+	name = "bolt control";
+	pixel_x = 20;
+	pixel_y = 6;
+	specialfunctions = 4;
+	normaldoorcontrol = 1
+	},
+/turf/open/floor/wood/walnut,
+/area/ship/crew/dorm/dormtwo)
 "br" = (
 /obj/effect/turf_decal/corner/opaque/solgovblue{
 	dir = 8
@@ -388,7 +404,8 @@
 /obj/machinery/door/airlock/solgov{
 	dir = 4;
 	req_one_access = list(20);
-	name = "Captain's Quarters"
+	name = "Captain's Quarters";
+	id_tag = "sgi_captain"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/dorm/dormtwo)
@@ -565,6 +582,22 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/starboard)
+"eB" = (
+/obj/structure/curtain,
+/obj/machinery/shower{
+	dir = 1
+	},
+/obj/machinery/button/door{
+	dir = 4;
+	id = "sgi_bolt";
+	name = "bathroom lock";
+	pixel_x = -20;
+	pixel_y = 7;
+	normaldoorcontrol = 1;
+	specialfunctions = 4
+	},
+/turf/open/floor/plasteel/freezer,
+/area/ship/crew/toilet)
 "eD" = (
 /obj/machinery/autolathe,
 /obj/effect/turf_decal/industrial/outline/yellow,
@@ -948,7 +981,7 @@
 	},
 /obj/item/paper_bin,
 /obj/item/pen/solgov,
-/obj/machinery/firealarm/directional/north,
+/obj/machinery/light/directional/north,
 /turf/open/floor/carpet/blue,
 /area/ship/crew/office)
 "hw" = (
@@ -1052,6 +1085,7 @@
 	pixel_x = 4;
 	pixel_y = -4
 	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/white,
 /area/ship/cargo/office)
 "ic" = (
@@ -1190,8 +1224,8 @@
 	pixel_y = -21;
 	pixel_x = -8;
 	dir = 1;
-	id = "sgi_captain";
-	name = "captain shutters control"
+	id = "sgi_dorms";
+	name = "dorms shutters control"
 	},
 /obj/item/clothing/suit/hooded/wintercoat/solgov,
 /obj/item/clothing/suit/hooded/wintercoat/solgov,
@@ -1223,15 +1257,6 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
-"ja" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced/fulltile/shuttle,
-/obj/machinery/door/poddoor/shutters{
-	dir = 1;
-	id = "sgi_dorms"
-	},
-/turf/open/floor/plating,
-/area/ship/bridge)
 "jc" = (
 /obj/structure/chair/wood,
 /obj/effect/turf_decal/siding/wood/end{
@@ -1273,7 +1298,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
-/obj/structure/extinguisher_cabinet/directional/south,
+/obj/machinery/firealarm/directional/south,
 /turf/open/floor/wood,
 /area/ship/crew/office)
 "jv" = (
@@ -1736,7 +1761,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/obj/machinery/door/airlock/mining/glass{
+/obj/machinery/door/airlock/mining{
 	dir = 4;
 	name = "Field Engineer Locker Room";
 	req_one_access = list(10,31)
@@ -2452,6 +2477,7 @@
 /obj/item/clothing/glasses/meson/prescription,
 /obj/item/kitchen/knife/letter_opener,
 /obj/item/clothing/glasses/meson,
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/white,
 /area/ship/cargo/office)
 "rQ" = (
@@ -3652,7 +3678,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/obj/machinery/door/airlock/mining/glass{
+/obj/machinery/door/airlock/mining{
 	dir = 4;
 	name = "Field Engineer Locker Room";
 	req_one_access = list(10,31)
@@ -3841,7 +3867,8 @@
 /obj/machinery/door/airlock/solgov{
 	dir = 4;
 	name = "Logistics Deck Officer's Quarters";
-	req_one_access = list(41)
+	req_one_access = list(41);
+	id_tag = "sgi_quartermaster"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/dorm/dormthree)
@@ -4227,7 +4254,7 @@
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/machinery/door/poddoor/shutters{
 	dir = 1;
-	id = "sgi_bridge"
+	id = "sgi_dorms"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/dorm)
@@ -5633,7 +5660,7 @@
 	dir = 4;
 	pixel_y = -2;
 	pixel_x = -18;
-	id = "sgi_holocargo2"
+	id = "sgi_holocargo1"
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
@@ -5796,7 +5823,7 @@
 	pixel_y = -23;
 	pixel_x = -4;
 	dir = 1;
-	id = "sg_par_engine";
+	id = "sgi_engine";
 	name = "Engine Blast Door Control"
 	},
 /obj/structure/cable{
@@ -6520,6 +6547,11 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
+/obj/machinery/door/airlock{
+	dir = 4;
+	name = "Bathroom";
+	id_tag = "sgi_bolt"
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/dorm)
 "Wc" = (
@@ -6778,7 +6810,7 @@
 /obj/machinery/button/door{
 	pixel_y = 24;
 	pixel_x = -4;
-	id = "sg_par_engine";
+	id = "sgi_engine";
 	name = "engine blast door control"
 	},
 /turf/open/floor/plasteel/tech,
@@ -7072,6 +7104,23 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/maintenance/port)
+"ZS" = (
+/obj/structure/fluff/hedge/opaque,
+/obj/effect/turf_decal/siding/wood{
+	color = "#D5A66E";
+	dir = 1
+	},
+/obj/machinery/button/door{
+	dir = 8;
+	id = "sgi_quartermaster";
+	name = "bolt control";
+	pixel_x = 20;
+	pixel_y = -6;
+	specialfunctions = 4;
+	normaldoorcontrol = 1
+	},
+/turf/open/floor/wood/birch,
+/area/ship/crew/dorm/dormthree)
 "ZV" = (
 /obj/effect/turf_decal/solgov/all/center_right,
 /obj/effect/turf_decal/industrial/warning{
@@ -7949,7 +7998,7 @@ BW
 xh
 zc
 bh
-lB
+ZS
 xC
 pG
 gS
@@ -7957,7 +8006,7 @@ zc
 hg
 vz
 TM
-tD
+bn
 sQ
 dw
 zd
@@ -8214,7 +8263,7 @@ iG
 DS
 AQ
 ny
-cH
+eB
 DS
 gn
 gn
@@ -8255,7 +8304,7 @@ iG
 iG
 iG
 nR
-ja
+yB
 Vl
 Vo
 ct
