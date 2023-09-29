@@ -67,3 +67,9 @@
 	description = "A military base formerly used for staging 4 mechs and crew. God knows what's in it now."
 	id = "abandoned_mechbay"
 	suffix = "wasteplanet_abandoned_mechbay.dmm"
+
+/datum/map_template/ruin/wasteplanet/Ship_graveyard
+	name = "Ship Graveyard"
+	description = "A abandoned scrapyard. Still, some remain, looking to make a life for themselves in the hulking wrecks"
+	id = "ship_graveyard"
+	suffix = "wasteplanet_ship_graveyard.dmm"
