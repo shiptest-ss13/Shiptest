@@ -22,6 +22,7 @@
 	recoil_unwielded = 1
 	semi_auto = FALSE
 	bolt_wording = "hammer"
+	wield_slowdown = 0.3
 
 
 /obj/item/gun/ballistic/revolver/attack_hand(mob/user)
@@ -208,7 +209,7 @@
 	icon_state = "hunting"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570
 	fire_sound = 'sound/weapons/gun/revolver/shot_hunting.ogg'
-	wield_slowdown = 0.1
+	wield_slowdown = 0.5
 	spread_unwielded = 5
 	spread = 2
 	recoil = 2

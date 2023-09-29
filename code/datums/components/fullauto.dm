@@ -259,6 +259,9 @@
 	SIGNAL_HANDLER
 	if(semicd || shooter.incapacitated())
 		return NONE
+	if(weapon_weight == WEAPON_HEAVY && (!wielded))
+		to_chat(shooter, "<span class='warning'>You need a more secure grip to fire [src]!</span>")
+		return NONE
 	if(!can_shoot())
 		shoot_with_empty_chamber(shooter)
 		return NONE

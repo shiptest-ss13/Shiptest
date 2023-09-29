@@ -22,6 +22,7 @@
 	. = ..()
 	gun = new(src)
 	battery = new(src)
+	gun.cell = battery
 	START_PROCESSING(SSobj, src)
 
 /obj/item/minigunpack/Destroy()
@@ -120,7 +121,7 @@
 
 	ammo_pack = loc
 	AddElement(/datum/element/update_icon_blocker)
-	AddComponent(/datum/component/automatic_fire, 0.2 SECONDS)
+	AddComponent(/datum/component/automatic_fire, 0.15 SECONDS)
 	return ..()
 
 /obj/item/gun/energy/minigun/Destroy()

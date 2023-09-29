@@ -1,5 +1,5 @@
 /obj/item/gun/ballistic/automatic/pistol
-	name = "stechkin pistol"
+	name = "Stechkin"
 	desc = "A small, easily concealable 10mm handgun that bears Scarborough Arms stamps. Has a threaded barrel for suppressors."
 	icon_state = "pistol"
 	w_class = WEIGHT_CLASS_SMALL
@@ -28,6 +28,7 @@
 	wield_delay = 0.2 SECONDS
 	spread = -2
 	spread_unwielded = 4
+	wield_slowdown = 0.15
 
 /obj/item/gun/ballistic/automatic/pistol/no_mag
 	spawnwithmagazine = FALSE
@@ -301,7 +302,7 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/derr357
 
 /obj/item/gun/ballistic/automatic/pistol/himehabu
-	name = "\improper SA Himehabu"
+	name = "\improper Himehabu"
 	desc = "A very small .22 LR pistol, so small even it could fit in your boot. The long awaited successor to the Stechkin. A favorite among syndicate spies. Chambered in .22 LR."
 	icon_state = "himehabu"
 	w_class = WEIGHT_CLASS_TINY

@@ -2,6 +2,8 @@
 	burst_size = 1
 	actions_types = list()
 	wield_delay = 0.7 SECONDS
+	wield_slowdown = 0.6
+
 	fire_delay = 1
 
 	load_sound = 'sound/weapons/gun/rifle/ar_reload.ogg'
@@ -161,7 +163,6 @@
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 	spread = 8
 	spread_unwielded = 15
-	wield_slowdown = 0.45
 
 /obj/item/gun/ballistic/automatic/assault/swiss_cheese/ComponentInitialize()
 	. = ..()

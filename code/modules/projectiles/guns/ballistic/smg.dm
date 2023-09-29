@@ -4,7 +4,7 @@
 	fire_delay = 1
 	spread = 4
 	spread_unwielded = 10
-	wield_slowdown = 0.15
+	wield_slowdown = 0.35
 	recoil_unwielded = 0.5
 
 	load_sound = 'sound/weapons/gun/smg/smg_reload.ogg'
@@ -66,6 +66,7 @@
 	desc = "An extreme modification of an obsolete assault rifle, converted into a compact submachine gun by IRMG. Chambered in 10mm."
 	icon_state = "inteqsmg"
 	item_state = "inteqsmg"
+	fire_sound = 'sound/weapons/gun/smg/vector_fire.ogg'
 	mag_type = /obj/item/ammo_box/magazine/smgm10mm
 	can_bayonet = FALSE
 	can_flashlight = TRUE
@@ -118,7 +119,7 @@
 
 	spread = 4
 	spread_unwielded = 8
-	wield_slowdown = 0.15
+	wield_slowdown = 0.25
 	wield_delay = 0.2 SECONDS
 
 /obj/item/gun/ballistic/automatic/smg/mini_uzi/ComponentInitialize()
@@ -130,7 +131,7 @@
 	desc = "A police carbine based on a pre-Night of Fire SMG design. Most of the complex workings have been removed for reliability. Chambered in 9mm."
 	icon_state = "vector"
 	item_state = "vector"
-	mag_type = /obj/item/ammo_box/magazine/smgm9mm/rubber //you guys remember when the autorifle was chambered in 9mm
+	mag_type = /obj/item/ammo_box/magazine/smgm9mm //you guys remember when the autorifle was chambered in 9mm
 	bolt_type = BOLT_TYPE_LOCKING
 	mag_display = TRUE
 	weapon_weight = WEAPON_LIGHT
@@ -158,7 +159,7 @@
 
 	spread = 1
 	spread_unwielded = 8
-	wield_slowdown = 0.2
+	wield_slowdown = 0.4
 
 /obj/item/gun/ballistic/automatic/smg/m90/Initialize()
 	. = ..()
@@ -230,6 +231,7 @@
 	actions_types = list()
 	fire_delay = 1
 	bolt_type = BOLT_TYPE_OPEN
+	wield_slowdown = 0.4
 
 /obj/item/gun/ballistic/automatic/smg/thompson/Initialize()
 	. = ..()

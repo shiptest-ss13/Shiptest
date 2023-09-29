@@ -27,7 +27,7 @@
 	fire_delay = 7
 	pb_knockback = 2
 
-	wield_slowdown = 0.35
+	wield_slowdown = 0.45
 	wield_delay = 0.6 SECONDS //Shotguns are really easy to put up to fire, since they are designed for CQC (at least compared to a rifle)
 
 	spread = 4
@@ -62,7 +62,6 @@
 	spread_unwielded = 16
 	recoil = 1
 	recoil_unwielded = 4
-	wield_slowdown = 0.35
 	wield_delay = 0.65 SECONDS
 
 /obj/item/gun/ballistic/shotgun/automatic/shoot_live_shot(mob/living/user)
@@ -166,7 +165,7 @@
 	spread_unwielded = 16
 	recoil = 1
 	recoil_unwielded = 4
-	wield_slowdown = 0.35
+	wield_slowdown = 0.6
 	wield_delay = 0.65 SECONDS
 
 /obj/item/gun/ballistic/shotgun/bulldog/unrestricted
@@ -452,7 +451,7 @@
 	spread_unwielded = 7
 	recoil = 0
 	recoil_unwielded = 2
-	wield_slowdown = 0.6
+	wield_slowdown = 0.5
 
 /obj/item/gun/ballistic/shotgun/winchester/rack(mob/user = null)
 	. = ..()
