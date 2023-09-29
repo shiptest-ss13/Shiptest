@@ -34,6 +34,7 @@
 "ae" = (
 /obj/effect/turf_decal/siding/thinplating/corner,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
 	},
@@ -71,6 +72,7 @@
 	pixel_x = 10;
 	pixel_y = -7
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "an" = (
@@ -125,6 +127,7 @@
 /obj/item/stack/sheet/plasteel{
 	amount = 15
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "aD" = (
@@ -187,6 +190,17 @@
 	},
 /turf/open/water/tar/waste,
 /area/ruin/wasteplanet/wasteplanet_graveyard/syndicate_ship)
+"aQ" = (
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating/rust,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "aR" = (
 /obj/effect/turf_decal/siding/white{
 	dir = 1
@@ -260,6 +274,7 @@
 	pixel_y = 9;
 	pixel_x = -6
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "bg" = (
@@ -278,6 +293,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 5
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "bl" = (
@@ -443,6 +459,11 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
 /area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
+"bX" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/white,
+/area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
 "bY" = (
 /obj/effect/turf_decal/industrial/warning/dust{
 	dir = 1
@@ -599,6 +620,12 @@
 	},
 /turf/open/floor/plating/asteroid/wasteplanet/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
+"cG" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating{
+	icon_state = "platingdmg1"
+	},
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "cH" = (
 /obj/structure/railing/corner,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
@@ -639,6 +666,7 @@
 /obj/item/stack/ore/salvage/scrapmetal/five{
 	pixel_x = 7
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
 /area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
 "cQ" = (
@@ -676,6 +704,7 @@
 	pixel_x = -6
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/mob_spawn/human/corpse/cargo_tech,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
 "cX" = (
@@ -704,10 +733,10 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/mineral/plastitanium/red,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "de" = (
-/obj/item/ammo_box/magazine/toy/pistol/riot,
 /obj/structure/spider/stickyweb,
 /mob/living/simple_animal/hostile/poison/giant_spider,
 /turf/open/floor/mineral/plastitanium,
@@ -773,6 +802,7 @@
 	pixel_x = 9;
 	pixel_y = 7
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "du" = (
@@ -849,6 +879,8 @@
 /obj/effect/turf_decal/trimline/opaque/red/filled/line{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "dJ" = (
@@ -875,6 +907,7 @@
 "dP" = (
 /obj/effect/turf_decal/siding/thinplating,
 /obj/machinery/light/directional/south,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
 /area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
 "dQ" = (
@@ -883,6 +916,7 @@
 /area/ruin/wasteplanet/wasteplanet_graveyard)
 "dR" = (
 /obj/structure/closet/cardboard,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
 "dS" = (
@@ -960,6 +994,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/mineral/plastitanium/red,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "ee" = (
@@ -1037,6 +1072,14 @@
 	icon_state = "panelscorched"
 	},
 /area/overmap_encounter/planetoid/wasteplanet/explored)
+"et" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/power/apc/auto_name/directional/west,
+/turf/open/floor/plasteel,
+/area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
 "eu" = (
 /obj/item/lighter/greyscale{
 	pixel_x = -4;
@@ -1094,6 +1137,11 @@
 /obj/structure/closet/secure_closet/engineering_welding,
 /turf/open/floor/plating/asteroid/wasteplanet/lit,
 /area/ruin/wasteplanet/wasteplanet_graveyard)
+"eD" = (
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/patterned/grid,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "eJ" = (
 /obj/effect/turf_decal/siding/thinplating/corner,
 /turf/open/floor/plating/rust,
@@ -1151,6 +1199,7 @@
 /area/ruin/wasteplanet/wasteplanet_graveyard)
 "eT" = (
 /obj/item/stack/ore/salvage/scraptitanium/five,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned/grid,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "eU" = (
@@ -1300,6 +1349,8 @@
 	pixel_x = 1;
 	pixel_y = 5
 	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "fA" = (
@@ -1384,19 +1435,6 @@
 	dir = 8
 	},
 /obj/structure/table/reinforced,
-/obj/machinery/button/door{
-	id = "crux_blastdoors";
-	name = "Cargo Bay Doors";
-	pixel_y = -10;
-	pixel_x = -22;
-	dir = 4
-	},
-/obj/machinery/button/shieldwallgen{
-	dir = 4;
-	id = "crux_holofan";
-	pixel_x = -21;
-	pixel_y = -2
-	},
 /obj/item/spacecash/bundle/c1000{
 	pixel_y = 7
 	},
@@ -1533,6 +1571,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "gu" = (
@@ -1639,6 +1678,7 @@
 /obj/effect/turf_decal/box/corners{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "gL" = (
@@ -1647,6 +1687,7 @@
 /area/ruin/wasteplanet/wasteplanet_graveyard/syndicate_ship)
 "gN" = (
 /mob/living/simple_animal/hostile/asteroid/whitesands/survivor,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/stairs,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "gO" = (
@@ -1726,24 +1767,18 @@
 /obj/effect/turf_decal/trimline/opaque/blue/corner{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
 	},
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "hh" = (
-/obj/item/ammo_box/magazine/toy/pistol/riot{
-	pixel_x = -4;
-	pixel_y = 4
-	},
 /obj/item/storage/box/zipties{
 	pixel_x = -6;
 	pixel_y = -5
 	},
 /obj/structure/spider/stickyweb,
-/obj/item/ammo_box/magazine/toy/pistol/riot{
-	pixel_x = 10;
-	pixel_y = 11
-	},
+/mob/living/simple_animal/hostile/poison/giant_spider/hunter/viper,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/wasteplanet/wasteplanet_graveyard/syndicate_ship)
 "hj" = (
@@ -1814,6 +1849,10 @@
 	dir = 5
 	},
 /obj/item/clothing/glasses/meson,
+/obj/item/gun/energy/kinetic_accelerator/old{
+	pixel_x = -13;
+	pixel_y = 9
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "hv" = (
@@ -1993,6 +2032,10 @@
 	icon_state = "panelscorched"
 	},
 /area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
+"ie" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/white,
+/area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
 "if" = (
 /obj/effect/turf_decal/techfloor/corner,
 /turf/open/floor/plasteel/tech/grid,
@@ -2017,6 +2060,8 @@
 /obj/structure/flippedtable{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating{
 	icon_state = "foam_plating"
 	},
@@ -2117,6 +2162,12 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ruin/wasteplanet/wasteplanet_graveyard)
+"iD" = (
+/obj/effect/decal/fakelattice{
+	icon_state = "lattice-12"
+	},
+/turf/open/floor/plating/wasteplanet/rust/lit,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "iE" = (
 /obj/item/holosign_creator/medical,
 /obj/item/stack/ore/salvage/scrapmetal/five{
@@ -2228,6 +2279,7 @@
 	pixel_x = 3;
 	pixel_y = 5
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
 	},
@@ -2240,6 +2292,7 @@
 	pixel_y = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/paper/fluff/stations/centcom/broken_evac,
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
 	},
@@ -2338,6 +2391,8 @@
 	pixel_x = -4;
 	pixel_y = -2
 	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned/grid,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "jA" = (
@@ -2484,6 +2539,17 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/rust,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
+"jX" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 6
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/telecomms_floor,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
+"jY" = (
+/obj/structure/girder,
+/turf/open/floor/plating/wasteplanet/rust/lit,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "jZ" = (
 /obj/structure/bed/pod,
 /obj/item/bedsheet/black,
@@ -2537,6 +2603,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
 	},
@@ -2569,7 +2636,7 @@
 	dir = 10
 	},
 /obj/machinery/light/directional/west,
-/obj/structure/extinguisher_cabinet/directional/north,
+/obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/wood{
 	icon_state = "wood-broken6"
 	},
@@ -2603,6 +2670,8 @@
 /obj/effect/turf_decal/trimline/opaque/blue/line{
 	dir = 10
 	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned/grid,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "kp" = (
@@ -2628,6 +2697,7 @@
 	pixel_x = 8
 	},
 /mob/living/simple_animal/bot/medbot/rockplanet,
+/obj/structure/extinguisher_cabinet/directional/north,
 /turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
 "kw" = (
@@ -2788,8 +2858,16 @@
 	icon_state = "foam_plating"
 	},
 /area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
+"ld" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating{
+	icon_state = "panelscorched"
+	},
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "le" = (
 /obj/structure/frame/machine,
+/obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
 	},
@@ -2844,6 +2922,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
 /area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
+"lt" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/patterned/grid,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "ly" = (
 /obj/effect/turf_decal/siding/thinplating,
 /obj/structure/closet/emcloset/wall{
@@ -2903,6 +2985,7 @@
 /obj/structure/salvageable/computer{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "lF" = (
@@ -3122,6 +3205,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
+"mo" = (
+/obj/effect/decal/fakelattice{
+	icon_state = "lattice-3"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/water/tar/waste,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "mq" = (
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-110"
@@ -3137,12 +3227,22 @@
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/wasteplanet/wasteplanet_graveyard/shippy)
+"mt" = (
+/obj/structure/closet/cardboard,
+/obj/effect/mob_spawn/human/corpse/nanotrasenassaultsoldier,
+/obj/effect/mob_spawn/human/corpse/nanotrasenassaultsoldier,
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
 "mv" = (
 /obj/structure/filingcabinet{
 	pixel_x = 8
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
+"mx" = (
+/obj/effect/mob_spawn/human/corpse/cargo_tech,
+/turf/open/floor/plating/asteroid/wasteplanet/lit,
+/area/ruin/wasteplanet/wasteplanet_graveyard)
 "mA" = (
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 4
@@ -3377,6 +3477,14 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
+"nH" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/extinguisher_cabinet/directional/north,
+/turf/open/floor/plasteel,
+/area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
 "nJ" = (
 /obj/machinery/button/door{
 	desc = "A remote control switch.";
@@ -3453,6 +3561,7 @@
 	dir = 1
 	},
 /obj/item/stack/ore/salvage/scrapplasma/five,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating{
 	icon_state = "foam_plating"
 	},
@@ -3684,6 +3793,7 @@
 	pixel_y = -4;
 	pixel_x = -11
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
 	},
@@ -3736,6 +3846,7 @@
 	dir = 4
 	},
 /obj/item/storage/fancy/donut_box,
+/obj/effect/mob_spawn/human/corpse/assistant,
 /turf/open/floor/plasteel/grimy,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "pd" = (
@@ -3820,6 +3931,7 @@
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "pt" = (
 /obj/structure/flippedtable,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "pv" = (
@@ -3884,7 +3996,7 @@
 /turf/open/floor/plasteel/patterned/ridged,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "pE" = (
-/obj/machinery/light/floor,
+/obj/machinery/light/floor/hangar,
 /turf/open/floor/plating,
 /area/ruin/wasteplanet/wasteplanet_graveyard)
 "pG" = (
@@ -3981,6 +4093,11 @@
 	icon_state = "panelscorched"
 	},
 /area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
+"pY" = (
+/obj/structure/closet/crate/coffin,
+/obj/effect/mob_spawn/human/corpse/syndicatesoldier,
+/turf/open/floor/plating,
+/area/ruin/wasteplanet/wasteplanet_graveyard)
 "pZ" = (
 /obj/machinery/airalarm/directional/north,
 /obj/item/stack/sheet/mineral/wood{
@@ -4057,6 +4174,12 @@
 	pixel_x = -4
 	},
 /turf/open/floor/mineral/plastitanium/red,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
+"qr" = (
+/obj/effect/turf_decal/siding/thinplating,
+/obj/effect/turf_decal/trimline/opaque/blue/line,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/patterned/grid,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "qs" = (
 /obj/structure/bed/pod,
@@ -4232,6 +4355,11 @@
 "ra" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
+"rb" = (
+/obj/structure/table/reinforced,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "rc" = (
 /obj/structure/barricade/wooden/crude,
 /obj/structure/barricade/wooden,
@@ -4266,6 +4394,7 @@
 	pixel_x = 4;
 	pixel_y = 8
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "rj" = (
@@ -4348,6 +4477,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/mineral/plastitanium/red,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "ry" = (
@@ -4430,6 +4560,13 @@
 /obj/effect/turf_decal/siding/thinplating,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
+"rN" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 10
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/telecomms_floor,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "rO" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -4584,6 +4721,7 @@
 	pixel_y = 5;
 	pixel_x = -3
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating{
 	icon_state = "platingdmg1"
 	},
@@ -4604,6 +4742,7 @@
 /obj/effect/turf_decal/trimline/opaque/red/line{
 	dir = 6
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "sv" = (
@@ -4776,6 +4915,10 @@
 	},
 /turf/open/floor/plating/asteroid/wasteplanet/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
+"tk" = (
+/obj/effect/decal/fakelattice,
+/turf/open/floor/plating/wasteplanet/rust/lit,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "tn" = (
 /obj/structure/railing/corner,
 /obj/structure/railing/corner{
@@ -4801,6 +4944,11 @@
 /mob/living/simple_animal/hostile/asteroid/whitesands/survivor,
 /turf/open/floor/plating/rust,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
+"tr" = (
+/obj/structure/closet/crate/coffin,
+/obj/effect/mob_spawn/human/corpse/assistant,
+/turf/open/floor/plating,
+/area/ruin/wasteplanet/wasteplanet_graveyard)
 "tu" = (
 /obj/structure/girder/reinforced,
 /turf/open/floor/plating,
@@ -4816,6 +4964,7 @@
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "tx" = (
 /obj/structure/closet/crate/coffin,
+/obj/effect/mob_spawn/human/corpse/cargo_tech,
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
 	},
@@ -4907,6 +5056,7 @@
 /obj/effect/turf_decal/trimline/opaque/red/corner{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "tL" = (
@@ -5178,6 +5328,7 @@
 "uL" = (
 /obj/effect/turf_decal/siding/wideplating/dark,
 /obj/effect/turf_decal/trimline/opaque/red/line,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/rust,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "uO" = (
@@ -5208,6 +5359,8 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned/grid,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "uV" = (
@@ -5336,6 +5489,7 @@
 /area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
 "vp" = (
 /obj/item/clothing/glasses/blindfold,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/mineral/plastitanium,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "vr" = (
@@ -5366,6 +5520,13 @@
 	icon_state = "foam_plating"
 	},
 /area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
+"vw" = (
+/obj/structure/girder,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating{
+	icon_state = "platingdmg3"
+	},
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "vy" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -5506,6 +5667,8 @@
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "wa" = (
 /obj/structure/bed/roller,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/mineral/plastitanium,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "wb" = (
@@ -5526,6 +5689,8 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned/grid,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "wh" = (
@@ -5560,6 +5725,7 @@
 	pixel_y = 7;
 	pixel_x = -8
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/mineral/plastitanium,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "wp" = (
@@ -5597,6 +5763,7 @@
 /area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
 "wt" = (
 /obj/item/trash/raisins,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating{
 	icon_state = "platingdmg1"
 	},
@@ -5744,6 +5911,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "wE" = (
@@ -6123,6 +6291,7 @@
 	pixel_x = -12;
 	pixel_y = -6
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating{
 	icon_state = "foam_plating"
 	},
@@ -6222,14 +6391,14 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/cobweb,
 /obj/structure/closet/cardboard,
-/obj/item/gun/ballistic/automatic/assault/ak47,
-/obj/item/ammo_box/magazine/ak47{
-	pixel_x = -4;
-	pixel_y = -5
+/obj/item/gun/ballistic/automatic/smg/aks74u,
+/obj/item/ammo_box/magazine/aks74u{
+	pixel_y = -7;
+	pixel_x = -4
 	},
-/obj/item/ammo_box/magazine/ak47{
-	pixel_x = 3;
-	pixel_y = -5
+/obj/item/ammo_box/magazine/aks74u{
+	pixel_y = -7;
+	pixel_x = 1
 	},
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
@@ -6264,6 +6433,7 @@
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/mineral/plastitanium/red,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "yf" = (
@@ -6289,9 +6459,6 @@
 	},
 /area/ruin/wasteplanet/wasteplanet_graveyard)
 "yn" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 1
-	},
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -6299,10 +6466,8 @@
 	dir = 1;
 	name = "Engine Access"
 	},
-/obj/machinery/door/poddoor{
-	name = "thruster blast door"
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/frame/machine,
 /turf/open/floor/plating,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "yo" = (
@@ -6312,6 +6477,7 @@
 /obj/structure/sign/warning/electricshock{
 	pixel_y = 31
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "yq" = (
@@ -6343,7 +6509,8 @@
 	id = "exhumebay";
 	name = "Pod bay";
 	pixel_x = -24;
-	pixel_y = 25
+	pixel_y = 25;
+	dir = 4
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
@@ -6356,6 +6523,16 @@
 	icon_state = "plant-25"
 	},
 /turf/open/floor/mineral/plastitanium/red,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
+"yu" = (
+/obj/effect/turf_decal/siding/wideplating/dark{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "yw" = (
 /obj/item/stack/cable_coil/cut/orange,
@@ -6406,6 +6583,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned/grid,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "yH" = (
@@ -6450,9 +6628,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 5
 	},
-/obj/item/radio/intercom/directional/north{
-	pixel_y = 23
-	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
 "yP" = (
@@ -6537,6 +6713,11 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
+"zg" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/patterned/grid,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "zi" = (
 /obj/machinery/firealarm/directional/north,
 /obj/structure/frame/machine,
@@ -6583,6 +6764,7 @@
 "zo" = (
 /obj/structure/table/reinforced,
 /obj/structure/spider/stickyweb,
+/obj/item/gun/ballistic/automatic/smg/m90,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/wasteplanet/wasteplanet_graveyard/syndicate_ship)
 "zp" = (
@@ -6610,11 +6792,11 @@
 /turf/open/floor/pod/dark,
 /area/ruin/wasteplanet/wasteplanet_graveyard/syndicate_ship)
 "zs" = (
-/obj/item/gun/ballistic/automatic/toy/pistol/riot{
-	pixel_x = -4;
-	pixel_y = -4
-	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/ammo_box/magazine/m556{
+	pixel_x = -4;
+	pixel_y = -10
+	},
 /turf/open/floor/plating{
 	icon_state = "platingdmg3"
 	},
@@ -6655,6 +6837,7 @@
 "zG" = (
 /obj/effect/turf_decal/siding/thinplating/corner,
 /obj/effect/turf_decal/trimline/opaque/blue/corner,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned/grid,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "zH" = (
@@ -6748,6 +6931,12 @@
 	icon_state = "panelscorched"
 	},
 /area/ruin/wasteplanet/wasteplanet_graveyard)
+"Ag" = (
+/obj/effect/turf_decal/industrial/warning/dust/corner{
+	dir = 8
+	},
+/turf/open/floor/plating/wasteplanet/rust/lit,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "Ai" = (
 /obj/structure/table/wood,
 /obj/item/trash/can/food{
@@ -6809,6 +6998,7 @@
 /obj/effect/turf_decal/trimline/opaque/red/filled/warning{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned/grid,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "Ax" = (
@@ -6911,6 +7101,9 @@
 	pixel_y = -7
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/ammo_box/magazine/m556{
+	pixel_x = 11
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/wasteplanet/wasteplanet_graveyard/syndicate_ship)
 "AP" = (
@@ -7017,6 +7210,7 @@
 	dir = 4;
 	layer = 3.1
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "Bu" = (
@@ -7045,6 +7239,7 @@
 	dir = 8;
 	pixel_y = -6
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "Bx" = (
@@ -7102,6 +7297,7 @@
 	pixel_y = 3;
 	pixel_x = 5
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/rust,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "BM" = (
@@ -7159,6 +7355,7 @@
 /obj/effect/turf_decal/siding/thinplating,
 /obj/effect/turf_decal/siding/thinplating/corner,
 /obj/effect/turf_decal/trimline/opaque/blue/line,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned/grid,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "BT" = (
@@ -7171,15 +7368,14 @@
 	},
 /obj/item/gun/ballistic/rifle/boltaction/polymer{
 	pixel_x = 8;
-	pixel_y = 10
-	},
-/obj/item/gun/ballistic/rifle/boltaction/polymer{
-	pixel_x = 8;
 	pixel_y = 6
 	},
 /obj/item/gun/ballistic/rifle/boltaction/polymer{
 	pixel_x = 8;
 	pixel_y = 2
+	},
+/obj/item/gun/ballistic/shotgun/winchester{
+	pixel_y = 12
 	},
 /turf/open/floor/plasteel/dark,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
@@ -7250,6 +7446,8 @@
 /obj/item/circuitboard/computer/rdconsole{
 	pixel_y = 7
 	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "Cf" = (
@@ -7268,6 +7466,9 @@
 /obj/effect/turf_decal/box,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/wasteplanet/wasteplanet_graveyard/syndicate_ship)
+"Ci" = (
+/turf/closed/wall/r_wall/yesdiag,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "Cj" = (
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 1
@@ -7296,6 +7497,12 @@
 	},
 /turf/open/floor/plating,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
+"Cm" = (
+/obj/effect/turf_decal/siding/thinplating,
+/obj/effect/turf_decal/trimline/opaque/blue/line,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating/rust,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "Co" = (
 /mob/living/simple_animal/hostile/asteroid/whitesands/survivor,
 /turf/open/floor/plating{
@@ -7316,10 +7523,12 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 6
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/rust,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "Cv" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "Cw" = (
@@ -7483,6 +7692,7 @@
 /obj/item/stack/ore/salvage/scrapmetal/five{
 	pixel_x = 7
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned/grid,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "CT" = (
@@ -7547,6 +7757,9 @@
 	icon_state = "foam_plating"
 	},
 /area/overmap_encounter/planetoid/wasteplanet/explored)
+"Dh" = (
+/turf/closed/wall/r_wall/rust/yesdiag,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "Dj" = (
 /obj/structure/railing,
 /obj/machinery/recharger{
@@ -7591,7 +7804,9 @@
 /obj/effect/turf_decal/borderfloor{
 	dir = 8
 	},
-/obj/machinery/door/airlock/highsecurity,
+/obj/machinery/door/airlock/grunge{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
 "Dr" = (
@@ -7629,6 +7844,13 @@
 	icon_state = "platingdmg1"
 	},
 /area/ruin/wasteplanet/wasteplanet_graveyard)
+"DB" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/mob_spawn/human/corpse/syndicatesoldier,
+/turf/open/floor/plating{
+	icon_state = "panelscorched"
+	},
+/area/ruin/wasteplanet/wasteplanet_graveyard/syndicate_ship)
 "DC" = (
 /turf/closed/wall/r_wall/syndicate,
 /area/ruin/wasteplanet/wasteplanet_graveyard/shippy)
@@ -7772,6 +7994,7 @@
 	dir = 5
 	},
 /obj/structure/frame/computer,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "Em" = (
@@ -7906,11 +8129,9 @@
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 1
 	},
-/obj/item/radio/intercom/directional/north{
-	pixel_y = 22
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel,
 /area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
 "EN" = (
@@ -7942,6 +8163,7 @@
 "ET" = (
 /obj/effect/turf_decal/siding/wideplating/dark,
 /obj/effect/turf_decal/trimline/opaque/red/line,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "EV" = (
@@ -7958,12 +8180,15 @@
 	dir = 4
 	},
 /obj/structure/mecha_wreckage/ripley/mkii,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned/grid,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "EX" = (
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "EY" = (
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/stairs,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "EZ" = (
@@ -8077,7 +8302,6 @@
 	pixel_x = -8;
 	pixel_y = 4
 	},
-/obj/item/gun/ballistic/automatic/smg/proto/unrestricted,
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
 	},
@@ -8094,6 +8318,16 @@
 	},
 /obj/structure/frame/machine,
 /turf/open/floor/plasteel/tech/grid,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
+"FF" = (
+/obj/effect/turf_decal/siding/wideplating/dark{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/blue/line{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/patterned/grid,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "FH" = (
 /obj/structure/dresser,
@@ -8439,6 +8673,11 @@
 	icon_state = "foam_plating"
 	},
 /area/ruin/wasteplanet/wasteplanet_graveyard/syndicate_ship)
+"Ha" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/mob_spawn/human/corpse/cargo_tech,
+/turf/open/floor/plating/asteroid/wasteplanet/lit,
+/area/ruin/wasteplanet/wasteplanet_graveyard)
 "Hb" = (
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 4
@@ -8463,6 +8702,7 @@
 	pixel_x = -8;
 	pixel_y = -3
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
 	},
@@ -8530,6 +8770,11 @@
 /obj/structure/girder/displaced,
 /turf/open/floor/plating/asteroid/wasteplanet/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
+"Hx" = (
+/obj/structure/closet/crate/coffin,
+/obj/effect/mob_spawn/human/corpse/frontier,
+/turf/open/floor/plating,
+/area/ruin/wasteplanet/wasteplanet_graveyard)
 "Hy" = (
 /obj/structure/flora/tree/jungle/small{
 	icon_state = "tree2"
@@ -8574,6 +8819,11 @@
 	pixel_y = 10
 	},
 /turf/open/floor/plating/asteroid/wasteplanet/lit,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
+"HK" = (
+/obj/structure/cable,
+/obj/structure/frame/machine,
+/turf/open/floor/plating,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "HL" = (
 /obj/item/toy/cards/deck{
@@ -8648,6 +8898,7 @@
 /obj/structure/railing/corner{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating{
 	icon_state = "foam_plating"
 	},
@@ -8826,6 +9077,7 @@
 /obj/effect/turf_decal/siding/thinplating/corner{
 	dir = 1
 	},
+/obj/effect/mob_spawn/human/corpse/charredskeleton,
 /turf/open/floor/plasteel,
 /area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
 "IH" = (
@@ -8922,6 +9174,10 @@
 /obj/machinery/suit_storage_unit/open,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
+"Jf" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "Jg" = (
 /obj/machinery/light/directional/south,
 /turf/open/floor/mineral/plastitanium/red,
@@ -9111,7 +9367,6 @@
 	},
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "JC" = (
-/obj/structure/fans/tiny,
 /obj/machinery/door/poddoor{
 	id = "exhumebay";
 	name = "pod Bay"
@@ -9122,9 +9377,13 @@
 /mob/living/simple_animal/hostile/asteroid/whitesands/ranged,
 /turf/open/floor/plating,
 /area/ruin/wasteplanet/wasteplanet_graveyard/syndicate_ship)
+"JE" = (
+/turf/open/floor/plating/wasteplanet/rust/lit,
+/area/ruin/wasteplanet/wasteplanet_graveyard)
 "JH" = (
 /obj/effect/turf_decal/siding/thinplating/corner,
 /obj/effect/turf_decal/trimline/opaque/blue/corner,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/rust,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "JI" = (
@@ -9133,20 +9392,15 @@
 /area/ruin/wasteplanet/wasteplanet_graveyard)
 "JJ" = (
 /obj/machinery/door/airlock/grunge{
-	name = "Bathroom"
+	name = "Bathroom";
+	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/chem_pile,
 /turf/open/floor/plating/catwalk_floor,
 /area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
 "JK" = (
-/obj/structure/railing{
-	dir = 4
-	},
-/obj/effect/turf_decal/industrial/warning{
-	dir = 4
-	},
-/turf/open/floor/plating/rust,
+/turf/open/floor/plating/wasteplanet/rust/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "JL" = (
 /obj/effect/decal/cleanable/cobweb,
@@ -9240,6 +9494,7 @@
 /obj/effect/turf_decal/corner_techfloor_gray{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "Kf" = (
@@ -9267,6 +9522,7 @@
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "Km" = (
 /obj/effect/turf_decal/techfloor,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "Ko" = (
@@ -9330,6 +9586,17 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
+"Kw" = (
+/obj/structure/flora/ash/garden/waste,
+/turf/open/floor/plating/wasteplanet/rust/lit,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
+"Kx" = (
+/obj/effect/decal/fakelattice{
+	icon_state = "lattice-12"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating/asteroid/wasteplanet/lit,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "Ky" = (
 /obj/structure/railing/corner{
 	pixel_x = -1
@@ -9343,6 +9610,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/industrial/warning/corner,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/mineral/plastitanium/red,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "KC" = (
@@ -9371,6 +9639,13 @@
 "KI" = (
 /mob/living/simple_animal/hostile/asteroid/whitesands/ranged/gunslinger,
 /turf/open/floor/plating/asteroid/wasteplanet/lit,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
+"KJ" = (
+/obj/machinery/iv_drip,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating{
+	icon_state = "panelscorched"
+	},
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "KL" = (
 /obj/item/stack/cable_coil/cut/blue,
@@ -9604,10 +9879,9 @@
 /turf/open/floor/plating/asteroid/wasteplanet/lit,
 /area/ruin/wasteplanet/wasteplanet_graveyard/syndicate_ship)
 "LN" = (
-/obj/effect/turf_decal/siding/thinplating,
-/obj/structure/extinguisher_cabinet/directional/north,
-/turf/open/floor/plasteel,
-/area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
+/obj/effect/mob_spawn/human/corpse/damaged/whitesands/survivor,
+/turf/open/floor/plating/asteroid/wasteplanet/lit,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "LP" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/rust,
@@ -9673,6 +9947,7 @@
 	dir = 5
 	},
 /obj/structure/bed/dogbed,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "LZ" = (
@@ -9743,6 +10018,15 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
+"Mr" = (
+/obj/structure/table/reinforced,
+/obj/item/clothing/suit/space/syndicate/black/engie,
+/obj/item/clothing/head/helmet/space/syndicate/black/engie{
+	pixel_x = -7;
+	pixel_y = 8
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ruin/wasteplanet/wasteplanet_graveyard/syndicate_ship)
 "Ms" = (
 /obj/effect/turf_decal/siding/white/corner{
 	dir = 1
@@ -9955,6 +10239,7 @@
 /obj/effect/turf_decal/trimline/opaque/blue/line{
 	dir = 6
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned/grid,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "Nd" = (
@@ -9962,6 +10247,7 @@
 	pixel_x = -18;
 	pixel_y = 5
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
 	},
@@ -10024,6 +10310,7 @@
 /obj/effect/turf_decal/siding/thinplating,
 /obj/effect/turf_decal/trimline/opaque/blue/line,
 /obj/structure/table,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
 	},
@@ -10263,13 +10550,11 @@
 /turf/open/floor/plating,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "Op" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 1
-	},
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
+/obj/structure/frame/machine,
 /turf/open/floor/plating,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "Os" = (
@@ -10338,6 +10623,15 @@
 	},
 /turf/open/floor/plating/asteroid/wasteplanet/lit,
 /area/ruin/wasteplanet/wasteplanet_graveyard)
+"OH" = (
+/obj/machinery/door/firedoor/border_only,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/machinery/door/poddoor/shutters/preopen,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/tech/grid,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "OI" = (
 /obj/structure/grille/broken,
 /turf/open/floor/plating/asteroid/wasteplanet/lit,
@@ -10376,6 +10670,7 @@
 	pixel_x = 4;
 	pixel_y = 2
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "OS" = (
@@ -10428,12 +10723,19 @@
 	icon_state = "foam_plating"
 	},
 /area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
+"Pc" = (
+/obj/structure/closet/crate/coffin,
+/obj/effect/mob_spawn/human/corpse/cargo_tech,
+/turf/open/floor/plating,
+/area/ruin/wasteplanet/wasteplanet_graveyard)
 "Pd" = (
 /obj/structure/bonfire/prelit,
 /turf/open/floor/plating/rust,
 /area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
 "Pg" = (
 /obj/machinery/iv_drip,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
 "Ph" = (
@@ -10641,6 +10943,7 @@
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "PQ" = (
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/mob_spawn/human/corpse/syndicatesoldier,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/wasteplanet/wasteplanet_graveyard/syndicate_ship)
 "PS" = (
@@ -10841,6 +11144,10 @@
 	icon_state = "platingdmg2"
 	},
 /area/overmap_encounter/planetoid/wasteplanet/explored)
+"QA" = (
+/obj/structure/floodlight_frame,
+/turf/open/floor/plating/wasteplanet/rust/lit,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "QB" = (
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 8
@@ -10889,6 +11196,16 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
+"QM" = (
+/obj/item/stack/ore/salvage/scrapmetal/five{
+	pixel_x = 13;
+	pixel_y = 17
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating{
+	icon_state = "panelscorched"
+	},
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "QN" = (
 /obj/item/reagent_containers/hypospray/medipen/morphine,
@@ -10987,9 +11304,7 @@
 /obj/effect/turf_decal/siding/white/corner{
 	dir = 8
 	},
-/obj/item/radio/intercom/directional/north{
-	pixel_y = 22
-	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "Re" = (
@@ -11018,6 +11333,7 @@
 	pixel_x = -5;
 	pixel_y = 10
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating{
 	icon_state = "platingdmg3"
 	},
@@ -11063,6 +11379,16 @@
 /obj/structure/bookcase,
 /turf/open/floor/plasteel/dark,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
+"Rw" = (
+/obj/machinery/door/firedoor/border_only,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/turf_decal/industrial/stand_clear,
+/obj/machinery/door/poddoor/shutters/preopen,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/tech/grid,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "Rx" = (
 /obj/effect/decal/cleanable/vomit/old{
 	pixel_x = 9;
@@ -11079,6 +11405,7 @@
 "Rz" = (
 /obj/structure/closet/crate/coffin,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/mob_spawn/human/corpse/nanotrasensoldier,
 /turf/open/floor/plating/rust,
 /area/ruin/wasteplanet/wasteplanet_graveyard)
 "RA" = (
@@ -11112,6 +11439,7 @@
 	},
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "RE" = (
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "RF" = (
@@ -11147,6 +11475,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned/grid,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "RK" = (
@@ -11261,8 +11590,8 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
 	},
-/obj/machinery/firealarm/directional/south,
 /obj/structure/salvageable/autolathe,
+/obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "Sj" = (
@@ -11379,6 +11708,13 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ruin/wasteplanet/wasteplanet_graveyard)
+"SM" = (
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating{
+	icon_state = "foam_plating"
+	},
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "SN" = (
 /obj/machinery/atmospherics/pipe/simple/general/visible{
 	dir = 5
@@ -11483,6 +11819,7 @@
 /obj/effect/turf_decal/trimline/opaque/blue/line{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned/grid,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "Tg" = (
@@ -11510,6 +11847,13 @@
 /obj/structure/table/reinforced,
 /turf/open/floor/mineral/plastitanium,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
+"To" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/patterned/grid,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "Tp" = (
 /obj/structure/railing,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -11525,6 +11869,7 @@
 /obj/item/storage/belt/utility/full{
 	pixel_y = 6
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "Tt" = (
@@ -11631,6 +11976,14 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/wasteplanet/wasteplanet_graveyard/syndicate_ship)
+"TP" = (
+/obj/effect/turf_decal/siding/thinplating/corner{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel,
+/area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
 "TR" = (
 /obj/item/radio/intercom/directional/south,
 /obj/item/storage/firstaid/medical{
@@ -11697,6 +12050,13 @@
 "Uc" = (
 /turf/open/floor/plating,
 /area/ruin/wasteplanet/wasteplanet_graveyard)
+"Ud" = (
+/obj/effect/decal/fakelattice{
+	icon_state = "lattice-13"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating/asteroid/wasteplanet/lit,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "Uf" = (
 /obj/structure/closet/secure_closet/freezer/kitchen,
 /turf/open/floor/plating/asteroid/wasteplanet/lit,
@@ -11722,6 +12082,7 @@
 	pixel_y = 18;
 	pixel_x = 7
 	},
+/obj/item/clothing/suit/toggle/armor/vest/centcom_formal,
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
 "Ul" = (
@@ -11745,7 +12106,6 @@
 /area/ruin/wasteplanet/wasteplanet_graveyard)
 "Us" = (
 /obj/structure/table/reinforced,
-/obj/structure/extinguisher_cabinet/directional/north,
 /turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
 "Uu" = (
@@ -11797,6 +12157,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/steeldecal/steel_decals6,
+/obj/effect/mob_spawn/human/corpse/nanotrasenassaultsoldier,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
 "UK" = (
@@ -11865,6 +12226,7 @@
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/rust,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "UY" = (
@@ -12082,6 +12444,7 @@
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "VZ" = (
 /obj/item/reagent_containers/glass/bottle/charcoal,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/mineral/plastitanium,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "Wb" = (
@@ -12217,6 +12580,7 @@
 /area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
 "WF" = (
 /obj/structure/salvageable/protolathe,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "WG" = (
@@ -12242,6 +12606,15 @@
 	icon_state = "panelscorched"
 	},
 /area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
+"WI" = (
+/obj/effect/turf_decal/siding/thinplating,
+/obj/effect/turf_decal/trimline/opaque/blue/line,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating{
+	icon_state = "panelscorched"
+	},
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "WK" = (
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 4
@@ -12296,6 +12669,16 @@
 /obj/structure/railing,
 /turf/open/floor/plasteel/showroomfloor,
 /area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
+"WU" = (
+/obj/effect/turf_decal/siding/wideplating/dark{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/blue/line{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/patterned/grid,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "WV" = (
 /obj/effect/decal/cleanable/garbage,
 /turf/open/floor/plasteel/tech,
@@ -12325,6 +12708,7 @@
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "Xd" = (
 /obj/item/clothing/ears/earmuffs,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
 	},
@@ -12453,6 +12837,17 @@
 	id = "crux_blastdoors";
 	dir = 4
 	},
+/obj/machinery/button/door{
+	id = "crux_blastdoors";
+	name = "Cargo Bay Doors";
+	pixel_y = 22;
+	pixel_x = -4
+	},
+/obj/machinery/button/shieldwallgen{
+	id = "crux_holofan";
+	pixel_x = 3;
+	pixel_y = 21
+	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ruin/wasteplanet/wasteplanet_graveyard/shippy)
 "XC" = (
@@ -12470,6 +12865,8 @@
 	dir = 1
 	},
 /obj/item/stack/ore/salvage/scrapmetal/five,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned/grid,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "XE" = (
@@ -12507,6 +12904,7 @@
 	pixel_x = 3;
 	pixel_y = 6
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "XK" = (
@@ -12514,6 +12912,7 @@
 	pixel_x = 7;
 	pixel_y = 10
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
 	},
@@ -12522,6 +12921,7 @@
 /obj/effect/turf_decal/box/corners{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "XP" = (
@@ -12533,11 +12933,14 @@
 	pixel_y = 3;
 	pixel_x = -3
 	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "XS" = (
 /obj/structure/rack,
 /obj/item/stock_parts/cell/high,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "XX" = (
@@ -12765,6 +13168,11 @@
 /obj/machinery/atmospherics/pipe/simple/dark/hidden,
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ruin/wasteplanet/wasteplanet_graveyard)
+"YM" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/mob_spawn/human/corpse/nanotrasenassaultsoldier,
+/turf/open/floor/plating,
+/area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
 "YN" = (
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 1
@@ -12778,6 +13186,7 @@
 /obj/item/organ/eyes/night_vision/spider{
 	pixel_y = -5
 	},
+/mob/living/simple_animal/hostile/poison/giant_spider/hunter/viper,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/wasteplanet/wasteplanet_graveyard/syndicate_ship)
 "YP" = (
@@ -12959,6 +13368,7 @@
 	pixel_x = -3;
 	pixel_y = -4
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "ZA" = (
@@ -12973,6 +13383,10 @@
 /turf/open/floor/plating{
 	icon_state = "foam_plating"
 	},
+/area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
+"ZB" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
 "ZC" = (
 /obj/effect/decal/cleanable/plastic,
@@ -13016,6 +13430,7 @@
 /obj/machinery/light/directional/south,
 /obj/structure/spider/stickyweb,
 /obj/structure/spider_player/cocoon,
+/mob/living/simple_animal/hostile/poison/giant_spider/hunter/viper,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/wasteplanet/wasteplanet_graveyard/syndicate_ship)
 "ZI" = (
@@ -13694,10 +14109,10 @@ kp
 zR
 zR
 jq
-Nw
-Nw
-Nw
-Nw
+tr
+Hx
+Pc
+pY
 zR
 zR
 zR
@@ -13770,7 +14185,7 @@ kp
 kp
 zR
 Nl
-Nw
+Hx
 tx
 Nw
 Rz
@@ -14034,7 +14449,7 @@ lY
 vr
 Cc
 jC
-vW
+et
 jC
 sN
 hO
@@ -14389,7 +14804,7 @@ SI
 SI
 SI
 jQ
-SI
+Ha
 ov
 pE
 Yc
@@ -14435,8 +14850,8 @@ Am
 ra
 Am
 Am
-Am
-Am
+JK
+JK
 Am
 "}
 (19,1,1) = {"
@@ -14476,7 +14891,7 @@ yl
 Uc
 Dw
 pS
-pS
+mx
 pS
 pS
 pS
@@ -14513,8 +14928,8 @@ ra
 ra
 Am
 Am
-Am
-Am
+JK
+JK
 "}
 (20,1,1) = {"
 Am
@@ -14591,7 +15006,7 @@ ra
 ra
 Am
 Am
-Am
+JK
 "}
 (21,1,1) = {"
 Am
@@ -14762,7 +15177,7 @@ pS
 pS
 pS
 pS
-pS
+JE
 pS
 Eu
 pS
@@ -14796,7 +15211,7 @@ bW
 Wo
 vW
 PN
-bW
+TP
 Ri
 mM
 ow
@@ -14838,7 +15253,7 @@ kp
 pS
 pS
 pS
-pS
+JE
 pS
 SI
 Eu
@@ -14884,7 +15299,7 @@ ay
 lb
 Am
 Jl
-dR
+mt
 lb
 ra
 Rr
@@ -14914,8 +15329,8 @@ kp
 kp
 pS
 pS
-pS
-pS
+JE
+JE
 pS
 SI
 oE
@@ -14956,7 +15371,7 @@ ra
 sC
 Yj
 HV
-lb
+ZB
 Am
 Am
 ow
@@ -14991,7 +15406,7 @@ kp
 pS
 pS
 pS
-pS
+JE
 pS
 pS
 pS
@@ -15026,13 +15441,13 @@ Gs
 Us
 oN
 ra
-vo
+bX
 vo
 xY
 ra
-lb
+ZB
 xK
-ow
+Sk
 ow
 ll
 us
@@ -15096,7 +15511,7 @@ pS
 jN
 pS
 ra
-Hs
+nH
 Lt
 ra
 kv
@@ -15107,7 +15522,7 @@ Of
 Pg
 vo
 mM
-lb
+ZB
 dR
 lb
 mM
@@ -15174,17 +15589,17 @@ pS
 pS
 FM
 Hs
-LN
+Qr
 ra
 YQ
 mQ
 iQ
 sd
 yx
-vo
-vo
+bX
+ie
 co
-lb
+ZB
 lb
 mM
 mM
@@ -15296,7 +15711,7 @@ Am
 ui
 pS
 pS
-pS
+JE
 pS
 pS
 pS
@@ -15358,7 +15773,7 @@ ro
 ra
 ga
 Mm
-cE
+YM
 ra
 Am
 ZU
@@ -15375,7 +15790,7 @@ pS
 pS
 pS
 pS
-pS
+JE
 pS
 pS
 Kq
@@ -15452,7 +15867,7 @@ pS
 pS
 pS
 pS
-pS
+JE
 pS
 pS
 jg
@@ -15526,9 +15941,9 @@ Am
 Am
 ui
 pS
+JE
 pS
-pS
-pS
+JE
 pS
 pS
 pS
@@ -15588,7 +16003,7 @@ kt
 kO
 ra
 hr
-cE
+YM
 IR
 ra
 ZU
@@ -15603,9 +16018,9 @@ Am
 Am
 ui
 pS
-pS
-pS
-pS
+JE
+JE
+JE
 pS
 pS
 pS
@@ -15938,7 +16353,7 @@ Am
 Am
 Am
 Am
-Am
+LN
 Am
 kp
 kp
@@ -15988,16 +16403,16 @@ Am
 Am
 Am
 Am
+JK
+JK
+JK
 Am
 Am
 Am
 Am
 Am
-Am
-Am
-Am
-Am
-Am
+JK
+JK
 Am
 Jq
 Am
@@ -16007,10 +16422,10 @@ Lg
 gO
 Am
 Am
-Am
-Am
-Am
-Am
+JK
+JK
+JK
+JK
 Am
 Am
 uq
@@ -16067,15 +16482,15 @@ Am
 Am
 Am
 Am
+JK
+Am
+JK
+JK
 Am
 Am
+JK
 Am
-Am
-Am
-Am
-Am
-Am
-Am
+JK
 Am
 Am
 Am
@@ -16084,12 +16499,12 @@ qD
 Am
 Am
 Am
+JK
 Am
 Am
 Am
 Am
-Am
-Am
+JK
 EF
 Am
 Am
@@ -16153,22 +16568,22 @@ Am
 Am
 Am
 Am
-Am
+JK
 Am
 PS
 Am
 Am
 Am
 Am
-Am
+JK
 Am
 Am
 Am
 kH
 zq
 EF
-EF
-Am
+tk
+JK
 Am
 Am
 kp
@@ -16237,7 +16652,7 @@ Am
 Am
 Am
 Am
-Am
+JK
 Am
 Am
 Am
@@ -16245,10 +16660,10 @@ mq
 EF
 EF
 Am
+JK
+JK
 Am
-Am
-Am
-Am
+Dh
 kp
 it
 hA
@@ -16316,7 +16731,7 @@ Yy
 Am
 Am
 Am
-Am
+LN
 OV
 EF
 Am
@@ -16325,7 +16740,7 @@ Am
 KQ
 Am
 Am
-Am
+Ci
 kp
 ra
 ra
@@ -16402,7 +16817,7 @@ Am
 Am
 Am
 Am
-Am
+Dh
 kp
 mJ
 Xp
@@ -16479,7 +16894,7 @@ Am
 Am
 Am
 Am
-Am
+Dh
 jk
 ra
 Tg
@@ -16701,7 +17116,7 @@ wW
 wW
 wW
 wW
-gG
+DB
 Uu
 IT
 NS
@@ -17090,7 +17505,7 @@ Nf
 Nf
 wW
 wW
-of
+Mr
 TN
 dK
 IB
@@ -17181,7 +17596,7 @@ Am
 Am
 Am
 Am
-Am
+LN
 Am
 Am
 Am
@@ -17345,14 +17760,14 @@ Am
 Am
 Am
 Am
+JK
 Am
 Am
+JK
 Am
+JK
 Am
-Am
-Am
-Am
-Am
+LN
 Am
 Am
 Am
@@ -17417,24 +17832,24 @@ Am
 Am
 Am
 Am
-Am
+LN
 iz
 Am
 Am
 Am
 Am
 Am
-Am
-Am
+JK
+JK
 Mi
+JK
 Am
 Am
 Am
 Am
-Am
-Am
-Am
-Am
+JK
+JK
+JK
 Am
 Mi
 Am
@@ -17512,7 +17927,7 @@ Re
 Am
 Am
 Am
-Am
+JK
 Am
 Am
 ZU
@@ -17589,9 +18004,9 @@ Re
 Re
 Am
 Am
-Am
-Am
-iz
+JK
+JK
+QA
 Am
 ZU
 ZU
@@ -17733,7 +18148,7 @@ xI
 xI
 CM
 MK
-wi
+HK
 Id
 Am
 Am
@@ -17842,7 +18257,7 @@ Am
 Am
 Am
 cB
-Am
+JK
 Am
 Am
 Am
@@ -17908,9 +18323,9 @@ ZU
 ZU
 ZU
 Am
-Am
-Am
-Am
+JK
+JK
+JK
 vG
 xB
 ua
@@ -17918,8 +18333,8 @@ GW
 Am
 Am
 Am
-cB
-Am
+iD
+JK
 Am
 Am
 Am
@@ -17985,22 +18400,22 @@ ZU
 ZU
 ZU
 Am
+JK
 Am
-Am
-Am
+JK
 vG
 Oo
 zJ
 GW
-Am
-Am
+JK
+JK
 Am
 cB
 Am
+JK
+JK
 Am
-Am
-Am
-Am
+JK
 Am
 Am
 qC
@@ -18063,14 +18478,14 @@ ZU
 ZU
 Am
 Am
+JK
 Am
-Am
-qC
+Ag
 MT
 MT
 uK
 Am
-Am
+JK
 Am
 cB
 Am
@@ -18140,9 +18555,9 @@ ZU
 ZU
 Am
 Am
+JK
 Am
-Am
-Am
+JK
 zv
 Am
 xI
@@ -18217,7 +18632,7 @@ ZU
 ZU
 Am
 Am
-Am
+JK
 Am
 Am
 Tf
@@ -18261,7 +18676,7 @@ Am
 Am
 Am
 Am
-Am
+LN
 Am
 jy
 JC
@@ -18294,7 +18709,7 @@ ZU
 Am
 Am
 Am
-Am
+JK
 Am
 Am
 Am
@@ -18330,8 +18745,8 @@ RO
 Yf
 Am
 Am
-Am
-Am
+JK
+JK
 Am
 Am
 jy
@@ -18379,7 +18794,7 @@ cK
 Re
 Re
 Re
-la
+nW
 zv
 xI
 xI
@@ -18429,7 +18844,7 @@ Am
 Am
 Am
 Am
-Am
+JK
 Am
 Re
 Re
@@ -18447,11 +18862,11 @@ ZU
 ZU
 Am
 Am
+JK
 Am
 Am
-Am
-iB
-oe
+QM
+lt
 sc
 ZJ
 sc
@@ -18501,11 +18916,11 @@ Am
 Am
 Am
 Am
+JK
+JK
+JK
 Am
-Am
-Am
-Am
-Am
+JK
 Am
 Am
 Re
@@ -18524,10 +18939,10 @@ ZU
 ZU
 ZU
 Am
-Am
+JK
 Am
 oe
-la
+ld
 eT
 sG
 OD
@@ -18564,19 +18979,19 @@ Yf
 Am
 Am
 Am
+JK
 Am
 Am
 Am
 Am
 Am
 Am
+JK
 Am
 Am
 Am
 Am
-Am
-Am
-Am
+JK
 Am
 Am
 Am
@@ -18601,16 +19016,16 @@ ZU
 ZU
 ZU
 Am
-Am
+JK
 Am
 la
-la
-sG
+ld
+lF
 oe
 GQ
 fN
-fN
-fN
+FF
+FF
 BP
 Qn
 an
@@ -18646,10 +19061,8 @@ Am
 Am
 Am
 Am
-Am
-Mi
-Am
-Am
+JK
+Kw
 Am
 Am
 Am
@@ -18657,6 +19070,8 @@ Am
 Am
 Am
 Am
+Am
+LN
 Am
 Am
 Am
@@ -18681,15 +19096,15 @@ Am
 Am
 zv
 bh
-sG
+lF
 oe
 Am
 zG
 WK
 dD
 dD
-WK
-WK
+WU
+WU
 Aw
 no
 uL
@@ -18720,8 +19135,8 @@ Am
 Am
 Am
 Am
-Am
-Am
+JK
+JK
 Am
 Am
 Am
@@ -18758,17 +19173,17 @@ Am
 Am
 OI
 oe
-sG
-oe
-Am
-ft
+lF
+zg
+ZI
+qr
 zv
 wJ
 TZ
 fj
 eB
 xI
-fF
+yu
 uL
 xI
 xI
@@ -18835,7 +19250,7 @@ Am
 Am
 OI
 oe
-Am
+ZI
 oe
 xy
 Nc
@@ -18847,7 +19262,7 @@ cD
 xI
 LY
 st
-Am
+ZI
 Bs
 Cw
 zv
@@ -18912,7 +19327,7 @@ Am
 zv
 OV
 zq
-oe
+lt
 Gb
 JB
 xI
@@ -18949,7 +19364,7 @@ qk
 Yf
 cB
 Am
-Am
+LN
 Am
 Am
 Am
@@ -18989,16 +19404,16 @@ Am
 Am
 Am
 GO
-la
+nW
 RU
 xI
 xI
 oj
 aC
 XS
-yH
-yH
-zv
+rb
+rb
+vw
 XE
 XJ
 ak
@@ -19066,8 +19481,8 @@ Am
 Am
 Am
 kR
-cB
-RU
+Kx
+Cm
 xI
 kA
 gt
@@ -19075,7 +19490,7 @@ Ce
 ri
 XP
 yH
-zv
+vw
 fz
 bi
 iw
@@ -19144,7 +19559,7 @@ Am
 Am
 Am
 gk
-RU
+Cm
 xI
 vb
 dt
@@ -19217,7 +19632,7 @@ ZU
 ZU
 Am
 Am
-Am
+JK
 Am
 Am
 cB
@@ -19267,7 +19682,7 @@ ik
 wU
 Yf
 yt
-Hh
+cG
 ye
 rw
 qP
@@ -19293,8 +19708,8 @@ ZU
 (82,1,1) = {"
 ZU
 Am
-Am
-Am
+JK
+JK
 Ec
 Ec
 la
@@ -19343,22 +19758,22 @@ Um
 sI
 ig
 XC
-Hh
+cG
 ed
 Ky
-Hh
+cG
 lF
-AH
+aQ
 kf
 sc
 fy
 sc
-sc
+mo
 dd
 Nz
-Hh
-Hh
-JK
+cG
+cG
+AH
 ed
 up
 Am
@@ -19451,17 +19866,17 @@ zv
 Am
 Am
 OI
-oe
+zg
 zH
 YC
 Hi
 EX
 gN
-Am
-cX
+ZI
+eD
 Kb
 zu
-Vz
+aY
 Zj
 cu
 Am
@@ -19470,9 +19885,9 @@ gO
 Am
 Am
 Am
-zv
-Am
-Am
+jY
+JK
+JK
 Am
 Am
 Am
@@ -19513,7 +19928,7 @@ xc
 Yf
 fa
 zv
-Vz
+aY
 Vz
 Am
 Am
@@ -19528,14 +19943,14 @@ Am
 Am
 Am
 OI
-oe
+zg
 JH
 YC
 jb
 er
 RM
 CN
-Am
+ZI
 GB
 xI
 XL
@@ -19581,17 +19996,17 @@ IS
 zv
 zB
 cQ
-la
-gh
+nW
+ik
 vp
-kz
+KJ
 gh
 gh
 gh
 wa
-la
-la
-gh
+nW
+ld
+ik
 Am
 Am
 Am
@@ -19605,15 +20020,15 @@ Am
 Am
 Ec
 GO
-la
-Zq
+nW
+WI
 xI
 jr
 YV
 HR
 ok
 EW
-cX
+eD
 xI
 QE
 Nj
@@ -19626,10 +20041,10 @@ zv
 Am
 zv
 Am
+JK
+JK
 Am
-Am
-Am
-Am
+JK
 Am
 Am
 Am
@@ -19660,15 +20075,15 @@ Am
 sG
 gh
 Xd
-la
+nW
 la
 la
 la
 VZ
 la
 kz
-la
-gh
+nW
+ik
 Am
 Am
 Am
@@ -19682,8 +20097,8 @@ Am
 Am
 Ec
 Ec
-sG
-ft
+lF
+qr
 xI
 HX
 xI
@@ -19705,9 +20120,9 @@ Am
 Am
 Am
 Am
-Am
-Am
-Am
+JK
+JK
+JK
 Am
 Am
 Am
@@ -19735,8 +20150,8 @@ Am
 Am
 Am
 Am
-Am
-la
+ZI
+nW
 pU
 Yf
 Vc
@@ -19759,15 +20174,15 @@ Am
 Am
 Am
 MJ
-sG
+lF
 hg
 Td
 xI
 Ks
-kD
+rN
 Ua
 Pw
-XF
+SM
 xI
 Am
 Am
@@ -19782,9 +20197,9 @@ kp
 kp
 kp
 Am
-Am
-Am
-Am
+JK
+JK
+JK
 Am
 Am
 Am
@@ -19816,8 +20231,8 @@ gh
 sG
 Am
 Yf
-Yf
-gh
+Jf
+ik
 QN
 Yf
 Yf
@@ -19836,15 +20251,15 @@ Am
 zv
 Am
 la
-la
-la
+ld
+nW
 No
 xI
 Xg
 Km
 Te
 nX
-jP
+Ud
 xI
 Ec
 Am
@@ -19895,7 +20310,7 @@ Am
 Am
 gh
 Na
-la
+nW
 Ws
 Yf
 Vb
@@ -19912,14 +20327,14 @@ ZU
 Am
 Am
 Am
-oe
-sG
-sG
+lt
+lF
+lF
 VF
 xI
 uI
 Ov
-Ua
+OH
 EZ
 cB
 cB
@@ -19940,16 +20355,16 @@ kp
 Am
 Am
 Am
+JK
+JK
+JK
 Am
+JK
+JK
+JK
+JK
 Am
-Am
-Am
-Am
-Am
-Am
-Am
-Am
-Am
+JK
 Am
 Am
 Am
@@ -19972,7 +20387,7 @@ Am
 Am
 Am
 gh
-gh
+ik
 Am
 Am
 Am
@@ -19989,15 +20404,15 @@ Am
 Am
 Am
 Am
-la
+nW
 iB
-sG
+lF
 Zq
 xI
 xI
 xI
 EF
-jP
+Ud
 Ed
 cB
 Am
@@ -20020,17 +20435,17 @@ Am
 Am
 Am
 Am
+JK
+JK
+JK
+JK
 Am
 Am
 Am
+JK
 Am
-Am
-Am
-Am
-Am
-Am
-Am
-Am
+JK
+JK
 Am
 Am
 Am
@@ -20067,14 +20482,14 @@ Am
 Am
 Am
 Xu
-sG
+lF
 XK
 ft
 xI
 fB
 kD
-Ua
-uS
+OH
+To
 jP
 cB
 Am
@@ -20097,6 +20512,9 @@ Am
 Am
 Am
 Am
+JK
+JK
+JK
 Am
 Am
 Am
@@ -20104,20 +20522,17 @@ Am
 Am
 Am
 Am
+JK
 Am
 Am
 Am
+JK
 Am
 Am
 Am
-Am
-Am
-Am
-Am
-Am
-Am
-Am
-Am
+JK
+JK
+JK
 Am
 Am
 Am
@@ -20145,12 +20560,12 @@ Am
 Am
 Am
 CK
-la
+nW
 RU
 xI
 yo
 Km
-Te
+Rw
 XD
 jP
 cB
@@ -20189,7 +20604,7 @@ Am
 Am
 Am
 Am
-Am
+JK
 Am
 Am
 Am
@@ -20226,7 +20641,7 @@ af
 Nc
 xI
 El
-Ov
+jX
 Ua
 jP
 XF
@@ -20255,6 +20670,8 @@ Am
 Am
 Am
 Am
+JK
+JK
 Am
 Am
 Am
@@ -20264,23 +20681,21 @@ Am
 Am
 Am
 Am
+JK
 Am
 Am
 Am
 Am
 Am
 Am
+JK
+JK
 Am
 Am
-Am
-Am
-Am
-Am
-Am
-Am
-Am
-Am
-Am
+JK
+JK
+JK
+JK
 Am
 Am
 Am
@@ -20351,15 +20766,15 @@ VG
 VG
 VG
 gB
+JK
+JK
 Am
 Am
 Am
 Am
 Am
 Am
-Am
-Am
-Am
+JK
 Am
 Am
 Am
@@ -20389,8 +20804,8 @@ Am
 zv
 Am
 Am
-Am
-Am
+JK
+JK
 Am
 Am
 Am
@@ -20436,8 +20851,8 @@ Am
 Am
 Am
 Am
-Am
-Am
+JK
+JK
 Am
 Am
 Am
@@ -20464,6 +20879,14 @@ sO
 xI
 Ec
 Am
+JK
+JK
+JK
+Am
+Am
+JK
+JK
+JK
 Am
 Am
 Am
@@ -20501,23 +20924,15 @@ Am
 Am
 Am
 Am
+JK
+JK
 Am
 Am
 Am
-Am
-Am
-Am
-Am
-Am
-Am
-Am
-Am
-Am
-Am
-Am
-Am
-Am
-Am
+JK
+JK
+JK
+JK
 ZU
 ZU
 ZU
@@ -20537,11 +20952,15 @@ Ec
 sG
 cB
 mq
-cX
+eD
 xI
 Am
 Am
 Am
+JK
+JK
+Am
+JK
 Am
 Am
 Am
@@ -20584,14 +21003,10 @@ Am
 Am
 Am
 Am
+JK
 Am
 Am
-Am
-Am
-Am
-Am
-Am
-Am
+JK
 Am
 Am
 Am
@@ -20618,8 +21033,8 @@ Cu
 xI
 Am
 Am
-Am
-Am
+JK
+JK
 Am
 Am
 Am
