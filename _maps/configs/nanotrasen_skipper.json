@@ -16,7 +16,7 @@
 	"Engineering",
 	"Mining"
 	],
-	"starting_funds": 4000,
+	"starting_funds": 4500,
 	"roundstart": true,
 	"job_slots": {
 		"Captain": {
@@ -36,11 +36,23 @@
 		"Medical Doctor": 1,
 		"Engineer": {
 			"outfit": "/datum/outfit/job/engineer/nt",
-			"slots": 3
+			"slots": 1
+		},
+		"Atmospheric Technician": {
+			"outfit": "/datum/outfit/job/atmos",
+			"slots": 1
 		},
 		"Shaft Miner": 2,
+		"Cargo Technician": {
+		"outfit": "/datum/outfit/job/cargo_tech",
+		"slots": 1
+		},
 		"Security Officer": {
 			"outfit": "/datum/outfit/job/security/nanotrasen",
+			"slots": 1
+		},
+		"Cook": {
+			"outfit": "/datum/outfit/job/cook",
 			"slots": 1
 		},
 		"Assistant": {
