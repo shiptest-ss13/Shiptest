@@ -53,6 +53,15 @@
 		tear_manifest(user)
 	return ..()
 
+/obj/structure/closet/crate/MouseDrop(turf/unload_turf, src_location, over_location)
+	. = ..()
+	if(!istype(src.loc, /obj/structure/crate_shelf))
+		return
+	if(!unload_turf || !istype(unload_turf, /turf/open))
+		return
+	var/obj/structure/crate_shelf/shelf = src.loc
+	return(shelf.unload(src, usr, unload_turf))
+
 /obj/structure/closet/crate/open(mob/living/user, force = FALSE)
 	. = ..()
 	if(. && manifest)
