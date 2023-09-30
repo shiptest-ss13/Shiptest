@@ -1,7 +1,17 @@
 /**********************Rock Planet Areas**************************/
 
-/area/mine/rockplanet
+//syndicate
+/area/ruin/rockplanet/syndicate
 	name = "Abandoned Syndicate Mining Facility"
+	icon_state = "green"
 
-/area/mine/rockplanet_nanotrasen
+//budgetcuts
+/area/ruin/rockplanet/nanotrasen
 	name = "Abandoned Mining Facility"
+	icon_state = "green"
+
+//nomad
+/area/ruin/rockplanet/nomad
+	name = "Abandoned Crash Site"
+	always_unpowered = FALSE
+	icon_state = "red"
