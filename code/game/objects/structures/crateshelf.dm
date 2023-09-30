@@ -1,5 +1,5 @@
 #define DEFAULT_SHELF_CAPACITY 3 // Default capacity of the shelf
-#define DEFAULT_SHELF_USE_DELAY 1 SECOND // Default interaction delay of the shelf
+#define DEFAULT_SHELF_USE_DELAY 1 SECONDS // Default interaction delay of the shelf
 #define DEFAULT_SHELF_VERTICAL_OFFSET 10 // Vertical pixel offset of shelving-related things. Set to 10 by default due to this leaving more of the crate on-screen to be clicked.
 
 /obj/structure/crate_shelf
@@ -52,8 +52,8 @@
 
 /obj/structure/crate_shelf/attackby(obj/item/item, mob/living/user, params)
 	. = ..()
-	if (W.tool_behaviour == TOOL_WRENCH && !(flags_1&NODECONSTRUCT_1) && user.a_intent != INTENT_HELP)
-		W.play_tool_sound(src)
+	if (item.tool_behaviour == TOOL_WRENCH && !(flags_1&NODECONSTRUCT_1) && user.a_intent != INTENT_HELP)
+		item.play_tool_sound(src)
 		if(do_after(user, 3 SECONDS, target = src))
 			deconstruct(TRUE)
 			return
