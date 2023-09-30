@@ -11,7 +11,7 @@
 /obj/effect/forcefield/Initialize(mapload, new_timeleft)
 	. = ..()
 	//used to change the time for forcewine
-	if(reac_volume)
+	if(new_timeleft)
 		timeleft = reac_volume
 	if(timeleft)
 		QDEL_IN(src, timeleft)
