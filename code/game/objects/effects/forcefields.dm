@@ -12,7 +12,7 @@
 	. = ..()
 	//used to change the time for forcewine
 	if(new_timeleft)
-		timeleft = reac_volume
+		timeleft = new_timeleft
 	if(timeleft)
 		QDEL_IN(src, timeleft)
 
