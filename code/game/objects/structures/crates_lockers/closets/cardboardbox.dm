@@ -77,7 +77,7 @@
 	close_sound_volume = 50
 	material_drop = /obj/item/stack/sheet/plasteel
 
-/obj/structure/closet/cardboard/mothic
-	name = "\improper Mothic Fleet box"
-	desc = "For holding moths, presumably."
+/obj/structure/closet/cardboard/rations
+	name = "Supply box"
+	desc = "For holding supplies, presumably."
 #undef SNAKE_SPAM_TICKS

@@ -246,11 +246,11 @@
 	crate_name = "beekeeping starter crate"
 	crate_type = /obj/structure/closet/crate/hydroponics
 
-/datum/supply_pack/food/mothic_rations
+/datum/supply_pack/food/rations
 	name = "Surplus Mothic Ration Pack"
 	desc = "A single surplus ration pack from the Mothic Fleet. Comes with 3 random sustenance bars, and a package of Activin chewing gum."
 	cost = 200
-	contains = list(/obj/item/storage/box/mothic_rations)
+	contains = list(/obj/item/storage/box/rations)
 
 /datum/supply_pack/food/ready_donk
 	name = "Ready-Donk Single Meal"
@@ -272,12 +272,12 @@
 		var/item = pick(contains)
 		new item(C)
 
-/datum/supply_pack/food/mothic_rations
-	name = "Surplus Mothic Rations Triple-Pak"
-	desc = "Crew starving? Chef slacking off? Keep everyone fed on the barest minimum of what can be considered food with surplus ration packs, directly from the Mothic Fleet! Pack includes 3 packs of 3 bars each."
+/datum/supply_pack/food/rations
+	name = "Surplus Ration Triple-Pak"
+	desc = "Crew starving? Chef slacking off? Keep everyone fed on the barest minimum of what can be considered food with surplus ration packs, directly from survival stores and military surplus! Pack includes 3 packs of 3 bars each."
 	cost = 600
-	contains = list(/obj/item/storage/box/mothic_rations,
-					/obj/item/storage/box/mothic_rations,
-					/obj/item/storage/box/mothic_rations,)
+	contains = list(/obj/item/storage/box/rations,
+					/obj/item/storage/box/rations,
+					/obj/item/storage/box/rations,)
 	crate_name = "surplus rations box"
-	crate_type = /obj/structure/closet/cardboard/mothic
+	crate_type = /obj/structure/closet/cardboard/rations

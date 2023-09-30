@@ -1543,13 +1543,13 @@
 		)
 	generate_items_inside(items_inside,src)
 
-/obj/item/storage/box/mothic_rations
-	name = "Mothic Rations Pack"
-	desc = "A box containing a few rations and some Activin gum, for keeping a starving moth going."
-	icon_state = "moth_package"
+/obj/item/storage/box/rations
+	name = "Surplus Rations Box"
+	desc = "A box containing a few rations and some Activin gum, for keeping a starving crew going."
+	icon_state = "rations_package"
 	illustration = null
 
-/obj/item/storage/box/mothic_rations/PopulateContents()
+/obj/item/storage/box/rations/PopulateContents()
 	for(var/i in 1 to 3)
 		var/randomFood = pick(list(/obj/item/reagent_containers/food/snacks/sustenance_bar,
 							/obj/item/reagent_containers/food/snacks/sustenance_bar/cheese,
