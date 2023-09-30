@@ -1,5 +1,5 @@
 #define DEFAULT_SHELF_CAPACITY 3 // Default capacity of the shelf
-#define DEFAULT_SHELF_USE_DELAY 10 // Default interaction delay of the shelf
+#define DEFAULT_SHELF_USE_DELAY 1 SECOND // Default interaction delay of the shelf
 #define DEFAULT_SHELF_VERTICAL_OFFSET 10 // Vertical pixel offset of shelving-related things. Set to 10 by default due to this leaving more of the crate on-screen to be clicked.
 
 /obj/structure/crate_shelf
@@ -49,6 +49,14 @@
 		. += "<span class='notice'>It contains:</span>"
 		for(var/obj/structure/closet/crate/crate in shelf_contents)
 			. += "	[icon2html(crate, user)] [crate]"
+
+/obj/structure/crate_shelf/attackby(obj/item/item, mob/living/user, params)
+	. = ..()
+	if (W.tool_behaviour == TOOL_WRENCH && !(flags_1&NODECONSTRUCT_1) && user.a_intent != INTENT_HELP)
+		W.play_tool_sound(src)
+		if(do_after(user, 3 SECONDS, target = src))
+			deconstruct(TRUE)
+			return
 
 /obj/structure/crate_shelf/MouseDrop_T(obj/structure/closet/crate/crate, mob/user)
 	if(!istype(crate, /obj/structure/closet/crate))
@@ -100,6 +108,13 @@
 		handle_visuals()
 		return TRUE
 	return FALSE  // If the do_after() is interrupted, return FALSE!
+
+/obj/structure/crate_shelf/deconstruct(disassembled = TRUE)
+	if(!(flags_1&NODECONSTRUCT_1))
+		density = FALSE
+		var/obj/item/rack_parts/shelf/newparts = new(loc)
+		transfer_fingerprints_to(newparts)
+	qdel(src)
 
 /obj/item/rack_parts/shelf
 	name = "shelf parts"
