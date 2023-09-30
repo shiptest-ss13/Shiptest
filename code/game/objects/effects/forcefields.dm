@@ -8,7 +8,7 @@
 	CanAtmosPass = ATMOS_PASS_DENSITY
 	var/timeleft = 300 //Set to 0 for permanent forcefields (ugh)
 
-/obj/effect/forcefield/Initialize(mapload, reac_volume)
+/obj/effect/forcefield/Initialize(mapload, new_timeleft)
 	. = ..()
 	//used to change the time for forcewine
 	if(reac_volume)
