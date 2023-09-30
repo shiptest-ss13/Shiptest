@@ -45,13 +45,10 @@
 		. += "manifest"
 
 /obj/structure/closet/crate/attack_hand(mob/user)
-	if(istype(src.loc, /obj/structure/crate_shelf)) // If we're inside of a shelf, handle that first.
-		var/obj/structure/crate_shelf/shelf = src.loc
-		shelf.unload(src, user)
-		return // Return early, we may not want to immediately open the crate.
+	. = ..()
 	if(manifest)
 		tear_manifest(user)
-	return ..()
+	return
 
 /obj/structure/closet/crate/MouseDrop(turf/unload_turf, src_location, over_location)
 	. = ..()
