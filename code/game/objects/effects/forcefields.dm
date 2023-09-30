@@ -41,7 +41,7 @@
 	timeleft = 600
 
 /obj/effect/forcefield/resin
-	desc = "Its rapidly decaying!"
+	desc = "It's rapidly decaying!"
 	name = "resin"
 	icon_state = "atmos_resin"
 	CanAtmosPass = ATMOS_PASS_NO
