@@ -45,10 +45,11 @@
 		. += "manifest"
 
 /obj/structure/closet/crate/attack_hand(mob/user)
-	. = ..()
+	if(istype(src.loc, /obj/structure/crate_shelf))
+		return FALSE // No opening crates in shelves!!
 	if(manifest)
 		tear_manifest(user)
-	return
+	return ..()
 
 /obj/structure/closet/crate/MouseDrop(turf/unload_turf, src_location, over_location)
 	. = ..()
