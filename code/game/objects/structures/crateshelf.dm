@@ -51,12 +51,12 @@
 			. += "	[icon2html(crate, user)] [crate]"
 
 /obj/structure/crate_shelf/attackby(obj/item/item, mob/living/user, params)
-	. = ..()
-	if (item.tool_behaviour == TOOL_WRENCH && !(flags_1&NODECONSTRUCT_1) && user.a_intent != INTENT_HELP)
+	if (item.tool_behaviour == TOOL_WRENCH && !(flags_1&NODECONSTRUCT_1))
 		item.play_tool_sound(src)
 		if(do_after(user, 3 SECONDS, target = src))
 			deconstruct(TRUE)
-			return
+			return TRUE
+	return ..()
 
 /obj/structure/crate_shelf/MouseDrop_T(obj/structure/closet/crate/crate, mob/user)
 	if(!istype(crate, /obj/structure/closet/crate))
