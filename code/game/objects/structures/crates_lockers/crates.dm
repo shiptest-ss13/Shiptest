@@ -262,17 +262,3 @@
 	icon_state = "chemcrate"
 	material_drop = /obj/item/stack/sheet/mineral/gold
 	material_drop_amount = 1
-
-/obj/structure/closet/crate/eva
-	name = "EVA crate"
-
-/obj/structure/closet/crate/eva/PopulateContents()
-	..()
-	for(var/i in 1 to 3)
-		new /obj/item/clothing/suit/space/eva(src)
-	for(var/i in 1 to 3)
-		new /obj/item/clothing/head/helmet/space/eva(src)
-	for(var/i in 1 to 3)
-		new /obj/item/clothing/mask/breath(src)
-	for(var/i in 1 to 3)
-		new /obj/item/tank/internals/oxygen(src)
