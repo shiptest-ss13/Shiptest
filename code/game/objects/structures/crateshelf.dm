@@ -99,6 +99,7 @@
 		shelf_contents[shelf_contents.Find(crate)] = null // We do this instead of removing it from the list to preserve the order of the shelf.
 		handle_visuals()
 		return TRUE
+	return FALSE  // If the do_after() is interrupted, return FALSE!
 
 /obj/item/rack_parts/shelf
 	name = "shelf parts"
