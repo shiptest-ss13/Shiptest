@@ -401,7 +401,8 @@
 		if(istype(tocook, /obj/item/reagent_containers/food) || istype(tocook, /obj/item/grown))
 			tocook.visible_message("<span class='notice'>\The [tocook] is done warming up!</span>")
 			tocook.microwave_act()
-			clear_cooking()
+			if(!QDELETED(tocook))
+				clear_cooking()
 		if(uses == 0)
 			qdel()
 		else
