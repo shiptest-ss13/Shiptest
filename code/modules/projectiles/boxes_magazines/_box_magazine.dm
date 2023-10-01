@@ -163,7 +163,7 @@
 /obj/item/ammo_box/AltClick(mob/user)
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
-		if((H.l_store == src || H.r_store == src) && !(caliber || istype(src, /obj/item/ammo_box/magazine) || instant_load))	//caliber because boxes have none, instant load because speedloaders use the base ammo box type with instant load on, and magazine for the obvious.
+		if((user.is_holding(src) ||H.l_store == src || H.r_store == src) && !(caliber || istype(src, /obj/item/ammo_box/magazine) || instant_load))	//caliber because boxes have none, instant load because speedloaders use the base ammo box type with instant load on, and magazine for the obvious.
 			attack_self(user)
 			return
 	..()
@@ -171,7 +171,7 @@
 /obj/item/ammo_box/examine(mob/user)
 	. = ..()
 	if(!(caliber || istype(src, /obj/item/ammo_box/magazine) || instant_load))
-		. += "Alt-click on [src] while it in a pocket to take out a round while it is in your pocket."
+		. += "Alt-click on [src] while it in a pocket or your off-hand to take out a round while it is there."
 
 /obj/item/ammo_box/magazine
 	w_class = WEIGHT_CLASS_SMALL //Default magazine weight, only differs for tiny mags and drums
