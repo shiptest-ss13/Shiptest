@@ -160,7 +160,7 @@
 		temp_materials[material] = (bullet_cost[material] * stored_ammo.len) + base_cost[material]
 	set_custom_materials(temp_materials)
 
-/obj/item/ammo_box/attack_hand(mob/user)
+/obj/item/ammo_box/AltClick(mob/user)
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		if((H.l_store == src || H.r_store == src) && !(caliber || istype(src, /obj/item/ammo_box/magazine) || instant_load))	//caliber because boxes have none, instant load because speedloaders use the base ammo box type with instant load on, and magazine for the obvious.
@@ -168,23 +168,10 @@
 			return
 	..()
 
-/obj/item/ammo_box/MouseDrop(atom/over_object)
+/obj/item/ammo_box/examine(mob/user)
 	. = ..()
-	var/mob/living/M = usr
-	if(!istype(M) || !(M.mobility_flags & MOBILITY_PICKUP))
-		return
-	if(Adjacent(usr))
-		if(over_object == M && loc != M)
-			M.put_in_hands(src)
-			to_chat(usr, "<span class='notice'>You pick up the ammo box.</span>")
-
-		else if(istype(over_object, /atom/movable/screen/inventory/hand))
-			var/atom/movable/screen/inventory/hand/H = over_object
-			if(M.putItemFromInventoryInHandIfPossible(src, H.held_index))
-				to_chat(usr, "<span class='notice'>You pick up the ammo box.</span>")
-
-	else
-		to_chat(usr, "<span class='warning'>You can't reach it from here!</span>")
+	if(!(caliber || istype(src, /obj/item/ammo_box/magazine) || instant_load))
+		. += "Alt-click on [src] while it in a pocket to take out a round while it is in your pocket."
 
 /obj/item/ammo_box/magazine
 	w_class = WEIGHT_CLASS_SMALL //Default magazine weight, only differs for tiny mags and drums
