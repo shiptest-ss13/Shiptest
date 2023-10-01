@@ -93,3 +93,9 @@
 	description = "Nanotrasen's gotta lay off some personnel, and this facility hasn't been worth the effort so far"
 	id = "rockplanet_budgetcuts"
 	suffix = "rockplanet_budgetcuts.dmm"
+
+/datum/map_template/ruin/rockplanet/nomadcrash
+	name = "Nomad Crash"
+	description = "A Crashed Arrow & Axe Interceptor. A long forgotten Crew. They tried their best to survive..."
+	id = "rockplanet_nomadcrash"
+	suffix = "rockplanet_nomadcrash.dmm"
