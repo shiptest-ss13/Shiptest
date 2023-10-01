@@ -1179,7 +1179,7 @@
 	category = CAT_PRIMAL
 
 /datum/crafting_recipe/distiller
-	name = "Wooden Barrel"
+	name = "Distiller"
 	result = /obj/structure/fermenting_barrel/distiller
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 8, /datum/reagent/srm_bacteria = 30)
 	time = 50
