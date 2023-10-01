@@ -75,8 +75,6 @@
 /area/ruin/beach/float_resort
 	name = "Beach Resort"
 	icon_state = "yellow"
-	mood_bonus = 10
-	mood_message = "<span class='nicegreen''>Incredible! A hidden resort all to myself and my crew! </span>\n"
 	always_unpowered = FALSE
 
 /area/ruin/beach/float_resort/villa
