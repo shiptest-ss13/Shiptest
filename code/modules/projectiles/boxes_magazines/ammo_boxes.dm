@@ -150,6 +150,7 @@
 	max_ammo = 22
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 	item_flags = NO_MAT_REDEMPTION
+	instant_load = TRUE
 
 // Ammo Boxes
 
