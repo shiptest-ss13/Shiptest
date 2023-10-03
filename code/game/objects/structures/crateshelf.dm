@@ -36,17 +36,28 @@
 		crate.forceMove(dump_turf)
 		step(crate, pick(GLOB.alldirs)) // Shuffle the crates around as though they've fallen down.
 		crate.SpinAnimation(rand(4,7), 1) // Spin the crates around a little as they fall. Randomness is applied so it doesn't look weird.
-		if(prob(10))
-			if(crate.open()) // Break some open, cause a little chaos
-				crate.visible_message("<span class='warning'>[crate]'s lid falls open!</span>")
+		switch(pick("nothing", "open", "break")) // Randomly pick whether to do nothing, open the crate, or break it open.
+			if("nothing") // Believe it or not, this does nothing.
+			if("open")
+				if(crate.open()) // Break some open, cause a little chaos.
+					crate.visible_message("<span class='warning'>[crate]'s lid falls open!</span>")
+				else // If we somehow fail to open the crate, just break it instead!
+					crate.visible_message("<span class='warning'>[crate] falls apart!")
+					crate.Destroy()
+			if("break") // Break that crate!
+				crate.visible_message("<span class='warning'>[crate] falls apart!")
+				crate.Destroy()
 	shelf_contents.Cut()
 	return ..()
 
 /obj/structure/crate_shelf/examine(mob/user)
 	. = ..()
 	. += "<span class='notice'>There are some <b>bolts</b> holding [src] together.</span>"
-	if(contents.len)
-		. += "<span class='notice'>It contains:</span>"
+	if(shelf_contents.Find(null)) // If there's an empty space in the shelf, let the examiner know.
+		. += "<span class='notice'>You could <b>drag</b> a crate into [src]."
+	if(contents.len) // If there are any crates in the shelf, let the examiner know.
+		. += "<span class='notice'>You could <b>drag</b> a crate out of [src]."
+		. += "<span class='notice'>[src] contains:</span>"
 		for(var/obj/structure/closet/crate/crate in shelf_contents)
 			. += "	[icon2html(crate, user)] [crate]"
 
@@ -65,9 +76,6 @@
 		return FALSE // If it's not next to the shelf, don't put it in!
 	if(!isliving(user))
 		return FALSE // While haunted shelves sound funny, they are quite dangerous in practice. Prevent ghosts from loading into shelves.
-	if(crate.opened) // If the crate is open, try to close it.
-		if(!crate.close())
-			return FALSE // If we fail to close it, don't load it into the shelf.
 	return load(crate, user) // Try to load the crate into the shelf.
 
 /obj/structure/crate_shelf/proc/handle_visuals()
@@ -80,6 +88,11 @@
 		balloon_alert(user, "shelf full!")
 		return FALSE
 	if(do_after(user, use_delay, target = crate))
+		if(next_free != null)
+			return FALSE // Something has been added to the shelf while we were waiting, abort!
+		if(crate.opened) // If the crate is open, try to close it.
+			if(!crate.close())
+				return FALSE // If we fail to close it, don't load it into the shelf.
 		shelf_contents[next_free] = crate // Insert a reference to the crate into the free slot.
 		crate.forceMove(src) // Insert the crate into the shelf.
 		crate.pixel_y = DEFAULT_SHELF_VERTICAL_OFFSET * (next_free - 1) // Adjust the vertical offset of the crate to look like it's on the shelf.
@@ -94,7 +107,7 @@
 	if(get_turf(src) == unload_turf) // If we're going to just drop it back onto the shelf, don't!
 		unload_turf.balloon_alert(user, "no room!")
 		return FALSE
-	if(!unload_turf.Adjacent(src) || !unload_turf.Adjacent(user))
+	if(!unload_turf.Adjacent(src) || !unload_turf.Adjacent(user)) // If the destination turf is adjacent to neither the player, nor the shelf, do nothing.
 		unload_turf.balloon_alert(user, "too far!")
 		return FALSE
 	if(!unload_turf.Enter(crate, no_side_effects = TRUE)) // If moving the crate from the shelf to the desired turf would bump, don't do it! Thanks Kapu1178 for the help here. - Generic DM
