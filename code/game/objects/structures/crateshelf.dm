@@ -36,17 +36,17 @@
 		crate.forceMove(dump_turf)
 		step(crate, pick(GLOB.alldirs)) // Shuffle the crates around as though they've fallen down.
 		crate.SpinAnimation(rand(4,7), 1) // Spin the crates around a little as they fall. Randomness is applied so it doesn't look weird.
-		switch(pick("nothing", "open", "break")) // Randomly pick whether to do nothing, open the crate, or break it open.
-			if("nothing") // Believe it or not, this does nothing.
-			if("open")
+		switch(pick(1, 2, 3)) // Randomly pick whether to do nothing, open the crate, or break it open.
+			if(1) // Believe it or not, this does nothing.
+			if(2) // Open the crate!
 				if(crate.open()) // Break some open, cause a little chaos.
 					crate.visible_message("<span class='warning'>[crate]'s lid falls open!</span>")
 				else // If we somehow fail to open the crate, just break it instead!
 					crate.visible_message("<span class='warning'>[crate] falls apart!")
-					crate.Destroy()
-			if("break") // Break that crate!
+					crate.deconstruct()
+			if(3) // Break that crate!
 				crate.visible_message("<span class='warning'>[crate] falls apart!")
-				crate.Destroy()
+				crate.deconstruct()
 	shelf_contents.Cut()
 	return ..()
 
