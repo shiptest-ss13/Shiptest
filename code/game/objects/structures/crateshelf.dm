@@ -69,11 +69,13 @@
 			return TRUE
 	return ..()
 
-/obj/structure/crate_shelf/MouseDrop_T(obj/structure/closet/crate/crate, mob/user)
+/obj/structure/crate_shelf/MouseDrop_T(obj/structure/closet/crate/crate, mob/living/user)
 	if(!istype(crate, /obj/structure/closet/crate))
 		return FALSE // If it's not a crate, don't put it in!
 	if(!src.Adjacent(crate))
 		return FALSE // If it's not next to the shelf, don't put it in!
+	if(!isturf(user.loc) || user.incapacitated() || user.body_position == LYING_DOWN)
+		return FALSE // If the user is in a weird position, or incapacitated, don't let them load crates!
 	if(!isliving(user))
 		return FALSE // While haunted shelves sound funny, they are quite dangerous in practice. Prevent ghosts from loading into shelves.
 	return load(crate, user) // Try to load the crate into the shelf.
@@ -88,7 +90,7 @@
 		balloon_alert(user, "shelf full!")
 		return FALSE
 	if(do_after(user, use_delay, target = crate))
-		if(next_free != null)
+		if(shelf_contents[next_free] != null)
 			return FALSE // Something has been added to the shelf while we were waiting, abort!
 		if(crate.opened) // If the crate is open, try to close it.
 			if(!crate.close())

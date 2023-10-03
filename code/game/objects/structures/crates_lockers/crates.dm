@@ -53,10 +53,15 @@
 
 /obj/structure/closet/crate/MouseDrop(turf/unload_turf, src_location, over_location)
 	. = ..()
+	var/mob/living/user = usr
+	if(!isliving(usr))
+		return // Ghosts busted.
 	if(!istype(src.loc, /obj/structure/crate_shelf))
-		return
+		return // If the crate is not in a shelf, don't bother unloading it.
 	if(!unload_turf || !istype(unload_turf, /turf/open))
-		return
+		return // If the destination turf isn't open, or doesn't exist, don't bother trying.
+	if(!isturf(user.loc) || user.incapacitated() || user.body_position == LYING_DOWN)
+		return // If the user is in a weird state, don't bother trying.
 	var/obj/structure/crate_shelf/shelf = src.loc
 	return(shelf.unload(src, usr, unload_turf))
 
