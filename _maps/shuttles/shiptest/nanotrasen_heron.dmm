@@ -3327,6 +3327,10 @@
 /obj/machinery/light_switch{
 	pixel_y = 23
 	},
+/obj/item/storage/ration/lemon_pepper_chicken{
+	pixel_x = 7;
+	pixel_y = 2
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo/office)
 "mm" = (
@@ -4341,6 +4345,10 @@
 	pixel_y = -1
 	},
 /obj/item/clothing/neck/shemagh,
+/obj/item/reagent_containers/spray/pepper{
+	pixel_x = 7;
+	pixel_y = -6
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hangar)
 "pT" = (
@@ -6631,6 +6639,7 @@
 /obj/item/clothing/under/rank/centcom/centcom_skirt,
 /obj/item/clothing/suit/hooded/wintercoat/centcom,
 /obj/item/clothing/head/beret/centcom_formal,
+/obj/item/stock_parts/cell/gun/upgraded,
 /turf/open/floor/carpet/green,
 /area/ship/crew/dorm/dormtwo)
 "yc" = (
@@ -9383,6 +9392,10 @@
 	pixel_y = -1
 	},
 /obj/item/clothing/neck/shemagh,
+/obj/item/reagent_containers/spray/pepper{
+	pixel_x = 7;
+	pixel_y = -6
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hangar)
 "Ip" = (
@@ -13164,6 +13177,18 @@
 /obj/item/ammo_box/c9mm/ap{
 	pixel_y = 17;
 	pixel_x = 4
+	},
+/obj/item/stock_parts/cell/gun{
+	pixel_x = -3;
+	pixel_y = -5
+	},
+/obj/item/stock_parts/cell/gun{
+	pixel_x = 1;
+	pixel_y = -5
+	},
+/obj/item/stock_parts/cell/gun{
+	pixel_x = 5;
+	pixel_y = -5
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
