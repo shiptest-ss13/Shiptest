@@ -190,36 +190,6 @@
 	W.update_label()
 	..()
 
-/datum/outfit/centcom/ert/commander/inquisitor
-	name = "Inquisition Commander"
-	r_hand = /obj/item/nullrod/scythe/talking/chainsword
-	suit = /obj/item/clothing/suit/space/hardsuit/ert/paranormal
-	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,
-		/obj/item/gun/energy/e_gun=1)
-
-/datum/outfit/centcom/ert/security/inquisitor
-	name = "Inquisition Security"
-
-	suit = /obj/item/clothing/suit/space/hardsuit/ert/paranormal/inquisitor
-
-	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,
-		/obj/item/storage/box/handcuffs=1,
-		/obj/item/gun/energy/e_gun/stun=1,
-		/obj/item/melee/baton/loaded=1,
-		/obj/item/construction/rcd/loaded=1)
-
-/datum/outfit/centcom/ert/medic/inquisitor
-	name = "Inquisition Medic"
-
-	suit = /obj/item/clothing/suit/space/hardsuit/ert/paranormal/inquisitor
-
-	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,
-		/obj/item/melee/baton/loaded=1,
-		/obj/item/gun/energy/e_gun=1,
-		/obj/item/reagent_containers/hypospray/combat=1,
-		/obj/item/reagent_containers/hypospray/combat/heresypurge=1,
-		/obj/item/gun/medbeam=1)
-
 /datum/outfit/centcom/ert/chaplain
 	name = "ERT Chaplain"
 
@@ -240,16 +210,6 @@
 	var/obj/item/radio/R = H.ears
 	R.keyslot = new /obj/item/encryptionkey/headset_com
 	R.recalculateChannels()
-
-/datum/outfit/centcom/ert/chaplain/inquisitor
-	name = "Inquisition Chaplain"
-
-	belt = /obj/item/storage/belt/soulstone/full/chappy
-	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,
-		/obj/item/grenade/chem_grenade/holy=1,
-		/obj/item/nullrod=1,
-		/obj/item/gun/energy/e_gun=1,
-		)
 
 /datum/outfit/centcom/ert/janitor
 	name = "ERT Janitor"
@@ -289,35 +249,6 @@
 		/obj/item/melee/baton/loaded=1,\
 		/obj/item/grenade/clusterbuster/cleaner=3)
 
-/datum/outfit/centcom/ert/clown
-	name = "ERT Clown"
-
-	suit = /obj/item/clothing/suit/space/hardsuit/ert/clown
-	mask = /obj/item/clothing/mask/gas/clown_hat
-	id = /obj/item/card/id/ert/clown
-	glasses = /obj/item/clothing/glasses/godeye
-	back = /obj/item/storage/backpack/ert/clown
-	belt = /obj/item/storage/belt/champion
-	shoes = /obj/item/clothing/shoes/clown_shoes/combat
-	r_pocket = /obj/item/bikehorn/golden
-	l_pocket = /obj/item/reagent_containers/food/snacks/grown/banana
-	backpack_contents = list(/obj/item/storage/box/hug/survival=1,\
-		/obj/item/melee/transforming/energy/sword/bananium=1,\
-		/obj/item/shield/energy/bananium=1,\
-		/obj/item/gun/ballistic/revolver/reverse=1)
-
-/datum/outfit/centcom/ert/clown/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-	var/obj/item/radio/R = H.ears
-	R.keyslot = new /obj/item/encryptionkey/headset_com
-	R.recalculateChannels()
-	ADD_TRAIT(H, TRAIT_NAIVE, INNATE_TRAIT)
-	H.dna.add_mutation(CLOWNMUT)
-	for(var/datum/mutation/human/clumsy/M in H.dna.mutations)
-		M.mutadone_proof = TRUE
-
 /datum/outfit/centcom/centcom_intern
 	name = "CentCom Intern"
 
@@ -333,6 +264,12 @@
 	r_pocket = /obj/item/ammo_box/a762
 	id = /obj/item/card/id/centcom
 	backpack_contents = list(/obj/item/storage/box/survival = 1)
+/datum/outfit/centcom/centcom_intern/unarmed
+	name = "CentCom Intern (Unarmed)"
+	belt = null
+	l_hand = null
+	l_pocket = null
+	r_pocket = null
 
 /datum/outfit/centcom/centcom_intern/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	if(visualsOnly)
@@ -352,6 +289,12 @@
 	suit_store = /obj/item/gun/ballistic/rifle/boltaction
 	r_hand = /obj/item/megaphone
 	head = /obj/item/clothing/head/intern
+
+/datum/outfit/centcom/centcom_intern/leader/unarmed // i'll be nice and let the leader keep their baton and vest
+	name = "CentCom Head Intern (Unarmed)"
+	suit_store = null
+	l_pocket = null
+	r_pocket = null
 
 /datum/outfit/centcom/ert/marine
 	name = "Marine Commander"

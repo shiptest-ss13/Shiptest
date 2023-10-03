@@ -10,6 +10,18 @@
 	var/mission = "Assist your employers in achieving their goals. Protect corporate assets."
 	var/teamsize = 5
 	var/polldesc
+	/// If TRUE, gives the team members "[role] [random last name]" style names
+	var/random_names = TRUE
+	/// If TRUE, the admin who created the response team will be spawned in the briefing room in their preferred briefing outfit (assuming they're a ghost)
+	var/spawn_admin = FALSE
+	/// If TRUE, we try and pick one of the most experienced players who volunteered to fill the leader slot
+	var/leader_experience = TRUE
+	/// A custom map template to spawn the ERT at. If this is null or use_custom_shuttle is FALSE, the ERT will spawn at Centcom. By default, a Kunai-Class.
+	var/datum/map_template/ert_template = /datum/map_template/shuttle/subshuttles/kunai
+	/// If we should actually _use_ the ert_template custom shuttle
+	var/use_custom_shuttle = TRUE
+
+// Nanotrasen
 
 /datum/ert/New()
 	if (!polldesc)
@@ -46,20 +58,15 @@
 	code = "Green"
 	teamsize = 1
 	opendoors = FALSE
-	leader_role = /datum/antagonist/official
-	roles = list(/datum/antagonist/official)
+	leader_role = /datum/antagonist/ert/official
+	roles = list(/datum/antagonist/ert/official)
 	rename_team = "CentCom Officials"
 	polldesc = "a CentCom Official"
+	random_names = FALSE
+	leader_experience = FALSE
 
 /datum/ert/centcom_official/New()
-	mission = "Conduct a routine review of [station_name()]."
-
-/datum/ert/inquisition
-	roles = list(/datum/antagonist/ert/chaplain/inquisitor, /datum/antagonist/ert/security/inquisitor, /datum/antagonist/ert/medic/inquisitor)
-	leader_role = /datum/antagonist/ert/commander/inquisitor
-	rename_team = "Inquisition"
-	mission = "Destroy any traces of paranormal activity within the deployment site."
-	polldesc = "a Nanotrasen paranormal response team"
+	mission = "Conduct a routine review of [station_name()]'s vessels."
 
 /datum/ert/janitor
 	roles = list(/datum/antagonist/ert/janitor, /datum/antagonist/ert/janitor/heavy)
@@ -78,3 +85,152 @@
 	rename_team = "Horde of Interns"
 	mission = "Assist in conflict resolution."
 	polldesc = "an unpaid internship opportunity with Nanotrasen"
+
+/datum/ert/intern/unarmed
+	roles = list(/datum/antagonist/ert/intern/unarmed)
+	leader_role = /datum/antagonist/ert/intern/leader/unarmed
+	rename_team = "Unarmed Horde of Interns"
+
+/datum/ert/loss_prevention
+	code = "Light Blue"
+	teamsize = 4
+	opendoors = FALSE
+	leader_role = /datum/antagonist/ert/lp/lieutenant
+	roles = list(/datum/antagonist/ert/lp, /datum/antagonist/ert/lp/medic, /datum/antagonist/ert/lp/engineer)
+	rename_team = "Loss Prevention Team"
+	polldesc = "a NanoTrasen loss prevention team"
+
+// Inteq
+
+/datum/ert/inteq
+	teamsize = 4
+	opendoors = FALSE
+	leader_role = /datum/antagonist/ert/official
+	roles = list(/datum/antagonist/ert/official)
+	mission = "Carry out your contract."
+	rename_team = "Generic Inteq Team"
+	polldesc = "an Inteq emergency team"
+
+// SolGov
+
+/datum/ert/solgov
+	teamsize = 4
+	opendoors = FALSE
+	leader_role = /datum/antagonist/ert/official
+	roles = list(/datum/antagonist/ert/official)
+	mission = "solgov lol"
+	rename_team = "Generic SolGov Team"
+	polldesc = "a SolGov response team"
+
+/datum/ert/solgov/sonnensoldner
+	leader_role = /datum/antagonist/ert/solgov/sonnensoldner
+	roles = list(/datum/antagonist/ert/solgov/sonnensoldner)
+	mission = "solgov lol"
+	rename_team = "SolGov Sonnensoldner Team"
+	polldesc = "a SolGov mercenary team"
+
+/datum/ert/solgov/inspector
+	teamsize = 1
+	leader_role = /datum/antagonist/ert/solgov/inspector
+	roles = list(/datum/antagonist/ert/solgov/inspector)
+//	mission = "Conduct a routine review on [station_name()]'s vessels."
+	rename_team = "SolGov Sonnensoldner Team"
+	polldesc = "a SolGov mercenary team"
+
+// Minutemen
+
+/datum/ert/minutemen
+	teamsize = 4
+	opendoors = FALSE
+//	leader_role = /datum/antagonist/ert/minutemen/leader
+//	roles = list(/datum/antagonist/ert/minutemen)
+//	mission = "Keep the peace in [station_name()]."
+	rename_team = "Generic Minutemen Team"
+	polldesc = "a Minutemen emergency team"
+	random_names = TRUE
+
+/datum/ert/minutemen/bard
+//	leader_role = /datum/antagonist/ert/minutemen/bard/leader
+//	roles = list(/datum/antagonist/ert/minutemen/bard)
+	rename_team = "Minutemen BARD Team"
+	polldesc = "a Minutemen biohazard removal team"
+
+/datum/ert/minutemen/riot
+	teamsize = 6
+//	leader_role = /datum/antagonist/ert/minutemen/riot/leader
+//	roles = list(/datum/antagonist/ert/minutemen/riot)
+//	rename_team = "Minutemen Riot Control Team"
+	polldesc = "a Minutemen riot control team"
+
+/datum/ert/minutemen/piratehunters
+//	leader_role = /datum/antagonist/ert/minutemen/piratehunters/leader
+//	roles = list(/datum/antagonist/ert/minutemen/piratehunters)
+//	mission = "Eliminate all pirate presence within [station_name()]."
+	rename_team = "Minutemen Pirate Hunter Team"
+	polldesc = "Minutemen pirate hunters"
+
+// /datum/ert/minutemen/gold
+//	leader_role = /datum/antagonist/ert/minutemen/gold/leader
+//	roles = list(/datum/antagonist/ert/minutemen/gold)
+//	rename_team = "Minutemen GOLD Team"
+//	polldesc = "Minutemen miners"
+
+
+// /datum/ert/minutemen/gold/irs
+
+// Syndicate
+
+/datum/ert/syndicate
+	teamsize = 4
+	opendoors = FALSE
+//	leader_role = /datum/antagonist/ert/syndicate
+//	roles = list(/datum/antagonist/ert/syndicate)
+	mission = "Serve the interests of the Syndicate."
+	rename_team = "Generic Syndicate Team"
+	polldesc = "a Syndicate emergency team"
+
+/datum/ert/syndicate/gorlex
+//	leader_role = /datum/antagonist/ert/syndicate/gorlex/leader
+//	roles = list(/datum/antagonist/ert/syndicate/gorlex/leader)
+	mission = "Serve the interests of the Syndicate."
+	rename_team = "Generic Syndicate Team"
+	polldesc = "a Syndicate emergency team"
+
+/datum/ert/syndicate/cybersun
+//	leader_role = /datum/antagonist/ert/syndicate/cybersun/leader
+//	roles = list(/datum/antagonist/ert/syndicate/cybersun)
+	mission = "Serve the interests of CyberSun."
+	rename_team = "Cybersun Commando Team"
+	polldesc = "a Cybersun Commando team"
+
+/datum/ert/syndicate/cybersun/medic
+//	leader_role = /datum/antagonist/ert/syndicate/cybersun/medic/leader
+//	roles = list(/datum/antagonist/ert/syndicate/cybersun/medic)
+	mission = "Assist CyberSun clients."
+	rename_team = "Cybersun Medical Intervention Team"
+	polldesc = "a Cybersun paramedic team"
+
+// Frontiersmen
+/datum/ert/frontier
+	teamsize = 4
+	opendoors = FALSE
+	leader_role = /datum/antagonist/ert/frontier/leader
+	roles = list(/datum/antagonist/ert/frontier)
+	rename_team = "Generic Frontiersmen Team"
+	mission = "Pillage in the name of the Frontiersmen."
+	polldesc = "a poorly armed group of pirates"
+	random_names = TRUE
+	leader_experience = FALSE
+	ert_template = /datum/map_template/shuttle/subshuttles/sugarcube
+
+/datum/ert/frontier/assault
+	leader_role = /datum/antagonist/ert/frontier/leader
+	roles = list(/datum/antagonist/ert/frontier, /datum/antagonist/ert/frontier/medic, /datum/antagonist/ert/frontier/engineer)
+	rename_team = "Assault Frontiersmen Team"
+	polldesc = "an armed squad of pirates"
+
+/datum/ert/frontier/siege
+//	leader_role = /datum/antagonist/ert/frontier/leader/siege
+//	roles = list(/datum/antagonist/ert/frontier/siege, /datum/antagonist/ert/frontier/medic/siege, /datum/antagonist/ert/frontier/engineer/siege)
+	rename_team = "Siege Frontiersmen Team"
+	polldesc = "a heavily armed assault force of pirates"
