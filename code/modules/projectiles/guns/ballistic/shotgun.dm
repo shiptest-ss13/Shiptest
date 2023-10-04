@@ -49,12 +49,14 @@
 /obj/item/gun/ballistic/shotgun/riot //for spawn in the armory
 	name = "riot shotgun"
 	desc = "A sturdy shotgun with a six-shell tube and a fixed wooden stock designed for non-lethal riot control."
+	icon = 'icons/obj/guns/48x32guns.dmi'
 	icon_state = "riotshotgun"
 	item_state = "shotgun"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/riot
 	sawn_desc = "Come with me if you want to live."
 	can_be_sawn_off  = TRUE
 	rack_sound = 'sound/weapons/gun/shotgun/rack_alt.ogg'
+	fire_delay = 1
 
 // Automatic Shotguns//
 /obj/item/gun/ballistic/shotgun/automatic
