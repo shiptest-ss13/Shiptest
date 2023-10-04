@@ -352,7 +352,7 @@
 					spawn_turfs += get_turf(spawner)
 
 				if(!brief_spawn)
-					brief_spawn = locate(/obj/effect/landmark/ert_shuttle_brief_spawn) in ship_turfs
+					brief_spawn = locate(/obj/effect/landmark/ert_shuttle_brief_spawn) in shuttle_turfs
 
 			if(!length(spawn_turfs))
 				stack_trace("ERT shuttle loaded but found no spawnpoints, placing the ERT at wherever inside the shuttle instead.")
@@ -446,7 +446,7 @@
 			teamSpawned++
 
 		if(teamSpawned)
-			message_admins("[ertemplate.polldesc] has spawned with the mission: [ertemplate.mission]")
+			message_admins("[ertemplate.rename_team] has spawned with the mission: [ertemplate.mission]")
 
 		//Open the Armory doors
 		if(ertemplate.opendoors)

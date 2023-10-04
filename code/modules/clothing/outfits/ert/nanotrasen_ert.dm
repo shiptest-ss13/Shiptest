@@ -1,3 +1,4 @@
+// This is where the base ERT outfit goes
 /datum/outfit/centcom/ert
 	name = "ERT Common"
 
@@ -156,6 +157,7 @@
 		/obj/item/gun/energy/pulse/pistol/loyalpin=1,\
 		/obj/item/construction/rcd/combat=1)
 
+// official
 
 /datum/outfit/centcom/centcom_official
 	name = "CentCom Official"
@@ -189,27 +191,6 @@
 	W.registered_name = H.real_name
 	W.update_label()
 	..()
-
-/datum/outfit/centcom/ert/chaplain
-	name = "ERT Chaplain"
-
-	suit = /obj/item/clothing/suit/space/hardsuit/ert/paranormal/inquisitor // Chap role always gets this suit
-	id = /obj/item/card/id/ert/chaplain
-	glasses = /obj/item/clothing/glasses/hud/health
-	back = /obj/item/storage/backpack/cultpack
-	belt = /obj/item/storage/belt/soulstone
-	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,
-		/obj/item/nullrod=1,
-		/obj/item/gun/energy/e_gun=1,
-		)
-
-/datum/outfit/centcom/ert/chaplain/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-	var/obj/item/radio/R = H.ears
-	R.keyslot = new /obj/item/encryptionkey/headset_com
-	R.recalculateChannels()
 
 /datum/outfit/centcom/ert/janitor
 	name = "ERT Janitor"
@@ -295,6 +276,8 @@
 	suit_store = null
 	l_pocket = null
 	r_pocket = null
+
+// Marine
 
 /datum/outfit/centcom/ert/marine
 	name = "Marine Commander"
@@ -398,3 +381,49 @@
 	var/obj/item/radio/headset = H.ears
 	headset.keyslot = new /obj/item/encryptionkey/headset_com
 	headset.recalculateChannels()
+
+// Loss Prevention
+
+/datum/outfit/centcom/ert/lp
+	name = "ERT - Loss Prevention Security Specialist"
+
+	implants = list(/obj/item/implant/mindshield)
+	ears = /obj/item/radio/headset/nanotrasen/alt
+	id = /obj/item/card/id/lpsec
+	belt = /obj/item/gun/energy/laser/scatter/shotty
+	glasses = /obj/item/clothing/glasses/sunglasses
+	gloves = /obj/item/clothing/gloves/tackler/combat
+	suit = /obj/item/clothing/suit/space/hardsuit/ert/lp/sec
+	uniform = /obj/item/clothing/under/rank/security/head_of_security/nt/lp
+	shoes = /obj/item/clothing/shoes/jackboots
+	head = /obj/item/clothing/head/beret/sec
+
+/datum/outfit/centcom/ert/lp/medic
+	name = "ERT - Loss Prevention Medical Specialist"
+	uniform = /obj/item/clothing/under/rank/medical/paramedic/lp
+	suit = /obj/item/clothing/suit/space/hardsuit/ert/lp/med
+	id = /obj/item/card/id/lpmed
+	gloves = /obj/item/clothing/gloves/color/latex/nitrile
+
+
+/datum/outfit/centcom/ert/lp/engineer
+	name = "ERT - Loss Prevention Engineering Specialist"
+	uniform = /obj/item/clothing/under/rank/engineering/engineer/nt/lp
+	suit = /obj/item/clothing/suit/space/hardsuit/ert/lp/engi
+	id = /obj/item/card/id/lpengie
+	belt = /obj/item/storage/belt/utility/full
+	gloves = /obj/item/clothing/gloves/combat
+	glasses = /obj/item/clothing/glasses/welding
+
+
+/datum/outfit/centcom/ert/lp/lieutenant
+	name = "ERT - Loss Prevention Lieutenant"
+
+	ears = /obj/item/radio/headset/nanotrasen/alt/captain
+	id = /obj/item/card/id/lplieu
+	belt = /obj/item/storage/belt/military/army
+	gloves = /obj/item/clothing/gloves/color/black
+	uniform = /obj/item/clothing/under/rank/security/warden/lp
+	suit = /obj/item/clothing/suit/space/hardsuit/ert/lp
+	shoes = /obj/item/clothing/shoes/combat
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses

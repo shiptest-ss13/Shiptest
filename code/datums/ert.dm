@@ -105,8 +105,8 @@
 /datum/ert/inteq
 	teamsize = 4
 	opendoors = FALSE
-	leader_role = /datum/antagonist/ert/official
-	roles = list(/datum/antagonist/ert/official)
+	leader_role = /datum/antagonist/ert/inteq/leader
+	roles = list(/datum/antagonist/ert/inteq)
 	mission = "Carry out your contract."
 	rename_team = "Generic Inteq Team"
 	polldesc = "an Inteq emergency team"
@@ -116,8 +116,8 @@
 /datum/ert/solgov
 	teamsize = 4
 	opendoors = FALSE
-	leader_role = /datum/antagonist/ert/official
-	roles = list(/datum/antagonist/ert/official)
+	leader_role = /datum/antagonist/ert/solgov
+	roles = list(/datum/antagonist/ert/solgov)
 	mission = "solgov lol"
 	rename_team = "Generic SolGov Team"
 	polldesc = "a SolGov response team"
@@ -133,79 +133,79 @@
 	teamsize = 1
 	leader_role = /datum/antagonist/ert/solgov/inspector
 	roles = list(/datum/antagonist/ert/solgov/inspector)
-//	mission = "Conduct a routine review on [station_name()]'s vessels."
-	rename_team = "SolGov Sonnensoldner Team"
-	polldesc = "a SolGov mercenary team"
+	rename_team = "SolGov Inspector"
+	polldesc = "a solarian inspector"
+
+/datum/ert/solgov/inspector/New()
+	mission = "Conduct a routine review on [station_name()]'s vessels."
 
 // Minutemen
 
 /datum/ert/minutemen
 	teamsize = 4
 	opendoors = FALSE
-//	leader_role = /datum/antagonist/ert/minutemen/leader
-//	roles = list(/datum/antagonist/ert/minutemen)
-//	mission = "Keep the peace in [station_name()]."
+	leader_role = /datum/antagonist/ert/minutemen/leader
+	roles = list(/datum/antagonist/ert/minutemen)
+	mission = "Keep the peace in sector affairs"
 	rename_team = "Generic Minutemen Team"
 	polldesc = "a Minutemen emergency team"
 	random_names = TRUE
 
 /datum/ert/minutemen/bard
-//	leader_role = /datum/antagonist/ert/minutemen/bard/leader
-//	roles = list(/datum/antagonist/ert/minutemen/bard)
+	leader_role = /datum/antagonist/ert/minutemen/bard/leader
+	roles = list(/datum/antagonist/ert/minutemen/bard)
 	rename_team = "Minutemen BARD Team"
 	polldesc = "a Minutemen biohazard removal team"
 
 /datum/ert/minutemen/riot
 	teamsize = 6
-//	leader_role = /datum/antagonist/ert/minutemen/riot/leader
-//	roles = list(/datum/antagonist/ert/minutemen/riot)
-//	rename_team = "Minutemen Riot Control Team"
+	leader_role = /datum/antagonist/ert/minutemen/riot/leader
+	roles = list(/datum/antagonist/ert/minutemen/riot)
+	rename_team = "Minutemen Riot Control Team"
 	polldesc = "a Minutemen riot control team"
 
 /datum/ert/minutemen/piratehunters
-//	leader_role = /datum/antagonist/ert/minutemen/piratehunters/leader
-//	roles = list(/datum/antagonist/ert/minutemen/piratehunters)
-//	mission = "Eliminate all pirate presence within [station_name()]."
+	leader_role = /datum/antagonist/ert/minutemen/piratehunters/leader
+	roles = list(/datum/antagonist/ert/minutemen/piratehunters)
+	mission = "Eliminate pirate presence within the sector."
 	rename_team = "Minutemen Pirate Hunter Team"
 	polldesc = "Minutemen pirate hunters"
 
-// /datum/ert/minutemen/gold
-//	leader_role = /datum/antagonist/ert/minutemen/gold/leader
-//	roles = list(/datum/antagonist/ert/minutemen/gold)
-//	rename_team = "Minutemen GOLD Team"
-//	polldesc = "Minutemen miners"
-
-
-// /datum/ert/minutemen/gold/irs
+ /datum/ert/minutemen/gold_irs
+	teamsize = 3
+	leader_role = /datum/antagonist/ert/minutemen/gold_irs
+	roles = list(/datum/antagonist/ert/minutemen/gold_irs)
+	rename_team = "Minutemen GOLD Collection Squad"
+	polldesc = "Minutemen collection squad"
 
 // Syndicate
 
 /datum/ert/syndicate
 	teamsize = 4
 	opendoors = FALSE
-//	leader_role = /datum/antagonist/ert/syndicate
-//	roles = list(/datum/antagonist/ert/syndicate)
+	leader_role = /datum/antagonist/ert/syndicate
+	roles = list(/datum/antagonist/ert/syndicate)
 	mission = "Serve the interests of the Syndicate."
 	rename_team = "Generic Syndicate Team"
 	polldesc = "a Syndicate emergency team"
 
 /datum/ert/syndicate/gorlex
-//	leader_role = /datum/antagonist/ert/syndicate/gorlex/leader
-//	roles = list(/datum/antagonist/ert/syndicate/gorlex/leader)
-	mission = "Serve the interests of the Syndicate."
-	rename_team = "Generic Syndicate Team"
-	polldesc = "a Syndicate emergency team"
+	leader_role = /datum/antagonist/ert/syndicate/gorlex/leader
+	roles = list(/datum/antagonist/ert/syndicate/gorlex/leader)
+	mission = "Serve the interests of the Gorlex Maruders."
+	rename_team = "Gorlex Maruders Team"
+	polldesc = "a Syndicate Gorlex squad"
 
 /datum/ert/syndicate/cybersun
-//	leader_role = /datum/antagonist/ert/syndicate/cybersun/leader
-//	roles = list(/datum/antagonist/ert/syndicate/cybersun)
+	leader_role = /datum/antagonist/ert/syndicate/cybersun/leader
+	roles = list(/datum/antagonist/ert/syndicate/cybersun)
 	mission = "Serve the interests of CyberSun."
 	rename_team = "Cybersun Commando Team"
 	polldesc = "a Cybersun Commando team"
 
 /datum/ert/syndicate/cybersun/medic
-//	leader_role = /datum/antagonist/ert/syndicate/cybersun/medic/leader
-//	roles = list(/datum/antagonist/ert/syndicate/cybersun/medic)
+	leader_role = /datum/antagonist/ert/syndicate/cybersun/medic/leader
+	roles = list(/datum/antagonist/ert/syndicate/cybersun/medic)
 	mission = "Assist CyberSun clients."
 	rename_team = "Cybersun Medical Intervention Team"
 	polldesc = "a Cybersun paramedic team"
@@ -228,9 +228,3 @@
 	roles = list(/datum/antagonist/ert/frontier, /datum/antagonist/ert/frontier/medic, /datum/antagonist/ert/frontier/engineer)
 	rename_team = "Assault Frontiersmen Team"
 	polldesc = "an armed squad of pirates"
-
-/datum/ert/frontier/siege
-//	leader_role = /datum/antagonist/ert/frontier/leader/siege
-//	roles = list(/datum/antagonist/ert/frontier/siege, /datum/antagonist/ert/frontier/medic/siege, /datum/antagonist/ert/frontier/engineer/siege)
-	rename_team = "Siege Frontiersmen Team"
-	polldesc = "a heavily armed assault force of pirates"

@@ -205,30 +205,32 @@
 
 /datum/antagonist/ert/lp
 	name = "Loss Prevention Security Specialist"
-	outfit = /datum/outfit/job/security/lp
+	outfit = /datum/outfit/centcom/ert/lp
 	role = "Security Specialist"
 
 /datum/antagonist/ert/lp/medic
 	name = "Loss Prevention Medical Specialist"
-	outfit = /datum/outfit/job/doctor/lp
+	outfit = /datum/outfit/centcom/ert/lp/medic
 	role = "Medical Specialist"
 
 /datum/antagonist/ert/lp/engineer
 	name = "Loss Prevention Engineering Specialist"
-	outfit = /datum/outfit/job/engineer/lp
+	outfit = /datum/outfit/centcom/ert/lp/engineer
 	role = "Engineering Specialist"
 
 /datum/antagonist/ert/lp/lieutenant
 	name = "Loss Prevention Lieutenant"
-	outfit = /datum/outfit/job/captain/nt/lp_lieutenant
+	outfit = /datum/outfit/centcom/ert/lp/lieutenant
 	role = "Lieutenant"
 
-// Inteq
+// ********************************************************************
+// ** Inteq **
+// ********************************************************************
 
 /datum/antagonist/ert/inteq
 	name = "Inteq Mercenary"
 	outfit = /datum/outfit/job/security/inteq
-	random_names = FALSE
+	random_names = TRUE
 	role = "Enforcer"
 
 /datum/antagonist/ert/inteq/leader
@@ -236,55 +238,134 @@
 	outfit = /datum/outfit/job/captain/inteq
 	role = "Vanguard"
 
-// SolGov
-
+// ********************************************************************
+// ** SolGov **
+// ********************************************************************
 /datum/antagonist/ert/solgov
 	name = "SolGov Infantry"
-	outfit = /datum/outfit/solgov
+	outfit = /datum/outfit/centcom/ert/solgov
 	random_names = FALSE
 	role = "Sonnensöldner"
 
 /datum/antagonist/ert/solgov/sonnensoldner
 	name = "SolGov Sonnensöldner"
-	outfit = /datum/outfit/solgov/sonnensoldner
+	outfit = /datum/outfit/centcom/ert/solgov/sonnensoldner
 	random_names = FALSE
 	role = "Sonnensöldner"
 
 /datum/antagonist/ert/solgov/inspector
 	name = "SolGov Inspector"
-	outfit = /datum/outfit/solgov
+	outfit = /datum/outfit/centcom/ert/solgov/inspector
 	role = "Solarian Inspector"
 
-// Minutemen
+// ********************************************************************
+// ** Minutemen **
+// ********************************************************************
 
+/datum/antagonist/ert/minutemen
+	name = "Minutemen Infantry"
+	outfit = /datum/outfit/centcom/ert/minutemen
+	role = "Minuteman"
 
+/datum/antagonist/ert/minutemen/leader
+	name = "Minutemen Leader"
+	outfit = /datum/outfit/centcom/ert/minutemen/leader
+	role = "Sergeant"
 
-// Syndicate
+/datum/antagonist/ert/minutemen/bard
+	name = "BARD Infantry"
+	outfit = /datum/outfit/centcom/ert/minutemen/bard
+	role = "Minuteman"
 
+/datum/antagonist/ert/minutemen/bard/leader
+	name = "BARD Leader"
+	outfit = /datum/outfit/centcom/ert/minutemen/bard/leader
+	role = "Sergeant"
 
+/datum/antagonist/ert/minutemen/riot
+	name = "Riot Officer"
+	outfit = /datum/outfit/centcom/ert/minutemen/riot
+	role = "Minuteman"
 
-// Frontiersmen
+/datum/antagonist/ert/minutemen/riot/leader
+	name = "Riot Sergeant"
+	outfit = /datum/outfit/centcom/ert/minutemen/riot/leader
+	role = "Sergeant"
+
+/datum/antagonist/ert/minutemen/gold_irs
+	name = "GOLD Collector"
+	outfit = /datum/outfit/centcom/ert/minutemen/gold_irs
+	role = "Lieutenant"
+
+/datum/antagonist/ert/minutemen/piratehunters
+	name = "Pirate Hunter"
+	outfit = /datum/outfit/centcom/ert/minutemen/piratehunters
+	role = "Minuteman"
+
+/datum/antagonist/ert/minutemen/piratehunters/leader
+	name = "Pirate Hunter Leader"
+	outfit = /datum/outfit/centcom/ert/minutemen/piratehunters/leader
+	role = "Sergeant"
+
+// ********************************************************************
+// ** Syndicate **
+// ********************************************************************
+
+/datum/antagonist/ert/syndicate
+	name = "Syndicate Infantry"
+	outfit = /datum/outfit/centcom/ert/syndicate
+	role = "Squaddie"
+
+/datum/antagonist/ert/syndicate/gorlex
+	name = "Gorlex Trooper"
+	outfit = /datum/outfit/centcom/ert/syndicate/gorlex
+	role = "Trooper"
+
+/datum/antagonist/ert/syndicate/gorlex/leader
+	name = "Gorlex Sergeant"
+	outfit = /datum/outfit/centcom/ert/syndicate/gorlex/leader
+	role = "Sergeant"
+
+/datum/antagonist/ert/syndicate/cybersun
+	name = "Cybersun Commando"
+	outfit = /datum/outfit/centcom/ert/syndicate/cybersun
+	role = "Operative"
+
+/datum/antagonist/ert/syndicate/cybersun/leader
+	name = "Cybersun Officer"
+	outfit = /datum/outfit/centcom/ert/syndicate/cybersun/leader
+	role = "Operative Officer"
+
+/datum/antagonist/ert/syndicate/cybersun/medic
+	name = "Cybersun Paramedic"
+	outfit = /datum/outfit/centcom/ert/syndicate/cybersun/medic
+	role = "Medical Technician"
+
+/datum/antagonist/ert/syndicate/cybersun/medic/leader
+	name = "Cybersun Lead Paramedic"
+	outfit = /datum/outfit/centcom/ert/syndicate/cybersun/medic/leader
+	role = "Lead Medical Technician"
+
+// ********************************************************************
+// ** Frontiersmen **
+// ********************************************************************
 
 /datum/antagonist/ert/frontier
 	name = "Frontiersmen Pirate"
 	outfit = /datum/outfit/job/assistant/frontiersmen
-	random_names = FALSE
-	role = "Deckhand"
+	role = "Buccaneer"
 
 /datum/antagonist/ert/frontier/leader
 	name = "Frontiersmen Officer"
 	outfit = /datum/outfit/job/head_of_personnel/frontiersmen
-	random_names = FALSE
 	role = "Officer"
 
 /datum/antagonist/ert/frontier/medic
 	name = "Frontiersmen Medic"
 	outfit = /datum/outfit/job/doctor/frontiersmen
-	random_names = FALSE
 	role = "Medic"
 
 /datum/antagonist/ert/frontier/engineer
 	name = "Frontiersmen Carpenter"
 	outfit = /datum/outfit/job/engineer/independent/frontiersmen
-	random_names = FALSE
 	role = "Carpenter"

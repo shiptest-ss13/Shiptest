@@ -434,6 +434,13 @@
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_w_class = WEIGHT_CLASS_SMALL
 
+/obj/item/storage/belt/military/cr20/PopulateContents()
+	. = ..()
+	for(var/i in 1 to 3)
+		new /obj/item/ammo_box/magazine/smgm45(src)
+
+
+
 /obj/item/storage/belt/military/minutemen
 	name = "minutemen tactical webbing"
 	desc = "A set of tactical webbing worn by the Colonial Minutemen of the frontier."
