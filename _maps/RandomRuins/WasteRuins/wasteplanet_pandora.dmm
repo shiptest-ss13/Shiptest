@@ -1,497 +1,5141 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"f" = (
-/obj/effect/landmark/portal_exit{
-	id = "pandora_entrance"
+"ar" = (
+/obj/structure/table/reinforced,
+/obj/item/stack/sheet/mineral/gold/five,
+/obj/item/stack/sheet/mineral/gold/five,
+/turf/open/indestructible/hierophant/waste,
+/area/ruin/wasteplanet)
+"aD" = (
+/obj/machinery/hydroponics/soil,
+/obj/item/reagent_containers/food/snacks/grown/mushroom/chanterelle,
+/turf/open/floor/plating/dirt/old/waste,
+/area/ruin/wasteplanet)
+"aL" = (
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty"
 	},
-/turf/open/indestructible/hierophant,
-/area/ruin)
-"k" = (
-/obj/effect/portal/permanent/one_way{
-	id = "pandora_entrance"
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_x = -7;
+	pixel_y = 8
 	},
+/turf/open/indestructible/hierophant/waste,
+/area/ruin/wasteplanet)
+"bc" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/ammo_box/c9mm,
+/turf/open/floor/plating/wasteplanet,
+/area/ruin/wasteplanet)
+"bd" = (
+/turf/open/water/waste/lit,
+/area/ruin/wasteplanet)
+"bt" = (
+/obj/structure/flora/rock/pile,
+/turf/open/floor/plating/asteroid/wasteplanet/lit,
+/area/ruin/wasteplanet)
+"bL" = (
+/obj/structure/fluff/divine/convertaltar,
+/obj/item/nullrod/tribal_knife,
+/obj/item/clothing/accessory/pandora_hope,
+/turf/open/indestructible/hierophant/two/waste,
+/area/ruin/wasteplanet)
+"bY" = (
+/obj/structure/salvageable/computer{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/white,
+/area/ruin/wasteplanet)
+"cd" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/turf/open/water/waste,
+/area/ruin/wasteplanet)
+"cg" = (
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_x = -11;
+	pixel_y = -5
+	},
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty"
+	},
+/turf/open/indestructible/hierophant/waste,
+/area/ruin/wasteplanet)
+"cn" = (
+/obj/structure/railing/wood{
+	dir = 1
+	},
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"df" = (
+/obj/structure/table/wood,
+/obj/item/kitchen/knife/combat/bone,
+/obj/item/flashlight/flare/torch,
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"dh" = (
+/turf/open/floor/plating/dirt/old/waste,
+/area/ruin/wasteplanet)
+"dH" = (
+/turf/closed/indestructible/riveted/hierophant,
+/area/ruin/wasteplanet)
+"er" = (
+/obj/structure/table/wood,
+/obj/item/restraints/handcuffs/cable/sinew,
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"eB" = (
+/obj/item/reagent_containers/glass/bucket/wooden,
+/turf/open/floor/plating/grass/wasteplanet,
+/area/ruin/wasteplanet)
+"fF" = (
+/obj/effect/decal/remains/human,
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"fL" = (
+/obj/structure/table/wood,
+/obj/item/stack/sheet/bone{
+	pixel_x = 10
+	},
+/obj/item/flashlight/flare/torch,
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"fZ" = (
+/obj/structure/chair/wood/wings,
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"ge" = (
+/obj/structure/table/wood,
+/obj/item/kitchen/knife/combat/bone{
+	pixel_x = -20
+	},
+/obj/item/reagent_containers/food/snacks/salad/edensalad,
+/obj/item/reagent_containers/food/snacks/grown/berries/death{
+	pixel_x = 6;
+	pixel_y = 10
+	},
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"gm" = (
+/obj/structure/closet/cabinet,
+/obj/item/clothing/suit/hooded/cloak/bone,
+/obj/item/claymore/bone,
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"gr" = (
+/obj/structure/flora/grass/jungle/b,
 /turf/open/floor/plating/asteroid/wasteplanet,
-/area/overmap_encounter/planetoid/rockplanet)
-"m" = (
+/area/ruin/wasteplanet)
+"gO" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 5
+	},
+/obj/effect/turf_decal/weather/dirt/corner{
+	dir = 4
+	},
+/turf/open/water/waste,
+/area/ruin/wasteplanet)
+"gX" = (
 /obj/effect/light_emitter{
 	set_cap = 3;
 	set_luminosity = 5
 	},
-/turf/open/indestructible/hierophant,
-/area/ruin)
-"n" = (
-/obj/structure/fluff/divine/powerpylon,
-/turf/open/indestructible/hierophant,
-/area/ruin)
-"q" = (
-/obj/structure/window/plasma/fulltile,
-/turf/open/indestructible/hierophant,
-/area/ruin)
-"s" = (
-/turf/open/indestructible/hierophant,
-/area/ruin)
-"u" = (
-/obj/machinery/light/floor,
-/turf/open/indestructible/hierophant,
-/area/ruin)
-"x" = (
-/turf/open/indestructible/hierophant/two,
-/area/ruin)
-"z" = (
-/obj/structure/fluff/divine/defensepylon,
-/turf/open/indestructible/hierophant/two,
-/area/ruin)
-"C" = (
+/turf/open/indestructible/hierophant/two/waste,
+/area/ruin/wasteplanet)
+"hU" = (
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_x = 5
+	},
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet)
+"hZ" = (
+/obj/structure/railing/wood{
+	dir = 8
+	},
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"iG" = (
+/obj/structure/salvageable/computer{
+	dir = 8
+	},
+/turf/open/floor/mineral/titanium/white,
+/area/ruin/wasteplanet)
+"iT" = (
+/obj/effect/turf_decal/weather/dirt,
+/obj/effect/turf_decal/weather/dirt,
+/turf/open/water/waste,
+/area/ruin/wasteplanet)
+"iU" = (
 /mob/living/simple_animal/hostile/asteroid/elite/pandora/dungeon,
 /obj/effect/light_emitter{
 	set_cap = 3;
 	set_luminosity = 5
 	},
-/turf/open/indestructible/hierophant/two,
-/area/ruin)
-"I" = (
-/obj/machinery/light/floor,
-/turf/open/indestructible/hierophant/two,
-/area/ruin)
-"J" = (
-/obj/machinery/door/poddoor/gates/indestructible{
-	id = "pandora_dead"
+/turf/open/indestructible/hierophant/two/waste,
+/area/ruin/wasteplanet)
+"jf" = (
+/obj/item/trash/can{
+	icon_state = "shamblers"
 	},
-/turf/open/indestructible/hierophant/two,
-/area/ruin)
-"M" = (
-/turf/closed/indestructible/riveted/hierophant,
-/area/ruin)
-"O" = (
 /turf/open/floor/plating/asteroid/wasteplanet,
-/area/overmap_encounter/planetoid/rockplanet)
-"S" = (
+/area/ruin/wasteplanet)
+"jj" = (
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty"
+	},
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_x = 7;
+	pixel_y = 10
+	},
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"jk" = (
+/obj/structure/table/wood,
+/obj/item/clothing/head/hooded/cloakhood/bone,
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"jl" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/turf/open/water/waste/lit,
+/area/ruin/wasteplanet)
+"jn" = (
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty"
+	},
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_x = -7;
+	pixel_y = 7
+	},
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_x = 7;
+	pixel_y = 10
+	},
+/turf/open/floor/plating/dirt/old/waste,
+/area/ruin/wasteplanet)
+"jq" = (
+/obj/structure/table/wood,
+/obj/item/stack/sheet/bone,
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"jt" = (
+/obj/structure/chair/wood,
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"jB" = (
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty"
+	},
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_x = 6;
+	pixel_y = 7
+	},
+/turf/open/floor/plating/dirt/old/waste,
+/area/ruin/wasteplanet)
+"jF" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/snacks/grown/berries/glow,
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"jV" = (
+/turf/closed/wall/mineral/wood/nonmetal,
+/area/ruin/wasteplanet)
+"jY" = (
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_x = 5
+	},
+/turf/open/indestructible/hierophant/waste,
+/area/ruin/wasteplanet)
+"kc" = (
+/obj/structure/table/wood,
+/obj/item/storage/belt/mining/primitive,
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"kj" = (
+/obj/structure/table/wood,
+/obj/item/stack/sheet/sinew,
+/obj/item/stack/sheet/sinew,
+/obj/item/stack/sheet/sinew,
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"kP" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/white,
+/area/ruin/wasteplanet)
+"kV" = (
+/obj/structure/guncase,
+/turf/open/floor/mineral/titanium/white,
+/area/ruin/wasteplanet)
+"kZ" = (
+/obj/item/stack/sheet/bone,
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"le" = (
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_x = 7;
+	pixel_y = -2
+	},
+/turf/open/indestructible/hierophant/waste,
+/area/ruin/wasteplanet)
+"lx" = (
+/obj/structure/fluff/divine/shrine,
+/turf/open/indestructible/hierophant/waste,
+/area/ruin/wasteplanet)
+"lz" = (
+/obj/structure/chair/comfy/shuttle,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/white,
+/area/ruin/wasteplanet)
+"lD" = (
+/obj/structure/table/reinforced,
+/obj/item/stack/sheet/mineral/silver/five,
+/turf/open/indestructible/hierophant/waste,
+/area/ruin/wasteplanet)
+"lT" = (
+/turf/open/floor/mineral/titanium/white,
+/area/ruin/wasteplanet)
+"lZ" = (
+/obj/structure/chair/wood{
+	dir = 1
+	},
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"mb" = (
+/obj/structure/destructible/tribal_torch,
+/turf/open/floor/plating/grass/wasteplanet,
+/area/ruin/wasteplanet)
+"mr" = (
+/obj/structure/table/wood,
+/obj/item/stack/sheet/bone{
+	pixel_x = 11
+	},
+/obj/item/reagent_containers/food/snacks/grown/ash_flora/cactus_fruit,
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"mw" = (
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_x = 5
+	},
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_x = -11;
+	pixel_y = -5
+	},
+/turf/open/indestructible/hierophant/two/waste,
+/area/ruin/wasteplanet)
+"mA" = (
+/obj/structure/destructible/tribal_torch,
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet)
+"mE" = (
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_x = -10;
+	pixel_y = -5
+	},
+/turf/open/floor/plating/dirt/old/waste,
+/area/ruin/wasteplanet)
+"mF" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/turf/open/water/waste/lit,
+/area/ruin/wasteplanet)
+"mI" = (
+/obj/structure/flora/ausbushes/ywflowers,
+/turf/open/floor/plating/grass/wasteplanet,
+/area/ruin/wasteplanet)
+"mO" = (
+/obj/effect/turf_decal/weather/dirt/corner{
+	dir = 1
+	},
+/turf/open/water/waste/lit,
+/area/ruin/wasteplanet)
+"nq" = (
+/obj/item/stack/sheet/bone,
+/obj/structure/chair/wood{
+	dir = 8
+	},
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"nr" = (
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_x = 6;
+	pixel_y = -9
+	},
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet)
+"oi" = (
+/turf/open/water/waste,
+/area/ruin/wasteplanet)
+"or" = (
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_x = 13;
+	pixel_y = 7
+	},
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"oB" = (
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_x = 7;
+	pixel_y = -2
+	},
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty"
+	},
+/obj/structure/barricade/wooden,
+/turf/open/indestructible/hierophant/waste,
+/area/ruin/wasteplanet)
+"oG" = (
+/turf/closed/mineral/random/wasteplanet,
+/area/ruin/wasteplanet)
+"oI" = (
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_x = 8;
+	pixel_y = -12
+	},
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"pr" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/banner,
+/turf/open/floor/mineral/titanium/white,
+/area/ruin/wasteplanet)
+"pQ" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/snacks/grown/ash_flora/cactus_fruit,
+/obj/item/storage/belt/mining/primitive,
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"qo" = (
+/obj/structure/closet/cabinet,
+/obj/item/spear/bonespear,
+/obj/item/clothing/suit/armor/riot/chaplain/studentuni,
+/obj/item/reagent_containers/food/snacks/grown/berries/death,
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"qs" = (
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty"
+	},
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_y = 4;
+	pixel_x = 8
+	},
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_y = -12;
+	pixel_x = -11
+	},
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_y = 13;
+	pixel_x = 4
+	},
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_y = 7;
+	pixel_x = -11
+	},
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_y = 4;
+	pixel_x = -4
+	},
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"qU" = (
+/obj/structure/closet/cabinet,
+/obj/item/clothing/suit/armor/riot/chaplain/studentuni,
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"rh" = (
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/port_gen/pacman,
+/turf/open/floor/plating/wasteplanet,
+/area/ruin/wasteplanet)
+"rT" = (
+/obj/item/toy/plush/goatplushie/angry/realgoat{
+	name = "wall-dwelling goat plushie"
+	},
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet)
+"sp" = (
+/obj/structure/chair/wood{
+	dir = 4
+	},
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"sE" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/turf/open/floor/mineral/titanium/white,
+/area/ruin/wasteplanet)
+"sV" = (
+/obj/structure/closet/cabinet,
+/obj/item/claymore/bone,
+/obj/item/clothing/suit/armor/riot/chaplain/studentuni,
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"tB" = (
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty"
+	},
+/obj/effect/mob_spawn/human/corpse/nanotrasensoldier,
+/turf/open/floor/plating/dirt/old/waste,
+/area/ruin/wasteplanet)
+"tF" = (
+/obj/machinery/hydroponics/soil,
+/obj/item/reagent_containers/food/snacks/grown/mushroom/jupitercup,
+/turf/open/floor/plating/dirt/old/waste,
+/area/ruin/wasteplanet)
+"tR" = (
+/obj/structure/closet/crate/grave,
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet)
+"tU" = (
+/obj/structure/chair/comfy/shuttle,
+/turf/open/floor/mineral/titanium/white,
+/area/ruin/wasteplanet)
+"uc" = (
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_x = -11;
+	pixel_y = -5
+	},
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet)
+"uv" = (
+/obj/structure/table/reinforced,
+/obj/item/gem/phoron,
+/turf/open/indestructible/hierophant/waste,
+/area/ruin/wasteplanet)
+"vd" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 10
+	},
+/obj/effect/turf_decal/weather/dirt/corner{
+	dir = 8
+	},
+/turf/open/water/waste,
+/area/ruin/wasteplanet)
+"ve" = (
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_y = 7;
+	pixel_x = 8
+	},
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty"
+	},
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet)
+"vD" = (
+/obj/structure/table/wood,
+/obj/item/flashlight/flare/torch,
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"wu" = (
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty"
+	},
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet)
+"ww" = (
+/obj/item/stack/sheet/bone,
+/obj/structure/chair/wood,
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"wA" = (
+/obj/structure/flora/ausbushes/ppflowers,
+/turf/open/floor/plating/grass/wasteplanet,
+/area/ruin/wasteplanet)
+"xj" = (
+/obj/structure/fluff/divine/shrine,
 /obj/effect/light_emitter{
 	set_cap = 3;
 	set_luminosity = 5
 	},
-/turf/open/indestructible/hierophant/two,
-/area/ruin)
-"X" = (
-/obj/machinery/door/poddoor/gates/indestructible{
-	id = "pandora_dead"
+/turf/open/indestructible/hierophant/waste,
+/area/ruin/wasteplanet)
+"xk" = (
+/obj/structure/table/wood,
+/obj/item/spear/bonespear,
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"xu" = (
+/obj/structure/destructible/tribal_torch,
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"xB" = (
+/obj/structure/girder,
+/turf/open/floor/plating/wasteplanet,
+/area/ruin/wasteplanet)
+"xI" = (
+/obj/structure/mineral_door/wood,
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"yq" = (
+/obj/effect/turf_decal/weather/dirt,
+/obj/effect/turf_decal/weather/dirt/corner{
+	dir = 8
 	},
-/turf/open/indestructible/hierophant,
-/area/ruin)
-"Y" = (
+/turf/open/water/waste,
+/area/ruin/wasteplanet)
+"yI" = (
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty"
+	},
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"yT" = (
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_y = -3;
+	pixel_x = 4
+	},
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_x = 5;
+	pixel_y = 11
+	},
+/obj/structure/mineral_door/wood,
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"zs" = (
+/obj/effect/turf_decal/weather/dirt/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 10
+	},
+/turf/open/water/waste,
+/area/ruin/wasteplanet)
+"zy" = (
+/obj/effect/mob_spawn/human/corpse/nanotrasenassaultsoldier,
+/turf/open/indestructible/hierophant/two/waste,
+/area/ruin/wasteplanet)
+"zI" = (
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/structure/grille,
+/turf/open/floor/plating/wasteplanet,
+/area/ruin/wasteplanet)
+"Al" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 10
+	},
+/turf/open/water/waste,
+/area/ruin/wasteplanet)
+"AI" = (
+/obj/structure/flora/rock,
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet)
+"AK" = (
+/obj/structure/table/wood,
+/obj/item/stack/sheet/bone,
+/obj/item/stack/sheet/bone,
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"AM" = (
+/obj/machinery/door/airlock/titanium,
+/turf/open/floor/mineral/titanium/white,
+/area/ruin/wasteplanet)
+"Bb" = (
+/mob/living/simple_animal/hostile/skeleton{
+	desc = "A villager resurrected by the power of an unknown deity, eternally seeking vengeance for its people."
+	},
+/turf/open/floor/plating/dirt/old/waste,
+/area/ruin/wasteplanet)
+"Bv" = (
+/obj/structure/bonfire,
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"BB" = (
+/turf/open/floor/plating/grass/wasteplanet,
+/area/ruin/wasteplanet)
+"BL" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating/wasteplanet,
+/area/ruin/wasteplanet)
+"CG" = (
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_x = -9;
+	pixel_y = 3
+	},
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"CH" = (
+/obj/machinery/power/shuttle/engine/electric/bad{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plating/wasteplanet,
+/area/ruin/wasteplanet)
+"CW" = (
+/obj/structure/railing/corner/wood{
+	dir = 8
+	},
+/obj/structure/railing/corner/wood{
+	dir = 1
+	},
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"Dj" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable,
+/turf/open/floor/plating/wasteplanet,
+/area/ruin/wasteplanet)
+"Du" = (
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_x = -11;
+	pixel_y = -5
+	},
+/turf/open/indestructible/hierophant/waste,
+/area/ruin/wasteplanet)
+"Dx" = (
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_y = 10
+	},
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_y = -3;
+	pixel_x = -15
+	},
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_y = -3;
+	pixel_x = 4
+	},
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"DF" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/floor/plating/grass/wasteplanet,
+/area/ruin/wasteplanet)
+"DQ" = (
+/obj/structure/railing/corner/wood{
+	dir = 1
+	},
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"DX" = (
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_y = 10
+	},
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_y = -3;
+	pixel_x = 4
+	},
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"DZ" = (
+/turf/open/indestructible/hierophant/two/waste,
+/area/ruin/wasteplanet)
+"Eb" = (
+/obj/item/gun/ballistic/automatic/pistol/commander/no_mag,
+/turf/open/floor/plating/dirt/old/waste,
+/area/ruin/wasteplanet)
+"Eo" = (
+/obj/structure/barricade/wooden,
+/turf/open/indestructible/hierophant/waste,
+/area/ruin/wasteplanet)
+"Et" = (
+/obj/structure/flora/grass/jungle/b,
+/obj/item/trash/can{
+	icon_state = "lemon-lime"
+	},
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet)
+"Ez" = (
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_x = -11;
+	pixel_y = -5
+	},
+/turf/open/indestructible/hierophant/two/waste,
+/area/ruin/wasteplanet)
+"EN" = (
+/turf/open/indestructible/hierophant/waste,
+/area/ruin/wasteplanet)
+"Fc" = (
+/mob/living/simple_animal/hostile/skeleton{
+	desc = "A villager resurrected by the power of an unknown deity, eternally seeking vengeance for its people."
+	},
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"Fn" = (
+/obj/item/gun/ballistic/automatic/smg/proto/unrestricted{
+	pixel_y = -18
+	},
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_x = 6;
+	pixel_y = 9
+	},
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_x = -11;
+	pixel_y = -5
+	},
+/turf/open/indestructible/hierophant/two/waste,
+/area/ruin/wasteplanet)
+"FP" = (
+/obj/item/kitchen/knife/combat/bone{
+	pixel_x = 15
+	},
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"FV" = (
+/obj/effect/mob_spawn/human/corpse/nanotrasensoldier,
+/turf/open/indestructible/hierophant/waste,
+/area/ruin/wasteplanet)
+"Gu" = (
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty"
+	},
+/turf/open/floor/plating/dirt/old/waste,
+/area/ruin/wasteplanet)
+"Gx" = (
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_x = -11;
+	pixel_y = -5
+	},
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"Hc" = (
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_x = 6;
+	pixel_y = -9
+	},
+/turf/open/floor/plating/dirt/old/waste,
+/area/ruin/wasteplanet)
+"Hi" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
+/turf/open/water/waste/lit,
+/area/ruin/wasteplanet)
+"Hl" = (
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_x = -7;
+	pixel_y = 8
+	},
+/turf/open/indestructible/hierophant/waste,
+/area/ruin/wasteplanet)
+"Ht" = (
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty"
+	},
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_x = -10;
+	pixel_y = -5
+	},
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_y = 10;
+	pixel_x = 4
+	},
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_x = 11;
+	pixel_y = 7
+	},
+/turf/open/indestructible/hierophant/waste,
+/area/ruin/wasteplanet)
+"HE" = (
+/obj/machinery/hydroponics/soil,
+/obj/item/reagent_containers/food/snacks/grown/mushroom/libertycap,
+/turf/open/floor/plating/dirt/old/waste,
+/area/ruin/wasteplanet)
+"Ih" = (
+/obj/structure/fluff/divine/defensepylon,
+/obj/effect/light_emitter{
+	set_cap = 3;
+	set_luminosity = 5
+	},
+/turf/open/indestructible/hierophant/waste,
+/area/ruin/wasteplanet)
+"JB" = (
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_x = 5;
+	pixel_y = 11
+	},
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty"
+	},
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"JD" = (
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_x = 6;
+	pixel_y = 9
+	},
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty"
+	},
+/turf/open/indestructible/hierophant/waste,
+/area/ruin/wasteplanet)
+"Ki" = (
 /turf/template_noop,
 /area/template_noop)
+"Kx" = (
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_x = -9;
+	pixel_y = -12
+	},
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet)
+"KA" = (
+/obj/structure/table/reinforced,
+/obj/item/reagent_containers/food/drinks/trophy/silver_cup,
+/turf/open/indestructible/hierophant/waste,
+/area/ruin/wasteplanet)
+"KH" = (
+/obj/item/ammo_box/magazine/smgm9mm{
+	pixel_y = -6;
+	pixel_x = -8
+	},
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty"
+	},
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_x = 6;
+	pixel_y = 9
+	},
+/turf/open/indestructible/hierophant/waste,
+/area/ruin/wasteplanet)
+"KM" = (
+/obj/structure/bed,
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"KO" = (
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_x = -8;
+	pixel_y = -4
+	},
+/turf/open/indestructible/hierophant/waste,
+/area/ruin/wasteplanet)
+"Li" = (
+/obj/structure/closet/cabinet,
+/obj/item/clothing/suit/armor/bone,
+/obj/item/fireaxe/boneaxe,
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"Lj" = (
+/obj/structure/flora/rock/pile,
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet)
+"Lp" = (
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty"
+	},
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_x = 11;
+	pixel_y = 11
+	},
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"Lz" = (
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_x = -6
+	},
+/turf/open/indestructible/hierophant/waste,
+/area/ruin/wasteplanet)
+"LB" = (
+/obj/effect/turf_decal/weather/dirt/corner{
+	dir = 8
+	},
+/turf/open/water/waste/lit,
+/area/ruin/wasteplanet)
+"LW" = (
+/obj/structure/chair/wood{
+	dir = 8
+	},
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"Mo" = (
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_x = 5;
+	pixel_y = 11
+	},
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_x = 6;
+	pixel_y = -9
+	},
+/turf/open/floor/plating/dirt/old/waste,
+/area/ruin/wasteplanet)
+"Mp" = (
+/obj/structure/fluff/divine/powerpylon,
+/obj/effect/light_emitter{
+	set_cap = 3;
+	set_luminosity = 5
+	},
+/turf/open/indestructible/hierophant/waste,
+/area/ruin/wasteplanet)
+"Mv" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/dirt/corner{
+	dir = 4
+	},
+/turf/open/water/waste,
+/area/ruin/wasteplanet)
+"MA" = (
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_x = -9;
+	pixel_y = -12
+	},
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"MB" = (
+/obj/structure/statue/bone/rib{
+	dir = 1
+	},
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet)
+"MQ" = (
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_x = 7;
+	pixel_y = 10
+	},
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_x = -11;
+	pixel_y = -5
+	},
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_x = 11;
+	pixel_y = 7
+	},
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"MU" = (
+/obj/structure/closet/crate/wooden,
+/obj/item/pickaxe,
+/obj/item/flashlight/flare/torch,
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"Ne" = (
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_x = -11;
+	pixel_y = -5
+	},
+/turf/open/floor/plating/dirt/old/waste,
+/area/ruin/wasteplanet)
+"NA" = (
+/turf/open/floor/plating/asteroid/wasteplanet/lit,
+/area/ruin/wasteplanet)
+"NS" = (
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty"
+	},
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_x = -11;
+	pixel_y = -5
+	},
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_x = 6;
+	pixel_y = -9
+	},
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_x = -7;
+	pixel_y = 8
+	},
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_x = 5;
+	pixel_y = 11
+	},
+/turf/open/indestructible/hierophant/waste,
+/area/ruin/wasteplanet)
+"NZ" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/industrial/stand_clear{
+	dir = 1
+	},
+/turf/open/floor/mineral/titanium/white,
+/area/ruin/wasteplanet)
+"Os" = (
+/obj/effect/turf_decal/weather/dirt/corner,
+/turf/open/water/waste,
+/area/ruin/wasteplanet)
+"Ot" = (
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet)
+"Oz" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating/wasteplanet,
+/area/ruin/wasteplanet)
+"OL" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 5
+	},
+/turf/open/water/waste/lit,
+/area/ruin/wasteplanet)
+"OM" = (
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_x = 5;
+	pixel_y = 11
+	},
+/turf/open/floor/plating/dirt/old/waste,
+/area/ruin/wasteplanet)
+"OO" = (
+/obj/structure/table/reinforced,
+/obj/item/ammo_box/magazine/co9mm,
+/turf/open/floor/mineral/titanium/white,
+/area/ruin/wasteplanet)
+"OU" = (
+/obj/effect/mob_spawn/human/corpse/nanotrasenassaultsoldier,
+/turf/open/indestructible/hierophant/waste,
+/area/ruin/wasteplanet)
+"OV" = (
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_x = 5
+	},
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_x = -10;
+	pixel_y = 7
+	},
+/turf/open/indestructible/hierophant/waste,
+/area/ruin/wasteplanet)
+"Po" = (
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_x = 5;
+	pixel_y = 11
+	},
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_x = -11;
+	pixel_y = -5
+	},
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"PC" = (
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"PT" = (
+/obj/structure/table/reinforced,
+/obj/item/stack/sheet/mineral/diamond/five,
+/turf/open/indestructible/hierophant/waste,
+/area/ruin/wasteplanet)
+"Qd" = (
+/obj/machinery/hydroponics/soil,
+/turf/open/floor/plating/dirt/old/waste,
+/area/ruin/wasteplanet)
+"Qj" = (
+/obj/structure/bonfire,
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty"
+	},
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"QC" = (
+/obj/structure/statue/bone/rib,
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet)
+"QD" = (
+/obj/effect/turf_decal/weather/dirt/corner{
+	dir = 4
+	},
+/turf/open/water/waste/lit,
+/area/ruin/wasteplanet)
+"QH" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/white,
+/area/ruin/wasteplanet)
+"QW" = (
+/obj/structure/table/wood,
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"Ro" = (
+/obj/item/gun/ballistic/bow,
+/obj/item/ammo_casing/caseless/arrow/wood,
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"Rx" = (
+/obj/effect/turf_decal/weather/dirt,
+/turf/open/water/waste,
+/area/ruin/wasteplanet)
+"RJ" = (
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_x = 7;
+	pixel_y = 10
+	},
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_x = -11;
+	pixel_y = -5
+	},
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"RT" = (
+/obj/structure/table/wood,
+/obj/item/spear/bonespear,
+/obj/item/stack/sheet/sinew,
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"RV" = (
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty"
+	},
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_y = 7;
+	pixel_x = 8
+	},
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"St" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/snacks/melonfruitbowl,
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"SS" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plating/wasteplanet,
+/area/ruin/wasteplanet)
+"Tc" = (
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_y = 10
+	},
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_x = 6;
+	pixel_y = -9
+	},
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"Tu" = (
+/obj/effect/decal/cleanable/blood/old,
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"TU" = (
+/obj/structure/railing/wood{
+	dir = 9
+	},
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"Ut" = (
+/obj/item/trash/can{
+	icon_state = "energy_drink"
+	},
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet)
+"Ux" = (
+/obj/item/trash/can,
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet)
+"UK" = (
+/obj/structure/closet/cabinet,
+/obj/item/clothing/suit/armor/bone,
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"UQ" = (
+/obj/structure/table/wood,
+/obj/item/ammo_casing/caseless/arrow/wood{
+	pixel_y = -3
+	},
+/obj/item/ammo_casing/caseless/arrow/wood{
+	pixel_y = 2
+	},
+/obj/item/ammo_casing/caseless/arrow/wood{
+	pixel_y = 7
+	},
+/obj/item/ammo_casing/caseless/arrow/wood{
+	pixel_y = 12
+	},
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"UW" = (
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_y = 1;
+	pixel_x = 8
+	},
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"Vb" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 5
+	},
+/turf/open/water/waste,
+/area/ruin/wasteplanet)
+"Vm" = (
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_y = 7;
+	pixel_x = 8
+	},
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet)
+"VF" = (
+/obj/effect/decal/remains/human,
+/obj/structure/chair/wood,
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"VP" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 6
+	},
+/turf/open/water/waste,
+/area/ruin/wasteplanet)
+"VT" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/white,
+/area/ruin/wasteplanet)
+"Wn" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 9
+	},
+/turf/open/water/waste,
+/area/ruin/wasteplanet)
+"Ww" = (
+/obj/machinery/hydroponics/soil,
+/obj/item/reagent_containers/food/snacks/grown/mushroom/plumphelmet,
+/turf/open/floor/plating/dirt/old/waste,
+/area/ruin/wasteplanet)
+"WS" = (
+/obj/effect/turf_decal/weather/dirt/corner{
+	dir = 4
+	},
+/turf/open/water/waste,
+/area/ruin/wasteplanet)
+"Xd" = (
+/obj/structure/table/reinforced,
+/obj/item/stack/sheet/mineral/gold/five,
+/turf/open/indestructible/hierophant/waste,
+/area/ruin/wasteplanet)
+"Xq" = (
+/mob/living/simple_animal/hostile/skeleton{
+	desc = "A villager resurrected by the power of an unknown deity, eternally seeking vengeance for its people."
+	},
+/turf/open/floor/plating/grass/wasteplanet,
+/area/ruin/wasteplanet)
+"Xx" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/glass/mortar/bone,
+/obj/item/pestle,
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"XL" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating/wasteplanet,
+/area/ruin/wasteplanet)
+"XQ" = (
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty"
+	},
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_x = -8;
+	pixel_y = -4
+	},
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_x = 6;
+	pixel_y = 9
+	},
+/turf/open/indestructible/hierophant/waste,
+/area/ruin/wasteplanet)
+"Yg" = (
+/obj/structure/closet/crate/wooden,
+/obj/item/shovel/serrated,
+/obj/item/flashlight/flare/torch,
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"Yi" = (
+/obj/structure/table/reinforced,
+/obj/item/clothing/head/crown,
+/turf/open/indestructible/hierophant/waste,
+/area/ruin/wasteplanet)
+"Yn" = (
+/obj/item/scythe,
+/turf/open/floor/plating/dirt/old/waste,
+/area/ruin/wasteplanet)
+"Yq" = (
+/obj/effect/turf_decal/weather/dirt/corner{
+	dir = 8
+	},
+/turf/open/water/waste,
+/area/ruin/wasteplanet)
+"Yw" = (
+/obj/item/gun/ballistic/automatic/pistol/commander/no_mag,
+/turf/open/indestructible/hierophant/waste,
+/area/ruin/wasteplanet)
+"YM" = (
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_x = -11;
+	pixel_y = -5
+	},
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_x = 11;
+	pixel_y = 7
+	},
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"YY" = (
+/obj/structure/frame/machine,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plating/wasteplanet,
+/area/ruin/wasteplanet)
+"Zg" = (
+/obj/effect/decal/cleanable/blood/old,
+/turf/open/floor/plating/dirt/old/waste,
+/area/ruin/wasteplanet)
+"Zq" = (
+/turf/closed/wall/mineral/titanium,
+/area/ruin/wasteplanet)
+"Zr" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/snacks/salad/herbsalad,
+/turf/open/floor/wood/waste,
+/area/ruin/wasteplanet)
+"Zw" = (
+/obj/structure/fluff/divine/nexus,
+/obj/effect/light_emitter{
+	set_cap = 3;
+	set_luminosity = 5
+	},
+/turf/open/indestructible/hierophant/waste,
+/area/ruin/wasteplanet)
+"ZU" = (
+/obj/structure/girder,
+/obj/structure/girder,
+/turf/open/floor/plating/wasteplanet,
+/area/ruin/wasteplanet)
+"ZZ" = (
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_x = -11;
+	pixel_y = -5
+	},
+/obj/item/ammo_casing/spent{
+	icon_state = "pistol-brass-empty";
+	pixel_x = 6;
+	pixel_y = 9
+	},
+/turf/open/indestructible/hierophant/waste,
+/area/ruin/wasteplanet)
 
 (1,1,1) = {"
-M
-M
-M
-M
-M
-M
-M
-M
-M
-M
-M
-M
-M
-M
-M
-Y
-Y
-Y
-Y
-Y
-Y
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
 "}
 (2,1,1) = {"
-M
-m
-s
-s
-M
-s
-s
-s
-s
-s
-M
-s
-s
-m
-M
-Y
-Y
-Y
-Y
-Y
-Y
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+NA
+NA
+NA
+bt
+NA
+NA
+NA
+NA
+NA
+NA
+NA
+NA
+NA
+NA
+NA
+NA
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
 "}
 (3,1,1) = {"
-M
-s
-n
-s
-q
-s
-s
-s
-s
-s
-q
-s
-n
-s
-M
-Y
-Y
-Y
-Y
-Y
-Y
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+NA
+NA
+NA
+NA
+NA
+NA
+NA
+NA
+NA
+NA
+NA
+NA
+NA
+NA
+NA
+NA
+NA
+NA
+NA
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
 "}
 (4,1,1) = {"
-M
-s
-s
-q
-q
-s
-s
-u
-s
-s
-q
-q
-s
-s
-M
-Y
-Y
-Y
-Y
-Y
-Y
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+NA
+NA
+Zq
+NA
+NA
+NA
+NA
+Zq
+NA
+bt
+NA
+NA
+NA
+NA
+NA
+NA
+NA
+NA
+NA
+NA
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
 "}
 (5,1,1) = {"
-M
-M
-q
-q
-u
-s
-s
-s
-s
-s
-u
-q
-q
-M
-M
-Y
-Y
-Y
-Y
-Y
-Y
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+NA
+NA
+NA
+Zq
+YY
+Zq
+Zq
+CH
+Zq
+NA
+NA
+NA
+NA
+oG
+oG
+NA
+NA
+NA
+NA
+NA
+NA
+NA
+Ki
+Ki
+Ki
+Ki
+Ki
 "}
 (6,1,1) = {"
-M
-s
-s
-s
-s
-s
-s
-s
-s
-s
-s
-s
-s
-s
-M
-Y
-Y
-Y
-Y
-Y
-Y
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+NA
+NA
+Zq
+Zq
+XL
+rh
+bc
+XL
+xB
+xB
+NA
+NA
+oG
+oG
+oG
+NA
+NA
+NA
+NA
+NA
+NA
+NA
+Ki
+Ki
+Ki
+Ki
+Ki
 "}
 (7,1,1) = {"
-M
-s
-s
-s
-M
-M
-x
-x
-x
-M
-M
-s
-s
-s
-M
-M
-M
-M
-M
-M
-O
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+NA
+bt
+NA
+Zq
+lz
+SS
+BL
+Oz
+Dj
+kP
+Zq
+NA
+NA
+oG
+oG
+NA
+NA
+NA
+NA
+NA
+NA
+NA
+NA
+NA
+Ki
+Ki
+Ki
+Ki
 "}
 (8,1,1) = {"
-M
-s
-u
-s
-M
-z
-x
-x
-x
-z
-M
-s
-u
-s
-M
-I
-x
-x
-I
-M
-k
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+oG
+oG
+oG
+oG
+oG
+Ki
+Ki
+Ki
+Ki
+Ki
+NA
+NA
+NA
+ZU
+tU
+lT
+QH
+lT
+kP
+NZ
+AM
+NA
+NA
+oG
+oG
+Ot
+NA
+NA
+NA
+bd
+NA
+NA
+NA
+NA
+NA
+Ki
+Ki
+Ki
 "}
 (9,1,1) = {"
-M
-s
-s
-s
-x
-x
-x
-C
-x
-x
-x
-s
-s
-s
-X
-x
-x
-x
-x
-J
-O
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+Ki
+Ki
+Ki
+NA
+NA
+NA
+xB
+lz
+kP
+lT
+lT
+kP
+pr
+Zq
+NA
+NA
+oG
+oG
+Ot
+NA
+bd
+NA
+NA
+NA
+NA
+NA
+NA
+NA
+Ki
+Ki
+Ki
 "}
 (10,1,1) = {"
-M
-s
-s
-s
-x
-x
-x
-S
-x
-x
-x
-s
-s
-f
-X
-x
-x
-x
-x
-J
-O
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+Ki
+NA
+NA
+NA
+Zq
+Zq
+kV
+VT
+sE
+OO
+Zq
+Zq
+NA
+NA
+oG
+oG
+Ot
+NA
+NA
+NA
+bd
+NA
+NA
+NA
+NA
+NA
+Ki
+Ki
+Ki
 "}
 (11,1,1) = {"
-M
-s
-u
-s
-M
-z
-x
-x
-x
-z
-M
-s
-u
-s
-M
-I
-x
-x
-I
-M
-O
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+NA
+NA
+NA
+Zq
+Zq
+iG
+bY
+Zq
+xB
+NA
+NA
+NA
+oG
+oG
+Ot
+Ot
+bd
+NA
+NA
+NA
+NA
+NA
+NA
+NA
+NA
+Ki
+Ki
 "}
 (12,1,1) = {"
-M
-s
-s
-s
-M
-M
-x
-x
-x
-M
-M
-s
-s
-s
-M
-M
-M
-M
-M
-M
-O
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+oG
+oG
+oG
+oG
+oG
+oG
+BB
+BB
+BB
+wA
+BB
+BB
+oG
+oG
+oG
+oG
+oG
+oG
+NA
+bt
+NA
+Zq
+zI
+zI
+Zq
+NA
+NA
+NA
+oG
+oG
+Ot
+Ot
+bd
+bd
+NA
+NA
+NA
+NA
+dh
+NA
+NA
+NA
+Ki
+Ki
 "}
 (13,1,1) = {"
-M
-s
-s
-s
-s
-s
-s
-s
-s
-s
-s
-s
-s
-s
-M
-Y
-Y
-Y
-Y
-Y
-Y
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+oG
+oG
+oG
+oG
+BB
+BB
+mI
+BB
+DF
+BB
+DF
+BB
+BB
+BB
+oG
+oG
+oG
+oG
+NA
+NA
+NA
+NA
+NA
+NA
+NA
+NA
+bt
+NA
+oG
+oG
+Ot
+Ot
+bd
+Ot
+Ot
+Ot
+NA
+NA
+NA
+NA
+NA
+NA
+Ki
+Ki
 "}
 (14,1,1) = {"
-M
-M
-q
-q
-u
-s
-s
-s
-s
-s
-u
-q
-q
-M
-M
-Y
-Y
-Y
-Y
-Y
-Y
+Ki
+Ki
+Ki
+Ki
+Ki
+oG
+oG
+oG
+oG
+BB
+DF
+BB
+dh
+dh
+dh
+dh
+dh
+BB
+DF
+BB
+oG
+oG
+oG
+oG
+oG
+NA
+NA
+NA
+NA
+NA
+NA
+NA
+NA
+oG
+oG
+oG
+Ot
+oi
+oi
+Ot
+Ot
+dh
+Ot
+NA
+NA
+NA
+NA
+NA
+Ki
+Ki
 "}
 (15,1,1) = {"
-M
-s
-s
-q
-q
-s
-s
-u
-s
-s
-q
-q
-s
-s
-M
-Y
-Y
-Y
-Y
-Y
-Y
+Ki
+Ki
+Ki
+Ki
+oG
+oG
+oG
+oG
+BB
+BB
+BB
+dh
+dh
+Wn
+mF
+Al
+dh
+dh
+BB
+wA
+BB
+oG
+oG
+oG
+oG
+oG
+oG
+NA
+NA
+bt
+NA
+NA
+oG
+oG
+oG
+Ot
+Ot
+oi
+Ot
+Ot
+Ot
+Ot
+Ot
+Ot
+dh
+NA
+NA
+NA
+Ki
+Ki
 "}
 (16,1,1) = {"
-M
-s
-n
-s
-q
-s
-s
-s
-s
-s
-q
-s
-n
-s
-M
-Y
-Y
-Y
-Y
-Y
-Y
+Ki
+Ki
+Ki
+Ki
+oG
+oG
+oG
+BB
+DF
+mb
+dh
+Qd
+Wn
+mO
+bd
+WS
+Al
+dh
+dh
+BB
+BB
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+NA
+NA
+NA
+oG
+oG
+oG
+oG
+Ot
+oi
+oi
+Ot
+Ot
+Ot
+Ot
+dh
+Ot
+Ot
+Ot
+NA
+NA
+Ki
+Ki
 "}
 (17,1,1) = {"
-M
-m
-s
-s
-M
-s
-s
-s
-s
-s
-M
-s
-s
-m
-M
-Y
-Y
-Y
-Y
-Y
-Y
+Ki
+Ki
+Ki
+oG
+oG
+oG
+oG
+BB
+DF
+dh
+HE
+Wn
+mO
+bd
+oi
+oi
+QD
+Al
+dh
+wA
+BB
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+Ot
+Ot
+oi
+Ot
+Ot
+Ot
+dh
+Ot
+Ot
+Ot
+Ot
+Ot
+NA
+NA
+NA
+Ki
 "}
 (18,1,1) = {"
-M
-M
-M
-M
-M
-M
-M
-M
-M
-M
-M
-M
-M
-M
-M
-Y
-Y
-Y
-Y
-Y
-Y
+Ki
+Ki
+Ki
+oG
+oG
+oG
+mI
+BB
+Yn
+Qd
+Wn
+mO
+bd
+oi
+oi
+oi
+bd
+Rx
+dh
+BB
+BB
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+Ot
+oi
+oi
+Ot
+mA
+Ot
+dh
+Ot
+Ot
+Ot
+Ot
+AI
+NA
+NA
+NA
+Ki
+"}
+(19,1,1) = {"
+Ki
+Ki
+Ki
+oG
+oG
+oG
+BB
+Xq
+aD
+Wn
+mO
+oi
+oi
+oi
+oi
+oi
+bd
+Rx
+dh
+BB
+DF
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+Ot
+Ot
+oi
+Ot
+Ot
+Ot
+dh
+dh
+wu
+Ot
+Ot
+Ot
+Ot
+NA
+NA
+NA
+Ki
+"}
+(20,1,1) = {"
+Ki
+Ki
+Ki
+oG
+oG
+oG
+BB
+wA
+Qd
+cd
+bd
+oi
+oi
+bd
+oi
+bd
+bd
+Rx
+dh
+mI
+BB
+oG
+oG
+Ux
+gr
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+Ot
+Ot
+oi
+oi
+Ot
+Ot
+dh
+dh
+Vm
+nr
+Kx
+Ot
+Ot
+Ot
+NA
+NA
+NA
+Ki
+"}
+(21,1,1) = {"
+Ki
+Ki
+Ki
+oG
+oG
+oG
+DF
+eB
+tF
+jl
+bd
+oi
+oi
+oi
+Os
+Hi
+Yq
+iT
+dh
+BB
+BB
+oG
+oG
+Ot
+rT
+jf
+oG
+oG
+oG
+oG
+oG
+Ot
+Ot
+oi
+oi
+Ot
+Ot
+dh
+dh
+mA
+wu
+Kx
+ve
+Ot
+Lj
+Ot
+Ot
+NA
+NA
+Ki
+"}
+(22,1,1) = {"
+Ki
+Ki
+Ki
+oG
+oG
+oG
+BB
+DF
+Qd
+OL
+LB
+bd
+oi
+oi
+Rx
+dh
+Vb
+yq
+dh
+dh
+BB
+oG
+oG
+Et
+Ot
+gr
+oG
+oG
+oG
+oG
+oG
+Ot
+oi
+oi
+Ot
+Ot
+dh
+dh
+Ot
+Ot
+Kx
+Ot
+Ot
+Ot
+Ot
+Ot
+oG
+oG
+oG
+Ki
+"}
+(23,1,1) = {"
+Ki
+Ki
+Ki
+oG
+oG
+oG
+BB
+BB
+dh
+Qd
+Vb
+LB
+bd
+Os
+VP
+dh
+dh
+gO
+vd
+dh
+dh
+oG
+oG
+oG
+Ut
+oG
+oG
+oG
+oG
+Ot
+Ot
+oi
+oi
+Ot
+AI
+Ot
+dh
+Ot
+Ot
+jV
+Ot
+Ot
+jV
+jV
+Ot
+oG
+oG
+oG
+oG
+Ki
+"}
+(24,1,1) = {"
+Ki
+Ki
+Ki
+oG
+oG
+oG
+oG
+BB
+BB
+dh
+Ww
+Vb
+Hi
+VP
+dh
+dh
+dh
+dh
+Mv
+Al
+dh
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+Ot
+Ot
+Ot
+oi
+oi
+Ot
+Ot
+Ot
+dh
+Ot
+TU
+CW
+hZ
+hZ
+DQ
+jV
+Ot
+oG
+oG
+oG
+Ki
+Ki
+"}
+(25,1,1) = {"
+Ki
+Ki
+Ki
+oG
+oG
+oG
+oG
+BB
+DF
+wA
+dh
+dh
+dh
+dh
+dh
+dh
+dh
+dh
+Vb
+yq
+dh
+dh
+oG
+oG
+oG
+oG
+Ot
+Ot
+Ot
+Ot
+oi
+oi
+Ot
+Ot
+Ot
+dh
+dh
+Ot
+cn
+Ro
+fF
+Tu
+PC
+jV
+oG
+oG
+oG
+oG
+Ki
+Ki
+"}
+(26,1,1) = {"
+Ki
+Ki
+Ki
+Ki
+oG
+oG
+oG
+oG
+BB
+BB
+BB
+mb
+mI
+BB
+BB
+BB
+dh
+dh
+dh
+gO
+vd
+dh
+oG
+oG
+Ot
+Ot
+Ot
+Ot
+Ot
+oi
+oi
+Ot
+Ot
+Ot
+dh
+dh
+Ot
+Ot
+cn
+PC
+PC
+xu
+PC
+jV
+oG
+oG
+oG
+Ki
+Ki
+Ki
+"}
+(27,1,1) = {"
+Ki
+Ki
+Ki
+Ki
+oG
+oG
+oG
+oG
+oG
+BB
+BB
+BB
+DF
+BB
+oG
+oG
+oG
+dh
+dh
+dh
+gO
+zs
+oG
+Ot
+AI
+Ot
+Ot
+Ot
+oi
+oi
+Ot
+Ot
+Ot
+Ot
+dh
+dh
+Ot
+jV
+DQ
+PC
+PC
+PC
+jV
+jV
+oG
+oG
+oG
+Ki
+Ki
+Ki
+"}
+(28,1,1) = {"
+Ki
+Ki
+Ki
+Ki
+Ki
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+dh
+dh
+dh
+Vb
+Yq
+Ot
+Ot
+Ot
+Ot
+oi
+oi
+oi
+Ot
+Ot
+Ot
+dh
+dh
+Ot
+Ot
+jV
+xI
+jV
+xk
+UQ
+jV
+oG
+oG
+oG
+oG
+Ki
+Ki
+Ki
+"}
+(29,1,1) = {"
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+Ot
+Ot
+dh
+dh
+dh
+cd
+oi
+Ot
+oi
+oi
+oi
+oi
+Ot
+Ot
+Ot
+Ot
+dh
+dh
+Ot
+Ot
+Ot
+dh
+jV
+jV
+jV
+jV
+oG
+oG
+oG
+Ki
+Ki
+Ki
+Ki
+"}
+(30,1,1) = {"
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+Ot
+Ot
+mA
+dh
+dh
+Ot
+oi
+oi
+oi
+Ot
+Ot
+Ot
+Ot
+Ot
+Ot
+mA
+dh
+dh
+dh
+dh
+dh
+dh
+Ot
+Ot
+Ot
+oG
+oG
+oG
+oG
+Ki
+Ki
+Ki
+Ki
+"}
+(31,1,1) = {"
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+Ot
+Ot
+Ot
+Ot
+dh
+dh
+dh
+Ot
+Ot
+Ot
+Lj
+Ot
+Ot
+Ot
+Ot
+dh
+dh
+dh
+Ot
+Ot
+Ot
+Ot
+Ot
+Ot
+Ot
+Ot
+oG
+oG
+oG
+Ki
+Ki
+Ki
+Ki
+Ki
+"}
+(32,1,1) = {"
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+Ot
+Ot
+Ot
+dh
+dh
+dh
+Ot
+dh
+dh
+Ot
+mA
+Ot
+Ot
+AI
+Ot
+Ot
+dh
+dh
+Ot
+Ot
+Ot
+AI
+Ot
+Ot
+Ot
+Ot
+Ot
+oG
+oG
+oG
+Ki
+Ki
+Ki
+Ki
+Ki
+"}
+(33,1,1) = {"
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+Ot
+Ot
+Ot
+dh
+dh
+Ot
+Ot
+Ot
+Ot
+dh
+dh
+dh
+Ot
+Ot
+Ot
+Ot
+dh
+dh
+Ot
+Ot
+Ot
+Ot
+Ot
+Ot
+Ot
+Ot
+Ot
+oG
+oG
+oG
+oG
+Ki
+Ki
+Ki
+Ki
+Ki
+"}
+(34,1,1) = {"
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+oG
+oG
+oG
+oG
+oG
+oG
+Ot
+Ot
+Ot
+Ot
+dh
+dh
+mA
+Ot
+Ot
+Ot
+Ot
+Ot
+dh
+dh
+Ot
+Ot
+Ot
+Ot
+dh
+Ot
+Ot
+Lj
+Ot
+Ot
+Ot
+Ot
+Ot
+Ot
+Ot
+oG
+oG
+oG
+oG
+Ki
+Ki
+Ki
+Ki
+Ki
+"}
+(35,1,1) = {"
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+oG
+oG
+oG
+oG
+oG
+Ot
+Ot
+Ot
+mA
+dh
+dh
+Ot
+Ot
+Lj
+Ot
+Ot
+Ot
+Ot
+Ot
+dh
+dh
+dh
+Ot
+Ot
+dh
+Ot
+Ot
+Ot
+Ot
+Ot
+Ot
+Ot
+Ot
+Ot
+Ot
+oG
+oG
+oG
+oG
+Ki
+Ki
+Ki
+Ki
+Ki
+"}
+(36,1,1) = {"
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+oG
+oG
+oG
+oG
+Ot
+Ot
+Lj
+Ot
+dh
+dh
+Ot
+Ot
+Ot
+Ot
+jV
+jV
+jV
+Ot
+Ot
+Ot
+Ot
+dh
+dh
+dh
+dh
+Ot
+Ot
+jV
+jV
+jV
+jV
+jV
+jV
+Ot
+Ot
+oG
+oG
+oG
+oG
+oG
+Ki
+Ki
+Ki
+Ki
+"}
+(37,1,1) = {"
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+oG
+oG
+oG
+Ot
+Ot
+Ot
+Ot
+Ot
+dh
+Ot
+Ot
+Ot
+Ot
+jV
+jV
+UK
+jV
+jV
+jV
+Ot
+Ot
+dh
+dh
+dh
+dh
+Ot
+Ot
+jV
+St
+fL
+kZ
+Li
+jV
+jV
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+Ki
+Ki
+"}
+(38,1,1) = {"
+Ki
+Ki
+Ki
+Ki
+Ki
+oG
+oG
+oG
+oG
+Ot
+Ot
+jV
+jV
+jV
+xI
+jV
+Ot
+Ot
+jV
+jV
+RT
+kZ
+jt
+jF
+jV
+Lj
+Ot
+Ot
+dh
+dh
+Ot
+Ot
+jV
+jV
+kZ
+LW
+PC
+PC
+PC
+jV
+oG
+oG
+oG
+jV
+jV
+jV
+jV
+oG
+oG
+Ki
+"}
+(39,1,1) = {"
+Ki
+Ki
+Ki
+Ki
+Ki
+oG
+oG
+oG
+oG
+jV
+jV
+jV
+PC
+PC
+qs
+jV
+jV
+Ot
+jV
+PC
+Tu
+PC
+kZ
+jk
+jV
+Ot
+Ot
+Ot
+dh
+dh
+Ot
+Ot
+jV
+RV
+yI
+Fc
+PC
+PC
+PC
+jV
+oG
+oG
+jV
+jV
+df
+mr
+jV
+jV
+oG
+Ki
+"}
+(40,1,1) = {"
+Ki
+Ki
+Ki
+Ki
+Ki
+oG
+oG
+oG
+jV
+jV
+er
+fL
+PC
+Tu
+PC
+kj
+jV
+Ot
+jV
+PC
+PC
+Bv
+Fc
+jV
+jV
+Ot
+Ot
+Ot
+dh
+dh
+dh
+dh
+xI
+UW
+Tc
+FP
+Qj
+PC
+PC
+jV
+oG
+jV
+jV
+PC
+Fc
+nq
+Tu
+jV
+oG
+Ki
+"}
+(41,1,1) = {"
+Ki
+Ki
+Ki
+Ki
+oG
+oG
+oG
+oG
+jV
+PC
+LW
+PC
+PC
+PC
+VF
+kc
+jV
+Ot
+jV
+KM
+PC
+fF
+DX
+jV
+Ot
+Ot
+MB
+dh
+dh
+Zg
+dh
+Ot
+jV
+yI
+PC
+fF
+PC
+Tu
+PC
+jV
+oG
+jV
+qU
+Tu
+PC
+fF
+kZ
+jV
+oG
+oG
+"}
+(42,1,1) = {"
+Ki
+Ki
+Ki
+Ki
+oG
+oG
+oG
+oG
+jV
+Tu
+PC
+PC
+Bv
+PC
+Tu
+AK
+jV
+Ot
+jV
+jV
+PC
+Tu
+Dx
+yT
+dh
+dh
+dh
+dh
+dh
+dh
+mA
+Ot
+jV
+jV
+PC
+Tu
+sp
+PC
+KM
+jV
+oG
+jV
+jV
+oI
+Bv
+Lp
+PC
+jV
+oG
+oG
+"}
+(43,1,1) = {"
+Ki
+Ki
+Ki
+oG
+oG
+oG
+oG
+oG
+jV
+KM
+Fc
+PC
+PC
+PC
+kZ
+jV
+jV
+Ot
+Ot
+jV
+jV
+jV
+jV
+jV
+Ot
+mA
+Ot
+Ot
+dh
+dh
+dh
+dh
+Ot
+jV
+PC
+PC
+jk
+pQ
+jV
+jV
+Ot
+Ot
+jV
+PC
+or
+CG
+KM
+jV
+oG
+oG
+"}
+(44,1,1) = {"
+Ki
+Ki
+Ki
+oG
+oG
+oG
+oG
+oG
+jV
+jV
+jV
+sV
+PC
+PC
+jV
+jV
+Ot
+Ot
+Ot
+Ot
+Ot
+Ot
+Ot
+Ot
+Ot
+Ot
+Ot
+dh
+dh
+dh
+dh
+dh
+dh
+jV
+jV
+jV
+jV
+jV
+jV
+Ot
+Ot
+dh
+xI
+MA
+PC
+KM
+jV
+jV
+oG
+oG
+"}
+(45,1,1) = {"
+Ki
+Ki
+Ki
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+jV
+jV
+jV
+jV
+jV
+Ot
+Ot
+Ot
+Ot
+Ot
+Ot
+AI
+Ot
+Ot
+Ot
+dh
+dh
+dh
+dh
+Ot
+QC
+Ot
+dh
+dh
+Ot
+Ot
+Ot
+Ot
+Ot
+Ot
+dh
+dh
+jV
+jV
+jV
+jV
+jV
+Ot
+oG
+oG
+"}
+(46,1,1) = {"
+Ki
+Ki
+oG
+oG
+oG
+oG
+oG
+dH
+dH
+dH
+dH
+Ot
+Ot
+Ot
+Ot
+Ot
+Ot
+Ot
+Ot
+Ot
+Ot
+Ot
+Ot
+Zg
+Ne
+dh
+dh
+dh
+Ot
+Ot
+Ot
+Ot
+Ot
+dh
+dh
+dh
+dh
+MB
+Ot
+mA
+Zg
+Ot
+Ot
+Ot
+Ot
+Ot
+Ot
+Ot
+oG
+oG
+"}
+(47,1,1) = {"
+Ki
+Ki
+oG
+oG
+oG
+oG
+dH
+dH
+EN
+EN
+dH
+dH
+dH
+dH
+dH
+dH
+Ot
+Ot
+Ot
+Ot
+mA
+Ot
+Ne
+Mo
+dh
+dh
+OM
+dh
+Ot
+Ot
+AI
+Ot
+Ot
+Zg
+dh
+Ot
+dh
+dh
+Bb
+dh
+dh
+Ot
+Ot
+Ot
+Ot
+Ot
+Ot
+AI
+oG
+oG
+"}
+(48,1,1) = {"
+Ki
+oG
+oG
+oG
+oG
+dH
+dH
+EN
+EN
+EN
+EN
+EN
+EN
+EN
+Ih
+dH
+dH
+dH
+Ot
+Ot
+uc
+dh
+tB
+Eb
+Gu
+Ot
+Ot
+dh
+Ot
+Ot
+Ot
+Ot
+mA
+dh
+Ot
+Ot
+Ot
+Ot
+Ot
+dh
+dh
+dh
+dh
+mA
+Ot
+Ot
+Ot
+Ot
+oG
+oG
+"}
+(49,1,1) = {"
+Ki
+oG
+oG
+oG
+oG
+dH
+EN
+EN
+EN
+EN
+EN
+EN
+EN
+EN
+EN
+EN
+EN
+dH
+dH
+Ot
+dh
+jB
+dh
+Hc
+hU
+Ot
+Ot
+dh
+Ot
+Ot
+Ot
+Ot
+Ot
+dh
+Ot
+Ot
+Ot
+Ot
+Ot
+Ot
+Ot
+Ot
+dh
+Ot
+Ot
+Lj
+Ot
+Ot
+oG
+oG
+"}
+(50,1,1) = {"
+Ki
+oG
+oG
+oG
+oG
+dH
+EN
+EN
+DZ
+DZ
+DZ
+DZ
+dH
+EN
+EN
+EN
+EN
+EN
+dH
+Mp
+dh
+OM
+mE
+dh
+Ot
+Ot
+dh
+dh
+Ot
+Ot
+jV
+jV
+jV
+xI
+jV
+jV
+jV
+Ot
+Ot
+QC
+Ot
+Ot
+Zg
+Ot
+Ot
+Ot
+Ot
+oG
+oG
+oG
+"}
+(51,1,1) = {"
+Ki
+oG
+oG
+oG
+dH
+dH
+EN
+EN
+DZ
+gX
+DZ
+DZ
+EN
+EN
+DZ
+DZ
+DZ
+aL
+Eo
+jY
+Ht
+mE
+jn
+hU
+mA
+Ot
+dh
+dh
+Ot
+jV
+jV
+PC
+RJ
+jj
+YM
+gm
+jV
+jV
+Ot
+Ot
+jV
+jV
+xI
+jV
+jV
+jV
+jV
+oG
+oG
+Ki
+"}
+(52,1,1) = {"
+Ki
+oG
+oG
+oG
+dH
+Mp
+EN
+EN
+DZ
+DZ
+DZ
+DZ
+EN
+EN
+DZ
+mw
+DZ
+EN
+le
+Eo
+KO
+Yw
+Zg
+Ot
+Ot
+Ot
+dh
+dh
+Ot
+jV
+Yg
+PC
+PC
+MQ
+Tu
+fZ
+jq
+jV
+Ot
+Ot
+jV
+yI
+Po
+Gx
+ww
+Xx
+jV
+oG
+oG
+Ki
+"}
+(53,1,1) = {"
+Ki
+oG
+oG
+oG
+dH
+EN
+EN
+EN
+DZ
+DZ
+DZ
+DZ
+EN
+EN
+DZ
+DZ
+zy
+XQ
+EN
+cg
+oB
+FV
+Mp
+Ot
+Ot
+Ot
+dh
+dh
+Ot
+jV
+PC
+Tu
+fF
+PC
+Fc
+kZ
+vD
+jV
+Ot
+oG
+jV
+PC
+Bv
+JB
+Tu
+ge
+jV
+oG
+oG
+Ki
+"}
+(54,1,1) = {"
+Ki
+oG
+oG
+oG
+dH
+EN
+EN
+EN
+dH
+EN
+EN
+EN
+dH
+EN
+EN
+EN
+Du
+EN
+EN
+Hl
+NS
+Eo
+dH
+dH
+Ot
+Ot
+Ot
+dh
+dh
+jV
+PC
+PC
+PC
+Bv
+PC
+PC
+kZ
+jV
+oG
+oG
+jV
+PC
+Fc
+fF
+qo
+jV
+jV
+oG
+oG
+Ki
+"}
+(55,1,1) = {"
+Ki
+oG
+oG
+oG
+dH
+EN
+EN
+EN
+EN
+EN
+EN
+EN
+EN
+DZ
+DZ
+DZ
+DZ
+DZ
+EN
+Lz
+EN
+jY
+EN
+dH
+dH
+Ot
+Ot
+dh
+dh
+jV
+MU
+PC
+PC
+PC
+PC
+PC
+PC
+jV
+oG
+oG
+jV
+KM
+PC
+PC
+jV
+jV
+oG
+oG
+Ki
+Ki
+"}
+(56,1,1) = {"
+Ki
+oG
+oG
+oG
+dH
+Mp
+EN
+EN
+EN
+EN
+EN
+EN
+EN
+DZ
+DZ
+DZ
+DZ
+DZ
+OV
+DZ
+Ez
+DZ
+EN
+EN
+dH
+Ot
+Ot
+dh
+Ot
+jV
+jV
+Zr
+lZ
+Tu
+PC
+PC
+jV
+jV
+oG
+oG
+jV
+jV
+jV
+jV
+jV
+oG
+oG
+oG
+Ki
+Ki
+"}
+(57,1,1) = {"
+Ki
+oG
+oG
+oG
+dH
+dH
+EN
+EN
+Ih
+EN
+EN
+EN
+EN
+DZ
+DZ
+iU
+DZ
+DZ
+EN
+DZ
+DZ
+DZ
+EN
+EN
+dH
+dH
+Ot
+dh
+Ot
+Ot
+jV
+QW
+kc
+PC
+PC
+PC
+jV
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+Ki
+Ki
+Ki
+"}
+(58,1,1) = {"
+Ki
+oG
+oG
+oG
+oG
+dH
+dH
+dH
+dH
+dH
+dH
+xj
+EN
+DZ
+DZ
+DZ
+DZ
+DZ
+EN
+DZ
+DZ
+DZ
+EN
+EN
+Ih
+dH
+Ot
+Ot
+dh
+Ot
+jV
+jV
+jV
+KM
+KM
+jV
+jV
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+Ki
+Ki
+Ki
+Ki
+Ki
+"}
+(59,1,1) = {"
+Ki
+oG
+oG
+oG
+oG
+oG
+dH
+Zw
+KA
+ar
+dH
+EN
+EN
+DZ
+DZ
+DZ
+DZ
+DZ
+EN
+EN
+EN
+EN
+EN
+EN
+EN
+dH
+Ot
+Ot
+dh
+dh
+Ot
+Ot
+jV
+jV
+jV
+jV
+oG
+oG
+oG
+oG
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+"}
+(60,1,1) = {"
+Ki
+oG
+oG
+oG
+oG
+oG
+dH
+PT
+EN
+EN
+EN
+EN
+ZZ
+JD
+EN
+EN
+EN
+EN
+dH
+EN
+EN
+EN
+dH
+EN
+EN
+dH
+Ot
+Ot
+dh
+Ot
+dh
+Ot
+Ot
+Ot
+oG
+oG
+oG
+oG
+oG
+oG
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+"}
+(61,1,1) = {"
+Ki
+oG
+oG
+oG
+oG
+oG
+dH
+lD
+EN
+DZ
+DZ
+Fn
+OU
+ZZ
+xj
+EN
+EN
+EN
+EN
+DZ
+DZ
+DZ
+DZ
+EN
+EN
+dH
+AI
+Ot
+Ot
+dh
+Ot
+dh
+tR
+Ot
+oG
+oG
+oG
+oG
+oG
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+"}
+(62,1,1) = {"
+Ki
+oG
+oG
+oG
+oG
+oG
+dH
+dH
+EN
+DZ
+bL
+DZ
+KH
+dH
+dH
+EN
+EN
+EN
+EN
+DZ
+DZ
+DZ
+DZ
+EN
+EN
+dH
+dH
+Ot
+Ot
+dh
+tR
+dh
+Ot
+Ot
+oG
+oG
+oG
+oG
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+"}
+(63,1,1) = {"
+Ki
+Ki
+oG
+oG
+oG
+oG
+oG
+dH
+lx
+DZ
+DZ
+DZ
+EN
+uv
+dH
+EN
+EN
+EN
+EN
+DZ
+DZ
+gX
+DZ
+EN
+EN
+EN
+dH
+Ot
+tR
+dh
+Ot
+tR
+Ot
+oG
+oG
+oG
+oG
+oG
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+"}
+(64,1,1) = {"
+Ki
+Ki
+oG
+oG
+oG
+oG
+oG
+dH
+dH
+lx
+EN
+EN
+EN
+lD
+dH
+Ih
+EN
+EN
+dH
+DZ
+DZ
+DZ
+DZ
+EN
+EN
+EN
+dH
+Ot
+Ot
+Ot
+Ot
+Ot
+oG
+oG
+oG
+oG
+oG
+oG
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+"}
+(65,1,1) = {"
+Ki
+Ki
+Ki
+oG
+oG
+oG
+oG
+oG
+dH
+dH
+dH
+Yi
+Xd
+Zw
+dH
+EN
+EN
+EN
+EN
+EN
+EN
+EN
+EN
+EN
+EN
+dH
+dH
+oG
+Ot
+Ot
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+"}
+(66,1,1) = {"
+Ki
+Ki
+Ki
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+dH
+dH
+dH
+dH
+dH
+EN
+EN
+EN
+EN
+EN
+EN
+EN
+EN
+EN
+dH
+dH
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+"}
+(67,1,1) = {"
+Ki
+Ki
+Ki
+Ki
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+dH
+dH
+Mp
+EN
+EN
+EN
+Mp
+dH
+dH
+dH
+dH
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+"}
+(68,1,1) = {"
+Ki
+Ki
+Ki
+Ki
+Ki
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+"}
+(69,1,1) = {"
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+"}
+(70,1,1) = {"
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+oG
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
+Ki
 "}
