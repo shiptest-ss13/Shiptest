@@ -93,3 +93,9 @@
 	description = "Nanotrasen's gotta lay off some personnel, and this facility hasn't been worth the effort so far"
 	id = "rockplanet_budgetcuts"
 	suffix = "rockplanet_budgetcuts.dmm"
+
+/datum/map_template/ruin/rockplanet/shippingdock
+	name = "Abandoned Shipping Dock"
+	description = "An abandoned shipping dock used by small cargo freighters and smugglers alike."
+	id = "rockplanet_shippingdock"
+	suffix = "rockplanet_shippingdock.dmm"
