@@ -9,6 +9,7 @@
 	icon_state = "shelf_base"
 	density = TRUE
 	anchored = TRUE
+	max_integrity = 50 // Not hard to break
 
 	var/capacity = DEFAULT_SHELF_CAPACITY
 	var/use_delay = DEFAULT_SHELF_USE_DELAY
@@ -19,7 +20,7 @@
 
 /obj/structure/crate_shelf/Initialize()
 	. = ..()
-	shelf_contents = new/list(capacity) // Initialize our shelf's contents list, this will be used later in MouseDrop_T().
+	shelf_contents = new/list(capacity) // Initialize our shelf's contents list, this will be used later.
 	var/stack_layer // This is used to generate the sprite layering of the shelf pieces.
 	var/stack_offset // This is used to generate the vertical offset of the shelf pieces.
 	for(var/i in 1 to (capacity - 1))
@@ -69,17 +70,6 @@
 			return TRUE
 	return ..()
 
-/obj/structure/crate_shelf/MouseDrop_T(obj/structure/closet/crate/crate, mob/living/user)
-	if(!istype(crate, /obj/structure/closet/crate))
-		return FALSE // If it's not a crate, don't put it in!
-	if(!src.Adjacent(crate))
-		return FALSE // If it's not next to the shelf, don't put it in!
-	if(!isturf(user.loc) || user.incapacitated() || user.body_position == LYING_DOWN)
-		return FALSE // If the user is in a weird position, or incapacitated, don't let them load crates!
-	if(!isliving(user))
-		return FALSE // While haunted shelves sound funny, they are quite dangerous in practice. Prevent ghosts from loading into shelves.
-	return load(crate, user) // Try to load the crate into the shelf.
-
 /obj/structure/crate_shelf/proc/handle_visuals()
 	vis_contents = contents // It really do be that shrimple.
 	return
@@ -116,6 +106,8 @@
 		unload_turf.balloon_alert(user, "no room!")
 		return FALSE
 	if(do_after(user, use_delay, target = crate))
+		if(!shelf_contents.Find(crate))
+			return FALSE // If something has happened to the crate while we were waiting, abort!
 		crate.layer = BELOW_OBJ_LAYER // Reset the crate back to having the default layer, otherwise we might get strange interactions.
 		crate.pixel_y = 0 // Reset the crate back to having no offset, otherwise it will be floating.
 		crate.forceMove(unload_turf)

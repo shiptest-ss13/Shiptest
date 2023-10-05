@@ -51,19 +51,21 @@
 		tear_manifest(user)
 	return ..()
 
-/obj/structure/closet/crate/MouseDrop(turf/unload_turf, src_location, over_location)
+/obj/structure/closet/crate/MouseDrop(atom/drop_atom, src_location, over_location)
 	. = ..()
 	var/mob/living/user = usr
-	if(!isliving(usr))
+	if(!isliving(user))
 		return // Ghosts busted.
-	if(!istype(src.loc, /obj/structure/crate_shelf))
-		return // If the crate is not in a shelf, don't bother unloading it.
-	if(!unload_turf || !istype(unload_turf, /turf/open))
-		return // If the destination turf isn't open, or doesn't exist, don't bother trying.
 	if(!isturf(user.loc) || user.incapacitated() || user.body_position == LYING_DOWN)
 		return // If the user is in a weird state, don't bother trying.
-	var/obj/structure/crate_shelf/shelf = src.loc
-	return(shelf.unload(src, usr, unload_turf))
+	if(!drop_atom.Adjacent(user) || !drop_atom.Adjacent(src))
+		return // If the desired atom isn't adjacent to the user or crate, don't bother.
+	if(istype(drop_atom, /turf/open) && istype(loc, /obj/structure/crate_shelf))
+		var/obj/structure/crate_shelf/shelf = loc
+		return(shelf.unload(src, user, drop_atom)) // If we're being dropped onto a turf, and we're inside of a crate shelf, unload.
+	if(istype(drop_atom, /obj/structure/crate_shelf) && isturf(loc))
+		var/obj/structure/crate_shelf/shelf = drop_atom
+		return(shelf.load(src, user)) // If we're being dropped onto a crate shelf, and we're in a turf, load.
 
 /obj/structure/closet/crate/open(mob/living/user, force = FALSE)
 	. = ..()
