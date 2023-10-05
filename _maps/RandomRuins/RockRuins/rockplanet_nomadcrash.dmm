@@ -68,7 +68,9 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 9
 	},
-/obj/effect/turf_decal/weather/dirt/corner,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 5
+	},
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "cO" = (
@@ -647,13 +649,7 @@
 	},
 /area/ruin/rockplanet/nanotrasen)
 "sZ" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 6
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/turf/open/floor/plating/asteroid/rockplanet/lit,
+/turf/closed/wall/rust,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "tA" = (
 /obj/structure/flora/tree/dead/tall/grey,
@@ -1040,8 +1036,9 @@
 /turf/open/floor/plating/dirt/jungle/lit,
 /area/ruin/rockplanet/nanotrasen)
 "CN" = (
-/obj/structure/stairs/north,
-/turf/open/floor/plating/asteroid/rockplanet/lit,
+/turf/open/floor/plating/asteroid/rockplanet/lit{
+	icon_state = "stairs"
+	},
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "CT" = (
 /obj/effect/turf_decal/weather/dirt/corner,
@@ -1861,13 +1858,7 @@
 	},
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "XK" = (
-/obj/effect/turf_decal/weather/dirt/corner{
-	dir = 1
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
-	},
-/turf/closed/wall/mineral/sandstone,
+/turf/closed/wall/rust,
 /area/ruin/rockplanet/nanotrasen)
 "XX" = (
 /obj/structure/mineral_door/sandstone,
@@ -2970,7 +2961,7 @@ iN
 iN
 gn
 iN
-iN
+Kl
 Md
 dM
 vS
@@ -2983,7 +2974,7 @@ rW
 RB
 ho
 Ym
-tN
+sZ
 jI
 Ym
 tN
@@ -3032,7 +3023,7 @@ OZ
 vW
 Md
 Ym
-tN
+sZ
 Ba
 iX
 tN
@@ -3134,7 +3125,7 @@ ho
 ho
 mu
 Si
-tN
+sZ
 jm
 jm
 jm
@@ -3332,7 +3323,7 @@ Md
 ho
 ho
 EM
-lg
+XK
 jm
 jm
 jm
@@ -3382,7 +3373,7 @@ ho
 lg
 cl
 Bc
-lg
+XK
 jm
 jm
 jm
@@ -3432,7 +3423,7 @@ Bt
 lg
 zx
 Xk
-lg
+XK
 jm
 jm
 jm
@@ -3472,17 +3463,17 @@ Kl
 Md
 ho
 ho
-ho
+YQ
 Xy
-lg
+XK
 YQ
 XX
-lg
-lg
-lg
+XK
+XK
+XK
 kN
 pb
-lg
+XK
 jm
 jm
 jm
@@ -3524,15 +3515,15 @@ ho
 mu
 YQ
 uh
-lg
+XK
 zg
 zh
 lg
 Le
-lg
-lg
+XK
+XK
 UX
-lg
+XK
 on
 Zy
 Zy
@@ -3620,8 +3611,8 @@ iN
 iN
 cP
 ho
-sZ
-XK
+YQ
+YQ
 YQ
 fM
 lg
@@ -3629,7 +3620,7 @@ GB
 gs
 lg
 ei
-lg
+XK
 Rk
 Jy
 wf
@@ -3674,12 +3665,12 @@ Cm
 Zf
 lg
 uK
-lg
-lg
+XK
+XK
 ip
 lg
 qL
-lg
+XK
 rY
 Ot
 kS
@@ -3719,7 +3710,7 @@ iN
 aX
 ho
 uD
-ho
+YQ
 sR
 Ec
 CC
@@ -3779,7 +3770,7 @@ AX
 oI
 il
 iZ
-lg
+XK
 lg
 aL
 Zy
@@ -3825,11 +3816,11 @@ uo
 lg
 lg
 ba
-lg
+XK
 Qc
 lg
 HL
-lg
+XK
 uh
 uh
 on
@@ -3872,7 +3863,7 @@ Md
 YQ
 So
 fK
-lg
+XK
 uh
 MV
 lg
@@ -3919,7 +3910,7 @@ BA
 mW
 uD
 vh
-lg
+XK
 DR
 lg
 lg
@@ -3970,16 +3961,16 @@ ho
 BX
 jw
 Op
-lg
+XK
 Op
-lg
-lg
+XK
+XK
 lg
 lg
 Yq
-lg
-lg
-lg
+XK
+XK
+XK
 jm
 Zy
 kf
@@ -4022,7 +4013,7 @@ AS
 OZ
 RB
 vh
-lg
+XK
 LN
 is
 uB
@@ -4114,7 +4105,7 @@ Yy
 Kl
 Md
 Ym
-tN
+sZ
 ho
 ho
 pH
@@ -4261,12 +4252,12 @@ iN
 iN
 iN
 Ym
-tN
+sZ
 nf
 nf
 nf
 Ze
-tN
+sZ
 TT
 iN
 iN
@@ -4309,9 +4300,9 @@ jm
 iN
 iN
 iN
-tN
-tN
-tN
+sZ
+sZ
+sZ
 nf
 Xj
 OP
@@ -4408,10 +4399,10 @@ iN
 iN
 Ms
 iN
-tN
+sZ
 LA
 eo
-tN
+sZ
 sn
 Jf
 Ym
@@ -4461,7 +4452,7 @@ iN
 PH
 lz
 eo
-tN
+sZ
 Jf
 Ym
 iN
@@ -4510,7 +4501,7 @@ iN
 iN
 Rn
 FP
-tN
+sZ
 Ym
 iN
 iN
@@ -4608,7 +4599,7 @@ iN
 iN
 uT
 iN
-tN
+sZ
 Ym
 iN
 iN
