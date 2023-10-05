@@ -32,8 +32,8 @@
 /obj/structure/crate_shelf/Destroy()
 	var/turf/dump_turf = drop_location()
 	for(var/obj/structure/closet/crate/crate in shelf_contents)
-		crate.layer = BELOW_OBJ_LAYER // Reset the crates back to default visual state
-		crate.pixel_y = 0
+		crate.layer = initial(crate.layer) // Reset the crates back to default visual state
+		crate.pixel_y = initial(crate.pixel_y)
 		crate.forceMove(dump_turf)
 		step(crate, pick(GLOB.alldirs)) // Shuffle the crates around as though they've fallen down.
 		crate.SpinAnimation(rand(4,7), 1) // Spin the crates around a little as they fall. Randomness is applied so it doesn't look weird.
@@ -108,8 +108,8 @@
 	if(do_after(user, use_delay, target = crate))
 		if(!shelf_contents.Find(crate))
 			return FALSE // If something has happened to the crate while we were waiting, abort!
-		crate.layer = BELOW_OBJ_LAYER // Reset the crate back to having the default layer, otherwise we might get strange interactions.
-		crate.pixel_y = 0 // Reset the crate back to having no offset, otherwise it will be floating.
+		crate.layer = initial(crate.layer) // Reset the crate back to having the default layer, otherwise we might get strange interactions.
+		crate.pixel_y = initial(crate.pixel_y) // Reset the crate back to having no offset, otherwise it will be floating.
 		crate.forceMove(unload_turf)
 		shelf_contents[shelf_contents.Find(crate)] = null // We do this instead of removing it from the list to preserve the order of the shelf.
 		handle_visuals()
