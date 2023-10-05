@@ -171,7 +171,7 @@
 	rename_team = "Minutemen Pirate Hunter Team"
 	polldesc = "Minutemen pirate hunters"
 
- /datum/ert/minutemen/gold_irs
+/datum/ert/minutemen/gold_irs
 	teamsize = 3
 	leader_role = /datum/antagonist/ert/minutemen/gold_irs
 	roles = list(/datum/antagonist/ert/minutemen/gold_irs)

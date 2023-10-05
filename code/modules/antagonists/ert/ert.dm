@@ -60,13 +60,13 @@
 
 	var/missiondesc = "Your team is being sent to [station_name()]."
 	if(leader) //If Squad Leader
-		missiondesc += " Lead your tean to ensure the completion of your objectives."
+		missiondesc += " Lead your team to ensure the completion of your objectives."
 	else
 		missiondesc += " Follow orders given to you by your squad leader."
 	if(deathsquad)
 		missiondesc += "Leave no witnesses."
 
-	missiondesc += "<BR><B>Your Mission</B> : [ert_team.mission.explanation_text]"
+	missiondesc += "<BR><B>Your Mission</B>: [ert_team.mission.explanation_text]"
 	to_chat(owner,missiondesc)
 
 // Nanotrasen
@@ -94,7 +94,7 @@
 		return
 	var/datum/objective/missionobj = new ()
 	missionobj.owner = owner
-	missionobj.explanation_text = "Conduct a routine performance review of [station_name()] and its Captain."
+	missionobj.explanation_text = "Conduct a routine performance review of [station_name()]'s vessels."
 	missionobj.completed = TRUE
 	mission = missionobj
 	objectives |= mission
@@ -233,6 +233,20 @@
 	random_names = TRUE
 	role = "Enforcer"
 
+
+/datum/antagonist/ert/inteq/greet()
+	to_chat(owner, "<B><font size=3 color=red>You are the [name].</font></B>")
+	var/missiondesc = "As part of Inteq Risk Management, you have been sent to [station_name()]."
+	if(leader) //If Squad Leader
+		missiondesc += "Lead your squadron to ensure the completion of your contract."
+	else
+		missiondesc += "Follow orders given to you by your Vanguard."
+	if(deathsquad)
+		missiondesc += "Leave no witnesses."
+
+	missiondesc += "<BR><B>Contract Terms</B>: [ert_team.mission.explanation_text]"
+	to_chat(owner,missiondesc)
+
 /datum/antagonist/ert/inteq/leader
 	name = "Inteq Mercenary Leader"
 	outfit = /datum/outfit/job/captain/inteq
@@ -267,10 +281,23 @@
 	outfit = /datum/outfit/centcom/ert/minutemen
 	role = "Minuteman"
 
+/datum/antagonist/ert/minutemen/greet()
+	to_chat(owner, "<B><font size=3 color=red>You are the [name].</font></B>")
+	var/missiondesc = "As part of the Colonial Minutemen, you have been sent to [station_name()]."
+	if(leader) //If Squad Leader
+		missiondesc += "Lead your team to ensure the completion of your objectives."
+	else
+		missiondesc += "Follow orders given to you by your Sergent."
+	if(deathsquad)
+		missiondesc += "Leave no witnesses."
+
+	missiondesc += "<BR><B>Your Mission</B>: [ert_team.mission.explanation_text]"
+	to_chat(owner,missiondesc)
+
 /datum/antagonist/ert/minutemen/leader
 	name = "Minutemen Leader"
 	outfit = /datum/outfit/centcom/ert/minutemen/leader
-	role = "Sergeant"
+	role = "Sargent"
 
 /datum/antagonist/ert/minutemen/bard
 	name = "BARD Infantry"
@@ -280,7 +307,7 @@
 /datum/antagonist/ert/minutemen/bard/leader
 	name = "BARD Leader"
 	outfit = /datum/outfit/centcom/ert/minutemen/bard/leader
-	role = "Sergeant"
+	role = "Sargent"
 
 /datum/antagonist/ert/minutemen/riot
 	name = "Riot Officer"
@@ -288,9 +315,9 @@
 	role = "Minuteman"
 
 /datum/antagonist/ert/minutemen/riot/leader
-	name = "Riot Sergeant"
+	name = "Riot Sargent"
 	outfit = /datum/outfit/centcom/ert/minutemen/riot/leader
-	role = "Sergeant"
+	role = "Sargent"
 
 /datum/antagonist/ert/minutemen/gold_irs
 	name = "GOLD Collector"

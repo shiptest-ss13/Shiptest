@@ -21,9 +21,9 @@
 	uniform = /obj/item/clothing/under/solgov/formal
 	belt = /obj/item/clipboard
 	ears = /obj/item/radio/headset/solgov/captain
-	backpack = /obj/item/storage/backpack/satchel/leather
+	back = /obj/item/storage/backpack/satchel/leather
 	head = /obj/item/clothing/head/solgov
 	gloves = /obj/item/clothing/gloves/color/white
 	shoes = /obj/item/clothing/shoes/laceup
 	mask = null
-	eyes = null
+	glasses = null
