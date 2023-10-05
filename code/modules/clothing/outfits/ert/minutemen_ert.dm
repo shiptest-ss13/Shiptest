@@ -100,6 +100,6 @@
 
 	uniform = /obj/item/clothing/under/rank/command/minutemen
 	ears = /obj/item/radio/headset/minutemen/alt/captain
-	belt = /obj/item/storage/belt/military/minutemen/gal
+	belt = /obj/item/storage/belt/military/minutemen
 	suit_store = /obj/item/gun/ballistic/automatic/gal
 	backpack_contents = list(/obj/item/ammo_box/magazine/gal=4)
