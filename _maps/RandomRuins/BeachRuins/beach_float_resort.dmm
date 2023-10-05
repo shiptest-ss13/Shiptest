@@ -98,6 +98,7 @@
 /area/ruin/beach/float_resort/villa)
 "cA" = (
 /obj/structure/table/wood,
+/obj/item/circuitboard/machine/ore_redemption,
 /obj/item/paper/pamphlet{
 	pixel_x = 10;
 	pixel_y = 3
@@ -125,6 +126,9 @@
 /area/ruin/beach/float_resort)
 "cL" = (
 /obj/structure/chair/wood,
+/obj/effect/turf_decal/siding/wood{
+	dir = 9
+	},
 /turf/open/floor/wood{
 	light_range = 2
 	},
@@ -327,6 +331,7 @@
 /area/ruin/beach/float_resort)
 "iX" = (
 /obj/structure/flora/ausbushes/fullgrass,
+/obj/item/circuitboard/machine/autolathe,
 /turf/open/floor/plating/grass/beach/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "iZ" = (
@@ -416,6 +421,18 @@
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 8
 	},
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/float_resort)
+"ls" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wood/corner,
 /turf/open/floor/wood{
 	light_range = 2
 	},
@@ -544,8 +561,22 @@
 	baseturfs = /turf/open/floor/plating/beach/sand
 	},
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"pr" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 4
+	},
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/float_resort)
 "pA" = (
 /obj/effect/turf_decal/weather/sand,
+/turf/open/water/beach,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"pH" = (
+/obj/effect/turf_decal/weather/sand/corner{
+	dir = 8
+	},
 /turf/open/water/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "pI" = (
@@ -637,6 +668,15 @@
 	light_range = 2
 	},
 /area/ruin/beach/float_resort)
+"rk" = (
+/obj/structure/destructible/tribal_torch/lit,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/float_resort)
 "rM" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -655,6 +695,12 @@
 /turf/open/floor/concrete{
 	light_range = 2
 	},
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"rV" = (
+/obj/effect/turf_decal/weather/sand{
+	dir = 5
+	},
+/turf/open/water/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "rZ" = (
 /obj/effect/turf_decal/weather/sand{
@@ -683,6 +729,14 @@
 	},
 /turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"tj" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 1
+	},
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/float_resort)
 "tA" = (
 /obj/structure/railing/corner/wood{
 	dir = 8
@@ -800,6 +854,15 @@
 	light_range = 2
 	},
 /area/ruin/beach/float_resort/villa)
+"xr" = (
+/obj/structure/chair/wood,
+/obj/effect/turf_decal/siding/wood{
+	dir = 5
+	},
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/float_resort)
 "xO" = (
 /obj/structure/fence/cut,
 /turf/open/floor/concrete{
@@ -1573,6 +1636,12 @@
 /turf/open/floor/concrete{
 	light_range = 2
 	},
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"Ps" = (
+/obj/structure/railing/wood{
+	layer = 2.08
+	},
+/turf/open/water/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "PB" = (
 /obj/effect/turf_decal/weather/sand/corner{
@@ -2423,7 +2492,7 @@ kp
 ND
 Ch
 Ch
-kp
+pH
 YP
 YP
 "}
@@ -2477,7 +2546,7 @@ Ch
 Dr
 Rt
 Rt
-kp
+rV
 YP
 YP
 "}
@@ -2869,7 +2938,7 @@ kp
 kp
 Sf
 cL
-Vr
+tj
 eZ
 iZ
 Vb
@@ -2922,7 +2991,7 @@ kp
 kp
 kp
 Sf
-TU
+rk
 Vr
 fq
 Vr
@@ -2976,13 +3045,13 @@ kp
 kp
 kp
 Sf
-cL
-Vr
+xr
+pr
 Vr
 kh
 ln
 nf
-ql
+ls
 nf
 rM
 ln
@@ -3479,7 +3548,7 @@ cu
 Bw
 kp
 kp
-Sf
+Ps
 Gy
 Iz
 My
