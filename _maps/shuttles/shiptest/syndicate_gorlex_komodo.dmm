@@ -3719,27 +3719,15 @@
 /area/ship/hallway/central)
 "IL" = (
 /obj/structure/table/reinforced,
-/obj/machinery/light/directional/east,
-/obj/item/paper_bin{
-	pixel_x = 6
-	},
-/obj/item/pen/red{
-	pixel_x = 5;
-	pixel_y = 1
-	},
-/obj/effect/turf_decal/techfloor{
-	dir = 4
-	},
-/obj/item/clipboard{
-	pixel_x = -5
-	},
-/obj/item/taperecorder{
-	pixel_x = -3
-	},
-/obj/item/clothing/glasses/hud/security/night{
+/obj/item/toy/figure/syndie{
 	pixel_x = -4;
-	pixel_y = -6
+	pixel_y = 5
 	},
+/obj/machinery/fax{
+	pixel_x = 4;
+	pixel_y = 0
+	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Jo" = (
@@ -5067,13 +5055,25 @@
 /area/ship/hallway/central)
 "WA" = (
 /obj/structure/table/reinforced,
-/obj/item/toy/figure/syndie{
-	pixel_x = -4;
-	pixel_y = 5
+/obj/item/paper_bin{
+	pixel_x = 6
 	},
-/obj/machinery/fax{
-	pixel_x = 4;
-	pixel_y = 0
+/obj/item/pen/red{
+	pixel_x = 5;
+	pixel_y = 1
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/obj/item/clipboard{
+	pixel_x = -5
+	},
+/obj/item/taperecorder{
+	pixel_x = -3
+	},
+/obj/item/clothing/glasses/hud/security/night{
+	pixel_x = -4;
+	pixel_y = -6
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
