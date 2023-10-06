@@ -94,14 +94,8 @@
 	return FALSE // If the do_after() is interrupted, return FALSE!
 
 /obj/structure/crate_shelf/proc/unload(obj/structure/closet/crate/crate, mob/user, turf/unload_turf)
-	if(!unload_turf) // If a turf isn't specified, pick one at random.
-		unload_turf = get_turf(get_step(src, pick(GLOB.alldirs)))
-	if(get_turf(src) == unload_turf) // If we're going to just drop it back onto the shelf, don't!
-		unload_turf.balloon_alert(user, "no room!")
-		return FALSE
-	if(!unload_turf.Adjacent(src) || !unload_turf.Adjacent(user)) // If the destination turf is adjacent to neither the player, nor the shelf, do nothing.
-		unload_turf.balloon_alert(user, "too far!")
-		return FALSE
+	if(!unload_turf)
+		unload_turf = get_turf(user) // If a turf somehow isn't passed into the proc, put it at the user's feet.
 	if(!unload_turf.Enter(crate, no_side_effects = TRUE)) // If moving the crate from the shelf to the desired turf would bump, don't do it! Thanks Kapu1178 for the help here. - Generic DM
 		unload_turf.balloon_alert(user, "no room!")
 		return FALSE

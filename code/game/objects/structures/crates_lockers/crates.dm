@@ -58,7 +58,7 @@
 		return // Ghosts busted.
 	if(!isturf(user.loc) || user.incapacitated() || user.body_position == LYING_DOWN)
 		return // If the user is in a weird state, don't bother trying.
-	if(!drop_atom.Adjacent(user) || !drop_atom.Adjacent(src))
+	if(get_dist(drop_atom, src) != 1 || get_dist(drop_atom, user) != 1) // get_dist() is used instead of Adjacent() here due to crates blocking themselves from being placed on a shelf if the latter is used.
 		return // If the desired atom isn't adjacent to the user or crate, don't bother.
 	if(istype(drop_atom, /turf/open) && istype(loc, /obj/structure/crate_shelf))
 		var/obj/structure/crate_shelf/shelf = loc
