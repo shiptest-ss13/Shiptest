@@ -53,7 +53,7 @@ to accommodate additional materials.
 		)
 		var/picked_option = show_radial_menu(user, src, choose_options, radius = 38, require_near = TRUE)
 
-		if(!grinded || !in_range(src, user) || !user.is_holding(attacking_item) && !picked_option)
+		if(!grinded || !in_range(src, user) || !user.is_holding(attacking_item) || !picked_option)
 			return
 
 		balloon_alert(user, "grinding...")
