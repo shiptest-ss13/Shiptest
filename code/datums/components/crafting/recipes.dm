@@ -1181,6 +1181,6 @@
 /datum/crafting_recipe/distiller
 	name = "Distiller"
 	result = /obj/structure/fermenting_barrel/distiller
-	reqs = list(/obj/item/stack/sheet/mineral/wood = 8, /datum/reagent/srm_bacteria = 30)
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 8, /obj/item/stack/sheet/metal = 5, /datum/reagent/srm_bacteria = 30)
 	time = 50
 	category = CAT_PRIMAL
