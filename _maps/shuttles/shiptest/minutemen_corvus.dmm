@@ -525,13 +525,12 @@
 	},
 /obj/effect/turf_decal/box,
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/structure/railing{
-	dir = 1;
-	layer = 3.1
-	},
 /obj/item/tank/jetpack/carbondioxide,
 /obj/item/clothing/suit/space/hardsuit/swat,
 /obj/machinery/suit_storage_unit/inherit/industrial,
+/obj/structure/railing{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/central)
 "ka" = (
@@ -1166,7 +1165,6 @@
 /obj/effect/turf_decal/techfloor/orange,
 /obj/structure/railing/corner,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/extinguisher_cabinet/directional/north,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
@@ -1179,6 +1177,7 @@
 /obj/machinery/atmospherics/pipe/simple/orange/visible{
 	dir = 4
 	},
+/obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "xL" = (
@@ -1400,9 +1399,9 @@
 	name = "equipment locker";
 	req_access_txt = "1"
 	},
-/obj/item/storage/belt/military,
-/obj/item/storage/belt/military,
-/obj/item/storage/belt/military,
+/obj/item/storage/belt/military/minutemen,
+/obj/item/storage/belt/military/minutemen,
+/obj/item/storage/belt/military/minutemen,
 /obj/item/clothing/gloves/combat,
 /obj/item/clothing/gloves/combat,
 /obj/item/clothing/gloves/combat,
@@ -1527,8 +1526,8 @@
 	},
 /obj/item/reagent_containers/food/snacks/hotdog,
 /obj/item/storage/cans/sixbeer,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/spawner/lootdrop/donkpockets,
+/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/lootdrop/ration,
 /turf/open/floor/plastic,
 /area/ship/hallway/central)
 "Eo" = (
@@ -2148,13 +2147,12 @@
 	},
 /obj/effect/turf_decal/box,
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/structure/railing{
-	dir = 1;
-	layer = 3.1
-	},
 /obj/item/tank/jetpack/carbondioxide,
 /obj/machinery/suit_storage_unit/inherit/industrial,
 /obj/item/clothing/suit/space/hardsuit/security/independent/minutemen,
+/obj/structure/railing{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/central)
 "PA" = (
@@ -2327,18 +2325,18 @@
 /obj/item/ammo_box/magazine/m45{
 	pixel_x = 5
 	},
-/obj/item/ammo_box/magazine/m45/rubbershot,
-/obj/item/ammo_box/magazine/m45/rubbershot,
-/obj/item/ammo_box/magazine/m45/rubbershot,
+/obj/item/ammo_box/magazine/m45/rubber,
+/obj/item/ammo_box/magazine/m45/rubber,
+/obj/item/ammo_box/magazine/m45/rubber,
 /obj/effect/turf_decal/corner/opaque/red/border{
 	dir = 1
 	},
-/obj/item/ammo_box/magazine/m45/rubbershot,
+/obj/item/ammo_box/magazine/m45/rubber,
 /obj/item/ammo_box/magazine/smgm9mm{
 	pixel_x = 2;
 	pixel_y = 1
 	},
-/obj/item/ammo_box/magazine/smgm9mm/rubbershot{
+/obj/item/ammo_box/magazine/smgm9mm/rubber{
 	pixel_x = -5;
 	pixel_y = -2
 	},

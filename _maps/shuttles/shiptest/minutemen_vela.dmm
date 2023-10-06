@@ -28,9 +28,9 @@
 /obj/item/ammo_box/magazine/m45,
 /obj/item/ammo_box/magazine/m45,
 /obj/item/ammo_box/magazine/m45,
-/obj/item/ammo_box/magazine/smgm9mm/rubbershot,
-/obj/item/ammo_box/magazine/smgm9mm/rubbershot,
-/obj/item/ammo_box/magazine/smgm9mm/rubbershot,
+/obj/item/ammo_box/magazine/smgm9mm/rubber,
+/obj/item/ammo_box/magazine/smgm9mm/rubber,
+/obj/item/ammo_box/magazine/smgm9mm/rubber,
 /obj/item/ammo_box/c9mm/rubbershot,
 /obj/structure/cable{
 	icon_state = "0-6"
@@ -43,8 +43,8 @@
 	},
 /obj/structure/table/glass,
 /obj/item/flashlight/lamp{
-	pixel_y = 1;
-	pixel_x = -7
+	pixel_x = -7;
+	pixel_y = 1
 	},
 /obj/item/paicard{
 	pixel_x = 6;
@@ -62,11 +62,11 @@
 /area/ship/engineering)
 "aq" = (
 /obj/machinery/button/door{
-	pixel_y = 14;
-	pixel_x = 22;
+	dir = 8;
 	id = "obai2";
 	name = "AI core blast door button";
-	dir = 8
+	pixel_x = 22;
+	pixel_y = 14
 	},
 /obj/structure/AIcore,
 /obj/machinery/power/apc/auto_name/directional/east,
@@ -74,11 +74,11 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/button/door{
-	pixel_y = -15;
-	pixel_x = 22;
+	dir = 8;
 	id = "obai";
 	name = "AI core window shutters button";
-	dir = 8
+	pixel_x = 22;
+	pixel_y = -15
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/science/ai_chamber)
@@ -111,8 +111,8 @@
 	dir = 8
 	},
 /obj/item/cardboard_cutout{
-	name = "John";
-	desc = "Guardian of the engines."
+	desc = "Guardian of the engines.";
+	name = "John"
 	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external)
@@ -216,8 +216,8 @@
 "bZ" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/atmospherics/components/unary/thermomachine{
-	piping_layer = 2;
-	dir = 8
+	dir = 8;
+	piping_layer = 2
 	},
 /obj/machinery/camera/autoname{
 	dir = 8
@@ -341,10 +341,10 @@
 "cI" = (
 /obj/machinery/button/door{
 	dir = 4;
+	id = "obengi";
 	name = "Engineering Storage Lock";
-	pixel_y = -7;
 	pixel_x = -21;
-	id = "obengi"
+	pixel_y = -7
 	},
 /obj/structure/closet/crate/engineering/electrical,
 /obj/item/storage/box/lights/mixed,
@@ -547,15 +547,15 @@
 	},
 /obj/machinery/door/firedoor/window,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "vela_lablock";
-	dir = 4
+	dir = 4;
+	id = "vela_lablock"
 	},
 /turf/open/floor/plating,
 /area/ship/science/xenobiology)
 "dC" = (
 /obj/structure/closet/secure_closet{
-	name = "captain's locker";
 	icon_state = "cap";
+	name = "captain's locker";
 	req_access_txt = "20"
 	},
 /obj/item/clothing/under/rank/command/minutemen,
@@ -686,14 +686,14 @@
 /obj/structure/cable,
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/effect/turf_decal/steeldecal/steel_decals_central7{
-	pixel_y = 0;
 	dir = 8;
-	pixel_x = 1
+	pixel_x = 1;
+	pixel_y = 0
 	},
 /obj/machinery/light_switch{
 	dir = 1;
-	pixel_y = -16;
-	pixel_x = -13
+	pixel_x = -13;
+	pixel_y = -16
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
@@ -776,9 +776,9 @@
 	dir = 8
 	},
 /obj/machinery/door/poddoor/shutters{
-	name = "Engine Shutters";
+	dir = 4;
 	id = "obengines";
-	dir = 4
+	name = "Engine Shutters"
 	},
 /turf/open/floor/engine,
 /area/ship/engineering)
@@ -885,8 +885,8 @@
 	dir = 10
 	},
 /obj/item/kirbyplants/random{
-	pixel_y = 5;
-	pixel_x = 2
+	pixel_x = 2;
+	pixel_y = 5
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
@@ -942,8 +942,8 @@
 /area/ship/bridge)
 "fH" = (
 /obj/machinery/door/window/brigdoor/westleft{
-	req_access_txt = list("2");
-	id = "vela"
+	id = "vela";
+	req_access = list(2)
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -965,8 +965,8 @@
 /obj/effect/turf_decal/industrial/caution,
 /obj/machinery/light/small/directional/east,
 /obj/structure/sign/warning/vacuum/external{
-	pixel_y = 11;
-	pixel_x = 28
+	pixel_x = 28;
+	pixel_y = 11
 	},
 /obj/effect/turf_decal/steeldecal/steel_decals10,
 /turf/open/floor/plasteel/tech,
@@ -1256,10 +1256,10 @@
 	},
 /obj/effect/turf_decal/industrial/traffic,
 /obj/docking_port/mobile{
-	preferred_direction = 4;
 	dheight = 1;
 	dir = 2;
-	port_direction = 8
+	port_direction = 8;
+	preferred_direction = 4
 	},
 /turf/open/floor/engine,
 /area/ship/external)
@@ -1624,8 +1624,8 @@
 	dir = 4
 	},
 /obj/machinery/light_switch{
-	pixel_y = 23;
-	pixel_x = -9
+	pixel_x = -9;
+	pixel_y = 23
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
@@ -2012,8 +2012,8 @@
 	dir = 5
 	},
 /obj/structure/sign/poster/contraband/power{
-	pixel_y = 32;
-	pixel_x = 32
+	pixel_x = 32;
+	pixel_y = 32
 	},
 /obj/effect/turf_decal/corner_techfloor_gray{
 	dir = 8
@@ -2201,9 +2201,9 @@
 "mS" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
+	dir = 4;
 	id = "obfront";
-	name = "Window Shutters";
-	dir = 4
+	name = "Window Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -2211,8 +2211,8 @@
 /obj/structure/table/reinforced,
 /obj/machinery/light/small/directional/south,
 /obj/item/reagent_containers/glass/maunamug{
-	pixel_y = 6;
-	pixel_x = 8
+	pixel_x = 8;
+	pixel_y = 6
 	},
 /obj/item/paper_bin{
 	pixel_x = -6;
@@ -2387,8 +2387,8 @@
 	dir = 8
 	},
 /obj/machinery/door/airlock{
-	name = "Showers";
-	dir = 4
+	dir = 4;
+	name = "Showers"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -2456,9 +2456,9 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/door/poddoor/shutters{
-	name = "Engine Shutters";
+	dir = 4;
 	id = "obengines";
-	dir = 4
+	name = "Engine Shutters"
 	},
 /turf/open/floor/engine,
 /area/ship/engineering/atmospherics)
@@ -2477,10 +2477,10 @@
 	},
 /obj/machinery/button/door{
 	dir = 8;
-	pixel_x = 22;
-	pixel_y = -16;
 	id = "vela_labeva";
 	name = "airlock shutters";
+	pixel_x = 22;
+	pixel_y = -16;
 	req_access = list(1)
 	},
 /turf/open/floor/plasteel/dark,
@@ -2619,8 +2619,8 @@
 /obj/item/clothing/glasses/meson,
 /obj/item/clothing/glasses/meson/prescription,
 /obj/structure/closet/secure_closet/miner{
-	populate = 0;
-	name = "pilot's equipment"
+	name = "pilot's equipment";
+	populate = 0
 	},
 /obj/item/clothing/gloves/explorer,
 /obj/item/gps/mining,
@@ -2666,8 +2666,8 @@
 /area/ship/security/armory)
 "pC" = (
 /obj/structure/noticeboard/qm{
-	name = "Supply Officer's Notice Board";
 	desc = "Important notices from the Supply Officer";
+	name = "Supply Officer's Notice Board";
 	pixel_y = 28
 	},
 /obj/structure/reagent_dispensers/fueltank,
@@ -2808,9 +2808,9 @@
 /obj/effect/turf_decal/spline/fancy/opaque/black,
 /obj/structure/closet/wall{
 	dir = 4;
-	pixel_y = 0;
+	name = "spare uniforms";
 	pixel_x = -28;
-	name = "spare uniforms"
+	pixel_y = 0
 	},
 /obj/item/clothing/under/rank/security/officer/minutemen,
 /obj/item/clothing/under/rank/security/officer/minutemen,
@@ -2859,8 +2859,8 @@
 /obj/item/clothing/glasses/meson,
 /obj/item/clothing/glasses/meson/prescription,
 /obj/structure/closet/secure_closet/miner{
-	populate = 0;
-	name = "pilot's equipment"
+	name = "pilot's equipment";
+	populate = 0
 	},
 /obj/item/clothing/gloves/explorer,
 /obj/item/gps/mining,
@@ -2906,16 +2906,16 @@
 "qJ" = (
 /obj/structure/table/reinforced,
 /obj/item/gps{
-	pixel_y = -2;
+	gpstag = "GOLD-VHEV";
 	pixel_x = -5;
-	gpstag = "GOLD-VHEV"
+	pixel_y = -2
 	},
 /obj/machinery/button/door{
 	dir = 8;
-	pixel_y = 4;
-	pixel_x = 8;
 	id = "obfront";
-	name = "Window Shutters"
+	name = "Window Shutters";
+	pixel_x = 8;
+	pixel_y = 4
 	},
 /obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/tech,
@@ -2970,8 +2970,8 @@
 /obj/item/clothing/head/helmet/space/pilot/random,
 /obj/item/reagent_containers/food/drinks/bottle/trappist,
 /obj/structure/sign/warning/nosmoking/burnt{
-	pixel_y = -28;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = -28
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hangar/port)
@@ -2997,8 +2997,8 @@
 	dir = 1
 	},
 /obj/structure/closet/secure_closet{
-	name = "bridge officer's locker";
 	icon_state = "cap";
+	name = "bridge officer's locker";
 	req_access_txt = "19"
 	},
 /obj/effect/turf_decal/box,
@@ -3056,8 +3056,8 @@
 /obj/item/clothing/head/helmet/bulletproof/minutemen,
 /obj/item/storage/belt/security/full,
 /obj/item/restraints/handcuffs,
-/obj/item/ammo_box/magazine/m45/rubbershot,
-/obj/item/ammo_box/magazine/m45/rubbershot,
+/obj/item/ammo_box/magazine/m45/rubber,
+/obj/item/ammo_box/magazine/m45/rubber,
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/structure/extinguisher_cabinet/directional/east,
 /obj/item/clothing/suit/armor/vest/marine,
@@ -3196,8 +3196,8 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/research{
-	name = "Science Lab";
-	dir = 4
+	dir = 4;
+	name = "Science Lab"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -3314,8 +3314,8 @@
 	icon_state = "4-8"
 	},
 /obj/structure/sign/warning/fire{
-	pixel_y = 24;
-	pixel_x = 8
+	pixel_x = 8;
+	pixel_y = 24
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
@@ -3343,8 +3343,8 @@
 /area/ship/engineering)
 "sA" = (
 /obj/machinery/atmospherics/components/binary/pump/layer4{
-	name = "Waste to Environment";
-	dir = 8
+	dir = 8;
+	name = "Waste to Environment"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
@@ -3396,8 +3396,8 @@
 	dir = 8
 	},
 /obj/machinery/door/airlock{
-	name = "Airlock Access";
-	dir = 4
+	dir = 4;
+	name = "Airlock Access"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/fore)
@@ -3479,7 +3479,7 @@
 /obj/item/pizzabox/pineapple,
 /obj/item/pizzabox/pineapple,
 /obj/item/pizzabox/pineapple,
-/obj/item/storage/box/donkpockets,
+/obj/effect/spawner/lootdrop/ration,
 /obj/item/reagent_containers/glass/mortar/metal,
 /obj/item/pestle,
 /obj/item/reagent_containers/food/condiment/saltshaker,
@@ -3542,9 +3542,9 @@
 /obj/structure/rack,
 /obj/machinery/door/window/brigdoor/eastleft,
 /obj/item/gps{
-	pixel_y = -2;
+	gpstag = "GOLD-VHEV";
 	pixel_x = -5;
-	gpstag = "GOLD-VHEV"
+	pixel_y = -2
 	},
 /obj/structure/window/reinforced{
 	dir = 1
@@ -3639,16 +3639,16 @@
 	dir = 4
 	},
 /obj/machinery/button/door{
-	pixel_y = 23;
-	pixel_x = -7;
+	id = "obmine11";
 	name = "Bay 1 Doors";
-	id = "obmine11"
+	pixel_x = -7;
+	pixel_y = 23
 	},
 /obj/machinery/button/shieldwallgen{
 	id = "obhang21";
 	name = "Bay 1 Air Shield";
-	pixel_y = 22;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = 22
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hangar/port)
@@ -3697,8 +3697,8 @@
 "uo" = (
 /obj/structure/table,
 /obj/item/clipboard{
-	pixel_y = 8;
-	pixel_x = -3
+	pixel_x = -3;
+	pixel_y = 8
 	},
 /obj/item/paper/crumpled{
 	pixel_x = 9;
@@ -3727,17 +3727,17 @@
 	dir = 8
 	},
 /obj/machinery/button/shieldwallgen{
-	id = "obcargos";
 	dir = 8;
+	id = "obcargos";
 	pixel_x = 23;
 	pixel_y = 5
 	},
 /obj/machinery/button/door{
 	dir = 8;
-	pixel_y = -5;
-	pixel_x = 25;
 	id = "obcargo";
-	name = "Cargo Shutters"
+	name = "Cargo Shutters";
+	pixel_x = 25;
+	pixel_y = -5
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
@@ -3816,8 +3816,8 @@
 /obj/item/clothing/glasses/meson,
 /obj/item/clothing/glasses/meson/prescription,
 /obj/structure/closet/secure_closet/miner{
-	populate = 0;
-	name = "pilot's equipment"
+	name = "pilot's equipment";
+	populate = 0
 	},
 /obj/item/clothing/gloves/explorer,
 /obj/item/gps/mining,
@@ -3876,16 +3876,16 @@
 	dir = 8
 	},
 /obj/machinery/button/door{
-	pixel_y = 23;
-	pixel_x = 7;
+	id = "obmine11";
 	name = "Bay 1 Doors";
-	id = "obmine11"
+	pixel_x = 7;
+	pixel_y = 23
 	},
 /obj/machinery/button/shieldwallgen{
 	id = "obhang21";
 	name = "Bay 1 Air Shield";
-	pixel_y = 22;
-	pixel_x = -5
+	pixel_x = -5;
+	pixel_y = 22
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hangar/port)
@@ -3988,16 +3988,16 @@
 "wh" = (
 /obj/structure/table,
 /obj/item/clothing/mask/cigarette/cigar/havana{
-	pixel_y = -1;
-	pixel_x = 8
+	pixel_x = 8;
+	pixel_y = -1
 	},
 /obj/item/lighter,
 /obj/machinery/button/door{
-	name = "Engine Shutters";
-	id = "obengines";
 	dir = 4;
-	pixel_y = 7;
-	pixel_x = -24
+	id = "obengines";
+	name = "Engine Shutters";
+	pixel_x = -24;
+	pixel_y = 7
 	},
 /obj/structure/sign/poster/contraband/hacking_guide{
 	pixel_y = -30
@@ -4134,8 +4134,8 @@
 	dir = 8
 	},
 /obj/machinery/light_switch{
-	pixel_y = 23;
-	pixel_x = -5
+	pixel_x = -5;
+	pixel_y = 23
 	},
 /obj/machinery/firealarm/directional/north{
 	pixel_x = 6
@@ -4173,9 +4173,9 @@
 /area/ship/engineering)
 "wZ" = (
 /obj/machinery/door/airlock/command{
+	dir = 4;
 	name = "Bridge";
-	req_access_txt = "19";
-	dir = 4
+	req_access_txt = "19"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -4343,8 +4343,8 @@
 "xH" = (
 /obj/structure/sink{
 	dir = 8;
-	pixel_y = 0;
-	pixel_x = 13
+	pixel_x = 13;
+	pixel_y = 0
 	},
 /obj/structure/mirror{
 	pixel_x = 28
@@ -4359,10 +4359,10 @@
 	dir = 1
 	},
 /obj/machinery/button/door{
-	pixel_y = 24;
-	pixel_x = 8;
 	id = "obai2";
 	name = "AI core blast door button";
+	pixel_x = 8;
+	pixel_y = 24;
 	req_access = list(19)
 	},
 /obj/structure/cable{
@@ -4404,8 +4404,8 @@
 "xT" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/preopen{
-	id = "obhangarent21";
-	dir = 4
+	dir = 4;
+	id = "obhangarent21"
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/central)
@@ -4441,18 +4441,18 @@
 	dir = 1
 	},
 /obj/machinery/button/door{
-	pixel_y = -22;
-	pixel_x = -4;
-	name = "umbilical window shutters";
+	dir = 1;
 	id = "obhangarent11";
-	dir = 1
+	name = "umbilical window shutters";
+	pixel_x = -4;
+	pixel_y = -22
 	},
 /obj/machinery/button/door{
-	pixel_y = -22;
-	pixel_x = 9;
-	name = "pod lockdown";
-	id = "obhangarent1";
 	dir = 1;
+	id = "obhangarent1";
+	name = "pod lockdown";
+	pixel_x = 9;
+	pixel_y = -22;
 	req_access_txt = list(1)
 	},
 /turf/open/floor/plasteel/dark,
@@ -4615,9 +4615,9 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/door/poddoor/shutters{
-	name = "Engine Shutters";
+	dir = 4;
 	id = "obengines";
-	dir = 4
+	name = "Engine Shutters"
 	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
@@ -4641,8 +4641,8 @@
 "zk" = (
 /obj/item/kirbyplants/random,
 /obj/structure/sign/warning/securearea{
-	pixel_y = 8;
-	pixel_x = -26
+	pixel_x = -26;
+	pixel_y = 8
 	},
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/dark,
@@ -4812,8 +4812,8 @@
 	pixel_y = 7
 	},
 /obj/machinery/light_switch{
-	pixel_x = 11;
 	dir = 1;
+	pixel_x = 11;
 	pixel_y = -16
 	},
 /turf/open/floor/plasteel/tech,
@@ -5042,9 +5042,9 @@
 "Bu" = (
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/effect/turf_decal/steeldecal/steel_decals_central7{
-	pixel_y = 0;
 	dir = 8;
-	pixel_x = 1
+	pixel_x = 1;
+	pixel_y = 0
 	},
 /obj/effect/turf_decal/steeldecal/steel_decals7{
 	dir = 4
@@ -5052,8 +5052,8 @@
 /obj/effect/turf_decal/steeldecal/steel_decals7,
 /obj/structure/cable,
 /obj/machinery/light_switch{
-	pixel_x = 11;
 	dir = 1;
+	pixel_x = 11;
 	pixel_y = -16
 	},
 /turf/open/floor/plasteel/dark,
@@ -5320,9 +5320,9 @@
 /obj/effect/turf_decal/techfloor,
 /obj/machinery/button/door{
 	dir = 8;
+	id = "vela_lablock";
 	pixel_x = 22;
-	pixel_y = 7;
-	id = "vela_lablock"
+	pixel_y = 7
 	},
 /obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/tech,
@@ -5358,8 +5358,8 @@
 	pixel_y = 32
 	},
 /obj/item/spacecash/bundle/pocketchange{
-	pixel_y = 9;
-	pixel_x = 8
+	pixel_x = 8;
+	pixel_y = 9
 	},
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/tech,
@@ -5415,17 +5415,17 @@
 	},
 /obj/structure/sign/directions/engineering{
 	dir = 8;
-	pixel_y = 7;
-	pixel_x = -32
+	pixel_x = -32;
+	pixel_y = 7
 	},
 /obj/structure/sign/directions/command{
 	dir = 4;
 	pixel_x = -32
 	},
 /obj/structure/sign/directions/supply{
-	pixel_y = -7;
+	dir = 4;
 	pixel_x = -32;
-	dir = 4
+	pixel_y = -7
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/central)
@@ -5864,8 +5864,8 @@
 /area/ship/hangar/port)
 "FS" = (
 /obj/structure/closet/secure_closet{
-	name = "foreman's locker";
 	icon_state = "cap";
+	name = "foreman's locker";
 	req_access = list(56)
 	},
 /obj/item/clothing/head/cowboy/sec/minutemen,
@@ -5902,8 +5902,8 @@
 	pixel_y = 4
 	},
 /obj/item/flashlight/lamp{
-	pixel_y = 4;
-	pixel_x = -7
+	pixel_x = -7;
+	pixel_y = 4
 	},
 /obj/item/storage/fancy/donut_box{
 	pixel_x = 1;
@@ -5993,8 +5993,8 @@
 	pixel_y = 9
 	},
 /obj/item/desk_flag/trans{
-	pixel_y = 4;
-	pixel_x = -5
+	pixel_x = -5;
+	pixel_y = 4
 	},
 /obj/effect/turf_decal/corner/opaque/black/diagonal,
 /turf/open/floor/plasteel/white,
@@ -6058,8 +6058,8 @@
 "GH" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/preopen{
-	id = "obhangarent11";
-	dir = 4
+	dir = 4;
+	id = "obhangarent11"
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/central)
@@ -6266,8 +6266,8 @@
 /obj/item/clothing/head/helmet/bulletproof/minutemen,
 /obj/item/storage/belt/security/full,
 /obj/item/restraints/handcuffs,
-/obj/item/ammo_box/magazine/m45/rubbershot,
-/obj/item/ammo_box/magazine/m45/rubbershot,
+/obj/item/ammo_box/magazine/m45/rubber,
+/obj/item/ammo_box/magazine/m45/rubber,
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/structure/sign/poster/official/focus{
 	pixel_y = 32
@@ -6347,8 +6347,8 @@
 	pixel_x = -5
 	},
 /obj/item/flashlight/lamp/green{
-	pixel_y = 9;
-	pixel_x = 6
+	pixel_x = 6;
+	pixel_y = 9
 	},
 /turf/open/floor/wood,
 /area/ship/crew/office)
@@ -6401,10 +6401,10 @@
 	},
 /obj/machinery/button/door{
 	dir = 8;
-	pixel_y = 5;
-	pixel_x = -6;
 	id = "obendo";
-	name = "Office Shutters"
+	name = "Office Shutters";
+	pixel_x = -6;
+	pixel_y = 5
 	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
@@ -6514,12 +6514,12 @@
 	pixel_y = 4
 	},
 /obj/item/pen{
-	pixel_y = 4;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = 4
 	},
 /obj/item/stamp/hos{
-	pixel_y = 9;
-	pixel_x = 8
+	pixel_x = 8;
+	pixel_y = 9
 	},
 /obj/machinery/recharger{
 	pixel_x = -8
@@ -6616,8 +6616,8 @@
 /obj/effect/turf_decal/industrial/caution,
 /obj/machinery/light/small/directional/west,
 /obj/structure/sign/warning/vacuum/external{
-	pixel_y = 11;
-	pixel_x = -28
+	pixel_x = -28;
+	pixel_y = 11
 	},
 /obj/effect/turf_decal/steeldecal/steel_decals10{
 	dir = 8
@@ -6632,16 +6632,16 @@
 	dir = 1
 	},
 /obj/machinery/button/door{
-	pixel_y = 25;
-	pixel_x = 7;
+	id = "obmine12";
 	name = "Bay Doors";
-	id = "obmine12"
+	pixel_x = 7;
+	pixel_y = 25
 	},
 /obj/machinery/button/shieldwallgen{
 	id = "obhang22";
 	name = "Air Shield Switch";
-	pixel_y = 25;
-	pixel_x = -5
+	pixel_x = -5;
+	pixel_y = 25
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hangar/port)
@@ -6938,10 +6938,10 @@
 	},
 /obj/machinery/button/door{
 	dir = 8;
-	pixel_y = -2;
-	pixel_x = 22;
 	id = "obair";
-	name = "Blast Door Controller"
+	name = "Blast Door Controller";
+	pixel_x = 22;
+	pixel_y = -2
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 9
@@ -7101,10 +7101,10 @@
 "Nf" = (
 /obj/machinery/button/door{
 	dir = 8;
+	id = "obengi";
 	name = "Engineering Storage Lock";
-	pixel_y = -7;
 	pixel_x = 22;
-	id = "obengi"
+	pixel_y = -7
 	},
 /obj/item/decal_painter{
 	pixel_x = -4;
@@ -7116,8 +7116,8 @@
 	},
 /obj/structure/table,
 /obj/machinery/light_switch{
-	pixel_y = 23;
-	pixel_x = -9
+	pixel_x = -9;
+	pixel_y = 23
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
@@ -7145,8 +7145,8 @@
 	id = "vela"
 	},
 /obj/machinery/door_timer{
-	pixel_y = 28;
-	id = "vela"
+	id = "vela";
+	pixel_y = 28
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
@@ -7322,8 +7322,8 @@
 /obj/machinery/light/small/directional/west,
 /obj/machinery/light_switch{
 	dir = 4;
-	pixel_y = -10;
-	pixel_x = -21
+	pixel_x = -21;
+	pixel_y = -10
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/science/xenobiology)
@@ -7349,10 +7349,10 @@
 	},
 /obj/structure/bookcase/manuals,
 /obj/machinery/button/door{
-	pixel_y = 23;
-	pixel_x = 8;
 	id = "vela_cap";
-	name = "window shutters"
+	name = "window shutters";
+	pixel_x = 8;
+	pixel_y = 23
 	},
 /turf/open/floor/wood,
 /area/ship/crew/office)
@@ -7364,8 +7364,8 @@
 	dir = 4
 	},
 /obj/structure/sign/warning/fire{
-	pixel_y = 24;
-	pixel_x = -8
+	pixel_x = -8;
+	pixel_y = 24
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 8
@@ -7411,9 +7411,9 @@
 /area/ship/hangar/port)
 "Om" = (
 /obj/machinery/door/airlock/command{
+	dir = 4;
 	name = "Bridge";
-	req_access_txt = "19";
-	dir = 4
+	req_access_txt = "19"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -7454,8 +7454,8 @@
 	name = "science pen"
 	},
 /obj/item/clipboard{
-	pixel_y = 3;
-	pixel_x = 7
+	pixel_x = 7;
+	pixel_y = 3
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/science/xenobiology)
@@ -7495,8 +7495,8 @@
 /area/ship/security/armory)
 "OM" = (
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "obendo";
-	dir = 4
+	dir = 4;
+	id = "obendo"
 	},
 /obj/machinery/door/airlock/engineering{
 	dir = 4;
@@ -7747,8 +7747,8 @@
 /area/ship/engineering/atmospherics)
 "PT" = (
 /obj/machinery/door/airlock{
-	id_tag = "obt";
-	dir = 4
+	dir = 4;
+	id_tag = "obt"
 	},
 /obj/effect/turf_decal/trimline/opaque/green/filled/warning{
 	dir = 4
@@ -7958,8 +7958,8 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/research{
-	name = "Breakroom";
-	dir = 4
+	dir = 4;
+	name = "Breakroom"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -8097,16 +8097,16 @@
 	dir = 4
 	},
 /obj/machinery/button/door{
-	pixel_y = 25;
-	pixel_x = -7;
+	id = "obmine12";
 	name = "Bay Doors";
-	id = "obmine12"
+	pixel_x = -7;
+	pixel_y = 25
 	},
 /obj/machinery/button/shieldwallgen{
 	id = "obhang22";
 	name = "Air Shield Switch";
-	pixel_y = 25;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = 25
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hangar/port)
@@ -8248,8 +8248,8 @@
 /obj/structure/table/reinforced,
 /obj/item/radio/intercom/directional/north,
 /obj/item/reagent_containers/glass/maunamug{
-	pixel_y = 5;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = 5
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
@@ -8269,8 +8269,8 @@
 	},
 /obj/machinery/light_switch{
 	dir = 1;
-	pixel_y = -21;
-	pixel_x = 2
+	pixel_x = 2;
+	pixel_y = -21
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -8574,8 +8574,8 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/security{
-	req_access = list(1);
-	dir = 4
+	dir = 4;
+	req_access = list(1)
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
@@ -8672,16 +8672,16 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/item/kirbyplants/random,
 /obj/machinery/button/door{
-	pixel_y = 24;
-	pixel_x = -4;
+	id = "obhangarent21";
 	name = "umbilical window shutters";
-	id = "obhangarent21"
+	pixel_x = -4;
+	pixel_y = 24
 	},
 /obj/machinery/button/door{
-	pixel_y = 24;
-	pixel_x = 9;
-	name = "pod lockdown";
 	id = "obhangarent2";
+	name = "pod lockdown";
+	pixel_x = 9;
+	pixel_y = 24;
 	req_access = list(1)
 	},
 /turf/open/floor/plasteel/dark,
@@ -8912,9 +8912,9 @@
 /area/ship/hangar/port)
 "Wz" = (
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "obengi";
-	name = "Engineering Storage";
-	dir = 4
+	name = "Engineering Storage"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -8944,16 +8944,16 @@
 "WP" = (
 /obj/structure/table/chem,
 /obj/item/reagent_containers/food/drinks/bottle/orangejuice{
-	pixel_y = 12;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = 12
 	},
 /obj/item/reagent_containers/food/drinks/bottle/limejuice{
-	pixel_y = 15;
-	pixel_x = -8
+	pixel_x = -8;
+	pixel_y = 15
 	},
 /obj/item/reagent_containers/food/snacks/pizzaslice/pineapple{
-	pixel_y = 2;
-	pixel_x = -7
+	pixel_x = -7;
+	pixel_y = 2
 	},
 /obj/effect/turf_decal/techfloor{
 	dir = 1
@@ -9085,8 +9085,8 @@
 	dir = 1
 	},
 /obj/item/reagent_containers/food/drinks/soda_cans/cola{
-	pixel_y = 8;
-	pixel_x = 8
+	pixel_x = 8;
+	pixel_y = 8
 	},
 /obj/item/paper/crumpled,
 /obj/item/pen/charcoal,
@@ -9179,8 +9179,8 @@
 "XY" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
-	id = "vela_cap";
-	dir = 4
+	dir = 4;
+	id = "vela_cap"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/office)
@@ -9221,8 +9221,8 @@
 	pixel_x = -6
 	},
 /obj/item/clothing/glasses/science{
-	pixel_y = 10;
-	pixel_x = 2
+	pixel_x = 2;
+	pixel_y = 10
 	},
 /obj/item/assembly/igniter{
 	pixel_x = 9;
@@ -9254,8 +9254,8 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor{
-	id = "obai2";
-	dir = 4
+	dir = 4;
+	id = "obai2"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -9405,9 +9405,9 @@
 /area/ship/bridge)
 "YY" = (
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "obengi";
-	name = "Engineering Storage";
-	dir = 4
+	name = "Engineering Storage"
 	},
 /obj/effect/turf_decal/trimline/transparent/red/filled/warning{
 	dir = 8

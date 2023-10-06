@@ -39,6 +39,13 @@
 	riot.Grant(src)
 	INVOKE_ASYNC(src, .proc/get_player)
 
+/mob/living/simple_animal/hostile/regalrat/Destroy()
+	coffer.Remove(src)
+	riot.Remove(src)
+	QDEL_NULL(coffer)
+	QDEL_NULL(riot)
+	return ..()
+
 /mob/living/simple_animal/hostile/regalrat/proc/get_player()
 	var/list/mob/dead/observer/candidates = pollGhostCandidates("Do you want to play as the Royal Rat, cheesey be his crown?", ROLE_SENTIENCE, null, FALSE, 100, POLL_IGNORE_SENTIENCE_POTION)
 	if(LAZYLEN(candidates) && !mind)

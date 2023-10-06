@@ -762,6 +762,8 @@
 /obj/machinery/light/small/directional/east,
 /obj/item/clothing/under/solgov/formal/skirt,
 /obj/item/clothing/suit/solgov/suit,
+/obj/item/clothing/suit/hooded/wintercoat/solgov,
+/obj/item/clothing/suit/hooded/wintercoat/solgov,
 /turf/open/floor/wood/ebony,
 /area/ship/crew/dorm)
 "if" = (
@@ -800,6 +802,7 @@
 	},
 /obj/structure/window/reinforced,
 /obj/effect/turf_decal/industrial/outline/red,
+/obj/item/clothing/glasses/meson/prescription,
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "ip" = (
@@ -1658,6 +1661,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/industrial/outline/red,
+/obj/item/clothing/glasses/meson/prescription,
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "qH" = (
@@ -1738,6 +1742,7 @@
 /obj/item/folder/solgov,
 /obj/item/clipboard,
 /obj/item/pen/solgov,
+/obj/item/clothing/glasses/meson/prescription,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/maintenance/port)
 "re" = (
@@ -2043,6 +2048,9 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
+/obj/item/folder/solgov,
+/obj/item/folder/solgov,
+/obj/item/folder/solgov,
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo/office)
 "uO" = (
@@ -2225,7 +2233,7 @@
 /area/ship/cargo/office)
 "wk" = (
 /obj/machinery/door/airlock/solgov{
-	name = "Bridge";
+	name = "Psychologist Office";
 	id_tag = "sg_par_psychlock"
 	},
 /obj/effect/turf_decal/industrial/warning{
@@ -2331,6 +2339,7 @@
 "wR" = (
 /obj/item/clothing/gloves/color/latex/nitrile,
 /obj/structure/table/glass,
+/obj/item/storage/box/rxglasses,
 /obj/machinery/door/window/southleft{
 	dir = 8
 	},
@@ -3008,6 +3017,9 @@
 /obj/structure/table/wood,
 /obj/item/paper_bin,
 /obj/item/pen/solgov,
+/obj/item/folder/solgov{
+	pixel_x = -16
+	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/crewtwo)
 "DD" = (
@@ -3580,17 +3592,6 @@
 "Jw" = (
 /turf/open/floor/plating,
 /area/ship/external/dark)
-"JD" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced/fulltile/shuttle,
-/obj/structure/table/wood,
-/obj/item/toy/plush/blahaj,
-/obj/machinery/door/poddoor/shutters/preopen{
-	dir = 1;
-	id = "sg_par_psych"
-	},
-/turf/open/floor/plating,
-/area/ship/crew/office)
 "JI" = (
 /obj/effect/turf_decal/trimline/opaque/solgovblue/filled/corner{
 	dir = 1
@@ -3978,6 +3979,7 @@
 /obj/item/reagent_containers/food/condiment/soymilk,
 /obj/item/reagent_containers/food/condiment/soymilk,
 /obj/item/storage/fancy/egg_box,
+/obj/item/reagent_containers/food/condiment/enzyme,
 /turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
 "MO" = (
@@ -4265,15 +4267,16 @@
 /obj/item/stack/sheet/mineral/wood/fifty,
 /obj/item/clothing/under/solgov/formal,
 /obj/item/clothing/shoes/laceup,
+/obj/item/folder/solgov,
 /obj/item/clothing/neck/stripedsolgovscarf,
 /obj/item/clothing/gloves/color/black,
 /obj/item/pen/solgov,
 /obj/item/clothing/glasses/regular,
 /obj/item/toy/plush/blahaj,
 /obj/item/lighter,
-/obj/item/folder/solgov,
 /obj/item/clothing/under/solgov/formal/skirt,
 /obj/item/clothing/suit/solgov/suit,
+/obj/item/folder/solgov,
 /obj/item/clothing/head/fedora/solgov,
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/office)
@@ -4430,6 +4433,8 @@
 	},
 /obj/item/clothing/under/solgov/formal/skirt,
 /obj/item/clothing/suit/solgov/suit,
+/obj/item/clothing/suit/hooded/wintercoat/solgov,
+/obj/item/clothing/suit/hooded/wintercoat/solgov,
 /turf/open/floor/wood/ebony,
 /area/ship/crew/dorm)
 "QQ" = (
@@ -5141,7 +5146,7 @@
 	dir = 8
 	},
 /obj/structure/cable{
-	icon_state = "4-8"
+	icon_state = "0-2"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/maintenance/port)
@@ -6018,7 +6023,7 @@ Ik
 XF
 dq
 YA
-JD
+YJ
 RI
 qf
 MF
