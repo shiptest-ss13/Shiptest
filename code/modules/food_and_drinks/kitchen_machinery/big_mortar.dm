@@ -142,6 +142,7 @@
 
 	to_chat(user, span_notice("You juice [to_be_juiced] into a fine liquid."))
 	QDEL_NULL(to_be_juiced)
+	to_be_juiced = null
 
 ///Grinds the passed target item, and transfers any contained chems to the mortar as well
 /obj/structure/large_mortar/proc/grind_target_item(obj/item/to_be_ground, mob/living/carbon/human/user)
@@ -153,6 +154,7 @@
 
 	to_chat(user, span_notice("You break [to_be_ground] into powder."))
 	QDEL_NULL(to_be_ground)
+	to_be_ground = null
 
 #undef LARGE_MORTAR_STAMINA_MINIMUM
 #undef LARGE_MORTAR_STAMINA_USE

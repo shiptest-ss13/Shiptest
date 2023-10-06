@@ -97,6 +97,7 @@ to accommodate additional materials.
 
 	to_chat(user, span_notice("You juice [to_be_juiced] into a fine liquid."))
 	QDEL_NULL(to_be_juiced)
+	grinded = null
 
 ///Grinds the passed target item, and transfers any contained chems to the mortar as well
 /obj/item/reagent_containers/glass/mortar/proc/grind_target_item(obj/item/to_be_ground, mob/living/carbon/human/user)
@@ -108,6 +109,7 @@ to accommodate additional materials.
 
 	to_chat(user, span_notice("You break [to_be_ground] into powder."))
 	QDEL_NULL(to_be_ground)
+	grinded = null
 
 #undef MORTAR_STAMINA_MINIMUM
 #undef MORTAR_STAMINA_USE

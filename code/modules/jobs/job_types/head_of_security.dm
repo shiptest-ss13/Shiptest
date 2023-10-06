@@ -124,7 +124,7 @@
 
 /datum/outfit/job/hos/roumain/post_equip(mob/living/carbon/human/H)
 	H.faction |= list("roumain")
-	
+
 /datum/job/hos/roumain
 	outfit = /datum/outfit/job/hos/roumain
 	mind_traits = null
