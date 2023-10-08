@@ -96,7 +96,6 @@
 	//if you don't keep this alphabetised I'm going to personally steal your shins and sell them online
 	return list(
 		"body_markings" = pick(GLOB.body_markings_list),
-		"body_size" = pick(GLOB.body_sizes),
 		"ears" = "None",
 		"elzu_horns" = pick(GLOB.elzu_horns_list),
 		"ethcolor" = GLOB.color_list_ethereal[pick(GLOB.color_list_ethereal)],

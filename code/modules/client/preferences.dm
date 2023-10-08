@@ -417,6 +417,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_SKIN_TONE]'>[(randomise[RANDOM_SKIN_TONE]) ? "Lock" : "Unlock"]</A>"
 				dat += "<br>"
 
+			//Height filters
+			if(pref_species.use_height)
+
+				dat += "<h3>Height</h3>"
+
+				dat += "<a href='?_src_=prefs;preference=height_filter;task=input'>[height_filter]</a><BR>"
+
 			// Everyone gets mutant colors now.
 			dat += "<h3>Mutant Colors</h3>"
 
@@ -835,19 +842,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<h3>Phobia</h3>"
 
 				dat += "<a href='?_src_=prefs;preference=phobia;task=input'>[phobia]</a><BR>"
-
-			if(pref_species.id != SPECIES_DWARF)
-				if(!mutant_category)
-					dat += APPEARANCE_CATEGORY_COLUMN
-
-				dat += "<h3>Height</h3>"
-
-				dat += "<a href='?_src_=prefs;preference=height_filter;task=input'>[height_filter]</a><BR>"
-
-				mutant_category++
-				if(mutant_category >= MAX_MUTANT_ROWS)
-					dat += "</td>"
-					mutant_category = 0
 
 			if("wings" in pref_species.default_features && GLOB.r_wings_list.len >1)
 				if(!mutant_category)
@@ -1780,7 +1774,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						eye_color = sanitize_hexcolor(new_eyes)
 
 				if("height_filter")
-					var/list/height_filters_available = list("Dwarf")
+					var/list/height_filters_available = list()
 					height_filters_available ^= GLOB.height_filters
 					var/new_height = input(user, "Choose your character's height:", "Character Preference") as null|anything in height_filters_available
 					if(new_height)
@@ -2475,8 +2469,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		character.update_body()
 		character.update_hair()
 		character.update_body_parts(TRUE)
-	if((pref_species.id != SPECIES_DWARF) && (height_filter != "Normal"))
-		character.set_mob_height(GLOB.height_filters[height_filter])
+	character.set_mob_height(GLOB.height_filters[height_filter])
 
 /datum/preferences/proc/get_default_name(name_id)
 	switch(name_id)

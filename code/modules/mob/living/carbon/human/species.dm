@@ -50,6 +50,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/sclera_color = "#e8e8e8"
 	/// The color used for blush overlay
 	var/blush_color = COLOR_BLUSH_PINK
+	///If the species is allowed to use height filters.
+	var/use_height = TRUE
 	///Does the species use skintones or not? As of now only used by humans.
 	var/use_skintones = FALSE
 	///If your race bleeds something other than bog standard blood, change this to reagent id. For example, ethereals bleed liquid electricity.
