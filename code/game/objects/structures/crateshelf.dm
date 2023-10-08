@@ -70,6 +70,19 @@
 			return TRUE
 	return ..()
 
+/obj/structure/crate_shelf/relay_container_resist_act(mob/living/user, obj/structure/closet/crate)
+	to_chat(user, "<span class='notice'>You begin attempting to knock [crate] out of [src].</span>")
+	if(do_after(user, 30 SECONDS, target = crate))
+		if(!user || user.stat != CONSCIOUS || user.loc != crate || crate.loc != src)
+			return // If the user is in a strange condition, return early.
+		visible_message("<span class='warning'>[crate] falls off of [src]!</span>",
+						"<span class='notice'>You manage to knock [crate] free of [src].</span>",
+						"<span class='notice>You hear a thud.</span>")
+		crate.forceMove(drop_location()) // Drop the crate onto the shelf,
+		step_rand(crate, 1) // Then try to push it somewhere.
+		shelf_contents[crate] = null // Remove the reference to the crate from the list.
+		handle_visuals()
+
 /obj/structure/crate_shelf/proc/handle_visuals()
 	vis_contents = contents // It really do be that shrimple.
 	return
